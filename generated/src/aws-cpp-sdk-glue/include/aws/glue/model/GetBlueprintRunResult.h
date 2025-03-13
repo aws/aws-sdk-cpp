@@ -28,7 +28,7 @@ namespace Model
   class GetBlueprintRunResult
   {
   public:
-    AWS_GLUE_API GetBlueprintRunResult();
+    AWS_GLUE_API GetBlueprintRunResult() = default;
     AWS_GLUE_API GetBlueprintRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetBlueprintRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Returns a <code>BlueprintRun</code> object.</p>
      */
-    inline const BlueprintRun& GetBlueprintRun() const{ return m_blueprintRun; }
-    inline void SetBlueprintRun(const BlueprintRun& value) { m_blueprintRun = value; }
-    inline void SetBlueprintRun(BlueprintRun&& value) { m_blueprintRun = std::move(value); }
-    inline GetBlueprintRunResult& WithBlueprintRun(const BlueprintRun& value) { SetBlueprintRun(value); return *this;}
-    inline GetBlueprintRunResult& WithBlueprintRun(BlueprintRun&& value) { SetBlueprintRun(std::move(value)); return *this;}
+    inline const BlueprintRun& GetBlueprintRun() const { return m_blueprintRun; }
+    template<typename BlueprintRunT = BlueprintRun>
+    void SetBlueprintRun(BlueprintRunT&& value) { m_blueprintRunHasBeenSet = true; m_blueprintRun = std::forward<BlueprintRunT>(value); }
+    template<typename BlueprintRunT = BlueprintRun>
+    GetBlueprintRunResult& WithBlueprintRun(BlueprintRunT&& value) { SetBlueprintRun(std::forward<BlueprintRunT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBlueprintRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBlueprintRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBlueprintRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBlueprintRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BlueprintRun m_blueprintRun;
+    bool m_blueprintRunHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

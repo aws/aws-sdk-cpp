@@ -33,7 +33,7 @@ namespace Model
   class AbortIncompleteMultipartUpload
   {
   public:
-    AWS_S3CRT_API AbortIncompleteMultipartUpload();
+    AWS_S3CRT_API AbortIncompleteMultipartUpload() = default;
     AWS_S3CRT_API AbortIncompleteMultipartUpload(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API AbortIncompleteMultipartUpload& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,14 @@ namespace Model
      * <p>Specifies the number of days after which Amazon S3 aborts an incomplete
      * multipart upload.</p>
      */
-    inline int GetDaysAfterInitiation() const{ return m_daysAfterInitiation; }
+    inline int GetDaysAfterInitiation() const { return m_daysAfterInitiation; }
     inline bool DaysAfterInitiationHasBeenSet() const { return m_daysAfterInitiationHasBeenSet; }
     inline void SetDaysAfterInitiation(int value) { m_daysAfterInitiationHasBeenSet = true; m_daysAfterInitiation = value; }
     inline AbortIncompleteMultipartUpload& WithDaysAfterInitiation(int value) { SetDaysAfterInitiation(value); return *this;}
     ///@}
   private:
 
-    int m_daysAfterInitiation;
+    int m_daysAfterInitiation{0};
     bool m_daysAfterInitiationHasBeenSet = false;
   };
 

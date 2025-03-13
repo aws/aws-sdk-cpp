@@ -32,7 +32,7 @@ namespace Model
   class AlertManagerDefinitionStatus
   {
   public:
-    AWS_PROMETHEUSSERVICE_API AlertManagerDefinitionStatus();
+    AWS_PROMETHEUSSERVICE_API AlertManagerDefinitionStatus() = default;
     AWS_PROMETHEUSSERVICE_API AlertManagerDefinitionStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API AlertManagerDefinitionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The current status of the alert manager. </p>
      */
-    inline const AlertManagerDefinitionStatusCode& GetStatusCode() const{ return m_statusCode; }
+    inline AlertManagerDefinitionStatusCode GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const AlertManagerDefinitionStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(AlertManagerDefinitionStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline AlertManagerDefinitionStatus& WithStatusCode(const AlertManagerDefinitionStatusCode& value) { SetStatusCode(value); return *this;}
-    inline AlertManagerDefinitionStatus& WithStatusCode(AlertManagerDefinitionStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+    inline void SetStatusCode(AlertManagerDefinitionStatusCode value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline AlertManagerDefinitionStatus& WithStatusCode(AlertManagerDefinitionStatusCode value) { SetStatusCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If there is a failure, the reason for the failure.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline AlertManagerDefinitionStatus& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline AlertManagerDefinitionStatus& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline AlertManagerDefinitionStatus& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    AlertManagerDefinitionStatus& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
   private:
 
-    AlertManagerDefinitionStatusCode m_statusCode;
+    AlertManagerDefinitionStatusCode m_statusCode{AlertManagerDefinitionStatusCode::NOT_SET};
     bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusReason;

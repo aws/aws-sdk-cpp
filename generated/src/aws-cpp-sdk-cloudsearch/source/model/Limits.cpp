@@ -20,16 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-Limits::Limits() : 
-    m_maximumReplicationCount(0),
-    m_maximumReplicationCountHasBeenSet(false),
-    m_maximumPartitionCount(0),
-    m_maximumPartitionCountHasBeenSet(false)
-{
-}
-
 Limits::Limits(const XmlNode& xmlNode)
-  : Limits()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ Limits& Limits::operator =(const XmlNode& xmlNode)
     {
       m_maximumReplicationCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumReplicationCountNode.GetText()).c_str()).c_str());
       m_maximumReplicationCountHasBeenSet = true;
+       m_maximumReplicationCountHasBeenSet = true;
     }
     XmlNode maximumPartitionCountNode = resultNode.FirstChild("MaximumPartitionCount");
     if(!maximumPartitionCountNode.IsNull())
     {
       m_maximumPartitionCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumPartitionCountNode.GetText()).c_str()).c_str());
       m_maximumPartitionCountHasBeenSet = true;
+       m_maximumPartitionCountHasBeenSet = true;
     }
   }
 

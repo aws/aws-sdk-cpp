@@ -32,7 +32,7 @@ namespace Model
   class VersionInfo
   {
   public:
-    AWS_ECS_API VersionInfo();
+    AWS_ECS_API VersionInfo() = default;
     AWS_ECS_API VersionInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API VersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The version number of the Amazon ECS container agent.</p>
      */
-    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-    inline VersionInfo& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-    inline VersionInfo& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-    inline VersionInfo& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    template<typename AgentVersionT = Aws::String>
+    void SetAgentVersion(AgentVersionT&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::forward<AgentVersionT>(value); }
+    template<typename AgentVersionT = Aws::String>
+    VersionInfo& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,24 @@ namespace Model
      * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
      * </a> GitHub repository.</p>
      */
-    inline const Aws::String& GetAgentHash() const{ return m_agentHash; }
+    inline const Aws::String& GetAgentHash() const { return m_agentHash; }
     inline bool AgentHashHasBeenSet() const { return m_agentHashHasBeenSet; }
-    inline void SetAgentHash(const Aws::String& value) { m_agentHashHasBeenSet = true; m_agentHash = value; }
-    inline void SetAgentHash(Aws::String&& value) { m_agentHashHasBeenSet = true; m_agentHash = std::move(value); }
-    inline void SetAgentHash(const char* value) { m_agentHashHasBeenSet = true; m_agentHash.assign(value); }
-    inline VersionInfo& WithAgentHash(const Aws::String& value) { SetAgentHash(value); return *this;}
-    inline VersionInfo& WithAgentHash(Aws::String&& value) { SetAgentHash(std::move(value)); return *this;}
-    inline VersionInfo& WithAgentHash(const char* value) { SetAgentHash(value); return *this;}
+    template<typename AgentHashT = Aws::String>
+    void SetAgentHash(AgentHashT&& value) { m_agentHashHasBeenSet = true; m_agentHash = std::forward<AgentHashT>(value); }
+    template<typename AgentHashT = Aws::String>
+    VersionInfo& WithAgentHash(AgentHashT&& value) { SetAgentHash(std::forward<AgentHashT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Docker version that's running on the container instance.</p>
      */
-    inline const Aws::String& GetDockerVersion() const{ return m_dockerVersion; }
+    inline const Aws::String& GetDockerVersion() const { return m_dockerVersion; }
     inline bool DockerVersionHasBeenSet() const { return m_dockerVersionHasBeenSet; }
-    inline void SetDockerVersion(const Aws::String& value) { m_dockerVersionHasBeenSet = true; m_dockerVersion = value; }
-    inline void SetDockerVersion(Aws::String&& value) { m_dockerVersionHasBeenSet = true; m_dockerVersion = std::move(value); }
-    inline void SetDockerVersion(const char* value) { m_dockerVersionHasBeenSet = true; m_dockerVersion.assign(value); }
-    inline VersionInfo& WithDockerVersion(const Aws::String& value) { SetDockerVersion(value); return *this;}
-    inline VersionInfo& WithDockerVersion(Aws::String&& value) { SetDockerVersion(std::move(value)); return *this;}
-    inline VersionInfo& WithDockerVersion(const char* value) { SetDockerVersion(value); return *this;}
+    template<typename DockerVersionT = Aws::String>
+    void SetDockerVersion(DockerVersionT&& value) { m_dockerVersionHasBeenSet = true; m_dockerVersion = std::forward<DockerVersionT>(value); }
+    template<typename DockerVersionT = Aws::String>
+    VersionInfo& WithDockerVersion(DockerVersionT&& value) { SetDockerVersion(std::forward<DockerVersionT>(value)); return *this;}
     ///@}
   private:
 

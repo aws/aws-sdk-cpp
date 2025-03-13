@@ -21,7 +21,7 @@ namespace Model
   class DeregisterEcsClusterRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API DeregisterEcsClusterRequest();
+    AWS_OPSWORKS_API DeregisterEcsClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The cluster's Amazon Resource Number (ARN).</p>
      */
-    inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
+    inline const Aws::String& GetEcsClusterArn() const { return m_ecsClusterArn; }
     inline bool EcsClusterArnHasBeenSet() const { return m_ecsClusterArnHasBeenSet; }
-    inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
-    inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = std::move(value); }
-    inline void SetEcsClusterArn(const char* value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn.assign(value); }
-    inline DeregisterEcsClusterRequest& WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
-    inline DeregisterEcsClusterRequest& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(std::move(value)); return *this;}
-    inline DeregisterEcsClusterRequest& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
+    template<typename EcsClusterArnT = Aws::String>
+    void SetEcsClusterArn(EcsClusterArnT&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = std::forward<EcsClusterArnT>(value); }
+    template<typename EcsClusterArnT = Aws::String>
+    DeregisterEcsClusterRequest& WithEcsClusterArn(EcsClusterArnT&& value) { SetEcsClusterArn(std::forward<EcsClusterArnT>(value)); return *this;}
     ///@}
   private:
 

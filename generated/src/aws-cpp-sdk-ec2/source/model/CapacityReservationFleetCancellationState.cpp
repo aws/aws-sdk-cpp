@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityReservationFleetCancellationState::CapacityReservationFleetCancellationState() : 
-    m_currentFleetState(CapacityReservationFleetState::NOT_SET),
-    m_currentFleetStateHasBeenSet(false),
-    m_previousFleetState(CapacityReservationFleetState::NOT_SET),
-    m_previousFleetStateHasBeenSet(false),
-    m_capacityReservationFleetIdHasBeenSet(false)
-{
-}
-
 CapacityReservationFleetCancellationState::CapacityReservationFleetCancellationState(const XmlNode& xmlNode)
-  : CapacityReservationFleetCancellationState()
 {
   *this = xmlNode;
 }
@@ -44,20 +34,23 @@ CapacityReservationFleetCancellationState& CapacityReservationFleetCancellationS
     XmlNode currentFleetStateNode = resultNode.FirstChild("currentFleetState");
     if(!currentFleetStateNode.IsNull())
     {
-      m_currentFleetState = CapacityReservationFleetStateMapper::GetCapacityReservationFleetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentFleetStateNode.GetText()).c_str()).c_str());
+      m_currentFleetState = CapacityReservationFleetStateMapper::GetCapacityReservationFleetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentFleetStateNode.GetText()).c_str()));
       m_currentFleetStateHasBeenSet = true;
+       m_currentFleetStateHasBeenSet = true;
     }
     XmlNode previousFleetStateNode = resultNode.FirstChild("previousFleetState");
     if(!previousFleetStateNode.IsNull())
     {
-      m_previousFleetState = CapacityReservationFleetStateMapper::GetCapacityReservationFleetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(previousFleetStateNode.GetText()).c_str()).c_str());
+      m_previousFleetState = CapacityReservationFleetStateMapper::GetCapacityReservationFleetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(previousFleetStateNode.GetText()).c_str()));
       m_previousFleetStateHasBeenSet = true;
+       m_previousFleetStateHasBeenSet = true;
     }
     XmlNode capacityReservationFleetIdNode = resultNode.FirstChild("capacityReservationFleetId");
     if(!capacityReservationFleetIdNode.IsNull())
     {
       m_capacityReservationFleetId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationFleetIdNode.GetText());
       m_capacityReservationFleetIdHasBeenSet = true;
+       m_capacityReservationFleetIdHasBeenSet = true;
     }
   }
 

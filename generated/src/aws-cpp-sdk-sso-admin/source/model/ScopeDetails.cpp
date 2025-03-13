@@ -18,14 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-ScopeDetails::ScopeDetails() : 
-    m_authorizedTargetsHasBeenSet(false),
-    m_scopeHasBeenSet(false)
-{
-}
-
 ScopeDetails::ScopeDetails(JsonView jsonValue)
-  : ScopeDetails()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ScopeDetails& ScopeDetails::operator =(JsonView jsonValue)
     }
     m_authorizedTargetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scope"))
   {
     m_scope = jsonValue.GetString("Scope");
-
     m_scopeHasBeenSet = true;
   }
-
   return *this;
 }
 

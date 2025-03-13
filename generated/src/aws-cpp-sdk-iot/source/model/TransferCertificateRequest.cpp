@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-TransferCertificateRequest::TransferCertificateRequest() : 
-    m_certificateIdHasBeenSet(false),
-    m_targetAwsAccountHasBeenSet(false),
-    m_transferMessageHasBeenSet(false)
-{
-}
-
 Aws::String TransferCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

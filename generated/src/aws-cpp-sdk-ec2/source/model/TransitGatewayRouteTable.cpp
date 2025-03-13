@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayRouteTable::TransitGatewayRouteTable() : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_state(TransitGatewayRouteTableState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_defaultAssociationRouteTable(false),
-    m_defaultAssociationRouteTableHasBeenSet(false),
-    m_defaultPropagationRouteTable(false),
-    m_defaultPropagationRouteTableHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TransitGatewayRouteTable::TransitGatewayRouteTable(const XmlNode& xmlNode)
-  : TransitGatewayRouteTable()
 {
   *this = xmlNode;
 }
@@ -51,48 +36,55 @@ TransitGatewayRouteTable& TransitGatewayRouteTable::operator =(const XmlNode& xm
     {
       m_transitGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayRouteTableIdNode.GetText());
       m_transitGatewayRouteTableIdHasBeenSet = true;
+       m_transitGatewayRouteTableIdHasBeenSet = true;
     }
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
       m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
+       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayRouteTableStateMapper::GetTransitGatewayRouteTableStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayRouteTableStateMapper::GetTransitGatewayRouteTableStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode defaultAssociationRouteTableNode = resultNode.FirstChild("defaultAssociationRouteTable");
     if(!defaultAssociationRouteTableNode.IsNull())
     {
       m_defaultAssociationRouteTable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultAssociationRouteTableNode.GetText()).c_str()).c_str());
       m_defaultAssociationRouteTableHasBeenSet = true;
+       m_defaultAssociationRouteTableHasBeenSet = true;
     }
     XmlNode defaultPropagationRouteTableNode = resultNode.FirstChild("defaultPropagationRouteTable");
     if(!defaultPropagationRouteTableNode.IsNull())
     {
       m_defaultPropagationRouteTable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultPropagationRouteTableNode.GetText()).c_str()).c_str());
       m_defaultPropagationRouteTableHasBeenSet = true;
+       m_defaultPropagationRouteTableHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

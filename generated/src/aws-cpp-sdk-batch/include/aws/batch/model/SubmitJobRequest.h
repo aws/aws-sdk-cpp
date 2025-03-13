@@ -36,7 +36,7 @@ namespace Model
   class SubmitJobRequest : public BatchRequest
   {
   public:
-    AWS_BATCH_API SubmitJobRequest();
+    AWS_BATCH_API SubmitJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -53,14 +53,12 @@ namespace Model
      * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
      * hyphens (-), and underscores (_).</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline SubmitJobRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline SubmitJobRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline SubmitJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    SubmitJobRequest& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * <p>The job queue where the job is submitted. You can specify either the name or
      * the Amazon Resource Name (ARN) of the queue.</p>
      */
-    inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
+    inline const Aws::String& GetJobQueue() const { return m_jobQueue; }
     inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
-    inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
-    inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
-    inline void SetJobQueue(const char* value) { m_jobQueueHasBeenSet = true; m_jobQueue.assign(value); }
-    inline SubmitJobRequest& WithJobQueue(const Aws::String& value) { SetJobQueue(value); return *this;}
-    inline SubmitJobRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
-    inline SubmitJobRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
+    template<typename JobQueueT = Aws::String>
+    void SetJobQueue(JobQueueT&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::forward<JobQueueT>(value); }
+    template<typename JobQueueT = Aws::String>
+    SubmitJobRequest& WithJobQueue(JobQueueT&& value) { SetJobQueue(std::forward<JobQueueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * policy, then this parameter must be specified.</p> <p>This string is limited to
      * 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
-    inline const Aws::String& GetShareIdentifier() const{ return m_shareIdentifier; }
+    inline const Aws::String& GetShareIdentifier() const { return m_shareIdentifier; }
     inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
-    inline void SetShareIdentifier(const Aws::String& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = value; }
-    inline void SetShareIdentifier(Aws::String&& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = std::move(value); }
-    inline void SetShareIdentifier(const char* value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier.assign(value); }
-    inline SubmitJobRequest& WithShareIdentifier(const Aws::String& value) { SetShareIdentifier(value); return *this;}
-    inline SubmitJobRequest& WithShareIdentifier(Aws::String&& value) { SetShareIdentifier(std::move(value)); return *this;}
-    inline SubmitJobRequest& WithShareIdentifier(const char* value) { SetShareIdentifier(value); return *this;}
+    template<typename ShareIdentifierT = Aws::String>
+    void SetShareIdentifier(ShareIdentifierT&& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = std::forward<ShareIdentifierT>(value); }
+    template<typename ShareIdentifierT = Aws::String>
+    SubmitJobRequest& WithShareIdentifier(ShareIdentifierT&& value) { SetShareIdentifier(std::forward<ShareIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,7 +98,7 @@ namespace Model
      * identifier.</p> <p>The minimum supported value is 0 and the maximum supported
      * value is 9999.</p>
      */
-    inline int GetSchedulingPriorityOverride() const{ return m_schedulingPriorityOverride; }
+    inline int GetSchedulingPriorityOverride() const { return m_schedulingPriorityOverride; }
     inline bool SchedulingPriorityOverrideHasBeenSet() const { return m_schedulingPriorityOverrideHasBeenSet; }
     inline void SetSchedulingPriorityOverride(int value) { m_schedulingPriorityOverrideHasBeenSet = true; m_schedulingPriorityOverride = value; }
     inline SubmitJobRequest& WithSchedulingPriorityOverride(int value) { SetSchedulingPriorityOverride(value); return *this;}
@@ -118,12 +112,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
-    inline const ArrayProperties& GetArrayProperties() const{ return m_arrayProperties; }
+    inline const ArrayProperties& GetArrayProperties() const { return m_arrayProperties; }
     inline bool ArrayPropertiesHasBeenSet() const { return m_arrayPropertiesHasBeenSet; }
-    inline void SetArrayProperties(const ArrayProperties& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
-    inline void SetArrayProperties(ArrayProperties&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::move(value); }
-    inline SubmitJobRequest& WithArrayProperties(const ArrayProperties& value) { SetArrayProperties(value); return *this;}
-    inline SubmitJobRequest& WithArrayProperties(ArrayProperties&& value) { SetArrayProperties(std::move(value)); return *this;}
+    template<typename ArrayPropertiesT = ArrayProperties>
+    void SetArrayProperties(ArrayPropertiesT&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::forward<ArrayPropertiesT>(value); }
+    template<typename ArrayPropertiesT = ArrayProperties>
+    SubmitJobRequest& WithArrayProperties(ArrayPropertiesT&& value) { SetArrayProperties(std::forward<ArrayPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +130,14 @@ namespace Model
      * this job must wait for the corresponding index child of each dependency to
      * complete before it can begin.</p>
      */
-    inline const Aws::Vector<JobDependency>& GetDependsOn() const{ return m_dependsOn; }
+    inline const Aws::Vector<JobDependency>& GetDependsOn() const { return m_dependsOn; }
     inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
-    inline void SetDependsOn(const Aws::Vector<JobDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
-    inline void SetDependsOn(Aws::Vector<JobDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
-    inline SubmitJobRequest& WithDependsOn(const Aws::Vector<JobDependency>& value) { SetDependsOn(value); return *this;}
-    inline SubmitJobRequest& WithDependsOn(Aws::Vector<JobDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
-    inline SubmitJobRequest& AddDependsOn(const JobDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
-    inline SubmitJobRequest& AddDependsOn(JobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
+    template<typename DependsOnT = Aws::Vector<JobDependency>>
+    void SetDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::forward<DependsOnT>(value); }
+    template<typename DependsOnT = Aws::Vector<JobDependency>>
+    SubmitJobRequest& WithDependsOn(DependsOnT&& value) { SetDependsOn(std::forward<DependsOnT>(value)); return *this;}
+    template<typename DependsOnT = JobDependency>
+    SubmitJobRequest& AddDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.emplace_back(std::forward<DependsOnT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -157,14 +151,12 @@ namespace Model
      * </code>).</p> <p>If the revision is not specified, then the latest active
      * revision is used.</p>
      */
-    inline const Aws::String& GetJobDefinition() const{ return m_jobDefinition; }
+    inline const Aws::String& GetJobDefinition() const { return m_jobDefinition; }
     inline bool JobDefinitionHasBeenSet() const { return m_jobDefinitionHasBeenSet; }
-    inline void SetJobDefinition(const Aws::String& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
-    inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::move(value); }
-    inline void SetJobDefinition(const char* value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition.assign(value); }
-    inline SubmitJobRequest& WithJobDefinition(const Aws::String& value) { SetJobDefinition(value); return *this;}
-    inline SubmitJobRequest& WithJobDefinition(Aws::String&& value) { SetJobDefinition(std::move(value)); return *this;}
-    inline SubmitJobRequest& WithJobDefinition(const char* value) { SetJobDefinition(value); return *this;}
+    template<typename JobDefinitionT = Aws::String>
+    void SetJobDefinition(JobDefinitionT&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::forward<JobDefinitionT>(value); }
+    template<typename JobDefinitionT = Aws::String>
+    SubmitJobRequest& WithJobDefinition(JobDefinitionT&& value) { SetJobDefinition(std::forward<JobDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,19 +166,16 @@ namespace Model
      * key and value pair mapping. Parameters in a <code>SubmitJob</code> request
      * override any corresponding parameter defaults from the job definition.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline SubmitJobRequest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline SubmitJobRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline SubmitJobRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline SubmitJobRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline SubmitJobRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline SubmitJobRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline SubmitJobRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline SubmitJobRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline SubmitJobRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    SubmitJobRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    SubmitJobRequest& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -199,12 +188,12 @@ namespace Model
      * variables on a container or add new environment variables to it with an
      * <code>environment</code> override.</p>
      */
-    inline const ContainerOverrides& GetContainerOverrides() const{ return m_containerOverrides; }
+    inline const ContainerOverrides& GetContainerOverrides() const { return m_containerOverrides; }
     inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
-    inline void SetContainerOverrides(const ContainerOverrides& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
-    inline void SetContainerOverrides(ContainerOverrides&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
-    inline SubmitJobRequest& WithContainerOverrides(const ContainerOverrides& value) { SetContainerOverrides(value); return *this;}
-    inline SubmitJobRequest& WithContainerOverrides(ContainerOverrides&& value) { SetContainerOverrides(std::move(value)); return *this;}
+    template<typename ContainerOverridesT = ContainerOverrides>
+    void SetContainerOverrides(ContainerOverridesT&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::forward<ContainerOverridesT>(value); }
+    template<typename ContainerOverridesT = ContainerOverrides>
+    SubmitJobRequest& WithContainerOverrides(ContainerOverridesT&& value) { SetContainerOverrides(std::forward<ContainerOverridesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -214,12 +203,12 @@ namespace Model
      * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
-    inline const NodeOverrides& GetNodeOverrides() const{ return m_nodeOverrides; }
+    inline const NodeOverrides& GetNodeOverrides() const { return m_nodeOverrides; }
     inline bool NodeOverridesHasBeenSet() const { return m_nodeOverridesHasBeenSet; }
-    inline void SetNodeOverrides(const NodeOverrides& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = value; }
-    inline void SetNodeOverrides(NodeOverrides&& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = std::move(value); }
-    inline SubmitJobRequest& WithNodeOverrides(const NodeOverrides& value) { SetNodeOverrides(value); return *this;}
-    inline SubmitJobRequest& WithNodeOverrides(NodeOverrides&& value) { SetNodeOverrides(std::move(value)); return *this;}
+    template<typename NodeOverridesT = NodeOverrides>
+    void SetNodeOverrides(NodeOverridesT&& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = std::forward<NodeOverridesT>(value); }
+    template<typename NodeOverridesT = NodeOverrides>
+    SubmitJobRequest& WithNodeOverrides(NodeOverridesT&& value) { SetNodeOverrides(std::forward<NodeOverridesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,12 +217,12 @@ namespace Model
      * operation. When a retry strategy is specified here, it overrides the retry
      * strategy defined in the job definition.</p>
      */
-    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+    inline const RetryStrategy& GetRetryStrategy() const { return m_retryStrategy; }
     inline bool RetryStrategyHasBeenSet() const { return m_retryStrategyHasBeenSet; }
-    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
-    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::move(value); }
-    inline SubmitJobRequest& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
-    inline SubmitJobRequest& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
+    template<typename RetryStrategyT = RetryStrategy>
+    void SetRetryStrategy(RetryStrategyT&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::forward<RetryStrategyT>(value); }
+    template<typename RetryStrategyT = RetryStrategy>
+    SubmitJobRequest& WithRetryStrategy(RetryStrategyT&& value) { SetRetryStrategy(std::forward<RetryStrategyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -246,7 +235,7 @@ namespace Model
      * the job is moved to the <code>FAILED</code> state. When specified, this
      * overrides the tag propagation setting in the job definition.</p>
      */
-    inline bool GetPropagateTags() const{ return m_propagateTags; }
+    inline bool GetPropagateTags() const { return m_propagateTags; }
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
     inline void SetPropagateTags(bool value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
     inline SubmitJobRequest& WithPropagateTags(bool value) { SetPropagateTags(value); return *this;}
@@ -264,12 +253,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
-    inline const JobTimeout& GetTimeout() const{ return m_timeout; }
+    inline const JobTimeout& GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
-    inline void SetTimeout(const JobTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
-    inline void SetTimeout(JobTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
-    inline SubmitJobRequest& WithTimeout(const JobTimeout& value) { SetTimeout(value); return *this;}
-    inline SubmitJobRequest& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}
+    template<typename TimeoutT = JobTimeout>
+    void SetTimeout(TimeoutT&& value) { m_timeoutHasBeenSet = true; m_timeout = std::forward<TimeoutT>(value); }
+    template<typename TimeoutT = JobTimeout>
+    SubmitJobRequest& WithTimeout(TimeoutT&& value) { SetTimeout(std::forward<TimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -281,19 +270,16 @@ namespace Model
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline SubmitJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline SubmitJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline SubmitJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline SubmitJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline SubmitJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline SubmitJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline SubmitJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline SubmitJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline SubmitJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    SubmitJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    SubmitJobRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -301,12 +287,12 @@ namespace Model
      * <p>An object, with properties that override defaults for the job definition, can
      * only be specified for jobs that are run on Amazon EKS resources.</p>
      */
-    inline const EksPropertiesOverride& GetEksPropertiesOverride() const{ return m_eksPropertiesOverride; }
+    inline const EksPropertiesOverride& GetEksPropertiesOverride() const { return m_eksPropertiesOverride; }
     inline bool EksPropertiesOverrideHasBeenSet() const { return m_eksPropertiesOverrideHasBeenSet; }
-    inline void SetEksPropertiesOverride(const EksPropertiesOverride& value) { m_eksPropertiesOverrideHasBeenSet = true; m_eksPropertiesOverride = value; }
-    inline void SetEksPropertiesOverride(EksPropertiesOverride&& value) { m_eksPropertiesOverrideHasBeenSet = true; m_eksPropertiesOverride = std::move(value); }
-    inline SubmitJobRequest& WithEksPropertiesOverride(const EksPropertiesOverride& value) { SetEksPropertiesOverride(value); return *this;}
-    inline SubmitJobRequest& WithEksPropertiesOverride(EksPropertiesOverride&& value) { SetEksPropertiesOverride(std::move(value)); return *this;}
+    template<typename EksPropertiesOverrideT = EksPropertiesOverride>
+    void SetEksPropertiesOverride(EksPropertiesOverrideT&& value) { m_eksPropertiesOverrideHasBeenSet = true; m_eksPropertiesOverride = std::forward<EksPropertiesOverrideT>(value); }
+    template<typename EksPropertiesOverrideT = EksPropertiesOverride>
+    SubmitJobRequest& WithEksPropertiesOverride(EksPropertiesOverrideT&& value) { SetEksPropertiesOverride(std::forward<EksPropertiesOverrideT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -314,24 +300,24 @@ namespace Model
      * <p>An object, with properties that override defaults for the job definition, can
      * only be specified for jobs that are run on Amazon ECS resources.</p>
      */
-    inline const EcsPropertiesOverride& GetEcsPropertiesOverride() const{ return m_ecsPropertiesOverride; }
+    inline const EcsPropertiesOverride& GetEcsPropertiesOverride() const { return m_ecsPropertiesOverride; }
     inline bool EcsPropertiesOverrideHasBeenSet() const { return m_ecsPropertiesOverrideHasBeenSet; }
-    inline void SetEcsPropertiesOverride(const EcsPropertiesOverride& value) { m_ecsPropertiesOverrideHasBeenSet = true; m_ecsPropertiesOverride = value; }
-    inline void SetEcsPropertiesOverride(EcsPropertiesOverride&& value) { m_ecsPropertiesOverrideHasBeenSet = true; m_ecsPropertiesOverride = std::move(value); }
-    inline SubmitJobRequest& WithEcsPropertiesOverride(const EcsPropertiesOverride& value) { SetEcsPropertiesOverride(value); return *this;}
-    inline SubmitJobRequest& WithEcsPropertiesOverride(EcsPropertiesOverride&& value) { SetEcsPropertiesOverride(std::move(value)); return *this;}
+    template<typename EcsPropertiesOverrideT = EcsPropertiesOverride>
+    void SetEcsPropertiesOverride(EcsPropertiesOverrideT&& value) { m_ecsPropertiesOverrideHasBeenSet = true; m_ecsPropertiesOverride = std::forward<EcsPropertiesOverrideT>(value); }
+    template<typename EcsPropertiesOverrideT = EcsPropertiesOverride>
+    SubmitJobRequest& WithEcsPropertiesOverride(EcsPropertiesOverrideT&& value) { SetEcsPropertiesOverride(std::forward<EcsPropertiesOverrideT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that contains overrides for the consumable resources of a job.</p>
      */
-    inline const ConsumableResourceProperties& GetConsumableResourcePropertiesOverride() const{ return m_consumableResourcePropertiesOverride; }
+    inline const ConsumableResourceProperties& GetConsumableResourcePropertiesOverride() const { return m_consumableResourcePropertiesOverride; }
     inline bool ConsumableResourcePropertiesOverrideHasBeenSet() const { return m_consumableResourcePropertiesOverrideHasBeenSet; }
-    inline void SetConsumableResourcePropertiesOverride(const ConsumableResourceProperties& value) { m_consumableResourcePropertiesOverrideHasBeenSet = true; m_consumableResourcePropertiesOverride = value; }
-    inline void SetConsumableResourcePropertiesOverride(ConsumableResourceProperties&& value) { m_consumableResourcePropertiesOverrideHasBeenSet = true; m_consumableResourcePropertiesOverride = std::move(value); }
-    inline SubmitJobRequest& WithConsumableResourcePropertiesOverride(const ConsumableResourceProperties& value) { SetConsumableResourcePropertiesOverride(value); return *this;}
-    inline SubmitJobRequest& WithConsumableResourcePropertiesOverride(ConsumableResourceProperties&& value) { SetConsumableResourcePropertiesOverride(std::move(value)); return *this;}
+    template<typename ConsumableResourcePropertiesOverrideT = ConsumableResourceProperties>
+    void SetConsumableResourcePropertiesOverride(ConsumableResourcePropertiesOverrideT&& value) { m_consumableResourcePropertiesOverrideHasBeenSet = true; m_consumableResourcePropertiesOverride = std::forward<ConsumableResourcePropertiesOverrideT>(value); }
+    template<typename ConsumableResourcePropertiesOverrideT = ConsumableResourceProperties>
+    SubmitJobRequest& WithConsumableResourcePropertiesOverride(ConsumableResourcePropertiesOverrideT&& value) { SetConsumableResourcePropertiesOverride(std::forward<ConsumableResourcePropertiesOverrideT>(value)); return *this;}
     ///@}
   private:
 
@@ -344,7 +330,7 @@ namespace Model
     Aws::String m_shareIdentifier;
     bool m_shareIdentifierHasBeenSet = false;
 
-    int m_schedulingPriorityOverride;
+    int m_schedulingPriorityOverride{0};
     bool m_schedulingPriorityOverrideHasBeenSet = false;
 
     ArrayProperties m_arrayProperties;
@@ -368,7 +354,7 @@ namespace Model
     RetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet = false;
 
-    bool m_propagateTags;
+    bool m_propagateTags{false};
     bool m_propagateTagsHasBeenSet = false;
 
     JobTimeout m_timeout;

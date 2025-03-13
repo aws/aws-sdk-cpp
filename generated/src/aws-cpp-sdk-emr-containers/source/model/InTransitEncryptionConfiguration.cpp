@@ -18,13 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-InTransitEncryptionConfiguration::InTransitEncryptionConfiguration() : 
-    m_tlsCertificateConfigurationHasBeenSet(false)
-{
-}
-
 InTransitEncryptionConfiguration::InTransitEncryptionConfiguration(JsonView jsonValue)
-  : InTransitEncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InTransitEncryptionConfiguration& InTransitEncryptionConfiguration::operator =(J
   if(jsonValue.ValueExists("tlsCertificateConfiguration"))
   {
     m_tlsCertificateConfiguration = jsonValue.GetObject("tlsCertificateConfiguration");
-
     m_tlsCertificateConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

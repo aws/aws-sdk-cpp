@@ -22,7 +22,7 @@ namespace Model
   class DeleteServiceAttributesRequest : public ServiceDiscoveryRequest
   {
   public:
-    AWS_SERVICEDISCOVERY_API DeleteServiceAttributesRequest();
+    AWS_SERVICEDISCOVERY_API DeleteServiceAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,29 +39,26 @@ namespace Model
     /**
      * <p>The ID of the service from which the attributes will be deleted.</p>
      */
-    inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+    inline const Aws::String& GetServiceId() const { return m_serviceId; }
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-    inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-    inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-    inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
-    inline DeleteServiceAttributesRequest& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-    inline DeleteServiceAttributesRequest& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
-    inline DeleteServiceAttributesRequest& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+    template<typename ServiceIdT = Aws::String>
+    void SetServiceId(ServiceIdT&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::forward<ServiceIdT>(value); }
+    template<typename ServiceIdT = Aws::String>
+    DeleteServiceAttributesRequest& WithServiceId(ServiceIdT&& value) { SetServiceId(std::forward<ServiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of keys corresponding to each attribute that you want to delete.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline DeleteServiceAttributesRequest& WithAttributes(const Aws::Vector<Aws::String>& value) { SetAttributes(value); return *this;}
-    inline DeleteServiceAttributesRequest& WithAttributes(Aws::Vector<Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline DeleteServiceAttributesRequest& AddAttributes(const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline DeleteServiceAttributesRequest& AddAttributes(Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
-    inline DeleteServiceAttributesRequest& AddAttributes(const char* value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    template<typename AttributesT = Aws::Vector<Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<Aws::String>>
+    DeleteServiceAttributesRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = Aws::String>
+    DeleteServiceAttributesRequest& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 

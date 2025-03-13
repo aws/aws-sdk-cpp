@@ -30,7 +30,7 @@ namespace Model
   class NodeDetails
   {
   public:
-    AWS_BATCH_API NodeDetails();
+    AWS_BATCH_API NodeDetails() = default;
     AWS_BATCH_API NodeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API NodeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code>
      * environment variable.</p>
      */
-    inline int GetNodeIndex() const{ return m_nodeIndex; }
+    inline int GetNodeIndex() const { return m_nodeIndex; }
     inline bool NodeIndexHasBeenSet() const { return m_nodeIndexHasBeenSet; }
     inline void SetNodeIndex(int value) { m_nodeIndexHasBeenSet = true; m_nodeIndex = value; }
     inline NodeDetails& WithNodeIndex(int value) { SetNodeIndex(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
      * <p>Specifies whether the current node is the main node for a multi-node parallel
      * job.</p>
      */
-    inline bool GetIsMainNode() const{ return m_isMainNode; }
+    inline bool GetIsMainNode() const { return m_isMainNode; }
     inline bool IsMainNodeHasBeenSet() const { return m_isMainNodeHasBeenSet; }
     inline void SetIsMainNode(bool value) { m_isMainNodeHasBeenSet = true; m_isMainNode = value; }
     inline NodeDetails& WithIsMainNode(bool value) { SetIsMainNode(value); return *this;}
     ///@}
   private:
 
-    int m_nodeIndex;
+    int m_nodeIndex{0};
     bool m_nodeIndexHasBeenSet = false;
 
-    bool m_isMainNode;
+    bool m_isMainNode{false};
     bool m_isMainNodeHasBeenSet = false;
   };
 

@@ -36,7 +36,7 @@ namespace Model
   class MonitoredRequestCountMetricDataQueries
   {
   public:
-    AWS_APPLICATIONSIGNALS_API MonitoredRequestCountMetricDataQueries();
+    AWS_APPLICATIONSIGNALS_API MonitoredRequestCountMetricDataQueries() = default;
     AWS_APPLICATIONSIGNALS_API MonitoredRequestCountMetricDataQueries(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API MonitoredRequestCountMetricDataQueries& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * successful requests for this request-based SLO, specify the metric to use as
      * "good requests" in this structure.</p>
      */
-    inline const Aws::Vector<MetricDataQuery>& GetGoodCountMetric() const{ return m_goodCountMetric; }
+    inline const Aws::Vector<MetricDataQuery>& GetGoodCountMetric() const { return m_goodCountMetric; }
     inline bool GoodCountMetricHasBeenSet() const { return m_goodCountMetricHasBeenSet; }
-    inline void SetGoodCountMetric(const Aws::Vector<MetricDataQuery>& value) { m_goodCountMetricHasBeenSet = true; m_goodCountMetric = value; }
-    inline void SetGoodCountMetric(Aws::Vector<MetricDataQuery>&& value) { m_goodCountMetricHasBeenSet = true; m_goodCountMetric = std::move(value); }
-    inline MonitoredRequestCountMetricDataQueries& WithGoodCountMetric(const Aws::Vector<MetricDataQuery>& value) { SetGoodCountMetric(value); return *this;}
-    inline MonitoredRequestCountMetricDataQueries& WithGoodCountMetric(Aws::Vector<MetricDataQuery>&& value) { SetGoodCountMetric(std::move(value)); return *this;}
-    inline MonitoredRequestCountMetricDataQueries& AddGoodCountMetric(const MetricDataQuery& value) { m_goodCountMetricHasBeenSet = true; m_goodCountMetric.push_back(value); return *this; }
-    inline MonitoredRequestCountMetricDataQueries& AddGoodCountMetric(MetricDataQuery&& value) { m_goodCountMetricHasBeenSet = true; m_goodCountMetric.push_back(std::move(value)); return *this; }
+    template<typename GoodCountMetricT = Aws::Vector<MetricDataQuery>>
+    void SetGoodCountMetric(GoodCountMetricT&& value) { m_goodCountMetricHasBeenSet = true; m_goodCountMetric = std::forward<GoodCountMetricT>(value); }
+    template<typename GoodCountMetricT = Aws::Vector<MetricDataQuery>>
+    MonitoredRequestCountMetricDataQueries& WithGoodCountMetric(GoodCountMetricT&& value) { SetGoodCountMetric(std::forward<GoodCountMetricT>(value)); return *this;}
+    template<typename GoodCountMetricT = MetricDataQuery>
+    MonitoredRequestCountMetricDataQueries& AddGoodCountMetric(GoodCountMetricT&& value) { m_goodCountMetricHasBeenSet = true; m_goodCountMetric.emplace_back(std::forward<GoodCountMetricT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,14 +64,14 @@ namespace Model
      * requests for this request-based SLO, specify the metric to use as "bad requests"
      * in this structure.</p>
      */
-    inline const Aws::Vector<MetricDataQuery>& GetBadCountMetric() const{ return m_badCountMetric; }
+    inline const Aws::Vector<MetricDataQuery>& GetBadCountMetric() const { return m_badCountMetric; }
     inline bool BadCountMetricHasBeenSet() const { return m_badCountMetricHasBeenSet; }
-    inline void SetBadCountMetric(const Aws::Vector<MetricDataQuery>& value) { m_badCountMetricHasBeenSet = true; m_badCountMetric = value; }
-    inline void SetBadCountMetric(Aws::Vector<MetricDataQuery>&& value) { m_badCountMetricHasBeenSet = true; m_badCountMetric = std::move(value); }
-    inline MonitoredRequestCountMetricDataQueries& WithBadCountMetric(const Aws::Vector<MetricDataQuery>& value) { SetBadCountMetric(value); return *this;}
-    inline MonitoredRequestCountMetricDataQueries& WithBadCountMetric(Aws::Vector<MetricDataQuery>&& value) { SetBadCountMetric(std::move(value)); return *this;}
-    inline MonitoredRequestCountMetricDataQueries& AddBadCountMetric(const MetricDataQuery& value) { m_badCountMetricHasBeenSet = true; m_badCountMetric.push_back(value); return *this; }
-    inline MonitoredRequestCountMetricDataQueries& AddBadCountMetric(MetricDataQuery&& value) { m_badCountMetricHasBeenSet = true; m_badCountMetric.push_back(std::move(value)); return *this; }
+    template<typename BadCountMetricT = Aws::Vector<MetricDataQuery>>
+    void SetBadCountMetric(BadCountMetricT&& value) { m_badCountMetricHasBeenSet = true; m_badCountMetric = std::forward<BadCountMetricT>(value); }
+    template<typename BadCountMetricT = Aws::Vector<MetricDataQuery>>
+    MonitoredRequestCountMetricDataQueries& WithBadCountMetric(BadCountMetricT&& value) { SetBadCountMetric(std::forward<BadCountMetricT>(value)); return *this;}
+    template<typename BadCountMetricT = MetricDataQuery>
+    MonitoredRequestCountMetricDataQueries& AddBadCountMetric(BadCountMetricT&& value) { m_badCountMetricHasBeenSet = true; m_badCountMetric.emplace_back(std::forward<BadCountMetricT>(value)); return *this; }
     ///@}
   private:
 

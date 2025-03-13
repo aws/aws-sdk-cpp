@@ -36,7 +36,7 @@ namespace Model
   class PartitionInput
   {
   public:
-    AWS_GLUE_API PartitionInput();
+    AWS_GLUE_API PartitionInput() = default;
     AWS_GLUE_API PartitionInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API PartitionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,27 +50,26 @@ namespace Model
      * must be ordered in the same order as the partition keys appearing in the Amazon
      * S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline PartitionInput& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline PartitionInput& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline PartitionInput& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline PartitionInput& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline PartitionInput& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    PartitionInput& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    PartitionInput& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The last time at which the partition was accessed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAccessTime() const{ return m_lastAccessTime; }
+    inline const Aws::Utils::DateTime& GetLastAccessTime() const { return m_lastAccessTime; }
     inline bool LastAccessTimeHasBeenSet() const { return m_lastAccessTimeHasBeenSet; }
-    inline void SetLastAccessTime(const Aws::Utils::DateTime& value) { m_lastAccessTimeHasBeenSet = true; m_lastAccessTime = value; }
-    inline void SetLastAccessTime(Aws::Utils::DateTime&& value) { m_lastAccessTimeHasBeenSet = true; m_lastAccessTime = std::move(value); }
-    inline PartitionInput& WithLastAccessTime(const Aws::Utils::DateTime& value) { SetLastAccessTime(value); return *this;}
-    inline PartitionInput& WithLastAccessTime(Aws::Utils::DateTime&& value) { SetLastAccessTime(std::move(value)); return *this;}
+    template<typename LastAccessTimeT = Aws::Utils::DateTime>
+    void SetLastAccessTime(LastAccessTimeT&& value) { m_lastAccessTimeHasBeenSet = true; m_lastAccessTime = std::forward<LastAccessTimeT>(value); }
+    template<typename LastAccessTimeT = Aws::Utils::DateTime>
+    PartitionInput& WithLastAccessTime(LastAccessTimeT&& value) { SetLastAccessTime(std::forward<LastAccessTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,31 +77,28 @@ namespace Model
      * <p>Provides information about the physical location where the partition is
      * stored.</p>
      */
-    inline const StorageDescriptor& GetStorageDescriptor() const{ return m_storageDescriptor; }
+    inline const StorageDescriptor& GetStorageDescriptor() const { return m_storageDescriptor; }
     inline bool StorageDescriptorHasBeenSet() const { return m_storageDescriptorHasBeenSet; }
-    inline void SetStorageDescriptor(const StorageDescriptor& value) { m_storageDescriptorHasBeenSet = true; m_storageDescriptor = value; }
-    inline void SetStorageDescriptor(StorageDescriptor&& value) { m_storageDescriptorHasBeenSet = true; m_storageDescriptor = std::move(value); }
-    inline PartitionInput& WithStorageDescriptor(const StorageDescriptor& value) { SetStorageDescriptor(value); return *this;}
-    inline PartitionInput& WithStorageDescriptor(StorageDescriptor&& value) { SetStorageDescriptor(std::move(value)); return *this;}
+    template<typename StorageDescriptorT = StorageDescriptor>
+    void SetStorageDescriptor(StorageDescriptorT&& value) { m_storageDescriptorHasBeenSet = true; m_storageDescriptor = std::forward<StorageDescriptorT>(value); }
+    template<typename StorageDescriptorT = StorageDescriptor>
+    PartitionInput& WithStorageDescriptor(StorageDescriptorT&& value) { SetStorageDescriptor(std::forward<StorageDescriptorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>These key-value pairs define partition parameters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline PartitionInput& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline PartitionInput& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline PartitionInput& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline PartitionInput& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline PartitionInput& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline PartitionInput& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline PartitionInput& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline PartitionInput& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline PartitionInput& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    PartitionInput& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    PartitionInput& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -110,19 +106,19 @@ namespace Model
      * <p>The last time at which column statistics were computed for this
      * partition.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAnalyzedTime() const{ return m_lastAnalyzedTime; }
+    inline const Aws::Utils::DateTime& GetLastAnalyzedTime() const { return m_lastAnalyzedTime; }
     inline bool LastAnalyzedTimeHasBeenSet() const { return m_lastAnalyzedTimeHasBeenSet; }
-    inline void SetLastAnalyzedTime(const Aws::Utils::DateTime& value) { m_lastAnalyzedTimeHasBeenSet = true; m_lastAnalyzedTime = value; }
-    inline void SetLastAnalyzedTime(Aws::Utils::DateTime&& value) { m_lastAnalyzedTimeHasBeenSet = true; m_lastAnalyzedTime = std::move(value); }
-    inline PartitionInput& WithLastAnalyzedTime(const Aws::Utils::DateTime& value) { SetLastAnalyzedTime(value); return *this;}
-    inline PartitionInput& WithLastAnalyzedTime(Aws::Utils::DateTime&& value) { SetLastAnalyzedTime(std::move(value)); return *this;}
+    template<typename LastAnalyzedTimeT = Aws::Utils::DateTime>
+    void SetLastAnalyzedTime(LastAnalyzedTimeT&& value) { m_lastAnalyzedTimeHasBeenSet = true; m_lastAnalyzedTime = std::forward<LastAnalyzedTimeT>(value); }
+    template<typename LastAnalyzedTimeT = Aws::Utils::DateTime>
+    PartitionInput& WithLastAnalyzedTime(LastAnalyzedTimeT&& value) { SetLastAnalyzedTime(std::forward<LastAnalyzedTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastAccessTime;
+    Aws::Utils::DateTime m_lastAccessTime{};
     bool m_lastAccessTimeHasBeenSet = false;
 
     StorageDescriptor m_storageDescriptor;
@@ -131,7 +127,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastAnalyzedTime;
+    Aws::Utils::DateTime m_lastAnalyzedTime{};
     bool m_lastAnalyzedTimeHasBeenSet = false;
   };
 

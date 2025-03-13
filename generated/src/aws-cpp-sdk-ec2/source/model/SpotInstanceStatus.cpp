@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SpotInstanceStatus::SpotInstanceStatus() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 SpotInstanceStatus::SpotInstanceStatus(const XmlNode& xmlNode)
-  : SpotInstanceStatus()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ SpotInstanceStatus& SpotInstanceStatus::operator =(const XmlNode& xmlNode)
     {
       m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");
     if(!messageNode.IsNull())
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
     XmlNode updateTimeNode = resultNode.FirstChild("updateTime");
     if(!updateTimeNode.IsNull())
     {
       m_updateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateTimeHasBeenSet = true;
+       m_updateTimeHasBeenSet = true;
     }
   }
 

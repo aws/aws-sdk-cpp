@@ -12,13 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EvictFilesFailingUploadRequest::EvictFilesFailingUploadRequest() : 
-    m_fileShareARNHasBeenSet(false),
-    m_forceRemove(false),
-    m_forceRemoveHasBeenSet(false)
-{
-}
-
 Aws::String EvictFilesFailingUploadRequest::SerializePayload() const
 {
   JsonValue payload;

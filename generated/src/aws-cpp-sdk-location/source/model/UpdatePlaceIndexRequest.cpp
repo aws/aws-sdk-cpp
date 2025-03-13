@@ -12,13 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePlaceIndexRequest::UpdatePlaceIndexRequest() : 
-    m_indexNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourceConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePlaceIndexRequest::SerializePayload() const
 {
   JsonValue payload;

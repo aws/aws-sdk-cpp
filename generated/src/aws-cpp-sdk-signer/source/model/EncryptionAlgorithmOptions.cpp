@@ -18,15 +18,7 @@ namespace signer
 namespace Model
 {
 
-EncryptionAlgorithmOptions::EncryptionAlgorithmOptions() : 
-    m_allowedValuesHasBeenSet(false),
-    m_defaultValue(EncryptionAlgorithm::NOT_SET),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 EncryptionAlgorithmOptions::EncryptionAlgorithmOptions(JsonView jsonValue)
-  : EncryptionAlgorithmOptions()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ EncryptionAlgorithmOptions& EncryptionAlgorithmOptions::operator =(JsonView json
     }
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = EncryptionAlgorithmMapper::GetEncryptionAlgorithmForName(jsonValue.GetString("defaultValue"));
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

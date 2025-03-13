@@ -23,7 +23,7 @@ namespace Model
   class ListOperationsRequest : public ServiceDiscoveryRequest
   {
   public:
-    AWS_SERVICEDISCOVERY_API ListOperationsRequest();
+    AWS_SERVICEDISCOVERY_API ListOperationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * criteria but that subsequent groups of <code>MaxResults</code> operations do
      * contain operations that match the criteria.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListOperationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOperationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOperationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOperationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * to a <code>ListOperations</code> request. If you don't specify a value for
      * <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListOperationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -77,21 +75,21 @@ namespace Model
      * and end date.</p> <p>If you specify more than one filter, an operation must
      * match all filters to be returned by <code>ListOperations</code>.</p>
      */
-    inline const Aws::Vector<OperationFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<OperationFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<OperationFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<OperationFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListOperationsRequest& WithFilters(const Aws::Vector<OperationFilter>& value) { SetFilters(value); return *this;}
-    inline ListOperationsRequest& WithFilters(Aws::Vector<OperationFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListOperationsRequest& AddFilters(const OperationFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListOperationsRequest& AddFilters(OperationFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<OperationFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<OperationFilter>>
+    ListOperationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = OperationFilter>
+    ListOperationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<OperationFilter> m_filters;

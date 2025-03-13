@@ -27,7 +27,7 @@ namespace Model
   class UpdateScheduleRequest : public SchedulerRequest
   {
   public:
-    AWS_SCHEDULER_API UpdateScheduleRequest();
+    AWS_SCHEDULER_API UpdateScheduleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,10 @@ namespace Model
      * <p>Specifies the action that EventBridge Scheduler applies to the schedule after
      * the schedule completes invoking the target.</p>
      */
-    inline const ActionAfterCompletion& GetActionAfterCompletion() const{ return m_actionAfterCompletion; }
+    inline ActionAfterCompletion GetActionAfterCompletion() const { return m_actionAfterCompletion; }
     inline bool ActionAfterCompletionHasBeenSet() const { return m_actionAfterCompletionHasBeenSet; }
-    inline void SetActionAfterCompletion(const ActionAfterCompletion& value) { m_actionAfterCompletionHasBeenSet = true; m_actionAfterCompletion = value; }
-    inline void SetActionAfterCompletion(ActionAfterCompletion&& value) { m_actionAfterCompletionHasBeenSet = true; m_actionAfterCompletion = std::move(value); }
-    inline UpdateScheduleRequest& WithActionAfterCompletion(const ActionAfterCompletion& value) { SetActionAfterCompletion(value); return *this;}
-    inline UpdateScheduleRequest& WithActionAfterCompletion(ActionAfterCompletion&& value) { SetActionAfterCompletion(std::move(value)); return *this;}
+    inline void SetActionAfterCompletion(ActionAfterCompletion value) { m_actionAfterCompletionHasBeenSet = true; m_actionAfterCompletion = value; }
+    inline UpdateScheduleRequest& WithActionAfterCompletion(ActionAfterCompletion value) { SetActionAfterCompletion(value); return *this;}
     ///@}
 
     ///@{
@@ -57,28 +55,24 @@ namespace Model
      * the request. If you do not specify a client token, EventBridge Scheduler uses a
      * randomly generated token for the request to ensure idempotency. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateScheduleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateScheduleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateScheduleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateScheduleRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description you specify for the schedule.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateScheduleRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateScheduleRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateScheduleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateScheduleRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +82,12 @@ namespace Model
      * the <code>EndDate</code> you specify. EventBridge Scheduler ignores
      * <code>EndDate</code> for one-time schedules.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
+    inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-    inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-    inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-    inline UpdateScheduleRequest& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
-    inline UpdateScheduleRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
+    template<typename EndDateT = Aws::Utils::DateTime>
+    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
+    template<typename EndDateT = Aws::Utils::DateTime>
+    UpdateScheduleRequest& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +95,12 @@ namespace Model
      * <p>Allows you to configure a time window during which EventBridge Scheduler
      * invokes the schedule.</p>
      */
-    inline const FlexibleTimeWindow& GetFlexibleTimeWindow() const{ return m_flexibleTimeWindow; }
+    inline const FlexibleTimeWindow& GetFlexibleTimeWindow() const { return m_flexibleTimeWindow; }
     inline bool FlexibleTimeWindowHasBeenSet() const { return m_flexibleTimeWindowHasBeenSet; }
-    inline void SetFlexibleTimeWindow(const FlexibleTimeWindow& value) { m_flexibleTimeWindowHasBeenSet = true; m_flexibleTimeWindow = value; }
-    inline void SetFlexibleTimeWindow(FlexibleTimeWindow&& value) { m_flexibleTimeWindowHasBeenSet = true; m_flexibleTimeWindow = std::move(value); }
-    inline UpdateScheduleRequest& WithFlexibleTimeWindow(const FlexibleTimeWindow& value) { SetFlexibleTimeWindow(value); return *this;}
-    inline UpdateScheduleRequest& WithFlexibleTimeWindow(FlexibleTimeWindow&& value) { SetFlexibleTimeWindow(std::move(value)); return *this;}
+    template<typename FlexibleTimeWindowT = FlexibleTimeWindow>
+    void SetFlexibleTimeWindow(FlexibleTimeWindowT&& value) { m_flexibleTimeWindowHasBeenSet = true; m_flexibleTimeWindow = std::forward<FlexibleTimeWindowT>(value); }
+    template<typename FlexibleTimeWindowT = FlexibleTimeWindow>
+    UpdateScheduleRequest& WithFlexibleTimeWindow(FlexibleTimeWindowT&& value) { SetFlexibleTimeWindow(std::forward<FlexibleTimeWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +110,12 @@ namespace Model
      * you want to update. If you omit this value, EventBridge Scheduler assumes the
      * group is associated to the default group.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline UpdateScheduleRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline UpdateScheduleRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline UpdateScheduleRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    UpdateScheduleRequest& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,28 +123,24 @@ namespace Model
      * <p>The ARN for the customer managed KMS key that that you want EventBridge
      * Scheduler to use to encrypt and decrypt your data.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline UpdateScheduleRequest& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline UpdateScheduleRequest& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline UpdateScheduleRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    UpdateScheduleRequest& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the schedule that you are updating.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateScheduleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateScheduleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateScheduleRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateScheduleRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,28 +167,24 @@ namespace Model
      * types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User
      * Guide</i>. </p>
      */
-    inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+    inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-    inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-    inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-    inline UpdateScheduleRequest& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-    inline UpdateScheduleRequest& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-    inline UpdateScheduleRequest& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    template<typename ScheduleExpressionT = Aws::String>
+    void SetScheduleExpression(ScheduleExpressionT&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::forward<ScheduleExpressionT>(value); }
+    template<typename ScheduleExpressionT = Aws::String>
+    UpdateScheduleRequest& WithScheduleExpression(ScheduleExpressionT&& value) { SetScheduleExpression(std::forward<ScheduleExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timezone in which the scheduling expression is evaluated.</p>
      */
-    inline const Aws::String& GetScheduleExpressionTimezone() const{ return m_scheduleExpressionTimezone; }
+    inline const Aws::String& GetScheduleExpressionTimezone() const { return m_scheduleExpressionTimezone; }
     inline bool ScheduleExpressionTimezoneHasBeenSet() const { return m_scheduleExpressionTimezoneHasBeenSet; }
-    inline void SetScheduleExpressionTimezone(const Aws::String& value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone = value; }
-    inline void SetScheduleExpressionTimezone(Aws::String&& value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone = std::move(value); }
-    inline void SetScheduleExpressionTimezone(const char* value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone.assign(value); }
-    inline UpdateScheduleRequest& WithScheduleExpressionTimezone(const Aws::String& value) { SetScheduleExpressionTimezone(value); return *this;}
-    inline UpdateScheduleRequest& WithScheduleExpressionTimezone(Aws::String&& value) { SetScheduleExpressionTimezone(std::move(value)); return *this;}
-    inline UpdateScheduleRequest& WithScheduleExpressionTimezone(const char* value) { SetScheduleExpressionTimezone(value); return *this;}
+    template<typename ScheduleExpressionTimezoneT = Aws::String>
+    void SetScheduleExpressionTimezone(ScheduleExpressionTimezoneT&& value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone = std::forward<ScheduleExpressionTimezoneT>(value); }
+    template<typename ScheduleExpressionTimezoneT = Aws::String>
+    UpdateScheduleRequest& WithScheduleExpressionTimezone(ScheduleExpressionTimezoneT&& value) { SetScheduleExpressionTimezone(std::forward<ScheduleExpressionTimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -210,24 +194,22 @@ namespace Model
      * or after, the <code>StartDate</code> you specify. EventBridge Scheduler ignores
      * <code>StartDate</code> for one-time schedules.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
+    inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-    inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-    inline UpdateScheduleRequest& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
-    inline UpdateScheduleRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+    template<typename StartDateT = Aws::Utils::DateTime>
+    void SetStartDate(StartDateT&& value) { m_startDateHasBeenSet = true; m_startDate = std::forward<StartDateT>(value); }
+    template<typename StartDateT = Aws::Utils::DateTime>
+    UpdateScheduleRequest& WithStartDate(StartDateT&& value) { SetStartDate(std::forward<StartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the schedule is enabled or disabled.</p>
      */
-    inline const ScheduleState& GetState() const{ return m_state; }
+    inline ScheduleState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ScheduleState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ScheduleState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline UpdateScheduleRequest& WithState(const ScheduleState& value) { SetState(value); return *this;}
-    inline UpdateScheduleRequest& WithState(ScheduleState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ScheduleState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline UpdateScheduleRequest& WithState(ScheduleState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -235,16 +217,16 @@ namespace Model
      * <p>The schedule target. You can use this operation to change the target that
      * your schedule invokes.</p>
      */
-    inline const Target& GetTarget() const{ return m_target; }
+    inline const Target& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Target& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Target&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline UpdateScheduleRequest& WithTarget(const Target& value) { SetTarget(value); return *this;}
-    inline UpdateScheduleRequest& WithTarget(Target&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = Target>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Target>
+    UpdateScheduleRequest& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 
-    ActionAfterCompletion m_actionAfterCompletion;
+    ActionAfterCompletion m_actionAfterCompletion{ActionAfterCompletion::NOT_SET};
     bool m_actionAfterCompletionHasBeenSet = false;
 
     Aws::String m_clientToken;
@@ -253,7 +235,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endDate;
+    Aws::Utils::DateTime m_endDate{};
     bool m_endDateHasBeenSet = false;
 
     FlexibleTimeWindow m_flexibleTimeWindow;
@@ -274,10 +256,10 @@ namespace Model
     Aws::String m_scheduleExpressionTimezone;
     bool m_scheduleExpressionTimezoneHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startDate;
+    Aws::Utils::DateTime m_startDate{};
     bool m_startDateHasBeenSet = false;
 
-    ScheduleState m_state;
+    ScheduleState m_state{ScheduleState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Target m_target;

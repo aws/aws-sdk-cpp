@@ -18,18 +18,7 @@ namespace HealthLake
 namespace Model
 {
 
-IdentityProviderConfiguration::IdentityProviderConfiguration() : 
-    m_authorizationStrategy(AuthorizationStrategy::NOT_SET),
-    m_authorizationStrategyHasBeenSet(false),
-    m_fineGrainedAuthorizationEnabled(false),
-    m_fineGrainedAuthorizationEnabledHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_idpLambdaArnHasBeenSet(false)
-{
-}
-
 IdentityProviderConfiguration::IdentityProviderConfiguration(JsonView jsonValue)
-  : IdentityProviderConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ IdentityProviderConfiguration& IdentityProviderConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("AuthorizationStrategy"))
   {
     m_authorizationStrategy = AuthorizationStrategyMapper::GetAuthorizationStrategyForName(jsonValue.GetString("AuthorizationStrategy"));
-
     m_authorizationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FineGrainedAuthorizationEnabled"))
   {
     m_fineGrainedAuthorizationEnabled = jsonValue.GetBool("FineGrainedAuthorizationEnabled");
-
     m_fineGrainedAuthorizationEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metadata"))
   {
     m_metadata = jsonValue.GetString("Metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdpLambdaArn"))
   {
     m_idpLambdaArn = jsonValue.GetString("IdpLambdaArn");
-
     m_idpLambdaArnHasBeenSet = true;
   }
-
   return *this;
 }
 

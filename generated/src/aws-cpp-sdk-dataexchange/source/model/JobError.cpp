@@ -18,23 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-JobError::JobError() : 
-    m_code(Code::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_limitName(JobErrorLimitName::NOT_SET),
-    m_limitNameHasBeenSet(false),
-    m_limitValue(0.0),
-    m_limitValueHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(JobErrorResourceTypes::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 JobError::JobError(JsonView jsonValue)
-  : JobError()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ JobError& JobError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = CodeMapper::GetCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     m_details = jsonValue.GetObject("Details");
-
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LimitName"))
   {
     m_limitName = JobErrorLimitNameMapper::GetJobErrorLimitNameForName(jsonValue.GetString("LimitName"));
-
     m_limitNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LimitValue"))
   {
     m_limitValue = jsonValue.GetDouble("LimitValue");
-
     m_limitValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = JobErrorResourceTypesMapper::GetJobErrorResourceTypesForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

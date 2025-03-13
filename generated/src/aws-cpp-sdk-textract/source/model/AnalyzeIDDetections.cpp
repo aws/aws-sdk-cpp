@@ -18,16 +18,7 @@ namespace Textract
 namespace Model
 {
 
-AnalyzeIDDetections::AnalyzeIDDetections() : 
-    m_textHasBeenSet(false),
-    m_normalizedValueHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
-{
-}
-
 AnalyzeIDDetections::AnalyzeIDDetections(JsonView jsonValue)
-  : AnalyzeIDDetections()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AnalyzeIDDetections& AnalyzeIDDetections::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NormalizedValue"))
   {
     m_normalizedValue = jsonValue.GetObject("NormalizedValue");
-
     m_normalizedValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

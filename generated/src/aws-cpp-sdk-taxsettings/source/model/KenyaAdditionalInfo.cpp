@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-KenyaAdditionalInfo::KenyaAdditionalInfo() : 
-    m_personType(PersonType::NOT_SET),
-    m_personTypeHasBeenSet(false)
-{
-}
-
 KenyaAdditionalInfo::KenyaAdditionalInfo(JsonView jsonValue)
-  : KenyaAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ KenyaAdditionalInfo& KenyaAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("personType"))
   {
     m_personType = PersonTypeMapper::GetPersonTypeForName(jsonValue.GetString("personType"));
-
     m_personTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

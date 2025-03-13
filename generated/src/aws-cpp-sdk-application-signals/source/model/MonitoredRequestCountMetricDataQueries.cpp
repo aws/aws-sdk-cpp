@@ -18,14 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-MonitoredRequestCountMetricDataQueries::MonitoredRequestCountMetricDataQueries() : 
-    m_goodCountMetricHasBeenSet(false),
-    m_badCountMetricHasBeenSet(false)
-{
-}
-
 MonitoredRequestCountMetricDataQueries::MonitoredRequestCountMetricDataQueries(JsonView jsonValue)
-  : MonitoredRequestCountMetricDataQueries()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ MonitoredRequestCountMetricDataQueries& MonitoredRequestCountMetricDataQueries::
     }
     m_goodCountMetricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BadCountMetric"))
   {
     Aws::Utils::Array<JsonView> badCountMetricJsonList = jsonValue.GetArray("BadCountMetric");
@@ -51,7 +43,6 @@ MonitoredRequestCountMetricDataQueries& MonitoredRequestCountMetricDataQueries::
     }
     m_badCountMetricHasBeenSet = true;
   }
-
   return *this;
 }
 

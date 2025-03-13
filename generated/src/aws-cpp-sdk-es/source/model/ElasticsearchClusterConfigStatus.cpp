@@ -18,14 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-ElasticsearchClusterConfigStatus::ElasticsearchClusterConfigStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ElasticsearchClusterConfigStatus::ElasticsearchClusterConfigStatus(JsonView jsonValue)
-  : ElasticsearchClusterConfigStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ElasticsearchClusterConfigStatus& ElasticsearchClusterConfigStatus::operator =(J
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

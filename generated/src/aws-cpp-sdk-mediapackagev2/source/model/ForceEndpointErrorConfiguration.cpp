@@ -18,13 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-ForceEndpointErrorConfiguration::ForceEndpointErrorConfiguration() : 
-    m_endpointErrorConditionsHasBeenSet(false)
-{
-}
-
 ForceEndpointErrorConfiguration::ForceEndpointErrorConfiguration(JsonView jsonValue)
-  : ForceEndpointErrorConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ForceEndpointErrorConfiguration& ForceEndpointErrorConfiguration::operator =(Jso
     }
     m_endpointErrorConditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

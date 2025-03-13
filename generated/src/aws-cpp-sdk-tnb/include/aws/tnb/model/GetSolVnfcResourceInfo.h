@@ -34,7 +34,7 @@ namespace Model
   class GetSolVnfcResourceInfo
   {
   public:
-    AWS_TNB_API GetSolVnfcResourceInfo();
+    AWS_TNB_API GetSolVnfcResourceInfo() = default;
     AWS_TNB_API GetSolVnfcResourceInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API GetSolVnfcResourceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The metadata of the network function compute.</p>
      */
-    inline const GetSolVnfcResourceInfoMetadata& GetMetadata() const{ return m_metadata; }
+    inline const GetSolVnfcResourceInfoMetadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const GetSolVnfcResourceInfoMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(GetSolVnfcResourceInfoMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline GetSolVnfcResourceInfo& WithMetadata(const GetSolVnfcResourceInfoMetadata& value) { SetMetadata(value); return *this;}
-    inline GetSolVnfcResourceInfo& WithMetadata(GetSolVnfcResourceInfoMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = GetSolVnfcResourceInfoMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = GetSolVnfcResourceInfoMetadata>
+    GetSolVnfcResourceInfo& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAnnotationImportJobsResult::ListAnnotationImportJobsResult()
-{
-}
-
 ListAnnotationImportJobsResult::ListAnnotationImportJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListAnnotationImportJobsResult& ListAnnotationImportJobsResult::operator =(const
     {
       m_annotationImportJobs.push_back(annotationImportJobsJsonList[annotationImportJobsIndex].AsObject());
     }
+    m_annotationImportJobsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -32,7 +32,7 @@ namespace Model
   class ContactAnalysis
   {
   public:
-    AWS_CONNECT_API ContactAnalysis();
+    AWS_CONNECT_API ContactAnalysis() = default;
     AWS_CONNECT_API ContactAnalysis(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ContactAnalysis& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Search criteria based on transcript analyzed by Amazon Connect Contact
      * Lens.</p>
      */
-    inline const Transcript& GetTranscript() const{ return m_transcript; }
+    inline const Transcript& GetTranscript() const { return m_transcript; }
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
-    inline void SetTranscript(const Transcript& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
-    inline void SetTranscript(Transcript&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
-    inline ContactAnalysis& WithTranscript(const Transcript& value) { SetTranscript(value); return *this;}
-    inline ContactAnalysis& WithTranscript(Transcript&& value) { SetTranscript(std::move(value)); return *this;}
+    template<typename TranscriptT = Transcript>
+    void SetTranscript(TranscriptT&& value) { m_transcriptHasBeenSet = true; m_transcript = std::forward<TranscriptT>(value); }
+    template<typename TranscriptT = Transcript>
+    ContactAnalysis& WithTranscript(TranscriptT&& value) { SetTranscript(std::forward<TranscriptT>(value)); return *this;}
     ///@}
   private:
 

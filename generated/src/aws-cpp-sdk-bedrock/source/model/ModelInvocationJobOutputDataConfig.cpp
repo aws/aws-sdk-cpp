@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-ModelInvocationJobOutputDataConfig::ModelInvocationJobOutputDataConfig() : 
-    m_s3OutputDataConfigHasBeenSet(false)
-{
-}
-
 ModelInvocationJobOutputDataConfig::ModelInvocationJobOutputDataConfig(JsonView jsonValue)
-  : ModelInvocationJobOutputDataConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelInvocationJobOutputDataConfig& ModelInvocationJobOutputDataConfig::operator
   if(jsonValue.ValueExists("s3OutputDataConfig"))
   {
     m_s3OutputDataConfig = jsonValue.GetObject("s3OutputDataConfig");
-
     m_s3OutputDataConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

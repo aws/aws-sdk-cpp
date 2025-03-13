@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CreateXMLClassifierRequest::CreateXMLClassifierRequest() : 
-    m_classificationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rowTagHasBeenSet(false)
-{
-}
-
 CreateXMLClassifierRequest::CreateXMLClassifierRequest(JsonView jsonValue)
-  : CreateXMLClassifierRequest()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CreateXMLClassifierRequest& CreateXMLClassifierRequest::operator =(JsonView json
   if(jsonValue.ValueExists("Classification"))
   {
     m_classification = jsonValue.GetString("Classification");
-
     m_classificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowTag"))
   {
     m_rowTag = jsonValue.GetString("RowTag");
-
     m_rowTagHasBeenSet = true;
   }
-
   return *this;
 }
 

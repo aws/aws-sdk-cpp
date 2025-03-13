@@ -20,23 +20,7 @@ namespace SES
 namespace Model
 {
 
-IdentityNotificationAttributes::IdentityNotificationAttributes() : 
-    m_bounceTopicHasBeenSet(false),
-    m_complaintTopicHasBeenSet(false),
-    m_deliveryTopicHasBeenSet(false),
-    m_forwardingEnabled(false),
-    m_forwardingEnabledHasBeenSet(false),
-    m_headersInBounceNotificationsEnabled(false),
-    m_headersInBounceNotificationsEnabledHasBeenSet(false),
-    m_headersInComplaintNotificationsEnabled(false),
-    m_headersInComplaintNotificationsEnabledHasBeenSet(false),
-    m_headersInDeliveryNotificationsEnabled(false),
-    m_headersInDeliveryNotificationsEnabledHasBeenSet(false)
-{
-}
-
 IdentityNotificationAttributes::IdentityNotificationAttributes(const XmlNode& xmlNode)
-  : IdentityNotificationAttributes()
 {
   *this = xmlNode;
 }
@@ -52,42 +36,49 @@ IdentityNotificationAttributes& IdentityNotificationAttributes::operator =(const
     {
       m_bounceTopic = Aws::Utils::Xml::DecodeEscapedXmlText(bounceTopicNode.GetText());
       m_bounceTopicHasBeenSet = true;
+       m_bounceTopicHasBeenSet = true;
     }
     XmlNode complaintTopicNode = resultNode.FirstChild("ComplaintTopic");
     if(!complaintTopicNode.IsNull())
     {
       m_complaintTopic = Aws::Utils::Xml::DecodeEscapedXmlText(complaintTopicNode.GetText());
       m_complaintTopicHasBeenSet = true;
+       m_complaintTopicHasBeenSet = true;
     }
     XmlNode deliveryTopicNode = resultNode.FirstChild("DeliveryTopic");
     if(!deliveryTopicNode.IsNull())
     {
       m_deliveryTopic = Aws::Utils::Xml::DecodeEscapedXmlText(deliveryTopicNode.GetText());
       m_deliveryTopicHasBeenSet = true;
+       m_deliveryTopicHasBeenSet = true;
     }
     XmlNode forwardingEnabledNode = resultNode.FirstChild("ForwardingEnabled");
     if(!forwardingEnabledNode.IsNull())
     {
       m_forwardingEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forwardingEnabledNode.GetText()).c_str()).c_str());
       m_forwardingEnabledHasBeenSet = true;
+       m_forwardingEnabledHasBeenSet = true;
     }
     XmlNode headersInBounceNotificationsEnabledNode = resultNode.FirstChild("HeadersInBounceNotificationsEnabled");
     if(!headersInBounceNotificationsEnabledNode.IsNull())
     {
       m_headersInBounceNotificationsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(headersInBounceNotificationsEnabledNode.GetText()).c_str()).c_str());
       m_headersInBounceNotificationsEnabledHasBeenSet = true;
+       m_headersInBounceNotificationsEnabledHasBeenSet = true;
     }
     XmlNode headersInComplaintNotificationsEnabledNode = resultNode.FirstChild("HeadersInComplaintNotificationsEnabled");
     if(!headersInComplaintNotificationsEnabledNode.IsNull())
     {
       m_headersInComplaintNotificationsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(headersInComplaintNotificationsEnabledNode.GetText()).c_str()).c_str());
       m_headersInComplaintNotificationsEnabledHasBeenSet = true;
+       m_headersInComplaintNotificationsEnabledHasBeenSet = true;
     }
     XmlNode headersInDeliveryNotificationsEnabledNode = resultNode.FirstChild("HeadersInDeliveryNotificationsEnabled");
     if(!headersInDeliveryNotificationsEnabledNode.IsNull())
     {
       m_headersInDeliveryNotificationsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(headersInDeliveryNotificationsEnabledNode.GetText()).c_str()).c_str());
       m_headersInDeliveryNotificationsEnabledHasBeenSet = true;
+       m_headersInDeliveryNotificationsEnabledHasBeenSet = true;
     }
   }
 

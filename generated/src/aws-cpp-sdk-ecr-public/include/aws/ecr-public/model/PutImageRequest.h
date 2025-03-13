@@ -21,7 +21,7 @@ namespace Model
   class PutImageRequest : public ECRPublicRequest
   {
   public:
-    AWS_ECRPUBLIC_API PutImageRequest();
+    AWS_ECRPUBLIC_API PutImageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,36 @@ namespace Model
      * the public registry that contains the repository where the image is put. If you
      * do not specify a registry, the default public registry is assumed.</p>
      */
-    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
+    inline const Aws::String& GetRegistryId() const { return m_registryId; }
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-    inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-    inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-    inline PutImageRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-    inline PutImageRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-    inline PutImageRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    template<typename RegistryIdT = Aws::String>
+    void SetRegistryId(RegistryIdT&& value) { m_registryIdHasBeenSet = true; m_registryId = std::forward<RegistryIdT>(value); }
+    template<typename RegistryIdT = Aws::String>
+    PutImageRequest& WithRegistryId(RegistryIdT&& value) { SetRegistryId(std::forward<RegistryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository where the image is put.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline PutImageRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline PutImageRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline PutImageRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    PutImageRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image manifest that corresponds to the image to be uploaded.</p>
      */
-    inline const Aws::String& GetImageManifest() const{ return m_imageManifest; }
+    inline const Aws::String& GetImageManifest() const { return m_imageManifest; }
     inline bool ImageManifestHasBeenSet() const { return m_imageManifestHasBeenSet; }
-    inline void SetImageManifest(const Aws::String& value) { m_imageManifestHasBeenSet = true; m_imageManifest = value; }
-    inline void SetImageManifest(Aws::String&& value) { m_imageManifestHasBeenSet = true; m_imageManifest = std::move(value); }
-    inline void SetImageManifest(const char* value) { m_imageManifestHasBeenSet = true; m_imageManifest.assign(value); }
-    inline PutImageRequest& WithImageManifest(const Aws::String& value) { SetImageManifest(value); return *this;}
-    inline PutImageRequest& WithImageManifest(Aws::String&& value) { SetImageManifest(std::move(value)); return *this;}
-    inline PutImageRequest& WithImageManifest(const char* value) { SetImageManifest(value); return *this;}
+    template<typename ImageManifestT = Aws::String>
+    void SetImageManifest(ImageManifestT&& value) { m_imageManifestHasBeenSet = true; m_imageManifest = std::forward<ImageManifestT>(value); }
+    template<typename ImageManifestT = Aws::String>
+    PutImageRequest& WithImageManifest(ImageManifestT&& value) { SetImageManifest(std::forward<ImageManifestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +78,12 @@ namespace Model
      * doesn't contain the <code>mediaType</code> field, you must specify the
      * <code>imageManifestMediaType</code> in the request.</p>
      */
-    inline const Aws::String& GetImageManifestMediaType() const{ return m_imageManifestMediaType; }
+    inline const Aws::String& GetImageManifestMediaType() const { return m_imageManifestMediaType; }
     inline bool ImageManifestMediaTypeHasBeenSet() const { return m_imageManifestMediaTypeHasBeenSet; }
-    inline void SetImageManifestMediaType(const Aws::String& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = value; }
-    inline void SetImageManifestMediaType(Aws::String&& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = std::move(value); }
-    inline void SetImageManifestMediaType(const char* value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType.assign(value); }
-    inline PutImageRequest& WithImageManifestMediaType(const Aws::String& value) { SetImageManifestMediaType(value); return *this;}
-    inline PutImageRequest& WithImageManifestMediaType(Aws::String&& value) { SetImageManifestMediaType(std::move(value)); return *this;}
-    inline PutImageRequest& WithImageManifestMediaType(const char* value) { SetImageManifestMediaType(value); return *this;}
+    template<typename ImageManifestMediaTypeT = Aws::String>
+    void SetImageManifestMediaType(ImageManifestMediaTypeT&& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = std::forward<ImageManifestMediaTypeT>(value); }
+    template<typename ImageManifestMediaTypeT = Aws::String>
+    PutImageRequest& WithImageManifestMediaType(ImageManifestMediaTypeT&& value) { SetImageManifestMediaType(std::forward<ImageManifestMediaTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,28 +92,24 @@ namespace Model
      * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
      * (OCI) formats.</p>
      */
-    inline const Aws::String& GetImageTag() const{ return m_imageTag; }
+    inline const Aws::String& GetImageTag() const { return m_imageTag; }
     inline bool ImageTagHasBeenSet() const { return m_imageTagHasBeenSet; }
-    inline void SetImageTag(const Aws::String& value) { m_imageTagHasBeenSet = true; m_imageTag = value; }
-    inline void SetImageTag(Aws::String&& value) { m_imageTagHasBeenSet = true; m_imageTag = std::move(value); }
-    inline void SetImageTag(const char* value) { m_imageTagHasBeenSet = true; m_imageTag.assign(value); }
-    inline PutImageRequest& WithImageTag(const Aws::String& value) { SetImageTag(value); return *this;}
-    inline PutImageRequest& WithImageTag(Aws::String&& value) { SetImageTag(std::move(value)); return *this;}
-    inline PutImageRequest& WithImageTag(const char* value) { SetImageTag(value); return *this;}
+    template<typename ImageTagT = Aws::String>
+    void SetImageTag(ImageTagT&& value) { m_imageTagHasBeenSet = true; m_imageTag = std::forward<ImageTagT>(value); }
+    template<typename ImageTagT = Aws::String>
+    PutImageRequest& WithImageTag(ImageTagT&& value) { SetImageTag(std::forward<ImageTagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image digest of the image manifest that corresponds to the image.</p>
      */
-    inline const Aws::String& GetImageDigest() const{ return m_imageDigest; }
+    inline const Aws::String& GetImageDigest() const { return m_imageDigest; }
     inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
-    inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
-    inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::move(value); }
-    inline void SetImageDigest(const char* value) { m_imageDigestHasBeenSet = true; m_imageDigest.assign(value); }
-    inline PutImageRequest& WithImageDigest(const Aws::String& value) { SetImageDigest(value); return *this;}
-    inline PutImageRequest& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
-    inline PutImageRequest& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
+    template<typename ImageDigestT = Aws::String>
+    void SetImageDigest(ImageDigestT&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::forward<ImageDigestT>(value); }
+    template<typename ImageDigestT = Aws::String>
+    PutImageRequest& WithImageDigest(ImageDigestT&& value) { SetImageDigest(std::forward<ImageDigestT>(value)); return *this;}
     ///@}
   private:
 

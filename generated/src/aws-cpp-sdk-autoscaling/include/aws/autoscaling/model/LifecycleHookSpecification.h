@@ -35,7 +35,7 @@ namespace Model
   class LifecycleHookSpecification
   {
   public:
-    AWS_AUTOSCALING_API LifecycleHookSpecification();
+    AWS_AUTOSCALING_API LifecycleHookSpecification() = default;
     AWS_AUTOSCALING_API LifecycleHookSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API LifecycleHookSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the lifecycle hook.</p>
      */
-    inline const Aws::String& GetLifecycleHookName() const{ return m_lifecycleHookName; }
+    inline const Aws::String& GetLifecycleHookName() const { return m_lifecycleHookName; }
     inline bool LifecycleHookNameHasBeenSet() const { return m_lifecycleHookNameHasBeenSet; }
-    inline void SetLifecycleHookName(const Aws::String& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
-    inline void SetLifecycleHookName(Aws::String&& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = std::move(value); }
-    inline void SetLifecycleHookName(const char* value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName.assign(value); }
-    inline LifecycleHookSpecification& WithLifecycleHookName(const Aws::String& value) { SetLifecycleHookName(value); return *this;}
-    inline LifecycleHookSpecification& WithLifecycleHookName(Aws::String&& value) { SetLifecycleHookName(std::move(value)); return *this;}
-    inline LifecycleHookSpecification& WithLifecycleHookName(const char* value) { SetLifecycleHookName(value); return *this;}
+    template<typename LifecycleHookNameT = Aws::String>
+    void SetLifecycleHookName(LifecycleHookNameT&& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = std::forward<LifecycleHookNameT>(value); }
+    template<typename LifecycleHookNameT = Aws::String>
+    LifecycleHookSpecification& WithLifecycleHookName(LifecycleHookNameT&& value) { SetLifecycleHookName(std::forward<LifecycleHookNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <p>To create a lifecycle hook for scale-in events, specify
      * <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetLifecycleTransition() const{ return m_lifecycleTransition; }
+    inline const Aws::String& GetLifecycleTransition() const { return m_lifecycleTransition; }
     inline bool LifecycleTransitionHasBeenSet() const { return m_lifecycleTransitionHasBeenSet; }
-    inline void SetLifecycleTransition(const Aws::String& value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition = value; }
-    inline void SetLifecycleTransition(Aws::String&& value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition = std::move(value); }
-    inline void SetLifecycleTransition(const char* value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition.assign(value); }
-    inline LifecycleHookSpecification& WithLifecycleTransition(const Aws::String& value) { SetLifecycleTransition(value); return *this;}
-    inline LifecycleHookSpecification& WithLifecycleTransition(Aws::String&& value) { SetLifecycleTransition(std::move(value)); return *this;}
-    inline LifecycleHookSpecification& WithLifecycleTransition(const char* value) { SetLifecycleTransition(value); return *this;}
+    template<typename LifecycleTransitionT = Aws::String>
+    void SetLifecycleTransition(LifecycleTransitionT&& value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition = std::forward<LifecycleTransitionT>(value); }
+    template<typename LifecycleTransitionT = Aws::String>
+    LifecycleHookSpecification& WithLifecycleTransition(LifecycleTransitionT&& value) { SetLifecycleTransition(std::forward<LifecycleTransitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * <p>Additional information that you want to include any time Amazon EC2 Auto
      * Scaling sends a message to the notification target.</p>
      */
-    inline const Aws::String& GetNotificationMetadata() const{ return m_notificationMetadata; }
+    inline const Aws::String& GetNotificationMetadata() const { return m_notificationMetadata; }
     inline bool NotificationMetadataHasBeenSet() const { return m_notificationMetadataHasBeenSet; }
-    inline void SetNotificationMetadata(const Aws::String& value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata = value; }
-    inline void SetNotificationMetadata(Aws::String&& value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata = std::move(value); }
-    inline void SetNotificationMetadata(const char* value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata.assign(value); }
-    inline LifecycleHookSpecification& WithNotificationMetadata(const Aws::String& value) { SetNotificationMetadata(value); return *this;}
-    inline LifecycleHookSpecification& WithNotificationMetadata(Aws::String&& value) { SetNotificationMetadata(std::move(value)); return *this;}
-    inline LifecycleHookSpecification& WithNotificationMetadata(const char* value) { SetNotificationMetadata(value); return *this;}
+    template<typename NotificationMetadataT = Aws::String>
+    void SetNotificationMetadata(NotificationMetadataT&& value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata = std::forward<NotificationMetadataT>(value); }
+    template<typename NotificationMetadataT = Aws::String>
+    LifecycleHookSpecification& WithNotificationMetadata(NotificationMetadataT&& value) { SetNotificationMetadata(std::forward<NotificationMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,7 +90,7 @@ namespace Model
      * out. The range is from <code>30</code> to <code>7200</code> seconds. The default
      * value is <code>3600</code> seconds (1 hour).</p>
      */
-    inline int GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
+    inline int GetHeartbeatTimeout() const { return m_heartbeatTimeout; }
     inline bool HeartbeatTimeoutHasBeenSet() const { return m_heartbeatTimeoutHasBeenSet; }
     inline void SetHeartbeatTimeout(int value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
     inline LifecycleHookSpecification& WithHeartbeatTimeout(int value) { SetHeartbeatTimeout(value); return *this;}
@@ -109,14 +103,12 @@ namespace Model
      * <code>ABANDON</code>.</p> <p>Valid values: <code>CONTINUE</code> |
      * <code>ABANDON</code> </p>
      */
-    inline const Aws::String& GetDefaultResult() const{ return m_defaultResult; }
+    inline const Aws::String& GetDefaultResult() const { return m_defaultResult; }
     inline bool DefaultResultHasBeenSet() const { return m_defaultResultHasBeenSet; }
-    inline void SetDefaultResult(const Aws::String& value) { m_defaultResultHasBeenSet = true; m_defaultResult = value; }
-    inline void SetDefaultResult(Aws::String&& value) { m_defaultResultHasBeenSet = true; m_defaultResult = std::move(value); }
-    inline void SetDefaultResult(const char* value) { m_defaultResultHasBeenSet = true; m_defaultResult.assign(value); }
-    inline LifecycleHookSpecification& WithDefaultResult(const Aws::String& value) { SetDefaultResult(value); return *this;}
-    inline LifecycleHookSpecification& WithDefaultResult(Aws::String&& value) { SetDefaultResult(std::move(value)); return *this;}
-    inline LifecycleHookSpecification& WithDefaultResult(const char* value) { SetDefaultResult(value); return *this;}
+    template<typename DefaultResultT = Aws::String>
+    void SetDefaultResult(DefaultResultT&& value) { m_defaultResultHasBeenSet = true; m_defaultResult = std::forward<DefaultResultT>(value); }
+    template<typename DefaultResultT = Aws::String>
+    LifecycleHookSpecification& WithDefaultResult(DefaultResultT&& value) { SetDefaultResult(std::forward<DefaultResultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,14 +117,12 @@ namespace Model
      * Auto Scaling sends notifications to when an instance is in a wait state for the
      * lifecycle hook. You can specify an Amazon SNS topic or an Amazon SQS queue.</p>
      */
-    inline const Aws::String& GetNotificationTargetARN() const{ return m_notificationTargetARN; }
+    inline const Aws::String& GetNotificationTargetARN() const { return m_notificationTargetARN; }
     inline bool NotificationTargetARNHasBeenSet() const { return m_notificationTargetARNHasBeenSet; }
-    inline void SetNotificationTargetARN(const Aws::String& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = value; }
-    inline void SetNotificationTargetARN(Aws::String&& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = std::move(value); }
-    inline void SetNotificationTargetARN(const char* value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN.assign(value); }
-    inline LifecycleHookSpecification& WithNotificationTargetARN(const Aws::String& value) { SetNotificationTargetARN(value); return *this;}
-    inline LifecycleHookSpecification& WithNotificationTargetARN(Aws::String&& value) { SetNotificationTargetARN(std::move(value)); return *this;}
-    inline LifecycleHookSpecification& WithNotificationTargetARN(const char* value) { SetNotificationTargetARN(value); return *this;}
+    template<typename NotificationTargetARNT = Aws::String>
+    void SetNotificationTargetARN(NotificationTargetARNT&& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = std::forward<NotificationTargetARNT>(value); }
+    template<typename NotificationTargetARNT = Aws::String>
+    LifecycleHookSpecification& WithNotificationTargetARN(NotificationTargetARNT&& value) { SetNotificationTargetARN(std::forward<NotificationTargetARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,14 +134,12 @@ namespace Model
      * Scaling User Guide</i>.</p> <p>Valid only if the notification target is an
      * Amazon SNS topic or an Amazon SQS queue.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline LifecycleHookSpecification& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline LifecycleHookSpecification& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline LifecycleHookSpecification& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    LifecycleHookSpecification& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
   private:
 
@@ -164,7 +152,7 @@ namespace Model
     Aws::String m_notificationMetadata;
     bool m_notificationMetadataHasBeenSet = false;
 
-    int m_heartbeatTimeout;
+    int m_heartbeatTimeout{0};
     bool m_heartbeatTimeoutHasBeenSet = false;
 
     Aws::String m_defaultResult;

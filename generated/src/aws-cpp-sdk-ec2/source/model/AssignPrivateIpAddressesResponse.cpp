@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssignPrivateIpAddressesResponse::AssignPrivateIpAddressesResponse()
-{
-}
-
 AssignPrivateIpAddressesResponse::AssignPrivateIpAddressesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ AssignPrivateIpAddressesResponse& AssignPrivateIpAddressesResponse::operator =(c
     if(!networkInterfaceIdNode.IsNull())
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
+      m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode assignedPrivateIpAddressesNode = resultNode.FirstChild("assignedPrivateIpAddressesSet");
     if(!assignedPrivateIpAddressesNode.IsNull())
     {
       XmlNode assignedPrivateIpAddressesMember = assignedPrivateIpAddressesNode.FirstChild("item");
+      m_assignedPrivateIpAddressesHasBeenSet = !assignedPrivateIpAddressesMember.IsNull();
       while(!assignedPrivateIpAddressesMember.IsNull())
       {
         m_assignedPrivateIpAddresses.push_back(assignedPrivateIpAddressesMember);
@@ -58,6 +56,7 @@ AssignPrivateIpAddressesResponse& AssignPrivateIpAddressesResponse::operator =(c
     if(!assignedIpv4PrefixesNode.IsNull())
     {
       XmlNode assignedIpv4PrefixesMember = assignedIpv4PrefixesNode.FirstChild("item");
+      m_assignedIpv4PrefixesHasBeenSet = !assignedIpv4PrefixesMember.IsNull();
       while(!assignedIpv4PrefixesMember.IsNull())
       {
         m_assignedIpv4Prefixes.push_back(assignedIpv4PrefixesMember);
@@ -72,6 +71,7 @@ AssignPrivateIpAddressesResponse& AssignPrivateIpAddressesResponse::operator =(c
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssignPrivateIpAddressesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

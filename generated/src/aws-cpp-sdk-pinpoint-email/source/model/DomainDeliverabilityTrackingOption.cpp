@@ -18,15 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-DomainDeliverabilityTrackingOption::DomainDeliverabilityTrackingOption() : 
-    m_domainHasBeenSet(false),
-    m_subscriptionStartDateHasBeenSet(false),
-    m_inboxPlacementTrackingOptionHasBeenSet(false)
-{
-}
-
 DomainDeliverabilityTrackingOption::DomainDeliverabilityTrackingOption(JsonView jsonValue)
-  : DomainDeliverabilityTrackingOption()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DomainDeliverabilityTrackingOption& DomainDeliverabilityTrackingOption::operator
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionStartDate"))
   {
     m_subscriptionStartDate = jsonValue.GetDouble("SubscriptionStartDate");
-
     m_subscriptionStartDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InboxPlacementTrackingOption"))
   {
     m_inboxPlacementTrackingOption = jsonValue.GetObject("InboxPlacementTrackingOption");
-
     m_inboxPlacementTrackingOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

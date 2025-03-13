@@ -12,12 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchPutGeofenceRequest::BatchPutGeofenceRequest() : 
-    m_collectionNameHasBeenSet(false),
-    m_entriesHasBeenSet(false)
-{
-}
-
 Aws::String BatchPutGeofenceRequest::SerializePayload() const
 {
   JsonValue payload;

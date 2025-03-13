@@ -18,14 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ExportTaskError::ExportTaskError() : 
-    m_errorDataHasBeenSet(false),
-    m_errorDateTimeHasBeenSet(false)
-{
-}
-
 ExportTaskError::ExportTaskError(JsonView jsonValue)
-  : ExportTaskError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExportTaskError& ExportTaskError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorData"))
   {
     m_errorData = jsonValue.GetObject("errorData");
-
     m_errorDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorDateTime"))
   {
     m_errorDateTime = jsonValue.GetString("errorDateTime");
-
     m_errorDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

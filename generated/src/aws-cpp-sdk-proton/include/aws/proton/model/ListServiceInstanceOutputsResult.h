@@ -29,7 +29,7 @@ namespace Model
   class ListServiceInstanceOutputsResult
   {
   public:
-    AWS_PROTON_API ListServiceInstanceOutputsResult();
+    AWS_PROTON_API ListServiceInstanceOutputsResult() = default;
     AWS_PROTON_API ListServiceInstanceOutputsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API ListServiceInstanceOutputsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>A token that indicates the location of the next output in the array of
      * outputs, after the current requested list of outputs.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListServiceInstanceOutputsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServiceInstanceOutputsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServiceInstanceOutputsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServiceInstanceOutputsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
      */
-    inline const Aws::Vector<Output>& GetOutputs() const{ return m_outputs; }
-    inline void SetOutputs(const Aws::Vector<Output>& value) { m_outputs = value; }
-    inline void SetOutputs(Aws::Vector<Output>&& value) { m_outputs = std::move(value); }
-    inline ListServiceInstanceOutputsResult& WithOutputs(const Aws::Vector<Output>& value) { SetOutputs(value); return *this;}
-    inline ListServiceInstanceOutputsResult& WithOutputs(Aws::Vector<Output>&& value) { SetOutputs(std::move(value)); return *this;}
-    inline ListServiceInstanceOutputsResult& AddOutputs(const Output& value) { m_outputs.push_back(value); return *this; }
-    inline ListServiceInstanceOutputsResult& AddOutputs(Output&& value) { m_outputs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Output>& GetOutputs() const { return m_outputs; }
+    template<typename OutputsT = Aws::Vector<Output>>
+    void SetOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs = std::forward<OutputsT>(value); }
+    template<typename OutputsT = Aws::Vector<Output>>
+    ListServiceInstanceOutputsResult& WithOutputs(OutputsT&& value) { SetOutputs(std::forward<OutputsT>(value)); return *this;}
+    template<typename OutputsT = Output>
+    ListServiceInstanceOutputsResult& AddOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs.emplace_back(std::forward<OutputsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListServiceInstanceOutputsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListServiceInstanceOutputsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListServiceInstanceOutputsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListServiceInstanceOutputsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Output> m_outputs;
+    bool m_outputsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

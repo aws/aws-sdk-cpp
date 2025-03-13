@@ -18,15 +18,7 @@ namespace NetworkFlowMonitor
 namespace Model
 {
 
-WorkloadInsightsTopContributorsDataPoint::WorkloadInsightsTopContributorsDataPoint() : 
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_labelHasBeenSet(false)
-{
-}
-
 WorkloadInsightsTopContributorsDataPoint::WorkloadInsightsTopContributorsDataPoint(JsonView jsonValue)
-  : WorkloadInsightsTopContributorsDataPoint()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ WorkloadInsightsTopContributorsDataPoint& WorkloadInsightsTopContributorsDataPoi
     }
     m_timestampsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -52,14 +43,11 @@ WorkloadInsightsTopContributorsDataPoint& WorkloadInsightsTopContributorsDataPoi
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("label"))
   {
     m_label = jsonValue.GetString("label");
-
     m_labelHasBeenSet = true;
   }
-
   return *this;
 }
 

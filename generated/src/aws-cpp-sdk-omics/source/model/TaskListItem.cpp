@@ -18,29 +18,7 @@ namespace Omics
 namespace Model
 {
 
-TaskListItem::TaskListItem() : 
-    m_taskIdHasBeenSet(false),
-    m_status(TaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_cpus(0),
-    m_cpusHasBeenSet(false),
-    m_cacheHit(false),
-    m_cacheHitHasBeenSet(false),
-    m_cacheS3UriHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_stopTimeHasBeenSet(false),
-    m_gpus(0),
-    m_gpusHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
-{
-}
-
 TaskListItem::TaskListItem(JsonView jsonValue)
-  : TaskListItem()
 {
   *this = jsonValue;
 }
@@ -50,87 +28,63 @@ TaskListItem& TaskListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TaskStatusMapper::GetTaskStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpus"))
   {
     m_cpus = jsonValue.GetInteger("cpus");
-
     m_cpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheHit"))
   {
     m_cacheHit = jsonValue.GetBool("cacheHit");
-
     m_cacheHitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheS3Uri"))
   {
     m_cacheS3Uri = jsonValue.GetString("cacheS3Uri");
-
     m_cacheS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetInteger("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopTime"))
   {
     m_stopTime = jsonValue.GetString("stopTime");
-
     m_stopTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gpus"))
   {
     m_gpus = jsonValue.GetInteger("gpus");
-
     m_gpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

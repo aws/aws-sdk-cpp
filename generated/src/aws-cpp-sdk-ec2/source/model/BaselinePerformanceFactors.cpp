@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-BaselinePerformanceFactors::BaselinePerformanceFactors() : 
-    m_cpuHasBeenSet(false)
-{
-}
-
 BaselinePerformanceFactors::BaselinePerformanceFactors(const XmlNode& xmlNode)
-  : BaselinePerformanceFactors()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ BaselinePerformanceFactors& BaselinePerformanceFactors::operator =(const XmlNode
     {
       m_cpu = cpuNode;
       m_cpuHasBeenSet = true;
+       m_cpuHasBeenSet = true;
     }
   }
 

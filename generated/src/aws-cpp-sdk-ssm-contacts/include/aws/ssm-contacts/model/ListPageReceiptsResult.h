@@ -29,7 +29,7 @@ namespace Model
   class ListPageReceiptsResult
   {
   public:
-    AWS_SSMCONTACTS_API ListPageReceiptsResult();
+    AWS_SSMCONTACTS_API ListPageReceiptsResult() = default;
     AWS_SSMCONTACTS_API ListPageReceiptsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSMCONTACTS_API ListPageReceiptsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The pagination token to continue to the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPageReceiptsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPageReceiptsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPageReceiptsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPageReceiptsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of each acknowledgement.</p>
      */
-    inline const Aws::Vector<Receipt>& GetReceipts() const{ return m_receipts; }
-    inline void SetReceipts(const Aws::Vector<Receipt>& value) { m_receipts = value; }
-    inline void SetReceipts(Aws::Vector<Receipt>&& value) { m_receipts = std::move(value); }
-    inline ListPageReceiptsResult& WithReceipts(const Aws::Vector<Receipt>& value) { SetReceipts(value); return *this;}
-    inline ListPageReceiptsResult& WithReceipts(Aws::Vector<Receipt>&& value) { SetReceipts(std::move(value)); return *this;}
-    inline ListPageReceiptsResult& AddReceipts(const Receipt& value) { m_receipts.push_back(value); return *this; }
-    inline ListPageReceiptsResult& AddReceipts(Receipt&& value) { m_receipts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Receipt>& GetReceipts() const { return m_receipts; }
+    template<typename ReceiptsT = Aws::Vector<Receipt>>
+    void SetReceipts(ReceiptsT&& value) { m_receiptsHasBeenSet = true; m_receipts = std::forward<ReceiptsT>(value); }
+    template<typename ReceiptsT = Aws::Vector<Receipt>>
+    ListPageReceiptsResult& WithReceipts(ReceiptsT&& value) { SetReceipts(std::forward<ReceiptsT>(value)); return *this;}
+    template<typename ReceiptsT = Receipt>
+    ListPageReceiptsResult& AddReceipts(ReceiptsT&& value) { m_receiptsHasBeenSet = true; m_receipts.emplace_back(std::forward<ReceiptsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPageReceiptsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPageReceiptsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPageReceiptsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPageReceiptsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Receipt> m_receipts;
+    bool m_receiptsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

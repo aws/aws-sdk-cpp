@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ReferenceLineStyleConfiguration::ReferenceLineStyleConfiguration() : 
-    m_pattern(ReferenceLinePatternType::NOT_SET),
-    m_patternHasBeenSet(false),
-    m_colorHasBeenSet(false)
-{
-}
-
 ReferenceLineStyleConfiguration::ReferenceLineStyleConfiguration(JsonView jsonValue)
-  : ReferenceLineStyleConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ReferenceLineStyleConfiguration& ReferenceLineStyleConfiguration::operator =(Jso
   if(jsonValue.ValueExists("Pattern"))
   {
     m_pattern = ReferenceLinePatternTypeMapper::GetReferenceLinePatternTypeForName(jsonValue.GetString("Pattern"));
-
     m_patternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   return *this;
 }
 

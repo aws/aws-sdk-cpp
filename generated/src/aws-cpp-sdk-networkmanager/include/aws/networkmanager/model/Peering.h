@@ -37,7 +37,7 @@ namespace Model
   class Peering
   {
   public:
-    AWS_NETWORKMANAGER_API Peering();
+    AWS_NETWORKMANAGER_API Peering() = default;
     AWS_NETWORKMANAGER_API Peering(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Peering& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,148 +47,132 @@ namespace Model
     /**
      * <p>The ID of the core network for the peering request.</p>
      */
-    inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
+    inline const Aws::String& GetCoreNetworkId() const { return m_coreNetworkId; }
     inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
-    inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
-    inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
-    inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
-    inline Peering& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
-    inline Peering& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
-    inline Peering& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
+    template<typename CoreNetworkIdT = Aws::String>
+    void SetCoreNetworkId(CoreNetworkIdT&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::forward<CoreNetworkIdT>(value); }
+    template<typename CoreNetworkIdT = Aws::String>
+    Peering& WithCoreNetworkId(CoreNetworkIdT&& value) { SetCoreNetworkId(std::forward<CoreNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of a core network.</p>
      */
-    inline const Aws::String& GetCoreNetworkArn() const{ return m_coreNetworkArn; }
+    inline const Aws::String& GetCoreNetworkArn() const { return m_coreNetworkArn; }
     inline bool CoreNetworkArnHasBeenSet() const { return m_coreNetworkArnHasBeenSet; }
-    inline void SetCoreNetworkArn(const Aws::String& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = value; }
-    inline void SetCoreNetworkArn(Aws::String&& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = std::move(value); }
-    inline void SetCoreNetworkArn(const char* value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn.assign(value); }
-    inline Peering& WithCoreNetworkArn(const Aws::String& value) { SetCoreNetworkArn(value); return *this;}
-    inline Peering& WithCoreNetworkArn(Aws::String&& value) { SetCoreNetworkArn(std::move(value)); return *this;}
-    inline Peering& WithCoreNetworkArn(const char* value) { SetCoreNetworkArn(value); return *this;}
+    template<typename CoreNetworkArnT = Aws::String>
+    void SetCoreNetworkArn(CoreNetworkArnT&& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = std::forward<CoreNetworkArnT>(value); }
+    template<typename CoreNetworkArnT = Aws::String>
+    Peering& WithCoreNetworkArn(CoreNetworkArnT&& value) { SetCoreNetworkArn(std::forward<CoreNetworkArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the peering attachment. </p>
      */
-    inline const Aws::String& GetPeeringId() const{ return m_peeringId; }
+    inline const Aws::String& GetPeeringId() const { return m_peeringId; }
     inline bool PeeringIdHasBeenSet() const { return m_peeringIdHasBeenSet; }
-    inline void SetPeeringId(const Aws::String& value) { m_peeringIdHasBeenSet = true; m_peeringId = value; }
-    inline void SetPeeringId(Aws::String&& value) { m_peeringIdHasBeenSet = true; m_peeringId = std::move(value); }
-    inline void SetPeeringId(const char* value) { m_peeringIdHasBeenSet = true; m_peeringId.assign(value); }
-    inline Peering& WithPeeringId(const Aws::String& value) { SetPeeringId(value); return *this;}
-    inline Peering& WithPeeringId(Aws::String&& value) { SetPeeringId(std::move(value)); return *this;}
-    inline Peering& WithPeeringId(const char* value) { SetPeeringId(value); return *this;}
+    template<typename PeeringIdT = Aws::String>
+    void SetPeeringId(PeeringIdT&& value) { m_peeringIdHasBeenSet = true; m_peeringId = std::forward<PeeringIdT>(value); }
+    template<typename PeeringIdT = Aws::String>
+    Peering& WithPeeringId(PeeringIdT&& value) { SetPeeringId(std::forward<PeeringIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the account owner.</p>
      */
-    inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
+    inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
     inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
-    inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
-    inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::move(value); }
-    inline void SetOwnerAccountId(const char* value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId.assign(value); }
-    inline Peering& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
-    inline Peering& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
-    inline Peering& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
+    template<typename OwnerAccountIdT = Aws::String>
+    void SetOwnerAccountId(OwnerAccountIdT&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::forward<OwnerAccountIdT>(value); }
+    template<typename OwnerAccountIdT = Aws::String>
+    Peering& WithOwnerAccountId(OwnerAccountIdT&& value) { SetOwnerAccountId(std::forward<OwnerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
      */
-    inline const PeeringType& GetPeeringType() const{ return m_peeringType; }
+    inline PeeringType GetPeeringType() const { return m_peeringType; }
     inline bool PeeringTypeHasBeenSet() const { return m_peeringTypeHasBeenSet; }
-    inline void SetPeeringType(const PeeringType& value) { m_peeringTypeHasBeenSet = true; m_peeringType = value; }
-    inline void SetPeeringType(PeeringType&& value) { m_peeringTypeHasBeenSet = true; m_peeringType = std::move(value); }
-    inline Peering& WithPeeringType(const PeeringType& value) { SetPeeringType(value); return *this;}
-    inline Peering& WithPeeringType(PeeringType&& value) { SetPeeringType(std::move(value)); return *this;}
+    inline void SetPeeringType(PeeringType value) { m_peeringTypeHasBeenSet = true; m_peeringType = value; }
+    inline Peering& WithPeeringType(PeeringType value) { SetPeeringType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the peering connection. </p>
      */
-    inline const PeeringState& GetState() const{ return m_state; }
+    inline PeeringState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const PeeringState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(PeeringState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Peering& WithState(const PeeringState& value) { SetState(value); return *this;}
-    inline Peering& WithState(PeeringState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(PeeringState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Peering& WithState(PeeringState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The edge location for the peer.</p>
      */
-    inline const Aws::String& GetEdgeLocation() const{ return m_edgeLocation; }
+    inline const Aws::String& GetEdgeLocation() const { return m_edgeLocation; }
     inline bool EdgeLocationHasBeenSet() const { return m_edgeLocationHasBeenSet; }
-    inline void SetEdgeLocation(const Aws::String& value) { m_edgeLocationHasBeenSet = true; m_edgeLocation = value; }
-    inline void SetEdgeLocation(Aws::String&& value) { m_edgeLocationHasBeenSet = true; m_edgeLocation = std::move(value); }
-    inline void SetEdgeLocation(const char* value) { m_edgeLocationHasBeenSet = true; m_edgeLocation.assign(value); }
-    inline Peering& WithEdgeLocation(const Aws::String& value) { SetEdgeLocation(value); return *this;}
-    inline Peering& WithEdgeLocation(Aws::String&& value) { SetEdgeLocation(std::move(value)); return *this;}
-    inline Peering& WithEdgeLocation(const char* value) { SetEdgeLocation(value); return *this;}
+    template<typename EdgeLocationT = Aws::String>
+    void SetEdgeLocation(EdgeLocationT&& value) { m_edgeLocationHasBeenSet = true; m_edgeLocation = std::forward<EdgeLocationT>(value); }
+    template<typename EdgeLocationT = Aws::String>
+    Peering& WithEdgeLocation(EdgeLocationT&& value) { SetEdgeLocation(std::forward<EdgeLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource ARN of the peer.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline Peering& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline Peering& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline Peering& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    Peering& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of key-value tags associated with the peering.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Peering& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline Peering& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline Peering& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline Peering& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    Peering& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    Peering& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the attachment peer was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline Peering& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline Peering& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    Peering& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the error associated with the Connect peer request.</p>
      */
-    inline const Aws::Vector<PeeringError>& GetLastModificationErrors() const{ return m_lastModificationErrors; }
+    inline const Aws::Vector<PeeringError>& GetLastModificationErrors() const { return m_lastModificationErrors; }
     inline bool LastModificationErrorsHasBeenSet() const { return m_lastModificationErrorsHasBeenSet; }
-    inline void SetLastModificationErrors(const Aws::Vector<PeeringError>& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors = value; }
-    inline void SetLastModificationErrors(Aws::Vector<PeeringError>&& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors = std::move(value); }
-    inline Peering& WithLastModificationErrors(const Aws::Vector<PeeringError>& value) { SetLastModificationErrors(value); return *this;}
-    inline Peering& WithLastModificationErrors(Aws::Vector<PeeringError>&& value) { SetLastModificationErrors(std::move(value)); return *this;}
-    inline Peering& AddLastModificationErrors(const PeeringError& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors.push_back(value); return *this; }
-    inline Peering& AddLastModificationErrors(PeeringError&& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors.push_back(std::move(value)); return *this; }
+    template<typename LastModificationErrorsT = Aws::Vector<PeeringError>>
+    void SetLastModificationErrors(LastModificationErrorsT&& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors = std::forward<LastModificationErrorsT>(value); }
+    template<typename LastModificationErrorsT = Aws::Vector<PeeringError>>
+    Peering& WithLastModificationErrors(LastModificationErrorsT&& value) { SetLastModificationErrors(std::forward<LastModificationErrorsT>(value)); return *this;}
+    template<typename LastModificationErrorsT = PeeringError>
+    Peering& AddLastModificationErrors(LastModificationErrorsT&& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors.emplace_back(std::forward<LastModificationErrorsT>(value)); return *this; }
     ///@}
   private:
 
@@ -204,10 +188,10 @@ namespace Model
     Aws::String m_ownerAccountId;
     bool m_ownerAccountIdHasBeenSet = false;
 
-    PeeringType m_peeringType;
+    PeeringType m_peeringType{PeeringType::NOT_SET};
     bool m_peeringTypeHasBeenSet = false;
 
-    PeeringState m_state;
+    PeeringState m_state{PeeringState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_edgeLocation;
@@ -219,7 +203,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::Vector<PeeringError> m_lastModificationErrors;

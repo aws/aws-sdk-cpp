@@ -12,14 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAlertsRequest::ListAlertsRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAlertsRequest::SerializePayload() const
 {
   JsonValue payload;

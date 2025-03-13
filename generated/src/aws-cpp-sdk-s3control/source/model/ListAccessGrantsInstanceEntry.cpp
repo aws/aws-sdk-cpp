@@ -20,17 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ListAccessGrantsInstanceEntry::ListAccessGrantsInstanceEntry() : 
-    m_accessGrantsInstanceIdHasBeenSet(false),
-    m_accessGrantsInstanceArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_identityCenterInstanceArnHasBeenSet(false),
-    m_identityCenterApplicationArnHasBeenSet(false)
-{
-}
-
 ListAccessGrantsInstanceEntry::ListAccessGrantsInstanceEntry(const XmlNode& xmlNode)
-  : ListAccessGrantsInstanceEntry()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ ListAccessGrantsInstanceEntry& ListAccessGrantsInstanceEntry::operator =(const X
     {
       m_accessGrantsInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantsInstanceIdNode.GetText());
       m_accessGrantsInstanceIdHasBeenSet = true;
+       m_accessGrantsInstanceIdHasBeenSet = true;
     }
     XmlNode accessGrantsInstanceArnNode = resultNode.FirstChild("AccessGrantsInstanceArn");
     if(!accessGrantsInstanceArnNode.IsNull())
     {
       m_accessGrantsInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantsInstanceArnNode.GetText());
       m_accessGrantsInstanceArnHasBeenSet = true;
+       m_accessGrantsInstanceArnHasBeenSet = true;
     }
     XmlNode createdAtNode = resultNode.FirstChild("CreatedAt");
     if(!createdAtNode.IsNull())
     {
       m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAtHasBeenSet = true;
+       m_createdAtHasBeenSet = true;
     }
     XmlNode identityCenterInstanceArnNode = resultNode.FirstChild("IdentityCenterInstanceArn");
     if(!identityCenterInstanceArnNode.IsNull())
     {
       m_identityCenterInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterInstanceArnNode.GetText());
       m_identityCenterInstanceArnHasBeenSet = true;
+       m_identityCenterInstanceArnHasBeenSet = true;
     }
     XmlNode identityCenterApplicationArnNode = resultNode.FirstChild("IdentityCenterApplicationArn");
     if(!identityCenterApplicationArnNode.IsNull())
     {
       m_identityCenterApplicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(identityCenterApplicationArnNode.GetText());
       m_identityCenterApplicationArnHasBeenSet = true;
+       m_identityCenterApplicationArnHasBeenSet = true;
     }
   }
 

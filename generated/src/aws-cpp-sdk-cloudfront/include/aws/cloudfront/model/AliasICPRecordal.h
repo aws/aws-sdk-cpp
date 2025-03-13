@@ -39,7 +39,7 @@ namespace Model
   class AliasICPRecordal
   {
   public:
-    AWS_CLOUDFRONT_API AliasICPRecordal();
+    AWS_CLOUDFRONT_API AliasICPRecordal() = default;
     AWS_CLOUDFRONT_API AliasICPRecordal(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API AliasICPRecordal& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>A domain name associated with a distribution.</p>
      */
-    inline const Aws::String& GetCNAME() const{ return m_cNAME; }
+    inline const Aws::String& GetCNAME() const { return m_cNAME; }
     inline bool CNAMEHasBeenSet() const { return m_cNAMEHasBeenSet; }
-    inline void SetCNAME(const Aws::String& value) { m_cNAMEHasBeenSet = true; m_cNAME = value; }
-    inline void SetCNAME(Aws::String&& value) { m_cNAMEHasBeenSet = true; m_cNAME = std::move(value); }
-    inline void SetCNAME(const char* value) { m_cNAMEHasBeenSet = true; m_cNAME.assign(value); }
-    inline AliasICPRecordal& WithCNAME(const Aws::String& value) { SetCNAME(value); return *this;}
-    inline AliasICPRecordal& WithCNAME(Aws::String&& value) { SetCNAME(std::move(value)); return *this;}
-    inline AliasICPRecordal& WithCNAME(const char* value) { SetCNAME(value); return *this;}
+    template<typename CNAMET = Aws::String>
+    void SetCNAME(CNAMET&& value) { m_cNAMEHasBeenSet = true; m_cNAME = std::forward<CNAMET>(value); }
+    template<typename CNAMET = Aws::String>
+    AliasICPRecordal& WithCNAME(CNAMET&& value) { SetCNAME(std::forward<CNAMET>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,19 +75,17 @@ namespace Model
      * to see if the error is resolved in which case CloudFront returns an APPROVED or
      * SUSPENDED status.</p> </li> </ul>
      */
-    inline const ICPRecordalStatus& GetICPRecordalStatus() const{ return m_iCPRecordalStatus; }
+    inline ICPRecordalStatus GetICPRecordalStatus() const { return m_iCPRecordalStatus; }
     inline bool ICPRecordalStatusHasBeenSet() const { return m_iCPRecordalStatusHasBeenSet; }
-    inline void SetICPRecordalStatus(const ICPRecordalStatus& value) { m_iCPRecordalStatusHasBeenSet = true; m_iCPRecordalStatus = value; }
-    inline void SetICPRecordalStatus(ICPRecordalStatus&& value) { m_iCPRecordalStatusHasBeenSet = true; m_iCPRecordalStatus = std::move(value); }
-    inline AliasICPRecordal& WithICPRecordalStatus(const ICPRecordalStatus& value) { SetICPRecordalStatus(value); return *this;}
-    inline AliasICPRecordal& WithICPRecordalStatus(ICPRecordalStatus&& value) { SetICPRecordalStatus(std::move(value)); return *this;}
+    inline void SetICPRecordalStatus(ICPRecordalStatus value) { m_iCPRecordalStatusHasBeenSet = true; m_iCPRecordalStatus = value; }
+    inline AliasICPRecordal& WithICPRecordalStatus(ICPRecordalStatus value) { SetICPRecordalStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_cNAME;
     bool m_cNAMEHasBeenSet = false;
 
-    ICPRecordalStatus m_iCPRecordalStatus;
+    ICPRecordalStatus m_iCPRecordalStatus{ICPRecordalStatus::NOT_SET};
     bool m_iCPRecordalStatusHasBeenSet = false;
   };
 

@@ -18,24 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-CollaborationPrivacyBudgetTemplate::CollaborationPrivacyBudgetTemplate() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_privacyBudgetType(PrivacyBudgetType::NOT_SET),
-    m_privacyBudgetTypeHasBeenSet(false),
-    m_autoRefresh(PrivacyBudgetTemplateAutoRefresh::NOT_SET),
-    m_autoRefreshHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 CollaborationPrivacyBudgetTemplate::CollaborationPrivacyBudgetTemplate(JsonView jsonValue)
-  : CollaborationPrivacyBudgetTemplate()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ CollaborationPrivacyBudgetTemplate& CollaborationPrivacyBudgetTemplate::operator
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationId"))
   {
     m_collaborationId = jsonValue.GetString("collaborationId");
-
     m_collaborationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationArn"))
   {
     m_collaborationArn = jsonValue.GetString("collaborationArn");
-
     m_collaborationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creatorAccountId"))
   {
     m_creatorAccountId = jsonValue.GetString("creatorAccountId");
-
     m_creatorAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privacyBudgetType"))
   {
     m_privacyBudgetType = PrivacyBudgetTypeMapper::GetPrivacyBudgetTypeForName(jsonValue.GetString("privacyBudgetType"));
-
     m_privacyBudgetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoRefresh"))
   {
     m_autoRefresh = PrivacyBudgetTemplateAutoRefreshMapper::GetPrivacyBudgetTemplateAutoRefreshForName(jsonValue.GetString("autoRefresh"));
-
     m_autoRefreshHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     m_parameters = jsonValue.GetObject("parameters");
-
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

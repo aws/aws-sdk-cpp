@@ -18,14 +18,7 @@ namespace EKSAuth
 namespace Model
 {
 
-Subject::Subject() : 
-    m_namespaceHasBeenSet(false),
-    m_serviceAccountHasBeenSet(false)
-{
-}
-
 Subject::Subject(JsonView jsonValue)
-  : Subject()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Subject& Subject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceAccount"))
   {
     m_serviceAccount = jsonValue.GetString("serviceAccount");
-
     m_serviceAccountHasBeenSet = true;
   }
-
   return *this;
 }
 

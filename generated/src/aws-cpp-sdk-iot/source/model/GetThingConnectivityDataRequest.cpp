@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetThingConnectivityDataRequest::GetThingConnectivityDataRequest() : 
-    m_thingNameHasBeenSet(false)
-{
-}
-
 Aws::String GetThingConnectivityDataRequest::SerializePayload() const
 {
   return {};

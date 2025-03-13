@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AssetTargetNameMap::AssetTargetNameMap() : 
-    m_assetIdHasBeenSet(false),
-    m_targetNameHasBeenSet(false)
-{
-}
-
 AssetTargetNameMap::AssetTargetNameMap(JsonView jsonValue)
-  : AssetTargetNameMap()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AssetTargetNameMap& AssetTargetNameMap::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetName"))
   {
     m_targetName = jsonValue.GetString("targetName");
-
     m_targetNameHasBeenSet = true;
   }
-
   return *this;
 }
 

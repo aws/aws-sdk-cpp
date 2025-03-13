@@ -18,13 +18,7 @@ namespace Omics
 namespace Model
 {
 
-TsvOptions::TsvOptions() : 
-    m_readOptionsHasBeenSet(false)
-{
-}
-
 TsvOptions::TsvOptions(JsonView jsonValue)
-  : TsvOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TsvOptions& TsvOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("readOptions"))
   {
     m_readOptions = jsonValue.GetObject("readOptions");
-
     m_readOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

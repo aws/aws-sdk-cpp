@@ -12,12 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLicenseRequest::DeleteLicenseRequest() : 
-    m_licenseArnHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLicenseRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-UiTemplateInfo::UiTemplateInfo() : 
-    m_urlHasBeenSet(false),
-    m_contentSha256HasBeenSet(false)
-{
-}
-
 UiTemplateInfo::UiTemplateInfo(JsonView jsonValue)
-  : UiTemplateInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UiTemplateInfo& UiTemplateInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentSha256"))
   {
     m_contentSha256 = jsonValue.GetString("ContentSha256");
-
     m_contentSha256HasBeenSet = true;
   }
-
   return *this;
 }
 

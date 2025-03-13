@@ -29,7 +29,7 @@ namespace Model
   class VolumeDetail
   {
   public:
-    AWS_EC2_API VolumeDetail();
+    AWS_EC2_API VolumeDetail() = default;
     AWS_EC2_API VolumeDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VolumeDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>The size of the volume, in GiB.</p>
      */
-    inline long long GetSize() const{ return m_size; }
+    inline long long GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
     inline VolumeDetail& WithSize(long long value) { SetSize(value); return *this;}
     ///@}
   private:
 
-    long long m_size;
+    long long m_size{0};
     bool m_sizeHasBeenSet = false;
   };
 

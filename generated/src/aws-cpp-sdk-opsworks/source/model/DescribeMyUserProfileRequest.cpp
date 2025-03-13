@@ -12,10 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMyUserProfileRequest::DescribeMyUserProfileRequest()
-{
-}
-
 Aws::String DescribeMyUserProfileRequest::SerializePayload() const
 {
   return "{}";

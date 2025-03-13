@@ -18,26 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-Alert::Alert() : 
-    m_actionHasBeenSet(false),
-    m_alertDescriptionHasBeenSet(false),
-    m_alertArnHasBeenSet(false),
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_alertNameHasBeenSet(false),
-    m_alertSensitivityThreshold(0),
-    m_alertSensitivityThresholdHasBeenSet(false),
-    m_alertType(AlertType::NOT_SET),
-    m_alertTypeHasBeenSet(false),
-    m_alertStatus(AlertStatus::NOT_SET),
-    m_alertStatusHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_alertFiltersHasBeenSet(false)
-{
-}
-
 Alert::Alert(JsonView jsonValue)
-  : Alert()
 {
   *this = jsonValue;
 }
@@ -47,80 +28,58 @@ Alert& Alert::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetObject("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlertDescription"))
   {
     m_alertDescription = jsonValue.GetString("AlertDescription");
-
     m_alertDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlertArn"))
   {
     m_alertArn = jsonValue.GetString("AlertArn");
-
     m_alertArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyDetectorArn"))
   {
     m_anomalyDetectorArn = jsonValue.GetString("AnomalyDetectorArn");
-
     m_anomalyDetectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlertName"))
   {
     m_alertName = jsonValue.GetString("AlertName");
-
     m_alertNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlertSensitivityThreshold"))
   {
     m_alertSensitivityThreshold = jsonValue.GetInteger("AlertSensitivityThreshold");
-
     m_alertSensitivityThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlertType"))
   {
     m_alertType = AlertTypeMapper::GetAlertTypeForName(jsonValue.GetString("AlertType"));
-
     m_alertTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlertStatus"))
   {
     m_alertStatus = AlertStatusMapper::GetAlertStatusForName(jsonValue.GetString("AlertStatus"));
-
     m_alertStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlertFilters"))
   {
     m_alertFilters = jsonValue.GetObject("AlertFilters");
-
     m_alertFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

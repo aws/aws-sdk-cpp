@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateComputeQuotaResult::UpdateComputeQuotaResult() : 
-    m_computeQuotaVersion(0)
-{
-}
-
 UpdateComputeQuotaResult::UpdateComputeQuotaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateComputeQuotaResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ UpdateComputeQuotaResult& UpdateComputeQuotaResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ComputeQuotaArn"))
   {
     m_computeQuotaArn = jsonValue.GetString("ComputeQuotaArn");
-
+    m_computeQuotaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeQuotaVersion"))
   {
     m_computeQuotaVersion = jsonValue.GetInteger("ComputeQuotaVersion");
-
+    m_computeQuotaVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

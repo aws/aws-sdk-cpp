@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EdgeModelStat::EdgeModelStat() : 
-    m_modelNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_offlineDeviceCount(0),
-    m_offlineDeviceCountHasBeenSet(false),
-    m_connectedDeviceCount(0),
-    m_connectedDeviceCountHasBeenSet(false),
-    m_activeDeviceCount(0),
-    m_activeDeviceCountHasBeenSet(false),
-    m_samplingDeviceCount(0),
-    m_samplingDeviceCountHasBeenSet(false)
-{
-}
-
 EdgeModelStat::EdgeModelStat(JsonView jsonValue)
-  : EdgeModelStat()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ EdgeModelStat& EdgeModelStat::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelVersion"))
   {
     m_modelVersion = jsonValue.GetString("ModelVersion");
-
     m_modelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OfflineDeviceCount"))
   {
     m_offlineDeviceCount = jsonValue.GetInt64("OfflineDeviceCount");
-
     m_offlineDeviceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectedDeviceCount"))
   {
     m_connectedDeviceCount = jsonValue.GetInt64("ConnectedDeviceCount");
-
     m_connectedDeviceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveDeviceCount"))
   {
     m_activeDeviceCount = jsonValue.GetInt64("ActiveDeviceCount");
-
     m_activeDeviceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SamplingDeviceCount"))
   {
     m_samplingDeviceCount = jsonValue.GetInt64("SamplingDeviceCount");
-
     m_samplingDeviceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

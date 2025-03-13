@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-ServiceNowMetadata::ServiceNowMetadata()
-{
-}
-
 ServiceNowMetadata::ServiceNowMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

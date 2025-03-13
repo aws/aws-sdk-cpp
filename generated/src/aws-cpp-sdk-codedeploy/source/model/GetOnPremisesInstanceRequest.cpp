@@ -12,11 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOnPremisesInstanceRequest::GetOnPremisesInstanceRequest() : 
-    m_instanceNameHasBeenSet(false)
-{
-}
-
 Aws::String GetOnPremisesInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

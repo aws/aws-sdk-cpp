@@ -32,7 +32,7 @@ namespace Model
   class CalculatedMeasureField
   {
   public:
-    AWS_QUICKSIGHT_API CalculatedMeasureField();
+    AWS_QUICKSIGHT_API CalculatedMeasureField() = default;
     AWS_QUICKSIGHT_API CalculatedMeasureField(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CalculatedMeasureField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The custom field ID.</p>
      */
-    inline const Aws::String& GetFieldId() const{ return m_fieldId; }
+    inline const Aws::String& GetFieldId() const { return m_fieldId; }
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-    inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-    inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-    inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-    inline CalculatedMeasureField& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-    inline CalculatedMeasureField& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-    inline CalculatedMeasureField& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    template<typename FieldIdT = Aws::String>
+    void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
+    template<typename FieldIdT = Aws::String>
+    CalculatedMeasureField& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The expression in the table calculation.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline CalculatedMeasureField& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline CalculatedMeasureField& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline CalculatedMeasureField& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    CalculatedMeasureField& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
   private:
 

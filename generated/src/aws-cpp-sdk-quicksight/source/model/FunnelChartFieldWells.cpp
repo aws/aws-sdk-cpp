@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FunnelChartFieldWells::FunnelChartFieldWells() : 
-    m_funnelChartAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 FunnelChartFieldWells::FunnelChartFieldWells(JsonView jsonValue)
-  : FunnelChartFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FunnelChartFieldWells& FunnelChartFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FunnelChartAggregatedFieldWells"))
   {
     m_funnelChartAggregatedFieldWells = jsonValue.GetObject("FunnelChartAggregatedFieldWells");
-
     m_funnelChartAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

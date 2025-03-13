@@ -21,7 +21,7 @@ namespace Model
   class DetachPolicyRequest : public OrganizationsRequest
   {
   public:
-    AWS_ORGANIZATIONS_API DetachPolicyRequest();
+    AWS_ORGANIZATIONS_API DetachPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * ID string requires "p-" followed by from 8 to 128 lowercase or uppercase
      * letters, digits, or the underscore character (_).</p>
      */
-    inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+    inline const Aws::String& GetPolicyId() const { return m_policyId; }
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
-    inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
-    inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
-    inline DetachPolicyRequest& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-    inline DetachPolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-    inline DetachPolicyRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+    template<typename PolicyIdT = Aws::String>
+    void SetPolicyId(PolicyIdT&& value) { m_policyIdHasBeenSet = true; m_policyId = std::forward<PolicyIdT>(value); }
+    template<typename PolicyIdT = Aws::String>
+    DetachPolicyRequest& WithPolicyId(PolicyIdT&& value) { SetPolicyId(std::forward<PolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * of the root that the OU is in). This string is followed by a second "-" dash and
      * from 8 to 32 additional lowercase letters or digits.</p> </li> </ul>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-    inline DetachPolicyRequest& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline DetachPolicyRequest& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline DetachPolicyRequest& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    DetachPolicyRequest& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
   private:
 

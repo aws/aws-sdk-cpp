@@ -31,7 +31,7 @@ namespace Model
   class InstanceIpv6Address
   {
   public:
-    AWS_EC2_API InstanceIpv6Address();
+    AWS_EC2_API InstanceIpv6Address() = default;
     AWS_EC2_API InstanceIpv6Address(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceIpv6Address& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The IPv6 address.</p>
      */
-    inline const Aws::String& GetIpv6Address() const{ return m_ipv6Address; }
+    inline const Aws::String& GetIpv6Address() const { return m_ipv6Address; }
     inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
-    inline void SetIpv6Address(const Aws::String& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = value; }
-    inline void SetIpv6Address(Aws::String&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::move(value); }
-    inline void SetIpv6Address(const char* value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address.assign(value); }
-    inline InstanceIpv6Address& WithIpv6Address(const Aws::String& value) { SetIpv6Address(value); return *this;}
-    inline InstanceIpv6Address& WithIpv6Address(Aws::String&& value) { SetIpv6Address(std::move(value)); return *this;}
-    inline InstanceIpv6Address& WithIpv6Address(const char* value) { SetIpv6Address(value); return *this;}
+    template<typename Ipv6AddressT = Aws::String>
+    void SetIpv6Address(Ipv6AddressT&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::forward<Ipv6AddressT>(value); }
+    template<typename Ipv6AddressT = Aws::String>
+    InstanceIpv6Address& WithIpv6Address(Ipv6AddressT&& value) { SetIpv6Address(std::forward<Ipv6AddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * terminated or the network interface is detached. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
      */
-    inline bool GetIsPrimaryIpv6() const{ return m_isPrimaryIpv6; }
+    inline bool GetIsPrimaryIpv6() const { return m_isPrimaryIpv6; }
     inline bool IsPrimaryIpv6HasBeenSet() const { return m_isPrimaryIpv6HasBeenSet; }
     inline void SetIsPrimaryIpv6(bool value) { m_isPrimaryIpv6HasBeenSet = true; m_isPrimaryIpv6 = value; }
     inline InstanceIpv6Address& WithIsPrimaryIpv6(bool value) { SetIsPrimaryIpv6(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_ipv6Address;
     bool m_ipv6AddressHasBeenSet = false;
 
-    bool m_isPrimaryIpv6;
+    bool m_isPrimaryIpv6{false};
     bool m_isPrimaryIpv6HasBeenSet = false;
   };
 

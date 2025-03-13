@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSearchResultExportJobResult::GetSearchResultExportJobResult() : 
-    m_status(ExportJobStatus::NOT_SET)
-{
-}
-
 GetSearchResultExportJobResult::GetSearchResultExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSearchResultExportJobResult()
 {
   *this = result;
 }
@@ -34,57 +28,50 @@ GetSearchResultExportJobResult& GetSearchResultExportJobResult::operator =(const
   if(jsonValue.ValueExists("ExportJobIdentifier"))
   {
     m_exportJobIdentifier = jsonValue.GetString("ExportJobIdentifier");
-
+    m_exportJobIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportJobArn"))
   {
     m_exportJobArn = jsonValue.GetString("ExportJobArn");
-
+    m_exportJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ExportJobStatusMapper::GetExportJobStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionTime"))
   {
     m_completionTime = jsonValue.GetDouble("CompletionTime");
-
+    m_completionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportSpecification"))
   {
     m_exportSpecification = jsonValue.GetObject("ExportSpecification");
-
+    m_exportSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SearchJobArn"))
   {
     m_searchJobArn = jsonValue.GetString("SearchJobArn");
-
+    m_searchJobArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

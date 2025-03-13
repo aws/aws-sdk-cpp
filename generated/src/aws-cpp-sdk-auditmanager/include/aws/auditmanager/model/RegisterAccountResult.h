@@ -28,7 +28,7 @@ namespace Model
   class RegisterAccountResult
   {
   public:
-    AWS_AUDITMANAGER_API RegisterAccountResult();
+    AWS_AUDITMANAGER_API RegisterAccountResult() = default;
     AWS_AUDITMANAGER_API RegisterAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUDITMANAGER_API RegisterAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p> The status of the account registration request. </p>
      */
-    inline const AccountStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AccountStatus& value) { m_status = value; }
-    inline void SetStatus(AccountStatus&& value) { m_status = std::move(value); }
-    inline RegisterAccountResult& WithStatus(const AccountStatus& value) { SetStatus(value); return *this;}
-    inline RegisterAccountResult& WithStatus(AccountStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline AccountStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AccountStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline RegisterAccountResult& WithStatus(AccountStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterAccountResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    AccountStatus m_status;
+    AccountStatus m_status{AccountStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

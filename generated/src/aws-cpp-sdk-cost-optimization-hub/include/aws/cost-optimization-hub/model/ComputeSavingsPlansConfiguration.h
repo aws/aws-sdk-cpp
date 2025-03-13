@@ -32,7 +32,7 @@ namespace Model
   class ComputeSavingsPlansConfiguration
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API ComputeSavingsPlansConfiguration();
+    AWS_COSTOPTIMIZATIONHUB_API ComputeSavingsPlansConfiguration() = default;
     AWS_COSTOPTIMIZATIONHUB_API ComputeSavingsPlansConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API ComputeSavingsPlansConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,56 +45,48 @@ namespace Model
      * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
      * recommendations are calculated for individual member accounts only.</p>
      */
-    inline const Aws::String& GetAccountScope() const{ return m_accountScope; }
+    inline const Aws::String& GetAccountScope() const { return m_accountScope; }
     inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
-    inline void SetAccountScope(const Aws::String& value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
-    inline void SetAccountScope(Aws::String&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::move(value); }
-    inline void SetAccountScope(const char* value) { m_accountScopeHasBeenSet = true; m_accountScope.assign(value); }
-    inline ComputeSavingsPlansConfiguration& WithAccountScope(const Aws::String& value) { SetAccountScope(value); return *this;}
-    inline ComputeSavingsPlansConfiguration& WithAccountScope(Aws::String&& value) { SetAccountScope(std::move(value)); return *this;}
-    inline ComputeSavingsPlansConfiguration& WithAccountScope(const char* value) { SetAccountScope(value); return *this;}
+    template<typename AccountScopeT = Aws::String>
+    void SetAccountScope(AccountScopeT&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::forward<AccountScopeT>(value); }
+    template<typename AccountScopeT = Aws::String>
+    ComputeSavingsPlansConfiguration& WithAccountScope(AccountScopeT&& value) { SetAccountScope(std::forward<AccountScopeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Savings Plans recommendation term in years.</p>
      */
-    inline const Aws::String& GetTerm() const{ return m_term; }
+    inline const Aws::String& GetTerm() const { return m_term; }
     inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
-    inline void SetTerm(const Aws::String& value) { m_termHasBeenSet = true; m_term = value; }
-    inline void SetTerm(Aws::String&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
-    inline void SetTerm(const char* value) { m_termHasBeenSet = true; m_term.assign(value); }
-    inline ComputeSavingsPlansConfiguration& WithTerm(const Aws::String& value) { SetTerm(value); return *this;}
-    inline ComputeSavingsPlansConfiguration& WithTerm(Aws::String&& value) { SetTerm(std::move(value)); return *this;}
-    inline ComputeSavingsPlansConfiguration& WithTerm(const char* value) { SetTerm(value); return *this;}
+    template<typename TermT = Aws::String>
+    void SetTerm(TermT&& value) { m_termHasBeenSet = true; m_term = std::forward<TermT>(value); }
+    template<typename TermT = Aws::String>
+    ComputeSavingsPlansConfiguration& WithTerm(TermT&& value) { SetTerm(std::forward<TermT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The payment option for the commitment.</p>
      */
-    inline const Aws::String& GetPaymentOption() const{ return m_paymentOption; }
+    inline const Aws::String& GetPaymentOption() const { return m_paymentOption; }
     inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
-    inline void SetPaymentOption(const Aws::String& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
-    inline void SetPaymentOption(Aws::String&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
-    inline void SetPaymentOption(const char* value) { m_paymentOptionHasBeenSet = true; m_paymentOption.assign(value); }
-    inline ComputeSavingsPlansConfiguration& WithPaymentOption(const Aws::String& value) { SetPaymentOption(value); return *this;}
-    inline ComputeSavingsPlansConfiguration& WithPaymentOption(Aws::String&& value) { SetPaymentOption(std::move(value)); return *this;}
-    inline ComputeSavingsPlansConfiguration& WithPaymentOption(const char* value) { SetPaymentOption(value); return *this;}
+    template<typename PaymentOptionT = Aws::String>
+    void SetPaymentOption(PaymentOptionT&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::forward<PaymentOptionT>(value); }
+    template<typename PaymentOptionT = Aws::String>
+    ComputeSavingsPlansConfiguration& WithPaymentOption(PaymentOptionT&& value) { SetPaymentOption(std::forward<PaymentOptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The hourly commitment for the Savings Plans type.</p>
      */
-    inline const Aws::String& GetHourlyCommitment() const{ return m_hourlyCommitment; }
+    inline const Aws::String& GetHourlyCommitment() const { return m_hourlyCommitment; }
     inline bool HourlyCommitmentHasBeenSet() const { return m_hourlyCommitmentHasBeenSet; }
-    inline void SetHourlyCommitment(const Aws::String& value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment = value; }
-    inline void SetHourlyCommitment(Aws::String&& value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment = std::move(value); }
-    inline void SetHourlyCommitment(const char* value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment.assign(value); }
-    inline ComputeSavingsPlansConfiguration& WithHourlyCommitment(const Aws::String& value) { SetHourlyCommitment(value); return *this;}
-    inline ComputeSavingsPlansConfiguration& WithHourlyCommitment(Aws::String&& value) { SetHourlyCommitment(std::move(value)); return *this;}
-    inline ComputeSavingsPlansConfiguration& WithHourlyCommitment(const char* value) { SetHourlyCommitment(value); return *this;}
+    template<typename HourlyCommitmentT = Aws::String>
+    void SetHourlyCommitment(HourlyCommitmentT&& value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment = std::forward<HourlyCommitmentT>(value); }
+    template<typename HourlyCommitmentT = Aws::String>
+    ComputeSavingsPlansConfiguration& WithHourlyCommitment(HourlyCommitmentT&& value) { SetHourlyCommitment(std::forward<HourlyCommitmentT>(value)); return *this;}
     ///@}
   private:
 

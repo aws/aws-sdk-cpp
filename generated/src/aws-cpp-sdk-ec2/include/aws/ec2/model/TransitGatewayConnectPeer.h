@@ -36,7 +36,7 @@ namespace Model
   class TransitGatewayConnectPeer
   {
   public:
-    AWS_EC2_API TransitGatewayConnectPeer();
+    AWS_EC2_API TransitGatewayConnectPeer() = default;
     AWS_EC2_API TransitGatewayConnectPeer(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TransitGatewayConnectPeer& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,78 +48,72 @@ namespace Model
     /**
      * <p>The ID of the Connect attachment.</p>
      */
-    inline const Aws::String& GetTransitGatewayAttachmentId() const{ return m_transitGatewayAttachmentId; }
+    inline const Aws::String& GetTransitGatewayAttachmentId() const { return m_transitGatewayAttachmentId; }
     inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
-    inline void SetTransitGatewayAttachmentId(const Aws::String& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = value; }
-    inline void SetTransitGatewayAttachmentId(Aws::String&& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = std::move(value); }
-    inline void SetTransitGatewayAttachmentId(const char* value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId.assign(value); }
-    inline TransitGatewayConnectPeer& WithTransitGatewayAttachmentId(const Aws::String& value) { SetTransitGatewayAttachmentId(value); return *this;}
-    inline TransitGatewayConnectPeer& WithTransitGatewayAttachmentId(Aws::String&& value) { SetTransitGatewayAttachmentId(std::move(value)); return *this;}
-    inline TransitGatewayConnectPeer& WithTransitGatewayAttachmentId(const char* value) { SetTransitGatewayAttachmentId(value); return *this;}
+    template<typename TransitGatewayAttachmentIdT = Aws::String>
+    void SetTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = std::forward<TransitGatewayAttachmentIdT>(value); }
+    template<typename TransitGatewayAttachmentIdT = Aws::String>
+    TransitGatewayConnectPeer& WithTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) { SetTransitGatewayAttachmentId(std::forward<TransitGatewayAttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Connect peer.</p>
      */
-    inline const Aws::String& GetTransitGatewayConnectPeerId() const{ return m_transitGatewayConnectPeerId; }
+    inline const Aws::String& GetTransitGatewayConnectPeerId() const { return m_transitGatewayConnectPeerId; }
     inline bool TransitGatewayConnectPeerIdHasBeenSet() const { return m_transitGatewayConnectPeerIdHasBeenSet; }
-    inline void SetTransitGatewayConnectPeerId(const Aws::String& value) { m_transitGatewayConnectPeerIdHasBeenSet = true; m_transitGatewayConnectPeerId = value; }
-    inline void SetTransitGatewayConnectPeerId(Aws::String&& value) { m_transitGatewayConnectPeerIdHasBeenSet = true; m_transitGatewayConnectPeerId = std::move(value); }
-    inline void SetTransitGatewayConnectPeerId(const char* value) { m_transitGatewayConnectPeerIdHasBeenSet = true; m_transitGatewayConnectPeerId.assign(value); }
-    inline TransitGatewayConnectPeer& WithTransitGatewayConnectPeerId(const Aws::String& value) { SetTransitGatewayConnectPeerId(value); return *this;}
-    inline TransitGatewayConnectPeer& WithTransitGatewayConnectPeerId(Aws::String&& value) { SetTransitGatewayConnectPeerId(std::move(value)); return *this;}
-    inline TransitGatewayConnectPeer& WithTransitGatewayConnectPeerId(const char* value) { SetTransitGatewayConnectPeerId(value); return *this;}
+    template<typename TransitGatewayConnectPeerIdT = Aws::String>
+    void SetTransitGatewayConnectPeerId(TransitGatewayConnectPeerIdT&& value) { m_transitGatewayConnectPeerIdHasBeenSet = true; m_transitGatewayConnectPeerId = std::forward<TransitGatewayConnectPeerIdT>(value); }
+    template<typename TransitGatewayConnectPeerIdT = Aws::String>
+    TransitGatewayConnectPeer& WithTransitGatewayConnectPeerId(TransitGatewayConnectPeerIdT&& value) { SetTransitGatewayConnectPeerId(std::forward<TransitGatewayConnectPeerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the Connect peer.</p>
      */
-    inline const TransitGatewayConnectPeerState& GetState() const{ return m_state; }
+    inline TransitGatewayConnectPeerState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const TransitGatewayConnectPeerState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(TransitGatewayConnectPeerState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline TransitGatewayConnectPeer& WithState(const TransitGatewayConnectPeerState& value) { SetState(value); return *this;}
-    inline TransitGatewayConnectPeer& WithState(TransitGatewayConnectPeerState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(TransitGatewayConnectPeerState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline TransitGatewayConnectPeer& WithState(TransitGatewayConnectPeerState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline TransitGatewayConnectPeer& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline TransitGatewayConnectPeer& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    TransitGatewayConnectPeer& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Connect peer details.</p>
      */
-    inline const TransitGatewayConnectPeerConfiguration& GetConnectPeerConfiguration() const{ return m_connectPeerConfiguration; }
+    inline const TransitGatewayConnectPeerConfiguration& GetConnectPeerConfiguration() const { return m_connectPeerConfiguration; }
     inline bool ConnectPeerConfigurationHasBeenSet() const { return m_connectPeerConfigurationHasBeenSet; }
-    inline void SetConnectPeerConfiguration(const TransitGatewayConnectPeerConfiguration& value) { m_connectPeerConfigurationHasBeenSet = true; m_connectPeerConfiguration = value; }
-    inline void SetConnectPeerConfiguration(TransitGatewayConnectPeerConfiguration&& value) { m_connectPeerConfigurationHasBeenSet = true; m_connectPeerConfiguration = std::move(value); }
-    inline TransitGatewayConnectPeer& WithConnectPeerConfiguration(const TransitGatewayConnectPeerConfiguration& value) { SetConnectPeerConfiguration(value); return *this;}
-    inline TransitGatewayConnectPeer& WithConnectPeerConfiguration(TransitGatewayConnectPeerConfiguration&& value) { SetConnectPeerConfiguration(std::move(value)); return *this;}
+    template<typename ConnectPeerConfigurationT = TransitGatewayConnectPeerConfiguration>
+    void SetConnectPeerConfiguration(ConnectPeerConfigurationT&& value) { m_connectPeerConfigurationHasBeenSet = true; m_connectPeerConfiguration = std::forward<ConnectPeerConfigurationT>(value); }
+    template<typename ConnectPeerConfigurationT = TransitGatewayConnectPeerConfiguration>
+    TransitGatewayConnectPeer& WithConnectPeerConfiguration(ConnectPeerConfigurationT&& value) { SetConnectPeerConfiguration(std::forward<ConnectPeerConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags for the Connect peer.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline TransitGatewayConnectPeer& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline TransitGatewayConnectPeer& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline TransitGatewayConnectPeer& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline TransitGatewayConnectPeer& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    TransitGatewayConnectPeer& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    TransitGatewayConnectPeer& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -129,10 +123,10 @@ namespace Model
     Aws::String m_transitGatewayConnectPeerId;
     bool m_transitGatewayConnectPeerIdHasBeenSet = false;
 
-    TransitGatewayConnectPeerState m_state;
+    TransitGatewayConnectPeerState m_state{TransitGatewayConnectPeerState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     TransitGatewayConnectPeerConfiguration m_connectPeerConfiguration;

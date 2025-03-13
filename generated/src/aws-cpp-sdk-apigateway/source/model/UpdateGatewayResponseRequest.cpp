@@ -12,14 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGatewayResponseRequest::UpdateGatewayResponseRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_responseType(GatewayResponseType::NOT_SET),
-    m_responseTypeHasBeenSet(false),
-    m_patchOperationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGatewayResponseRequest::SerializePayload() const
 {
   JsonValue payload;

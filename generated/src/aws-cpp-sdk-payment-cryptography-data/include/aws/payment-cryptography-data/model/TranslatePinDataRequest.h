@@ -24,7 +24,7 @@ namespace Model
   class TranslatePinDataRequest : public PaymentCryptographyDataRequest
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslatePinDataRequest();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslatePinDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * is the <code>keyARN</code> of KEK of the TR-31 wrapped PEK. For ECDH, it is the
      * <code>keyARN</code> of the asymmetric ECC key.</p>
      */
-    inline const Aws::String& GetIncomingKeyIdentifier() const{ return m_incomingKeyIdentifier; }
+    inline const Aws::String& GetIncomingKeyIdentifier() const { return m_incomingKeyIdentifier; }
     inline bool IncomingKeyIdentifierHasBeenSet() const { return m_incomingKeyIdentifierHasBeenSet; }
-    inline void SetIncomingKeyIdentifier(const Aws::String& value) { m_incomingKeyIdentifierHasBeenSet = true; m_incomingKeyIdentifier = value; }
-    inline void SetIncomingKeyIdentifier(Aws::String&& value) { m_incomingKeyIdentifierHasBeenSet = true; m_incomingKeyIdentifier = std::move(value); }
-    inline void SetIncomingKeyIdentifier(const char* value) { m_incomingKeyIdentifierHasBeenSet = true; m_incomingKeyIdentifier.assign(value); }
-    inline TranslatePinDataRequest& WithIncomingKeyIdentifier(const Aws::String& value) { SetIncomingKeyIdentifier(value); return *this;}
-    inline TranslatePinDataRequest& WithIncomingKeyIdentifier(Aws::String&& value) { SetIncomingKeyIdentifier(std::move(value)); return *this;}
-    inline TranslatePinDataRequest& WithIncomingKeyIdentifier(const char* value) { SetIncomingKeyIdentifier(value); return *this;}
+    template<typename IncomingKeyIdentifierT = Aws::String>
+    void SetIncomingKeyIdentifier(IncomingKeyIdentifierT&& value) { m_incomingKeyIdentifierHasBeenSet = true; m_incomingKeyIdentifier = std::forward<IncomingKeyIdentifierT>(value); }
+    template<typename IncomingKeyIdentifierT = Aws::String>
+    TranslatePinDataRequest& WithIncomingKeyIdentifier(IncomingKeyIdentifierT&& value) { SetIncomingKeyIdentifier(std::forward<IncomingKeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * block data. This key type can be PEK or BDK.</p> <p>For ECDH, it is the
      * <code>keyARN</code> of the asymmetric ECC key.</p>
      */
-    inline const Aws::String& GetOutgoingKeyIdentifier() const{ return m_outgoingKeyIdentifier; }
+    inline const Aws::String& GetOutgoingKeyIdentifier() const { return m_outgoingKeyIdentifier; }
     inline bool OutgoingKeyIdentifierHasBeenSet() const { return m_outgoingKeyIdentifierHasBeenSet; }
-    inline void SetOutgoingKeyIdentifier(const Aws::String& value) { m_outgoingKeyIdentifierHasBeenSet = true; m_outgoingKeyIdentifier = value; }
-    inline void SetOutgoingKeyIdentifier(Aws::String&& value) { m_outgoingKeyIdentifierHasBeenSet = true; m_outgoingKeyIdentifier = std::move(value); }
-    inline void SetOutgoingKeyIdentifier(const char* value) { m_outgoingKeyIdentifierHasBeenSet = true; m_outgoingKeyIdentifier.assign(value); }
-    inline TranslatePinDataRequest& WithOutgoingKeyIdentifier(const Aws::String& value) { SetOutgoingKeyIdentifier(value); return *this;}
-    inline TranslatePinDataRequest& WithOutgoingKeyIdentifier(Aws::String&& value) { SetOutgoingKeyIdentifier(std::move(value)); return *this;}
-    inline TranslatePinDataRequest& WithOutgoingKeyIdentifier(const char* value) { SetOutgoingKeyIdentifier(value); return *this;}
+    template<typename OutgoingKeyIdentifierT = Aws::String>
+    void SetOutgoingKeyIdentifier(OutgoingKeyIdentifierT&& value) { m_outgoingKeyIdentifierHasBeenSet = true; m_outgoingKeyIdentifier = std::forward<OutgoingKeyIdentifierT>(value); }
+    template<typename OutgoingKeyIdentifierT = Aws::String>
+    TranslatePinDataRequest& WithOutgoingKeyIdentifier(OutgoingKeyIdentifierT&& value) { SetOutgoingKeyIdentifier(std::forward<OutgoingKeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,12 @@ namespace Model
      * <p>The format of the incoming PIN block data for translation within Amazon Web
      * Services Payment Cryptography.</p>
      */
-    inline const TranslationIsoFormats& GetIncomingTranslationAttributes() const{ return m_incomingTranslationAttributes; }
+    inline const TranslationIsoFormats& GetIncomingTranslationAttributes() const { return m_incomingTranslationAttributes; }
     inline bool IncomingTranslationAttributesHasBeenSet() const { return m_incomingTranslationAttributesHasBeenSet; }
-    inline void SetIncomingTranslationAttributes(const TranslationIsoFormats& value) { m_incomingTranslationAttributesHasBeenSet = true; m_incomingTranslationAttributes = value; }
-    inline void SetIncomingTranslationAttributes(TranslationIsoFormats&& value) { m_incomingTranslationAttributesHasBeenSet = true; m_incomingTranslationAttributes = std::move(value); }
-    inline TranslatePinDataRequest& WithIncomingTranslationAttributes(const TranslationIsoFormats& value) { SetIncomingTranslationAttributes(value); return *this;}
-    inline TranslatePinDataRequest& WithIncomingTranslationAttributes(TranslationIsoFormats&& value) { SetIncomingTranslationAttributes(std::move(value)); return *this;}
+    template<typename IncomingTranslationAttributesT = TranslationIsoFormats>
+    void SetIncomingTranslationAttributes(IncomingTranslationAttributesT&& value) { m_incomingTranslationAttributesHasBeenSet = true; m_incomingTranslationAttributes = std::forward<IncomingTranslationAttributesT>(value); }
+    template<typename IncomingTranslationAttributesT = TranslationIsoFormats>
+    TranslatePinDataRequest& WithIncomingTranslationAttributes(IncomingTranslationAttributesT&& value) { SetIncomingTranslationAttributes(std::forward<IncomingTranslationAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,12 @@ namespace Model
      * <p>The format of the outgoing PIN block data after translation by Amazon Web
      * Services Payment Cryptography.</p>
      */
-    inline const TranslationIsoFormats& GetOutgoingTranslationAttributes() const{ return m_outgoingTranslationAttributes; }
+    inline const TranslationIsoFormats& GetOutgoingTranslationAttributes() const { return m_outgoingTranslationAttributes; }
     inline bool OutgoingTranslationAttributesHasBeenSet() const { return m_outgoingTranslationAttributesHasBeenSet; }
-    inline void SetOutgoingTranslationAttributes(const TranslationIsoFormats& value) { m_outgoingTranslationAttributesHasBeenSet = true; m_outgoingTranslationAttributes = value; }
-    inline void SetOutgoingTranslationAttributes(TranslationIsoFormats&& value) { m_outgoingTranslationAttributesHasBeenSet = true; m_outgoingTranslationAttributes = std::move(value); }
-    inline TranslatePinDataRequest& WithOutgoingTranslationAttributes(const TranslationIsoFormats& value) { SetOutgoingTranslationAttributes(value); return *this;}
-    inline TranslatePinDataRequest& WithOutgoingTranslationAttributes(TranslationIsoFormats&& value) { SetOutgoingTranslationAttributes(std::move(value)); return *this;}
+    template<typename OutgoingTranslationAttributesT = TranslationIsoFormats>
+    void SetOutgoingTranslationAttributes(OutgoingTranslationAttributesT&& value) { m_outgoingTranslationAttributesHasBeenSet = true; m_outgoingTranslationAttributes = std::forward<OutgoingTranslationAttributesT>(value); }
+    template<typename OutgoingTranslationAttributesT = TranslationIsoFormats>
+    TranslatePinDataRequest& WithOutgoingTranslationAttributes(OutgoingTranslationAttributesT&& value) { SetOutgoingTranslationAttributes(std::forward<OutgoingTranslationAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +95,12 @@ namespace Model
      * <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography
      * translates.</p>
      */
-    inline const Aws::String& GetEncryptedPinBlock() const{ return m_encryptedPinBlock; }
+    inline const Aws::String& GetEncryptedPinBlock() const { return m_encryptedPinBlock; }
     inline bool EncryptedPinBlockHasBeenSet() const { return m_encryptedPinBlockHasBeenSet; }
-    inline void SetEncryptedPinBlock(const Aws::String& value) { m_encryptedPinBlockHasBeenSet = true; m_encryptedPinBlock = value; }
-    inline void SetEncryptedPinBlock(Aws::String&& value) { m_encryptedPinBlockHasBeenSet = true; m_encryptedPinBlock = std::move(value); }
-    inline void SetEncryptedPinBlock(const char* value) { m_encryptedPinBlockHasBeenSet = true; m_encryptedPinBlock.assign(value); }
-    inline TranslatePinDataRequest& WithEncryptedPinBlock(const Aws::String& value) { SetEncryptedPinBlock(value); return *this;}
-    inline TranslatePinDataRequest& WithEncryptedPinBlock(Aws::String&& value) { SetEncryptedPinBlock(std::move(value)); return *this;}
-    inline TranslatePinDataRequest& WithEncryptedPinBlock(const char* value) { SetEncryptedPinBlock(value); return *this;}
+    template<typename EncryptedPinBlockT = Aws::String>
+    void SetEncryptedPinBlock(EncryptedPinBlockT&& value) { m_encryptedPinBlockHasBeenSet = true; m_encryptedPinBlock = std::forward<EncryptedPinBlockT>(value); }
+    template<typename EncryptedPinBlockT = Aws::String>
+    TranslatePinDataRequest& WithEncryptedPinBlock(EncryptedPinBlockT&& value) { SetEncryptedPinBlock(std::forward<EncryptedPinBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +108,12 @@ namespace Model
      * <p>The attributes and values to use for incoming DUKPT encryption key for PIN
      * block translation.</p>
      */
-    inline const DukptDerivationAttributes& GetIncomingDukptAttributes() const{ return m_incomingDukptAttributes; }
+    inline const DukptDerivationAttributes& GetIncomingDukptAttributes() const { return m_incomingDukptAttributes; }
     inline bool IncomingDukptAttributesHasBeenSet() const { return m_incomingDukptAttributesHasBeenSet; }
-    inline void SetIncomingDukptAttributes(const DukptDerivationAttributes& value) { m_incomingDukptAttributesHasBeenSet = true; m_incomingDukptAttributes = value; }
-    inline void SetIncomingDukptAttributes(DukptDerivationAttributes&& value) { m_incomingDukptAttributesHasBeenSet = true; m_incomingDukptAttributes = std::move(value); }
-    inline TranslatePinDataRequest& WithIncomingDukptAttributes(const DukptDerivationAttributes& value) { SetIncomingDukptAttributes(value); return *this;}
-    inline TranslatePinDataRequest& WithIncomingDukptAttributes(DukptDerivationAttributes&& value) { SetIncomingDukptAttributes(std::move(value)); return *this;}
+    template<typename IncomingDukptAttributesT = DukptDerivationAttributes>
+    void SetIncomingDukptAttributes(IncomingDukptAttributesT&& value) { m_incomingDukptAttributesHasBeenSet = true; m_incomingDukptAttributes = std::forward<IncomingDukptAttributesT>(value); }
+    template<typename IncomingDukptAttributesT = DukptDerivationAttributes>
+    TranslatePinDataRequest& WithIncomingDukptAttributes(IncomingDukptAttributesT&& value) { SetIncomingDukptAttributes(std::forward<IncomingDukptAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,12 +121,12 @@ namespace Model
      * <p>The attributes and values to use for outgoing DUKPT encryption key after PIN
      * block translation.</p>
      */
-    inline const DukptDerivationAttributes& GetOutgoingDukptAttributes() const{ return m_outgoingDukptAttributes; }
+    inline const DukptDerivationAttributes& GetOutgoingDukptAttributes() const { return m_outgoingDukptAttributes; }
     inline bool OutgoingDukptAttributesHasBeenSet() const { return m_outgoingDukptAttributesHasBeenSet; }
-    inline void SetOutgoingDukptAttributes(const DukptDerivationAttributes& value) { m_outgoingDukptAttributesHasBeenSet = true; m_outgoingDukptAttributes = value; }
-    inline void SetOutgoingDukptAttributes(DukptDerivationAttributes&& value) { m_outgoingDukptAttributesHasBeenSet = true; m_outgoingDukptAttributes = std::move(value); }
-    inline TranslatePinDataRequest& WithOutgoingDukptAttributes(const DukptDerivationAttributes& value) { SetOutgoingDukptAttributes(value); return *this;}
-    inline TranslatePinDataRequest& WithOutgoingDukptAttributes(DukptDerivationAttributes&& value) { SetOutgoingDukptAttributes(std::move(value)); return *this;}
+    template<typename OutgoingDukptAttributesT = DukptDerivationAttributes>
+    void SetOutgoingDukptAttributes(OutgoingDukptAttributesT&& value) { m_outgoingDukptAttributesHasBeenSet = true; m_outgoingDukptAttributes = std::forward<OutgoingDukptAttributesT>(value); }
+    template<typename OutgoingDukptAttributesT = DukptDerivationAttributes>
+    TranslatePinDataRequest& WithOutgoingDukptAttributes(OutgoingDukptAttributesT&& value) { SetOutgoingDukptAttributes(std::forward<OutgoingDukptAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,12 +134,12 @@ namespace Model
      * <p>The WrappedKeyBlock containing the encryption key under which incoming PIN
      * block data is encrypted.</p>
      */
-    inline const WrappedKey& GetIncomingWrappedKey() const{ return m_incomingWrappedKey; }
+    inline const WrappedKey& GetIncomingWrappedKey() const { return m_incomingWrappedKey; }
     inline bool IncomingWrappedKeyHasBeenSet() const { return m_incomingWrappedKeyHasBeenSet; }
-    inline void SetIncomingWrappedKey(const WrappedKey& value) { m_incomingWrappedKeyHasBeenSet = true; m_incomingWrappedKey = value; }
-    inline void SetIncomingWrappedKey(WrappedKey&& value) { m_incomingWrappedKeyHasBeenSet = true; m_incomingWrappedKey = std::move(value); }
-    inline TranslatePinDataRequest& WithIncomingWrappedKey(const WrappedKey& value) { SetIncomingWrappedKey(value); return *this;}
-    inline TranslatePinDataRequest& WithIncomingWrappedKey(WrappedKey&& value) { SetIncomingWrappedKey(std::move(value)); return *this;}
+    template<typename IncomingWrappedKeyT = WrappedKey>
+    void SetIncomingWrappedKey(IncomingWrappedKeyT&& value) { m_incomingWrappedKeyHasBeenSet = true; m_incomingWrappedKey = std::forward<IncomingWrappedKeyT>(value); }
+    template<typename IncomingWrappedKeyT = WrappedKey>
+    TranslatePinDataRequest& WithIncomingWrappedKey(IncomingWrappedKeyT&& value) { SetIncomingWrappedKey(std::forward<IncomingWrappedKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,12 +147,12 @@ namespace Model
      * <p>The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN
      * block data.</p>
      */
-    inline const WrappedKey& GetOutgoingWrappedKey() const{ return m_outgoingWrappedKey; }
+    inline const WrappedKey& GetOutgoingWrappedKey() const { return m_outgoingWrappedKey; }
     inline bool OutgoingWrappedKeyHasBeenSet() const { return m_outgoingWrappedKeyHasBeenSet; }
-    inline void SetOutgoingWrappedKey(const WrappedKey& value) { m_outgoingWrappedKeyHasBeenSet = true; m_outgoingWrappedKey = value; }
-    inline void SetOutgoingWrappedKey(WrappedKey&& value) { m_outgoingWrappedKeyHasBeenSet = true; m_outgoingWrappedKey = std::move(value); }
-    inline TranslatePinDataRequest& WithOutgoingWrappedKey(const WrappedKey& value) { SetOutgoingWrappedKey(value); return *this;}
-    inline TranslatePinDataRequest& WithOutgoingWrappedKey(WrappedKey&& value) { SetOutgoingWrappedKey(std::move(value)); return *this;}
+    template<typename OutgoingWrappedKeyT = WrappedKey>
+    void SetOutgoingWrappedKey(OutgoingWrappedKeyT&& value) { m_outgoingWrappedKeyHasBeenSet = true; m_outgoingWrappedKey = std::forward<OutgoingWrappedKeyT>(value); }
+    template<typename OutgoingWrappedKeyT = WrappedKey>
+    TranslatePinDataRequest& WithOutgoingWrappedKey(OutgoingWrappedKeyT&& value) { SetOutgoingWrappedKey(std::forward<OutgoingWrappedKeyT>(value)); return *this;}
     ///@}
   private:
 

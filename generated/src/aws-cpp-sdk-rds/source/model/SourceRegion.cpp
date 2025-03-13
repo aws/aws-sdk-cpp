@@ -20,17 +20,7 @@ namespace RDS
 namespace Model
 {
 
-SourceRegion::SourceRegion() : 
-    m_regionNameHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_supportsDBInstanceAutomatedBackupsReplication(false),
-    m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet(false)
-{
-}
-
 SourceRegion::SourceRegion(const XmlNode& xmlNode)
-  : SourceRegion()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ SourceRegion& SourceRegion::operator =(const XmlNode& xmlNode)
     {
       m_regionName = Aws::Utils::Xml::DecodeEscapedXmlText(regionNameNode.GetText());
       m_regionNameHasBeenSet = true;
+       m_regionNameHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
       m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
       m_endpointHasBeenSet = true;
+       m_endpointHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode supportsDBInstanceAutomatedBackupsReplicationNode = resultNode.FirstChild("SupportsDBInstanceAutomatedBackupsReplication");
     if(!supportsDBInstanceAutomatedBackupsReplicationNode.IsNull())
     {
       m_supportsDBInstanceAutomatedBackupsReplication = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsDBInstanceAutomatedBackupsReplicationNode.GetText()).c_str()).c_str());
       m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet = true;
+       m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet = true;
     }
   }
 

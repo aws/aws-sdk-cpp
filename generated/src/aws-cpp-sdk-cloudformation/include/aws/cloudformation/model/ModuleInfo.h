@@ -37,7 +37,7 @@ namespace Model
   class ModuleInfo
   {
   public:
-    AWS_CLOUDFORMATION_API ModuleInfo();
+    AWS_CLOUDFORMATION_API ModuleInfo() = default;
     AWS_CLOUDFORMATION_API ModuleInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API ModuleInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -55,14 +55,12 @@ namespace Model
      * <code>AWS::Second::Example::MODULE</code>.</p> <p>
      * <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
      */
-    inline const Aws::String& GetTypeHierarchy() const{ return m_typeHierarchy; }
+    inline const Aws::String& GetTypeHierarchy() const { return m_typeHierarchy; }
     inline bool TypeHierarchyHasBeenSet() const { return m_typeHierarchyHasBeenSet; }
-    inline void SetTypeHierarchy(const Aws::String& value) { m_typeHierarchyHasBeenSet = true; m_typeHierarchy = value; }
-    inline void SetTypeHierarchy(Aws::String&& value) { m_typeHierarchyHasBeenSet = true; m_typeHierarchy = std::move(value); }
-    inline void SetTypeHierarchy(const char* value) { m_typeHierarchyHasBeenSet = true; m_typeHierarchy.assign(value); }
-    inline ModuleInfo& WithTypeHierarchy(const Aws::String& value) { SetTypeHierarchy(value); return *this;}
-    inline ModuleInfo& WithTypeHierarchy(Aws::String&& value) { SetTypeHierarchy(std::move(value)); return *this;}
-    inline ModuleInfo& WithTypeHierarchy(const char* value) { SetTypeHierarchy(value); return *this;}
+    template<typename TypeHierarchyT = Aws::String>
+    void SetTypeHierarchy(TypeHierarchyT&& value) { m_typeHierarchyHasBeenSet = true; m_typeHierarchy = std::forward<TypeHierarchyT>(value); }
+    template<typename TypeHierarchyT = Aws::String>
+    ModuleInfo& WithTypeHierarchy(TypeHierarchyT&& value) { SetTypeHierarchy(std::forward<TypeHierarchyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * module resources in CloudFormation templates</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetLogicalIdHierarchy() const{ return m_logicalIdHierarchy; }
+    inline const Aws::String& GetLogicalIdHierarchy() const { return m_logicalIdHierarchy; }
     inline bool LogicalIdHierarchyHasBeenSet() const { return m_logicalIdHierarchyHasBeenSet; }
-    inline void SetLogicalIdHierarchy(const Aws::String& value) { m_logicalIdHierarchyHasBeenSet = true; m_logicalIdHierarchy = value; }
-    inline void SetLogicalIdHierarchy(Aws::String&& value) { m_logicalIdHierarchyHasBeenSet = true; m_logicalIdHierarchy = std::move(value); }
-    inline void SetLogicalIdHierarchy(const char* value) { m_logicalIdHierarchyHasBeenSet = true; m_logicalIdHierarchy.assign(value); }
-    inline ModuleInfo& WithLogicalIdHierarchy(const Aws::String& value) { SetLogicalIdHierarchy(value); return *this;}
-    inline ModuleInfo& WithLogicalIdHierarchy(Aws::String&& value) { SetLogicalIdHierarchy(std::move(value)); return *this;}
-    inline ModuleInfo& WithLogicalIdHierarchy(const char* value) { SetLogicalIdHierarchy(value); return *this;}
+    template<typename LogicalIdHierarchyT = Aws::String>
+    void SetLogicalIdHierarchy(LogicalIdHierarchyT&& value) { m_logicalIdHierarchyHasBeenSet = true; m_logicalIdHierarchy = std::forward<LogicalIdHierarchyT>(value); }
+    template<typename LogicalIdHierarchyT = Aws::String>
+    ModuleInfo& WithLogicalIdHierarchy(LogicalIdHierarchyT&& value) { SetLogicalIdHierarchy(std::forward<LogicalIdHierarchyT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-CrossClusterSearchConnectionProperties::CrossClusterSearchConnectionProperties() : 
-    m_skipUnavailable(SkipUnavailableStatus::NOT_SET),
-    m_skipUnavailableHasBeenSet(false)
-{
-}
-
 CrossClusterSearchConnectionProperties::CrossClusterSearchConnectionProperties(JsonView jsonValue)
-  : CrossClusterSearchConnectionProperties()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CrossClusterSearchConnectionProperties& CrossClusterSearchConnectionProperties::
   if(jsonValue.ValueExists("SkipUnavailable"))
   {
     m_skipUnavailable = SkipUnavailableStatusMapper::GetSkipUnavailableStatusForName(jsonValue.GetString("SkipUnavailable"));
-
     m_skipUnavailableHasBeenSet = true;
   }
-
   return *this;
 }
 

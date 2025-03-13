@@ -18,17 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-Placement::Placement() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_tenancy(TenancyType::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_hostIdHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false)
-{
-}
-
 Placement::Placement(JsonView jsonValue)
-  : Placement()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Placement& Placement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tenancy"))
   {
     m_tenancy = TenancyTypeMapper::GetTenancyTypeForName(jsonValue.GetString("tenancy"));
-
     m_tenancyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostId"))
   {
     m_hostId = jsonValue.GetString("hostId");
-
     m_hostIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostResourceGroupArn"))
   {
     m_hostResourceGroupArn = jsonValue.GetString("hostResourceGroupArn");
-
     m_hostResourceGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

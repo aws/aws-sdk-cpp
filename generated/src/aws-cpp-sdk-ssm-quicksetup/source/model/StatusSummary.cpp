@@ -18,19 +18,7 @@ namespace SSMQuickSetup
 namespace Model
 {
 
-StatusSummary::StatusSummary() : 
-    m_lastUpdatedAtHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_statusType(StatusType::NOT_SET),
-    m_statusTypeHasBeenSet(false)
-{
-}
-
 StatusSummary::StatusSummary(JsonView jsonValue)
-  : StatusSummary()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ StatusSummary& StatusSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetails"))
   {
     Aws::Map<Aws::String, JsonView> statusDetailsJsonMap = jsonValue.GetObject("StatusDetails").GetAllObjects();
@@ -60,21 +44,16 @@ StatusSummary& StatusSummary::operator =(JsonView jsonValue)
     }
     m_statusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusType"))
   {
     m_statusType = StatusTypeMapper::GetStatusTypeForName(jsonValue.GetString("StatusType"));
-
     m_statusTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

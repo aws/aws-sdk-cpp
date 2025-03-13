@@ -29,7 +29,7 @@ namespace Model
   class CreateDistributionResult
   {
   public:
-    AWS_LIGHTSAIL_API CreateDistributionResult();
+    AWS_LIGHTSAIL_API CreateDistributionResult() = default;
     AWS_LIGHTSAIL_API CreateDistributionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API CreateDistributionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>An object that describes the distribution created.</p>
      */
-    inline const LightsailDistribution& GetDistribution() const{ return m_distribution; }
-    inline void SetDistribution(const LightsailDistribution& value) { m_distribution = value; }
-    inline void SetDistribution(LightsailDistribution&& value) { m_distribution = std::move(value); }
-    inline CreateDistributionResult& WithDistribution(const LightsailDistribution& value) { SetDistribution(value); return *this;}
-    inline CreateDistributionResult& WithDistribution(LightsailDistribution&& value) { SetDistribution(std::move(value)); return *this;}
+    inline const LightsailDistribution& GetDistribution() const { return m_distribution; }
+    template<typename DistributionT = LightsailDistribution>
+    void SetDistribution(DistributionT&& value) { m_distributionHasBeenSet = true; m_distribution = std::forward<DistributionT>(value); }
+    template<typename DistributionT = LightsailDistribution>
+    CreateDistributionResult& WithDistribution(DistributionT&& value) { SetDistribution(std::forward<DistributionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +51,31 @@ namespace Model
      * status of the request, the timestamp of the request, and the resources affected
      * by the request.</p>
      */
-    inline const Operation& GetOperation() const{ return m_operation; }
-    inline void SetOperation(const Operation& value) { m_operation = value; }
-    inline void SetOperation(Operation&& value) { m_operation = std::move(value); }
-    inline CreateDistributionResult& WithOperation(const Operation& value) { SetOperation(value); return *this;}
-    inline CreateDistributionResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
+    inline const Operation& GetOperation() const { return m_operation; }
+    template<typename OperationT = Operation>
+    void SetOperation(OperationT&& value) { m_operationHasBeenSet = true; m_operation = std::forward<OperationT>(value); }
+    template<typename OperationT = Operation>
+    CreateDistributionResult& WithOperation(OperationT&& value) { SetOperation(std::forward<OperationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDistributionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDistributionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDistributionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDistributionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     LightsailDistribution m_distribution;
+    bool m_distributionHasBeenSet = false;
 
     Operation m_operation;
+    bool m_operationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

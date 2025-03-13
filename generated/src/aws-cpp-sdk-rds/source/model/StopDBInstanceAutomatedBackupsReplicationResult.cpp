@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopDBInstanceAutomatedBackupsReplicationResult::StopDBInstanceAutomatedBackupsReplicationResult()
-{
-}
-
 StopDBInstanceAutomatedBackupsReplicationResult::StopDBInstanceAutomatedBackupsReplicationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ StopDBInstanceAutomatedBackupsReplicationResult& StopDBInstanceAutomatedBackupsR
     if(!dBInstanceAutomatedBackupNode.IsNull())
     {
       m_dBInstanceAutomatedBackup = dBInstanceAutomatedBackupNode;
+      m_dBInstanceAutomatedBackupHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::StopDBInstanceAutomatedBackupsReplicationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

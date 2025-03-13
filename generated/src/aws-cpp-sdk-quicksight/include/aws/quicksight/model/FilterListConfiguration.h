@@ -35,7 +35,7 @@ namespace Model
   class FilterListConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API FilterListConfiguration();
+    AWS_QUICKSIGHT_API FilterListConfiguration() = default;
     AWS_QUICKSIGHT_API FilterListConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FilterListConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,27 +46,24 @@ namespace Model
      * <p>The match operator that is used to determine if a filter should be
      * applied.</p>
      */
-    inline const CategoryFilterMatchOperator& GetMatchOperator() const{ return m_matchOperator; }
+    inline CategoryFilterMatchOperator GetMatchOperator() const { return m_matchOperator; }
     inline bool MatchOperatorHasBeenSet() const { return m_matchOperatorHasBeenSet; }
-    inline void SetMatchOperator(const CategoryFilterMatchOperator& value) { m_matchOperatorHasBeenSet = true; m_matchOperator = value; }
-    inline void SetMatchOperator(CategoryFilterMatchOperator&& value) { m_matchOperatorHasBeenSet = true; m_matchOperator = std::move(value); }
-    inline FilterListConfiguration& WithMatchOperator(const CategoryFilterMatchOperator& value) { SetMatchOperator(value); return *this;}
-    inline FilterListConfiguration& WithMatchOperator(CategoryFilterMatchOperator&& value) { SetMatchOperator(std::move(value)); return *this;}
+    inline void SetMatchOperator(CategoryFilterMatchOperator value) { m_matchOperatorHasBeenSet = true; m_matchOperator = value; }
+    inline FilterListConfiguration& WithMatchOperator(CategoryFilterMatchOperator value) { SetMatchOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of category values for the filter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCategoryValues() const{ return m_categoryValues; }
+    inline const Aws::Vector<Aws::String>& GetCategoryValues() const { return m_categoryValues; }
     inline bool CategoryValuesHasBeenSet() const { return m_categoryValuesHasBeenSet; }
-    inline void SetCategoryValues(const Aws::Vector<Aws::String>& value) { m_categoryValuesHasBeenSet = true; m_categoryValues = value; }
-    inline void SetCategoryValues(Aws::Vector<Aws::String>&& value) { m_categoryValuesHasBeenSet = true; m_categoryValues = std::move(value); }
-    inline FilterListConfiguration& WithCategoryValues(const Aws::Vector<Aws::String>& value) { SetCategoryValues(value); return *this;}
-    inline FilterListConfiguration& WithCategoryValues(Aws::Vector<Aws::String>&& value) { SetCategoryValues(std::move(value)); return *this;}
-    inline FilterListConfiguration& AddCategoryValues(const Aws::String& value) { m_categoryValuesHasBeenSet = true; m_categoryValues.push_back(value); return *this; }
-    inline FilterListConfiguration& AddCategoryValues(Aws::String&& value) { m_categoryValuesHasBeenSet = true; m_categoryValues.push_back(std::move(value)); return *this; }
-    inline FilterListConfiguration& AddCategoryValues(const char* value) { m_categoryValuesHasBeenSet = true; m_categoryValues.push_back(value); return *this; }
+    template<typename CategoryValuesT = Aws::Vector<Aws::String>>
+    void SetCategoryValues(CategoryValuesT&& value) { m_categoryValuesHasBeenSet = true; m_categoryValues = std::forward<CategoryValuesT>(value); }
+    template<typename CategoryValuesT = Aws::Vector<Aws::String>>
+    FilterListConfiguration& WithCategoryValues(CategoryValuesT&& value) { SetCategoryValues(std::forward<CategoryValuesT>(value)); return *this;}
+    template<typename CategoryValuesT = Aws::String>
+    FilterListConfiguration& AddCategoryValues(CategoryValuesT&& value) { m_categoryValuesHasBeenSet = true; m_categoryValues.emplace_back(std::forward<CategoryValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,12 +71,10 @@ namespace Model
      * <p>Select all of the values. Null is not the assigned value of select all.</p>
      * <ul> <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li> </ul>
      */
-    inline const CategoryFilterSelectAllOptions& GetSelectAllOptions() const{ return m_selectAllOptions; }
+    inline CategoryFilterSelectAllOptions GetSelectAllOptions() const { return m_selectAllOptions; }
     inline bool SelectAllOptionsHasBeenSet() const { return m_selectAllOptionsHasBeenSet; }
-    inline void SetSelectAllOptions(const CategoryFilterSelectAllOptions& value) { m_selectAllOptionsHasBeenSet = true; m_selectAllOptions = value; }
-    inline void SetSelectAllOptions(CategoryFilterSelectAllOptions&& value) { m_selectAllOptionsHasBeenSet = true; m_selectAllOptions = std::move(value); }
-    inline FilterListConfiguration& WithSelectAllOptions(const CategoryFilterSelectAllOptions& value) { SetSelectAllOptions(value); return *this;}
-    inline FilterListConfiguration& WithSelectAllOptions(CategoryFilterSelectAllOptions&& value) { SetSelectAllOptions(std::move(value)); return *this;}
+    inline void SetSelectAllOptions(CategoryFilterSelectAllOptions value) { m_selectAllOptionsHasBeenSet = true; m_selectAllOptions = value; }
+    inline FilterListConfiguration& WithSelectAllOptions(CategoryFilterSelectAllOptions value) { SetSelectAllOptions(value); return *this;}
     ///@}
 
     ///@{
@@ -90,25 +85,23 @@ namespace Model
      * filtered results.</p> </li> <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null
      * values from filtered results.</p> </li> </ul>
      */
-    inline const FilterNullOption& GetNullOption() const{ return m_nullOption; }
+    inline FilterNullOption GetNullOption() const { return m_nullOption; }
     inline bool NullOptionHasBeenSet() const { return m_nullOptionHasBeenSet; }
-    inline void SetNullOption(const FilterNullOption& value) { m_nullOptionHasBeenSet = true; m_nullOption = value; }
-    inline void SetNullOption(FilterNullOption&& value) { m_nullOptionHasBeenSet = true; m_nullOption = std::move(value); }
-    inline FilterListConfiguration& WithNullOption(const FilterNullOption& value) { SetNullOption(value); return *this;}
-    inline FilterListConfiguration& WithNullOption(FilterNullOption&& value) { SetNullOption(std::move(value)); return *this;}
+    inline void SetNullOption(FilterNullOption value) { m_nullOptionHasBeenSet = true; m_nullOption = value; }
+    inline FilterListConfiguration& WithNullOption(FilterNullOption value) { SetNullOption(value); return *this;}
     ///@}
   private:
 
-    CategoryFilterMatchOperator m_matchOperator;
+    CategoryFilterMatchOperator m_matchOperator{CategoryFilterMatchOperator::NOT_SET};
     bool m_matchOperatorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_categoryValues;
     bool m_categoryValuesHasBeenSet = false;
 
-    CategoryFilterSelectAllOptions m_selectAllOptions;
+    CategoryFilterSelectAllOptions m_selectAllOptions{CategoryFilterSelectAllOptions::NOT_SET};
     bool m_selectAllOptionsHasBeenSet = false;
 
-    FilterNullOption m_nullOption;
+    FilterNullOption m_nullOption{FilterNullOption::NOT_SET};
     bool m_nullOptionHasBeenSet = false;
   };
 

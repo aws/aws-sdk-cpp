@@ -16,39 +16,7 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSnapshotBlockResult::GetSnapshotBlockResult() : 
-    m_dataLength(0),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET)
-{
-}
-
-GetSnapshotBlockResult::GetSnapshotBlockResult(GetSnapshotBlockResult&& toMove) : 
-    m_dataLength(toMove.m_dataLength),
-    m_blockData(std::move(toMove.m_blockData)),
-    m_checksum(std::move(toMove.m_checksum)),
-    m_checksumAlgorithm(toMove.m_checksumAlgorithm),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetSnapshotBlockResult& GetSnapshotBlockResult::operator=(GetSnapshotBlockResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_dataLength = toMove.m_dataLength;
-   m_blockData = std::move(toMove.m_blockData);
-   m_checksum = std::move(toMove.m_checksum);
-   m_checksumAlgorithm = toMove.m_checksumAlgorithm;
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetSnapshotBlockResult::GetSnapshotBlockResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
-  : GetSnapshotBlockResult()
 {
   *this = std::move(result);
 }
@@ -56,30 +24,35 @@ GetSnapshotBlockResult::GetSnapshotBlockResult(Aws::AmazonWebServiceResult<Respo
 GetSnapshotBlockResult& GetSnapshotBlockResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_blockData = result.TakeOwnershipOfPayload();
+  m_blockDataHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& dataLengthIter = headers.find("x-amz-data-length");
   if(dataLengthIter != headers.end())
   {
-     m_dataLength = StringUtils::ConvertToInt32(dataLengthIter->second.c_str());
+    m_dataLength = StringUtils::ConvertToInt32(dataLengthIter->second.c_str());
+    m_dataLengthHasBeenSet = true;
   }
 
   const auto& checksumIter = headers.find("x-amz-checksum");
   if(checksumIter != headers.end())
   {
     m_checksum = checksumIter->second;
+    m_checksumHasBeenSet = true;
   }
 
   const auto& checksumAlgorithmIter = headers.find("x-amz-checksum-algorithm");
   if(checksumAlgorithmIter != headers.end())
   {
     m_checksumAlgorithm = ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(checksumAlgorithmIter->second);
+    m_checksumAlgorithmHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

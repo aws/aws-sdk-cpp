@@ -32,7 +32,7 @@ namespace Model
   class AwsCertificateManagerCertificateExtendedKeyUsage
   {
   public:
-    AWS_SECURITYHUB_API AwsCertificateManagerCertificateExtendedKeyUsage();
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateExtendedKeyUsage() = default;
     AWS_SECURITYHUB_API AwsCertificateManagerCertificateExtendedKeyUsage(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCertificateManagerCertificateExtendedKeyUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of an extension value. Indicates the purpose for which the
      * certificate public key can be used.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsCertificateManagerCertificateExtendedKeyUsage& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsCertificateManagerCertificateExtendedKeyUsage& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateExtendedKeyUsage& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsCertificateManagerCertificateExtendedKeyUsage& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>An object identifier (OID) for the extension value.</p> <p>The format is
      * numbers separated by periods.</p>
      */
-    inline const Aws::String& GetOId() const{ return m_oId; }
+    inline const Aws::String& GetOId() const { return m_oId; }
     inline bool OIdHasBeenSet() const { return m_oIdHasBeenSet; }
-    inline void SetOId(const Aws::String& value) { m_oIdHasBeenSet = true; m_oId = value; }
-    inline void SetOId(Aws::String&& value) { m_oIdHasBeenSet = true; m_oId = std::move(value); }
-    inline void SetOId(const char* value) { m_oIdHasBeenSet = true; m_oId.assign(value); }
-    inline AwsCertificateManagerCertificateExtendedKeyUsage& WithOId(const Aws::String& value) { SetOId(value); return *this;}
-    inline AwsCertificateManagerCertificateExtendedKeyUsage& WithOId(Aws::String&& value) { SetOId(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateExtendedKeyUsage& WithOId(const char* value) { SetOId(value); return *this;}
+    template<typename OIdT = Aws::String>
+    void SetOId(OIdT&& value) { m_oIdHasBeenSet = true; m_oId = std::forward<OIdT>(value); }
+    template<typename OIdT = Aws::String>
+    AwsCertificateManagerCertificateExtendedKeyUsage& WithOId(OIdT&& value) { SetOId(std::forward<OIdT>(value)); return *this;}
     ///@}
   private:
 

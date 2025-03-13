@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkAcl::NetworkAcl() : 
-    m_associationsHasBeenSet(false),
-    m_entriesHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
-{
-}
-
 NetworkAcl::NetworkAcl(const XmlNode& xmlNode)
-  : NetworkAcl()
 {
   *this = xmlNode;
 }
@@ -48,61 +35,68 @@ NetworkAcl& NetworkAcl::operator =(const XmlNode& xmlNode)
     if(!associationsNode.IsNull())
     {
       XmlNode associationsMember = associationsNode.FirstChild("item");
+      m_associationsHasBeenSet = !associationsMember.IsNull();
       while(!associationsMember.IsNull())
       {
         m_associations.push_back(associationsMember);
         associationsMember = associationsMember.NextNode("item");
       }
 
-      m_associationsHasBeenSet = true;
+       m_associationsHasBeenSet = true;
     }
     XmlNode entriesNode = resultNode.FirstChild("entrySet");
     if(!entriesNode.IsNull())
     {
       XmlNode entriesMember = entriesNode.FirstChild("item");
+      m_entriesHasBeenSet = !entriesMember.IsNull();
       while(!entriesMember.IsNull())
       {
         m_entries.push_back(entriesMember);
         entriesMember = entriesMember.NextNode("item");
       }
 
-      m_entriesHasBeenSet = true;
+       m_entriesHasBeenSet = true;
     }
     XmlNode isDefaultNode = resultNode.FirstChild("default");
     if(!isDefaultNode.IsNull())
     {
       m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
+       m_isDefaultHasBeenSet = true;
     }
     XmlNode networkAclIdNode = resultNode.FirstChild("networkAclId");
     if(!networkAclIdNode.IsNull())
     {
       m_networkAclId = Aws::Utils::Xml::DecodeEscapedXmlText(networkAclIdNode.GetText());
       m_networkAclIdHasBeenSet = true;
+       m_networkAclIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
   }
 

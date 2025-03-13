@@ -10,15 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-CompleteLifecycleActionRequest::CompleteLifecycleActionRequest() : 
-    m_lifecycleHookNameHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_lifecycleActionTokenHasBeenSet(false),
-    m_lifecycleActionResultHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String CompleteLifecycleActionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

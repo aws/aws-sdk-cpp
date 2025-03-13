@@ -29,7 +29,7 @@ namespace Model
   class ListDataAccessorsResult
   {
   public:
-    AWS_QBUSINESS_API ListDataAccessorsResult();
+    AWS_QBUSINESS_API ListDataAccessorsResult() = default;
     AWS_QBUSINESS_API ListDataAccessorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API ListDataAccessorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The list of data accessors.</p>
      */
-    inline const Aws::Vector<DataAccessor>& GetDataAccessors() const{ return m_dataAccessors; }
-    inline void SetDataAccessors(const Aws::Vector<DataAccessor>& value) { m_dataAccessors = value; }
-    inline void SetDataAccessors(Aws::Vector<DataAccessor>&& value) { m_dataAccessors = std::move(value); }
-    inline ListDataAccessorsResult& WithDataAccessors(const Aws::Vector<DataAccessor>& value) { SetDataAccessors(value); return *this;}
-    inline ListDataAccessorsResult& WithDataAccessors(Aws::Vector<DataAccessor>&& value) { SetDataAccessors(std::move(value)); return *this;}
-    inline ListDataAccessorsResult& AddDataAccessors(const DataAccessor& value) { m_dataAccessors.push_back(value); return *this; }
-    inline ListDataAccessorsResult& AddDataAccessors(DataAccessor&& value) { m_dataAccessors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataAccessor>& GetDataAccessors() const { return m_dataAccessors; }
+    template<typename DataAccessorsT = Aws::Vector<DataAccessor>>
+    void SetDataAccessors(DataAccessorsT&& value) { m_dataAccessorsHasBeenSet = true; m_dataAccessors = std::forward<DataAccessorsT>(value); }
+    template<typename DataAccessorsT = Aws::Vector<DataAccessor>>
+    ListDataAccessorsResult& WithDataAccessors(DataAccessorsT&& value) { SetDataAccessors(std::forward<DataAccessorsT>(value)); return *this;}
+    template<typename DataAccessorsT = DataAccessor>
+    ListDataAccessorsResult& AddDataAccessors(DataAccessorsT&& value) { m_dataAccessorsHasBeenSet = true; m_dataAccessors.emplace_back(std::forward<DataAccessorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token to use to retrieve the next set of results, if there are any.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDataAccessorsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDataAccessorsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDataAccessorsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDataAccessorsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDataAccessorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDataAccessorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDataAccessorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDataAccessorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DataAccessor> m_dataAccessors;
+    bool m_dataAccessorsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

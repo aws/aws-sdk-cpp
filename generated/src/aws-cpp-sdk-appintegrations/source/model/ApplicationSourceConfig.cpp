@@ -18,13 +18,7 @@ namespace AppIntegrationsService
 namespace Model
 {
 
-ApplicationSourceConfig::ApplicationSourceConfig() : 
-    m_externalUrlConfigHasBeenSet(false)
-{
-}
-
 ApplicationSourceConfig::ApplicationSourceConfig(JsonView jsonValue)
-  : ApplicationSourceConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ApplicationSourceConfig& ApplicationSourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExternalUrlConfig"))
   {
     m_externalUrlConfig = jsonValue.GetObject("ExternalUrlConfig");
-
     m_externalUrlConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

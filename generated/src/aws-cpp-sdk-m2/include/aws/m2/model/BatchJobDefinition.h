@@ -32,7 +32,7 @@ namespace Model
   class BatchJobDefinition
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API BatchJobDefinition();
+    AWS_MAINFRAMEMODERNIZATION_API BatchJobDefinition() = default;
     AWS_MAINFRAMEMODERNIZATION_API BatchJobDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API BatchJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Specifies a file containing a batch job definition.</p>
      */
-    inline const FileBatchJobDefinition& GetFileBatchJobDefinition() const{ return m_fileBatchJobDefinition; }
+    inline const FileBatchJobDefinition& GetFileBatchJobDefinition() const { return m_fileBatchJobDefinition; }
     inline bool FileBatchJobDefinitionHasBeenSet() const { return m_fileBatchJobDefinitionHasBeenSet; }
-    inline void SetFileBatchJobDefinition(const FileBatchJobDefinition& value) { m_fileBatchJobDefinitionHasBeenSet = true; m_fileBatchJobDefinition = value; }
-    inline void SetFileBatchJobDefinition(FileBatchJobDefinition&& value) { m_fileBatchJobDefinitionHasBeenSet = true; m_fileBatchJobDefinition = std::move(value); }
-    inline BatchJobDefinition& WithFileBatchJobDefinition(const FileBatchJobDefinition& value) { SetFileBatchJobDefinition(value); return *this;}
-    inline BatchJobDefinition& WithFileBatchJobDefinition(FileBatchJobDefinition&& value) { SetFileBatchJobDefinition(std::move(value)); return *this;}
+    template<typename FileBatchJobDefinitionT = FileBatchJobDefinition>
+    void SetFileBatchJobDefinition(FileBatchJobDefinitionT&& value) { m_fileBatchJobDefinitionHasBeenSet = true; m_fileBatchJobDefinition = std::forward<FileBatchJobDefinitionT>(value); }
+    template<typename FileBatchJobDefinitionT = FileBatchJobDefinition>
+    BatchJobDefinition& WithFileBatchJobDefinition(FileBatchJobDefinitionT&& value) { SetFileBatchJobDefinition(std::forward<FileBatchJobDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A script containing a batch job definition.</p>
      */
-    inline const ScriptBatchJobDefinition& GetScriptBatchJobDefinition() const{ return m_scriptBatchJobDefinition; }
+    inline const ScriptBatchJobDefinition& GetScriptBatchJobDefinition() const { return m_scriptBatchJobDefinition; }
     inline bool ScriptBatchJobDefinitionHasBeenSet() const { return m_scriptBatchJobDefinitionHasBeenSet; }
-    inline void SetScriptBatchJobDefinition(const ScriptBatchJobDefinition& value) { m_scriptBatchJobDefinitionHasBeenSet = true; m_scriptBatchJobDefinition = value; }
-    inline void SetScriptBatchJobDefinition(ScriptBatchJobDefinition&& value) { m_scriptBatchJobDefinitionHasBeenSet = true; m_scriptBatchJobDefinition = std::move(value); }
-    inline BatchJobDefinition& WithScriptBatchJobDefinition(const ScriptBatchJobDefinition& value) { SetScriptBatchJobDefinition(value); return *this;}
-    inline BatchJobDefinition& WithScriptBatchJobDefinition(ScriptBatchJobDefinition&& value) { SetScriptBatchJobDefinition(std::move(value)); return *this;}
+    template<typename ScriptBatchJobDefinitionT = ScriptBatchJobDefinition>
+    void SetScriptBatchJobDefinition(ScriptBatchJobDefinitionT&& value) { m_scriptBatchJobDefinitionHasBeenSet = true; m_scriptBatchJobDefinition = std::forward<ScriptBatchJobDefinitionT>(value); }
+    template<typename ScriptBatchJobDefinitionT = ScriptBatchJobDefinition>
+    BatchJobDefinition& WithScriptBatchJobDefinition(ScriptBatchJobDefinitionT&& value) { SetScriptBatchJobDefinition(std::forward<ScriptBatchJobDefinitionT>(value)); return *this;}
     ///@}
   private:
 

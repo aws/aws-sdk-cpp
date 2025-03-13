@@ -12,24 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RequestPhoneNumberRequest::RequestPhoneNumberRequest() : 
-    m_isoCountryCodeHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_numberCapabilitiesHasBeenSet(false),
-    m_numberType(RequestableNumberType::NOT_SET),
-    m_numberTypeHasBeenSet(false),
-    m_optOutListNameHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_registrationIdHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String RequestPhoneNumberRequest::SerializePayload() const
 {
   JsonValue payload;

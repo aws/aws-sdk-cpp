@@ -34,7 +34,7 @@ namespace Model
   class Container
   {
   public:
-    AWS_MEDIASTORE_API Container();
+    AWS_MEDIASTORE_API Container() = default;
     AWS_MEDIASTORE_API Container(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIASTORE_API Container& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIASTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,24 @@ namespace Model
      * value when the container is created. Once the value has been assigned, it does
      * not change.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline Container& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline Container& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline Container& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    Container& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unix timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline Container& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline Container& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    Container& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,28 +74,24 @@ namespace Model
      * container&gt;:container/&lt;name of container&gt; </p> <p>For example:
      * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline Container& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline Container& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline Container& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    Container& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the container.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Container& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Container& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Container& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Container& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +102,10 @@ namespace Model
      * <code>CREATING</code>. When the endpoint is available, the status changes to
      * <code>ACTIVE</code>.</p>
      */
-    inline const ContainerStatus& GetStatus() const{ return m_status; }
+    inline ContainerStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ContainerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ContainerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Container& WithStatus(const ContainerStatus& value) { SetStatus(value); return *this;}
-    inline Container& WithStatus(ContainerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ContainerStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Container& WithStatus(ContainerStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -125,7 +117,7 @@ namespace Model
      * that the service delivers access logs for objects stored in that container to
      * CloudWatch Logs.</p>
      */
-    inline bool GetAccessLoggingEnabled() const{ return m_accessLoggingEnabled; }
+    inline bool GetAccessLoggingEnabled() const { return m_accessLoggingEnabled; }
     inline bool AccessLoggingEnabledHasBeenSet() const { return m_accessLoggingEnabledHasBeenSet; }
     inline void SetAccessLoggingEnabled(bool value) { m_accessLoggingEnabledHasBeenSet = true; m_accessLoggingEnabled = value; }
     inline Container& WithAccessLoggingEnabled(bool value) { SetAccessLoggingEnabled(value); return *this;}
@@ -135,7 +127,7 @@ namespace Model
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_aRN;
@@ -144,10 +136,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ContainerStatus m_status;
+    ContainerStatus m_status{ContainerStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    bool m_accessLoggingEnabled;
+    bool m_accessLoggingEnabled{false};
     bool m_accessLoggingEnabledHasBeenSet = false;
   };
 

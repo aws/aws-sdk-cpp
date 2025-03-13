@@ -33,7 +33,7 @@ namespace Model
   class BatchPermissionsFailureEntry
   {
   public:
-    AWS_LAKEFORMATION_API BatchPermissionsFailureEntry();
+    AWS_LAKEFORMATION_API BatchPermissionsFailureEntry() = default;
     AWS_LAKEFORMATION_API BatchPermissionsFailureEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API BatchPermissionsFailureEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>An identifier for an entry of the batch request.</p>
      */
-    inline const BatchPermissionsRequestEntry& GetRequestEntry() const{ return m_requestEntry; }
+    inline const BatchPermissionsRequestEntry& GetRequestEntry() const { return m_requestEntry; }
     inline bool RequestEntryHasBeenSet() const { return m_requestEntryHasBeenSet; }
-    inline void SetRequestEntry(const BatchPermissionsRequestEntry& value) { m_requestEntryHasBeenSet = true; m_requestEntry = value; }
-    inline void SetRequestEntry(BatchPermissionsRequestEntry&& value) { m_requestEntryHasBeenSet = true; m_requestEntry = std::move(value); }
-    inline BatchPermissionsFailureEntry& WithRequestEntry(const BatchPermissionsRequestEntry& value) { SetRequestEntry(value); return *this;}
-    inline BatchPermissionsFailureEntry& WithRequestEntry(BatchPermissionsRequestEntry&& value) { SetRequestEntry(std::move(value)); return *this;}
+    template<typename RequestEntryT = BatchPermissionsRequestEntry>
+    void SetRequestEntry(RequestEntryT&& value) { m_requestEntryHasBeenSet = true; m_requestEntry = std::forward<RequestEntryT>(value); }
+    template<typename RequestEntryT = BatchPermissionsRequestEntry>
+    BatchPermissionsFailureEntry& WithRequestEntry(RequestEntryT&& value) { SetRequestEntry(std::forward<RequestEntryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An error message that applies to the failure of the entry.</p>
      */
-    inline const ErrorDetail& GetError() const{ return m_error; }
+    inline const ErrorDetail& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ErrorDetail& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ErrorDetail&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline BatchPermissionsFailureEntry& WithError(const ErrorDetail& value) { SetError(value); return *this;}
-    inline BatchPermissionsFailureEntry& WithError(ErrorDetail&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ErrorDetail>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ErrorDetail>
+    BatchPermissionsFailureEntry& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 

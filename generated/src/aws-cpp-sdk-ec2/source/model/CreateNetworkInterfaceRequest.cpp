@@ -10,37 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() : 
-    m_ipv4PrefixesHasBeenSet(false),
-    m_ipv4PrefixCount(0),
-    m_ipv4PrefixCountHasBeenSet(false),
-    m_ipv6PrefixesHasBeenSet(false),
-    m_ipv6PrefixCount(0),
-    m_ipv6PrefixCountHasBeenSet(false),
-    m_interfaceType(NetworkInterfaceCreationType::NOT_SET),
-    m_interfaceTypeHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_enablePrimaryIpv6(false),
-    m_enablePrimaryIpv6HasBeenSet(false),
-    m_connectionTrackingSpecificationHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false),
-    m_secondaryPrivateIpAddressCount(0),
-    m_secondaryPrivateIpAddressCountHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
-    m_ipv6AddressCount(0),
-    m_ipv6AddressCountHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

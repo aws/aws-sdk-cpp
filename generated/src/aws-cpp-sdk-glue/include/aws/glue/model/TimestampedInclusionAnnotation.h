@@ -32,7 +32,7 @@ namespace Model
   class TimestampedInclusionAnnotation
   {
   public:
-    AWS_GLUE_API TimestampedInclusionAnnotation();
+    AWS_GLUE_API TimestampedInclusionAnnotation() = default;
     AWS_GLUE_API TimestampedInclusionAnnotation(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TimestampedInclusionAnnotation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,29 @@ namespace Model
     /**
      * <p>The inclusion annotation value.</p>
      */
-    inline const InclusionAnnotationValue& GetValue() const{ return m_value; }
+    inline InclusionAnnotationValue GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const InclusionAnnotationValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(InclusionAnnotationValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline TimestampedInclusionAnnotation& WithValue(const InclusionAnnotationValue& value) { SetValue(value); return *this;}
-    inline TimestampedInclusionAnnotation& WithValue(InclusionAnnotationValue&& value) { SetValue(std::move(value)); return *this;}
+    inline void SetValue(InclusionAnnotationValue value) { m_valueHasBeenSet = true; m_value = value; }
+    inline TimestampedInclusionAnnotation& WithValue(InclusionAnnotationValue value) { SetValue(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the inclusion annotation was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedOn() const{ return m_lastModifiedOn; }
+    inline const Aws::Utils::DateTime& GetLastModifiedOn() const { return m_lastModifiedOn; }
     inline bool LastModifiedOnHasBeenSet() const { return m_lastModifiedOnHasBeenSet; }
-    inline void SetLastModifiedOn(const Aws::Utils::DateTime& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = value; }
-    inline void SetLastModifiedOn(Aws::Utils::DateTime&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::move(value); }
-    inline TimestampedInclusionAnnotation& WithLastModifiedOn(const Aws::Utils::DateTime& value) { SetLastModifiedOn(value); return *this;}
-    inline TimestampedInclusionAnnotation& WithLastModifiedOn(Aws::Utils::DateTime&& value) { SetLastModifiedOn(std::move(value)); return *this;}
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    void SetLastModifiedOn(LastModifiedOnT&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::forward<LastModifiedOnT>(value); }
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    TimestampedInclusionAnnotation& WithLastModifiedOn(LastModifiedOnT&& value) { SetLastModifiedOn(std::forward<LastModifiedOnT>(value)); return *this;}
     ///@}
   private:
 
-    InclusionAnnotationValue m_value;
+    InclusionAnnotationValue m_value{InclusionAnnotationValue::NOT_SET};
     bool m_valueHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedOn;
+    Aws::Utils::DateTime m_lastModifiedOn{};
     bool m_lastModifiedOnHasBeenSet = false;
   };
 

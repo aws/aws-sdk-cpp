@@ -22,7 +22,7 @@ namespace Model
   class GenerateServiceLastAccessedDetailsRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API GenerateServiceLastAccessedDetailsRequest();
+    AWS_IAM_API GenerateServiceLastAccessedDetailsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * generate information about when the resource was last used in an attempt to
      * access an Amazon Web Services service.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline GenerateServiceLastAccessedDetailsRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GenerateServiceLastAccessedDetailsRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GenerateServiceLastAccessedDetailsRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GenerateServiceLastAccessedDetailsRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,19 +60,17 @@ namespace Model
      * action data. If you don't include this optional parameter, the operation
      * generates service data.</p>
      */
-    inline const AccessAdvisorUsageGranularityType& GetGranularity() const{ return m_granularity; }
+    inline AccessAdvisorUsageGranularityType GetGranularity() const { return m_granularity; }
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
-    inline void SetGranularity(const AccessAdvisorUsageGranularityType& value) { m_granularityHasBeenSet = true; m_granularity = value; }
-    inline void SetGranularity(AccessAdvisorUsageGranularityType&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
-    inline GenerateServiceLastAccessedDetailsRequest& WithGranularity(const AccessAdvisorUsageGranularityType& value) { SetGranularity(value); return *this;}
-    inline GenerateServiceLastAccessedDetailsRequest& WithGranularity(AccessAdvisorUsageGranularityType&& value) { SetGranularity(std::move(value)); return *this;}
+    inline void SetGranularity(AccessAdvisorUsageGranularityType value) { m_granularityHasBeenSet = true; m_granularity = value; }
+    inline GenerateServiceLastAccessedDetailsRequest& WithGranularity(AccessAdvisorUsageGranularityType value) { SetGranularity(value); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    AccessAdvisorUsageGranularityType m_granularity;
+    AccessAdvisorUsageGranularityType m_granularity{AccessAdvisorUsageGranularityType::NOT_SET};
     bool m_granularityHasBeenSet = false;
   };
 

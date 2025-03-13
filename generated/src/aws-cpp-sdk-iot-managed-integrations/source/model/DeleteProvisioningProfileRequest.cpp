@@ -12,11 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProvisioningProfileRequest::DeleteProvisioningProfileRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProvisioningProfileRequest::SerializePayload() const
 {
   return {};

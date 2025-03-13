@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTrunkInterfaceAssociationsResponse::DescribeTrunkInterfaceAssociationsResponse()
-{
-}
-
 DescribeTrunkInterfaceAssociationsResponse::DescribeTrunkInterfaceAssociationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeTrunkInterfaceAssociationsResponse& DescribeTrunkInterfaceAssociationsRe
     if(!interfaceAssociationsNode.IsNull())
     {
       XmlNode interfaceAssociationsMember = interfaceAssociationsNode.FirstChild("item");
+      m_interfaceAssociationsHasBeenSet = !interfaceAssociationsMember.IsNull();
       while(!interfaceAssociationsMember.IsNull())
       {
         m_interfaceAssociations.push_back(interfaceAssociationsMember);
@@ -53,6 +50,7 @@ DescribeTrunkInterfaceAssociationsResponse& DescribeTrunkInterfaceAssociationsRe
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeTrunkInterfaceAssociationsResponse& DescribeTrunkInterfaceAssociationsRe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeTrunkInterfaceAssociationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

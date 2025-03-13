@@ -18,18 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-OpenLineageRunEventSummary::OpenLineageRunEventSummary() : 
-    m_eventType(OpenLineageRunState::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_jobHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_runIdHasBeenSet(false)
-{
-}
-
 OpenLineageRunEventSummary::OpenLineageRunEventSummary(JsonView jsonValue)
-  : OpenLineageRunEventSummary()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ OpenLineageRunEventSummary& OpenLineageRunEventSummary::operator =(JsonView json
   if(jsonValue.ValueExists("eventType"))
   {
     m_eventType = OpenLineageRunStateMapper::GetOpenLineageRunStateForName(jsonValue.GetString("eventType"));
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
@@ -52,14 +39,11 @@ OpenLineageRunEventSummary& OpenLineageRunEventSummary::operator =(JsonView json
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("job"))
   {
     m_job = jsonValue.GetObject("job");
-
     m_jobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
@@ -69,14 +53,11 @@ OpenLineageRunEventSummary& OpenLineageRunEventSummary::operator =(JsonView json
     }
     m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runId"))
   {
     m_runId = jsonValue.GetString("runId");
-
     m_runIdHasBeenSet = true;
   }
-
   return *this;
 }
 

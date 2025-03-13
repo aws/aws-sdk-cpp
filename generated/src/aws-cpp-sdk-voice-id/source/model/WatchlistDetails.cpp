@@ -18,13 +18,7 @@ namespace VoiceID
 namespace Model
 {
 
-WatchlistDetails::WatchlistDetails() : 
-    m_defaultWatchlistIdHasBeenSet(false)
-{
-}
-
 WatchlistDetails::WatchlistDetails(JsonView jsonValue)
-  : WatchlistDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WatchlistDetails& WatchlistDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DefaultWatchlistId"))
   {
     m_defaultWatchlistId = jsonValue.GetString("DefaultWatchlistId");
-
     m_defaultWatchlistIdHasBeenSet = true;
   }
-
   return *this;
 }
 

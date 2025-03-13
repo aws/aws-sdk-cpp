@@ -36,7 +36,7 @@ namespace Model
   class CompositionSummary
   {
   public:
-    AWS_IVSREALTIME_API CompositionSummary();
+    AWS_IVSREALTIME_API CompositionSummary() = default;
     AWS_IVSREALTIME_API CompositionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API CompositionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,54 +46,48 @@ namespace Model
     /**
      * <p>ARN of the Composition resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline CompositionSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CompositionSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CompositionSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CompositionSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ARN of the attached stage.</p>
      */
-    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
+    inline const Aws::String& GetStageArn() const { return m_stageArn; }
     inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
-    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
-    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
-    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
-    inline CompositionSummary& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
-    inline CompositionSummary& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
-    inline CompositionSummary& WithStageArn(const char* value) { SetStageArn(value); return *this;}
+    template<typename StageArnT = Aws::String>
+    void SetStageArn(StageArnT&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::forward<StageArnT>(value); }
+    template<typename StageArnT = Aws::String>
+    CompositionSummary& WithStageArn(StageArnT&& value) { SetStageArn(std::forward<StageArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Array of Destination objects.</p>
      */
-    inline const Aws::Vector<DestinationSummary>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<DestinationSummary>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<DestinationSummary>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<DestinationSummary>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline CompositionSummary& WithDestinations(const Aws::Vector<DestinationSummary>& value) { SetDestinations(value); return *this;}
-    inline CompositionSummary& WithDestinations(Aws::Vector<DestinationSummary>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline CompositionSummary& AddDestinations(const DestinationSummary& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline CompositionSummary& AddDestinations(DestinationSummary&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+    template<typename DestinationsT = Aws::Vector<DestinationSummary>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<DestinationSummary>>
+    CompositionSummary& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = DestinationSummary>
+    CompositionSummary& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>State of the Composition resource.</p>
      */
-    inline const CompositionState& GetState() const{ return m_state; }
+    inline CompositionState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const CompositionState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(CompositionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline CompositionSummary& WithState(const CompositionState& value) { SetState(value); return *this;}
-    inline CompositionSummary& WithState(CompositionState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(CompositionState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline CompositionSummary& WithState(CompositionState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -106,19 +100,16 @@ namespace Model
      * requirements"; Amazon IVS has no constraints on tags beyond what is documented
      * there.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CompositionSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CompositionSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CompositionSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CompositionSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CompositionSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CompositionSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CompositionSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CompositionSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CompositionSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CompositionSummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CompositionSummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -126,12 +117,12 @@ namespace Model
      * <p>UTC time of the Composition start. This is an ISO 8601 timestamp; <i>note
      * that this is returned as a string</i>.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline CompositionSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline CompositionSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    CompositionSummary& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,12 +130,12 @@ namespace Model
      * <p>UTC time of the Composition end. This is an ISO 8601 timestamp; <i>note that
      * this is returned as a string</i>.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline CompositionSummary& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline CompositionSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    CompositionSummary& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -157,16 +148,16 @@ namespace Model
     Aws::Vector<DestinationSummary> m_destinations;
     bool m_destinationsHasBeenSet = false;
 
-    CompositionState m_state;
+    CompositionState m_state{CompositionState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
   };
 

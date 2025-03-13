@@ -18,17 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-TaskSummary::TaskSummary() : 
-    m_state(TaskState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
-{
-}
-
 TaskSummary::TaskSummary(JsonView jsonValue)
-  : TaskSummary()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ TaskSummary& TaskSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("state"))
   {
     m_state = TaskStateMapper::GetTaskStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -51,21 +39,16 @@ TaskSummary& TaskSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskArn"))
   {
     m_taskArn = jsonValue.GetString("taskArn");
-
     m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   return *this;
 }
 

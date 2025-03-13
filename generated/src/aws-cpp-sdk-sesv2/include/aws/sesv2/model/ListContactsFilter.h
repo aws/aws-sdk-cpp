@@ -33,7 +33,7 @@ namespace Model
   class ListContactsFilter
   {
   public:
-    AWS_SESV2_API ListContactsFilter();
+    AWS_SESV2_API ListContactsFilter() = default;
     AWS_SESV2_API ListContactsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API ListContactsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
      * <p>The status by which you are filtering: <code>OPT_IN</code> or
      * <code>OPT_OUT</code>.</p>
      */
-    inline const SubscriptionStatus& GetFilteredStatus() const{ return m_filteredStatus; }
+    inline SubscriptionStatus GetFilteredStatus() const { return m_filteredStatus; }
     inline bool FilteredStatusHasBeenSet() const { return m_filteredStatusHasBeenSet; }
-    inline void SetFilteredStatus(const SubscriptionStatus& value) { m_filteredStatusHasBeenSet = true; m_filteredStatus = value; }
-    inline void SetFilteredStatus(SubscriptionStatus&& value) { m_filteredStatusHasBeenSet = true; m_filteredStatus = std::move(value); }
-    inline ListContactsFilter& WithFilteredStatus(const SubscriptionStatus& value) { SetFilteredStatus(value); return *this;}
-    inline ListContactsFilter& WithFilteredStatus(SubscriptionStatus&& value) { SetFilteredStatus(std::move(value)); return *this;}
+    inline void SetFilteredStatus(SubscriptionStatus value) { m_filteredStatusHasBeenSet = true; m_filteredStatus = value; }
+    inline ListContactsFilter& WithFilteredStatus(SubscriptionStatus value) { SetFilteredStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Used for filtering by a specific topic preference.</p>
      */
-    inline const TopicFilter& GetTopicFilter() const{ return m_topicFilter; }
+    inline const TopicFilter& GetTopicFilter() const { return m_topicFilter; }
     inline bool TopicFilterHasBeenSet() const { return m_topicFilterHasBeenSet; }
-    inline void SetTopicFilter(const TopicFilter& value) { m_topicFilterHasBeenSet = true; m_topicFilter = value; }
-    inline void SetTopicFilter(TopicFilter&& value) { m_topicFilterHasBeenSet = true; m_topicFilter = std::move(value); }
-    inline ListContactsFilter& WithTopicFilter(const TopicFilter& value) { SetTopicFilter(value); return *this;}
-    inline ListContactsFilter& WithTopicFilter(TopicFilter&& value) { SetTopicFilter(std::move(value)); return *this;}
+    template<typename TopicFilterT = TopicFilter>
+    void SetTopicFilter(TopicFilterT&& value) { m_topicFilterHasBeenSet = true; m_topicFilter = std::forward<TopicFilterT>(value); }
+    template<typename TopicFilterT = TopicFilter>
+    ListContactsFilter& WithTopicFilter(TopicFilterT&& value) { SetTopicFilter(std::forward<TopicFilterT>(value)); return *this;}
     ///@}
   private:
 
-    SubscriptionStatus m_filteredStatus;
+    SubscriptionStatus m_filteredStatus{SubscriptionStatus::NOT_SET};
     bool m_filteredStatusHasBeenSet = false;
 
     TopicFilter m_topicFilter;

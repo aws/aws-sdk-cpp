@@ -20,14 +20,7 @@ namespace SNS
 namespace Model
 {
 
-PlatformApplication::PlatformApplication() : 
-    m_platformApplicationArnHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 PlatformApplication::PlatformApplication(const XmlNode& xmlNode)
-  : PlatformApplication()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ PlatformApplication& PlatformApplication::operator =(const XmlNode& xmlNode)
     {
       m_platformApplicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(platformApplicationArnNode.GetText());
       m_platformApplicationArnHasBeenSet = true;
+       m_platformApplicationArnHasBeenSet = true;
     }
     XmlNode attributesNode = resultNode.FirstChild("Attributes");
 
     if(!attributesNode.IsNull())
     {
       XmlNode attributesEntry = attributesNode.FirstChild("entry");
+      m_attributesHasBeenSet = !attributesEntry.IsNull();
       while(!attributesEntry.IsNull())
       {
         XmlNode keyNode = attributesEntry.FirstChild("key");
@@ -58,7 +53,7 @@ PlatformApplication& PlatformApplication::operator =(const XmlNode& xmlNode)
         attributesEntry = attributesEntry.NextNode("entry");
       }
 
-      m_attributesHasBeenSet = true;
+       m_attributesHasBeenSet = true;
     }
   }
 

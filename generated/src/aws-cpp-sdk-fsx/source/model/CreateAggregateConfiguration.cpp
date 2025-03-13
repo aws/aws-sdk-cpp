@@ -18,15 +18,7 @@ namespace FSx
 namespace Model
 {
 
-CreateAggregateConfiguration::CreateAggregateConfiguration() : 
-    m_aggregatesHasBeenSet(false),
-    m_constituentsPerAggregate(0),
-    m_constituentsPerAggregateHasBeenSet(false)
-{
-}
-
 CreateAggregateConfiguration::CreateAggregateConfiguration(JsonView jsonValue)
-  : CreateAggregateConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ CreateAggregateConfiguration& CreateAggregateConfiguration::operator =(JsonView 
     }
     m_aggregatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConstituentsPerAggregate"))
   {
     m_constituentsPerAggregate = jsonValue.GetInteger("ConstituentsPerAggregate");
-
     m_constituentsPerAggregateHasBeenSet = true;
   }
-
   return *this;
 }
 

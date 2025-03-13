@@ -12,24 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAutoMLJobsRequest::ListAutoMLJobsRequest() : 
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_lastModifiedTimeAfterHasBeenSet(false),
-    m_lastModifiedTimeBeforeHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_statusEquals(AutoMLJobStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false),
-    m_sortOrder(AutoMLSortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_sortBy(AutoMLSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAutoMLJobsRequest::SerializePayload() const
 {
   JsonValue payload;

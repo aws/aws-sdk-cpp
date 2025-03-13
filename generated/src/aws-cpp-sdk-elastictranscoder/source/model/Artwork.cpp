@@ -18,19 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-Artwork::Artwork() : 
-    m_inputKeyHasBeenSet(false),
-    m_maxWidthHasBeenSet(false),
-    m_maxHeightHasBeenSet(false),
-    m_sizingPolicyHasBeenSet(false),
-    m_paddingPolicyHasBeenSet(false),
-    m_albumArtFormatHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
-{
-}
-
 Artwork::Artwork(JsonView jsonValue)
-  : Artwork()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ Artwork& Artwork::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InputKey"))
   {
     m_inputKey = jsonValue.GetString("InputKey");
-
     m_inputKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxWidth"))
   {
     m_maxWidth = jsonValue.GetString("MaxWidth");
-
     m_maxWidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxHeight"))
   {
     m_maxHeight = jsonValue.GetString("MaxHeight");
-
     m_maxHeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizingPolicy"))
   {
     m_sizingPolicy = jsonValue.GetString("SizingPolicy");
-
     m_sizingPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaddingPolicy"))
   {
     m_paddingPolicy = jsonValue.GetString("PaddingPolicy");
-
     m_paddingPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlbumArtFormat"))
   {
     m_albumArtFormat = jsonValue.GetString("AlbumArtFormat");
-
     m_albumArtFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encryption"))
   {
     m_encryption = jsonValue.GetObject("Encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   return *this;
 }
 

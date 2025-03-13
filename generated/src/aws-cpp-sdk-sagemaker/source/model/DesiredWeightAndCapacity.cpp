@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DesiredWeightAndCapacity::DesiredWeightAndCapacity() : 
-    m_variantNameHasBeenSet(false),
-    m_desiredWeight(0.0),
-    m_desiredWeightHasBeenSet(false),
-    m_desiredInstanceCount(0),
-    m_desiredInstanceCountHasBeenSet(false),
-    m_serverlessUpdateConfigHasBeenSet(false)
-{
-}
-
 DesiredWeightAndCapacity::DesiredWeightAndCapacity(JsonView jsonValue)
-  : DesiredWeightAndCapacity()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DesiredWeightAndCapacity& DesiredWeightAndCapacity::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("VariantName"))
   {
     m_variantName = jsonValue.GetString("VariantName");
-
     m_variantNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DesiredWeight"))
   {
     m_desiredWeight = jsonValue.GetDouble("DesiredWeight");
-
     m_desiredWeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DesiredInstanceCount"))
   {
     m_desiredInstanceCount = jsonValue.GetInteger("DesiredInstanceCount");
-
     m_desiredInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerlessUpdateConfig"))
   {
     m_serverlessUpdateConfig = jsonValue.GetObject("ServerlessUpdateConfig");
-
     m_serverlessUpdateConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

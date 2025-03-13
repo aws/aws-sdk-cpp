@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotLocaleFilter::BotLocaleFilter() : 
-    m_name(BotLocaleFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(BotLocaleFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 BotLocaleFilter::BotLocaleFilter(JsonView jsonValue)
-  : BotLocaleFilter()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ BotLocaleFilter& BotLocaleFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = BotLocaleFilterNameMapper::GetBotLocaleFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -51,14 +39,11 @@ BotLocaleFilter& BotLocaleFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = BotLocaleFilterOperatorMapper::GetBotLocaleFilterOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

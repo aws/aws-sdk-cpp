@@ -29,7 +29,7 @@ namespace Model
   class GetCommentReactionsResult
   {
   public:
-    AWS_CODECOMMIT_API GetCommentReactionsResult();
+    AWS_CODECOMMIT_API GetCommentReactionsResult() = default;
     AWS_CODECOMMIT_API GetCommentReactionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API GetCommentReactionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of reactions to the specified comment.</p>
      */
-    inline const Aws::Vector<ReactionForComment>& GetReactionsForComment() const{ return m_reactionsForComment; }
-    inline void SetReactionsForComment(const Aws::Vector<ReactionForComment>& value) { m_reactionsForComment = value; }
-    inline void SetReactionsForComment(Aws::Vector<ReactionForComment>&& value) { m_reactionsForComment = std::move(value); }
-    inline GetCommentReactionsResult& WithReactionsForComment(const Aws::Vector<ReactionForComment>& value) { SetReactionsForComment(value); return *this;}
-    inline GetCommentReactionsResult& WithReactionsForComment(Aws::Vector<ReactionForComment>&& value) { SetReactionsForComment(std::move(value)); return *this;}
-    inline GetCommentReactionsResult& AddReactionsForComment(const ReactionForComment& value) { m_reactionsForComment.push_back(value); return *this; }
-    inline GetCommentReactionsResult& AddReactionsForComment(ReactionForComment&& value) { m_reactionsForComment.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReactionForComment>& GetReactionsForComment() const { return m_reactionsForComment; }
+    template<typename ReactionsForCommentT = Aws::Vector<ReactionForComment>>
+    void SetReactionsForComment(ReactionsForCommentT&& value) { m_reactionsForCommentHasBeenSet = true; m_reactionsForComment = std::forward<ReactionsForCommentT>(value); }
+    template<typename ReactionsForCommentT = Aws::Vector<ReactionForComment>>
+    GetCommentReactionsResult& WithReactionsForComment(ReactionsForCommentT&& value) { SetReactionsForComment(std::forward<ReactionsForCommentT>(value)); return *this;}
+    template<typename ReactionsForCommentT = ReactionForComment>
+    GetCommentReactionsResult& AddReactionsForComment(ReactionsForCommentT&& value) { m_reactionsForCommentHasBeenSet = true; m_reactionsForComment.emplace_back(std::forward<ReactionsForCommentT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>An enumeration token that can be used in a request to return the next batch
      * of the results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetCommentReactionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetCommentReactionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetCommentReactionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetCommentReactionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCommentReactionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCommentReactionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCommentReactionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCommentReactionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ReactionForComment> m_reactionsForComment;
+    bool m_reactionsForCommentHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

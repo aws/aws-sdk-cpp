@@ -27,37 +27,35 @@ namespace Model
   class CreateLensShareResult
   {
   public:
-    AWS_WELLARCHITECTED_API CreateLensShareResult();
+    AWS_WELLARCHITECTED_API CreateLensShareResult() = default;
     AWS_WELLARCHITECTED_API CreateLensShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API CreateLensShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetShareId() const{ return m_shareId; }
-    inline void SetShareId(const Aws::String& value) { m_shareId = value; }
-    inline void SetShareId(Aws::String&& value) { m_shareId = std::move(value); }
-    inline void SetShareId(const char* value) { m_shareId.assign(value); }
-    inline CreateLensShareResult& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-    inline CreateLensShareResult& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-    inline CreateLensShareResult& WithShareId(const char* value) { SetShareId(value); return *this;}
+    inline const Aws::String& GetShareId() const { return m_shareId; }
+    template<typename ShareIdT = Aws::String>
+    void SetShareId(ShareIdT&& value) { m_shareIdHasBeenSet = true; m_shareId = std::forward<ShareIdT>(value); }
+    template<typename ShareIdT = Aws::String>
+    CreateLensShareResult& WithShareId(ShareIdT&& value) { SetShareId(std::forward<ShareIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLensShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLensShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLensShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLensShareResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_shareId;
+    bool m_shareIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

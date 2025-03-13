@@ -21,7 +21,7 @@ namespace Model
   class DeletePreparedStatementRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API DeletePreparedStatementRequest();
+    AWS_ATHENA_API DeletePreparedStatementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The name of the prepared statement to delete.</p>
      */
-    inline const Aws::String& GetStatementName() const{ return m_statementName; }
+    inline const Aws::String& GetStatementName() const { return m_statementName; }
     inline bool StatementNameHasBeenSet() const { return m_statementNameHasBeenSet; }
-    inline void SetStatementName(const Aws::String& value) { m_statementNameHasBeenSet = true; m_statementName = value; }
-    inline void SetStatementName(Aws::String&& value) { m_statementNameHasBeenSet = true; m_statementName = std::move(value); }
-    inline void SetStatementName(const char* value) { m_statementNameHasBeenSet = true; m_statementName.assign(value); }
-    inline DeletePreparedStatementRequest& WithStatementName(const Aws::String& value) { SetStatementName(value); return *this;}
-    inline DeletePreparedStatementRequest& WithStatementName(Aws::String&& value) { SetStatementName(std::move(value)); return *this;}
-    inline DeletePreparedStatementRequest& WithStatementName(const char* value) { SetStatementName(value); return *this;}
+    template<typename StatementNameT = Aws::String>
+    void SetStatementName(StatementNameT&& value) { m_statementNameHasBeenSet = true; m_statementName = std::forward<StatementNameT>(value); }
+    template<typename StatementNameT = Aws::String>
+    DeletePreparedStatementRequest& WithStatementName(StatementNameT&& value) { SetStatementName(std::forward<StatementNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workgroup to which the statement to be deleted belongs.</p>
      */
-    inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+    inline const Aws::String& GetWorkGroup() const { return m_workGroup; }
     inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
-    inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
-    inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
-    inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
-    inline DeletePreparedStatementRequest& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
-    inline DeletePreparedStatementRequest& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
-    inline DeletePreparedStatementRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
+    template<typename WorkGroupT = Aws::String>
+    void SetWorkGroup(WorkGroupT&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::forward<WorkGroupT>(value); }
+    template<typename WorkGroupT = Aws::String>
+    DeletePreparedStatementRequest& WithWorkGroup(WorkGroupT&& value) { SetWorkGroup(std::forward<WorkGroupT>(value)); return *this;}
     ///@}
   private:
 

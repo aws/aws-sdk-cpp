@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-IAMUserIdentity::IAMUserIdentity() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 IAMUserIdentity::IAMUserIdentity(JsonView jsonValue)
-  : IAMUserIdentity()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IAMUserIdentity& IAMUserIdentity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

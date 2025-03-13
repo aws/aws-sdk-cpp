@@ -35,7 +35,7 @@ namespace Model
   class DateTimeDefaultValues
   {
   public:
-    AWS_QUICKSIGHT_API DateTimeDefaultValues();
+    AWS_QUICKSIGHT_API DateTimeDefaultValues() = default;
     AWS_QUICKSIGHT_API DateTimeDefaultValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DateTimeDefaultValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,26 @@ namespace Model
      * <p>The dynamic value of the <code>DataTimeDefaultValues</code>. Different
      * defaults are displayed according to users, groups, and values mapping.</p>
      */
-    inline const DynamicDefaultValue& GetDynamicValue() const{ return m_dynamicValue; }
+    inline const DynamicDefaultValue& GetDynamicValue() const { return m_dynamicValue; }
     inline bool DynamicValueHasBeenSet() const { return m_dynamicValueHasBeenSet; }
-    inline void SetDynamicValue(const DynamicDefaultValue& value) { m_dynamicValueHasBeenSet = true; m_dynamicValue = value; }
-    inline void SetDynamicValue(DynamicDefaultValue&& value) { m_dynamicValueHasBeenSet = true; m_dynamicValue = std::move(value); }
-    inline DateTimeDefaultValues& WithDynamicValue(const DynamicDefaultValue& value) { SetDynamicValue(value); return *this;}
-    inline DateTimeDefaultValues& WithDynamicValue(DynamicDefaultValue&& value) { SetDynamicValue(std::move(value)); return *this;}
+    template<typename DynamicValueT = DynamicDefaultValue>
+    void SetDynamicValue(DynamicValueT&& value) { m_dynamicValueHasBeenSet = true; m_dynamicValue = std::forward<DynamicValueT>(value); }
+    template<typename DynamicValueT = DynamicDefaultValue>
+    DateTimeDefaultValues& WithDynamicValue(DynamicValueT&& value) { SetDynamicValue(std::forward<DynamicValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The static values of the <code>DataTimeDefaultValues</code>.</p>
      */
-    inline const Aws::Vector<Aws::Utils::DateTime>& GetStaticValues() const{ return m_staticValues; }
+    inline const Aws::Vector<Aws::Utils::DateTime>& GetStaticValues() const { return m_staticValues; }
     inline bool StaticValuesHasBeenSet() const { return m_staticValuesHasBeenSet; }
-    inline void SetStaticValues(const Aws::Vector<Aws::Utils::DateTime>& value) { m_staticValuesHasBeenSet = true; m_staticValues = value; }
-    inline void SetStaticValues(Aws::Vector<Aws::Utils::DateTime>&& value) { m_staticValuesHasBeenSet = true; m_staticValues = std::move(value); }
-    inline DateTimeDefaultValues& WithStaticValues(const Aws::Vector<Aws::Utils::DateTime>& value) { SetStaticValues(value); return *this;}
-    inline DateTimeDefaultValues& WithStaticValues(Aws::Vector<Aws::Utils::DateTime>&& value) { SetStaticValues(std::move(value)); return *this;}
-    inline DateTimeDefaultValues& AddStaticValues(const Aws::Utils::DateTime& value) { m_staticValuesHasBeenSet = true; m_staticValues.push_back(value); return *this; }
-    inline DateTimeDefaultValues& AddStaticValues(Aws::Utils::DateTime&& value) { m_staticValuesHasBeenSet = true; m_staticValues.push_back(std::move(value)); return *this; }
+    template<typename StaticValuesT = Aws::Vector<Aws::Utils::DateTime>>
+    void SetStaticValues(StaticValuesT&& value) { m_staticValuesHasBeenSet = true; m_staticValues = std::forward<StaticValuesT>(value); }
+    template<typename StaticValuesT = Aws::Vector<Aws::Utils::DateTime>>
+    DateTimeDefaultValues& WithStaticValues(StaticValuesT&& value) { SetStaticValues(std::forward<StaticValuesT>(value)); return *this;}
+    template<typename StaticValuesT = Aws::Utils::DateTime>
+    DateTimeDefaultValues& AddStaticValues(StaticValuesT&& value) { m_staticValuesHasBeenSet = true; m_staticValues.emplace_back(std::forward<StaticValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * <p>The rolling date of the <code>DataTimeDefaultValues</code>. The date is
      * determined from the dataset based on input expression.</p>
      */
-    inline const RollingDateConfiguration& GetRollingDate() const{ return m_rollingDate; }
+    inline const RollingDateConfiguration& GetRollingDate() const { return m_rollingDate; }
     inline bool RollingDateHasBeenSet() const { return m_rollingDateHasBeenSet; }
-    inline void SetRollingDate(const RollingDateConfiguration& value) { m_rollingDateHasBeenSet = true; m_rollingDate = value; }
-    inline void SetRollingDate(RollingDateConfiguration&& value) { m_rollingDateHasBeenSet = true; m_rollingDate = std::move(value); }
-    inline DateTimeDefaultValues& WithRollingDate(const RollingDateConfiguration& value) { SetRollingDate(value); return *this;}
-    inline DateTimeDefaultValues& WithRollingDate(RollingDateConfiguration&& value) { SetRollingDate(std::move(value)); return *this;}
+    template<typename RollingDateT = RollingDateConfiguration>
+    void SetRollingDate(RollingDateT&& value) { m_rollingDateHasBeenSet = true; m_rollingDate = std::forward<RollingDateT>(value); }
+    template<typename RollingDateT = RollingDateConfiguration>
+    DateTimeDefaultValues& WithRollingDate(RollingDateT&& value) { SetRollingDate(std::forward<RollingDateT>(value)); return *this;}
     ///@}
   private:
 

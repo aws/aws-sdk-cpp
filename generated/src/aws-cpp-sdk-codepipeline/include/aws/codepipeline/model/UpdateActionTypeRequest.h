@@ -21,7 +21,7 @@ namespace Model
   class UpdateActionTypeRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API UpdateActionTypeRequest();
+    AWS_CODEPIPELINE_API UpdateActionTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,12 @@ namespace Model
     /**
      * <p>The action type definition for the action type to be updated.</p>
      */
-    inline const ActionTypeDeclaration& GetActionType() const{ return m_actionType; }
+    inline const ActionTypeDeclaration& GetActionType() const { return m_actionType; }
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-    inline void SetActionType(const ActionTypeDeclaration& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-    inline void SetActionType(ActionTypeDeclaration&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-    inline UpdateActionTypeRequest& WithActionType(const ActionTypeDeclaration& value) { SetActionType(value); return *this;}
-    inline UpdateActionTypeRequest& WithActionType(ActionTypeDeclaration&& value) { SetActionType(std::move(value)); return *this;}
+    template<typename ActionTypeT = ActionTypeDeclaration>
+    void SetActionType(ActionTypeT&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::forward<ActionTypeT>(value); }
+    template<typename ActionTypeT = ActionTypeDeclaration>
+    UpdateActionTypeRequest& WithActionType(ActionTypeT&& value) { SetActionType(std::forward<ActionTypeT>(value)); return *this;}
     ///@}
   private:
 

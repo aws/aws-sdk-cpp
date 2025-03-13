@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeKeyPhrasesDetectionJobResult::DescribeKeyPhrasesDetectionJobResult()
-{
-}
-
 DescribeKeyPhrasesDetectionJobResult::DescribeKeyPhrasesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeKeyPhrasesDetectionJobResult& DescribeKeyPhrasesDetectionJobResult::oper
   if(jsonValue.ValueExists("KeyPhrasesDetectionJobProperties"))
   {
     m_keyPhrasesDetectionJobProperties = jsonValue.GetObject("KeyPhrasesDetectionJobProperties");
-
+    m_keyPhrasesDetectionJobPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

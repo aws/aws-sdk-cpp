@@ -23,7 +23,7 @@ namespace Model
   class CreateMembersRequest : public GuardDutyRequest
   {
   public:
-    AWS_GUARDDUTY_API CreateMembersRequest();
+    AWS_GUARDDUTY_API CreateMembersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
      * API.</p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-    inline CreateMembersRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline CreateMembersRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline CreateMembersRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    CreateMembersRequest& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,14 @@ namespace Model
      * <p>A list of account ID and email address pairs of the accounts that you want to
      * associate with the GuardDuty administrator account.</p>
      */
-    inline const Aws::Vector<AccountDetail>& GetAccountDetails() const{ return m_accountDetails; }
+    inline const Aws::Vector<AccountDetail>& GetAccountDetails() const { return m_accountDetails; }
     inline bool AccountDetailsHasBeenSet() const { return m_accountDetailsHasBeenSet; }
-    inline void SetAccountDetails(const Aws::Vector<AccountDetail>& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = value; }
-    inline void SetAccountDetails(Aws::Vector<AccountDetail>&& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = std::move(value); }
-    inline CreateMembersRequest& WithAccountDetails(const Aws::Vector<AccountDetail>& value) { SetAccountDetails(value); return *this;}
-    inline CreateMembersRequest& WithAccountDetails(Aws::Vector<AccountDetail>&& value) { SetAccountDetails(std::move(value)); return *this;}
-    inline CreateMembersRequest& AddAccountDetails(const AccountDetail& value) { m_accountDetailsHasBeenSet = true; m_accountDetails.push_back(value); return *this; }
-    inline CreateMembersRequest& AddAccountDetails(AccountDetail&& value) { m_accountDetailsHasBeenSet = true; m_accountDetails.push_back(std::move(value)); return *this; }
+    template<typename AccountDetailsT = Aws::Vector<AccountDetail>>
+    void SetAccountDetails(AccountDetailsT&& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = std::forward<AccountDetailsT>(value); }
+    template<typename AccountDetailsT = Aws::Vector<AccountDetail>>
+    CreateMembersRequest& WithAccountDetails(AccountDetailsT&& value) { SetAccountDetails(std::forward<AccountDetailsT>(value)); return *this;}
+    template<typename AccountDetailsT = AccountDetail>
+    CreateMembersRequest& AddAccountDetails(AccountDetailsT&& value) { m_accountDetailsHasBeenSet = true; m_accountDetails.emplace_back(std::forward<AccountDetailsT>(value)); return *this; }
     ///@}
   private:
 

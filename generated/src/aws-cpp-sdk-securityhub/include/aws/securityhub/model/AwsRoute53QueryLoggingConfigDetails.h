@@ -32,7 +32,7 @@ namespace Model
   class AwsRoute53QueryLoggingConfigDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsRoute53QueryLoggingConfigDetails();
+    AWS_SECURITYHUB_API AwsRoute53QueryLoggingConfigDetails() = default;
     AWS_SECURITYHUB_API AwsRoute53QueryLoggingConfigDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRoute53QueryLoggingConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log group that
      * Route 53 is publishing logs to.</p>
      */
-    inline const CloudWatchLogsLogGroupArnConfigDetails& GetCloudWatchLogsLogGroupArn() const{ return m_cloudWatchLogsLogGroupArn; }
+    inline const CloudWatchLogsLogGroupArnConfigDetails& GetCloudWatchLogsLogGroupArn() const { return m_cloudWatchLogsLogGroupArn; }
     inline bool CloudWatchLogsLogGroupArnHasBeenSet() const { return m_cloudWatchLogsLogGroupArnHasBeenSet; }
-    inline void SetCloudWatchLogsLogGroupArn(const CloudWatchLogsLogGroupArnConfigDetails& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = value; }
-    inline void SetCloudWatchLogsLogGroupArn(CloudWatchLogsLogGroupArnConfigDetails&& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = std::move(value); }
-    inline AwsRoute53QueryLoggingConfigDetails& WithCloudWatchLogsLogGroupArn(const CloudWatchLogsLogGroupArnConfigDetails& value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
-    inline AwsRoute53QueryLoggingConfigDetails& WithCloudWatchLogsLogGroupArn(CloudWatchLogsLogGroupArnConfigDetails&& value) { SetCloudWatchLogsLogGroupArn(std::move(value)); return *this;}
+    template<typename CloudWatchLogsLogGroupArnT = CloudWatchLogsLogGroupArnConfigDetails>
+    void SetCloudWatchLogsLogGroupArn(CloudWatchLogsLogGroupArnT&& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = std::forward<CloudWatchLogsLogGroupArnT>(value); }
+    template<typename CloudWatchLogsLogGroupArnT = CloudWatchLogsLogGroupArnConfigDetails>
+    AwsRoute53QueryLoggingConfigDetails& WithCloudWatchLogsLogGroupArn(CloudWatchLogsLogGroupArnT&& value) { SetCloudWatchLogsLogGroupArn(std::forward<CloudWatchLogsLogGroupArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ElasticInferenceAcceleratorAssociation::ElasticInferenceAcceleratorAssociation() : 
-    m_elasticInferenceAcceleratorArnHasBeenSet(false),
-    m_elasticInferenceAcceleratorAssociationIdHasBeenSet(false),
-    m_elasticInferenceAcceleratorAssociationStateHasBeenSet(false),
-    m_elasticInferenceAcceleratorAssociationTimeHasBeenSet(false)
-{
-}
-
 ElasticInferenceAcceleratorAssociation::ElasticInferenceAcceleratorAssociation(const XmlNode& xmlNode)
-  : ElasticInferenceAcceleratorAssociation()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ ElasticInferenceAcceleratorAssociation& ElasticInferenceAcceleratorAssociation::
     {
       m_elasticInferenceAcceleratorArn = Aws::Utils::Xml::DecodeEscapedXmlText(elasticInferenceAcceleratorArnNode.GetText());
       m_elasticInferenceAcceleratorArnHasBeenSet = true;
+       m_elasticInferenceAcceleratorArnHasBeenSet = true;
     }
     XmlNode elasticInferenceAcceleratorAssociationIdNode = resultNode.FirstChild("elasticInferenceAcceleratorAssociationId");
     if(!elasticInferenceAcceleratorAssociationIdNode.IsNull())
     {
       m_elasticInferenceAcceleratorAssociationId = Aws::Utils::Xml::DecodeEscapedXmlText(elasticInferenceAcceleratorAssociationIdNode.GetText());
       m_elasticInferenceAcceleratorAssociationIdHasBeenSet = true;
+       m_elasticInferenceAcceleratorAssociationIdHasBeenSet = true;
     }
     XmlNode elasticInferenceAcceleratorAssociationStateNode = resultNode.FirstChild("elasticInferenceAcceleratorAssociationState");
     if(!elasticInferenceAcceleratorAssociationStateNode.IsNull())
     {
       m_elasticInferenceAcceleratorAssociationState = Aws::Utils::Xml::DecodeEscapedXmlText(elasticInferenceAcceleratorAssociationStateNode.GetText());
       m_elasticInferenceAcceleratorAssociationStateHasBeenSet = true;
+       m_elasticInferenceAcceleratorAssociationStateHasBeenSet = true;
     }
     XmlNode elasticInferenceAcceleratorAssociationTimeNode = resultNode.FirstChild("elasticInferenceAcceleratorAssociationTime");
     if(!elasticInferenceAcceleratorAssociationTimeNode.IsNull())
     {
       m_elasticInferenceAcceleratorAssociationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(elasticInferenceAcceleratorAssociationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_elasticInferenceAcceleratorAssociationTimeHasBeenSet = true;
+       m_elasticInferenceAcceleratorAssociationTimeHasBeenSet = true;
     }
   }
 

@@ -37,7 +37,7 @@ namespace Model
   class EksPersistentVolumeClaim
   {
   public:
-    AWS_BATCH_API EksPersistentVolumeClaim();
+    AWS_BATCH_API EksPersistentVolumeClaim() = default;
     AWS_BATCH_API EksPersistentVolumeClaim(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksPersistentVolumeClaim& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims">
      * Persistent Volume Claims</a> in the <i>Kubernetes documentation</i>.</p>
      */
-    inline const Aws::String& GetClaimName() const{ return m_claimName; }
+    inline const Aws::String& GetClaimName() const { return m_claimName; }
     inline bool ClaimNameHasBeenSet() const { return m_claimNameHasBeenSet; }
-    inline void SetClaimName(const Aws::String& value) { m_claimNameHasBeenSet = true; m_claimName = value; }
-    inline void SetClaimName(Aws::String&& value) { m_claimNameHasBeenSet = true; m_claimName = std::move(value); }
-    inline void SetClaimName(const char* value) { m_claimNameHasBeenSet = true; m_claimName.assign(value); }
-    inline EksPersistentVolumeClaim& WithClaimName(const Aws::String& value) { SetClaimName(value); return *this;}
-    inline EksPersistentVolumeClaim& WithClaimName(Aws::String&& value) { SetClaimName(std::move(value)); return *this;}
-    inline EksPersistentVolumeClaim& WithClaimName(const char* value) { SetClaimName(value); return *this;}
+    template<typename ClaimNameT = Aws::String>
+    void SetClaimName(ClaimNameT&& value) { m_claimNameHasBeenSet = true; m_claimName = std::forward<ClaimNameT>(value); }
+    template<typename ClaimNameT = Aws::String>
+    EksPersistentVolumeClaim& WithClaimName(ClaimNameT&& value) { SetClaimName(std::forward<ClaimNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +65,7 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/storage/volumes/#read-only-mounts">
      * Read Only Mounts</a> in the <i>Kubernetes documentation</i>.</p>
      */
-    inline bool GetReadOnly() const{ return m_readOnly; }
+    inline bool GetReadOnly() const { return m_readOnly; }
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
     inline EksPersistentVolumeClaim& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
@@ -77,7 +75,7 @@ namespace Model
     Aws::String m_claimName;
     bool m_claimNameHasBeenSet = false;
 
-    bool m_readOnly;
+    bool m_readOnly{false};
     bool m_readOnlyHasBeenSet = false;
   };
 

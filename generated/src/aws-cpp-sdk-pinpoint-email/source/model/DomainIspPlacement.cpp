@@ -18,21 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-DomainIspPlacement::DomainIspPlacement() : 
-    m_ispNameHasBeenSet(false),
-    m_inboxRawCount(0),
-    m_inboxRawCountHasBeenSet(false),
-    m_spamRawCount(0),
-    m_spamRawCountHasBeenSet(false),
-    m_inboxPercentage(0.0),
-    m_inboxPercentageHasBeenSet(false),
-    m_spamPercentage(0.0),
-    m_spamPercentageHasBeenSet(false)
-{
-}
-
 DomainIspPlacement::DomainIspPlacement(JsonView jsonValue)
-  : DomainIspPlacement()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ DomainIspPlacement& DomainIspPlacement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IspName"))
   {
     m_ispName = jsonValue.GetString("IspName");
-
     m_ispNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InboxRawCount"))
   {
     m_inboxRawCount = jsonValue.GetInt64("InboxRawCount");
-
     m_inboxRawCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpamRawCount"))
   {
     m_spamRawCount = jsonValue.GetInt64("SpamRawCount");
-
     m_spamRawCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InboxPercentage"))
   {
     m_inboxPercentage = jsonValue.GetDouble("InboxPercentage");
-
     m_inboxPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpamPercentage"))
   {
     m_spamPercentage = jsonValue.GetDouble("SpamPercentage");
-
     m_spamPercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

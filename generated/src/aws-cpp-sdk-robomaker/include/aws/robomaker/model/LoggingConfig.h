@@ -29,7 +29,7 @@ namespace Model
   class LoggingConfig
   {
   public:
-    AWS_ROBOMAKER_API LoggingConfig();
+    AWS_ROBOMAKER_API LoggingConfig() = default;
     AWS_ROBOMAKER_API LoggingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API LoggingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;

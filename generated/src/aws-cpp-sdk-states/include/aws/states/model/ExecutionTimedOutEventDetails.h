@@ -32,7 +32,7 @@ namespace Model
   class ExecutionTimedOutEventDetails
   {
   public:
-    AWS_SFN_API ExecutionTimedOutEventDetails();
+    AWS_SFN_API ExecutionTimedOutEventDetails() = default;
     AWS_SFN_API ExecutionTimedOutEventDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API ExecutionTimedOutEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The error code of the failure.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
+    inline const Aws::String& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
-    inline ExecutionTimedOutEventDetails& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline ExecutionTimedOutEventDetails& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline ExecutionTimedOutEventDetails& WithError(const char* value) { SetError(value); return *this;}
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    ExecutionTimedOutEventDetails& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A more detailed explanation of the cause of the timeout.</p>
      */
-    inline const Aws::String& GetCause() const{ return m_cause; }
+    inline const Aws::String& GetCause() const { return m_cause; }
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-    inline void SetCause(const Aws::String& value) { m_causeHasBeenSet = true; m_cause = value; }
-    inline void SetCause(Aws::String&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
-    inline void SetCause(const char* value) { m_causeHasBeenSet = true; m_cause.assign(value); }
-    inline ExecutionTimedOutEventDetails& WithCause(const Aws::String& value) { SetCause(value); return *this;}
-    inline ExecutionTimedOutEventDetails& WithCause(Aws::String&& value) { SetCause(std::move(value)); return *this;}
-    inline ExecutionTimedOutEventDetails& WithCause(const char* value) { SetCause(value); return *this;}
+    template<typename CauseT = Aws::String>
+    void SetCause(CauseT&& value) { m_causeHasBeenSet = true; m_cause = std::forward<CauseT>(value); }
+    template<typename CauseT = Aws::String>
+    ExecutionTimedOutEventDetails& WithCause(CauseT&& value) { SetCause(std::forward<CauseT>(value)); return *this;}
     ///@}
   private:
 

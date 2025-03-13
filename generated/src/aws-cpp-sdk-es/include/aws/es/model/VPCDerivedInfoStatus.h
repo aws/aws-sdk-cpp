@@ -33,7 +33,7 @@ namespace Model
   class VPCDerivedInfoStatus
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API VPCDerivedInfoStatus();
+    AWS_ELASTICSEARCHSERVICE_API VPCDerivedInfoStatus() = default;
     AWS_ELASTICSEARCHSERVICE_API VPCDerivedInfoStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API VPCDerivedInfoStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p> Specifies the VPC options for the specified Elasticsearch domain.</p>
      */
-    inline const VPCDerivedInfo& GetOptions() const{ return m_options; }
+    inline const VPCDerivedInfo& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const VPCDerivedInfo& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(VPCDerivedInfo&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline VPCDerivedInfoStatus& WithOptions(const VPCDerivedInfo& value) { SetOptions(value); return *this;}
-    inline VPCDerivedInfoStatus& WithOptions(VPCDerivedInfo&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = VPCDerivedInfo>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = VPCDerivedInfo>
+    VPCDerivedInfoStatus& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p> Specifies the status of the VPC options for the specified Elasticsearch
      * domain.</p>
      */
-    inline const OptionStatus& GetStatus() const{ return m_status; }
+    inline const OptionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline VPCDerivedInfoStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-    inline VPCDerivedInfoStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OptionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OptionStatus>
+    VPCDerivedInfoStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

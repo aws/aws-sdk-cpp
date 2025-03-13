@@ -27,7 +27,7 @@ namespace Model
   class CreateTypeResult
   {
   public:
-    AWS_KEYSPACES_API CreateTypeResult();
+    AWS_KEYSPACES_API CreateTypeResult() = default;
     AWS_KEYSPACES_API CreateTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KEYSPACES_API CreateTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
      * <p> The unique identifier of the keyspace that contains the new type in the
      * format of an Amazon Resource Name (ARN). </p>
      */
-    inline const Aws::String& GetKeyspaceArn() const{ return m_keyspaceArn; }
-    inline void SetKeyspaceArn(const Aws::String& value) { m_keyspaceArn = value; }
-    inline void SetKeyspaceArn(Aws::String&& value) { m_keyspaceArn = std::move(value); }
-    inline void SetKeyspaceArn(const char* value) { m_keyspaceArn.assign(value); }
-    inline CreateTypeResult& WithKeyspaceArn(const Aws::String& value) { SetKeyspaceArn(value); return *this;}
-    inline CreateTypeResult& WithKeyspaceArn(Aws::String&& value) { SetKeyspaceArn(std::move(value)); return *this;}
-    inline CreateTypeResult& WithKeyspaceArn(const char* value) { SetKeyspaceArn(value); return *this;}
+    inline const Aws::String& GetKeyspaceArn() const { return m_keyspaceArn; }
+    template<typename KeyspaceArnT = Aws::String>
+    void SetKeyspaceArn(KeyspaceArnT&& value) { m_keyspaceArnHasBeenSet = true; m_keyspaceArn = std::forward<KeyspaceArnT>(value); }
+    template<typename KeyspaceArnT = Aws::String>
+    CreateTypeResult& WithKeyspaceArn(KeyspaceArnT&& value) { SetKeyspaceArn(std::forward<KeyspaceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,32 +50,31 @@ namespace Model
      * Amazon Keyspaces requires the formatted name of the type for other operations,
      * for example <code>GetType</code>. </p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
-    inline void SetTypeName(const Aws::String& value) { m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeName.assign(value); }
-    inline CreateTypeResult& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline CreateTypeResult& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline CreateTypeResult& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    CreateTypeResult& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyspaceArn;
+    bool m_keyspaceArnHasBeenSet = false;
 
     Aws::String m_typeName;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class CustomActionFilterOperation
   {
   public:
-    AWS_QUICKSIGHT_API CustomActionFilterOperation();
+    AWS_QUICKSIGHT_API CustomActionFilterOperation() = default;
     AWS_QUICKSIGHT_API CustomActionFilterOperation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CustomActionFilterOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The configuration that chooses the fields to be filtered.</p>
      */
-    inline const FilterOperationSelectedFieldsConfiguration& GetSelectedFieldsConfiguration() const{ return m_selectedFieldsConfiguration; }
+    inline const FilterOperationSelectedFieldsConfiguration& GetSelectedFieldsConfiguration() const { return m_selectedFieldsConfiguration; }
     inline bool SelectedFieldsConfigurationHasBeenSet() const { return m_selectedFieldsConfigurationHasBeenSet; }
-    inline void SetSelectedFieldsConfiguration(const FilterOperationSelectedFieldsConfiguration& value) { m_selectedFieldsConfigurationHasBeenSet = true; m_selectedFieldsConfiguration = value; }
-    inline void SetSelectedFieldsConfiguration(FilterOperationSelectedFieldsConfiguration&& value) { m_selectedFieldsConfigurationHasBeenSet = true; m_selectedFieldsConfiguration = std::move(value); }
-    inline CustomActionFilterOperation& WithSelectedFieldsConfiguration(const FilterOperationSelectedFieldsConfiguration& value) { SetSelectedFieldsConfiguration(value); return *this;}
-    inline CustomActionFilterOperation& WithSelectedFieldsConfiguration(FilterOperationSelectedFieldsConfiguration&& value) { SetSelectedFieldsConfiguration(std::move(value)); return *this;}
+    template<typename SelectedFieldsConfigurationT = FilterOperationSelectedFieldsConfiguration>
+    void SetSelectedFieldsConfiguration(SelectedFieldsConfigurationT&& value) { m_selectedFieldsConfigurationHasBeenSet = true; m_selectedFieldsConfiguration = std::forward<SelectedFieldsConfigurationT>(value); }
+    template<typename SelectedFieldsConfigurationT = FilterOperationSelectedFieldsConfiguration>
+    CustomActionFilterOperation& WithSelectedFieldsConfiguration(SelectedFieldsConfigurationT&& value) { SetSelectedFieldsConfiguration(std::forward<SelectedFieldsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration that chooses the target visuals to be filtered.</p>
      */
-    inline const FilterOperationTargetVisualsConfiguration& GetTargetVisualsConfiguration() const{ return m_targetVisualsConfiguration; }
+    inline const FilterOperationTargetVisualsConfiguration& GetTargetVisualsConfiguration() const { return m_targetVisualsConfiguration; }
     inline bool TargetVisualsConfigurationHasBeenSet() const { return m_targetVisualsConfigurationHasBeenSet; }
-    inline void SetTargetVisualsConfiguration(const FilterOperationTargetVisualsConfiguration& value) { m_targetVisualsConfigurationHasBeenSet = true; m_targetVisualsConfiguration = value; }
-    inline void SetTargetVisualsConfiguration(FilterOperationTargetVisualsConfiguration&& value) { m_targetVisualsConfigurationHasBeenSet = true; m_targetVisualsConfiguration = std::move(value); }
-    inline CustomActionFilterOperation& WithTargetVisualsConfiguration(const FilterOperationTargetVisualsConfiguration& value) { SetTargetVisualsConfiguration(value); return *this;}
-    inline CustomActionFilterOperation& WithTargetVisualsConfiguration(FilterOperationTargetVisualsConfiguration&& value) { SetTargetVisualsConfiguration(std::move(value)); return *this;}
+    template<typename TargetVisualsConfigurationT = FilterOperationTargetVisualsConfiguration>
+    void SetTargetVisualsConfiguration(TargetVisualsConfigurationT&& value) { m_targetVisualsConfigurationHasBeenSet = true; m_targetVisualsConfiguration = std::forward<TargetVisualsConfigurationT>(value); }
+    template<typename TargetVisualsConfigurationT = FilterOperationTargetVisualsConfiguration>
+    CustomActionFilterOperation& WithTargetVisualsConfiguration(TargetVisualsConfigurationT&& value) { SetTargetVisualsConfiguration(std::forward<TargetVisualsConfigurationT>(value)); return *this;}
     ///@}
   private:
 

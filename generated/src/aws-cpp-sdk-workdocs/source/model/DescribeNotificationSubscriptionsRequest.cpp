@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeNotificationSubscriptionsRequest::DescribeNotificationSubscriptionsRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNotificationSubscriptionsRequest::SerializePayload() const
 {
   return {};

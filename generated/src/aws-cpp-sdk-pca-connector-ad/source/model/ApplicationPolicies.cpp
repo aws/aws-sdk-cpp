@@ -18,15 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-ApplicationPolicies::ApplicationPolicies() : 
-    m_critical(false),
-    m_criticalHasBeenSet(false),
-    m_policiesHasBeenSet(false)
-{
-}
-
 ApplicationPolicies::ApplicationPolicies(JsonView jsonValue)
-  : ApplicationPolicies()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ApplicationPolicies& ApplicationPolicies::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Critical"))
   {
     m_critical = jsonValue.GetBool("Critical");
-
     m_criticalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policies"))
   {
     Aws::Utils::Array<JsonView> policiesJsonList = jsonValue.GetArray("Policies");
@@ -49,7 +39,6 @@ ApplicationPolicies& ApplicationPolicies::operator =(JsonView jsonValue)
     }
     m_policiesHasBeenSet = true;
   }
-
   return *this;
 }
 

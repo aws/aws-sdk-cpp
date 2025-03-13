@@ -33,7 +33,7 @@ namespace Model
   class CommitTransactionResult
   {
   public:
-    AWS_RDSDATASERVICE_API CommitTransactionResult();
+    AWS_RDSDATASERVICE_API CommitTransactionResult() = default;
     AWS_RDSDATASERVICE_API CommitTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RDSDATASERVICE_API CommitTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The status of the commit operation.</p>
      */
-    inline const Aws::String& GetTransactionStatus() const{ return m_transactionStatus; }
-    inline void SetTransactionStatus(const Aws::String& value) { m_transactionStatus = value; }
-    inline void SetTransactionStatus(Aws::String&& value) { m_transactionStatus = std::move(value); }
-    inline void SetTransactionStatus(const char* value) { m_transactionStatus.assign(value); }
-    inline CommitTransactionResult& WithTransactionStatus(const Aws::String& value) { SetTransactionStatus(value); return *this;}
-    inline CommitTransactionResult& WithTransactionStatus(Aws::String&& value) { SetTransactionStatus(std::move(value)); return *this;}
-    inline CommitTransactionResult& WithTransactionStatus(const char* value) { SetTransactionStatus(value); return *this;}
+    inline const Aws::String& GetTransactionStatus() const { return m_transactionStatus; }
+    template<typename TransactionStatusT = Aws::String>
+    void SetTransactionStatus(TransactionStatusT&& value) { m_transactionStatusHasBeenSet = true; m_transactionStatus = std::forward<TransactionStatusT>(value); }
+    template<typename TransactionStatusT = Aws::String>
+    CommitTransactionResult& WithTransactionStatus(TransactionStatusT&& value) { SetTransactionStatus(std::forward<TransactionStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CommitTransactionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CommitTransactionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CommitTransactionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CommitTransactionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_transactionStatus;
+    bool m_transactionStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

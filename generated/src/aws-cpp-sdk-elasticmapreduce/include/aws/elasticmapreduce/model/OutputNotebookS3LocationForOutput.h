@@ -32,7 +32,7 @@ namespace Model
   class OutputNotebookS3LocationForOutput
   {
   public:
-    AWS_EMR_API OutputNotebookS3LocationForOutput();
+    AWS_EMR_API OutputNotebookS3LocationForOutput() = default;
     AWS_EMR_API OutputNotebookS3LocationForOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API OutputNotebookS3LocationForOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket that stores the notebook execution output.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline OutputNotebookS3LocationForOutput& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline OutputNotebookS3LocationForOutput& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline OutputNotebookS3LocationForOutput& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    OutputNotebookS3LocationForOutput& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The key to the Amazon S3 location that stores the notebook execution
      * output.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline OutputNotebookS3LocationForOutput& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline OutputNotebookS3LocationForOutput& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline OutputNotebookS3LocationForOutput& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    OutputNotebookS3LocationForOutput& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 

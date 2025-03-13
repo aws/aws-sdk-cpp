@@ -21,7 +21,7 @@ namespace Model
   class GetFirewallRuleGroupPolicyRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API GetFirewallRuleGroupPolicyRequest();
+    AWS_ROUTE53RESOLVER_API GetFirewallRuleGroupPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) for the rule group.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline GetFirewallRuleGroupPolicyRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetFirewallRuleGroupPolicyRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetFirewallRuleGroupPolicyRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetFirewallRuleGroupPolicyRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

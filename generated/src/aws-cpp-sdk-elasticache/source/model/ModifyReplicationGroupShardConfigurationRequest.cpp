@@ -10,18 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-ModifyReplicationGroupShardConfigurationRequest::ModifyReplicationGroupShardConfigurationRequest() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_nodeGroupCount(0),
-    m_nodeGroupCountHasBeenSet(false),
-    m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false),
-    m_reshardingConfigurationHasBeenSet(false),
-    m_nodeGroupsToRemoveHasBeenSet(false),
-    m_nodeGroupsToRetainHasBeenSet(false)
-{
-}
-
 Aws::String ModifyReplicationGroupShardConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

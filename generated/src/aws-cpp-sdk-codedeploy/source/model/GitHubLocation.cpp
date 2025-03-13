@@ -18,14 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-GitHubLocation::GitHubLocation() : 
-    m_repositoryHasBeenSet(false),
-    m_commitIdHasBeenSet(false)
-{
-}
-
 GitHubLocation::GitHubLocation(JsonView jsonValue)
-  : GitHubLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GitHubLocation& GitHubLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("repository"))
   {
     m_repository = jsonValue.GetString("repository");
-
     m_repositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commitId"))
   {
     m_commitId = jsonValue.GetString("commitId");
-
     m_commitIdHasBeenSet = true;
   }
-
   return *this;
 }
 

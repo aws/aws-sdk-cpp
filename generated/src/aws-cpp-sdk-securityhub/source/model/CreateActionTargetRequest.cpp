@@ -12,13 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateActionTargetRequest::CreateActionTargetRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String CreateActionTargetRequest::SerializePayload() const
 {
   JsonValue payload;

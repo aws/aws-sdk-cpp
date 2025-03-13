@@ -28,7 +28,7 @@ namespace Model
   class DescribeBackupPolicyResult
   {
   public:
-    AWS_EFS_API DescribeBackupPolicyResult();
+    AWS_EFS_API DescribeBackupPolicyResult() = default;
     AWS_EFS_API DescribeBackupPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EFS_API DescribeBackupPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Describes the file system's backup policy, indicating whether automatic
      * backups are turned on or off.</p>
      */
-    inline const BackupPolicy& GetBackupPolicy() const{ return m_backupPolicy; }
-    inline void SetBackupPolicy(const BackupPolicy& value) { m_backupPolicy = value; }
-    inline void SetBackupPolicy(BackupPolicy&& value) { m_backupPolicy = std::move(value); }
-    inline DescribeBackupPolicyResult& WithBackupPolicy(const BackupPolicy& value) { SetBackupPolicy(value); return *this;}
-    inline DescribeBackupPolicyResult& WithBackupPolicy(BackupPolicy&& value) { SetBackupPolicy(std::move(value)); return *this;}
+    inline const BackupPolicy& GetBackupPolicy() const { return m_backupPolicy; }
+    template<typename BackupPolicyT = BackupPolicy>
+    void SetBackupPolicy(BackupPolicyT&& value) { m_backupPolicyHasBeenSet = true; m_backupPolicy = std::forward<BackupPolicyT>(value); }
+    template<typename BackupPolicyT = BackupPolicy>
+    DescribeBackupPolicyResult& WithBackupPolicy(BackupPolicyT&& value) { SetBackupPolicy(std::forward<BackupPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeBackupPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeBackupPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeBackupPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeBackupPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BackupPolicy m_backupPolicy;
+    bool m_backupPolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

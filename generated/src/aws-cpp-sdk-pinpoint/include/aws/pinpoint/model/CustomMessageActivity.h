@@ -36,7 +36,7 @@ namespace Model
   class CustomMessageActivity
   {
   public:
-    AWS_PINPOINT_API CustomMessageActivity();
+    AWS_PINPOINT_API CustomMessageActivity() = default;
     AWS_PINPOINT_API CustomMessageActivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API CustomMessageActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * supports HTTPS and can receive the message. The URL has to be a full URL,
      * including the HTTPS protocol.</p></li></ul>
      */
-    inline const Aws::String& GetDeliveryUri() const{ return m_deliveryUri; }
+    inline const Aws::String& GetDeliveryUri() const { return m_deliveryUri; }
     inline bool DeliveryUriHasBeenSet() const { return m_deliveryUriHasBeenSet; }
-    inline void SetDeliveryUri(const Aws::String& value) { m_deliveryUriHasBeenSet = true; m_deliveryUri = value; }
-    inline void SetDeliveryUri(Aws::String&& value) { m_deliveryUriHasBeenSet = true; m_deliveryUri = std::move(value); }
-    inline void SetDeliveryUri(const char* value) { m_deliveryUriHasBeenSet = true; m_deliveryUri.assign(value); }
-    inline CustomMessageActivity& WithDeliveryUri(const Aws::String& value) { SetDeliveryUri(value); return *this;}
-    inline CustomMessageActivity& WithDeliveryUri(Aws::String&& value) { SetDeliveryUri(std::move(value)); return *this;}
-    inline CustomMessageActivity& WithDeliveryUri(const char* value) { SetDeliveryUri(value); return *this;}
+    template<typename DeliveryUriT = Aws::String>
+    void SetDeliveryUri(DeliveryUriT&& value) { m_deliveryUriHasBeenSet = true; m_deliveryUri = std::forward<DeliveryUriT>(value); }
+    template<typename DeliveryUriT = Aws::String>
+    CustomMessageActivity& WithDeliveryUri(DeliveryUriT&& value) { SetDeliveryUri(std::forward<DeliveryUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,13 @@ namespace Model
      * to a type of channel that you can associate with an endpoint by using the
      * ChannelType property of an endpoint.</p>
      */
-    inline const Aws::Vector<__EndpointTypesElement>& GetEndpointTypes() const{ return m_endpointTypes; }
+    inline const Aws::Vector<__EndpointTypesElement>& GetEndpointTypes() const { return m_endpointTypes; }
     inline bool EndpointTypesHasBeenSet() const { return m_endpointTypesHasBeenSet; }
-    inline void SetEndpointTypes(const Aws::Vector<__EndpointTypesElement>& value) { m_endpointTypesHasBeenSet = true; m_endpointTypes = value; }
-    inline void SetEndpointTypes(Aws::Vector<__EndpointTypesElement>&& value) { m_endpointTypesHasBeenSet = true; m_endpointTypes = std::move(value); }
-    inline CustomMessageActivity& WithEndpointTypes(const Aws::Vector<__EndpointTypesElement>& value) { SetEndpointTypes(value); return *this;}
-    inline CustomMessageActivity& WithEndpointTypes(Aws::Vector<__EndpointTypesElement>&& value) { SetEndpointTypes(std::move(value)); return *this;}
-    inline CustomMessageActivity& AddEndpointTypes(const __EndpointTypesElement& value) { m_endpointTypesHasBeenSet = true; m_endpointTypes.push_back(value); return *this; }
-    inline CustomMessageActivity& AddEndpointTypes(__EndpointTypesElement&& value) { m_endpointTypesHasBeenSet = true; m_endpointTypes.push_back(std::move(value)); return *this; }
+    template<typename EndpointTypesT = Aws::Vector<__EndpointTypesElement>>
+    void SetEndpointTypes(EndpointTypesT&& value) { m_endpointTypesHasBeenSet = true; m_endpointTypes = std::forward<EndpointTypesT>(value); }
+    template<typename EndpointTypesT = Aws::Vector<__EndpointTypesElement>>
+    CustomMessageActivity& WithEndpointTypes(EndpointTypesT&& value) { SetEndpointTypes(std::forward<EndpointTypesT>(value)); return *this;}
+    inline CustomMessageActivity& AddEndpointTypes(__EndpointTypesElement value) { m_endpointTypesHasBeenSet = true; m_endpointTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -82,12 +79,12 @@ namespace Model
      * <p>Specifies the message data included in a custom channel message that's sent
      * to participants in a journey.</p>
      */
-    inline const JourneyCustomMessage& GetMessageConfig() const{ return m_messageConfig; }
+    inline const JourneyCustomMessage& GetMessageConfig() const { return m_messageConfig; }
     inline bool MessageConfigHasBeenSet() const { return m_messageConfigHasBeenSet; }
-    inline void SetMessageConfig(const JourneyCustomMessage& value) { m_messageConfigHasBeenSet = true; m_messageConfig = value; }
-    inline void SetMessageConfig(JourneyCustomMessage&& value) { m_messageConfigHasBeenSet = true; m_messageConfig = std::move(value); }
-    inline CustomMessageActivity& WithMessageConfig(const JourneyCustomMessage& value) { SetMessageConfig(value); return *this;}
-    inline CustomMessageActivity& WithMessageConfig(JourneyCustomMessage&& value) { SetMessageConfig(std::move(value)); return *this;}
+    template<typename MessageConfigT = JourneyCustomMessage>
+    void SetMessageConfig(MessageConfigT&& value) { m_messageConfigHasBeenSet = true; m_messageConfig = std::forward<MessageConfigT>(value); }
+    template<typename MessageConfigT = JourneyCustomMessage>
+    CustomMessageActivity& WithMessageConfig(MessageConfigT&& value) { SetMessageConfig(std::forward<MessageConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +92,12 @@ namespace Model
      * <p>The unique identifier for the next activity to perform, after Amazon Pinpoint
      * calls the AWS Lambda function or web hook.</p>
      */
-    inline const Aws::String& GetNextActivity() const{ return m_nextActivity; }
+    inline const Aws::String& GetNextActivity() const { return m_nextActivity; }
     inline bool NextActivityHasBeenSet() const { return m_nextActivityHasBeenSet; }
-    inline void SetNextActivity(const Aws::String& value) { m_nextActivityHasBeenSet = true; m_nextActivity = value; }
-    inline void SetNextActivity(Aws::String&& value) { m_nextActivityHasBeenSet = true; m_nextActivity = std::move(value); }
-    inline void SetNextActivity(const char* value) { m_nextActivityHasBeenSet = true; m_nextActivity.assign(value); }
-    inline CustomMessageActivity& WithNextActivity(const Aws::String& value) { SetNextActivity(value); return *this;}
-    inline CustomMessageActivity& WithNextActivity(Aws::String&& value) { SetNextActivity(std::move(value)); return *this;}
-    inline CustomMessageActivity& WithNextActivity(const char* value) { SetNextActivity(value); return *this;}
+    template<typename NextActivityT = Aws::String>
+    void SetNextActivity(NextActivityT&& value) { m_nextActivityHasBeenSet = true; m_nextActivity = std::forward<NextActivityT>(value); }
+    template<typename NextActivityT = Aws::String>
+    CustomMessageActivity& WithNextActivity(NextActivityT&& value) { SetNextActivity(std::forward<NextActivityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +105,12 @@ namespace Model
      * <p>The name of the custom message template to use for the message. If specified,
      * this value must match the name of an existing message template.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline CustomMessageActivity& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline CustomMessageActivity& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline CustomMessageActivity& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    CustomMessageActivity& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +126,12 @@ namespace Model
      * reviewed and approved for use, depending on your workflow. It isn't necessarily
      * the latest version of a template.</p>
      */
-    inline const Aws::String& GetTemplateVersion() const{ return m_templateVersion; }
+    inline const Aws::String& GetTemplateVersion() const { return m_templateVersion; }
     inline bool TemplateVersionHasBeenSet() const { return m_templateVersionHasBeenSet; }
-    inline void SetTemplateVersion(const Aws::String& value) { m_templateVersionHasBeenSet = true; m_templateVersion = value; }
-    inline void SetTemplateVersion(Aws::String&& value) { m_templateVersionHasBeenSet = true; m_templateVersion = std::move(value); }
-    inline void SetTemplateVersion(const char* value) { m_templateVersionHasBeenSet = true; m_templateVersion.assign(value); }
-    inline CustomMessageActivity& WithTemplateVersion(const Aws::String& value) { SetTemplateVersion(value); return *this;}
-    inline CustomMessageActivity& WithTemplateVersion(Aws::String&& value) { SetTemplateVersion(std::move(value)); return *this;}
-    inline CustomMessageActivity& WithTemplateVersion(const char* value) { SetTemplateVersion(value); return *this;}
+    template<typename TemplateVersionT = Aws::String>
+    void SetTemplateVersion(TemplateVersionT&& value) { m_templateVersionHasBeenSet = true; m_templateVersion = std::forward<TemplateVersionT>(value); }
+    template<typename TemplateVersionT = Aws::String>
+    CustomMessageActivity& WithTemplateVersion(TemplateVersionT&& value) { SetTemplateVersion(std::forward<TemplateVersionT>(value)); return *this;}
     ///@}
   private:
 

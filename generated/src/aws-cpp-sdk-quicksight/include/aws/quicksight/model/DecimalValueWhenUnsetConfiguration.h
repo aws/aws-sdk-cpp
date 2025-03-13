@@ -32,7 +32,7 @@ namespace Model
   class DecimalValueWhenUnsetConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API DecimalValueWhenUnsetConfiguration();
+    AWS_QUICKSIGHT_API DecimalValueWhenUnsetConfiguration() = default;
     AWS_QUICKSIGHT_API DecimalValueWhenUnsetConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DecimalValueWhenUnsetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,29 +45,27 @@ namespace Model
      * value.</p> </li> <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p>
      * </li> </ul>
      */
-    inline const ValueWhenUnsetOption& GetValueWhenUnsetOption() const{ return m_valueWhenUnsetOption; }
+    inline ValueWhenUnsetOption GetValueWhenUnsetOption() const { return m_valueWhenUnsetOption; }
     inline bool ValueWhenUnsetOptionHasBeenSet() const { return m_valueWhenUnsetOptionHasBeenSet; }
-    inline void SetValueWhenUnsetOption(const ValueWhenUnsetOption& value) { m_valueWhenUnsetOptionHasBeenSet = true; m_valueWhenUnsetOption = value; }
-    inline void SetValueWhenUnsetOption(ValueWhenUnsetOption&& value) { m_valueWhenUnsetOptionHasBeenSet = true; m_valueWhenUnsetOption = std::move(value); }
-    inline DecimalValueWhenUnsetConfiguration& WithValueWhenUnsetOption(const ValueWhenUnsetOption& value) { SetValueWhenUnsetOption(value); return *this;}
-    inline DecimalValueWhenUnsetConfiguration& WithValueWhenUnsetOption(ValueWhenUnsetOption&& value) { SetValueWhenUnsetOption(std::move(value)); return *this;}
+    inline void SetValueWhenUnsetOption(ValueWhenUnsetOption value) { m_valueWhenUnsetOptionHasBeenSet = true; m_valueWhenUnsetOption = value; }
+    inline DecimalValueWhenUnsetConfiguration& WithValueWhenUnsetOption(ValueWhenUnsetOption value) { SetValueWhenUnsetOption(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A custom value that's used when the value of a parameter isn't set.</p>
      */
-    inline double GetCustomValue() const{ return m_customValue; }
+    inline double GetCustomValue() const { return m_customValue; }
     inline bool CustomValueHasBeenSet() const { return m_customValueHasBeenSet; }
     inline void SetCustomValue(double value) { m_customValueHasBeenSet = true; m_customValue = value; }
     inline DecimalValueWhenUnsetConfiguration& WithCustomValue(double value) { SetCustomValue(value); return *this;}
     ///@}
   private:
 
-    ValueWhenUnsetOption m_valueWhenUnsetOption;
+    ValueWhenUnsetOption m_valueWhenUnsetOption{ValueWhenUnsetOption::NOT_SET};
     bool m_valueWhenUnsetOptionHasBeenSet = false;
 
-    double m_customValue;
+    double m_customValue{0.0};
     bool m_customValueHasBeenSet = false;
   };
 

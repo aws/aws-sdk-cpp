@@ -18,16 +18,7 @@ namespace Health
 namespace Model
 {
 
-OrganizationAffectedEntitiesErrorItem::OrganizationAffectedEntitiesErrorItem() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_eventArnHasBeenSet(false),
-    m_errorNameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 OrganizationAffectedEntitiesErrorItem::OrganizationAffectedEntitiesErrorItem(JsonView jsonValue)
-  : OrganizationAffectedEntitiesErrorItem()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ OrganizationAffectedEntitiesErrorItem& OrganizationAffectedEntitiesErrorItem::op
   if(jsonValue.ValueExists("awsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventArn"))
   {
     m_eventArn = jsonValue.GetString("eventArn");
-
     m_eventArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorName"))
   {
     m_errorName = jsonValue.GetString("errorName");
-
     m_errorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

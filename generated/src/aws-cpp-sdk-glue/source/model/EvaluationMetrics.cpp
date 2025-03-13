@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-EvaluationMetrics::EvaluationMetrics() : 
-    m_transformType(TransformType::NOT_SET),
-    m_transformTypeHasBeenSet(false),
-    m_findMatchesMetricsHasBeenSet(false)
-{
-}
-
 EvaluationMetrics::EvaluationMetrics(JsonView jsonValue)
-  : EvaluationMetrics()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EvaluationMetrics& EvaluationMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TransformType"))
   {
     m_transformType = TransformTypeMapper::GetTransformTypeForName(jsonValue.GetString("TransformType"));
-
     m_transformTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FindMatchesMetrics"))
   {
     m_findMatchesMetrics = jsonValue.GetObject("FindMatchesMetrics");
-
     m_findMatchesMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-VeevaConnectorProfileCredentials::VeevaConnectorProfileCredentials() : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
-{
-}
-
 VeevaConnectorProfileCredentials::VeevaConnectorProfileCredentials(JsonView jsonValue)
-  : VeevaConnectorProfileCredentials()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VeevaConnectorProfileCredentials& VeevaConnectorProfileCredentials::operator =(J
   if(jsonValue.ValueExists("username"))
   {
     m_username = jsonValue.GetString("username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("password"))
   {
     m_password = jsonValue.GetString("password");
-
     m_passwordHasBeenSet = true;
   }
-
   return *this;
 }
 

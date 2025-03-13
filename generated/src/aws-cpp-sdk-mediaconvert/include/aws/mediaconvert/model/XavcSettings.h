@@ -43,7 +43,7 @@ namespace Model
   class XavcSettings
   {
   public:
-    AWS_MEDIACONVERT_API XavcSettings();
+    AWS_MEDIACONVERT_API XavcSettings() = default;
     AWS_MEDIACONVERT_API XavcSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API XavcSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,12 +62,10 @@ namespace Model
      * (flickerAdaptiveQuantization), Spatial adaptive quantization, and Temporal
      * adaptive quantization.
      */
-    inline const XavcAdaptiveQuantization& GetAdaptiveQuantization() const{ return m_adaptiveQuantization; }
+    inline XavcAdaptiveQuantization GetAdaptiveQuantization() const { return m_adaptiveQuantization; }
     inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
-    inline void SetAdaptiveQuantization(const XavcAdaptiveQuantization& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
-    inline void SetAdaptiveQuantization(XavcAdaptiveQuantization&& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = std::move(value); }
-    inline XavcSettings& WithAdaptiveQuantization(const XavcAdaptiveQuantization& value) { SetAdaptiveQuantization(value); return *this;}
-    inline XavcSettings& WithAdaptiveQuantization(XavcAdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
+    inline void SetAdaptiveQuantization(XavcAdaptiveQuantization value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
+    inline XavcSettings& WithAdaptiveQuantization(XavcAdaptiveQuantization value) { SetAdaptiveQuantization(value); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +74,10 @@ namespace Model
      * XAVC recommendations. If you choose the value auto, MediaConvert uses the mode
      * that the XAVC file format specifies given this output's operating point.
      */
-    inline const XavcEntropyEncoding& GetEntropyEncoding() const{ return m_entropyEncoding; }
+    inline XavcEntropyEncoding GetEntropyEncoding() const { return m_entropyEncoding; }
     inline bool EntropyEncodingHasBeenSet() const { return m_entropyEncodingHasBeenSet; }
-    inline void SetEntropyEncoding(const XavcEntropyEncoding& value) { m_entropyEncodingHasBeenSet = true; m_entropyEncoding = value; }
-    inline void SetEntropyEncoding(XavcEntropyEncoding&& value) { m_entropyEncodingHasBeenSet = true; m_entropyEncoding = std::move(value); }
-    inline XavcSettings& WithEntropyEncoding(const XavcEntropyEncoding& value) { SetEntropyEncoding(value); return *this;}
-    inline XavcSettings& WithEntropyEncoding(XavcEntropyEncoding&& value) { SetEntropyEncoding(std::move(value)); return *this;}
+    inline void SetEntropyEncoding(XavcEntropyEncoding value) { m_entropyEncodingHasBeenSet = true; m_entropyEncoding = value; }
+    inline XavcSettings& WithEntropyEncoding(XavcEntropyEncoding value) { SetEntropyEncoding(value); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +88,10 @@ namespace Model
      * frame rate from the dropdown list. The framerates shown in the dropdown list are
      * decimal approximations of fractions.
      */
-    inline const XavcFramerateControl& GetFramerateControl() const{ return m_framerateControl; }
+    inline XavcFramerateControl GetFramerateControl() const { return m_framerateControl; }
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
-    inline void SetFramerateControl(const XavcFramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
-    inline void SetFramerateControl(XavcFramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
-    inline XavcSettings& WithFramerateControl(const XavcFramerateControl& value) { SetFramerateControl(value); return *this;}
-    inline XavcSettings& WithFramerateControl(XavcFramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
+    inline void SetFramerateControl(XavcFramerateControl value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
+    inline XavcSettings& WithFramerateControl(XavcFramerateControl value) { SetFramerateControl(value); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +113,10 @@ namespace Model
      * duration of your output will become shorter at higher frame rates and longer at
      * lower frame rates.
      */
-    inline const XavcFramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
+    inline XavcFramerateConversionAlgorithm GetFramerateConversionAlgorithm() const { return m_framerateConversionAlgorithm; }
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
-    inline void SetFramerateConversionAlgorithm(const XavcFramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
-    inline void SetFramerateConversionAlgorithm(XavcFramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
-    inline XavcSettings& WithFramerateConversionAlgorithm(const XavcFramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
-    inline XavcSettings& WithFramerateConversionAlgorithm(XavcFramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
+    inline void SetFramerateConversionAlgorithm(XavcFramerateConversionAlgorithm value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
+    inline XavcSettings& WithFramerateConversionAlgorithm(XavcFramerateConversionAlgorithm value) { SetFramerateConversionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -136,7 +128,7 @@ namespace Model
      * console for transcode jobs that use frame rate conversion, provide the value as
      * a decimal number for Frame rate. In this example, specify 23.976.
      */
-    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline int GetFramerateDenominator() const { return m_framerateDenominator; }
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
     inline XavcSettings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
@@ -151,7 +143,7 @@ namespace Model
      * transcode jobs that use frame rate conversion, provide the value as a decimal
      * number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline int GetFramerateNumerator() const { return m_framerateNumerator; }
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
     inline XavcSettings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
@@ -164,12 +156,10 @@ namespace Model
      * support the interlaced video XAVC operating points for XAVC_HD_INTRA_CBG. To
      * create an interlaced XAVC output, choose the profile XAVC_HD.
      */
-    inline const XavcProfile& GetProfile() const{ return m_profile; }
+    inline XavcProfile GetProfile() const { return m_profile; }
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
-    inline void SetProfile(const XavcProfile& value) { m_profileHasBeenSet = true; m_profile = value; }
-    inline void SetProfile(XavcProfile&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
-    inline XavcSettings& WithProfile(const XavcProfile& value) { SetProfile(value); return *this;}
-    inline XavcSettings& WithProfile(XavcProfile&& value) { SetProfile(std::move(value)); return *this;}
+    inline void SetProfile(XavcProfile value) { m_profileHasBeenSet = true; m_profile = value; }
+    inline XavcSettings& WithProfile(XavcProfile value) { SetProfile(value); return *this;}
     ///@}
 
     ///@{
@@ -180,12 +170,10 @@ namespace Model
      * reduce the duration of your video. Related settings: You must also set Frame
      * rate to 25.
      */
-    inline const XavcSlowPal& GetSlowPal() const{ return m_slowPal; }
+    inline XavcSlowPal GetSlowPal() const { return m_slowPal; }
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
-    inline void SetSlowPal(const XavcSlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
-    inline void SetSlowPal(XavcSlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
-    inline XavcSettings& WithSlowPal(const XavcSlowPal& value) { SetSlowPal(value); return *this;}
-    inline XavcSettings& WithSlowPal(XavcSlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
+    inline void SetSlowPal(XavcSlowPal value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
+    inline XavcSettings& WithSlowPal(XavcSlowPal value) { SetSlowPal(value); return *this;}
     ///@}
 
     ///@{
@@ -200,7 +188,7 @@ namespace Model
      * Increasing values from 17 to 128 result in increasing reduction of
      * high-frequency data. The value 128 results in the softest video.
      */
-    inline int GetSoftness() const{ return m_softness; }
+    inline int GetSoftness() const { return m_softness; }
     inline bool SoftnessHasBeenSet() const { return m_softnessHasBeenSet; }
     inline void SetSoftness(int value) { m_softnessHasBeenSet = true; m_softness = value; }
     inline XavcSettings& WithSoftness(int value) { SetSoftness(value); return *this;}
@@ -228,12 +216,10 @@ namespace Model
      * as cartoons and video games, set it to Low. For content with a wider variety of
      * textures, set it to High or Higher.
      */
-    inline const XavcSpatialAdaptiveQuantization& GetSpatialAdaptiveQuantization() const{ return m_spatialAdaptiveQuantization; }
+    inline XavcSpatialAdaptiveQuantization GetSpatialAdaptiveQuantization() const { return m_spatialAdaptiveQuantization; }
     inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
-    inline void SetSpatialAdaptiveQuantization(const XavcSpatialAdaptiveQuantization& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
-    inline void SetSpatialAdaptiveQuantization(XavcSpatialAdaptiveQuantization&& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = std::move(value); }
-    inline XavcSettings& WithSpatialAdaptiveQuantization(const XavcSpatialAdaptiveQuantization& value) { SetSpatialAdaptiveQuantization(value); return *this;}
-    inline XavcSettings& WithSpatialAdaptiveQuantization(XavcSpatialAdaptiveQuantization&& value) { SetSpatialAdaptiveQuantization(std::move(value)); return *this;}
+    inline void SetSpatialAdaptiveQuantization(XavcSpatialAdaptiveQuantization value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
+    inline XavcSettings& WithSpatialAdaptiveQuantization(XavcSpatialAdaptiveQuantization value) { SetSpatialAdaptiveQuantization(value); return *this;}
     ///@}
 
     ///@{
@@ -256,106 +242,104 @@ namespace Model
      * Related setting: When you enable temporal adaptive quantization, adjust the
      * strength of the filter with the setting Adaptive quantization.
      */
-    inline const XavcTemporalAdaptiveQuantization& GetTemporalAdaptiveQuantization() const{ return m_temporalAdaptiveQuantization; }
+    inline XavcTemporalAdaptiveQuantization GetTemporalAdaptiveQuantization() const { return m_temporalAdaptiveQuantization; }
     inline bool TemporalAdaptiveQuantizationHasBeenSet() const { return m_temporalAdaptiveQuantizationHasBeenSet; }
-    inline void SetTemporalAdaptiveQuantization(const XavcTemporalAdaptiveQuantization& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }
-    inline void SetTemporalAdaptiveQuantization(XavcTemporalAdaptiveQuantization&& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = std::move(value); }
-    inline XavcSettings& WithTemporalAdaptiveQuantization(const XavcTemporalAdaptiveQuantization& value) { SetTemporalAdaptiveQuantization(value); return *this;}
-    inline XavcSettings& WithTemporalAdaptiveQuantization(XavcTemporalAdaptiveQuantization&& value) { SetTemporalAdaptiveQuantization(std::move(value)); return *this;}
+    inline void SetTemporalAdaptiveQuantization(XavcTemporalAdaptiveQuantization value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }
+    inline XavcSettings& WithTemporalAdaptiveQuantization(XavcTemporalAdaptiveQuantization value) { SetTemporalAdaptiveQuantization(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Profile to the value XAVC_4K_INTRA_CBG.
      */
-    inline const Xavc4kIntraCbgProfileSettings& GetXavc4kIntraCbgProfileSettings() const{ return m_xavc4kIntraCbgProfileSettings; }
+    inline const Xavc4kIntraCbgProfileSettings& GetXavc4kIntraCbgProfileSettings() const { return m_xavc4kIntraCbgProfileSettings; }
     inline bool Xavc4kIntraCbgProfileSettingsHasBeenSet() const { return m_xavc4kIntraCbgProfileSettingsHasBeenSet; }
-    inline void SetXavc4kIntraCbgProfileSettings(const Xavc4kIntraCbgProfileSettings& value) { m_xavc4kIntraCbgProfileSettingsHasBeenSet = true; m_xavc4kIntraCbgProfileSettings = value; }
-    inline void SetXavc4kIntraCbgProfileSettings(Xavc4kIntraCbgProfileSettings&& value) { m_xavc4kIntraCbgProfileSettingsHasBeenSet = true; m_xavc4kIntraCbgProfileSettings = std::move(value); }
-    inline XavcSettings& WithXavc4kIntraCbgProfileSettings(const Xavc4kIntraCbgProfileSettings& value) { SetXavc4kIntraCbgProfileSettings(value); return *this;}
-    inline XavcSettings& WithXavc4kIntraCbgProfileSettings(Xavc4kIntraCbgProfileSettings&& value) { SetXavc4kIntraCbgProfileSettings(std::move(value)); return *this;}
+    template<typename Xavc4kIntraCbgProfileSettingsT = Xavc4kIntraCbgProfileSettings>
+    void SetXavc4kIntraCbgProfileSettings(Xavc4kIntraCbgProfileSettingsT&& value) { m_xavc4kIntraCbgProfileSettingsHasBeenSet = true; m_xavc4kIntraCbgProfileSettings = std::forward<Xavc4kIntraCbgProfileSettingsT>(value); }
+    template<typename Xavc4kIntraCbgProfileSettingsT = Xavc4kIntraCbgProfileSettings>
+    XavcSettings& WithXavc4kIntraCbgProfileSettings(Xavc4kIntraCbgProfileSettingsT&& value) { SetXavc4kIntraCbgProfileSettings(std::forward<Xavc4kIntraCbgProfileSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Profile to the value XAVC_4K_INTRA_VBR.
      */
-    inline const Xavc4kIntraVbrProfileSettings& GetXavc4kIntraVbrProfileSettings() const{ return m_xavc4kIntraVbrProfileSettings; }
+    inline const Xavc4kIntraVbrProfileSettings& GetXavc4kIntraVbrProfileSettings() const { return m_xavc4kIntraVbrProfileSettings; }
     inline bool Xavc4kIntraVbrProfileSettingsHasBeenSet() const { return m_xavc4kIntraVbrProfileSettingsHasBeenSet; }
-    inline void SetXavc4kIntraVbrProfileSettings(const Xavc4kIntraVbrProfileSettings& value) { m_xavc4kIntraVbrProfileSettingsHasBeenSet = true; m_xavc4kIntraVbrProfileSettings = value; }
-    inline void SetXavc4kIntraVbrProfileSettings(Xavc4kIntraVbrProfileSettings&& value) { m_xavc4kIntraVbrProfileSettingsHasBeenSet = true; m_xavc4kIntraVbrProfileSettings = std::move(value); }
-    inline XavcSettings& WithXavc4kIntraVbrProfileSettings(const Xavc4kIntraVbrProfileSettings& value) { SetXavc4kIntraVbrProfileSettings(value); return *this;}
-    inline XavcSettings& WithXavc4kIntraVbrProfileSettings(Xavc4kIntraVbrProfileSettings&& value) { SetXavc4kIntraVbrProfileSettings(std::move(value)); return *this;}
+    template<typename Xavc4kIntraVbrProfileSettingsT = Xavc4kIntraVbrProfileSettings>
+    void SetXavc4kIntraVbrProfileSettings(Xavc4kIntraVbrProfileSettingsT&& value) { m_xavc4kIntraVbrProfileSettingsHasBeenSet = true; m_xavc4kIntraVbrProfileSettings = std::forward<Xavc4kIntraVbrProfileSettingsT>(value); }
+    template<typename Xavc4kIntraVbrProfileSettingsT = Xavc4kIntraVbrProfileSettings>
+    XavcSettings& WithXavc4kIntraVbrProfileSettings(Xavc4kIntraVbrProfileSettingsT&& value) { SetXavc4kIntraVbrProfileSettings(std::forward<Xavc4kIntraVbrProfileSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Profile to the value XAVC_4K.
      */
-    inline const Xavc4kProfileSettings& GetXavc4kProfileSettings() const{ return m_xavc4kProfileSettings; }
+    inline const Xavc4kProfileSettings& GetXavc4kProfileSettings() const { return m_xavc4kProfileSettings; }
     inline bool Xavc4kProfileSettingsHasBeenSet() const { return m_xavc4kProfileSettingsHasBeenSet; }
-    inline void SetXavc4kProfileSettings(const Xavc4kProfileSettings& value) { m_xavc4kProfileSettingsHasBeenSet = true; m_xavc4kProfileSettings = value; }
-    inline void SetXavc4kProfileSettings(Xavc4kProfileSettings&& value) { m_xavc4kProfileSettingsHasBeenSet = true; m_xavc4kProfileSettings = std::move(value); }
-    inline XavcSettings& WithXavc4kProfileSettings(const Xavc4kProfileSettings& value) { SetXavc4kProfileSettings(value); return *this;}
-    inline XavcSettings& WithXavc4kProfileSettings(Xavc4kProfileSettings&& value) { SetXavc4kProfileSettings(std::move(value)); return *this;}
+    template<typename Xavc4kProfileSettingsT = Xavc4kProfileSettings>
+    void SetXavc4kProfileSettings(Xavc4kProfileSettingsT&& value) { m_xavc4kProfileSettingsHasBeenSet = true; m_xavc4kProfileSettings = std::forward<Xavc4kProfileSettingsT>(value); }
+    template<typename Xavc4kProfileSettingsT = Xavc4kProfileSettings>
+    XavcSettings& WithXavc4kProfileSettings(Xavc4kProfileSettingsT&& value) { SetXavc4kProfileSettings(std::forward<Xavc4kProfileSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Profile to the value XAVC_HD_INTRA_CBG.
      */
-    inline const XavcHdIntraCbgProfileSettings& GetXavcHdIntraCbgProfileSettings() const{ return m_xavcHdIntraCbgProfileSettings; }
+    inline const XavcHdIntraCbgProfileSettings& GetXavcHdIntraCbgProfileSettings() const { return m_xavcHdIntraCbgProfileSettings; }
     inline bool XavcHdIntraCbgProfileSettingsHasBeenSet() const { return m_xavcHdIntraCbgProfileSettingsHasBeenSet; }
-    inline void SetXavcHdIntraCbgProfileSettings(const XavcHdIntraCbgProfileSettings& value) { m_xavcHdIntraCbgProfileSettingsHasBeenSet = true; m_xavcHdIntraCbgProfileSettings = value; }
-    inline void SetXavcHdIntraCbgProfileSettings(XavcHdIntraCbgProfileSettings&& value) { m_xavcHdIntraCbgProfileSettingsHasBeenSet = true; m_xavcHdIntraCbgProfileSettings = std::move(value); }
-    inline XavcSettings& WithXavcHdIntraCbgProfileSettings(const XavcHdIntraCbgProfileSettings& value) { SetXavcHdIntraCbgProfileSettings(value); return *this;}
-    inline XavcSettings& WithXavcHdIntraCbgProfileSettings(XavcHdIntraCbgProfileSettings&& value) { SetXavcHdIntraCbgProfileSettings(std::move(value)); return *this;}
+    template<typename XavcHdIntraCbgProfileSettingsT = XavcHdIntraCbgProfileSettings>
+    void SetXavcHdIntraCbgProfileSettings(XavcHdIntraCbgProfileSettingsT&& value) { m_xavcHdIntraCbgProfileSettingsHasBeenSet = true; m_xavcHdIntraCbgProfileSettings = std::forward<XavcHdIntraCbgProfileSettingsT>(value); }
+    template<typename XavcHdIntraCbgProfileSettingsT = XavcHdIntraCbgProfileSettings>
+    XavcSettings& WithXavcHdIntraCbgProfileSettings(XavcHdIntraCbgProfileSettingsT&& value) { SetXavcHdIntraCbgProfileSettings(std::forward<XavcHdIntraCbgProfileSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Profile to the value XAVC_HD.
      */
-    inline const XavcHdProfileSettings& GetXavcHdProfileSettings() const{ return m_xavcHdProfileSettings; }
+    inline const XavcHdProfileSettings& GetXavcHdProfileSettings() const { return m_xavcHdProfileSettings; }
     inline bool XavcHdProfileSettingsHasBeenSet() const { return m_xavcHdProfileSettingsHasBeenSet; }
-    inline void SetXavcHdProfileSettings(const XavcHdProfileSettings& value) { m_xavcHdProfileSettingsHasBeenSet = true; m_xavcHdProfileSettings = value; }
-    inline void SetXavcHdProfileSettings(XavcHdProfileSettings&& value) { m_xavcHdProfileSettingsHasBeenSet = true; m_xavcHdProfileSettings = std::move(value); }
-    inline XavcSettings& WithXavcHdProfileSettings(const XavcHdProfileSettings& value) { SetXavcHdProfileSettings(value); return *this;}
-    inline XavcSettings& WithXavcHdProfileSettings(XavcHdProfileSettings&& value) { SetXavcHdProfileSettings(std::move(value)); return *this;}
+    template<typename XavcHdProfileSettingsT = XavcHdProfileSettings>
+    void SetXavcHdProfileSettings(XavcHdProfileSettingsT&& value) { m_xavcHdProfileSettingsHasBeenSet = true; m_xavcHdProfileSettings = std::forward<XavcHdProfileSettingsT>(value); }
+    template<typename XavcHdProfileSettingsT = XavcHdProfileSettings>
+    XavcSettings& WithXavcHdProfileSettings(XavcHdProfileSettingsT&& value) { SetXavcHdProfileSettings(std::forward<XavcHdProfileSettingsT>(value)); return *this;}
     ///@}
   private:
 
-    XavcAdaptiveQuantization m_adaptiveQuantization;
+    XavcAdaptiveQuantization m_adaptiveQuantization{XavcAdaptiveQuantization::NOT_SET};
     bool m_adaptiveQuantizationHasBeenSet = false;
 
-    XavcEntropyEncoding m_entropyEncoding;
+    XavcEntropyEncoding m_entropyEncoding{XavcEntropyEncoding::NOT_SET};
     bool m_entropyEncodingHasBeenSet = false;
 
-    XavcFramerateControl m_framerateControl;
+    XavcFramerateControl m_framerateControl{XavcFramerateControl::NOT_SET};
     bool m_framerateControlHasBeenSet = false;
 
-    XavcFramerateConversionAlgorithm m_framerateConversionAlgorithm;
+    XavcFramerateConversionAlgorithm m_framerateConversionAlgorithm{XavcFramerateConversionAlgorithm::NOT_SET};
     bool m_framerateConversionAlgorithmHasBeenSet = false;
 
-    int m_framerateDenominator;
+    int m_framerateDenominator{0};
     bool m_framerateDenominatorHasBeenSet = false;
 
-    int m_framerateNumerator;
+    int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
 
-    XavcProfile m_profile;
+    XavcProfile m_profile{XavcProfile::NOT_SET};
     bool m_profileHasBeenSet = false;
 
-    XavcSlowPal m_slowPal;
+    XavcSlowPal m_slowPal{XavcSlowPal::NOT_SET};
     bool m_slowPalHasBeenSet = false;
 
-    int m_softness;
+    int m_softness{0};
     bool m_softnessHasBeenSet = false;
 
-    XavcSpatialAdaptiveQuantization m_spatialAdaptiveQuantization;
+    XavcSpatialAdaptiveQuantization m_spatialAdaptiveQuantization{XavcSpatialAdaptiveQuantization::NOT_SET};
     bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 
-    XavcTemporalAdaptiveQuantization m_temporalAdaptiveQuantization;
+    XavcTemporalAdaptiveQuantization m_temporalAdaptiveQuantization{XavcTemporalAdaptiveQuantization::NOT_SET};
     bool m_temporalAdaptiveQuantizationHasBeenSet = false;
 
     Xavc4kIntraCbgProfileSettings m_xavc4kIntraCbgProfileSettings;

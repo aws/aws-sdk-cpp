@@ -27,7 +27,7 @@ namespace Model
   class RemoveFlowOutputResult
   {
   public:
-    AWS_MEDIACONNECT_API RemoveFlowOutputResult();
+    AWS_MEDIACONNECT_API RemoveFlowOutputResult() = default;
     AWS_MEDIACONNECT_API RemoveFlowOutputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API RemoveFlowOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * The ARN of the flow that is associated with the output you removed.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-    inline RemoveFlowOutputResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline RemoveFlowOutputResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline RemoveFlowOutputResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    RemoveFlowOutputResult& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ARN of the output that was removed.
      */
-    inline const Aws::String& GetOutputArn() const{ return m_outputArn; }
-    inline void SetOutputArn(const Aws::String& value) { m_outputArn = value; }
-    inline void SetOutputArn(Aws::String&& value) { m_outputArn = std::move(value); }
-    inline void SetOutputArn(const char* value) { m_outputArn.assign(value); }
-    inline RemoveFlowOutputResult& WithOutputArn(const Aws::String& value) { SetOutputArn(value); return *this;}
-    inline RemoveFlowOutputResult& WithOutputArn(Aws::String&& value) { SetOutputArn(std::move(value)); return *this;}
-    inline RemoveFlowOutputResult& WithOutputArn(const char* value) { SetOutputArn(value); return *this;}
+    inline const Aws::String& GetOutputArn() const { return m_outputArn; }
+    template<typename OutputArnT = Aws::String>
+    void SetOutputArn(OutputArnT&& value) { m_outputArnHasBeenSet = true; m_outputArn = std::forward<OutputArnT>(value); }
+    template<typename OutputArnT = Aws::String>
+    RemoveFlowOutputResult& WithOutputArn(OutputArnT&& value) { SetOutputArn(std::forward<OutputArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RemoveFlowOutputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RemoveFlowOutputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RemoveFlowOutputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RemoveFlowOutputResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_flowArn;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::String m_outputArn;
+    bool m_outputArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

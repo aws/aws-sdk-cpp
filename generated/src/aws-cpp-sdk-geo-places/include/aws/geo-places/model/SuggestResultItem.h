@@ -35,7 +35,7 @@ namespace Model
   class SuggestResultItem
   {
   public:
-    AWS_GEOPLACES_API SuggestResultItem();
+    AWS_GEOPLACES_API SuggestResultItem() = default;
     AWS_GEOPLACES_API SuggestResultItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API SuggestResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The display title that should be used when presenting this option to the end
      * user.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline SuggestResultItem& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline SuggestResultItem& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline SuggestResultItem& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    SuggestResultItem& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,34 +60,32 @@ namespace Model
      * interest, Query results represent a follow up query which can be completed
      * through the SearchText operation.</p>
      */
-    inline const SuggestResultItemType& GetSuggestResultItemType() const{ return m_suggestResultItemType; }
+    inline SuggestResultItemType GetSuggestResultItemType() const { return m_suggestResultItemType; }
     inline bool SuggestResultItemTypeHasBeenSet() const { return m_suggestResultItemTypeHasBeenSet; }
-    inline void SetSuggestResultItemType(const SuggestResultItemType& value) { m_suggestResultItemTypeHasBeenSet = true; m_suggestResultItemType = value; }
-    inline void SetSuggestResultItemType(SuggestResultItemType&& value) { m_suggestResultItemTypeHasBeenSet = true; m_suggestResultItemType = std::move(value); }
-    inline SuggestResultItem& WithSuggestResultItemType(const SuggestResultItemType& value) { SetSuggestResultItemType(value); return *this;}
-    inline SuggestResultItem& WithSuggestResultItemType(SuggestResultItemType&& value) { SetSuggestResultItemType(std::move(value)); return *this;}
+    inline void SetSuggestResultItemType(SuggestResultItemType value) { m_suggestResultItemTypeHasBeenSet = true; m_suggestResultItemType = value; }
+    inline SuggestResultItem& WithSuggestResultItemType(SuggestResultItemType value) { SetSuggestResultItemType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The suggested place by its unique ID.</p>
      */
-    inline const SuggestPlaceResult& GetPlace() const{ return m_place; }
+    inline const SuggestPlaceResult& GetPlace() const { return m_place; }
     inline bool PlaceHasBeenSet() const { return m_placeHasBeenSet; }
-    inline void SetPlace(const SuggestPlaceResult& value) { m_placeHasBeenSet = true; m_place = value; }
-    inline void SetPlace(SuggestPlaceResult&& value) { m_placeHasBeenSet = true; m_place = std::move(value); }
-    inline SuggestResultItem& WithPlace(const SuggestPlaceResult& value) { SetPlace(value); return *this;}
-    inline SuggestResultItem& WithPlace(SuggestPlaceResult&& value) { SetPlace(std::move(value)); return *this;}
+    template<typename PlaceT = SuggestPlaceResult>
+    void SetPlace(PlaceT&& value) { m_placeHasBeenSet = true; m_place = std::forward<PlaceT>(value); }
+    template<typename PlaceT = SuggestPlaceResult>
+    SuggestResultItem& WithPlace(PlaceT&& value) { SetPlace(std::forward<PlaceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SuggestQueryResult& GetQuery() const{ return m_query; }
+    inline const SuggestQueryResult& GetQuery() const { return m_query; }
     inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
-    inline void SetQuery(const SuggestQueryResult& value) { m_queryHasBeenSet = true; m_query = value; }
-    inline void SetQuery(SuggestQueryResult&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
-    inline SuggestResultItem& WithQuery(const SuggestQueryResult& value) { SetQuery(value); return *this;}
-    inline SuggestResultItem& WithQuery(SuggestQueryResult&& value) { SetQuery(std::move(value)); return *this;}
+    template<typename QueryT = SuggestQueryResult>
+    void SetQuery(QueryT&& value) { m_queryHasBeenSet = true; m_query = std::forward<QueryT>(value); }
+    template<typename QueryT = SuggestQueryResult>
+    SuggestResultItem& WithQuery(QueryT&& value) { SetQuery(std::forward<QueryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,19 +93,19 @@ namespace Model
      * <p>Describes how the parts of the response element matched the input query by
      * returning the sections of the response which matched to input query terms. </p>
      */
-    inline const SuggestHighlights& GetHighlights() const{ return m_highlights; }
+    inline const SuggestHighlights& GetHighlights() const { return m_highlights; }
     inline bool HighlightsHasBeenSet() const { return m_highlightsHasBeenSet; }
-    inline void SetHighlights(const SuggestHighlights& value) { m_highlightsHasBeenSet = true; m_highlights = value; }
-    inline void SetHighlights(SuggestHighlights&& value) { m_highlightsHasBeenSet = true; m_highlights = std::move(value); }
-    inline SuggestResultItem& WithHighlights(const SuggestHighlights& value) { SetHighlights(value); return *this;}
-    inline SuggestResultItem& WithHighlights(SuggestHighlights&& value) { SetHighlights(std::move(value)); return *this;}
+    template<typename HighlightsT = SuggestHighlights>
+    void SetHighlights(HighlightsT&& value) { m_highlightsHasBeenSet = true; m_highlights = std::forward<HighlightsT>(value); }
+    template<typename HighlightsT = SuggestHighlights>
+    SuggestResultItem& WithHighlights(HighlightsT&& value) { SetHighlights(std::forward<HighlightsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
 
-    SuggestResultItemType m_suggestResultItemType;
+    SuggestResultItemType m_suggestResultItemType{SuggestResultItemType::NOT_SET};
     bool m_suggestResultItemTypeHasBeenSet = false;
 
     SuggestPlaceResult m_place;

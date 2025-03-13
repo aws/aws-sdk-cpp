@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteDriverScheduleInterval::RouteDriverScheduleInterval() : 
-    m_driveDuration(0),
-    m_driveDurationHasBeenSet(false),
-    m_restDuration(0),
-    m_restDurationHasBeenSet(false)
-{
-}
-
 RouteDriverScheduleInterval::RouteDriverScheduleInterval(JsonView jsonValue)
-  : RouteDriverScheduleInterval()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteDriverScheduleInterval& RouteDriverScheduleInterval::operator =(JsonView js
   if(jsonValue.ValueExists("DriveDuration"))
   {
     m_driveDuration = jsonValue.GetInt64("DriveDuration");
-
     m_driveDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestDuration"))
   {
     m_restDuration = jsonValue.GetInt64("RestDuration");
-
     m_restDurationHasBeenSet = true;
   }
-
   return *this;
 }
 

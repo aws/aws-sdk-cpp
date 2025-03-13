@@ -13,12 +13,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExecuteGremlinQueryRequest::ExecuteGremlinQueryRequest() : 
-    m_gremlinQueryHasBeenSet(false),
-    m_serializerHasBeenSet(false)
-{
-}
-
 Aws::String ExecuteGremlinQueryRequest::SerializePayload() const
 {
   JsonValue payload;

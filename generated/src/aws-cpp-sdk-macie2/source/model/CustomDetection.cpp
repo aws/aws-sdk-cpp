@@ -18,17 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-CustomDetection::CustomDetection() : 
-    m_arnHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_occurrencesHasBeenSet(false)
-{
-}
-
 CustomDetection::CustomDetection(JsonView jsonValue)
-  : CustomDetection()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CustomDetection& CustomDetection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInt64("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("occurrences"))
   {
     m_occurrences = jsonValue.GetObject("occurrences");
-
     m_occurrencesHasBeenSet = true;
   }
-
   return *this;
 }
 

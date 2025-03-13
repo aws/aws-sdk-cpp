@@ -33,7 +33,7 @@ namespace Model
   class GetBucketMetadataTableConfigurationResult
   {
   public:
-    AWS_S3_API GetBucketMetadataTableConfigurationResult();
+    AWS_S3_API GetBucketMetadataTableConfigurationResult() = default;
     AWS_S3_API GetBucketMetadataTableConfigurationResult(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API GetBucketMetadataTableConfigurationResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p> The metadata table configuration for a general purpose bucket. </p>
      */
-    inline const MetadataTableConfigurationResult& GetMetadataTableConfigurationResult() const{ return m_metadataTableConfigurationResult; }
+    inline const MetadataTableConfigurationResult& GetMetadataTableConfigurationResult() const { return m_metadataTableConfigurationResult; }
     inline bool MetadataTableConfigurationResultHasBeenSet() const { return m_metadataTableConfigurationResultHasBeenSet; }
-    inline void SetMetadataTableConfigurationResult(const MetadataTableConfigurationResult& value) { m_metadataTableConfigurationResultHasBeenSet = true; m_metadataTableConfigurationResult = value; }
-    inline void SetMetadataTableConfigurationResult(MetadataTableConfigurationResult&& value) { m_metadataTableConfigurationResultHasBeenSet = true; m_metadataTableConfigurationResult = std::move(value); }
-    inline GetBucketMetadataTableConfigurationResult& WithMetadataTableConfigurationResult(const MetadataTableConfigurationResult& value) { SetMetadataTableConfigurationResult(value); return *this;}
-    inline GetBucketMetadataTableConfigurationResult& WithMetadataTableConfigurationResult(MetadataTableConfigurationResult&& value) { SetMetadataTableConfigurationResult(std::move(value)); return *this;}
+    template<typename MetadataTableConfigurationResultT = MetadataTableConfigurationResult>
+    void SetMetadataTableConfigurationResult(MetadataTableConfigurationResultT&& value) { m_metadataTableConfigurationResultHasBeenSet = true; m_metadataTableConfigurationResult = std::forward<MetadataTableConfigurationResultT>(value); }
+    template<typename MetadataTableConfigurationResultT = MetadataTableConfigurationResult>
+    GetBucketMetadataTableConfigurationResult& WithMetadataTableConfigurationResult(MetadataTableConfigurationResultT&& value) { SetMetadataTableConfigurationResult(std::forward<MetadataTableConfigurationResultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +62,12 @@ namespace Model
      * create the metadata table, or Amazon S3 is unable to deliver records. See
      * <code>ErrorDetails</code> for details.</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline GetBucketMetadataTableConfigurationResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline GetBucketMetadataTableConfigurationResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline GetBucketMetadataTableConfigurationResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    GetBucketMetadataTableConfigurationResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +76,12 @@ namespace Model
      * but S3 Metadata was unable to create the table, this structure contains the
      * error code and error message. </p>
      */
-    inline const ErrorDetails& GetError() const{ return m_error; }
+    inline const ErrorDetails& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ErrorDetails& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ErrorDetails&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline GetBucketMetadataTableConfigurationResult& WithError(const ErrorDetails& value) { SetError(value); return *this;}
-    inline GetBucketMetadataTableConfigurationResult& WithError(ErrorDetails&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ErrorDetails>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ErrorDetails>
+    GetBucketMetadataTableConfigurationResult& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class ScriptBootstrapActionConfig
   {
   public:
-    AWS_EMR_API ScriptBootstrapActionConfig();
+    AWS_EMR_API ScriptBootstrapActionConfig() = default;
     AWS_EMR_API ScriptBootstrapActionConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API ScriptBootstrapActionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,29 +43,26 @@ namespace Model
     /**
      * <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline ScriptBootstrapActionConfig& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline ScriptBootstrapActionConfig& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline ScriptBootstrapActionConfig& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    ScriptBootstrapActionConfig& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of command line arguments to pass to the bootstrap action script.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetArgs() const{ return m_args; }
+    inline const Aws::Vector<Aws::String>& GetArgs() const { return m_args; }
     inline bool ArgsHasBeenSet() const { return m_argsHasBeenSet; }
-    inline void SetArgs(const Aws::Vector<Aws::String>& value) { m_argsHasBeenSet = true; m_args = value; }
-    inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = std::move(value); }
-    inline ScriptBootstrapActionConfig& WithArgs(const Aws::Vector<Aws::String>& value) { SetArgs(value); return *this;}
-    inline ScriptBootstrapActionConfig& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(std::move(value)); return *this;}
-    inline ScriptBootstrapActionConfig& AddArgs(const Aws::String& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
-    inline ScriptBootstrapActionConfig& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(std::move(value)); return *this; }
-    inline ScriptBootstrapActionConfig& AddArgs(const char* value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
+    template<typename ArgsT = Aws::Vector<Aws::String>>
+    void SetArgs(ArgsT&& value) { m_argsHasBeenSet = true; m_args = std::forward<ArgsT>(value); }
+    template<typename ArgsT = Aws::Vector<Aws::String>>
+    ScriptBootstrapActionConfig& WithArgs(ArgsT&& value) { SetArgs(std::forward<ArgsT>(value)); return *this;}
+    template<typename ArgsT = Aws::String>
+    ScriptBootstrapActionConfig& AddArgs(ArgsT&& value) { m_argsHasBeenSet = true; m_args.emplace_back(std::forward<ArgsT>(value)); return *this; }
     ///@}
   private:
 

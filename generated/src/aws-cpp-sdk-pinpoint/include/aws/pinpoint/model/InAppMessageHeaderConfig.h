@@ -32,7 +32,7 @@ namespace Model
   class InAppMessageHeaderConfig
   {
   public:
-    AWS_PINPOINT_API InAppMessageHeaderConfig();
+    AWS_PINPOINT_API InAppMessageHeaderConfig() = default;
     AWS_PINPOINT_API InAppMessageHeaderConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API InAppMessageHeaderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,44 +42,38 @@ namespace Model
     /**
      * <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
      */
-    inline const Alignment& GetAlignment() const{ return m_alignment; }
+    inline Alignment GetAlignment() const { return m_alignment; }
     inline bool AlignmentHasBeenSet() const { return m_alignmentHasBeenSet; }
-    inline void SetAlignment(const Alignment& value) { m_alignmentHasBeenSet = true; m_alignment = value; }
-    inline void SetAlignment(Alignment&& value) { m_alignmentHasBeenSet = true; m_alignment = std::move(value); }
-    inline InAppMessageHeaderConfig& WithAlignment(const Alignment& value) { SetAlignment(value); return *this;}
-    inline InAppMessageHeaderConfig& WithAlignment(Alignment&& value) { SetAlignment(std::move(value)); return *this;}
+    inline void SetAlignment(Alignment value) { m_alignmentHasBeenSet = true; m_alignment = value; }
+    inline InAppMessageHeaderConfig& WithAlignment(Alignment value) { SetAlignment(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Message Header.</p>
      */
-    inline const Aws::String& GetHeader() const{ return m_header; }
+    inline const Aws::String& GetHeader() const { return m_header; }
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-    inline void SetHeader(const Aws::String& value) { m_headerHasBeenSet = true; m_header = value; }
-    inline void SetHeader(Aws::String&& value) { m_headerHasBeenSet = true; m_header = std::move(value); }
-    inline void SetHeader(const char* value) { m_headerHasBeenSet = true; m_header.assign(value); }
-    inline InAppMessageHeaderConfig& WithHeader(const Aws::String& value) { SetHeader(value); return *this;}
-    inline InAppMessageHeaderConfig& WithHeader(Aws::String&& value) { SetHeader(std::move(value)); return *this;}
-    inline InAppMessageHeaderConfig& WithHeader(const char* value) { SetHeader(value); return *this;}
+    template<typename HeaderT = Aws::String>
+    void SetHeader(HeaderT&& value) { m_headerHasBeenSet = true; m_header = std::forward<HeaderT>(value); }
+    template<typename HeaderT = Aws::String>
+    InAppMessageHeaderConfig& WithHeader(HeaderT&& value) { SetHeader(std::forward<HeaderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The text color.</p>
      */
-    inline const Aws::String& GetTextColor() const{ return m_textColor; }
+    inline const Aws::String& GetTextColor() const { return m_textColor; }
     inline bool TextColorHasBeenSet() const { return m_textColorHasBeenSet; }
-    inline void SetTextColor(const Aws::String& value) { m_textColorHasBeenSet = true; m_textColor = value; }
-    inline void SetTextColor(Aws::String&& value) { m_textColorHasBeenSet = true; m_textColor = std::move(value); }
-    inline void SetTextColor(const char* value) { m_textColorHasBeenSet = true; m_textColor.assign(value); }
-    inline InAppMessageHeaderConfig& WithTextColor(const Aws::String& value) { SetTextColor(value); return *this;}
-    inline InAppMessageHeaderConfig& WithTextColor(Aws::String&& value) { SetTextColor(std::move(value)); return *this;}
-    inline InAppMessageHeaderConfig& WithTextColor(const char* value) { SetTextColor(value); return *this;}
+    template<typename TextColorT = Aws::String>
+    void SetTextColor(TextColorT&& value) { m_textColorHasBeenSet = true; m_textColor = std::forward<TextColorT>(value); }
+    template<typename TextColorT = Aws::String>
+    InAppMessageHeaderConfig& WithTextColor(TextColorT&& value) { SetTextColor(std::forward<TextColorT>(value)); return *this;}
     ///@}
   private:
 
-    Alignment m_alignment;
+    Alignment m_alignment{Alignment::NOT_SET};
     bool m_alignmentHasBeenSet = false;
 
     Aws::String m_header;

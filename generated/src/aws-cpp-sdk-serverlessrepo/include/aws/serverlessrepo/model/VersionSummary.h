@@ -31,7 +31,7 @@ namespace Model
   class VersionSummary
   {
   public:
-    AWS_SERVERLESSAPPLICATIONREPOSITORY_API VersionSummary();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API VersionSummary() = default;
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API VersionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API VersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The application Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline VersionSummary& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline VersionSummary& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline VersionSummary& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    VersionSummary& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time this resource was created.</p>
      */
-    inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::String&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline void SetCreationTime(const char* value) { m_creationTimeHasBeenSet = true; m_creationTime.assign(value); }
-    inline VersionSummary& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
-    inline VersionSummary& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
-    inline VersionSummary& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
+    template<typename CreationTimeT = Aws::String>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::String>
+    VersionSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
-    inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
+    inline const Aws::String& GetSemanticVersion() const { return m_semanticVersion; }
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
-    inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
-    inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
-    inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
-    inline VersionSummary& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
-    inline VersionSummary& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
-    inline VersionSummary& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
+    template<typename SemanticVersionT = Aws::String>
+    void SetSemanticVersion(SemanticVersionT&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::forward<SemanticVersionT>(value); }
+    template<typename SemanticVersionT = Aws::String>
+    VersionSummary& WithSemanticVersion(SemanticVersionT&& value) { SetSemanticVersion(std::forward<SemanticVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +81,12 @@ namespace Model
      * <p>A link to a public repository for the source code of your application, for
      * example the URL of a specific GitHub commit.</p>
      */
-    inline const Aws::String& GetSourceCodeUrl() const{ return m_sourceCodeUrl; }
+    inline const Aws::String& GetSourceCodeUrl() const { return m_sourceCodeUrl; }
     inline bool SourceCodeUrlHasBeenSet() const { return m_sourceCodeUrlHasBeenSet; }
-    inline void SetSourceCodeUrl(const Aws::String& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = value; }
-    inline void SetSourceCodeUrl(Aws::String&& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = std::move(value); }
-    inline void SetSourceCodeUrl(const char* value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl.assign(value); }
-    inline VersionSummary& WithSourceCodeUrl(const Aws::String& value) { SetSourceCodeUrl(value); return *this;}
-    inline VersionSummary& WithSourceCodeUrl(Aws::String&& value) { SetSourceCodeUrl(std::move(value)); return *this;}
-    inline VersionSummary& WithSourceCodeUrl(const char* value) { SetSourceCodeUrl(value); return *this;}
+    template<typename SourceCodeUrlT = Aws::String>
+    void SetSourceCodeUrl(SourceCodeUrlT&& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = std::forward<SourceCodeUrlT>(value); }
+    template<typename SourceCodeUrlT = Aws::String>
+    VersionSummary& WithSourceCodeUrl(SourceCodeUrlT&& value) { SetSourceCodeUrl(std::forward<SourceCodeUrlT>(value)); return *this;}
     ///@}
   private:
 

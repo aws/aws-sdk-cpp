@@ -34,7 +34,7 @@ namespace Model
   class InputClippingSettings
   {
   public:
-    AWS_MEDIALIVE_API InputClippingSettings();
+    AWS_MEDIALIVE_API InputClippingSettings() = default;
     AWS_MEDIALIVE_API InputClippingSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InputClippingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,38 @@ namespace Model
     /**
      * The source of the timecodes in the source being clipped.
      */
-    inline const InputTimecodeSource& GetInputTimecodeSource() const{ return m_inputTimecodeSource; }
+    inline InputTimecodeSource GetInputTimecodeSource() const { return m_inputTimecodeSource; }
     inline bool InputTimecodeSourceHasBeenSet() const { return m_inputTimecodeSourceHasBeenSet; }
-    inline void SetInputTimecodeSource(const InputTimecodeSource& value) { m_inputTimecodeSourceHasBeenSet = true; m_inputTimecodeSource = value; }
-    inline void SetInputTimecodeSource(InputTimecodeSource&& value) { m_inputTimecodeSourceHasBeenSet = true; m_inputTimecodeSource = std::move(value); }
-    inline InputClippingSettings& WithInputTimecodeSource(const InputTimecodeSource& value) { SetInputTimecodeSource(value); return *this;}
-    inline InputClippingSettings& WithInputTimecodeSource(InputTimecodeSource&& value) { SetInputTimecodeSource(std::move(value)); return *this;}
+    inline void SetInputTimecodeSource(InputTimecodeSource value) { m_inputTimecodeSourceHasBeenSet = true; m_inputTimecodeSource = value; }
+    inline InputClippingSettings& WithInputTimecodeSource(InputTimecodeSource value) { SetInputTimecodeSource(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Settings to identify the start of the clip.
      */
-    inline const StartTimecode& GetStartTimecode() const{ return m_startTimecode; }
+    inline const StartTimecode& GetStartTimecode() const { return m_startTimecode; }
     inline bool StartTimecodeHasBeenSet() const { return m_startTimecodeHasBeenSet; }
-    inline void SetStartTimecode(const StartTimecode& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = value; }
-    inline void SetStartTimecode(StartTimecode&& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = std::move(value); }
-    inline InputClippingSettings& WithStartTimecode(const StartTimecode& value) { SetStartTimecode(value); return *this;}
-    inline InputClippingSettings& WithStartTimecode(StartTimecode&& value) { SetStartTimecode(std::move(value)); return *this;}
+    template<typename StartTimecodeT = StartTimecode>
+    void SetStartTimecode(StartTimecodeT&& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = std::forward<StartTimecodeT>(value); }
+    template<typename StartTimecodeT = StartTimecode>
+    InputClippingSettings& WithStartTimecode(StartTimecodeT&& value) { SetStartTimecode(std::forward<StartTimecodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Settings to identify the end of the clip.
      */
-    inline const StopTimecode& GetStopTimecode() const{ return m_stopTimecode; }
+    inline const StopTimecode& GetStopTimecode() const { return m_stopTimecode; }
     inline bool StopTimecodeHasBeenSet() const { return m_stopTimecodeHasBeenSet; }
-    inline void SetStopTimecode(const StopTimecode& value) { m_stopTimecodeHasBeenSet = true; m_stopTimecode = value; }
-    inline void SetStopTimecode(StopTimecode&& value) { m_stopTimecodeHasBeenSet = true; m_stopTimecode = std::move(value); }
-    inline InputClippingSettings& WithStopTimecode(const StopTimecode& value) { SetStopTimecode(value); return *this;}
-    inline InputClippingSettings& WithStopTimecode(StopTimecode&& value) { SetStopTimecode(std::move(value)); return *this;}
+    template<typename StopTimecodeT = StopTimecode>
+    void SetStopTimecode(StopTimecodeT&& value) { m_stopTimecodeHasBeenSet = true; m_stopTimecode = std::forward<StopTimecodeT>(value); }
+    template<typename StopTimecodeT = StopTimecode>
+    InputClippingSettings& WithStopTimecode(StopTimecodeT&& value) { SetStopTimecode(std::forward<StopTimecodeT>(value)); return *this;}
     ///@}
   private:
 
-    InputTimecodeSource m_inputTimecodeSource;
+    InputTimecodeSource m_inputTimecodeSource{InputTimecodeSource::NOT_SET};
     bool m_inputTimecodeSourceHasBeenSet = false;
 
     StartTimecode m_startTimecode;

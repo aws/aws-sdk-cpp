@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-ConfigurationSetAlreadyExistsException::ConfigurationSetAlreadyExistsException() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 ConfigurationSetAlreadyExistsException::ConfigurationSetAlreadyExistsException(const XmlNode& xmlNode)
-  : ConfigurationSetAlreadyExistsException()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ConfigurationSetAlreadyExistsException& ConfigurationSetAlreadyExistsException::
     {
       m_configurationSetName = Aws::Utils::Xml::DecodeEscapedXmlText(configurationSetNameNode.GetText());
       m_configurationSetNameHasBeenSet = true;
+       m_configurationSetNameHasBeenSet = true;
     }
   }
 

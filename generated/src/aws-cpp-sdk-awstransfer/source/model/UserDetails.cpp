@@ -18,15 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-UserDetails::UserDetails() : 
-    m_userNameHasBeenSet(false),
-    m_serverIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 UserDetails::UserDetails(JsonView jsonValue)
-  : UserDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UserDetails& UserDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerId"))
   {
     m_serverId = jsonValue.GetString("ServerId");
-
     m_serverIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionId"))
   {
     m_sessionId = jsonValue.GetString("SessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

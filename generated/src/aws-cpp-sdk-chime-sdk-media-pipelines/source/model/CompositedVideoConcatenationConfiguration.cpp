@@ -18,14 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-CompositedVideoConcatenationConfiguration::CompositedVideoConcatenationConfiguration() : 
-    m_state(ArtifactsConcatenationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 CompositedVideoConcatenationConfiguration::CompositedVideoConcatenationConfiguration(JsonView jsonValue)
-  : CompositedVideoConcatenationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CompositedVideoConcatenationConfiguration& CompositedVideoConcatenationConfigura
   if(jsonValue.ValueExists("State"))
   {
     m_state = ArtifactsConcatenationStateMapper::GetArtifactsConcatenationStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

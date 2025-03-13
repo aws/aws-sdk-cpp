@@ -18,13 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-TriggeringDataset::TriggeringDataset() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 TriggeringDataset::TriggeringDataset(JsonView jsonValue)
-  : TriggeringDataset()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TriggeringDataset& TriggeringDataset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

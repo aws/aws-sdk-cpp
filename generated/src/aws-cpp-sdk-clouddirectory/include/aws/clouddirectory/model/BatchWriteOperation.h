@@ -46,7 +46,7 @@ namespace Model
   class BatchWriteOperation
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchWriteOperation();
+    AWS_CLOUDDIRECTORY_API BatchWriteOperation() = default;
     AWS_CLOUDDIRECTORY_API BatchWriteOperation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchWriteOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,84 +56,84 @@ namespace Model
     /**
      * <p>Creates an object.</p>
      */
-    inline const BatchCreateObject& GetCreateObject() const{ return m_createObject; }
+    inline const BatchCreateObject& GetCreateObject() const { return m_createObject; }
     inline bool CreateObjectHasBeenSet() const { return m_createObjectHasBeenSet; }
-    inline void SetCreateObject(const BatchCreateObject& value) { m_createObjectHasBeenSet = true; m_createObject = value; }
-    inline void SetCreateObject(BatchCreateObject&& value) { m_createObjectHasBeenSet = true; m_createObject = std::move(value); }
-    inline BatchWriteOperation& WithCreateObject(const BatchCreateObject& value) { SetCreateObject(value); return *this;}
-    inline BatchWriteOperation& WithCreateObject(BatchCreateObject&& value) { SetCreateObject(std::move(value)); return *this;}
+    template<typename CreateObjectT = BatchCreateObject>
+    void SetCreateObject(CreateObjectT&& value) { m_createObjectHasBeenSet = true; m_createObject = std::forward<CreateObjectT>(value); }
+    template<typename CreateObjectT = BatchCreateObject>
+    BatchWriteOperation& WithCreateObject(CreateObjectT&& value) { SetCreateObject(std::forward<CreateObjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Attaches an object to a <a>Directory</a>.</p>
      */
-    inline const BatchAttachObject& GetAttachObject() const{ return m_attachObject; }
+    inline const BatchAttachObject& GetAttachObject() const { return m_attachObject; }
     inline bool AttachObjectHasBeenSet() const { return m_attachObjectHasBeenSet; }
-    inline void SetAttachObject(const BatchAttachObject& value) { m_attachObjectHasBeenSet = true; m_attachObject = value; }
-    inline void SetAttachObject(BatchAttachObject&& value) { m_attachObjectHasBeenSet = true; m_attachObject = std::move(value); }
-    inline BatchWriteOperation& WithAttachObject(const BatchAttachObject& value) { SetAttachObject(value); return *this;}
-    inline BatchWriteOperation& WithAttachObject(BatchAttachObject&& value) { SetAttachObject(std::move(value)); return *this;}
+    template<typename AttachObjectT = BatchAttachObject>
+    void SetAttachObject(AttachObjectT&& value) { m_attachObjectHasBeenSet = true; m_attachObject = std::forward<AttachObjectT>(value); }
+    template<typename AttachObjectT = BatchAttachObject>
+    BatchWriteOperation& WithAttachObject(AttachObjectT&& value) { SetAttachObject(std::forward<AttachObjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Detaches an object from a <a>Directory</a>.</p>
      */
-    inline const BatchDetachObject& GetDetachObject() const{ return m_detachObject; }
+    inline const BatchDetachObject& GetDetachObject() const { return m_detachObject; }
     inline bool DetachObjectHasBeenSet() const { return m_detachObjectHasBeenSet; }
-    inline void SetDetachObject(const BatchDetachObject& value) { m_detachObjectHasBeenSet = true; m_detachObject = value; }
-    inline void SetDetachObject(BatchDetachObject&& value) { m_detachObjectHasBeenSet = true; m_detachObject = std::move(value); }
-    inline BatchWriteOperation& WithDetachObject(const BatchDetachObject& value) { SetDetachObject(value); return *this;}
-    inline BatchWriteOperation& WithDetachObject(BatchDetachObject&& value) { SetDetachObject(std::move(value)); return *this;}
+    template<typename DetachObjectT = BatchDetachObject>
+    void SetDetachObject(DetachObjectT&& value) { m_detachObjectHasBeenSet = true; m_detachObject = std::forward<DetachObjectT>(value); }
+    template<typename DetachObjectT = BatchDetachObject>
+    BatchWriteOperation& WithDetachObject(DetachObjectT&& value) { SetDetachObject(std::forward<DetachObjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates a given object's attributes.</p>
      */
-    inline const BatchUpdateObjectAttributes& GetUpdateObjectAttributes() const{ return m_updateObjectAttributes; }
+    inline const BatchUpdateObjectAttributes& GetUpdateObjectAttributes() const { return m_updateObjectAttributes; }
     inline bool UpdateObjectAttributesHasBeenSet() const { return m_updateObjectAttributesHasBeenSet; }
-    inline void SetUpdateObjectAttributes(const BatchUpdateObjectAttributes& value) { m_updateObjectAttributesHasBeenSet = true; m_updateObjectAttributes = value; }
-    inline void SetUpdateObjectAttributes(BatchUpdateObjectAttributes&& value) { m_updateObjectAttributesHasBeenSet = true; m_updateObjectAttributes = std::move(value); }
-    inline BatchWriteOperation& WithUpdateObjectAttributes(const BatchUpdateObjectAttributes& value) { SetUpdateObjectAttributes(value); return *this;}
-    inline BatchWriteOperation& WithUpdateObjectAttributes(BatchUpdateObjectAttributes&& value) { SetUpdateObjectAttributes(std::move(value)); return *this;}
+    template<typename UpdateObjectAttributesT = BatchUpdateObjectAttributes>
+    void SetUpdateObjectAttributes(UpdateObjectAttributesT&& value) { m_updateObjectAttributesHasBeenSet = true; m_updateObjectAttributes = std::forward<UpdateObjectAttributesT>(value); }
+    template<typename UpdateObjectAttributesT = BatchUpdateObjectAttributes>
+    BatchWriteOperation& WithUpdateObjectAttributes(UpdateObjectAttributesT&& value) { SetUpdateObjectAttributes(std::forward<UpdateObjectAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Deletes an object in a <a>Directory</a>.</p>
      */
-    inline const BatchDeleteObject& GetDeleteObject() const{ return m_deleteObject; }
+    inline const BatchDeleteObject& GetDeleteObject() const { return m_deleteObject; }
     inline bool DeleteObjectHasBeenSet() const { return m_deleteObjectHasBeenSet; }
-    inline void SetDeleteObject(const BatchDeleteObject& value) { m_deleteObjectHasBeenSet = true; m_deleteObject = value; }
-    inline void SetDeleteObject(BatchDeleteObject&& value) { m_deleteObjectHasBeenSet = true; m_deleteObject = std::move(value); }
-    inline BatchWriteOperation& WithDeleteObject(const BatchDeleteObject& value) { SetDeleteObject(value); return *this;}
-    inline BatchWriteOperation& WithDeleteObject(BatchDeleteObject&& value) { SetDeleteObject(std::move(value)); return *this;}
+    template<typename DeleteObjectT = BatchDeleteObject>
+    void SetDeleteObject(DeleteObjectT&& value) { m_deleteObjectHasBeenSet = true; m_deleteObject = std::forward<DeleteObjectT>(value); }
+    template<typename DeleteObjectT = BatchDeleteObject>
+    BatchWriteOperation& WithDeleteObject(DeleteObjectT&& value) { SetDeleteObject(std::forward<DeleteObjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A batch operation that adds a facet to an object.</p>
      */
-    inline const BatchAddFacetToObject& GetAddFacetToObject() const{ return m_addFacetToObject; }
+    inline const BatchAddFacetToObject& GetAddFacetToObject() const { return m_addFacetToObject; }
     inline bool AddFacetToObjectHasBeenSet() const { return m_addFacetToObjectHasBeenSet; }
-    inline void SetAddFacetToObject(const BatchAddFacetToObject& value) { m_addFacetToObjectHasBeenSet = true; m_addFacetToObject = value; }
-    inline void SetAddFacetToObject(BatchAddFacetToObject&& value) { m_addFacetToObjectHasBeenSet = true; m_addFacetToObject = std::move(value); }
-    inline BatchWriteOperation& WithAddFacetToObject(const BatchAddFacetToObject& value) { SetAddFacetToObject(value); return *this;}
-    inline BatchWriteOperation& WithAddFacetToObject(BatchAddFacetToObject&& value) { SetAddFacetToObject(std::move(value)); return *this;}
+    template<typename AddFacetToObjectT = BatchAddFacetToObject>
+    void SetAddFacetToObject(AddFacetToObjectT&& value) { m_addFacetToObjectHasBeenSet = true; m_addFacetToObject = std::forward<AddFacetToObjectT>(value); }
+    template<typename AddFacetToObjectT = BatchAddFacetToObject>
+    BatchWriteOperation& WithAddFacetToObject(AddFacetToObjectT&& value) { SetAddFacetToObject(std::forward<AddFacetToObjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A batch operation that removes a facet from an object.</p>
      */
-    inline const BatchRemoveFacetFromObject& GetRemoveFacetFromObject() const{ return m_removeFacetFromObject; }
+    inline const BatchRemoveFacetFromObject& GetRemoveFacetFromObject() const { return m_removeFacetFromObject; }
     inline bool RemoveFacetFromObjectHasBeenSet() const { return m_removeFacetFromObjectHasBeenSet; }
-    inline void SetRemoveFacetFromObject(const BatchRemoveFacetFromObject& value) { m_removeFacetFromObjectHasBeenSet = true; m_removeFacetFromObject = value; }
-    inline void SetRemoveFacetFromObject(BatchRemoveFacetFromObject&& value) { m_removeFacetFromObjectHasBeenSet = true; m_removeFacetFromObject = std::move(value); }
-    inline BatchWriteOperation& WithRemoveFacetFromObject(const BatchRemoveFacetFromObject& value) { SetRemoveFacetFromObject(value); return *this;}
-    inline BatchWriteOperation& WithRemoveFacetFromObject(BatchRemoveFacetFromObject&& value) { SetRemoveFacetFromObject(std::move(value)); return *this;}
+    template<typename RemoveFacetFromObjectT = BatchRemoveFacetFromObject>
+    void SetRemoveFacetFromObject(RemoveFacetFromObjectT&& value) { m_removeFacetFromObjectHasBeenSet = true; m_removeFacetFromObject = std::forward<RemoveFacetFromObjectT>(value); }
+    template<typename RemoveFacetFromObjectT = BatchRemoveFacetFromObject>
+    BatchWriteOperation& WithRemoveFacetFromObject(RemoveFacetFromObjectT&& value) { SetRemoveFacetFromObject(std::forward<RemoveFacetFromObjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,24 +141,24 @@ namespace Model
      * <p>Attaches a policy object to a regular object. An object can have a limited
      * number of attached policies.</p>
      */
-    inline const BatchAttachPolicy& GetAttachPolicy() const{ return m_attachPolicy; }
+    inline const BatchAttachPolicy& GetAttachPolicy() const { return m_attachPolicy; }
     inline bool AttachPolicyHasBeenSet() const { return m_attachPolicyHasBeenSet; }
-    inline void SetAttachPolicy(const BatchAttachPolicy& value) { m_attachPolicyHasBeenSet = true; m_attachPolicy = value; }
-    inline void SetAttachPolicy(BatchAttachPolicy&& value) { m_attachPolicyHasBeenSet = true; m_attachPolicy = std::move(value); }
-    inline BatchWriteOperation& WithAttachPolicy(const BatchAttachPolicy& value) { SetAttachPolicy(value); return *this;}
-    inline BatchWriteOperation& WithAttachPolicy(BatchAttachPolicy&& value) { SetAttachPolicy(std::move(value)); return *this;}
+    template<typename AttachPolicyT = BatchAttachPolicy>
+    void SetAttachPolicy(AttachPolicyT&& value) { m_attachPolicyHasBeenSet = true; m_attachPolicy = std::forward<AttachPolicyT>(value); }
+    template<typename AttachPolicyT = BatchAttachPolicy>
+    BatchWriteOperation& WithAttachPolicy(AttachPolicyT&& value) { SetAttachPolicy(std::forward<AttachPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Detaches a policy from a <a>Directory</a>.</p>
      */
-    inline const BatchDetachPolicy& GetDetachPolicy() const{ return m_detachPolicy; }
+    inline const BatchDetachPolicy& GetDetachPolicy() const { return m_detachPolicy; }
     inline bool DetachPolicyHasBeenSet() const { return m_detachPolicyHasBeenSet; }
-    inline void SetDetachPolicy(const BatchDetachPolicy& value) { m_detachPolicyHasBeenSet = true; m_detachPolicy = value; }
-    inline void SetDetachPolicy(BatchDetachPolicy&& value) { m_detachPolicyHasBeenSet = true; m_detachPolicy = std::move(value); }
-    inline BatchWriteOperation& WithDetachPolicy(const BatchDetachPolicy& value) { SetDetachPolicy(value); return *this;}
-    inline BatchWriteOperation& WithDetachPolicy(BatchDetachPolicy&& value) { SetDetachPolicy(std::move(value)); return *this;}
+    template<typename DetachPolicyT = BatchDetachPolicy>
+    void SetDetachPolicy(DetachPolicyT&& value) { m_detachPolicyHasBeenSet = true; m_detachPolicy = std::forward<DetachPolicyT>(value); }
+    template<typename DetachPolicyT = BatchDetachPolicy>
+    BatchWriteOperation& WithDetachPolicy(DetachPolicyT&& value) { SetDetachPolicy(std::forward<DetachPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,36 +167,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing
      * and search</a> for more information.</p>
      */
-    inline const BatchCreateIndex& GetCreateIndex() const{ return m_createIndex; }
+    inline const BatchCreateIndex& GetCreateIndex() const { return m_createIndex; }
     inline bool CreateIndexHasBeenSet() const { return m_createIndexHasBeenSet; }
-    inline void SetCreateIndex(const BatchCreateIndex& value) { m_createIndexHasBeenSet = true; m_createIndex = value; }
-    inline void SetCreateIndex(BatchCreateIndex&& value) { m_createIndexHasBeenSet = true; m_createIndex = std::move(value); }
-    inline BatchWriteOperation& WithCreateIndex(const BatchCreateIndex& value) { SetCreateIndex(value); return *this;}
-    inline BatchWriteOperation& WithCreateIndex(BatchCreateIndex&& value) { SetCreateIndex(std::move(value)); return *this;}
+    template<typename CreateIndexT = BatchCreateIndex>
+    void SetCreateIndex(CreateIndexT&& value) { m_createIndexHasBeenSet = true; m_createIndex = std::forward<CreateIndexT>(value); }
+    template<typename CreateIndexT = BatchCreateIndex>
+    BatchWriteOperation& WithCreateIndex(CreateIndexT&& value) { SetCreateIndex(std::forward<CreateIndexT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Attaches the specified object to the specified index.</p>
      */
-    inline const BatchAttachToIndex& GetAttachToIndex() const{ return m_attachToIndex; }
+    inline const BatchAttachToIndex& GetAttachToIndex() const { return m_attachToIndex; }
     inline bool AttachToIndexHasBeenSet() const { return m_attachToIndexHasBeenSet; }
-    inline void SetAttachToIndex(const BatchAttachToIndex& value) { m_attachToIndexHasBeenSet = true; m_attachToIndex = value; }
-    inline void SetAttachToIndex(BatchAttachToIndex&& value) { m_attachToIndexHasBeenSet = true; m_attachToIndex = std::move(value); }
-    inline BatchWriteOperation& WithAttachToIndex(const BatchAttachToIndex& value) { SetAttachToIndex(value); return *this;}
-    inline BatchWriteOperation& WithAttachToIndex(BatchAttachToIndex&& value) { SetAttachToIndex(std::move(value)); return *this;}
+    template<typename AttachToIndexT = BatchAttachToIndex>
+    void SetAttachToIndex(AttachToIndexT&& value) { m_attachToIndexHasBeenSet = true; m_attachToIndex = std::forward<AttachToIndexT>(value); }
+    template<typename AttachToIndexT = BatchAttachToIndex>
+    BatchWriteOperation& WithAttachToIndex(AttachToIndexT&& value) { SetAttachToIndex(std::forward<AttachToIndexT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Detaches the specified object from the specified index.</p>
      */
-    inline const BatchDetachFromIndex& GetDetachFromIndex() const{ return m_detachFromIndex; }
+    inline const BatchDetachFromIndex& GetDetachFromIndex() const { return m_detachFromIndex; }
     inline bool DetachFromIndexHasBeenSet() const { return m_detachFromIndexHasBeenSet; }
-    inline void SetDetachFromIndex(const BatchDetachFromIndex& value) { m_detachFromIndexHasBeenSet = true; m_detachFromIndex = value; }
-    inline void SetDetachFromIndex(BatchDetachFromIndex&& value) { m_detachFromIndexHasBeenSet = true; m_detachFromIndex = std::move(value); }
-    inline BatchWriteOperation& WithDetachFromIndex(const BatchDetachFromIndex& value) { SetDetachFromIndex(value); return *this;}
-    inline BatchWriteOperation& WithDetachFromIndex(BatchDetachFromIndex&& value) { SetDetachFromIndex(std::move(value)); return *this;}
+    template<typename DetachFromIndexT = BatchDetachFromIndex>
+    void SetDetachFromIndex(DetachFromIndexT&& value) { m_detachFromIndexHasBeenSet = true; m_detachFromIndex = std::forward<DetachFromIndexT>(value); }
+    template<typename DetachFromIndexT = BatchDetachFromIndex>
+    BatchWriteOperation& WithDetachFromIndex(DetachFromIndexT&& value) { SetDetachFromIndex(std::forward<DetachFromIndexT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -206,12 +206,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
      * Links</a>.</p>
      */
-    inline const BatchAttachTypedLink& GetAttachTypedLink() const{ return m_attachTypedLink; }
+    inline const BatchAttachTypedLink& GetAttachTypedLink() const { return m_attachTypedLink; }
     inline bool AttachTypedLinkHasBeenSet() const { return m_attachTypedLinkHasBeenSet; }
-    inline void SetAttachTypedLink(const BatchAttachTypedLink& value) { m_attachTypedLinkHasBeenSet = true; m_attachTypedLink = value; }
-    inline void SetAttachTypedLink(BatchAttachTypedLink&& value) { m_attachTypedLinkHasBeenSet = true; m_attachTypedLink = std::move(value); }
-    inline BatchWriteOperation& WithAttachTypedLink(const BatchAttachTypedLink& value) { SetAttachTypedLink(value); return *this;}
-    inline BatchWriteOperation& WithAttachTypedLink(BatchAttachTypedLink&& value) { SetAttachTypedLink(std::move(value)); return *this;}
+    template<typename AttachTypedLinkT = BatchAttachTypedLink>
+    void SetAttachTypedLink(AttachTypedLinkT&& value) { m_attachTypedLinkHasBeenSet = true; m_attachTypedLink = std::forward<AttachTypedLinkT>(value); }
+    template<typename AttachTypedLinkT = BatchAttachTypedLink>
+    BatchWriteOperation& WithAttachTypedLink(AttachTypedLinkT&& value) { SetAttachTypedLink(std::forward<AttachTypedLinkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -221,24 +221,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
      * Links</a>.</p>
      */
-    inline const BatchDetachTypedLink& GetDetachTypedLink() const{ return m_detachTypedLink; }
+    inline const BatchDetachTypedLink& GetDetachTypedLink() const { return m_detachTypedLink; }
     inline bool DetachTypedLinkHasBeenSet() const { return m_detachTypedLinkHasBeenSet; }
-    inline void SetDetachTypedLink(const BatchDetachTypedLink& value) { m_detachTypedLinkHasBeenSet = true; m_detachTypedLink = value; }
-    inline void SetDetachTypedLink(BatchDetachTypedLink&& value) { m_detachTypedLinkHasBeenSet = true; m_detachTypedLink = std::move(value); }
-    inline BatchWriteOperation& WithDetachTypedLink(const BatchDetachTypedLink& value) { SetDetachTypedLink(value); return *this;}
-    inline BatchWriteOperation& WithDetachTypedLink(BatchDetachTypedLink&& value) { SetDetachTypedLink(std::move(value)); return *this;}
+    template<typename DetachTypedLinkT = BatchDetachTypedLink>
+    void SetDetachTypedLink(DetachTypedLinkT&& value) { m_detachTypedLinkHasBeenSet = true; m_detachTypedLink = std::forward<DetachTypedLinkT>(value); }
+    template<typename DetachTypedLinkT = BatchDetachTypedLink>
+    BatchWriteOperation& WithDetachTypedLink(DetachTypedLinkT&& value) { SetDetachTypedLink(std::forward<DetachTypedLinkT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates a given object's attributes.</p>
      */
-    inline const BatchUpdateLinkAttributes& GetUpdateLinkAttributes() const{ return m_updateLinkAttributes; }
+    inline const BatchUpdateLinkAttributes& GetUpdateLinkAttributes() const { return m_updateLinkAttributes; }
     inline bool UpdateLinkAttributesHasBeenSet() const { return m_updateLinkAttributesHasBeenSet; }
-    inline void SetUpdateLinkAttributes(const BatchUpdateLinkAttributes& value) { m_updateLinkAttributesHasBeenSet = true; m_updateLinkAttributes = value; }
-    inline void SetUpdateLinkAttributes(BatchUpdateLinkAttributes&& value) { m_updateLinkAttributesHasBeenSet = true; m_updateLinkAttributes = std::move(value); }
-    inline BatchWriteOperation& WithUpdateLinkAttributes(const BatchUpdateLinkAttributes& value) { SetUpdateLinkAttributes(value); return *this;}
-    inline BatchWriteOperation& WithUpdateLinkAttributes(BatchUpdateLinkAttributes&& value) { SetUpdateLinkAttributes(std::move(value)); return *this;}
+    template<typename UpdateLinkAttributesT = BatchUpdateLinkAttributes>
+    void SetUpdateLinkAttributes(UpdateLinkAttributesT&& value) { m_updateLinkAttributesHasBeenSet = true; m_updateLinkAttributes = std::forward<UpdateLinkAttributesT>(value); }
+    template<typename UpdateLinkAttributesT = BatchUpdateLinkAttributes>
+    BatchWriteOperation& WithUpdateLinkAttributes(UpdateLinkAttributesT&& value) { SetUpdateLinkAttributes(std::forward<UpdateLinkAttributesT>(value)); return *this;}
     ///@}
   private:
 

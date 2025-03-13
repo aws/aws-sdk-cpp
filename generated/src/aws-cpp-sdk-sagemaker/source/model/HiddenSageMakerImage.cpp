@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HiddenSageMakerImage::HiddenSageMakerImage() : 
-    m_sageMakerImageName(SageMakerImageName::NOT_SET),
-    m_sageMakerImageNameHasBeenSet(false),
-    m_versionAliasesHasBeenSet(false)
-{
-}
-
 HiddenSageMakerImage::HiddenSageMakerImage(JsonView jsonValue)
-  : HiddenSageMakerImage()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ HiddenSageMakerImage& HiddenSageMakerImage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SageMakerImageName"))
   {
     m_sageMakerImageName = SageMakerImageNameMapper::GetSageMakerImageNameForName(jsonValue.GetString("SageMakerImageName"));
-
     m_sageMakerImageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionAliases"))
   {
     Aws::Utils::Array<JsonView> versionAliasesJsonList = jsonValue.GetArray("VersionAliases");
@@ -49,7 +39,6 @@ HiddenSageMakerImage& HiddenSageMakerImage::operator =(JsonView jsonValue)
     }
     m_versionAliasesHasBeenSet = true;
   }
-
   return *this;
 }
 

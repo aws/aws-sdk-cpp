@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstanceStatusResponse::DescribeInstanceStatusResponse()
-{
-}
-
 DescribeInstanceStatusResponse::DescribeInstanceStatusResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeInstanceStatusResponse& DescribeInstanceStatusResponse::operator =(const
     if(!instanceStatusesNode.IsNull())
     {
       XmlNode instanceStatusesMember = instanceStatusesNode.FirstChild("item");
+      m_instanceStatusesHasBeenSet = !instanceStatusesMember.IsNull();
       while(!instanceStatusesMember.IsNull())
       {
         m_instanceStatuses.push_back(instanceStatusesMember);
@@ -53,6 +50,7 @@ DescribeInstanceStatusResponse& DescribeInstanceStatusResponse::operator =(const
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeInstanceStatusResponse& DescribeInstanceStatusResponse::operator =(const
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeInstanceStatusResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -18,19 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RealTimeContactAnalysisSegmentEvent::RealTimeContactAnalysisSegmentEvent() : 
-    m_idHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_timeHasBeenSet(false)
-{
-}
-
 RealTimeContactAnalysisSegmentEvent::RealTimeContactAnalysisSegmentEvent(JsonView jsonValue)
-  : RealTimeContactAnalysisSegmentEvent()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ RealTimeContactAnalysisSegmentEvent& RealTimeContactAnalysisSegmentEvent::operat
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantId"))
   {
     m_participantId = jsonValue.GetString("ParticipantId");
-
     m_participantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
-
     m_participantRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventType"))
   {
     m_eventType = jsonValue.GetString("EventType");
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetObject("Time");
-
     m_timeHasBeenSet = true;
   }
-
   return *this;
 }
 

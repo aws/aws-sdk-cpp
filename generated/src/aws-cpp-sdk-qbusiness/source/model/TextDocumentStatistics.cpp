@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-TextDocumentStatistics::TextDocumentStatistics() : 
-    m_indexedTextBytes(0),
-    m_indexedTextBytesHasBeenSet(false),
-    m_indexedTextDocumentCount(0),
-    m_indexedTextDocumentCountHasBeenSet(false)
-{
-}
-
 TextDocumentStatistics::TextDocumentStatistics(JsonView jsonValue)
-  : TextDocumentStatistics()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TextDocumentStatistics& TextDocumentStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("indexedTextBytes"))
   {
     m_indexedTextBytes = jsonValue.GetInt64("indexedTextBytes");
-
     m_indexedTextBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("indexedTextDocumentCount"))
   {
     m_indexedTextDocumentCount = jsonValue.GetInteger("indexedTextDocumentCount");
-
     m_indexedTextDocumentCountHasBeenSet = true;
   }
-
   return *this;
 }
 

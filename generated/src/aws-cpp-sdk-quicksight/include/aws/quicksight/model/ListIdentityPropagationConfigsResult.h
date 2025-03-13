@@ -29,7 +29,7 @@ namespace Model
   class ListIdentityPropagationConfigsResult
   {
   public:
-    AWS_QUICKSIGHT_API ListIdentityPropagationConfigsResult();
+    AWS_QUICKSIGHT_API ListIdentityPropagationConfigsResult() = default;
     AWS_QUICKSIGHT_API ListIdentityPropagationConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API ListIdentityPropagationConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of services and their authorized targets that the Amazon QuickSight
      * IAM Identity Center application can access.</p>
      */
-    inline const Aws::Vector<AuthorizedTargetsByService>& GetServices() const{ return m_services; }
-    inline void SetServices(const Aws::Vector<AuthorizedTargetsByService>& value) { m_services = value; }
-    inline void SetServices(Aws::Vector<AuthorizedTargetsByService>&& value) { m_services = std::move(value); }
-    inline ListIdentityPropagationConfigsResult& WithServices(const Aws::Vector<AuthorizedTargetsByService>& value) { SetServices(value); return *this;}
-    inline ListIdentityPropagationConfigsResult& WithServices(Aws::Vector<AuthorizedTargetsByService>&& value) { SetServices(std::move(value)); return *this;}
-    inline ListIdentityPropagationConfigsResult& AddServices(const AuthorizedTargetsByService& value) { m_services.push_back(value); return *this; }
-    inline ListIdentityPropagationConfigsResult& AddServices(AuthorizedTargetsByService&& value) { m_services.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AuthorizedTargetsByService>& GetServices() const { return m_services; }
+    template<typename ServicesT = Aws::Vector<AuthorizedTargetsByService>>
+    void SetServices(ServicesT&& value) { m_servicesHasBeenSet = true; m_services = std::forward<ServicesT>(value); }
+    template<typename ServicesT = Aws::Vector<AuthorizedTargetsByService>>
+    ListIdentityPropagationConfigsResult& WithServices(ServicesT&& value) { SetServices(std::forward<ServicesT>(value)); return *this;}
+    template<typename ServicesT = AuthorizedTargetsByService>
+    ListIdentityPropagationConfigsResult& AddServices(ServicesT&& value) { m_servicesHasBeenSet = true; m_services.emplace_back(std::forward<ServicesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,43 +53,43 @@ namespace Model
      * <p>The token for the next set of results, or null if there are no more
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListIdentityPropagationConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIdentityPropagationConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIdentityPropagationConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIdentityPropagationConfigsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline ListIdentityPropagationConfigsResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListIdentityPropagationConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListIdentityPropagationConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListIdentityPropagationConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListIdentityPropagationConfigsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AuthorizedTargetsByService> m_services;
+    bool m_servicesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

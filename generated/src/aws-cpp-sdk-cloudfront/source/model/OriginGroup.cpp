@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginGroup::OriginGroup() : 
-    m_idHasBeenSet(false),
-    m_failoverCriteriaHasBeenSet(false),
-    m_membersHasBeenSet(false),
-    m_selectionCriteria(OriginGroupSelectionCriteria::NOT_SET),
-    m_selectionCriteriaHasBeenSet(false)
-{
-}
-
 OriginGroup::OriginGroup(const XmlNode& xmlNode)
-  : OriginGroup()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ OriginGroup& OriginGroup::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode failoverCriteriaNode = resultNode.FirstChild("FailoverCriteria");
     if(!failoverCriteriaNode.IsNull())
     {
       m_failoverCriteria = failoverCriteriaNode;
       m_failoverCriteriaHasBeenSet = true;
+       m_failoverCriteriaHasBeenSet = true;
     }
     XmlNode membersNode = resultNode.FirstChild("Members");
     if(!membersNode.IsNull())
     {
       m_members = membersNode;
       m_membersHasBeenSet = true;
+       m_membersHasBeenSet = true;
     }
     XmlNode selectionCriteriaNode = resultNode.FirstChild("SelectionCriteria");
     if(!selectionCriteriaNode.IsNull())
     {
-      m_selectionCriteria = OriginGroupSelectionCriteriaMapper::GetOriginGroupSelectionCriteriaForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(selectionCriteriaNode.GetText()).c_str()).c_str());
+      m_selectionCriteria = OriginGroupSelectionCriteriaMapper::GetOriginGroupSelectionCriteriaForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(selectionCriteriaNode.GetText()).c_str()));
       m_selectionCriteriaHasBeenSet = true;
+       m_selectionCriteriaHasBeenSet = true;
     }
   }
 

@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-BucketSortCriteria::BucketSortCriteria() : 
-    m_attributeNameHasBeenSet(false),
-    m_orderBy(OrderBy::NOT_SET),
-    m_orderByHasBeenSet(false)
-{
-}
-
 BucketSortCriteria::BucketSortCriteria(JsonView jsonValue)
-  : BucketSortCriteria()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BucketSortCriteria& BucketSortCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attributeName"))
   {
     m_attributeName = jsonValue.GetString("attributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orderBy"))
   {
     m_orderBy = OrderByMapper::GetOrderByForName(jsonValue.GetString("orderBy"));
-
     m_orderByHasBeenSet = true;
   }
-
   return *this;
 }
 

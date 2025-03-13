@@ -18,13 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-IamResources::IamResources() : 
-    m_roleArnHasBeenSet(false)
-{
-}
-
 IamResources::IamResources(JsonView jsonValue)
-  : IamResources()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IamResources& IamResources::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

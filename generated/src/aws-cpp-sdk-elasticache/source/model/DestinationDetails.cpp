@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-DestinationDetails::DestinationDetails() : 
-    m_cloudWatchLogsDetailsHasBeenSet(false),
-    m_kinesisFirehoseDetailsHasBeenSet(false)
-{
-}
-
 DestinationDetails::DestinationDetails(const XmlNode& xmlNode)
-  : DestinationDetails()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DestinationDetails& DestinationDetails::operator =(const XmlNode& xmlNode)
     {
       m_cloudWatchLogsDetails = cloudWatchLogsDetailsNode;
       m_cloudWatchLogsDetailsHasBeenSet = true;
+       m_cloudWatchLogsDetailsHasBeenSet = true;
     }
     XmlNode kinesisFirehoseDetailsNode = resultNode.FirstChild("KinesisFirehoseDetails");
     if(!kinesisFirehoseDetailsNode.IsNull())
     {
       m_kinesisFirehoseDetails = kinesisFirehoseDetailsNode;
       m_kinesisFirehoseDetailsHasBeenSet = true;
+       m_kinesisFirehoseDetailsHasBeenSet = true;
     }
   }
 

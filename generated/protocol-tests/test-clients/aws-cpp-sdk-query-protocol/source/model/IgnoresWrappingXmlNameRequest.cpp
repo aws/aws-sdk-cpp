@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-IgnoresWrappingXmlNameRequest::IgnoresWrappingXmlNameRequest()
-{
-}
-
 Aws::String IgnoresWrappingXmlNameRequest::SerializePayload() const
 {
   Aws::StringStream ss;

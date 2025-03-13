@@ -32,7 +32,7 @@ namespace Model
   class OrphanFileDeletionMetrics
   {
   public:
-    AWS_GLUE_API OrphanFileDeletionMetrics();
+    AWS_GLUE_API OrphanFileDeletionMetrics() = default;
     AWS_GLUE_API OrphanFileDeletionMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API OrphanFileDeletionMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>A structure containing the Iceberg orphan file deletion metrics for the
      * optimizer run.</p>
      */
-    inline const IcebergOrphanFileDeletionMetrics& GetIcebergMetrics() const{ return m_icebergMetrics; }
+    inline const IcebergOrphanFileDeletionMetrics& GetIcebergMetrics() const { return m_icebergMetrics; }
     inline bool IcebergMetricsHasBeenSet() const { return m_icebergMetricsHasBeenSet; }
-    inline void SetIcebergMetrics(const IcebergOrphanFileDeletionMetrics& value) { m_icebergMetricsHasBeenSet = true; m_icebergMetrics = value; }
-    inline void SetIcebergMetrics(IcebergOrphanFileDeletionMetrics&& value) { m_icebergMetricsHasBeenSet = true; m_icebergMetrics = std::move(value); }
-    inline OrphanFileDeletionMetrics& WithIcebergMetrics(const IcebergOrphanFileDeletionMetrics& value) { SetIcebergMetrics(value); return *this;}
-    inline OrphanFileDeletionMetrics& WithIcebergMetrics(IcebergOrphanFileDeletionMetrics&& value) { SetIcebergMetrics(std::move(value)); return *this;}
+    template<typename IcebergMetricsT = IcebergOrphanFileDeletionMetrics>
+    void SetIcebergMetrics(IcebergMetricsT&& value) { m_icebergMetricsHasBeenSet = true; m_icebergMetrics = std::forward<IcebergMetricsT>(value); }
+    template<typename IcebergMetricsT = IcebergOrphanFileDeletionMetrics>
+    OrphanFileDeletionMetrics& WithIcebergMetrics(IcebergMetricsT&& value) { SetIcebergMetrics(std::forward<IcebergMetricsT>(value)); return *this;}
     ///@}
   private:
 

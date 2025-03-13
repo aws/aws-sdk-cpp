@@ -32,7 +32,7 @@ namespace Model
   class LoRaWANUpdateGatewayTaskCreate
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANUpdateGatewayTaskCreate();
+    AWS_IOTWIRELESS_API LoRaWANUpdateGatewayTaskCreate() = default;
     AWS_IOTWIRELESS_API LoRaWANUpdateGatewayTaskCreate(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANUpdateGatewayTaskCreate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The signature used to verify the update firmware.</p>
      */
-    inline const Aws::String& GetUpdateSignature() const{ return m_updateSignature; }
+    inline const Aws::String& GetUpdateSignature() const { return m_updateSignature; }
     inline bool UpdateSignatureHasBeenSet() const { return m_updateSignatureHasBeenSet; }
-    inline void SetUpdateSignature(const Aws::String& value) { m_updateSignatureHasBeenSet = true; m_updateSignature = value; }
-    inline void SetUpdateSignature(Aws::String&& value) { m_updateSignatureHasBeenSet = true; m_updateSignature = std::move(value); }
-    inline void SetUpdateSignature(const char* value) { m_updateSignatureHasBeenSet = true; m_updateSignature.assign(value); }
-    inline LoRaWANUpdateGatewayTaskCreate& WithUpdateSignature(const Aws::String& value) { SetUpdateSignature(value); return *this;}
-    inline LoRaWANUpdateGatewayTaskCreate& WithUpdateSignature(Aws::String&& value) { SetUpdateSignature(std::move(value)); return *this;}
-    inline LoRaWANUpdateGatewayTaskCreate& WithUpdateSignature(const char* value) { SetUpdateSignature(value); return *this;}
+    template<typename UpdateSignatureT = Aws::String>
+    void SetUpdateSignature(UpdateSignatureT&& value) { m_updateSignatureHasBeenSet = true; m_updateSignature = std::forward<UpdateSignatureT>(value); }
+    template<typename UpdateSignatureT = Aws::String>
+    LoRaWANUpdateGatewayTaskCreate& WithUpdateSignature(UpdateSignatureT&& value) { SetUpdateSignature(std::forward<UpdateSignatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CRC of the signature private key to check.</p>
      */
-    inline long long GetSigKeyCrc() const{ return m_sigKeyCrc; }
+    inline long long GetSigKeyCrc() const { return m_sigKeyCrc; }
     inline bool SigKeyCrcHasBeenSet() const { return m_sigKeyCrcHasBeenSet; }
     inline void SetSigKeyCrc(long long value) { m_sigKeyCrcHasBeenSet = true; m_sigKeyCrc = value; }
     inline LoRaWANUpdateGatewayTaskCreate& WithSigKeyCrc(long long value) { SetSigKeyCrc(value); return *this;}
@@ -66,31 +64,31 @@ namespace Model
     /**
      * <p>The version of the gateways that should receive the update.</p>
      */
-    inline const LoRaWANGatewayVersion& GetCurrentVersion() const{ return m_currentVersion; }
+    inline const LoRaWANGatewayVersion& GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-    inline void SetCurrentVersion(const LoRaWANGatewayVersion& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-    inline void SetCurrentVersion(LoRaWANGatewayVersion&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-    inline LoRaWANUpdateGatewayTaskCreate& WithCurrentVersion(const LoRaWANGatewayVersion& value) { SetCurrentVersion(value); return *this;}
-    inline LoRaWANUpdateGatewayTaskCreate& WithCurrentVersion(LoRaWANGatewayVersion&& value) { SetCurrentVersion(std::move(value)); return *this;}
+    template<typename CurrentVersionT = LoRaWANGatewayVersion>
+    void SetCurrentVersion(CurrentVersionT&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::forward<CurrentVersionT>(value); }
+    template<typename CurrentVersionT = LoRaWANGatewayVersion>
+    LoRaWANUpdateGatewayTaskCreate& WithCurrentVersion(CurrentVersionT&& value) { SetCurrentVersion(std::forward<CurrentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The firmware version to update the gateway to.</p>
      */
-    inline const LoRaWANGatewayVersion& GetUpdateVersion() const{ return m_updateVersion; }
+    inline const LoRaWANGatewayVersion& GetUpdateVersion() const { return m_updateVersion; }
     inline bool UpdateVersionHasBeenSet() const { return m_updateVersionHasBeenSet; }
-    inline void SetUpdateVersion(const LoRaWANGatewayVersion& value) { m_updateVersionHasBeenSet = true; m_updateVersion = value; }
-    inline void SetUpdateVersion(LoRaWANGatewayVersion&& value) { m_updateVersionHasBeenSet = true; m_updateVersion = std::move(value); }
-    inline LoRaWANUpdateGatewayTaskCreate& WithUpdateVersion(const LoRaWANGatewayVersion& value) { SetUpdateVersion(value); return *this;}
-    inline LoRaWANUpdateGatewayTaskCreate& WithUpdateVersion(LoRaWANGatewayVersion&& value) { SetUpdateVersion(std::move(value)); return *this;}
+    template<typename UpdateVersionT = LoRaWANGatewayVersion>
+    void SetUpdateVersion(UpdateVersionT&& value) { m_updateVersionHasBeenSet = true; m_updateVersion = std::forward<UpdateVersionT>(value); }
+    template<typename UpdateVersionT = LoRaWANGatewayVersion>
+    LoRaWANUpdateGatewayTaskCreate& WithUpdateVersion(UpdateVersionT&& value) { SetUpdateVersion(std::forward<UpdateVersionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_updateSignature;
     bool m_updateSignatureHasBeenSet = false;
 
-    long long m_sigKeyCrc;
+    long long m_sigKeyCrc{0};
     bool m_sigKeyCrcHasBeenSet = false;
 
     LoRaWANGatewayVersion m_currentVersion;

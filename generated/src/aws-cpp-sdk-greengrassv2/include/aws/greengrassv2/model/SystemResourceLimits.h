@@ -32,7 +32,7 @@ namespace Model
   class SystemResourceLimits
   {
   public:
-    AWS_GREENGRASSV2_API SystemResourceLimits();
+    AWS_GREENGRASSV2_API SystemResourceLimits() = default;
     AWS_GREENGRASSV2_API SystemResourceLimits(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API SystemResourceLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The maximum amount of RAM, expressed in kilobytes, that a component's
      * processes can use on the core device.</p>
      */
-    inline long long GetMemory() const{ return m_memory; }
+    inline long long GetMemory() const { return m_memory; }
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
     inline void SetMemory(long long value) { m_memoryHasBeenSet = true; m_memory = value; }
     inline SystemResourceLimits& WithMemory(long long value) { SetMemory(value); return *this;}
@@ -60,17 +60,17 @@ namespace Model
      * CPU. If you set this value to a number greater than the number of CPU cores, the
      * IoT Greengrass Core software doesn't limit the component's CPU usage.</p>
      */
-    inline double GetCpus() const{ return m_cpus; }
+    inline double GetCpus() const { return m_cpus; }
     inline bool CpusHasBeenSet() const { return m_cpusHasBeenSet; }
     inline void SetCpus(double value) { m_cpusHasBeenSet = true; m_cpus = value; }
     inline SystemResourceLimits& WithCpus(double value) { SetCpus(value); return *this;}
     ///@}
   private:
 
-    long long m_memory;
+    long long m_memory{0};
     bool m_memoryHasBeenSet = false;
 
-    double m_cpus;
+    double m_cpus{0.0};
     bool m_cpusHasBeenSet = false;
   };
 

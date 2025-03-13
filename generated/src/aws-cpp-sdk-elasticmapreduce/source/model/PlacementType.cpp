@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-PlacementType::PlacementType() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
-{
-}
-
 PlacementType::PlacementType(JsonView jsonValue)
-  : PlacementType()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PlacementType& PlacementType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
@@ -48,7 +39,6 @@ PlacementType& PlacementType::operator =(JsonView jsonValue)
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   return *this;
 }
 

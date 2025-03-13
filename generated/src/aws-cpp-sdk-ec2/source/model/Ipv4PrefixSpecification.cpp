@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ipv4PrefixSpecification::Ipv4PrefixSpecification() : 
-    m_ipv4PrefixHasBeenSet(false)
-{
-}
-
 Ipv4PrefixSpecification::Ipv4PrefixSpecification(const XmlNode& xmlNode)
-  : Ipv4PrefixSpecification()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ Ipv4PrefixSpecification& Ipv4PrefixSpecification::operator =(const XmlNode& xmlN
     {
       m_ipv4Prefix = Aws::Utils::Xml::DecodeEscapedXmlText(ipv4PrefixNode.GetText());
       m_ipv4PrefixHasBeenSet = true;
+       m_ipv4PrefixHasBeenSet = true;
     }
   }
 

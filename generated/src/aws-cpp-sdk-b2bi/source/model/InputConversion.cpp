@@ -18,15 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-InputConversion::InputConversion() : 
-    m_fromFormat(FromFormat::NOT_SET),
-    m_fromFormatHasBeenSet(false),
-    m_formatOptionsHasBeenSet(false)
-{
-}
-
 InputConversion::InputConversion(JsonView jsonValue)
-  : InputConversion()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InputConversion& InputConversion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fromFormat"))
   {
     m_fromFormat = FromFormatMapper::GetFromFormatForName(jsonValue.GetString("fromFormat"));
-
     m_fromFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("formatOptions"))
   {
     m_formatOptions = jsonValue.GetObject("formatOptions");
-
     m_formatOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

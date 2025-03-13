@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-GuardrailWordPolicyAssessment::GuardrailWordPolicyAssessment() : 
-    m_customWordsHasBeenSet(false),
-    m_managedWordListsHasBeenSet(false)
-{
-}
-
 GuardrailWordPolicyAssessment::GuardrailWordPolicyAssessment(JsonView jsonValue)
-  : GuardrailWordPolicyAssessment()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ GuardrailWordPolicyAssessment& GuardrailWordPolicyAssessment::operator =(JsonVie
     }
     m_customWordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedWordLists"))
   {
     Aws::Utils::Array<JsonView> managedWordListsJsonList = jsonValue.GetArray("managedWordLists");
@@ -51,7 +43,6 @@ GuardrailWordPolicyAssessment& GuardrailWordPolicyAssessment::operator =(JsonVie
     }
     m_managedWordListsHasBeenSet = true;
   }
-
   return *this;
 }
 

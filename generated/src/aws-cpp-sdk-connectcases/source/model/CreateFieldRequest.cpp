@@ -12,15 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFieldRequest::CreateFieldRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(FieldType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String CreateFieldRequest::SerializePayload() const
 {
   JsonValue payload;

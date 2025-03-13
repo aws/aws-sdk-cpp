@@ -18,17 +18,7 @@ namespace FMS
 namespace Model
 {
 
-ComplianceViolator::ComplianceViolator() : 
-    m_resourceIdHasBeenSet(false),
-    m_violationReason(ViolationReason::NOT_SET),
-    m_violationReasonHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 ComplianceViolator::ComplianceViolator(JsonView jsonValue)
-  : ComplianceViolator()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ComplianceViolator& ComplianceViolator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViolationReason"))
   {
     m_violationReason = ViolationReasonMapper::GetViolationReasonForName(jsonValue.GetString("ViolationReason"));
-
     m_violationReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("Metadata").GetAllObjects();
@@ -65,7 +49,6 @@ ComplianceViolator& ComplianceViolator::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-LakeFormationConfiguration::LakeFormationConfiguration() : 
-    m_useLakeFormationCredentials(false),
-    m_useLakeFormationCredentialsHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 LakeFormationConfiguration::LakeFormationConfiguration(JsonView jsonValue)
-  : LakeFormationConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LakeFormationConfiguration& LakeFormationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("UseLakeFormationCredentials"))
   {
     m_useLakeFormationCredentials = jsonValue.GetBool("UseLakeFormationCredentials");
-
     m_useLakeFormationCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

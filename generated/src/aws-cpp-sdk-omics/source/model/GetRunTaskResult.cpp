@@ -17,17 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRunTaskResult::GetRunTaskResult() : 
-    m_status(TaskStatus::NOT_SET),
-    m_cpus(0),
-    m_cacheHit(false),
-    m_memory(0),
-    m_gpus(0)
-{
-}
-
 GetRunTaskResult::GetRunTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetRunTaskResult()
 {
   *this = result;
 }
@@ -38,99 +28,85 @@ GetRunTaskResult& GetRunTaskResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
+    m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TaskStatusMapper::GetTaskStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpus"))
   {
     m_cpus = jsonValue.GetInteger("cpus");
-
+    m_cpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheHit"))
   {
     m_cacheHit = jsonValue.GetBool("cacheHit");
-
+    m_cacheHitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheS3Uri"))
   {
     m_cacheS3Uri = jsonValue.GetString("cacheS3Uri");
-
+    m_cacheS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetInteger("memory");
-
+    m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopTime"))
   {
     m_stopTime = jsonValue.GetString("stopTime");
-
+    m_stopTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logStream"))
   {
     m_logStream = jsonValue.GetString("logStream");
-
+    m_logStreamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gpus"))
   {
     m_gpus = jsonValue.GetInteger("gpus");
-
+    m_gpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
+    m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -33,7 +33,7 @@ namespace Model
   class AccessDeniedException
   {
   public:
-    AWS_DEADLINE_API AccessDeniedException();
+    AWS_DEADLINE_API AccessDeniedException() = default;
     AWS_DEADLINE_API AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,33 +41,28 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AccessDeniedException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AccessDeniedException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AccessDeniedException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AccessDeniedException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the resources in use when the exception was thrown.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetContext() const{ return m_context; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Aws::Map<Aws::String, Aws::String>& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Aws::Map<Aws::String, Aws::String>&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline AccessDeniedException& WithContext(const Aws::Map<Aws::String, Aws::String>& value) { SetContext(value); return *this;}
-    inline AccessDeniedException& WithContext(Aws::Map<Aws::String, Aws::String>&& value) { SetContext(std::move(value)); return *this;}
-    inline AccessDeniedException& AddContext(const Aws::String& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
-    inline AccessDeniedException& AddContext(Aws::String&& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
-    inline AccessDeniedException& AddContext(const Aws::String& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
-    inline AccessDeniedException& AddContext(Aws::String&& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), std::move(value)); return *this; }
-    inline AccessDeniedException& AddContext(const char* key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
-    inline AccessDeniedException& AddContext(Aws::String&& key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
-    inline AccessDeniedException& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
+    template<typename ContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = Aws::Map<Aws::String, Aws::String>>
+    AccessDeniedException& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
+    template<typename ContextKeyT = Aws::String, typename ContextValueT = Aws::String>
+    AccessDeniedException& AddContext(ContextKeyT&& key, ContextValueT&& value) {
+      m_contextHasBeenSet = true; m_context.emplace(std::forward<ContextKeyT>(key), std::forward<ContextValueT>(value)); return *this;
+    }
     ///@}
   private:
 

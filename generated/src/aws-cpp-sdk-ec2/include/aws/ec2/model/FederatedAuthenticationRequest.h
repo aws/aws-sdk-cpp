@@ -32,7 +32,7 @@ namespace Model
   class FederatedAuthenticationRequest
   {
   public:
-    AWS_EC2_API FederatedAuthenticationRequest();
+    AWS_EC2_API FederatedAuthenticationRequest() = default;
     AWS_EC2_API FederatedAuthenticationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FederatedAuthenticationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
      */
-    inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
+    inline const Aws::String& GetSAMLProviderArn() const { return m_sAMLProviderArn; }
     inline bool SAMLProviderArnHasBeenSet() const { return m_sAMLProviderArnHasBeenSet; }
-    inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = value; }
-    inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = std::move(value); }
-    inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn.assign(value); }
-    inline FederatedAuthenticationRequest& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
-    inline FederatedAuthenticationRequest& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(std::move(value)); return *this;}
-    inline FederatedAuthenticationRequest& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
+    template<typename SAMLProviderArnT = Aws::String>
+    void SetSAMLProviderArn(SAMLProviderArnT&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = std::forward<SAMLProviderArnT>(value); }
+    template<typename SAMLProviderArnT = Aws::String>
+    FederatedAuthenticationRequest& WithSAMLProviderArn(SAMLProviderArnT&& value) { SetSAMLProviderArn(std::forward<SAMLProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
      * self-service portal.</p>
      */
-    inline const Aws::String& GetSelfServiceSAMLProviderArn() const{ return m_selfServiceSAMLProviderArn; }
+    inline const Aws::String& GetSelfServiceSAMLProviderArn() const { return m_selfServiceSAMLProviderArn; }
     inline bool SelfServiceSAMLProviderArnHasBeenSet() const { return m_selfServiceSAMLProviderArnHasBeenSet; }
-    inline void SetSelfServiceSAMLProviderArn(const Aws::String& value) { m_selfServiceSAMLProviderArnHasBeenSet = true; m_selfServiceSAMLProviderArn = value; }
-    inline void SetSelfServiceSAMLProviderArn(Aws::String&& value) { m_selfServiceSAMLProviderArnHasBeenSet = true; m_selfServiceSAMLProviderArn = std::move(value); }
-    inline void SetSelfServiceSAMLProviderArn(const char* value) { m_selfServiceSAMLProviderArnHasBeenSet = true; m_selfServiceSAMLProviderArn.assign(value); }
-    inline FederatedAuthenticationRequest& WithSelfServiceSAMLProviderArn(const Aws::String& value) { SetSelfServiceSAMLProviderArn(value); return *this;}
-    inline FederatedAuthenticationRequest& WithSelfServiceSAMLProviderArn(Aws::String&& value) { SetSelfServiceSAMLProviderArn(std::move(value)); return *this;}
-    inline FederatedAuthenticationRequest& WithSelfServiceSAMLProviderArn(const char* value) { SetSelfServiceSAMLProviderArn(value); return *this;}
+    template<typename SelfServiceSAMLProviderArnT = Aws::String>
+    void SetSelfServiceSAMLProviderArn(SelfServiceSAMLProviderArnT&& value) { m_selfServiceSAMLProviderArnHasBeenSet = true; m_selfServiceSAMLProviderArn = std::forward<SelfServiceSAMLProviderArnT>(value); }
+    template<typename SelfServiceSAMLProviderArnT = Aws::String>
+    FederatedAuthenticationRequest& WithSelfServiceSAMLProviderArn(SelfServiceSAMLProviderArnT&& value) { SetSelfServiceSAMLProviderArn(std::forward<SelfServiceSAMLProviderArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,31 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ComboChartConfiguration::ComboChartConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_barsArrangement(BarsArrangement::NOT_SET),
-    m_barsArrangementHasBeenSet(false),
-    m_categoryAxisHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_primaryYAxisDisplayOptionsHasBeenSet(false),
-    m_primaryYAxisLabelOptionsHasBeenSet(false),
-    m_secondaryYAxisDisplayOptionsHasBeenSet(false),
-    m_secondaryYAxisLabelOptionsHasBeenSet(false),
-    m_singleAxisOptionsHasBeenSet(false),
-    m_colorLabelOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_barDataLabelsHasBeenSet(false),
-    m_lineDataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_referenceLinesHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 ComboChartConfiguration::ComboChartConfiguration(JsonView jsonValue)
-  : ComboChartConfiguration()
 {
   *this = jsonValue;
 }
@@ -52,108 +28,78 @@ ComboChartConfiguration& ComboChartConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BarsArrangement"))
   {
     m_barsArrangement = BarsArrangementMapper::GetBarsArrangementForName(jsonValue.GetString("BarsArrangement"));
-
     m_barsArrangementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryAxis"))
   {
     m_categoryAxis = jsonValue.GetObject("CategoryAxis");
-
     m_categoryAxisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryLabelOptions"))
   {
     m_categoryLabelOptions = jsonValue.GetObject("CategoryLabelOptions");
-
     m_categoryLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryYAxisDisplayOptions"))
   {
     m_primaryYAxisDisplayOptions = jsonValue.GetObject("PrimaryYAxisDisplayOptions");
-
     m_primaryYAxisDisplayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryYAxisLabelOptions"))
   {
     m_primaryYAxisLabelOptions = jsonValue.GetObject("PrimaryYAxisLabelOptions");
-
     m_primaryYAxisLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryYAxisDisplayOptions"))
   {
     m_secondaryYAxisDisplayOptions = jsonValue.GetObject("SecondaryYAxisDisplayOptions");
-
     m_secondaryYAxisDisplayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryYAxisLabelOptions"))
   {
     m_secondaryYAxisLabelOptions = jsonValue.GetObject("SecondaryYAxisLabelOptions");
-
     m_secondaryYAxisLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SingleAxisOptions"))
   {
     m_singleAxisOptions = jsonValue.GetObject("SingleAxisOptions");
-
     m_singleAxisOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorLabelOptions"))
   {
     m_colorLabelOptions = jsonValue.GetObject("ColorLabelOptions");
-
     m_colorLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Legend"))
   {
     m_legend = jsonValue.GetObject("Legend");
-
     m_legendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BarDataLabels"))
   {
     m_barDataLabels = jsonValue.GetObject("BarDataLabels");
-
     m_barDataLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineDataLabels"))
   {
     m_lineDataLabels = jsonValue.GetObject("LineDataLabels");
-
     m_lineDataLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tooltip"))
   {
     m_tooltip = jsonValue.GetObject("Tooltip");
-
     m_tooltipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceLines"))
   {
     Aws::Utils::Array<JsonView> referenceLinesJsonList = jsonValue.GetArray("ReferenceLines");
@@ -163,21 +109,16 @@ ComboChartConfiguration& ComboChartConfiguration::operator =(JsonView jsonValue)
     }
     m_referenceLinesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualPalette"))
   {
     m_visualPalette = jsonValue.GetObject("VisualPalette");
-
     m_visualPaletteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

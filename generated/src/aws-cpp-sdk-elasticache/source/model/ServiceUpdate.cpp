@@ -20,28 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ServiceUpdate::ServiceUpdate() : 
-    m_serviceUpdateNameHasBeenSet(false),
-    m_serviceUpdateReleaseDateHasBeenSet(false),
-    m_serviceUpdateEndDateHasBeenSet(false),
-    m_serviceUpdateSeverity(ServiceUpdateSeverity::NOT_SET),
-    m_serviceUpdateSeverityHasBeenSet(false),
-    m_serviceUpdateRecommendedApplyByDateHasBeenSet(false),
-    m_serviceUpdateStatus(ServiceUpdateStatus::NOT_SET),
-    m_serviceUpdateStatusHasBeenSet(false),
-    m_serviceUpdateDescriptionHasBeenSet(false),
-    m_serviceUpdateType(ServiceUpdateType::NOT_SET),
-    m_serviceUpdateTypeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_autoUpdateAfterRecommendedApplyByDate(false),
-    m_autoUpdateAfterRecommendedApplyByDateHasBeenSet(false),
-    m_estimatedUpdateTimeHasBeenSet(false)
-{
-}
-
 ServiceUpdate::ServiceUpdate(const XmlNode& xmlNode)
-  : ServiceUpdate()
 {
   *this = xmlNode;
 }
@@ -57,72 +36,84 @@ ServiceUpdate& ServiceUpdate::operator =(const XmlNode& xmlNode)
     {
       m_serviceUpdateName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateNameNode.GetText());
       m_serviceUpdateNameHasBeenSet = true;
+       m_serviceUpdateNameHasBeenSet = true;
     }
     XmlNode serviceUpdateReleaseDateNode = resultNode.FirstChild("ServiceUpdateReleaseDate");
     if(!serviceUpdateReleaseDateNode.IsNull())
     {
       m_serviceUpdateReleaseDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateReleaseDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_serviceUpdateReleaseDateHasBeenSet = true;
+       m_serviceUpdateReleaseDateHasBeenSet = true;
     }
     XmlNode serviceUpdateEndDateNode = resultNode.FirstChild("ServiceUpdateEndDate");
     if(!serviceUpdateEndDateNode.IsNull())
     {
       m_serviceUpdateEndDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateEndDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_serviceUpdateEndDateHasBeenSet = true;
+       m_serviceUpdateEndDateHasBeenSet = true;
     }
     XmlNode serviceUpdateSeverityNode = resultNode.FirstChild("ServiceUpdateSeverity");
     if(!serviceUpdateSeverityNode.IsNull())
     {
-      m_serviceUpdateSeverity = ServiceUpdateSeverityMapper::GetServiceUpdateSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateSeverityNode.GetText()).c_str()).c_str());
+      m_serviceUpdateSeverity = ServiceUpdateSeverityMapper::GetServiceUpdateSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateSeverityNode.GetText()).c_str()));
       m_serviceUpdateSeverityHasBeenSet = true;
+       m_serviceUpdateSeverityHasBeenSet = true;
     }
     XmlNode serviceUpdateRecommendedApplyByDateNode = resultNode.FirstChild("ServiceUpdateRecommendedApplyByDate");
     if(!serviceUpdateRecommendedApplyByDateNode.IsNull())
     {
       m_serviceUpdateRecommendedApplyByDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateRecommendedApplyByDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_serviceUpdateRecommendedApplyByDateHasBeenSet = true;
+       m_serviceUpdateRecommendedApplyByDateHasBeenSet = true;
     }
     XmlNode serviceUpdateStatusNode = resultNode.FirstChild("ServiceUpdateStatus");
     if(!serviceUpdateStatusNode.IsNull())
     {
-      m_serviceUpdateStatus = ServiceUpdateStatusMapper::GetServiceUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateStatusNode.GetText()).c_str()).c_str());
+      m_serviceUpdateStatus = ServiceUpdateStatusMapper::GetServiceUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateStatusNode.GetText()).c_str()));
       m_serviceUpdateStatusHasBeenSet = true;
+       m_serviceUpdateStatusHasBeenSet = true;
     }
     XmlNode serviceUpdateDescriptionNode = resultNode.FirstChild("ServiceUpdateDescription");
     if(!serviceUpdateDescriptionNode.IsNull())
     {
       m_serviceUpdateDescription = Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateDescriptionNode.GetText());
       m_serviceUpdateDescriptionHasBeenSet = true;
+       m_serviceUpdateDescriptionHasBeenSet = true;
     }
     XmlNode serviceUpdateTypeNode = resultNode.FirstChild("ServiceUpdateType");
     if(!serviceUpdateTypeNode.IsNull())
     {
-      m_serviceUpdateType = ServiceUpdateTypeMapper::GetServiceUpdateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateTypeNode.GetText()).c_str()).c_str());
+      m_serviceUpdateType = ServiceUpdateTypeMapper::GetServiceUpdateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateTypeNode.GetText()).c_str()));
       m_serviceUpdateTypeHasBeenSet = true;
+       m_serviceUpdateTypeHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+       m_engineVersionHasBeenSet = true;
     }
     XmlNode autoUpdateAfterRecommendedApplyByDateNode = resultNode.FirstChild("AutoUpdateAfterRecommendedApplyByDate");
     if(!autoUpdateAfterRecommendedApplyByDateNode.IsNull())
     {
       m_autoUpdateAfterRecommendedApplyByDate = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoUpdateAfterRecommendedApplyByDateNode.GetText()).c_str()).c_str());
       m_autoUpdateAfterRecommendedApplyByDateHasBeenSet = true;
+       m_autoUpdateAfterRecommendedApplyByDateHasBeenSet = true;
     }
     XmlNode estimatedUpdateTimeNode = resultNode.FirstChild("EstimatedUpdateTime");
     if(!estimatedUpdateTimeNode.IsNull())
     {
       m_estimatedUpdateTime = Aws::Utils::Xml::DecodeEscapedXmlText(estimatedUpdateTimeNode.GetText());
       m_estimatedUpdateTimeHasBeenSet = true;
+       m_estimatedUpdateTimeHasBeenSet = true;
     }
   }
 

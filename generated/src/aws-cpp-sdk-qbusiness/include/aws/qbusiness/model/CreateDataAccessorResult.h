@@ -27,7 +27,7 @@ namespace Model
   class CreateDataAccessorResult
   {
   public:
-    AWS_QBUSINESS_API CreateDataAccessorResult();
+    AWS_QBUSINESS_API CreateDataAccessorResult() = default;
     AWS_QBUSINESS_API CreateDataAccessorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API CreateDataAccessorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The unique identifier of the created data accessor.</p>
      */
-    inline const Aws::String& GetDataAccessorId() const{ return m_dataAccessorId; }
-    inline void SetDataAccessorId(const Aws::String& value) { m_dataAccessorId = value; }
-    inline void SetDataAccessorId(Aws::String&& value) { m_dataAccessorId = std::move(value); }
-    inline void SetDataAccessorId(const char* value) { m_dataAccessorId.assign(value); }
-    inline CreateDataAccessorResult& WithDataAccessorId(const Aws::String& value) { SetDataAccessorId(value); return *this;}
-    inline CreateDataAccessorResult& WithDataAccessorId(Aws::String&& value) { SetDataAccessorId(std::move(value)); return *this;}
-    inline CreateDataAccessorResult& WithDataAccessorId(const char* value) { SetDataAccessorId(value); return *this;}
+    inline const Aws::String& GetDataAccessorId() const { return m_dataAccessorId; }
+    template<typename DataAccessorIdT = Aws::String>
+    void SetDataAccessorId(DataAccessorIdT&& value) { m_dataAccessorIdHasBeenSet = true; m_dataAccessorId = std::forward<DataAccessorIdT>(value); }
+    template<typename DataAccessorIdT = Aws::String>
+    CreateDataAccessorResult& WithDataAccessorId(DataAccessorIdT&& value) { SetDataAccessorId(std::forward<DataAccessorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,47 +48,45 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM Identity Center application created
      * for this data accessor.</p>
      */
-    inline const Aws::String& GetIdcApplicationArn() const{ return m_idcApplicationArn; }
-    inline void SetIdcApplicationArn(const Aws::String& value) { m_idcApplicationArn = value; }
-    inline void SetIdcApplicationArn(Aws::String&& value) { m_idcApplicationArn = std::move(value); }
-    inline void SetIdcApplicationArn(const char* value) { m_idcApplicationArn.assign(value); }
-    inline CreateDataAccessorResult& WithIdcApplicationArn(const Aws::String& value) { SetIdcApplicationArn(value); return *this;}
-    inline CreateDataAccessorResult& WithIdcApplicationArn(Aws::String&& value) { SetIdcApplicationArn(std::move(value)); return *this;}
-    inline CreateDataAccessorResult& WithIdcApplicationArn(const char* value) { SetIdcApplicationArn(value); return *this;}
+    inline const Aws::String& GetIdcApplicationArn() const { return m_idcApplicationArn; }
+    template<typename IdcApplicationArnT = Aws::String>
+    void SetIdcApplicationArn(IdcApplicationArnT&& value) { m_idcApplicationArnHasBeenSet = true; m_idcApplicationArn = std::forward<IdcApplicationArnT>(value); }
+    template<typename IdcApplicationArnT = Aws::String>
+    CreateDataAccessorResult& WithIdcApplicationArn(IdcApplicationArnT&& value) { SetIdcApplicationArn(std::forward<IdcApplicationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the created data accessor.</p>
      */
-    inline const Aws::String& GetDataAccessorArn() const{ return m_dataAccessorArn; }
-    inline void SetDataAccessorArn(const Aws::String& value) { m_dataAccessorArn = value; }
-    inline void SetDataAccessorArn(Aws::String&& value) { m_dataAccessorArn = std::move(value); }
-    inline void SetDataAccessorArn(const char* value) { m_dataAccessorArn.assign(value); }
-    inline CreateDataAccessorResult& WithDataAccessorArn(const Aws::String& value) { SetDataAccessorArn(value); return *this;}
-    inline CreateDataAccessorResult& WithDataAccessorArn(Aws::String&& value) { SetDataAccessorArn(std::move(value)); return *this;}
-    inline CreateDataAccessorResult& WithDataAccessorArn(const char* value) { SetDataAccessorArn(value); return *this;}
+    inline const Aws::String& GetDataAccessorArn() const { return m_dataAccessorArn; }
+    template<typename DataAccessorArnT = Aws::String>
+    void SetDataAccessorArn(DataAccessorArnT&& value) { m_dataAccessorArnHasBeenSet = true; m_dataAccessorArn = std::forward<DataAccessorArnT>(value); }
+    template<typename DataAccessorArnT = Aws::String>
+    CreateDataAccessorResult& WithDataAccessorArn(DataAccessorArnT&& value) { SetDataAccessorArn(std::forward<DataAccessorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDataAccessorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDataAccessorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDataAccessorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDataAccessorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dataAccessorId;
+    bool m_dataAccessorIdHasBeenSet = false;
 
     Aws::String m_idcApplicationArn;
+    bool m_idcApplicationArnHasBeenSet = false;
 
     Aws::String m_dataAccessorArn;
+    bool m_dataAccessorArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

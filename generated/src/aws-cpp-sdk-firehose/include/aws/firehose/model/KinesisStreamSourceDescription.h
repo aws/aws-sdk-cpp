@@ -33,7 +33,7 @@ namespace Model
   class KinesisStreamSourceDescription
   {
   public:
-    AWS_FIREHOSE_API KinesisStreamSourceDescription();
+    AWS_FIREHOSE_API KinesisStreamSourceDescription() = default;
     AWS_FIREHOSE_API KinesisStreamSourceDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API KinesisStreamSourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
      * Kinesis Data Streams ARN Format</a>.</p>
      */
-    inline const Aws::String& GetKinesisStreamARN() const{ return m_kinesisStreamARN; }
+    inline const Aws::String& GetKinesisStreamARN() const { return m_kinesisStreamARN; }
     inline bool KinesisStreamARNHasBeenSet() const { return m_kinesisStreamARNHasBeenSet; }
-    inline void SetKinesisStreamARN(const Aws::String& value) { m_kinesisStreamARNHasBeenSet = true; m_kinesisStreamARN = value; }
-    inline void SetKinesisStreamARN(Aws::String&& value) { m_kinesisStreamARNHasBeenSet = true; m_kinesisStreamARN = std::move(value); }
-    inline void SetKinesisStreamARN(const char* value) { m_kinesisStreamARNHasBeenSet = true; m_kinesisStreamARN.assign(value); }
-    inline KinesisStreamSourceDescription& WithKinesisStreamARN(const Aws::String& value) { SetKinesisStreamARN(value); return *this;}
-    inline KinesisStreamSourceDescription& WithKinesisStreamARN(Aws::String&& value) { SetKinesisStreamARN(std::move(value)); return *this;}
-    inline KinesisStreamSourceDescription& WithKinesisStreamARN(const char* value) { SetKinesisStreamARN(value); return *this;}
+    template<typename KinesisStreamARNT = Aws::String>
+    void SetKinesisStreamARN(KinesisStreamARNT&& value) { m_kinesisStreamARNHasBeenSet = true; m_kinesisStreamARN = std::forward<KinesisStreamARNT>(value); }
+    template<typename KinesisStreamARNT = Aws::String>
+    KinesisStreamSourceDescription& WithKinesisStreamARN(KinesisStreamARNT&& value) { SetKinesisStreamARN(std::forward<KinesisStreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon
      * Web Services Identity and Access Management (IAM) ARN Format</a>.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline KinesisStreamSourceDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline KinesisStreamSourceDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline KinesisStreamSourceDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    KinesisStreamSourceDescription& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +74,12 @@ namespace Model
      * <p>Firehose starts retrieving records from the Kinesis data stream starting with
      * this timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeliveryStartTimestamp() const{ return m_deliveryStartTimestamp; }
+    inline const Aws::Utils::DateTime& GetDeliveryStartTimestamp() const { return m_deliveryStartTimestamp; }
     inline bool DeliveryStartTimestampHasBeenSet() const { return m_deliveryStartTimestampHasBeenSet; }
-    inline void SetDeliveryStartTimestamp(const Aws::Utils::DateTime& value) { m_deliveryStartTimestampHasBeenSet = true; m_deliveryStartTimestamp = value; }
-    inline void SetDeliveryStartTimestamp(Aws::Utils::DateTime&& value) { m_deliveryStartTimestampHasBeenSet = true; m_deliveryStartTimestamp = std::move(value); }
-    inline KinesisStreamSourceDescription& WithDeliveryStartTimestamp(const Aws::Utils::DateTime& value) { SetDeliveryStartTimestamp(value); return *this;}
-    inline KinesisStreamSourceDescription& WithDeliveryStartTimestamp(Aws::Utils::DateTime&& value) { SetDeliveryStartTimestamp(std::move(value)); return *this;}
+    template<typename DeliveryStartTimestampT = Aws::Utils::DateTime>
+    void SetDeliveryStartTimestamp(DeliveryStartTimestampT&& value) { m_deliveryStartTimestampHasBeenSet = true; m_deliveryStartTimestamp = std::forward<DeliveryStartTimestampT>(value); }
+    template<typename DeliveryStartTimestampT = Aws::Utils::DateTime>
+    KinesisStreamSourceDescription& WithDeliveryStartTimestamp(DeliveryStartTimestampT&& value) { SetDeliveryStartTimestamp(std::forward<DeliveryStartTimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -93,7 +89,7 @@ namespace Model
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deliveryStartTimestamp;
+    Aws::Utils::DateTime m_deliveryStartTimestamp{};
     bool m_deliveryStartTimestampHasBeenSet = false;
   };
 

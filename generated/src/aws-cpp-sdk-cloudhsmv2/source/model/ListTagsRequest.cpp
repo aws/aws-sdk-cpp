@@ -12,14 +12,6 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTagsRequest::ListTagsRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsRequest::SerializePayload() const
 {
   JsonValue payload;

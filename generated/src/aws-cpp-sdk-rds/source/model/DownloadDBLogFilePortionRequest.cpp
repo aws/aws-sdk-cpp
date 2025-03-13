@@ -10,15 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DownloadDBLogFilePortionRequest::DownloadDBLogFilePortionRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_logFileNameHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_numberOfLines(0),
-    m_numberOfLinesHasBeenSet(false)
-{
-}
-
 Aws::String DownloadDBLogFilePortionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

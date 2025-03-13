@@ -22,7 +22,7 @@ namespace Model
   class ListAccountAssociationsRequest : public BillingConductorRequest
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListAccountAssociationsRequest();
+    AWS_BILLINGCONDUCTOR_API ListAccountAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p> The preferred billing period to get account associations. </p>
      */
-    inline const Aws::String& GetBillingPeriod() const{ return m_billingPeriod; }
+    inline const Aws::String& GetBillingPeriod() const { return m_billingPeriod; }
     inline bool BillingPeriodHasBeenSet() const { return m_billingPeriodHasBeenSet; }
-    inline void SetBillingPeriod(const Aws::String& value) { m_billingPeriodHasBeenSet = true; m_billingPeriod = value; }
-    inline void SetBillingPeriod(Aws::String&& value) { m_billingPeriodHasBeenSet = true; m_billingPeriod = std::move(value); }
-    inline void SetBillingPeriod(const char* value) { m_billingPeriodHasBeenSet = true; m_billingPeriod.assign(value); }
-    inline ListAccountAssociationsRequest& WithBillingPeriod(const Aws::String& value) { SetBillingPeriod(value); return *this;}
-    inline ListAccountAssociationsRequest& WithBillingPeriod(Aws::String&& value) { SetBillingPeriod(std::move(value)); return *this;}
-    inline ListAccountAssociationsRequest& WithBillingPeriod(const char* value) { SetBillingPeriod(value); return *this;}
+    template<typename BillingPeriodT = Aws::String>
+    void SetBillingPeriod(BillingPeriodT&& value) { m_billingPeriodHasBeenSet = true; m_billingPeriod = std::forward<BillingPeriodT>(value); }
+    template<typename BillingPeriodT = Aws::String>
+    ListAccountAssociationsRequest& WithBillingPeriod(BillingPeriodT&& value) { SetBillingPeriod(std::forward<BillingPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked
      * accounts that are associated to the provided billing group Arn. </p>
      */
-    inline const ListAccountAssociationsFilter& GetFilters() const{ return m_filters; }
+    inline const ListAccountAssociationsFilter& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const ListAccountAssociationsFilter& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(ListAccountAssociationsFilter&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListAccountAssociationsRequest& WithFilters(const ListAccountAssociationsFilter& value) { SetFilters(value); return *this;}
-    inline ListAccountAssociationsRequest& WithFilters(ListAccountAssociationsFilter&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = ListAccountAssociationsFilter>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = ListAccountAssociationsFilter>
+    ListAccountAssociationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * <p> The pagination token that's used on subsequent calls to retrieve accounts.
      * </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAccountAssociationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccountAssociationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccountAssociationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccountAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

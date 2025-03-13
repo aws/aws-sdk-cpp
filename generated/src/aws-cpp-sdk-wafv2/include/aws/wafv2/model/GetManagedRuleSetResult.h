@@ -28,7 +28,7 @@ namespace Model
   class GetManagedRuleSetResult
   {
   public:
-    AWS_WAFV2_API GetManagedRuleSetResult();
+    AWS_WAFV2_API GetManagedRuleSetResult() = default;
     AWS_WAFV2_API GetManagedRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFV2_API GetManagedRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,11 +37,11 @@ namespace Model
     /**
      * <p>The managed rule set that you requested. </p>
      */
-    inline const ManagedRuleSet& GetManagedRuleSet() const{ return m_managedRuleSet; }
-    inline void SetManagedRuleSet(const ManagedRuleSet& value) { m_managedRuleSet = value; }
-    inline void SetManagedRuleSet(ManagedRuleSet&& value) { m_managedRuleSet = std::move(value); }
-    inline GetManagedRuleSetResult& WithManagedRuleSet(const ManagedRuleSet& value) { SetManagedRuleSet(value); return *this;}
-    inline GetManagedRuleSetResult& WithManagedRuleSet(ManagedRuleSet&& value) { SetManagedRuleSet(std::move(value)); return *this;}
+    inline const ManagedRuleSet& GetManagedRuleSet() const { return m_managedRuleSet; }
+    template<typename ManagedRuleSetT = ManagedRuleSet>
+    void SetManagedRuleSet(ManagedRuleSetT&& value) { m_managedRuleSetHasBeenSet = true; m_managedRuleSet = std::forward<ManagedRuleSetT>(value); }
+    template<typename ManagedRuleSetT = ManagedRuleSet>
+    GetManagedRuleSetResult& WithManagedRuleSet(ManagedRuleSetT&& value) { SetManagedRuleSet(std::forward<ManagedRuleSetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
      * another <code>get</code>, and use the new token returned by that operation. </p>
      */
-    inline const Aws::String& GetLockToken() const{ return m_lockToken; }
-    inline void SetLockToken(const Aws::String& value) { m_lockToken = value; }
-    inline void SetLockToken(Aws::String&& value) { m_lockToken = std::move(value); }
-    inline void SetLockToken(const char* value) { m_lockToken.assign(value); }
-    inline GetManagedRuleSetResult& WithLockToken(const Aws::String& value) { SetLockToken(value); return *this;}
-    inline GetManagedRuleSetResult& WithLockToken(Aws::String&& value) { SetLockToken(std::move(value)); return *this;}
-    inline GetManagedRuleSetResult& WithLockToken(const char* value) { SetLockToken(value); return *this;}
+    inline const Aws::String& GetLockToken() const { return m_lockToken; }
+    template<typename LockTokenT = Aws::String>
+    void SetLockToken(LockTokenT&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::forward<LockTokenT>(value); }
+    template<typename LockTokenT = Aws::String>
+    GetManagedRuleSetResult& WithLockToken(LockTokenT&& value) { SetLockToken(std::forward<LockTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetManagedRuleSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetManagedRuleSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetManagedRuleSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetManagedRuleSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ManagedRuleSet m_managedRuleSet;
+    bool m_managedRuleSetHasBeenSet = false;
 
     Aws::String m_lockToken;
+    bool m_lockTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

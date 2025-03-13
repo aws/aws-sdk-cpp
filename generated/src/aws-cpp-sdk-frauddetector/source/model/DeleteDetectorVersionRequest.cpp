@@ -12,12 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDetectorVersionRequest::DeleteDetectorVersionRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_detectorVersionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDetectorVersionRequest::SerializePayload() const
 {
   JsonValue payload;

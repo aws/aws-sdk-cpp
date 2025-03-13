@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-CACertificate::CACertificate() : 
-    m_certificateArnHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_status(CACertificateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 CACertificate::CACertificate(JsonView jsonValue)
-  : CACertificate()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CACertificate& CACertificate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateId"))
   {
     m_certificateId = jsonValue.GetString("certificateId");
-
     m_certificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CACertificateStatusMapper::GetCACertificateStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

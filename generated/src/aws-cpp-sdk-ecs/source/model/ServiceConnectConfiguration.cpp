@@ -18,17 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ServiceConnectConfiguration::ServiceConnectConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_servicesHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
-{
-}
-
 ServiceConnectConfiguration::ServiceConnectConfiguration(JsonView jsonValue)
-  : ServiceConnectConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ServiceConnectConfiguration& ServiceConnectConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("services"))
   {
     Aws::Utils::Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
@@ -58,14 +44,11 @@ ServiceConnectConfiguration& ServiceConnectConfiguration::operator =(JsonView js
     }
     m_servicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("logConfiguration");
-
     m_logConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

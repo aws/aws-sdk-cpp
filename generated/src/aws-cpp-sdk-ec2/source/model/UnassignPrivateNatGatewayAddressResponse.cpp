@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UnassignPrivateNatGatewayAddressResponse::UnassignPrivateNatGatewayAddressResponse()
-{
-}
-
 UnassignPrivateNatGatewayAddressResponse::UnassignPrivateNatGatewayAddressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ UnassignPrivateNatGatewayAddressResponse& UnassignPrivateNatGatewayAddressRespon
     if(!natGatewayIdNode.IsNull())
     {
       m_natGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(natGatewayIdNode.GetText());
+      m_natGatewayIdHasBeenSet = true;
     }
     XmlNode natGatewayAddressesNode = resultNode.FirstChild("natGatewayAddressSet");
     if(!natGatewayAddressesNode.IsNull())
     {
       XmlNode natGatewayAddressesMember = natGatewayAddressesNode.FirstChild("item");
+      m_natGatewayAddressesHasBeenSet = !natGatewayAddressesMember.IsNull();
       while(!natGatewayAddressesMember.IsNull())
       {
         m_natGatewayAddresses.push_back(natGatewayAddressesMember);
@@ -61,6 +59,7 @@ UnassignPrivateNatGatewayAddressResponse& UnassignPrivateNatGatewayAddressRespon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::UnassignPrivateNatGatewayAddressResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

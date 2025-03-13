@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMicrosoftTeamsChannelConfigurationsResult::ListMicrosoftTeamsChannelConfigurationsResult()
-{
-}
-
 ListMicrosoftTeamsChannelConfigurationsResult::ListMicrosoftTeamsChannelConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListMicrosoftTeamsChannelConfigurationsResult& ListMicrosoftTeamsChannelConfigur
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TeamChannelConfigurations"))
   {
     Aws::Utils::Array<JsonView> teamChannelConfigurationsJsonList = jsonValue.GetArray("TeamChannelConfigurations");
@@ -42,14 +37,15 @@ ListMicrosoftTeamsChannelConfigurationsResult& ListMicrosoftTeamsChannelConfigur
     {
       m_teamChannelConfigurations.push_back(teamChannelConfigurationsJsonList[teamChannelConfigurationsIndex].AsObject());
     }
+    m_teamChannelConfigurationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

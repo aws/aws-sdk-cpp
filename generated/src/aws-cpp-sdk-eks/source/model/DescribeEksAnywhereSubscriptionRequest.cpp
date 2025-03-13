@@ -12,11 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEksAnywhereSubscriptionRequest::DescribeEksAnywhereSubscriptionRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEksAnywhereSubscriptionRequest::SerializePayload() const
 {
   return {};

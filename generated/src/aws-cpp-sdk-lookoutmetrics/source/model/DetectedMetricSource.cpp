@@ -18,13 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-DetectedMetricSource::DetectedMetricSource() : 
-    m_s3SourceConfigHasBeenSet(false)
-{
-}
-
 DetectedMetricSource::DetectedMetricSource(JsonView jsonValue)
-  : DetectedMetricSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DetectedMetricSource& DetectedMetricSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3SourceConfig"))
   {
     m_s3SourceConfig = jsonValue.GetObject("S3SourceConfig");
-
     m_s3SourceConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

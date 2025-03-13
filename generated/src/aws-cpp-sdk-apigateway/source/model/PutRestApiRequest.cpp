@@ -17,16 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-PutRestApiRequest::PutRestApiRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_mode(PutMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_failOnWarnings(false),
-    m_failOnWarningsHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 
 void PutRestApiRequest::AddQueryStringParameters(URI& uri) const
 {

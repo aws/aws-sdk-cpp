@@ -24,7 +24,7 @@ namespace Model
   class CreateTransitGatewayConnectRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateTransitGatewayConnectRequest();
+    AWS_EC2_API CreateTransitGatewayConnectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,40 +44,38 @@ namespace Model
      * <p>The ID of the transit gateway attachment. You can specify a VPC attachment or
      * Amazon Web Services Direct Connect attachment.</p>
      */
-    inline const Aws::String& GetTransportTransitGatewayAttachmentId() const{ return m_transportTransitGatewayAttachmentId; }
+    inline const Aws::String& GetTransportTransitGatewayAttachmentId() const { return m_transportTransitGatewayAttachmentId; }
     inline bool TransportTransitGatewayAttachmentIdHasBeenSet() const { return m_transportTransitGatewayAttachmentIdHasBeenSet; }
-    inline void SetTransportTransitGatewayAttachmentId(const Aws::String& value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId = value; }
-    inline void SetTransportTransitGatewayAttachmentId(Aws::String&& value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId = std::move(value); }
-    inline void SetTransportTransitGatewayAttachmentId(const char* value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId.assign(value); }
-    inline CreateTransitGatewayConnectRequest& WithTransportTransitGatewayAttachmentId(const Aws::String& value) { SetTransportTransitGatewayAttachmentId(value); return *this;}
-    inline CreateTransitGatewayConnectRequest& WithTransportTransitGatewayAttachmentId(Aws::String&& value) { SetTransportTransitGatewayAttachmentId(std::move(value)); return *this;}
-    inline CreateTransitGatewayConnectRequest& WithTransportTransitGatewayAttachmentId(const char* value) { SetTransportTransitGatewayAttachmentId(value); return *this;}
+    template<typename TransportTransitGatewayAttachmentIdT = Aws::String>
+    void SetTransportTransitGatewayAttachmentId(TransportTransitGatewayAttachmentIdT&& value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId = std::forward<TransportTransitGatewayAttachmentIdT>(value); }
+    template<typename TransportTransitGatewayAttachmentIdT = Aws::String>
+    CreateTransitGatewayConnectRequest& WithTransportTransitGatewayAttachmentId(TransportTransitGatewayAttachmentIdT&& value) { SetTransportTransitGatewayAttachmentId(std::forward<TransportTransitGatewayAttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Connect attachment options.</p>
      */
-    inline const CreateTransitGatewayConnectRequestOptions& GetOptions() const{ return m_options; }
+    inline const CreateTransitGatewayConnectRequestOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const CreateTransitGatewayConnectRequestOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(CreateTransitGatewayConnectRequestOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline CreateTransitGatewayConnectRequest& WithOptions(const CreateTransitGatewayConnectRequestOptions& value) { SetOptions(value); return *this;}
-    inline CreateTransitGatewayConnectRequest& WithOptions(CreateTransitGatewayConnectRequestOptions&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = CreateTransitGatewayConnectRequestOptions>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = CreateTransitGatewayConnectRequestOptions>
+    CreateTransitGatewayConnectRequest& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to apply to the Connect attachment.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateTransitGatewayConnectRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateTransitGatewayConnectRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateTransitGatewayConnectRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateTransitGatewayConnectRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateTransitGatewayConnectRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateTransitGatewayConnectRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,7 +85,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateTransitGatewayConnectRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -103,7 +101,7 @@ namespace Model
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

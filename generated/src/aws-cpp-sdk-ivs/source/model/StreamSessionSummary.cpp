@@ -18,17 +18,7 @@ namespace IVS
 namespace Model
 {
 
-StreamSessionSummary::StreamSessionSummary() : 
-    m_endTimeHasBeenSet(false),
-    m_hasErrorEvent(false),
-    m_hasErrorEventHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
-{
-}
-
 StreamSessionSummary::StreamSessionSummary(JsonView jsonValue)
-  : StreamSessionSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ StreamSessionSummary& StreamSessionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hasErrorEvent"))
   {
     m_hasErrorEvent = jsonValue.GetBool("hasErrorEvent");
-
     m_hasErrorEventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");
-
     m_streamIdHasBeenSet = true;
   }
-
   return *this;
 }
 

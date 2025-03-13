@@ -18,14 +18,7 @@ namespace signer
 namespace Model
 {
 
-ServiceLimitExceededException::ServiceLimitExceededException() : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 ServiceLimitExceededException::ServiceLimitExceededException(JsonView jsonValue)
-  : ServiceLimitExceededException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ServiceLimitExceededException& ServiceLimitExceededException::operator =(JsonVie
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-PayloadTooLargeException::PayloadTooLargeException() : 
-    m_messageHasBeenSet(false),
-    m_requestIDHasBeenSet(false)
-{
-}
-
 PayloadTooLargeException::PayloadTooLargeException(JsonView jsonValue)
-  : PayloadTooLargeException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PayloadTooLargeException& PayloadTooLargeException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestID"))
   {
     m_requestID = jsonValue.GetString("RequestID");
-
     m_requestIDHasBeenSet = true;
   }
-
   return *this;
 }
 

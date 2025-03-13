@@ -12,24 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateOpportunityRequest::UpdateOpportunityRequest() : 
-    m_catalogHasBeenSet(false),
-    m_customerHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lifeCycleHasBeenSet(false),
-    m_marketingHasBeenSet(false),
-    m_nationalSecurity(NationalSecurity::NOT_SET),
-    m_nationalSecurityHasBeenSet(false),
-    m_opportunityType(OpportunityType::NOT_SET),
-    m_opportunityTypeHasBeenSet(false),
-    m_partnerOpportunityIdentifierHasBeenSet(false),
-    m_primaryNeedsFromAwsHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_softwareRevenueHasBeenSet(false)
-{
-}
-
 Aws::String UpdateOpportunityRequest::SerializePayload() const
 {
   JsonValue payload;

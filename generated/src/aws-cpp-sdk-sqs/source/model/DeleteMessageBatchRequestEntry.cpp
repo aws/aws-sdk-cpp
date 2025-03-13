@@ -18,14 +18,7 @@ namespace SQS
 namespace Model
 {
 
-DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry() : 
-    m_idHasBeenSet(false),
-    m_receiptHandleHasBeenSet(false)
-{
-}
-
 DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry(JsonView jsonValue)
-  : DeleteMessageBatchRequestEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DeleteMessageBatchRequestEntry& DeleteMessageBatchRequestEntry::operator =(JsonV
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceiptHandle"))
   {
     m_receiptHandle = jsonValue.GetString("ReceiptHandle");
-
     m_receiptHandleHasBeenSet = true;
   }
-
   return *this;
 }
 

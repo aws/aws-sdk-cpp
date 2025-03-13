@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteCacheReportResult::DeleteCacheReportResult()
-{
-}
-
 DeleteCacheReportResult::DeleteCacheReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteCacheReportResult& DeleteCacheReportResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("CacheReportARN"))
   {
     m_cacheReportARN = jsonValue.GetString("CacheReportARN");
-
+    m_cacheReportARNHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

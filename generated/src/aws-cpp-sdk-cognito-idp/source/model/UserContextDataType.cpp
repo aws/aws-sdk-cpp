@@ -18,14 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-UserContextDataType::UserContextDataType() : 
-    m_ipAddressHasBeenSet(false),
-    m_encodedDataHasBeenSet(false)
-{
-}
-
 UserContextDataType::UserContextDataType(JsonView jsonValue)
-  : UserContextDataType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserContextDataType& UserContextDataType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncodedData"))
   {
     m_encodedData = jsonValue.GetString("EncodedData");
-
     m_encodedDataHasBeenSet = true;
   }
-
   return *this;
 }
 

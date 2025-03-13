@@ -29,7 +29,7 @@ namespace Model
   class DisassociateRepositoryResult
   {
   public:
-    AWS_CODEGURUREVIEWER_API DisassociateRepositoryResult();
+    AWS_CODEGURUREVIEWER_API DisassociateRepositoryResult() = default;
     AWS_CODEGURUREVIEWER_API DisassociateRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEGURUREVIEWER_API DisassociateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>Information about the disassociated repository.</p>
      */
-    inline const RepositoryAssociation& GetRepositoryAssociation() const{ return m_repositoryAssociation; }
-    inline void SetRepositoryAssociation(const RepositoryAssociation& value) { m_repositoryAssociation = value; }
-    inline void SetRepositoryAssociation(RepositoryAssociation&& value) { m_repositoryAssociation = std::move(value); }
-    inline DisassociateRepositoryResult& WithRepositoryAssociation(const RepositoryAssociation& value) { SetRepositoryAssociation(value); return *this;}
-    inline DisassociateRepositoryResult& WithRepositoryAssociation(RepositoryAssociation&& value) { SetRepositoryAssociation(std::move(value)); return *this;}
+    inline const RepositoryAssociation& GetRepositoryAssociation() const { return m_repositoryAssociation; }
+    template<typename RepositoryAssociationT = RepositoryAssociation>
+    void SetRepositoryAssociation(RepositoryAssociationT&& value) { m_repositoryAssociationHasBeenSet = true; m_repositoryAssociation = std::forward<RepositoryAssociationT>(value); }
+    template<typename RepositoryAssociationT = RepositoryAssociation>
+    DisassociateRepositoryResult& WithRepositoryAssociation(RepositoryAssociationT&& value) { SetRepositoryAssociation(std::forward<RepositoryAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,37 +56,35 @@ namespace Model
      * the tag value is the same as using an empty string. Like tag keys, tag values
      * are case sensitive.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline DisassociateRepositoryResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DisassociateRepositoryResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DisassociateRepositoryResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline DisassociateRepositoryResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DisassociateRepositoryResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DisassociateRepositoryResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DisassociateRepositoryResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DisassociateRepositoryResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DisassociateRepositoryResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DisassociateRepositoryResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DisassociateRepositoryResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateRepositoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateRepositoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateRepositoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateRepositoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RepositoryAssociation m_repositoryAssociation;
+    bool m_repositoryAssociationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

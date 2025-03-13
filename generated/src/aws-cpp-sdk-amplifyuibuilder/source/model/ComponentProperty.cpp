@@ -19,76 +19,38 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-ComponentProperty::ComponentProperty() : 
-    m_valueHasBeenSet(false),
-    m_bindingPropertiesHasBeenSet(false),
-    m_collectionBindingPropertiesHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_bindingsHasBeenSet(false),
-    m_eventHasBeenSet(false),
-    m_userAttributeHasBeenSet(false),
-    m_concatHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_configured(false),
-    m_configuredHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_importedValueHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_propertyHasBeenSet(false)
-{
-}
-
 ComponentProperty::ComponentProperty(JsonView jsonValue)
-  : ComponentProperty()
 {
   *this = jsonValue;
 }
-
-const ComponentConditionProperty& ComponentProperty::GetCondition() const{ return *m_condition; }
-bool ComponentProperty::ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-void ComponentProperty::SetCondition(const ComponentConditionProperty& value) { m_conditionHasBeenSet = true; m_condition = Aws::MakeShared<ComponentConditionProperty>("ComponentProperty", value); }
-void ComponentProperty::SetCondition(ComponentConditionProperty&& value) { m_conditionHasBeenSet = true; m_condition = Aws::MakeShared<ComponentConditionProperty>("ComponentProperty", std::move(value)); }
-ComponentProperty& ComponentProperty::WithCondition(const ComponentConditionProperty& value) { SetCondition(value); return *this;}
-ComponentProperty& ComponentProperty::WithCondition(ComponentConditionProperty&& value) { SetCondition(std::move(value)); return *this;}
 
 ComponentProperty& ComponentProperty::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bindingProperties"))
   {
     m_bindingProperties = jsonValue.GetObject("bindingProperties");
-
     m_bindingPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collectionBindingProperties"))
   {
     m_collectionBindingProperties = jsonValue.GetObject("collectionBindingProperties");
-
     m_collectionBindingPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("model"))
   {
     m_model = jsonValue.GetString("model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bindings"))
   {
     Aws::Map<Aws::String, JsonView> bindingsJsonMap = jsonValue.GetObject("bindings").GetAllObjects();
@@ -98,21 +60,16 @@ ComponentProperty& ComponentProperty::operator =(JsonView jsonValue)
     }
     m_bindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("event"))
   {
     m_event = jsonValue.GetString("event");
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAttribute"))
   {
     m_userAttribute = jsonValue.GetString("userAttribute");
-
     m_userAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("concat"))
   {
     Aws::Utils::Array<JsonView> concatJsonList = jsonValue.GetArray("concat");
@@ -122,49 +79,36 @@ ComponentProperty& ComponentProperty::operator =(JsonView jsonValue)
     }
     m_concatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("condition"))
   {
     m_condition = Aws::MakeShared<ComponentConditionProperty>("ComponentProperty", jsonValue.GetObject("condition"));
-
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configured"))
   {
     m_configured = jsonValue.GetBool("configured");
-
     m_configuredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importedValue"))
   {
     m_importedValue = jsonValue.GetString("importedValue");
-
     m_importedValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentName"))
   {
     m_componentName = jsonValue.GetString("componentName");
-
     m_componentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("property"))
   {
     m_property = jsonValue.GetString("property");
-
     m_propertyHasBeenSet = true;
   }
-
   return *this;
 }
 

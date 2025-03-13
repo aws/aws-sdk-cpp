@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListStorageLensGroupsResult::ListStorageLensGroupsResult()
-{
-}
-
 ListStorageLensGroupsResult::ListStorageLensGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,11 +32,13 @@ ListStorageLensGroupsResult& ListStorageLensGroupsResult::operator =(const Aws::
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode storageLensGroupListNode = resultNode.FirstChild("StorageLensGroup");
     if(!storageLensGroupListNode.IsNull())
     {
       XmlNode storageLensGroupMember = storageLensGroupListNode;
+      m_storageLensGroupListHasBeenSet = !storageLensGroupMember.IsNull();
       while(!storageLensGroupMember.IsNull())
       {
         m_storageLensGroupList.push_back(storageLensGroupMember);
@@ -55,12 +53,14 @@ ListStorageLensGroupsResult& ListStorageLensGroupsResult::operator =(const Aws::
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

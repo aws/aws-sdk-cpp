@@ -18,17 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RuleAction::RuleAction() : 
-    m_blockHasBeenSet(false),
-    m_allowHasBeenSet(false),
-    m_countHasBeenSet(false),
-    m_captchaHasBeenSet(false),
-    m_challengeHasBeenSet(false)
-{
-}
-
 RuleAction::RuleAction(JsonView jsonValue)
-  : RuleAction()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RuleAction& RuleAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Block"))
   {
     m_block = jsonValue.GetObject("Block");
-
     m_blockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Allow"))
   {
     m_allow = jsonValue.GetObject("Allow");
-
     m_allowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetObject("Count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Captcha"))
   {
     m_captcha = jsonValue.GetObject("Captcha");
-
     m_captchaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Challenge"))
   {
     m_challenge = jsonValue.GetObject("Challenge");
-
     m_challengeHasBeenSet = true;
   }
-
   return *this;
 }
 

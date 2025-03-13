@@ -18,14 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-AvailabilityZone::AvailabilityZone() : 
-    m_zoneNameHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 AvailabilityZone::AvailabilityZone(JsonView jsonValue)
-  : AvailabilityZone()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AvailabilityZone& AvailabilityZone::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("zoneName"))
   {
     m_zoneName = jsonValue.GetString("zoneName");
-
     m_zoneNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetString("state");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

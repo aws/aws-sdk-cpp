@@ -21,7 +21,7 @@ namespace Model
   class DeleteBackupRequest : public OpsWorksCMRequest
   {
   public:
-    AWS_OPSWORKSCM_API DeleteBackupRequest();
+    AWS_OPSWORKSCM_API DeleteBackupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * of backup IDs. Backup IDs are in the format
      * <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
      */
-    inline const Aws::String& GetBackupId() const{ return m_backupId; }
+    inline const Aws::String& GetBackupId() const { return m_backupId; }
     inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
-    inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
-    inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = std::move(value); }
-    inline void SetBackupId(const char* value) { m_backupIdHasBeenSet = true; m_backupId.assign(value); }
-    inline DeleteBackupRequest& WithBackupId(const Aws::String& value) { SetBackupId(value); return *this;}
-    inline DeleteBackupRequest& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
-    inline DeleteBackupRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
+    template<typename BackupIdT = Aws::String>
+    void SetBackupId(BackupIdT&& value) { m_backupIdHasBeenSet = true; m_backupId = std::forward<BackupIdT>(value); }
+    template<typename BackupIdT = Aws::String>
+    DeleteBackupRequest& WithBackupId(BackupIdT&& value) { SetBackupId(std::forward<BackupIdT>(value)); return *this;}
     ///@}
   private:
 

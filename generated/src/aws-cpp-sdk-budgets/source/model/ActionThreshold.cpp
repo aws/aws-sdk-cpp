@@ -18,16 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-ActionThreshold::ActionThreshold() : 
-    m_actionThresholdValue(0.0),
-    m_actionThresholdValueHasBeenSet(false),
-    m_actionThresholdType(ThresholdType::NOT_SET),
-    m_actionThresholdTypeHasBeenSet(false)
-{
-}
-
 ActionThreshold::ActionThreshold(JsonView jsonValue)
-  : ActionThreshold()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ActionThreshold& ActionThreshold::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionThresholdValue"))
   {
     m_actionThresholdValue = jsonValue.GetDouble("ActionThresholdValue");
-
     m_actionThresholdValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionThresholdType"))
   {
     m_actionThresholdType = ThresholdTypeMapper::GetThresholdTypeForName(jsonValue.GetString("ActionThresholdType"));
-
     m_actionThresholdTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

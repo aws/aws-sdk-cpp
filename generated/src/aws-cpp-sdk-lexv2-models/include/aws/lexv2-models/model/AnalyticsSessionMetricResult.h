@@ -33,7 +33,7 @@ namespace Model
   class AnalyticsSessionMetricResult
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsSessionMetricResult();
+    AWS_LEXMODELSV2_API AnalyticsSessionMetricResult() = default;
     AWS_LEXMODELSV2_API AnalyticsSessionMetricResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsSessionMetricResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * number of turns in the sessions.</p> </li> <li> <p> <code>Concurrency</code> –
      * The number of sessions occurring in the same period of time.</p> </li> </ul>
      */
-    inline const AnalyticsSessionMetricName& GetName() const{ return m_name; }
+    inline AnalyticsSessionMetricName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsSessionMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsSessionMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsSessionMetricResult& WithName(const AnalyticsSessionMetricName& value) { SetName(value); return *this;}
-    inline AnalyticsSessionMetricResult& WithName(AnalyticsSessionMetricName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsSessionMetricName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsSessionMetricResult& WithName(AnalyticsSessionMetricName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -67,32 +65,30 @@ namespace Model
      * <code>name</code>.</p> </li> <li> <p> <code>Max</code> – The highest count in
      * the category you provide in <code>name</code>.</p> </li> </ul>
      */
-    inline const AnalyticsMetricStatistic& GetStatistic() const{ return m_statistic; }
+    inline AnalyticsMetricStatistic GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const AnalyticsMetricStatistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(AnalyticsMetricStatistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline AnalyticsSessionMetricResult& WithStatistic(const AnalyticsMetricStatistic& value) { SetStatistic(value); return *this;}
-    inline AnalyticsSessionMetricResult& WithStatistic(AnalyticsMetricStatistic&& value) { SetStatistic(std::move(value)); return *this;}
+    inline void SetStatistic(AnalyticsMetricStatistic value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline AnalyticsSessionMetricResult& WithStatistic(AnalyticsMetricStatistic value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the summary statistic for the metric that you requested.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline AnalyticsSessionMetricResult& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    AnalyticsSessionMetricName m_name;
+    AnalyticsSessionMetricName m_name{AnalyticsSessionMetricName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    AnalyticsMetricStatistic m_statistic;
+    AnalyticsMetricStatistic m_statistic{AnalyticsMetricStatistic::NOT_SET};
     bool m_statisticHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

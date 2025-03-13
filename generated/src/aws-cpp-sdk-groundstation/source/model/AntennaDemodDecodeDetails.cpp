@@ -18,13 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-AntennaDemodDecodeDetails::AntennaDemodDecodeDetails() : 
-    m_outputNodeHasBeenSet(false)
-{
-}
-
 AntennaDemodDecodeDetails::AntennaDemodDecodeDetails(JsonView jsonValue)
-  : AntennaDemodDecodeDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AntennaDemodDecodeDetails& AntennaDemodDecodeDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("outputNode"))
   {
     m_outputNode = jsonValue.GetString("outputNode");
-
     m_outputNodeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-ProfileConfiguration::ProfileConfiguration() : 
-    m_datasetStatisticsConfigurationHasBeenSet(false),
-    m_profileColumnsHasBeenSet(false),
-    m_columnStatisticsConfigurationsHasBeenSet(false),
-    m_entityDetectorConfigurationHasBeenSet(false)
-{
-}
-
 ProfileConfiguration::ProfileConfiguration(JsonView jsonValue)
-  : ProfileConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ProfileConfiguration& ProfileConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatasetStatisticsConfiguration"))
   {
     m_datasetStatisticsConfiguration = jsonValue.GetObject("DatasetStatisticsConfiguration");
-
     m_datasetStatisticsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileColumns"))
   {
     Aws::Utils::Array<JsonView> profileColumnsJsonList = jsonValue.GetArray("ProfileColumns");
@@ -50,7 +39,6 @@ ProfileConfiguration& ProfileConfiguration::operator =(JsonView jsonValue)
     }
     m_profileColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnStatisticsConfigurations"))
   {
     Aws::Utils::Array<JsonView> columnStatisticsConfigurationsJsonList = jsonValue.GetArray("ColumnStatisticsConfigurations");
@@ -60,14 +48,11 @@ ProfileConfiguration& ProfileConfiguration::operator =(JsonView jsonValue)
     }
     m_columnStatisticsConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityDetectorConfiguration"))
   {
     m_entityDetectorConfiguration = jsonValue.GetObject("EntityDetectorConfiguration");
-
     m_entityDetectorConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

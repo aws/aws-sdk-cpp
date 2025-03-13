@@ -29,7 +29,7 @@ namespace Model
   class ListResolversResult
   {
   public:
-    AWS_APPSYNC_API ListResolversResult();
+    AWS_APPSYNC_API ListResolversResult() = default;
     AWS_APPSYNC_API ListResolversResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API ListResolversResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The <code>Resolver</code> objects.</p>
      */
-    inline const Aws::Vector<Resolver>& GetResolvers() const{ return m_resolvers; }
-    inline void SetResolvers(const Aws::Vector<Resolver>& value) { m_resolvers = value; }
-    inline void SetResolvers(Aws::Vector<Resolver>&& value) { m_resolvers = std::move(value); }
-    inline ListResolversResult& WithResolvers(const Aws::Vector<Resolver>& value) { SetResolvers(value); return *this;}
-    inline ListResolversResult& WithResolvers(Aws::Vector<Resolver>&& value) { SetResolvers(std::move(value)); return *this;}
-    inline ListResolversResult& AddResolvers(const Resolver& value) { m_resolvers.push_back(value); return *this; }
-    inline ListResolversResult& AddResolvers(Resolver&& value) { m_resolvers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Resolver>& GetResolvers() const { return m_resolvers; }
+    template<typename ResolversT = Aws::Vector<Resolver>>
+    void SetResolvers(ResolversT&& value) { m_resolversHasBeenSet = true; m_resolvers = std::forward<ResolversT>(value); }
+    template<typename ResolversT = Aws::Vector<Resolver>>
+    ListResolversResult& WithResolvers(ResolversT&& value) { SetResolvers(std::forward<ResolversT>(value)); return *this;}
+    template<typename ResolversT = Resolver>
+    ListResolversResult& AddResolvers(ResolversT&& value) { m_resolversHasBeenSet = true; m_resolvers.emplace_back(std::forward<ResolversT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>An identifier to pass in the next request to this operation to return the
      * next set of items in the list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResolversResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResolversResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResolversResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResolversResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResolversResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResolversResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResolversResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResolversResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Resolver> m_resolvers;
+    bool m_resolversHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

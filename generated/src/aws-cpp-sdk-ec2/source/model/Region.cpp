@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Region::Region() : 
-    m_optInStatusHasBeenSet(false),
-    m_regionNameHasBeenSet(false),
-    m_endpointHasBeenSet(false)
-{
-}
-
 Region::Region(const XmlNode& xmlNode)
-  : Region()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ Region& Region::operator =(const XmlNode& xmlNode)
     {
       m_optInStatus = Aws::Utils::Xml::DecodeEscapedXmlText(optInStatusNode.GetText());
       m_optInStatusHasBeenSet = true;
+       m_optInStatusHasBeenSet = true;
     }
     XmlNode regionNameNode = resultNode.FirstChild("regionName");
     if(!regionNameNode.IsNull())
     {
       m_regionName = Aws::Utils::Xml::DecodeEscapedXmlText(regionNameNode.GetText());
       m_regionNameHasBeenSet = true;
+       m_regionNameHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("regionEndpoint");
     if(!endpointNode.IsNull())
     {
       m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
       m_endpointHasBeenSet = true;
+       m_endpointHasBeenSet = true;
     }
   }
 

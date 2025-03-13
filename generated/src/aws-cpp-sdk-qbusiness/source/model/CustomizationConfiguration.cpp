@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-CustomizationConfiguration::CustomizationConfiguration() : 
-    m_customCSSUrlHasBeenSet(false),
-    m_logoUrlHasBeenSet(false),
-    m_fontUrlHasBeenSet(false),
-    m_faviconUrlHasBeenSet(false)
-{
-}
-
 CustomizationConfiguration::CustomizationConfiguration(JsonView jsonValue)
-  : CustomizationConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CustomizationConfiguration& CustomizationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("customCSSUrl"))
   {
     m_customCSSUrl = jsonValue.GetString("customCSSUrl");
-
     m_customCSSUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logoUrl"))
   {
     m_logoUrl = jsonValue.GetString("logoUrl");
-
     m_logoUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fontUrl"))
   {
     m_fontUrl = jsonValue.GetString("fontUrl");
-
     m_fontUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("faviconUrl"))
   {
     m_faviconUrl = jsonValue.GetString("faviconUrl");
-
     m_faviconUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

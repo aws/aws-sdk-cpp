@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-InsightConfiguration::InsightConfiguration() : 
-    m_computationsHasBeenSet(false),
-    m_customNarrativeHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 InsightConfiguration::InsightConfiguration(JsonView jsonValue)
-  : InsightConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ InsightConfiguration& InsightConfiguration::operator =(JsonView jsonValue)
     }
     m_computationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomNarrative"))
   {
     m_customNarrative = jsonValue.GetObject("CustomNarrative");
-
     m_customNarrativeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

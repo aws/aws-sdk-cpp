@@ -25,7 +25,7 @@ namespace Model
   class DeleteResourcePolicyStatementRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API DeleteResourcePolicyStatementRequest();
+    AWS_LEXMODELSV2_API DeleteResourcePolicyStatementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource
      * policy is attached to.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline DeleteResourcePolicyStatementRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline DeleteResourcePolicyStatementRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline DeleteResourcePolicyStatementRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    DeleteResourcePolicyStatementRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the statement (SID) to delete from the policy.</p>
      */
-    inline const Aws::String& GetStatementId() const{ return m_statementId; }
+    inline const Aws::String& GetStatementId() const { return m_statementId; }
     inline bool StatementIdHasBeenSet() const { return m_statementIdHasBeenSet; }
-    inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
-    inline void SetStatementId(Aws::String&& value) { m_statementIdHasBeenSet = true; m_statementId = std::move(value); }
-    inline void SetStatementId(const char* value) { m_statementIdHasBeenSet = true; m_statementId.assign(value); }
-    inline DeleteResourcePolicyStatementRequest& WithStatementId(const Aws::String& value) { SetStatementId(value); return *this;}
-    inline DeleteResourcePolicyStatementRequest& WithStatementId(Aws::String&& value) { SetStatementId(std::move(value)); return *this;}
-    inline DeleteResourcePolicyStatementRequest& WithStatementId(const char* value) { SetStatementId(value); return *this;}
+    template<typename StatementIdT = Aws::String>
+    void SetStatementId(StatementIdT&& value) { m_statementIdHasBeenSet = true; m_statementId = std::forward<StatementIdT>(value); }
+    template<typename StatementIdT = Aws::String>
+    DeleteResourcePolicyStatementRequest& WithStatementId(StatementIdT&& value) { SetStatementId(std::forward<StatementIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * exception.</p> <p>If you don't specify a revision, Amazon Lex removes the
      * current contents of the statement. </p>
      */
-    inline const Aws::String& GetExpectedRevisionId() const{ return m_expectedRevisionId; }
+    inline const Aws::String& GetExpectedRevisionId() const { return m_expectedRevisionId; }
     inline bool ExpectedRevisionIdHasBeenSet() const { return m_expectedRevisionIdHasBeenSet; }
-    inline void SetExpectedRevisionId(const Aws::String& value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId = value; }
-    inline void SetExpectedRevisionId(Aws::String&& value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId = std::move(value); }
-    inline void SetExpectedRevisionId(const char* value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId.assign(value); }
-    inline DeleteResourcePolicyStatementRequest& WithExpectedRevisionId(const Aws::String& value) { SetExpectedRevisionId(value); return *this;}
-    inline DeleteResourcePolicyStatementRequest& WithExpectedRevisionId(Aws::String&& value) { SetExpectedRevisionId(std::move(value)); return *this;}
-    inline DeleteResourcePolicyStatementRequest& WithExpectedRevisionId(const char* value) { SetExpectedRevisionId(value); return *this;}
+    template<typename ExpectedRevisionIdT = Aws::String>
+    void SetExpectedRevisionId(ExpectedRevisionIdT&& value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId = std::forward<ExpectedRevisionIdT>(value); }
+    template<typename ExpectedRevisionIdT = Aws::String>
+    DeleteResourcePolicyStatementRequest& WithExpectedRevisionId(ExpectedRevisionIdT&& value) { SetExpectedRevisionId(std::forward<ExpectedRevisionIdT>(value)); return *this;}
     ///@}
   private:
 

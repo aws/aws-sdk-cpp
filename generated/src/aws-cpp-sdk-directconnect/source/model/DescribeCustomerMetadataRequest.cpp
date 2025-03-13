@@ -12,10 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCustomerMetadataRequest::DescribeCustomerMetadataRequest()
-{
-}
-
 Aws::String DescribeCustomerMetadataRequest::SerializePayload() const
 {
   return "{}";

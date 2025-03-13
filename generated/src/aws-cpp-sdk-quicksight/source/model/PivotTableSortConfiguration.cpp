@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PivotTableSortConfiguration::PivotTableSortConfiguration() : 
-    m_fieldSortOptionsHasBeenSet(false)
-{
-}
-
 PivotTableSortConfiguration::PivotTableSortConfiguration(JsonView jsonValue)
-  : PivotTableSortConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PivotTableSortConfiguration& PivotTableSortConfiguration::operator =(JsonView js
     }
     m_fieldSortOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class DeletePackageGroupResult
   {
   public:
-    AWS_CODEARTIFACT_API DeletePackageGroupResult();
+    AWS_CODEARTIFACT_API DeletePackageGroupResult() = default;
     AWS_CODEARTIFACT_API DeletePackageGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEARTIFACT_API DeletePackageGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p> Information about the deleted package group after processing the request.
      * </p>
      */
-    inline const PackageGroupDescription& GetPackageGroup() const{ return m_packageGroup; }
-    inline void SetPackageGroup(const PackageGroupDescription& value) { m_packageGroup = value; }
-    inline void SetPackageGroup(PackageGroupDescription&& value) { m_packageGroup = std::move(value); }
-    inline DeletePackageGroupResult& WithPackageGroup(const PackageGroupDescription& value) { SetPackageGroup(value); return *this;}
-    inline DeletePackageGroupResult& WithPackageGroup(PackageGroupDescription&& value) { SetPackageGroup(std::move(value)); return *this;}
+    inline const PackageGroupDescription& GetPackageGroup() const { return m_packageGroup; }
+    template<typename PackageGroupT = PackageGroupDescription>
+    void SetPackageGroup(PackageGroupT&& value) { m_packageGroupHasBeenSet = true; m_packageGroup = std::forward<PackageGroupT>(value); }
+    template<typename PackageGroupT = PackageGroupDescription>
+    DeletePackageGroupResult& WithPackageGroup(PackageGroupT&& value) { SetPackageGroup(std::forward<PackageGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeletePackageGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeletePackageGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeletePackageGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeletePackageGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PackageGroupDescription m_packageGroup;
+    bool m_packageGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

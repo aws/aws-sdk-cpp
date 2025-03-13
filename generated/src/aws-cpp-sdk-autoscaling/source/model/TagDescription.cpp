@@ -20,18 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-TagDescription::TagDescription() : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_propagateAtLaunch(false),
-    m_propagateAtLaunchHasBeenSet(false)
-{
-}
-
 TagDescription::TagDescription(const XmlNode& xmlNode)
-  : TagDescription()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ TagDescription& TagDescription::operator =(const XmlNode& xmlNode)
     {
       m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
+       m_resourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
       m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
+       m_keyHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
     XmlNode propagateAtLaunchNode = resultNode.FirstChild("PropagateAtLaunch");
     if(!propagateAtLaunchNode.IsNull())
     {
       m_propagateAtLaunch = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(propagateAtLaunchNode.GetText()).c_str()).c_str());
       m_propagateAtLaunchHasBeenSet = true;
+       m_propagateAtLaunchHasBeenSet = true;
     }
   }
 

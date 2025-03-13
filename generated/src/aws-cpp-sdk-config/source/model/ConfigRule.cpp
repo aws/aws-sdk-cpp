@@ -18,25 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConfigRule::ConfigRule() : 
-    m_configRuleNameHasBeenSet(false),
-    m_configRuleArnHasBeenSet(false),
-    m_configRuleIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_inputParametersHasBeenSet(false),
-    m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
-    m_maximumExecutionFrequencyHasBeenSet(false),
-    m_configRuleState(ConfigRuleState::NOT_SET),
-    m_configRuleStateHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_evaluationModesHasBeenSet(false)
-{
-}
-
 ConfigRule::ConfigRule(JsonView jsonValue)
-  : ConfigRule()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ ConfigRule& ConfigRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConfigRuleName"))
   {
     m_configRuleName = jsonValue.GetString("ConfigRuleName");
-
     m_configRuleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigRuleArn"))
   {
     m_configRuleArn = jsonValue.GetString("ConfigRuleArn");
-
     m_configRuleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigRuleId"))
   {
     m_configRuleId = jsonValue.GetString("ConfigRuleId");
-
     m_configRuleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scope"))
   {
     m_scope = jsonValue.GetObject("Scope");
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetObject("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputParameters"))
   {
     m_inputParameters = jsonValue.GetString("InputParameters");
-
     m_inputParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumExecutionFrequency"))
   {
     m_maximumExecutionFrequency = MaximumExecutionFrequencyMapper::GetMaximumExecutionFrequencyForName(jsonValue.GetString("MaximumExecutionFrequency"));
-
     m_maximumExecutionFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigRuleState"))
   {
     m_configRuleState = ConfigRuleStateMapper::GetConfigRuleStateForName(jsonValue.GetString("ConfigRuleState"));
-
     m_configRuleStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationModes"))
   {
     Aws::Utils::Array<JsonView> evaluationModesJsonList = jsonValue.GetArray("EvaluationModes");
@@ -122,7 +84,6 @@ ConfigRule& ConfigRule::operator =(JsonView jsonValue)
     }
     m_evaluationModesHasBeenSet = true;
   }
-
   return *this;
 }
 

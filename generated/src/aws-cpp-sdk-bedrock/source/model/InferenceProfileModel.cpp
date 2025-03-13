@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-InferenceProfileModel::InferenceProfileModel() : 
-    m_modelArnHasBeenSet(false)
-{
-}
-
 InferenceProfileModel::InferenceProfileModel(JsonView jsonValue)
-  : InferenceProfileModel()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InferenceProfileModel& InferenceProfileModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   return *this;
 }
 

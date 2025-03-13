@@ -18,21 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-Entity::Entity() : 
-    m_startTime(0.0),
-    m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
-    m_endTimeHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
-{
-}
-
 Entity::Entity(JsonView jsonValue)
-  : Entity()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ Entity& Entity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     m_category = jsonValue.GetString("Category");
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

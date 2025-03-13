@@ -25,7 +25,7 @@ namespace Model
   class DescribeCacheClustersRequest : public ElastiCacheRequest
   {
   public:
-    AWS_ELASTICACHE_API DescribeCacheClustersRequest();
+    AWS_ELASTICACHE_API DescribeCacheClustersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * information about that specific cluster is returned. This parameter isn't case
      * sensitive.</p>
      */
-    inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
+    inline const Aws::String& GetCacheClusterId() const { return m_cacheClusterId; }
     inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
-    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
-    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
-    inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
-    inline DescribeCacheClustersRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
-    inline DescribeCacheClustersRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
-    inline DescribeCacheClustersRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+    template<typename CacheClusterIdT = Aws::String>
+    void SetCacheClusterId(CacheClusterIdT&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::forward<CacheClusterIdT>(value); }
+    template<typename CacheClusterIdT = Aws::String>
+    DescribeCacheClustersRequest& WithCacheClusterId(CacheClusterIdT&& value) { SetCacheClusterId(std::forward<CacheClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * the response so that the remaining results can be retrieved.</p> <p>Default:
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeCacheClustersRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -76,14 +74,12 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeCacheClustersRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeCacheClustersRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeCacheClustersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeCacheClustersRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +88,7 @@ namespace Model
      * <code>DescribeCacheCluster</code> request to retrieve information about the
      * individual cache nodes.</p>
      */
-    inline bool GetShowCacheNodeInfo() const{ return m_showCacheNodeInfo; }
+    inline bool GetShowCacheNodeInfo() const { return m_showCacheNodeInfo; }
     inline bool ShowCacheNodeInfoHasBeenSet() const { return m_showCacheNodeInfoHasBeenSet; }
     inline void SetShowCacheNodeInfo(bool value) { m_showCacheNodeInfoHasBeenSet = true; m_showCacheNodeInfo = value; }
     inline DescribeCacheClustersRequest& WithShowCacheNodeInfo(bool value) { SetShowCacheNodeInfo(value); return *this;}
@@ -105,7 +101,7 @@ namespace Model
      * that are not members of a replication group. In practice, this means Memcached
      * and single node Valkey or Redis OSS clusters.</p>
      */
-    inline bool GetShowCacheClustersNotInReplicationGroups() const{ return m_showCacheClustersNotInReplicationGroups; }
+    inline bool GetShowCacheClustersNotInReplicationGroups() const { return m_showCacheClustersNotInReplicationGroups; }
     inline bool ShowCacheClustersNotInReplicationGroupsHasBeenSet() const { return m_showCacheClustersNotInReplicationGroupsHasBeenSet; }
     inline void SetShowCacheClustersNotInReplicationGroups(bool value) { m_showCacheClustersNotInReplicationGroupsHasBeenSet = true; m_showCacheClustersNotInReplicationGroups = value; }
     inline DescribeCacheClustersRequest& WithShowCacheClustersNotInReplicationGroups(bool value) { SetShowCacheClustersNotInReplicationGroups(value); return *this;}
@@ -115,16 +111,16 @@ namespace Model
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    bool m_showCacheNodeInfo;
+    bool m_showCacheNodeInfo{false};
     bool m_showCacheNodeInfoHasBeenSet = false;
 
-    bool m_showCacheClustersNotInReplicationGroups;
+    bool m_showCacheClustersNotInReplicationGroups{false};
     bool m_showCacheClustersNotInReplicationGroupsHasBeenSet = false;
   };
 

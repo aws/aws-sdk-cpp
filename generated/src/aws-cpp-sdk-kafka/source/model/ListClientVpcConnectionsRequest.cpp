@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListClientVpcConnectionsRequest::ListClientVpcConnectionsRequest() : 
-    m_clusterArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListClientVpcConnectionsRequest::SerializePayload() const
 {
   return {};

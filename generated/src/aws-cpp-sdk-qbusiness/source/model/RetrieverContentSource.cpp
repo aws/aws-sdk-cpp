@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-RetrieverContentSource::RetrieverContentSource() : 
-    m_retrieverIdHasBeenSet(false)
-{
-}
-
 RetrieverContentSource::RetrieverContentSource(JsonView jsonValue)
-  : RetrieverContentSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RetrieverContentSource& RetrieverContentSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("retrieverId"))
   {
     m_retrieverId = jsonValue.GetString("retrieverId");
-
     m_retrieverIdHasBeenSet = true;
   }
-
   return *this;
 }
 

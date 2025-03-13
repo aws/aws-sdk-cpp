@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-AsyncRequestParameters::AsyncRequestParameters() : 
-    m_createMultiRegionAccessPointRequestHasBeenSet(false),
-    m_deleteMultiRegionAccessPointRequestHasBeenSet(false),
-    m_putMultiRegionAccessPointPolicyRequestHasBeenSet(false)
-{
-}
-
 AsyncRequestParameters::AsyncRequestParameters(const XmlNode& xmlNode)
-  : AsyncRequestParameters()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ AsyncRequestParameters& AsyncRequestParameters::operator =(const XmlNode& xmlNod
     {
       m_createMultiRegionAccessPointRequest = createMultiRegionAccessPointRequestNode;
       m_createMultiRegionAccessPointRequestHasBeenSet = true;
+       m_createMultiRegionAccessPointRequestHasBeenSet = true;
     }
     XmlNode deleteMultiRegionAccessPointRequestNode = resultNode.FirstChild("DeleteMultiRegionAccessPointRequest");
     if(!deleteMultiRegionAccessPointRequestNode.IsNull())
     {
       m_deleteMultiRegionAccessPointRequest = deleteMultiRegionAccessPointRequestNode;
       m_deleteMultiRegionAccessPointRequestHasBeenSet = true;
+       m_deleteMultiRegionAccessPointRequestHasBeenSet = true;
     }
     XmlNode putMultiRegionAccessPointPolicyRequestNode = resultNode.FirstChild("PutMultiRegionAccessPointPolicyRequest");
     if(!putMultiRegionAccessPointPolicyRequestNode.IsNull())
     {
       m_putMultiRegionAccessPointPolicyRequest = putMultiRegionAccessPointPolicyRequestNode;
       m_putMultiRegionAccessPointPolicyRequestHasBeenSet = true;
+       m_putMultiRegionAccessPointPolicyRequestHasBeenSet = true;
     }
   }
 

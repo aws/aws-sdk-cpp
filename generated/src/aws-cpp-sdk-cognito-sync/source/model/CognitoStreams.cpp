@@ -18,16 +18,7 @@ namespace CognitoSync
 namespace Model
 {
 
-CognitoStreams::CognitoStreams() : 
-    m_streamNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_streamingStatus(StreamingStatus::NOT_SET),
-    m_streamingStatusHasBeenSet(false)
-{
-}
-
 CognitoStreams::CognitoStreams(JsonView jsonValue)
-  : CognitoStreams()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CognitoStreams& CognitoStreams::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StreamName"))
   {
     m_streamName = jsonValue.GetString("StreamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamingStatus"))
   {
     m_streamingStatus = StreamingStatusMapper::GetStreamingStatusForName(jsonValue.GetString("StreamingStatus"));
-
     m_streamingStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

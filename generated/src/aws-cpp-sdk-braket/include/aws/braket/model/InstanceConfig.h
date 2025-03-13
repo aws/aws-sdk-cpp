@@ -32,7 +32,7 @@ namespace Model
   class InstanceConfig
   {
   public:
-    AWS_BRAKET_API InstanceConfig();
+    AWS_BRAKET_API InstanceConfig() = default;
     AWS_BRAKET_API InstanceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API InstanceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Configures the number of resource instances to use while running an Amazon
      * Braket job on Amazon Braket. The default value is 1.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline InstanceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -54,32 +54,30 @@ namespace Model
      * <p>Configures the type resource instances to use while running an Amazon Braket
      * hybrid job.</p>
      */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline InstanceConfig& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-    inline InstanceConfig& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline InstanceConfig& WithInstanceType(InstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the storage volume, in GB, that user wants to provision.</p>
      */
-    inline int GetVolumeSizeInGb() const{ return m_volumeSizeInGb; }
+    inline int GetVolumeSizeInGb() const { return m_volumeSizeInGb; }
     inline bool VolumeSizeInGbHasBeenSet() const { return m_volumeSizeInGbHasBeenSet; }
     inline void SetVolumeSizeInGb(int value) { m_volumeSizeInGbHasBeenSet = true; m_volumeSizeInGb = value; }
     inline InstanceConfig& WithVolumeSizeInGb(int value) { SetVolumeSizeInGb(value); return *this;}
     ///@}
   private:
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
-    InstanceType m_instanceType;
+    InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_volumeSizeInGb;
+    int m_volumeSizeInGb{0};
     bool m_volumeSizeInGbHasBeenSet = false;
   };
 

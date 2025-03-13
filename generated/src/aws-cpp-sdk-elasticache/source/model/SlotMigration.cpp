@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-SlotMigration::SlotMigration() : 
-    m_progressPercentage(0.0),
-    m_progressPercentageHasBeenSet(false)
-{
-}
-
 SlotMigration::SlotMigration(const XmlNode& xmlNode)
-  : SlotMigration()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ SlotMigration& SlotMigration::operator =(const XmlNode& xmlNode)
     {
       m_progressPercentage = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(progressPercentageNode.GetText()).c_str()).c_str());
       m_progressPercentageHasBeenSet = true;
+       m_progressPercentageHasBeenSet = true;
     }
   }
 

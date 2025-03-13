@@ -18,13 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-InspectorScoreDetails::InspectorScoreDetails() : 
-    m_adjustedCvssHasBeenSet(false)
-{
-}
-
 InspectorScoreDetails::InspectorScoreDetails(JsonView jsonValue)
-  : InspectorScoreDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InspectorScoreDetails& InspectorScoreDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("adjustedCvss"))
   {
     m_adjustedCvss = jsonValue.GetObject("adjustedCvss");
-
     m_adjustedCvssHasBeenSet = true;
   }
-
   return *this;
 }
 

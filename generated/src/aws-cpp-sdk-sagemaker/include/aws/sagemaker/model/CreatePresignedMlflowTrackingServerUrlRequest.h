@@ -21,7 +21,7 @@ namespace Model
   class CreatePresignedMlflowTrackingServerUrlRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreatePresignedMlflowTrackingServerUrlRequest();
+    AWS_SAGEMAKER_API CreatePresignedMlflowTrackingServerUrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the tracking server to connect to your MLflow UI.</p>
      */
-    inline const Aws::String& GetTrackingServerName() const{ return m_trackingServerName; }
+    inline const Aws::String& GetTrackingServerName() const { return m_trackingServerName; }
     inline bool TrackingServerNameHasBeenSet() const { return m_trackingServerNameHasBeenSet; }
-    inline void SetTrackingServerName(const Aws::String& value) { m_trackingServerNameHasBeenSet = true; m_trackingServerName = value; }
-    inline void SetTrackingServerName(Aws::String&& value) { m_trackingServerNameHasBeenSet = true; m_trackingServerName = std::move(value); }
-    inline void SetTrackingServerName(const char* value) { m_trackingServerNameHasBeenSet = true; m_trackingServerName.assign(value); }
-    inline CreatePresignedMlflowTrackingServerUrlRequest& WithTrackingServerName(const Aws::String& value) { SetTrackingServerName(value); return *this;}
-    inline CreatePresignedMlflowTrackingServerUrlRequest& WithTrackingServerName(Aws::String&& value) { SetTrackingServerName(std::move(value)); return *this;}
-    inline CreatePresignedMlflowTrackingServerUrlRequest& WithTrackingServerName(const char* value) { SetTrackingServerName(value); return *this;}
+    template<typename TrackingServerNameT = Aws::String>
+    void SetTrackingServerName(TrackingServerNameT&& value) { m_trackingServerNameHasBeenSet = true; m_trackingServerName = std::forward<TrackingServerNameT>(value); }
+    template<typename TrackingServerNameT = Aws::String>
+    CreatePresignedMlflowTrackingServerUrlRequest& WithTrackingServerName(TrackingServerNameT&& value) { SetTrackingServerName(std::forward<TrackingServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,7 +51,7 @@ namespace Model
      * <p>The duration in seconds that your presigned URL is valid. The presigned URL
      * can be used only once.</p>
      */
-    inline int GetExpiresInSeconds() const{ return m_expiresInSeconds; }
+    inline int GetExpiresInSeconds() const { return m_expiresInSeconds; }
     inline bool ExpiresInSecondsHasBeenSet() const { return m_expiresInSecondsHasBeenSet; }
     inline void SetExpiresInSeconds(int value) { m_expiresInSecondsHasBeenSet = true; m_expiresInSeconds = value; }
     inline CreatePresignedMlflowTrackingServerUrlRequest& WithExpiresInSeconds(int value) { SetExpiresInSeconds(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
     /**
      * <p>The duration in seconds that your MLflow UI session is valid.</p>
      */
-    inline int GetSessionExpirationDurationInSeconds() const{ return m_sessionExpirationDurationInSeconds; }
+    inline int GetSessionExpirationDurationInSeconds() const { return m_sessionExpirationDurationInSeconds; }
     inline bool SessionExpirationDurationInSecondsHasBeenSet() const { return m_sessionExpirationDurationInSecondsHasBeenSet; }
     inline void SetSessionExpirationDurationInSeconds(int value) { m_sessionExpirationDurationInSecondsHasBeenSet = true; m_sessionExpirationDurationInSeconds = value; }
     inline CreatePresignedMlflowTrackingServerUrlRequest& WithSessionExpirationDurationInSeconds(int value) { SetSessionExpirationDurationInSeconds(value); return *this;}
@@ -73,10 +71,10 @@ namespace Model
     Aws::String m_trackingServerName;
     bool m_trackingServerNameHasBeenSet = false;
 
-    int m_expiresInSeconds;
+    int m_expiresInSeconds{0};
     bool m_expiresInSecondsHasBeenSet = false;
 
-    int m_sessionExpirationDurationInSeconds;
+    int m_sessionExpirationDurationInSeconds{0};
     bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
   };
 

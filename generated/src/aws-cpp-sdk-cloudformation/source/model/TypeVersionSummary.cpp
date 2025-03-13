@@ -20,22 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TypeVersionSummary::TypeVersionSummary() : 
-    m_type(RegistryType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_timeCreatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_publicVersionNumberHasBeenSet(false)
-{
-}
-
 TypeVersionSummary::TypeVersionSummary(const XmlNode& xmlNode)
-  : TypeVersionSummary()
 {
   *this = xmlNode;
 }
@@ -49,50 +34,58 @@ TypeVersionSummary& TypeVersionSummary::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RegistryTypeMapper::GetRegistryTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = RegistryTypeMapper::GetRegistryTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode typeNameNode = resultNode.FirstChild("TypeName");
     if(!typeNameNode.IsNull())
     {
       m_typeName = Aws::Utils::Xml::DecodeEscapedXmlText(typeNameNode.GetText());
       m_typeNameHasBeenSet = true;
+       m_typeNameHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
     if(!versionIdNode.IsNull())
     {
       m_versionId = Aws::Utils::Xml::DecodeEscapedXmlText(versionIdNode.GetText());
       m_versionIdHasBeenSet = true;
+       m_versionIdHasBeenSet = true;
     }
     XmlNode isDefaultVersionNode = resultNode.FirstChild("IsDefaultVersion");
     if(!isDefaultVersionNode.IsNull())
     {
       m_isDefaultVersion = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultVersionNode.GetText()).c_str()).c_str());
       m_isDefaultVersionHasBeenSet = true;
+       m_isDefaultVersionHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode timeCreatedNode = resultNode.FirstChild("TimeCreated");
     if(!timeCreatedNode.IsNull())
     {
       m_timeCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeCreatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timeCreatedHasBeenSet = true;
+       m_timeCreatedHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode publicVersionNumberNode = resultNode.FirstChild("PublicVersionNumber");
     if(!publicVersionNumberNode.IsNull())
     {
       m_publicVersionNumber = Aws::Utils::Xml::DecodeEscapedXmlText(publicVersionNumberNode.GetText());
       m_publicVersionNumberHasBeenSet = true;
+       m_publicVersionNumberHasBeenSet = true;
     }
   }
 

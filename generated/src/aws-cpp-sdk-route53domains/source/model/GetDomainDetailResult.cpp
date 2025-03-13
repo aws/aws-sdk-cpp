@@ -17,17 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDomainDetailResult::GetDomainDetailResult() : 
-    m_autoRenew(false),
-    m_adminPrivacy(false),
-    m_registrantPrivacy(false),
-    m_techPrivacy(false),
-    m_billingPrivacy(false)
-{
-}
-
 GetDomainDetailResult::GetDomainDetailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDomainDetailResult()
 {
   *this = result;
 }
@@ -38,9 +28,8 @@ GetDomainDetailResult& GetDomainDetailResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
+    m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Nameservers"))
   {
     Aws::Utils::Array<JsonView> nameserversJsonList = jsonValue.GetArray("Nameservers");
@@ -48,116 +37,98 @@ GetDomainDetailResult& GetDomainDetailResult::operator =(const Aws::AmazonWebSer
     {
       m_nameservers.push_back(nameserversJsonList[nameserversIndex].AsObject());
     }
+    m_nameserversHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoRenew"))
   {
     m_autoRenew = jsonValue.GetBool("AutoRenew");
-
+    m_autoRenewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdminContact"))
   {
     m_adminContact = jsonValue.GetObject("AdminContact");
-
+    m_adminContactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrantContact"))
   {
     m_registrantContact = jsonValue.GetObject("RegistrantContact");
-
+    m_registrantContactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TechContact"))
   {
     m_techContact = jsonValue.GetObject("TechContact");
-
+    m_techContactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdminPrivacy"))
   {
     m_adminPrivacy = jsonValue.GetBool("AdminPrivacy");
-
+    m_adminPrivacyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrantPrivacy"))
   {
     m_registrantPrivacy = jsonValue.GetBool("RegistrantPrivacy");
-
+    m_registrantPrivacyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TechPrivacy"))
   {
     m_techPrivacy = jsonValue.GetBool("TechPrivacy");
-
+    m_techPrivacyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrarName"))
   {
     m_registrarName = jsonValue.GetString("RegistrarName");
-
+    m_registrarNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WhoIsServer"))
   {
     m_whoIsServer = jsonValue.GetString("WhoIsServer");
-
+    m_whoIsServerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrarUrl"))
   {
     m_registrarUrl = jsonValue.GetString("RegistrarUrl");
-
+    m_registrarUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AbuseContactEmail"))
   {
     m_abuseContactEmail = jsonValue.GetString("AbuseContactEmail");
-
+    m_abuseContactEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AbuseContactPhone"))
   {
     m_abuseContactPhone = jsonValue.GetString("AbuseContactPhone");
-
+    m_abuseContactPhoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistryDomainId"))
   {
     m_registryDomainId = jsonValue.GetString("RegistryDomainId");
-
+    m_registryDomainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
+    m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedDate"))
   {
     m_updatedDate = jsonValue.GetDouble("UpdatedDate");
-
+    m_updatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationDate"))
   {
     m_expirationDate = jsonValue.GetDouble("ExpirationDate");
-
+    m_expirationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reseller"))
   {
     m_reseller = jsonValue.GetString("Reseller");
-
+    m_resellerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsSec"))
   {
     m_dnsSec = jsonValue.GetString("DnsSec");
-
+    m_dnsSecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusList"))
   {
     Aws::Utils::Array<JsonView> statusListJsonList = jsonValue.GetArray("StatusList");
@@ -165,8 +136,8 @@ GetDomainDetailResult& GetDomainDetailResult::operator =(const Aws::AmazonWebSer
     {
       m_statusList.push_back(statusListJsonList[statusListIndex].AsString());
     }
+    m_statusListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnssecKeys"))
   {
     Aws::Utils::Array<JsonView> dnssecKeysJsonList = jsonValue.GetArray("DnssecKeys");
@@ -174,26 +145,25 @@ GetDomainDetailResult& GetDomainDetailResult::operator =(const Aws::AmazonWebSer
     {
       m_dnssecKeys.push_back(dnssecKeysJsonList[dnssecKeysIndex].AsObject());
     }
+    m_dnssecKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingContact"))
   {
     m_billingContact = jsonValue.GetObject("BillingContact");
-
+    m_billingContactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingPrivacy"))
   {
     m_billingPrivacy = jsonValue.GetBool("BillingPrivacy");
-
+    m_billingPrivacyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

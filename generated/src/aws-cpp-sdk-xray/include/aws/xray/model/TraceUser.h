@@ -34,7 +34,7 @@ namespace Model
   class TraceUser
   {
   public:
-    AWS_XRAY_API TraceUser();
+    AWS_XRAY_API TraceUser() = default;
     AWS_XRAY_API TraceUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API TraceUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The user's name.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline TraceUser& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline TraceUser& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline TraceUser& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    TraceUser& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Services that the user's request hit.</p>
      */
-    inline const Aws::Vector<ServiceId>& GetServiceIds() const{ return m_serviceIds; }
+    inline const Aws::Vector<ServiceId>& GetServiceIds() const { return m_serviceIds; }
     inline bool ServiceIdsHasBeenSet() const { return m_serviceIdsHasBeenSet; }
-    inline void SetServiceIds(const Aws::Vector<ServiceId>& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = value; }
-    inline void SetServiceIds(Aws::Vector<ServiceId>&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = std::move(value); }
-    inline TraceUser& WithServiceIds(const Aws::Vector<ServiceId>& value) { SetServiceIds(value); return *this;}
-    inline TraceUser& WithServiceIds(Aws::Vector<ServiceId>&& value) { SetServiceIds(std::move(value)); return *this;}
-    inline TraceUser& AddServiceIds(const ServiceId& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(value); return *this; }
-    inline TraceUser& AddServiceIds(ServiceId&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(std::move(value)); return *this; }
+    template<typename ServiceIdsT = Aws::Vector<ServiceId>>
+    void SetServiceIds(ServiceIdsT&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = std::forward<ServiceIdsT>(value); }
+    template<typename ServiceIdsT = Aws::Vector<ServiceId>>
+    TraceUser& WithServiceIds(ServiceIdsT&& value) { SetServiceIds(std::forward<ServiceIdsT>(value)); return *this;}
+    template<typename ServiceIdsT = ServiceId>
+    TraceUser& AddServiceIds(ServiceIdsT&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.emplace_back(std::forward<ServiceIdsT>(value)); return *this; }
     ///@}
   private:
 

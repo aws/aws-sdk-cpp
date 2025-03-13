@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElasticBeanstalkEnvironmentOptionSetting::AwsElasticBeanstalkEnvironmentOptionSetting() : 
-    m_namespaceHasBeenSet(false),
-    m_optionNameHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AwsElasticBeanstalkEnvironmentOptionSetting::AwsElasticBeanstalkEnvironmentOptionSetting(JsonView jsonValue)
-  : AwsElasticBeanstalkEnvironmentOptionSetting()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AwsElasticBeanstalkEnvironmentOptionSetting& AwsElasticBeanstalkEnvironmentOptio
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptionName"))
   {
     m_optionName = jsonValue.GetString("OptionName");
-
     m_optionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceName"))
   {
     m_resourceName = jsonValue.GetString("ResourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

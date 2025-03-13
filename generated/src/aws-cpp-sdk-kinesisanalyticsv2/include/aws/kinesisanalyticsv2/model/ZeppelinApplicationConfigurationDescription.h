@@ -36,7 +36,7 @@ namespace Model
   class ZeppelinApplicationConfigurationDescription
   {
   public:
-    AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfigurationDescription() = default;
     AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>The monitoring configuration of a Managed Service for Apache Flink Studio
      * notebook.</p>
      */
-    inline const ZeppelinMonitoringConfigurationDescription& GetMonitoringConfigurationDescription() const{ return m_monitoringConfigurationDescription; }
+    inline const ZeppelinMonitoringConfigurationDescription& GetMonitoringConfigurationDescription() const { return m_monitoringConfigurationDescription; }
     inline bool MonitoringConfigurationDescriptionHasBeenSet() const { return m_monitoringConfigurationDescriptionHasBeenSet; }
-    inline void SetMonitoringConfigurationDescription(const ZeppelinMonitoringConfigurationDescription& value) { m_monitoringConfigurationDescriptionHasBeenSet = true; m_monitoringConfigurationDescription = value; }
-    inline void SetMonitoringConfigurationDescription(ZeppelinMonitoringConfigurationDescription&& value) { m_monitoringConfigurationDescriptionHasBeenSet = true; m_monitoringConfigurationDescription = std::move(value); }
-    inline ZeppelinApplicationConfigurationDescription& WithMonitoringConfigurationDescription(const ZeppelinMonitoringConfigurationDescription& value) { SetMonitoringConfigurationDescription(value); return *this;}
-    inline ZeppelinApplicationConfigurationDescription& WithMonitoringConfigurationDescription(ZeppelinMonitoringConfigurationDescription&& value) { SetMonitoringConfigurationDescription(std::move(value)); return *this;}
+    template<typename MonitoringConfigurationDescriptionT = ZeppelinMonitoringConfigurationDescription>
+    void SetMonitoringConfigurationDescription(MonitoringConfigurationDescriptionT&& value) { m_monitoringConfigurationDescriptionHasBeenSet = true; m_monitoringConfigurationDescription = std::forward<MonitoringConfigurationDescriptionT>(value); }
+    template<typename MonitoringConfigurationDescriptionT = ZeppelinMonitoringConfigurationDescription>
+    ZeppelinApplicationConfigurationDescription& WithMonitoringConfigurationDescription(MonitoringConfigurationDescriptionT&& value) { SetMonitoringConfigurationDescription(std::forward<MonitoringConfigurationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * <p>The Amazon Glue Data Catalog that is associated with the Managed Service for
      * Apache Flink Studio notebook.</p>
      */
-    inline const CatalogConfigurationDescription& GetCatalogConfigurationDescription() const{ return m_catalogConfigurationDescription; }
+    inline const CatalogConfigurationDescription& GetCatalogConfigurationDescription() const { return m_catalogConfigurationDescription; }
     inline bool CatalogConfigurationDescriptionHasBeenSet() const { return m_catalogConfigurationDescriptionHasBeenSet; }
-    inline void SetCatalogConfigurationDescription(const CatalogConfigurationDescription& value) { m_catalogConfigurationDescriptionHasBeenSet = true; m_catalogConfigurationDescription = value; }
-    inline void SetCatalogConfigurationDescription(CatalogConfigurationDescription&& value) { m_catalogConfigurationDescriptionHasBeenSet = true; m_catalogConfigurationDescription = std::move(value); }
-    inline ZeppelinApplicationConfigurationDescription& WithCatalogConfigurationDescription(const CatalogConfigurationDescription& value) { SetCatalogConfigurationDescription(value); return *this;}
-    inline ZeppelinApplicationConfigurationDescription& WithCatalogConfigurationDescription(CatalogConfigurationDescription&& value) { SetCatalogConfigurationDescription(std::move(value)); return *this;}
+    template<typename CatalogConfigurationDescriptionT = CatalogConfigurationDescription>
+    void SetCatalogConfigurationDescription(CatalogConfigurationDescriptionT&& value) { m_catalogConfigurationDescriptionHasBeenSet = true; m_catalogConfigurationDescription = std::forward<CatalogConfigurationDescriptionT>(value); }
+    template<typename CatalogConfigurationDescriptionT = CatalogConfigurationDescription>
+    ZeppelinApplicationConfigurationDescription& WithCatalogConfigurationDescription(CatalogConfigurationDescriptionT&& value) { SetCatalogConfigurationDescription(std::forward<CatalogConfigurationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,26 +73,26 @@ namespace Model
      * <p>The parameters required to deploy a Managed Service for Apache Flink Studio
      * notebook as an application with durable state.</p>
      */
-    inline const DeployAsApplicationConfigurationDescription& GetDeployAsApplicationConfigurationDescription() const{ return m_deployAsApplicationConfigurationDescription; }
+    inline const DeployAsApplicationConfigurationDescription& GetDeployAsApplicationConfigurationDescription() const { return m_deployAsApplicationConfigurationDescription; }
     inline bool DeployAsApplicationConfigurationDescriptionHasBeenSet() const { return m_deployAsApplicationConfigurationDescriptionHasBeenSet; }
-    inline void SetDeployAsApplicationConfigurationDescription(const DeployAsApplicationConfigurationDescription& value) { m_deployAsApplicationConfigurationDescriptionHasBeenSet = true; m_deployAsApplicationConfigurationDescription = value; }
-    inline void SetDeployAsApplicationConfigurationDescription(DeployAsApplicationConfigurationDescription&& value) { m_deployAsApplicationConfigurationDescriptionHasBeenSet = true; m_deployAsApplicationConfigurationDescription = std::move(value); }
-    inline ZeppelinApplicationConfigurationDescription& WithDeployAsApplicationConfigurationDescription(const DeployAsApplicationConfigurationDescription& value) { SetDeployAsApplicationConfigurationDescription(value); return *this;}
-    inline ZeppelinApplicationConfigurationDescription& WithDeployAsApplicationConfigurationDescription(DeployAsApplicationConfigurationDescription&& value) { SetDeployAsApplicationConfigurationDescription(std::move(value)); return *this;}
+    template<typename DeployAsApplicationConfigurationDescriptionT = DeployAsApplicationConfigurationDescription>
+    void SetDeployAsApplicationConfigurationDescription(DeployAsApplicationConfigurationDescriptionT&& value) { m_deployAsApplicationConfigurationDescriptionHasBeenSet = true; m_deployAsApplicationConfigurationDescription = std::forward<DeployAsApplicationConfigurationDescriptionT>(value); }
+    template<typename DeployAsApplicationConfigurationDescriptionT = DeployAsApplicationConfigurationDescription>
+    ZeppelinApplicationConfigurationDescription& WithDeployAsApplicationConfigurationDescription(DeployAsApplicationConfigurationDescriptionT&& value) { SetDeployAsApplicationConfigurationDescription(std::forward<DeployAsApplicationConfigurationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
      */
-    inline const Aws::Vector<CustomArtifactConfigurationDescription>& GetCustomArtifactsConfigurationDescription() const{ return m_customArtifactsConfigurationDescription; }
+    inline const Aws::Vector<CustomArtifactConfigurationDescription>& GetCustomArtifactsConfigurationDescription() const { return m_customArtifactsConfigurationDescription; }
     inline bool CustomArtifactsConfigurationDescriptionHasBeenSet() const { return m_customArtifactsConfigurationDescriptionHasBeenSet; }
-    inline void SetCustomArtifactsConfigurationDescription(const Aws::Vector<CustomArtifactConfigurationDescription>& value) { m_customArtifactsConfigurationDescriptionHasBeenSet = true; m_customArtifactsConfigurationDescription = value; }
-    inline void SetCustomArtifactsConfigurationDescription(Aws::Vector<CustomArtifactConfigurationDescription>&& value) { m_customArtifactsConfigurationDescriptionHasBeenSet = true; m_customArtifactsConfigurationDescription = std::move(value); }
-    inline ZeppelinApplicationConfigurationDescription& WithCustomArtifactsConfigurationDescription(const Aws::Vector<CustomArtifactConfigurationDescription>& value) { SetCustomArtifactsConfigurationDescription(value); return *this;}
-    inline ZeppelinApplicationConfigurationDescription& WithCustomArtifactsConfigurationDescription(Aws::Vector<CustomArtifactConfigurationDescription>&& value) { SetCustomArtifactsConfigurationDescription(std::move(value)); return *this;}
-    inline ZeppelinApplicationConfigurationDescription& AddCustomArtifactsConfigurationDescription(const CustomArtifactConfigurationDescription& value) { m_customArtifactsConfigurationDescriptionHasBeenSet = true; m_customArtifactsConfigurationDescription.push_back(value); return *this; }
-    inline ZeppelinApplicationConfigurationDescription& AddCustomArtifactsConfigurationDescription(CustomArtifactConfigurationDescription&& value) { m_customArtifactsConfigurationDescriptionHasBeenSet = true; m_customArtifactsConfigurationDescription.push_back(std::move(value)); return *this; }
+    template<typename CustomArtifactsConfigurationDescriptionT = Aws::Vector<CustomArtifactConfigurationDescription>>
+    void SetCustomArtifactsConfigurationDescription(CustomArtifactsConfigurationDescriptionT&& value) { m_customArtifactsConfigurationDescriptionHasBeenSet = true; m_customArtifactsConfigurationDescription = std::forward<CustomArtifactsConfigurationDescriptionT>(value); }
+    template<typename CustomArtifactsConfigurationDescriptionT = Aws::Vector<CustomArtifactConfigurationDescription>>
+    ZeppelinApplicationConfigurationDescription& WithCustomArtifactsConfigurationDescription(CustomArtifactsConfigurationDescriptionT&& value) { SetCustomArtifactsConfigurationDescription(std::forward<CustomArtifactsConfigurationDescriptionT>(value)); return *this;}
+    template<typename CustomArtifactsConfigurationDescriptionT = CustomArtifactConfigurationDescription>
+    ZeppelinApplicationConfigurationDescription& AddCustomArtifactsConfigurationDescription(CustomArtifactsConfigurationDescriptionT&& value) { m_customArtifactsConfigurationDescriptionHasBeenSet = true; m_customArtifactsConfigurationDescription.emplace_back(std::forward<CustomArtifactsConfigurationDescriptionT>(value)); return *this; }
     ///@}
   private:
 

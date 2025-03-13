@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-TaggedResource::TaggedResource() : 
-    m_tagHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 TaggedResource::TaggedResource(const XmlNode& xmlNode)
-  : TaggedResource()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ TaggedResource& TaggedResource::operator =(const XmlNode& xmlNode)
     {
       m_tag = tagNode;
       m_tagHasBeenSet = true;
+       m_tagHasBeenSet = true;
     }
     XmlNode resourceNameNode = resultNode.FirstChild("ResourceName");
     if(!resourceNameNode.IsNull())
     {
       m_resourceName = Aws::Utils::Xml::DecodeEscapedXmlText(resourceNameNode.GetText());
       m_resourceNameHasBeenSet = true;
+       m_resourceNameHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
   }
 

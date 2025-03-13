@@ -30,7 +30,7 @@ namespace Model
   class FastLaunchSnapshotConfigurationRequest
   {
   public:
-    AWS_EC2_API FastLaunchSnapshotConfigurationRequest();
+    AWS_EC2_API FastLaunchSnapshotConfigurationRequest() = default;
     AWS_EC2_API FastLaunchSnapshotConfigurationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FastLaunchSnapshotConfigurationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,14 @@ namespace Model
      * <p>The number of pre-provisioned snapshots to keep on hand for a Windows fast
      * launch enabled AMI.</p>
      */
-    inline int GetTargetResourceCount() const{ return m_targetResourceCount; }
+    inline int GetTargetResourceCount() const { return m_targetResourceCount; }
     inline bool TargetResourceCountHasBeenSet() const { return m_targetResourceCountHasBeenSet; }
     inline void SetTargetResourceCount(int value) { m_targetResourceCountHasBeenSet = true; m_targetResourceCount = value; }
     inline FastLaunchSnapshotConfigurationRequest& WithTargetResourceCount(int value) { SetTargetResourceCount(value); return *this;}
     ///@}
   private:
 
-    int m_targetResourceCount;
+    int m_targetResourceCount{0};
     bool m_targetResourceCountHasBeenSet = false;
   };
 

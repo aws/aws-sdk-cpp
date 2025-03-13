@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails(JsonView jsonValue)
-  : AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails& AwsEc2ClientVpnEndpoin
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class ChangedBlock
   {
   public:
-    AWS_EBS_API ChangedBlock();
+    AWS_EBS_API ChangedBlock() = default;
     AWS_EBS_API ChangedBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_EBS_API ChangedBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EBS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The block index.</p>
      */
-    inline int GetBlockIndex() const{ return m_blockIndex; }
+    inline int GetBlockIndex() const { return m_blockIndex; }
     inline bool BlockIndexHasBeenSet() const { return m_blockIndexHasBeenSet; }
     inline void SetBlockIndex(int value) { m_blockIndexHasBeenSet = true; m_blockIndex = value; }
     inline ChangedBlock& WithBlockIndex(int value) { SetBlockIndex(value); return *this;}
@@ -56,14 +56,12 @@ namespace Model
      * if the first snapshot does not have the changed block that is on the second
      * snapshot.</p>
      */
-    inline const Aws::String& GetFirstBlockToken() const{ return m_firstBlockToken; }
+    inline const Aws::String& GetFirstBlockToken() const { return m_firstBlockToken; }
     inline bool FirstBlockTokenHasBeenSet() const { return m_firstBlockTokenHasBeenSet; }
-    inline void SetFirstBlockToken(const Aws::String& value) { m_firstBlockTokenHasBeenSet = true; m_firstBlockToken = value; }
-    inline void SetFirstBlockToken(Aws::String&& value) { m_firstBlockTokenHasBeenSet = true; m_firstBlockToken = std::move(value); }
-    inline void SetFirstBlockToken(const char* value) { m_firstBlockTokenHasBeenSet = true; m_firstBlockToken.assign(value); }
-    inline ChangedBlock& WithFirstBlockToken(const Aws::String& value) { SetFirstBlockToken(value); return *this;}
-    inline ChangedBlock& WithFirstBlockToken(Aws::String&& value) { SetFirstBlockToken(std::move(value)); return *this;}
-    inline ChangedBlock& WithFirstBlockToken(const char* value) { SetFirstBlockToken(value); return *this;}
+    template<typename FirstBlockTokenT = Aws::String>
+    void SetFirstBlockToken(FirstBlockTokenT&& value) { m_firstBlockTokenHasBeenSet = true; m_firstBlockToken = std::forward<FirstBlockTokenT>(value); }
+    template<typename FirstBlockTokenT = Aws::String>
+    ChangedBlock& WithFirstBlockToken(FirstBlockTokenT&& value) { SetFirstBlockToken(std::forward<FirstBlockTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,18 +69,16 @@ namespace Model
      * <p>The block token for the block index of the <code>SecondSnapshotId</code>
      * specified in the <code>ListChangedBlocks</code> operation.</p>
      */
-    inline const Aws::String& GetSecondBlockToken() const{ return m_secondBlockToken; }
+    inline const Aws::String& GetSecondBlockToken() const { return m_secondBlockToken; }
     inline bool SecondBlockTokenHasBeenSet() const { return m_secondBlockTokenHasBeenSet; }
-    inline void SetSecondBlockToken(const Aws::String& value) { m_secondBlockTokenHasBeenSet = true; m_secondBlockToken = value; }
-    inline void SetSecondBlockToken(Aws::String&& value) { m_secondBlockTokenHasBeenSet = true; m_secondBlockToken = std::move(value); }
-    inline void SetSecondBlockToken(const char* value) { m_secondBlockTokenHasBeenSet = true; m_secondBlockToken.assign(value); }
-    inline ChangedBlock& WithSecondBlockToken(const Aws::String& value) { SetSecondBlockToken(value); return *this;}
-    inline ChangedBlock& WithSecondBlockToken(Aws::String&& value) { SetSecondBlockToken(std::move(value)); return *this;}
-    inline ChangedBlock& WithSecondBlockToken(const char* value) { SetSecondBlockToken(value); return *this;}
+    template<typename SecondBlockTokenT = Aws::String>
+    void SetSecondBlockToken(SecondBlockTokenT&& value) { m_secondBlockTokenHasBeenSet = true; m_secondBlockToken = std::forward<SecondBlockTokenT>(value); }
+    template<typename SecondBlockTokenT = Aws::String>
+    ChangedBlock& WithSecondBlockToken(SecondBlockTokenT&& value) { SetSecondBlockToken(std::forward<SecondBlockTokenT>(value)); return *this;}
     ///@}
   private:
 
-    int m_blockIndex;
+    int m_blockIndex{0};
     bool m_blockIndexHasBeenSet = false;
 
     Aws::String m_firstBlockToken;

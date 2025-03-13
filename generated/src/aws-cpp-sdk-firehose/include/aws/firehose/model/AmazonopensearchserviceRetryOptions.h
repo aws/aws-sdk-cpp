@@ -30,7 +30,7 @@ namespace Model
   class AmazonopensearchserviceRetryOptions
   {
   public:
-    AWS_FIREHOSE_API AmazonopensearchserviceRetryOptions();
+    AWS_FIREHOSE_API AmazonopensearchserviceRetryOptions() = default;
     AWS_FIREHOSE_API AmazonopensearchserviceRetryOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API AmazonopensearchserviceRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * Amazon S3. Default value is 300 seconds (5 minutes). A value of 0 (zero) results
      * in no retries. </p>
      */
-    inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline AmazonopensearchserviceRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_durationInSeconds;
+    int m_durationInSeconds{0};
     bool m_durationInSecondsHasBeenSet = false;
   };
 

@@ -12,10 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOrganizationConfigurationRequest::DescribeOrganizationConfigurationRequest()
-{
-}
-
 Aws::String DescribeOrganizationConfigurationRequest::SerializePayload() const
 {
   return {};

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcknowledgeJobResult::AcknowledgeJobResult() : 
-    m_status(JobStatus::NOT_SET)
-{
-}
-
 AcknowledgeJobResult::AcknowledgeJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : AcknowledgeJobResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ AcknowledgeJobResult& AcknowledgeJobResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

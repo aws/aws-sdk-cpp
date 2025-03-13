@@ -32,7 +32,7 @@ namespace Model
   class TransformS3DataSource
   {
   public:
-    AWS_SAGEMAKER_API TransformS3DataSource();
+    AWS_SAGEMAKER_API TransformS3DataSource() = default;
     AWS_SAGEMAKER_API TransformS3DataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TransformS3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * <code>S3Prefix</code> </p> <p>The following value is not compatible:
      * <code>AugmentedManifestFile</code> </p>
      */
-    inline const S3DataType& GetS3DataType() const{ return m_s3DataType; }
+    inline S3DataType GetS3DataType() const { return m_s3DataType; }
     inline bool S3DataTypeHasBeenSet() const { return m_s3DataTypeHasBeenSet; }
-    inline void SetS3DataType(const S3DataType& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
-    inline void SetS3DataType(S3DataType&& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = std::move(value); }
-    inline TransformS3DataSource& WithS3DataType(const S3DataType& value) { SetS3DataType(value); return *this;}
-    inline TransformS3DataSource& WithS3DataType(S3DataType&& value) { SetS3DataType(std::move(value)); return *this;}
+    inline void SetS3DataType(S3DataType value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
+    inline TransformS3DataSource& WithS3DataType(S3DataType value) { SetS3DataType(value); return *this;}
     ///@}
 
     ///@{
@@ -79,18 +77,16 @@ namespace Model
      * <code>S3Uris</code> points to must be readable by the IAM role that Amazon
      * SageMaker uses to perform tasks on your behalf.</p> </li> </ul>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline TransformS3DataSource& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline TransformS3DataSource& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline TransformS3DataSource& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    TransformS3DataSource& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
   private:
 
-    S3DataType m_s3DataType;
+    S3DataType m_s3DataType{S3DataType::NOT_SET};
     bool m_s3DataTypeHasBeenSet = false;
 
     Aws::String m_s3Uri;

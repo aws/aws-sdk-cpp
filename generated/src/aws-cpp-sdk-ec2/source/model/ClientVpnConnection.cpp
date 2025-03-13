@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClientVpnConnection::ClientVpnConnection() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_connectionEstablishedTimeHasBeenSet(false),
-    m_ingressBytesHasBeenSet(false),
-    m_egressBytesHasBeenSet(false),
-    m_ingressPacketsHasBeenSet(false),
-    m_egressPacketsHasBeenSet(false),
-    m_clientIpHasBeenSet(false),
-    m_commonNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_connectionEndTimeHasBeenSet(false),
-    m_postureComplianceStatusesHasBeenSet(false)
-{
-}
-
 ClientVpnConnection::ClientVpnConnection(const XmlNode& xmlNode)
-  : ClientVpnConnection()
 {
   *this = xmlNode;
 }
@@ -55,90 +36,104 @@ ClientVpnConnection& ClientVpnConnection::operator =(const XmlNode& xmlNode)
     {
       m_clientVpnEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(clientVpnEndpointIdNode.GetText());
       m_clientVpnEndpointIdHasBeenSet = true;
+       m_clientVpnEndpointIdHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())
     {
       m_timestamp = Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText());
       m_timestampHasBeenSet = true;
+       m_timestampHasBeenSet = true;
     }
     XmlNode connectionIdNode = resultNode.FirstChild("connectionId");
     if(!connectionIdNode.IsNull())
     {
       m_connectionId = Aws::Utils::Xml::DecodeEscapedXmlText(connectionIdNode.GetText());
       m_connectionIdHasBeenSet = true;
+       m_connectionIdHasBeenSet = true;
     }
     XmlNode usernameNode = resultNode.FirstChild("username");
     if(!usernameNode.IsNull())
     {
       m_username = Aws::Utils::Xml::DecodeEscapedXmlText(usernameNode.GetText());
       m_usernameHasBeenSet = true;
+       m_usernameHasBeenSet = true;
     }
     XmlNode connectionEstablishedTimeNode = resultNode.FirstChild("connectionEstablishedTime");
     if(!connectionEstablishedTimeNode.IsNull())
     {
       m_connectionEstablishedTime = Aws::Utils::Xml::DecodeEscapedXmlText(connectionEstablishedTimeNode.GetText());
       m_connectionEstablishedTimeHasBeenSet = true;
+       m_connectionEstablishedTimeHasBeenSet = true;
     }
     XmlNode ingressBytesNode = resultNode.FirstChild("ingressBytes");
     if(!ingressBytesNode.IsNull())
     {
       m_ingressBytes = Aws::Utils::Xml::DecodeEscapedXmlText(ingressBytesNode.GetText());
       m_ingressBytesHasBeenSet = true;
+       m_ingressBytesHasBeenSet = true;
     }
     XmlNode egressBytesNode = resultNode.FirstChild("egressBytes");
     if(!egressBytesNode.IsNull())
     {
       m_egressBytes = Aws::Utils::Xml::DecodeEscapedXmlText(egressBytesNode.GetText());
       m_egressBytesHasBeenSet = true;
+       m_egressBytesHasBeenSet = true;
     }
     XmlNode ingressPacketsNode = resultNode.FirstChild("ingressPackets");
     if(!ingressPacketsNode.IsNull())
     {
       m_ingressPackets = Aws::Utils::Xml::DecodeEscapedXmlText(ingressPacketsNode.GetText());
       m_ingressPacketsHasBeenSet = true;
+       m_ingressPacketsHasBeenSet = true;
     }
     XmlNode egressPacketsNode = resultNode.FirstChild("egressPackets");
     if(!egressPacketsNode.IsNull())
     {
       m_egressPackets = Aws::Utils::Xml::DecodeEscapedXmlText(egressPacketsNode.GetText());
       m_egressPacketsHasBeenSet = true;
+       m_egressPacketsHasBeenSet = true;
     }
     XmlNode clientIpNode = resultNode.FirstChild("clientIp");
     if(!clientIpNode.IsNull())
     {
       m_clientIp = Aws::Utils::Xml::DecodeEscapedXmlText(clientIpNode.GetText());
       m_clientIpHasBeenSet = true;
+       m_clientIpHasBeenSet = true;
     }
     XmlNode commonNameNode = resultNode.FirstChild("commonName");
     if(!commonNameNode.IsNull())
     {
       m_commonName = Aws::Utils::Xml::DecodeEscapedXmlText(commonNameNode.GetText());
       m_commonNameHasBeenSet = true;
+       m_commonNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode connectionEndTimeNode = resultNode.FirstChild("connectionEndTime");
     if(!connectionEndTimeNode.IsNull())
     {
       m_connectionEndTime = Aws::Utils::Xml::DecodeEscapedXmlText(connectionEndTimeNode.GetText());
       m_connectionEndTimeHasBeenSet = true;
+       m_connectionEndTimeHasBeenSet = true;
     }
     XmlNode postureComplianceStatusesNode = resultNode.FirstChild("postureComplianceStatusSet");
     if(!postureComplianceStatusesNode.IsNull())
     {
       XmlNode postureComplianceStatusesMember = postureComplianceStatusesNode.FirstChild("item");
+      m_postureComplianceStatusesHasBeenSet = !postureComplianceStatusesMember.IsNull();
       while(!postureComplianceStatusesMember.IsNull())
       {
         m_postureComplianceStatuses.push_back(postureComplianceStatusesMember.GetText());
         postureComplianceStatusesMember = postureComplianceStatusesMember.NextNode("item");
       }
 
-      m_postureComplianceStatusesHasBeenSet = true;
+       m_postureComplianceStatusesHasBeenSet = true;
     }
   }
 

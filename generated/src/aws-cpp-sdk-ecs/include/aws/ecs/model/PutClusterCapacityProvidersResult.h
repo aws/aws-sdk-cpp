@@ -28,7 +28,7 @@ namespace Model
   class PutClusterCapacityProvidersResult
   {
   public:
-    AWS_ECS_API PutClusterCapacityProvidersResult();
+    AWS_ECS_API PutClusterCapacityProvidersResult() = default;
     AWS_ECS_API PutClusterCapacityProvidersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API PutClusterCapacityProvidersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the cluster.</p>
      */
-    inline const Cluster& GetCluster() const{ return m_cluster; }
-    inline void SetCluster(const Cluster& value) { m_cluster = value; }
-    inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
-    inline PutClusterCapacityProvidersResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
-    inline PutClusterCapacityProvidersResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
+    inline const Cluster& GetCluster() const { return m_cluster; }
+    template<typename ClusterT = Cluster>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Cluster>
+    PutClusterCapacityProvidersResult& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutClusterCapacityProvidersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutClusterCapacityProvidersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutClusterCapacityProvidersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutClusterCapacityProvidersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Cluster m_cluster;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

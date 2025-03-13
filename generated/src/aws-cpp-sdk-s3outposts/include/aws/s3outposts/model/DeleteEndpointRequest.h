@@ -25,7 +25,7 @@ namespace Model
   class DeleteEndpointRequest : public S3OutpostsRequest
   {
   public:
-    AWS_S3OUTPOSTS_API DeleteEndpointRequest();
+    AWS_S3OUTPOSTS_API DeleteEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the endpoint.</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
-    inline DeleteEndpointRequest& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline DeleteEndpointRequest& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline DeleteEndpointRequest& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    DeleteEndpointRequest& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Outposts. </p>
      */
-    inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
+    inline const Aws::String& GetOutpostId() const { return m_outpostId; }
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
-    inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
-    inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
-    inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
-    inline DeleteEndpointRequest& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
-    inline DeleteEndpointRequest& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
-    inline DeleteEndpointRequest& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
+    template<typename OutpostIdT = Aws::String>
+    void SetOutpostId(OutpostIdT&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::forward<OutpostIdT>(value); }
+    template<typename OutpostIdT = Aws::String>
+    DeleteEndpointRequest& WithOutpostId(OutpostIdT&& value) { SetOutpostId(std::forward<OutpostIdT>(value)); return *this;}
     ///@}
   private:
 

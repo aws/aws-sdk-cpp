@@ -25,7 +25,7 @@ namespace Model
   class DescribeAssetRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API DescribeAssetRequest();
+    AWS_IOTSITEWISE_API DescribeAssetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,21 +46,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
      * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-    inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-    inline DescribeAssetRequest& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline DescribeAssetRequest& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline DescribeAssetRequest& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    DescribeAssetRequest& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Whether or not to exclude asset properties from the response. </p>
      */
-    inline bool GetExcludeProperties() const{ return m_excludeProperties; }
+    inline bool GetExcludeProperties() const { return m_excludeProperties; }
     inline bool ExcludePropertiesHasBeenSet() const { return m_excludePropertiesHasBeenSet; }
     inline void SetExcludeProperties(bool value) { m_excludePropertiesHasBeenSet = true; m_excludeProperties = value; }
     inline DescribeAssetRequest& WithExcludeProperties(bool value) { SetExcludeProperties(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_assetId;
     bool m_assetIdHasBeenSet = false;
 
-    bool m_excludeProperties;
+    bool m_excludeProperties{false};
     bool m_excludePropertiesHasBeenSet = false;
   };
 

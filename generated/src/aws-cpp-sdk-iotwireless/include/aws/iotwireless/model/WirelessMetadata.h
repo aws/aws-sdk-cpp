@@ -32,7 +32,7 @@ namespace Model
   class WirelessMetadata
   {
   public:
-    AWS_IOTWIRELESS_API WirelessMetadata();
+    AWS_IOTWIRELESS_API WirelessMetadata() = default;
     AWS_IOTWIRELESS_API WirelessMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API WirelessMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>LoRaWAN device info.</p>
      */
-    inline const LoRaWANSendDataToDevice& GetLoRaWAN() const{ return m_loRaWAN; }
+    inline const LoRaWANSendDataToDevice& GetLoRaWAN() const { return m_loRaWAN; }
     inline bool LoRaWANHasBeenSet() const { return m_loRaWANHasBeenSet; }
-    inline void SetLoRaWAN(const LoRaWANSendDataToDevice& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = value; }
-    inline void SetLoRaWAN(LoRaWANSendDataToDevice&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::move(value); }
-    inline WirelessMetadata& WithLoRaWAN(const LoRaWANSendDataToDevice& value) { SetLoRaWAN(value); return *this;}
-    inline WirelessMetadata& WithLoRaWAN(LoRaWANSendDataToDevice&& value) { SetLoRaWAN(std::move(value)); return *this;}
+    template<typename LoRaWANT = LoRaWANSendDataToDevice>
+    void SetLoRaWAN(LoRaWANT&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::forward<LoRaWANT>(value); }
+    template<typename LoRaWANT = LoRaWANSendDataToDevice>
+    WirelessMetadata& WithLoRaWAN(LoRaWANT&& value) { SetLoRaWAN(std::forward<LoRaWANT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Sidewalk account credentials.</p>
      */
-    inline const SidewalkSendDataToDevice& GetSidewalk() const{ return m_sidewalk; }
+    inline const SidewalkSendDataToDevice& GetSidewalk() const { return m_sidewalk; }
     inline bool SidewalkHasBeenSet() const { return m_sidewalkHasBeenSet; }
-    inline void SetSidewalk(const SidewalkSendDataToDevice& value) { m_sidewalkHasBeenSet = true; m_sidewalk = value; }
-    inline void SetSidewalk(SidewalkSendDataToDevice&& value) { m_sidewalkHasBeenSet = true; m_sidewalk = std::move(value); }
-    inline WirelessMetadata& WithSidewalk(const SidewalkSendDataToDevice& value) { SetSidewalk(value); return *this;}
-    inline WirelessMetadata& WithSidewalk(SidewalkSendDataToDevice&& value) { SetSidewalk(std::move(value)); return *this;}
+    template<typename SidewalkT = SidewalkSendDataToDevice>
+    void SetSidewalk(SidewalkT&& value) { m_sidewalkHasBeenSet = true; m_sidewalk = std::forward<SidewalkT>(value); }
+    template<typename SidewalkT = SidewalkSendDataToDevice>
+    WirelessMetadata& WithSidewalk(SidewalkT&& value) { SetSidewalk(std::forward<SidewalkT>(value)); return *this;}
     ///@}
   private:
 

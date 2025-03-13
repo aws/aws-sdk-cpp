@@ -33,7 +33,7 @@ namespace Model
   class GoogleAnalyticsMetadata
   {
   public:
-    AWS_APPFLOW_API GoogleAnalyticsMetadata();
+    AWS_APPFLOW_API GoogleAnalyticsMetadata() = default;
     AWS_APPFLOW_API GoogleAnalyticsMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API GoogleAnalyticsMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p> The desired authorization scope for the Google Analytics account. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetOAuthScopes() const{ return m_oAuthScopes; }
+    inline const Aws::Vector<Aws::String>& GetOAuthScopes() const { return m_oAuthScopes; }
     inline bool OAuthScopesHasBeenSet() const { return m_oAuthScopesHasBeenSet; }
-    inline void SetOAuthScopes(const Aws::Vector<Aws::String>& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = value; }
-    inline void SetOAuthScopes(Aws::Vector<Aws::String>&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = std::move(value); }
-    inline GoogleAnalyticsMetadata& WithOAuthScopes(const Aws::Vector<Aws::String>& value) { SetOAuthScopes(value); return *this;}
-    inline GoogleAnalyticsMetadata& WithOAuthScopes(Aws::Vector<Aws::String>&& value) { SetOAuthScopes(std::move(value)); return *this;}
-    inline GoogleAnalyticsMetadata& AddOAuthScopes(const Aws::String& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(value); return *this; }
-    inline GoogleAnalyticsMetadata& AddOAuthScopes(Aws::String&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(std::move(value)); return *this; }
-    inline GoogleAnalyticsMetadata& AddOAuthScopes(const char* value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(value); return *this; }
+    template<typename OAuthScopesT = Aws::Vector<Aws::String>>
+    void SetOAuthScopes(OAuthScopesT&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = std::forward<OAuthScopesT>(value); }
+    template<typename OAuthScopesT = Aws::Vector<Aws::String>>
+    GoogleAnalyticsMetadata& WithOAuthScopes(OAuthScopesT&& value) { SetOAuthScopes(std::forward<OAuthScopesT>(value)); return *this;}
+    template<typename OAuthScopesT = Aws::String>
+    GoogleAnalyticsMetadata& AddOAuthScopes(OAuthScopesT&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.emplace_back(std::forward<OAuthScopesT>(value)); return *this; }
     ///@}
   private:
 

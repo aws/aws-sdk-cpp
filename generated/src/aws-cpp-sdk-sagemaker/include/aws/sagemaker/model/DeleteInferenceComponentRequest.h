@@ -21,7 +21,7 @@ namespace Model
   class DeleteInferenceComponentRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeleteInferenceComponentRequest();
+    AWS_SAGEMAKER_API DeleteInferenceComponentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the inference component to delete.</p>
      */
-    inline const Aws::String& GetInferenceComponentName() const{ return m_inferenceComponentName; }
+    inline const Aws::String& GetInferenceComponentName() const { return m_inferenceComponentName; }
     inline bool InferenceComponentNameHasBeenSet() const { return m_inferenceComponentNameHasBeenSet; }
-    inline void SetInferenceComponentName(const Aws::String& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = value; }
-    inline void SetInferenceComponentName(Aws::String&& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = std::move(value); }
-    inline void SetInferenceComponentName(const char* value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName.assign(value); }
-    inline DeleteInferenceComponentRequest& WithInferenceComponentName(const Aws::String& value) { SetInferenceComponentName(value); return *this;}
-    inline DeleteInferenceComponentRequest& WithInferenceComponentName(Aws::String&& value) { SetInferenceComponentName(std::move(value)); return *this;}
-    inline DeleteInferenceComponentRequest& WithInferenceComponentName(const char* value) { SetInferenceComponentName(value); return *this;}
+    template<typename InferenceComponentNameT = Aws::String>
+    void SetInferenceComponentName(InferenceComponentNameT&& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = std::forward<InferenceComponentNameT>(value); }
+    template<typename InferenceComponentNameT = Aws::String>
+    DeleteInferenceComponentRequest& WithInferenceComponentName(InferenceComponentNameT&& value) { SetInferenceComponentName(std::forward<InferenceComponentNameT>(value)); return *this;}
     ///@}
   private:
 

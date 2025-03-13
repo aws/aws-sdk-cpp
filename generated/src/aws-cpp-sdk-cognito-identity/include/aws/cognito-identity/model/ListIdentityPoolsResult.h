@@ -35,7 +35,7 @@ namespace Model
   class ListIdentityPoolsResult
   {
   public:
-    AWS_COGNITOIDENTITY_API ListIdentityPoolsResult();
+    AWS_COGNITOIDENTITY_API ListIdentityPoolsResult() = default;
     AWS_COGNITOIDENTITY_API ListIdentityPoolsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITY_API ListIdentityPoolsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,45 +44,44 @@ namespace Model
     /**
      * <p>The identity pools returned by the ListIdentityPools action.</p>
      */
-    inline const Aws::Vector<IdentityPoolShortDescription>& GetIdentityPools() const{ return m_identityPools; }
-    inline void SetIdentityPools(const Aws::Vector<IdentityPoolShortDescription>& value) { m_identityPools = value; }
-    inline void SetIdentityPools(Aws::Vector<IdentityPoolShortDescription>&& value) { m_identityPools = std::move(value); }
-    inline ListIdentityPoolsResult& WithIdentityPools(const Aws::Vector<IdentityPoolShortDescription>& value) { SetIdentityPools(value); return *this;}
-    inline ListIdentityPoolsResult& WithIdentityPools(Aws::Vector<IdentityPoolShortDescription>&& value) { SetIdentityPools(std::move(value)); return *this;}
-    inline ListIdentityPoolsResult& AddIdentityPools(const IdentityPoolShortDescription& value) { m_identityPools.push_back(value); return *this; }
-    inline ListIdentityPoolsResult& AddIdentityPools(IdentityPoolShortDescription&& value) { m_identityPools.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IdentityPoolShortDescription>& GetIdentityPools() const { return m_identityPools; }
+    template<typename IdentityPoolsT = Aws::Vector<IdentityPoolShortDescription>>
+    void SetIdentityPools(IdentityPoolsT&& value) { m_identityPoolsHasBeenSet = true; m_identityPools = std::forward<IdentityPoolsT>(value); }
+    template<typename IdentityPoolsT = Aws::Vector<IdentityPoolShortDescription>>
+    ListIdentityPoolsResult& WithIdentityPools(IdentityPoolsT&& value) { SetIdentityPools(std::forward<IdentityPoolsT>(value)); return *this;}
+    template<typename IdentityPoolsT = IdentityPoolShortDescription>
+    ListIdentityPoolsResult& AddIdentityPools(IdentityPoolsT&& value) { m_identityPoolsHasBeenSet = true; m_identityPools.emplace_back(std::forward<IdentityPoolsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListIdentityPoolsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIdentityPoolsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIdentityPoolsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIdentityPoolsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListIdentityPoolsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListIdentityPoolsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListIdentityPoolsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListIdentityPoolsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<IdentityPoolShortDescription> m_identityPools;
+    bool m_identityPoolsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTransitGatewayRouteTableAttachmentRequest::GetTransitGatewayRouteTableAttachmentRequest() : 
-    m_attachmentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetTransitGatewayRouteTableAttachmentRequest::SerializePayload() const
 {
   return {};

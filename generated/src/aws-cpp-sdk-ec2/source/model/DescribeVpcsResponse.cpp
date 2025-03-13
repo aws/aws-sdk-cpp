@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcsResponse::DescribeVpcsResponse()
-{
-}
-
 DescribeVpcsResponse::DescribeVpcsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DescribeVpcsResponse& DescribeVpcsResponse::operator =(const Aws::AmazonWebServi
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode vpcsNode = resultNode.FirstChild("vpcSet");
     if(!vpcsNode.IsNull())
     {
       XmlNode vpcsMember = vpcsNode.FirstChild("item");
+      m_vpcsHasBeenSet = !vpcsMember.IsNull();
       while(!vpcsMember.IsNull())
       {
         m_vpcs.push_back(vpcsMember);
@@ -61,6 +59,7 @@ DescribeVpcsResponse& DescribeVpcsResponse::operator =(const Aws::AmazonWebServi
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

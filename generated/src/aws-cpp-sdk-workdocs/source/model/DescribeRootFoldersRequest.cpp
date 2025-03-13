@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeRootFoldersRequest::DescribeRootFoldersRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRootFoldersRequest::SerializePayload() const
 {
   return {};

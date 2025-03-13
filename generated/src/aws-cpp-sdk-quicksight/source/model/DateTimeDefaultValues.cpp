@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DateTimeDefaultValues::DateTimeDefaultValues() : 
-    m_dynamicValueHasBeenSet(false),
-    m_staticValuesHasBeenSet(false),
-    m_rollingDateHasBeenSet(false)
-{
-}
-
 DateTimeDefaultValues::DateTimeDefaultValues(JsonView jsonValue)
-  : DateTimeDefaultValues()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DateTimeDefaultValues& DateTimeDefaultValues::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DynamicValue"))
   {
     m_dynamicValue = jsonValue.GetObject("DynamicValue");
-
     m_dynamicValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StaticValues"))
   {
     Aws::Utils::Array<JsonView> staticValuesJsonList = jsonValue.GetArray("StaticValues");
@@ -49,14 +39,11 @@ DateTimeDefaultValues& DateTimeDefaultValues::operator =(JsonView jsonValue)
     }
     m_staticValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RollingDate"))
   {
     m_rollingDate = jsonValue.GetObject("RollingDate");
-
     m_rollingDateHasBeenSet = true;
   }
-
   return *this;
 }
 

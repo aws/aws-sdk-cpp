@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSegmentRequest::DeleteSegmentRequest() : 
-    m_segmentHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSegmentRequest::SerializePayload() const
 {
   return {};

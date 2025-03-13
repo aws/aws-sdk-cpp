@@ -18,14 +18,7 @@ namespace FMS
 namespace Model
 {
 
-FMSPolicyUpdateFirewallCreationConfigAction::FMSPolicyUpdateFirewallCreationConfigAction() : 
-    m_descriptionHasBeenSet(false),
-    m_firewallCreationConfigHasBeenSet(false)
-{
-}
-
 FMSPolicyUpdateFirewallCreationConfigAction::FMSPolicyUpdateFirewallCreationConfigAction(JsonView jsonValue)
-  : FMSPolicyUpdateFirewallCreationConfigAction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FMSPolicyUpdateFirewallCreationConfigAction& FMSPolicyUpdateFirewallCreationConf
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallCreationConfig"))
   {
     m_firewallCreationConfig = jsonValue.GetString("FirewallCreationConfig");
-
     m_firewallCreationConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

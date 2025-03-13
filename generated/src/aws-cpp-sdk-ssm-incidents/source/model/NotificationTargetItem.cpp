@@ -18,13 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-NotificationTargetItem::NotificationTargetItem() : 
-    m_snsTopicArnHasBeenSet(false)
-{
-}
-
 NotificationTargetItem::NotificationTargetItem(JsonView jsonValue)
-  : NotificationTargetItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NotificationTargetItem& NotificationTargetItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("snsTopicArn"))
   {
     m_snsTopicArn = jsonValue.GetString("snsTopicArn");
-
     m_snsTopicArnHasBeenSet = true;
   }
-
   return *this;
 }
 

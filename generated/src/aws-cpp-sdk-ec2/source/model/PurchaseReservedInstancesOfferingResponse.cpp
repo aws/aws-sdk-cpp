@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PurchaseReservedInstancesOfferingResponse::PurchaseReservedInstancesOfferingResponse()
-{
-}
-
 PurchaseReservedInstancesOfferingResponse::PurchaseReservedInstancesOfferingResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ PurchaseReservedInstancesOfferingResponse& PurchaseReservedInstancesOfferingResp
     if(!reservedInstancesIdNode.IsNull())
     {
       m_reservedInstancesId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesIdNode.GetText());
+      m_reservedInstancesIdHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ PurchaseReservedInstancesOfferingResponse& PurchaseReservedInstancesOfferingResp
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::PurchaseReservedInstancesOfferingResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

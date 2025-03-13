@@ -18,16 +18,7 @@ namespace SSM
 namespace Model
 {
 
-InstanceAssociation::InstanceAssociation() : 
-    m_associationIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_associationVersionHasBeenSet(false)
-{
-}
-
 InstanceAssociation::InstanceAssociation(JsonView jsonValue)
-  : InstanceAssociation()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ InstanceAssociation& InstanceAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetString("AssociationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationVersion"))
   {
     m_associationVersion = jsonValue.GetString("AssociationVersion");
-
     m_associationVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,23 +18,7 @@ namespace MQ
 namespace Model
 {
 
-BrokerSummary::BrokerSummary() : 
-    m_brokerArnHasBeenSet(false),
-    m_brokerIdHasBeenSet(false),
-    m_brokerNameHasBeenSet(false),
-    m_brokerState(BrokerState::NOT_SET),
-    m_brokerStateHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_deploymentMode(DeploymentMode::NOT_SET),
-    m_deploymentModeHasBeenSet(false),
-    m_engineType(EngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false),
-    m_hostInstanceTypeHasBeenSet(false)
-{
-}
-
 BrokerSummary::BrokerSummary(JsonView jsonValue)
-  : BrokerSummary()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ BrokerSummary& BrokerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("brokerArn"))
   {
     m_brokerArn = jsonValue.GetString("brokerArn");
-
     m_brokerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("brokerId"))
   {
     m_brokerId = jsonValue.GetString("brokerId");
-
     m_brokerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("brokerName"))
   {
     m_brokerName = jsonValue.GetString("brokerName");
-
     m_brokerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("brokerState"))
   {
     m_brokerState = BrokerStateMapper::GetBrokerStateForName(jsonValue.GetString("brokerState"));
-
     m_brokerStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetString("created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentMode"))
   {
     m_deploymentMode = DeploymentModeMapper::GetDeploymentModeForName(jsonValue.GetString("deploymentMode"));
-
     m_deploymentModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineType"))
   {
     m_engineType = EngineTypeMapper::GetEngineTypeForName(jsonValue.GetString("engineType"));
-
     m_engineTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostInstanceType"))
   {
     m_hostInstanceType = jsonValue.GetString("hostInstanceType");
-
     m_hostInstanceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

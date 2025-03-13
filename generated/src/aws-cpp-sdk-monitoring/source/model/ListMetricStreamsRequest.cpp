@@ -10,13 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-ListMetricStreamsRequest::ListMetricStreamsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListMetricStreamsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,27 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityBlockOffering::CapacityBlockOffering() : 
-    m_capacityBlockOfferingIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_capacityBlockDurationHours(0),
-    m_capacityBlockDurationHoursHasBeenSet(false),
-    m_upfrontFeeHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_tenancy(CapacityReservationTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_capacityBlockDurationMinutes(0),
-    m_capacityBlockDurationMinutesHasBeenSet(false)
-{
-}
-
 CapacityBlockOffering::CapacityBlockOffering(const XmlNode& xmlNode)
-  : CapacityBlockOffering()
 {
   *this = xmlNode;
 }
@@ -56,66 +36,77 @@ CapacityBlockOffering& CapacityBlockOffering::operator =(const XmlNode& xmlNode)
     {
       m_capacityBlockOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityBlockOfferingIdNode.GetText());
       m_capacityBlockOfferingIdHasBeenSet = true;
+       m_capacityBlockOfferingIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode instanceCountNode = resultNode.FirstChild("instanceCount");
     if(!instanceCountNode.IsNull())
     {
       m_instanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCountNode.GetText()).c_str()).c_str());
       m_instanceCountHasBeenSet = true;
+       m_instanceCountHasBeenSet = true;
     }
     XmlNode startDateNode = resultNode.FirstChild("startDate");
     if(!startDateNode.IsNull())
     {
       m_startDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startDateHasBeenSet = true;
+       m_startDateHasBeenSet = true;
     }
     XmlNode endDateNode = resultNode.FirstChild("endDate");
     if(!endDateNode.IsNull())
     {
       m_endDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endDateHasBeenSet = true;
+       m_endDateHasBeenSet = true;
     }
     XmlNode capacityBlockDurationHoursNode = resultNode.FirstChild("capacityBlockDurationHours");
     if(!capacityBlockDurationHoursNode.IsNull())
     {
       m_capacityBlockDurationHours = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityBlockDurationHoursNode.GetText()).c_str()).c_str());
       m_capacityBlockDurationHoursHasBeenSet = true;
+       m_capacityBlockDurationHoursHasBeenSet = true;
     }
     XmlNode upfrontFeeNode = resultNode.FirstChild("upfrontFee");
     if(!upfrontFeeNode.IsNull())
     {
       m_upfrontFee = Aws::Utils::Xml::DecodeEscapedXmlText(upfrontFeeNode.GetText());
       m_upfrontFeeHasBeenSet = true;
+       m_upfrontFeeHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
       m_currencyCode = Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText());
       m_currencyCodeHasBeenSet = true;
+       m_currencyCodeHasBeenSet = true;
     }
     XmlNode tenancyNode = resultNode.FirstChild("tenancy");
     if(!tenancyNode.IsNull())
     {
-      m_tenancy = CapacityReservationTenancyMapper::GetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()).c_str());
+      m_tenancy = CapacityReservationTenancyMapper::GetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()));
       m_tenancyHasBeenSet = true;
+       m_tenancyHasBeenSet = true;
     }
     XmlNode capacityBlockDurationMinutesNode = resultNode.FirstChild("capacityBlockDurationMinutes");
     if(!capacityBlockDurationMinutesNode.IsNull())
     {
       m_capacityBlockDurationMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityBlockDurationMinutesNode.GetText()).c_str()).c_str());
       m_capacityBlockDurationMinutesHasBeenSet = true;
+       m_capacityBlockDurationMinutesHasBeenSet = true;
     }
   }
 

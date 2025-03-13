@@ -34,7 +34,7 @@ namespace Model
   class ClusterNetworkSettingsUpdateRequest
   {
   public:
-    AWS_MEDIALIVE_API ClusterNetworkSettingsUpdateRequest();
+    AWS_MEDIALIVE_API ClusterNetworkSettingsUpdateRequest() = default;
     AWS_MEDIALIVE_API ClusterNetworkSettingsUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API ClusterNetworkSettingsUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * value of the appropriate logicalInterfaceName parameter that you create in the
      * interfaceMappings.
      */
-    inline const Aws::String& GetDefaultRoute() const{ return m_defaultRoute; }
+    inline const Aws::String& GetDefaultRoute() const { return m_defaultRoute; }
     inline bool DefaultRouteHasBeenSet() const { return m_defaultRouteHasBeenSet; }
-    inline void SetDefaultRoute(const Aws::String& value) { m_defaultRouteHasBeenSet = true; m_defaultRoute = value; }
-    inline void SetDefaultRoute(Aws::String&& value) { m_defaultRouteHasBeenSet = true; m_defaultRoute = std::move(value); }
-    inline void SetDefaultRoute(const char* value) { m_defaultRouteHasBeenSet = true; m_defaultRoute.assign(value); }
-    inline ClusterNetworkSettingsUpdateRequest& WithDefaultRoute(const Aws::String& value) { SetDefaultRoute(value); return *this;}
-    inline ClusterNetworkSettingsUpdateRequest& WithDefaultRoute(Aws::String&& value) { SetDefaultRoute(std::move(value)); return *this;}
-    inline ClusterNetworkSettingsUpdateRequest& WithDefaultRoute(const char* value) { SetDefaultRoute(value); return *this;}
+    template<typename DefaultRouteT = Aws::String>
+    void SetDefaultRoute(DefaultRouteT&& value) { m_defaultRouteHasBeenSet = true; m_defaultRoute = std::forward<DefaultRouteT>(value); }
+    template<typename DefaultRouteT = Aws::String>
+    ClusterNetworkSettingsUpdateRequest& WithDefaultRoute(DefaultRouteT&& value) { SetDefaultRoute(std::forward<DefaultRouteT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,14 @@ namespace Model
      * network. When you create the Nodes in this Cluster, you will associate the
      * logicalInterfaceName with the appropriate physical interface.
      */
-    inline const Aws::Vector<InterfaceMappingUpdateRequest>& GetInterfaceMappings() const{ return m_interfaceMappings; }
+    inline const Aws::Vector<InterfaceMappingUpdateRequest>& GetInterfaceMappings() const { return m_interfaceMappings; }
     inline bool InterfaceMappingsHasBeenSet() const { return m_interfaceMappingsHasBeenSet; }
-    inline void SetInterfaceMappings(const Aws::Vector<InterfaceMappingUpdateRequest>& value) { m_interfaceMappingsHasBeenSet = true; m_interfaceMappings = value; }
-    inline void SetInterfaceMappings(Aws::Vector<InterfaceMappingUpdateRequest>&& value) { m_interfaceMappingsHasBeenSet = true; m_interfaceMappings = std::move(value); }
-    inline ClusterNetworkSettingsUpdateRequest& WithInterfaceMappings(const Aws::Vector<InterfaceMappingUpdateRequest>& value) { SetInterfaceMappings(value); return *this;}
-    inline ClusterNetworkSettingsUpdateRequest& WithInterfaceMappings(Aws::Vector<InterfaceMappingUpdateRequest>&& value) { SetInterfaceMappings(std::move(value)); return *this;}
-    inline ClusterNetworkSettingsUpdateRequest& AddInterfaceMappings(const InterfaceMappingUpdateRequest& value) { m_interfaceMappingsHasBeenSet = true; m_interfaceMappings.push_back(value); return *this; }
-    inline ClusterNetworkSettingsUpdateRequest& AddInterfaceMappings(InterfaceMappingUpdateRequest&& value) { m_interfaceMappingsHasBeenSet = true; m_interfaceMappings.push_back(std::move(value)); return *this; }
+    template<typename InterfaceMappingsT = Aws::Vector<InterfaceMappingUpdateRequest>>
+    void SetInterfaceMappings(InterfaceMappingsT&& value) { m_interfaceMappingsHasBeenSet = true; m_interfaceMappings = std::forward<InterfaceMappingsT>(value); }
+    template<typename InterfaceMappingsT = Aws::Vector<InterfaceMappingUpdateRequest>>
+    ClusterNetworkSettingsUpdateRequest& WithInterfaceMappings(InterfaceMappingsT&& value) { SetInterfaceMappings(std::forward<InterfaceMappingsT>(value)); return *this;}
+    template<typename InterfaceMappingsT = InterfaceMappingUpdateRequest>
+    ClusterNetworkSettingsUpdateRequest& AddInterfaceMappings(InterfaceMappingsT&& value) { m_interfaceMappingsHasBeenSet = true; m_interfaceMappings.emplace_back(std::forward<InterfaceMappingsT>(value)); return *this; }
     ///@}
   private:
 

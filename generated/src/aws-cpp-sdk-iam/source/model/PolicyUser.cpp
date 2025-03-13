@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-PolicyUser::PolicyUser() : 
-    m_userNameHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 PolicyUser::PolicyUser(const XmlNode& xmlNode)
-  : PolicyUser()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ PolicyUser& PolicyUser::operator =(const XmlNode& xmlNode)
     {
       m_userName = Aws::Utils::Xml::DecodeEscapedXmlText(userNameNode.GetText());
       m_userNameHasBeenSet = true;
+       m_userNameHasBeenSet = true;
     }
     XmlNode userIdNode = resultNode.FirstChild("UserId");
     if(!userIdNode.IsNull())
     {
       m_userId = Aws::Utils::Xml::DecodeEscapedXmlText(userIdNode.GetText());
       m_userIdHasBeenSet = true;
+       m_userIdHasBeenSet = true;
     }
   }
 

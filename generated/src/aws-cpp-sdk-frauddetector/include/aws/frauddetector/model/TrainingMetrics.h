@@ -32,7 +32,7 @@ namespace Model
   class TrainingMetrics
   {
   public:
-    AWS_FRAUDDETECTOR_API TrainingMetrics();
+    AWS_FRAUDDETECTOR_API TrainingMetrics() = default;
     AWS_FRAUDDETECTOR_API TrainingMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API TrainingMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * predictive power has an AUC of 0.5, whereas a perfect model has a score of
      * 1.0.</p>
      */
-    inline double GetAuc() const{ return m_auc; }
+    inline double GetAuc() const { return m_auc; }
     inline bool AucHasBeenSet() const { return m_aucHasBeenSet; }
     inline void SetAuc(double value) { m_aucHasBeenSet = true; m_auc = value; }
     inline TrainingMetrics& WithAuc(double value) { SetAuc(value); return *this;}
@@ -55,18 +55,18 @@ namespace Model
     /**
      * <p>The data points details.</p>
      */
-    inline const Aws::Vector<MetricDataPoint>& GetMetricDataPoints() const{ return m_metricDataPoints; }
+    inline const Aws::Vector<MetricDataPoint>& GetMetricDataPoints() const { return m_metricDataPoints; }
     inline bool MetricDataPointsHasBeenSet() const { return m_metricDataPointsHasBeenSet; }
-    inline void SetMetricDataPoints(const Aws::Vector<MetricDataPoint>& value) { m_metricDataPointsHasBeenSet = true; m_metricDataPoints = value; }
-    inline void SetMetricDataPoints(Aws::Vector<MetricDataPoint>&& value) { m_metricDataPointsHasBeenSet = true; m_metricDataPoints = std::move(value); }
-    inline TrainingMetrics& WithMetricDataPoints(const Aws::Vector<MetricDataPoint>& value) { SetMetricDataPoints(value); return *this;}
-    inline TrainingMetrics& WithMetricDataPoints(Aws::Vector<MetricDataPoint>&& value) { SetMetricDataPoints(std::move(value)); return *this;}
-    inline TrainingMetrics& AddMetricDataPoints(const MetricDataPoint& value) { m_metricDataPointsHasBeenSet = true; m_metricDataPoints.push_back(value); return *this; }
-    inline TrainingMetrics& AddMetricDataPoints(MetricDataPoint&& value) { m_metricDataPointsHasBeenSet = true; m_metricDataPoints.push_back(std::move(value)); return *this; }
+    template<typename MetricDataPointsT = Aws::Vector<MetricDataPoint>>
+    void SetMetricDataPoints(MetricDataPointsT&& value) { m_metricDataPointsHasBeenSet = true; m_metricDataPoints = std::forward<MetricDataPointsT>(value); }
+    template<typename MetricDataPointsT = Aws::Vector<MetricDataPoint>>
+    TrainingMetrics& WithMetricDataPoints(MetricDataPointsT&& value) { SetMetricDataPoints(std::forward<MetricDataPointsT>(value)); return *this;}
+    template<typename MetricDataPointsT = MetricDataPoint>
+    TrainingMetrics& AddMetricDataPoints(MetricDataPointsT&& value) { m_metricDataPointsHasBeenSet = true; m_metricDataPoints.emplace_back(std::forward<MetricDataPointsT>(value)); return *this; }
     ///@}
   private:
 
-    double m_auc;
+    double m_auc{0.0};
     bool m_aucHasBeenSet = false;
 
     Aws::Vector<MetricDataPoint> m_metricDataPoints;

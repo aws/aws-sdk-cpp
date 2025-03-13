@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-UtteranceAudioInputSpecification::UtteranceAudioInputSpecification() : 
-    m_audioFileS3LocationHasBeenSet(false)
-{
-}
-
 UtteranceAudioInputSpecification::UtteranceAudioInputSpecification(JsonView jsonValue)
-  : UtteranceAudioInputSpecification()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UtteranceAudioInputSpecification& UtteranceAudioInputSpecification::operator =(J
   if(jsonValue.ValueExists("audioFileS3Location"))
   {
     m_audioFileS3Location = jsonValue.GetString("audioFileS3Location");
-
     m_audioFileS3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

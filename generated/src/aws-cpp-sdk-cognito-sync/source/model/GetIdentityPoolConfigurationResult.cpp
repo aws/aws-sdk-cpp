@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIdentityPoolConfigurationResult::GetIdentityPoolConfigurationResult()
-{
-}
-
 GetIdentityPoolConfigurationResult::GetIdentityPoolConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ GetIdentityPoolConfigurationResult& GetIdentityPoolConfigurationResult::operator
   if(jsonValue.ValueExists("IdentityPoolId"))
   {
     m_identityPoolId = jsonValue.GetString("IdentityPoolId");
-
+    m_identityPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PushSync"))
   {
     m_pushSync = jsonValue.GetObject("PushSync");
-
+    m_pushSyncHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CognitoStreams"))
   {
     m_cognitoStreams = jsonValue.GetObject("CognitoStreams");
-
+    m_cognitoStreamsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

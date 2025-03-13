@@ -18,15 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-PolicyParameter::PolicyParameter() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_mapEntriesHasBeenSet(false)
-{
-}
-
 PolicyParameter::PolicyParameter(JsonView jsonValue)
-  : PolicyParameter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ PolicyParameter& PolicyParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ PolicyParameter& PolicyParameter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapEntries"))
   {
     Aws::Utils::Array<JsonView> mapEntriesJsonList = jsonValue.GetArray("MapEntries");
@@ -59,7 +48,6 @@ PolicyParameter& PolicyParameter::operator =(JsonView jsonValue)
     }
     m_mapEntriesHasBeenSet = true;
   }
-
   return *this;
 }
 

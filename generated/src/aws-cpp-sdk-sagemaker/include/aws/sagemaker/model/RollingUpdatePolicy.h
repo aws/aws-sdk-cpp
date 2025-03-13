@@ -32,7 +32,7 @@ namespace Model
   class RollingUpdatePolicy
   {
   public:
-    AWS_SAGEMAKER_API RollingUpdatePolicy();
+    AWS_SAGEMAKER_API RollingUpdatePolicy() = default;
     AWS_SAGEMAKER_API RollingUpdatePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RollingUpdatePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value
      * must be between 5% to 50% of the variant's total instance count.</p>
      */
-    inline const CapacitySize& GetMaximumBatchSize() const{ return m_maximumBatchSize; }
+    inline const CapacitySize& GetMaximumBatchSize() const { return m_maximumBatchSize; }
     inline bool MaximumBatchSizeHasBeenSet() const { return m_maximumBatchSizeHasBeenSet; }
-    inline void SetMaximumBatchSize(const CapacitySize& value) { m_maximumBatchSizeHasBeenSet = true; m_maximumBatchSize = value; }
-    inline void SetMaximumBatchSize(CapacitySize&& value) { m_maximumBatchSizeHasBeenSet = true; m_maximumBatchSize = std::move(value); }
-    inline RollingUpdatePolicy& WithMaximumBatchSize(const CapacitySize& value) { SetMaximumBatchSize(value); return *this;}
-    inline RollingUpdatePolicy& WithMaximumBatchSize(CapacitySize&& value) { SetMaximumBatchSize(std::move(value)); return *this;}
+    template<typename MaximumBatchSizeT = CapacitySize>
+    void SetMaximumBatchSize(MaximumBatchSizeT&& value) { m_maximumBatchSizeHasBeenSet = true; m_maximumBatchSize = std::forward<MaximumBatchSizeT>(value); }
+    template<typename MaximumBatchSizeT = CapacitySize>
+    RollingUpdatePolicy& WithMaximumBatchSize(MaximumBatchSizeT&& value) { SetMaximumBatchSize(std::forward<MaximumBatchSizeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +57,7 @@ namespace Model
      * <p>The length of the baking period, during which SageMaker monitors alarms for
      * each batch on the new fleet.</p>
      */
-    inline int GetWaitIntervalInSeconds() const{ return m_waitIntervalInSeconds; }
+    inline int GetWaitIntervalInSeconds() const { return m_waitIntervalInSeconds; }
     inline bool WaitIntervalInSecondsHasBeenSet() const { return m_waitIntervalInSecondsHasBeenSet; }
     inline void SetWaitIntervalInSeconds(int value) { m_waitIntervalInSecondsHasBeenSet = true; m_waitIntervalInSeconds = value; }
     inline RollingUpdatePolicy& WithWaitIntervalInSeconds(int value) { SetWaitIntervalInSeconds(value); return *this;}
@@ -68,7 +68,7 @@ namespace Model
      * <p>The time limit for the total deployment. Exceeding this limit causes a
      * timeout.</p>
      */
-    inline int GetMaximumExecutionTimeoutInSeconds() const{ return m_maximumExecutionTimeoutInSeconds; }
+    inline int GetMaximumExecutionTimeoutInSeconds() const { return m_maximumExecutionTimeoutInSeconds; }
     inline bool MaximumExecutionTimeoutInSecondsHasBeenSet() const { return m_maximumExecutionTimeoutInSecondsHasBeenSet; }
     inline void SetMaximumExecutionTimeoutInSeconds(int value) { m_maximumExecutionTimeoutInSecondsHasBeenSet = true; m_maximumExecutionTimeoutInSeconds = value; }
     inline RollingUpdatePolicy& WithMaximumExecutionTimeoutInSeconds(int value) { SetMaximumExecutionTimeoutInSeconds(value); return *this;}
@@ -82,22 +82,22 @@ namespace Model
      * will be set to 100% of total capacity which means to bring up the whole capacity
      * of the old fleet at once during rollback.</p>
      */
-    inline const CapacitySize& GetRollbackMaximumBatchSize() const{ return m_rollbackMaximumBatchSize; }
+    inline const CapacitySize& GetRollbackMaximumBatchSize() const { return m_rollbackMaximumBatchSize; }
     inline bool RollbackMaximumBatchSizeHasBeenSet() const { return m_rollbackMaximumBatchSizeHasBeenSet; }
-    inline void SetRollbackMaximumBatchSize(const CapacitySize& value) { m_rollbackMaximumBatchSizeHasBeenSet = true; m_rollbackMaximumBatchSize = value; }
-    inline void SetRollbackMaximumBatchSize(CapacitySize&& value) { m_rollbackMaximumBatchSizeHasBeenSet = true; m_rollbackMaximumBatchSize = std::move(value); }
-    inline RollingUpdatePolicy& WithRollbackMaximumBatchSize(const CapacitySize& value) { SetRollbackMaximumBatchSize(value); return *this;}
-    inline RollingUpdatePolicy& WithRollbackMaximumBatchSize(CapacitySize&& value) { SetRollbackMaximumBatchSize(std::move(value)); return *this;}
+    template<typename RollbackMaximumBatchSizeT = CapacitySize>
+    void SetRollbackMaximumBatchSize(RollbackMaximumBatchSizeT&& value) { m_rollbackMaximumBatchSizeHasBeenSet = true; m_rollbackMaximumBatchSize = std::forward<RollbackMaximumBatchSizeT>(value); }
+    template<typename RollbackMaximumBatchSizeT = CapacitySize>
+    RollingUpdatePolicy& WithRollbackMaximumBatchSize(RollbackMaximumBatchSizeT&& value) { SetRollbackMaximumBatchSize(std::forward<RollbackMaximumBatchSizeT>(value)); return *this;}
     ///@}
   private:
 
     CapacitySize m_maximumBatchSize;
     bool m_maximumBatchSizeHasBeenSet = false;
 
-    int m_waitIntervalInSeconds;
+    int m_waitIntervalInSeconds{0};
     bool m_waitIntervalInSecondsHasBeenSet = false;
 
-    int m_maximumExecutionTimeoutInSeconds;
+    int m_maximumExecutionTimeoutInSeconds{0};
     bool m_maximumExecutionTimeoutInSecondsHasBeenSet = false;
 
     CapacitySize m_rollbackMaximumBatchSize;

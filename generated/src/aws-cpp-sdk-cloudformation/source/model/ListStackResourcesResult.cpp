@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListStackResourcesResult::ListStackResourcesResult()
-{
-}
-
 ListStackResourcesResult::ListStackResourcesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ListStackResourcesResult& ListStackResourcesResult::operator =(const Aws::Amazon
     if(!stackResourceSummariesNode.IsNull())
     {
       XmlNode stackResourceSummariesMember = stackResourceSummariesNode.FirstChild("member");
+      m_stackResourceSummariesHasBeenSet = !stackResourceSummariesMember.IsNull();
       while(!stackResourceSummariesMember.IsNull())
       {
         m_stackResourceSummaries.push_back(stackResourceSummariesMember);
@@ -53,12 +50,14 @@ ListStackResourcesResult& ListStackResourcesResult::operator =(const Aws::Amazon
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ListStackResourcesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

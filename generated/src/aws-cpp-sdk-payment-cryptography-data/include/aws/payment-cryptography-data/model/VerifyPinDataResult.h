@@ -27,7 +27,7 @@ namespace Model
   class VerifyPinDataResult
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API VerifyPinDataResult();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API VerifyPinDataResult() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API VerifyPinDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API VerifyPinDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
      * <p>The <code>keyARN</code> of the PIN encryption key that Amazon Web Services
      * Payment Cryptography uses for PIN or PIN Offset verification.</p>
      */
-    inline const Aws::String& GetVerificationKeyArn() const{ return m_verificationKeyArn; }
-    inline void SetVerificationKeyArn(const Aws::String& value) { m_verificationKeyArn = value; }
-    inline void SetVerificationKeyArn(Aws::String&& value) { m_verificationKeyArn = std::move(value); }
-    inline void SetVerificationKeyArn(const char* value) { m_verificationKeyArn.assign(value); }
-    inline VerifyPinDataResult& WithVerificationKeyArn(const Aws::String& value) { SetVerificationKeyArn(value); return *this;}
-    inline VerifyPinDataResult& WithVerificationKeyArn(Aws::String&& value) { SetVerificationKeyArn(std::move(value)); return *this;}
-    inline VerifyPinDataResult& WithVerificationKeyArn(const char* value) { SetVerificationKeyArn(value); return *this;}
+    inline const Aws::String& GetVerificationKeyArn() const { return m_verificationKeyArn; }
+    template<typename VerificationKeyArnT = Aws::String>
+    void SetVerificationKeyArn(VerificationKeyArnT&& value) { m_verificationKeyArnHasBeenSet = true; m_verificationKeyArn = std::forward<VerificationKeyArnT>(value); }
+    template<typename VerificationKeyArnT = Aws::String>
+    VerifyPinDataResult& WithVerificationKeyArn(VerificationKeyArnT&& value) { SetVerificationKeyArn(std::forward<VerificationKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,13 +51,11 @@ namespace Model
      * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
      * according to the CMAC specification.</p>
      */
-    inline const Aws::String& GetVerificationKeyCheckValue() const{ return m_verificationKeyCheckValue; }
-    inline void SetVerificationKeyCheckValue(const Aws::String& value) { m_verificationKeyCheckValue = value; }
-    inline void SetVerificationKeyCheckValue(Aws::String&& value) { m_verificationKeyCheckValue = std::move(value); }
-    inline void SetVerificationKeyCheckValue(const char* value) { m_verificationKeyCheckValue.assign(value); }
-    inline VerifyPinDataResult& WithVerificationKeyCheckValue(const Aws::String& value) { SetVerificationKeyCheckValue(value); return *this;}
-    inline VerifyPinDataResult& WithVerificationKeyCheckValue(Aws::String&& value) { SetVerificationKeyCheckValue(std::move(value)); return *this;}
-    inline VerifyPinDataResult& WithVerificationKeyCheckValue(const char* value) { SetVerificationKeyCheckValue(value); return *this;}
+    inline const Aws::String& GetVerificationKeyCheckValue() const { return m_verificationKeyCheckValue; }
+    template<typename VerificationKeyCheckValueT = Aws::String>
+    void SetVerificationKeyCheckValue(VerificationKeyCheckValueT&& value) { m_verificationKeyCheckValueHasBeenSet = true; m_verificationKeyCheckValue = std::forward<VerificationKeyCheckValueT>(value); }
+    template<typename VerificationKeyCheckValueT = Aws::String>
+    VerifyPinDataResult& WithVerificationKeyCheckValue(VerificationKeyCheckValueT&& value) { SetVerificationKeyCheckValue(std::forward<VerificationKeyCheckValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,13 +63,11 @@ namespace Model
      * <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment
      * Cryptography uses for encrypted pin block generation.</p>
      */
-    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
-    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArn = value; }
-    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArn = std::move(value); }
-    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArn.assign(value); }
-    inline VerifyPinDataResult& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-    inline VerifyPinDataResult& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-    inline VerifyPinDataResult& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    VerifyPinDataResult& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,36 +77,37 @@ namespace Model
      * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
      * according to the CMAC specification.</p>
      */
-    inline const Aws::String& GetEncryptionKeyCheckValue() const{ return m_encryptionKeyCheckValue; }
-    inline void SetEncryptionKeyCheckValue(const Aws::String& value) { m_encryptionKeyCheckValue = value; }
-    inline void SetEncryptionKeyCheckValue(Aws::String&& value) { m_encryptionKeyCheckValue = std::move(value); }
-    inline void SetEncryptionKeyCheckValue(const char* value) { m_encryptionKeyCheckValue.assign(value); }
-    inline VerifyPinDataResult& WithEncryptionKeyCheckValue(const Aws::String& value) { SetEncryptionKeyCheckValue(value); return *this;}
-    inline VerifyPinDataResult& WithEncryptionKeyCheckValue(Aws::String&& value) { SetEncryptionKeyCheckValue(std::move(value)); return *this;}
-    inline VerifyPinDataResult& WithEncryptionKeyCheckValue(const char* value) { SetEncryptionKeyCheckValue(value); return *this;}
+    inline const Aws::String& GetEncryptionKeyCheckValue() const { return m_encryptionKeyCheckValue; }
+    template<typename EncryptionKeyCheckValueT = Aws::String>
+    void SetEncryptionKeyCheckValue(EncryptionKeyCheckValueT&& value) { m_encryptionKeyCheckValueHasBeenSet = true; m_encryptionKeyCheckValue = std::forward<EncryptionKeyCheckValueT>(value); }
+    template<typename EncryptionKeyCheckValueT = Aws::String>
+    VerifyPinDataResult& WithEncryptionKeyCheckValue(EncryptionKeyCheckValueT&& value) { SetEncryptionKeyCheckValue(std::forward<EncryptionKeyCheckValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline VerifyPinDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline VerifyPinDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline VerifyPinDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    VerifyPinDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_verificationKeyArn;
+    bool m_verificationKeyArnHasBeenSet = false;
 
     Aws::String m_verificationKeyCheckValue;
+    bool m_verificationKeyCheckValueHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
     Aws::String m_encryptionKeyCheckValue;
+    bool m_encryptionKeyCheckValueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

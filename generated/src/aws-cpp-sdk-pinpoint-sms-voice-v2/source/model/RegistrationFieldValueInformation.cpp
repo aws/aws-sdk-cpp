@@ -18,17 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-RegistrationFieldValueInformation::RegistrationFieldValueInformation() : 
-    m_fieldPathHasBeenSet(false),
-    m_selectChoicesHasBeenSet(false),
-    m_textValueHasBeenSet(false),
-    m_registrationAttachmentIdHasBeenSet(false),
-    m_deniedReasonHasBeenSet(false)
-{
-}
-
 RegistrationFieldValueInformation::RegistrationFieldValueInformation(JsonView jsonValue)
-  : RegistrationFieldValueInformation()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ RegistrationFieldValueInformation& RegistrationFieldValueInformation::operator =
   if(jsonValue.ValueExists("FieldPath"))
   {
     m_fieldPath = jsonValue.GetString("FieldPath");
-
     m_fieldPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectChoices"))
   {
     Aws::Utils::Array<JsonView> selectChoicesJsonList = jsonValue.GetArray("SelectChoices");
@@ -51,28 +39,21 @@ RegistrationFieldValueInformation& RegistrationFieldValueInformation::operator =
     }
     m_selectChoicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextValue"))
   {
     m_textValue = jsonValue.GetString("TextValue");
-
     m_textValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationAttachmentId"))
   {
     m_registrationAttachmentId = jsonValue.GetString("RegistrationAttachmentId");
-
     m_registrationAttachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeniedReason"))
   {
     m_deniedReason = jsonValue.GetString("DeniedReason");
-
     m_deniedReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class DescribeTestSetGenerationResult
   {
   public:
-    AWS_LEXMODELSV2_API DescribeTestSetGenerationResult();
+    AWS_LEXMODELSV2_API DescribeTestSetGenerationResult() = default;
     AWS_LEXMODELSV2_API DescribeTestSetGenerationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API DescribeTestSetGenerationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,38 +41,33 @@ namespace Model
     /**
      * <p>The unique identifier of the test set generation.</p>
      */
-    inline const Aws::String& GetTestSetGenerationId() const{ return m_testSetGenerationId; }
-    inline void SetTestSetGenerationId(const Aws::String& value) { m_testSetGenerationId = value; }
-    inline void SetTestSetGenerationId(Aws::String&& value) { m_testSetGenerationId = std::move(value); }
-    inline void SetTestSetGenerationId(const char* value) { m_testSetGenerationId.assign(value); }
-    inline DescribeTestSetGenerationResult& WithTestSetGenerationId(const Aws::String& value) { SetTestSetGenerationId(value); return *this;}
-    inline DescribeTestSetGenerationResult& WithTestSetGenerationId(Aws::String&& value) { SetTestSetGenerationId(std::move(value)); return *this;}
-    inline DescribeTestSetGenerationResult& WithTestSetGenerationId(const char* value) { SetTestSetGenerationId(value); return *this;}
+    inline const Aws::String& GetTestSetGenerationId() const { return m_testSetGenerationId; }
+    template<typename TestSetGenerationIdT = Aws::String>
+    void SetTestSetGenerationId(TestSetGenerationIdT&& value) { m_testSetGenerationIdHasBeenSet = true; m_testSetGenerationId = std::forward<TestSetGenerationIdT>(value); }
+    template<typename TestSetGenerationIdT = Aws::String>
+    DescribeTestSetGenerationResult& WithTestSetGenerationId(TestSetGenerationIdT&& value) { SetTestSetGenerationId(std::forward<TestSetGenerationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status for the test set generation.</p>
      */
-    inline const TestSetGenerationStatus& GetTestSetGenerationStatus() const{ return m_testSetGenerationStatus; }
-    inline void SetTestSetGenerationStatus(const TestSetGenerationStatus& value) { m_testSetGenerationStatus = value; }
-    inline void SetTestSetGenerationStatus(TestSetGenerationStatus&& value) { m_testSetGenerationStatus = std::move(value); }
-    inline DescribeTestSetGenerationResult& WithTestSetGenerationStatus(const TestSetGenerationStatus& value) { SetTestSetGenerationStatus(value); return *this;}
-    inline DescribeTestSetGenerationResult& WithTestSetGenerationStatus(TestSetGenerationStatus&& value) { SetTestSetGenerationStatus(std::move(value)); return *this;}
+    inline TestSetGenerationStatus GetTestSetGenerationStatus() const { return m_testSetGenerationStatus; }
+    inline void SetTestSetGenerationStatus(TestSetGenerationStatus value) { m_testSetGenerationStatusHasBeenSet = true; m_testSetGenerationStatus = value; }
+    inline DescribeTestSetGenerationResult& WithTestSetGenerationStatus(TestSetGenerationStatus value) { SetTestSetGenerationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reasons the test set generation failed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFailureReasons() const{ return m_failureReasons; }
-    inline void SetFailureReasons(const Aws::Vector<Aws::String>& value) { m_failureReasons = value; }
-    inline void SetFailureReasons(Aws::Vector<Aws::String>&& value) { m_failureReasons = std::move(value); }
-    inline DescribeTestSetGenerationResult& WithFailureReasons(const Aws::Vector<Aws::String>& value) { SetFailureReasons(value); return *this;}
-    inline DescribeTestSetGenerationResult& WithFailureReasons(Aws::Vector<Aws::String>&& value) { SetFailureReasons(std::move(value)); return *this;}
-    inline DescribeTestSetGenerationResult& AddFailureReasons(const Aws::String& value) { m_failureReasons.push_back(value); return *this; }
-    inline DescribeTestSetGenerationResult& AddFailureReasons(Aws::String&& value) { m_failureReasons.push_back(std::move(value)); return *this; }
-    inline DescribeTestSetGenerationResult& AddFailureReasons(const char* value) { m_failureReasons.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetFailureReasons() const { return m_failureReasons; }
+    template<typename FailureReasonsT = Aws::Vector<Aws::String>>
+    void SetFailureReasons(FailureReasonsT&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = std::forward<FailureReasonsT>(value); }
+    template<typename FailureReasonsT = Aws::Vector<Aws::String>>
+    DescribeTestSetGenerationResult& WithFailureReasons(FailureReasonsT&& value) { SetFailureReasons(std::forward<FailureReasonsT>(value)); return *this;}
+    template<typename FailureReasonsT = Aws::String>
+    DescribeTestSetGenerationResult& AddFailureReasons(FailureReasonsT&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.emplace_back(std::forward<FailureReasonsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,133 +75,135 @@ namespace Model
      * <p>The unique identifier for the test set created for the generated test
      * set.</p>
      */
-    inline const Aws::String& GetTestSetId() const{ return m_testSetId; }
-    inline void SetTestSetId(const Aws::String& value) { m_testSetId = value; }
-    inline void SetTestSetId(Aws::String&& value) { m_testSetId = std::move(value); }
-    inline void SetTestSetId(const char* value) { m_testSetId.assign(value); }
-    inline DescribeTestSetGenerationResult& WithTestSetId(const Aws::String& value) { SetTestSetId(value); return *this;}
-    inline DescribeTestSetGenerationResult& WithTestSetId(Aws::String&& value) { SetTestSetId(std::move(value)); return *this;}
-    inline DescribeTestSetGenerationResult& WithTestSetId(const char* value) { SetTestSetId(value); return *this;}
+    inline const Aws::String& GetTestSetId() const { return m_testSetId; }
+    template<typename TestSetIdT = Aws::String>
+    void SetTestSetId(TestSetIdT&& value) { m_testSetIdHasBeenSet = true; m_testSetId = std::forward<TestSetIdT>(value); }
+    template<typename TestSetIdT = Aws::String>
+    DescribeTestSetGenerationResult& WithTestSetId(TestSetIdT&& value) { SetTestSetId(std::forward<TestSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test set name for the generated test set.</p>
      */
-    inline const Aws::String& GetTestSetName() const{ return m_testSetName; }
-    inline void SetTestSetName(const Aws::String& value) { m_testSetName = value; }
-    inline void SetTestSetName(Aws::String&& value) { m_testSetName = std::move(value); }
-    inline void SetTestSetName(const char* value) { m_testSetName.assign(value); }
-    inline DescribeTestSetGenerationResult& WithTestSetName(const Aws::String& value) { SetTestSetName(value); return *this;}
-    inline DescribeTestSetGenerationResult& WithTestSetName(Aws::String&& value) { SetTestSetName(std::move(value)); return *this;}
-    inline DescribeTestSetGenerationResult& WithTestSetName(const char* value) { SetTestSetName(value); return *this;}
+    inline const Aws::String& GetTestSetName() const { return m_testSetName; }
+    template<typename TestSetNameT = Aws::String>
+    void SetTestSetName(TestSetNameT&& value) { m_testSetNameHasBeenSet = true; m_testSetName = std::forward<TestSetNameT>(value); }
+    template<typename TestSetNameT = Aws::String>
+    DescribeTestSetGenerationResult& WithTestSetName(TestSetNameT&& value) { SetTestSetName(std::forward<TestSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test set description for the test set generation.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeTestSetGenerationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeTestSetGenerationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeTestSetGenerationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeTestSetGenerationResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 storage location for the test set generation.</p>
      */
-    inline const TestSetStorageLocation& GetStorageLocation() const{ return m_storageLocation; }
-    inline void SetStorageLocation(const TestSetStorageLocation& value) { m_storageLocation = value; }
-    inline void SetStorageLocation(TestSetStorageLocation&& value) { m_storageLocation = std::move(value); }
-    inline DescribeTestSetGenerationResult& WithStorageLocation(const TestSetStorageLocation& value) { SetStorageLocation(value); return *this;}
-    inline DescribeTestSetGenerationResult& WithStorageLocation(TestSetStorageLocation&& value) { SetStorageLocation(std::move(value)); return *this;}
+    inline const TestSetStorageLocation& GetStorageLocation() const { return m_storageLocation; }
+    template<typename StorageLocationT = TestSetStorageLocation>
+    void SetStorageLocation(StorageLocationT&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::forward<StorageLocationT>(value); }
+    template<typename StorageLocationT = TestSetStorageLocation>
+    DescribeTestSetGenerationResult& WithStorageLocation(StorageLocationT&& value) { SetStorageLocation(std::forward<StorageLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data source of the test set used for the test set generation.</p>
      */
-    inline const TestSetGenerationDataSource& GetGenerationDataSource() const{ return m_generationDataSource; }
-    inline void SetGenerationDataSource(const TestSetGenerationDataSource& value) { m_generationDataSource = value; }
-    inline void SetGenerationDataSource(TestSetGenerationDataSource&& value) { m_generationDataSource = std::move(value); }
-    inline DescribeTestSetGenerationResult& WithGenerationDataSource(const TestSetGenerationDataSource& value) { SetGenerationDataSource(value); return *this;}
-    inline DescribeTestSetGenerationResult& WithGenerationDataSource(TestSetGenerationDataSource&& value) { SetGenerationDataSource(std::move(value)); return *this;}
+    inline const TestSetGenerationDataSource& GetGenerationDataSource() const { return m_generationDataSource; }
+    template<typename GenerationDataSourceT = TestSetGenerationDataSource>
+    void SetGenerationDataSource(GenerationDataSourceT&& value) { m_generationDataSourceHasBeenSet = true; m_generationDataSource = std::forward<GenerationDataSourceT>(value); }
+    template<typename GenerationDataSourceT = TestSetGenerationDataSource>
+    DescribeTestSetGenerationResult& WithGenerationDataSource(GenerationDataSourceT&& value) { SetGenerationDataSource(std::forward<GenerationDataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The roleARN of the test set used for the test set generation.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeTestSetGenerationResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeTestSetGenerationResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeTestSetGenerationResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeTestSetGenerationResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation date and time for the test set generation.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-    inline DescribeTestSetGenerationResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline DescribeTestSetGenerationResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    DescribeTestSetGenerationResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time of the last update for the test set generation.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTime = std::move(value); }
-    inline DescribeTestSetGenerationResult& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline DescribeTestSetGenerationResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    DescribeTestSetGenerationResult& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTestSetGenerationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTestSetGenerationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTestSetGenerationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTestSetGenerationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_testSetGenerationId;
+    bool m_testSetGenerationIdHasBeenSet = false;
 
-    TestSetGenerationStatus m_testSetGenerationStatus;
+    TestSetGenerationStatus m_testSetGenerationStatus{TestSetGenerationStatus::NOT_SET};
+    bool m_testSetGenerationStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_failureReasons;
+    bool m_failureReasonsHasBeenSet = false;
 
     Aws::String m_testSetId;
+    bool m_testSetIdHasBeenSet = false;
 
     Aws::String m_testSetName;
+    bool m_testSetNameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     TestSetStorageLocation m_storageLocation;
+    bool m_storageLocationHasBeenSet = false;
 
     TestSetGenerationDataSource m_generationDataSource;
+    bool m_generationDataSourceHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
+    bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

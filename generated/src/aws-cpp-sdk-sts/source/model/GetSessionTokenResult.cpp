@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSessionTokenResult::GetSessionTokenResult()
-{
-}
-
 GetSessionTokenResult::GetSessionTokenResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ GetSessionTokenResult& GetSessionTokenResult::operator =(const Aws::AmazonWebSer
     if(!credentialsNode.IsNull())
     {
       m_credentials = credentialsNode;
+      m_credentialsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::STS::Model::GetSessionTokenResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-InvalidNextToken::InvalidNextToken() : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
-{
-}
-
 InvalidNextToken::InvalidNextToken(const XmlNode& xmlNode)
-  : InvalidNextToken()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ InvalidNextToken& InvalidNextToken::operator =(const XmlNode& xmlNode)
     {
       m_boxUsage = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(boxUsageNode.GetText()).c_str()).c_str());
       m_boxUsageHasBeenSet = true;
+       m_boxUsageHasBeenSet = true;
     }
   }
 

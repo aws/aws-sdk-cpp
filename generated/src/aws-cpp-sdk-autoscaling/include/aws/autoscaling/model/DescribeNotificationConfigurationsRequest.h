@@ -22,7 +22,7 @@ namespace Model
   class DescribeNotificationConfigurationsRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API DescribeNotificationConfigurationsRequest();
+    AWS_AUTOSCALING_API DescribeNotificationConfigurationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAutoScalingGroupNames() const{ return m_autoScalingGroupNames; }
+    inline const Aws::Vector<Aws::String>& GetAutoScalingGroupNames() const { return m_autoScalingGroupNames; }
     inline bool AutoScalingGroupNamesHasBeenSet() const { return m_autoScalingGroupNamesHasBeenSet; }
-    inline void SetAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = value; }
-    inline void SetAutoScalingGroupNames(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = std::move(value); }
-    inline DescribeNotificationConfigurationsRequest& WithAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { SetAutoScalingGroupNames(value); return *this;}
-    inline DescribeNotificationConfigurationsRequest& WithAutoScalingGroupNames(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroupNames(std::move(value)); return *this;}
-    inline DescribeNotificationConfigurationsRequest& AddAutoScalingGroupNames(const Aws::String& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
-    inline DescribeNotificationConfigurationsRequest& AddAutoScalingGroupNames(Aws::String&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(std::move(value)); return *this; }
-    inline DescribeNotificationConfigurationsRequest& AddAutoScalingGroupNames(const char* value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
+    template<typename AutoScalingGroupNamesT = Aws::Vector<Aws::String>>
+    void SetAutoScalingGroupNames(AutoScalingGroupNamesT&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = std::forward<AutoScalingGroupNamesT>(value); }
+    template<typename AutoScalingGroupNamesT = Aws::Vector<Aws::String>>
+    DescribeNotificationConfigurationsRequest& WithAutoScalingGroupNames(AutoScalingGroupNamesT&& value) { SetAutoScalingGroupNames(std::forward<AutoScalingGroupNamesT>(value)); return *this;}
+    template<typename AutoScalingGroupNamesT = Aws::String>
+    DescribeNotificationConfigurationsRequest& AddAutoScalingGroupNames(AutoScalingGroupNamesT&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.emplace_back(std::forward<AutoScalingGroupNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,14 +56,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeNotificationConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeNotificationConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeNotificationConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeNotificationConfigurationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +69,7 @@ namespace Model
      * <p>The maximum number of items to return with this call. The default value is
      * <code>50</code> and the maximum value is <code>100</code>.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeNotificationConfigurationsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -85,7 +82,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
   };
 

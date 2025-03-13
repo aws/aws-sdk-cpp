@@ -28,7 +28,7 @@ namespace Model
   class GetNodeResult
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API GetNodeResult();
+    AWS_MANAGEDBLOCKCHAIN_API GetNodeResult() = default;
     AWS_MANAGEDBLOCKCHAIN_API GetNodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDBLOCKCHAIN_API GetNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Properties of the node configuration.</p>
      */
-    inline const Node& GetNode() const{ return m_node; }
-    inline void SetNode(const Node& value) { m_node = value; }
-    inline void SetNode(Node&& value) { m_node = std::move(value); }
-    inline GetNodeResult& WithNode(const Node& value) { SetNode(value); return *this;}
-    inline GetNodeResult& WithNode(Node&& value) { SetNode(std::move(value)); return *this;}
+    inline const Node& GetNode() const { return m_node; }
+    template<typename NodeT = Node>
+    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
+    template<typename NodeT = Node>
+    GetNodeResult& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetNodeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetNodeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetNodeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetNodeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Node m_node;
+    bool m_nodeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

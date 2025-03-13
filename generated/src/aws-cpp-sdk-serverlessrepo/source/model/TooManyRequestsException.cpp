@@ -18,14 +18,7 @@ namespace ServerlessApplicationRepository
 namespace Model
 {
 
-TooManyRequestsException::TooManyRequestsException() : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 TooManyRequestsException::TooManyRequestsException(JsonView jsonValue)
-  : TooManyRequestsException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TooManyRequestsException& TooManyRequestsException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

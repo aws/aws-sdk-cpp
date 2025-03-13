@@ -18,17 +18,7 @@ namespace Support
 namespace Model
 {
 
-Communication::Communication() : 
-    m_caseIdHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_submittedByHasBeenSet(false),
-    m_timeCreatedHasBeenSet(false),
-    m_attachmentSetHasBeenSet(false)
-{
-}
-
 Communication::Communication(JsonView jsonValue)
-  : Communication()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Communication& Communication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("caseId"))
   {
     m_caseId = jsonValue.GetString("caseId");
-
     m_caseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("body"))
   {
     m_body = jsonValue.GetString("body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("submittedBy"))
   {
     m_submittedBy = jsonValue.GetString("submittedBy");
-
     m_submittedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeCreated"))
   {
     m_timeCreated = jsonValue.GetString("timeCreated");
-
     m_timeCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachmentSet"))
   {
     Aws::Utils::Array<JsonView> attachmentSetJsonList = jsonValue.GetArray("attachmentSet");
@@ -72,7 +54,6 @@ Communication& Communication::operator =(JsonView jsonValue)
     }
     m_attachmentSetHasBeenSet = true;
   }
-
   return *this;
 }
 

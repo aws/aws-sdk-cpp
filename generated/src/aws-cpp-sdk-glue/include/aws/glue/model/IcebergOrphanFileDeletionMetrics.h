@@ -30,7 +30,7 @@ namespace Model
   class IcebergOrphanFileDeletionMetrics
   {
   public:
-    AWS_GLUE_API IcebergOrphanFileDeletionMetrics();
+    AWS_GLUE_API IcebergOrphanFileDeletionMetrics() = default;
     AWS_GLUE_API IcebergOrphanFileDeletionMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API IcebergOrphanFileDeletionMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The number of orphan files deleted by the orphan file deletion job run.</p>
      */
-    inline long long GetNumberOfOrphanFilesDeleted() const{ return m_numberOfOrphanFilesDeleted; }
+    inline long long GetNumberOfOrphanFilesDeleted() const { return m_numberOfOrphanFilesDeleted; }
     inline bool NumberOfOrphanFilesDeletedHasBeenSet() const { return m_numberOfOrphanFilesDeletedHasBeenSet; }
     inline void SetNumberOfOrphanFilesDeleted(long long value) { m_numberOfOrphanFilesDeletedHasBeenSet = true; m_numberOfOrphanFilesDeleted = value; }
     inline IcebergOrphanFileDeletionMetrics& WithNumberOfOrphanFilesDeleted(long long value) { SetNumberOfOrphanFilesDeleted(value); return *this;}
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The number of DPU hours consumed by the job.</p>
      */
-    inline int GetNumberOfDpus() const{ return m_numberOfDpus; }
+    inline int GetNumberOfDpus() const { return m_numberOfDpus; }
     inline bool NumberOfDpusHasBeenSet() const { return m_numberOfDpusHasBeenSet; }
     inline void SetNumberOfDpus(int value) { m_numberOfDpusHasBeenSet = true; m_numberOfDpus = value; }
     inline IcebergOrphanFileDeletionMetrics& WithNumberOfDpus(int value) { SetNumberOfDpus(value); return *this;}
@@ -60,20 +60,20 @@ namespace Model
     /**
      * <p>The duration of the job in hours.</p>
      */
-    inline double GetJobDurationInHour() const{ return m_jobDurationInHour; }
+    inline double GetJobDurationInHour() const { return m_jobDurationInHour; }
     inline bool JobDurationInHourHasBeenSet() const { return m_jobDurationInHourHasBeenSet; }
     inline void SetJobDurationInHour(double value) { m_jobDurationInHourHasBeenSet = true; m_jobDurationInHour = value; }
     inline IcebergOrphanFileDeletionMetrics& WithJobDurationInHour(double value) { SetJobDurationInHour(value); return *this;}
     ///@}
   private:
 
-    long long m_numberOfOrphanFilesDeleted;
+    long long m_numberOfOrphanFilesDeleted{0};
     bool m_numberOfOrphanFilesDeletedHasBeenSet = false;
 
-    int m_numberOfDpus;
+    int m_numberOfDpus{0};
     bool m_numberOfDpusHasBeenSet = false;
 
-    double m_jobDurationInHour;
+    double m_jobDurationInHour{0.0};
     bool m_jobDurationInHourHasBeenSet = false;
   };
 

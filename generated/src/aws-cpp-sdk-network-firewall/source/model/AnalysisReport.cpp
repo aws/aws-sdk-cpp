@@ -18,17 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-AnalysisReport::AnalysisReport() : 
-    m_analysisReportIdHasBeenSet(false),
-    m_analysisType(EnabledAnalysisType::NOT_SET),
-    m_analysisTypeHasBeenSet(false),
-    m_reportTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AnalysisReport::AnalysisReport(JsonView jsonValue)
-  : AnalysisReport()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AnalysisReport& AnalysisReport::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AnalysisReportId"))
   {
     m_analysisReportId = jsonValue.GetString("AnalysisReportId");
-
     m_analysisReportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalysisType"))
   {
     m_analysisType = EnabledAnalysisTypeMapper::GetEnabledAnalysisTypeForName(jsonValue.GetString("AnalysisType"));
-
     m_analysisTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportTime"))
   {
     m_reportTime = jsonValue.GetDouble("ReportTime");
-
     m_reportTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

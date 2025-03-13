@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyCustomHeader::ResponseHeadersPolicyCustomHeader() : 
-    m_headerHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_override(false),
-    m_overrideHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyCustomHeader::ResponseHeadersPolicyCustomHeader(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyCustomHeader()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ ResponseHeadersPolicyCustomHeader& ResponseHeadersPolicyCustomHeader::operator =
     {
       m_header = Aws::Utils::Xml::DecodeEscapedXmlText(headerNode.GetText());
       m_headerHasBeenSet = true;
+       m_headerHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
     XmlNode overrideNode = resultNode.FirstChild("Override");
     if(!overrideNode.IsNull())
     {
       m_override = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overrideNode.GetText()).c_str()).c_str());
       m_overrideHasBeenSet = true;
+       m_overrideHasBeenSet = true;
     }
   }
 

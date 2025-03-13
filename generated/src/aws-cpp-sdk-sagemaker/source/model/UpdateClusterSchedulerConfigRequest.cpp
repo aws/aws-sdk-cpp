@@ -12,15 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClusterSchedulerConfigRequest::UpdateClusterSchedulerConfigRequest() : 
-    m_clusterSchedulerConfigIdHasBeenSet(false),
-    m_targetVersion(0),
-    m_targetVersionHasBeenSet(false),
-    m_schedulerConfigHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateClusterSchedulerConfigRequest::SerializePayload() const
 {
   JsonValue payload;

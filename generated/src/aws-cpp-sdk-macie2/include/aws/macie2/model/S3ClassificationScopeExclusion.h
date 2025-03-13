@@ -33,7 +33,7 @@ namespace Model
   class S3ClassificationScopeExclusion
   {
   public:
-    AWS_MACIE2_API S3ClassificationScopeExclusion();
+    AWS_MACIE2_API S3ClassificationScopeExclusion() = default;
     AWS_MACIE2_API S3ClassificationScopeExclusion(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API S3ClassificationScopeExclusion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>An array of strings, one for each S3 bucket that is excluded. Each string is
      * the full name of an excluded bucket.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBucketNames() const{ return m_bucketNames; }
+    inline const Aws::Vector<Aws::String>& GetBucketNames() const { return m_bucketNames; }
     inline bool BucketNamesHasBeenSet() const { return m_bucketNamesHasBeenSet; }
-    inline void SetBucketNames(const Aws::Vector<Aws::String>& value) { m_bucketNamesHasBeenSet = true; m_bucketNames = value; }
-    inline void SetBucketNames(Aws::Vector<Aws::String>&& value) { m_bucketNamesHasBeenSet = true; m_bucketNames = std::move(value); }
-    inline S3ClassificationScopeExclusion& WithBucketNames(const Aws::Vector<Aws::String>& value) { SetBucketNames(value); return *this;}
-    inline S3ClassificationScopeExclusion& WithBucketNames(Aws::Vector<Aws::String>&& value) { SetBucketNames(std::move(value)); return *this;}
-    inline S3ClassificationScopeExclusion& AddBucketNames(const Aws::String& value) { m_bucketNamesHasBeenSet = true; m_bucketNames.push_back(value); return *this; }
-    inline S3ClassificationScopeExclusion& AddBucketNames(Aws::String&& value) { m_bucketNamesHasBeenSet = true; m_bucketNames.push_back(std::move(value)); return *this; }
-    inline S3ClassificationScopeExclusion& AddBucketNames(const char* value) { m_bucketNamesHasBeenSet = true; m_bucketNames.push_back(value); return *this; }
+    template<typename BucketNamesT = Aws::Vector<Aws::String>>
+    void SetBucketNames(BucketNamesT&& value) { m_bucketNamesHasBeenSet = true; m_bucketNames = std::forward<BucketNamesT>(value); }
+    template<typename BucketNamesT = Aws::Vector<Aws::String>>
+    S3ClassificationScopeExclusion& WithBucketNames(BucketNamesT&& value) { SetBucketNames(std::forward<BucketNamesT>(value)); return *this;}
+    template<typename BucketNamesT = Aws::String>
+    S3ClassificationScopeExclusion& AddBucketNames(BucketNamesT&& value) { m_bucketNamesHasBeenSet = true; m_bucketNames.emplace_back(std::forward<BucketNamesT>(value)); return *this; }
     ///@}
   private:
 

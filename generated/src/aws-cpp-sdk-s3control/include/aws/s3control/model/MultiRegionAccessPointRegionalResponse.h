@@ -31,7 +31,7 @@ namespace Model
   class MultiRegionAccessPointRegionalResponse
   {
   public:
-    AWS_S3CONTROL_API MultiRegionAccessPointRegionalResponse();
+    AWS_S3CONTROL_API MultiRegionAccessPointRegionalResponse() = default;
     AWS_S3CONTROL_API MultiRegionAccessPointRegionalResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API MultiRegionAccessPointRegionalResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the Region in the Multi-Region Access Point.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MultiRegionAccessPointRegionalResponse& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MultiRegionAccessPointRegionalResponse& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MultiRegionAccessPointRegionalResponse& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MultiRegionAccessPointRegionalResponse& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the Multi-Region Access Point in this Region.</p>
      */
-    inline const Aws::String& GetRequestStatus() const{ return m_requestStatus; }
+    inline const Aws::String& GetRequestStatus() const { return m_requestStatus; }
     inline bool RequestStatusHasBeenSet() const { return m_requestStatusHasBeenSet; }
-    inline void SetRequestStatus(const Aws::String& value) { m_requestStatusHasBeenSet = true; m_requestStatus = value; }
-    inline void SetRequestStatus(Aws::String&& value) { m_requestStatusHasBeenSet = true; m_requestStatus = std::move(value); }
-    inline void SetRequestStatus(const char* value) { m_requestStatusHasBeenSet = true; m_requestStatus.assign(value); }
-    inline MultiRegionAccessPointRegionalResponse& WithRequestStatus(const Aws::String& value) { SetRequestStatus(value); return *this;}
-    inline MultiRegionAccessPointRegionalResponse& WithRequestStatus(Aws::String&& value) { SetRequestStatus(std::move(value)); return *this;}
-    inline MultiRegionAccessPointRegionalResponse& WithRequestStatus(const char* value) { SetRequestStatus(value); return *this;}
+    template<typename RequestStatusT = Aws::String>
+    void SetRequestStatus(RequestStatusT&& value) { m_requestStatusHasBeenSet = true; m_requestStatus = std::forward<RequestStatusT>(value); }
+    template<typename RequestStatusT = Aws::String>
+    MultiRegionAccessPointRegionalResponse& WithRequestStatus(RequestStatusT&& value) { SetRequestStatus(std::forward<RequestStatusT>(value)); return *this;}
     ///@}
   private:
 

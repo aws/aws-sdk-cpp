@@ -12,22 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateJobTemplateRequest::CreateJobTemplateRequest() : 
-    m_accelerationSettingsHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_hopDestinationsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_queueHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
-    m_statusUpdateIntervalHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateJobTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

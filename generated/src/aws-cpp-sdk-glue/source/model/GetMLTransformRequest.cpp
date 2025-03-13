@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMLTransformRequest::GetMLTransformRequest() : 
-    m_transformIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMLTransformRequest::SerializePayload() const
 {
   JsonValue payload;

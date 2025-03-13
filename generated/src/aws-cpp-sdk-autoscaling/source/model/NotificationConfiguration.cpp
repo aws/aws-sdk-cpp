@@ -20,15 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-NotificationConfiguration::NotificationConfiguration() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_topicARNHasBeenSet(false),
-    m_notificationTypeHasBeenSet(false)
-{
-}
-
 NotificationConfiguration::NotificationConfiguration(const XmlNode& xmlNode)
-  : NotificationConfiguration()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ NotificationConfiguration& NotificationConfiguration::operator =(const XmlNode& 
     {
       m_autoScalingGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupNameNode.GetText());
       m_autoScalingGroupNameHasBeenSet = true;
+       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode topicARNNode = resultNode.FirstChild("TopicARN");
     if(!topicARNNode.IsNull())
     {
       m_topicARN = Aws::Utils::Xml::DecodeEscapedXmlText(topicARNNode.GetText());
       m_topicARNHasBeenSet = true;
+       m_topicARNHasBeenSet = true;
     }
     XmlNode notificationTypeNode = resultNode.FirstChild("NotificationType");
     if(!notificationTypeNode.IsNull())
     {
       m_notificationType = Aws::Utils::Xml::DecodeEscapedXmlText(notificationTypeNode.GetText());
       m_notificationTypeHasBeenSet = true;
+       m_notificationTypeHasBeenSet = true;
     }
   }
 

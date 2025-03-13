@@ -18,17 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-IpAddressDetails::IpAddressDetails() : 
-    m_ipAddressV4HasBeenSet(false),
-    m_ipCityHasBeenSet(false),
-    m_ipCountryHasBeenSet(false),
-    m_ipGeoLocationHasBeenSet(false),
-    m_ipOwnerHasBeenSet(false)
-{
-}
-
 IpAddressDetails::IpAddressDetails(JsonView jsonValue)
-  : IpAddressDetails()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ IpAddressDetails& IpAddressDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ipAddressV4"))
   {
     m_ipAddressV4 = jsonValue.GetString("ipAddressV4");
-
     m_ipAddressV4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipCity"))
   {
     m_ipCity = jsonValue.GetObject("ipCity");
-
     m_ipCityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipCountry"))
   {
     m_ipCountry = jsonValue.GetObject("ipCountry");
-
     m_ipCountryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipGeoLocation"))
   {
     m_ipGeoLocation = jsonValue.GetObject("ipGeoLocation");
-
     m_ipGeoLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipOwner"))
   {
     m_ipOwner = jsonValue.GetObject("ipOwner");
-
     m_ipOwnerHasBeenSet = true;
   }
-
   return *this;
 }
 

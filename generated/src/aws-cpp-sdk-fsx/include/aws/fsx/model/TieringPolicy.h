@@ -42,7 +42,7 @@ namespace Model
   class TieringPolicy
   {
   public:
-    AWS_FSX_API TieringPolicy();
+    AWS_FSX_API TieringPolicy() = default;
     AWS_FSX_API TieringPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API TieringPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,7 +56,7 @@ namespace Model
      * number between 2 and 183. Default values are 31 days for <code>AUTO</code> and 2
      * days for <code>SNAPSHOT_ONLY</code>.</p>
      */
-    inline int GetCoolingPeriod() const{ return m_coolingPeriod; }
+    inline int GetCoolingPeriod() const { return m_coolingPeriod; }
     inline bool CoolingPeriodHasBeenSet() const { return m_coolingPeriodHasBeenSet; }
     inline void SetCoolingPeriod(int value) { m_coolingPeriodHasBeenSet = true; m_coolingPeriod = value; }
     inline TieringPolicy& WithCoolingPeriod(int value) { SetCoolingPeriod(value); return *this;}
@@ -74,19 +74,17 @@ namespace Model
      * volume's data in the primary storage tier, preventing it from being moved to the
      * capacity pool tier.</p> </li> </ul>
      */
-    inline const TieringPolicyName& GetName() const{ return m_name; }
+    inline TieringPolicyName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const TieringPolicyName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(TieringPolicyName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline TieringPolicy& WithName(const TieringPolicyName& value) { SetName(value); return *this;}
-    inline TieringPolicy& WithName(TieringPolicyName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(TieringPolicyName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline TieringPolicy& WithName(TieringPolicyName value) { SetName(value); return *this;}
     ///@}
   private:
 
-    int m_coolingPeriod;
+    int m_coolingPeriod{0};
     bool m_coolingPeriodHasBeenSet = false;
 
-    TieringPolicyName m_name;
+    TieringPolicyName m_name{TieringPolicyName::NOT_SET};
     bool m_nameHasBeenSet = false;
   };
 

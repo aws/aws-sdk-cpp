@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsLambdaFunctionCode::AwsLambdaFunctionCode() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_s3ObjectVersionHasBeenSet(false),
-    m_zipFileHasBeenSet(false)
-{
-}
-
 AwsLambdaFunctionCode::AwsLambdaFunctionCode(JsonView jsonValue)
-  : AwsLambdaFunctionCode()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AwsLambdaFunctionCode& AwsLambdaFunctionCode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Key"))
   {
     m_s3Key = jsonValue.GetString("S3Key");
-
     m_s3KeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3ObjectVersion"))
   {
     m_s3ObjectVersion = jsonValue.GetString("S3ObjectVersion");
-
     m_s3ObjectVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ZipFile"))
   {
     m_zipFile = jsonValue.GetString("ZipFile");
-
     m_zipFileHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-RuleSet::RuleSet() : 
-    m_lastModificationDateHasBeenSet(false),
-    m_ruleSetIdHasBeenSet(false),
-    m_ruleSetNameHasBeenSet(false)
-{
-}
-
 RuleSet::RuleSet(JsonView jsonValue)
-  : RuleSet()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RuleSet& RuleSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LastModificationDate"))
   {
     m_lastModificationDate = jsonValue.GetDouble("LastModificationDate");
-
     m_lastModificationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleSetId"))
   {
     m_ruleSetId = jsonValue.GetString("RuleSetId");
-
     m_ruleSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleSetName"))
   {
     m_ruleSetName = jsonValue.GetString("RuleSetName");
-
     m_ruleSetNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class InputLocation
   {
   public:
-    AWS_MEDIALIVE_API InputLocation();
+    AWS_MEDIALIVE_API InputLocation() = default;
     AWS_MEDIALIVE_API InputLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * key used to extract the password from EC2 Parameter store
      */
-    inline const Aws::String& GetPasswordParam() const{ return m_passwordParam; }
+    inline const Aws::String& GetPasswordParam() const { return m_passwordParam; }
     inline bool PasswordParamHasBeenSet() const { return m_passwordParamHasBeenSet; }
-    inline void SetPasswordParam(const Aws::String& value) { m_passwordParamHasBeenSet = true; m_passwordParam = value; }
-    inline void SetPasswordParam(Aws::String&& value) { m_passwordParamHasBeenSet = true; m_passwordParam = std::move(value); }
-    inline void SetPasswordParam(const char* value) { m_passwordParamHasBeenSet = true; m_passwordParam.assign(value); }
-    inline InputLocation& WithPasswordParam(const Aws::String& value) { SetPasswordParam(value); return *this;}
-    inline InputLocation& WithPasswordParam(Aws::String&& value) { SetPasswordParam(std::move(value)); return *this;}
-    inline InputLocation& WithPasswordParam(const char* value) { SetPasswordParam(value); return *this;}
+    template<typename PasswordParamT = Aws::String>
+    void SetPasswordParam(PasswordParamT&& value) { m_passwordParamHasBeenSet = true; m_passwordParam = std::forward<PasswordParamT>(value); }
+    template<typename PasswordParamT = Aws::String>
+    InputLocation& WithPasswordParam(PasswordParamT&& value) { SetPasswordParam(std::forward<PasswordParamT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,28 +55,24 @@ namespace Model
      * Live system (eg. a http:// URI) depending on the output type. For example, a
      * RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline InputLocation& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline InputLocation& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline InputLocation& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    InputLocation& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Documentation update needed
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline InputLocation& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline InputLocation& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline InputLocation& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    InputLocation& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
   private:
 

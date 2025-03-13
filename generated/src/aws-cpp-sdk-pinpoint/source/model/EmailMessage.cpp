@@ -18,19 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EmailMessage::EmailMessage() : 
-    m_bodyHasBeenSet(false),
-    m_feedbackForwardingAddressHasBeenSet(false),
-    m_fromAddressHasBeenSet(false),
-    m_rawEmailHasBeenSet(false),
-    m_replyToAddressesHasBeenSet(false),
-    m_simpleEmailHasBeenSet(false),
-    m_substitutionsHasBeenSet(false)
-{
-}
-
 EmailMessage::EmailMessage(JsonView jsonValue)
-  : EmailMessage()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ EmailMessage& EmailMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeedbackForwardingAddress"))
   {
     m_feedbackForwardingAddress = jsonValue.GetString("FeedbackForwardingAddress");
-
     m_feedbackForwardingAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromAddress"))
   {
     m_fromAddress = jsonValue.GetString("FromAddress");
-
     m_fromAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RawEmail"))
   {
     m_rawEmail = jsonValue.GetObject("RawEmail");
-
     m_rawEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplyToAddresses"))
   {
     Aws::Utils::Array<JsonView> replyToAddressesJsonList = jsonValue.GetArray("ReplyToAddresses");
@@ -74,14 +54,11 @@ EmailMessage& EmailMessage::operator =(JsonView jsonValue)
     }
     m_replyToAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SimpleEmail"))
   {
     m_simpleEmail = jsonValue.GetObject("SimpleEmail");
-
     m_simpleEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Substitutions"))
   {
     Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
@@ -98,7 +75,6 @@ EmailMessage& EmailMessage::operator =(JsonView jsonValue)
     }
     m_substitutionsHasBeenSet = true;
   }
-
   return *this;
 }
 

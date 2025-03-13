@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueryResult::GetQueryResult() : 
-    m_waited(0),
-    m_elapsed(0),
-    m_state(QueryState::NOT_SET)
-{
-}
-
 GetQueryResult::GetQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetQueryResult()
 {
   *this = result;
 }
@@ -36,39 +28,35 @@ GetQueryResult& GetQueryResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryString"))
   {
     m_queryString = jsonValue.GetString("queryString");
-
+    m_queryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("waited"))
   {
     m_waited = jsonValue.GetInteger("waited");
-
+    m_waitedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elapsed"))
   {
     m_elapsed = jsonValue.GetInteger("elapsed");
-
+    m_elapsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = QueryStateMapper::GetQueryStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,24 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-Result::Result() : 
-    m_resultIdHasBeenSet(false),
-    m_startTime(0.0),
-    m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
-    m_endTimeHasBeenSet(false),
-    m_isPartial(false),
-    m_isPartialHasBeenSet(false),
-    m_alternativesHasBeenSet(false),
-    m_channelIdHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_languageIdentificationHasBeenSet(false)
-{
-}
-
 Result::Result(JsonView jsonValue)
-  : Result()
 {
   *this = jsonValue;
 }
@@ -45,31 +28,23 @@ Result& Result::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResultId"))
   {
     m_resultId = jsonValue.GetString("ResultId");
-
     m_resultIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsPartial"))
   {
     m_isPartial = jsonValue.GetBool("IsPartial");
-
     m_isPartialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Alternatives"))
   {
     Aws::Utils::Array<JsonView> alternativesJsonList = jsonValue.GetArray("Alternatives");
@@ -79,21 +54,16 @@ Result& Result::operator =(JsonView jsonValue)
     }
     m_alternativesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelId"))
   {
     m_channelId = jsonValue.GetString("ChannelId");
-
     m_channelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageIdentification"))
   {
     Aws::Utils::Array<JsonView> languageIdentificationJsonList = jsonValue.GetArray("LanguageIdentification");
@@ -103,7 +73,6 @@ Result& Result::operator =(JsonView jsonValue)
     }
     m_languageIdentificationHasBeenSet = true;
   }
-
   return *this;
 }
 

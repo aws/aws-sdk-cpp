@@ -35,7 +35,7 @@ namespace Model
   class ListVerifiedEmailAddressesResult
   {
   public:
-    AWS_SES_API ListVerifiedEmailAddressesResult();
+    AWS_SES_API ListVerifiedEmailAddressesResult() = default;
     AWS_SES_API ListVerifiedEmailAddressesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SES_API ListVerifiedEmailAddressesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,29 +44,30 @@ namespace Model
     /**
      * <p>A list of email addresses that have been verified.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVerifiedEmailAddresses() const{ return m_verifiedEmailAddresses; }
-    inline void SetVerifiedEmailAddresses(const Aws::Vector<Aws::String>& value) { m_verifiedEmailAddresses = value; }
-    inline void SetVerifiedEmailAddresses(Aws::Vector<Aws::String>&& value) { m_verifiedEmailAddresses = std::move(value); }
-    inline ListVerifiedEmailAddressesResult& WithVerifiedEmailAddresses(const Aws::Vector<Aws::String>& value) { SetVerifiedEmailAddresses(value); return *this;}
-    inline ListVerifiedEmailAddressesResult& WithVerifiedEmailAddresses(Aws::Vector<Aws::String>&& value) { SetVerifiedEmailAddresses(std::move(value)); return *this;}
-    inline ListVerifiedEmailAddressesResult& AddVerifiedEmailAddresses(const Aws::String& value) { m_verifiedEmailAddresses.push_back(value); return *this; }
-    inline ListVerifiedEmailAddressesResult& AddVerifiedEmailAddresses(Aws::String&& value) { m_verifiedEmailAddresses.push_back(std::move(value)); return *this; }
-    inline ListVerifiedEmailAddressesResult& AddVerifiedEmailAddresses(const char* value) { m_verifiedEmailAddresses.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetVerifiedEmailAddresses() const { return m_verifiedEmailAddresses; }
+    template<typename VerifiedEmailAddressesT = Aws::Vector<Aws::String>>
+    void SetVerifiedEmailAddresses(VerifiedEmailAddressesT&& value) { m_verifiedEmailAddressesHasBeenSet = true; m_verifiedEmailAddresses = std::forward<VerifiedEmailAddressesT>(value); }
+    template<typename VerifiedEmailAddressesT = Aws::Vector<Aws::String>>
+    ListVerifiedEmailAddressesResult& WithVerifiedEmailAddresses(VerifiedEmailAddressesT&& value) { SetVerifiedEmailAddresses(std::forward<VerifiedEmailAddressesT>(value)); return *this;}
+    template<typename VerifiedEmailAddressesT = Aws::String>
+    ListVerifiedEmailAddressesResult& AddVerifiedEmailAddresses(VerifiedEmailAddressesT&& value) { m_verifiedEmailAddressesHasBeenSet = true; m_verifiedEmailAddresses.emplace_back(std::forward<VerifiedEmailAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListVerifiedEmailAddressesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListVerifiedEmailAddressesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListVerifiedEmailAddressesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_verifiedEmailAddresses;
+    bool m_verifiedEmailAddressesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

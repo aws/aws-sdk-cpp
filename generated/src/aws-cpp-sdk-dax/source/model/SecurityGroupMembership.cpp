@@ -18,14 +18,7 @@ namespace DAX
 namespace Model
 {
 
-SecurityGroupMembership::SecurityGroupMembership() : 
-    m_securityGroupIdentifierHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 SecurityGroupMembership::SecurityGroupMembership(JsonView jsonValue)
-  : SecurityGroupMembership()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SecurityGroupMembership& SecurityGroupMembership::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SecurityGroupIdentifier"))
   {
     m_securityGroupIdentifier = jsonValue.GetString("SecurityGroupIdentifier");
-
     m_securityGroupIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

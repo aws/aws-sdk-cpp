@@ -33,7 +33,7 @@ namespace Model
   class LicenseUsage
   {
   public:
-    AWS_LICENSEMANAGER_API LicenseUsage();
+    AWS_LICENSEMANAGER_API LicenseUsage() = default;
     AWS_LICENSEMANAGER_API LicenseUsage(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API LicenseUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>License entitlement usages.</p>
      */
-    inline const Aws::Vector<EntitlementUsage>& GetEntitlementUsages() const{ return m_entitlementUsages; }
+    inline const Aws::Vector<EntitlementUsage>& GetEntitlementUsages() const { return m_entitlementUsages; }
     inline bool EntitlementUsagesHasBeenSet() const { return m_entitlementUsagesHasBeenSet; }
-    inline void SetEntitlementUsages(const Aws::Vector<EntitlementUsage>& value) { m_entitlementUsagesHasBeenSet = true; m_entitlementUsages = value; }
-    inline void SetEntitlementUsages(Aws::Vector<EntitlementUsage>&& value) { m_entitlementUsagesHasBeenSet = true; m_entitlementUsages = std::move(value); }
-    inline LicenseUsage& WithEntitlementUsages(const Aws::Vector<EntitlementUsage>& value) { SetEntitlementUsages(value); return *this;}
-    inline LicenseUsage& WithEntitlementUsages(Aws::Vector<EntitlementUsage>&& value) { SetEntitlementUsages(std::move(value)); return *this;}
-    inline LicenseUsage& AddEntitlementUsages(const EntitlementUsage& value) { m_entitlementUsagesHasBeenSet = true; m_entitlementUsages.push_back(value); return *this; }
-    inline LicenseUsage& AddEntitlementUsages(EntitlementUsage&& value) { m_entitlementUsagesHasBeenSet = true; m_entitlementUsages.push_back(std::move(value)); return *this; }
+    template<typename EntitlementUsagesT = Aws::Vector<EntitlementUsage>>
+    void SetEntitlementUsages(EntitlementUsagesT&& value) { m_entitlementUsagesHasBeenSet = true; m_entitlementUsages = std::forward<EntitlementUsagesT>(value); }
+    template<typename EntitlementUsagesT = Aws::Vector<EntitlementUsage>>
+    LicenseUsage& WithEntitlementUsages(EntitlementUsagesT&& value) { SetEntitlementUsages(std::forward<EntitlementUsagesT>(value)); return *this;}
+    template<typename EntitlementUsagesT = EntitlementUsage>
+    LicenseUsage& AddEntitlementUsages(EntitlementUsagesT&& value) { m_entitlementUsagesHasBeenSet = true; m_entitlementUsages.emplace_back(std::forward<EntitlementUsagesT>(value)); return *this; }
     ///@}
   private:
 

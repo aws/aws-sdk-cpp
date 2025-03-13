@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CalculateRoutesResult::CalculateRoutesResult() : 
-    m_legGeometryFormat(GeometryFormat::NOT_SET)
-{
-}
-
 CalculateRoutesResult::CalculateRoutesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CalculateRoutesResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ CalculateRoutesResult& CalculateRoutesResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("LegGeometryFormat"))
   {
     m_legGeometryFormat = GeometryFormatMapper::GetGeometryFormatForName(jsonValue.GetString("LegGeometryFormat"));
-
+    m_legGeometryFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notices"))
   {
     Aws::Utils::Array<JsonView> noticesJsonList = jsonValue.GetArray("Notices");
@@ -44,8 +37,8 @@ CalculateRoutesResult& CalculateRoutesResult::operator =(const Aws::AmazonWebSer
     {
       m_notices.push_back(noticesJsonList[noticesIndex].AsObject());
     }
+    m_noticesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Routes"))
   {
     Aws::Utils::Array<JsonView> routesJsonList = jsonValue.GetArray("Routes");
@@ -53,20 +46,22 @@ CalculateRoutesResult& CalculateRoutesResult::operator =(const Aws::AmazonWebSer
     {
       m_routes.push_back(routesJsonList[routesIndex].AsObject());
     }
+    m_routesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& pricingBucketIter = headers.find("x-amz-geo-pricing-bucket");
   if(pricingBucketIter != headers.end())
   {
     m_pricingBucket = pricingBucketIter->second;
+    m_pricingBucketHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

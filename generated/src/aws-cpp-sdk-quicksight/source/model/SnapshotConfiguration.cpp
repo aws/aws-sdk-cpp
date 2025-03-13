@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SnapshotConfiguration::SnapshotConfiguration() : 
-    m_fileGroupsHasBeenSet(false),
-    m_destinationConfigurationHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 SnapshotConfiguration::SnapshotConfiguration(JsonView jsonValue)
-  : SnapshotConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ SnapshotConfiguration& SnapshotConfiguration::operator =(JsonView jsonValue)
     }
     m_fileGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationConfiguration"))
   {
     m_destinationConfiguration = jsonValue.GetObject("DestinationConfiguration");
-
     m_destinationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     m_parameters = jsonValue.GetObject("Parameters");
-
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

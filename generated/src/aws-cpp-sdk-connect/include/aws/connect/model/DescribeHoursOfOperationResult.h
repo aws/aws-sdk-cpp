@@ -28,7 +28,7 @@ namespace Model
   class DescribeHoursOfOperationResult
   {
   public:
-    AWS_CONNECT_API DescribeHoursOfOperationResult();
+    AWS_CONNECT_API DescribeHoursOfOperationResult() = default;
     AWS_CONNECT_API DescribeHoursOfOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribeHoursOfOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The hours of operation.</p>
      */
-    inline const HoursOfOperation& GetHoursOfOperation() const{ return m_hoursOfOperation; }
-    inline void SetHoursOfOperation(const HoursOfOperation& value) { m_hoursOfOperation = value; }
-    inline void SetHoursOfOperation(HoursOfOperation&& value) { m_hoursOfOperation = std::move(value); }
-    inline DescribeHoursOfOperationResult& WithHoursOfOperation(const HoursOfOperation& value) { SetHoursOfOperation(value); return *this;}
-    inline DescribeHoursOfOperationResult& WithHoursOfOperation(HoursOfOperation&& value) { SetHoursOfOperation(std::move(value)); return *this;}
+    inline const HoursOfOperation& GetHoursOfOperation() const { return m_hoursOfOperation; }
+    template<typename HoursOfOperationT = HoursOfOperation>
+    void SetHoursOfOperation(HoursOfOperationT&& value) { m_hoursOfOperationHasBeenSet = true; m_hoursOfOperation = std::forward<HoursOfOperationT>(value); }
+    template<typename HoursOfOperationT = HoursOfOperation>
+    DescribeHoursOfOperationResult& WithHoursOfOperation(HoursOfOperationT&& value) { SetHoursOfOperation(std::forward<HoursOfOperationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeHoursOfOperationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeHoursOfOperationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeHoursOfOperationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeHoursOfOperationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     HoursOfOperation m_hoursOfOperation;
+    bool m_hoursOfOperationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

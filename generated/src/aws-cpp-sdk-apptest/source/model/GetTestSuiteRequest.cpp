@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTestSuiteRequest::GetTestSuiteRequest() : 
-    m_testSuiteIdHasBeenSet(false),
-    m_testSuiteVersion(0),
-    m_testSuiteVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetTestSuiteRequest::SerializePayload() const
 {
   return {};

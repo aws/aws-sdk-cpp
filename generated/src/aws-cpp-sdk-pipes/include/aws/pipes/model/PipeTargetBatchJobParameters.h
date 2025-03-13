@@ -38,7 +38,7 @@ namespace Model
   class PipeTargetBatchJobParameters
   {
   public:
-    AWS_PIPES_API PipeTargetBatchJobParameters();
+    AWS_PIPES_API PipeTargetBatchJobParameters() = default;
     AWS_PIPES_API PipeTargetBatchJobParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PipeTargetBatchJobParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * for the job definition. If name is specified without a revision then the latest
      * active revision is used.</p>
      */
-    inline const Aws::String& GetJobDefinition() const{ return m_jobDefinition; }
+    inline const Aws::String& GetJobDefinition() const { return m_jobDefinition; }
     inline bool JobDefinitionHasBeenSet() const { return m_jobDefinitionHasBeenSet; }
-    inline void SetJobDefinition(const Aws::String& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
-    inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::move(value); }
-    inline void SetJobDefinition(const char* value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition.assign(value); }
-    inline PipeTargetBatchJobParameters& WithJobDefinition(const Aws::String& value) { SetJobDefinition(value); return *this;}
-    inline PipeTargetBatchJobParameters& WithJobDefinition(Aws::String&& value) { SetJobDefinition(std::move(value)); return *this;}
-    inline PipeTargetBatchJobParameters& WithJobDefinition(const char* value) { SetJobDefinition(value); return *this;}
+    template<typename JobDefinitionT = Aws::String>
+    void SetJobDefinition(JobDefinitionT&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::forward<JobDefinitionT>(value); }
+    template<typename JobDefinitionT = Aws::String>
+    PipeTargetBatchJobParameters& WithJobDefinition(JobDefinitionT&& value) { SetJobDefinition(std::forward<JobDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * must be alphanumeric, can contain uppercase and lowercase letters, numbers,
      * hyphens (-), and underscores (_).</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline PipeTargetBatchJobParameters& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline PipeTargetBatchJobParameters& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline PipeTargetBatchJobParameters& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    PipeTargetBatchJobParameters& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +80,12 @@ namespace Model
      * a job, it becomes an array job. This parameter is used only if the target is an
      * Batch job.</p>
      */
-    inline const BatchArrayProperties& GetArrayProperties() const{ return m_arrayProperties; }
+    inline const BatchArrayProperties& GetArrayProperties() const { return m_arrayProperties; }
     inline bool ArrayPropertiesHasBeenSet() const { return m_arrayPropertiesHasBeenSet; }
-    inline void SetArrayProperties(const BatchArrayProperties& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
-    inline void SetArrayProperties(BatchArrayProperties&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::move(value); }
-    inline PipeTargetBatchJobParameters& WithArrayProperties(const BatchArrayProperties& value) { SetArrayProperties(value); return *this;}
-    inline PipeTargetBatchJobParameters& WithArrayProperties(BatchArrayProperties&& value) { SetArrayProperties(std::move(value)); return *this;}
+    template<typename ArrayPropertiesT = BatchArrayProperties>
+    void SetArrayProperties(ArrayPropertiesT&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::forward<ArrayPropertiesT>(value); }
+    template<typename ArrayPropertiesT = BatchArrayProperties>
+    PipeTargetBatchJobParameters& WithArrayProperties(ArrayPropertiesT&& value) { SetArrayProperties(std::forward<ArrayPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,24 +93,24 @@ namespace Model
      * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
      * here, it overrides the retry strategy defined in the job definition.</p>
      */
-    inline const BatchRetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+    inline const BatchRetryStrategy& GetRetryStrategy() const { return m_retryStrategy; }
     inline bool RetryStrategyHasBeenSet() const { return m_retryStrategyHasBeenSet; }
-    inline void SetRetryStrategy(const BatchRetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
-    inline void SetRetryStrategy(BatchRetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::move(value); }
-    inline PipeTargetBatchJobParameters& WithRetryStrategy(const BatchRetryStrategy& value) { SetRetryStrategy(value); return *this;}
-    inline PipeTargetBatchJobParameters& WithRetryStrategy(BatchRetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
+    template<typename RetryStrategyT = BatchRetryStrategy>
+    void SetRetryStrategy(RetryStrategyT&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::forward<RetryStrategyT>(value); }
+    template<typename RetryStrategyT = BatchRetryStrategy>
+    PipeTargetBatchJobParameters& WithRetryStrategy(RetryStrategyT&& value) { SetRetryStrategy(std::forward<RetryStrategyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The overrides that are sent to a container.</p>
      */
-    inline const BatchContainerOverrides& GetContainerOverrides() const{ return m_containerOverrides; }
+    inline const BatchContainerOverrides& GetContainerOverrides() const { return m_containerOverrides; }
     inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
-    inline void SetContainerOverrides(const BatchContainerOverrides& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
-    inline void SetContainerOverrides(BatchContainerOverrides&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
-    inline PipeTargetBatchJobParameters& WithContainerOverrides(const BatchContainerOverrides& value) { SetContainerOverrides(value); return *this;}
-    inline PipeTargetBatchJobParameters& WithContainerOverrides(BatchContainerOverrides&& value) { SetContainerOverrides(std::move(value)); return *this;}
+    template<typename ContainerOverridesT = BatchContainerOverrides>
+    void SetContainerOverrides(ContainerOverridesT&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::forward<ContainerOverridesT>(value); }
+    template<typename ContainerOverridesT = BatchContainerOverrides>
+    PipeTargetBatchJobParameters& WithContainerOverrides(ContainerOverridesT&& value) { SetContainerOverrides(std::forward<ContainerOverridesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +123,14 @@ namespace Model
      * this job must wait for the corresponding index child of each dependency to
      * complete before it can begin.</p>
      */
-    inline const Aws::Vector<BatchJobDependency>& GetDependsOn() const{ return m_dependsOn; }
+    inline const Aws::Vector<BatchJobDependency>& GetDependsOn() const { return m_dependsOn; }
     inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
-    inline void SetDependsOn(const Aws::Vector<BatchJobDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
-    inline void SetDependsOn(Aws::Vector<BatchJobDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
-    inline PipeTargetBatchJobParameters& WithDependsOn(const Aws::Vector<BatchJobDependency>& value) { SetDependsOn(value); return *this;}
-    inline PipeTargetBatchJobParameters& WithDependsOn(Aws::Vector<BatchJobDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
-    inline PipeTargetBatchJobParameters& AddDependsOn(const BatchJobDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
-    inline PipeTargetBatchJobParameters& AddDependsOn(BatchJobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
+    template<typename DependsOnT = Aws::Vector<BatchJobDependency>>
+    void SetDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::forward<DependsOnT>(value); }
+    template<typename DependsOnT = Aws::Vector<BatchJobDependency>>
+    PipeTargetBatchJobParameters& WithDependsOn(DependsOnT&& value) { SetDependsOn(std::forward<DependsOnT>(value)); return *this;}
+    template<typename DependsOnT = BatchJobDependency>
+    PipeTargetBatchJobParameters& AddDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.emplace_back(std::forward<DependsOnT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -144,19 +140,16 @@ namespace Model
      * key and value pair mapping. Parameters included here override any corresponding
      * parameter defaults from the job definition.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline PipeTargetBatchJobParameters& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline PipeTargetBatchJobParameters& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline PipeTargetBatchJobParameters& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline PipeTargetBatchJobParameters& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline PipeTargetBatchJobParameters& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline PipeTargetBatchJobParameters& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline PipeTargetBatchJobParameters& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline PipeTargetBatchJobParameters& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline PipeTargetBatchJobParameters& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    PipeTargetBatchJobParameters& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    PipeTargetBatchJobParameters& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

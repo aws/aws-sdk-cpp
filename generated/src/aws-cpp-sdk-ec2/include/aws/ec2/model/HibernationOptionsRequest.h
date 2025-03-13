@@ -35,7 +35,7 @@ namespace Model
   class HibernationOptionsRequest
   {
   public:
-    AWS_EC2_API HibernationOptionsRequest();
+    AWS_EC2_API HibernationOptionsRequest() = default;
     AWS_EC2_API HibernationOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API HibernationOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -57,14 +57,14 @@ namespace Model
      * <code>hibernate</code>, you'll get an error.</p> </li> </ul> <p>Default:
      * <code>false</code> </p>
      */
-    inline bool GetConfigured() const{ return m_configured; }
+    inline bool GetConfigured() const { return m_configured; }
     inline bool ConfiguredHasBeenSet() const { return m_configuredHasBeenSet; }
     inline void SetConfigured(bool value) { m_configuredHasBeenSet = true; m_configured = value; }
     inline HibernationOptionsRequest& WithConfigured(bool value) { SetConfigured(value); return *this;}
     ///@}
   private:
 
-    bool m_configured;
+    bool m_configured{false};
     bool m_configuredHasBeenSet = false;
   };
 

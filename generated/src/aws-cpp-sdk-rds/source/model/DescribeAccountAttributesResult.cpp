@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAccountAttributesResult::DescribeAccountAttributesResult()
-{
-}
-
 DescribeAccountAttributesResult::DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeAccountAttributesResult& DescribeAccountAttributesResult::operator =(con
     if(!accountQuotasNode.IsNull())
     {
       XmlNode accountQuotasMember = accountQuotasNode.FirstChild("AccountQuota");
+      m_accountQuotasHasBeenSet = !accountQuotasMember.IsNull();
       while(!accountQuotasMember.IsNull())
       {
         m_accountQuotas.push_back(accountQuotasMember);
@@ -54,6 +51,7 @@ DescribeAccountAttributesResult& DescribeAccountAttributesResult::operator =(con
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeAccountAttributesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

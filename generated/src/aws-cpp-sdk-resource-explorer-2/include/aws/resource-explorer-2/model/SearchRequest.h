@@ -21,7 +21,7 @@ namespace Model
   class SearchRequest : public ResourceExplorer2Request
   {
   public:
-    AWS_RESOURCEEXPLORER2_API SearchRequest();
+    AWS_RESOURCEEXPLORER2_API SearchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * <code>NextToken</code> after every operation to ensure that you receive all of
      * the results.</p> 
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -60,14 +60,12 @@ namespace Model
      * the output should continue from. The pagination tokens expire after 24
      * hours.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * then use a different value for <code>QueryString</code> to refine the
      * results.</p> 
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
-    inline SearchRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline SearchRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline SearchRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    SearchRequest& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,18 +100,16 @@ namespace Model
      * the default view, then the operation fails with a <code>401 Unauthorized</code>
      * exception.</p>
      */
-    inline const Aws::String& GetViewArn() const{ return m_viewArn; }
+    inline const Aws::String& GetViewArn() const { return m_viewArn; }
     inline bool ViewArnHasBeenSet() const { return m_viewArnHasBeenSet; }
-    inline void SetViewArn(const Aws::String& value) { m_viewArnHasBeenSet = true; m_viewArn = value; }
-    inline void SetViewArn(Aws::String&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::move(value); }
-    inline void SetViewArn(const char* value) { m_viewArnHasBeenSet = true; m_viewArn.assign(value); }
-    inline SearchRequest& WithViewArn(const Aws::String& value) { SetViewArn(value); return *this;}
-    inline SearchRequest& WithViewArn(Aws::String&& value) { SetViewArn(std::move(value)); return *this;}
-    inline SearchRequest& WithViewArn(const char* value) { SetViewArn(value); return *this;}
+    template<typename ViewArnT = Aws::String>
+    void SetViewArn(ViewArnT&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::forward<ViewArnT>(value); }
+    template<typename ViewArnT = Aws::String>
+    SearchRequest& WithViewArn(ViewArnT&& value) { SetViewArn(std::forward<ViewArnT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

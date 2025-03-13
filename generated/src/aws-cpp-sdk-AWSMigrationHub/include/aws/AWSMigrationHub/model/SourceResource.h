@@ -32,7 +32,7 @@ namespace Model
   class SourceResource
   {
   public:
-    AWS_MIGRATIONHUB_API SourceResource();
+    AWS_MIGRATIONHUB_API SourceResource() = default;
     AWS_MIGRATIONHUB_API SourceResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUB_API SourceResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * resource is an AWS resource, we recommend that you set this parameter to the ARN
      * of the resource.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SourceResource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SourceResource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SourceResource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SourceResource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,24 @@ namespace Model
      * <p>A description that can be free-form text to record additional detail about
      * the resource for clarity or later reference.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SourceResource& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SourceResource& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SourceResource& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    SourceResource& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A free-form description of the status of the resource.</p>
      */
-    inline const Aws::String& GetStatusDetail() const{ return m_statusDetail; }
+    inline const Aws::String& GetStatusDetail() const { return m_statusDetail; }
     inline bool StatusDetailHasBeenSet() const { return m_statusDetailHasBeenSet; }
-    inline void SetStatusDetail(const Aws::String& value) { m_statusDetailHasBeenSet = true; m_statusDetail = value; }
-    inline void SetStatusDetail(Aws::String&& value) { m_statusDetailHasBeenSet = true; m_statusDetail = std::move(value); }
-    inline void SetStatusDetail(const char* value) { m_statusDetailHasBeenSet = true; m_statusDetail.assign(value); }
-    inline SourceResource& WithStatusDetail(const Aws::String& value) { SetStatusDetail(value); return *this;}
-    inline SourceResource& WithStatusDetail(Aws::String&& value) { SetStatusDetail(std::move(value)); return *this;}
-    inline SourceResource& WithStatusDetail(const char* value) { SetStatusDetail(value); return *this;}
+    template<typename StatusDetailT = Aws::String>
+    void SetStatusDetail(StatusDetailT&& value) { m_statusDetailHasBeenSet = true; m_statusDetail = std::forward<StatusDetailT>(value); }
+    template<typename StatusDetailT = Aws::String>
+    SourceResource& WithStatusDetail(StatusDetailT&& value) { SetStatusDetail(std::forward<StatusDetailT>(value)); return *this;}
     ///@}
   private:
 

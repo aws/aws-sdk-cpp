@@ -27,7 +27,7 @@ namespace Model
   class EnableEbsEncryptionByDefaultResponse
   {
   public:
-    AWS_EC2_API EnableEbsEncryptionByDefaultResponse();
+    AWS_EC2_API EnableEbsEncryptionByDefaultResponse() = default;
     AWS_EC2_API EnableEbsEncryptionByDefaultResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API EnableEbsEncryptionByDefaultResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -36,24 +36,26 @@ namespace Model
     /**
      * <p>The updated status of encryption by default.</p>
      */
-    inline bool GetEbsEncryptionByDefault() const{ return m_ebsEncryptionByDefault; }
-    inline void SetEbsEncryptionByDefault(bool value) { m_ebsEncryptionByDefault = value; }
+    inline bool GetEbsEncryptionByDefault() const { return m_ebsEncryptionByDefault; }
+    inline void SetEbsEncryptionByDefault(bool value) { m_ebsEncryptionByDefaultHasBeenSet = true; m_ebsEncryptionByDefault = value; }
     inline EnableEbsEncryptionByDefaultResponse& WithEbsEncryptionByDefault(bool value) { SetEbsEncryptionByDefault(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline EnableEbsEncryptionByDefaultResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline EnableEbsEncryptionByDefaultResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    EnableEbsEncryptionByDefaultResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_ebsEncryptionByDefault;
+    bool m_ebsEncryptionByDefault{false};
+    bool m_ebsEncryptionByDefaultHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

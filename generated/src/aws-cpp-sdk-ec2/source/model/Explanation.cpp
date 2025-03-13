@@ -20,68 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Explanation::Explanation() : 
-    m_aclHasBeenSet(false),
-    m_aclRuleHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_addressesHasBeenSet(false),
-    m_attachedToHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_cidrsHasBeenSet(false),
-    m_componentHasBeenSet(false),
-    m_customerGatewayHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationVpcHasBeenSet(false),
-    m_directionHasBeenSet(false),
-    m_explanationCodeHasBeenSet(false),
-    m_ingressRouteTableHasBeenSet(false),
-    m_internetGatewayHasBeenSet(false),
-    m_loadBalancerArnHasBeenSet(false),
-    m_classicLoadBalancerListenerHasBeenSet(false),
-    m_loadBalancerListenerPort(0),
-    m_loadBalancerListenerPortHasBeenSet(false),
-    m_loadBalancerTargetHasBeenSet(false),
-    m_loadBalancerTargetGroupHasBeenSet(false),
-    m_loadBalancerTargetGroupsHasBeenSet(false),
-    m_loadBalancerTargetPort(0),
-    m_loadBalancerTargetPortHasBeenSet(false),
-    m_elasticLoadBalancerListenerHasBeenSet(false),
-    m_missingComponentHasBeenSet(false),
-    m_natGatewayHasBeenSet(false),
-    m_networkInterfaceHasBeenSet(false),
-    m_packetFieldHasBeenSet(false),
-    m_vpcPeeringConnectionHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_portRangesHasBeenSet(false),
-    m_prefixListHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_routeTableRouteHasBeenSet(false),
-    m_routeTableHasBeenSet(false),
-    m_securityGroupHasBeenSet(false),
-    m_securityGroupRuleHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_sourceVpcHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_subnetHasBeenSet(false),
-    m_subnetRouteTableHasBeenSet(false),
-    m_vpcHasBeenSet(false),
-    m_vpcEndpointHasBeenSet(false),
-    m_vpnConnectionHasBeenSet(false),
-    m_vpnGatewayHasBeenSet(false),
-    m_transitGatewayHasBeenSet(false),
-    m_transitGatewayRouteTableHasBeenSet(false),
-    m_transitGatewayRouteTableRouteHasBeenSet(false),
-    m_transitGatewayAttachmentHasBeenSet(false),
-    m_componentAccountHasBeenSet(false),
-    m_componentRegionHasBeenSet(false),
-    m_firewallStatelessRuleHasBeenSet(false),
-    m_firewallStatefulRuleHasBeenSet(false)
-{
-}
-
 Explanation::Explanation(const XmlNode& xmlNode)
-  : Explanation()
 {
   *this = xmlNode;
 }
@@ -97,360 +36,413 @@ Explanation& Explanation::operator =(const XmlNode& xmlNode)
     {
       m_acl = aclNode;
       m_aclHasBeenSet = true;
+       m_aclHasBeenSet = true;
     }
     XmlNode aclRuleNode = resultNode.FirstChild("aclRule");
     if(!aclRuleNode.IsNull())
     {
       m_aclRule = aclRuleNode;
       m_aclRuleHasBeenSet = true;
+       m_aclRuleHasBeenSet = true;
     }
     XmlNode addressNode = resultNode.FirstChild("address");
     if(!addressNode.IsNull())
     {
       m_address = Aws::Utils::Xml::DecodeEscapedXmlText(addressNode.GetText());
       m_addressHasBeenSet = true;
+       m_addressHasBeenSet = true;
     }
     XmlNode addressesNode = resultNode.FirstChild("addressSet");
     if(!addressesNode.IsNull())
     {
       XmlNode addressesMember = addressesNode.FirstChild("item");
+      m_addressesHasBeenSet = !addressesMember.IsNull();
       while(!addressesMember.IsNull())
       {
         m_addresses.push_back(addressesMember.GetText());
         addressesMember = addressesMember.NextNode("item");
       }
 
-      m_addressesHasBeenSet = true;
+       m_addressesHasBeenSet = true;
     }
     XmlNode attachedToNode = resultNode.FirstChild("attachedTo");
     if(!attachedToNode.IsNull())
     {
       m_attachedTo = attachedToNode;
       m_attachedToHasBeenSet = true;
+       m_attachedToHasBeenSet = true;
     }
     XmlNode availabilityZonesNode = resultNode.FirstChild("availabilityZoneSet");
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("item");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember.GetText());
         availabilityZonesMember = availabilityZonesMember.NextNode("item");
       }
 
-      m_availabilityZonesHasBeenSet = true;
+       m_availabilityZonesHasBeenSet = true;
     }
     XmlNode cidrsNode = resultNode.FirstChild("cidrSet");
     if(!cidrsNode.IsNull())
     {
       XmlNode cidrsMember = cidrsNode.FirstChild("item");
+      m_cidrsHasBeenSet = !cidrsMember.IsNull();
       while(!cidrsMember.IsNull())
       {
         m_cidrs.push_back(cidrsMember.GetText());
         cidrsMember = cidrsMember.NextNode("item");
       }
 
-      m_cidrsHasBeenSet = true;
+       m_cidrsHasBeenSet = true;
     }
     XmlNode componentNode = resultNode.FirstChild("component");
     if(!componentNode.IsNull())
     {
       m_component = componentNode;
       m_componentHasBeenSet = true;
+       m_componentHasBeenSet = true;
     }
     XmlNode customerGatewayNode = resultNode.FirstChild("customerGateway");
     if(!customerGatewayNode.IsNull())
     {
       m_customerGateway = customerGatewayNode;
       m_customerGatewayHasBeenSet = true;
+       m_customerGatewayHasBeenSet = true;
     }
     XmlNode destinationNode = resultNode.FirstChild("destination");
     if(!destinationNode.IsNull())
     {
       m_destination = destinationNode;
       m_destinationHasBeenSet = true;
+       m_destinationHasBeenSet = true;
     }
     XmlNode destinationVpcNode = resultNode.FirstChild("destinationVpc");
     if(!destinationVpcNode.IsNull())
     {
       m_destinationVpc = destinationVpcNode;
       m_destinationVpcHasBeenSet = true;
+       m_destinationVpcHasBeenSet = true;
     }
     XmlNode directionNode = resultNode.FirstChild("direction");
     if(!directionNode.IsNull())
     {
       m_direction = Aws::Utils::Xml::DecodeEscapedXmlText(directionNode.GetText());
       m_directionHasBeenSet = true;
+       m_directionHasBeenSet = true;
     }
     XmlNode explanationCodeNode = resultNode.FirstChild("explanationCode");
     if(!explanationCodeNode.IsNull())
     {
       m_explanationCode = Aws::Utils::Xml::DecodeEscapedXmlText(explanationCodeNode.GetText());
       m_explanationCodeHasBeenSet = true;
+       m_explanationCodeHasBeenSet = true;
     }
     XmlNode ingressRouteTableNode = resultNode.FirstChild("ingressRouteTable");
     if(!ingressRouteTableNode.IsNull())
     {
       m_ingressRouteTable = ingressRouteTableNode;
       m_ingressRouteTableHasBeenSet = true;
+       m_ingressRouteTableHasBeenSet = true;
     }
     XmlNode internetGatewayNode = resultNode.FirstChild("internetGateway");
     if(!internetGatewayNode.IsNull())
     {
       m_internetGateway = internetGatewayNode;
       m_internetGatewayHasBeenSet = true;
+       m_internetGatewayHasBeenSet = true;
     }
     XmlNode loadBalancerArnNode = resultNode.FirstChild("loadBalancerArn");
     if(!loadBalancerArnNode.IsNull())
     {
       m_loadBalancerArn = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerArnNode.GetText());
       m_loadBalancerArnHasBeenSet = true;
+       m_loadBalancerArnHasBeenSet = true;
     }
     XmlNode classicLoadBalancerListenerNode = resultNode.FirstChild("classicLoadBalancerListener");
     if(!classicLoadBalancerListenerNode.IsNull())
     {
       m_classicLoadBalancerListener = classicLoadBalancerListenerNode;
       m_classicLoadBalancerListenerHasBeenSet = true;
+       m_classicLoadBalancerListenerHasBeenSet = true;
     }
     XmlNode loadBalancerListenerPortNode = resultNode.FirstChild("loadBalancerListenerPort");
     if(!loadBalancerListenerPortNode.IsNull())
     {
       m_loadBalancerListenerPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerListenerPortNode.GetText()).c_str()).c_str());
       m_loadBalancerListenerPortHasBeenSet = true;
+       m_loadBalancerListenerPortHasBeenSet = true;
     }
     XmlNode loadBalancerTargetNode = resultNode.FirstChild("loadBalancerTarget");
     if(!loadBalancerTargetNode.IsNull())
     {
       m_loadBalancerTarget = loadBalancerTargetNode;
       m_loadBalancerTargetHasBeenSet = true;
+       m_loadBalancerTargetHasBeenSet = true;
     }
     XmlNode loadBalancerTargetGroupNode = resultNode.FirstChild("loadBalancerTargetGroup");
     if(!loadBalancerTargetGroupNode.IsNull())
     {
       m_loadBalancerTargetGroup = loadBalancerTargetGroupNode;
       m_loadBalancerTargetGroupHasBeenSet = true;
+       m_loadBalancerTargetGroupHasBeenSet = true;
     }
     XmlNode loadBalancerTargetGroupsNode = resultNode.FirstChild("loadBalancerTargetGroupSet");
     if(!loadBalancerTargetGroupsNode.IsNull())
     {
       XmlNode loadBalancerTargetGroupsMember = loadBalancerTargetGroupsNode.FirstChild("item");
+      m_loadBalancerTargetGroupsHasBeenSet = !loadBalancerTargetGroupsMember.IsNull();
       while(!loadBalancerTargetGroupsMember.IsNull())
       {
         m_loadBalancerTargetGroups.push_back(loadBalancerTargetGroupsMember);
         loadBalancerTargetGroupsMember = loadBalancerTargetGroupsMember.NextNode("item");
       }
 
-      m_loadBalancerTargetGroupsHasBeenSet = true;
+       m_loadBalancerTargetGroupsHasBeenSet = true;
     }
     XmlNode loadBalancerTargetPortNode = resultNode.FirstChild("loadBalancerTargetPort");
     if(!loadBalancerTargetPortNode.IsNull())
     {
       m_loadBalancerTargetPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerTargetPortNode.GetText()).c_str()).c_str());
       m_loadBalancerTargetPortHasBeenSet = true;
+       m_loadBalancerTargetPortHasBeenSet = true;
     }
     XmlNode elasticLoadBalancerListenerNode = resultNode.FirstChild("elasticLoadBalancerListener");
     if(!elasticLoadBalancerListenerNode.IsNull())
     {
       m_elasticLoadBalancerListener = elasticLoadBalancerListenerNode;
       m_elasticLoadBalancerListenerHasBeenSet = true;
+       m_elasticLoadBalancerListenerHasBeenSet = true;
     }
     XmlNode missingComponentNode = resultNode.FirstChild("missingComponent");
     if(!missingComponentNode.IsNull())
     {
       m_missingComponent = Aws::Utils::Xml::DecodeEscapedXmlText(missingComponentNode.GetText());
       m_missingComponentHasBeenSet = true;
+       m_missingComponentHasBeenSet = true;
     }
     XmlNode natGatewayNode = resultNode.FirstChild("natGateway");
     if(!natGatewayNode.IsNull())
     {
       m_natGateway = natGatewayNode;
       m_natGatewayHasBeenSet = true;
+       m_natGatewayHasBeenSet = true;
     }
     XmlNode networkInterfaceNode = resultNode.FirstChild("networkInterface");
     if(!networkInterfaceNode.IsNull())
     {
       m_networkInterface = networkInterfaceNode;
       m_networkInterfaceHasBeenSet = true;
+       m_networkInterfaceHasBeenSet = true;
     }
     XmlNode packetFieldNode = resultNode.FirstChild("packetField");
     if(!packetFieldNode.IsNull())
     {
       m_packetField = Aws::Utils::Xml::DecodeEscapedXmlText(packetFieldNode.GetText());
       m_packetFieldHasBeenSet = true;
+       m_packetFieldHasBeenSet = true;
     }
     XmlNode vpcPeeringConnectionNode = resultNode.FirstChild("vpcPeeringConnection");
     if(!vpcPeeringConnectionNode.IsNull())
     {
       m_vpcPeeringConnection = vpcPeeringConnectionNode;
       m_vpcPeeringConnectionHasBeenSet = true;
+       m_vpcPeeringConnectionHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
     XmlNode portRangesNode = resultNode.FirstChild("portRangeSet");
     if(!portRangesNode.IsNull())
     {
       XmlNode portRangesMember = portRangesNode.FirstChild("item");
+      m_portRangesHasBeenSet = !portRangesMember.IsNull();
       while(!portRangesMember.IsNull())
       {
         m_portRanges.push_back(portRangesMember);
         portRangesMember = portRangesMember.NextNode("item");
       }
 
-      m_portRangesHasBeenSet = true;
+       m_portRangesHasBeenSet = true;
     }
     XmlNode prefixListNode = resultNode.FirstChild("prefixList");
     if(!prefixListNode.IsNull())
     {
       m_prefixList = prefixListNode;
       m_prefixListHasBeenSet = true;
+       m_prefixListHasBeenSet = true;
     }
     XmlNode protocolsNode = resultNode.FirstChild("protocolSet");
     if(!protocolsNode.IsNull())
     {
       XmlNode protocolsMember = protocolsNode.FirstChild("item");
+      m_protocolsHasBeenSet = !protocolsMember.IsNull();
       while(!protocolsMember.IsNull())
       {
         m_protocols.push_back(protocolsMember.GetText());
         protocolsMember = protocolsMember.NextNode("item");
       }
 
-      m_protocolsHasBeenSet = true;
+       m_protocolsHasBeenSet = true;
     }
     XmlNode routeTableRouteNode = resultNode.FirstChild("routeTableRoute");
     if(!routeTableRouteNode.IsNull())
     {
       m_routeTableRoute = routeTableRouteNode;
       m_routeTableRouteHasBeenSet = true;
+       m_routeTableRouteHasBeenSet = true;
     }
     XmlNode routeTableNode = resultNode.FirstChild("routeTable");
     if(!routeTableNode.IsNull())
     {
       m_routeTable = routeTableNode;
       m_routeTableHasBeenSet = true;
+       m_routeTableHasBeenSet = true;
     }
     XmlNode securityGroupNode = resultNode.FirstChild("securityGroup");
     if(!securityGroupNode.IsNull())
     {
       m_securityGroup = securityGroupNode;
       m_securityGroupHasBeenSet = true;
+       m_securityGroupHasBeenSet = true;
     }
     XmlNode securityGroupRuleNode = resultNode.FirstChild("securityGroupRule");
     if(!securityGroupRuleNode.IsNull())
     {
       m_securityGroupRule = securityGroupRuleNode;
       m_securityGroupRuleHasBeenSet = true;
+       m_securityGroupRuleHasBeenSet = true;
     }
     XmlNode securityGroupsNode = resultNode.FirstChild("securityGroupSet");
     if(!securityGroupsNode.IsNull())
     {
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("item");
+      m_securityGroupsHasBeenSet = !securityGroupsMember.IsNull();
       while(!securityGroupsMember.IsNull())
       {
         m_securityGroups.push_back(securityGroupsMember);
         securityGroupsMember = securityGroupsMember.NextNode("item");
       }
 
-      m_securityGroupsHasBeenSet = true;
+       m_securityGroupsHasBeenSet = true;
     }
     XmlNode sourceVpcNode = resultNode.FirstChild("sourceVpc");
     if(!sourceVpcNode.IsNull())
     {
       m_sourceVpc = sourceVpcNode;
       m_sourceVpcHasBeenSet = true;
+       m_sourceVpcHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode subnetNode = resultNode.FirstChild("subnet");
     if(!subnetNode.IsNull())
     {
       m_subnet = subnetNode;
       m_subnetHasBeenSet = true;
+       m_subnetHasBeenSet = true;
     }
     XmlNode subnetRouteTableNode = resultNode.FirstChild("subnetRouteTable");
     if(!subnetRouteTableNode.IsNull())
     {
       m_subnetRouteTable = subnetRouteTableNode;
       m_subnetRouteTableHasBeenSet = true;
+       m_subnetRouteTableHasBeenSet = true;
     }
     XmlNode vpcNode = resultNode.FirstChild("vpc");
     if(!vpcNode.IsNull())
     {
       m_vpc = vpcNode;
       m_vpcHasBeenSet = true;
+       m_vpcHasBeenSet = true;
     }
     XmlNode vpcEndpointNode = resultNode.FirstChild("vpcEndpoint");
     if(!vpcEndpointNode.IsNull())
     {
       m_vpcEndpoint = vpcEndpointNode;
       m_vpcEndpointHasBeenSet = true;
+       m_vpcEndpointHasBeenSet = true;
     }
     XmlNode vpnConnectionNode = resultNode.FirstChild("vpnConnection");
     if(!vpnConnectionNode.IsNull())
     {
       m_vpnConnection = vpnConnectionNode;
       m_vpnConnectionHasBeenSet = true;
+       m_vpnConnectionHasBeenSet = true;
     }
     XmlNode vpnGatewayNode = resultNode.FirstChild("vpnGateway");
     if(!vpnGatewayNode.IsNull())
     {
       m_vpnGateway = vpnGatewayNode;
       m_vpnGatewayHasBeenSet = true;
+       m_vpnGatewayHasBeenSet = true;
     }
     XmlNode transitGatewayNode = resultNode.FirstChild("transitGateway");
     if(!transitGatewayNode.IsNull())
     {
       m_transitGateway = transitGatewayNode;
       m_transitGatewayHasBeenSet = true;
+       m_transitGatewayHasBeenSet = true;
     }
     XmlNode transitGatewayRouteTableNode = resultNode.FirstChild("transitGatewayRouteTable");
     if(!transitGatewayRouteTableNode.IsNull())
     {
       m_transitGatewayRouteTable = transitGatewayRouteTableNode;
       m_transitGatewayRouteTableHasBeenSet = true;
+       m_transitGatewayRouteTableHasBeenSet = true;
     }
     XmlNode transitGatewayRouteTableRouteNode = resultNode.FirstChild("transitGatewayRouteTableRoute");
     if(!transitGatewayRouteTableRouteNode.IsNull())
     {
       m_transitGatewayRouteTableRoute = transitGatewayRouteTableRouteNode;
       m_transitGatewayRouteTableRouteHasBeenSet = true;
+       m_transitGatewayRouteTableRouteHasBeenSet = true;
     }
     XmlNode transitGatewayAttachmentNode = resultNode.FirstChild("transitGatewayAttachment");
     if(!transitGatewayAttachmentNode.IsNull())
     {
       m_transitGatewayAttachment = transitGatewayAttachmentNode;
       m_transitGatewayAttachmentHasBeenSet = true;
+       m_transitGatewayAttachmentHasBeenSet = true;
     }
     XmlNode componentAccountNode = resultNode.FirstChild("componentAccount");
     if(!componentAccountNode.IsNull())
     {
       m_componentAccount = Aws::Utils::Xml::DecodeEscapedXmlText(componentAccountNode.GetText());
       m_componentAccountHasBeenSet = true;
+       m_componentAccountHasBeenSet = true;
     }
     XmlNode componentRegionNode = resultNode.FirstChild("componentRegion");
     if(!componentRegionNode.IsNull())
     {
       m_componentRegion = Aws::Utils::Xml::DecodeEscapedXmlText(componentRegionNode.GetText());
       m_componentRegionHasBeenSet = true;
+       m_componentRegionHasBeenSet = true;
     }
     XmlNode firewallStatelessRuleNode = resultNode.FirstChild("firewallStatelessRule");
     if(!firewallStatelessRuleNode.IsNull())
     {
       m_firewallStatelessRule = firewallStatelessRuleNode;
       m_firewallStatelessRuleHasBeenSet = true;
+       m_firewallStatelessRuleHasBeenSet = true;
     }
     XmlNode firewallStatefulRuleNode = resultNode.FirstChild("firewallStatefulRule");
     if(!firewallStatefulRuleNode.IsNull())
     {
       m_firewallStatefulRule = firewallStatefulRuleNode;
       m_firewallStatefulRuleHasBeenSet = true;
+       m_firewallStatefulRuleHasBeenSet = true;
     }
   }
 

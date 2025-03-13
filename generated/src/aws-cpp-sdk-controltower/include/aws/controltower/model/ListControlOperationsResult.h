@@ -29,7 +29,7 @@ namespace Model
   class ListControlOperationsResult
   {
   public:
-    AWS_CONTROLTOWER_API ListControlOperationsResult();
+    AWS_CONTROLTOWER_API ListControlOperationsResult() = default;
     AWS_CONTROLTOWER_API ListControlOperationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONTROLTOWER_API ListControlOperationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Returns a list of output from control operations. </p>
      */
-    inline const Aws::Vector<ControlOperationSummary>& GetControlOperations() const{ return m_controlOperations; }
-    inline void SetControlOperations(const Aws::Vector<ControlOperationSummary>& value) { m_controlOperations = value; }
-    inline void SetControlOperations(Aws::Vector<ControlOperationSummary>&& value) { m_controlOperations = std::move(value); }
-    inline ListControlOperationsResult& WithControlOperations(const Aws::Vector<ControlOperationSummary>& value) { SetControlOperations(value); return *this;}
-    inline ListControlOperationsResult& WithControlOperations(Aws::Vector<ControlOperationSummary>&& value) { SetControlOperations(std::move(value)); return *this;}
-    inline ListControlOperationsResult& AddControlOperations(const ControlOperationSummary& value) { m_controlOperations.push_back(value); return *this; }
-    inline ListControlOperationsResult& AddControlOperations(ControlOperationSummary&& value) { m_controlOperations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ControlOperationSummary>& GetControlOperations() const { return m_controlOperations; }
+    template<typename ControlOperationsT = Aws::Vector<ControlOperationSummary>>
+    void SetControlOperations(ControlOperationsT&& value) { m_controlOperationsHasBeenSet = true; m_controlOperations = std::forward<ControlOperationsT>(value); }
+    template<typename ControlOperationsT = Aws::Vector<ControlOperationSummary>>
+    ListControlOperationsResult& WithControlOperations(ControlOperationsT&& value) { SetControlOperations(std::forward<ControlOperationsT>(value)); return *this;}
+    template<typename ControlOperationsT = ControlOperationSummary>
+    ListControlOperationsResult& AddControlOperations(ControlOperationsT&& value) { m_controlOperationsHasBeenSet = true; m_controlOperations.emplace_back(std::forward<ControlOperationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListControlOperationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListControlOperationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListControlOperationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListControlOperationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListControlOperationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListControlOperationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListControlOperationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListControlOperationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ControlOperationSummary> m_controlOperations;
+    bool m_controlOperationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

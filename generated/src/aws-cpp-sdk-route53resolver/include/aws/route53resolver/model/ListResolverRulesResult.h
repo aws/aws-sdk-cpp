@@ -29,7 +29,7 @@ namespace Model
   class ListResolverRulesResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API ListResolverRulesResult();
+    AWS_ROUTE53RESOLVER_API ListResolverRulesResult() = default;
     AWS_ROUTE53RESOLVER_API ListResolverRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API ListResolverRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,21 +41,19 @@ namespace Model
      * the next group of results. In the next request, specify the value of
      * <code>NextToken</code> from the previous response. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResolverRulesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResolverRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResolverRulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResolverRulesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value that you specified for <code>MaxResults</code> in the request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline void SetMaxResults(int value) { m_maxResults = value; }
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListResolverRulesResult& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
 
@@ -64,34 +62,36 @@ namespace Model
      * <p>The Resolver rules that were created using the current Amazon Web Services
      * account and that match the specified filters, if any.</p>
      */
-    inline const Aws::Vector<ResolverRule>& GetResolverRules() const{ return m_resolverRules; }
-    inline void SetResolverRules(const Aws::Vector<ResolverRule>& value) { m_resolverRules = value; }
-    inline void SetResolverRules(Aws::Vector<ResolverRule>&& value) { m_resolverRules = std::move(value); }
-    inline ListResolverRulesResult& WithResolverRules(const Aws::Vector<ResolverRule>& value) { SetResolverRules(value); return *this;}
-    inline ListResolverRulesResult& WithResolverRules(Aws::Vector<ResolverRule>&& value) { SetResolverRules(std::move(value)); return *this;}
-    inline ListResolverRulesResult& AddResolverRules(const ResolverRule& value) { m_resolverRules.push_back(value); return *this; }
-    inline ListResolverRulesResult& AddResolverRules(ResolverRule&& value) { m_resolverRules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResolverRule>& GetResolverRules() const { return m_resolverRules; }
+    template<typename ResolverRulesT = Aws::Vector<ResolverRule>>
+    void SetResolverRules(ResolverRulesT&& value) { m_resolverRulesHasBeenSet = true; m_resolverRules = std::forward<ResolverRulesT>(value); }
+    template<typename ResolverRulesT = Aws::Vector<ResolverRule>>
+    ListResolverRulesResult& WithResolverRules(ResolverRulesT&& value) { SetResolverRules(std::forward<ResolverRulesT>(value)); return *this;}
+    template<typename ResolverRulesT = ResolverRule>
+    ListResolverRulesResult& AddResolverRules(ResolverRulesT&& value) { m_resolverRulesHasBeenSet = true; m_resolverRules.emplace_back(std::forward<ResolverRulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResolverRulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResolverRulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResolverRulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResolverRulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<ResolverRule> m_resolverRules;
+    bool m_resolverRulesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

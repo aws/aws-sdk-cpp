@@ -32,7 +32,7 @@ namespace Model
   class LifecycleConfiguration
   {
   public:
-    AWS_S3CONTROL_API LifecycleConfiguration();
+    AWS_S3CONTROL_API LifecycleConfiguration() = default;
     AWS_S3CONTROL_API LifecycleConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API LifecycleConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
      */
-    inline const Aws::Vector<LifecycleRule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<LifecycleRule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<LifecycleRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<LifecycleRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline LifecycleConfiguration& WithRules(const Aws::Vector<LifecycleRule>& value) { SetRules(value); return *this;}
-    inline LifecycleConfiguration& WithRules(Aws::Vector<LifecycleRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline LifecycleConfiguration& AddRules(const LifecycleRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline LifecycleConfiguration& AddRules(LifecycleRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<LifecycleRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<LifecycleRule>>
+    LifecycleConfiguration& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = LifecycleRule>
+    LifecycleConfiguration& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 

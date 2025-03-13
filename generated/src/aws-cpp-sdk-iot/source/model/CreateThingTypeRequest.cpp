@@ -12,13 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateThingTypeRequest::CreateThingTypeRequest() : 
-    m_thingTypeNameHasBeenSet(false),
-    m_thingTypePropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateThingTypeRequest::SerializePayload() const
 {
   JsonValue payload;

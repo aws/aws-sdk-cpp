@@ -31,7 +31,7 @@ namespace Model
   class BatchRetryStrategy
   {
   public:
-    AWS_EVENTBRIDGE_API BatchRetryStrategy();
+    AWS_EVENTBRIDGE_API BatchRetryStrategy() = default;
     AWS_EVENTBRIDGE_API BatchRetryStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API BatchRetryStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * <p>The number of times to attempt to retry, if the job fails. Valid values are
      * 1–10.</p>
      */
-    inline int GetAttempts() const{ return m_attempts; }
+    inline int GetAttempts() const { return m_attempts; }
     inline bool AttemptsHasBeenSet() const { return m_attemptsHasBeenSet; }
     inline void SetAttempts(int value) { m_attemptsHasBeenSet = true; m_attempts = value; }
     inline BatchRetryStrategy& WithAttempts(int value) { SetAttempts(value); return *this;}
     ///@}
   private:
 
-    int m_attempts;
+    int m_attempts{0};
     bool m_attemptsHasBeenSet = false;
   };
 

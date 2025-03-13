@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-AddHeaderAction::AddHeaderAction() : 
-    m_headerNameHasBeenSet(false),
-    m_headerValueHasBeenSet(false)
-{
-}
-
 AddHeaderAction::AddHeaderAction(const XmlNode& xmlNode)
-  : AddHeaderAction()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ AddHeaderAction& AddHeaderAction::operator =(const XmlNode& xmlNode)
     {
       m_headerName = Aws::Utils::Xml::DecodeEscapedXmlText(headerNameNode.GetText());
       m_headerNameHasBeenSet = true;
+       m_headerNameHasBeenSet = true;
     }
     XmlNode headerValueNode = resultNode.FirstChild("HeaderValue");
     if(!headerValueNode.IsNull())
     {
       m_headerValue = Aws::Utils::Xml::DecodeEscapedXmlText(headerValueNode.GetText());
       m_headerValueHasBeenSet = true;
+       m_headerValueHasBeenSet = true;
     }
   }
 

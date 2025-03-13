@@ -18,18 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-InterMetricImpactDetails::InterMetricImpactDetails() : 
-    m_metricNameHasBeenSet(false),
-    m_anomalyGroupIdHasBeenSet(false),
-    m_relationshipType(RelationshipType::NOT_SET),
-    m_relationshipTypeHasBeenSet(false),
-    m_contributionPercentage(0.0),
-    m_contributionPercentageHasBeenSet(false)
-{
-}
-
 InterMetricImpactDetails::InterMetricImpactDetails(JsonView jsonValue)
-  : InterMetricImpactDetails()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ InterMetricImpactDetails& InterMetricImpactDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyGroupId"))
   {
     m_anomalyGroupId = jsonValue.GetString("AnomalyGroupId");
-
     m_anomalyGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelationshipType"))
   {
     m_relationshipType = RelationshipTypeMapper::GetRelationshipTypeForName(jsonValue.GetString("RelationshipType"));
-
     m_relationshipTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContributionPercentage"))
   {
     m_contributionPercentage = jsonValue.GetDouble("ContributionPercentage");
-
     m_contributionPercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

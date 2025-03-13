@@ -32,7 +32,7 @@ namespace Model
   class BatchInferenceJobOutput
   {
   public:
-    AWS_PERSONALIZE_API BatchInferenceJobOutput();
+    AWS_PERSONALIZE_API BatchInferenceJobOutput() = default;
     AWS_PERSONALIZE_API BatchInferenceJobOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API BatchInferenceJobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Information on the Amazon S3 bucket in which the batch inference job's output
      * is stored.</p>
      */
-    inline const S3DataConfig& GetS3DataDestination() const{ return m_s3DataDestination; }
+    inline const S3DataConfig& GetS3DataDestination() const { return m_s3DataDestination; }
     inline bool S3DataDestinationHasBeenSet() const { return m_s3DataDestinationHasBeenSet; }
-    inline void SetS3DataDestination(const S3DataConfig& value) { m_s3DataDestinationHasBeenSet = true; m_s3DataDestination = value; }
-    inline void SetS3DataDestination(S3DataConfig&& value) { m_s3DataDestinationHasBeenSet = true; m_s3DataDestination = std::move(value); }
-    inline BatchInferenceJobOutput& WithS3DataDestination(const S3DataConfig& value) { SetS3DataDestination(value); return *this;}
-    inline BatchInferenceJobOutput& WithS3DataDestination(S3DataConfig&& value) { SetS3DataDestination(std::move(value)); return *this;}
+    template<typename S3DataDestinationT = S3DataConfig>
+    void SetS3DataDestination(S3DataDestinationT&& value) { m_s3DataDestinationHasBeenSet = true; m_s3DataDestination = std::forward<S3DataDestinationT>(value); }
+    template<typename S3DataDestinationT = S3DataConfig>
+    BatchInferenceJobOutput& WithS3DataDestination(S3DataDestinationT&& value) { SetS3DataDestination(std::forward<S3DataDestinationT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-AdvancedDataProtectionMetrics::AdvancedDataProtectionMetrics() : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
-{
-}
-
 AdvancedDataProtectionMetrics::AdvancedDataProtectionMetrics(const XmlNode& xmlNode)
-  : AdvancedDataProtectionMetrics()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ AdvancedDataProtectionMetrics& AdvancedDataProtectionMetrics::operator =(const X
     {
       m_isEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isEnabledNode.GetText()).c_str()).c_str());
       m_isEnabledHasBeenSet = true;
+       m_isEnabledHasBeenSet = true;
     }
   }
 

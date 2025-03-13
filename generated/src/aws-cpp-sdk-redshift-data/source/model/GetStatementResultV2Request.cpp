@@ -12,12 +12,6 @@ using namespace Aws::RedshiftDataAPIService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetStatementResultV2Request::GetStatementResultV2Request() : 
-    m_idHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetStatementResultV2Request::SerializePayload() const
 {
   JsonValue payload;

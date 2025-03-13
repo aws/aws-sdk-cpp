@@ -32,7 +32,7 @@ namespace Model
   class ProgressUpdateStreamSummary
   {
   public:
-    AWS_MIGRATIONHUB_API ProgressUpdateStreamSummary();
+    AWS_MIGRATIONHUB_API ProgressUpdateStreamSummary() = default;
     AWS_MIGRATIONHUB_API ProgressUpdateStreamSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUB_API ProgressUpdateStreamSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
      * field.</i> </p>
      */
-    inline const Aws::String& GetProgressUpdateStreamName() const{ return m_progressUpdateStreamName; }
+    inline const Aws::String& GetProgressUpdateStreamName() const { return m_progressUpdateStreamName; }
     inline bool ProgressUpdateStreamNameHasBeenSet() const { return m_progressUpdateStreamNameHasBeenSet; }
-    inline void SetProgressUpdateStreamName(const Aws::String& value) { m_progressUpdateStreamNameHasBeenSet = true; m_progressUpdateStreamName = value; }
-    inline void SetProgressUpdateStreamName(Aws::String&& value) { m_progressUpdateStreamNameHasBeenSet = true; m_progressUpdateStreamName = std::move(value); }
-    inline void SetProgressUpdateStreamName(const char* value) { m_progressUpdateStreamNameHasBeenSet = true; m_progressUpdateStreamName.assign(value); }
-    inline ProgressUpdateStreamSummary& WithProgressUpdateStreamName(const Aws::String& value) { SetProgressUpdateStreamName(value); return *this;}
-    inline ProgressUpdateStreamSummary& WithProgressUpdateStreamName(Aws::String&& value) { SetProgressUpdateStreamName(std::move(value)); return *this;}
-    inline ProgressUpdateStreamSummary& WithProgressUpdateStreamName(const char* value) { SetProgressUpdateStreamName(value); return *this;}
+    template<typename ProgressUpdateStreamNameT = Aws::String>
+    void SetProgressUpdateStreamName(ProgressUpdateStreamNameT&& value) { m_progressUpdateStreamNameHasBeenSet = true; m_progressUpdateStreamName = std::forward<ProgressUpdateStreamNameT>(value); }
+    template<typename ProgressUpdateStreamNameT = Aws::String>
+    ProgressUpdateStreamSummary& WithProgressUpdateStreamName(ProgressUpdateStreamNameT&& value) { SetProgressUpdateStreamName(std::forward<ProgressUpdateStreamNameT>(value)); return *this;}
     ///@}
   private:
 

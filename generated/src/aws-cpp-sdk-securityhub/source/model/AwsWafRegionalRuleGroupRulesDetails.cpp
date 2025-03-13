@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsWafRegionalRuleGroupRulesDetails::AwsWafRegionalRuleGroupRulesDetails() : 
-    m_actionHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsWafRegionalRuleGroupRulesDetails::AwsWafRegionalRuleGroupRulesDetails(JsonView jsonValue)
-  : AwsWafRegionalRuleGroupRulesDetails()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AwsWafRegionalRuleGroupRulesDetails& AwsWafRegionalRuleGroupRulesDetails::operat
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetObject("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleId"))
   {
     m_ruleId = jsonValue.GetString("RuleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

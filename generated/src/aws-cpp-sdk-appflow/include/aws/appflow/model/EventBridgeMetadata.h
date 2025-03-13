@@ -30,7 +30,7 @@ namespace Model
   class EventBridgeMetadata
   {
   public:
-    AWS_APPFLOW_API EventBridgeMetadata();
+    AWS_APPFLOW_API EventBridgeMetadata() = default;
     AWS_APPFLOW_API EventBridgeMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API EventBridgeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

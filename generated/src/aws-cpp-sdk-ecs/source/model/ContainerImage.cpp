@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ContainerImage::ContainerImage() : 
-    m_containerNameHasBeenSet(false),
-    m_imageDigestHasBeenSet(false),
-    m_imageHasBeenSet(false)
-{
-}
-
 ContainerImage::ContainerImage(JsonView jsonValue)
-  : ContainerImage()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ContainerImage& ContainerImage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerName"))
   {
     m_containerName = jsonValue.GetString("containerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageDigest"))
   {
     m_imageDigest = jsonValue.GetString("imageDigest");
-
     m_imageDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
-
     m_imageHasBeenSet = true;
   }
-
   return *this;
 }
 

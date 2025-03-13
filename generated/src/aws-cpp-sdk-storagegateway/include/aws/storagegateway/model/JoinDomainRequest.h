@@ -25,7 +25,7 @@ namespace Model
   class JoinDomainRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API JoinDomainRequest();
+    AWS_STORAGEGATEWAY_API JoinDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,24 @@ namespace Model
      * <code>ListGateways</code> operation to return a list of gateways for your
      * account and Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline JoinDomainRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline JoinDomainRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline JoinDomainRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    JoinDomainRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the domain that you want the gateway to join.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline JoinDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline JoinDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline JoinDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    JoinDomainRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * hold users, groups, computers, and other OUs and this parameter specifies the OU
      * that the gateway will join within the AD domain.</p>
      */
-    inline const Aws::String& GetOrganizationalUnit() const{ return m_organizationalUnit; }
+    inline const Aws::String& GetOrganizationalUnit() const { return m_organizationalUnit; }
     inline bool OrganizationalUnitHasBeenSet() const { return m_organizationalUnitHasBeenSet; }
-    inline void SetOrganizationalUnit(const Aws::String& value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit = value; }
-    inline void SetOrganizationalUnit(Aws::String&& value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit = std::move(value); }
-    inline void SetOrganizationalUnit(const char* value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit.assign(value); }
-    inline JoinDomainRequest& WithOrganizationalUnit(const Aws::String& value) { SetOrganizationalUnit(value); return *this;}
-    inline JoinDomainRequest& WithOrganizationalUnit(Aws::String&& value) { SetOrganizationalUnit(std::move(value)); return *this;}
-    inline JoinDomainRequest& WithOrganizationalUnit(const char* value) { SetOrganizationalUnit(value); return *this;}
+    template<typename OrganizationalUnitT = Aws::String>
+    void SetOrganizationalUnit(OrganizationalUnitT&& value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit = std::forward<OrganizationalUnitT>(value); }
+    template<typename OrganizationalUnitT = Aws::String>
+    JoinDomainRequest& WithOrganizationalUnit(OrganizationalUnitT&& value) { SetOrganizationalUnit(std::forward<OrganizationalUnitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,15 +84,14 @@ namespace Model
      * If you need to specify the port number include it after the colon (“:”). For
      * example, <code>mydc.mydomain.com:389</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDomainControllers() const{ return m_domainControllers; }
+    inline const Aws::Vector<Aws::String>& GetDomainControllers() const { return m_domainControllers; }
     inline bool DomainControllersHasBeenSet() const { return m_domainControllersHasBeenSet; }
-    inline void SetDomainControllers(const Aws::Vector<Aws::String>& value) { m_domainControllersHasBeenSet = true; m_domainControllers = value; }
-    inline void SetDomainControllers(Aws::Vector<Aws::String>&& value) { m_domainControllersHasBeenSet = true; m_domainControllers = std::move(value); }
-    inline JoinDomainRequest& WithDomainControllers(const Aws::Vector<Aws::String>& value) { SetDomainControllers(value); return *this;}
-    inline JoinDomainRequest& WithDomainControllers(Aws::Vector<Aws::String>&& value) { SetDomainControllers(std::move(value)); return *this;}
-    inline JoinDomainRequest& AddDomainControllers(const Aws::String& value) { m_domainControllersHasBeenSet = true; m_domainControllers.push_back(value); return *this; }
-    inline JoinDomainRequest& AddDomainControllers(Aws::String&& value) { m_domainControllersHasBeenSet = true; m_domainControllers.push_back(std::move(value)); return *this; }
-    inline JoinDomainRequest& AddDomainControllers(const char* value) { m_domainControllersHasBeenSet = true; m_domainControllers.push_back(value); return *this; }
+    template<typename DomainControllersT = Aws::Vector<Aws::String>>
+    void SetDomainControllers(DomainControllersT&& value) { m_domainControllersHasBeenSet = true; m_domainControllers = std::forward<DomainControllersT>(value); }
+    template<typename DomainControllersT = Aws::Vector<Aws::String>>
+    JoinDomainRequest& WithDomainControllers(DomainControllersT&& value) { SetDomainControllers(std::forward<DomainControllersT>(value)); return *this;}
+    template<typename DomainControllersT = Aws::String>
+    JoinDomainRequest& AddDomainControllers(DomainControllersT&& value) { m_domainControllersHasBeenSet = true; m_domainControllers.emplace_back(std::forward<DomainControllersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -106,7 +99,7 @@ namespace Model
      * <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation
      * must complete. The default is 20 seconds.</p>
      */
-    inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
+    inline int GetTimeoutInSeconds() const { return m_timeoutInSeconds; }
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
     inline JoinDomainRequest& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
@@ -120,14 +113,12 @@ namespace Model
      * account or an account with delegated permissions to join computers to the
      * domain.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline JoinDomainRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline JoinDomainRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline JoinDomainRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    JoinDomainRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +126,12 @@ namespace Model
      * <p>Sets the password of the user who has permission to add the gateway to the
      * Active Directory domain.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline JoinDomainRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline JoinDomainRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline JoinDomainRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    JoinDomainRequest& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
   private:
 
@@ -158,7 +147,7 @@ namespace Model
     Aws::Vector<Aws::String> m_domainControllers;
     bool m_domainControllersHasBeenSet = false;
 
-    int m_timeoutInSeconds;
+    int m_timeoutInSeconds{0};
     bool m_timeoutInSecondsHasBeenSet = false;
 
     Aws::String m_userName;

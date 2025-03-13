@@ -12,11 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConnectAttachmentRequest::GetConnectAttachmentRequest() : 
-    m_attachmentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetConnectAttachmentRequest::SerializePayload() const
 {
   return {};

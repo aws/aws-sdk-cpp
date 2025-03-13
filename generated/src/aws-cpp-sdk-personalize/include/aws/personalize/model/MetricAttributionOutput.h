@@ -33,7 +33,7 @@ namespace Model
   class MetricAttributionOutput
   {
   public:
-    AWS_PERSONALIZE_API MetricAttributionOutput();
+    AWS_PERSONALIZE_API MetricAttributionOutput() = default;
     AWS_PERSONALIZE_API MetricAttributionOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API MetricAttributionOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
 
     ///@{
     
-    inline const S3DataConfig& GetS3DataDestination() const{ return m_s3DataDestination; }
+    inline const S3DataConfig& GetS3DataDestination() const { return m_s3DataDestination; }
     inline bool S3DataDestinationHasBeenSet() const { return m_s3DataDestinationHasBeenSet; }
-    inline void SetS3DataDestination(const S3DataConfig& value) { m_s3DataDestinationHasBeenSet = true; m_s3DataDestination = value; }
-    inline void SetS3DataDestination(S3DataConfig&& value) { m_s3DataDestinationHasBeenSet = true; m_s3DataDestination = std::move(value); }
-    inline MetricAttributionOutput& WithS3DataDestination(const S3DataConfig& value) { SetS3DataDestination(value); return *this;}
-    inline MetricAttributionOutput& WithS3DataDestination(S3DataConfig&& value) { SetS3DataDestination(std::move(value)); return *this;}
+    template<typename S3DataDestinationT = S3DataConfig>
+    void SetS3DataDestination(S3DataDestinationT&& value) { m_s3DataDestinationHasBeenSet = true; m_s3DataDestination = std::forward<S3DataDestinationT>(value); }
+    template<typename S3DataDestinationT = S3DataConfig>
+    MetricAttributionOutput& WithS3DataDestination(S3DataDestinationT&& value) { SetS3DataDestination(std::forward<S3DataDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +57,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
      * impact of recommendations</a>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline MetricAttributionOutput& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline MetricAttributionOutput& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline MetricAttributionOutput& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    MetricAttributionOutput& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

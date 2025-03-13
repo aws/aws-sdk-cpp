@@ -34,7 +34,7 @@ namespace Model
   class RecommendationFeedbackSummary
   {
   public:
-    AWS_CODEGURUREVIEWER_API RecommendationFeedbackSummary();
+    AWS_CODEGURUREVIEWER_API RecommendationFeedbackSummary() = default;
     AWS_CODEGURUREVIEWER_API RecommendationFeedbackSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API RecommendationFeedbackSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,25 @@ namespace Model
      * <p>The recommendation ID that can be used to track the provided recommendations.
      * Later on it can be used to collect the feedback.</p>
      */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+    inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
     inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
-    inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
-    inline RecommendationFeedbackSummary& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-    inline RecommendationFeedbackSummary& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-    inline RecommendationFeedbackSummary& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    template<typename RecommendationIdT = Aws::String>
+    void SetRecommendationId(RecommendationIdT&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::forward<RecommendationIdT>(value); }
+    template<typename RecommendationIdT = Aws::String>
+    RecommendationFeedbackSummary& WithRecommendationId(RecommendationIdT&& value) { SetRecommendationId(std::forward<RecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
      */
-    inline const Aws::Vector<Reaction>& GetReactions() const{ return m_reactions; }
+    inline const Aws::Vector<Reaction>& GetReactions() const { return m_reactions; }
     inline bool ReactionsHasBeenSet() const { return m_reactionsHasBeenSet; }
-    inline void SetReactions(const Aws::Vector<Reaction>& value) { m_reactionsHasBeenSet = true; m_reactions = value; }
-    inline void SetReactions(Aws::Vector<Reaction>&& value) { m_reactionsHasBeenSet = true; m_reactions = std::move(value); }
-    inline RecommendationFeedbackSummary& WithReactions(const Aws::Vector<Reaction>& value) { SetReactions(value); return *this;}
-    inline RecommendationFeedbackSummary& WithReactions(Aws::Vector<Reaction>&& value) { SetReactions(std::move(value)); return *this;}
-    inline RecommendationFeedbackSummary& AddReactions(const Reaction& value) { m_reactionsHasBeenSet = true; m_reactions.push_back(value); return *this; }
-    inline RecommendationFeedbackSummary& AddReactions(Reaction&& value) { m_reactionsHasBeenSet = true; m_reactions.push_back(std::move(value)); return *this; }
+    template<typename ReactionsT = Aws::Vector<Reaction>>
+    void SetReactions(ReactionsT&& value) { m_reactionsHasBeenSet = true; m_reactions = std::forward<ReactionsT>(value); }
+    template<typename ReactionsT = Aws::Vector<Reaction>>
+    RecommendationFeedbackSummary& WithReactions(ReactionsT&& value) { SetReactions(std::forward<ReactionsT>(value)); return *this;}
+    inline RecommendationFeedbackSummary& AddReactions(Reaction value) { m_reactionsHasBeenSet = true; m_reactions.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -78,14 +75,12 @@ namespace Model
      * Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access
      * Management User Guide</i>.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline RecommendationFeedbackSummary& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline RecommendationFeedbackSummary& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline RecommendationFeedbackSummary& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    RecommendationFeedbackSummary& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
   private:
 

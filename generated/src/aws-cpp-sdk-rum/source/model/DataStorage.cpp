@@ -18,13 +18,7 @@ namespace CloudWatchRUM
 namespace Model
 {
 
-DataStorage::DataStorage() : 
-    m_cwLogHasBeenSet(false)
-{
-}
-
 DataStorage::DataStorage(JsonView jsonValue)
-  : DataStorage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataStorage& DataStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CwLog"))
   {
     m_cwLog = jsonValue.GetObject("CwLog");
-
     m_cwLogHasBeenSet = true;
   }
-
   return *this;
 }
 

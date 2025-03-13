@@ -18,36 +18,7 @@ namespace kendra
 namespace Model
 {
 
-GitHubConfiguration::GitHubConfiguration() : 
-    m_saaSConfigurationHasBeenSet(false),
-    m_onPremiseConfigurationHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_useChangeLog(false),
-    m_useChangeLogHasBeenSet(false),
-    m_gitHubDocumentCrawlPropertiesHasBeenSet(false),
-    m_repositoryFilterHasBeenSet(false),
-    m_inclusionFolderNamePatternsHasBeenSet(false),
-    m_inclusionFileTypePatternsHasBeenSet(false),
-    m_inclusionFileNamePatternsHasBeenSet(false),
-    m_exclusionFolderNamePatternsHasBeenSet(false),
-    m_exclusionFileTypePatternsHasBeenSet(false),
-    m_exclusionFileNamePatternsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubCommitConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet(false),
-    m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet(false)
-{
-}
-
 GitHubConfiguration::GitHubConfiguration(JsonView jsonValue)
-  : GitHubConfiguration()
 {
   *this = jsonValue;
 }
@@ -57,45 +28,33 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SaaSConfiguration"))
   {
     m_saaSConfiguration = jsonValue.GetObject("SaaSConfiguration");
-
     m_saaSConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnPremiseConfiguration"))
   {
     m_onPremiseConfiguration = jsonValue.GetObject("OnPremiseConfiguration");
-
     m_onPremiseConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseChangeLog"))
   {
     m_useChangeLog = jsonValue.GetBool("UseChangeLog");
-
     m_useChangeLogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GitHubDocumentCrawlProperties"))
   {
     m_gitHubDocumentCrawlProperties = jsonValue.GetObject("GitHubDocumentCrawlProperties");
-
     m_gitHubDocumentCrawlPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepositoryFilter"))
   {
     Aws::Utils::Array<JsonView> repositoryFilterJsonList = jsonValue.GetArray("RepositoryFilter");
@@ -105,7 +64,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_repositoryFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionFolderNamePatterns"))
   {
     Aws::Utils::Array<JsonView> inclusionFolderNamePatternsJsonList = jsonValue.GetArray("InclusionFolderNamePatterns");
@@ -115,7 +73,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_inclusionFolderNamePatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionFileTypePatterns"))
   {
     Aws::Utils::Array<JsonView> inclusionFileTypePatternsJsonList = jsonValue.GetArray("InclusionFileTypePatterns");
@@ -125,7 +82,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_inclusionFileTypePatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionFileNamePatterns"))
   {
     Aws::Utils::Array<JsonView> inclusionFileNamePatternsJsonList = jsonValue.GetArray("InclusionFileNamePatterns");
@@ -135,7 +91,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_inclusionFileNamePatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusionFolderNamePatterns"))
   {
     Aws::Utils::Array<JsonView> exclusionFolderNamePatternsJsonList = jsonValue.GetArray("ExclusionFolderNamePatterns");
@@ -145,7 +100,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_exclusionFolderNamePatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusionFileTypePatterns"))
   {
     Aws::Utils::Array<JsonView> exclusionFileTypePatternsJsonList = jsonValue.GetArray("ExclusionFileTypePatterns");
@@ -155,7 +109,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_exclusionFileTypePatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusionFileNamePatterns"))
   {
     Aws::Utils::Array<JsonView> exclusionFileNamePatternsJsonList = jsonValue.GetArray("ExclusionFileNamePatterns");
@@ -165,14 +118,11 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_exclusionFileNamePatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("VpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GitHubRepositoryConfigurationFieldMappings"))
   {
     Aws::Utils::Array<JsonView> gitHubRepositoryConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubRepositoryConfigurationFieldMappings");
@@ -182,7 +132,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GitHubCommitConfigurationFieldMappings"))
   {
     Aws::Utils::Array<JsonView> gitHubCommitConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubCommitConfigurationFieldMappings");
@@ -192,7 +141,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_gitHubCommitConfigurationFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GitHubIssueDocumentConfigurationFieldMappings"))
   {
     Aws::Utils::Array<JsonView> gitHubIssueDocumentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubIssueDocumentConfigurationFieldMappings");
@@ -202,7 +150,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GitHubIssueCommentConfigurationFieldMappings"))
   {
     Aws::Utils::Array<JsonView> gitHubIssueCommentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubIssueCommentConfigurationFieldMappings");
@@ -212,7 +159,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GitHubIssueAttachmentConfigurationFieldMappings"))
   {
     Aws::Utils::Array<JsonView> gitHubIssueAttachmentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubIssueAttachmentConfigurationFieldMappings");
@@ -222,7 +168,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GitHubPullRequestCommentConfigurationFieldMappings"))
   {
     Aws::Utils::Array<JsonView> gitHubPullRequestCommentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubPullRequestCommentConfigurationFieldMappings");
@@ -232,7 +177,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GitHubPullRequestDocumentConfigurationFieldMappings"))
   {
     Aws::Utils::Array<JsonView> gitHubPullRequestDocumentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubPullRequestDocumentConfigurationFieldMappings");
@@ -242,7 +186,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GitHubPullRequestDocumentAttachmentConfigurationFieldMappings"))
   {
     Aws::Utils::Array<JsonView> gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsJsonList = jsonValue.GetArray("GitHubPullRequestDocumentAttachmentConfigurationFieldMappings");
@@ -252,7 +195,6 @@ GitHubConfiguration& GitHubConfiguration::operator =(JsonView jsonValue)
     }
     m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet = true;
   }
-
   return *this;
 }
 

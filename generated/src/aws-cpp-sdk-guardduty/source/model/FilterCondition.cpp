@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-FilterCondition::FilterCondition() : 
-    m_equalsValueHasBeenSet(false),
-    m_greaterThan(0),
-    m_greaterThanHasBeenSet(false),
-    m_lessThan(0),
-    m_lessThanHasBeenSet(false)
-{
-}
-
 FilterCondition::FilterCondition(JsonView jsonValue)
-  : FilterCondition()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ FilterCondition& FilterCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("equalsValue"))
   {
     m_equalsValue = jsonValue.GetString("equalsValue");
-
     m_equalsValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greaterThan"))
   {
     m_greaterThan = jsonValue.GetInt64("greaterThan");
-
     m_greaterThanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lessThan"))
   {
     m_lessThan = jsonValue.GetInt64("lessThan");
-
     m_lessThanHasBeenSet = true;
   }
-
   return *this;
 }
 

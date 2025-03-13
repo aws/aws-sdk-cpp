@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAssociatedRoleRequest::GetAssociatedRoleRequest() : 
-    m_groupIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAssociatedRoleRequest::SerializePayload() const
 {
   return {};

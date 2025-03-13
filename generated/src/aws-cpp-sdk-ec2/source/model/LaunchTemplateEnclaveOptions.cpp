@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateEnclaveOptions::LaunchTemplateEnclaveOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 LaunchTemplateEnclaveOptions::LaunchTemplateEnclaveOptions(const XmlNode& xmlNode)
-  : LaunchTemplateEnclaveOptions()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ LaunchTemplateEnclaveOptions& LaunchTemplateEnclaveOptions::operator =(const Xml
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
   }
 

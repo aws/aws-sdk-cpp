@@ -18,28 +18,7 @@ namespace MediaPackage
 namespace Model
 {
 
-HlsManifest::HlsManifest() : 
-    m_adMarkers(AdMarkers::NOT_SET),
-    m_adMarkersHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_includeIframeOnlyStream(false),
-    m_includeIframeOnlyStreamHasBeenSet(false),
-    m_manifestNameHasBeenSet(false),
-    m_playlistType(PlaylistType::NOT_SET),
-    m_playlistTypeHasBeenSet(false),
-    m_playlistWindowSeconds(0),
-    m_playlistWindowSecondsHasBeenSet(false),
-    m_programDateTimeIntervalSeconds(0),
-    m_programDateTimeIntervalSecondsHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_adTriggersHasBeenSet(false),
-    m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
-    m_adsOnDeliveryRestrictionsHasBeenSet(false)
-{
-}
-
 HlsManifest::HlsManifest(JsonView jsonValue)
-  : HlsManifest()
 {
   *this = jsonValue;
 }
@@ -49,59 +28,43 @@ HlsManifest& HlsManifest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("adMarkers"))
   {
     m_adMarkers = AdMarkersMapper::GetAdMarkersForName(jsonValue.GetString("adMarkers"));
-
     m_adMarkersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeIframeOnlyStream"))
   {
     m_includeIframeOnlyStream = jsonValue.GetBool("includeIframeOnlyStream");
-
     m_includeIframeOnlyStreamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifestName"))
   {
     m_manifestName = jsonValue.GetString("manifestName");
-
     m_manifestNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("playlistType"))
   {
     m_playlistType = PlaylistTypeMapper::GetPlaylistTypeForName(jsonValue.GetString("playlistType"));
-
     m_playlistTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("playlistWindowSeconds"))
   {
     m_playlistWindowSeconds = jsonValue.GetInteger("playlistWindowSeconds");
-
     m_playlistWindowSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programDateTimeIntervalSeconds"))
   {
     m_programDateTimeIntervalSeconds = jsonValue.GetInteger("programDateTimeIntervalSeconds");
-
     m_programDateTimeIntervalSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adTriggers"))
   {
     Aws::Utils::Array<JsonView> adTriggersJsonList = jsonValue.GetArray("adTriggers");
@@ -111,14 +74,11 @@ HlsManifest& HlsManifest::operator =(JsonView jsonValue)
     }
     m_adTriggersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adsOnDeliveryRestrictions"))
   {
     m_adsOnDeliveryRestrictions = AdsOnDeliveryRestrictionsMapper::GetAdsOnDeliveryRestrictionsForName(jsonValue.GetString("adsOnDeliveryRestrictions"));
-
     m_adsOnDeliveryRestrictionsHasBeenSet = true;
   }
-
   return *this;
 }
 

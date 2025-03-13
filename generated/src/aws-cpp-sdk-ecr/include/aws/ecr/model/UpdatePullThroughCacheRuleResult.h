@@ -28,7 +28,7 @@ namespace Model
   class UpdatePullThroughCacheRuleResult
   {
   public:
-    AWS_ECR_API UpdatePullThroughCacheRuleResult();
+    AWS_ECR_API UpdatePullThroughCacheRuleResult() = default;
     AWS_ECR_API UpdatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECR_API UpdatePullThroughCacheRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,22 @@ namespace Model
      * <p>The Amazon ECR repository prefix associated with the pull through cache
      * rule.</p>
      */
-    inline const Aws::String& GetEcrRepositoryPrefix() const{ return m_ecrRepositoryPrefix; }
-    inline void SetEcrRepositoryPrefix(const Aws::String& value) { m_ecrRepositoryPrefix = value; }
-    inline void SetEcrRepositoryPrefix(Aws::String&& value) { m_ecrRepositoryPrefix = std::move(value); }
-    inline void SetEcrRepositoryPrefix(const char* value) { m_ecrRepositoryPrefix.assign(value); }
-    inline UpdatePullThroughCacheRuleResult& WithEcrRepositoryPrefix(const Aws::String& value) { SetEcrRepositoryPrefix(value); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithEcrRepositoryPrefix(Aws::String&& value) { SetEcrRepositoryPrefix(std::move(value)); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithEcrRepositoryPrefix(const char* value) { SetEcrRepositoryPrefix(value); return *this;}
+    inline const Aws::String& GetEcrRepositoryPrefix() const { return m_ecrRepositoryPrefix; }
+    template<typename EcrRepositoryPrefixT = Aws::String>
+    void SetEcrRepositoryPrefix(EcrRepositoryPrefixT&& value) { m_ecrRepositoryPrefixHasBeenSet = true; m_ecrRepositoryPrefix = std::forward<EcrRepositoryPrefixT>(value); }
+    template<typename EcrRepositoryPrefixT = Aws::String>
+    UpdatePullThroughCacheRuleResult& WithEcrRepositoryPrefix(EcrRepositoryPrefixT&& value) { SetEcrRepositoryPrefix(std::forward<EcrRepositoryPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The registry ID associated with the request.</p>
      */
-    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-    inline void SetRegistryId(const Aws::String& value) { m_registryId = value; }
-    inline void SetRegistryId(Aws::String&& value) { m_registryId = std::move(value); }
-    inline void SetRegistryId(const char* value) { m_registryId.assign(value); }
-    inline UpdatePullThroughCacheRuleResult& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    inline const Aws::String& GetRegistryId() const { return m_registryId; }
+    template<typename RegistryIdT = Aws::String>
+    void SetRegistryId(RegistryIdT&& value) { m_registryIdHasBeenSet = true; m_registryId = std::forward<RegistryIdT>(value); }
+    template<typename RegistryIdT = Aws::String>
+    UpdatePullThroughCacheRuleResult& WithRegistryId(RegistryIdT&& value) { SetRegistryId(std::forward<RegistryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,11 +61,11 @@ namespace Model
      * <p>The date and time, in JavaScript date format, when the pull through cache
      * rule was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
-    inline UpdatePullThroughCacheRuleResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    UpdatePullThroughCacheRuleResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,26 +73,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
      * secret associated with the pull through cache rule.</p>
      */
-    inline const Aws::String& GetCredentialArn() const{ return m_credentialArn; }
-    inline void SetCredentialArn(const Aws::String& value) { m_credentialArn = value; }
-    inline void SetCredentialArn(Aws::String&& value) { m_credentialArn = std::move(value); }
-    inline void SetCredentialArn(const char* value) { m_credentialArn.assign(value); }
-    inline UpdatePullThroughCacheRuleResult& WithCredentialArn(const Aws::String& value) { SetCredentialArn(value); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithCredentialArn(Aws::String&& value) { SetCredentialArn(std::move(value)); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithCredentialArn(const char* value) { SetCredentialArn(value); return *this;}
+    inline const Aws::String& GetCredentialArn() const { return m_credentialArn; }
+    template<typename CredentialArnT = Aws::String>
+    void SetCredentialArn(CredentialArnT&& value) { m_credentialArnHasBeenSet = true; m_credentialArn = std::forward<CredentialArnT>(value); }
+    template<typename CredentialArnT = Aws::String>
+    UpdatePullThroughCacheRuleResult& WithCredentialArn(CredentialArnT&& value) { SetCredentialArn(std::forward<CredentialArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the IAM role associated with the pull through cache rule.</p>
      */
-    inline const Aws::String& GetCustomRoleArn() const{ return m_customRoleArn; }
-    inline void SetCustomRoleArn(const Aws::String& value) { m_customRoleArn = value; }
-    inline void SetCustomRoleArn(Aws::String&& value) { m_customRoleArn = std::move(value); }
-    inline void SetCustomRoleArn(const char* value) { m_customRoleArn.assign(value); }
-    inline UpdatePullThroughCacheRuleResult& WithCustomRoleArn(const Aws::String& value) { SetCustomRoleArn(value); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithCustomRoleArn(Aws::String&& value) { SetCustomRoleArn(std::move(value)); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithCustomRoleArn(const char* value) { SetCustomRoleArn(value); return *this;}
+    inline const Aws::String& GetCustomRoleArn() const { return m_customRoleArn; }
+    template<typename CustomRoleArnT = Aws::String>
+    void SetCustomRoleArn(CustomRoleArnT&& value) { m_customRoleArnHasBeenSet = true; m_customRoleArn = std::forward<CustomRoleArnT>(value); }
+    template<typename CustomRoleArnT = Aws::String>
+    UpdatePullThroughCacheRuleResult& WithCustomRoleArn(CustomRoleArnT&& value) { SetCustomRoleArn(std::forward<CustomRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,40 +96,43 @@ namespace Model
      * <p>The upstream repository prefix associated with the pull through cache
      * rule.</p>
      */
-    inline const Aws::String& GetUpstreamRepositoryPrefix() const{ return m_upstreamRepositoryPrefix; }
-    inline void SetUpstreamRepositoryPrefix(const Aws::String& value) { m_upstreamRepositoryPrefix = value; }
-    inline void SetUpstreamRepositoryPrefix(Aws::String&& value) { m_upstreamRepositoryPrefix = std::move(value); }
-    inline void SetUpstreamRepositoryPrefix(const char* value) { m_upstreamRepositoryPrefix.assign(value); }
-    inline UpdatePullThroughCacheRuleResult& WithUpstreamRepositoryPrefix(const Aws::String& value) { SetUpstreamRepositoryPrefix(value); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithUpstreamRepositoryPrefix(Aws::String&& value) { SetUpstreamRepositoryPrefix(std::move(value)); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithUpstreamRepositoryPrefix(const char* value) { SetUpstreamRepositoryPrefix(value); return *this;}
+    inline const Aws::String& GetUpstreamRepositoryPrefix() const { return m_upstreamRepositoryPrefix; }
+    template<typename UpstreamRepositoryPrefixT = Aws::String>
+    void SetUpstreamRepositoryPrefix(UpstreamRepositoryPrefixT&& value) { m_upstreamRepositoryPrefixHasBeenSet = true; m_upstreamRepositoryPrefix = std::forward<UpstreamRepositoryPrefixT>(value); }
+    template<typename UpstreamRepositoryPrefixT = Aws::String>
+    UpdatePullThroughCacheRuleResult& WithUpstreamRepositoryPrefix(UpstreamRepositoryPrefixT&& value) { SetUpstreamRepositoryPrefix(std::forward<UpstreamRepositoryPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdatePullThroughCacheRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdatePullThroughCacheRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdatePullThroughCacheRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_ecrRepositoryPrefix;
+    bool m_ecrRepositoryPrefixHasBeenSet = false;
 
     Aws::String m_registryId;
+    bool m_registryIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_credentialArn;
+    bool m_credentialArnHasBeenSet = false;
 
     Aws::String m_customRoleArn;
+    bool m_customRoleArnHasBeenSet = false;
 
     Aws::String m_upstreamRepositoryPrefix;
+    bool m_upstreamRepositoryPrefixHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

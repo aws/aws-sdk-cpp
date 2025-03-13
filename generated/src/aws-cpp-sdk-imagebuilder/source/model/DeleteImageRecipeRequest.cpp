@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteImageRecipeRequest::DeleteImageRecipeRequest() : 
-    m_imageRecipeArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteImageRecipeRequest::SerializePayload() const
 {
   return {};

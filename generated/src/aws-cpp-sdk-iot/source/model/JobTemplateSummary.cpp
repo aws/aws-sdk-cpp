@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-JobTemplateSummary::JobTemplateSummary() : 
-    m_jobTemplateArnHasBeenSet(false),
-    m_jobTemplateIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 JobTemplateSummary::JobTemplateSummary(JsonView jsonValue)
-  : JobTemplateSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ JobTemplateSummary& JobTemplateSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobTemplateArn"))
   {
     m_jobTemplateArn = jsonValue.GetString("jobTemplateArn");
-
     m_jobTemplateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobTemplateId"))
   {
     m_jobTemplateId = jsonValue.GetString("jobTemplateId");
-
     m_jobTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

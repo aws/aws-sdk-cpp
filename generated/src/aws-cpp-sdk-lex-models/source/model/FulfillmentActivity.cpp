@@ -18,15 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-FulfillmentActivity::FulfillmentActivity() : 
-    m_type(FulfillmentActivityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_codeHookHasBeenSet(false)
-{
-}
-
 FulfillmentActivity::FulfillmentActivity(JsonView jsonValue)
-  : FulfillmentActivity()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FulfillmentActivity& FulfillmentActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = FulfillmentActivityTypeMapper::GetFulfillmentActivityTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeHook"))
   {
     m_codeHook = jsonValue.GetObject("codeHook");
-
     m_codeHookHasBeenSet = true;
   }
-
   return *this;
 }
 

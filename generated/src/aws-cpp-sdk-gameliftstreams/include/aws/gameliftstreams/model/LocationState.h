@@ -33,7 +33,7 @@ namespace Model
   class LocationState
   {
   public:
-    AWS_GAMELIFTSTREAMS_API LocationState();
+    AWS_GAMELIFTSTREAMS_API LocationState() = default;
     AWS_GAMELIFTSTREAMS_API LocationState(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFTSTREAMS_API LocationState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFTSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * streaming and resources that are idle and ready to respond to stream
      * requests.</p>
      */
-    inline int GetAllocatedCapacity() const{ return m_allocatedCapacity; }
+    inline int GetAllocatedCapacity() const { return m_allocatedCapacity; }
     inline bool AllocatedCapacityHasBeenSet() const { return m_allocatedCapacityHasBeenSet; }
     inline void SetAllocatedCapacity(int value) { m_allocatedCapacityHasBeenSet = true; m_allocatedCapacity = value; }
     inline LocationState& WithAllocatedCapacity(int value) { SetAllocatedCapacity(value); return *this;}
@@ -58,7 +58,7 @@ namespace Model
      * without delay. You pay for this capacity whether it's in use or not. Best for
      * quickest time from streaming request to streaming session. </p>
      */
-    inline int GetAlwaysOnCapacity() const{ return m_alwaysOnCapacity; }
+    inline int GetAlwaysOnCapacity() const { return m_alwaysOnCapacity; }
     inline bool AlwaysOnCapacityHasBeenSet() const { return m_alwaysOnCapacityHasBeenSet; }
     inline void SetAlwaysOnCapacity(int value) { m_alwaysOnCapacityHasBeenSet = true; m_alwaysOnCapacity = value; }
     inline LocationState& WithAlwaysOnCapacity(int value) { SetAlwaysOnCapacity(value); return *this;}
@@ -70,7 +70,7 @@ namespace Model
      * streaming. It represents the stream group's availability to respond to new
      * stream requests, but not including on-demand capacity.</p>
      */
-    inline int GetIdleCapacity() const{ return m_idleCapacity; }
+    inline int GetIdleCapacity() const { return m_idleCapacity; }
     inline bool IdleCapacityHasBeenSet() const { return m_idleCapacityHasBeenSet; }
     inline void SetIdleCapacity(int value) { m_idleCapacityHasBeenSet = true; m_idleCapacity = value; }
     inline LocationState& WithIdleCapacity(int value) { SetIdleCapacity(value); return *this;}
@@ -82,14 +82,12 @@ namespace Model
      * of locations that Amazon GameLift Streams supports, see the Regions and quotas
      * section in the Amazon GameLift Streams Developer Guide . </p>
      */
-    inline const Aws::String& GetLocationName() const{ return m_locationName; }
+    inline const Aws::String& GetLocationName() const { return m_locationName; }
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
-    inline void SetLocationName(const Aws::String& value) { m_locationNameHasBeenSet = true; m_locationName = value; }
-    inline void SetLocationName(Aws::String&& value) { m_locationNameHasBeenSet = true; m_locationName = std::move(value); }
-    inline void SetLocationName(const char* value) { m_locationNameHasBeenSet = true; m_locationName.assign(value); }
-    inline LocationState& WithLocationName(const Aws::String& value) { SetLocationName(value); return *this;}
-    inline LocationState& WithLocationName(Aws::String&& value) { SetLocationName(std::move(value)); return *this;}
-    inline LocationState& WithLocationName(const char* value) { SetLocationName(value); return *this;}
+    template<typename LocationNameT = Aws::String>
+    void SetLocationName(LocationNameT&& value) { m_locationNameHasBeenSet = true; m_locationName = std::forward<LocationNameT>(value); }
+    template<typename LocationNameT = Aws::String>
+    LocationState& WithLocationName(LocationNameT&& value) { SetLocationName(std::forward<LocationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,7 +97,7 @@ namespace Model
      * offers a cost control measure at the expense of a greater startup time
      * (typically under 5 minutes). </p>
      */
-    inline int GetOnDemandCapacity() const{ return m_onDemandCapacity; }
+    inline int GetOnDemandCapacity() const { return m_onDemandCapacity; }
     inline bool OnDemandCapacityHasBeenSet() const { return m_onDemandCapacityHasBeenSet; }
     inline void SetOnDemandCapacity(int value) { m_onDemandCapacityHasBeenSet = true; m_onDemandCapacity = value; }
     inline LocationState& WithOnDemandCapacity(int value) { SetOnDemandCapacity(value); return *this;}
@@ -112,7 +110,7 @@ namespace Model
      * already provisioned or is working to provision. You request capacity for each
      * location in a stream group.</p>
      */
-    inline int GetRequestedCapacity() const{ return m_requestedCapacity; }
+    inline int GetRequestedCapacity() const { return m_requestedCapacity; }
     inline bool RequestedCapacityHasBeenSet() const { return m_requestedCapacityHasBeenSet; }
     inline void SetRequestedCapacity(int value) { m_requestedCapacityHasBeenSet = true; m_requestedCapacity = value; }
     inline LocationState& WithRequestedCapacity(int value) { SetRequestedCapacity(value); return *this;}
@@ -132,34 +130,32 @@ namespace Model
      * GameLift Streams is working to remove this location. It releases all provisioned
      * capacity for this location in this stream group. </p> </li> </ul>
      */
-    inline const StreamGroupLocationStatus& GetStatus() const{ return m_status; }
+    inline StreamGroupLocationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StreamGroupLocationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StreamGroupLocationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LocationState& WithStatus(const StreamGroupLocationStatus& value) { SetStatus(value); return *this;}
-    inline LocationState& WithStatus(StreamGroupLocationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StreamGroupLocationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LocationState& WithStatus(StreamGroupLocationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    int m_allocatedCapacity;
+    int m_allocatedCapacity{0};
     bool m_allocatedCapacityHasBeenSet = false;
 
-    int m_alwaysOnCapacity;
+    int m_alwaysOnCapacity{0};
     bool m_alwaysOnCapacityHasBeenSet = false;
 
-    int m_idleCapacity;
+    int m_idleCapacity{0};
     bool m_idleCapacityHasBeenSet = false;
 
     Aws::String m_locationName;
     bool m_locationNameHasBeenSet = false;
 
-    int m_onDemandCapacity;
+    int m_onDemandCapacity{0};
     bool m_onDemandCapacityHasBeenSet = false;
 
-    int m_requestedCapacity;
+    int m_requestedCapacity{0};
     bool m_requestedCapacityHasBeenSet = false;
 
-    StreamGroupLocationStatus m_status;
+    StreamGroupLocationStatus m_status{StreamGroupLocationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -21,7 +21,7 @@ namespace Model
   class UpdateRouteCalculatorRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API UpdateRouteCalculatorRequest();
+    AWS_LOCATIONSERVICE_API UpdateRouteCalculatorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The name of the route calculator resource to update.</p>
      */
-    inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
+    inline const Aws::String& GetCalculatorName() const { return m_calculatorName; }
     inline bool CalculatorNameHasBeenSet() const { return m_calculatorNameHasBeenSet; }
-    inline void SetCalculatorName(const Aws::String& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = value; }
-    inline void SetCalculatorName(Aws::String&& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = std::move(value); }
-    inline void SetCalculatorName(const char* value) { m_calculatorNameHasBeenSet = true; m_calculatorName.assign(value); }
-    inline UpdateRouteCalculatorRequest& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
-    inline UpdateRouteCalculatorRequest& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
-    inline UpdateRouteCalculatorRequest& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
+    template<typename CalculatorNameT = Aws::String>
+    void SetCalculatorName(CalculatorNameT&& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = std::forward<CalculatorNameT>(value); }
+    template<typename CalculatorNameT = Aws::String>
+    UpdateRouteCalculatorRequest& WithCalculatorName(CalculatorNameT&& value) { SetCalculatorName(std::forward<CalculatorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the description for the route calculator resource.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateRouteCalculatorRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateRouteCalculatorRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateRouteCalculatorRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateRouteCalculatorRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

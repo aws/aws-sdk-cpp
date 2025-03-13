@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchPutDataQualityStatisticAnnotationRequest::BatchPutDataQualityStatisticAnnotationRequest() : 
-    m_inclusionAnnotationsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String BatchPutDataQualityStatisticAnnotationRequest::SerializePayload() const
 {
   JsonValue payload;

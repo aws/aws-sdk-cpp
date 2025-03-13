@@ -21,7 +21,7 @@ namespace Model
   class RestoreSecretRequest : public SecretsManagerRequest
   {
   public:
-    AWS_SECRETSMANAGER_API RestoreSecretRequest();
+    AWS_SECRETSMANAGER_API RestoreSecretRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
      * a secret from a partial ARN</a>.</p>
      */
-    inline const Aws::String& GetSecretId() const{ return m_secretId; }
+    inline const Aws::String& GetSecretId() const { return m_secretId; }
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
-    inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
-    inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
-    inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
-    inline RestoreSecretRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
-    inline RestoreSecretRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
-    inline RestoreSecretRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
+    template<typename SecretIdT = Aws::String>
+    void SetSecretId(SecretIdT&& value) { m_secretIdHasBeenSet = true; m_secretId = std::forward<SecretIdT>(value); }
+    template<typename SecretIdT = Aws::String>
+    RestoreSecretRequest& WithSecretId(SecretIdT&& value) { SetSecretId(std::forward<SecretIdT>(value)); return *this;}
     ///@}
   private:
 

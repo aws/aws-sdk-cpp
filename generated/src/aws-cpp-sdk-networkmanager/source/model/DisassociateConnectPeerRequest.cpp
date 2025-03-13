@@ -12,12 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateConnectPeerRequest::DisassociateConnectPeerRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_connectPeerIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateConnectPeerRequest::SerializePayload() const
 {
   return {};

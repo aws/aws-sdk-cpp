@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-Contact::Contact() : 
-    m_contactArnHasBeenSet(false)
-{
-}
-
 Contact::Contact(JsonView jsonValue)
-  : Contact()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Contact& Contact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contactArn"))
   {
     m_contactArn = jsonValue.GetString("contactArn");
-
     m_contactArnHasBeenSet = true;
   }
-
   return *this;
 }
 

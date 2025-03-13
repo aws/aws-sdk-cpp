@@ -40,7 +40,7 @@ namespace Model
   class MetricAlarm
   {
   public:
-    AWS_CLOUDWATCH_API MetricAlarm();
+    AWS_CLOUDWATCH_API MetricAlarm() = default;
     AWS_CLOUDWATCH_API MetricAlarm(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API MetricAlarm& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,54 +52,48 @@ namespace Model
     /**
      * <p>The name of the alarm.</p>
      */
-    inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+    inline const Aws::String& GetAlarmName() const { return m_alarmName; }
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
-    inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
-    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
-    inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
-    inline MetricAlarm& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
-    inline MetricAlarm& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
-    inline MetricAlarm& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+    template<typename AlarmNameT = Aws::String>
+    void SetAlarmName(AlarmNameT&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::forward<AlarmNameT>(value); }
+    template<typename AlarmNameT = Aws::String>
+    MetricAlarm& WithAlarmName(AlarmNameT&& value) { SetAlarmName(std::forward<AlarmNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>
      */
-    inline const Aws::String& GetAlarmArn() const{ return m_alarmArn; }
+    inline const Aws::String& GetAlarmArn() const { return m_alarmArn; }
     inline bool AlarmArnHasBeenSet() const { return m_alarmArnHasBeenSet; }
-    inline void SetAlarmArn(const Aws::String& value) { m_alarmArnHasBeenSet = true; m_alarmArn = value; }
-    inline void SetAlarmArn(Aws::String&& value) { m_alarmArnHasBeenSet = true; m_alarmArn = std::move(value); }
-    inline void SetAlarmArn(const char* value) { m_alarmArnHasBeenSet = true; m_alarmArn.assign(value); }
-    inline MetricAlarm& WithAlarmArn(const Aws::String& value) { SetAlarmArn(value); return *this;}
-    inline MetricAlarm& WithAlarmArn(Aws::String&& value) { SetAlarmArn(std::move(value)); return *this;}
-    inline MetricAlarm& WithAlarmArn(const char* value) { SetAlarmArn(value); return *this;}
+    template<typename AlarmArnT = Aws::String>
+    void SetAlarmArn(AlarmArnT&& value) { m_alarmArnHasBeenSet = true; m_alarmArn = std::forward<AlarmArnT>(value); }
+    template<typename AlarmArnT = Aws::String>
+    MetricAlarm& WithAlarmArn(AlarmArnT&& value) { SetAlarmArn(std::forward<AlarmArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the alarm.</p>
      */
-    inline const Aws::String& GetAlarmDescription() const{ return m_alarmDescription; }
+    inline const Aws::String& GetAlarmDescription() const { return m_alarmDescription; }
     inline bool AlarmDescriptionHasBeenSet() const { return m_alarmDescriptionHasBeenSet; }
-    inline void SetAlarmDescription(const Aws::String& value) { m_alarmDescriptionHasBeenSet = true; m_alarmDescription = value; }
-    inline void SetAlarmDescription(Aws::String&& value) { m_alarmDescriptionHasBeenSet = true; m_alarmDescription = std::move(value); }
-    inline void SetAlarmDescription(const char* value) { m_alarmDescriptionHasBeenSet = true; m_alarmDescription.assign(value); }
-    inline MetricAlarm& WithAlarmDescription(const Aws::String& value) { SetAlarmDescription(value); return *this;}
-    inline MetricAlarm& WithAlarmDescription(Aws::String&& value) { SetAlarmDescription(std::move(value)); return *this;}
-    inline MetricAlarm& WithAlarmDescription(const char* value) { SetAlarmDescription(value); return *this;}
+    template<typename AlarmDescriptionT = Aws::String>
+    void SetAlarmDescription(AlarmDescriptionT&& value) { m_alarmDescriptionHasBeenSet = true; m_alarmDescription = std::forward<AlarmDescriptionT>(value); }
+    template<typename AlarmDescriptionT = Aws::String>
+    MetricAlarm& WithAlarmDescription(AlarmDescriptionT&& value) { SetAlarmDescription(std::forward<AlarmDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time stamp of the last update to the alarm configuration.</p>
      */
-    inline const Aws::Utils::DateTime& GetAlarmConfigurationUpdatedTimestamp() const{ return m_alarmConfigurationUpdatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetAlarmConfigurationUpdatedTimestamp() const { return m_alarmConfigurationUpdatedTimestamp; }
     inline bool AlarmConfigurationUpdatedTimestampHasBeenSet() const { return m_alarmConfigurationUpdatedTimestampHasBeenSet; }
-    inline void SetAlarmConfigurationUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = value; }
-    inline void SetAlarmConfigurationUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = std::move(value); }
-    inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
-    inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetAlarmConfigurationUpdatedTimestamp(std::move(value)); return *this;}
+    template<typename AlarmConfigurationUpdatedTimestampT = Aws::Utils::DateTime>
+    void SetAlarmConfigurationUpdatedTimestamp(AlarmConfigurationUpdatedTimestampT&& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = std::forward<AlarmConfigurationUpdatedTimestampT>(value); }
+    template<typename AlarmConfigurationUpdatedTimestampT = Aws::Utils::DateTime>
+    MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(AlarmConfigurationUpdatedTimestampT&& value) { SetAlarmConfigurationUpdatedTimestamp(std::forward<AlarmConfigurationUpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,7 +101,7 @@ namespace Model
      * <p>Indicates whether actions should be executed during any changes to the alarm
      * state.</p>
      */
-    inline bool GetActionsEnabled() const{ return m_actionsEnabled; }
+    inline bool GetActionsEnabled() const { return m_actionsEnabled; }
     inline bool ActionsEnabledHasBeenSet() const { return m_actionsEnabledHasBeenSet; }
     inline void SetActionsEnabled(bool value) { m_actionsEnabledHasBeenSet = true; m_actionsEnabled = value; }
     inline MetricAlarm& WithActionsEnabled(bool value) { SetActionsEnabled(value); return *this;}
@@ -119,15 +113,14 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOKActions() const{ return m_oKActions; }
+    inline const Aws::Vector<Aws::String>& GetOKActions() const { return m_oKActions; }
     inline bool OKActionsHasBeenSet() const { return m_oKActionsHasBeenSet; }
-    inline void SetOKActions(const Aws::Vector<Aws::String>& value) { m_oKActionsHasBeenSet = true; m_oKActions = value; }
-    inline void SetOKActions(Aws::Vector<Aws::String>&& value) { m_oKActionsHasBeenSet = true; m_oKActions = std::move(value); }
-    inline MetricAlarm& WithOKActions(const Aws::Vector<Aws::String>& value) { SetOKActions(value); return *this;}
-    inline MetricAlarm& WithOKActions(Aws::Vector<Aws::String>&& value) { SetOKActions(std::move(value)); return *this;}
-    inline MetricAlarm& AddOKActions(const Aws::String& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
-    inline MetricAlarm& AddOKActions(Aws::String&& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(std::move(value)); return *this; }
-    inline MetricAlarm& AddOKActions(const char* value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
+    template<typename OKActionsT = Aws::Vector<Aws::String>>
+    void SetOKActions(OKActionsT&& value) { m_oKActionsHasBeenSet = true; m_oKActions = std::forward<OKActionsT>(value); }
+    template<typename OKActionsT = Aws::Vector<Aws::String>>
+    MetricAlarm& WithOKActions(OKActionsT&& value) { SetOKActions(std::forward<OKActionsT>(value)); return *this;}
+    template<typename OKActionsT = Aws::String>
+    MetricAlarm& AddOKActions(OKActionsT&& value) { m_oKActionsHasBeenSet = true; m_oKActions.emplace_back(std::forward<OKActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -136,15 +129,14 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAlarmActions() const{ return m_alarmActions; }
+    inline const Aws::Vector<Aws::String>& GetAlarmActions() const { return m_alarmActions; }
     inline bool AlarmActionsHasBeenSet() const { return m_alarmActionsHasBeenSet; }
-    inline void SetAlarmActions(const Aws::Vector<Aws::String>& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
-    inline void SetAlarmActions(Aws::Vector<Aws::String>&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = std::move(value); }
-    inline MetricAlarm& WithAlarmActions(const Aws::Vector<Aws::String>& value) { SetAlarmActions(value); return *this;}
-    inline MetricAlarm& WithAlarmActions(Aws::Vector<Aws::String>&& value) { SetAlarmActions(std::move(value)); return *this;}
-    inline MetricAlarm& AddAlarmActions(const Aws::String& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
-    inline MetricAlarm& AddAlarmActions(Aws::String&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(std::move(value)); return *this; }
-    inline MetricAlarm& AddAlarmActions(const char* value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
+    template<typename AlarmActionsT = Aws::Vector<Aws::String>>
+    void SetAlarmActions(AlarmActionsT&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = std::forward<AlarmActionsT>(value); }
+    template<typename AlarmActionsT = Aws::Vector<Aws::String>>
+    MetricAlarm& WithAlarmActions(AlarmActionsT&& value) { SetAlarmActions(std::forward<AlarmActionsT>(value)); return *this;}
+    template<typename AlarmActionsT = Aws::String>
+    MetricAlarm& AddAlarmActions(AlarmActionsT&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.emplace_back(std::forward<AlarmActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -153,55 +145,48 @@ namespace Model
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInsufficientDataActions() const{ return m_insufficientDataActions; }
+    inline const Aws::Vector<Aws::String>& GetInsufficientDataActions() const { return m_insufficientDataActions; }
     inline bool InsufficientDataActionsHasBeenSet() const { return m_insufficientDataActionsHasBeenSet; }
-    inline void SetInsufficientDataActions(const Aws::Vector<Aws::String>& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = value; }
-    inline void SetInsufficientDataActions(Aws::Vector<Aws::String>&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = std::move(value); }
-    inline MetricAlarm& WithInsufficientDataActions(const Aws::Vector<Aws::String>& value) { SetInsufficientDataActions(value); return *this;}
-    inline MetricAlarm& WithInsufficientDataActions(Aws::Vector<Aws::String>&& value) { SetInsufficientDataActions(std::move(value)); return *this;}
-    inline MetricAlarm& AddInsufficientDataActions(const Aws::String& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
-    inline MetricAlarm& AddInsufficientDataActions(Aws::String&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(std::move(value)); return *this; }
-    inline MetricAlarm& AddInsufficientDataActions(const char* value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
+    template<typename InsufficientDataActionsT = Aws::Vector<Aws::String>>
+    void SetInsufficientDataActions(InsufficientDataActionsT&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = std::forward<InsufficientDataActionsT>(value); }
+    template<typename InsufficientDataActionsT = Aws::Vector<Aws::String>>
+    MetricAlarm& WithInsufficientDataActions(InsufficientDataActionsT&& value) { SetInsufficientDataActions(std::forward<InsufficientDataActionsT>(value)); return *this;}
+    template<typename InsufficientDataActionsT = Aws::String>
+    MetricAlarm& AddInsufficientDataActions(InsufficientDataActionsT&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.emplace_back(std::forward<InsufficientDataActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The state value for the alarm.</p>
      */
-    inline const StateValue& GetStateValue() const{ return m_stateValue; }
+    inline StateValue GetStateValue() const { return m_stateValue; }
     inline bool StateValueHasBeenSet() const { return m_stateValueHasBeenSet; }
-    inline void SetStateValue(const StateValue& value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
-    inline void SetStateValue(StateValue&& value) { m_stateValueHasBeenSet = true; m_stateValue = std::move(value); }
-    inline MetricAlarm& WithStateValue(const StateValue& value) { SetStateValue(value); return *this;}
-    inline MetricAlarm& WithStateValue(StateValue&& value) { SetStateValue(std::move(value)); return *this;}
+    inline void SetStateValue(StateValue value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
+    inline MetricAlarm& WithStateValue(StateValue value) { SetStateValue(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An explanation for the alarm state, in text format.</p>
      */
-    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
+    inline const Aws::String& GetStateReason() const { return m_stateReason; }
     inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
-    inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
-    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
-    inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
-    inline MetricAlarm& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
-    inline MetricAlarm& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
-    inline MetricAlarm& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+    template<typename StateReasonT = Aws::String>
+    void SetStateReason(StateReasonT&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::forward<StateReasonT>(value); }
+    template<typename StateReasonT = Aws::String>
+    MetricAlarm& WithStateReason(StateReasonT&& value) { SetStateReason(std::forward<StateReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An explanation for the alarm state, in JSON format.</p>
      */
-    inline const Aws::String& GetStateReasonData() const{ return m_stateReasonData; }
+    inline const Aws::String& GetStateReasonData() const { return m_stateReasonData; }
     inline bool StateReasonDataHasBeenSet() const { return m_stateReasonDataHasBeenSet; }
-    inline void SetStateReasonData(const Aws::String& value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData = value; }
-    inline void SetStateReasonData(Aws::String&& value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData = std::move(value); }
-    inline void SetStateReasonData(const char* value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData.assign(value); }
-    inline MetricAlarm& WithStateReasonData(const Aws::String& value) { SetStateReasonData(value); return *this;}
-    inline MetricAlarm& WithStateReasonData(Aws::String&& value) { SetStateReasonData(std::move(value)); return *this;}
-    inline MetricAlarm& WithStateReasonData(const char* value) { SetStateReasonData(value); return *this;}
+    template<typename StateReasonDataT = Aws::String>
+    void SetStateReasonData(StateReasonDataT&& value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData = std::forward<StateReasonDataT>(value); }
+    template<typename StateReasonDataT = Aws::String>
+    MetricAlarm& WithStateReasonData(StateReasonDataT&& value) { SetStateReasonData(std::forward<StateReasonDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -209,12 +194,12 @@ namespace Model
      * <p>The time stamp of the last update to the value of either the
      * <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
      */
-    inline const Aws::Utils::DateTime& GetStateUpdatedTimestamp() const{ return m_stateUpdatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetStateUpdatedTimestamp() const { return m_stateUpdatedTimestamp; }
     inline bool StateUpdatedTimestampHasBeenSet() const { return m_stateUpdatedTimestampHasBeenSet; }
-    inline void SetStateUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
-    inline void SetStateUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = std::move(value); }
-    inline MetricAlarm& WithStateUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetStateUpdatedTimestamp(value); return *this;}
-    inline MetricAlarm& WithStateUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetStateUpdatedTimestamp(std::move(value)); return *this;}
+    template<typename StateUpdatedTimestampT = Aws::Utils::DateTime>
+    void SetStateUpdatedTimestamp(StateUpdatedTimestampT&& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = std::forward<StateUpdatedTimestampT>(value); }
+    template<typename StateUpdatedTimestampT = Aws::Utils::DateTime>
+    MetricAlarm& WithStateUpdatedTimestamp(StateUpdatedTimestampT&& value) { SetStateUpdatedTimestamp(std::forward<StateUpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,28 +207,24 @@ namespace Model
      * <p>The name of the metric associated with the alarm, if this is an alarm based
      * on a single metric.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline MetricAlarm& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline MetricAlarm& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline MetricAlarm& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    MetricAlarm& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace of the metric associated with the alarm.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline MetricAlarm& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline MetricAlarm& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline MetricAlarm& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    MetricAlarm& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -251,12 +232,10 @@ namespace Model
      * <p>The statistic for the metric associated with the alarm, other than
      * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
      */
-    inline const Statistic& GetStatistic() const{ return m_statistic; }
+    inline Statistic GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(Statistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline MetricAlarm& WithStatistic(const Statistic& value) { SetStatistic(value); return *this;}
-    inline MetricAlarm& WithStatistic(Statistic&& value) { SetStatistic(std::move(value)); return *this;}
+    inline void SetStatistic(Statistic value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline MetricAlarm& WithStatistic(Statistic value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
@@ -264,35 +243,33 @@ namespace Model
      * <p>The percentile statistic for the metric associated with the alarm. Specify a
      * value between p0.0 and p100.</p>
      */
-    inline const Aws::String& GetExtendedStatistic() const{ return m_extendedStatistic; }
+    inline const Aws::String& GetExtendedStatistic() const { return m_extendedStatistic; }
     inline bool ExtendedStatisticHasBeenSet() const { return m_extendedStatisticHasBeenSet; }
-    inline void SetExtendedStatistic(const Aws::String& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = value; }
-    inline void SetExtendedStatistic(Aws::String&& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = std::move(value); }
-    inline void SetExtendedStatistic(const char* value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic.assign(value); }
-    inline MetricAlarm& WithExtendedStatistic(const Aws::String& value) { SetExtendedStatistic(value); return *this;}
-    inline MetricAlarm& WithExtendedStatistic(Aws::String&& value) { SetExtendedStatistic(std::move(value)); return *this;}
-    inline MetricAlarm& WithExtendedStatistic(const char* value) { SetExtendedStatistic(value); return *this;}
+    template<typename ExtendedStatisticT = Aws::String>
+    void SetExtendedStatistic(ExtendedStatisticT&& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = std::forward<ExtendedStatisticT>(value); }
+    template<typename ExtendedStatisticT = Aws::String>
+    MetricAlarm& WithExtendedStatistic(ExtendedStatisticT&& value) { SetExtendedStatistic(std::forward<ExtendedStatisticT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dimensions for the metric associated with the alarm.</p>
      */
-    inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<Dimension>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline MetricAlarm& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
-    inline MetricAlarm& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline MetricAlarm& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline MetricAlarm& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+    template<typename DimensionsT = Aws::Vector<Dimension>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<Dimension>>
+    MetricAlarm& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = Dimension>
+    MetricAlarm& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The period, in seconds, over which the statistic is applied.</p>
      */
-    inline int GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
     inline MetricAlarm& WithPeriod(int value) { SetPeriod(value); return *this;}
@@ -302,12 +279,10 @@ namespace Model
     /**
      * <p>The unit of the metric associated with the alarm.</p>
      */
-    inline const StandardUnit& GetUnit() const{ return m_unit; }
+    inline StandardUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline MetricAlarm& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
-    inline MetricAlarm& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(StandardUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline MetricAlarm& WithUnit(StandardUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -315,7 +290,7 @@ namespace Model
      * <p>The number of periods over which data is compared to the specified
      * threshold.</p>
      */
-    inline int GetEvaluationPeriods() const{ return m_evaluationPeriods; }
+    inline int GetEvaluationPeriods() const { return m_evaluationPeriods; }
     inline bool EvaluationPeriodsHasBeenSet() const { return m_evaluationPeriodsHasBeenSet; }
     inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
     inline MetricAlarm& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
@@ -325,7 +300,7 @@ namespace Model
     /**
      * <p>The number of data points that must be breaching to trigger the alarm.</p>
      */
-    inline int GetDatapointsToAlarm() const{ return m_datapointsToAlarm; }
+    inline int GetDatapointsToAlarm() const { return m_datapointsToAlarm; }
     inline bool DatapointsToAlarmHasBeenSet() const { return m_datapointsToAlarmHasBeenSet; }
     inline void SetDatapointsToAlarm(int value) { m_datapointsToAlarmHasBeenSet = true; m_datapointsToAlarm = value; }
     inline MetricAlarm& WithDatapointsToAlarm(int value) { SetDatapointsToAlarm(value); return *this;}
@@ -335,7 +310,7 @@ namespace Model
     /**
      * <p>The value to compare with the specified statistic.</p>
      */
-    inline double GetThreshold() const{ return m_threshold; }
+    inline double GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline MetricAlarm& WithThreshold(double value) { SetThreshold(value); return *this;}
@@ -346,12 +321,10 @@ namespace Model
      * <p>The arithmetic operation to use when comparing the specified statistic and
      * threshold. The specified statistic value is used as the first operand.</p>
      */
-    inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline MetricAlarm& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline MetricAlarm& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline MetricAlarm& WithComparisonOperator(ComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -363,14 +336,12 @@ namespace Model
      * how CloudWatch alarms treat missing data</a>.</p> <p>If this parameter is
      * omitted, the default behavior of <code>missing</code> is used.</p>
      */
-    inline const Aws::String& GetTreatMissingData() const{ return m_treatMissingData; }
+    inline const Aws::String& GetTreatMissingData() const { return m_treatMissingData; }
     inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }
-    inline void SetTreatMissingData(const Aws::String& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
-    inline void SetTreatMissingData(Aws::String&& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = std::move(value); }
-    inline void SetTreatMissingData(const char* value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData.assign(value); }
-    inline MetricAlarm& WithTreatMissingData(const Aws::String& value) { SetTreatMissingData(value); return *this;}
-    inline MetricAlarm& WithTreatMissingData(Aws::String&& value) { SetTreatMissingData(std::move(value)); return *this;}
-    inline MetricAlarm& WithTreatMissingData(const char* value) { SetTreatMissingData(value); return *this;}
+    template<typename TreatMissingDataT = Aws::String>
+    void SetTreatMissingData(TreatMissingDataT&& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = std::forward<TreatMissingDataT>(value); }
+    template<typename TreatMissingDataT = Aws::String>
+    MetricAlarm& WithTreatMissingData(TreatMissingDataT&& value) { SetTreatMissingData(std::forward<TreatMissingDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -381,14 +352,12 @@ namespace Model
      * used, the alarm is always evaluated and possibly changes state no matter how
      * many data points are available.</p>
      */
-    inline const Aws::String& GetEvaluateLowSampleCountPercentile() const{ return m_evaluateLowSampleCountPercentile; }
+    inline const Aws::String& GetEvaluateLowSampleCountPercentile() const { return m_evaluateLowSampleCountPercentile; }
     inline bool EvaluateLowSampleCountPercentileHasBeenSet() const { return m_evaluateLowSampleCountPercentileHasBeenSet; }
-    inline void SetEvaluateLowSampleCountPercentile(const Aws::String& value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile = value; }
-    inline void SetEvaluateLowSampleCountPercentile(Aws::String&& value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile = std::move(value); }
-    inline void SetEvaluateLowSampleCountPercentile(const char* value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile.assign(value); }
-    inline MetricAlarm& WithEvaluateLowSampleCountPercentile(const Aws::String& value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
-    inline MetricAlarm& WithEvaluateLowSampleCountPercentile(Aws::String&& value) { SetEvaluateLowSampleCountPercentile(std::move(value)); return *this;}
-    inline MetricAlarm& WithEvaluateLowSampleCountPercentile(const char* value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
+    template<typename EvaluateLowSampleCountPercentileT = Aws::String>
+    void SetEvaluateLowSampleCountPercentile(EvaluateLowSampleCountPercentileT&& value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile = std::forward<EvaluateLowSampleCountPercentileT>(value); }
+    template<typename EvaluateLowSampleCountPercentileT = Aws::String>
+    MetricAlarm& WithEvaluateLowSampleCountPercentile(EvaluateLowSampleCountPercentileT&& value) { SetEvaluateLowSampleCountPercentile(std::forward<EvaluateLowSampleCountPercentileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -399,14 +368,14 @@ namespace Model
      * watches. This expression by designated by having <code>ReturnData</code> set to
      * true.</p>
      */
-    inline const Aws::Vector<MetricDataQuery>& GetMetrics() const{ return m_metrics; }
+    inline const Aws::Vector<MetricDataQuery>& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const Aws::Vector<MetricDataQuery>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(Aws::Vector<MetricDataQuery>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline MetricAlarm& WithMetrics(const Aws::Vector<MetricDataQuery>& value) { SetMetrics(value); return *this;}
-    inline MetricAlarm& WithMetrics(Aws::Vector<MetricDataQuery>&& value) { SetMetrics(std::move(value)); return *this;}
-    inline MetricAlarm& AddMetrics(const MetricDataQuery& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
-    inline MetricAlarm& AddMetrics(MetricDataQuery&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
+    template<typename MetricsT = Aws::Vector<MetricDataQuery>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Vector<MetricDataQuery>>
+    MetricAlarm& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    template<typename MetricsT = MetricDataQuery>
+    MetricAlarm& AddMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics.emplace_back(std::forward<MetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -415,14 +384,12 @@ namespace Model
      * <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the
      * alarm.</p>
      */
-    inline const Aws::String& GetThresholdMetricId() const{ return m_thresholdMetricId; }
+    inline const Aws::String& GetThresholdMetricId() const { return m_thresholdMetricId; }
     inline bool ThresholdMetricIdHasBeenSet() const { return m_thresholdMetricIdHasBeenSet; }
-    inline void SetThresholdMetricId(const Aws::String& value) { m_thresholdMetricIdHasBeenSet = true; m_thresholdMetricId = value; }
-    inline void SetThresholdMetricId(Aws::String&& value) { m_thresholdMetricIdHasBeenSet = true; m_thresholdMetricId = std::move(value); }
-    inline void SetThresholdMetricId(const char* value) { m_thresholdMetricIdHasBeenSet = true; m_thresholdMetricId.assign(value); }
-    inline MetricAlarm& WithThresholdMetricId(const Aws::String& value) { SetThresholdMetricId(value); return *this;}
-    inline MetricAlarm& WithThresholdMetricId(Aws::String&& value) { SetThresholdMetricId(std::move(value)); return *this;}
-    inline MetricAlarm& WithThresholdMetricId(const char* value) { SetThresholdMetricId(value); return *this;}
+    template<typename ThresholdMetricIdT = Aws::String>
+    void SetThresholdMetricId(ThresholdMetricIdT&& value) { m_thresholdMetricIdHasBeenSet = true; m_thresholdMetricId = std::forward<ThresholdMetricIdT>(value); }
+    template<typename ThresholdMetricIdT = Aws::String>
+    MetricAlarm& WithThresholdMetricId(ThresholdMetricIdT&& value) { SetThresholdMetricId(std::forward<ThresholdMetricIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -433,12 +400,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
      * alarms on Metrics Insights queries</a>.</p>
      */
-    inline const EvaluationState& GetEvaluationState() const{ return m_evaluationState; }
+    inline EvaluationState GetEvaluationState() const { return m_evaluationState; }
     inline bool EvaluationStateHasBeenSet() const { return m_evaluationStateHasBeenSet; }
-    inline void SetEvaluationState(const EvaluationState& value) { m_evaluationStateHasBeenSet = true; m_evaluationState = value; }
-    inline void SetEvaluationState(EvaluationState&& value) { m_evaluationStateHasBeenSet = true; m_evaluationState = std::move(value); }
-    inline MetricAlarm& WithEvaluationState(const EvaluationState& value) { SetEvaluationState(value); return *this;}
-    inline MetricAlarm& WithEvaluationState(EvaluationState&& value) { SetEvaluationState(std::move(value)); return *this;}
+    inline void SetEvaluationState(EvaluationState value) { m_evaluationStateHasBeenSet = true; m_evaluationState = value; }
+    inline MetricAlarm& WithEvaluationState(EvaluationState value) { SetEvaluationState(value); return *this;}
     ///@}
 
     ///@{
@@ -446,12 +411,12 @@ namespace Model
      * <p>The date and time that the alarm's <code>StateValue</code> most recently
      * changed.</p>
      */
-    inline const Aws::Utils::DateTime& GetStateTransitionedTimestamp() const{ return m_stateTransitionedTimestamp; }
+    inline const Aws::Utils::DateTime& GetStateTransitionedTimestamp() const { return m_stateTransitionedTimestamp; }
     inline bool StateTransitionedTimestampHasBeenSet() const { return m_stateTransitionedTimestampHasBeenSet; }
-    inline void SetStateTransitionedTimestamp(const Aws::Utils::DateTime& value) { m_stateTransitionedTimestampHasBeenSet = true; m_stateTransitionedTimestamp = value; }
-    inline void SetStateTransitionedTimestamp(Aws::Utils::DateTime&& value) { m_stateTransitionedTimestampHasBeenSet = true; m_stateTransitionedTimestamp = std::move(value); }
-    inline MetricAlarm& WithStateTransitionedTimestamp(const Aws::Utils::DateTime& value) { SetStateTransitionedTimestamp(value); return *this;}
-    inline MetricAlarm& WithStateTransitionedTimestamp(Aws::Utils::DateTime&& value) { SetStateTransitionedTimestamp(std::move(value)); return *this;}
+    template<typename StateTransitionedTimestampT = Aws::Utils::DateTime>
+    void SetStateTransitionedTimestamp(StateTransitionedTimestampT&& value) { m_stateTransitionedTimestampHasBeenSet = true; m_stateTransitionedTimestamp = std::forward<StateTransitionedTimestampT>(value); }
+    template<typename StateTransitionedTimestampT = Aws::Utils::DateTime>
+    MetricAlarm& WithStateTransitionedTimestamp(StateTransitionedTimestampT&& value) { SetStateTransitionedTimestamp(std::forward<StateTransitionedTimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -464,10 +429,10 @@ namespace Model
     Aws::String m_alarmDescription;
     bool m_alarmDescriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_alarmConfigurationUpdatedTimestamp;
+    Aws::Utils::DateTime m_alarmConfigurationUpdatedTimestamp{};
     bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
 
-    bool m_actionsEnabled;
+    bool m_actionsEnabled{false};
     bool m_actionsEnabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_oKActions;
@@ -479,7 +444,7 @@ namespace Model
     Aws::Vector<Aws::String> m_insufficientDataActions;
     bool m_insufficientDataActionsHasBeenSet = false;
 
-    StateValue m_stateValue;
+    StateValue m_stateValue{StateValue::NOT_SET};
     bool m_stateValueHasBeenSet = false;
 
     Aws::String m_stateReason;
@@ -488,7 +453,7 @@ namespace Model
     Aws::String m_stateReasonData;
     bool m_stateReasonDataHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stateUpdatedTimestamp;
+    Aws::Utils::DateTime m_stateUpdatedTimestamp{};
     bool m_stateUpdatedTimestampHasBeenSet = false;
 
     Aws::String m_metricName;
@@ -497,7 +462,7 @@ namespace Model
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet = false;
 
-    Statistic m_statistic;
+    Statistic m_statistic{Statistic::NOT_SET};
     bool m_statisticHasBeenSet = false;
 
     Aws::String m_extendedStatistic;
@@ -506,22 +471,22 @@ namespace Model
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet = false;
 
-    int m_period;
+    int m_period{0};
     bool m_periodHasBeenSet = false;
 
-    StandardUnit m_unit;
+    StandardUnit m_unit{StandardUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    int m_evaluationPeriods;
+    int m_evaluationPeriods{0};
     bool m_evaluationPeriodsHasBeenSet = false;
 
-    int m_datapointsToAlarm;
+    int m_datapointsToAlarm{0};
     bool m_datapointsToAlarmHasBeenSet = false;
 
-    double m_threshold;
+    double m_threshold{0.0};
     bool m_thresholdHasBeenSet = false;
 
-    ComparisonOperator m_comparisonOperator;
+    ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
 
     Aws::String m_treatMissingData;
@@ -536,10 +501,10 @@ namespace Model
     Aws::String m_thresholdMetricId;
     bool m_thresholdMetricIdHasBeenSet = false;
 
-    EvaluationState m_evaluationState;
+    EvaluationState m_evaluationState{EvaluationState::NOT_SET};
     bool m_evaluationStateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stateTransitionedTimestamp;
+    Aws::Utils::DateTime m_stateTransitionedTimestamp{};
     bool m_stateTransitionedTimestampHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class ManagedPersistenceMonitoringConfiguration
   {
   public:
-    AWS_EMRSERVERLESS_API ManagedPersistenceMonitoringConfiguration();
+    AWS_EMRSERVERLESS_API ManagedPersistenceMonitoringConfiguration() = default;
     AWS_EMRSERVERLESS_API ManagedPersistenceMonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API ManagedPersistenceMonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Enables managed logging and defaults to true. If set to false, managed
      * logging will be turned off.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ManagedPersistenceMonitoringConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
      */
-    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
-    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
-    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
-    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
-    inline ManagedPersistenceMonitoringConfiguration& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-    inline ManagedPersistenceMonitoringConfiguration& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-    inline ManagedPersistenceMonitoringConfiguration& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    ManagedPersistenceMonitoringConfiguration& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;

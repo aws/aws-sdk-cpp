@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-QueryGenerationContext::QueryGenerationContext() : 
-    m_curatedQueriesHasBeenSet(false),
-    m_tablesHasBeenSet(false)
-{
-}
-
 QueryGenerationContext::QueryGenerationContext(JsonView jsonValue)
-  : QueryGenerationContext()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ QueryGenerationContext& QueryGenerationContext::operator =(JsonView jsonValue)
     }
     m_curatedQueriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tables"))
   {
     Aws::Utils::Array<JsonView> tablesJsonList = jsonValue.GetArray("tables");
@@ -51,7 +43,6 @@ QueryGenerationContext& QueryGenerationContext::operator =(JsonView jsonValue)
     }
     m_tablesHasBeenSet = true;
   }
-
   return *this;
 }
 

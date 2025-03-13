@@ -12,16 +12,6 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkloadEstimateRequest::CreateWorkloadEstimateRequest() : 
-    m_nameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_rateType(WorkloadEstimateRateType::NOT_SET),
-    m_rateTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkloadEstimateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReservationValue::ReservationValue() : 
-    m_hourlyPriceHasBeenSet(false),
-    m_remainingTotalValueHasBeenSet(false),
-    m_remainingUpfrontValueHasBeenSet(false)
-{
-}
-
 ReservationValue::ReservationValue(const XmlNode& xmlNode)
-  : ReservationValue()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ReservationValue& ReservationValue::operator =(const XmlNode& xmlNode)
     {
       m_hourlyPrice = Aws::Utils::Xml::DecodeEscapedXmlText(hourlyPriceNode.GetText());
       m_hourlyPriceHasBeenSet = true;
+       m_hourlyPriceHasBeenSet = true;
     }
     XmlNode remainingTotalValueNode = resultNode.FirstChild("remainingTotalValue");
     if(!remainingTotalValueNode.IsNull())
     {
       m_remainingTotalValue = Aws::Utils::Xml::DecodeEscapedXmlText(remainingTotalValueNode.GetText());
       m_remainingTotalValueHasBeenSet = true;
+       m_remainingTotalValueHasBeenSet = true;
     }
     XmlNode remainingUpfrontValueNode = resultNode.FirstChild("remainingUpfrontValue");
     if(!remainingUpfrontValueNode.IsNull())
     {
       m_remainingUpfrontValue = Aws::Utils::Xml::DecodeEscapedXmlText(remainingUpfrontValueNode.GetText());
       m_remainingUpfrontValueHasBeenSet = true;
+       m_remainingUpfrontValueHasBeenSet = true;
     }
   }
 

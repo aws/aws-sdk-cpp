@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportApiKeysResult::ImportApiKeysResult()
-{
-}
-
 ImportApiKeysResult::ImportApiKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ ImportApiKeysResult& ImportApiKeysResult::operator =(const Aws::AmazonWebService
     {
       m_ids.push_back(idsJsonList[idsIndex].AsString());
     }
+    m_idsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("warnings"))
   {
     Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
@@ -45,14 +41,15 @@ ImportApiKeysResult& ImportApiKeysResult::operator =(const Aws::AmazonWebService
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
     }
+    m_warningsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

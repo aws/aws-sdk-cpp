@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CachePolicy::CachePolicy() : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_cachePolicyConfigHasBeenSet(false)
-{
-}
-
 CachePolicy::CachePolicy(const XmlNode& xmlNode)
-  : CachePolicy()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ CachePolicy& CachePolicy::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
+       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode cachePolicyConfigNode = resultNode.FirstChild("CachePolicyConfig");
     if(!cachePolicyConfigNode.IsNull())
     {
       m_cachePolicyConfig = cachePolicyConfigNode;
       m_cachePolicyConfigHasBeenSet = true;
+       m_cachePolicyConfigHasBeenSet = true;
     }
   }
 

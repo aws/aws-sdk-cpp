@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-FlowLogsConfigurationResult::FlowLogsConfigurationResult() : 
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 FlowLogsConfigurationResult::FlowLogsConfigurationResult(JsonView jsonValue)
-  : FlowLogsConfigurationResult()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FlowLogsConfigurationResult& FlowLogsConfigurationResult::operator =(JsonView js
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

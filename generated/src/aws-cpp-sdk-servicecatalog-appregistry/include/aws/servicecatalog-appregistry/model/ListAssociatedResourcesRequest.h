@@ -25,7 +25,7 @@ namespace Model
   class ListAssociatedResourcesRequest : public AppRegistryRequest
   {
   public:
-    AWS_APPREGISTRY_API ListAssociatedResourcesRequest();
+    AWS_APPREGISTRY_API ListAssociatedResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The name, ID, or ARN of the application. </p>
      */
-    inline const Aws::String& GetApplication() const{ return m_application; }
+    inline const Aws::String& GetApplication() const { return m_application; }
     inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
-    inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
-    inline void SetApplication(Aws::String&& value) { m_applicationHasBeenSet = true; m_application = std::move(value); }
-    inline void SetApplication(const char* value) { m_applicationHasBeenSet = true; m_application.assign(value); }
-    inline ListAssociatedResourcesRequest& WithApplication(const Aws::String& value) { SetApplication(value); return *this;}
-    inline ListAssociatedResourcesRequest& WithApplication(Aws::String&& value) { SetApplication(std::move(value)); return *this;}
-    inline ListAssociatedResourcesRequest& WithApplication(const char* value) { SetApplication(value); return *this;}
+    template<typename ApplicationT = Aws::String>
+    void SetApplication(ApplicationT&& value) { m_applicationHasBeenSet = true; m_application = std::forward<ApplicationT>(value); }
+    template<typename ApplicationT = Aws::String>
+    ListAssociatedResourcesRequest& WithApplication(ApplicationT&& value) { SetApplication(std::forward<ApplicationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The token to use to get the next page of results after a previous API call.
      * </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAssociatedResourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAssociatedResourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAssociatedResourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAssociatedResourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * <p>The upper bound of the number of results to return (cannot exceed 25). If
      * this parameter is omitted, it defaults to 25. This value is optional.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAssociatedResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

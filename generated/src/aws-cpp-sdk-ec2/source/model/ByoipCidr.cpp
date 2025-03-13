@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ByoipCidr::ByoipCidr() : 
-    m_cidrHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_asnAssociationsHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_state(ByoipCidrState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false)
-{
-}
-
 ByoipCidr::ByoipCidr(const XmlNode& xmlNode)
-  : ByoipCidr()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,48 @@ ByoipCidr& ByoipCidr::operator =(const XmlNode& xmlNode)
     {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
+       m_cidrHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode asnAssociationsNode = resultNode.FirstChild("asnAssociationSet");
     if(!asnAssociationsNode.IsNull())
     {
       XmlNode asnAssociationsMember = asnAssociationsNode.FirstChild("item");
+      m_asnAssociationsHasBeenSet = !asnAssociationsMember.IsNull();
       while(!asnAssociationsMember.IsNull())
       {
         m_asnAssociations.push_back(asnAssociationsMember);
         asnAssociationsMember = asnAssociationsMember.NextNode("item");
       }
 
-      m_asnAssociationsHasBeenSet = true;
+       m_asnAssociationsHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = ByoipCidrStateMapper::GetByoipCidrStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = ByoipCidrStateMapper::GetByoipCidrStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode networkBorderGroupNode = resultNode.FirstChild("networkBorderGroup");
     if(!networkBorderGroupNode.IsNull())
     {
       m_networkBorderGroup = Aws::Utils::Xml::DecodeEscapedXmlText(networkBorderGroupNode.GetText());
       m_networkBorderGroupHasBeenSet = true;
+       m_networkBorderGroupHasBeenSet = true;
     }
   }
 

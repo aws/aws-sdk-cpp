@@ -12,14 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartRecoveryRequest::StartRecoveryRequest() : 
-    m_isDrill(false),
-    m_isDrillHasBeenSet(false),
-    m_sourceServersHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartRecoveryRequest::SerializePayload() const
 {
   JsonValue payload;

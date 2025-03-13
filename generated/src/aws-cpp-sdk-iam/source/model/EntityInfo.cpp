@@ -20,18 +20,7 @@ namespace IAM
 namespace Model
 {
 
-EntityInfo::EntityInfo() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(PolicyOwnerEntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_pathHasBeenSet(false)
-{
-}
-
 EntityInfo::EntityInfo(const XmlNode& xmlNode)
-  : EntityInfo()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ EntityInfo& EntityInfo::operator =(const XmlNode& xmlNode)
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = PolicyOwnerEntityTypeMapper::GetPolicyOwnerEntityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = PolicyOwnerEntityTypeMapper::GetPolicyOwnerEntityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
       m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
+       m_pathHasBeenSet = true;
     }
   }
 

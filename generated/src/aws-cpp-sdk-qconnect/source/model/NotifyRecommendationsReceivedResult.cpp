@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-NotifyRecommendationsReceivedResult::NotifyRecommendationsReceivedResult()
-{
-}
-
 NotifyRecommendationsReceivedResult::NotifyRecommendationsReceivedResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ NotifyRecommendationsReceivedResult& NotifyRecommendationsReceivedResult::operat
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationIds"))
   {
     Aws::Utils::Array<JsonView> recommendationIdsJsonList = jsonValue.GetArray("recommendationIds");
@@ -45,14 +41,15 @@ NotifyRecommendationsReceivedResult& NotifyRecommendationsReceivedResult::operat
     {
       m_recommendationIds.push_back(recommendationIdsJsonList[recommendationIdsIndex].AsString());
     }
+    m_recommendationIdsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

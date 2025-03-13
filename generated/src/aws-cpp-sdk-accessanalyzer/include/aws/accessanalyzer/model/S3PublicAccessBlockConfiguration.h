@@ -38,7 +38,7 @@ namespace Model
   class S3PublicAccessBlockConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API S3PublicAccessBlockConfiguration();
+    AWS_ACCESSANALYZER_API S3PublicAccessBlockConfiguration() = default;
     AWS_ACCESSANALYZER_API S3PublicAccessBlockConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API S3PublicAccessBlockConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and
      * objects in this bucket. </p>
      */
-    inline bool GetIgnorePublicAcls() const{ return m_ignorePublicAcls; }
+    inline bool GetIgnorePublicAcls() const { return m_ignorePublicAcls; }
     inline bool IgnorePublicAclsHasBeenSet() const { return m_ignorePublicAclsHasBeenSet; }
     inline void SetIgnorePublicAcls(bool value) { m_ignorePublicAclsHasBeenSet = true; m_ignorePublicAcls = value; }
     inline S3PublicAccessBlockConfiguration& WithIgnorePublicAcls(bool value) { SetIgnorePublicAcls(value); return *this;}
@@ -60,17 +60,17 @@ namespace Model
      * <p> Specifies whether Amazon S3 should restrict public bucket policies for this
      * bucket. </p>
      */
-    inline bool GetRestrictPublicBuckets() const{ return m_restrictPublicBuckets; }
+    inline bool GetRestrictPublicBuckets() const { return m_restrictPublicBuckets; }
     inline bool RestrictPublicBucketsHasBeenSet() const { return m_restrictPublicBucketsHasBeenSet; }
     inline void SetRestrictPublicBuckets(bool value) { m_restrictPublicBucketsHasBeenSet = true; m_restrictPublicBuckets = value; }
     inline S3PublicAccessBlockConfiguration& WithRestrictPublicBuckets(bool value) { SetRestrictPublicBuckets(value); return *this;}
     ///@}
   private:
 
-    bool m_ignorePublicAcls;
+    bool m_ignorePublicAcls{false};
     bool m_ignorePublicAclsHasBeenSet = false;
 
-    bool m_restrictPublicBuckets;
+    bool m_restrictPublicBuckets{false};
     bool m_restrictPublicBucketsHasBeenSet = false;
   };
 

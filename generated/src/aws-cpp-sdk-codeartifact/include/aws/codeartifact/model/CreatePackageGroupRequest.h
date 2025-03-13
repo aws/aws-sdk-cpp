@@ -27,7 +27,7 @@ namespace Model
   class CreatePackageGroupRequest : public CodeArtifactRequest
   {
   public:
-    AWS_CODEARTIFACT_API CreatePackageGroupRequest();
+    AWS_CODEARTIFACT_API CreatePackageGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p> The name of the domain in which you want to create a package group. </p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline CreatePackageGroupRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline CreatePackageGroupRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline CreatePackageGroupRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    CreatePackageGroupRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p> The 12-digit account number of the Amazon Web Services account that owns the
      * domain. It does not include dashes or spaces. </p>
      */
-    inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
+    inline const Aws::String& GetDomainOwner() const { return m_domainOwner; }
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
-    inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
-    inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
-    inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
-    inline CreatePackageGroupRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
-    inline CreatePackageGroupRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
-    inline CreatePackageGroupRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
+    template<typename DomainOwnerT = Aws::String>
+    void SetDomainOwner(DomainOwnerT&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::forward<DomainOwnerT>(value); }
+    template<typename DomainOwnerT = Aws::String>
+    CreatePackageGroupRequest& WithDomainOwner(DomainOwnerT&& value) { SetDomainOwner(std::forward<DomainOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,56 +70,50 @@ namespace Model
      * <p>The pattern of the package group to create. The pattern is also the
      * identifier of the package group. </p>
      */
-    inline const Aws::String& GetPackageGroup() const{ return m_packageGroup; }
+    inline const Aws::String& GetPackageGroup() const { return m_packageGroup; }
     inline bool PackageGroupHasBeenSet() const { return m_packageGroupHasBeenSet; }
-    inline void SetPackageGroup(const Aws::String& value) { m_packageGroupHasBeenSet = true; m_packageGroup = value; }
-    inline void SetPackageGroup(Aws::String&& value) { m_packageGroupHasBeenSet = true; m_packageGroup = std::move(value); }
-    inline void SetPackageGroup(const char* value) { m_packageGroupHasBeenSet = true; m_packageGroup.assign(value); }
-    inline CreatePackageGroupRequest& WithPackageGroup(const Aws::String& value) { SetPackageGroup(value); return *this;}
-    inline CreatePackageGroupRequest& WithPackageGroup(Aws::String&& value) { SetPackageGroup(std::move(value)); return *this;}
-    inline CreatePackageGroupRequest& WithPackageGroup(const char* value) { SetPackageGroup(value); return *this;}
+    template<typename PackageGroupT = Aws::String>
+    void SetPackageGroup(PackageGroupT&& value) { m_packageGroupHasBeenSet = true; m_packageGroup = std::forward<PackageGroupT>(value); }
+    template<typename PackageGroupT = Aws::String>
+    CreatePackageGroupRequest& WithPackageGroup(PackageGroupT&& value) { SetPackageGroup(std::forward<PackageGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The contact information for the created package group. </p>
      */
-    inline const Aws::String& GetContactInfo() const{ return m_contactInfo; }
+    inline const Aws::String& GetContactInfo() const { return m_contactInfo; }
     inline bool ContactInfoHasBeenSet() const { return m_contactInfoHasBeenSet; }
-    inline void SetContactInfo(const Aws::String& value) { m_contactInfoHasBeenSet = true; m_contactInfo = value; }
-    inline void SetContactInfo(Aws::String&& value) { m_contactInfoHasBeenSet = true; m_contactInfo = std::move(value); }
-    inline void SetContactInfo(const char* value) { m_contactInfoHasBeenSet = true; m_contactInfo.assign(value); }
-    inline CreatePackageGroupRequest& WithContactInfo(const Aws::String& value) { SetContactInfo(value); return *this;}
-    inline CreatePackageGroupRequest& WithContactInfo(Aws::String&& value) { SetContactInfo(std::move(value)); return *this;}
-    inline CreatePackageGroupRequest& WithContactInfo(const char* value) { SetContactInfo(value); return *this;}
+    template<typename ContactInfoT = Aws::String>
+    void SetContactInfo(ContactInfoT&& value) { m_contactInfoHasBeenSet = true; m_contactInfo = std::forward<ContactInfoT>(value); }
+    template<typename ContactInfoT = Aws::String>
+    CreatePackageGroupRequest& WithContactInfo(ContactInfoT&& value) { SetContactInfo(std::forward<ContactInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A description of the package group. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreatePackageGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreatePackageGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreatePackageGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreatePackageGroupRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more tag key-value pairs for the package group.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreatePackageGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreatePackageGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreatePackageGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreatePackageGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreatePackageGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreatePackageGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

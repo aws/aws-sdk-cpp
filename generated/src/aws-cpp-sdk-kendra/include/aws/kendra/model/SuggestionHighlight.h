@@ -30,7 +30,7 @@ namespace Model
   class SuggestionHighlight
   {
   public:
-    AWS_KENDRA_API SuggestionHighlight();
+    AWS_KENDRA_API SuggestionHighlight() = default;
     AWS_KENDRA_API SuggestionHighlight(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API SuggestionHighlight& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The zero-based location in the response string where the highlight
      * starts.</p>
      */
-    inline int GetBeginOffset() const{ return m_beginOffset; }
+    inline int GetBeginOffset() const { return m_beginOffset; }
     inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
     inline void SetBeginOffset(int value) { m_beginOffsetHasBeenSet = true; m_beginOffset = value; }
     inline SuggestionHighlight& WithBeginOffset(int value) { SetBeginOffset(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>The zero-based location in the response string where the highlight ends.</p>
      */
-    inline int GetEndOffset() const{ return m_endOffset; }
+    inline int GetEndOffset() const { return m_endOffset; }
     inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
     inline SuggestionHighlight& WithEndOffset(int value) { SetEndOffset(value); return *this;}
     ///@}
   private:
 
-    int m_beginOffset;
+    int m_beginOffset{0};
     bool m_beginOffsetHasBeenSet = false;
 
-    int m_endOffset;
+    int m_endOffset{0};
     bool m_endOffsetHasBeenSet = false;
   };
 

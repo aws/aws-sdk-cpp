@@ -20,30 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInsightsAnalysis::NetworkInsightsAnalysis() : 
-    m_networkInsightsAnalysisIdHasBeenSet(false),
-    m_networkInsightsAnalysisArnHasBeenSet(false),
-    m_networkInsightsPathIdHasBeenSet(false),
-    m_additionalAccountsHasBeenSet(false),
-    m_filterInArnsHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_status(AnalysisStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_warningMessageHasBeenSet(false),
-    m_networkPathFound(false),
-    m_networkPathFoundHasBeenSet(false),
-    m_forwardPathComponentsHasBeenSet(false),
-    m_returnPathComponentsHasBeenSet(false),
-    m_explanationsHasBeenSet(false),
-    m_alternatePathHintsHasBeenSet(false),
-    m_suggestedAccountsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 NetworkInsightsAnalysis::NetworkInsightsAnalysis(const XmlNode& xmlNode)
-  : NetworkInsightsAnalysis()
 {
   *this = xmlNode;
 }
@@ -59,144 +36,160 @@ NetworkInsightsAnalysis& NetworkInsightsAnalysis::operator =(const XmlNode& xmlN
     {
       m_networkInsightsAnalysisId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsAnalysisIdNode.GetText());
       m_networkInsightsAnalysisIdHasBeenSet = true;
+       m_networkInsightsAnalysisIdHasBeenSet = true;
     }
     XmlNode networkInsightsAnalysisArnNode = resultNode.FirstChild("networkInsightsAnalysisArn");
     if(!networkInsightsAnalysisArnNode.IsNull())
     {
       m_networkInsightsAnalysisArn = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsAnalysisArnNode.GetText());
       m_networkInsightsAnalysisArnHasBeenSet = true;
+       m_networkInsightsAnalysisArnHasBeenSet = true;
     }
     XmlNode networkInsightsPathIdNode = resultNode.FirstChild("networkInsightsPathId");
     if(!networkInsightsPathIdNode.IsNull())
     {
       m_networkInsightsPathId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsPathIdNode.GetText());
       m_networkInsightsPathIdHasBeenSet = true;
+       m_networkInsightsPathIdHasBeenSet = true;
     }
     XmlNode additionalAccountsNode = resultNode.FirstChild("additionalAccountSet");
     if(!additionalAccountsNode.IsNull())
     {
       XmlNode additionalAccountsMember = additionalAccountsNode.FirstChild("item");
+      m_additionalAccountsHasBeenSet = !additionalAccountsMember.IsNull();
       while(!additionalAccountsMember.IsNull())
       {
         m_additionalAccounts.push_back(additionalAccountsMember.GetText());
         additionalAccountsMember = additionalAccountsMember.NextNode("item");
       }
 
-      m_additionalAccountsHasBeenSet = true;
+       m_additionalAccountsHasBeenSet = true;
     }
     XmlNode filterInArnsNode = resultNode.FirstChild("filterInArnSet");
     if(!filterInArnsNode.IsNull())
     {
       XmlNode filterInArnsMember = filterInArnsNode.FirstChild("item");
+      m_filterInArnsHasBeenSet = !filterInArnsMember.IsNull();
       while(!filterInArnsMember.IsNull())
       {
         m_filterInArns.push_back(filterInArnsMember.GetText());
         filterInArnsMember = filterInArnsMember.NextNode("item");
       }
 
-      m_filterInArnsHasBeenSet = true;
+       m_filterInArnsHasBeenSet = true;
     }
     XmlNode startDateNode = resultNode.FirstChild("startDate");
     if(!startDateNode.IsNull())
     {
       m_startDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startDateHasBeenSet = true;
+       m_startDateHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = AnalysisStatusMapper::GetAnalysisStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = AnalysisStatusMapper::GetAnalysisStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode warningMessageNode = resultNode.FirstChild("warningMessage");
     if(!warningMessageNode.IsNull())
     {
       m_warningMessage = Aws::Utils::Xml::DecodeEscapedXmlText(warningMessageNode.GetText());
       m_warningMessageHasBeenSet = true;
+       m_warningMessageHasBeenSet = true;
     }
     XmlNode networkPathFoundNode = resultNode.FirstChild("networkPathFound");
     if(!networkPathFoundNode.IsNull())
     {
       m_networkPathFound = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkPathFoundNode.GetText()).c_str()).c_str());
       m_networkPathFoundHasBeenSet = true;
+       m_networkPathFoundHasBeenSet = true;
     }
     XmlNode forwardPathComponentsNode = resultNode.FirstChild("forwardPathComponentSet");
     if(!forwardPathComponentsNode.IsNull())
     {
       XmlNode forwardPathComponentsMember = forwardPathComponentsNode.FirstChild("item");
+      m_forwardPathComponentsHasBeenSet = !forwardPathComponentsMember.IsNull();
       while(!forwardPathComponentsMember.IsNull())
       {
         m_forwardPathComponents.push_back(forwardPathComponentsMember);
         forwardPathComponentsMember = forwardPathComponentsMember.NextNode("item");
       }
 
-      m_forwardPathComponentsHasBeenSet = true;
+       m_forwardPathComponentsHasBeenSet = true;
     }
     XmlNode returnPathComponentsNode = resultNode.FirstChild("returnPathComponentSet");
     if(!returnPathComponentsNode.IsNull())
     {
       XmlNode returnPathComponentsMember = returnPathComponentsNode.FirstChild("item");
+      m_returnPathComponentsHasBeenSet = !returnPathComponentsMember.IsNull();
       while(!returnPathComponentsMember.IsNull())
       {
         m_returnPathComponents.push_back(returnPathComponentsMember);
         returnPathComponentsMember = returnPathComponentsMember.NextNode("item");
       }
 
-      m_returnPathComponentsHasBeenSet = true;
+       m_returnPathComponentsHasBeenSet = true;
     }
     XmlNode explanationsNode = resultNode.FirstChild("explanationSet");
     if(!explanationsNode.IsNull())
     {
       XmlNode explanationsMember = explanationsNode.FirstChild("item");
+      m_explanationsHasBeenSet = !explanationsMember.IsNull();
       while(!explanationsMember.IsNull())
       {
         m_explanations.push_back(explanationsMember);
         explanationsMember = explanationsMember.NextNode("item");
       }
 
-      m_explanationsHasBeenSet = true;
+       m_explanationsHasBeenSet = true;
     }
     XmlNode alternatePathHintsNode = resultNode.FirstChild("alternatePathHintSet");
     if(!alternatePathHintsNode.IsNull())
     {
       XmlNode alternatePathHintsMember = alternatePathHintsNode.FirstChild("item");
+      m_alternatePathHintsHasBeenSet = !alternatePathHintsMember.IsNull();
       while(!alternatePathHintsMember.IsNull())
       {
         m_alternatePathHints.push_back(alternatePathHintsMember);
         alternatePathHintsMember = alternatePathHintsMember.NextNode("item");
       }
 
-      m_alternatePathHintsHasBeenSet = true;
+       m_alternatePathHintsHasBeenSet = true;
     }
     XmlNode suggestedAccountsNode = resultNode.FirstChild("suggestedAccountSet");
     if(!suggestedAccountsNode.IsNull())
     {
       XmlNode suggestedAccountsMember = suggestedAccountsNode.FirstChild("item");
+      m_suggestedAccountsHasBeenSet = !suggestedAccountsMember.IsNull();
       while(!suggestedAccountsMember.IsNull())
       {
         m_suggestedAccounts.push_back(suggestedAccountsMember.GetText());
         suggestedAccountsMember = suggestedAccountsMember.NextNode("item");
       }
 
-      m_suggestedAccountsHasBeenSet = true;
+       m_suggestedAccountsHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

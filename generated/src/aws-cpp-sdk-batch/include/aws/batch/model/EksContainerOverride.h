@@ -37,7 +37,7 @@ namespace Model
   class EksContainerOverride
   {
   public:
-    AWS_BATCH_API EksContainerOverride();
+    AWS_BATCH_API EksContainerOverride() = default;
     AWS_BATCH_API EksContainerOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksContainerOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
      * <p>A pointer to the container that you want to override. The name must match a
      * unique container name that you wish to override.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EksContainerOverride& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EksContainerOverride& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EksContainerOverride& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EksContainerOverride& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The override of the Docker image that's used to start the container.</p>
      */
-    inline const Aws::String& GetImage() const{ return m_image; }
+    inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-    inline EksContainerOverride& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-    inline EksContainerOverride& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-    inline EksContainerOverride& WithImage(const char* value) { SetImage(value); return *this;}
+    template<typename ImageT = Aws::String>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Aws::String>
+    EksContainerOverride& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,15 +73,14 @@ namespace Model
      * <p>The command to send to the container that overrides the default command from
      * the Docker image or the job definition.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
+    inline const Aws::Vector<Aws::String>& GetCommand() const { return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-    inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-    inline EksContainerOverride& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
-    inline EksContainerOverride& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
-    inline EksContainerOverride& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
-    inline EksContainerOverride& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
-    inline EksContainerOverride& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    void SetCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command = std::forward<CommandT>(value); }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    EksContainerOverride& WithCommand(CommandT&& value) { SetCommand(std::forward<CommandT>(value)); return *this;}
+    template<typename CommandT = Aws::String>
+    EksContainerOverride& AddCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command.emplace_back(std::forward<CommandT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,15 +93,14 @@ namespace Model
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetArgs() const{ return m_args; }
+    inline const Aws::Vector<Aws::String>& GetArgs() const { return m_args; }
     inline bool ArgsHasBeenSet() const { return m_argsHasBeenSet; }
-    inline void SetArgs(const Aws::Vector<Aws::String>& value) { m_argsHasBeenSet = true; m_args = value; }
-    inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = std::move(value); }
-    inline EksContainerOverride& WithArgs(const Aws::Vector<Aws::String>& value) { SetArgs(value); return *this;}
-    inline EksContainerOverride& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(std::move(value)); return *this;}
-    inline EksContainerOverride& AddArgs(const Aws::String& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
-    inline EksContainerOverride& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(std::move(value)); return *this; }
-    inline EksContainerOverride& AddArgs(const char* value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
+    template<typename ArgsT = Aws::Vector<Aws::String>>
+    void SetArgs(ArgsT&& value) { m_argsHasBeenSet = true; m_args = std::forward<ArgsT>(value); }
+    template<typename ArgsT = Aws::Vector<Aws::String>>
+    EksContainerOverride& WithArgs(ArgsT&& value) { SetArgs(std::forward<ArgsT>(value)); return *this;}
+    template<typename ArgsT = Aws::String>
+    EksContainerOverride& AddArgs(ArgsT&& value) { m_argsHasBeenSet = true; m_args.emplace_back(std::forward<ArgsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -118,14 +112,14 @@ namespace Model
      * "<code>AWS_BATCH</code>". This naming convention is reserved for variables that
      * Batch sets.</p> 
      */
-    inline const Aws::Vector<EksContainerEnvironmentVariable>& GetEnv() const{ return m_env; }
+    inline const Aws::Vector<EksContainerEnvironmentVariable>& GetEnv() const { return m_env; }
     inline bool EnvHasBeenSet() const { return m_envHasBeenSet; }
-    inline void SetEnv(const Aws::Vector<EksContainerEnvironmentVariable>& value) { m_envHasBeenSet = true; m_env = value; }
-    inline void SetEnv(Aws::Vector<EksContainerEnvironmentVariable>&& value) { m_envHasBeenSet = true; m_env = std::move(value); }
-    inline EksContainerOverride& WithEnv(const Aws::Vector<EksContainerEnvironmentVariable>& value) { SetEnv(value); return *this;}
-    inline EksContainerOverride& WithEnv(Aws::Vector<EksContainerEnvironmentVariable>&& value) { SetEnv(std::move(value)); return *this;}
-    inline EksContainerOverride& AddEnv(const EksContainerEnvironmentVariable& value) { m_envHasBeenSet = true; m_env.push_back(value); return *this; }
-    inline EksContainerOverride& AddEnv(EksContainerEnvironmentVariable&& value) { m_envHasBeenSet = true; m_env.push_back(std::move(value)); return *this; }
+    template<typename EnvT = Aws::Vector<EksContainerEnvironmentVariable>>
+    void SetEnv(EnvT&& value) { m_envHasBeenSet = true; m_env = std::forward<EnvT>(value); }
+    template<typename EnvT = Aws::Vector<EksContainerEnvironmentVariable>>
+    EksContainerOverride& WithEnv(EnvT&& value) { SetEnv(std::forward<EnvT>(value)); return *this;}
+    template<typename EnvT = EksContainerEnvironmentVariable>
+    EksContainerOverride& AddEnv(EnvT&& value) { m_envHasBeenSet = true; m_env.emplace_back(std::forward<EnvT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -138,12 +132,12 @@ namespace Model
      * management for pods and containers</a> in the <i>Kubernetes
      * documentation</i>.</p>
      */
-    inline const EksContainerResourceRequirements& GetResources() const{ return m_resources; }
+    inline const EksContainerResourceRequirements& GetResources() const { return m_resources; }
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-    inline void SetResources(const EksContainerResourceRequirements& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-    inline void SetResources(EksContainerResourceRequirements&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-    inline EksContainerOverride& WithResources(const EksContainerResourceRequirements& value) { SetResources(value); return *this;}
-    inline EksContainerOverride& WithResources(EksContainerResourceRequirements&& value) { SetResources(std::move(value)); return *this;}
+    template<typename ResourcesT = EksContainerResourceRequirements>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = EksContainerResourceRequirements>
+    EksContainerOverride& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
     ///@}
   private:
 

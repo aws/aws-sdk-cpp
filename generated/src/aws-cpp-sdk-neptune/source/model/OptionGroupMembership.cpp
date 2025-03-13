@@ -20,14 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-OptionGroupMembership::OptionGroupMembership() : 
-    m_optionGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 OptionGroupMembership::OptionGroupMembership(const XmlNode& xmlNode)
-  : OptionGroupMembership()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ OptionGroupMembership& OptionGroupMembership::operator =(const XmlNode& xmlNode)
     {
       m_optionGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(optionGroupNameNode.GetText());
       m_optionGroupNameHasBeenSet = true;
+       m_optionGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

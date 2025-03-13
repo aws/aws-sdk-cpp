@@ -18,19 +18,7 @@ namespace Textract
 namespace Model
 {
 
-ExpenseField::ExpenseField() : 
-    m_typeHasBeenSet(false),
-    m_labelDetectionHasBeenSet(false),
-    m_valueDetectionHasBeenSet(false),
-    m_pageNumber(0),
-    m_pageNumberHasBeenSet(false),
-    m_currencyHasBeenSet(false),
-    m_groupPropertiesHasBeenSet(false)
-{
-}
-
 ExpenseField::ExpenseField(JsonView jsonValue)
-  : ExpenseField()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ExpenseField& ExpenseField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetObject("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelDetection"))
   {
     m_labelDetection = jsonValue.GetObject("LabelDetection");
-
     m_labelDetectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueDetection"))
   {
     m_valueDetection = jsonValue.GetObject("ValueDetection");
-
     m_valueDetectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PageNumber"))
   {
     m_pageNumber = jsonValue.GetInteger("PageNumber");
-
     m_pageNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Currency"))
   {
     m_currency = jsonValue.GetObject("Currency");
-
     m_currencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupProperties"))
   {
     Aws::Utils::Array<JsonView> groupPropertiesJsonList = jsonValue.GetArray("GroupProperties");
@@ -81,7 +59,6 @@ ExpenseField& ExpenseField::operator =(JsonView jsonValue)
     }
     m_groupPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

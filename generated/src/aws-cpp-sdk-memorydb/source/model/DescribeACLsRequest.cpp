@@ -12,14 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeACLsRequest::DescribeACLsRequest() : 
-    m_aCLNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeACLsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-PointInTimeRecoverySpecification::PointInTimeRecoverySpecification() : 
-    m_pointInTimeRecoveryEnabled(false),
-    m_pointInTimeRecoveryEnabledHasBeenSet(false),
-    m_recoveryPeriodInDays(0),
-    m_recoveryPeriodInDaysHasBeenSet(false)
-{
-}
-
 PointInTimeRecoverySpecification::PointInTimeRecoverySpecification(JsonView jsonValue)
-  : PointInTimeRecoverySpecification()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PointInTimeRecoverySpecification& PointInTimeRecoverySpecification::operator =(J
   if(jsonValue.ValueExists("PointInTimeRecoveryEnabled"))
   {
     m_pointInTimeRecoveryEnabled = jsonValue.GetBool("PointInTimeRecoveryEnabled");
-
     m_pointInTimeRecoveryEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecoveryPeriodInDays"))
   {
     m_recoveryPeriodInDays = jsonValue.GetInteger("RecoveryPeriodInDays");
-
     m_recoveryPeriodInDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

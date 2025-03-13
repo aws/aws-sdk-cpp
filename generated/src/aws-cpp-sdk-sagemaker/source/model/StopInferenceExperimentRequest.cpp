@@ -12,16 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopInferenceExperimentRequest::StopInferenceExperimentRequest() : 
-    m_nameHasBeenSet(false),
-    m_modelVariantActionsHasBeenSet(false),
-    m_desiredModelVariantsHasBeenSet(false),
-    m_desiredState(InferenceExperimentStopDesiredState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String StopInferenceExperimentRequest::SerializePayload() const
 {
   JsonValue payload;

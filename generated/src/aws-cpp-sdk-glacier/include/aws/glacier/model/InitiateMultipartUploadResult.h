@@ -32,7 +32,7 @@ namespace Model
   class InitiateMultipartUploadResult
   {
   public:
-    AWS_GLACIER_API InitiateMultipartUploadResult();
+    AWS_GLACIER_API InitiateMultipartUploadResult() = default;
     AWS_GLACIER_API InitiateMultipartUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLACIER_API InitiateMultipartUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,11 @@ namespace Model
      * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
      * created.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
-    inline void SetLocation(const Aws::String& value) { m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_location.assign(value); }
-    inline InitiateMultipartUploadResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline InitiateMultipartUploadResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline InitiateMultipartUploadResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    inline const Aws::String& GetLocation() const { return m_location; }
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    InitiateMultipartUploadResult& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,32 +54,31 @@ namespace Model
      * <p>The ID of the multipart upload. This value is also included as part of the
      * location.</p>
      */
-    inline const Aws::String& GetUploadId() const{ return m_uploadId; }
-    inline void SetUploadId(const Aws::String& value) { m_uploadId = value; }
-    inline void SetUploadId(Aws::String&& value) { m_uploadId = std::move(value); }
-    inline void SetUploadId(const char* value) { m_uploadId.assign(value); }
-    inline InitiateMultipartUploadResult& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
-    inline InitiateMultipartUploadResult& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
-    inline InitiateMultipartUploadResult& WithUploadId(const char* value) { SetUploadId(value); return *this;}
+    inline const Aws::String& GetUploadId() const { return m_uploadId; }
+    template<typename UploadIdT = Aws::String>
+    void SetUploadId(UploadIdT&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::forward<UploadIdT>(value); }
+    template<typename UploadIdT = Aws::String>
+    InitiateMultipartUploadResult& WithUploadId(UploadIdT&& value) { SetUploadId(std::forward<UploadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline InitiateMultipartUploadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline InitiateMultipartUploadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline InitiateMultipartUploadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    InitiateMultipartUploadResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_location;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_uploadId;
+    bool m_uploadIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

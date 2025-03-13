@@ -18,13 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-HyperParameterTuningJobConfig::HyperParameterTuningJobConfig() : 
-    m_parameterRangesHasBeenSet(false)
-{
-}
-
 HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(JsonView jsonValue)
-  : HyperParameterTuningJobConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HyperParameterTuningJobConfig& HyperParameterTuningJobConfig::operator =(JsonVie
   if(jsonValue.ValueExists("ParameterRanges"))
   {
     m_parameterRanges = jsonValue.GetObject("ParameterRanges");
-
     m_parameterRangesHasBeenSet = true;
   }
-
   return *this;
 }
 

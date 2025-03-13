@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateMemberRequest::DisassociateMemberRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateMemberRequest::SerializePayload() const
 {
   return {};

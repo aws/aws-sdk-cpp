@@ -32,7 +32,7 @@ namespace Model
   class ComponentSummary
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ComponentSummary();
+    AWS_AMPLIFYUIBUILDER_API ComponentSummary() = default;
     AWS_AMPLIFYUIBUILDER_API ComponentSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ComponentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,70 +42,60 @@ namespace Model
     /**
      * <p>The unique ID of the Amplify app associated with the component.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline ComponentSummary& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline ComponentSummary& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline ComponentSummary& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    ComponentSummary& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the backend environment that is a part of the Amplify app.</p>
      */
-    inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+    inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
     inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
-    inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
-    inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
-    inline ComponentSummary& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
-    inline ComponentSummary& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
-    inline ComponentSummary& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+    template<typename EnvironmentNameT = Aws::String>
+    void SetEnvironmentName(EnvironmentNameT&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::forward<EnvironmentNameT>(value); }
+    template<typename EnvironmentNameT = Aws::String>
+    ComponentSummary& WithEnvironmentName(EnvironmentNameT&& value) { SetEnvironmentName(std::forward<EnvironmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the component.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ComponentSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ComponentSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ComponentSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ComponentSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the component.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ComponentSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ComponentSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ComponentSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ComponentSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The component type.</p>
      */
-    inline const Aws::String& GetComponentType() const{ return m_componentType; }
+    inline const Aws::String& GetComponentType() const { return m_componentType; }
     inline bool ComponentTypeHasBeenSet() const { return m_componentTypeHasBeenSet; }
-    inline void SetComponentType(const Aws::String& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
-    inline void SetComponentType(Aws::String&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
-    inline void SetComponentType(const char* value) { m_componentTypeHasBeenSet = true; m_componentType.assign(value); }
-    inline ComponentSummary& WithComponentType(const Aws::String& value) { SetComponentType(value); return *this;}
-    inline ComponentSummary& WithComponentType(Aws::String&& value) { SetComponentType(std::move(value)); return *this;}
-    inline ComponentSummary& WithComponentType(const char* value) { SetComponentType(value); return *this;}
+    template<typename ComponentTypeT = Aws::String>
+    void SetComponentType(ComponentTypeT&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::forward<ComponentTypeT>(value); }
+    template<typename ComponentTypeT = Aws::String>
+    ComponentSummary& WithComponentType(ComponentTypeT&& value) { SetComponentType(std::forward<ComponentTypeT>(value)); return *this;}
     ///@}
   private:
 

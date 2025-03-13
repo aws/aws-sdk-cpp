@@ -20,13 +20,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-PayloadWithXmlNamespace::PayloadWithXmlNamespace() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 PayloadWithXmlNamespace::PayloadWithXmlNamespace(const XmlNode& xmlNode)
-  : PayloadWithXmlNamespace()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ PayloadWithXmlNamespace& PayloadWithXmlNamespace::operator =(const XmlNode& xmlN
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
   }
 

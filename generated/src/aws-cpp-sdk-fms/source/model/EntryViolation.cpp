@@ -18,18 +18,7 @@ namespace FMS
 namespace Model
 {
 
-EntryViolation::EntryViolation() : 
-    m_expectedEntryHasBeenSet(false),
-    m_expectedEvaluationOrderHasBeenSet(false),
-    m_actualEvaluationOrderHasBeenSet(false),
-    m_entryAtExpectedEvaluationOrderHasBeenSet(false),
-    m_entriesWithConflictsHasBeenSet(false),
-    m_entryViolationReasonsHasBeenSet(false)
-{
-}
-
 EntryViolation::EntryViolation(JsonView jsonValue)
-  : EntryViolation()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ EntryViolation& EntryViolation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExpectedEntry"))
   {
     m_expectedEntry = jsonValue.GetObject("ExpectedEntry");
-
     m_expectedEntryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedEvaluationOrder"))
   {
     m_expectedEvaluationOrder = jsonValue.GetString("ExpectedEvaluationOrder");
-
     m_expectedEvaluationOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActualEvaluationOrder"))
   {
     m_actualEvaluationOrder = jsonValue.GetString("ActualEvaluationOrder");
-
     m_actualEvaluationOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntryAtExpectedEvaluationOrder"))
   {
     m_entryAtExpectedEvaluationOrder = jsonValue.GetObject("EntryAtExpectedEvaluationOrder");
-
     m_entryAtExpectedEvaluationOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntriesWithConflicts"))
   {
     Aws::Utils::Array<JsonView> entriesWithConflictsJsonList = jsonValue.GetArray("EntriesWithConflicts");
@@ -73,7 +54,6 @@ EntryViolation& EntryViolation::operator =(JsonView jsonValue)
     }
     m_entriesWithConflictsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntryViolationReasons"))
   {
     Aws::Utils::Array<JsonView> entryViolationReasonsJsonList = jsonValue.GetArray("EntryViolationReasons");
@@ -83,7 +63,6 @@ EntryViolation& EntryViolation::operator =(JsonView jsonValue)
     }
     m_entryViolationReasonsHasBeenSet = true;
   }
-
   return *this;
 }
 

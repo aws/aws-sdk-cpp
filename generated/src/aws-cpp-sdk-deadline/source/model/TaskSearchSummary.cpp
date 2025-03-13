@@ -18,25 +18,7 @@ namespace deadline
 namespace Model
 {
 
-TaskSearchSummary::TaskSearchSummary() : 
-    m_taskIdHasBeenSet(false),
-    m_stepIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_runStatus(TaskRunStatus::NOT_SET),
-    m_runStatusHasBeenSet(false),
-    m_targetRunStatus(TaskTargetRunStatus::NOT_SET),
-    m_targetRunStatusHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_failureRetryCount(0),
-    m_failureRetryCountHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false)
-{
-}
-
 TaskSearchSummary::TaskSearchSummary(JsonView jsonValue)
-  : TaskSearchSummary()
 {
   *this = jsonValue;
 }
@@ -46,45 +28,33 @@ TaskSearchSummary& TaskSearchSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepId"))
   {
     m_stepId = jsonValue.GetString("stepId");
-
     m_stepIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queueId"))
   {
     m_queueId = jsonValue.GetString("queueId");
-
     m_queueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runStatus"))
   {
     m_runStatus = TaskRunStatusMapper::GetTaskRunStatusForName(jsonValue.GetString("runStatus"));
-
     m_runStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetRunStatus"))
   {
     m_targetRunStatus = TaskTargetRunStatusMapper::GetTaskTargetRunStatusForName(jsonValue.GetString("targetRunStatus"));
-
     m_targetRunStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -94,28 +64,21 @@ TaskSearchSummary& TaskSearchSummary::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureRetryCount"))
   {
     m_failureRetryCount = jsonValue.GetInteger("failureRetryCount");
-
     m_failureRetryCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetString("endedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

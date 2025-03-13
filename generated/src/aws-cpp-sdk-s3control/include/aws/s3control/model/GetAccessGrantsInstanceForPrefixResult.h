@@ -27,7 +27,7 @@ namespace Model
   class GetAccessGrantsInstanceForPrefixResult
   {
   public:
-    AWS_S3CONTROL_API GetAccessGrantsInstanceForPrefixResult();
+    AWS_S3CONTROL_API GetAccessGrantsInstanceForPrefixResult() = default;
     AWS_S3CONTROL_API GetAccessGrantsInstanceForPrefixResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CONTROL_API GetAccessGrantsInstanceForPrefixResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the S3 Access Grants instance. </p>
      */
-    inline const Aws::String& GetAccessGrantsInstanceArn() const{ return m_accessGrantsInstanceArn; }
-    inline void SetAccessGrantsInstanceArn(const Aws::String& value) { m_accessGrantsInstanceArn = value; }
-    inline void SetAccessGrantsInstanceArn(Aws::String&& value) { m_accessGrantsInstanceArn = std::move(value); }
-    inline void SetAccessGrantsInstanceArn(const char* value) { m_accessGrantsInstanceArn.assign(value); }
-    inline GetAccessGrantsInstanceForPrefixResult& WithAccessGrantsInstanceArn(const Aws::String& value) { SetAccessGrantsInstanceArn(value); return *this;}
-    inline GetAccessGrantsInstanceForPrefixResult& WithAccessGrantsInstanceArn(Aws::String&& value) { SetAccessGrantsInstanceArn(std::move(value)); return *this;}
-    inline GetAccessGrantsInstanceForPrefixResult& WithAccessGrantsInstanceArn(const char* value) { SetAccessGrantsInstanceArn(value); return *this;}
+    inline const Aws::String& GetAccessGrantsInstanceArn() const { return m_accessGrantsInstanceArn; }
+    template<typename AccessGrantsInstanceArnT = Aws::String>
+    void SetAccessGrantsInstanceArn(AccessGrantsInstanceArnT&& value) { m_accessGrantsInstanceArnHasBeenSet = true; m_accessGrantsInstanceArn = std::forward<AccessGrantsInstanceArnT>(value); }
+    template<typename AccessGrantsInstanceArnT = Aws::String>
+    GetAccessGrantsInstanceForPrefixResult& WithAccessGrantsInstanceArn(AccessGrantsInstanceArnT&& value) { SetAccessGrantsInstanceArn(std::forward<AccessGrantsInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,49 +48,47 @@ namespace Model
      * <p>The ID of the S3 Access Grants instance. The ID is <code>default</code>. You
      * can have one S3 Access Grants instance per Region per account. </p>
      */
-    inline const Aws::String& GetAccessGrantsInstanceId() const{ return m_accessGrantsInstanceId; }
-    inline void SetAccessGrantsInstanceId(const Aws::String& value) { m_accessGrantsInstanceId = value; }
-    inline void SetAccessGrantsInstanceId(Aws::String&& value) { m_accessGrantsInstanceId = std::move(value); }
-    inline void SetAccessGrantsInstanceId(const char* value) { m_accessGrantsInstanceId.assign(value); }
-    inline GetAccessGrantsInstanceForPrefixResult& WithAccessGrantsInstanceId(const Aws::String& value) { SetAccessGrantsInstanceId(value); return *this;}
-    inline GetAccessGrantsInstanceForPrefixResult& WithAccessGrantsInstanceId(Aws::String&& value) { SetAccessGrantsInstanceId(std::move(value)); return *this;}
-    inline GetAccessGrantsInstanceForPrefixResult& WithAccessGrantsInstanceId(const char* value) { SetAccessGrantsInstanceId(value); return *this;}
+    inline const Aws::String& GetAccessGrantsInstanceId() const { return m_accessGrantsInstanceId; }
+    template<typename AccessGrantsInstanceIdT = Aws::String>
+    void SetAccessGrantsInstanceId(AccessGrantsInstanceIdT&& value) { m_accessGrantsInstanceIdHasBeenSet = true; m_accessGrantsInstanceId = std::forward<AccessGrantsInstanceIdT>(value); }
+    template<typename AccessGrantsInstanceIdT = Aws::String>
+    GetAccessGrantsInstanceForPrefixResult& WithAccessGrantsInstanceId(AccessGrantsInstanceIdT&& value) { SetAccessGrantsInstanceId(std::forward<AccessGrantsInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * AWS Request Id value
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccessGrantsInstanceForPrefixResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccessGrantsInstanceForPrefixResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccessGrantsInstanceForPrefixResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccessGrantsInstanceForPrefixResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * x-amz-id-2 header value, also known as Host Id
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostId.assign(value); }
-    inline GetAccessGrantsInstanceForPrefixResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline GetAccessGrantsInstanceForPrefixResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline GetAccessGrantsInstanceForPrefixResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    inline const Aws::String& GetHostId() const { return m_hostId; }
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    GetAccessGrantsInstanceForPrefixResult& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accessGrantsInstanceArn;
+    bool m_accessGrantsInstanceArnHasBeenSet = false;
 
     Aws::String m_accessGrantsInstanceId;
+    bool m_accessGrantsInstanceIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

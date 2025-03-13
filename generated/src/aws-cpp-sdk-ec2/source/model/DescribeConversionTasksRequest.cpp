@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeConversionTasksRequest::DescribeConversionTasksRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_conversionTaskIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConversionTasksRequest::SerializePayload() const
 {
   Aws::StringStream ss;

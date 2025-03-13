@@ -12,12 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFeatureGroupRequest::DescribeFeatureGroupRequest() : 
-    m_featureGroupNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFeatureGroupRequest::SerializePayload() const
 {
   JsonValue payload;

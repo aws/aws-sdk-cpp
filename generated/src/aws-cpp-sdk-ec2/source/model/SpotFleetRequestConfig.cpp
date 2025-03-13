@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SpotFleetRequestConfig::SpotFleetRequestConfig() : 
-    m_activityStatus(ActivityStatus::NOT_SET),
-    m_activityStatusHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_spotFleetRequestConfigHasBeenSet(false),
-    m_spotFleetRequestIdHasBeenSet(false),
-    m_spotFleetRequestState(BatchState::NOT_SET),
-    m_spotFleetRequestStateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 SpotFleetRequestConfig::SpotFleetRequestConfig(const XmlNode& xmlNode)
-  : SpotFleetRequestConfig()
 {
   *this = xmlNode;
 }
@@ -47,44 +34,50 @@ SpotFleetRequestConfig& SpotFleetRequestConfig::operator =(const XmlNode& xmlNod
     XmlNode activityStatusNode = resultNode.FirstChild("activityStatus");
     if(!activityStatusNode.IsNull())
     {
-      m_activityStatus = ActivityStatusMapper::GetActivityStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStatusNode.GetText()).c_str()).c_str());
+      m_activityStatus = ActivityStatusMapper::GetActivityStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStatusNode.GetText()).c_str()));
       m_activityStatusHasBeenSet = true;
+       m_activityStatusHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
+       m_createTimeHasBeenSet = true;
     }
     XmlNode spotFleetRequestConfigNode = resultNode.FirstChild("spotFleetRequestConfig");
     if(!spotFleetRequestConfigNode.IsNull())
     {
       m_spotFleetRequestConfig = spotFleetRequestConfigNode;
       m_spotFleetRequestConfigHasBeenSet = true;
+       m_spotFleetRequestConfigHasBeenSet = true;
     }
     XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
     if(!spotFleetRequestIdNode.IsNull())
     {
       m_spotFleetRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotFleetRequestIdNode.GetText());
       m_spotFleetRequestIdHasBeenSet = true;
+       m_spotFleetRequestIdHasBeenSet = true;
     }
     XmlNode spotFleetRequestStateNode = resultNode.FirstChild("spotFleetRequestState");
     if(!spotFleetRequestStateNode.IsNull())
     {
-      m_spotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotFleetRequestStateNode.GetText()).c_str()).c_str());
+      m_spotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotFleetRequestStateNode.GetText()).c_str()));
       m_spotFleetRequestStateHasBeenSet = true;
+       m_spotFleetRequestStateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

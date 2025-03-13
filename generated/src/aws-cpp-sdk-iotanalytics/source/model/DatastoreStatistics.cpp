@@ -18,13 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatastoreStatistics::DatastoreStatistics() : 
-    m_sizeHasBeenSet(false)
-{
-}
-
 DatastoreStatistics::DatastoreStatistics(JsonView jsonValue)
-  : DatastoreStatistics()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatastoreStatistics& DatastoreStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("size"))
   {
     m_size = jsonValue.GetObject("size");
-
     m_sizeHasBeenSet = true;
   }
-
   return *this;
 }
 

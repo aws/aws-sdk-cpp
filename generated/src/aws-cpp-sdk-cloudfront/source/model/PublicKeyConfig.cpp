@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-PublicKeyConfig::PublicKeyConfig() : 
-    m_callerReferenceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_encodedKeyHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 PublicKeyConfig::PublicKeyConfig(const XmlNode& xmlNode)
-  : PublicKeyConfig()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ PublicKeyConfig& PublicKeyConfig::operator =(const XmlNode& xmlNode)
     {
       m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
+       m_callerReferenceHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode encodedKeyNode = resultNode.FirstChild("EncodedKey");
     if(!encodedKeyNode.IsNull())
     {
       m_encodedKey = Aws::Utils::Xml::DecodeEscapedXmlText(encodedKeyNode.GetText());
       m_encodedKeyHasBeenSet = true;
+       m_encodedKeyHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
   }
 

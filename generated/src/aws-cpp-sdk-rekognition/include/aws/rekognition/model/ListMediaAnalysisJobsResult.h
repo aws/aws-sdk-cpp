@@ -29,7 +29,7 @@ namespace Model
   class ListMediaAnalysisJobsResult
   {
   public:
-    AWS_REKOGNITION_API ListMediaAnalysisJobsResult();
+    AWS_REKOGNITION_API ListMediaAnalysisJobsResult() = default;
     AWS_REKOGNITION_API ListMediaAnalysisJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API ListMediaAnalysisJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Pagination token, if the previous response was incomplete.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMediaAnalysisJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMediaAnalysisJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMediaAnalysisJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMediaAnalysisJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains a list of all media analysis jobs.</p>
      */
-    inline const Aws::Vector<MediaAnalysisJobDescription>& GetMediaAnalysisJobs() const{ return m_mediaAnalysisJobs; }
-    inline void SetMediaAnalysisJobs(const Aws::Vector<MediaAnalysisJobDescription>& value) { m_mediaAnalysisJobs = value; }
-    inline void SetMediaAnalysisJobs(Aws::Vector<MediaAnalysisJobDescription>&& value) { m_mediaAnalysisJobs = std::move(value); }
-    inline ListMediaAnalysisJobsResult& WithMediaAnalysisJobs(const Aws::Vector<MediaAnalysisJobDescription>& value) { SetMediaAnalysisJobs(value); return *this;}
-    inline ListMediaAnalysisJobsResult& WithMediaAnalysisJobs(Aws::Vector<MediaAnalysisJobDescription>&& value) { SetMediaAnalysisJobs(std::move(value)); return *this;}
-    inline ListMediaAnalysisJobsResult& AddMediaAnalysisJobs(const MediaAnalysisJobDescription& value) { m_mediaAnalysisJobs.push_back(value); return *this; }
-    inline ListMediaAnalysisJobsResult& AddMediaAnalysisJobs(MediaAnalysisJobDescription&& value) { m_mediaAnalysisJobs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MediaAnalysisJobDescription>& GetMediaAnalysisJobs() const { return m_mediaAnalysisJobs; }
+    template<typename MediaAnalysisJobsT = Aws::Vector<MediaAnalysisJobDescription>>
+    void SetMediaAnalysisJobs(MediaAnalysisJobsT&& value) { m_mediaAnalysisJobsHasBeenSet = true; m_mediaAnalysisJobs = std::forward<MediaAnalysisJobsT>(value); }
+    template<typename MediaAnalysisJobsT = Aws::Vector<MediaAnalysisJobDescription>>
+    ListMediaAnalysisJobsResult& WithMediaAnalysisJobs(MediaAnalysisJobsT&& value) { SetMediaAnalysisJobs(std::forward<MediaAnalysisJobsT>(value)); return *this;}
+    template<typename MediaAnalysisJobsT = MediaAnalysisJobDescription>
+    ListMediaAnalysisJobsResult& AddMediaAnalysisJobs(MediaAnalysisJobsT&& value) { m_mediaAnalysisJobsHasBeenSet = true; m_mediaAnalysisJobs.emplace_back(std::forward<MediaAnalysisJobsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMediaAnalysisJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMediaAnalysisJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMediaAnalysisJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMediaAnalysisJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<MediaAnalysisJobDescription> m_mediaAnalysisJobs;
+    bool m_mediaAnalysisJobsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

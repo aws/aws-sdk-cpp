@@ -28,7 +28,7 @@ namespace Model
   class DescribeAuthorizerResult
   {
   public:
-    AWS_IOT_API DescribeAuthorizerResult();
+    AWS_IOT_API DescribeAuthorizerResult() = default;
     AWS_IOT_API DescribeAuthorizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeAuthorizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The authorizer description.</p>
      */
-    inline const AuthorizerDescription& GetAuthorizerDescription() const{ return m_authorizerDescription; }
-    inline void SetAuthorizerDescription(const AuthorizerDescription& value) { m_authorizerDescription = value; }
-    inline void SetAuthorizerDescription(AuthorizerDescription&& value) { m_authorizerDescription = std::move(value); }
-    inline DescribeAuthorizerResult& WithAuthorizerDescription(const AuthorizerDescription& value) { SetAuthorizerDescription(value); return *this;}
-    inline DescribeAuthorizerResult& WithAuthorizerDescription(AuthorizerDescription&& value) { SetAuthorizerDescription(std::move(value)); return *this;}
+    inline const AuthorizerDescription& GetAuthorizerDescription() const { return m_authorizerDescription; }
+    template<typename AuthorizerDescriptionT = AuthorizerDescription>
+    void SetAuthorizerDescription(AuthorizerDescriptionT&& value) { m_authorizerDescriptionHasBeenSet = true; m_authorizerDescription = std::forward<AuthorizerDescriptionT>(value); }
+    template<typename AuthorizerDescriptionT = AuthorizerDescription>
+    DescribeAuthorizerResult& WithAuthorizerDescription(AuthorizerDescriptionT&& value) { SetAuthorizerDescription(std::forward<AuthorizerDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAuthorizerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAuthorizerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAuthorizerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAuthorizerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AuthorizerDescription m_authorizerDescription;
+    bool m_authorizerDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

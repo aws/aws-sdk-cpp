@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEndpointRequest::CreateEndpointRequest() : 
-    m_endpointNameHasBeenSet(false),
-    m_endpointConfigNameHasBeenSet(false),
-    m_deploymentConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

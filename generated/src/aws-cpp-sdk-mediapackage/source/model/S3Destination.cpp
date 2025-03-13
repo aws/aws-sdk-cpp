@@ -18,15 +18,7 @@ namespace MediaPackage
 namespace Model
 {
 
-S3Destination::S3Destination() : 
-    m_bucketNameHasBeenSet(false),
-    m_manifestKeyHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 S3Destination::S3Destination(JsonView jsonValue)
-  : S3Destination()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3Destination& S3Destination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifestKey"))
   {
     m_manifestKey = jsonValue.GetString("manifestKey");
-
     m_manifestKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

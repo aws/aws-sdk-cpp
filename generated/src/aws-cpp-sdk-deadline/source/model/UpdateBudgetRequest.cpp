@@ -13,23 +13,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBudgetRequest::UpdateBudgetRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_farmIdHasBeenSet(false),
-    m_budgetIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(BudgetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_approximateDollarLimit(0.0),
-    m_approximateDollarLimitHasBeenSet(false),
-    m_actionsToAddHasBeenSet(false),
-    m_actionsToRemoveHasBeenSet(false),
-    m_scheduleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBudgetRequest::SerializePayload() const
 {
   JsonValue payload;

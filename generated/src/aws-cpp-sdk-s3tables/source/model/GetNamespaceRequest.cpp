@@ -12,12 +12,6 @@ using namespace Aws::S3Tables::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetNamespaceRequest::GetNamespaceRequest() : 
-    m_tableBucketARNHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String GetNamespaceRequest::SerializePayload() const
 {
   return {};

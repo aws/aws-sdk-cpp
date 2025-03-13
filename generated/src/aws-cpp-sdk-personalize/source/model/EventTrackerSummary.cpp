@@ -18,17 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-EventTrackerSummary::EventTrackerSummary() : 
-    m_nameHasBeenSet(false),
-    m_eventTrackerArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
-{
-}
-
 EventTrackerSummary::EventTrackerSummary(JsonView jsonValue)
-  : EventTrackerSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ EventTrackerSummary& EventTrackerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTrackerArn"))
   {
     m_eventTrackerArn = jsonValue.GetString("eventTrackerArn");
-
     m_eventTrackerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

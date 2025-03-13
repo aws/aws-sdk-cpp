@@ -26,7 +26,7 @@ namespace Model
   class UpdatePipelineNotificationsRequest : public ElasticTranscoderRequest
   {
   public:
-    AWS_ELASTICTRANSCODER_API UpdatePipelineNotificationsRequest();
+    AWS_ELASTICTRANSCODER_API UpdatePipelineNotificationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The identifier of the pipeline for which you want to change notification
      * settings.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdatePipelineNotificationsRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdatePipelineNotificationsRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdatePipelineNotificationsRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdatePipelineNotificationsRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,12 @@ namespace Model
      * when Elastic Transcoder encounters an error condition. This is the ARN that
      * Amazon SNS returned when you created the topic.</p> </li> </ul>
      */
-    inline const Notifications& GetNotifications() const{ return m_notifications; }
+    inline const Notifications& GetNotifications() const { return m_notifications; }
     inline bool NotificationsHasBeenSet() const { return m_notificationsHasBeenSet; }
-    inline void SetNotifications(const Notifications& value) { m_notificationsHasBeenSet = true; m_notifications = value; }
-    inline void SetNotifications(Notifications&& value) { m_notificationsHasBeenSet = true; m_notifications = std::move(value); }
-    inline UpdatePipelineNotificationsRequest& WithNotifications(const Notifications& value) { SetNotifications(value); return *this;}
-    inline UpdatePipelineNotificationsRequest& WithNotifications(Notifications&& value) { SetNotifications(std::move(value)); return *this;}
+    template<typename NotificationsT = Notifications>
+    void SetNotifications(NotificationsT&& value) { m_notificationsHasBeenSet = true; m_notifications = std::forward<NotificationsT>(value); }
+    template<typename NotificationsT = Notifications>
+    UpdatePipelineNotificationsRequest& WithNotifications(NotificationsT&& value) { SetNotifications(std::forward<NotificationsT>(value)); return *this;}
     ///@}
   private:
 

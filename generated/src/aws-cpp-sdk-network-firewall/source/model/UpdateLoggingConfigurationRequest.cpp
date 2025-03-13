@@ -12,13 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLoggingConfigurationRequest::UpdateLoggingConfigurationRequest() : 
-    m_firewallArnHasBeenSet(false),
-    m_firewallNameHasBeenSet(false),
-    m_loggingConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLoggingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

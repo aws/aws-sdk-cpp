@@ -27,7 +27,7 @@ namespace Model
   class ListWorkflowsRequest : public CodeCatalystRequest
   {
   public:
-    AWS_CODECATALYST_API ListWorkflowsRequest();
+    AWS_CODECATALYST_API ListWorkflowsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The name of the space.</p>
      */
-    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
+    inline const Aws::String& GetSpaceName() const { return m_spaceName; }
     inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
-    inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
-    inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
-    inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
-    inline ListWorkflowsRequest& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-    inline ListWorkflowsRequest& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-    inline ListWorkflowsRequest& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    template<typename SpaceNameT = Aws::String>
+    void SetSpaceName(SpaceNameT&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::forward<SpaceNameT>(value); }
+    template<typename SpaceNameT = Aws::String>
+    ListWorkflowsRequest& WithSpaceName(SpaceNameT&& value) { SetSpaceName(std::forward<SpaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the project in the space.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline ListWorkflowsRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline ListWorkflowsRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline ListWorkflowsRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    ListWorkflowsRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>A token returned from a call to this API to indicate the next batch of
      * results to return, if any.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListWorkflowsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWorkflowsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWorkflowsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorkflowsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +84,7 @@ namespace Model
      * include a <code>NextToken</code> element, which you can use to obtain additional
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListWorkflowsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -100,14 +94,14 @@ namespace Model
     /**
      * <p>Information used to sort the items in the returned list.</p>
      */
-    inline const Aws::Vector<WorkflowSortCriteria>& GetSortBy() const{ return m_sortBy; }
+    inline const Aws::Vector<WorkflowSortCriteria>& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const Aws::Vector<WorkflowSortCriteria>& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(Aws::Vector<WorkflowSortCriteria>&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListWorkflowsRequest& WithSortBy(const Aws::Vector<WorkflowSortCriteria>& value) { SetSortBy(value); return *this;}
-    inline ListWorkflowsRequest& WithSortBy(Aws::Vector<WorkflowSortCriteria>&& value) { SetSortBy(std::move(value)); return *this;}
-    inline ListWorkflowsRequest& AddSortBy(const WorkflowSortCriteria& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(value); return *this; }
-    inline ListWorkflowsRequest& AddSortBy(WorkflowSortCriteria&& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(std::move(value)); return *this; }
+    template<typename SortByT = Aws::Vector<WorkflowSortCriteria>>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = Aws::Vector<WorkflowSortCriteria>>
+    ListWorkflowsRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
+    template<typename SortByT = WorkflowSortCriteria>
+    ListWorkflowsRequest& AddSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy.emplace_back(std::forward<SortByT>(value)); return *this; }
     ///@}
   private:
 
@@ -120,7 +114,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<WorkflowSortCriteria> m_sortBy;

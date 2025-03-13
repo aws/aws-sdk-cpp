@@ -38,7 +38,7 @@ namespace Model
   class ReactiveInsightSummary
   {
   public:
-    AWS_DEVOPSGURU_API ReactiveInsightSummary();
+    AWS_DEVOPSGURU_API ReactiveInsightSummary() = default;
     AWS_DEVOPSGURU_API ReactiveInsightSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API ReactiveInsightSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
     /**
      * <p> The ID of a reactive summary. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ReactiveInsightSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ReactiveInsightSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ReactiveInsightSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ReactiveInsightSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of a reactive insight. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ReactiveInsightSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ReactiveInsightSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ReactiveInsightSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ReactiveInsightSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,56 +74,52 @@ namespace Model
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
      * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
-    inline const InsightSeverity& GetSeverity() const{ return m_severity; }
+    inline InsightSeverity GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const InsightSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(InsightSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline ReactiveInsightSummary& WithSeverity(const InsightSeverity& value) { SetSeverity(value); return *this;}
-    inline ReactiveInsightSummary& WithSeverity(InsightSeverity&& value) { SetSeverity(std::move(value)); return *this;}
+    inline void SetSeverity(InsightSeverity value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline ReactiveInsightSummary& WithSeverity(InsightSeverity value) { SetSeverity(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The status of a reactive insight. </p>
      */
-    inline const InsightStatus& GetStatus() const{ return m_status; }
+    inline InsightStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const InsightStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(InsightStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ReactiveInsightSummary& WithStatus(const InsightStatus& value) { SetStatus(value); return *this;}
-    inline ReactiveInsightSummary& WithStatus(InsightStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(InsightStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ReactiveInsightSummary& WithStatus(InsightStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const InsightTimeRange& GetInsightTimeRange() const{ return m_insightTimeRange; }
+    inline const InsightTimeRange& GetInsightTimeRange() const { return m_insightTimeRange; }
     inline bool InsightTimeRangeHasBeenSet() const { return m_insightTimeRangeHasBeenSet; }
-    inline void SetInsightTimeRange(const InsightTimeRange& value) { m_insightTimeRangeHasBeenSet = true; m_insightTimeRange = value; }
-    inline void SetInsightTimeRange(InsightTimeRange&& value) { m_insightTimeRangeHasBeenSet = true; m_insightTimeRange = std::move(value); }
-    inline ReactiveInsightSummary& WithInsightTimeRange(const InsightTimeRange& value) { SetInsightTimeRange(value); return *this;}
-    inline ReactiveInsightSummary& WithInsightTimeRange(InsightTimeRange&& value) { SetInsightTimeRange(std::move(value)); return *this;}
+    template<typename InsightTimeRangeT = InsightTimeRange>
+    void SetInsightTimeRange(InsightTimeRangeT&& value) { m_insightTimeRangeHasBeenSet = true; m_insightTimeRange = std::forward<InsightTimeRangeT>(value); }
+    template<typename InsightTimeRangeT = InsightTimeRange>
+    ReactiveInsightSummary& WithInsightTimeRange(InsightTimeRangeT&& value) { SetInsightTimeRange(std::forward<InsightTimeRangeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceCollection& GetResourceCollection() const{ return m_resourceCollection; }
+    inline const ResourceCollection& GetResourceCollection() const { return m_resourceCollection; }
     inline bool ResourceCollectionHasBeenSet() const { return m_resourceCollectionHasBeenSet; }
-    inline void SetResourceCollection(const ResourceCollection& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = value; }
-    inline void SetResourceCollection(ResourceCollection&& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = std::move(value); }
-    inline ReactiveInsightSummary& WithResourceCollection(const ResourceCollection& value) { SetResourceCollection(value); return *this;}
-    inline ReactiveInsightSummary& WithResourceCollection(ResourceCollection&& value) { SetResourceCollection(std::move(value)); return *this;}
+    template<typename ResourceCollectionT = ResourceCollection>
+    void SetResourceCollection(ResourceCollectionT&& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = std::forward<ResourceCollectionT>(value); }
+    template<typename ResourceCollectionT = ResourceCollection>
+    ReactiveInsightSummary& WithResourceCollection(ResourceCollectionT&& value) { SetResourceCollection(std::forward<ResourceCollectionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A collection of the names of Amazon Web Services services.</p>
      */
-    inline const ServiceCollection& GetServiceCollection() const{ return m_serviceCollection; }
+    inline const ServiceCollection& GetServiceCollection() const { return m_serviceCollection; }
     inline bool ServiceCollectionHasBeenSet() const { return m_serviceCollectionHasBeenSet; }
-    inline void SetServiceCollection(const ServiceCollection& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = value; }
-    inline void SetServiceCollection(ServiceCollection&& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = std::move(value); }
-    inline ReactiveInsightSummary& WithServiceCollection(const ServiceCollection& value) { SetServiceCollection(value); return *this;}
-    inline ReactiveInsightSummary& WithServiceCollection(ServiceCollection&& value) { SetServiceCollection(std::move(value)); return *this;}
+    template<typename ServiceCollectionT = ServiceCollection>
+    void SetServiceCollection(ServiceCollectionT&& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = std::forward<ServiceCollectionT>(value); }
+    template<typename ServiceCollectionT = ServiceCollection>
+    ReactiveInsightSummary& WithServiceCollection(ServiceCollectionT&& value) { SetServiceCollection(std::forward<ServiceCollectionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,15 +127,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the Amazon Web Services resources that
      * generated this insight.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssociatedResourceArns() const{ return m_associatedResourceArns; }
+    inline const Aws::Vector<Aws::String>& GetAssociatedResourceArns() const { return m_associatedResourceArns; }
     inline bool AssociatedResourceArnsHasBeenSet() const { return m_associatedResourceArnsHasBeenSet; }
-    inline void SetAssociatedResourceArns(const Aws::Vector<Aws::String>& value) { m_associatedResourceArnsHasBeenSet = true; m_associatedResourceArns = value; }
-    inline void SetAssociatedResourceArns(Aws::Vector<Aws::String>&& value) { m_associatedResourceArnsHasBeenSet = true; m_associatedResourceArns = std::move(value); }
-    inline ReactiveInsightSummary& WithAssociatedResourceArns(const Aws::Vector<Aws::String>& value) { SetAssociatedResourceArns(value); return *this;}
-    inline ReactiveInsightSummary& WithAssociatedResourceArns(Aws::Vector<Aws::String>&& value) { SetAssociatedResourceArns(std::move(value)); return *this;}
-    inline ReactiveInsightSummary& AddAssociatedResourceArns(const Aws::String& value) { m_associatedResourceArnsHasBeenSet = true; m_associatedResourceArns.push_back(value); return *this; }
-    inline ReactiveInsightSummary& AddAssociatedResourceArns(Aws::String&& value) { m_associatedResourceArnsHasBeenSet = true; m_associatedResourceArns.push_back(std::move(value)); return *this; }
-    inline ReactiveInsightSummary& AddAssociatedResourceArns(const char* value) { m_associatedResourceArnsHasBeenSet = true; m_associatedResourceArns.push_back(value); return *this; }
+    template<typename AssociatedResourceArnsT = Aws::Vector<Aws::String>>
+    void SetAssociatedResourceArns(AssociatedResourceArnsT&& value) { m_associatedResourceArnsHasBeenSet = true; m_associatedResourceArns = std::forward<AssociatedResourceArnsT>(value); }
+    template<typename AssociatedResourceArnsT = Aws::Vector<Aws::String>>
+    ReactiveInsightSummary& WithAssociatedResourceArns(AssociatedResourceArnsT&& value) { SetAssociatedResourceArns(std::forward<AssociatedResourceArnsT>(value)); return *this;}
+    template<typename AssociatedResourceArnsT = Aws::String>
+    ReactiveInsightSummary& AddAssociatedResourceArns(AssociatedResourceArnsT&& value) { m_associatedResourceArnsHasBeenSet = true; m_associatedResourceArns.emplace_back(std::forward<AssociatedResourceArnsT>(value)); return *this; }
     ///@}
   private:
 
@@ -153,10 +144,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    InsightSeverity m_severity;
+    InsightSeverity m_severity{InsightSeverity::NOT_SET};
     bool m_severityHasBeenSet = false;
 
-    InsightStatus m_status;
+    InsightStatus m_status{InsightStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     InsightTimeRange m_insightTimeRange;

@@ -24,7 +24,7 @@ namespace Model
   class RemovePermissionRequest : public SQSRequest
   {
   public:
-    AWS_SQS_API RemovePermissionRequest();
+    AWS_SQS_API RemovePermissionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
      * <p>Queue URLs and names are case-sensitive.</p>
      */
-    inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
+    inline const Aws::String& GetQueueUrl() const { return m_queueUrl; }
     inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
-    inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
-    inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
-    inline RemovePermissionRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
-    inline RemovePermissionRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
-    inline RemovePermissionRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+    template<typename QueueUrlT = Aws::String>
+    void SetQueueUrl(QueueUrlT&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::forward<QueueUrlT>(value); }
+    template<typename QueueUrlT = Aws::String>
+    RemovePermissionRequest& WithQueueUrl(QueueUrlT&& value) { SetQueueUrl(std::forward<QueueUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The identification of the permission to remove. This is the label added using
      * the <code> <a>AddPermission</a> </code> action.</p>
      */
-    inline const Aws::String& GetLabel() const{ return m_label; }
+    inline const Aws::String& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-    inline RemovePermissionRequest& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline RemovePermissionRequest& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline RemovePermissionRequest& WithLabel(const char* value) { SetLabel(value); return *this;}
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    RemovePermissionRequest& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
   private:
 

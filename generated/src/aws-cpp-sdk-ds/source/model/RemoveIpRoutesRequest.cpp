@@ -12,12 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveIpRoutesRequest::RemoveIpRoutesRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_cidrIpsHasBeenSet(false)
-{
-}
-
 Aws::String RemoveIpRoutesRequest::SerializePayload() const
 {
   JsonValue payload;

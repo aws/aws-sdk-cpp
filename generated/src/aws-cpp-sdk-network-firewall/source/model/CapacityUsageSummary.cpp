@@ -18,13 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-CapacityUsageSummary::CapacityUsageSummary() : 
-    m_cIDRsHasBeenSet(false)
-{
-}
-
 CapacityUsageSummary::CapacityUsageSummary(JsonView jsonValue)
-  : CapacityUsageSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CapacityUsageSummary& CapacityUsageSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CIDRs"))
   {
     m_cIDRs = jsonValue.GetObject("CIDRs");
-
     m_cIDRsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,13 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-Trigger::Trigger() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Trigger::Trigger(const XmlNode& xmlNode)
-  : Trigger()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ Trigger& Trigger::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
   }
 

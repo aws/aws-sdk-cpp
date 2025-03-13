@@ -36,7 +36,7 @@ namespace Model
   class GuardrailTopic
   {
   public:
-    AWS_BEDROCK_API GuardrailTopic();
+    AWS_BEDROCK_API GuardrailTopic() = default;
     AWS_BEDROCK_API GuardrailTopic(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API GuardrailTopic& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The name of the topic to deny.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GuardrailTopic& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GuardrailTopic& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GuardrailTopic& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GuardrailTopic& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A definition of the topic to deny.</p>
      */
-    inline const Aws::String& GetDefinition() const{ return m_definition; }
+    inline const Aws::String& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline void SetDefinition(const char* value) { m_definitionHasBeenSet = true; m_definition.assign(value); }
-    inline GuardrailTopic& WithDefinition(const Aws::String& value) { SetDefinition(value); return *this;}
-    inline GuardrailTopic& WithDefinition(Aws::String&& value) { SetDefinition(std::move(value)); return *this;}
-    inline GuardrailTopic& WithDefinition(const char* value) { SetDefinition(value); return *this;}
+    template<typename DefinitionT = Aws::String>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = Aws::String>
+    GuardrailTopic& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,27 +71,24 @@ namespace Model
      * <p>A list of prompts, each of which is an example of a prompt that can be
      * categorized as belonging to the topic.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExamples() const{ return m_examples; }
+    inline const Aws::Vector<Aws::String>& GetExamples() const { return m_examples; }
     inline bool ExamplesHasBeenSet() const { return m_examplesHasBeenSet; }
-    inline void SetExamples(const Aws::Vector<Aws::String>& value) { m_examplesHasBeenSet = true; m_examples = value; }
-    inline void SetExamples(Aws::Vector<Aws::String>&& value) { m_examplesHasBeenSet = true; m_examples = std::move(value); }
-    inline GuardrailTopic& WithExamples(const Aws::Vector<Aws::String>& value) { SetExamples(value); return *this;}
-    inline GuardrailTopic& WithExamples(Aws::Vector<Aws::String>&& value) { SetExamples(std::move(value)); return *this;}
-    inline GuardrailTopic& AddExamples(const Aws::String& value) { m_examplesHasBeenSet = true; m_examples.push_back(value); return *this; }
-    inline GuardrailTopic& AddExamples(Aws::String&& value) { m_examplesHasBeenSet = true; m_examples.push_back(std::move(value)); return *this; }
-    inline GuardrailTopic& AddExamples(const char* value) { m_examplesHasBeenSet = true; m_examples.push_back(value); return *this; }
+    template<typename ExamplesT = Aws::Vector<Aws::String>>
+    void SetExamples(ExamplesT&& value) { m_examplesHasBeenSet = true; m_examples = std::forward<ExamplesT>(value); }
+    template<typename ExamplesT = Aws::Vector<Aws::String>>
+    GuardrailTopic& WithExamples(ExamplesT&& value) { SetExamples(std::forward<ExamplesT>(value)); return *this;}
+    template<typename ExamplesT = Aws::String>
+    GuardrailTopic& AddExamples(ExamplesT&& value) { m_examplesHasBeenSet = true; m_examples.emplace_back(std::forward<ExamplesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies to deny the topic.</p>
      */
-    inline const GuardrailTopicType& GetType() const{ return m_type; }
+    inline GuardrailTopicType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const GuardrailTopicType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(GuardrailTopicType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GuardrailTopic& WithType(const GuardrailTopicType& value) { SetType(value); return *this;}
-    inline GuardrailTopic& WithType(GuardrailTopicType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(GuardrailTopicType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GuardrailTopic& WithType(GuardrailTopicType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -108,7 +101,7 @@ namespace Model
     Aws::Vector<Aws::String> m_examples;
     bool m_examplesHasBeenSet = false;
 
-    GuardrailTopicType m_type;
+    GuardrailTopicType m_type{GuardrailTopicType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

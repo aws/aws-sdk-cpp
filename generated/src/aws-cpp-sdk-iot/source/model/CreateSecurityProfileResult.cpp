@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSecurityProfileResult::CreateSecurityProfileResult()
-{
-}
-
 CreateSecurityProfileResult::CreateSecurityProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateSecurityProfileResult& CreateSecurityProfileResult::operator =(const Aws::
   if(jsonValue.ValueExists("securityProfileName"))
   {
     m_securityProfileName = jsonValue.GetString("securityProfileName");
-
+    m_securityProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityProfileArn"))
   {
     m_securityProfileArn = jsonValue.GetString("securityProfileArn");
-
+    m_securityProfileArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

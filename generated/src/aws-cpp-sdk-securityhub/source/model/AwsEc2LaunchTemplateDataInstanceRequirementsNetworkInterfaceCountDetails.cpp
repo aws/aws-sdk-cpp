@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails() : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails& AwsEc2
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetInteger("Max");
-
     m_maxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Min"))
   {
     m_min = jsonValue.GetInteger("Min");
-
     m_minHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-Deserializer::Deserializer() : 
-    m_openXJsonSerDeHasBeenSet(false),
-    m_hiveJsonSerDeHasBeenSet(false)
-{
-}
-
 Deserializer::Deserializer(JsonView jsonValue)
-  : Deserializer()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Deserializer& Deserializer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OpenXJsonSerDe"))
   {
     m_openXJsonSerDe = jsonValue.GetObject("OpenXJsonSerDe");
-
     m_openXJsonSerDeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HiveJsonSerDe"))
   {
     m_hiveJsonSerDe = jsonValue.GetObject("HiveJsonSerDe");
-
     m_hiveJsonSerDeHasBeenSet = true;
   }
-
   return *this;
 }
 

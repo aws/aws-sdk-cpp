@@ -12,14 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTrafficDistributionRequest::UpdateTrafficDistributionRequest() : 
-    m_idHasBeenSet(false),
-    m_telephonyConfigHasBeenSet(false),
-    m_signInConfigHasBeenSet(false),
-    m_agentConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTrafficDistributionRequest::SerializePayload() const
 {
   JsonValue payload;

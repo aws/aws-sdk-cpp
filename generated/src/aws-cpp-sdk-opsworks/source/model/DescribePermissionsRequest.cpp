@@ -12,12 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePermissionsRequest::DescribePermissionsRequest() : 
-    m_iamUserArnHasBeenSet(false),
-    m_stackIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribePermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

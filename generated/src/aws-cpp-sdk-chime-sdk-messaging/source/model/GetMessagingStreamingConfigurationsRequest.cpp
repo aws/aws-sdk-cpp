@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMessagingStreamingConfigurationsRequest::GetMessagingStreamingConfigurationsRequest() : 
-    m_appInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetMessagingStreamingConfigurationsRequest::SerializePayload() const
 {
   return {};

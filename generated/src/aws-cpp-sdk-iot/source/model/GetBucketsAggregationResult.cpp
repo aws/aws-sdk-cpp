@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketsAggregationResult::GetBucketsAggregationResult() : 
-    m_totalCount(0)
-{
-}
-
 GetBucketsAggregationResult::GetBucketsAggregationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetBucketsAggregationResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetBucketsAggregationResult& GetBucketsAggregationResult::operator =(const Aws::
   if(jsonValue.ValueExists("totalCount"))
   {
     m_totalCount = jsonValue.GetInteger("totalCount");
-
+    m_totalCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buckets"))
   {
     Aws::Utils::Array<JsonView> bucketsJsonList = jsonValue.GetArray("buckets");
@@ -44,14 +37,15 @@ GetBucketsAggregationResult& GetBucketsAggregationResult::operator =(const Aws::
     {
       m_buckets.push_back(bucketsJsonList[bucketsIndex].AsObject());
     }
+    m_bucketsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

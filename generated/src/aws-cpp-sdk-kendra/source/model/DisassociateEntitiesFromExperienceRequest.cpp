@@ -12,13 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateEntitiesFromExperienceRequest::DisassociateEntitiesFromExperienceRequest() : 
-    m_idHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_entityListHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateEntitiesFromExperienceRequest::SerializePayload() const
 {
   JsonValue payload;

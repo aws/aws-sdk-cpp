@@ -52,7 +52,7 @@ namespace Model
   class WebACL
   {
   public:
-    AWS_WAFV2_API WebACL();
+    AWS_WAFV2_API WebACL() = default;
     AWS_WAFV2_API WebACL(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API WebACL& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,14 +63,12 @@ namespace Model
      * <p>The name of the web ACL. You cannot change the name of a web ACL after you
      * create it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline WebACL& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline WebACL& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline WebACL& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    WebACL& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +77,12 @@ namespace Model
      * responses to create and list commands. You use this ID to do things like get,
      * update, and delete a <code>WebACL</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline WebACL& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline WebACL& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline WebACL& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    WebACL& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +90,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
      * the resource.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline WebACL& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline WebACL& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline WebACL& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    WebACL& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,26 +103,24 @@ namespace Model
      * <p>The action to perform if none of the <code>Rules</code> contained in the
      * <code>WebACL</code> match. </p>
      */
-    inline const DefaultAction& GetDefaultAction() const{ return m_defaultAction; }
+    inline const DefaultAction& GetDefaultAction() const { return m_defaultAction; }
     inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
-    inline void SetDefaultAction(const DefaultAction& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
-    inline void SetDefaultAction(DefaultAction&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::move(value); }
-    inline WebACL& WithDefaultAction(const DefaultAction& value) { SetDefaultAction(value); return *this;}
-    inline WebACL& WithDefaultAction(DefaultAction&& value) { SetDefaultAction(std::move(value)); return *this;}
+    template<typename DefaultActionT = DefaultAction>
+    void SetDefaultAction(DefaultActionT&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::forward<DefaultActionT>(value); }
+    template<typename DefaultActionT = DefaultAction>
+    WebACL& WithDefaultAction(DefaultActionT&& value) { SetDefaultAction(std::forward<DefaultActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the web ACL that helps with identification. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline WebACL& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline WebACL& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline WebACL& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    WebACL& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,14 +129,14 @@ namespace Model
      * manage. Each rule includes one top-level statement that WAF uses to identify
      * matching web requests, and parameters that govern how WAF handles them. </p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline WebACL& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline WebACL& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline WebACL& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline WebACL& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    WebACL& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    WebACL& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -152,12 +144,12 @@ namespace Model
      * <p>Defines and enables Amazon CloudWatch metrics and web request sample
      * collection. </p>
      */
-    inline const VisibilityConfig& GetVisibilityConfig() const{ return m_visibilityConfig; }
+    inline const VisibilityConfig& GetVisibilityConfig() const { return m_visibilityConfig; }
     inline bool VisibilityConfigHasBeenSet() const { return m_visibilityConfigHasBeenSet; }
-    inline void SetVisibilityConfig(const VisibilityConfig& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = value; }
-    inline void SetVisibilityConfig(VisibilityConfig&& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = std::move(value); }
-    inline WebACL& WithVisibilityConfig(const VisibilityConfig& value) { SetVisibilityConfig(value); return *this;}
-    inline WebACL& WithVisibilityConfig(VisibilityConfig&& value) { SetVisibilityConfig(std::move(value)); return *this;}
+    template<typename VisibilityConfigT = VisibilityConfig>
+    void SetVisibilityConfig(VisibilityConfigT&& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = std::forward<VisibilityConfigT>(value); }
+    template<typename VisibilityConfigT = VisibilityConfig>
+    WebACL& WithVisibilityConfig(VisibilityConfigT&& value) { SetVisibilityConfig(std::forward<VisibilityConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,12 +162,12 @@ namespace Model
      * other option for data protection is in the logging configuration, which only
      * affects logging. </p>
      */
-    inline const DataProtectionConfig& GetDataProtectionConfig() const{ return m_dataProtectionConfig; }
+    inline const DataProtectionConfig& GetDataProtectionConfig() const { return m_dataProtectionConfig; }
     inline bool DataProtectionConfigHasBeenSet() const { return m_dataProtectionConfigHasBeenSet; }
-    inline void SetDataProtectionConfig(const DataProtectionConfig& value) { m_dataProtectionConfigHasBeenSet = true; m_dataProtectionConfig = value; }
-    inline void SetDataProtectionConfig(DataProtectionConfig&& value) { m_dataProtectionConfigHasBeenSet = true; m_dataProtectionConfig = std::move(value); }
-    inline WebACL& WithDataProtectionConfig(const DataProtectionConfig& value) { SetDataProtectionConfig(value); return *this;}
-    inline WebACL& WithDataProtectionConfig(DataProtectionConfig&& value) { SetDataProtectionConfig(std::move(value)); return *this;}
+    template<typename DataProtectionConfigT = DataProtectionConfig>
+    void SetDataProtectionConfig(DataProtectionConfigT&& value) { m_dataProtectionConfigHasBeenSet = true; m_dataProtectionConfig = std::forward<DataProtectionConfigT>(value); }
+    template<typename DataProtectionConfigT = DataProtectionConfig>
+    WebACL& WithDataProtectionConfig(DataProtectionConfigT&& value) { SetDataProtectionConfig(std::forward<DataProtectionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,7 +183,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF
      * web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
      */
-    inline long long GetCapacity() const{ return m_capacity; }
+    inline long long GetCapacity() const { return m_capacity; }
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
     inline void SetCapacity(long long value) { m_capacityHasBeenSet = true; m_capacity = value; }
     inline WebACL& WithCapacity(long long value) { SetCapacity(value); return *this;}
@@ -208,14 +200,14 @@ namespace Model
      * administrator prioritizes the rule groups, to determine their relative
      * processing order.</p>
      */
-    inline const Aws::Vector<FirewallManagerRuleGroup>& GetPreProcessFirewallManagerRuleGroups() const{ return m_preProcessFirewallManagerRuleGroups; }
+    inline const Aws::Vector<FirewallManagerRuleGroup>& GetPreProcessFirewallManagerRuleGroups() const { return m_preProcessFirewallManagerRuleGroups; }
     inline bool PreProcessFirewallManagerRuleGroupsHasBeenSet() const { return m_preProcessFirewallManagerRuleGroupsHasBeenSet; }
-    inline void SetPreProcessFirewallManagerRuleGroups(const Aws::Vector<FirewallManagerRuleGroup>& value) { m_preProcessFirewallManagerRuleGroupsHasBeenSet = true; m_preProcessFirewallManagerRuleGroups = value; }
-    inline void SetPreProcessFirewallManagerRuleGroups(Aws::Vector<FirewallManagerRuleGroup>&& value) { m_preProcessFirewallManagerRuleGroupsHasBeenSet = true; m_preProcessFirewallManagerRuleGroups = std::move(value); }
-    inline WebACL& WithPreProcessFirewallManagerRuleGroups(const Aws::Vector<FirewallManagerRuleGroup>& value) { SetPreProcessFirewallManagerRuleGroups(value); return *this;}
-    inline WebACL& WithPreProcessFirewallManagerRuleGroups(Aws::Vector<FirewallManagerRuleGroup>&& value) { SetPreProcessFirewallManagerRuleGroups(std::move(value)); return *this;}
-    inline WebACL& AddPreProcessFirewallManagerRuleGroups(const FirewallManagerRuleGroup& value) { m_preProcessFirewallManagerRuleGroupsHasBeenSet = true; m_preProcessFirewallManagerRuleGroups.push_back(value); return *this; }
-    inline WebACL& AddPreProcessFirewallManagerRuleGroups(FirewallManagerRuleGroup&& value) { m_preProcessFirewallManagerRuleGroupsHasBeenSet = true; m_preProcessFirewallManagerRuleGroups.push_back(std::move(value)); return *this; }
+    template<typename PreProcessFirewallManagerRuleGroupsT = Aws::Vector<FirewallManagerRuleGroup>>
+    void SetPreProcessFirewallManagerRuleGroups(PreProcessFirewallManagerRuleGroupsT&& value) { m_preProcessFirewallManagerRuleGroupsHasBeenSet = true; m_preProcessFirewallManagerRuleGroups = std::forward<PreProcessFirewallManagerRuleGroupsT>(value); }
+    template<typename PreProcessFirewallManagerRuleGroupsT = Aws::Vector<FirewallManagerRuleGroup>>
+    WebACL& WithPreProcessFirewallManagerRuleGroups(PreProcessFirewallManagerRuleGroupsT&& value) { SetPreProcessFirewallManagerRuleGroups(std::forward<PreProcessFirewallManagerRuleGroupsT>(value)); return *this;}
+    template<typename PreProcessFirewallManagerRuleGroupsT = FirewallManagerRuleGroup>
+    WebACL& AddPreProcessFirewallManagerRuleGroups(PreProcessFirewallManagerRuleGroupsT&& value) { m_preProcessFirewallManagerRuleGroupsHasBeenSet = true; m_preProcessFirewallManagerRuleGroups.emplace_back(std::forward<PreProcessFirewallManagerRuleGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -229,14 +221,14 @@ namespace Model
      * administrator prioritizes the rule groups, to determine their relative
      * processing order.</p>
      */
-    inline const Aws::Vector<FirewallManagerRuleGroup>& GetPostProcessFirewallManagerRuleGroups() const{ return m_postProcessFirewallManagerRuleGroups; }
+    inline const Aws::Vector<FirewallManagerRuleGroup>& GetPostProcessFirewallManagerRuleGroups() const { return m_postProcessFirewallManagerRuleGroups; }
     inline bool PostProcessFirewallManagerRuleGroupsHasBeenSet() const { return m_postProcessFirewallManagerRuleGroupsHasBeenSet; }
-    inline void SetPostProcessFirewallManagerRuleGroups(const Aws::Vector<FirewallManagerRuleGroup>& value) { m_postProcessFirewallManagerRuleGroupsHasBeenSet = true; m_postProcessFirewallManagerRuleGroups = value; }
-    inline void SetPostProcessFirewallManagerRuleGroups(Aws::Vector<FirewallManagerRuleGroup>&& value) { m_postProcessFirewallManagerRuleGroupsHasBeenSet = true; m_postProcessFirewallManagerRuleGroups = std::move(value); }
-    inline WebACL& WithPostProcessFirewallManagerRuleGroups(const Aws::Vector<FirewallManagerRuleGroup>& value) { SetPostProcessFirewallManagerRuleGroups(value); return *this;}
-    inline WebACL& WithPostProcessFirewallManagerRuleGroups(Aws::Vector<FirewallManagerRuleGroup>&& value) { SetPostProcessFirewallManagerRuleGroups(std::move(value)); return *this;}
-    inline WebACL& AddPostProcessFirewallManagerRuleGroups(const FirewallManagerRuleGroup& value) { m_postProcessFirewallManagerRuleGroupsHasBeenSet = true; m_postProcessFirewallManagerRuleGroups.push_back(value); return *this; }
-    inline WebACL& AddPostProcessFirewallManagerRuleGroups(FirewallManagerRuleGroup&& value) { m_postProcessFirewallManagerRuleGroupsHasBeenSet = true; m_postProcessFirewallManagerRuleGroups.push_back(std::move(value)); return *this; }
+    template<typename PostProcessFirewallManagerRuleGroupsT = Aws::Vector<FirewallManagerRuleGroup>>
+    void SetPostProcessFirewallManagerRuleGroups(PostProcessFirewallManagerRuleGroupsT&& value) { m_postProcessFirewallManagerRuleGroupsHasBeenSet = true; m_postProcessFirewallManagerRuleGroups = std::forward<PostProcessFirewallManagerRuleGroupsT>(value); }
+    template<typename PostProcessFirewallManagerRuleGroupsT = Aws::Vector<FirewallManagerRuleGroup>>
+    WebACL& WithPostProcessFirewallManagerRuleGroups(PostProcessFirewallManagerRuleGroupsT&& value) { SetPostProcessFirewallManagerRuleGroups(std::forward<PostProcessFirewallManagerRuleGroupsT>(value)); return *this;}
+    template<typename PostProcessFirewallManagerRuleGroupsT = FirewallManagerRuleGroup>
+    WebACL& AddPostProcessFirewallManagerRuleGroups(PostProcessFirewallManagerRuleGroupsT&& value) { m_postProcessFirewallManagerRuleGroupsHasBeenSet = true; m_postProcessFirewallManagerRuleGroups.emplace_back(std::forward<PostProcessFirewallManagerRuleGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -248,7 +240,7 @@ namespace Model
      * <code>PreProcessFirewallManagerRuleGroups</code>, and
      * <code>PostProcessFirewallManagerRuleGroups</code>. </p>
      */
-    inline bool GetManagedByFirewallManager() const{ return m_managedByFirewallManager; }
+    inline bool GetManagedByFirewallManager() const { return m_managedByFirewallManager; }
     inline bool ManagedByFirewallManagerHasBeenSet() const { return m_managedByFirewallManagerHasBeenSet; }
     inline void SetManagedByFirewallManager(bool value) { m_managedByFirewallManagerHasBeenSet = true; m_managedByFirewallManager = value; }
     inline WebACL& WithManagedByFirewallManager(bool value) { SetManagedByFirewallManager(value); return *this;}
@@ -266,14 +258,12 @@ namespace Model
      * from the rule, separated by a colon: </p> <p> <code>&lt;label
      * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetLabelNamespace() const{ return m_labelNamespace; }
+    inline const Aws::String& GetLabelNamespace() const { return m_labelNamespace; }
     inline bool LabelNamespaceHasBeenSet() const { return m_labelNamespaceHasBeenSet; }
-    inline void SetLabelNamespace(const Aws::String& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = value; }
-    inline void SetLabelNamespace(Aws::String&& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = std::move(value); }
-    inline void SetLabelNamespace(const char* value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace.assign(value); }
-    inline WebACL& WithLabelNamespace(const Aws::String& value) { SetLabelNamespace(value); return *this;}
-    inline WebACL& WithLabelNamespace(Aws::String&& value) { SetLabelNamespace(std::move(value)); return *this;}
-    inline WebACL& WithLabelNamespace(const char* value) { SetLabelNamespace(value); return *this;}
+    template<typename LabelNamespaceT = Aws::String>
+    void SetLabelNamespace(LabelNamespaceT&& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = std::forward<LabelNamespaceT>(value); }
+    template<typename LabelNamespaceT = Aws::String>
+    WebACL& WithLabelNamespace(LabelNamespaceT&& value) { SetLabelNamespace(std::forward<LabelNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -290,18 +280,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <i>WAF Developer Guide</i>. </p>
      */
-    inline const Aws::Map<Aws::String, CustomResponseBody>& GetCustomResponseBodies() const{ return m_customResponseBodies; }
+    inline const Aws::Map<Aws::String, CustomResponseBody>& GetCustomResponseBodies() const { return m_customResponseBodies; }
     inline bool CustomResponseBodiesHasBeenSet() const { return m_customResponseBodiesHasBeenSet; }
-    inline void SetCustomResponseBodies(const Aws::Map<Aws::String, CustomResponseBody>& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = value; }
-    inline void SetCustomResponseBodies(Aws::Map<Aws::String, CustomResponseBody>&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = std::move(value); }
-    inline WebACL& WithCustomResponseBodies(const Aws::Map<Aws::String, CustomResponseBody>& value) { SetCustomResponseBodies(value); return *this;}
-    inline WebACL& WithCustomResponseBodies(Aws::Map<Aws::String, CustomResponseBody>&& value) { SetCustomResponseBodies(std::move(value)); return *this;}
-    inline WebACL& AddCustomResponseBodies(const Aws::String& key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
-    inline WebACL& AddCustomResponseBodies(Aws::String&& key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::move(key), value); return *this; }
-    inline WebACL& AddCustomResponseBodies(const Aws::String& key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, std::move(value)); return *this; }
-    inline WebACL& AddCustomResponseBodies(Aws::String&& key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::move(key), std::move(value)); return *this; }
-    inline WebACL& AddCustomResponseBodies(const char* key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, std::move(value)); return *this; }
-    inline WebACL& AddCustomResponseBodies(const char* key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
+    template<typename CustomResponseBodiesT = Aws::Map<Aws::String, CustomResponseBody>>
+    void SetCustomResponseBodies(CustomResponseBodiesT&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = std::forward<CustomResponseBodiesT>(value); }
+    template<typename CustomResponseBodiesT = Aws::Map<Aws::String, CustomResponseBody>>
+    WebACL& WithCustomResponseBodies(CustomResponseBodiesT&& value) { SetCustomResponseBodies(std::forward<CustomResponseBodiesT>(value)); return *this;}
+    template<typename CustomResponseBodiesKeyT = Aws::String, typename CustomResponseBodiesValueT = CustomResponseBody>
+    WebACL& AddCustomResponseBodies(CustomResponseBodiesKeyT&& key, CustomResponseBodiesValueT&& value) {
+      m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::forward<CustomResponseBodiesKeyT>(key), std::forward<CustomResponseBodiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -310,12 +298,12 @@ namespace Model
      * that don't have their own <code>CaptchaConfig</code> settings. If you don't
      * specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
      */
-    inline const CaptchaConfig& GetCaptchaConfig() const{ return m_captchaConfig; }
+    inline const CaptchaConfig& GetCaptchaConfig() const { return m_captchaConfig; }
     inline bool CaptchaConfigHasBeenSet() const { return m_captchaConfigHasBeenSet; }
-    inline void SetCaptchaConfig(const CaptchaConfig& value) { m_captchaConfigHasBeenSet = true; m_captchaConfig = value; }
-    inline void SetCaptchaConfig(CaptchaConfig&& value) { m_captchaConfigHasBeenSet = true; m_captchaConfig = std::move(value); }
-    inline WebACL& WithCaptchaConfig(const CaptchaConfig& value) { SetCaptchaConfig(value); return *this;}
-    inline WebACL& WithCaptchaConfig(CaptchaConfig&& value) { SetCaptchaConfig(std::move(value)); return *this;}
+    template<typename CaptchaConfigT = CaptchaConfig>
+    void SetCaptchaConfig(CaptchaConfigT&& value) { m_captchaConfigHasBeenSet = true; m_captchaConfig = std::forward<CaptchaConfigT>(value); }
+    template<typename CaptchaConfigT = CaptchaConfig>
+    WebACL& WithCaptchaConfig(CaptchaConfigT&& value) { SetCaptchaConfig(std::forward<CaptchaConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -324,12 +312,12 @@ namespace Model
      * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
      * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
      */
-    inline const ChallengeConfig& GetChallengeConfig() const{ return m_challengeConfig; }
+    inline const ChallengeConfig& GetChallengeConfig() const { return m_challengeConfig; }
     inline bool ChallengeConfigHasBeenSet() const { return m_challengeConfigHasBeenSet; }
-    inline void SetChallengeConfig(const ChallengeConfig& value) { m_challengeConfigHasBeenSet = true; m_challengeConfig = value; }
-    inline void SetChallengeConfig(ChallengeConfig&& value) { m_challengeConfigHasBeenSet = true; m_challengeConfig = std::move(value); }
-    inline WebACL& WithChallengeConfig(const ChallengeConfig& value) { SetChallengeConfig(value); return *this;}
-    inline WebACL& WithChallengeConfig(ChallengeConfig&& value) { SetChallengeConfig(std::move(value)); return *this;}
+    template<typename ChallengeConfigT = ChallengeConfig>
+    void SetChallengeConfig(ChallengeConfigT&& value) { m_challengeConfigHasBeenSet = true; m_challengeConfig = std::forward<ChallengeConfigT>(value); }
+    template<typename ChallengeConfigT = ChallengeConfig>
+    WebACL& WithChallengeConfig(ChallengeConfigT&& value) { SetChallengeConfig(std::forward<ChallengeConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -342,15 +330,14 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTokenDomains() const{ return m_tokenDomains; }
+    inline const Aws::Vector<Aws::String>& GetTokenDomains() const { return m_tokenDomains; }
     inline bool TokenDomainsHasBeenSet() const { return m_tokenDomainsHasBeenSet; }
-    inline void SetTokenDomains(const Aws::Vector<Aws::String>& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = value; }
-    inline void SetTokenDomains(Aws::Vector<Aws::String>&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = std::move(value); }
-    inline WebACL& WithTokenDomains(const Aws::Vector<Aws::String>& value) { SetTokenDomains(value); return *this;}
-    inline WebACL& WithTokenDomains(Aws::Vector<Aws::String>&& value) { SetTokenDomains(std::move(value)); return *this;}
-    inline WebACL& AddTokenDomains(const Aws::String& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
-    inline WebACL& AddTokenDomains(Aws::String&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(std::move(value)); return *this; }
-    inline WebACL& AddTokenDomains(const char* value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
+    template<typename TokenDomainsT = Aws::Vector<Aws::String>>
+    void SetTokenDomains(TokenDomainsT&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = std::forward<TokenDomainsT>(value); }
+    template<typename TokenDomainsT = Aws::Vector<Aws::String>>
+    WebACL& WithTokenDomains(TokenDomainsT&& value) { SetTokenDomains(std::forward<TokenDomainsT>(value)); return *this;}
+    template<typename TokenDomainsT = Aws::String>
+    WebACL& AddTokenDomains(TokenDomainsT&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.emplace_back(std::forward<TokenDomainsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -366,12 +353,12 @@ namespace Model
      * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
      * is fixed at 8 KB (8,192 bytes).</p>
      */
-    inline const AssociationConfig& GetAssociationConfig() const{ return m_associationConfig; }
+    inline const AssociationConfig& GetAssociationConfig() const { return m_associationConfig; }
     inline bool AssociationConfigHasBeenSet() const { return m_associationConfigHasBeenSet; }
-    inline void SetAssociationConfig(const AssociationConfig& value) { m_associationConfigHasBeenSet = true; m_associationConfig = value; }
-    inline void SetAssociationConfig(AssociationConfig&& value) { m_associationConfigHasBeenSet = true; m_associationConfig = std::move(value); }
-    inline WebACL& WithAssociationConfig(const AssociationConfig& value) { SetAssociationConfig(value); return *this;}
-    inline WebACL& WithAssociationConfig(AssociationConfig&& value) { SetAssociationConfig(std::move(value)); return *this;}
+    template<typename AssociationConfigT = AssociationConfig>
+    void SetAssociationConfig(AssociationConfigT&& value) { m_associationConfigHasBeenSet = true; m_associationConfig = std::forward<AssociationConfigT>(value); }
+    template<typename AssociationConfigT = AssociationConfig>
+    WebACL& WithAssociationConfig(AssociationConfigT&& value) { SetAssociationConfig(std::forward<AssociationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -384,7 +371,7 @@ namespace Model
      * <code>PreProcessFirewallManagerRuleGroups</code>, and
      * <code>PostProcessFirewallManagerRuleGroups</code>. </p>
      */
-    inline bool GetRetrofittedByFirewallManager() const{ return m_retrofittedByFirewallManager; }
+    inline bool GetRetrofittedByFirewallManager() const { return m_retrofittedByFirewallManager; }
     inline bool RetrofittedByFirewallManagerHasBeenSet() const { return m_retrofittedByFirewallManagerHasBeenSet; }
     inline void SetRetrofittedByFirewallManager(bool value) { m_retrofittedByFirewallManagerHasBeenSet = true; m_retrofittedByFirewallManager = value; }
     inline WebACL& WithRetrofittedByFirewallManager(bool value) { SetRetrofittedByFirewallManager(value); return *this;}
@@ -415,7 +402,7 @@ namespace Model
     DataProtectionConfig m_dataProtectionConfig;
     bool m_dataProtectionConfigHasBeenSet = false;
 
-    long long m_capacity;
+    long long m_capacity{0};
     bool m_capacityHasBeenSet = false;
 
     Aws::Vector<FirewallManagerRuleGroup> m_preProcessFirewallManagerRuleGroups;
@@ -424,7 +411,7 @@ namespace Model
     Aws::Vector<FirewallManagerRuleGroup> m_postProcessFirewallManagerRuleGroups;
     bool m_postProcessFirewallManagerRuleGroupsHasBeenSet = false;
 
-    bool m_managedByFirewallManager;
+    bool m_managedByFirewallManager{false};
     bool m_managedByFirewallManagerHasBeenSet = false;
 
     Aws::String m_labelNamespace;
@@ -445,7 +432,7 @@ namespace Model
     AssociationConfig m_associationConfig;
     bool m_associationConfigHasBeenSet = false;
 
-    bool m_retrofittedByFirewallManager;
+    bool m_retrofittedByFirewallManager{false};
     bool m_retrofittedByFirewallManagerHasBeenSet = false;
   };
 

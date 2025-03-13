@@ -18,16 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-Session::Session() : 
-    m_nameHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_isPrimary(false),
-    m_isPrimaryHasBeenSet(false)
-{
-}
-
 Session::Session(JsonView jsonValue)
-  : Session()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Session& Session::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isPrimary"))
   {
     m_isPrimary = jsonValue.GetBool("isPrimary");
-
     m_isPrimaryHasBeenSet = true;
   }
-
   return *this;
 }
 

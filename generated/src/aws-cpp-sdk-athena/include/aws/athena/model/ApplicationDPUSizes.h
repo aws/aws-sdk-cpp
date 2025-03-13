@@ -33,7 +33,7 @@ namespace Model
   class ApplicationDPUSizes
   {
   public:
-    AWS_ATHENA_API ApplicationDPUSizes();
+    AWS_ATHENA_API ApplicationDPUSizes() = default;
     AWS_ATHENA_API ApplicationDPUSizes(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API ApplicationDPUSizes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
      * <p>The name of the supported application runtime (for example, <code>Athena
      * notebook version 1</code>).</p>
      */
-    inline const Aws::String& GetApplicationRuntimeId() const{ return m_applicationRuntimeId; }
+    inline const Aws::String& GetApplicationRuntimeId() const { return m_applicationRuntimeId; }
     inline bool ApplicationRuntimeIdHasBeenSet() const { return m_applicationRuntimeIdHasBeenSet; }
-    inline void SetApplicationRuntimeId(const Aws::String& value) { m_applicationRuntimeIdHasBeenSet = true; m_applicationRuntimeId = value; }
-    inline void SetApplicationRuntimeId(Aws::String&& value) { m_applicationRuntimeIdHasBeenSet = true; m_applicationRuntimeId = std::move(value); }
-    inline void SetApplicationRuntimeId(const char* value) { m_applicationRuntimeIdHasBeenSet = true; m_applicationRuntimeId.assign(value); }
-    inline ApplicationDPUSizes& WithApplicationRuntimeId(const Aws::String& value) { SetApplicationRuntimeId(value); return *this;}
-    inline ApplicationDPUSizes& WithApplicationRuntimeId(Aws::String&& value) { SetApplicationRuntimeId(std::move(value)); return *this;}
-    inline ApplicationDPUSizes& WithApplicationRuntimeId(const char* value) { SetApplicationRuntimeId(value); return *this;}
+    template<typename ApplicationRuntimeIdT = Aws::String>
+    void SetApplicationRuntimeId(ApplicationRuntimeIdT&& value) { m_applicationRuntimeIdHasBeenSet = true; m_applicationRuntimeId = std::forward<ApplicationRuntimeIdT>(value); }
+    template<typename ApplicationRuntimeIdT = Aws::String>
+    ApplicationDPUSizes& WithApplicationRuntimeId(ApplicationRuntimeIdT&& value) { SetApplicationRuntimeId(std::forward<ApplicationRuntimeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the supported DPU sizes that the application runtime supports.</p>
      */
-    inline const Aws::Vector<int>& GetSupportedDPUSizes() const{ return m_supportedDPUSizes; }
+    inline const Aws::Vector<int>& GetSupportedDPUSizes() const { return m_supportedDPUSizes; }
     inline bool SupportedDPUSizesHasBeenSet() const { return m_supportedDPUSizesHasBeenSet; }
-    inline void SetSupportedDPUSizes(const Aws::Vector<int>& value) { m_supportedDPUSizesHasBeenSet = true; m_supportedDPUSizes = value; }
-    inline void SetSupportedDPUSizes(Aws::Vector<int>&& value) { m_supportedDPUSizesHasBeenSet = true; m_supportedDPUSizes = std::move(value); }
-    inline ApplicationDPUSizes& WithSupportedDPUSizes(const Aws::Vector<int>& value) { SetSupportedDPUSizes(value); return *this;}
-    inline ApplicationDPUSizes& WithSupportedDPUSizes(Aws::Vector<int>&& value) { SetSupportedDPUSizes(std::move(value)); return *this;}
+    template<typename SupportedDPUSizesT = Aws::Vector<int>>
+    void SetSupportedDPUSizes(SupportedDPUSizesT&& value) { m_supportedDPUSizesHasBeenSet = true; m_supportedDPUSizes = std::forward<SupportedDPUSizesT>(value); }
+    template<typename SupportedDPUSizesT = Aws::Vector<int>>
+    ApplicationDPUSizes& WithSupportedDPUSizes(SupportedDPUSizesT&& value) { SetSupportedDPUSizes(std::forward<SupportedDPUSizesT>(value)); return *this;}
     inline ApplicationDPUSizes& AddSupportedDPUSizes(int value) { m_supportedDPUSizesHasBeenSet = true; m_supportedDPUSizes.push_back(value); return *this; }
     ///@}
   private:

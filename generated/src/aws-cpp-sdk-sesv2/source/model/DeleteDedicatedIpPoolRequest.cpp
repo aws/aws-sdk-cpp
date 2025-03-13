@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDedicatedIpPoolRequest::DeleteDedicatedIpPoolRequest() : 
-    m_poolNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDedicatedIpPoolRequest::SerializePayload() const
 {
   return {};

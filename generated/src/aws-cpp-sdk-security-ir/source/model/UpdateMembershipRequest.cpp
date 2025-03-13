@@ -12,14 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMembershipRequest::UpdateMembershipRequest() : 
-    m_membershipIdHasBeenSet(false),
-    m_membershipNameHasBeenSet(false),
-    m_incidentResponseTeamHasBeenSet(false),
-    m_optInFeaturesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

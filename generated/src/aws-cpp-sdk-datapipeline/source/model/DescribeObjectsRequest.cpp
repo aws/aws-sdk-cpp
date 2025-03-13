@@ -12,15 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeObjectsRequest::DescribeObjectsRequest() : 
-    m_pipelineIdHasBeenSet(false),
-    m_objectIdsHasBeenSet(false),
-    m_evaluateExpressions(false),
-    m_evaluateExpressionsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeObjectsRequest::SerializePayload() const
 {
   JsonValue payload;

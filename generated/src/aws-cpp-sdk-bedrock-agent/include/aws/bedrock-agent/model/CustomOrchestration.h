@@ -31,7 +31,7 @@ namespace Model
   class CustomOrchestration
   {
   public:
-    AWS_BEDROCKAGENT_API CustomOrchestration();
+    AWS_BEDROCKAGENT_API CustomOrchestration() = default;
     AWS_BEDROCKAGENT_API CustomOrchestration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API CustomOrchestration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p> The structure of the executor invoking the actions in custom orchestration.
      * </p>
      */
-    inline const OrchestrationExecutor& GetExecutor() const{ return m_executor; }
+    inline const OrchestrationExecutor& GetExecutor() const { return m_executor; }
     inline bool ExecutorHasBeenSet() const { return m_executorHasBeenSet; }
-    inline void SetExecutor(const OrchestrationExecutor& value) { m_executorHasBeenSet = true; m_executor = value; }
-    inline void SetExecutor(OrchestrationExecutor&& value) { m_executorHasBeenSet = true; m_executor = std::move(value); }
-    inline CustomOrchestration& WithExecutor(const OrchestrationExecutor& value) { SetExecutor(value); return *this;}
-    inline CustomOrchestration& WithExecutor(OrchestrationExecutor&& value) { SetExecutor(std::move(value)); return *this;}
+    template<typename ExecutorT = OrchestrationExecutor>
+    void SetExecutor(ExecutorT&& value) { m_executorHasBeenSet = true; m_executor = std::forward<ExecutorT>(value); }
+    template<typename ExecutorT = OrchestrationExecutor>
+    CustomOrchestration& WithExecutor(ExecutorT&& value) { SetExecutor(std::forward<ExecutorT>(value)); return *this;}
     ///@}
   private:
 

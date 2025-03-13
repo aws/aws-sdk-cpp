@@ -35,7 +35,7 @@ namespace Model
   class DailyVolume
   {
   public:
-    AWS_PINPOINTEMAIL_API DailyVolume();
+    AWS_PINPOINTEMAIL_API DailyVolume() = default;
     AWS_PINPOINTEMAIL_API DailyVolume(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTEMAIL_API DailyVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
+    inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-    inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-    inline DailyVolume& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
-    inline DailyVolume& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+    template<typename StartDateT = Aws::Utils::DateTime>
+    void SetStartDate(StartDateT&& value) { m_startDateHasBeenSet = true; m_startDate = std::forward<StartDateT>(value); }
+    template<typename StartDateT = Aws::Utils::DateTime>
+    DailyVolume& WithStartDate(StartDateT&& value) { SetStartDate(std::forward<StartDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>An object that contains inbox placement metrics for a specific day in the
      * analysis period.</p>
      */
-    inline const VolumeStatistics& GetVolumeStatistics() const{ return m_volumeStatistics; }
+    inline const VolumeStatistics& GetVolumeStatistics() const { return m_volumeStatistics; }
     inline bool VolumeStatisticsHasBeenSet() const { return m_volumeStatisticsHasBeenSet; }
-    inline void SetVolumeStatistics(const VolumeStatistics& value) { m_volumeStatisticsHasBeenSet = true; m_volumeStatistics = value; }
-    inline void SetVolumeStatistics(VolumeStatistics&& value) { m_volumeStatisticsHasBeenSet = true; m_volumeStatistics = std::move(value); }
-    inline DailyVolume& WithVolumeStatistics(const VolumeStatistics& value) { SetVolumeStatistics(value); return *this;}
-    inline DailyVolume& WithVolumeStatistics(VolumeStatistics&& value) { SetVolumeStatistics(std::move(value)); return *this;}
+    template<typename VolumeStatisticsT = VolumeStatistics>
+    void SetVolumeStatistics(VolumeStatisticsT&& value) { m_volumeStatisticsHasBeenSet = true; m_volumeStatistics = std::forward<VolumeStatisticsT>(value); }
+    template<typename VolumeStatisticsT = VolumeStatistics>
+    DailyVolume& WithVolumeStatistics(VolumeStatisticsT&& value) { SetVolumeStatistics(std::forward<VolumeStatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,18 +71,18 @@ namespace Model
      * <p>An object that contains inbox placement metrics for a specified day in the
      * analysis period, broken out by the recipient's email provider.</p>
      */
-    inline const Aws::Vector<DomainIspPlacement>& GetDomainIspPlacements() const{ return m_domainIspPlacements; }
+    inline const Aws::Vector<DomainIspPlacement>& GetDomainIspPlacements() const { return m_domainIspPlacements; }
     inline bool DomainIspPlacementsHasBeenSet() const { return m_domainIspPlacementsHasBeenSet; }
-    inline void SetDomainIspPlacements(const Aws::Vector<DomainIspPlacement>& value) { m_domainIspPlacementsHasBeenSet = true; m_domainIspPlacements = value; }
-    inline void SetDomainIspPlacements(Aws::Vector<DomainIspPlacement>&& value) { m_domainIspPlacementsHasBeenSet = true; m_domainIspPlacements = std::move(value); }
-    inline DailyVolume& WithDomainIspPlacements(const Aws::Vector<DomainIspPlacement>& value) { SetDomainIspPlacements(value); return *this;}
-    inline DailyVolume& WithDomainIspPlacements(Aws::Vector<DomainIspPlacement>&& value) { SetDomainIspPlacements(std::move(value)); return *this;}
-    inline DailyVolume& AddDomainIspPlacements(const DomainIspPlacement& value) { m_domainIspPlacementsHasBeenSet = true; m_domainIspPlacements.push_back(value); return *this; }
-    inline DailyVolume& AddDomainIspPlacements(DomainIspPlacement&& value) { m_domainIspPlacementsHasBeenSet = true; m_domainIspPlacements.push_back(std::move(value)); return *this; }
+    template<typename DomainIspPlacementsT = Aws::Vector<DomainIspPlacement>>
+    void SetDomainIspPlacements(DomainIspPlacementsT&& value) { m_domainIspPlacementsHasBeenSet = true; m_domainIspPlacements = std::forward<DomainIspPlacementsT>(value); }
+    template<typename DomainIspPlacementsT = Aws::Vector<DomainIspPlacement>>
+    DailyVolume& WithDomainIspPlacements(DomainIspPlacementsT&& value) { SetDomainIspPlacements(std::forward<DomainIspPlacementsT>(value)); return *this;}
+    template<typename DomainIspPlacementsT = DomainIspPlacement>
+    DailyVolume& AddDomainIspPlacements(DomainIspPlacementsT&& value) { m_domainIspPlacementsHasBeenSet = true; m_domainIspPlacements.emplace_back(std::forward<DomainIspPlacementsT>(value)); return *this; }
     ///@}
   private:
 
-    Aws::Utils::DateTime m_startDate;
+    Aws::Utils::DateTime m_startDate{};
     bool m_startDateHasBeenSet = false;
 
     VolumeStatistics m_volumeStatistics;

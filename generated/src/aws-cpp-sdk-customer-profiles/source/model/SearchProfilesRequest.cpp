@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SearchProfilesRequest::SearchProfilesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_additionalSearchKeysHasBeenSet(false),
-    m_logicalOperator(LogicalOperator::NOT_SET),
-    m_logicalOperatorHasBeenSet(false)
-{
-}
-
 Aws::String SearchProfilesRequest::SerializePayload() const
 {
   JsonValue payload;

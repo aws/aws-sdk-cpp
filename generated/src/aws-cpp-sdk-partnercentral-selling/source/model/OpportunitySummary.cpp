@@ -18,23 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-OpportunitySummary::OpportunitySummary() : 
-    m_arnHasBeenSet(false),
-    m_catalogHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_customerHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lifeCycleHasBeenSet(false),
-    m_opportunityType(OpportunityType::NOT_SET),
-    m_opportunityTypeHasBeenSet(false),
-    m_partnerOpportunityIdentifierHasBeenSet(false),
-    m_projectHasBeenSet(false)
-{
-}
-
 OpportunitySummary::OpportunitySummary(JsonView jsonValue)
-  : OpportunitySummary()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ OpportunitySummary& OpportunitySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
-
     m_catalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetString("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Customer"))
   {
     m_customer = jsonValue.GetObject("Customer");
-
     m_customerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifeCycle"))
   {
     m_lifeCycle = jsonValue.GetObject("LifeCycle");
-
     m_lifeCycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpportunityType"))
   {
     m_opportunityType = OpportunityTypeMapper::GetOpportunityTypeForName(jsonValue.GetString("OpportunityType"));
-
     m_opportunityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartnerOpportunityIdentifier"))
   {
     m_partnerOpportunityIdentifier = jsonValue.GetString("PartnerOpportunityIdentifier");
-
     m_partnerOpportunityIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Project"))
   {
     m_project = jsonValue.GetObject("Project");
-
     m_projectHasBeenSet = true;
   }
-
   return *this;
 }
 

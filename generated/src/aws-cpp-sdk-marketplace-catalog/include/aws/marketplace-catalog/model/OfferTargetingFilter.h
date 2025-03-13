@@ -33,7 +33,7 @@ namespace Model
   class OfferTargetingFilter
   {
   public:
-    AWS_MARKETPLACECATALOG_API OfferTargetingFilter();
+    AWS_MARKETPLACECATALOG_API OfferTargetingFilter() = default;
     AWS_MARKETPLACECATALOG_API OfferTargetingFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API OfferTargetingFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,13 @@ namespace Model
      * <p>Allows filtering on the <code>Targeting</code> of an offer with list
      * input.</p>
      */
-    inline const Aws::Vector<OfferTargetingString>& GetValueList() const{ return m_valueList; }
+    inline const Aws::Vector<OfferTargetingString>& GetValueList() const { return m_valueList; }
     inline bool ValueListHasBeenSet() const { return m_valueListHasBeenSet; }
-    inline void SetValueList(const Aws::Vector<OfferTargetingString>& value) { m_valueListHasBeenSet = true; m_valueList = value; }
-    inline void SetValueList(Aws::Vector<OfferTargetingString>&& value) { m_valueListHasBeenSet = true; m_valueList = std::move(value); }
-    inline OfferTargetingFilter& WithValueList(const Aws::Vector<OfferTargetingString>& value) { SetValueList(value); return *this;}
-    inline OfferTargetingFilter& WithValueList(Aws::Vector<OfferTargetingString>&& value) { SetValueList(std::move(value)); return *this;}
-    inline OfferTargetingFilter& AddValueList(const OfferTargetingString& value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
-    inline OfferTargetingFilter& AddValueList(OfferTargetingString&& value) { m_valueListHasBeenSet = true; m_valueList.push_back(std::move(value)); return *this; }
+    template<typename ValueListT = Aws::Vector<OfferTargetingString>>
+    void SetValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList = std::forward<ValueListT>(value); }
+    template<typename ValueListT = Aws::Vector<OfferTargetingString>>
+    OfferTargetingFilter& WithValueList(ValueListT&& value) { SetValueList(std::forward<ValueListT>(value)); return *this;}
+    inline OfferTargetingFilter& AddValueList(OfferTargetingString value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
     ///@}
   private:
 

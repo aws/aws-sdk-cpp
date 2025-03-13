@@ -24,7 +24,7 @@ namespace Model
   class DetachVolumeRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API DetachVolumeRequest();
+    AWS_STORAGEGATEWAY_API DetachVolumeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
      */
-    inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
+    inline const Aws::String& GetVolumeARN() const { return m_volumeARN; }
     inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
-    inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
-    inline void SetVolumeARN(const char* value) { m_volumeARNHasBeenSet = true; m_volumeARN.assign(value); }
-    inline DetachVolumeRequest& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
-    inline DetachVolumeRequest& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
-    inline DetachVolumeRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+    template<typename VolumeARNT = Aws::String>
+    void SetVolumeARN(VolumeARNT&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::forward<VolumeARNT>(value); }
+    template<typename VolumeARNT = Aws::String>
+    DetachVolumeRequest& WithVolumeARN(VolumeARNT&& value) { SetVolumeARN(std::forward<VolumeARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * connection from the target volume.</p> <p>Valid Values: <code>true</code> |
      * <code>false</code> </p>
      */
-    inline bool GetForceDetach() const{ return m_forceDetach; }
+    inline bool GetForceDetach() const { return m_forceDetach; }
     inline bool ForceDetachHasBeenSet() const { return m_forceDetachHasBeenSet; }
     inline void SetForceDetach(bool value) { m_forceDetachHasBeenSet = true; m_forceDetach = value; }
     inline DetachVolumeRequest& WithForceDetach(bool value) { SetForceDetach(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_volumeARN;
     bool m_volumeARNHasBeenSet = false;
 
-    bool m_forceDetach;
+    bool m_forceDetach{false};
     bool m_forceDetachHasBeenSet = false;
   };
 

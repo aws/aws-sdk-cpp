@@ -10,26 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyIpamPoolRequest::ModifyIpamPoolRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipamPoolIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_autoImport(false),
-    m_autoImportHasBeenSet(false),
-    m_allocationMinNetmaskLength(0),
-    m_allocationMinNetmaskLengthHasBeenSet(false),
-    m_allocationMaxNetmaskLength(0),
-    m_allocationMaxNetmaskLengthHasBeenSet(false),
-    m_allocationDefaultNetmaskLength(0),
-    m_allocationDefaultNetmaskLengthHasBeenSet(false),
-    m_clearAllocationDefaultNetmaskLength(false),
-    m_clearAllocationDefaultNetmaskLengthHasBeenSet(false),
-    m_addAllocationResourceTagsHasBeenSet(false),
-    m_removeAllocationResourceTagsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyIpamPoolRequest::SerializePayload() const
 {
   Aws::StringStream ss;

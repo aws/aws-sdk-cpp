@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-IntentClassificationTestResultItemCounts::IntentClassificationTestResultItemCounts() : 
-    m_totalResultCount(0),
-    m_totalResultCountHasBeenSet(false),
-    m_speechTranscriptionResultCountsHasBeenSet(false),
-    m_intentMatchResultCountsHasBeenSet(false)
-{
-}
-
 IntentClassificationTestResultItemCounts::IntentClassificationTestResultItemCounts(JsonView jsonValue)
-  : IntentClassificationTestResultItemCounts()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ IntentClassificationTestResultItemCounts& IntentClassificationTestResultItemCoun
   if(jsonValue.ValueExists("totalResultCount"))
   {
     m_totalResultCount = jsonValue.GetInteger("totalResultCount");
-
     m_totalResultCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("speechTranscriptionResultCounts"))
   {
     Aws::Map<Aws::String, JsonView> speechTranscriptionResultCountsJsonMap = jsonValue.GetObject("speechTranscriptionResultCounts").GetAllObjects();
@@ -50,7 +39,6 @@ IntentClassificationTestResultItemCounts& IntentClassificationTestResultItemCoun
     }
     m_speechTranscriptionResultCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentMatchResultCounts"))
   {
     Aws::Map<Aws::String, JsonView> intentMatchResultCountsJsonMap = jsonValue.GetObject("intentMatchResultCounts").GetAllObjects();
@@ -60,7 +48,6 @@ IntentClassificationTestResultItemCounts& IntentClassificationTestResultItemCoun
     }
     m_intentMatchResultCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

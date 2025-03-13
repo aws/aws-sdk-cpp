@@ -18,14 +18,7 @@ namespace DocDBElastic
 namespace Model
 {
 
-ResourcePendingMaintenanceAction::ResourcePendingMaintenanceAction() : 
-    m_pendingMaintenanceActionDetailsHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 ResourcePendingMaintenanceAction::ResourcePendingMaintenanceAction(JsonView jsonValue)
-  : ResourcePendingMaintenanceAction()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ResourcePendingMaintenanceAction& ResourcePendingMaintenanceAction::operator =(J
     }
     m_pendingMaintenanceActionDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

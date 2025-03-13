@@ -33,7 +33,7 @@ namespace Model
   class VgwTelemetry
   {
   public:
-    AWS_EC2_API VgwTelemetry();
+    AWS_EC2_API VgwTelemetry() = default;
     AWS_EC2_API VgwTelemetry(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VgwTelemetry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>The number of accepted routes.</p>
      */
-    inline int GetAcceptedRouteCount() const{ return m_acceptedRouteCount; }
+    inline int GetAcceptedRouteCount() const { return m_acceptedRouteCount; }
     inline bool AcceptedRouteCountHasBeenSet() const { return m_acceptedRouteCountHasBeenSet; }
     inline void SetAcceptedRouteCount(int value) { m_acceptedRouteCountHasBeenSet = true; m_acceptedRouteCount = value; }
     inline VgwTelemetry& WithAcceptedRouteCount(int value) { SetAcceptedRouteCount(value); return *this;}
@@ -56,12 +56,12 @@ namespace Model
      * <p>The date and time of the last change in status. This field is updated when
      * changes in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastStatusChange() const{ return m_lastStatusChange; }
+    inline const Aws::Utils::DateTime& GetLastStatusChange() const { return m_lastStatusChange; }
     inline bool LastStatusChangeHasBeenSet() const { return m_lastStatusChangeHasBeenSet; }
-    inline void SetLastStatusChange(const Aws::Utils::DateTime& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
-    inline void SetLastStatusChange(Aws::Utils::DateTime&& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = std::move(value); }
-    inline VgwTelemetry& WithLastStatusChange(const Aws::Utils::DateTime& value) { SetLastStatusChange(value); return *this;}
-    inline VgwTelemetry& WithLastStatusChange(Aws::Utils::DateTime&& value) { SetLastStatusChange(std::move(value)); return *this;}
+    template<typename LastStatusChangeT = Aws::Utils::DateTime>
+    void SetLastStatusChange(LastStatusChangeT&& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = std::forward<LastStatusChangeT>(value); }
+    template<typename LastStatusChangeT = Aws::Utils::DateTime>
+    VgwTelemetry& WithLastStatusChange(LastStatusChangeT&& value) { SetLastStatusChange(std::forward<LastStatusChangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,67 +69,59 @@ namespace Model
      * <p>The Internet-routable IP address of the virtual private gateway's outside
      * interface.</p>
      */
-    inline const Aws::String& GetOutsideIpAddress() const{ return m_outsideIpAddress; }
+    inline const Aws::String& GetOutsideIpAddress() const { return m_outsideIpAddress; }
     inline bool OutsideIpAddressHasBeenSet() const { return m_outsideIpAddressHasBeenSet; }
-    inline void SetOutsideIpAddress(const Aws::String& value) { m_outsideIpAddressHasBeenSet = true; m_outsideIpAddress = value; }
-    inline void SetOutsideIpAddress(Aws::String&& value) { m_outsideIpAddressHasBeenSet = true; m_outsideIpAddress = std::move(value); }
-    inline void SetOutsideIpAddress(const char* value) { m_outsideIpAddressHasBeenSet = true; m_outsideIpAddress.assign(value); }
-    inline VgwTelemetry& WithOutsideIpAddress(const Aws::String& value) { SetOutsideIpAddress(value); return *this;}
-    inline VgwTelemetry& WithOutsideIpAddress(Aws::String&& value) { SetOutsideIpAddress(std::move(value)); return *this;}
-    inline VgwTelemetry& WithOutsideIpAddress(const char* value) { SetOutsideIpAddress(value); return *this;}
+    template<typename OutsideIpAddressT = Aws::String>
+    void SetOutsideIpAddress(OutsideIpAddressT&& value) { m_outsideIpAddressHasBeenSet = true; m_outsideIpAddress = std::forward<OutsideIpAddressT>(value); }
+    template<typename OutsideIpAddressT = Aws::String>
+    VgwTelemetry& WithOutsideIpAddress(OutsideIpAddressT&& value) { SetOutsideIpAddress(std::forward<OutsideIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the VPN tunnel.</p>
      */
-    inline const TelemetryStatus& GetStatus() const{ return m_status; }
+    inline TelemetryStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TelemetryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TelemetryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline VgwTelemetry& WithStatus(const TelemetryStatus& value) { SetStatus(value); return *this;}
-    inline VgwTelemetry& WithStatus(TelemetryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TelemetryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline VgwTelemetry& WithStatus(TelemetryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If an error occurs, a description of the error.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline VgwTelemetry& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline VgwTelemetry& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline VgwTelemetry& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    VgwTelemetry& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the VPN tunnel endpoint certificate.</p>
      */
-    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
-    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
-    inline VgwTelemetry& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-    inline VgwTelemetry& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-    inline VgwTelemetry& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    VgwTelemetry& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
   private:
 
-    int m_acceptedRouteCount;
+    int m_acceptedRouteCount{0};
     bool m_acceptedRouteCountHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastStatusChange;
+    Aws::Utils::DateTime m_lastStatusChange{};
     bool m_lastStatusChangeHasBeenSet = false;
 
     Aws::String m_outsideIpAddress;
     bool m_outsideIpAddressHasBeenSet = false;
 
-    TelemetryStatus m_status;
+    TelemetryStatus m_status{TelemetryStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

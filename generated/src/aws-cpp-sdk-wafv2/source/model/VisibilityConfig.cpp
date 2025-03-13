@@ -18,17 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-VisibilityConfig::VisibilityConfig() : 
-    m_sampledRequestsEnabled(false),
-    m_sampledRequestsEnabledHasBeenSet(false),
-    m_cloudWatchMetricsEnabled(false),
-    m_cloudWatchMetricsEnabledHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
-{
-}
-
 VisibilityConfig::VisibilityConfig(JsonView jsonValue)
-  : VisibilityConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ VisibilityConfig& VisibilityConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SampledRequestsEnabled"))
   {
     m_sampledRequestsEnabled = jsonValue.GetBool("SampledRequestsEnabled");
-
     m_sampledRequestsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchMetricsEnabled"))
   {
     m_cloudWatchMetricsEnabled = jsonValue.GetBool("CloudWatchMetricsEnabled");
-
     m_cloudWatchMetricsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   return *this;
 }
 

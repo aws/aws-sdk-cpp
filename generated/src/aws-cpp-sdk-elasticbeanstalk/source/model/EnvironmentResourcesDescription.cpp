@@ -20,13 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-EnvironmentResourcesDescription::EnvironmentResourcesDescription() : 
-    m_loadBalancerHasBeenSet(false)
-{
-}
-
 EnvironmentResourcesDescription::EnvironmentResourcesDescription(const XmlNode& xmlNode)
-  : EnvironmentResourcesDescription()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ EnvironmentResourcesDescription& EnvironmentResourcesDescription::operator =(con
     {
       m_loadBalancer = loadBalancerNode;
       m_loadBalancerHasBeenSet = true;
+       m_loadBalancerHasBeenSet = true;
     }
   }
 

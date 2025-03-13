@@ -18,20 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-MediaInsightsPipelineConfiguration::MediaInsightsPipelineConfiguration() : 
-    m_mediaInsightsPipelineConfigurationNameHasBeenSet(false),
-    m_mediaInsightsPipelineConfigurationArnHasBeenSet(false),
-    m_resourceAccessRoleArnHasBeenSet(false),
-    m_realTimeAlertConfigurationHasBeenSet(false),
-    m_elementsHasBeenSet(false),
-    m_mediaInsightsPipelineConfigurationIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
-{
-}
-
 MediaInsightsPipelineConfiguration::MediaInsightsPipelineConfiguration(JsonView jsonValue)
-  : MediaInsightsPipelineConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ MediaInsightsPipelineConfiguration& MediaInsightsPipelineConfiguration::operator
   if(jsonValue.ValueExists("MediaInsightsPipelineConfigurationName"))
   {
     m_mediaInsightsPipelineConfigurationName = jsonValue.GetString("MediaInsightsPipelineConfigurationName");
-
     m_mediaInsightsPipelineConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaInsightsPipelineConfigurationArn"))
   {
     m_mediaInsightsPipelineConfigurationArn = jsonValue.GetString("MediaInsightsPipelineConfigurationArn");
-
     m_mediaInsightsPipelineConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceAccessRoleArn"))
   {
     m_resourceAccessRoleArn = jsonValue.GetString("ResourceAccessRoleArn");
-
     m_resourceAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RealTimeAlertConfiguration"))
   {
     m_realTimeAlertConfiguration = jsonValue.GetObject("RealTimeAlertConfiguration");
-
     m_realTimeAlertConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Elements"))
   {
     Aws::Utils::Array<JsonView> elementsJsonList = jsonValue.GetArray("Elements");
@@ -75,28 +54,21 @@ MediaInsightsPipelineConfiguration& MediaInsightsPipelineConfiguration::operator
     }
     m_elementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaInsightsPipelineConfigurationId"))
   {
     m_mediaInsightsPipelineConfigurationId = jsonValue.GetString("MediaInsightsPipelineConfigurationId");
-
     m_mediaInsightsPipelineConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

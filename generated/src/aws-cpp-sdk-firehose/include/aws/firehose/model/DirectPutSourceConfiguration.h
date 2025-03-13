@@ -31,7 +31,7 @@ namespace Model
   class DirectPutSourceConfiguration
   {
   public:
-    AWS_FIREHOSE_API DirectPutSourceConfiguration();
+    AWS_FIREHOSE_API DirectPutSourceConfiguration() = default;
     AWS_FIREHOSE_API DirectPutSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API DirectPutSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * href="https://support.console.aws.amazon.com/support/home#/case/create%3FissueType=service-limit-increase%26limitType=kinesis-firehose-limits">Firehose
      * Limits form</a> to request a throughput limit increase. </p>
      */
-    inline int GetThroughputHintInMBs() const{ return m_throughputHintInMBs; }
+    inline int GetThroughputHintInMBs() const { return m_throughputHintInMBs; }
     inline bool ThroughputHintInMBsHasBeenSet() const { return m_throughputHintInMBsHasBeenSet; }
     inline void SetThroughputHintInMBs(int value) { m_throughputHintInMBsHasBeenSet = true; m_throughputHintInMBs = value; }
     inline DirectPutSourceConfiguration& WithThroughputHintInMBs(int value) { SetThroughputHintInMBs(value); return *this;}
     ///@}
   private:
 
-    int m_throughputHintInMBs;
+    int m_throughputHintInMBs{0};
     bool m_throughputHintInMBsHasBeenSet = false;
   };
 

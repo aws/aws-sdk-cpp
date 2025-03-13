@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateReservedInstancesListingRequest::CreateReservedInstancesListingRequest() : 
-    m_reservedInstancesIdHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_priceSchedulesHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateReservedInstancesListingRequest::SerializePayload() const
 {
   Aws::StringStream ss;

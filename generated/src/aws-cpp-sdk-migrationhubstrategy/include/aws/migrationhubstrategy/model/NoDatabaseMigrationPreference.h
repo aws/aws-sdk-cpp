@@ -33,7 +33,7 @@ namespace Model
   class NoDatabaseMigrationPreference
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NoDatabaseMigrationPreference();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NoDatabaseMigrationPreference() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NoDatabaseMigrationPreference(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NoDatabaseMigrationPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,13 @@ namespace Model
      * <p> The target database engine for database migration preference that you
      * specify. </p>
      */
-    inline const Aws::Vector<TargetDatabaseEngine>& GetTargetDatabaseEngine() const{ return m_targetDatabaseEngine; }
+    inline const Aws::Vector<TargetDatabaseEngine>& GetTargetDatabaseEngine() const { return m_targetDatabaseEngine; }
     inline bool TargetDatabaseEngineHasBeenSet() const { return m_targetDatabaseEngineHasBeenSet; }
-    inline void SetTargetDatabaseEngine(const Aws::Vector<TargetDatabaseEngine>& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine = value; }
-    inline void SetTargetDatabaseEngine(Aws::Vector<TargetDatabaseEngine>&& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine = std::move(value); }
-    inline NoDatabaseMigrationPreference& WithTargetDatabaseEngine(const Aws::Vector<TargetDatabaseEngine>& value) { SetTargetDatabaseEngine(value); return *this;}
-    inline NoDatabaseMigrationPreference& WithTargetDatabaseEngine(Aws::Vector<TargetDatabaseEngine>&& value) { SetTargetDatabaseEngine(std::move(value)); return *this;}
-    inline NoDatabaseMigrationPreference& AddTargetDatabaseEngine(const TargetDatabaseEngine& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine.push_back(value); return *this; }
-    inline NoDatabaseMigrationPreference& AddTargetDatabaseEngine(TargetDatabaseEngine&& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine.push_back(std::move(value)); return *this; }
+    template<typename TargetDatabaseEngineT = Aws::Vector<TargetDatabaseEngine>>
+    void SetTargetDatabaseEngine(TargetDatabaseEngineT&& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine = std::forward<TargetDatabaseEngineT>(value); }
+    template<typename TargetDatabaseEngineT = Aws::Vector<TargetDatabaseEngine>>
+    NoDatabaseMigrationPreference& WithTargetDatabaseEngine(TargetDatabaseEngineT&& value) { SetTargetDatabaseEngine(std::forward<TargetDatabaseEngineT>(value)); return *this;}
+    inline NoDatabaseMigrationPreference& AddTargetDatabaseEngine(TargetDatabaseEngine value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine.push_back(value); return *this; }
     ///@}
   private:
 

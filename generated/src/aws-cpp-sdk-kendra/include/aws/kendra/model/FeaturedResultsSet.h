@@ -37,7 +37,7 @@ namespace Model
   class FeaturedResultsSet
   {
   public:
-    AWS_KENDRA_API FeaturedResultsSet();
+    AWS_KENDRA_API FeaturedResultsSet() = default;
     AWS_KENDRA_API FeaturedResultsSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API FeaturedResultsSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,42 +47,36 @@ namespace Model
     /**
      * <p>The identifier of the set of featured results.</p>
      */
-    inline const Aws::String& GetFeaturedResultsSetId() const{ return m_featuredResultsSetId; }
+    inline const Aws::String& GetFeaturedResultsSetId() const { return m_featuredResultsSetId; }
     inline bool FeaturedResultsSetIdHasBeenSet() const { return m_featuredResultsSetIdHasBeenSet; }
-    inline void SetFeaturedResultsSetId(const Aws::String& value) { m_featuredResultsSetIdHasBeenSet = true; m_featuredResultsSetId = value; }
-    inline void SetFeaturedResultsSetId(Aws::String&& value) { m_featuredResultsSetIdHasBeenSet = true; m_featuredResultsSetId = std::move(value); }
-    inline void SetFeaturedResultsSetId(const char* value) { m_featuredResultsSetIdHasBeenSet = true; m_featuredResultsSetId.assign(value); }
-    inline FeaturedResultsSet& WithFeaturedResultsSetId(const Aws::String& value) { SetFeaturedResultsSetId(value); return *this;}
-    inline FeaturedResultsSet& WithFeaturedResultsSetId(Aws::String&& value) { SetFeaturedResultsSetId(std::move(value)); return *this;}
-    inline FeaturedResultsSet& WithFeaturedResultsSetId(const char* value) { SetFeaturedResultsSetId(value); return *this;}
+    template<typename FeaturedResultsSetIdT = Aws::String>
+    void SetFeaturedResultsSetId(FeaturedResultsSetIdT&& value) { m_featuredResultsSetIdHasBeenSet = true; m_featuredResultsSetId = std::forward<FeaturedResultsSetIdT>(value); }
+    template<typename FeaturedResultsSetIdT = Aws::String>
+    FeaturedResultsSet& WithFeaturedResultsSetId(FeaturedResultsSetIdT&& value) { SetFeaturedResultsSetId(std::forward<FeaturedResultsSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for the set of featured results.</p>
      */
-    inline const Aws::String& GetFeaturedResultsSetName() const{ return m_featuredResultsSetName; }
+    inline const Aws::String& GetFeaturedResultsSetName() const { return m_featuredResultsSetName; }
     inline bool FeaturedResultsSetNameHasBeenSet() const { return m_featuredResultsSetNameHasBeenSet; }
-    inline void SetFeaturedResultsSetName(const Aws::String& value) { m_featuredResultsSetNameHasBeenSet = true; m_featuredResultsSetName = value; }
-    inline void SetFeaturedResultsSetName(Aws::String&& value) { m_featuredResultsSetNameHasBeenSet = true; m_featuredResultsSetName = std::move(value); }
-    inline void SetFeaturedResultsSetName(const char* value) { m_featuredResultsSetNameHasBeenSet = true; m_featuredResultsSetName.assign(value); }
-    inline FeaturedResultsSet& WithFeaturedResultsSetName(const Aws::String& value) { SetFeaturedResultsSetName(value); return *this;}
-    inline FeaturedResultsSet& WithFeaturedResultsSetName(Aws::String&& value) { SetFeaturedResultsSetName(std::move(value)); return *this;}
-    inline FeaturedResultsSet& WithFeaturedResultsSetName(const char* value) { SetFeaturedResultsSetName(value); return *this;}
+    template<typename FeaturedResultsSetNameT = Aws::String>
+    void SetFeaturedResultsSetName(FeaturedResultsSetNameT&& value) { m_featuredResultsSetNameHasBeenSet = true; m_featuredResultsSetName = std::forward<FeaturedResultsSetNameT>(value); }
+    template<typename FeaturedResultsSetNameT = Aws::String>
+    FeaturedResultsSet& WithFeaturedResultsSetName(FeaturedResultsSetNameT&& value) { SetFeaturedResultsSetName(std::forward<FeaturedResultsSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the set of featured results.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline FeaturedResultsSet& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline FeaturedResultsSet& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline FeaturedResultsSet& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    FeaturedResultsSet& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +90,10 @@ namespace Model
      * results set for each index, whether the status is <code>ACTIVE</code> or
      * <code>INACTIVE</code>.</p>
      */
-    inline const FeaturedResultsSetStatus& GetStatus() const{ return m_status; }
+    inline FeaturedResultsSetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FeaturedResultsSetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FeaturedResultsSetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FeaturedResultsSet& WithStatus(const FeaturedResultsSetStatus& value) { SetStatus(value); return *this;}
-    inline FeaturedResultsSet& WithStatus(FeaturedResultsSetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FeaturedResultsSetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FeaturedResultsSet& WithStatus(FeaturedResultsSetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -114,15 +106,14 @@ namespace Model
      * render the featured results. Featured results are designed for specific queries,
      * rather than queries that are too broad in scope.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetQueryTexts() const{ return m_queryTexts; }
+    inline const Aws::Vector<Aws::String>& GetQueryTexts() const { return m_queryTexts; }
     inline bool QueryTextsHasBeenSet() const { return m_queryTextsHasBeenSet; }
-    inline void SetQueryTexts(const Aws::Vector<Aws::String>& value) { m_queryTextsHasBeenSet = true; m_queryTexts = value; }
-    inline void SetQueryTexts(Aws::Vector<Aws::String>&& value) { m_queryTextsHasBeenSet = true; m_queryTexts = std::move(value); }
-    inline FeaturedResultsSet& WithQueryTexts(const Aws::Vector<Aws::String>& value) { SetQueryTexts(value); return *this;}
-    inline FeaturedResultsSet& WithQueryTexts(Aws::Vector<Aws::String>&& value) { SetQueryTexts(std::move(value)); return *this;}
-    inline FeaturedResultsSet& AddQueryTexts(const Aws::String& value) { m_queryTextsHasBeenSet = true; m_queryTexts.push_back(value); return *this; }
-    inline FeaturedResultsSet& AddQueryTexts(Aws::String&& value) { m_queryTextsHasBeenSet = true; m_queryTexts.push_back(std::move(value)); return *this; }
-    inline FeaturedResultsSet& AddQueryTexts(const char* value) { m_queryTextsHasBeenSet = true; m_queryTexts.push_back(value); return *this; }
+    template<typename QueryTextsT = Aws::Vector<Aws::String>>
+    void SetQueryTexts(QueryTextsT&& value) { m_queryTextsHasBeenSet = true; m_queryTexts = std::forward<QueryTextsT>(value); }
+    template<typename QueryTextsT = Aws::Vector<Aws::String>>
+    FeaturedResultsSet& WithQueryTexts(QueryTextsT&& value) { SetQueryTexts(std::forward<QueryTextsT>(value)); return *this;}
+    template<typename QueryTextsT = Aws::String>
+    FeaturedResultsSet& AddQueryTexts(QueryTextsT&& value) { m_queryTextsHasBeenSet = true; m_queryTexts.emplace_back(std::forward<QueryTextsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -141,21 +132,21 @@ namespace Model
      * will not render the featured results. Featured results are designed for specific
      * queries, rather than queries that are too broad in scope.</p>
      */
-    inline const Aws::Vector<FeaturedDocument>& GetFeaturedDocuments() const{ return m_featuredDocuments; }
+    inline const Aws::Vector<FeaturedDocument>& GetFeaturedDocuments() const { return m_featuredDocuments; }
     inline bool FeaturedDocumentsHasBeenSet() const { return m_featuredDocumentsHasBeenSet; }
-    inline void SetFeaturedDocuments(const Aws::Vector<FeaturedDocument>& value) { m_featuredDocumentsHasBeenSet = true; m_featuredDocuments = value; }
-    inline void SetFeaturedDocuments(Aws::Vector<FeaturedDocument>&& value) { m_featuredDocumentsHasBeenSet = true; m_featuredDocuments = std::move(value); }
-    inline FeaturedResultsSet& WithFeaturedDocuments(const Aws::Vector<FeaturedDocument>& value) { SetFeaturedDocuments(value); return *this;}
-    inline FeaturedResultsSet& WithFeaturedDocuments(Aws::Vector<FeaturedDocument>&& value) { SetFeaturedDocuments(std::move(value)); return *this;}
-    inline FeaturedResultsSet& AddFeaturedDocuments(const FeaturedDocument& value) { m_featuredDocumentsHasBeenSet = true; m_featuredDocuments.push_back(value); return *this; }
-    inline FeaturedResultsSet& AddFeaturedDocuments(FeaturedDocument&& value) { m_featuredDocumentsHasBeenSet = true; m_featuredDocuments.push_back(std::move(value)); return *this; }
+    template<typename FeaturedDocumentsT = Aws::Vector<FeaturedDocument>>
+    void SetFeaturedDocuments(FeaturedDocumentsT&& value) { m_featuredDocumentsHasBeenSet = true; m_featuredDocuments = std::forward<FeaturedDocumentsT>(value); }
+    template<typename FeaturedDocumentsT = Aws::Vector<FeaturedDocument>>
+    FeaturedResultsSet& WithFeaturedDocuments(FeaturedDocumentsT&& value) { SetFeaturedDocuments(std::forward<FeaturedDocumentsT>(value)); return *this;}
+    template<typename FeaturedDocumentsT = FeaturedDocument>
+    FeaturedResultsSet& AddFeaturedDocuments(FeaturedDocumentsT&& value) { m_featuredDocumentsHasBeenSet = true; m_featuredDocuments.emplace_back(std::forward<FeaturedDocumentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp when the set of featured results was last updated.</p>
      */
-    inline long long GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
+    inline long long GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
     inline bool LastUpdatedTimestampHasBeenSet() const { return m_lastUpdatedTimestampHasBeenSet; }
     inline void SetLastUpdatedTimestamp(long long value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
     inline FeaturedResultsSet& WithLastUpdatedTimestamp(long long value) { SetLastUpdatedTimestamp(value); return *this;}
@@ -165,7 +156,7 @@ namespace Model
     /**
      * <p>The Unix timestamp when the set of featured results was created.</p>
      */
-    inline long long GetCreationTimestamp() const{ return m_creationTimestamp; }
+    inline long long GetCreationTimestamp() const { return m_creationTimestamp; }
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
     inline void SetCreationTimestamp(long long value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
     inline FeaturedResultsSet& WithCreationTimestamp(long long value) { SetCreationTimestamp(value); return *this;}
@@ -181,7 +172,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    FeaturedResultsSetStatus m_status;
+    FeaturedResultsSetStatus m_status{FeaturedResultsSetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_queryTexts;
@@ -190,10 +181,10 @@ namespace Model
     Aws::Vector<FeaturedDocument> m_featuredDocuments;
     bool m_featuredDocumentsHasBeenSet = false;
 
-    long long m_lastUpdatedTimestamp;
+    long long m_lastUpdatedTimestamp{0};
     bool m_lastUpdatedTimestampHasBeenSet = false;
 
-    long long m_creationTimestamp;
+    long long m_creationTimestamp{0};
     bool m_creationTimestampHasBeenSet = false;
   };
 

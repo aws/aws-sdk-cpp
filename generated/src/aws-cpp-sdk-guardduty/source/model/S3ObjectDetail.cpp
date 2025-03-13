@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-S3ObjectDetail::S3ObjectDetail() : 
-    m_objectArnHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_hashHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 S3ObjectDetail::S3ObjectDetail(JsonView jsonValue)
-  : S3ObjectDetail()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ S3ObjectDetail& S3ObjectDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("objectArn"))
   {
     m_objectArn = jsonValue.GetString("objectArn");
-
     m_objectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eTag"))
   {
     m_eTag = jsonValue.GetString("eTag");
-
     m_eTagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hash"))
   {
     m_hash = jsonValue.GetString("hash");
-
     m_hashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionId"))
   {
     m_versionId = jsonValue.GetString("versionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

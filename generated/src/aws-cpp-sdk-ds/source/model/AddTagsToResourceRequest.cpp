@@ -12,12 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddTagsToResourceRequest::AddTagsToResourceRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String AddTagsToResourceRequest::SerializePayload() const
 {
   JsonValue payload;

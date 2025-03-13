@@ -34,7 +34,7 @@ namespace Model
   class FindingSource
   {
   public:
-    AWS_ACCESSANALYZER_API FindingSource();
+    AWS_ACCESSANALYZER_API FindingSource() = default;
     AWS_ACCESSANALYZER_API FindingSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API FindingSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>Indicates the type of access that generated the finding.</p>
      */
-    inline const FindingSourceType& GetType() const{ return m_type; }
+    inline FindingSourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FindingSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FindingSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FindingSource& WithType(const FindingSourceType& value) { SetType(value); return *this;}
-    inline FindingSource& WithType(FindingSourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FindingSourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FindingSource& WithType(FindingSourceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,16 +55,16 @@ namespace Model
      * <p>Includes details about how the access that generated the finding is granted.
      * This is populated for Amazon S3 bucket findings.</p>
      */
-    inline const FindingSourceDetail& GetDetail() const{ return m_detail; }
+    inline const FindingSourceDetail& GetDetail() const { return m_detail; }
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
-    inline void SetDetail(const FindingSourceDetail& value) { m_detailHasBeenSet = true; m_detail = value; }
-    inline void SetDetail(FindingSourceDetail&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
-    inline FindingSource& WithDetail(const FindingSourceDetail& value) { SetDetail(value); return *this;}
-    inline FindingSource& WithDetail(FindingSourceDetail&& value) { SetDetail(std::move(value)); return *this;}
+    template<typename DetailT = FindingSourceDetail>
+    void SetDetail(DetailT&& value) { m_detailHasBeenSet = true; m_detail = std::forward<DetailT>(value); }
+    template<typename DetailT = FindingSourceDetail>
+    FindingSource& WithDetail(DetailT&& value) { SetDetail(std::forward<DetailT>(value)); return *this;}
     ///@}
   private:
 
-    FindingSourceType m_type;
+    FindingSourceType m_type{FindingSourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     FindingSourceDetail m_detail;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetScalingPlanResourceForecastDataResult::GetScalingPlanResourceForecastDataResult()
-{
-}
-
 GetScalingPlanResourceForecastDataResult::GetScalingPlanResourceForecastDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetScalingPlanResourceForecastDataResult& GetScalingPlanResourceForecastDataResu
     {
       m_datapoints.push_back(datapointsJsonList[datapointsIndex].AsObject());
     }
+    m_datapointsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

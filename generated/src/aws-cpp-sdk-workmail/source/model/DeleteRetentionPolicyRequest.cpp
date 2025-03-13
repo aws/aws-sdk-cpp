@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRetentionPolicyRequest::DeleteRetentionPolicyRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRetentionPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

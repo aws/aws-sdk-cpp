@@ -32,7 +32,7 @@ namespace Model
   class SSMLMessageType
   {
   public:
-    AWS_PINPOINTSMSVOICE_API SSMLMessageType();
+    AWS_PINPOINTSMSVOICE_API SSMLMessageType() = default;
     AWS_PINPOINTSMSVOICE_API SSMLMessageType(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICE_API SSMLMessageType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * The language to use when delivering the message. For a complete list of
      * supported languages, see the Amazon Polly Developer Guide.
      */
-    inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+    inline const Aws::String& GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
-    inline SSMLMessageType& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
-    inline SSMLMessageType& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
-    inline SSMLMessageType& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
+    template<typename LanguageCodeT = Aws::String>
+    void SetLanguageCode(LanguageCodeT&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::forward<LanguageCodeT>(value); }
+    template<typename LanguageCodeT = Aws::String>
+    SSMLMessageType& WithLanguageCode(LanguageCodeT&& value) { SetLanguageCode(std::forward<LanguageCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The SSML-formatted text to deliver to the recipient.
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline SSMLMessageType& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline SSMLMessageType& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline SSMLMessageType& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    SSMLMessageType& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * The name of the voice that you want to use to deliver the message. For a
      * complete list of supported voices, see the Amazon Polly Developer Guide.
      */
-    inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
+    inline const Aws::String& GetVoiceId() const { return m_voiceId; }
     inline bool VoiceIdHasBeenSet() const { return m_voiceIdHasBeenSet; }
-    inline void SetVoiceId(const Aws::String& value) { m_voiceIdHasBeenSet = true; m_voiceId = value; }
-    inline void SetVoiceId(Aws::String&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::move(value); }
-    inline void SetVoiceId(const char* value) { m_voiceIdHasBeenSet = true; m_voiceId.assign(value); }
-    inline SSMLMessageType& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
-    inline SSMLMessageType& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
-    inline SSMLMessageType& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
+    template<typename VoiceIdT = Aws::String>
+    void SetVoiceId(VoiceIdT&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::forward<VoiceIdT>(value); }
+    template<typename VoiceIdT = Aws::String>
+    SSMLMessageType& WithVoiceId(VoiceIdT&& value) { SetVoiceId(std::forward<VoiceIdT>(value)); return *this;}
     ///@}
   private:
 

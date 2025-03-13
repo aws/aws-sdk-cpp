@@ -20,21 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TemplateSummary::TemplateSummary() : 
-    m_generatedTemplateIdHasBeenSet(false),
-    m_generatedTemplateNameHasBeenSet(false),
-    m_status(GeneratedTemplateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_numberOfResources(0),
-    m_numberOfResourcesHasBeenSet(false)
-{
-}
-
 TemplateSummary::TemplateSummary(const XmlNode& xmlNode)
-  : TemplateSummary()
 {
   *this = xmlNode;
 }
@@ -50,42 +36,49 @@ TemplateSummary& TemplateSummary::operator =(const XmlNode& xmlNode)
     {
       m_generatedTemplateId = Aws::Utils::Xml::DecodeEscapedXmlText(generatedTemplateIdNode.GetText());
       m_generatedTemplateIdHasBeenSet = true;
+       m_generatedTemplateIdHasBeenSet = true;
     }
     XmlNode generatedTemplateNameNode = resultNode.FirstChild("GeneratedTemplateName");
     if(!generatedTemplateNameNode.IsNull())
     {
       m_generatedTemplateName = Aws::Utils::Xml::DecodeEscapedXmlText(generatedTemplateNameNode.GetText());
       m_generatedTemplateNameHasBeenSet = true;
+       m_generatedTemplateNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = GeneratedTemplateStatusMapper::GetGeneratedTemplateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = GeneratedTemplateStatusMapper::GetGeneratedTemplateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
+       m_statusReasonHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("LastUpdatedTime");
     if(!lastUpdatedTimeNode.IsNull())
     {
       m_lastUpdatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUpdatedTimeHasBeenSet = true;
+       m_lastUpdatedTimeHasBeenSet = true;
     }
     XmlNode numberOfResourcesNode = resultNode.FirstChild("NumberOfResources");
     if(!numberOfResourcesNode.IsNull())
     {
       m_numberOfResources = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfResourcesNode.GetText()).c_str()).c_str());
       m_numberOfResourcesHasBeenSet = true;
+       m_numberOfResourcesHasBeenSet = true;
     }
   }
 

@@ -31,7 +31,7 @@ namespace Model
   class LaunchTemplateLicenseConfiguration
   {
   public:
-    AWS_EC2_API LaunchTemplateLicenseConfiguration();
+    AWS_EC2_API LaunchTemplateLicenseConfiguration() = default;
     AWS_EC2_API LaunchTemplateLicenseConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LaunchTemplateLicenseConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the license configuration.</p>
      */
-    inline const Aws::String& GetLicenseConfigurationArn() const{ return m_licenseConfigurationArn; }
+    inline const Aws::String& GetLicenseConfigurationArn() const { return m_licenseConfigurationArn; }
     inline bool LicenseConfigurationArnHasBeenSet() const { return m_licenseConfigurationArnHasBeenSet; }
-    inline void SetLicenseConfigurationArn(const Aws::String& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = value; }
-    inline void SetLicenseConfigurationArn(Aws::String&& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = std::move(value); }
-    inline void SetLicenseConfigurationArn(const char* value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn.assign(value); }
-    inline LaunchTemplateLicenseConfiguration& WithLicenseConfigurationArn(const Aws::String& value) { SetLicenseConfigurationArn(value); return *this;}
-    inline LaunchTemplateLicenseConfiguration& WithLicenseConfigurationArn(Aws::String&& value) { SetLicenseConfigurationArn(std::move(value)); return *this;}
-    inline LaunchTemplateLicenseConfiguration& WithLicenseConfigurationArn(const char* value) { SetLicenseConfigurationArn(value); return *this;}
+    template<typename LicenseConfigurationArnT = Aws::String>
+    void SetLicenseConfigurationArn(LicenseConfigurationArnT&& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = std::forward<LicenseConfigurationArnT>(value); }
+    template<typename LicenseConfigurationArnT = Aws::String>
+    LaunchTemplateLicenseConfiguration& WithLicenseConfigurationArn(LicenseConfigurationArnT&& value) { SetLicenseConfigurationArn(std::forward<LicenseConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -23,7 +23,7 @@ namespace Model
   class CreateOrganizationalUnitRequest : public OrganizationsRequest
   {
   public:
-    AWS_ORGANIZATIONS_API CreateOrganizationalUnitRequest();
+    AWS_ORGANIZATIONS_API CreateOrganizationalUnitRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,28 +48,24 @@ namespace Model
      * second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetParentId() const{ return m_parentId; }
+    inline const Aws::String& GetParentId() const { return m_parentId; }
     inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
-    inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
-    inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = std::move(value); }
-    inline void SetParentId(const char* value) { m_parentIdHasBeenSet = true; m_parentId.assign(value); }
-    inline CreateOrganizationalUnitRequest& WithParentId(const Aws::String& value) { SetParentId(value); return *this;}
-    inline CreateOrganizationalUnitRequest& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
-    inline CreateOrganizationalUnitRequest& WithParentId(const char* value) { SetParentId(value); return *this;}
+    template<typename ParentIdT = Aws::String>
+    void SetParentId(ParentIdT&& value) { m_parentIdHasBeenSet = true; m_parentId = std::forward<ParentIdT>(value); }
+    template<typename ParentIdT = Aws::String>
+    CreateOrganizationalUnitRequest& WithParentId(ParentIdT&& value) { SetParentId(std::forward<ParentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The friendly name to assign to the new OU.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateOrganizationalUnitRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateOrganizationalUnitRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateOrganizationalUnitRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateOrganizationalUnitRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,14 @@ namespace Model
      * any one of the tags is not valid or if you exceed the allowed number of tags for
      * an OU, then the entire request fails and the OU is not created.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateOrganizationalUnitRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateOrganizationalUnitRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateOrganizationalUnitRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateOrganizationalUnitRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateOrganizationalUnitRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateOrganizationalUnitRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

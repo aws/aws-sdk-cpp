@@ -18,21 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-UserType::UserType() : 
-    m_usernameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_userCreateDateHasBeenSet(false),
-    m_userLastModifiedDateHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_userStatus(UserStatusType::NOT_SET),
-    m_userStatusHasBeenSet(false),
-    m_mFAOptionsHasBeenSet(false)
-{
-}
-
 UserType::UserType(JsonView jsonValue)
-  : UserType()
 {
   *this = jsonValue;
 }
@@ -42,10 +28,8 @@ UserType& UserType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
@@ -55,35 +39,26 @@ UserType& UserType::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserCreateDate"))
   {
     m_userCreateDate = jsonValue.GetDouble("UserCreateDate");
-
     m_userCreateDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserLastModifiedDate"))
   {
     m_userLastModifiedDate = jsonValue.GetDouble("UserLastModifiedDate");
-
     m_userLastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserStatus"))
   {
     m_userStatus = UserStatusTypeMapper::GetUserStatusTypeForName(jsonValue.GetString("UserStatus"));
-
     m_userStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MFAOptions"))
   {
     Aws::Utils::Array<JsonView> mFAOptionsJsonList = jsonValue.GetArray("MFAOptions");
@@ -93,7 +68,6 @@ UserType& UserType::operator =(JsonView jsonValue)
     }
     m_mFAOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

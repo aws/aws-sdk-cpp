@@ -21,7 +21,7 @@ namespace Model
   class GetDataSourceRequest : public MachineLearningRequest
   {
   public:
-    AWS_MACHINELEARNING_API GetDataSourceRequest();
+    AWS_MACHINELEARNING_API GetDataSourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>DataSource</code> at creation.</p>
      */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-    inline GetDataSourceRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-    inline GetDataSourceRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-    inline GetDataSourceRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    GetDataSourceRequest& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,7 +52,7 @@ namespace Model
      * <code>DataSourceSchema</code>.</p> <p>If true, <code>DataSourceSchema</code> is
      * returned.</p> <p>If false, <code>DataSourceSchema</code> is not returned.</p>
      */
-    inline bool GetVerbose() const{ return m_verbose; }
+    inline bool GetVerbose() const { return m_verbose; }
     inline bool VerboseHasBeenSet() const { return m_verboseHasBeenSet; }
     inline void SetVerbose(bool value) { m_verboseHasBeenSet = true; m_verbose = value; }
     inline GetDataSourceRequest& WithVerbose(bool value) { SetVerbose(value); return *this;}
@@ -64,7 +62,7 @@ namespace Model
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet = false;
 
-    bool m_verbose;
+    bool m_verbose{false};
     bool m_verboseHasBeenSet = false;
   };
 

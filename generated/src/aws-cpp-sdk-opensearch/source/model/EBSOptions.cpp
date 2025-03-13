@@ -18,22 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-EBSOptions::EBSOptions() : 
-    m_eBSEnabled(false),
-    m_eBSEnabledHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false)
-{
-}
-
 EBSOptions::EBSOptions(JsonView jsonValue)
-  : EBSOptions()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ EBSOptions& EBSOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EBSEnabled"))
   {
     m_eBSEnabled = jsonValue.GetBool("EBSEnabled");
-
     m_eBSEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeType"))
   {
     m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(jsonValue.GetString("VolumeType"));
-
     m_volumeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSize"))
   {
     m_volumeSize = jsonValue.GetInteger("VolumeSize");
-
     m_volumeSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Iops"))
   {
     m_iops = jsonValue.GetInteger("Iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Throughput"))
   {
     m_throughput = jsonValue.GetInteger("Throughput");
-
     m_throughputHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace ResourceGroupsTaggingAPI
 namespace Model
 {
 
-Summary::Summary() : 
-    m_lastUpdatedHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetIdType(TargetIdType::NOT_SET),
-    m_targetIdTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_nonCompliantResources(0),
-    m_nonCompliantResourcesHasBeenSet(false)
-{
-}
-
 Summary::Summary(JsonView jsonValue)
-  : Summary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ Summary& Summary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LastUpdated"))
   {
     m_lastUpdated = jsonValue.GetString("LastUpdated");
-
     m_lastUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetId"))
   {
     m_targetId = jsonValue.GetString("TargetId");
-
     m_targetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetIdType"))
   {
     m_targetIdType = TargetIdTypeMapper::GetTargetIdTypeForName(jsonValue.GetString("TargetIdType"));
-
     m_targetIdTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NonCompliantResources"))
   {
     m_nonCompliantResources = jsonValue.GetInt64("NonCompliantResources");
-
     m_nonCompliantResourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

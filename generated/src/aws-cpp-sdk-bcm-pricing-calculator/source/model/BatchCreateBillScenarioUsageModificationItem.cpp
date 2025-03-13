@@ -18,23 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BatchCreateBillScenarioUsageModificationItem::BatchCreateBillScenarioUsageModificationItem() : 
-    m_serviceCodeHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_usageAccountIdHasBeenSet(false),
-    m_quantitiesHasBeenSet(false),
-    m_historicalUsageHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 BatchCreateBillScenarioUsageModificationItem::BatchCreateBillScenarioUsageModificationItem(JsonView jsonValue)
-  : BatchCreateBillScenarioUsageModificationItem()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ BatchCreateBillScenarioUsageModificationItem& BatchCreateBillScenarioUsageModifi
   if(jsonValue.ValueExists("serviceCode"))
   {
     m_serviceCode = jsonValue.GetString("serviceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageType"))
   {
     m_usageType = jsonValue.GetString("usageType");
-
     m_usageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetString("operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageAccountId"))
   {
     m_usageAccountId = jsonValue.GetString("usageAccountId");
-
     m_usageAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quantities"))
   {
     Aws::Utils::Array<JsonView> quantitiesJsonList = jsonValue.GetArray("quantities");
@@ -106,21 +74,16 @@ BatchCreateBillScenarioUsageModificationItem& BatchCreateBillScenarioUsageModifi
     }
     m_quantitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("historicalUsage"))
   {
     m_historicalUsage = jsonValue.GetObject("historicalUsage");
-
     m_historicalUsageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDirectConnectGatewayRequest::CreateDirectConnectGatewayRequest() : 
-    m_directConnectGatewayNameHasBeenSet(false),
-    m_amazonSideAsn(0),
-    m_amazonSideAsnHasBeenSet(false)
-{
-}
-
 Aws::String CreateDirectConnectGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

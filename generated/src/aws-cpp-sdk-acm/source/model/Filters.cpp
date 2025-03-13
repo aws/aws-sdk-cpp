@@ -18,15 +18,7 @@ namespace ACM
 namespace Model
 {
 
-Filters::Filters() : 
-    m_extendedKeyUsageHasBeenSet(false),
-    m_keyUsageHasBeenSet(false),
-    m_keyTypesHasBeenSet(false)
-{
-}
-
 Filters::Filters(JsonView jsonValue)
-  : Filters()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_extendedKeyUsageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyUsage"))
   {
     Aws::Utils::Array<JsonView> keyUsageJsonList = jsonValue.GetArray("keyUsage");
@@ -52,7 +43,6 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_keyUsageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyTypes"))
   {
     Aws::Utils::Array<JsonView> keyTypesJsonList = jsonValue.GetArray("keyTypes");
@@ -62,7 +52,6 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_keyTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

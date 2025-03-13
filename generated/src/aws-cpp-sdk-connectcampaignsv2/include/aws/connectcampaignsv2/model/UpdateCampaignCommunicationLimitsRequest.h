@@ -26,7 +26,7 @@ namespace Model
   class UpdateCampaignCommunicationLimitsRequest : public ConnectCampaignsV2Request
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API UpdateCampaignCommunicationLimitsRequest();
+    AWS_CONNECTCAMPAIGNSV2_API UpdateCampaignCommunicationLimitsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,24 +39,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateCampaignCommunicationLimitsRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateCampaignCommunicationLimitsRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateCampaignCommunicationLimitsRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateCampaignCommunicationLimitsRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CommunicationLimitsConfig& GetCommunicationLimitsOverride() const{ return m_communicationLimitsOverride; }
+    inline const CommunicationLimitsConfig& GetCommunicationLimitsOverride() const { return m_communicationLimitsOverride; }
     inline bool CommunicationLimitsOverrideHasBeenSet() const { return m_communicationLimitsOverrideHasBeenSet; }
-    inline void SetCommunicationLimitsOverride(const CommunicationLimitsConfig& value) { m_communicationLimitsOverrideHasBeenSet = true; m_communicationLimitsOverride = value; }
-    inline void SetCommunicationLimitsOverride(CommunicationLimitsConfig&& value) { m_communicationLimitsOverrideHasBeenSet = true; m_communicationLimitsOverride = std::move(value); }
-    inline UpdateCampaignCommunicationLimitsRequest& WithCommunicationLimitsOverride(const CommunicationLimitsConfig& value) { SetCommunicationLimitsOverride(value); return *this;}
-    inline UpdateCampaignCommunicationLimitsRequest& WithCommunicationLimitsOverride(CommunicationLimitsConfig&& value) { SetCommunicationLimitsOverride(std::move(value)); return *this;}
+    template<typename CommunicationLimitsOverrideT = CommunicationLimitsConfig>
+    void SetCommunicationLimitsOverride(CommunicationLimitsOverrideT&& value) { m_communicationLimitsOverrideHasBeenSet = true; m_communicationLimitsOverride = std::forward<CommunicationLimitsOverrideT>(value); }
+    template<typename CommunicationLimitsOverrideT = CommunicationLimitsConfig>
+    UpdateCampaignCommunicationLimitsRequest& WithCommunicationLimitsOverride(CommunicationLimitsOverrideT&& value) { SetCommunicationLimitsOverride(std::forward<CommunicationLimitsOverrideT>(value)); return *this;}
     ///@}
   private:
 

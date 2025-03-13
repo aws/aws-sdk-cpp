@@ -18,15 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-SchemaAnalysisRuleRequest::SchemaAnalysisRuleRequest() : 
-    m_nameHasBeenSet(false),
-    m_type(AnalysisRuleType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 SchemaAnalysisRuleRequest::SchemaAnalysisRuleRequest(JsonView jsonValue)
-  : SchemaAnalysisRuleRequest()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SchemaAnalysisRuleRequest& SchemaAnalysisRuleRequest::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = AnalysisRuleTypeMapper::GetAnalysisRuleTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

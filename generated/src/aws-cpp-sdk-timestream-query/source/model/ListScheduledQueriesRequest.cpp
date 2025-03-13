@@ -12,13 +12,6 @@ using namespace Aws::TimestreamQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListScheduledQueriesRequest::ListScheduledQueriesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListScheduledQueriesRequest::SerializePayload() const
 {
   JsonValue payload;

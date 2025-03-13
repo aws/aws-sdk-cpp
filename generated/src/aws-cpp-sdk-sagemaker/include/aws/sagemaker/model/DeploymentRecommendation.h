@@ -36,7 +36,7 @@ namespace Model
   class DeploymentRecommendation
   {
   public:
-    AWS_SAGEMAKER_API DeploymentRecommendation();
+    AWS_SAGEMAKER_API DeploymentRecommendation() = default;
     AWS_SAGEMAKER_API DeploymentRecommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DeploymentRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to
      * get a <code>COMPLETED</code> deployment recommendation.</p>
      */
-    inline const RecommendationStatus& GetRecommendationStatus() const{ return m_recommendationStatus; }
+    inline RecommendationStatus GetRecommendationStatus() const { return m_recommendationStatus; }
     inline bool RecommendationStatusHasBeenSet() const { return m_recommendationStatusHasBeenSet; }
-    inline void SetRecommendationStatus(const RecommendationStatus& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = value; }
-    inline void SetRecommendationStatus(RecommendationStatus&& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = std::move(value); }
-    inline DeploymentRecommendation& WithRecommendationStatus(const RecommendationStatus& value) { SetRecommendationStatus(value); return *this;}
-    inline DeploymentRecommendation& WithRecommendationStatus(RecommendationStatus&& value) { SetRecommendationStatus(std::move(value)); return *this;}
+    inline void SetRecommendationStatus(RecommendationStatus value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = value; }
+    inline DeploymentRecommendation& WithRecommendationStatus(RecommendationStatus value) { SetRecommendationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -64,18 +62,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RealTimeInferenceRecommendation.html">RealTimeInferenceRecommendation</a>
      * items.</p>
      */
-    inline const Aws::Vector<RealTimeInferenceRecommendation>& GetRealTimeInferenceRecommendations() const{ return m_realTimeInferenceRecommendations; }
+    inline const Aws::Vector<RealTimeInferenceRecommendation>& GetRealTimeInferenceRecommendations() const { return m_realTimeInferenceRecommendations; }
     inline bool RealTimeInferenceRecommendationsHasBeenSet() const { return m_realTimeInferenceRecommendationsHasBeenSet; }
-    inline void SetRealTimeInferenceRecommendations(const Aws::Vector<RealTimeInferenceRecommendation>& value) { m_realTimeInferenceRecommendationsHasBeenSet = true; m_realTimeInferenceRecommendations = value; }
-    inline void SetRealTimeInferenceRecommendations(Aws::Vector<RealTimeInferenceRecommendation>&& value) { m_realTimeInferenceRecommendationsHasBeenSet = true; m_realTimeInferenceRecommendations = std::move(value); }
-    inline DeploymentRecommendation& WithRealTimeInferenceRecommendations(const Aws::Vector<RealTimeInferenceRecommendation>& value) { SetRealTimeInferenceRecommendations(value); return *this;}
-    inline DeploymentRecommendation& WithRealTimeInferenceRecommendations(Aws::Vector<RealTimeInferenceRecommendation>&& value) { SetRealTimeInferenceRecommendations(std::move(value)); return *this;}
-    inline DeploymentRecommendation& AddRealTimeInferenceRecommendations(const RealTimeInferenceRecommendation& value) { m_realTimeInferenceRecommendationsHasBeenSet = true; m_realTimeInferenceRecommendations.push_back(value); return *this; }
-    inline DeploymentRecommendation& AddRealTimeInferenceRecommendations(RealTimeInferenceRecommendation&& value) { m_realTimeInferenceRecommendationsHasBeenSet = true; m_realTimeInferenceRecommendations.push_back(std::move(value)); return *this; }
+    template<typename RealTimeInferenceRecommendationsT = Aws::Vector<RealTimeInferenceRecommendation>>
+    void SetRealTimeInferenceRecommendations(RealTimeInferenceRecommendationsT&& value) { m_realTimeInferenceRecommendationsHasBeenSet = true; m_realTimeInferenceRecommendations = std::forward<RealTimeInferenceRecommendationsT>(value); }
+    template<typename RealTimeInferenceRecommendationsT = Aws::Vector<RealTimeInferenceRecommendation>>
+    DeploymentRecommendation& WithRealTimeInferenceRecommendations(RealTimeInferenceRecommendationsT&& value) { SetRealTimeInferenceRecommendations(std::forward<RealTimeInferenceRecommendationsT>(value)); return *this;}
+    template<typename RealTimeInferenceRecommendationsT = RealTimeInferenceRecommendation>
+    DeploymentRecommendation& AddRealTimeInferenceRecommendations(RealTimeInferenceRecommendationsT&& value) { m_realTimeInferenceRecommendationsHasBeenSet = true; m_realTimeInferenceRecommendations.emplace_back(std::forward<RealTimeInferenceRecommendationsT>(value)); return *this; }
     ///@}
   private:
 
-    RecommendationStatus m_recommendationStatus;
+    RecommendationStatus m_recommendationStatus{RecommendationStatus::NOT_SET};
     bool m_recommendationStatusHasBeenSet = false;
 
     Aws::Vector<RealTimeInferenceRecommendation> m_realTimeInferenceRecommendations;

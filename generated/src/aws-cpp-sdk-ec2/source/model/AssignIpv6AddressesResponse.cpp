@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssignIpv6AddressesResponse::AssignIpv6AddressesResponse()
-{
-}
-
 AssignIpv6AddressesResponse::AssignIpv6AddressesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator =(const Aws::
     if(!assignedIpv6AddressesNode.IsNull())
     {
       XmlNode assignedIpv6AddressesMember = assignedIpv6AddressesNode.FirstChild("item");
+      m_assignedIpv6AddressesHasBeenSet = !assignedIpv6AddressesMember.IsNull();
       while(!assignedIpv6AddressesMember.IsNull())
       {
         m_assignedIpv6Addresses.push_back(assignedIpv6AddressesMember.GetText());
@@ -53,6 +50,7 @@ AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator =(const Aws::
     if(!assignedIpv6PrefixesNode.IsNull())
     {
       XmlNode assignedIpv6PrefixesMember = assignedIpv6PrefixesNode.FirstChild("item");
+      m_assignedIpv6PrefixesHasBeenSet = !assignedIpv6PrefixesMember.IsNull();
       while(!assignedIpv6PrefixesMember.IsNull())
       {
         m_assignedIpv6Prefixes.push_back(assignedIpv6PrefixesMember.GetText());
@@ -64,6 +62,7 @@ AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator =(const Aws::
     if(!networkInterfaceIdNode.IsNull())
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
+      m_networkInterfaceIdHasBeenSet = true;
     }
   }
 
@@ -72,6 +71,7 @@ AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssignIpv6AddressesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

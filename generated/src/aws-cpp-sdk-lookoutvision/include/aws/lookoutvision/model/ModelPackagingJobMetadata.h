@@ -34,7 +34,7 @@ namespace Model
   class ModelPackagingJobMetadata
   {
   public:
-    AWS_LOOKOUTFORVISION_API ModelPackagingJobMetadata();
+    AWS_LOOKOUTFORVISION_API ModelPackagingJobMetadata() = default;
     AWS_LOOKOUTFORVISION_API ModelPackagingJobMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API ModelPackagingJobMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,56 +44,48 @@ namespace Model
     /**
      * <p> The name of the model packaging job. </p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline ModelPackagingJobMetadata& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline ModelPackagingJobMetadata& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline ModelPackagingJobMetadata& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    ModelPackagingJobMetadata& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The project that contains the model that is in the model package. </p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline ModelPackagingJobMetadata& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline ModelPackagingJobMetadata& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline ModelPackagingJobMetadata& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    ModelPackagingJobMetadata& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The version of the model that is in the model package. </p>
      */
-    inline const Aws::String& GetModelVersion() const{ return m_modelVersion; }
+    inline const Aws::String& GetModelVersion() const { return m_modelVersion; }
     inline bool ModelVersionHasBeenSet() const { return m_modelVersionHasBeenSet; }
-    inline void SetModelVersion(const Aws::String& value) { m_modelVersionHasBeenSet = true; m_modelVersion = value; }
-    inline void SetModelVersion(Aws::String&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::move(value); }
-    inline void SetModelVersion(const char* value) { m_modelVersionHasBeenSet = true; m_modelVersion.assign(value); }
-    inline ModelPackagingJobMetadata& WithModelVersion(const Aws::String& value) { SetModelVersion(value); return *this;}
-    inline ModelPackagingJobMetadata& WithModelVersion(Aws::String&& value) { SetModelVersion(std::move(value)); return *this;}
-    inline ModelPackagingJobMetadata& WithModelVersion(const char* value) { SetModelVersion(value); return *this;}
+    template<typename ModelVersionT = Aws::String>
+    void SetModelVersion(ModelVersionT&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::forward<ModelVersionT>(value); }
+    template<typename ModelVersionT = Aws::String>
+    ModelPackagingJobMetadata& WithModelVersion(ModelVersionT&& value) { SetModelVersion(std::forward<ModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The description for the model packaging job. </p>
      */
-    inline const Aws::String& GetModelPackagingJobDescription() const{ return m_modelPackagingJobDescription; }
+    inline const Aws::String& GetModelPackagingJobDescription() const { return m_modelPackagingJobDescription; }
     inline bool ModelPackagingJobDescriptionHasBeenSet() const { return m_modelPackagingJobDescriptionHasBeenSet; }
-    inline void SetModelPackagingJobDescription(const Aws::String& value) { m_modelPackagingJobDescriptionHasBeenSet = true; m_modelPackagingJobDescription = value; }
-    inline void SetModelPackagingJobDescription(Aws::String&& value) { m_modelPackagingJobDescriptionHasBeenSet = true; m_modelPackagingJobDescription = std::move(value); }
-    inline void SetModelPackagingJobDescription(const char* value) { m_modelPackagingJobDescriptionHasBeenSet = true; m_modelPackagingJobDescription.assign(value); }
-    inline ModelPackagingJobMetadata& WithModelPackagingJobDescription(const Aws::String& value) { SetModelPackagingJobDescription(value); return *this;}
-    inline ModelPackagingJobMetadata& WithModelPackagingJobDescription(Aws::String&& value) { SetModelPackagingJobDescription(std::move(value)); return *this;}
-    inline ModelPackagingJobMetadata& WithModelPackagingJobDescription(const char* value) { SetModelPackagingJobDescription(value); return *this;}
+    template<typename ModelPackagingJobDescriptionT = Aws::String>
+    void SetModelPackagingJobDescription(ModelPackagingJobDescriptionT&& value) { m_modelPackagingJobDescriptionHasBeenSet = true; m_modelPackagingJobDescription = std::forward<ModelPackagingJobDescriptionT>(value); }
+    template<typename ModelPackagingJobDescriptionT = Aws::String>
+    ModelPackagingJobMetadata& WithModelPackagingJobDescription(ModelPackagingJobDescriptionT&& value) { SetModelPackagingJobDescription(std::forward<ModelPackagingJobDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,40 +93,34 @@ namespace Model
      * <p> The AWS service used to package the job. Currently Lookout for Vision can
      * package jobs with AWS IoT Greengrass. </p>
      */
-    inline const Aws::String& GetModelPackagingMethod() const{ return m_modelPackagingMethod; }
+    inline const Aws::String& GetModelPackagingMethod() const { return m_modelPackagingMethod; }
     inline bool ModelPackagingMethodHasBeenSet() const { return m_modelPackagingMethodHasBeenSet; }
-    inline void SetModelPackagingMethod(const Aws::String& value) { m_modelPackagingMethodHasBeenSet = true; m_modelPackagingMethod = value; }
-    inline void SetModelPackagingMethod(Aws::String&& value) { m_modelPackagingMethodHasBeenSet = true; m_modelPackagingMethod = std::move(value); }
-    inline void SetModelPackagingMethod(const char* value) { m_modelPackagingMethodHasBeenSet = true; m_modelPackagingMethod.assign(value); }
-    inline ModelPackagingJobMetadata& WithModelPackagingMethod(const Aws::String& value) { SetModelPackagingMethod(value); return *this;}
-    inline ModelPackagingJobMetadata& WithModelPackagingMethod(Aws::String&& value) { SetModelPackagingMethod(std::move(value)); return *this;}
-    inline ModelPackagingJobMetadata& WithModelPackagingMethod(const char* value) { SetModelPackagingMethod(value); return *this;}
+    template<typename ModelPackagingMethodT = Aws::String>
+    void SetModelPackagingMethod(ModelPackagingMethodT&& value) { m_modelPackagingMethodHasBeenSet = true; m_modelPackagingMethod = std::forward<ModelPackagingMethodT>(value); }
+    template<typename ModelPackagingMethodT = Aws::String>
+    ModelPackagingJobMetadata& WithModelPackagingMethod(ModelPackagingMethodT&& value) { SetModelPackagingMethod(std::forward<ModelPackagingMethodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the model packaging job. </p>
      */
-    inline const ModelPackagingJobStatus& GetStatus() const{ return m_status; }
+    inline ModelPackagingJobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ModelPackagingJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ModelPackagingJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ModelPackagingJobMetadata& WithStatus(const ModelPackagingJobStatus& value) { SetStatus(value); return *this;}
-    inline ModelPackagingJobMetadata& WithStatus(ModelPackagingJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ModelPackagingJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ModelPackagingJobMetadata& WithStatus(ModelPackagingJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message for the model packaging job. </p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline ModelPackagingJobMetadata& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ModelPackagingJobMetadata& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ModelPackagingJobMetadata& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ModelPackagingJobMetadata& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,12 +128,12 @@ namespace Model
      * <p>The Unix timestamp for the time and date that the model packaging job was
      * created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreationTimestamp() const { return m_creationTimestamp; }
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
-    inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
-    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
-    inline ModelPackagingJobMetadata& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
-    inline ModelPackagingJobMetadata& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    void SetCreationTimestamp(CreationTimestampT&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::forward<CreationTimestampT>(value); }
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    ModelPackagingJobMetadata& WithCreationTimestamp(CreationTimestampT&& value) { SetCreationTimestamp(std::forward<CreationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,12 +141,12 @@ namespace Model
      * <p>The Unix timestamp for the time and date that the model packaging job was
      * last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
     inline bool LastUpdatedTimestampHasBeenSet() const { return m_lastUpdatedTimestampHasBeenSet; }
-    inline void SetLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
-    inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::move(value); }
-    inline ModelPackagingJobMetadata& WithLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimestamp(value); return *this;}
-    inline ModelPackagingJobMetadata& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::forward<LastUpdatedTimestampT>(value); }
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    ModelPackagingJobMetadata& WithLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { SetLastUpdatedTimestamp(std::forward<LastUpdatedTimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -179,16 +165,16 @@ namespace Model
     Aws::String m_modelPackagingMethod;
     bool m_modelPackagingMethodHasBeenSet = false;
 
-    ModelPackagingJobStatus m_status;
+    ModelPackagingJobStatus m_status{ModelPackagingJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimestamp;
+    Aws::Utils::DateTime m_creationTimestamp{};
     bool m_creationTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTimestamp;
+    Aws::Utils::DateTime m_lastUpdatedTimestamp{};
     bool m_lastUpdatedTimestampHasBeenSet = false;
   };
 

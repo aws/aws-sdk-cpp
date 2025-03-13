@@ -12,14 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIdentityPropagationConfigRequest::UpdateIdentityPropagationConfigRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_service(ServiceType::NOT_SET),
-    m_serviceHasBeenSet(false),
-    m_authorizedTargetsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIdentityPropagationConfigRequest::SerializePayload() const
 {
   JsonValue payload;

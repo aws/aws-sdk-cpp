@@ -18,16 +18,7 @@ namespace SageMakerFeatureStoreRuntime
 namespace Model
 {
 
-TtlDuration::TtlDuration() : 
-    m_unit(TtlDurationUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 TtlDuration::TtlDuration(JsonView jsonValue)
-  : TtlDuration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TtlDuration& TtlDuration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = TtlDurationUnitMapper::GetTtlDurationUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetInteger("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

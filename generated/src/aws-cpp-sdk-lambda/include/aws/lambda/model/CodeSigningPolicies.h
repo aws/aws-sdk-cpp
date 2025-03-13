@@ -34,7 +34,7 @@ namespace Model
   class CodeSigningPolicies
   {
   public:
-    AWS_LAMBDA_API CodeSigningPolicies();
+    AWS_LAMBDA_API CodeSigningPolicies() = default;
     AWS_LAMBDA_API CodeSigningPolicies(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API CodeSigningPolicies& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,16 +48,14 @@ namespace Model
      * Lambda allows the deployment and creates a CloudWatch log. </p> <p>Default
      * value: <code>Warn</code> </p>
      */
-    inline const CodeSigningPolicy& GetUntrustedArtifactOnDeployment() const{ return m_untrustedArtifactOnDeployment; }
+    inline CodeSigningPolicy GetUntrustedArtifactOnDeployment() const { return m_untrustedArtifactOnDeployment; }
     inline bool UntrustedArtifactOnDeploymentHasBeenSet() const { return m_untrustedArtifactOnDeploymentHasBeenSet; }
-    inline void SetUntrustedArtifactOnDeployment(const CodeSigningPolicy& value) { m_untrustedArtifactOnDeploymentHasBeenSet = true; m_untrustedArtifactOnDeployment = value; }
-    inline void SetUntrustedArtifactOnDeployment(CodeSigningPolicy&& value) { m_untrustedArtifactOnDeploymentHasBeenSet = true; m_untrustedArtifactOnDeployment = std::move(value); }
-    inline CodeSigningPolicies& WithUntrustedArtifactOnDeployment(const CodeSigningPolicy& value) { SetUntrustedArtifactOnDeployment(value); return *this;}
-    inline CodeSigningPolicies& WithUntrustedArtifactOnDeployment(CodeSigningPolicy&& value) { SetUntrustedArtifactOnDeployment(std::move(value)); return *this;}
+    inline void SetUntrustedArtifactOnDeployment(CodeSigningPolicy value) { m_untrustedArtifactOnDeploymentHasBeenSet = true; m_untrustedArtifactOnDeployment = value; }
+    inline CodeSigningPolicies& WithUntrustedArtifactOnDeployment(CodeSigningPolicy value) { SetUntrustedArtifactOnDeployment(value); return *this;}
     ///@}
   private:
 
-    CodeSigningPolicy m_untrustedArtifactOnDeployment;
+    CodeSigningPolicy m_untrustedArtifactOnDeployment{CodeSigningPolicy::NOT_SET};
     bool m_untrustedArtifactOnDeploymentHasBeenSet = false;
   };
 

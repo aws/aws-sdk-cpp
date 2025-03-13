@@ -27,7 +27,7 @@ namespace Model
   class PutAlarmRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API PutAlarmRequest();
+    AWS_LIGHTSAIL_API PutAlarmRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name for the alarm. Specify the name of an existing alarm to update, and
      * overwrite the previous configuration of the alarm.</p>
      */
-    inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+    inline const Aws::String& GetAlarmName() const { return m_alarmName; }
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
-    inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
-    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
-    inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
-    inline PutAlarmRequest& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
-    inline PutAlarmRequest& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
-    inline PutAlarmRequest& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+    template<typename AlarmNameT = Aws::String>
+    void SetAlarmName(AlarmNameT&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::forward<AlarmNameT>(value); }
+    template<typename AlarmNameT = Aws::String>
+    PutAlarmRequest& WithAlarmName(AlarmNameT&& value) { SetAlarmName(std::forward<AlarmNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +77,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
      * available in Lightsail</a>.</p>
      */
-    inline const MetricName& GetMetricName() const{ return m_metricName; }
+    inline MetricName GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const MetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(MetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline PutAlarmRequest& WithMetricName(const MetricName& value) { SetMetricName(value); return *this;}
-    inline PutAlarmRequest& WithMetricName(MetricName&& value) { SetMetricName(std::move(value)); return *this;}
+    inline void SetMetricName(MetricName value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline PutAlarmRequest& WithMetricName(MetricName value) { SetMetricName(value); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +89,12 @@ namespace Model
      * load balancers, and relational databases are the only Lightsail resources that
      * can currently be monitored by alarms.</p>
      */
-    inline const Aws::String& GetMonitoredResourceName() const{ return m_monitoredResourceName; }
+    inline const Aws::String& GetMonitoredResourceName() const { return m_monitoredResourceName; }
     inline bool MonitoredResourceNameHasBeenSet() const { return m_monitoredResourceNameHasBeenSet; }
-    inline void SetMonitoredResourceName(const Aws::String& value) { m_monitoredResourceNameHasBeenSet = true; m_monitoredResourceName = value; }
-    inline void SetMonitoredResourceName(Aws::String&& value) { m_monitoredResourceNameHasBeenSet = true; m_monitoredResourceName = std::move(value); }
-    inline void SetMonitoredResourceName(const char* value) { m_monitoredResourceNameHasBeenSet = true; m_monitoredResourceName.assign(value); }
-    inline PutAlarmRequest& WithMonitoredResourceName(const Aws::String& value) { SetMonitoredResourceName(value); return *this;}
-    inline PutAlarmRequest& WithMonitoredResourceName(Aws::String&& value) { SetMonitoredResourceName(std::move(value)); return *this;}
-    inline PutAlarmRequest& WithMonitoredResourceName(const char* value) { SetMonitoredResourceName(value); return *this;}
+    template<typename MonitoredResourceNameT = Aws::String>
+    void SetMonitoredResourceName(MonitoredResourceNameT&& value) { m_monitoredResourceNameHasBeenSet = true; m_monitoredResourceName = std::forward<MonitoredResourceNameT>(value); }
+    template<typename MonitoredResourceNameT = Aws::String>
+    PutAlarmRequest& WithMonitoredResourceName(MonitoredResourceNameT&& value) { SetMonitoredResourceName(std::forward<MonitoredResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,19 +102,17 @@ namespace Model
      * <p>The arithmetic operation to use when comparing the specified statistic to the
      * threshold. The specified statistic value is used as the first operand.</p>
      */
-    inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline PutAlarmRequest& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline PutAlarmRequest& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline PutAlarmRequest& WithComparisonOperator(ComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value against which the specified statistic is compared.</p>
      */
-    inline double GetThreshold() const{ return m_threshold; }
+    inline double GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline PutAlarmRequest& WithThreshold(double value) { SetThreshold(value); return *this;}
@@ -138,7 +130,7 @@ namespace Model
      * two hours.</p> <p>You can specify a minimum valuation period of 1 (5 minutes),
      * and a maximum evaluation period of 288 (24 hours).</p>
      */
-    inline int GetEvaluationPeriods() const{ return m_evaluationPeriods; }
+    inline int GetEvaluationPeriods() const { return m_evaluationPeriods; }
     inline bool EvaluationPeriodsHasBeenSet() const { return m_evaluationPeriodsHasBeenSet; }
     inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
     inline PutAlarmRequest& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
@@ -150,7 +142,7 @@ namespace Model
      * trigger the alarm. If you are setting an "M out of N" alarm, this value
      * (<code>datapointsToAlarm</code>) is the M.</p>
      */
-    inline int GetDatapointsToAlarm() const{ return m_datapointsToAlarm; }
+    inline int GetDatapointsToAlarm() const { return m_datapointsToAlarm; }
     inline bool DatapointsToAlarmHasBeenSet() const { return m_datapointsToAlarmHasBeenSet; }
     inline void SetDatapointsToAlarm(int value) { m_datapointsToAlarmHasBeenSet = true; m_datapointsToAlarm = value; }
     inline PutAlarmRequest& WithDatapointsToAlarm(int value) { SetDatapointsToAlarm(value); return *this;}
@@ -170,12 +162,10 @@ namespace Model
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
-    inline const TreatMissingData& GetTreatMissingData() const{ return m_treatMissingData; }
+    inline TreatMissingData GetTreatMissingData() const { return m_treatMissingData; }
     inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }
-    inline void SetTreatMissingData(const TreatMissingData& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
-    inline void SetTreatMissingData(TreatMissingData&& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = std::move(value); }
-    inline PutAlarmRequest& WithTreatMissingData(const TreatMissingData& value) { SetTreatMissingData(value); return *this;}
-    inline PutAlarmRequest& WithTreatMissingData(TreatMissingData&& value) { SetTreatMissingData(std::move(value)); return *this;}
+    inline void SetTreatMissingData(TreatMissingData value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
+    inline PutAlarmRequest& WithTreatMissingData(TreatMissingData value) { SetTreatMissingData(value); return *this;}
     ///@}
 
     ///@{
@@ -190,14 +180,13 @@ namespace Model
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
      * Amazon Web Services Region.</p>
      */
-    inline const Aws::Vector<ContactProtocol>& GetContactProtocols() const{ return m_contactProtocols; }
+    inline const Aws::Vector<ContactProtocol>& GetContactProtocols() const { return m_contactProtocols; }
     inline bool ContactProtocolsHasBeenSet() const { return m_contactProtocolsHasBeenSet; }
-    inline void SetContactProtocols(const Aws::Vector<ContactProtocol>& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols = value; }
-    inline void SetContactProtocols(Aws::Vector<ContactProtocol>&& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols = std::move(value); }
-    inline PutAlarmRequest& WithContactProtocols(const Aws::Vector<ContactProtocol>& value) { SetContactProtocols(value); return *this;}
-    inline PutAlarmRequest& WithContactProtocols(Aws::Vector<ContactProtocol>&& value) { SetContactProtocols(std::move(value)); return *this;}
-    inline PutAlarmRequest& AddContactProtocols(const ContactProtocol& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols.push_back(value); return *this; }
-    inline PutAlarmRequest& AddContactProtocols(ContactProtocol&& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols.push_back(std::move(value)); return *this; }
+    template<typename ContactProtocolsT = Aws::Vector<ContactProtocol>>
+    void SetContactProtocols(ContactProtocolsT&& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols = std::forward<ContactProtocolsT>(value); }
+    template<typename ContactProtocolsT = Aws::Vector<ContactProtocol>>
+    PutAlarmRequest& WithContactProtocols(ContactProtocolsT&& value) { SetContactProtocols(std::forward<ContactProtocolsT>(value)); return *this;}
+    inline PutAlarmRequest& AddContactProtocols(ContactProtocol value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -221,14 +210,13 @@ namespace Model
      * <code>INSUFFICIENT_DATA</code> state.</p> </li> </ul> <p>The notification
      * trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
      */
-    inline const Aws::Vector<AlarmState>& GetNotificationTriggers() const{ return m_notificationTriggers; }
+    inline const Aws::Vector<AlarmState>& GetNotificationTriggers() const { return m_notificationTriggers; }
     inline bool NotificationTriggersHasBeenSet() const { return m_notificationTriggersHasBeenSet; }
-    inline void SetNotificationTriggers(const Aws::Vector<AlarmState>& value) { m_notificationTriggersHasBeenSet = true; m_notificationTriggers = value; }
-    inline void SetNotificationTriggers(Aws::Vector<AlarmState>&& value) { m_notificationTriggersHasBeenSet = true; m_notificationTriggers = std::move(value); }
-    inline PutAlarmRequest& WithNotificationTriggers(const Aws::Vector<AlarmState>& value) { SetNotificationTriggers(value); return *this;}
-    inline PutAlarmRequest& WithNotificationTriggers(Aws::Vector<AlarmState>&& value) { SetNotificationTriggers(std::move(value)); return *this;}
-    inline PutAlarmRequest& AddNotificationTriggers(const AlarmState& value) { m_notificationTriggersHasBeenSet = true; m_notificationTriggers.push_back(value); return *this; }
-    inline PutAlarmRequest& AddNotificationTriggers(AlarmState&& value) { m_notificationTriggersHasBeenSet = true; m_notificationTriggers.push_back(std::move(value)); return *this; }
+    template<typename NotificationTriggersT = Aws::Vector<AlarmState>>
+    void SetNotificationTriggers(NotificationTriggersT&& value) { m_notificationTriggersHasBeenSet = true; m_notificationTriggers = std::forward<NotificationTriggersT>(value); }
+    template<typename NotificationTriggersT = Aws::Vector<AlarmState>>
+    PutAlarmRequest& WithNotificationTriggers(NotificationTriggersT&& value) { SetNotificationTriggers(std::forward<NotificationTriggersT>(value)); return *this;}
+    inline PutAlarmRequest& AddNotificationTriggers(AlarmState value) { m_notificationTriggersHasBeenSet = true; m_notificationTriggers.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -236,7 +224,7 @@ namespace Model
      * <p>Indicates whether the alarm is enabled.</p> <p>Notifications are enabled by
      * default if you don't specify this parameter.</p>
      */
-    inline bool GetNotificationEnabled() const{ return m_notificationEnabled; }
+    inline bool GetNotificationEnabled() const { return m_notificationEnabled; }
     inline bool NotificationEnabledHasBeenSet() const { return m_notificationEnabledHasBeenSet; }
     inline void SetNotificationEnabled(bool value) { m_notificationEnabledHasBeenSet = true; m_notificationEnabled = value; }
     inline PutAlarmRequest& WithNotificationEnabled(bool value) { SetNotificationEnabled(value); return *this;}
@@ -246,25 +234,25 @@ namespace Model
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet = false;
 
-    MetricName m_metricName;
+    MetricName m_metricName{MetricName::NOT_SET};
     bool m_metricNameHasBeenSet = false;
 
     Aws::String m_monitoredResourceName;
     bool m_monitoredResourceNameHasBeenSet = false;
 
-    ComparisonOperator m_comparisonOperator;
+    ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
 
-    double m_threshold;
+    double m_threshold{0.0};
     bool m_thresholdHasBeenSet = false;
 
-    int m_evaluationPeriods;
+    int m_evaluationPeriods{0};
     bool m_evaluationPeriodsHasBeenSet = false;
 
-    int m_datapointsToAlarm;
+    int m_datapointsToAlarm{0};
     bool m_datapointsToAlarmHasBeenSet = false;
 
-    TreatMissingData m_treatMissingData;
+    TreatMissingData m_treatMissingData{TreatMissingData::NOT_SET};
     bool m_treatMissingDataHasBeenSet = false;
 
     Aws::Vector<ContactProtocol> m_contactProtocols;
@@ -273,7 +261,7 @@ namespace Model
     Aws::Vector<AlarmState> m_notificationTriggers;
     bool m_notificationTriggersHasBeenSet = false;
 
-    bool m_notificationEnabled;
+    bool m_notificationEnabled{false};
     bool m_notificationEnabledHasBeenSet = false;
   };
 

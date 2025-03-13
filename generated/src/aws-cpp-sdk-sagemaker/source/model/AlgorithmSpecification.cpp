@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AlgorithmSpecification::AlgorithmSpecification() : 
-    m_trainingImageHasBeenSet(false),
-    m_algorithmNameHasBeenSet(false),
-    m_trainingInputMode(TrainingInputMode::NOT_SET),
-    m_trainingInputModeHasBeenSet(false),
-    m_metricDefinitionsHasBeenSet(false),
-    m_enableSageMakerMetricsTimeSeries(false),
-    m_enableSageMakerMetricsTimeSeriesHasBeenSet(false),
-    m_containerEntrypointHasBeenSet(false),
-    m_containerArgumentsHasBeenSet(false),
-    m_trainingImageConfigHasBeenSet(false)
-{
-}
-
 AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue)
-  : AlgorithmSpecification()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ AlgorithmSpecification& AlgorithmSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrainingImage"))
   {
     m_trainingImage = jsonValue.GetString("TrainingImage");
-
     m_trainingImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlgorithmName"))
   {
     m_algorithmName = jsonValue.GetString("AlgorithmName");
-
     m_algorithmNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingInputMode"))
   {
     m_trainingInputMode = TrainingInputModeMapper::GetTrainingInputModeForName(jsonValue.GetString("TrainingInputMode"));
-
     m_trainingInputModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricDefinitions"))
   {
     Aws::Utils::Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
@@ -70,14 +49,11 @@ AlgorithmSpecification& AlgorithmSpecification::operator =(JsonView jsonValue)
     }
     m_metricDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableSageMakerMetricsTimeSeries"))
   {
     m_enableSageMakerMetricsTimeSeries = jsonValue.GetBool("EnableSageMakerMetricsTimeSeries");
-
     m_enableSageMakerMetricsTimeSeriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerEntrypoint"))
   {
     Aws::Utils::Array<JsonView> containerEntrypointJsonList = jsonValue.GetArray("ContainerEntrypoint");
@@ -87,7 +63,6 @@ AlgorithmSpecification& AlgorithmSpecification::operator =(JsonView jsonValue)
     }
     m_containerEntrypointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerArguments"))
   {
     Aws::Utils::Array<JsonView> containerArgumentsJsonList = jsonValue.GetArray("ContainerArguments");
@@ -97,14 +72,11 @@ AlgorithmSpecification& AlgorithmSpecification::operator =(JsonView jsonValue)
     }
     m_containerArgumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingImageConfig"))
   {
     m_trainingImageConfig = jsonValue.GetObject("TrainingImageConfig");
-
     m_trainingImageConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

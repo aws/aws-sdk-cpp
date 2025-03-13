@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HyperParameterTuningJobObjective::HyperParameterTuningJobObjective() : 
-    m_type(HyperParameterTuningJobObjectiveType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
-{
-}
-
 HyperParameterTuningJobObjective::HyperParameterTuningJobObjective(JsonView jsonValue)
-  : HyperParameterTuningJobObjective()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ HyperParameterTuningJobObjective& HyperParameterTuningJobObjective::operator =(J
   if(jsonValue.ValueExists("Type"))
   {
     m_type = HyperParameterTuningJobObjectiveTypeMapper::GetHyperParameterTuningJobObjectiveTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   return *this;
 }
 

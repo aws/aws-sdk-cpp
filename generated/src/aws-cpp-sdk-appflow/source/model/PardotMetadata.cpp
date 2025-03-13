@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-PardotMetadata::PardotMetadata()
-{
-}
-
 PardotMetadata::PardotMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

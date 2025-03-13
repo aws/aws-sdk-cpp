@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSessionRequest::DeleteSessionRequest() : 
-    m_idHasBeenSet(false),
-    m_requestOriginHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSessionRequest::SerializePayload() const
 {
   JsonValue payload;

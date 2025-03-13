@@ -18,15 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-KafkaVersion::KafkaVersion() : 
-    m_versionHasBeenSet(false),
-    m_status(KafkaVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 KafkaVersion::KafkaVersion(JsonView jsonValue)
-  : KafkaVersion()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ KafkaVersion& KafkaVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = KafkaVersionStatusMapper::GetKafkaVersionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class VersionOptions
   {
   public:
-    AWS_OMICS_API VersionOptions();
+    AWS_OMICS_API VersionOptions() = default;
     AWS_OMICS_API VersionOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API VersionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p> File settings for a version of a TSV store. </p>
      */
-    inline const TsvVersionOptions& GetTsvVersionOptions() const{ return m_tsvVersionOptions; }
+    inline const TsvVersionOptions& GetTsvVersionOptions() const { return m_tsvVersionOptions; }
     inline bool TsvVersionOptionsHasBeenSet() const { return m_tsvVersionOptionsHasBeenSet; }
-    inline void SetTsvVersionOptions(const TsvVersionOptions& value) { m_tsvVersionOptionsHasBeenSet = true; m_tsvVersionOptions = value; }
-    inline void SetTsvVersionOptions(TsvVersionOptions&& value) { m_tsvVersionOptionsHasBeenSet = true; m_tsvVersionOptions = std::move(value); }
-    inline VersionOptions& WithTsvVersionOptions(const TsvVersionOptions& value) { SetTsvVersionOptions(value); return *this;}
-    inline VersionOptions& WithTsvVersionOptions(TsvVersionOptions&& value) { SetTsvVersionOptions(std::move(value)); return *this;}
+    template<typename TsvVersionOptionsT = TsvVersionOptions>
+    void SetTsvVersionOptions(TsvVersionOptionsT&& value) { m_tsvVersionOptionsHasBeenSet = true; m_tsvVersionOptions = std::forward<TsvVersionOptionsT>(value); }
+    template<typename TsvVersionOptionsT = TsvVersionOptions>
+    VersionOptions& WithTsvVersionOptions(TsvVersionOptionsT&& value) { SetTsvVersionOptions(std::forward<TsvVersionOptionsT>(value)); return *this;}
     ///@}
   private:
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GenerateFindingRecommendationRequest::GenerateFindingRecommendationRequest() : 
-    m_analyzerArnHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GenerateFindingRecommendationRequest::SerializePayload() const
 {
   return {};

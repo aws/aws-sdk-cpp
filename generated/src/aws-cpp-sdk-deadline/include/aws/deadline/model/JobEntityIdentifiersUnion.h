@@ -34,7 +34,7 @@ namespace Model
   class JobEntityIdentifiersUnion
   {
   public:
-    AWS_DEADLINE_API JobEntityIdentifiersUnion();
+    AWS_DEADLINE_API JobEntityIdentifiersUnion() = default;
     AWS_DEADLINE_API JobEntityIdentifiersUnion(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API JobEntityIdentifiersUnion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,48 @@ namespace Model
     /**
      * <p>The job details.</p>
      */
-    inline const JobDetailsIdentifiers& GetJobDetails() const{ return m_jobDetails; }
+    inline const JobDetailsIdentifiers& GetJobDetails() const { return m_jobDetails; }
     inline bool JobDetailsHasBeenSet() const { return m_jobDetailsHasBeenSet; }
-    inline void SetJobDetails(const JobDetailsIdentifiers& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = value; }
-    inline void SetJobDetails(JobDetailsIdentifiers&& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = std::move(value); }
-    inline JobEntityIdentifiersUnion& WithJobDetails(const JobDetailsIdentifiers& value) { SetJobDetails(value); return *this;}
-    inline JobEntityIdentifiersUnion& WithJobDetails(JobDetailsIdentifiers&& value) { SetJobDetails(std::move(value)); return *this;}
+    template<typename JobDetailsT = JobDetailsIdentifiers>
+    void SetJobDetails(JobDetailsT&& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = std::forward<JobDetailsT>(value); }
+    template<typename JobDetailsT = JobDetailsIdentifiers>
+    JobEntityIdentifiersUnion& WithJobDetails(JobDetailsT&& value) { SetJobDetails(std::forward<JobDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job attachment details.</p>
      */
-    inline const JobAttachmentDetailsIdentifiers& GetJobAttachmentDetails() const{ return m_jobAttachmentDetails; }
+    inline const JobAttachmentDetailsIdentifiers& GetJobAttachmentDetails() const { return m_jobAttachmentDetails; }
     inline bool JobAttachmentDetailsHasBeenSet() const { return m_jobAttachmentDetailsHasBeenSet; }
-    inline void SetJobAttachmentDetails(const JobAttachmentDetailsIdentifiers& value) { m_jobAttachmentDetailsHasBeenSet = true; m_jobAttachmentDetails = value; }
-    inline void SetJobAttachmentDetails(JobAttachmentDetailsIdentifiers&& value) { m_jobAttachmentDetailsHasBeenSet = true; m_jobAttachmentDetails = std::move(value); }
-    inline JobEntityIdentifiersUnion& WithJobAttachmentDetails(const JobAttachmentDetailsIdentifiers& value) { SetJobAttachmentDetails(value); return *this;}
-    inline JobEntityIdentifiersUnion& WithJobAttachmentDetails(JobAttachmentDetailsIdentifiers&& value) { SetJobAttachmentDetails(std::move(value)); return *this;}
+    template<typename JobAttachmentDetailsT = JobAttachmentDetailsIdentifiers>
+    void SetJobAttachmentDetails(JobAttachmentDetailsT&& value) { m_jobAttachmentDetailsHasBeenSet = true; m_jobAttachmentDetails = std::forward<JobAttachmentDetailsT>(value); }
+    template<typename JobAttachmentDetailsT = JobAttachmentDetailsIdentifiers>
+    JobEntityIdentifiersUnion& WithJobAttachmentDetails(JobAttachmentDetailsT&& value) { SetJobAttachmentDetails(std::forward<JobAttachmentDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step details.</p>
      */
-    inline const StepDetailsIdentifiers& GetStepDetails() const{ return m_stepDetails; }
+    inline const StepDetailsIdentifiers& GetStepDetails() const { return m_stepDetails; }
     inline bool StepDetailsHasBeenSet() const { return m_stepDetailsHasBeenSet; }
-    inline void SetStepDetails(const StepDetailsIdentifiers& value) { m_stepDetailsHasBeenSet = true; m_stepDetails = value; }
-    inline void SetStepDetails(StepDetailsIdentifiers&& value) { m_stepDetailsHasBeenSet = true; m_stepDetails = std::move(value); }
-    inline JobEntityIdentifiersUnion& WithStepDetails(const StepDetailsIdentifiers& value) { SetStepDetails(value); return *this;}
-    inline JobEntityIdentifiersUnion& WithStepDetails(StepDetailsIdentifiers&& value) { SetStepDetails(std::move(value)); return *this;}
+    template<typename StepDetailsT = StepDetailsIdentifiers>
+    void SetStepDetails(StepDetailsT&& value) { m_stepDetailsHasBeenSet = true; m_stepDetails = std::forward<StepDetailsT>(value); }
+    template<typename StepDetailsT = StepDetailsIdentifiers>
+    JobEntityIdentifiersUnion& WithStepDetails(StepDetailsT&& value) { SetStepDetails(std::forward<StepDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The environment details.</p>
      */
-    inline const EnvironmentDetailsIdentifiers& GetEnvironmentDetails() const{ return m_environmentDetails; }
+    inline const EnvironmentDetailsIdentifiers& GetEnvironmentDetails() const { return m_environmentDetails; }
     inline bool EnvironmentDetailsHasBeenSet() const { return m_environmentDetailsHasBeenSet; }
-    inline void SetEnvironmentDetails(const EnvironmentDetailsIdentifiers& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = value; }
-    inline void SetEnvironmentDetails(EnvironmentDetailsIdentifiers&& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = std::move(value); }
-    inline JobEntityIdentifiersUnion& WithEnvironmentDetails(const EnvironmentDetailsIdentifiers& value) { SetEnvironmentDetails(value); return *this;}
-    inline JobEntityIdentifiersUnion& WithEnvironmentDetails(EnvironmentDetailsIdentifiers&& value) { SetEnvironmentDetails(std::move(value)); return *this;}
+    template<typename EnvironmentDetailsT = EnvironmentDetailsIdentifiers>
+    void SetEnvironmentDetails(EnvironmentDetailsT&& value) { m_environmentDetailsHasBeenSet = true; m_environmentDetails = std::forward<EnvironmentDetailsT>(value); }
+    template<typename EnvironmentDetailsT = EnvironmentDetailsIdentifiers>
+    JobEntityIdentifiersUnion& WithEnvironmentDetails(EnvironmentDetailsT&& value) { SetEnvironmentDetails(std::forward<EnvironmentDetailsT>(value)); return *this;}
     ///@}
   private:
 

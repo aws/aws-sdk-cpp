@@ -27,7 +27,7 @@ namespace Model
   class CreateIndexResult
   {
   public:
-    AWS_QBUSINESS_API CreateIndexResult();
+    AWS_QBUSINESS_API CreateIndexResult() = default;
     AWS_QBUSINESS_API CreateIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API CreateIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Q Business index.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
-    inline void SetIndexId(const Aws::String& value) { m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexId.assign(value); }
-    inline CreateIndexResult& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline CreateIndexResult& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline CreateIndexResult& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    CreateIndexResult& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
      */
-    inline const Aws::String& GetIndexArn() const{ return m_indexArn; }
-    inline void SetIndexArn(const Aws::String& value) { m_indexArn = value; }
-    inline void SetIndexArn(Aws::String&& value) { m_indexArn = std::move(value); }
-    inline void SetIndexArn(const char* value) { m_indexArn.assign(value); }
-    inline CreateIndexResult& WithIndexArn(const Aws::String& value) { SetIndexArn(value); return *this;}
-    inline CreateIndexResult& WithIndexArn(Aws::String&& value) { SetIndexArn(std::move(value)); return *this;}
-    inline CreateIndexResult& WithIndexArn(const char* value) { SetIndexArn(value); return *this;}
+    inline const Aws::String& GetIndexArn() const { return m_indexArn; }
+    template<typename IndexArnT = Aws::String>
+    void SetIndexArn(IndexArnT&& value) { m_indexArnHasBeenSet = true; m_indexArn = std::forward<IndexArnT>(value); }
+    template<typename IndexArnT = Aws::String>
+    CreateIndexResult& WithIndexArn(IndexArnT&& value) { SetIndexArn(std::forward<IndexArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateIndexResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateIndexResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateIndexResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateIndexResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_indexId;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_indexArn;
+    bool m_indexArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

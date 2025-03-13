@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConversionConfigurationResult::DescribeConversionConfigurationResult()
-{
-}
-
 DescribeConversionConfigurationResult::DescribeConversionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DescribeConversionConfigurationResult& DescribeConversionConfigurationResult::op
   if(jsonValue.ValueExists("MigrationProjectIdentifier"))
   {
     m_migrationProjectIdentifier = jsonValue.GetString("MigrationProjectIdentifier");
-
+    m_migrationProjectIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConversionConfiguration"))
   {
     m_conversionConfiguration = jsonValue.GetString("ConversionConfiguration");
-
+    m_conversionConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

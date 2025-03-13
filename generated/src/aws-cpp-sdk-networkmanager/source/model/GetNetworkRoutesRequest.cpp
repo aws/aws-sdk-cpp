@@ -12,20 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetNetworkRoutesRequest::GetNetworkRoutesRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_routeTableIdentifierHasBeenSet(false),
-    m_exactCidrMatchesHasBeenSet(false),
-    m_longestPrefixMatchesHasBeenSet(false),
-    m_subnetOfMatchesHasBeenSet(false),
-    m_supernetOfMatchesHasBeenSet(false),
-    m_prefixListIdsHasBeenSet(false),
-    m_statesHasBeenSet(false),
-    m_typesHasBeenSet(false),
-    m_destinationFiltersHasBeenSet(false)
-{
-}
-
 Aws::String GetNetworkRoutesRequest::SerializePayload() const
 {
   JsonValue payload;

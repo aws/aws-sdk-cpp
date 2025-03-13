@@ -31,7 +31,7 @@ namespace Model
   class PromptRouterTargetModel
   {
   public:
-    AWS_BEDROCK_API PromptRouterTargetModel();
+    AWS_BEDROCK_API PromptRouterTargetModel() = default;
     AWS_BEDROCK_API PromptRouterTargetModel(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API PromptRouterTargetModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The target model's ARN.</p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline PromptRouterTargetModel& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline PromptRouterTargetModel& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline PromptRouterTargetModel& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    PromptRouterTargetModel& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
   private:
 

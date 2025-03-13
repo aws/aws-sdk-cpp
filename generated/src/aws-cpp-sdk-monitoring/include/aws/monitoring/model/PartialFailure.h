@@ -34,7 +34,7 @@ namespace Model
   class PartialFailure
   {
   public:
-    AWS_CLOUDWATCH_API PartialFailure();
+    AWS_CLOUDWATCH_API PartialFailure() = default;
     AWS_CLOUDWATCH_API PartialFailure(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API PartialFailure& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,56 +46,48 @@ namespace Model
     /**
      * <p>The specified rule that could not be deleted.</p>
      */
-    inline const Aws::String& GetFailureResource() const{ return m_failureResource; }
+    inline const Aws::String& GetFailureResource() const { return m_failureResource; }
     inline bool FailureResourceHasBeenSet() const { return m_failureResourceHasBeenSet; }
-    inline void SetFailureResource(const Aws::String& value) { m_failureResourceHasBeenSet = true; m_failureResource = value; }
-    inline void SetFailureResource(Aws::String&& value) { m_failureResourceHasBeenSet = true; m_failureResource = std::move(value); }
-    inline void SetFailureResource(const char* value) { m_failureResourceHasBeenSet = true; m_failureResource.assign(value); }
-    inline PartialFailure& WithFailureResource(const Aws::String& value) { SetFailureResource(value); return *this;}
-    inline PartialFailure& WithFailureResource(Aws::String&& value) { SetFailureResource(std::move(value)); return *this;}
-    inline PartialFailure& WithFailureResource(const char* value) { SetFailureResource(value); return *this;}
+    template<typename FailureResourceT = Aws::String>
+    void SetFailureResource(FailureResourceT&& value) { m_failureResourceHasBeenSet = true; m_failureResource = std::forward<FailureResourceT>(value); }
+    template<typename FailureResourceT = Aws::String>
+    PartialFailure& WithFailureResource(FailureResourceT&& value) { SetFailureResource(std::forward<FailureResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of error.</p>
      */
-    inline const Aws::String& GetExceptionType() const{ return m_exceptionType; }
+    inline const Aws::String& GetExceptionType() const { return m_exceptionType; }
     inline bool ExceptionTypeHasBeenSet() const { return m_exceptionTypeHasBeenSet; }
-    inline void SetExceptionType(const Aws::String& value) { m_exceptionTypeHasBeenSet = true; m_exceptionType = value; }
-    inline void SetExceptionType(Aws::String&& value) { m_exceptionTypeHasBeenSet = true; m_exceptionType = std::move(value); }
-    inline void SetExceptionType(const char* value) { m_exceptionTypeHasBeenSet = true; m_exceptionType.assign(value); }
-    inline PartialFailure& WithExceptionType(const Aws::String& value) { SetExceptionType(value); return *this;}
-    inline PartialFailure& WithExceptionType(Aws::String&& value) { SetExceptionType(std::move(value)); return *this;}
-    inline PartialFailure& WithExceptionType(const char* value) { SetExceptionType(value); return *this;}
+    template<typename ExceptionTypeT = Aws::String>
+    void SetExceptionType(ExceptionTypeT&& value) { m_exceptionTypeHasBeenSet = true; m_exceptionType = std::forward<ExceptionTypeT>(value); }
+    template<typename ExceptionTypeT = Aws::String>
+    PartialFailure& WithExceptionType(ExceptionTypeT&& value) { SetExceptionType(std::forward<ExceptionTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The code of the error.</p>
      */
-    inline const Aws::String& GetFailureCode() const{ return m_failureCode; }
+    inline const Aws::String& GetFailureCode() const { return m_failureCode; }
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    inline void SetFailureCode(const Aws::String& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-    inline void SetFailureCode(Aws::String&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-    inline void SetFailureCode(const char* value) { m_failureCodeHasBeenSet = true; m_failureCode.assign(value); }
-    inline PartialFailure& WithFailureCode(const Aws::String& value) { SetFailureCode(value); return *this;}
-    inline PartialFailure& WithFailureCode(Aws::String&& value) { SetFailureCode(std::move(value)); return *this;}
-    inline PartialFailure& WithFailureCode(const char* value) { SetFailureCode(value); return *this;}
+    template<typename FailureCodeT = Aws::String>
+    void SetFailureCode(FailureCodeT&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::forward<FailureCodeT>(value); }
+    template<typename FailureCodeT = Aws::String>
+    PartialFailure& WithFailureCode(FailureCodeT&& value) { SetFailureCode(std::forward<FailureCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the error.</p>
      */
-    inline const Aws::String& GetFailureDescription() const{ return m_failureDescription; }
+    inline const Aws::String& GetFailureDescription() const { return m_failureDescription; }
     inline bool FailureDescriptionHasBeenSet() const { return m_failureDescriptionHasBeenSet; }
-    inline void SetFailureDescription(const Aws::String& value) { m_failureDescriptionHasBeenSet = true; m_failureDescription = value; }
-    inline void SetFailureDescription(Aws::String&& value) { m_failureDescriptionHasBeenSet = true; m_failureDescription = std::move(value); }
-    inline void SetFailureDescription(const char* value) { m_failureDescriptionHasBeenSet = true; m_failureDescription.assign(value); }
-    inline PartialFailure& WithFailureDescription(const Aws::String& value) { SetFailureDescription(value); return *this;}
-    inline PartialFailure& WithFailureDescription(Aws::String&& value) { SetFailureDescription(std::move(value)); return *this;}
-    inline PartialFailure& WithFailureDescription(const char* value) { SetFailureDescription(value); return *this;}
+    template<typename FailureDescriptionT = Aws::String>
+    void SetFailureDescription(FailureDescriptionT&& value) { m_failureDescriptionHasBeenSet = true; m_failureDescription = std::forward<FailureDescriptionT>(value); }
+    template<typename FailureDescriptionT = Aws::String>
+    PartialFailure& WithFailureDescription(FailureDescriptionT&& value) { SetFailureDescription(std::forward<FailureDescriptionT>(value)); return *this;}
     ///@}
   private:
 

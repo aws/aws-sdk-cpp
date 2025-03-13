@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-JobExecutionsRetryConfig::JobExecutionsRetryConfig() : 
-    m_criteriaListHasBeenSet(false)
-{
-}
-
 JobExecutionsRetryConfig::JobExecutionsRetryConfig(JsonView jsonValue)
-  : JobExecutionsRetryConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ JobExecutionsRetryConfig& JobExecutionsRetryConfig::operator =(JsonView jsonValu
     }
     m_criteriaListHasBeenSet = true;
   }
-
   return *this;
 }
 

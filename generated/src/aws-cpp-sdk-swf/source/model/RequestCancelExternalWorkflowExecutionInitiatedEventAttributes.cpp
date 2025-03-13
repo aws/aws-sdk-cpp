@@ -18,17 +18,7 @@ namespace SWF
 namespace Model
 {
 
-RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes() : 
-    m_workflowIdHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false),
-    m_controlHasBeenSet(false)
-{
-}
-
 RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes(JsonView jsonValue)
-  : RequestCancelExternalWorkflowExecutionInitiatedEventAttributes()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& RequestCancelExt
   if(jsonValue.ValueExists("workflowId"))
   {
     m_workflowId = jsonValue.GetString("workflowId");
-
     m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runId"))
   {
     m_runId = jsonValue.GetString("runId");
-
     m_runIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
   {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
-
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("control"))
   {
     m_control = jsonValue.GetString("control");
-
     m_controlHasBeenSet = true;
   }
-
   return *this;
 }
 

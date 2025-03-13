@@ -12,11 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWebAppRequest::DescribeWebAppRequest() : 
-    m_webAppIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWebAppRequest::SerializePayload() const
 {
   JsonValue payload;

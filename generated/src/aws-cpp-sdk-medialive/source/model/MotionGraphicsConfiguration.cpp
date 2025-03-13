@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MotionGraphicsConfiguration::MotionGraphicsConfiguration() : 
-    m_motionGraphicsInsertion(MotionGraphicsInsertion::NOT_SET),
-    m_motionGraphicsInsertionHasBeenSet(false),
-    m_motionGraphicsSettingsHasBeenSet(false)
-{
-}
-
 MotionGraphicsConfiguration::MotionGraphicsConfiguration(JsonView jsonValue)
-  : MotionGraphicsConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MotionGraphicsConfiguration& MotionGraphicsConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("motionGraphicsInsertion"))
   {
     m_motionGraphicsInsertion = MotionGraphicsInsertionMapper::GetMotionGraphicsInsertionForName(jsonValue.GetString("motionGraphicsInsertion"));
-
     m_motionGraphicsInsertionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("motionGraphicsSettings"))
   {
     m_motionGraphicsSettings = jsonValue.GetObject("motionGraphicsSettings");
-
     m_motionGraphicsSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

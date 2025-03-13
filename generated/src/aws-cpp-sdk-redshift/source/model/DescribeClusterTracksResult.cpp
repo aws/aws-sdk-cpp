@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeClusterTracksResult::DescribeClusterTracksResult()
-{
-}
-
 DescribeClusterTracksResult::DescribeClusterTracksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeClusterTracksResult& DescribeClusterTracksResult::operator =(const Aws::
     if(!maintenanceTracksNode.IsNull())
     {
       XmlNode maintenanceTracksMember = maintenanceTracksNode.FirstChild("MaintenanceTrack");
+      m_maintenanceTracksHasBeenSet = !maintenanceTracksMember.IsNull();
       while(!maintenanceTracksMember.IsNull())
       {
         m_maintenanceTracks.push_back(maintenanceTracksMember);
@@ -53,12 +50,14 @@ DescribeClusterTracksResult& DescribeClusterTracksResult::operator =(const Aws::
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeClusterTracksResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

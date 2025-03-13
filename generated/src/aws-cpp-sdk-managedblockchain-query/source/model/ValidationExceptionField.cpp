@@ -18,14 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-ValidationExceptionField::ValidationExceptionField() : 
-    m_nameHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ValidationExceptionField::ValidationExceptionField(JsonView jsonValue)
-  : ValidationExceptionField()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ValidationExceptionField& ValidationExceptionField::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

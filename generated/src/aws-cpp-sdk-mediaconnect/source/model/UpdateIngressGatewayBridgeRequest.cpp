@@ -18,16 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-UpdateIngressGatewayBridgeRequest::UpdateIngressGatewayBridgeRequest() : 
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_maxOutputs(0),
-    m_maxOutputsHasBeenSet(false)
-{
-}
-
 UpdateIngressGatewayBridgeRequest::UpdateIngressGatewayBridgeRequest(JsonView jsonValue)
-  : UpdateIngressGatewayBridgeRequest()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ UpdateIngressGatewayBridgeRequest& UpdateIngressGatewayBridgeRequest::operator =
   if(jsonValue.ValueExists("maxBitrate"))
   {
     m_maxBitrate = jsonValue.GetInteger("maxBitrate");
-
     m_maxBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxOutputs"))
   {
     m_maxOutputs = jsonValue.GetInteger("maxOutputs");
-
     m_maxOutputsHasBeenSet = true;
   }
-
   return *this;
 }
 

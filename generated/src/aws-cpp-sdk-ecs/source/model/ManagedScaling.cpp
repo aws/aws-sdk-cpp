@@ -18,22 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ManagedScaling::ManagedScaling() : 
-    m_status(ManagedScalingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetCapacity(0),
-    m_targetCapacityHasBeenSet(false),
-    m_minimumScalingStepSize(0),
-    m_minimumScalingStepSizeHasBeenSet(false),
-    m_maximumScalingStepSize(0),
-    m_maximumScalingStepSizeHasBeenSet(false),
-    m_instanceWarmupPeriod(0),
-    m_instanceWarmupPeriodHasBeenSet(false)
-{
-}
-
 ManagedScaling::ManagedScaling(JsonView jsonValue)
-  : ManagedScaling()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ ManagedScaling& ManagedScaling::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = ManagedScalingStatusMapper::GetManagedScalingStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetCapacity"))
   {
     m_targetCapacity = jsonValue.GetInteger("targetCapacity");
-
     m_targetCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumScalingStepSize"))
   {
     m_minimumScalingStepSize = jsonValue.GetInteger("minimumScalingStepSize");
-
     m_minimumScalingStepSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maximumScalingStepSize"))
   {
     m_maximumScalingStepSize = jsonValue.GetInteger("maximumScalingStepSize");
-
     m_maximumScalingStepSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceWarmupPeriod"))
   {
     m_instanceWarmupPeriod = jsonValue.GetInteger("instanceWarmupPeriod");
-
     m_instanceWarmupPeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

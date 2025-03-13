@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ImmunityTimeProperty::ImmunityTimeProperty() : 
-    m_immunityTime(0),
-    m_immunityTimeHasBeenSet(false)
-{
-}
-
 ImmunityTimeProperty::ImmunityTimeProperty(JsonView jsonValue)
-  : ImmunityTimeProperty()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ImmunityTimeProperty& ImmunityTimeProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImmunityTime"))
   {
     m_immunityTime = jsonValue.GetInt64("ImmunityTime");
-
     m_immunityTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

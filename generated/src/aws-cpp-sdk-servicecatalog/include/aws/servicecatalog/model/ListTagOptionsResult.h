@@ -29,7 +29,7 @@ namespace Model
   class ListTagOptionsResult
   {
   public:
-    AWS_SERVICECATALOG_API ListTagOptionsResult();
+    AWS_SERVICECATALOG_API ListTagOptionsResult() = default;
     AWS_SERVICECATALOG_API ListTagOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API ListTagOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the TagOptions.</p>
      */
-    inline const Aws::Vector<TagOptionDetail>& GetTagOptionDetails() const{ return m_tagOptionDetails; }
-    inline void SetTagOptionDetails(const Aws::Vector<TagOptionDetail>& value) { m_tagOptionDetails = value; }
-    inline void SetTagOptionDetails(Aws::Vector<TagOptionDetail>&& value) { m_tagOptionDetails = std::move(value); }
-    inline ListTagOptionsResult& WithTagOptionDetails(const Aws::Vector<TagOptionDetail>& value) { SetTagOptionDetails(value); return *this;}
-    inline ListTagOptionsResult& WithTagOptionDetails(Aws::Vector<TagOptionDetail>&& value) { SetTagOptionDetails(std::move(value)); return *this;}
-    inline ListTagOptionsResult& AddTagOptionDetails(const TagOptionDetail& value) { m_tagOptionDetails.push_back(value); return *this; }
-    inline ListTagOptionsResult& AddTagOptionDetails(TagOptionDetail&& value) { m_tagOptionDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TagOptionDetail>& GetTagOptionDetails() const { return m_tagOptionDetails; }
+    template<typename TagOptionDetailsT = Aws::Vector<TagOptionDetail>>
+    void SetTagOptionDetails(TagOptionDetailsT&& value) { m_tagOptionDetailsHasBeenSet = true; m_tagOptionDetails = std::forward<TagOptionDetailsT>(value); }
+    template<typename TagOptionDetailsT = Aws::Vector<TagOptionDetail>>
+    ListTagOptionsResult& WithTagOptionDetails(TagOptionDetailsT&& value) { SetTagOptionDetails(std::forward<TagOptionDetailsT>(value)); return *this;}
+    template<typename TagOptionDetailsT = TagOptionDetail>
+    ListTagOptionsResult& AddTagOptionDetails(TagOptionDetailsT&& value) { m_tagOptionDetailsHasBeenSet = true; m_tagOptionDetails.emplace_back(std::forward<TagOptionDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The page token for the next set of results. To retrieve the first set of
      * results, use null.</p>
      */
-    inline const Aws::String& GetPageToken() const{ return m_pageToken; }
-    inline void SetPageToken(const Aws::String& value) { m_pageToken = value; }
-    inline void SetPageToken(Aws::String&& value) { m_pageToken = std::move(value); }
-    inline void SetPageToken(const char* value) { m_pageToken.assign(value); }
-    inline ListTagOptionsResult& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
-    inline ListTagOptionsResult& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
-    inline ListTagOptionsResult& WithPageToken(const char* value) { SetPageToken(value); return *this;}
+    inline const Aws::String& GetPageToken() const { return m_pageToken; }
+    template<typename PageTokenT = Aws::String>
+    void SetPageToken(PageTokenT&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::forward<PageTokenT>(value); }
+    template<typename PageTokenT = Aws::String>
+    ListTagOptionsResult& WithPageToken(PageTokenT&& value) { SetPageToken(std::forward<PageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTagOptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTagOptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTagOptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTagOptionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TagOptionDetail> m_tagOptionDetails;
+    bool m_tagOptionDetailsHasBeenSet = false;
 
     Aws::String m_pageToken;
+    bool m_pageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

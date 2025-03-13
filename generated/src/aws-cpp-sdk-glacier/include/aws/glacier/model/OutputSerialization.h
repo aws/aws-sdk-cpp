@@ -31,7 +31,7 @@ namespace Model
   class OutputSerialization
   {
   public:
-    AWS_GLACIER_API OutputSerialization();
+    AWS_GLACIER_API OutputSerialization() = default;
     AWS_GLACIER_API OutputSerialization(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLACIER_API OutputSerialization& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Describes the serialization of CSV-encoded query results.</p>
      */
-    inline const CSVOutput& GetCsv() const{ return m_csv; }
+    inline const CSVOutput& GetCsv() const { return m_csv; }
     inline bool CsvHasBeenSet() const { return m_csvHasBeenSet; }
-    inline void SetCsv(const CSVOutput& value) { m_csvHasBeenSet = true; m_csv = value; }
-    inline void SetCsv(CSVOutput&& value) { m_csvHasBeenSet = true; m_csv = std::move(value); }
-    inline OutputSerialization& WithCsv(const CSVOutput& value) { SetCsv(value); return *this;}
-    inline OutputSerialization& WithCsv(CSVOutput&& value) { SetCsv(std::move(value)); return *this;}
+    template<typename CsvT = CSVOutput>
+    void SetCsv(CsvT&& value) { m_csvHasBeenSet = true; m_csv = std::forward<CsvT>(value); }
+    template<typename CsvT = CSVOutput>
+    OutputSerialization& WithCsv(CsvT&& value) { SetCsv(std::forward<CsvT>(value)); return *this;}
     ///@}
   private:
 

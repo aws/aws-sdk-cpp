@@ -20,18 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-InsightRule::InsightRule() : 
-    m_nameHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_managedRule(false),
-    m_managedRuleHasBeenSet(false)
-{
-}
-
 InsightRule::InsightRule(const XmlNode& xmlNode)
-  : InsightRule()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ InsightRule& InsightRule::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode schemaNode = resultNode.FirstChild("Schema");
     if(!schemaNode.IsNull())
     {
       m_schema = Aws::Utils::Xml::DecodeEscapedXmlText(schemaNode.GetText());
       m_schemaHasBeenSet = true;
+       m_schemaHasBeenSet = true;
     }
     XmlNode definitionNode = resultNode.FirstChild("Definition");
     if(!definitionNode.IsNull())
     {
       m_definition = Aws::Utils::Xml::DecodeEscapedXmlText(definitionNode.GetText());
       m_definitionHasBeenSet = true;
+       m_definitionHasBeenSet = true;
     }
     XmlNode managedRuleNode = resultNode.FirstChild("ManagedRule");
     if(!managedRuleNode.IsNull())
     {
       m_managedRule = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedRuleNode.GetText()).c_str()).c_str());
       m_managedRuleHasBeenSet = true;
+       m_managedRuleHasBeenSet = true;
     }
   }
 

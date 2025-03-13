@@ -23,7 +23,7 @@ namespace Model
   class PutLifecycleConfigurationRequest : public EFSRequest
   {
   public:
-    AWS_EFS_API PutLifecycleConfigurationRequest();
+    AWS_EFS_API PutLifecycleConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The ID of the file system for which you are creating the
      * <code>LifecycleConfiguration</code> object (String).</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline PutLifecycleConfigurationRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline PutLifecycleConfigurationRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline PutLifecycleConfigurationRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    PutLifecycleConfigurationRequest& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,14 @@ namespace Model
      * transition. See the example requests in the following section for more
      * information.</p> 
      */
-    inline const Aws::Vector<LifecyclePolicy>& GetLifecyclePolicies() const{ return m_lifecyclePolicies; }
+    inline const Aws::Vector<LifecyclePolicy>& GetLifecyclePolicies() const { return m_lifecyclePolicies; }
     inline bool LifecyclePoliciesHasBeenSet() const { return m_lifecyclePoliciesHasBeenSet; }
-    inline void SetLifecyclePolicies(const Aws::Vector<LifecyclePolicy>& value) { m_lifecyclePoliciesHasBeenSet = true; m_lifecyclePolicies = value; }
-    inline void SetLifecyclePolicies(Aws::Vector<LifecyclePolicy>&& value) { m_lifecyclePoliciesHasBeenSet = true; m_lifecyclePolicies = std::move(value); }
-    inline PutLifecycleConfigurationRequest& WithLifecyclePolicies(const Aws::Vector<LifecyclePolicy>& value) { SetLifecyclePolicies(value); return *this;}
-    inline PutLifecycleConfigurationRequest& WithLifecyclePolicies(Aws::Vector<LifecyclePolicy>&& value) { SetLifecyclePolicies(std::move(value)); return *this;}
-    inline PutLifecycleConfigurationRequest& AddLifecyclePolicies(const LifecyclePolicy& value) { m_lifecyclePoliciesHasBeenSet = true; m_lifecyclePolicies.push_back(value); return *this; }
-    inline PutLifecycleConfigurationRequest& AddLifecyclePolicies(LifecyclePolicy&& value) { m_lifecyclePoliciesHasBeenSet = true; m_lifecyclePolicies.push_back(std::move(value)); return *this; }
+    template<typename LifecyclePoliciesT = Aws::Vector<LifecyclePolicy>>
+    void SetLifecyclePolicies(LifecyclePoliciesT&& value) { m_lifecyclePoliciesHasBeenSet = true; m_lifecyclePolicies = std::forward<LifecyclePoliciesT>(value); }
+    template<typename LifecyclePoliciesT = Aws::Vector<LifecyclePolicy>>
+    PutLifecycleConfigurationRequest& WithLifecyclePolicies(LifecyclePoliciesT&& value) { SetLifecyclePolicies(std::forward<LifecyclePoliciesT>(value)); return *this;}
+    template<typename LifecyclePoliciesT = LifecyclePolicy>
+    PutLifecycleConfigurationRequest& AddLifecyclePolicies(LifecyclePoliciesT&& value) { m_lifecyclePoliciesHasBeenSet = true; m_lifecyclePolicies.emplace_back(std::forward<LifecyclePoliciesT>(value)); return *this; }
     ///@}
   private:
 

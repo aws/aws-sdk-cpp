@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ThemeError::ThemeError() : 
-    m_type(ThemeErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ThemeError::ThemeError(JsonView jsonValue)
-  : ThemeError()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ThemeError& ThemeError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ThemeErrorTypeMapper::GetThemeErrorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

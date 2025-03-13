@@ -35,7 +35,7 @@ namespace Model
   class DescribeElasticsearchDomainConfigResult
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainConfigResult();
+    AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainConfigResult() = default;
     AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,28 +45,28 @@ namespace Model
      * <p>The configuration information of the domain requested in the
      * <code>DescribeElasticsearchDomainConfig</code> request.</p>
      */
-    inline const ElasticsearchDomainConfig& GetDomainConfig() const{ return m_domainConfig; }
-    inline void SetDomainConfig(const ElasticsearchDomainConfig& value) { m_domainConfig = value; }
-    inline void SetDomainConfig(ElasticsearchDomainConfig&& value) { m_domainConfig = std::move(value); }
-    inline DescribeElasticsearchDomainConfigResult& WithDomainConfig(const ElasticsearchDomainConfig& value) { SetDomainConfig(value); return *this;}
-    inline DescribeElasticsearchDomainConfigResult& WithDomainConfig(ElasticsearchDomainConfig&& value) { SetDomainConfig(std::move(value)); return *this;}
+    inline const ElasticsearchDomainConfig& GetDomainConfig() const { return m_domainConfig; }
+    template<typename DomainConfigT = ElasticsearchDomainConfig>
+    void SetDomainConfig(DomainConfigT&& value) { m_domainConfigHasBeenSet = true; m_domainConfig = std::forward<DomainConfigT>(value); }
+    template<typename DomainConfigT = ElasticsearchDomainConfig>
+    DescribeElasticsearchDomainConfigResult& WithDomainConfig(DomainConfigT&& value) { SetDomainConfig(std::forward<DomainConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeElasticsearchDomainConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeElasticsearchDomainConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeElasticsearchDomainConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeElasticsearchDomainConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ElasticsearchDomainConfig m_domainConfig;
+    bool m_domainConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

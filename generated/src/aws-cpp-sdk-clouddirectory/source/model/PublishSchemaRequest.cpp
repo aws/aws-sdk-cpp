@@ -13,14 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PublishSchemaRequest::PublishSchemaRequest() : 
-    m_developmentSchemaArnHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_minorVersionHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String PublishSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ContactCenterActivity::ContactCenterActivity() : 
-    m_nextActivityHasBeenSet(false)
-{
-}
-
 ContactCenterActivity::ContactCenterActivity(JsonView jsonValue)
-  : ContactCenterActivity()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContactCenterActivity& ContactCenterActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NextActivity"))
   {
     m_nextActivity = jsonValue.GetString("NextActivity");
-
     m_nextActivityHasBeenSet = true;
   }
-
   return *this;
 }
 

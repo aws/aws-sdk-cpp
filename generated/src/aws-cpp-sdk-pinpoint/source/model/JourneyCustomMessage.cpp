@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-JourneyCustomMessage::JourneyCustomMessage() : 
-    m_dataHasBeenSet(false)
-{
-}
-
 JourneyCustomMessage::JourneyCustomMessage(JsonView jsonValue)
-  : JourneyCustomMessage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ JourneyCustomMessage& JourneyCustomMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Data"))
   {
     m_data = jsonValue.GetString("Data");
-
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

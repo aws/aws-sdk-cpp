@@ -30,7 +30,7 @@ namespace Model
   class DescribeReplaceRootVolumeTasksResponse
   {
   public:
-    AWS_EC2_API DescribeReplaceRootVolumeTasksResponse();
+    AWS_EC2_API DescribeReplaceRootVolumeTasksResponse() = default;
     AWS_EC2_API DescribeReplaceRootVolumeTasksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeReplaceRootVolumeTasksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the root volume replacement task.</p>
      */
-    inline const Aws::Vector<ReplaceRootVolumeTask>& GetReplaceRootVolumeTasks() const{ return m_replaceRootVolumeTasks; }
-    inline void SetReplaceRootVolumeTasks(const Aws::Vector<ReplaceRootVolumeTask>& value) { m_replaceRootVolumeTasks = value; }
-    inline void SetReplaceRootVolumeTasks(Aws::Vector<ReplaceRootVolumeTask>&& value) { m_replaceRootVolumeTasks = std::move(value); }
-    inline DescribeReplaceRootVolumeTasksResponse& WithReplaceRootVolumeTasks(const Aws::Vector<ReplaceRootVolumeTask>& value) { SetReplaceRootVolumeTasks(value); return *this;}
-    inline DescribeReplaceRootVolumeTasksResponse& WithReplaceRootVolumeTasks(Aws::Vector<ReplaceRootVolumeTask>&& value) { SetReplaceRootVolumeTasks(std::move(value)); return *this;}
-    inline DescribeReplaceRootVolumeTasksResponse& AddReplaceRootVolumeTasks(const ReplaceRootVolumeTask& value) { m_replaceRootVolumeTasks.push_back(value); return *this; }
-    inline DescribeReplaceRootVolumeTasksResponse& AddReplaceRootVolumeTasks(ReplaceRootVolumeTask&& value) { m_replaceRootVolumeTasks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReplaceRootVolumeTask>& GetReplaceRootVolumeTasks() const { return m_replaceRootVolumeTasks; }
+    template<typename ReplaceRootVolumeTasksT = Aws::Vector<ReplaceRootVolumeTask>>
+    void SetReplaceRootVolumeTasks(ReplaceRootVolumeTasksT&& value) { m_replaceRootVolumeTasksHasBeenSet = true; m_replaceRootVolumeTasks = std::forward<ReplaceRootVolumeTasksT>(value); }
+    template<typename ReplaceRootVolumeTasksT = Aws::Vector<ReplaceRootVolumeTask>>
+    DescribeReplaceRootVolumeTasksResponse& WithReplaceRootVolumeTasks(ReplaceRootVolumeTasksT&& value) { SetReplaceRootVolumeTasks(std::forward<ReplaceRootVolumeTasksT>(value)); return *this;}
+    template<typename ReplaceRootVolumeTasksT = ReplaceRootVolumeTask>
+    DescribeReplaceRootVolumeTasksResponse& AddReplaceRootVolumeTasks(ReplaceRootVolumeTasksT&& value) { m_replaceRootVolumeTasksHasBeenSet = true; m_replaceRootVolumeTasks.emplace_back(std::forward<ReplaceRootVolumeTasksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeReplaceRootVolumeTasksResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeReplaceRootVolumeTasksResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeReplaceRootVolumeTasksResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeReplaceRootVolumeTasksResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeReplaceRootVolumeTasksResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeReplaceRootVolumeTasksResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeReplaceRootVolumeTasksResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ReplaceRootVolumeTask> m_replaceRootVolumeTasks;
+    bool m_replaceRootVolumeTasksHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

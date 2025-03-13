@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BookmarksConfigurations::BookmarksConfigurations() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 BookmarksConfigurations::BookmarksConfigurations(JsonView jsonValue)
-  : BookmarksConfigurations()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BookmarksConfigurations& BookmarksConfigurations::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

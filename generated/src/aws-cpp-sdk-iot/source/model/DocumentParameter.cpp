@@ -18,18 +18,7 @@ namespace IoT
 namespace Model
 {
 
-DocumentParameter::DocumentParameter() : 
-    m_keyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_regexHasBeenSet(false),
-    m_exampleHasBeenSet(false),
-    m_optional(false),
-    m_optionalHasBeenSet(false)
-{
-}
-
 DocumentParameter::DocumentParameter(JsonView jsonValue)
-  : DocumentParameter()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DocumentParameter& DocumentParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regex"))
   {
     m_regex = jsonValue.GetString("regex");
-
     m_regexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("example"))
   {
     m_example = jsonValue.GetString("example");
-
     m_exampleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("optional"))
   {
     m_optional = jsonValue.GetBool("optional");
-
     m_optionalHasBeenSet = true;
   }
-
   return *this;
 }
 

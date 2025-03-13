@@ -12,16 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCommitmentPurchaseAnalysesRequest::ListCommitmentPurchaseAnalysesRequest() : 
-    m_analysisStatus(AnalysisStatus::NOT_SET),
-    m_analysisStatusHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_analysisIdsHasBeenSet(false)
-{
-}
-
 Aws::String ListCommitmentPurchaseAnalysesRequest::SerializePayload() const
 {
   JsonValue payload;

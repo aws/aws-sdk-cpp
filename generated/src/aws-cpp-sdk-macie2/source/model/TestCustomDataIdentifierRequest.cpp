@@ -12,16 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestCustomDataIdentifierRequest::TestCustomDataIdentifierRequest() : 
-    m_ignoreWordsHasBeenSet(false),
-    m_keywordsHasBeenSet(false),
-    m_maximumMatchDistance(0),
-    m_maximumMatchDistanceHasBeenSet(false),
-    m_regexHasBeenSet(false),
-    m_sampleTextHasBeenSet(false)
-{
-}
-
 Aws::String TestCustomDataIdentifierRequest::SerializePayload() const
 {
   JsonValue payload;

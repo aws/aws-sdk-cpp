@@ -33,7 +33,7 @@ namespace Model
   class TransitionState
   {
   public:
-    AWS_CODEPIPELINE_API TransitionState();
+    AWS_CODEPIPELINE_API TransitionState() = default;
     AWS_CODEPIPELINE_API TransitionState(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API TransitionState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Whether the transition between stages is enabled (true) or disabled
      * (false).</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline TransitionState& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -54,26 +54,24 @@ namespace Model
     /**
      * <p>The ID of the user who last changed the transition state.</p>
      */
-    inline const Aws::String& GetLastChangedBy() const{ return m_lastChangedBy; }
+    inline const Aws::String& GetLastChangedBy() const { return m_lastChangedBy; }
     inline bool LastChangedByHasBeenSet() const { return m_lastChangedByHasBeenSet; }
-    inline void SetLastChangedBy(const Aws::String& value) { m_lastChangedByHasBeenSet = true; m_lastChangedBy = value; }
-    inline void SetLastChangedBy(Aws::String&& value) { m_lastChangedByHasBeenSet = true; m_lastChangedBy = std::move(value); }
-    inline void SetLastChangedBy(const char* value) { m_lastChangedByHasBeenSet = true; m_lastChangedBy.assign(value); }
-    inline TransitionState& WithLastChangedBy(const Aws::String& value) { SetLastChangedBy(value); return *this;}
-    inline TransitionState& WithLastChangedBy(Aws::String&& value) { SetLastChangedBy(std::move(value)); return *this;}
-    inline TransitionState& WithLastChangedBy(const char* value) { SetLastChangedBy(value); return *this;}
+    template<typename LastChangedByT = Aws::String>
+    void SetLastChangedBy(LastChangedByT&& value) { m_lastChangedByHasBeenSet = true; m_lastChangedBy = std::forward<LastChangedByT>(value); }
+    template<typename LastChangedByT = Aws::String>
+    TransitionState& WithLastChangedBy(LastChangedByT&& value) { SetLastChangedBy(std::forward<LastChangedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the transition state was last changed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastChangedAt() const{ return m_lastChangedAt; }
+    inline const Aws::Utils::DateTime& GetLastChangedAt() const { return m_lastChangedAt; }
     inline bool LastChangedAtHasBeenSet() const { return m_lastChangedAtHasBeenSet; }
-    inline void SetLastChangedAt(const Aws::Utils::DateTime& value) { m_lastChangedAtHasBeenSet = true; m_lastChangedAt = value; }
-    inline void SetLastChangedAt(Aws::Utils::DateTime&& value) { m_lastChangedAtHasBeenSet = true; m_lastChangedAt = std::move(value); }
-    inline TransitionState& WithLastChangedAt(const Aws::Utils::DateTime& value) { SetLastChangedAt(value); return *this;}
-    inline TransitionState& WithLastChangedAt(Aws::Utils::DateTime&& value) { SetLastChangedAt(std::move(value)); return *this;}
+    template<typename LastChangedAtT = Aws::Utils::DateTime>
+    void SetLastChangedAt(LastChangedAtT&& value) { m_lastChangedAtHasBeenSet = true; m_lastChangedAt = std::forward<LastChangedAtT>(value); }
+    template<typename LastChangedAtT = Aws::Utils::DateTime>
+    TransitionState& WithLastChangedAt(LastChangedAtT&& value) { SetLastChangedAt(std::forward<LastChangedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,24 +79,22 @@ namespace Model
      * <p>The user-specified reason why the transition between two stages of a pipeline
      * was disabled.</p>
      */
-    inline const Aws::String& GetDisabledReason() const{ return m_disabledReason; }
+    inline const Aws::String& GetDisabledReason() const { return m_disabledReason; }
     inline bool DisabledReasonHasBeenSet() const { return m_disabledReasonHasBeenSet; }
-    inline void SetDisabledReason(const Aws::String& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = value; }
-    inline void SetDisabledReason(Aws::String&& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = std::move(value); }
-    inline void SetDisabledReason(const char* value) { m_disabledReasonHasBeenSet = true; m_disabledReason.assign(value); }
-    inline TransitionState& WithDisabledReason(const Aws::String& value) { SetDisabledReason(value); return *this;}
-    inline TransitionState& WithDisabledReason(Aws::String&& value) { SetDisabledReason(std::move(value)); return *this;}
-    inline TransitionState& WithDisabledReason(const char* value) { SetDisabledReason(value); return *this;}
+    template<typename DisabledReasonT = Aws::String>
+    void SetDisabledReason(DisabledReasonT&& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = std::forward<DisabledReasonT>(value); }
+    template<typename DisabledReasonT = Aws::String>
+    TransitionState& WithDisabledReason(DisabledReasonT&& value) { SetDisabledReason(std::forward<DisabledReasonT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_lastChangedBy;
     bool m_lastChangedByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastChangedAt;
+    Aws::Utils::DateTime m_lastChangedAt{};
     bool m_lastChangedAtHasBeenSet = false;
 
     Aws::String m_disabledReason;

@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AgentHierarchyGroup::AgentHierarchyGroup() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 AgentHierarchyGroup::AgentHierarchyGroup(JsonView jsonValue)
-  : AgentHierarchyGroup()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AgentHierarchyGroup& AgentHierarchyGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

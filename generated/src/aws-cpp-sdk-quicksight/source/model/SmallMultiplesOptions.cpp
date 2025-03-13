@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SmallMultiplesOptions::SmallMultiplesOptions() : 
-    m_maxVisibleRows(0),
-    m_maxVisibleRowsHasBeenSet(false),
-    m_maxVisibleColumns(0),
-    m_maxVisibleColumnsHasBeenSet(false),
-    m_panelConfigurationHasBeenSet(false),
-    m_xAxisHasBeenSet(false),
-    m_yAxisHasBeenSet(false)
-{
-}
-
 SmallMultiplesOptions::SmallMultiplesOptions(JsonView jsonValue)
-  : SmallMultiplesOptions()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ SmallMultiplesOptions& SmallMultiplesOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaxVisibleRows"))
   {
     m_maxVisibleRows = jsonValue.GetInt64("MaxVisibleRows");
-
     m_maxVisibleRowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxVisibleColumns"))
   {
     m_maxVisibleColumns = jsonValue.GetInt64("MaxVisibleColumns");
-
     m_maxVisibleColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PanelConfiguration"))
   {
     m_panelConfiguration = jsonValue.GetObject("PanelConfiguration");
-
     m_panelConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XAxis"))
   {
     m_xAxis = jsonValue.GetObject("XAxis");
-
     m_xAxisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("YAxis"))
   {
     m_yAxis = jsonValue.GetObject("YAxis");
-
     m_yAxisHasBeenSet = true;
   }
-
   return *this;
 }
 

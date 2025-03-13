@@ -29,7 +29,7 @@ namespace Model
   class DescribeBackupsResult
   {
   public:
-    AWS_CLOUDHSMV2_API DescribeBackupsResult();
+    AWS_CLOUDHSMV2_API DescribeBackupsResult() = default;
     AWS_CLOUDHSMV2_API DescribeBackupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDHSMV2_API DescribeBackupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of backups.</p>
      */
-    inline const Aws::Vector<Backup>& GetBackups() const{ return m_backups; }
-    inline void SetBackups(const Aws::Vector<Backup>& value) { m_backups = value; }
-    inline void SetBackups(Aws::Vector<Backup>&& value) { m_backups = std::move(value); }
-    inline DescribeBackupsResult& WithBackups(const Aws::Vector<Backup>& value) { SetBackups(value); return *this;}
-    inline DescribeBackupsResult& WithBackups(Aws::Vector<Backup>&& value) { SetBackups(std::move(value)); return *this;}
-    inline DescribeBackupsResult& AddBackups(const Backup& value) { m_backups.push_back(value); return *this; }
-    inline DescribeBackupsResult& AddBackups(Backup&& value) { m_backups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Backup>& GetBackups() const { return m_backups; }
+    template<typename BackupsT = Aws::Vector<Backup>>
+    void SetBackups(BackupsT&& value) { m_backupsHasBeenSet = true; m_backups = std::forward<BackupsT>(value); }
+    template<typename BackupsT = Aws::Vector<Backup>>
+    DescribeBackupsResult& WithBackups(BackupsT&& value) { SetBackups(std::forward<BackupsT>(value)); return *this;}
+    template<typename BackupsT = Backup>
+    DescribeBackupsResult& AddBackups(BackupsT&& value) { m_backupsHasBeenSet = true; m_backups.emplace_back(std::forward<BackupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * backups. Use this value in a subsequent <code>DescribeBackups</code> request to
      * get more backups.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeBackupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeBackupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeBackupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeBackupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeBackupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeBackupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeBackupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeBackupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Backup> m_backups;
+    bool m_backupsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

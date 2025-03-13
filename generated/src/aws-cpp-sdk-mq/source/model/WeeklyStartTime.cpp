@@ -18,16 +18,7 @@ namespace MQ
 namespace Model
 {
 
-WeeklyStartTime::WeeklyStartTime() : 
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false),
-    m_timeOfDayHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
-{
-}
-
 WeeklyStartTime::WeeklyStartTime(JsonView jsonValue)
-  : WeeklyStartTime()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ WeeklyStartTime& WeeklyStartTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dayOfWeek"))
   {
     m_dayOfWeek = DayOfWeekMapper::GetDayOfWeekForName(jsonValue.GetString("dayOfWeek"));
-
     m_dayOfWeekHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeOfDay"))
   {
     m_timeOfDay = jsonValue.GetString("timeOfDay");
-
     m_timeOfDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeZone"))
   {
     m_timeZone = jsonValue.GetString("timeZone");
-
     m_timeZoneHasBeenSet = true;
   }
-
   return *this;
 }
 

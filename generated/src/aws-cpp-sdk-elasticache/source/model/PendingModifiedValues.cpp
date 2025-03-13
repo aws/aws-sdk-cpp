@@ -20,24 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-PendingModifiedValues::PendingModifiedValues() : 
-    m_numCacheNodes(0),
-    m_numCacheNodesHasBeenSet(false),
-    m_cacheNodeIdsToRemoveHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
-    m_authTokenStatusHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false),
-    m_transitEncryptionEnabled(false),
-    m_transitEncryptionEnabledHasBeenSet(false),
-    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false)
-{
-}
-
 PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode)
-  : PendingModifiedValues()
 {
   *this = xmlNode;
 }
@@ -53,60 +36,68 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
     {
       m_numCacheNodes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numCacheNodesNode.GetText()).c_str()).c_str());
       m_numCacheNodesHasBeenSet = true;
+       m_numCacheNodesHasBeenSet = true;
     }
     XmlNode cacheNodeIdsToRemoveNode = resultNode.FirstChild("CacheNodeIdsToRemove");
     if(!cacheNodeIdsToRemoveNode.IsNull())
     {
       XmlNode cacheNodeIdsToRemoveMember = cacheNodeIdsToRemoveNode.FirstChild("CacheNodeId");
+      m_cacheNodeIdsToRemoveHasBeenSet = !cacheNodeIdsToRemoveMember.IsNull();
       while(!cacheNodeIdsToRemoveMember.IsNull())
       {
         m_cacheNodeIdsToRemove.push_back(cacheNodeIdsToRemoveMember.GetText());
         cacheNodeIdsToRemoveMember = cacheNodeIdsToRemoveMember.NextNode("CacheNodeId");
       }
 
-      m_cacheNodeIdsToRemoveHasBeenSet = true;
+       m_cacheNodeIdsToRemoveHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+       m_engineVersionHasBeenSet = true;
     }
     XmlNode cacheNodeTypeNode = resultNode.FirstChild("CacheNodeType");
     if(!cacheNodeTypeNode.IsNull())
     {
       m_cacheNodeType = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeTypeNode.GetText());
       m_cacheNodeTypeHasBeenSet = true;
+       m_cacheNodeTypeHasBeenSet = true;
     }
     XmlNode authTokenStatusNode = resultNode.FirstChild("AuthTokenStatus");
     if(!authTokenStatusNode.IsNull())
     {
-      m_authTokenStatus = AuthTokenUpdateStatusMapper::GetAuthTokenUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenStatusNode.GetText()).c_str()).c_str());
+      m_authTokenStatus = AuthTokenUpdateStatusMapper::GetAuthTokenUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenStatusNode.GetText()).c_str()));
       m_authTokenStatusHasBeenSet = true;
+       m_authTokenStatusHasBeenSet = true;
     }
     XmlNode logDeliveryConfigurationsNode = resultNode.FirstChild("LogDeliveryConfigurations");
     if(!logDeliveryConfigurationsNode.IsNull())
     {
       XmlNode logDeliveryConfigurationsMember = logDeliveryConfigurationsNode.FirstChild("member");
+      m_logDeliveryConfigurationsHasBeenSet = !logDeliveryConfigurationsMember.IsNull();
       while(!logDeliveryConfigurationsMember.IsNull())
       {
         m_logDeliveryConfigurations.push_back(logDeliveryConfigurationsMember);
         logDeliveryConfigurationsMember = logDeliveryConfigurationsMember.NextNode("member");
       }
 
-      m_logDeliveryConfigurationsHasBeenSet = true;
+       m_logDeliveryConfigurationsHasBeenSet = true;
     }
     XmlNode transitEncryptionEnabledNode = resultNode.FirstChild("TransitEncryptionEnabled");
     if(!transitEncryptionEnabledNode.IsNull())
     {
       m_transitEncryptionEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionEnabledNode.GetText()).c_str()).c_str());
       m_transitEncryptionEnabledHasBeenSet = true;
+       m_transitEncryptionEnabledHasBeenSet = true;
     }
     XmlNode transitEncryptionModeNode = resultNode.FirstChild("TransitEncryptionMode");
     if(!transitEncryptionModeNode.IsNull())
     {
-      m_transitEncryptionMode = TransitEncryptionModeMapper::GetTransitEncryptionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionModeNode.GetText()).c_str()).c_str());
+      m_transitEncryptionMode = TransitEncryptionModeMapper::GetTransitEncryptionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionModeNode.GetText()).c_str()));
       m_transitEncryptionModeHasBeenSet = true;
+       m_transitEncryptionModeHasBeenSet = true;
     }
   }
 

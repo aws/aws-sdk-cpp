@@ -18,16 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-LteLocalId::LteLocalId() : 
-    m_earfcn(0),
-    m_earfcnHasBeenSet(false),
-    m_pci(0),
-    m_pciHasBeenSet(false)
-{
-}
-
 LteLocalId::LteLocalId(JsonView jsonValue)
-  : LteLocalId()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ LteLocalId& LteLocalId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Earfcn"))
   {
     m_earfcn = jsonValue.GetInteger("Earfcn");
-
     m_earfcnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pci"))
   {
     m_pci = jsonValue.GetInteger("Pci");
-
     m_pciHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-RequestMetadataBaseFilters::RequestMetadataBaseFilters() : 
-    m_equalsHasBeenSet(false),
-    m_notEqualsHasBeenSet(false)
-{
-}
-
 RequestMetadataBaseFilters::RequestMetadataBaseFilters(JsonView jsonValue)
-  : RequestMetadataBaseFilters()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ RequestMetadataBaseFilters& RequestMetadataBaseFilters::operator =(JsonView json
     }
     m_equalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notEquals"))
   {
     Aws::Map<Aws::String, JsonView> notEqualsJsonMap = jsonValue.GetObject("notEquals").GetAllObjects();
@@ -51,7 +43,6 @@ RequestMetadataBaseFilters& RequestMetadataBaseFilters::operator =(JsonView json
     }
     m_notEqualsHasBeenSet = true;
   }
-
   return *this;
 }
 

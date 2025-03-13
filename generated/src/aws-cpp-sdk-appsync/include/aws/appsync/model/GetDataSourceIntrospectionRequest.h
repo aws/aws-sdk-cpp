@@ -25,7 +25,7 @@ namespace Model
   class GetDataSourceIntrospectionRequest : public AppSyncRequest
   {
   public:
-    AWS_APPSYNC_API GetDataSourceIntrospectionRequest();
+    AWS_APPSYNC_API GetDataSourceIntrospectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The introspection ID. Each introspection contains a unique ID that can be
      * used to reference the instrospection record.</p>
      */
-    inline const Aws::String& GetIntrospectionId() const{ return m_introspectionId; }
+    inline const Aws::String& GetIntrospectionId() const { return m_introspectionId; }
     inline bool IntrospectionIdHasBeenSet() const { return m_introspectionIdHasBeenSet; }
-    inline void SetIntrospectionId(const Aws::String& value) { m_introspectionIdHasBeenSet = true; m_introspectionId = value; }
-    inline void SetIntrospectionId(Aws::String&& value) { m_introspectionIdHasBeenSet = true; m_introspectionId = std::move(value); }
-    inline void SetIntrospectionId(const char* value) { m_introspectionIdHasBeenSet = true; m_introspectionId.assign(value); }
-    inline GetDataSourceIntrospectionRequest& WithIntrospectionId(const Aws::String& value) { SetIntrospectionId(value); return *this;}
-    inline GetDataSourceIntrospectionRequest& WithIntrospectionId(Aws::String&& value) { SetIntrospectionId(std::move(value)); return *this;}
-    inline GetDataSourceIntrospectionRequest& WithIntrospectionId(const char* value) { SetIntrospectionId(value); return *this;}
+    template<typename IntrospectionIdT = Aws::String>
+    void SetIntrospectionId(IntrospectionIdT&& value) { m_introspectionIdHasBeenSet = true; m_introspectionId = std::forward<IntrospectionIdT>(value); }
+    template<typename IntrospectionIdT = Aws::String>
+    GetDataSourceIntrospectionRequest& WithIntrospectionId(IntrospectionIdT&& value) { SetIntrospectionId(std::forward<IntrospectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <code>sdl</code> property that contains the SDL for that type. The SDL only
      * contains the type data and no additional metadata or directives. </p>
      */
-    inline bool GetIncludeModelsSDL() const{ return m_includeModelsSDL; }
+    inline bool GetIncludeModelsSDL() const { return m_includeModelsSDL; }
     inline bool IncludeModelsSDLHasBeenSet() const { return m_includeModelsSDLHasBeenSet; }
     inline void SetIncludeModelsSDL(bool value) { m_includeModelsSDLHasBeenSet = true; m_includeModelsSDL = value; }
     inline GetDataSourceIntrospectionRequest& WithIncludeModelsSDL(bool value) { SetIncludeModelsSDL(value); return *this;}
@@ -72,14 +70,12 @@ namespace Model
      * paginating. This value is typically taken from <code>nextToken</code> value from
      * the previous response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetDataSourceIntrospectionRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetDataSourceIntrospectionRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetDataSourceIntrospectionRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetDataSourceIntrospectionRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +83,7 @@ namespace Model
      * <p>The maximum number of introspected types that will be returned in a single
      * response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetDataSourceIntrospectionRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -97,13 +93,13 @@ namespace Model
     Aws::String m_introspectionId;
     bool m_introspectionIdHasBeenSet = false;
 
-    bool m_includeModelsSDL;
+    bool m_includeModelsSDL{false};
     bool m_includeModelsSDLHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

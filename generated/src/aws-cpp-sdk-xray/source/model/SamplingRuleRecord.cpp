@@ -18,15 +18,7 @@ namespace XRay
 namespace Model
 {
 
-SamplingRuleRecord::SamplingRuleRecord() : 
-    m_samplingRuleHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
-{
-}
-
 SamplingRuleRecord::SamplingRuleRecord(JsonView jsonValue)
-  : SamplingRuleRecord()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SamplingRuleRecord& SamplingRuleRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SamplingRule"))
   {
     m_samplingRule = jsonValue.GetObject("SamplingRule");
-
     m_samplingRuleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifiedAt"))
   {
     m_modifiedAt = jsonValue.GetDouble("ModifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

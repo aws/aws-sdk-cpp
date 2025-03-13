@@ -31,7 +31,7 @@ namespace Model
   class ActionParameter
   {
   public:
-    AWS_FIS_API ActionParameter();
+    AWS_FIS_API ActionParameter() = default;
     AWS_FIS_API ActionParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API ActionParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The parameter description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ActionParameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ActionParameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ActionParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ActionParameter& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the parameter is required.</p>
      */
-    inline bool GetRequired() const{ return m_required; }
+    inline bool GetRequired() const { return m_required; }
     inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
     inline ActionParameter& WithRequired(bool value) { SetRequired(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_required;
+    bool m_required{false};
     bool m_requiredHasBeenSet = false;
   };
 

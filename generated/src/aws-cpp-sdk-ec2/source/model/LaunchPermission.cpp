@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchPermission::LaunchPermission() : 
-    m_organizationArnHasBeenSet(false),
-    m_organizationalUnitArnHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_group(PermissionGroup::NOT_SET),
-    m_groupHasBeenSet(false)
-{
-}
-
 LaunchPermission::LaunchPermission(const XmlNode& xmlNode)
-  : LaunchPermission()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ LaunchPermission& LaunchPermission::operator =(const XmlNode& xmlNode)
     {
       m_organizationArn = Aws::Utils::Xml::DecodeEscapedXmlText(organizationArnNode.GetText());
       m_organizationArnHasBeenSet = true;
+       m_organizationArnHasBeenSet = true;
     }
     XmlNode organizationalUnitArnNode = resultNode.FirstChild("organizationalUnitArn");
     if(!organizationalUnitArnNode.IsNull())
     {
       m_organizationalUnitArn = Aws::Utils::Xml::DecodeEscapedXmlText(organizationalUnitArnNode.GetText());
       m_organizationalUnitArnHasBeenSet = true;
+       m_organizationalUnitArnHasBeenSet = true;
     }
     XmlNode userIdNode = resultNode.FirstChild("userId");
     if(!userIdNode.IsNull())
     {
       m_userId = Aws::Utils::Xml::DecodeEscapedXmlText(userIdNode.GetText());
       m_userIdHasBeenSet = true;
+       m_userIdHasBeenSet = true;
     }
     XmlNode groupNode = resultNode.FirstChild("group");
     if(!groupNode.IsNull())
     {
-      m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupNode.GetText()).c_str()).c_str());
+      m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupNode.GetText()).c_str()));
       m_groupHasBeenSet = true;
+       m_groupHasBeenSet = true;
     }
   }
 

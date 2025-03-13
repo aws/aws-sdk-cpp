@@ -18,15 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-BatchImportEvidenceToAssessmentControlError::BatchImportEvidenceToAssessmentControlError() : 
-    m_manualEvidenceHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchImportEvidenceToAssessmentControlError::BatchImportEvidenceToAssessmentControlError(JsonView jsonValue)
-  : BatchImportEvidenceToAssessmentControlError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchImportEvidenceToAssessmentControlError& BatchImportEvidenceToAssessmentCont
   if(jsonValue.ValueExists("manualEvidence"))
   {
     m_manualEvidence = jsonValue.GetObject("manualEvidence");
-
     m_manualEvidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

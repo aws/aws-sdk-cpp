@@ -18,27 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-InstancePortInfo::InstancePortInfo() : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_protocol(NetworkProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_accessFromHasBeenSet(false),
-    m_accessType(PortAccessType::NOT_SET),
-    m_accessTypeHasBeenSet(false),
-    m_commonNameHasBeenSet(false),
-    m_accessDirection(AccessDirection::NOT_SET),
-    m_accessDirectionHasBeenSet(false),
-    m_cidrsHasBeenSet(false),
-    m_ipv6CidrsHasBeenSet(false),
-    m_cidrListAliasesHasBeenSet(false)
-{
-}
-
 InstancePortInfo::InstancePortInfo(JsonView jsonValue)
-  : InstancePortInfo()
 {
   *this = jsonValue;
 }
@@ -48,52 +28,38 @@ InstancePortInfo& InstancePortInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fromPort"))
   {
     m_fromPort = jsonValue.GetInteger("fromPort");
-
     m_fromPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toPort"))
   {
     m_toPort = jsonValue.GetInteger("toPort");
-
     m_toPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = NetworkProtocolMapper::GetNetworkProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessFrom"))
   {
     m_accessFrom = jsonValue.GetString("accessFrom");
-
     m_accessFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessType"))
   {
     m_accessType = PortAccessTypeMapper::GetPortAccessTypeForName(jsonValue.GetString("accessType"));
-
     m_accessTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commonName"))
   {
     m_commonName = jsonValue.GetString("commonName");
-
     m_commonNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessDirection"))
   {
     m_accessDirection = AccessDirectionMapper::GetAccessDirectionForName(jsonValue.GetString("accessDirection"));
-
     m_accessDirectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cidrs"))
   {
     Aws::Utils::Array<JsonView> cidrsJsonList = jsonValue.GetArray("cidrs");
@@ -103,7 +69,6 @@ InstancePortInfo& InstancePortInfo::operator =(JsonView jsonValue)
     }
     m_cidrsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipv6Cidrs"))
   {
     Aws::Utils::Array<JsonView> ipv6CidrsJsonList = jsonValue.GetArray("ipv6Cidrs");
@@ -113,7 +78,6 @@ InstancePortInfo& InstancePortInfo::operator =(JsonView jsonValue)
     }
     m_ipv6CidrsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cidrListAliases"))
   {
     Aws::Utils::Array<JsonView> cidrListAliasesJsonList = jsonValue.GetArray("cidrListAliases");
@@ -123,7 +87,6 @@ InstancePortInfo& InstancePortInfo::operator =(JsonView jsonValue)
     }
     m_cidrListAliasesHasBeenSet = true;
   }
-
   return *this;
 }
 

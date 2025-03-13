@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRegexPatternSetResult::GetRegexPatternSetResult()
-{
-}
-
 GetRegexPatternSetResult::GetRegexPatternSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetRegexPatternSetResult& GetRegexPatternSetResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("RegexPatternSet"))
   {
     m_regexPatternSet = jsonValue.GetObject("RegexPatternSet");
-
+    m_regexPatternSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LockToken"))
   {
     m_lockToken = jsonValue.GetString("LockToken");
-
+    m_lockTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

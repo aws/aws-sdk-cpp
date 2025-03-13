@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSecurityProfilesRequest::ListSecurityProfilesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_dimensionNameHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
-{
-}
-
 Aws::String ListSecurityProfilesRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class AddSavingsPlanAction
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API AddSavingsPlanAction();
+    AWS_BCMPRICINGCALCULATOR_API AddSavingsPlanAction() = default;
     AWS_BCMPRICINGCALCULATOR_API AddSavingsPlanAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API AddSavingsPlanAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlansOfferings.html">
      * DescribeSavingsPlansOfferings</a>. </p>
      */
-    inline const Aws::String& GetSavingsPlanOfferingId() const{ return m_savingsPlanOfferingId; }
+    inline const Aws::String& GetSavingsPlanOfferingId() const { return m_savingsPlanOfferingId; }
     inline bool SavingsPlanOfferingIdHasBeenSet() const { return m_savingsPlanOfferingIdHasBeenSet; }
-    inline void SetSavingsPlanOfferingId(const Aws::String& value) { m_savingsPlanOfferingIdHasBeenSet = true; m_savingsPlanOfferingId = value; }
-    inline void SetSavingsPlanOfferingId(Aws::String&& value) { m_savingsPlanOfferingIdHasBeenSet = true; m_savingsPlanOfferingId = std::move(value); }
-    inline void SetSavingsPlanOfferingId(const char* value) { m_savingsPlanOfferingIdHasBeenSet = true; m_savingsPlanOfferingId.assign(value); }
-    inline AddSavingsPlanAction& WithSavingsPlanOfferingId(const Aws::String& value) { SetSavingsPlanOfferingId(value); return *this;}
-    inline AddSavingsPlanAction& WithSavingsPlanOfferingId(Aws::String&& value) { SetSavingsPlanOfferingId(std::move(value)); return *this;}
-    inline AddSavingsPlanAction& WithSavingsPlanOfferingId(const char* value) { SetSavingsPlanOfferingId(value); return *this;}
+    template<typename SavingsPlanOfferingIdT = Aws::String>
+    void SetSavingsPlanOfferingId(SavingsPlanOfferingIdT&& value) { m_savingsPlanOfferingIdHasBeenSet = true; m_savingsPlanOfferingId = std::forward<SavingsPlanOfferingIdT>(value); }
+    template<typename SavingsPlanOfferingIdT = Aws::String>
+    AddSavingsPlanAction& WithSavingsPlanOfferingId(SavingsPlanOfferingIdT&& value) { SetSavingsPlanOfferingId(std::forward<SavingsPlanOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million.
      * You cannot specify more than five digits after the decimal point. </p>
      */
-    inline double GetCommitment() const{ return m_commitment; }
+    inline double GetCommitment() const { return m_commitment; }
     inline bool CommitmentHasBeenSet() const { return m_commitmentHasBeenSet; }
     inline void SetCommitment(double value) { m_commitmentHasBeenSet = true; m_commitment = value; }
     inline AddSavingsPlanAction& WithCommitment(double value) { SetCommitment(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_savingsPlanOfferingId;
     bool m_savingsPlanOfferingIdHasBeenSet = false;
 
-    double m_commitment;
+    double m_commitment{0.0};
     bool m_commitmentHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSentimentDetectionJobResult::DescribeSentimentDetectionJobResult()
-{
-}
-
 DescribeSentimentDetectionJobResult::DescribeSentimentDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeSentimentDetectionJobResult& DescribeSentimentDetectionJobResult::operat
   if(jsonValue.ValueExists("SentimentDetectionJobProperties"))
   {
     m_sentimentDetectionJobProperties = jsonValue.GetObject("SentimentDetectionJobProperties");
-
+    m_sentimentDetectionJobPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -20,57 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ReplicationGroup::ReplicationGroup() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_globalReplicationGroupInfoHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_memberClustersHasBeenSet(false),
-    m_nodeGroupsHasBeenSet(false),
-    m_snapshottingClusterIdHasBeenSet(false),
-    m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
-    m_automaticFailoverHasBeenSet(false),
-    m_multiAZ(MultiAZStatus::NOT_SET),
-    m_multiAZHasBeenSet(false),
-    m_configurationEndpointHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false),
-    m_clusterEnabled(false),
-    m_clusterEnabledHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_authTokenEnabled(false),
-    m_authTokenEnabledHasBeenSet(false),
-    m_authTokenLastModifiedDateHasBeenSet(false),
-    m_transitEncryptionEnabled(false),
-    m_transitEncryptionEnabledHasBeenSet(false),
-    m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false),
-    m_memberClustersOutpostArnsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_userGroupIdsHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false),
-    m_replicationGroupCreateTimeHasBeenSet(false),
-    m_dataTiering(DataTieringStatus::NOT_SET),
-    m_dataTieringHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_networkType(NetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false),
-    m_ipDiscovery(IpDiscovery::NOT_SET),
-    m_ipDiscoveryHasBeenSet(false),
-    m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false),
-    m_clusterMode(ClusterMode::NOT_SET),
-    m_clusterModeHasBeenSet(false),
-    m_engineHasBeenSet(false)
-{
-}
-
 ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode)
-  : ReplicationGroup()
 {
   *this = xmlNode;
 }
@@ -86,222 +36,254 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
     {
       m_replicationGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupIdNode.GetText());
       m_replicationGroupIdHasBeenSet = true;
+       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode globalReplicationGroupInfoNode = resultNode.FirstChild("GlobalReplicationGroupInfo");
     if(!globalReplicationGroupInfoNode.IsNull())
     {
       m_globalReplicationGroupInfo = globalReplicationGroupInfoNode;
       m_globalReplicationGroupInfoHasBeenSet = true;
+       m_globalReplicationGroupInfoHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode pendingModifiedValuesNode = resultNode.FirstChild("PendingModifiedValues");
     if(!pendingModifiedValuesNode.IsNull())
     {
       m_pendingModifiedValues = pendingModifiedValuesNode;
       m_pendingModifiedValuesHasBeenSet = true;
+       m_pendingModifiedValuesHasBeenSet = true;
     }
     XmlNode memberClustersNode = resultNode.FirstChild("MemberClusters");
     if(!memberClustersNode.IsNull())
     {
       XmlNode memberClustersMember = memberClustersNode.FirstChild("ClusterId");
+      m_memberClustersHasBeenSet = !memberClustersMember.IsNull();
       while(!memberClustersMember.IsNull())
       {
         m_memberClusters.push_back(memberClustersMember.GetText());
         memberClustersMember = memberClustersMember.NextNode("ClusterId");
       }
 
-      m_memberClustersHasBeenSet = true;
+       m_memberClustersHasBeenSet = true;
     }
     XmlNode nodeGroupsNode = resultNode.FirstChild("NodeGroups");
     if(!nodeGroupsNode.IsNull())
     {
       XmlNode nodeGroupsMember = nodeGroupsNode.FirstChild("NodeGroup");
+      m_nodeGroupsHasBeenSet = !nodeGroupsMember.IsNull();
       while(!nodeGroupsMember.IsNull())
       {
         m_nodeGroups.push_back(nodeGroupsMember);
         nodeGroupsMember = nodeGroupsMember.NextNode("NodeGroup");
       }
 
-      m_nodeGroupsHasBeenSet = true;
+       m_nodeGroupsHasBeenSet = true;
     }
     XmlNode snapshottingClusterIdNode = resultNode.FirstChild("SnapshottingClusterId");
     if(!snapshottingClusterIdNode.IsNull())
     {
       m_snapshottingClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshottingClusterIdNode.GetText());
       m_snapshottingClusterIdHasBeenSet = true;
+       m_snapshottingClusterIdHasBeenSet = true;
     }
     XmlNode automaticFailoverNode = resultNode.FirstChild("AutomaticFailover");
     if(!automaticFailoverNode.IsNull())
     {
-      m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticFailoverNode.GetText()).c_str()).c_str());
+      m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticFailoverNode.GetText()).c_str()));
       m_automaticFailoverHasBeenSet = true;
+       m_automaticFailoverHasBeenSet = true;
     }
     XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
     if(!multiAZNode.IsNull())
     {
-      m_multiAZ = MultiAZStatusMapper::GetMultiAZStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAZNode.GetText()).c_str()).c_str());
+      m_multiAZ = MultiAZStatusMapper::GetMultiAZStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAZNode.GetText()).c_str()));
       m_multiAZHasBeenSet = true;
+       m_multiAZHasBeenSet = true;
     }
     XmlNode configurationEndpointNode = resultNode.FirstChild("ConfigurationEndpoint");
     if(!configurationEndpointNode.IsNull())
     {
       m_configurationEndpoint = configurationEndpointNode;
       m_configurationEndpointHasBeenSet = true;
+       m_configurationEndpointHasBeenSet = true;
     }
     XmlNode snapshotRetentionLimitNode = resultNode.FirstChild("SnapshotRetentionLimit");
     if(!snapshotRetentionLimitNode.IsNull())
     {
       m_snapshotRetentionLimit = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotRetentionLimitNode.GetText()).c_str()).c_str());
       m_snapshotRetentionLimitHasBeenSet = true;
+       m_snapshotRetentionLimitHasBeenSet = true;
     }
     XmlNode snapshotWindowNode = resultNode.FirstChild("SnapshotWindow");
     if(!snapshotWindowNode.IsNull())
     {
       m_snapshotWindow = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotWindowNode.GetText());
       m_snapshotWindowHasBeenSet = true;
+       m_snapshotWindowHasBeenSet = true;
     }
     XmlNode clusterEnabledNode = resultNode.FirstChild("ClusterEnabled");
     if(!clusterEnabledNode.IsNull())
     {
       m_clusterEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterEnabledNode.GetText()).c_str()).c_str());
       m_clusterEnabledHasBeenSet = true;
+       m_clusterEnabledHasBeenSet = true;
     }
     XmlNode cacheNodeTypeNode = resultNode.FirstChild("CacheNodeType");
     if(!cacheNodeTypeNode.IsNull())
     {
       m_cacheNodeType = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeTypeNode.GetText());
       m_cacheNodeTypeHasBeenSet = true;
+       m_cacheNodeTypeHasBeenSet = true;
     }
     XmlNode authTokenEnabledNode = resultNode.FirstChild("AuthTokenEnabled");
     if(!authTokenEnabledNode.IsNull())
     {
       m_authTokenEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenEnabledNode.GetText()).c_str()).c_str());
       m_authTokenEnabledHasBeenSet = true;
+       m_authTokenEnabledHasBeenSet = true;
     }
     XmlNode authTokenLastModifiedDateNode = resultNode.FirstChild("AuthTokenLastModifiedDate");
     if(!authTokenLastModifiedDateNode.IsNull())
     {
       m_authTokenLastModifiedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenLastModifiedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_authTokenLastModifiedDateHasBeenSet = true;
+       m_authTokenLastModifiedDateHasBeenSet = true;
     }
     XmlNode transitEncryptionEnabledNode = resultNode.FirstChild("TransitEncryptionEnabled");
     if(!transitEncryptionEnabledNode.IsNull())
     {
       m_transitEncryptionEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionEnabledNode.GetText()).c_str()).c_str());
       m_transitEncryptionEnabledHasBeenSet = true;
+       m_transitEncryptionEnabledHasBeenSet = true;
     }
     XmlNode atRestEncryptionEnabledNode = resultNode.FirstChild("AtRestEncryptionEnabled");
     if(!atRestEncryptionEnabledNode.IsNull())
     {
       m_atRestEncryptionEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(atRestEncryptionEnabledNode.GetText()).c_str()).c_str());
       m_atRestEncryptionEnabledHasBeenSet = true;
+       m_atRestEncryptionEnabledHasBeenSet = true;
     }
     XmlNode memberClustersOutpostArnsNode = resultNode.FirstChild("MemberClustersOutpostArns");
     if(!memberClustersOutpostArnsNode.IsNull())
     {
       XmlNode memberClustersOutpostArnsMember = memberClustersOutpostArnsNode.FirstChild("ReplicationGroupOutpostArn");
+      m_memberClustersOutpostArnsHasBeenSet = !memberClustersOutpostArnsMember.IsNull();
       while(!memberClustersOutpostArnsMember.IsNull())
       {
         m_memberClustersOutpostArns.push_back(memberClustersOutpostArnsMember.GetText());
         memberClustersOutpostArnsMember = memberClustersOutpostArnsMember.NextNode("ReplicationGroupOutpostArn");
       }
 
-      m_memberClustersOutpostArnsHasBeenSet = true;
+       m_memberClustersOutpostArnsHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
+       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
     XmlNode userGroupIdsNode = resultNode.FirstChild("UserGroupIds");
     if(!userGroupIdsNode.IsNull())
     {
       XmlNode userGroupIdsMember = userGroupIdsNode.FirstChild("member");
+      m_userGroupIdsHasBeenSet = !userGroupIdsMember.IsNull();
       while(!userGroupIdsMember.IsNull())
       {
         m_userGroupIds.push_back(userGroupIdsMember.GetText());
         userGroupIdsMember = userGroupIdsMember.NextNode("member");
       }
 
-      m_userGroupIdsHasBeenSet = true;
+       m_userGroupIdsHasBeenSet = true;
     }
     XmlNode logDeliveryConfigurationsNode = resultNode.FirstChild("LogDeliveryConfigurations");
     if(!logDeliveryConfigurationsNode.IsNull())
     {
       XmlNode logDeliveryConfigurationsMember = logDeliveryConfigurationsNode.FirstChild("LogDeliveryConfiguration");
+      m_logDeliveryConfigurationsHasBeenSet = !logDeliveryConfigurationsMember.IsNull();
       while(!logDeliveryConfigurationsMember.IsNull())
       {
         m_logDeliveryConfigurations.push_back(logDeliveryConfigurationsMember);
         logDeliveryConfigurationsMember = logDeliveryConfigurationsMember.NextNode("LogDeliveryConfiguration");
       }
 
-      m_logDeliveryConfigurationsHasBeenSet = true;
+       m_logDeliveryConfigurationsHasBeenSet = true;
     }
     XmlNode replicationGroupCreateTimeNode = resultNode.FirstChild("ReplicationGroupCreateTime");
     if(!replicationGroupCreateTimeNode.IsNull())
     {
       m_replicationGroupCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_replicationGroupCreateTimeHasBeenSet = true;
+       m_replicationGroupCreateTimeHasBeenSet = true;
     }
     XmlNode dataTieringNode = resultNode.FirstChild("DataTiering");
     if(!dataTieringNode.IsNull())
     {
-      m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataTieringNode.GetText()).c_str()).c_str());
+      m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataTieringNode.GetText()).c_str()));
       m_dataTieringHasBeenSet = true;
+       m_dataTieringHasBeenSet = true;
     }
     XmlNode autoMinorVersionUpgradeNode = resultNode.FirstChild("AutoMinorVersionUpgrade");
     if(!autoMinorVersionUpgradeNode.IsNull())
     {
       m_autoMinorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoMinorVersionUpgradeNode.GetText()).c_str()).c_str());
       m_autoMinorVersionUpgradeHasBeenSet = true;
+       m_autoMinorVersionUpgradeHasBeenSet = true;
     }
     XmlNode networkTypeNode = resultNode.FirstChild("NetworkType");
     if(!networkTypeNode.IsNull())
     {
-      m_networkType = NetworkTypeMapper::GetNetworkTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText()).c_str()).c_str());
+      m_networkType = NetworkTypeMapper::GetNetworkTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText()).c_str()));
       m_networkTypeHasBeenSet = true;
+       m_networkTypeHasBeenSet = true;
     }
     XmlNode ipDiscoveryNode = resultNode.FirstChild("IpDiscovery");
     if(!ipDiscoveryNode.IsNull())
     {
-      m_ipDiscovery = IpDiscoveryMapper::GetIpDiscoveryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipDiscoveryNode.GetText()).c_str()).c_str());
+      m_ipDiscovery = IpDiscoveryMapper::GetIpDiscoveryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipDiscoveryNode.GetText()).c_str()));
       m_ipDiscoveryHasBeenSet = true;
+       m_ipDiscoveryHasBeenSet = true;
     }
     XmlNode transitEncryptionModeNode = resultNode.FirstChild("TransitEncryptionMode");
     if(!transitEncryptionModeNode.IsNull())
     {
-      m_transitEncryptionMode = TransitEncryptionModeMapper::GetTransitEncryptionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionModeNode.GetText()).c_str()).c_str());
+      m_transitEncryptionMode = TransitEncryptionModeMapper::GetTransitEncryptionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionModeNode.GetText()).c_str()));
       m_transitEncryptionModeHasBeenSet = true;
+       m_transitEncryptionModeHasBeenSet = true;
     }
     XmlNode clusterModeNode = resultNode.FirstChild("ClusterMode");
     if(!clusterModeNode.IsNull())
     {
-      m_clusterMode = ClusterModeMapper::GetClusterModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterModeNode.GetText()).c_str()).c_str());
+      m_clusterMode = ClusterModeMapper::GetClusterModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterModeNode.GetText()).c_str()));
       m_clusterModeHasBeenSet = true;
+       m_clusterModeHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
   }
 

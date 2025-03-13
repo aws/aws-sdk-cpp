@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTrustStoreCertificateResult::GetTrustStoreCertificateResult()
-{
-}
-
 GetTrustStoreCertificateResult::GetTrustStoreCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetTrustStoreCertificateResult& GetTrustStoreCertificateResult::operator =(const
   if(jsonValue.ValueExists("certificate"))
   {
     m_certificate = jsonValue.GetObject("certificate");
-
+    m_certificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trustStoreArn"))
   {
     m_trustStoreArn = jsonValue.GetString("trustStoreArn");
-
+    m_trustStoreArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

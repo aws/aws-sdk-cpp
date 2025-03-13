@@ -35,7 +35,7 @@ namespace Model
   class ReasoningContentBlock
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API ReasoningContentBlock();
+    AWS_BEDROCKAGENTRUNTIME_API ReasoningContentBlock() = default;
     AWS_BEDROCKAGENTRUNTIME_API ReasoningContentBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API ReasoningContentBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>Contains information about the reasoning that the model used to return the
      * content in the content block.</p>
      */
-    inline const ReasoningTextBlock& GetReasoningText() const{ return m_reasoningText; }
+    inline const ReasoningTextBlock& GetReasoningText() const { return m_reasoningText; }
     inline bool ReasoningTextHasBeenSet() const { return m_reasoningTextHasBeenSet; }
-    inline void SetReasoningText(const ReasoningTextBlock& value) { m_reasoningTextHasBeenSet = true; m_reasoningText = value; }
-    inline void SetReasoningText(ReasoningTextBlock&& value) { m_reasoningTextHasBeenSet = true; m_reasoningText = std::move(value); }
-    inline ReasoningContentBlock& WithReasoningText(const ReasoningTextBlock& value) { SetReasoningText(value); return *this;}
-    inline ReasoningContentBlock& WithReasoningText(ReasoningTextBlock&& value) { SetReasoningText(std::move(value)); return *this;}
+    template<typename ReasoningTextT = ReasoningTextBlock>
+    void SetReasoningText(ReasoningTextT&& value) { m_reasoningTextHasBeenSet = true; m_reasoningText = std::forward<ReasoningTextT>(value); }
+    template<typename ReasoningTextT = ReasoningTextBlock>
+    ReasoningContentBlock& WithReasoningText(ReasoningTextT&& value) { SetReasoningText(std::forward<ReasoningTextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +59,19 @@ namespace Model
      * <p>The content in the reasoning that was encrypted by the model provider for
      * trust and safety reasons.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetRedactedContent() const{ return m_redactedContent; }
+    inline const Aws::Utils::ByteBuffer& GetRedactedContent() const { return m_redactedContent; }
     inline bool RedactedContentHasBeenSet() const { return m_redactedContentHasBeenSet; }
-    inline void SetRedactedContent(const Aws::Utils::ByteBuffer& value) { m_redactedContentHasBeenSet = true; m_redactedContent = value; }
-    inline void SetRedactedContent(Aws::Utils::ByteBuffer&& value) { m_redactedContentHasBeenSet = true; m_redactedContent = std::move(value); }
-    inline ReasoningContentBlock& WithRedactedContent(const Aws::Utils::ByteBuffer& value) { SetRedactedContent(value); return *this;}
-    inline ReasoningContentBlock& WithRedactedContent(Aws::Utils::ByteBuffer&& value) { SetRedactedContent(std::move(value)); return *this;}
+    template<typename RedactedContentT = Aws::Utils::ByteBuffer>
+    void SetRedactedContent(RedactedContentT&& value) { m_redactedContentHasBeenSet = true; m_redactedContent = std::forward<RedactedContentT>(value); }
+    template<typename RedactedContentT = Aws::Utils::ByteBuffer>
+    ReasoningContentBlock& WithRedactedContent(RedactedContentT&& value) { SetRedactedContent(std::forward<RedactedContentT>(value)); return *this;}
     ///@}
   private:
 
     ReasoningTextBlock m_reasoningText;
     bool m_reasoningTextHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_redactedContent;
+    Aws::Utils::ByteBuffer m_redactedContent{};
     bool m_redactedContentHasBeenSet = false;
   };
 

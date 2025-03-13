@@ -35,7 +35,7 @@ namespace Model
   class HsmClientCertificate
   {
   public:
-    AWS_REDSHIFT_API HsmClientCertificate();
+    AWS_REDSHIFT_API HsmClientCertificate() = default;
     AWS_REDSHIFT_API HsmClientCertificate(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API HsmClientCertificate& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The identifier of the HSM client certificate.</p>
      */
-    inline const Aws::String& GetHsmClientCertificateIdentifier() const{ return m_hsmClientCertificateIdentifier; }
+    inline const Aws::String& GetHsmClientCertificateIdentifier() const { return m_hsmClientCertificateIdentifier; }
     inline bool HsmClientCertificateIdentifierHasBeenSet() const { return m_hsmClientCertificateIdentifierHasBeenSet; }
-    inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
-    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = std::move(value); }
-    inline void SetHsmClientCertificateIdentifier(const char* value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier.assign(value); }
-    inline HsmClientCertificate& WithHsmClientCertificateIdentifier(const Aws::String& value) { SetHsmClientCertificateIdentifier(value); return *this;}
-    inline HsmClientCertificate& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(std::move(value)); return *this;}
-    inline HsmClientCertificate& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
+    template<typename HsmClientCertificateIdentifierT = Aws::String>
+    void SetHsmClientCertificateIdentifier(HsmClientCertificateIdentifierT&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = std::forward<HsmClientCertificateIdentifierT>(value); }
+    template<typename HsmClientCertificateIdentifierT = Aws::String>
+    HsmClientCertificate& WithHsmClientCertificateIdentifier(HsmClientCertificateIdentifierT&& value) { SetHsmClientCertificateIdentifier(std::forward<HsmClientCertificateIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,28 +60,26 @@ namespace Model
      * <p>The public key that the Amazon Redshift cluster will use to connect to the
      * HSM. You must register the public key in the HSM.</p>
      */
-    inline const Aws::String& GetHsmClientCertificatePublicKey() const{ return m_hsmClientCertificatePublicKey; }
+    inline const Aws::String& GetHsmClientCertificatePublicKey() const { return m_hsmClientCertificatePublicKey; }
     inline bool HsmClientCertificatePublicKeyHasBeenSet() const { return m_hsmClientCertificatePublicKeyHasBeenSet; }
-    inline void SetHsmClientCertificatePublicKey(const Aws::String& value) { m_hsmClientCertificatePublicKeyHasBeenSet = true; m_hsmClientCertificatePublicKey = value; }
-    inline void SetHsmClientCertificatePublicKey(Aws::String&& value) { m_hsmClientCertificatePublicKeyHasBeenSet = true; m_hsmClientCertificatePublicKey = std::move(value); }
-    inline void SetHsmClientCertificatePublicKey(const char* value) { m_hsmClientCertificatePublicKeyHasBeenSet = true; m_hsmClientCertificatePublicKey.assign(value); }
-    inline HsmClientCertificate& WithHsmClientCertificatePublicKey(const Aws::String& value) { SetHsmClientCertificatePublicKey(value); return *this;}
-    inline HsmClientCertificate& WithHsmClientCertificatePublicKey(Aws::String&& value) { SetHsmClientCertificatePublicKey(std::move(value)); return *this;}
-    inline HsmClientCertificate& WithHsmClientCertificatePublicKey(const char* value) { SetHsmClientCertificatePublicKey(value); return *this;}
+    template<typename HsmClientCertificatePublicKeyT = Aws::String>
+    void SetHsmClientCertificatePublicKey(HsmClientCertificatePublicKeyT&& value) { m_hsmClientCertificatePublicKeyHasBeenSet = true; m_hsmClientCertificatePublicKey = std::forward<HsmClientCertificatePublicKeyT>(value); }
+    template<typename HsmClientCertificatePublicKeyT = Aws::String>
+    HsmClientCertificate& WithHsmClientCertificatePublicKey(HsmClientCertificatePublicKeyT&& value) { SetHsmClientCertificatePublicKey(std::forward<HsmClientCertificatePublicKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of tags for the HSM client certificate.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline HsmClientCertificate& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline HsmClientCertificate& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline HsmClientCertificate& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline HsmClientCertificate& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    HsmClientCertificate& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    HsmClientCertificate& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

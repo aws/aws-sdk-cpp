@@ -32,7 +32,7 @@ namespace Model
   class ArchiveBooleanToEvaluate
   {
   public:
-    AWS_MAILMANAGER_API ArchiveBooleanToEvaluate();
+    AWS_MAILMANAGER_API ArchiveBooleanToEvaluate() = default;
     AWS_MAILMANAGER_API ArchiveBooleanToEvaluate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API ArchiveBooleanToEvaluate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The name of the email attribute to evaluate.</p>
      */
-    inline const ArchiveBooleanEmailAttribute& GetAttribute() const{ return m_attribute; }
+    inline ArchiveBooleanEmailAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const ArchiveBooleanEmailAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(ArchiveBooleanEmailAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline ArchiveBooleanToEvaluate& WithAttribute(const ArchiveBooleanEmailAttribute& value) { SetAttribute(value); return *this;}
-    inline ArchiveBooleanToEvaluate& WithAttribute(ArchiveBooleanEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(ArchiveBooleanEmailAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline ArchiveBooleanToEvaluate& WithAttribute(ArchiveBooleanEmailAttribute value) { SetAttribute(value); return *this;}
     ///@}
   private:
 
-    ArchiveBooleanEmailAttribute m_attribute;
+    ArchiveBooleanEmailAttribute m_attribute{ArchiveBooleanEmailAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
   };
 

@@ -20,14 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-DomainEndpointOptionsStatus::DomainEndpointOptionsStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 DomainEndpointOptionsStatus::DomainEndpointOptionsStatus(const XmlNode& xmlNode)
-  : DomainEndpointOptionsStatus()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DomainEndpointOptionsStatus& DomainEndpointOptionsStatus::operator =(const XmlNo
     {
       m_options = optionsNode;
       m_optionsHasBeenSet = true;
+       m_optionsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

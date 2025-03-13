@@ -18,17 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-OfferingTransaction::OfferingTransaction() : 
-    m_offeringStatusHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_offeringPromotionIdHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_costHasBeenSet(false)
-{
-}
-
 OfferingTransaction::OfferingTransaction(JsonView jsonValue)
-  : OfferingTransaction()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ OfferingTransaction& OfferingTransaction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("offeringStatus"))
   {
     m_offeringStatus = jsonValue.GetObject("offeringStatus");
-
     m_offeringStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transactionId"))
   {
     m_transactionId = jsonValue.GetString("transactionId");
-
     m_transactionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offeringPromotionId"))
   {
     m_offeringPromotionId = jsonValue.GetString("offeringPromotionId");
-
     m_offeringPromotionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdOn"))
   {
     m_createdOn = jsonValue.GetDouble("createdOn");
-
     m_createdOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cost"))
   {
     m_cost = jsonValue.GetObject("cost");
-
     m_costHasBeenSet = true;
   }
-
   return *this;
 }
 

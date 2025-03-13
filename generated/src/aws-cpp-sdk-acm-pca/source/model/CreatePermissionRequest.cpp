@@ -12,14 +12,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePermissionRequest::CreatePermissionRequest() : 
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_sourceAccountHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePermissionRequest::SerializePayload() const
 {
   JsonValue payload;

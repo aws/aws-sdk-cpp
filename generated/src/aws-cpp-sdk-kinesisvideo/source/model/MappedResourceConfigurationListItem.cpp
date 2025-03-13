@@ -18,14 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-MappedResourceConfigurationListItem::MappedResourceConfigurationListItem() : 
-    m_typeHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 MappedResourceConfigurationListItem::MappedResourceConfigurationListItem(JsonView jsonValue)
-  : MappedResourceConfigurationListItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MappedResourceConfigurationListItem& MappedResourceConfigurationListItem::operat
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   return *this;
 }
 

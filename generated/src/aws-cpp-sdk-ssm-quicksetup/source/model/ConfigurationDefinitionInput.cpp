@@ -18,17 +18,7 @@ namespace SSMQuickSetup
 namespace Model
 {
 
-ConfigurationDefinitionInput::ConfigurationDefinitionInput() : 
-    m_localDeploymentAdministrationRoleArnHasBeenSet(false),
-    m_localDeploymentExecutionRoleNameHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_typeVersionHasBeenSet(false)
-{
-}
-
 ConfigurationDefinitionInput::ConfigurationDefinitionInput(JsonView jsonValue)
-  : ConfigurationDefinitionInput()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ConfigurationDefinitionInput& ConfigurationDefinitionInput::operator =(JsonView 
   if(jsonValue.ValueExists("LocalDeploymentAdministrationRoleArn"))
   {
     m_localDeploymentAdministrationRoleArn = jsonValue.GetString("LocalDeploymentAdministrationRoleArn");
-
     m_localDeploymentAdministrationRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalDeploymentExecutionRoleName"))
   {
     m_localDeploymentExecutionRoleName = jsonValue.GetString("LocalDeploymentExecutionRoleName");
-
     m_localDeploymentExecutionRoleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -58,21 +44,16 @@ ConfigurationDefinitionInput& ConfigurationDefinitionInput::operator =(JsonView 
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypeVersion"))
   {
     m_typeVersion = jsonValue.GetString("TypeVersion");
-
     m_typeVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

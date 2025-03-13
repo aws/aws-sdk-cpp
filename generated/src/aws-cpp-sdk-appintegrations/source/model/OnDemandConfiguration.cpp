@@ -18,14 +18,7 @@ namespace AppIntegrationsService
 namespace Model
 {
 
-OnDemandConfiguration::OnDemandConfiguration() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 OnDemandConfiguration::OnDemandConfiguration(JsonView jsonValue)
-  : OnDemandConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OnDemandConfiguration& OnDemandConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetString("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

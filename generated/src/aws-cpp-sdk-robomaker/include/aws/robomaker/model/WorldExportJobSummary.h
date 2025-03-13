@@ -35,7 +35,7 @@ namespace Model
   class WorldExportJobSummary
   {
   public:
-    AWS_ROBOMAKER_API WorldExportJobSummary();
+    AWS_ROBOMAKER_API WorldExportJobSummary() = default;
     AWS_ROBOMAKER_API WorldExportJobSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API WorldExportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the world export job.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline WorldExportJobSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline WorldExportJobSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline WorldExportJobSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    WorldExportJobSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,10 @@ namespace Model
      * <dt>Canceling</dt> <dd> <p>The world export job is being cancelled.</p> </dd>
      * </dl>
      */
-    inline const WorldExportJobStatus& GetStatus() const{ return m_status; }
+    inline WorldExportJobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const WorldExportJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(WorldExportJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline WorldExportJobSummary& WithStatus(const WorldExportJobStatus& value) { SetStatus(value); return *this;}
-    inline WorldExportJobSummary& WithStatus(WorldExportJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(WorldExportJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline WorldExportJobSummary& WithStatus(WorldExportJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -79,47 +75,46 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the world export job was
      * created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline WorldExportJobSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline WorldExportJobSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    WorldExportJobSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of worlds.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetWorlds() const{ return m_worlds; }
+    inline const Aws::Vector<Aws::String>& GetWorlds() const { return m_worlds; }
     inline bool WorldsHasBeenSet() const { return m_worldsHasBeenSet; }
-    inline void SetWorlds(const Aws::Vector<Aws::String>& value) { m_worldsHasBeenSet = true; m_worlds = value; }
-    inline void SetWorlds(Aws::Vector<Aws::String>&& value) { m_worldsHasBeenSet = true; m_worlds = std::move(value); }
-    inline WorldExportJobSummary& WithWorlds(const Aws::Vector<Aws::String>& value) { SetWorlds(value); return *this;}
-    inline WorldExportJobSummary& WithWorlds(Aws::Vector<Aws::String>&& value) { SetWorlds(std::move(value)); return *this;}
-    inline WorldExportJobSummary& AddWorlds(const Aws::String& value) { m_worldsHasBeenSet = true; m_worlds.push_back(value); return *this; }
-    inline WorldExportJobSummary& AddWorlds(Aws::String&& value) { m_worldsHasBeenSet = true; m_worlds.push_back(std::move(value)); return *this; }
-    inline WorldExportJobSummary& AddWorlds(const char* value) { m_worldsHasBeenSet = true; m_worlds.push_back(value); return *this; }
+    template<typename WorldsT = Aws::Vector<Aws::String>>
+    void SetWorlds(WorldsT&& value) { m_worldsHasBeenSet = true; m_worlds = std::forward<WorldsT>(value); }
+    template<typename WorldsT = Aws::Vector<Aws::String>>
+    WorldExportJobSummary& WithWorlds(WorldsT&& value) { SetWorlds(std::forward<WorldsT>(value)); return *this;}
+    template<typename WorldsT = Aws::String>
+    WorldExportJobSummary& AddWorlds(WorldsT&& value) { m_worldsHasBeenSet = true; m_worlds.emplace_back(std::forward<WorldsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const OutputLocation& GetOutputLocation() const{ return m_outputLocation; }
+    inline const OutputLocation& GetOutputLocation() const { return m_outputLocation; }
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
-    inline void SetOutputLocation(const OutputLocation& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
-    inline void SetOutputLocation(OutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
-    inline WorldExportJobSummary& WithOutputLocation(const OutputLocation& value) { SetOutputLocation(value); return *this;}
-    inline WorldExportJobSummary& WithOutputLocation(OutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
+    template<typename OutputLocationT = OutputLocation>
+    void SetOutputLocation(OutputLocationT&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::forward<OutputLocationT>(value); }
+    template<typename OutputLocationT = OutputLocation>
+    WorldExportJobSummary& WithOutputLocation(OutputLocationT&& value) { SetOutputLocation(std::forward<OutputLocationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    WorldExportJobStatus m_status;
+    WorldExportJobStatus m_status{WorldExportJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_worlds;

@@ -36,7 +36,7 @@ namespace Model
   class ApplicationVersionDescription
   {
   public:
-    AWS_ELASTICBEANSTALK_API ApplicationVersionDescription();
+    AWS_ELASTICBEANSTALK_API ApplicationVersionDescription() = default;
     AWS_ELASTICBEANSTALK_API ApplicationVersionDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API ApplicationVersionDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,56 +48,48 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application version.</p>
      */
-    inline const Aws::String& GetApplicationVersionArn() const{ return m_applicationVersionArn; }
+    inline const Aws::String& GetApplicationVersionArn() const { return m_applicationVersionArn; }
     inline bool ApplicationVersionArnHasBeenSet() const { return m_applicationVersionArnHasBeenSet; }
-    inline void SetApplicationVersionArn(const Aws::String& value) { m_applicationVersionArnHasBeenSet = true; m_applicationVersionArn = value; }
-    inline void SetApplicationVersionArn(Aws::String&& value) { m_applicationVersionArnHasBeenSet = true; m_applicationVersionArn = std::move(value); }
-    inline void SetApplicationVersionArn(const char* value) { m_applicationVersionArnHasBeenSet = true; m_applicationVersionArn.assign(value); }
-    inline ApplicationVersionDescription& WithApplicationVersionArn(const Aws::String& value) { SetApplicationVersionArn(value); return *this;}
-    inline ApplicationVersionDescription& WithApplicationVersionArn(Aws::String&& value) { SetApplicationVersionArn(std::move(value)); return *this;}
-    inline ApplicationVersionDescription& WithApplicationVersionArn(const char* value) { SetApplicationVersionArn(value); return *this;}
+    template<typename ApplicationVersionArnT = Aws::String>
+    void SetApplicationVersionArn(ApplicationVersionArnT&& value) { m_applicationVersionArnHasBeenSet = true; m_applicationVersionArn = std::forward<ApplicationVersionArnT>(value); }
+    template<typename ApplicationVersionArnT = Aws::String>
+    ApplicationVersionDescription& WithApplicationVersionArn(ApplicationVersionArnT&& value) { SetApplicationVersionArn(std::forward<ApplicationVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the application to which the application version belongs.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline ApplicationVersionDescription& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline ApplicationVersionDescription& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline ApplicationVersionDescription& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    ApplicationVersionDescription& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the application version.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ApplicationVersionDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ApplicationVersionDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ApplicationVersionDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ApplicationVersionDescription& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the application version.</p>
      */
-    inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+    inline const Aws::String& GetVersionLabel() const { return m_versionLabel; }
     inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
-    inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
-    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
-    inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
-    inline ApplicationVersionDescription& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
-    inline ApplicationVersionDescription& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
-    inline ApplicationVersionDescription& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+    template<typename VersionLabelT = Aws::String>
+    void SetVersionLabel(VersionLabelT&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::forward<VersionLabelT>(value); }
+    template<typename VersionLabelT = Aws::String>
+    ApplicationVersionDescription& WithVersionLabel(VersionLabelT&& value) { SetVersionLabel(std::forward<VersionLabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,26 +97,24 @@ namespace Model
      * <p>If the version's source code was retrieved from AWS CodeCommit, the location
      * of the source code for the application version.</p>
      */
-    inline const SourceBuildInformation& GetSourceBuildInformation() const{ return m_sourceBuildInformation; }
+    inline const SourceBuildInformation& GetSourceBuildInformation() const { return m_sourceBuildInformation; }
     inline bool SourceBuildInformationHasBeenSet() const { return m_sourceBuildInformationHasBeenSet; }
-    inline void SetSourceBuildInformation(const SourceBuildInformation& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = value; }
-    inline void SetSourceBuildInformation(SourceBuildInformation&& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = std::move(value); }
-    inline ApplicationVersionDescription& WithSourceBuildInformation(const SourceBuildInformation& value) { SetSourceBuildInformation(value); return *this;}
-    inline ApplicationVersionDescription& WithSourceBuildInformation(SourceBuildInformation&& value) { SetSourceBuildInformation(std::move(value)); return *this;}
+    template<typename SourceBuildInformationT = SourceBuildInformation>
+    void SetSourceBuildInformation(SourceBuildInformationT&& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = std::forward<SourceBuildInformationT>(value); }
+    template<typename SourceBuildInformationT = SourceBuildInformation>
+    ApplicationVersionDescription& WithSourceBuildInformation(SourceBuildInformationT&& value) { SetSourceBuildInformation(std::forward<SourceBuildInformationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reference to the artifact from the AWS CodeBuild build.</p>
      */
-    inline const Aws::String& GetBuildArn() const{ return m_buildArn; }
+    inline const Aws::String& GetBuildArn() const { return m_buildArn; }
     inline bool BuildArnHasBeenSet() const { return m_buildArnHasBeenSet; }
-    inline void SetBuildArn(const Aws::String& value) { m_buildArnHasBeenSet = true; m_buildArn = value; }
-    inline void SetBuildArn(Aws::String&& value) { m_buildArnHasBeenSet = true; m_buildArn = std::move(value); }
-    inline void SetBuildArn(const char* value) { m_buildArnHasBeenSet = true; m_buildArn.assign(value); }
-    inline ApplicationVersionDescription& WithBuildArn(const Aws::String& value) { SetBuildArn(value); return *this;}
-    inline ApplicationVersionDescription& WithBuildArn(Aws::String&& value) { SetBuildArn(std::move(value)); return *this;}
-    inline ApplicationVersionDescription& WithBuildArn(const char* value) { SetBuildArn(value); return *this;}
+    template<typename BuildArnT = Aws::String>
+    void SetBuildArn(BuildArnT&& value) { m_buildArnHasBeenSet = true; m_buildArn = std::forward<BuildArnT>(value); }
+    template<typename BuildArnT = Aws::String>
+    ApplicationVersionDescription& WithBuildArn(BuildArnT&& value) { SetBuildArn(std::forward<BuildArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,36 +122,36 @@ namespace Model
      * <p>The storage location of the application version's source bundle in Amazon
      * S3.</p>
      */
-    inline const S3Location& GetSourceBundle() const{ return m_sourceBundle; }
+    inline const S3Location& GetSourceBundle() const { return m_sourceBundle; }
     inline bool SourceBundleHasBeenSet() const { return m_sourceBundleHasBeenSet; }
-    inline void SetSourceBundle(const S3Location& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
-    inline void SetSourceBundle(S3Location&& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = std::move(value); }
-    inline ApplicationVersionDescription& WithSourceBundle(const S3Location& value) { SetSourceBundle(value); return *this;}
-    inline ApplicationVersionDescription& WithSourceBundle(S3Location&& value) { SetSourceBundle(std::move(value)); return *this;}
+    template<typename SourceBundleT = S3Location>
+    void SetSourceBundle(SourceBundleT&& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = std::forward<SourceBundleT>(value); }
+    template<typename SourceBundleT = S3Location>
+    ApplicationVersionDescription& WithSourceBundle(SourceBundleT&& value) { SetSourceBundle(std::forward<SourceBundleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation date of the application version.</p>
      */
-    inline const Aws::Utils::DateTime& GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::Utils::DateTime& GetDateCreated() const { return m_dateCreated; }
     inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
-    inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
-    inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
-    inline ApplicationVersionDescription& WithDateCreated(const Aws::Utils::DateTime& value) { SetDateCreated(value); return *this;}
-    inline ApplicationVersionDescription& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
+    template<typename DateCreatedT = Aws::Utils::DateTime>
+    void SetDateCreated(DateCreatedT&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::forward<DateCreatedT>(value); }
+    template<typename DateCreatedT = Aws::Utils::DateTime>
+    ApplicationVersionDescription& WithDateCreated(DateCreatedT&& value) { SetDateCreated(std::forward<DateCreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last modified date of the application version.</p>
      */
-    inline const Aws::Utils::DateTime& GetDateUpdated() const{ return m_dateUpdated; }
+    inline const Aws::Utils::DateTime& GetDateUpdated() const { return m_dateUpdated; }
     inline bool DateUpdatedHasBeenSet() const { return m_dateUpdatedHasBeenSet; }
-    inline void SetDateUpdated(const Aws::Utils::DateTime& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = value; }
-    inline void SetDateUpdated(Aws::Utils::DateTime&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = std::move(value); }
-    inline ApplicationVersionDescription& WithDateUpdated(const Aws::Utils::DateTime& value) { SetDateUpdated(value); return *this;}
-    inline ApplicationVersionDescription& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(std::move(value)); return *this;}
+    template<typename DateUpdatedT = Aws::Utils::DateTime>
+    void SetDateUpdated(DateUpdatedT&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = std::forward<DateUpdatedT>(value); }
+    template<typename DateUpdatedT = Aws::Utils::DateTime>
+    ApplicationVersionDescription& WithDateUpdated(DateUpdatedT&& value) { SetDateUpdated(std::forward<DateUpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,12 +172,10 @@ namespace Model
      * files didn't pass validation. This application version isn't usable.</p> </li>
      * </ul>
      */
-    inline const ApplicationVersionStatus& GetStatus() const{ return m_status; }
+    inline ApplicationVersionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ApplicationVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ApplicationVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ApplicationVersionDescription& WithStatus(const ApplicationVersionStatus& value) { SetStatus(value); return *this;}
-    inline ApplicationVersionDescription& WithStatus(ApplicationVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ApplicationVersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ApplicationVersionDescription& WithStatus(ApplicationVersionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -212,13 +200,13 @@ namespace Model
     S3Location m_sourceBundle;
     bool m_sourceBundleHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateCreated;
+    Aws::Utils::DateTime m_dateCreated{};
     bool m_dateCreatedHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateUpdated;
+    Aws::Utils::DateTime m_dateUpdated{};
     bool m_dateUpdatedHasBeenSet = false;
 
-    ApplicationVersionStatus m_status;
+    ApplicationVersionStatus m_status{ApplicationVersionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

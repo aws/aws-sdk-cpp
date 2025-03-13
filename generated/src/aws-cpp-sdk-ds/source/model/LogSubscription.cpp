@@ -18,15 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-LogSubscription::LogSubscription() : 
-    m_directoryIdHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_subscriptionCreatedDateTimeHasBeenSet(false)
-{
-}
-
 LogSubscription::LogSubscription(JsonView jsonValue)
-  : LogSubscription()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ LogSubscription& LogSubscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogGroupName"))
   {
     m_logGroupName = jsonValue.GetString("LogGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionCreatedDateTime"))
   {
     m_subscriptionCreatedDateTime = jsonValue.GetDouble("SubscriptionCreatedDateTime");
-
     m_subscriptionCreatedDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

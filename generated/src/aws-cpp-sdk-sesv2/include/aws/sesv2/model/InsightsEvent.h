@@ -34,7 +34,7 @@ namespace Model
   class InsightsEvent
   {
   public:
-    AWS_SESV2_API InsightsEvent();
+    AWS_SESV2_API InsightsEvent() = default;
     AWS_SESV2_API InsightsEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API InsightsEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The timestamp of the event.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline InsightsEvent& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline InsightsEvent& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    InsightsEvent& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,31 +74,29 @@ namespace Model
      * Click event for emails including wrapped links. Excludes clicks for emails
      * addressed to more than one recipient.</p> </li> </ul>
      */
-    inline const EventType& GetType() const{ return m_type; }
+    inline EventType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EventType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EventType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline InsightsEvent& WithType(const EventType& value) { SetType(value); return *this;}
-    inline InsightsEvent& WithType(EventType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EventType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline InsightsEvent& WithType(EventType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about bounce or complaint events.</p>
      */
-    inline const EventDetails& GetDetails() const{ return m_details; }
+    inline const EventDetails& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const EventDetails& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(EventDetails&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline InsightsEvent& WithDetails(const EventDetails& value) { SetDetails(value); return *this;}
-    inline InsightsEvent& WithDetails(EventDetails&& value) { SetDetails(std::move(value)); return *this;}
+    template<typename DetailsT = EventDetails>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = EventDetails>
+    InsightsEvent& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
-    EventType m_type;
+    EventType m_type{EventType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     EventDetails m_details;

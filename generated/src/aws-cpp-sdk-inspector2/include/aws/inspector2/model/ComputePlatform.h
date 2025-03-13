@@ -31,7 +31,7 @@ namespace Model
   class ComputePlatform
   {
   public:
-    AWS_INSPECTOR2_API ComputePlatform();
+    AWS_INSPECTOR2_API ComputePlatform() = default;
     AWS_INSPECTOR2_API ComputePlatform(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API ComputePlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>The compute platform product.</p>
      */
-    inline const Aws::String& GetProduct() const{ return m_product; }
+    inline const Aws::String& GetProduct() const { return m_product; }
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
-    inline void SetProduct(const Aws::String& value) { m_productHasBeenSet = true; m_product = value; }
-    inline void SetProduct(Aws::String&& value) { m_productHasBeenSet = true; m_product = std::move(value); }
-    inline void SetProduct(const char* value) { m_productHasBeenSet = true; m_product.assign(value); }
-    inline ComputePlatform& WithProduct(const Aws::String& value) { SetProduct(value); return *this;}
-    inline ComputePlatform& WithProduct(Aws::String&& value) { SetProduct(std::move(value)); return *this;}
-    inline ComputePlatform& WithProduct(const char* value) { SetProduct(value); return *this;}
+    template<typename ProductT = Aws::String>
+    void SetProduct(ProductT&& value) { m_productHasBeenSet = true; m_product = std::forward<ProductT>(value); }
+    template<typename ProductT = Aws::String>
+    ComputePlatform& WithProduct(ProductT&& value) { SetProduct(std::forward<ProductT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The compute platform vendor.</p>
      */
-    inline const Aws::String& GetVendor() const{ return m_vendor; }
+    inline const Aws::String& GetVendor() const { return m_vendor; }
     inline bool VendorHasBeenSet() const { return m_vendorHasBeenSet; }
-    inline void SetVendor(const Aws::String& value) { m_vendorHasBeenSet = true; m_vendor = value; }
-    inline void SetVendor(Aws::String&& value) { m_vendorHasBeenSet = true; m_vendor = std::move(value); }
-    inline void SetVendor(const char* value) { m_vendorHasBeenSet = true; m_vendor.assign(value); }
-    inline ComputePlatform& WithVendor(const Aws::String& value) { SetVendor(value); return *this;}
-    inline ComputePlatform& WithVendor(Aws::String&& value) { SetVendor(std::move(value)); return *this;}
-    inline ComputePlatform& WithVendor(const char* value) { SetVendor(value); return *this;}
+    template<typename VendorT = Aws::String>
+    void SetVendor(VendorT&& value) { m_vendorHasBeenSet = true; m_vendor = std::forward<VendorT>(value); }
+    template<typename VendorT = Aws::String>
+    ComputePlatform& WithVendor(VendorT&& value) { SetVendor(std::forward<VendorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The compute platform version.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline ComputePlatform& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline ComputePlatform& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline ComputePlatform& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    ComputePlatform& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

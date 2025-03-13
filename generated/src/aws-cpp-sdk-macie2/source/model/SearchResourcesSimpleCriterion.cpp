@@ -18,17 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SearchResourcesSimpleCriterion::SearchResourcesSimpleCriterion() : 
-    m_comparator(SearchResourcesComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_key(SearchResourcesSimpleCriterionKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 SearchResourcesSimpleCriterion::SearchResourcesSimpleCriterion(JsonView jsonValue)
-  : SearchResourcesSimpleCriterion()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ SearchResourcesSimpleCriterion& SearchResourcesSimpleCriterion::operator =(JsonV
   if(jsonValue.ValueExists("comparator"))
   {
     m_comparator = SearchResourcesComparatorMapper::GetSearchResourcesComparatorForName(jsonValue.GetString("comparator"));
-
     m_comparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = SearchResourcesSimpleCriterionKeyMapper::GetSearchResourcesSimpleCriterionKeyForName(jsonValue.GetString("key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -58,7 +44,6 @@ SearchResourcesSimpleCriterion& SearchResourcesSimpleCriterion::operator =(JsonV
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

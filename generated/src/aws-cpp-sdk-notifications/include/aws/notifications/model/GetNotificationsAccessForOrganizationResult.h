@@ -28,7 +28,7 @@ namespace Model
   class GetNotificationsAccessForOrganizationResult
   {
   public:
-    AWS_NOTIFICATIONS_API GetNotificationsAccessForOrganizationResult();
+    AWS_NOTIFICATIONS_API GetNotificationsAccessForOrganizationResult() = default;
     AWS_NOTIFICATIONS_API GetNotificationsAccessForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NOTIFICATIONS_API GetNotificationsAccessForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The <code>AccessStatus</code> of Service Trust Enablement for User
      * Notifications to Amazon Web Services Organizations.</p>
      */
-    inline const NotificationsAccessForOrganization& GetNotificationsAccessForOrganization() const{ return m_notificationsAccessForOrganization; }
-    inline void SetNotificationsAccessForOrganization(const NotificationsAccessForOrganization& value) { m_notificationsAccessForOrganization = value; }
-    inline void SetNotificationsAccessForOrganization(NotificationsAccessForOrganization&& value) { m_notificationsAccessForOrganization = std::move(value); }
-    inline GetNotificationsAccessForOrganizationResult& WithNotificationsAccessForOrganization(const NotificationsAccessForOrganization& value) { SetNotificationsAccessForOrganization(value); return *this;}
-    inline GetNotificationsAccessForOrganizationResult& WithNotificationsAccessForOrganization(NotificationsAccessForOrganization&& value) { SetNotificationsAccessForOrganization(std::move(value)); return *this;}
+    inline const NotificationsAccessForOrganization& GetNotificationsAccessForOrganization() const { return m_notificationsAccessForOrganization; }
+    template<typename NotificationsAccessForOrganizationT = NotificationsAccessForOrganization>
+    void SetNotificationsAccessForOrganization(NotificationsAccessForOrganizationT&& value) { m_notificationsAccessForOrganizationHasBeenSet = true; m_notificationsAccessForOrganization = std::forward<NotificationsAccessForOrganizationT>(value); }
+    template<typename NotificationsAccessForOrganizationT = NotificationsAccessForOrganization>
+    GetNotificationsAccessForOrganizationResult& WithNotificationsAccessForOrganization(NotificationsAccessForOrganizationT&& value) { SetNotificationsAccessForOrganization(std::forward<NotificationsAccessForOrganizationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetNotificationsAccessForOrganizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetNotificationsAccessForOrganizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetNotificationsAccessForOrganizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetNotificationsAccessForOrganizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     NotificationsAccessForOrganization m_notificationsAccessForOrganization;
+    bool m_notificationsAccessForOrganizationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

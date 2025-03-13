@@ -18,16 +18,7 @@ namespace Kinesis
 namespace Model
 {
 
-ShardFilter::ShardFilter() : 
-    m_type(ShardFilterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_shardIdHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 ShardFilter::ShardFilter(JsonView jsonValue)
-  : ShardFilter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ShardFilter& ShardFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ShardFilterTypeMapper::GetShardFilterTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShardId"))
   {
     m_shardId = jsonValue.GetString("ShardId");
-
     m_shardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

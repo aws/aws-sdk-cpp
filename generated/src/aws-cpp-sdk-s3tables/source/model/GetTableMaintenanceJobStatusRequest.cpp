@@ -12,13 +12,6 @@ using namespace Aws::S3Tables::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTableMaintenanceJobStatusRequest::GetTableMaintenanceJobStatusRequest() : 
-    m_tableBucketARNHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetTableMaintenanceJobStatusRequest::SerializePayload() const
 {
   return {};

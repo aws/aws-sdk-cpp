@@ -33,7 +33,7 @@ namespace Model
   class AnalyticsIntentStageMetricResult
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsIntentStageMetricResult();
+    AWS_LEXMODELSV2_API AnalyticsIntentStageMetricResult() = default;
     AWS_LEXMODELSV2_API AnalyticsIntentStageMetricResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsIntentStageMetricResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * intent stage.</p> </li> <li> <p> <code>Retry</code> – The number of times the
      * bot tried to elicit a response from the user at this stage.</p> </li> </ul>
      */
-    inline const AnalyticsIntentStageMetricName& GetName() const{ return m_name; }
+    inline AnalyticsIntentStageMetricName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsIntentStageMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsIntentStageMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsIntentStageMetricResult& WithName(const AnalyticsIntentStageMetricName& value) { SetName(value); return *this;}
-    inline AnalyticsIntentStageMetricResult& WithName(AnalyticsIntentStageMetricName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsIntentStageMetricName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsIntentStageMetricResult& WithName(AnalyticsIntentStageMetricName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -66,32 +64,30 @@ namespace Model
      * <code>name</code>.</p> </li> <li> <p> <code>Max</code> – The highest count in
      * the category you provide in <code>name</code>.</p> </li> </ul>
      */
-    inline const AnalyticsMetricStatistic& GetStatistic() const{ return m_statistic; }
+    inline AnalyticsMetricStatistic GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const AnalyticsMetricStatistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(AnalyticsMetricStatistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline AnalyticsIntentStageMetricResult& WithStatistic(const AnalyticsMetricStatistic& value) { SetStatistic(value); return *this;}
-    inline AnalyticsIntentStageMetricResult& WithStatistic(AnalyticsMetricStatistic&& value) { SetStatistic(std::move(value)); return *this;}
+    inline void SetStatistic(AnalyticsMetricStatistic value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline AnalyticsIntentStageMetricResult& WithStatistic(AnalyticsMetricStatistic value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the summary statistic for the metric that you requested.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline AnalyticsIntentStageMetricResult& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    AnalyticsIntentStageMetricName m_name;
+    AnalyticsIntentStageMetricName m_name{AnalyticsIntentStageMetricName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    AnalyticsMetricStatistic m_statistic;
+    AnalyticsMetricStatistic m_statistic{AnalyticsMetricStatistic::NOT_SET};
     bool m_statisticHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

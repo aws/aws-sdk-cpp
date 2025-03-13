@@ -12,12 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateHealthCheckRequest::DisassociateHealthCheckRequest() : 
-    m_protectionIdHasBeenSet(false),
-    m_healthCheckArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateHealthCheckRequest::SerializePayload() const
 {
   JsonValue payload;

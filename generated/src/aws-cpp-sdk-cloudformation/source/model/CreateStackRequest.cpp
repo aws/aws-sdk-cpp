@@ -10,33 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-CreateStackRequest::CreateStackRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_templateURLHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_disableRollback(false),
-    m_disableRollbackHasBeenSet(false),
-    m_rollbackConfigurationHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false),
-    m_notificationARNsHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_onFailure(OnFailure::NOT_SET),
-    m_onFailureHasBeenSet(false),
-    m_stackPolicyBodyHasBeenSet(false),
-    m_stackPolicyURLHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_enableTerminationProtection(false),
-    m_enableTerminationProtectionHasBeenSet(false),
-    m_retainExceptOnCreate(false),
-    m_retainExceptOnCreateHasBeenSet(false)
-{
-}
-
 Aws::String CreateStackRequest::SerializePayload() const
 {
   Aws::StringStream ss;

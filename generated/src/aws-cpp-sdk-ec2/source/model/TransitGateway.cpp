@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGateway::TransitGateway() : 
-    m_transitGatewayIdHasBeenSet(false),
-    m_transitGatewayArnHasBeenSet(false),
-    m_state(TransitGatewayState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TransitGateway::TransitGateway(const XmlNode& xmlNode)
-  : TransitGateway()
 {
   *this = xmlNode;
 }
@@ -50,54 +36,62 @@ TransitGateway& TransitGateway::operator =(const XmlNode& xmlNode)
     {
       m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
+       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode transitGatewayArnNode = resultNode.FirstChild("transitGatewayArn");
     if(!transitGatewayArnNode.IsNull())
     {
       m_transitGatewayArn = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayArnNode.GetText());
       m_transitGatewayArnHasBeenSet = true;
+       m_transitGatewayArnHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayStateMapper::GetTransitGatewayStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayStateMapper::GetTransitGatewayStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("options");
     if(!optionsNode.IsNull())
     {
       m_options = optionsNode;
       m_optionsHasBeenSet = true;
+       m_optionsHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

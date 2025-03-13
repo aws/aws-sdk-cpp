@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TextControlPlaceholderOptions::TextControlPlaceholderOptions() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 TextControlPlaceholderOptions::TextControlPlaceholderOptions(JsonView jsonValue)
-  : TextControlPlaceholderOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TextControlPlaceholderOptions& TextControlPlaceholderOptions::operator =(JsonVie
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

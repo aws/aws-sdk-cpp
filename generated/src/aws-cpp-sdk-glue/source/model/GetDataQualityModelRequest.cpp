@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataQualityModelRequest::GetDataQualityModelRequest() : 
-    m_statisticIdHasBeenSet(false),
-    m_profileIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDataQualityModelRequest::SerializePayload() const
 {
   JsonValue payload;

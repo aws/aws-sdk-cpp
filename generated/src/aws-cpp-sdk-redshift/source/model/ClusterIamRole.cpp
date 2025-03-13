@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterIamRole::ClusterIamRole() : 
-    m_iamRoleArnHasBeenSet(false),
-    m_applyStatusHasBeenSet(false)
-{
-}
-
 ClusterIamRole::ClusterIamRole(const XmlNode& xmlNode)
-  : ClusterIamRole()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ClusterIamRole& ClusterIamRole::operator =(const XmlNode& xmlNode)
     {
       m_iamRoleArn = Aws::Utils::Xml::DecodeEscapedXmlText(iamRoleArnNode.GetText());
       m_iamRoleArnHasBeenSet = true;
+       m_iamRoleArnHasBeenSet = true;
     }
     XmlNode applyStatusNode = resultNode.FirstChild("ApplyStatus");
     if(!applyStatusNode.IsNull())
     {
       m_applyStatus = Aws::Utils::Xml::DecodeEscapedXmlText(applyStatusNode.GetText());
       m_applyStatusHasBeenSet = true;
+       m_applyStatusHasBeenSet = true;
     }
   }
 

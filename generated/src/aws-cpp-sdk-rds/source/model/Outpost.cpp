@@ -20,13 +20,7 @@ namespace RDS
 namespace Model
 {
 
-Outpost::Outpost() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Outpost::Outpost(const XmlNode& xmlNode)
-  : Outpost()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ Outpost& Outpost::operator =(const XmlNode& xmlNode)
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
   }
 

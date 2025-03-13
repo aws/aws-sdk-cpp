@@ -45,7 +45,7 @@ namespace Model
   class CompleteWorkflowExecutionDecisionAttributes
   {
   public:
-    AWS_SWF_API CompleteWorkflowExecutionDecisionAttributes();
+    AWS_SWF_API CompleteWorkflowExecutionDecisionAttributes() = default;
     AWS_SWF_API CompleteWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API CompleteWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * <p>The result of the workflow execution. The form of the result is
      * implementation defined.</p>
      */
-    inline const Aws::String& GetResult() const{ return m_result; }
+    inline const Aws::String& GetResult() const { return m_result; }
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-    inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
-    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-    inline void SetResult(const char* value) { m_resultHasBeenSet = true; m_result.assign(value); }
-    inline CompleteWorkflowExecutionDecisionAttributes& WithResult(const Aws::String& value) { SetResult(value); return *this;}
-    inline CompleteWorkflowExecutionDecisionAttributes& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
-    inline CompleteWorkflowExecutionDecisionAttributes& WithResult(const char* value) { SetResult(value); return *this;}
+    template<typename ResultT = Aws::String>
+    void SetResult(ResultT&& value) { m_resultHasBeenSet = true; m_result = std::forward<ResultT>(value); }
+    template<typename ResultT = Aws::String>
+    CompleteWorkflowExecutionDecisionAttributes& WithResult(ResultT&& value) { SetResult(std::forward<ResultT>(value)); return *this;}
     ///@}
   private:
 

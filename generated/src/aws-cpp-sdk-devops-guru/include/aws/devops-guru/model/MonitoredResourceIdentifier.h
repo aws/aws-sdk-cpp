@@ -36,7 +36,7 @@ namespace Model
   class MonitoredResourceIdentifier
   {
   public:
-    AWS_DEVOPSGURU_API MonitoredResourceIdentifier();
+    AWS_DEVOPSGURU_API MonitoredResourceIdentifier() = default;
     AWS_DEVOPSGURU_API MonitoredResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API MonitoredResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,62 +46,56 @@ namespace Model
     /**
      * <p> The name of the resource being monitored. </p>
      */
-    inline const Aws::String& GetMonitoredResourceName() const{ return m_monitoredResourceName; }
+    inline const Aws::String& GetMonitoredResourceName() const { return m_monitoredResourceName; }
     inline bool MonitoredResourceNameHasBeenSet() const { return m_monitoredResourceNameHasBeenSet; }
-    inline void SetMonitoredResourceName(const Aws::String& value) { m_monitoredResourceNameHasBeenSet = true; m_monitoredResourceName = value; }
-    inline void SetMonitoredResourceName(Aws::String&& value) { m_monitoredResourceNameHasBeenSet = true; m_monitoredResourceName = std::move(value); }
-    inline void SetMonitoredResourceName(const char* value) { m_monitoredResourceNameHasBeenSet = true; m_monitoredResourceName.assign(value); }
-    inline MonitoredResourceIdentifier& WithMonitoredResourceName(const Aws::String& value) { SetMonitoredResourceName(value); return *this;}
-    inline MonitoredResourceIdentifier& WithMonitoredResourceName(Aws::String&& value) { SetMonitoredResourceName(std::move(value)); return *this;}
-    inline MonitoredResourceIdentifier& WithMonitoredResourceName(const char* value) { SetMonitoredResourceName(value); return *this;}
+    template<typename MonitoredResourceNameT = Aws::String>
+    void SetMonitoredResourceName(MonitoredResourceNameT&& value) { m_monitoredResourceNameHasBeenSet = true; m_monitoredResourceName = std::forward<MonitoredResourceNameT>(value); }
+    template<typename MonitoredResourceNameT = Aws::String>
+    MonitoredResourceIdentifier& WithMonitoredResourceName(MonitoredResourceNameT&& value) { SetMonitoredResourceName(std::forward<MonitoredResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of resource being monitored. </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline MonitoredResourceIdentifier& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline MonitoredResourceIdentifier& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline MonitoredResourceIdentifier& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    MonitoredResourceIdentifier& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The permission status of a resource. </p>
      */
-    inline const ResourcePermission& GetResourcePermission() const{ return m_resourcePermission; }
+    inline ResourcePermission GetResourcePermission() const { return m_resourcePermission; }
     inline bool ResourcePermissionHasBeenSet() const { return m_resourcePermissionHasBeenSet; }
-    inline void SetResourcePermission(const ResourcePermission& value) { m_resourcePermissionHasBeenSet = true; m_resourcePermission = value; }
-    inline void SetResourcePermission(ResourcePermission&& value) { m_resourcePermissionHasBeenSet = true; m_resourcePermission = std::move(value); }
-    inline MonitoredResourceIdentifier& WithResourcePermission(const ResourcePermission& value) { SetResourcePermission(value); return *this;}
-    inline MonitoredResourceIdentifier& WithResourcePermission(ResourcePermission&& value) { SetResourcePermission(std::move(value)); return *this;}
+    inline void SetResourcePermission(ResourcePermission value) { m_resourcePermissionHasBeenSet = true; m_resourcePermission = value; }
+    inline MonitoredResourceIdentifier& WithResourcePermission(ResourcePermission value) { SetResourcePermission(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time at which DevOps Guru last updated this resource. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+    inline const Aws::Utils::DateTime& GetLastUpdated() const { return m_lastUpdated; }
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
-    inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
-    inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
-    inline MonitoredResourceIdentifier& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
-    inline MonitoredResourceIdentifier& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    void SetLastUpdated(LastUpdatedT&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::forward<LastUpdatedT>(value); }
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    MonitoredResourceIdentifier& WithLastUpdated(LastUpdatedT&& value) { SetLastUpdated(std::forward<LastUpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceCollection& GetResourceCollection() const{ return m_resourceCollection; }
+    inline const ResourceCollection& GetResourceCollection() const { return m_resourceCollection; }
     inline bool ResourceCollectionHasBeenSet() const { return m_resourceCollectionHasBeenSet; }
-    inline void SetResourceCollection(const ResourceCollection& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = value; }
-    inline void SetResourceCollection(ResourceCollection&& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = std::move(value); }
-    inline MonitoredResourceIdentifier& WithResourceCollection(const ResourceCollection& value) { SetResourceCollection(value); return *this;}
-    inline MonitoredResourceIdentifier& WithResourceCollection(ResourceCollection&& value) { SetResourceCollection(std::move(value)); return *this;}
+    template<typename ResourceCollectionT = ResourceCollection>
+    void SetResourceCollection(ResourceCollectionT&& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = std::forward<ResourceCollectionT>(value); }
+    template<typename ResourceCollectionT = ResourceCollection>
+    MonitoredResourceIdentifier& WithResourceCollection(ResourceCollectionT&& value) { SetResourceCollection(std::forward<ResourceCollectionT>(value)); return *this;}
     ///@}
   private:
 
@@ -111,10 +105,10 @@ namespace Model
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
 
-    ResourcePermission m_resourcePermission;
+    ResourcePermission m_resourcePermission{ResourcePermission::NOT_SET};
     bool m_resourcePermissionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdated;
+    Aws::Utils::DateTime m_lastUpdated{};
     bool m_lastUpdatedHasBeenSet = false;
 
     ResourceCollection m_resourceCollection;

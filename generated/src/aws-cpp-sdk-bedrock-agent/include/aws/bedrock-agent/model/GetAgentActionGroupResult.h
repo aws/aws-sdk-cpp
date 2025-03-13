@@ -28,7 +28,7 @@ namespace Model
   class GetAgentActionGroupResult
   {
   public:
-    AWS_BEDROCKAGENT_API GetAgentActionGroupResult();
+    AWS_BEDROCKAGENT_API GetAgentActionGroupResult() = default;
     AWS_BEDROCKAGENT_API GetAgentActionGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API GetAgentActionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains details about the action group.</p>
      */
-    inline const AgentActionGroup& GetAgentActionGroup() const{ return m_agentActionGroup; }
-    inline void SetAgentActionGroup(const AgentActionGroup& value) { m_agentActionGroup = value; }
-    inline void SetAgentActionGroup(AgentActionGroup&& value) { m_agentActionGroup = std::move(value); }
-    inline GetAgentActionGroupResult& WithAgentActionGroup(const AgentActionGroup& value) { SetAgentActionGroup(value); return *this;}
-    inline GetAgentActionGroupResult& WithAgentActionGroup(AgentActionGroup&& value) { SetAgentActionGroup(std::move(value)); return *this;}
+    inline const AgentActionGroup& GetAgentActionGroup() const { return m_agentActionGroup; }
+    template<typename AgentActionGroupT = AgentActionGroup>
+    void SetAgentActionGroup(AgentActionGroupT&& value) { m_agentActionGroupHasBeenSet = true; m_agentActionGroup = std::forward<AgentActionGroupT>(value); }
+    template<typename AgentActionGroupT = AgentActionGroup>
+    GetAgentActionGroupResult& WithAgentActionGroup(AgentActionGroupT&& value) { SetAgentActionGroup(std::forward<AgentActionGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAgentActionGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAgentActionGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAgentActionGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAgentActionGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AgentActionGroup m_agentActionGroup;
+    bool m_agentActionGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

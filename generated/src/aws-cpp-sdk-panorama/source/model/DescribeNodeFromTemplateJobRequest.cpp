@@ -12,11 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeNodeFromTemplateJobRequest::DescribeNodeFromTemplateJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNodeFromTemplateJobRequest::SerializePayload() const
 {
   return {};

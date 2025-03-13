@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePortalResult::CreatePortalResult()
-{
-}
-
 CreatePortalResult::CreatePortalResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,35 @@ CreatePortalResult& CreatePortalResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("portalId"))
   {
     m_portalId = jsonValue.GetString("portalId");
-
+    m_portalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portalArn"))
   {
     m_portalArn = jsonValue.GetString("portalArn");
-
+    m_portalArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portalStartUrl"))
   {
     m_portalStartUrl = jsonValue.GetString("portalStartUrl");
-
+    m_portalStartUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portalStatus"))
   {
     m_portalStatus = jsonValue.GetObject("portalStatus");
-
+    m_portalStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ssoApplicationId"))
   {
     m_ssoApplicationId = jsonValue.GetString("ssoApplicationId");
-
+    m_ssoApplicationIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

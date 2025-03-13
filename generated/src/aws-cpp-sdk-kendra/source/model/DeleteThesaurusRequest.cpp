@@ -12,12 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteThesaurusRequest::DeleteThesaurusRequest() : 
-    m_idHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteThesaurusRequest::SerializePayload() const
 {
   JsonValue payload;

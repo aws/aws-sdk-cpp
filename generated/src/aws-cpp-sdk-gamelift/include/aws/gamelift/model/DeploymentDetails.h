@@ -32,7 +32,7 @@ namespace Model
   class DeploymentDetails
   {
   public:
-    AWS_GAMELIFT_API DeploymentDetails();
+    AWS_GAMELIFT_API DeploymentDetails() = default;
     AWS_GAMELIFT_API DeploymentDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API DeploymentDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>A unique identifier for a fleet deployment.</p>
      */
-    inline const Aws::String& GetLatestDeploymentId() const{ return m_latestDeploymentId; }
+    inline const Aws::String& GetLatestDeploymentId() const { return m_latestDeploymentId; }
     inline bool LatestDeploymentIdHasBeenSet() const { return m_latestDeploymentIdHasBeenSet; }
-    inline void SetLatestDeploymentId(const Aws::String& value) { m_latestDeploymentIdHasBeenSet = true; m_latestDeploymentId = value; }
-    inline void SetLatestDeploymentId(Aws::String&& value) { m_latestDeploymentIdHasBeenSet = true; m_latestDeploymentId = std::move(value); }
-    inline void SetLatestDeploymentId(const char* value) { m_latestDeploymentIdHasBeenSet = true; m_latestDeploymentId.assign(value); }
-    inline DeploymentDetails& WithLatestDeploymentId(const Aws::String& value) { SetLatestDeploymentId(value); return *this;}
-    inline DeploymentDetails& WithLatestDeploymentId(Aws::String&& value) { SetLatestDeploymentId(std::move(value)); return *this;}
-    inline DeploymentDetails& WithLatestDeploymentId(const char* value) { SetLatestDeploymentId(value); return *this;}
+    template<typename LatestDeploymentIdT = Aws::String>
+    void SetLatestDeploymentId(LatestDeploymentIdT&& value) { m_latestDeploymentIdHasBeenSet = true; m_latestDeploymentId = std::forward<LatestDeploymentIdT>(value); }
+    template<typename LatestDeploymentIdT = Aws::String>
+    DeploymentDetails& WithLatestDeploymentId(LatestDeploymentIdT&& value) { SetLatestDeploymentId(std::forward<LatestDeploymentIdT>(value)); return *this;}
     ///@}
   private:
 

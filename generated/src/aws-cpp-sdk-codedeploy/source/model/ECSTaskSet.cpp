@@ -18,25 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-ECSTaskSet::ECSTaskSet() : 
-    m_identiferHasBeenSet(false),
-    m_desiredCount(0),
-    m_desiredCountHasBeenSet(false),
-    m_pendingCount(0),
-    m_pendingCountHasBeenSet(false),
-    m_runningCount(0),
-    m_runningCountHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_trafficWeight(0.0),
-    m_trafficWeightHasBeenSet(false),
-    m_targetGroupHasBeenSet(false),
-    m_taskSetLabel(TargetLabel::NOT_SET),
-    m_taskSetLabelHasBeenSet(false)
-{
-}
-
 ECSTaskSet::ECSTaskSet(JsonView jsonValue)
-  : ECSTaskSet()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ ECSTaskSet& ECSTaskSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("identifer"))
   {
     m_identifer = jsonValue.GetString("identifer");
-
     m_identiferHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("desiredCount"))
   {
     m_desiredCount = jsonValue.GetInt64("desiredCount");
-
     m_desiredCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingCount"))
   {
     m_pendingCount = jsonValue.GetInt64("pendingCount");
-
     m_pendingCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runningCount"))
   {
     m_runningCount = jsonValue.GetInt64("runningCount");
-
     m_runningCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trafficWeight"))
   {
     m_trafficWeight = jsonValue.GetDouble("trafficWeight");
-
     m_trafficWeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetGroup"))
   {
     m_targetGroup = jsonValue.GetObject("targetGroup");
-
     m_targetGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskSetLabel"))
   {
     m_taskSetLabel = TargetLabelMapper::GetTargetLabelForName(jsonValue.GetString("taskSetLabel"));
-
     m_taskSetLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetManagedThingMetaDataResult::GetManagedThingMetaDataResult()
-{
-}
-
 GetManagedThingMetaDataResult::GetManagedThingMetaDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetManagedThingMetaDataResult& GetManagedThingMetaDataResult::operator =(const A
   if(jsonValue.ValueExists("ManagedThingId"))
   {
     m_managedThingId = jsonValue.GetString("ManagedThingId");
-
+    m_managedThingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetaData"))
   {
     Aws::Map<Aws::String, JsonView> metaDataJsonMap = jsonValue.GetObject("MetaData").GetAllObjects();
@@ -42,14 +37,15 @@ GetManagedThingMetaDataResult& GetManagedThingMetaDataResult::operator =(const A
     {
       m_metaData[metaDataItem.first] = metaDataItem.second.AsString();
     }
+    m_metaDataHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

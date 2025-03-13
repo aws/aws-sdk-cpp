@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ConfluencePageToIndexFieldMapping::ConfluencePageToIndexFieldMapping() : 
-    m_dataSourceFieldName(ConfluencePageFieldName::NOT_SET),
-    m_dataSourceFieldNameHasBeenSet(false),
-    m_dateFieldFormatHasBeenSet(false),
-    m_indexFieldNameHasBeenSet(false)
-{
-}
-
 ConfluencePageToIndexFieldMapping::ConfluencePageToIndexFieldMapping(JsonView jsonValue)
-  : ConfluencePageToIndexFieldMapping()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ConfluencePageToIndexFieldMapping& ConfluencePageToIndexFieldMapping::operator =
   if(jsonValue.ValueExists("DataSourceFieldName"))
   {
     m_dataSourceFieldName = ConfluencePageFieldNameMapper::GetConfluencePageFieldNameForName(jsonValue.GetString("DataSourceFieldName"));
-
     m_dataSourceFieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateFieldFormat"))
   {
     m_dateFieldFormat = jsonValue.GetString("DateFieldFormat");
-
     m_dateFieldFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexFieldName"))
   {
     m_indexFieldName = jsonValue.GetString("IndexFieldName");
-
     m_indexFieldNameHasBeenSet = true;
   }
-
   return *this;
 }
 

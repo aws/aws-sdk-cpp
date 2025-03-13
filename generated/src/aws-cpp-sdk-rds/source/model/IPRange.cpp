@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-IPRange::IPRange() : 
-    m_statusHasBeenSet(false),
-    m_cIDRIPHasBeenSet(false)
-{
-}
-
 IPRange::IPRange(const XmlNode& xmlNode)
-  : IPRange()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ IPRange& IPRange::operator =(const XmlNode& xmlNode)
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode cIDRIPNode = resultNode.FirstChild("CIDRIP");
     if(!cIDRIPNode.IsNull())
     {
       m_cIDRIP = Aws::Utils::Xml::DecodeEscapedXmlText(cIDRIPNode.GetText());
       m_cIDRIPHasBeenSet = true;
+       m_cIDRIPHasBeenSet = true;
     }
   }
 

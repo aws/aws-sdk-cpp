@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginRequestPolicy::OriginRequestPolicy() : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_originRequestPolicyConfigHasBeenSet(false)
-{
-}
-
 OriginRequestPolicy::OriginRequestPolicy(const XmlNode& xmlNode)
-  : OriginRequestPolicy()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ OriginRequestPolicy& OriginRequestPolicy::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
+       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode originRequestPolicyConfigNode = resultNode.FirstChild("OriginRequestPolicyConfig");
     if(!originRequestPolicyConfigNode.IsNull())
     {
       m_originRequestPolicyConfig = originRequestPolicyConfigNode;
       m_originRequestPolicyConfigHasBeenSet = true;
+       m_originRequestPolicyConfigHasBeenSet = true;
     }
   }
 

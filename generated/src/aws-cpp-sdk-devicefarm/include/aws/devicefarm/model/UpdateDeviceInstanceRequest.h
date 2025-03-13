@@ -22,7 +22,7 @@ namespace Model
   class UpdateDeviceInstanceRequest : public DeviceFarmRequest
   {
   public:
-    AWS_DEVICEFARM_API UpdateDeviceInstanceRequest();
+    AWS_DEVICEFARM_API UpdateDeviceInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the device instance.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdateDeviceInstanceRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateDeviceInstanceRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateDeviceInstanceRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateDeviceInstanceRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,29 +52,26 @@ namespace Model
      * <p>The ARN of the profile that you want to associate with the device
      * instance.</p>
      */
-    inline const Aws::String& GetProfileArn() const{ return m_profileArn; }
+    inline const Aws::String& GetProfileArn() const { return m_profileArn; }
     inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
-    inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
-    inline void SetProfileArn(Aws::String&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::move(value); }
-    inline void SetProfileArn(const char* value) { m_profileArnHasBeenSet = true; m_profileArn.assign(value); }
-    inline UpdateDeviceInstanceRequest& WithProfileArn(const Aws::String& value) { SetProfileArn(value); return *this;}
-    inline UpdateDeviceInstanceRequest& WithProfileArn(Aws::String&& value) { SetProfileArn(std::move(value)); return *this;}
-    inline UpdateDeviceInstanceRequest& WithProfileArn(const char* value) { SetProfileArn(value); return *this;}
+    template<typename ProfileArnT = Aws::String>
+    void SetProfileArn(ProfileArnT&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::forward<ProfileArnT>(value); }
+    template<typename ProfileArnT = Aws::String>
+    UpdateDeviceInstanceRequest& WithProfileArn(ProfileArnT&& value) { SetProfileArn(std::forward<ProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of strings that you want to associate with the device instance.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+    inline const Aws::Vector<Aws::String>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline UpdateDeviceInstanceRequest& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
-    inline UpdateDeviceInstanceRequest& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-    inline UpdateDeviceInstanceRequest& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-    inline UpdateDeviceInstanceRequest& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
-    inline UpdateDeviceInstanceRequest& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    UpdateDeviceInstanceRequest& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsT = Aws::String>
+    UpdateDeviceInstanceRequest& AddLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels.emplace_back(std::forward<LabelsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,25 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2TransitGatewayDetails::AwsEc2TransitGatewayDetails() : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultRouteTablePropagationHasBeenSet(false),
-    m_autoAcceptSharedAttachmentsHasBeenSet(false),
-    m_defaultRouteTableAssociationHasBeenSet(false),
-    m_transitGatewayCidrBlocksHasBeenSet(false),
-    m_associationDefaultRouteTableIdHasBeenSet(false),
-    m_propagationDefaultRouteTableIdHasBeenSet(false),
-    m_vpnEcmpSupportHasBeenSet(false),
-    m_dnsSupportHasBeenSet(false),
-    m_multicastSupportHasBeenSet(false),
-    m_amazonSideAsn(0),
-    m_amazonSideAsnHasBeenSet(false)
-{
-}
-
 AwsEc2TransitGatewayDetails::AwsEc2TransitGatewayDetails(JsonView jsonValue)
-  : AwsEc2TransitGatewayDetails()
 {
   *this = jsonValue;
 }
@@ -46,38 +28,28 @@ AwsEc2TransitGatewayDetails& AwsEc2TransitGatewayDetails::operator =(JsonView js
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultRouteTablePropagation"))
   {
     m_defaultRouteTablePropagation = jsonValue.GetString("DefaultRouteTablePropagation");
-
     m_defaultRouteTablePropagationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoAcceptSharedAttachments"))
   {
     m_autoAcceptSharedAttachments = jsonValue.GetString("AutoAcceptSharedAttachments");
-
     m_autoAcceptSharedAttachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultRouteTableAssociation"))
   {
     m_defaultRouteTableAssociation = jsonValue.GetString("DefaultRouteTableAssociation");
-
     m_defaultRouteTableAssociationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransitGatewayCidrBlocks"))
   {
     Aws::Utils::Array<JsonView> transitGatewayCidrBlocksJsonList = jsonValue.GetArray("TransitGatewayCidrBlocks");
@@ -87,49 +59,36 @@ AwsEc2TransitGatewayDetails& AwsEc2TransitGatewayDetails::operator =(JsonView js
     }
     m_transitGatewayCidrBlocksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationDefaultRouteTableId"))
   {
     m_associationDefaultRouteTableId = jsonValue.GetString("AssociationDefaultRouteTableId");
-
     m_associationDefaultRouteTableIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PropagationDefaultRouteTableId"))
   {
     m_propagationDefaultRouteTableId = jsonValue.GetString("PropagationDefaultRouteTableId");
-
     m_propagationDefaultRouteTableIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpnEcmpSupport"))
   {
     m_vpnEcmpSupport = jsonValue.GetString("VpnEcmpSupport");
-
     m_vpnEcmpSupportHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsSupport"))
   {
     m_dnsSupport = jsonValue.GetString("DnsSupport");
-
     m_dnsSupportHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MulticastSupport"))
   {
     m_multicastSupport = jsonValue.GetString("MulticastSupport");
-
     m_multicastSupportHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmazonSideAsn"))
   {
     m_amazonSideAsn = jsonValue.GetInteger("AmazonSideAsn");
-
     m_amazonSideAsnHasBeenSet = true;
   }
-
   return *this;
 }
 

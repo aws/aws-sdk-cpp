@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListBatchJobRestartPointsRequest::ListBatchJobRestartPointsRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_authSecretsManagerArnHasBeenSet(false),
-    m_executionIdHasBeenSet(false)
-{
-}
-
 Aws::String ListBatchJobRestartPointsRequest::SerializePayload() const
 {
   return {};

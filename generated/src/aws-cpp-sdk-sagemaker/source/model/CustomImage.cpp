@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CustomImage::CustomImage() : 
-    m_imageNameHasBeenSet(false),
-    m_imageVersionNumber(0),
-    m_imageVersionNumberHasBeenSet(false),
-    m_appImageConfigNameHasBeenSet(false)
-{
-}
-
 CustomImage::CustomImage(JsonView jsonValue)
-  : CustomImage()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CustomImage& CustomImage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImageName"))
   {
     m_imageName = jsonValue.GetString("ImageName");
-
     m_imageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageVersionNumber"))
   {
     m_imageVersionNumber = jsonValue.GetInteger("ImageVersionNumber");
-
     m_imageVersionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppImageConfigName"))
   {
     m_appImageConfigName = jsonValue.GetString("AppImageConfigName");
-
     m_appImageConfigNameHasBeenSet = true;
   }
-
   return *this;
 }
 

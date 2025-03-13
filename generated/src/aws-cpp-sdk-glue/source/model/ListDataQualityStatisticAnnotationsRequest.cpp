@@ -12,16 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDataQualityStatisticAnnotationsRequest::ListDataQualityStatisticAnnotationsRequest() : 
-    m_statisticIdHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_timestampFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDataQualityStatisticAnnotationsRequest::SerializePayload() const
 {
   JsonValue payload;

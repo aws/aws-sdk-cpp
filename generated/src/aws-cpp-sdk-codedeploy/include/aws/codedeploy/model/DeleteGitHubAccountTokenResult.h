@@ -33,7 +33,7 @@ namespace Model
   class DeleteGitHubAccountTokenResult
   {
   public:
-    AWS_CODEDEPLOY_API DeleteGitHubAccountTokenResult();
+    AWS_CODEDEPLOY_API DeleteGitHubAccountTokenResult() = default;
     AWS_CODEDEPLOY_API DeleteGitHubAccountTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEDEPLOY_API DeleteGitHubAccountTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The name of the GitHub account connection that was deleted.</p>
      */
-    inline const Aws::String& GetTokenName() const{ return m_tokenName; }
-    inline void SetTokenName(const Aws::String& value) { m_tokenName = value; }
-    inline void SetTokenName(Aws::String&& value) { m_tokenName = std::move(value); }
-    inline void SetTokenName(const char* value) { m_tokenName.assign(value); }
-    inline DeleteGitHubAccountTokenResult& WithTokenName(const Aws::String& value) { SetTokenName(value); return *this;}
-    inline DeleteGitHubAccountTokenResult& WithTokenName(Aws::String&& value) { SetTokenName(std::move(value)); return *this;}
-    inline DeleteGitHubAccountTokenResult& WithTokenName(const char* value) { SetTokenName(value); return *this;}
+    inline const Aws::String& GetTokenName() const { return m_tokenName; }
+    template<typename TokenNameT = Aws::String>
+    void SetTokenName(TokenNameT&& value) { m_tokenNameHasBeenSet = true; m_tokenName = std::forward<TokenNameT>(value); }
+    template<typename TokenNameT = Aws::String>
+    DeleteGitHubAccountTokenResult& WithTokenName(TokenNameT&& value) { SetTokenName(std::forward<TokenNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteGitHubAccountTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteGitHubAccountTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteGitHubAccountTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteGitHubAccountTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_tokenName;
+    bool m_tokenNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class AnalyticsIntentMetricResult
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsIntentMetricResult();
+    AWS_LEXMODELSV2_API AnalyticsIntentMetricResult() = default;
     AWS_LEXMODELSV2_API AnalyticsIntentMetricResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsIntentMetricResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * different intent.</p> </li> <li> <p> <code>Dropped</code> – The number of times
      * the user dropped the intent.</p> </li> </ul>
      */
-    inline const AnalyticsIntentMetricName& GetName() const{ return m_name; }
+    inline AnalyticsIntentMetricName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsIntentMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsIntentMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsIntentMetricResult& WithName(const AnalyticsIntentMetricName& value) { SetName(value); return *this;}
-    inline AnalyticsIntentMetricResult& WithName(AnalyticsIntentMetricName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsIntentMetricName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsIntentMetricResult& WithName(AnalyticsIntentMetricName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -68,32 +66,30 @@ namespace Model
      * <code>name</code>.</p> </li> <li> <p> <code>Max</code> – The highest count in
      * the category you provide in <code>name</code>.</p> </li> </ul>
      */
-    inline const AnalyticsMetricStatistic& GetStatistic() const{ return m_statistic; }
+    inline AnalyticsMetricStatistic GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const AnalyticsMetricStatistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(AnalyticsMetricStatistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline AnalyticsIntentMetricResult& WithStatistic(const AnalyticsMetricStatistic& value) { SetStatistic(value); return *this;}
-    inline AnalyticsIntentMetricResult& WithStatistic(AnalyticsMetricStatistic&& value) { SetStatistic(std::move(value)); return *this;}
+    inline void SetStatistic(AnalyticsMetricStatistic value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline AnalyticsIntentMetricResult& WithStatistic(AnalyticsMetricStatistic value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the summary statistic for the metric that you requested.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline AnalyticsIntentMetricResult& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    AnalyticsIntentMetricName m_name;
+    AnalyticsIntentMetricName m_name{AnalyticsIntentMetricName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    AnalyticsMetricStatistic m_statistic;
+    AnalyticsMetricStatistic m_statistic{AnalyticsMetricStatistic::NOT_SET};
     bool m_statisticHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ScanCondition::ScanCondition() : 
-    m_mapEqualsHasBeenSet(false)
-{
-}
-
 ScanCondition::ScanCondition(JsonView jsonValue)
-  : ScanCondition()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ScanCondition& ScanCondition::operator =(JsonView jsonValue)
     }
     m_mapEqualsHasBeenSet = true;
   }
-
   return *this;
 }
 

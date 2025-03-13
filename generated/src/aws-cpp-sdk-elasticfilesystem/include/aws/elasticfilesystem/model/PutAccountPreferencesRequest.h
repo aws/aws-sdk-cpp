@@ -21,7 +21,7 @@ namespace Model
   class PutAccountPreferencesRequest : public EFSRequest
   {
   public:
-    AWS_EFS_API PutAccountPreferencesRequest();
+    AWS_EFS_API PutAccountPreferencesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,16 +42,14 @@ namespace Model
      * Services support if you receive an error and must use short IDs for file system
      * and mount target resources.</p> 
      */
-    inline const ResourceIdType& GetResourceIdType() const{ return m_resourceIdType; }
+    inline ResourceIdType GetResourceIdType() const { return m_resourceIdType; }
     inline bool ResourceIdTypeHasBeenSet() const { return m_resourceIdTypeHasBeenSet; }
-    inline void SetResourceIdType(const ResourceIdType& value) { m_resourceIdTypeHasBeenSet = true; m_resourceIdType = value; }
-    inline void SetResourceIdType(ResourceIdType&& value) { m_resourceIdTypeHasBeenSet = true; m_resourceIdType = std::move(value); }
-    inline PutAccountPreferencesRequest& WithResourceIdType(const ResourceIdType& value) { SetResourceIdType(value); return *this;}
-    inline PutAccountPreferencesRequest& WithResourceIdType(ResourceIdType&& value) { SetResourceIdType(std::move(value)); return *this;}
+    inline void SetResourceIdType(ResourceIdType value) { m_resourceIdTypeHasBeenSet = true; m_resourceIdType = value; }
+    inline PutAccountPreferencesRequest& WithResourceIdType(ResourceIdType value) { SetResourceIdType(value); return *this;}
     ///@}
   private:
 
-    ResourceIdType m_resourceIdType;
+    ResourceIdType m_resourceIdType{ResourceIdType::NOT_SET};
     bool m_resourceIdTypeHasBeenSet = false;
   };
 

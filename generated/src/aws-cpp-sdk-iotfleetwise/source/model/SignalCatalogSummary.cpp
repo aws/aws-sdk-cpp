@@ -18,16 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-SignalCatalogSummary::SignalCatalogSummary() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
-{
-}
-
 SignalCatalogSummary::SignalCatalogSummary(JsonView jsonValue)
-  : SignalCatalogSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SignalCatalogSummary& SignalCatalogSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("lastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

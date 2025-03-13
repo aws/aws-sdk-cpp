@@ -32,7 +32,7 @@ namespace Model
   class LambdaFunctionAssociation
   {
   public:
-    AWS_CLOUDFRONT_API LambdaFunctionAssociation();
+    AWS_CLOUDFRONT_API LambdaFunctionAssociation() = default;
     AWS_CLOUDFRONT_API LambdaFunctionAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API LambdaFunctionAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
      * <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function
      * version; you can't specify an alias or $LATEST.</p>
      */
-    inline const Aws::String& GetLambdaFunctionARN() const{ return m_lambdaFunctionARN; }
+    inline const Aws::String& GetLambdaFunctionARN() const { return m_lambdaFunctionARN; }
     inline bool LambdaFunctionARNHasBeenSet() const { return m_lambdaFunctionARNHasBeenSet; }
-    inline void SetLambdaFunctionARN(const Aws::String& value) { m_lambdaFunctionARNHasBeenSet = true; m_lambdaFunctionARN = value; }
-    inline void SetLambdaFunctionARN(Aws::String&& value) { m_lambdaFunctionARNHasBeenSet = true; m_lambdaFunctionARN = std::move(value); }
-    inline void SetLambdaFunctionARN(const char* value) { m_lambdaFunctionARNHasBeenSet = true; m_lambdaFunctionARN.assign(value); }
-    inline LambdaFunctionAssociation& WithLambdaFunctionARN(const Aws::String& value) { SetLambdaFunctionARN(value); return *this;}
-    inline LambdaFunctionAssociation& WithLambdaFunctionARN(Aws::String&& value) { SetLambdaFunctionARN(std::move(value)); return *this;}
-    inline LambdaFunctionAssociation& WithLambdaFunctionARN(const char* value) { SetLambdaFunctionARN(value); return *this;}
+    template<typename LambdaFunctionARNT = Aws::String>
+    void SetLambdaFunctionARN(LambdaFunctionARNT&& value) { m_lambdaFunctionARNHasBeenSet = true; m_lambdaFunctionARN = std::forward<LambdaFunctionARNT>(value); }
+    template<typename LambdaFunctionARNT = Aws::String>
+    LambdaFunctionAssociation& WithLambdaFunctionARN(LambdaFunctionARNT&& value) { SetLambdaFunctionARN(std::forward<LambdaFunctionARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,10 @@ namespace Model
      * origin returns an HTTP status code other than HTTP 200 (OK), the function
      * doesn't execute.</p> </li> </ul>
      */
-    inline const EventType& GetEventType() const{ return m_eventType; }
+    inline EventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline LambdaFunctionAssociation& WithEventType(const EventType& value) { SetEventType(value); return *this;}
-    inline LambdaFunctionAssociation& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(EventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline LambdaFunctionAssociation& WithEventType(EventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
@@ -88,7 +84,7 @@ namespace Model
      * the Request Body by Choosing the Include Body Option</a> in the Amazon
      * CloudFront Developer Guide.</p>
      */
-    inline bool GetIncludeBody() const{ return m_includeBody; }
+    inline bool GetIncludeBody() const { return m_includeBody; }
     inline bool IncludeBodyHasBeenSet() const { return m_includeBodyHasBeenSet; }
     inline void SetIncludeBody(bool value) { m_includeBodyHasBeenSet = true; m_includeBody = value; }
     inline LambdaFunctionAssociation& WithIncludeBody(bool value) { SetIncludeBody(value); return *this;}
@@ -98,10 +94,10 @@ namespace Model
     Aws::String m_lambdaFunctionARN;
     bool m_lambdaFunctionARNHasBeenSet = false;
 
-    EventType m_eventType;
+    EventType m_eventType{EventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
-    bool m_includeBody;
+    bool m_includeBody{false};
     bool m_includeBodyHasBeenSet = false;
   };
 

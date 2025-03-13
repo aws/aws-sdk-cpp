@@ -20,15 +20,7 @@ namespace RDS
 namespace Model
 {
 
-OptionVersion::OptionVersion() : 
-    m_versionHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
-{
-}
-
 OptionVersion::OptionVersion(const XmlNode& xmlNode)
-  : OptionVersion()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ OptionVersion& OptionVersion::operator =(const XmlNode& xmlNode)
     {
       m_version = Aws::Utils::Xml::DecodeEscapedXmlText(versionNode.GetText());
       m_versionHasBeenSet = true;
+       m_versionHasBeenSet = true;
     }
     XmlNode isDefaultNode = resultNode.FirstChild("IsDefault");
     if(!isDefaultNode.IsNull())
     {
       m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
+       m_isDefaultHasBeenSet = true;
     }
   }
 

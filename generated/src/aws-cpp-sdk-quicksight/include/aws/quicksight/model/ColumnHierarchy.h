@@ -34,7 +34,7 @@ namespace Model
   class ColumnHierarchy
   {
   public:
-    AWS_QUICKSIGHT_API ColumnHierarchy();
+    AWS_QUICKSIGHT_API ColumnHierarchy() = default;
     AWS_QUICKSIGHT_API ColumnHierarchy(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ColumnHierarchy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The option that determines the hierarchy of the fields that are built within
      * a visual's field wells. These fields can't be duplicated to other visuals.</p>
      */
-    inline const ExplicitHierarchy& GetExplicitHierarchy() const{ return m_explicitHierarchy; }
+    inline const ExplicitHierarchy& GetExplicitHierarchy() const { return m_explicitHierarchy; }
     inline bool ExplicitHierarchyHasBeenSet() const { return m_explicitHierarchyHasBeenSet; }
-    inline void SetExplicitHierarchy(const ExplicitHierarchy& value) { m_explicitHierarchyHasBeenSet = true; m_explicitHierarchy = value; }
-    inline void SetExplicitHierarchy(ExplicitHierarchy&& value) { m_explicitHierarchyHasBeenSet = true; m_explicitHierarchy = std::move(value); }
-    inline ColumnHierarchy& WithExplicitHierarchy(const ExplicitHierarchy& value) { SetExplicitHierarchy(value); return *this;}
-    inline ColumnHierarchy& WithExplicitHierarchy(ExplicitHierarchy&& value) { SetExplicitHierarchy(std::move(value)); return *this;}
+    template<typename ExplicitHierarchyT = ExplicitHierarchy>
+    void SetExplicitHierarchy(ExplicitHierarchyT&& value) { m_explicitHierarchyHasBeenSet = true; m_explicitHierarchy = std::forward<ExplicitHierarchyT>(value); }
+    template<typename ExplicitHierarchyT = ExplicitHierarchy>
+    ColumnHierarchy& WithExplicitHierarchy(ExplicitHierarchyT&& value) { SetExplicitHierarchy(std::forward<ExplicitHierarchyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>The option that determines the hierarchy of any <code>DateTime</code>
      * fields.</p>
      */
-    inline const DateTimeHierarchy& GetDateTimeHierarchy() const{ return m_dateTimeHierarchy; }
+    inline const DateTimeHierarchy& GetDateTimeHierarchy() const { return m_dateTimeHierarchy; }
     inline bool DateTimeHierarchyHasBeenSet() const { return m_dateTimeHierarchyHasBeenSet; }
-    inline void SetDateTimeHierarchy(const DateTimeHierarchy& value) { m_dateTimeHierarchyHasBeenSet = true; m_dateTimeHierarchy = value; }
-    inline void SetDateTimeHierarchy(DateTimeHierarchy&& value) { m_dateTimeHierarchyHasBeenSet = true; m_dateTimeHierarchy = std::move(value); }
-    inline ColumnHierarchy& WithDateTimeHierarchy(const DateTimeHierarchy& value) { SetDateTimeHierarchy(value); return *this;}
-    inline ColumnHierarchy& WithDateTimeHierarchy(DateTimeHierarchy&& value) { SetDateTimeHierarchy(std::move(value)); return *this;}
+    template<typename DateTimeHierarchyT = DateTimeHierarchy>
+    void SetDateTimeHierarchy(DateTimeHierarchyT&& value) { m_dateTimeHierarchyHasBeenSet = true; m_dateTimeHierarchy = std::forward<DateTimeHierarchyT>(value); }
+    template<typename DateTimeHierarchyT = DateTimeHierarchy>
+    ColumnHierarchy& WithDateTimeHierarchy(DateTimeHierarchyT&& value) { SetDateTimeHierarchy(std::forward<DateTimeHierarchyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * during data preparation. These fields are available to use in any analysis that
      * uses the data source.</p>
      */
-    inline const PredefinedHierarchy& GetPredefinedHierarchy() const{ return m_predefinedHierarchy; }
+    inline const PredefinedHierarchy& GetPredefinedHierarchy() const { return m_predefinedHierarchy; }
     inline bool PredefinedHierarchyHasBeenSet() const { return m_predefinedHierarchyHasBeenSet; }
-    inline void SetPredefinedHierarchy(const PredefinedHierarchy& value) { m_predefinedHierarchyHasBeenSet = true; m_predefinedHierarchy = value; }
-    inline void SetPredefinedHierarchy(PredefinedHierarchy&& value) { m_predefinedHierarchyHasBeenSet = true; m_predefinedHierarchy = std::move(value); }
-    inline ColumnHierarchy& WithPredefinedHierarchy(const PredefinedHierarchy& value) { SetPredefinedHierarchy(value); return *this;}
-    inline ColumnHierarchy& WithPredefinedHierarchy(PredefinedHierarchy&& value) { SetPredefinedHierarchy(std::move(value)); return *this;}
+    template<typename PredefinedHierarchyT = PredefinedHierarchy>
+    void SetPredefinedHierarchy(PredefinedHierarchyT&& value) { m_predefinedHierarchyHasBeenSet = true; m_predefinedHierarchy = std::forward<PredefinedHierarchyT>(value); }
+    template<typename PredefinedHierarchyT = PredefinedHierarchy>
+    ColumnHierarchy& WithPredefinedHierarchy(PredefinedHierarchyT&& value) { SetPredefinedHierarchy(std::forward<PredefinedHierarchyT>(value)); return *this;}
     ///@}
   private:
 

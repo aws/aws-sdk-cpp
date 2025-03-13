@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeOrderableReplicationInstancesResult::DescribeOrderableReplicationInstancesResult()
-{
-}
-
 DescribeOrderableReplicationInstancesResult::DescribeOrderableReplicationInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ DescribeOrderableReplicationInstancesResult& DescribeOrderableReplicationInstanc
     {
       m_orderableReplicationInstances.push_back(orderableReplicationInstancesJsonList[orderableReplicationInstancesIndex].AsObject());
     }
+    m_orderableReplicationInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

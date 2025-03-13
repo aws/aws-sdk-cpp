@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeKeyRegistrationRequest::DescribeKeyRegistrationRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_defaultKeyOnly(false),
-    m_defaultKeyOnlyHasBeenSet(false)
-{
-}
-
 Aws::String DescribeKeyRegistrationRequest::SerializePayload() const
 {
   return {};

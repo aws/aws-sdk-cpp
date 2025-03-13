@@ -43,7 +43,7 @@ namespace Model
   class AbsoluteTimeRange
   {
   public:
-    AWS_TRANSCRIBESERVICE_API AbsoluteTimeRange();
+    AWS_TRANSCRIBESERVICE_API AbsoluteTimeRange() = default;
     AWS_TRANSCRIBESERVICE_API AbsoluteTimeRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API AbsoluteTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,7 +55,7 @@ namespace Model
      * specified criteria in your audio. If you include <code>StartTime</code> in your
      * request, you must also include <code>EndTime</code>.</p>
      */
-    inline long long GetStartTime() const{ return m_startTime; }
+    inline long long GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
     inline AbsoluteTimeRange& WithStartTime(long long value) { SetStartTime(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
      * specified criteria in your audio. If you include <code>EndTime</code> in your
      * request, you must also include <code>StartTime</code>.</p>
      */
-    inline long long GetEndTime() const{ return m_endTime; }
+    inline long long GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
     inline AbsoluteTimeRange& WithEndTime(long long value) { SetEndTime(value); return *this;}
@@ -79,7 +79,7 @@ namespace Model
      * specified value. Amazon Transcribe searches for your specified criteria in this
      * time segment.</p>
      */
-    inline long long GetFirst() const{ return m_first; }
+    inline long long GetFirst() const { return m_first; }
     inline bool FirstHasBeenSet() const { return m_firstHasBeenSet; }
     inline void SetFirst(long long value) { m_firstHasBeenSet = true; m_first = value; }
     inline AbsoluteTimeRange& WithFirst(long long value) { SetFirst(value); return *this;}
@@ -91,23 +91,23 @@ namespace Model
      * media file. Amazon Transcribe searches for your specified criteria in this time
      * segment.</p>
      */
-    inline long long GetLast() const{ return m_last; }
+    inline long long GetLast() const { return m_last; }
     inline bool LastHasBeenSet() const { return m_lastHasBeenSet; }
     inline void SetLast(long long value) { m_lastHasBeenSet = true; m_last = value; }
     inline AbsoluteTimeRange& WithLast(long long value) { SetLast(value); return *this;}
     ///@}
   private:
 
-    long long m_startTime;
+    long long m_startTime{0};
     bool m_startTimeHasBeenSet = false;
 
-    long long m_endTime;
+    long long m_endTime{0};
     bool m_endTimeHasBeenSet = false;
 
-    long long m_first;
+    long long m_first{0};
     bool m_firstHasBeenSet = false;
 
-    long long m_last;
+    long long m_last{0};
     bool m_lastHasBeenSet = false;
   };
 

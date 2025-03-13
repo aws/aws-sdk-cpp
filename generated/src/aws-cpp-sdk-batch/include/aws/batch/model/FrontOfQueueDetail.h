@@ -33,7 +33,7 @@ namespace Model
   class FrontOfQueueDetail
   {
   public:
-    AWS_BATCH_API FrontOfQueueDetail();
+    AWS_BATCH_API FrontOfQueueDetail() = default;
     AWS_BATCH_API FrontOfQueueDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API FrontOfQueueDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * based on their submission time. For fair share scheduling (FSS) job queues, jobs
      * are ordered based on their job priority and share usage.</p>
      */
-    inline const Aws::Vector<FrontOfQueueJobSummary>& GetJobs() const{ return m_jobs; }
+    inline const Aws::Vector<FrontOfQueueJobSummary>& GetJobs() const { return m_jobs; }
     inline bool JobsHasBeenSet() const { return m_jobsHasBeenSet; }
-    inline void SetJobs(const Aws::Vector<FrontOfQueueJobSummary>& value) { m_jobsHasBeenSet = true; m_jobs = value; }
-    inline void SetJobs(Aws::Vector<FrontOfQueueJobSummary>&& value) { m_jobsHasBeenSet = true; m_jobs = std::move(value); }
-    inline FrontOfQueueDetail& WithJobs(const Aws::Vector<FrontOfQueueJobSummary>& value) { SetJobs(value); return *this;}
-    inline FrontOfQueueDetail& WithJobs(Aws::Vector<FrontOfQueueJobSummary>&& value) { SetJobs(std::move(value)); return *this;}
-    inline FrontOfQueueDetail& AddJobs(const FrontOfQueueJobSummary& value) { m_jobsHasBeenSet = true; m_jobs.push_back(value); return *this; }
-    inline FrontOfQueueDetail& AddJobs(FrontOfQueueJobSummary&& value) { m_jobsHasBeenSet = true; m_jobs.push_back(std::move(value)); return *this; }
+    template<typename JobsT = Aws::Vector<FrontOfQueueJobSummary>>
+    void SetJobs(JobsT&& value) { m_jobsHasBeenSet = true; m_jobs = std::forward<JobsT>(value); }
+    template<typename JobsT = Aws::Vector<FrontOfQueueJobSummary>>
+    FrontOfQueueDetail& WithJobs(JobsT&& value) { SetJobs(std::forward<JobsT>(value)); return *this;}
+    template<typename JobsT = FrontOfQueueJobSummary>
+    FrontOfQueueDetail& AddJobs(JobsT&& value) { m_jobsHasBeenSet = true; m_jobs.emplace_back(std::forward<JobsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,7 +61,7 @@ namespace Model
      * <p>The Unix timestamp (in milliseconds) for when each of the first 100
      * <code>RUNNABLE</code> jobs were last updated. </p>
      */
-    inline long long GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline long long GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
     inline void SetLastUpdatedAt(long long value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
     inline FrontOfQueueDetail& WithLastUpdatedAt(long long value) { SetLastUpdatedAt(value); return *this;}
@@ -71,7 +71,7 @@ namespace Model
     Aws::Vector<FrontOfQueueJobSummary> m_jobs;
     bool m_jobsHasBeenSet = false;
 
-    long long m_lastUpdatedAt;
+    long long m_lastUpdatedAt{0};
     bool m_lastUpdatedAtHasBeenSet = false;
   };
 

@@ -25,7 +25,7 @@ namespace Model
   class UpdateDomainContactPrivacyRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API UpdateDomainContactPrivacyRequest();
+    AWS_ROUTE53DOMAINS_API UpdateDomainContactPrivacyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the domain that you want to update the privacy setting for.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline UpdateDomainContactPrivacyRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline UpdateDomainContactPrivacyRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline UpdateDomainContactPrivacyRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    UpdateDomainContactPrivacyRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * setting for the administrative, billing, registrant, and technical contacts.</p>
      * 
      */
-    inline bool GetAdminPrivacy() const{ return m_adminPrivacy; }
+    inline bool GetAdminPrivacy() const { return m_adminPrivacy; }
     inline bool AdminPrivacyHasBeenSet() const { return m_adminPrivacyHasBeenSet; }
     inline void SetAdminPrivacy(bool value) { m_adminPrivacyHasBeenSet = true; m_adminPrivacy = value; }
     inline UpdateDomainContactPrivacyRequest& WithAdminPrivacy(bool value) { SetAdminPrivacy(value); return *this;}
@@ -78,7 +76,7 @@ namespace Model
      * specify the same privacy setting for the administrative, billing, registrant,
      * and technical contacts.</p> 
      */
-    inline bool GetRegistrantPrivacy() const{ return m_registrantPrivacy; }
+    inline bool GetRegistrantPrivacy() const { return m_registrantPrivacy; }
     inline bool RegistrantPrivacyHasBeenSet() const { return m_registrantPrivacyHasBeenSet; }
     inline void SetRegistrantPrivacy(bool value) { m_registrantPrivacyHasBeenSet = true; m_registrantPrivacy = value; }
     inline UpdateDomainContactPrivacyRequest& WithRegistrantPrivacy(bool value) { SetRegistrantPrivacy(value); return *this;}
@@ -94,7 +92,7 @@ namespace Model
      * privacy setting for the administrative, billing, registrant, and technical
      * contacts.</p> 
      */
-    inline bool GetTechPrivacy() const{ return m_techPrivacy; }
+    inline bool GetTechPrivacy() const { return m_techPrivacy; }
     inline bool TechPrivacyHasBeenSet() const { return m_techPrivacyHasBeenSet; }
     inline void SetTechPrivacy(bool value) { m_techPrivacyHasBeenSet = true; m_techPrivacy = value; }
     inline UpdateDomainContactPrivacyRequest& WithTechPrivacy(bool value) { SetTechPrivacy(value); return *this;}
@@ -110,7 +108,7 @@ namespace Model
      * privacy setting for the administrative, billing, registrant, and technical
      * contacts.</p> 
      */
-    inline bool GetBillingPrivacy() const{ return m_billingPrivacy; }
+    inline bool GetBillingPrivacy() const { return m_billingPrivacy; }
     inline bool BillingPrivacyHasBeenSet() const { return m_billingPrivacyHasBeenSet; }
     inline void SetBillingPrivacy(bool value) { m_billingPrivacyHasBeenSet = true; m_billingPrivacy = value; }
     inline UpdateDomainContactPrivacyRequest& WithBillingPrivacy(bool value) { SetBillingPrivacy(value); return *this;}
@@ -120,16 +118,16 @@ namespace Model
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    bool m_adminPrivacy;
+    bool m_adminPrivacy{false};
     bool m_adminPrivacyHasBeenSet = false;
 
-    bool m_registrantPrivacy;
+    bool m_registrantPrivacy{false};
     bool m_registrantPrivacyHasBeenSet = false;
 
-    bool m_techPrivacy;
+    bool m_techPrivacy{false};
     bool m_techPrivacyHasBeenSet = false;
 
-    bool m_billingPrivacy;
+    bool m_billingPrivacy{false};
     bool m_billingPrivacyHasBeenSet = false;
   };
 

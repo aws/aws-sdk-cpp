@@ -35,7 +35,7 @@ namespace Model
   class BatchGetApplicationRevisionsResult
   {
   public:
-    AWS_CODEDEPLOY_API BatchGetApplicationRevisionsResult();
+    AWS_CODEDEPLOY_API BatchGetApplicationRevisionsResult() = default;
     AWS_CODEDEPLOY_API BatchGetApplicationRevisionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEDEPLOY_API BatchGetApplicationRevisionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>The name of the application that corresponds to the revisions.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
-    inline BatchGetApplicationRevisionsResult& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline BatchGetApplicationRevisionsResult& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline BatchGetApplicationRevisionsResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    BatchGetApplicationRevisionsResult& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about errors that might have occurred during the API call.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline BatchGetApplicationRevisionsResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline BatchGetApplicationRevisionsResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline BatchGetApplicationRevisionsResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    BatchGetApplicationRevisionsResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,34 +67,36 @@ namespace Model
      * <p>Additional information about the revisions, including the type and
      * location.</p>
      */
-    inline const Aws::Vector<RevisionInfo>& GetRevisions() const{ return m_revisions; }
-    inline void SetRevisions(const Aws::Vector<RevisionInfo>& value) { m_revisions = value; }
-    inline void SetRevisions(Aws::Vector<RevisionInfo>&& value) { m_revisions = std::move(value); }
-    inline BatchGetApplicationRevisionsResult& WithRevisions(const Aws::Vector<RevisionInfo>& value) { SetRevisions(value); return *this;}
-    inline BatchGetApplicationRevisionsResult& WithRevisions(Aws::Vector<RevisionInfo>&& value) { SetRevisions(std::move(value)); return *this;}
-    inline BatchGetApplicationRevisionsResult& AddRevisions(const RevisionInfo& value) { m_revisions.push_back(value); return *this; }
-    inline BatchGetApplicationRevisionsResult& AddRevisions(RevisionInfo&& value) { m_revisions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RevisionInfo>& GetRevisions() const { return m_revisions; }
+    template<typename RevisionsT = Aws::Vector<RevisionInfo>>
+    void SetRevisions(RevisionsT&& value) { m_revisionsHasBeenSet = true; m_revisions = std::forward<RevisionsT>(value); }
+    template<typename RevisionsT = Aws::Vector<RevisionInfo>>
+    BatchGetApplicationRevisionsResult& WithRevisions(RevisionsT&& value) { SetRevisions(std::forward<RevisionsT>(value)); return *this;}
+    template<typename RevisionsT = RevisionInfo>
+    BatchGetApplicationRevisionsResult& AddRevisions(RevisionsT&& value) { m_revisionsHasBeenSet = true; m_revisions.emplace_back(std::forward<RevisionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetApplicationRevisionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetApplicationRevisionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetApplicationRevisionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetApplicationRevisionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Vector<RevisionInfo> m_revisions;
+    bool m_revisionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

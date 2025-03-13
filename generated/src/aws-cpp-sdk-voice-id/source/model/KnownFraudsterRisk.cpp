@@ -18,15 +18,7 @@ namespace VoiceID
 namespace Model
 {
 
-KnownFraudsterRisk::KnownFraudsterRisk() : 
-    m_generatedFraudsterIdHasBeenSet(false),
-    m_riskScore(0),
-    m_riskScoreHasBeenSet(false)
-{
-}
-
 KnownFraudsterRisk::KnownFraudsterRisk(JsonView jsonValue)
-  : KnownFraudsterRisk()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ KnownFraudsterRisk& KnownFraudsterRisk::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GeneratedFraudsterId"))
   {
     m_generatedFraudsterId = jsonValue.GetString("GeneratedFraudsterId");
-
     m_generatedFraudsterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RiskScore"))
   {
     m_riskScore = jsonValue.GetInteger("RiskScore");
-
     m_riskScoreHasBeenSet = true;
   }
-
   return *this;
 }
 

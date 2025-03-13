@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-TargetPreview::TargetPreview() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_targetTypeHasBeenSet(false)
-{
-}
-
 TargetPreview::TargetPreview(JsonView jsonValue)
-  : TargetPreview()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TargetPreview& TargetPreview::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetType"))
   {
     m_targetType = jsonValue.GetString("TargetType");
-
     m_targetTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

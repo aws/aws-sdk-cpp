@@ -29,7 +29,7 @@ namespace Model
   class CreateRegistrationVersionResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API CreateRegistrationVersionResult();
+    AWS_PINPOINTSMSVOICEV2_API CreateRegistrationVersionResult() = default;
     AWS_PINPOINTSMSVOICEV2_API CreateRegistrationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API CreateRegistrationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,34 +38,30 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the registration.</p>
      */
-    inline const Aws::String& GetRegistrationArn() const{ return m_registrationArn; }
-    inline void SetRegistrationArn(const Aws::String& value) { m_registrationArn = value; }
-    inline void SetRegistrationArn(Aws::String&& value) { m_registrationArn = std::move(value); }
-    inline void SetRegistrationArn(const char* value) { m_registrationArn.assign(value); }
-    inline CreateRegistrationVersionResult& WithRegistrationArn(const Aws::String& value) { SetRegistrationArn(value); return *this;}
-    inline CreateRegistrationVersionResult& WithRegistrationArn(Aws::String&& value) { SetRegistrationArn(std::move(value)); return *this;}
-    inline CreateRegistrationVersionResult& WithRegistrationArn(const char* value) { SetRegistrationArn(value); return *this;}
+    inline const Aws::String& GetRegistrationArn() const { return m_registrationArn; }
+    template<typename RegistrationArnT = Aws::String>
+    void SetRegistrationArn(RegistrationArnT&& value) { m_registrationArnHasBeenSet = true; m_registrationArn = std::forward<RegistrationArnT>(value); }
+    template<typename RegistrationArnT = Aws::String>
+    CreateRegistrationVersionResult& WithRegistrationArn(RegistrationArnT&& value) { SetRegistrationArn(std::forward<RegistrationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the registration.</p>
      */
-    inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
-    inline void SetRegistrationId(const Aws::String& value) { m_registrationId = value; }
-    inline void SetRegistrationId(Aws::String&& value) { m_registrationId = std::move(value); }
-    inline void SetRegistrationId(const char* value) { m_registrationId.assign(value); }
-    inline CreateRegistrationVersionResult& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
-    inline CreateRegistrationVersionResult& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
-    inline CreateRegistrationVersionResult& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
+    inline const Aws::String& GetRegistrationId() const { return m_registrationId; }
+    template<typename RegistrationIdT = Aws::String>
+    void SetRegistrationId(RegistrationIdT&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::forward<RegistrationIdT>(value); }
+    template<typename RegistrationIdT = Aws::String>
+    CreateRegistrationVersionResult& WithRegistrationId(RegistrationIdT&& value) { SetRegistrationId(std::forward<RegistrationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new version number of the registration.</p>
      */
-    inline long long GetVersionNumber() const{ return m_versionNumber; }
-    inline void SetVersionNumber(long long value) { m_versionNumber = value; }
+    inline long long GetVersionNumber() const { return m_versionNumber; }
+    inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline CreateRegistrationVersionResult& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
     ///@}
 
@@ -85,11 +81,9 @@ namespace Model
      * Your previously approved registration has been revoked.</p> </li> <li> <p>
      * <code>SUBMITTED</code>: Your registration has been submitted.</p> </li> </ul>
      */
-    inline const RegistrationVersionStatus& GetRegistrationVersionStatus() const{ return m_registrationVersionStatus; }
-    inline void SetRegistrationVersionStatus(const RegistrationVersionStatus& value) { m_registrationVersionStatus = value; }
-    inline void SetRegistrationVersionStatus(RegistrationVersionStatus&& value) { m_registrationVersionStatus = std::move(value); }
-    inline CreateRegistrationVersionResult& WithRegistrationVersionStatus(const RegistrationVersionStatus& value) { SetRegistrationVersionStatus(value); return *this;}
-    inline CreateRegistrationVersionResult& WithRegistrationVersionStatus(RegistrationVersionStatus&& value) { SetRegistrationVersionStatus(std::move(value)); return *this;}
+    inline RegistrationVersionStatus GetRegistrationVersionStatus() const { return m_registrationVersionStatus; }
+    inline void SetRegistrationVersionStatus(RegistrationVersionStatus value) { m_registrationVersionStatusHasBeenSet = true; m_registrationVersionStatus = value; }
+    inline CreateRegistrationVersionResult& WithRegistrationVersionStatus(RegistrationVersionStatus value) { SetRegistrationVersionStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -97,36 +91,40 @@ namespace Model
      * <p>A <b>RegistrationVersionStatusHistory</b> object that contains timestamps for
      * the registration.</p>
      */
-    inline const RegistrationVersionStatusHistory& GetRegistrationVersionStatusHistory() const{ return m_registrationVersionStatusHistory; }
-    inline void SetRegistrationVersionStatusHistory(const RegistrationVersionStatusHistory& value) { m_registrationVersionStatusHistory = value; }
-    inline void SetRegistrationVersionStatusHistory(RegistrationVersionStatusHistory&& value) { m_registrationVersionStatusHistory = std::move(value); }
-    inline CreateRegistrationVersionResult& WithRegistrationVersionStatusHistory(const RegistrationVersionStatusHistory& value) { SetRegistrationVersionStatusHistory(value); return *this;}
-    inline CreateRegistrationVersionResult& WithRegistrationVersionStatusHistory(RegistrationVersionStatusHistory&& value) { SetRegistrationVersionStatusHistory(std::move(value)); return *this;}
+    inline const RegistrationVersionStatusHistory& GetRegistrationVersionStatusHistory() const { return m_registrationVersionStatusHistory; }
+    template<typename RegistrationVersionStatusHistoryT = RegistrationVersionStatusHistory>
+    void SetRegistrationVersionStatusHistory(RegistrationVersionStatusHistoryT&& value) { m_registrationVersionStatusHistoryHasBeenSet = true; m_registrationVersionStatusHistory = std::forward<RegistrationVersionStatusHistoryT>(value); }
+    template<typename RegistrationVersionStatusHistoryT = RegistrationVersionStatusHistory>
+    CreateRegistrationVersionResult& WithRegistrationVersionStatusHistory(RegistrationVersionStatusHistoryT&& value) { SetRegistrationVersionStatusHistory(std::forward<RegistrationVersionStatusHistoryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateRegistrationVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateRegistrationVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateRegistrationVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateRegistrationVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registrationArn;
+    bool m_registrationArnHasBeenSet = false;
 
     Aws::String m_registrationId;
+    bool m_registrationIdHasBeenSet = false;
 
-    long long m_versionNumber;
+    long long m_versionNumber{0};
+    bool m_versionNumberHasBeenSet = false;
 
-    RegistrationVersionStatus m_registrationVersionStatus;
+    RegistrationVersionStatus m_registrationVersionStatus{RegistrationVersionStatus::NOT_SET};
+    bool m_registrationVersionStatusHasBeenSet = false;
 
     RegistrationVersionStatusHistory m_registrationVersionStatusHistory;
+    bool m_registrationVersionStatusHistoryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

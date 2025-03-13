@@ -32,7 +32,7 @@ namespace Model
   class AvcIntraUhdSettings
   {
   public:
-    AWS_MEDIACONVERT_API AvcIntraUhdSettings();
+    AWS_MEDIACONVERT_API AvcIntraUhdSettings() = default;
     AWS_MEDIACONVERT_API AvcIntraUhdSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AvcIntraUhdSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,16 +47,14 @@ namespace Model
      * specification. When you choose Single-pass, your encoding time is faster. The
      * default behavior is Single-pass.
      */
-    inline const AvcIntraUhdQualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
+    inline AvcIntraUhdQualityTuningLevel GetQualityTuningLevel() const { return m_qualityTuningLevel; }
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
-    inline void SetQualityTuningLevel(const AvcIntraUhdQualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
-    inline void SetQualityTuningLevel(AvcIntraUhdQualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
-    inline AvcIntraUhdSettings& WithQualityTuningLevel(const AvcIntraUhdQualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
-    inline AvcIntraUhdSettings& WithQualityTuningLevel(AvcIntraUhdQualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
+    inline void SetQualityTuningLevel(AvcIntraUhdQualityTuningLevel value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
+    inline AvcIntraUhdSettings& WithQualityTuningLevel(AvcIntraUhdQualityTuningLevel value) { SetQualityTuningLevel(value); return *this;}
     ///@}
   private:
 
-    AvcIntraUhdQualityTuningLevel m_qualityTuningLevel;
+    AvcIntraUhdQualityTuningLevel m_qualityTuningLevel{AvcIntraUhdQualityTuningLevel::NOT_SET};
     bool m_qualityTuningLevelHasBeenSet = false;
   };
 

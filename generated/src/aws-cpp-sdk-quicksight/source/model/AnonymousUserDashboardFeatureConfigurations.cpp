@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AnonymousUserDashboardFeatureConfigurations::AnonymousUserDashboardFeatureConfigurations() : 
-    m_sharedViewHasBeenSet(false)
-{
-}
-
 AnonymousUserDashboardFeatureConfigurations::AnonymousUserDashboardFeatureConfigurations(JsonView jsonValue)
-  : AnonymousUserDashboardFeatureConfigurations()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnonymousUserDashboardFeatureConfigurations& AnonymousUserDashboardFeatureConfig
   if(jsonValue.ValueExists("SharedView"))
   {
     m_sharedView = jsonValue.GetObject("SharedView");
-
     m_sharedViewHasBeenSet = true;
   }
-
   return *this;
 }
 

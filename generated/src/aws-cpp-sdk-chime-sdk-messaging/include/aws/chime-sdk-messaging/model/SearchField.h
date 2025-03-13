@@ -35,7 +35,7 @@ namespace Model
   class SearchField
   {
   public:
-    AWS_CHIMESDKMESSAGING_API SearchField();
+    AWS_CHIMESDKMESSAGING_API SearchField() = default;
     AWS_CHIMESDKMESSAGING_API SearchField(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API SearchField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * are equal to the specified values, and with the <code>INCLUDES</code> operator
      * to get channels whose memberships include the specified values.</p>
      */
-    inline const SearchFieldKey& GetKey() const{ return m_key; }
+    inline SearchFieldKey GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const SearchFieldKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(SearchFieldKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline SearchField& WithKey(const SearchFieldKey& value) { SetKey(value); return *this;}
-    inline SearchField& WithKey(SearchFieldKey&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(SearchFieldKey value) { m_keyHasBeenSet = true; m_key = value; }
+    inline SearchField& WithKey(SearchFieldKey value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
@@ -64,15 +62,14 @@ namespace Model
      * <p>This operation isn't supported for <code>AppInstanceUsers</code> with large
      * number of memberships.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline SearchField& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline SearchField& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline SearchField& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline SearchField& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline SearchField& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    SearchField& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    SearchField& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,22 +79,20 @@ namespace Model
      * whose memberships equal the specified values. Use the <code>INCLUDES</code>
      * operator to find channels whose memberships include the specified values.</p>
      */
-    inline const SearchFieldOperator& GetOperator() const{ return m_operator; }
+    inline SearchFieldOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const SearchFieldOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(SearchFieldOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline SearchField& WithOperator(const SearchFieldOperator& value) { SetOperator(value); return *this;}
-    inline SearchField& WithOperator(SearchFieldOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(SearchFieldOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline SearchField& WithOperator(SearchFieldOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
-    SearchFieldKey m_key;
+    SearchFieldKey m_key{SearchFieldKey::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
 
-    SearchFieldOperator m_operator;
+    SearchFieldOperator m_operator{SearchFieldOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

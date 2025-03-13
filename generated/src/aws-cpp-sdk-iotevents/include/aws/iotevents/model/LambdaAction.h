@@ -33,7 +33,7 @@ namespace Model
   class LambdaAction
   {
   public:
-    AWS_IOTEVENTS_API LambdaAction();
+    AWS_IOTEVENTS_API LambdaAction() = default;
     AWS_IOTEVENTS_API LambdaAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API LambdaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ARN of the Lambda function that is executed.</p>
      */
-    inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+    inline const Aws::String& GetFunctionArn() const { return m_functionArn; }
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
-    inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
-    inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
-    inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
-    inline LambdaAction& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
-    inline LambdaAction& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
-    inline LambdaAction& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
+    template<typename FunctionArnT = Aws::String>
+    void SetFunctionArn(FunctionArnT&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::forward<FunctionArnT>(value); }
+    template<typename FunctionArnT = Aws::String>
+    LambdaAction& WithFunctionArn(FunctionArnT&& value) { SetFunctionArn(std::forward<FunctionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p>You can configure the action payload when you send a message to a Lambda
      * function.</p>
      */
-    inline const Payload& GetPayload() const{ return m_payload; }
+    inline const Payload& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Payload& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Payload&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline LambdaAction& WithPayload(const Payload& value) { SetPayload(value); return *this;}
-    inline LambdaAction& WithPayload(Payload&& value) { SetPayload(std::move(value)); return *this;}
+    template<typename PayloadT = Payload>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Payload>
+    LambdaAction& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
   private:
 

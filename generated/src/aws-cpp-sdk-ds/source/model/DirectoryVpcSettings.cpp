@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-DirectoryVpcSettings::DirectoryVpcSettings() : 
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
-{
-}
-
 DirectoryVpcSettings::DirectoryVpcSettings(JsonView jsonValue)
-  : DirectoryVpcSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DirectoryVpcSettings& DirectoryVpcSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -48,7 +39,6 @@ DirectoryVpcSettings& DirectoryVpcSettings::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

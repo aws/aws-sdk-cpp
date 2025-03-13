@@ -36,7 +36,7 @@ namespace Model
   class ApplicationSettingsResource
   {
   public:
-    AWS_PINPOINT_API ApplicationSettingsResource();
+    AWS_PINPOINT_API ApplicationSettingsResource() = default;
     AWS_PINPOINT_API ApplicationSettingsResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API ApplicationSettingsResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline ApplicationSettingsResource& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline ApplicationSettingsResource& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline ApplicationSettingsResource& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    ApplicationSettingsResource& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,12 @@ namespace Model
      * for campaigns in the application. You can use this hook to customize segments
      * that are used by campaigns in the application.</p>
      */
-    inline const CampaignHook& GetCampaignHook() const{ return m_campaignHook; }
+    inline const CampaignHook& GetCampaignHook() const { return m_campaignHook; }
     inline bool CampaignHookHasBeenSet() const { return m_campaignHookHasBeenSet; }
-    inline void SetCampaignHook(const CampaignHook& value) { m_campaignHookHasBeenSet = true; m_campaignHook = value; }
-    inline void SetCampaignHook(CampaignHook&& value) { m_campaignHookHasBeenSet = true; m_campaignHook = std::move(value); }
-    inline ApplicationSettingsResource& WithCampaignHook(const CampaignHook& value) { SetCampaignHook(value); return *this;}
-    inline ApplicationSettingsResource& WithCampaignHook(CampaignHook&& value) { SetCampaignHook(std::move(value)); return *this;}
+    template<typename CampaignHookT = CampaignHook>
+    void SetCampaignHook(CampaignHookT&& value) { m_campaignHookHasBeenSet = true; m_campaignHook = std::forward<CampaignHookT>(value); }
+    template<typename CampaignHookT = CampaignHook>
+    ApplicationSettingsResource& WithCampaignHook(CampaignHookT&& value) { SetCampaignHook(std::forward<CampaignHookT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,26 +74,24 @@ namespace Model
      * <p>The date and time, in ISO 8601 format, when the application's settings were
      * last modified.</p>
      */
-    inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::String& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
-    inline ApplicationSettingsResource& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
-    inline ApplicationSettingsResource& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
-    inline ApplicationSettingsResource& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
+    template<typename LastModifiedDateT = Aws::String>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::String>
+    ApplicationSettingsResource& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default sending limits for campaigns in the application.</p>
      */
-    inline const CampaignLimits& GetLimits() const{ return m_limits; }
+    inline const CampaignLimits& GetLimits() const { return m_limits; }
     inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
-    inline void SetLimits(const CampaignLimits& value) { m_limitsHasBeenSet = true; m_limits = value; }
-    inline void SetLimits(CampaignLimits&& value) { m_limitsHasBeenSet = true; m_limits = std::move(value); }
-    inline ApplicationSettingsResource& WithLimits(const CampaignLimits& value) { SetLimits(value); return *this;}
-    inline ApplicationSettingsResource& WithLimits(CampaignLimits&& value) { SetLimits(std::move(value)); return *this;}
+    template<typename LimitsT = CampaignLimits>
+    void SetLimits(LimitsT&& value) { m_limitsHasBeenSet = true; m_limits = std::forward<LimitsT>(value); }
+    template<typename LimitsT = CampaignLimits>
+    ApplicationSettingsResource& WithLimits(LimitsT&& value) { SetLimits(std::forward<LimitsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +109,12 @@ namespace Model
      * the endpoint will receive messages from a campaign or journey, even if quiet
      * time is enabled.</p>
      */
-    inline const QuietTime& GetQuietTime() const{ return m_quietTime; }
+    inline const QuietTime& GetQuietTime() const { return m_quietTime; }
     inline bool QuietTimeHasBeenSet() const { return m_quietTimeHasBeenSet; }
-    inline void SetQuietTime(const QuietTime& value) { m_quietTimeHasBeenSet = true; m_quietTime = value; }
-    inline void SetQuietTime(QuietTime&& value) { m_quietTimeHasBeenSet = true; m_quietTime = std::move(value); }
-    inline ApplicationSettingsResource& WithQuietTime(const QuietTime& value) { SetQuietTime(value); return *this;}
-    inline ApplicationSettingsResource& WithQuietTime(QuietTime&& value) { SetQuietTime(std::move(value)); return *this;}
+    template<typename QuietTimeT = QuietTime>
+    void SetQuietTime(QuietTimeT&& value) { m_quietTimeHasBeenSet = true; m_quietTime = std::forward<QuietTimeT>(value); }
+    template<typename QuietTimeT = QuietTime>
+    ApplicationSettingsResource& WithQuietTime(QuietTimeT&& value) { SetQuietTime(std::forward<QuietTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,12 +123,12 @@ namespace Model
      * apply to each journey for the application but can be overridden, on a per
      * journey basis, with the JourneyLimits resource.</p>
      */
-    inline const ApplicationSettingsJourneyLimits& GetJourneyLimits() const{ return m_journeyLimits; }
+    inline const ApplicationSettingsJourneyLimits& GetJourneyLimits() const { return m_journeyLimits; }
     inline bool JourneyLimitsHasBeenSet() const { return m_journeyLimitsHasBeenSet; }
-    inline void SetJourneyLimits(const ApplicationSettingsJourneyLimits& value) { m_journeyLimitsHasBeenSet = true; m_journeyLimits = value; }
-    inline void SetJourneyLimits(ApplicationSettingsJourneyLimits&& value) { m_journeyLimitsHasBeenSet = true; m_journeyLimits = std::move(value); }
-    inline ApplicationSettingsResource& WithJourneyLimits(const ApplicationSettingsJourneyLimits& value) { SetJourneyLimits(value); return *this;}
-    inline ApplicationSettingsResource& WithJourneyLimits(ApplicationSettingsJourneyLimits&& value) { SetJourneyLimits(std::move(value)); return *this;}
+    template<typename JourneyLimitsT = ApplicationSettingsJourneyLimits>
+    void SetJourneyLimits(JourneyLimitsT&& value) { m_journeyLimitsHasBeenSet = true; m_journeyLimits = std::forward<JourneyLimitsT>(value); }
+    template<typename JourneyLimitsT = ApplicationSettingsJourneyLimits>
+    ApplicationSettingsResource& WithJourneyLimits(JourneyLimitsT&& value) { SetJourneyLimits(std::forward<JourneyLimitsT>(value)); return *this;}
     ///@}
   private:
 

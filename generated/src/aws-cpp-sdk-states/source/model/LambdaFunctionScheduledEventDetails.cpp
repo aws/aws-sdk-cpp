@@ -18,18 +18,7 @@ namespace SFN
 namespace Model
 {
 
-LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails() : 
-    m_resourceHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_inputDetailsHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_taskCredentialsHasBeenSet(false)
-{
-}
-
 LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails(JsonView jsonValue)
-  : LambdaFunctionScheduledEventDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ LambdaFunctionScheduledEventDetails& LambdaFunctionScheduledEventDetails::operat
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputDetails"))
   {
     m_inputDetails = jsonValue.GetObject("inputDetails");
-
     m_inputDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutInSeconds"))
   {
     m_timeoutInSeconds = jsonValue.GetInt64("timeoutInSeconds");
-
     m_timeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskCredentials"))
   {
     m_taskCredentials = jsonValue.GetObject("taskCredentials");
-
     m_taskCredentialsHasBeenSet = true;
   }
-
   return *this;
 }
 

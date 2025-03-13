@@ -22,7 +22,7 @@ namespace Model
   class DescribeClientAuthenticationSettingsRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API DescribeClientAuthenticationSettingsRequest();
+    AWS_DIRECTORYSERVICE_API DescribeClientAuthenticationSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The identifier of the directory for which to retrieve information.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline DescribeClientAuthenticationSettingsRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline DescribeClientAuthenticationSettingsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline DescribeClientAuthenticationSettingsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    DescribeClientAuthenticationSettingsRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,10 @@ namespace Model
      * type is specified, a list of all client authentication types that are supported
      * for the specified directory is retrieved.</p>
      */
-    inline const ClientAuthenticationType& GetType() const{ return m_type; }
+    inline ClientAuthenticationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ClientAuthenticationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ClientAuthenticationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DescribeClientAuthenticationSettingsRequest& WithType(const ClientAuthenticationType& value) { SetType(value); return *this;}
-    inline DescribeClientAuthenticationSettingsRequest& WithType(ClientAuthenticationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ClientAuthenticationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DescribeClientAuthenticationSettingsRequest& WithType(ClientAuthenticationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,12 @@ namespace Model
      * previous call to <a>DescribeClientAuthenticationSettings</a>. Pass null if this
      * is the first call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeClientAuthenticationSettingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeClientAuthenticationSettingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeClientAuthenticationSettingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeClientAuthenticationSettingsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +78,7 @@ namespace Model
      * <p>The maximum number of items to return. If this value is zero, the maximum
      * number of items is specified by the limitations of the operation. </p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeClientAuthenticationSettingsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -94,13 +88,13 @@ namespace Model
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet = false;
 
-    ClientAuthenticationType m_type;
+    ClientAuthenticationType m_type{ClientAuthenticationType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

@@ -18,17 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-ComponentSummary::ComponentSummary() : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_componentTypeHasBeenSet(false)
-{
-}
-
 ComponentSummary::ComponentSummary(JsonView jsonValue)
-  : ComponentSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ComponentSummary& ComponentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
     m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentName"))
   {
     m_environmentName = jsonValue.GetString("environmentName");
-
     m_environmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentType"))
   {
     m_componentType = jsonValue.GetString("componentType");
-
     m_componentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

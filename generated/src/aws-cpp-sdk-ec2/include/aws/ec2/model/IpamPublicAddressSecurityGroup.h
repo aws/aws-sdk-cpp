@@ -32,7 +32,7 @@ namespace Model
   class IpamPublicAddressSecurityGroup
   {
   public:
-    AWS_EC2_API IpamPublicAddressSecurityGroup();
+    AWS_EC2_API IpamPublicAddressSecurityGroup() = default;
     AWS_EC2_API IpamPublicAddressSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API IpamPublicAddressSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The security group's name.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline IpamPublicAddressSecurityGroup& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline IpamPublicAddressSecurityGroup& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline IpamPublicAddressSecurityGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    IpamPublicAddressSecurityGroup& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The security group's ID.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline IpamPublicAddressSecurityGroup& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline IpamPublicAddressSecurityGroup& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline IpamPublicAddressSecurityGroup& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    IpamPublicAddressSecurityGroup& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-SnapStart::SnapStart() : 
-    m_applyOn(SnapStartApplyOn::NOT_SET),
-    m_applyOnHasBeenSet(false)
-{
-}
-
 SnapStart::SnapStart(JsonView jsonValue)
-  : SnapStart()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SnapStart& SnapStart::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplyOn"))
   {
     m_applyOn = SnapStartApplyOnMapper::GetSnapStartApplyOnForName(jsonValue.GetString("ApplyOn"));
-
     m_applyOnHasBeenSet = true;
   }
-
   return *this;
 }
 

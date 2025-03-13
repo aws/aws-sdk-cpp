@@ -18,13 +18,7 @@ namespace XRay
 namespace Model
 {
 
-InstanceIdDetail::InstanceIdDetail() : 
-    m_idHasBeenSet(false)
-{
-}
-
 InstanceIdDetail::InstanceIdDetail(JsonView jsonValue)
-  : InstanceIdDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InstanceIdDetail& InstanceIdDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

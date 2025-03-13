@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-InstanceFleetProvisioningSpecifications::InstanceFleetProvisioningSpecifications() : 
-    m_spotSpecificationHasBeenSet(false),
-    m_onDemandSpecificationHasBeenSet(false)
-{
-}
-
 InstanceFleetProvisioningSpecifications::InstanceFleetProvisioningSpecifications(JsonView jsonValue)
-  : InstanceFleetProvisioningSpecifications()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InstanceFleetProvisioningSpecifications& InstanceFleetProvisioningSpecifications
   if(jsonValue.ValueExists("SpotSpecification"))
   {
     m_spotSpecification = jsonValue.GetObject("SpotSpecification");
-
     m_spotSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandSpecification"))
   {
     m_onDemandSpecification = jsonValue.GetObject("OnDemandSpecification");
-
     m_onDemandSpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationSideOfStreetOptions::WaypointOptimizationSideOfStreetOptions() : 
-    m_positionHasBeenSet(false),
-    m_useWith(SideOfStreetMatchingStrategy::NOT_SET),
-    m_useWithHasBeenSet(false)
-{
-}
-
 WaypointOptimizationSideOfStreetOptions::WaypointOptimizationSideOfStreetOptions(JsonView jsonValue)
-  : WaypointOptimizationSideOfStreetOptions()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ WaypointOptimizationSideOfStreetOptions& WaypointOptimizationSideOfStreetOptions
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseWith"))
   {
     m_useWith = SideOfStreetMatchingStrategyMapper::GetSideOfStreetMatchingStrategyForName(jsonValue.GetString("UseWith"));
-
     m_useWithHasBeenSet = true;
   }
-
   return *this;
 }
 

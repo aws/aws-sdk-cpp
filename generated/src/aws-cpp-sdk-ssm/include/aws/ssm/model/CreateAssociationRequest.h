@@ -30,7 +30,7 @@ namespace Model
   class CreateAssociationRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API CreateAssociationRequest();
+    AWS_SSM_API CreateAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -59,14 +59,12 @@ namespace Model
      * your account, you only need to specify the document name. For example,
      * <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateAssociationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAssociationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAssociationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAssociationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +79,12 @@ namespace Model
      * another account, you must set the document version to <code>default</code>.</p>
      * 
      */
-    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+    inline const Aws::String& GetDocumentVersion() const { return m_documentVersion; }
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
-    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
-    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
-    inline CreateAssociationRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
-    inline CreateAssociationRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
-    inline CreateAssociationRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+    template<typename DocumentVersionT = Aws::String>
+    void SetDocumentVersion(DocumentVersionT&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::forward<DocumentVersionT>(value); }
+    template<typename DocumentVersionT = Aws::String>
+    CreateAssociationRequest& WithDocumentVersion(DocumentVersionT&& value) { SetDocumentVersion(std::forward<DocumentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,32 +100,28 @@ namespace Model
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
      * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline CreateAssociationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline CreateAssociationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline CreateAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    CreateAssociationRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for the runtime configuration of the document.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline CreateAssociationRequest& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
-    inline CreateAssociationRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
-    inline CreateAssociationRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline CreateAssociationRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline CreateAssociationRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline CreateAssociationRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateAssociationRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline CreateAssociationRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    CreateAssociationRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::Vector<Aws::String>>
+    CreateAssociationRequest& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -144,28 +136,26 @@ namespace Model
      * targets and rate controls in State Manager associations</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
      */
-    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+    inline const Aws::Vector<Target>& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
-    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-    inline CreateAssociationRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
-    inline CreateAssociationRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
-    inline CreateAssociationRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
-    inline CreateAssociationRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+    template<typename TargetsT = Aws::Vector<Target>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Vector<Target>>
+    CreateAssociationRequest& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    template<typename TargetsT = Target>
+    CreateAssociationRequest& AddTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets.emplace_back(std::forward<TargetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A cron expression when the association will be applied to the targets.</p>
      */
-    inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+    inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-    inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-    inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-    inline CreateAssociationRequest& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-    inline CreateAssociationRequest& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-    inline CreateAssociationRequest& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    template<typename ScheduleExpressionT = Aws::String>
+    void SetScheduleExpression(ScheduleExpressionT&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::forward<ScheduleExpressionT>(value); }
+    template<typename ScheduleExpressionT = Aws::String>
+    CreateAssociationRequest& WithScheduleExpression(ScheduleExpressionT&& value) { SetScheduleExpression(std::forward<ScheduleExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,26 +163,24 @@ namespace Model
      * <p>An Amazon Simple Storage Service (Amazon S3) bucket where you want to store
      * the output details of the request.</p>
      */
-    inline const InstanceAssociationOutputLocation& GetOutputLocation() const{ return m_outputLocation; }
+    inline const InstanceAssociationOutputLocation& GetOutputLocation() const { return m_outputLocation; }
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
-    inline void SetOutputLocation(const InstanceAssociationOutputLocation& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
-    inline void SetOutputLocation(InstanceAssociationOutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
-    inline CreateAssociationRequest& WithOutputLocation(const InstanceAssociationOutputLocation& value) { SetOutputLocation(value); return *this;}
-    inline CreateAssociationRequest& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
+    template<typename OutputLocationT = InstanceAssociationOutputLocation>
+    void SetOutputLocation(OutputLocationT&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::forward<OutputLocationT>(value); }
+    template<typename OutputLocationT = InstanceAssociationOutputLocation>
+    CreateAssociationRequest& WithOutputLocation(OutputLocationT&& value) { SetOutputLocation(std::forward<OutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specify a descriptive name for the association.</p>
      */
-    inline const Aws::String& GetAssociationName() const{ return m_associationName; }
+    inline const Aws::String& GetAssociationName() const { return m_associationName; }
     inline bool AssociationNameHasBeenSet() const { return m_associationNameHasBeenSet; }
-    inline void SetAssociationName(const Aws::String& value) { m_associationNameHasBeenSet = true; m_associationName = value; }
-    inline void SetAssociationName(Aws::String&& value) { m_associationNameHasBeenSet = true; m_associationName = std::move(value); }
-    inline void SetAssociationName(const char* value) { m_associationNameHasBeenSet = true; m_associationName.assign(value); }
-    inline CreateAssociationRequest& WithAssociationName(const Aws::String& value) { SetAssociationName(value); return *this;}
-    inline CreateAssociationRequest& WithAssociationName(Aws::String&& value) { SetAssociationName(std::move(value)); return *this;}
-    inline CreateAssociationRequest& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
+    template<typename AssociationNameT = Aws::String>
+    void SetAssociationName(AssociationNameT&& value) { m_associationNameHasBeenSet = true; m_associationName = std::forward<AssociationNameT>(value); }
+    template<typename AssociationNameT = Aws::String>
+    CreateAssociationRequest& WithAssociationName(AssociationNameT&& value) { SetAssociationName(std::forward<AssociationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,14 +190,12 @@ namespace Model
      * target resources by using rate controls. Automation is a tool in Amazon Web
      * Services Systems Manager.</p>
      */
-    inline const Aws::String& GetAutomationTargetParameterName() const{ return m_automationTargetParameterName; }
+    inline const Aws::String& GetAutomationTargetParameterName() const { return m_automationTargetParameterName; }
     inline bool AutomationTargetParameterNameHasBeenSet() const { return m_automationTargetParameterNameHasBeenSet; }
-    inline void SetAutomationTargetParameterName(const Aws::String& value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName = value; }
-    inline void SetAutomationTargetParameterName(Aws::String&& value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName = std::move(value); }
-    inline void SetAutomationTargetParameterName(const char* value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName.assign(value); }
-    inline CreateAssociationRequest& WithAutomationTargetParameterName(const Aws::String& value) { SetAutomationTargetParameterName(value); return *this;}
-    inline CreateAssociationRequest& WithAutomationTargetParameterName(Aws::String&& value) { SetAutomationTargetParameterName(std::move(value)); return *this;}
-    inline CreateAssociationRequest& WithAutomationTargetParameterName(const char* value) { SetAutomationTargetParameterName(value); return *this;}
+    template<typename AutomationTargetParameterNameT = Aws::String>
+    void SetAutomationTargetParameterName(AutomationTargetParameterNameT&& value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName = std::forward<AutomationTargetParameterNameT>(value); }
+    template<typename AutomationTargetParameterNameT = Aws::String>
+    CreateAssociationRequest& WithAutomationTargetParameterName(AutomationTargetParameterNameT&& value) { SetAutomationTargetParameterName(std::forward<AutomationTargetParameterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,14 +214,12 @@ namespace Model
      * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that
      * executions proceed one at a time.</p>
      */
-    inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
+    inline const Aws::String& GetMaxErrors() const { return m_maxErrors; }
     inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
-    inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
-    inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
-    inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
-    inline CreateAssociationRequest& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
-    inline CreateAssociationRequest& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
-    inline CreateAssociationRequest& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
+    template<typename MaxErrorsT = Aws::String>
+    void SetMaxErrors(MaxErrorsT&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::forward<MaxErrorsT>(value); }
+    template<typename MaxErrorsT = Aws::String>
+    CreateAssociationRequest& WithMaxErrors(MaxErrorsT&& value) { SetMaxErrors(std::forward<MaxErrorsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -249,26 +233,22 @@ namespace Model
      * During the next association interval, the new managed node will process its
      * association within the limit specified for <code>MaxConcurrency</code>.</p>
      */
-    inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
+    inline const Aws::String& GetMaxConcurrency() const { return m_maxConcurrency; }
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
-    inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
-    inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
-    inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
-    inline CreateAssociationRequest& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
-    inline CreateAssociationRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
-    inline CreateAssociationRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
+    template<typename MaxConcurrencyT = Aws::String>
+    void SetMaxConcurrency(MaxConcurrencyT&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::forward<MaxConcurrencyT>(value); }
+    template<typename MaxConcurrencyT = Aws::String>
+    CreateAssociationRequest& WithMaxConcurrency(MaxConcurrencyT&& value) { SetMaxConcurrency(std::forward<MaxConcurrencyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The severity level to assign to the association.</p>
      */
-    inline const AssociationComplianceSeverity& GetComplianceSeverity() const{ return m_complianceSeverity; }
+    inline AssociationComplianceSeverity GetComplianceSeverity() const { return m_complianceSeverity; }
     inline bool ComplianceSeverityHasBeenSet() const { return m_complianceSeverityHasBeenSet; }
-    inline void SetComplianceSeverity(const AssociationComplianceSeverity& value) { m_complianceSeverityHasBeenSet = true; m_complianceSeverity = value; }
-    inline void SetComplianceSeverity(AssociationComplianceSeverity&& value) { m_complianceSeverityHasBeenSet = true; m_complianceSeverity = std::move(value); }
-    inline CreateAssociationRequest& WithComplianceSeverity(const AssociationComplianceSeverity& value) { SetComplianceSeverity(value); return *this;}
-    inline CreateAssociationRequest& WithComplianceSeverity(AssociationComplianceSeverity&& value) { SetComplianceSeverity(std::move(value)); return *this;}
+    inline void SetComplianceSeverity(AssociationComplianceSeverity value) { m_complianceSeverityHasBeenSet = true; m_complianceSeverity = value; }
+    inline CreateAssociationRequest& WithComplianceSeverity(AssociationComplianceSeverity value) { SetComplianceSeverity(value); return *this;}
     ///@}
 
     ///@{
@@ -285,12 +265,10 @@ namespace Model
      * <a>PutComplianceItems</a> API operation.</p> <p>By default, all associations use
      * <code>AUTO</code> mode.</p>
      */
-    inline const AssociationSyncCompliance& GetSyncCompliance() const{ return m_syncCompliance; }
+    inline AssociationSyncCompliance GetSyncCompliance() const { return m_syncCompliance; }
     inline bool SyncComplianceHasBeenSet() const { return m_syncComplianceHasBeenSet; }
-    inline void SetSyncCompliance(const AssociationSyncCompliance& value) { m_syncComplianceHasBeenSet = true; m_syncCompliance = value; }
-    inline void SetSyncCompliance(AssociationSyncCompliance&& value) { m_syncComplianceHasBeenSet = true; m_syncCompliance = std::move(value); }
-    inline CreateAssociationRequest& WithSyncCompliance(const AssociationSyncCompliance& value) { SetSyncCompliance(value); return *this;}
-    inline CreateAssociationRequest& WithSyncCompliance(AssociationSyncCompliance&& value) { SetSyncCompliance(std::move(value)); return *this;}
+    inline void SetSyncCompliance(AssociationSyncCompliance value) { m_syncComplianceHasBeenSet = true; m_syncCompliance = value; }
+    inline CreateAssociationRequest& WithSyncCompliance(AssociationSyncCompliance value) { SetSyncCompliance(value); return *this;}
     ///@}
 
     ///@{
@@ -307,7 +285,7 @@ namespace Model
      * Systems Manager User Guide</i>.</p> <p>This parameter isn't supported for rate
      * expressions.</p>
      */
-    inline bool GetApplyOnlyAtCronInterval() const{ return m_applyOnlyAtCronInterval; }
+    inline bool GetApplyOnlyAtCronInterval() const { return m_applyOnlyAtCronInterval; }
     inline bool ApplyOnlyAtCronIntervalHasBeenSet() const { return m_applyOnlyAtCronIntervalHasBeenSet; }
     inline void SetApplyOnlyAtCronInterval(bool value) { m_applyOnlyAtCronIntervalHasBeenSet = true; m_applyOnlyAtCronInterval = value; }
     inline CreateAssociationRequest& WithApplyOnlyAtCronInterval(bool value) { SetApplyOnlyAtCronInterval(value); return *this;}
@@ -322,15 +300,14 @@ namespace Model
      * Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCalendarNames() const{ return m_calendarNames; }
+    inline const Aws::Vector<Aws::String>& GetCalendarNames() const { return m_calendarNames; }
     inline bool CalendarNamesHasBeenSet() const { return m_calendarNamesHasBeenSet; }
-    inline void SetCalendarNames(const Aws::Vector<Aws::String>& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = value; }
-    inline void SetCalendarNames(Aws::Vector<Aws::String>&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = std::move(value); }
-    inline CreateAssociationRequest& WithCalendarNames(const Aws::Vector<Aws::String>& value) { SetCalendarNames(value); return *this;}
-    inline CreateAssociationRequest& WithCalendarNames(Aws::Vector<Aws::String>&& value) { SetCalendarNames(std::move(value)); return *this;}
-    inline CreateAssociationRequest& AddCalendarNames(const Aws::String& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(value); return *this; }
-    inline CreateAssociationRequest& AddCalendarNames(Aws::String&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(std::move(value)); return *this; }
-    inline CreateAssociationRequest& AddCalendarNames(const char* value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(value); return *this; }
+    template<typename CalendarNamesT = Aws::Vector<Aws::String>>
+    void SetCalendarNames(CalendarNamesT&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = std::forward<CalendarNamesT>(value); }
+    template<typename CalendarNamesT = Aws::Vector<Aws::String>>
+    CreateAssociationRequest& WithCalendarNames(CalendarNamesT&& value) { SetCalendarNames(std::forward<CalendarNamesT>(value)); return *this;}
+    template<typename CalendarNamesT = Aws::String>
+    CreateAssociationRequest& AddCalendarNames(CalendarNamesT&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.emplace_back(std::forward<CalendarNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -339,14 +316,14 @@ namespace Model
      * Services accounts where you want to run the association. Use this action to
      * create an association in multiple Regions and multiple accounts.</p>
      */
-    inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
+    inline const Aws::Vector<TargetLocation>& GetTargetLocations() const { return m_targetLocations; }
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
-    inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
-    inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
-    inline CreateAssociationRequest& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
-    inline CreateAssociationRequest& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
-    inline CreateAssociationRequest& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
-    inline CreateAssociationRequest& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
+    template<typename TargetLocationsT = Aws::Vector<TargetLocation>>
+    void SetTargetLocations(TargetLocationsT&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::forward<TargetLocationsT>(value); }
+    template<typename TargetLocationsT = Aws::Vector<TargetLocation>>
+    CreateAssociationRequest& WithTargetLocations(TargetLocationsT&& value) { SetTargetLocations(std::forward<TargetLocationsT>(value)); return *this;}
+    template<typename TargetLocationsT = TargetLocation>
+    CreateAssociationRequest& AddTargetLocations(TargetLocationsT&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.emplace_back(std::forward<TargetLocationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -362,7 +339,7 @@ namespace Model
      * the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system
      * not to run an association immediately after you create it. </p> 
      */
-    inline int GetScheduleOffset() const{ return m_scheduleOffset; }
+    inline int GetScheduleOffset() const { return m_scheduleOffset; }
     inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
     inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
     inline CreateAssociationRequest& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
@@ -384,7 +361,7 @@ namespace Model
      * after it is created, but only according to the specified schedule.</p> </li>
      * </ul>
      */
-    inline int GetDuration() const{ return m_duration; }
+    inline int GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
     inline CreateAssociationRequest& WithDuration(int value) { SetDuration(value); return *this;}
@@ -395,14 +372,14 @@ namespace Model
      * <p>A key-value mapping of document parameters to target resources. Both Targets
      * and TargetMaps can't be specified together.</p>
      */
-    inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const{ return m_targetMaps; }
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const { return m_targetMaps; }
     inline bool TargetMapsHasBeenSet() const { return m_targetMapsHasBeenSet; }
-    inline void SetTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps = value; }
-    inline void SetTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps = std::move(value); }
-    inline CreateAssociationRequest& WithTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetTargetMaps(value); return *this;}
-    inline CreateAssociationRequest& WithTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetTargetMaps(std::move(value)); return *this;}
-    inline CreateAssociationRequest& AddTargetMaps(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(value); return *this; }
-    inline CreateAssociationRequest& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
+    template<typename TargetMapsT = Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>>
+    void SetTargetMaps(TargetMapsT&& value) { m_targetMapsHasBeenSet = true; m_targetMaps = std::forward<TargetMapsT>(value); }
+    template<typename TargetMapsT = Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>>
+    CreateAssociationRequest& WithTargetMaps(TargetMapsT&& value) { SetTargetMaps(std::forward<TargetMapsT>(value)); return *this;}
+    template<typename TargetMapsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    CreateAssociationRequest& AddTargetMaps(TargetMapsT&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.emplace_back(std::forward<TargetMapsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -413,24 +390,24 @@ namespace Model
      * example, by purpose, owner, or environment. Each tag consists of a key and an
      * optional value, both of which you define. </p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAssociationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateAssociationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAssociationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateAssociationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateAssociationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateAssociationRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+    inline const AlarmConfiguration& GetAlarmConfiguration() const { return m_alarmConfiguration; }
     inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
-    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
-    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
-    inline CreateAssociationRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
-    inline CreateAssociationRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+    template<typename AlarmConfigurationT = AlarmConfiguration>
+    void SetAlarmConfiguration(AlarmConfigurationT&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::forward<AlarmConfigurationT>(value); }
+    template<typename AlarmConfigurationT = AlarmConfiguration>
+    CreateAssociationRequest& WithAlarmConfiguration(AlarmConfigurationT&& value) { SetAlarmConfiguration(std::forward<AlarmConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -467,13 +444,13 @@ namespace Model
     Aws::String m_maxConcurrency;
     bool m_maxConcurrencyHasBeenSet = false;
 
-    AssociationComplianceSeverity m_complianceSeverity;
+    AssociationComplianceSeverity m_complianceSeverity{AssociationComplianceSeverity::NOT_SET};
     bool m_complianceSeverityHasBeenSet = false;
 
-    AssociationSyncCompliance m_syncCompliance;
+    AssociationSyncCompliance m_syncCompliance{AssociationSyncCompliance::NOT_SET};
     bool m_syncComplianceHasBeenSet = false;
 
-    bool m_applyOnlyAtCronInterval;
+    bool m_applyOnlyAtCronInterval{false};
     bool m_applyOnlyAtCronIntervalHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_calendarNames;
@@ -482,10 +459,10 @@ namespace Model
     Aws::Vector<TargetLocation> m_targetLocations;
     bool m_targetLocationsHasBeenSet = false;
 
-    int m_scheduleOffset;
+    int m_scheduleOffset{0};
     bool m_scheduleOffsetHasBeenSet = false;
 
-    int m_duration;
+    int m_duration{0};
     bool m_durationHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;

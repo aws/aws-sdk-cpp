@@ -18,32 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAmazonMqBrokerDetails::AwsAmazonMqBrokerDetails() : 
-    m_authenticationStrategyHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_brokerArnHasBeenSet(false),
-    m_brokerNameHasBeenSet(false),
-    m_deploymentModeHasBeenSet(false),
-    m_encryptionOptionsHasBeenSet(false),
-    m_engineTypeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_hostInstanceTypeHasBeenSet(false),
-    m_brokerIdHasBeenSet(false),
-    m_ldapServerMetadataHasBeenSet(false),
-    m_logsHasBeenSet(false),
-    m_maintenanceWindowStartTimeHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_usersHasBeenSet(false)
-{
-}
-
 AwsAmazonMqBrokerDetails::AwsAmazonMqBrokerDetails(JsonView jsonValue)
-  : AwsAmazonMqBrokerDetails()
 {
   *this = jsonValue;
 }
@@ -53,101 +28,73 @@ AwsAmazonMqBrokerDetails& AwsAmazonMqBrokerDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AuthenticationStrategy"))
   {
     m_authenticationStrategy = jsonValue.GetString("AuthenticationStrategy");
-
     m_authenticationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoMinorVersionUpgrade"))
   {
     m_autoMinorVersionUpgrade = jsonValue.GetBool("AutoMinorVersionUpgrade");
-
     m_autoMinorVersionUpgradeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BrokerArn"))
   {
     m_brokerArn = jsonValue.GetString("BrokerArn");
-
     m_brokerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BrokerName"))
   {
     m_brokerName = jsonValue.GetString("BrokerName");
-
     m_brokerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentMode"))
   {
     m_deploymentMode = jsonValue.GetString("DeploymentMode");
-
     m_deploymentModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionOptions"))
   {
     m_encryptionOptions = jsonValue.GetObject("EncryptionOptions");
-
     m_encryptionOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineType"))
   {
     m_engineType = jsonValue.GetString("EngineType");
-
     m_engineTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostInstanceType"))
   {
     m_hostInstanceType = jsonValue.GetString("HostInstanceType");
-
     m_hostInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BrokerId"))
   {
     m_brokerId = jsonValue.GetString("BrokerId");
-
     m_brokerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LdapServerMetadata"))
   {
     m_ldapServerMetadata = jsonValue.GetObject("LdapServerMetadata");
-
     m_ldapServerMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Logs"))
   {
     m_logs = jsonValue.GetObject("Logs");
-
     m_logsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaintenanceWindowStartTime"))
   {
     m_maintenanceWindowStartTime = jsonValue.GetObject("MaintenanceWindowStartTime");
-
     m_maintenanceWindowStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PubliclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("PubliclyAccessible");
-
     m_publiclyAccessibleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
@@ -157,14 +104,11 @@ AwsAmazonMqBrokerDetails& AwsAmazonMqBrokerDetails::operator =(JsonView jsonValu
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageType"))
   {
     m_storageType = jsonValue.GetString("StorageType");
-
     m_storageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -174,7 +118,6 @@ AwsAmazonMqBrokerDetails& AwsAmazonMqBrokerDetails::operator =(JsonView jsonValu
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Users"))
   {
     Aws::Utils::Array<JsonView> usersJsonList = jsonValue.GetArray("Users");
@@ -184,7 +127,6 @@ AwsAmazonMqBrokerDetails& AwsAmazonMqBrokerDetails::operator =(JsonView jsonValu
     }
     m_usersHasBeenSet = true;
   }
-
   return *this;
 }
 

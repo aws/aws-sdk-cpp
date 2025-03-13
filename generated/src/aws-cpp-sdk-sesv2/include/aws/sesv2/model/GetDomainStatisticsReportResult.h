@@ -36,7 +36,7 @@ namespace Model
   class GetDomainStatisticsReportResult
   {
   public:
-    AWS_SESV2_API GetDomainStatisticsReportResult();
+    AWS_SESV2_API GetDomainStatisticsReportResult() = default;
     AWS_SESV2_API GetDomainStatisticsReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API GetDomainStatisticsReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,11 +47,11 @@ namespace Model
      * specified. The data in this object is a summary of all of the data that was
      * collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
      */
-    inline const OverallVolume& GetOverallVolume() const{ return m_overallVolume; }
-    inline void SetOverallVolume(const OverallVolume& value) { m_overallVolume = value; }
-    inline void SetOverallVolume(OverallVolume&& value) { m_overallVolume = std::move(value); }
-    inline GetDomainStatisticsReportResult& WithOverallVolume(const OverallVolume& value) { SetOverallVolume(value); return *this;}
-    inline GetDomainStatisticsReportResult& WithOverallVolume(OverallVolume&& value) { SetOverallVolume(std::move(value)); return *this;}
+    inline const OverallVolume& GetOverallVolume() const { return m_overallVolume; }
+    template<typename OverallVolumeT = OverallVolume>
+    void SetOverallVolume(OverallVolumeT&& value) { m_overallVolumeHasBeenSet = true; m_overallVolume = std::forward<OverallVolumeT>(value); }
+    template<typename OverallVolumeT = OverallVolume>
+    GetDomainStatisticsReportResult& WithOverallVolume(OverallVolumeT&& value) { SetOverallVolume(std::forward<OverallVolumeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,32 +60,33 @@ namespace Model
      * specified. This object contains data for each day, starting on the
      * <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
      */
-    inline const Aws::Vector<DailyVolume>& GetDailyVolumes() const{ return m_dailyVolumes; }
-    inline void SetDailyVolumes(const Aws::Vector<DailyVolume>& value) { m_dailyVolumes = value; }
-    inline void SetDailyVolumes(Aws::Vector<DailyVolume>&& value) { m_dailyVolumes = std::move(value); }
-    inline GetDomainStatisticsReportResult& WithDailyVolumes(const Aws::Vector<DailyVolume>& value) { SetDailyVolumes(value); return *this;}
-    inline GetDomainStatisticsReportResult& WithDailyVolumes(Aws::Vector<DailyVolume>&& value) { SetDailyVolumes(std::move(value)); return *this;}
-    inline GetDomainStatisticsReportResult& AddDailyVolumes(const DailyVolume& value) { m_dailyVolumes.push_back(value); return *this; }
-    inline GetDomainStatisticsReportResult& AddDailyVolumes(DailyVolume&& value) { m_dailyVolumes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DailyVolume>& GetDailyVolumes() const { return m_dailyVolumes; }
+    template<typename DailyVolumesT = Aws::Vector<DailyVolume>>
+    void SetDailyVolumes(DailyVolumesT&& value) { m_dailyVolumesHasBeenSet = true; m_dailyVolumes = std::forward<DailyVolumesT>(value); }
+    template<typename DailyVolumesT = Aws::Vector<DailyVolume>>
+    GetDomainStatisticsReportResult& WithDailyVolumes(DailyVolumesT&& value) { SetDailyVolumes(std::forward<DailyVolumesT>(value)); return *this;}
+    template<typename DailyVolumesT = DailyVolume>
+    GetDomainStatisticsReportResult& AddDailyVolumes(DailyVolumesT&& value) { m_dailyVolumesHasBeenSet = true; m_dailyVolumes.emplace_back(std::forward<DailyVolumesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDomainStatisticsReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDomainStatisticsReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDomainStatisticsReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDomainStatisticsReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     OverallVolume m_overallVolume;
+    bool m_overallVolumeHasBeenSet = false;
 
     Aws::Vector<DailyVolume> m_dailyVolumes;
+    bool m_dailyVolumesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

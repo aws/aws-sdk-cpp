@@ -36,7 +36,7 @@ namespace Model
   class FieldConfig
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API FieldConfig();
+    AWS_AMPLIFYUIBUILDER_API FieldConfig() = default;
     AWS_AMPLIFYUIBUILDER_API FieldConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API FieldConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,33 +46,31 @@ namespace Model
     /**
      * <p>The label for the field.</p>
      */
-    inline const Aws::String& GetLabel() const{ return m_label; }
+    inline const Aws::String& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-    inline FieldConfig& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline FieldConfig& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline FieldConfig& WithLabel(const char* value) { SetLabel(value); return *this;}
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    FieldConfig& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the field position.</p>
      */
-    inline const FieldPosition& GetPosition() const{ return m_position; }
+    inline const FieldPosition& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const FieldPosition& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(FieldPosition&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline FieldConfig& WithPosition(const FieldPosition& value) { SetPosition(value); return *this;}
-    inline FieldConfig& WithPosition(FieldPosition&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = FieldPosition>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = FieldPosition>
+    FieldConfig& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether to hide a field.</p>
      */
-    inline bool GetExcluded() const{ return m_excluded; }
+    inline bool GetExcluded() const { return m_excluded; }
     inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
     inline void SetExcluded(bool value) { m_excludedHasBeenSet = true; m_excluded = value; }
     inline FieldConfig& WithExcluded(bool value) { SetExcluded(value); return *this;}
@@ -83,26 +81,26 @@ namespace Model
      * <p>Describes the configuration for the default input value to display for a
      * field.</p>
      */
-    inline const FieldInputConfig& GetInputType() const{ return m_inputType; }
+    inline const FieldInputConfig& GetInputType() const { return m_inputType; }
     inline bool InputTypeHasBeenSet() const { return m_inputTypeHasBeenSet; }
-    inline void SetInputType(const FieldInputConfig& value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
-    inline void SetInputType(FieldInputConfig&& value) { m_inputTypeHasBeenSet = true; m_inputType = std::move(value); }
-    inline FieldConfig& WithInputType(const FieldInputConfig& value) { SetInputType(value); return *this;}
-    inline FieldConfig& WithInputType(FieldInputConfig&& value) { SetInputType(std::move(value)); return *this;}
+    template<typename InputTypeT = FieldInputConfig>
+    void SetInputType(InputTypeT&& value) { m_inputTypeHasBeenSet = true; m_inputType = std::forward<InputTypeT>(value); }
+    template<typename InputTypeT = FieldInputConfig>
+    FieldConfig& WithInputType(InputTypeT&& value) { SetInputType(std::forward<InputTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The validations to perform on the value in the field.</p>
      */
-    inline const Aws::Vector<FieldValidationConfiguration>& GetValidations() const{ return m_validations; }
+    inline const Aws::Vector<FieldValidationConfiguration>& GetValidations() const { return m_validations; }
     inline bool ValidationsHasBeenSet() const { return m_validationsHasBeenSet; }
-    inline void SetValidations(const Aws::Vector<FieldValidationConfiguration>& value) { m_validationsHasBeenSet = true; m_validations = value; }
-    inline void SetValidations(Aws::Vector<FieldValidationConfiguration>&& value) { m_validationsHasBeenSet = true; m_validations = std::move(value); }
-    inline FieldConfig& WithValidations(const Aws::Vector<FieldValidationConfiguration>& value) { SetValidations(value); return *this;}
-    inline FieldConfig& WithValidations(Aws::Vector<FieldValidationConfiguration>&& value) { SetValidations(std::move(value)); return *this;}
-    inline FieldConfig& AddValidations(const FieldValidationConfiguration& value) { m_validationsHasBeenSet = true; m_validations.push_back(value); return *this; }
-    inline FieldConfig& AddValidations(FieldValidationConfiguration&& value) { m_validationsHasBeenSet = true; m_validations.push_back(std::move(value)); return *this; }
+    template<typename ValidationsT = Aws::Vector<FieldValidationConfiguration>>
+    void SetValidations(ValidationsT&& value) { m_validationsHasBeenSet = true; m_validations = std::forward<ValidationsT>(value); }
+    template<typename ValidationsT = Aws::Vector<FieldValidationConfiguration>>
+    FieldConfig& WithValidations(ValidationsT&& value) { SetValidations(std::forward<ValidationsT>(value)); return *this;}
+    template<typename ValidationsT = FieldValidationConfiguration>
+    FieldConfig& AddValidations(ValidationsT&& value) { m_validationsHasBeenSet = true; m_validations.emplace_back(std::forward<ValidationsT>(value)); return *this; }
     ///@}
   private:
 
@@ -112,7 +110,7 @@ namespace Model
     FieldPosition m_position;
     bool m_positionHasBeenSet = false;
 
-    bool m_excluded;
+    bool m_excluded{false};
     bool m_excludedHasBeenSet = false;
 
     FieldInputConfig m_inputType;

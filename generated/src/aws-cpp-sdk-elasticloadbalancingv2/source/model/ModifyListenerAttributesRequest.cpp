@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-ModifyListenerAttributesRequest::ModifyListenerAttributesRequest() : 
-    m_listenerArnHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String ModifyListenerAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

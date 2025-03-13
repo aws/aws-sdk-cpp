@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-ListenerTlsAcmCertificate::ListenerTlsAcmCertificate() : 
-    m_certificateArnHasBeenSet(false)
-{
-}
-
 ListenerTlsAcmCertificate::ListenerTlsAcmCertificate(JsonView jsonValue)
-  : ListenerTlsAcmCertificate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ListenerTlsAcmCertificate& ListenerTlsAcmCertificate::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   return *this;
 }
 

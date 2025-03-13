@@ -29,7 +29,7 @@ namespace Model
   class CreateGlossaryPolicyGrantDetail
   {
   public:
-    AWS_DATAZONE_API CreateGlossaryPolicyGrantDetail();
+    AWS_DATAZONE_API CreateGlossaryPolicyGrantDetail() = default;
     AWS_DATAZONE_API CreateGlossaryPolicyGrantDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API CreateGlossaryPolicyGrantDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>Specifies whether the policy grant is applied to child domain units.</p>
      */
-    inline bool GetIncludeChildDomainUnits() const{ return m_includeChildDomainUnits; }
+    inline bool GetIncludeChildDomainUnits() const { return m_includeChildDomainUnits; }
     inline bool IncludeChildDomainUnitsHasBeenSet() const { return m_includeChildDomainUnitsHasBeenSet; }
     inline void SetIncludeChildDomainUnits(bool value) { m_includeChildDomainUnitsHasBeenSet = true; m_includeChildDomainUnits = value; }
     inline CreateGlossaryPolicyGrantDetail& WithIncludeChildDomainUnits(bool value) { SetIncludeChildDomainUnits(value); return *this;}
     ///@}
   private:
 
-    bool m_includeChildDomainUnits;
+    bool m_includeChildDomainUnits{false};
     bool m_includeChildDomainUnitsHasBeenSet = false;
   };
 

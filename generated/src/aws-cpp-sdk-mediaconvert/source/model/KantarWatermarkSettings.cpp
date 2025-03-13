@@ -18,27 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-KantarWatermarkSettings::KantarWatermarkSettings() : 
-    m_channelNameHasBeenSet(false),
-    m_contentReferenceHasBeenSet(false),
-    m_credentialsSecretNameHasBeenSet(false),
-    m_fileOffset(0.0),
-    m_fileOffsetHasBeenSet(false),
-    m_kantarLicenseId(0),
-    m_kantarLicenseIdHasBeenSet(false),
-    m_kantarServerUrlHasBeenSet(false),
-    m_logDestinationHasBeenSet(false),
-    m_metadata3HasBeenSet(false),
-    m_metadata4HasBeenSet(false),
-    m_metadata5HasBeenSet(false),
-    m_metadata6HasBeenSet(false),
-    m_metadata7HasBeenSet(false),
-    m_metadata8HasBeenSet(false)
-{
-}
-
 KantarWatermarkSettings::KantarWatermarkSettings(JsonView jsonValue)
-  : KantarWatermarkSettings()
 {
   *this = jsonValue;
 }
@@ -48,94 +28,68 @@ KantarWatermarkSettings& KantarWatermarkSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channelName"))
   {
     m_channelName = jsonValue.GetString("channelName");
-
     m_channelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentReference"))
   {
     m_contentReference = jsonValue.GetString("contentReference");
-
     m_contentReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("credentialsSecretName"))
   {
     m_credentialsSecretName = jsonValue.GetString("credentialsSecretName");
-
     m_credentialsSecretNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileOffset"))
   {
     m_fileOffset = jsonValue.GetDouble("fileOffset");
-
     m_fileOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kantarLicenseId"))
   {
     m_kantarLicenseId = jsonValue.GetInteger("kantarLicenseId");
-
     m_kantarLicenseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kantarServerUrl"))
   {
     m_kantarServerUrl = jsonValue.GetString("kantarServerUrl");
-
     m_kantarServerUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logDestination"))
   {
     m_logDestination = jsonValue.GetString("logDestination");
-
     m_logDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata3"))
   {
     m_metadata3 = jsonValue.GetString("metadata3");
-
     m_metadata3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata4"))
   {
     m_metadata4 = jsonValue.GetString("metadata4");
-
     m_metadata4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata5"))
   {
     m_metadata5 = jsonValue.GetString("metadata5");
-
     m_metadata5HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata6"))
   {
     m_metadata6 = jsonValue.GetString("metadata6");
-
     m_metadata6HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata7"))
   {
     m_metadata7 = jsonValue.GetString("metadata7");
-
     m_metadata7HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata8"))
   {
     m_metadata8 = jsonValue.GetString("metadata8");
-
     m_metadata8HasBeenSet = true;
   }
-
   return *this;
 }
 

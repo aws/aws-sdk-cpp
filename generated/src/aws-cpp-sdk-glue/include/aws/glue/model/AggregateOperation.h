@@ -34,7 +34,7 @@ namespace Model
   class AggregateOperation
   {
   public:
-    AWS_GLUE_API AggregateOperation();
+    AWS_GLUE_API AggregateOperation() = default;
     AWS_GLUE_API AggregateOperation(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API AggregateOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * <p>Specifies the column on the data set on which the aggregation function will
      * be applied.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetColumn() const{ return m_column; }
+    inline const Aws::Vector<Aws::String>& GetColumn() const { return m_column; }
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-    inline void SetColumn(const Aws::Vector<Aws::String>& value) { m_columnHasBeenSet = true; m_column = value; }
-    inline void SetColumn(Aws::Vector<Aws::String>&& value) { m_columnHasBeenSet = true; m_column = std::move(value); }
-    inline AggregateOperation& WithColumn(const Aws::Vector<Aws::String>& value) { SetColumn(value); return *this;}
-    inline AggregateOperation& WithColumn(Aws::Vector<Aws::String>&& value) { SetColumn(std::move(value)); return *this;}
-    inline AggregateOperation& AddColumn(const Aws::String& value) { m_columnHasBeenSet = true; m_column.push_back(value); return *this; }
-    inline AggregateOperation& AddColumn(Aws::String&& value) { m_columnHasBeenSet = true; m_column.push_back(std::move(value)); return *this; }
-    inline AggregateOperation& AddColumn(const char* value) { m_columnHasBeenSet = true; m_column.push_back(value); return *this; }
+    template<typename ColumnT = Aws::Vector<Aws::String>>
+    void SetColumn(ColumnT&& value) { m_columnHasBeenSet = true; m_column = std::forward<ColumnT>(value); }
+    template<typename ColumnT = Aws::Vector<Aws::String>>
+    AggregateOperation& WithColumn(ColumnT&& value) { SetColumn(std::forward<ColumnT>(value)); return *this;}
+    template<typename ColumnT = Aws::String>
+    AggregateOperation& AddColumn(ColumnT&& value) { m_columnHasBeenSet = true; m_column.emplace_back(std::forward<ColumnT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,19 +61,17 @@ namespace Model
      * functions include: avg countDistinct, count, first, last, kurtosis, max, min,
      * skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
      */
-    inline const AggFunction& GetAggFunc() const{ return m_aggFunc; }
+    inline AggFunction GetAggFunc() const { return m_aggFunc; }
     inline bool AggFuncHasBeenSet() const { return m_aggFuncHasBeenSet; }
-    inline void SetAggFunc(const AggFunction& value) { m_aggFuncHasBeenSet = true; m_aggFunc = value; }
-    inline void SetAggFunc(AggFunction&& value) { m_aggFuncHasBeenSet = true; m_aggFunc = std::move(value); }
-    inline AggregateOperation& WithAggFunc(const AggFunction& value) { SetAggFunc(value); return *this;}
-    inline AggregateOperation& WithAggFunc(AggFunction&& value) { SetAggFunc(std::move(value)); return *this;}
+    inline void SetAggFunc(AggFunction value) { m_aggFuncHasBeenSet = true; m_aggFunc = value; }
+    inline AggregateOperation& WithAggFunc(AggFunction value) { SetAggFunc(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_column;
     bool m_columnHasBeenSet = false;
 
-    AggFunction m_aggFunc;
+    AggFunction m_aggFunc{AggFunction::NOT_SET};
     bool m_aggFuncHasBeenSet = false;
   };
 

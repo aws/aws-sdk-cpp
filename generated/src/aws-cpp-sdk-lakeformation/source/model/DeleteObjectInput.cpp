@@ -18,15 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-DeleteObjectInput::DeleteObjectInput() : 
-    m_uriHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_partitionValuesHasBeenSet(false)
-{
-}
-
 DeleteObjectInput::DeleteObjectInput(JsonView jsonValue)
-  : DeleteObjectInput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DeleteObjectInput& DeleteObjectInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Uri"))
   {
     m_uri = jsonValue.GetString("Uri");
-
     m_uriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ETag"))
   {
     m_eTag = jsonValue.GetString("ETag");
-
     m_eTagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionValues"))
   {
     Aws::Utils::Array<JsonView> partitionValuesJsonList = jsonValue.GetArray("PartitionValues");
@@ -56,7 +44,6 @@ DeleteObjectInput& DeleteObjectInput::operator =(JsonView jsonValue)
     }
     m_partitionValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

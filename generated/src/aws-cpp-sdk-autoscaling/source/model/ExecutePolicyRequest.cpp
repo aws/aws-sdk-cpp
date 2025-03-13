@@ -10,18 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-ExecutePolicyRequest::ExecutePolicyRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_honorCooldown(false),
-    m_honorCooldownHasBeenSet(false),
-    m_metricValue(0.0),
-    m_metricValueHasBeenSet(false),
-    m_breachThreshold(0.0),
-    m_breachThresholdHasBeenSet(false)
-{
-}
-
 Aws::String ExecutePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

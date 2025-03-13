@@ -12,12 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIPSetRequest::DeleteIPSetRequest() : 
-    m_iPSetIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIPSetRequest::SerializePayload() const
 {
   JsonValue payload;

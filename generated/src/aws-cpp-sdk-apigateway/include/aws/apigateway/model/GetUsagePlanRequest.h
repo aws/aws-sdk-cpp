@@ -25,7 +25,7 @@ namespace Model
   class GetUsagePlanRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetUsagePlanRequest();
+    AWS_APIGATEWAY_API GetUsagePlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The identifier of the UsagePlan resource to be retrieved.</p>
      */
-    inline const Aws::String& GetUsagePlanId() const{ return m_usagePlanId; }
+    inline const Aws::String& GetUsagePlanId() const { return m_usagePlanId; }
     inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
-    inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
-    inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
-    inline void SetUsagePlanId(const char* value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId.assign(value); }
-    inline GetUsagePlanRequest& WithUsagePlanId(const Aws::String& value) { SetUsagePlanId(value); return *this;}
-    inline GetUsagePlanRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
-    inline GetUsagePlanRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
+    template<typename UsagePlanIdT = Aws::String>
+    void SetUsagePlanId(UsagePlanIdT&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::forward<UsagePlanIdT>(value); }
+    template<typename UsagePlanIdT = Aws::String>
+    GetUsagePlanRequest& WithUsagePlanId(UsagePlanIdT&& value) { SetUsagePlanId(std::forward<UsagePlanIdT>(value)); return *this;}
     ///@}
   private:
 

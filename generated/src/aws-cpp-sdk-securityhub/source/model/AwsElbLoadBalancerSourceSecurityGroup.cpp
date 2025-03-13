@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElbLoadBalancerSourceSecurityGroup::AwsElbLoadBalancerSourceSecurityGroup() : 
-    m_groupNameHasBeenSet(false),
-    m_ownerAliasHasBeenSet(false)
-{
-}
-
 AwsElbLoadBalancerSourceSecurityGroup::AwsElbLoadBalancerSourceSecurityGroup(JsonView jsonValue)
-  : AwsElbLoadBalancerSourceSecurityGroup()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsElbLoadBalancerSourceSecurityGroup& AwsElbLoadBalancerSourceSecurityGroup::op
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerAlias"))
   {
     m_ownerAlias = jsonValue.GetString("OwnerAlias");
-
     m_ownerAliasHasBeenSet = true;
   }
-
   return *this;
 }
 

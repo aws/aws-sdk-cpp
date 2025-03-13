@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateMitigationActionResult::UpdateMitigationActionResult()
-{
-}
-
 UpdateMitigationActionResult::UpdateMitigationActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateMitigationActionResult& UpdateMitigationActionResult::operator =(const Aws
   if(jsonValue.ValueExists("actionArn"))
   {
     m_actionArn = jsonValue.GetString("actionArn");
-
+    m_actionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionId"))
   {
     m_actionId = jsonValue.GetString("actionId");
-
+    m_actionIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

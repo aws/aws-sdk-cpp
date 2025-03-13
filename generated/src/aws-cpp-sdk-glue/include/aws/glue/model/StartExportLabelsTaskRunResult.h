@@ -27,7 +27,7 @@ namespace Model
   class StartExportLabelsTaskRunResult
   {
   public:
-    AWS_GLUE_API StartExportLabelsTaskRunResult();
+    AWS_GLUE_API StartExportLabelsTaskRunResult() = default;
     AWS_GLUE_API StartExportLabelsTaskRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API StartExportLabelsTaskRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique identifier for the task run.</p>
      */
-    inline const Aws::String& GetTaskRunId() const{ return m_taskRunId; }
-    inline void SetTaskRunId(const Aws::String& value) { m_taskRunId = value; }
-    inline void SetTaskRunId(Aws::String&& value) { m_taskRunId = std::move(value); }
-    inline void SetTaskRunId(const char* value) { m_taskRunId.assign(value); }
-    inline StartExportLabelsTaskRunResult& WithTaskRunId(const Aws::String& value) { SetTaskRunId(value); return *this;}
-    inline StartExportLabelsTaskRunResult& WithTaskRunId(Aws::String&& value) { SetTaskRunId(std::move(value)); return *this;}
-    inline StartExportLabelsTaskRunResult& WithTaskRunId(const char* value) { SetTaskRunId(value); return *this;}
+    inline const Aws::String& GetTaskRunId() const { return m_taskRunId; }
+    template<typename TaskRunIdT = Aws::String>
+    void SetTaskRunId(TaskRunIdT&& value) { m_taskRunIdHasBeenSet = true; m_taskRunId = std::forward<TaskRunIdT>(value); }
+    template<typename TaskRunIdT = Aws::String>
+    StartExportLabelsTaskRunResult& WithTaskRunId(TaskRunIdT&& value) { SetTaskRunId(std::forward<TaskRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartExportLabelsTaskRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartExportLabelsTaskRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartExportLabelsTaskRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartExportLabelsTaskRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_taskRunId;
+    bool m_taskRunIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

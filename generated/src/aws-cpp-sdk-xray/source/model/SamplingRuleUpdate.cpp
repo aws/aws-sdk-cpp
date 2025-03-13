@@ -18,27 +18,7 @@ namespace XRay
 namespace Model
 {
 
-SamplingRuleUpdate::SamplingRuleUpdate() : 
-    m_ruleNameHasBeenSet(false),
-    m_ruleARNHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_fixedRate(0.0),
-    m_fixedRateHasBeenSet(false),
-    m_reservoirSize(0),
-    m_reservoirSizeHasBeenSet(false),
-    m_hostHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false),
-    m_hTTPMethodHasBeenSet(false),
-    m_uRLPathHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 SamplingRuleUpdate::SamplingRuleUpdate(JsonView jsonValue)
-  : SamplingRuleUpdate()
 {
   *this = jsonValue;
 }
@@ -48,80 +28,58 @@ SamplingRuleUpdate& SamplingRuleUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleName"))
   {
     m_ruleName = jsonValue.GetString("RuleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleARN"))
   {
     m_ruleARN = jsonValue.GetString("RuleARN");
-
     m_ruleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceARN"))
   {
     m_resourceARN = jsonValue.GetString("ResourceARN");
-
     m_resourceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FixedRate"))
   {
     m_fixedRate = jsonValue.GetDouble("FixedRate");
-
     m_fixedRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservoirSize"))
   {
     m_reservoirSize = jsonValue.GetInteger("ReservoirSize");
-
     m_reservoirSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Host"))
   {
     m_host = jsonValue.GetString("Host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = jsonValue.GetString("ServiceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceType"))
   {
     m_serviceType = jsonValue.GetString("ServiceType");
-
     m_serviceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HTTPMethod"))
   {
     m_hTTPMethod = jsonValue.GetString("HTTPMethod");
-
     m_hTTPMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("URLPath"))
   {
     m_uRLPath = jsonValue.GetString("URLPath");
-
     m_uRLPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -131,7 +89,6 @@ SamplingRuleUpdate& SamplingRuleUpdate::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

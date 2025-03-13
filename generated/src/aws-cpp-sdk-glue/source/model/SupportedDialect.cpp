@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SupportedDialect::SupportedDialect() : 
-    m_dialect(ViewDialect::NOT_SET),
-    m_dialectHasBeenSet(false),
-    m_dialectVersionHasBeenSet(false)
-{
-}
-
 SupportedDialect::SupportedDialect(JsonView jsonValue)
-  : SupportedDialect()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SupportedDialect& SupportedDialect::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Dialect"))
   {
     m_dialect = ViewDialectMapper::GetViewDialectForName(jsonValue.GetString("Dialect"));
-
     m_dialectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DialectVersion"))
   {
     m_dialectVersion = jsonValue.GetString("DialectVersion");
-
     m_dialectVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

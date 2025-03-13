@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetComponentResult::GetComponentResult()
-{
-}
-
 GetComponentResult::GetComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetComponentResult& GetComponentResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("Component"))
   {
     m_component = jsonValue.GetObject("Component");
-
+    m_componentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -42,14 +37,15 @@ GetComponentResult& GetComponentResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

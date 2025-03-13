@@ -28,7 +28,7 @@ namespace Model
   class GetOpsItemResult
   {
   public:
-    AWS_SSM_API GetOpsItemResult();
+    AWS_SSM_API GetOpsItemResult() = default;
     AWS_SSM_API GetOpsItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API GetOpsItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The OpsItem.</p>
      */
-    inline const OpsItem& GetOpsItem() const{ return m_opsItem; }
-    inline void SetOpsItem(const OpsItem& value) { m_opsItem = value; }
-    inline void SetOpsItem(OpsItem&& value) { m_opsItem = std::move(value); }
-    inline GetOpsItemResult& WithOpsItem(const OpsItem& value) { SetOpsItem(value); return *this;}
-    inline GetOpsItemResult& WithOpsItem(OpsItem&& value) { SetOpsItem(std::move(value)); return *this;}
+    inline const OpsItem& GetOpsItem() const { return m_opsItem; }
+    template<typename OpsItemT = OpsItem>
+    void SetOpsItem(OpsItemT&& value) { m_opsItemHasBeenSet = true; m_opsItem = std::forward<OpsItemT>(value); }
+    template<typename OpsItemT = OpsItem>
+    GetOpsItemResult& WithOpsItem(OpsItemT&& value) { SetOpsItem(std::forward<OpsItemT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetOpsItemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetOpsItemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetOpsItemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetOpsItemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     OpsItem m_opsItem;
+    bool m_opsItemHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

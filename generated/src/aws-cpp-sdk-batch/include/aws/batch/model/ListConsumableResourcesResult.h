@@ -29,7 +29,7 @@ namespace Model
   class ListConsumableResourcesResult
   {
   public:
-    AWS_BATCH_API ListConsumableResourcesResult();
+    AWS_BATCH_API ListConsumableResourcesResult() = default;
     AWS_BATCH_API ListConsumableResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BATCH_API ListConsumableResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of consumable resources that match the request.</p>
      */
-    inline const Aws::Vector<ConsumableResourceSummary>& GetConsumableResources() const{ return m_consumableResources; }
-    inline void SetConsumableResources(const Aws::Vector<ConsumableResourceSummary>& value) { m_consumableResources = value; }
-    inline void SetConsumableResources(Aws::Vector<ConsumableResourceSummary>&& value) { m_consumableResources = std::move(value); }
-    inline ListConsumableResourcesResult& WithConsumableResources(const Aws::Vector<ConsumableResourceSummary>& value) { SetConsumableResources(value); return *this;}
-    inline ListConsumableResourcesResult& WithConsumableResources(Aws::Vector<ConsumableResourceSummary>&& value) { SetConsumableResources(std::move(value)); return *this;}
-    inline ListConsumableResourcesResult& AddConsumableResources(const ConsumableResourceSummary& value) { m_consumableResources.push_back(value); return *this; }
-    inline ListConsumableResourcesResult& AddConsumableResources(ConsumableResourceSummary&& value) { m_consumableResources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConsumableResourceSummary>& GetConsumableResources() const { return m_consumableResources; }
+    template<typename ConsumableResourcesT = Aws::Vector<ConsumableResourceSummary>>
+    void SetConsumableResources(ConsumableResourcesT&& value) { m_consumableResourcesHasBeenSet = true; m_consumableResources = std::forward<ConsumableResourcesT>(value); }
+    template<typename ConsumableResourcesT = Aws::Vector<ConsumableResourceSummary>>
+    ListConsumableResourcesResult& WithConsumableResources(ConsumableResourcesT&& value) { SetConsumableResources(std::forward<ConsumableResourcesT>(value)); return *this;}
+    template<typename ConsumableResourcesT = ConsumableResourceSummary>
+    ListConsumableResourcesResult& AddConsumableResources(ConsumableResourcesT&& value) { m_consumableResourcesHasBeenSet = true; m_consumableResources.emplace_back(std::forward<ConsumableResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * this value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListConsumableResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConsumableResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConsumableResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConsumableResourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConsumableResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConsumableResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConsumableResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConsumableResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConsumableResourceSummary> m_consumableResources;
+    bool m_consumableResourcesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

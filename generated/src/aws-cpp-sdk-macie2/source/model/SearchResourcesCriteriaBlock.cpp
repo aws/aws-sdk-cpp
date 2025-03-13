@@ -18,13 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SearchResourcesCriteriaBlock::SearchResourcesCriteriaBlock() : 
-    m_andHasBeenSet(false)
-{
-}
-
 SearchResourcesCriteriaBlock::SearchResourcesCriteriaBlock(JsonView jsonValue)
-  : SearchResourcesCriteriaBlock()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SearchResourcesCriteriaBlock& SearchResourcesCriteriaBlock::operator =(JsonView 
     }
     m_andHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-BucketState::BucketState() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BucketState::BucketState(JsonView jsonValue)
-  : BucketState()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BucketState& BucketState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

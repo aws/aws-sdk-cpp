@@ -36,7 +36,7 @@ namespace Model
   class CapacityProvider
   {
   public:
-    AWS_ECS_API CapacityProvider();
+    AWS_ECS_API CapacityProvider() = default;
     AWS_ECS_API CapacityProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API CapacityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the capacity provider.</p>
      */
-    inline const Aws::String& GetCapacityProviderArn() const{ return m_capacityProviderArn; }
+    inline const Aws::String& GetCapacityProviderArn() const { return m_capacityProviderArn; }
     inline bool CapacityProviderArnHasBeenSet() const { return m_capacityProviderArnHasBeenSet; }
-    inline void SetCapacityProviderArn(const Aws::String& value) { m_capacityProviderArnHasBeenSet = true; m_capacityProviderArn = value; }
-    inline void SetCapacityProviderArn(Aws::String&& value) { m_capacityProviderArnHasBeenSet = true; m_capacityProviderArn = std::move(value); }
-    inline void SetCapacityProviderArn(const char* value) { m_capacityProviderArnHasBeenSet = true; m_capacityProviderArn.assign(value); }
-    inline CapacityProvider& WithCapacityProviderArn(const Aws::String& value) { SetCapacityProviderArn(value); return *this;}
-    inline CapacityProvider& WithCapacityProviderArn(Aws::String&& value) { SetCapacityProviderArn(std::move(value)); return *this;}
-    inline CapacityProvider& WithCapacityProviderArn(const char* value) { SetCapacityProviderArn(value); return *this;}
+    template<typename CapacityProviderArnT = Aws::String>
+    void SetCapacityProviderArn(CapacityProviderArnT&& value) { m_capacityProviderArnHasBeenSet = true; m_capacityProviderArn = std::forward<CapacityProviderArnT>(value); }
+    template<typename CapacityProviderArnT = Aws::String>
+    CapacityProvider& WithCapacityProviderArn(CapacityProviderArnT&& value) { SetCapacityProviderArn(std::forward<CapacityProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the capacity provider.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CapacityProvider& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CapacityProvider& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CapacityProvider& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CapacityProvider& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,24 +72,22 @@ namespace Model
      * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
      * successfully deleted, it has an <code>INACTIVE</code> status.</p>
      */
-    inline const CapacityProviderStatus& GetStatus() const{ return m_status; }
+    inline CapacityProviderStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CapacityProviderStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CapacityProviderStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CapacityProvider& WithStatus(const CapacityProviderStatus& value) { SetStatus(value); return *this;}
-    inline CapacityProvider& WithStatus(CapacityProviderStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CapacityProviderStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CapacityProvider& WithStatus(CapacityProviderStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Auto Scaling group settings for the capacity provider.</p>
      */
-    inline const AutoScalingGroupProvider& GetAutoScalingGroupProvider() const{ return m_autoScalingGroupProvider; }
+    inline const AutoScalingGroupProvider& GetAutoScalingGroupProvider() const { return m_autoScalingGroupProvider; }
     inline bool AutoScalingGroupProviderHasBeenSet() const { return m_autoScalingGroupProviderHasBeenSet; }
-    inline void SetAutoScalingGroupProvider(const AutoScalingGroupProvider& value) { m_autoScalingGroupProviderHasBeenSet = true; m_autoScalingGroupProvider = value; }
-    inline void SetAutoScalingGroupProvider(AutoScalingGroupProvider&& value) { m_autoScalingGroupProviderHasBeenSet = true; m_autoScalingGroupProvider = std::move(value); }
-    inline CapacityProvider& WithAutoScalingGroupProvider(const AutoScalingGroupProvider& value) { SetAutoScalingGroupProvider(value); return *this;}
-    inline CapacityProvider& WithAutoScalingGroupProvider(AutoScalingGroupProvider&& value) { SetAutoScalingGroupProvider(std::move(value)); return *this;}
+    template<typename AutoScalingGroupProviderT = AutoScalingGroupProvider>
+    void SetAutoScalingGroupProvider(AutoScalingGroupProviderT&& value) { m_autoScalingGroupProviderHasBeenSet = true; m_autoScalingGroupProvider = std::forward<AutoScalingGroupProviderT>(value); }
+    template<typename AutoScalingGroupProviderT = AutoScalingGroupProvider>
+    CapacityProvider& WithAutoScalingGroupProvider(AutoScalingGroupProviderT&& value) { SetAutoScalingGroupProvider(std::forward<AutoScalingGroupProviderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,12 +100,10 @@ namespace Model
      * <p>The capacity provider can't be deleted. The update status reason provides
      * further details about why the delete failed.</p> </dd> </dl>
      */
-    inline const CapacityProviderUpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
+    inline CapacityProviderUpdateStatus GetUpdateStatus() const { return m_updateStatus; }
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
-    inline void SetUpdateStatus(const CapacityProviderUpdateStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
-    inline void SetUpdateStatus(CapacityProviderUpdateStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
-    inline CapacityProvider& WithUpdateStatus(const CapacityProviderUpdateStatus& value) { SetUpdateStatus(value); return *this;}
-    inline CapacityProvider& WithUpdateStatus(CapacityProviderUpdateStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
+    inline void SetUpdateStatus(CapacityProviderUpdateStatus value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
+    inline CapacityProvider& WithUpdateStatus(CapacityProviderUpdateStatus value) { SetUpdateStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +111,12 @@ namespace Model
      * <p>The update status reason. This provides further details about the update
      * status for the capacity provider.</p>
      */
-    inline const Aws::String& GetUpdateStatusReason() const{ return m_updateStatusReason; }
+    inline const Aws::String& GetUpdateStatusReason() const { return m_updateStatusReason; }
     inline bool UpdateStatusReasonHasBeenSet() const { return m_updateStatusReasonHasBeenSet; }
-    inline void SetUpdateStatusReason(const Aws::String& value) { m_updateStatusReasonHasBeenSet = true; m_updateStatusReason = value; }
-    inline void SetUpdateStatusReason(Aws::String&& value) { m_updateStatusReasonHasBeenSet = true; m_updateStatusReason = std::move(value); }
-    inline void SetUpdateStatusReason(const char* value) { m_updateStatusReasonHasBeenSet = true; m_updateStatusReason.assign(value); }
-    inline CapacityProvider& WithUpdateStatusReason(const Aws::String& value) { SetUpdateStatusReason(value); return *this;}
-    inline CapacityProvider& WithUpdateStatusReason(Aws::String&& value) { SetUpdateStatusReason(std::move(value)); return *this;}
-    inline CapacityProvider& WithUpdateStatusReason(const char* value) { SetUpdateStatusReason(value); return *this;}
+    template<typename UpdateStatusReasonT = Aws::String>
+    void SetUpdateStatusReason(UpdateStatusReasonT&& value) { m_updateStatusReasonHasBeenSet = true; m_updateStatusReason = std::forward<UpdateStatusReasonT>(value); }
+    template<typename UpdateStatusReasonT = Aws::String>
+    CapacityProvider& WithUpdateStatusReason(UpdateStatusReasonT&& value) { SetUpdateStatusReason(std::forward<UpdateStatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,14 +138,14 @@ namespace Model
      * edit or delete tag keys or values with this prefix. Tags with this prefix do not
      * count against your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CapacityProvider& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CapacityProvider& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CapacityProvider& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CapacityProvider& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CapacityProvider& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CapacityProvider& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -165,13 +155,13 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    CapacityProviderStatus m_status;
+    CapacityProviderStatus m_status{CapacityProviderStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     AutoScalingGroupProvider m_autoScalingGroupProvider;
     bool m_autoScalingGroupProviderHasBeenSet = false;
 
-    CapacityProviderUpdateStatus m_updateStatus;
+    CapacityProviderUpdateStatus m_updateStatus{CapacityProviderUpdateStatus::NOT_SET};
     bool m_updateStatusHasBeenSet = false;
 
     Aws::String m_updateStatusReason;

@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-FlowDefinitionSummary::FlowDefinitionSummary() : 
-    m_flowDefinitionNameHasBeenSet(false),
-    m_flowDefinitionArnHasBeenSet(false),
-    m_flowDefinitionStatus(FlowDefinitionStatus::NOT_SET),
-    m_flowDefinitionStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 FlowDefinitionSummary::FlowDefinitionSummary(JsonView jsonValue)
-  : FlowDefinitionSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ FlowDefinitionSummary& FlowDefinitionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FlowDefinitionName"))
   {
     m_flowDefinitionName = jsonValue.GetString("FlowDefinitionName");
-
     m_flowDefinitionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlowDefinitionArn"))
   {
     m_flowDefinitionArn = jsonValue.GetString("FlowDefinitionArn");
-
     m_flowDefinitionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlowDefinitionStatus"))
   {
     m_flowDefinitionStatus = FlowDefinitionStatusMapper::GetFlowDefinitionStatusForName(jsonValue.GetString("FlowDefinitionStatus"));
-
     m_flowDefinitionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

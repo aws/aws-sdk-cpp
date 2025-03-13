@@ -37,7 +37,7 @@ namespace Model
   class SourceDetail
   {
   public:
-    AWS_CONFIGSERVICE_API SourceDetail();
+    AWS_CONFIGSERVICE_API SourceDetail() = default;
     AWS_CONFIGSERVICE_API SourceDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API SourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * <p>The source of the event, such as an Amazon Web Services service, that
      * triggers Config to evaluate your Amazon Web Services resources.</p>
      */
-    inline const EventSource& GetEventSource() const{ return m_eventSource; }
+    inline EventSource GetEventSource() const { return m_eventSource; }
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
-    inline void SetEventSource(const EventSource& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
-    inline void SetEventSource(EventSource&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
-    inline SourceDetail& WithEventSource(const EventSource& value) { SetEventSource(value); return *this;}
-    inline SourceDetail& WithEventSource(EventSource&& value) { SetEventSource(std::move(value)); return *this;}
+    inline void SetEventSource(EventSource value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
+    inline SourceDetail& WithEventSource(EventSource value) { SetEventSource(value); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,10 @@ namespace Model
      * SourceDetail objects, one for <code>ConfigurationItemChangeNotification</code>
      * and one for <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
-    inline const MessageType& GetMessageType() const{ return m_messageType; }
+    inline MessageType GetMessageType() const { return m_messageType; }
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
-    inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
-    inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
-    inline SourceDetail& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
-    inline SourceDetail& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
+    inline void SetMessageType(MessageType value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
+    inline SourceDetail& WithMessageType(MessageType value) { SetMessageType(value); return *this;}
     ///@}
 
     ///@{
@@ -95,22 +91,20 @@ namespace Model
      * Config runs evaluations once every three hours. In this case,
      * <code>Three_Hours</code> is the frequency of this rule. </p> 
      */
-    inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
+    inline MaximumExecutionFrequency GetMaximumExecutionFrequency() const { return m_maximumExecutionFrequency; }
     inline bool MaximumExecutionFrequencyHasBeenSet() const { return m_maximumExecutionFrequencyHasBeenSet; }
-    inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
-    inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = std::move(value); }
-    inline SourceDetail& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
-    inline SourceDetail& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(std::move(value)); return *this;}
+    inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
+    inline SourceDetail& WithMaximumExecutionFrequency(MaximumExecutionFrequency value) { SetMaximumExecutionFrequency(value); return *this;}
     ///@}
   private:
 
-    EventSource m_eventSource;
+    EventSource m_eventSource{EventSource::NOT_SET};
     bool m_eventSourceHasBeenSet = false;
 
-    MessageType m_messageType;
+    MessageType m_messageType{MessageType::NOT_SET};
     bool m_messageTypeHasBeenSet = false;
 
-    MaximumExecutionFrequency m_maximumExecutionFrequency;
+    MaximumExecutionFrequency m_maximumExecutionFrequency{MaximumExecutionFrequency::NOT_SET};
     bool m_maximumExecutionFrequencyHasBeenSet = false;
   };
 

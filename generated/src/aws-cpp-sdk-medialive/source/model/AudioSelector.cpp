@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioSelector::AudioSelector() : 
-    m_nameHasBeenSet(false),
-    m_selectorSettingsHasBeenSet(false)
-{
-}
-
 AudioSelector::AudioSelector(JsonView jsonValue)
-  : AudioSelector()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AudioSelector& AudioSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectorSettings"))
   {
     m_selectorSettings = jsonValue.GetObject("selectorSettings");
-
     m_selectorSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

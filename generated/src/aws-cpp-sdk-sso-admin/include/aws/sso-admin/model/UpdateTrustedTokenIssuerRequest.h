@@ -22,7 +22,7 @@ namespace Model
   class UpdateTrustedTokenIssuerRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API UpdateTrustedTokenIssuerRequest();
+    AWS_SSOADMIN_API UpdateTrustedTokenIssuerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>Specifies the updated name to be applied to the trusted token issuer
      * configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateTrustedTokenIssuerRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateTrustedTokenIssuerRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateTrustedTokenIssuerRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateTrustedTokenIssuerRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>Specifies the ARN of the trusted token issuer configuration that you want to
      * update.</p>
      */
-    inline const Aws::String& GetTrustedTokenIssuerArn() const{ return m_trustedTokenIssuerArn; }
+    inline const Aws::String& GetTrustedTokenIssuerArn() const { return m_trustedTokenIssuerArn; }
     inline bool TrustedTokenIssuerArnHasBeenSet() const { return m_trustedTokenIssuerArnHasBeenSet; }
-    inline void SetTrustedTokenIssuerArn(const Aws::String& value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn = value; }
-    inline void SetTrustedTokenIssuerArn(Aws::String&& value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn = std::move(value); }
-    inline void SetTrustedTokenIssuerArn(const char* value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn.assign(value); }
-    inline UpdateTrustedTokenIssuerRequest& WithTrustedTokenIssuerArn(const Aws::String& value) { SetTrustedTokenIssuerArn(value); return *this;}
-    inline UpdateTrustedTokenIssuerRequest& WithTrustedTokenIssuerArn(Aws::String&& value) { SetTrustedTokenIssuerArn(std::move(value)); return *this;}
-    inline UpdateTrustedTokenIssuerRequest& WithTrustedTokenIssuerArn(const char* value) { SetTrustedTokenIssuerArn(value); return *this;}
+    template<typename TrustedTokenIssuerArnT = Aws::String>
+    void SetTrustedTokenIssuerArn(TrustedTokenIssuerArnT&& value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn = std::forward<TrustedTokenIssuerArnT>(value); }
+    template<typename TrustedTokenIssuerArnT = Aws::String>
+    UpdateTrustedTokenIssuerRequest& WithTrustedTokenIssuerArn(TrustedTokenIssuerArnT&& value) { SetTrustedTokenIssuerArn(std::forward<TrustedTokenIssuerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +67,12 @@ namespace Model
      * issuer. The settings that you can provide are determined by the type of the
      * trusted token issuer that you are updating.</p>
      */
-    inline const TrustedTokenIssuerUpdateConfiguration& GetTrustedTokenIssuerConfiguration() const{ return m_trustedTokenIssuerConfiguration; }
+    inline const TrustedTokenIssuerUpdateConfiguration& GetTrustedTokenIssuerConfiguration() const { return m_trustedTokenIssuerConfiguration; }
     inline bool TrustedTokenIssuerConfigurationHasBeenSet() const { return m_trustedTokenIssuerConfigurationHasBeenSet; }
-    inline void SetTrustedTokenIssuerConfiguration(const TrustedTokenIssuerUpdateConfiguration& value) { m_trustedTokenIssuerConfigurationHasBeenSet = true; m_trustedTokenIssuerConfiguration = value; }
-    inline void SetTrustedTokenIssuerConfiguration(TrustedTokenIssuerUpdateConfiguration&& value) { m_trustedTokenIssuerConfigurationHasBeenSet = true; m_trustedTokenIssuerConfiguration = std::move(value); }
-    inline UpdateTrustedTokenIssuerRequest& WithTrustedTokenIssuerConfiguration(const TrustedTokenIssuerUpdateConfiguration& value) { SetTrustedTokenIssuerConfiguration(value); return *this;}
-    inline UpdateTrustedTokenIssuerRequest& WithTrustedTokenIssuerConfiguration(TrustedTokenIssuerUpdateConfiguration&& value) { SetTrustedTokenIssuerConfiguration(std::move(value)); return *this;}
+    template<typename TrustedTokenIssuerConfigurationT = TrustedTokenIssuerUpdateConfiguration>
+    void SetTrustedTokenIssuerConfiguration(TrustedTokenIssuerConfigurationT&& value) { m_trustedTokenIssuerConfigurationHasBeenSet = true; m_trustedTokenIssuerConfiguration = std::forward<TrustedTokenIssuerConfigurationT>(value); }
+    template<typename TrustedTokenIssuerConfigurationT = TrustedTokenIssuerUpdateConfiguration>
+    UpdateTrustedTokenIssuerRequest& WithTrustedTokenIssuerConfiguration(TrustedTokenIssuerConfigurationT&& value) { SetTrustedTokenIssuerConfiguration(std::forward<TrustedTokenIssuerConfigurationT>(value)); return *this;}
     ///@}
   private:
 

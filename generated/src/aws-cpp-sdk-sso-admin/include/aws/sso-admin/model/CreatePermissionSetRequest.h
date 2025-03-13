@@ -23,7 +23,7 @@ namespace Model
   class CreatePermissionSetRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API CreatePermissionSetRequest();
+    AWS_SSOADMIN_API CreatePermissionSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The description of the <a>PermissionSet</a>.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreatePermissionSetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreatePermissionSetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreatePermissionSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreatePermissionSetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,24 @@ namespace Model
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline CreatePermissionSetRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline CreatePermissionSetRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline CreatePermissionSetRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    CreatePermissionSetRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the <a>PermissionSet</a>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreatePermissionSetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreatePermissionSetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreatePermissionSetRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreatePermissionSetRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +81,12 @@ namespace Model
      * <p>Used to redirect users within the application during the federation
      * authentication process.</p>
      */
-    inline const Aws::String& GetRelayState() const{ return m_relayState; }
+    inline const Aws::String& GetRelayState() const { return m_relayState; }
     inline bool RelayStateHasBeenSet() const { return m_relayStateHasBeenSet; }
-    inline void SetRelayState(const Aws::String& value) { m_relayStateHasBeenSet = true; m_relayState = value; }
-    inline void SetRelayState(Aws::String&& value) { m_relayStateHasBeenSet = true; m_relayState = std::move(value); }
-    inline void SetRelayState(const char* value) { m_relayStateHasBeenSet = true; m_relayState.assign(value); }
-    inline CreatePermissionSetRequest& WithRelayState(const Aws::String& value) { SetRelayState(value); return *this;}
-    inline CreatePermissionSetRequest& WithRelayState(Aws::String&& value) { SetRelayState(std::move(value)); return *this;}
-    inline CreatePermissionSetRequest& WithRelayState(const char* value) { SetRelayState(value); return *this;}
+    template<typename RelayStateT = Aws::String>
+    void SetRelayState(RelayStateT&& value) { m_relayStateHasBeenSet = true; m_relayState = std::forward<RelayStateT>(value); }
+    template<typename RelayStateT = Aws::String>
+    CreatePermissionSetRequest& WithRelayState(RelayStateT&& value) { SetRelayState(std::forward<RelayStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,28 +94,26 @@ namespace Model
      * <p>The length of time that the application user sessions are valid in the
      * ISO-8601 standard.</p>
      */
-    inline const Aws::String& GetSessionDuration() const{ return m_sessionDuration; }
+    inline const Aws::String& GetSessionDuration() const { return m_sessionDuration; }
     inline bool SessionDurationHasBeenSet() const { return m_sessionDurationHasBeenSet; }
-    inline void SetSessionDuration(const Aws::String& value) { m_sessionDurationHasBeenSet = true; m_sessionDuration = value; }
-    inline void SetSessionDuration(Aws::String&& value) { m_sessionDurationHasBeenSet = true; m_sessionDuration = std::move(value); }
-    inline void SetSessionDuration(const char* value) { m_sessionDurationHasBeenSet = true; m_sessionDuration.assign(value); }
-    inline CreatePermissionSetRequest& WithSessionDuration(const Aws::String& value) { SetSessionDuration(value); return *this;}
-    inline CreatePermissionSetRequest& WithSessionDuration(Aws::String&& value) { SetSessionDuration(std::move(value)); return *this;}
-    inline CreatePermissionSetRequest& WithSessionDuration(const char* value) { SetSessionDuration(value); return *this;}
+    template<typename SessionDurationT = Aws::String>
+    void SetSessionDuration(SessionDurationT&& value) { m_sessionDurationHasBeenSet = true; m_sessionDuration = std::forward<SessionDurationT>(value); }
+    template<typename SessionDurationT = Aws::String>
+    CreatePermissionSetRequest& WithSessionDuration(SessionDurationT&& value) { SetSessionDuration(std::forward<SessionDurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to attach to the new <a>PermissionSet</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreatePermissionSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreatePermissionSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreatePermissionSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreatePermissionSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreatePermissionSetRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreatePermissionSetRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

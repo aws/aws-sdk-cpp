@@ -18,17 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Thumbnail::Thumbnail() : 
-    m_bodyHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_thumbnailType(ThumbnailType::NOT_SET),
-    m_thumbnailTypeHasBeenSet(false),
-    m_timeStampHasBeenSet(false)
-{
-}
-
 Thumbnail::Thumbnail(JsonView jsonValue)
-  : Thumbnail()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Thumbnail& Thumbnail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("body"))
   {
     m_body = jsonValue.GetString("body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentType"))
   {
     m_contentType = jsonValue.GetString("contentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thumbnailType"))
   {
     m_thumbnailType = ThumbnailTypeMapper::GetThumbnailTypeForName(jsonValue.GetString("thumbnailType"));
-
     m_thumbnailTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeStamp"))
   {
     m_timeStamp = jsonValue.GetString("timeStamp");
-
     m_timeStampHasBeenSet = true;
   }
-
   return *this;
 }
 

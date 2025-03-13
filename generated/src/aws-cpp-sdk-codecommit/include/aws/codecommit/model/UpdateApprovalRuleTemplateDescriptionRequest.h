@@ -21,7 +21,7 @@ namespace Model
   class UpdateApprovalRuleTemplateDescriptionRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API UpdateApprovalRuleTemplateDescriptionRequest();
+    AWS_CODECOMMIT_API UpdateApprovalRuleTemplateDescriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The name of the template for which you want to update the description.</p>
      */
-    inline const Aws::String& GetApprovalRuleTemplateName() const{ return m_approvalRuleTemplateName; }
+    inline const Aws::String& GetApprovalRuleTemplateName() const { return m_approvalRuleTemplateName; }
     inline bool ApprovalRuleTemplateNameHasBeenSet() const { return m_approvalRuleTemplateNameHasBeenSet; }
-    inline void SetApprovalRuleTemplateName(const Aws::String& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = value; }
-    inline void SetApprovalRuleTemplateName(Aws::String&& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = std::move(value); }
-    inline void SetApprovalRuleTemplateName(const char* value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName.assign(value); }
-    inline UpdateApprovalRuleTemplateDescriptionRequest& WithApprovalRuleTemplateName(const Aws::String& value) { SetApprovalRuleTemplateName(value); return *this;}
-    inline UpdateApprovalRuleTemplateDescriptionRequest& WithApprovalRuleTemplateName(Aws::String&& value) { SetApprovalRuleTemplateName(std::move(value)); return *this;}
-    inline UpdateApprovalRuleTemplateDescriptionRequest& WithApprovalRuleTemplateName(const char* value) { SetApprovalRuleTemplateName(value); return *this;}
+    template<typename ApprovalRuleTemplateNameT = Aws::String>
+    void SetApprovalRuleTemplateName(ApprovalRuleTemplateNameT&& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = std::forward<ApprovalRuleTemplateNameT>(value); }
+    template<typename ApprovalRuleTemplateNameT = Aws::String>
+    UpdateApprovalRuleTemplateDescriptionRequest& WithApprovalRuleTemplateName(ApprovalRuleTemplateNameT&& value) { SetApprovalRuleTemplateName(std::forward<ApprovalRuleTemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated description of the approval rule template.</p>
      */
-    inline const Aws::String& GetApprovalRuleTemplateDescription() const{ return m_approvalRuleTemplateDescription; }
+    inline const Aws::String& GetApprovalRuleTemplateDescription() const { return m_approvalRuleTemplateDescription; }
     inline bool ApprovalRuleTemplateDescriptionHasBeenSet() const { return m_approvalRuleTemplateDescriptionHasBeenSet; }
-    inline void SetApprovalRuleTemplateDescription(const Aws::String& value) { m_approvalRuleTemplateDescriptionHasBeenSet = true; m_approvalRuleTemplateDescription = value; }
-    inline void SetApprovalRuleTemplateDescription(Aws::String&& value) { m_approvalRuleTemplateDescriptionHasBeenSet = true; m_approvalRuleTemplateDescription = std::move(value); }
-    inline void SetApprovalRuleTemplateDescription(const char* value) { m_approvalRuleTemplateDescriptionHasBeenSet = true; m_approvalRuleTemplateDescription.assign(value); }
-    inline UpdateApprovalRuleTemplateDescriptionRequest& WithApprovalRuleTemplateDescription(const Aws::String& value) { SetApprovalRuleTemplateDescription(value); return *this;}
-    inline UpdateApprovalRuleTemplateDescriptionRequest& WithApprovalRuleTemplateDescription(Aws::String&& value) { SetApprovalRuleTemplateDescription(std::move(value)); return *this;}
-    inline UpdateApprovalRuleTemplateDescriptionRequest& WithApprovalRuleTemplateDescription(const char* value) { SetApprovalRuleTemplateDescription(value); return *this;}
+    template<typename ApprovalRuleTemplateDescriptionT = Aws::String>
+    void SetApprovalRuleTemplateDescription(ApprovalRuleTemplateDescriptionT&& value) { m_approvalRuleTemplateDescriptionHasBeenSet = true; m_approvalRuleTemplateDescription = std::forward<ApprovalRuleTemplateDescriptionT>(value); }
+    template<typename ApprovalRuleTemplateDescriptionT = Aws::String>
+    UpdateApprovalRuleTemplateDescriptionRequest& WithApprovalRuleTemplateDescription(ApprovalRuleTemplateDescriptionT&& value) { SetApprovalRuleTemplateDescription(std::forward<ApprovalRuleTemplateDescriptionT>(value)); return *this;}
     ///@}
   private:
 

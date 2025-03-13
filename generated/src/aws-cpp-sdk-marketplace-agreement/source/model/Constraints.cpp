@@ -18,14 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-Constraints::Constraints() : 
-    m_multipleDimensionSelectionHasBeenSet(false),
-    m_quantityConfigurationHasBeenSet(false)
-{
-}
-
 Constraints::Constraints(JsonView jsonValue)
-  : Constraints()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Constraints& Constraints::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("multipleDimensionSelection"))
   {
     m_multipleDimensionSelection = jsonValue.GetString("multipleDimensionSelection");
-
     m_multipleDimensionSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quantityConfiguration"))
   {
     m_quantityConfiguration = jsonValue.GetString("quantityConfiguration");
-
     m_quantityConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

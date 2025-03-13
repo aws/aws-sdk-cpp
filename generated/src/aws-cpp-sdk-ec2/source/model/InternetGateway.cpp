@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InternetGateway::InternetGateway() : 
-    m_attachmentsHasBeenSet(false),
-    m_internetGatewayIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 InternetGateway::InternetGateway(const XmlNode& xmlNode)
-  : InternetGateway()
 {
   *this = xmlNode;
 }
@@ -44,37 +35,41 @@ InternetGateway& InternetGateway::operator =(const XmlNode& xmlNode)
     if(!attachmentsNode.IsNull())
     {
       XmlNode attachmentsMember = attachmentsNode.FirstChild("item");
+      m_attachmentsHasBeenSet = !attachmentsMember.IsNull();
       while(!attachmentsMember.IsNull())
       {
         m_attachments.push_back(attachmentsMember);
         attachmentsMember = attachmentsMember.NextNode("item");
       }
 
-      m_attachmentsHasBeenSet = true;
+       m_attachmentsHasBeenSet = true;
     }
     XmlNode internetGatewayIdNode = resultNode.FirstChild("internetGatewayId");
     if(!internetGatewayIdNode.IsNull())
     {
       m_internetGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(internetGatewayIdNode.GetText());
       m_internetGatewayIdHasBeenSet = true;
+       m_internetGatewayIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

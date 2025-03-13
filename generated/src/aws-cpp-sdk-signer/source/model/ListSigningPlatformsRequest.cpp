@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSigningPlatformsRequest::ListSigningPlatformsRequest() : 
-    m_categoryHasBeenSet(false),
-    m_partnerHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSigningPlatformsRequest::SerializePayload() const
 {
   return {};

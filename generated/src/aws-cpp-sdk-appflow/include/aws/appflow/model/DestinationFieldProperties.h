@@ -33,7 +33,7 @@ namespace Model
   class DestinationFieldProperties
   {
   public:
-    AWS_APPFLOW_API DestinationFieldProperties();
+    AWS_APPFLOW_API DestinationFieldProperties() = default;
     AWS_APPFLOW_API DestinationFieldProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API DestinationFieldProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p> Specifies if the destination field can be created by the current user. </p>
      */
-    inline bool GetIsCreatable() const{ return m_isCreatable; }
+    inline bool GetIsCreatable() const { return m_isCreatable; }
     inline bool IsCreatableHasBeenSet() const { return m_isCreatableHasBeenSet; }
     inline void SetIsCreatable(bool value) { m_isCreatableHasBeenSet = true; m_isCreatable = value; }
     inline DestinationFieldProperties& WithIsCreatable(bool value) { SetIsCreatable(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p> Specifies if the destination field can have a null value. </p>
      */
-    inline bool GetIsNullable() const{ return m_isNullable; }
+    inline bool GetIsNullable() const { return m_isNullable; }
     inline bool IsNullableHasBeenSet() const { return m_isNullableHasBeenSet; }
     inline void SetIsNullable(bool value) { m_isNullableHasBeenSet = true; m_isNullable = value; }
     inline DestinationFieldProperties& WithIsNullable(bool value) { SetIsNullable(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
      * <p> Specifies if the flow run can either insert new rows in the destination
      * field if they do not already exist, or update them if they do. </p>
      */
-    inline bool GetIsUpsertable() const{ return m_isUpsertable; }
+    inline bool GetIsUpsertable() const { return m_isUpsertable; }
     inline bool IsUpsertableHasBeenSet() const { return m_isUpsertableHasBeenSet; }
     inline void SetIsUpsertable(bool value) { m_isUpsertableHasBeenSet = true; m_isUpsertable = value; }
     inline DestinationFieldProperties& WithIsUpsertable(bool value) { SetIsUpsertable(value); return *this;}
@@ -75,7 +75,7 @@ namespace Model
      * <p> Specifies whether the field can be updated during an <code>UPDATE</code> or
      * <code>UPSERT</code> write operation. </p>
      */
-    inline bool GetIsUpdatable() const{ return m_isUpdatable; }
+    inline bool GetIsUpdatable() const { return m_isUpdatable; }
     inline bool IsUpdatableHasBeenSet() const { return m_isUpdatableHasBeenSet; }
     inline void SetIsUpdatable(bool value) { m_isUpdatableHasBeenSet = true; m_isUpdatable = value; }
     inline DestinationFieldProperties& WithIsUpdatable(bool value) { SetIsUpdatable(value); return *this;}
@@ -86,7 +86,7 @@ namespace Model
      * <p>Specifies whether the field can use the default value during a Create
      * operation.</p>
      */
-    inline bool GetIsDefaultedOnCreate() const{ return m_isDefaultedOnCreate; }
+    inline bool GetIsDefaultedOnCreate() const { return m_isDefaultedOnCreate; }
     inline bool IsDefaultedOnCreateHasBeenSet() const { return m_isDefaultedOnCreateHasBeenSet; }
     inline void SetIsDefaultedOnCreate(bool value) { m_isDefaultedOnCreateHasBeenSet = true; m_isDefaultedOnCreate = value; }
     inline DestinationFieldProperties& WithIsDefaultedOnCreate(bool value) { SetIsDefaultedOnCreate(value); return *this;}
@@ -98,30 +98,29 @@ namespace Model
      * field can be used in <code>idFieldNames</code> when that write operation is
      * present as a destination option. </p>
      */
-    inline const Aws::Vector<WriteOperationType>& GetSupportedWriteOperations() const{ return m_supportedWriteOperations; }
+    inline const Aws::Vector<WriteOperationType>& GetSupportedWriteOperations() const { return m_supportedWriteOperations; }
     inline bool SupportedWriteOperationsHasBeenSet() const { return m_supportedWriteOperationsHasBeenSet; }
-    inline void SetSupportedWriteOperations(const Aws::Vector<WriteOperationType>& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations = value; }
-    inline void SetSupportedWriteOperations(Aws::Vector<WriteOperationType>&& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations = std::move(value); }
-    inline DestinationFieldProperties& WithSupportedWriteOperations(const Aws::Vector<WriteOperationType>& value) { SetSupportedWriteOperations(value); return *this;}
-    inline DestinationFieldProperties& WithSupportedWriteOperations(Aws::Vector<WriteOperationType>&& value) { SetSupportedWriteOperations(std::move(value)); return *this;}
-    inline DestinationFieldProperties& AddSupportedWriteOperations(const WriteOperationType& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations.push_back(value); return *this; }
-    inline DestinationFieldProperties& AddSupportedWriteOperations(WriteOperationType&& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations.push_back(std::move(value)); return *this; }
+    template<typename SupportedWriteOperationsT = Aws::Vector<WriteOperationType>>
+    void SetSupportedWriteOperations(SupportedWriteOperationsT&& value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations = std::forward<SupportedWriteOperationsT>(value); }
+    template<typename SupportedWriteOperationsT = Aws::Vector<WriteOperationType>>
+    DestinationFieldProperties& WithSupportedWriteOperations(SupportedWriteOperationsT&& value) { SetSupportedWriteOperations(std::forward<SupportedWriteOperationsT>(value)); return *this;}
+    inline DestinationFieldProperties& AddSupportedWriteOperations(WriteOperationType value) { m_supportedWriteOperationsHasBeenSet = true; m_supportedWriteOperations.push_back(value); return *this; }
     ///@}
   private:
 
-    bool m_isCreatable;
+    bool m_isCreatable{false};
     bool m_isCreatableHasBeenSet = false;
 
-    bool m_isNullable;
+    bool m_isNullable{false};
     bool m_isNullableHasBeenSet = false;
 
-    bool m_isUpsertable;
+    bool m_isUpsertable{false};
     bool m_isUpsertableHasBeenSet = false;
 
-    bool m_isUpdatable;
+    bool m_isUpdatable{false};
     bool m_isUpdatableHasBeenSet = false;
 
-    bool m_isDefaultedOnCreate;
+    bool m_isDefaultedOnCreate{false};
     bool m_isDefaultedOnCreateHasBeenSet = false;
 
     Aws::Vector<WriteOperationType> m_supportedWriteOperations;

@@ -33,7 +33,7 @@ namespace Model
   class ConflictResolution
   {
   public:
-    AWS_CUSTOMERPROFILES_API ConflictResolution();
+    AWS_CUSTOMERPROFILES_API ConflictResolution() = default;
     AWS_CUSTOMERPROFILES_API ConflictResolution(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API ConflictResolution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * are from the same source, then <code>RECENCY</code> is used again.</p> </li>
      * </ul>
      */
-    inline const ConflictResolvingModel& GetConflictResolvingModel() const{ return m_conflictResolvingModel; }
+    inline ConflictResolvingModel GetConflictResolvingModel() const { return m_conflictResolvingModel; }
     inline bool ConflictResolvingModelHasBeenSet() const { return m_conflictResolvingModelHasBeenSet; }
-    inline void SetConflictResolvingModel(const ConflictResolvingModel& value) { m_conflictResolvingModelHasBeenSet = true; m_conflictResolvingModel = value; }
-    inline void SetConflictResolvingModel(ConflictResolvingModel&& value) { m_conflictResolvingModelHasBeenSet = true; m_conflictResolvingModel = std::move(value); }
-    inline ConflictResolution& WithConflictResolvingModel(const ConflictResolvingModel& value) { SetConflictResolvingModel(value); return *this;}
-    inline ConflictResolution& WithConflictResolvingModel(ConflictResolvingModel&& value) { SetConflictResolvingModel(std::move(value)); return *this;}
+    inline void SetConflictResolvingModel(ConflictResolvingModel value) { m_conflictResolvingModelHasBeenSet = true; m_conflictResolvingModel = value; }
+    inline ConflictResolution& WithConflictResolvingModel(ConflictResolvingModel value) { SetConflictResolvingModel(value); return *this;}
     ///@}
 
     ///@{
@@ -63,18 +61,16 @@ namespace Model
      * conflicts when choosing <code>SOURCE</code> as the
      * <code>ConflictResolvingModel</code>.</p>
      */
-    inline const Aws::String& GetSourceName() const{ return m_sourceName; }
+    inline const Aws::String& GetSourceName() const { return m_sourceName; }
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }
-    inline void SetSourceName(const Aws::String& value) { m_sourceNameHasBeenSet = true; m_sourceName = value; }
-    inline void SetSourceName(Aws::String&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::move(value); }
-    inline void SetSourceName(const char* value) { m_sourceNameHasBeenSet = true; m_sourceName.assign(value); }
-    inline ConflictResolution& WithSourceName(const Aws::String& value) { SetSourceName(value); return *this;}
-    inline ConflictResolution& WithSourceName(Aws::String&& value) { SetSourceName(std::move(value)); return *this;}
-    inline ConflictResolution& WithSourceName(const char* value) { SetSourceName(value); return *this;}
+    template<typename SourceNameT = Aws::String>
+    void SetSourceName(SourceNameT&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::forward<SourceNameT>(value); }
+    template<typename SourceNameT = Aws::String>
+    ConflictResolution& WithSourceName(SourceNameT&& value) { SetSourceName(std::forward<SourceNameT>(value)); return *this;}
     ///@}
   private:
 
-    ConflictResolvingModel m_conflictResolvingModel;
+    ConflictResolvingModel m_conflictResolvingModel{ConflictResolvingModel::NOT_SET};
     bool m_conflictResolvingModelHasBeenSet = false;
 
     Aws::String m_sourceName;

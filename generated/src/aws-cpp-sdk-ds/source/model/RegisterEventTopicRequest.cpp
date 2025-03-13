@@ -12,12 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterEventTopicRequest::RegisterEventTopicRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
-{
-}
-
 Aws::String RegisterEventTopicRequest::SerializePayload() const
 {
   JsonValue payload;

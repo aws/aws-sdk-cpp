@@ -18,19 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-CreateReplicationGroupMemberAction::CreateReplicationGroupMemberAction() : 
-    m_regionNameHasBeenSet(false),
-    m_kMSMasterKeyIdHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false),
-    m_onDemandThroughputOverrideHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_tableClassOverride(TableClass::NOT_SET),
-    m_tableClassOverrideHasBeenSet(false)
-{
-}
-
 CreateReplicationGroupMemberAction::CreateReplicationGroupMemberAction(JsonView jsonValue)
-  : CreateReplicationGroupMemberAction()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ CreateReplicationGroupMemberAction& CreateReplicationGroupMemberAction::operator
   if(jsonValue.ValueExists("RegionName"))
   {
     m_regionName = jsonValue.GetString("RegionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSMasterKeyId"))
   {
     m_kMSMasterKeyId = jsonValue.GetString("KMSMasterKeyId");
-
     m_kMSMasterKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedThroughputOverride"))
   {
     m_provisionedThroughputOverride = jsonValue.GetObject("ProvisionedThroughputOverride");
-
     m_provisionedThroughputOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandThroughputOverride"))
   {
     m_onDemandThroughputOverride = jsonValue.GetObject("OnDemandThroughputOverride");
-
     m_onDemandThroughputOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
     Aws::Utils::Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
@@ -74,14 +54,11 @@ CreateReplicationGroupMemberAction& CreateReplicationGroupMemberAction::operator
     }
     m_globalSecondaryIndexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableClassOverride"))
   {
     m_tableClassOverride = TableClassMapper::GetTableClassForName(jsonValue.GetString("TableClassOverride"));
-
     m_tableClassOverrideHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class DataSourceConfig
   {
   public:
-    AWS_ROBOMAKER_API DataSourceConfig();
+    AWS_ROBOMAKER_API DataSourceConfig() = default;
     AWS_ROBOMAKER_API DataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API DataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,43 +43,38 @@ namespace Model
     /**
      * <p>The name of the data source.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DataSourceConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DataSourceConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DataSourceConfig& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DataSourceConfig& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 bucket where the data files are located.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline DataSourceConfig& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline DataSourceConfig& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline DataSourceConfig& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    DataSourceConfig& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of S3 keys identifying the data source files.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetS3Keys() const{ return m_s3Keys; }
+    inline const Aws::Vector<Aws::String>& GetS3Keys() const { return m_s3Keys; }
     inline bool S3KeysHasBeenSet() const { return m_s3KeysHasBeenSet; }
-    inline void SetS3Keys(const Aws::Vector<Aws::String>& value) { m_s3KeysHasBeenSet = true; m_s3Keys = value; }
-    inline void SetS3Keys(Aws::Vector<Aws::String>&& value) { m_s3KeysHasBeenSet = true; m_s3Keys = std::move(value); }
-    inline DataSourceConfig& WithS3Keys(const Aws::Vector<Aws::String>& value) { SetS3Keys(value); return *this;}
-    inline DataSourceConfig& WithS3Keys(Aws::Vector<Aws::String>&& value) { SetS3Keys(std::move(value)); return *this;}
-    inline DataSourceConfig& AddS3Keys(const Aws::String& value) { m_s3KeysHasBeenSet = true; m_s3Keys.push_back(value); return *this; }
-    inline DataSourceConfig& AddS3Keys(Aws::String&& value) { m_s3KeysHasBeenSet = true; m_s3Keys.push_back(std::move(value)); return *this; }
-    inline DataSourceConfig& AddS3Keys(const char* value) { m_s3KeysHasBeenSet = true; m_s3Keys.push_back(value); return *this; }
+    template<typename S3KeysT = Aws::Vector<Aws::String>>
+    void SetS3Keys(S3KeysT&& value) { m_s3KeysHasBeenSet = true; m_s3Keys = std::forward<S3KeysT>(value); }
+    template<typename S3KeysT = Aws::Vector<Aws::String>>
+    DataSourceConfig& WithS3Keys(S3KeysT&& value) { SetS3Keys(std::forward<S3KeysT>(value)); return *this;}
+    template<typename S3KeysT = Aws::String>
+    DataSourceConfig& AddS3Keys(S3KeysT&& value) { m_s3KeysHasBeenSet = true; m_s3Keys.emplace_back(std::forward<S3KeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,12 +84,10 @@ namespace Model
      * an Archive, an Amazon S3 prefix, or a file.</p> <p>If you don't specify a field,
      * the default value is <code>File</code>.</p>
      */
-    inline const DataSourceType& GetType() const{ return m_type; }
+    inline DataSourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DataSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DataSourceConfig& WithType(const DataSourceType& value) { SetType(value); return *this;}
-    inline DataSourceConfig& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DataSourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DataSourceConfig& WithType(DataSourceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +102,12 @@ namespace Model
      * <code>type</code> of the data source as a <code>File</code>, you provide the
      * Amazon S3 path to the file that you're using as your data source.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline DataSourceConfig& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline DataSourceConfig& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline DataSourceConfig& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    DataSourceConfig& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
   private:
 
@@ -129,7 +120,7 @@ namespace Model
     Aws::Vector<Aws::String> m_s3Keys;
     bool m_s3KeysHasBeenSet = false;
 
-    DataSourceType m_type;
+    DataSourceType m_type{DataSourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_destination;

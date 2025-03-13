@@ -28,7 +28,7 @@ namespace Model
   class CreateFileCacheResult
   {
   public:
-    AWS_FSX_API CreateFileCacheResult();
+    AWS_FSX_API CreateFileCacheResult() = default;
     AWS_FSX_API CreateFileCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API CreateFileCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A description of the cache that was created.</p>
      */
-    inline const FileCacheCreating& GetFileCache() const{ return m_fileCache; }
-    inline void SetFileCache(const FileCacheCreating& value) { m_fileCache = value; }
-    inline void SetFileCache(FileCacheCreating&& value) { m_fileCache = std::move(value); }
-    inline CreateFileCacheResult& WithFileCache(const FileCacheCreating& value) { SetFileCache(value); return *this;}
-    inline CreateFileCacheResult& WithFileCache(FileCacheCreating&& value) { SetFileCache(std::move(value)); return *this;}
+    inline const FileCacheCreating& GetFileCache() const { return m_fileCache; }
+    template<typename FileCacheT = FileCacheCreating>
+    void SetFileCache(FileCacheT&& value) { m_fileCacheHasBeenSet = true; m_fileCache = std::forward<FileCacheT>(value); }
+    template<typename FileCacheT = FileCacheCreating>
+    CreateFileCacheResult& WithFileCache(FileCacheT&& value) { SetFileCache(std::forward<FileCacheT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFileCacheResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFileCacheResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFileCacheResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFileCacheResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FileCacheCreating m_fileCache;
+    bool m_fileCacheHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

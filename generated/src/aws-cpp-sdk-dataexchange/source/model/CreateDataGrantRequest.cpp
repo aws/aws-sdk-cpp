@@ -12,18 +12,6 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataGrantRequest::CreateDataGrantRequest() : 
-    m_nameHasBeenSet(false),
-    m_grantDistributionScope(GrantDistributionScope::NOT_SET),
-    m_grantDistributionScopeHasBeenSet(false),
-    m_receiverPrincipalHasBeenSet(false),
-    m_sourceDataSetIdHasBeenSet(false),
-    m_endsAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataGrantRequest::SerializePayload() const
 {
   JsonValue payload;

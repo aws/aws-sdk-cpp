@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-DestinationSettings::DestinationSettings() : 
-    m_s3SettingsHasBeenSet(false)
-{
-}
-
 DestinationSettings::DestinationSettings(JsonView jsonValue)
-  : DestinationSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DestinationSettings& DestinationSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Settings"))
   {
     m_s3Settings = jsonValue.GetObject("s3Settings");
-
     m_s3SettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

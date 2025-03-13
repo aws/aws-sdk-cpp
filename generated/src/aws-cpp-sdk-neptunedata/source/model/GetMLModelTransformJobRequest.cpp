@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetMLModelTransformJobRequest::GetMLModelTransformJobRequest() : 
-    m_idHasBeenSet(false),
-    m_neptuneIamRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String GetMLModelTransformJobRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class M2ManagedActionProperties
   {
   public:
-    AWS_APPTEST_API M2ManagedActionProperties();
+    AWS_APPTEST_API M2ManagedActionProperties() = default;
     AWS_APPTEST_API M2ManagedActionProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API M2ManagedActionProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Force stops the AWS Mainframe Modernization managed action properties.</p>
      */
-    inline bool GetForceStop() const{ return m_forceStop; }
+    inline bool GetForceStop() const { return m_forceStop; }
     inline bool ForceStopHasBeenSet() const { return m_forceStopHasBeenSet; }
     inline void SetForceStop(bool value) { m_forceStopHasBeenSet = true; m_forceStop = value; }
     inline M2ManagedActionProperties& WithForceStop(bool value) { SetForceStop(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
      * <p>The import data set location of the AWS Mainframe Modernization managed
      * action properties.</p>
      */
-    inline const Aws::String& GetImportDataSetLocation() const{ return m_importDataSetLocation; }
+    inline const Aws::String& GetImportDataSetLocation() const { return m_importDataSetLocation; }
     inline bool ImportDataSetLocationHasBeenSet() const { return m_importDataSetLocationHasBeenSet; }
-    inline void SetImportDataSetLocation(const Aws::String& value) { m_importDataSetLocationHasBeenSet = true; m_importDataSetLocation = value; }
-    inline void SetImportDataSetLocation(Aws::String&& value) { m_importDataSetLocationHasBeenSet = true; m_importDataSetLocation = std::move(value); }
-    inline void SetImportDataSetLocation(const char* value) { m_importDataSetLocationHasBeenSet = true; m_importDataSetLocation.assign(value); }
-    inline M2ManagedActionProperties& WithImportDataSetLocation(const Aws::String& value) { SetImportDataSetLocation(value); return *this;}
-    inline M2ManagedActionProperties& WithImportDataSetLocation(Aws::String&& value) { SetImportDataSetLocation(std::move(value)); return *this;}
-    inline M2ManagedActionProperties& WithImportDataSetLocation(const char* value) { SetImportDataSetLocation(value); return *this;}
+    template<typename ImportDataSetLocationT = Aws::String>
+    void SetImportDataSetLocation(ImportDataSetLocationT&& value) { m_importDataSetLocationHasBeenSet = true; m_importDataSetLocation = std::forward<ImportDataSetLocationT>(value); }
+    template<typename ImportDataSetLocationT = Aws::String>
+    M2ManagedActionProperties& WithImportDataSetLocation(ImportDataSetLocationT&& value) { SetImportDataSetLocation(std::forward<ImportDataSetLocationT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_forceStop;
+    bool m_forceStop{false};
     bool m_forceStopHasBeenSet = false;
 
     Aws::String m_importDataSetLocation;

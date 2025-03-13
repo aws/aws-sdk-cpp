@@ -18,13 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-NetworkFrameworkConfiguration::NetworkFrameworkConfiguration() : 
-    m_fabricHasBeenSet(false)
-{
-}
-
 NetworkFrameworkConfiguration::NetworkFrameworkConfiguration(JsonView jsonValue)
-  : NetworkFrameworkConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NetworkFrameworkConfiguration& NetworkFrameworkConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("Fabric"))
   {
     m_fabric = jsonValue.GetObject("Fabric");
-
     m_fabricHasBeenSet = true;
   }
-
   return *this;
 }
 

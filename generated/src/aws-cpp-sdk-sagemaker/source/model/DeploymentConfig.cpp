@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DeploymentConfig::DeploymentConfig() : 
-    m_blueGreenUpdatePolicyHasBeenSet(false),
-    m_rollingUpdatePolicyHasBeenSet(false),
-    m_autoRollbackConfigurationHasBeenSet(false)
-{
-}
-
 DeploymentConfig::DeploymentConfig(JsonView jsonValue)
-  : DeploymentConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DeploymentConfig& DeploymentConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BlueGreenUpdatePolicy"))
   {
     m_blueGreenUpdatePolicy = jsonValue.GetObject("BlueGreenUpdatePolicy");
-
     m_blueGreenUpdatePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RollingUpdatePolicy"))
   {
     m_rollingUpdatePolicy = jsonValue.GetObject("RollingUpdatePolicy");
-
     m_rollingUpdatePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoRollbackConfiguration"))
   {
     m_autoRollbackConfiguration = jsonValue.GetObject("AutoRollbackConfiguration");
-
     m_autoRollbackConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

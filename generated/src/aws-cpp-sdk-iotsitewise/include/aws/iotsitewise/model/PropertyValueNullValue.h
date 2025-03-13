@@ -32,7 +32,7 @@ namespace Model
   class PropertyValueNullValue
   {
   public:
-    AWS_IOTSITEWISE_API PropertyValueNullValue();
+    AWS_IOTSITEWISE_API PropertyValueNullValue() = default;
     AWS_IOTSITEWISE_API PropertyValueNullValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API PropertyValueNullValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The type of null asset property data.</p>
      */
-    inline const RawValueType& GetValueType() const{ return m_valueType; }
+    inline RawValueType GetValueType() const { return m_valueType; }
     inline bool ValueTypeHasBeenSet() const { return m_valueTypeHasBeenSet; }
-    inline void SetValueType(const RawValueType& value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
-    inline void SetValueType(RawValueType&& value) { m_valueTypeHasBeenSet = true; m_valueType = std::move(value); }
-    inline PropertyValueNullValue& WithValueType(const RawValueType& value) { SetValueType(value); return *this;}
-    inline PropertyValueNullValue& WithValueType(RawValueType&& value) { SetValueType(std::move(value)); return *this;}
+    inline void SetValueType(RawValueType value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
+    inline PropertyValueNullValue& WithValueType(RawValueType value) { SetValueType(value); return *this;}
     ///@}
   private:
 
-    RawValueType m_valueType;
+    RawValueType m_valueType{RawValueType::NOT_SET};
     bool m_valueTypeHasBeenSet = false;
   };
 

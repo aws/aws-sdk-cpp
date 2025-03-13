@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteFunctionUrlConfigRequest::DeleteFunctionUrlConfigRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_qualifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFunctionUrlConfigRequest::SerializePayload() const
 {
   return {};

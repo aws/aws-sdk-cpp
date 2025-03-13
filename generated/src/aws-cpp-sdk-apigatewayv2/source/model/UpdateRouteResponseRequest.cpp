@@ -12,17 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRouteResponseRequest::UpdateRouteResponseRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_modelSelectionExpressionHasBeenSet(false),
-    m_responseModelsHasBeenSet(false),
-    m_responseParametersHasBeenSet(false),
-    m_routeIdHasBeenSet(false),
-    m_routeResponseIdHasBeenSet(false),
-    m_routeResponseKeyHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRouteResponseRequest::SerializePayload() const
 {
   JsonValue payload;

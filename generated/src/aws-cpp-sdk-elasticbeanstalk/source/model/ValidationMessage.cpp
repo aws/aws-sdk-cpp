@@ -20,17 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ValidationMessage::ValidationMessage() : 
-    m_messageHasBeenSet(false),
-    m_severity(ValidationSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_optionNameHasBeenSet(false)
-{
-}
-
 ValidationMessage::ValidationMessage(const XmlNode& xmlNode)
-  : ValidationMessage()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ ValidationMessage& ValidationMessage::operator =(const XmlNode& xmlNode)
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
     XmlNode severityNode = resultNode.FirstChild("Severity");
     if(!severityNode.IsNull())
     {
-      m_severity = ValidationSeverityMapper::GetValidationSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(severityNode.GetText()).c_str()).c_str());
+      m_severity = ValidationSeverityMapper::GetValidationSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(severityNode.GetText()).c_str()));
       m_severityHasBeenSet = true;
+       m_severityHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
       m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
+       m_namespaceHasBeenSet = true;
     }
     XmlNode optionNameNode = resultNode.FirstChild("OptionName");
     if(!optionNameNode.IsNull())
     {
       m_optionName = Aws::Utils::Xml::DecodeEscapedXmlText(optionNameNode.GetText());
       m_optionNameHasBeenSet = true;
+       m_optionNameHasBeenSet = true;
     }
   }
 

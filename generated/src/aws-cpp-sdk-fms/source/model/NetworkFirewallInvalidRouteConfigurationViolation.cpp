@@ -18,29 +18,7 @@ namespace FMS
 namespace Model
 {
 
-NetworkFirewallInvalidRouteConfigurationViolation::NetworkFirewallInvalidRouteConfigurationViolation() : 
-    m_affectedSubnetsHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_isRouteTableUsedInDifferentAZ(false),
-    m_isRouteTableUsedInDifferentAZHasBeenSet(false),
-    m_violatingRouteHasBeenSet(false),
-    m_currentFirewallSubnetRouteTableHasBeenSet(false),
-    m_expectedFirewallEndpointHasBeenSet(false),
-    m_actualFirewallEndpointHasBeenSet(false),
-    m_expectedFirewallSubnetIdHasBeenSet(false),
-    m_actualFirewallSubnetIdHasBeenSet(false),
-    m_expectedFirewallSubnetRoutesHasBeenSet(false),
-    m_actualFirewallSubnetRoutesHasBeenSet(false),
-    m_internetGatewayIdHasBeenSet(false),
-    m_currentInternetGatewayRouteTableHasBeenSet(false),
-    m_expectedInternetGatewayRoutesHasBeenSet(false),
-    m_actualInternetGatewayRoutesHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 NetworkFirewallInvalidRouteConfigurationViolation::NetworkFirewallInvalidRouteConfigurationViolation(JsonView jsonValue)
-  : NetworkFirewallInvalidRouteConfigurationViolation()
 {
   *this = jsonValue;
 }
@@ -56,63 +34,46 @@ NetworkFirewallInvalidRouteConfigurationViolation& NetworkFirewallInvalidRouteCo
     }
     m_affectedSubnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteTableId"))
   {
     m_routeTableId = jsonValue.GetString("RouteTableId");
-
     m_routeTableIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsRouteTableUsedInDifferentAZ"))
   {
     m_isRouteTableUsedInDifferentAZ = jsonValue.GetBool("IsRouteTableUsedInDifferentAZ");
-
     m_isRouteTableUsedInDifferentAZHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViolatingRoute"))
   {
     m_violatingRoute = jsonValue.GetObject("ViolatingRoute");
-
     m_violatingRouteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentFirewallSubnetRouteTable"))
   {
     m_currentFirewallSubnetRouteTable = jsonValue.GetString("CurrentFirewallSubnetRouteTable");
-
     m_currentFirewallSubnetRouteTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedFirewallEndpoint"))
   {
     m_expectedFirewallEndpoint = jsonValue.GetString("ExpectedFirewallEndpoint");
-
     m_expectedFirewallEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActualFirewallEndpoint"))
   {
     m_actualFirewallEndpoint = jsonValue.GetString("ActualFirewallEndpoint");
-
     m_actualFirewallEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedFirewallSubnetId"))
   {
     m_expectedFirewallSubnetId = jsonValue.GetString("ExpectedFirewallSubnetId");
-
     m_expectedFirewallSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActualFirewallSubnetId"))
   {
     m_actualFirewallSubnetId = jsonValue.GetString("ActualFirewallSubnetId");
-
     m_actualFirewallSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedFirewallSubnetRoutes"))
   {
     Aws::Utils::Array<JsonView> expectedFirewallSubnetRoutesJsonList = jsonValue.GetArray("ExpectedFirewallSubnetRoutes");
@@ -122,7 +83,6 @@ NetworkFirewallInvalidRouteConfigurationViolation& NetworkFirewallInvalidRouteCo
     }
     m_expectedFirewallSubnetRoutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActualFirewallSubnetRoutes"))
   {
     Aws::Utils::Array<JsonView> actualFirewallSubnetRoutesJsonList = jsonValue.GetArray("ActualFirewallSubnetRoutes");
@@ -132,21 +92,16 @@ NetworkFirewallInvalidRouteConfigurationViolation& NetworkFirewallInvalidRouteCo
     }
     m_actualFirewallSubnetRoutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InternetGatewayId"))
   {
     m_internetGatewayId = jsonValue.GetString("InternetGatewayId");
-
     m_internetGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentInternetGatewayRouteTable"))
   {
     m_currentInternetGatewayRouteTable = jsonValue.GetString("CurrentInternetGatewayRouteTable");
-
     m_currentInternetGatewayRouteTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedInternetGatewayRoutes"))
   {
     Aws::Utils::Array<JsonView> expectedInternetGatewayRoutesJsonList = jsonValue.GetArray("ExpectedInternetGatewayRoutes");
@@ -156,7 +111,6 @@ NetworkFirewallInvalidRouteConfigurationViolation& NetworkFirewallInvalidRouteCo
     }
     m_expectedInternetGatewayRoutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActualInternetGatewayRoutes"))
   {
     Aws::Utils::Array<JsonView> actualInternetGatewayRoutesJsonList = jsonValue.GetArray("ActualInternetGatewayRoutes");
@@ -166,14 +120,11 @@ NetworkFirewallInvalidRouteConfigurationViolation& NetworkFirewallInvalidRouteCo
     }
     m_actualInternetGatewayRoutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

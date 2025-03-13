@@ -29,7 +29,7 @@ namespace Model
   class ListCustomVocabularyItemsResult
   {
   public:
-    AWS_LEXMODELSV2_API ListCustomVocabularyItemsResult();
+    AWS_LEXMODELSV2_API ListCustomVocabularyItemsResult() = default;
     AWS_LEXMODELSV2_API ListCustomVocabularyItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API ListCustomVocabularyItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The identifier of the bot associated with this custom vocabulary.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline ListCustomVocabularyItemsResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListCustomVocabularyItemsResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListCustomVocabularyItemsResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListCustomVocabularyItemsResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,13 +50,11 @@ namespace Model
      * <p>The identifier of the version of the bot associated with this custom
      * vocabulary.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
-    inline ListCustomVocabularyItemsResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline ListCustomVocabularyItemsResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline ListCustomVocabularyItemsResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    ListCustomVocabularyItemsResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,64 +64,64 @@ namespace Model
      * see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">
      * Supported Languages </a>.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeId.assign(value); }
-    inline ListCustomVocabularyItemsResult& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline ListCustomVocabularyItemsResult& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline ListCustomVocabularyItemsResult& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    ListCustomVocabularyItemsResult& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom vocabulary items from the list custom vocabulary response.</p>
      */
-    inline const Aws::Vector<CustomVocabularyItem>& GetCustomVocabularyItems() const{ return m_customVocabularyItems; }
-    inline void SetCustomVocabularyItems(const Aws::Vector<CustomVocabularyItem>& value) { m_customVocabularyItems = value; }
-    inline void SetCustomVocabularyItems(Aws::Vector<CustomVocabularyItem>&& value) { m_customVocabularyItems = std::move(value); }
-    inline ListCustomVocabularyItemsResult& WithCustomVocabularyItems(const Aws::Vector<CustomVocabularyItem>& value) { SetCustomVocabularyItems(value); return *this;}
-    inline ListCustomVocabularyItemsResult& WithCustomVocabularyItems(Aws::Vector<CustomVocabularyItem>&& value) { SetCustomVocabularyItems(std::move(value)); return *this;}
-    inline ListCustomVocabularyItemsResult& AddCustomVocabularyItems(const CustomVocabularyItem& value) { m_customVocabularyItems.push_back(value); return *this; }
-    inline ListCustomVocabularyItemsResult& AddCustomVocabularyItems(CustomVocabularyItem&& value) { m_customVocabularyItems.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CustomVocabularyItem>& GetCustomVocabularyItems() const { return m_customVocabularyItems; }
+    template<typename CustomVocabularyItemsT = Aws::Vector<CustomVocabularyItem>>
+    void SetCustomVocabularyItems(CustomVocabularyItemsT&& value) { m_customVocabularyItemsHasBeenSet = true; m_customVocabularyItems = std::forward<CustomVocabularyItemsT>(value); }
+    template<typename CustomVocabularyItemsT = Aws::Vector<CustomVocabularyItem>>
+    ListCustomVocabularyItemsResult& WithCustomVocabularyItems(CustomVocabularyItemsT&& value) { SetCustomVocabularyItems(std::forward<CustomVocabularyItemsT>(value)); return *this;}
+    template<typename CustomVocabularyItemsT = CustomVocabularyItem>
+    ListCustomVocabularyItemsResult& AddCustomVocabularyItems(CustomVocabularyItemsT&& value) { m_customVocabularyItemsHasBeenSet = true; m_customVocabularyItems.emplace_back(std::forward<CustomVocabularyItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The nextToken identifier to the list custom vocabulary response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCustomVocabularyItemsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCustomVocabularyItemsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCustomVocabularyItemsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCustomVocabularyItemsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCustomVocabularyItemsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCustomVocabularyItemsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCustomVocabularyItemsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCustomVocabularyItemsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
+    bool m_localeIdHasBeenSet = false;
 
     Aws::Vector<CustomVocabularyItem> m_customVocabularyItems;
+    bool m_customVocabularyItemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

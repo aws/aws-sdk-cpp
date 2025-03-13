@@ -12,13 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccessPolicyRequest::GetAccessPolicyRequest() : 
-    m_type(AccessPolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetAccessPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

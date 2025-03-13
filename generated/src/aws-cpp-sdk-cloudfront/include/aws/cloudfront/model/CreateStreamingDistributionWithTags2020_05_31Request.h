@@ -25,7 +25,7 @@ namespace Model
   class CreateStreamingDistributionWithTags2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API CreateStreamingDistributionWithTags2020_05_31Request();
+    AWS_CLOUDFRONT_API CreateStreamingDistributionWithTags2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,12 @@ namespace Model
     /**
      * <p>The streaming distribution's configuration information.</p>
      */
-    inline const StreamingDistributionConfigWithTags& GetStreamingDistributionConfigWithTags() const{ return m_streamingDistributionConfigWithTags; }
+    inline const StreamingDistributionConfigWithTags& GetStreamingDistributionConfigWithTags() const { return m_streamingDistributionConfigWithTags; }
     inline bool StreamingDistributionConfigWithTagsHasBeenSet() const { return m_streamingDistributionConfigWithTagsHasBeenSet; }
-    inline void SetStreamingDistributionConfigWithTags(const StreamingDistributionConfigWithTags& value) { m_streamingDistributionConfigWithTagsHasBeenSet = true; m_streamingDistributionConfigWithTags = value; }
-    inline void SetStreamingDistributionConfigWithTags(StreamingDistributionConfigWithTags&& value) { m_streamingDistributionConfigWithTagsHasBeenSet = true; m_streamingDistributionConfigWithTags = std::move(value); }
-    inline CreateStreamingDistributionWithTags2020_05_31Request& WithStreamingDistributionConfigWithTags(const StreamingDistributionConfigWithTags& value) { SetStreamingDistributionConfigWithTags(value); return *this;}
-    inline CreateStreamingDistributionWithTags2020_05_31Request& WithStreamingDistributionConfigWithTags(StreamingDistributionConfigWithTags&& value) { SetStreamingDistributionConfigWithTags(std::move(value)); return *this;}
+    template<typename StreamingDistributionConfigWithTagsT = StreamingDistributionConfigWithTags>
+    void SetStreamingDistributionConfigWithTags(StreamingDistributionConfigWithTagsT&& value) { m_streamingDistributionConfigWithTagsHasBeenSet = true; m_streamingDistributionConfigWithTags = std::forward<StreamingDistributionConfigWithTagsT>(value); }
+    template<typename StreamingDistributionConfigWithTagsT = StreamingDistributionConfigWithTags>
+    CreateStreamingDistributionWithTags2020_05_31Request& WithStreamingDistributionConfigWithTags(StreamingDistributionConfigWithTagsT&& value) { SetStreamingDistributionConfigWithTags(std::forward<StreamingDistributionConfigWithTagsT>(value)); return *this;}
     ///@}
   private:
 

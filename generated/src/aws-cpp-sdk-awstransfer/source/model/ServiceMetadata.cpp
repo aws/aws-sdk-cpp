@@ -18,13 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ServiceMetadata::ServiceMetadata() : 
-    m_userDetailsHasBeenSet(false)
-{
-}
-
 ServiceMetadata::ServiceMetadata(JsonView jsonValue)
-  : ServiceMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServiceMetadata& ServiceMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserDetails"))
   {
     m_userDetails = jsonValue.GetObject("UserDetails");
-
     m_userDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

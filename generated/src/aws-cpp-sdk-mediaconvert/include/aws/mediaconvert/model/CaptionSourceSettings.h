@@ -41,7 +41,7 @@ namespace Model
   class CaptionSourceSettings
   {
   public:
-    AWS_MEDIACONVERT_API CaptionSourceSettings();
+    AWS_MEDIACONVERT_API CaptionSourceSettings() = default;
     AWS_MEDIACONVERT_API CaptionSourceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API CaptionSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,36 +51,36 @@ namespace Model
     /**
      * Settings for ancillary captions source.
      */
-    inline const AncillarySourceSettings& GetAncillarySourceSettings() const{ return m_ancillarySourceSettings; }
+    inline const AncillarySourceSettings& GetAncillarySourceSettings() const { return m_ancillarySourceSettings; }
     inline bool AncillarySourceSettingsHasBeenSet() const { return m_ancillarySourceSettingsHasBeenSet; }
-    inline void SetAncillarySourceSettings(const AncillarySourceSettings& value) { m_ancillarySourceSettingsHasBeenSet = true; m_ancillarySourceSettings = value; }
-    inline void SetAncillarySourceSettings(AncillarySourceSettings&& value) { m_ancillarySourceSettingsHasBeenSet = true; m_ancillarySourceSettings = std::move(value); }
-    inline CaptionSourceSettings& WithAncillarySourceSettings(const AncillarySourceSettings& value) { SetAncillarySourceSettings(value); return *this;}
-    inline CaptionSourceSettings& WithAncillarySourceSettings(AncillarySourceSettings&& value) { SetAncillarySourceSettings(std::move(value)); return *this;}
+    template<typename AncillarySourceSettingsT = AncillarySourceSettings>
+    void SetAncillarySourceSettings(AncillarySourceSettingsT&& value) { m_ancillarySourceSettingsHasBeenSet = true; m_ancillarySourceSettings = std::forward<AncillarySourceSettingsT>(value); }
+    template<typename AncillarySourceSettingsT = AncillarySourceSettings>
+    CaptionSourceSettings& WithAncillarySourceSettings(AncillarySourceSettingsT&& value) { SetAncillarySourceSettings(std::forward<AncillarySourceSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * DVB Sub Source Settings
      */
-    inline const DvbSubSourceSettings& GetDvbSubSourceSettings() const{ return m_dvbSubSourceSettings; }
+    inline const DvbSubSourceSettings& GetDvbSubSourceSettings() const { return m_dvbSubSourceSettings; }
     inline bool DvbSubSourceSettingsHasBeenSet() const { return m_dvbSubSourceSettingsHasBeenSet; }
-    inline void SetDvbSubSourceSettings(const DvbSubSourceSettings& value) { m_dvbSubSourceSettingsHasBeenSet = true; m_dvbSubSourceSettings = value; }
-    inline void SetDvbSubSourceSettings(DvbSubSourceSettings&& value) { m_dvbSubSourceSettingsHasBeenSet = true; m_dvbSubSourceSettings = std::move(value); }
-    inline CaptionSourceSettings& WithDvbSubSourceSettings(const DvbSubSourceSettings& value) { SetDvbSubSourceSettings(value); return *this;}
-    inline CaptionSourceSettings& WithDvbSubSourceSettings(DvbSubSourceSettings&& value) { SetDvbSubSourceSettings(std::move(value)); return *this;}
+    template<typename DvbSubSourceSettingsT = DvbSubSourceSettings>
+    void SetDvbSubSourceSettings(DvbSubSourceSettingsT&& value) { m_dvbSubSourceSettingsHasBeenSet = true; m_dvbSubSourceSettings = std::forward<DvbSubSourceSettingsT>(value); }
+    template<typename DvbSubSourceSettingsT = DvbSubSourceSettings>
+    CaptionSourceSettings& WithDvbSubSourceSettings(DvbSubSourceSettingsT&& value) { SetDvbSubSourceSettings(std::forward<DvbSubSourceSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Settings for embedded captions Source
      */
-    inline const EmbeddedSourceSettings& GetEmbeddedSourceSettings() const{ return m_embeddedSourceSettings; }
+    inline const EmbeddedSourceSettings& GetEmbeddedSourceSettings() const { return m_embeddedSourceSettings; }
     inline bool EmbeddedSourceSettingsHasBeenSet() const { return m_embeddedSourceSettingsHasBeenSet; }
-    inline void SetEmbeddedSourceSettings(const EmbeddedSourceSettings& value) { m_embeddedSourceSettingsHasBeenSet = true; m_embeddedSourceSettings = value; }
-    inline void SetEmbeddedSourceSettings(EmbeddedSourceSettings&& value) { m_embeddedSourceSettingsHasBeenSet = true; m_embeddedSourceSettings = std::move(value); }
-    inline CaptionSourceSettings& WithEmbeddedSourceSettings(const EmbeddedSourceSettings& value) { SetEmbeddedSourceSettings(value); return *this;}
-    inline CaptionSourceSettings& WithEmbeddedSourceSettings(EmbeddedSourceSettings&& value) { SetEmbeddedSourceSettings(std::move(value)); return *this;}
+    template<typename EmbeddedSourceSettingsT = EmbeddedSourceSettings>
+    void SetEmbeddedSourceSettings(EmbeddedSourceSettingsT&& value) { m_embeddedSourceSettingsHasBeenSet = true; m_embeddedSourceSettings = std::forward<EmbeddedSourceSettingsT>(value); }
+    template<typename EmbeddedSourceSettingsT = EmbeddedSourceSettings>
+    CaptionSourceSettings& WithEmbeddedSourceSettings(EmbeddedSourceSettingsT&& value) { SetEmbeddedSourceSettings(std::forward<EmbeddedSourceSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +90,12 @@ namespace Model
      * source is IMSC in an IMF package, use TrackSourceSettings instead of
      * FileSoureSettings.
      */
-    inline const FileSourceSettings& GetFileSourceSettings() const{ return m_fileSourceSettings; }
+    inline const FileSourceSettings& GetFileSourceSettings() const { return m_fileSourceSettings; }
     inline bool FileSourceSettingsHasBeenSet() const { return m_fileSourceSettingsHasBeenSet; }
-    inline void SetFileSourceSettings(const FileSourceSettings& value) { m_fileSourceSettingsHasBeenSet = true; m_fileSourceSettings = value; }
-    inline void SetFileSourceSettings(FileSourceSettings&& value) { m_fileSourceSettingsHasBeenSet = true; m_fileSourceSettings = std::move(value); }
-    inline CaptionSourceSettings& WithFileSourceSettings(const FileSourceSettings& value) { SetFileSourceSettings(value); return *this;}
-    inline CaptionSourceSettings& WithFileSourceSettings(FileSourceSettings&& value) { SetFileSourceSettings(std::move(value)); return *this;}
+    template<typename FileSourceSettingsT = FileSourceSettings>
+    void SetFileSourceSettings(FileSourceSettingsT&& value) { m_fileSourceSettingsHasBeenSet = true; m_fileSourceSettings = std::forward<FileSourceSettingsT>(value); }
+    template<typename FileSourceSettingsT = FileSourceSettings>
+    CaptionSourceSettings& WithFileSourceSettings(FileSourceSettingsT&& value) { SetFileSourceSettings(std::forward<FileSourceSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,24 +103,22 @@ namespace Model
      * Use Source to identify the format of your input captions. The service cannot
      * auto-detect caption format.
      */
-    inline const CaptionSourceType& GetSourceType() const{ return m_sourceType; }
+    inline CaptionSourceType GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const CaptionSourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(CaptionSourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline CaptionSourceSettings& WithSourceType(const CaptionSourceType& value) { SetSourceType(value); return *this;}
-    inline CaptionSourceSettings& WithSourceType(CaptionSourceType&& value) { SetSourceType(std::move(value)); return *this;}
+    inline void SetSourceType(CaptionSourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline CaptionSourceSettings& WithSourceType(CaptionSourceType value) { SetSourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Settings specific to Teletext caption sources, including Page number.
      */
-    inline const TeletextSourceSettings& GetTeletextSourceSettings() const{ return m_teletextSourceSettings; }
+    inline const TeletextSourceSettings& GetTeletextSourceSettings() const { return m_teletextSourceSettings; }
     inline bool TeletextSourceSettingsHasBeenSet() const { return m_teletextSourceSettingsHasBeenSet; }
-    inline void SetTeletextSourceSettings(const TeletextSourceSettings& value) { m_teletextSourceSettingsHasBeenSet = true; m_teletextSourceSettings = value; }
-    inline void SetTeletextSourceSettings(TeletextSourceSettings&& value) { m_teletextSourceSettingsHasBeenSet = true; m_teletextSourceSettings = std::move(value); }
-    inline CaptionSourceSettings& WithTeletextSourceSettings(const TeletextSourceSettings& value) { SetTeletextSourceSettings(value); return *this;}
-    inline CaptionSourceSettings& WithTeletextSourceSettings(TeletextSourceSettings&& value) { SetTeletextSourceSettings(std::move(value)); return *this;}
+    template<typename TeletextSourceSettingsT = TeletextSourceSettings>
+    void SetTeletextSourceSettings(TeletextSourceSettingsT&& value) { m_teletextSourceSettingsHasBeenSet = true; m_teletextSourceSettings = std::forward<TeletextSourceSettingsT>(value); }
+    template<typename TeletextSourceSettingsT = TeletextSourceSettings>
+    CaptionSourceSettings& WithTeletextSourceSettings(TeletextSourceSettingsT&& value) { SetTeletextSourceSettings(std::forward<TeletextSourceSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,12 +128,12 @@ namespace Model
      * is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of
      * TrackSourceSettings.
      */
-    inline const TrackSourceSettings& GetTrackSourceSettings() const{ return m_trackSourceSettings; }
+    inline const TrackSourceSettings& GetTrackSourceSettings() const { return m_trackSourceSettings; }
     inline bool TrackSourceSettingsHasBeenSet() const { return m_trackSourceSettingsHasBeenSet; }
-    inline void SetTrackSourceSettings(const TrackSourceSettings& value) { m_trackSourceSettingsHasBeenSet = true; m_trackSourceSettings = value; }
-    inline void SetTrackSourceSettings(TrackSourceSettings&& value) { m_trackSourceSettingsHasBeenSet = true; m_trackSourceSettings = std::move(value); }
-    inline CaptionSourceSettings& WithTrackSourceSettings(const TrackSourceSettings& value) { SetTrackSourceSettings(value); return *this;}
-    inline CaptionSourceSettings& WithTrackSourceSettings(TrackSourceSettings&& value) { SetTrackSourceSettings(std::move(value)); return *this;}
+    template<typename TrackSourceSettingsT = TrackSourceSettings>
+    void SetTrackSourceSettings(TrackSourceSettingsT&& value) { m_trackSourceSettingsHasBeenSet = true; m_trackSourceSettings = std::forward<TrackSourceSettingsT>(value); }
+    template<typename TrackSourceSettingsT = TrackSourceSettings>
+    CaptionSourceSettings& WithTrackSourceSettings(TrackSourceSettingsT&& value) { SetTrackSourceSettings(std::forward<TrackSourceSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,12 +147,12 @@ namespace Model
      * subtitle track will be chosen. If your caption source is a sidecar file, use
      * FileSourceSettings instead of WebvttHlsSourceSettings.
      */
-    inline const WebvttHlsSourceSettings& GetWebvttHlsSourceSettings() const{ return m_webvttHlsSourceSettings; }
+    inline const WebvttHlsSourceSettings& GetWebvttHlsSourceSettings() const { return m_webvttHlsSourceSettings; }
     inline bool WebvttHlsSourceSettingsHasBeenSet() const { return m_webvttHlsSourceSettingsHasBeenSet; }
-    inline void SetWebvttHlsSourceSettings(const WebvttHlsSourceSettings& value) { m_webvttHlsSourceSettingsHasBeenSet = true; m_webvttHlsSourceSettings = value; }
-    inline void SetWebvttHlsSourceSettings(WebvttHlsSourceSettings&& value) { m_webvttHlsSourceSettingsHasBeenSet = true; m_webvttHlsSourceSettings = std::move(value); }
-    inline CaptionSourceSettings& WithWebvttHlsSourceSettings(const WebvttHlsSourceSettings& value) { SetWebvttHlsSourceSettings(value); return *this;}
-    inline CaptionSourceSettings& WithWebvttHlsSourceSettings(WebvttHlsSourceSettings&& value) { SetWebvttHlsSourceSettings(std::move(value)); return *this;}
+    template<typename WebvttHlsSourceSettingsT = WebvttHlsSourceSettings>
+    void SetWebvttHlsSourceSettings(WebvttHlsSourceSettingsT&& value) { m_webvttHlsSourceSettingsHasBeenSet = true; m_webvttHlsSourceSettings = std::forward<WebvttHlsSourceSettingsT>(value); }
+    template<typename WebvttHlsSourceSettingsT = WebvttHlsSourceSettings>
+    CaptionSourceSettings& WithWebvttHlsSourceSettings(WebvttHlsSourceSettingsT&& value) { SetWebvttHlsSourceSettings(std::forward<WebvttHlsSourceSettingsT>(value)); return *this;}
     ///@}
   private:
 
@@ -170,7 +168,7 @@ namespace Model
     FileSourceSettings m_fileSourceSettings;
     bool m_fileSourceSettingsHasBeenSet = false;
 
-    CaptionSourceType m_sourceType;
+    CaptionSourceType m_sourceType{CaptionSourceType::NOT_SET};
     bool m_sourceTypeHasBeenSet = false;
 
     TeletextSourceSettings m_teletextSourceSettings;

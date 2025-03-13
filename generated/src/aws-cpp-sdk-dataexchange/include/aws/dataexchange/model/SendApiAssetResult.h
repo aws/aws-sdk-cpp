@@ -22,10 +22,9 @@ namespace Model
   class SendApiAssetResult
   {
   public:
-    AWS_DATAEXCHANGE_API SendApiAssetResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_DATAEXCHANGE_API SendApiAssetResult(SendApiAssetResult&&);
-    AWS_DATAEXCHANGE_API SendApiAssetResult& operator=(SendApiAssetResult&&);
+    AWS_DATAEXCHANGE_API SendApiAssetResult() = default;
+    AWS_DATAEXCHANGE_API SendApiAssetResult(SendApiAssetResult&&) = default;
+    AWS_DATAEXCHANGE_API SendApiAssetResult& operator=(SendApiAssetResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     SendApiAssetResult(const SendApiAssetResult&) = delete;
@@ -50,37 +49,35 @@ namespace Model
     /**
      * <p>The response headers from the underlying API tracked by the API asset.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetResponseHeaders() const{ return m_responseHeaders; }
-    inline void SetResponseHeaders(const Aws::Map<Aws::String, Aws::String>& value) { m_responseHeaders = value; }
-    inline void SetResponseHeaders(Aws::Map<Aws::String, Aws::String>&& value) { m_responseHeaders = std::move(value); }
-    inline SendApiAssetResult& WithResponseHeaders(const Aws::Map<Aws::String, Aws::String>& value) { SetResponseHeaders(value); return *this;}
-    inline SendApiAssetResult& WithResponseHeaders(Aws::Map<Aws::String, Aws::String>&& value) { SetResponseHeaders(std::move(value)); return *this;}
-    inline SendApiAssetResult& AddResponseHeaders(const Aws::String& key, const Aws::String& value) { m_responseHeaders.emplace(key, value); return *this; }
-    inline SendApiAssetResult& AddResponseHeaders(Aws::String&& key, const Aws::String& value) { m_responseHeaders.emplace(std::move(key), value); return *this; }
-    inline SendApiAssetResult& AddResponseHeaders(const Aws::String& key, Aws::String&& value) { m_responseHeaders.emplace(key, std::move(value)); return *this; }
-    inline SendApiAssetResult& AddResponseHeaders(Aws::String&& key, Aws::String&& value) { m_responseHeaders.emplace(std::move(key), std::move(value)); return *this; }
-    inline SendApiAssetResult& AddResponseHeaders(const char* key, Aws::String&& value) { m_responseHeaders.emplace(key, std::move(value)); return *this; }
-    inline SendApiAssetResult& AddResponseHeaders(Aws::String&& key, const char* value) { m_responseHeaders.emplace(std::move(key), value); return *this; }
-    inline SendApiAssetResult& AddResponseHeaders(const char* key, const char* value) { m_responseHeaders.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetResponseHeaders() const { return m_responseHeaders; }
+    template<typename ResponseHeadersT = Aws::Map<Aws::String, Aws::String>>
+    void SetResponseHeaders(ResponseHeadersT&& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders = std::forward<ResponseHeadersT>(value); }
+    template<typename ResponseHeadersT = Aws::Map<Aws::String, Aws::String>>
+    SendApiAssetResult& WithResponseHeaders(ResponseHeadersT&& value) { SetResponseHeaders(std::forward<ResponseHeadersT>(value)); return *this;}
+    template<typename ResponseHeadersKeyT = Aws::String, typename ResponseHeadersValueT = Aws::String>
+    SendApiAssetResult& AddResponseHeaders(ResponseHeadersKeyT&& key, ResponseHeadersValueT&& value) {
+      m_responseHeadersHasBeenSet = true; m_responseHeaders.emplace(std::forward<ResponseHeadersKeyT>(key), std::forward<ResponseHeadersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SendApiAssetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SendApiAssetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SendApiAssetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SendApiAssetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Utils::Stream::ResponseStream m_body;
+    bool m_bodyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseHeaders;
+    bool m_responseHeadersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

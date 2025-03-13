@@ -33,7 +33,7 @@ namespace Model
   class TaskPropertiesOverride
   {
   public:
-    AWS_BATCH_API TaskPropertiesOverride();
+    AWS_BATCH_API TaskPropertiesOverride() = default;
     AWS_BATCH_API TaskPropertiesOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API TaskPropertiesOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The overrides for the container definition of a job.</p>
      */
-    inline const Aws::Vector<TaskContainerOverrides>& GetContainers() const{ return m_containers; }
+    inline const Aws::Vector<TaskContainerOverrides>& GetContainers() const { return m_containers; }
     inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
-    inline void SetContainers(const Aws::Vector<TaskContainerOverrides>& value) { m_containersHasBeenSet = true; m_containers = value; }
-    inline void SetContainers(Aws::Vector<TaskContainerOverrides>&& value) { m_containersHasBeenSet = true; m_containers = std::move(value); }
-    inline TaskPropertiesOverride& WithContainers(const Aws::Vector<TaskContainerOverrides>& value) { SetContainers(value); return *this;}
-    inline TaskPropertiesOverride& WithContainers(Aws::Vector<TaskContainerOverrides>&& value) { SetContainers(std::move(value)); return *this;}
-    inline TaskPropertiesOverride& AddContainers(const TaskContainerOverrides& value) { m_containersHasBeenSet = true; m_containers.push_back(value); return *this; }
-    inline TaskPropertiesOverride& AddContainers(TaskContainerOverrides&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
+    template<typename ContainersT = Aws::Vector<TaskContainerOverrides>>
+    void SetContainers(ContainersT&& value) { m_containersHasBeenSet = true; m_containers = std::forward<ContainersT>(value); }
+    template<typename ContainersT = Aws::Vector<TaskContainerOverrides>>
+    TaskPropertiesOverride& WithContainers(ContainersT&& value) { SetContainers(std::forward<ContainersT>(value)); return *this;}
+    template<typename ContainersT = TaskContainerOverrides>
+    TaskPropertiesOverride& AddContainers(ContainersT&& value) { m_containersHasBeenSet = true; m_containers.emplace_back(std::forward<ContainersT>(value)); return *this; }
     ///@}
   private:
 

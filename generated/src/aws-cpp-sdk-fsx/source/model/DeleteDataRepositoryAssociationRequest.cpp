@@ -12,15 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataRepositoryAssociationRequest::DeleteDataRepositoryAssociationRequest() : 
-    m_associationIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_deleteDataInFileSystem(false),
-    m_deleteDataInFileSystemHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataRepositoryAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

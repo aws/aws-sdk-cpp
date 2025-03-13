@@ -32,7 +32,7 @@ namespace Model
   class GradientColor
   {
   public:
-    AWS_QUICKSIGHT_API GradientColor();
+    AWS_QUICKSIGHT_API GradientColor() = default;
     AWS_QUICKSIGHT_API GradientColor(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GradientColor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The list of gradient color stops.</p>
      */
-    inline const Aws::Vector<GradientStop>& GetStops() const{ return m_stops; }
+    inline const Aws::Vector<GradientStop>& GetStops() const { return m_stops; }
     inline bool StopsHasBeenSet() const { return m_stopsHasBeenSet; }
-    inline void SetStops(const Aws::Vector<GradientStop>& value) { m_stopsHasBeenSet = true; m_stops = value; }
-    inline void SetStops(Aws::Vector<GradientStop>&& value) { m_stopsHasBeenSet = true; m_stops = std::move(value); }
-    inline GradientColor& WithStops(const Aws::Vector<GradientStop>& value) { SetStops(value); return *this;}
-    inline GradientColor& WithStops(Aws::Vector<GradientStop>&& value) { SetStops(std::move(value)); return *this;}
-    inline GradientColor& AddStops(const GradientStop& value) { m_stopsHasBeenSet = true; m_stops.push_back(value); return *this; }
-    inline GradientColor& AddStops(GradientStop&& value) { m_stopsHasBeenSet = true; m_stops.push_back(std::move(value)); return *this; }
+    template<typename StopsT = Aws::Vector<GradientStop>>
+    void SetStops(StopsT&& value) { m_stopsHasBeenSet = true; m_stops = std::forward<StopsT>(value); }
+    template<typename StopsT = Aws::Vector<GradientStop>>
+    GradientColor& WithStops(StopsT&& value) { SetStops(std::forward<StopsT>(value)); return *this;}
+    template<typename StopsT = GradientStop>
+    GradientColor& AddStops(StopsT&& value) { m_stopsHasBeenSet = true; m_stops.emplace_back(std::forward<StopsT>(value)); return *this; }
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class PrepareQueryResult
   {
   public:
-    AWS_TIMESTREAMQUERY_API PrepareQueryResult();
+    AWS_TIMESTREAMQUERY_API PrepareQueryResult() = default;
     AWS_TIMESTREAMQUERY_API PrepareQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TIMESTREAMQUERY_API PrepareQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,60 +39,60 @@ namespace Model
     /**
      * <p>The query string that you want prepare.</p>
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
-    inline void SetQueryString(const Aws::String& value) { m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryString.assign(value); }
-    inline PrepareQueryResult& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline PrepareQueryResult& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline PrepareQueryResult& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    PrepareQueryResult& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of SELECT clause columns of the submitted query string. </p>
      */
-    inline const Aws::Vector<SelectColumn>& GetColumns() const{ return m_columns; }
-    inline void SetColumns(const Aws::Vector<SelectColumn>& value) { m_columns = value; }
-    inline void SetColumns(Aws::Vector<SelectColumn>&& value) { m_columns = std::move(value); }
-    inline PrepareQueryResult& WithColumns(const Aws::Vector<SelectColumn>& value) { SetColumns(value); return *this;}
-    inline PrepareQueryResult& WithColumns(Aws::Vector<SelectColumn>&& value) { SetColumns(std::move(value)); return *this;}
-    inline PrepareQueryResult& AddColumns(const SelectColumn& value) { m_columns.push_back(value); return *this; }
-    inline PrepareQueryResult& AddColumns(SelectColumn&& value) { m_columns.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SelectColumn>& GetColumns() const { return m_columns; }
+    template<typename ColumnsT = Aws::Vector<SelectColumn>>
+    void SetColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns = std::forward<ColumnsT>(value); }
+    template<typename ColumnsT = Aws::Vector<SelectColumn>>
+    PrepareQueryResult& WithColumns(ColumnsT&& value) { SetColumns(std::forward<ColumnsT>(value)); return *this;}
+    template<typename ColumnsT = SelectColumn>
+    PrepareQueryResult& AddColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns.emplace_back(std::forward<ColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of parameters used in the submitted query string. </p>
      */
-    inline const Aws::Vector<ParameterMapping>& GetParameters() const{ return m_parameters; }
-    inline void SetParameters(const Aws::Vector<ParameterMapping>& value) { m_parameters = value; }
-    inline void SetParameters(Aws::Vector<ParameterMapping>&& value) { m_parameters = std::move(value); }
-    inline PrepareQueryResult& WithParameters(const Aws::Vector<ParameterMapping>& value) { SetParameters(value); return *this;}
-    inline PrepareQueryResult& WithParameters(Aws::Vector<ParameterMapping>&& value) { SetParameters(std::move(value)); return *this;}
-    inline PrepareQueryResult& AddParameters(const ParameterMapping& value) { m_parameters.push_back(value); return *this; }
-    inline PrepareQueryResult& AddParameters(ParameterMapping&& value) { m_parameters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ParameterMapping>& GetParameters() const { return m_parameters; }
+    template<typename ParametersT = Aws::Vector<ParameterMapping>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<ParameterMapping>>
+    PrepareQueryResult& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = ParameterMapping>
+    PrepareQueryResult& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PrepareQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PrepareQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PrepareQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PrepareQueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_queryString;
+    bool m_queryStringHasBeenSet = false;
 
     Aws::Vector<SelectColumn> m_columns;
+    bool m_columnsHasBeenSet = false;
 
     Aws::Vector<ParameterMapping> m_parameters;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

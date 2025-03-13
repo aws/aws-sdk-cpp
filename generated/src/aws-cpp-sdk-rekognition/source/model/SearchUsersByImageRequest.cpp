@@ -12,18 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchUsersByImageRequest::SearchUsersByImageRequest() : 
-    m_collectionIdHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_userMatchThreshold(0.0),
-    m_userMatchThresholdHasBeenSet(false),
-    m_maxUsers(0),
-    m_maxUsersHasBeenSet(false),
-    m_qualityFilter(QualityFilter::NOT_SET),
-    m_qualityFilterHasBeenSet(false)
-{
-}
-
 Aws::String SearchUsersByImageRequest::SerializePayload() const
 {
   JsonValue payload;

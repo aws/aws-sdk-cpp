@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDevicePoolResult::GetDevicePoolResult()
-{
-}
-
 GetDevicePoolResult::GetDevicePoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetDevicePoolResult& GetDevicePoolResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("devicePool"))
   {
     m_devicePool = jsonValue.GetObject("devicePool");
-
+    m_devicePoolHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

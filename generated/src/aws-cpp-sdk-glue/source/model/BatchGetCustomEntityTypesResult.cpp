@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetCustomEntityTypesResult::BatchGetCustomEntityTypesResult()
-{
-}
-
 BatchGetCustomEntityTypesResult::BatchGetCustomEntityTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetCustomEntityTypesResult& BatchGetCustomEntityTypesResult::operator =(con
     {
       m_customEntityTypes.push_back(customEntityTypesJsonList[customEntityTypesIndex].AsObject());
     }
+    m_customEntityTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomEntityTypesNotFound"))
   {
     Aws::Utils::Array<JsonView> customEntityTypesNotFoundJsonList = jsonValue.GetArray("CustomEntityTypesNotFound");
@@ -45,14 +41,15 @@ BatchGetCustomEntityTypesResult& BatchGetCustomEntityTypesResult::operator =(con
     {
       m_customEntityTypesNotFound.push_back(customEntityTypesNotFoundJsonList[customEntityTypesNotFoundIndex].AsString());
     }
+    m_customEntityTypesNotFoundHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

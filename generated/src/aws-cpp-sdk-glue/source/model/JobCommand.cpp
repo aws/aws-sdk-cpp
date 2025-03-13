@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-JobCommand::JobCommand() : 
-    m_nameHasBeenSet(false),
-    m_scriptLocationHasBeenSet(false),
-    m_pythonVersionHasBeenSet(false),
-    m_runtimeHasBeenSet(false)
-{
-}
-
 JobCommand::JobCommand(JsonView jsonValue)
-  : JobCommand()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ JobCommand& JobCommand::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScriptLocation"))
   {
     m_scriptLocation = jsonValue.GetString("ScriptLocation");
-
     m_scriptLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PythonVersion"))
   {
     m_pythonVersion = jsonValue.GetString("PythonVersion");
-
     m_pythonVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Runtime"))
   {
     m_runtime = jsonValue.GetString("Runtime");
-
     m_runtimeHasBeenSet = true;
   }
-
   return *this;
 }
 

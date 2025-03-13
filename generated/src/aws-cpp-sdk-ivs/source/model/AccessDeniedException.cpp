@@ -18,13 +18,7 @@ namespace IVS
 namespace Model
 {
 
-AccessDeniedException::AccessDeniedException() : 
-    m_exceptionMessageHasBeenSet(false)
-{
-}
-
 AccessDeniedException::AccessDeniedException(JsonView jsonValue)
-  : AccessDeniedException()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AccessDeniedException& AccessDeniedException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("exceptionMessage"))
   {
     m_exceptionMessage = jsonValue.GetString("exceptionMessage");
-
     m_exceptionMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

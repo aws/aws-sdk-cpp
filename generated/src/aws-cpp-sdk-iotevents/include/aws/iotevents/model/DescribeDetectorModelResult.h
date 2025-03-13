@@ -28,7 +28,7 @@ namespace Model
   class DescribeDetectorModelResult
   {
   public:
-    AWS_IOTEVENTS_API DescribeDetectorModelResult();
+    AWS_IOTEVENTS_API DescribeDetectorModelResult() = default;
     AWS_IOTEVENTS_API DescribeDetectorModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTS_API DescribeDetectorModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the detector model.</p>
      */
-    inline const DetectorModel& GetDetectorModel() const{ return m_detectorModel; }
-    inline void SetDetectorModel(const DetectorModel& value) { m_detectorModel = value; }
-    inline void SetDetectorModel(DetectorModel&& value) { m_detectorModel = std::move(value); }
-    inline DescribeDetectorModelResult& WithDetectorModel(const DetectorModel& value) { SetDetectorModel(value); return *this;}
-    inline DescribeDetectorModelResult& WithDetectorModel(DetectorModel&& value) { SetDetectorModel(std::move(value)); return *this;}
+    inline const DetectorModel& GetDetectorModel() const { return m_detectorModel; }
+    template<typename DetectorModelT = DetectorModel>
+    void SetDetectorModel(DetectorModelT&& value) { m_detectorModelHasBeenSet = true; m_detectorModel = std::forward<DetectorModelT>(value); }
+    template<typename DetectorModelT = DetectorModel>
+    DescribeDetectorModelResult& WithDetectorModel(DetectorModelT&& value) { SetDetectorModel(std::forward<DetectorModelT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDetectorModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDetectorModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDetectorModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDetectorModelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DetectorModel m_detectorModel;
+    bool m_detectorModelHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

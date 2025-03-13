@@ -12,12 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutPolicyRequest::PutPolicyRequest() : 
-    m_policyHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 Aws::String PutPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

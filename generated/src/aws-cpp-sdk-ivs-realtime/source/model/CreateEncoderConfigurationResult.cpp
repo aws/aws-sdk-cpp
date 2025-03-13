@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEncoderConfigurationResult::CreateEncoderConfigurationResult()
-{
-}
-
 CreateEncoderConfigurationResult::CreateEncoderConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateEncoderConfigurationResult& CreateEncoderConfigurationResult::operator =(c
   if(jsonValue.ValueExists("encoderConfiguration"))
   {
     m_encoderConfiguration = jsonValue.GetObject("encoderConfiguration");
-
+    m_encoderConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

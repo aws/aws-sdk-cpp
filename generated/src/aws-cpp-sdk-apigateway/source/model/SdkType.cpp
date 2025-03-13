@@ -19,17 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-SdkType::SdkType() : 
-    m_idHasBeenSet(false),
-    m_friendlyNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_configurationPropertiesHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 SdkType::SdkType(JsonView jsonValue)
-  : SdkType()
 {
   *this = jsonValue;
 }
@@ -39,24 +29,18 @@ SdkType& SdkType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("friendlyName"))
   {
     m_friendlyName = jsonValue.GetString("friendlyName");
-
     m_friendlyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationProperties"))
   {
     Aws::Utils::Array<JsonView> configurationPropertiesJsonList = jsonValue.GetArray("configurationProperties");
@@ -66,7 +50,6 @@ SdkType& SdkType::operator =(JsonView jsonValue)
     }
     m_configurationPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

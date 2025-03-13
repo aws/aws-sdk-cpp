@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CandidateProperties::CandidateProperties() : 
-    m_candidateArtifactLocationsHasBeenSet(false),
-    m_candidateMetricsHasBeenSet(false)
-{
-}
-
 CandidateProperties::CandidateProperties(JsonView jsonValue)
-  : CandidateProperties()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CandidateProperties& CandidateProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CandidateArtifactLocations"))
   {
     m_candidateArtifactLocations = jsonValue.GetObject("CandidateArtifactLocations");
-
     m_candidateArtifactLocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CandidateMetrics"))
   {
     Aws::Utils::Array<JsonView> candidateMetricsJsonList = jsonValue.GetArray("CandidateMetrics");
@@ -48,7 +39,6 @@ CandidateProperties& CandidateProperties::operator =(JsonView jsonValue)
     }
     m_candidateMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

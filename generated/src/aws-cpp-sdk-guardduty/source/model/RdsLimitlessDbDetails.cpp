@@ -18,19 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-RdsLimitlessDbDetails::RdsLimitlessDbDetails() : 
-    m_dbShardGroupIdentifierHasBeenSet(false),
-    m_dbShardGroupResourceIdHasBeenSet(false),
-    m_dbShardGroupArnHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dbClusterIdentifierHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 RdsLimitlessDbDetails::RdsLimitlessDbDetails(JsonView jsonValue)
-  : RdsLimitlessDbDetails()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ RdsLimitlessDbDetails& RdsLimitlessDbDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dbShardGroupIdentifier"))
   {
     m_dbShardGroupIdentifier = jsonValue.GetString("dbShardGroupIdentifier");
-
     m_dbShardGroupIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbShardGroupResourceId"))
   {
     m_dbShardGroupResourceId = jsonValue.GetString("dbShardGroupResourceId");
-
     m_dbShardGroupResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbShardGroupArn"))
   {
     m_dbShardGroupArn = jsonValue.GetString("dbShardGroupArn");
-
     m_dbShardGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engine"))
   {
     m_engine = jsonValue.GetString("engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineVersion"))
   {
     m_engineVersion = jsonValue.GetString("engineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbClusterIdentifier"))
   {
     m_dbClusterIdentifier = jsonValue.GetString("dbClusterIdentifier");
-
     m_dbClusterIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -88,7 +64,6 @@ RdsLimitlessDbDetails& RdsLimitlessDbDetails::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

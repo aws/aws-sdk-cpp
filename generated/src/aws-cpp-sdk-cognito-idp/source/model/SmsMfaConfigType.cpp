@@ -18,14 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-SmsMfaConfigType::SmsMfaConfigType() : 
-    m_smsAuthenticationMessageHasBeenSet(false),
-    m_smsConfigurationHasBeenSet(false)
-{
-}
-
 SmsMfaConfigType::SmsMfaConfigType(JsonView jsonValue)
-  : SmsMfaConfigType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SmsMfaConfigType& SmsMfaConfigType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SmsAuthenticationMessage"))
   {
     m_smsAuthenticationMessage = jsonValue.GetString("SmsAuthenticationMessage");
-
     m_smsAuthenticationMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmsConfiguration"))
   {
     m_smsConfiguration = jsonValue.GetObject("SmsConfiguration");
-
     m_smsConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateThemeAliasResult
   {
   public:
-    AWS_QUICKSIGHT_API CreateThemeAliasResult();
+    AWS_QUICKSIGHT_API CreateThemeAliasResult() = default;
     AWS_QUICKSIGHT_API CreateThemeAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API CreateThemeAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,39 +37,40 @@ namespace Model
     /**
      * <p>Information about the theme alias.</p>
      */
-    inline const ThemeAlias& GetThemeAlias() const{ return m_themeAlias; }
-    inline void SetThemeAlias(const ThemeAlias& value) { m_themeAlias = value; }
-    inline void SetThemeAlias(ThemeAlias&& value) { m_themeAlias = std::move(value); }
-    inline CreateThemeAliasResult& WithThemeAlias(const ThemeAlias& value) { SetThemeAlias(value); return *this;}
-    inline CreateThemeAliasResult& WithThemeAlias(ThemeAlias&& value) { SetThemeAlias(std::move(value)); return *this;}
+    inline const ThemeAlias& GetThemeAlias() const { return m_themeAlias; }
+    template<typename ThemeAliasT = ThemeAlias>
+    void SetThemeAlias(ThemeAliasT&& value) { m_themeAliasHasBeenSet = true; m_themeAlias = std::forward<ThemeAliasT>(value); }
+    template<typename ThemeAliasT = ThemeAlias>
+    CreateThemeAliasResult& WithThemeAlias(ThemeAliasT&& value) { SetThemeAlias(std::forward<ThemeAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline CreateThemeAliasResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateThemeAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateThemeAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateThemeAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateThemeAliasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ThemeAlias m_themeAlias;
+    bool m_themeAliasHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

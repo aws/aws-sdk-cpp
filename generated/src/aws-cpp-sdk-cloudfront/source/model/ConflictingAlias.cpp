@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ConflictingAlias::ConflictingAlias() : 
-    m_aliasHasBeenSet(false),
-    m_distributionIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 ConflictingAlias::ConflictingAlias(const XmlNode& xmlNode)
-  : ConflictingAlias()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ConflictingAlias& ConflictingAlias::operator =(const XmlNode& xmlNode)
     {
       m_alias = Aws::Utils::Xml::DecodeEscapedXmlText(aliasNode.GetText());
       m_aliasHasBeenSet = true;
+       m_aliasHasBeenSet = true;
     }
     XmlNode distributionIdNode = resultNode.FirstChild("DistributionId");
     if(!distributionIdNode.IsNull())
     {
       m_distributionId = Aws::Utils::Xml::DecodeEscapedXmlText(distributionIdNode.GetText());
       m_distributionIdHasBeenSet = true;
+       m_distributionIdHasBeenSet = true;
     }
     XmlNode accountIdNode = resultNode.FirstChild("AccountId");
     if(!accountIdNode.IsNull())
     {
       m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
+       m_accountIdHasBeenSet = true;
     }
   }
 

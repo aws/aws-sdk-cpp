@@ -34,7 +34,7 @@ namespace Model
   class EndpointOutputConfiguration
   {
   public:
-    AWS_SAGEMAKER_API EndpointOutputConfiguration();
+    AWS_SAGEMAKER_API EndpointOutputConfiguration() = default;
     AWS_SAGEMAKER_API EndpointOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API EndpointOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the endpoint made during a recommendation job.</p>
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-    inline EndpointOutputConfiguration& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline EndpointOutputConfiguration& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline EndpointOutputConfiguration& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    EndpointOutputConfiguration& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,33 +57,29 @@ namespace Model
      * <p>The name of the production variant (deployed model) made during a
      * recommendation job.</p>
      */
-    inline const Aws::String& GetVariantName() const{ return m_variantName; }
+    inline const Aws::String& GetVariantName() const { return m_variantName; }
     inline bool VariantNameHasBeenSet() const { return m_variantNameHasBeenSet; }
-    inline void SetVariantName(const Aws::String& value) { m_variantNameHasBeenSet = true; m_variantName = value; }
-    inline void SetVariantName(Aws::String&& value) { m_variantNameHasBeenSet = true; m_variantName = std::move(value); }
-    inline void SetVariantName(const char* value) { m_variantNameHasBeenSet = true; m_variantName.assign(value); }
-    inline EndpointOutputConfiguration& WithVariantName(const Aws::String& value) { SetVariantName(value); return *this;}
-    inline EndpointOutputConfiguration& WithVariantName(Aws::String&& value) { SetVariantName(std::move(value)); return *this;}
-    inline EndpointOutputConfiguration& WithVariantName(const char* value) { SetVariantName(value); return *this;}
+    template<typename VariantNameT = Aws::String>
+    void SetVariantName(VariantNameT&& value) { m_variantNameHasBeenSet = true; m_variantName = std::forward<VariantNameT>(value); }
+    template<typename VariantNameT = Aws::String>
+    EndpointOutputConfiguration& WithVariantName(VariantNameT&& value) { SetVariantName(std::forward<VariantNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
      */
-    inline const ProductionVariantInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline ProductionVariantInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const ProductionVariantInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(ProductionVariantInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline EndpointOutputConfiguration& WithInstanceType(const ProductionVariantInstanceType& value) { SetInstanceType(value); return *this;}
-    inline EndpointOutputConfiguration& WithInstanceType(ProductionVariantInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(ProductionVariantInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline EndpointOutputConfiguration& WithInstanceType(ProductionVariantInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of instances recommended to launch initially.</p>
      */
-    inline int GetInitialInstanceCount() const{ return m_initialInstanceCount; }
+    inline int GetInitialInstanceCount() const { return m_initialInstanceCount; }
     inline bool InitialInstanceCountHasBeenSet() const { return m_initialInstanceCountHasBeenSet; }
     inline void SetInitialInstanceCount(int value) { m_initialInstanceCountHasBeenSet = true; m_initialInstanceCount = value; }
     inline EndpointOutputConfiguration& WithInitialInstanceCount(int value) { SetInitialInstanceCount(value); return *this;}
@@ -93,12 +87,12 @@ namespace Model
 
     ///@{
     
-    inline const ProductionVariantServerlessConfig& GetServerlessConfig() const{ return m_serverlessConfig; }
+    inline const ProductionVariantServerlessConfig& GetServerlessConfig() const { return m_serverlessConfig; }
     inline bool ServerlessConfigHasBeenSet() const { return m_serverlessConfigHasBeenSet; }
-    inline void SetServerlessConfig(const ProductionVariantServerlessConfig& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = value; }
-    inline void SetServerlessConfig(ProductionVariantServerlessConfig&& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = std::move(value); }
-    inline EndpointOutputConfiguration& WithServerlessConfig(const ProductionVariantServerlessConfig& value) { SetServerlessConfig(value); return *this;}
-    inline EndpointOutputConfiguration& WithServerlessConfig(ProductionVariantServerlessConfig&& value) { SetServerlessConfig(std::move(value)); return *this;}
+    template<typename ServerlessConfigT = ProductionVariantServerlessConfig>
+    void SetServerlessConfig(ServerlessConfigT&& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = std::forward<ServerlessConfigT>(value); }
+    template<typename ServerlessConfigT = ProductionVariantServerlessConfig>
+    EndpointOutputConfiguration& WithServerlessConfig(ServerlessConfigT&& value) { SetServerlessConfig(std::forward<ServerlessConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -108,10 +102,10 @@ namespace Model
     Aws::String m_variantName;
     bool m_variantNameHasBeenSet = false;
 
-    ProductionVariantInstanceType m_instanceType;
+    ProductionVariantInstanceType m_instanceType{ProductionVariantInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_initialInstanceCount;
+    int m_initialInstanceCount{0};
     bool m_initialInstanceCountHasBeenSet = false;
 
     ProductionVariantServerlessConfig m_serverlessConfig;

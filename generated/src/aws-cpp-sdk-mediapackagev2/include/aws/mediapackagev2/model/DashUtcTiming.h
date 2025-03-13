@@ -33,7 +33,7 @@ namespace Model
   class DashUtcTiming
   {
   public:
-    AWS_MEDIAPACKAGEV2_API DashUtcTiming();
+    AWS_MEDIAPACKAGEV2_API DashUtcTiming() = default;
     AWS_MEDIAPACKAGEV2_API DashUtcTiming(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API DashUtcTiming& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The UTC timing mode.</p>
      */
-    inline const DashUtcTimingMode& GetTimingMode() const{ return m_timingMode; }
+    inline DashUtcTimingMode GetTimingMode() const { return m_timingMode; }
     inline bool TimingModeHasBeenSet() const { return m_timingModeHasBeenSet; }
-    inline void SetTimingMode(const DashUtcTimingMode& value) { m_timingModeHasBeenSet = true; m_timingMode = value; }
-    inline void SetTimingMode(DashUtcTimingMode&& value) { m_timingModeHasBeenSet = true; m_timingMode = std::move(value); }
-    inline DashUtcTiming& WithTimingMode(const DashUtcTimingMode& value) { SetTimingMode(value); return *this;}
-    inline DashUtcTiming& WithTimingMode(DashUtcTimingMode&& value) { SetTimingMode(std::move(value)); return *this;}
+    inline void SetTimingMode(DashUtcTimingMode value) { m_timingModeHasBeenSet = true; m_timingMode = value; }
+    inline DashUtcTiming& WithTimingMode(DashUtcTimingMode value) { SetTimingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -56,18 +54,16 @@ namespace Model
      * <p>The the method that the player uses to synchronize to coordinated universal
      * time (UTC) wall clock time.</p>
      */
-    inline const Aws::String& GetTimingSource() const{ return m_timingSource; }
+    inline const Aws::String& GetTimingSource() const { return m_timingSource; }
     inline bool TimingSourceHasBeenSet() const { return m_timingSourceHasBeenSet; }
-    inline void SetTimingSource(const Aws::String& value) { m_timingSourceHasBeenSet = true; m_timingSource = value; }
-    inline void SetTimingSource(Aws::String&& value) { m_timingSourceHasBeenSet = true; m_timingSource = std::move(value); }
-    inline void SetTimingSource(const char* value) { m_timingSourceHasBeenSet = true; m_timingSource.assign(value); }
-    inline DashUtcTiming& WithTimingSource(const Aws::String& value) { SetTimingSource(value); return *this;}
-    inline DashUtcTiming& WithTimingSource(Aws::String&& value) { SetTimingSource(std::move(value)); return *this;}
-    inline DashUtcTiming& WithTimingSource(const char* value) { SetTimingSource(value); return *this;}
+    template<typename TimingSourceT = Aws::String>
+    void SetTimingSource(TimingSourceT&& value) { m_timingSourceHasBeenSet = true; m_timingSource = std::forward<TimingSourceT>(value); }
+    template<typename TimingSourceT = Aws::String>
+    DashUtcTiming& WithTimingSource(TimingSourceT&& value) { SetTimingSource(std::forward<TimingSourceT>(value)); return *this;}
     ///@}
   private:
 
-    DashUtcTimingMode m_timingMode;
+    DashUtcTimingMode m_timingMode{DashUtcTimingMode::NOT_SET};
     bool m_timingModeHasBeenSet = false;
 
     Aws::String m_timingSource;

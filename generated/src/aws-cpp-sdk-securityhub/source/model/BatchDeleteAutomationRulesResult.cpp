@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDeleteAutomationRulesResult::BatchDeleteAutomationRulesResult()
-{
-}
-
 BatchDeleteAutomationRulesResult::BatchDeleteAutomationRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchDeleteAutomationRulesResult& BatchDeleteAutomationRulesResult::operator =(c
     {
       m_processedAutomationRules.push_back(processedAutomationRulesJsonList[processedAutomationRulesIndex].AsString());
     }
+    m_processedAutomationRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedAutomationRules"))
   {
     Aws::Utils::Array<JsonView> unprocessedAutomationRulesJsonList = jsonValue.GetArray("UnprocessedAutomationRules");
@@ -45,14 +41,15 @@ BatchDeleteAutomationRulesResult& BatchDeleteAutomationRulesResult::operator =(c
     {
       m_unprocessedAutomationRules.push_back(unprocessedAutomationRulesJsonList[unprocessedAutomationRulesIndex].AsObject());
     }
+    m_unprocessedAutomationRulesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

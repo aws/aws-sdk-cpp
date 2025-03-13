@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListPolicyGenerationsRequest::ListPolicyGenerationsRequest() : 
-    m_principalArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListPolicyGenerationsRequest::SerializePayload() const
 {
   return {};

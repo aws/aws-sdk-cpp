@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-ListCisScanConfigurationsFilterCriteria::ListCisScanConfigurationsFilterCriteria() : 
-    m_scanConfigurationArnFiltersHasBeenSet(false),
-    m_scanNameFiltersHasBeenSet(false),
-    m_targetResourceTagFiltersHasBeenSet(false)
-{
-}
-
 ListCisScanConfigurationsFilterCriteria::ListCisScanConfigurationsFilterCriteria(JsonView jsonValue)
-  : ListCisScanConfigurationsFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ ListCisScanConfigurationsFilterCriteria& ListCisScanConfigurationsFilterCriteria
     }
     m_scanConfigurationArnFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanNameFilters"))
   {
     Aws::Utils::Array<JsonView> scanNameFiltersJsonList = jsonValue.GetArray("scanNameFilters");
@@ -52,7 +43,6 @@ ListCisScanConfigurationsFilterCriteria& ListCisScanConfigurationsFilterCriteria
     }
     m_scanNameFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResourceTagFilters"))
   {
     Aws::Utils::Array<JsonView> targetResourceTagFiltersJsonList = jsonValue.GetArray("targetResourceTagFilters");
@@ -62,7 +52,6 @@ ListCisScanConfigurationsFilterCriteria& ListCisScanConfigurationsFilterCriteria
     }
     m_targetResourceTagFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

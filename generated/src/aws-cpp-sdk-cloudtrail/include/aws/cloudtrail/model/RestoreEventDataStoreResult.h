@@ -32,7 +32,7 @@ namespace Model
   class RestoreEventDataStoreResult
   {
   public:
-    AWS_CLOUDTRAIL_API RestoreEventDataStoreResult();
+    AWS_CLOUDTRAIL_API RestoreEventDataStoreResult() = default;
     AWS_CLOUDTRAIL_API RestoreEventDataStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API RestoreEventDataStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,50 +41,44 @@ namespace Model
     /**
      * <p>The event data store ARN.</p>
      */
-    inline const Aws::String& GetEventDataStoreArn() const{ return m_eventDataStoreArn; }
-    inline void SetEventDataStoreArn(const Aws::String& value) { m_eventDataStoreArn = value; }
-    inline void SetEventDataStoreArn(Aws::String&& value) { m_eventDataStoreArn = std::move(value); }
-    inline void SetEventDataStoreArn(const char* value) { m_eventDataStoreArn.assign(value); }
-    inline RestoreEventDataStoreResult& WithEventDataStoreArn(const Aws::String& value) { SetEventDataStoreArn(value); return *this;}
-    inline RestoreEventDataStoreResult& WithEventDataStoreArn(Aws::String&& value) { SetEventDataStoreArn(std::move(value)); return *this;}
-    inline RestoreEventDataStoreResult& WithEventDataStoreArn(const char* value) { SetEventDataStoreArn(value); return *this;}
+    inline const Aws::String& GetEventDataStoreArn() const { return m_eventDataStoreArn; }
+    template<typename EventDataStoreArnT = Aws::String>
+    void SetEventDataStoreArn(EventDataStoreArnT&& value) { m_eventDataStoreArnHasBeenSet = true; m_eventDataStoreArn = std::forward<EventDataStoreArnT>(value); }
+    template<typename EventDataStoreArnT = Aws::String>
+    RestoreEventDataStoreResult& WithEventDataStoreArn(EventDataStoreArnT&& value) { SetEventDataStoreArn(std::forward<EventDataStoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the event data store.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline RestoreEventDataStoreResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RestoreEventDataStoreResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RestoreEventDataStoreResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RestoreEventDataStoreResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the event data store.</p>
      */
-    inline const EventDataStoreStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const EventDataStoreStatus& value) { m_status = value; }
-    inline void SetStatus(EventDataStoreStatus&& value) { m_status = std::move(value); }
-    inline RestoreEventDataStoreResult& WithStatus(const EventDataStoreStatus& value) { SetStatus(value); return *this;}
-    inline RestoreEventDataStoreResult& WithStatus(EventDataStoreStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline EventDataStoreStatus GetStatus() const { return m_status; }
+    inline void SetStatus(EventDataStoreStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline RestoreEventDataStoreResult& WithStatus(EventDataStoreStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The advanced event selectors that were used to select events.</p>
      */
-    inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
-    inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectors = value; }
-    inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectors = std::move(value); }
-    inline RestoreEventDataStoreResult& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
-    inline RestoreEventDataStoreResult& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
-    inline RestoreEventDataStoreResult& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectors.push_back(value); return *this; }
-    inline RestoreEventDataStoreResult& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const { return m_advancedEventSelectors; }
+    template<typename AdvancedEventSelectorsT = Aws::Vector<AdvancedEventSelector>>
+    void SetAdvancedEventSelectors(AdvancedEventSelectorsT&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::forward<AdvancedEventSelectorsT>(value); }
+    template<typename AdvancedEventSelectorsT = Aws::Vector<AdvancedEventSelector>>
+    RestoreEventDataStoreResult& WithAdvancedEventSelectors(AdvancedEventSelectorsT&& value) { SetAdvancedEventSelectors(std::forward<AdvancedEventSelectorsT>(value)); return *this;}
+    template<typename AdvancedEventSelectorsT = AdvancedEventSelector>
+    RestoreEventDataStoreResult& AddAdvancedEventSelectors(AdvancedEventSelectorsT&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.emplace_back(std::forward<AdvancedEventSelectorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,8 +86,8 @@ namespace Model
      * <p>Indicates whether the event data store is collecting events from all Regions,
      * or only from the Region in which the event data store was created.</p>
      */
-    inline bool GetMultiRegionEnabled() const{ return m_multiRegionEnabled; }
-    inline void SetMultiRegionEnabled(bool value) { m_multiRegionEnabled = value; }
+    inline bool GetMultiRegionEnabled() const { return m_multiRegionEnabled; }
+    inline void SetMultiRegionEnabled(bool value) { m_multiRegionEnabledHasBeenSet = true; m_multiRegionEnabled = value; }
     inline RestoreEventDataStoreResult& WithMultiRegionEnabled(bool value) { SetMultiRegionEnabled(value); return *this;}
     ///@}
 
@@ -102,8 +96,8 @@ namespace Model
      * <p>Indicates whether an event data store is collecting logged events for an
      * organization in Organizations.</p>
      */
-    inline bool GetOrganizationEnabled() const{ return m_organizationEnabled; }
-    inline void SetOrganizationEnabled(bool value) { m_organizationEnabled = value; }
+    inline bool GetOrganizationEnabled() const { return m_organizationEnabled; }
+    inline void SetOrganizationEnabled(bool value) { m_organizationEnabledHasBeenSet = true; m_organizationEnabled = value; }
     inline RestoreEventDataStoreResult& WithOrganizationEnabled(bool value) { SetOrganizationEnabled(value); return *this;}
     ///@}
 
@@ -111,8 +105,8 @@ namespace Model
     /**
      * <p>The retention period, in days.</p>
      */
-    inline int GetRetentionPeriod() const{ return m_retentionPeriod; }
-    inline void SetRetentionPeriod(int value) { m_retentionPeriod = value; }
+    inline int GetRetentionPeriod() const { return m_retentionPeriod; }
+    inline void SetRetentionPeriod(int value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
     inline RestoreEventDataStoreResult& WithRetentionPeriod(int value) { SetRetentionPeriod(value); return *this;}
     ///@}
 
@@ -121,8 +115,8 @@ namespace Model
      * <p>Indicates that termination protection is enabled and the event data store
      * cannot be automatically deleted.</p>
      */
-    inline bool GetTerminationProtectionEnabled() const{ return m_terminationProtectionEnabled; }
-    inline void SetTerminationProtectionEnabled(bool value) { m_terminationProtectionEnabled = value; }
+    inline bool GetTerminationProtectionEnabled() const { return m_terminationProtectionEnabled; }
+    inline void SetTerminationProtectionEnabled(bool value) { m_terminationProtectionEnabledHasBeenSet = true; m_terminationProtectionEnabled = value; }
     inline RestoreEventDataStoreResult& WithTerminationProtectionEnabled(bool value) { SetTerminationProtectionEnabled(value); return *this;}
     ///@}
 
@@ -130,11 +124,11 @@ namespace Model
     /**
      * <p>The timestamp of an event data store's creation.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline RestoreEventDataStoreResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline RestoreEventDataStoreResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    RestoreEventDataStoreResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,11 +137,11 @@ namespace Model
      * <code>UpdatedTimestamp</code> is always either the same or newer than the time
      * shown in <code>CreatedTimestamp</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const{ return m_updatedTimestamp; }
-    inline void SetUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_updatedTimestamp = value; }
-    inline void SetUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_updatedTimestamp = std::move(value); }
-    inline RestoreEventDataStoreResult& WithUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetUpdatedTimestamp(value); return *this;}
-    inline RestoreEventDataStoreResult& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const { return m_updatedTimestamp; }
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    void SetUpdatedTimestamp(UpdatedTimestampT&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::forward<UpdatedTimestampT>(value); }
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    RestoreEventDataStoreResult& WithUpdatedTimestamp(UpdatedTimestampT&& value) { SetUpdatedTimestamp(std::forward<UpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,63 +151,70 @@ namespace Model
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
-    inline RestoreEventDataStoreResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline RestoreEventDataStoreResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline RestoreEventDataStoreResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    RestoreEventDataStoreResult& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The billing mode for the event data store.</p>
      */
-    inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
-    inline void SetBillingMode(const BillingMode& value) { m_billingMode = value; }
-    inline void SetBillingMode(BillingMode&& value) { m_billingMode = std::move(value); }
-    inline RestoreEventDataStoreResult& WithBillingMode(const BillingMode& value) { SetBillingMode(value); return *this;}
-    inline RestoreEventDataStoreResult& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
+    inline BillingMode GetBillingMode() const { return m_billingMode; }
+    inline void SetBillingMode(BillingMode value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
+    inline RestoreEventDataStoreResult& WithBillingMode(BillingMode value) { SetBillingMode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RestoreEventDataStoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RestoreEventDataStoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RestoreEventDataStoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RestoreEventDataStoreResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventDataStoreArn;
+    bool m_eventDataStoreArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    EventDataStoreStatus m_status;
+    EventDataStoreStatus m_status{EventDataStoreStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
+    bool m_advancedEventSelectorsHasBeenSet = false;
 
-    bool m_multiRegionEnabled;
+    bool m_multiRegionEnabled{false};
+    bool m_multiRegionEnabledHasBeenSet = false;
 
-    bool m_organizationEnabled;
+    bool m_organizationEnabled{false};
+    bool m_organizationEnabledHasBeenSet = false;
 
-    int m_retentionPeriod;
+    int m_retentionPeriod{0};
+    bool m_retentionPeriodHasBeenSet = false;
 
-    bool m_terminationProtectionEnabled;
+    bool m_terminationProtectionEnabled{false};
+    bool m_terminationProtectionEnabledHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedTimestamp;
+    Aws::Utils::DateTime m_updatedTimestamp{};
+    bool m_updatedTimestampHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
-    BillingMode m_billingMode;
+    BillingMode m_billingMode{BillingMode::NOT_SET};
+    bool m_billingModeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

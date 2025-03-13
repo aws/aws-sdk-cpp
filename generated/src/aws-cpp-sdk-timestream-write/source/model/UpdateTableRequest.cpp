@@ -12,15 +12,6 @@ using namespace Aws::TimestreamWrite::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTableRequest::UpdateTableRequest() : 
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_retentionPropertiesHasBeenSet(false),
-    m_magneticStoreWritePropertiesHasBeenSet(false),
-    m_schemaHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTableRequest::SerializePayload() const
 {
   JsonValue payload;

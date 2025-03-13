@@ -18,19 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-Database::Database() : 
-    m_arnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableCount(0),
-    m_tableCountHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 Database::Database(JsonView jsonValue)
-  : Database()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Database& Database::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableCount"))
   {
     m_tableCount = jsonValue.GetInt64("TableCount");
-
     m_tableCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

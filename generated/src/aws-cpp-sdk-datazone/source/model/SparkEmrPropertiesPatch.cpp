@@ -18,19 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SparkEmrPropertiesPatch::SparkEmrPropertiesPatch() : 
-    m_computeArnHasBeenSet(false),
-    m_instanceProfileArnHasBeenSet(false),
-    m_javaVirtualEnvHasBeenSet(false),
-    m_logUriHasBeenSet(false),
-    m_pythonVirtualEnvHasBeenSet(false),
-    m_runtimeRoleHasBeenSet(false),
-    m_trustedCertificatesS3UriHasBeenSet(false)
-{
-}
-
 SparkEmrPropertiesPatch::SparkEmrPropertiesPatch(JsonView jsonValue)
-  : SparkEmrPropertiesPatch()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ SparkEmrPropertiesPatch& SparkEmrPropertiesPatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("computeArn"))
   {
     m_computeArn = jsonValue.GetString("computeArn");
-
     m_computeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceProfileArn"))
   {
     m_instanceProfileArn = jsonValue.GetString("instanceProfileArn");
-
     m_instanceProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("javaVirtualEnv"))
   {
     m_javaVirtualEnv = jsonValue.GetString("javaVirtualEnv");
-
     m_javaVirtualEnvHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logUri"))
   {
     m_logUri = jsonValue.GetString("logUri");
-
     m_logUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pythonVirtualEnv"))
   {
     m_pythonVirtualEnv = jsonValue.GetString("pythonVirtualEnv");
-
     m_pythonVirtualEnvHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimeRole"))
   {
     m_runtimeRole = jsonValue.GetString("runtimeRole");
-
     m_runtimeRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trustedCertificatesS3Uri"))
   {
     m_trustedCertificatesS3Uri = jsonValue.GetString("trustedCertificatesS3Uri");
-
     m_trustedCertificatesS3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

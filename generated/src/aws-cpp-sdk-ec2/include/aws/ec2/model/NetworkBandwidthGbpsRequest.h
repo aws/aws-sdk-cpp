@@ -37,7 +37,7 @@ namespace Model
   class NetworkBandwidthGbpsRequest
   {
   public:
-    AWS_EC2_API NetworkBandwidthGbpsRequest();
+    AWS_EC2_API NetworkBandwidthGbpsRequest() = default;
     AWS_EC2_API NetworkBandwidthGbpsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API NetworkBandwidthGbpsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,7 +50,7 @@ namespace Model
      * <p>The minimum amount of network bandwidth, in Gbps. To specify no minimum
      * limit, omit this parameter.</p>
      */
-    inline double GetMin() const{ return m_min; }
+    inline double GetMin() const { return m_min; }
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
     inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
     inline NetworkBandwidthGbpsRequest& WithMin(double value) { SetMin(value); return *this;}
@@ -61,17 +61,17 @@ namespace Model
      * <p>The maximum amount of network bandwidth, in Gbps. To specify no maximum
      * limit, omit this parameter.</p>
      */
-    inline double GetMax() const{ return m_max; }
+    inline double GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
     inline NetworkBandwidthGbpsRequest& WithMax(double value) { SetMax(value); return *this;}
     ///@}
   private:
 
-    double m_min;
+    double m_min{0.0};
     bool m_minHasBeenSet = false;
 
-    double m_max;
+    double m_max{0.0};
     bool m_maxHasBeenSet = false;
   };
 

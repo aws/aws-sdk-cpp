@@ -18,13 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-InputProcessingConfigurationUpdate::InputProcessingConfigurationUpdate() : 
-    m_inputLambdaProcessorUpdateHasBeenSet(false)
-{
-}
-
 InputProcessingConfigurationUpdate::InputProcessingConfigurationUpdate(JsonView jsonValue)
-  : InputProcessingConfigurationUpdate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputProcessingConfigurationUpdate& InputProcessingConfigurationUpdate::operator
   if(jsonValue.ValueExists("InputLambdaProcessorUpdate"))
   {
     m_inputLambdaProcessorUpdate = jsonValue.GetObject("InputLambdaProcessorUpdate");
-
     m_inputLambdaProcessorUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

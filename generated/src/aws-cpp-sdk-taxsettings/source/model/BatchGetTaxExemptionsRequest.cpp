@@ -12,11 +12,6 @@ using namespace Aws::TaxSettings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetTaxExemptionsRequest::BatchGetTaxExemptionsRequest() : 
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetTaxExemptionsRequest::SerializePayload() const
 {
   JsonValue payload;

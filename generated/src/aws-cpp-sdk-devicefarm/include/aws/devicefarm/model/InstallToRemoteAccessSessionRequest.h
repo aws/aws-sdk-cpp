@@ -26,7 +26,7 @@ namespace Model
   class InstallToRemoteAccessSessionRequest : public DeviceFarmRequest
   {
   public:
-    AWS_DEVICEFARM_API InstallToRemoteAccessSessionRequest();
+    AWS_DEVICEFARM_API InstallToRemoteAccessSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you
      * are requesting information.</p>
      */
-    inline const Aws::String& GetRemoteAccessSessionArn() const{ return m_remoteAccessSessionArn; }
+    inline const Aws::String& GetRemoteAccessSessionArn() const { return m_remoteAccessSessionArn; }
     inline bool RemoteAccessSessionArnHasBeenSet() const { return m_remoteAccessSessionArnHasBeenSet; }
-    inline void SetRemoteAccessSessionArn(const Aws::String& value) { m_remoteAccessSessionArnHasBeenSet = true; m_remoteAccessSessionArn = value; }
-    inline void SetRemoteAccessSessionArn(Aws::String&& value) { m_remoteAccessSessionArnHasBeenSet = true; m_remoteAccessSessionArn = std::move(value); }
-    inline void SetRemoteAccessSessionArn(const char* value) { m_remoteAccessSessionArnHasBeenSet = true; m_remoteAccessSessionArn.assign(value); }
-    inline InstallToRemoteAccessSessionRequest& WithRemoteAccessSessionArn(const Aws::String& value) { SetRemoteAccessSessionArn(value); return *this;}
-    inline InstallToRemoteAccessSessionRequest& WithRemoteAccessSessionArn(Aws::String&& value) { SetRemoteAccessSessionArn(std::move(value)); return *this;}
-    inline InstallToRemoteAccessSessionRequest& WithRemoteAccessSessionArn(const char* value) { SetRemoteAccessSessionArn(value); return *this;}
+    template<typename RemoteAccessSessionArnT = Aws::String>
+    void SetRemoteAccessSessionArn(RemoteAccessSessionArnT&& value) { m_remoteAccessSessionArnHasBeenSet = true; m_remoteAccessSessionArn = std::forward<RemoteAccessSessionArnT>(value); }
+    template<typename RemoteAccessSessionArnT = Aws::String>
+    InstallToRemoteAccessSessionRequest& WithRemoteAccessSessionArn(RemoteAccessSessionArnT&& value) { SetRemoteAccessSessionArn(std::forward<RemoteAccessSessionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the app about which you are requesting information.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
-    inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
-    inline InstallToRemoteAccessSessionRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline InstallToRemoteAccessSessionRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline InstallToRemoteAccessSessionRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    InstallToRemoteAccessSessionRequest& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
   private:
 

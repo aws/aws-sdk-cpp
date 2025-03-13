@@ -18,19 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-Alias::Alias() : 
-    m_aliasIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_aliasArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_routingStrategyHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 Alias::Alias(JsonView jsonValue)
-  : Alias()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ Alias& Alias::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AliasId"))
   {
     m_aliasId = jsonValue.GetString("AliasId");
-
     m_aliasIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AliasArn"))
   {
     m_aliasArn = jsonValue.GetString("AliasArn");
-
     m_aliasArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingStrategy"))
   {
     m_routingStrategy = jsonValue.GetObject("RoutingStrategy");
-
     m_routingStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

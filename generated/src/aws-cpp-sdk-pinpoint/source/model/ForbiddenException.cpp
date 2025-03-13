@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ForbiddenException::ForbiddenException() : 
-    m_messageHasBeenSet(false),
-    m_requestIDHasBeenSet(false)
-{
-}
-
 ForbiddenException::ForbiddenException(JsonView jsonValue)
-  : ForbiddenException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ForbiddenException& ForbiddenException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestID"))
   {
     m_requestID = jsonValue.GetString("RequestID");
-
     m_requestIDHasBeenSet = true;
   }
-
   return *this;
 }
 

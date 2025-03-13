@@ -18,15 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-TableMaintenanceConfigurationValue::TableMaintenanceConfigurationValue() : 
-    m_status(MaintenanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_settingsHasBeenSet(false)
-{
-}
-
 TableMaintenanceConfigurationValue::TableMaintenanceConfigurationValue(JsonView jsonValue)
-  : TableMaintenanceConfigurationValue()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TableMaintenanceConfigurationValue& TableMaintenanceConfigurationValue::operator
   if(jsonValue.ValueExists("status"))
   {
     m_status = MaintenanceStatusMapper::GetMaintenanceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("settings"))
   {
     m_settings = jsonValue.GetObject("settings");
-
     m_settingsHasBeenSet = true;
   }
-
   return *this;
 }
 

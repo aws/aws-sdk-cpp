@@ -18,17 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-ImportKeyMaterial::ImportKeyMaterial() : 
-    m_rootCertificatePublicKeyHasBeenSet(false),
-    m_trustedCertificatePublicKeyHasBeenSet(false),
-    m_tr31KeyBlockHasBeenSet(false),
-    m_tr34KeyBlockHasBeenSet(false),
-    m_keyCryptogramHasBeenSet(false)
-{
-}
-
 ImportKeyMaterial::ImportKeyMaterial(JsonView jsonValue)
-  : ImportKeyMaterial()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ImportKeyMaterial& ImportKeyMaterial::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RootCertificatePublicKey"))
   {
     m_rootCertificatePublicKey = jsonValue.GetObject("RootCertificatePublicKey");
-
     m_rootCertificatePublicKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustedCertificatePublicKey"))
   {
     m_trustedCertificatePublicKey = jsonValue.GetObject("TrustedCertificatePublicKey");
-
     m_trustedCertificatePublicKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tr31KeyBlock"))
   {
     m_tr31KeyBlock = jsonValue.GetObject("Tr31KeyBlock");
-
     m_tr31KeyBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tr34KeyBlock"))
   {
     m_tr34KeyBlock = jsonValue.GetObject("Tr34KeyBlock");
-
     m_tr34KeyBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyCryptogram"))
   {
     m_keyCryptogram = jsonValue.GetObject("KeyCryptogram");
-
     m_keyCryptogramHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class UpdateAccessKeyRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API UpdateAccessKeyRequest();
+    AWS_IAM_API UpdateAccessKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline UpdateAccessKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline UpdateAccessKeyRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline UpdateAccessKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    UpdateAccessKeyRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
-    inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+    inline const Aws::String& GetAccessKeyId() const { return m_accessKeyId; }
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
-    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
-    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
-    inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
-    inline UpdateAccessKeyRequest& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
-    inline UpdateAccessKeyRequest& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
-    inline UpdateAccessKeyRequest& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
+    template<typename AccessKeyIdT = Aws::String>
+    void SetAccessKeyId(AccessKeyIdT&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::forward<AccessKeyIdT>(value); }
+    template<typename AccessKeyIdT = Aws::String>
+    UpdateAccessKeyRequest& WithAccessKeyId(AccessKeyIdT&& value) { SetAccessKeyId(std::forward<AccessKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +74,10 @@ namespace Model
      * means that the key can be used for programmatic calls to Amazon Web Services,
      * while <code>Inactive</code> means that the key cannot be used.</p>
      */
-    inline const StatusType& GetStatus() const{ return m_status; }
+    inline StatusType GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateAccessKeyRequest& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
-    inline UpdateAccessKeyRequest& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateAccessKeyRequest& WithStatus(StatusType value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -93,7 +87,7 @@ namespace Model
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet = false;
 
-    StatusType m_status;
+    StatusType m_status{StatusType::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -37,7 +37,7 @@ namespace Model
   class LensReviewSummary
   {
   public:
-    AWS_WELLARCHITECTED_API LensReviewSummary();
+    AWS_WELLARCHITECTED_API LensReviewSummary() = default;
     AWS_WELLARCHITECTED_API LensReviewSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API LensReviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,114 +45,106 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetLensAlias() const{ return m_lensAlias; }
+    inline const Aws::String& GetLensAlias() const { return m_lensAlias; }
     inline bool LensAliasHasBeenSet() const { return m_lensAliasHasBeenSet; }
-    inline void SetLensAlias(const Aws::String& value) { m_lensAliasHasBeenSet = true; m_lensAlias = value; }
-    inline void SetLensAlias(Aws::String&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::move(value); }
-    inline void SetLensAlias(const char* value) { m_lensAliasHasBeenSet = true; m_lensAlias.assign(value); }
-    inline LensReviewSummary& WithLensAlias(const Aws::String& value) { SetLensAlias(value); return *this;}
-    inline LensReviewSummary& WithLensAlias(Aws::String&& value) { SetLensAlias(std::move(value)); return *this;}
-    inline LensReviewSummary& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
+    template<typename LensAliasT = Aws::String>
+    void SetLensAlias(LensAliasT&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::forward<LensAliasT>(value); }
+    template<typename LensAliasT = Aws::String>
+    LensReviewSummary& WithLensAlias(LensAliasT&& value) { SetLensAlias(std::forward<LensAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN for the lens.</p>
      */
-    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
+    inline const Aws::String& GetLensArn() const { return m_lensArn; }
     inline bool LensArnHasBeenSet() const { return m_lensArnHasBeenSet; }
-    inline void SetLensArn(const Aws::String& value) { m_lensArnHasBeenSet = true; m_lensArn = value; }
-    inline void SetLensArn(Aws::String&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::move(value); }
-    inline void SetLensArn(const char* value) { m_lensArnHasBeenSet = true; m_lensArn.assign(value); }
-    inline LensReviewSummary& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
-    inline LensReviewSummary& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
-    inline LensReviewSummary& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+    template<typename LensArnT = Aws::String>
+    void SetLensArn(LensArnT&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::forward<LensArnT>(value); }
+    template<typename LensArnT = Aws::String>
+    LensReviewSummary& WithLensArn(LensArnT&& value) { SetLensArn(std::forward<LensArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the lens.</p>
      */
-    inline const Aws::String& GetLensVersion() const{ return m_lensVersion; }
+    inline const Aws::String& GetLensVersion() const { return m_lensVersion; }
     inline bool LensVersionHasBeenSet() const { return m_lensVersionHasBeenSet; }
-    inline void SetLensVersion(const Aws::String& value) { m_lensVersionHasBeenSet = true; m_lensVersion = value; }
-    inline void SetLensVersion(Aws::String&& value) { m_lensVersionHasBeenSet = true; m_lensVersion = std::move(value); }
-    inline void SetLensVersion(const char* value) { m_lensVersionHasBeenSet = true; m_lensVersion.assign(value); }
-    inline LensReviewSummary& WithLensVersion(const Aws::String& value) { SetLensVersion(value); return *this;}
-    inline LensReviewSummary& WithLensVersion(Aws::String&& value) { SetLensVersion(std::move(value)); return *this;}
-    inline LensReviewSummary& WithLensVersion(const char* value) { SetLensVersion(value); return *this;}
+    template<typename LensVersionT = Aws::String>
+    void SetLensVersion(LensVersionT&& value) { m_lensVersionHasBeenSet = true; m_lensVersion = std::forward<LensVersionT>(value); }
+    template<typename LensVersionT = Aws::String>
+    LensReviewSummary& WithLensVersion(LensVersionT&& value) { SetLensVersion(std::forward<LensVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensName() const{ return m_lensName; }
+    inline const Aws::String& GetLensName() const { return m_lensName; }
     inline bool LensNameHasBeenSet() const { return m_lensNameHasBeenSet; }
-    inline void SetLensName(const Aws::String& value) { m_lensNameHasBeenSet = true; m_lensName = value; }
-    inline void SetLensName(Aws::String&& value) { m_lensNameHasBeenSet = true; m_lensName = std::move(value); }
-    inline void SetLensName(const char* value) { m_lensNameHasBeenSet = true; m_lensName.assign(value); }
-    inline LensReviewSummary& WithLensName(const Aws::String& value) { SetLensName(value); return *this;}
-    inline LensReviewSummary& WithLensName(Aws::String&& value) { SetLensName(std::move(value)); return *this;}
-    inline LensReviewSummary& WithLensName(const char* value) { SetLensName(value); return *this;}
+    template<typename LensNameT = Aws::String>
+    void SetLensName(LensNameT&& value) { m_lensNameHasBeenSet = true; m_lensName = std::forward<LensNameT>(value); }
+    template<typename LensNameT = Aws::String>
+    LensReviewSummary& WithLensName(LensNameT&& value) { SetLensName(std::forward<LensNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the lens.</p>
      */
-    inline const LensStatus& GetLensStatus() const{ return m_lensStatus; }
+    inline LensStatus GetLensStatus() const { return m_lensStatus; }
     inline bool LensStatusHasBeenSet() const { return m_lensStatusHasBeenSet; }
-    inline void SetLensStatus(const LensStatus& value) { m_lensStatusHasBeenSet = true; m_lensStatus = value; }
-    inline void SetLensStatus(LensStatus&& value) { m_lensStatusHasBeenSet = true; m_lensStatus = std::move(value); }
-    inline LensReviewSummary& WithLensStatus(const LensStatus& value) { SetLensStatus(value); return *this;}
-    inline LensReviewSummary& WithLensStatus(LensStatus&& value) { SetLensStatus(std::move(value)); return *this;}
+    inline void SetLensStatus(LensStatus value) { m_lensStatusHasBeenSet = true; m_lensStatus = value; }
+    inline LensReviewSummary& WithLensStatus(LensStatus value) { SetLensStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline LensReviewSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline LensReviewSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    LensReviewSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Risk, int>& GetRiskCounts() const{ return m_riskCounts; }
+    inline const Aws::Map<Risk, int>& GetRiskCounts() const { return m_riskCounts; }
     inline bool RiskCountsHasBeenSet() const { return m_riskCountsHasBeenSet; }
-    inline void SetRiskCounts(const Aws::Map<Risk, int>& value) { m_riskCountsHasBeenSet = true; m_riskCounts = value; }
-    inline void SetRiskCounts(Aws::Map<Risk, int>&& value) { m_riskCountsHasBeenSet = true; m_riskCounts = std::move(value); }
-    inline LensReviewSummary& WithRiskCounts(const Aws::Map<Risk, int>& value) { SetRiskCounts(value); return *this;}
-    inline LensReviewSummary& WithRiskCounts(Aws::Map<Risk, int>&& value) { SetRiskCounts(std::move(value)); return *this;}
-    inline LensReviewSummary& AddRiskCounts(const Risk& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(key, value); return *this; }
-    inline LensReviewSummary& AddRiskCounts(Risk&& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(std::move(key), value); return *this; }
+    template<typename RiskCountsT = Aws::Map<Risk, int>>
+    void SetRiskCounts(RiskCountsT&& value) { m_riskCountsHasBeenSet = true; m_riskCounts = std::forward<RiskCountsT>(value); }
+    template<typename RiskCountsT = Aws::Map<Risk, int>>
+    LensReviewSummary& WithRiskCounts(RiskCountsT&& value) { SetRiskCounts(std::forward<RiskCountsT>(value)); return *this;}
+    inline LensReviewSummary& AddRiskCounts(Risk key, int value) {
+      m_riskCountsHasBeenSet = true; m_riskCounts.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The profiles associated with the workload.</p>
      */
-    inline const Aws::Vector<WorkloadProfile>& GetProfiles() const{ return m_profiles; }
+    inline const Aws::Vector<WorkloadProfile>& GetProfiles() const { return m_profiles; }
     inline bool ProfilesHasBeenSet() const { return m_profilesHasBeenSet; }
-    inline void SetProfiles(const Aws::Vector<WorkloadProfile>& value) { m_profilesHasBeenSet = true; m_profiles = value; }
-    inline void SetProfiles(Aws::Vector<WorkloadProfile>&& value) { m_profilesHasBeenSet = true; m_profiles = std::move(value); }
-    inline LensReviewSummary& WithProfiles(const Aws::Vector<WorkloadProfile>& value) { SetProfiles(value); return *this;}
-    inline LensReviewSummary& WithProfiles(Aws::Vector<WorkloadProfile>&& value) { SetProfiles(std::move(value)); return *this;}
-    inline LensReviewSummary& AddProfiles(const WorkloadProfile& value) { m_profilesHasBeenSet = true; m_profiles.push_back(value); return *this; }
-    inline LensReviewSummary& AddProfiles(WorkloadProfile&& value) { m_profilesHasBeenSet = true; m_profiles.push_back(std::move(value)); return *this; }
+    template<typename ProfilesT = Aws::Vector<WorkloadProfile>>
+    void SetProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles = std::forward<ProfilesT>(value); }
+    template<typename ProfilesT = Aws::Vector<WorkloadProfile>>
+    LensReviewSummary& WithProfiles(ProfilesT&& value) { SetProfiles(std::forward<ProfilesT>(value)); return *this;}
+    template<typename ProfilesT = WorkloadProfile>
+    LensReviewSummary& AddProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles.emplace_back(std::forward<ProfilesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Risk, int>& GetPrioritizedRiskCounts() const{ return m_prioritizedRiskCounts; }
+    inline const Aws::Map<Risk, int>& GetPrioritizedRiskCounts() const { return m_prioritizedRiskCounts; }
     inline bool PrioritizedRiskCountsHasBeenSet() const { return m_prioritizedRiskCountsHasBeenSet; }
-    inline void SetPrioritizedRiskCounts(const Aws::Map<Risk, int>& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = value; }
-    inline void SetPrioritizedRiskCounts(Aws::Map<Risk, int>&& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = std::move(value); }
-    inline LensReviewSummary& WithPrioritizedRiskCounts(const Aws::Map<Risk, int>& value) { SetPrioritizedRiskCounts(value); return *this;}
-    inline LensReviewSummary& WithPrioritizedRiskCounts(Aws::Map<Risk, int>&& value) { SetPrioritizedRiskCounts(std::move(value)); return *this;}
-    inline LensReviewSummary& AddPrioritizedRiskCounts(const Risk& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(key, value); return *this; }
-    inline LensReviewSummary& AddPrioritizedRiskCounts(Risk&& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(std::move(key), value); return *this; }
+    template<typename PrioritizedRiskCountsT = Aws::Map<Risk, int>>
+    void SetPrioritizedRiskCounts(PrioritizedRiskCountsT&& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = std::forward<PrioritizedRiskCountsT>(value); }
+    template<typename PrioritizedRiskCountsT = Aws::Map<Risk, int>>
+    LensReviewSummary& WithPrioritizedRiskCounts(PrioritizedRiskCountsT&& value) { SetPrioritizedRiskCounts(std::forward<PrioritizedRiskCountsT>(value)); return *this;}
+    inline LensReviewSummary& AddPrioritizedRiskCounts(Risk key, int value) {
+      m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
@@ -168,10 +160,10 @@ namespace Model
     Aws::String m_lensName;
     bool m_lensNameHasBeenSet = false;
 
-    LensStatus m_lensStatus;
+    LensStatus m_lensStatus{LensStatus::NOT_SET};
     bool m_lensStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     Aws::Map<Risk, int> m_riskCounts;

@@ -27,7 +27,7 @@ namespace Model
   class CreateEmailAddressResult
   {
   public:
-    AWS_CONNECT_API CreateEmailAddressResult();
+    AWS_CONNECT_API CreateEmailAddressResult() = default;
     AWS_CONNECT_API CreateEmailAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API CreateEmailAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The identifier of the email address.</p>
      */
-    inline const Aws::String& GetEmailAddressId() const{ return m_emailAddressId; }
-    inline void SetEmailAddressId(const Aws::String& value) { m_emailAddressId = value; }
-    inline void SetEmailAddressId(Aws::String&& value) { m_emailAddressId = std::move(value); }
-    inline void SetEmailAddressId(const char* value) { m_emailAddressId.assign(value); }
-    inline CreateEmailAddressResult& WithEmailAddressId(const Aws::String& value) { SetEmailAddressId(value); return *this;}
-    inline CreateEmailAddressResult& WithEmailAddressId(Aws::String&& value) { SetEmailAddressId(std::move(value)); return *this;}
-    inline CreateEmailAddressResult& WithEmailAddressId(const char* value) { SetEmailAddressId(value); return *this;}
+    inline const Aws::String& GetEmailAddressId() const { return m_emailAddressId; }
+    template<typename EmailAddressIdT = Aws::String>
+    void SetEmailAddressId(EmailAddressIdT&& value) { m_emailAddressIdHasBeenSet = true; m_emailAddressId = std::forward<EmailAddressIdT>(value); }
+    template<typename EmailAddressIdT = Aws::String>
+    CreateEmailAddressResult& WithEmailAddressId(EmailAddressIdT&& value) { SetEmailAddressId(std::forward<EmailAddressIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the email address.</p>
      */
-    inline const Aws::String& GetEmailAddressArn() const{ return m_emailAddressArn; }
-    inline void SetEmailAddressArn(const Aws::String& value) { m_emailAddressArn = value; }
-    inline void SetEmailAddressArn(Aws::String&& value) { m_emailAddressArn = std::move(value); }
-    inline void SetEmailAddressArn(const char* value) { m_emailAddressArn.assign(value); }
-    inline CreateEmailAddressResult& WithEmailAddressArn(const Aws::String& value) { SetEmailAddressArn(value); return *this;}
-    inline CreateEmailAddressResult& WithEmailAddressArn(Aws::String&& value) { SetEmailAddressArn(std::move(value)); return *this;}
-    inline CreateEmailAddressResult& WithEmailAddressArn(const char* value) { SetEmailAddressArn(value); return *this;}
+    inline const Aws::String& GetEmailAddressArn() const { return m_emailAddressArn; }
+    template<typename EmailAddressArnT = Aws::String>
+    void SetEmailAddressArn(EmailAddressArnT&& value) { m_emailAddressArnHasBeenSet = true; m_emailAddressArn = std::forward<EmailAddressArnT>(value); }
+    template<typename EmailAddressArnT = Aws::String>
+    CreateEmailAddressResult& WithEmailAddressArn(EmailAddressArnT&& value) { SetEmailAddressArn(std::forward<EmailAddressArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateEmailAddressResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateEmailAddressResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateEmailAddressResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateEmailAddressResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_emailAddressId;
+    bool m_emailAddressIdHasBeenSet = false;
 
     Aws::String m_emailAddressArn;
+    bool m_emailAddressArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

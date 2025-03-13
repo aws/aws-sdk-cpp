@@ -33,7 +33,7 @@ namespace Model
   class CollectionFilters
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API CollectionFilters();
+    AWS_OPENSEARCHSERVERLESS_API CollectionFilters() = default;
     AWS_OPENSEARCHSERVERLESS_API CollectionFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API CollectionFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The name of the collection.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CollectionFilters& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CollectionFilters& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CollectionFilters& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CollectionFilters& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the collection.</p>
      */
-    inline const CollectionStatus& GetStatus() const{ return m_status; }
+    inline CollectionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CollectionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CollectionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CollectionFilters& WithStatus(const CollectionStatus& value) { SetStatus(value); return *this;}
-    inline CollectionFilters& WithStatus(CollectionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CollectionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CollectionFilters& WithStatus(CollectionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    CollectionStatus m_status;
+    CollectionStatus m_status{CollectionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

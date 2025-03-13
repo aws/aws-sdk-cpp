@@ -12,20 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDeviceRequest::UpdateDeviceRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_aWSLocationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_vendorHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_siteIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

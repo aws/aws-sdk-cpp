@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLifecycleHookTypesResult::DescribeLifecycleHookTypesResult()
-{
-}
-
 DescribeLifecycleHookTypesResult::DescribeLifecycleHookTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeLifecycleHookTypesResult& DescribeLifecycleHookTypesResult::operator =(c
     if(!lifecycleHookTypesNode.IsNull())
     {
       XmlNode lifecycleHookTypesMember = lifecycleHookTypesNode.FirstChild("member");
+      m_lifecycleHookTypesHasBeenSet = !lifecycleHookTypesMember.IsNull();
       while(!lifecycleHookTypesMember.IsNull())
       {
         m_lifecycleHookTypes.push_back(lifecycleHookTypesMember.GetText());
@@ -54,6 +51,7 @@ DescribeLifecycleHookTypesResult& DescribeLifecycleHookTypesResult::operator =(c
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeLifecycleHookTypesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

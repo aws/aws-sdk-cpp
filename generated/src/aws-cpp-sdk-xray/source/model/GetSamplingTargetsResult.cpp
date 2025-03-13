@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSamplingTargetsResult::GetSamplingTargetsResult()
-{
-}
-
 GetSamplingTargetsResult::GetSamplingTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,13 @@ GetSamplingTargetsResult& GetSamplingTargetsResult::operator =(const Aws::Amazon
     {
       m_samplingTargetDocuments.push_back(samplingTargetDocumentsJsonList[samplingTargetDocumentsIndex].AsObject());
     }
+    m_samplingTargetDocumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRuleModification"))
   {
     m_lastRuleModification = jsonValue.GetDouble("LastRuleModification");
-
+    m_lastRuleModificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedStatistics"))
   {
     Aws::Utils::Array<JsonView> unprocessedStatisticsJsonList = jsonValue.GetArray("UnprocessedStatistics");
@@ -51,14 +46,15 @@ GetSamplingTargetsResult& GetSamplingTargetsResult::operator =(const Aws::Amazon
     {
       m_unprocessedStatistics.push_back(unprocessedStatisticsJsonList[unprocessedStatisticsIndex].AsObject());
     }
+    m_unprocessedStatisticsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

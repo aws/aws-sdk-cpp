@@ -12,12 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutWebhookRequest::PutWebhookRequest() : 
-    m_webhookHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PutWebhookRequest::SerializePayload() const
 {
   JsonValue payload;

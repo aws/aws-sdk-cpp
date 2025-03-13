@@ -18,16 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-MinimumHealthyHosts::MinimumHealthyHosts() : 
-    m_type(MinimumHealthyHostsType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 MinimumHealthyHosts::MinimumHealthyHosts(JsonView jsonValue)
-  : MinimumHealthyHosts()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MinimumHealthyHosts& MinimumHealthyHosts::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = MinimumHealthyHostsTypeMapper::GetMinimumHealthyHostsTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInteger("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImageCriterion::ImageCriterion() : 
-    m_imageProvidersHasBeenSet(false)
-{
-}
-
 ImageCriterion::ImageCriterion(const XmlNode& xmlNode)
-  : ImageCriterion()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ ImageCriterion& ImageCriterion::operator =(const XmlNode& xmlNode)
     if(!imageProvidersNode.IsNull())
     {
       XmlNode imageProvidersMember = imageProvidersNode.FirstChild("item");
+      m_imageProvidersHasBeenSet = !imageProvidersMember.IsNull();
       while(!imageProvidersMember.IsNull())
       {
         m_imageProviders.push_back(imageProvidersMember.GetText());
         imageProvidersMember = imageProvidersMember.NextNode("item");
       }
 
-      m_imageProvidersHasBeenSet = true;
+       m_imageProvidersHasBeenSet = true;
     }
   }
 

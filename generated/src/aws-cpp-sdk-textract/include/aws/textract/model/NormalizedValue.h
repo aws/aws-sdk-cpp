@@ -33,7 +33,7 @@ namespace Model
   class NormalizedValue
   {
   public:
-    AWS_TEXTRACT_API NormalizedValue();
+    AWS_TEXTRACT_API NormalizedValue() = default;
     AWS_TEXTRACT_API NormalizedValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API NormalizedValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline NormalizedValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline NormalizedValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline NormalizedValue& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    NormalizedValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The normalized type of the value detected. In this case, DATE.</p>
      */
-    inline const ValueType& GetValueType() const{ return m_valueType; }
+    inline ValueType GetValueType() const { return m_valueType; }
     inline bool ValueTypeHasBeenSet() const { return m_valueTypeHasBeenSet; }
-    inline void SetValueType(const ValueType& value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
-    inline void SetValueType(ValueType&& value) { m_valueTypeHasBeenSet = true; m_valueType = std::move(value); }
-    inline NormalizedValue& WithValueType(const ValueType& value) { SetValueType(value); return *this;}
-    inline NormalizedValue& WithValueType(ValueType&& value) { SetValueType(std::move(value)); return *this;}
+    inline void SetValueType(ValueType value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
+    inline NormalizedValue& WithValueType(ValueType value) { SetValueType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    ValueType m_valueType;
+    ValueType m_valueType{ValueType::NOT_SET};
     bool m_valueTypeHasBeenSet = false;
   };
 

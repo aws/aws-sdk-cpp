@@ -18,19 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ResourceSyncAttempt::ResourceSyncAttempt() : 
-    m_eventsHasBeenSet(false),
-    m_initialRevisionHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_status(ResourceSyncStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_targetRevisionHasBeenSet(false)
-{
-}
-
 ResourceSyncAttempt::ResourceSyncAttempt(JsonView jsonValue)
-  : ResourceSyncAttempt()
 {
   *this = jsonValue;
 }
@@ -46,42 +34,31 @@ ResourceSyncAttempt& ResourceSyncAttempt::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initialRevision"))
   {
     m_initialRevision = jsonValue.GetObject("initialRevision");
-
     m_initialRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetDouble("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ResourceSyncStatusMapper::GetResourceSyncStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetString("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetRevision"))
   {
     m_targetRevision = jsonValue.GetObject("targetRevision");
-
     m_targetRevisionHasBeenSet = true;
   }
-
   return *this;
 }
 

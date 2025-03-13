@@ -12,11 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTagsRequest::DescribeTagsRequest() : 
-    m_resourceArnsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTagsRequest::SerializePayload() const
 {
   JsonValue payload;

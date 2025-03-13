@@ -30,7 +30,7 @@ namespace Model
   class TargetTrackingScalingPolicyConfiguration
   {
   public:
-    AWS_KEYSPACES_API TargetTrackingScalingPolicyConfiguration();
+    AWS_KEYSPACES_API TargetTrackingScalingPolicyConfiguration() = default;
     AWS_KEYSPACES_API TargetTrackingScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API TargetTrackingScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * scaling policies are set, they can't scale in the table lower than its minimum
      * capacity.</p>
      */
-    inline bool GetDisableScaleIn() const{ return m_disableScaleIn; }
+    inline bool GetDisableScaleIn() const { return m_disableScaleIn; }
     inline bool DisableScaleInHasBeenSet() const { return m_disableScaleInHasBeenSet; }
     inline void SetDisableScaleIn(bool value) { m_disableScaleInHasBeenSet = true; m_disableScaleIn = value; }
     inline TargetTrackingScalingPolicyConfiguration& WithDisableScaleIn(bool value) { SetDisableScaleIn(value); return *this;}
@@ -55,7 +55,7 @@ namespace Model
      * in seconds between scaling activities that lets the table stabilize before
      * another scaling activity starts. </p>
      */
-    inline int GetScaleInCooldown() const{ return m_scaleInCooldown; }
+    inline int GetScaleInCooldown() const { return m_scaleInCooldown; }
     inline bool ScaleInCooldownHasBeenSet() const { return m_scaleInCooldownHasBeenSet; }
     inline void SetScaleInCooldown(int value) { m_scaleInCooldownHasBeenSet = true; m_scaleInCooldown = value; }
     inline TargetTrackingScalingPolicyConfiguration& WithScaleInCooldown(int value) { SetScaleInCooldown(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
      * between scaling activities that lets the table stabilize before another scaling
      * activity starts. </p>
      */
-    inline int GetScaleOutCooldown() const{ return m_scaleOutCooldown; }
+    inline int GetScaleOutCooldown() const { return m_scaleOutCooldown; }
     inline bool ScaleOutCooldownHasBeenSet() const { return m_scaleOutCooldownHasBeenSet; }
     inline void SetScaleOutCooldown(int value) { m_scaleOutCooldownHasBeenSet = true; m_scaleOutCooldown = value; }
     inline TargetTrackingScalingPolicyConfiguration& WithScaleOutCooldown(int value) { SetScaleOutCooldown(value); return *this;}
@@ -82,23 +82,23 @@ namespace Model
      * stays at or near this value. You define <code>targetValue</code> as a
      * percentage. A <code>double</code> between 20 and 90.</p>
      */
-    inline double GetTargetValue() const{ return m_targetValue; }
+    inline double GetTargetValue() const { return m_targetValue; }
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
     inline TargetTrackingScalingPolicyConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
     ///@}
   private:
 
-    bool m_disableScaleIn;
+    bool m_disableScaleIn{false};
     bool m_disableScaleInHasBeenSet = false;
 
-    int m_scaleInCooldown;
+    int m_scaleInCooldown{0};
     bool m_scaleInCooldownHasBeenSet = false;
 
-    int m_scaleOutCooldown;
+    int m_scaleOutCooldown{0};
     bool m_scaleOutCooldownHasBeenSet = false;
 
-    double m_targetValue;
+    double m_targetValue{0.0};
     bool m_targetValueHasBeenSet = false;
   };
 

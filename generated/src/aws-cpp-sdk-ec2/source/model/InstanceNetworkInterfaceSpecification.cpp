@@ -20,44 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification() : 
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deviceIndex(0),
-    m_deviceIndexHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_ipv6AddressCount(0),
-    m_ipv6AddressCountHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false),
-    m_secondaryPrivateIpAddressCount(0),
-    m_secondaryPrivateIpAddressCountHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_associateCarrierIpAddress(false),
-    m_associateCarrierIpAddressHasBeenSet(false),
-    m_interfaceTypeHasBeenSet(false),
-    m_networkCardIndex(0),
-    m_networkCardIndexHasBeenSet(false),
-    m_ipv4PrefixesHasBeenSet(false),
-    m_ipv4PrefixCount(0),
-    m_ipv4PrefixCountHasBeenSet(false),
-    m_ipv6PrefixesHasBeenSet(false),
-    m_ipv6PrefixCount(0),
-    m_ipv6PrefixCountHasBeenSet(false),
-    m_primaryIpv6(false),
-    m_primaryIpv6HasBeenSet(false),
-    m_enaSrdSpecificationHasBeenSet(false),
-    m_connectionTrackingSpecificationHasBeenSet(false)
-{
-}
-
 InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification(const XmlNode& xmlNode)
-  : InstanceNetworkInterfaceSpecification()
 {
   *this = xmlNode;
 }
@@ -73,162 +36,184 @@ InstanceNetworkInterfaceSpecification& InstanceNetworkInterfaceSpecification::op
     {
       m_associatePublicIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associatePublicIpAddressNode.GetText()).c_str()).c_str());
       m_associatePublicIpAddressHasBeenSet = true;
+       m_associatePublicIpAddressHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())
     {
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
+       m_deleteOnTerminationHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode deviceIndexNode = resultNode.FirstChild("deviceIndex");
     if(!deviceIndexNode.IsNull())
     {
       m_deviceIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deviceIndexNode.GetText()).c_str()).c_str());
       m_deviceIndexHasBeenSet = true;
+       m_deviceIndexHasBeenSet = true;
     }
     XmlNode groupsNode = resultNode.FirstChild("SecurityGroupId");
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("SecurityGroupId");
+      m_groupsHasBeenSet = !groupsMember.IsNull();
       while(!groupsMember.IsNull())
       {
         m_groups.push_back(groupsMember.GetText());
         groupsMember = groupsMember.NextNode("SecurityGroupId");
       }
 
-      m_groupsHasBeenSet = true;
+       m_groupsHasBeenSet = true;
     }
     XmlNode ipv6AddressCountNode = resultNode.FirstChild("ipv6AddressCount");
     if(!ipv6AddressCountNode.IsNull())
     {
       m_ipv6AddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressCountNode.GetText()).c_str()).c_str());
       m_ipv6AddressCountHasBeenSet = true;
+       m_ipv6AddressCountHasBeenSet = true;
     }
     XmlNode ipv6AddressesNode = resultNode.FirstChild("ipv6AddressesSet");
     if(!ipv6AddressesNode.IsNull())
     {
       XmlNode ipv6AddressesMember = ipv6AddressesNode.FirstChild("item");
+      m_ipv6AddressesHasBeenSet = !ipv6AddressesMember.IsNull();
       while(!ipv6AddressesMember.IsNull())
       {
         m_ipv6Addresses.push_back(ipv6AddressesMember);
         ipv6AddressesMember = ipv6AddressesMember.NextNode("item");
       }
 
-      m_ipv6AddressesHasBeenSet = true;
+       m_ipv6AddressesHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
+       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
       m_privateIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpAddressNode.GetText());
       m_privateIpAddressHasBeenSet = true;
+       m_privateIpAddressHasBeenSet = true;
     }
     XmlNode privateIpAddressesNode = resultNode.FirstChild("privateIpAddressesSet");
     if(!privateIpAddressesNode.IsNull())
     {
       XmlNode privateIpAddressesMember = privateIpAddressesNode.FirstChild("item");
+      m_privateIpAddressesHasBeenSet = !privateIpAddressesMember.IsNull();
       while(!privateIpAddressesMember.IsNull())
       {
         m_privateIpAddresses.push_back(privateIpAddressesMember);
         privateIpAddressesMember = privateIpAddressesMember.NextNode("item");
       }
 
-      m_privateIpAddressesHasBeenSet = true;
+       m_privateIpAddressesHasBeenSet = true;
     }
     XmlNode secondaryPrivateIpAddressCountNode = resultNode.FirstChild("secondaryPrivateIpAddressCount");
     if(!secondaryPrivateIpAddressCountNode.IsNull())
     {
       m_secondaryPrivateIpAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(secondaryPrivateIpAddressCountNode.GetText()).c_str()).c_str());
       m_secondaryPrivateIpAddressCountHasBeenSet = true;
+       m_secondaryPrivateIpAddressCountHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode associateCarrierIpAddressNode = resultNode.FirstChild("AssociateCarrierIpAddress");
     if(!associateCarrierIpAddressNode.IsNull())
     {
       m_associateCarrierIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associateCarrierIpAddressNode.GetText()).c_str()).c_str());
       m_associateCarrierIpAddressHasBeenSet = true;
+       m_associateCarrierIpAddressHasBeenSet = true;
     }
     XmlNode interfaceTypeNode = resultNode.FirstChild("InterfaceType");
     if(!interfaceTypeNode.IsNull())
     {
       m_interfaceType = Aws::Utils::Xml::DecodeEscapedXmlText(interfaceTypeNode.GetText());
       m_interfaceTypeHasBeenSet = true;
+       m_interfaceTypeHasBeenSet = true;
     }
     XmlNode networkCardIndexNode = resultNode.FirstChild("NetworkCardIndex");
     if(!networkCardIndexNode.IsNull())
     {
       m_networkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
       m_networkCardIndexHasBeenSet = true;
+       m_networkCardIndexHasBeenSet = true;
     }
     XmlNode ipv4PrefixesNode = resultNode.FirstChild("Ipv4Prefix");
     if(!ipv4PrefixesNode.IsNull())
     {
       XmlNode ipv4PrefixesMember = ipv4PrefixesNode.FirstChild("item");
+      m_ipv4PrefixesHasBeenSet = !ipv4PrefixesMember.IsNull();
       while(!ipv4PrefixesMember.IsNull())
       {
         m_ipv4Prefixes.push_back(ipv4PrefixesMember);
         ipv4PrefixesMember = ipv4PrefixesMember.NextNode("item");
       }
 
-      m_ipv4PrefixesHasBeenSet = true;
+       m_ipv4PrefixesHasBeenSet = true;
     }
     XmlNode ipv4PrefixCountNode = resultNode.FirstChild("Ipv4PrefixCount");
     if(!ipv4PrefixCountNode.IsNull())
     {
       m_ipv4PrefixCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv4PrefixCountNode.GetText()).c_str()).c_str());
       m_ipv4PrefixCountHasBeenSet = true;
+       m_ipv4PrefixCountHasBeenSet = true;
     }
     XmlNode ipv6PrefixesNode = resultNode.FirstChild("Ipv6Prefix");
     if(!ipv6PrefixesNode.IsNull())
     {
       XmlNode ipv6PrefixesMember = ipv6PrefixesNode.FirstChild("item");
+      m_ipv6PrefixesHasBeenSet = !ipv6PrefixesMember.IsNull();
       while(!ipv6PrefixesMember.IsNull())
       {
         m_ipv6Prefixes.push_back(ipv6PrefixesMember);
         ipv6PrefixesMember = ipv6PrefixesMember.NextNode("item");
       }
 
-      m_ipv6PrefixesHasBeenSet = true;
+       m_ipv6PrefixesHasBeenSet = true;
     }
     XmlNode ipv6PrefixCountNode = resultNode.FirstChild("Ipv6PrefixCount");
     if(!ipv6PrefixCountNode.IsNull())
     {
       m_ipv6PrefixCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6PrefixCountNode.GetText()).c_str()).c_str());
       m_ipv6PrefixCountHasBeenSet = true;
+       m_ipv6PrefixCountHasBeenSet = true;
     }
     XmlNode primaryIpv6Node = resultNode.FirstChild("PrimaryIpv6");
     if(!primaryIpv6Node.IsNull())
     {
       m_primaryIpv6 = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(primaryIpv6Node.GetText()).c_str()).c_str());
       m_primaryIpv6HasBeenSet = true;
+       m_primaryIpv6HasBeenSet = true;
     }
     XmlNode enaSrdSpecificationNode = resultNode.FirstChild("EnaSrdSpecification");
     if(!enaSrdSpecificationNode.IsNull())
     {
       m_enaSrdSpecification = enaSrdSpecificationNode;
       m_enaSrdSpecificationHasBeenSet = true;
+       m_enaSrdSpecificationHasBeenSet = true;
     }
     XmlNode connectionTrackingSpecificationNode = resultNode.FirstChild("ConnectionTrackingSpecification");
     if(!connectionTrackingSpecificationNode.IsNull())
     {
       m_connectionTrackingSpecification = connectionTrackingSpecificationNode;
       m_connectionTrackingSpecificationHasBeenSet = true;
+       m_connectionTrackingSpecificationHasBeenSet = true;
     }
   }
 

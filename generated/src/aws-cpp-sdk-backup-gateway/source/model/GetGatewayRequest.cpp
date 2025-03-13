@@ -12,11 +12,6 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetGatewayRequest::GetGatewayRequest() : 
-    m_gatewayArnHasBeenSet(false)
-{
-}
-
 Aws::String GetGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

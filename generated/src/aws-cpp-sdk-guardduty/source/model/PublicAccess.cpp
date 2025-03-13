@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-PublicAccess::PublicAccess() : 
-    m_permissionConfigurationHasBeenSet(false),
-    m_effectivePermissionHasBeenSet(false)
-{
-}
-
 PublicAccess::PublicAccess(JsonView jsonValue)
-  : PublicAccess()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PublicAccess& PublicAccess::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("permissionConfiguration"))
   {
     m_permissionConfiguration = jsonValue.GetObject("permissionConfiguration");
-
     m_permissionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectivePermission"))
   {
     m_effectivePermission = jsonValue.GetString("effectivePermission");
-
     m_effectivePermissionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeElasticIpsResult::DescribeElasticIpsResult()
-{
-}
-
 DescribeElasticIpsResult::DescribeElasticIpsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeElasticIpsResult& DescribeElasticIpsResult::operator =(const Aws::Amazon
     {
       m_elasticIps.push_back(elasticIpsJsonList[elasticIpsIndex].AsObject());
     }
+    m_elasticIpsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

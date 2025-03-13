@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLogLevelsByResourceTypesResult::GetLogLevelsByResourceTypesResult() : 
-    m_defaultLogLevel(LogLevel::NOT_SET)
-{
-}
-
 GetLogLevelsByResourceTypesResult::GetLogLevelsByResourceTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetLogLevelsByResourceTypesResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetLogLevelsByResourceTypesResult& GetLogLevelsByResourceTypesResult::operator =
   if(jsonValue.ValueExists("DefaultLogLevel"))
   {
     m_defaultLogLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("DefaultLogLevel"));
-
+    m_defaultLogLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WirelessGatewayLogOptions"))
   {
     Aws::Utils::Array<JsonView> wirelessGatewayLogOptionsJsonList = jsonValue.GetArray("WirelessGatewayLogOptions");
@@ -44,8 +37,8 @@ GetLogLevelsByResourceTypesResult& GetLogLevelsByResourceTypesResult::operator =
     {
       m_wirelessGatewayLogOptions.push_back(wirelessGatewayLogOptionsJsonList[wirelessGatewayLogOptionsIndex].AsObject());
     }
+    m_wirelessGatewayLogOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WirelessDeviceLogOptions"))
   {
     Aws::Utils::Array<JsonView> wirelessDeviceLogOptionsJsonList = jsonValue.GetArray("WirelessDeviceLogOptions");
@@ -53,8 +46,8 @@ GetLogLevelsByResourceTypesResult& GetLogLevelsByResourceTypesResult::operator =
     {
       m_wirelessDeviceLogOptions.push_back(wirelessDeviceLogOptionsJsonList[wirelessDeviceLogOptionsIndex].AsObject());
     }
+    m_wirelessDeviceLogOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FuotaTaskLogOptions"))
   {
     Aws::Utils::Array<JsonView> fuotaTaskLogOptionsJsonList = jsonValue.GetArray("FuotaTaskLogOptions");
@@ -62,14 +55,15 @@ GetLogLevelsByResourceTypesResult& GetLogLevelsByResourceTypesResult::operator =
     {
       m_fuotaTaskLogOptions.push_back(fuotaTaskLogOptionsJsonList[fuotaTaskLogOptionsIndex].AsObject());
     }
+    m_fuotaTaskLogOptionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

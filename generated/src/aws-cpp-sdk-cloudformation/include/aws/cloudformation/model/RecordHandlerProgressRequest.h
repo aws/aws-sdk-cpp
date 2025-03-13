@@ -23,7 +23,7 @@ namespace Model
   class RecordHandlerProgressRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API RecordHandlerProgressRequest();
+    AWS_CLOUDFORMATION_API RecordHandlerProgressRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
      * CLI</a>.</p>
      */
-    inline const Aws::String& GetBearerToken() const{ return m_bearerToken; }
+    inline const Aws::String& GetBearerToken() const { return m_bearerToken; }
     inline bool BearerTokenHasBeenSet() const { return m_bearerTokenHasBeenSet; }
-    inline void SetBearerToken(const Aws::String& value) { m_bearerTokenHasBeenSet = true; m_bearerToken = value; }
-    inline void SetBearerToken(Aws::String&& value) { m_bearerTokenHasBeenSet = true; m_bearerToken = std::move(value); }
-    inline void SetBearerToken(const char* value) { m_bearerTokenHasBeenSet = true; m_bearerToken.assign(value); }
-    inline RecordHandlerProgressRequest& WithBearerToken(const Aws::String& value) { SetBearerToken(value); return *this;}
-    inline RecordHandlerProgressRequest& WithBearerToken(Aws::String&& value) { SetBearerToken(std::move(value)); return *this;}
-    inline RecordHandlerProgressRequest& WithBearerToken(const char* value) { SetBearerToken(value); return *this;}
+    template<typename BearerTokenT = Aws::String>
+    void SetBearerToken(BearerTokenT&& value) { m_bearerTokenHasBeenSet = true; m_bearerToken = std::forward<BearerTokenT>(value); }
+    template<typename BearerTokenT = Aws::String>
+    RecordHandlerProgressRequest& WithBearerToken(BearerTokenT&& value) { SetBearerToken(std::forward<BearerTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
      * CLI</a>.</p>
      */
-    inline const OperationStatus& GetOperationStatus() const{ return m_operationStatus; }
+    inline OperationStatus GetOperationStatus() const { return m_operationStatus; }
     inline bool OperationStatusHasBeenSet() const { return m_operationStatusHasBeenSet; }
-    inline void SetOperationStatus(const OperationStatus& value) { m_operationStatusHasBeenSet = true; m_operationStatus = value; }
-    inline void SetOperationStatus(OperationStatus&& value) { m_operationStatusHasBeenSet = true; m_operationStatus = std::move(value); }
-    inline RecordHandlerProgressRequest& WithOperationStatus(const OperationStatus& value) { SetOperationStatus(value); return *this;}
-    inline RecordHandlerProgressRequest& WithOperationStatus(OperationStatus&& value) { SetOperationStatus(std::move(value)); return *this;}
+    inline void SetOperationStatus(OperationStatus value) { m_operationStatusHasBeenSet = true; m_operationStatus = value; }
+    inline RecordHandlerProgressRequest& WithOperationStatus(OperationStatus value) { SetOperationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
      * CLI</a>.</p>
      */
-    inline const OperationStatus& GetCurrentOperationStatus() const{ return m_currentOperationStatus; }
+    inline OperationStatus GetCurrentOperationStatus() const { return m_currentOperationStatus; }
     inline bool CurrentOperationStatusHasBeenSet() const { return m_currentOperationStatusHasBeenSet; }
-    inline void SetCurrentOperationStatus(const OperationStatus& value) { m_currentOperationStatusHasBeenSet = true; m_currentOperationStatus = value; }
-    inline void SetCurrentOperationStatus(OperationStatus&& value) { m_currentOperationStatusHasBeenSet = true; m_currentOperationStatus = std::move(value); }
-    inline RecordHandlerProgressRequest& WithCurrentOperationStatus(const OperationStatus& value) { SetCurrentOperationStatus(value); return *this;}
-    inline RecordHandlerProgressRequest& WithCurrentOperationStatus(OperationStatus&& value) { SetCurrentOperationStatus(std::move(value)); return *this;}
+    inline void SetCurrentOperationStatus(OperationStatus value) { m_currentOperationStatusHasBeenSet = true; m_currentOperationStatus = value; }
+    inline RecordHandlerProgressRequest& WithCurrentOperationStatus(OperationStatus value) { SetCurrentOperationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
      * CLI</a>.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline RecordHandlerProgressRequest& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline RecordHandlerProgressRequest& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline RecordHandlerProgressRequest& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    RecordHandlerProgressRequest& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,12 +96,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
      * CLI</a>.</p>
      */
-    inline const HandlerErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline HandlerErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const HandlerErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(HandlerErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline RecordHandlerProgressRequest& WithErrorCode(const HandlerErrorCode& value) { SetErrorCode(value); return *this;}
-    inline RecordHandlerProgressRequest& WithErrorCode(HandlerErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(HandlerErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline RecordHandlerProgressRequest& WithErrorCode(HandlerErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +108,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
      * CLI</a>.</p>
      */
-    inline const Aws::String& GetResourceModel() const{ return m_resourceModel; }
+    inline const Aws::String& GetResourceModel() const { return m_resourceModel; }
     inline bool ResourceModelHasBeenSet() const { return m_resourceModelHasBeenSet; }
-    inline void SetResourceModel(const Aws::String& value) { m_resourceModelHasBeenSet = true; m_resourceModel = value; }
-    inline void SetResourceModel(Aws::String&& value) { m_resourceModelHasBeenSet = true; m_resourceModel = std::move(value); }
-    inline void SetResourceModel(const char* value) { m_resourceModelHasBeenSet = true; m_resourceModel.assign(value); }
-    inline RecordHandlerProgressRequest& WithResourceModel(const Aws::String& value) { SetResourceModel(value); return *this;}
-    inline RecordHandlerProgressRequest& WithResourceModel(Aws::String&& value) { SetResourceModel(std::move(value)); return *this;}
-    inline RecordHandlerProgressRequest& WithResourceModel(const char* value) { SetResourceModel(value); return *this;}
+    template<typename ResourceModelT = Aws::String>
+    void SetResourceModel(ResourceModelT&& value) { m_resourceModelHasBeenSet = true; m_resourceModel = std::forward<ResourceModelT>(value); }
+    template<typename ResourceModelT = Aws::String>
+    RecordHandlerProgressRequest& WithResourceModel(ResourceModelT&& value) { SetResourceModel(std::forward<ResourceModelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,30 +122,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
      * CLI</a>.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline RecordHandlerProgressRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline RecordHandlerProgressRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline RecordHandlerProgressRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    RecordHandlerProgressRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_bearerToken;
     bool m_bearerTokenHasBeenSet = false;
 
-    OperationStatus m_operationStatus;
+    OperationStatus m_operationStatus{OperationStatus::NOT_SET};
     bool m_operationStatusHasBeenSet = false;
 
-    OperationStatus m_currentOperationStatus;
+    OperationStatus m_currentOperationStatus{OperationStatus::NOT_SET};
     bool m_currentOperationStatusHasBeenSet = false;
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    HandlerErrorCode m_errorCode;
+    HandlerErrorCode m_errorCode{HandlerErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_resourceModel;

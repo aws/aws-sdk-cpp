@@ -37,7 +37,7 @@ namespace Model
   class ScalingRule
   {
   public:
-    AWS_EMR_API ScalingRule();
+    AWS_EMR_API ScalingRule() = default;
     AWS_EMR_API ScalingRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API ScalingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,40 +48,36 @@ namespace Model
      * <p>The name used to identify an automatic scaling rule. Rule names must be
      * unique within a scaling policy.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ScalingRule& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ScalingRule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ScalingRule& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ScalingRule& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A friendly, more verbose description of the automatic scaling rule.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ScalingRule& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ScalingRule& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ScalingRule& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ScalingRule& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The conditions that trigger an automatic scaling activity.</p>
      */
-    inline const ScalingAction& GetAction() const{ return m_action; }
+    inline const ScalingAction& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ScalingAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ScalingAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline ScalingRule& WithAction(const ScalingAction& value) { SetAction(value); return *this;}
-    inline ScalingRule& WithAction(ScalingAction&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = ScalingAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = ScalingAction>
+    ScalingRule& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,12 @@ namespace Model
      * <p>The CloudWatch alarm definition that determines when automatic scaling
      * activity is triggered.</p>
      */
-    inline const ScalingTrigger& GetTrigger() const{ return m_trigger; }
+    inline const ScalingTrigger& GetTrigger() const { return m_trigger; }
     inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
-    inline void SetTrigger(const ScalingTrigger& value) { m_triggerHasBeenSet = true; m_trigger = value; }
-    inline void SetTrigger(ScalingTrigger&& value) { m_triggerHasBeenSet = true; m_trigger = std::move(value); }
-    inline ScalingRule& WithTrigger(const ScalingTrigger& value) { SetTrigger(value); return *this;}
-    inline ScalingRule& WithTrigger(ScalingTrigger&& value) { SetTrigger(std::move(value)); return *this;}
+    template<typename TriggerT = ScalingTrigger>
+    void SetTrigger(TriggerT&& value) { m_triggerHasBeenSet = true; m_trigger = std::forward<TriggerT>(value); }
+    template<typename TriggerT = ScalingTrigger>
+    ScalingRule& WithTrigger(TriggerT&& value) { SetTrigger(std::forward<TriggerT>(value)); return *this;}
     ///@}
   private:
 

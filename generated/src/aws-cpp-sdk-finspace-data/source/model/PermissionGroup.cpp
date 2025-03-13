@@ -18,22 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-PermissionGroup::PermissionGroup() : 
-    m_permissionGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_applicationPermissionsHasBeenSet(false),
-    m_createTime(0),
-    m_createTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_membershipStatus(PermissionGroupMembershipStatus::NOT_SET),
-    m_membershipStatusHasBeenSet(false)
-{
-}
-
 PermissionGroup::PermissionGroup(JsonView jsonValue)
-  : PermissionGroup()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ PermissionGroup& PermissionGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("permissionGroupId"))
   {
     m_permissionGroupId = jsonValue.GetString("permissionGroupId");
-
     m_permissionGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationPermissions"))
   {
     Aws::Utils::Array<JsonView> applicationPermissionsJsonList = jsonValue.GetArray("applicationPermissions");
@@ -70,28 +49,21 @@ PermissionGroup& PermissionGroup::operator =(JsonView jsonValue)
     }
     m_applicationPermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetInt64("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetInt64("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipStatus"))
   {
     m_membershipStatus = PermissionGroupMembershipStatusMapper::GetPermissionGroupMembershipStatusForName(jsonValue.GetString("membershipStatus"));
-
     m_membershipStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

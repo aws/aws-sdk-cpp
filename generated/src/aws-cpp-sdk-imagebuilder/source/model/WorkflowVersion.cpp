@@ -18,20 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-WorkflowVersion::WorkflowVersion() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(WorkflowType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false)
-{
-}
-
 WorkflowVersion::WorkflowVersion(JsonView jsonValue)
-  : WorkflowVersion()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ WorkflowVersion& WorkflowVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = WorkflowTypeMapper::GetWorkflowTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetString("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateCreated"))
   {
     m_dateCreated = jsonValue.GetString("dateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   return *this;
 }
 

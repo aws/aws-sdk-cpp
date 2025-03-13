@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartEntitiesDetectionJobResult::StartEntitiesDetectionJobResult() : 
-    m_jobStatus(JobStatus::NOT_SET)
-{
-}
-
 StartEntitiesDetectionJobResult::StartEntitiesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartEntitiesDetectionJobResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ StartEntitiesDetectionJobResult& StartEntitiesDetectionJobResult::operator =(con
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
+    m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobArn"))
   {
     m_jobArn = jsonValue.GetString("JobArn");
-
+    m_jobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-
+    m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityRecognizerArn"))
   {
     m_entityRecognizerArn = jsonValue.GetString("EntityRecognizerArn");
-
+    m_entityRecognizerArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

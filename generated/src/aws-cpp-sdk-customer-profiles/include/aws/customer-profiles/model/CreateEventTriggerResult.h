@@ -32,7 +32,7 @@ namespace Model
   class CreateEventTriggerResult
   {
   public:
-    AWS_CUSTOMERPROFILES_API CreateEventTriggerResult();
+    AWS_CUSTOMERPROFILES_API CreateEventTriggerResult() = default;
     AWS_CUSTOMERPROFILES_API CreateEventTriggerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CUSTOMERPROFILES_API CreateEventTriggerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,39 +41,33 @@ namespace Model
     /**
      * <p>The unique name of the event trigger.</p>
      */
-    inline const Aws::String& GetEventTriggerName() const{ return m_eventTriggerName; }
-    inline void SetEventTriggerName(const Aws::String& value) { m_eventTriggerName = value; }
-    inline void SetEventTriggerName(Aws::String&& value) { m_eventTriggerName = std::move(value); }
-    inline void SetEventTriggerName(const char* value) { m_eventTriggerName.assign(value); }
-    inline CreateEventTriggerResult& WithEventTriggerName(const Aws::String& value) { SetEventTriggerName(value); return *this;}
-    inline CreateEventTriggerResult& WithEventTriggerName(Aws::String&& value) { SetEventTriggerName(std::move(value)); return *this;}
-    inline CreateEventTriggerResult& WithEventTriggerName(const char* value) { SetEventTriggerName(value); return *this;}
+    inline const Aws::String& GetEventTriggerName() const { return m_eventTriggerName; }
+    template<typename EventTriggerNameT = Aws::String>
+    void SetEventTriggerName(EventTriggerNameT&& value) { m_eventTriggerNameHasBeenSet = true; m_eventTriggerName = std::forward<EventTriggerNameT>(value); }
+    template<typename EventTriggerNameT = Aws::String>
+    CreateEventTriggerResult& WithEventTriggerName(EventTriggerNameT&& value) { SetEventTriggerName(std::forward<EventTriggerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name of the object type.</p>
      */
-    inline const Aws::String& GetObjectTypeName() const{ return m_objectTypeName; }
-    inline void SetObjectTypeName(const Aws::String& value) { m_objectTypeName = value; }
-    inline void SetObjectTypeName(Aws::String&& value) { m_objectTypeName = std::move(value); }
-    inline void SetObjectTypeName(const char* value) { m_objectTypeName.assign(value); }
-    inline CreateEventTriggerResult& WithObjectTypeName(const Aws::String& value) { SetObjectTypeName(value); return *this;}
-    inline CreateEventTriggerResult& WithObjectTypeName(Aws::String&& value) { SetObjectTypeName(std::move(value)); return *this;}
-    inline CreateEventTriggerResult& WithObjectTypeName(const char* value) { SetObjectTypeName(value); return *this;}
+    inline const Aws::String& GetObjectTypeName() const { return m_objectTypeName; }
+    template<typename ObjectTypeNameT = Aws::String>
+    void SetObjectTypeName(ObjectTypeNameT&& value) { m_objectTypeNameHasBeenSet = true; m_objectTypeName = std::forward<ObjectTypeNameT>(value); }
+    template<typename ObjectTypeNameT = Aws::String>
+    CreateEventTriggerResult& WithObjectTypeName(ObjectTypeNameT&& value) { SetObjectTypeName(std::forward<ObjectTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the event trigger.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateEventTriggerResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateEventTriggerResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateEventTriggerResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateEventTriggerResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,13 +75,13 @@ namespace Model
      * <p>A list of conditions that determine when an event should trigger the
      * destination.</p>
      */
-    inline const Aws::Vector<EventTriggerCondition>& GetEventTriggerConditions() const{ return m_eventTriggerConditions; }
-    inline void SetEventTriggerConditions(const Aws::Vector<EventTriggerCondition>& value) { m_eventTriggerConditions = value; }
-    inline void SetEventTriggerConditions(Aws::Vector<EventTriggerCondition>&& value) { m_eventTriggerConditions = std::move(value); }
-    inline CreateEventTriggerResult& WithEventTriggerConditions(const Aws::Vector<EventTriggerCondition>& value) { SetEventTriggerConditions(value); return *this;}
-    inline CreateEventTriggerResult& WithEventTriggerConditions(Aws::Vector<EventTriggerCondition>&& value) { SetEventTriggerConditions(std::move(value)); return *this;}
-    inline CreateEventTriggerResult& AddEventTriggerConditions(const EventTriggerCondition& value) { m_eventTriggerConditions.push_back(value); return *this; }
-    inline CreateEventTriggerResult& AddEventTriggerConditions(EventTriggerCondition&& value) { m_eventTriggerConditions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventTriggerCondition>& GetEventTriggerConditions() const { return m_eventTriggerConditions; }
+    template<typename EventTriggerConditionsT = Aws::Vector<EventTriggerCondition>>
+    void SetEventTriggerConditions(EventTriggerConditionsT&& value) { m_eventTriggerConditionsHasBeenSet = true; m_eventTriggerConditions = std::forward<EventTriggerConditionsT>(value); }
+    template<typename EventTriggerConditionsT = Aws::Vector<EventTriggerCondition>>
+    CreateEventTriggerResult& WithEventTriggerConditions(EventTriggerConditionsT&& value) { SetEventTriggerConditions(std::forward<EventTriggerConditionsT>(value)); return *this;}
+    template<typename EventTriggerConditionsT = EventTriggerCondition>
+    CreateEventTriggerResult& AddEventTriggerConditions(EventTriggerConditionsT&& value) { m_eventTriggerConditionsHasBeenSet = true; m_eventTriggerConditions.emplace_back(std::forward<EventTriggerConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -95,13 +89,11 @@ namespace Model
      * <p>The destination is triggered only for profiles that meet the criteria of a
      * segment definition.</p>
      */
-    inline const Aws::String& GetSegmentFilter() const{ return m_segmentFilter; }
-    inline void SetSegmentFilter(const Aws::String& value) { m_segmentFilter = value; }
-    inline void SetSegmentFilter(Aws::String&& value) { m_segmentFilter = std::move(value); }
-    inline void SetSegmentFilter(const char* value) { m_segmentFilter.assign(value); }
-    inline CreateEventTriggerResult& WithSegmentFilter(const Aws::String& value) { SetSegmentFilter(value); return *this;}
-    inline CreateEventTriggerResult& WithSegmentFilter(Aws::String&& value) { SetSegmentFilter(std::move(value)); return *this;}
-    inline CreateEventTriggerResult& WithSegmentFilter(const char* value) { SetSegmentFilter(value); return *this;}
+    inline const Aws::String& GetSegmentFilter() const { return m_segmentFilter; }
+    template<typename SegmentFilterT = Aws::String>
+    void SetSegmentFilter(SegmentFilterT&& value) { m_segmentFilterHasBeenSet = true; m_segmentFilter = std::forward<SegmentFilterT>(value); }
+    template<typename SegmentFilterT = Aws::String>
+    CreateEventTriggerResult& WithSegmentFilter(SegmentFilterT&& value) { SetSegmentFilter(std::forward<SegmentFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,84 +102,89 @@ namespace Model
      * on ingestion latency and the number of invocations per profile over specific
      * time periods.</p>
      */
-    inline const EventTriggerLimits& GetEventTriggerLimits() const{ return m_eventTriggerLimits; }
-    inline void SetEventTriggerLimits(const EventTriggerLimits& value) { m_eventTriggerLimits = value; }
-    inline void SetEventTriggerLimits(EventTriggerLimits&& value) { m_eventTriggerLimits = std::move(value); }
-    inline CreateEventTriggerResult& WithEventTriggerLimits(const EventTriggerLimits& value) { SetEventTriggerLimits(value); return *this;}
-    inline CreateEventTriggerResult& WithEventTriggerLimits(EventTriggerLimits&& value) { SetEventTriggerLimits(std::move(value)); return *this;}
+    inline const EventTriggerLimits& GetEventTriggerLimits() const { return m_eventTriggerLimits; }
+    template<typename EventTriggerLimitsT = EventTriggerLimits>
+    void SetEventTriggerLimits(EventTriggerLimitsT&& value) { m_eventTriggerLimitsHasBeenSet = true; m_eventTriggerLimits = std::forward<EventTriggerLimitsT>(value); }
+    template<typename EventTriggerLimitsT = EventTriggerLimits>
+    CreateEventTriggerResult& WithEventTriggerLimits(EventTriggerLimitsT&& value) { SetEventTriggerLimits(std::forward<EventTriggerLimitsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the event trigger was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline CreateEventTriggerResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline CreateEventTriggerResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CreateEventTriggerResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the event trigger was most recently updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline CreateEventTriggerResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline CreateEventTriggerResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    CreateEventTriggerResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of key-value pairs to apply to this resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline CreateEventTriggerResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateEventTriggerResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateEventTriggerResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline CreateEventTriggerResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateEventTriggerResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateEventTriggerResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateEventTriggerResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateEventTriggerResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateEventTriggerResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateEventTriggerResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateEventTriggerResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateEventTriggerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateEventTriggerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateEventTriggerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateEventTriggerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventTriggerName;
+    bool m_eventTriggerNameHasBeenSet = false;
 
     Aws::String m_objectTypeName;
+    bool m_objectTypeNameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<EventTriggerCondition> m_eventTriggerConditions;
+    bool m_eventTriggerConditionsHasBeenSet = false;
 
     Aws::String m_segmentFilter;
+    bool m_segmentFilterHasBeenSet = false;
 
     EventTriggerLimits m_eventTriggerLimits;
+    bool m_eventTriggerLimitsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

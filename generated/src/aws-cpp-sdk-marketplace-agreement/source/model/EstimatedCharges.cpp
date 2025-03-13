@@ -18,14 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-EstimatedCharges::EstimatedCharges() : 
-    m_agreementValueHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false)
-{
-}
-
 EstimatedCharges::EstimatedCharges(JsonView jsonValue)
-  : EstimatedCharges()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EstimatedCharges& EstimatedCharges::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agreementValue"))
   {
     m_agreementValue = jsonValue.GetString("agreementValue");
-
     m_agreementValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currencyCode"))
   {
     m_currencyCode = jsonValue.GetString("currencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

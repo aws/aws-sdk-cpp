@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TimeRangeDrillDownFilter::TimeRangeDrillDownFilter() : 
-    m_columnHasBeenSet(false),
-    m_rangeMinimumHasBeenSet(false),
-    m_rangeMaximumHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false)
-{
-}
-
 TimeRangeDrillDownFilter::TimeRangeDrillDownFilter(JsonView jsonValue)
-  : TimeRangeDrillDownFilter()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TimeRangeDrillDownFilter& TimeRangeDrillDownFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetObject("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RangeMinimum"))
   {
     m_rangeMinimum = jsonValue.GetDouble("RangeMinimum");
-
     m_rangeMinimumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RangeMaximum"))
   {
     m_rangeMaximum = jsonValue.GetDouble("RangeMaximum");
-
     m_rangeMaximumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeGranularity"))
   {
     m_timeGranularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("TimeGranularity"));
-
     m_timeGranularityHasBeenSet = true;
   }
-
   return *this;
 }
 

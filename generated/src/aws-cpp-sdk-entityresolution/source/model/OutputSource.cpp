@@ -18,17 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-OutputSource::OutputSource() : 
-    m_kMSArnHasBeenSet(false),
-    m_applyNormalization(false),
-    m_applyNormalizationHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_outputS3PathHasBeenSet(false)
-{
-}
-
 OutputSource::OutputSource(JsonView jsonValue)
-  : OutputSource()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ OutputSource& OutputSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KMSArn"))
   {
     m_kMSArn = jsonValue.GetString("KMSArn");
-
     m_kMSArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applyNormalization"))
   {
     m_applyNormalization = jsonValue.GetBool("applyNormalization");
-
     m_applyNormalizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("output"))
   {
     Aws::Utils::Array<JsonView> outputJsonList = jsonValue.GetArray("output");
@@ -58,14 +44,11 @@ OutputSource& OutputSource::operator =(JsonView jsonValue)
     }
     m_outputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputS3Path"))
   {
     m_outputS3Path = jsonValue.GetString("outputS3Path");
-
     m_outputS3PathHasBeenSet = true;
   }
-
   return *this;
 }
 

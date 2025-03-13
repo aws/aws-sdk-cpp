@@ -36,7 +36,7 @@ namespace Model
   class AssessmentSummary
   {
   public:
-    AWS_RESILIENCEHUB_API AssessmentSummary();
+    AWS_RESILIENCEHUB_API AssessmentSummary() = default;
     AWS_RESILIENCEHUB_API AssessmentSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API AssessmentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * recommendation to address it.</p>  <p>This property is available only in
      * the US East (N. Virginia) Region.</p> 
      */
-    inline const Aws::Vector<AssessmentRiskRecommendation>& GetRiskRecommendations() const{ return m_riskRecommendations; }
+    inline const Aws::Vector<AssessmentRiskRecommendation>& GetRiskRecommendations() const { return m_riskRecommendations; }
     inline bool RiskRecommendationsHasBeenSet() const { return m_riskRecommendationsHasBeenSet; }
-    inline void SetRiskRecommendations(const Aws::Vector<AssessmentRiskRecommendation>& value) { m_riskRecommendationsHasBeenSet = true; m_riskRecommendations = value; }
-    inline void SetRiskRecommendations(Aws::Vector<AssessmentRiskRecommendation>&& value) { m_riskRecommendationsHasBeenSet = true; m_riskRecommendations = std::move(value); }
-    inline AssessmentSummary& WithRiskRecommendations(const Aws::Vector<AssessmentRiskRecommendation>& value) { SetRiskRecommendations(value); return *this;}
-    inline AssessmentSummary& WithRiskRecommendations(Aws::Vector<AssessmentRiskRecommendation>&& value) { SetRiskRecommendations(std::move(value)); return *this;}
-    inline AssessmentSummary& AddRiskRecommendations(const AssessmentRiskRecommendation& value) { m_riskRecommendationsHasBeenSet = true; m_riskRecommendations.push_back(value); return *this; }
-    inline AssessmentSummary& AddRiskRecommendations(AssessmentRiskRecommendation&& value) { m_riskRecommendationsHasBeenSet = true; m_riskRecommendations.push_back(std::move(value)); return *this; }
+    template<typename RiskRecommendationsT = Aws::Vector<AssessmentRiskRecommendation>>
+    void SetRiskRecommendations(RiskRecommendationsT&& value) { m_riskRecommendationsHasBeenSet = true; m_riskRecommendations = std::forward<RiskRecommendationsT>(value); }
+    template<typename RiskRecommendationsT = Aws::Vector<AssessmentRiskRecommendation>>
+    AssessmentSummary& WithRiskRecommendations(RiskRecommendationsT&& value) { SetRiskRecommendations(std::forward<RiskRecommendationsT>(value)); return *this;}
+    template<typename RiskRecommendationsT = AssessmentRiskRecommendation>
+    AssessmentSummary& AddRiskRecommendations(RiskRecommendationsT&& value) { m_riskRecommendationsHasBeenSet = true; m_riskRecommendations.emplace_back(std::forward<RiskRecommendationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,14 +65,12 @@ namespace Model
      * assessment.</p>  <p>This property is available only in the US East (N.
      * Virginia) Region.</p> 
      */
-    inline const Aws::String& GetSummary() const{ return m_summary; }
+    inline const Aws::String& GetSummary() const { return m_summary; }
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-    inline void SetSummary(const Aws::String& value) { m_summaryHasBeenSet = true; m_summary = value; }
-    inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-    inline void SetSummary(const char* value) { m_summaryHasBeenSet = true; m_summary.assign(value); }
-    inline AssessmentSummary& WithSummary(const Aws::String& value) { SetSummary(value); return *this;}
-    inline AssessmentSummary& WithSummary(Aws::String&& value) { SetSummary(std::move(value)); return *this;}
-    inline AssessmentSummary& WithSummary(const char* value) { SetSummary(value); return *this;}
+    template<typename SummaryT = Aws::String>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = Aws::String>
+    AssessmentSummary& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-RdsLoginAttemptAction::RdsLoginAttemptAction() : 
-    m_remoteIpDetailsHasBeenSet(false),
-    m_loginAttributesHasBeenSet(false)
-{
-}
-
 RdsLoginAttemptAction::RdsLoginAttemptAction(JsonView jsonValue)
-  : RdsLoginAttemptAction()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RdsLoginAttemptAction& RdsLoginAttemptAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("remoteIpDetails"))
   {
     m_remoteIpDetails = jsonValue.GetObject("remoteIpDetails");
-
     m_remoteIpDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoginAttributes"))
   {
     Aws::Utils::Array<JsonView> loginAttributesJsonList = jsonValue.GetArray("LoginAttributes");
@@ -48,7 +39,6 @@ RdsLoginAttemptAction& RdsLoginAttemptAction::operator =(JsonView jsonValue)
     }
     m_loginAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class Sample
   {
   public:
-    AWS_DEVICEFARM_API Sample();
+    AWS_DEVICEFARM_API Sample() = default;
     AWS_DEVICEFARM_API Sample(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Sample& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The sample's ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Sample& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Sample& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Sample& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Sample& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,10 @@ namespace Model
      * </li> <li> <p>TX</p> </li> <li> <p>TX_RATE: The total number of bytes per second
      * (TCP and UDP) that are received, by app process.</p> </li> </ul>
      */
-    inline const SampleType& GetType() const{ return m_type; }
+    inline SampleType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SampleType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SampleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Sample& WithType(const SampleType& value) { SetType(value); return *this;}
-    inline Sample& WithType(SampleType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SampleType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Sample& WithType(SampleType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -83,21 +79,19 @@ namespace Model
      * <p>The presigned Amazon S3 URL that can be used with a GET request to download
      * the sample's file.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline Sample& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline Sample& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline Sample& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    Sample& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    SampleType m_type;
+    SampleType m_type{SampleType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_url;

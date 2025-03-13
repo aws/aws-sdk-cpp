@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-QueryArgProfileConfig::QueryArgProfileConfig() : 
-    m_forwardWhenQueryArgProfileIsUnknown(false),
-    m_forwardWhenQueryArgProfileIsUnknownHasBeenSet(false),
-    m_queryArgProfilesHasBeenSet(false)
-{
-}
-
 QueryArgProfileConfig::QueryArgProfileConfig(const XmlNode& xmlNode)
-  : QueryArgProfileConfig()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ QueryArgProfileConfig& QueryArgProfileConfig::operator =(const XmlNode& xmlNode)
     {
       m_forwardWhenQueryArgProfileIsUnknown = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forwardWhenQueryArgProfileIsUnknownNode.GetText()).c_str()).c_str());
       m_forwardWhenQueryArgProfileIsUnknownHasBeenSet = true;
+       m_forwardWhenQueryArgProfileIsUnknownHasBeenSet = true;
     }
     XmlNode queryArgProfilesNode = resultNode.FirstChild("QueryArgProfiles");
     if(!queryArgProfilesNode.IsNull())
     {
       m_queryArgProfiles = queryArgProfilesNode;
       m_queryArgProfilesHasBeenSet = true;
+       m_queryArgProfilesHasBeenSet = true;
     }
   }
 

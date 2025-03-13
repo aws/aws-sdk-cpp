@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInstancesRequest::GetInstancesRequest() : 
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

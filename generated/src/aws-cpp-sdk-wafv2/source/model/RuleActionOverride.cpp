@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RuleActionOverride::RuleActionOverride() : 
-    m_nameHasBeenSet(false),
-    m_actionToUseHasBeenSet(false)
-{
-}
-
 RuleActionOverride::RuleActionOverride(JsonView jsonValue)
-  : RuleActionOverride()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RuleActionOverride& RuleActionOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionToUse"))
   {
     m_actionToUse = jsonValue.GetObject("ActionToUse");
-
     m_actionToUseHasBeenSet = true;
   }
-
   return *this;
 }
 

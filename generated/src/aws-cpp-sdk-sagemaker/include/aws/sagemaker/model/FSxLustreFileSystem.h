@@ -31,7 +31,7 @@ namespace Model
   class FSxLustreFileSystem
   {
   public:
-    AWS_SAGEMAKER_API FSxLustreFileSystem();
+    AWS_SAGEMAKER_API FSxLustreFileSystem() = default;
     AWS_SAGEMAKER_API FSxLustreFileSystem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API FSxLustreFileSystem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Amazon FSx for Lustre file system ID.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline FSxLustreFileSystem& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline FSxLustreFileSystem& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline FSxLustreFileSystem& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    FSxLustreFileSystem& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
   private:
 

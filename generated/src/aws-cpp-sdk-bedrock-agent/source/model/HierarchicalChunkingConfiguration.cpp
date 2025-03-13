@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-HierarchicalChunkingConfiguration::HierarchicalChunkingConfiguration() : 
-    m_levelConfigurationsHasBeenSet(false),
-    m_overlapTokens(0),
-    m_overlapTokensHasBeenSet(false)
-{
-}
-
 HierarchicalChunkingConfiguration::HierarchicalChunkingConfiguration(JsonView jsonValue)
-  : HierarchicalChunkingConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ HierarchicalChunkingConfiguration& HierarchicalChunkingConfiguration::operator =
     }
     m_levelConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overlapTokens"))
   {
     m_overlapTokens = jsonValue.GetInteger("overlapTokens");
-
     m_overlapTokensHasBeenSet = true;
   }
-
   return *this;
 }
 

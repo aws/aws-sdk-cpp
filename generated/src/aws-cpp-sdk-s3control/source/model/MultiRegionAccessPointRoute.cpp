@@ -20,16 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-MultiRegionAccessPointRoute::MultiRegionAccessPointRoute() : 
-    m_bucketHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_trafficDialPercentage(0),
-    m_trafficDialPercentageHasBeenSet(false)
-{
-}
-
 MultiRegionAccessPointRoute::MultiRegionAccessPointRoute(const XmlNode& xmlNode)
-  : MultiRegionAccessPointRoute()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ MultiRegionAccessPointRoute& MultiRegionAccessPointRoute::operator =(const XmlNo
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
       m_region = Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText());
       m_regionHasBeenSet = true;
+       m_regionHasBeenSet = true;
     }
     XmlNode trafficDialPercentageNode = resultNode.FirstChild("TrafficDialPercentage");
     if(!trafficDialPercentageNode.IsNull())
     {
       m_trafficDialPercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficDialPercentageNode.GetText()).c_str()).c_str());
       m_trafficDialPercentageHasBeenSet = true;
+       m_trafficDialPercentageHasBeenSet = true;
     }
   }
 

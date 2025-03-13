@@ -33,7 +33,7 @@ namespace Model
   class StepDetail
   {
   public:
-    AWS_EMR_API StepDetail();
+    AWS_EMR_API StepDetail() = default;
     AWS_EMR_API StepDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API StepDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The step configuration.</p>
      */
-    inline const StepConfig& GetStepConfig() const{ return m_stepConfig; }
+    inline const StepConfig& GetStepConfig() const { return m_stepConfig; }
     inline bool StepConfigHasBeenSet() const { return m_stepConfigHasBeenSet; }
-    inline void SetStepConfig(const StepConfig& value) { m_stepConfigHasBeenSet = true; m_stepConfig = value; }
-    inline void SetStepConfig(StepConfig&& value) { m_stepConfigHasBeenSet = true; m_stepConfig = std::move(value); }
-    inline StepDetail& WithStepConfig(const StepConfig& value) { SetStepConfig(value); return *this;}
-    inline StepDetail& WithStepConfig(StepConfig&& value) { SetStepConfig(std::move(value)); return *this;}
+    template<typename StepConfigT = StepConfig>
+    void SetStepConfig(StepConfigT&& value) { m_stepConfigHasBeenSet = true; m_stepConfig = std::forward<StepConfigT>(value); }
+    template<typename StepConfigT = StepConfig>
+    StepDetail& WithStepConfig(StepConfigT&& value) { SetStepConfig(std::forward<StepConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the step status.</p>
      */
-    inline const StepExecutionStatusDetail& GetExecutionStatusDetail() const{ return m_executionStatusDetail; }
+    inline const StepExecutionStatusDetail& GetExecutionStatusDetail() const { return m_executionStatusDetail; }
     inline bool ExecutionStatusDetailHasBeenSet() const { return m_executionStatusDetailHasBeenSet; }
-    inline void SetExecutionStatusDetail(const StepExecutionStatusDetail& value) { m_executionStatusDetailHasBeenSet = true; m_executionStatusDetail = value; }
-    inline void SetExecutionStatusDetail(StepExecutionStatusDetail&& value) { m_executionStatusDetailHasBeenSet = true; m_executionStatusDetail = std::move(value); }
-    inline StepDetail& WithExecutionStatusDetail(const StepExecutionStatusDetail& value) { SetExecutionStatusDetail(value); return *this;}
-    inline StepDetail& WithExecutionStatusDetail(StepExecutionStatusDetail&& value) { SetExecutionStatusDetail(std::move(value)); return *this;}
+    template<typename ExecutionStatusDetailT = StepExecutionStatusDetail>
+    void SetExecutionStatusDetail(ExecutionStatusDetailT&& value) { m_executionStatusDetailHasBeenSet = true; m_executionStatusDetail = std::forward<ExecutionStatusDetailT>(value); }
+    template<typename ExecutionStatusDetailT = StepExecutionStatusDetail>
+    StepDetail& WithExecutionStatusDetail(ExecutionStatusDetailT&& value) { SetExecutionStatusDetail(std::forward<ExecutionStatusDetailT>(value)); return *this;}
     ///@}
   private:
 

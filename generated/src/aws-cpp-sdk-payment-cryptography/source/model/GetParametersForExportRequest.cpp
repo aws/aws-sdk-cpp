@@ -12,14 +12,6 @@ using namespace Aws::PaymentCryptography::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetParametersForExportRequest::GetParametersForExportRequest() : 
-    m_keyMaterialType(KeyMaterialType::NOT_SET),
-    m_keyMaterialTypeHasBeenSet(false),
-    m_signingKeyAlgorithm(KeyAlgorithm::NOT_SET),
-    m_signingKeyAlgorithmHasBeenSet(false)
-{
-}
-
 Aws::String GetParametersForExportRequest::SerializePayload() const
 {
   JsonValue payload;

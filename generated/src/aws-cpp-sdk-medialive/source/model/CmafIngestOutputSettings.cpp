@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-CmafIngestOutputSettings::CmafIngestOutputSettings() : 
-    m_nameModifierHasBeenSet(false)
-{
-}
-
 CmafIngestOutputSettings::CmafIngestOutputSettings(JsonView jsonValue)
-  : CmafIngestOutputSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CmafIngestOutputSettings& CmafIngestOutputSettings::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("nameModifier"))
   {
     m_nameModifier = jsonValue.GetString("nameModifier");
-
     m_nameModifierHasBeenSet = true;
   }
-
   return *this;
 }
 

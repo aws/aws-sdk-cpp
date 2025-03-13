@@ -28,7 +28,7 @@ namespace Model
   class RegisterWorkspaceDirectoryRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API RegisterWorkspaceDirectoryRequest();
+    AWS_WORKSPACES_API RegisterWorkspaceDirectoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
      * WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister
      * directories that you are not using for WorkSpaces, and try again.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline RegisterWorkspaceDirectoryRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    RegisterWorkspaceDirectoryRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,15 +65,14 @@ namespace Model
      * be in separate Availability Zones. If these conditions are not met, you will
      * receive an OperationNotSupportedException error.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline RegisterWorkspaceDirectoryRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline RegisterWorkspaceDirectoryRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline RegisterWorkspaceDirectoryRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    RegisterWorkspaceDirectoryRequest& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    RegisterWorkspaceDirectoryRequest& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,7 +82,7 @@ namespace Model
      * OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to
      * disabled, and try again.</p>
      */
-    inline bool GetEnableWorkDocs() const{ return m_enableWorkDocs; }
+    inline bool GetEnableWorkDocs() const { return m_enableWorkDocs; }
     inline bool EnableWorkDocsHasBeenSet() const { return m_enableWorkDocsHasBeenSet; }
     inline void SetEnableWorkDocs(bool value) { m_enableWorkDocsHasBeenSet = true; m_enableWorkDocs = value; }
     inline RegisterWorkspaceDirectoryRequest& WithEnableWorkDocs(bool value) { SetEnableWorkDocs(value); return *this;}
@@ -95,7 +92,7 @@ namespace Model
     /**
      * <p>Indicates whether self-service capabilities are enabled or disabled.</p>
      */
-    inline bool GetEnableSelfService() const{ return m_enableSelfService; }
+    inline bool GetEnableSelfService() const { return m_enableSelfService; }
     inline bool EnableSelfServiceHasBeenSet() const { return m_enableSelfServiceHasBeenSet; }
     inline void SetEnableSelfService(bool value) { m_enableSelfServiceHasBeenSet = true; m_enableSelfService = value; }
     inline RegisterWorkspaceDirectoryRequest& WithEnableSelfService(bool value) { SetEnableSelfService(value); return *this;}
@@ -112,116 +109,104 @@ namespace Model
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
      * Your Own Windows Desktop Images</a>.</p>
      */
-    inline const Tenancy& GetTenancy() const{ return m_tenancy; }
+    inline Tenancy GetTenancy() const { return m_tenancy; }
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
-    inline void SetTenancy(const Tenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
-    inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
-    inline RegisterWorkspaceDirectoryRequest& WithTenancy(const Tenancy& value) { SetTenancy(value); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithTenancy(Tenancy&& value) { SetTenancy(std::move(value)); return *this;}
+    inline void SetTenancy(Tenancy value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+    inline RegisterWorkspaceDirectoryRequest& WithTenancy(Tenancy value) { SetTenancy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the directory.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline RegisterWorkspaceDirectoryRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline RegisterWorkspaceDirectoryRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    RegisterWorkspaceDirectoryRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    RegisterWorkspaceDirectoryRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the directory to register.</p>
      */
-    inline const Aws::String& GetWorkspaceDirectoryName() const{ return m_workspaceDirectoryName; }
+    inline const Aws::String& GetWorkspaceDirectoryName() const { return m_workspaceDirectoryName; }
     inline bool WorkspaceDirectoryNameHasBeenSet() const { return m_workspaceDirectoryNameHasBeenSet; }
-    inline void SetWorkspaceDirectoryName(const Aws::String& value) { m_workspaceDirectoryNameHasBeenSet = true; m_workspaceDirectoryName = value; }
-    inline void SetWorkspaceDirectoryName(Aws::String&& value) { m_workspaceDirectoryNameHasBeenSet = true; m_workspaceDirectoryName = std::move(value); }
-    inline void SetWorkspaceDirectoryName(const char* value) { m_workspaceDirectoryNameHasBeenSet = true; m_workspaceDirectoryName.assign(value); }
-    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryName(const Aws::String& value) { SetWorkspaceDirectoryName(value); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryName(Aws::String&& value) { SetWorkspaceDirectoryName(std::move(value)); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryName(const char* value) { SetWorkspaceDirectoryName(value); return *this;}
+    template<typename WorkspaceDirectoryNameT = Aws::String>
+    void SetWorkspaceDirectoryName(WorkspaceDirectoryNameT&& value) { m_workspaceDirectoryNameHasBeenSet = true; m_workspaceDirectoryName = std::forward<WorkspaceDirectoryNameT>(value); }
+    template<typename WorkspaceDirectoryNameT = Aws::String>
+    RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryName(WorkspaceDirectoryNameT&& value) { SetWorkspaceDirectoryName(std::forward<WorkspaceDirectoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description of the directory to register.</p>
      */
-    inline const Aws::String& GetWorkspaceDirectoryDescription() const{ return m_workspaceDirectoryDescription; }
+    inline const Aws::String& GetWorkspaceDirectoryDescription() const { return m_workspaceDirectoryDescription; }
     inline bool WorkspaceDirectoryDescriptionHasBeenSet() const { return m_workspaceDirectoryDescriptionHasBeenSet; }
-    inline void SetWorkspaceDirectoryDescription(const Aws::String& value) { m_workspaceDirectoryDescriptionHasBeenSet = true; m_workspaceDirectoryDescription = value; }
-    inline void SetWorkspaceDirectoryDescription(Aws::String&& value) { m_workspaceDirectoryDescriptionHasBeenSet = true; m_workspaceDirectoryDescription = std::move(value); }
-    inline void SetWorkspaceDirectoryDescription(const char* value) { m_workspaceDirectoryDescriptionHasBeenSet = true; m_workspaceDirectoryDescription.assign(value); }
-    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryDescription(const Aws::String& value) { SetWorkspaceDirectoryDescription(value); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryDescription(Aws::String&& value) { SetWorkspaceDirectoryDescription(std::move(value)); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryDescription(const char* value) { SetWorkspaceDirectoryDescription(value); return *this;}
+    template<typename WorkspaceDirectoryDescriptionT = Aws::String>
+    void SetWorkspaceDirectoryDescription(WorkspaceDirectoryDescriptionT&& value) { m_workspaceDirectoryDescriptionHasBeenSet = true; m_workspaceDirectoryDescription = std::forward<WorkspaceDirectoryDescriptionT>(value); }
+    template<typename WorkspaceDirectoryDescriptionT = Aws::String>
+    RegisterWorkspaceDirectoryRequest& WithWorkspaceDirectoryDescription(WorkspaceDirectoryDescriptionT&& value) { SetWorkspaceDirectoryDescription(std::forward<WorkspaceDirectoryDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of identity management the user is using.</p>
      */
-    inline const UserIdentityType& GetUserIdentityType() const{ return m_userIdentityType; }
+    inline UserIdentityType GetUserIdentityType() const { return m_userIdentityType; }
     inline bool UserIdentityTypeHasBeenSet() const { return m_userIdentityTypeHasBeenSet; }
-    inline void SetUserIdentityType(const UserIdentityType& value) { m_userIdentityTypeHasBeenSet = true; m_userIdentityType = value; }
-    inline void SetUserIdentityType(UserIdentityType&& value) { m_userIdentityTypeHasBeenSet = true; m_userIdentityType = std::move(value); }
-    inline RegisterWorkspaceDirectoryRequest& WithUserIdentityType(const UserIdentityType& value) { SetUserIdentityType(value); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithUserIdentityType(UserIdentityType&& value) { SetUserIdentityType(std::move(value)); return *this;}
+    inline void SetUserIdentityType(UserIdentityType value) { m_userIdentityTypeHasBeenSet = true; m_userIdentityType = value; }
+    inline RegisterWorkspaceDirectoryRequest& WithUserIdentityType(UserIdentityType value) { SetUserIdentityType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
      */
-    inline const Aws::String& GetIdcInstanceArn() const{ return m_idcInstanceArn; }
+    inline const Aws::String& GetIdcInstanceArn() const { return m_idcInstanceArn; }
     inline bool IdcInstanceArnHasBeenSet() const { return m_idcInstanceArnHasBeenSet; }
-    inline void SetIdcInstanceArn(const Aws::String& value) { m_idcInstanceArnHasBeenSet = true; m_idcInstanceArn = value; }
-    inline void SetIdcInstanceArn(Aws::String&& value) { m_idcInstanceArnHasBeenSet = true; m_idcInstanceArn = std::move(value); }
-    inline void SetIdcInstanceArn(const char* value) { m_idcInstanceArnHasBeenSet = true; m_idcInstanceArn.assign(value); }
-    inline RegisterWorkspaceDirectoryRequest& WithIdcInstanceArn(const Aws::String& value) { SetIdcInstanceArn(value); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithIdcInstanceArn(Aws::String&& value) { SetIdcInstanceArn(std::move(value)); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithIdcInstanceArn(const char* value) { SetIdcInstanceArn(value); return *this;}
+    template<typename IdcInstanceArnT = Aws::String>
+    void SetIdcInstanceArn(IdcInstanceArnT&& value) { m_idcInstanceArnHasBeenSet = true; m_idcInstanceArn = std::forward<IdcInstanceArnT>(value); }
+    template<typename IdcInstanceArnT = Aws::String>
+    RegisterWorkspaceDirectoryRequest& WithIdcInstanceArn(IdcInstanceArnT&& value) { SetIdcInstanceArn(std::forward<IdcInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details about Microsoft Entra config.</p>
      */
-    inline const MicrosoftEntraConfig& GetMicrosoftEntraConfig() const{ return m_microsoftEntraConfig; }
+    inline const MicrosoftEntraConfig& GetMicrosoftEntraConfig() const { return m_microsoftEntraConfig; }
     inline bool MicrosoftEntraConfigHasBeenSet() const { return m_microsoftEntraConfigHasBeenSet; }
-    inline void SetMicrosoftEntraConfig(const MicrosoftEntraConfig& value) { m_microsoftEntraConfigHasBeenSet = true; m_microsoftEntraConfig = value; }
-    inline void SetMicrosoftEntraConfig(MicrosoftEntraConfig&& value) { m_microsoftEntraConfigHasBeenSet = true; m_microsoftEntraConfig = std::move(value); }
-    inline RegisterWorkspaceDirectoryRequest& WithMicrosoftEntraConfig(const MicrosoftEntraConfig& value) { SetMicrosoftEntraConfig(value); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithMicrosoftEntraConfig(MicrosoftEntraConfig&& value) { SetMicrosoftEntraConfig(std::move(value)); return *this;}
+    template<typename MicrosoftEntraConfigT = MicrosoftEntraConfig>
+    void SetMicrosoftEntraConfig(MicrosoftEntraConfigT&& value) { m_microsoftEntraConfigHasBeenSet = true; m_microsoftEntraConfig = std::forward<MicrosoftEntraConfigT>(value); }
+    template<typename MicrosoftEntraConfigT = MicrosoftEntraConfig>
+    RegisterWorkspaceDirectoryRequest& WithMicrosoftEntraConfig(MicrosoftEntraConfigT&& value) { SetMicrosoftEntraConfig(std::forward<MicrosoftEntraConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the directory's WorkSpace type is personal or pools.</p>
      */
-    inline const WorkspaceType& GetWorkspaceType() const{ return m_workspaceType; }
+    inline WorkspaceType GetWorkspaceType() const { return m_workspaceType; }
     inline bool WorkspaceTypeHasBeenSet() const { return m_workspaceTypeHasBeenSet; }
-    inline void SetWorkspaceType(const WorkspaceType& value) { m_workspaceTypeHasBeenSet = true; m_workspaceType = value; }
-    inline void SetWorkspaceType(WorkspaceType&& value) { m_workspaceTypeHasBeenSet = true; m_workspaceType = std::move(value); }
-    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceType(const WorkspaceType& value) { SetWorkspaceType(value); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceType(WorkspaceType&& value) { SetWorkspaceType(std::move(value)); return *this;}
+    inline void SetWorkspaceType(WorkspaceType value) { m_workspaceTypeHasBeenSet = true; m_workspaceType = value; }
+    inline RegisterWorkspaceDirectoryRequest& WithWorkspaceType(WorkspaceType value) { SetWorkspaceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The active directory config of the directory.</p>
      */
-    inline const ActiveDirectoryConfig& GetActiveDirectoryConfig() const{ return m_activeDirectoryConfig; }
+    inline const ActiveDirectoryConfig& GetActiveDirectoryConfig() const { return m_activeDirectoryConfig; }
     inline bool ActiveDirectoryConfigHasBeenSet() const { return m_activeDirectoryConfigHasBeenSet; }
-    inline void SetActiveDirectoryConfig(const ActiveDirectoryConfig& value) { m_activeDirectoryConfigHasBeenSet = true; m_activeDirectoryConfig = value; }
-    inline void SetActiveDirectoryConfig(ActiveDirectoryConfig&& value) { m_activeDirectoryConfigHasBeenSet = true; m_activeDirectoryConfig = std::move(value); }
-    inline RegisterWorkspaceDirectoryRequest& WithActiveDirectoryConfig(const ActiveDirectoryConfig& value) { SetActiveDirectoryConfig(value); return *this;}
-    inline RegisterWorkspaceDirectoryRequest& WithActiveDirectoryConfig(ActiveDirectoryConfig&& value) { SetActiveDirectoryConfig(std::move(value)); return *this;}
+    template<typename ActiveDirectoryConfigT = ActiveDirectoryConfig>
+    void SetActiveDirectoryConfig(ActiveDirectoryConfigT&& value) { m_activeDirectoryConfigHasBeenSet = true; m_activeDirectoryConfig = std::forward<ActiveDirectoryConfigT>(value); }
+    template<typename ActiveDirectoryConfigT = ActiveDirectoryConfig>
+    RegisterWorkspaceDirectoryRequest& WithActiveDirectoryConfig(ActiveDirectoryConfigT&& value) { SetActiveDirectoryConfig(std::forward<ActiveDirectoryConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -231,13 +216,13 @@ namespace Model
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
 
-    bool m_enableWorkDocs;
+    bool m_enableWorkDocs{false};
     bool m_enableWorkDocsHasBeenSet = false;
 
-    bool m_enableSelfService;
+    bool m_enableSelfService{false};
     bool m_enableSelfServiceHasBeenSet = false;
 
-    Tenancy m_tenancy;
+    Tenancy m_tenancy{Tenancy::NOT_SET};
     bool m_tenancyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
@@ -249,7 +234,7 @@ namespace Model
     Aws::String m_workspaceDirectoryDescription;
     bool m_workspaceDirectoryDescriptionHasBeenSet = false;
 
-    UserIdentityType m_userIdentityType;
+    UserIdentityType m_userIdentityType{UserIdentityType::NOT_SET};
     bool m_userIdentityTypeHasBeenSet = false;
 
     Aws::String m_idcInstanceArn;
@@ -258,7 +243,7 @@ namespace Model
     MicrosoftEntraConfig m_microsoftEntraConfig;
     bool m_microsoftEntraConfigHasBeenSet = false;
 
-    WorkspaceType m_workspaceType;
+    WorkspaceType m_workspaceType{WorkspaceType::NOT_SET};
     bool m_workspaceTypeHasBeenSet = false;
 
     ActiveDirectoryConfig m_activeDirectoryConfig;

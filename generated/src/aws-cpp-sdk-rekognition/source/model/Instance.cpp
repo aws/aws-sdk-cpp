@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-Instance::Instance() : 
-    m_boundingBoxHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_dominantColorsHasBeenSet(false)
-{
-}
-
 Instance::Instance(JsonView jsonValue)
-  : Instance()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Instance& Instance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BoundingBox"))
   {
     m_boundingBox = jsonValue.GetObject("BoundingBox");
-
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DominantColors"))
   {
     Aws::Utils::Array<JsonView> dominantColorsJsonList = jsonValue.GetArray("DominantColors");
@@ -57,7 +44,6 @@ Instance& Instance::operator =(JsonView jsonValue)
     }
     m_dominantColorsHasBeenSet = true;
   }
-
   return *this;
 }
 

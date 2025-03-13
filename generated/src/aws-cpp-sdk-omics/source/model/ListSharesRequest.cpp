@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSharesRequest::ListSharesRequest() : 
-    m_resourceOwner(ResourceOwner::NOT_SET),
-    m_resourceOwnerHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListSharesRequest::SerializePayload() const
 {
   JsonValue payload;

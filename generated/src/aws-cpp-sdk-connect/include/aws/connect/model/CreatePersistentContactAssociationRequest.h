@@ -22,7 +22,7 @@ namespace Model
   class CreatePersistentContactAssociationRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API CreatePersistentContactAssociationRequest();
+    AWS_CONNECT_API CreatePersistentContactAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline CreatePersistentContactAssociationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline CreatePersistentContactAssociationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline CreatePersistentContactAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    CreatePersistentContactAssociationRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>This is the contactId of the current contact that the
      * <code>CreatePersistentContactAssociation</code> API is being called from.</p>
      */
-    inline const Aws::String& GetInitialContactId() const{ return m_initialContactId; }
+    inline const Aws::String& GetInitialContactId() const { return m_initialContactId; }
     inline bool InitialContactIdHasBeenSet() const { return m_initialContactIdHasBeenSet; }
-    inline void SetInitialContactId(const Aws::String& value) { m_initialContactIdHasBeenSet = true; m_initialContactId = value; }
-    inline void SetInitialContactId(Aws::String&& value) { m_initialContactIdHasBeenSet = true; m_initialContactId = std::move(value); }
-    inline void SetInitialContactId(const char* value) { m_initialContactIdHasBeenSet = true; m_initialContactId.assign(value); }
-    inline CreatePersistentContactAssociationRequest& WithInitialContactId(const Aws::String& value) { SetInitialContactId(value); return *this;}
-    inline CreatePersistentContactAssociationRequest& WithInitialContactId(Aws::String&& value) { SetInitialContactId(std::move(value)); return *this;}
-    inline CreatePersistentContactAssociationRequest& WithInitialContactId(const char* value) { SetInitialContactId(value); return *this;}
+    template<typename InitialContactIdT = Aws::String>
+    void SetInitialContactId(InitialContactIdT&& value) { m_initialContactIdHasBeenSet = true; m_initialContactId = std::forward<InitialContactIdT>(value); }
+    template<typename InitialContactIdT = Aws::String>
+    CreatePersistentContactAssociationRequest& WithInitialContactId(InitialContactIdT&& value) { SetInitialContactId(std::forward<InitialContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,26 +100,22 @@ namespace Model
      * sessions C3, C2 and C1 are accessible in the current persistent chat
      * session.</p> </li> </ul> </li> </ul> </li> </ul>
      */
-    inline const RehydrationType& GetRehydrationType() const{ return m_rehydrationType; }
+    inline RehydrationType GetRehydrationType() const { return m_rehydrationType; }
     inline bool RehydrationTypeHasBeenSet() const { return m_rehydrationTypeHasBeenSet; }
-    inline void SetRehydrationType(const RehydrationType& value) { m_rehydrationTypeHasBeenSet = true; m_rehydrationType = value; }
-    inline void SetRehydrationType(RehydrationType&& value) { m_rehydrationTypeHasBeenSet = true; m_rehydrationType = std::move(value); }
-    inline CreatePersistentContactAssociationRequest& WithRehydrationType(const RehydrationType& value) { SetRehydrationType(value); return *this;}
-    inline CreatePersistentContactAssociationRequest& WithRehydrationType(RehydrationType&& value) { SetRehydrationType(std::move(value)); return *this;}
+    inline void SetRehydrationType(RehydrationType value) { m_rehydrationTypeHasBeenSet = true; m_rehydrationType = value; }
+    inline CreatePersistentContactAssociationRequest& WithRehydrationType(RehydrationType value) { SetRehydrationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The contactId from which a persistent chat session must be started.</p>
      */
-    inline const Aws::String& GetSourceContactId() const{ return m_sourceContactId; }
+    inline const Aws::String& GetSourceContactId() const { return m_sourceContactId; }
     inline bool SourceContactIdHasBeenSet() const { return m_sourceContactIdHasBeenSet; }
-    inline void SetSourceContactId(const Aws::String& value) { m_sourceContactIdHasBeenSet = true; m_sourceContactId = value; }
-    inline void SetSourceContactId(Aws::String&& value) { m_sourceContactIdHasBeenSet = true; m_sourceContactId = std::move(value); }
-    inline void SetSourceContactId(const char* value) { m_sourceContactIdHasBeenSet = true; m_sourceContactId.assign(value); }
-    inline CreatePersistentContactAssociationRequest& WithSourceContactId(const Aws::String& value) { SetSourceContactId(value); return *this;}
-    inline CreatePersistentContactAssociationRequest& WithSourceContactId(Aws::String&& value) { SetSourceContactId(std::move(value)); return *this;}
-    inline CreatePersistentContactAssociationRequest& WithSourceContactId(const char* value) { SetSourceContactId(value); return *this;}
+    template<typename SourceContactIdT = Aws::String>
+    void SetSourceContactId(SourceContactIdT&& value) { m_sourceContactIdHasBeenSet = true; m_sourceContactId = std::forward<SourceContactIdT>(value); }
+    template<typename SourceContactIdT = Aws::String>
+    CreatePersistentContactAssociationRequest& WithSourceContactId(SourceContactIdT&& value) { SetSourceContactId(std::forward<SourceContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +126,12 @@ namespace Model
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreatePersistentContactAssociationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreatePersistentContactAssociationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreatePersistentContactAssociationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreatePersistentContactAssociationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -151,7 +141,7 @@ namespace Model
     Aws::String m_initialContactId;
     bool m_initialContactIdHasBeenSet = false;
 
-    RehydrationType m_rehydrationType;
+    RehydrationType m_rehydrationType{RehydrationType::NOT_SET};
     bool m_rehydrationTypeHasBeenSet = false;
 
     Aws::String m_sourceContactId;

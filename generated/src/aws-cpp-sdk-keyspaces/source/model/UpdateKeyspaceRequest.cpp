@@ -12,13 +12,6 @@ using namespace Aws::Keyspaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateKeyspaceRequest::UpdateKeyspaceRequest() : 
-    m_keyspaceNameHasBeenSet(false),
-    m_replicationSpecificationHasBeenSet(false),
-    m_clientSideTimestampsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateKeyspaceRequest::SerializePayload() const
 {
   JsonValue payload;

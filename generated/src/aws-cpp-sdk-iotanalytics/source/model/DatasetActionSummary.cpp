@@ -18,15 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatasetActionSummary::DatasetActionSummary() : 
-    m_actionNameHasBeenSet(false),
-    m_actionType(DatasetActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false)
-{
-}
-
 DatasetActionSummary::DatasetActionSummary(JsonView jsonValue)
-  : DatasetActionSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DatasetActionSummary& DatasetActionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = jsonValue.GetString("actionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionType"))
   {
     m_actionType = DatasetActionTypeMapper::GetDatasetActionTypeForName(jsonValue.GetString("actionType"));
-
     m_actionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

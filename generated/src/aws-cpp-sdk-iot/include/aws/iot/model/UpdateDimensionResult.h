@@ -30,7 +30,7 @@ namespace Model
   class UpdateDimensionResult
   {
   public:
-    AWS_IOT_API UpdateDimensionResult();
+    AWS_IOT_API UpdateDimensionResult() = default;
     AWS_IOT_API UpdateDimensionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API UpdateDimensionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,37 +39,31 @@ namespace Model
     /**
      * <p>A unique identifier for the dimension.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateDimensionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateDimensionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateDimensionResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateDimensionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN)of the created dimension.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateDimensionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateDimensionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateDimensionResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateDimensionResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the dimension.</p>
      */
-    inline const DimensionType& GetType() const{ return m_type; }
-    inline void SetType(const DimensionType& value) { m_type = value; }
-    inline void SetType(DimensionType&& value) { m_type = std::move(value); }
-    inline UpdateDimensionResult& WithType(const DimensionType& value) { SetType(value); return *this;}
-    inline UpdateDimensionResult& WithType(DimensionType&& value) { SetType(std::move(value)); return *this;}
+    inline DimensionType GetType() const { return m_type; }
+    inline void SetType(DimensionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline UpdateDimensionResult& WithType(DimensionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +71,13 @@ namespace Model
      * <p>The value or list of values used to scope the dimension. For example, for
      * topic filters, this is the pattern used to match the MQTT topic name.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStringValues() const{ return m_stringValues; }
-    inline void SetStringValues(const Aws::Vector<Aws::String>& value) { m_stringValues = value; }
-    inline void SetStringValues(Aws::Vector<Aws::String>&& value) { m_stringValues = std::move(value); }
-    inline UpdateDimensionResult& WithStringValues(const Aws::Vector<Aws::String>& value) { SetStringValues(value); return *this;}
-    inline UpdateDimensionResult& WithStringValues(Aws::Vector<Aws::String>&& value) { SetStringValues(std::move(value)); return *this;}
-    inline UpdateDimensionResult& AddStringValues(const Aws::String& value) { m_stringValues.push_back(value); return *this; }
-    inline UpdateDimensionResult& AddStringValues(Aws::String&& value) { m_stringValues.push_back(std::move(value)); return *this; }
-    inline UpdateDimensionResult& AddStringValues(const char* value) { m_stringValues.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetStringValues() const { return m_stringValues; }
+    template<typename StringValuesT = Aws::Vector<Aws::String>>
+    void SetStringValues(StringValuesT&& value) { m_stringValuesHasBeenSet = true; m_stringValues = std::forward<StringValuesT>(value); }
+    template<typename StringValuesT = Aws::Vector<Aws::String>>
+    UpdateDimensionResult& WithStringValues(StringValuesT&& value) { SetStringValues(std::forward<StringValuesT>(value)); return *this;}
+    template<typename StringValuesT = Aws::String>
+    UpdateDimensionResult& AddStringValues(StringValuesT&& value) { m_stringValuesHasBeenSet = true; m_stringValues.emplace_back(std::forward<StringValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,11 +85,11 @@ namespace Model
      * <p>The date and time, in milliseconds since epoch, when the dimension was
      * initially created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
-    inline UpdateDimensionResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline UpdateDimensionResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    UpdateDimensionResult& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,38 +97,43 @@ namespace Model
      * <p>The date and time, in milliseconds since epoch, when the dimension was most
      * recently updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDate = std::move(value); }
-    inline UpdateDimensionResult& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline UpdateDimensionResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    UpdateDimensionResult& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDimensionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDimensionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDimensionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDimensionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    DimensionType m_type;
+    DimensionType m_type{DimensionType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stringValues;
+    bool m_stringValuesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
+    bool m_creationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

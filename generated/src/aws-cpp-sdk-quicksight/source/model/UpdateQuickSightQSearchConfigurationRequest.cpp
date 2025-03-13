@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQuickSightQSearchConfigurationRequest::UpdateQuickSightQSearchConfigurationRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_qSearchStatus(QSearchStatus::NOT_SET),
-    m_qSearchStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQuickSightQSearchConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

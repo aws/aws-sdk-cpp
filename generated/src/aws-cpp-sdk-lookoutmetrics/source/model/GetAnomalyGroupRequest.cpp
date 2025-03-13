@@ -12,12 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAnomalyGroupRequest::GetAnomalyGroupRequest() : 
-    m_anomalyGroupIdHasBeenSet(false),
-    m_anomalyDetectorArnHasBeenSet(false)
-{
-}
-
 Aws::String GetAnomalyGroupRequest::SerializePayload() const
 {
   JsonValue payload;

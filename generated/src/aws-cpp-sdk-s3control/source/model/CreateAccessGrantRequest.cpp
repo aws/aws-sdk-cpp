@@ -15,19 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateAccessGrantRequest::CreateAccessGrantRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_accessGrantsLocationIdHasBeenSet(false),
-    m_accessGrantsLocationConfigurationHasBeenSet(false),
-    m_granteeHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_applicationArnHasBeenSet(false),
-    m_s3PrefixType(S3PrefixType::NOT_SET),
-    m_s3PrefixTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
 
 Aws::String CreateAccessGrantRequest::SerializePayload() const
 {

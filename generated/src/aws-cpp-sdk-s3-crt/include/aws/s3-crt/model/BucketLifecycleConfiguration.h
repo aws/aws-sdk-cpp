@@ -35,7 +35,7 @@ namespace Model
   class BucketLifecycleConfiguration
   {
   public:
-    AWS_S3CRT_API BucketLifecycleConfiguration();
+    AWS_S3CRT_API BucketLifecycleConfiguration() = default;
     AWS_S3CRT_API BucketLifecycleConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API BucketLifecycleConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,14 @@ namespace Model
     /**
      * <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
      */
-    inline const Aws::Vector<LifecycleRule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<LifecycleRule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<LifecycleRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<LifecycleRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline BucketLifecycleConfiguration& WithRules(const Aws::Vector<LifecycleRule>& value) { SetRules(value); return *this;}
-    inline BucketLifecycleConfiguration& WithRules(Aws::Vector<LifecycleRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline BucketLifecycleConfiguration& AddRules(const LifecycleRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline BucketLifecycleConfiguration& AddRules(LifecycleRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<LifecycleRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<LifecycleRule>>
+    BucketLifecycleConfiguration& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = LifecycleRule>
+    BucketLifecycleConfiguration& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 

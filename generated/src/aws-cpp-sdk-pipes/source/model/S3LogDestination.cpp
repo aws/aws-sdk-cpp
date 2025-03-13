@@ -18,17 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-S3LogDestination::S3LogDestination() : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_bucketOwnerHasBeenSet(false),
-    m_outputFormat(S3OutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false)
-{
-}
-
 S3LogDestination::S3LogDestination(JsonView jsonValue)
-  : S3LogDestination()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ S3LogDestination& S3LogDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketOwner"))
   {
     m_bucketOwner = jsonValue.GetString("BucketOwner");
-
     m_bucketOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputFormat"))
   {
     m_outputFormat = S3OutputFormatMapper::GetS3OutputFormatForName(jsonValue.GetString("OutputFormat"));
-
     m_outputFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

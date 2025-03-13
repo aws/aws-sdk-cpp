@@ -18,20 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-ServiceSummary::ServiceSummary() : 
-    m_serviceNameHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_serviceArnHasBeenSet(false),
-    m_serviceUrlHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_status(ServiceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ServiceSummary::ServiceSummary(JsonView jsonValue)
-  : ServiceSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = jsonValue.GetString("ServiceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceId"))
   {
     m_serviceId = jsonValue.GetString("ServiceId");
-
     m_serviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceArn"))
   {
     m_serviceArn = jsonValue.GetString("ServiceArn");
-
     m_serviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceUrl"))
   {
     m_serviceUrl = jsonValue.GetString("ServiceUrl");
-
     m_serviceUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ServiceStatusMapper::GetServiceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

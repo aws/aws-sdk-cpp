@@ -26,7 +26,7 @@ namespace Model
   class AdminDeleteUserAttributesRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdminDeleteUserAttributesRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminDeleteUserAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of the user pool where you want to delete user attributes.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline AdminDeleteUserAttributesRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline AdminDeleteUserAttributesRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline AdminDeleteUserAttributesRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    AdminDeleteUserAttributesRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * this value must be the <code>sub</code> of a local user or the username of a
      * user from a third-party IdP.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline AdminDeleteUserAttributesRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline AdminDeleteUserAttributesRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline AdminDeleteUserAttributesRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    AdminDeleteUserAttributesRequest& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,15 +73,14 @@ namespace Model
      * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
      * prefix to the attribute name.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUserAttributeNames() const{ return m_userAttributeNames; }
+    inline const Aws::Vector<Aws::String>& GetUserAttributeNames() const { return m_userAttributeNames; }
     inline bool UserAttributeNamesHasBeenSet() const { return m_userAttributeNamesHasBeenSet; }
-    inline void SetUserAttributeNames(const Aws::Vector<Aws::String>& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames = value; }
-    inline void SetUserAttributeNames(Aws::Vector<Aws::String>&& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames = std::move(value); }
-    inline AdminDeleteUserAttributesRequest& WithUserAttributeNames(const Aws::Vector<Aws::String>& value) { SetUserAttributeNames(value); return *this;}
-    inline AdminDeleteUserAttributesRequest& WithUserAttributeNames(Aws::Vector<Aws::String>&& value) { SetUserAttributeNames(std::move(value)); return *this;}
-    inline AdminDeleteUserAttributesRequest& AddUserAttributeNames(const Aws::String& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames.push_back(value); return *this; }
-    inline AdminDeleteUserAttributesRequest& AddUserAttributeNames(Aws::String&& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames.push_back(std::move(value)); return *this; }
-    inline AdminDeleteUserAttributesRequest& AddUserAttributeNames(const char* value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames.push_back(value); return *this; }
+    template<typename UserAttributeNamesT = Aws::Vector<Aws::String>>
+    void SetUserAttributeNames(UserAttributeNamesT&& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames = std::forward<UserAttributeNamesT>(value); }
+    template<typename UserAttributeNamesT = Aws::Vector<Aws::String>>
+    AdminDeleteUserAttributesRequest& WithUserAttributeNames(UserAttributeNamesT&& value) { SetUserAttributeNames(std::forward<UserAttributeNamesT>(value)); return *this;}
+    template<typename UserAttributeNamesT = Aws::String>
+    AdminDeleteUserAttributesRequest& AddUserAttributeNames(UserAttributeNamesT&& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames.emplace_back(std::forward<UserAttributeNamesT>(value)); return *this; }
     ///@}
   private:
 

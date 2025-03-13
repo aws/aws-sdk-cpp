@@ -18,14 +18,7 @@ namespace KMS
 namespace Model
 {
 
-GrantConstraints::GrantConstraints() : 
-    m_encryptionContextSubsetHasBeenSet(false),
-    m_encryptionContextEqualsHasBeenSet(false)
-{
-}
-
 GrantConstraints::GrantConstraints(JsonView jsonValue)
-  : GrantConstraints()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ GrantConstraints& GrantConstraints::operator =(JsonView jsonValue)
     }
     m_encryptionContextSubsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionContextEquals"))
   {
     Aws::Map<Aws::String, JsonView> encryptionContextEqualsJsonMap = jsonValue.GetObject("EncryptionContextEquals").GetAllObjects();
@@ -51,7 +43,6 @@ GrantConstraints& GrantConstraints::operator =(JsonView jsonValue)
     }
     m_encryptionContextEqualsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SetTypeConfigurationResult::SetTypeConfigurationResult()
-{
-}
-
 SetTypeConfigurationResult::SetTypeConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ SetTypeConfigurationResult& SetTypeConfigurationResult::operator =(const Aws::Am
     if(!configurationArnNode.IsNull())
     {
       m_configurationArn = Aws::Utils::Xml::DecodeEscapedXmlText(configurationArnNode.GetText());
+      m_configurationArnHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::SetTypeConfigurationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

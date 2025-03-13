@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-TypedLinkAttributeRange::TypedLinkAttributeRange() : 
-    m_attributeNameHasBeenSet(false),
-    m_rangeHasBeenSet(false)
-{
-}
-
 TypedLinkAttributeRange::TypedLinkAttributeRange(JsonView jsonValue)
-  : TypedLinkAttributeRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TypedLinkAttributeRange& TypedLinkAttributeRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Range"))
   {
     m_range = jsonValue.GetObject("Range");
-
     m_rangeHasBeenSet = true;
   }
-
   return *this;
 }
 

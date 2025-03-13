@@ -18,24 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsBackupBackupPlanRuleDetails::AwsBackupBackupPlanRuleDetails() : 
-    m_targetBackupVaultHasBeenSet(false),
-    m_startWindowMinutes(0),
-    m_startWindowMinutesHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_enableContinuousBackup(false),
-    m_enableContinuousBackupHasBeenSet(false),
-    m_completionWindowMinutes(0),
-    m_completionWindowMinutesHasBeenSet(false),
-    m_copyActionsHasBeenSet(false),
-    m_lifecycleHasBeenSet(false)
-{
-}
-
 AwsBackupBackupPlanRuleDetails::AwsBackupBackupPlanRuleDetails(JsonView jsonValue)
-  : AwsBackupBackupPlanRuleDetails()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ AwsBackupBackupPlanRuleDetails& AwsBackupBackupPlanRuleDetails::operator =(JsonV
   if(jsonValue.ValueExists("TargetBackupVault"))
   {
     m_targetBackupVault = jsonValue.GetString("TargetBackupVault");
-
     m_targetBackupVaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartWindowMinutes"))
   {
     m_startWindowMinutes = jsonValue.GetInt64("StartWindowMinutes");
-
     m_startWindowMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleExpression"))
   {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
-
     m_scheduleExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleName"))
   {
     m_ruleName = jsonValue.GetString("RuleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleId"))
   {
     m_ruleId = jsonValue.GetString("RuleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableContinuousBackup"))
   {
     m_enableContinuousBackup = jsonValue.GetBool("EnableContinuousBackup");
-
     m_enableContinuousBackupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionWindowMinutes"))
   {
     m_completionWindowMinutes = jsonValue.GetInt64("CompletionWindowMinutes");
-
     m_completionWindowMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyActions"))
   {
     Aws::Utils::Array<JsonView> copyActionsJsonList = jsonValue.GetArray("CopyActions");
@@ -100,14 +69,11 @@ AwsBackupBackupPlanRuleDetails& AwsBackupBackupPlanRuleDetails::operator =(JsonV
     }
     m_copyActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = jsonValue.GetObject("Lifecycle");
-
     m_lifecycleHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTranscriptionJobRequest::DeleteTranscriptionJobRequest() : 
-    m_transcriptionJobNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTranscriptionJobRequest::SerializePayload() const
 {
   JsonValue payload;

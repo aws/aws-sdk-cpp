@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGroupRequest::DeleteGroupRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGroupRequest::SerializePayload() const
 {
   JsonValue payload;

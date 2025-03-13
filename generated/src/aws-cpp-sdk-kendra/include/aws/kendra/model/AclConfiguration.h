@@ -32,7 +32,7 @@ namespace Model
   class AclConfiguration
   {
   public:
-    AWS_KENDRA_API AclConfiguration();
+    AWS_KENDRA_API AclConfiguration() = default;
     AWS_KENDRA_API AclConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API AclConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * the groups specified in the <code>UserContext</code> field of the
      * <code>Query</code> API.</p>
      */
-    inline const Aws::String& GetAllowedGroupsColumnName() const{ return m_allowedGroupsColumnName; }
+    inline const Aws::String& GetAllowedGroupsColumnName() const { return m_allowedGroupsColumnName; }
     inline bool AllowedGroupsColumnNameHasBeenSet() const { return m_allowedGroupsColumnNameHasBeenSet; }
-    inline void SetAllowedGroupsColumnName(const Aws::String& value) { m_allowedGroupsColumnNameHasBeenSet = true; m_allowedGroupsColumnName = value; }
-    inline void SetAllowedGroupsColumnName(Aws::String&& value) { m_allowedGroupsColumnNameHasBeenSet = true; m_allowedGroupsColumnName = std::move(value); }
-    inline void SetAllowedGroupsColumnName(const char* value) { m_allowedGroupsColumnNameHasBeenSet = true; m_allowedGroupsColumnName.assign(value); }
-    inline AclConfiguration& WithAllowedGroupsColumnName(const Aws::String& value) { SetAllowedGroupsColumnName(value); return *this;}
-    inline AclConfiguration& WithAllowedGroupsColumnName(Aws::String&& value) { SetAllowedGroupsColumnName(std::move(value)); return *this;}
-    inline AclConfiguration& WithAllowedGroupsColumnName(const char* value) { SetAllowedGroupsColumnName(value); return *this;}
+    template<typename AllowedGroupsColumnNameT = Aws::String>
+    void SetAllowedGroupsColumnName(AllowedGroupsColumnNameT&& value) { m_allowedGroupsColumnNameHasBeenSet = true; m_allowedGroupsColumnName = std::forward<AllowedGroupsColumnNameT>(value); }
+    template<typename AllowedGroupsColumnNameT = Aws::String>
+    AclConfiguration& WithAllowedGroupsColumnName(AllowedGroupsColumnNameT&& value) { SetAllowedGroupsColumnName(std::forward<AllowedGroupsColumnNameT>(value)); return *this;}
     ///@}
   private:
 

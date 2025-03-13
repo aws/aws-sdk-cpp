@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProcessingS3Input::ProcessingS3Input() : 
-    m_s3UriHasBeenSet(false),
-    m_localPathHasBeenSet(false),
-    m_s3DataType(ProcessingS3DataType::NOT_SET),
-    m_s3DataTypeHasBeenSet(false),
-    m_s3InputMode(ProcessingS3InputMode::NOT_SET),
-    m_s3InputModeHasBeenSet(false),
-    m_s3DataDistributionType(ProcessingS3DataDistributionType::NOT_SET),
-    m_s3DataDistributionTypeHasBeenSet(false),
-    m_s3CompressionType(ProcessingS3CompressionType::NOT_SET),
-    m_s3CompressionTypeHasBeenSet(false)
-{
-}
-
 ProcessingS3Input::ProcessingS3Input(JsonView jsonValue)
-  : ProcessingS3Input()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ ProcessingS3Input& ProcessingS3Input::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalPath"))
   {
     m_localPath = jsonValue.GetString("LocalPath");
-
     m_localPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DataType"))
   {
     m_s3DataType = ProcessingS3DataTypeMapper::GetProcessingS3DataTypeForName(jsonValue.GetString("S3DataType"));
-
     m_s3DataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3InputMode"))
   {
     m_s3InputMode = ProcessingS3InputModeMapper::GetProcessingS3InputModeForName(jsonValue.GetString("S3InputMode"));
-
     m_s3InputModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DataDistributionType"))
   {
     m_s3DataDistributionType = ProcessingS3DataDistributionTypeMapper::GetProcessingS3DataDistributionTypeForName(jsonValue.GetString("S3DataDistributionType"));
-
     m_s3DataDistributionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3CompressionType"))
   {
     m_s3CompressionType = ProcessingS3CompressionTypeMapper::GetProcessingS3CompressionTypeForName(jsonValue.GetString("S3CompressionType"));
-
     m_s3CompressionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

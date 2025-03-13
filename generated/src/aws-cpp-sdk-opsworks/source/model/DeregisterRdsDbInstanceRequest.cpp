@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterRdsDbInstanceRequest::DeregisterRdsDbInstanceRequest() : 
-    m_rdsDbInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterRdsDbInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

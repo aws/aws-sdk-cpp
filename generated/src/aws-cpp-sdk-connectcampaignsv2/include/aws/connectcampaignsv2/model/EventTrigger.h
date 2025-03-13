@@ -31,7 +31,7 @@ namespace Model
   class EventTrigger
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API EventTrigger();
+    AWS_CONNECTCAMPAIGNSV2_API EventTrigger() = default;
     AWS_CONNECTCAMPAIGNSV2_API EventTrigger(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API EventTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetCustomerProfilesDomainArn() const{ return m_customerProfilesDomainArn; }
+    inline const Aws::String& GetCustomerProfilesDomainArn() const { return m_customerProfilesDomainArn; }
     inline bool CustomerProfilesDomainArnHasBeenSet() const { return m_customerProfilesDomainArnHasBeenSet; }
-    inline void SetCustomerProfilesDomainArn(const Aws::String& value) { m_customerProfilesDomainArnHasBeenSet = true; m_customerProfilesDomainArn = value; }
-    inline void SetCustomerProfilesDomainArn(Aws::String&& value) { m_customerProfilesDomainArnHasBeenSet = true; m_customerProfilesDomainArn = std::move(value); }
-    inline void SetCustomerProfilesDomainArn(const char* value) { m_customerProfilesDomainArnHasBeenSet = true; m_customerProfilesDomainArn.assign(value); }
-    inline EventTrigger& WithCustomerProfilesDomainArn(const Aws::String& value) { SetCustomerProfilesDomainArn(value); return *this;}
-    inline EventTrigger& WithCustomerProfilesDomainArn(Aws::String&& value) { SetCustomerProfilesDomainArn(std::move(value)); return *this;}
-    inline EventTrigger& WithCustomerProfilesDomainArn(const char* value) { SetCustomerProfilesDomainArn(value); return *this;}
+    template<typename CustomerProfilesDomainArnT = Aws::String>
+    void SetCustomerProfilesDomainArn(CustomerProfilesDomainArnT&& value) { m_customerProfilesDomainArnHasBeenSet = true; m_customerProfilesDomainArn = std::forward<CustomerProfilesDomainArnT>(value); }
+    template<typename CustomerProfilesDomainArnT = Aws::String>
+    EventTrigger& WithCustomerProfilesDomainArn(CustomerProfilesDomainArnT&& value) { SetCustomerProfilesDomainArn(std::forward<CustomerProfilesDomainArnT>(value)); return *this;}
     ///@}
   private:
 

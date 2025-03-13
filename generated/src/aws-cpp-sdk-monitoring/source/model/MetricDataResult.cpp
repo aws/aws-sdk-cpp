@@ -20,19 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricDataResult::MetricDataResult() : 
-    m_idHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_statusCode(StatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_messagesHasBeenSet(false)
-{
-}
-
 MetricDataResult::MetricDataResult(const XmlNode& xmlNode)
-  : MetricDataResult()
 {
   *this = xmlNode;
 }
@@ -48,54 +36,60 @@ MetricDataResult& MetricDataResult::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode labelNode = resultNode.FirstChild("Label");
     if(!labelNode.IsNull())
     {
       m_label = Aws::Utils::Xml::DecodeEscapedXmlText(labelNode.GetText());
       m_labelHasBeenSet = true;
+       m_labelHasBeenSet = true;
     }
     XmlNode timestampsNode = resultNode.FirstChild("Timestamps");
     if(!timestampsNode.IsNull())
     {
       XmlNode timestampsMember = timestampsNode.FirstChild("member");
+      m_timestampsHasBeenSet = !timestampsMember.IsNull();
       while(!timestampsMember.IsNull())
       {
         m_timestamps.push_back(DateTime(StringUtils::Trim(timestampsMember.GetText().c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601));
         timestampsMember = timestampsMember.NextNode("member");
       }
 
-      m_timestampsHasBeenSet = true;
+       m_timestampsHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("member");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(valuesMember.GetText().c_str()).c_str()));
         valuesMember = valuesMember.NextNode("member");
       }
 
-      m_valuesHasBeenSet = true;
+       m_valuesHasBeenSet = true;
     }
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
     if(!statusCodeNode.IsNull())
     {
-      m_statusCode = StatusCodeMapper::GetStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText()).c_str()).c_str());
+      m_statusCode = StatusCodeMapper::GetStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText()).c_str()));
       m_statusCodeHasBeenSet = true;
+       m_statusCodeHasBeenSet = true;
     }
     XmlNode messagesNode = resultNode.FirstChild("Messages");
     if(!messagesNode.IsNull())
     {
       XmlNode messagesMember = messagesNode.FirstChild("member");
+      m_messagesHasBeenSet = !messagesMember.IsNull();
       while(!messagesMember.IsNull())
       {
         m_messages.push_back(messagesMember);
         messagesMember = messagesMember.NextNode("member");
       }
 
-      m_messagesHasBeenSet = true;
+       m_messagesHasBeenSet = true;
     }
   }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocationS3Result::DescribeLocationS3Result() : 
-    m_s3StorageClass(S3StorageClass::NOT_SET)
-{
-}
-
 DescribeLocationS3Result::DescribeLocationS3Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeLocationS3Result()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ DescribeLocationS3Result& DescribeLocationS3Result::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("LocationArn"))
   {
     m_locationArn = jsonValue.GetString("LocationArn");
-
+    m_locationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationUri"))
   {
     m_locationUri = jsonValue.GetString("LocationUri");
-
+    m_locationUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3StorageClass"))
   {
     m_s3StorageClass = S3StorageClassMapper::GetS3StorageClassForName(jsonValue.GetString("S3StorageClass"));
-
+    m_s3StorageClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Config"))
   {
     m_s3Config = jsonValue.GetObject("S3Config");
-
+    m_s3ConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AgentArns"))
   {
     Aws::Utils::Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
@@ -62,20 +52,20 @@ DescribeLocationS3Result& DescribeLocationS3Result::operator =(const Aws::Amazon
     {
       m_agentArns.push_back(agentArnsJsonList[agentArnsIndex].AsString());
     }
+    m_agentArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

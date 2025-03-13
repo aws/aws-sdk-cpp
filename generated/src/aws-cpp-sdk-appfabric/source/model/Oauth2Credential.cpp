@@ -18,14 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-Oauth2Credential::Oauth2Credential() : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false)
-{
-}
-
 Oauth2Credential::Oauth2Credential(JsonView jsonValue)
-  : Oauth2Credential()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Oauth2Credential& Oauth2Credential::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clientId"))
   {
     m_clientId = jsonValue.GetString("clientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientSecret"))
   {
     m_clientSecret = jsonValue.GetString("clientSecret");
-
     m_clientSecretHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-AdBreakOpportunity::AdBreakOpportunity() : 
-    m_offsetMillis(0),
-    m_offsetMillisHasBeenSet(false)
-{
-}
-
 AdBreakOpportunity::AdBreakOpportunity(JsonView jsonValue)
-  : AdBreakOpportunity()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AdBreakOpportunity& AdBreakOpportunity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OffsetMillis"))
   {
     m_offsetMillis = jsonValue.GetInt64("OffsetMillis");
-
     m_offsetMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,25 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FleetLaunchTemplateOverrides::FleetLaunchTemplateOverrides() : 
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_maxPriceHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_weightedCapacity(0.0),
-    m_weightedCapacityHasBeenSet(false),
-    m_priority(0.0),
-    m_priorityHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false)
-{
-}
-
 FleetLaunchTemplateOverrides::FleetLaunchTemplateOverrides(const XmlNode& xmlNode)
-  : FleetLaunchTemplateOverrides()
 {
   *this = xmlNode;
 }
@@ -52,68 +34,78 @@ FleetLaunchTemplateOverrides& FleetLaunchTemplateOverrides::operator =(const Xml
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode maxPriceNode = resultNode.FirstChild("maxPrice");
     if(!maxPriceNode.IsNull())
     {
       m_maxPrice = Aws::Utils::Xml::DecodeEscapedXmlText(maxPriceNode.GetText());
       m_maxPriceHasBeenSet = true;
+       m_maxPriceHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode weightedCapacityNode = resultNode.FirstChild("weightedCapacity");
     if(!weightedCapacityNode.IsNull())
     {
       m_weightedCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(weightedCapacityNode.GetText()).c_str()).c_str());
       m_weightedCapacityHasBeenSet = true;
+       m_weightedCapacityHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("priority");
     if(!priorityNode.IsNull())
     {
       m_priority = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText()).c_str()).c_str());
       m_priorityHasBeenSet = true;
+       m_priorityHasBeenSet = true;
     }
     XmlNode placementNode = resultNode.FirstChild("placement");
     if(!placementNode.IsNull())
     {
       m_placement = placementNode;
       m_placementHasBeenSet = true;
+       m_placementHasBeenSet = true;
     }
     XmlNode instanceRequirementsNode = resultNode.FirstChild("instanceRequirements");
     if(!instanceRequirementsNode.IsNull())
     {
       m_instanceRequirements = instanceRequirementsNode;
       m_instanceRequirementsHasBeenSet = true;
+       m_instanceRequirementsHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
       m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
       m_imageIdHasBeenSet = true;
+       m_imageIdHasBeenSet = true;
     }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMappingSet");
     if(!blockDeviceMappingsNode.IsNull())
     {
       XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
+      m_blockDeviceMappingsHasBeenSet = !blockDeviceMappingsMember.IsNull();
       while(!blockDeviceMappingsMember.IsNull())
       {
         m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
         blockDeviceMappingsMember = blockDeviceMappingsMember.NextNode("item");
       }
 
-      m_blockDeviceMappingsHasBeenSet = true;
+       m_blockDeviceMappingsHasBeenSet = true;
     }
   }
 

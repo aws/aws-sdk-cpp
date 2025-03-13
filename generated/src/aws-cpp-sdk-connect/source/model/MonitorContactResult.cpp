@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-MonitorContactResult::MonitorContactResult()
-{
-}
-
 MonitorContactResult::MonitorContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ MonitorContactResult& MonitorContactResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("ContactId"))
   {
     m_contactId = jsonValue.GetString("ContactId");
-
+    m_contactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactArn"))
   {
     m_contactArn = jsonValue.GetString("ContactArn");
-
+    m_contactArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

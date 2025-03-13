@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SectionBasedLayoutConfiguration::SectionBasedLayoutConfiguration() : 
-    m_headerSectionsHasBeenSet(false),
-    m_bodySectionsHasBeenSet(false),
-    m_footerSectionsHasBeenSet(false),
-    m_canvasSizeOptionsHasBeenSet(false)
-{
-}
-
 SectionBasedLayoutConfiguration::SectionBasedLayoutConfiguration(JsonView jsonValue)
-  : SectionBasedLayoutConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ SectionBasedLayoutConfiguration& SectionBasedLayoutConfiguration::operator =(Jso
     }
     m_headerSectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BodySections"))
   {
     Aws::Utils::Array<JsonView> bodySectionsJsonList = jsonValue.GetArray("BodySections");
@@ -53,7 +43,6 @@ SectionBasedLayoutConfiguration& SectionBasedLayoutConfiguration::operator =(Jso
     }
     m_bodySectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FooterSections"))
   {
     Aws::Utils::Array<JsonView> footerSectionsJsonList = jsonValue.GetArray("FooterSections");
@@ -63,14 +52,11 @@ SectionBasedLayoutConfiguration& SectionBasedLayoutConfiguration::operator =(Jso
     }
     m_footerSectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CanvasSizeOptions"))
   {
     m_canvasSizeOptions = jsonValue.GetObject("CanvasSizeOptions");
-
     m_canvasSizeOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

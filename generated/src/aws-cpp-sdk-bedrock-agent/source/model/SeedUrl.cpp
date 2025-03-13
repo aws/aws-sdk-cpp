@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-SeedUrl::SeedUrl() : 
-    m_urlHasBeenSet(false)
-{
-}
-
 SeedUrl::SeedUrl(JsonView jsonValue)
-  : SeedUrl()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SeedUrl& SeedUrl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

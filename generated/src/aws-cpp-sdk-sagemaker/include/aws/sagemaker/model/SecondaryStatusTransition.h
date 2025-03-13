@@ -41,7 +41,7 @@ namespace Model
   class SecondaryStatusTransition
   {
   public:
-    AWS_SAGEMAKER_API SecondaryStatusTransition();
+    AWS_SAGEMAKER_API SecondaryStatusTransition() = default;
     AWS_SAGEMAKER_API SecondaryStatusTransition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SecondaryStatusTransition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -71,12 +71,10 @@ namespace Model
      * <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
-    inline const SecondaryStatus& GetStatus() const{ return m_status; }
+    inline SecondaryStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SecondaryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SecondaryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SecondaryStatusTransition& WithStatus(const SecondaryStatus& value) { SetStatus(value); return *this;}
-    inline SecondaryStatusTransition& WithStatus(SecondaryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SecondaryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SecondaryStatusTransition& WithStatus(SecondaryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +82,12 @@ namespace Model
      * <p>A timestamp that shows when the training job transitioned to the current
      * secondary status state.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline SecondaryStatusTransition& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline SecondaryStatusTransition& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    SecondaryStatusTransition& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +96,12 @@ namespace Model
      * secondary status state into another secondary status state or when the training
      * job has ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline SecondaryStatusTransition& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline SecondaryStatusTransition& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    SecondaryStatusTransition& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,24 +126,22 @@ namespace Model
      * <code>SecondaryStatus</code> - Training</p> </li> <li> <p>
      * <code>StatusMessage</code> - Downloading the training image</p> </li> </ul>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline SecondaryStatusTransition& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline SecondaryStatusTransition& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline SecondaryStatusTransition& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    SecondaryStatusTransition& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 
-    SecondaryStatus m_status;
+    SecondaryStatus m_status{SecondaryStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_statusMessage;

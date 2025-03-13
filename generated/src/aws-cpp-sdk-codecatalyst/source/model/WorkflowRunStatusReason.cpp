@@ -18,10 +18,6 @@ namespace CodeCatalyst
 namespace Model
 {
 
-WorkflowRunStatusReason::WorkflowRunStatusReason()
-{
-}
-
 WorkflowRunStatusReason::WorkflowRunStatusReason(JsonView jsonValue)
 {
   *this = jsonValue;

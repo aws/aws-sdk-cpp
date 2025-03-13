@@ -18,21 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-Theme::Theme() : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Theme::Theme(JsonView jsonValue)
-  : Theme()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ Theme& Theme::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
     m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentName"))
   {
     m_environmentName = jsonValue.GetString("environmentName");
-
     m_environmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -90,7 +64,6 @@ Theme& Theme::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrides"))
   {
     Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("overrides");
@@ -100,7 +73,6 @@ Theme& Theme::operator =(JsonView jsonValue)
     }
     m_overridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -110,7 +82,6 @@ Theme& Theme::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

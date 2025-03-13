@@ -12,17 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListContainerInstancesRequest::ListContainerInstancesRequest() : 
-    m_clusterHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_status(ContainerInstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListContainerInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,25 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFileSystemFromBackupRequest::CreateFileSystemFromBackupRequest() : 
-    m_backupIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_windowsConfigurationHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false),
-    m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_fileSystemTypeVersionHasBeenSet(false),
-    m_openZFSConfigurationHasBeenSet(false),
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false)
-{
-}
-
 Aws::String CreateFileSystemFromBackupRequest::SerializePayload() const
 {
   JsonValue payload;

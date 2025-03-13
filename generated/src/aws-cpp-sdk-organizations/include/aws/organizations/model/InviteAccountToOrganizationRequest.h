@@ -24,7 +24,7 @@ namespace Model
   class InviteAccountToOrganizationRequest : public OrganizationsRequest
   {
   public:
-    AWS_ORGANIZATIONS_API InviteAccountToOrganizationRequest();
+    AWS_ORGANIZATIONS_API InviteAccountToOrganizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,12 +50,12 @@ namespace Model
      * specify the email address that is associated with the account.</p> <p>
      * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
-    inline const HandshakeParty& GetTarget() const{ return m_target; }
+    inline const HandshakeParty& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const HandshakeParty& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(HandshakeParty&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline InviteAccountToOrganizationRequest& WithTarget(const HandshakeParty& value) { SetTarget(value); return *this;}
-    inline InviteAccountToOrganizationRequest& WithTarget(HandshakeParty&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = HandshakeParty>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = HandshakeParty>
+    InviteAccountToOrganizationRequest& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +63,12 @@ namespace Model
      * <p>Additional information that you want to include in the generated email to the
      * recipient account owner.</p>
      */
-    inline const Aws::String& GetNotes() const{ return m_notes; }
+    inline const Aws::String& GetNotes() const { return m_notes; }
     inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
-    inline void SetNotes(const Aws::String& value) { m_notesHasBeenSet = true; m_notes = value; }
-    inline void SetNotes(Aws::String&& value) { m_notesHasBeenSet = true; m_notes = std::move(value); }
-    inline void SetNotes(const char* value) { m_notesHasBeenSet = true; m_notes.assign(value); }
-    inline InviteAccountToOrganizationRequest& WithNotes(const Aws::String& value) { SetNotes(value); return *this;}
-    inline InviteAccountToOrganizationRequest& WithNotes(Aws::String&& value) { SetNotes(std::move(value)); return *this;}
-    inline InviteAccountToOrganizationRequest& WithNotes(const char* value) { SetNotes(value); return *this;}
+    template<typename NotesT = Aws::String>
+    void SetNotes(NotesT&& value) { m_notesHasBeenSet = true; m_notes = std::forward<NotesT>(value); }
+    template<typename NotesT = Aws::String>
+    InviteAccountToOrganizationRequest& WithNotes(NotesT&& value) { SetNotes(std::forward<NotesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +89,14 @@ namespace Model
      * is not valid or if you exceed the allowed number of tags for an account, then
      * the entire request fails and invitations are not sent.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline InviteAccountToOrganizationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline InviteAccountToOrganizationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline InviteAccountToOrganizationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline InviteAccountToOrganizationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    InviteAccountToOrganizationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    InviteAccountToOrganizationRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

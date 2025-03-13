@@ -18,13 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-FsxProtocolNfs::FsxProtocolNfs() : 
-    m_mountOptionsHasBeenSet(false)
-{
-}
-
 FsxProtocolNfs::FsxProtocolNfs(JsonView jsonValue)
-  : FsxProtocolNfs()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FsxProtocolNfs& FsxProtocolNfs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MountOptions"))
   {
     m_mountOptions = jsonValue.GetObject("MountOptions");
-
     m_mountOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

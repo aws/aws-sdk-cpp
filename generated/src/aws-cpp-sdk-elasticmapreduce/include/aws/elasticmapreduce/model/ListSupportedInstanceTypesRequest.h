@@ -21,7 +21,7 @@ namespace Model
   class ListSupportedInstanceTypesRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API ListSupportedInstanceTypesRequest();
+    AWS_EMR_API ListSupportedInstanceTypesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,28 +46,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html">Amazon
      * EMR Release Guide</a> </i>.</p>
      */
-    inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
+    inline const Aws::String& GetReleaseLabel() const { return m_releaseLabel; }
     inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
-    inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
-    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
-    inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
-    inline ListSupportedInstanceTypesRequest& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
-    inline ListSupportedInstanceTypesRequest& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
-    inline ListSupportedInstanceTypesRequest& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
+    template<typename ReleaseLabelT = Aws::String>
+    void SetReleaseLabel(ReleaseLabelT&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::forward<ReleaseLabelT>(value); }
+    template<typename ReleaseLabelT = Aws::String>
+    ListSupportedInstanceTypesRequest& WithReleaseLabel(ReleaseLabelT&& value) { SetReleaseLabel(std::forward<ReleaseLabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that marks the next set of results to retrieve.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListSupportedInstanceTypesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListSupportedInstanceTypesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListSupportedInstanceTypesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListSupportedInstanceTypesRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 

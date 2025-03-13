@@ -22,7 +22,7 @@ namespace Model
   class DescribeWorkflowTypeRequest : public SWFRequest
   {
   public:
-    AWS_SWF_API DescribeWorkflowTypeRequest();
+    AWS_SWF_API DescribeWorkflowTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The name of the domain in which this workflow type is registered.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline DescribeWorkflowTypeRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline DescribeWorkflowTypeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline DescribeWorkflowTypeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    DescribeWorkflowTypeRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow type to describe.</p>
      */
-    inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
+    inline const WorkflowType& GetWorkflowType() const { return m_workflowType; }
     inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
-    inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
-    inline DescribeWorkflowTypeRequest& WithWorkflowType(const WorkflowType& value) { SetWorkflowType(value); return *this;}
-    inline DescribeWorkflowTypeRequest& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
+    template<typename WorkflowTypeT = WorkflowType>
+    void SetWorkflowType(WorkflowTypeT&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::forward<WorkflowTypeT>(value); }
+    template<typename WorkflowTypeT = WorkflowType>
+    DescribeWorkflowTypeRequest& WithWorkflowType(WorkflowTypeT&& value) { SetWorkflowType(std::forward<WorkflowTypeT>(value)); return *this;}
     ///@}
   private:
 

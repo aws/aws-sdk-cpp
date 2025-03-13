@@ -33,7 +33,7 @@ namespace Model
   class FleetStatus
   {
   public:
-    AWS_CODEBUILD_API FleetStatus();
+    AWS_CODEBUILD_API FleetStatus() = default;
     AWS_CODEBUILD_API FleetStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API FleetStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,10 @@ namespace Model
      * <code>ACTIVE</code>: The compute fleet has succeeded and is active.</p> </li>
      * </ul>
      */
-    inline const FleetStatusCode& GetStatusCode() const{ return m_statusCode; }
+    inline FleetStatusCode GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const FleetStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(FleetStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline FleetStatus& WithStatusCode(const FleetStatusCode& value) { SetStatusCode(value); return *this;}
-    inline FleetStatus& WithStatusCode(FleetStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+    inline void SetStatusCode(FleetStatusCode value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline FleetStatus& WithStatusCode(FleetStatusCode value) { SetStatusCode(value); return *this;}
     ///@}
 
     ///@{
@@ -68,33 +66,29 @@ namespace Model
      * </li> <li> <p> <code>UPDATE_FAILED</code>: The compute fleet has failed to
      * update.</p> </li> </ul>
      */
-    inline const FleetContextCode& GetContext() const{ return m_context; }
+    inline FleetContextCode GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const FleetContextCode& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(FleetContextCode&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline FleetStatus& WithContext(const FleetContextCode& value) { SetContext(value); return *this;}
-    inline FleetStatus& WithContext(FleetContextCode&& value) { SetContext(std::move(value)); return *this;}
+    inline void SetContext(FleetContextCode value) { m_contextHasBeenSet = true; m_context = value; }
+    inline FleetStatus& WithContext(FleetContextCode value) { SetContext(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message associated with the status of a compute fleet.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline FleetStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline FleetStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline FleetStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    FleetStatus& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    FleetStatusCode m_statusCode;
+    FleetStatusCode m_statusCode{FleetStatusCode::NOT_SET};
     bool m_statusCodeHasBeenSet = false;
 
-    FleetContextCode m_context;
+    FleetContextCode m_context{FleetContextCode::NOT_SET};
     bool m_contextHasBeenSet = false;
 
     Aws::String m_message;

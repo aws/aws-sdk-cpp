@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ResizeInfo::ResizeInfo() : 
-    m_resizeTypeHasBeenSet(false),
-    m_allowCancelResize(false),
-    m_allowCancelResizeHasBeenSet(false)
-{
-}
-
 ResizeInfo::ResizeInfo(const XmlNode& xmlNode)
-  : ResizeInfo()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ ResizeInfo& ResizeInfo::operator =(const XmlNode& xmlNode)
     {
       m_resizeType = Aws::Utils::Xml::DecodeEscapedXmlText(resizeTypeNode.GetText());
       m_resizeTypeHasBeenSet = true;
+       m_resizeTypeHasBeenSet = true;
     }
     XmlNode allowCancelResizeNode = resultNode.FirstChild("AllowCancelResize");
     if(!allowCancelResizeNode.IsNull())
     {
       m_allowCancelResize = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowCancelResizeNode.GetText()).c_str()).c_str());
       m_allowCancelResizeHasBeenSet = true;
+       m_allowCancelResizeHasBeenSet = true;
     }
   }
 

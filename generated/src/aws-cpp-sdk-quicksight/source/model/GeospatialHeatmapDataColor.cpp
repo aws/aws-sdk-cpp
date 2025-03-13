@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialHeatmapDataColor::GeospatialHeatmapDataColor() : 
-    m_colorHasBeenSet(false)
-{
-}
-
 GeospatialHeatmapDataColor::GeospatialHeatmapDataColor(JsonView jsonValue)
-  : GeospatialHeatmapDataColor()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GeospatialHeatmapDataColor& GeospatialHeatmapDataColor::operator =(JsonView json
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   return *this;
 }
 

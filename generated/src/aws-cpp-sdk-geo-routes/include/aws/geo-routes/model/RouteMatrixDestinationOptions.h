@@ -32,7 +32,7 @@ namespace Model
   class RouteMatrixDestinationOptions
   {
   public:
-    AWS_GEOROUTES_API RouteMatrixDestinationOptions();
+    AWS_GEOROUTES_API RouteMatrixDestinationOptions() = default;
     AWS_GEOROUTES_API RouteMatrixDestinationOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMatrixDestinationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * users in moving vehicles who may not have sufficient time to make an action at
      * an origin or a destination.</p>
      */
-    inline long long GetAvoidActionsForDistance() const{ return m_avoidActionsForDistance; }
+    inline long long GetAvoidActionsForDistance() const { return m_avoidActionsForDistance; }
     inline bool AvoidActionsForDistanceHasBeenSet() const { return m_avoidActionsForDistanceHasBeenSet; }
     inline void SetAvoidActionsForDistance(long long value) { m_avoidActionsForDistanceHasBeenSet = true; m_avoidActionsForDistance = value; }
     inline RouteMatrixDestinationOptions& WithAvoidActionsForDistance(long long value) { SetAvoidActionsForDistance(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>GPS Heading at the position.</p>
      */
-    inline double GetHeading() const{ return m_heading; }
+    inline double GetHeading() const { return m_heading; }
     inline bool HeadingHasBeenSet() const { return m_headingHasBeenSet; }
     inline void SetHeading(double value) { m_headingHasBeenSet = true; m_heading = value; }
     inline RouteMatrixDestinationOptions& WithHeading(double value) { SetHeading(value); return *this;}
@@ -64,12 +64,12 @@ namespace Model
     /**
      * <p>Options to configure matching the provided position to the road network.</p>
      */
-    inline const RouteMatrixMatchingOptions& GetMatching() const{ return m_matching; }
+    inline const RouteMatrixMatchingOptions& GetMatching() const { return m_matching; }
     inline bool MatchingHasBeenSet() const { return m_matchingHasBeenSet; }
-    inline void SetMatching(const RouteMatrixMatchingOptions& value) { m_matchingHasBeenSet = true; m_matching = value; }
-    inline void SetMatching(RouteMatrixMatchingOptions&& value) { m_matchingHasBeenSet = true; m_matching = std::move(value); }
-    inline RouteMatrixDestinationOptions& WithMatching(const RouteMatrixMatchingOptions& value) { SetMatching(value); return *this;}
-    inline RouteMatrixDestinationOptions& WithMatching(RouteMatrixMatchingOptions&& value) { SetMatching(std::move(value)); return *this;}
+    template<typename MatchingT = RouteMatrixMatchingOptions>
+    void SetMatching(MatchingT&& value) { m_matchingHasBeenSet = true; m_matching = std::forward<MatchingT>(value); }
+    template<typename MatchingT = RouteMatrixMatchingOptions>
+    RouteMatrixDestinationOptions& WithMatching(MatchingT&& value) { SetMatching(std::forward<MatchingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,19 +77,19 @@ namespace Model
      * <p>Options to configure matching the provided position to a side of the
      * street.</p>
      */
-    inline const RouteMatrixSideOfStreetOptions& GetSideOfStreet() const{ return m_sideOfStreet; }
+    inline const RouteMatrixSideOfStreetOptions& GetSideOfStreet() const { return m_sideOfStreet; }
     inline bool SideOfStreetHasBeenSet() const { return m_sideOfStreetHasBeenSet; }
-    inline void SetSideOfStreet(const RouteMatrixSideOfStreetOptions& value) { m_sideOfStreetHasBeenSet = true; m_sideOfStreet = value; }
-    inline void SetSideOfStreet(RouteMatrixSideOfStreetOptions&& value) { m_sideOfStreetHasBeenSet = true; m_sideOfStreet = std::move(value); }
-    inline RouteMatrixDestinationOptions& WithSideOfStreet(const RouteMatrixSideOfStreetOptions& value) { SetSideOfStreet(value); return *this;}
-    inline RouteMatrixDestinationOptions& WithSideOfStreet(RouteMatrixSideOfStreetOptions&& value) { SetSideOfStreet(std::move(value)); return *this;}
+    template<typename SideOfStreetT = RouteMatrixSideOfStreetOptions>
+    void SetSideOfStreet(SideOfStreetT&& value) { m_sideOfStreetHasBeenSet = true; m_sideOfStreet = std::forward<SideOfStreetT>(value); }
+    template<typename SideOfStreetT = RouteMatrixSideOfStreetOptions>
+    RouteMatrixDestinationOptions& WithSideOfStreet(SideOfStreetT&& value) { SetSideOfStreet(std::forward<SideOfStreetT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_avoidActionsForDistance;
+    long long m_avoidActionsForDistance{0};
     bool m_avoidActionsForDistanceHasBeenSet = false;
 
-    double m_heading;
+    double m_heading{0.0};
     bool m_headingHasBeenSet = false;
 
     RouteMatrixMatchingOptions m_matching;

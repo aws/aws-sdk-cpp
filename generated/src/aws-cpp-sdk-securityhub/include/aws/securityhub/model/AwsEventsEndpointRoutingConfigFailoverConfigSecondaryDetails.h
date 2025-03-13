@@ -32,7 +32,7 @@ namespace Model
   class AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails();
+    AWS_SECURITYHUB_API AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails() = default;
     AWS_SECURITYHUB_API AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> Defines the secondary Region.</p>
      */
-    inline const Aws::String& GetRoute() const{ return m_route; }
+    inline const Aws::String& GetRoute() const { return m_route; }
     inline bool RouteHasBeenSet() const { return m_routeHasBeenSet; }
-    inline void SetRoute(const Aws::String& value) { m_routeHasBeenSet = true; m_route = value; }
-    inline void SetRoute(Aws::String&& value) { m_routeHasBeenSet = true; m_route = std::move(value); }
-    inline void SetRoute(const char* value) { m_routeHasBeenSet = true; m_route.assign(value); }
-    inline AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails& WithRoute(const Aws::String& value) { SetRoute(value); return *this;}
-    inline AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails& WithRoute(Aws::String&& value) { SetRoute(std::move(value)); return *this;}
-    inline AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails& WithRoute(const char* value) { SetRoute(value); return *this;}
+    template<typename RouteT = Aws::String>
+    void SetRoute(RouteT&& value) { m_routeHasBeenSet = true; m_route = std::forward<RouteT>(value); }
+    template<typename RouteT = Aws::String>
+    AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails& WithRoute(RouteT&& value) { SetRoute(std::forward<RouteT>(value)); return *this;}
     ///@}
   private:
 

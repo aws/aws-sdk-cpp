@@ -32,7 +32,7 @@ namespace Model
   class Artifact
   {
   public:
-    AWS_IMPORTEXPORT_API Artifact();
+    AWS_IMPORTEXPORT_API Artifact() = default;
     AWS_IMPORTEXPORT_API Artifact(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IMPORTEXPORT_API Artifact& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,26 +42,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Artifact& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Artifact& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Artifact& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Artifact& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetURL() const{ return m_uRL; }
+    inline const Aws::String& GetURL() const { return m_uRL; }
     inline bool URLHasBeenSet() const { return m_uRLHasBeenSet; }
-    inline void SetURL(const Aws::String& value) { m_uRLHasBeenSet = true; m_uRL = value; }
-    inline void SetURL(Aws::String&& value) { m_uRLHasBeenSet = true; m_uRL = std::move(value); }
-    inline void SetURL(const char* value) { m_uRLHasBeenSet = true; m_uRL.assign(value); }
-    inline Artifact& WithURL(const Aws::String& value) { SetURL(value); return *this;}
-    inline Artifact& WithURL(Aws::String&& value) { SetURL(std::move(value)); return *this;}
-    inline Artifact& WithURL(const char* value) { SetURL(value); return *this;}
+    template<typename URLT = Aws::String>
+    void SetURL(URLT&& value) { m_uRLHasBeenSet = true; m_uRL = std::forward<URLT>(value); }
+    template<typename URLT = Aws::String>
+    Artifact& WithURL(URLT&& value) { SetURL(std::forward<URLT>(value)); return *this;}
     ///@}
   private:
 

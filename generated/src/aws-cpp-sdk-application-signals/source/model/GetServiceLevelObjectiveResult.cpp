@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetServiceLevelObjectiveResult::GetServiceLevelObjectiveResult()
-{
-}
-
 GetServiceLevelObjectiveResult::GetServiceLevelObjectiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetServiceLevelObjectiveResult& GetServiceLevelObjectiveResult::operator =(const
   if(jsonValue.ValueExists("Slo"))
   {
     m_slo = jsonValue.GetObject("Slo");
-
+    m_sloHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

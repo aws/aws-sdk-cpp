@@ -32,7 +32,7 @@ namespace Model
   class SubChannelSummary
   {
   public:
-    AWS_CHIMESDKMESSAGING_API SubChannelSummary();
+    AWS_CHIMESDKMESSAGING_API SubChannelSummary() = default;
     AWS_CHIMESDKMESSAGING_API SubChannelSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API SubChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The unique ID of a SubChannel.</p>
      */
-    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+    inline const Aws::String& GetSubChannelId() const { return m_subChannelId; }
     inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
-    inline void SetSubChannelId(const Aws::String& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = value; }
-    inline void SetSubChannelId(Aws::String&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::move(value); }
-    inline void SetSubChannelId(const char* value) { m_subChannelIdHasBeenSet = true; m_subChannelId.assign(value); }
-    inline SubChannelSummary& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
-    inline SubChannelSummary& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
-    inline SubChannelSummary& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+    template<typename SubChannelIdT = Aws::String>
+    void SetSubChannelId(SubChannelIdT&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::forward<SubChannelIdT>(value); }
+    template<typename SubChannelIdT = Aws::String>
+    SubChannelSummary& WithSubChannelId(SubChannelIdT&& value) { SetSubChannelId(std::forward<SubChannelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of members in a SubChannel.</p>
      */
-    inline int GetMembershipCount() const{ return m_membershipCount; }
+    inline int GetMembershipCount() const { return m_membershipCount; }
     inline bool MembershipCountHasBeenSet() const { return m_membershipCountHasBeenSet; }
     inline void SetMembershipCount(int value) { m_membershipCountHasBeenSet = true; m_membershipCount = value; }
     inline SubChannelSummary& WithMembershipCount(int value) { SetMembershipCount(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_subChannelId;
     bool m_subChannelIdHasBeenSet = false;
 
-    int m_membershipCount;
+    int m_membershipCount{0};
     bool m_membershipCountHasBeenSet = false;
   };
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListPipelinesRequest::ListPipelinesRequest() : 
-    m_ascendingHasBeenSet(false),
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListPipelinesRequest::SerializePayload() const
 {
   return {};

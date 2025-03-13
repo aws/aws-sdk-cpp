@@ -33,7 +33,7 @@ namespace Model
   class MappingRule
   {
   public:
-    AWS_COGNITOIDENTITY_API MappingRule();
+    AWS_COGNITOIDENTITY_API MappingRule() = default;
     AWS_COGNITOIDENTITY_API MappingRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITY_API MappingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The claim name that must be present in the token, for example, "isAdmin" or
      * "paid".</p>
      */
-    inline const Aws::String& GetClaim() const{ return m_claim; }
+    inline const Aws::String& GetClaim() const { return m_claim; }
     inline bool ClaimHasBeenSet() const { return m_claimHasBeenSet; }
-    inline void SetClaim(const Aws::String& value) { m_claimHasBeenSet = true; m_claim = value; }
-    inline void SetClaim(Aws::String&& value) { m_claimHasBeenSet = true; m_claim = std::move(value); }
-    inline void SetClaim(const char* value) { m_claimHasBeenSet = true; m_claim.assign(value); }
-    inline MappingRule& WithClaim(const Aws::String& value) { SetClaim(value); return *this;}
-    inline MappingRule& WithClaim(Aws::String&& value) { SetClaim(std::move(value)); return *this;}
-    inline MappingRule& WithClaim(const char* value) { SetClaim(value); return *this;}
+    template<typename ClaimT = Aws::String>
+    void SetClaim(ClaimT&& value) { m_claimHasBeenSet = true; m_claim = std::forward<ClaimT>(value); }
+    template<typename ClaimT = Aws::String>
+    MappingRule& WithClaim(ClaimT&& value) { SetClaim(std::forward<ClaimT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,47 +57,41 @@ namespace Model
      * <p>The match condition that specifies how closely the claim value in the IdP
      * token must match <code>Value</code>.</p>
      */
-    inline const MappingRuleMatchType& GetMatchType() const{ return m_matchType; }
+    inline MappingRuleMatchType GetMatchType() const { return m_matchType; }
     inline bool MatchTypeHasBeenSet() const { return m_matchTypeHasBeenSet; }
-    inline void SetMatchType(const MappingRuleMatchType& value) { m_matchTypeHasBeenSet = true; m_matchType = value; }
-    inline void SetMatchType(MappingRuleMatchType&& value) { m_matchTypeHasBeenSet = true; m_matchType = std::move(value); }
-    inline MappingRule& WithMatchType(const MappingRuleMatchType& value) { SetMatchType(value); return *this;}
-    inline MappingRule& WithMatchType(MappingRuleMatchType&& value) { SetMatchType(std::move(value)); return *this;}
+    inline void SetMatchType(MappingRuleMatchType value) { m_matchTypeHasBeenSet = true; m_matchType = value; }
+    inline MappingRule& WithMatchType(MappingRuleMatchType value) { SetMatchType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline MappingRule& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline MappingRule& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline MappingRule& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    MappingRule& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The role ARN.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline MappingRule& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline MappingRule& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline MappingRule& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    MappingRule& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_claim;
     bool m_claimHasBeenSet = false;
 
-    MappingRuleMatchType m_matchType;
+    MappingRuleMatchType m_matchType{MappingRuleMatchType::NOT_SET};
     bool m_matchTypeHasBeenSet = false;
 
     Aws::String m_value;

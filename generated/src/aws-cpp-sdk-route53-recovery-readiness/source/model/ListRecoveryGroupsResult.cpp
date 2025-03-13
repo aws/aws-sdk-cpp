@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRecoveryGroupsResult::ListRecoveryGroupsResult()
-{
-}
-
 ListRecoveryGroupsResult::ListRecoveryGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListRecoveryGroupsResult& ListRecoveryGroupsResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recoveryGroups"))
   {
     Aws::Utils::Array<JsonView> recoveryGroupsJsonList = jsonValue.GetArray("recoveryGroups");
@@ -42,14 +37,15 @@ ListRecoveryGroupsResult& ListRecoveryGroupsResult::operator =(const Aws::Amazon
     {
       m_recoveryGroups.push_back(recoveryGroupsJsonList[recoveryGroupsIndex].AsObject());
     }
+    m_recoveryGroupsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

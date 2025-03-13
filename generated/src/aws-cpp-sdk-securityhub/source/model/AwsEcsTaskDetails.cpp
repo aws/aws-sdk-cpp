@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDetails::AwsEcsTaskDetails() : 
-    m_clusterArnHasBeenSet(false),
-    m_taskDefinitionArnHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_containersHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDetails::AwsEcsTaskDetails(JsonView jsonValue)
-  : AwsEcsTaskDetails()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ AwsEcsTaskDetails& AwsEcsTaskDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskDefinitionArn"))
   {
     m_taskDefinitionArn = jsonValue.GetString("TaskDefinitionArn");
-
     m_taskDefinitionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAt"))
   {
     m_startedAt = jsonValue.GetString("StartedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedBy"))
   {
     m_startedBy = jsonValue.GetString("StartedBy");
-
     m_startedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Group"))
   {
     m_group = jsonValue.GetString("Group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Volumes"))
   {
     Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("Volumes");
@@ -97,7 +69,6 @@ AwsEcsTaskDetails& AwsEcsTaskDetails::operator =(JsonView jsonValue)
     }
     m_volumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Containers"))
   {
     Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("Containers");
@@ -107,7 +78,6 @@ AwsEcsTaskDetails& AwsEcsTaskDetails::operator =(JsonView jsonValue)
     }
     m_containersHasBeenSet = true;
   }
-
   return *this;
 }
 

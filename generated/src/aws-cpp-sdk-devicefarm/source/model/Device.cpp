@@ -18,40 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-Device::Device() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_manufacturerHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_modelIdHasBeenSet(false),
-    m_formFactor(DeviceFormFactor::NOT_SET),
-    m_formFactorHasBeenSet(false),
-    m_platform(DevicePlatform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_osHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_resolutionHasBeenSet(false),
-    m_heapSize(0),
-    m_heapSizeHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_carrierHasBeenSet(false),
-    m_radioHasBeenSet(false),
-    m_remoteAccessEnabled(false),
-    m_remoteAccessEnabledHasBeenSet(false),
-    m_remoteDebugEnabled(false),
-    m_remoteDebugEnabledHasBeenSet(false),
-    m_fleetTypeHasBeenSet(false),
-    m_fleetNameHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_availability(DeviceAvailability::NOT_SET),
-    m_availabilityHasBeenSet(false)
-{
-}
-
 Device::Device(JsonView jsonValue)
-  : Device()
 {
   *this = jsonValue;
 }
@@ -61,136 +28,98 @@ Device& Device::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manufacturer"))
   {
     m_manufacturer = jsonValue.GetString("manufacturer");
-
     m_manufacturerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("model"))
   {
     m_model = jsonValue.GetString("model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelId"))
   {
     m_modelId = jsonValue.GetString("modelId");
-
     m_modelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("formFactor"))
   {
     m_formFactor = DeviceFormFactorMapper::GetDeviceFormFactorForName(jsonValue.GetString("formFactor"));
-
     m_formFactorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = DevicePlatformMapper::GetDevicePlatformForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("os"))
   {
     m_os = jsonValue.GetString("os");
-
     m_osHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpu"))
   {
     m_cpu = jsonValue.GetObject("cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolution"))
   {
     m_resolution = jsonValue.GetObject("resolution");
-
     m_resolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("heapSize"))
   {
     m_heapSize = jsonValue.GetInt64("heapSize");
-
     m_heapSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetInt64("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("carrier"))
   {
     m_carrier = jsonValue.GetString("carrier");
-
     m_carrierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("radio"))
   {
     m_radio = jsonValue.GetString("radio");
-
     m_radioHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteAccessEnabled"))
   {
     m_remoteAccessEnabled = jsonValue.GetBool("remoteAccessEnabled");
-
     m_remoteAccessEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteDebugEnabled"))
   {
     m_remoteDebugEnabled = jsonValue.GetBool("remoteDebugEnabled");
-
     m_remoteDebugEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fleetType"))
   {
     m_fleetType = jsonValue.GetString("fleetType");
-
     m_fleetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fleetName"))
   {
     m_fleetName = jsonValue.GetString("fleetName");
-
     m_fleetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instances"))
   {
     Aws::Utils::Array<JsonView> instancesJsonList = jsonValue.GetArray("instances");
@@ -200,14 +129,11 @@ Device& Device::operator =(JsonView jsonValue)
     }
     m_instancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availability"))
   {
     m_availability = DeviceAvailabilityMapper::GetDeviceAvailabilityForName(jsonValue.GetString("availability"));
-
     m_availabilityHasBeenSet = true;
   }
-
   return *this;
 }
 

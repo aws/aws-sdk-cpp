@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RoutingProfileQueueConfig::RoutingProfileQueueConfig() : 
-    m_queueReferenceHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_delay(0),
-    m_delayHasBeenSet(false)
-{
-}
-
 RoutingProfileQueueConfig::RoutingProfileQueueConfig(JsonView jsonValue)
-  : RoutingProfileQueueConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RoutingProfileQueueConfig& RoutingProfileQueueConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("QueueReference"))
   {
     m_queueReference = jsonValue.GetObject("QueueReference");
-
     m_queueReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delay"))
   {
     m_delay = jsonValue.GetInteger("Delay");
-
     m_delayHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSmsChannelRequest::DeleteSmsChannelRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSmsChannelRequest::SerializePayload() const
 {
   return {};

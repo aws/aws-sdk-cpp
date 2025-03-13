@@ -18,16 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-ComponentInfo::ComponentInfo() : 
-    m_componentType(ComponentType::NOT_SET),
-    m_componentTypeHasBeenSet(false),
-    m_sidHasBeenSet(false),
-    m_ec2InstanceIdHasBeenSet(false)
-{
-}
-
 ComponentInfo::ComponentInfo(JsonView jsonValue)
-  : ComponentInfo()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ComponentInfo& ComponentInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComponentType"))
   {
     m_componentType = ComponentTypeMapper::GetComponentTypeForName(jsonValue.GetString("ComponentType"));
-
     m_componentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sid"))
   {
     m_sid = jsonValue.GetString("Sid");
-
     m_sidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2InstanceId"))
   {
     m_ec2InstanceId = jsonValue.GetString("Ec2InstanceId");
-
     m_ec2InstanceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

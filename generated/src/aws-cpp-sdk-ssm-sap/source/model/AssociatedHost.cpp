@@ -18,16 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-AssociatedHost::AssociatedHost() : 
-    m_hostnameHasBeenSet(false),
-    m_ec2InstanceIdHasBeenSet(false),
-    m_ipAddressesHasBeenSet(false),
-    m_osVersionHasBeenSet(false)
-{
-}
-
 AssociatedHost::AssociatedHost(JsonView jsonValue)
-  : AssociatedHost()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AssociatedHost& AssociatedHost::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Hostname"))
   {
     m_hostname = jsonValue.GetString("Hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2InstanceId"))
   {
     m_ec2InstanceId = jsonValue.GetString("Ec2InstanceId");
-
     m_ec2InstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddresses"))
   {
     Aws::Utils::Array<JsonView> ipAddressesJsonList = jsonValue.GetArray("IpAddresses");
@@ -57,14 +44,11 @@ AssociatedHost& AssociatedHost::operator =(JsonView jsonValue)
     }
     m_ipAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OsVersion"))
   {
     m_osVersion = jsonValue.GetString("OsVersion");
-
     m_osVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

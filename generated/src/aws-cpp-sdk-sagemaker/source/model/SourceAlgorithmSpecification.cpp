@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SourceAlgorithmSpecification::SourceAlgorithmSpecification() : 
-    m_sourceAlgorithmsHasBeenSet(false)
-{
-}
-
 SourceAlgorithmSpecification::SourceAlgorithmSpecification(JsonView jsonValue)
-  : SourceAlgorithmSpecification()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SourceAlgorithmSpecification& SourceAlgorithmSpecification::operator =(JsonView 
     }
     m_sourceAlgorithmsHasBeenSet = true;
   }
-
   return *this;
 }
 

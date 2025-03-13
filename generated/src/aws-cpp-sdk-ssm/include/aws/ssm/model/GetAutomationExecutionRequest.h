@@ -21,7 +21,7 @@ namespace Model
   class GetAutomationExecutionRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetAutomationExecutionRequest();
+    AWS_SSM_API GetAutomationExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * execution ID is returned by StartAutomationExecution when the execution of an
      * Automation runbook is initiated.</p>
      */
-    inline const Aws::String& GetAutomationExecutionId() const{ return m_automationExecutionId; }
+    inline const Aws::String& GetAutomationExecutionId() const { return m_automationExecutionId; }
     inline bool AutomationExecutionIdHasBeenSet() const { return m_automationExecutionIdHasBeenSet; }
-    inline void SetAutomationExecutionId(const Aws::String& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = value; }
-    inline void SetAutomationExecutionId(Aws::String&& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = std::move(value); }
-    inline void SetAutomationExecutionId(const char* value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId.assign(value); }
-    inline GetAutomationExecutionRequest& WithAutomationExecutionId(const Aws::String& value) { SetAutomationExecutionId(value); return *this;}
-    inline GetAutomationExecutionRequest& WithAutomationExecutionId(Aws::String&& value) { SetAutomationExecutionId(std::move(value)); return *this;}
-    inline GetAutomationExecutionRequest& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
+    template<typename AutomationExecutionIdT = Aws::String>
+    void SetAutomationExecutionId(AutomationExecutionIdT&& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = std::forward<AutomationExecutionIdT>(value); }
+    template<typename AutomationExecutionIdT = Aws::String>
+    GetAutomationExecutionRequest& WithAutomationExecutionId(AutomationExecutionIdT&& value) { SetAutomationExecutionId(std::forward<AutomationExecutionIdT>(value)); return *this;}
     ///@}
   private:
 

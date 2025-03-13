@@ -18,13 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-AsyncInvokeOutputDataConfig::AsyncInvokeOutputDataConfig() : 
-    m_s3OutputDataConfigHasBeenSet(false)
-{
-}
-
 AsyncInvokeOutputDataConfig::AsyncInvokeOutputDataConfig(JsonView jsonValue)
-  : AsyncInvokeOutputDataConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AsyncInvokeOutputDataConfig& AsyncInvokeOutputDataConfig::operator =(JsonView js
   if(jsonValue.ValueExists("s3OutputDataConfig"))
   {
     m_s3OutputDataConfig = jsonValue.GetObject("s3OutputDataConfig");
-
     m_s3OutputDataConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

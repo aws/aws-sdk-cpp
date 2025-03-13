@@ -12,12 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddAttributesToFindingsRequest::AddAttributesToFindingsRequest() : 
-    m_findingArnsHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String AddAttributesToFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

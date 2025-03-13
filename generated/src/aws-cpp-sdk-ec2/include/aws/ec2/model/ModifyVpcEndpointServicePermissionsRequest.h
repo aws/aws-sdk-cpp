@@ -22,7 +22,7 @@ namespace Model
   class ModifyVpcEndpointServicePermissionsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyVpcEndpointServicePermissionsRequest();
+    AWS_EC2_API ModifyVpcEndpointServicePermissionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyVpcEndpointServicePermissionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -54,14 +54,12 @@ namespace Model
     /**
      * <p>The ID of the service.</p>
      */
-    inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+    inline const Aws::String& GetServiceId() const { return m_serviceId; }
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-    inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-    inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-    inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
-    inline ModifyVpcEndpointServicePermissionsRequest& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-    inline ModifyVpcEndpointServicePermissionsRequest& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServicePermissionsRequest& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+    template<typename ServiceIdT = Aws::String>
+    void SetServiceId(ServiceIdT&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::forward<ServiceIdT>(value); }
+    template<typename ServiceIdT = Aws::String>
+    ModifyVpcEndpointServicePermissionsRequest& WithServiceId(ServiceIdT&& value) { SetServiceId(std::forward<ServiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,15 +68,14 @@ namespace Model
      * the principals in this list. To grant permissions to all principals, specify an
      * asterisk (*).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAddAllowedPrincipals() const{ return m_addAllowedPrincipals; }
+    inline const Aws::Vector<Aws::String>& GetAddAllowedPrincipals() const { return m_addAllowedPrincipals; }
     inline bool AddAllowedPrincipalsHasBeenSet() const { return m_addAllowedPrincipalsHasBeenSet; }
-    inline void SetAddAllowedPrincipals(const Aws::Vector<Aws::String>& value) { m_addAllowedPrincipalsHasBeenSet = true; m_addAllowedPrincipals = value; }
-    inline void SetAddAllowedPrincipals(Aws::Vector<Aws::String>&& value) { m_addAllowedPrincipalsHasBeenSet = true; m_addAllowedPrincipals = std::move(value); }
-    inline ModifyVpcEndpointServicePermissionsRequest& WithAddAllowedPrincipals(const Aws::Vector<Aws::String>& value) { SetAddAllowedPrincipals(value); return *this;}
-    inline ModifyVpcEndpointServicePermissionsRequest& WithAddAllowedPrincipals(Aws::Vector<Aws::String>&& value) { SetAddAllowedPrincipals(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServicePermissionsRequest& AddAddAllowedPrincipals(const Aws::String& value) { m_addAllowedPrincipalsHasBeenSet = true; m_addAllowedPrincipals.push_back(value); return *this; }
-    inline ModifyVpcEndpointServicePermissionsRequest& AddAddAllowedPrincipals(Aws::String&& value) { m_addAllowedPrincipalsHasBeenSet = true; m_addAllowedPrincipals.push_back(std::move(value)); return *this; }
-    inline ModifyVpcEndpointServicePermissionsRequest& AddAddAllowedPrincipals(const char* value) { m_addAllowedPrincipalsHasBeenSet = true; m_addAllowedPrincipals.push_back(value); return *this; }
+    template<typename AddAllowedPrincipalsT = Aws::Vector<Aws::String>>
+    void SetAddAllowedPrincipals(AddAllowedPrincipalsT&& value) { m_addAllowedPrincipalsHasBeenSet = true; m_addAllowedPrincipals = std::forward<AddAllowedPrincipalsT>(value); }
+    template<typename AddAllowedPrincipalsT = Aws::Vector<Aws::String>>
+    ModifyVpcEndpointServicePermissionsRequest& WithAddAllowedPrincipals(AddAllowedPrincipalsT&& value) { SetAddAllowedPrincipals(std::forward<AddAllowedPrincipalsT>(value)); return *this;}
+    template<typename AddAllowedPrincipalsT = Aws::String>
+    ModifyVpcEndpointServicePermissionsRequest& AddAddAllowedPrincipals(AddAllowedPrincipalsT&& value) { m_addAllowedPrincipalsHasBeenSet = true; m_addAllowedPrincipals.emplace_back(std::forward<AddAllowedPrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,19 +83,18 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the principals. Permissions are revoked
      * for principals in this list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveAllowedPrincipals() const{ return m_removeAllowedPrincipals; }
+    inline const Aws::Vector<Aws::String>& GetRemoveAllowedPrincipals() const { return m_removeAllowedPrincipals; }
     inline bool RemoveAllowedPrincipalsHasBeenSet() const { return m_removeAllowedPrincipalsHasBeenSet; }
-    inline void SetRemoveAllowedPrincipals(const Aws::Vector<Aws::String>& value) { m_removeAllowedPrincipalsHasBeenSet = true; m_removeAllowedPrincipals = value; }
-    inline void SetRemoveAllowedPrincipals(Aws::Vector<Aws::String>&& value) { m_removeAllowedPrincipalsHasBeenSet = true; m_removeAllowedPrincipals = std::move(value); }
-    inline ModifyVpcEndpointServicePermissionsRequest& WithRemoveAllowedPrincipals(const Aws::Vector<Aws::String>& value) { SetRemoveAllowedPrincipals(value); return *this;}
-    inline ModifyVpcEndpointServicePermissionsRequest& WithRemoveAllowedPrincipals(Aws::Vector<Aws::String>&& value) { SetRemoveAllowedPrincipals(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServicePermissionsRequest& AddRemoveAllowedPrincipals(const Aws::String& value) { m_removeAllowedPrincipalsHasBeenSet = true; m_removeAllowedPrincipals.push_back(value); return *this; }
-    inline ModifyVpcEndpointServicePermissionsRequest& AddRemoveAllowedPrincipals(Aws::String&& value) { m_removeAllowedPrincipalsHasBeenSet = true; m_removeAllowedPrincipals.push_back(std::move(value)); return *this; }
-    inline ModifyVpcEndpointServicePermissionsRequest& AddRemoveAllowedPrincipals(const char* value) { m_removeAllowedPrincipalsHasBeenSet = true; m_removeAllowedPrincipals.push_back(value); return *this; }
+    template<typename RemoveAllowedPrincipalsT = Aws::Vector<Aws::String>>
+    void SetRemoveAllowedPrincipals(RemoveAllowedPrincipalsT&& value) { m_removeAllowedPrincipalsHasBeenSet = true; m_removeAllowedPrincipals = std::forward<RemoveAllowedPrincipalsT>(value); }
+    template<typename RemoveAllowedPrincipalsT = Aws::Vector<Aws::String>>
+    ModifyVpcEndpointServicePermissionsRequest& WithRemoveAllowedPrincipals(RemoveAllowedPrincipalsT&& value) { SetRemoveAllowedPrincipals(std::forward<RemoveAllowedPrincipalsT>(value)); return *this;}
+    template<typename RemoveAllowedPrincipalsT = Aws::String>
+    ModifyVpcEndpointServicePermissionsRequest& AddRemoveAllowedPrincipals(RemoveAllowedPrincipalsT&& value) { m_removeAllowedPrincipalsHasBeenSet = true; m_removeAllowedPrincipals.emplace_back(std::forward<RemoveAllowedPrincipalsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_serviceId;

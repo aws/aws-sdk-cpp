@@ -18,16 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-KeywordInformation::KeywordInformation() : 
-    m_keywordHasBeenSet(false),
-    m_keywordMessageHasBeenSet(false),
-    m_keywordAction(KeywordAction::NOT_SET),
-    m_keywordActionHasBeenSet(false)
-{
-}
-
 KeywordInformation::KeywordInformation(JsonView jsonValue)
-  : KeywordInformation()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ KeywordInformation& KeywordInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Keyword"))
   {
     m_keyword = jsonValue.GetString("Keyword");
-
     m_keywordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeywordMessage"))
   {
     m_keywordMessage = jsonValue.GetString("KeywordMessage");
-
     m_keywordMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeywordAction"))
   {
     m_keywordAction = KeywordActionMapper::GetKeywordActionForName(jsonValue.GetString("KeywordAction"));
-
     m_keywordActionHasBeenSet = true;
   }
-
   return *this;
 }
 

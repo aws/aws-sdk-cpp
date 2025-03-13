@@ -18,21 +18,7 @@ namespace Detective
 namespace Model
 {
 
-TTPsObservedDetail::TTPsObservedDetail() : 
-    m_tacticHasBeenSet(false),
-    m_techniqueHasBeenSet(false),
-    m_procedureHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_aPINameHasBeenSet(false),
-    m_aPISuccessCount(0),
-    m_aPISuccessCountHasBeenSet(false),
-    m_aPIFailureCount(0),
-    m_aPIFailureCountHasBeenSet(false)
-{
-}
-
 TTPsObservedDetail::TTPsObservedDetail(JsonView jsonValue)
-  : TTPsObservedDetail()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ TTPsObservedDetail& TTPsObservedDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Tactic"))
   {
     m_tactic = jsonValue.GetString("Tactic");
-
     m_tacticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Technique"))
   {
     m_technique = jsonValue.GetString("Technique");
-
     m_techniqueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Procedure"))
   {
     m_procedure = jsonValue.GetString("Procedure");
-
     m_procedureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("APIName"))
   {
     m_aPIName = jsonValue.GetString("APIName");
-
     m_aPINameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("APISuccessCount"))
   {
     m_aPISuccessCount = jsonValue.GetInt64("APISuccessCount");
-
     m_aPISuccessCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("APIFailureCount"))
   {
     m_aPIFailureCount = jsonValue.GetInt64("APIFailureCount");
-
     m_aPIFailureCountHasBeenSet = true;
   }
-
   return *this;
 }
 

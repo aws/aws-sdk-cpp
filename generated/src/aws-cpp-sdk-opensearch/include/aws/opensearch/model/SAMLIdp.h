@@ -31,7 +31,7 @@ namespace Model
   class SAMLIdp
   {
   public:
-    AWS_OPENSEARCHSERVICE_API SAMLIdp();
+    AWS_OPENSEARCHSERVICE_API SAMLIdp() = default;
     AWS_OPENSEARCHSERVICE_API SAMLIdp(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API SAMLIdp& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The metadata of the SAML application, in XML format.</p>
      */
-    inline const Aws::String& GetMetadataContent() const{ return m_metadataContent; }
+    inline const Aws::String& GetMetadataContent() const { return m_metadataContent; }
     inline bool MetadataContentHasBeenSet() const { return m_metadataContentHasBeenSet; }
-    inline void SetMetadataContent(const Aws::String& value) { m_metadataContentHasBeenSet = true; m_metadataContent = value; }
-    inline void SetMetadataContent(Aws::String&& value) { m_metadataContentHasBeenSet = true; m_metadataContent = std::move(value); }
-    inline void SetMetadataContent(const char* value) { m_metadataContentHasBeenSet = true; m_metadataContent.assign(value); }
-    inline SAMLIdp& WithMetadataContent(const Aws::String& value) { SetMetadataContent(value); return *this;}
-    inline SAMLIdp& WithMetadataContent(Aws::String&& value) { SetMetadataContent(std::move(value)); return *this;}
-    inline SAMLIdp& WithMetadataContent(const char* value) { SetMetadataContent(value); return *this;}
+    template<typename MetadataContentT = Aws::String>
+    void SetMetadataContent(MetadataContentT&& value) { m_metadataContentHasBeenSet = true; m_metadataContent = std::forward<MetadataContentT>(value); }
+    template<typename MetadataContentT = Aws::String>
+    SAMLIdp& WithMetadataContent(MetadataContentT&& value) { SetMetadataContent(std::forward<MetadataContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique entity ID of the application in the SAML identity provider.</p>
      */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+    inline const Aws::String& GetEntityId() const { return m_entityId; }
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-    inline SAMLIdp& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-    inline SAMLIdp& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-    inline SAMLIdp& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+    template<typename EntityIdT = Aws::String>
+    void SetEntityId(EntityIdT&& value) { m_entityIdHasBeenSet = true; m_entityId = std::forward<EntityIdT>(value); }
+    template<typename EntityIdT = Aws::String>
+    SAMLIdp& WithEntityId(EntityIdT&& value) { SetEntityId(std::forward<EntityIdT>(value)); return *this;}
     ///@}
   private:
 

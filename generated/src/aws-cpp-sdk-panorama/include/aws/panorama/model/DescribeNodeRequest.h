@@ -25,7 +25,7 @@ namespace Model
   class DescribeNodeRequest : public PanoramaRequest
   {
   public:
-    AWS_PANORAMA_API DescribeNodeRequest();
+    AWS_PANORAMA_API DescribeNodeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The node's ID.</p>
      */
-    inline const Aws::String& GetNodeId() const{ return m_nodeId; }
+    inline const Aws::String& GetNodeId() const { return m_nodeId; }
     inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
-    inline void SetNodeId(const Aws::String& value) { m_nodeIdHasBeenSet = true; m_nodeId = value; }
-    inline void SetNodeId(Aws::String&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::move(value); }
-    inline void SetNodeId(const char* value) { m_nodeIdHasBeenSet = true; m_nodeId.assign(value); }
-    inline DescribeNodeRequest& WithNodeId(const Aws::String& value) { SetNodeId(value); return *this;}
-    inline DescribeNodeRequest& WithNodeId(Aws::String&& value) { SetNodeId(std::move(value)); return *this;}
-    inline DescribeNodeRequest& WithNodeId(const char* value) { SetNodeId(value); return *this;}
+    template<typename NodeIdT = Aws::String>
+    void SetNodeId(NodeIdT&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::forward<NodeIdT>(value); }
+    template<typename NodeIdT = Aws::String>
+    DescribeNodeRequest& WithNodeId(NodeIdT&& value) { SetNodeId(std::forward<NodeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account ID of the node's owner.</p>
      */
-    inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
+    inline const Aws::String& GetOwnerAccount() const { return m_ownerAccount; }
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
-    inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
-    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
-    inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
-    inline DescribeNodeRequest& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
-    inline DescribeNodeRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
-    inline DescribeNodeRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
+    template<typename OwnerAccountT = Aws::String>
+    void SetOwnerAccount(OwnerAccountT&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::forward<OwnerAccountT>(value); }
+    template<typename OwnerAccountT = Aws::String>
+    DescribeNodeRequest& WithOwnerAccount(OwnerAccountT&& value) { SetOwnerAccount(std::forward<OwnerAccountT>(value)); return *this;}
     ///@}
   private:
 

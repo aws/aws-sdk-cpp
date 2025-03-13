@@ -29,7 +29,7 @@ namespace Model
   class ActivateDeviceIdentifierResult
   {
   public:
-    AWS_PRIVATENETWORKS_API ActivateDeviceIdentifierResult();
+    AWS_PRIVATENETWORKS_API ActivateDeviceIdentifierResult() = default;
     AWS_PRIVATENETWORKS_API ActivateDeviceIdentifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PRIVATENETWORKS_API ActivateDeviceIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,48 +38,46 @@ namespace Model
     /**
      * <p>Information about the device identifier.</p>
      */
-    inline const DeviceIdentifier& GetDeviceIdentifier() const{ return m_deviceIdentifier; }
-    inline void SetDeviceIdentifier(const DeviceIdentifier& value) { m_deviceIdentifier = value; }
-    inline void SetDeviceIdentifier(DeviceIdentifier&& value) { m_deviceIdentifier = std::move(value); }
-    inline ActivateDeviceIdentifierResult& WithDeviceIdentifier(const DeviceIdentifier& value) { SetDeviceIdentifier(value); return *this;}
-    inline ActivateDeviceIdentifierResult& WithDeviceIdentifier(DeviceIdentifier&& value) { SetDeviceIdentifier(std::move(value)); return *this;}
+    inline const DeviceIdentifier& GetDeviceIdentifier() const { return m_deviceIdentifier; }
+    template<typename DeviceIdentifierT = DeviceIdentifier>
+    void SetDeviceIdentifier(DeviceIdentifierT&& value) { m_deviceIdentifierHasBeenSet = true; m_deviceIdentifier = std::forward<DeviceIdentifierT>(value); }
+    template<typename DeviceIdentifierT = DeviceIdentifier>
+    ActivateDeviceIdentifierResult& WithDeviceIdentifier(DeviceIdentifierT&& value) { SetDeviceIdentifier(std::forward<DeviceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The tags on the device identifier. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline ActivateDeviceIdentifierResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ActivateDeviceIdentifierResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ActivateDeviceIdentifierResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline ActivateDeviceIdentifierResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline ActivateDeviceIdentifierResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline ActivateDeviceIdentifierResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ActivateDeviceIdentifierResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline ActivateDeviceIdentifierResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline ActivateDeviceIdentifierResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ActivateDeviceIdentifierResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ActivateDeviceIdentifierResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ActivateDeviceIdentifierResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ActivateDeviceIdentifierResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ActivateDeviceIdentifierResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ActivateDeviceIdentifierResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DeviceIdentifier m_deviceIdentifier;
+    bool m_deviceIdentifierHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCelebrityRecognitionResult::GetCelebrityRecognitionResult() : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
-{
-}
-
 GetCelebrityRecognitionResult::GetCelebrityRecognitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetCelebrityRecognitionResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ GetCelebrityRecognitionResult& GetCelebrityRecognitionResult::operator =(const A
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = VideoJobStatusMapper::GetVideoJobStatusForName(jsonValue.GetString("JobStatus"));
-
+    m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VideoMetadata"))
   {
     m_videoMetadata = jsonValue.GetObject("VideoMetadata");
-
+    m_videoMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Celebrities"))
   {
     Aws::Utils::Array<JsonView> celebritiesJsonList = jsonValue.GetArray("Celebrities");
@@ -62,32 +52,30 @@ GetCelebrityRecognitionResult& GetCelebrityRecognitionResult::operator =(const A
     {
       m_celebrities.push_back(celebritiesJsonList[celebritiesIndex].AsObject());
     }
+    m_celebritiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
+    m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Video"))
   {
     m_video = jsonValue.GetObject("Video");
-
+    m_videoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobTag"))
   {
     m_jobTag = jsonValue.GetString("JobTag");
-
+    m_jobTagHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-CheckCertificateRevocationStatusActions::CheckCertificateRevocationStatusActions() : 
-    m_revokedStatusAction(RevocationCheckAction::NOT_SET),
-    m_revokedStatusActionHasBeenSet(false),
-    m_unknownStatusAction(RevocationCheckAction::NOT_SET),
-    m_unknownStatusActionHasBeenSet(false)
-{
-}
-
 CheckCertificateRevocationStatusActions::CheckCertificateRevocationStatusActions(JsonView jsonValue)
-  : CheckCertificateRevocationStatusActions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CheckCertificateRevocationStatusActions& CheckCertificateRevocationStatusActions
   if(jsonValue.ValueExists("RevokedStatusAction"))
   {
     m_revokedStatusAction = RevocationCheckActionMapper::GetRevocationCheckActionForName(jsonValue.GetString("RevokedStatusAction"));
-
     m_revokedStatusActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnknownStatusAction"))
   {
     m_unknownStatusAction = RevocationCheckActionMapper::GetRevocationCheckActionForName(jsonValue.GetString("UnknownStatusAction"));
-
     m_unknownStatusActionHasBeenSet = true;
   }
-
   return *this;
 }
 

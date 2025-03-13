@@ -12,12 +12,6 @@ using namespace Aws::Keyspaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTableAutoScalingSettingsRequest::GetTableAutoScalingSettingsRequest() : 
-    m_keyspaceNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
-{
-}
-
 Aws::String GetTableAutoScalingSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

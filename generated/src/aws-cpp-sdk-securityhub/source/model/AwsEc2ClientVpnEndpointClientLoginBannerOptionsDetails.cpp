@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_bannerTextHasBeenSet(false)
-{
-}
-
 AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails(JsonView jsonValue)
-  : AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails& AwsEc2ClientVpnEndpointC
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BannerText"))
   {
     m_bannerText = jsonValue.GetString("BannerText");
-
     m_bannerTextHasBeenSet = true;
   }
-
   return *this;
 }
 

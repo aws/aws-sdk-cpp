@@ -20,16 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ConfigurationOptionSetting::ConfigurationOptionSetting() : 
-    m_resourceNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_optionNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ConfigurationOptionSetting::ConfigurationOptionSetting(const XmlNode& xmlNode)
-  : ConfigurationOptionSetting()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ ConfigurationOptionSetting& ConfigurationOptionSetting::operator =(const XmlNode
     {
       m_resourceName = Aws::Utils::Xml::DecodeEscapedXmlText(resourceNameNode.GetText());
       m_resourceNameHasBeenSet = true;
+       m_resourceNameHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
       m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
+       m_namespaceHasBeenSet = true;
     }
     XmlNode optionNameNode = resultNode.FirstChild("OptionName");
     if(!optionNameNode.IsNull())
     {
       m_optionName = Aws::Utils::Xml::DecodeEscapedXmlText(optionNameNode.GetText());
       m_optionNameHasBeenSet = true;
+       m_optionNameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

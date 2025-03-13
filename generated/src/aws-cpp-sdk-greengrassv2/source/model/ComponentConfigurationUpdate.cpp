@@ -18,14 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-ComponentConfigurationUpdate::ComponentConfigurationUpdate() : 
-    m_mergeHasBeenSet(false),
-    m_resetHasBeenSet(false)
-{
-}
-
 ComponentConfigurationUpdate::ComponentConfigurationUpdate(JsonView jsonValue)
-  : ComponentConfigurationUpdate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ComponentConfigurationUpdate& ComponentConfigurationUpdate::operator =(JsonView 
   if(jsonValue.ValueExists("merge"))
   {
     m_merge = jsonValue.GetString("merge");
-
     m_mergeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reset"))
   {
     Aws::Utils::Array<JsonView> resetJsonList = jsonValue.GetArray("reset");
@@ -48,7 +39,6 @@ ComponentConfigurationUpdate& ComponentConfigurationUpdate::operator =(JsonView 
     }
     m_resetHasBeenSet = true;
   }
-
   return *this;
 }
 

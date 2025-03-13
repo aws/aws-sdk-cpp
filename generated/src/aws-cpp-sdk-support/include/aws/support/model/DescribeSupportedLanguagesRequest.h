@@ -21,7 +21,7 @@ namespace Model
   class DescribeSupportedLanguagesRequest : public SupportRequest
   {
   public:
-    AWS_SUPPORT_API DescribeSupportedLanguagesRequest();
+    AWS_SUPPORT_API DescribeSupportedLanguagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The type of issue for the case. You can specify <code>customer-service</code>
      * or <code>technical</code>.</p>
      */
-    inline const Aws::String& GetIssueType() const{ return m_issueType; }
+    inline const Aws::String& GetIssueType() const { return m_issueType; }
     inline bool IssueTypeHasBeenSet() const { return m_issueTypeHasBeenSet; }
-    inline void SetIssueType(const Aws::String& value) { m_issueTypeHasBeenSet = true; m_issueType = value; }
-    inline void SetIssueType(Aws::String&& value) { m_issueTypeHasBeenSet = true; m_issueType = std::move(value); }
-    inline void SetIssueType(const char* value) { m_issueTypeHasBeenSet = true; m_issueType.assign(value); }
-    inline DescribeSupportedLanguagesRequest& WithIssueType(const Aws::String& value) { SetIssueType(value); return *this;}
-    inline DescribeSupportedLanguagesRequest& WithIssueType(Aws::String&& value) { SetIssueType(std::move(value)); return *this;}
-    inline DescribeSupportedLanguagesRequest& WithIssueType(const char* value) { SetIssueType(value); return *this;}
+    template<typename IssueTypeT = Aws::String>
+    void SetIssueType(IssueTypeT&& value) { m_issueTypeHasBeenSet = true; m_issueType = std::forward<IssueTypeT>(value); }
+    template<typename IssueTypeT = Aws::String>
+    DescribeSupportedLanguagesRequest& WithIssueType(IssueTypeT&& value) { SetIssueType(std::forward<IssueTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <a>DescribeServices</a> operation to get the possible <code>serviceCode</code>
      * values.</p>
      */
-    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+    inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-    inline DescribeSupportedLanguagesRequest& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-    inline DescribeSupportedLanguagesRequest& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-    inline DescribeSupportedLanguagesRequest& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    template<typename ServiceCodeT = Aws::String>
+    void SetServiceCode(ServiceCodeT&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::forward<ServiceCodeT>(value); }
+    template<typename ServiceCodeT = Aws::String>
+    DescribeSupportedLanguagesRequest& WithServiceCode(ServiceCodeT&& value) { SetServiceCode(std::forward<ServiceCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * <a>DescribeServices</a> operation to get the category code for a service. Each
      * Amazon Web Services service defines its own set of category codes.</p>
      */
-    inline const Aws::String& GetCategoryCode() const{ return m_categoryCode; }
+    inline const Aws::String& GetCategoryCode() const { return m_categoryCode; }
     inline bool CategoryCodeHasBeenSet() const { return m_categoryCodeHasBeenSet; }
-    inline void SetCategoryCode(const Aws::String& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = value; }
-    inline void SetCategoryCode(Aws::String&& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = std::move(value); }
-    inline void SetCategoryCode(const char* value) { m_categoryCodeHasBeenSet = true; m_categoryCode.assign(value); }
-    inline DescribeSupportedLanguagesRequest& WithCategoryCode(const Aws::String& value) { SetCategoryCode(value); return *this;}
-    inline DescribeSupportedLanguagesRequest& WithCategoryCode(Aws::String&& value) { SetCategoryCode(std::move(value)); return *this;}
-    inline DescribeSupportedLanguagesRequest& WithCategoryCode(const char* value) { SetCategoryCode(value); return *this;}
+    template<typename CategoryCodeT = Aws::String>
+    void SetCategoryCode(CategoryCodeT&& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = std::forward<CategoryCodeT>(value); }
+    template<typename CategoryCodeT = Aws::String>
+    DescribeSupportedLanguagesRequest& WithCategoryCode(CategoryCodeT&& value) { SetCategoryCode(std::forward<CategoryCodeT>(value)); return *this;}
     ///@}
   private:
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateGlobalNetworkResult
   {
   public:
-    AWS_NETWORKMANAGER_API CreateGlobalNetworkResult();
+    AWS_NETWORKMANAGER_API CreateGlobalNetworkResult() = default;
     AWS_NETWORKMANAGER_API CreateGlobalNetworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API CreateGlobalNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the global network object.</p>
      */
-    inline const GlobalNetwork& GetGlobalNetwork() const{ return m_globalNetwork; }
-    inline void SetGlobalNetwork(const GlobalNetwork& value) { m_globalNetwork = value; }
-    inline void SetGlobalNetwork(GlobalNetwork&& value) { m_globalNetwork = std::move(value); }
-    inline CreateGlobalNetworkResult& WithGlobalNetwork(const GlobalNetwork& value) { SetGlobalNetwork(value); return *this;}
-    inline CreateGlobalNetworkResult& WithGlobalNetwork(GlobalNetwork&& value) { SetGlobalNetwork(std::move(value)); return *this;}
+    inline const GlobalNetwork& GetGlobalNetwork() const { return m_globalNetwork; }
+    template<typename GlobalNetworkT = GlobalNetwork>
+    void SetGlobalNetwork(GlobalNetworkT&& value) { m_globalNetworkHasBeenSet = true; m_globalNetwork = std::forward<GlobalNetworkT>(value); }
+    template<typename GlobalNetworkT = GlobalNetwork>
+    CreateGlobalNetworkResult& WithGlobalNetwork(GlobalNetworkT&& value) { SetGlobalNetwork(std::forward<GlobalNetworkT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateGlobalNetworkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateGlobalNetworkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateGlobalNetworkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateGlobalNetworkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GlobalNetwork m_globalNetwork;
+    bool m_globalNetworkHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,7 @@ namespace Model
   class SpaceStorageSettings
   {
   public:
-    AWS_SAGEMAKER_API SpaceStorageSettings();
+    AWS_SAGEMAKER_API SpaceStorageSettings() = default;
     AWS_SAGEMAKER_API SpaceStorageSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SpaceStorageSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>A collection of EBS storage settings for a space.</p>
      */
-    inline const EbsStorageSettings& GetEbsStorageSettings() const{ return m_ebsStorageSettings; }
+    inline const EbsStorageSettings& GetEbsStorageSettings() const { return m_ebsStorageSettings; }
     inline bool EbsStorageSettingsHasBeenSet() const { return m_ebsStorageSettingsHasBeenSet; }
-    inline void SetEbsStorageSettings(const EbsStorageSettings& value) { m_ebsStorageSettingsHasBeenSet = true; m_ebsStorageSettings = value; }
-    inline void SetEbsStorageSettings(EbsStorageSettings&& value) { m_ebsStorageSettingsHasBeenSet = true; m_ebsStorageSettings = std::move(value); }
-    inline SpaceStorageSettings& WithEbsStorageSettings(const EbsStorageSettings& value) { SetEbsStorageSettings(value); return *this;}
-    inline SpaceStorageSettings& WithEbsStorageSettings(EbsStorageSettings&& value) { SetEbsStorageSettings(std::move(value)); return *this;}
+    template<typename EbsStorageSettingsT = EbsStorageSettings>
+    void SetEbsStorageSettings(EbsStorageSettingsT&& value) { m_ebsStorageSettingsHasBeenSet = true; m_ebsStorageSettings = std::forward<EbsStorageSettingsT>(value); }
+    template<typename EbsStorageSettingsT = EbsStorageSettings>
+    SpaceStorageSettings& WithEbsStorageSettings(EbsStorageSettingsT&& value) { SetEbsStorageSettings(std::forward<EbsStorageSettingsT>(value)); return *this;}
     ///@}
   private:
 

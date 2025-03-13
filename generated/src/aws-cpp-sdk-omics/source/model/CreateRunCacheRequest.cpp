@@ -12,19 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRunCacheRequest::CreateRunCacheRequest() : 
-    m_cacheBehavior(CacheBehavior::NOT_SET),
-    m_cacheBehaviorHasBeenSet(false),
-    m_cacheS3LocationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true),
-    m_tagsHasBeenSet(false),
-    m_cacheBucketOwnerIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateRunCacheRequest::SerializePayload() const
 {
   JsonValue payload;

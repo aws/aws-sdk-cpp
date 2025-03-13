@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateScalingPlanResult::CreateScalingPlanResult() : 
-    m_scalingPlanVersion(0)
-{
-}
-
 CreateScalingPlanResult::CreateScalingPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateScalingPlanResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ CreateScalingPlanResult& CreateScalingPlanResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ScalingPlanVersion"))
   {
     m_scalingPlanVersion = jsonValue.GetInt64("ScalingPlanVersion");
-
+    m_scalingPlanVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -39,7 +39,7 @@ namespace Model
   class CertificateOptions
   {
   public:
-    AWS_ACM_API CertificateOptions();
+    AWS_ACM_API CertificateOptions() = default;
     AWS_ACM_API CertificateOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACM_API CertificateOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,16 +50,14 @@ namespace Model
      * <p>You can opt out of certificate transparency logging by specifying the
      * <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
      */
-    inline const CertificateTransparencyLoggingPreference& GetCertificateTransparencyLoggingPreference() const{ return m_certificateTransparencyLoggingPreference; }
+    inline CertificateTransparencyLoggingPreference GetCertificateTransparencyLoggingPreference() const { return m_certificateTransparencyLoggingPreference; }
     inline bool CertificateTransparencyLoggingPreferenceHasBeenSet() const { return m_certificateTransparencyLoggingPreferenceHasBeenSet; }
-    inline void SetCertificateTransparencyLoggingPreference(const CertificateTransparencyLoggingPreference& value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference = value; }
-    inline void SetCertificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreference&& value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference = std::move(value); }
-    inline CertificateOptions& WithCertificateTransparencyLoggingPreference(const CertificateTransparencyLoggingPreference& value) { SetCertificateTransparencyLoggingPreference(value); return *this;}
-    inline CertificateOptions& WithCertificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreference&& value) { SetCertificateTransparencyLoggingPreference(std::move(value)); return *this;}
+    inline void SetCertificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreference value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference = value; }
+    inline CertificateOptions& WithCertificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreference value) { SetCertificateTransparencyLoggingPreference(value); return *this;}
     ///@}
   private:
 
-    CertificateTransparencyLoggingPreference m_certificateTransparencyLoggingPreference;
+    CertificateTransparencyLoggingPreference m_certificateTransparencyLoggingPreference{CertificateTransparencyLoggingPreference::NOT_SET};
     bool m_certificateTransparencyLoggingPreferenceHasBeenSet = false;
   };
 

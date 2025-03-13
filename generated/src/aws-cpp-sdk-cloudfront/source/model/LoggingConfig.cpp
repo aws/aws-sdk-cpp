@@ -20,18 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-LoggingConfig::LoggingConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_includeCookies(false),
-    m_includeCookiesHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 LoggingConfig::LoggingConfig(const XmlNode& xmlNode)
-  : LoggingConfig()
 {
   *this = xmlNode;
 }
@@ -47,24 +36,28 @@ LoggingConfig& LoggingConfig::operator =(const XmlNode& xmlNode)
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode includeCookiesNode = resultNode.FirstChild("IncludeCookies");
     if(!includeCookiesNode.IsNull())
     {
       m_includeCookies = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeCookiesNode.GetText()).c_str()).c_str());
       m_includeCookiesHasBeenSet = true;
+       m_includeCookiesHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
   }
 

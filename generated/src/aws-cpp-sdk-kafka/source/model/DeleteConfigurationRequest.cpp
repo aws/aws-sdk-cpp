@@ -12,11 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConfigurationRequest::DeleteConfigurationRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConfigurationRequest::SerializePayload() const
 {
   return {};

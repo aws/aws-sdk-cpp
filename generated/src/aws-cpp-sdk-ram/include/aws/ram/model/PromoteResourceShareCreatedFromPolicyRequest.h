@@ -25,7 +25,7 @@ namespace Model
   class PromoteResourceShareCreatedFromPolicyRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API PromoteResourceShareCreatedFromPolicyRequest();
+    AWS_RAM_API PromoteResourceShareCreatedFromPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of the resource share to promote.</p>
      */
-    inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
+    inline const Aws::String& GetResourceShareArn() const { return m_resourceShareArn; }
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
-    inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
-    inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
-    inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
-    inline PromoteResourceShareCreatedFromPolicyRequest& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
-    inline PromoteResourceShareCreatedFromPolicyRequest& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
-    inline PromoteResourceShareCreatedFromPolicyRequest& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
+    template<typename ResourceShareArnT = Aws::String>
+    void SetResourceShareArn(ResourceShareArnT&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::forward<ResourceShareArnT>(value); }
+    template<typename ResourceShareArnT = Aws::String>
+    PromoteResourceShareCreatedFromPolicyRequest& WithResourceShareArn(ResourceShareArnT&& value) { SetResourceShareArn(std::forward<ResourceShareArnT>(value)); return *this;}
     ///@}
   private:
 

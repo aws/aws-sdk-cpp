@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutServiceQuotaIncreaseRequestIntoTemplateResult::PutServiceQuotaIncreaseRequestIntoTemplateResult()
-{
-}
-
 PutServiceQuotaIncreaseRequestIntoTemplateResult::PutServiceQuotaIncreaseRequestIntoTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutServiceQuotaIncreaseRequestIntoTemplateResult& PutServiceQuotaIncreaseRequest
   if(jsonValue.ValueExists("ServiceQuotaIncreaseRequestInTemplate"))
   {
     m_serviceQuotaIncreaseRequestInTemplate = jsonValue.GetObject("ServiceQuotaIncreaseRequestInTemplate");
-
+    m_serviceQuotaIncreaseRequestInTemplateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

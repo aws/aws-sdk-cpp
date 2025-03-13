@@ -22,7 +22,7 @@ namespace Model
   class GetDocumentRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetDocumentRequest();
+    AWS_SSM_API GetDocumentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the SSM document.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GetDocumentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetDocumentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetDocumentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetDocumentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,28 +53,24 @@ namespace Model
      * document. For example, 12.6. This value is unique across all versions of a
      * document and can't be changed.</p>
      */
-    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+    inline const Aws::String& GetVersionName() const { return m_versionName; }
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
-    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
-    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
-    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
-    inline GetDocumentRequest& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
-    inline GetDocumentRequest& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
-    inline GetDocumentRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+    template<typename VersionNameT = Aws::String>
+    void SetVersionName(VersionNameT&& value) { m_versionNameHasBeenSet = true; m_versionName = std::forward<VersionNameT>(value); }
+    template<typename VersionNameT = Aws::String>
+    GetDocumentRequest& WithVersionName(VersionNameT&& value) { SetVersionName(std::forward<VersionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The document version for which you want information.</p>
      */
-    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+    inline const Aws::String& GetDocumentVersion() const { return m_documentVersion; }
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
-    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
-    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
-    inline GetDocumentRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
-    inline GetDocumentRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
-    inline GetDocumentRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+    template<typename DocumentVersionT = Aws::String>
+    void SetDocumentVersion(DocumentVersionT&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::forward<DocumentVersionT>(value); }
+    template<typename DocumentVersionT = Aws::String>
+    GetDocumentRequest& WithDocumentVersion(DocumentVersionT&& value) { SetDocumentVersion(std::forward<DocumentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +78,10 @@ namespace Model
      * <p>Returns the document in the specified format. The document format can be
      * either JSON or YAML. JSON is the default format.</p>
      */
-    inline const DocumentFormat& GetDocumentFormat() const{ return m_documentFormat; }
+    inline DocumentFormat GetDocumentFormat() const { return m_documentFormat; }
     inline bool DocumentFormatHasBeenSet() const { return m_documentFormatHasBeenSet; }
-    inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
-    inline void SetDocumentFormat(DocumentFormat&& value) { m_documentFormatHasBeenSet = true; m_documentFormat = std::move(value); }
-    inline GetDocumentRequest& WithDocumentFormat(const DocumentFormat& value) { SetDocumentFormat(value); return *this;}
-    inline GetDocumentRequest& WithDocumentFormat(DocumentFormat&& value) { SetDocumentFormat(std::move(value)); return *this;}
+    inline void SetDocumentFormat(DocumentFormat value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
+    inline GetDocumentRequest& WithDocumentFormat(DocumentFormat value) { SetDocumentFormat(value); return *this;}
     ///@}
   private:
 
@@ -102,7 +94,7 @@ namespace Model
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet = false;
 
-    DocumentFormat m_documentFormat;
+    DocumentFormat m_documentFormat{DocumentFormat::NOT_SET};
     bool m_documentFormatHasBeenSet = false;
   };
 

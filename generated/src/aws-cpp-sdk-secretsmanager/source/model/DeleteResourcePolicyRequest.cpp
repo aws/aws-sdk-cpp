@@ -12,11 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourcePolicyRequest::DeleteResourcePolicyRequest() : 
-    m_secretIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourcePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-DeletableItem::DeletableItem() : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 DeletableItem::DeletableItem(const XmlNode& xmlNode)
-  : DeletableItem()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ DeletableItem& DeletableItem::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode attributesNode = resultNode.FirstChild("Attribute");
     if(!attributesNode.IsNull())
     {
       XmlNode attributeMember = attributesNode;
+      m_attributesHasBeenSet = !attributeMember.IsNull();
       while(!attributeMember.IsNull())
       {
         m_attributes.push_back(attributeMember);
         attributeMember = attributeMember.NextNode("Attribute");
       }
 
-      m_attributesHasBeenSet = true;
+       m_attributesHasBeenSet = true;
     }
   }
 

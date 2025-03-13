@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ProblemDetail::ProblemDetail() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 ProblemDetail::ProblemDetail(JsonView jsonValue)
-  : ProblemDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProblemDetail& ProblemDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

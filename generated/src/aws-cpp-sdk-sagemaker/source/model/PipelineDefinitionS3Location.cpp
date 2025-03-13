@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PipelineDefinitionS3Location::PipelineDefinitionS3Location() : 
-    m_bucketHasBeenSet(false),
-    m_objectKeyHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 PipelineDefinitionS3Location::PipelineDefinitionS3Location(JsonView jsonValue)
-  : PipelineDefinitionS3Location()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PipelineDefinitionS3Location& PipelineDefinitionS3Location::operator =(JsonView 
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectKey"))
   {
     m_objectKey = jsonValue.GetString("ObjectKey");
-
     m_objectKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

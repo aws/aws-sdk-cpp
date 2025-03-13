@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetUserProfileRequest::GetUserProfileRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_type(UserProfileType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_userIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetUserProfileRequest::SerializePayload() const
 {
   return {};

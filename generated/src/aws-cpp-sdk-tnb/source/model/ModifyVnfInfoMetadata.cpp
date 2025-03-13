@@ -18,14 +18,7 @@ namespace tnb
 namespace Model
 {
 
-ModifyVnfInfoMetadata::ModifyVnfInfoMetadata() : 
-    m_vnfConfigurablePropertiesHasBeenSet(false),
-    m_vnfInstanceIdHasBeenSet(false)
-{
-}
-
 ModifyVnfInfoMetadata::ModifyVnfInfoMetadata(JsonView jsonValue)
-  : ModifyVnfInfoMetadata()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ModifyVnfInfoMetadata& ModifyVnfInfoMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("vnfConfigurableProperties"))
   {
     m_vnfConfigurableProperties = jsonValue.GetObject("vnfConfigurableProperties");
-
     m_vnfConfigurablePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vnfInstanceId"))
   {
     m_vnfInstanceId = jsonValue.GetString("vnfInstanceId");
-
     m_vnfInstanceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

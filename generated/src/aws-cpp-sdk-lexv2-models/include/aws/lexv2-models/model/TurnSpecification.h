@@ -33,7 +33,7 @@ namespace Model
   class TurnSpecification
   {
   public:
-    AWS_LEXMODELSV2_API TurnSpecification();
+    AWS_LEXMODELSV2_API TurnSpecification() = default;
     AWS_LEXMODELSV2_API TurnSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TurnSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Contains information about the agent messages in the turn.</p>
      */
-    inline const AgentTurnSpecification& GetAgentTurn() const{ return m_agentTurn; }
+    inline const AgentTurnSpecification& GetAgentTurn() const { return m_agentTurn; }
     inline bool AgentTurnHasBeenSet() const { return m_agentTurnHasBeenSet; }
-    inline void SetAgentTurn(const AgentTurnSpecification& value) { m_agentTurnHasBeenSet = true; m_agentTurn = value; }
-    inline void SetAgentTurn(AgentTurnSpecification&& value) { m_agentTurnHasBeenSet = true; m_agentTurn = std::move(value); }
-    inline TurnSpecification& WithAgentTurn(const AgentTurnSpecification& value) { SetAgentTurn(value); return *this;}
-    inline TurnSpecification& WithAgentTurn(AgentTurnSpecification&& value) { SetAgentTurn(std::move(value)); return *this;}
+    template<typename AgentTurnT = AgentTurnSpecification>
+    void SetAgentTurn(AgentTurnT&& value) { m_agentTurnHasBeenSet = true; m_agentTurn = std::forward<AgentTurnT>(value); }
+    template<typename AgentTurnT = AgentTurnSpecification>
+    TurnSpecification& WithAgentTurn(AgentTurnT&& value) { SetAgentTurn(std::forward<AgentTurnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the user messages in the turn.</p>
      */
-    inline const UserTurnSpecification& GetUserTurn() const{ return m_userTurn; }
+    inline const UserTurnSpecification& GetUserTurn() const { return m_userTurn; }
     inline bool UserTurnHasBeenSet() const { return m_userTurnHasBeenSet; }
-    inline void SetUserTurn(const UserTurnSpecification& value) { m_userTurnHasBeenSet = true; m_userTurn = value; }
-    inline void SetUserTurn(UserTurnSpecification&& value) { m_userTurnHasBeenSet = true; m_userTurn = std::move(value); }
-    inline TurnSpecification& WithUserTurn(const UserTurnSpecification& value) { SetUserTurn(value); return *this;}
-    inline TurnSpecification& WithUserTurn(UserTurnSpecification&& value) { SetUserTurn(std::move(value)); return *this;}
+    template<typename UserTurnT = UserTurnSpecification>
+    void SetUserTurn(UserTurnT&& value) { m_userTurnHasBeenSet = true; m_userTurn = std::forward<UserTurnT>(value); }
+    template<typename UserTurnT = UserTurnSpecification>
+    TurnSpecification& WithUserTurn(UserTurnT&& value) { SetUserTurn(std::forward<UserTurnT>(value)); return *this;}
     ///@}
   private:
 

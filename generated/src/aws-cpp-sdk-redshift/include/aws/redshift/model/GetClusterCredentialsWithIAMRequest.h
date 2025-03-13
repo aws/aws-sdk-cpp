@@ -21,7 +21,7 @@ namespace Model
   class GetClusterCredentialsWithIAMRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API GetClusterCredentialsWithIAMRequest();
+    AWS_REDSHIFT_API GetClusterCredentialsWithIAMRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <code>dbname</code> for the specified database name. If the database name is not
      * specified, access to all databases is allowed.</p>
      */
-    inline const Aws::String& GetDbName() const{ return m_dbName; }
+    inline const Aws::String& GetDbName() const { return m_dbName; }
     inline bool DbNameHasBeenSet() const { return m_dbNameHasBeenSet; }
-    inline void SetDbName(const Aws::String& value) { m_dbNameHasBeenSet = true; m_dbName = value; }
-    inline void SetDbName(Aws::String&& value) { m_dbNameHasBeenSet = true; m_dbName = std::move(value); }
-    inline void SetDbName(const char* value) { m_dbNameHasBeenSet = true; m_dbName.assign(value); }
-    inline GetClusterCredentialsWithIAMRequest& WithDbName(const Aws::String& value) { SetDbName(value); return *this;}
-    inline GetClusterCredentialsWithIAMRequest& WithDbName(Aws::String&& value) { SetDbName(std::move(value)); return *this;}
-    inline GetClusterCredentialsWithIAMRequest& WithDbName(const char* value) { SetDbName(value); return *this;}
+    template<typename DbNameT = Aws::String>
+    void SetDbName(DbNameT&& value) { m_dbNameHasBeenSet = true; m_dbName = std::forward<DbNameT>(value); }
+    template<typename DbNameT = Aws::String>
+    GetClusterCredentialsWithIAMRequest& WithDbName(DbNameT&& value) { SetDbName(std::forward<DbNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The unique identifier of the cluster that contains the database for which you
      * are requesting credentials. </p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline GetClusterCredentialsWithIAMRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline GetClusterCredentialsWithIAMRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline GetClusterCredentialsWithIAMRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    GetClusterCredentialsWithIAMRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * <p>The number of seconds until the returned temporary password expires.</p>
      * <p>Range: 900-3600. Default: 900.</p>
      */
-    inline int GetDurationSeconds() const{ return m_durationSeconds; }
+    inline int GetDurationSeconds() const { return m_durationSeconds; }
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
     inline GetClusterCredentialsWithIAMRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
@@ -83,14 +79,12 @@ namespace Model
     /**
      * <p>The custom domain name for the IAM message cluster credentials.</p>
      */
-    inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
+    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
     inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
-    inline void SetCustomDomainName(const Aws::String& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = value; }
-    inline void SetCustomDomainName(Aws::String&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::move(value); }
-    inline void SetCustomDomainName(const char* value) { m_customDomainNameHasBeenSet = true; m_customDomainName.assign(value); }
-    inline GetClusterCredentialsWithIAMRequest& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
-    inline GetClusterCredentialsWithIAMRequest& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
-    inline GetClusterCredentialsWithIAMRequest& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
+    template<typename CustomDomainNameT = Aws::String>
+    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
+    template<typename CustomDomainNameT = Aws::String>
+    GetClusterCredentialsWithIAMRequest& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -100,7 +94,7 @@ namespace Model
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet = false;
 
-    int m_durationSeconds;
+    int m_durationSeconds{0};
     bool m_durationSecondsHasBeenSet = false;
 
     Aws::String m_customDomainName;

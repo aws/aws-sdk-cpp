@@ -38,7 +38,7 @@ namespace Model
   class DescribeIndexResult
   {
   public:
-    AWS_KENDRA_API DescribeIndexResult();
+    AWS_KENDRA_API DescribeIndexResult() = default;
     AWS_KENDRA_API DescribeIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KENDRA_API DescribeIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,26 +47,22 @@ namespace Model
     /**
      * <p>The name of the index.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeIndexResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeIndexResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeIndexResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeIndexResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the index.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline DescribeIndexResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DescribeIndexResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DescribeIndexResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DescribeIndexResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,11 +70,9 @@ namespace Model
      * <p>The Amazon Kendra edition used for the index. You decide the edition when you
      * create the index.</p>
      */
-    inline const IndexEdition& GetEdition() const{ return m_edition; }
-    inline void SetEdition(const IndexEdition& value) { m_edition = value; }
-    inline void SetEdition(IndexEdition&& value) { m_edition = std::move(value); }
-    inline DescribeIndexResult& WithEdition(const IndexEdition& value) { SetEdition(value); return *this;}
-    inline DescribeIndexResult& WithEdition(IndexEdition&& value) { SetEdition(std::move(value)); return *this;}
+    inline IndexEdition GetEdition() const { return m_edition; }
+    inline void SetEdition(IndexEdition value) { m_editionHasBeenSet = true; m_edition = value; }
+    inline DescribeIndexResult& WithEdition(IndexEdition value) { SetEdition(value); return *this;}
     ///@}
 
     ///@{
@@ -86,13 +80,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra
      * permission to write to your Amazon CloudWatch logs.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeIndexResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeIndexResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeIndexResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeIndexResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,11 +92,11 @@ namespace Model
      * <p>The identifier of the KMS customer master key (CMK) that is used to encrypt
      * your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
-    inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
-    inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfiguration = value; }
-    inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfiguration = std::move(value); }
-    inline DescribeIndexResult& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
-    inline DescribeIndexResult& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
+    inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const { return m_serverSideEncryptionConfiguration; }
+    template<typename ServerSideEncryptionConfigurationT = ServerSideEncryptionConfiguration>
+    void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfigurationT&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::forward<ServerSideEncryptionConfigurationT>(value); }
+    template<typename ServerSideEncryptionConfigurationT = ServerSideEncryptionConfiguration>
+    DescribeIndexResult& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfigurationT&& value) { SetServerSideEncryptionConfiguration(std::forward<ServerSideEncryptionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,46 +106,42 @@ namespace Model
      * <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that
      * explains why.</p>
      */
-    inline const IndexStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const IndexStatus& value) { m_status = value; }
-    inline void SetStatus(IndexStatus&& value) { m_status = std::move(value); }
-    inline DescribeIndexResult& WithStatus(const IndexStatus& value) { SetStatus(value); return *this;}
-    inline DescribeIndexResult& WithStatus(IndexStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline IndexStatus GetStatus() const { return m_status; }
+    inline void SetStatus(IndexStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeIndexResult& WithStatus(IndexStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the index.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeIndexResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeIndexResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeIndexResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeIndexResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp when the index was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline DescribeIndexResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline DescribeIndexResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    DescribeIndexResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp when the index was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
-    inline DescribeIndexResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline DescribeIndexResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    DescribeIndexResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,13 +150,13 @@ namespace Model
      * are fields or attributes associated with your documents. For example, the
      * company department name associated with each document.</p>
      */
-    inline const Aws::Vector<DocumentMetadataConfiguration>& GetDocumentMetadataConfigurations() const{ return m_documentMetadataConfigurations; }
-    inline void SetDocumentMetadataConfigurations(const Aws::Vector<DocumentMetadataConfiguration>& value) { m_documentMetadataConfigurations = value; }
-    inline void SetDocumentMetadataConfigurations(Aws::Vector<DocumentMetadataConfiguration>&& value) { m_documentMetadataConfigurations = std::move(value); }
-    inline DescribeIndexResult& WithDocumentMetadataConfigurations(const Aws::Vector<DocumentMetadataConfiguration>& value) { SetDocumentMetadataConfigurations(value); return *this;}
-    inline DescribeIndexResult& WithDocumentMetadataConfigurations(Aws::Vector<DocumentMetadataConfiguration>&& value) { SetDocumentMetadataConfigurations(std::move(value)); return *this;}
-    inline DescribeIndexResult& AddDocumentMetadataConfigurations(const DocumentMetadataConfiguration& value) { m_documentMetadataConfigurations.push_back(value); return *this; }
-    inline DescribeIndexResult& AddDocumentMetadataConfigurations(DocumentMetadataConfiguration&& value) { m_documentMetadataConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DocumentMetadataConfiguration>& GetDocumentMetadataConfigurations() const { return m_documentMetadataConfigurations; }
+    template<typename DocumentMetadataConfigurationsT = Aws::Vector<DocumentMetadataConfiguration>>
+    void SetDocumentMetadataConfigurations(DocumentMetadataConfigurationsT&& value) { m_documentMetadataConfigurationsHasBeenSet = true; m_documentMetadataConfigurations = std::forward<DocumentMetadataConfigurationsT>(value); }
+    template<typename DocumentMetadataConfigurationsT = Aws::Vector<DocumentMetadataConfiguration>>
+    DescribeIndexResult& WithDocumentMetadataConfigurations(DocumentMetadataConfigurationsT&& value) { SetDocumentMetadataConfigurations(std::forward<DocumentMetadataConfigurationsT>(value)); return *this;}
+    template<typename DocumentMetadataConfigurationsT = DocumentMetadataConfiguration>
+    DescribeIndexResult& AddDocumentMetadataConfigurations(DocumentMetadataConfigurationsT&& value) { m_documentMetadataConfigurationsHasBeenSet = true; m_documentMetadataConfigurations.emplace_back(std::forward<DocumentMetadataConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -176,11 +164,11 @@ namespace Model
      * <p>Provides information about the number of FAQ questions and answers and the
      * number of text documents indexed.</p>
      */
-    inline const IndexStatistics& GetIndexStatistics() const{ return m_indexStatistics; }
-    inline void SetIndexStatistics(const IndexStatistics& value) { m_indexStatistics = value; }
-    inline void SetIndexStatistics(IndexStatistics&& value) { m_indexStatistics = std::move(value); }
-    inline DescribeIndexResult& WithIndexStatistics(const IndexStatistics& value) { SetIndexStatistics(value); return *this;}
-    inline DescribeIndexResult& WithIndexStatistics(IndexStatistics&& value) { SetIndexStatistics(std::move(value)); return *this;}
+    inline const IndexStatistics& GetIndexStatistics() const { return m_indexStatistics; }
+    template<typename IndexStatisticsT = IndexStatistics>
+    void SetIndexStatistics(IndexStatisticsT&& value) { m_indexStatisticsHasBeenSet = true; m_indexStatistics = std::forward<IndexStatisticsT>(value); }
+    template<typename IndexStatisticsT = IndexStatistics>
+    DescribeIndexResult& WithIndexStatistics(IndexStatisticsT&& value) { SetIndexStatistics(std::forward<IndexStatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,13 +176,11 @@ namespace Model
      * <p>When the <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a message that explains why.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline DescribeIndexResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline DescribeIndexResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline DescribeIndexResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    DescribeIndexResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -207,35 +193,33 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
      * capacity</a>.</p>
      */
-    inline const CapacityUnitsConfiguration& GetCapacityUnits() const{ return m_capacityUnits; }
-    inline void SetCapacityUnits(const CapacityUnitsConfiguration& value) { m_capacityUnits = value; }
-    inline void SetCapacityUnits(CapacityUnitsConfiguration&& value) { m_capacityUnits = std::move(value); }
-    inline DescribeIndexResult& WithCapacityUnits(const CapacityUnitsConfiguration& value) { SetCapacityUnits(value); return *this;}
-    inline DescribeIndexResult& WithCapacityUnits(CapacityUnitsConfiguration&& value) { SetCapacityUnits(std::move(value)); return *this;}
+    inline const CapacityUnitsConfiguration& GetCapacityUnits() const { return m_capacityUnits; }
+    template<typename CapacityUnitsT = CapacityUnitsConfiguration>
+    void SetCapacityUnits(CapacityUnitsT&& value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = std::forward<CapacityUnitsT>(value); }
+    template<typename CapacityUnitsT = CapacityUnitsConfiguration>
+    DescribeIndexResult& WithCapacityUnits(CapacityUnitsT&& value) { SetCapacityUnits(std::forward<CapacityUnitsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user token configuration for the Amazon Kendra index.</p>
      */
-    inline const Aws::Vector<UserTokenConfiguration>& GetUserTokenConfigurations() const{ return m_userTokenConfigurations; }
-    inline void SetUserTokenConfigurations(const Aws::Vector<UserTokenConfiguration>& value) { m_userTokenConfigurations = value; }
-    inline void SetUserTokenConfigurations(Aws::Vector<UserTokenConfiguration>&& value) { m_userTokenConfigurations = std::move(value); }
-    inline DescribeIndexResult& WithUserTokenConfigurations(const Aws::Vector<UserTokenConfiguration>& value) { SetUserTokenConfigurations(value); return *this;}
-    inline DescribeIndexResult& WithUserTokenConfigurations(Aws::Vector<UserTokenConfiguration>&& value) { SetUserTokenConfigurations(std::move(value)); return *this;}
-    inline DescribeIndexResult& AddUserTokenConfigurations(const UserTokenConfiguration& value) { m_userTokenConfigurations.push_back(value); return *this; }
-    inline DescribeIndexResult& AddUserTokenConfigurations(UserTokenConfiguration&& value) { m_userTokenConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UserTokenConfiguration>& GetUserTokenConfigurations() const { return m_userTokenConfigurations; }
+    template<typename UserTokenConfigurationsT = Aws::Vector<UserTokenConfiguration>>
+    void SetUserTokenConfigurations(UserTokenConfigurationsT&& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations = std::forward<UserTokenConfigurationsT>(value); }
+    template<typename UserTokenConfigurationsT = Aws::Vector<UserTokenConfiguration>>
+    DescribeIndexResult& WithUserTokenConfigurations(UserTokenConfigurationsT&& value) { SetUserTokenConfigurations(std::forward<UserTokenConfigurationsT>(value)); return *this;}
+    template<typename UserTokenConfigurationsT = UserTokenConfiguration>
+    DescribeIndexResult& AddUserTokenConfigurations(UserTokenConfigurationsT&& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations.emplace_back(std::forward<UserTokenConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The user context policy for the Amazon Kendra index.</p>
      */
-    inline const UserContextPolicy& GetUserContextPolicy() const{ return m_userContextPolicy; }
-    inline void SetUserContextPolicy(const UserContextPolicy& value) { m_userContextPolicy = value; }
-    inline void SetUserContextPolicy(UserContextPolicy&& value) { m_userContextPolicy = std::move(value); }
-    inline DescribeIndexResult& WithUserContextPolicy(const UserContextPolicy& value) { SetUserContextPolicy(value); return *this;}
-    inline DescribeIndexResult& WithUserContextPolicy(UserContextPolicy&& value) { SetUserContextPolicy(std::move(value)); return *this;}
+    inline UserContextPolicy GetUserContextPolicy() const { return m_userContextPolicy; }
+    inline void SetUserContextPolicy(UserContextPolicy value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = value; }
+    inline DescribeIndexResult& WithUserContextPolicy(UserContextPolicy value) { SetUserContextPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -244,58 +228,73 @@ namespace Model
      * and groups. This is useful for user context filtering, where search results are
      * filtered based on the user or their group access to documents.</p>
      */
-    inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
-    inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfiguration = value; }
-    inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfiguration = std::move(value); }
-    inline DescribeIndexResult& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
-    inline DescribeIndexResult& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
+    inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const { return m_userGroupResolutionConfiguration; }
+    template<typename UserGroupResolutionConfigurationT = UserGroupResolutionConfiguration>
+    void SetUserGroupResolutionConfiguration(UserGroupResolutionConfigurationT&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::forward<UserGroupResolutionConfigurationT>(value); }
+    template<typename UserGroupResolutionConfigurationT = UserGroupResolutionConfiguration>
+    DescribeIndexResult& WithUserGroupResolutionConfiguration(UserGroupResolutionConfigurationT&& value) { SetUserGroupResolutionConfiguration(std::forward<UserGroupResolutionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeIndexResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeIndexResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeIndexResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeIndexResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    IndexEdition m_edition;
+    IndexEdition m_edition{IndexEdition::NOT_SET};
+    bool m_editionHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
+    bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
-    IndexStatus m_status;
+    IndexStatus m_status{IndexStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<DocumentMetadataConfiguration> m_documentMetadataConfigurations;
+    bool m_documentMetadataConfigurationsHasBeenSet = false;
 
     IndexStatistics m_indexStatistics;
+    bool m_indexStatisticsHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     CapacityUnitsConfiguration m_capacityUnits;
+    bool m_capacityUnitsHasBeenSet = false;
 
     Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
+    bool m_userTokenConfigurationsHasBeenSet = false;
 
-    UserContextPolicy m_userContextPolicy;
+    UserContextPolicy m_userContextPolicy{UserContextPolicy::NOT_SET};
+    bool m_userContextPolicyHasBeenSet = false;
 
     UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
+    bool m_userGroupResolutionConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

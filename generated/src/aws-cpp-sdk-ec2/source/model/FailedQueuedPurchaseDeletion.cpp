@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FailedQueuedPurchaseDeletion::FailedQueuedPurchaseDeletion() : 
-    m_errorHasBeenSet(false),
-    m_reservedInstancesIdHasBeenSet(false)
-{
-}
-
 FailedQueuedPurchaseDeletion::FailedQueuedPurchaseDeletion(const XmlNode& xmlNode)
-  : FailedQueuedPurchaseDeletion()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ FailedQueuedPurchaseDeletion& FailedQueuedPurchaseDeletion::operator =(const Xml
     {
       m_error = errorNode;
       m_errorHasBeenSet = true;
+       m_errorHasBeenSet = true;
     }
     XmlNode reservedInstancesIdNode = resultNode.FirstChild("reservedInstancesId");
     if(!reservedInstancesIdNode.IsNull())
     {
       m_reservedInstancesId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesIdNode.GetText());
       m_reservedInstancesIdHasBeenSet = true;
+       m_reservedInstancesIdHasBeenSet = true;
     }
   }
 

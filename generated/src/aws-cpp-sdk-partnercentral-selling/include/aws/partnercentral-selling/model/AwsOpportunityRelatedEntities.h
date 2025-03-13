@@ -35,7 +35,7 @@ namespace Model
   class AwsOpportunityRelatedEntities
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API AwsOpportunityRelatedEntities();
+    AWS_PARTNERCENTRALSELLING_API AwsOpportunityRelatedEntities() = default;
     AWS_PARTNERCENTRALSELLING_API AwsOpportunityRelatedEntities(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API AwsOpportunityRelatedEntities& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,15 +46,14 @@ namespace Model
      * <p>Specifies the AWS products associated with the opportunity. This field helps
      * track the specific products that are part of the proposed solution.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAwsProducts() const{ return m_awsProducts; }
+    inline const Aws::Vector<Aws::String>& GetAwsProducts() const { return m_awsProducts; }
     inline bool AwsProductsHasBeenSet() const { return m_awsProductsHasBeenSet; }
-    inline void SetAwsProducts(const Aws::Vector<Aws::String>& value) { m_awsProductsHasBeenSet = true; m_awsProducts = value; }
-    inline void SetAwsProducts(Aws::Vector<Aws::String>&& value) { m_awsProductsHasBeenSet = true; m_awsProducts = std::move(value); }
-    inline AwsOpportunityRelatedEntities& WithAwsProducts(const Aws::Vector<Aws::String>& value) { SetAwsProducts(value); return *this;}
-    inline AwsOpportunityRelatedEntities& WithAwsProducts(Aws::Vector<Aws::String>&& value) { SetAwsProducts(std::move(value)); return *this;}
-    inline AwsOpportunityRelatedEntities& AddAwsProducts(const Aws::String& value) { m_awsProductsHasBeenSet = true; m_awsProducts.push_back(value); return *this; }
-    inline AwsOpportunityRelatedEntities& AddAwsProducts(Aws::String&& value) { m_awsProductsHasBeenSet = true; m_awsProducts.push_back(std::move(value)); return *this; }
-    inline AwsOpportunityRelatedEntities& AddAwsProducts(const char* value) { m_awsProductsHasBeenSet = true; m_awsProducts.push_back(value); return *this; }
+    template<typename AwsProductsT = Aws::Vector<Aws::String>>
+    void SetAwsProducts(AwsProductsT&& value) { m_awsProductsHasBeenSet = true; m_awsProducts = std::forward<AwsProductsT>(value); }
+    template<typename AwsProductsT = Aws::Vector<Aws::String>>
+    AwsOpportunityRelatedEntities& WithAwsProducts(AwsProductsT&& value) { SetAwsProducts(std::forward<AwsProductsT>(value)); return *this;}
+    template<typename AwsProductsT = Aws::String>
+    AwsOpportunityRelatedEntities& AddAwsProducts(AwsProductsT&& value) { m_awsProductsHasBeenSet = true; m_awsProducts.emplace_back(std::forward<AwsProductsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,15 +62,14 @@ namespace Model
      * represent the partner's offerings that are being positioned as part of the
      * overall AWS opportunity.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSolutions() const{ return m_solutions; }
+    inline const Aws::Vector<Aws::String>& GetSolutions() const { return m_solutions; }
     inline bool SolutionsHasBeenSet() const { return m_solutionsHasBeenSet; }
-    inline void SetSolutions(const Aws::Vector<Aws::String>& value) { m_solutionsHasBeenSet = true; m_solutions = value; }
-    inline void SetSolutions(Aws::Vector<Aws::String>&& value) { m_solutionsHasBeenSet = true; m_solutions = std::move(value); }
-    inline AwsOpportunityRelatedEntities& WithSolutions(const Aws::Vector<Aws::String>& value) { SetSolutions(value); return *this;}
-    inline AwsOpportunityRelatedEntities& WithSolutions(Aws::Vector<Aws::String>&& value) { SetSolutions(std::move(value)); return *this;}
-    inline AwsOpportunityRelatedEntities& AddSolutions(const Aws::String& value) { m_solutionsHasBeenSet = true; m_solutions.push_back(value); return *this; }
-    inline AwsOpportunityRelatedEntities& AddSolutions(Aws::String&& value) { m_solutionsHasBeenSet = true; m_solutions.push_back(std::move(value)); return *this; }
-    inline AwsOpportunityRelatedEntities& AddSolutions(const char* value) { m_solutionsHasBeenSet = true; m_solutions.push_back(value); return *this; }
+    template<typename SolutionsT = Aws::Vector<Aws::String>>
+    void SetSolutions(SolutionsT&& value) { m_solutionsHasBeenSet = true; m_solutions = std::forward<SolutionsT>(value); }
+    template<typename SolutionsT = Aws::Vector<Aws::String>>
+    AwsOpportunityRelatedEntities& WithSolutions(SolutionsT&& value) { SetSolutions(std::forward<SolutionsT>(value)); return *this;}
+    template<typename SolutionsT = Aws::String>
+    AwsOpportunityRelatedEntities& AddSolutions(SolutionsT&& value) { m_solutionsHasBeenSet = true; m_solutions.emplace_back(std::forward<SolutionsT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterOrganizationAdminAccountRequest::RegisterOrganizationAdminAccountRequest() : 
-    m_adminAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String RegisterOrganizationAdminAccountRequest::SerializePayload() const
 {
   JsonValue payload;

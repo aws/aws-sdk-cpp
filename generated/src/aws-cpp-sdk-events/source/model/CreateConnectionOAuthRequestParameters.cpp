@@ -18,17 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-CreateConnectionOAuthRequestParameters::CreateConnectionOAuthRequestParameters() : 
-    m_clientParametersHasBeenSet(false),
-    m_authorizationEndpointHasBeenSet(false),
-    m_httpMethod(ConnectionOAuthHttpMethod::NOT_SET),
-    m_httpMethodHasBeenSet(false),
-    m_oAuthHttpParametersHasBeenSet(false)
-{
-}
-
 CreateConnectionOAuthRequestParameters::CreateConnectionOAuthRequestParameters(JsonView jsonValue)
-  : CreateConnectionOAuthRequestParameters()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CreateConnectionOAuthRequestParameters& CreateConnectionOAuthRequestParameters::
   if(jsonValue.ValueExists("ClientParameters"))
   {
     m_clientParameters = jsonValue.GetObject("ClientParameters");
-
     m_clientParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizationEndpoint"))
   {
     m_authorizationEndpoint = jsonValue.GetString("AuthorizationEndpoint");
-
     m_authorizationEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpMethod"))
   {
     m_httpMethod = ConnectionOAuthHttpMethodMapper::GetConnectionOAuthHttpMethodForName(jsonValue.GetString("HttpMethod"));
-
     m_httpMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OAuthHttpParameters"))
   {
     m_oAuthHttpParameters = jsonValue.GetObject("OAuthHttpParameters");
-
     m_oAuthHttpParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

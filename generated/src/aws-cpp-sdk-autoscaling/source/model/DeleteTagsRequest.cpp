@@ -10,11 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DeleteTagsRequest::DeleteTagsRequest() : 
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

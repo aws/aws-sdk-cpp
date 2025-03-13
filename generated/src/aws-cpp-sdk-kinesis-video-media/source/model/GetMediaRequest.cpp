@@ -12,13 +12,6 @@ using namespace Aws::KinesisVideoMedia::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMediaRequest::GetMediaRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_startSelectorHasBeenSet(false)
-{
-}
-
 Aws::String GetMediaRequest::SerializePayload() const
 {
   JsonValue payload;

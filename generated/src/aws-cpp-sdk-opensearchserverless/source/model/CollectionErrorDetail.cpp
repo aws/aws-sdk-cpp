@@ -18,16 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-CollectionErrorDetail::CollectionErrorDetail() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 CollectionErrorDetail::CollectionErrorDetail(JsonView jsonValue)
-  : CollectionErrorDetail()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CollectionErrorDetail& CollectionErrorDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

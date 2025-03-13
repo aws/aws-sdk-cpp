@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyGlobalReplicationGroupResult::ModifyGlobalReplicationGroupResult()
-{
-}
-
 ModifyGlobalReplicationGroupResult::ModifyGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ ModifyGlobalReplicationGroupResult& ModifyGlobalReplicationGroupResult::operator
     if(!globalReplicationGroupNode.IsNull())
     {
       m_globalReplicationGroup = globalReplicationGroupNode;
+      m_globalReplicationGroupHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::ModifyGlobalReplicationGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

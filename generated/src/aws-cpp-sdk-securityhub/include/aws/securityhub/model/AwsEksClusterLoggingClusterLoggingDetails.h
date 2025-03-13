@@ -32,7 +32,7 @@ namespace Model
   class AwsEksClusterLoggingClusterLoggingDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEksClusterLoggingClusterLoggingDetails();
+    AWS_SECURITYHUB_API AwsEksClusterLoggingClusterLoggingDetails() = default;
     AWS_SECURITYHUB_API AwsEksClusterLoggingClusterLoggingDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEksClusterLoggingClusterLoggingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Whether the logging types that are listed in <code>Types</code> are
      * enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AwsEksClusterLoggingClusterLoggingDetails& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -56,19 +56,18 @@ namespace Model
      * <code>authenticator</code> </p> </li> <li> <p> <code>controllerManager</code>
      * </p> </li> <li> <p> <code>scheduler</code> </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetTypes() const{ return m_types; }
+    inline const Aws::Vector<Aws::String>& GetTypes() const { return m_types; }
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-    inline void SetTypes(const Aws::Vector<Aws::String>& value) { m_typesHasBeenSet = true; m_types = value; }
-    inline void SetTypes(Aws::Vector<Aws::String>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
-    inline AwsEksClusterLoggingClusterLoggingDetails& WithTypes(const Aws::Vector<Aws::String>& value) { SetTypes(value); return *this;}
-    inline AwsEksClusterLoggingClusterLoggingDetails& WithTypes(Aws::Vector<Aws::String>&& value) { SetTypes(std::move(value)); return *this;}
-    inline AwsEksClusterLoggingClusterLoggingDetails& AddTypes(const Aws::String& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
-    inline AwsEksClusterLoggingClusterLoggingDetails& AddTypes(Aws::String&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
-    inline AwsEksClusterLoggingClusterLoggingDetails& AddTypes(const char* value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
+    template<typename TypesT = Aws::Vector<Aws::String>>
+    void SetTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types = std::forward<TypesT>(value); }
+    template<typename TypesT = Aws::Vector<Aws::String>>
+    AwsEksClusterLoggingClusterLoggingDetails& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
+    template<typename TypesT = Aws::String>
+    AwsEksClusterLoggingClusterLoggingDetails& AddTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types.emplace_back(std::forward<TypesT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_types;

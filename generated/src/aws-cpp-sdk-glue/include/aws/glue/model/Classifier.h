@@ -42,7 +42,7 @@ namespace Model
   class Classifier
   {
   public:
-    AWS_GLUE_API Classifier();
+    AWS_GLUE_API Classifier() = default;
     AWS_GLUE_API Classifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Classifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,48 +52,48 @@ namespace Model
     /**
      * <p>A classifier that uses <code>grok</code>.</p>
      */
-    inline const GrokClassifier& GetGrokClassifier() const{ return m_grokClassifier; }
+    inline const GrokClassifier& GetGrokClassifier() const { return m_grokClassifier; }
     inline bool GrokClassifierHasBeenSet() const { return m_grokClassifierHasBeenSet; }
-    inline void SetGrokClassifier(const GrokClassifier& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = value; }
-    inline void SetGrokClassifier(GrokClassifier&& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = std::move(value); }
-    inline Classifier& WithGrokClassifier(const GrokClassifier& value) { SetGrokClassifier(value); return *this;}
-    inline Classifier& WithGrokClassifier(GrokClassifier&& value) { SetGrokClassifier(std::move(value)); return *this;}
+    template<typename GrokClassifierT = GrokClassifier>
+    void SetGrokClassifier(GrokClassifierT&& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = std::forward<GrokClassifierT>(value); }
+    template<typename GrokClassifierT = GrokClassifier>
+    Classifier& WithGrokClassifier(GrokClassifierT&& value) { SetGrokClassifier(std::forward<GrokClassifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A classifier for XML content.</p>
      */
-    inline const XMLClassifier& GetXMLClassifier() const{ return m_xMLClassifier; }
+    inline const XMLClassifier& GetXMLClassifier() const { return m_xMLClassifier; }
     inline bool XMLClassifierHasBeenSet() const { return m_xMLClassifierHasBeenSet; }
-    inline void SetXMLClassifier(const XMLClassifier& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = value; }
-    inline void SetXMLClassifier(XMLClassifier&& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = std::move(value); }
-    inline Classifier& WithXMLClassifier(const XMLClassifier& value) { SetXMLClassifier(value); return *this;}
-    inline Classifier& WithXMLClassifier(XMLClassifier&& value) { SetXMLClassifier(std::move(value)); return *this;}
+    template<typename XMLClassifierT = XMLClassifier>
+    void SetXMLClassifier(XMLClassifierT&& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = std::forward<XMLClassifierT>(value); }
+    template<typename XMLClassifierT = XMLClassifier>
+    Classifier& WithXMLClassifier(XMLClassifierT&& value) { SetXMLClassifier(std::forward<XMLClassifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A classifier for JSON content.</p>
      */
-    inline const JsonClassifier& GetJsonClassifier() const{ return m_jsonClassifier; }
+    inline const JsonClassifier& GetJsonClassifier() const { return m_jsonClassifier; }
     inline bool JsonClassifierHasBeenSet() const { return m_jsonClassifierHasBeenSet; }
-    inline void SetJsonClassifier(const JsonClassifier& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = value; }
-    inline void SetJsonClassifier(JsonClassifier&& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = std::move(value); }
-    inline Classifier& WithJsonClassifier(const JsonClassifier& value) { SetJsonClassifier(value); return *this;}
-    inline Classifier& WithJsonClassifier(JsonClassifier&& value) { SetJsonClassifier(std::move(value)); return *this;}
+    template<typename JsonClassifierT = JsonClassifier>
+    void SetJsonClassifier(JsonClassifierT&& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = std::forward<JsonClassifierT>(value); }
+    template<typename JsonClassifierT = JsonClassifier>
+    Classifier& WithJsonClassifier(JsonClassifierT&& value) { SetJsonClassifier(std::forward<JsonClassifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A classifier for comma-separated values (CSV).</p>
      */
-    inline const CsvClassifier& GetCsvClassifier() const{ return m_csvClassifier; }
+    inline const CsvClassifier& GetCsvClassifier() const { return m_csvClassifier; }
     inline bool CsvClassifierHasBeenSet() const { return m_csvClassifierHasBeenSet; }
-    inline void SetCsvClassifier(const CsvClassifier& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = value; }
-    inline void SetCsvClassifier(CsvClassifier&& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = std::move(value); }
-    inline Classifier& WithCsvClassifier(const CsvClassifier& value) { SetCsvClassifier(value); return *this;}
-    inline Classifier& WithCsvClassifier(CsvClassifier&& value) { SetCsvClassifier(std::move(value)); return *this;}
+    template<typename CsvClassifierT = CsvClassifier>
+    void SetCsvClassifier(CsvClassifierT&& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = std::forward<CsvClassifierT>(value); }
+    template<typename CsvClassifierT = CsvClassifier>
+    Classifier& WithCsvClassifier(CsvClassifierT&& value) { SetCsvClassifier(std::forward<CsvClassifierT>(value)); return *this;}
     ///@}
   private:
 

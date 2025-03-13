@@ -13,17 +13,6 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRecordsRequest::UpdateRecordsRequest() : 
-    m_identityPoolIdHasBeenSet(false),
-    m_identityIdHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_recordPatchesHasBeenSet(false),
-    m_syncSessionTokenHasBeenSet(false),
-    m_clientContextHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRecordsRequest::SerializePayload() const
 {
   JsonValue payload;

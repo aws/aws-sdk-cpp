@@ -18,16 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-AddonSubscription::AddonSubscription() : 
-    m_addonNameHasBeenSet(false),
-    m_addonSubscriptionArnHasBeenSet(false),
-    m_addonSubscriptionIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
-{
-}
-
 AddonSubscription::AddonSubscription(JsonView jsonValue)
-  : AddonSubscription()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AddonSubscription& AddonSubscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AddonName"))
   {
     m_addonName = jsonValue.GetString("AddonName");
-
     m_addonNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddonSubscriptionArn"))
   {
     m_addonSubscriptionArn = jsonValue.GetString("AddonSubscriptionArn");
-
     m_addonSubscriptionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddonSubscriptionId"))
   {
     m_addonSubscriptionId = jsonValue.GetString("AddonSubscriptionId");
-
     m_addonSubscriptionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

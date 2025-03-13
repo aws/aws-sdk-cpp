@@ -21,7 +21,7 @@ namespace Model
   class ListPricesRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API ListPricesRequest();
+    AWS_ROUTE53DOMAINS_API ListPricesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <code>.net</code>.</p> <p>If a <code>Tld</code> value is not provided, a list of
      * prices for all TLDs supported by Route 53 is returned.</p>
      */
-    inline const Aws::String& GetTld() const{ return m_tld; }
+    inline const Aws::String& GetTld() const { return m_tld; }
     inline bool TldHasBeenSet() const { return m_tldHasBeenSet; }
-    inline void SetTld(const Aws::String& value) { m_tldHasBeenSet = true; m_tld = value; }
-    inline void SetTld(Aws::String&& value) { m_tldHasBeenSet = true; m_tld = std::move(value); }
-    inline void SetTld(const char* value) { m_tldHasBeenSet = true; m_tld.assign(value); }
-    inline ListPricesRequest& WithTld(const Aws::String& value) { SetTld(value); return *this;}
-    inline ListPricesRequest& WithTld(Aws::String&& value) { SetTld(std::move(value)); return *this;}
-    inline ListPricesRequest& WithTld(const char* value) { SetTld(value); return *this;}
+    template<typename TldT = Aws::String>
+    void SetTld(TldT&& value) { m_tldHasBeenSet = true; m_tld = std::forward<TldT>(value); }
+    template<typename TldT = Aws::String>
+    ListPricesRequest& WithTld(TldT&& value) { SetTld(std::forward<TldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * only for all TLDs. If you specify a TLD, don't specify a
      * <code>Marker</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListPricesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListPricesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListPricesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListPricesRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * <p>Number of <code>Prices</code> to be returned.</p> <p>Used only for all TLDs.
      * If you specify a TLD, don't specify a <code>MaxItems</code>.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline ListPricesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -89,7 +85,7 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
   };
 

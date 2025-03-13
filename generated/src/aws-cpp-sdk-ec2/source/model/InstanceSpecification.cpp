@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceSpecification::InstanceSpecification() : 
-    m_instanceIdHasBeenSet(false),
-    m_excludeBootVolume(false),
-    m_excludeBootVolumeHasBeenSet(false),
-    m_excludeDataVolumeIdsHasBeenSet(false)
-{
-}
-
 InstanceSpecification::InstanceSpecification(const XmlNode& xmlNode)
-  : InstanceSpecification()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,27 @@ InstanceSpecification& InstanceSpecification::operator =(const XmlNode& xmlNode)
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode excludeBootVolumeNode = resultNode.FirstChild("ExcludeBootVolume");
     if(!excludeBootVolumeNode.IsNull())
     {
       m_excludeBootVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(excludeBootVolumeNode.GetText()).c_str()).c_str());
       m_excludeBootVolumeHasBeenSet = true;
+       m_excludeBootVolumeHasBeenSet = true;
     }
     XmlNode excludeDataVolumeIdsNode = resultNode.FirstChild("ExcludeDataVolumeId");
     if(!excludeDataVolumeIdsNode.IsNull())
     {
       XmlNode excludeDataVolumeIdsMember = excludeDataVolumeIdsNode.FirstChild("VolumeId");
+      m_excludeDataVolumeIdsHasBeenSet = !excludeDataVolumeIdsMember.IsNull();
       while(!excludeDataVolumeIdsMember.IsNull())
       {
         m_excludeDataVolumeIds.push_back(excludeDataVolumeIdsMember.GetText());
         excludeDataVolumeIdsMember = excludeDataVolumeIdsMember.NextNode("VolumeId");
       }
 
-      m_excludeDataVolumeIdsHasBeenSet = true;
+       m_excludeDataVolumeIdsHasBeenSet = true;
     }
   }
 

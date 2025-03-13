@@ -13,13 +13,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCoreDefinitionVersionRequest::CreateCoreDefinitionVersionRequest() : 
-    m_amznClientTokenHasBeenSet(false),
-    m_coreDefinitionIdHasBeenSet(false),
-    m_coresHasBeenSet(false)
-{
-}
-
 Aws::String CreateCoreDefinitionVersionRequest::SerializePayload() const
 {
   JsonValue payload;

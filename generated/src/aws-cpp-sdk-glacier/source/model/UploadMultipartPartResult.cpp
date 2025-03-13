@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UploadMultipartPartResult::UploadMultipartPartResult()
-{
-}
-
 UploadMultipartPartResult::UploadMultipartPartResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,12 +31,14 @@ UploadMultipartPartResult& UploadMultipartPartResult::operator =(const Aws::Amaz
   if(checksumIter != headers.end())
   {
     m_checksum = checksumIter->second;
+    m_checksumHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

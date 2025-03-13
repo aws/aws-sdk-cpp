@@ -21,7 +21,7 @@ namespace Model
   class CancelTransactionRequest : public LakeFormationRequest
   {
   public:
-    AWS_LAKEFORMATION_API CancelTransactionRequest();
+    AWS_LAKEFORMATION_API CancelTransactionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The transaction to cancel.</p>
      */
-    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+    inline const Aws::String& GetTransactionId() const { return m_transactionId; }
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
-    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
-    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
-    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
-    inline CancelTransactionRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-    inline CancelTransactionRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-    inline CancelTransactionRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+    template<typename TransactionIdT = Aws::String>
+    void SetTransactionId(TransactionIdT&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::forward<TransactionIdT>(value); }
+    template<typename TransactionIdT = Aws::String>
+    CancelTransactionRequest& WithTransactionId(TransactionIdT&& value) { SetTransactionId(std::forward<TransactionIdT>(value)); return *this;}
     ///@}
   private:
 

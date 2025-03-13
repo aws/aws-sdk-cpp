@@ -21,7 +21,7 @@ namespace Model
   class ExportStreamSessionFilesRequest : public GameLiftStreamsRequest
   {
   public:
-    AWS_GAMELIFTSTREAMS_API ExportStreamSessionFilesRequest();
+    AWS_GAMELIFTSTREAMS_API ExportStreamSessionFilesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>
      * or ID-<code>1AB2C3De4</code>. </p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline ExportStreamSessionFilesRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline ExportStreamSessionFilesRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline ExportStreamSessionFilesRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    ExportStreamSessionFilesRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <code>s3://MyBucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code>
      * or another similar name. </p>
      */
-    inline const Aws::String& GetOutputUri() const{ return m_outputUri; }
+    inline const Aws::String& GetOutputUri() const { return m_outputUri; }
     inline bool OutputUriHasBeenSet() const { return m_outputUriHasBeenSet; }
-    inline void SetOutputUri(const Aws::String& value) { m_outputUriHasBeenSet = true; m_outputUri = value; }
-    inline void SetOutputUri(Aws::String&& value) { m_outputUriHasBeenSet = true; m_outputUri = std::move(value); }
-    inline void SetOutputUri(const char* value) { m_outputUriHasBeenSet = true; m_outputUri.assign(value); }
-    inline ExportStreamSessionFilesRequest& WithOutputUri(const Aws::String& value) { SetOutputUri(value); return *this;}
-    inline ExportStreamSessionFilesRequest& WithOutputUri(Aws::String&& value) { SetOutputUri(std::move(value)); return *this;}
-    inline ExportStreamSessionFilesRequest& WithOutputUri(const char* value) { SetOutputUri(value); return *this;}
+    template<typename OutputUriT = Aws::String>
+    void SetOutputUri(OutputUriT&& value) { m_outputUriHasBeenSet = true; m_outputUri = std::forward<OutputUriT>(value); }
+    template<typename OutputUriT = Aws::String>
+    ExportStreamSessionFilesRequest& WithOutputUri(OutputUriT&& value) { SetOutputUri(std::forward<OutputUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * Resource Name (ARN)</a> or ID that uniquely identifies the stream session
      * resource. Format example: <code>1AB2C3De4</code>. </p>
      */
-    inline const Aws::String& GetStreamSessionIdentifier() const{ return m_streamSessionIdentifier; }
+    inline const Aws::String& GetStreamSessionIdentifier() const { return m_streamSessionIdentifier; }
     inline bool StreamSessionIdentifierHasBeenSet() const { return m_streamSessionIdentifierHasBeenSet; }
-    inline void SetStreamSessionIdentifier(const Aws::String& value) { m_streamSessionIdentifierHasBeenSet = true; m_streamSessionIdentifier = value; }
-    inline void SetStreamSessionIdentifier(Aws::String&& value) { m_streamSessionIdentifierHasBeenSet = true; m_streamSessionIdentifier = std::move(value); }
-    inline void SetStreamSessionIdentifier(const char* value) { m_streamSessionIdentifierHasBeenSet = true; m_streamSessionIdentifier.assign(value); }
-    inline ExportStreamSessionFilesRequest& WithStreamSessionIdentifier(const Aws::String& value) { SetStreamSessionIdentifier(value); return *this;}
-    inline ExportStreamSessionFilesRequest& WithStreamSessionIdentifier(Aws::String&& value) { SetStreamSessionIdentifier(std::move(value)); return *this;}
-    inline ExportStreamSessionFilesRequest& WithStreamSessionIdentifier(const char* value) { SetStreamSessionIdentifier(value); return *this;}
+    template<typename StreamSessionIdentifierT = Aws::String>
+    void SetStreamSessionIdentifier(StreamSessionIdentifierT&& value) { m_streamSessionIdentifierHasBeenSet = true; m_streamSessionIdentifier = std::forward<StreamSessionIdentifierT>(value); }
+    template<typename StreamSessionIdentifierT = Aws::String>
+    ExportStreamSessionFilesRequest& WithStreamSessionIdentifier(StreamSessionIdentifierT&& value) { SetStreamSessionIdentifier(std::forward<StreamSessionIdentifierT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetPolicyVersionRequest::GetPolicyVersionRequest() : 
-    m_policyArnHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetPolicyVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

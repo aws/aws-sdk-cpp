@@ -33,7 +33,7 @@ namespace Model
   class MetricGoal
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API MetricGoal();
+    AWS_CLOUDWATCHEVIDENTLY_API MetricGoal() = default;
     AWS_CLOUDWATCHEVIDENTLY_API MetricGoal(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API MetricGoal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
      * metric is performing better.</p> <p> <code>DECREASE</code> means that a
      * variation with a lower number for this metric is performing better.</p>
      */
-    inline const ChangeDirectionEnum& GetDesiredChange() const{ return m_desiredChange; }
+    inline ChangeDirectionEnum GetDesiredChange() const { return m_desiredChange; }
     inline bool DesiredChangeHasBeenSet() const { return m_desiredChangeHasBeenSet; }
-    inline void SetDesiredChange(const ChangeDirectionEnum& value) { m_desiredChangeHasBeenSet = true; m_desiredChange = value; }
-    inline void SetDesiredChange(ChangeDirectionEnum&& value) { m_desiredChangeHasBeenSet = true; m_desiredChange = std::move(value); }
-    inline MetricGoal& WithDesiredChange(const ChangeDirectionEnum& value) { SetDesiredChange(value); return *this;}
-    inline MetricGoal& WithDesiredChange(ChangeDirectionEnum&& value) { SetDesiredChange(std::move(value)); return *this;}
+    inline void SetDesiredChange(ChangeDirectionEnum value) { m_desiredChangeHasBeenSet = true; m_desiredChange = value; }
+    inline MetricGoal& WithDesiredChange(ChangeDirectionEnum value) { SetDesiredChange(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A structure that contains details about the metric.</p>
      */
-    inline const MetricDefinition& GetMetricDefinition() const{ return m_metricDefinition; }
+    inline const MetricDefinition& GetMetricDefinition() const { return m_metricDefinition; }
     inline bool MetricDefinitionHasBeenSet() const { return m_metricDefinitionHasBeenSet; }
-    inline void SetMetricDefinition(const MetricDefinition& value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition = value; }
-    inline void SetMetricDefinition(MetricDefinition&& value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition = std::move(value); }
-    inline MetricGoal& WithMetricDefinition(const MetricDefinition& value) { SetMetricDefinition(value); return *this;}
-    inline MetricGoal& WithMetricDefinition(MetricDefinition&& value) { SetMetricDefinition(std::move(value)); return *this;}
+    template<typename MetricDefinitionT = MetricDefinition>
+    void SetMetricDefinition(MetricDefinitionT&& value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition = std::forward<MetricDefinitionT>(value); }
+    template<typename MetricDefinitionT = MetricDefinition>
+    MetricGoal& WithMetricDefinition(MetricDefinitionT&& value) { SetMetricDefinition(std::forward<MetricDefinitionT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeDirectionEnum m_desiredChange;
+    ChangeDirectionEnum m_desiredChange{ChangeDirectionEnum::NOT_SET};
     bool m_desiredChangeHasBeenSet = false;
 
     MetricDefinition m_metricDefinition;

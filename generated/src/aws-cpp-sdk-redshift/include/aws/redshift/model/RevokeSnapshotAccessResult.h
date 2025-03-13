@@ -28,33 +28,35 @@ namespace Model
   class RevokeSnapshotAccessResult
   {
   public:
-    AWS_REDSHIFT_API RevokeSnapshotAccessResult();
+    AWS_REDSHIFT_API RevokeSnapshotAccessResult() = default;
     AWS_REDSHIFT_API RevokeSnapshotAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API RevokeSnapshotAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Snapshot& GetSnapshot() const{ return m_snapshot; }
-    inline void SetSnapshot(const Snapshot& value) { m_snapshot = value; }
-    inline void SetSnapshot(Snapshot&& value) { m_snapshot = std::move(value); }
-    inline RevokeSnapshotAccessResult& WithSnapshot(const Snapshot& value) { SetSnapshot(value); return *this;}
-    inline RevokeSnapshotAccessResult& WithSnapshot(Snapshot&& value) { SetSnapshot(std::move(value)); return *this;}
+    inline const Snapshot& GetSnapshot() const { return m_snapshot; }
+    template<typename SnapshotT = Snapshot>
+    void SetSnapshot(SnapshotT&& value) { m_snapshotHasBeenSet = true; m_snapshot = std::forward<SnapshotT>(value); }
+    template<typename SnapshotT = Snapshot>
+    RevokeSnapshotAccessResult& WithSnapshot(SnapshotT&& value) { SetSnapshot(std::forward<SnapshotT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RevokeSnapshotAccessResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RevokeSnapshotAccessResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RevokeSnapshotAccessResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Snapshot m_snapshot;
+    bool m_snapshotHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

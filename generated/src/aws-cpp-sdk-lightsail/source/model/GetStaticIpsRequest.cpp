@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetStaticIpsRequest::GetStaticIpsRequest() : 
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetStaticIpsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeOrganizationsAccessResult::DescribeOrganizationsAccessResult() : 
-    m_status(OrganizationStatus::NOT_SET)
-{
-}
-
 DescribeOrganizationsAccessResult::DescribeOrganizationsAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DescribeOrganizationsAccessResult()
 {
   *this = result;
 }
@@ -43,13 +37,15 @@ DescribeOrganizationsAccessResult& DescribeOrganizationsAccessResult::operator =
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = OrganizationStatusMapper::GetOrganizationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = OrganizationStatusMapper::GetOrganizationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+      m_statusHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::DescribeOrganizationsAccessResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

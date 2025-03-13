@@ -32,7 +32,7 @@ namespace Model
   class MetricMonitor
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API MetricMonitor();
+    AWS_CLOUDWATCHEVIDENTLY_API MetricMonitor() = default;
     AWS_CLOUDWATCHEVIDENTLY_API MetricMonitor(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API MetricMonitor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>A structure that defines the metric.</p>
      */
-    inline const MetricDefinition& GetMetricDefinition() const{ return m_metricDefinition; }
+    inline const MetricDefinition& GetMetricDefinition() const { return m_metricDefinition; }
     inline bool MetricDefinitionHasBeenSet() const { return m_metricDefinitionHasBeenSet; }
-    inline void SetMetricDefinition(const MetricDefinition& value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition = value; }
-    inline void SetMetricDefinition(MetricDefinition&& value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition = std::move(value); }
-    inline MetricMonitor& WithMetricDefinition(const MetricDefinition& value) { SetMetricDefinition(value); return *this;}
-    inline MetricMonitor& WithMetricDefinition(MetricDefinition&& value) { SetMetricDefinition(std::move(value)); return *this;}
+    template<typename MetricDefinitionT = MetricDefinition>
+    void SetMetricDefinition(MetricDefinitionT&& value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition = std::forward<MetricDefinitionT>(value); }
+    template<typename MetricDefinitionT = MetricDefinition>
+    MetricMonitor& WithMetricDefinition(MetricDefinitionT&& value) { SetMetricDefinition(std::forward<MetricDefinitionT>(value)); return *this;}
     ///@}
   private:
 

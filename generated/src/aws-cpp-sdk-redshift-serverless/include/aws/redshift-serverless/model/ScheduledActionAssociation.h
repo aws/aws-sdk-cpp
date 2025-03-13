@@ -32,7 +32,7 @@ namespace Model
   class ScheduledActionAssociation
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API ScheduledActionAssociation();
+    AWS_REDSHIFTSERVERLESS_API ScheduledActionAssociation() = default;
     AWS_REDSHIFTSERVERLESS_API ScheduledActionAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API ScheduledActionAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>Name of associated Amazon Redshift Serverless namespace.</p>
      */
-    inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
+    inline const Aws::String& GetNamespaceName() const { return m_namespaceName; }
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
-    inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
-    inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
-    inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
-    inline ScheduledActionAssociation& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
-    inline ScheduledActionAssociation& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
-    inline ScheduledActionAssociation& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
+    template<typename NamespaceNameT = Aws::String>
+    void SetNamespaceName(NamespaceNameT&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::forward<NamespaceNameT>(value); }
+    template<typename NamespaceNameT = Aws::String>
+    ScheduledActionAssociation& WithNamespaceName(NamespaceNameT&& value) { SetNamespaceName(std::forward<NamespaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of associated scheduled action.</p>
      */
-    inline const Aws::String& GetScheduledActionName() const{ return m_scheduledActionName; }
+    inline const Aws::String& GetScheduledActionName() const { return m_scheduledActionName; }
     inline bool ScheduledActionNameHasBeenSet() const { return m_scheduledActionNameHasBeenSet; }
-    inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
-    inline void SetScheduledActionName(Aws::String&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::move(value); }
-    inline void SetScheduledActionName(const char* value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName.assign(value); }
-    inline ScheduledActionAssociation& WithScheduledActionName(const Aws::String& value) { SetScheduledActionName(value); return *this;}
-    inline ScheduledActionAssociation& WithScheduledActionName(Aws::String&& value) { SetScheduledActionName(std::move(value)); return *this;}
-    inline ScheduledActionAssociation& WithScheduledActionName(const char* value) { SetScheduledActionName(value); return *this;}
+    template<typename ScheduledActionNameT = Aws::String>
+    void SetScheduledActionName(ScheduledActionNameT&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::forward<ScheduledActionNameT>(value); }
+    template<typename ScheduledActionNameT = Aws::String>
+    ScheduledActionAssociation& WithScheduledActionName(ScheduledActionNameT&& value) { SetScheduledActionName(std::forward<ScheduledActionNameT>(value)); return *this;}
     ///@}
   private:
 

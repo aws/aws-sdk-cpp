@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetJourneyRunsResult::GetJourneyRunsResult()
-{
-}
-
 GetJourneyRunsResult::GetJourneyRunsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ GetJourneyRunsResult& GetJourneyRunsResult::operator =(const Aws::AmazonWebServi
 {
   JsonView jsonValue = result.GetPayload().View();
   m_journeyRunsResponse = jsonValue;
+  m_journeyRunsResponseHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

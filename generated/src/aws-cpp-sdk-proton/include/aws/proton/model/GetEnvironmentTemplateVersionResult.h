@@ -28,7 +28,7 @@ namespace Model
   class GetEnvironmentTemplateVersionResult
   {
   public:
-    AWS_PROTON_API GetEnvironmentTemplateVersionResult();
+    AWS_PROTON_API GetEnvironmentTemplateVersionResult() = default;
     AWS_PROTON_API GetEnvironmentTemplateVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API GetEnvironmentTemplateVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The detailed data of the requested environment template version.</p>
      */
-    inline const EnvironmentTemplateVersion& GetEnvironmentTemplateVersion() const{ return m_environmentTemplateVersion; }
-    inline void SetEnvironmentTemplateVersion(const EnvironmentTemplateVersion& value) { m_environmentTemplateVersion = value; }
-    inline void SetEnvironmentTemplateVersion(EnvironmentTemplateVersion&& value) { m_environmentTemplateVersion = std::move(value); }
-    inline GetEnvironmentTemplateVersionResult& WithEnvironmentTemplateVersion(const EnvironmentTemplateVersion& value) { SetEnvironmentTemplateVersion(value); return *this;}
-    inline GetEnvironmentTemplateVersionResult& WithEnvironmentTemplateVersion(EnvironmentTemplateVersion&& value) { SetEnvironmentTemplateVersion(std::move(value)); return *this;}
+    inline const EnvironmentTemplateVersion& GetEnvironmentTemplateVersion() const { return m_environmentTemplateVersion; }
+    template<typename EnvironmentTemplateVersionT = EnvironmentTemplateVersion>
+    void SetEnvironmentTemplateVersion(EnvironmentTemplateVersionT&& value) { m_environmentTemplateVersionHasBeenSet = true; m_environmentTemplateVersion = std::forward<EnvironmentTemplateVersionT>(value); }
+    template<typename EnvironmentTemplateVersionT = EnvironmentTemplateVersion>
+    GetEnvironmentTemplateVersionResult& WithEnvironmentTemplateVersion(EnvironmentTemplateVersionT&& value) { SetEnvironmentTemplateVersion(std::forward<EnvironmentTemplateVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEnvironmentTemplateVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEnvironmentTemplateVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEnvironmentTemplateVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEnvironmentTemplateVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EnvironmentTemplateVersion m_environmentTemplateVersion;
+    bool m_environmentTemplateVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

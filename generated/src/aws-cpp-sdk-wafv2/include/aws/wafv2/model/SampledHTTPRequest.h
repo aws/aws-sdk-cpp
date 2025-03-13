@@ -42,7 +42,7 @@ namespace Model
   class SampledHTTPRequest
   {
   public:
-    AWS_WAFV2_API SampledHTTPRequest();
+    AWS_WAFV2_API SampledHTTPRequest() = default;
     AWS_WAFV2_API SampledHTTPRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API SampledHTTPRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,12 @@ namespace Model
     /**
      * <p>A complex type that contains detailed information about the request.</p>
      */
-    inline const HTTPRequest& GetRequest() const{ return m_request; }
+    inline const HTTPRequest& GetRequest() const { return m_request; }
     inline bool RequestHasBeenSet() const { return m_requestHasBeenSet; }
-    inline void SetRequest(const HTTPRequest& value) { m_requestHasBeenSet = true; m_request = value; }
-    inline void SetRequest(HTTPRequest&& value) { m_requestHasBeenSet = true; m_request = std::move(value); }
-    inline SampledHTTPRequest& WithRequest(const HTTPRequest& value) { SetRequest(value); return *this;}
-    inline SampledHTTPRequest& WithRequest(HTTPRequest&& value) { SetRequest(std::move(value)); return *this;}
+    template<typename RequestT = HTTPRequest>
+    void SetRequest(RequestT&& value) { m_requestHasBeenSet = true; m_request = std::forward<RequestT>(value); }
+    template<typename RequestT = HTTPRequest>
+    SampledHTTPRequest& WithRequest(RequestT&& value) { SetRequest(std::forward<RequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +67,7 @@ namespace Model
      * <code>2</code> represents roughly twice as many web requests as a result that
      * has a weight of <code>1</code>.</p>
      */
-    inline long long GetWeight() const{ return m_weight; }
+    inline long long GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(long long value) { m_weightHasBeenSet = true; m_weight = value; }
     inline SampledHTTPRequest& WithWeight(long long value) { SetWeight(value); return *this;}
@@ -78,26 +78,24 @@ namespace Model
      * <p>The time at which WAF received the request from your Amazon Web Services
      * resource, in Unix time format (in seconds).</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline SampledHTTPRequest& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline SampledHTTPRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    SampledHTTPRequest& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action that WAF applied to the request.</p>
      */
-    inline const Aws::String& GetAction() const{ return m_action; }
+    inline const Aws::String& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
-    inline SampledHTTPRequest& WithAction(const Aws::String& value) { SetAction(value); return *this;}
-    inline SampledHTTPRequest& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
-    inline SampledHTTPRequest& WithAction(const char* value) { SetAction(value); return *this;}
+    template<typename ActionT = Aws::String>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = Aws::String>
+    SampledHTTPRequest& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +106,12 @@ namespace Model
      * for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
      * rule is not in a rule group, this field is absent. </p>
      */
-    inline const Aws::String& GetRuleNameWithinRuleGroup() const{ return m_ruleNameWithinRuleGroup; }
+    inline const Aws::String& GetRuleNameWithinRuleGroup() const { return m_ruleNameWithinRuleGroup; }
     inline bool RuleNameWithinRuleGroupHasBeenSet() const { return m_ruleNameWithinRuleGroupHasBeenSet; }
-    inline void SetRuleNameWithinRuleGroup(const Aws::String& value) { m_ruleNameWithinRuleGroupHasBeenSet = true; m_ruleNameWithinRuleGroup = value; }
-    inline void SetRuleNameWithinRuleGroup(Aws::String&& value) { m_ruleNameWithinRuleGroupHasBeenSet = true; m_ruleNameWithinRuleGroup = std::move(value); }
-    inline void SetRuleNameWithinRuleGroup(const char* value) { m_ruleNameWithinRuleGroupHasBeenSet = true; m_ruleNameWithinRuleGroup.assign(value); }
-    inline SampledHTTPRequest& WithRuleNameWithinRuleGroup(const Aws::String& value) { SetRuleNameWithinRuleGroup(value); return *this;}
-    inline SampledHTTPRequest& WithRuleNameWithinRuleGroup(Aws::String&& value) { SetRuleNameWithinRuleGroup(std::move(value)); return *this;}
-    inline SampledHTTPRequest& WithRuleNameWithinRuleGroup(const char* value) { SetRuleNameWithinRuleGroup(value); return *this;}
+    template<typename RuleNameWithinRuleGroupT = Aws::String>
+    void SetRuleNameWithinRuleGroup(RuleNameWithinRuleGroupT&& value) { m_ruleNameWithinRuleGroupHasBeenSet = true; m_ruleNameWithinRuleGroup = std::forward<RuleNameWithinRuleGroupT>(value); }
+    template<typename RuleNameWithinRuleGroupT = Aws::String>
+    SampledHTTPRequest& WithRuleNameWithinRuleGroup(RuleNameWithinRuleGroupT&& value) { SetRuleNameWithinRuleGroup(std::forward<RuleNameWithinRuleGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,21 +119,21 @@ namespace Model
      * <p>Custom request headers inserted by WAF into the request, according to the
      * custom request configuration for the matching rule action.</p>
      */
-    inline const Aws::Vector<HTTPHeader>& GetRequestHeadersInserted() const{ return m_requestHeadersInserted; }
+    inline const Aws::Vector<HTTPHeader>& GetRequestHeadersInserted() const { return m_requestHeadersInserted; }
     inline bool RequestHeadersInsertedHasBeenSet() const { return m_requestHeadersInsertedHasBeenSet; }
-    inline void SetRequestHeadersInserted(const Aws::Vector<HTTPHeader>& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted = value; }
-    inline void SetRequestHeadersInserted(Aws::Vector<HTTPHeader>&& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted = std::move(value); }
-    inline SampledHTTPRequest& WithRequestHeadersInserted(const Aws::Vector<HTTPHeader>& value) { SetRequestHeadersInserted(value); return *this;}
-    inline SampledHTTPRequest& WithRequestHeadersInserted(Aws::Vector<HTTPHeader>&& value) { SetRequestHeadersInserted(std::move(value)); return *this;}
-    inline SampledHTTPRequest& AddRequestHeadersInserted(const HTTPHeader& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted.push_back(value); return *this; }
-    inline SampledHTTPRequest& AddRequestHeadersInserted(HTTPHeader&& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted.push_back(std::move(value)); return *this; }
+    template<typename RequestHeadersInsertedT = Aws::Vector<HTTPHeader>>
+    void SetRequestHeadersInserted(RequestHeadersInsertedT&& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted = std::forward<RequestHeadersInsertedT>(value); }
+    template<typename RequestHeadersInsertedT = Aws::Vector<HTTPHeader>>
+    SampledHTTPRequest& WithRequestHeadersInserted(RequestHeadersInsertedT&& value) { SetRequestHeadersInserted(std::forward<RequestHeadersInsertedT>(value)); return *this;}
+    template<typename RequestHeadersInsertedT = HTTPHeader>
+    SampledHTTPRequest& AddRequestHeadersInserted(RequestHeadersInsertedT&& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted.emplace_back(std::forward<RequestHeadersInsertedT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The response code that was sent for the request.</p>
      */
-    inline int GetResponseCodeSent() const{ return m_responseCodeSent; }
+    inline int GetResponseCodeSent() const { return m_responseCodeSent; }
     inline bool ResponseCodeSentHasBeenSet() const { return m_responseCodeSentHasBeenSet; }
     inline void SetResponseCodeSent(int value) { m_responseCodeSentHasBeenSet = true; m_responseCodeSent = value; }
     inline SampledHTTPRequest& WithResponseCodeSent(int value) { SetResponseCodeSent(value); return *this;}
@@ -152,38 +148,38 @@ namespace Model
      * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
      * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
      */
-    inline const Aws::Vector<Label>& GetLabels() const{ return m_labels; }
+    inline const Aws::Vector<Label>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Vector<Label>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Vector<Label>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline SampledHTTPRequest& WithLabels(const Aws::Vector<Label>& value) { SetLabels(value); return *this;}
-    inline SampledHTTPRequest& WithLabels(Aws::Vector<Label>&& value) { SetLabels(std::move(value)); return *this;}
-    inline SampledHTTPRequest& AddLabels(const Label& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-    inline SampledHTTPRequest& AddLabels(Label&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
+    template<typename LabelsT = Aws::Vector<Label>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Vector<Label>>
+    SampledHTTPRequest& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsT = Label>
+    SampledHTTPRequest& AddLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels.emplace_back(std::forward<LabelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The <code>CAPTCHA</code> response for the request.</p>
      */
-    inline const CaptchaResponse& GetCaptchaResponse() const{ return m_captchaResponse; }
+    inline const CaptchaResponse& GetCaptchaResponse() const { return m_captchaResponse; }
     inline bool CaptchaResponseHasBeenSet() const { return m_captchaResponseHasBeenSet; }
-    inline void SetCaptchaResponse(const CaptchaResponse& value) { m_captchaResponseHasBeenSet = true; m_captchaResponse = value; }
-    inline void SetCaptchaResponse(CaptchaResponse&& value) { m_captchaResponseHasBeenSet = true; m_captchaResponse = std::move(value); }
-    inline SampledHTTPRequest& WithCaptchaResponse(const CaptchaResponse& value) { SetCaptchaResponse(value); return *this;}
-    inline SampledHTTPRequest& WithCaptchaResponse(CaptchaResponse&& value) { SetCaptchaResponse(std::move(value)); return *this;}
+    template<typename CaptchaResponseT = CaptchaResponse>
+    void SetCaptchaResponse(CaptchaResponseT&& value) { m_captchaResponseHasBeenSet = true; m_captchaResponse = std::forward<CaptchaResponseT>(value); }
+    template<typename CaptchaResponseT = CaptchaResponse>
+    SampledHTTPRequest& WithCaptchaResponse(CaptchaResponseT&& value) { SetCaptchaResponse(std::forward<CaptchaResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>Challenge</code> response for the request.</p>
      */
-    inline const ChallengeResponse& GetChallengeResponse() const{ return m_challengeResponse; }
+    inline const ChallengeResponse& GetChallengeResponse() const { return m_challengeResponse; }
     inline bool ChallengeResponseHasBeenSet() const { return m_challengeResponseHasBeenSet; }
-    inline void SetChallengeResponse(const ChallengeResponse& value) { m_challengeResponseHasBeenSet = true; m_challengeResponse = value; }
-    inline void SetChallengeResponse(ChallengeResponse&& value) { m_challengeResponseHasBeenSet = true; m_challengeResponse = std::move(value); }
-    inline SampledHTTPRequest& WithChallengeResponse(const ChallengeResponse& value) { SetChallengeResponse(value); return *this;}
-    inline SampledHTTPRequest& WithChallengeResponse(ChallengeResponse&& value) { SetChallengeResponse(std::move(value)); return *this;}
+    template<typename ChallengeResponseT = ChallengeResponse>
+    void SetChallengeResponse(ChallengeResponseT&& value) { m_challengeResponseHasBeenSet = true; m_challengeResponse = std::forward<ChallengeResponseT>(value); }
+    template<typename ChallengeResponseT = ChallengeResponse>
+    SampledHTTPRequest& WithChallengeResponse(ChallengeResponseT&& value) { SetChallengeResponse(std::forward<ChallengeResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,24 +189,22 @@ namespace Model
      * not the action that was applied to the request. The action that WAF applied is
      * the <code>Action</code> value. </p>
      */
-    inline const Aws::String& GetOverriddenAction() const{ return m_overriddenAction; }
+    inline const Aws::String& GetOverriddenAction() const { return m_overriddenAction; }
     inline bool OverriddenActionHasBeenSet() const { return m_overriddenActionHasBeenSet; }
-    inline void SetOverriddenAction(const Aws::String& value) { m_overriddenActionHasBeenSet = true; m_overriddenAction = value; }
-    inline void SetOverriddenAction(Aws::String&& value) { m_overriddenActionHasBeenSet = true; m_overriddenAction = std::move(value); }
-    inline void SetOverriddenAction(const char* value) { m_overriddenActionHasBeenSet = true; m_overriddenAction.assign(value); }
-    inline SampledHTTPRequest& WithOverriddenAction(const Aws::String& value) { SetOverriddenAction(value); return *this;}
-    inline SampledHTTPRequest& WithOverriddenAction(Aws::String&& value) { SetOverriddenAction(std::move(value)); return *this;}
-    inline SampledHTTPRequest& WithOverriddenAction(const char* value) { SetOverriddenAction(value); return *this;}
+    template<typename OverriddenActionT = Aws::String>
+    void SetOverriddenAction(OverriddenActionT&& value) { m_overriddenActionHasBeenSet = true; m_overriddenAction = std::forward<OverriddenActionT>(value); }
+    template<typename OverriddenActionT = Aws::String>
+    SampledHTTPRequest& WithOverriddenAction(OverriddenActionT&& value) { SetOverriddenAction(std::forward<OverriddenActionT>(value)); return *this;}
     ///@}
   private:
 
     HTTPRequest m_request;
     bool m_requestHasBeenSet = false;
 
-    long long m_weight;
+    long long m_weight{0};
     bool m_weightHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
     Aws::String m_action;
@@ -222,7 +216,7 @@ namespace Model
     Aws::Vector<HTTPHeader> m_requestHeadersInserted;
     bool m_requestHeadersInsertedHasBeenSet = false;
 
-    int m_responseCodeSent;
+    int m_responseCodeSent{0};
     bool m_responseCodeSentHasBeenSet = false;
 
     Aws::Vector<Label> m_labels;

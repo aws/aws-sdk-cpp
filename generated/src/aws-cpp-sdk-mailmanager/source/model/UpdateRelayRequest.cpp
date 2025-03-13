@@ -12,16 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRelayRequest::UpdateRelayRequest() : 
-    m_authenticationHasBeenSet(false),
-    m_relayIdHasBeenSet(false),
-    m_relayNameHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_serverPort(0),
-    m_serverPortHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRelayRequest::SerializePayload() const
 {
   JsonValue payload;

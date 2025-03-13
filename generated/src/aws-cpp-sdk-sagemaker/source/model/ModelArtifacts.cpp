@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelArtifacts::ModelArtifacts() : 
-    m_s3ModelArtifactsHasBeenSet(false)
-{
-}
-
 ModelArtifacts::ModelArtifacts(JsonView jsonValue)
-  : ModelArtifacts()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelArtifacts& ModelArtifacts::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3ModelArtifacts"))
   {
     m_s3ModelArtifacts = jsonValue.GetString("S3ModelArtifacts");
-
     m_s3ModelArtifactsHasBeenSet = true;
   }
-
   return *this;
 }
 

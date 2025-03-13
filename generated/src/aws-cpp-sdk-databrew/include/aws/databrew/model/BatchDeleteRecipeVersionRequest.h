@@ -22,7 +22,7 @@ namespace Model
   class BatchDeleteRecipeVersionRequest : public GlueDataBrewRequest
   {
   public:
-    AWS_GLUEDATABREW_API BatchDeleteRecipeVersionRequest();
+    AWS_GLUEDATABREW_API BatchDeleteRecipeVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The name of the recipe whose versions are to be deleted.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline BatchDeleteRecipeVersionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline BatchDeleteRecipeVersionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline BatchDeleteRecipeVersionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    BatchDeleteRecipeVersionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,15 +51,14 @@ namespace Model
      * can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>.
      * <code>LATEST_PUBLISHED</code> is not supported.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRecipeVersions() const{ return m_recipeVersions; }
+    inline const Aws::Vector<Aws::String>& GetRecipeVersions() const { return m_recipeVersions; }
     inline bool RecipeVersionsHasBeenSet() const { return m_recipeVersionsHasBeenSet; }
-    inline void SetRecipeVersions(const Aws::Vector<Aws::String>& value) { m_recipeVersionsHasBeenSet = true; m_recipeVersions = value; }
-    inline void SetRecipeVersions(Aws::Vector<Aws::String>&& value) { m_recipeVersionsHasBeenSet = true; m_recipeVersions = std::move(value); }
-    inline BatchDeleteRecipeVersionRequest& WithRecipeVersions(const Aws::Vector<Aws::String>& value) { SetRecipeVersions(value); return *this;}
-    inline BatchDeleteRecipeVersionRequest& WithRecipeVersions(Aws::Vector<Aws::String>&& value) { SetRecipeVersions(std::move(value)); return *this;}
-    inline BatchDeleteRecipeVersionRequest& AddRecipeVersions(const Aws::String& value) { m_recipeVersionsHasBeenSet = true; m_recipeVersions.push_back(value); return *this; }
-    inline BatchDeleteRecipeVersionRequest& AddRecipeVersions(Aws::String&& value) { m_recipeVersionsHasBeenSet = true; m_recipeVersions.push_back(std::move(value)); return *this; }
-    inline BatchDeleteRecipeVersionRequest& AddRecipeVersions(const char* value) { m_recipeVersionsHasBeenSet = true; m_recipeVersions.push_back(value); return *this; }
+    template<typename RecipeVersionsT = Aws::Vector<Aws::String>>
+    void SetRecipeVersions(RecipeVersionsT&& value) { m_recipeVersionsHasBeenSet = true; m_recipeVersions = std::forward<RecipeVersionsT>(value); }
+    template<typename RecipeVersionsT = Aws::Vector<Aws::String>>
+    BatchDeleteRecipeVersionRequest& WithRecipeVersions(RecipeVersionsT&& value) { SetRecipeVersions(std::forward<RecipeVersionsT>(value)); return *this;}
+    template<typename RecipeVersionsT = Aws::String>
+    BatchDeleteRecipeVersionRequest& AddRecipeVersions(RecipeVersionsT&& value) { m_recipeVersionsHasBeenSet = true; m_recipeVersions.emplace_back(std::forward<RecipeVersionsT>(value)); return *this; }
     ///@}
   private:
 

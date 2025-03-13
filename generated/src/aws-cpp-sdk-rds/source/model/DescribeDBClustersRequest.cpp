@@ -10,17 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBClustersRequest::DescribeDBClustersRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_includeShared(false),
-    m_includeSharedHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBClustersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

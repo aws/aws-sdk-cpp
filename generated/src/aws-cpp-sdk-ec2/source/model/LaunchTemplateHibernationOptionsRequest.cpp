@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateHibernationOptionsRequest::LaunchTemplateHibernationOptionsRequest() : 
-    m_configured(false),
-    m_configuredHasBeenSet(false)
-{
-}
-
 LaunchTemplateHibernationOptionsRequest::LaunchTemplateHibernationOptionsRequest(const XmlNode& xmlNode)
-  : LaunchTemplateHibernationOptionsRequest()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ LaunchTemplateHibernationOptionsRequest& LaunchTemplateHibernationOptionsRequest
     {
       m_configured = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(configuredNode.GetText()).c_str()).c_str());
       m_configuredHasBeenSet = true;
+       m_configuredHasBeenSet = true;
     }
   }
 

@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-Page::Page() : 
-    m_lineRangeHasBeenSet(false),
-    m_offsetRangeHasBeenSet(false),
-    m_pageNumber(0),
-    m_pageNumberHasBeenSet(false)
-{
-}
-
 Page::Page(JsonView jsonValue)
-  : Page()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Page& Page::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lineRange"))
   {
     m_lineRange = jsonValue.GetObject("lineRange");
-
     m_lineRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offsetRange"))
   {
     m_offsetRange = jsonValue.GetObject("offsetRange");
-
     m_offsetRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pageNumber"))
   {
     m_pageNumber = jsonValue.GetInt64("pageNumber");
-
     m_pageNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

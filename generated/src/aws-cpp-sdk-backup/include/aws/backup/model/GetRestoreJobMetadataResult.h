@@ -28,7 +28,7 @@ namespace Model
   class GetRestoreJobMetadataResult
   {
   public:
-    AWS_BACKUP_API GetRestoreJobMetadataResult();
+    AWS_BACKUP_API GetRestoreJobMetadataResult() = default;
     AWS_BACKUP_API GetRestoreJobMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API GetRestoreJobMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,50 +37,46 @@ namespace Model
     /**
      * <p>This is a unique identifier of a restore job within Backup.</p>
      */
-    inline const Aws::String& GetRestoreJobId() const{ return m_restoreJobId; }
-    inline void SetRestoreJobId(const Aws::String& value) { m_restoreJobId = value; }
-    inline void SetRestoreJobId(Aws::String&& value) { m_restoreJobId = std::move(value); }
-    inline void SetRestoreJobId(const char* value) { m_restoreJobId.assign(value); }
-    inline GetRestoreJobMetadataResult& WithRestoreJobId(const Aws::String& value) { SetRestoreJobId(value); return *this;}
-    inline GetRestoreJobMetadataResult& WithRestoreJobId(Aws::String&& value) { SetRestoreJobId(std::move(value)); return *this;}
-    inline GetRestoreJobMetadataResult& WithRestoreJobId(const char* value) { SetRestoreJobId(value); return *this;}
+    inline const Aws::String& GetRestoreJobId() const { return m_restoreJobId; }
+    template<typename RestoreJobIdT = Aws::String>
+    void SetRestoreJobId(RestoreJobIdT&& value) { m_restoreJobIdHasBeenSet = true; m_restoreJobId = std::forward<RestoreJobIdT>(value); }
+    template<typename RestoreJobIdT = Aws::String>
+    GetRestoreJobMetadataResult& WithRestoreJobId(RestoreJobIdT&& value) { SetRestoreJobId(std::forward<RestoreJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This contains the metadata of the specified backup job.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
-    inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadata = value; }
-    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadata = std::move(value); }
-    inline GetRestoreJobMetadataResult& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
-    inline GetRestoreJobMetadataResult& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
-    inline GetRestoreJobMetadataResult& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadata.emplace(key, value); return *this; }
-    inline GetRestoreJobMetadataResult& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadata.emplace(std::move(key), value); return *this; }
-    inline GetRestoreJobMetadataResult& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
-    inline GetRestoreJobMetadataResult& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetRestoreJobMetadataResult& AddMetadata(const char* key, Aws::String&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
-    inline GetRestoreJobMetadataResult& AddMetadata(Aws::String&& key, const char* value) { m_metadata.emplace(std::move(key), value); return *this; }
-    inline GetRestoreJobMetadataResult& AddMetadata(const char* key, const char* value) { m_metadata.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    GetRestoreJobMetadataResult& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+    GetRestoreJobMetadataResult& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRestoreJobMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRestoreJobMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRestoreJobMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRestoreJobMetadataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_restoreJobId;
+    bool m_restoreJobIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

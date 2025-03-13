@@ -35,7 +35,7 @@ namespace Model
   class AlarmState
   {
   public:
-    AWS_IOTEVENTSDATA_API AlarmState();
+    AWS_IOTEVENTSDATA_API AlarmState() = default;
     AWS_IOTEVENTSDATA_API AlarmState(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API AlarmState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,24 +61,22 @@ namespace Model
      * change the alarm to the <code>NORMAL</code> state, you must acknowledge the
      * alarm.</p> </li> </ul>
      */
-    inline const AlarmStateName& GetStateName() const{ return m_stateName; }
+    inline AlarmStateName GetStateName() const { return m_stateName; }
     inline bool StateNameHasBeenSet() const { return m_stateNameHasBeenSet; }
-    inline void SetStateName(const AlarmStateName& value) { m_stateNameHasBeenSet = true; m_stateName = value; }
-    inline void SetStateName(AlarmStateName&& value) { m_stateNameHasBeenSet = true; m_stateName = std::move(value); }
-    inline AlarmState& WithStateName(const AlarmStateName& value) { SetStateName(value); return *this;}
-    inline AlarmState& WithStateName(AlarmStateName&& value) { SetStateName(std::move(value)); return *this;}
+    inline void SetStateName(AlarmStateName value) { m_stateNameHasBeenSet = true; m_stateName = value; }
+    inline AlarmState& WithStateName(AlarmStateName value) { SetStateName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information needed to evaluate data.</p>
      */
-    inline const RuleEvaluation& GetRuleEvaluation() const{ return m_ruleEvaluation; }
+    inline const RuleEvaluation& GetRuleEvaluation() const { return m_ruleEvaluation; }
     inline bool RuleEvaluationHasBeenSet() const { return m_ruleEvaluationHasBeenSet; }
-    inline void SetRuleEvaluation(const RuleEvaluation& value) { m_ruleEvaluationHasBeenSet = true; m_ruleEvaluation = value; }
-    inline void SetRuleEvaluation(RuleEvaluation&& value) { m_ruleEvaluationHasBeenSet = true; m_ruleEvaluation = std::move(value); }
-    inline AlarmState& WithRuleEvaluation(const RuleEvaluation& value) { SetRuleEvaluation(value); return *this;}
-    inline AlarmState& WithRuleEvaluation(RuleEvaluation&& value) { SetRuleEvaluation(std::move(value)); return *this;}
+    template<typename RuleEvaluationT = RuleEvaluation>
+    void SetRuleEvaluation(RuleEvaluationT&& value) { m_ruleEvaluationHasBeenSet = true; m_ruleEvaluation = std::forward<RuleEvaluationT>(value); }
+    template<typename RuleEvaluationT = RuleEvaluation>
+    AlarmState& WithRuleEvaluation(RuleEvaluationT&& value) { SetRuleEvaluation(std::forward<RuleEvaluationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,28 +84,28 @@ namespace Model
      * <p>Contains information about the action that you can take to respond to the
      * alarm.</p>
      */
-    inline const CustomerAction& GetCustomerAction() const{ return m_customerAction; }
+    inline const CustomerAction& GetCustomerAction() const { return m_customerAction; }
     inline bool CustomerActionHasBeenSet() const { return m_customerActionHasBeenSet; }
-    inline void SetCustomerAction(const CustomerAction& value) { m_customerActionHasBeenSet = true; m_customerAction = value; }
-    inline void SetCustomerAction(CustomerAction&& value) { m_customerActionHasBeenSet = true; m_customerAction = std::move(value); }
-    inline AlarmState& WithCustomerAction(const CustomerAction& value) { SetCustomerAction(value); return *this;}
-    inline AlarmState& WithCustomerAction(CustomerAction&& value) { SetCustomerAction(std::move(value)); return *this;}
+    template<typename CustomerActionT = CustomerAction>
+    void SetCustomerAction(CustomerActionT&& value) { m_customerActionHasBeenSet = true; m_customerAction = std::forward<CustomerActionT>(value); }
+    template<typename CustomerActionT = CustomerAction>
+    AlarmState& WithCustomerAction(CustomerActionT&& value) { SetCustomerAction(std::forward<CustomerActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about alarm state changes.</p>
      */
-    inline const SystemEvent& GetSystemEvent() const{ return m_systemEvent; }
+    inline const SystemEvent& GetSystemEvent() const { return m_systemEvent; }
     inline bool SystemEventHasBeenSet() const { return m_systemEventHasBeenSet; }
-    inline void SetSystemEvent(const SystemEvent& value) { m_systemEventHasBeenSet = true; m_systemEvent = value; }
-    inline void SetSystemEvent(SystemEvent&& value) { m_systemEventHasBeenSet = true; m_systemEvent = std::move(value); }
-    inline AlarmState& WithSystemEvent(const SystemEvent& value) { SetSystemEvent(value); return *this;}
-    inline AlarmState& WithSystemEvent(SystemEvent&& value) { SetSystemEvent(std::move(value)); return *this;}
+    template<typename SystemEventT = SystemEvent>
+    void SetSystemEvent(SystemEventT&& value) { m_systemEventHasBeenSet = true; m_systemEvent = std::forward<SystemEventT>(value); }
+    template<typename SystemEventT = SystemEvent>
+    AlarmState& WithSystemEvent(SystemEventT&& value) { SetSystemEvent(std::forward<SystemEventT>(value)); return *this;}
     ///@}
   private:
 
-    AlarmStateName m_stateName;
+    AlarmStateName m_stateName{AlarmStateName::NOT_SET};
     bool m_stateNameHasBeenSet = false;
 
     RuleEvaluation m_ruleEvaluation;

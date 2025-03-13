@@ -12,24 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOTAUpdateRequest::CreateOTAUpdateRequest() : 
-    m_otaUpdateIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_targetSelection(TargetSelection::NOT_SET),
-    m_targetSelectionHasBeenSet(false),
-    m_awsJobExecutionsRolloutConfigHasBeenSet(false),
-    m_awsJobPresignedUrlConfigHasBeenSet(false),
-    m_awsJobAbortConfigHasBeenSet(false),
-    m_awsJobTimeoutConfigHasBeenSet(false),
-    m_filesHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_additionalParametersHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateOTAUpdateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class PortMapping
   {
   public:
-    AWS_ROBOMAKER_API PortMapping();
+    AWS_ROBOMAKER_API PortMapping() = default;
     AWS_ROBOMAKER_API PortMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API PortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
      * <p>The port number on the simulation job instance to use as a remote connection
      * point. </p>
      */
-    inline int GetJobPort() const{ return m_jobPort; }
+    inline int GetJobPort() const { return m_jobPort; }
     inline bool JobPortHasBeenSet() const { return m_jobPortHasBeenSet; }
     inline void SetJobPort(int value) { m_jobPortHasBeenSet = true; m_jobPort = value; }
     inline PortMapping& WithJobPort(int value) { SetJobPort(value); return *this;}
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The port number on the application.</p>
      */
-    inline int GetApplicationPort() const{ return m_applicationPort; }
+    inline int GetApplicationPort() const { return m_applicationPort; }
     inline bool ApplicationPortHasBeenSet() const { return m_applicationPortHasBeenSet; }
     inline void SetApplicationPort(int value) { m_applicationPortHasBeenSet = true; m_applicationPort = value; }
     inline PortMapping& WithApplicationPort(int value) { SetApplicationPort(value); return *this;}
@@ -60,20 +60,20 @@ namespace Model
     /**
      * <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
      */
-    inline bool GetEnableOnPublicIp() const{ return m_enableOnPublicIp; }
+    inline bool GetEnableOnPublicIp() const { return m_enableOnPublicIp; }
     inline bool EnableOnPublicIpHasBeenSet() const { return m_enableOnPublicIpHasBeenSet; }
     inline void SetEnableOnPublicIp(bool value) { m_enableOnPublicIpHasBeenSet = true; m_enableOnPublicIp = value; }
     inline PortMapping& WithEnableOnPublicIp(bool value) { SetEnableOnPublicIp(value); return *this;}
     ///@}
   private:
 
-    int m_jobPort;
+    int m_jobPort{0};
     bool m_jobPortHasBeenSet = false;
 
-    int m_applicationPort;
+    int m_applicationPort{0};
     bool m_applicationPortHasBeenSet = false;
 
-    bool m_enableOnPublicIp;
+    bool m_enableOnPublicIp{false};
     bool m_enableOnPublicIpHasBeenSet = false;
   };
 

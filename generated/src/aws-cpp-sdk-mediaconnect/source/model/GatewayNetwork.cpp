@@ -18,14 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-GatewayNetwork::GatewayNetwork() : 
-    m_cidrBlockHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 GatewayNetwork::GatewayNetwork(JsonView jsonValue)
-  : GatewayNetwork()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GatewayNetwork& GatewayNetwork::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cidrBlock"))
   {
     m_cidrBlock = jsonValue.GetString("cidrBlock");
-
     m_cidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

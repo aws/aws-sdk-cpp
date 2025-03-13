@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendChatIntegrationEventRequest::SendChatIntegrationEventRequest() : 
-    m_sourceIdHasBeenSet(false),
-    m_destinationIdHasBeenSet(false),
-    m_subtypeHasBeenSet(false),
-    m_eventHasBeenSet(false),
-    m_newSessionDetailsHasBeenSet(false)
-{
-}
-
 Aws::String SendChatIntegrationEventRequest::SerializePayload() const
 {
   JsonValue payload;

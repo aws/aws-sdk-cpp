@@ -20,16 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-AvailabilityZoneImpairmentPolicy::AvailabilityZoneImpairmentPolicy() : 
-    m_zonalShiftEnabled(false),
-    m_zonalShiftEnabledHasBeenSet(false),
-    m_impairedZoneHealthCheckBehavior(ImpairedZoneHealthCheckBehavior::NOT_SET),
-    m_impairedZoneHealthCheckBehaviorHasBeenSet(false)
-{
-}
-
 AvailabilityZoneImpairmentPolicy::AvailabilityZoneImpairmentPolicy(const XmlNode& xmlNode)
-  : AvailabilityZoneImpairmentPolicy()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ AvailabilityZoneImpairmentPolicy& AvailabilityZoneImpairmentPolicy::operator =(c
     {
       m_zonalShiftEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(zonalShiftEnabledNode.GetText()).c_str()).c_str());
       m_zonalShiftEnabledHasBeenSet = true;
+       m_zonalShiftEnabledHasBeenSet = true;
     }
     XmlNode impairedZoneHealthCheckBehaviorNode = resultNode.FirstChild("ImpairedZoneHealthCheckBehavior");
     if(!impairedZoneHealthCheckBehaviorNode.IsNull())
     {
-      m_impairedZoneHealthCheckBehavior = ImpairedZoneHealthCheckBehaviorMapper::GetImpairedZoneHealthCheckBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(impairedZoneHealthCheckBehaviorNode.GetText()).c_str()).c_str());
+      m_impairedZoneHealthCheckBehavior = ImpairedZoneHealthCheckBehaviorMapper::GetImpairedZoneHealthCheckBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(impairedZoneHealthCheckBehaviorNode.GetText()).c_str()));
       m_impairedZoneHealthCheckBehaviorHasBeenSet = true;
+       m_impairedZoneHealthCheckBehaviorHasBeenSet = true;
     }
   }
 

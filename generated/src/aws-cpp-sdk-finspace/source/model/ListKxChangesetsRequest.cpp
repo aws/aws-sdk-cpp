@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListKxChangesetsRequest::ListKxChangesetsRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListKxChangesetsRequest::SerializePayload() const
 {
   return {};

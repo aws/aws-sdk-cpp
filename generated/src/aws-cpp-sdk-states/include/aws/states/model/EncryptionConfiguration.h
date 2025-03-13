@@ -45,7 +45,7 @@ namespace Model
   class EncryptionConfiguration
   {
   public:
-    AWS_SFN_API EncryptionConfiguration();
+    AWS_SFN_API EncryptionConfiguration() = default;
     AWS_SFN_API EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,14 +57,12 @@ namespace Model
      * encrypt data. To specify a KMS key in a different Amazon Web Services account,
      * you must use the key ARN or alias ARN.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline EncryptionConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline EncryptionConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline EncryptionConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    EncryptionConfiguration& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +71,7 @@ namespace Model
      * expires, Step Functions will call <code>GenerateDataKey</code>. Only applies to
      * customer managed keys.</p>
      */
-    inline int GetKmsDataKeyReusePeriodSeconds() const{ return m_kmsDataKeyReusePeriodSeconds; }
+    inline int GetKmsDataKeyReusePeriodSeconds() const { return m_kmsDataKeyReusePeriodSeconds; }
     inline bool KmsDataKeyReusePeriodSecondsHasBeenSet() const { return m_kmsDataKeyReusePeriodSecondsHasBeenSet; }
     inline void SetKmsDataKeyReusePeriodSeconds(int value) { m_kmsDataKeyReusePeriodSecondsHasBeenSet = true; m_kmsDataKeyReusePeriodSeconds = value; }
     inline EncryptionConfiguration& WithKmsDataKeyReusePeriodSeconds(int value) { SetKmsDataKeyReusePeriodSeconds(value); return *this;}
@@ -83,22 +81,20 @@ namespace Model
     /**
      * <p>Encryption type</p>
      */
-    inline const EncryptionType& GetType() const{ return m_type; }
+    inline EncryptionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EncryptionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EncryptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline EncryptionConfiguration& WithType(const EncryptionType& value) { SetType(value); return *this;}
-    inline EncryptionConfiguration& WithType(EncryptionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EncryptionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EncryptionConfiguration& WithType(EncryptionType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    int m_kmsDataKeyReusePeriodSeconds;
+    int m_kmsDataKeyReusePeriodSeconds{0};
     bool m_kmsDataKeyReusePeriodSecondsHasBeenSet = false;
 
-    EncryptionType m_type;
+    EncryptionType m_type{EncryptionType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

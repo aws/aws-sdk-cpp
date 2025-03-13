@@ -33,7 +33,7 @@ namespace Model
   class ChartAxisLabelOptions
   {
   public:
-    AWS_QUICKSIGHT_API ChartAxisLabelOptions();
+    AWS_QUICKSIGHT_API ChartAxisLabelOptions() = default;
     AWS_QUICKSIGHT_API ChartAxisLabelOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ChartAxisLabelOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,45 +45,41 @@ namespace Model
      * options:</p> <ul> <li> <p> <code>VISIBLE</code>: Shows the axis.</p> </li> <li>
      * <p> <code>HIDDEN</code>: Hides the axis.</p> </li> </ul>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline ChartAxisLabelOptions& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline ChartAxisLabelOptions& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline ChartAxisLabelOptions& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visibility configuration of the sort icon on a chart's axis label.</p>
      */
-    inline const Visibility& GetSortIconVisibility() const{ return m_sortIconVisibility; }
+    inline Visibility GetSortIconVisibility() const { return m_sortIconVisibility; }
     inline bool SortIconVisibilityHasBeenSet() const { return m_sortIconVisibilityHasBeenSet; }
-    inline void SetSortIconVisibility(const Visibility& value) { m_sortIconVisibilityHasBeenSet = true; m_sortIconVisibility = value; }
-    inline void SetSortIconVisibility(Visibility&& value) { m_sortIconVisibilityHasBeenSet = true; m_sortIconVisibility = std::move(value); }
-    inline ChartAxisLabelOptions& WithSortIconVisibility(const Visibility& value) { SetSortIconVisibility(value); return *this;}
-    inline ChartAxisLabelOptions& WithSortIconVisibility(Visibility&& value) { SetSortIconVisibility(std::move(value)); return *this;}
+    inline void SetSortIconVisibility(Visibility value) { m_sortIconVisibilityHasBeenSet = true; m_sortIconVisibility = value; }
+    inline ChartAxisLabelOptions& WithSortIconVisibility(Visibility value) { SetSortIconVisibility(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The label options for a chart axis.</p>
      */
-    inline const Aws::Vector<AxisLabelOptions>& GetAxisLabelOptions() const{ return m_axisLabelOptions; }
+    inline const Aws::Vector<AxisLabelOptions>& GetAxisLabelOptions() const { return m_axisLabelOptions; }
     inline bool AxisLabelOptionsHasBeenSet() const { return m_axisLabelOptionsHasBeenSet; }
-    inline void SetAxisLabelOptions(const Aws::Vector<AxisLabelOptions>& value) { m_axisLabelOptionsHasBeenSet = true; m_axisLabelOptions = value; }
-    inline void SetAxisLabelOptions(Aws::Vector<AxisLabelOptions>&& value) { m_axisLabelOptionsHasBeenSet = true; m_axisLabelOptions = std::move(value); }
-    inline ChartAxisLabelOptions& WithAxisLabelOptions(const Aws::Vector<AxisLabelOptions>& value) { SetAxisLabelOptions(value); return *this;}
-    inline ChartAxisLabelOptions& WithAxisLabelOptions(Aws::Vector<AxisLabelOptions>&& value) { SetAxisLabelOptions(std::move(value)); return *this;}
-    inline ChartAxisLabelOptions& AddAxisLabelOptions(const AxisLabelOptions& value) { m_axisLabelOptionsHasBeenSet = true; m_axisLabelOptions.push_back(value); return *this; }
-    inline ChartAxisLabelOptions& AddAxisLabelOptions(AxisLabelOptions&& value) { m_axisLabelOptionsHasBeenSet = true; m_axisLabelOptions.push_back(std::move(value)); return *this; }
+    template<typename AxisLabelOptionsT = Aws::Vector<AxisLabelOptions>>
+    void SetAxisLabelOptions(AxisLabelOptionsT&& value) { m_axisLabelOptionsHasBeenSet = true; m_axisLabelOptions = std::forward<AxisLabelOptionsT>(value); }
+    template<typename AxisLabelOptionsT = Aws::Vector<AxisLabelOptions>>
+    ChartAxisLabelOptions& WithAxisLabelOptions(AxisLabelOptionsT&& value) { SetAxisLabelOptions(std::forward<AxisLabelOptionsT>(value)); return *this;}
+    template<typename AxisLabelOptionsT = AxisLabelOptions>
+    ChartAxisLabelOptions& AddAxisLabelOptions(AxisLabelOptionsT&& value) { m_axisLabelOptionsHasBeenSet = true; m_axisLabelOptions.emplace_back(std::forward<AxisLabelOptionsT>(value)); return *this; }
     ///@}
   private:
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
 
-    Visibility m_sortIconVisibility;
+    Visibility m_sortIconVisibility{Visibility::NOT_SET};
     bool m_sortIconVisibilityHasBeenSet = false;
 
     Aws::Vector<AxisLabelOptions> m_axisLabelOptions;

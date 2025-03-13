@@ -18,14 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-ColumnSelector::ColumnSelector() : 
-    m_regexHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ColumnSelector::ColumnSelector(JsonView jsonValue)
-  : ColumnSelector()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ColumnSelector& ColumnSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Regex"))
   {
     m_regex = jsonValue.GetString("Regex");
-
     m_regexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

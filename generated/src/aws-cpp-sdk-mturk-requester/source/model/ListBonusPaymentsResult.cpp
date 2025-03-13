@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBonusPaymentsResult::ListBonusPaymentsResult() : 
-    m_numResults(0)
-{
-}
-
 ListBonusPaymentsResult::ListBonusPaymentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListBonusPaymentsResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ListBonusPaymentsResult& ListBonusPaymentsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("NumResults"))
   {
     m_numResults = jsonValue.GetInteger("NumResults");
-
+    m_numResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BonusPayments"))
   {
     Aws::Utils::Array<JsonView> bonusPaymentsJsonList = jsonValue.GetArray("BonusPayments");
@@ -50,14 +42,15 @@ ListBonusPaymentsResult& ListBonusPaymentsResult::operator =(const Aws::AmazonWe
     {
       m_bonusPayments.push_back(bonusPaymentsJsonList[bonusPaymentsIndex].AsObject());
     }
+    m_bonusPaymentsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

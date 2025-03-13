@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCoreDefinitionVersionsRequest::ListCoreDefinitionVersionsRequest() : 
-    m_coreDefinitionIdHasBeenSet(false),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListCoreDefinitionVersionsRequest::SerializePayload() const
 {
   return {};

@@ -28,7 +28,7 @@ namespace Model
   class StartBackupJobResult
   {
   public:
-    AWS_BACKUP_API StartBackupJobResult();
+    AWS_BACKUP_API StartBackupJobResult() = default;
     AWS_BACKUP_API StartBackupJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API StartBackupJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
-    inline const Aws::String& GetBackupJobId() const{ return m_backupJobId; }
-    inline void SetBackupJobId(const Aws::String& value) { m_backupJobId = value; }
-    inline void SetBackupJobId(Aws::String&& value) { m_backupJobId = std::move(value); }
-    inline void SetBackupJobId(const char* value) { m_backupJobId.assign(value); }
-    inline StartBackupJobResult& WithBackupJobId(const Aws::String& value) { SetBackupJobId(value); return *this;}
-    inline StartBackupJobResult& WithBackupJobId(Aws::String&& value) { SetBackupJobId(std::move(value)); return *this;}
-    inline StartBackupJobResult& WithBackupJobId(const char* value) { SetBackupJobId(value); return *this;}
+    inline const Aws::String& GetBackupJobId() const { return m_backupJobId; }
+    template<typename BackupJobIdT = Aws::String>
+    void SetBackupJobId(BackupJobIdT&& value) { m_backupJobIdHasBeenSet = true; m_backupJobId = std::forward<BackupJobIdT>(value); }
+    template<typename BackupJobIdT = Aws::String>
+    StartBackupJobResult& WithBackupJobId(BackupJobIdT&& value) { SetBackupJobId(std::forward<BackupJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,13 +51,11 @@ namespace Model
      * example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
-    inline const Aws::String& GetRecoveryPointArn() const{ return m_recoveryPointArn; }
-    inline void SetRecoveryPointArn(const Aws::String& value) { m_recoveryPointArn = value; }
-    inline void SetRecoveryPointArn(Aws::String&& value) { m_recoveryPointArn = std::move(value); }
-    inline void SetRecoveryPointArn(const char* value) { m_recoveryPointArn.assign(value); }
-    inline StartBackupJobResult& WithRecoveryPointArn(const Aws::String& value) { SetRecoveryPointArn(value); return *this;}
-    inline StartBackupJobResult& WithRecoveryPointArn(Aws::String&& value) { SetRecoveryPointArn(std::move(value)); return *this;}
-    inline StartBackupJobResult& WithRecoveryPointArn(const char* value) { SetRecoveryPointArn(value); return *this;}
+    inline const Aws::String& GetRecoveryPointArn() const { return m_recoveryPointArn; }
+    template<typename RecoveryPointArnT = Aws::String>
+    void SetRecoveryPointArn(RecoveryPointArnT&& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = std::forward<RecoveryPointArnT>(value); }
+    template<typename RecoveryPointArnT = Aws::String>
+    StartBackupJobResult& WithRecoveryPointArn(RecoveryPointArnT&& value) { SetRecoveryPointArn(std::forward<RecoveryPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,11 +65,11 @@ namespace Model
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
-    inline StartBackupJobResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline StartBackupJobResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    StartBackupJobResult& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,32 +77,35 @@ namespace Model
      * <p>This is a returned boolean value indicating this is a parent (composite)
      * backup job.</p>
      */
-    inline bool GetIsParent() const{ return m_isParent; }
-    inline void SetIsParent(bool value) { m_isParent = value; }
+    inline bool GetIsParent() const { return m_isParent; }
+    inline void SetIsParent(bool value) { m_isParentHasBeenSet = true; m_isParent = value; }
     inline StartBackupJobResult& WithIsParent(bool value) { SetIsParent(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartBackupJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartBackupJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartBackupJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartBackupJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_backupJobId;
+    bool m_backupJobIdHasBeenSet = false;
 
     Aws::String m_recoveryPointArn;
+    bool m_recoveryPointArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
+    bool m_creationDateHasBeenSet = false;
 
-    bool m_isParent;
+    bool m_isParent{false};
+    bool m_isParentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

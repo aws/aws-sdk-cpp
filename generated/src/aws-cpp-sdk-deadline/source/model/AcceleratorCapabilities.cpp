@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-AcceleratorCapabilities::AcceleratorCapabilities() : 
-    m_selectionsHasBeenSet(false),
-    m_countHasBeenSet(false)
-{
-}
-
 AcceleratorCapabilities::AcceleratorCapabilities(JsonView jsonValue)
-  : AcceleratorCapabilities()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ AcceleratorCapabilities& AcceleratorCapabilities::operator =(JsonView jsonValue)
     }
     m_selectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetObject("count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

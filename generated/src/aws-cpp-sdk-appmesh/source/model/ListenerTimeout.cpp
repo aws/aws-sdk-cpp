@@ -18,16 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-ListenerTimeout::ListenerTimeout() : 
-    m_grpcHasBeenSet(false),
-    m_httpHasBeenSet(false),
-    m_http2HasBeenSet(false),
-    m_tcpHasBeenSet(false)
-{
-}
-
 ListenerTimeout::ListenerTimeout(JsonView jsonValue)
-  : ListenerTimeout()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ListenerTimeout& ListenerTimeout::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("grpc"))
   {
     m_grpc = jsonValue.GetObject("grpc");
-
     m_grpcHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("http"))
   {
     m_http = jsonValue.GetObject("http");
-
     m_httpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("http2"))
   {
     m_http2 = jsonValue.GetObject("http2");
-
     m_http2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tcp"))
   {
     m_tcp = jsonValue.GetObject("tcp");
-
     m_tcpHasBeenSet = true;
   }
-
   return *this;
 }
 

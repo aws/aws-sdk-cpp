@@ -12,18 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEventTriggerRequest::CreateEventTriggerRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_eventTriggerNameHasBeenSet(false),
-    m_objectTypeNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventTriggerConditionsHasBeenSet(false),
-    m_segmentFilterHasBeenSet(false),
-    m_eventTriggerLimitsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEventTriggerRequest::SerializePayload() const
 {
   JsonValue payload;

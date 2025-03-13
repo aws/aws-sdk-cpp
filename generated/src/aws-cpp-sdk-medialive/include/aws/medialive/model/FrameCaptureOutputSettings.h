@@ -31,7 +31,7 @@ namespace Model
   class FrameCaptureOutputSettings
   {
   public:
-    AWS_MEDIALIVE_API FrameCaptureOutputSettings();
+    AWS_MEDIALIVE_API FrameCaptureOutputSettings() = default;
     AWS_MEDIALIVE_API FrameCaptureOutputSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API FrameCaptureOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * Required if the output group contains more than one output. This modifier forms
      * part of the output file name.
      */
-    inline const Aws::String& GetNameModifier() const{ return m_nameModifier; }
+    inline const Aws::String& GetNameModifier() const { return m_nameModifier; }
     inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
-    inline void SetNameModifier(const Aws::String& value) { m_nameModifierHasBeenSet = true; m_nameModifier = value; }
-    inline void SetNameModifier(Aws::String&& value) { m_nameModifierHasBeenSet = true; m_nameModifier = std::move(value); }
-    inline void SetNameModifier(const char* value) { m_nameModifierHasBeenSet = true; m_nameModifier.assign(value); }
-    inline FrameCaptureOutputSettings& WithNameModifier(const Aws::String& value) { SetNameModifier(value); return *this;}
-    inline FrameCaptureOutputSettings& WithNameModifier(Aws::String&& value) { SetNameModifier(std::move(value)); return *this;}
-    inline FrameCaptureOutputSettings& WithNameModifier(const char* value) { SetNameModifier(value); return *this;}
+    template<typename NameModifierT = Aws::String>
+    void SetNameModifier(NameModifierT&& value) { m_nameModifierHasBeenSet = true; m_nameModifier = std::forward<NameModifierT>(value); }
+    template<typename NameModifierT = Aws::String>
+    FrameCaptureOutputSettings& WithNameModifier(NameModifierT&& value) { SetNameModifier(std::forward<NameModifierT>(value)); return *this;}
     ///@}
   private:
 

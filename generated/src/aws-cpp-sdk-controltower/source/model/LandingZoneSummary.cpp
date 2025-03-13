@@ -18,13 +18,7 @@ namespace ControlTower
 namespace Model
 {
 
-LandingZoneSummary::LandingZoneSummary() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 LandingZoneSummary::LandingZoneSummary(JsonView jsonValue)
-  : LandingZoneSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LandingZoneSummary& LandingZoneSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

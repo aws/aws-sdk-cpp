@@ -18,15 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-StatelessRule::StatelessRule() : 
-    m_ruleDefinitionHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
-{
-}
-
 StatelessRule::StatelessRule(JsonView jsonValue)
-  : StatelessRule()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StatelessRule& StatelessRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleDefinition"))
   {
     m_ruleDefinition = jsonValue.GetObject("RuleDefinition");
-
     m_ruleDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   return *this;
 }
 

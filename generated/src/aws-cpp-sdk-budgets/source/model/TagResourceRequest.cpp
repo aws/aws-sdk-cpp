@@ -12,12 +12,6 @@ using namespace Aws::Budgets::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TagResourceRequest::TagResourceRequest() : 
-    m_resourceARNHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
-{
-}
-
 Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamDiscoveredAccount::IpamDiscoveredAccount() : 
-    m_accountIdHasBeenSet(false),
-    m_discoveryRegionHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_lastAttemptedDiscoveryTimeHasBeenSet(false),
-    m_lastSuccessfulDiscoveryTimeHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false)
-{
-}
-
 IpamDiscoveredAccount::IpamDiscoveredAccount(const XmlNode& xmlNode)
-  : IpamDiscoveredAccount()
 {
   *this = xmlNode;
 }
@@ -47,36 +36,42 @@ IpamDiscoveredAccount& IpamDiscoveredAccount::operator =(const XmlNode& xmlNode)
     {
       m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
+       m_accountIdHasBeenSet = true;
     }
     XmlNode discoveryRegionNode = resultNode.FirstChild("discoveryRegion");
     if(!discoveryRegionNode.IsNull())
     {
       m_discoveryRegion = Aws::Utils::Xml::DecodeEscapedXmlText(discoveryRegionNode.GetText());
       m_discoveryRegionHasBeenSet = true;
+       m_discoveryRegionHasBeenSet = true;
     }
     XmlNode failureReasonNode = resultNode.FirstChild("failureReason");
     if(!failureReasonNode.IsNull())
     {
       m_failureReason = failureReasonNode;
       m_failureReasonHasBeenSet = true;
+       m_failureReasonHasBeenSet = true;
     }
     XmlNode lastAttemptedDiscoveryTimeNode = resultNode.FirstChild("lastAttemptedDiscoveryTime");
     if(!lastAttemptedDiscoveryTimeNode.IsNull())
     {
       m_lastAttemptedDiscoveryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAttemptedDiscoveryTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastAttemptedDiscoveryTimeHasBeenSet = true;
+       m_lastAttemptedDiscoveryTimeHasBeenSet = true;
     }
     XmlNode lastSuccessfulDiscoveryTimeNode = resultNode.FirstChild("lastSuccessfulDiscoveryTime");
     if(!lastSuccessfulDiscoveryTimeNode.IsNull())
     {
       m_lastSuccessfulDiscoveryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastSuccessfulDiscoveryTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastSuccessfulDiscoveryTimeHasBeenSet = true;
+       m_lastSuccessfulDiscoveryTimeHasBeenSet = true;
     }
     XmlNode organizationalUnitIdNode = resultNode.FirstChild("organizationalUnitId");
     if(!organizationalUnitIdNode.IsNull())
     {
       m_organizationalUnitId = Aws::Utils::Xml::DecodeEscapedXmlText(organizationalUnitIdNode.GetText());
       m_organizationalUnitIdHasBeenSet = true;
+       m_organizationalUnitIdHasBeenSet = true;
     }
   }
 

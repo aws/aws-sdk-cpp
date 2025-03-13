@@ -18,13 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-HttpNamespaceChange::HttpNamespaceChange() : 
-    m_descriptionHasBeenSet(false)
-{
-}
-
 HttpNamespaceChange::HttpNamespaceChange(JsonView jsonValue)
-  : HttpNamespaceChange()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HttpNamespaceChange& HttpNamespaceChange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

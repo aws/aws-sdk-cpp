@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ActionReviewPayloadFieldAllowedValue::ActionReviewPayloadFieldAllowedValue() : 
-    m_valueHasBeenSet(false),
-    m_displayValueHasBeenSet(false)
-{
-}
-
 ActionReviewPayloadFieldAllowedValue::ActionReviewPayloadFieldAllowedValue(JsonView jsonValue)
-  : ActionReviewPayloadFieldAllowedValue()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ActionReviewPayloadFieldAllowedValue& ActionReviewPayloadFieldAllowedValue::oper
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayValue"))
   {
     m_displayValue = jsonValue.GetObject("displayValue");
-
     m_displayValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class ConverseStreamMetadataEvent
   {
   public:
-    AWS_BEDROCKRUNTIME_API ConverseStreamMetadataEvent();
+    AWS_BEDROCKRUNTIME_API ConverseStreamMetadataEvent() = default;
     AWS_BEDROCKRUNTIME_API ConverseStreamMetadataEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ConverseStreamMetadataEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>Usage information for the conversation stream event.</p>
      */
-    inline const TokenUsage& GetUsage() const{ return m_usage; }
+    inline const TokenUsage& GetUsage() const { return m_usage; }
     inline bool UsageHasBeenSet() const { return m_usageHasBeenSet; }
-    inline void SetUsage(const TokenUsage& value) { m_usageHasBeenSet = true; m_usage = value; }
-    inline void SetUsage(TokenUsage&& value) { m_usageHasBeenSet = true; m_usage = std::move(value); }
-    inline ConverseStreamMetadataEvent& WithUsage(const TokenUsage& value) { SetUsage(value); return *this;}
-    inline ConverseStreamMetadataEvent& WithUsage(TokenUsage&& value) { SetUsage(std::move(value)); return *this;}
+    template<typename UsageT = TokenUsage>
+    void SetUsage(UsageT&& value) { m_usageHasBeenSet = true; m_usage = std::forward<UsageT>(value); }
+    template<typename UsageT = TokenUsage>
+    ConverseStreamMetadataEvent& WithUsage(UsageT&& value) { SetUsage(std::forward<UsageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metrics for the conversation stream metadata event.</p>
      */
-    inline const ConverseStreamMetrics& GetMetrics() const{ return m_metrics; }
+    inline const ConverseStreamMetrics& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const ConverseStreamMetrics& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(ConverseStreamMetrics&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline ConverseStreamMetadataEvent& WithMetrics(const ConverseStreamMetrics& value) { SetMetrics(value); return *this;}
-    inline ConverseStreamMetadataEvent& WithMetrics(ConverseStreamMetrics&& value) { SetMetrics(std::move(value)); return *this;}
+    template<typename MetricsT = ConverseStreamMetrics>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = ConverseStreamMetrics>
+    ConverseStreamMetadataEvent& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +70,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
      * that contains information about the guardrail behavior.</p>
      */
-    inline const ConverseStreamTrace& GetTrace() const{ return m_trace; }
+    inline const ConverseStreamTrace& GetTrace() const { return m_trace; }
     inline bool TraceHasBeenSet() const { return m_traceHasBeenSet; }
-    inline void SetTrace(const ConverseStreamTrace& value) { m_traceHasBeenSet = true; m_trace = value; }
-    inline void SetTrace(ConverseStreamTrace&& value) { m_traceHasBeenSet = true; m_trace = std::move(value); }
-    inline ConverseStreamMetadataEvent& WithTrace(const ConverseStreamTrace& value) { SetTrace(value); return *this;}
-    inline ConverseStreamMetadataEvent& WithTrace(ConverseStreamTrace&& value) { SetTrace(std::move(value)); return *this;}
+    template<typename TraceT = ConverseStreamTrace>
+    void SetTrace(TraceT&& value) { m_traceHasBeenSet = true; m_trace = std::forward<TraceT>(value); }
+    template<typename TraceT = ConverseStreamTrace>
+    ConverseStreamMetadataEvent& WithTrace(TraceT&& value) { SetTrace(std::forward<TraceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +83,12 @@ namespace Model
      * <p>Model performance configuration metadata for the conversation stream
      * event.</p>
      */
-    inline const PerformanceConfiguration& GetPerformanceConfig() const{ return m_performanceConfig; }
+    inline const PerformanceConfiguration& GetPerformanceConfig() const { return m_performanceConfig; }
     inline bool PerformanceConfigHasBeenSet() const { return m_performanceConfigHasBeenSet; }
-    inline void SetPerformanceConfig(const PerformanceConfiguration& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = value; }
-    inline void SetPerformanceConfig(PerformanceConfiguration&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::move(value); }
-    inline ConverseStreamMetadataEvent& WithPerformanceConfig(const PerformanceConfiguration& value) { SetPerformanceConfig(value); return *this;}
-    inline ConverseStreamMetadataEvent& WithPerformanceConfig(PerformanceConfiguration&& value) { SetPerformanceConfig(std::move(value)); return *this;}
+    template<typename PerformanceConfigT = PerformanceConfiguration>
+    void SetPerformanceConfig(PerformanceConfigT&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::forward<PerformanceConfigT>(value); }
+    template<typename PerformanceConfigT = PerformanceConfiguration>
+    ConverseStreamMetadataEvent& WithPerformanceConfig(PerformanceConfigT&& value) { SetPerformanceConfig(std::forward<PerformanceConfigT>(value)); return *this;}
     ///@}
   private:
 

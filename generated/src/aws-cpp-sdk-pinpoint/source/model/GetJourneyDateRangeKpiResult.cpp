@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetJourneyDateRangeKpiResult::GetJourneyDateRangeKpiResult()
-{
-}
-
 GetJourneyDateRangeKpiResult::GetJourneyDateRangeKpiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ GetJourneyDateRangeKpiResult& GetJourneyDateRangeKpiResult::operator =(const Aws
 {
   JsonView jsonValue = result.GetPayload().View();
   m_journeyDateRangeKpiResponse = jsonValue;
+  m_journeyDateRangeKpiResponseHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

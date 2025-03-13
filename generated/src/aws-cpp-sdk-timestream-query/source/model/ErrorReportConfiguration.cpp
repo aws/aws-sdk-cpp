@@ -18,13 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-ErrorReportConfiguration::ErrorReportConfiguration() : 
-    m_s3ConfigurationHasBeenSet(false)
-{
-}
-
 ErrorReportConfiguration::ErrorReportConfiguration(JsonView jsonValue)
-  : ErrorReportConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ErrorReportConfiguration& ErrorReportConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("S3Configuration"))
   {
     m_s3Configuration = jsonValue.GetObject("S3Configuration");
-
     m_s3ConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

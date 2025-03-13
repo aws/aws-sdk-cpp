@@ -32,7 +32,7 @@ namespace Model
   class ContributionAnalysisFactor
   {
   public:
-    AWS_QUICKSIGHT_API ContributionAnalysisFactor();
+    AWS_QUICKSIGHT_API ContributionAnalysisFactor() = default;
     AWS_QUICKSIGHT_API ContributionAnalysisFactor(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ContributionAnalysisFactor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The field name of the <code>ContributionAnalysisFactor</code>.</p>
      */
-    inline const Aws::String& GetFieldName() const{ return m_fieldName; }
+    inline const Aws::String& GetFieldName() const { return m_fieldName; }
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-    inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-    inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-    inline ContributionAnalysisFactor& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-    inline ContributionAnalysisFactor& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-    inline ContributionAnalysisFactor& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    template<typename FieldNameT = Aws::String>
+    void SetFieldName(FieldNameT&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::forward<FieldNameT>(value); }
+    template<typename FieldNameT = Aws::String>
+    ContributionAnalysisFactor& WithFieldName(FieldNameT&& value) { SetFieldName(std::forward<FieldNameT>(value)); return *this;}
     ///@}
   private:
 

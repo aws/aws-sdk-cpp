@@ -18,14 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-OpenSearchDataSource::OpenSearchDataSource() : 
-    m_dataSourceNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 OpenSearchDataSource::OpenSearchDataSource(JsonView jsonValue)
-  : OpenSearchDataSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OpenSearchDataSource& OpenSearchDataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataSourceName"))
   {
     m_dataSourceName = jsonValue.GetString("dataSourceName");
-
     m_dataSourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

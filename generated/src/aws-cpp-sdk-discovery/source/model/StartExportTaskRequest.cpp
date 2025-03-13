@@ -12,15 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartExportTaskRequest::StartExportTaskRequest() : 
-    m_exportDataFormatHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_preferencesHasBeenSet(false)
-{
-}
-
 Aws::String StartExportTaskRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,16 +12,6 @@ using namespace Aws::PCS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateQueueRequest::CreateQueueRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_queueNameHasBeenSet(false),
-    m_computeNodeGroupConfigurationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateQueueRequest::SerializePayload() const
 {
   JsonValue payload;

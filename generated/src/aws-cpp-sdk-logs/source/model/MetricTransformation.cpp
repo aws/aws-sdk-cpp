@@ -18,20 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-MetricTransformation::MetricTransformation() : 
-    m_metricNameHasBeenSet(false),
-    m_metricNamespaceHasBeenSet(false),
-    m_metricValueHasBeenSet(false),
-    m_defaultValue(0.0),
-    m_defaultValueHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 MetricTransformation::MetricTransformation(JsonView jsonValue)
-  : MetricTransformation()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ MetricTransformation& MetricTransformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("metricName"))
   {
     m_metricName = jsonValue.GetString("metricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricNamespace"))
   {
     m_metricNamespace = jsonValue.GetString("metricNamespace");
-
     m_metricNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricValue"))
   {
     m_metricValue = jsonValue.GetString("metricValue");
-
     m_metricValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetDouble("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dimensions"))
   {
     Aws::Map<Aws::String, JsonView> dimensionsJsonMap = jsonValue.GetObject("dimensions").GetAllObjects();
@@ -75,14 +54,11 @@ MetricTransformation& MetricTransformation::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = StandardUnitMapper::GetStandardUnitForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

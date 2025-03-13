@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyInstanceEventStartTimeResponse::ModifyInstanceEventStartTimeResponse()
-{
-}
-
 ModifyInstanceEventStartTimeResponse::ModifyInstanceEventStartTimeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ModifyInstanceEventStartTimeResponse& ModifyInstanceEventStartTimeResponse::oper
     if(!eventNode.IsNull())
     {
       m_event = eventNode;
+      m_eventHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ ModifyInstanceEventStartTimeResponse& ModifyInstanceEventStartTimeResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyInstanceEventStartTimeResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

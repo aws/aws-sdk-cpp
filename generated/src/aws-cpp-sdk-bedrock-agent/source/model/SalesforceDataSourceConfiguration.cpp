@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-SalesforceDataSourceConfiguration::SalesforceDataSourceConfiguration() : 
-    m_crawlerConfigurationHasBeenSet(false),
-    m_sourceConfigurationHasBeenSet(false)
-{
-}
-
 SalesforceDataSourceConfiguration::SalesforceDataSourceConfiguration(JsonView jsonValue)
-  : SalesforceDataSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SalesforceDataSourceConfiguration& SalesforceDataSourceConfiguration::operator =
   if(jsonValue.ValueExists("crawlerConfiguration"))
   {
     m_crawlerConfiguration = jsonValue.GetObject("crawlerConfiguration");
-
     m_crawlerConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceConfiguration"))
   {
     m_sourceConfiguration = jsonValue.GetObject("sourceConfiguration");
-
     m_sourceConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

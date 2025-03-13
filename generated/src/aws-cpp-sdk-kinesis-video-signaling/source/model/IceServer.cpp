@@ -18,17 +18,7 @@ namespace KinesisVideoSignalingChannels
 namespace Model
 {
 
-IceServer::IceServer() : 
-    m_urisHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_ttl(0),
-    m_ttlHasBeenSet(false)
-{
-}
-
 IceServer::IceServer(JsonView jsonValue)
-  : IceServer()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ IceServer& IceServer::operator =(JsonView jsonValue)
     }
     m_urisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ttl"))
   {
     m_ttl = jsonValue.GetInteger("Ttl");
-
     m_ttlHasBeenSet = true;
   }
-
   return *this;
 }
 

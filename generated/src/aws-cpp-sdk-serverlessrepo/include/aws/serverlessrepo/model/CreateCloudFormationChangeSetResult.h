@@ -27,7 +27,7 @@ namespace Model
   class CreateCloudFormationChangeSetResult
   {
   public:
-    AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateCloudFormationChangeSetResult();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateCloudFormationChangeSetResult() = default;
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateCloudFormationChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateCloudFormationChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The application Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
-    inline CreateCloudFormationChangeSetResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline CreateCloudFormationChangeSetResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline CreateCloudFormationChangeSetResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    CreateCloudFormationChangeSetResult& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,13 +48,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
      * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
-    inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
-    inline void SetChangeSetId(const Aws::String& value) { m_changeSetId = value; }
-    inline void SetChangeSetId(Aws::String&& value) { m_changeSetId = std::move(value); }
-    inline void SetChangeSetId(const char* value) { m_changeSetId.assign(value); }
-    inline CreateCloudFormationChangeSetResult& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
-    inline CreateCloudFormationChangeSetResult& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
-    inline CreateCloudFormationChangeSetResult& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
+    inline const Aws::String& GetChangeSetId() const { return m_changeSetId; }
+    template<typename ChangeSetIdT = Aws::String>
+    void SetChangeSetId(ChangeSetIdT&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = std::forward<ChangeSetIdT>(value); }
+    template<typename ChangeSetIdT = Aws::String>
+    CreateCloudFormationChangeSetResult& WithChangeSetId(ChangeSetIdT&& value) { SetChangeSetId(std::forward<ChangeSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,49 +62,48 @@ namespace Model
      * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
-    inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
-    inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersion = value; }
-    inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersion = std::move(value); }
-    inline void SetSemanticVersion(const char* value) { m_semanticVersion.assign(value); }
-    inline CreateCloudFormationChangeSetResult& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
-    inline CreateCloudFormationChangeSetResult& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
-    inline CreateCloudFormationChangeSetResult& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
+    inline const Aws::String& GetSemanticVersion() const { return m_semanticVersion; }
+    template<typename SemanticVersionT = Aws::String>
+    void SetSemanticVersion(SemanticVersionT&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::forward<SemanticVersionT>(value); }
+    template<typename SemanticVersionT = Aws::String>
+    CreateCloudFormationChangeSetResult& WithSemanticVersion(SemanticVersionT&& value) { SetSemanticVersion(std::forward<SemanticVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the stack.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
-    inline void SetStackId(const Aws::String& value) { m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackId.assign(value); }
-    inline CreateCloudFormationChangeSetResult& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline CreateCloudFormationChangeSetResult& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline CreateCloudFormationChangeSetResult& WithStackId(const char* value) { SetStackId(value); return *this;}
+    inline const Aws::String& GetStackId() const { return m_stackId; }
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    CreateCloudFormationChangeSetResult& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCloudFormationChangeSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCloudFormationChangeSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCloudFormationChangeSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCloudFormationChangeSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationId;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_changeSetId;
+    bool m_changeSetIdHasBeenSet = false;
 
     Aws::String m_semanticVersion;
+    bool m_semanticVersionHasBeenSet = false;
 
     Aws::String m_stackId;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

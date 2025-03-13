@@ -18,18 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Ec2NetworkInterface::Ec2NetworkInterface() : 
-    m_ipv6AddressesHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_subNetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 Ec2NetworkInterface::Ec2NetworkInterface(JsonView jsonValue)
-  : Ec2NetworkInterface()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ Ec2NetworkInterface& Ec2NetworkInterface::operator =(JsonView jsonValue)
     }
     m_ipv6AddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateIpAddresses"))
   {
     Aws::Utils::Array<JsonView> privateIpAddressesJsonList = jsonValue.GetArray("privateIpAddresses");
@@ -55,14 +43,11 @@ Ec2NetworkInterface& Ec2NetworkInterface::operator =(JsonView jsonValue)
     }
     m_privateIpAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicIp"))
   {
     m_publicIp = jsonValue.GetString("publicIp");
-
     m_publicIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
@@ -72,21 +57,16 @@ Ec2NetworkInterface& Ec2NetworkInterface::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subNetId"))
   {
     m_subNetId = jsonValue.GetString("subNetId");
-
     m_subNetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

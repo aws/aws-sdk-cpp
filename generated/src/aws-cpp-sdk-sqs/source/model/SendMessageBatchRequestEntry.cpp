@@ -18,20 +18,7 @@ namespace SQS
 namespace Model
 {
 
-SendMessageBatchRequestEntry::SendMessageBatchRequestEntry() : 
-    m_idHasBeenSet(false),
-    m_messageBodyHasBeenSet(false),
-    m_delaySeconds(0),
-    m_delaySecondsHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false),
-    m_messageSystemAttributesHasBeenSet(false),
-    m_messageDeduplicationIdHasBeenSet(false),
-    m_messageGroupIdHasBeenSet(false)
-{
-}
-
 SendMessageBatchRequestEntry::SendMessageBatchRequestEntry(JsonView jsonValue)
-  : SendMessageBatchRequestEntry()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(JsonView 
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageBody"))
   {
     m_messageBody = jsonValue.GetString("MessageBody");
-
     m_messageBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DelaySeconds"))
   {
     m_delaySeconds = jsonValue.GetInteger("DelaySeconds");
-
     m_delaySecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageAttributes"))
   {
     Aws::Map<Aws::String, JsonView> messageAttributesJsonMap = jsonValue.GetObject("MessageAttributes").GetAllObjects();
@@ -68,7 +49,6 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(JsonView 
     }
     m_messageAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageSystemAttributes"))
   {
     Aws::Map<Aws::String, JsonView> messageSystemAttributesJsonMap = jsonValue.GetObject("MessageSystemAttributes").GetAllObjects();
@@ -78,21 +58,16 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(JsonView 
     }
     m_messageSystemAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageDeduplicationId"))
   {
     m_messageDeduplicationId = jsonValue.GetString("MessageDeduplicationId");
-
     m_messageDeduplicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageGroupId"))
   {
     m_messageGroupId = jsonValue.GetString("MessageGroupId");
-
     m_messageGroupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

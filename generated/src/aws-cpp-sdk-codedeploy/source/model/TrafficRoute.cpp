@@ -18,13 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-TrafficRoute::TrafficRoute() : 
-    m_listenerArnsHasBeenSet(false)
-{
-}
-
 TrafficRoute::TrafficRoute(JsonView jsonValue)
-  : TrafficRoute()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TrafficRoute& TrafficRoute::operator =(JsonView jsonValue)
     }
     m_listenerArnsHasBeenSet = true;
   }
-
   return *this;
 }
 

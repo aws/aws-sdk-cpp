@@ -29,7 +29,7 @@ namespace Model
   class ListMobileDeviceAccessRulesResult
   {
   public:
-    AWS_WORKMAIL_API ListMobileDeviceAccessRulesResult();
+    AWS_WORKMAIL_API ListMobileDeviceAccessRulesResult() = default;
     AWS_WORKMAIL_API ListMobileDeviceAccessRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKMAIL_API ListMobileDeviceAccessRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>The list of mobile device access rules that exist under the specified
      * WorkMail organization.</p>
      */
-    inline const Aws::Vector<MobileDeviceAccessRule>& GetRules() const{ return m_rules; }
-    inline void SetRules(const Aws::Vector<MobileDeviceAccessRule>& value) { m_rules = value; }
-    inline void SetRules(Aws::Vector<MobileDeviceAccessRule>&& value) { m_rules = std::move(value); }
-    inline ListMobileDeviceAccessRulesResult& WithRules(const Aws::Vector<MobileDeviceAccessRule>& value) { SetRules(value); return *this;}
-    inline ListMobileDeviceAccessRulesResult& WithRules(Aws::Vector<MobileDeviceAccessRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline ListMobileDeviceAccessRulesResult& AddRules(const MobileDeviceAccessRule& value) { m_rules.push_back(value); return *this; }
-    inline ListMobileDeviceAccessRulesResult& AddRules(MobileDeviceAccessRule&& value) { m_rules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MobileDeviceAccessRule>& GetRules() const { return m_rules; }
+    template<typename RulesT = Aws::Vector<MobileDeviceAccessRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<MobileDeviceAccessRule>>
+    ListMobileDeviceAccessRulesResult& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = MobileDeviceAccessRule>
+    ListMobileDeviceAccessRulesResult& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMobileDeviceAccessRulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMobileDeviceAccessRulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMobileDeviceAccessRulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMobileDeviceAccessRulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MobileDeviceAccessRule> m_rules;
+    bool m_rulesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

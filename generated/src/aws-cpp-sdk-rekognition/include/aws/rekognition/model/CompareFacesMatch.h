@@ -35,7 +35,7 @@ namespace Model
   class CompareFacesMatch
   {
   public:
-    AWS_REKOGNITION_API CompareFacesMatch();
+    AWS_REKOGNITION_API CompareFacesMatch() = default;
     AWS_REKOGNITION_API CompareFacesMatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API CompareFacesMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>Level of confidence that the faces match.</p>
      */
-    inline double GetSimilarity() const{ return m_similarity; }
+    inline double GetSimilarity() const { return m_similarity; }
     inline bool SimilarityHasBeenSet() const { return m_similarityHasBeenSet; }
     inline void SetSimilarity(double value) { m_similarityHasBeenSet = true; m_similarity = value; }
     inline CompareFacesMatch& WithSimilarity(double value) { SetSimilarity(value); return *this;}
@@ -56,16 +56,16 @@ namespace Model
      * <p>Provides face metadata (bounding box and confidence that the bounding box
      * actually contains a face).</p>
      */
-    inline const ComparedFace& GetFace() const{ return m_face; }
+    inline const ComparedFace& GetFace() const { return m_face; }
     inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
-    inline void SetFace(const ComparedFace& value) { m_faceHasBeenSet = true; m_face = value; }
-    inline void SetFace(ComparedFace&& value) { m_faceHasBeenSet = true; m_face = std::move(value); }
-    inline CompareFacesMatch& WithFace(const ComparedFace& value) { SetFace(value); return *this;}
-    inline CompareFacesMatch& WithFace(ComparedFace&& value) { SetFace(std::move(value)); return *this;}
+    template<typename FaceT = ComparedFace>
+    void SetFace(FaceT&& value) { m_faceHasBeenSet = true; m_face = std::forward<FaceT>(value); }
+    template<typename FaceT = ComparedFace>
+    CompareFacesMatch& WithFace(FaceT&& value) { SetFace(std::forward<FaceT>(value)); return *this;}
     ///@}
   private:
 
-    double m_similarity;
+    double m_similarity{0.0};
     bool m_similarityHasBeenSet = false;
 
     ComparedFace m_face;

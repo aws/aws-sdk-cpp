@@ -27,7 +27,7 @@ namespace Model
   class UnclaimDeviceResult
   {
   public:
-    AWS_IOT1CLICKDEVICESSERVICE_API UnclaimDeviceResult();
+    AWS_IOT1CLICKDEVICESSERVICE_API UnclaimDeviceResult() = default;
     AWS_IOT1CLICKDEVICESSERVICE_API UnclaimDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT1CLICKDEVICESSERVICE_API UnclaimDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The device's final claim state.</p>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
-    inline void SetState(const Aws::String& value) { m_state = value; }
-    inline void SetState(Aws::String&& value) { m_state = std::move(value); }
-    inline void SetState(const char* value) { m_state.assign(value); }
-    inline UnclaimDeviceResult& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline UnclaimDeviceResult& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline UnclaimDeviceResult& WithState(const char* value) { SetState(value); return *this;}
+    inline const Aws::String& GetState() const { return m_state; }
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    UnclaimDeviceResult& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UnclaimDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UnclaimDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UnclaimDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UnclaimDeviceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_state;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-ReplicationGroupStatus::ReplicationGroupStatus() : 
-    m_regionHasBeenSet(false),
-    m_keyspaceStatus(KeyspaceStatus::NOT_SET),
-    m_keyspaceStatusHasBeenSet(false),
-    m_tablesReplicationProgressHasBeenSet(false)
-{
-}
-
 ReplicationGroupStatus::ReplicationGroupStatus(JsonView jsonValue)
-  : ReplicationGroupStatus()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ReplicationGroupStatus& ReplicationGroupStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyspaceStatus"))
   {
     m_keyspaceStatus = KeyspaceStatusMapper::GetKeyspaceStatusForName(jsonValue.GetString("keyspaceStatus"));
-
     m_keyspaceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tablesReplicationProgress"))
   {
     m_tablesReplicationProgress = jsonValue.GetString("tablesReplicationProgress");
-
     m_tablesReplicationProgressHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-OutputColumn::OutputColumn() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(ColumnDataType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_subType(ColumnDataSubType::NOT_SET),
-    m_subTypeHasBeenSet(false)
-{
-}
-
 OutputColumn::OutputColumn(JsonView jsonValue)
-  : OutputColumn()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ OutputColumn& OutputColumn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ColumnDataTypeMapper::GetColumnDataTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubType"))
   {
     m_subType = ColumnDataSubTypeMapper::GetColumnDataSubTypeForName(jsonValue.GetString("SubType"));
-
     m_subTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

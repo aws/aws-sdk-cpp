@@ -18,27 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-S3Object::S3Object() : 
-    m_bucketArnHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_extensionHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_publicAccess(false),
-    m_publicAccessHasBeenSet(false),
-    m_serverSideEncryptionHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 S3Object::S3Object(JsonView jsonValue)
-  : S3Object()
 {
   *this = jsonValue;
 }
@@ -48,73 +28,53 @@ S3Object& S3Object::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketArn"))
   {
     m_bucketArn = jsonValue.GetString("bucketArn");
-
     m_bucketArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eTag"))
   {
     m_eTag = jsonValue.GetString("eTag");
-
     m_eTagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("extension"))
   {
     m_extension = jsonValue.GetString("extension");
-
     m_extensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModified"))
   {
     m_lastModified = jsonValue.GetString("lastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicAccess"))
   {
     m_publicAccess = jsonValue.GetBool("publicAccess");
-
     m_publicAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverSideEncryption"))
   {
     m_serverSideEncryption = jsonValue.GetObject("serverSideEncryption");
-
     m_serverSideEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("size"))
   {
     m_size = jsonValue.GetInt64("size");
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageClass"))
   {
     m_storageClass = StorageClassMapper::GetStorageClassForName(jsonValue.GetString("storageClass"));
-
     m_storageClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -124,14 +84,11 @@ S3Object& S3Object::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionId"))
   {
     m_versionId = jsonValue.GetString("versionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

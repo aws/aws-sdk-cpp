@@ -21,7 +21,7 @@ namespace Model
   class ProvisionPublicIpv4PoolCidrRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ProvisionPublicIpv4PoolCidrRequest();
+    AWS_EC2_API ProvisionPublicIpv4PoolCidrRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ProvisionPublicIpv4PoolCidrRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,28 +53,24 @@ namespace Model
     /**
      * <p>The ID of the IPAM pool you would like to use to allocate this CIDR.</p>
      */
-    inline const Aws::String& GetIpamPoolId() const{ return m_ipamPoolId; }
+    inline const Aws::String& GetIpamPoolId() const { return m_ipamPoolId; }
     inline bool IpamPoolIdHasBeenSet() const { return m_ipamPoolIdHasBeenSet; }
-    inline void SetIpamPoolId(const Aws::String& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = value; }
-    inline void SetIpamPoolId(Aws::String&& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = std::move(value); }
-    inline void SetIpamPoolId(const char* value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId.assign(value); }
-    inline ProvisionPublicIpv4PoolCidrRequest& WithIpamPoolId(const Aws::String& value) { SetIpamPoolId(value); return *this;}
-    inline ProvisionPublicIpv4PoolCidrRequest& WithIpamPoolId(Aws::String&& value) { SetIpamPoolId(std::move(value)); return *this;}
-    inline ProvisionPublicIpv4PoolCidrRequest& WithIpamPoolId(const char* value) { SetIpamPoolId(value); return *this;}
+    template<typename IpamPoolIdT = Aws::String>
+    void SetIpamPoolId(IpamPoolIdT&& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = std::forward<IpamPoolIdT>(value); }
+    template<typename IpamPoolIdT = Aws::String>
+    ProvisionPublicIpv4PoolCidrRequest& WithIpamPoolId(IpamPoolIdT&& value) { SetIpamPoolId(std::forward<IpamPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the public IPv4 pool you would like to use for this CIDR.</p>
      */
-    inline const Aws::String& GetPoolId() const{ return m_poolId; }
+    inline const Aws::String& GetPoolId() const { return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
-    inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
-    inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
-    inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
-    inline ProvisionPublicIpv4PoolCidrRequest& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
-    inline ProvisionPublicIpv4PoolCidrRequest& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
-    inline ProvisionPublicIpv4PoolCidrRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+    template<typename PoolIdT = Aws::String>
+    void SetPoolId(PoolIdT&& value) { m_poolIdHasBeenSet = true; m_poolId = std::forward<PoolIdT>(value); }
+    template<typename PoolIdT = Aws::String>
+    ProvisionPublicIpv4PoolCidrRequest& WithPoolId(PoolIdT&& value) { SetPoolId(std::forward<PoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,7 +78,7 @@ namespace Model
      * <p>The netmask length of the CIDR you would like to allocate to the public IPv4
      * pool. The least specific netmask length you can define is 24.</p>
      */
-    inline int GetNetmaskLength() const{ return m_netmaskLength; }
+    inline int GetNetmaskLength() const { return m_netmaskLength; }
     inline bool NetmaskLengthHasBeenSet() const { return m_netmaskLengthHasBeenSet; }
     inline void SetNetmaskLength(int value) { m_netmaskLengthHasBeenSet = true; m_netmaskLength = value; }
     inline ProvisionPublicIpv4PoolCidrRequest& WithNetmaskLength(int value) { SetNetmaskLength(value); return *this;}
@@ -96,18 +92,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local
      * Zone availability</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
+    inline const Aws::String& GetNetworkBorderGroup() const { return m_networkBorderGroup; }
     inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
-    inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
-    inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
-    inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
-    inline ProvisionPublicIpv4PoolCidrRequest& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
-    inline ProvisionPublicIpv4PoolCidrRequest& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
-    inline ProvisionPublicIpv4PoolCidrRequest& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
+    template<typename NetworkBorderGroupT = Aws::String>
+    void SetNetworkBorderGroup(NetworkBorderGroupT&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::forward<NetworkBorderGroupT>(value); }
+    template<typename NetworkBorderGroupT = Aws::String>
+    ProvisionPublicIpv4PoolCidrRequest& WithNetworkBorderGroup(NetworkBorderGroupT&& value) { SetNetworkBorderGroup(std::forward<NetworkBorderGroupT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamPoolId;
@@ -116,7 +110,7 @@ namespace Model
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet = false;
 
-    int m_netmaskLength;
+    int m_netmaskLength{0};
     bool m_netmaskLengthHasBeenSet = false;
 
     Aws::String m_networkBorderGroup;

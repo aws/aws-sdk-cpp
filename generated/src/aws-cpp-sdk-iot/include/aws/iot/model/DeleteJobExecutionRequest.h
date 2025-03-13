@@ -25,7 +25,7 @@ namespace Model
   class DeleteJobExecutionRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DeleteJobExecutionRequest();
+    AWS_IOT_API DeleteJobExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the job whose execution on a particular device will be deleted.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline DeleteJobExecutionRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline DeleteJobExecutionRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline DeleteJobExecutionRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    DeleteJobExecutionRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the thing whose job execution will be deleted.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline DeleteJobExecutionRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline DeleteJobExecutionRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline DeleteJobExecutionRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    DeleteJobExecutionRequest& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * that once a job execution is deleted, the <code>executionNumber</code> may be
      * reused by IoT, so be sure you get and use the correct value here.</p>
      */
-    inline long long GetExecutionNumber() const{ return m_executionNumber; }
+    inline long long GetExecutionNumber() const { return m_executionNumber; }
     inline bool ExecutionNumberHasBeenSet() const { return m_executionNumberHasBeenSet; }
     inline void SetExecutionNumber(long long value) { m_executionNumberHasBeenSet = true; m_executionNumber = value; }
     inline DeleteJobExecutionRequest& WithExecutionNumber(long long value) { SetExecutionNumber(value); return *this;}
@@ -89,7 +85,7 @@ namespace Model
      * or update the job execution status. Use caution and ensure that the device is
      * able to recover to a valid state.</p> 
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline DeleteJobExecutionRequest& WithForce(bool value) { SetForce(value); return *this;}
@@ -107,14 +103,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
      * up IoT Greengrass core devices.</a> </p> 
      */
-    inline const Aws::String& GetNamespaceId() const{ return m_namespaceId; }
+    inline const Aws::String& GetNamespaceId() const { return m_namespaceId; }
     inline bool NamespaceIdHasBeenSet() const { return m_namespaceIdHasBeenSet; }
-    inline void SetNamespaceId(const Aws::String& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = value; }
-    inline void SetNamespaceId(Aws::String&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::move(value); }
-    inline void SetNamespaceId(const char* value) { m_namespaceIdHasBeenSet = true; m_namespaceId.assign(value); }
-    inline DeleteJobExecutionRequest& WithNamespaceId(const Aws::String& value) { SetNamespaceId(value); return *this;}
-    inline DeleteJobExecutionRequest& WithNamespaceId(Aws::String&& value) { SetNamespaceId(std::move(value)); return *this;}
-    inline DeleteJobExecutionRequest& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
+    template<typename NamespaceIdT = Aws::String>
+    void SetNamespaceId(NamespaceIdT&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::forward<NamespaceIdT>(value); }
+    template<typename NamespaceIdT = Aws::String>
+    DeleteJobExecutionRequest& WithNamespaceId(NamespaceIdT&& value) { SetNamespaceId(std::forward<NamespaceIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -124,10 +118,10 @@ namespace Model
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet = false;
 
-    long long m_executionNumber;
+    long long m_executionNumber{0};
     bool m_executionNumberHasBeenSet = false;
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
 
     Aws::String m_namespaceId;

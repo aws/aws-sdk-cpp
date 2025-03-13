@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TabularResolvedAttributes::TabularResolvedAttributes() : 
-    m_problemType(ProblemType::NOT_SET),
-    m_problemTypeHasBeenSet(false)
-{
-}
-
 TabularResolvedAttributes::TabularResolvedAttributes(JsonView jsonValue)
-  : TabularResolvedAttributes()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TabularResolvedAttributes& TabularResolvedAttributes::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ProblemType"))
   {
     m_problemType = ProblemTypeMapper::GetProblemTypeForName(jsonValue.GetString("ProblemType"));
-
     m_problemTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

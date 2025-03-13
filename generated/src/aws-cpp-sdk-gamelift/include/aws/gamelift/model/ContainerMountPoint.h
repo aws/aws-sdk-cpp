@@ -41,7 +41,7 @@ namespace Model
   class ContainerMountPoint
   {
   public:
-    AWS_GAMELIFT_API ContainerMountPoint();
+    AWS_GAMELIFT_API ContainerMountPoint() = default;
     AWS_GAMELIFT_API ContainerMountPoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API ContainerMountPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
     /**
      * <p>The path to the source file or directory. </p>
      */
-    inline const Aws::String& GetInstancePath() const{ return m_instancePath; }
+    inline const Aws::String& GetInstancePath() const { return m_instancePath; }
     inline bool InstancePathHasBeenSet() const { return m_instancePathHasBeenSet; }
-    inline void SetInstancePath(const Aws::String& value) { m_instancePathHasBeenSet = true; m_instancePath = value; }
-    inline void SetInstancePath(Aws::String&& value) { m_instancePathHasBeenSet = true; m_instancePath = std::move(value); }
-    inline void SetInstancePath(const char* value) { m_instancePathHasBeenSet = true; m_instancePath.assign(value); }
-    inline ContainerMountPoint& WithInstancePath(const Aws::String& value) { SetInstancePath(value); return *this;}
-    inline ContainerMountPoint& WithInstancePath(Aws::String&& value) { SetInstancePath(std::move(value)); return *this;}
-    inline ContainerMountPoint& WithInstancePath(const char* value) { SetInstancePath(value); return *this;}
+    template<typename InstancePathT = Aws::String>
+    void SetInstancePath(InstancePathT&& value) { m_instancePathHasBeenSet = true; m_instancePath = std::forward<InstancePathT>(value); }
+    template<typename InstancePathT = Aws::String>
+    ContainerMountPoint& WithInstancePath(InstancePathT&& value) { SetInstancePath(std::forward<InstancePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,26 +64,22 @@ namespace Model
      * <p>The mount path on the container. If this property isn't set, the instance
      * path is used.</p>
      */
-    inline const Aws::String& GetContainerPath() const{ return m_containerPath; }
+    inline const Aws::String& GetContainerPath() const { return m_containerPath; }
     inline bool ContainerPathHasBeenSet() const { return m_containerPathHasBeenSet; }
-    inline void SetContainerPath(const Aws::String& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
-    inline void SetContainerPath(Aws::String&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::move(value); }
-    inline void SetContainerPath(const char* value) { m_containerPathHasBeenSet = true; m_containerPath.assign(value); }
-    inline ContainerMountPoint& WithContainerPath(const Aws::String& value) { SetContainerPath(value); return *this;}
-    inline ContainerMountPoint& WithContainerPath(Aws::String&& value) { SetContainerPath(std::move(value)); return *this;}
-    inline ContainerMountPoint& WithContainerPath(const char* value) { SetContainerPath(value); return *this;}
+    template<typename ContainerPathT = Aws::String>
+    void SetContainerPath(ContainerPathT&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::forward<ContainerPathT>(value); }
+    template<typename ContainerPathT = Aws::String>
+    ContainerMountPoint& WithContainerPath(ContainerPathT&& value) { SetContainerPath(std::forward<ContainerPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of access for the container.</p>
      */
-    inline const ContainerMountPointAccessLevel& GetAccessLevel() const{ return m_accessLevel; }
+    inline ContainerMountPointAccessLevel GetAccessLevel() const { return m_accessLevel; }
     inline bool AccessLevelHasBeenSet() const { return m_accessLevelHasBeenSet; }
-    inline void SetAccessLevel(const ContainerMountPointAccessLevel& value) { m_accessLevelHasBeenSet = true; m_accessLevel = value; }
-    inline void SetAccessLevel(ContainerMountPointAccessLevel&& value) { m_accessLevelHasBeenSet = true; m_accessLevel = std::move(value); }
-    inline ContainerMountPoint& WithAccessLevel(const ContainerMountPointAccessLevel& value) { SetAccessLevel(value); return *this;}
-    inline ContainerMountPoint& WithAccessLevel(ContainerMountPointAccessLevel&& value) { SetAccessLevel(std::move(value)); return *this;}
+    inline void SetAccessLevel(ContainerMountPointAccessLevel value) { m_accessLevelHasBeenSet = true; m_accessLevel = value; }
+    inline ContainerMountPoint& WithAccessLevel(ContainerMountPointAccessLevel value) { SetAccessLevel(value); return *this;}
     ///@}
   private:
 
@@ -95,7 +89,7 @@ namespace Model
     Aws::String m_containerPath;
     bool m_containerPathHasBeenSet = false;
 
-    ContainerMountPointAccessLevel m_accessLevel;
+    ContainerMountPointAccessLevel m_accessLevel{ContainerMountPointAccessLevel::NOT_SET};
     bool m_accessLevelHasBeenSet = false;
   };
 

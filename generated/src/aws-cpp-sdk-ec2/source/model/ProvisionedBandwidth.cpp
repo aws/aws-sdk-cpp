@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ProvisionedBandwidth::ProvisionedBandwidth() : 
-    m_provisionTimeHasBeenSet(false),
-    m_provisionedHasBeenSet(false),
-    m_requestTimeHasBeenSet(false),
-    m_requestedHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ProvisionedBandwidth::ProvisionedBandwidth(const XmlNode& xmlNode)
-  : ProvisionedBandwidth()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ ProvisionedBandwidth& ProvisionedBandwidth::operator =(const XmlNode& xmlNode)
     {
       m_provisionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(provisionTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_provisionTimeHasBeenSet = true;
+       m_provisionTimeHasBeenSet = true;
     }
     XmlNode provisionedNode = resultNode.FirstChild("provisioned");
     if(!provisionedNode.IsNull())
     {
       m_provisioned = Aws::Utils::Xml::DecodeEscapedXmlText(provisionedNode.GetText());
       m_provisionedHasBeenSet = true;
+       m_provisionedHasBeenSet = true;
     }
     XmlNode requestTimeNode = resultNode.FirstChild("requestTime");
     if(!requestTimeNode.IsNull())
     {
       m_requestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requestTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_requestTimeHasBeenSet = true;
+       m_requestTimeHasBeenSet = true;
     }
     XmlNode requestedNode = resultNode.FirstChild("requested");
     if(!requestedNode.IsNull())
     {
       m_requested = Aws::Utils::Xml::DecodeEscapedXmlText(requestedNode.GetText());
       m_requestedHasBeenSet = true;
+       m_requestedHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

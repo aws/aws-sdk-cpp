@@ -22,7 +22,7 @@ namespace Model
   class AdminDisableProviderForUserRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdminDisableProviderForUserRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminDisableProviderForUserRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,24 @@ namespace Model
      * <p>The ID of the user pool where you want to delete the user's linked
      * identities.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline AdminDisableProviderForUserRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline AdminDisableProviderForUserRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline AdminDisableProviderForUserRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    AdminDisableProviderForUserRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user profile that you want to delete a linked identity from.</p>
      */
-    inline const ProviderUserIdentifierType& GetUser() const{ return m_user; }
+    inline const ProviderUserIdentifierType& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const ProviderUserIdentifierType& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(ProviderUserIdentifierType&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline AdminDisableProviderForUserRequest& WithUser(const ProviderUserIdentifierType& value) { SetUser(value); return *this;}
-    inline AdminDisableProviderForUserRequest& WithUser(ProviderUserIdentifierType&& value) { SetUser(std::move(value)); return *this;}
+    template<typename UserT = ProviderUserIdentifierType>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = ProviderUserIdentifierType>
+    AdminDisableProviderForUserRequest& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
   private:
 

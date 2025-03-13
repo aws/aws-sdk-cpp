@@ -21,7 +21,7 @@ namespace Model
   class CreatePublicKey2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API CreatePublicKey2020_05_31Request();
+    AWS_CLOUDFRONT_API CreatePublicKey2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
     /**
      * <p>A CloudFront public key configuration.</p>
      */
-    inline const PublicKeyConfig& GetPublicKeyConfig() const{ return m_publicKeyConfig; }
+    inline const PublicKeyConfig& GetPublicKeyConfig() const { return m_publicKeyConfig; }
     inline bool PublicKeyConfigHasBeenSet() const { return m_publicKeyConfigHasBeenSet; }
-    inline void SetPublicKeyConfig(const PublicKeyConfig& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = value; }
-    inline void SetPublicKeyConfig(PublicKeyConfig&& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = std::move(value); }
-    inline CreatePublicKey2020_05_31Request& WithPublicKeyConfig(const PublicKeyConfig& value) { SetPublicKeyConfig(value); return *this;}
-    inline CreatePublicKey2020_05_31Request& WithPublicKeyConfig(PublicKeyConfig&& value) { SetPublicKeyConfig(std::move(value)); return *this;}
+    template<typename PublicKeyConfigT = PublicKeyConfig>
+    void SetPublicKeyConfig(PublicKeyConfigT&& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = std::forward<PublicKeyConfigT>(value); }
+    template<typename PublicKeyConfigT = PublicKeyConfig>
+    CreatePublicKey2020_05_31Request& WithPublicKeyConfig(PublicKeyConfigT&& value) { SetPublicKeyConfig(std::forward<PublicKeyConfigT>(value)); return *this;}
     ///@}
   private:
 

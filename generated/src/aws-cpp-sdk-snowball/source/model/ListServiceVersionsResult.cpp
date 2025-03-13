@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListServiceVersionsResult::ListServiceVersionsResult() : 
-    m_serviceName(ServiceName::NOT_SET)
-{
-}
-
 ListServiceVersionsResult::ListServiceVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListServiceVersionsResult()
 {
   *this = result;
 }
@@ -38,14 +32,13 @@ ListServiceVersionsResult& ListServiceVersionsResult::operator =(const Aws::Amaz
     {
       m_serviceVersions.push_back(serviceVersionsJsonList[serviceVersionsIndex].AsObject());
     }
+    m_serviceVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = ServiceNameMapper::GetServiceNameForName(jsonValue.GetString("ServiceName"));
-
+    m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DependentServices"))
   {
     Aws::Utils::Array<JsonView> dependentServicesJsonList = jsonValue.GetArray("DependentServices");
@@ -53,20 +46,20 @@ ListServiceVersionsResult& ListServiceVersionsResult::operator =(const Aws::Amaz
     {
       m_dependentServices.push_back(dependentServicesJsonList[dependentServicesIndex].AsObject());
     }
+    m_dependentServicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

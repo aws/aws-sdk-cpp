@@ -15,22 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRestoreJobsRequest::ListRestoreJobsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_byAccountIdHasBeenSet(false),
-    m_byResourceTypeHasBeenSet(false),
-    m_byCreatedBeforeHasBeenSet(false),
-    m_byCreatedAfterHasBeenSet(false),
-    m_byStatus(RestoreJobStatus::NOT_SET),
-    m_byStatusHasBeenSet(false),
-    m_byCompleteBeforeHasBeenSet(false),
-    m_byCompleteAfterHasBeenSet(false),
-    m_byRestoreTestingPlanArnHasBeenSet(false)
-{
-}
-
 Aws::String ListRestoreJobsRequest::SerializePayload() const
 {
   return {};

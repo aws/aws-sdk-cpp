@@ -32,7 +32,7 @@ namespace Model
   class SSEDescription
   {
   public:
-    AWS_DAX_API SSEDescription();
+    AWS_DAX_API SSEDescription() = default;
     AWS_DAX_API SSEDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_DAX_API SSEDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,16 +47,14 @@ namespace Model
      * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
      * </ul>
      */
-    inline const SSEStatus& GetStatus() const{ return m_status; }
+    inline SSEStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SSEStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SSEStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SSEDescription& WithStatus(const SSEStatus& value) { SetStatus(value); return *this;}
-    inline SSEDescription& WithStatus(SSEStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SSEStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SSEDescription& WithStatus(SSEStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    SSEStatus m_status;
+    SSEStatus m_status{SSEStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

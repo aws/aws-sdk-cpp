@@ -33,7 +33,7 @@ namespace Model
   class DataQuery
   {
   public:
-    AWS_BCMDATAEXPORTS_API DataQuery();
+    AWS_BCMDATAEXPORTS_API DataQuery() = default;
     AWS_BCMDATAEXPORTS_API DataQuery(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMDATAEXPORTS_API DataQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMDATAEXPORTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,32 +43,28 @@ namespace Model
     /**
      * <p>The query statement.</p>
      */
-    inline const Aws::String& GetQueryStatement() const{ return m_queryStatement; }
+    inline const Aws::String& GetQueryStatement() const { return m_queryStatement; }
     inline bool QueryStatementHasBeenSet() const { return m_queryStatementHasBeenSet; }
-    inline void SetQueryStatement(const Aws::String& value) { m_queryStatementHasBeenSet = true; m_queryStatement = value; }
-    inline void SetQueryStatement(Aws::String&& value) { m_queryStatementHasBeenSet = true; m_queryStatement = std::move(value); }
-    inline void SetQueryStatement(const char* value) { m_queryStatementHasBeenSet = true; m_queryStatement.assign(value); }
-    inline DataQuery& WithQueryStatement(const Aws::String& value) { SetQueryStatement(value); return *this;}
-    inline DataQuery& WithQueryStatement(Aws::String&& value) { SetQueryStatement(std::move(value)); return *this;}
-    inline DataQuery& WithQueryStatement(const char* value) { SetQueryStatement(value); return *this;}
+    template<typename QueryStatementT = Aws::String>
+    void SetQueryStatement(QueryStatementT&& value) { m_queryStatementHasBeenSet = true; m_queryStatement = std::forward<QueryStatementT>(value); }
+    template<typename QueryStatementT = Aws::String>
+    DataQuery& WithQueryStatement(QueryStatementT&& value) { SetQueryStatement(std::forward<QueryStatementT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The table configuration.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetTableConfigurations() const{ return m_tableConfigurations; }
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetTableConfigurations() const { return m_tableConfigurations; }
     inline bool TableConfigurationsHasBeenSet() const { return m_tableConfigurationsHasBeenSet; }
-    inline void SetTableConfigurations(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { m_tableConfigurationsHasBeenSet = true; m_tableConfigurations = value; }
-    inline void SetTableConfigurations(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { m_tableConfigurationsHasBeenSet = true; m_tableConfigurations = std::move(value); }
-    inline DataQuery& WithTableConfigurations(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { SetTableConfigurations(value); return *this;}
-    inline DataQuery& WithTableConfigurations(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { SetTableConfigurations(std::move(value)); return *this;}
-    inline DataQuery& AddTableConfigurations(const Aws::String& key, const Aws::Map<Aws::String, Aws::String>& value) { m_tableConfigurationsHasBeenSet = true; m_tableConfigurations.emplace(key, value); return *this; }
-    inline DataQuery& AddTableConfigurations(Aws::String&& key, const Aws::Map<Aws::String, Aws::String>& value) { m_tableConfigurationsHasBeenSet = true; m_tableConfigurations.emplace(std::move(key), value); return *this; }
-    inline DataQuery& AddTableConfigurations(const Aws::String& key, Aws::Map<Aws::String, Aws::String>&& value) { m_tableConfigurationsHasBeenSet = true; m_tableConfigurations.emplace(key, std::move(value)); return *this; }
-    inline DataQuery& AddTableConfigurations(Aws::String&& key, Aws::Map<Aws::String, Aws::String>&& value) { m_tableConfigurationsHasBeenSet = true; m_tableConfigurations.emplace(std::move(key), std::move(value)); return *this; }
-    inline DataQuery& AddTableConfigurations(const char* key, Aws::Map<Aws::String, Aws::String>&& value) { m_tableConfigurationsHasBeenSet = true; m_tableConfigurations.emplace(key, std::move(value)); return *this; }
-    inline DataQuery& AddTableConfigurations(const char* key, const Aws::Map<Aws::String, Aws::String>& value) { m_tableConfigurationsHasBeenSet = true; m_tableConfigurations.emplace(key, value); return *this; }
+    template<typename TableConfigurationsT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>>
+    void SetTableConfigurations(TableConfigurationsT&& value) { m_tableConfigurationsHasBeenSet = true; m_tableConfigurations = std::forward<TableConfigurationsT>(value); }
+    template<typename TableConfigurationsT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>>
+    DataQuery& WithTableConfigurations(TableConfigurationsT&& value) { SetTableConfigurations(std::forward<TableConfigurationsT>(value)); return *this;}
+    template<typename TableConfigurationsKeyT = Aws::String, typename TableConfigurationsValueT = Aws::Map<Aws::String, Aws::String>>
+    DataQuery& AddTableConfigurations(TableConfigurationsKeyT&& key, TableConfigurationsValueT&& value) {
+      m_tableConfigurationsHasBeenSet = true; m_tableConfigurations.emplace(std::forward<TableConfigurationsKeyT>(key), std::forward<TableConfigurationsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

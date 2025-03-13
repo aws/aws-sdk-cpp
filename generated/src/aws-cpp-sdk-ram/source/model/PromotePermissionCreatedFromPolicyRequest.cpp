@@ -12,13 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PromotePermissionCreatedFromPolicyRequest::PromotePermissionCreatedFromPolicyRequest() : 
-    m_permissionArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String PromotePermissionCreatedFromPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

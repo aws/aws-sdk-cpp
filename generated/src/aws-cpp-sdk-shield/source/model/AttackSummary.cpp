@@ -18,17 +18,7 @@ namespace Shield
 namespace Model
 {
 
-AttackSummary::AttackSummary() : 
-    m_attackIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_attackVectorsHasBeenSet(false)
-{
-}
-
 AttackSummary::AttackSummary(JsonView jsonValue)
-  : AttackSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AttackSummary& AttackSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttackId"))
   {
     m_attackId = jsonValue.GetString("AttackId");
-
     m_attackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttackVectors"))
   {
     Aws::Utils::Array<JsonView> attackVectorsJsonList = jsonValue.GetArray("AttackVectors");
@@ -72,7 +54,6 @@ AttackSummary& AttackSummary::operator =(JsonView jsonValue)
     }
     m_attackVectorsHasBeenSet = true;
   }
-
   return *this;
 }
 

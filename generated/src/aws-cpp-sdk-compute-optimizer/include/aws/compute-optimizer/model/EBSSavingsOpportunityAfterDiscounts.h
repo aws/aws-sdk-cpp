@@ -32,7 +32,7 @@ namespace Model
   class EBSSavingsOpportunityAfterDiscounts
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API EBSSavingsOpportunityAfterDiscounts();
+    AWS_COMPUTEOPTIMIZER_API EBSSavingsOpportunityAfterDiscounts() = default;
     AWS_COMPUTEOPTIMIZER_API EBSSavingsOpportunityAfterDiscounts(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API EBSSavingsOpportunityAfterDiscounts& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * applying the specific discounts. This saving can be achieved by adopting Compute
      * Optimizer’s Amazon EBS volume recommendations. </p>
      */
-    inline double GetSavingsOpportunityPercentage() const{ return m_savingsOpportunityPercentage; }
+    inline double GetSavingsOpportunityPercentage() const { return m_savingsOpportunityPercentage; }
     inline bool SavingsOpportunityPercentageHasBeenSet() const { return m_savingsOpportunityPercentageHasBeenSet; }
     inline void SetSavingsOpportunityPercentage(double value) { m_savingsOpportunityPercentageHasBeenSet = true; m_savingsOpportunityPercentage = value; }
     inline EBSSavingsOpportunityAfterDiscounts& WithSavingsOpportunityPercentage(double value) { SetSavingsOpportunityPercentage(value); return *this;}
@@ -56,16 +56,16 @@ namespace Model
      * adopting Compute Optimizer’s Amazon EBS volume recommendations. This saving
      * includes any applicable discounts. </p>
      */
-    inline const EBSEstimatedMonthlySavings& GetEstimatedMonthlySavings() const{ return m_estimatedMonthlySavings; }
+    inline const EBSEstimatedMonthlySavings& GetEstimatedMonthlySavings() const { return m_estimatedMonthlySavings; }
     inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }
-    inline void SetEstimatedMonthlySavings(const EBSEstimatedMonthlySavings& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = value; }
-    inline void SetEstimatedMonthlySavings(EBSEstimatedMonthlySavings&& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = std::move(value); }
-    inline EBSSavingsOpportunityAfterDiscounts& WithEstimatedMonthlySavings(const EBSEstimatedMonthlySavings& value) { SetEstimatedMonthlySavings(value); return *this;}
-    inline EBSSavingsOpportunityAfterDiscounts& WithEstimatedMonthlySavings(EBSEstimatedMonthlySavings&& value) { SetEstimatedMonthlySavings(std::move(value)); return *this;}
+    template<typename EstimatedMonthlySavingsT = EBSEstimatedMonthlySavings>
+    void SetEstimatedMonthlySavings(EstimatedMonthlySavingsT&& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = std::forward<EstimatedMonthlySavingsT>(value); }
+    template<typename EstimatedMonthlySavingsT = EBSEstimatedMonthlySavings>
+    EBSSavingsOpportunityAfterDiscounts& WithEstimatedMonthlySavings(EstimatedMonthlySavingsT&& value) { SetEstimatedMonthlySavings(std::forward<EstimatedMonthlySavingsT>(value)); return *this;}
     ///@}
   private:
 
-    double m_savingsOpportunityPercentage;
+    double m_savingsOpportunityPercentage{0.0};
     bool m_savingsOpportunityPercentageHasBeenSet = false;
 
     EBSEstimatedMonthlySavings m_estimatedMonthlySavings;

@@ -20,23 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceMetadataDefaultsResponse::InstanceMetadataDefaultsResponse() : 
-    m_httpTokens(HttpTokensState::NOT_SET),
-    m_httpTokensHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpEndpoint(InstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false),
-    m_instanceMetadataTags(InstanceMetadataTagsState::NOT_SET),
-    m_instanceMetadataTagsHasBeenSet(false),
-    m_managedBy(ManagedBy::NOT_SET),
-    m_managedByHasBeenSet(false),
-    m_managedExceptionMessageHasBeenSet(false)
-{
-}
-
 InstanceMetadataDefaultsResponse::InstanceMetadataDefaultsResponse(const XmlNode& xmlNode)
-  : InstanceMetadataDefaultsResponse()
 {
   *this = xmlNode;
 }
@@ -50,38 +34,44 @@ InstanceMetadataDefaultsResponse& InstanceMetadataDefaultsResponse::operator =(c
     XmlNode httpTokensNode = resultNode.FirstChild("httpTokens");
     if(!httpTokensNode.IsNull())
     {
-      m_httpTokens = HttpTokensStateMapper::GetHttpTokensStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpTokensNode.GetText()).c_str()).c_str());
+      m_httpTokens = HttpTokensStateMapper::GetHttpTokensStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpTokensNode.GetText()).c_str()));
       m_httpTokensHasBeenSet = true;
+       m_httpTokensHasBeenSet = true;
     }
     XmlNode httpPutResponseHopLimitNode = resultNode.FirstChild("httpPutResponseHopLimit");
     if(!httpPutResponseHopLimitNode.IsNull())
     {
       m_httpPutResponseHopLimit = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpPutResponseHopLimitNode.GetText()).c_str()).c_str());
       m_httpPutResponseHopLimitHasBeenSet = true;
+       m_httpPutResponseHopLimitHasBeenSet = true;
     }
     XmlNode httpEndpointNode = resultNode.FirstChild("httpEndpoint");
     if(!httpEndpointNode.IsNull())
     {
-      m_httpEndpoint = InstanceMetadataEndpointStateMapper::GetInstanceMetadataEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpEndpointNode.GetText()).c_str()).c_str());
+      m_httpEndpoint = InstanceMetadataEndpointStateMapper::GetInstanceMetadataEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpEndpointNode.GetText()).c_str()));
       m_httpEndpointHasBeenSet = true;
+       m_httpEndpointHasBeenSet = true;
     }
     XmlNode instanceMetadataTagsNode = resultNode.FirstChild("instanceMetadataTags");
     if(!instanceMetadataTagsNode.IsNull())
     {
-      m_instanceMetadataTags = InstanceMetadataTagsStateMapper::GetInstanceMetadataTagsStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMetadataTagsNode.GetText()).c_str()).c_str());
+      m_instanceMetadataTags = InstanceMetadataTagsStateMapper::GetInstanceMetadataTagsStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMetadataTagsNode.GetText()).c_str()));
       m_instanceMetadataTagsHasBeenSet = true;
+       m_instanceMetadataTagsHasBeenSet = true;
     }
     XmlNode managedByNode = resultNode.FirstChild("managedBy");
     if(!managedByNode.IsNull())
     {
-      m_managedBy = ManagedByMapper::GetManagedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText()).c_str()).c_str());
+      m_managedBy = ManagedByMapper::GetManagedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText()).c_str()));
       m_managedByHasBeenSet = true;
+       m_managedByHasBeenSet = true;
     }
     XmlNode managedExceptionMessageNode = resultNode.FirstChild("managedExceptionMessage");
     if(!managedExceptionMessageNode.IsNull())
     {
       m_managedExceptionMessage = Aws::Utils::Xml::DecodeEscapedXmlText(managedExceptionMessageNode.GetText());
       m_managedExceptionMessageHasBeenSet = true;
+       m_managedExceptionMessageHasBeenSet = true;
     }
   }
 

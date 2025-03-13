@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutRepositoryCatalogDataResult::PutRepositoryCatalogDataResult()
-{
-}
-
 PutRepositoryCatalogDataResult::PutRepositoryCatalogDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutRepositoryCatalogDataResult& PutRepositoryCatalogDataResult::operator =(const
   if(jsonValue.ValueExists("catalogData"))
   {
     m_catalogData = jsonValue.GetObject("catalogData");
-
+    m_catalogDataHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

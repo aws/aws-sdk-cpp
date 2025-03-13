@@ -27,7 +27,7 @@ namespace Model
   class Device
   {
   public:
-    AWS_IOT1CLICKDEVICESSERVICE_API Device();
+    AWS_IOT1CLICKDEVICESSERVICE_API Device() = default;
     AWS_IOT1CLICKDEVICESSERVICE_API Device(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKDEVICESSERVICE_API Device& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKDEVICESSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -37,40 +37,36 @@ namespace Model
     /**
      * <p>The user specified attributes associated with the device for an event.</p>
      */
-    inline const Attributes& GetAttributes() const{ return m_attributes; }
+    inline const Attributes& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Attributes& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Attributes&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline Device& WithAttributes(const Attributes& value) { SetAttributes(value); return *this;}
-    inline Device& WithAttributes(Attributes&& value) { SetAttributes(std::move(value)); return *this;}
+    template<typename AttributesT = Attributes>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Attributes>
+    Device& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the device.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline Device& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline Device& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline Device& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    Device& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device type, such as "button".</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Device& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Device& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Device& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Device& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicySummary::ResponseHeadersPolicySummary() : 
-    m_type(ResponseHeadersPolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_responseHeadersPolicyHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicySummary::ResponseHeadersPolicySummary(const XmlNode& xmlNode)
-  : ResponseHeadersPolicySummary()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ ResponseHeadersPolicySummary& ResponseHeadersPolicySummary::operator =(const Xml
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = ResponseHeadersPolicyTypeMapper::GetResponseHeadersPolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = ResponseHeadersPolicyTypeMapper::GetResponseHeadersPolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode responseHeadersPolicyNode = resultNode.FirstChild("ResponseHeadersPolicy");
     if(!responseHeadersPolicyNode.IsNull())
     {
       m_responseHeadersPolicy = responseHeadersPolicyNode;
       m_responseHeadersPolicyHasBeenSet = true;
+       m_responseHeadersPolicyHasBeenSet = true;
     }
   }
 

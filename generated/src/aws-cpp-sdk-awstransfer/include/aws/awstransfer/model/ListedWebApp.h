@@ -32,7 +32,7 @@ namespace Model
   class ListedWebApp
   {
   public:
-    AWS_TRANSFER_API ListedWebApp();
+    AWS_TRANSFER_API ListedWebApp() = default;
     AWS_TRANSFER_API ListedWebApp(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API ListedWebApp& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the web app.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ListedWebApp& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ListedWebApp& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ListedWebApp& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ListedWebApp& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the web app.</p>
      */
-    inline const Aws::String& GetWebAppId() const{ return m_webAppId; }
+    inline const Aws::String& GetWebAppId() const { return m_webAppId; }
     inline bool WebAppIdHasBeenSet() const { return m_webAppIdHasBeenSet; }
-    inline void SetWebAppId(const Aws::String& value) { m_webAppIdHasBeenSet = true; m_webAppId = value; }
-    inline void SetWebAppId(Aws::String&& value) { m_webAppIdHasBeenSet = true; m_webAppId = std::move(value); }
-    inline void SetWebAppId(const char* value) { m_webAppIdHasBeenSet = true; m_webAppId.assign(value); }
-    inline ListedWebApp& WithWebAppId(const Aws::String& value) { SetWebAppId(value); return *this;}
-    inline ListedWebApp& WithWebAppId(Aws::String&& value) { SetWebAppId(std::move(value)); return *this;}
-    inline ListedWebApp& WithWebAppId(const char* value) { SetWebAppId(value); return *this;}
+    template<typename WebAppIdT = Aws::String>
+    void SetWebAppId(WebAppIdT&& value) { m_webAppIdHasBeenSet = true; m_webAppId = std::forward<WebAppIdT>(value); }
+    template<typename WebAppIdT = Aws::String>
+    ListedWebApp& WithWebAppId(WebAppIdT&& value) { SetWebAppId(std::forward<WebAppIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * them to interact with the Transfer Family web app. You can specify a custom URL
      * or use the default value.</p>
      */
-    inline const Aws::String& GetAccessEndpoint() const{ return m_accessEndpoint; }
+    inline const Aws::String& GetAccessEndpoint() const { return m_accessEndpoint; }
     inline bool AccessEndpointHasBeenSet() const { return m_accessEndpointHasBeenSet; }
-    inline void SetAccessEndpoint(const Aws::String& value) { m_accessEndpointHasBeenSet = true; m_accessEndpoint = value; }
-    inline void SetAccessEndpoint(Aws::String&& value) { m_accessEndpointHasBeenSet = true; m_accessEndpoint = std::move(value); }
-    inline void SetAccessEndpoint(const char* value) { m_accessEndpointHasBeenSet = true; m_accessEndpoint.assign(value); }
-    inline ListedWebApp& WithAccessEndpoint(const Aws::String& value) { SetAccessEndpoint(value); return *this;}
-    inline ListedWebApp& WithAccessEndpoint(Aws::String&& value) { SetAccessEndpoint(std::move(value)); return *this;}
-    inline ListedWebApp& WithAccessEndpoint(const char* value) { SetAccessEndpoint(value); return *this;}
+    template<typename AccessEndpointT = Aws::String>
+    void SetAccessEndpoint(AccessEndpointT&& value) { m_accessEndpointHasBeenSet = true; m_accessEndpoint = std::forward<AccessEndpointT>(value); }
+    template<typename AccessEndpointT = Aws::String>
+    ListedWebApp& WithAccessEndpoint(AccessEndpointT&& value) { SetAccessEndpoint(std::forward<AccessEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * web app. This is the value that you use when you configure <b>Origins</b> on
      * CloudFront.</p>
      */
-    inline const Aws::String& GetWebAppEndpoint() const{ return m_webAppEndpoint; }
+    inline const Aws::String& GetWebAppEndpoint() const { return m_webAppEndpoint; }
     inline bool WebAppEndpointHasBeenSet() const { return m_webAppEndpointHasBeenSet; }
-    inline void SetWebAppEndpoint(const Aws::String& value) { m_webAppEndpointHasBeenSet = true; m_webAppEndpoint = value; }
-    inline void SetWebAppEndpoint(Aws::String&& value) { m_webAppEndpointHasBeenSet = true; m_webAppEndpoint = std::move(value); }
-    inline void SetWebAppEndpoint(const char* value) { m_webAppEndpointHasBeenSet = true; m_webAppEndpoint.assign(value); }
-    inline ListedWebApp& WithWebAppEndpoint(const Aws::String& value) { SetWebAppEndpoint(value); return *this;}
-    inline ListedWebApp& WithWebAppEndpoint(Aws::String&& value) { SetWebAppEndpoint(std::move(value)); return *this;}
-    inline ListedWebApp& WithWebAppEndpoint(const char* value) { SetWebAppEndpoint(value); return *this;}
+    template<typename WebAppEndpointT = Aws::String>
+    void SetWebAppEndpoint(WebAppEndpointT&& value) { m_webAppEndpointHasBeenSet = true; m_webAppEndpoint = std::forward<WebAppEndpointT>(value); }
+    template<typename WebAppEndpointT = Aws::String>
+    ListedWebApp& WithWebAppEndpoint(WebAppEndpointT&& value) { SetWebAppEndpoint(std::forward<WebAppEndpointT>(value)); return *this;}
     ///@}
   private:
 

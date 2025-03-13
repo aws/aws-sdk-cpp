@@ -25,7 +25,7 @@ namespace Model
   class GetCloudWatchAlarmTemplateRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API GetCloudWatchAlarmTemplateRequest();
+    AWS_MEDIALIVE_API GetCloudWatchAlarmTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * A cloudwatch alarm template's identifier. Can be either be its id or current
      * name.
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline GetCloudWatchAlarmTemplateRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline GetCloudWatchAlarmTemplateRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline GetCloudWatchAlarmTemplateRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    GetCloudWatchAlarmTemplateRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
   private:
 

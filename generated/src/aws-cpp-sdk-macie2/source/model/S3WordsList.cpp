@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-S3WordsList::S3WordsList() : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyHasBeenSet(false)
-{
-}
-
 S3WordsList::S3WordsList(JsonView jsonValue)
-  : S3WordsList()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3WordsList& S3WordsList::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objectKey"))
   {
     m_objectKey = jsonValue.GetString("objectKey");
-
     m_objectKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

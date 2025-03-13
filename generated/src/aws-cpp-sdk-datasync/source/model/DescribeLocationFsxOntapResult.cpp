@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocationFsxOntapResult::DescribeLocationFsxOntapResult()
-{
-}
-
 DescribeLocationFsxOntapResult::DescribeLocationFsxOntapResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,23 @@ DescribeLocationFsxOntapResult& DescribeLocationFsxOntapResult::operator =(const
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationArn"))
   {
     m_locationArn = jsonValue.GetString("LocationArn");
-
+    m_locationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationUri"))
   {
     m_locationUri = jsonValue.GetString("LocationUri");
-
+    m_locationUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetObject("Protocol");
-
+    m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupArns"))
   {
     Aws::Utils::Array<JsonView> securityGroupArnsJsonList = jsonValue.GetArray("SecurityGroupArns");
@@ -60,26 +52,25 @@ DescribeLocationFsxOntapResult& DescribeLocationFsxOntapResult::operator =(const
     {
       m_securityGroupArns.push_back(securityGroupArnsJsonList[securityGroupArnsIndex].AsString());
     }
+    m_securityGroupArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageVirtualMachineArn"))
   {
     m_storageVirtualMachineArn = jsonValue.GetString("StorageVirtualMachineArn");
-
+    m_storageVirtualMachineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FsxFilesystemArn"))
   {
     m_fsxFilesystemArn = jsonValue.GetString("FsxFilesystemArn");
-
+    m_fsxFilesystemArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

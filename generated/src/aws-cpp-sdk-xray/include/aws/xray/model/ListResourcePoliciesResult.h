@@ -29,7 +29,7 @@ namespace Model
   class ListResourcePoliciesResult
   {
   public:
-    AWS_XRAY_API ListResourcePoliciesResult();
+    AWS_XRAY_API ListResourcePoliciesResult() = default;
     AWS_XRAY_API ListResourcePoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_XRAY_API ListResourcePoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The list of resource policies in the target Amazon Web Services account.</p>
      */
-    inline const Aws::Vector<ResourcePolicy>& GetResourcePolicies() const{ return m_resourcePolicies; }
-    inline void SetResourcePolicies(const Aws::Vector<ResourcePolicy>& value) { m_resourcePolicies = value; }
-    inline void SetResourcePolicies(Aws::Vector<ResourcePolicy>&& value) { m_resourcePolicies = std::move(value); }
-    inline ListResourcePoliciesResult& WithResourcePolicies(const Aws::Vector<ResourcePolicy>& value) { SetResourcePolicies(value); return *this;}
-    inline ListResourcePoliciesResult& WithResourcePolicies(Aws::Vector<ResourcePolicy>&& value) { SetResourcePolicies(std::move(value)); return *this;}
-    inline ListResourcePoliciesResult& AddResourcePolicies(const ResourcePolicy& value) { m_resourcePolicies.push_back(value); return *this; }
-    inline ListResourcePoliciesResult& AddResourcePolicies(ResourcePolicy&& value) { m_resourcePolicies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourcePolicy>& GetResourcePolicies() const { return m_resourcePolicies; }
+    template<typename ResourcePoliciesT = Aws::Vector<ResourcePolicy>>
+    void SetResourcePolicies(ResourcePoliciesT&& value) { m_resourcePoliciesHasBeenSet = true; m_resourcePolicies = std::forward<ResourcePoliciesT>(value); }
+    template<typename ResourcePoliciesT = Aws::Vector<ResourcePolicy>>
+    ListResourcePoliciesResult& WithResourcePolicies(ResourcePoliciesT&& value) { SetResourcePolicies(std::forward<ResourcePoliciesT>(value)); return *this;}
+    template<typename ResourcePoliciesT = ResourcePolicy>
+    ListResourcePoliciesResult& AddResourcePolicies(ResourcePoliciesT&& value) { m_resourcePoliciesHasBeenSet = true; m_resourcePolicies.emplace_back(std::forward<ResourcePoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Pagination token. Not currently supported.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResourcePoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourcePoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourcePoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourcePoliciesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResourcePoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResourcePoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResourcePoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResourcePoliciesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResourcePolicy> m_resourcePolicies;
+    bool m_resourcePoliciesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

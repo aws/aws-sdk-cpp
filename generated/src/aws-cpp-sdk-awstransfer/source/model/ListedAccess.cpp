@@ -18,17 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ListedAccess::ListedAccess() : 
-    m_homeDirectoryHasBeenSet(false),
-    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
-    m_homeDirectoryTypeHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
-{
-}
-
 ListedAccess::ListedAccess(JsonView jsonValue)
-  : ListedAccess()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ListedAccess& ListedAccess::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HomeDirectory"))
   {
     m_homeDirectory = jsonValue.GetString("HomeDirectory");
-
     m_homeDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomeDirectoryType"))
   {
     m_homeDirectoryType = HomeDirectoryTypeMapper::GetHomeDirectoryTypeForName(jsonValue.GetString("HomeDirectoryType"));
-
     m_homeDirectoryTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExternalId"))
   {
     m_externalId = jsonValue.GetString("ExternalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   return *this;
 }
 

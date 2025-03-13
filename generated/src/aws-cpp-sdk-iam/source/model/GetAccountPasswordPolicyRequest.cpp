@@ -10,10 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetAccountPasswordPolicyRequest::GetAccountPasswordPolicyRequest()
-{
-}
-
 Aws::String GetAccountPasswordPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

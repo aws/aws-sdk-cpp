@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBlacklistReportsResult::GetBlacklistReportsResult()
-{
-}
-
 GetBlacklistReportsResult::GetBlacklistReportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -43,14 +39,15 @@ GetBlacklistReportsResult& GetBlacklistReportsResult::operator =(const Aws::Amaz
       }
       m_blacklistReport[blacklistReportItem.first] = std::move(blacklistEntriesList);
     }
+    m_blacklistReportHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

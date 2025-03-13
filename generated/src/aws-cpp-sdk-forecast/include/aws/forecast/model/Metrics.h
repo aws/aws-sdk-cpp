@@ -34,7 +34,7 @@ namespace Model
   class Metrics
   {
   public:
-    AWS_FORECASTSERVICE_API Metrics();
+    AWS_FORECASTSERVICE_API Metrics() = default;
     AWS_FORECASTSERVICE_API Metrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Metrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * distribution into regions of equal probability. The distribution in this case is
      * the loss function.</p>
      */
-    inline const Aws::Vector<WeightedQuantileLoss>& GetWeightedQuantileLosses() const{ return m_weightedQuantileLosses; }
+    inline const Aws::Vector<WeightedQuantileLoss>& GetWeightedQuantileLosses() const { return m_weightedQuantileLosses; }
     inline bool WeightedQuantileLossesHasBeenSet() const { return m_weightedQuantileLossesHasBeenSet; }
-    inline void SetWeightedQuantileLosses(const Aws::Vector<WeightedQuantileLoss>& value) { m_weightedQuantileLossesHasBeenSet = true; m_weightedQuantileLosses = value; }
-    inline void SetWeightedQuantileLosses(Aws::Vector<WeightedQuantileLoss>&& value) { m_weightedQuantileLossesHasBeenSet = true; m_weightedQuantileLosses = std::move(value); }
-    inline Metrics& WithWeightedQuantileLosses(const Aws::Vector<WeightedQuantileLoss>& value) { SetWeightedQuantileLosses(value); return *this;}
-    inline Metrics& WithWeightedQuantileLosses(Aws::Vector<WeightedQuantileLoss>&& value) { SetWeightedQuantileLosses(std::move(value)); return *this;}
-    inline Metrics& AddWeightedQuantileLosses(const WeightedQuantileLoss& value) { m_weightedQuantileLossesHasBeenSet = true; m_weightedQuantileLosses.push_back(value); return *this; }
-    inline Metrics& AddWeightedQuantileLosses(WeightedQuantileLoss&& value) { m_weightedQuantileLossesHasBeenSet = true; m_weightedQuantileLosses.push_back(std::move(value)); return *this; }
+    template<typename WeightedQuantileLossesT = Aws::Vector<WeightedQuantileLoss>>
+    void SetWeightedQuantileLosses(WeightedQuantileLossesT&& value) { m_weightedQuantileLossesHasBeenSet = true; m_weightedQuantileLosses = std::forward<WeightedQuantileLossesT>(value); }
+    template<typename WeightedQuantileLossesT = Aws::Vector<WeightedQuantileLoss>>
+    Metrics& WithWeightedQuantileLosses(WeightedQuantileLossesT&& value) { SetWeightedQuantileLosses(std::forward<WeightedQuantileLossesT>(value)); return *this;}
+    template<typename WeightedQuantileLossesT = WeightedQuantileLoss>
+    Metrics& AddWeightedQuantileLosses(WeightedQuantileLossesT&& value) { m_weightedQuantileLossesHasBeenSet = true; m_weightedQuantileLosses.emplace_back(std::forward<WeightedQuantileLossesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,21 +62,21 @@ namespace Model
      * root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean
      * absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
      */
-    inline const Aws::Vector<ErrorMetric>& GetErrorMetrics() const{ return m_errorMetrics; }
+    inline const Aws::Vector<ErrorMetric>& GetErrorMetrics() const { return m_errorMetrics; }
     inline bool ErrorMetricsHasBeenSet() const { return m_errorMetricsHasBeenSet; }
-    inline void SetErrorMetrics(const Aws::Vector<ErrorMetric>& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics = value; }
-    inline void SetErrorMetrics(Aws::Vector<ErrorMetric>&& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics = std::move(value); }
-    inline Metrics& WithErrorMetrics(const Aws::Vector<ErrorMetric>& value) { SetErrorMetrics(value); return *this;}
-    inline Metrics& WithErrorMetrics(Aws::Vector<ErrorMetric>&& value) { SetErrorMetrics(std::move(value)); return *this;}
-    inline Metrics& AddErrorMetrics(const ErrorMetric& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics.push_back(value); return *this; }
-    inline Metrics& AddErrorMetrics(ErrorMetric&& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics.push_back(std::move(value)); return *this; }
+    template<typename ErrorMetricsT = Aws::Vector<ErrorMetric>>
+    void SetErrorMetrics(ErrorMetricsT&& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics = std::forward<ErrorMetricsT>(value); }
+    template<typename ErrorMetricsT = Aws::Vector<ErrorMetric>>
+    Metrics& WithErrorMetrics(ErrorMetricsT&& value) { SetErrorMetrics(std::forward<ErrorMetricsT>(value)); return *this;}
+    template<typename ErrorMetricsT = ErrorMetric>
+    Metrics& AddErrorMetrics(ErrorMetricsT&& value) { m_errorMetricsHasBeenSet = true; m_errorMetrics.emplace_back(std::forward<ErrorMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The average value of all weighted quantile losses.</p>
      */
-    inline double GetAverageWeightedQuantileLoss() const{ return m_averageWeightedQuantileLoss; }
+    inline double GetAverageWeightedQuantileLoss() const { return m_averageWeightedQuantileLoss; }
     inline bool AverageWeightedQuantileLossHasBeenSet() const { return m_averageWeightedQuantileLossHasBeenSet; }
     inline void SetAverageWeightedQuantileLoss(double value) { m_averageWeightedQuantileLossHasBeenSet = true; m_averageWeightedQuantileLoss = value; }
     inline Metrics& WithAverageWeightedQuantileLoss(double value) { SetAverageWeightedQuantileLoss(value); return *this;}
@@ -89,7 +89,7 @@ namespace Model
     Aws::Vector<ErrorMetric> m_errorMetrics;
     bool m_errorMetricsHasBeenSet = false;
 
-    double m_averageWeightedQuantileLoss;
+    double m_averageWeightedQuantileLoss{0.0};
     bool m_averageWeightedQuantileLossHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteLaunchTemplateVersionsResponse::DeleteLaunchTemplateVersionsResponse()
-{
-}
-
 DeleteLaunchTemplateVersionsResponse::DeleteLaunchTemplateVersionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteLaunchTemplateVersionsResponse& DeleteLaunchTemplateVersionsResponse::oper
     if(!successfullyDeletedLaunchTemplateVersionsNode.IsNull())
     {
       XmlNode successfullyDeletedLaunchTemplateVersionsMember = successfullyDeletedLaunchTemplateVersionsNode.FirstChild("item");
+      m_successfullyDeletedLaunchTemplateVersionsHasBeenSet = !successfullyDeletedLaunchTemplateVersionsMember.IsNull();
       while(!successfullyDeletedLaunchTemplateVersionsMember.IsNull())
       {
         m_successfullyDeletedLaunchTemplateVersions.push_back(successfullyDeletedLaunchTemplateVersionsMember);
@@ -53,6 +50,7 @@ DeleteLaunchTemplateVersionsResponse& DeleteLaunchTemplateVersionsResponse::oper
     if(!unsuccessfullyDeletedLaunchTemplateVersionsNode.IsNull())
     {
       XmlNode unsuccessfullyDeletedLaunchTemplateVersionsMember = unsuccessfullyDeletedLaunchTemplateVersionsNode.FirstChild("item");
+      m_unsuccessfullyDeletedLaunchTemplateVersionsHasBeenSet = !unsuccessfullyDeletedLaunchTemplateVersionsMember.IsNull();
       while(!unsuccessfullyDeletedLaunchTemplateVersionsMember.IsNull())
       {
         m_unsuccessfullyDeletedLaunchTemplateVersions.push_back(unsuccessfullyDeletedLaunchTemplateVersionsMember);
@@ -67,6 +65,7 @@ DeleteLaunchTemplateVersionsResponse& DeleteLaunchTemplateVersionsResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteLaunchTemplateVersionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

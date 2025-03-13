@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateWorkgroupResult::UpdateWorkgroupResult()
-{
-}
-
 UpdateWorkgroupResult::UpdateWorkgroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateWorkgroupResult& UpdateWorkgroupResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("workgroup"))
   {
     m_workgroup = jsonValue.GetObject("workgroup");
-
+    m_workgroupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

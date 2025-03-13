@@ -28,7 +28,7 @@ namespace Model
   class DeleteLicenseResult
   {
   public:
-    AWS_LICENSEMANAGER_API DeleteLicenseResult();
+    AWS_LICENSEMANAGER_API DeleteLicenseResult() = default;
     AWS_LICENSEMANAGER_API DeleteLicenseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGER_API DeleteLicenseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,40 @@ namespace Model
     /**
      * <p>License status.</p>
      */
-    inline const LicenseDeletionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const LicenseDeletionStatus& value) { m_status = value; }
-    inline void SetStatus(LicenseDeletionStatus&& value) { m_status = std::move(value); }
-    inline DeleteLicenseResult& WithStatus(const LicenseDeletionStatus& value) { SetStatus(value); return *this;}
-    inline DeleteLicenseResult& WithStatus(LicenseDeletionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline LicenseDeletionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(LicenseDeletionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DeleteLicenseResult& WithStatus(LicenseDeletionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Date when the license is deleted.</p>
      */
-    inline const Aws::String& GetDeletionDate() const{ return m_deletionDate; }
-    inline void SetDeletionDate(const Aws::String& value) { m_deletionDate = value; }
-    inline void SetDeletionDate(Aws::String&& value) { m_deletionDate = std::move(value); }
-    inline void SetDeletionDate(const char* value) { m_deletionDate.assign(value); }
-    inline DeleteLicenseResult& WithDeletionDate(const Aws::String& value) { SetDeletionDate(value); return *this;}
-    inline DeleteLicenseResult& WithDeletionDate(Aws::String&& value) { SetDeletionDate(std::move(value)); return *this;}
-    inline DeleteLicenseResult& WithDeletionDate(const char* value) { SetDeletionDate(value); return *this;}
+    inline const Aws::String& GetDeletionDate() const { return m_deletionDate; }
+    template<typename DeletionDateT = Aws::String>
+    void SetDeletionDate(DeletionDateT&& value) { m_deletionDateHasBeenSet = true; m_deletionDate = std::forward<DeletionDateT>(value); }
+    template<typename DeletionDateT = Aws::String>
+    DeleteLicenseResult& WithDeletionDate(DeletionDateT&& value) { SetDeletionDate(std::forward<DeletionDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteLicenseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteLicenseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteLicenseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteLicenseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    LicenseDeletionStatus m_status;
+    LicenseDeletionStatus m_status{LicenseDeletionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_deletionDate;
+    bool m_deletionDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

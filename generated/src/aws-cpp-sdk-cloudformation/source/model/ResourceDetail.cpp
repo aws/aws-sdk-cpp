@@ -20,19 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceDetail::ResourceDetail() : 
-    m_resourceTypeHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceStatus(GeneratedTemplateResourceStatus::NOT_SET),
-    m_resourceStatusHasBeenSet(false),
-    m_resourceStatusReasonHasBeenSet(false),
-    m_warningsHasBeenSet(false)
-{
-}
-
 ResourceDetail::ResourceDetail(const XmlNode& xmlNode)
-  : ResourceDetail()
 {
   *this = xmlNode;
 }
@@ -48,18 +36,21 @@ ResourceDetail& ResourceDetail::operator =(const XmlNode& xmlNode)
     {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
     if(!logicalResourceIdNode.IsNull())
     {
       m_logicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(logicalResourceIdNode.GetText());
       m_logicalResourceIdHasBeenSet = true;
+       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode resourceIdentifierNode = resultNode.FirstChild("ResourceIdentifier");
 
     if(!resourceIdentifierNode.IsNull())
     {
       XmlNode resourceIdentifierEntry = resourceIdentifierNode.FirstChild("entry");
+      m_resourceIdentifierHasBeenSet = !resourceIdentifierEntry.IsNull();
       while(!resourceIdentifierEntry.IsNull())
       {
         XmlNode keyNode = resourceIdentifierEntry.FirstChild("key");
@@ -69,31 +60,34 @@ ResourceDetail& ResourceDetail::operator =(const XmlNode& xmlNode)
         resourceIdentifierEntry = resourceIdentifierEntry.NextNode("entry");
       }
 
-      m_resourceIdentifierHasBeenSet = true;
+       m_resourceIdentifierHasBeenSet = true;
     }
     XmlNode resourceStatusNode = resultNode.FirstChild("ResourceStatus");
     if(!resourceStatusNode.IsNull())
     {
-      m_resourceStatus = GeneratedTemplateResourceStatusMapper::GetGeneratedTemplateResourceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceStatusNode.GetText()).c_str()).c_str());
+      m_resourceStatus = GeneratedTemplateResourceStatusMapper::GetGeneratedTemplateResourceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceStatusNode.GetText()).c_str()));
       m_resourceStatusHasBeenSet = true;
+       m_resourceStatusHasBeenSet = true;
     }
     XmlNode resourceStatusReasonNode = resultNode.FirstChild("ResourceStatusReason");
     if(!resourceStatusReasonNode.IsNull())
     {
       m_resourceStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(resourceStatusReasonNode.GetText());
       m_resourceStatusReasonHasBeenSet = true;
+       m_resourceStatusReasonHasBeenSet = true;
     }
     XmlNode warningsNode = resultNode.FirstChild("Warnings");
     if(!warningsNode.IsNull())
     {
       XmlNode warningsMember = warningsNode.FirstChild("member");
+      m_warningsHasBeenSet = !warningsMember.IsNull();
       while(!warningsMember.IsNull())
       {
         m_warnings.push_back(warningsMember);
         warningsMember = warningsMember.NextNode("member");
       }
 
-      m_warningsHasBeenSet = true;
+       m_warningsHasBeenSet = true;
     }
   }
 

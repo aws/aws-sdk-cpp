@@ -31,7 +31,7 @@ namespace Model
   class DescribeAppResult
   {
   public:
-    AWS_SIMSPACEWEAVER_API DescribeAppResult();
+    AWS_SIMSPACEWEAVER_API DescribeAppResult() = default;
     AWS_SIMSPACEWEAVER_API DescribeAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SIMSPACEWEAVER_API DescribeAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,22 @@ namespace Model
     /**
      * <p>The description of the app.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeAppResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeAppResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeAppResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeAppResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the domain of the app.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
-    inline void SetDomain(const Aws::String& value) { m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domain.assign(value); }
-    inline DescribeAppResult& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline DescribeAppResult& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline DescribeAppResult& WithDomain(const char* value) { SetDomain(value); return *this;}
+    inline const Aws::String& GetDomain() const { return m_domain; }
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    DescribeAppResult& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,99 +63,98 @@ namespace Model
      * <p>Information about the network endpoint for the custom app. You can use the
      * endpoint to connect to the custom app.</p>
      */
-    inline const SimulationAppEndpointInfo& GetEndpointInfo() const{ return m_endpointInfo; }
-    inline void SetEndpointInfo(const SimulationAppEndpointInfo& value) { m_endpointInfo = value; }
-    inline void SetEndpointInfo(SimulationAppEndpointInfo&& value) { m_endpointInfo = std::move(value); }
-    inline DescribeAppResult& WithEndpointInfo(const SimulationAppEndpointInfo& value) { SetEndpointInfo(value); return *this;}
-    inline DescribeAppResult& WithEndpointInfo(SimulationAppEndpointInfo&& value) { SetEndpointInfo(std::move(value)); return *this;}
+    inline const SimulationAppEndpointInfo& GetEndpointInfo() const { return m_endpointInfo; }
+    template<typename EndpointInfoT = SimulationAppEndpointInfo>
+    void SetEndpointInfo(EndpointInfoT&& value) { m_endpointInfoHasBeenSet = true; m_endpointInfo = std::forward<EndpointInfoT>(value); }
+    template<typename EndpointInfoT = SimulationAppEndpointInfo>
+    DescribeAppResult& WithEndpointInfo(EndpointInfoT&& value) { SetEndpointInfo(std::forward<EndpointInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LaunchOverrides& GetLaunchOverrides() const{ return m_launchOverrides; }
-    inline void SetLaunchOverrides(const LaunchOverrides& value) { m_launchOverrides = value; }
-    inline void SetLaunchOverrides(LaunchOverrides&& value) { m_launchOverrides = std::move(value); }
-    inline DescribeAppResult& WithLaunchOverrides(const LaunchOverrides& value) { SetLaunchOverrides(value); return *this;}
-    inline DescribeAppResult& WithLaunchOverrides(LaunchOverrides&& value) { SetLaunchOverrides(std::move(value)); return *this;}
+    inline const LaunchOverrides& GetLaunchOverrides() const { return m_launchOverrides; }
+    template<typename LaunchOverridesT = LaunchOverrides>
+    void SetLaunchOverrides(LaunchOverridesT&& value) { m_launchOverridesHasBeenSet = true; m_launchOverrides = std::forward<LaunchOverridesT>(value); }
+    template<typename LaunchOverridesT = LaunchOverrides>
+    DescribeAppResult& WithLaunchOverrides(LaunchOverridesT&& value) { SetLaunchOverrides(std::forward<LaunchOverridesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the app.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeAppResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeAppResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeAppResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeAppResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the simulation of the app.</p>
      */
-    inline const Aws::String& GetSimulation() const{ return m_simulation; }
-    inline void SetSimulation(const Aws::String& value) { m_simulation = value; }
-    inline void SetSimulation(Aws::String&& value) { m_simulation = std::move(value); }
-    inline void SetSimulation(const char* value) { m_simulation.assign(value); }
-    inline DescribeAppResult& WithSimulation(const Aws::String& value) { SetSimulation(value); return *this;}
-    inline DescribeAppResult& WithSimulation(Aws::String&& value) { SetSimulation(std::move(value)); return *this;}
-    inline DescribeAppResult& WithSimulation(const char* value) { SetSimulation(value); return *this;}
+    inline const Aws::String& GetSimulation() const { return m_simulation; }
+    template<typename SimulationT = Aws::String>
+    void SetSimulation(SimulationT&& value) { m_simulationHasBeenSet = true; m_simulation = std::forward<SimulationT>(value); }
+    template<typename SimulationT = Aws::String>
+    DescribeAppResult& WithSimulation(SimulationT&& value) { SetSimulation(std::forward<SimulationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current lifecycle state of the custom app.</p>
      */
-    inline const SimulationAppStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SimulationAppStatus& value) { m_status = value; }
-    inline void SetStatus(SimulationAppStatus&& value) { m_status = std::move(value); }
-    inline DescribeAppResult& WithStatus(const SimulationAppStatus& value) { SetStatus(value); return *this;}
-    inline DescribeAppResult& WithStatus(SimulationAppStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline SimulationAppStatus GetStatus() const { return m_status; }
+    inline void SetStatus(SimulationAppStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeAppResult& WithStatus(SimulationAppStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The desired lifecycle state of the custom app.</p>
      */
-    inline const SimulationAppTargetStatus& GetTargetStatus() const{ return m_targetStatus; }
-    inline void SetTargetStatus(const SimulationAppTargetStatus& value) { m_targetStatus = value; }
-    inline void SetTargetStatus(SimulationAppTargetStatus&& value) { m_targetStatus = std::move(value); }
-    inline DescribeAppResult& WithTargetStatus(const SimulationAppTargetStatus& value) { SetTargetStatus(value); return *this;}
-    inline DescribeAppResult& WithTargetStatus(SimulationAppTargetStatus&& value) { SetTargetStatus(std::move(value)); return *this;}
+    inline SimulationAppTargetStatus GetTargetStatus() const { return m_targetStatus; }
+    inline void SetTargetStatus(SimulationAppTargetStatus value) { m_targetStatusHasBeenSet = true; m_targetStatus = value; }
+    inline DescribeAppResult& WithTargetStatus(SimulationAppTargetStatus value) { SetTargetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAppResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_domain;
+    bool m_domainHasBeenSet = false;
 
     SimulationAppEndpointInfo m_endpointInfo;
+    bool m_endpointInfoHasBeenSet = false;
 
     LaunchOverrides m_launchOverrides;
+    bool m_launchOverridesHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_simulation;
+    bool m_simulationHasBeenSet = false;
 
-    SimulationAppStatus m_status;
+    SimulationAppStatus m_status{SimulationAppStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    SimulationAppTargetStatus m_targetStatus;
+    SimulationAppTargetStatus m_targetStatus{SimulationAppTargetStatus::NOT_SET};
+    bool m_targetStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

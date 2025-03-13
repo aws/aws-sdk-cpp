@@ -18,16 +18,7 @@ namespace SocialMessaging
 namespace Model
 {
 
-WabaPhoneNumberSetupFinalization::WabaPhoneNumberSetupFinalization() : 
-    m_idHasBeenSet(false),
-    m_twoFactorPinHasBeenSet(false),
-    m_dataLocalizationRegionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 WabaPhoneNumberSetupFinalization::WabaPhoneNumberSetupFinalization(JsonView jsonValue)
-  : WabaPhoneNumberSetupFinalization()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ WabaPhoneNumberSetupFinalization& WabaPhoneNumberSetupFinalization::operator =(J
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("twoFactorPin"))
   {
     m_twoFactorPin = jsonValue.GetString("twoFactorPin");
-
     m_twoFactorPinHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataLocalizationRegion"))
   {
     m_dataLocalizationRegion = jsonValue.GetString("dataLocalizationRegion");
-
     m_dataLocalizationRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -64,7 +49,6 @@ WabaPhoneNumberSetupFinalization& WabaPhoneNumberSetupFinalization::operator =(J
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

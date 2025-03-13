@@ -18,22 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-AttributeValue::AttributeValue() : 
-    m_boolean(false),
-    m_booleanHasBeenSet(false),
-    m_entityIdentifierHasBeenSet(false),
-    m_long(0),
-    m_longHasBeenSet(false),
-    m_stringHasBeenSet(false),
-    m_setHasBeenSet(false),
-    m_recordHasBeenSet(false),
-    m_ipaddrHasBeenSet(false),
-    m_decimalHasBeenSet(false)
-{
-}
-
 AttributeValue::AttributeValue(JsonView jsonValue)
-  : AttributeValue()
 {
   *this = jsonValue;
 }
@@ -43,31 +28,23 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("boolean"))
   {
     m_boolean = jsonValue.GetBool("boolean");
-
     m_booleanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityIdentifier"))
   {
     m_entityIdentifier = jsonValue.GetObject("entityIdentifier");
-
     m_entityIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("long"))
   {
     m_long = jsonValue.GetInt64("long");
-
     m_longHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("string"))
   {
     m_string = jsonValue.GetString("string");
-
     m_stringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("set"))
   {
     Aws::Utils::Array<JsonView> setJsonList = jsonValue.GetArray("set");
@@ -77,7 +54,6 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_setHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("record"))
   {
     Aws::Map<Aws::String, JsonView> recordJsonMap = jsonValue.GetObject("record").GetAllObjects();
@@ -87,21 +63,16 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_recordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipaddr"))
   {
     m_ipaddr = jsonValue.GetString("ipaddr");
-
     m_ipaddrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decimal"))
   {
     m_decimal = jsonValue.GetString("decimal");
-
     m_decimalHasBeenSet = true;
   }
-
   return *this;
 }
 

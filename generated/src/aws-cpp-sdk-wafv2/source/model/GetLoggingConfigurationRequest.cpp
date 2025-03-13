@@ -12,15 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLoggingConfigurationRequest::GetLoggingConfigurationRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_logScope(LogScope::NOT_SET),
-    m_logScopeHasBeenSet(false)
-{
-}
-
 Aws::String GetLoggingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

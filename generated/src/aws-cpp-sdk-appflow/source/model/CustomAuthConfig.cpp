@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-CustomAuthConfig::CustomAuthConfig() : 
-    m_customAuthenticationTypeHasBeenSet(false),
-    m_authParametersHasBeenSet(false)
-{
-}
-
 CustomAuthConfig::CustomAuthConfig(JsonView jsonValue)
-  : CustomAuthConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CustomAuthConfig& CustomAuthConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customAuthenticationType"))
   {
     m_customAuthenticationType = jsonValue.GetString("customAuthenticationType");
-
     m_customAuthenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authParameters"))
   {
     Aws::Utils::Array<JsonView> authParametersJsonList = jsonValue.GetArray("authParameters");
@@ -48,7 +39,6 @@ CustomAuthConfig& CustomAuthConfig::operator =(JsonView jsonValue)
     }
     m_authParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

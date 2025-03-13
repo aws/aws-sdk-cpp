@@ -32,7 +32,7 @@ namespace Model
   class PackageAssociationConfiguration
   {
   public:
-    AWS_OPENSEARCHSERVICE_API PackageAssociationConfiguration();
+    AWS_OPENSEARCHSERVICE_API PackageAssociationConfiguration() = default;
     AWS_OPENSEARCHSERVICE_API PackageAssociationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API PackageAssociationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The configuration parameters to enable accessing the key store required by
      * the package.</p>
      */
-    inline const KeyStoreAccessOption& GetKeyStoreAccessOption() const{ return m_keyStoreAccessOption; }
+    inline const KeyStoreAccessOption& GetKeyStoreAccessOption() const { return m_keyStoreAccessOption; }
     inline bool KeyStoreAccessOptionHasBeenSet() const { return m_keyStoreAccessOptionHasBeenSet; }
-    inline void SetKeyStoreAccessOption(const KeyStoreAccessOption& value) { m_keyStoreAccessOptionHasBeenSet = true; m_keyStoreAccessOption = value; }
-    inline void SetKeyStoreAccessOption(KeyStoreAccessOption&& value) { m_keyStoreAccessOptionHasBeenSet = true; m_keyStoreAccessOption = std::move(value); }
-    inline PackageAssociationConfiguration& WithKeyStoreAccessOption(const KeyStoreAccessOption& value) { SetKeyStoreAccessOption(value); return *this;}
-    inline PackageAssociationConfiguration& WithKeyStoreAccessOption(KeyStoreAccessOption&& value) { SetKeyStoreAccessOption(std::move(value)); return *this;}
+    template<typename KeyStoreAccessOptionT = KeyStoreAccessOption>
+    void SetKeyStoreAccessOption(KeyStoreAccessOptionT&& value) { m_keyStoreAccessOptionHasBeenSet = true; m_keyStoreAccessOption = std::forward<KeyStoreAccessOptionT>(value); }
+    template<typename KeyStoreAccessOptionT = KeyStoreAccessOption>
+    PackageAssociationConfiguration& WithKeyStoreAccessOption(KeyStoreAccessOptionT&& value) { SetKeyStoreAccessOption(std::forward<KeyStoreAccessOptionT>(value)); return *this;}
     ///@}
   private:
 

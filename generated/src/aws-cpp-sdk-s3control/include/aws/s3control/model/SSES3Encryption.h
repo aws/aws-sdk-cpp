@@ -29,7 +29,7 @@ namespace Model
   class SSES3Encryption
   {
   public:
-    AWS_S3CONTROL_API SSES3Encryption();
+    AWS_S3CONTROL_API SSES3Encryption() = default;
     AWS_S3CONTROL_API SSES3Encryption(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API SSES3Encryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 

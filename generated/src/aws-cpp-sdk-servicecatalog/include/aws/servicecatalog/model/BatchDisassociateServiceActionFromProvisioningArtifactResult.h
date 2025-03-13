@@ -29,7 +29,7 @@ namespace Model
   class BatchDisassociateServiceActionFromProvisioningArtifactResult
   {
   public:
-    AWS_SERVICECATALOG_API BatchDisassociateServiceActionFromProvisioningArtifactResult();
+    AWS_SERVICECATALOG_API BatchDisassociateServiceActionFromProvisioningArtifactResult() = default;
     AWS_SERVICECATALOG_API BatchDisassociateServiceActionFromProvisioningArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API BatchDisassociateServiceActionFromProvisioningArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>An object that contains a list of errors, along with information to help you
      * identify the self-service action.</p>
      */
-    inline const Aws::Vector<FailedServiceActionAssociation>& GetFailedServiceActionAssociations() const{ return m_failedServiceActionAssociations; }
-    inline void SetFailedServiceActionAssociations(const Aws::Vector<FailedServiceActionAssociation>& value) { m_failedServiceActionAssociations = value; }
-    inline void SetFailedServiceActionAssociations(Aws::Vector<FailedServiceActionAssociation>&& value) { m_failedServiceActionAssociations = std::move(value); }
-    inline BatchDisassociateServiceActionFromProvisioningArtifactResult& WithFailedServiceActionAssociations(const Aws::Vector<FailedServiceActionAssociation>& value) { SetFailedServiceActionAssociations(value); return *this;}
-    inline BatchDisassociateServiceActionFromProvisioningArtifactResult& WithFailedServiceActionAssociations(Aws::Vector<FailedServiceActionAssociation>&& value) { SetFailedServiceActionAssociations(std::move(value)); return *this;}
-    inline BatchDisassociateServiceActionFromProvisioningArtifactResult& AddFailedServiceActionAssociations(const FailedServiceActionAssociation& value) { m_failedServiceActionAssociations.push_back(value); return *this; }
-    inline BatchDisassociateServiceActionFromProvisioningArtifactResult& AddFailedServiceActionAssociations(FailedServiceActionAssociation&& value) { m_failedServiceActionAssociations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedServiceActionAssociation>& GetFailedServiceActionAssociations() const { return m_failedServiceActionAssociations; }
+    template<typename FailedServiceActionAssociationsT = Aws::Vector<FailedServiceActionAssociation>>
+    void SetFailedServiceActionAssociations(FailedServiceActionAssociationsT&& value) { m_failedServiceActionAssociationsHasBeenSet = true; m_failedServiceActionAssociations = std::forward<FailedServiceActionAssociationsT>(value); }
+    template<typename FailedServiceActionAssociationsT = Aws::Vector<FailedServiceActionAssociation>>
+    BatchDisassociateServiceActionFromProvisioningArtifactResult& WithFailedServiceActionAssociations(FailedServiceActionAssociationsT&& value) { SetFailedServiceActionAssociations(std::forward<FailedServiceActionAssociationsT>(value)); return *this;}
+    template<typename FailedServiceActionAssociationsT = FailedServiceActionAssociation>
+    BatchDisassociateServiceActionFromProvisioningArtifactResult& AddFailedServiceActionAssociations(FailedServiceActionAssociationsT&& value) { m_failedServiceActionAssociationsHasBeenSet = true; m_failedServiceActionAssociations.emplace_back(std::forward<FailedServiceActionAssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDisassociateServiceActionFromProvisioningArtifactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDisassociateServiceActionFromProvisioningArtifactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDisassociateServiceActionFromProvisioningArtifactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDisassociateServiceActionFromProvisioningArtifactResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FailedServiceActionAssociation> m_failedServiceActionAssociations;
+    bool m_failedServiceActionAssociationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

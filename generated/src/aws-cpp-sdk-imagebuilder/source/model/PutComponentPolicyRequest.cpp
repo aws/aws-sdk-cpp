@@ -12,12 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutComponentPolicyRequest::PutComponentPolicyRequest() : 
-    m_componentArnHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 Aws::String PutComponentPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestSetExportSpecification::TestSetExportSpecification() : 
-    m_testSetIdHasBeenSet(false)
-{
-}
-
 TestSetExportSpecification::TestSetExportSpecification(JsonView jsonValue)
-  : TestSetExportSpecification()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TestSetExportSpecification& TestSetExportSpecification::operator =(JsonView json
   if(jsonValue.ValueExists("testSetId"))
   {
     m_testSetId = jsonValue.GetString("testSetId");
-
     m_testSetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RevokeSecurityGroupEgressResponse::RevokeSecurityGroupEgressResponse() : 
-    m_return(false)
-{
-}
-
 RevokeSecurityGroupEgressResponse::RevokeSecurityGroupEgressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : RevokeSecurityGroupEgressResponse()
 {
   *this = result;
 }
@@ -44,11 +38,13 @@ RevokeSecurityGroupEgressResponse& RevokeSecurityGroupEgressResponse::operator =
     if(!returnNode.IsNull())
     {
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
+      m_returnHasBeenSet = true;
     }
     XmlNode unknownIpPermissionsNode = resultNode.FirstChild("unknownIpPermissionSet");
     if(!unknownIpPermissionsNode.IsNull())
     {
       XmlNode unknownIpPermissionsMember = unknownIpPermissionsNode.FirstChild("item");
+      m_unknownIpPermissionsHasBeenSet = !unknownIpPermissionsMember.IsNull();
       while(!unknownIpPermissionsMember.IsNull())
       {
         m_unknownIpPermissions.push_back(unknownIpPermissionsMember);
@@ -60,6 +56,7 @@ RevokeSecurityGroupEgressResponse& RevokeSecurityGroupEgressResponse::operator =
     if(!revokedSecurityGroupRulesNode.IsNull())
     {
       XmlNode revokedSecurityGroupRulesMember = revokedSecurityGroupRulesNode.FirstChild("item");
+      m_revokedSecurityGroupRulesHasBeenSet = !revokedSecurityGroupRulesMember.IsNull();
       while(!revokedSecurityGroupRulesMember.IsNull())
       {
         m_revokedSecurityGroupRules.push_back(revokedSecurityGroupRulesMember);
@@ -74,6 +71,7 @@ RevokeSecurityGroupEgressResponse& RevokeSecurityGroupEgressResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RevokeSecurityGroupEgressResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -18,27 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-AutoBranchCreationConfig::AutoBranchCreationConfig() : 
-    m_stage(Stage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_frameworkHasBeenSet(false),
-    m_enableAutoBuild(false),
-    m_enableAutoBuildHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false),
-    m_basicAuthCredentialsHasBeenSet(false),
-    m_enableBasicAuth(false),
-    m_enableBasicAuthHasBeenSet(false),
-    m_enablePerformanceMode(false),
-    m_enablePerformanceModeHasBeenSet(false),
-    m_buildSpecHasBeenSet(false),
-    m_enablePullRequestPreview(false),
-    m_enablePullRequestPreviewHasBeenSet(false),
-    m_pullRequestEnvironmentNameHasBeenSet(false)
-{
-}
-
 AutoBranchCreationConfig::AutoBranchCreationConfig(JsonView jsonValue)
-  : AutoBranchCreationConfig()
 {
   *this = jsonValue;
 }
@@ -48,24 +28,18 @@ AutoBranchCreationConfig& AutoBranchCreationConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = StageMapper::GetStageForName(jsonValue.GetString("stage"));
-
     m_stageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framework"))
   {
     m_framework = jsonValue.GetString("framework");
-
     m_frameworkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableAutoBuild"))
   {
     m_enableAutoBuild = jsonValue.GetBool("enableAutoBuild");
-
     m_enableAutoBuildHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentVariables"))
   {
     Aws::Map<Aws::String, JsonView> environmentVariablesJsonMap = jsonValue.GetObject("environmentVariables").GetAllObjects();
@@ -75,49 +49,36 @@ AutoBranchCreationConfig& AutoBranchCreationConfig::operator =(JsonView jsonValu
     }
     m_environmentVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("basicAuthCredentials"))
   {
     m_basicAuthCredentials = jsonValue.GetString("basicAuthCredentials");
-
     m_basicAuthCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableBasicAuth"))
   {
     m_enableBasicAuth = jsonValue.GetBool("enableBasicAuth");
-
     m_enableBasicAuthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enablePerformanceMode"))
   {
     m_enablePerformanceMode = jsonValue.GetBool("enablePerformanceMode");
-
     m_enablePerformanceModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildSpec"))
   {
     m_buildSpec = jsonValue.GetString("buildSpec");
-
     m_buildSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enablePullRequestPreview"))
   {
     m_enablePullRequestPreview = jsonValue.GetBool("enablePullRequestPreview");
-
     m_enablePullRequestPreviewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pullRequestEnvironmentName"))
   {
     m_pullRequestEnvironmentName = jsonValue.GetString("pullRequestEnvironmentName");
-
     m_pullRequestEnvironmentNameHasBeenSet = true;
   }
-
   return *this;
 }
 

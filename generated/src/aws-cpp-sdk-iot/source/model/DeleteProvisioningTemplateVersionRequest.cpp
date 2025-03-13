@@ -12,13 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProvisioningTemplateVersionRequest::DeleteProvisioningTemplateVersionRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_versionId(0),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProvisioningTemplateVersionRequest::SerializePayload() const
 {
   return {};

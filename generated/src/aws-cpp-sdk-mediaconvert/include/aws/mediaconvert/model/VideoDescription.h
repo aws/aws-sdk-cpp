@@ -43,7 +43,7 @@ namespace Model
   class VideoDescription
   {
   public:
-    AWS_MEDIACONVERT_API VideoDescription();
+    AWS_MEDIACONVERT_API VideoDescription() = default;
     AWS_MEDIACONVERT_API VideoDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API VideoDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,12 +58,10 @@ namespace Model
      * specified in the job. * Choose Auto to calculate output AFD values based on the
      * input AFD scaler data.
      */
-    inline const AfdSignaling& GetAfdSignaling() const{ return m_afdSignaling; }
+    inline AfdSignaling GetAfdSignaling() const { return m_afdSignaling; }
     inline bool AfdSignalingHasBeenSet() const { return m_afdSignalingHasBeenSet; }
-    inline void SetAfdSignaling(const AfdSignaling& value) { m_afdSignalingHasBeenSet = true; m_afdSignaling = value; }
-    inline void SetAfdSignaling(AfdSignaling&& value) { m_afdSignalingHasBeenSet = true; m_afdSignaling = std::move(value); }
-    inline VideoDescription& WithAfdSignaling(const AfdSignaling& value) { SetAfdSignaling(value); return *this;}
-    inline VideoDescription& WithAfdSignaling(AfdSignaling&& value) { SetAfdSignaling(std::move(value)); return *this;}
+    inline void SetAfdSignaling(AfdSignaling value) { m_afdSignalingHasBeenSet = true; m_afdSignaling = value; }
+    inline VideoDescription& WithAfdSignaling(AfdSignaling value) { SetAfdSignaling(value); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,10 @@ namespace Model
      * longer accepts the value DISABLED for AntiAlias. If you specify that in your
      * job, the service will ignore the setting.
      */
-    inline const AntiAlias& GetAntiAlias() const{ return m_antiAlias; }
+    inline AntiAlias GetAntiAlias() const { return m_antiAlias; }
     inline bool AntiAliasHasBeenSet() const { return m_antiAliasHasBeenSet; }
-    inline void SetAntiAlias(const AntiAlias& value) { m_antiAliasHasBeenSet = true; m_antiAlias = value; }
-    inline void SetAntiAlias(AntiAlias&& value) { m_antiAliasHasBeenSet = true; m_antiAlias = std::move(value); }
-    inline VideoDescription& WithAntiAlias(const AntiAlias& value) { SetAntiAlias(value); return *this;}
-    inline VideoDescription& WithAntiAlias(AntiAlias&& value) { SetAntiAlias(std::move(value)); return *this;}
+    inline void SetAntiAlias(AntiAlias value) { m_antiAliasHasBeenSet = true; m_antiAlias = value; }
+    inline VideoDescription& WithAntiAlias(AntiAlias value) { SetAntiAlias(value); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +83,10 @@ namespace Model
      * that you keep the default value, Auto. To specify center positioning: Choose
      * Force center. To specify top left positioning: Choose Force top left.
      */
-    inline const ChromaPositionMode& GetChromaPositionMode() const{ return m_chromaPositionMode; }
+    inline ChromaPositionMode GetChromaPositionMode() const { return m_chromaPositionMode; }
     inline bool ChromaPositionModeHasBeenSet() const { return m_chromaPositionModeHasBeenSet; }
-    inline void SetChromaPositionMode(const ChromaPositionMode& value) { m_chromaPositionModeHasBeenSet = true; m_chromaPositionMode = value; }
-    inline void SetChromaPositionMode(ChromaPositionMode&& value) { m_chromaPositionModeHasBeenSet = true; m_chromaPositionMode = std::move(value); }
-    inline VideoDescription& WithChromaPositionMode(const ChromaPositionMode& value) { SetChromaPositionMode(value); return *this;}
-    inline VideoDescription& WithChromaPositionMode(ChromaPositionMode&& value) { SetChromaPositionMode(std::move(value)); return *this;}
+    inline void SetChromaPositionMode(ChromaPositionMode value) { m_chromaPositionModeHasBeenSet = true; m_chromaPositionMode = value; }
+    inline VideoDescription& WithChromaPositionMode(ChromaPositionMode value) { SetChromaPositionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -106,12 +100,12 @@ namespace Model
      * Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings *
      * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
-    inline const VideoCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
+    inline const VideoCodecSettings& GetCodecSettings() const { return m_codecSettings; }
     inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
-    inline void SetCodecSettings(const VideoCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
-    inline void SetCodecSettings(VideoCodecSettings&& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = std::move(value); }
-    inline VideoDescription& WithCodecSettings(const VideoCodecSettings& value) { SetCodecSettings(value); return *this;}
-    inline VideoDescription& WithCodecSettings(VideoCodecSettings&& value) { SetCodecSettings(std::move(value)); return *this;}
+    template<typename CodecSettingsT = VideoCodecSettings>
+    void SetCodecSettings(CodecSettingsT&& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = std::forward<CodecSettingsT>(value); }
+    template<typename CodecSettingsT = VideoCodecSettings>
+    VideoDescription& WithCodecSettings(CodecSettingsT&& value) { SetCodecSettings(std::forward<CodecSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +114,10 @@ namespace Model
      * Ignore to exclude color metadata from this output. If you don't specify a value,
      * the service sets this to Insert by default.
      */
-    inline const ColorMetadata& GetColorMetadata() const{ return m_colorMetadata; }
+    inline ColorMetadata GetColorMetadata() const { return m_colorMetadata; }
     inline bool ColorMetadataHasBeenSet() const { return m_colorMetadataHasBeenSet; }
-    inline void SetColorMetadata(const ColorMetadata& value) { m_colorMetadataHasBeenSet = true; m_colorMetadata = value; }
-    inline void SetColorMetadata(ColorMetadata&& value) { m_colorMetadataHasBeenSet = true; m_colorMetadata = std::move(value); }
-    inline VideoDescription& WithColorMetadata(const ColorMetadata& value) { SetColorMetadata(value); return *this;}
-    inline VideoDescription& WithColorMetadata(ColorMetadata&& value) { SetColorMetadata(std::move(value)); return *this;}
+    inline void SetColorMetadata(ColorMetadata value) { m_colorMetadataHasBeenSet = true; m_colorMetadata = value; }
+    inline VideoDescription& WithColorMetadata(ColorMetadata value) { SetColorMetadata(value); return *this;}
     ///@}
 
     ///@{
@@ -133,12 +125,12 @@ namespace Model
      * Use Cropping selection to specify the video area that the service will include
      * in the output video frame.
      */
-    inline const Rectangle& GetCrop() const{ return m_crop; }
+    inline const Rectangle& GetCrop() const { return m_crop; }
     inline bool CropHasBeenSet() const { return m_cropHasBeenSet; }
-    inline void SetCrop(const Rectangle& value) { m_cropHasBeenSet = true; m_crop = value; }
-    inline void SetCrop(Rectangle&& value) { m_cropHasBeenSet = true; m_crop = std::move(value); }
-    inline VideoDescription& WithCrop(const Rectangle& value) { SetCrop(value); return *this;}
-    inline VideoDescription& WithCrop(Rectangle&& value) { SetCrop(std::move(value)); return *this;}
+    template<typename CropT = Rectangle>
+    void SetCrop(CropT&& value) { m_cropHasBeenSet = true; m_crop = std::forward<CropT>(value); }
+    template<typename CropT = Rectangle>
+    VideoDescription& WithCrop(CropT&& value) { SetCrop(std::forward<CropT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,12 +140,10 @@ namespace Model
      * timecode, the system will fall back to non-drop-frame. This setting is enabled
      * by default when Timecode insertion or Timecode track is enabled.
      */
-    inline const DropFrameTimecode& GetDropFrameTimecode() const{ return m_dropFrameTimecode; }
+    inline DropFrameTimecode GetDropFrameTimecode() const { return m_dropFrameTimecode; }
     inline bool DropFrameTimecodeHasBeenSet() const { return m_dropFrameTimecodeHasBeenSet; }
-    inline void SetDropFrameTimecode(const DropFrameTimecode& value) { m_dropFrameTimecodeHasBeenSet = true; m_dropFrameTimecode = value; }
-    inline void SetDropFrameTimecode(DropFrameTimecode&& value) { m_dropFrameTimecodeHasBeenSet = true; m_dropFrameTimecode = std::move(value); }
-    inline VideoDescription& WithDropFrameTimecode(const DropFrameTimecode& value) { SetDropFrameTimecode(value); return *this;}
-    inline VideoDescription& WithDropFrameTimecode(DropFrameTimecode&& value) { SetDropFrameTimecode(std::move(value)); return *this;}
+    inline void SetDropFrameTimecode(DropFrameTimecode value) { m_dropFrameTimecodeHasBeenSet = true; m_dropFrameTimecode = value; }
+    inline VideoDescription& WithDropFrameTimecode(DropFrameTimecode value) { SetDropFrameTimecode(value); return *this;}
     ///@}
 
     ///@{
@@ -161,7 +151,7 @@ namespace Model
      * Applies only if you set AFD Signaling to Fixed. Use Fixed to specify a four-bit
      * AFD value which the service will write on all frames of this video output.
      */
-    inline int GetFixedAfd() const{ return m_fixedAfd; }
+    inline int GetFixedAfd() const { return m_fixedAfd; }
     inline bool FixedAfdHasBeenSet() const { return m_fixedAfdHasBeenSet; }
     inline void SetFixedAfd(int value) { m_fixedAfdHasBeenSet = true; m_fixedAfd = value; }
     inline VideoDescription& WithFixedAfd(int value) { SetFixedAfd(value); return *this;}
@@ -175,7 +165,7 @@ namespace Model
      * for Width. For example, if your input is 1920x1080 and you set Width to 1280,
      * your output will be 1280x720.
      */
-    inline int GetHeight() const{ return m_height; }
+    inline int GetHeight() const { return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
     inline VideoDescription& WithHeight(int value) { SetHeight(value); return *this;}
@@ -186,12 +176,12 @@ namespace Model
      * Use Selection placement to define the video area in your output frame. The area
      * outside of the rectangle that you specify here is black.
      */
-    inline const Rectangle& GetPosition() const{ return m_position; }
+    inline const Rectangle& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Rectangle& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Rectangle&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline VideoDescription& WithPosition(const Rectangle& value) { SetPosition(value); return *this;}
-    inline VideoDescription& WithPosition(Rectangle&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Rectangle>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Rectangle>
+    VideoDescription& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -204,12 +194,10 @@ namespace Model
      * workflow is to set RespondToAfd to and set AfdSignaling to AUTO. * Choose None
      * to remove all input AFD values from this output.
      */
-    inline const RespondToAfd& GetRespondToAfd() const{ return m_respondToAfd; }
+    inline RespondToAfd GetRespondToAfd() const { return m_respondToAfd; }
     inline bool RespondToAfdHasBeenSet() const { return m_respondToAfdHasBeenSet; }
-    inline void SetRespondToAfd(const RespondToAfd& value) { m_respondToAfdHasBeenSet = true; m_respondToAfd = value; }
-    inline void SetRespondToAfd(RespondToAfd&& value) { m_respondToAfdHasBeenSet = true; m_respondToAfd = std::move(value); }
-    inline VideoDescription& WithRespondToAfd(const RespondToAfd& value) { SetRespondToAfd(value); return *this;}
-    inline VideoDescription& WithRespondToAfd(RespondToAfd&& value) { SetRespondToAfd(std::move(value)); return *this;}
+    inline void SetRespondToAfd(RespondToAfd value) { m_respondToAfdHasBeenSet = true; m_respondToAfd = value; }
+    inline VideoDescription& WithRespondToAfd(RespondToAfd value) { SetRespondToAfd(value); return *this;}
     ///@}
 
     ///@{
@@ -218,12 +206,10 @@ namespace Model
      * than your input. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
-    inline const ScalingBehavior& GetScalingBehavior() const{ return m_scalingBehavior; }
+    inline ScalingBehavior GetScalingBehavior() const { return m_scalingBehavior; }
     inline bool ScalingBehaviorHasBeenSet() const { return m_scalingBehaviorHasBeenSet; }
-    inline void SetScalingBehavior(const ScalingBehavior& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = value; }
-    inline void SetScalingBehavior(ScalingBehavior&& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = std::move(value); }
-    inline VideoDescription& WithScalingBehavior(const ScalingBehavior& value) { SetScalingBehavior(value); return *this;}
-    inline VideoDescription& WithScalingBehavior(ScalingBehavior&& value) { SetScalingBehavior(std::move(value)); return *this;}
+    inline void SetScalingBehavior(ScalingBehavior value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = value; }
+    inline VideoDescription& WithScalingBehavior(ScalingBehavior value) { SetScalingBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -233,7 +219,7 @@ namespace Model
      * only applies if your output resolution is different from your input resolution.
      * 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
      */
-    inline int GetSharpness() const{ return m_sharpness; }
+    inline int GetSharpness() const { return m_sharpness; }
     inline bool SharpnessHasBeenSet() const { return m_sharpnessHasBeenSet; }
     inline void SetSharpness(int value) { m_sharpnessHasBeenSet = true; m_sharpness = value; }
     inline VideoDescription& WithSharpness(int value) { SetSharpness(value); return *this;}
@@ -253,12 +239,10 @@ namespace Model
      * settings does not affect the timecodes that are inserted in the output. Source
      * under Job settings > Timecode configuration does.
      */
-    inline const VideoTimecodeInsertion& GetTimecodeInsertion() const{ return m_timecodeInsertion; }
+    inline VideoTimecodeInsertion GetTimecodeInsertion() const { return m_timecodeInsertion; }
     inline bool TimecodeInsertionHasBeenSet() const { return m_timecodeInsertionHasBeenSet; }
-    inline void SetTimecodeInsertion(const VideoTimecodeInsertion& value) { m_timecodeInsertionHasBeenSet = true; m_timecodeInsertion = value; }
-    inline void SetTimecodeInsertion(VideoTimecodeInsertion&& value) { m_timecodeInsertionHasBeenSet = true; m_timecodeInsertion = std::move(value); }
-    inline VideoDescription& WithTimecodeInsertion(const VideoTimecodeInsertion& value) { SetTimecodeInsertion(value); return *this;}
-    inline VideoDescription& WithTimecodeInsertion(VideoTimecodeInsertion&& value) { SetTimecodeInsertion(std::move(value)); return *this;}
+    inline void SetTimecodeInsertion(VideoTimecodeInsertion value) { m_timecodeInsertionHasBeenSet = true; m_timecodeInsertion = value; }
+    inline VideoDescription& WithTimecodeInsertion(VideoTimecodeInsertion value) { SetTimecodeInsertion(value); return *this;}
     ///@}
 
     ///@{
@@ -269,12 +253,10 @@ namespace Model
      * non-dropframe timecode under the Drop Frame Timecode setting. To not include a
      * timecode track: Keep the default value, Disabled.
      */
-    inline const TimecodeTrack& GetTimecodeTrack() const{ return m_timecodeTrack; }
+    inline TimecodeTrack GetTimecodeTrack() const { return m_timecodeTrack; }
     inline bool TimecodeTrackHasBeenSet() const { return m_timecodeTrackHasBeenSet; }
-    inline void SetTimecodeTrack(const TimecodeTrack& value) { m_timecodeTrackHasBeenSet = true; m_timecodeTrack = value; }
-    inline void SetTimecodeTrack(TimecodeTrack&& value) { m_timecodeTrackHasBeenSet = true; m_timecodeTrack = std::move(value); }
-    inline VideoDescription& WithTimecodeTrack(const TimecodeTrack& value) { SetTimecodeTrack(value); return *this;}
-    inline VideoDescription& WithTimecodeTrack(TimecodeTrack&& value) { SetTimecodeTrack(std::move(value)); return *this;}
+    inline void SetTimecodeTrack(TimecodeTrack value) { m_timecodeTrackHasBeenSet = true; m_timecodeTrack = value; }
+    inline VideoDescription& WithTimecodeTrack(TimecodeTrack value) { SetTimecodeTrack(value); return *this;}
     ///@}
 
     ///@{
@@ -282,12 +264,12 @@ namespace Model
      * Find additional transcoding features under Preprocessors. Enable the features at
      * each output individually. These features are disabled by default.
      */
-    inline const VideoPreprocessor& GetVideoPreprocessors() const{ return m_videoPreprocessors; }
+    inline const VideoPreprocessor& GetVideoPreprocessors() const { return m_videoPreprocessors; }
     inline bool VideoPreprocessorsHasBeenSet() const { return m_videoPreprocessorsHasBeenSet; }
-    inline void SetVideoPreprocessors(const VideoPreprocessor& value) { m_videoPreprocessorsHasBeenSet = true; m_videoPreprocessors = value; }
-    inline void SetVideoPreprocessors(VideoPreprocessor&& value) { m_videoPreprocessorsHasBeenSet = true; m_videoPreprocessors = std::move(value); }
-    inline VideoDescription& WithVideoPreprocessors(const VideoPreprocessor& value) { SetVideoPreprocessors(value); return *this;}
-    inline VideoDescription& WithVideoPreprocessors(VideoPreprocessor&& value) { SetVideoPreprocessors(std::move(value)); return *this;}
+    template<typename VideoPreprocessorsT = VideoPreprocessor>
+    void SetVideoPreprocessors(VideoPreprocessorsT&& value) { m_videoPreprocessorsHasBeenSet = true; m_videoPreprocessors = std::forward<VideoPreprocessorsT>(value); }
+    template<typename VideoPreprocessorsT = VideoPreprocessor>
+    VideoDescription& WithVideoPreprocessors(VideoPreprocessorsT&& value) { SetVideoPreprocessors(std::forward<VideoPreprocessorsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -298,62 +280,62 @@ namespace Model
      * Height. For example, if your input is 1920x1080 and you set Height to 720, your
      * output will be 1280x720.
      */
-    inline int GetWidth() const{ return m_width; }
+    inline int GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
     inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
     inline VideoDescription& WithWidth(int value) { SetWidth(value); return *this;}
     ///@}
   private:
 
-    AfdSignaling m_afdSignaling;
+    AfdSignaling m_afdSignaling{AfdSignaling::NOT_SET};
     bool m_afdSignalingHasBeenSet = false;
 
-    AntiAlias m_antiAlias;
+    AntiAlias m_antiAlias{AntiAlias::NOT_SET};
     bool m_antiAliasHasBeenSet = false;
 
-    ChromaPositionMode m_chromaPositionMode;
+    ChromaPositionMode m_chromaPositionMode{ChromaPositionMode::NOT_SET};
     bool m_chromaPositionModeHasBeenSet = false;
 
     VideoCodecSettings m_codecSettings;
     bool m_codecSettingsHasBeenSet = false;
 
-    ColorMetadata m_colorMetadata;
+    ColorMetadata m_colorMetadata{ColorMetadata::NOT_SET};
     bool m_colorMetadataHasBeenSet = false;
 
     Rectangle m_crop;
     bool m_cropHasBeenSet = false;
 
-    DropFrameTimecode m_dropFrameTimecode;
+    DropFrameTimecode m_dropFrameTimecode{DropFrameTimecode::NOT_SET};
     bool m_dropFrameTimecodeHasBeenSet = false;
 
-    int m_fixedAfd;
+    int m_fixedAfd{0};
     bool m_fixedAfdHasBeenSet = false;
 
-    int m_height;
+    int m_height{0};
     bool m_heightHasBeenSet = false;
 
     Rectangle m_position;
     bool m_positionHasBeenSet = false;
 
-    RespondToAfd m_respondToAfd;
+    RespondToAfd m_respondToAfd{RespondToAfd::NOT_SET};
     bool m_respondToAfdHasBeenSet = false;
 
-    ScalingBehavior m_scalingBehavior;
+    ScalingBehavior m_scalingBehavior{ScalingBehavior::NOT_SET};
     bool m_scalingBehaviorHasBeenSet = false;
 
-    int m_sharpness;
+    int m_sharpness{0};
     bool m_sharpnessHasBeenSet = false;
 
-    VideoTimecodeInsertion m_timecodeInsertion;
+    VideoTimecodeInsertion m_timecodeInsertion{VideoTimecodeInsertion::NOT_SET};
     bool m_timecodeInsertionHasBeenSet = false;
 
-    TimecodeTrack m_timecodeTrack;
+    TimecodeTrack m_timecodeTrack{TimecodeTrack::NOT_SET};
     bool m_timecodeTrackHasBeenSet = false;
 
     VideoPreprocessor m_videoPreprocessors;
     bool m_videoPreprocessorsHasBeenSet = false;
 
-    int m_width;
+    int m_width{0};
     bool m_widthHasBeenSet = false;
   };
 

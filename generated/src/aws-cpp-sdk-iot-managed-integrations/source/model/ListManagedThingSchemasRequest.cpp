@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListManagedThingSchemasRequest::ListManagedThingSchemasRequest() : 
-    m_identifierHasBeenSet(false),
-    m_endpointIdFilterHasBeenSet(false),
-    m_capabilityIdFilterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListManagedThingSchemasRequest::SerializePayload() const
 {
   return {};

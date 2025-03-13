@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCloudWatchAlarmTemplateGroupsRequest::ListCloudWatchAlarmTemplateGroupsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_signalMapIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ListCloudWatchAlarmTemplateGroupsRequest::SerializePayload() const
 {
   return {};

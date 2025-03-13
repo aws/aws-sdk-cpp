@@ -18,20 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-SectionalElement::SectionalElement() : 
-    m_typeHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_level(0),
-    m_levelHasBeenSet(false),
-    m_orientationHasBeenSet(false),
-    m_excluded(false),
-    m_excludedHasBeenSet(false)
-{
-}
-
 SectionalElement::SectionalElement(JsonView jsonValue)
-  : SectionalElement()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ SectionalElement& SectionalElement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("position"))
   {
     m_position = jsonValue.GetObject("position");
-
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("level"))
   {
     m_level = jsonValue.GetInteger("level");
-
     m_levelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orientation"))
   {
     m_orientation = jsonValue.GetString("orientation");
-
     m_orientationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excluded"))
   {
     m_excluded = jsonValue.GetBool("excluded");
-
     m_excludedHasBeenSet = true;
   }
-
   return *this;
 }
 

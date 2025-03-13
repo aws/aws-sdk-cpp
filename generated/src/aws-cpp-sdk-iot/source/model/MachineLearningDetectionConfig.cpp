@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-MachineLearningDetectionConfig::MachineLearningDetectionConfig() : 
-    m_confidenceLevel(ConfidenceLevel::NOT_SET),
-    m_confidenceLevelHasBeenSet(false)
-{
-}
-
 MachineLearningDetectionConfig::MachineLearningDetectionConfig(JsonView jsonValue)
-  : MachineLearningDetectionConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MachineLearningDetectionConfig& MachineLearningDetectionConfig::operator =(JsonV
   if(jsonValue.ValueExists("confidenceLevel"))
   {
     m_confidenceLevel = ConfidenceLevelMapper::GetConfidenceLevelForName(jsonValue.GetString("confidenceLevel"));
-
     m_confidenceLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

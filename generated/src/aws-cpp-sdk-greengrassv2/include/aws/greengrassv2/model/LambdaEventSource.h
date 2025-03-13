@@ -34,7 +34,7 @@ namespace Model
   class LambdaEventSource
   {
   public:
-    AWS_GREENGRASSV2_API LambdaEventSource();
+    AWS_GREENGRASSV2_API LambdaEventSource() = default;
     AWS_GREENGRASSV2_API LambdaEventSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API LambdaEventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The topic to which to subscribe to receive event messages.</p>
      */
-    inline const Aws::String& GetTopic() const{ return m_topic; }
+    inline const Aws::String& GetTopic() const { return m_topic; }
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-    inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
-    inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
-    inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
-    inline LambdaEventSource& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-    inline LambdaEventSource& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-    inline LambdaEventSource& WithTopic(const char* value) { SetTopic(value); return *this;}
+    template<typename TopicT = Aws::String>
+    void SetTopic(TopicT&& value) { m_topicHasBeenSet = true; m_topic = std::forward<TopicT>(value); }
+    template<typename TopicT = Aws::String>
+    LambdaEventSource& WithTopic(TopicT&& value) { SetTopic(std::forward<TopicT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,19 +62,17 @@ namespace Model
      * This event source type supports MQTT wildcards (<code>+</code> and
      * <code>#</code>) in the event source topic.</p> </li> </ul>
      */
-    inline const LambdaEventSourceType& GetType() const{ return m_type; }
+    inline LambdaEventSourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const LambdaEventSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(LambdaEventSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline LambdaEventSource& WithType(const LambdaEventSourceType& value) { SetType(value); return *this;}
-    inline LambdaEventSource& WithType(LambdaEventSourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(LambdaEventSourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline LambdaEventSource& WithType(LambdaEventSourceType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_topic;
     bool m_topicHasBeenSet = false;
 
-    LambdaEventSourceType m_type;
+    LambdaEventSourceType m_type{LambdaEventSourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -36,7 +36,7 @@ namespace Model
   class RotationShift
   {
   public:
-    AWS_SSMCONTACTS_API RotationShift();
+    AWS_SSMCONTACTS_API RotationShift() = default;
     AWS_SSMCONTACTS_API RotationShift(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API RotationShift& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,76 +47,73 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift
      * rotation. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetContactIds() const{ return m_contactIds; }
+    inline const Aws::Vector<Aws::String>& GetContactIds() const { return m_contactIds; }
     inline bool ContactIdsHasBeenSet() const { return m_contactIdsHasBeenSet; }
-    inline void SetContactIds(const Aws::Vector<Aws::String>& value) { m_contactIdsHasBeenSet = true; m_contactIds = value; }
-    inline void SetContactIds(Aws::Vector<Aws::String>&& value) { m_contactIdsHasBeenSet = true; m_contactIds = std::move(value); }
-    inline RotationShift& WithContactIds(const Aws::Vector<Aws::String>& value) { SetContactIds(value); return *this;}
-    inline RotationShift& WithContactIds(Aws::Vector<Aws::String>&& value) { SetContactIds(std::move(value)); return *this;}
-    inline RotationShift& AddContactIds(const Aws::String& value) { m_contactIdsHasBeenSet = true; m_contactIds.push_back(value); return *this; }
-    inline RotationShift& AddContactIds(Aws::String&& value) { m_contactIdsHasBeenSet = true; m_contactIds.push_back(std::move(value)); return *this; }
-    inline RotationShift& AddContactIds(const char* value) { m_contactIdsHasBeenSet = true; m_contactIds.push_back(value); return *this; }
+    template<typename ContactIdsT = Aws::Vector<Aws::String>>
+    void SetContactIds(ContactIdsT&& value) { m_contactIdsHasBeenSet = true; m_contactIds = std::forward<ContactIdsT>(value); }
+    template<typename ContactIdsT = Aws::Vector<Aws::String>>
+    RotationShift& WithContactIds(ContactIdsT&& value) { SetContactIds(std::forward<ContactIdsT>(value)); return *this;}
+    template<typename ContactIdsT = Aws::String>
+    RotationShift& AddContactIds(ContactIdsT&& value) { m_contactIdsHasBeenSet = true; m_contactIds.emplace_back(std::forward<ContactIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time a shift rotation begins.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline RotationShift& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline RotationShift& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    RotationShift& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time a shift rotation ends.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline RotationShift& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline RotationShift& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    RotationShift& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of shift rotation.</p>
      */
-    inline const ShiftType& GetType() const{ return m_type; }
+    inline ShiftType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ShiftType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ShiftType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RotationShift& WithType(const ShiftType& value) { SetType(value); return *this;}
-    inline RotationShift& WithType(ShiftType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ShiftType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RotationShift& WithType(ShiftType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional information about an on-call rotation shift.</p>
      */
-    inline const ShiftDetails& GetShiftDetails() const{ return m_shiftDetails; }
+    inline const ShiftDetails& GetShiftDetails() const { return m_shiftDetails; }
     inline bool ShiftDetailsHasBeenSet() const { return m_shiftDetailsHasBeenSet; }
-    inline void SetShiftDetails(const ShiftDetails& value) { m_shiftDetailsHasBeenSet = true; m_shiftDetails = value; }
-    inline void SetShiftDetails(ShiftDetails&& value) { m_shiftDetailsHasBeenSet = true; m_shiftDetails = std::move(value); }
-    inline RotationShift& WithShiftDetails(const ShiftDetails& value) { SetShiftDetails(value); return *this;}
-    inline RotationShift& WithShiftDetails(ShiftDetails&& value) { SetShiftDetails(std::move(value)); return *this;}
+    template<typename ShiftDetailsT = ShiftDetails>
+    void SetShiftDetails(ShiftDetailsT&& value) { m_shiftDetailsHasBeenSet = true; m_shiftDetails = std::forward<ShiftDetailsT>(value); }
+    template<typename ShiftDetailsT = ShiftDetails>
+    RotationShift& WithShiftDetails(ShiftDetailsT&& value) { SetShiftDetails(std::forward<ShiftDetailsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_contactIds;
     bool m_contactIdsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    ShiftType m_type;
+    ShiftType m_type{ShiftType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     ShiftDetails m_shiftDetails;

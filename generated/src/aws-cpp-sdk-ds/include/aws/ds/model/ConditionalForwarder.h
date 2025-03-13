@@ -35,7 +35,7 @@ namespace Model
   class ConditionalForwarder
   {
   public:
-    AWS_DIRECTORYSERVICE_API ConditionalForwarder();
+    AWS_DIRECTORYSERVICE_API ConditionalForwarder() = default;
     AWS_DIRECTORYSERVICE_API ConditionalForwarder(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API ConditionalForwarder& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The fully qualified domain name (FQDN) of the remote domains pointed to by
      * the conditional forwarder.</p>
      */
-    inline const Aws::String& GetRemoteDomainName() const{ return m_remoteDomainName; }
+    inline const Aws::String& GetRemoteDomainName() const { return m_remoteDomainName; }
     inline bool RemoteDomainNameHasBeenSet() const { return m_remoteDomainNameHasBeenSet; }
-    inline void SetRemoteDomainName(const Aws::String& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = value; }
-    inline void SetRemoteDomainName(Aws::String&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = std::move(value); }
-    inline void SetRemoteDomainName(const char* value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName.assign(value); }
-    inline ConditionalForwarder& WithRemoteDomainName(const Aws::String& value) { SetRemoteDomainName(value); return *this;}
-    inline ConditionalForwarder& WithRemoteDomainName(Aws::String&& value) { SetRemoteDomainName(std::move(value)); return *this;}
-    inline ConditionalForwarder& WithRemoteDomainName(const char* value) { SetRemoteDomainName(value); return *this;}
+    template<typename RemoteDomainNameT = Aws::String>
+    void SetRemoteDomainName(RemoteDomainNameT&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = std::forward<RemoteDomainNameT>(value); }
+    template<typename RemoteDomainNameT = Aws::String>
+    ConditionalForwarder& WithRemoteDomainName(RemoteDomainNameT&& value) { SetRemoteDomainName(std::forward<RemoteDomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,15 +60,14 @@ namespace Model
      * This is the IP address of the DNS server that your conditional forwarder points
      * to.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDnsIpAddrs() const{ return m_dnsIpAddrs; }
+    inline const Aws::Vector<Aws::String>& GetDnsIpAddrs() const { return m_dnsIpAddrs; }
     inline bool DnsIpAddrsHasBeenSet() const { return m_dnsIpAddrsHasBeenSet; }
-    inline void SetDnsIpAddrs(const Aws::Vector<Aws::String>& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs = value; }
-    inline void SetDnsIpAddrs(Aws::Vector<Aws::String>&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs = std::move(value); }
-    inline ConditionalForwarder& WithDnsIpAddrs(const Aws::Vector<Aws::String>& value) { SetDnsIpAddrs(value); return *this;}
-    inline ConditionalForwarder& WithDnsIpAddrs(Aws::Vector<Aws::String>&& value) { SetDnsIpAddrs(std::move(value)); return *this;}
-    inline ConditionalForwarder& AddDnsIpAddrs(const Aws::String& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(value); return *this; }
-    inline ConditionalForwarder& AddDnsIpAddrs(Aws::String&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(std::move(value)); return *this; }
-    inline ConditionalForwarder& AddDnsIpAddrs(const char* value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(value); return *this; }
+    template<typename DnsIpAddrsT = Aws::Vector<Aws::String>>
+    void SetDnsIpAddrs(DnsIpAddrsT&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs = std::forward<DnsIpAddrsT>(value); }
+    template<typename DnsIpAddrsT = Aws::Vector<Aws::String>>
+    ConditionalForwarder& WithDnsIpAddrs(DnsIpAddrsT&& value) { SetDnsIpAddrs(std::forward<DnsIpAddrsT>(value)); return *this;}
+    template<typename DnsIpAddrsT = Aws::String>
+    ConditionalForwarder& AddDnsIpAddrs(DnsIpAddrsT&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.emplace_back(std::forward<DnsIpAddrsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,12 +76,10 @@ namespace Model
      * <code>Domain</code>, which will replicate the conditional forwarder to all of
      * the domain controllers for your Amazon Web Services directory.</p>
      */
-    inline const ReplicationScope& GetReplicationScope() const{ return m_replicationScope; }
+    inline ReplicationScope GetReplicationScope() const { return m_replicationScope; }
     inline bool ReplicationScopeHasBeenSet() const { return m_replicationScopeHasBeenSet; }
-    inline void SetReplicationScope(const ReplicationScope& value) { m_replicationScopeHasBeenSet = true; m_replicationScope = value; }
-    inline void SetReplicationScope(ReplicationScope&& value) { m_replicationScopeHasBeenSet = true; m_replicationScope = std::move(value); }
-    inline ConditionalForwarder& WithReplicationScope(const ReplicationScope& value) { SetReplicationScope(value); return *this;}
-    inline ConditionalForwarder& WithReplicationScope(ReplicationScope&& value) { SetReplicationScope(std::move(value)); return *this;}
+    inline void SetReplicationScope(ReplicationScope value) { m_replicationScopeHasBeenSet = true; m_replicationScope = value; }
+    inline ConditionalForwarder& WithReplicationScope(ReplicationScope value) { SetReplicationScope(value); return *this;}
     ///@}
   private:
 
@@ -94,7 +89,7 @@ namespace Model
     Aws::Vector<Aws::String> m_dnsIpAddrs;
     bool m_dnsIpAddrsHasBeenSet = false;
 
-    ReplicationScope m_replicationScope;
+    ReplicationScope m_replicationScope{ReplicationScope::NOT_SET};
     bool m_replicationScopeHasBeenSet = false;
   };
 

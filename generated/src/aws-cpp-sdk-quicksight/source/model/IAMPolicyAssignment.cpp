@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-IAMPolicyAssignment::IAMPolicyAssignment() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_assignmentIdHasBeenSet(false),
-    m_assignmentNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_identitiesHasBeenSet(false),
-    m_assignmentStatus(AssignmentStatus::NOT_SET),
-    m_assignmentStatusHasBeenSet(false)
-{
-}
-
 IAMPolicyAssignment::IAMPolicyAssignment(JsonView jsonValue)
-  : IAMPolicyAssignment()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ IAMPolicyAssignment& IAMPolicyAssignment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AwsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("AwsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssignmentId"))
   {
     m_assignmentId = jsonValue.GetString("AssignmentId");
-
     m_assignmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssignmentName"))
   {
     m_assignmentName = jsonValue.GetString("AssignmentName");
-
     m_assignmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyArn"))
   {
     m_policyArn = jsonValue.GetString("PolicyArn");
-
     m_policyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Identities"))
   {
     Aws::Map<Aws::String, JsonView> identitiesJsonMap = jsonValue.GetObject("Identities").GetAllObjects();
@@ -81,14 +61,11 @@ IAMPolicyAssignment& IAMPolicyAssignment::operator =(JsonView jsonValue)
     }
     m_identitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssignmentStatus"))
   {
     m_assignmentStatus = AssignmentStatusMapper::GetAssignmentStatusForName(jsonValue.GetString("AssignmentStatus"));
-
     m_assignmentStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

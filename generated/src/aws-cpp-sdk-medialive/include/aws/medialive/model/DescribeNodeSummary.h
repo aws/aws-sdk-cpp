@@ -36,7 +36,7 @@ namespace Model
   class DescribeNodeSummary
   {
   public:
-    AWS_MEDIALIVE_API DescribeNodeSummary();
+    AWS_MEDIALIVE_API DescribeNodeSummary() = default;
     AWS_MEDIALIVE_API DescribeNodeSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API DescribeNodeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * The ARN of the Node. It is automatically assigned when the Node is created.
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DescribeNodeSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribeNodeSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribeNodeSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribeNodeSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,41 +59,36 @@ namespace Model
      * An array of IDs. Each ID is one ChannelPlacementGroup that is associated with
      * this Node. Empty if the Node is not yet associated with any groups.
      */
-    inline const Aws::Vector<Aws::String>& GetChannelPlacementGroups() const{ return m_channelPlacementGroups; }
+    inline const Aws::Vector<Aws::String>& GetChannelPlacementGroups() const { return m_channelPlacementGroups; }
     inline bool ChannelPlacementGroupsHasBeenSet() const { return m_channelPlacementGroupsHasBeenSet; }
-    inline void SetChannelPlacementGroups(const Aws::Vector<Aws::String>& value) { m_channelPlacementGroupsHasBeenSet = true; m_channelPlacementGroups = value; }
-    inline void SetChannelPlacementGroups(Aws::Vector<Aws::String>&& value) { m_channelPlacementGroupsHasBeenSet = true; m_channelPlacementGroups = std::move(value); }
-    inline DescribeNodeSummary& WithChannelPlacementGroups(const Aws::Vector<Aws::String>& value) { SetChannelPlacementGroups(value); return *this;}
-    inline DescribeNodeSummary& WithChannelPlacementGroups(Aws::Vector<Aws::String>&& value) { SetChannelPlacementGroups(std::move(value)); return *this;}
-    inline DescribeNodeSummary& AddChannelPlacementGroups(const Aws::String& value) { m_channelPlacementGroupsHasBeenSet = true; m_channelPlacementGroups.push_back(value); return *this; }
-    inline DescribeNodeSummary& AddChannelPlacementGroups(Aws::String&& value) { m_channelPlacementGroupsHasBeenSet = true; m_channelPlacementGroups.push_back(std::move(value)); return *this; }
-    inline DescribeNodeSummary& AddChannelPlacementGroups(const char* value) { m_channelPlacementGroupsHasBeenSet = true; m_channelPlacementGroups.push_back(value); return *this; }
+    template<typename ChannelPlacementGroupsT = Aws::Vector<Aws::String>>
+    void SetChannelPlacementGroups(ChannelPlacementGroupsT&& value) { m_channelPlacementGroupsHasBeenSet = true; m_channelPlacementGroups = std::forward<ChannelPlacementGroupsT>(value); }
+    template<typename ChannelPlacementGroupsT = Aws::Vector<Aws::String>>
+    DescribeNodeSummary& WithChannelPlacementGroups(ChannelPlacementGroupsT&& value) { SetChannelPlacementGroups(std::forward<ChannelPlacementGroupsT>(value)); return *this;}
+    template<typename ChannelPlacementGroupsT = Aws::String>
+    DescribeNodeSummary& AddChannelPlacementGroups(ChannelPlacementGroupsT&& value) { m_channelPlacementGroupsHasBeenSet = true; m_channelPlacementGroups.emplace_back(std::forward<ChannelPlacementGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The ID of the Cluster that the Node belongs to.
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline DescribeNodeSummary& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline DescribeNodeSummary& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline DescribeNodeSummary& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    DescribeNodeSummary& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The current connection state of the Node.
      */
-    inline const NodeConnectionState& GetConnectionState() const{ return m_connectionState; }
+    inline NodeConnectionState GetConnectionState() const { return m_connectionState; }
     inline bool ConnectionStateHasBeenSet() const { return m_connectionStateHasBeenSet; }
-    inline void SetConnectionState(const NodeConnectionState& value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
-    inline void SetConnectionState(NodeConnectionState&& value) { m_connectionStateHasBeenSet = true; m_connectionState = std::move(value); }
-    inline DescribeNodeSummary& WithConnectionState(const NodeConnectionState& value) { SetConnectionState(value); return *this;}
-    inline DescribeNodeSummary& WithConnectionState(NodeConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
+    inline void SetConnectionState(NodeConnectionState value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
+    inline DescribeNodeSummary& WithConnectionState(NodeConnectionState value) { SetConnectionState(value); return *this;}
     ///@}
 
     ///@{
@@ -103,28 +96,24 @@ namespace Model
      * The unique ID of the Node. Unique in the Cluster. The ID is the resource-id
      * portion of the ARN.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DescribeNodeSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DescribeNodeSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DescribeNodeSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DescribeNodeSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The EC2 ARN of the Instance associated with the Node.
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline DescribeNodeSummary& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline DescribeNodeSummary& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline DescribeNodeSummary& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    DescribeNodeSummary& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,42 +121,38 @@ namespace Model
      * At the routing layer will get it from the callerId/context for use with bring
      * your own device.
      */
-    inline const Aws::String& GetManagedInstanceId() const{ return m_managedInstanceId; }
+    inline const Aws::String& GetManagedInstanceId() const { return m_managedInstanceId; }
     inline bool ManagedInstanceIdHasBeenSet() const { return m_managedInstanceIdHasBeenSet; }
-    inline void SetManagedInstanceId(const Aws::String& value) { m_managedInstanceIdHasBeenSet = true; m_managedInstanceId = value; }
-    inline void SetManagedInstanceId(Aws::String&& value) { m_managedInstanceIdHasBeenSet = true; m_managedInstanceId = std::move(value); }
-    inline void SetManagedInstanceId(const char* value) { m_managedInstanceIdHasBeenSet = true; m_managedInstanceId.assign(value); }
-    inline DescribeNodeSummary& WithManagedInstanceId(const Aws::String& value) { SetManagedInstanceId(value); return *this;}
-    inline DescribeNodeSummary& WithManagedInstanceId(Aws::String&& value) { SetManagedInstanceId(std::move(value)); return *this;}
-    inline DescribeNodeSummary& WithManagedInstanceId(const char* value) { SetManagedInstanceId(value); return *this;}
+    template<typename ManagedInstanceIdT = Aws::String>
+    void SetManagedInstanceId(ManagedInstanceIdT&& value) { m_managedInstanceIdHasBeenSet = true; m_managedInstanceId = std::forward<ManagedInstanceIdT>(value); }
+    template<typename ManagedInstanceIdT = Aws::String>
+    DescribeNodeSummary& WithManagedInstanceId(ManagedInstanceIdT&& value) { SetManagedInstanceId(std::forward<ManagedInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name that you specified for the Node.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DescribeNodeSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeNodeSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeNodeSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeNodeSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Documentation update needed
      */
-    inline const Aws::Vector<NodeInterfaceMapping>& GetNodeInterfaceMappings() const{ return m_nodeInterfaceMappings; }
+    inline const Aws::Vector<NodeInterfaceMapping>& GetNodeInterfaceMappings() const { return m_nodeInterfaceMappings; }
     inline bool NodeInterfaceMappingsHasBeenSet() const { return m_nodeInterfaceMappingsHasBeenSet; }
-    inline void SetNodeInterfaceMappings(const Aws::Vector<NodeInterfaceMapping>& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings = value; }
-    inline void SetNodeInterfaceMappings(Aws::Vector<NodeInterfaceMapping>&& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings = std::move(value); }
-    inline DescribeNodeSummary& WithNodeInterfaceMappings(const Aws::Vector<NodeInterfaceMapping>& value) { SetNodeInterfaceMappings(value); return *this;}
-    inline DescribeNodeSummary& WithNodeInterfaceMappings(Aws::Vector<NodeInterfaceMapping>&& value) { SetNodeInterfaceMappings(std::move(value)); return *this;}
-    inline DescribeNodeSummary& AddNodeInterfaceMappings(const NodeInterfaceMapping& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings.push_back(value); return *this; }
-    inline DescribeNodeSummary& AddNodeInterfaceMappings(NodeInterfaceMapping&& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings.push_back(std::move(value)); return *this; }
+    template<typename NodeInterfaceMappingsT = Aws::Vector<NodeInterfaceMapping>>
+    void SetNodeInterfaceMappings(NodeInterfaceMappingsT&& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings = std::forward<NodeInterfaceMappingsT>(value); }
+    template<typename NodeInterfaceMappingsT = Aws::Vector<NodeInterfaceMapping>>
+    DescribeNodeSummary& WithNodeInterfaceMappings(NodeInterfaceMappingsT&& value) { SetNodeInterfaceMappings(std::forward<NodeInterfaceMappingsT>(value)); return *this;}
+    template<typename NodeInterfaceMappingsT = NodeInterfaceMapping>
+    DescribeNodeSummary& AddNodeInterfaceMappings(NodeInterfaceMappingsT&& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings.emplace_back(std::forward<NodeInterfaceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -176,24 +161,20 @@ namespace Model
      * is available for encoding. BACKUP means the Node is a redundant Node and might
      * get used if an ACTIVE Node fails.
      */
-    inline const NodeRole& GetRole() const{ return m_role; }
+    inline NodeRole GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const NodeRole& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(NodeRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline DescribeNodeSummary& WithRole(const NodeRole& value) { SetRole(value); return *this;}
-    inline DescribeNodeSummary& WithRole(NodeRole&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(NodeRole value) { m_roleHasBeenSet = true; m_role = value; }
+    inline DescribeNodeSummary& WithRole(NodeRole value) { SetRole(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The current state of the Node.
      */
-    inline const NodeState& GetState() const{ return m_state; }
+    inline NodeState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const NodeState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(NodeState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline DescribeNodeSummary& WithState(const NodeState& value) { SetState(value); return *this;}
-    inline DescribeNodeSummary& WithState(NodeState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(NodeState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline DescribeNodeSummary& WithState(NodeState value) { SetState(value); return *this;}
     ///@}
   private:
 
@@ -206,7 +187,7 @@ namespace Model
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet = false;
 
-    NodeConnectionState m_connectionState;
+    NodeConnectionState m_connectionState{NodeConnectionState::NOT_SET};
     bool m_connectionStateHasBeenSet = false;
 
     Aws::String m_id;
@@ -224,10 +205,10 @@ namespace Model
     Aws::Vector<NodeInterfaceMapping> m_nodeInterfaceMappings;
     bool m_nodeInterfaceMappingsHasBeenSet = false;
 
-    NodeRole m_role;
+    NodeRole m_role{NodeRole::NOT_SET};
     bool m_roleHasBeenSet = false;
 
-    NodeState m_state;
+    NodeState m_state{NodeState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

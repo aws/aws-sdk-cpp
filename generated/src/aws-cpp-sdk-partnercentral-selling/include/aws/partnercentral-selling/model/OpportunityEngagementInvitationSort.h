@@ -34,7 +34,7 @@ namespace Model
   class OpportunityEngagementInvitationSort
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API OpportunityEngagementInvitationSort();
+    AWS_PARTNERCENTRALSELLING_API OpportunityEngagementInvitationSort() = default;
     AWS_PARTNERCENTRALSELLING_API OpportunityEngagementInvitationSort(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API OpportunityEngagementInvitationSort& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>Specifies the field by which the Engagement Invitations are sorted. Common
      * values include <code>InvitationDate</code> and <code>Status</code>.</p>
      */
-    inline const OpportunityEngagementInvitationSortName& GetSortBy() const{ return m_sortBy; }
+    inline OpportunityEngagementInvitationSortName GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const OpportunityEngagementInvitationSortName& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(OpportunityEngagementInvitationSortName&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline OpportunityEngagementInvitationSort& WithSortBy(const OpportunityEngagementInvitationSortName& value) { SetSortBy(value); return *this;}
-    inline OpportunityEngagementInvitationSort& WithSortBy(OpportunityEngagementInvitationSortName&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(OpportunityEngagementInvitationSortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline OpportunityEngagementInvitationSort& WithSortBy(OpportunityEngagementInvitationSortName value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>Defines the order in which the Engagement Invitations are sorted. The values
      * can be <code>ASC</code> (ascending) or <code>DESC</code> (descending).</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline OpportunityEngagementInvitationSort& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline OpportunityEngagementInvitationSort& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline OpportunityEngagementInvitationSort& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    OpportunityEngagementInvitationSortName m_sortBy;
+    OpportunityEngagementInvitationSortName m_sortBy{OpportunityEngagementInvitationSortName::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

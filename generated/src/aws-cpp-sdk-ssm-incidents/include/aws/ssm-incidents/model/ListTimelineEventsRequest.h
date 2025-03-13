@@ -25,7 +25,7 @@ namespace Model
   class ListTimelineEventsRequest : public SSMIncidentsRequest
   {
   public:
-    AWS_SSMINCIDENTS_API ListTimelineEventsRequest();
+    AWS_SSMINCIDENTS_API ListTimelineEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,14 @@ namespace Model
      * more than one value, the response returns timeline events that match any of the
      * values provided.</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListTimelineEventsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline ListTimelineEventsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListTimelineEventsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListTimelineEventsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    ListTimelineEventsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    ListTimelineEventsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,21 +64,19 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
      * event.</p>
      */
-    inline const Aws::String& GetIncidentRecordArn() const{ return m_incidentRecordArn; }
+    inline const Aws::String& GetIncidentRecordArn() const { return m_incidentRecordArn; }
     inline bool IncidentRecordArnHasBeenSet() const { return m_incidentRecordArnHasBeenSet; }
-    inline void SetIncidentRecordArn(const Aws::String& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = value; }
-    inline void SetIncidentRecordArn(Aws::String&& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = std::move(value); }
-    inline void SetIncidentRecordArn(const char* value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn.assign(value); }
-    inline ListTimelineEventsRequest& WithIncidentRecordArn(const Aws::String& value) { SetIncidentRecordArn(value); return *this;}
-    inline ListTimelineEventsRequest& WithIncidentRecordArn(Aws::String&& value) { SetIncidentRecordArn(std::move(value)); return *this;}
-    inline ListTimelineEventsRequest& WithIncidentRecordArn(const char* value) { SetIncidentRecordArn(value); return *this;}
+    template<typename IncidentRecordArnT = Aws::String>
+    void SetIncidentRecordArn(IncidentRecordArnT&& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = std::forward<IncidentRecordArnT>(value); }
+    template<typename IncidentRecordArnT = Aws::String>
+    ListTimelineEventsRequest& WithIncidentRecordArn(IncidentRecordArnT&& value) { SetIncidentRecordArn(std::forward<IncidentRecordArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTimelineEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -89,26 +87,22 @@ namespace Model
      * <p>The pagination token for the next set of items to return. (You received this
      * token from a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTimelineEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTimelineEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTimelineEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTimelineEventsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sort timeline events by the specified key value pair.</p>
      */
-    inline const TimelineEventSort& GetSortBy() const{ return m_sortBy; }
+    inline TimelineEventSort GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const TimelineEventSort& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(TimelineEventSort&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListTimelineEventsRequest& WithSortBy(const TimelineEventSort& value) { SetSortBy(value); return *this;}
-    inline ListTimelineEventsRequest& WithSortBy(TimelineEventSort&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(TimelineEventSort value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListTimelineEventsRequest& WithSortBy(TimelineEventSort value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +110,10 @@ namespace Model
      * <p>Sorts the order of timeline events by the value specified in the
      * <code>sortBy</code> field.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListTimelineEventsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListTimelineEventsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListTimelineEventsRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
@@ -131,16 +123,16 @@ namespace Model
     Aws::String m_incidentRecordArn;
     bool m_incidentRecordArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    TimelineEventSort m_sortBy;
+    TimelineEventSort m_sortBy{TimelineEventSort::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

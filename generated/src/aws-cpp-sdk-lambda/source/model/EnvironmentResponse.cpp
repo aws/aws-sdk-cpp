@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-EnvironmentResponse::EnvironmentResponse() : 
-    m_variablesHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 EnvironmentResponse::EnvironmentResponse(JsonView jsonValue)
-  : EnvironmentResponse()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ EnvironmentResponse& EnvironmentResponse::operator =(JsonView jsonValue)
     }
     m_variablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

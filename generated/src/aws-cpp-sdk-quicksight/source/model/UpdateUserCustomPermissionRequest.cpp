@@ -12,14 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUserCustomPermissionRequest::UpdateUserCustomPermissionRequest() : 
-    m_userNameHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_customPermissionsNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserCustomPermissionRequest::SerializePayload() const
 {
   JsonValue payload;

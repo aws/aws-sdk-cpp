@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-StepTimeline::StepTimeline() : 
-    m_creationDateTimeHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
-{
-}
-
 StepTimeline::StepTimeline(JsonView jsonValue)
-  : StepTimeline()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ StepTimeline& StepTimeline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartDateTime"))
   {
     m_startDateTime = jsonValue.GetDouble("StartDateTime");
-
     m_startDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDateTime"))
   {
     m_endDateTime = jsonValue.GetDouble("EndDateTime");
-
     m_endDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

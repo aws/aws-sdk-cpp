@@ -17,15 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-LockSnapshotResponse::LockSnapshotResponse() : 
-    m_lockState(LockState::NOT_SET),
-    m_lockDuration(0),
-    m_coolOffPeriod(0)
-{
-}
-
 LockSnapshotResponse::LockSnapshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : LockSnapshotResponse()
 {
   *this = result;
 }
@@ -46,41 +38,49 @@ LockSnapshotResponse& LockSnapshotResponse::operator =(const Aws::AmazonWebServi
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
+      m_snapshotIdHasBeenSet = true;
     }
     XmlNode lockStateNode = resultNode.FirstChild("lockState");
     if(!lockStateNode.IsNull())
     {
-      m_lockState = LockStateMapper::GetLockStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lockStateNode.GetText()).c_str()).c_str());
+      m_lockState = LockStateMapper::GetLockStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lockStateNode.GetText()).c_str()));
+      m_lockStateHasBeenSet = true;
     }
     XmlNode lockDurationNode = resultNode.FirstChild("lockDuration");
     if(!lockDurationNode.IsNull())
     {
       m_lockDuration = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lockDurationNode.GetText()).c_str()).c_str());
+      m_lockDurationHasBeenSet = true;
     }
     XmlNode coolOffPeriodNode = resultNode.FirstChild("coolOffPeriod");
     if(!coolOffPeriodNode.IsNull())
     {
       m_coolOffPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(coolOffPeriodNode.GetText()).c_str()).c_str());
+      m_coolOffPeriodHasBeenSet = true;
     }
     XmlNode coolOffPeriodExpiresOnNode = resultNode.FirstChild("coolOffPeriodExpiresOn");
     if(!coolOffPeriodExpiresOnNode.IsNull())
     {
       m_coolOffPeriodExpiresOn = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(coolOffPeriodExpiresOnNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_coolOffPeriodExpiresOnHasBeenSet = true;
     }
     XmlNode lockCreatedOnNode = resultNode.FirstChild("lockCreatedOn");
     if(!lockCreatedOnNode.IsNull())
     {
       m_lockCreatedOn = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lockCreatedOnNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_lockCreatedOnHasBeenSet = true;
     }
     XmlNode lockExpiresOnNode = resultNode.FirstChild("lockExpiresOn");
     if(!lockExpiresOnNode.IsNull())
     {
       m_lockExpiresOn = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lockExpiresOnNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_lockExpiresOnHasBeenSet = true;
     }
     XmlNode lockDurationStartTimeNode = resultNode.FirstChild("lockDurationStartTime");
     if(!lockDurationStartTimeNode.IsNull())
     {
       m_lockDurationStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lockDurationStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_lockDurationStartTimeHasBeenSet = true;
     }
   }
 
@@ -89,6 +89,7 @@ LockSnapshotResponse& LockSnapshotResponse::operator =(const Aws::AmazonWebServi
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::LockSnapshotResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

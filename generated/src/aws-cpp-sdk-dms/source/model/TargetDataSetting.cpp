@@ -18,14 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-TargetDataSetting::TargetDataSetting() : 
-    m_tablePreparationMode(TablePreparationMode::NOT_SET),
-    m_tablePreparationModeHasBeenSet(false)
-{
-}
-
 TargetDataSetting::TargetDataSetting(JsonView jsonValue)
-  : TargetDataSetting()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TargetDataSetting& TargetDataSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TablePreparationMode"))
   {
     m_tablePreparationMode = TablePreparationModeMapper::GetTablePreparationModeForName(jsonValue.GetString("TablePreparationMode"));
-
     m_tablePreparationModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class NotifyAppValidationOutputRequest : public SMSRequest
   {
   public:
-    AWS_SMS_API NotifyAppValidationOutputRequest();
+    AWS_SMS_API NotifyAppValidationOutputRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The ID of the application.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline NotifyAppValidationOutputRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline NotifyAppValidationOutputRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline NotifyAppValidationOutputRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    NotifyAppValidationOutputRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The notification information.</p>
      */
-    inline const NotificationContext& GetNotificationContext() const{ return m_notificationContext; }
+    inline const NotificationContext& GetNotificationContext() const { return m_notificationContext; }
     inline bool NotificationContextHasBeenSet() const { return m_notificationContextHasBeenSet; }
-    inline void SetNotificationContext(const NotificationContext& value) { m_notificationContextHasBeenSet = true; m_notificationContext = value; }
-    inline void SetNotificationContext(NotificationContext&& value) { m_notificationContextHasBeenSet = true; m_notificationContext = std::move(value); }
-    inline NotifyAppValidationOutputRequest& WithNotificationContext(const NotificationContext& value) { SetNotificationContext(value); return *this;}
-    inline NotifyAppValidationOutputRequest& WithNotificationContext(NotificationContext&& value) { SetNotificationContext(std::move(value)); return *this;}
+    template<typename NotificationContextT = NotificationContext>
+    void SetNotificationContext(NotificationContextT&& value) { m_notificationContextHasBeenSet = true; m_notificationContext = std::forward<NotificationContextT>(value); }
+    template<typename NotificationContextT = NotificationContext>
+    NotifyAppValidationOutputRequest& WithNotificationContext(NotificationContextT&& value) { SetNotificationContext(std::forward<NotificationContextT>(value)); return *this;}
     ///@}
   private:
 

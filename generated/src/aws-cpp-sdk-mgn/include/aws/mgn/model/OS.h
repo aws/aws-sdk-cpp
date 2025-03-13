@@ -31,7 +31,7 @@ namespace Model
   class OS
   {
   public:
-    AWS_MGN_API OS();
+    AWS_MGN_API OS() = default;
     AWS_MGN_API OS(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API OS& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>OS full string.</p>
      */
-    inline const Aws::String& GetFullString() const{ return m_fullString; }
+    inline const Aws::String& GetFullString() const { return m_fullString; }
     inline bool FullStringHasBeenSet() const { return m_fullStringHasBeenSet; }
-    inline void SetFullString(const Aws::String& value) { m_fullStringHasBeenSet = true; m_fullString = value; }
-    inline void SetFullString(Aws::String&& value) { m_fullStringHasBeenSet = true; m_fullString = std::move(value); }
-    inline void SetFullString(const char* value) { m_fullStringHasBeenSet = true; m_fullString.assign(value); }
-    inline OS& WithFullString(const Aws::String& value) { SetFullString(value); return *this;}
-    inline OS& WithFullString(Aws::String&& value) { SetFullString(std::move(value)); return *this;}
-    inline OS& WithFullString(const char* value) { SetFullString(value); return *this;}
+    template<typename FullStringT = Aws::String>
+    void SetFullString(FullStringT&& value) { m_fullStringHasBeenSet = true; m_fullString = std::forward<FullStringT>(value); }
+    template<typename FullStringT = Aws::String>
+    OS& WithFullString(FullStringT&& value) { SetFullString(std::forward<FullStringT>(value)); return *this;}
     ///@}
   private:
 

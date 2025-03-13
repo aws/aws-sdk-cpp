@@ -18,16 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Attachment::Attachment() : 
-    m_idHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 Attachment::Attachment(JsonView jsonValue)
-  : Attachment()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Attachment& Attachment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     Aws::Utils::Array<JsonView> detailsJsonList = jsonValue.GetArray("details");
@@ -64,7 +49,6 @@ Attachment& Attachment::operator =(JsonView jsonValue)
     }
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

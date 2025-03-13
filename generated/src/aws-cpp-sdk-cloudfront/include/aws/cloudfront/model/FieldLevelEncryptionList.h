@@ -32,7 +32,7 @@ namespace Model
   class FieldLevelEncryptionList
   {
   public:
-    AWS_CLOUDFRONT_API FieldLevelEncryptionList();
+    AWS_CLOUDFRONT_API FieldLevelEncryptionList() = default;
     AWS_CLOUDFRONT_API FieldLevelEncryptionList(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API FieldLevelEncryptionList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,21 +45,19 @@ namespace Model
      * the value that you can use for the <code>Marker</code> request parameter to
      * continue listing your configurations where you left off.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
     inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
-    inline FieldLevelEncryptionList& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline FieldLevelEncryptionList& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline FieldLevelEncryptionList& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    FieldLevelEncryptionList& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of elements you want in the response body.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline FieldLevelEncryptionList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     /**
      * <p>The number of field-level encryption items.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline FieldLevelEncryptionList& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -79,24 +77,24 @@ namespace Model
     /**
      * <p>An array of field-level encryption items.</p>
      */
-    inline const Aws::Vector<FieldLevelEncryptionSummary>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<FieldLevelEncryptionSummary>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<FieldLevelEncryptionSummary>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<FieldLevelEncryptionSummary>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline FieldLevelEncryptionList& WithItems(const Aws::Vector<FieldLevelEncryptionSummary>& value) { SetItems(value); return *this;}
-    inline FieldLevelEncryptionList& WithItems(Aws::Vector<FieldLevelEncryptionSummary>&& value) { SetItems(std::move(value)); return *this;}
-    inline FieldLevelEncryptionList& AddItems(const FieldLevelEncryptionSummary& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline FieldLevelEncryptionList& AddItems(FieldLevelEncryptionSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<FieldLevelEncryptionSummary>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<FieldLevelEncryptionSummary>>
+    FieldLevelEncryptionList& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = FieldLevelEncryptionSummary>
+    FieldLevelEncryptionList& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<FieldLevelEncryptionSummary> m_items;

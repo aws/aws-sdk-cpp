@@ -12,12 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStepRequest::DescribeStepRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_stepIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStepRequest::SerializePayload() const
 {
   JsonValue payload;

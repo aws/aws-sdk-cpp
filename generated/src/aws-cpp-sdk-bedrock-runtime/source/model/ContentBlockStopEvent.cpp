@@ -18,14 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ContentBlockStopEvent::ContentBlockStopEvent() : 
-    m_contentBlockIndex(0),
-    m_contentBlockIndexHasBeenSet(false)
-{
-}
-
 ContentBlockStopEvent::ContentBlockStopEvent(JsonView jsonValue)
-  : ContentBlockStopEvent()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ContentBlockStopEvent& ContentBlockStopEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contentBlockIndex"))
   {
     m_contentBlockIndex = jsonValue.GetInteger("contentBlockIndex");
-
     m_contentBlockIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

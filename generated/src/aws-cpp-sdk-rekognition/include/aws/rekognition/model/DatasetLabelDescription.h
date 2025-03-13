@@ -33,7 +33,7 @@ namespace Model
   class DatasetLabelDescription
   {
   public:
-    AWS_REKOGNITION_API DatasetLabelDescription();
+    AWS_REKOGNITION_API DatasetLabelDescription() = default;
     AWS_REKOGNITION_API DatasetLabelDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API DatasetLabelDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p> The name of the label. </p>
      */
-    inline const Aws::String& GetLabelName() const{ return m_labelName; }
+    inline const Aws::String& GetLabelName() const { return m_labelName; }
     inline bool LabelNameHasBeenSet() const { return m_labelNameHasBeenSet; }
-    inline void SetLabelName(const Aws::String& value) { m_labelNameHasBeenSet = true; m_labelName = value; }
-    inline void SetLabelName(Aws::String&& value) { m_labelNameHasBeenSet = true; m_labelName = std::move(value); }
-    inline void SetLabelName(const char* value) { m_labelNameHasBeenSet = true; m_labelName.assign(value); }
-    inline DatasetLabelDescription& WithLabelName(const Aws::String& value) { SetLabelName(value); return *this;}
-    inline DatasetLabelDescription& WithLabelName(Aws::String&& value) { SetLabelName(std::move(value)); return *this;}
-    inline DatasetLabelDescription& WithLabelName(const char* value) { SetLabelName(value); return *this;}
+    template<typename LabelNameT = Aws::String>
+    void SetLabelName(LabelNameT&& value) { m_labelNameHasBeenSet = true; m_labelName = std::forward<LabelNameT>(value); }
+    template<typename LabelNameT = Aws::String>
+    DatasetLabelDescription& WithLabelName(LabelNameT&& value) { SetLabelName(std::forward<LabelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Statistics about the label. </p>
      */
-    inline const DatasetLabelStats& GetLabelStats() const{ return m_labelStats; }
+    inline const DatasetLabelStats& GetLabelStats() const { return m_labelStats; }
     inline bool LabelStatsHasBeenSet() const { return m_labelStatsHasBeenSet; }
-    inline void SetLabelStats(const DatasetLabelStats& value) { m_labelStatsHasBeenSet = true; m_labelStats = value; }
-    inline void SetLabelStats(DatasetLabelStats&& value) { m_labelStatsHasBeenSet = true; m_labelStats = std::move(value); }
-    inline DatasetLabelDescription& WithLabelStats(const DatasetLabelStats& value) { SetLabelStats(value); return *this;}
-    inline DatasetLabelDescription& WithLabelStats(DatasetLabelStats&& value) { SetLabelStats(std::move(value)); return *this;}
+    template<typename LabelStatsT = DatasetLabelStats>
+    void SetLabelStats(LabelStatsT&& value) { m_labelStatsHasBeenSet = true; m_labelStats = std::forward<LabelStatsT>(value); }
+    template<typename LabelStatsT = DatasetLabelStats>
+    DatasetLabelDescription& WithLabelStats(LabelStatsT&& value) { SetLabelStats(std::forward<LabelStatsT>(value)); return *this;}
     ///@}
   private:
 

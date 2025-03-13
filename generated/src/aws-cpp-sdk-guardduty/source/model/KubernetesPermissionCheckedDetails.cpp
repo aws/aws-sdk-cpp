@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-KubernetesPermissionCheckedDetails::KubernetesPermissionCheckedDetails() : 
-    m_verbHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_allowed(false),
-    m_allowedHasBeenSet(false)
-{
-}
-
 KubernetesPermissionCheckedDetails::KubernetesPermissionCheckedDetails(JsonView jsonValue)
-  : KubernetesPermissionCheckedDetails()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ KubernetesPermissionCheckedDetails& KubernetesPermissionCheckedDetails::operator
   if(jsonValue.ValueExists("verb"))
   {
     m_verb = jsonValue.GetString("verb");
-
     m_verbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowed"))
   {
     m_allowed = jsonValue.GetBool("allowed");
-
     m_allowedHasBeenSet = true;
   }
-
   return *this;
 }
 

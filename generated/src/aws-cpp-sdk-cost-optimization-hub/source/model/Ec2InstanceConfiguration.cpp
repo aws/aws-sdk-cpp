@@ -18,13 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-Ec2InstanceConfiguration::Ec2InstanceConfiguration() : 
-    m_instanceHasBeenSet(false)
-{
-}
-
 Ec2InstanceConfiguration::Ec2InstanceConfiguration(JsonView jsonValue)
-  : Ec2InstanceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Ec2InstanceConfiguration& Ec2InstanceConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("instance"))
   {
     m_instance = jsonValue.GetObject("instance");
-
     m_instanceHasBeenSet = true;
   }
-
   return *this;
 }
 

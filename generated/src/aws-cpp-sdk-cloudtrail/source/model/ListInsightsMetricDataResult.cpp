@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListInsightsMetricDataResult::ListInsightsMetricDataResult() : 
-    m_insightType(InsightType::NOT_SET)
-{
-}
-
 ListInsightsMetricDataResult::ListInsightsMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListInsightsMetricDataResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ ListInsightsMetricDataResult& ListInsightsMetricDataResult::operator =(const Aws
   if(jsonValue.ValueExists("EventSource"))
   {
     m_eventSource = jsonValue.GetString("EventSource");
-
+    m_eventSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventName"))
   {
     m_eventName = jsonValue.GetString("EventName");
-
+    m_eventNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsightType"))
   {
     m_insightType = InsightTypeMapper::GetInsightTypeForName(jsonValue.GetString("InsightType"));
-
+    m_insightTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
+    m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamps"))
   {
     Aws::Utils::Array<JsonView> timestampsJsonList = jsonValue.GetArray("Timestamps");
@@ -62,8 +52,8 @@ ListInsightsMetricDataResult& ListInsightsMetricDataResult::operator =(const Aws
     {
       m_timestamps.push_back(timestampsJsonList[timestampsIndex].AsDouble());
     }
+    m_timestampsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -71,20 +61,20 @@ ListInsightsMetricDataResult& ListInsightsMetricDataResult::operator =(const Aws
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsDouble());
     }
+    m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

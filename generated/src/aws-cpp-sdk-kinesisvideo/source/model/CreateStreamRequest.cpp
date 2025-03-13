@@ -12,17 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStreamRequest::CreateStreamRequest() : 
-    m_deviceNameHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_mediaTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dataRetentionInHours(0),
-    m_dataRetentionInHoursHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateStreamRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class GetInvestigationRequest : public DetectiveRequest
   {
   public:
-    AWS_DETECTIVE_API GetInvestigationRequest();
+    AWS_DETECTIVE_API GetInvestigationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
-    inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
+    inline const Aws::String& GetGraphArn() const { return m_graphArn; }
     inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
-    inline void SetGraphArn(const Aws::String& value) { m_graphArnHasBeenSet = true; m_graphArn = value; }
-    inline void SetGraphArn(Aws::String&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::move(value); }
-    inline void SetGraphArn(const char* value) { m_graphArnHasBeenSet = true; m_graphArn.assign(value); }
-    inline GetInvestigationRequest& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
-    inline GetInvestigationRequest& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
-    inline GetInvestigationRequest& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
+    template<typename GraphArnT = Aws::String>
+    void SetGraphArn(GraphArnT&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::forward<GraphArnT>(value); }
+    template<typename GraphArnT = Aws::String>
+    GetInvestigationRequest& WithGraphArn(GraphArnT&& value) { SetGraphArn(std::forward<GraphArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The investigation ID of the investigation report.</p>
      */
-    inline const Aws::String& GetInvestigationId() const{ return m_investigationId; }
+    inline const Aws::String& GetInvestigationId() const { return m_investigationId; }
     inline bool InvestigationIdHasBeenSet() const { return m_investigationIdHasBeenSet; }
-    inline void SetInvestigationId(const Aws::String& value) { m_investigationIdHasBeenSet = true; m_investigationId = value; }
-    inline void SetInvestigationId(Aws::String&& value) { m_investigationIdHasBeenSet = true; m_investigationId = std::move(value); }
-    inline void SetInvestigationId(const char* value) { m_investigationIdHasBeenSet = true; m_investigationId.assign(value); }
-    inline GetInvestigationRequest& WithInvestigationId(const Aws::String& value) { SetInvestigationId(value); return *this;}
-    inline GetInvestigationRequest& WithInvestigationId(Aws::String&& value) { SetInvestigationId(std::move(value)); return *this;}
-    inline GetInvestigationRequest& WithInvestigationId(const char* value) { SetInvestigationId(value); return *this;}
+    template<typename InvestigationIdT = Aws::String>
+    void SetInvestigationId(InvestigationIdT&& value) { m_investigationIdHasBeenSet = true; m_investigationId = std::forward<InvestigationIdT>(value); }
+    template<typename InvestigationIdT = Aws::String>
+    GetInvestigationRequest& WithInvestigationId(InvestigationIdT&& value) { SetInvestigationId(std::forward<InvestigationIdT>(value)); return *this;}
     ///@}
   private:
 

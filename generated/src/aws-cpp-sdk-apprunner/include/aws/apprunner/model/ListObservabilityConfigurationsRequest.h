@@ -21,7 +21,7 @@ namespace Model
   class ListObservabilityConfigurationsRequest : public AppRunnerRequest
   {
   public:
-    AWS_APPRUNNER_API ListObservabilityConfigurationsRequest();
+    AWS_APPRUNNER_API ListObservabilityConfigurationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * If specified, App Runner lists revisions that share this name. If not specified,
      * App Runner returns revisions of all active configurations.</p>
      */
-    inline const Aws::String& GetObservabilityConfigurationName() const{ return m_observabilityConfigurationName; }
+    inline const Aws::String& GetObservabilityConfigurationName() const { return m_observabilityConfigurationName; }
     inline bool ObservabilityConfigurationNameHasBeenSet() const { return m_observabilityConfigurationNameHasBeenSet; }
-    inline void SetObservabilityConfigurationName(const Aws::String& value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName = value; }
-    inline void SetObservabilityConfigurationName(Aws::String&& value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName = std::move(value); }
-    inline void SetObservabilityConfigurationName(const char* value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName.assign(value); }
-    inline ListObservabilityConfigurationsRequest& WithObservabilityConfigurationName(const Aws::String& value) { SetObservabilityConfigurationName(value); return *this;}
-    inline ListObservabilityConfigurationsRequest& WithObservabilityConfigurationName(Aws::String&& value) { SetObservabilityConfigurationName(std::move(value)); return *this;}
-    inline ListObservabilityConfigurationsRequest& WithObservabilityConfigurationName(const char* value) { SetObservabilityConfigurationName(value); return *this;}
+    template<typename ObservabilityConfigurationNameT = Aws::String>
+    void SetObservabilityConfigurationName(ObservabilityConfigurationNameT&& value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName = std::forward<ObservabilityConfigurationNameT>(value); }
+    template<typename ObservabilityConfigurationNameT = Aws::String>
+    ListObservabilityConfigurationsRequest& WithObservabilityConfigurationName(ObservabilityConfigurationNameT&& value) { SetObservabilityConfigurationName(std::forward<ObservabilityConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * configuration name.</p> <p>Set to <code>false</code> to list all revisions for
      * each requested configuration name.</p> <p>Default: <code>true</code> </p>
      */
-    inline bool GetLatestOnly() const{ return m_latestOnly; }
+    inline bool GetLatestOnly() const { return m_latestOnly; }
     inline bool LatestOnlyHasBeenSet() const { return m_latestOnlyHasBeenSet; }
     inline void SetLatestOnly(bool value) { m_latestOnlyHasBeenSet = true; m_latestOnly = value; }
     inline ListObservabilityConfigurationsRequest& WithLatestOnly(bool value) { SetLatestOnly(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
      * <code>MaxResults</code>, the request retrieves all available results in a single
      * response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListObservabilityConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,24 +81,22 @@ namespace Model
      * don't specify <code>NextToken</code>, the request retrieves the first result
      * page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListObservabilityConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListObservabilityConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListObservabilityConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListObservabilityConfigurationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_observabilityConfigurationName;
     bool m_observabilityConfigurationNameHasBeenSet = false;
 
-    bool m_latestOnly;
+    bool m_latestOnly{false};
     bool m_latestOnlyHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

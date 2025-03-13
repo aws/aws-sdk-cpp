@@ -12,12 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataSourceRequest::DeleteDataSourceRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataSourceRequest::SerializePayload() const
 {
   return {};

@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeletePackageVersionsRequest::DeletePackageVersionsRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_packageHasBeenSet(false),
-    m_versionsHasBeenSet(false),
-    m_expectedStatus(PackageVersionStatus::NOT_SET),
-    m_expectedStatusHasBeenSet(false)
-{
-}
-
 Aws::String DeletePackageVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

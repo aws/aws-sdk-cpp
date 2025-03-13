@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterVersion::ClusterVersion() : 
-    m_clusterVersionHasBeenSet(false),
-    m_clusterParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ClusterVersion::ClusterVersion(const XmlNode& xmlNode)
-  : ClusterVersion()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ClusterVersion& ClusterVersion::operator =(const XmlNode& xmlNode)
     {
       m_clusterVersion = Aws::Utils::Xml::DecodeEscapedXmlText(clusterVersionNode.GetText());
       m_clusterVersionHasBeenSet = true;
+       m_clusterVersionHasBeenSet = true;
     }
     XmlNode clusterParameterGroupFamilyNode = resultNode.FirstChild("ClusterParameterGroupFamily");
     if(!clusterParameterGroupFamilyNode.IsNull())
     {
       m_clusterParameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(clusterParameterGroupFamilyNode.GetText());
       m_clusterParameterGroupFamilyHasBeenSet = true;
+       m_clusterParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
   }
 

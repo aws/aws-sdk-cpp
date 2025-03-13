@@ -33,7 +33,7 @@ namespace Model
   class PreTokenGenerationVersionConfigType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API PreTokenGenerationVersionConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API PreTokenGenerationVersionConfigType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API PreTokenGenerationVersionConfigType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API PreTokenGenerationVersionConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * your Lambda function. Higher-numbered versions add fields that support new
      * features.</p>
      */
-    inline const PreTokenGenerationLambdaVersionType& GetLambdaVersion() const{ return m_lambdaVersion; }
+    inline PreTokenGenerationLambdaVersionType GetLambdaVersion() const { return m_lambdaVersion; }
     inline bool LambdaVersionHasBeenSet() const { return m_lambdaVersionHasBeenSet; }
-    inline void SetLambdaVersion(const PreTokenGenerationLambdaVersionType& value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = value; }
-    inline void SetLambdaVersion(PreTokenGenerationLambdaVersionType&& value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = std::move(value); }
-    inline PreTokenGenerationVersionConfigType& WithLambdaVersion(const PreTokenGenerationLambdaVersionType& value) { SetLambdaVersion(value); return *this;}
-    inline PreTokenGenerationVersionConfigType& WithLambdaVersion(PreTokenGenerationLambdaVersionType&& value) { SetLambdaVersion(std::move(value)); return *this;}
+    inline void SetLambdaVersion(PreTokenGenerationLambdaVersionType value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = value; }
+    inline PreTokenGenerationVersionConfigType& WithLambdaVersion(PreTokenGenerationLambdaVersionType value) { SetLambdaVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -61,18 +59,16 @@ namespace Model
      * same value. For new instances of pre token generation triggers, set
      * <code>LambdaArn</code>.</p>
      */
-    inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
+    inline const Aws::String& GetLambdaArn() const { return m_lambdaArn; }
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
-    inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
-    inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
-    inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
-    inline PreTokenGenerationVersionConfigType& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
-    inline PreTokenGenerationVersionConfigType& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
-    inline PreTokenGenerationVersionConfigType& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
+    template<typename LambdaArnT = Aws::String>
+    void SetLambdaArn(LambdaArnT&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::forward<LambdaArnT>(value); }
+    template<typename LambdaArnT = Aws::String>
+    PreTokenGenerationVersionConfigType& WithLambdaArn(LambdaArnT&& value) { SetLambdaArn(std::forward<LambdaArnT>(value)); return *this;}
     ///@}
   private:
 
-    PreTokenGenerationLambdaVersionType m_lambdaVersion;
+    PreTokenGenerationLambdaVersionType m_lambdaVersion{PreTokenGenerationLambdaVersionType::NOT_SET};
     bool m_lambdaVersionHasBeenSet = false;
 
     Aws::String m_lambdaArn;

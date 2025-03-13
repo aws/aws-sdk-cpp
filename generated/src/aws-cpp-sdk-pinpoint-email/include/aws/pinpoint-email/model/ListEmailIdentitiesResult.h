@@ -36,7 +36,7 @@ namespace Model
   class ListEmailIdentitiesResult
   {
   public:
-    AWS_PINPOINTEMAIL_API ListEmailIdentitiesResult();
+    AWS_PINPOINTEMAIL_API ListEmailIdentitiesResult() = default;
     AWS_PINPOINTEMAIL_API ListEmailIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTEMAIL_API ListEmailIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,13 +46,13 @@ namespace Model
      * <p>An array that includes all of the identities associated with your Amazon
      * Pinpoint account.</p>
      */
-    inline const Aws::Vector<IdentityInfo>& GetEmailIdentities() const{ return m_emailIdentities; }
-    inline void SetEmailIdentities(const Aws::Vector<IdentityInfo>& value) { m_emailIdentities = value; }
-    inline void SetEmailIdentities(Aws::Vector<IdentityInfo>&& value) { m_emailIdentities = std::move(value); }
-    inline ListEmailIdentitiesResult& WithEmailIdentities(const Aws::Vector<IdentityInfo>& value) { SetEmailIdentities(value); return *this;}
-    inline ListEmailIdentitiesResult& WithEmailIdentities(Aws::Vector<IdentityInfo>&& value) { SetEmailIdentities(std::move(value)); return *this;}
-    inline ListEmailIdentitiesResult& AddEmailIdentities(const IdentityInfo& value) { m_emailIdentities.push_back(value); return *this; }
-    inline ListEmailIdentitiesResult& AddEmailIdentities(IdentityInfo&& value) { m_emailIdentities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IdentityInfo>& GetEmailIdentities() const { return m_emailIdentities; }
+    template<typename EmailIdentitiesT = Aws::Vector<IdentityInfo>>
+    void SetEmailIdentities(EmailIdentitiesT&& value) { m_emailIdentitiesHasBeenSet = true; m_emailIdentities = std::forward<EmailIdentitiesT>(value); }
+    template<typename EmailIdentitiesT = Aws::Vector<IdentityInfo>>
+    ListEmailIdentitiesResult& WithEmailIdentities(EmailIdentitiesT&& value) { SetEmailIdentities(std::forward<EmailIdentitiesT>(value)); return *this;}
+    template<typename EmailIdentitiesT = IdentityInfo>
+    ListEmailIdentitiesResult& AddEmailIdentities(EmailIdentitiesT&& value) { m_emailIdentitiesHasBeenSet = true; m_emailIdentities.emplace_back(std::forward<EmailIdentitiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,32 +62,31 @@ namespace Model
      * <code>ListEmailIdentities</code>, and pass this token in the
      * <code>NextToken</code> parameter.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEmailIdentitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEmailIdentitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEmailIdentitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEmailIdentitiesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEmailIdentitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEmailIdentitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEmailIdentitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEmailIdentitiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<IdentityInfo> m_emailIdentities;
+    bool m_emailIdentitiesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,18 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-PrivateKeyFlagsV2::PrivateKeyFlagsV2() : 
-    m_clientVersion(ClientCompatibilityV2::NOT_SET),
-    m_clientVersionHasBeenSet(false),
-    m_exportableKey(false),
-    m_exportableKeyHasBeenSet(false),
-    m_strongKeyProtectionRequired(false),
-    m_strongKeyProtectionRequiredHasBeenSet(false)
-{
-}
-
 PrivateKeyFlagsV2::PrivateKeyFlagsV2(JsonView jsonValue)
-  : PrivateKeyFlagsV2()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ PrivateKeyFlagsV2& PrivateKeyFlagsV2::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClientVersion"))
   {
     m_clientVersion = ClientCompatibilityV2Mapper::GetClientCompatibilityV2ForName(jsonValue.GetString("ClientVersion"));
-
     m_clientVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportableKey"))
   {
     m_exportableKey = jsonValue.GetBool("ExportableKey");
-
     m_exportableKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StrongKeyProtectionRequired"))
   {
     m_strongKeyProtectionRequired = jsonValue.GetBool("StrongKeyProtectionRequired");
-
     m_strongKeyProtectionRequiredHasBeenSet = true;
   }
-
   return *this;
 }
 

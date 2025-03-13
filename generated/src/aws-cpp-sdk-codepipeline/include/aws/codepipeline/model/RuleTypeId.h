@@ -39,7 +39,7 @@ namespace Model
   class RuleTypeId
   {
   public:
-    AWS_CODEPIPELINE_API RuleTypeId();
+    AWS_CODEPIPELINE_API RuleTypeId() = default;
     AWS_CODEPIPELINE_API RuleTypeId(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API RuleTypeId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * <p>A category defines what kind of rule can be run in the stage, and constrains
      * the provider type for the rule. The valid category is <code>Rule</code>. </p>
      */
-    inline const RuleCategory& GetCategory() const{ return m_category; }
+    inline RuleCategory GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const RuleCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(RuleCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline RuleTypeId& WithCategory(const RuleCategory& value) { SetCategory(value); return *this;}
-    inline RuleTypeId& WithCategory(RuleCategory&& value) { SetCategory(std::move(value)); return *this;}
+    inline void SetCategory(RuleCategory value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline RuleTypeId& WithCategory(RuleCategory value) { SetCategory(value); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * <p>The creator of the rule being called. The valid value for the
      * <code>Owner</code> field in the rule category is <code>AWS</code>. </p>
      */
-    inline const RuleOwner& GetOwner() const{ return m_owner; }
+    inline RuleOwner GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const RuleOwner& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(RuleOwner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline RuleTypeId& WithOwner(const RuleOwner& value) { SetOwner(value); return *this;}
-    inline RuleTypeId& WithOwner(RuleOwner&& value) { SetOwner(std::move(value)); return *this;}
+    inline void SetOwner(RuleOwner value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline RuleTypeId& WithOwner(RuleOwner value) { SetOwner(value); return *this;}
     ///@}
 
     ///@{
@@ -78,35 +74,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
      * rule reference</a>.</p>
      */
-    inline const Aws::String& GetProvider() const{ return m_provider; }
+    inline const Aws::String& GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const Aws::String& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline void SetProvider(const char* value) { m_providerHasBeenSet = true; m_provider.assign(value); }
-    inline RuleTypeId& WithProvider(const Aws::String& value) { SetProvider(value); return *this;}
-    inline RuleTypeId& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
-    inline RuleTypeId& WithProvider(const char* value) { SetProvider(value); return *this;}
+    template<typename ProviderT = Aws::String>
+    void SetProvider(ProviderT&& value) { m_providerHasBeenSet = true; m_provider = std::forward<ProviderT>(value); }
+    template<typename ProviderT = Aws::String>
+    RuleTypeId& WithProvider(ProviderT&& value) { SetProvider(std::forward<ProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string that describes the rule version.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline RuleTypeId& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline RuleTypeId& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline RuleTypeId& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    RuleTypeId& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 
-    RuleCategory m_category;
+    RuleCategory m_category{RuleCategory::NOT_SET};
     bool m_categoryHasBeenSet = false;
 
-    RuleOwner m_owner;
+    RuleOwner m_owner{RuleOwner::NOT_SET};
     bool m_ownerHasBeenSet = false;
 
     Aws::String m_provider;

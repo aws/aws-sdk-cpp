@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-GlobalNodeGroup::GlobalNodeGroup() : 
-    m_globalNodeGroupIdHasBeenSet(false),
-    m_slotsHasBeenSet(false)
-{
-}
-
 GlobalNodeGroup::GlobalNodeGroup(const XmlNode& xmlNode)
-  : GlobalNodeGroup()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ GlobalNodeGroup& GlobalNodeGroup::operator =(const XmlNode& xmlNode)
     {
       m_globalNodeGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(globalNodeGroupIdNode.GetText());
       m_globalNodeGroupIdHasBeenSet = true;
+       m_globalNodeGroupIdHasBeenSet = true;
     }
     XmlNode slotsNode = resultNode.FirstChild("Slots");
     if(!slotsNode.IsNull())
     {
       m_slots = Aws::Utils::Xml::DecodeEscapedXmlText(slotsNode.GetText());
       m_slotsHasBeenSet = true;
+       m_slotsHasBeenSet = true;
     }
   }
 

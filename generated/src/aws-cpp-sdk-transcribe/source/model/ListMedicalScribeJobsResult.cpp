@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMedicalScribeJobsResult::ListMedicalScribeJobsResult() : 
-    m_status(MedicalScribeJobStatus::NOT_SET)
-{
-}
-
 ListMedicalScribeJobsResult::ListMedicalScribeJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListMedicalScribeJobsResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ListMedicalScribeJobsResult& ListMedicalScribeJobsResult::operator =(const Aws::
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MedicalScribeJobStatusMapper::GetMedicalScribeJobStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MedicalScribeJobSummaries"))
   {
     Aws::Utils::Array<JsonView> medicalScribeJobSummariesJsonList = jsonValue.GetArray("MedicalScribeJobSummaries");
@@ -50,14 +42,15 @@ ListMedicalScribeJobsResult& ListMedicalScribeJobsResult::operator =(const Aws::
     {
       m_medicalScribeJobSummaries.push_back(medicalScribeJobSummariesJsonList[medicalScribeJobSummariesIndex].AsObject());
     }
+    m_medicalScribeJobSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

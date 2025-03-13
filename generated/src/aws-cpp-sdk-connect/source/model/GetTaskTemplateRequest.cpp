@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTaskTemplateRequest::GetTaskTemplateRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_taskTemplateIdHasBeenSet(false),
-    m_snapshotVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetTaskTemplateRequest::SerializePayload() const
 {
   return {};

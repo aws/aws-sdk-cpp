@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElbv2LoadBalancerAttribute::AwsElbv2LoadBalancerAttribute() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AwsElbv2LoadBalancerAttribute::AwsElbv2LoadBalancerAttribute(JsonView jsonValue)
-  : AwsElbv2LoadBalancerAttribute()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsElbv2LoadBalancerAttribute& AwsElbv2LoadBalancerAttribute::operator =(JsonVie
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

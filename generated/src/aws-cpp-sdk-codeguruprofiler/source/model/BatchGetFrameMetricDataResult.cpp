@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetFrameMetricDataResult::BatchGetFrameMetricDataResult() : 
-    m_resolution(AggregationPeriod::NOT_SET)
-{
-}
-
 BatchGetFrameMetricDataResult::BatchGetFrameMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : BatchGetFrameMetricDataResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ BatchGetFrameMetricDataResult& BatchGetFrameMetricDataResult::operator =(const A
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
+    m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTimes"))
   {
     Aws::Utils::Array<JsonView> endTimesJsonList = jsonValue.GetArray("endTimes");
@@ -44,8 +37,8 @@ BatchGetFrameMetricDataResult& BatchGetFrameMetricDataResult::operator =(const A
     {
       m_endTimes.push_back(endTimesJsonList[endTimesIndex].AsObject());
     }
+    m_endTimesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frameMetricData"))
   {
     Aws::Utils::Array<JsonView> frameMetricDataJsonList = jsonValue.GetArray("frameMetricData");
@@ -53,20 +46,18 @@ BatchGetFrameMetricDataResult& BatchGetFrameMetricDataResult::operator =(const A
     {
       m_frameMetricData.push_back(frameMetricDataJsonList[frameMetricDataIndex].AsObject());
     }
+    m_frameMetricDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolution"))
   {
     m_resolution = AggregationPeriodMapper::GetAggregationPeriodForName(jsonValue.GetString("resolution"));
-
+    m_resolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unprocessedEndTimes"))
   {
     Aws::Map<Aws::String, JsonView> unprocessedEndTimesJsonMap = jsonValue.GetObject("unprocessedEndTimes").GetAllObjects();
@@ -81,14 +72,15 @@ BatchGetFrameMetricDataResult& BatchGetFrameMetricDataResult::operator =(const A
       }
       m_unprocessedEndTimes[unprocessedEndTimesItem.first] = std::move(listOfTimestampsList);
     }
+    m_unprocessedEndTimesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

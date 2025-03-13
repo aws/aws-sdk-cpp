@@ -18,15 +18,7 @@ namespace SMS
 namespace Model
 {
 
-LaunchDetails::LaunchDetails() : 
-    m_latestLaunchTimeHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_stackIdHasBeenSet(false)
-{
-}
-
 LaunchDetails::LaunchDetails(JsonView jsonValue)
-  : LaunchDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ LaunchDetails& LaunchDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("latestLaunchTime"))
   {
     m_latestLaunchTime = jsonValue.GetDouble("latestLaunchTime");
-
     m_latestLaunchTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stackName"))
   {
     m_stackName = jsonValue.GetString("stackName");
-
     m_stackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stackId"))
   {
     m_stackId = jsonValue.GetString("stackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   return *this;
 }
 

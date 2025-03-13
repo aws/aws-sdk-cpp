@@ -28,7 +28,7 @@ namespace Model
   class DescribeUpdateRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API DescribeUpdateRequest();
+    AWS_EKS_API DescribeUpdateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The name of the Amazon EKS cluster associated with the update.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DescribeUpdateRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeUpdateRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeUpdateRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeUpdateRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the update to describe.</p>
      */
-    inline const Aws::String& GetUpdateId() const{ return m_updateId; }
+    inline const Aws::String& GetUpdateId() const { return m_updateId; }
     inline bool UpdateIdHasBeenSet() const { return m_updateIdHasBeenSet; }
-    inline void SetUpdateId(const Aws::String& value) { m_updateIdHasBeenSet = true; m_updateId = value; }
-    inline void SetUpdateId(Aws::String&& value) { m_updateIdHasBeenSet = true; m_updateId = std::move(value); }
-    inline void SetUpdateId(const char* value) { m_updateIdHasBeenSet = true; m_updateId.assign(value); }
-    inline DescribeUpdateRequest& WithUpdateId(const Aws::String& value) { SetUpdateId(value); return *this;}
-    inline DescribeUpdateRequest& WithUpdateId(Aws::String&& value) { SetUpdateId(std::move(value)); return *this;}
-    inline DescribeUpdateRequest& WithUpdateId(const char* value) { SetUpdateId(value); return *this;}
+    template<typename UpdateIdT = Aws::String>
+    void SetUpdateId(UpdateIdT&& value) { m_updateIdHasBeenSet = true; m_updateId = std::forward<UpdateIdT>(value); }
+    template<typename UpdateIdT = Aws::String>
+    DescribeUpdateRequest& WithUpdateId(UpdateIdT&& value) { SetUpdateId(std::forward<UpdateIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The name of the Amazon EKS node group associated with the update. This
      * parameter is required if the update is a node group update.</p>
      */
-    inline const Aws::String& GetNodegroupName() const{ return m_nodegroupName; }
+    inline const Aws::String& GetNodegroupName() const { return m_nodegroupName; }
     inline bool NodegroupNameHasBeenSet() const { return m_nodegroupNameHasBeenSet; }
-    inline void SetNodegroupName(const Aws::String& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = value; }
-    inline void SetNodegroupName(Aws::String&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::move(value); }
-    inline void SetNodegroupName(const char* value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName.assign(value); }
-    inline DescribeUpdateRequest& WithNodegroupName(const Aws::String& value) { SetNodegroupName(value); return *this;}
-    inline DescribeUpdateRequest& WithNodegroupName(Aws::String&& value) { SetNodegroupName(std::move(value)); return *this;}
-    inline DescribeUpdateRequest& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
+    template<typename NodegroupNameT = Aws::String>
+    void SetNodegroupName(NodegroupNameT&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::forward<NodegroupNameT>(value); }
+    template<typename NodegroupNameT = Aws::String>
+    DescribeUpdateRequest& WithNodegroupName(NodegroupNameT&& value) { SetNodegroupName(std::forward<NodegroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * <code>ListAddons</code> </a>. This parameter is required if the update is an
      * add-on update.</p>
      */
-    inline const Aws::String& GetAddonName() const{ return m_addonName; }
+    inline const Aws::String& GetAddonName() const { return m_addonName; }
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
-    inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
-    inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
-    inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
-    inline DescribeUpdateRequest& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
-    inline DescribeUpdateRequest& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
-    inline DescribeUpdateRequest& WithAddonName(const char* value) { SetAddonName(value); return *this;}
+    template<typename AddonNameT = Aws::String>
+    void SetAddonName(AddonNameT&& value) { m_addonNameHasBeenSet = true; m_addonName = std::forward<AddonNameT>(value); }
+    template<typename AddonNameT = Aws::String>
+    DescribeUpdateRequest& WithAddonName(AddonNameT&& value) { SetAddonName(std::forward<AddonNameT>(value)); return *this;}
     ///@}
   private:
 

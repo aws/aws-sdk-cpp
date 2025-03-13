@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-Tag::Tag() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Tag::Tag(const XmlNode& xmlNode)
-  : Tag()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Tag& Tag::operator =(const XmlNode& xmlNode)
     {
       m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
+       m_keyHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

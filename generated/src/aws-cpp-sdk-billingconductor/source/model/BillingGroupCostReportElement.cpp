@@ -18,18 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-BillingGroupCostReportElement::BillingGroupCostReportElement() : 
-    m_arnHasBeenSet(false),
-    m_aWSCostHasBeenSet(false),
-    m_proformaCostHasBeenSet(false),
-    m_marginHasBeenSet(false),
-    m_marginPercentageHasBeenSet(false),
-    m_currencyHasBeenSet(false)
-{
-}
-
 BillingGroupCostReportElement::BillingGroupCostReportElement(JsonView jsonValue)
-  : BillingGroupCostReportElement()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ BillingGroupCostReportElement& BillingGroupCostReportElement::operator =(JsonVie
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AWSCost"))
   {
     m_aWSCost = jsonValue.GetString("AWSCost");
-
     m_aWSCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProformaCost"))
   {
     m_proformaCost = jsonValue.GetString("ProformaCost");
-
     m_proformaCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Margin"))
   {
     m_margin = jsonValue.GetString("Margin");
-
     m_marginHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MarginPercentage"))
   {
     m_marginPercentage = jsonValue.GetString("MarginPercentage");
-
     m_marginPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Currency"))
   {
     m_currency = jsonValue.GetString("Currency");
-
     m_currencyHasBeenSet = true;
   }
-
   return *this;
 }
 

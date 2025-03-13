@@ -40,7 +40,7 @@ namespace Model
   class KmsGrantConstraints
   {
   public:
-    AWS_ACCESSANALYZER_API KmsGrantConstraints();
+    AWS_ACCESSANALYZER_API KmsGrantConstraints() = default;
     AWS_ACCESSANALYZER_API KmsGrantConstraints(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API KmsGrantConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,19 +54,16 @@ namespace Model
      * context in the request is the same as the encryption context specified in this
      * constraint.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContextEquals() const{ return m_encryptionContextEquals; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContextEquals() const { return m_encryptionContextEquals; }
     inline bool EncryptionContextEqualsHasBeenSet() const { return m_encryptionContextEqualsHasBeenSet; }
-    inline void SetEncryptionContextEquals(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals = value; }
-    inline void SetEncryptionContextEquals(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals = std::move(value); }
-    inline KmsGrantConstraints& WithEncryptionContextEquals(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContextEquals(value); return *this;}
-    inline KmsGrantConstraints& WithEncryptionContextEquals(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContextEquals(std::move(value)); return *this;}
-    inline KmsGrantConstraints& AddEncryptionContextEquals(const Aws::String& key, const Aws::String& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, value); return *this; }
-    inline KmsGrantConstraints& AddEncryptionContextEquals(Aws::String&& key, const Aws::String& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(std::move(key), value); return *this; }
-    inline KmsGrantConstraints& AddEncryptionContextEquals(const Aws::String& key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, std::move(value)); return *this; }
-    inline KmsGrantConstraints& AddEncryptionContextEquals(Aws::String&& key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(std::move(key), std::move(value)); return *this; }
-    inline KmsGrantConstraints& AddEncryptionContextEquals(const char* key, Aws::String&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, std::move(value)); return *this; }
-    inline KmsGrantConstraints& AddEncryptionContextEquals(Aws::String&& key, const char* value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(std::move(key), value); return *this; }
-    inline KmsGrantConstraints& AddEncryptionContextEquals(const char* key, const char* value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, value); return *this; }
+    template<typename EncryptionContextEqualsT = Aws::Map<Aws::String, Aws::String>>
+    void SetEncryptionContextEquals(EncryptionContextEqualsT&& value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals = std::forward<EncryptionContextEqualsT>(value); }
+    template<typename EncryptionContextEqualsT = Aws::Map<Aws::String, Aws::String>>
+    KmsGrantConstraints& WithEncryptionContextEquals(EncryptionContextEqualsT&& value) { SetEncryptionContextEquals(std::forward<EncryptionContextEqualsT>(value)); return *this;}
+    template<typename EncryptionContextEqualsKeyT = Aws::String, typename EncryptionContextEqualsValueT = Aws::String>
+    KmsGrantConstraints& AddEncryptionContextEquals(EncryptionContextEqualsKeyT&& key, EncryptionContextEqualsValueT&& value) {
+      m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(std::forward<EncryptionContextEqualsKeyT>(key), std::forward<EncryptionContextEqualsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -78,19 +75,16 @@ namespace Model
      * the encryption context in the request includes the key-value pairs specified in
      * this constraint, although it can include additional key-value pairs.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContextSubset() const{ return m_encryptionContextSubset; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContextSubset() const { return m_encryptionContextSubset; }
     inline bool EncryptionContextSubsetHasBeenSet() const { return m_encryptionContextSubsetHasBeenSet; }
-    inline void SetEncryptionContextSubset(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset = value; }
-    inline void SetEncryptionContextSubset(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset = std::move(value); }
-    inline KmsGrantConstraints& WithEncryptionContextSubset(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContextSubset(value); return *this;}
-    inline KmsGrantConstraints& WithEncryptionContextSubset(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContextSubset(std::move(value)); return *this;}
-    inline KmsGrantConstraints& AddEncryptionContextSubset(const Aws::String& key, const Aws::String& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, value); return *this; }
-    inline KmsGrantConstraints& AddEncryptionContextSubset(Aws::String&& key, const Aws::String& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(std::move(key), value); return *this; }
-    inline KmsGrantConstraints& AddEncryptionContextSubset(const Aws::String& key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, std::move(value)); return *this; }
-    inline KmsGrantConstraints& AddEncryptionContextSubset(Aws::String&& key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(std::move(key), std::move(value)); return *this; }
-    inline KmsGrantConstraints& AddEncryptionContextSubset(const char* key, Aws::String&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, std::move(value)); return *this; }
-    inline KmsGrantConstraints& AddEncryptionContextSubset(Aws::String&& key, const char* value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(std::move(key), value); return *this; }
-    inline KmsGrantConstraints& AddEncryptionContextSubset(const char* key, const char* value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, value); return *this; }
+    template<typename EncryptionContextSubsetT = Aws::Map<Aws::String, Aws::String>>
+    void SetEncryptionContextSubset(EncryptionContextSubsetT&& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset = std::forward<EncryptionContextSubsetT>(value); }
+    template<typename EncryptionContextSubsetT = Aws::Map<Aws::String, Aws::String>>
+    KmsGrantConstraints& WithEncryptionContextSubset(EncryptionContextSubsetT&& value) { SetEncryptionContextSubset(std::forward<EncryptionContextSubsetT>(value)); return *this;}
+    template<typename EncryptionContextSubsetKeyT = Aws::String, typename EncryptionContextSubsetValueT = Aws::String>
+    KmsGrantConstraints& AddEncryptionContextSubset(EncryptionContextSubsetKeyT&& key, EncryptionContextSubsetValueT&& value) {
+      m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(std::forward<EncryptionContextSubsetKeyT>(key), std::forward<EncryptionContextSubsetValueT>(value)); return *this;
+    }
     ///@}
   private:
 

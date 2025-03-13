@@ -23,7 +23,7 @@ namespace Model
   class RemoveEndpointsRequest : public GlobalAcceleratorRequest
   {
   public:
-    AWS_GLOBALACCELERATOR_API RemoveEndpointsRequest();
+    AWS_GLOBALACCELERATOR_API RemoveEndpointsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,26 @@ namespace Model
     /**
      * <p>The identifiers of the endpoints that you want to remove.</p>
      */
-    inline const Aws::Vector<EndpointIdentifier>& GetEndpointIdentifiers() const{ return m_endpointIdentifiers; }
+    inline const Aws::Vector<EndpointIdentifier>& GetEndpointIdentifiers() const { return m_endpointIdentifiers; }
     inline bool EndpointIdentifiersHasBeenSet() const { return m_endpointIdentifiersHasBeenSet; }
-    inline void SetEndpointIdentifiers(const Aws::Vector<EndpointIdentifier>& value) { m_endpointIdentifiersHasBeenSet = true; m_endpointIdentifiers = value; }
-    inline void SetEndpointIdentifiers(Aws::Vector<EndpointIdentifier>&& value) { m_endpointIdentifiersHasBeenSet = true; m_endpointIdentifiers = std::move(value); }
-    inline RemoveEndpointsRequest& WithEndpointIdentifiers(const Aws::Vector<EndpointIdentifier>& value) { SetEndpointIdentifiers(value); return *this;}
-    inline RemoveEndpointsRequest& WithEndpointIdentifiers(Aws::Vector<EndpointIdentifier>&& value) { SetEndpointIdentifiers(std::move(value)); return *this;}
-    inline RemoveEndpointsRequest& AddEndpointIdentifiers(const EndpointIdentifier& value) { m_endpointIdentifiersHasBeenSet = true; m_endpointIdentifiers.push_back(value); return *this; }
-    inline RemoveEndpointsRequest& AddEndpointIdentifiers(EndpointIdentifier&& value) { m_endpointIdentifiersHasBeenSet = true; m_endpointIdentifiers.push_back(std::move(value)); return *this; }
+    template<typename EndpointIdentifiersT = Aws::Vector<EndpointIdentifier>>
+    void SetEndpointIdentifiers(EndpointIdentifiersT&& value) { m_endpointIdentifiersHasBeenSet = true; m_endpointIdentifiers = std::forward<EndpointIdentifiersT>(value); }
+    template<typename EndpointIdentifiersT = Aws::Vector<EndpointIdentifier>>
+    RemoveEndpointsRequest& WithEndpointIdentifiers(EndpointIdentifiersT&& value) { SetEndpointIdentifiers(std::forward<EndpointIdentifiersT>(value)); return *this;}
+    template<typename EndpointIdentifiersT = EndpointIdentifier>
+    RemoveEndpointsRequest& AddEndpointIdentifiers(EndpointIdentifiersT&& value) { m_endpointIdentifiersHasBeenSet = true; m_endpointIdentifiers.emplace_back(std::forward<EndpointIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
      */
-    inline const Aws::String& GetEndpointGroupArn() const{ return m_endpointGroupArn; }
+    inline const Aws::String& GetEndpointGroupArn() const { return m_endpointGroupArn; }
     inline bool EndpointGroupArnHasBeenSet() const { return m_endpointGroupArnHasBeenSet; }
-    inline void SetEndpointGroupArn(const Aws::String& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = value; }
-    inline void SetEndpointGroupArn(Aws::String&& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = std::move(value); }
-    inline void SetEndpointGroupArn(const char* value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn.assign(value); }
-    inline RemoveEndpointsRequest& WithEndpointGroupArn(const Aws::String& value) { SetEndpointGroupArn(value); return *this;}
-    inline RemoveEndpointsRequest& WithEndpointGroupArn(Aws::String&& value) { SetEndpointGroupArn(std::move(value)); return *this;}
-    inline RemoveEndpointsRequest& WithEndpointGroupArn(const char* value) { SetEndpointGroupArn(value); return *this;}
+    template<typename EndpointGroupArnT = Aws::String>
+    void SetEndpointGroupArn(EndpointGroupArnT&& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = std::forward<EndpointGroupArnT>(value); }
+    template<typename EndpointGroupArnT = Aws::String>
+    RemoveEndpointsRequest& WithEndpointGroupArn(EndpointGroupArnT&& value) { SetEndpointGroupArn(std::forward<EndpointGroupArnT>(value)); return *this;}
     ///@}
   private:
 

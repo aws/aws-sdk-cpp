@@ -33,7 +33,7 @@ namespace Model
   class AggregateComplianceCount
   {
   public:
-    AWS_CONFIGSERVICE_API AggregateComplianceCount();
+    AWS_CONFIGSERVICE_API AggregateComplianceCount() = default;
     AWS_CONFIGSERVICE_API AggregateComplianceCount(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API AggregateComplianceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The 12-digit account ID or region based on the GroupByKey value.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline AggregateComplianceCount& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline AggregateComplianceCount& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline AggregateComplianceCount& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    AggregateComplianceCount& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of compliant and noncompliant Config rules.</p>
      */
-    inline const ComplianceSummary& GetComplianceSummary() const{ return m_complianceSummary; }
+    inline const ComplianceSummary& GetComplianceSummary() const { return m_complianceSummary; }
     inline bool ComplianceSummaryHasBeenSet() const { return m_complianceSummaryHasBeenSet; }
-    inline void SetComplianceSummary(const ComplianceSummary& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = value; }
-    inline void SetComplianceSummary(ComplianceSummary&& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = std::move(value); }
-    inline AggregateComplianceCount& WithComplianceSummary(const ComplianceSummary& value) { SetComplianceSummary(value); return *this;}
-    inline AggregateComplianceCount& WithComplianceSummary(ComplianceSummary&& value) { SetComplianceSummary(std::move(value)); return *this;}
+    template<typename ComplianceSummaryT = ComplianceSummary>
+    void SetComplianceSummary(ComplianceSummaryT&& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = std::forward<ComplianceSummaryT>(value); }
+    template<typename ComplianceSummaryT = ComplianceSummary>
+    AggregateComplianceCount& WithComplianceSummary(ComplianceSummaryT&& value) { SetComplianceSummary(std::forward<ComplianceSummaryT>(value)); return *this;}
     ///@}
   private:
 

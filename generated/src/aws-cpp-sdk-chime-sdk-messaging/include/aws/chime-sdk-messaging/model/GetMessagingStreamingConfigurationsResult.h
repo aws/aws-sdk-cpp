@@ -29,7 +29,7 @@ namespace Model
   class GetMessagingStreamingConfigurationsResult
   {
   public:
-    AWS_CHIMESDKMESSAGING_API GetMessagingStreamingConfigurationsResult();
+    AWS_CHIMESDKMESSAGING_API GetMessagingStreamingConfigurationsResult() = default;
     AWS_CHIMESDKMESSAGING_API GetMessagingStreamingConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMESSAGING_API GetMessagingStreamingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The streaming settings.</p>
      */
-    inline const Aws::Vector<StreamingConfiguration>& GetStreamingConfigurations() const{ return m_streamingConfigurations; }
-    inline void SetStreamingConfigurations(const Aws::Vector<StreamingConfiguration>& value) { m_streamingConfigurations = value; }
-    inline void SetStreamingConfigurations(Aws::Vector<StreamingConfiguration>&& value) { m_streamingConfigurations = std::move(value); }
-    inline GetMessagingStreamingConfigurationsResult& WithStreamingConfigurations(const Aws::Vector<StreamingConfiguration>& value) { SetStreamingConfigurations(value); return *this;}
-    inline GetMessagingStreamingConfigurationsResult& WithStreamingConfigurations(Aws::Vector<StreamingConfiguration>&& value) { SetStreamingConfigurations(std::move(value)); return *this;}
-    inline GetMessagingStreamingConfigurationsResult& AddStreamingConfigurations(const StreamingConfiguration& value) { m_streamingConfigurations.push_back(value); return *this; }
-    inline GetMessagingStreamingConfigurationsResult& AddStreamingConfigurations(StreamingConfiguration&& value) { m_streamingConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StreamingConfiguration>& GetStreamingConfigurations() const { return m_streamingConfigurations; }
+    template<typename StreamingConfigurationsT = Aws::Vector<StreamingConfiguration>>
+    void SetStreamingConfigurations(StreamingConfigurationsT&& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = std::forward<StreamingConfigurationsT>(value); }
+    template<typename StreamingConfigurationsT = Aws::Vector<StreamingConfiguration>>
+    GetMessagingStreamingConfigurationsResult& WithStreamingConfigurations(StreamingConfigurationsT&& value) { SetStreamingConfigurations(std::forward<StreamingConfigurationsT>(value)); return *this;}
+    template<typename StreamingConfigurationsT = StreamingConfiguration>
+    GetMessagingStreamingConfigurationsResult& AddStreamingConfigurations(StreamingConfigurationsT&& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations.emplace_back(std::forward<StreamingConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMessagingStreamingConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMessagingStreamingConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMessagingStreamingConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMessagingStreamingConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StreamingConfiguration> m_streamingConfigurations;
+    bool m_streamingConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

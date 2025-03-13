@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeRuntimeConfigurationResult::DescribeRuntimeConfigurationResult()
-{
-}
-
 DescribeRuntimeConfigurationResult::DescribeRuntimeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeRuntimeConfigurationResult& DescribeRuntimeConfigurationResult::operator
   if(jsonValue.ValueExists("RuntimeConfiguration"))
   {
     m_runtimeConfiguration = jsonValue.GetObject("RuntimeConfiguration");
-
+    m_runtimeConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

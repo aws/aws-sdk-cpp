@@ -35,7 +35,7 @@ namespace Model
   class NetworkConfiguration
   {
   public:
-    AWS_APPRUNNER_API NetworkConfiguration();
+    AWS_APPRUNNER_API NetworkConfiguration() = default;
     AWS_APPRUNNER_API NetworkConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API NetworkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
     /**
      * <p>Network configuration settings for outbound message traffic.</p>
      */
-    inline const EgressConfiguration& GetEgressConfiguration() const{ return m_egressConfiguration; }
+    inline const EgressConfiguration& GetEgressConfiguration() const { return m_egressConfiguration; }
     inline bool EgressConfigurationHasBeenSet() const { return m_egressConfigurationHasBeenSet; }
-    inline void SetEgressConfiguration(const EgressConfiguration& value) { m_egressConfigurationHasBeenSet = true; m_egressConfiguration = value; }
-    inline void SetEgressConfiguration(EgressConfiguration&& value) { m_egressConfigurationHasBeenSet = true; m_egressConfiguration = std::move(value); }
-    inline NetworkConfiguration& WithEgressConfiguration(const EgressConfiguration& value) { SetEgressConfiguration(value); return *this;}
-    inline NetworkConfiguration& WithEgressConfiguration(EgressConfiguration&& value) { SetEgressConfiguration(std::move(value)); return *this;}
+    template<typename EgressConfigurationT = EgressConfiguration>
+    void SetEgressConfiguration(EgressConfigurationT&& value) { m_egressConfigurationHasBeenSet = true; m_egressConfiguration = std::forward<EgressConfigurationT>(value); }
+    template<typename EgressConfigurationT = EgressConfiguration>
+    NetworkConfiguration& WithEgressConfiguration(EgressConfigurationT&& value) { SetEgressConfiguration(std::forward<EgressConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Network configuration settings for inbound message traffic.</p>
      */
-    inline const IngressConfiguration& GetIngressConfiguration() const{ return m_ingressConfiguration; }
+    inline const IngressConfiguration& GetIngressConfiguration() const { return m_ingressConfiguration; }
     inline bool IngressConfigurationHasBeenSet() const { return m_ingressConfigurationHasBeenSet; }
-    inline void SetIngressConfiguration(const IngressConfiguration& value) { m_ingressConfigurationHasBeenSet = true; m_ingressConfiguration = value; }
-    inline void SetIngressConfiguration(IngressConfiguration&& value) { m_ingressConfigurationHasBeenSet = true; m_ingressConfiguration = std::move(value); }
-    inline NetworkConfiguration& WithIngressConfiguration(const IngressConfiguration& value) { SetIngressConfiguration(value); return *this;}
-    inline NetworkConfiguration& WithIngressConfiguration(IngressConfiguration&& value) { SetIngressConfiguration(std::move(value)); return *this;}
+    template<typename IngressConfigurationT = IngressConfiguration>
+    void SetIngressConfiguration(IngressConfigurationT&& value) { m_ingressConfigurationHasBeenSet = true; m_ingressConfiguration = std::forward<IngressConfigurationT>(value); }
+    template<typename IngressConfigurationT = IngressConfiguration>
+    NetworkConfiguration& WithIngressConfiguration(IngressConfigurationT&& value) { SetIngressConfiguration(std::forward<IngressConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +77,10 @@ namespace Model
      * will default to support only IPv4 for Private endpoint and fail to receive
      * traffic originating from IPv6 endpoint. </p> 
      */
-    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
-    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
-    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
-    inline NetworkConfiguration& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
-    inline NetworkConfiguration& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline NetworkConfiguration& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
     ///@}
   private:
 
@@ -92,7 +90,7 @@ namespace Model
     IngressConfiguration m_ingressConfiguration;
     bool m_ingressConfigurationHasBeenSet = false;
 
-    IpAddressType m_ipAddressType;
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
     bool m_ipAddressTypeHasBeenSet = false;
   };
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SetDefaultMessageFeedbackEnabledResult::SetDefaultMessageFeedbackEnabledResult() : 
-    m_messageFeedbackEnabled(false)
-{
-}
-
 SetDefaultMessageFeedbackEnabledResult::SetDefaultMessageFeedbackEnabledResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SetDefaultMessageFeedbackEnabledResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ SetDefaultMessageFeedbackEnabledResult& SetDefaultMessageFeedbackEnabledResult::
   if(jsonValue.ValueExists("ConfigurationSetArn"))
   {
     m_configurationSetArn = jsonValue.GetString("ConfigurationSetArn");
-
+    m_configurationSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationSetName"))
   {
     m_configurationSetName = jsonValue.GetString("ConfigurationSetName");
-
+    m_configurationSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageFeedbackEnabled"))
   {
     m_messageFeedbackEnabled = jsonValue.GetBool("MessageFeedbackEnabled");
-
+    m_messageFeedbackEnabledHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

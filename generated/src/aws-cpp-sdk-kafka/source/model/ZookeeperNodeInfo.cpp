@@ -18,18 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ZookeeperNodeInfo::ZookeeperNodeInfo() : 
-    m_attachedENIIdHasBeenSet(false),
-    m_clientVpcIpAddressHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_zookeeperId(0.0),
-    m_zookeeperIdHasBeenSet(false),
-    m_zookeeperVersionHasBeenSet(false)
-{
-}
-
 ZookeeperNodeInfo::ZookeeperNodeInfo(JsonView jsonValue)
-  : ZookeeperNodeInfo()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ ZookeeperNodeInfo& ZookeeperNodeInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attachedENIId"))
   {
     m_attachedENIId = jsonValue.GetString("attachedENIId");
-
     m_attachedENIIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientVpcIpAddress"))
   {
     m_clientVpcIpAddress = jsonValue.GetString("clientVpcIpAddress");
-
     m_clientVpcIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoints"))
   {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
@@ -59,21 +44,16 @@ ZookeeperNodeInfo& ZookeeperNodeInfo::operator =(JsonView jsonValue)
     }
     m_endpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zookeeperId"))
   {
     m_zookeeperId = jsonValue.GetDouble("zookeeperId");
-
     m_zookeeperIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zookeeperVersion"))
   {
     m_zookeeperVersion = jsonValue.GetString("zookeeperVersion");
-
     m_zookeeperVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

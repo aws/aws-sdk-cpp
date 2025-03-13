@@ -30,7 +30,7 @@ namespace Model
   class GetGroupsForCapacityReservationResponse
   {
   public:
-    AWS_EC2_API GetGroupsForCapacityReservationResponse();
+    AWS_EC2_API GetGroupsForCapacityReservationResponse() = default;
     AWS_EC2_API GetGroupsForCapacityReservationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetGroupsForCapacityReservationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetGroupsForCapacityReservationResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetGroupsForCapacityReservationResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetGroupsForCapacityReservationResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetGroupsForCapacityReservationResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,30 +52,33 @@ namespace Model
      * <p>Information about the resource groups to which the Capacity Reservation has
      * been added.</p>
      */
-    inline const Aws::Vector<CapacityReservationGroup>& GetCapacityReservationGroups() const{ return m_capacityReservationGroups; }
-    inline void SetCapacityReservationGroups(const Aws::Vector<CapacityReservationGroup>& value) { m_capacityReservationGroups = value; }
-    inline void SetCapacityReservationGroups(Aws::Vector<CapacityReservationGroup>&& value) { m_capacityReservationGroups = std::move(value); }
-    inline GetGroupsForCapacityReservationResponse& WithCapacityReservationGroups(const Aws::Vector<CapacityReservationGroup>& value) { SetCapacityReservationGroups(value); return *this;}
-    inline GetGroupsForCapacityReservationResponse& WithCapacityReservationGroups(Aws::Vector<CapacityReservationGroup>&& value) { SetCapacityReservationGroups(std::move(value)); return *this;}
-    inline GetGroupsForCapacityReservationResponse& AddCapacityReservationGroups(const CapacityReservationGroup& value) { m_capacityReservationGroups.push_back(value); return *this; }
-    inline GetGroupsForCapacityReservationResponse& AddCapacityReservationGroups(CapacityReservationGroup&& value) { m_capacityReservationGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CapacityReservationGroup>& GetCapacityReservationGroups() const { return m_capacityReservationGroups; }
+    template<typename CapacityReservationGroupsT = Aws::Vector<CapacityReservationGroup>>
+    void SetCapacityReservationGroups(CapacityReservationGroupsT&& value) { m_capacityReservationGroupsHasBeenSet = true; m_capacityReservationGroups = std::forward<CapacityReservationGroupsT>(value); }
+    template<typename CapacityReservationGroupsT = Aws::Vector<CapacityReservationGroup>>
+    GetGroupsForCapacityReservationResponse& WithCapacityReservationGroups(CapacityReservationGroupsT&& value) { SetCapacityReservationGroups(std::forward<CapacityReservationGroupsT>(value)); return *this;}
+    template<typename CapacityReservationGroupsT = CapacityReservationGroup>
+    GetGroupsForCapacityReservationResponse& AddCapacityReservationGroups(CapacityReservationGroupsT&& value) { m_capacityReservationGroupsHasBeenSet = true; m_capacityReservationGroups.emplace_back(std::forward<CapacityReservationGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetGroupsForCapacityReservationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetGroupsForCapacityReservationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetGroupsForCapacityReservationResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<CapacityReservationGroup> m_capacityReservationGroups;
+    bool m_capacityReservationGroupsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

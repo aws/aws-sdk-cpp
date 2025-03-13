@@ -18,17 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SensitiveDataItem::SensitiveDataItem() : 
-    m_category(SensitiveDataItemCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_detectionsHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false)
-{
-}
-
 SensitiveDataItem::SensitiveDataItem(JsonView jsonValue)
-  : SensitiveDataItem()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ SensitiveDataItem& SensitiveDataItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("category"))
   {
     m_category = SensitiveDataItemCategoryMapper::GetSensitiveDataItemCategoryForName(jsonValue.GetString("category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detections"))
   {
     Aws::Utils::Array<JsonView> detectionsJsonList = jsonValue.GetArray("detections");
@@ -51,14 +39,11 @@ SensitiveDataItem& SensitiveDataItem::operator =(JsonView jsonValue)
     }
     m_detectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalCount"))
   {
     m_totalCount = jsonValue.GetInt64("totalCount");
-
     m_totalCountHasBeenSet = true;
   }
-
   return *this;
 }
 

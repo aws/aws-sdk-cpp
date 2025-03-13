@@ -37,7 +37,7 @@ namespace Model
   class ValidStorageOptions
   {
   public:
-    AWS_NEPTUNE_API ValidStorageOptions();
+    AWS_NEPTUNE_API ValidStorageOptions() = default;
     AWS_NEPTUNE_API ValidStorageOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_NEPTUNE_API ValidStorageOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,42 +49,40 @@ namespace Model
     /**
      * <p>The valid storage types for your DB instance. For example, gp2, io1.</p>
      */
-    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
-    inline ValidStorageOptions& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
-    inline ValidStorageOptions& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
-    inline ValidStorageOptions& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    ValidStorageOptions& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The valid range of storage in gibibytes. For example, 100 to 16384.</p>
      */
-    inline const Aws::Vector<Range>& GetStorageSize() const{ return m_storageSize; }
+    inline const Aws::Vector<Range>& GetStorageSize() const { return m_storageSize; }
     inline bool StorageSizeHasBeenSet() const { return m_storageSizeHasBeenSet; }
-    inline void SetStorageSize(const Aws::Vector<Range>& value) { m_storageSizeHasBeenSet = true; m_storageSize = value; }
-    inline void SetStorageSize(Aws::Vector<Range>&& value) { m_storageSizeHasBeenSet = true; m_storageSize = std::move(value); }
-    inline ValidStorageOptions& WithStorageSize(const Aws::Vector<Range>& value) { SetStorageSize(value); return *this;}
-    inline ValidStorageOptions& WithStorageSize(Aws::Vector<Range>&& value) { SetStorageSize(std::move(value)); return *this;}
-    inline ValidStorageOptions& AddStorageSize(const Range& value) { m_storageSizeHasBeenSet = true; m_storageSize.push_back(value); return *this; }
-    inline ValidStorageOptions& AddStorageSize(Range&& value) { m_storageSizeHasBeenSet = true; m_storageSize.push_back(std::move(value)); return *this; }
+    template<typename StorageSizeT = Aws::Vector<Range>>
+    void SetStorageSize(StorageSizeT&& value) { m_storageSizeHasBeenSet = true; m_storageSize = std::forward<StorageSizeT>(value); }
+    template<typename StorageSizeT = Aws::Vector<Range>>
+    ValidStorageOptions& WithStorageSize(StorageSizeT&& value) { SetStorageSize(std::forward<StorageSizeT>(value)); return *this;}
+    template<typename StorageSizeT = Range>
+    ValidStorageOptions& AddStorageSize(StorageSizeT&& value) { m_storageSizeHasBeenSet = true; m_storageSize.emplace_back(std::forward<StorageSizeT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The valid range of provisioned IOPS. For example, 1000-20000.</p>
      */
-    inline const Aws::Vector<Range>& GetProvisionedIops() const{ return m_provisionedIops; }
+    inline const Aws::Vector<Range>& GetProvisionedIops() const { return m_provisionedIops; }
     inline bool ProvisionedIopsHasBeenSet() const { return m_provisionedIopsHasBeenSet; }
-    inline void SetProvisionedIops(const Aws::Vector<Range>& value) { m_provisionedIopsHasBeenSet = true; m_provisionedIops = value; }
-    inline void SetProvisionedIops(Aws::Vector<Range>&& value) { m_provisionedIopsHasBeenSet = true; m_provisionedIops = std::move(value); }
-    inline ValidStorageOptions& WithProvisionedIops(const Aws::Vector<Range>& value) { SetProvisionedIops(value); return *this;}
-    inline ValidStorageOptions& WithProvisionedIops(Aws::Vector<Range>&& value) { SetProvisionedIops(std::move(value)); return *this;}
-    inline ValidStorageOptions& AddProvisionedIops(const Range& value) { m_provisionedIopsHasBeenSet = true; m_provisionedIops.push_back(value); return *this; }
-    inline ValidStorageOptions& AddProvisionedIops(Range&& value) { m_provisionedIopsHasBeenSet = true; m_provisionedIops.push_back(std::move(value)); return *this; }
+    template<typename ProvisionedIopsT = Aws::Vector<Range>>
+    void SetProvisionedIops(ProvisionedIopsT&& value) { m_provisionedIopsHasBeenSet = true; m_provisionedIops = std::forward<ProvisionedIopsT>(value); }
+    template<typename ProvisionedIopsT = Aws::Vector<Range>>
+    ValidStorageOptions& WithProvisionedIops(ProvisionedIopsT&& value) { SetProvisionedIops(std::forward<ProvisionedIopsT>(value)); return *this;}
+    template<typename ProvisionedIopsT = Range>
+    ValidStorageOptions& AddProvisionedIops(ProvisionedIopsT&& value) { m_provisionedIopsHasBeenSet = true; m_provisionedIops.emplace_back(std::forward<ProvisionedIopsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -93,14 +91,14 @@ namespace Model
      * example, 3-10, which means that provisioned IOPS can be between 3 and 10 times
      * storage.</p>
      */
-    inline const Aws::Vector<DoubleRange>& GetIopsToStorageRatio() const{ return m_iopsToStorageRatio; }
+    inline const Aws::Vector<DoubleRange>& GetIopsToStorageRatio() const { return m_iopsToStorageRatio; }
     inline bool IopsToStorageRatioHasBeenSet() const { return m_iopsToStorageRatioHasBeenSet; }
-    inline void SetIopsToStorageRatio(const Aws::Vector<DoubleRange>& value) { m_iopsToStorageRatioHasBeenSet = true; m_iopsToStorageRatio = value; }
-    inline void SetIopsToStorageRatio(Aws::Vector<DoubleRange>&& value) { m_iopsToStorageRatioHasBeenSet = true; m_iopsToStorageRatio = std::move(value); }
-    inline ValidStorageOptions& WithIopsToStorageRatio(const Aws::Vector<DoubleRange>& value) { SetIopsToStorageRatio(value); return *this;}
-    inline ValidStorageOptions& WithIopsToStorageRatio(Aws::Vector<DoubleRange>&& value) { SetIopsToStorageRatio(std::move(value)); return *this;}
-    inline ValidStorageOptions& AddIopsToStorageRatio(const DoubleRange& value) { m_iopsToStorageRatioHasBeenSet = true; m_iopsToStorageRatio.push_back(value); return *this; }
-    inline ValidStorageOptions& AddIopsToStorageRatio(DoubleRange&& value) { m_iopsToStorageRatioHasBeenSet = true; m_iopsToStorageRatio.push_back(std::move(value)); return *this; }
+    template<typename IopsToStorageRatioT = Aws::Vector<DoubleRange>>
+    void SetIopsToStorageRatio(IopsToStorageRatioT&& value) { m_iopsToStorageRatioHasBeenSet = true; m_iopsToStorageRatio = std::forward<IopsToStorageRatioT>(value); }
+    template<typename IopsToStorageRatioT = Aws::Vector<DoubleRange>>
+    ValidStorageOptions& WithIopsToStorageRatio(IopsToStorageRatioT&& value) { SetIopsToStorageRatio(std::forward<IopsToStorageRatioT>(value)); return *this;}
+    template<typename IopsToStorageRatioT = DoubleRange>
+    ValidStorageOptions& AddIopsToStorageRatio(IopsToStorageRatioT&& value) { m_iopsToStorageRatioHasBeenSet = true; m_iopsToStorageRatio.emplace_back(std::forward<IopsToStorageRatioT>(value)); return *this; }
     ///@}
   private:
 

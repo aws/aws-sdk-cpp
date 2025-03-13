@@ -18,16 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-Range::Range() : 
-    m_maximum(0.0),
-    m_maximumHasBeenSet(false),
-    m_minimum(0.0),
-    m_minimumHasBeenSet(false)
-{
-}
-
 Range::Range(JsonView jsonValue)
-  : Range()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Range& Range::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maximum"))
   {
     m_maximum = jsonValue.GetDouble("maximum");
-
     m_maximumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimum"))
   {
     m_minimum = jsonValue.GetDouble("minimum");
-
     m_minimumHasBeenSet = true;
   }
-
   return *this;
 }
 

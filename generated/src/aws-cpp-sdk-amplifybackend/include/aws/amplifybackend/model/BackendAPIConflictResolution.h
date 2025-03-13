@@ -32,7 +32,7 @@ namespace Model
   class BackendAPIConflictResolution
   {
   public:
-    AWS_AMPLIFYBACKEND_API BackendAPIConflictResolution();
+    AWS_AMPLIFYBACKEND_API BackendAPIConflictResolution() = default;
     AWS_AMPLIFYBACKEND_API BackendAPIConflictResolution(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API BackendAPIConflictResolution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The strategy for conflict resolution.</p>
      */
-    inline const ResolutionStrategy& GetResolutionStrategy() const{ return m_resolutionStrategy; }
+    inline ResolutionStrategy GetResolutionStrategy() const { return m_resolutionStrategy; }
     inline bool ResolutionStrategyHasBeenSet() const { return m_resolutionStrategyHasBeenSet; }
-    inline void SetResolutionStrategy(const ResolutionStrategy& value) { m_resolutionStrategyHasBeenSet = true; m_resolutionStrategy = value; }
-    inline void SetResolutionStrategy(ResolutionStrategy&& value) { m_resolutionStrategyHasBeenSet = true; m_resolutionStrategy = std::move(value); }
-    inline BackendAPIConflictResolution& WithResolutionStrategy(const ResolutionStrategy& value) { SetResolutionStrategy(value); return *this;}
-    inline BackendAPIConflictResolution& WithResolutionStrategy(ResolutionStrategy&& value) { SetResolutionStrategy(std::move(value)); return *this;}
+    inline void SetResolutionStrategy(ResolutionStrategy value) { m_resolutionStrategyHasBeenSet = true; m_resolutionStrategy = value; }
+    inline BackendAPIConflictResolution& WithResolutionStrategy(ResolutionStrategy value) { SetResolutionStrategy(value); return *this;}
     ///@}
   private:
 
-    ResolutionStrategy m_resolutionStrategy;
+    ResolutionStrategy m_resolutionStrategy{ResolutionStrategy::NOT_SET};
     bool m_resolutionStrategyHasBeenSet = false;
   };
 

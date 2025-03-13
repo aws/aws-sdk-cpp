@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-LambdaConnectorProvisioningConfig::LambdaConnectorProvisioningConfig() : 
-    m_lambdaArnHasBeenSet(false)
-{
-}
-
 LambdaConnectorProvisioningConfig::LambdaConnectorProvisioningConfig(JsonView jsonValue)
-  : LambdaConnectorProvisioningConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LambdaConnectorProvisioningConfig& LambdaConnectorProvisioningConfig::operator =
   if(jsonValue.ValueExists("lambdaArn"))
   {
     m_lambdaArn = jsonValue.GetString("lambdaArn");
-
     m_lambdaArnHasBeenSet = true;
   }
-
   return *this;
 }
 

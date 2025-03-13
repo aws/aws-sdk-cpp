@@ -20,33 +20,7 @@ namespace Route53
 namespace Model
 {
 
-ResourceRecordSet::ResourceRecordSet() : 
-    m_nameHasBeenSet(false),
-    m_type(RRType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_setIdentifierHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_region(ResourceRecordSetRegion::NOT_SET),
-    m_regionHasBeenSet(false),
-    m_geoLocationHasBeenSet(false),
-    m_failover(ResourceRecordSetFailover::NOT_SET),
-    m_failoverHasBeenSet(false),
-    m_multiValueAnswer(false),
-    m_multiValueAnswerHasBeenSet(false),
-    m_tTL(0),
-    m_tTLHasBeenSet(false),
-    m_resourceRecordsHasBeenSet(false),
-    m_aliasTargetHasBeenSet(false),
-    m_healthCheckIdHasBeenSet(false),
-    m_trafficPolicyInstanceIdHasBeenSet(false),
-    m_cidrRoutingConfigHasBeenSet(false),
-    m_geoProximityLocationHasBeenSet(false)
-{
-}
-
 ResourceRecordSet::ResourceRecordSet(const XmlNode& xmlNode)
-  : ResourceRecordSet()
 {
   *this = xmlNode;
 }
@@ -62,96 +36,111 @@ ResourceRecordSet& ResourceRecordSet::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode setIdentifierNode = resultNode.FirstChild("SetIdentifier");
     if(!setIdentifierNode.IsNull())
     {
       m_setIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(setIdentifierNode.GetText());
       m_setIdentifierHasBeenSet = true;
+       m_setIdentifierHasBeenSet = true;
     }
     XmlNode weightNode = resultNode.FirstChild("Weight");
     if(!weightNode.IsNull())
     {
       m_weight = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(weightNode.GetText()).c_str()).c_str());
       m_weightHasBeenSet = true;
+       m_weightHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
-      m_region = ResourceRecordSetRegionMapper::GetResourceRecordSetRegionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText()).c_str()).c_str());
+      m_region = ResourceRecordSetRegionMapper::GetResourceRecordSetRegionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText()).c_str()));
       m_regionHasBeenSet = true;
+       m_regionHasBeenSet = true;
     }
     XmlNode geoLocationNode = resultNode.FirstChild("GeoLocation");
     if(!geoLocationNode.IsNull())
     {
       m_geoLocation = geoLocationNode;
       m_geoLocationHasBeenSet = true;
+       m_geoLocationHasBeenSet = true;
     }
     XmlNode failoverNode = resultNode.FirstChild("Failover");
     if(!failoverNode.IsNull())
     {
-      m_failover = ResourceRecordSetFailoverMapper::GetResourceRecordSetFailoverForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failoverNode.GetText()).c_str()).c_str());
+      m_failover = ResourceRecordSetFailoverMapper::GetResourceRecordSetFailoverForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failoverNode.GetText()).c_str()));
       m_failoverHasBeenSet = true;
+       m_failoverHasBeenSet = true;
     }
     XmlNode multiValueAnswerNode = resultNode.FirstChild("MultiValueAnswer");
     if(!multiValueAnswerNode.IsNull())
     {
       m_multiValueAnswer = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiValueAnswerNode.GetText()).c_str()).c_str());
       m_multiValueAnswerHasBeenSet = true;
+       m_multiValueAnswerHasBeenSet = true;
     }
     XmlNode tTLNode = resultNode.FirstChild("TTL");
     if(!tTLNode.IsNull())
     {
       m_tTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tTLNode.GetText()).c_str()).c_str());
       m_tTLHasBeenSet = true;
+       m_tTLHasBeenSet = true;
     }
     XmlNode resourceRecordsNode = resultNode.FirstChild("ResourceRecords");
     if(!resourceRecordsNode.IsNull())
     {
       XmlNode resourceRecordsMember = resourceRecordsNode.FirstChild("ResourceRecord");
+      m_resourceRecordsHasBeenSet = !resourceRecordsMember.IsNull();
       while(!resourceRecordsMember.IsNull())
       {
         m_resourceRecords.push_back(resourceRecordsMember);
         resourceRecordsMember = resourceRecordsMember.NextNode("ResourceRecord");
       }
 
-      m_resourceRecordsHasBeenSet = true;
+       m_resourceRecordsHasBeenSet = true;
     }
     XmlNode aliasTargetNode = resultNode.FirstChild("AliasTarget");
     if(!aliasTargetNode.IsNull())
     {
       m_aliasTarget = aliasTargetNode;
       m_aliasTargetHasBeenSet = true;
+       m_aliasTargetHasBeenSet = true;
     }
     XmlNode healthCheckIdNode = resultNode.FirstChild("HealthCheckId");
     if(!healthCheckIdNode.IsNull())
     {
       m_healthCheckId = Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckIdNode.GetText());
       m_healthCheckIdHasBeenSet = true;
+       m_healthCheckIdHasBeenSet = true;
     }
     XmlNode trafficPolicyInstanceIdNode = resultNode.FirstChild("TrafficPolicyInstanceId");
     if(!trafficPolicyInstanceIdNode.IsNull())
     {
       m_trafficPolicyInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyInstanceIdNode.GetText());
       m_trafficPolicyInstanceIdHasBeenSet = true;
+       m_trafficPolicyInstanceIdHasBeenSet = true;
     }
     XmlNode cidrRoutingConfigNode = resultNode.FirstChild("CidrRoutingConfig");
     if(!cidrRoutingConfigNode.IsNull())
     {
       m_cidrRoutingConfig = cidrRoutingConfigNode;
       m_cidrRoutingConfigHasBeenSet = true;
+       m_cidrRoutingConfigHasBeenSet = true;
     }
     XmlNode geoProximityLocationNode = resultNode.FirstChild("GeoProximityLocation");
     if(!geoProximityLocationNode.IsNull())
     {
       m_geoProximityLocation = geoProximityLocationNode;
       m_geoProximityLocationHasBeenSet = true;
+       m_geoProximityLocationHasBeenSet = true;
     }
   }
 

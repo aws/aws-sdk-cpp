@@ -36,7 +36,7 @@ namespace Model
   class SharedDirectory
   {
   public:
-    AWS_DIRECTORYSERVICE_API SharedDirectory();
+    AWS_DIRECTORYSERVICE_API SharedDirectory() = default;
     AWS_DIRECTORYSERVICE_API SharedDirectory(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API SharedDirectory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
      * <p>Identifier of the directory owner account, which contains the directory that
      * has been shared to the consumer account.</p>
      */
-    inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
+    inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
     inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
-    inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
-    inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::move(value); }
-    inline void SetOwnerAccountId(const char* value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId.assign(value); }
-    inline SharedDirectory& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
-    inline SharedDirectory& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
-    inline SharedDirectory& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
+    template<typename OwnerAccountIdT = Aws::String>
+    void SetOwnerAccountId(OwnerAccountIdT&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::forward<OwnerAccountIdT>(value); }
+    template<typename OwnerAccountIdT = Aws::String>
+    SharedDirectory& WithOwnerAccountId(OwnerAccountIdT&& value) { SetOwnerAccountId(std::forward<OwnerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifier of the directory in the directory owner account. </p>
      */
-    inline const Aws::String& GetOwnerDirectoryId() const{ return m_ownerDirectoryId; }
+    inline const Aws::String& GetOwnerDirectoryId() const { return m_ownerDirectoryId; }
     inline bool OwnerDirectoryIdHasBeenSet() const { return m_ownerDirectoryIdHasBeenSet; }
-    inline void SetOwnerDirectoryId(const Aws::String& value) { m_ownerDirectoryIdHasBeenSet = true; m_ownerDirectoryId = value; }
-    inline void SetOwnerDirectoryId(Aws::String&& value) { m_ownerDirectoryIdHasBeenSet = true; m_ownerDirectoryId = std::move(value); }
-    inline void SetOwnerDirectoryId(const char* value) { m_ownerDirectoryIdHasBeenSet = true; m_ownerDirectoryId.assign(value); }
-    inline SharedDirectory& WithOwnerDirectoryId(const Aws::String& value) { SetOwnerDirectoryId(value); return *this;}
-    inline SharedDirectory& WithOwnerDirectoryId(Aws::String&& value) { SetOwnerDirectoryId(std::move(value)); return *this;}
-    inline SharedDirectory& WithOwnerDirectoryId(const char* value) { SetOwnerDirectoryId(value); return *this;}
+    template<typename OwnerDirectoryIdT = Aws::String>
+    void SetOwnerDirectoryId(OwnerDirectoryIdT&& value) { m_ownerDirectoryIdHasBeenSet = true; m_ownerDirectoryId = std::forward<OwnerDirectoryIdT>(value); }
+    template<typename OwnerDirectoryIdT = Aws::String>
+    SharedDirectory& WithOwnerDirectoryId(OwnerDirectoryIdT&& value) { SetOwnerDirectoryId(std::forward<OwnerDirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +74,10 @@ namespace Model
      * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
      * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
-    inline const ShareMethod& GetShareMethod() const{ return m_shareMethod; }
+    inline ShareMethod GetShareMethod() const { return m_shareMethod; }
     inline bool ShareMethodHasBeenSet() const { return m_shareMethodHasBeenSet; }
-    inline void SetShareMethod(const ShareMethod& value) { m_shareMethodHasBeenSet = true; m_shareMethod = value; }
-    inline void SetShareMethod(ShareMethod&& value) { m_shareMethodHasBeenSet = true; m_shareMethod = std::move(value); }
-    inline SharedDirectory& WithShareMethod(const ShareMethod& value) { SetShareMethod(value); return *this;}
-    inline SharedDirectory& WithShareMethod(ShareMethod&& value) { SetShareMethod(std::move(value)); return *this;}
+    inline void SetShareMethod(ShareMethod value) { m_shareMethodHasBeenSet = true; m_shareMethod = value; }
+    inline SharedDirectory& WithShareMethod(ShareMethod value) { SetShareMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * <p>Identifier of the directory consumer account that has access to the shared
      * directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
      */
-    inline const Aws::String& GetSharedAccountId() const{ return m_sharedAccountId; }
+    inline const Aws::String& GetSharedAccountId() const { return m_sharedAccountId; }
     inline bool SharedAccountIdHasBeenSet() const { return m_sharedAccountIdHasBeenSet; }
-    inline void SetSharedAccountId(const Aws::String& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = value; }
-    inline void SetSharedAccountId(Aws::String&& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = std::move(value); }
-    inline void SetSharedAccountId(const char* value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId.assign(value); }
-    inline SharedDirectory& WithSharedAccountId(const Aws::String& value) { SetSharedAccountId(value); return *this;}
-    inline SharedDirectory& WithSharedAccountId(Aws::String&& value) { SetSharedAccountId(std::move(value)); return *this;}
-    inline SharedDirectory& WithSharedAccountId(const char* value) { SetSharedAccountId(value); return *this;}
+    template<typename SharedAccountIdT = Aws::String>
+    void SetSharedAccountId(SharedAccountIdT&& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = std::forward<SharedAccountIdT>(value); }
+    template<typename SharedAccountIdT = Aws::String>
+    SharedDirectory& WithSharedAccountId(SharedAccountIdT&& value) { SetSharedAccountId(std::forward<SharedAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,26 +98,22 @@ namespace Model
      * <p>Identifier of the shared directory in the directory consumer account. This
      * identifier is different for each directory owner account.</p>
      */
-    inline const Aws::String& GetSharedDirectoryId() const{ return m_sharedDirectoryId; }
+    inline const Aws::String& GetSharedDirectoryId() const { return m_sharedDirectoryId; }
     inline bool SharedDirectoryIdHasBeenSet() const { return m_sharedDirectoryIdHasBeenSet; }
-    inline void SetSharedDirectoryId(const Aws::String& value) { m_sharedDirectoryIdHasBeenSet = true; m_sharedDirectoryId = value; }
-    inline void SetSharedDirectoryId(Aws::String&& value) { m_sharedDirectoryIdHasBeenSet = true; m_sharedDirectoryId = std::move(value); }
-    inline void SetSharedDirectoryId(const char* value) { m_sharedDirectoryIdHasBeenSet = true; m_sharedDirectoryId.assign(value); }
-    inline SharedDirectory& WithSharedDirectoryId(const Aws::String& value) { SetSharedDirectoryId(value); return *this;}
-    inline SharedDirectory& WithSharedDirectoryId(Aws::String&& value) { SetSharedDirectoryId(std::move(value)); return *this;}
-    inline SharedDirectory& WithSharedDirectoryId(const char* value) { SetSharedDirectoryId(value); return *this;}
+    template<typename SharedDirectoryIdT = Aws::String>
+    void SetSharedDirectoryId(SharedDirectoryIdT&& value) { m_sharedDirectoryIdHasBeenSet = true; m_sharedDirectoryId = std::forward<SharedDirectoryIdT>(value); }
+    template<typename SharedDirectoryIdT = Aws::String>
+    SharedDirectory& WithSharedDirectoryId(SharedDirectoryIdT&& value) { SetSharedDirectoryId(std::forward<SharedDirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
-    inline const ShareStatus& GetShareStatus() const{ return m_shareStatus; }
+    inline ShareStatus GetShareStatus() const { return m_shareStatus; }
     inline bool ShareStatusHasBeenSet() const { return m_shareStatusHasBeenSet; }
-    inline void SetShareStatus(const ShareStatus& value) { m_shareStatusHasBeenSet = true; m_shareStatus = value; }
-    inline void SetShareStatus(ShareStatus&& value) { m_shareStatusHasBeenSet = true; m_shareStatus = std::move(value); }
-    inline SharedDirectory& WithShareStatus(const ShareStatus& value) { SetShareStatus(value); return *this;}
-    inline SharedDirectory& WithShareStatus(ShareStatus&& value) { SetShareStatus(std::move(value)); return *this;}
+    inline void SetShareStatus(ShareStatus value) { m_shareStatusHasBeenSet = true; m_shareStatus = value; }
+    inline SharedDirectory& WithShareStatus(ShareStatus value) { SetShareStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -135,38 +123,36 @@ namespace Model
      * consumer administrator determine whether to approve or reject the share
      * invitation.</p>
      */
-    inline const Aws::String& GetShareNotes() const{ return m_shareNotes; }
+    inline const Aws::String& GetShareNotes() const { return m_shareNotes; }
     inline bool ShareNotesHasBeenSet() const { return m_shareNotesHasBeenSet; }
-    inline void SetShareNotes(const Aws::String& value) { m_shareNotesHasBeenSet = true; m_shareNotes = value; }
-    inline void SetShareNotes(Aws::String&& value) { m_shareNotesHasBeenSet = true; m_shareNotes = std::move(value); }
-    inline void SetShareNotes(const char* value) { m_shareNotesHasBeenSet = true; m_shareNotes.assign(value); }
-    inline SharedDirectory& WithShareNotes(const Aws::String& value) { SetShareNotes(value); return *this;}
-    inline SharedDirectory& WithShareNotes(Aws::String&& value) { SetShareNotes(std::move(value)); return *this;}
-    inline SharedDirectory& WithShareNotes(const char* value) { SetShareNotes(value); return *this;}
+    template<typename ShareNotesT = Aws::String>
+    void SetShareNotes(ShareNotesT&& value) { m_shareNotesHasBeenSet = true; m_shareNotes = std::forward<ShareNotesT>(value); }
+    template<typename ShareNotesT = Aws::String>
+    SharedDirectory& WithShareNotes(ShareNotesT&& value) { SetShareNotes(std::forward<ShareNotesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the shared directory was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDateTime() const{ return m_createdDateTime; }
+    inline const Aws::Utils::DateTime& GetCreatedDateTime() const { return m_createdDateTime; }
     inline bool CreatedDateTimeHasBeenSet() const { return m_createdDateTimeHasBeenSet; }
-    inline void SetCreatedDateTime(const Aws::Utils::DateTime& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = value; }
-    inline void SetCreatedDateTime(Aws::Utils::DateTime&& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = std::move(value); }
-    inline SharedDirectory& WithCreatedDateTime(const Aws::Utils::DateTime& value) { SetCreatedDateTime(value); return *this;}
-    inline SharedDirectory& WithCreatedDateTime(Aws::Utils::DateTime&& value) { SetCreatedDateTime(std::move(value)); return *this;}
+    template<typename CreatedDateTimeT = Aws::Utils::DateTime>
+    void SetCreatedDateTime(CreatedDateTimeT&& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = std::forward<CreatedDateTimeT>(value); }
+    template<typename CreatedDateTimeT = Aws::Utils::DateTime>
+    SharedDirectory& WithCreatedDateTime(CreatedDateTimeT&& value) { SetCreatedDateTime(std::forward<CreatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the shared directory was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
-    inline SharedDirectory& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline SharedDirectory& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    SharedDirectory& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -176,7 +162,7 @@ namespace Model
     Aws::String m_ownerDirectoryId;
     bool m_ownerDirectoryIdHasBeenSet = false;
 
-    ShareMethod m_shareMethod;
+    ShareMethod m_shareMethod{ShareMethod::NOT_SET};
     bool m_shareMethodHasBeenSet = false;
 
     Aws::String m_sharedAccountId;
@@ -185,16 +171,16 @@ namespace Model
     Aws::String m_sharedDirectoryId;
     bool m_sharedDirectoryIdHasBeenSet = false;
 
-    ShareStatus m_shareStatus;
+    ShareStatus m_shareStatus{ShareStatus::NOT_SET};
     bool m_shareStatusHasBeenSet = false;
 
     Aws::String m_shareNotes;
     bool m_shareNotesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDateTime;
+    Aws::Utils::DateTime m_createdDateTime{};
     bool m_createdDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
     bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 

@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-NotificationConfigurationFilter::NotificationConfigurationFilter() : 
-    m_keyHasBeenSet(false)
-{
-}
-
 NotificationConfigurationFilter::NotificationConfigurationFilter(const XmlNode& xmlNode)
-  : NotificationConfigurationFilter()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ NotificationConfigurationFilter& NotificationConfigurationFilter::operator =(con
     {
       m_key = keyNode;
       m_keyHasBeenSet = true;
+       m_keyHasBeenSet = true;
     }
   }
 

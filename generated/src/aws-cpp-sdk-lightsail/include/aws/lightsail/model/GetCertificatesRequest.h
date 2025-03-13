@@ -23,7 +23,7 @@ namespace Model
   class GetCertificatesRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetCertificatesRequest();
+    AWS_LIGHTSAIL_API GetCertificatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,13 @@ namespace Model
      * your certificates in the Amazon Web Services Region where the request is made,
      * regardless of their current status.</p>
      */
-    inline const Aws::Vector<CertificateStatus>& GetCertificateStatuses() const{ return m_certificateStatuses; }
+    inline const Aws::Vector<CertificateStatus>& GetCertificateStatuses() const { return m_certificateStatuses; }
     inline bool CertificateStatusesHasBeenSet() const { return m_certificateStatusesHasBeenSet; }
-    inline void SetCertificateStatuses(const Aws::Vector<CertificateStatus>& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = value; }
-    inline void SetCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = std::move(value); }
-    inline GetCertificatesRequest& WithCertificateStatuses(const Aws::Vector<CertificateStatus>& value) { SetCertificateStatuses(value); return *this;}
-    inline GetCertificatesRequest& WithCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { SetCertificateStatuses(std::move(value)); return *this;}
-    inline GetCertificatesRequest& AddCertificateStatuses(const CertificateStatus& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(value); return *this; }
-    inline GetCertificatesRequest& AddCertificateStatuses(CertificateStatus&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(std::move(value)); return *this; }
+    template<typename CertificateStatusesT = Aws::Vector<CertificateStatus>>
+    void SetCertificateStatuses(CertificateStatusesT&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = std::forward<CertificateStatusesT>(value); }
+    template<typename CertificateStatusesT = Aws::Vector<CertificateStatus>>
+    GetCertificatesRequest& WithCertificateStatuses(CertificateStatusesT&& value) { SetCertificateStatuses(std::forward<CertificateStatusesT>(value)); return *this;}
+    inline GetCertificatesRequest& AddCertificateStatuses(CertificateStatus value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -60,7 +59,7 @@ namespace Model
      * the response.</p> <p>When omitted, the response includes only the certificate
      * names, Amazon Resource Names (ARNs), domain names, and tags.</p>
      */
-    inline bool GetIncludeCertificateDetails() const{ return m_includeCertificateDetails; }
+    inline bool GetIncludeCertificateDetails() const { return m_includeCertificateDetails; }
     inline bool IncludeCertificateDetailsHasBeenSet() const { return m_includeCertificateDetailsHasBeenSet; }
     inline void SetIncludeCertificateDetails(bool value) { m_includeCertificateDetailsHasBeenSet = true; m_includeCertificateDetails = value; }
     inline GetCertificatesRequest& WithIncludeCertificateDetails(bool value) { SetIncludeCertificateDetails(value); return *this;}
@@ -72,14 +71,12 @@ namespace Model
      * omitted, the response includes all of your certificates in the Amazon Web
      * Services Region where the request is made.</p>
      */
-    inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
+    inline const Aws::String& GetCertificateName() const { return m_certificateName; }
     inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
-    inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
-    inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
-    inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
-    inline GetCertificatesRequest& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
-    inline GetCertificatesRequest& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
-    inline GetCertificatesRequest& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
+    template<typename CertificateNameT = Aws::String>
+    void SetCertificateName(CertificateNameT&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::forward<CertificateNameT>(value); }
+    template<typename CertificateNameT = Aws::String>
+    GetCertificatesRequest& WithCertificateName(CertificateNameT&& value) { SetCertificateName(std::forward<CertificateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,21 +86,19 @@ namespace Model
      * your results are paginated, the response will return a next page token that you
      * can specify as the page token in a subsequent request.</p>
      */
-    inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+    inline const Aws::String& GetPageToken() const { return m_pageToken; }
     inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
-    inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
-    inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
-    inline GetCertificatesRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
-    inline GetCertificatesRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
-    inline GetCertificatesRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
+    template<typename PageTokenT = Aws::String>
+    void SetPageToken(PageTokenT&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::forward<PageTokenT>(value); }
+    template<typename PageTokenT = Aws::String>
+    GetCertificatesRequest& WithPageToken(PageTokenT&& value) { SetPageToken(std::forward<PageTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CertificateStatus> m_certificateStatuses;
     bool m_certificateStatusesHasBeenSet = false;
 
-    bool m_includeCertificateDetails;
+    bool m_includeCertificateDetails{false};
     bool m_includeCertificateDetailsHasBeenSet = false;
 
     Aws::String m_certificateName;

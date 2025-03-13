@@ -34,7 +34,7 @@ namespace Model
   class HumanLoopActivationOutput
   {
   public:
-    AWS_REKOGNITION_API HumanLoopActivationOutput();
+    AWS_REKOGNITION_API HumanLoopActivationOutput() = default;
     AWS_REKOGNITION_API HumanLoopActivationOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API HumanLoopActivationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,29 +44,26 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
      */
-    inline const Aws::String& GetHumanLoopArn() const{ return m_humanLoopArn; }
+    inline const Aws::String& GetHumanLoopArn() const { return m_humanLoopArn; }
     inline bool HumanLoopArnHasBeenSet() const { return m_humanLoopArnHasBeenSet; }
-    inline void SetHumanLoopArn(const Aws::String& value) { m_humanLoopArnHasBeenSet = true; m_humanLoopArn = value; }
-    inline void SetHumanLoopArn(Aws::String&& value) { m_humanLoopArnHasBeenSet = true; m_humanLoopArn = std::move(value); }
-    inline void SetHumanLoopArn(const char* value) { m_humanLoopArnHasBeenSet = true; m_humanLoopArn.assign(value); }
-    inline HumanLoopActivationOutput& WithHumanLoopArn(const Aws::String& value) { SetHumanLoopArn(value); return *this;}
-    inline HumanLoopActivationOutput& WithHumanLoopArn(Aws::String&& value) { SetHumanLoopArn(std::move(value)); return *this;}
-    inline HumanLoopActivationOutput& WithHumanLoopArn(const char* value) { SetHumanLoopArn(value); return *this;}
+    template<typename HumanLoopArnT = Aws::String>
+    void SetHumanLoopArn(HumanLoopArnT&& value) { m_humanLoopArnHasBeenSet = true; m_humanLoopArn = std::forward<HumanLoopArnT>(value); }
+    template<typename HumanLoopArnT = Aws::String>
+    HumanLoopActivationOutput& WithHumanLoopArn(HumanLoopArnT&& value) { SetHumanLoopArn(std::forward<HumanLoopArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Shows if and why human review was needed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetHumanLoopActivationReasons() const{ return m_humanLoopActivationReasons; }
+    inline const Aws::Vector<Aws::String>& GetHumanLoopActivationReasons() const { return m_humanLoopActivationReasons; }
     inline bool HumanLoopActivationReasonsHasBeenSet() const { return m_humanLoopActivationReasonsHasBeenSet; }
-    inline void SetHumanLoopActivationReasons(const Aws::Vector<Aws::String>& value) { m_humanLoopActivationReasonsHasBeenSet = true; m_humanLoopActivationReasons = value; }
-    inline void SetHumanLoopActivationReasons(Aws::Vector<Aws::String>&& value) { m_humanLoopActivationReasonsHasBeenSet = true; m_humanLoopActivationReasons = std::move(value); }
-    inline HumanLoopActivationOutput& WithHumanLoopActivationReasons(const Aws::Vector<Aws::String>& value) { SetHumanLoopActivationReasons(value); return *this;}
-    inline HumanLoopActivationOutput& WithHumanLoopActivationReasons(Aws::Vector<Aws::String>&& value) { SetHumanLoopActivationReasons(std::move(value)); return *this;}
-    inline HumanLoopActivationOutput& AddHumanLoopActivationReasons(const Aws::String& value) { m_humanLoopActivationReasonsHasBeenSet = true; m_humanLoopActivationReasons.push_back(value); return *this; }
-    inline HumanLoopActivationOutput& AddHumanLoopActivationReasons(Aws::String&& value) { m_humanLoopActivationReasonsHasBeenSet = true; m_humanLoopActivationReasons.push_back(std::move(value)); return *this; }
-    inline HumanLoopActivationOutput& AddHumanLoopActivationReasons(const char* value) { m_humanLoopActivationReasonsHasBeenSet = true; m_humanLoopActivationReasons.push_back(value); return *this; }
+    template<typename HumanLoopActivationReasonsT = Aws::Vector<Aws::String>>
+    void SetHumanLoopActivationReasons(HumanLoopActivationReasonsT&& value) { m_humanLoopActivationReasonsHasBeenSet = true; m_humanLoopActivationReasons = std::forward<HumanLoopActivationReasonsT>(value); }
+    template<typename HumanLoopActivationReasonsT = Aws::Vector<Aws::String>>
+    HumanLoopActivationOutput& WithHumanLoopActivationReasons(HumanLoopActivationReasonsT&& value) { SetHumanLoopActivationReasons(std::forward<HumanLoopActivationReasonsT>(value)); return *this;}
+    template<typename HumanLoopActivationReasonsT = Aws::String>
+    HumanLoopActivationOutput& AddHumanLoopActivationReasons(HumanLoopActivationReasonsT&& value) { m_humanLoopActivationReasonsHasBeenSet = true; m_humanLoopActivationReasons.emplace_back(std::forward<HumanLoopActivationReasonsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,14 +71,12 @@ namespace Model
      * <p>Shows the result of condition evaluations, including those conditions which
      * activated a human review.</p>
      */
-    inline const Aws::String& GetHumanLoopActivationConditionsEvaluationResults() const{ return m_humanLoopActivationConditionsEvaluationResults; }
+    inline const Aws::String& GetHumanLoopActivationConditionsEvaluationResults() const { return m_humanLoopActivationConditionsEvaluationResults; }
     inline bool HumanLoopActivationConditionsEvaluationResultsHasBeenSet() const { return m_humanLoopActivationConditionsEvaluationResultsHasBeenSet; }
-    inline void SetHumanLoopActivationConditionsEvaluationResults(const Aws::String& value) { m_humanLoopActivationConditionsEvaluationResultsHasBeenSet = true; m_humanLoopActivationConditionsEvaluationResults = value; }
-    inline void SetHumanLoopActivationConditionsEvaluationResults(Aws::String&& value) { m_humanLoopActivationConditionsEvaluationResultsHasBeenSet = true; m_humanLoopActivationConditionsEvaluationResults = std::move(value); }
-    inline void SetHumanLoopActivationConditionsEvaluationResults(const char* value) { m_humanLoopActivationConditionsEvaluationResultsHasBeenSet = true; m_humanLoopActivationConditionsEvaluationResults.assign(value); }
-    inline HumanLoopActivationOutput& WithHumanLoopActivationConditionsEvaluationResults(const Aws::String& value) { SetHumanLoopActivationConditionsEvaluationResults(value); return *this;}
-    inline HumanLoopActivationOutput& WithHumanLoopActivationConditionsEvaluationResults(Aws::String&& value) { SetHumanLoopActivationConditionsEvaluationResults(std::move(value)); return *this;}
-    inline HumanLoopActivationOutput& WithHumanLoopActivationConditionsEvaluationResults(const char* value) { SetHumanLoopActivationConditionsEvaluationResults(value); return *this;}
+    template<typename HumanLoopActivationConditionsEvaluationResultsT = Aws::String>
+    void SetHumanLoopActivationConditionsEvaluationResults(HumanLoopActivationConditionsEvaluationResultsT&& value) { m_humanLoopActivationConditionsEvaluationResultsHasBeenSet = true; m_humanLoopActivationConditionsEvaluationResults = std::forward<HumanLoopActivationConditionsEvaluationResultsT>(value); }
+    template<typename HumanLoopActivationConditionsEvaluationResultsT = Aws::String>
+    HumanLoopActivationOutput& WithHumanLoopActivationConditionsEvaluationResults(HumanLoopActivationConditionsEvaluationResultsT&& value) { SetHumanLoopActivationConditionsEvaluationResults(std::forward<HumanLoopActivationConditionsEvaluationResultsT>(value)); return *this;}
     ///@}
   private:
 

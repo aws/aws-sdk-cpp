@@ -18,17 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-DataSetImportTask::DataSetImportTask() : 
-    m_status(DataSetTaskLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
-{
-}
-
 DataSetImportTask::DataSetImportTask(JsonView jsonValue)
-  : DataSetImportTask()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DataSetImportTask& DataSetImportTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataSetTaskLifecycleMapper::GetDataSetTaskLifecycleForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetObject("summary");
-
     m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   return *this;
 }
 

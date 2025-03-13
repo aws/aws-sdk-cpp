@@ -18,16 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-DeploymentPolicies::DeploymentPolicies() : 
-    m_failureHandlingPolicy(DeploymentFailureHandlingPolicy::NOT_SET),
-    m_failureHandlingPolicyHasBeenSet(false),
-    m_componentUpdatePolicyHasBeenSet(false),
-    m_configurationValidationPolicyHasBeenSet(false)
-{
-}
-
 DeploymentPolicies::DeploymentPolicies(JsonView jsonValue)
-  : DeploymentPolicies()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DeploymentPolicies& DeploymentPolicies::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("failureHandlingPolicy"))
   {
     m_failureHandlingPolicy = DeploymentFailureHandlingPolicyMapper::GetDeploymentFailureHandlingPolicyForName(jsonValue.GetString("failureHandlingPolicy"));
-
     m_failureHandlingPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentUpdatePolicy"))
   {
     m_componentUpdatePolicy = jsonValue.GetObject("componentUpdatePolicy");
-
     m_componentUpdatePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationValidationPolicy"))
   {
     m_configurationValidationPolicy = jsonValue.GetObject("configurationValidationPolicy");
-
     m_configurationValidationPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

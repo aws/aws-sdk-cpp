@@ -32,7 +32,7 @@ namespace Model
   class S3KeyFilter
   {
   public:
-    AWS_S3CRT_API S3KeyFilter();
+    AWS_S3CRT_API S3KeyFilter() = default;
     AWS_S3CRT_API S3KeyFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API S3KeyFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<FilterRule>& GetFilterRules() const{ return m_filterRules; }
+    inline const Aws::Vector<FilterRule>& GetFilterRules() const { return m_filterRules; }
     inline bool FilterRulesHasBeenSet() const { return m_filterRulesHasBeenSet; }
-    inline void SetFilterRules(const Aws::Vector<FilterRule>& value) { m_filterRulesHasBeenSet = true; m_filterRules = value; }
-    inline void SetFilterRules(Aws::Vector<FilterRule>&& value) { m_filterRulesHasBeenSet = true; m_filterRules = std::move(value); }
-    inline S3KeyFilter& WithFilterRules(const Aws::Vector<FilterRule>& value) { SetFilterRules(value); return *this;}
-    inline S3KeyFilter& WithFilterRules(Aws::Vector<FilterRule>&& value) { SetFilterRules(std::move(value)); return *this;}
-    inline S3KeyFilter& AddFilterRules(const FilterRule& value) { m_filterRulesHasBeenSet = true; m_filterRules.push_back(value); return *this; }
-    inline S3KeyFilter& AddFilterRules(FilterRule&& value) { m_filterRulesHasBeenSet = true; m_filterRules.push_back(std::move(value)); return *this; }
+    template<typename FilterRulesT = Aws::Vector<FilterRule>>
+    void SetFilterRules(FilterRulesT&& value) { m_filterRulesHasBeenSet = true; m_filterRules = std::forward<FilterRulesT>(value); }
+    template<typename FilterRulesT = Aws::Vector<FilterRule>>
+    S3KeyFilter& WithFilterRules(FilterRulesT&& value) { SetFilterRules(std::forward<FilterRulesT>(value)); return *this;}
+    template<typename FilterRulesT = FilterRule>
+    S3KeyFilter& AddFilterRules(FilterRulesT&& value) { m_filterRulesHasBeenSet = true; m_filterRules.emplace_back(std::forward<FilterRulesT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,17 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEnvironmentTemplateVersionRequest::CreateEnvironmentTemplateVersionRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_majorVersionHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateEnvironmentTemplateVersionRequest::SerializePayload() const
 {
   JsonValue payload;

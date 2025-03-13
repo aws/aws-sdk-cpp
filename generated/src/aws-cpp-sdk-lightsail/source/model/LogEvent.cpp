@@ -18,14 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-LogEvent::LogEvent() : 
-    m_createdAtHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 LogEvent::LogEvent(JsonView jsonValue)
-  : LogEvent()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LogEvent& LogEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

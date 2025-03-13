@@ -29,7 +29,7 @@ namespace Model
   class ListFraudstersResult
   {
   public:
-    AWS_VOICEID_API ListFraudstersResult();
+    AWS_VOICEID_API ListFraudstersResult() = default;
     AWS_VOICEID_API ListFraudstersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VOICEID_API ListFraudstersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list that contains details about each fraudster in the Amazon Web Services
      * account. </p>
      */
-    inline const Aws::Vector<FraudsterSummary>& GetFraudsterSummaries() const{ return m_fraudsterSummaries; }
-    inline void SetFraudsterSummaries(const Aws::Vector<FraudsterSummary>& value) { m_fraudsterSummaries = value; }
-    inline void SetFraudsterSummaries(Aws::Vector<FraudsterSummary>&& value) { m_fraudsterSummaries = std::move(value); }
-    inline ListFraudstersResult& WithFraudsterSummaries(const Aws::Vector<FraudsterSummary>& value) { SetFraudsterSummaries(value); return *this;}
-    inline ListFraudstersResult& WithFraudsterSummaries(Aws::Vector<FraudsterSummary>&& value) { SetFraudsterSummaries(std::move(value)); return *this;}
-    inline ListFraudstersResult& AddFraudsterSummaries(const FraudsterSummary& value) { m_fraudsterSummaries.push_back(value); return *this; }
-    inline ListFraudstersResult& AddFraudsterSummaries(FraudsterSummary&& value) { m_fraudsterSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FraudsterSummary>& GetFraudsterSummaries() const { return m_fraudsterSummaries; }
+    template<typename FraudsterSummariesT = Aws::Vector<FraudsterSummary>>
+    void SetFraudsterSummaries(FraudsterSummariesT&& value) { m_fraudsterSummariesHasBeenSet = true; m_fraudsterSummaries = std::forward<FraudsterSummariesT>(value); }
+    template<typename FraudsterSummariesT = Aws::Vector<FraudsterSummary>>
+    ListFraudstersResult& WithFraudsterSummaries(FraudsterSummariesT&& value) { SetFraudsterSummaries(std::forward<FraudsterSummariesT>(value)); return *this;}
+    template<typename FraudsterSummariesT = FraudsterSummary>
+    ListFraudstersResult& AddFraudsterSummaries(FraudsterSummariesT&& value) { m_fraudsterSummariesHasBeenSet = true; m_fraudsterSummaries.emplace_back(std::forward<FraudsterSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * the call again using the returned token to retrieve the next page. Keep all
      * other arguments unchanged. Each pagination token expires after 24 hours. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFraudstersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFraudstersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFraudstersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFraudstersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFraudstersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFraudstersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFraudstersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFraudstersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FraudsterSummary> m_fraudsterSummaries;
+    bool m_fraudsterSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

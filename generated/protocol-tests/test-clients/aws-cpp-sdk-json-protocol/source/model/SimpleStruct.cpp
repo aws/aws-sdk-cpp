@@ -18,13 +18,7 @@ namespace JsonProtocol
 namespace Model
 {
 
-SimpleStruct::SimpleStruct() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 SimpleStruct::SimpleStruct(JsonView jsonValue)
-  : SimpleStruct()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SimpleStruct& SimpleStruct::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

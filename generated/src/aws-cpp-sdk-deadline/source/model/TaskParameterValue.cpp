@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-TaskParameterValue::TaskParameterValue() : 
-    m_intHasBeenSet(false),
-    m_floatHasBeenSet(false),
-    m_stringHasBeenSet(false),
-    m_pathHasBeenSet(false)
-{
-}
-
 TaskParameterValue::TaskParameterValue(JsonView jsonValue)
-  : TaskParameterValue()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TaskParameterValue& TaskParameterValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("int"))
   {
     m_int = jsonValue.GetString("int");
-
     m_intHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("float"))
   {
     m_float = jsonValue.GetString("float");
-
     m_floatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("string"))
   {
     m_string = jsonValue.GetString("string");
-
     m_stringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

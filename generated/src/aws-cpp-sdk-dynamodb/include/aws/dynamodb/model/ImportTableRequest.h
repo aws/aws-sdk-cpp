@@ -27,7 +27,7 @@ namespace Model
   class ImportTableRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API ImportTableRequest();
+    AWS_DYNAMODB_API ImportTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -57,26 +57,24 @@ namespace Model
      * token but a change in other parameters within the 8-hour idempotency window,
      * DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ImportTableRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ImportTableRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ImportTableRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ImportTableRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The S3 bucket that provides the source for the import. </p>
      */
-    inline const S3BucketSource& GetS3BucketSource() const{ return m_s3BucketSource; }
+    inline const S3BucketSource& GetS3BucketSource() const { return m_s3BucketSource; }
     inline bool S3BucketSourceHasBeenSet() const { return m_s3BucketSourceHasBeenSet; }
-    inline void SetS3BucketSource(const S3BucketSource& value) { m_s3BucketSourceHasBeenSet = true; m_s3BucketSource = value; }
-    inline void SetS3BucketSource(S3BucketSource&& value) { m_s3BucketSourceHasBeenSet = true; m_s3BucketSource = std::move(value); }
-    inline ImportTableRequest& WithS3BucketSource(const S3BucketSource& value) { SetS3BucketSource(value); return *this;}
-    inline ImportTableRequest& WithS3BucketSource(S3BucketSource&& value) { SetS3BucketSource(std::move(value)); return *this;}
+    template<typename S3BucketSourceT = S3BucketSource>
+    void SetS3BucketSource(S3BucketSourceT&& value) { m_s3BucketSourceHasBeenSet = true; m_s3BucketSource = std::forward<S3BucketSourceT>(value); }
+    template<typename S3BucketSourceT = S3BucketSource>
+    ImportTableRequest& WithS3BucketSource(S3BucketSourceT&& value) { SetS3BucketSource(std::forward<S3BucketSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,24 +82,22 @@ namespace Model
      * <p> The format of the source data. Valid values for <code>ImportFormat</code>
      * are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>. </p>
      */
-    inline const InputFormat& GetInputFormat() const{ return m_inputFormat; }
+    inline InputFormat GetInputFormat() const { return m_inputFormat; }
     inline bool InputFormatHasBeenSet() const { return m_inputFormatHasBeenSet; }
-    inline void SetInputFormat(const InputFormat& value) { m_inputFormatHasBeenSet = true; m_inputFormat = value; }
-    inline void SetInputFormat(InputFormat&& value) { m_inputFormatHasBeenSet = true; m_inputFormat = std::move(value); }
-    inline ImportTableRequest& WithInputFormat(const InputFormat& value) { SetInputFormat(value); return *this;}
-    inline ImportTableRequest& WithInputFormat(InputFormat&& value) { SetInputFormat(std::move(value)); return *this;}
+    inline void SetInputFormat(InputFormat value) { m_inputFormatHasBeenSet = true; m_inputFormat = value; }
+    inline ImportTableRequest& WithInputFormat(InputFormat value) { SetInputFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Additional properties that specify how the input is formatted, </p>
      */
-    inline const InputFormatOptions& GetInputFormatOptions() const{ return m_inputFormatOptions; }
+    inline const InputFormatOptions& GetInputFormatOptions() const { return m_inputFormatOptions; }
     inline bool InputFormatOptionsHasBeenSet() const { return m_inputFormatOptionsHasBeenSet; }
-    inline void SetInputFormatOptions(const InputFormatOptions& value) { m_inputFormatOptionsHasBeenSet = true; m_inputFormatOptions = value; }
-    inline void SetInputFormatOptions(InputFormatOptions&& value) { m_inputFormatOptionsHasBeenSet = true; m_inputFormatOptions = std::move(value); }
-    inline ImportTableRequest& WithInputFormatOptions(const InputFormatOptions& value) { SetInputFormatOptions(value); return *this;}
-    inline ImportTableRequest& WithInputFormatOptions(InputFormatOptions&& value) { SetInputFormatOptions(std::move(value)); return *this;}
+    template<typename InputFormatOptionsT = InputFormatOptions>
+    void SetInputFormatOptions(InputFormatOptionsT&& value) { m_inputFormatOptionsHasBeenSet = true; m_inputFormatOptions = std::forward<InputFormatOptionsT>(value); }
+    template<typename InputFormatOptionsT = InputFormatOptions>
+    ImportTableRequest& WithInputFormatOptions(InputFormatOptionsT&& value) { SetInputFormatOptions(std::forward<InputFormatOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,24 +105,22 @@ namespace Model
      * <p> Type of compression to be used on the input coming from the imported table.
      * </p>
      */
-    inline const InputCompressionType& GetInputCompressionType() const{ return m_inputCompressionType; }
+    inline InputCompressionType GetInputCompressionType() const { return m_inputCompressionType; }
     inline bool InputCompressionTypeHasBeenSet() const { return m_inputCompressionTypeHasBeenSet; }
-    inline void SetInputCompressionType(const InputCompressionType& value) { m_inputCompressionTypeHasBeenSet = true; m_inputCompressionType = value; }
-    inline void SetInputCompressionType(InputCompressionType&& value) { m_inputCompressionTypeHasBeenSet = true; m_inputCompressionType = std::move(value); }
-    inline ImportTableRequest& WithInputCompressionType(const InputCompressionType& value) { SetInputCompressionType(value); return *this;}
-    inline ImportTableRequest& WithInputCompressionType(InputCompressionType&& value) { SetInputCompressionType(std::move(value)); return *this;}
+    inline void SetInputCompressionType(InputCompressionType value) { m_inputCompressionTypeHasBeenSet = true; m_inputCompressionType = value; }
+    inline ImportTableRequest& WithInputCompressionType(InputCompressionType value) { SetInputCompressionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Parameters for the table to import the data into. </p>
      */
-    inline const TableCreationParameters& GetTableCreationParameters() const{ return m_tableCreationParameters; }
+    inline const TableCreationParameters& GetTableCreationParameters() const { return m_tableCreationParameters; }
     inline bool TableCreationParametersHasBeenSet() const { return m_tableCreationParametersHasBeenSet; }
-    inline void SetTableCreationParameters(const TableCreationParameters& value) { m_tableCreationParametersHasBeenSet = true; m_tableCreationParameters = value; }
-    inline void SetTableCreationParameters(TableCreationParameters&& value) { m_tableCreationParametersHasBeenSet = true; m_tableCreationParameters = std::move(value); }
-    inline ImportTableRequest& WithTableCreationParameters(const TableCreationParameters& value) { SetTableCreationParameters(value); return *this;}
-    inline ImportTableRequest& WithTableCreationParameters(TableCreationParameters&& value) { SetTableCreationParameters(std::move(value)); return *this;}
+    template<typename TableCreationParametersT = TableCreationParameters>
+    void SetTableCreationParameters(TableCreationParametersT&& value) { m_tableCreationParametersHasBeenSet = true; m_tableCreationParameters = std::forward<TableCreationParametersT>(value); }
+    template<typename TableCreationParametersT = TableCreationParameters>
+    ImportTableRequest& WithTableCreationParameters(TableCreationParametersT&& value) { SetTableCreationParameters(std::forward<TableCreationParametersT>(value)); return *this;}
     ///@}
   private:
 
@@ -136,13 +130,13 @@ namespace Model
     S3BucketSource m_s3BucketSource;
     bool m_s3BucketSourceHasBeenSet = false;
 
-    InputFormat m_inputFormat;
+    InputFormat m_inputFormat{InputFormat::NOT_SET};
     bool m_inputFormatHasBeenSet = false;
 
     InputFormatOptions m_inputFormatOptions;
     bool m_inputFormatOptionsHasBeenSet = false;
 
-    InputCompressionType m_inputCompressionType;
+    InputCompressionType m_inputCompressionType{InputCompressionType::NOT_SET};
     bool m_inputCompressionTypeHasBeenSet = false;
 
     TableCreationParameters m_tableCreationParameters;

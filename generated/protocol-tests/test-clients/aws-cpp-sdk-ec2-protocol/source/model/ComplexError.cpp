@@ -20,14 +20,7 @@ namespace EC2Protocol
 namespace Model
 {
 
-ComplexError::ComplexError() : 
-    m_topLevelHasBeenSet(false),
-    m_nestedHasBeenSet(false)
-{
-}
-
 ComplexError::ComplexError(const XmlNode& xmlNode)
-  : ComplexError()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ComplexError& ComplexError::operator =(const XmlNode& xmlNode)
     {
       m_topLevel = Aws::Utils::Xml::DecodeEscapedXmlText(topLevelNode.GetText());
       m_topLevelHasBeenSet = true;
+       m_topLevelHasBeenSet = true;
     }
     XmlNode nestedNode = resultNode.FirstChild("Nested");
     if(!nestedNode.IsNull())
     {
       m_nested = nestedNode;
       m_nestedHasBeenSet = true;
+       m_nestedHasBeenSet = true;
     }
   }
 

@@ -18,16 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-S3PublicAccessBlockConfiguration::S3PublicAccessBlockConfiguration() : 
-    m_ignorePublicAcls(false),
-    m_ignorePublicAclsHasBeenSet(false),
-    m_restrictPublicBuckets(false),
-    m_restrictPublicBucketsHasBeenSet(false)
-{
-}
-
 S3PublicAccessBlockConfiguration::S3PublicAccessBlockConfiguration(JsonView jsonValue)
-  : S3PublicAccessBlockConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ S3PublicAccessBlockConfiguration& S3PublicAccessBlockConfiguration::operator =(J
   if(jsonValue.ValueExists("ignorePublicAcls"))
   {
     m_ignorePublicAcls = jsonValue.GetBool("ignorePublicAcls");
-
     m_ignorePublicAclsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("restrictPublicBuckets"))
   {
     m_restrictPublicBuckets = jsonValue.GetBool("restrictPublicBuckets");
-
     m_restrictPublicBucketsHasBeenSet = true;
   }
-
   return *this;
 }
 

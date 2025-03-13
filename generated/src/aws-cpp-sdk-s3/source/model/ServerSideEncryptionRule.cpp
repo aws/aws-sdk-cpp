@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-ServerSideEncryptionRule::ServerSideEncryptionRule() : 
-    m_applyServerSideEncryptionByDefaultHasBeenSet(false),
-    m_bucketKeyEnabled(false),
-    m_bucketKeyEnabledHasBeenSet(false)
-{
-}
-
 ServerSideEncryptionRule::ServerSideEncryptionRule(const XmlNode& xmlNode)
-  : ServerSideEncryptionRule()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ ServerSideEncryptionRule& ServerSideEncryptionRule::operator =(const XmlNode& xm
     {
       m_applyServerSideEncryptionByDefault = applyServerSideEncryptionByDefaultNode;
       m_applyServerSideEncryptionByDefaultHasBeenSet = true;
+       m_applyServerSideEncryptionByDefaultHasBeenSet = true;
     }
     XmlNode bucketKeyEnabledNode = resultNode.FirstChild("BucketKeyEnabled");
     if(!bucketKeyEnabledNode.IsNull())
     {
       m_bucketKeyEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bucketKeyEnabledNode.GetText()).c_str()).c_str());
       m_bucketKeyEnabledHasBeenSet = true;
+       m_bucketKeyEnabledHasBeenSet = true;
     }
   }
 

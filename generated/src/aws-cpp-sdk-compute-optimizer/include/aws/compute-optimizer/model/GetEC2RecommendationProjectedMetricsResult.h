@@ -29,7 +29,7 @@ namespace Model
   class GetEC2RecommendationProjectedMetricsResult
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API GetEC2RecommendationProjectedMetricsResult();
+    AWS_COMPUTEOPTIMIZER_API GetEC2RecommendationProjectedMetricsResult() = default;
     AWS_COMPUTEOPTIMIZER_API GetEC2RecommendationProjectedMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPUTEOPTIMIZER_API GetEC2RecommendationProjectedMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>An array of objects that describes projected metrics.</p>
      */
-    inline const Aws::Vector<RecommendedOptionProjectedMetric>& GetRecommendedOptionProjectedMetrics() const{ return m_recommendedOptionProjectedMetrics; }
-    inline void SetRecommendedOptionProjectedMetrics(const Aws::Vector<RecommendedOptionProjectedMetric>& value) { m_recommendedOptionProjectedMetrics = value; }
-    inline void SetRecommendedOptionProjectedMetrics(Aws::Vector<RecommendedOptionProjectedMetric>&& value) { m_recommendedOptionProjectedMetrics = std::move(value); }
-    inline GetEC2RecommendationProjectedMetricsResult& WithRecommendedOptionProjectedMetrics(const Aws::Vector<RecommendedOptionProjectedMetric>& value) { SetRecommendedOptionProjectedMetrics(value); return *this;}
-    inline GetEC2RecommendationProjectedMetricsResult& WithRecommendedOptionProjectedMetrics(Aws::Vector<RecommendedOptionProjectedMetric>&& value) { SetRecommendedOptionProjectedMetrics(std::move(value)); return *this;}
-    inline GetEC2RecommendationProjectedMetricsResult& AddRecommendedOptionProjectedMetrics(const RecommendedOptionProjectedMetric& value) { m_recommendedOptionProjectedMetrics.push_back(value); return *this; }
-    inline GetEC2RecommendationProjectedMetricsResult& AddRecommendedOptionProjectedMetrics(RecommendedOptionProjectedMetric&& value) { m_recommendedOptionProjectedMetrics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RecommendedOptionProjectedMetric>& GetRecommendedOptionProjectedMetrics() const { return m_recommendedOptionProjectedMetrics; }
+    template<typename RecommendedOptionProjectedMetricsT = Aws::Vector<RecommendedOptionProjectedMetric>>
+    void SetRecommendedOptionProjectedMetrics(RecommendedOptionProjectedMetricsT&& value) { m_recommendedOptionProjectedMetricsHasBeenSet = true; m_recommendedOptionProjectedMetrics = std::forward<RecommendedOptionProjectedMetricsT>(value); }
+    template<typename RecommendedOptionProjectedMetricsT = Aws::Vector<RecommendedOptionProjectedMetric>>
+    GetEC2RecommendationProjectedMetricsResult& WithRecommendedOptionProjectedMetrics(RecommendedOptionProjectedMetricsT&& value) { SetRecommendedOptionProjectedMetrics(std::forward<RecommendedOptionProjectedMetricsT>(value)); return *this;}
+    template<typename RecommendedOptionProjectedMetricsT = RecommendedOptionProjectedMetric>
+    GetEC2RecommendationProjectedMetricsResult& AddRecommendedOptionProjectedMetrics(RecommendedOptionProjectedMetricsT&& value) { m_recommendedOptionProjectedMetricsHasBeenSet = true; m_recommendedOptionProjectedMetrics.emplace_back(std::forward<RecommendedOptionProjectedMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEC2RecommendationProjectedMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEC2RecommendationProjectedMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEC2RecommendationProjectedMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEC2RecommendationProjectedMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RecommendedOptionProjectedMetric> m_recommendedOptionProjectedMetrics;
+    bool m_recommendedOptionProjectedMetricsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,14 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPartnershipsRequest::ListPartnershipsRequest() : 
-    m_profileIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListPartnershipsRequest::SerializePayload() const
 {
   JsonValue payload;

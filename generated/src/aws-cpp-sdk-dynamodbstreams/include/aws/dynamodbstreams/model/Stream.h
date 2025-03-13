@@ -32,7 +32,7 @@ namespace Model
   class Stream
   {
   public:
-    AWS_DYNAMODBSTREAMS_API Stream();
+    AWS_DYNAMODBSTREAMS_API Stream() = default;
     AWS_DYNAMODBSTREAMS_API Stream(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODBSTREAMS_API Stream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
-    inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
+    inline const Aws::String& GetStreamArn() const { return m_streamArn; }
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
-    inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
-    inline void SetStreamArn(Aws::String&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::move(value); }
-    inline void SetStreamArn(const char* value) { m_streamArnHasBeenSet = true; m_streamArn.assign(value); }
-    inline Stream& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
-    inline Stream& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
-    inline Stream& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
+    template<typename StreamArnT = Aws::String>
+    void SetStreamArn(StreamArnT&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::forward<StreamArnT>(value); }
+    template<typename StreamArnT = Aws::String>
+    Stream& WithStreamArn(StreamArnT&& value) { SetStreamArn(std::forward<StreamArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The DynamoDB table with which the stream is associated.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline Stream& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline Stream& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline Stream& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    Stream& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
      * <code>StreamLabel</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetStreamLabel() const{ return m_streamLabel; }
+    inline const Aws::String& GetStreamLabel() const { return m_streamLabel; }
     inline bool StreamLabelHasBeenSet() const { return m_streamLabelHasBeenSet; }
-    inline void SetStreamLabel(const Aws::String& value) { m_streamLabelHasBeenSet = true; m_streamLabel = value; }
-    inline void SetStreamLabel(Aws::String&& value) { m_streamLabelHasBeenSet = true; m_streamLabel = std::move(value); }
-    inline void SetStreamLabel(const char* value) { m_streamLabelHasBeenSet = true; m_streamLabel.assign(value); }
-    inline Stream& WithStreamLabel(const Aws::String& value) { SetStreamLabel(value); return *this;}
-    inline Stream& WithStreamLabel(Aws::String&& value) { SetStreamLabel(std::move(value)); return *this;}
-    inline Stream& WithStreamLabel(const char* value) { SetStreamLabel(value); return *this;}
+    template<typename StreamLabelT = Aws::String>
+    void SetStreamLabel(StreamLabelT&& value) { m_streamLabelHasBeenSet = true; m_streamLabel = std::forward<StreamLabelT>(value); }
+    template<typename StreamLabelT = Aws::String>
+    Stream& WithStreamLabel(StreamLabelT&& value) { SetStreamLabel(std::forward<StreamLabelT>(value)); return *this;}
     ///@}
   private:
 

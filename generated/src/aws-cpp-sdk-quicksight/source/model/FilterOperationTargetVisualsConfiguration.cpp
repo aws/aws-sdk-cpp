@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilterOperationTargetVisualsConfiguration::FilterOperationTargetVisualsConfiguration() : 
-    m_sameSheetTargetVisualConfigurationHasBeenSet(false)
-{
-}
-
 FilterOperationTargetVisualsConfiguration::FilterOperationTargetVisualsConfiguration(JsonView jsonValue)
-  : FilterOperationTargetVisualsConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FilterOperationTargetVisualsConfiguration& FilterOperationTargetVisualsConfigura
   if(jsonValue.ValueExists("SameSheetTargetVisualConfiguration"))
   {
     m_sameSheetTargetVisualConfiguration = jsonValue.GetObject("SameSheetTargetVisualConfiguration");
-
     m_sameSheetTargetVisualConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

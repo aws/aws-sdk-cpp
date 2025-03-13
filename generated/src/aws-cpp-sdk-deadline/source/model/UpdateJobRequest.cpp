@@ -13,27 +13,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateJobRequest::UpdateJobRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_targetTaskRunStatus(JobTargetTaskRunStatus::NOT_SET),
-    m_targetTaskRunStatusHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_maxFailedTasksCount(0),
-    m_maxFailedTasksCountHasBeenSet(false),
-    m_maxRetriesPerTask(0),
-    m_maxRetriesPerTaskHasBeenSet(false),
-    m_lifecycleStatus(UpdateJobLifecycleStatus::NOT_SET),
-    m_lifecycleStatusHasBeenSet(false),
-    m_maxWorkerCount(0),
-    m_maxWorkerCountHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateJobRequest::SerializePayload() const
 {
   JsonValue payload;

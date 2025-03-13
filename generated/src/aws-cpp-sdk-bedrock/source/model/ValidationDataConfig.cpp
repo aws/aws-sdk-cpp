@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-ValidationDataConfig::ValidationDataConfig() : 
-    m_validatorsHasBeenSet(false)
-{
-}
-
 ValidationDataConfig::ValidationDataConfig(JsonView jsonValue)
-  : ValidationDataConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ValidationDataConfig& ValidationDataConfig::operator =(JsonView jsonValue)
     }
     m_validatorsHasBeenSet = true;
   }
-
   return *this;
 }
 

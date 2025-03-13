@@ -32,7 +32,7 @@ namespace Model
   class RuntimePlatform
   {
   public:
-    AWS_BATCH_API RuntimePlatform();
+    AWS_BATCH_API RuntimePlatform() = default;
     AWS_BATCH_API RuntimePlatform(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API RuntimePlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,14 +60,12 @@ namespace Model
      * you can attach both <code>FARGATE</code> and <code>FARGATE_SPOT</code> compute
      * environments to the same job queue.</p> 
      */
-    inline const Aws::String& GetOperatingSystemFamily() const{ return m_operatingSystemFamily; }
+    inline const Aws::String& GetOperatingSystemFamily() const { return m_operatingSystemFamily; }
     inline bool OperatingSystemFamilyHasBeenSet() const { return m_operatingSystemFamilyHasBeenSet; }
-    inline void SetOperatingSystemFamily(const Aws::String& value) { m_operatingSystemFamilyHasBeenSet = true; m_operatingSystemFamily = value; }
-    inline void SetOperatingSystemFamily(Aws::String&& value) { m_operatingSystemFamilyHasBeenSet = true; m_operatingSystemFamily = std::move(value); }
-    inline void SetOperatingSystemFamily(const char* value) { m_operatingSystemFamilyHasBeenSet = true; m_operatingSystemFamily.assign(value); }
-    inline RuntimePlatform& WithOperatingSystemFamily(const Aws::String& value) { SetOperatingSystemFamily(value); return *this;}
-    inline RuntimePlatform& WithOperatingSystemFamily(Aws::String&& value) { SetOperatingSystemFamily(std::move(value)); return *this;}
-    inline RuntimePlatform& WithOperatingSystemFamily(const char* value) { SetOperatingSystemFamily(value); return *this;}
+    template<typename OperatingSystemFamilyT = Aws::String>
+    void SetOperatingSystemFamily(OperatingSystemFamilyT&& value) { m_operatingSystemFamilyHasBeenSet = true; m_operatingSystemFamily = std::forward<OperatingSystemFamilyT>(value); }
+    template<typename OperatingSystemFamilyT = Aws::String>
+    RuntimePlatform& WithOperatingSystemFamily(OperatingSystemFamilyT&& value) { SetOperatingSystemFamily(std::forward<OperatingSystemFamilyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +80,12 @@ namespace Model
      * <code>FARGATE_SPOT</code> compute environments to the same job queue.</p>
      * 
      */
-    inline const Aws::String& GetCpuArchitecture() const{ return m_cpuArchitecture; }
+    inline const Aws::String& GetCpuArchitecture() const { return m_cpuArchitecture; }
     inline bool CpuArchitectureHasBeenSet() const { return m_cpuArchitectureHasBeenSet; }
-    inline void SetCpuArchitecture(const Aws::String& value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture = value; }
-    inline void SetCpuArchitecture(Aws::String&& value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture = std::move(value); }
-    inline void SetCpuArchitecture(const char* value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture.assign(value); }
-    inline RuntimePlatform& WithCpuArchitecture(const Aws::String& value) { SetCpuArchitecture(value); return *this;}
-    inline RuntimePlatform& WithCpuArchitecture(Aws::String&& value) { SetCpuArchitecture(std::move(value)); return *this;}
-    inline RuntimePlatform& WithCpuArchitecture(const char* value) { SetCpuArchitecture(value); return *this;}
+    template<typename CpuArchitectureT = Aws::String>
+    void SetCpuArchitecture(CpuArchitectureT&& value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture = std::forward<CpuArchitectureT>(value); }
+    template<typename CpuArchitectureT = Aws::String>
+    RuntimePlatform& WithCpuArchitecture(CpuArchitectureT&& value) { SetCpuArchitecture(std::forward<CpuArchitectureT>(value)); return *this;}
     ///@}
   private:
 

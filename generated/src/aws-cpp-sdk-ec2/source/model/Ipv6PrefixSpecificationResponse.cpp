@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ipv6PrefixSpecificationResponse::Ipv6PrefixSpecificationResponse() : 
-    m_ipv6PrefixHasBeenSet(false)
-{
-}
-
 Ipv6PrefixSpecificationResponse::Ipv6PrefixSpecificationResponse(const XmlNode& xmlNode)
-  : Ipv6PrefixSpecificationResponse()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ Ipv6PrefixSpecificationResponse& Ipv6PrefixSpecificationResponse::operator =(con
     {
       m_ipv6Prefix = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6PrefixNode.GetText());
       m_ipv6PrefixHasBeenSet = true;
+       m_ipv6PrefixHasBeenSet = true;
     }
   }
 

@@ -35,7 +35,7 @@ namespace Model
   class GetSolNetworkPackageMetadata
   {
   public:
-    AWS_TNB_API GetSolNetworkPackageMetadata();
+    AWS_TNB_API GetSolNetworkPackageMetadata() = default;
     AWS_TNB_API GetSolNetworkPackageMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API GetSolNetworkPackageMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
     /**
      * <p>The date that the resource was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline GetSolNetworkPackageMetadata& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetSolNetworkPackageMetadata& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetSolNetworkPackageMetadata& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date that the resource was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-    inline GetSolNetworkPackageMetadata& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-    inline GetSolNetworkPackageMetadata& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    GetSolNetworkPackageMetadata& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,19 +70,19 @@ namespace Model
      * <p>Metadata related to the onboarded network service descriptor in the network
      * package.</p>
      */
-    inline const NetworkArtifactMeta& GetNsd() const{ return m_nsd; }
+    inline const NetworkArtifactMeta& GetNsd() const { return m_nsd; }
     inline bool NsdHasBeenSet() const { return m_nsdHasBeenSet; }
-    inline void SetNsd(const NetworkArtifactMeta& value) { m_nsdHasBeenSet = true; m_nsd = value; }
-    inline void SetNsd(NetworkArtifactMeta&& value) { m_nsdHasBeenSet = true; m_nsd = std::move(value); }
-    inline GetSolNetworkPackageMetadata& WithNsd(const NetworkArtifactMeta& value) { SetNsd(value); return *this;}
-    inline GetSolNetworkPackageMetadata& WithNsd(NetworkArtifactMeta&& value) { SetNsd(std::move(value)); return *this;}
+    template<typename NsdT = NetworkArtifactMeta>
+    void SetNsd(NsdT&& value) { m_nsdHasBeenSet = true; m_nsd = std::forward<NsdT>(value); }
+    template<typename NsdT = NetworkArtifactMeta>
+    GetSolNetworkPackageMetadata& WithNsd(NsdT&& value) { SetNsd(std::forward<NsdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModified;
+    Aws::Utils::DateTime m_lastModified{};
     bool m_lastModifiedHasBeenSet = false;
 
     NetworkArtifactMeta m_nsd;

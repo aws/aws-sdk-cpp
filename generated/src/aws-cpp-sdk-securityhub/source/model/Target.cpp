@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Target::Target() : 
-    m_accountIdHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false),
-    m_rootIdHasBeenSet(false)
-{
-}
-
 Target::Target(JsonView jsonValue)
-  : Target()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Target& Target::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationalUnitId"))
   {
     m_organizationalUnitId = jsonValue.GetString("OrganizationalUnitId");
-
     m_organizationalUnitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootId"))
   {
     m_rootId = jsonValue.GetString("RootId");
-
     m_rootIdHasBeenSet = true;
   }
-
   return *this;
 }
 

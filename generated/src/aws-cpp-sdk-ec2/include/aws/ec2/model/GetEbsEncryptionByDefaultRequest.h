@@ -19,7 +19,7 @@ namespace Model
   class GetEbsEncryptionByDefaultRequest : public EC2Request
   {
   public:
-    AWS_EC2_API GetEbsEncryptionByDefaultRequest();
+    AWS_EC2_API GetEbsEncryptionByDefaultRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline GetEbsEncryptionByDefaultRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

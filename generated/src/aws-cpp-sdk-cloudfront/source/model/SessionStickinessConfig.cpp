@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-SessionStickinessConfig::SessionStickinessConfig() : 
-    m_idleTTL(0),
-    m_idleTTLHasBeenSet(false),
-    m_maximumTTL(0),
-    m_maximumTTLHasBeenSet(false)
-{
-}
-
 SessionStickinessConfig::SessionStickinessConfig(const XmlNode& xmlNode)
-  : SessionStickinessConfig()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ SessionStickinessConfig& SessionStickinessConfig::operator =(const XmlNode& xmlN
     {
       m_idleTTL = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(idleTTLNode.GetText()).c_str()).c_str());
       m_idleTTLHasBeenSet = true;
+       m_idleTTLHasBeenSet = true;
     }
     XmlNode maximumTTLNode = resultNode.FirstChild("MaximumTTL");
     if(!maximumTTLNode.IsNull())
     {
       m_maximumTTL = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumTTLNode.GetText()).c_str()).c_str());
       m_maximumTTLHasBeenSet = true;
+       m_maximumTTLHasBeenSet = true;
     }
   }
 

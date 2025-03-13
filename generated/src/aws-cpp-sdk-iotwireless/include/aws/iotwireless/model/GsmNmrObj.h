@@ -31,7 +31,7 @@ namespace Model
   class GsmNmrObj
   {
   public:
-    AWS_IOTWIRELESS_API GsmNmrObj();
+    AWS_IOTWIRELESS_API GsmNmrObj() = default;
     AWS_IOTWIRELESS_API GsmNmrObj(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API GsmNmrObj& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>GSM base station identity code (BSIC).</p>
      */
-    inline int GetBsic() const{ return m_bsic; }
+    inline int GetBsic() const { return m_bsic; }
     inline bool BsicHasBeenSet() const { return m_bsicHasBeenSet; }
     inline void SetBsic(int value) { m_bsicHasBeenSet = true; m_bsic = value; }
     inline GsmNmrObj& WithBsic(int value) { SetBsic(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>GSM broadcast control channel.</p>
      */
-    inline int GetBcch() const{ return m_bcch; }
+    inline int GetBcch() const { return m_bcch; }
     inline bool BcchHasBeenSet() const { return m_bcchHasBeenSet; }
     inline void SetBcch(int value) { m_bcchHasBeenSet = true; m_bcch = value; }
     inline GsmNmrObj& WithBcch(int value) { SetBcch(value); return *this;}
@@ -62,7 +62,7 @@ namespace Model
      * <p>Rx level, which is the received signal power, measured in dBm
      * (decibel-milliwatts).</p>
      */
-    inline int GetRxLevel() const{ return m_rxLevel; }
+    inline int GetRxLevel() const { return m_rxLevel; }
     inline bool RxLevelHasBeenSet() const { return m_rxLevelHasBeenSet; }
     inline void SetRxLevel(int value) { m_rxLevelHasBeenSet = true; m_rxLevel = value; }
     inline GsmNmrObj& WithRxLevel(int value) { SetRxLevel(value); return *this;}
@@ -72,22 +72,22 @@ namespace Model
     /**
      * <p>Global identity information of the GSM object.</p>
      */
-    inline const GlobalIdentity& GetGlobalIdentity() const{ return m_globalIdentity; }
+    inline const GlobalIdentity& GetGlobalIdentity() const { return m_globalIdentity; }
     inline bool GlobalIdentityHasBeenSet() const { return m_globalIdentityHasBeenSet; }
-    inline void SetGlobalIdentity(const GlobalIdentity& value) { m_globalIdentityHasBeenSet = true; m_globalIdentity = value; }
-    inline void SetGlobalIdentity(GlobalIdentity&& value) { m_globalIdentityHasBeenSet = true; m_globalIdentity = std::move(value); }
-    inline GsmNmrObj& WithGlobalIdentity(const GlobalIdentity& value) { SetGlobalIdentity(value); return *this;}
-    inline GsmNmrObj& WithGlobalIdentity(GlobalIdentity&& value) { SetGlobalIdentity(std::move(value)); return *this;}
+    template<typename GlobalIdentityT = GlobalIdentity>
+    void SetGlobalIdentity(GlobalIdentityT&& value) { m_globalIdentityHasBeenSet = true; m_globalIdentity = std::forward<GlobalIdentityT>(value); }
+    template<typename GlobalIdentityT = GlobalIdentity>
+    GsmNmrObj& WithGlobalIdentity(GlobalIdentityT&& value) { SetGlobalIdentity(std::forward<GlobalIdentityT>(value)); return *this;}
     ///@}
   private:
 
-    int m_bsic;
+    int m_bsic{0};
     bool m_bsicHasBeenSet = false;
 
-    int m_bcch;
+    int m_bcch{0};
     bool m_bcchHasBeenSet = false;
 
-    int m_rxLevel;
+    int m_rxLevel{0};
     bool m_rxLevelHasBeenSet = false;
 
     GlobalIdentity m_globalIdentity;

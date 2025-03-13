@@ -20,17 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-Deployment::Deployment() : 
-    m_versionLabelHasBeenSet(false),
-    m_deploymentId(0),
-    m_deploymentIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_deploymentTimeHasBeenSet(false)
-{
-}
-
 Deployment::Deployment(const XmlNode& xmlNode)
-  : Deployment()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ Deployment& Deployment::operator =(const XmlNode& xmlNode)
     {
       m_versionLabel = Aws::Utils::Xml::DecodeEscapedXmlText(versionLabelNode.GetText());
       m_versionLabelHasBeenSet = true;
+       m_versionLabelHasBeenSet = true;
     }
     XmlNode deploymentIdNode = resultNode.FirstChild("DeploymentId");
     if(!deploymentIdNode.IsNull())
     {
       m_deploymentId = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deploymentIdNode.GetText()).c_str()).c_str());
       m_deploymentIdHasBeenSet = true;
+       m_deploymentIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode deploymentTimeNode = resultNode.FirstChild("DeploymentTime");
     if(!deploymentTimeNode.IsNull())
     {
       m_deploymentTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deploymentTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_deploymentTimeHasBeenSet = true;
+       m_deploymentTimeHasBeenSet = true;
     }
   }
 

@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Scte35SpliceInsertScheduleActionSettings::Scte35SpliceInsertScheduleActionSettings() : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_spliceEventId(0),
-    m_spliceEventIdHasBeenSet(false)
-{
-}
-
 Scte35SpliceInsertScheduleActionSettings::Scte35SpliceInsertScheduleActionSettings(JsonView jsonValue)
-  : Scte35SpliceInsertScheduleActionSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Scte35SpliceInsertScheduleActionSettings& Scte35SpliceInsertScheduleActionSettin
   if(jsonValue.ValueExists("duration"))
   {
     m_duration = jsonValue.GetInt64("duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spliceEventId"))
   {
     m_spliceEventId = jsonValue.GetInt64("spliceEventId");
-
     m_spliceEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

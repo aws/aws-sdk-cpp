@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TargetRedshiftCatalog::TargetRedshiftCatalog() : 
-    m_catalogArnHasBeenSet(false)
-{
-}
-
 TargetRedshiftCatalog::TargetRedshiftCatalog(JsonView jsonValue)
-  : TargetRedshiftCatalog()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TargetRedshiftCatalog& TargetRedshiftCatalog::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogArn"))
   {
     m_catalogArn = jsonValue.GetString("CatalogArn");
-
     m_catalogArnHasBeenSet = true;
   }
-
   return *this;
 }
 

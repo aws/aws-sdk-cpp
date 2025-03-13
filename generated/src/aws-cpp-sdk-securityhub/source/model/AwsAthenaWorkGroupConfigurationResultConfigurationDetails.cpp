@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAthenaWorkGroupConfigurationResultConfigurationDetails::AwsAthenaWorkGroupConfigurationResultConfigurationDetails() : 
-    m_encryptionConfigurationHasBeenSet(false)
-{
-}
-
 AwsAthenaWorkGroupConfigurationResultConfigurationDetails::AwsAthenaWorkGroupConfigurationResultConfigurationDetails(JsonView jsonValue)
-  : AwsAthenaWorkGroupConfigurationResultConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsAthenaWorkGroupConfigurationResultConfigurationDetails& AwsAthenaWorkGroupCon
   if(jsonValue.ValueExists("EncryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

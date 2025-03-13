@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchPutContactResult::BatchPutContactResult()
-{
-}
-
 BatchPutContactResult::BatchPutContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchPutContactResult& BatchPutContactResult::operator =(const Aws::AmazonWebSer
     {
       m_successfulRequestList.push_back(successfulRequestListJsonList[successfulRequestListIndex].AsObject());
     }
+    m_successfulRequestListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedRequestList"))
   {
     Aws::Utils::Array<JsonView> failedRequestListJsonList = jsonValue.GetArray("FailedRequestList");
@@ -45,14 +41,15 @@ BatchPutContactResult& BatchPutContactResult::operator =(const Aws::AmazonWebSer
     {
       m_failedRequestList.push_back(failedRequestListJsonList[failedRequestListIndex].AsObject());
     }
+    m_failedRequestListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

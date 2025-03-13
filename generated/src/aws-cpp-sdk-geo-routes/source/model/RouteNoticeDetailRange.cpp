@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteNoticeDetailRange::RouteNoticeDetailRange() : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 RouteNoticeDetailRange::RouteNoticeDetailRange(JsonView jsonValue)
-  : RouteNoticeDetailRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteNoticeDetailRange& RouteNoticeDetailRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Min"))
   {
     m_min = jsonValue.GetInteger("Min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetInteger("Max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

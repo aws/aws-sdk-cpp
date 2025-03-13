@@ -32,7 +32,7 @@ namespace Model
   class MinimumHealthyHosts
   {
   public:
-    AWS_CODEDEPLOY_API MinimumHealthyHosts();
+    AWS_CODEDEPLOY_API MinimumHealthyHosts() = default;
     AWS_CODEDEPLOY_API MinimumHealthyHosts(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API MinimumHealthyHosts& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,29 +62,27 @@ namespace Model
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy
      * Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
-    inline const MinimumHealthyHostsType& GetType() const{ return m_type; }
+    inline MinimumHealthyHostsType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MinimumHealthyHostsType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MinimumHealthyHostsType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MinimumHealthyHosts& WithType(const MinimumHealthyHostsType& value) { SetType(value); return *this;}
-    inline MinimumHealthyHosts& WithType(MinimumHealthyHostsType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MinimumHealthyHostsType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MinimumHealthyHosts& WithType(MinimumHealthyHostsType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum healthy instance value.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline MinimumHealthyHosts& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    MinimumHealthyHostsType m_type;
+    MinimumHealthyHostsType m_type{MinimumHealthyHostsType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

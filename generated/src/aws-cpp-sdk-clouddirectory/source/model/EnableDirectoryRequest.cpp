@@ -13,11 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableDirectoryRequest::EnableDirectoryRequest() : 
-    m_directoryArnHasBeenSet(false)
-{
-}
-
 Aws::String EnableDirectoryRequest::SerializePayload() const
 {
   return {};

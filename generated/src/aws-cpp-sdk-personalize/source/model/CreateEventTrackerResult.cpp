@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEventTrackerResult::CreateEventTrackerResult()
-{
-}
-
 CreateEventTrackerResult::CreateEventTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateEventTrackerResult& CreateEventTrackerResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("eventTrackerArn"))
   {
     m_eventTrackerArn = jsonValue.GetString("eventTrackerArn");
-
+    m_eventTrackerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trackingId"))
   {
     m_trackingId = jsonValue.GetString("trackingId");
-
+    m_trackingIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

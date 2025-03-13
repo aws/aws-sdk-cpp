@@ -22,7 +22,7 @@ namespace Model
   class ModifyVpcEndpointServiceConfigurationRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyVpcEndpointServiceConfigurationRequest();
+    AWS_EC2_API ModifyVpcEndpointServiceConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyVpcEndpointServiceConfigurationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -54,14 +54,12 @@ namespace Model
     /**
      * <p>The ID of the service.</p>
      */
-    inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+    inline const Aws::String& GetServiceId() const { return m_serviceId; }
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-    inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-    inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-    inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+    template<typename ServiceIdT = Aws::String>
+    void SetServiceId(ServiceIdT&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::forward<ServiceIdT>(value); }
+    template<typename ServiceIdT = Aws::String>
+    ModifyVpcEndpointServiceConfigurationRequest& WithServiceId(ServiceIdT&& value) { SetServiceId(std::forward<ServiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * <p>(Interface endpoint configuration) The private DNS name to assign to the
      * endpoint service.</p>
      */
-    inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
+    inline const Aws::String& GetPrivateDnsName() const { return m_privateDnsName; }
     inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
-    inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
-    inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::move(value); }
-    inline void SetPrivateDnsName(const char* value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName.assign(value); }
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
+    template<typename PrivateDnsNameT = Aws::String>
+    void SetPrivateDnsName(PrivateDnsNameT&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::forward<PrivateDnsNameT>(value); }
+    template<typename PrivateDnsNameT = Aws::String>
+    ModifyVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(PrivateDnsNameT&& value) { SetPrivateDnsName(std::forward<PrivateDnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +80,7 @@ namespace Model
      * <p>(Interface endpoint configuration) Removes the private DNS name of the
      * endpoint service.</p>
      */
-    inline bool GetRemovePrivateDnsName() const{ return m_removePrivateDnsName; }
+    inline bool GetRemovePrivateDnsName() const { return m_removePrivateDnsName; }
     inline bool RemovePrivateDnsNameHasBeenSet() const { return m_removePrivateDnsNameHasBeenSet; }
     inline void SetRemovePrivateDnsName(bool value) { m_removePrivateDnsNameHasBeenSet = true; m_removePrivateDnsName = value; }
     inline ModifyVpcEndpointServiceConfigurationRequest& WithRemovePrivateDnsName(bool value) { SetRemovePrivateDnsName(value); return *this;}
@@ -95,7 +91,7 @@ namespace Model
      * <p>Indicates whether requests to create an endpoint to the service must be
      * accepted.</p>
      */
-    inline bool GetAcceptanceRequired() const{ return m_acceptanceRequired; }
+    inline bool GetAcceptanceRequired() const { return m_acceptanceRequired; }
     inline bool AcceptanceRequiredHasBeenSet() const { return m_acceptanceRequiredHasBeenSet; }
     inline void SetAcceptanceRequired(bool value) { m_acceptanceRequiredHasBeenSet = true; m_acceptanceRequired = value; }
     inline ModifyVpcEndpointServiceConfigurationRequest& WithAcceptanceRequired(bool value) { SetAcceptanceRequired(value); return *this;}
@@ -106,15 +102,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to the
      * service configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAddNetworkLoadBalancerArns() const{ return m_addNetworkLoadBalancerArns; }
+    inline const Aws::Vector<Aws::String>& GetAddNetworkLoadBalancerArns() const { return m_addNetworkLoadBalancerArns; }
     inline bool AddNetworkLoadBalancerArnsHasBeenSet() const { return m_addNetworkLoadBalancerArnsHasBeenSet; }
-    inline void SetAddNetworkLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_addNetworkLoadBalancerArnsHasBeenSet = true; m_addNetworkLoadBalancerArns = value; }
-    inline void SetAddNetworkLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_addNetworkLoadBalancerArnsHasBeenSet = true; m_addNetworkLoadBalancerArns = std::move(value); }
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddNetworkLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetAddNetworkLoadBalancerArns(value); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddNetworkLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetAddNetworkLoadBalancerArns(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddNetworkLoadBalancerArns(const Aws::String& value) { m_addNetworkLoadBalancerArnsHasBeenSet = true; m_addNetworkLoadBalancerArns.push_back(value); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddNetworkLoadBalancerArns(Aws::String&& value) { m_addNetworkLoadBalancerArnsHasBeenSet = true; m_addNetworkLoadBalancerArns.push_back(std::move(value)); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddNetworkLoadBalancerArns(const char* value) { m_addNetworkLoadBalancerArnsHasBeenSet = true; m_addNetworkLoadBalancerArns.push_back(value); return *this; }
+    template<typename AddNetworkLoadBalancerArnsT = Aws::Vector<Aws::String>>
+    void SetAddNetworkLoadBalancerArns(AddNetworkLoadBalancerArnsT&& value) { m_addNetworkLoadBalancerArnsHasBeenSet = true; m_addNetworkLoadBalancerArns = std::forward<AddNetworkLoadBalancerArnsT>(value); }
+    template<typename AddNetworkLoadBalancerArnsT = Aws::Vector<Aws::String>>
+    ModifyVpcEndpointServiceConfigurationRequest& WithAddNetworkLoadBalancerArns(AddNetworkLoadBalancerArnsT&& value) { SetAddNetworkLoadBalancerArns(std::forward<AddNetworkLoadBalancerArnsT>(value)); return *this;}
+    template<typename AddNetworkLoadBalancerArnsT = Aws::String>
+    ModifyVpcEndpointServiceConfigurationRequest& AddAddNetworkLoadBalancerArns(AddNetworkLoadBalancerArnsT&& value) { m_addNetworkLoadBalancerArnsHasBeenSet = true; m_addNetworkLoadBalancerArns.emplace_back(std::forward<AddNetworkLoadBalancerArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -122,15 +117,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from the
      * service configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveNetworkLoadBalancerArns() const{ return m_removeNetworkLoadBalancerArns; }
+    inline const Aws::Vector<Aws::String>& GetRemoveNetworkLoadBalancerArns() const { return m_removeNetworkLoadBalancerArns; }
     inline bool RemoveNetworkLoadBalancerArnsHasBeenSet() const { return m_removeNetworkLoadBalancerArnsHasBeenSet; }
-    inline void SetRemoveNetworkLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_removeNetworkLoadBalancerArnsHasBeenSet = true; m_removeNetworkLoadBalancerArns = value; }
-    inline void SetRemoveNetworkLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_removeNetworkLoadBalancerArnsHasBeenSet = true; m_removeNetworkLoadBalancerArns = std::move(value); }
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveNetworkLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetRemoveNetworkLoadBalancerArns(value); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveNetworkLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetRemoveNetworkLoadBalancerArns(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveNetworkLoadBalancerArns(const Aws::String& value) { m_removeNetworkLoadBalancerArnsHasBeenSet = true; m_removeNetworkLoadBalancerArns.push_back(value); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveNetworkLoadBalancerArns(Aws::String&& value) { m_removeNetworkLoadBalancerArnsHasBeenSet = true; m_removeNetworkLoadBalancerArns.push_back(std::move(value)); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveNetworkLoadBalancerArns(const char* value) { m_removeNetworkLoadBalancerArnsHasBeenSet = true; m_removeNetworkLoadBalancerArns.push_back(value); return *this; }
+    template<typename RemoveNetworkLoadBalancerArnsT = Aws::Vector<Aws::String>>
+    void SetRemoveNetworkLoadBalancerArns(RemoveNetworkLoadBalancerArnsT&& value) { m_removeNetworkLoadBalancerArnsHasBeenSet = true; m_removeNetworkLoadBalancerArns = std::forward<RemoveNetworkLoadBalancerArnsT>(value); }
+    template<typename RemoveNetworkLoadBalancerArnsT = Aws::Vector<Aws::String>>
+    ModifyVpcEndpointServiceConfigurationRequest& WithRemoveNetworkLoadBalancerArns(RemoveNetworkLoadBalancerArnsT&& value) { SetRemoveNetworkLoadBalancerArns(std::forward<RemoveNetworkLoadBalancerArnsT>(value)); return *this;}
+    template<typename RemoveNetworkLoadBalancerArnsT = Aws::String>
+    ModifyVpcEndpointServiceConfigurationRequest& AddRemoveNetworkLoadBalancerArns(RemoveNetworkLoadBalancerArnsT&& value) { m_removeNetworkLoadBalancerArnsHasBeenSet = true; m_removeNetworkLoadBalancerArns.emplace_back(std::forward<RemoveNetworkLoadBalancerArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -138,15 +132,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to the
      * service configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAddGatewayLoadBalancerArns() const{ return m_addGatewayLoadBalancerArns; }
+    inline const Aws::Vector<Aws::String>& GetAddGatewayLoadBalancerArns() const { return m_addGatewayLoadBalancerArns; }
     inline bool AddGatewayLoadBalancerArnsHasBeenSet() const { return m_addGatewayLoadBalancerArnsHasBeenSet; }
-    inline void SetAddGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_addGatewayLoadBalancerArnsHasBeenSet = true; m_addGatewayLoadBalancerArns = value; }
-    inline void SetAddGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_addGatewayLoadBalancerArnsHasBeenSet = true; m_addGatewayLoadBalancerArns = std::move(value); }
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetAddGatewayLoadBalancerArns(value); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetAddGatewayLoadBalancerArns(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddGatewayLoadBalancerArns(const Aws::String& value) { m_addGatewayLoadBalancerArnsHasBeenSet = true; m_addGatewayLoadBalancerArns.push_back(value); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddGatewayLoadBalancerArns(Aws::String&& value) { m_addGatewayLoadBalancerArnsHasBeenSet = true; m_addGatewayLoadBalancerArns.push_back(std::move(value)); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddGatewayLoadBalancerArns(const char* value) { m_addGatewayLoadBalancerArnsHasBeenSet = true; m_addGatewayLoadBalancerArns.push_back(value); return *this; }
+    template<typename AddGatewayLoadBalancerArnsT = Aws::Vector<Aws::String>>
+    void SetAddGatewayLoadBalancerArns(AddGatewayLoadBalancerArnsT&& value) { m_addGatewayLoadBalancerArnsHasBeenSet = true; m_addGatewayLoadBalancerArns = std::forward<AddGatewayLoadBalancerArnsT>(value); }
+    template<typename AddGatewayLoadBalancerArnsT = Aws::Vector<Aws::String>>
+    ModifyVpcEndpointServiceConfigurationRequest& WithAddGatewayLoadBalancerArns(AddGatewayLoadBalancerArnsT&& value) { SetAddGatewayLoadBalancerArns(std::forward<AddGatewayLoadBalancerArnsT>(value)); return *this;}
+    template<typename AddGatewayLoadBalancerArnsT = Aws::String>
+    ModifyVpcEndpointServiceConfigurationRequest& AddAddGatewayLoadBalancerArns(AddGatewayLoadBalancerArnsT&& value) { m_addGatewayLoadBalancerArnsHasBeenSet = true; m_addGatewayLoadBalancerArns.emplace_back(std::forward<AddGatewayLoadBalancerArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -154,79 +147,74 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from the
      * service configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveGatewayLoadBalancerArns() const{ return m_removeGatewayLoadBalancerArns; }
+    inline const Aws::Vector<Aws::String>& GetRemoveGatewayLoadBalancerArns() const { return m_removeGatewayLoadBalancerArns; }
     inline bool RemoveGatewayLoadBalancerArnsHasBeenSet() const { return m_removeGatewayLoadBalancerArnsHasBeenSet; }
-    inline void SetRemoveGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns = value; }
-    inline void SetRemoveGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns = std::move(value); }
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetRemoveGatewayLoadBalancerArns(value); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetRemoveGatewayLoadBalancerArns(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveGatewayLoadBalancerArns(const Aws::String& value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns.push_back(value); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveGatewayLoadBalancerArns(Aws::String&& value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns.push_back(std::move(value)); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveGatewayLoadBalancerArns(const char* value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns.push_back(value); return *this; }
+    template<typename RemoveGatewayLoadBalancerArnsT = Aws::Vector<Aws::String>>
+    void SetRemoveGatewayLoadBalancerArns(RemoveGatewayLoadBalancerArnsT&& value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns = std::forward<RemoveGatewayLoadBalancerArnsT>(value); }
+    template<typename RemoveGatewayLoadBalancerArnsT = Aws::Vector<Aws::String>>
+    ModifyVpcEndpointServiceConfigurationRequest& WithRemoveGatewayLoadBalancerArns(RemoveGatewayLoadBalancerArnsT&& value) { SetRemoveGatewayLoadBalancerArns(std::forward<RemoveGatewayLoadBalancerArnsT>(value)); return *this;}
+    template<typename RemoveGatewayLoadBalancerArnsT = Aws::String>
+    ModifyVpcEndpointServiceConfigurationRequest& AddRemoveGatewayLoadBalancerArns(RemoveGatewayLoadBalancerArnsT&& value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns.emplace_back(std::forward<RemoveGatewayLoadBalancerArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IP address types to add to the service configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAddSupportedIpAddressTypes() const{ return m_addSupportedIpAddressTypes; }
+    inline const Aws::Vector<Aws::String>& GetAddSupportedIpAddressTypes() const { return m_addSupportedIpAddressTypes; }
     inline bool AddSupportedIpAddressTypesHasBeenSet() const { return m_addSupportedIpAddressTypesHasBeenSet; }
-    inline void SetAddSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes = value; }
-    inline void SetAddSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes = std::move(value); }
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { SetAddSupportedIpAddressTypes(value); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { SetAddSupportedIpAddressTypes(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedIpAddressTypes(const Aws::String& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes.push_back(value); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedIpAddressTypes(Aws::String&& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes.push_back(std::move(value)); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedIpAddressTypes(const char* value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes.push_back(value); return *this; }
+    template<typename AddSupportedIpAddressTypesT = Aws::Vector<Aws::String>>
+    void SetAddSupportedIpAddressTypes(AddSupportedIpAddressTypesT&& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes = std::forward<AddSupportedIpAddressTypesT>(value); }
+    template<typename AddSupportedIpAddressTypesT = Aws::Vector<Aws::String>>
+    ModifyVpcEndpointServiceConfigurationRequest& WithAddSupportedIpAddressTypes(AddSupportedIpAddressTypesT&& value) { SetAddSupportedIpAddressTypes(std::forward<AddSupportedIpAddressTypesT>(value)); return *this;}
+    template<typename AddSupportedIpAddressTypesT = Aws::String>
+    ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedIpAddressTypes(AddSupportedIpAddressTypesT&& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes.emplace_back(std::forward<AddSupportedIpAddressTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IP address types to remove from the service configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveSupportedIpAddressTypes() const{ return m_removeSupportedIpAddressTypes; }
+    inline const Aws::Vector<Aws::String>& GetRemoveSupportedIpAddressTypes() const { return m_removeSupportedIpAddressTypes; }
     inline bool RemoveSupportedIpAddressTypesHasBeenSet() const { return m_removeSupportedIpAddressTypesHasBeenSet; }
-    inline void SetRemoveSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes = value; }
-    inline void SetRemoveSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes = std::move(value); }
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { SetRemoveSupportedIpAddressTypes(value); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { SetRemoveSupportedIpAddressTypes(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(const Aws::String& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.push_back(value); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(Aws::String&& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.push_back(std::move(value)); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(const char* value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.push_back(value); return *this; }
+    template<typename RemoveSupportedIpAddressTypesT = Aws::Vector<Aws::String>>
+    void SetRemoveSupportedIpAddressTypes(RemoveSupportedIpAddressTypesT&& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes = std::forward<RemoveSupportedIpAddressTypesT>(value); }
+    template<typename RemoveSupportedIpAddressTypesT = Aws::Vector<Aws::String>>
+    ModifyVpcEndpointServiceConfigurationRequest& WithRemoveSupportedIpAddressTypes(RemoveSupportedIpAddressTypesT&& value) { SetRemoveSupportedIpAddressTypes(std::forward<RemoveSupportedIpAddressTypesT>(value)); return *this;}
+    template<typename RemoveSupportedIpAddressTypesT = Aws::String>
+    ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(RemoveSupportedIpAddressTypesT&& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.emplace_back(std::forward<RemoveSupportedIpAddressTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The supported Regions to add to the service configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAddSupportedRegions() const{ return m_addSupportedRegions; }
+    inline const Aws::Vector<Aws::String>& GetAddSupportedRegions() const { return m_addSupportedRegions; }
     inline bool AddSupportedRegionsHasBeenSet() const { return m_addSupportedRegionsHasBeenSet; }
-    inline void SetAddSupportedRegions(const Aws::Vector<Aws::String>& value) { m_addSupportedRegionsHasBeenSet = true; m_addSupportedRegions = value; }
-    inline void SetAddSupportedRegions(Aws::Vector<Aws::String>&& value) { m_addSupportedRegionsHasBeenSet = true; m_addSupportedRegions = std::move(value); }
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddSupportedRegions(const Aws::Vector<Aws::String>& value) { SetAddSupportedRegions(value); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddSupportedRegions(Aws::Vector<Aws::String>&& value) { SetAddSupportedRegions(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedRegions(const Aws::String& value) { m_addSupportedRegionsHasBeenSet = true; m_addSupportedRegions.push_back(value); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedRegions(Aws::String&& value) { m_addSupportedRegionsHasBeenSet = true; m_addSupportedRegions.push_back(std::move(value)); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedRegions(const char* value) { m_addSupportedRegionsHasBeenSet = true; m_addSupportedRegions.push_back(value); return *this; }
+    template<typename AddSupportedRegionsT = Aws::Vector<Aws::String>>
+    void SetAddSupportedRegions(AddSupportedRegionsT&& value) { m_addSupportedRegionsHasBeenSet = true; m_addSupportedRegions = std::forward<AddSupportedRegionsT>(value); }
+    template<typename AddSupportedRegionsT = Aws::Vector<Aws::String>>
+    ModifyVpcEndpointServiceConfigurationRequest& WithAddSupportedRegions(AddSupportedRegionsT&& value) { SetAddSupportedRegions(std::forward<AddSupportedRegionsT>(value)); return *this;}
+    template<typename AddSupportedRegionsT = Aws::String>
+    ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedRegions(AddSupportedRegionsT&& value) { m_addSupportedRegionsHasBeenSet = true; m_addSupportedRegions.emplace_back(std::forward<AddSupportedRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The supported Regions to remove from the service configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveSupportedRegions() const{ return m_removeSupportedRegions; }
+    inline const Aws::Vector<Aws::String>& GetRemoveSupportedRegions() const { return m_removeSupportedRegions; }
     inline bool RemoveSupportedRegionsHasBeenSet() const { return m_removeSupportedRegionsHasBeenSet; }
-    inline void SetRemoveSupportedRegions(const Aws::Vector<Aws::String>& value) { m_removeSupportedRegionsHasBeenSet = true; m_removeSupportedRegions = value; }
-    inline void SetRemoveSupportedRegions(Aws::Vector<Aws::String>&& value) { m_removeSupportedRegionsHasBeenSet = true; m_removeSupportedRegions = std::move(value); }
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveSupportedRegions(const Aws::Vector<Aws::String>& value) { SetRemoveSupportedRegions(value); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveSupportedRegions(Aws::Vector<Aws::String>&& value) { SetRemoveSupportedRegions(std::move(value)); return *this;}
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedRegions(const Aws::String& value) { m_removeSupportedRegionsHasBeenSet = true; m_removeSupportedRegions.push_back(value); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedRegions(Aws::String&& value) { m_removeSupportedRegionsHasBeenSet = true; m_removeSupportedRegions.push_back(std::move(value)); return *this; }
-    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedRegions(const char* value) { m_removeSupportedRegionsHasBeenSet = true; m_removeSupportedRegions.push_back(value); return *this; }
+    template<typename RemoveSupportedRegionsT = Aws::Vector<Aws::String>>
+    void SetRemoveSupportedRegions(RemoveSupportedRegionsT&& value) { m_removeSupportedRegionsHasBeenSet = true; m_removeSupportedRegions = std::forward<RemoveSupportedRegionsT>(value); }
+    template<typename RemoveSupportedRegionsT = Aws::Vector<Aws::String>>
+    ModifyVpcEndpointServiceConfigurationRequest& WithRemoveSupportedRegions(RemoveSupportedRegionsT&& value) { SetRemoveSupportedRegions(std::forward<RemoveSupportedRegionsT>(value)); return *this;}
+    template<typename RemoveSupportedRegionsT = Aws::String>
+    ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedRegions(RemoveSupportedRegionsT&& value) { m_removeSupportedRegionsHasBeenSet = true; m_removeSupportedRegions.emplace_back(std::forward<RemoveSupportedRegionsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_serviceId;
@@ -235,10 +223,10 @@ namespace Model
     Aws::String m_privateDnsName;
     bool m_privateDnsNameHasBeenSet = false;
 
-    bool m_removePrivateDnsName;
+    bool m_removePrivateDnsName{false};
     bool m_removePrivateDnsNameHasBeenSet = false;
 
-    bool m_acceptanceRequired;
+    bool m_acceptanceRequired{false};
     bool m_acceptanceRequiredHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addNetworkLoadBalancerArns;

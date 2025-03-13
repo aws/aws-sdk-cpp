@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-MixedInstancesPolicy::MixedInstancesPolicy() : 
-    m_launchTemplateHasBeenSet(false),
-    m_instancesDistributionHasBeenSet(false)
-{
-}
-
 MixedInstancesPolicy::MixedInstancesPolicy(const XmlNode& xmlNode)
-  : MixedInstancesPolicy()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ MixedInstancesPolicy& MixedInstancesPolicy::operator =(const XmlNode& xmlNode)
     {
       m_launchTemplate = launchTemplateNode;
       m_launchTemplateHasBeenSet = true;
+       m_launchTemplateHasBeenSet = true;
     }
     XmlNode instancesDistributionNode = resultNode.FirstChild("InstancesDistribution");
     if(!instancesDistributionNode.IsNull())
     {
       m_instancesDistribution = instancesDistributionNode;
       m_instancesDistributionHasBeenSet = true;
+       m_instancesDistributionHasBeenSet = true;
     }
   }
 

@@ -18,14 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-IspPlacement::IspPlacement() : 
-    m_ispNameHasBeenSet(false),
-    m_placementStatisticsHasBeenSet(false)
-{
-}
-
 IspPlacement::IspPlacement(JsonView jsonValue)
-  : IspPlacement()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IspPlacement& IspPlacement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IspName"))
   {
     m_ispName = jsonValue.GetString("IspName");
-
     m_ispNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlacementStatistics"))
   {
     m_placementStatistics = jsonValue.GetObject("PlacementStatistics");
-
     m_placementStatisticsHasBeenSet = true;
   }
-
   return *this;
 }
 

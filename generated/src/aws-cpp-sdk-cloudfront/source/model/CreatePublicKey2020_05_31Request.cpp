@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreatePublicKey2020_05_31Request::CreatePublicKey2020_05_31Request() : 
-    m_publicKeyConfigHasBeenSet(false)
-{
-}
 
 Aws::String CreatePublicKey2020_05_31Request::SerializePayload() const
 {

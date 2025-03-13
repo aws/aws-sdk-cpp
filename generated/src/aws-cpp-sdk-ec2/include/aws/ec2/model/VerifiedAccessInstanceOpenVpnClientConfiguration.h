@@ -33,7 +33,7 @@ namespace Model
   class VerifiedAccessInstanceOpenVpnClientConfiguration
   {
   public:
-    AWS_EC2_API VerifiedAccessInstanceOpenVpnClientConfiguration();
+    AWS_EC2_API VerifiedAccessInstanceOpenVpnClientConfiguration() = default;
     AWS_EC2_API VerifiedAccessInstanceOpenVpnClientConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VerifiedAccessInstanceOpenVpnClientConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,26 @@ namespace Model
     /**
      * <p>The base64-encoded Open VPN client configuration.</p>
      */
-    inline const Aws::String& GetConfig() const{ return m_config; }
+    inline const Aws::String& GetConfig() const { return m_config; }
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
-    inline void SetConfig(const Aws::String& value) { m_configHasBeenSet = true; m_config = value; }
-    inline void SetConfig(Aws::String&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
-    inline void SetConfig(const char* value) { m_configHasBeenSet = true; m_config.assign(value); }
-    inline VerifiedAccessInstanceOpenVpnClientConfiguration& WithConfig(const Aws::String& value) { SetConfig(value); return *this;}
-    inline VerifiedAccessInstanceOpenVpnClientConfiguration& WithConfig(Aws::String&& value) { SetConfig(std::move(value)); return *this;}
-    inline VerifiedAccessInstanceOpenVpnClientConfiguration& WithConfig(const char* value) { SetConfig(value); return *this;}
+    template<typename ConfigT = Aws::String>
+    void SetConfig(ConfigT&& value) { m_configHasBeenSet = true; m_config = std::forward<ConfigT>(value); }
+    template<typename ConfigT = Aws::String>
+    VerifiedAccessInstanceOpenVpnClientConfiguration& WithConfig(ConfigT&& value) { SetConfig(std::forward<ConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The routes.</p>
      */
-    inline const Aws::Vector<VerifiedAccessInstanceOpenVpnClientConfigurationRoute>& GetRoutes() const{ return m_routes; }
+    inline const Aws::Vector<VerifiedAccessInstanceOpenVpnClientConfigurationRoute>& GetRoutes() const { return m_routes; }
     inline bool RoutesHasBeenSet() const { return m_routesHasBeenSet; }
-    inline void SetRoutes(const Aws::Vector<VerifiedAccessInstanceOpenVpnClientConfigurationRoute>& value) { m_routesHasBeenSet = true; m_routes = value; }
-    inline void SetRoutes(Aws::Vector<VerifiedAccessInstanceOpenVpnClientConfigurationRoute>&& value) { m_routesHasBeenSet = true; m_routes = std::move(value); }
-    inline VerifiedAccessInstanceOpenVpnClientConfiguration& WithRoutes(const Aws::Vector<VerifiedAccessInstanceOpenVpnClientConfigurationRoute>& value) { SetRoutes(value); return *this;}
-    inline VerifiedAccessInstanceOpenVpnClientConfiguration& WithRoutes(Aws::Vector<VerifiedAccessInstanceOpenVpnClientConfigurationRoute>&& value) { SetRoutes(std::move(value)); return *this;}
-    inline VerifiedAccessInstanceOpenVpnClientConfiguration& AddRoutes(const VerifiedAccessInstanceOpenVpnClientConfigurationRoute& value) { m_routesHasBeenSet = true; m_routes.push_back(value); return *this; }
-    inline VerifiedAccessInstanceOpenVpnClientConfiguration& AddRoutes(VerifiedAccessInstanceOpenVpnClientConfigurationRoute&& value) { m_routesHasBeenSet = true; m_routes.push_back(std::move(value)); return *this; }
+    template<typename RoutesT = Aws::Vector<VerifiedAccessInstanceOpenVpnClientConfigurationRoute>>
+    void SetRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes = std::forward<RoutesT>(value); }
+    template<typename RoutesT = Aws::Vector<VerifiedAccessInstanceOpenVpnClientConfigurationRoute>>
+    VerifiedAccessInstanceOpenVpnClientConfiguration& WithRoutes(RoutesT&& value) { SetRoutes(std::forward<RoutesT>(value)); return *this;}
+    template<typename RoutesT = VerifiedAccessInstanceOpenVpnClientConfigurationRoute>
+    VerifiedAccessInstanceOpenVpnClientConfiguration& AddRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes.emplace_back(std::forward<RoutesT>(value)); return *this; }
     ///@}
   private:
 

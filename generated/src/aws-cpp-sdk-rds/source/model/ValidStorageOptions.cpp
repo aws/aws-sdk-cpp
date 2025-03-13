@@ -20,20 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ValidStorageOptions::ValidStorageOptions() : 
-    m_storageTypeHasBeenSet(false),
-    m_storageSizeHasBeenSet(false),
-    m_provisionedIopsHasBeenSet(false),
-    m_iopsToStorageRatioHasBeenSet(false),
-    m_supportsStorageAutoscaling(false),
-    m_supportsStorageAutoscalingHasBeenSet(false),
-    m_provisionedStorageThroughputHasBeenSet(false),
-    m_storageThroughputToIopsRatioHasBeenSet(false)
-{
-}
-
 ValidStorageOptions::ValidStorageOptions(const XmlNode& xmlNode)
-  : ValidStorageOptions()
 {
   *this = xmlNode;
 }
@@ -49,72 +36,79 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
     {
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
+       m_storageTypeHasBeenSet = true;
     }
     XmlNode storageSizeNode = resultNode.FirstChild("StorageSize");
     if(!storageSizeNode.IsNull())
     {
       XmlNode storageSizeMember = storageSizeNode.FirstChild("Range");
+      m_storageSizeHasBeenSet = !storageSizeMember.IsNull();
       while(!storageSizeMember.IsNull())
       {
         m_storageSize.push_back(storageSizeMember);
         storageSizeMember = storageSizeMember.NextNode("Range");
       }
 
-      m_storageSizeHasBeenSet = true;
+       m_storageSizeHasBeenSet = true;
     }
     XmlNode provisionedIopsNode = resultNode.FirstChild("ProvisionedIops");
     if(!provisionedIopsNode.IsNull())
     {
       XmlNode provisionedIopsMember = provisionedIopsNode.FirstChild("Range");
+      m_provisionedIopsHasBeenSet = !provisionedIopsMember.IsNull();
       while(!provisionedIopsMember.IsNull())
       {
         m_provisionedIops.push_back(provisionedIopsMember);
         provisionedIopsMember = provisionedIopsMember.NextNode("Range");
       }
 
-      m_provisionedIopsHasBeenSet = true;
+       m_provisionedIopsHasBeenSet = true;
     }
     XmlNode iopsToStorageRatioNode = resultNode.FirstChild("IopsToStorageRatio");
     if(!iopsToStorageRatioNode.IsNull())
     {
       XmlNode iopsToStorageRatioMember = iopsToStorageRatioNode.FirstChild("DoubleRange");
+      m_iopsToStorageRatioHasBeenSet = !iopsToStorageRatioMember.IsNull();
       while(!iopsToStorageRatioMember.IsNull())
       {
         m_iopsToStorageRatio.push_back(iopsToStorageRatioMember);
         iopsToStorageRatioMember = iopsToStorageRatioMember.NextNode("DoubleRange");
       }
 
-      m_iopsToStorageRatioHasBeenSet = true;
+       m_iopsToStorageRatioHasBeenSet = true;
     }
     XmlNode supportsStorageAutoscalingNode = resultNode.FirstChild("SupportsStorageAutoscaling");
     if(!supportsStorageAutoscalingNode.IsNull())
     {
       m_supportsStorageAutoscaling = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsStorageAutoscalingNode.GetText()).c_str()).c_str());
       m_supportsStorageAutoscalingHasBeenSet = true;
+       m_supportsStorageAutoscalingHasBeenSet = true;
     }
     XmlNode provisionedStorageThroughputNode = resultNode.FirstChild("ProvisionedStorageThroughput");
     if(!provisionedStorageThroughputNode.IsNull())
     {
       XmlNode provisionedStorageThroughputMember = provisionedStorageThroughputNode.FirstChild("Range");
+      m_provisionedStorageThroughputHasBeenSet = !provisionedStorageThroughputMember.IsNull();
       while(!provisionedStorageThroughputMember.IsNull())
       {
         m_provisionedStorageThroughput.push_back(provisionedStorageThroughputMember);
         provisionedStorageThroughputMember = provisionedStorageThroughputMember.NextNode("Range");
       }
 
-      m_provisionedStorageThroughputHasBeenSet = true;
+       m_provisionedStorageThroughputHasBeenSet = true;
     }
     XmlNode storageThroughputToIopsRatioNode = resultNode.FirstChild("StorageThroughputToIopsRatio");
     if(!storageThroughputToIopsRatioNode.IsNull())
     {
       XmlNode storageThroughputToIopsRatioMember = storageThroughputToIopsRatioNode.FirstChild("DoubleRange");
+      m_storageThroughputToIopsRatioHasBeenSet = !storageThroughputToIopsRatioMember.IsNull();
       while(!storageThroughputToIopsRatioMember.IsNull())
       {
         m_storageThroughputToIopsRatio.push_back(storageThroughputToIopsRatioMember);
         storageThroughputToIopsRatioMember = storageThroughputToIopsRatioMember.NextNode("DoubleRange");
       }
 
-      m_storageThroughputToIopsRatioHasBeenSet = true;
+       m_storageThroughputToIopsRatioHasBeenSet = true;
     }
   }
 

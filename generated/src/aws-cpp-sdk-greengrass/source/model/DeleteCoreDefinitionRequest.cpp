@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCoreDefinitionRequest::DeleteCoreDefinitionRequest() : 
-    m_coreDefinitionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCoreDefinitionRequest::SerializePayload() const
 {
   return {};

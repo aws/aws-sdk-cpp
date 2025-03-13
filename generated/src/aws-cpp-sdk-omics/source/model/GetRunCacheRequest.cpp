@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRunCacheRequest::GetRunCacheRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetRunCacheRequest::SerializePayload() const
 {
   return {};

@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetStatementRequest::GetStatementRequest() : 
-    m_sessionIdHasBeenSet(false),
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_requestOriginHasBeenSet(false)
-{
-}
-
 Aws::String GetStatementRequest::SerializePayload() const
 {
   JsonValue payload;

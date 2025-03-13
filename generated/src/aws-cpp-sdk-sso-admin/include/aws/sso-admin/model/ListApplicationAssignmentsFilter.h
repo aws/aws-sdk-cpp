@@ -32,7 +32,7 @@ namespace Model
   class ListApplicationAssignmentsFilter
   {
   public:
-    AWS_SSOADMIN_API ListApplicationAssignmentsFilter();
+    AWS_SSOADMIN_API ListApplicationAssignmentsFilter() = default;
     AWS_SSOADMIN_API ListApplicationAssignmentsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API ListApplicationAssignmentsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ARN of an application.</p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-    inline ListApplicationAssignmentsFilter& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline ListApplicationAssignmentsFilter& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline ListApplicationAssignmentsFilter& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    ListApplicationAssignmentsFilter& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
   private:
 

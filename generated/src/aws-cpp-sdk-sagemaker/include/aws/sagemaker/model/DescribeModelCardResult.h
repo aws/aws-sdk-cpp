@@ -32,7 +32,7 @@ namespace Model
   class DescribeModelCardResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeModelCardResult();
+    AWS_SAGEMAKER_API DescribeModelCardResult() = default;
     AWS_SAGEMAKER_API DescribeModelCardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeModelCardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,34 +41,30 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the model card.</p>
      */
-    inline const Aws::String& GetModelCardArn() const{ return m_modelCardArn; }
-    inline void SetModelCardArn(const Aws::String& value) { m_modelCardArn = value; }
-    inline void SetModelCardArn(Aws::String&& value) { m_modelCardArn = std::move(value); }
-    inline void SetModelCardArn(const char* value) { m_modelCardArn.assign(value); }
-    inline DescribeModelCardResult& WithModelCardArn(const Aws::String& value) { SetModelCardArn(value); return *this;}
-    inline DescribeModelCardResult& WithModelCardArn(Aws::String&& value) { SetModelCardArn(std::move(value)); return *this;}
-    inline DescribeModelCardResult& WithModelCardArn(const char* value) { SetModelCardArn(value); return *this;}
+    inline const Aws::String& GetModelCardArn() const { return m_modelCardArn; }
+    template<typename ModelCardArnT = Aws::String>
+    void SetModelCardArn(ModelCardArnT&& value) { m_modelCardArnHasBeenSet = true; m_modelCardArn = std::forward<ModelCardArnT>(value); }
+    template<typename ModelCardArnT = Aws::String>
+    DescribeModelCardResult& WithModelCardArn(ModelCardArnT&& value) { SetModelCardArn(std::forward<ModelCardArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the model card.</p>
      */
-    inline const Aws::String& GetModelCardName() const{ return m_modelCardName; }
-    inline void SetModelCardName(const Aws::String& value) { m_modelCardName = value; }
-    inline void SetModelCardName(Aws::String&& value) { m_modelCardName = std::move(value); }
-    inline void SetModelCardName(const char* value) { m_modelCardName.assign(value); }
-    inline DescribeModelCardResult& WithModelCardName(const Aws::String& value) { SetModelCardName(value); return *this;}
-    inline DescribeModelCardResult& WithModelCardName(Aws::String&& value) { SetModelCardName(std::move(value)); return *this;}
-    inline DescribeModelCardResult& WithModelCardName(const char* value) { SetModelCardName(value); return *this;}
+    inline const Aws::String& GetModelCardName() const { return m_modelCardName; }
+    template<typename ModelCardNameT = Aws::String>
+    void SetModelCardName(ModelCardNameT&& value) { m_modelCardNameHasBeenSet = true; m_modelCardName = std::forward<ModelCardNameT>(value); }
+    template<typename ModelCardNameT = Aws::String>
+    DescribeModelCardResult& WithModelCardName(ModelCardNameT&& value) { SetModelCardName(std::forward<ModelCardNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the model card.</p>
      */
-    inline int GetModelCardVersion() const{ return m_modelCardVersion; }
-    inline void SetModelCardVersion(int value) { m_modelCardVersion = value; }
+    inline int GetModelCardVersion() const { return m_modelCardVersion; }
+    inline void SetModelCardVersion(int value) { m_modelCardVersionHasBeenSet = true; m_modelCardVersion = value; }
     inline DescribeModelCardResult& WithModelCardVersion(int value) { SetModelCardVersion(value); return *this;}
     ///@}
 
@@ -76,13 +72,11 @@ namespace Model
     /**
      * <p>The content of the model card.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
-    inline void SetContent(const Aws::String& value) { m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_content.assign(value); }
-    inline DescribeModelCardResult& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline DescribeModelCardResult& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline DescribeModelCardResult& WithContent(const char* value) { SetContent(value); return *this;}
+    inline const Aws::String& GetContent() const { return m_content; }
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    DescribeModelCardResult& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,62 +90,60 @@ namespace Model
      * No more updates should be made to the model card, but it can still be
      * exported.</p> </li> </ul>
      */
-    inline const ModelCardStatus& GetModelCardStatus() const{ return m_modelCardStatus; }
-    inline void SetModelCardStatus(const ModelCardStatus& value) { m_modelCardStatus = value; }
-    inline void SetModelCardStatus(ModelCardStatus&& value) { m_modelCardStatus = std::move(value); }
-    inline DescribeModelCardResult& WithModelCardStatus(const ModelCardStatus& value) { SetModelCardStatus(value); return *this;}
-    inline DescribeModelCardResult& WithModelCardStatus(ModelCardStatus&& value) { SetModelCardStatus(std::move(value)); return *this;}
+    inline ModelCardStatus GetModelCardStatus() const { return m_modelCardStatus; }
+    inline void SetModelCardStatus(ModelCardStatus value) { m_modelCardStatusHasBeenSet = true; m_modelCardStatus = value; }
+    inline DescribeModelCardResult& WithModelCardStatus(ModelCardStatus value) { SetModelCardStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The security configuration used to protect model card content.</p>
      */
-    inline const ModelCardSecurityConfig& GetSecurityConfig() const{ return m_securityConfig; }
-    inline void SetSecurityConfig(const ModelCardSecurityConfig& value) { m_securityConfig = value; }
-    inline void SetSecurityConfig(ModelCardSecurityConfig&& value) { m_securityConfig = std::move(value); }
-    inline DescribeModelCardResult& WithSecurityConfig(const ModelCardSecurityConfig& value) { SetSecurityConfig(value); return *this;}
-    inline DescribeModelCardResult& WithSecurityConfig(ModelCardSecurityConfig&& value) { SetSecurityConfig(std::move(value)); return *this;}
+    inline const ModelCardSecurityConfig& GetSecurityConfig() const { return m_securityConfig; }
+    template<typename SecurityConfigT = ModelCardSecurityConfig>
+    void SetSecurityConfig(SecurityConfigT&& value) { m_securityConfigHasBeenSet = true; m_securityConfig = std::forward<SecurityConfigT>(value); }
+    template<typename SecurityConfigT = ModelCardSecurityConfig>
+    DescribeModelCardResult& WithSecurityConfig(SecurityConfigT&& value) { SetSecurityConfig(std::forward<SecurityConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the model card was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeModelCardResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeModelCardResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeModelCardResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const UserContext& value) { m_createdBy = value; }
-    inline void SetCreatedBy(UserContext&& value) { m_createdBy = std::move(value); }
-    inline DescribeModelCardResult& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
-    inline DescribeModelCardResult& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
+    inline const UserContext& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = UserContext>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = UserContext>
+    DescribeModelCardResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the model card was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeModelCardResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeModelCardResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeModelCardResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UserContext& GetLastModifiedBy() const{ return m_lastModifiedBy; }
-    inline void SetLastModifiedBy(const UserContext& value) { m_lastModifiedBy = value; }
-    inline void SetLastModifiedBy(UserContext&& value) { m_lastModifiedBy = std::move(value); }
-    inline DescribeModelCardResult& WithLastModifiedBy(const UserContext& value) { SetLastModifiedBy(value); return *this;}
-    inline DescribeModelCardResult& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
+    inline const UserContext& GetLastModifiedBy() const { return m_lastModifiedBy; }
+    template<typename LastModifiedByT = UserContext>
+    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
+    template<typename LastModifiedByT = UserContext>
+    DescribeModelCardResult& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,48 +159,56 @@ namespace Model
      * <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
      * </ul>
      */
-    inline const ModelCardProcessingStatus& GetModelCardProcessingStatus() const{ return m_modelCardProcessingStatus; }
-    inline void SetModelCardProcessingStatus(const ModelCardProcessingStatus& value) { m_modelCardProcessingStatus = value; }
-    inline void SetModelCardProcessingStatus(ModelCardProcessingStatus&& value) { m_modelCardProcessingStatus = std::move(value); }
-    inline DescribeModelCardResult& WithModelCardProcessingStatus(const ModelCardProcessingStatus& value) { SetModelCardProcessingStatus(value); return *this;}
-    inline DescribeModelCardResult& WithModelCardProcessingStatus(ModelCardProcessingStatus&& value) { SetModelCardProcessingStatus(std::move(value)); return *this;}
+    inline ModelCardProcessingStatus GetModelCardProcessingStatus() const { return m_modelCardProcessingStatus; }
+    inline void SetModelCardProcessingStatus(ModelCardProcessingStatus value) { m_modelCardProcessingStatusHasBeenSet = true; m_modelCardProcessingStatus = value; }
+    inline DescribeModelCardResult& WithModelCardProcessingStatus(ModelCardProcessingStatus value) { SetModelCardProcessingStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeModelCardResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeModelCardResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeModelCardResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeModelCardResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_modelCardArn;
+    bool m_modelCardArnHasBeenSet = false;
 
     Aws::String m_modelCardName;
+    bool m_modelCardNameHasBeenSet = false;
 
-    int m_modelCardVersion;
+    int m_modelCardVersion{0};
+    bool m_modelCardVersionHasBeenSet = false;
 
     Aws::String m_content;
+    bool m_contentHasBeenSet = false;
 
-    ModelCardStatus m_modelCardStatus;
+    ModelCardStatus m_modelCardStatus{ModelCardStatus::NOT_SET};
+    bool m_modelCardStatusHasBeenSet = false;
 
     ModelCardSecurityConfig m_securityConfig;
+    bool m_securityConfigHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     UserContext m_lastModifiedBy;
+    bool m_lastModifiedByHasBeenSet = false;
 
-    ModelCardProcessingStatus m_modelCardProcessingStatus;
+    ModelCardProcessingStatus m_modelCardProcessingStatus{ModelCardProcessingStatus::NOT_SET};
+    bool m_modelCardProcessingStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

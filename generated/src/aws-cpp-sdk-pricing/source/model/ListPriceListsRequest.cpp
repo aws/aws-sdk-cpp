@@ -12,17 +12,6 @@ using namespace Aws::Pricing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPriceListsRequest::ListPriceListsRequest() : 
-    m_serviceCodeHasBeenSet(false),
-    m_effectiveDateHasBeenSet(false),
-    m_regionCodeHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListPriceListsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,19 +12,6 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFlowRequest::UpdateFlowRequest() : 
-    m_flowNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_triggerConfigHasBeenSet(false),
-    m_sourceFlowConfigHasBeenSet(false),
-    m_destinationFlowConfigListHasBeenSet(false),
-    m_tasksHasBeenSet(false),
-    m_metadataCatalogConfigHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateFlowRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class FrameResolution
   {
   public:
-    AWS_MEDIACONNECT_API FrameResolution();
+    AWS_MEDIACONNECT_API FrameResolution() = default;
     AWS_MEDIACONNECT_API FrameResolution(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API FrameResolution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * The number of pixels in the height of the video frame.
      */
-    inline int GetFrameHeight() const{ return m_frameHeight; }
+    inline int GetFrameHeight() const { return m_frameHeight; }
     inline bool FrameHeightHasBeenSet() const { return m_frameHeightHasBeenSet; }
     inline void SetFrameHeight(int value) { m_frameHeightHasBeenSet = true; m_frameHeight = value; }
     inline FrameResolution& WithFrameHeight(int value) { SetFrameHeight(value); return *this;}
@@ -49,17 +49,17 @@ namespace Model
     /**
      * The number of pixels in the width of the video frame.
      */
-    inline int GetFrameWidth() const{ return m_frameWidth; }
+    inline int GetFrameWidth() const { return m_frameWidth; }
     inline bool FrameWidthHasBeenSet() const { return m_frameWidthHasBeenSet; }
     inline void SetFrameWidth(int value) { m_frameWidthHasBeenSet = true; m_frameWidth = value; }
     inline FrameResolution& WithFrameWidth(int value) { SetFrameWidth(value); return *this;}
     ///@}
   private:
 
-    int m_frameHeight;
+    int m_frameHeight{0};
     bool m_frameHeightHasBeenSet = false;
 
-    int m_frameWidth;
+    int m_frameWidth{0};
     bool m_frameWidthHasBeenSet = false;
   };
 

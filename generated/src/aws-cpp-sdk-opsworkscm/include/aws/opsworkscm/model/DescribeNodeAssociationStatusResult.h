@@ -30,7 +30,7 @@ namespace Model
   class DescribeNodeAssociationStatusResult
   {
   public:
-    AWS_OPSWORKSCM_API DescribeNodeAssociationStatusResult();
+    AWS_OPSWORKSCM_API DescribeNodeAssociationStatusResult() = default;
     AWS_OPSWORKSCM_API DescribeNodeAssociationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKSCM_API DescribeNodeAssociationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,11 +44,9 @@ namespace Model
      * <p> <code>IN_PROGRESS</code>: The association or disassociation is still in
      * progress. </p> </li> </ul>
      */
-    inline const NodeAssociationStatus& GetNodeAssociationStatus() const{ return m_nodeAssociationStatus; }
-    inline void SetNodeAssociationStatus(const NodeAssociationStatus& value) { m_nodeAssociationStatus = value; }
-    inline void SetNodeAssociationStatus(NodeAssociationStatus&& value) { m_nodeAssociationStatus = std::move(value); }
-    inline DescribeNodeAssociationStatusResult& WithNodeAssociationStatus(const NodeAssociationStatus& value) { SetNodeAssociationStatus(value); return *this;}
-    inline DescribeNodeAssociationStatusResult& WithNodeAssociationStatus(NodeAssociationStatus&& value) { SetNodeAssociationStatus(std::move(value)); return *this;}
+    inline NodeAssociationStatus GetNodeAssociationStatus() const { return m_nodeAssociationStatus; }
+    inline void SetNodeAssociationStatus(NodeAssociationStatus value) { m_nodeAssociationStatusHasBeenSet = true; m_nodeAssociationStatus = value; }
+    inline DescribeNodeAssociationStatusResult& WithNodeAssociationStatus(NodeAssociationStatus value) { SetNodeAssociationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -56,32 +54,33 @@ namespace Model
      * <p>Attributes specific to the node association. In Puppet, the attibute
      * PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
      */
-    inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
-    inline void SetEngineAttributes(const Aws::Vector<EngineAttribute>& value) { m_engineAttributes = value; }
-    inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributes = std::move(value); }
-    inline DescribeNodeAssociationStatusResult& WithEngineAttributes(const Aws::Vector<EngineAttribute>& value) { SetEngineAttributes(value); return *this;}
-    inline DescribeNodeAssociationStatusResult& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(std::move(value)); return *this;}
-    inline DescribeNodeAssociationStatusResult& AddEngineAttributes(const EngineAttribute& value) { m_engineAttributes.push_back(value); return *this; }
-    inline DescribeNodeAssociationStatusResult& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const { return m_engineAttributes; }
+    template<typename EngineAttributesT = Aws::Vector<EngineAttribute>>
+    void SetEngineAttributes(EngineAttributesT&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = std::forward<EngineAttributesT>(value); }
+    template<typename EngineAttributesT = Aws::Vector<EngineAttribute>>
+    DescribeNodeAssociationStatusResult& WithEngineAttributes(EngineAttributesT&& value) { SetEngineAttributes(std::forward<EngineAttributesT>(value)); return *this;}
+    template<typename EngineAttributesT = EngineAttribute>
+    DescribeNodeAssociationStatusResult& AddEngineAttributes(EngineAttributesT&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.emplace_back(std::forward<EngineAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeNodeAssociationStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeNodeAssociationStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeNodeAssociationStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeNodeAssociationStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    NodeAssociationStatus m_nodeAssociationStatus;
+    NodeAssociationStatus m_nodeAssociationStatus{NodeAssociationStatus::NOT_SET};
+    bool m_nodeAssociationStatusHasBeenSet = false;
 
     Aws::Vector<EngineAttribute> m_engineAttributes;
+    bool m_engineAttributesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

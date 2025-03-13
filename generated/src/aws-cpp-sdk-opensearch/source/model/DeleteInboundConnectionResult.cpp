@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteInboundConnectionResult::DeleteInboundConnectionResult()
-{
-}
-
 DeleteInboundConnectionResult::DeleteInboundConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteInboundConnectionResult& DeleteInboundConnectionResult::operator =(const A
   if(jsonValue.ValueExists("Connection"))
   {
     m_connection = jsonValue.GetObject("Connection");
-
+    m_connectionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

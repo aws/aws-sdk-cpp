@@ -12,34 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateReplicationConfigurationTemplateRequest::UpdateReplicationConfigurationTemplateRequest() : 
-    m_arnHasBeenSet(false),
-    m_associateDefaultSecurityGroup(false),
-    m_associateDefaultSecurityGroupHasBeenSet(false),
-    m_autoReplicateNewDisks(false),
-    m_autoReplicateNewDisksHasBeenSet(false),
-    m_bandwidthThrottling(0),
-    m_bandwidthThrottlingHasBeenSet(false),
-    m_createPublicIP(false),
-    m_createPublicIPHasBeenSet(false),
-    m_dataPlaneRouting(ReplicationConfigurationDataPlaneRouting::NOT_SET),
-    m_dataPlaneRoutingHasBeenSet(false),
-    m_defaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType::NOT_SET),
-    m_defaultLargeStagingDiskTypeHasBeenSet(false),
-    m_ebsEncryption(ReplicationConfigurationEbsEncryption::NOT_SET),
-    m_ebsEncryptionHasBeenSet(false),
-    m_ebsEncryptionKeyArnHasBeenSet(false),
-    m_pitPolicyHasBeenSet(false),
-    m_replicationConfigurationTemplateIDHasBeenSet(false),
-    m_replicationServerInstanceTypeHasBeenSet(false),
-    m_replicationServersSecurityGroupsIDsHasBeenSet(false),
-    m_stagingAreaSubnetIdHasBeenSet(false),
-    m_stagingAreaTagsHasBeenSet(false),
-    m_useDedicatedReplicationServer(false),
-    m_useDedicatedReplicationServerHasBeenSet(false)
-{
-}
-
 Aws::String UpdateReplicationConfigurationTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

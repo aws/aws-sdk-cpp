@@ -18,19 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-InferenceConfiguration::InferenceConfiguration() : 
-    m_maxTokens(0),
-    m_maxTokensHasBeenSet(false),
-    m_temperature(0.0),
-    m_temperatureHasBeenSet(false),
-    m_topP(0.0),
-    m_topPHasBeenSet(false),
-    m_stopSequencesHasBeenSet(false)
-{
-}
-
 InferenceConfiguration::InferenceConfiguration(JsonView jsonValue)
-  : InferenceConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ InferenceConfiguration& InferenceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxTokens"))
   {
     m_maxTokens = jsonValue.GetInteger("maxTokens");
-
     m_maxTokensHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("temperature"))
   {
     m_temperature = jsonValue.GetDouble("temperature");
-
     m_temperatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topP"))
   {
     m_topP = jsonValue.GetDouble("topP");
-
     m_topPHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopSequences"))
   {
     Aws::Utils::Array<JsonView> stopSequencesJsonList = jsonValue.GetArray("stopSequences");
@@ -67,7 +49,6 @@ InferenceConfiguration& InferenceConfiguration::operator =(JsonView jsonValue)
     }
     m_stopSequencesHasBeenSet = true;
   }
-
   return *this;
 }
 

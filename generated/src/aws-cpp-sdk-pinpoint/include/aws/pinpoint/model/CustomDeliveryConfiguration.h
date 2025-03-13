@@ -36,7 +36,7 @@ namespace Model
   class CustomDeliveryConfiguration
   {
   public:
-    AWS_PINPOINT_API CustomDeliveryConfiguration();
+    AWS_PINPOINT_API CustomDeliveryConfiguration() = default;
     AWS_PINPOINT_API CustomDeliveryConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API CustomDeliveryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * supports HTTPS and can receive the message. The URL has to be a full URL,
      * including the HTTPS protocol.</p></li></ul> 
      */
-    inline const Aws::String& GetDeliveryUri() const{ return m_deliveryUri; }
+    inline const Aws::String& GetDeliveryUri() const { return m_deliveryUri; }
     inline bool DeliveryUriHasBeenSet() const { return m_deliveryUriHasBeenSet; }
-    inline void SetDeliveryUri(const Aws::String& value) { m_deliveryUriHasBeenSet = true; m_deliveryUri = value; }
-    inline void SetDeliveryUri(Aws::String&& value) { m_deliveryUriHasBeenSet = true; m_deliveryUri = std::move(value); }
-    inline void SetDeliveryUri(const char* value) { m_deliveryUriHasBeenSet = true; m_deliveryUri.assign(value); }
-    inline CustomDeliveryConfiguration& WithDeliveryUri(const Aws::String& value) { SetDeliveryUri(value); return *this;}
-    inline CustomDeliveryConfiguration& WithDeliveryUri(Aws::String&& value) { SetDeliveryUri(std::move(value)); return *this;}
-    inline CustomDeliveryConfiguration& WithDeliveryUri(const char* value) { SetDeliveryUri(value); return *this;}
+    template<typename DeliveryUriT = Aws::String>
+    void SetDeliveryUri(DeliveryUriT&& value) { m_deliveryUriHasBeenSet = true; m_deliveryUri = std::forward<DeliveryUriT>(value); }
+    template<typename DeliveryUriT = Aws::String>
+    CustomDeliveryConfiguration& WithDeliveryUri(DeliveryUriT&& value) { SetDeliveryUri(std::forward<DeliveryUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,13 @@ namespace Model
      * maps to a type of channel that you can associate with an endpoint by using the
      * ChannelType property of an endpoint.</p>
      */
-    inline const Aws::Vector<__EndpointTypesElement>& GetEndpointTypes() const{ return m_endpointTypes; }
+    inline const Aws::Vector<__EndpointTypesElement>& GetEndpointTypes() const { return m_endpointTypes; }
     inline bool EndpointTypesHasBeenSet() const { return m_endpointTypesHasBeenSet; }
-    inline void SetEndpointTypes(const Aws::Vector<__EndpointTypesElement>& value) { m_endpointTypesHasBeenSet = true; m_endpointTypes = value; }
-    inline void SetEndpointTypes(Aws::Vector<__EndpointTypesElement>&& value) { m_endpointTypesHasBeenSet = true; m_endpointTypes = std::move(value); }
-    inline CustomDeliveryConfiguration& WithEndpointTypes(const Aws::Vector<__EndpointTypesElement>& value) { SetEndpointTypes(value); return *this;}
-    inline CustomDeliveryConfiguration& WithEndpointTypes(Aws::Vector<__EndpointTypesElement>&& value) { SetEndpointTypes(std::move(value)); return *this;}
-    inline CustomDeliveryConfiguration& AddEndpointTypes(const __EndpointTypesElement& value) { m_endpointTypesHasBeenSet = true; m_endpointTypes.push_back(value); return *this; }
-    inline CustomDeliveryConfiguration& AddEndpointTypes(__EndpointTypesElement&& value) { m_endpointTypesHasBeenSet = true; m_endpointTypes.push_back(std::move(value)); return *this; }
+    template<typename EndpointTypesT = Aws::Vector<__EndpointTypesElement>>
+    void SetEndpointTypes(EndpointTypesT&& value) { m_endpointTypesHasBeenSet = true; m_endpointTypes = std::forward<EndpointTypesT>(value); }
+    template<typename EndpointTypesT = Aws::Vector<__EndpointTypesElement>>
+    CustomDeliveryConfiguration& WithEndpointTypes(EndpointTypesT&& value) { SetEndpointTypes(std::forward<EndpointTypesT>(value)); return *this;}
+    inline CustomDeliveryConfiguration& AddEndpointTypes(__EndpointTypesElement value) { m_endpointTypesHasBeenSet = true; m_endpointTypes.push_back(value); return *this; }
     ///@}
   private:
 

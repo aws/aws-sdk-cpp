@@ -18,26 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ComponentVersion::ComponentVersion() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_supportedOsVersionsHasBeenSet(false),
-    m_type(ComponentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_status(ComponentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_productCodesHasBeenSet(false)
-{
-}
-
 ComponentVersion::ComponentVersion(JsonView jsonValue)
-  : ComponentVersion()
 {
   *this = jsonValue;
 }
@@ -47,38 +28,28 @@ ComponentVersion& ComponentVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = PlatformMapper::GetPlatformForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedOsVersions"))
   {
     Aws::Utils::Array<JsonView> supportedOsVersionsJsonList = jsonValue.GetArray("supportedOsVersions");
@@ -88,35 +59,26 @@ ComponentVersion& ComponentVersion::operator =(JsonView jsonValue)
     }
     m_supportedOsVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ComponentTypeMapper::GetComponentTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetString("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateCreated"))
   {
     m_dateCreated = jsonValue.GetString("dateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ComponentStatusMapper::GetComponentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productCodes"))
   {
     Aws::Utils::Array<JsonView> productCodesJsonList = jsonValue.GetArray("productCodes");
@@ -126,7 +88,6 @@ ComponentVersion& ComponentVersion::operator =(JsonView jsonValue)
     }
     m_productCodesHasBeenSet = true;
   }
-
   return *this;
 }
 

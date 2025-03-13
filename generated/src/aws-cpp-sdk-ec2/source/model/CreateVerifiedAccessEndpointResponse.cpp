@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateVerifiedAccessEndpointResponse::CreateVerifiedAccessEndpointResponse()
-{
-}
-
 CreateVerifiedAccessEndpointResponse::CreateVerifiedAccessEndpointResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateVerifiedAccessEndpointResponse& CreateVerifiedAccessEndpointResponse::oper
     if(!verifiedAccessEndpointNode.IsNull())
     {
       m_verifiedAccessEndpoint = verifiedAccessEndpointNode;
+      m_verifiedAccessEndpointHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateVerifiedAccessEndpointResponse& CreateVerifiedAccessEndpointResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateVerifiedAccessEndpointResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

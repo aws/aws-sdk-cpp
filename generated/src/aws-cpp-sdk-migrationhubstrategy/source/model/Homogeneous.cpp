@@ -18,13 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-Homogeneous::Homogeneous() : 
-    m_targetDatabaseEngineHasBeenSet(false)
-{
-}
-
 Homogeneous::Homogeneous(JsonView jsonValue)
-  : Homogeneous()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Homogeneous& Homogeneous::operator =(JsonView jsonValue)
     }
     m_targetDatabaseEngineHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-QueryStringKeyValuePair::QueryStringKeyValuePair() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 QueryStringKeyValuePair::QueryStringKeyValuePair(const XmlNode& xmlNode)
-  : QueryStringKeyValuePair()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ QueryStringKeyValuePair& QueryStringKeyValuePair::operator =(const XmlNode& xmlN
     {
       m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
+       m_keyHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

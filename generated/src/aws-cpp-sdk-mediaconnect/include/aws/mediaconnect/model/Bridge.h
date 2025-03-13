@@ -41,7 +41,7 @@ namespace Model
   class Bridge
   {
   public:
-    AWS_MEDIACONNECT_API Bridge();
+    AWS_MEDIACONNECT_API Bridge() = default;
     AWS_MEDIACONNECT_API Bridge(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Bridge& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,122 +51,114 @@ namespace Model
     /**
      * The Amazon Resource Number (ARN) of the bridge.
      */
-    inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
+    inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
-    inline void SetBridgeArn(const Aws::String& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = value; }
-    inline void SetBridgeArn(Aws::String&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::move(value); }
-    inline void SetBridgeArn(const char* value) { m_bridgeArnHasBeenSet = true; m_bridgeArn.assign(value); }
-    inline Bridge& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
-    inline Bridge& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
-    inline Bridge& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
+    template<typename BridgeArnT = Aws::String>
+    void SetBridgeArn(BridgeArnT&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::forward<BridgeArnT>(value); }
+    template<typename BridgeArnT = Aws::String>
+    Bridge& WithBridgeArn(BridgeArnT&& value) { SetBridgeArn(std::forward<BridgeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<MessageDetail>& GetBridgeMessages() const{ return m_bridgeMessages; }
+    inline const Aws::Vector<MessageDetail>& GetBridgeMessages() const { return m_bridgeMessages; }
     inline bool BridgeMessagesHasBeenSet() const { return m_bridgeMessagesHasBeenSet; }
-    inline void SetBridgeMessages(const Aws::Vector<MessageDetail>& value) { m_bridgeMessagesHasBeenSet = true; m_bridgeMessages = value; }
-    inline void SetBridgeMessages(Aws::Vector<MessageDetail>&& value) { m_bridgeMessagesHasBeenSet = true; m_bridgeMessages = std::move(value); }
-    inline Bridge& WithBridgeMessages(const Aws::Vector<MessageDetail>& value) { SetBridgeMessages(value); return *this;}
-    inline Bridge& WithBridgeMessages(Aws::Vector<MessageDetail>&& value) { SetBridgeMessages(std::move(value)); return *this;}
-    inline Bridge& AddBridgeMessages(const MessageDetail& value) { m_bridgeMessagesHasBeenSet = true; m_bridgeMessages.push_back(value); return *this; }
-    inline Bridge& AddBridgeMessages(MessageDetail&& value) { m_bridgeMessagesHasBeenSet = true; m_bridgeMessages.push_back(std::move(value)); return *this; }
+    template<typename BridgeMessagesT = Aws::Vector<MessageDetail>>
+    void SetBridgeMessages(BridgeMessagesT&& value) { m_bridgeMessagesHasBeenSet = true; m_bridgeMessages = std::forward<BridgeMessagesT>(value); }
+    template<typename BridgeMessagesT = Aws::Vector<MessageDetail>>
+    Bridge& WithBridgeMessages(BridgeMessagesT&& value) { SetBridgeMessages(std::forward<BridgeMessagesT>(value)); return *this;}
+    template<typename BridgeMessagesT = MessageDetail>
+    Bridge& AddBridgeMessages(BridgeMessagesT&& value) { m_bridgeMessagesHasBeenSet = true; m_bridgeMessages.emplace_back(std::forward<BridgeMessagesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const BridgeState& GetBridgeState() const{ return m_bridgeState; }
+    inline BridgeState GetBridgeState() const { return m_bridgeState; }
     inline bool BridgeStateHasBeenSet() const { return m_bridgeStateHasBeenSet; }
-    inline void SetBridgeState(const BridgeState& value) { m_bridgeStateHasBeenSet = true; m_bridgeState = value; }
-    inline void SetBridgeState(BridgeState&& value) { m_bridgeStateHasBeenSet = true; m_bridgeState = std::move(value); }
-    inline Bridge& WithBridgeState(const BridgeState& value) { SetBridgeState(value); return *this;}
-    inline Bridge& WithBridgeState(BridgeState&& value) { SetBridgeState(std::move(value)); return *this;}
+    inline void SetBridgeState(BridgeState value) { m_bridgeStateHasBeenSet = true; m_bridgeState = value; }
+    inline Bridge& WithBridgeState(BridgeState value) { SetBridgeState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const EgressGatewayBridge& GetEgressGatewayBridge() const{ return m_egressGatewayBridge; }
+    inline const EgressGatewayBridge& GetEgressGatewayBridge() const { return m_egressGatewayBridge; }
     inline bool EgressGatewayBridgeHasBeenSet() const { return m_egressGatewayBridgeHasBeenSet; }
-    inline void SetEgressGatewayBridge(const EgressGatewayBridge& value) { m_egressGatewayBridgeHasBeenSet = true; m_egressGatewayBridge = value; }
-    inline void SetEgressGatewayBridge(EgressGatewayBridge&& value) { m_egressGatewayBridgeHasBeenSet = true; m_egressGatewayBridge = std::move(value); }
-    inline Bridge& WithEgressGatewayBridge(const EgressGatewayBridge& value) { SetEgressGatewayBridge(value); return *this;}
-    inline Bridge& WithEgressGatewayBridge(EgressGatewayBridge&& value) { SetEgressGatewayBridge(std::move(value)); return *this;}
+    template<typename EgressGatewayBridgeT = EgressGatewayBridge>
+    void SetEgressGatewayBridge(EgressGatewayBridgeT&& value) { m_egressGatewayBridgeHasBeenSet = true; m_egressGatewayBridge = std::forward<EgressGatewayBridgeT>(value); }
+    template<typename EgressGatewayBridgeT = EgressGatewayBridge>
+    Bridge& WithEgressGatewayBridge(EgressGatewayBridgeT&& value) { SetEgressGatewayBridge(std::forward<EgressGatewayBridgeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const IngressGatewayBridge& GetIngressGatewayBridge() const{ return m_ingressGatewayBridge; }
+    inline const IngressGatewayBridge& GetIngressGatewayBridge() const { return m_ingressGatewayBridge; }
     inline bool IngressGatewayBridgeHasBeenSet() const { return m_ingressGatewayBridgeHasBeenSet; }
-    inline void SetIngressGatewayBridge(const IngressGatewayBridge& value) { m_ingressGatewayBridgeHasBeenSet = true; m_ingressGatewayBridge = value; }
-    inline void SetIngressGatewayBridge(IngressGatewayBridge&& value) { m_ingressGatewayBridgeHasBeenSet = true; m_ingressGatewayBridge = std::move(value); }
-    inline Bridge& WithIngressGatewayBridge(const IngressGatewayBridge& value) { SetIngressGatewayBridge(value); return *this;}
-    inline Bridge& WithIngressGatewayBridge(IngressGatewayBridge&& value) { SetIngressGatewayBridge(std::move(value)); return *this;}
+    template<typename IngressGatewayBridgeT = IngressGatewayBridge>
+    void SetIngressGatewayBridge(IngressGatewayBridgeT&& value) { m_ingressGatewayBridgeHasBeenSet = true; m_ingressGatewayBridge = std::forward<IngressGatewayBridgeT>(value); }
+    template<typename IngressGatewayBridgeT = IngressGatewayBridge>
+    Bridge& WithIngressGatewayBridge(IngressGatewayBridgeT&& value) { SetIngressGatewayBridge(std::forward<IngressGatewayBridgeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the bridge.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Bridge& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Bridge& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Bridge& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Bridge& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The outputs on this bridge.
      */
-    inline const Aws::Vector<BridgeOutput>& GetOutputs() const{ return m_outputs; }
+    inline const Aws::Vector<BridgeOutput>& GetOutputs() const { return m_outputs; }
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
-    inline void SetOutputs(const Aws::Vector<BridgeOutput>& value) { m_outputsHasBeenSet = true; m_outputs = value; }
-    inline void SetOutputs(Aws::Vector<BridgeOutput>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
-    inline Bridge& WithOutputs(const Aws::Vector<BridgeOutput>& value) { SetOutputs(value); return *this;}
-    inline Bridge& WithOutputs(Aws::Vector<BridgeOutput>&& value) { SetOutputs(std::move(value)); return *this;}
-    inline Bridge& AddOutputs(const BridgeOutput& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
-    inline Bridge& AddOutputs(BridgeOutput&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
+    template<typename OutputsT = Aws::Vector<BridgeOutput>>
+    void SetOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs = std::forward<OutputsT>(value); }
+    template<typename OutputsT = Aws::Vector<BridgeOutput>>
+    Bridge& WithOutputs(OutputsT&& value) { SetOutputs(std::forward<OutputsT>(value)); return *this;}
+    template<typename OutputsT = BridgeOutput>
+    Bridge& AddOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs.emplace_back(std::forward<OutputsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The placement Amazon Resource Number (ARN) of the bridge.
      */
-    inline const Aws::String& GetPlacementArn() const{ return m_placementArn; }
+    inline const Aws::String& GetPlacementArn() const { return m_placementArn; }
     inline bool PlacementArnHasBeenSet() const { return m_placementArnHasBeenSet; }
-    inline void SetPlacementArn(const Aws::String& value) { m_placementArnHasBeenSet = true; m_placementArn = value; }
-    inline void SetPlacementArn(Aws::String&& value) { m_placementArnHasBeenSet = true; m_placementArn = std::move(value); }
-    inline void SetPlacementArn(const char* value) { m_placementArnHasBeenSet = true; m_placementArn.assign(value); }
-    inline Bridge& WithPlacementArn(const Aws::String& value) { SetPlacementArn(value); return *this;}
-    inline Bridge& WithPlacementArn(Aws::String&& value) { SetPlacementArn(std::move(value)); return *this;}
-    inline Bridge& WithPlacementArn(const char* value) { SetPlacementArn(value); return *this;}
+    template<typename PlacementArnT = Aws::String>
+    void SetPlacementArn(PlacementArnT&& value) { m_placementArnHasBeenSet = true; m_placementArn = std::forward<PlacementArnT>(value); }
+    template<typename PlacementArnT = Aws::String>
+    Bridge& WithPlacementArn(PlacementArnT&& value) { SetPlacementArn(std::forward<PlacementArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const FailoverConfig& GetSourceFailoverConfig() const{ return m_sourceFailoverConfig; }
+    inline const FailoverConfig& GetSourceFailoverConfig() const { return m_sourceFailoverConfig; }
     inline bool SourceFailoverConfigHasBeenSet() const { return m_sourceFailoverConfigHasBeenSet; }
-    inline void SetSourceFailoverConfig(const FailoverConfig& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = value; }
-    inline void SetSourceFailoverConfig(FailoverConfig&& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = std::move(value); }
-    inline Bridge& WithSourceFailoverConfig(const FailoverConfig& value) { SetSourceFailoverConfig(value); return *this;}
-    inline Bridge& WithSourceFailoverConfig(FailoverConfig&& value) { SetSourceFailoverConfig(std::move(value)); return *this;}
+    template<typename SourceFailoverConfigT = FailoverConfig>
+    void SetSourceFailoverConfig(SourceFailoverConfigT&& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = std::forward<SourceFailoverConfigT>(value); }
+    template<typename SourceFailoverConfigT = FailoverConfig>
+    Bridge& WithSourceFailoverConfig(SourceFailoverConfigT&& value) { SetSourceFailoverConfig(std::forward<SourceFailoverConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The sources on this bridge.
      */
-    inline const Aws::Vector<BridgeSource>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<BridgeSource>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<BridgeSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<BridgeSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline Bridge& WithSources(const Aws::Vector<BridgeSource>& value) { SetSources(value); return *this;}
-    inline Bridge& WithSources(Aws::Vector<BridgeSource>&& value) { SetSources(std::move(value)); return *this;}
-    inline Bridge& AddSources(const BridgeSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline Bridge& AddSources(BridgeSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<BridgeSource>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<BridgeSource>>
+    Bridge& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = BridgeSource>
+    Bridge& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
   private:
 
@@ -176,7 +168,7 @@ namespace Model
     Aws::Vector<MessageDetail> m_bridgeMessages;
     bool m_bridgeMessagesHasBeenSet = false;
 
-    BridgeState m_bridgeState;
+    BridgeState m_bridgeState{BridgeState::NOT_SET};
     bool m_bridgeStateHasBeenSet = false;
 
     EgressGatewayBridge m_egressGatewayBridge;

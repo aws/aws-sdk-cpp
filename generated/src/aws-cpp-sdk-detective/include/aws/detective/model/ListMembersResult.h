@@ -29,7 +29,7 @@ namespace Model
   class ListMembersResult
   {
   public:
-    AWS_DETECTIVE_API ListMembersResult();
+    AWS_DETECTIVE_API ListMembersResult() = default;
     AWS_DETECTIVE_API ListMembersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DETECTIVE_API ListMembersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
      * organization accounts that the Detective administrator account has not enabled
      * as member accounts.</p>
      */
-    inline const Aws::Vector<MemberDetail>& GetMemberDetails() const{ return m_memberDetails; }
-    inline void SetMemberDetails(const Aws::Vector<MemberDetail>& value) { m_memberDetails = value; }
-    inline void SetMemberDetails(Aws::Vector<MemberDetail>&& value) { m_memberDetails = std::move(value); }
-    inline ListMembersResult& WithMemberDetails(const Aws::Vector<MemberDetail>& value) { SetMemberDetails(value); return *this;}
-    inline ListMembersResult& WithMemberDetails(Aws::Vector<MemberDetail>&& value) { SetMemberDetails(std::move(value)); return *this;}
-    inline ListMembersResult& AddMemberDetails(const MemberDetail& value) { m_memberDetails.push_back(value); return *this; }
-    inline ListMembersResult& AddMemberDetails(MemberDetail&& value) { m_memberDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MemberDetail>& GetMemberDetails() const { return m_memberDetails; }
+    template<typename MemberDetailsT = Aws::Vector<MemberDetail>>
+    void SetMemberDetails(MemberDetailsT&& value) { m_memberDetailsHasBeenSet = true; m_memberDetails = std::forward<MemberDetailsT>(value); }
+    template<typename MemberDetailsT = Aws::Vector<MemberDetail>>
+    ListMembersResult& WithMemberDetails(MemberDetailsT&& value) { SetMemberDetails(std::forward<MemberDetailsT>(value)); return *this;}
+    template<typename MemberDetailsT = MemberDetail>
+    ListMembersResult& AddMemberDetails(MemberDetailsT&& value) { m_memberDetailsHasBeenSet = true; m_memberDetails.emplace_back(std::forward<MemberDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,31 @@ namespace Model
      * <p>If there are more member accounts remaining in the results, then use this
      * pagination token to request the next page of member accounts.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMembersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMembersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMembersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMembersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMembersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMembersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMembersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMembersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MemberDetail> m_memberDetails;
+    bool m_memberDetailsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

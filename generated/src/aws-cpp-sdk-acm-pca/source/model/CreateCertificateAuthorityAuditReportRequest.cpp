@@ -12,14 +12,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCertificateAuthorityAuditReportRequest::CreateCertificateAuthorityAuditReportRequest() : 
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_auditReportResponseFormat(AuditReportResponseFormat::NOT_SET),
-    m_auditReportResponseFormatHasBeenSet(false)
-{
-}
-
 Aws::String CreateCertificateAuthorityAuditReportRequest::SerializePayload() const
 {
   JsonValue payload;

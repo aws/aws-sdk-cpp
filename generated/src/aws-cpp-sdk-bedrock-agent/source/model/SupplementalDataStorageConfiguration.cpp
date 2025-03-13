@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-SupplementalDataStorageConfiguration::SupplementalDataStorageConfiguration() : 
-    m_storageLocationsHasBeenSet(false)
-{
-}
-
 SupplementalDataStorageConfiguration::SupplementalDataStorageConfiguration(JsonView jsonValue)
-  : SupplementalDataStorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SupplementalDataStorageConfiguration& SupplementalDataStorageConfiguration::oper
     }
     m_storageLocationsHasBeenSet = true;
   }
-
   return *this;
 }
 

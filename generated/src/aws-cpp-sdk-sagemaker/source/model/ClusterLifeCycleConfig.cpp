@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClusterLifeCycleConfig::ClusterLifeCycleConfig() : 
-    m_sourceS3UriHasBeenSet(false),
-    m_onCreateHasBeenSet(false)
-{
-}
-
 ClusterLifeCycleConfig::ClusterLifeCycleConfig(JsonView jsonValue)
-  : ClusterLifeCycleConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ClusterLifeCycleConfig& ClusterLifeCycleConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceS3Uri"))
   {
     m_sourceS3Uri = jsonValue.GetString("SourceS3Uri");
-
     m_sourceS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnCreate"))
   {
     m_onCreate = jsonValue.GetString("OnCreate");
-
     m_onCreateHasBeenSet = true;
   }
-
   return *this;
 }
 

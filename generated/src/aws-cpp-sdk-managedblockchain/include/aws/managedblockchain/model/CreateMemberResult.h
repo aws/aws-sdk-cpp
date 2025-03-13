@@ -27,7 +27,7 @@ namespace Model
   class CreateMemberResult
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API CreateMemberResult();
+    AWS_MANAGEDBLOCKCHAIN_API CreateMemberResult() = default;
     AWS_MANAGEDBLOCKCHAIN_API CreateMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDBLOCKCHAIN_API CreateMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique identifier of the member.</p>
      */
-    inline const Aws::String& GetMemberId() const{ return m_memberId; }
-    inline void SetMemberId(const Aws::String& value) { m_memberId = value; }
-    inline void SetMemberId(Aws::String&& value) { m_memberId = std::move(value); }
-    inline void SetMemberId(const char* value) { m_memberId.assign(value); }
-    inline CreateMemberResult& WithMemberId(const Aws::String& value) { SetMemberId(value); return *this;}
-    inline CreateMemberResult& WithMemberId(Aws::String&& value) { SetMemberId(std::move(value)); return *this;}
-    inline CreateMemberResult& WithMemberId(const char* value) { SetMemberId(value); return *this;}
+    inline const Aws::String& GetMemberId() const { return m_memberId; }
+    template<typename MemberIdT = Aws::String>
+    void SetMemberId(MemberIdT&& value) { m_memberIdHasBeenSet = true; m_memberId = std::forward<MemberIdT>(value); }
+    template<typename MemberIdT = Aws::String>
+    CreateMemberResult& WithMemberId(MemberIdT&& value) { SetMemberId(std::forward<MemberIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMemberResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMemberResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMemberResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMemberResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_memberId;
+    bool m_memberIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

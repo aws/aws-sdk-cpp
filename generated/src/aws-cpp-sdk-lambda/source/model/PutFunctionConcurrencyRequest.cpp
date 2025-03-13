@@ -12,13 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutFunctionConcurrencyRequest::PutFunctionConcurrencyRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_reservedConcurrentExecutions(0),
-    m_reservedConcurrentExecutionsHasBeenSet(false)
-{
-}
-
 Aws::String PutFunctionConcurrencyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,20 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-ResourceFilterCriteria::ResourceFilterCriteria() : 
-    m_accountIdHasBeenSet(false),
-    m_ec2InstanceTagsHasBeenSet(false),
-    m_ecrImageTagsHasBeenSet(false),
-    m_ecrRepositoryNameHasBeenSet(false),
-    m_lambdaFunctionNameHasBeenSet(false),
-    m_lambdaFunctionTagsHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ResourceFilterCriteria::ResourceFilterCriteria(JsonView jsonValue)
-  : ResourceFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -47,7 +34,6 @@ ResourceFilterCriteria& ResourceFilterCriteria::operator =(JsonView jsonValue)
     }
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2InstanceTags"))
   {
     Aws::Utils::Array<JsonView> ec2InstanceTagsJsonList = jsonValue.GetArray("ec2InstanceTags");
@@ -57,7 +43,6 @@ ResourceFilterCriteria& ResourceFilterCriteria::operator =(JsonView jsonValue)
     }
     m_ec2InstanceTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrImageTags"))
   {
     Aws::Utils::Array<JsonView> ecrImageTagsJsonList = jsonValue.GetArray("ecrImageTags");
@@ -67,7 +52,6 @@ ResourceFilterCriteria& ResourceFilterCriteria::operator =(JsonView jsonValue)
     }
     m_ecrImageTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrRepositoryName"))
   {
     Aws::Utils::Array<JsonView> ecrRepositoryNameJsonList = jsonValue.GetArray("ecrRepositoryName");
@@ -77,7 +61,6 @@ ResourceFilterCriteria& ResourceFilterCriteria::operator =(JsonView jsonValue)
     }
     m_ecrRepositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionName"))
   {
     Aws::Utils::Array<JsonView> lambdaFunctionNameJsonList = jsonValue.GetArray("lambdaFunctionName");
@@ -87,7 +70,6 @@ ResourceFilterCriteria& ResourceFilterCriteria::operator =(JsonView jsonValue)
     }
     m_lambdaFunctionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionTags"))
   {
     Aws::Utils::Array<JsonView> lambdaFunctionTagsJsonList = jsonValue.GetArray("lambdaFunctionTags");
@@ -97,7 +79,6 @@ ResourceFilterCriteria& ResourceFilterCriteria::operator =(JsonView jsonValue)
     }
     m_lambdaFunctionTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     Aws::Utils::Array<JsonView> resourceIdJsonList = jsonValue.GetArray("resourceId");
@@ -107,7 +88,6 @@ ResourceFilterCriteria& ResourceFilterCriteria::operator =(JsonView jsonValue)
     }
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     Aws::Utils::Array<JsonView> resourceTypeJsonList = jsonValue.GetArray("resourceType");
@@ -117,7 +97,6 @@ ResourceFilterCriteria& ResourceFilterCriteria::operator =(JsonView jsonValue)
     }
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

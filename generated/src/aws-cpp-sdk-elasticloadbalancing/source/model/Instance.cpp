@@ -20,13 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-Instance::Instance() : 
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Instance::Instance(const XmlNode& xmlNode)
-  : Instance()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
   }
 

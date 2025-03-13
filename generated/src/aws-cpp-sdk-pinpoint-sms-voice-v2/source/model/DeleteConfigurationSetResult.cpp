@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteConfigurationSetResult::DeleteConfigurationSetResult() : 
-    m_defaultMessageType(MessageType::NOT_SET),
-    m_defaultMessageFeedbackEnabled(false)
-{
-}
-
 DeleteConfigurationSetResult::DeleteConfigurationSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteConfigurationSetResult()
 {
   *this = result;
 }
@@ -35,15 +28,13 @@ DeleteConfigurationSetResult& DeleteConfigurationSetResult::operator =(const Aws
   if(jsonValue.ValueExists("ConfigurationSetArn"))
   {
     m_configurationSetArn = jsonValue.GetString("ConfigurationSetArn");
-
+    m_configurationSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationSetName"))
   {
     m_configurationSetName = jsonValue.GetString("ConfigurationSetName");
-
+    m_configurationSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventDestinations"))
   {
     Aws::Utils::Array<JsonView> eventDestinationsJsonList = jsonValue.GetArray("EventDestinations");
@@ -51,38 +42,35 @@ DeleteConfigurationSetResult& DeleteConfigurationSetResult::operator =(const Aws
     {
       m_eventDestinations.push_back(eventDestinationsJsonList[eventDestinationsIndex].AsObject());
     }
+    m_eventDestinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultMessageType"))
   {
     m_defaultMessageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("DefaultMessageType"));
-
+    m_defaultMessageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultSenderId"))
   {
     m_defaultSenderId = jsonValue.GetString("DefaultSenderId");
-
+    m_defaultSenderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultMessageFeedbackEnabled"))
   {
     m_defaultMessageFeedbackEnabled = jsonValue.GetBool("DefaultMessageFeedbackEnabled");
-
+    m_defaultMessageFeedbackEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

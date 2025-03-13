@@ -18,24 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-ExportTaskSummary::ExportTaskSummary() : 
-    m_graphIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_taskIdHasBeenSet(false),
-    m_status(ExportTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_format(ExportFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false),
-    m_parquetType(ParquetType::NOT_SET),
-    m_parquetTypeHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 ExportTaskSummary::ExportTaskSummary(JsonView jsonValue)
-  : ExportTaskSummary()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ ExportTaskSummary& ExportTaskSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("graphId"))
   {
     m_graphId = jsonValue.GetString("graphId");
-
     m_graphIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExportTaskStatusMapper::GetExportTaskStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = ExportFormatMapper::GetExportFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetString("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyIdentifier"))
   {
     m_kmsKeyIdentifier = jsonValue.GetString("kmsKeyIdentifier");
-
     m_kmsKeyIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parquetType"))
   {
     m_parquetType = ParquetTypeMapper::GetParquetTypeForName(jsonValue.GetString("parquetType"));
-
     m_parquetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

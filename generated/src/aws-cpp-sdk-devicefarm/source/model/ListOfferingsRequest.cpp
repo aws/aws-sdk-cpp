@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListOfferingsRequest::ListOfferingsRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListOfferingsRequest::SerializePayload() const
 {
   JsonValue payload;

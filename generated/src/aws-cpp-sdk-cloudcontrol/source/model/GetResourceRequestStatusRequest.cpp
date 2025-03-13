@@ -12,11 +12,6 @@ using namespace Aws::CloudControlApi::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceRequestStatusRequest::GetResourceRequestStatusRequest() : 
-    m_requestTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceRequestStatusRequest::SerializePayload() const
 {
   JsonValue payload;

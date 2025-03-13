@@ -10,16 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-CreateRuleRequest::CreateRuleRequest() : 
-    m_listenerArnHasBeenSet(false),
-    m_conditionsHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRuleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

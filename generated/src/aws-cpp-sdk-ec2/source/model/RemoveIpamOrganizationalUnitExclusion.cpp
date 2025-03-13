@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RemoveIpamOrganizationalUnitExclusion::RemoveIpamOrganizationalUnitExclusion() : 
-    m_organizationsEntityPathHasBeenSet(false)
-{
-}
-
 RemoveIpamOrganizationalUnitExclusion::RemoveIpamOrganizationalUnitExclusion(const XmlNode& xmlNode)
-  : RemoveIpamOrganizationalUnitExclusion()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ RemoveIpamOrganizationalUnitExclusion& RemoveIpamOrganizationalUnitExclusion::op
     {
       m_organizationsEntityPath = Aws::Utils::Xml::DecodeEscapedXmlText(organizationsEntityPathNode.GetText());
       m_organizationsEntityPathHasBeenSet = true;
+       m_organizationsEntityPathHasBeenSet = true;
     }
   }
 

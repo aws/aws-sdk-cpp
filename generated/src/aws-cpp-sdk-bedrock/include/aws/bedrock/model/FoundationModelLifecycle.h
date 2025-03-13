@@ -32,7 +32,7 @@ namespace Model
   class FoundationModelLifecycle
   {
   public:
-    AWS_BEDROCK_API FoundationModelLifecycle();
+    AWS_BEDROCK_API FoundationModelLifecycle() = default;
     AWS_BEDROCK_API FoundationModelLifecycle(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API FoundationModelLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Specifies whether a model version is available (<code>ACTIVE</code>) or
      * deprecated (<code>LEGACY</code>.</p>
      */
-    inline const FoundationModelLifecycleStatus& GetStatus() const{ return m_status; }
+    inline FoundationModelLifecycleStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FoundationModelLifecycleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FoundationModelLifecycleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FoundationModelLifecycle& WithStatus(const FoundationModelLifecycleStatus& value) { SetStatus(value); return *this;}
-    inline FoundationModelLifecycle& WithStatus(FoundationModelLifecycleStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FoundationModelLifecycleStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FoundationModelLifecycle& WithStatus(FoundationModelLifecycleStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    FoundationModelLifecycleStatus m_status;
+    FoundationModelLifecycleStatus m_status{FoundationModelLifecycleStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

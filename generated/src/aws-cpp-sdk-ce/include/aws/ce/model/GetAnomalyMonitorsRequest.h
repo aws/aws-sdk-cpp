@@ -22,7 +22,7 @@ namespace Model
   class GetAnomalyMonitorsRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API GetAnomalyMonitorsRequest();
+    AWS_COSTEXPLORER_API GetAnomalyMonitorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,15 +39,14 @@ namespace Model
     /**
      * <p>A list of cost anomaly monitor ARNs. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMonitorArnList() const{ return m_monitorArnList; }
+    inline const Aws::Vector<Aws::String>& GetMonitorArnList() const { return m_monitorArnList; }
     inline bool MonitorArnListHasBeenSet() const { return m_monitorArnListHasBeenSet; }
-    inline void SetMonitorArnList(const Aws::Vector<Aws::String>& value) { m_monitorArnListHasBeenSet = true; m_monitorArnList = value; }
-    inline void SetMonitorArnList(Aws::Vector<Aws::String>&& value) { m_monitorArnListHasBeenSet = true; m_monitorArnList = std::move(value); }
-    inline GetAnomalyMonitorsRequest& WithMonitorArnList(const Aws::Vector<Aws::String>& value) { SetMonitorArnList(value); return *this;}
-    inline GetAnomalyMonitorsRequest& WithMonitorArnList(Aws::Vector<Aws::String>&& value) { SetMonitorArnList(std::move(value)); return *this;}
-    inline GetAnomalyMonitorsRequest& AddMonitorArnList(const Aws::String& value) { m_monitorArnListHasBeenSet = true; m_monitorArnList.push_back(value); return *this; }
-    inline GetAnomalyMonitorsRequest& AddMonitorArnList(Aws::String&& value) { m_monitorArnListHasBeenSet = true; m_monitorArnList.push_back(std::move(value)); return *this; }
-    inline GetAnomalyMonitorsRequest& AddMonitorArnList(const char* value) { m_monitorArnListHasBeenSet = true; m_monitorArnList.push_back(value); return *this; }
+    template<typename MonitorArnListT = Aws::Vector<Aws::String>>
+    void SetMonitorArnList(MonitorArnListT&& value) { m_monitorArnListHasBeenSet = true; m_monitorArnList = std::forward<MonitorArnListT>(value); }
+    template<typename MonitorArnListT = Aws::Vector<Aws::String>>
+    GetAnomalyMonitorsRequest& WithMonitorArnList(MonitorArnListT&& value) { SetMonitorArnList(std::forward<MonitorArnListT>(value)); return *this;}
+    template<typename MonitorArnListT = Aws::String>
+    GetAnomalyMonitorsRequest& AddMonitorArnList(MonitorArnListT&& value) { m_monitorArnListHasBeenSet = true; m_monitorArnList.emplace_back(std::forward<MonitorArnListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,21 +55,19 @@ namespace Model
      * the token when the response from a previous call has more results than the
      * maximum page size. </p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
-    inline GetAnomalyMonitorsRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetAnomalyMonitorsRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetAnomalyMonitorsRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetAnomalyMonitorsRequest& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of entries that a paginated response contains. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetAnomalyMonitorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,7 +80,7 @@ namespace Model
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

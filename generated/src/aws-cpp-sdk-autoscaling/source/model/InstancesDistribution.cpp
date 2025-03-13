@@ -20,21 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-InstancesDistribution::InstancesDistribution() : 
-    m_onDemandAllocationStrategyHasBeenSet(false),
-    m_onDemandBaseCapacity(0),
-    m_onDemandBaseCapacityHasBeenSet(false),
-    m_onDemandPercentageAboveBaseCapacity(0),
-    m_onDemandPercentageAboveBaseCapacityHasBeenSet(false),
-    m_spotAllocationStrategyHasBeenSet(false),
-    m_spotInstancePools(0),
-    m_spotInstancePoolsHasBeenSet(false),
-    m_spotMaxPriceHasBeenSet(false)
-{
-}
-
 InstancesDistribution::InstancesDistribution(const XmlNode& xmlNode)
-  : InstancesDistribution()
 {
   *this = xmlNode;
 }
@@ -50,36 +36,42 @@ InstancesDistribution& InstancesDistribution::operator =(const XmlNode& xmlNode)
     {
       m_onDemandAllocationStrategy = Aws::Utils::Xml::DecodeEscapedXmlText(onDemandAllocationStrategyNode.GetText());
       m_onDemandAllocationStrategyHasBeenSet = true;
+       m_onDemandAllocationStrategyHasBeenSet = true;
     }
     XmlNode onDemandBaseCapacityNode = resultNode.FirstChild("OnDemandBaseCapacity");
     if(!onDemandBaseCapacityNode.IsNull())
     {
       m_onDemandBaseCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onDemandBaseCapacityNode.GetText()).c_str()).c_str());
       m_onDemandBaseCapacityHasBeenSet = true;
+       m_onDemandBaseCapacityHasBeenSet = true;
     }
     XmlNode onDemandPercentageAboveBaseCapacityNode = resultNode.FirstChild("OnDemandPercentageAboveBaseCapacity");
     if(!onDemandPercentageAboveBaseCapacityNode.IsNull())
     {
       m_onDemandPercentageAboveBaseCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onDemandPercentageAboveBaseCapacityNode.GetText()).c_str()).c_str());
       m_onDemandPercentageAboveBaseCapacityHasBeenSet = true;
+       m_onDemandPercentageAboveBaseCapacityHasBeenSet = true;
     }
     XmlNode spotAllocationStrategyNode = resultNode.FirstChild("SpotAllocationStrategy");
     if(!spotAllocationStrategyNode.IsNull())
     {
       m_spotAllocationStrategy = Aws::Utils::Xml::DecodeEscapedXmlText(spotAllocationStrategyNode.GetText());
       m_spotAllocationStrategyHasBeenSet = true;
+       m_spotAllocationStrategyHasBeenSet = true;
     }
     XmlNode spotInstancePoolsNode = resultNode.FirstChild("SpotInstancePools");
     if(!spotInstancePoolsNode.IsNull())
     {
       m_spotInstancePools = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotInstancePoolsNode.GetText()).c_str()).c_str());
       m_spotInstancePoolsHasBeenSet = true;
+       m_spotInstancePoolsHasBeenSet = true;
     }
     XmlNode spotMaxPriceNode = resultNode.FirstChild("SpotMaxPrice");
     if(!spotMaxPriceNode.IsNull())
     {
       m_spotMaxPrice = Aws::Utils::Xml::DecodeEscapedXmlText(spotMaxPriceNode.GetText());
       m_spotMaxPriceHasBeenSet = true;
+       m_spotMaxPriceHasBeenSet = true;
     }
   }
 

@@ -12,13 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPermissionRequest::GetPermissionRequest() : 
-    m_permissionArnHasBeenSet(false),
-    m_permissionVersion(0),
-    m_permissionVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetPermissionRequest::SerializePayload() const
 {
   JsonValue payload;

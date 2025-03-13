@@ -12,12 +12,6 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConnectInstanceIntegrationRequest::DeleteConnectInstanceIntegrationRequest() : 
-    m_connectInstanceIdHasBeenSet(false),
-    m_integrationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConnectInstanceIntegrationRequest::SerializePayload() const
 {
   JsonValue payload;

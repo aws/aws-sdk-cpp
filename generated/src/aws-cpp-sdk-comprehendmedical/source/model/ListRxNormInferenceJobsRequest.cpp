@@ -12,14 +12,6 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRxNormInferenceJobsRequest::ListRxNormInferenceJobsRequest() : 
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListRxNormInferenceJobsRequest::SerializePayload() const
 {
   JsonValue payload;

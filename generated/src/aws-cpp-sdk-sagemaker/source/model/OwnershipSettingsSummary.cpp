@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OwnershipSettingsSummary::OwnershipSettingsSummary() : 
-    m_ownerUserProfileNameHasBeenSet(false)
-{
-}
-
 OwnershipSettingsSummary::OwnershipSettingsSummary(JsonView jsonValue)
-  : OwnershipSettingsSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OwnershipSettingsSummary& OwnershipSettingsSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("OwnerUserProfileName"))
   {
     m_ownerUserProfileName = jsonValue.GetString("OwnerUserProfileName");
-
     m_ownerUserProfileNameHasBeenSet = true;
   }
-
   return *this;
 }
 

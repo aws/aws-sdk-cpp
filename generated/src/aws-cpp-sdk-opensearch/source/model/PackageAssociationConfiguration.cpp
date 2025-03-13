@@ -18,13 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-PackageAssociationConfiguration::PackageAssociationConfiguration() : 
-    m_keyStoreAccessOptionHasBeenSet(false)
-{
-}
-
 PackageAssociationConfiguration::PackageAssociationConfiguration(JsonView jsonValue)
-  : PackageAssociationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PackageAssociationConfiguration& PackageAssociationConfiguration::operator =(Jso
   if(jsonValue.ValueExists("KeyStoreAccessOption"))
   {
     m_keyStoreAccessOption = jsonValue.GetObject("KeyStoreAccessOption");
-
     m_keyStoreAccessOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

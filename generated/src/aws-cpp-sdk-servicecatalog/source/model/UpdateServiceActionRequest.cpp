@@ -12,15 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceActionRequest::UpdateServiceActionRequest() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_acceptLanguageHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceActionRequest::SerializePayload() const
 {
   JsonValue payload;

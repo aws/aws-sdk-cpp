@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-KeySchemaElement::KeySchemaElement() : 
-    m_attributeNameHasBeenSet(false),
-    m_keyType(KeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false)
-{
-}
-
 KeySchemaElement::KeySchemaElement(JsonView jsonValue)
-  : KeySchemaElement()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ KeySchemaElement& KeySchemaElement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyType"))
   {
     m_keyType = KeyTypeMapper::GetKeyTypeForName(jsonValue.GetString("KeyType"));
-
     m_keyTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

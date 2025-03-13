@@ -21,7 +21,7 @@ namespace Model
   class DeleteSnapshotScheduleRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API DeleteSnapshotScheduleRequest();
+    AWS_STORAGEGATEWAY_API DeleteSnapshotScheduleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The volume which snapshot schedule to delete.</p>
      */
-    inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
+    inline const Aws::String& GetVolumeARN() const { return m_volumeARN; }
     inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
-    inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
-    inline void SetVolumeARN(const char* value) { m_volumeARNHasBeenSet = true; m_volumeARN.assign(value); }
-    inline DeleteSnapshotScheduleRequest& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
-    inline DeleteSnapshotScheduleRequest& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
-    inline DeleteSnapshotScheduleRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+    template<typename VolumeARNT = Aws::String>
+    void SetVolumeARN(VolumeARNT&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::forward<VolumeARNT>(value); }
+    template<typename VolumeARNT = Aws::String>
+    DeleteSnapshotScheduleRequest& WithVolumeARN(VolumeARNT&& value) { SetVolumeARN(std::forward<VolumeARNT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-LogConfigurations::LogConfigurations() : 
-    m_cloudwatchHasBeenSet(false)
-{
-}
-
 LogConfigurations::LogConfigurations(JsonView jsonValue)
-  : LogConfigurations()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LogConfigurations& LogConfigurations::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Cloudwatch"))
   {
     m_cloudwatch = jsonValue.GetObject("Cloudwatch");
-
     m_cloudwatchHasBeenSet = true;
   }
-
   return *this;
 }
 

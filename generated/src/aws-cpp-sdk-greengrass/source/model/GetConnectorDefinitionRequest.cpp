@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConnectorDefinitionRequest::GetConnectorDefinitionRequest() : 
-    m_connectorDefinitionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetConnectorDefinitionRequest::SerializePayload() const
 {
   return {};

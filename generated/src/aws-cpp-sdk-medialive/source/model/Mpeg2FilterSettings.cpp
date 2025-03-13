@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Mpeg2FilterSettings::Mpeg2FilterSettings() : 
-    m_temporalFilterSettingsHasBeenSet(false)
-{
-}
-
 Mpeg2FilterSettings::Mpeg2FilterSettings(JsonView jsonValue)
-  : Mpeg2FilterSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Mpeg2FilterSettings& Mpeg2FilterSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("temporalFilterSettings"))
   {
     m_temporalFilterSettings = jsonValue.GetObject("temporalFilterSettings");
-
     m_temporalFilterSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

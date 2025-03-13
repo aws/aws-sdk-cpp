@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-MsSmoothEncryptionSettings::MsSmoothEncryptionSettings() : 
-    m_spekeKeyProviderHasBeenSet(false)
-{
-}
-
 MsSmoothEncryptionSettings::MsSmoothEncryptionSettings(JsonView jsonValue)
-  : MsSmoothEncryptionSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MsSmoothEncryptionSettings& MsSmoothEncryptionSettings::operator =(JsonView json
   if(jsonValue.ValueExists("spekeKeyProvider"))
   {
     m_spekeKeyProvider = jsonValue.GetObject("spekeKeyProvider");
-
     m_spekeKeyProviderHasBeenSet = true;
   }
-
   return *this;
 }
 

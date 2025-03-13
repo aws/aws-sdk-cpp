@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-PutMultiRegionAccessPointPolicyInput::PutMultiRegionAccessPointPolicyInput() : 
-    m_nameHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 PutMultiRegionAccessPointPolicyInput::PutMultiRegionAccessPointPolicyInput(const XmlNode& xmlNode)
-  : PutMultiRegionAccessPointPolicyInput()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ PutMultiRegionAccessPointPolicyInput& PutMultiRegionAccessPointPolicyInput::oper
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode policyNode = resultNode.FirstChild("Policy");
     if(!policyNode.IsNull())
     {
       m_policy = Aws::Utils::Xml::DecodeEscapedXmlText(policyNode.GetText());
       m_policyHasBeenSet = true;
+       m_policyHasBeenSet = true;
     }
   }
 

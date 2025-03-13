@@ -18,15 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-MonitorDataSource::MonitorDataSource() : 
-    m_datasetImportJobArnHasBeenSet(false),
-    m_forecastArnHasBeenSet(false),
-    m_predictorArnHasBeenSet(false)
-{
-}
-
 MonitorDataSource::MonitorDataSource(JsonView jsonValue)
-  : MonitorDataSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MonitorDataSource& MonitorDataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatasetImportJobArn"))
   {
     m_datasetImportJobArn = jsonValue.GetString("DatasetImportJobArn");
-
     m_datasetImportJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForecastArn"))
   {
     m_forecastArn = jsonValue.GetString("ForecastArn");
-
     m_forecastArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictorArn"))
   {
     m_predictorArn = jsonValue.GetString("PredictorArn");
-
     m_predictorArnHasBeenSet = true;
   }
-
   return *this;
 }
 

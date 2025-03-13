@@ -18,15 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-StringAttributeBoostingConfiguration::StringAttributeBoostingConfiguration() : 
-    m_boostingLevel(DocumentAttributeBoostingLevel::NOT_SET),
-    m_boostingLevelHasBeenSet(false),
-    m_attributeValueBoostingHasBeenSet(false)
-{
-}
-
 StringAttributeBoostingConfiguration::StringAttributeBoostingConfiguration(JsonView jsonValue)
-  : StringAttributeBoostingConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ StringAttributeBoostingConfiguration& StringAttributeBoostingConfiguration::oper
   if(jsonValue.ValueExists("boostingLevel"))
   {
     m_boostingLevel = DocumentAttributeBoostingLevelMapper::GetDocumentAttributeBoostingLevelForName(jsonValue.GetString("boostingLevel"));
-
     m_boostingLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributeValueBoosting"))
   {
     Aws::Map<Aws::String, JsonView> attributeValueBoostingJsonMap = jsonValue.GetObject("attributeValueBoosting").GetAllObjects();
@@ -49,7 +39,6 @@ StringAttributeBoostingConfiguration& StringAttributeBoostingConfiguration::oper
     }
     m_attributeValueBoostingHasBeenSet = true;
   }
-
   return *this;
 }
 

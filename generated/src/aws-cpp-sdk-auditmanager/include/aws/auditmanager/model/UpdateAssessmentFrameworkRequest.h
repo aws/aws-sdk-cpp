@@ -23,7 +23,7 @@ namespace Model
   class UpdateAssessmentFrameworkRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API UpdateAssessmentFrameworkRequest();
+    AWS_AUDITMANAGER_API UpdateAssessmentFrameworkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
     /**
      * <p> The unique identifier for the framework. </p>
      */
-    inline const Aws::String& GetFrameworkId() const{ return m_frameworkId; }
+    inline const Aws::String& GetFrameworkId() const { return m_frameworkId; }
     inline bool FrameworkIdHasBeenSet() const { return m_frameworkIdHasBeenSet; }
-    inline void SetFrameworkId(const Aws::String& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = value; }
-    inline void SetFrameworkId(Aws::String&& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = std::move(value); }
-    inline void SetFrameworkId(const char* value) { m_frameworkIdHasBeenSet = true; m_frameworkId.assign(value); }
-    inline UpdateAssessmentFrameworkRequest& WithFrameworkId(const Aws::String& value) { SetFrameworkId(value); return *this;}
-    inline UpdateAssessmentFrameworkRequest& WithFrameworkId(Aws::String&& value) { SetFrameworkId(std::move(value)); return *this;}
-    inline UpdateAssessmentFrameworkRequest& WithFrameworkId(const char* value) { SetFrameworkId(value); return *this;}
+    template<typename FrameworkIdT = Aws::String>
+    void SetFrameworkId(FrameworkIdT&& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = std::forward<FrameworkIdT>(value); }
+    template<typename FrameworkIdT = Aws::String>
+    UpdateAssessmentFrameworkRequest& WithFrameworkId(FrameworkIdT&& value) { SetFrameworkId(std::forward<FrameworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the framework to be updated. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateAssessmentFrameworkRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateAssessmentFrameworkRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateAssessmentFrameworkRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateAssessmentFrameworkRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The description of the updated framework. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateAssessmentFrameworkRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateAssessmentFrameworkRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateAssessmentFrameworkRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateAssessmentFrameworkRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,28 +75,26 @@ namespace Model
      * <p> The compliance type that the new custom framework supports, such as CIS or
      * HIPAA. </p>
      */
-    inline const Aws::String& GetComplianceType() const{ return m_complianceType; }
+    inline const Aws::String& GetComplianceType() const { return m_complianceType; }
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
-    inline void SetComplianceType(const Aws::String& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
-    inline void SetComplianceType(Aws::String&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
-    inline void SetComplianceType(const char* value) { m_complianceTypeHasBeenSet = true; m_complianceType.assign(value); }
-    inline UpdateAssessmentFrameworkRequest& WithComplianceType(const Aws::String& value) { SetComplianceType(value); return *this;}
-    inline UpdateAssessmentFrameworkRequest& WithComplianceType(Aws::String&& value) { SetComplianceType(std::move(value)); return *this;}
-    inline UpdateAssessmentFrameworkRequest& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
+    template<typename ComplianceTypeT = Aws::String>
+    void SetComplianceType(ComplianceTypeT&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::forward<ComplianceTypeT>(value); }
+    template<typename ComplianceTypeT = Aws::String>
+    UpdateAssessmentFrameworkRequest& WithComplianceType(ComplianceTypeT&& value) { SetComplianceType(std::forward<ComplianceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The control sets that are associated with the framework. </p>
      */
-    inline const Aws::Vector<UpdateAssessmentFrameworkControlSet>& GetControlSets() const{ return m_controlSets; }
+    inline const Aws::Vector<UpdateAssessmentFrameworkControlSet>& GetControlSets() const { return m_controlSets; }
     inline bool ControlSetsHasBeenSet() const { return m_controlSetsHasBeenSet; }
-    inline void SetControlSets(const Aws::Vector<UpdateAssessmentFrameworkControlSet>& value) { m_controlSetsHasBeenSet = true; m_controlSets = value; }
-    inline void SetControlSets(Aws::Vector<UpdateAssessmentFrameworkControlSet>&& value) { m_controlSetsHasBeenSet = true; m_controlSets = std::move(value); }
-    inline UpdateAssessmentFrameworkRequest& WithControlSets(const Aws::Vector<UpdateAssessmentFrameworkControlSet>& value) { SetControlSets(value); return *this;}
-    inline UpdateAssessmentFrameworkRequest& WithControlSets(Aws::Vector<UpdateAssessmentFrameworkControlSet>&& value) { SetControlSets(std::move(value)); return *this;}
-    inline UpdateAssessmentFrameworkRequest& AddControlSets(const UpdateAssessmentFrameworkControlSet& value) { m_controlSetsHasBeenSet = true; m_controlSets.push_back(value); return *this; }
-    inline UpdateAssessmentFrameworkRequest& AddControlSets(UpdateAssessmentFrameworkControlSet&& value) { m_controlSetsHasBeenSet = true; m_controlSets.push_back(std::move(value)); return *this; }
+    template<typename ControlSetsT = Aws::Vector<UpdateAssessmentFrameworkControlSet>>
+    void SetControlSets(ControlSetsT&& value) { m_controlSetsHasBeenSet = true; m_controlSets = std::forward<ControlSetsT>(value); }
+    template<typename ControlSetsT = Aws::Vector<UpdateAssessmentFrameworkControlSet>>
+    UpdateAssessmentFrameworkRequest& WithControlSets(ControlSetsT&& value) { SetControlSets(std::forward<ControlSetsT>(value)); return *this;}
+    template<typename ControlSetsT = UpdateAssessmentFrameworkControlSet>
+    UpdateAssessmentFrameworkRequest& AddControlSets(ControlSetsT&& value) { m_controlSetsHasBeenSet = true; m_controlSets.emplace_back(std::forward<ControlSetsT>(value)); return *this; }
     ///@}
   private:
 

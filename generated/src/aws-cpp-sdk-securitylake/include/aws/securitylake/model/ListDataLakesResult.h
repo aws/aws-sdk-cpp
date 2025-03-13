@@ -29,7 +29,7 @@ namespace Model
   class ListDataLakesResult
   {
   public:
-    AWS_SECURITYLAKE_API ListDataLakesResult();
+    AWS_SECURITYLAKE_API ListDataLakesResult() = default;
     AWS_SECURITYLAKE_API ListDataLakesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYLAKE_API ListDataLakesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>Retrieves the Security Lake configuration object.</p>
      */
-    inline const Aws::Vector<DataLakeResource>& GetDataLakes() const{ return m_dataLakes; }
-    inline void SetDataLakes(const Aws::Vector<DataLakeResource>& value) { m_dataLakes = value; }
-    inline void SetDataLakes(Aws::Vector<DataLakeResource>&& value) { m_dataLakes = std::move(value); }
-    inline ListDataLakesResult& WithDataLakes(const Aws::Vector<DataLakeResource>& value) { SetDataLakes(value); return *this;}
-    inline ListDataLakesResult& WithDataLakes(Aws::Vector<DataLakeResource>&& value) { SetDataLakes(std::move(value)); return *this;}
-    inline ListDataLakesResult& AddDataLakes(const DataLakeResource& value) { m_dataLakes.push_back(value); return *this; }
-    inline ListDataLakesResult& AddDataLakes(DataLakeResource&& value) { m_dataLakes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataLakeResource>& GetDataLakes() const { return m_dataLakes; }
+    template<typename DataLakesT = Aws::Vector<DataLakeResource>>
+    void SetDataLakes(DataLakesT&& value) { m_dataLakesHasBeenSet = true; m_dataLakes = std::forward<DataLakesT>(value); }
+    template<typename DataLakesT = Aws::Vector<DataLakeResource>>
+    ListDataLakesResult& WithDataLakes(DataLakesT&& value) { SetDataLakes(std::forward<DataLakesT>(value)); return *this;}
+    template<typename DataLakesT = DataLakeResource>
+    ListDataLakesResult& AddDataLakes(DataLakesT&& value) { m_dataLakesHasBeenSet = true; m_dataLakes.emplace_back(std::forward<DataLakesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDataLakesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDataLakesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDataLakesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDataLakesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DataLakeResource> m_dataLakes;
+    bool m_dataLakesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

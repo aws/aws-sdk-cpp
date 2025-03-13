@@ -12,11 +12,6 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataGrantRequest::DeleteDataGrantRequest() : 
-    m_dataGrantIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataGrantRequest::SerializePayload() const
 {
   return {};

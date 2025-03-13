@@ -18,14 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-S3Location::S3Location() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
-{
-}
-
 S3Location::S3Location(JsonView jsonValue)
-  : S3Location()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Location& S3Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Key"))
   {
     m_s3Key = jsonValue.GetString("S3Key");
-
     m_s3KeyHasBeenSet = true;
   }
-
   return *this;
 }
 

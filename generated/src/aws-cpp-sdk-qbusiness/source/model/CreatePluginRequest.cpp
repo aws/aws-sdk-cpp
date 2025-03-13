@@ -12,20 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePluginRequest::CreatePluginRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_type(PluginType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_authConfigurationHasBeenSet(false),
-    m_serverUrlHasBeenSet(false),
-    m_customPluginConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreatePluginRequest::SerializePayload() const
 {
   JsonValue payload;

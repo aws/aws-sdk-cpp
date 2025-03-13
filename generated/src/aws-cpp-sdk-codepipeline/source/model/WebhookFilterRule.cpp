@@ -18,14 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-WebhookFilterRule::WebhookFilterRule() : 
-    m_jsonPathHasBeenSet(false),
-    m_matchEqualsHasBeenSet(false)
-{
-}
-
 WebhookFilterRule::WebhookFilterRule(JsonView jsonValue)
-  : WebhookFilterRule()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WebhookFilterRule& WebhookFilterRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jsonPath"))
   {
     m_jsonPath = jsonValue.GetString("jsonPath");
-
     m_jsonPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("matchEquals"))
   {
     m_matchEquals = jsonValue.GetString("matchEquals");
-
     m_matchEqualsHasBeenSet = true;
   }
-
   return *this;
 }
 

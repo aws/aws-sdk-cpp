@@ -21,7 +21,7 @@ namespace Model
   class GetLegalHoldRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API GetLegalHoldRequest();
+    AWS_BACKUP_API GetLegalHoldRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the legal hold.</p>
      */
-    inline const Aws::String& GetLegalHoldId() const{ return m_legalHoldId; }
+    inline const Aws::String& GetLegalHoldId() const { return m_legalHoldId; }
     inline bool LegalHoldIdHasBeenSet() const { return m_legalHoldIdHasBeenSet; }
-    inline void SetLegalHoldId(const Aws::String& value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId = value; }
-    inline void SetLegalHoldId(Aws::String&& value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId = std::move(value); }
-    inline void SetLegalHoldId(const char* value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId.assign(value); }
-    inline GetLegalHoldRequest& WithLegalHoldId(const Aws::String& value) { SetLegalHoldId(value); return *this;}
-    inline GetLegalHoldRequest& WithLegalHoldId(Aws::String&& value) { SetLegalHoldId(std::move(value)); return *this;}
-    inline GetLegalHoldRequest& WithLegalHoldId(const char* value) { SetLegalHoldId(value); return *this;}
+    template<typename LegalHoldIdT = Aws::String>
+    void SetLegalHoldId(LegalHoldIdT&& value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId = std::forward<LegalHoldIdT>(value); }
+    template<typename LegalHoldIdT = Aws::String>
+    GetLegalHoldRequest& WithLegalHoldId(LegalHoldIdT&& value) { SetLegalHoldId(std::forward<LegalHoldIdT>(value)); return *this;}
     ///@}
   private:
 

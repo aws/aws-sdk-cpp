@@ -18,18 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-CapabilitySummary::CapabilitySummary() : 
-    m_capabilityIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(CapabilityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
-{
-}
-
 CapabilitySummary::CapabilitySummary(JsonView jsonValue)
-  : CapabilitySummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ CapabilitySummary& CapabilitySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("capabilityId"))
   {
     m_capabilityId = jsonValue.GetString("capabilityId");
-
     m_capabilityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = CapabilityTypeMapper::GetCapabilityTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class UpdateMessageTemplateResult
   {
   public:
-    AWS_QCONNECT_API UpdateMessageTemplateResult();
+    AWS_QCONNECT_API UpdateMessageTemplateResult() = default;
     AWS_QCONNECT_API UpdateMessageTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API UpdateMessageTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The message template.</p>
      */
-    inline const MessageTemplateData& GetMessageTemplate() const{ return m_messageTemplate; }
-    inline void SetMessageTemplate(const MessageTemplateData& value) { m_messageTemplate = value; }
-    inline void SetMessageTemplate(MessageTemplateData&& value) { m_messageTemplate = std::move(value); }
-    inline UpdateMessageTemplateResult& WithMessageTemplate(const MessageTemplateData& value) { SetMessageTemplate(value); return *this;}
-    inline UpdateMessageTemplateResult& WithMessageTemplate(MessageTemplateData&& value) { SetMessageTemplate(std::move(value)); return *this;}
+    inline const MessageTemplateData& GetMessageTemplate() const { return m_messageTemplate; }
+    template<typename MessageTemplateT = MessageTemplateData>
+    void SetMessageTemplate(MessageTemplateT&& value) { m_messageTemplateHasBeenSet = true; m_messageTemplate = std::forward<MessageTemplateT>(value); }
+    template<typename MessageTemplateT = MessageTemplateData>
+    UpdateMessageTemplateResult& WithMessageTemplate(MessageTemplateT&& value) { SetMessageTemplate(std::forward<MessageTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateMessageTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateMessageTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateMessageTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateMessageTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MessageTemplateData m_messageTemplate;
+    bool m_messageTemplateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

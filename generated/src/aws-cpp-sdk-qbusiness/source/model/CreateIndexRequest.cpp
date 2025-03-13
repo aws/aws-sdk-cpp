@@ -12,19 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIndexRequest::CreateIndexRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(IndexType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_capacityConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateIndexRequest::SerializePayload() const
 {
   JsonValue payload;

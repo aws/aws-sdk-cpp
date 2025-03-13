@@ -12,13 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMessageTemplateAttachmentRequest::DeleteMessageTemplateAttachmentRequest() : 
-    m_attachmentIdHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_messageTemplateIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMessageTemplateAttachmentRequest::SerializePayload() const
 {
   return {};

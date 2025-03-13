@@ -28,7 +28,7 @@ namespace Model
   class ModifyDBProxyTargetGroupResult
   {
   public:
-    AWS_RDS_API ModifyDBProxyTargetGroupResult();
+    AWS_RDS_API ModifyDBProxyTargetGroupResult() = default;
     AWS_RDS_API ModifyDBProxyTargetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API ModifyDBProxyTargetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The settings of the modified <code>DBProxyTarget</code>.</p>
      */
-    inline const DBProxyTargetGroup& GetDBProxyTargetGroup() const{ return m_dBProxyTargetGroup; }
-    inline void SetDBProxyTargetGroup(const DBProxyTargetGroup& value) { m_dBProxyTargetGroup = value; }
-    inline void SetDBProxyTargetGroup(DBProxyTargetGroup&& value) { m_dBProxyTargetGroup = std::move(value); }
-    inline ModifyDBProxyTargetGroupResult& WithDBProxyTargetGroup(const DBProxyTargetGroup& value) { SetDBProxyTargetGroup(value); return *this;}
-    inline ModifyDBProxyTargetGroupResult& WithDBProxyTargetGroup(DBProxyTargetGroup&& value) { SetDBProxyTargetGroup(std::move(value)); return *this;}
+    inline const DBProxyTargetGroup& GetDBProxyTargetGroup() const { return m_dBProxyTargetGroup; }
+    template<typename DBProxyTargetGroupT = DBProxyTargetGroup>
+    void SetDBProxyTargetGroup(DBProxyTargetGroupT&& value) { m_dBProxyTargetGroupHasBeenSet = true; m_dBProxyTargetGroup = std::forward<DBProxyTargetGroupT>(value); }
+    template<typename DBProxyTargetGroupT = DBProxyTargetGroup>
+    ModifyDBProxyTargetGroupResult& WithDBProxyTargetGroup(DBProxyTargetGroupT&& value) { SetDBProxyTargetGroup(std::forward<DBProxyTargetGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyDBProxyTargetGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyDBProxyTargetGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyDBProxyTargetGroupResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBProxyTargetGroup m_dBProxyTargetGroup;
+    bool m_dBProxyTargetGroupHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListGatewayRoutesRequest::ListGatewayRoutesRequest() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_meshNameHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_virtualGatewayNameHasBeenSet(false)
-{
-}
-
 Aws::String ListGatewayRoutesRequest::SerializePayload() const
 {
   return {};

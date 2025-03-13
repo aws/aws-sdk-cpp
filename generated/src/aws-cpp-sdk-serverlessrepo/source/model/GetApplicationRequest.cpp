@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetApplicationRequest::GetApplicationRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationRequest::SerializePayload() const
 {
   return {};

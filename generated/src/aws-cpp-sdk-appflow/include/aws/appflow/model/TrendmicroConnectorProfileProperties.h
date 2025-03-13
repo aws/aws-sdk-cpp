@@ -30,7 +30,7 @@ namespace Model
   class TrendmicroConnectorProfileProperties
   {
   public:
-    AWS_APPFLOW_API TrendmicroConnectorProfileProperties();
+    AWS_APPFLOW_API TrendmicroConnectorProfileProperties() = default;
     AWS_APPFLOW_API TrendmicroConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API TrendmicroConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

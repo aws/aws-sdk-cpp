@@ -27,7 +27,7 @@ namespace Model
   class DeleteInvoiceUnitResult
   {
   public:
-    AWS_INVOICING_API DeleteInvoiceUnitResult();
+    AWS_INVOICING_API DeleteInvoiceUnitResult() = default;
     AWS_INVOICING_API DeleteInvoiceUnitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INVOICING_API DeleteInvoiceUnitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p> The ARN to identify an invoice unit. This information can't be modified or
      * deleted. </p>
      */
-    inline const Aws::String& GetInvoiceUnitArn() const{ return m_invoiceUnitArn; }
-    inline void SetInvoiceUnitArn(const Aws::String& value) { m_invoiceUnitArn = value; }
-    inline void SetInvoiceUnitArn(Aws::String&& value) { m_invoiceUnitArn = std::move(value); }
-    inline void SetInvoiceUnitArn(const char* value) { m_invoiceUnitArn.assign(value); }
-    inline DeleteInvoiceUnitResult& WithInvoiceUnitArn(const Aws::String& value) { SetInvoiceUnitArn(value); return *this;}
-    inline DeleteInvoiceUnitResult& WithInvoiceUnitArn(Aws::String&& value) { SetInvoiceUnitArn(std::move(value)); return *this;}
-    inline DeleteInvoiceUnitResult& WithInvoiceUnitArn(const char* value) { SetInvoiceUnitArn(value); return *this;}
+    inline const Aws::String& GetInvoiceUnitArn() const { return m_invoiceUnitArn; }
+    template<typename InvoiceUnitArnT = Aws::String>
+    void SetInvoiceUnitArn(InvoiceUnitArnT&& value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn = std::forward<InvoiceUnitArnT>(value); }
+    template<typename InvoiceUnitArnT = Aws::String>
+    DeleteInvoiceUnitResult& WithInvoiceUnitArn(InvoiceUnitArnT&& value) { SetInvoiceUnitArn(std::forward<InvoiceUnitArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteInvoiceUnitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteInvoiceUnitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteInvoiceUnitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteInvoiceUnitResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_invoiceUnitArn;
+    bool m_invoiceUnitArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

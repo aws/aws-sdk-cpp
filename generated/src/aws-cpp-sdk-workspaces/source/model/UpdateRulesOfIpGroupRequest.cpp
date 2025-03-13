@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRulesOfIpGroupRequest::UpdateRulesOfIpGroupRequest() : 
-    m_groupIdHasBeenSet(false),
-    m_userRulesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRulesOfIpGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace CloudHSMV2
 namespace Model
 {
 
-DestinationBackup::DestinationBackup() : 
-    m_createTimestampHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_sourceBackupHasBeenSet(false),
-    m_sourceClusterHasBeenSet(false)
-{
-}
-
 DestinationBackup::DestinationBackup(JsonView jsonValue)
-  : DestinationBackup()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DestinationBackup& DestinationBackup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreateTimestamp"))
   {
     m_createTimestamp = jsonValue.GetDouble("CreateTimestamp");
-
     m_createTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceRegion"))
   {
     m_sourceRegion = jsonValue.GetString("SourceRegion");
-
     m_sourceRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceBackup"))
   {
     m_sourceBackup = jsonValue.GetString("SourceBackup");
-
     m_sourceBackupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceCluster"))
   {
     m_sourceCluster = jsonValue.GetString("SourceCluster");
-
     m_sourceClusterHasBeenSet = true;
   }
-
   return *this;
 }
 

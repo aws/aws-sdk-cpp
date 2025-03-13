@@ -18,16 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-CapacityLimits::CapacityLimits() : 
-    m_maxIndexingCapacityInOCU(0),
-    m_maxIndexingCapacityInOCUHasBeenSet(false),
-    m_maxSearchCapacityInOCU(0),
-    m_maxSearchCapacityInOCUHasBeenSet(false)
-{
-}
-
 CapacityLimits::CapacityLimits(JsonView jsonValue)
-  : CapacityLimits()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CapacityLimits& CapacityLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxIndexingCapacityInOCU"))
   {
     m_maxIndexingCapacityInOCU = jsonValue.GetInteger("maxIndexingCapacityInOCU");
-
     m_maxIndexingCapacityInOCUHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxSearchCapacityInOCU"))
   {
     m_maxSearchCapacityInOCU = jsonValue.GetInteger("maxSearchCapacityInOCU");
-
     m_maxSearchCapacityInOCUHasBeenSet = true;
   }
-
   return *this;
 }
 

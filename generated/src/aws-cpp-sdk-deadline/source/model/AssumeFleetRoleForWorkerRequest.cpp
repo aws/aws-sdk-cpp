@@ -12,13 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssumeFleetRoleForWorkerRequest::AssumeFleetRoleForWorkerRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
-{
-}
-
 Aws::String AssumeFleetRoleForWorkerRequest::SerializePayload() const
 {
   return {};

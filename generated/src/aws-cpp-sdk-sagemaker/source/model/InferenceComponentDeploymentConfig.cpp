@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceComponentDeploymentConfig::InferenceComponentDeploymentConfig() : 
-    m_rollingUpdatePolicyHasBeenSet(false),
-    m_autoRollbackConfigurationHasBeenSet(false)
-{
-}
-
 InferenceComponentDeploymentConfig::InferenceComponentDeploymentConfig(JsonView jsonValue)
-  : InferenceComponentDeploymentConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InferenceComponentDeploymentConfig& InferenceComponentDeploymentConfig::operator
   if(jsonValue.ValueExists("RollingUpdatePolicy"))
   {
     m_rollingUpdatePolicy = jsonValue.GetObject("RollingUpdatePolicy");
-
     m_rollingUpdatePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoRollbackConfiguration"))
   {
     m_autoRollbackConfiguration = jsonValue.GetObject("AutoRollbackConfiguration");
-
     m_autoRollbackConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

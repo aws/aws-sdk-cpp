@@ -29,7 +29,7 @@ namespace Model
   class ListEksAnywhereSubscriptionsResult
   {
   public:
-    AWS_EKS_API ListEksAnywhereSubscriptionsResult();
+    AWS_EKS_API ListEksAnywhereSubscriptionsResult() = default;
     AWS_EKS_API ListEksAnywhereSubscriptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API ListEksAnywhereSubscriptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of all subscription objects in the region, filtered by includeStatus
      * and paginated by nextToken and maxResults.</p>
      */
-    inline const Aws::Vector<EksAnywhereSubscription>& GetSubscriptions() const{ return m_subscriptions; }
-    inline void SetSubscriptions(const Aws::Vector<EksAnywhereSubscription>& value) { m_subscriptions = value; }
-    inline void SetSubscriptions(Aws::Vector<EksAnywhereSubscription>&& value) { m_subscriptions = std::move(value); }
-    inline ListEksAnywhereSubscriptionsResult& WithSubscriptions(const Aws::Vector<EksAnywhereSubscription>& value) { SetSubscriptions(value); return *this;}
-    inline ListEksAnywhereSubscriptionsResult& WithSubscriptions(Aws::Vector<EksAnywhereSubscription>&& value) { SetSubscriptions(std::move(value)); return *this;}
-    inline ListEksAnywhereSubscriptionsResult& AddSubscriptions(const EksAnywhereSubscription& value) { m_subscriptions.push_back(value); return *this; }
-    inline ListEksAnywhereSubscriptionsResult& AddSubscriptions(EksAnywhereSubscription&& value) { m_subscriptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EksAnywhereSubscription>& GetSubscriptions() const { return m_subscriptions; }
+    template<typename SubscriptionsT = Aws::Vector<EksAnywhereSubscription>>
+    void SetSubscriptions(SubscriptionsT&& value) { m_subscriptionsHasBeenSet = true; m_subscriptions = std::forward<SubscriptionsT>(value); }
+    template<typename SubscriptionsT = Aws::Vector<EksAnywhereSubscription>>
+    ListEksAnywhereSubscriptionsResult& WithSubscriptions(SubscriptionsT&& value) { SetSubscriptions(std::forward<SubscriptionsT>(value)); return *this;}
+    template<typename SubscriptionsT = EksAnywhereSubscription>
+    ListEksAnywhereSubscriptionsResult& AddSubscriptions(SubscriptionsT&& value) { m_subscriptionsHasBeenSet = true; m_subscriptions.emplace_back(std::forward<SubscriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * maxResults, you can use this value to retrieve the next page of results. This
      * value is null when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEksAnywhereSubscriptionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEksAnywhereSubscriptionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEksAnywhereSubscriptionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEksAnywhereSubscriptionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEksAnywhereSubscriptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEksAnywhereSubscriptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEksAnywhereSubscriptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEksAnywhereSubscriptionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EksAnywhereSubscription> m_subscriptions;
+    bool m_subscriptionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

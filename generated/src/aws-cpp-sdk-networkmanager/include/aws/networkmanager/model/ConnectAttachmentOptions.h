@@ -32,7 +32,7 @@ namespace Model
   class ConnectAttachmentOptions
   {
   public:
-    AWS_NETWORKMANAGER_API ConnectAttachmentOptions();
+    AWS_NETWORKMANAGER_API ConnectAttachmentOptions() = default;
     AWS_NETWORKMANAGER_API ConnectAttachmentOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API ConnectAttachmentOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The protocol used for the attachment connection.</p>
      */
-    inline const TunnelProtocol& GetProtocol() const{ return m_protocol; }
+    inline TunnelProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const TunnelProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(TunnelProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline ConnectAttachmentOptions& WithProtocol(const TunnelProtocol& value) { SetProtocol(value); return *this;}
-    inline ConnectAttachmentOptions& WithProtocol(TunnelProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(TunnelProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline ConnectAttachmentOptions& WithProtocol(TunnelProtocol value) { SetProtocol(value); return *this;}
     ///@}
   private:
 
-    TunnelProtocol m_protocol;
+    TunnelProtocol m_protocol{TunnelProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
   };
 

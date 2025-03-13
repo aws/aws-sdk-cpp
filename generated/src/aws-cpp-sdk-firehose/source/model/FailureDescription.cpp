@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-FailureDescription::FailureDescription() : 
-    m_type(DeliveryStreamFailureType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 FailureDescription::FailureDescription(JsonView jsonValue)
-  : FailureDescription()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FailureDescription& FailureDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DeliveryStreamFailureTypeMapper::GetDeliveryStreamFailureTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     m_details = jsonValue.GetString("Details");
-
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

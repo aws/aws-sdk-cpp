@@ -12,21 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSubscriptionTargetRequest::CreateSubscriptionTargetRequest() : 
-    m_applicableAssetTypesHasBeenSet(false),
-    m_authorizedPrincipalsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_domainIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_manageAccessRoleHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_subscriptionTargetConfigHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String CreateSubscriptionTargetRequest::SerializePayload() const
 {
   JsonValue payload;

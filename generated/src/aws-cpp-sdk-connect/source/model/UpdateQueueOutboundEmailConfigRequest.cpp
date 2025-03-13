@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQueueOutboundEmailConfigRequest::UpdateQueueOutboundEmailConfigRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_outboundEmailConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQueueOutboundEmailConfigRequest::SerializePayload() const
 {
   JsonValue payload;

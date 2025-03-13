@@ -34,7 +34,7 @@ namespace Model
   class UpdateLabelsPayload
   {
   public:
-    AWS_EKS_API UpdateLabelsPayload();
+    AWS_EKS_API UpdateLabelsPayload() = default;
     AWS_EKS_API UpdateLabelsPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API UpdateLabelsPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,34 +44,30 @@ namespace Model
     /**
      * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAddOrUpdateLabels() const{ return m_addOrUpdateLabels; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAddOrUpdateLabels() const { return m_addOrUpdateLabels; }
     inline bool AddOrUpdateLabelsHasBeenSet() const { return m_addOrUpdateLabelsHasBeenSet; }
-    inline void SetAddOrUpdateLabels(const Aws::Map<Aws::String, Aws::String>& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels = value; }
-    inline void SetAddOrUpdateLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels = std::move(value); }
-    inline UpdateLabelsPayload& WithAddOrUpdateLabels(const Aws::Map<Aws::String, Aws::String>& value) { SetAddOrUpdateLabels(value); return *this;}
-    inline UpdateLabelsPayload& WithAddOrUpdateLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetAddOrUpdateLabels(std::move(value)); return *this;}
-    inline UpdateLabelsPayload& AddAddOrUpdateLabels(const Aws::String& key, const Aws::String& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(key, value); return *this; }
-    inline UpdateLabelsPayload& AddAddOrUpdateLabels(Aws::String&& key, const Aws::String& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(std::move(key), value); return *this; }
-    inline UpdateLabelsPayload& AddAddOrUpdateLabels(const Aws::String& key, Aws::String&& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(key, std::move(value)); return *this; }
-    inline UpdateLabelsPayload& AddAddOrUpdateLabels(Aws::String&& key, Aws::String&& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateLabelsPayload& AddAddOrUpdateLabels(const char* key, Aws::String&& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(key, std::move(value)); return *this; }
-    inline UpdateLabelsPayload& AddAddOrUpdateLabels(Aws::String&& key, const char* value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(std::move(key), value); return *this; }
-    inline UpdateLabelsPayload& AddAddOrUpdateLabels(const char* key, const char* value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(key, value); return *this; }
+    template<typename AddOrUpdateLabelsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAddOrUpdateLabels(AddOrUpdateLabelsT&& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels = std::forward<AddOrUpdateLabelsT>(value); }
+    template<typename AddOrUpdateLabelsT = Aws::Map<Aws::String, Aws::String>>
+    UpdateLabelsPayload& WithAddOrUpdateLabels(AddOrUpdateLabelsT&& value) { SetAddOrUpdateLabels(std::forward<AddOrUpdateLabelsT>(value)); return *this;}
+    template<typename AddOrUpdateLabelsKeyT = Aws::String, typename AddOrUpdateLabelsValueT = Aws::String>
+    UpdateLabelsPayload& AddAddOrUpdateLabels(AddOrUpdateLabelsKeyT&& key, AddOrUpdateLabelsValueT&& value) {
+      m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(std::forward<AddOrUpdateLabelsKeyT>(key), std::forward<AddOrUpdateLabelsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The Kubernetes <code>labels</code> to remove.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveLabels() const{ return m_removeLabels; }
+    inline const Aws::Vector<Aws::String>& GetRemoveLabels() const { return m_removeLabels; }
     inline bool RemoveLabelsHasBeenSet() const { return m_removeLabelsHasBeenSet; }
-    inline void SetRemoveLabels(const Aws::Vector<Aws::String>& value) { m_removeLabelsHasBeenSet = true; m_removeLabels = value; }
-    inline void SetRemoveLabels(Aws::Vector<Aws::String>&& value) { m_removeLabelsHasBeenSet = true; m_removeLabels = std::move(value); }
-    inline UpdateLabelsPayload& WithRemoveLabels(const Aws::Vector<Aws::String>& value) { SetRemoveLabels(value); return *this;}
-    inline UpdateLabelsPayload& WithRemoveLabels(Aws::Vector<Aws::String>&& value) { SetRemoveLabels(std::move(value)); return *this;}
-    inline UpdateLabelsPayload& AddRemoveLabels(const Aws::String& value) { m_removeLabelsHasBeenSet = true; m_removeLabels.push_back(value); return *this; }
-    inline UpdateLabelsPayload& AddRemoveLabels(Aws::String&& value) { m_removeLabelsHasBeenSet = true; m_removeLabels.push_back(std::move(value)); return *this; }
-    inline UpdateLabelsPayload& AddRemoveLabels(const char* value) { m_removeLabelsHasBeenSet = true; m_removeLabels.push_back(value); return *this; }
+    template<typename RemoveLabelsT = Aws::Vector<Aws::String>>
+    void SetRemoveLabels(RemoveLabelsT&& value) { m_removeLabelsHasBeenSet = true; m_removeLabels = std::forward<RemoveLabelsT>(value); }
+    template<typename RemoveLabelsT = Aws::Vector<Aws::String>>
+    UpdateLabelsPayload& WithRemoveLabels(RemoveLabelsT&& value) { SetRemoveLabels(std::forward<RemoveLabelsT>(value)); return *this;}
+    template<typename RemoveLabelsT = Aws::String>
+    UpdateLabelsPayload& AddRemoveLabels(RemoveLabelsT&& value) { m_removeLabelsHasBeenSet = true; m_removeLabels.emplace_back(std::forward<RemoveLabelsT>(value)); return *this; }
     ///@}
   private:
 

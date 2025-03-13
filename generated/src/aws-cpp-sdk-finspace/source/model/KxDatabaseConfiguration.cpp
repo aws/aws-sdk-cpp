@@ -18,17 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxDatabaseConfiguration::KxDatabaseConfiguration() : 
-    m_databaseNameHasBeenSet(false),
-    m_cacheConfigurationsHasBeenSet(false),
-    m_changesetIdHasBeenSet(false),
-    m_dataviewNameHasBeenSet(false),
-    m_dataviewConfigurationHasBeenSet(false)
-{
-}
-
 KxDatabaseConfiguration::KxDatabaseConfiguration(JsonView jsonValue)
-  : KxDatabaseConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ KxDatabaseConfiguration& KxDatabaseConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheConfigurations"))
   {
     Aws::Utils::Array<JsonView> cacheConfigurationsJsonList = jsonValue.GetArray("cacheConfigurations");
@@ -51,28 +39,21 @@ KxDatabaseConfiguration& KxDatabaseConfiguration::operator =(JsonView jsonValue)
     }
     m_cacheConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("changesetId"))
   {
     m_changesetId = jsonValue.GetString("changesetId");
-
     m_changesetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataviewName"))
   {
     m_dataviewName = jsonValue.GetString("dataviewName");
-
     m_dataviewNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataviewConfiguration"))
   {
     m_dataviewConfiguration = jsonValue.GetObject("dataviewConfiguration");
-
     m_dataviewConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

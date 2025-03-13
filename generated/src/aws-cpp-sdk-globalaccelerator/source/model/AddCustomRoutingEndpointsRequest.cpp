@@ -12,12 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddCustomRoutingEndpointsRequest::AddCustomRoutingEndpointsRequest() : 
-    m_endpointConfigurationsHasBeenSet(false),
-    m_endpointGroupArnHasBeenSet(false)
-{
-}
-
 Aws::String AddCustomRoutingEndpointsRequest::SerializePayload() const
 {
   JsonValue payload;

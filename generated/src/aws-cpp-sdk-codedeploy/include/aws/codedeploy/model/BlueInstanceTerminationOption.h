@@ -34,7 +34,7 @@ namespace Model
   class BlueInstanceTerminationOption
   {
   public:
-    AWS_CODEDEPLOY_API BlueInstanceTerminationOption();
+    AWS_CODEDEPLOY_API BlueInstanceTerminationOption() = default;
     AWS_CODEDEPLOY_API BlueInstanceTerminationOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API BlueInstanceTerminationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered
      * from the load balancer and removed from the deployment group.</p> </li> </ul>
      */
-    inline const InstanceAction& GetAction() const{ return m_action; }
+    inline InstanceAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const InstanceAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(InstanceAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline BlueInstanceTerminationOption& WithAction(const InstanceAction& value) { SetAction(value); return *this;}
-    inline BlueInstanceTerminationOption& WithAction(InstanceAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(InstanceAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline BlueInstanceTerminationOption& WithAction(InstanceAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -65,17 +63,17 @@ namespace Model
      * CodeDeploy shifts traffic from the original (blue) task set to a replacement
      * (green) task set. </p> <p> The maximum setting is 2880 minutes (2 days). </p>
      */
-    inline int GetTerminationWaitTimeInMinutes() const{ return m_terminationWaitTimeInMinutes; }
+    inline int GetTerminationWaitTimeInMinutes() const { return m_terminationWaitTimeInMinutes; }
     inline bool TerminationWaitTimeInMinutesHasBeenSet() const { return m_terminationWaitTimeInMinutesHasBeenSet; }
     inline void SetTerminationWaitTimeInMinutes(int value) { m_terminationWaitTimeInMinutesHasBeenSet = true; m_terminationWaitTimeInMinutes = value; }
     inline BlueInstanceTerminationOption& WithTerminationWaitTimeInMinutes(int value) { SetTerminationWaitTimeInMinutes(value); return *this;}
     ///@}
   private:
 
-    InstanceAction m_action;
+    InstanceAction m_action{InstanceAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    int m_terminationWaitTimeInMinutes;
+    int m_terminationWaitTimeInMinutes{0};
     bool m_terminationWaitTimeInMinutesHasBeenSet = false;
   };
 

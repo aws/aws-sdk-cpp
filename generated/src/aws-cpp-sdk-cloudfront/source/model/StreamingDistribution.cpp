@@ -20,19 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-StreamingDistribution::StreamingDistribution() : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_activeTrustedSignersHasBeenSet(false),
-    m_streamingDistributionConfigHasBeenSet(false)
-{
-}
-
 StreamingDistribution::StreamingDistribution(const XmlNode& xmlNode)
-  : StreamingDistribution()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,49 @@ StreamingDistribution& StreamingDistribution::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
+       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
     if(!domainNameNode.IsNull())
     {
       m_domainName = Aws::Utils::Xml::DecodeEscapedXmlText(domainNameNode.GetText());
       m_domainNameHasBeenSet = true;
+       m_domainNameHasBeenSet = true;
     }
     XmlNode activeTrustedSignersNode = resultNode.FirstChild("ActiveTrustedSigners");
     if(!activeTrustedSignersNode.IsNull())
     {
       m_activeTrustedSigners = activeTrustedSignersNode;
       m_activeTrustedSignersHasBeenSet = true;
+       m_activeTrustedSignersHasBeenSet = true;
     }
     XmlNode streamingDistributionConfigNode = resultNode.FirstChild("StreamingDistributionConfig");
     if(!streamingDistributionConfigNode.IsNull())
     {
       m_streamingDistributionConfig = streamingDistributionConfigNode;
       m_streamingDistributionConfigHasBeenSet = true;
+       m_streamingDistributionConfigHasBeenSet = true;
     }
   }
 

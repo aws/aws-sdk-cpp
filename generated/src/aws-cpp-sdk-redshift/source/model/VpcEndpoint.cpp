@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-VpcEndpoint::VpcEndpoint() : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
-{
-}
-
 VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode)
-  : VpcEndpoint()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     {
       m_vpcEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointIdNode.GetText());
       m_vpcEndpointIdHasBeenSet = true;
+       m_vpcEndpointIdHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode networkInterfacesNode = resultNode.FirstChild("NetworkInterfaces");
     if(!networkInterfacesNode.IsNull())
     {
       XmlNode networkInterfacesMember = networkInterfacesNode.FirstChild("NetworkInterface");
+      m_networkInterfacesHasBeenSet = !networkInterfacesMember.IsNull();
       while(!networkInterfacesMember.IsNull())
       {
         m_networkInterfaces.push_back(networkInterfacesMember);
         networkInterfacesMember = networkInterfacesMember.NextNode("NetworkInterface");
       }
 
-      m_networkInterfacesHasBeenSet = true;
+       m_networkInterfacesHasBeenSet = true;
     }
   }
 

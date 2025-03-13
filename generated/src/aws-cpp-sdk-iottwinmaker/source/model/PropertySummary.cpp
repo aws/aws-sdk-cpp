@@ -18,17 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-PropertySummary::PropertySummary() : 
-    m_definitionHasBeenSet(false),
-    m_propertyNameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_areAllPropertyValuesReturned(false),
-    m_areAllPropertyValuesReturnedHasBeenSet(false)
-{
-}
-
 PropertySummary::PropertySummary(JsonView jsonValue)
-  : PropertySummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ PropertySummary& PropertySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetObject("definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyName"))
   {
     m_propertyName = jsonValue.GetString("propertyName");
-
     m_propertyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("areAllPropertyValuesReturned"))
   {
     m_areAllPropertyValuesReturned = jsonValue.GetBool("areAllPropertyValuesReturned");
-
     m_areAllPropertyValuesReturnedHasBeenSet = true;
   }
-
   return *this;
 }
 

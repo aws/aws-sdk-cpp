@@ -19,20 +19,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-AssetType::AssetType() : 
-    m_category(AssetCategoryType::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_colorMode(ColorSchemeModeType::NOT_SET),
-    m_colorModeHasBeenSet(false),
-    m_extension(AssetExtensionType::NOT_SET),
-    m_extensionHasBeenSet(false),
-    m_bytesHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 AssetType::AssetType(JsonView jsonValue)
-  : AssetType()
 {
   *this = jsonValue;
 }
@@ -42,37 +29,28 @@ AssetType& AssetType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Category"))
   {
     m_category = AssetCategoryTypeMapper::GetAssetCategoryTypeForName(jsonValue.GetString("Category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorMode"))
   {
     m_colorMode = ColorSchemeModeTypeMapper::GetColorSchemeModeTypeForName(jsonValue.GetString("ColorMode"));
-
     m_colorModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Extension"))
   {
     m_extension = AssetExtensionTypeMapper::GetAssetExtensionTypeForName(jsonValue.GetString("Extension"));
-
     m_extensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Bytes"))
   {
     m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("Bytes"));
     m_bytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

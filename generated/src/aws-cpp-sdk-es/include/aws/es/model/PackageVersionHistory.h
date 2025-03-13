@@ -32,7 +32,7 @@ namespace Model
   class PackageVersionHistory
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API PackageVersionHistory();
+    AWS_ELASTICSEARCHSERVICE_API PackageVersionHistory() = default;
     AWS_ELASTICSEARCHSERVICE_API PackageVersionHistory(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API PackageVersionHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,36 @@ namespace Model
     /**
      * <p>Version of the package.</p>
      */
-    inline const Aws::String& GetPackageVersion() const{ return m_packageVersion; }
+    inline const Aws::String& GetPackageVersion() const { return m_packageVersion; }
     inline bool PackageVersionHasBeenSet() const { return m_packageVersionHasBeenSet; }
-    inline void SetPackageVersion(const Aws::String& value) { m_packageVersionHasBeenSet = true; m_packageVersion = value; }
-    inline void SetPackageVersion(Aws::String&& value) { m_packageVersionHasBeenSet = true; m_packageVersion = std::move(value); }
-    inline void SetPackageVersion(const char* value) { m_packageVersionHasBeenSet = true; m_packageVersion.assign(value); }
-    inline PackageVersionHistory& WithPackageVersion(const Aws::String& value) { SetPackageVersion(value); return *this;}
-    inline PackageVersionHistory& WithPackageVersion(Aws::String&& value) { SetPackageVersion(std::move(value)); return *this;}
-    inline PackageVersionHistory& WithPackageVersion(const char* value) { SetPackageVersion(value); return *this;}
+    template<typename PackageVersionT = Aws::String>
+    void SetPackageVersion(PackageVersionT&& value) { m_packageVersionHasBeenSet = true; m_packageVersion = std::forward<PackageVersionT>(value); }
+    template<typename PackageVersionT = Aws::String>
+    PackageVersionHistory& WithPackageVersion(PackageVersionT&& value) { SetPackageVersion(std::forward<PackageVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message associated with the version.</p>
      */
-    inline const Aws::String& GetCommitMessage() const{ return m_commitMessage; }
+    inline const Aws::String& GetCommitMessage() const { return m_commitMessage; }
     inline bool CommitMessageHasBeenSet() const { return m_commitMessageHasBeenSet; }
-    inline void SetCommitMessage(const Aws::String& value) { m_commitMessageHasBeenSet = true; m_commitMessage = value; }
-    inline void SetCommitMessage(Aws::String&& value) { m_commitMessageHasBeenSet = true; m_commitMessage = std::move(value); }
-    inline void SetCommitMessage(const char* value) { m_commitMessageHasBeenSet = true; m_commitMessage.assign(value); }
-    inline PackageVersionHistory& WithCommitMessage(const Aws::String& value) { SetCommitMessage(value); return *this;}
-    inline PackageVersionHistory& WithCommitMessage(Aws::String&& value) { SetCommitMessage(std::move(value)); return *this;}
-    inline PackageVersionHistory& WithCommitMessage(const char* value) { SetCommitMessage(value); return *this;}
+    template<typename CommitMessageT = Aws::String>
+    void SetCommitMessage(CommitMessageT&& value) { m_commitMessageHasBeenSet = true; m_commitMessage = std::forward<CommitMessageT>(value); }
+    template<typename CommitMessageT = Aws::String>
+    PackageVersionHistory& WithCommitMessage(CommitMessageT&& value) { SetCommitMessage(std::forward<CommitMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp which tells creation time of the package version.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline PackageVersionHistory& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline PackageVersionHistory& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    PackageVersionHistory& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_commitMessage;
     bool m_commitMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
   };
 

@@ -28,7 +28,7 @@ namespace Model
   class GetBucketMetricsConfigurationResult
   {
   public:
-    AWS_S3CRT_API GetBucketMetricsConfigurationResult();
+    AWS_S3CRT_API GetBucketMetricsConfigurationResult() = default;
     AWS_S3CRT_API GetBucketMetricsConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API GetBucketMetricsConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Specifies the metrics configuration.</p>
      */
-    inline const MetricsConfiguration& GetMetricsConfiguration() const{ return m_metricsConfiguration; }
-    inline void SetMetricsConfiguration(const MetricsConfiguration& value) { m_metricsConfiguration = value; }
-    inline void SetMetricsConfiguration(MetricsConfiguration&& value) { m_metricsConfiguration = std::move(value); }
-    inline GetBucketMetricsConfigurationResult& WithMetricsConfiguration(const MetricsConfiguration& value) { SetMetricsConfiguration(value); return *this;}
-    inline GetBucketMetricsConfigurationResult& WithMetricsConfiguration(MetricsConfiguration&& value) { SetMetricsConfiguration(std::move(value)); return *this;}
+    inline const MetricsConfiguration& GetMetricsConfiguration() const { return m_metricsConfiguration; }
+    template<typename MetricsConfigurationT = MetricsConfiguration>
+    void SetMetricsConfiguration(MetricsConfigurationT&& value) { m_metricsConfigurationHasBeenSet = true; m_metricsConfiguration = std::forward<MetricsConfigurationT>(value); }
+    template<typename MetricsConfigurationT = MetricsConfiguration>
+    GetBucketMetricsConfigurationResult& WithMetricsConfiguration(MetricsConfigurationT&& value) { SetMetricsConfiguration(std::forward<MetricsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBucketMetricsConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBucketMetricsConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBucketMetricsConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBucketMetricsConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MetricsConfiguration m_metricsConfiguration;
+    bool m_metricsConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceNetworkRequest::GetServiceNetworkRequest() : 
-    m_serviceNetworkIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceNetworkRequest::SerializePayload() const
 {
   return {};

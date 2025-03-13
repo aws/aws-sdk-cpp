@@ -38,7 +38,7 @@ namespace Model
   class ServiceConnectServiceResource
   {
   public:
-    AWS_ECS_API ServiceConnectServiceResource();
+    AWS_ECS_API ServiceConnectServiceResource() = default;
     AWS_ECS_API ServiceConnectServiceResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ServiceConnectServiceResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * the port mapping name from the task definition is used in
      * <code>portName.namespace</code>.</p>
      */
-    inline const Aws::String& GetDiscoveryName() const{ return m_discoveryName; }
+    inline const Aws::String& GetDiscoveryName() const { return m_discoveryName; }
     inline bool DiscoveryNameHasBeenSet() const { return m_discoveryNameHasBeenSet; }
-    inline void SetDiscoveryName(const Aws::String& value) { m_discoveryNameHasBeenSet = true; m_discoveryName = value; }
-    inline void SetDiscoveryName(Aws::String&& value) { m_discoveryNameHasBeenSet = true; m_discoveryName = std::move(value); }
-    inline void SetDiscoveryName(const char* value) { m_discoveryNameHasBeenSet = true; m_discoveryName.assign(value); }
-    inline ServiceConnectServiceResource& WithDiscoveryName(const Aws::String& value) { SetDiscoveryName(value); return *this;}
-    inline ServiceConnectServiceResource& WithDiscoveryName(Aws::String&& value) { SetDiscoveryName(std::move(value)); return *this;}
-    inline ServiceConnectServiceResource& WithDiscoveryName(const char* value) { SetDiscoveryName(value); return *this;}
+    template<typename DiscoveryNameT = Aws::String>
+    void SetDiscoveryName(DiscoveryNameT&& value) { m_discoveryNameHasBeenSet = true; m_discoveryName = std::forward<DiscoveryNameT>(value); }
+    template<typename DiscoveryNameT = Aws::String>
+    ServiceConnectServiceResource& WithDiscoveryName(DiscoveryNameT&& value) { SetDiscoveryName(std::forward<DiscoveryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * other integrations with Cloud Map. However, Service Connect can't ensure
      * connectivity outside of Amazon ECS.</p>
      */
-    inline const Aws::String& GetDiscoveryArn() const{ return m_discoveryArn; }
+    inline const Aws::String& GetDiscoveryArn() const { return m_discoveryArn; }
     inline bool DiscoveryArnHasBeenSet() const { return m_discoveryArnHasBeenSet; }
-    inline void SetDiscoveryArn(const Aws::String& value) { m_discoveryArnHasBeenSet = true; m_discoveryArn = value; }
-    inline void SetDiscoveryArn(Aws::String&& value) { m_discoveryArnHasBeenSet = true; m_discoveryArn = std::move(value); }
-    inline void SetDiscoveryArn(const char* value) { m_discoveryArnHasBeenSet = true; m_discoveryArn.assign(value); }
-    inline ServiceConnectServiceResource& WithDiscoveryArn(const Aws::String& value) { SetDiscoveryArn(value); return *this;}
-    inline ServiceConnectServiceResource& WithDiscoveryArn(Aws::String&& value) { SetDiscoveryArn(std::move(value)); return *this;}
-    inline ServiceConnectServiceResource& WithDiscoveryArn(const char* value) { SetDiscoveryArn(value); return *this;}
+    template<typename DiscoveryArnT = Aws::String>
+    void SetDiscoveryArn(DiscoveryArnT&& value) { m_discoveryArnHasBeenSet = true; m_discoveryArn = std::forward<DiscoveryArnT>(value); }
+    template<typename DiscoveryArnT = Aws::String>
+    ServiceConnectServiceResource& WithDiscoveryArn(DiscoveryArnT&& value) { SetDiscoveryArn(std::forward<DiscoveryArnT>(value)); return *this;}
     ///@}
   private:
 

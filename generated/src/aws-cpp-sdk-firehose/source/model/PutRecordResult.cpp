@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutRecordResult::PutRecordResult() : 
-    m_encrypted(false)
-{
-}
-
 PutRecordResult::PutRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutRecordResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ PutRecordResult& PutRecordResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("RecordId"))
   {
     m_recordId = jsonValue.GetString("RecordId");
-
+    m_recordIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encrypted"))
   {
     m_encrypted = jsonValue.GetBool("Encrypted");
-
+    m_encryptedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

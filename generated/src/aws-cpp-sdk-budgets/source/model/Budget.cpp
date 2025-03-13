@@ -18,25 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-Budget::Budget() : 
-    m_budgetNameHasBeenSet(false),
-    m_budgetLimitHasBeenSet(false),
-    m_plannedBudgetLimitsHasBeenSet(false),
-    m_costFiltersHasBeenSet(false),
-    m_costTypesHasBeenSet(false),
-    m_timeUnit(TimeUnit::NOT_SET),
-    m_timeUnitHasBeenSet(false),
-    m_timePeriodHasBeenSet(false),
-    m_calculatedSpendHasBeenSet(false),
-    m_budgetType(BudgetType::NOT_SET),
-    m_budgetTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_autoAdjustDataHasBeenSet(false)
-{
-}
-
 Budget::Budget(JsonView jsonValue)
-  : Budget()
 {
   *this = jsonValue;
 }
@@ -46,17 +28,13 @@ Budget& Budget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BudgetName"))
   {
     m_budgetName = jsonValue.GetString("BudgetName");
-
     m_budgetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BudgetLimit"))
   {
     m_budgetLimit = jsonValue.GetObject("BudgetLimit");
-
     m_budgetLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlannedBudgetLimits"))
   {
     Aws::Map<Aws::String, JsonView> plannedBudgetLimitsJsonMap = jsonValue.GetObject("PlannedBudgetLimits").GetAllObjects();
@@ -66,7 +44,6 @@ Budget& Budget::operator =(JsonView jsonValue)
     }
     m_plannedBudgetLimitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CostFilters"))
   {
     Aws::Map<Aws::String, JsonView> costFiltersJsonMap = jsonValue.GetObject("CostFilters").GetAllObjects();
@@ -83,56 +60,41 @@ Budget& Budget::operator =(JsonView jsonValue)
     }
     m_costFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CostTypes"))
   {
     m_costTypes = jsonValue.GetObject("CostTypes");
-
     m_costTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeUnit"))
   {
     m_timeUnit = TimeUnitMapper::GetTimeUnitForName(jsonValue.GetString("TimeUnit"));
-
     m_timeUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimePeriod"))
   {
     m_timePeriod = jsonValue.GetObject("TimePeriod");
-
     m_timePeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CalculatedSpend"))
   {
     m_calculatedSpend = jsonValue.GetObject("CalculatedSpend");
-
     m_calculatedSpendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BudgetType"))
   {
     m_budgetType = BudgetTypeMapper::GetBudgetTypeForName(jsonValue.GetString("BudgetType"));
-
     m_budgetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoAdjustData"))
   {
     m_autoAdjustData = jsonValue.GetObject("AutoAdjustData");
-
     m_autoAdjustDataHasBeenSet = true;
   }
-
   return *this;
 }
 

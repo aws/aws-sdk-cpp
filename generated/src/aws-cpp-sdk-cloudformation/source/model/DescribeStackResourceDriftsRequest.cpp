@@ -10,15 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DescribeStackResourceDriftsRequest::DescribeStackResourceDriftsRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_stackResourceDriftStatusFiltersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStackResourceDriftsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

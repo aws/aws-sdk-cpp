@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AssociatedTranscriptFilter::AssociatedTranscriptFilter() : 
-    m_name(AssociatedTranscriptFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 AssociatedTranscriptFilter::AssociatedTranscriptFilter(JsonView jsonValue)
-  : AssociatedTranscriptFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AssociatedTranscriptFilter& AssociatedTranscriptFilter::operator =(JsonView json
   if(jsonValue.ValueExists("name"))
   {
     m_name = AssociatedTranscriptFilterNameMapper::GetAssociatedTranscriptFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -49,7 +39,6 @@ AssociatedTranscriptFilter& AssociatedTranscriptFilter::operator =(JsonView json
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

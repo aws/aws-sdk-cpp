@@ -34,7 +34,7 @@ namespace Model
   class VdmAttributes
   {
   public:
-    AWS_SESV2_API VdmAttributes();
+    AWS_SESV2_API VdmAttributes() = default;
     AWS_SESV2_API VdmAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API VdmAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * your account.</p> </li> <li> <p> <code>DISABLED</code> – Amazon SES disables VDM
      * for your account.</p> </li> </ul>
      */
-    inline const FeatureStatus& GetVdmEnabled() const{ return m_vdmEnabled; }
+    inline FeatureStatus GetVdmEnabled() const { return m_vdmEnabled; }
     inline bool VdmEnabledHasBeenSet() const { return m_vdmEnabledHasBeenSet; }
-    inline void SetVdmEnabled(const FeatureStatus& value) { m_vdmEnabledHasBeenSet = true; m_vdmEnabled = value; }
-    inline void SetVdmEnabled(FeatureStatus&& value) { m_vdmEnabledHasBeenSet = true; m_vdmEnabled = std::move(value); }
-    inline VdmAttributes& WithVdmEnabled(const FeatureStatus& value) { SetVdmEnabled(value); return *this;}
-    inline VdmAttributes& WithVdmEnabled(FeatureStatus&& value) { SetVdmEnabled(std::move(value)); return *this;}
+    inline void SetVdmEnabled(FeatureStatus value) { m_vdmEnabledHasBeenSet = true; m_vdmEnabled = value; }
+    inline VdmAttributes& WithVdmEnabled(FeatureStatus value) { SetVdmEnabled(value); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * <p>Specifies additional settings for your VDM configuration as applicable to the
      * Dashboard.</p>
      */
-    inline const DashboardAttributes& GetDashboardAttributes() const{ return m_dashboardAttributes; }
+    inline const DashboardAttributes& GetDashboardAttributes() const { return m_dashboardAttributes; }
     inline bool DashboardAttributesHasBeenSet() const { return m_dashboardAttributesHasBeenSet; }
-    inline void SetDashboardAttributes(const DashboardAttributes& value) { m_dashboardAttributesHasBeenSet = true; m_dashboardAttributes = value; }
-    inline void SetDashboardAttributes(DashboardAttributes&& value) { m_dashboardAttributesHasBeenSet = true; m_dashboardAttributes = std::move(value); }
-    inline VdmAttributes& WithDashboardAttributes(const DashboardAttributes& value) { SetDashboardAttributes(value); return *this;}
-    inline VdmAttributes& WithDashboardAttributes(DashboardAttributes&& value) { SetDashboardAttributes(std::move(value)); return *this;}
+    template<typename DashboardAttributesT = DashboardAttributes>
+    void SetDashboardAttributes(DashboardAttributesT&& value) { m_dashboardAttributesHasBeenSet = true; m_dashboardAttributes = std::forward<DashboardAttributesT>(value); }
+    template<typename DashboardAttributesT = DashboardAttributes>
+    VdmAttributes& WithDashboardAttributes(DashboardAttributesT&& value) { SetDashboardAttributes(std::forward<DashboardAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,16 +71,16 @@ namespace Model
      * <p>Specifies additional settings for your VDM configuration as applicable to the
      * Guardian.</p>
      */
-    inline const GuardianAttributes& GetGuardianAttributes() const{ return m_guardianAttributes; }
+    inline const GuardianAttributes& GetGuardianAttributes() const { return m_guardianAttributes; }
     inline bool GuardianAttributesHasBeenSet() const { return m_guardianAttributesHasBeenSet; }
-    inline void SetGuardianAttributes(const GuardianAttributes& value) { m_guardianAttributesHasBeenSet = true; m_guardianAttributes = value; }
-    inline void SetGuardianAttributes(GuardianAttributes&& value) { m_guardianAttributesHasBeenSet = true; m_guardianAttributes = std::move(value); }
-    inline VdmAttributes& WithGuardianAttributes(const GuardianAttributes& value) { SetGuardianAttributes(value); return *this;}
-    inline VdmAttributes& WithGuardianAttributes(GuardianAttributes&& value) { SetGuardianAttributes(std::move(value)); return *this;}
+    template<typename GuardianAttributesT = GuardianAttributes>
+    void SetGuardianAttributes(GuardianAttributesT&& value) { m_guardianAttributesHasBeenSet = true; m_guardianAttributes = std::forward<GuardianAttributesT>(value); }
+    template<typename GuardianAttributesT = GuardianAttributes>
+    VdmAttributes& WithGuardianAttributes(GuardianAttributesT&& value) { SetGuardianAttributes(std::forward<GuardianAttributesT>(value)); return *this;}
     ///@}
   private:
 
-    FeatureStatus m_vdmEnabled;
+    FeatureStatus m_vdmEnabled{FeatureStatus::NOT_SET};
     bool m_vdmEnabledHasBeenSet = false;
 
     DashboardAttributes m_dashboardAttributes;

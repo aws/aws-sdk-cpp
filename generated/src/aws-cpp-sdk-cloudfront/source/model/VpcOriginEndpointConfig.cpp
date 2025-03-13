@@ -20,21 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-VpcOriginEndpointConfig::VpcOriginEndpointConfig() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_hTTPPort(0),
-    m_hTTPPortHasBeenSet(false),
-    m_hTTPSPort(0),
-    m_hTTPSPortHasBeenSet(false),
-    m_originProtocolPolicy(OriginProtocolPolicy::NOT_SET),
-    m_originProtocolPolicyHasBeenSet(false),
-    m_originSslProtocolsHasBeenSet(false)
-{
-}
-
 VpcOriginEndpointConfig::VpcOriginEndpointConfig(const XmlNode& xmlNode)
-  : VpcOriginEndpointConfig()
 {
   *this = xmlNode;
 }
@@ -50,36 +36,42 @@ VpcOriginEndpointConfig& VpcOriginEndpointConfig::operator =(const XmlNode& xmlN
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode hTTPPortNode = resultNode.FirstChild("HTTPPort");
     if(!hTTPPortNode.IsNull())
     {
       m_hTTPPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hTTPPortNode.GetText()).c_str()).c_str());
       m_hTTPPortHasBeenSet = true;
+       m_hTTPPortHasBeenSet = true;
     }
     XmlNode hTTPSPortNode = resultNode.FirstChild("HTTPSPort");
     if(!hTTPSPortNode.IsNull())
     {
       m_hTTPSPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hTTPSPortNode.GetText()).c_str()).c_str());
       m_hTTPSPortHasBeenSet = true;
+       m_hTTPSPortHasBeenSet = true;
     }
     XmlNode originProtocolPolicyNode = resultNode.FirstChild("OriginProtocolPolicy");
     if(!originProtocolPolicyNode.IsNull())
     {
-      m_originProtocolPolicy = OriginProtocolPolicyMapper::GetOriginProtocolPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originProtocolPolicyNode.GetText()).c_str()).c_str());
+      m_originProtocolPolicy = OriginProtocolPolicyMapper::GetOriginProtocolPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originProtocolPolicyNode.GetText()).c_str()));
       m_originProtocolPolicyHasBeenSet = true;
+       m_originProtocolPolicyHasBeenSet = true;
     }
     XmlNode originSslProtocolsNode = resultNode.FirstChild("OriginSslProtocols");
     if(!originSslProtocolsNode.IsNull())
     {
       m_originSslProtocols = originSslProtocolsNode;
       m_originSslProtocolsHasBeenSet = true;
+       m_originSslProtocolsHasBeenSet = true;
     }
   }
 

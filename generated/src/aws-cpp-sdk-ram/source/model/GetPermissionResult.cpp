@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPermissionResult::GetPermissionResult()
-{
-}
-
 GetPermissionResult::GetPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetPermissionResult& GetPermissionResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("permission"))
   {
     m_permission = jsonValue.GetObject("permission");
-
+    m_permissionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

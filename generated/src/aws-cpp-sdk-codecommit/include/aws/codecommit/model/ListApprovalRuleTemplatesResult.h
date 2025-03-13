@@ -28,7 +28,7 @@ namespace Model
   class ListApprovalRuleTemplatesResult
   {
   public:
-    AWS_CODECOMMIT_API ListApprovalRuleTemplatesResult();
+    AWS_CODECOMMIT_API ListApprovalRuleTemplatesResult() = default;
     AWS_CODECOMMIT_API ListApprovalRuleTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API ListApprovalRuleTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,14 +38,13 @@ namespace Model
      * <p>The names of all the approval rule templates found in the Amazon Web Services
      * Region for your Amazon Web Services account.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetApprovalRuleTemplateNames() const{ return m_approvalRuleTemplateNames; }
-    inline void SetApprovalRuleTemplateNames(const Aws::Vector<Aws::String>& value) { m_approvalRuleTemplateNames = value; }
-    inline void SetApprovalRuleTemplateNames(Aws::Vector<Aws::String>&& value) { m_approvalRuleTemplateNames = std::move(value); }
-    inline ListApprovalRuleTemplatesResult& WithApprovalRuleTemplateNames(const Aws::Vector<Aws::String>& value) { SetApprovalRuleTemplateNames(value); return *this;}
-    inline ListApprovalRuleTemplatesResult& WithApprovalRuleTemplateNames(Aws::Vector<Aws::String>&& value) { SetApprovalRuleTemplateNames(std::move(value)); return *this;}
-    inline ListApprovalRuleTemplatesResult& AddApprovalRuleTemplateNames(const Aws::String& value) { m_approvalRuleTemplateNames.push_back(value); return *this; }
-    inline ListApprovalRuleTemplatesResult& AddApprovalRuleTemplateNames(Aws::String&& value) { m_approvalRuleTemplateNames.push_back(std::move(value)); return *this; }
-    inline ListApprovalRuleTemplatesResult& AddApprovalRuleTemplateNames(const char* value) { m_approvalRuleTemplateNames.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetApprovalRuleTemplateNames() const { return m_approvalRuleTemplateNames; }
+    template<typename ApprovalRuleTemplateNamesT = Aws::Vector<Aws::String>>
+    void SetApprovalRuleTemplateNames(ApprovalRuleTemplateNamesT&& value) { m_approvalRuleTemplateNamesHasBeenSet = true; m_approvalRuleTemplateNames = std::forward<ApprovalRuleTemplateNamesT>(value); }
+    template<typename ApprovalRuleTemplateNamesT = Aws::Vector<Aws::String>>
+    ListApprovalRuleTemplatesResult& WithApprovalRuleTemplateNames(ApprovalRuleTemplateNamesT&& value) { SetApprovalRuleTemplateNames(std::forward<ApprovalRuleTemplateNamesT>(value)); return *this;}
+    template<typename ApprovalRuleTemplateNamesT = Aws::String>
+    ListApprovalRuleTemplatesResult& AddApprovalRuleTemplateNames(ApprovalRuleTemplateNamesT&& value) { m_approvalRuleTemplateNamesHasBeenSet = true; m_approvalRuleTemplateNames.emplace_back(std::forward<ApprovalRuleTemplateNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +52,31 @@ namespace Model
      * <p>An enumeration token that allows the operation to batch the next results of
      * the operation.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListApprovalRuleTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListApprovalRuleTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListApprovalRuleTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListApprovalRuleTemplatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListApprovalRuleTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListApprovalRuleTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListApprovalRuleTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListApprovalRuleTemplatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_approvalRuleTemplateNames;
+    bool m_approvalRuleTemplateNamesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

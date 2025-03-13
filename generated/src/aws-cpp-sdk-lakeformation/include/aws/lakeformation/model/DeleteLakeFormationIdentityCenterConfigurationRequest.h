@@ -21,7 +21,7 @@ namespace Model
   class DeleteLakeFormationIdentityCenterConfigurationRequest : public LakeFormationRequest
   {
   public:
-    AWS_LAKEFORMATION_API DeleteLakeFormationIdentityCenterConfigurationRequest();
+    AWS_LAKEFORMATION_API DeleteLakeFormationIdentityCenterConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * table definitions, view definition, and other control information to manage your
      * Lake Formation environment.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline DeleteLakeFormationIdentityCenterConfigurationRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline DeleteLakeFormationIdentityCenterConfigurationRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline DeleteLakeFormationIdentityCenterConfigurationRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    DeleteLakeFormationIdentityCenterConfigurationRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
   private:
 

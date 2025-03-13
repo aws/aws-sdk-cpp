@@ -38,7 +38,7 @@ namespace Model
   class PerformanceInsightsMetricQuery
   {
   public:
-    AWS_RDS_API PerformanceInsightsMetricQuery();
+    AWS_RDS_API PerformanceInsightsMetricQuery() = default;
     AWS_RDS_API PerformanceInsightsMetricQuery(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API PerformanceInsightsMetricQuery& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,12 +54,12 @@ namespace Model
      * dimensions within that group. You can also request that Performance Insights
      * return a limited number of values for a dimension.</p>
      */
-    inline const PerformanceInsightsMetricDimensionGroup& GetGroupBy() const{ return m_groupBy; }
+    inline const PerformanceInsightsMetricDimensionGroup& GetGroupBy() const { return m_groupBy; }
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
-    inline void SetGroupBy(const PerformanceInsightsMetricDimensionGroup& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
-    inline void SetGroupBy(PerformanceInsightsMetricDimensionGroup&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
-    inline PerformanceInsightsMetricQuery& WithGroupBy(const PerformanceInsightsMetricDimensionGroup& value) { SetGroupBy(value); return *this;}
-    inline PerformanceInsightsMetricQuery& WithGroupBy(PerformanceInsightsMetricDimensionGroup&& value) { SetGroupBy(std::move(value)); return *this;}
+    template<typename GroupByT = PerformanceInsightsMetricDimensionGroup>
+    void SetGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy = std::forward<GroupByT>(value); }
+    template<typename GroupByT = PerformanceInsightsMetricDimensionGroup>
+    PerformanceInsightsMetricQuery& WithGroupBy(GroupByT&& value) { SetGroupBy(std::forward<GroupByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +80,12 @@ namespace Model
      * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use
      * cases, you can query <code>db.load.avg</code> only.</p>
      */
-    inline const Aws::String& GetMetric() const{ return m_metric; }
+    inline const Aws::String& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
-    inline PerformanceInsightsMetricQuery& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
-    inline PerformanceInsightsMetricQuery& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
-    inline PerformanceInsightsMetricQuery& WithMetric(const char* value) { SetMetric(value); return *this;}
+    template<typename MetricT = Aws::String>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = Aws::String>
+    PerformanceInsightsMetricQuery& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
   private:
 

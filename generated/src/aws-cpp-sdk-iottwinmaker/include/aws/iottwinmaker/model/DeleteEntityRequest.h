@@ -25,7 +25,7 @@ namespace Model
   class DeleteEntityRequest : public IoTTwinMakerRequest
   {
   public:
-    AWS_IOTTWINMAKER_API DeleteEntityRequest();
+    AWS_IOTTWINMAKER_API DeleteEntityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the workspace that contains the entity to delete.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-    inline DeleteEntityRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-    inline DeleteEntityRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-    inline DeleteEntityRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    DeleteEntityRequest& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the entity to delete.</p>
      */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+    inline const Aws::String& GetEntityId() const { return m_entityId; }
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-    inline DeleteEntityRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-    inline DeleteEntityRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-    inline DeleteEntityRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+    template<typename EntityIdT = Aws::String>
+    void SetEntityId(EntityIdT&& value) { m_entityIdHasBeenSet = true; m_entityId = std::forward<EntityIdT>(value); }
+    template<typename EntityIdT = Aws::String>
+    DeleteEntityRequest& WithEntityId(EntityIdT&& value) { SetEntityId(std::forward<EntityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * <p>A Boolean value that specifies whether the operation deletes child
      * entities.</p>
      */
-    inline bool GetIsRecursive() const{ return m_isRecursive; }
+    inline bool GetIsRecursive() const { return m_isRecursive; }
     inline bool IsRecursiveHasBeenSet() const { return m_isRecursiveHasBeenSet; }
     inline void SetIsRecursive(bool value) { m_isRecursiveHasBeenSet = true; m_isRecursive = value; }
     inline DeleteEntityRequest& WithIsRecursive(bool value) { SetIsRecursive(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_entityId;
     bool m_entityIdHasBeenSet = false;
 
-    bool m_isRecursive;
+    bool m_isRecursive{false};
     bool m_isRecursiveHasBeenSet = false;
   };
 

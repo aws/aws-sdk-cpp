@@ -18,15 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-NotificationConfiguration::NotificationConfiguration() : 
-    m_status(ConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false)
-{
-}
-
 NotificationConfiguration::NotificationConfiguration(JsonView jsonValue)
-  : NotificationConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NotificationConfiguration& NotificationConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ConfigurationStatusMapper::GetConfigurationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationConfig"))
   {
     m_destinationConfig = jsonValue.GetObject("DestinationConfig");
-
     m_destinationConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

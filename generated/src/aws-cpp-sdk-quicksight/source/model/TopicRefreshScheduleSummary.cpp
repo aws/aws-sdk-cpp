@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicRefreshScheduleSummary::TopicRefreshScheduleSummary() : 
-    m_datasetIdHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_refreshScheduleHasBeenSet(false)
-{
-}
-
 TopicRefreshScheduleSummary::TopicRefreshScheduleSummary(JsonView jsonValue)
-  : TopicRefreshScheduleSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TopicRefreshScheduleSummary& TopicRefreshScheduleSummary::operator =(JsonView js
   if(jsonValue.ValueExists("DatasetId"))
   {
     m_datasetId = jsonValue.GetString("DatasetId");
-
     m_datasetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetArn"))
   {
     m_datasetArn = jsonValue.GetString("DatasetArn");
-
     m_datasetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetName"))
   {
     m_datasetName = jsonValue.GetString("DatasetName");
-
     m_datasetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshSchedule"))
   {
     m_refreshSchedule = jsonValue.GetObject("RefreshSchedule");
-
     m_refreshScheduleHasBeenSet = true;
   }
-
   return *this;
 }
 

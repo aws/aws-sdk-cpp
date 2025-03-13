@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClientConnectResponseOptions::ClientConnectResponseOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_lambdaFunctionArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ClientConnectResponseOptions::ClientConnectResponseOptions(const XmlNode& xmlNode)
-  : ClientConnectResponseOptions()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ ClientConnectResponseOptions& ClientConnectResponseOptions::operator =(const Xml
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode lambdaFunctionArnNode = resultNode.FirstChild("lambdaFunctionArn");
     if(!lambdaFunctionArnNode.IsNull())
     {
       m_lambdaFunctionArn = Aws::Utils::Xml::DecodeEscapedXmlText(lambdaFunctionArnNode.GetText());
       m_lambdaFunctionArnHasBeenSet = true;
+       m_lambdaFunctionArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

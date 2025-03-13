@@ -12,15 +12,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCertificateAuthoritiesRequest::ListCertificateAuthoritiesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_resourceOwner(ResourceOwner::NOT_SET),
-    m_resourceOwnerHasBeenSet(false)
-{
-}
-
 Aws::String ListCertificateAuthoritiesRequest::SerializePayload() const
 {
   JsonValue payload;

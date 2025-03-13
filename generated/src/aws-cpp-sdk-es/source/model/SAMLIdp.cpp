@@ -18,14 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-SAMLIdp::SAMLIdp() : 
-    m_metadataContentHasBeenSet(false),
-    m_entityIdHasBeenSet(false)
-{
-}
-
 SAMLIdp::SAMLIdp(JsonView jsonValue)
-  : SAMLIdp()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SAMLIdp& SAMLIdp::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetadataContent"))
   {
     m_metadataContent = jsonValue.GetString("MetadataContent");
-
     m_metadataContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityId"))
   {
     m_entityId = jsonValue.GetString("EntityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   return *this;
 }
 

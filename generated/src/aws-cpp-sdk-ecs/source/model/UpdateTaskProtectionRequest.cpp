@@ -12,16 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTaskProtectionRequest::UpdateTaskProtectionRequest() : 
-    m_clusterHasBeenSet(false),
-    m_tasksHasBeenSet(false),
-    m_protectionEnabled(false),
-    m_protectionEnabledHasBeenSet(false),
-    m_expiresInMinutes(0),
-    m_expiresInMinutesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTaskProtectionRequest::SerializePayload() const
 {
   JsonValue payload;

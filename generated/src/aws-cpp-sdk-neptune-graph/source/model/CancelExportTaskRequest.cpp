@@ -12,11 +12,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelExportTaskRequest::CancelExportTaskRequest() : 
-    m_taskIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String CancelExportTaskRequest::SerializePayload() const
 {
   return {};

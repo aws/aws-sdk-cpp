@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateUserRequest::UpdateUserRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_directoryIdHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_givenNameHasBeenSet(false),
-    m_otherAttributesHasBeenSet(false),
-    m_sAMAccountNameHasBeenSet(false),
-    m_surnameHasBeenSet(false),
-    m_updateType(UpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserRequest::SerializePayload() const
 {
   JsonValue payload;

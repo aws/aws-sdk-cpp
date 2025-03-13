@@ -32,7 +32,7 @@ namespace Model
   class FileLocation
   {
   public:
-    AWS_IOT_API FileLocation();
+    AWS_IOT_API FileLocation() = default;
     AWS_IOT_API FileLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API FileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The stream that contains the OTA update.</p>
      */
-    inline const Stream& GetStream() const{ return m_stream; }
+    inline const Stream& GetStream() const { return m_stream; }
     inline bool StreamHasBeenSet() const { return m_streamHasBeenSet; }
-    inline void SetStream(const Stream& value) { m_streamHasBeenSet = true; m_stream = value; }
-    inline void SetStream(Stream&& value) { m_streamHasBeenSet = true; m_stream = std::move(value); }
-    inline FileLocation& WithStream(const Stream& value) { SetStream(value); return *this;}
-    inline FileLocation& WithStream(Stream&& value) { SetStream(std::move(value)); return *this;}
+    template<typename StreamT = Stream>
+    void SetStream(StreamT&& value) { m_streamHasBeenSet = true; m_stream = std::forward<StreamT>(value); }
+    template<typename StreamT = Stream>
+    FileLocation& WithStream(StreamT&& value) { SetStream(std::forward<StreamT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location of the updated firmware in S3.</p>
      */
-    inline const S3Location& GetS3Location() const{ return m_s3Location; }
+    inline const S3Location& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-    inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-    inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-    inline FileLocation& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
-    inline FileLocation& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
+    template<typename S3LocationT = S3Location>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = S3Location>
+    FileLocation& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeBundleTasksRequest::DescribeBundleTasksRequest() : 
-    m_bundleIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBundleTasksRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -56,7 +56,7 @@ namespace Model
   class RestoreTestingRecoveryPointSelection
   {
   public:
-    AWS_BACKUP_API RestoreTestingRecoveryPointSelection();
+    AWS_BACKUP_API RestoreTestingRecoveryPointSelection() = default;
     AWS_BACKUP_API RestoreTestingRecoveryPointSelection(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API RestoreTestingRecoveryPointSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -67,12 +67,10 @@ namespace Model
      * <p>Acceptable values include "LATEST_WITHIN_WINDOW" or
      * "RANDOM_WITHIN_WINDOW"</p>
      */
-    inline const RestoreTestingRecoveryPointSelectionAlgorithm& GetAlgorithm() const{ return m_algorithm; }
+    inline RestoreTestingRecoveryPointSelectionAlgorithm GetAlgorithm() const { return m_algorithm; }
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
-    inline void SetAlgorithm(const RestoreTestingRecoveryPointSelectionAlgorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
-    inline void SetAlgorithm(RestoreTestingRecoveryPointSelectionAlgorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
-    inline RestoreTestingRecoveryPointSelection& WithAlgorithm(const RestoreTestingRecoveryPointSelectionAlgorithm& value) { SetAlgorithm(value); return *this;}
-    inline RestoreTestingRecoveryPointSelection& WithAlgorithm(RestoreTestingRecoveryPointSelectionAlgorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
+    inline void SetAlgorithm(RestoreTestingRecoveryPointSelectionAlgorithm value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
+    inline RestoreTestingRecoveryPointSelection& WithAlgorithm(RestoreTestingRecoveryPointSelectionAlgorithm value) { SetAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -80,15 +78,14 @@ namespace Model
      * <p>Accepted values include specific ARNs or list of selectors. Defaults to empty
      * list if not listed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeVaults() const{ return m_excludeVaults; }
+    inline const Aws::Vector<Aws::String>& GetExcludeVaults() const { return m_excludeVaults; }
     inline bool ExcludeVaultsHasBeenSet() const { return m_excludeVaultsHasBeenSet; }
-    inline void SetExcludeVaults(const Aws::Vector<Aws::String>& value) { m_excludeVaultsHasBeenSet = true; m_excludeVaults = value; }
-    inline void SetExcludeVaults(Aws::Vector<Aws::String>&& value) { m_excludeVaultsHasBeenSet = true; m_excludeVaults = std::move(value); }
-    inline RestoreTestingRecoveryPointSelection& WithExcludeVaults(const Aws::Vector<Aws::String>& value) { SetExcludeVaults(value); return *this;}
-    inline RestoreTestingRecoveryPointSelection& WithExcludeVaults(Aws::Vector<Aws::String>&& value) { SetExcludeVaults(std::move(value)); return *this;}
-    inline RestoreTestingRecoveryPointSelection& AddExcludeVaults(const Aws::String& value) { m_excludeVaultsHasBeenSet = true; m_excludeVaults.push_back(value); return *this; }
-    inline RestoreTestingRecoveryPointSelection& AddExcludeVaults(Aws::String&& value) { m_excludeVaultsHasBeenSet = true; m_excludeVaults.push_back(std::move(value)); return *this; }
-    inline RestoreTestingRecoveryPointSelection& AddExcludeVaults(const char* value) { m_excludeVaultsHasBeenSet = true; m_excludeVaults.push_back(value); return *this; }
+    template<typename ExcludeVaultsT = Aws::Vector<Aws::String>>
+    void SetExcludeVaults(ExcludeVaultsT&& value) { m_excludeVaultsHasBeenSet = true; m_excludeVaults = std::forward<ExcludeVaultsT>(value); }
+    template<typename ExcludeVaultsT = Aws::Vector<Aws::String>>
+    RestoreTestingRecoveryPointSelection& WithExcludeVaults(ExcludeVaultsT&& value) { SetExcludeVaults(std::forward<ExcludeVaultsT>(value)); return *this;}
+    template<typename ExcludeVaultsT = Aws::String>
+    RestoreTestingRecoveryPointSelection& AddExcludeVaults(ExcludeVaultsT&& value) { m_excludeVaultsHasBeenSet = true; m_excludeVaults.emplace_back(std::forward<ExcludeVaultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -97,15 +94,14 @@ namespace Model
      * replacement ["arn:aws:backup:us-west-2:123456789012:backup-vault:asdf", ...]
      * ["arn:aws:backup:*:*:backup-vault:asdf-*", ...]</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludeVaults() const{ return m_includeVaults; }
+    inline const Aws::Vector<Aws::String>& GetIncludeVaults() const { return m_includeVaults; }
     inline bool IncludeVaultsHasBeenSet() const { return m_includeVaultsHasBeenSet; }
-    inline void SetIncludeVaults(const Aws::Vector<Aws::String>& value) { m_includeVaultsHasBeenSet = true; m_includeVaults = value; }
-    inline void SetIncludeVaults(Aws::Vector<Aws::String>&& value) { m_includeVaultsHasBeenSet = true; m_includeVaults = std::move(value); }
-    inline RestoreTestingRecoveryPointSelection& WithIncludeVaults(const Aws::Vector<Aws::String>& value) { SetIncludeVaults(value); return *this;}
-    inline RestoreTestingRecoveryPointSelection& WithIncludeVaults(Aws::Vector<Aws::String>&& value) { SetIncludeVaults(std::move(value)); return *this;}
-    inline RestoreTestingRecoveryPointSelection& AddIncludeVaults(const Aws::String& value) { m_includeVaultsHasBeenSet = true; m_includeVaults.push_back(value); return *this; }
-    inline RestoreTestingRecoveryPointSelection& AddIncludeVaults(Aws::String&& value) { m_includeVaultsHasBeenSet = true; m_includeVaults.push_back(std::move(value)); return *this; }
-    inline RestoreTestingRecoveryPointSelection& AddIncludeVaults(const char* value) { m_includeVaultsHasBeenSet = true; m_includeVaults.push_back(value); return *this; }
+    template<typename IncludeVaultsT = Aws::Vector<Aws::String>>
+    void SetIncludeVaults(IncludeVaultsT&& value) { m_includeVaultsHasBeenSet = true; m_includeVaults = std::forward<IncludeVaultsT>(value); }
+    template<typename IncludeVaultsT = Aws::Vector<Aws::String>>
+    RestoreTestingRecoveryPointSelection& WithIncludeVaults(IncludeVaultsT&& value) { SetIncludeVaults(std::forward<IncludeVaultsT>(value)); return *this;}
+    template<typename IncludeVaultsT = Aws::String>
+    RestoreTestingRecoveryPointSelection& AddIncludeVaults(IncludeVaultsT&& value) { m_includeVaultsHasBeenSet = true; m_includeVaults.emplace_back(std::forward<IncludeVaultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -116,28 +112,27 @@ namespace Model
      * restore either a snapshot or a continuous recovery point. The recovery point
      * will be determined by the value for <code>Algorithm</code>.</p>
      */
-    inline const Aws::Vector<RestoreTestingRecoveryPointType>& GetRecoveryPointTypes() const{ return m_recoveryPointTypes; }
+    inline const Aws::Vector<RestoreTestingRecoveryPointType>& GetRecoveryPointTypes() const { return m_recoveryPointTypes; }
     inline bool RecoveryPointTypesHasBeenSet() const { return m_recoveryPointTypesHasBeenSet; }
-    inline void SetRecoveryPointTypes(const Aws::Vector<RestoreTestingRecoveryPointType>& value) { m_recoveryPointTypesHasBeenSet = true; m_recoveryPointTypes = value; }
-    inline void SetRecoveryPointTypes(Aws::Vector<RestoreTestingRecoveryPointType>&& value) { m_recoveryPointTypesHasBeenSet = true; m_recoveryPointTypes = std::move(value); }
-    inline RestoreTestingRecoveryPointSelection& WithRecoveryPointTypes(const Aws::Vector<RestoreTestingRecoveryPointType>& value) { SetRecoveryPointTypes(value); return *this;}
-    inline RestoreTestingRecoveryPointSelection& WithRecoveryPointTypes(Aws::Vector<RestoreTestingRecoveryPointType>&& value) { SetRecoveryPointTypes(std::move(value)); return *this;}
-    inline RestoreTestingRecoveryPointSelection& AddRecoveryPointTypes(const RestoreTestingRecoveryPointType& value) { m_recoveryPointTypesHasBeenSet = true; m_recoveryPointTypes.push_back(value); return *this; }
-    inline RestoreTestingRecoveryPointSelection& AddRecoveryPointTypes(RestoreTestingRecoveryPointType&& value) { m_recoveryPointTypesHasBeenSet = true; m_recoveryPointTypes.push_back(std::move(value)); return *this; }
+    template<typename RecoveryPointTypesT = Aws::Vector<RestoreTestingRecoveryPointType>>
+    void SetRecoveryPointTypes(RecoveryPointTypesT&& value) { m_recoveryPointTypesHasBeenSet = true; m_recoveryPointTypes = std::forward<RecoveryPointTypesT>(value); }
+    template<typename RecoveryPointTypesT = Aws::Vector<RestoreTestingRecoveryPointType>>
+    RestoreTestingRecoveryPointSelection& WithRecoveryPointTypes(RecoveryPointTypesT&& value) { SetRecoveryPointTypes(std::forward<RecoveryPointTypesT>(value)); return *this;}
+    inline RestoreTestingRecoveryPointSelection& AddRecoveryPointTypes(RestoreTestingRecoveryPointType value) { m_recoveryPointTypesHasBeenSet = true; m_recoveryPointTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Accepted values are integers from 1 to 365.</p>
      */
-    inline int GetSelectionWindowDays() const{ return m_selectionWindowDays; }
+    inline int GetSelectionWindowDays() const { return m_selectionWindowDays; }
     inline bool SelectionWindowDaysHasBeenSet() const { return m_selectionWindowDaysHasBeenSet; }
     inline void SetSelectionWindowDays(int value) { m_selectionWindowDaysHasBeenSet = true; m_selectionWindowDays = value; }
     inline RestoreTestingRecoveryPointSelection& WithSelectionWindowDays(int value) { SetSelectionWindowDays(value); return *this;}
     ///@}
   private:
 
-    RestoreTestingRecoveryPointSelectionAlgorithm m_algorithm;
+    RestoreTestingRecoveryPointSelectionAlgorithm m_algorithm{RestoreTestingRecoveryPointSelectionAlgorithm::NOT_SET};
     bool m_algorithmHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeVaults;
@@ -149,7 +144,7 @@ namespace Model
     Aws::Vector<RestoreTestingRecoveryPointType> m_recoveryPointTypes;
     bool m_recoveryPointTypesHasBeenSet = false;
 
-    int m_selectionWindowDays;
+    int m_selectionWindowDays{0};
     bool m_selectionWindowDaysHasBeenSet = false;
   };
 

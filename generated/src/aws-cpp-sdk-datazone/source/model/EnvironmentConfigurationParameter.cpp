@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-EnvironmentConfigurationParameter::EnvironmentConfigurationParameter() : 
-    m_isEditable(false),
-    m_isEditableHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 EnvironmentConfigurationParameter::EnvironmentConfigurationParameter(JsonView jsonValue)
-  : EnvironmentConfigurationParameter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ EnvironmentConfigurationParameter& EnvironmentConfigurationParameter::operator =
   if(jsonValue.ValueExists("isEditable"))
   {
     m_isEditable = jsonValue.GetBool("isEditable");
-
     m_isEditableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

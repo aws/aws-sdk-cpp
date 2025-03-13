@@ -18,18 +18,7 @@ namespace XRay
 namespace Model
 {
 
-RequestImpactStatistics::RequestImpactStatistics() : 
-    m_faultCount(0),
-    m_faultCountHasBeenSet(false),
-    m_okCount(0),
-    m_okCountHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false)
-{
-}
-
 RequestImpactStatistics::RequestImpactStatistics(JsonView jsonValue)
-  : RequestImpactStatistics()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RequestImpactStatistics& RequestImpactStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FaultCount"))
   {
     m_faultCount = jsonValue.GetInt64("FaultCount");
-
     m_faultCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OkCount"))
   {
     m_okCount = jsonValue.GetInt64("OkCount");
-
     m_okCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCount"))
   {
     m_totalCount = jsonValue.GetInt64("TotalCount");
-
     m_totalCountHasBeenSet = true;
   }
-
   return *this;
 }
 

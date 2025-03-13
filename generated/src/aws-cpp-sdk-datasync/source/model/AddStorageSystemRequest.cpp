@@ -12,20 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddStorageSystemRequest::AddStorageSystemRequest() : 
-    m_serverConfigurationHasBeenSet(false),
-    m_systemType(DiscoverySystemType::NOT_SET),
-    m_systemTypeHasBeenSet(false),
-    m_agentArnsHasBeenSet(false),
-    m_cloudWatchLogGroupArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_credentialsHasBeenSet(false)
-{
-}
-
 Aws::String AddStorageSystemRequest::SerializePayload() const
 {
   JsonValue payload;

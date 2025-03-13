@@ -13,13 +13,6 @@ using namespace Aws::CloudFrontKeyValueStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteKeyRequest::DeleteKeyRequest() : 
-    m_kvsARNHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_ifMatchHasBeenSet(false)
-{
-}
-
 Aws::String DeleteKeyRequest::SerializePayload() const
 {
   return {};

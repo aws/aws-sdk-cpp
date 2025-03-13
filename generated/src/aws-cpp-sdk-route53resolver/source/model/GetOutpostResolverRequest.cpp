@@ -12,11 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOutpostResolverRequest::GetOutpostResolverRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetOutpostResolverRequest::SerializePayload() const
 {
   JsonValue payload;

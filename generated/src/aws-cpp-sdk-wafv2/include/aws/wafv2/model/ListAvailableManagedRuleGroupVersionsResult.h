@@ -29,7 +29,7 @@ namespace Model
   class ListAvailableManagedRuleGroupVersionsResult
   {
   public:
-    AWS_WAFV2_API ListAvailableManagedRuleGroupVersionsResult();
+    AWS_WAFV2_API ListAvailableManagedRuleGroupVersionsResult() = default;
     AWS_WAFV2_API ListAvailableManagedRuleGroupVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFV2_API ListAvailableManagedRuleGroupVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,11 @@ namespace Model
      * batch of objects, provide the marker from the prior call in your next
      * request.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListAvailableManagedRuleGroupVersionsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListAvailableManagedRuleGroupVersionsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListAvailableManagedRuleGroupVersionsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListAvailableManagedRuleGroupVersionsResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,47 +55,47 @@ namespace Model
      * group. If you specified a <code>Limit</code> in your request, this might not be
      * the full list. </p>
      */
-    inline const Aws::Vector<ManagedRuleGroupVersion>& GetVersions() const{ return m_versions; }
-    inline void SetVersions(const Aws::Vector<ManagedRuleGroupVersion>& value) { m_versions = value; }
-    inline void SetVersions(Aws::Vector<ManagedRuleGroupVersion>&& value) { m_versions = std::move(value); }
-    inline ListAvailableManagedRuleGroupVersionsResult& WithVersions(const Aws::Vector<ManagedRuleGroupVersion>& value) { SetVersions(value); return *this;}
-    inline ListAvailableManagedRuleGroupVersionsResult& WithVersions(Aws::Vector<ManagedRuleGroupVersion>&& value) { SetVersions(std::move(value)); return *this;}
-    inline ListAvailableManagedRuleGroupVersionsResult& AddVersions(const ManagedRuleGroupVersion& value) { m_versions.push_back(value); return *this; }
-    inline ListAvailableManagedRuleGroupVersionsResult& AddVersions(ManagedRuleGroupVersion&& value) { m_versions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ManagedRuleGroupVersion>& GetVersions() const { return m_versions; }
+    template<typename VersionsT = Aws::Vector<ManagedRuleGroupVersion>>
+    void SetVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions = std::forward<VersionsT>(value); }
+    template<typename VersionsT = Aws::Vector<ManagedRuleGroupVersion>>
+    ListAvailableManagedRuleGroupVersionsResult& WithVersions(VersionsT&& value) { SetVersions(std::forward<VersionsT>(value)); return *this;}
+    template<typename VersionsT = ManagedRuleGroupVersion>
+    ListAvailableManagedRuleGroupVersionsResult& AddVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions.emplace_back(std::forward<VersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the version that's currently set as the default. </p>
      */
-    inline const Aws::String& GetCurrentDefaultVersion() const{ return m_currentDefaultVersion; }
-    inline void SetCurrentDefaultVersion(const Aws::String& value) { m_currentDefaultVersion = value; }
-    inline void SetCurrentDefaultVersion(Aws::String&& value) { m_currentDefaultVersion = std::move(value); }
-    inline void SetCurrentDefaultVersion(const char* value) { m_currentDefaultVersion.assign(value); }
-    inline ListAvailableManagedRuleGroupVersionsResult& WithCurrentDefaultVersion(const Aws::String& value) { SetCurrentDefaultVersion(value); return *this;}
-    inline ListAvailableManagedRuleGroupVersionsResult& WithCurrentDefaultVersion(Aws::String&& value) { SetCurrentDefaultVersion(std::move(value)); return *this;}
-    inline ListAvailableManagedRuleGroupVersionsResult& WithCurrentDefaultVersion(const char* value) { SetCurrentDefaultVersion(value); return *this;}
+    inline const Aws::String& GetCurrentDefaultVersion() const { return m_currentDefaultVersion; }
+    template<typename CurrentDefaultVersionT = Aws::String>
+    void SetCurrentDefaultVersion(CurrentDefaultVersionT&& value) { m_currentDefaultVersionHasBeenSet = true; m_currentDefaultVersion = std::forward<CurrentDefaultVersionT>(value); }
+    template<typename CurrentDefaultVersionT = Aws::String>
+    ListAvailableManagedRuleGroupVersionsResult& WithCurrentDefaultVersion(CurrentDefaultVersionT&& value) { SetCurrentDefaultVersion(std::forward<CurrentDefaultVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAvailableManagedRuleGroupVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAvailableManagedRuleGroupVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAvailableManagedRuleGroupVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAvailableManagedRuleGroupVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::Vector<ManagedRuleGroupVersion> m_versions;
+    bool m_versionsHasBeenSet = false;
 
     Aws::String m_currentDefaultVersion;
+    bool m_currentDefaultVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

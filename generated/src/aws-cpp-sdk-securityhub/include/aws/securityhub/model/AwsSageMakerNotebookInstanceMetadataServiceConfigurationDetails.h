@@ -32,7 +32,7 @@ namespace Model
   class AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails();
+    AWS_SECURITYHUB_API AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails() = default;
     AWS_SECURITYHUB_API AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
      */
-    inline const Aws::String& GetMinimumInstanceMetadataServiceVersion() const{ return m_minimumInstanceMetadataServiceVersion; }
+    inline const Aws::String& GetMinimumInstanceMetadataServiceVersion() const { return m_minimumInstanceMetadataServiceVersion; }
     inline bool MinimumInstanceMetadataServiceVersionHasBeenSet() const { return m_minimumInstanceMetadataServiceVersionHasBeenSet; }
-    inline void SetMinimumInstanceMetadataServiceVersion(const Aws::String& value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion = value; }
-    inline void SetMinimumInstanceMetadataServiceVersion(Aws::String&& value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion = std::move(value); }
-    inline void SetMinimumInstanceMetadataServiceVersion(const char* value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion.assign(value); }
-    inline AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails& WithMinimumInstanceMetadataServiceVersion(const Aws::String& value) { SetMinimumInstanceMetadataServiceVersion(value); return *this;}
-    inline AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails& WithMinimumInstanceMetadataServiceVersion(Aws::String&& value) { SetMinimumInstanceMetadataServiceVersion(std::move(value)); return *this;}
-    inline AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails& WithMinimumInstanceMetadataServiceVersion(const char* value) { SetMinimumInstanceMetadataServiceVersion(value); return *this;}
+    template<typename MinimumInstanceMetadataServiceVersionT = Aws::String>
+    void SetMinimumInstanceMetadataServiceVersion(MinimumInstanceMetadataServiceVersionT&& value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion = std::forward<MinimumInstanceMetadataServiceVersionT>(value); }
+    template<typename MinimumInstanceMetadataServiceVersionT = Aws::String>
+    AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails& WithMinimumInstanceMetadataServiceVersion(MinimumInstanceMetadataServiceVersionT&& value) { SetMinimumInstanceMetadataServiceVersion(std::forward<MinimumInstanceMetadataServiceVersionT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,24 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LockedSnapshotsInfo::LockedSnapshotsInfo() : 
-    m_ownerIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_lockState(LockState::NOT_SET),
-    m_lockStateHasBeenSet(false),
-    m_lockDuration(0),
-    m_lockDurationHasBeenSet(false),
-    m_coolOffPeriod(0),
-    m_coolOffPeriodHasBeenSet(false),
-    m_coolOffPeriodExpiresOnHasBeenSet(false),
-    m_lockCreatedOnHasBeenSet(false),
-    m_lockDurationStartTimeHasBeenSet(false),
-    m_lockExpiresOnHasBeenSet(false)
-{
-}
-
 LockedSnapshotsInfo::LockedSnapshotsInfo(const XmlNode& xmlNode)
-  : LockedSnapshotsInfo()
 {
   *this = xmlNode;
 }
@@ -53,54 +36,63 @@ LockedSnapshotsInfo& LockedSnapshotsInfo::operator =(const XmlNode& xmlNode)
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
       m_snapshotIdHasBeenSet = true;
+       m_snapshotIdHasBeenSet = true;
     }
     XmlNode lockStateNode = resultNode.FirstChild("lockState");
     if(!lockStateNode.IsNull())
     {
-      m_lockState = LockStateMapper::GetLockStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lockStateNode.GetText()).c_str()).c_str());
+      m_lockState = LockStateMapper::GetLockStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lockStateNode.GetText()).c_str()));
       m_lockStateHasBeenSet = true;
+       m_lockStateHasBeenSet = true;
     }
     XmlNode lockDurationNode = resultNode.FirstChild("lockDuration");
     if(!lockDurationNode.IsNull())
     {
       m_lockDuration = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lockDurationNode.GetText()).c_str()).c_str());
       m_lockDurationHasBeenSet = true;
+       m_lockDurationHasBeenSet = true;
     }
     XmlNode coolOffPeriodNode = resultNode.FirstChild("coolOffPeriod");
     if(!coolOffPeriodNode.IsNull())
     {
       m_coolOffPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(coolOffPeriodNode.GetText()).c_str()).c_str());
       m_coolOffPeriodHasBeenSet = true;
+       m_coolOffPeriodHasBeenSet = true;
     }
     XmlNode coolOffPeriodExpiresOnNode = resultNode.FirstChild("coolOffPeriodExpiresOn");
     if(!coolOffPeriodExpiresOnNode.IsNull())
     {
       m_coolOffPeriodExpiresOn = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(coolOffPeriodExpiresOnNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_coolOffPeriodExpiresOnHasBeenSet = true;
+       m_coolOffPeriodExpiresOnHasBeenSet = true;
     }
     XmlNode lockCreatedOnNode = resultNode.FirstChild("lockCreatedOn");
     if(!lockCreatedOnNode.IsNull())
     {
       m_lockCreatedOn = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lockCreatedOnNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lockCreatedOnHasBeenSet = true;
+       m_lockCreatedOnHasBeenSet = true;
     }
     XmlNode lockDurationStartTimeNode = resultNode.FirstChild("lockDurationStartTime");
     if(!lockDurationStartTimeNode.IsNull())
     {
       m_lockDurationStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lockDurationStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lockDurationStartTimeHasBeenSet = true;
+       m_lockDurationStartTimeHasBeenSet = true;
     }
     XmlNode lockExpiresOnNode = resultNode.FirstChild("lockExpiresOn");
     if(!lockExpiresOnNode.IsNull())
     {
       m_lockExpiresOn = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lockExpiresOnNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lockExpiresOnHasBeenSet = true;
+       m_lockExpiresOnHasBeenSet = true;
     }
   }
 

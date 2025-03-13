@@ -12,11 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInboundCrossClusterSearchConnectionRequest::DeleteInboundCrossClusterSearchConnectionRequest() : 
-    m_crossClusterSearchConnectionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInboundCrossClusterSearchConnectionRequest::SerializePayload() const
 {
   return {};

@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsDynamoDbTableReplica::AwsDynamoDbTableReplica() : 
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_kmsMasterKeyIdHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false),
-    m_regionNameHasBeenSet(false),
-    m_replicaStatusHasBeenSet(false),
-    m_replicaStatusDescriptionHasBeenSet(false)
-{
-}
-
 AwsDynamoDbTableReplica::AwsDynamoDbTableReplica(JsonView jsonValue)
-  : AwsDynamoDbTableReplica()
 {
   *this = jsonValue;
 }
@@ -45,42 +34,31 @@ AwsDynamoDbTableReplica& AwsDynamoDbTableReplica::operator =(JsonView jsonValue)
     }
     m_globalSecondaryIndexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsMasterKeyId"))
   {
     m_kmsMasterKeyId = jsonValue.GetString("KmsMasterKeyId");
-
     m_kmsMasterKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedThroughputOverride"))
   {
     m_provisionedThroughputOverride = jsonValue.GetObject("ProvisionedThroughputOverride");
-
     m_provisionedThroughputOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegionName"))
   {
     m_regionName = jsonValue.GetString("RegionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaStatus"))
   {
     m_replicaStatus = jsonValue.GetString("ReplicaStatus");
-
     m_replicaStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaStatusDescription"))
   {
     m_replicaStatusDescription = jsonValue.GetString("ReplicaStatusDescription");
-
     m_replicaStatusDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

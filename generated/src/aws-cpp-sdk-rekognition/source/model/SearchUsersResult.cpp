@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchUsersResult::SearchUsersResult()
-{
-}
-
 SearchUsersResult::SearchUsersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,32 +32,30 @@ SearchUsersResult& SearchUsersResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_userMatches.push_back(userMatchesJsonList[userMatchesIndex].AsObject());
     }
+    m_userMatchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceModelVersion"))
   {
     m_faceModelVersion = jsonValue.GetString("FaceModelVersion");
-
+    m_faceModelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SearchedFace"))
   {
     m_searchedFace = jsonValue.GetObject("SearchedFace");
-
+    m_searchedFaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SearchedUser"))
   {
     m_searchedUser = jsonValue.GetObject("SearchedUser");
-
+    m_searchedUserHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

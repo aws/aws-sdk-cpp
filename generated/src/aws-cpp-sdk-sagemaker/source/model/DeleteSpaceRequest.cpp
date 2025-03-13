@@ -12,12 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSpaceRequest::DeleteSpaceRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_spaceNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSpaceRequest::SerializePayload() const
 {
   JsonValue payload;

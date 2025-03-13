@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SearchExpression::SearchExpression() : 
-    m_filtersHasBeenSet(false),
-    m_nestedFiltersHasBeenSet(false),
-    m_subExpressionsHasBeenSet(false),
-    m_operator(BooleanOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 SearchExpression::SearchExpression(JsonView jsonValue)
-  : SearchExpression()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ SearchExpression& SearchExpression::operator =(JsonView jsonValue)
     }
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NestedFilters"))
   {
     Aws::Utils::Array<JsonView> nestedFiltersJsonList = jsonValue.GetArray("NestedFilters");
@@ -54,7 +43,6 @@ SearchExpression& SearchExpression::operator =(JsonView jsonValue)
     }
     m_nestedFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubExpressions"))
   {
     Aws::Utils::Array<JsonView> subExpressionsJsonList = jsonValue.GetArray("SubExpressions");
@@ -64,14 +52,11 @@ SearchExpression& SearchExpression::operator =(JsonView jsonValue)
     }
     m_subExpressionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = BooleanOperatorMapper::GetBooleanOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

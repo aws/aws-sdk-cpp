@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConnectorDefinitionRequest::DeleteConnectorDefinitionRequest() : 
-    m_connectorDefinitionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConnectorDefinitionRequest::SerializePayload() const
 {
   return {};

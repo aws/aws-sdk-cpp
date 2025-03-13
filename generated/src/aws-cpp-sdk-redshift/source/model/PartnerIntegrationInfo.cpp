@@ -20,19 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-PartnerIntegrationInfo::PartnerIntegrationInfo() : 
-    m_databaseNameHasBeenSet(false),
-    m_partnerNameHasBeenSet(false),
-    m_status(PartnerIntegrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 PartnerIntegrationInfo::PartnerIntegrationInfo(const XmlNode& xmlNode)
-  : PartnerIntegrationInfo()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,42 @@ PartnerIntegrationInfo& PartnerIntegrationInfo::operator =(const XmlNode& xmlNod
     {
       m_databaseName = Aws::Utils::Xml::DecodeEscapedXmlText(databaseNameNode.GetText());
       m_databaseNameHasBeenSet = true;
+       m_databaseNameHasBeenSet = true;
     }
     XmlNode partnerNameNode = resultNode.FirstChild("PartnerName");
     if(!partnerNameNode.IsNull())
     {
       m_partnerName = Aws::Utils::Xml::DecodeEscapedXmlText(partnerNameNode.GetText());
       m_partnerNameHasBeenSet = true;
+       m_partnerNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = PartnerIntegrationStatusMapper::GetPartnerIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = PartnerIntegrationStatusMapper::GetPartnerIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("StatusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode createdAtNode = resultNode.FirstChild("CreatedAt");
     if(!createdAtNode.IsNull())
     {
       m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAtHasBeenSet = true;
+       m_createdAtHasBeenSet = true;
     }
     XmlNode updatedAtNode = resultNode.FirstChild("UpdatedAt");
     if(!updatedAtNode.IsNull())
     {
       m_updatedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updatedAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updatedAtHasBeenSet = true;
+       m_updatedAtHasBeenSet = true;
     }
   }
 

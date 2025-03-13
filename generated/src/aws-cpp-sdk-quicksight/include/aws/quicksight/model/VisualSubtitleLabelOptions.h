@@ -32,7 +32,7 @@ namespace Model
   class VisualSubtitleLabelOptions
   {
   public:
-    AWS_QUICKSIGHT_API VisualSubtitleLabelOptions();
+    AWS_QUICKSIGHT_API VisualSubtitleLabelOptions() = default;
     AWS_QUICKSIGHT_API VisualSubtitleLabelOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API VisualSubtitleLabelOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,10 @@ namespace Model
     /**
      * <p>The visibility of the subtitle label.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline VisualSubtitleLabelOptions& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline VisualSubtitleLabelOptions& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline VisualSubtitleLabelOptions& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
 
     ///@{
@@ -55,16 +53,16 @@ namespace Model
      * <p>The long text format of the subtitle label, such as plain text or rich
      * text.</p>
      */
-    inline const LongFormatText& GetFormatText() const{ return m_formatText; }
+    inline const LongFormatText& GetFormatText() const { return m_formatText; }
     inline bool FormatTextHasBeenSet() const { return m_formatTextHasBeenSet; }
-    inline void SetFormatText(const LongFormatText& value) { m_formatTextHasBeenSet = true; m_formatText = value; }
-    inline void SetFormatText(LongFormatText&& value) { m_formatTextHasBeenSet = true; m_formatText = std::move(value); }
-    inline VisualSubtitleLabelOptions& WithFormatText(const LongFormatText& value) { SetFormatText(value); return *this;}
-    inline VisualSubtitleLabelOptions& WithFormatText(LongFormatText&& value) { SetFormatText(std::move(value)); return *this;}
+    template<typename FormatTextT = LongFormatText>
+    void SetFormatText(FormatTextT&& value) { m_formatTextHasBeenSet = true; m_formatText = std::forward<FormatTextT>(value); }
+    template<typename FormatTextT = LongFormatText>
+    VisualSubtitleLabelOptions& WithFormatText(FormatTextT&& value) { SetFormatText(std::forward<FormatTextT>(value)); return *this;}
     ///@}
   private:
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
 
     LongFormatText m_formatText;

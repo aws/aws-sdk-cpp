@@ -28,7 +28,7 @@ namespace Model
   class DeleteMultiRegionClusterResult
   {
   public:
-    AWS_MEMORYDB_API DeleteMultiRegionClusterResult();
+    AWS_MEMORYDB_API DeleteMultiRegionClusterResult() = default;
     AWS_MEMORYDB_API DeleteMultiRegionClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEMORYDB_API DeleteMultiRegionClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the deleted multi-Region cluster.</p>
      */
-    inline const MultiRegionCluster& GetMultiRegionCluster() const{ return m_multiRegionCluster; }
-    inline void SetMultiRegionCluster(const MultiRegionCluster& value) { m_multiRegionCluster = value; }
-    inline void SetMultiRegionCluster(MultiRegionCluster&& value) { m_multiRegionCluster = std::move(value); }
-    inline DeleteMultiRegionClusterResult& WithMultiRegionCluster(const MultiRegionCluster& value) { SetMultiRegionCluster(value); return *this;}
-    inline DeleteMultiRegionClusterResult& WithMultiRegionCluster(MultiRegionCluster&& value) { SetMultiRegionCluster(std::move(value)); return *this;}
+    inline const MultiRegionCluster& GetMultiRegionCluster() const { return m_multiRegionCluster; }
+    template<typename MultiRegionClusterT = MultiRegionCluster>
+    void SetMultiRegionCluster(MultiRegionClusterT&& value) { m_multiRegionClusterHasBeenSet = true; m_multiRegionCluster = std::forward<MultiRegionClusterT>(value); }
+    template<typename MultiRegionClusterT = MultiRegionCluster>
+    DeleteMultiRegionClusterResult& WithMultiRegionCluster(MultiRegionClusterT&& value) { SetMultiRegionCluster(std::forward<MultiRegionClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteMultiRegionClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteMultiRegionClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteMultiRegionClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteMultiRegionClusterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MultiRegionCluster m_multiRegionCluster;
+    bool m_multiRegionClusterHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

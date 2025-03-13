@@ -22,7 +22,7 @@ namespace Model
   class StartModelRequest : public LookoutforVisionRequest
   {
   public:
-    AWS_LOOKOUTFORVISION_API StartModelRequest();
+    AWS_LOOKOUTFORVISION_API StartModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The name of the project that contains the model that you want to start.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline StartModelRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline StartModelRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline StartModelRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    StartModelRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the model that you want to start.</p>
      */
-    inline const Aws::String& GetModelVersion() const{ return m_modelVersion; }
+    inline const Aws::String& GetModelVersion() const { return m_modelVersion; }
     inline bool ModelVersionHasBeenSet() const { return m_modelVersionHasBeenSet; }
-    inline void SetModelVersion(const Aws::String& value) { m_modelVersionHasBeenSet = true; m_modelVersion = value; }
-    inline void SetModelVersion(Aws::String&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::move(value); }
-    inline void SetModelVersion(const char* value) { m_modelVersionHasBeenSet = true; m_modelVersion.assign(value); }
-    inline StartModelRequest& WithModelVersion(const Aws::String& value) { SetModelVersion(value); return *this;}
-    inline StartModelRequest& WithModelVersion(Aws::String&& value) { SetModelVersion(std::move(value)); return *this;}
-    inline StartModelRequest& WithModelVersion(const char* value) { SetModelVersion(value); return *this;}
+    template<typename ModelVersionT = Aws::String>
+    void SetModelVersion(ModelVersionT&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::forward<ModelVersionT>(value); }
+    template<typename ModelVersionT = Aws::String>
+    StartModelRequest& WithModelVersion(ModelVersionT&& value) { SetModelVersion(std::forward<ModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +66,7 @@ namespace Model
      * throughput of your model. You are charged for the number of inference units that
      * you use. </p>
      */
-    inline int GetMinInferenceUnits() const{ return m_minInferenceUnits; }
+    inline int GetMinInferenceUnits() const { return m_minInferenceUnits; }
     inline bool MinInferenceUnitsHasBeenSet() const { return m_minInferenceUnitsHasBeenSet; }
     inline void SetMinInferenceUnits(int value) { m_minInferenceUnitsHasBeenSet = true; m_minInferenceUnits = value; }
     inline StartModelRequest& WithMinInferenceUnits(int value) { SetMinInferenceUnits(value); return *this;}
@@ -91,14 +87,12 @@ namespace Model
      * <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An
      * idempotency token is active for 8 hours. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartModelRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartModelRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartModelRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartModelRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,7 +101,7 @@ namespace Model
      * you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the
      * model.</p>
      */
-    inline int GetMaxInferenceUnits() const{ return m_maxInferenceUnits; }
+    inline int GetMaxInferenceUnits() const { return m_maxInferenceUnits; }
     inline bool MaxInferenceUnitsHasBeenSet() const { return m_maxInferenceUnitsHasBeenSet; }
     inline void SetMaxInferenceUnits(int value) { m_maxInferenceUnitsHasBeenSet = true; m_maxInferenceUnits = value; }
     inline StartModelRequest& WithMaxInferenceUnits(int value) { SetMaxInferenceUnits(value); return *this;}
@@ -120,13 +114,13 @@ namespace Model
     Aws::String m_modelVersion;
     bool m_modelVersionHasBeenSet = false;
 
-    int m_minInferenceUnits;
+    int m_minInferenceUnits{0};
     bool m_minInferenceUnitsHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    int m_maxInferenceUnits;
+    int m_maxInferenceUnits{0};
     bool m_maxInferenceUnitsHasBeenSet = false;
   };
 

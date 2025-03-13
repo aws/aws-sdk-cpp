@@ -20,17 +20,7 @@ namespace SNS
 namespace Model
 {
 
-BatchResultErrorEntry::BatchResultErrorEntry() : 
-    m_idHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_senderFault(false),
-    m_senderFaultHasBeenSet(false)
-{
-}
-
 BatchResultErrorEntry::BatchResultErrorEntry(const XmlNode& xmlNode)
-  : BatchResultErrorEntry()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ BatchResultErrorEntry& BatchResultErrorEntry::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode codeNode = resultNode.FirstChild("Code");
     if(!codeNode.IsNull())
     {
       m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
     XmlNode senderFaultNode = resultNode.FirstChild("SenderFault");
     if(!senderFaultNode.IsNull())
     {
       m_senderFault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(senderFaultNode.GetText()).c_str()).c_str());
       m_senderFaultHasBeenSet = true;
+       m_senderFaultHasBeenSet = true;
     }
   }
 

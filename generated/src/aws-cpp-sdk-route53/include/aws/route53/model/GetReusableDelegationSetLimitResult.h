@@ -34,7 +34,7 @@ namespace Model
   class GetReusableDelegationSetLimitResult
   {
   public:
-    AWS_ROUTE53_API GetReusableDelegationSetLimitResult();
+    AWS_ROUTE53_API GetReusableDelegationSetLimitResult() = default;
     AWS_ROUTE53_API GetReusableDelegationSetLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API GetReusableDelegationSetLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,11 +44,11 @@ namespace Model
      * <p>The current setting for the limit on hosted zones that you can associate with
      * the specified reusable delegation set.</p>
      */
-    inline const ReusableDelegationSetLimit& GetLimit() const{ return m_limit; }
-    inline void SetLimit(const ReusableDelegationSetLimit& value) { m_limit = value; }
-    inline void SetLimit(ReusableDelegationSetLimit&& value) { m_limit = std::move(value); }
-    inline GetReusableDelegationSetLimitResult& WithLimit(const ReusableDelegationSetLimit& value) { SetLimit(value); return *this;}
-    inline GetReusableDelegationSetLimitResult& WithLimit(ReusableDelegationSetLimit&& value) { SetLimit(std::move(value)); return *this;}
+    inline const ReusableDelegationSetLimit& GetLimit() const { return m_limit; }
+    template<typename LimitT = ReusableDelegationSetLimit>
+    void SetLimit(LimitT&& value) { m_limitHasBeenSet = true; m_limit = std::forward<LimitT>(value); }
+    template<typename LimitT = ReusableDelegationSetLimit>
+    GetReusableDelegationSetLimitResult& WithLimit(LimitT&& value) { SetLimit(std::forward<LimitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,28 +56,29 @@ namespace Model
      * <p>The current number of hosted zones that you can associate with the specified
      * reusable delegation set.</p>
      */
-    inline long long GetCount() const{ return m_count; }
-    inline void SetCount(long long value) { m_count = value; }
+    inline long long GetCount() const { return m_count; }
+    inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
     inline GetReusableDelegationSetLimitResult& WithCount(long long value) { SetCount(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetReusableDelegationSetLimitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetReusableDelegationSetLimitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetReusableDelegationSetLimitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetReusableDelegationSetLimitResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ReusableDelegationSetLimit m_limit;
+    bool m_limitHasBeenSet = false;
 
-    long long m_count;
+    long long m_count{0};
+    bool m_countHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

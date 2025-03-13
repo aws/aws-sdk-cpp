@@ -18,18 +18,7 @@ namespace ECS
 namespace Model
 {
 
-DeploymentConfiguration::DeploymentConfiguration() : 
-    m_deploymentCircuitBreakerHasBeenSet(false),
-    m_maximumPercent(0),
-    m_maximumPercentHasBeenSet(false),
-    m_minimumHealthyPercent(0),
-    m_minimumHealthyPercentHasBeenSet(false),
-    m_alarmsHasBeenSet(false)
-{
-}
-
 DeploymentConfiguration::DeploymentConfiguration(JsonView jsonValue)
-  : DeploymentConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DeploymentConfiguration& DeploymentConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deploymentCircuitBreaker"))
   {
     m_deploymentCircuitBreaker = jsonValue.GetObject("deploymentCircuitBreaker");
-
     m_deploymentCircuitBreakerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maximumPercent"))
   {
     m_maximumPercent = jsonValue.GetInteger("maximumPercent");
-
     m_maximumPercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumHealthyPercent"))
   {
     m_minimumHealthyPercent = jsonValue.GetInteger("minimumHealthyPercent");
-
     m_minimumHealthyPercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarms"))
   {
     m_alarms = jsonValue.GetObject("alarms");
-
     m_alarmsHasBeenSet = true;
   }
-
   return *this;
 }
 

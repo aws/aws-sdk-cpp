@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ReportTaskProgressResult::ReportTaskProgressResult() : 
-    m_canceled(false)
-{
-}
-
 ReportTaskProgressResult::ReportTaskProgressResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ReportTaskProgressResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ ReportTaskProgressResult& ReportTaskProgressResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("canceled"))
   {
     m_canceled = jsonValue.GetBool("canceled");
-
+    m_canceledHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

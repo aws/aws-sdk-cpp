@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetManagedPrefixListEntriesRequest::GetManagedPrefixListEntriesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_targetVersion(0),
-    m_targetVersionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetManagedPrefixListEntriesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

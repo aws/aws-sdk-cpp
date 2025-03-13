@@ -18,14 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-AutoStartConfig::AutoStartConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 AutoStartConfig::AutoStartConfig(JsonView jsonValue)
-  : AutoStartConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AutoStartConfig& AutoStartConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

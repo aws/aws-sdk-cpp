@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ListStorageLensGroupEntry::ListStorageLensGroupEntry() : 
-    m_nameHasBeenSet(false),
-    m_storageLensGroupArnHasBeenSet(false),
-    m_homeRegionHasBeenSet(false)
-{
-}
-
 ListStorageLensGroupEntry::ListStorageLensGroupEntry(const XmlNode& xmlNode)
-  : ListStorageLensGroupEntry()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ListStorageLensGroupEntry& ListStorageLensGroupEntry::operator =(const XmlNode& 
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode storageLensGroupArnNode = resultNode.FirstChild("StorageLensGroupArn");
     if(!storageLensGroupArnNode.IsNull())
     {
       m_storageLensGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(storageLensGroupArnNode.GetText());
       m_storageLensGroupArnHasBeenSet = true;
+       m_storageLensGroupArnHasBeenSet = true;
     }
     XmlNode homeRegionNode = resultNode.FirstChild("HomeRegion");
     if(!homeRegionNode.IsNull())
     {
       m_homeRegion = Aws::Utils::Xml::DecodeEscapedXmlText(homeRegionNode.GetText());
       m_homeRegionHasBeenSet = true;
+       m_homeRegionHasBeenSet = true;
     }
   }
 

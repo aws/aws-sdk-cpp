@@ -26,7 +26,7 @@ namespace Model
   class CreateMonitorRequest : public NetworkFlowMonitorRequest
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API CreateMonitorRequest();
+    AWS_NETWORKFLOWMONITOR_API CreateMonitorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the monitor. </p>
      */
-    inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
+    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-    inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
-    inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
-    inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
-    inline CreateMonitorRequest& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-    inline CreateMonitorRequest& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-    inline CreateMonitorRequest& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
+    template<typename MonitorNameT = Aws::String>
+    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
+    template<typename MonitorNameT = Aws::String>
+    CreateMonitorRequest& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * example, Amazon Relational Database Service (RDS)), the EC2 instance hosting the
      * web service, which also runs the agent, is the local resource.</p>
      */
-    inline const Aws::Vector<MonitorLocalResource>& GetLocalResources() const{ return m_localResources; }
+    inline const Aws::Vector<MonitorLocalResource>& GetLocalResources() const { return m_localResources; }
     inline bool LocalResourcesHasBeenSet() const { return m_localResourcesHasBeenSet; }
-    inline void SetLocalResources(const Aws::Vector<MonitorLocalResource>& value) { m_localResourcesHasBeenSet = true; m_localResources = value; }
-    inline void SetLocalResources(Aws::Vector<MonitorLocalResource>&& value) { m_localResourcesHasBeenSet = true; m_localResources = std::move(value); }
-    inline CreateMonitorRequest& WithLocalResources(const Aws::Vector<MonitorLocalResource>& value) { SetLocalResources(value); return *this;}
-    inline CreateMonitorRequest& WithLocalResources(Aws::Vector<MonitorLocalResource>&& value) { SetLocalResources(std::move(value)); return *this;}
-    inline CreateMonitorRequest& AddLocalResources(const MonitorLocalResource& value) { m_localResourcesHasBeenSet = true; m_localResources.push_back(value); return *this; }
-    inline CreateMonitorRequest& AddLocalResources(MonitorLocalResource&& value) { m_localResourcesHasBeenSet = true; m_localResources.push_back(std::move(value)); return *this; }
+    template<typename LocalResourcesT = Aws::Vector<MonitorLocalResource>>
+    void SetLocalResources(LocalResourcesT&& value) { m_localResourcesHasBeenSet = true; m_localResources = std::forward<LocalResourcesT>(value); }
+    template<typename LocalResourcesT = Aws::Vector<MonitorLocalResource>>
+    CreateMonitorRequest& WithLocalResources(LocalResourcesT&& value) { SetLocalResources(std::forward<LocalResourcesT>(value)); return *this;}
+    template<typename LocalResourcesT = MonitorLocalResource>
+    CreateMonitorRequest& AddLocalResources(LocalResourcesT&& value) { m_localResourcesHasBeenSet = true; m_localResources.emplace_back(std::forward<LocalResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,28 +73,26 @@ namespace Model
      * the bi-directional flow of a workload, with a local resource. For example,
      * Amazon Relational Database Service (RDS) can be a remote resource.</p>
      */
-    inline const Aws::Vector<MonitorRemoteResource>& GetRemoteResources() const{ return m_remoteResources; }
+    inline const Aws::Vector<MonitorRemoteResource>& GetRemoteResources() const { return m_remoteResources; }
     inline bool RemoteResourcesHasBeenSet() const { return m_remoteResourcesHasBeenSet; }
-    inline void SetRemoteResources(const Aws::Vector<MonitorRemoteResource>& value) { m_remoteResourcesHasBeenSet = true; m_remoteResources = value; }
-    inline void SetRemoteResources(Aws::Vector<MonitorRemoteResource>&& value) { m_remoteResourcesHasBeenSet = true; m_remoteResources = std::move(value); }
-    inline CreateMonitorRequest& WithRemoteResources(const Aws::Vector<MonitorRemoteResource>& value) { SetRemoteResources(value); return *this;}
-    inline CreateMonitorRequest& WithRemoteResources(Aws::Vector<MonitorRemoteResource>&& value) { SetRemoteResources(std::move(value)); return *this;}
-    inline CreateMonitorRequest& AddRemoteResources(const MonitorRemoteResource& value) { m_remoteResourcesHasBeenSet = true; m_remoteResources.push_back(value); return *this; }
-    inline CreateMonitorRequest& AddRemoteResources(MonitorRemoteResource&& value) { m_remoteResourcesHasBeenSet = true; m_remoteResources.push_back(std::move(value)); return *this; }
+    template<typename RemoteResourcesT = Aws::Vector<MonitorRemoteResource>>
+    void SetRemoteResources(RemoteResourcesT&& value) { m_remoteResourcesHasBeenSet = true; m_remoteResources = std::forward<RemoteResourcesT>(value); }
+    template<typename RemoteResourcesT = Aws::Vector<MonitorRemoteResource>>
+    CreateMonitorRequest& WithRemoteResources(RemoteResourcesT&& value) { SetRemoteResources(std::forward<RemoteResourcesT>(value)); return *this;}
+    template<typename RemoteResourcesT = MonitorRemoteResource>
+    CreateMonitorRequest& AddRemoteResources(RemoteResourcesT&& value) { m_remoteResourcesHasBeenSet = true; m_remoteResources.emplace_back(std::forward<RemoteResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the scope for the monitor.</p>
      */
-    inline const Aws::String& GetScopeArn() const{ return m_scopeArn; }
+    inline const Aws::String& GetScopeArn() const { return m_scopeArn; }
     inline bool ScopeArnHasBeenSet() const { return m_scopeArnHasBeenSet; }
-    inline void SetScopeArn(const Aws::String& value) { m_scopeArnHasBeenSet = true; m_scopeArn = value; }
-    inline void SetScopeArn(Aws::String&& value) { m_scopeArnHasBeenSet = true; m_scopeArn = std::move(value); }
-    inline void SetScopeArn(const char* value) { m_scopeArnHasBeenSet = true; m_scopeArn.assign(value); }
-    inline CreateMonitorRequest& WithScopeArn(const Aws::String& value) { SetScopeArn(value); return *this;}
-    inline CreateMonitorRequest& WithScopeArn(Aws::String&& value) { SetScopeArn(std::move(value)); return *this;}
-    inline CreateMonitorRequest& WithScopeArn(const char* value) { SetScopeArn(value); return *this;}
+    template<typename ScopeArnT = Aws::String>
+    void SetScopeArn(ScopeArnT&& value) { m_scopeArnHasBeenSet = true; m_scopeArn = std::forward<ScopeArnT>(value); }
+    template<typename ScopeArnT = Aws::String>
+    CreateMonitorRequest& WithScopeArn(ScopeArnT&& value) { SetScopeArn(std::forward<ScopeArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,33 +101,28 @@ namespace Model
      * to make an idempotent API request. Don't reuse the same client token for other
      * API requests.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateMonitorRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateMonitorRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateMonitorRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateMonitorRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags for a monitor. You can add a maximum of 200 tags.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateMonitorRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateMonitorRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateMonitorRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateMonitorRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateMonitorRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateMonitorRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateMonitorRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateMonitorRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateMonitorRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateMonitorRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateMonitorRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

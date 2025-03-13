@@ -44,7 +44,7 @@ namespace Model
   class RelativeAggregationDuration
   {
   public:
-    AWS_LEXMODELSV2_API RelativeAggregationDuration();
+    AWS_LEXMODELSV2_API RelativeAggregationDuration() = default;
     AWS_LEXMODELSV2_API RelativeAggregationDuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API RelativeAggregationDuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,10 @@ namespace Model
      * <p>The type of time period that the <code>timeValue</code> field represents.
      * </p>
      */
-    inline const TimeDimension& GetTimeDimension() const{ return m_timeDimension; }
+    inline TimeDimension GetTimeDimension() const { return m_timeDimension; }
     inline bool TimeDimensionHasBeenSet() const { return m_timeDimensionHasBeenSet; }
-    inline void SetTimeDimension(const TimeDimension& value) { m_timeDimensionHasBeenSet = true; m_timeDimension = value; }
-    inline void SetTimeDimension(TimeDimension&& value) { m_timeDimensionHasBeenSet = true; m_timeDimension = std::move(value); }
-    inline RelativeAggregationDuration& WithTimeDimension(const TimeDimension& value) { SetTimeDimension(value); return *this;}
-    inline RelativeAggregationDuration& WithTimeDimension(TimeDimension&& value) { SetTimeDimension(std::move(value)); return *this;}
+    inline void SetTimeDimension(TimeDimension value) { m_timeDimensionHasBeenSet = true; m_timeDimension = value; }
+    inline RelativeAggregationDuration& WithTimeDimension(TimeDimension value) { SetTimeDimension(value); return *this;}
     ///@}
 
     ///@{
@@ -70,17 +68,17 @@ namespace Model
      * <p> <code>Hours</code> - 1/3/6/12/24</p> </li> <li> <p> <code>Days</code> -
      * 3</p> </li> <li> <p> <code>Weeks</code> - 1/2</p> </li> </ul>
      */
-    inline int GetTimeValue() const{ return m_timeValue; }
+    inline int GetTimeValue() const { return m_timeValue; }
     inline bool TimeValueHasBeenSet() const { return m_timeValueHasBeenSet; }
     inline void SetTimeValue(int value) { m_timeValueHasBeenSet = true; m_timeValue = value; }
     inline RelativeAggregationDuration& WithTimeValue(int value) { SetTimeValue(value); return *this;}
     ///@}
   private:
 
-    TimeDimension m_timeDimension;
+    TimeDimension m_timeDimension{TimeDimension::NOT_SET};
     bool m_timeDimensionHasBeenSet = false;
 
-    int m_timeValue;
+    int m_timeValue{0};
     bool m_timeValueHasBeenSet = false;
   };
 

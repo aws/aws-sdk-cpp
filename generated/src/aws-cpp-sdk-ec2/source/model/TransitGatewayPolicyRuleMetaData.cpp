@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayPolicyRuleMetaData::TransitGatewayPolicyRuleMetaData() : 
-    m_metaDataKeyHasBeenSet(false),
-    m_metaDataValueHasBeenSet(false)
-{
-}
-
 TransitGatewayPolicyRuleMetaData::TransitGatewayPolicyRuleMetaData(const XmlNode& xmlNode)
-  : TransitGatewayPolicyRuleMetaData()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ TransitGatewayPolicyRuleMetaData& TransitGatewayPolicyRuleMetaData::operator =(c
     {
       m_metaDataKey = Aws::Utils::Xml::DecodeEscapedXmlText(metaDataKeyNode.GetText());
       m_metaDataKeyHasBeenSet = true;
+       m_metaDataKeyHasBeenSet = true;
     }
     XmlNode metaDataValueNode = resultNode.FirstChild("metaDataValue");
     if(!metaDataValueNode.IsNull())
     {
       m_metaDataValue = Aws::Utils::Xml::DecodeEscapedXmlText(metaDataValueNode.GetText());
       m_metaDataValueHasBeenSet = true;
+       m_metaDataValueHasBeenSet = true;
     }
   }
 

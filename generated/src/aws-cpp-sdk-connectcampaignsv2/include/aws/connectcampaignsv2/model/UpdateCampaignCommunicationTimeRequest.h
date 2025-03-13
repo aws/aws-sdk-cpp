@@ -26,7 +26,7 @@ namespace Model
   class UpdateCampaignCommunicationTimeRequest : public ConnectCampaignsV2Request
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API UpdateCampaignCommunicationTimeRequest();
+    AWS_CONNECTCAMPAIGNSV2_API UpdateCampaignCommunicationTimeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,24 +39,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateCampaignCommunicationTimeRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateCampaignCommunicationTimeRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateCampaignCommunicationTimeRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateCampaignCommunicationTimeRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CommunicationTimeConfig& GetCommunicationTimeConfig() const{ return m_communicationTimeConfig; }
+    inline const CommunicationTimeConfig& GetCommunicationTimeConfig() const { return m_communicationTimeConfig; }
     inline bool CommunicationTimeConfigHasBeenSet() const { return m_communicationTimeConfigHasBeenSet; }
-    inline void SetCommunicationTimeConfig(const CommunicationTimeConfig& value) { m_communicationTimeConfigHasBeenSet = true; m_communicationTimeConfig = value; }
-    inline void SetCommunicationTimeConfig(CommunicationTimeConfig&& value) { m_communicationTimeConfigHasBeenSet = true; m_communicationTimeConfig = std::move(value); }
-    inline UpdateCampaignCommunicationTimeRequest& WithCommunicationTimeConfig(const CommunicationTimeConfig& value) { SetCommunicationTimeConfig(value); return *this;}
-    inline UpdateCampaignCommunicationTimeRequest& WithCommunicationTimeConfig(CommunicationTimeConfig&& value) { SetCommunicationTimeConfig(std::move(value)); return *this;}
+    template<typename CommunicationTimeConfigT = CommunicationTimeConfig>
+    void SetCommunicationTimeConfig(CommunicationTimeConfigT&& value) { m_communicationTimeConfigHasBeenSet = true; m_communicationTimeConfig = std::forward<CommunicationTimeConfigT>(value); }
+    template<typename CommunicationTimeConfigT = CommunicationTimeConfig>
+    UpdateCampaignCommunicationTimeRequest& WithCommunicationTimeConfig(CommunicationTimeConfigT&& value) { SetCommunicationTimeConfig(std::forward<CommunicationTimeConfigT>(value)); return *this;}
     ///@}
   private:
 

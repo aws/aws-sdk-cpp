@@ -20,41 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FleetData::FleetData() : 
-    m_activityStatus(FleetActivityStatus::NOT_SET),
-    m_activityStatusHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_fleetState(FleetStateCode::NOT_SET),
-    m_fleetStateHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_excessCapacityTerminationPolicy(FleetExcessCapacityTerminationPolicy::NOT_SET),
-    m_excessCapacityTerminationPolicyHasBeenSet(false),
-    m_fulfilledCapacity(0.0),
-    m_fulfilledCapacityHasBeenSet(false),
-    m_fulfilledOnDemandCapacity(0.0),
-    m_fulfilledOnDemandCapacityHasBeenSet(false),
-    m_launchTemplateConfigsHasBeenSet(false),
-    m_targetCapacitySpecificationHasBeenSet(false),
-    m_terminateInstancesWithExpiration(false),
-    m_terminateInstancesWithExpirationHasBeenSet(false),
-    m_type(FleetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_validFromHasBeenSet(false),
-    m_validUntilHasBeenSet(false),
-    m_replaceUnhealthyInstances(false),
-    m_replaceUnhealthyInstancesHasBeenSet(false),
-    m_spotOptionsHasBeenSet(false),
-    m_onDemandOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_contextHasBeenSet(false)
-{
-}
-
 FleetData::FleetData(const XmlNode& xmlNode)
-  : FleetData()
 {
   *this = xmlNode;
 }
@@ -68,152 +34,173 @@ FleetData& FleetData::operator =(const XmlNode& xmlNode)
     XmlNode activityStatusNode = resultNode.FirstChild("activityStatus");
     if(!activityStatusNode.IsNull())
     {
-      m_activityStatus = FleetActivityStatusMapper::GetFleetActivityStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStatusNode.GetText()).c_str()).c_str());
+      m_activityStatus = FleetActivityStatusMapper::GetFleetActivityStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStatusNode.GetText()).c_str()));
       m_activityStatusHasBeenSet = true;
+       m_activityStatusHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
+       m_createTimeHasBeenSet = true;
     }
     XmlNode fleetIdNode = resultNode.FirstChild("fleetId");
     if(!fleetIdNode.IsNull())
     {
       m_fleetId = Aws::Utils::Xml::DecodeEscapedXmlText(fleetIdNode.GetText());
       m_fleetIdHasBeenSet = true;
+       m_fleetIdHasBeenSet = true;
     }
     XmlNode fleetStateNode = resultNode.FirstChild("fleetState");
     if(!fleetStateNode.IsNull())
     {
-      m_fleetState = FleetStateCodeMapper::GetFleetStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fleetStateNode.GetText()).c_str()).c_str());
+      m_fleetState = FleetStateCodeMapper::GetFleetStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fleetStateNode.GetText()).c_str()));
       m_fleetStateHasBeenSet = true;
+       m_fleetStateHasBeenSet = true;
     }
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
       m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
       m_clientTokenHasBeenSet = true;
+       m_clientTokenHasBeenSet = true;
     }
     XmlNode excessCapacityTerminationPolicyNode = resultNode.FirstChild("excessCapacityTerminationPolicy");
     if(!excessCapacityTerminationPolicyNode.IsNull())
     {
-      m_excessCapacityTerminationPolicy = FleetExcessCapacityTerminationPolicyMapper::GetFleetExcessCapacityTerminationPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(excessCapacityTerminationPolicyNode.GetText()).c_str()).c_str());
+      m_excessCapacityTerminationPolicy = FleetExcessCapacityTerminationPolicyMapper::GetFleetExcessCapacityTerminationPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(excessCapacityTerminationPolicyNode.GetText()).c_str()));
       m_excessCapacityTerminationPolicyHasBeenSet = true;
+       m_excessCapacityTerminationPolicyHasBeenSet = true;
     }
     XmlNode fulfilledCapacityNode = resultNode.FirstChild("fulfilledCapacity");
     if(!fulfilledCapacityNode.IsNull())
     {
       m_fulfilledCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fulfilledCapacityNode.GetText()).c_str()).c_str());
       m_fulfilledCapacityHasBeenSet = true;
+       m_fulfilledCapacityHasBeenSet = true;
     }
     XmlNode fulfilledOnDemandCapacityNode = resultNode.FirstChild("fulfilledOnDemandCapacity");
     if(!fulfilledOnDemandCapacityNode.IsNull())
     {
       m_fulfilledOnDemandCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fulfilledOnDemandCapacityNode.GetText()).c_str()).c_str());
       m_fulfilledOnDemandCapacityHasBeenSet = true;
+       m_fulfilledOnDemandCapacityHasBeenSet = true;
     }
     XmlNode launchTemplateConfigsNode = resultNode.FirstChild("launchTemplateConfigs");
     if(!launchTemplateConfigsNode.IsNull())
     {
       XmlNode launchTemplateConfigsMember = launchTemplateConfigsNode.FirstChild("item");
+      m_launchTemplateConfigsHasBeenSet = !launchTemplateConfigsMember.IsNull();
       while(!launchTemplateConfigsMember.IsNull())
       {
         m_launchTemplateConfigs.push_back(launchTemplateConfigsMember);
         launchTemplateConfigsMember = launchTemplateConfigsMember.NextNode("item");
       }
 
-      m_launchTemplateConfigsHasBeenSet = true;
+       m_launchTemplateConfigsHasBeenSet = true;
     }
     XmlNode targetCapacitySpecificationNode = resultNode.FirstChild("targetCapacitySpecification");
     if(!targetCapacitySpecificationNode.IsNull())
     {
       m_targetCapacitySpecification = targetCapacitySpecificationNode;
       m_targetCapacitySpecificationHasBeenSet = true;
+       m_targetCapacitySpecificationHasBeenSet = true;
     }
     XmlNode terminateInstancesWithExpirationNode = resultNode.FirstChild("terminateInstancesWithExpiration");
     if(!terminateInstancesWithExpirationNode.IsNull())
     {
       m_terminateInstancesWithExpiration = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(terminateInstancesWithExpirationNode.GetText()).c_str()).c_str());
       m_terminateInstancesWithExpirationHasBeenSet = true;
+       m_terminateInstancesWithExpirationHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = FleetTypeMapper::GetFleetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = FleetTypeMapper::GetFleetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode validFromNode = resultNode.FirstChild("validFrom");
     if(!validFromNode.IsNull())
     {
       m_validFrom = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validFromNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_validFromHasBeenSet = true;
+       m_validFromHasBeenSet = true;
     }
     XmlNode validUntilNode = resultNode.FirstChild("validUntil");
     if(!validUntilNode.IsNull())
     {
       m_validUntil = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validUntilNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_validUntilHasBeenSet = true;
+       m_validUntilHasBeenSet = true;
     }
     XmlNode replaceUnhealthyInstancesNode = resultNode.FirstChild("replaceUnhealthyInstances");
     if(!replaceUnhealthyInstancesNode.IsNull())
     {
       m_replaceUnhealthyInstances = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replaceUnhealthyInstancesNode.GetText()).c_str()).c_str());
       m_replaceUnhealthyInstancesHasBeenSet = true;
+       m_replaceUnhealthyInstancesHasBeenSet = true;
     }
     XmlNode spotOptionsNode = resultNode.FirstChild("spotOptions");
     if(!spotOptionsNode.IsNull())
     {
       m_spotOptions = spotOptionsNode;
       m_spotOptionsHasBeenSet = true;
+       m_spotOptionsHasBeenSet = true;
     }
     XmlNode onDemandOptionsNode = resultNode.FirstChild("onDemandOptions");
     if(!onDemandOptionsNode.IsNull())
     {
       m_onDemandOptions = onDemandOptionsNode;
       m_onDemandOptionsHasBeenSet = true;
+       m_onDemandOptionsHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode errorsNode = resultNode.FirstChild("errorSet");
     if(!errorsNode.IsNull())
     {
       XmlNode errorsMember = errorsNode.FirstChild("item");
+      m_errorsHasBeenSet = !errorsMember.IsNull();
       while(!errorsMember.IsNull())
       {
         m_errors.push_back(errorsMember);
         errorsMember = errorsMember.NextNode("item");
       }
 
-      m_errorsHasBeenSet = true;
+       m_errorsHasBeenSet = true;
     }
     XmlNode instancesNode = resultNode.FirstChild("fleetInstanceSet");
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("item");
+      m_instancesHasBeenSet = !instancesMember.IsNull();
       while(!instancesMember.IsNull())
       {
         m_instances.push_back(instancesMember);
         instancesMember = instancesMember.NextNode("item");
       }
 
-      m_instancesHasBeenSet = true;
+       m_instancesHasBeenSet = true;
     }
     XmlNode contextNode = resultNode.FirstChild("context");
     if(!contextNode.IsNull())
     {
       m_context = Aws::Utils::Xml::DecodeEscapedXmlText(contextNode.GetText());
       m_contextHasBeenSet = true;
+       m_contextHasBeenSet = true;
     }
   }
 

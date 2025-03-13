@@ -21,7 +21,7 @@ namespace Model
   class ImportClientVpnClientCertificateRevocationListRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ImportClientVpnClientCertificateRevocationListRequest();
+    AWS_EC2_API ImportClientVpnClientCertificateRevocationListRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The ID of the Client VPN endpoint to which the client certificate revocation
      * list applies.</p>
      */
-    inline const Aws::String& GetClientVpnEndpointId() const{ return m_clientVpnEndpointId; }
+    inline const Aws::String& GetClientVpnEndpointId() const { return m_clientVpnEndpointId; }
     inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
-    inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
-    inline void SetClientVpnEndpointId(Aws::String&& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = std::move(value); }
-    inline void SetClientVpnEndpointId(const char* value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId.assign(value); }
-    inline ImportClientVpnClientCertificateRevocationListRequest& WithClientVpnEndpointId(const Aws::String& value) { SetClientVpnEndpointId(value); return *this;}
-    inline ImportClientVpnClientCertificateRevocationListRequest& WithClientVpnEndpointId(Aws::String&& value) { SetClientVpnEndpointId(std::move(value)); return *this;}
-    inline ImportClientVpnClientCertificateRevocationListRequest& WithClientVpnEndpointId(const char* value) { SetClientVpnEndpointId(value); return *this;}
+    template<typename ClientVpnEndpointIdT = Aws::String>
+    void SetClientVpnEndpointId(ClientVpnEndpointIdT&& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = std::forward<ClientVpnEndpointIdT>(value); }
+    template<typename ClientVpnEndpointIdT = Aws::String>
+    ImportClientVpnClientCertificateRevocationListRequest& WithClientVpnEndpointId(ClientVpnEndpointIdT&& value) { SetClientVpnEndpointId(std::forward<ClientVpnEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetCertificateRevocationList() const{ return m_certificateRevocationList; }
+    inline const Aws::String& GetCertificateRevocationList() const { return m_certificateRevocationList; }
     inline bool CertificateRevocationListHasBeenSet() const { return m_certificateRevocationListHasBeenSet; }
-    inline void SetCertificateRevocationList(const Aws::String& value) { m_certificateRevocationListHasBeenSet = true; m_certificateRevocationList = value; }
-    inline void SetCertificateRevocationList(Aws::String&& value) { m_certificateRevocationListHasBeenSet = true; m_certificateRevocationList = std::move(value); }
-    inline void SetCertificateRevocationList(const char* value) { m_certificateRevocationListHasBeenSet = true; m_certificateRevocationList.assign(value); }
-    inline ImportClientVpnClientCertificateRevocationListRequest& WithCertificateRevocationList(const Aws::String& value) { SetCertificateRevocationList(value); return *this;}
-    inline ImportClientVpnClientCertificateRevocationListRequest& WithCertificateRevocationList(Aws::String&& value) { SetCertificateRevocationList(std::move(value)); return *this;}
-    inline ImportClientVpnClientCertificateRevocationListRequest& WithCertificateRevocationList(const char* value) { SetCertificateRevocationList(value); return *this;}
+    template<typename CertificateRevocationListT = Aws::String>
+    void SetCertificateRevocationList(CertificateRevocationListT&& value) { m_certificateRevocationListHasBeenSet = true; m_certificateRevocationList = std::forward<CertificateRevocationListT>(value); }
+    template<typename CertificateRevocationListT = Aws::String>
+    ImportClientVpnClientCertificateRevocationListRequest& WithCertificateRevocationList(CertificateRevocationListT&& value) { SetCertificateRevocationList(std::forward<CertificateRevocationListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +71,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ImportClientVpnClientCertificateRevocationListRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -88,7 +84,7 @@ namespace Model
     Aws::String m_certificateRevocationList;
     bool m_certificateRevocationListHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

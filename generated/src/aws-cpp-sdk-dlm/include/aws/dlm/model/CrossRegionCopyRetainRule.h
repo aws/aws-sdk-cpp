@@ -34,7 +34,7 @@ namespace Model
   class CrossRegionCopyRetainRule
   {
   public:
-    AWS_DLM_API CrossRegionCopyRetainRule();
+    AWS_DLM_API CrossRegionCopyRetainRule() = default;
     AWS_DLM_API CrossRegionCopyRetainRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API CrossRegionCopyRetainRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>The amount of time to retain a cross-Region snapshot or AMI copy. The maximum
      * is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
      */
-    inline int GetInterval() const{ return m_interval; }
+    inline int GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
     inline CrossRegionCopyRetainRule& WithInterval(int value) { SetInterval(value); return *this;}
@@ -57,19 +57,17 @@ namespace Model
      * cross-Region copy for 3 months, specify <code>Interval=3</code> and
      * <code>IntervalUnit=MONTHS</code>.</p>
      */
-    inline const RetentionIntervalUnitValues& GetIntervalUnit() const{ return m_intervalUnit; }
+    inline RetentionIntervalUnitValues GetIntervalUnit() const { return m_intervalUnit; }
     inline bool IntervalUnitHasBeenSet() const { return m_intervalUnitHasBeenSet; }
-    inline void SetIntervalUnit(const RetentionIntervalUnitValues& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
-    inline void SetIntervalUnit(RetentionIntervalUnitValues&& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = std::move(value); }
-    inline CrossRegionCopyRetainRule& WithIntervalUnit(const RetentionIntervalUnitValues& value) { SetIntervalUnit(value); return *this;}
-    inline CrossRegionCopyRetainRule& WithIntervalUnit(RetentionIntervalUnitValues&& value) { SetIntervalUnit(std::move(value)); return *this;}
+    inline void SetIntervalUnit(RetentionIntervalUnitValues value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
+    inline CrossRegionCopyRetainRule& WithIntervalUnit(RetentionIntervalUnitValues value) { SetIntervalUnit(value); return *this;}
     ///@}
   private:
 
-    int m_interval;
+    int m_interval{0};
     bool m_intervalHasBeenSet = false;
 
-    RetentionIntervalUnitValues m_intervalUnit;
+    RetentionIntervalUnitValues m_intervalUnit{RetentionIntervalUnitValues::NOT_SET};
     bool m_intervalUnitHasBeenSet = false;
   };
 

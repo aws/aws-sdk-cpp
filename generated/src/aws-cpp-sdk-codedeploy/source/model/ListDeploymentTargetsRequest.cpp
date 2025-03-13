@@ -12,13 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDeploymentTargetsRequest::ListDeploymentTargetsRequest() : 
-    m_deploymentIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_targetFiltersHasBeenSet(false)
-{
-}
-
 Aws::String ListDeploymentTargetsRequest::SerializePayload() const
 {
   JsonValue payload;

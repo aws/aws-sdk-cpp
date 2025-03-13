@@ -18,14 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-ApiPassthrough::ApiPassthrough() : 
-    m_extensionsHasBeenSet(false),
-    m_subjectHasBeenSet(false)
-{
-}
-
 ApiPassthrough::ApiPassthrough(JsonView jsonValue)
-  : ApiPassthrough()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ApiPassthrough& ApiPassthrough::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Extensions"))
   {
     m_extensions = jsonValue.GetObject("Extensions");
-
     m_extensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetObject("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-CustomVerificationEmailTemplateMetadata::CustomVerificationEmailTemplateMetadata() : 
-    m_templateNameHasBeenSet(false),
-    m_fromEmailAddressHasBeenSet(false),
-    m_templateSubjectHasBeenSet(false),
-    m_successRedirectionURLHasBeenSet(false),
-    m_failureRedirectionURLHasBeenSet(false)
-{
-}
-
 CustomVerificationEmailTemplateMetadata::CustomVerificationEmailTemplateMetadata(JsonView jsonValue)
-  : CustomVerificationEmailTemplateMetadata()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ CustomVerificationEmailTemplateMetadata& CustomVerificationEmailTemplateMetadata
   if(jsonValue.ValueExists("TemplateName"))
   {
     m_templateName = jsonValue.GetString("TemplateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromEmailAddress"))
   {
     m_fromEmailAddress = jsonValue.GetString("FromEmailAddress");
-
     m_fromEmailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateSubject"))
   {
     m_templateSubject = jsonValue.GetString("TemplateSubject");
-
     m_templateSubjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuccessRedirectionURL"))
   {
     m_successRedirectionURL = jsonValue.GetString("SuccessRedirectionURL");
-
     m_successRedirectionURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureRedirectionURL"))
   {
     m_failureRedirectionURL = jsonValue.GetString("FailureRedirectionURL");
-
     m_failureRedirectionURLHasBeenSet = true;
   }
-
   return *this;
 }
 

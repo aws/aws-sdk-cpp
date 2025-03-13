@@ -18,10 +18,6 @@ namespace CodeCatalyst
 namespace Model
 {
 
-WorkflowSortCriteria::WorkflowSortCriteria()
-{
-}
-
 WorkflowSortCriteria::WorkflowSortCriteria(JsonView jsonValue)
 {
   *this = jsonValue;

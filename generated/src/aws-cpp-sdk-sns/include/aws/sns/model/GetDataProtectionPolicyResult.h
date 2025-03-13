@@ -28,7 +28,7 @@ namespace Model
   class GetDataProtectionPolicyResult
   {
   public:
-    AWS_SNS_API GetDataProtectionPolicyResult();
+    AWS_SNS_API GetDataProtectionPolicyResult() = default;
     AWS_SNS_API GetDataProtectionPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SNS_API GetDataProtectionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
      */
-    inline const Aws::String& GetDataProtectionPolicy() const{ return m_dataProtectionPolicy; }
-    inline void SetDataProtectionPolicy(const Aws::String& value) { m_dataProtectionPolicy = value; }
-    inline void SetDataProtectionPolicy(Aws::String&& value) { m_dataProtectionPolicy = std::move(value); }
-    inline void SetDataProtectionPolicy(const char* value) { m_dataProtectionPolicy.assign(value); }
-    inline GetDataProtectionPolicyResult& WithDataProtectionPolicy(const Aws::String& value) { SetDataProtectionPolicy(value); return *this;}
-    inline GetDataProtectionPolicyResult& WithDataProtectionPolicy(Aws::String&& value) { SetDataProtectionPolicy(std::move(value)); return *this;}
-    inline GetDataProtectionPolicyResult& WithDataProtectionPolicy(const char* value) { SetDataProtectionPolicy(value); return *this;}
+    inline const Aws::String& GetDataProtectionPolicy() const { return m_dataProtectionPolicy; }
+    template<typename DataProtectionPolicyT = Aws::String>
+    void SetDataProtectionPolicy(DataProtectionPolicyT&& value) { m_dataProtectionPolicyHasBeenSet = true; m_dataProtectionPolicy = std::forward<DataProtectionPolicyT>(value); }
+    template<typename DataProtectionPolicyT = Aws::String>
+    GetDataProtectionPolicyResult& WithDataProtectionPolicy(DataProtectionPolicyT&& value) { SetDataProtectionPolicy(std::forward<DataProtectionPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetDataProtectionPolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetDataProtectionPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetDataProtectionPolicyResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dataProtectionPolicy;
+    bool m_dataProtectionPolicyHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

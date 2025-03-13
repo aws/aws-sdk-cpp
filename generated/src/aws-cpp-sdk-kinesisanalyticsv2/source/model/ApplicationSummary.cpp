@@ -18,22 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ApplicationSummary::ApplicationSummary() : 
-    m_applicationNameHasBeenSet(false),
-    m_applicationARNHasBeenSet(false),
-    m_applicationStatus(ApplicationStatus::NOT_SET),
-    m_applicationStatusHasBeenSet(false),
-    m_applicationVersionId(0),
-    m_applicationVersionIdHasBeenSet(false),
-    m_runtimeEnvironment(RuntimeEnvironment::NOT_SET),
-    m_runtimeEnvironmentHasBeenSet(false),
-    m_applicationMode(ApplicationMode::NOT_SET),
-    m_applicationModeHasBeenSet(false)
-{
-}
-
 ApplicationSummary::ApplicationSummary(JsonView jsonValue)
-  : ApplicationSummary()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationName"))
   {
     m_applicationName = jsonValue.GetString("ApplicationName");
-
     m_applicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationARN"))
   {
     m_applicationARN = jsonValue.GetString("ApplicationARN");
-
     m_applicationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationStatus"))
   {
     m_applicationStatus = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("ApplicationStatus"));
-
     m_applicationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationVersionId"))
   {
     m_applicationVersionId = jsonValue.GetInt64("ApplicationVersionId");
-
     m_applicationVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuntimeEnvironment"))
   {
     m_runtimeEnvironment = RuntimeEnvironmentMapper::GetRuntimeEnvironmentForName(jsonValue.GetString("RuntimeEnvironment"));
-
     m_runtimeEnvironmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationMode"))
   {
     m_applicationMode = ApplicationModeMapper::GetApplicationModeForName(jsonValue.GetString("ApplicationMode"));
-
     m_applicationModeHasBeenSet = true;
   }
-
   return *this;
 }
 

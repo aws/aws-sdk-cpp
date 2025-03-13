@@ -10,16 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBClusterAutomatedBackupsRequest::DescribeDBClusterAutomatedBackupsRequest() : 
-    m_dbClusterResourceIdHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBClusterAutomatedBackupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -15,28 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTileRequest::GetTileRequest() : 
-    m_arnHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_imageAssetsHasBeenSet(false),
-    m_imageMask(false),
-    m_imageMaskHasBeenSet(false),
-    m_outputDataType(OutputType::NOT_SET),
-    m_outputDataTypeHasBeenSet(false),
-    m_outputFormatHasBeenSet(false),
-    m_propertyFiltersHasBeenSet(false),
-    m_target(TargetOptions::NOT_SET),
-    m_targetHasBeenSet(false),
-    m_timeRangeFilterHasBeenSet(false),
-    m_x(0),
-    m_xHasBeenSet(false),
-    m_y(0),
-    m_yHasBeenSet(false),
-    m_z(0),
-    m_zHasBeenSet(false)
-{
-}
-
 Aws::String GetTileRequest::SerializePayload() const
 {
   return {};

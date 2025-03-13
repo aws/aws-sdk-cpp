@@ -18,14 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-EcrContainerImageMetadata::EcrContainerImageMetadata() : 
-    m_imagePulledAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 EcrContainerImageMetadata::EcrContainerImageMetadata(JsonView jsonValue)
-  : EcrContainerImageMetadata()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EcrContainerImageMetadata& EcrContainerImageMetadata::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("imagePulledAt"))
   {
     m_imagePulledAt = jsonValue.GetDouble("imagePulledAt");
-
     m_imagePulledAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -48,7 +39,6 @@ EcrContainerImageMetadata& EcrContainerImageMetadata::operator =(JsonView jsonVa
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class StartMatchBackfillRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API StartMatchBackfillRequest();
+    AWS_GAMELIFT_API StartMatchBackfillRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * identifier to track the match backfill ticket status and retrieve match
      * results.</p>
      */
-    inline const Aws::String& GetTicketId() const{ return m_ticketId; }
+    inline const Aws::String& GetTicketId() const { return m_ticketId; }
     inline bool TicketIdHasBeenSet() const { return m_ticketIdHasBeenSet; }
-    inline void SetTicketId(const Aws::String& value) { m_ticketIdHasBeenSet = true; m_ticketId = value; }
-    inline void SetTicketId(Aws::String&& value) { m_ticketIdHasBeenSet = true; m_ticketId = std::move(value); }
-    inline void SetTicketId(const char* value) { m_ticketIdHasBeenSet = true; m_ticketId.assign(value); }
-    inline StartMatchBackfillRequest& WithTicketId(const Aws::String& value) { SetTicketId(value); return *this;}
-    inline StartMatchBackfillRequest& WithTicketId(Aws::String&& value) { SetTicketId(std::move(value)); return *this;}
-    inline StartMatchBackfillRequest& WithTicketId(const char* value) { SetTicketId(value); return *this;}
+    template<typename TicketIdT = Aws::String>
+    void SetTicketId(TicketIdT&& value) { m_ticketIdHasBeenSet = true; m_ticketId = std::forward<TicketIdT>(value); }
+    template<typename TicketIdT = Aws::String>
+    StartMatchBackfillRequest& WithTicketId(TicketIdT&& value) { SetTicketId(std::forward<TicketIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * the original game session is listed in the <code>GameSession</code> object,
      * <code>MatchmakerData</code> property.</p>
      */
-    inline const Aws::String& GetConfigurationName() const{ return m_configurationName; }
+    inline const Aws::String& GetConfigurationName() const { return m_configurationName; }
     inline bool ConfigurationNameHasBeenSet() const { return m_configurationNameHasBeenSet; }
-    inline void SetConfigurationName(const Aws::String& value) { m_configurationNameHasBeenSet = true; m_configurationName = value; }
-    inline void SetConfigurationName(Aws::String&& value) { m_configurationNameHasBeenSet = true; m_configurationName = std::move(value); }
-    inline void SetConfigurationName(const char* value) { m_configurationNameHasBeenSet = true; m_configurationName.assign(value); }
-    inline StartMatchBackfillRequest& WithConfigurationName(const Aws::String& value) { SetConfigurationName(value); return *this;}
-    inline StartMatchBackfillRequest& WithConfigurationName(Aws::String&& value) { SetConfigurationName(std::move(value)); return *this;}
-    inline StartMatchBackfillRequest& WithConfigurationName(const char* value) { SetConfigurationName(value); return *this;}
+    template<typename ConfigurationNameT = Aws::String>
+    void SetConfigurationName(ConfigurationNameT&& value) { m_configurationNameHasBeenSet = true; m_configurationName = std::forward<ConfigurationNameT>(value); }
+    template<typename ConfigurationNameT = Aws::String>
+    StartMatchBackfillRequest& WithConfigurationName(ConfigurationNameT&& value) { SetConfigurationName(std::forward<ConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * FlexMatch as a standalone matchmaking solution, this parameter is not needed.
      * </p>
      */
-    inline const Aws::String& GetGameSessionArn() const{ return m_gameSessionArn; }
+    inline const Aws::String& GetGameSessionArn() const { return m_gameSessionArn; }
     inline bool GameSessionArnHasBeenSet() const { return m_gameSessionArnHasBeenSet; }
-    inline void SetGameSessionArn(const Aws::String& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = value; }
-    inline void SetGameSessionArn(Aws::String&& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = std::move(value); }
-    inline void SetGameSessionArn(const char* value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn.assign(value); }
-    inline StartMatchBackfillRequest& WithGameSessionArn(const Aws::String& value) { SetGameSessionArn(value); return *this;}
-    inline StartMatchBackfillRequest& WithGameSessionArn(Aws::String&& value) { SetGameSessionArn(std::move(value)); return *this;}
-    inline StartMatchBackfillRequest& WithGameSessionArn(const char* value) { SetGameSessionArn(value); return *this;}
+    template<typename GameSessionArnT = Aws::String>
+    void SetGameSessionArn(GameSessionArnT&& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = std::forward<GameSessionArnT>(value); }
+    template<typename GameSessionArnT = Aws::String>
+    StartMatchBackfillRequest& WithGameSessionArn(GameSessionArnT&& value) { SetGameSessionArn(std::forward<GameSessionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,14 @@ namespace Model
      * value, in milliseconds, for the Region that the game session is currently in. Do
      * not include latency values for any other Region.</p> </li> </ul>
      */
-    inline const Aws::Vector<Player>& GetPlayers() const{ return m_players; }
+    inline const Aws::Vector<Player>& GetPlayers() const { return m_players; }
     inline bool PlayersHasBeenSet() const { return m_playersHasBeenSet; }
-    inline void SetPlayers(const Aws::Vector<Player>& value) { m_playersHasBeenSet = true; m_players = value; }
-    inline void SetPlayers(Aws::Vector<Player>&& value) { m_playersHasBeenSet = true; m_players = std::move(value); }
-    inline StartMatchBackfillRequest& WithPlayers(const Aws::Vector<Player>& value) { SetPlayers(value); return *this;}
-    inline StartMatchBackfillRequest& WithPlayers(Aws::Vector<Player>&& value) { SetPlayers(std::move(value)); return *this;}
-    inline StartMatchBackfillRequest& AddPlayers(const Player& value) { m_playersHasBeenSet = true; m_players.push_back(value); return *this; }
-    inline StartMatchBackfillRequest& AddPlayers(Player&& value) { m_playersHasBeenSet = true; m_players.push_back(std::move(value)); return *this; }
+    template<typename PlayersT = Aws::Vector<Player>>
+    void SetPlayers(PlayersT&& value) { m_playersHasBeenSet = true; m_players = std::forward<PlayersT>(value); }
+    template<typename PlayersT = Aws::Vector<Player>>
+    StartMatchBackfillRequest& WithPlayers(PlayersT&& value) { SetPlayers(std::forward<PlayersT>(value)); return *this;}
+    template<typename PlayersT = Player>
+    StartMatchBackfillRequest& AddPlayers(PlayersT&& value) { m_playersHasBeenSet = true; m_players.emplace_back(std::forward<PlayersT>(value)); return *this; }
     ///@}
   private:
 

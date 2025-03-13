@@ -35,7 +35,7 @@ namespace Model
   class ProjectFileSystemLocation
   {
   public:
-    AWS_CODEBUILD_API ProjectFileSystemLocation();
+    AWS_CODEBUILD_API ProjectFileSystemLocation() = default;
     AWS_CODEBUILD_API ProjectFileSystemLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ProjectFileSystemLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p> The type of the file system. The one supported type is <code>EFS</code>.
      * </p>
      */
-    inline const FileSystemType& GetType() const{ return m_type; }
+    inline FileSystemType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FileSystemType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FileSystemType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ProjectFileSystemLocation& WithType(const FileSystemType& value) { SetType(value); return *this;}
-    inline ProjectFileSystemLocation& WithType(FileSystemType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FileSystemType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ProjectFileSystemLocation& WithType(FileSystemType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -69,28 +67,24 @@ namespace Model
      * directory path, the location is only the DNS name and CodeBuild mounts the
      * entire file system. </p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline ProjectFileSystemLocation& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline ProjectFileSystemLocation& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline ProjectFileSystemLocation& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    ProjectFileSystemLocation& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location in the container where you mount the file system. </p>
      */
-    inline const Aws::String& GetMountPoint() const{ return m_mountPoint; }
+    inline const Aws::String& GetMountPoint() const { return m_mountPoint; }
     inline bool MountPointHasBeenSet() const { return m_mountPointHasBeenSet; }
-    inline void SetMountPoint(const Aws::String& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
-    inline void SetMountPoint(Aws::String&& value) { m_mountPointHasBeenSet = true; m_mountPoint = std::move(value); }
-    inline void SetMountPoint(const char* value) { m_mountPointHasBeenSet = true; m_mountPoint.assign(value); }
-    inline ProjectFileSystemLocation& WithMountPoint(const Aws::String& value) { SetMountPoint(value); return *this;}
-    inline ProjectFileSystemLocation& WithMountPoint(Aws::String&& value) { SetMountPoint(std::move(value)); return *this;}
-    inline ProjectFileSystemLocation& WithMountPoint(const char* value) { SetMountPoint(value); return *this;}
+    template<typename MountPointT = Aws::String>
+    void SetMountPoint(MountPointT&& value) { m_mountPointHasBeenSet = true; m_mountPoint = std::forward<MountPointT>(value); }
+    template<typename MountPointT = Aws::String>
+    ProjectFileSystemLocation& WithMountPoint(MountPointT&& value) { SetMountPoint(std::forward<MountPointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +96,12 @@ namespace Model
      * create named <code>CODEBUILD_MY_EFS</code>. </p> <p> The <code>identifier</code>
      * is used to mount your file system. </p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline ProjectFileSystemLocation& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline ProjectFileSystemLocation& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline ProjectFileSystemLocation& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    ProjectFileSystemLocation& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,18 +113,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-nfs-mount-settings.html">Recommended
      * NFS Mount Options</a>. </p>
      */
-    inline const Aws::String& GetMountOptions() const{ return m_mountOptions; }
+    inline const Aws::String& GetMountOptions() const { return m_mountOptions; }
     inline bool MountOptionsHasBeenSet() const { return m_mountOptionsHasBeenSet; }
-    inline void SetMountOptions(const Aws::String& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = value; }
-    inline void SetMountOptions(Aws::String&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::move(value); }
-    inline void SetMountOptions(const char* value) { m_mountOptionsHasBeenSet = true; m_mountOptions.assign(value); }
-    inline ProjectFileSystemLocation& WithMountOptions(const Aws::String& value) { SetMountOptions(value); return *this;}
-    inline ProjectFileSystemLocation& WithMountOptions(Aws::String&& value) { SetMountOptions(std::move(value)); return *this;}
-    inline ProjectFileSystemLocation& WithMountOptions(const char* value) { SetMountOptions(value); return *this;}
+    template<typename MountOptionsT = Aws::String>
+    void SetMountOptions(MountOptionsT&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::forward<MountOptionsT>(value); }
+    template<typename MountOptionsT = Aws::String>
+    ProjectFileSystemLocation& WithMountOptions(MountOptionsT&& value) { SetMountOptions(std::forward<MountOptionsT>(value)); return *this;}
     ///@}
   private:
 
-    FileSystemType m_type;
+    FileSystemType m_type{FileSystemType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_location;

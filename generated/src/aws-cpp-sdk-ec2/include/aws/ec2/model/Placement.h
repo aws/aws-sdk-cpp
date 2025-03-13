@@ -32,7 +32,7 @@ namespace Model
   class Placement
   {
   public:
-    AWS_EC2_API Placement();
+    AWS_EC2_API Placement() = default;
     AWS_EC2_API Placement(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API Placement& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>.</p>
      */
-    inline const Aws::String& GetAffinity() const{ return m_affinity; }
+    inline const Aws::String& GetAffinity() const { return m_affinity; }
     inline bool AffinityHasBeenSet() const { return m_affinityHasBeenSet; }
-    inline void SetAffinity(const Aws::String& value) { m_affinityHasBeenSet = true; m_affinity = value; }
-    inline void SetAffinity(Aws::String&& value) { m_affinityHasBeenSet = true; m_affinity = std::move(value); }
-    inline void SetAffinity(const char* value) { m_affinityHasBeenSet = true; m_affinity.assign(value); }
-    inline Placement& WithAffinity(const Aws::String& value) { SetAffinity(value); return *this;}
-    inline Placement& WithAffinity(Aws::String&& value) { SetAffinity(std::move(value)); return *this;}
-    inline Placement& WithAffinity(const char* value) { SetAffinity(value); return *this;}
+    template<typename AffinityT = Aws::String>
+    void SetAffinity(AffinityT&& value) { m_affinityHasBeenSet = true; m_affinity = std::forward<AffinityT>(value); }
+    template<typename AffinityT = Aws::String>
+    Placement& WithAffinity(AffinityT&& value) { SetAffinity(std::forward<AffinityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>The name of the placement group that the instance is in. If you specify
      * <code>GroupName</code>, you can't specify <code>GroupId</code>.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline Placement& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline Placement& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline Placement& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    Placement& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +76,7 @@ namespace Model
      * is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
-    inline int GetPartitionNumber() const{ return m_partitionNumber; }
+    inline int GetPartitionNumber() const { return m_partitionNumber; }
     inline bool PartitionNumberHasBeenSet() const { return m_partitionNumberHasBeenSet; }
     inline void SetPartitionNumber(int value) { m_partitionNumberHasBeenSet = true; m_partitionNumber = value; }
     inline Placement& WithPartitionNumber(int value) { SetPartitionNumber(value); return *this;}
@@ -94,14 +90,12 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>.</p>
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
+    inline const Aws::String& GetHostId() const { return m_hostId; }
     inline bool HostIdHasBeenSet() const { return m_hostIdHasBeenSet; }
-    inline void SetHostId(const Aws::String& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostIdHasBeenSet = true; m_hostId.assign(value); }
-    inline Placement& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline Placement& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline Placement& WithHostId(const char* value) { SetHostId(value); return *this;}
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    Placement& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,26 +109,22 @@ namespace Model
      * or for T3 instances that are configured for the <code>unlimited</code> CPU
      * credit option.</p>
      */
-    inline const Tenancy& GetTenancy() const{ return m_tenancy; }
+    inline Tenancy GetTenancy() const { return m_tenancy; }
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
-    inline void SetTenancy(const Tenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
-    inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
-    inline Placement& WithTenancy(const Tenancy& value) { SetTenancy(value); return *this;}
-    inline Placement& WithTenancy(Tenancy&& value) { SetTenancy(std::move(value)); return *this;}
+    inline void SetTenancy(Tenancy value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+    inline Placement& WithTenancy(Tenancy value) { SetTenancy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const Aws::String& GetSpreadDomain() const{ return m_spreadDomain; }
+    inline const Aws::String& GetSpreadDomain() const { return m_spreadDomain; }
     inline bool SpreadDomainHasBeenSet() const { return m_spreadDomainHasBeenSet; }
-    inline void SetSpreadDomain(const Aws::String& value) { m_spreadDomainHasBeenSet = true; m_spreadDomain = value; }
-    inline void SetSpreadDomain(Aws::String&& value) { m_spreadDomainHasBeenSet = true; m_spreadDomain = std::move(value); }
-    inline void SetSpreadDomain(const char* value) { m_spreadDomainHasBeenSet = true; m_spreadDomain.assign(value); }
-    inline Placement& WithSpreadDomain(const Aws::String& value) { SetSpreadDomain(value); return *this;}
-    inline Placement& WithSpreadDomain(Aws::String&& value) { SetSpreadDomain(std::move(value)); return *this;}
-    inline Placement& WithSpreadDomain(const char* value) { SetSpreadDomain(value); return *this;}
+    template<typename SpreadDomainT = Aws::String>
+    void SetSpreadDomain(SpreadDomainT&& value) { m_spreadDomainHasBeenSet = true; m_spreadDomain = std::forward<SpreadDomainT>(value); }
+    template<typename SpreadDomainT = Aws::String>
+    Placement& WithSpreadDomain(SpreadDomainT&& value) { SetSpreadDomain(std::forward<SpreadDomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,14 +134,12 @@ namespace Model
      * set it to <code>host</code>.</p> <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
-    inline const Aws::String& GetHostResourceGroupArn() const{ return m_hostResourceGroupArn; }
+    inline const Aws::String& GetHostResourceGroupArn() const { return m_hostResourceGroupArn; }
     inline bool HostResourceGroupArnHasBeenSet() const { return m_hostResourceGroupArnHasBeenSet; }
-    inline void SetHostResourceGroupArn(const Aws::String& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = value; }
-    inline void SetHostResourceGroupArn(Aws::String&& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = std::move(value); }
-    inline void SetHostResourceGroupArn(const char* value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn.assign(value); }
-    inline Placement& WithHostResourceGroupArn(const Aws::String& value) { SetHostResourceGroupArn(value); return *this;}
-    inline Placement& WithHostResourceGroupArn(Aws::String&& value) { SetHostResourceGroupArn(std::move(value)); return *this;}
-    inline Placement& WithHostResourceGroupArn(const char* value) { SetHostResourceGroupArn(value); return *this;}
+    template<typename HostResourceGroupArnT = Aws::String>
+    void SetHostResourceGroupArn(HostResourceGroupArnT&& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = std::forward<HostResourceGroupArnT>(value); }
+    template<typename HostResourceGroupArnT = Aws::String>
+    Placement& WithHostResourceGroupArn(HostResourceGroupArnT&& value) { SetHostResourceGroupArn(std::forward<HostResourceGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,14 +147,12 @@ namespace Model
      * <p>The ID of the placement group that the instance is in. If you specify
      * <code>GroupId</code>, you can't specify <code>GroupName</code>.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline Placement& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline Placement& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline Placement& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    Placement& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,14 +162,12 @@ namespace Model
      * balancing criteria for the Region.</p> <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline Placement& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline Placement& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline Placement& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    Placement& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
   private:
 
@@ -193,13 +177,13 @@ namespace Model
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet = false;
 
-    int m_partitionNumber;
+    int m_partitionNumber{0};
     bool m_partitionNumberHasBeenSet = false;
 
     Aws::String m_hostId;
     bool m_hostIdHasBeenSet = false;
 
-    Tenancy m_tenancy;
+    Tenancy m_tenancy{Tenancy::NOT_SET};
     bool m_tenancyHasBeenSet = false;
 
     Aws::String m_spreadDomain;

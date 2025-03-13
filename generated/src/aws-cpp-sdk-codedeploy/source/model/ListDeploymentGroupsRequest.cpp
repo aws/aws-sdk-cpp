@@ -12,12 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDeploymentGroupsRequest::ListDeploymentGroupsRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDeploymentGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

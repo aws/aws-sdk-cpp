@@ -10,24 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateCapacityReservationFleetRequest::CreateCapacityReservationFleetRequest() : 
-    m_allocationStrategyHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_instanceTypeSpecificationsHasBeenSet(false),
-    m_tenancy(FleetCapacityReservationTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_totalTargetCapacity(0),
-    m_totalTargetCapacityHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_instanceMatchCriteria(FleetInstanceMatchCriteria::NOT_SET),
-    m_instanceMatchCriteriaHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateCapacityReservationFleetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

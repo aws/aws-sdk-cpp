@@ -33,7 +33,7 @@ namespace Model
   class SigningImageFormat
   {
   public:
-    AWS_SIGNER_API SigningImageFormat();
+    AWS_SIGNER_API SigningImageFormat() = default;
     AWS_SIGNER_API SigningImageFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIGNER_API SigningImageFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,30 @@ namespace Model
     /**
      * <p>The supported formats of a signing image.</p>
      */
-    inline const Aws::Vector<ImageFormat>& GetSupportedFormats() const{ return m_supportedFormats; }
+    inline const Aws::Vector<ImageFormat>& GetSupportedFormats() const { return m_supportedFormats; }
     inline bool SupportedFormatsHasBeenSet() const { return m_supportedFormatsHasBeenSet; }
-    inline void SetSupportedFormats(const Aws::Vector<ImageFormat>& value) { m_supportedFormatsHasBeenSet = true; m_supportedFormats = value; }
-    inline void SetSupportedFormats(Aws::Vector<ImageFormat>&& value) { m_supportedFormatsHasBeenSet = true; m_supportedFormats = std::move(value); }
-    inline SigningImageFormat& WithSupportedFormats(const Aws::Vector<ImageFormat>& value) { SetSupportedFormats(value); return *this;}
-    inline SigningImageFormat& WithSupportedFormats(Aws::Vector<ImageFormat>&& value) { SetSupportedFormats(std::move(value)); return *this;}
-    inline SigningImageFormat& AddSupportedFormats(const ImageFormat& value) { m_supportedFormatsHasBeenSet = true; m_supportedFormats.push_back(value); return *this; }
-    inline SigningImageFormat& AddSupportedFormats(ImageFormat&& value) { m_supportedFormatsHasBeenSet = true; m_supportedFormats.push_back(std::move(value)); return *this; }
+    template<typename SupportedFormatsT = Aws::Vector<ImageFormat>>
+    void SetSupportedFormats(SupportedFormatsT&& value) { m_supportedFormatsHasBeenSet = true; m_supportedFormats = std::forward<SupportedFormatsT>(value); }
+    template<typename SupportedFormatsT = Aws::Vector<ImageFormat>>
+    SigningImageFormat& WithSupportedFormats(SupportedFormatsT&& value) { SetSupportedFormats(std::forward<SupportedFormatsT>(value)); return *this;}
+    inline SigningImageFormat& AddSupportedFormats(ImageFormat value) { m_supportedFormatsHasBeenSet = true; m_supportedFormats.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The default format of a signing image.</p>
      */
-    inline const ImageFormat& GetDefaultFormat() const{ return m_defaultFormat; }
+    inline ImageFormat GetDefaultFormat() const { return m_defaultFormat; }
     inline bool DefaultFormatHasBeenSet() const { return m_defaultFormatHasBeenSet; }
-    inline void SetDefaultFormat(const ImageFormat& value) { m_defaultFormatHasBeenSet = true; m_defaultFormat = value; }
-    inline void SetDefaultFormat(ImageFormat&& value) { m_defaultFormatHasBeenSet = true; m_defaultFormat = std::move(value); }
-    inline SigningImageFormat& WithDefaultFormat(const ImageFormat& value) { SetDefaultFormat(value); return *this;}
-    inline SigningImageFormat& WithDefaultFormat(ImageFormat&& value) { SetDefaultFormat(std::move(value)); return *this;}
+    inline void SetDefaultFormat(ImageFormat value) { m_defaultFormatHasBeenSet = true; m_defaultFormat = value; }
+    inline SigningImageFormat& WithDefaultFormat(ImageFormat value) { SetDefaultFormat(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<ImageFormat> m_supportedFormats;
     bool m_supportedFormatsHasBeenSet = false;
 
-    ImageFormat m_defaultFormat;
+    ImageFormat m_defaultFormat{ImageFormat::NOT_SET};
     bool m_defaultFormatHasBeenSet = false;
   };
 

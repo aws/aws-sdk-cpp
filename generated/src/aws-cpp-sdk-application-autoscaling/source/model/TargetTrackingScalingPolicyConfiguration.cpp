@@ -18,22 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfiguration() : 
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false),
-    m_predefinedMetricSpecificationHasBeenSet(false),
-    m_customizedMetricSpecificationHasBeenSet(false),
-    m_scaleOutCooldown(0),
-    m_scaleOutCooldownHasBeenSet(false),
-    m_scaleInCooldown(0),
-    m_scaleInCooldownHasBeenSet(false),
-    m_disableScaleIn(false),
-    m_disableScaleInHasBeenSet(false)
-{
-}
-
 TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfiguration(JsonView jsonValue)
-  : TargetTrackingScalingPolicyConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ TargetTrackingScalingPolicyConfiguration& TargetTrackingScalingPolicyConfigurati
   if(jsonValue.ValueExists("TargetValue"))
   {
     m_targetValue = jsonValue.GetDouble("TargetValue");
-
     m_targetValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredefinedMetricSpecification"))
   {
     m_predefinedMetricSpecification = jsonValue.GetObject("PredefinedMetricSpecification");
-
     m_predefinedMetricSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomizedMetricSpecification"))
   {
     m_customizedMetricSpecification = jsonValue.GetObject("CustomizedMetricSpecification");
-
     m_customizedMetricSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScaleOutCooldown"))
   {
     m_scaleOutCooldown = jsonValue.GetInteger("ScaleOutCooldown");
-
     m_scaleOutCooldownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScaleInCooldown"))
   {
     m_scaleInCooldown = jsonValue.GetInteger("ScaleInCooldown");
-
     m_scaleInCooldownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableScaleIn"))
   {
     m_disableScaleIn = jsonValue.GetBool("DisableScaleIn");
-
     m_disableScaleInHasBeenSet = true;
   }
-
   return *this;
 }
 

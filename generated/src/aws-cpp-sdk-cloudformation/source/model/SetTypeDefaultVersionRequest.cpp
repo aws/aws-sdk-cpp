@@ -10,15 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-SetTypeDefaultVersionRequest::SetTypeDefaultVersionRequest() : 
-    m_arnHasBeenSet(false),
-    m_type(RegistryType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 Aws::String SetTypeDefaultVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

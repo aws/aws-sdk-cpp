@@ -44,7 +44,7 @@ namespace Model
   class ReleaseConfiguration
   {
   public:
-    AWS_FSX_API ReleaseConfiguration();
+    AWS_FSX_API ReleaseConfiguration() = default;
     AWS_FSX_API ReleaseConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API ReleaseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,12 @@ namespace Model
      * for that file to be eligible for release. Only files that were last accessed
      * before this point-in-time are eligible to be released from the file system.</p>
      */
-    inline const DurationSinceLastAccess& GetDurationSinceLastAccess() const{ return m_durationSinceLastAccess; }
+    inline const DurationSinceLastAccess& GetDurationSinceLastAccess() const { return m_durationSinceLastAccess; }
     inline bool DurationSinceLastAccessHasBeenSet() const { return m_durationSinceLastAccessHasBeenSet; }
-    inline void SetDurationSinceLastAccess(const DurationSinceLastAccess& value) { m_durationSinceLastAccessHasBeenSet = true; m_durationSinceLastAccess = value; }
-    inline void SetDurationSinceLastAccess(DurationSinceLastAccess&& value) { m_durationSinceLastAccessHasBeenSet = true; m_durationSinceLastAccess = std::move(value); }
-    inline ReleaseConfiguration& WithDurationSinceLastAccess(const DurationSinceLastAccess& value) { SetDurationSinceLastAccess(value); return *this;}
-    inline ReleaseConfiguration& WithDurationSinceLastAccess(DurationSinceLastAccess&& value) { SetDurationSinceLastAccess(std::move(value)); return *this;}
+    template<typename DurationSinceLastAccessT = DurationSinceLastAccess>
+    void SetDurationSinceLastAccess(DurationSinceLastAccessT&& value) { m_durationSinceLastAccessHasBeenSet = true; m_durationSinceLastAccess = std::forward<DurationSinceLastAccessT>(value); }
+    template<typename DurationSinceLastAccessT = DurationSinceLastAccess>
+    ReleaseConfiguration& WithDurationSinceLastAccess(DurationSinceLastAccessT&& value) { SetDurationSinceLastAccess(std::forward<DurationSinceLastAccessT>(value)); return *this;}
     ///@}
   private:
 

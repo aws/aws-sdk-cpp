@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TextAreaControlDisplayOptions::TextAreaControlDisplayOptions() : 
-    m_titleOptionsHasBeenSet(false),
-    m_placeholderOptionsHasBeenSet(false),
-    m_infoIconLabelOptionsHasBeenSet(false)
-{
-}
-
 TextAreaControlDisplayOptions::TextAreaControlDisplayOptions(JsonView jsonValue)
-  : TextAreaControlDisplayOptions()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TextAreaControlDisplayOptions& TextAreaControlDisplayOptions::operator =(JsonVie
   if(jsonValue.ValueExists("TitleOptions"))
   {
     m_titleOptions = jsonValue.GetObject("TitleOptions");
-
     m_titleOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlaceholderOptions"))
   {
     m_placeholderOptions = jsonValue.GetObject("PlaceholderOptions");
-
     m_placeholderOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InfoIconLabelOptions"))
   {
     m_infoIconLabelOptions = jsonValue.GetObject("InfoIconLabelOptions");
-
     m_infoIconLabelOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

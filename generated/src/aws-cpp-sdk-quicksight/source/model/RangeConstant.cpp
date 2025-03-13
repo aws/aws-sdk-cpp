@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RangeConstant::RangeConstant() : 
-    m_minimumHasBeenSet(false),
-    m_maximumHasBeenSet(false)
-{
-}
-
 RangeConstant::RangeConstant(JsonView jsonValue)
-  : RangeConstant()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RangeConstant& RangeConstant::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Minimum"))
   {
     m_minimum = jsonValue.GetString("Minimum");
-
     m_minimumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Maximum"))
   {
     m_maximum = jsonValue.GetString("Maximum");
-
     m_maximumHasBeenSet = true;
   }
-
   return *this;
 }
 

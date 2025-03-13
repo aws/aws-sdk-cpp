@@ -33,7 +33,7 @@ namespace Model
   class ActiveTrustedKeyGroups
   {
   public:
-    AWS_CLOUDFRONT_API ActiveTrustedKeyGroups();
+    AWS_CLOUDFRONT_API ActiveTrustedKeyGroups() = default;
     AWS_CLOUDFRONT_API ActiveTrustedKeyGroups(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ActiveTrustedKeyGroups& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,7 +46,7 @@ namespace Model
      * that CloudFront can use to verify the signatures of signed URLs and signed
      * cookies. If not, this field is <code>false</code>.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ActiveTrustedKeyGroups& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
     /**
      * <p>The number of key groups in the list.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline ActiveTrustedKeyGroups& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -68,21 +68,21 @@ namespace Model
      * key group that CloudFront can use to verify the signatures of signed URLs and
      * signed cookies.</p>
      */
-    inline const Aws::Vector<KGKeyPairIds>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<KGKeyPairIds>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<KGKeyPairIds>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<KGKeyPairIds>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline ActiveTrustedKeyGroups& WithItems(const Aws::Vector<KGKeyPairIds>& value) { SetItems(value); return *this;}
-    inline ActiveTrustedKeyGroups& WithItems(Aws::Vector<KGKeyPairIds>&& value) { SetItems(std::move(value)); return *this;}
-    inline ActiveTrustedKeyGroups& AddItems(const KGKeyPairIds& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline ActiveTrustedKeyGroups& AddItems(KGKeyPairIds&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<KGKeyPairIds>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<KGKeyPairIds>>
+    ActiveTrustedKeyGroups& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = KGKeyPairIds>
+    ActiveTrustedKeyGroups& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<KGKeyPairIds> m_items;

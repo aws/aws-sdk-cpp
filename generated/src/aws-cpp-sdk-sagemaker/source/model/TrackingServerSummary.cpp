@@ -18,21 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrackingServerSummary::TrackingServerSummary() : 
-    m_trackingServerArnHasBeenSet(false),
-    m_trackingServerNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_trackingServerStatus(TrackingServerStatus::NOT_SET),
-    m_trackingServerStatusHasBeenSet(false),
-    m_isActive(IsTrackingServerActive::NOT_SET),
-    m_isActiveHasBeenSet(false),
-    m_mlflowVersionHasBeenSet(false)
-{
-}
-
 TrackingServerSummary::TrackingServerSummary(JsonView jsonValue)
-  : TrackingServerSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ TrackingServerSummary& TrackingServerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrackingServerArn"))
   {
     m_trackingServerArn = jsonValue.GetString("TrackingServerArn");
-
     m_trackingServerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrackingServerName"))
   {
     m_trackingServerName = jsonValue.GetString("TrackingServerName");
-
     m_trackingServerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrackingServerStatus"))
   {
     m_trackingServerStatus = TrackingServerStatusMapper::GetTrackingServerStatusForName(jsonValue.GetString("TrackingServerStatus"));
-
     m_trackingServerStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsActive"))
   {
     m_isActive = IsTrackingServerActiveMapper::GetIsTrackingServerActiveForName(jsonValue.GetString("IsActive"));
-
     m_isActiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MlflowVersion"))
   {
     m_mlflowVersion = jsonValue.GetString("MlflowVersion");
-
     m_mlflowVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

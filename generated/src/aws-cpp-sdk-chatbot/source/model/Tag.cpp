@@ -18,14 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-Tag::Tag() : 
-    m_tagKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false)
-{
-}
-
 Tag::Tag(JsonView jsonValue)
-  : Tag()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Tag& Tag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TagKey"))
   {
     m_tagKey = jsonValue.GetString("TagKey");
-
     m_tagKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagValue"))
   {
     m_tagValue = jsonValue.GetString("TagValue");
-
     m_tagValueHasBeenSet = true;
   }
-
   return *this;
 }
 

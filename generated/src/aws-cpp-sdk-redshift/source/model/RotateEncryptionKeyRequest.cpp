@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-RotateEncryptionKeyRequest::RotateEncryptionKeyRequest() : 
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String RotateEncryptionKeyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

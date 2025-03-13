@@ -12,12 +12,6 @@ using namespace Aws::ECRPublic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRepositoryCatalogDataRequest::GetRepositoryCatalogDataRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
-{
-}
-
 Aws::String GetRepositoryCatalogDataRequest::SerializePayload() const
 {
   JsonValue payload;

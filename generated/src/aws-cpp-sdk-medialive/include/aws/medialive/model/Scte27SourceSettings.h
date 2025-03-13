@@ -31,7 +31,7 @@ namespace Model
   class Scte27SourceSettings
   {
   public:
-    AWS_MEDIALIVE_API Scte27SourceSettings();
+    AWS_MEDIALIVE_API Scte27SourceSettings() = default;
     AWS_MEDIALIVE_API Scte27SourceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Scte27SourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
 provide the language to consider when translating
      * the image-based source to text.
      */
-    inline const Scte27OcrLanguage& GetOcrLanguage() const{ return m_ocrLanguage; }
+    inline Scte27OcrLanguage GetOcrLanguage() const { return m_ocrLanguage; }
     inline bool OcrLanguageHasBeenSet() const { return m_ocrLanguageHasBeenSet; }
-    inline void SetOcrLanguage(const Scte27OcrLanguage& value) { m_ocrLanguageHasBeenSet = true; m_ocrLanguage = value; }
-    inline void SetOcrLanguage(Scte27OcrLanguage&& value) { m_ocrLanguageHasBeenSet = true; m_ocrLanguage = std::move(value); }
-    inline Scte27SourceSettings& WithOcrLanguage(const Scte27OcrLanguage& value) { SetOcrLanguage(value); return *this;}
-    inline Scte27SourceSettings& WithOcrLanguage(Scte27OcrLanguage&& value) { SetOcrLanguage(std::move(value)); return *this;}
+    inline void SetOcrLanguage(Scte27OcrLanguage value) { m_ocrLanguageHasBeenSet = true; m_ocrLanguage = value; }
+    inline Scte27SourceSettings& WithOcrLanguage(Scte27OcrLanguage value) { SetOcrLanguage(value); return *this;}
     ///@}
 
     ///@{
@@ -66,17 +64,17 @@ provide the language to consider when translating
      * Valid only if source is DVB-Sub that is being passed through; all languages will
      * be passed through.
      */
-    inline int GetPid() const{ return m_pid; }
+    inline int GetPid() const { return m_pid; }
     inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
     inline void SetPid(int value) { m_pidHasBeenSet = true; m_pid = value; }
     inline Scte27SourceSettings& WithPid(int value) { SetPid(value); return *this;}
     ///@}
   private:
 
-    Scte27OcrLanguage m_ocrLanguage;
+    Scte27OcrLanguage m_ocrLanguage{Scte27OcrLanguage::NOT_SET};
     bool m_ocrLanguageHasBeenSet = false;
 
-    int m_pid;
+    int m_pid{0};
     bool m_pidHasBeenSet = false;
   };
 

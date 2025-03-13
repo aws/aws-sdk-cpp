@@ -20,23 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReplaceRootVolumeTask::ReplaceRootVolumeTask() : 
-    m_replaceRootVolumeTaskIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_taskState(ReplaceRootVolumeTaskState::NOT_SET),
-    m_taskStateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completeTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_deleteReplacedRootVolume(false),
-    m_deleteReplacedRootVolumeHasBeenSet(false)
-{
-}
-
 ReplaceRootVolumeTask::ReplaceRootVolumeTask(const XmlNode& xmlNode)
-  : ReplaceRootVolumeTask()
 {
   *this = xmlNode;
 }
@@ -52,60 +36,69 @@ ReplaceRootVolumeTask& ReplaceRootVolumeTask::operator =(const XmlNode& xmlNode)
     {
       m_replaceRootVolumeTaskId = Aws::Utils::Xml::DecodeEscapedXmlText(replaceRootVolumeTaskIdNode.GetText());
       m_replaceRootVolumeTaskIdHasBeenSet = true;
+       m_replaceRootVolumeTaskIdHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode taskStateNode = resultNode.FirstChild("taskState");
     if(!taskStateNode.IsNull())
     {
-      m_taskState = ReplaceRootVolumeTaskStateMapper::GetReplaceRootVolumeTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStateNode.GetText()).c_str()).c_str());
+      m_taskState = ReplaceRootVolumeTaskStateMapper::GetReplaceRootVolumeTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStateNode.GetText()).c_str()));
       m_taskStateHasBeenSet = true;
+       m_taskStateHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
     if(!startTimeNode.IsNull())
     {
       m_startTime = Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText());
       m_startTimeHasBeenSet = true;
+       m_startTimeHasBeenSet = true;
     }
     XmlNode completeTimeNode = resultNode.FirstChild("completeTime");
     if(!completeTimeNode.IsNull())
     {
       m_completeTime = Aws::Utils::Xml::DecodeEscapedXmlText(completeTimeNode.GetText());
       m_completeTimeHasBeenSet = true;
+       m_completeTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
       m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
       m_imageIdHasBeenSet = true;
+       m_imageIdHasBeenSet = true;
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
       m_snapshotIdHasBeenSet = true;
+       m_snapshotIdHasBeenSet = true;
     }
     XmlNode deleteReplacedRootVolumeNode = resultNode.FirstChild("deleteReplacedRootVolume");
     if(!deleteReplacedRootVolumeNode.IsNull())
     {
       m_deleteReplacedRootVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteReplacedRootVolumeNode.GetText()).c_str()).c_str());
       m_deleteReplacedRootVolumeHasBeenSet = true;
+       m_deleteReplacedRootVolumeHasBeenSet = true;
     }
   }
 

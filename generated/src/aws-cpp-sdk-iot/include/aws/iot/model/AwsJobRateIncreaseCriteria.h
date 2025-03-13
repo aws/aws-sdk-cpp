@@ -30,7 +30,7 @@ namespace Model
   class AwsJobRateIncreaseCriteria
   {
   public:
-    AWS_IOT_API AwsJobRateIncreaseCriteria();
+    AWS_IOT_API AwsJobRateIncreaseCriteria() = default;
     AWS_IOT_API AwsJobRateIncreaseCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AwsJobRateIncreaseCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>When this number of things have been notified, it will initiate an increase
      * in the rollout rate.</p>
      */
-    inline int GetNumberOfNotifiedThings() const{ return m_numberOfNotifiedThings; }
+    inline int GetNumberOfNotifiedThings() const { return m_numberOfNotifiedThings; }
     inline bool NumberOfNotifiedThingsHasBeenSet() const { return m_numberOfNotifiedThingsHasBeenSet; }
     inline void SetNumberOfNotifiedThings(int value) { m_numberOfNotifiedThingsHasBeenSet = true; m_numberOfNotifiedThings = value; }
     inline AwsJobRateIncreaseCriteria& WithNumberOfNotifiedThings(int value) { SetNumberOfNotifiedThings(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>When this number of things have succeeded in their job execution, it will
      * initiate an increase in the rollout rate.</p>
      */
-    inline int GetNumberOfSucceededThings() const{ return m_numberOfSucceededThings; }
+    inline int GetNumberOfSucceededThings() const { return m_numberOfSucceededThings; }
     inline bool NumberOfSucceededThingsHasBeenSet() const { return m_numberOfSucceededThingsHasBeenSet; }
     inline void SetNumberOfSucceededThings(int value) { m_numberOfSucceededThingsHasBeenSet = true; m_numberOfSucceededThings = value; }
     inline AwsJobRateIncreaseCriteria& WithNumberOfSucceededThings(int value) { SetNumberOfSucceededThings(value); return *this;}
     ///@}
   private:
 
-    int m_numberOfNotifiedThings;
+    int m_numberOfNotifiedThings{0};
     bool m_numberOfNotifiedThingsHasBeenSet = false;
 
-    int m_numberOfSucceededThings;
+    int m_numberOfSucceededThings{0};
     bool m_numberOfSucceededThingsHasBeenSet = false;
   };
 

@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RowLevelPermissionDataSet::RowLevelPermissionDataSet() : 
-    m_namespaceHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_permissionPolicy(RowLevelPermissionPolicy::NOT_SET),
-    m_permissionPolicyHasBeenSet(false),
-    m_formatVersion(RowLevelPermissionFormatVersion::NOT_SET),
-    m_formatVersionHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 RowLevelPermissionDataSet::RowLevelPermissionDataSet(JsonView jsonValue)
-  : RowLevelPermissionDataSet()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ RowLevelPermissionDataSet& RowLevelPermissionDataSet::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionPolicy"))
   {
     m_permissionPolicy = RowLevelPermissionPolicyMapper::GetRowLevelPermissionPolicyForName(jsonValue.GetString("PermissionPolicy"));
-
     m_permissionPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FormatVersion"))
   {
     m_formatVersion = RowLevelPermissionFormatVersionMapper::GetRowLevelPermissionFormatVersionForName(jsonValue.GetString("FormatVersion"));
-
     m_formatVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

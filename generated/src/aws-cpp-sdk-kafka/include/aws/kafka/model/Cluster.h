@@ -41,7 +41,7 @@ namespace Model
   class Cluster
   {
   public:
-    AWS_KAFKA_API Cluster();
+    AWS_KAFKA_API Cluster() = default;
     AWS_KAFKA_API Cluster(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
      * cluster operation.</p>
          
      */
-    inline const Aws::String& GetActiveOperationArn() const{ return m_activeOperationArn; }
+    inline const Aws::String& GetActiveOperationArn() const { return m_activeOperationArn; }
     inline bool ActiveOperationArnHasBeenSet() const { return m_activeOperationArnHasBeenSet; }
-    inline void SetActiveOperationArn(const Aws::String& value) { m_activeOperationArnHasBeenSet = true; m_activeOperationArn = value; }
-    inline void SetActiveOperationArn(Aws::String&& value) { m_activeOperationArnHasBeenSet = true; m_activeOperationArn = std::move(value); }
-    inline void SetActiveOperationArn(const char* value) { m_activeOperationArnHasBeenSet = true; m_activeOperationArn.assign(value); }
-    inline Cluster& WithActiveOperationArn(const Aws::String& value) { SetActiveOperationArn(value); return *this;}
-    inline Cluster& WithActiveOperationArn(Aws::String&& value) { SetActiveOperationArn(std::move(value)); return *this;}
-    inline Cluster& WithActiveOperationArn(const char* value) { SetActiveOperationArn(value); return *this;}
+    template<typename ActiveOperationArnT = Aws::String>
+    void SetActiveOperationArn(ActiveOperationArnT&& value) { m_activeOperationArnHasBeenSet = true; m_activeOperationArn = std::forward<ActiveOperationArnT>(value); }
+    template<typename ActiveOperationArnT = Aws::String>
+    Cluster& WithActiveOperationArn(ActiveOperationArnT&& value) { SetActiveOperationArn(std::forward<ActiveOperationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,10 @@ namespace Model
             <p>Cluster Type.</p>
          
      */
-    inline const ClusterType& GetClusterType() const{ return m_clusterType; }
+    inline ClusterType GetClusterType() const { return m_clusterType; }
     inline bool ClusterTypeHasBeenSet() const { return m_clusterTypeHasBeenSet; }
-    inline void SetClusterType(const ClusterType& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
-    inline void SetClusterType(ClusterType&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
-    inline Cluster& WithClusterType(const ClusterType& value) { SetClusterType(value); return *this;}
-    inline Cluster& WithClusterType(ClusterType&& value) { SetClusterType(std::move(value)); return *this;}
+    inline void SetClusterType(ClusterType value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
+    inline Cluster& WithClusterType(ClusterType value) { SetClusterType(value); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * cluster.</p>
          
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline Cluster& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline Cluster& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline Cluster& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    Cluster& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,12 @@ namespace Model
             <p>The name of the cluster.</p>
          
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline Cluster& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline Cluster& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline Cluster& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    Cluster& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,12 +109,12 @@ namespace Model
             <p>The time when the cluster was created.</p>
          
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline Cluster& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline Cluster& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    Cluster& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,14 +123,12 @@ namespace Model
             <p>The current version of the MSK cluster.</p>
          
      */
-    inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+    inline const Aws::String& GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-    inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-    inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-    inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
-    inline Cluster& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-    inline Cluster& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-    inline Cluster& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
+    template<typename CurrentVersionT = Aws::String>
+    void SetCurrentVersion(CurrentVersionT&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::forward<CurrentVersionT>(value); }
+    template<typename CurrentVersionT = Aws::String>
+    Cluster& WithCurrentVersion(CurrentVersionT&& value) { SetCurrentVersion(std::forward<CurrentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,12 +139,10 @@ namespace Model
      * UPDATING.</p>
          
      */
-    inline const ClusterState& GetState() const{ return m_state; }
+    inline ClusterState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ClusterState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ClusterState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Cluster& WithState(const ClusterState& value) { SetState(value); return *this;}
-    inline Cluster& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ClusterState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Cluster& WithState(ClusterState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -163,12 +151,12 @@ namespace Model
             <p>State Info for the Amazon MSK cluster.</p>
          
      */
-    inline const StateInfo& GetStateInfo() const{ return m_stateInfo; }
+    inline const StateInfo& GetStateInfo() const { return m_stateInfo; }
     inline bool StateInfoHasBeenSet() const { return m_stateInfoHasBeenSet; }
-    inline void SetStateInfo(const StateInfo& value) { m_stateInfoHasBeenSet = true; m_stateInfo = value; }
-    inline void SetStateInfo(StateInfo&& value) { m_stateInfoHasBeenSet = true; m_stateInfo = std::move(value); }
-    inline Cluster& WithStateInfo(const StateInfo& value) { SetStateInfo(value); return *this;}
-    inline Cluster& WithStateInfo(StateInfo&& value) { SetStateInfo(std::move(value)); return *this;}
+    template<typename StateInfoT = StateInfo>
+    void SetStateInfo(StateInfoT&& value) { m_stateInfoHasBeenSet = true; m_stateInfo = std::forward<StateInfoT>(value); }
+    template<typename StateInfoT = StateInfo>
+    Cluster& WithStateInfo(StateInfoT&& value) { SetStateInfo(std::forward<StateInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,19 +165,16 @@ namespace Model
             <p>Tags attached to the cluster.</p>
          
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Cluster& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Cluster& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Cluster& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Cluster& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Cluster& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Cluster& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Cluster& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Cluster& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Cluster& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Cluster& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Cluster& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -198,12 +183,12 @@ namespace Model
             <p>Information about the provisioned cluster.</p>
          
      */
-    inline const Provisioned& GetProvisioned() const{ return m_provisioned; }
+    inline const Provisioned& GetProvisioned() const { return m_provisioned; }
     inline bool ProvisionedHasBeenSet() const { return m_provisionedHasBeenSet; }
-    inline void SetProvisioned(const Provisioned& value) { m_provisionedHasBeenSet = true; m_provisioned = value; }
-    inline void SetProvisioned(Provisioned&& value) { m_provisionedHasBeenSet = true; m_provisioned = std::move(value); }
-    inline Cluster& WithProvisioned(const Provisioned& value) { SetProvisioned(value); return *this;}
-    inline Cluster& WithProvisioned(Provisioned&& value) { SetProvisioned(std::move(value)); return *this;}
+    template<typename ProvisionedT = Provisioned>
+    void SetProvisioned(ProvisionedT&& value) { m_provisionedHasBeenSet = true; m_provisioned = std::forward<ProvisionedT>(value); }
+    template<typename ProvisionedT = Provisioned>
+    Cluster& WithProvisioned(ProvisionedT&& value) { SetProvisioned(std::forward<ProvisionedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -212,19 +197,19 @@ namespace Model
             <p>Information about the serverless cluster.</p>
          
      */
-    inline const Serverless& GetServerless() const{ return m_serverless; }
+    inline const Serverless& GetServerless() const { return m_serverless; }
     inline bool ServerlessHasBeenSet() const { return m_serverlessHasBeenSet; }
-    inline void SetServerless(const Serverless& value) { m_serverlessHasBeenSet = true; m_serverless = value; }
-    inline void SetServerless(Serverless&& value) { m_serverlessHasBeenSet = true; m_serverless = std::move(value); }
-    inline Cluster& WithServerless(const Serverless& value) { SetServerless(value); return *this;}
-    inline Cluster& WithServerless(Serverless&& value) { SetServerless(std::move(value)); return *this;}
+    template<typename ServerlessT = Serverless>
+    void SetServerless(ServerlessT&& value) { m_serverlessHasBeenSet = true; m_serverless = std::forward<ServerlessT>(value); }
+    template<typename ServerlessT = Serverless>
+    Cluster& WithServerless(ServerlessT&& value) { SetServerless(std::forward<ServerlessT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_activeOperationArn;
     bool m_activeOperationArnHasBeenSet = false;
 
-    ClusterType m_clusterType;
+    ClusterType m_clusterType{ClusterType::NOT_SET};
     bool m_clusterTypeHasBeenSet = false;
 
     Aws::String m_clusterArn;
@@ -233,13 +218,13 @@ namespace Model
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_currentVersion;
     bool m_currentVersionHasBeenSet = false;
 
-    ClusterState m_state;
+    ClusterState m_state{ClusterState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     StateInfo m_stateInfo;

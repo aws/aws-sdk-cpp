@@ -18,50 +18,7 @@ namespace Batch
 namespace Model
 {
 
-JobDetail::JobDetail() : 
-    m_jobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobQueueHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_shareIdentifierHasBeenSet(false),
-    m_schedulingPriority(0),
-    m_schedulingPriorityHasBeenSet(false),
-    m_attemptsHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_createdAt(0),
-    m_createdAtHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false),
-    m_startedAt(0),
-    m_startedAtHasBeenSet(false),
-    m_stoppedAt(0),
-    m_stoppedAtHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_jobDefinitionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_containerHasBeenSet(false),
-    m_nodeDetailsHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false),
-    m_arrayPropertiesHasBeenSet(false),
-    m_timeoutHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_propagateTags(false),
-    m_propagateTagsHasBeenSet(false),
-    m_platformCapabilitiesHasBeenSet(false),
-    m_eksPropertiesHasBeenSet(false),
-    m_eksAttemptsHasBeenSet(false),
-    m_ecsPropertiesHasBeenSet(false),
-    m_isCancelled(false),
-    m_isCancelledHasBeenSet(false),
-    m_isTerminated(false),
-    m_isTerminatedHasBeenSet(false),
-    m_consumableResourcePropertiesHasBeenSet(false)
-{
-}
-
 JobDetail::JobDetail(JsonView jsonValue)
-  : JobDetail()
 {
   *this = jsonValue;
 }
@@ -71,52 +28,38 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobArn"))
   {
     m_jobArn = jsonValue.GetString("jobArn");
-
     m_jobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobQueue"))
   {
     m_jobQueue = jsonValue.GetString("jobQueue");
-
     m_jobQueueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shareIdentifier"))
   {
     m_shareIdentifier = jsonValue.GetString("shareIdentifier");
-
     m_shareIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schedulingPriority"))
   {
     m_schedulingPriority = jsonValue.GetInteger("schedulingPriority");
-
     m_schedulingPriorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attempts"))
   {
     Aws::Utils::Array<JsonView> attemptsJsonList = jsonValue.GetArray("attempts");
@@ -126,42 +69,31 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     }
     m_attemptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetInt64("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retryStrategy"))
   {
     m_retryStrategy = jsonValue.GetObject("retryStrategy");
-
     m_retryStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetInt64("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stoppedAt"))
   {
     m_stoppedAt = jsonValue.GetInt64("stoppedAt");
-
     m_stoppedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dependsOn"))
   {
     Aws::Utils::Array<JsonView> dependsOnJsonList = jsonValue.GetArray("dependsOn");
@@ -171,14 +103,11 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     }
     m_dependsOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobDefinition"))
   {
     m_jobDefinition = jsonValue.GetString("jobDefinition");
-
     m_jobDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -188,42 +117,31 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("container"))
   {
     m_container = jsonValue.GetObject("container");
-
     m_containerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeDetails"))
   {
     m_nodeDetails = jsonValue.GetObject("nodeDetails");
-
     m_nodeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeProperties"))
   {
     m_nodeProperties = jsonValue.GetObject("nodeProperties");
-
     m_nodePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arrayProperties"))
   {
     m_arrayProperties = jsonValue.GetObject("arrayProperties");
-
     m_arrayPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeout"))
   {
     m_timeout = jsonValue.GetObject("timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -233,14 +151,11 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propagateTags"))
   {
     m_propagateTags = jsonValue.GetBool("propagateTags");
-
     m_propagateTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformCapabilities"))
   {
     Aws::Utils::Array<JsonView> platformCapabilitiesJsonList = jsonValue.GetArray("platformCapabilities");
@@ -250,14 +165,11 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     }
     m_platformCapabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eksProperties"))
   {
     m_eksProperties = jsonValue.GetObject("eksProperties");
-
     m_eksPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eksAttempts"))
   {
     Aws::Utils::Array<JsonView> eksAttemptsJsonList = jsonValue.GetArray("eksAttempts");
@@ -267,35 +179,26 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     }
     m_eksAttemptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecsProperties"))
   {
     m_ecsProperties = jsonValue.GetObject("ecsProperties");
-
     m_ecsPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isCancelled"))
   {
     m_isCancelled = jsonValue.GetBool("isCancelled");
-
     m_isCancelledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isTerminated"))
   {
     m_isTerminated = jsonValue.GetBool("isTerminated");
-
     m_isTerminatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("consumableResourceProperties"))
   {
     m_consumableResourceProperties = jsonValue.GetObject("consumableResourceProperties");
-
     m_consumableResourcePropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

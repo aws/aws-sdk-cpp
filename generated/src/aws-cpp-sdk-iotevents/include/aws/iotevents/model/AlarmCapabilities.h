@@ -33,7 +33,7 @@ namespace Model
   class AlarmCapabilities
   {
   public:
-    AWS_IOTEVENTS_API AlarmCapabilities();
+    AWS_IOTEVENTS_API AlarmCapabilities() = default;
     AWS_IOTEVENTS_API AlarmCapabilities(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API AlarmCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
      * <p>Specifies the default alarm state. The configuration applies to all alarms
      * that were created based on this alarm model.</p>
      */
-    inline const InitializationConfiguration& GetInitializationConfiguration() const{ return m_initializationConfiguration; }
+    inline const InitializationConfiguration& GetInitializationConfiguration() const { return m_initializationConfiguration; }
     inline bool InitializationConfigurationHasBeenSet() const { return m_initializationConfigurationHasBeenSet; }
-    inline void SetInitializationConfiguration(const InitializationConfiguration& value) { m_initializationConfigurationHasBeenSet = true; m_initializationConfiguration = value; }
-    inline void SetInitializationConfiguration(InitializationConfiguration&& value) { m_initializationConfigurationHasBeenSet = true; m_initializationConfiguration = std::move(value); }
-    inline AlarmCapabilities& WithInitializationConfiguration(const InitializationConfiguration& value) { SetInitializationConfiguration(value); return *this;}
-    inline AlarmCapabilities& WithInitializationConfiguration(InitializationConfiguration&& value) { SetInitializationConfiguration(std::move(value)); return *this;}
+    template<typename InitializationConfigurationT = InitializationConfiguration>
+    void SetInitializationConfiguration(InitializationConfigurationT&& value) { m_initializationConfigurationHasBeenSet = true; m_initializationConfiguration = std::forward<InitializationConfigurationT>(value); }
+    template<typename InitializationConfigurationT = InitializationConfiguration>
+    AlarmCapabilities& WithInitializationConfiguration(InitializationConfigurationT&& value) { SetInitializationConfiguration(std::forward<InitializationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether to get notified for alarm state changes.</p>
      */
-    inline const AcknowledgeFlow& GetAcknowledgeFlow() const{ return m_acknowledgeFlow; }
+    inline const AcknowledgeFlow& GetAcknowledgeFlow() const { return m_acknowledgeFlow; }
     inline bool AcknowledgeFlowHasBeenSet() const { return m_acknowledgeFlowHasBeenSet; }
-    inline void SetAcknowledgeFlow(const AcknowledgeFlow& value) { m_acknowledgeFlowHasBeenSet = true; m_acknowledgeFlow = value; }
-    inline void SetAcknowledgeFlow(AcknowledgeFlow&& value) { m_acknowledgeFlowHasBeenSet = true; m_acknowledgeFlow = std::move(value); }
-    inline AlarmCapabilities& WithAcknowledgeFlow(const AcknowledgeFlow& value) { SetAcknowledgeFlow(value); return *this;}
-    inline AlarmCapabilities& WithAcknowledgeFlow(AcknowledgeFlow&& value) { SetAcknowledgeFlow(std::move(value)); return *this;}
+    template<typename AcknowledgeFlowT = AcknowledgeFlow>
+    void SetAcknowledgeFlow(AcknowledgeFlowT&& value) { m_acknowledgeFlowHasBeenSet = true; m_acknowledgeFlow = std::forward<AcknowledgeFlowT>(value); }
+    template<typename AcknowledgeFlowT = AcknowledgeFlow>
+    AlarmCapabilities& WithAcknowledgeFlow(AcknowledgeFlowT&& value) { SetAcknowledgeFlow(std::forward<AcknowledgeFlowT>(value)); return *this;}
     ///@}
   private:
 

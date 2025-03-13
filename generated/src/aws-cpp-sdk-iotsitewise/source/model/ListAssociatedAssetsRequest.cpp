@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAssociatedAssetsRequest::ListAssociatedAssetsRequest() : 
-    m_assetIdHasBeenSet(false),
-    m_hierarchyIdHasBeenSet(false),
-    m_traversalDirection(TraversalDirection::NOT_SET),
-    m_traversalDirectionHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAssociatedAssetsRequest::SerializePayload() const
 {
   return {};

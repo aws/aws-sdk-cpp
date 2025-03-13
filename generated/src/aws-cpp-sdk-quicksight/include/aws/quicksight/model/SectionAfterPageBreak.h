@@ -32,7 +32,7 @@ namespace Model
   class SectionAfterPageBreak
   {
   public:
-    AWS_QUICKSIGHT_API SectionAfterPageBreak();
+    AWS_QUICKSIGHT_API SectionAfterPageBreak() = default;
     AWS_QUICKSIGHT_API SectionAfterPageBreak(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SectionAfterPageBreak& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The option that enables or disables a page break at the end of a section.</p>
      */
-    inline const SectionPageBreakStatus& GetStatus() const{ return m_status; }
+    inline SectionPageBreakStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SectionPageBreakStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SectionPageBreakStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SectionAfterPageBreak& WithStatus(const SectionPageBreakStatus& value) { SetStatus(value); return *this;}
-    inline SectionAfterPageBreak& WithStatus(SectionPageBreakStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SectionPageBreakStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SectionAfterPageBreak& WithStatus(SectionPageBreakStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    SectionPageBreakStatus m_status;
+    SectionPageBreakStatus m_status{SectionPageBreakStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

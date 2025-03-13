@@ -22,7 +22,7 @@ namespace Model
   class BatchDisassociateAssessmentReportEvidenceRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API BatchDisassociateAssessmentReportEvidenceRequest();
+    AWS_AUDITMANAGER_API BatchDisassociateAssessmentReportEvidenceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,43 +37,38 @@ namespace Model
     /**
      * <p> The identifier for the assessment. </p>
      */
-    inline const Aws::String& GetAssessmentId() const{ return m_assessmentId; }
+    inline const Aws::String& GetAssessmentId() const { return m_assessmentId; }
     inline bool AssessmentIdHasBeenSet() const { return m_assessmentIdHasBeenSet; }
-    inline void SetAssessmentId(const Aws::String& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = value; }
-    inline void SetAssessmentId(Aws::String&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::move(value); }
-    inline void SetAssessmentId(const char* value) { m_assessmentIdHasBeenSet = true; m_assessmentId.assign(value); }
-    inline BatchDisassociateAssessmentReportEvidenceRequest& WithAssessmentId(const Aws::String& value) { SetAssessmentId(value); return *this;}
-    inline BatchDisassociateAssessmentReportEvidenceRequest& WithAssessmentId(Aws::String&& value) { SetAssessmentId(std::move(value)); return *this;}
-    inline BatchDisassociateAssessmentReportEvidenceRequest& WithAssessmentId(const char* value) { SetAssessmentId(value); return *this;}
+    template<typename AssessmentIdT = Aws::String>
+    void SetAssessmentId(AssessmentIdT&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::forward<AssessmentIdT>(value); }
+    template<typename AssessmentIdT = Aws::String>
+    BatchDisassociateAssessmentReportEvidenceRequest& WithAssessmentId(AssessmentIdT&& value) { SetAssessmentId(std::forward<AssessmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier for the folder that the evidence is stored in. </p>
      */
-    inline const Aws::String& GetEvidenceFolderId() const{ return m_evidenceFolderId; }
+    inline const Aws::String& GetEvidenceFolderId() const { return m_evidenceFolderId; }
     inline bool EvidenceFolderIdHasBeenSet() const { return m_evidenceFolderIdHasBeenSet; }
-    inline void SetEvidenceFolderId(const Aws::String& value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId = value; }
-    inline void SetEvidenceFolderId(Aws::String&& value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId = std::move(value); }
-    inline void SetEvidenceFolderId(const char* value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId.assign(value); }
-    inline BatchDisassociateAssessmentReportEvidenceRequest& WithEvidenceFolderId(const Aws::String& value) { SetEvidenceFolderId(value); return *this;}
-    inline BatchDisassociateAssessmentReportEvidenceRequest& WithEvidenceFolderId(Aws::String&& value) { SetEvidenceFolderId(std::move(value)); return *this;}
-    inline BatchDisassociateAssessmentReportEvidenceRequest& WithEvidenceFolderId(const char* value) { SetEvidenceFolderId(value); return *this;}
+    template<typename EvidenceFolderIdT = Aws::String>
+    void SetEvidenceFolderId(EvidenceFolderIdT&& value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId = std::forward<EvidenceFolderIdT>(value); }
+    template<typename EvidenceFolderIdT = Aws::String>
+    BatchDisassociateAssessmentReportEvidenceRequest& WithEvidenceFolderId(EvidenceFolderIdT&& value) { SetEvidenceFolderId(std::forward<EvidenceFolderIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The list of evidence identifiers. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetEvidenceIds() const{ return m_evidenceIds; }
+    inline const Aws::Vector<Aws::String>& GetEvidenceIds() const { return m_evidenceIds; }
     inline bool EvidenceIdsHasBeenSet() const { return m_evidenceIdsHasBeenSet; }
-    inline void SetEvidenceIds(const Aws::Vector<Aws::String>& value) { m_evidenceIdsHasBeenSet = true; m_evidenceIds = value; }
-    inline void SetEvidenceIds(Aws::Vector<Aws::String>&& value) { m_evidenceIdsHasBeenSet = true; m_evidenceIds = std::move(value); }
-    inline BatchDisassociateAssessmentReportEvidenceRequest& WithEvidenceIds(const Aws::Vector<Aws::String>& value) { SetEvidenceIds(value); return *this;}
-    inline BatchDisassociateAssessmentReportEvidenceRequest& WithEvidenceIds(Aws::Vector<Aws::String>&& value) { SetEvidenceIds(std::move(value)); return *this;}
-    inline BatchDisassociateAssessmentReportEvidenceRequest& AddEvidenceIds(const Aws::String& value) { m_evidenceIdsHasBeenSet = true; m_evidenceIds.push_back(value); return *this; }
-    inline BatchDisassociateAssessmentReportEvidenceRequest& AddEvidenceIds(Aws::String&& value) { m_evidenceIdsHasBeenSet = true; m_evidenceIds.push_back(std::move(value)); return *this; }
-    inline BatchDisassociateAssessmentReportEvidenceRequest& AddEvidenceIds(const char* value) { m_evidenceIdsHasBeenSet = true; m_evidenceIds.push_back(value); return *this; }
+    template<typename EvidenceIdsT = Aws::Vector<Aws::String>>
+    void SetEvidenceIds(EvidenceIdsT&& value) { m_evidenceIdsHasBeenSet = true; m_evidenceIds = std::forward<EvidenceIdsT>(value); }
+    template<typename EvidenceIdsT = Aws::Vector<Aws::String>>
+    BatchDisassociateAssessmentReportEvidenceRequest& WithEvidenceIds(EvidenceIdsT&& value) { SetEvidenceIds(std::forward<EvidenceIdsT>(value)); return *this;}
+    template<typename EvidenceIdsT = Aws::String>
+    BatchDisassociateAssessmentReportEvidenceRequest& AddEvidenceIds(EvidenceIdsT&& value) { m_evidenceIdsHasBeenSet = true; m_evidenceIds.emplace_back(std::forward<EvidenceIdsT>(value)); return *this; }
     ///@}
   private:
 

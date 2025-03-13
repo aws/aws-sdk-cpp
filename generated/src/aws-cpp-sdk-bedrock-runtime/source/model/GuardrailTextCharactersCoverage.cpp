@@ -18,16 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailTextCharactersCoverage::GuardrailTextCharactersCoverage() : 
-    m_guarded(0),
-    m_guardedHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false)
-{
-}
-
 GuardrailTextCharactersCoverage::GuardrailTextCharactersCoverage(JsonView jsonValue)
-  : GuardrailTextCharactersCoverage()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GuardrailTextCharactersCoverage& GuardrailTextCharactersCoverage::operator =(Jso
   if(jsonValue.ValueExists("guarded"))
   {
     m_guarded = jsonValue.GetInteger("guarded");
-
     m_guardedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("total"))
   {
     m_total = jsonValue.GetInteger("total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace deadline
 namespace Model
 {
 
-FleetAmountCapability::FleetAmountCapability() : 
-    m_nameHasBeenSet(false),
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
-{
-}
-
 FleetAmountCapability::FleetAmountCapability(JsonView jsonValue)
-  : FleetAmountCapability()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ FleetAmountCapability& FleetAmountCapability::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("min"))
   {
     m_min = jsonValue.GetDouble("min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("max"))
   {
     m_max = jsonValue.GetDouble("max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

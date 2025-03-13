@@ -12,11 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPublicKeyRequest::GetPublicKeyRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetPublicKeyRequest::SerializePayload() const
 {
   JsonValue payload;

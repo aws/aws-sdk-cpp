@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetApplicationAssignmentConfigurationResult::GetApplicationAssignmentConfigurationResult() : 
-    m_assignmentRequired(false)
-{
-}
-
 GetApplicationAssignmentConfigurationResult::GetApplicationAssignmentConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetApplicationAssignmentConfigurationResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetApplicationAssignmentConfigurationResult& GetApplicationAssignmentConfigurati
   if(jsonValue.ValueExists("AssignmentRequired"))
   {
     m_assignmentRequired = jsonValue.GetBool("AssignmentRequired");
-
+    m_assignmentRequiredHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -28,7 +28,7 @@ namespace Model
   class DescribeQuickSightQSearchConfigurationResult
   {
   public:
-    AWS_QUICKSIGHT_API DescribeQuickSightQSearchConfigurationResult();
+    AWS_QUICKSIGHT_API DescribeQuickSightQSearchConfigurationResult() = default;
     AWS_QUICKSIGHT_API DescribeQuickSightQSearchConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API DescribeQuickSightQSearchConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,39 +37,38 @@ namespace Model
     /**
      * <p>The status of Amazon QuickSight Q Search configuration.</p>
      */
-    inline const QSearchStatus& GetQSearchStatus() const{ return m_qSearchStatus; }
-    inline void SetQSearchStatus(const QSearchStatus& value) { m_qSearchStatus = value; }
-    inline void SetQSearchStatus(QSearchStatus&& value) { m_qSearchStatus = std::move(value); }
-    inline DescribeQuickSightQSearchConfigurationResult& WithQSearchStatus(const QSearchStatus& value) { SetQSearchStatus(value); return *this;}
-    inline DescribeQuickSightQSearchConfigurationResult& WithQSearchStatus(QSearchStatus&& value) { SetQSearchStatus(std::move(value)); return *this;}
+    inline QSearchStatus GetQSearchStatus() const { return m_qSearchStatus; }
+    inline void SetQSearchStatus(QSearchStatus value) { m_qSearchStatusHasBeenSet = true; m_qSearchStatus = value; }
+    inline DescribeQuickSightQSearchConfigurationResult& WithQSearchStatus(QSearchStatus value) { SetQSearchStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeQuickSightQSearchConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeQuickSightQSearchConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeQuickSightQSearchConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeQuickSightQSearchConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline DescribeQuickSightQSearchConfigurationResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    QSearchStatus m_qSearchStatus;
+    QSearchStatus m_qSearchStatus{QSearchStatus::NOT_SET};
+    bool m_qSearchStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

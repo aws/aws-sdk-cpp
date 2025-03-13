@@ -34,7 +34,7 @@ namespace Model
   class ValidationWarning
   {
   public:
-    AWS_EC2_API ValidationWarning();
+    AWS_EC2_API ValidationWarning() = default;
     AWS_EC2_API ValidationWarning(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ValidationWarning& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,14 @@ namespace Model
     /**
      * <p>The error codes and error messages.</p>
      */
-    inline const Aws::Vector<ValidationError>& GetErrors() const{ return m_errors; }
+    inline const Aws::Vector<ValidationError>& GetErrors() const { return m_errors; }
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-    inline void SetErrors(const Aws::Vector<ValidationError>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-    inline void SetErrors(Aws::Vector<ValidationError>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-    inline ValidationWarning& WithErrors(const Aws::Vector<ValidationError>& value) { SetErrors(value); return *this;}
-    inline ValidationWarning& WithErrors(Aws::Vector<ValidationError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline ValidationWarning& AddErrors(const ValidationError& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-    inline ValidationWarning& AddErrors(ValidationError&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
+    template<typename ErrorsT = Aws::Vector<ValidationError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<ValidationError>>
+    ValidationWarning& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = ValidationError>
+    ValidationWarning& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
   private:
 

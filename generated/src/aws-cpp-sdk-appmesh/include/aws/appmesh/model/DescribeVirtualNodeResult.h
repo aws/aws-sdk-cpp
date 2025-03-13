@@ -33,7 +33,7 @@ namespace Model
   class DescribeVirtualNodeResult
   {
   public:
-    AWS_APPMESH_API DescribeVirtualNodeResult();
+    AWS_APPMESH_API DescribeVirtualNodeResult() = default;
     AWS_APPMESH_API DescribeVirtualNodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPMESH_API DescribeVirtualNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The full description of your virtual node.</p>
      */
-    inline const VirtualNodeData& GetVirtualNode() const{ return m_virtualNode; }
-    inline void SetVirtualNode(const VirtualNodeData& value) { m_virtualNode = value; }
-    inline void SetVirtualNode(VirtualNodeData&& value) { m_virtualNode = std::move(value); }
-    inline DescribeVirtualNodeResult& WithVirtualNode(const VirtualNodeData& value) { SetVirtualNode(value); return *this;}
-    inline DescribeVirtualNodeResult& WithVirtualNode(VirtualNodeData&& value) { SetVirtualNode(std::move(value)); return *this;}
+    inline const VirtualNodeData& GetVirtualNode() const { return m_virtualNode; }
+    template<typename VirtualNodeT = VirtualNodeData>
+    void SetVirtualNode(VirtualNodeT&& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = std::forward<VirtualNodeT>(value); }
+    template<typename VirtualNodeT = VirtualNodeData>
+    DescribeVirtualNodeResult& WithVirtualNode(VirtualNodeT&& value) { SetVirtualNode(std::forward<VirtualNodeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeVirtualNodeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeVirtualNodeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeVirtualNodeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeVirtualNodeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VirtualNodeData m_virtualNode;
+    bool m_virtualNodeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

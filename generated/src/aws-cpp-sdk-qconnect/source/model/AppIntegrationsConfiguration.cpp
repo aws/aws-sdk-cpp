@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AppIntegrationsConfiguration::AppIntegrationsConfiguration() : 
-    m_appIntegrationArnHasBeenSet(false),
-    m_objectFieldsHasBeenSet(false)
-{
-}
-
 AppIntegrationsConfiguration::AppIntegrationsConfiguration(JsonView jsonValue)
-  : AppIntegrationsConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AppIntegrationsConfiguration& AppIntegrationsConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("appIntegrationArn"))
   {
     m_appIntegrationArn = jsonValue.GetString("appIntegrationArn");
-
     m_appIntegrationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objectFields"))
   {
     Aws::Utils::Array<JsonView> objectFieldsJsonList = jsonValue.GetArray("objectFields");
@@ -48,7 +39,6 @@ AppIntegrationsConfiguration& AppIntegrationsConfiguration::operator =(JsonView 
     }
     m_objectFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

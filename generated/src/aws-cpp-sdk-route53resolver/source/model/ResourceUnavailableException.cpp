@@ -18,14 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-ResourceUnavailableException::ResourceUnavailableException() : 
-    m_messageHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ResourceUnavailableException::ResourceUnavailableException(JsonView jsonValue)
-  : ResourceUnavailableException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceUnavailableException& ResourceUnavailableException::operator =(JsonView 
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

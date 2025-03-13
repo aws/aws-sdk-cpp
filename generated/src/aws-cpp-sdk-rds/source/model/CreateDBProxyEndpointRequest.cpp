@@ -10,17 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CreateDBProxyEndpointRequest::CreateDBProxyEndpointRequest() : 
-    m_dBProxyNameHasBeenSet(false),
-    m_dBProxyEndpointNameHasBeenSet(false),
-    m_vpcSubnetIdsHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_targetRole(DBProxyEndpointTargetRole::NOT_SET),
-    m_targetRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDBProxyEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;

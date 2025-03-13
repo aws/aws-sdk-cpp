@@ -12,11 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartExtensionPackAssociationRequest::StartExtensionPackAssociationRequest() : 
-    m_migrationProjectIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StartExtensionPackAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-EnabledMetric::EnabledMetric() : 
-    m_metricHasBeenSet(false),
-    m_granularityHasBeenSet(false)
-{
-}
-
 EnabledMetric::EnabledMetric(const XmlNode& xmlNode)
-  : EnabledMetric()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ EnabledMetric& EnabledMetric::operator =(const XmlNode& xmlNode)
     {
       m_metric = Aws::Utils::Xml::DecodeEscapedXmlText(metricNode.GetText());
       m_metricHasBeenSet = true;
+       m_metricHasBeenSet = true;
     }
     XmlNode granularityNode = resultNode.FirstChild("Granularity");
     if(!granularityNode.IsNull())
     {
       m_granularity = Aws::Utils::Xml::DecodeEscapedXmlText(granularityNode.GetText());
       m_granularityHasBeenSet = true;
+       m_granularityHasBeenSet = true;
     }
   }
 

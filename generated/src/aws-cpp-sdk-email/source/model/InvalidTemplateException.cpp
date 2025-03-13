@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-InvalidTemplateException::InvalidTemplateException() : 
-    m_templateNameHasBeenSet(false)
-{
-}
-
 InvalidTemplateException::InvalidTemplateException(const XmlNode& xmlNode)
-  : InvalidTemplateException()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ InvalidTemplateException& InvalidTemplateException::operator =(const XmlNode& xm
     {
       m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
+       m_templateNameHasBeenSet = true;
     }
   }
 

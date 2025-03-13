@@ -12,22 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAssetRequest::CreateAssetRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_externalIdentifierHasBeenSet(false),
-    m_formsInputHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningProjectIdentifierHasBeenSet(false),
-    m_predictionConfigurationHasBeenSet(false),
-    m_typeIdentifierHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
-{
-}
-
 Aws::String CreateAssetRequest::SerializePayload() const
 {
   JsonValue payload;

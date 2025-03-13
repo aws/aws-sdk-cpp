@@ -25,7 +25,7 @@ namespace Model
   class PutConfigurationSetReputationOptionsRequest : public PinpointEmailRequest
   {
   public:
-    AWS_PINPOINTEMAIL_API PutConfigurationSetReputationOptionsRequest();
+    AWS_PINPOINTEMAIL_API PutConfigurationSetReputationOptionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The name of the configuration set that you want to enable or disable
      * reputation metric tracking for.</p>
      */
-    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-    inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-    inline PutConfigurationSetReputationOptionsRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-    inline PutConfigurationSetReputationOptionsRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-    inline PutConfigurationSetReputationOptionsRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    template<typename ConfigurationSetNameT = Aws::String>
+    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
+    template<typename ConfigurationSetNameT = Aws::String>
+    PutConfigurationSetReputationOptionsRequest& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * configuration set. If <code>false</code>, tracking of reputation metrics is
      * disabled for the configuration set.</p>
      */
-    inline bool GetReputationMetricsEnabled() const{ return m_reputationMetricsEnabled; }
+    inline bool GetReputationMetricsEnabled() const { return m_reputationMetricsEnabled; }
     inline bool ReputationMetricsEnabledHasBeenSet() const { return m_reputationMetricsEnabledHasBeenSet; }
     inline void SetReputationMetricsEnabled(bool value) { m_reputationMetricsEnabledHasBeenSet = true; m_reputationMetricsEnabled = value; }
     inline PutConfigurationSetReputationOptionsRequest& WithReputationMetricsEnabled(bool value) { SetReputationMetricsEnabled(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet = false;
 
-    bool m_reputationMetricsEnabled;
+    bool m_reputationMetricsEnabled{false};
     bool m_reputationMetricsEnabledHasBeenSet = false;
   };
 

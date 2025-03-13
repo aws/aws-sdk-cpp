@@ -33,7 +33,7 @@ namespace Model
   class EncryptionSetting
   {
   public:
-    AWS_LEXMODELSV2_API EncryptionSetting();
+    AWS_LEXMODELSV2_API EncryptionSetting() = default;
     AWS_LEXMODELSV2_API EncryptionSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API EncryptionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
      * <p>The KMS key ARN used to encrypt the metadata associated with the bot
      * recommendation.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline EncryptionSetting& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline EncryptionSetting& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline EncryptionSetting& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    EncryptionSetting& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The password used to encrypt the recommended bot recommendation file.</p>
      */
-    inline const Aws::String& GetBotLocaleExportPassword() const{ return m_botLocaleExportPassword; }
+    inline const Aws::String& GetBotLocaleExportPassword() const { return m_botLocaleExportPassword; }
     inline bool BotLocaleExportPasswordHasBeenSet() const { return m_botLocaleExportPasswordHasBeenSet; }
-    inline void SetBotLocaleExportPassword(const Aws::String& value) { m_botLocaleExportPasswordHasBeenSet = true; m_botLocaleExportPassword = value; }
-    inline void SetBotLocaleExportPassword(Aws::String&& value) { m_botLocaleExportPasswordHasBeenSet = true; m_botLocaleExportPassword = std::move(value); }
-    inline void SetBotLocaleExportPassword(const char* value) { m_botLocaleExportPasswordHasBeenSet = true; m_botLocaleExportPassword.assign(value); }
-    inline EncryptionSetting& WithBotLocaleExportPassword(const Aws::String& value) { SetBotLocaleExportPassword(value); return *this;}
-    inline EncryptionSetting& WithBotLocaleExportPassword(Aws::String&& value) { SetBotLocaleExportPassword(std::move(value)); return *this;}
-    inline EncryptionSetting& WithBotLocaleExportPassword(const char* value) { SetBotLocaleExportPassword(value); return *this;}
+    template<typename BotLocaleExportPasswordT = Aws::String>
+    void SetBotLocaleExportPassword(BotLocaleExportPasswordT&& value) { m_botLocaleExportPasswordHasBeenSet = true; m_botLocaleExportPassword = std::forward<BotLocaleExportPasswordT>(value); }
+    template<typename BotLocaleExportPasswordT = Aws::String>
+    EncryptionSetting& WithBotLocaleExportPassword(BotLocaleExportPasswordT&& value) { SetBotLocaleExportPassword(std::forward<BotLocaleExportPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The password used to encrypt the associated transcript file.</p>
      */
-    inline const Aws::String& GetAssociatedTranscriptsPassword() const{ return m_associatedTranscriptsPassword; }
+    inline const Aws::String& GetAssociatedTranscriptsPassword() const { return m_associatedTranscriptsPassword; }
     inline bool AssociatedTranscriptsPasswordHasBeenSet() const { return m_associatedTranscriptsPasswordHasBeenSet; }
-    inline void SetAssociatedTranscriptsPassword(const Aws::String& value) { m_associatedTranscriptsPasswordHasBeenSet = true; m_associatedTranscriptsPassword = value; }
-    inline void SetAssociatedTranscriptsPassword(Aws::String&& value) { m_associatedTranscriptsPasswordHasBeenSet = true; m_associatedTranscriptsPassword = std::move(value); }
-    inline void SetAssociatedTranscriptsPassword(const char* value) { m_associatedTranscriptsPasswordHasBeenSet = true; m_associatedTranscriptsPassword.assign(value); }
-    inline EncryptionSetting& WithAssociatedTranscriptsPassword(const Aws::String& value) { SetAssociatedTranscriptsPassword(value); return *this;}
-    inline EncryptionSetting& WithAssociatedTranscriptsPassword(Aws::String&& value) { SetAssociatedTranscriptsPassword(std::move(value)); return *this;}
-    inline EncryptionSetting& WithAssociatedTranscriptsPassword(const char* value) { SetAssociatedTranscriptsPassword(value); return *this;}
+    template<typename AssociatedTranscriptsPasswordT = Aws::String>
+    void SetAssociatedTranscriptsPassword(AssociatedTranscriptsPasswordT&& value) { m_associatedTranscriptsPasswordHasBeenSet = true; m_associatedTranscriptsPassword = std::forward<AssociatedTranscriptsPasswordT>(value); }
+    template<typename AssociatedTranscriptsPasswordT = Aws::String>
+    EncryptionSetting& WithAssociatedTranscriptsPassword(AssociatedTranscriptsPasswordT&& value) { SetAssociatedTranscriptsPassword(std::forward<AssociatedTranscriptsPasswordT>(value)); return *this;}
     ///@}
   private:
 

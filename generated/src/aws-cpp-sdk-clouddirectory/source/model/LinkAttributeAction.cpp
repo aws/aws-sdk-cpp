@@ -18,15 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-LinkAttributeAction::LinkAttributeAction() : 
-    m_attributeActionType(UpdateActionType::NOT_SET),
-    m_attributeActionTypeHasBeenSet(false),
-    m_attributeUpdateValueHasBeenSet(false)
-{
-}
-
 LinkAttributeAction::LinkAttributeAction(JsonView jsonValue)
-  : LinkAttributeAction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LinkAttributeAction& LinkAttributeAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeActionType"))
   {
     m_attributeActionType = UpdateActionTypeMapper::GetUpdateActionTypeForName(jsonValue.GetString("AttributeActionType"));
-
     m_attributeActionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeUpdateValue"))
   {
     m_attributeUpdateValue = jsonValue.GetObject("AttributeUpdateValue");
-
     m_attributeUpdateValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteCustomVocabularyRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API DeleteCustomVocabularyRequest();
+    AWS_LEXMODELSV2_API DeleteCustomVocabularyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The unique identifier of the bot to remove the custom vocabulary from.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline DeleteCustomVocabularyRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline DeleteCustomVocabularyRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline DeleteCustomVocabularyRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    DeleteCustomVocabularyRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the bot to remove the custom vocabulary from.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
     inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersionHasBeenSet = true; m_botVersion.assign(value); }
-    inline DeleteCustomVocabularyRequest& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline DeleteCustomVocabularyRequest& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline DeleteCustomVocabularyRequest& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    DeleteCustomVocabularyRequest& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +61,12 @@ namespace Model
      * <p>The locale identifier for the locale that contains the custom vocabulary to
      * remove.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
-    inline DeleteCustomVocabularyRequest& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline DeleteCustomVocabularyRequest& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline DeleteCustomVocabularyRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    DeleteCustomVocabularyRequest& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
   private:
 

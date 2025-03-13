@@ -12,18 +12,6 @@ using namespace Aws::PI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPerformanceAnalysisReportRequest::GetPerformanceAnalysisReportRequest() : 
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_analysisReportIdHasBeenSet(false),
-    m_textFormat(TextFormat::NOT_SET),
-    m_textFormatHasBeenSet(false),
-    m_acceptLanguage(AcceptLanguage::NOT_SET),
-    m_acceptLanguageHasBeenSet(false)
-{
-}
-
 Aws::String GetPerformanceAnalysisReportRequest::SerializePayload() const
 {
   JsonValue payload;

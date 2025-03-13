@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IKEVersionsRequestListValue::IKEVersionsRequestListValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 IKEVersionsRequestListValue::IKEVersionsRequestListValue(const XmlNode& xmlNode)
-  : IKEVersionsRequestListValue()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ IKEVersionsRequestListValue& IKEVersionsRequestListValue::operator =(const XmlNo
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

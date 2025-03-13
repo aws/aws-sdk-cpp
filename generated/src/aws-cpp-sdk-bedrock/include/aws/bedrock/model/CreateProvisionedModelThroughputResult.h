@@ -27,7 +27,7 @@ namespace Model
   class CreateProvisionedModelThroughputResult
   {
   public:
-    AWS_BEDROCK_API CreateProvisionedModelThroughputResult();
+    AWS_BEDROCK_API CreateProvisionedModelThroughputResult() = default;
     AWS_BEDROCK_API CreateProvisionedModelThroughputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API CreateProvisionedModelThroughputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
      */
-    inline const Aws::String& GetProvisionedModelArn() const{ return m_provisionedModelArn; }
-    inline void SetProvisionedModelArn(const Aws::String& value) { m_provisionedModelArn = value; }
-    inline void SetProvisionedModelArn(Aws::String&& value) { m_provisionedModelArn = std::move(value); }
-    inline void SetProvisionedModelArn(const char* value) { m_provisionedModelArn.assign(value); }
-    inline CreateProvisionedModelThroughputResult& WithProvisionedModelArn(const Aws::String& value) { SetProvisionedModelArn(value); return *this;}
-    inline CreateProvisionedModelThroughputResult& WithProvisionedModelArn(Aws::String&& value) { SetProvisionedModelArn(std::move(value)); return *this;}
-    inline CreateProvisionedModelThroughputResult& WithProvisionedModelArn(const char* value) { SetProvisionedModelArn(value); return *this;}
+    inline const Aws::String& GetProvisionedModelArn() const { return m_provisionedModelArn; }
+    template<typename ProvisionedModelArnT = Aws::String>
+    void SetProvisionedModelArn(ProvisionedModelArnT&& value) { m_provisionedModelArnHasBeenSet = true; m_provisionedModelArn = std::forward<ProvisionedModelArnT>(value); }
+    template<typename ProvisionedModelArnT = Aws::String>
+    CreateProvisionedModelThroughputResult& WithProvisionedModelArn(ProvisionedModelArnT&& value) { SetProvisionedModelArn(std::forward<ProvisionedModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateProvisionedModelThroughputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateProvisionedModelThroughputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateProvisionedModelThroughputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateProvisionedModelThroughputResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_provisionedModelArn;
+    bool m_provisionedModelArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

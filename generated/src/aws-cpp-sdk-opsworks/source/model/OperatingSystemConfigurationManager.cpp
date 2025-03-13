@@ -18,14 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-OperatingSystemConfigurationManager::OperatingSystemConfigurationManager() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 OperatingSystemConfigurationManager::OperatingSystemConfigurationManager(JsonView jsonValue)
-  : OperatingSystemConfigurationManager()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OperatingSystemConfigurationManager& OperatingSystemConfigurationManager::operat
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

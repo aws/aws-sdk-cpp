@@ -20,17 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-LifecycleExpiration::LifecycleExpiration() : 
-    m_dateHasBeenSet(false),
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_expiredObjectDeleteMarker(false),
-    m_expiredObjectDeleteMarkerHasBeenSet(false)
-{
-}
-
 LifecycleExpiration::LifecycleExpiration(const XmlNode& xmlNode)
-  : LifecycleExpiration()
 {
   *this = xmlNode;
 }
@@ -46,18 +36,21 @@ LifecycleExpiration& LifecycleExpiration::operator =(const XmlNode& xmlNode)
     {
       m_date = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_dateHasBeenSet = true;
+       m_dateHasBeenSet = true;
     }
     XmlNode daysNode = resultNode.FirstChild("Days");
     if(!daysNode.IsNull())
     {
       m_days = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysNode.GetText()).c_str()).c_str());
       m_daysHasBeenSet = true;
+       m_daysHasBeenSet = true;
     }
     XmlNode expiredObjectDeleteMarkerNode = resultNode.FirstChild("ExpiredObjectDeleteMarker");
     if(!expiredObjectDeleteMarkerNode.IsNull())
     {
       m_expiredObjectDeleteMarker = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expiredObjectDeleteMarkerNode.GetText()).c_str()).c_str());
       m_expiredObjectDeleteMarkerHasBeenSet = true;
+       m_expiredObjectDeleteMarkerHasBeenSet = true;
     }
   }
 

@@ -34,7 +34,7 @@ namespace Model
   class TaskVolumeConfiguration
   {
   public:
-    AWS_ECS_API TaskVolumeConfiguration();
+    AWS_ECS_API TaskVolumeConfiguration() = default;
     AWS_ECS_API TaskVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API TaskVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the volume. This value must match the volume name from the
      * <code>Volume</code> object in the task definition.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TaskVolumeConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TaskVolumeConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TaskVolumeConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TaskVolumeConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * volume, with one volume created for each task. The Amazon EBS volumes are
      * visible in your account in the Amazon EC2 console once they are created.</p>
      */
-    inline const TaskManagedEBSVolumeConfiguration& GetManagedEBSVolume() const{ return m_managedEBSVolume; }
+    inline const TaskManagedEBSVolumeConfiguration& GetManagedEBSVolume() const { return m_managedEBSVolume; }
     inline bool ManagedEBSVolumeHasBeenSet() const { return m_managedEBSVolumeHasBeenSet; }
-    inline void SetManagedEBSVolume(const TaskManagedEBSVolumeConfiguration& value) { m_managedEBSVolumeHasBeenSet = true; m_managedEBSVolume = value; }
-    inline void SetManagedEBSVolume(TaskManagedEBSVolumeConfiguration&& value) { m_managedEBSVolumeHasBeenSet = true; m_managedEBSVolume = std::move(value); }
-    inline TaskVolumeConfiguration& WithManagedEBSVolume(const TaskManagedEBSVolumeConfiguration& value) { SetManagedEBSVolume(value); return *this;}
-    inline TaskVolumeConfiguration& WithManagedEBSVolume(TaskManagedEBSVolumeConfiguration&& value) { SetManagedEBSVolume(std::move(value)); return *this;}
+    template<typename ManagedEBSVolumeT = TaskManagedEBSVolumeConfiguration>
+    void SetManagedEBSVolume(ManagedEBSVolumeT&& value) { m_managedEBSVolumeHasBeenSet = true; m_managedEBSVolume = std::forward<ManagedEBSVolumeT>(value); }
+    template<typename ManagedEBSVolumeT = TaskManagedEBSVolumeConfiguration>
+    TaskVolumeConfiguration& WithManagedEBSVolume(ManagedEBSVolumeT&& value) { SetManagedEBSVolume(std::forward<ManagedEBSVolumeT>(value)); return *this;}
     ///@}
   private:
 

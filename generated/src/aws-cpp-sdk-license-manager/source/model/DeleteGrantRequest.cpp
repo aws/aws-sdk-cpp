@@ -12,13 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGrantRequest::DeleteGrantRequest() : 
-    m_grantArnHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGrantRequest::SerializePayload() const
 {
   JsonValue payload;

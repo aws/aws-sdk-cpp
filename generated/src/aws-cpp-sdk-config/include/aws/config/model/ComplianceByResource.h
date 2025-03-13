@@ -35,7 +35,7 @@ namespace Model
   class ComplianceByResource
   {
   public:
-    AWS_CONFIGSERVICE_API ComplianceByResource();
+    AWS_CONFIGSERVICE_API ComplianceByResource() = default;
     AWS_CONFIGSERVICE_API ComplianceByResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ComplianceByResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The type of the Amazon Web Services resource that was evaluated.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ComplianceByResource& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ComplianceByResource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ComplianceByResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ComplianceByResource& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services resource that was evaluated.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ComplianceByResource& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ComplianceByResource& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ComplianceByResource& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ComplianceByResource& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,12 @@ namespace Model
      * <p>Indicates whether the Amazon Web Services resource complies with all of the
      * Config rules that evaluated it.</p>
      */
-    inline const Compliance& GetCompliance() const{ return m_compliance; }
+    inline const Compliance& GetCompliance() const { return m_compliance; }
     inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
-    inline void SetCompliance(const Compliance& value) { m_complianceHasBeenSet = true; m_compliance = value; }
-    inline void SetCompliance(Compliance&& value) { m_complianceHasBeenSet = true; m_compliance = std::move(value); }
-    inline ComplianceByResource& WithCompliance(const Compliance& value) { SetCompliance(value); return *this;}
-    inline ComplianceByResource& WithCompliance(Compliance&& value) { SetCompliance(std::move(value)); return *this;}
+    template<typename ComplianceT = Compliance>
+    void SetCompliance(ComplianceT&& value) { m_complianceHasBeenSet = true; m_compliance = std::forward<ComplianceT>(value); }
+    template<typename ComplianceT = Compliance>
+    ComplianceByResource& WithCompliance(ComplianceT&& value) { SetCompliance(std::forward<ComplianceT>(value)); return *this;}
     ///@}
   private:
 

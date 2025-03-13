@@ -32,7 +32,7 @@ namespace Model
   class BatchUpdateBillScenarioCommitmentModificationEntry
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchUpdateBillScenarioCommitmentModificationEntry();
+    AWS_BCMPRICINGCALCULATOR_API BatchUpdateBillScenarioCommitmentModificationEntry() = default;
     AWS_BCMPRICINGCALCULATOR_API BatchUpdateBillScenarioCommitmentModificationEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API BatchUpdateBillScenarioCommitmentModificationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p> The unique identifier of the commitment modification to update. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline BatchUpdateBillScenarioCommitmentModificationEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline BatchUpdateBillScenarioCommitmentModificationEntry& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline BatchUpdateBillScenarioCommitmentModificationEntry& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    BatchUpdateBillScenarioCommitmentModificationEntry& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The updated group identifier for the commitment modification. </p>
      */
-    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline const Aws::String& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-    inline BatchUpdateBillScenarioCommitmentModificationEntry& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-    inline BatchUpdateBillScenarioCommitmentModificationEntry& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-    inline BatchUpdateBillScenarioCommitmentModificationEntry& WithGroup(const char* value) { SetGroup(value); return *this;}
+    template<typename GroupT = Aws::String>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = Aws::String>
+    BatchUpdateBillScenarioCommitmentModificationEntry& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
   private:
 

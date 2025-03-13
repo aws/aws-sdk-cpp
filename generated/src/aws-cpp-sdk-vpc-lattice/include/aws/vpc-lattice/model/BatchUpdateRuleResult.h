@@ -30,7 +30,7 @@ namespace Model
   class BatchUpdateRuleResult
   {
   public:
-    AWS_VPCLATTICE_API BatchUpdateRuleResult();
+    AWS_VPCLATTICE_API BatchUpdateRuleResult() = default;
     AWS_VPCLATTICE_API BatchUpdateRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API BatchUpdateRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>The rules that were successfully updated.</p>
      */
-    inline const Aws::Vector<RuleUpdateSuccess>& GetSuccessful() const{ return m_successful; }
-    inline void SetSuccessful(const Aws::Vector<RuleUpdateSuccess>& value) { m_successful = value; }
-    inline void SetSuccessful(Aws::Vector<RuleUpdateSuccess>&& value) { m_successful = std::move(value); }
-    inline BatchUpdateRuleResult& WithSuccessful(const Aws::Vector<RuleUpdateSuccess>& value) { SetSuccessful(value); return *this;}
-    inline BatchUpdateRuleResult& WithSuccessful(Aws::Vector<RuleUpdateSuccess>&& value) { SetSuccessful(std::move(value)); return *this;}
-    inline BatchUpdateRuleResult& AddSuccessful(const RuleUpdateSuccess& value) { m_successful.push_back(value); return *this; }
-    inline BatchUpdateRuleResult& AddSuccessful(RuleUpdateSuccess&& value) { m_successful.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RuleUpdateSuccess>& GetSuccessful() const { return m_successful; }
+    template<typename SuccessfulT = Aws::Vector<RuleUpdateSuccess>>
+    void SetSuccessful(SuccessfulT&& value) { m_successfulHasBeenSet = true; m_successful = std::forward<SuccessfulT>(value); }
+    template<typename SuccessfulT = Aws::Vector<RuleUpdateSuccess>>
+    BatchUpdateRuleResult& WithSuccessful(SuccessfulT&& value) { SetSuccessful(std::forward<SuccessfulT>(value)); return *this;}
+    template<typename SuccessfulT = RuleUpdateSuccess>
+    BatchUpdateRuleResult& AddSuccessful(SuccessfulT&& value) { m_successfulHasBeenSet = true; m_successful.emplace_back(std::forward<SuccessfulT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The rules that the operation couldn't update.</p>
      */
-    inline const Aws::Vector<RuleUpdateFailure>& GetUnsuccessful() const{ return m_unsuccessful; }
-    inline void SetUnsuccessful(const Aws::Vector<RuleUpdateFailure>& value) { m_unsuccessful = value; }
-    inline void SetUnsuccessful(Aws::Vector<RuleUpdateFailure>&& value) { m_unsuccessful = std::move(value); }
-    inline BatchUpdateRuleResult& WithUnsuccessful(const Aws::Vector<RuleUpdateFailure>& value) { SetUnsuccessful(value); return *this;}
-    inline BatchUpdateRuleResult& WithUnsuccessful(Aws::Vector<RuleUpdateFailure>&& value) { SetUnsuccessful(std::move(value)); return *this;}
-    inline BatchUpdateRuleResult& AddUnsuccessful(const RuleUpdateFailure& value) { m_unsuccessful.push_back(value); return *this; }
-    inline BatchUpdateRuleResult& AddUnsuccessful(RuleUpdateFailure&& value) { m_unsuccessful.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RuleUpdateFailure>& GetUnsuccessful() const { return m_unsuccessful; }
+    template<typename UnsuccessfulT = Aws::Vector<RuleUpdateFailure>>
+    void SetUnsuccessful(UnsuccessfulT&& value) { m_unsuccessfulHasBeenSet = true; m_unsuccessful = std::forward<UnsuccessfulT>(value); }
+    template<typename UnsuccessfulT = Aws::Vector<RuleUpdateFailure>>
+    BatchUpdateRuleResult& WithUnsuccessful(UnsuccessfulT&& value) { SetUnsuccessful(std::forward<UnsuccessfulT>(value)); return *this;}
+    template<typename UnsuccessfulT = RuleUpdateFailure>
+    BatchUpdateRuleResult& AddUnsuccessful(UnsuccessfulT&& value) { m_unsuccessfulHasBeenSet = true; m_unsuccessful.emplace_back(std::forward<UnsuccessfulT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchUpdateRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchUpdateRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchUpdateRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchUpdateRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RuleUpdateSuccess> m_successful;
+    bool m_successfulHasBeenSet = false;
 
     Aws::Vector<RuleUpdateFailure> m_unsuccessful;
+    bool m_unsuccessfulHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

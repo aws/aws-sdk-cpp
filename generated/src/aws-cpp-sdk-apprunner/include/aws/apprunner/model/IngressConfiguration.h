@@ -30,7 +30,7 @@ namespace Model
   class IngressConfiguration
   {
   public:
-    AWS_APPRUNNER_API IngressConfiguration();
+    AWS_APPRUNNER_API IngressConfiguration() = default;
     AWS_APPRUNNER_API IngressConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API IngressConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * privately accessible, from only within an Amazon VPC set it to
      * <code>False</code>. </p>
      */
-    inline bool GetIsPubliclyAccessible() const{ return m_isPubliclyAccessible; }
+    inline bool GetIsPubliclyAccessible() const { return m_isPubliclyAccessible; }
     inline bool IsPubliclyAccessibleHasBeenSet() const { return m_isPubliclyAccessibleHasBeenSet; }
     inline void SetIsPubliclyAccessible(bool value) { m_isPubliclyAccessibleHasBeenSet = true; m_isPubliclyAccessible = value; }
     inline IngressConfiguration& WithIsPubliclyAccessible(bool value) { SetIsPubliclyAccessible(value); return *this;}
     ///@}
   private:
 
-    bool m_isPubliclyAccessible;
+    bool m_isPubliclyAccessible{false};
     bool m_isPubliclyAccessibleHasBeenSet = false;
   };
 

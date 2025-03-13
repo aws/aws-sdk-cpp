@@ -27,7 +27,7 @@ namespace Model
   class CreateAdapterResult
   {
   public:
-    AWS_TEXTRACT_API CreateAdapterResult();
+    AWS_TEXTRACT_API CreateAdapterResult() = default;
     AWS_TEXTRACT_API CreateAdapterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TEXTRACT_API CreateAdapterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>A string containing the unique ID for the adapter that has been created.</p>
      */
-    inline const Aws::String& GetAdapterId() const{ return m_adapterId; }
-    inline void SetAdapterId(const Aws::String& value) { m_adapterId = value; }
-    inline void SetAdapterId(Aws::String&& value) { m_adapterId = std::move(value); }
-    inline void SetAdapterId(const char* value) { m_adapterId.assign(value); }
-    inline CreateAdapterResult& WithAdapterId(const Aws::String& value) { SetAdapterId(value); return *this;}
-    inline CreateAdapterResult& WithAdapterId(Aws::String&& value) { SetAdapterId(std::move(value)); return *this;}
-    inline CreateAdapterResult& WithAdapterId(const char* value) { SetAdapterId(value); return *this;}
+    inline const Aws::String& GetAdapterId() const { return m_adapterId; }
+    template<typename AdapterIdT = Aws::String>
+    void SetAdapterId(AdapterIdT&& value) { m_adapterIdHasBeenSet = true; m_adapterId = std::forward<AdapterIdT>(value); }
+    template<typename AdapterIdT = Aws::String>
+    CreateAdapterResult& WithAdapterId(AdapterIdT&& value) { SetAdapterId(std::forward<AdapterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAdapterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAdapterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAdapterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAdapterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_adapterId;
+    bool m_adapterIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

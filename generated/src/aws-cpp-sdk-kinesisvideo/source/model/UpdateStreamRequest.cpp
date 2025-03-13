@@ -12,15 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStreamRequest::UpdateStreamRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_mediaTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStreamRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ProgressBarOptions::ProgressBarOptions() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 ProgressBarOptions::ProgressBarOptions(JsonView jsonValue)
-  : ProgressBarOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ProgressBarOptions& ProgressBarOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

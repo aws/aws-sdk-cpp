@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-RestoreWindow::RestoreWindow() : 
-    m_earliestTimeHasBeenSet(false),
-    m_latestTimeHasBeenSet(false)
-{
-}
-
 RestoreWindow::RestoreWindow(const XmlNode& xmlNode)
-  : RestoreWindow()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ RestoreWindow& RestoreWindow::operator =(const XmlNode& xmlNode)
     {
       m_earliestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(earliestTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_earliestTimeHasBeenSet = true;
+       m_earliestTimeHasBeenSet = true;
     }
     XmlNode latestTimeNode = resultNode.FirstChild("LatestTime");
     if(!latestTimeNode.IsNull())
     {
       m_latestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(latestTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_latestTimeHasBeenSet = true;
+       m_latestTimeHasBeenSet = true;
     }
   }
 

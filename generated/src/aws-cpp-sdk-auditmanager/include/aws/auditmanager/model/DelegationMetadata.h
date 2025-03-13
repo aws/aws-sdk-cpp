@@ -34,7 +34,7 @@ namespace Model
   class DelegationMetadata
   {
   public:
-    AWS_AUDITMANAGER_API DelegationMetadata();
+    AWS_AUDITMANAGER_API DelegationMetadata() = default;
     AWS_AUDITMANAGER_API DelegationMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API DelegationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,94 +44,82 @@ namespace Model
     /**
      * <p> The unique identifier for the delegation. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DelegationMetadata& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DelegationMetadata& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DelegationMetadata& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DelegationMetadata& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the associated assessment. </p>
      */
-    inline const Aws::String& GetAssessmentName() const{ return m_assessmentName; }
+    inline const Aws::String& GetAssessmentName() const { return m_assessmentName; }
     inline bool AssessmentNameHasBeenSet() const { return m_assessmentNameHasBeenSet; }
-    inline void SetAssessmentName(const Aws::String& value) { m_assessmentNameHasBeenSet = true; m_assessmentName = value; }
-    inline void SetAssessmentName(Aws::String&& value) { m_assessmentNameHasBeenSet = true; m_assessmentName = std::move(value); }
-    inline void SetAssessmentName(const char* value) { m_assessmentNameHasBeenSet = true; m_assessmentName.assign(value); }
-    inline DelegationMetadata& WithAssessmentName(const Aws::String& value) { SetAssessmentName(value); return *this;}
-    inline DelegationMetadata& WithAssessmentName(Aws::String&& value) { SetAssessmentName(std::move(value)); return *this;}
-    inline DelegationMetadata& WithAssessmentName(const char* value) { SetAssessmentName(value); return *this;}
+    template<typename AssessmentNameT = Aws::String>
+    void SetAssessmentName(AssessmentNameT&& value) { m_assessmentNameHasBeenSet = true; m_assessmentName = std::forward<AssessmentNameT>(value); }
+    template<typename AssessmentNameT = Aws::String>
+    DelegationMetadata& WithAssessmentName(AssessmentNameT&& value) { SetAssessmentName(std::forward<AssessmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The unique identifier for the assessment. </p>
      */
-    inline const Aws::String& GetAssessmentId() const{ return m_assessmentId; }
+    inline const Aws::String& GetAssessmentId() const { return m_assessmentId; }
     inline bool AssessmentIdHasBeenSet() const { return m_assessmentIdHasBeenSet; }
-    inline void SetAssessmentId(const Aws::String& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = value; }
-    inline void SetAssessmentId(Aws::String&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::move(value); }
-    inline void SetAssessmentId(const char* value) { m_assessmentIdHasBeenSet = true; m_assessmentId.assign(value); }
-    inline DelegationMetadata& WithAssessmentId(const Aws::String& value) { SetAssessmentId(value); return *this;}
-    inline DelegationMetadata& WithAssessmentId(Aws::String&& value) { SetAssessmentId(std::move(value)); return *this;}
-    inline DelegationMetadata& WithAssessmentId(const char* value) { SetAssessmentId(value); return *this;}
+    template<typename AssessmentIdT = Aws::String>
+    void SetAssessmentId(AssessmentIdT&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::forward<AssessmentIdT>(value); }
+    template<typename AssessmentIdT = Aws::String>
+    DelegationMetadata& WithAssessmentId(AssessmentIdT&& value) { SetAssessmentId(std::forward<AssessmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current status of the delegation. </p>
      */
-    inline const DelegationStatus& GetStatus() const{ return m_status; }
+    inline DelegationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DelegationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DelegationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DelegationMetadata& WithStatus(const DelegationStatus& value) { SetStatus(value); return *this;}
-    inline DelegationMetadata& WithStatus(DelegationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DelegationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DelegationMetadata& WithStatus(DelegationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the IAM role. </p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline DelegationMetadata& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DelegationMetadata& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DelegationMetadata& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DelegationMetadata& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Specifies when the delegation was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline DelegationMetadata& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DelegationMetadata& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DelegationMetadata& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Specifies the name of the control set that was delegated for review. </p>
      */
-    inline const Aws::String& GetControlSetName() const{ return m_controlSetName; }
+    inline const Aws::String& GetControlSetName() const { return m_controlSetName; }
     inline bool ControlSetNameHasBeenSet() const { return m_controlSetNameHasBeenSet; }
-    inline void SetControlSetName(const Aws::String& value) { m_controlSetNameHasBeenSet = true; m_controlSetName = value; }
-    inline void SetControlSetName(Aws::String&& value) { m_controlSetNameHasBeenSet = true; m_controlSetName = std::move(value); }
-    inline void SetControlSetName(const char* value) { m_controlSetNameHasBeenSet = true; m_controlSetName.assign(value); }
-    inline DelegationMetadata& WithControlSetName(const Aws::String& value) { SetControlSetName(value); return *this;}
-    inline DelegationMetadata& WithControlSetName(Aws::String&& value) { SetControlSetName(std::move(value)); return *this;}
-    inline DelegationMetadata& WithControlSetName(const char* value) { SetControlSetName(value); return *this;}
+    template<typename ControlSetNameT = Aws::String>
+    void SetControlSetName(ControlSetNameT&& value) { m_controlSetNameHasBeenSet = true; m_controlSetName = std::forward<ControlSetNameT>(value); }
+    template<typename ControlSetNameT = Aws::String>
+    DelegationMetadata& WithControlSetName(ControlSetNameT&& value) { SetControlSetName(std::forward<ControlSetNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -144,13 +132,13 @@ namespace Model
     Aws::String m_assessmentId;
     bool m_assessmentIdHasBeenSet = false;
 
-    DelegationStatus m_status;
+    DelegationStatus m_status{DelegationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_controlSetName;

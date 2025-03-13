@@ -35,7 +35,7 @@ namespace Model
   class ListMultipartUploadsResult
   {
   public:
-    AWS_GLACIER_API ListMultipartUploadsResult();
+    AWS_GLACIER_API ListMultipartUploadsResult() = default;
     AWS_GLACIER_API ListMultipartUploadsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLACIER_API ListMultipartUploadsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
     /**
      * <p>A list of in-progress multipart uploads.</p>
      */
-    inline const Aws::Vector<UploadListElement>& GetUploadsList() const{ return m_uploadsList; }
-    inline void SetUploadsList(const Aws::Vector<UploadListElement>& value) { m_uploadsList = value; }
-    inline void SetUploadsList(Aws::Vector<UploadListElement>&& value) { m_uploadsList = std::move(value); }
-    inline ListMultipartUploadsResult& WithUploadsList(const Aws::Vector<UploadListElement>& value) { SetUploadsList(value); return *this;}
-    inline ListMultipartUploadsResult& WithUploadsList(Aws::Vector<UploadListElement>&& value) { SetUploadsList(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& AddUploadsList(const UploadListElement& value) { m_uploadsList.push_back(value); return *this; }
-    inline ListMultipartUploadsResult& AddUploadsList(UploadListElement&& value) { m_uploadsList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UploadListElement>& GetUploadsList() const { return m_uploadsList; }
+    template<typename UploadsListT = Aws::Vector<UploadListElement>>
+    void SetUploadsList(UploadsListT&& value) { m_uploadsListHasBeenSet = true; m_uploadsList = std::forward<UploadsListT>(value); }
+    template<typename UploadsListT = Aws::Vector<UploadListElement>>
+    ListMultipartUploadsResult& WithUploadsList(UploadsListT&& value) { SetUploadsList(std::forward<UploadsListT>(value)); return *this;}
+    template<typename UploadsListT = UploadListElement>
+    ListMultipartUploadsResult& AddUploadsList(UploadsListT&& value) { m_uploadsListHasBeenSet = true; m_uploadsList.emplace_back(std::forward<UploadsListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,32 +60,31 @@ namespace Model
      * uploads in the list. If there are no more uploads, this value is
      * <code>null</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline ListMultipartUploadsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListMultipartUploadsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListMultipartUploadsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMultipartUploadsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMultipartUploadsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMultipartUploadsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<UploadListElement> m_uploadsList;
+    bool m_uploadsListHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

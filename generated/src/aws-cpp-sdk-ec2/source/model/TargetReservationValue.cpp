@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TargetReservationValue::TargetReservationValue() : 
-    m_reservationValueHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false)
-{
-}
-
 TargetReservationValue::TargetReservationValue(const XmlNode& xmlNode)
-  : TargetReservationValue()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ TargetReservationValue& TargetReservationValue::operator =(const XmlNode& xmlNod
     {
       m_reservationValue = reservationValueNode;
       m_reservationValueHasBeenSet = true;
+       m_reservationValueHasBeenSet = true;
     }
     XmlNode targetConfigurationNode = resultNode.FirstChild("targetConfiguration");
     if(!targetConfigurationNode.IsNull())
     {
       m_targetConfiguration = targetConfigurationNode;
       m_targetConfigurationHasBeenSet = true;
+       m_targetConfigurationHasBeenSet = true;
     }
   }
 

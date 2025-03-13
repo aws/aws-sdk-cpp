@@ -44,7 +44,7 @@ namespace Model
   class Eac3Settings
   {
   public:
-    AWS_MEDIACONVERT_API Eac3Settings();
+    AWS_MEDIACONVERT_API Eac3Settings() = default;
     AWS_MEDIACONVERT_API Eac3Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Eac3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,10 @@ namespace Model
      * If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels.
      * Only used for 3/2 coding mode.
      */
-    inline const Eac3AttenuationControl& GetAttenuationControl() const{ return m_attenuationControl; }
+    inline Eac3AttenuationControl GetAttenuationControl() const { return m_attenuationControl; }
     inline bool AttenuationControlHasBeenSet() const { return m_attenuationControlHasBeenSet; }
-    inline void SetAttenuationControl(const Eac3AttenuationControl& value) { m_attenuationControlHasBeenSet = true; m_attenuationControl = value; }
-    inline void SetAttenuationControl(Eac3AttenuationControl&& value) { m_attenuationControlHasBeenSet = true; m_attenuationControl = std::move(value); }
-    inline Eac3Settings& WithAttenuationControl(const Eac3AttenuationControl& value) { SetAttenuationControl(value); return *this;}
-    inline Eac3Settings& WithAttenuationControl(Eac3AttenuationControl&& value) { SetAttenuationControl(std::move(value)); return *this;}
+    inline void SetAttenuationControl(Eac3AttenuationControl value) { m_attenuationControlHasBeenSet = true; m_attenuationControl = value; }
+    inline Eac3Settings& WithAttenuationControl(Eac3AttenuationControl value) { SetAttenuationControl(value); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +71,7 @@ namespace Model
      * 96000. Maximum: 3024000. Valid bitrates for coding mode 3/2: Default: 384000.
      * Minimum: 192000. Maximum: 3024000.
      */
-    inline int GetBitrate() const{ return m_bitrate; }
+    inline int GetBitrate() const { return m_bitrate; }
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
     inline Eac3Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
@@ -84,36 +82,30 @@ namespace Model
      * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For
      * more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
-    inline const Eac3BitstreamMode& GetBitstreamMode() const{ return m_bitstreamMode; }
+    inline Eac3BitstreamMode GetBitstreamMode() const { return m_bitstreamMode; }
     inline bool BitstreamModeHasBeenSet() const { return m_bitstreamModeHasBeenSet; }
-    inline void SetBitstreamMode(const Eac3BitstreamMode& value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = value; }
-    inline void SetBitstreamMode(Eac3BitstreamMode&& value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = std::move(value); }
-    inline Eac3Settings& WithBitstreamMode(const Eac3BitstreamMode& value) { SetBitstreamMode(value); return *this;}
-    inline Eac3Settings& WithBitstreamMode(Eac3BitstreamMode&& value) { SetBitstreamMode(std::move(value)); return *this;}
+    inline void SetBitstreamMode(Eac3BitstreamMode value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = value; }
+    inline Eac3Settings& WithBitstreamMode(Eac3BitstreamMode value) { SetBitstreamMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Dolby Digital Plus coding mode. Determines number of channels.
      */
-    inline const Eac3CodingMode& GetCodingMode() const{ return m_codingMode; }
+    inline Eac3CodingMode GetCodingMode() const { return m_codingMode; }
     inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
-    inline void SetCodingMode(const Eac3CodingMode& value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
-    inline void SetCodingMode(Eac3CodingMode&& value) { m_codingModeHasBeenSet = true; m_codingMode = std::move(value); }
-    inline Eac3Settings& WithCodingMode(const Eac3CodingMode& value) { SetCodingMode(value); return *this;}
-    inline Eac3Settings& WithCodingMode(Eac3CodingMode&& value) { SetCodingMode(std::move(value)); return *this;}
+    inline void SetCodingMode(Eac3CodingMode value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
+    inline Eac3Settings& WithCodingMode(Eac3CodingMode value) { SetCodingMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Activates a DC highpass filter for all input channels.
      */
-    inline const Eac3DcFilter& GetDcFilter() const{ return m_dcFilter; }
+    inline Eac3DcFilter GetDcFilter() const { return m_dcFilter; }
     inline bool DcFilterHasBeenSet() const { return m_dcFilterHasBeenSet; }
-    inline void SetDcFilter(const Eac3DcFilter& value) { m_dcFilterHasBeenSet = true; m_dcFilter = value; }
-    inline void SetDcFilter(Eac3DcFilter&& value) { m_dcFilterHasBeenSet = true; m_dcFilter = std::move(value); }
-    inline Eac3Settings& WithDcFilter(const Eac3DcFilter& value) { SetDcFilter(value); return *this;}
-    inline Eac3Settings& WithDcFilter(Eac3DcFilter&& value) { SetDcFilter(std::move(value)); return *this;}
+    inline void SetDcFilter(Eac3DcFilter value) { m_dcFilterHasBeenSet = true; m_dcFilter = value; }
+    inline Eac3Settings& WithDcFilter(Eac3DcFilter value) { SetDcFilter(value); return *this;}
     ///@}
 
     ///@{
@@ -121,7 +113,7 @@ namespace Model
      * Sets the dialnorm for the output. If blank and input audio is Dolby Digital
      * Plus, dialnorm will be passed through.
      */
-    inline int GetDialnorm() const{ return m_dialnorm; }
+    inline int GetDialnorm() const { return m_dialnorm; }
     inline bool DialnormHasBeenSet() const { return m_dialnormHasBeenSet; }
     inline void SetDialnorm(int value) { m_dialnormHasBeenSet = true; m_dialnorm = value; }
     inline Eac3Settings& WithDialnorm(int value) { SetDialnorm(value); return *this;}
@@ -137,12 +129,10 @@ namespace Model
      * Control chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
-    inline const Eac3DynamicRangeCompressionLine& GetDynamicRangeCompressionLine() const{ return m_dynamicRangeCompressionLine; }
+    inline Eac3DynamicRangeCompressionLine GetDynamicRangeCompressionLine() const { return m_dynamicRangeCompressionLine; }
     inline bool DynamicRangeCompressionLineHasBeenSet() const { return m_dynamicRangeCompressionLineHasBeenSet; }
-    inline void SetDynamicRangeCompressionLine(const Eac3DynamicRangeCompressionLine& value) { m_dynamicRangeCompressionLineHasBeenSet = true; m_dynamicRangeCompressionLine = value; }
-    inline void SetDynamicRangeCompressionLine(Eac3DynamicRangeCompressionLine&& value) { m_dynamicRangeCompressionLineHasBeenSet = true; m_dynamicRangeCompressionLine = std::move(value); }
-    inline Eac3Settings& WithDynamicRangeCompressionLine(const Eac3DynamicRangeCompressionLine& value) { SetDynamicRangeCompressionLine(value); return *this;}
-    inline Eac3Settings& WithDynamicRangeCompressionLine(Eac3DynamicRangeCompressionLine&& value) { SetDynamicRangeCompressionLine(std::move(value)); return *this;}
+    inline void SetDynamicRangeCompressionLine(Eac3DynamicRangeCompressionLine value) { m_dynamicRangeCompressionLineHasBeenSet = true; m_dynamicRangeCompressionLine = value; }
+    inline Eac3Settings& WithDynamicRangeCompressionLine(Eac3DynamicRangeCompressionLine value) { SetDynamicRangeCompressionLine(value); return *this;}
     ///@}
 
     ///@{
@@ -155,24 +145,20 @@ namespace Model
      * chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
-    inline const Eac3DynamicRangeCompressionRf& GetDynamicRangeCompressionRf() const{ return m_dynamicRangeCompressionRf; }
+    inline Eac3DynamicRangeCompressionRf GetDynamicRangeCompressionRf() const { return m_dynamicRangeCompressionRf; }
     inline bool DynamicRangeCompressionRfHasBeenSet() const { return m_dynamicRangeCompressionRfHasBeenSet; }
-    inline void SetDynamicRangeCompressionRf(const Eac3DynamicRangeCompressionRf& value) { m_dynamicRangeCompressionRfHasBeenSet = true; m_dynamicRangeCompressionRf = value; }
-    inline void SetDynamicRangeCompressionRf(Eac3DynamicRangeCompressionRf&& value) { m_dynamicRangeCompressionRfHasBeenSet = true; m_dynamicRangeCompressionRf = std::move(value); }
-    inline Eac3Settings& WithDynamicRangeCompressionRf(const Eac3DynamicRangeCompressionRf& value) { SetDynamicRangeCompressionRf(value); return *this;}
-    inline Eac3Settings& WithDynamicRangeCompressionRf(Eac3DynamicRangeCompressionRf&& value) { SetDynamicRangeCompressionRf(std::move(value)); return *this;}
+    inline void SetDynamicRangeCompressionRf(Eac3DynamicRangeCompressionRf value) { m_dynamicRangeCompressionRfHasBeenSet = true; m_dynamicRangeCompressionRf = value; }
+    inline Eac3Settings& WithDynamicRangeCompressionRf(Eac3DynamicRangeCompressionRf value) { SetDynamicRangeCompressionRf(value); return *this;}
     ///@}
 
     ///@{
     /**
      * When encoding 3/2 audio, controls whether the LFE channel is enabled
      */
-    inline const Eac3LfeControl& GetLfeControl() const{ return m_lfeControl; }
+    inline Eac3LfeControl GetLfeControl() const { return m_lfeControl; }
     inline bool LfeControlHasBeenSet() const { return m_lfeControlHasBeenSet; }
-    inline void SetLfeControl(const Eac3LfeControl& value) { m_lfeControlHasBeenSet = true; m_lfeControl = value; }
-    inline void SetLfeControl(Eac3LfeControl&& value) { m_lfeControlHasBeenSet = true; m_lfeControl = std::move(value); }
-    inline Eac3Settings& WithLfeControl(const Eac3LfeControl& value) { SetLfeControl(value); return *this;}
-    inline Eac3Settings& WithLfeControl(Eac3LfeControl&& value) { SetLfeControl(std::move(value)); return *this;}
+    inline void SetLfeControl(Eac3LfeControl value) { m_lfeControlHasBeenSet = true; m_lfeControl = value; }
+    inline Eac3Settings& WithLfeControl(Eac3LfeControl value) { SetLfeControl(value); return *this;}
     ///@}
 
     ///@{
@@ -180,12 +166,10 @@ namespace Model
      * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid
      * with 3_2_LFE coding mode.
      */
-    inline const Eac3LfeFilter& GetLfeFilter() const{ return m_lfeFilter; }
+    inline Eac3LfeFilter GetLfeFilter() const { return m_lfeFilter; }
     inline bool LfeFilterHasBeenSet() const { return m_lfeFilterHasBeenSet; }
-    inline void SetLfeFilter(const Eac3LfeFilter& value) { m_lfeFilterHasBeenSet = true; m_lfeFilter = value; }
-    inline void SetLfeFilter(Eac3LfeFilter&& value) { m_lfeFilterHasBeenSet = true; m_lfeFilter = std::move(value); }
-    inline Eac3Settings& WithLfeFilter(const Eac3LfeFilter& value) { SetLfeFilter(value); return *this;}
-    inline Eac3Settings& WithLfeFilter(Eac3LfeFilter&& value) { SetLfeFilter(std::move(value)); return *this;}
+    inline void SetLfeFilter(Eac3LfeFilter value) { m_lfeFilterHasBeenSet = true; m_lfeFilter = value; }
+    inline Eac3Settings& WithLfeFilter(Eac3LfeFilter value) { SetLfeFilter(value); return *this;}
     ///@}
 
     ///@{
@@ -198,7 +182,7 @@ namespace Model
      * C, Ls, Rs for the setting Coding mode. If you choose a different value for
      * Coding mode, the service ignores Left only/Right only center.
      */
-    inline double GetLoRoCenterMixLevel() const{ return m_loRoCenterMixLevel; }
+    inline double GetLoRoCenterMixLevel() const { return m_loRoCenterMixLevel; }
     inline bool LoRoCenterMixLevelHasBeenSet() const { return m_loRoCenterMixLevelHasBeenSet; }
     inline void SetLoRoCenterMixLevel(double value) { m_loRoCenterMixLevelHasBeenSet = true; m_loRoCenterMixLevel = value; }
     inline Eac3Settings& WithLoRoCenterMixLevel(double value) { SetLoRoCenterMixLevel(value); return *this;}
@@ -214,7 +198,7 @@ namespace Model
      * setting Coding mode. If you choose a different value for Coding mode, the
      * service ignores Left only/Right only surround.
      */
-    inline double GetLoRoSurroundMixLevel() const{ return m_loRoSurroundMixLevel; }
+    inline double GetLoRoSurroundMixLevel() const { return m_loRoSurroundMixLevel; }
     inline bool LoRoSurroundMixLevelHasBeenSet() const { return m_loRoSurroundMixLevelHasBeenSet; }
     inline void SetLoRoSurroundMixLevel(double value) { m_loRoSurroundMixLevelHasBeenSet = true; m_loRoSurroundMixLevel = value; }
     inline Eac3Settings& WithLoRoSurroundMixLevel(double value) { SetLoRoSurroundMixLevel(value); return *this;}
@@ -230,7 +214,7 @@ namespace Model
      * C, Ls, Rs for the setting Coding mode. If you choose a different value for
      * Coding mode, the service ignores Left total/Right total center.
      */
-    inline double GetLtRtCenterMixLevel() const{ return m_ltRtCenterMixLevel; }
+    inline double GetLtRtCenterMixLevel() const { return m_ltRtCenterMixLevel; }
     inline bool LtRtCenterMixLevelHasBeenSet() const { return m_ltRtCenterMixLevelHasBeenSet; }
     inline void SetLtRtCenterMixLevel(double value) { m_ltRtCenterMixLevelHasBeenSet = true; m_ltRtCenterMixLevel = value; }
     inline Eac3Settings& WithLtRtCenterMixLevel(double value) { SetLtRtCenterMixLevel(value); return *this;}
@@ -246,7 +230,7 @@ namespace Model
      * the setting Coding mode. If you choose a different value for Coding mode, the
      * service ignores Left total/Right total surround.
      */
-    inline double GetLtRtSurroundMixLevel() const{ return m_ltRtSurroundMixLevel; }
+    inline double GetLtRtSurroundMixLevel() const { return m_ltRtSurroundMixLevel; }
     inline bool LtRtSurroundMixLevelHasBeenSet() const { return m_ltRtSurroundMixLevelHasBeenSet; }
     inline void SetLtRtSurroundMixLevel(double value) { m_ltRtSurroundMixLevelHasBeenSet = true; m_ltRtSurroundMixLevel = value; }
     inline Eac3Settings& WithLtRtSurroundMixLevel(double value) { SetLtRtSurroundMixLevel(value); return *this;}
@@ -258,12 +242,10 @@ namespace Model
      * DolbyE decoder that supplied this audio data. If audio was not supplied from one
      * of these streams, then the static metadata settings will be used.
      */
-    inline const Eac3MetadataControl& GetMetadataControl() const{ return m_metadataControl; }
+    inline Eac3MetadataControl GetMetadataControl() const { return m_metadataControl; }
     inline bool MetadataControlHasBeenSet() const { return m_metadataControlHasBeenSet; }
-    inline void SetMetadataControl(const Eac3MetadataControl& value) { m_metadataControlHasBeenSet = true; m_metadataControl = value; }
-    inline void SetMetadataControl(Eac3MetadataControl&& value) { m_metadataControlHasBeenSet = true; m_metadataControl = std::move(value); }
-    inline Eac3Settings& WithMetadataControl(const Eac3MetadataControl& value) { SetMetadataControl(value); return *this;}
-    inline Eac3Settings& WithMetadataControl(Eac3MetadataControl&& value) { SetMetadataControl(std::move(value)); return *this;}
+    inline void SetMetadataControl(Eac3MetadataControl value) { m_metadataControlHasBeenSet = true; m_metadataControl = value; }
+    inline Eac3Settings& WithMetadataControl(Eac3MetadataControl value) { SetMetadataControl(value); return *this;}
     ///@}
 
     ///@{
@@ -273,12 +255,10 @@ namespace Model
      * Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+
      * output as the system alternates between passthrough and encoding.
      */
-    inline const Eac3PassthroughControl& GetPassthroughControl() const{ return m_passthroughControl; }
+    inline Eac3PassthroughControl GetPassthroughControl() const { return m_passthroughControl; }
     inline bool PassthroughControlHasBeenSet() const { return m_passthroughControlHasBeenSet; }
-    inline void SetPassthroughControl(const Eac3PassthroughControl& value) { m_passthroughControlHasBeenSet = true; m_passthroughControl = value; }
-    inline void SetPassthroughControl(Eac3PassthroughControl&& value) { m_passthroughControlHasBeenSet = true; m_passthroughControl = std::move(value); }
-    inline Eac3Settings& WithPassthroughControl(const Eac3PassthroughControl& value) { SetPassthroughControl(value); return *this;}
-    inline Eac3Settings& WithPassthroughControl(Eac3PassthroughControl&& value) { SetPassthroughControl(std::move(value)); return *this;}
+    inline void SetPassthroughControl(Eac3PassthroughControl value) { m_passthroughControlHasBeenSet = true; m_passthroughControl = value; }
+    inline Eac3Settings& WithPassthroughControl(Eac3PassthroughControl value) { SetPassthroughControl(value); return *this;}
     ///@}
 
     ///@{
@@ -286,19 +266,17 @@ namespace Model
      * Controls the amount of phase-shift applied to the surround channels. Only used
      * for 3/2 coding mode.
      */
-    inline const Eac3PhaseControl& GetPhaseControl() const{ return m_phaseControl; }
+    inline Eac3PhaseControl GetPhaseControl() const { return m_phaseControl; }
     inline bool PhaseControlHasBeenSet() const { return m_phaseControlHasBeenSet; }
-    inline void SetPhaseControl(const Eac3PhaseControl& value) { m_phaseControlHasBeenSet = true; m_phaseControl = value; }
-    inline void SetPhaseControl(Eac3PhaseControl&& value) { m_phaseControlHasBeenSet = true; m_phaseControl = std::move(value); }
-    inline Eac3Settings& WithPhaseControl(const Eac3PhaseControl& value) { SetPhaseControl(value); return *this;}
-    inline Eac3Settings& WithPhaseControl(Eac3PhaseControl&& value) { SetPhaseControl(std::move(value)); return *this;}
+    inline void SetPhaseControl(Eac3PhaseControl value) { m_phaseControlHasBeenSet = true; m_phaseControl = value; }
+    inline Eac3Settings& WithPhaseControl(Eac3PhaseControl value) { SetPhaseControl(value); return *this;}
     ///@}
 
     ///@{
     /**
      * This value is always 48000. It represents the sample rate in Hz.
      */
-    inline int GetSampleRate() const{ return m_sampleRate; }
+    inline int GetSampleRate() const { return m_sampleRate; }
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
     inline Eac3Settings& WithSampleRate(int value) { SetSampleRate(value); return *this;}
@@ -311,12 +289,10 @@ namespace Model
      * you choose a different value for Coding mode, the service ignores Stereo
      * downmix.
      */
-    inline const Eac3StereoDownmix& GetStereoDownmix() const{ return m_stereoDownmix; }
+    inline Eac3StereoDownmix GetStereoDownmix() const { return m_stereoDownmix; }
     inline bool StereoDownmixHasBeenSet() const { return m_stereoDownmixHasBeenSet; }
-    inline void SetStereoDownmix(const Eac3StereoDownmix& value) { m_stereoDownmixHasBeenSet = true; m_stereoDownmix = value; }
-    inline void SetStereoDownmix(Eac3StereoDownmix&& value) { m_stereoDownmixHasBeenSet = true; m_stereoDownmix = std::move(value); }
-    inline Eac3Settings& WithStereoDownmix(const Eac3StereoDownmix& value) { SetStereoDownmix(value); return *this;}
-    inline Eac3Settings& WithStereoDownmix(Eac3StereoDownmix&& value) { SetStereoDownmix(std::move(value)); return *this;}
+    inline void SetStereoDownmix(Eac3StereoDownmix value) { m_stereoDownmixHasBeenSet = true; m_stereoDownmix = value; }
+    inline Eac3Settings& WithStereoDownmix(Eac3StereoDownmix value) { SetStereoDownmix(value); return *this;}
     ///@}
 
     ///@{
@@ -324,12 +300,10 @@ namespace Model
      * When encoding 3/2 audio, sets whether an extra center back surround channel is
      * matrix encoded into the left and right surround channels.
      */
-    inline const Eac3SurroundExMode& GetSurroundExMode() const{ return m_surroundExMode; }
+    inline Eac3SurroundExMode GetSurroundExMode() const { return m_surroundExMode; }
     inline bool SurroundExModeHasBeenSet() const { return m_surroundExModeHasBeenSet; }
-    inline void SetSurroundExMode(const Eac3SurroundExMode& value) { m_surroundExModeHasBeenSet = true; m_surroundExMode = value; }
-    inline void SetSurroundExMode(Eac3SurroundExMode&& value) { m_surroundExModeHasBeenSet = true; m_surroundExMode = std::move(value); }
-    inline Eac3Settings& WithSurroundExMode(const Eac3SurroundExMode& value) { SetSurroundExMode(value); return *this;}
-    inline Eac3Settings& WithSurroundExMode(Eac3SurroundExMode&& value) { SetSurroundExMode(std::move(value)); return *this;}
+    inline void SetSurroundExMode(Eac3SurroundExMode value) { m_surroundExModeHasBeenSet = true; m_surroundExMode = value; }
+    inline Eac3Settings& WithSurroundExMode(Eac3SurroundExMode value) { SetSurroundExMode(value); return *this;}
     ///@}
 
     ///@{
@@ -337,76 +311,74 @@ namespace Model
      * When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the
      * two channels.
      */
-    inline const Eac3SurroundMode& GetSurroundMode() const{ return m_surroundMode; }
+    inline Eac3SurroundMode GetSurroundMode() const { return m_surroundMode; }
     inline bool SurroundModeHasBeenSet() const { return m_surroundModeHasBeenSet; }
-    inline void SetSurroundMode(const Eac3SurroundMode& value) { m_surroundModeHasBeenSet = true; m_surroundMode = value; }
-    inline void SetSurroundMode(Eac3SurroundMode&& value) { m_surroundModeHasBeenSet = true; m_surroundMode = std::move(value); }
-    inline Eac3Settings& WithSurroundMode(const Eac3SurroundMode& value) { SetSurroundMode(value); return *this;}
-    inline Eac3Settings& WithSurroundMode(Eac3SurroundMode&& value) { SetSurroundMode(std::move(value)); return *this;}
+    inline void SetSurroundMode(Eac3SurroundMode value) { m_surroundModeHasBeenSet = true; m_surroundMode = value; }
+    inline Eac3Settings& WithSurroundMode(Eac3SurroundMode value) { SetSurroundMode(value); return *this;}
     ///@}
   private:
 
-    Eac3AttenuationControl m_attenuationControl;
+    Eac3AttenuationControl m_attenuationControl{Eac3AttenuationControl::NOT_SET};
     bool m_attenuationControlHasBeenSet = false;
 
-    int m_bitrate;
+    int m_bitrate{0};
     bool m_bitrateHasBeenSet = false;
 
-    Eac3BitstreamMode m_bitstreamMode;
+    Eac3BitstreamMode m_bitstreamMode{Eac3BitstreamMode::NOT_SET};
     bool m_bitstreamModeHasBeenSet = false;
 
-    Eac3CodingMode m_codingMode;
+    Eac3CodingMode m_codingMode{Eac3CodingMode::NOT_SET};
     bool m_codingModeHasBeenSet = false;
 
-    Eac3DcFilter m_dcFilter;
+    Eac3DcFilter m_dcFilter{Eac3DcFilter::NOT_SET};
     bool m_dcFilterHasBeenSet = false;
 
-    int m_dialnorm;
+    int m_dialnorm{0};
     bool m_dialnormHasBeenSet = false;
 
-    Eac3DynamicRangeCompressionLine m_dynamicRangeCompressionLine;
+    Eac3DynamicRangeCompressionLine m_dynamicRangeCompressionLine{Eac3DynamicRangeCompressionLine::NOT_SET};
     bool m_dynamicRangeCompressionLineHasBeenSet = false;
 
-    Eac3DynamicRangeCompressionRf m_dynamicRangeCompressionRf;
+    Eac3DynamicRangeCompressionRf m_dynamicRangeCompressionRf{Eac3DynamicRangeCompressionRf::NOT_SET};
     bool m_dynamicRangeCompressionRfHasBeenSet = false;
 
-    Eac3LfeControl m_lfeControl;
+    Eac3LfeControl m_lfeControl{Eac3LfeControl::NOT_SET};
     bool m_lfeControlHasBeenSet = false;
 
-    Eac3LfeFilter m_lfeFilter;
+    Eac3LfeFilter m_lfeFilter{Eac3LfeFilter::NOT_SET};
     bool m_lfeFilterHasBeenSet = false;
 
-    double m_loRoCenterMixLevel;
+    double m_loRoCenterMixLevel{0.0};
     bool m_loRoCenterMixLevelHasBeenSet = false;
 
-    double m_loRoSurroundMixLevel;
+    double m_loRoSurroundMixLevel{0.0};
     bool m_loRoSurroundMixLevelHasBeenSet = false;
 
-    double m_ltRtCenterMixLevel;
+    double m_ltRtCenterMixLevel{0.0};
     bool m_ltRtCenterMixLevelHasBeenSet = false;
 
-    double m_ltRtSurroundMixLevel;
+    double m_ltRtSurroundMixLevel{0.0};
     bool m_ltRtSurroundMixLevelHasBeenSet = false;
 
-    Eac3MetadataControl m_metadataControl;
+    Eac3MetadataControl m_metadataControl{Eac3MetadataControl::NOT_SET};
     bool m_metadataControlHasBeenSet = false;
 
-    Eac3PassthroughControl m_passthroughControl;
+    Eac3PassthroughControl m_passthroughControl{Eac3PassthroughControl::NOT_SET};
     bool m_passthroughControlHasBeenSet = false;
 
-    Eac3PhaseControl m_phaseControl;
+    Eac3PhaseControl m_phaseControl{Eac3PhaseControl::NOT_SET};
     bool m_phaseControlHasBeenSet = false;
 
-    int m_sampleRate;
+    int m_sampleRate{0};
     bool m_sampleRateHasBeenSet = false;
 
-    Eac3StereoDownmix m_stereoDownmix;
+    Eac3StereoDownmix m_stereoDownmix{Eac3StereoDownmix::NOT_SET};
     bool m_stereoDownmixHasBeenSet = false;
 
-    Eac3SurroundExMode m_surroundExMode;
+    Eac3SurroundExMode m_surroundExMode{Eac3SurroundExMode::NOT_SET};
     bool m_surroundExModeHasBeenSet = false;
 
-    Eac3SurroundMode m_surroundMode;
+    Eac3SurroundMode m_surroundMode{Eac3SurroundMode::NOT_SET};
     bool m_surroundModeHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class InvalidParameterDetail
   {
   public:
-    AWS_APPCONFIGDATA_API InvalidParameterDetail();
+    AWS_APPCONFIGDATA_API InvalidParameterDetail() = default;
     AWS_APPCONFIGDATA_API InvalidParameterDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIGDATA_API InvalidParameterDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIGDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The reason the parameter is invalid.</p>
      */
-    inline const InvalidParameterProblem& GetProblem() const{ return m_problem; }
+    inline InvalidParameterProblem GetProblem() const { return m_problem; }
     inline bool ProblemHasBeenSet() const { return m_problemHasBeenSet; }
-    inline void SetProblem(const InvalidParameterProblem& value) { m_problemHasBeenSet = true; m_problem = value; }
-    inline void SetProblem(InvalidParameterProblem&& value) { m_problemHasBeenSet = true; m_problem = std::move(value); }
-    inline InvalidParameterDetail& WithProblem(const InvalidParameterProblem& value) { SetProblem(value); return *this;}
-    inline InvalidParameterDetail& WithProblem(InvalidParameterProblem&& value) { SetProblem(std::move(value)); return *this;}
+    inline void SetProblem(InvalidParameterProblem value) { m_problemHasBeenSet = true; m_problem = value; }
+    inline InvalidParameterDetail& WithProblem(InvalidParameterProblem value) { SetProblem(value); return *this;}
     ///@}
   private:
 
-    InvalidParameterProblem m_problem;
+    InvalidParameterProblem m_problem{InvalidParameterProblem::NOT_SET};
     bool m_problemHasBeenSet = false;
   };
 

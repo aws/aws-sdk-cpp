@@ -18,15 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-PushConfig::PushConfig() : 
-    m_abortConfigHasBeenSet(false),
-    m_rolloutConfigHasBeenSet(false),
-    m_timeoutConfigHasBeenSet(false)
-{
-}
-
 PushConfig::PushConfig(JsonView jsonValue)
-  : PushConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PushConfig& PushConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AbortConfig"))
   {
     m_abortConfig = jsonValue.GetObject("AbortConfig");
-
     m_abortConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RolloutConfig"))
   {
     m_rolloutConfig = jsonValue.GetObject("RolloutConfig");
-
     m_rolloutConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeoutConfig"))
   {
     m_timeoutConfig = jsonValue.GetObject("TimeoutConfig");
-
     m_timeoutConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

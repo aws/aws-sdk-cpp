@@ -25,7 +25,7 @@ namespace Model
   class GetSnapshotBlockRequest : public EBSRequest
   {
   public:
-    AWS_EBS_API GetSnapshotBlockRequest();
+    AWS_EBS_API GetSnapshotBlockRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * 
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline GetSnapshotBlockRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline GetSnapshotBlockRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline GetSnapshotBlockRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    GetSnapshotBlockRequest& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,7 +64,7 @@ namespace Model
      * size (logical offset of data/<code>524288</code>). The logical offset of the
      * data must be <code>512</code> KiB aligned.</p>
      */
-    inline int GetBlockIndex() const{ return m_blockIndex; }
+    inline int GetBlockIndex() const { return m_blockIndex; }
     inline bool BlockIndexHasBeenSet() const { return m_blockIndexHasBeenSet; }
     inline void SetBlockIndex(int value) { m_blockIndexHasBeenSet = true; m_blockIndex = value; }
     inline GetSnapshotBlockRequest& WithBlockIndex(int value) { SetBlockIndex(value); return *this;}
@@ -78,21 +76,19 @@ namespace Model
      * <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
      * <code>ListSnapshotBlocks</code> operations.</p>
      */
-    inline const Aws::String& GetBlockToken() const{ return m_blockToken; }
+    inline const Aws::String& GetBlockToken() const { return m_blockToken; }
     inline bool BlockTokenHasBeenSet() const { return m_blockTokenHasBeenSet; }
-    inline void SetBlockToken(const Aws::String& value) { m_blockTokenHasBeenSet = true; m_blockToken = value; }
-    inline void SetBlockToken(Aws::String&& value) { m_blockTokenHasBeenSet = true; m_blockToken = std::move(value); }
-    inline void SetBlockToken(const char* value) { m_blockTokenHasBeenSet = true; m_blockToken.assign(value); }
-    inline GetSnapshotBlockRequest& WithBlockToken(const Aws::String& value) { SetBlockToken(value); return *this;}
-    inline GetSnapshotBlockRequest& WithBlockToken(Aws::String&& value) { SetBlockToken(std::move(value)); return *this;}
-    inline GetSnapshotBlockRequest& WithBlockToken(const char* value) { SetBlockToken(value); return *this;}
+    template<typename BlockTokenT = Aws::String>
+    void SetBlockToken(BlockTokenT&& value) { m_blockTokenHasBeenSet = true; m_blockToken = std::forward<BlockTokenT>(value); }
+    template<typename BlockTokenT = Aws::String>
+    GetSnapshotBlockRequest& WithBlockToken(BlockTokenT&& value) { SetBlockToken(std::forward<BlockTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    int m_blockIndex;
+    int m_blockIndex{0};
     bool m_blockIndexHasBeenSet = false;
 
     Aws::String m_blockToken;

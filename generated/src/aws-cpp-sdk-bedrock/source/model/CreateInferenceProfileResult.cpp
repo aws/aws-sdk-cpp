@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateInferenceProfileResult::CreateInferenceProfileResult() : 
-    m_status(InferenceProfileStatus::NOT_SET)
-{
-}
-
 CreateInferenceProfileResult::CreateInferenceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateInferenceProfileResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CreateInferenceProfileResult& CreateInferenceProfileResult::operator =(const Aws
   if(jsonValue.ValueExists("inferenceProfileArn"))
   {
     m_inferenceProfileArn = jsonValue.GetString("inferenceProfileArn");
-
+    m_inferenceProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = InferenceProfileStatusMapper::GetInferenceProfileStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

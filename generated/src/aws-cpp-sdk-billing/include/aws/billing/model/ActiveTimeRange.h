@@ -31,7 +31,7 @@ namespace Model
   class ActiveTimeRange
   {
   public:
-    AWS_BILLING_API ActiveTimeRange();
+    AWS_BILLING_API ActiveTimeRange() = default;
     AWS_BILLING_API ActiveTimeRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLING_API ActiveTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,31 +41,31 @@ namespace Model
     /**
      * <p>The inclusive time range start date.</p>
      */
-    inline const Aws::Utils::DateTime& GetActiveAfterInclusive() const{ return m_activeAfterInclusive; }
+    inline const Aws::Utils::DateTime& GetActiveAfterInclusive() const { return m_activeAfterInclusive; }
     inline bool ActiveAfterInclusiveHasBeenSet() const { return m_activeAfterInclusiveHasBeenSet; }
-    inline void SetActiveAfterInclusive(const Aws::Utils::DateTime& value) { m_activeAfterInclusiveHasBeenSet = true; m_activeAfterInclusive = value; }
-    inline void SetActiveAfterInclusive(Aws::Utils::DateTime&& value) { m_activeAfterInclusiveHasBeenSet = true; m_activeAfterInclusive = std::move(value); }
-    inline ActiveTimeRange& WithActiveAfterInclusive(const Aws::Utils::DateTime& value) { SetActiveAfterInclusive(value); return *this;}
-    inline ActiveTimeRange& WithActiveAfterInclusive(Aws::Utils::DateTime&& value) { SetActiveAfterInclusive(std::move(value)); return *this;}
+    template<typename ActiveAfterInclusiveT = Aws::Utils::DateTime>
+    void SetActiveAfterInclusive(ActiveAfterInclusiveT&& value) { m_activeAfterInclusiveHasBeenSet = true; m_activeAfterInclusive = std::forward<ActiveAfterInclusiveT>(value); }
+    template<typename ActiveAfterInclusiveT = Aws::Utils::DateTime>
+    ActiveTimeRange& WithActiveAfterInclusive(ActiveAfterInclusiveT&& value) { SetActiveAfterInclusive(std::forward<ActiveAfterInclusiveT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The inclusive time range end date. </p>
      */
-    inline const Aws::Utils::DateTime& GetActiveBeforeInclusive() const{ return m_activeBeforeInclusive; }
+    inline const Aws::Utils::DateTime& GetActiveBeforeInclusive() const { return m_activeBeforeInclusive; }
     inline bool ActiveBeforeInclusiveHasBeenSet() const { return m_activeBeforeInclusiveHasBeenSet; }
-    inline void SetActiveBeforeInclusive(const Aws::Utils::DateTime& value) { m_activeBeforeInclusiveHasBeenSet = true; m_activeBeforeInclusive = value; }
-    inline void SetActiveBeforeInclusive(Aws::Utils::DateTime&& value) { m_activeBeforeInclusiveHasBeenSet = true; m_activeBeforeInclusive = std::move(value); }
-    inline ActiveTimeRange& WithActiveBeforeInclusive(const Aws::Utils::DateTime& value) { SetActiveBeforeInclusive(value); return *this;}
-    inline ActiveTimeRange& WithActiveBeforeInclusive(Aws::Utils::DateTime&& value) { SetActiveBeforeInclusive(std::move(value)); return *this;}
+    template<typename ActiveBeforeInclusiveT = Aws::Utils::DateTime>
+    void SetActiveBeforeInclusive(ActiveBeforeInclusiveT&& value) { m_activeBeforeInclusiveHasBeenSet = true; m_activeBeforeInclusive = std::forward<ActiveBeforeInclusiveT>(value); }
+    template<typename ActiveBeforeInclusiveT = Aws::Utils::DateTime>
+    ActiveTimeRange& WithActiveBeforeInclusive(ActiveBeforeInclusiveT&& value) { SetActiveBeforeInclusive(std::forward<ActiveBeforeInclusiveT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_activeAfterInclusive;
+    Aws::Utils::DateTime m_activeAfterInclusive{};
     bool m_activeAfterInclusiveHasBeenSet = false;
 
-    Aws::Utils::DateTime m_activeBeforeInclusive;
+    Aws::Utils::DateTime m_activeBeforeInclusive{};
     bool m_activeBeforeInclusiveHasBeenSet = false;
   };
 

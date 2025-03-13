@@ -12,29 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMaintenanceWindowTaskRequest::UpdateMaintenanceWindowTaskRequest() : 
-    m_windowIdHasBeenSet(false),
-    m_windowTaskIdHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_taskParametersHasBeenSet(false),
-    m_taskInvocationParametersHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_replace(false),
-    m_replaceHasBeenSet(false),
-    m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET),
-    m_cutoffBehaviorHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMaintenanceWindowTaskRequest::SerializePayload() const
 {
   JsonValue payload;

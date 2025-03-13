@@ -56,7 +56,7 @@ namespace Model
   class ChallengeAction
   {
   public:
-    AWS_WAFV2_API ChallengeAction();
+    AWS_WAFV2_API ChallengeAction() = default;
     AWS_WAFV2_API ChallengeAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API ChallengeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -70,12 +70,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
      * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
      */
-    inline const CustomRequestHandling& GetCustomRequestHandling() const{ return m_customRequestHandling; }
+    inline const CustomRequestHandling& GetCustomRequestHandling() const { return m_customRequestHandling; }
     inline bool CustomRequestHandlingHasBeenSet() const { return m_customRequestHandlingHasBeenSet; }
-    inline void SetCustomRequestHandling(const CustomRequestHandling& value) { m_customRequestHandlingHasBeenSet = true; m_customRequestHandling = value; }
-    inline void SetCustomRequestHandling(CustomRequestHandling&& value) { m_customRequestHandlingHasBeenSet = true; m_customRequestHandling = std::move(value); }
-    inline ChallengeAction& WithCustomRequestHandling(const CustomRequestHandling& value) { SetCustomRequestHandling(value); return *this;}
-    inline ChallengeAction& WithCustomRequestHandling(CustomRequestHandling&& value) { SetCustomRequestHandling(std::move(value)); return *this;}
+    template<typename CustomRequestHandlingT = CustomRequestHandling>
+    void SetCustomRequestHandling(CustomRequestHandlingT&& value) { m_customRequestHandlingHasBeenSet = true; m_customRequestHandling = std::forward<CustomRequestHandlingT>(value); }
+    template<typename CustomRequestHandlingT = CustomRequestHandling>
+    ChallengeAction& WithCustomRequestHandling(CustomRequestHandlingT&& value) { SetCustomRequestHandling(std::forward<CustomRequestHandlingT>(value)); return *this;}
     ///@}
   private:
 

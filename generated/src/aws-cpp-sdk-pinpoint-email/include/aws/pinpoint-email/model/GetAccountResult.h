@@ -34,7 +34,7 @@ namespace Model
   class GetAccountResult
   {
   public:
-    AWS_PINPOINTEMAIL_API GetAccountResult();
+    AWS_PINPOINTEMAIL_API GetAccountResult() = default;
     AWS_PINPOINTEMAIL_API GetAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTEMAIL_API GetAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,11 +44,11 @@ namespace Model
      * <p>An object that contains information about the per-day and per-second sending
      * limits for your Amazon Pinpoint account in the current AWS Region.</p>
      */
-    inline const SendQuota& GetSendQuota() const{ return m_sendQuota; }
-    inline void SetSendQuota(const SendQuota& value) { m_sendQuota = value; }
-    inline void SetSendQuota(SendQuota&& value) { m_sendQuota = std::move(value); }
-    inline GetAccountResult& WithSendQuota(const SendQuota& value) { SetSendQuota(value); return *this;}
-    inline GetAccountResult& WithSendQuota(SendQuota&& value) { SetSendQuota(std::move(value)); return *this;}
+    inline const SendQuota& GetSendQuota() const { return m_sendQuota; }
+    template<typename SendQuotaT = SendQuota>
+    void SetSendQuota(SendQuotaT&& value) { m_sendQuotaHasBeenSet = true; m_sendQuota = std::forward<SendQuotaT>(value); }
+    template<typename SendQuotaT = SendQuota>
+    GetAccountResult& WithSendQuota(SendQuotaT&& value) { SetSendQuota(std::forward<SendQuotaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,8 +56,8 @@ namespace Model
      * <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint
      * account in the current AWS Region.</p>
      */
-    inline bool GetSendingEnabled() const{ return m_sendingEnabled; }
-    inline void SetSendingEnabled(bool value) { m_sendingEnabled = value; }
+    inline bool GetSendingEnabled() const { return m_sendingEnabled; }
+    inline void SetSendingEnabled(bool value) { m_sendingEnabledHasBeenSet = true; m_sendingEnabled = value; }
     inline GetAccountResult& WithSendingEnabled(bool value) { SetSendingEnabled(value); return *this;}
     ///@}
 
@@ -66,8 +66,8 @@ namespace Model
      * <p>Indicates whether or not the automatic warm-up feature is enabled for
      * dedicated IP addresses that are associated with your account.</p>
      */
-    inline bool GetDedicatedIpAutoWarmupEnabled() const{ return m_dedicatedIpAutoWarmupEnabled; }
-    inline void SetDedicatedIpAutoWarmupEnabled(bool value) { m_dedicatedIpAutoWarmupEnabled = value; }
+    inline bool GetDedicatedIpAutoWarmupEnabled() const { return m_dedicatedIpAutoWarmupEnabled; }
+    inline void SetDedicatedIpAutoWarmupEnabled(bool value) { m_dedicatedIpAutoWarmupEnabledHasBeenSet = true; m_dedicatedIpAutoWarmupEnabled = value; }
     inline GetAccountResult& WithDedicatedIpAutoWarmupEnabled(bool value) { SetDedicatedIpAutoWarmupEnabled(value); return *this;}
     ///@}
 
@@ -83,13 +83,11 @@ namespace Model
      * your account. When you correct the issue, you can contact us and request that
      * your account's ability to send email is resumed.</p> </li> </ul>
      */
-    inline const Aws::String& GetEnforcementStatus() const{ return m_enforcementStatus; }
-    inline void SetEnforcementStatus(const Aws::String& value) { m_enforcementStatus = value; }
-    inline void SetEnforcementStatus(Aws::String&& value) { m_enforcementStatus = std::move(value); }
-    inline void SetEnforcementStatus(const char* value) { m_enforcementStatus.assign(value); }
-    inline GetAccountResult& WithEnforcementStatus(const Aws::String& value) { SetEnforcementStatus(value); return *this;}
-    inline GetAccountResult& WithEnforcementStatus(Aws::String&& value) { SetEnforcementStatus(std::move(value)); return *this;}
-    inline GetAccountResult& WithEnforcementStatus(const char* value) { SetEnforcementStatus(value); return *this;}
+    inline const Aws::String& GetEnforcementStatus() const { return m_enforcementStatus; }
+    template<typename EnforcementStatusT = Aws::String>
+    void SetEnforcementStatus(EnforcementStatusT&& value) { m_enforcementStatusHasBeenSet = true; m_enforcementStatus = std::forward<EnforcementStatusT>(value); }
+    template<typename EnforcementStatusT = Aws::String>
+    GetAccountResult& WithEnforcementStatus(EnforcementStatusT&& value) { SetEnforcementStatus(std::forward<EnforcementStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,34 +103,38 @@ namespace Model
      * quota and maximum sending rate for your account vary based on your specific use
      * case.</p>
      */
-    inline bool GetProductionAccessEnabled() const{ return m_productionAccessEnabled; }
-    inline void SetProductionAccessEnabled(bool value) { m_productionAccessEnabled = value; }
+    inline bool GetProductionAccessEnabled() const { return m_productionAccessEnabled; }
+    inline void SetProductionAccessEnabled(bool value) { m_productionAccessEnabledHasBeenSet = true; m_productionAccessEnabled = value; }
     inline GetAccountResult& WithProductionAccessEnabled(bool value) { SetProductionAccessEnabled(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccountResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SendQuota m_sendQuota;
+    bool m_sendQuotaHasBeenSet = false;
 
-    bool m_sendingEnabled;
+    bool m_sendingEnabled{false};
+    bool m_sendingEnabledHasBeenSet = false;
 
-    bool m_dedicatedIpAutoWarmupEnabled;
+    bool m_dedicatedIpAutoWarmupEnabled{false};
+    bool m_dedicatedIpAutoWarmupEnabledHasBeenSet = false;
 
     Aws::String m_enforcementStatus;
+    bool m_enforcementStatusHasBeenSet = false;
 
-    bool m_productionAccessEnabled;
+    bool m_productionAccessEnabled{false};
+    bool m_productionAccessEnabledHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

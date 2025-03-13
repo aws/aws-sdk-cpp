@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AssociatedTargetNetwork::AssociatedTargetNetwork() : 
-    m_networkIdHasBeenSet(false),
-    m_networkType(AssociatedNetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false)
-{
-}
-
 AssociatedTargetNetwork::AssociatedTargetNetwork(const XmlNode& xmlNode)
-  : AssociatedTargetNetwork()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ AssociatedTargetNetwork& AssociatedTargetNetwork::operator =(const XmlNode& xmlN
     {
       m_networkId = Aws::Utils::Xml::DecodeEscapedXmlText(networkIdNode.GetText());
       m_networkIdHasBeenSet = true;
+       m_networkIdHasBeenSet = true;
     }
     XmlNode networkTypeNode = resultNode.FirstChild("networkType");
     if(!networkTypeNode.IsNull())
     {
-      m_networkType = AssociatedNetworkTypeMapper::GetAssociatedNetworkTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText()).c_str()).c_str());
+      m_networkType = AssociatedNetworkTypeMapper::GetAssociatedNetworkTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText()).c_str()));
       m_networkTypeHasBeenSet = true;
+       m_networkTypeHasBeenSet = true;
     }
   }
 

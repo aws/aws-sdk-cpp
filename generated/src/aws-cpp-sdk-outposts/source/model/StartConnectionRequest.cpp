@@ -12,15 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartConnectionRequest::StartConnectionRequest() : 
-    m_deviceSerialNumberHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_clientPublicKeyHasBeenSet(false),
-    m_networkInterfaceDeviceIndex(0),
-    m_networkInterfaceDeviceIndexHasBeenSet(false)
-{
-}
-
 Aws::String StartConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

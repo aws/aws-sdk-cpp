@@ -23,7 +23,7 @@ namespace Model
   class DescribeRegistrationAttachmentsRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationAttachmentsRequest();
+    AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationAttachmentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,29 +41,28 @@ namespace Model
      * <p>The unique identifier of registration attachments to find. This is an array
      * of <b>RegistrationAttachmentId</b>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRegistrationAttachmentIds() const{ return m_registrationAttachmentIds; }
+    inline const Aws::Vector<Aws::String>& GetRegistrationAttachmentIds() const { return m_registrationAttachmentIds; }
     inline bool RegistrationAttachmentIdsHasBeenSet() const { return m_registrationAttachmentIdsHasBeenSet; }
-    inline void SetRegistrationAttachmentIds(const Aws::Vector<Aws::String>& value) { m_registrationAttachmentIdsHasBeenSet = true; m_registrationAttachmentIds = value; }
-    inline void SetRegistrationAttachmentIds(Aws::Vector<Aws::String>&& value) { m_registrationAttachmentIdsHasBeenSet = true; m_registrationAttachmentIds = std::move(value); }
-    inline DescribeRegistrationAttachmentsRequest& WithRegistrationAttachmentIds(const Aws::Vector<Aws::String>& value) { SetRegistrationAttachmentIds(value); return *this;}
-    inline DescribeRegistrationAttachmentsRequest& WithRegistrationAttachmentIds(Aws::Vector<Aws::String>&& value) { SetRegistrationAttachmentIds(std::move(value)); return *this;}
-    inline DescribeRegistrationAttachmentsRequest& AddRegistrationAttachmentIds(const Aws::String& value) { m_registrationAttachmentIdsHasBeenSet = true; m_registrationAttachmentIds.push_back(value); return *this; }
-    inline DescribeRegistrationAttachmentsRequest& AddRegistrationAttachmentIds(Aws::String&& value) { m_registrationAttachmentIdsHasBeenSet = true; m_registrationAttachmentIds.push_back(std::move(value)); return *this; }
-    inline DescribeRegistrationAttachmentsRequest& AddRegistrationAttachmentIds(const char* value) { m_registrationAttachmentIdsHasBeenSet = true; m_registrationAttachmentIds.push_back(value); return *this; }
+    template<typename RegistrationAttachmentIdsT = Aws::Vector<Aws::String>>
+    void SetRegistrationAttachmentIds(RegistrationAttachmentIdsT&& value) { m_registrationAttachmentIdsHasBeenSet = true; m_registrationAttachmentIds = std::forward<RegistrationAttachmentIdsT>(value); }
+    template<typename RegistrationAttachmentIdsT = Aws::Vector<Aws::String>>
+    DescribeRegistrationAttachmentsRequest& WithRegistrationAttachmentIds(RegistrationAttachmentIdsT&& value) { SetRegistrationAttachmentIds(std::forward<RegistrationAttachmentIdsT>(value)); return *this;}
+    template<typename RegistrationAttachmentIdsT = Aws::String>
+    DescribeRegistrationAttachmentsRequest& AddRegistrationAttachmentIds(RegistrationAttachmentIdsT&& value) { m_registrationAttachmentIdsHasBeenSet = true; m_registrationAttachmentIds.emplace_back(std::forward<RegistrationAttachmentIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An array of RegistrationAttachmentFilter objects to filter the results.</p>
      */
-    inline const Aws::Vector<RegistrationAttachmentFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<RegistrationAttachmentFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<RegistrationAttachmentFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<RegistrationAttachmentFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeRegistrationAttachmentsRequest& WithFilters(const Aws::Vector<RegistrationAttachmentFilter>& value) { SetFilters(value); return *this;}
-    inline DescribeRegistrationAttachmentsRequest& WithFilters(Aws::Vector<RegistrationAttachmentFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeRegistrationAttachmentsRequest& AddFilters(const RegistrationAttachmentFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeRegistrationAttachmentsRequest& AddFilters(RegistrationAttachmentFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<RegistrationAttachmentFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<RegistrationAttachmentFilter>>
+    DescribeRegistrationAttachmentsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = RegistrationAttachmentFilter>
+    DescribeRegistrationAttachmentsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,21 +70,19 @@ namespace Model
      * <p>The token to be used for the next set of paginated results. You don't need to
      * supply a value for this field in the initial request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeRegistrationAttachmentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeRegistrationAttachmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeRegistrationAttachmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeRegistrationAttachmentsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per each request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeRegistrationAttachmentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -101,7 +98,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

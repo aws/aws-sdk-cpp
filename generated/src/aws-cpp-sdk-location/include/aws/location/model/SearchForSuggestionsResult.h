@@ -33,7 +33,7 @@ namespace Model
   class SearchForSuggestionsResult
   {
   public:
-    AWS_LOCATIONSERVICE_API SearchForSuggestionsResult();
+    AWS_LOCATIONSERVICE_API SearchForSuggestionsResult() = default;
     AWS_LOCATIONSERVICE_API SearchForSuggestionsResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API SearchForSuggestionsResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The text of the place suggestion, typically formatted as an address
      * string.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline SearchForSuggestionsResult& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline SearchForSuggestionsResult& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline SearchForSuggestionsResult& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    SearchForSuggestionsResult& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE
      * as data providers.</p> 
      */
-    inline const Aws::String& GetPlaceId() const{ return m_placeId; }
+    inline const Aws::String& GetPlaceId() const { return m_placeId; }
     inline bool PlaceIdHasBeenSet() const { return m_placeIdHasBeenSet; }
-    inline void SetPlaceId(const Aws::String& value) { m_placeIdHasBeenSet = true; m_placeId = value; }
-    inline void SetPlaceId(Aws::String&& value) { m_placeIdHasBeenSet = true; m_placeId = std::move(value); }
-    inline void SetPlaceId(const char* value) { m_placeIdHasBeenSet = true; m_placeId.assign(value); }
-    inline SearchForSuggestionsResult& WithPlaceId(const Aws::String& value) { SetPlaceId(value); return *this;}
-    inline SearchForSuggestionsResult& WithPlaceId(Aws::String&& value) { SetPlaceId(std::move(value)); return *this;}
-    inline SearchForSuggestionsResult& WithPlaceId(const char* value) { SetPlaceId(value); return *this;}
+    template<typename PlaceIdT = Aws::String>
+    void SetPlaceId(PlaceIdT&& value) { m_placeIdHasBeenSet = true; m_placeId = std::forward<PlaceIdT>(value); }
+    template<typename PlaceIdT = Aws::String>
+    SearchForSuggestionsResult& WithPlaceId(PlaceIdT&& value) { SetPlaceId(std::forward<PlaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,15 +79,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
      * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCategories() const{ return m_categories; }
+    inline const Aws::Vector<Aws::String>& GetCategories() const { return m_categories; }
     inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
-    inline void SetCategories(const Aws::Vector<Aws::String>& value) { m_categoriesHasBeenSet = true; m_categories = value; }
-    inline void SetCategories(Aws::Vector<Aws::String>&& value) { m_categoriesHasBeenSet = true; m_categories = std::move(value); }
-    inline SearchForSuggestionsResult& WithCategories(const Aws::Vector<Aws::String>& value) { SetCategories(value); return *this;}
-    inline SearchForSuggestionsResult& WithCategories(Aws::Vector<Aws::String>&& value) { SetCategories(std::move(value)); return *this;}
-    inline SearchForSuggestionsResult& AddCategories(const Aws::String& value) { m_categoriesHasBeenSet = true; m_categories.push_back(value); return *this; }
-    inline SearchForSuggestionsResult& AddCategories(Aws::String&& value) { m_categoriesHasBeenSet = true; m_categories.push_back(std::move(value)); return *this; }
-    inline SearchForSuggestionsResult& AddCategories(const char* value) { m_categoriesHasBeenSet = true; m_categories.push_back(value); return *this; }
+    template<typename CategoriesT = Aws::Vector<Aws::String>>
+    void SetCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories = std::forward<CategoriesT>(value); }
+    template<typename CategoriesT = Aws::Vector<Aws::String>>
+    SearchForSuggestionsResult& WithCategories(CategoriesT&& value) { SetCategories(std::forward<CategoriesT>(value)); return *this;}
+    template<typename CategoriesT = Aws::String>
+    SearchForSuggestionsResult& AddCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories.emplace_back(std::forward<CategoriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,15 +94,14 @@ namespace Model
      * <p>Categories from the data provider that describe the Place that are not mapped
      * to any Amazon Location categories.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupplementalCategories() const{ return m_supplementalCategories; }
+    inline const Aws::Vector<Aws::String>& GetSupplementalCategories() const { return m_supplementalCategories; }
     inline bool SupplementalCategoriesHasBeenSet() const { return m_supplementalCategoriesHasBeenSet; }
-    inline void SetSupplementalCategories(const Aws::Vector<Aws::String>& value) { m_supplementalCategoriesHasBeenSet = true; m_supplementalCategories = value; }
-    inline void SetSupplementalCategories(Aws::Vector<Aws::String>&& value) { m_supplementalCategoriesHasBeenSet = true; m_supplementalCategories = std::move(value); }
-    inline SearchForSuggestionsResult& WithSupplementalCategories(const Aws::Vector<Aws::String>& value) { SetSupplementalCategories(value); return *this;}
-    inline SearchForSuggestionsResult& WithSupplementalCategories(Aws::Vector<Aws::String>&& value) { SetSupplementalCategories(std::move(value)); return *this;}
-    inline SearchForSuggestionsResult& AddSupplementalCategories(const Aws::String& value) { m_supplementalCategoriesHasBeenSet = true; m_supplementalCategories.push_back(value); return *this; }
-    inline SearchForSuggestionsResult& AddSupplementalCategories(Aws::String&& value) { m_supplementalCategoriesHasBeenSet = true; m_supplementalCategories.push_back(std::move(value)); return *this; }
-    inline SearchForSuggestionsResult& AddSupplementalCategories(const char* value) { m_supplementalCategoriesHasBeenSet = true; m_supplementalCategories.push_back(value); return *this; }
+    template<typename SupplementalCategoriesT = Aws::Vector<Aws::String>>
+    void SetSupplementalCategories(SupplementalCategoriesT&& value) { m_supplementalCategoriesHasBeenSet = true; m_supplementalCategories = std::forward<SupplementalCategoriesT>(value); }
+    template<typename SupplementalCategoriesT = Aws::Vector<Aws::String>>
+    SearchForSuggestionsResult& WithSupplementalCategories(SupplementalCategoriesT&& value) { SetSupplementalCategories(std::forward<SupplementalCategoriesT>(value)); return *this;}
+    template<typename SupplementalCategoriesT = Aws::String>
+    SearchForSuggestionsResult& AddSupplementalCategories(SupplementalCategoriesT&& value) { m_supplementalCategoriesHasBeenSet = true; m_supplementalCategories.emplace_back(std::forward<SupplementalCategoriesT>(value)); return *this; }
     ///@}
   private:
 

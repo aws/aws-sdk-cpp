@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactFlowVersionSummary::ContactFlowVersionSummary() : 
-    m_arnHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
-{
-}
-
 ContactFlowVersionSummary::ContactFlowVersionSummary(JsonView jsonValue)
-  : ContactFlowVersionSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ContactFlowVersionSummary& ContactFlowVersionSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionDescription"))
   {
     m_versionDescription = jsonValue.GetString("VersionDescription");
-
     m_versionDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInt64("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-MailFromAttributes::MailFromAttributes() : 
-    m_mailFromDomainHasBeenSet(false),
-    m_mailFromDomainStatus(MailFromDomainStatus::NOT_SET),
-    m_mailFromDomainStatusHasBeenSet(false),
-    m_behaviorOnMxFailure(BehaviorOnMxFailure::NOT_SET),
-    m_behaviorOnMxFailureHasBeenSet(false)
-{
-}
-
 MailFromAttributes::MailFromAttributes(JsonView jsonValue)
-  : MailFromAttributes()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ MailFromAttributes& MailFromAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MailFromDomain"))
   {
     m_mailFromDomain = jsonValue.GetString("MailFromDomain");
-
     m_mailFromDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MailFromDomainStatus"))
   {
     m_mailFromDomainStatus = MailFromDomainStatusMapper::GetMailFromDomainStatusForName(jsonValue.GetString("MailFromDomainStatus"));
-
     m_mailFromDomainStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BehaviorOnMxFailure"))
   {
     m_behaviorOnMxFailure = BehaviorOnMxFailureMapper::GetBehaviorOnMxFailureForName(jsonValue.GetString("BehaviorOnMxFailure"));
-
     m_behaviorOnMxFailureHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-WaterfallChartGroupColorConfiguration::WaterfallChartGroupColorConfiguration() : 
-    m_positiveBarColorHasBeenSet(false),
-    m_negativeBarColorHasBeenSet(false),
-    m_totalBarColorHasBeenSet(false)
-{
-}
-
 WaterfallChartGroupColorConfiguration::WaterfallChartGroupColorConfiguration(JsonView jsonValue)
-  : WaterfallChartGroupColorConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ WaterfallChartGroupColorConfiguration& WaterfallChartGroupColorConfiguration::op
   if(jsonValue.ValueExists("PositiveBarColor"))
   {
     m_positiveBarColor = jsonValue.GetString("PositiveBarColor");
-
     m_positiveBarColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NegativeBarColor"))
   {
     m_negativeBarColor = jsonValue.GetString("NegativeBarColor");
-
     m_negativeBarColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalBarColor"))
   {
     m_totalBarColor = jsonValue.GetString("TotalBarColor");
-
     m_totalBarColorHasBeenSet = true;
   }
-
   return *this;
 }
 

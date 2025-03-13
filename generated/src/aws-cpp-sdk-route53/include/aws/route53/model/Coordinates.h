@@ -31,7 +31,7 @@ namespace Model
   class Coordinates
   {
   public:
-    AWS_ROUTE53_API Coordinates();
+    AWS_ROUTE53_API Coordinates() = default;
     AWS_ROUTE53_API Coordinates(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API Coordinates& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
      * <p> Specifies a coordinate of the north–south position of a geographic point on
      * the surface of the Earth (-90 - 90). </p>
      */
-    inline const Aws::String& GetLatitude() const{ return m_latitude; }
+    inline const Aws::String& GetLatitude() const { return m_latitude; }
     inline bool LatitudeHasBeenSet() const { return m_latitudeHasBeenSet; }
-    inline void SetLatitude(const Aws::String& value) { m_latitudeHasBeenSet = true; m_latitude = value; }
-    inline void SetLatitude(Aws::String&& value) { m_latitudeHasBeenSet = true; m_latitude = std::move(value); }
-    inline void SetLatitude(const char* value) { m_latitudeHasBeenSet = true; m_latitude.assign(value); }
-    inline Coordinates& WithLatitude(const Aws::String& value) { SetLatitude(value); return *this;}
-    inline Coordinates& WithLatitude(Aws::String&& value) { SetLatitude(std::move(value)); return *this;}
-    inline Coordinates& WithLatitude(const char* value) { SetLatitude(value); return *this;}
+    template<typename LatitudeT = Aws::String>
+    void SetLatitude(LatitudeT&& value) { m_latitudeHasBeenSet = true; m_latitude = std::forward<LatitudeT>(value); }
+    template<typename LatitudeT = Aws::String>
+    Coordinates& WithLatitude(LatitudeT&& value) { SetLatitude(std::forward<LatitudeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p> Specifies a coordinate of the east–west position of a geographic point on
      * the surface of the Earth (-180 - 180). </p>
      */
-    inline const Aws::String& GetLongitude() const{ return m_longitude; }
+    inline const Aws::String& GetLongitude() const { return m_longitude; }
     inline bool LongitudeHasBeenSet() const { return m_longitudeHasBeenSet; }
-    inline void SetLongitude(const Aws::String& value) { m_longitudeHasBeenSet = true; m_longitude = value; }
-    inline void SetLongitude(Aws::String&& value) { m_longitudeHasBeenSet = true; m_longitude = std::move(value); }
-    inline void SetLongitude(const char* value) { m_longitudeHasBeenSet = true; m_longitude.assign(value); }
-    inline Coordinates& WithLongitude(const Aws::String& value) { SetLongitude(value); return *this;}
-    inline Coordinates& WithLongitude(Aws::String&& value) { SetLongitude(std::move(value)); return *this;}
-    inline Coordinates& WithLongitude(const char* value) { SetLongitude(value); return *this;}
+    template<typename LongitudeT = Aws::String>
+    void SetLongitude(LongitudeT&& value) { m_longitudeHasBeenSet = true; m_longitude = std::forward<LongitudeT>(value); }
+    template<typename LongitudeT = Aws::String>
+    Coordinates& WithLongitude(LongitudeT&& value) { SetLongitude(std::forward<LongitudeT>(value)); return *this;}
     ///@}
   private:
 

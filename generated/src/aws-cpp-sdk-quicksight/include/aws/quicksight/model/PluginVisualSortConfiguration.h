@@ -32,7 +32,7 @@ namespace Model
   class PluginVisualSortConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API PluginVisualSortConfiguration();
+    AWS_QUICKSIGHT_API PluginVisualSortConfiguration() = default;
     AWS_QUICKSIGHT_API PluginVisualSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PluginVisualSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The table query sorting options for the plugin visual.</p>
      */
-    inline const PluginVisualTableQuerySort& GetPluginVisualTableQuerySort() const{ return m_pluginVisualTableQuerySort; }
+    inline const PluginVisualTableQuerySort& GetPluginVisualTableQuerySort() const { return m_pluginVisualTableQuerySort; }
     inline bool PluginVisualTableQuerySortHasBeenSet() const { return m_pluginVisualTableQuerySortHasBeenSet; }
-    inline void SetPluginVisualTableQuerySort(const PluginVisualTableQuerySort& value) { m_pluginVisualTableQuerySortHasBeenSet = true; m_pluginVisualTableQuerySort = value; }
-    inline void SetPluginVisualTableQuerySort(PluginVisualTableQuerySort&& value) { m_pluginVisualTableQuerySortHasBeenSet = true; m_pluginVisualTableQuerySort = std::move(value); }
-    inline PluginVisualSortConfiguration& WithPluginVisualTableQuerySort(const PluginVisualTableQuerySort& value) { SetPluginVisualTableQuerySort(value); return *this;}
-    inline PluginVisualSortConfiguration& WithPluginVisualTableQuerySort(PluginVisualTableQuerySort&& value) { SetPluginVisualTableQuerySort(std::move(value)); return *this;}
+    template<typename PluginVisualTableQuerySortT = PluginVisualTableQuerySort>
+    void SetPluginVisualTableQuerySort(PluginVisualTableQuerySortT&& value) { m_pluginVisualTableQuerySortHasBeenSet = true; m_pluginVisualTableQuerySort = std::forward<PluginVisualTableQuerySortT>(value); }
+    template<typename PluginVisualTableQuerySortT = PluginVisualTableQuerySort>
+    PluginVisualSortConfiguration& WithPluginVisualTableQuerySort(PluginVisualTableQuerySortT&& value) { SetPluginVisualTableQuerySort(std::forward<PluginVisualTableQuerySortT>(value)); return *this;}
     ///@}
   private:
 

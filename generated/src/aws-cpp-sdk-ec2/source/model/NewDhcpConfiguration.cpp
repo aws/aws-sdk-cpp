@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NewDhcpConfiguration::NewDhcpConfiguration() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 NewDhcpConfiguration::NewDhcpConfiguration(const XmlNode& xmlNode)
-  : NewDhcpConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ NewDhcpConfiguration& NewDhcpConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
+       m_keyHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Value");
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("item");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember.GetText());
         valuesMember = valuesMember.NextNode("item");
       }
 
-      m_valuesHasBeenSet = true;
+       m_valuesHasBeenSet = true;
     }
   }
 

@@ -18,17 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-PackageVersionSummary::PackageVersionSummary() : 
-    m_versionHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_status(PackageVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_originHasBeenSet(false)
-{
-}
-
 PackageVersionSummary::PackageVersionSummary(JsonView jsonValue)
-  : PackageVersionSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ PackageVersionSummary& PackageVersionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetString("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = PackageVersionStatusMapper::GetPackageVersionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("origin"))
   {
     m_origin = jsonValue.GetObject("origin");
-
     m_originHasBeenSet = true;
   }
-
   return *this;
 }
 

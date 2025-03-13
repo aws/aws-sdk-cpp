@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-RateIncreaseCriteria::RateIncreaseCriteria() : 
-    m_numberOfNotifiedThings(0),
-    m_numberOfNotifiedThingsHasBeenSet(false),
-    m_numberOfSucceededThings(0),
-    m_numberOfSucceededThingsHasBeenSet(false)
-{
-}
-
 RateIncreaseCriteria::RateIncreaseCriteria(JsonView jsonValue)
-  : RateIncreaseCriteria()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RateIncreaseCriteria& RateIncreaseCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("numberOfNotifiedThings"))
   {
     m_numberOfNotifiedThings = jsonValue.GetInteger("numberOfNotifiedThings");
-
     m_numberOfNotifiedThingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfSucceededThings"))
   {
     m_numberOfSucceededThings = jsonValue.GetInteger("numberOfSucceededThings");
-
     m_numberOfSucceededThingsHasBeenSet = true;
   }
-
   return *this;
 }
 

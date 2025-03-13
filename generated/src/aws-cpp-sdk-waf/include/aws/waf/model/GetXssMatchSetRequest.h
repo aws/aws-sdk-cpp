@@ -24,7 +24,7 @@ namespace Model
   class GetXssMatchSetRequest : public WAFRequest
   {
   public:
-    AWS_WAF_API GetXssMatchSetRequest();
+    AWS_WAF_API GetXssMatchSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * get. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by
      * <a>ListXssMatchSets</a>.</p>
      */
-    inline const Aws::String& GetXssMatchSetId() const{ return m_xssMatchSetId; }
+    inline const Aws::String& GetXssMatchSetId() const { return m_xssMatchSetId; }
     inline bool XssMatchSetIdHasBeenSet() const { return m_xssMatchSetIdHasBeenSet; }
-    inline void SetXssMatchSetId(const Aws::String& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = value; }
-    inline void SetXssMatchSetId(Aws::String&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = std::move(value); }
-    inline void SetXssMatchSetId(const char* value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId.assign(value); }
-    inline GetXssMatchSetRequest& WithXssMatchSetId(const Aws::String& value) { SetXssMatchSetId(value); return *this;}
-    inline GetXssMatchSetRequest& WithXssMatchSetId(Aws::String&& value) { SetXssMatchSetId(std::move(value)); return *this;}
-    inline GetXssMatchSetRequest& WithXssMatchSetId(const char* value) { SetXssMatchSetId(value); return *this;}
+    template<typename XssMatchSetIdT = Aws::String>
+    void SetXssMatchSetId(XssMatchSetIdT&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = std::forward<XssMatchSetIdT>(value); }
+    template<typename XssMatchSetIdT = Aws::String>
+    GetXssMatchSetRequest& WithXssMatchSetId(XssMatchSetIdT&& value) { SetXssMatchSetId(std::forward<XssMatchSetIdT>(value)); return *this;}
     ///@}
   private:
 

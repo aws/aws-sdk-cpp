@@ -18,14 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-OpenSearchNetworkPolicy::OpenSearchNetworkPolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 OpenSearchNetworkPolicy::OpenSearchNetworkPolicy(JsonView jsonValue)
-  : OpenSearchNetworkPolicy()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OpenSearchNetworkPolicy& OpenSearchNetworkPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("policyName"))
   {
     m_policyName = jsonValue.GetString("policyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

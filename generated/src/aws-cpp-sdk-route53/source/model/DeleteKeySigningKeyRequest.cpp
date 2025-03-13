@@ -14,11 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeleteKeySigningKeyRequest::DeleteKeySigningKeyRequest() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
 
 Aws::String DeleteKeySigningKeyRequest::SerializePayload() const
 {

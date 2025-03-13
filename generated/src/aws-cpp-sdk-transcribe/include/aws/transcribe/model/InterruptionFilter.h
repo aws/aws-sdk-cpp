@@ -41,7 +41,7 @@ namespace Model
   class InterruptionFilter
   {
   public:
-    AWS_TRANSCRIBESERVICE_API InterruptionFilter();
+    AWS_TRANSCRIBESERVICE_API InterruptionFilter() = default;
     AWS_TRANSCRIBESERVICE_API InterruptionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API InterruptionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,7 +53,7 @@ namespace Model
      * can flag speech that contains more than 10,000 milliseconds of
      * interruptions.</p>
      */
-    inline long long GetThreshold() const{ return m_threshold; }
+    inline long long GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
     inline void SetThreshold(long long value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline InterruptionFilter& WithThreshold(long long value) { SetThreshold(value); return *this;}
@@ -64,12 +64,10 @@ namespace Model
      * <p>Specify the interrupter that you want to flag. Omitting this parameter is
      * equivalent to specifying both participants.</p>
      */
-    inline const ParticipantRole& GetParticipantRole() const{ return m_participantRole; }
+    inline ParticipantRole GetParticipantRole() const { return m_participantRole; }
     inline bool ParticipantRoleHasBeenSet() const { return m_participantRoleHasBeenSet; }
-    inline void SetParticipantRole(const ParticipantRole& value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
-    inline void SetParticipantRole(ParticipantRole&& value) { m_participantRoleHasBeenSet = true; m_participantRole = std::move(value); }
-    inline InterruptionFilter& WithParticipantRole(const ParticipantRole& value) { SetParticipantRole(value); return *this;}
-    inline InterruptionFilter& WithParticipantRole(ParticipantRole&& value) { SetParticipantRole(std::move(value)); return *this;}
+    inline void SetParticipantRole(ParticipantRole value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
+    inline InterruptionFilter& WithParticipantRole(ParticipantRole value) { SetParticipantRole(value); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,12 @@ namespace Model
      * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
      * during which you want to search for an interruption. See for more detail.</p>
      */
-    inline const AbsoluteTimeRange& GetAbsoluteTimeRange() const{ return m_absoluteTimeRange; }
+    inline const AbsoluteTimeRange& GetAbsoluteTimeRange() const { return m_absoluteTimeRange; }
     inline bool AbsoluteTimeRangeHasBeenSet() const { return m_absoluteTimeRangeHasBeenSet; }
-    inline void SetAbsoluteTimeRange(const AbsoluteTimeRange& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = value; }
-    inline void SetAbsoluteTimeRange(AbsoluteTimeRange&& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = std::move(value); }
-    inline InterruptionFilter& WithAbsoluteTimeRange(const AbsoluteTimeRange& value) { SetAbsoluteTimeRange(value); return *this;}
-    inline InterruptionFilter& WithAbsoluteTimeRange(AbsoluteTimeRange&& value) { SetAbsoluteTimeRange(std::move(value)); return *this;}
+    template<typename AbsoluteTimeRangeT = AbsoluteTimeRange>
+    void SetAbsoluteTimeRange(AbsoluteTimeRangeT&& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = std::forward<AbsoluteTimeRangeT>(value); }
+    template<typename AbsoluteTimeRangeT = AbsoluteTimeRange>
+    InterruptionFilter& WithAbsoluteTimeRange(AbsoluteTimeRangeT&& value) { SetAbsoluteTimeRange(std::forward<AbsoluteTimeRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +88,12 @@ namespace Model
      * <p>Makes it possible to specify a time range (in percentage) in your media file,
      * during which you want to search for an interruption. See for more detail.</p>
      */
-    inline const RelativeTimeRange& GetRelativeTimeRange() const{ return m_relativeTimeRange; }
+    inline const RelativeTimeRange& GetRelativeTimeRange() const { return m_relativeTimeRange; }
     inline bool RelativeTimeRangeHasBeenSet() const { return m_relativeTimeRangeHasBeenSet; }
-    inline void SetRelativeTimeRange(const RelativeTimeRange& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = value; }
-    inline void SetRelativeTimeRange(RelativeTimeRange&& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = std::move(value); }
-    inline InterruptionFilter& WithRelativeTimeRange(const RelativeTimeRange& value) { SetRelativeTimeRange(value); return *this;}
-    inline InterruptionFilter& WithRelativeTimeRange(RelativeTimeRange&& value) { SetRelativeTimeRange(std::move(value)); return *this;}
+    template<typename RelativeTimeRangeT = RelativeTimeRange>
+    void SetRelativeTimeRange(RelativeTimeRangeT&& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = std::forward<RelativeTimeRangeT>(value); }
+    template<typename RelativeTimeRangeT = RelativeTimeRange>
+    InterruptionFilter& WithRelativeTimeRange(RelativeTimeRangeT&& value) { SetRelativeTimeRange(std::forward<RelativeTimeRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,17 +101,17 @@ namespace Model
      * <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions.
      * Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
      */
-    inline bool GetNegate() const{ return m_negate; }
+    inline bool GetNegate() const { return m_negate; }
     inline bool NegateHasBeenSet() const { return m_negateHasBeenSet; }
     inline void SetNegate(bool value) { m_negateHasBeenSet = true; m_negate = value; }
     inline InterruptionFilter& WithNegate(bool value) { SetNegate(value); return *this;}
     ///@}
   private:
 
-    long long m_threshold;
+    long long m_threshold{0};
     bool m_thresholdHasBeenSet = false;
 
-    ParticipantRole m_participantRole;
+    ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
     bool m_participantRoleHasBeenSet = false;
 
     AbsoluteTimeRange m_absoluteTimeRange;
@@ -122,7 +120,7 @@ namespace Model
     RelativeTimeRange m_relativeTimeRange;
     bool m_relativeTimeRangeHasBeenSet = false;
 
-    bool m_negate;
+    bool m_negate{false};
     bool m_negateHasBeenSet = false;
   };
 

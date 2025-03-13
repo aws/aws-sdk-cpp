@@ -36,7 +36,7 @@ namespace Model
   class EnvironmentResponse
   {
   public:
-    AWS_LAMBDA_API EnvironmentResponse();
+    AWS_LAMBDA_API EnvironmentResponse() = default;
     AWS_LAMBDA_API EnvironmentResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API EnvironmentResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,31 +46,28 @@ namespace Model
     /**
      * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const{ return m_variables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const { return m_variables; }
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
-    inline void SetVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_variablesHasBeenSet = true; m_variables = value; }
-    inline void SetVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
-    inline EnvironmentResponse& WithVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetVariables(value); return *this;}
-    inline EnvironmentResponse& WithVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetVariables(std::move(value)); return *this;}
-    inline EnvironmentResponse& AddVariables(const Aws::String& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
-    inline EnvironmentResponse& AddVariables(Aws::String&& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
-    inline EnvironmentResponse& AddVariables(const Aws::String& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
-    inline EnvironmentResponse& AddVariables(Aws::String&& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), std::move(value)); return *this; }
-    inline EnvironmentResponse& AddVariables(const char* key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
-    inline EnvironmentResponse& AddVariables(Aws::String&& key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
-    inline EnvironmentResponse& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
+    template<typename VariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables = std::forward<VariablesT>(value); }
+    template<typename VariablesT = Aws::Map<Aws::String, Aws::String>>
+    EnvironmentResponse& WithVariables(VariablesT&& value) { SetVariables(std::forward<VariablesT>(value)); return *this;}
+    template<typename VariablesKeyT = Aws::String, typename VariablesValueT = Aws::String>
+    EnvironmentResponse& AddVariables(VariablesKeyT&& key, VariablesValueT&& value) {
+      m_variablesHasBeenSet = true; m_variables.emplace(std::forward<VariablesKeyT>(key), std::forward<VariablesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Error messages for environment variables that couldn't be applied.</p>
      */
-    inline const EnvironmentError& GetError() const{ return m_error; }
+    inline const EnvironmentError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const EnvironmentError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(EnvironmentError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline EnvironmentResponse& WithError(const EnvironmentError& value) { SetError(value); return *this;}
-    inline EnvironmentResponse& WithError(EnvironmentError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = EnvironmentError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = EnvironmentError>
+    EnvironmentResponse& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 

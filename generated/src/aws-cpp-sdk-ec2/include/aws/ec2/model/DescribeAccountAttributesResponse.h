@@ -29,7 +29,7 @@ namespace Model
   class DescribeAccountAttributesResponse
   {
   public:
-    AWS_EC2_API DescribeAccountAttributesResponse();
+    AWS_EC2_API DescribeAccountAttributesResponse() = default;
     AWS_EC2_API DescribeAccountAttributesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeAccountAttributesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the account attributes.</p>
      */
-    inline const Aws::Vector<AccountAttribute>& GetAccountAttributes() const{ return m_accountAttributes; }
-    inline void SetAccountAttributes(const Aws::Vector<AccountAttribute>& value) { m_accountAttributes = value; }
-    inline void SetAccountAttributes(Aws::Vector<AccountAttribute>&& value) { m_accountAttributes = std::move(value); }
-    inline DescribeAccountAttributesResponse& WithAccountAttributes(const Aws::Vector<AccountAttribute>& value) { SetAccountAttributes(value); return *this;}
-    inline DescribeAccountAttributesResponse& WithAccountAttributes(Aws::Vector<AccountAttribute>&& value) { SetAccountAttributes(std::move(value)); return *this;}
-    inline DescribeAccountAttributesResponse& AddAccountAttributes(const AccountAttribute& value) { m_accountAttributes.push_back(value); return *this; }
-    inline DescribeAccountAttributesResponse& AddAccountAttributes(AccountAttribute&& value) { m_accountAttributes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccountAttribute>& GetAccountAttributes() const { return m_accountAttributes; }
+    template<typename AccountAttributesT = Aws::Vector<AccountAttribute>>
+    void SetAccountAttributes(AccountAttributesT&& value) { m_accountAttributesHasBeenSet = true; m_accountAttributes = std::forward<AccountAttributesT>(value); }
+    template<typename AccountAttributesT = Aws::Vector<AccountAttribute>>
+    DescribeAccountAttributesResponse& WithAccountAttributes(AccountAttributesT&& value) { SetAccountAttributes(std::forward<AccountAttributesT>(value)); return *this;}
+    template<typename AccountAttributesT = AccountAttribute>
+    DescribeAccountAttributesResponse& AddAccountAttributes(AccountAttributesT&& value) { m_accountAttributesHasBeenSet = true; m_accountAttributes.emplace_back(std::forward<AccountAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeAccountAttributesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeAccountAttributesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeAccountAttributesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AccountAttribute> m_accountAttributes;
+    bool m_accountAttributesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

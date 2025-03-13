@@ -12,24 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutParameterRequest::PutParameterRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_type(ParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_overwrite(false),
-    m_overwriteHasBeenSet(false),
-    m_allowedPatternHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_tier(ParameterTier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_policiesHasBeenSet(false),
-    m_dataTypeHasBeenSet(false)
-{
-}
-
 Aws::String PutParameterRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,46 +28,47 @@ namespace Model
   class CreateUpdatedImageResult
   {
   public:
-    AWS_APPSTREAM_API CreateUpdatedImageResult();
+    AWS_APPSTREAM_API CreateUpdatedImageResult() = default;
     AWS_APPSTREAM_API CreateUpdatedImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API CreateUpdatedImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Image& GetImage() const{ return m_image; }
-    inline void SetImage(const Image& value) { m_image = value; }
-    inline void SetImage(Image&& value) { m_image = std::move(value); }
-    inline CreateUpdatedImageResult& WithImage(const Image& value) { SetImage(value); return *this;}
-    inline CreateUpdatedImageResult& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+    inline const Image& GetImage() const { return m_image; }
+    template<typename ImageT = Image>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Image>
+    CreateUpdatedImageResult& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether a new image can be created.</p>
      */
-    inline bool GetCanUpdateImage() const{ return m_canUpdateImage; }
-    inline void SetCanUpdateImage(bool value) { m_canUpdateImage = value; }
+    inline bool GetCanUpdateImage() const { return m_canUpdateImage; }
+    inline void SetCanUpdateImage(bool value) { m_canUpdateImageHasBeenSet = true; m_canUpdateImage = value; }
     inline CreateUpdatedImageResult& WithCanUpdateImage(bool value) { SetCanUpdateImage(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateUpdatedImageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateUpdatedImageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateUpdatedImageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateUpdatedImageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Image m_image;
+    bool m_imageHasBeenSet = false;
 
-    bool m_canUpdateImage;
+    bool m_canUpdateImage{false};
+    bool m_canUpdateImageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

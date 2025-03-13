@@ -20,20 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Destination::Destination() : 
-    m_bucketHasBeenSet(false),
-    m_accountHasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_accessControlTranslationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_replicationTimeHasBeenSet(false),
-    m_metricsHasBeenSet(false)
-{
-}
-
 Destination::Destination(const XmlNode& xmlNode)
-  : Destination()
 {
   *this = xmlNode;
 }
@@ -49,42 +36,49 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode accountNode = resultNode.FirstChild("Account");
     if(!accountNode.IsNull())
     {
       m_account = Aws::Utils::Xml::DecodeEscapedXmlText(accountNode.GetText());
       m_accountHasBeenSet = true;
+       m_accountHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
     if(!storageClassNode.IsNull())
     {
-      m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()).c_str());
+      m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()));
       m_storageClassHasBeenSet = true;
+       m_storageClassHasBeenSet = true;
     }
     XmlNode accessControlTranslationNode = resultNode.FirstChild("AccessControlTranslation");
     if(!accessControlTranslationNode.IsNull())
     {
       m_accessControlTranslation = accessControlTranslationNode;
       m_accessControlTranslationHasBeenSet = true;
+       m_accessControlTranslationHasBeenSet = true;
     }
     XmlNode encryptionConfigurationNode = resultNode.FirstChild("EncryptionConfiguration");
     if(!encryptionConfigurationNode.IsNull())
     {
       m_encryptionConfiguration = encryptionConfigurationNode;
       m_encryptionConfigurationHasBeenSet = true;
+       m_encryptionConfigurationHasBeenSet = true;
     }
     XmlNode replicationTimeNode = resultNode.FirstChild("ReplicationTime");
     if(!replicationTimeNode.IsNull())
     {
       m_replicationTime = replicationTimeNode;
       m_replicationTimeHasBeenSet = true;
+       m_replicationTimeHasBeenSet = true;
     }
     XmlNode metricsNode = resultNode.FirstChild("Metrics");
     if(!metricsNode.IsNull())
     {
       m_metrics = metricsNode;
       m_metricsHasBeenSet = true;
+       m_metricsHasBeenSet = true;
     }
   }
 

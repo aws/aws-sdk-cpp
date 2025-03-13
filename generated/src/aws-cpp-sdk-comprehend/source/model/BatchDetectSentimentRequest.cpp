@@ -12,13 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDetectSentimentRequest::BatchDetectSentimentRequest() : 
-    m_textListHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false)
-{
-}
-
 Aws::String BatchDetectSentimentRequest::SerializePayload() const
 {
   JsonValue payload;

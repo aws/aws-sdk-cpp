@@ -32,7 +32,7 @@ namespace Model
   class CompactionMetrics
   {
   public:
-    AWS_GLUE_API CompactionMetrics();
+    AWS_GLUE_API CompactionMetrics() = default;
     AWS_GLUE_API CompactionMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API CompactionMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>A structure containing the Iceberg compaction metrics for the optimizer
      * run.</p>
      */
-    inline const IcebergCompactionMetrics& GetIcebergMetrics() const{ return m_icebergMetrics; }
+    inline const IcebergCompactionMetrics& GetIcebergMetrics() const { return m_icebergMetrics; }
     inline bool IcebergMetricsHasBeenSet() const { return m_icebergMetricsHasBeenSet; }
-    inline void SetIcebergMetrics(const IcebergCompactionMetrics& value) { m_icebergMetricsHasBeenSet = true; m_icebergMetrics = value; }
-    inline void SetIcebergMetrics(IcebergCompactionMetrics&& value) { m_icebergMetricsHasBeenSet = true; m_icebergMetrics = std::move(value); }
-    inline CompactionMetrics& WithIcebergMetrics(const IcebergCompactionMetrics& value) { SetIcebergMetrics(value); return *this;}
-    inline CompactionMetrics& WithIcebergMetrics(IcebergCompactionMetrics&& value) { SetIcebergMetrics(std::move(value)); return *this;}
+    template<typename IcebergMetricsT = IcebergCompactionMetrics>
+    void SetIcebergMetrics(IcebergMetricsT&& value) { m_icebergMetricsHasBeenSet = true; m_icebergMetrics = std::forward<IcebergMetricsT>(value); }
+    template<typename IcebergMetricsT = IcebergCompactionMetrics>
+    CompactionMetrics& WithIcebergMetrics(IcebergMetricsT&& value) { SetIcebergMetrics(std::forward<IcebergMetricsT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AttachmentEnaSrdUdpSpecification::AttachmentEnaSrdUdpSpecification() : 
-    m_enaSrdUdpEnabled(false),
-    m_enaSrdUdpEnabledHasBeenSet(false)
-{
-}
-
 AttachmentEnaSrdUdpSpecification::AttachmentEnaSrdUdpSpecification(const XmlNode& xmlNode)
-  : AttachmentEnaSrdUdpSpecification()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ AttachmentEnaSrdUdpSpecification& AttachmentEnaSrdUdpSpecification::operator =(c
     {
       m_enaSrdUdpEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSrdUdpEnabledNode.GetText()).c_str()).c_str());
       m_enaSrdUdpEnabledHasBeenSet = true;
+       m_enaSrdUdpEnabledHasBeenSet = true;
     }
   }
 

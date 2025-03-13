@@ -12,22 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeploymentRequest::CreateDeploymentRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_stageDescriptionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_cacheClusterEnabled(false),
-    m_cacheClusterEnabledHasBeenSet(false),
-    m_cacheClusterSize(CacheClusterSize::NOT_SET),
-    m_cacheClusterSizeHasBeenSet(false),
-    m_variablesHasBeenSet(false),
-    m_canarySettingsHasBeenSet(false),
-    m_tracingEnabled(false),
-    m_tracingEnabledHasBeenSet(false)
-{
-}
-
 Aws::String CreateDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

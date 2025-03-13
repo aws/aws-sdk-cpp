@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PluginVisualItemsLimitConfiguration::PluginVisualItemsLimitConfiguration() : 
-    m_itemsLimit(0),
-    m_itemsLimitHasBeenSet(false)
-{
-}
-
 PluginVisualItemsLimitConfiguration::PluginVisualItemsLimitConfiguration(JsonView jsonValue)
-  : PluginVisualItemsLimitConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PluginVisualItemsLimitConfiguration& PluginVisualItemsLimitConfiguration::operat
   if(jsonValue.ValueExists("ItemsLimit"))
   {
     m_itemsLimit = jsonValue.GetInt64("ItemsLimit");
-
     m_itemsLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

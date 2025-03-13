@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeMergeConflictsResult::DescribeMergeConflictsResult()
-{
-}
-
 DescribeMergeConflictsResult::DescribeMergeConflictsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeMergeConflictsResult& DescribeMergeConflictsResult::operator =(const Aws
   if(jsonValue.ValueExists("conflictMetadata"))
   {
     m_conflictMetadata = jsonValue.GetObject("conflictMetadata");
-
+    m_conflictMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mergeHunks"))
   {
     Aws::Utils::Array<JsonView> mergeHunksJsonList = jsonValue.GetArray("mergeHunks");
@@ -42,38 +37,35 @@ DescribeMergeConflictsResult& DescribeMergeConflictsResult::operator =(const Aws
     {
       m_mergeHunks.push_back(mergeHunksJsonList[mergeHunksIndex].AsObject());
     }
+    m_mergeHunksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationCommitId"))
   {
     m_destinationCommitId = jsonValue.GetString("destinationCommitId");
-
+    m_destinationCommitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCommitId"))
   {
     m_sourceCommitId = jsonValue.GetString("sourceCommitId");
-
+    m_sourceCommitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("baseCommitId"))
   {
     m_baseCommitId = jsonValue.GetString("baseCommitId");
-
+    m_baseCommitIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

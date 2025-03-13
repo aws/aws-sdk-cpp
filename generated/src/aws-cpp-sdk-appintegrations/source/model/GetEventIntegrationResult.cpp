@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEventIntegrationResult::GetEventIntegrationResult()
-{
-}
-
 GetEventIntegrationResult::GetEventIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,28 @@ GetEventIntegrationResult& GetEventIntegrationResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventIntegrationArn"))
   {
     m_eventIntegrationArn = jsonValue.GetString("EventIntegrationArn");
-
+    m_eventIntegrationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBridgeBus"))
   {
     m_eventBridgeBus = jsonValue.GetString("EventBridgeBus");
-
+    m_eventBridgeBusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventFilter"))
   {
     m_eventFilter = jsonValue.GetObject("EventFilter");
-
+    m_eventFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -66,14 +57,15 @@ GetEventIntegrationResult& GetEventIntegrationResult::operator =(const Aws::Amaz
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

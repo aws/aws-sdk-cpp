@@ -35,7 +35,7 @@ namespace Model
   class UnusedIamRoleDetails
   {
   public:
-    AWS_ACCESSANALYZER_API UnusedIamRoleDetails();
+    AWS_ACCESSANALYZER_API UnusedIamRoleDetails() = default;
     AWS_ACCESSANALYZER_API UnusedIamRoleDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API UnusedIamRoleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,16 @@ namespace Model
     /**
      * <p>The time at which the role was last accessed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAccessed() const{ return m_lastAccessed; }
+    inline const Aws::Utils::DateTime& GetLastAccessed() const { return m_lastAccessed; }
     inline bool LastAccessedHasBeenSet() const { return m_lastAccessedHasBeenSet; }
-    inline void SetLastAccessed(const Aws::Utils::DateTime& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = value; }
-    inline void SetLastAccessed(Aws::Utils::DateTime&& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = std::move(value); }
-    inline UnusedIamRoleDetails& WithLastAccessed(const Aws::Utils::DateTime& value) { SetLastAccessed(value); return *this;}
-    inline UnusedIamRoleDetails& WithLastAccessed(Aws::Utils::DateTime&& value) { SetLastAccessed(std::move(value)); return *this;}
+    template<typename LastAccessedT = Aws::Utils::DateTime>
+    void SetLastAccessed(LastAccessedT&& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = std::forward<LastAccessedT>(value); }
+    template<typename LastAccessedT = Aws::Utils::DateTime>
+    UnusedIamRoleDetails& WithLastAccessed(LastAccessedT&& value) { SetLastAccessed(std::forward<LastAccessedT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_lastAccessed;
+    Aws::Utils::DateTime m_lastAccessed{};
     bool m_lastAccessedHasBeenSet = false;
   };
 

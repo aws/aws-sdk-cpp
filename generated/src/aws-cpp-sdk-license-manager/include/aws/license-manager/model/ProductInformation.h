@@ -34,7 +34,7 @@ namespace Model
   class ProductInformation
   {
   public:
-    AWS_LICENSEMANAGER_API ProductInformation();
+    AWS_LICENSEMANAGER_API ProductInformation() = default;
     AWS_LICENSEMANAGER_API ProductInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API ProductInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>Resource type. The possible values are <code>SSM_MANAGED</code> |
      * <code>RDS</code>.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ProductInformation& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ProductInformation& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ProductInformation& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ProductInformation& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +94,14 @@ namespace Model
      * <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> |
      * <code>ols</code> | <code>olap</code>.</p> </li> </ul>
      */
-    inline const Aws::Vector<ProductInformationFilter>& GetProductInformationFilterList() const{ return m_productInformationFilterList; }
+    inline const Aws::Vector<ProductInformationFilter>& GetProductInformationFilterList() const { return m_productInformationFilterList; }
     inline bool ProductInformationFilterListHasBeenSet() const { return m_productInformationFilterListHasBeenSet; }
-    inline void SetProductInformationFilterList(const Aws::Vector<ProductInformationFilter>& value) { m_productInformationFilterListHasBeenSet = true; m_productInformationFilterList = value; }
-    inline void SetProductInformationFilterList(Aws::Vector<ProductInformationFilter>&& value) { m_productInformationFilterListHasBeenSet = true; m_productInformationFilterList = std::move(value); }
-    inline ProductInformation& WithProductInformationFilterList(const Aws::Vector<ProductInformationFilter>& value) { SetProductInformationFilterList(value); return *this;}
-    inline ProductInformation& WithProductInformationFilterList(Aws::Vector<ProductInformationFilter>&& value) { SetProductInformationFilterList(std::move(value)); return *this;}
-    inline ProductInformation& AddProductInformationFilterList(const ProductInformationFilter& value) { m_productInformationFilterListHasBeenSet = true; m_productInformationFilterList.push_back(value); return *this; }
-    inline ProductInformation& AddProductInformationFilterList(ProductInformationFilter&& value) { m_productInformationFilterListHasBeenSet = true; m_productInformationFilterList.push_back(std::move(value)); return *this; }
+    template<typename ProductInformationFilterListT = Aws::Vector<ProductInformationFilter>>
+    void SetProductInformationFilterList(ProductInformationFilterListT&& value) { m_productInformationFilterListHasBeenSet = true; m_productInformationFilterList = std::forward<ProductInformationFilterListT>(value); }
+    template<typename ProductInformationFilterListT = Aws::Vector<ProductInformationFilter>>
+    ProductInformation& WithProductInformationFilterList(ProductInformationFilterListT&& value) { SetProductInformationFilterList(std::forward<ProductInformationFilterListT>(value)); return *this;}
+    template<typename ProductInformationFilterListT = ProductInformationFilter>
+    ProductInformation& AddProductInformationFilterList(ProductInformationFilterListT&& value) { m_productInformationFilterListHasBeenSet = true; m_productInformationFilterList.emplace_back(std::forward<ProductInformationFilterListT>(value)); return *this; }
     ///@}
   private:
 

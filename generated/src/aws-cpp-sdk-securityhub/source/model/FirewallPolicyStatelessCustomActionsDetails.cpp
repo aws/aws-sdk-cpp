@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-FirewallPolicyStatelessCustomActionsDetails::FirewallPolicyStatelessCustomActionsDetails() : 
-    m_actionDefinitionHasBeenSet(false),
-    m_actionNameHasBeenSet(false)
-{
-}
-
 FirewallPolicyStatelessCustomActionsDetails::FirewallPolicyStatelessCustomActionsDetails(JsonView jsonValue)
-  : FirewallPolicyStatelessCustomActionsDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FirewallPolicyStatelessCustomActionsDetails& FirewallPolicyStatelessCustomAction
   if(jsonValue.ValueExists("ActionDefinition"))
   {
     m_actionDefinition = jsonValue.GetObject("ActionDefinition");
-
     m_actionDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionName"))
   {
     m_actionName = jsonValue.GetString("ActionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

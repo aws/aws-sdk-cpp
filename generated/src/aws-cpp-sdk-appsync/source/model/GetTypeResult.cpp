@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTypeResult::GetTypeResult()
-{
-}
-
 GetTypeResult::GetTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetTypeResult& GetTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetObject("type");
-
+    m_typeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

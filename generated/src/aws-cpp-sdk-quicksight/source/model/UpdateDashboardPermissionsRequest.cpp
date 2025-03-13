@@ -12,16 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDashboardPermissionsRequest::UpdateDashboardPermissionsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dashboardIdHasBeenSet(false),
-    m_grantPermissionsHasBeenSet(false),
-    m_revokePermissionsHasBeenSet(false),
-    m_grantLinkPermissionsHasBeenSet(false),
-    m_revokeLinkPermissionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDashboardPermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

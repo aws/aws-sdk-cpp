@@ -12,13 +12,6 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchAssociateResourcesToCustomLineItemRequest::BatchAssociateResourcesToCustomLineItemRequest() : 
-    m_targetArnHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_billingPeriodRangeHasBeenSet(false)
-{
-}
-
 Aws::String BatchAssociateResourcesToCustomLineItemRequest::SerializePayload() const
 {
   JsonValue payload;

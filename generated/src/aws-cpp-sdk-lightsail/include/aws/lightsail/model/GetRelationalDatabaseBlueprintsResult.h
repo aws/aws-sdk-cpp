@@ -29,7 +29,7 @@ namespace Model
   class GetRelationalDatabaseBlueprintsResult
   {
   public:
-    AWS_LIGHTSAIL_API GetRelationalDatabaseBlueprintsResult();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseBlueprintsResult() = default;
     AWS_LIGHTSAIL_API GetRelationalDatabaseBlueprintsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetRelationalDatabaseBlueprintsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An object describing the result of your get relational database blueprints
      * request.</p>
      */
-    inline const Aws::Vector<RelationalDatabaseBlueprint>& GetBlueprints() const{ return m_blueprints; }
-    inline void SetBlueprints(const Aws::Vector<RelationalDatabaseBlueprint>& value) { m_blueprints = value; }
-    inline void SetBlueprints(Aws::Vector<RelationalDatabaseBlueprint>&& value) { m_blueprints = std::move(value); }
-    inline GetRelationalDatabaseBlueprintsResult& WithBlueprints(const Aws::Vector<RelationalDatabaseBlueprint>& value) { SetBlueprints(value); return *this;}
-    inline GetRelationalDatabaseBlueprintsResult& WithBlueprints(Aws::Vector<RelationalDatabaseBlueprint>&& value) { SetBlueprints(std::move(value)); return *this;}
-    inline GetRelationalDatabaseBlueprintsResult& AddBlueprints(const RelationalDatabaseBlueprint& value) { m_blueprints.push_back(value); return *this; }
-    inline GetRelationalDatabaseBlueprintsResult& AddBlueprints(RelationalDatabaseBlueprint&& value) { m_blueprints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RelationalDatabaseBlueprint>& GetBlueprints() const { return m_blueprints; }
+    template<typename BlueprintsT = Aws::Vector<RelationalDatabaseBlueprint>>
+    void SetBlueprints(BlueprintsT&& value) { m_blueprintsHasBeenSet = true; m_blueprints = std::forward<BlueprintsT>(value); }
+    template<typename BlueprintsT = Aws::Vector<RelationalDatabaseBlueprint>>
+    GetRelationalDatabaseBlueprintsResult& WithBlueprints(BlueprintsT&& value) { SetBlueprints(std::forward<BlueprintsT>(value)); return *this;}
+    template<typename BlueprintsT = RelationalDatabaseBlueprint>
+    GetRelationalDatabaseBlueprintsResult& AddBlueprints(BlueprintsT&& value) { m_blueprintsHasBeenSet = true; m_blueprints.emplace_back(std::forward<BlueprintsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * <code>GetRelationalDatabaseBlueprints</code> request and specify the next page
      * token using the <code>pageToken</code> parameter.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetRelationalDatabaseBlueprintsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetRelationalDatabaseBlueprintsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetRelationalDatabaseBlueprintsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetRelationalDatabaseBlueprintsResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRelationalDatabaseBlueprintsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRelationalDatabaseBlueprintsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRelationalDatabaseBlueprintsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRelationalDatabaseBlueprintsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RelationalDatabaseBlueprint> m_blueprints;
+    bool m_blueprintsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

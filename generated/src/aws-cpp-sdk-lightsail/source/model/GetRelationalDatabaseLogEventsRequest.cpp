@@ -12,17 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRelationalDatabaseLogEventsRequest::GetRelationalDatabaseLogEventsRequest() : 
-    m_relationalDatabaseNameHasBeenSet(false),
-    m_logStreamNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_startFromHead(false),
-    m_startFromHeadHasBeenSet(false),
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetRelationalDatabaseLogEventsRequest::SerializePayload() const
 {
   JsonValue payload;

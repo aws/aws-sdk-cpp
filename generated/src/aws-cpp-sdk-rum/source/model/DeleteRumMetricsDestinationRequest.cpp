@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteRumMetricsDestinationRequest::DeleteRumMetricsDestinationRequest() : 
-    m_appMonitorNameHasBeenSet(false),
-    m_destination(MetricDestination::NOT_SET),
-    m_destinationHasBeenSet(false),
-    m_destinationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRumMetricsDestinationRequest::SerializePayload() const
 {
   return {};

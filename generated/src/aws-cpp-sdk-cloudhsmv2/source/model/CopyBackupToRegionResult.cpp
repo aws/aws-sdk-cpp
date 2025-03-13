@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopyBackupToRegionResult::CopyBackupToRegionResult()
-{
-}
-
 CopyBackupToRegionResult::CopyBackupToRegionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CopyBackupToRegionResult& CopyBackupToRegionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("DestinationBackup"))
   {
     m_destinationBackup = jsonValue.GetObject("DestinationBackup");
-
+    m_destinationBackupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

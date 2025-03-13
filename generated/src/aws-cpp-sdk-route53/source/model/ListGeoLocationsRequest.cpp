@@ -17,13 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListGeoLocationsRequest::ListGeoLocationsRequest() : 
-    m_startContinentCodeHasBeenSet(false),
-    m_startCountryCodeHasBeenSet(false),
-    m_startSubdivisionCodeHasBeenSet(false),
-    m_maxItemsHasBeenSet(false)
-{
-}
 
 Aws::String ListGeoLocationsRequest::SerializePayload() const
 {

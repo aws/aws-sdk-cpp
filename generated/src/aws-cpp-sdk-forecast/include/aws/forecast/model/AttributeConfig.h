@@ -37,7 +37,7 @@ namespace Model
   class AttributeConfig
   {
   public:
-    AWS_FORECASTSERVICE_API AttributeConfig();
+    AWS_FORECASTSERVICE_API AttributeConfig() = default;
     AWS_FORECASTSERVICE_API AttributeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API AttributeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * datasets. For example, for the RETAIL domain, the target is
      * <code>demand</code>.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline AttributeConfig& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline AttributeConfig& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline AttributeConfig& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    AttributeConfig& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,19 +87,16 @@ namespace Model
      * include the following: <code>"backfill": "value"</code> and
      * <code>"backfill_value":"2"</code>. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTransformations() const{ return m_transformations; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTransformations() const { return m_transformations; }
     inline bool TransformationsHasBeenSet() const { return m_transformationsHasBeenSet; }
-    inline void SetTransformations(const Aws::Map<Aws::String, Aws::String>& value) { m_transformationsHasBeenSet = true; m_transformations = value; }
-    inline void SetTransformations(Aws::Map<Aws::String, Aws::String>&& value) { m_transformationsHasBeenSet = true; m_transformations = std::move(value); }
-    inline AttributeConfig& WithTransformations(const Aws::Map<Aws::String, Aws::String>& value) { SetTransformations(value); return *this;}
-    inline AttributeConfig& WithTransformations(Aws::Map<Aws::String, Aws::String>&& value) { SetTransformations(std::move(value)); return *this;}
-    inline AttributeConfig& AddTransformations(const Aws::String& key, const Aws::String& value) { m_transformationsHasBeenSet = true; m_transformations.emplace(key, value); return *this; }
-    inline AttributeConfig& AddTransformations(Aws::String&& key, const Aws::String& value) { m_transformationsHasBeenSet = true; m_transformations.emplace(std::move(key), value); return *this; }
-    inline AttributeConfig& AddTransformations(const Aws::String& key, Aws::String&& value) { m_transformationsHasBeenSet = true; m_transformations.emplace(key, std::move(value)); return *this; }
-    inline AttributeConfig& AddTransformations(Aws::String&& key, Aws::String&& value) { m_transformationsHasBeenSet = true; m_transformations.emplace(std::move(key), std::move(value)); return *this; }
-    inline AttributeConfig& AddTransformations(const char* key, Aws::String&& value) { m_transformationsHasBeenSet = true; m_transformations.emplace(key, std::move(value)); return *this; }
-    inline AttributeConfig& AddTransformations(Aws::String&& key, const char* value) { m_transformationsHasBeenSet = true; m_transformations.emplace(std::move(key), value); return *this; }
-    inline AttributeConfig& AddTransformations(const char* key, const char* value) { m_transformationsHasBeenSet = true; m_transformations.emplace(key, value); return *this; }
+    template<typename TransformationsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTransformations(TransformationsT&& value) { m_transformationsHasBeenSet = true; m_transformations = std::forward<TransformationsT>(value); }
+    template<typename TransformationsT = Aws::Map<Aws::String, Aws::String>>
+    AttributeConfig& WithTransformations(TransformationsT&& value) { SetTransformations(std::forward<TransformationsT>(value)); return *this;}
+    template<typename TransformationsKeyT = Aws::String, typename TransformationsValueT = Aws::String>
+    AttributeConfig& AddTransformations(TransformationsKeyT&& key, TransformationsValueT&& value) {
+      m_transformationsHasBeenSet = true; m_transformations.emplace(std::forward<TransformationsKeyT>(key), std::forward<TransformationsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

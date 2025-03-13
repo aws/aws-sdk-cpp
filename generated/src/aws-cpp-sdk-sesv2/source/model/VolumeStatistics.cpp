@@ -18,20 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-VolumeStatistics::VolumeStatistics() : 
-    m_inboxRawCount(0),
-    m_inboxRawCountHasBeenSet(false),
-    m_spamRawCount(0),
-    m_spamRawCountHasBeenSet(false),
-    m_projectedInbox(0),
-    m_projectedInboxHasBeenSet(false),
-    m_projectedSpam(0),
-    m_projectedSpamHasBeenSet(false)
-{
-}
-
 VolumeStatistics::VolumeStatistics(JsonView jsonValue)
-  : VolumeStatistics()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ VolumeStatistics& VolumeStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InboxRawCount"))
   {
     m_inboxRawCount = jsonValue.GetInt64("InboxRawCount");
-
     m_inboxRawCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpamRawCount"))
   {
     m_spamRawCount = jsonValue.GetInt64("SpamRawCount");
-
     m_spamRawCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectedInbox"))
   {
     m_projectedInbox = jsonValue.GetInt64("ProjectedInbox");
-
     m_projectedInboxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectedSpam"))
   {
     m_projectedSpam = jsonValue.GetInt64("ProjectedSpam");
-
     m_projectedSpamHasBeenSet = true;
   }
-
   return *this;
 }
 

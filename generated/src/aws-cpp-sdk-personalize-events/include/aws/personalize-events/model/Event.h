@@ -35,7 +35,7 @@ namespace Model
   class Event
   {
   public:
-    AWS_PERSONALIZEEVENTS_API Event();
+    AWS_PERSONALIZEEVENTS_API Event() = default;
     AWS_PERSONALIZEEVENTS_API Event(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZEEVENTS_API Event& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZEEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * events. Any subsequent events after the first with the same event ID are not
      * used in model training.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline Event& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline Event& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline Event& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    Event& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * the <code>EVENT_TYPE</code> field of your Item interactions dataset's schema and
      * depends on the types of events you are tracking.</p>
      */
-    inline const Aws::String& GetEventType() const{ return m_eventType; }
+    inline const Aws::String& GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
-    inline Event& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
-    inline Event& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
-    inline Event& WithEventType(const char* value) { SetEventType(value); return *this;}
+    template<typename EventTypeT = Aws::String>
+    void SetEventType(EventTypeT&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::forward<EventTypeT>(value); }
+    template<typename EventTypeT = Aws::String>
+    Event& WithEventType(EventTypeT&& value) { SetEventType(std::forward<EventTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +76,7 @@ namespace Model
      * <p>The event value that corresponds to the <code>EVENT_VALUE</code> field of the
      * Item interactions schema.</p>
      */
-    inline double GetEventValue() const{ return m_eventValue; }
+    inline double GetEventValue() const { return m_eventValue; }
     inline bool EventValueHasBeenSet() const { return m_eventValueHasBeenSet; }
     inline void SetEventValue(double value) { m_eventValueHasBeenSet = true; m_eventValue = value; }
     inline Event& WithEventValue(double value) { SetEventValue(value); return *this;}
@@ -91,14 +87,12 @@ namespace Model
      * <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the
      * Item interactions dataset's schema.</p>
      */
-    inline const Aws::String& GetItemId() const{ return m_itemId; }
+    inline const Aws::String& GetItemId() const { return m_itemId; }
     inline bool ItemIdHasBeenSet() const { return m_itemIdHasBeenSet; }
-    inline void SetItemId(const Aws::String& value) { m_itemIdHasBeenSet = true; m_itemId = value; }
-    inline void SetItemId(Aws::String&& value) { m_itemIdHasBeenSet = true; m_itemId = std::move(value); }
-    inline void SetItemId(const char* value) { m_itemIdHasBeenSet = true; m_itemId.assign(value); }
-    inline Event& WithItemId(const Aws::String& value) { SetItemId(value); return *this;}
-    inline Event& WithItemId(Aws::String&& value) { SetItemId(std::move(value)); return *this;}
-    inline Event& WithItemId(const char* value) { SetItemId(value); return *this;}
+    template<typename ItemIdT = Aws::String>
+    void SetItemId(ItemIdT&& value) { m_itemIdHasBeenSet = true; m_itemId = std::forward<ItemIdT>(value); }
+    template<typename ItemIdT = Aws::String>
+    Event& WithItemId(ItemIdT&& value) { SetItemId(std::forward<ItemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,26 +111,24 @@ namespace Model
      * <p>timestamp</p> </li> <li> <p>recommendationId</p> </li> <li> <p>impression</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetProperties() const{ return m_properties; }
+    inline const Aws::String& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline void SetProperties(const char* value) { m_propertiesHasBeenSet = true; m_properties.assign(value); }
-    inline Event& WithProperties(const Aws::String& value) { SetProperties(value); return *this;}
-    inline Event& WithProperties(Aws::String&& value) { SetProperties(std::move(value)); return *this;}
-    inline Event& WithProperties(const char* value) { SetProperties(value); return *this;}
+    template<typename PropertiesT = Aws::String>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::String>
+    Event& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
      */
-    inline const Aws::Utils::DateTime& GetSentAt() const{ return m_sentAt; }
+    inline const Aws::Utils::DateTime& GetSentAt() const { return m_sentAt; }
     inline bool SentAtHasBeenSet() const { return m_sentAtHasBeenSet; }
-    inline void SetSentAt(const Aws::Utils::DateTime& value) { m_sentAtHasBeenSet = true; m_sentAt = value; }
-    inline void SetSentAt(Aws::Utils::DateTime&& value) { m_sentAtHasBeenSet = true; m_sentAt = std::move(value); }
-    inline Event& WithSentAt(const Aws::Utils::DateTime& value) { SetSentAt(value); return *this;}
-    inline Event& WithSentAt(Aws::Utils::DateTime&& value) { SetSentAt(std::move(value)); return *this;}
+    template<typename SentAtT = Aws::Utils::DateTime>
+    void SetSentAt(SentAtT&& value) { m_sentAtHasBeenSet = true; m_sentAt = std::forward<SentAtT>(value); }
+    template<typename SentAtT = Aws::Utils::DateTime>
+    Event& WithSentAt(SentAtT&& value) { SetSentAt(std::forward<SentAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,14 +145,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
      * impact of recommendations</a>. </p>
      */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+    inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
     inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
-    inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
-    inline Event& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-    inline Event& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-    inline Event& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    template<typename RecommendationIdT = Aws::String>
+    void SetRecommendationId(RecommendationIdT&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::forward<RecommendationIdT>(value); }
+    template<typename RecommendationIdT = Aws::String>
+    Event& WithRecommendationId(RecommendationIdT&& value) { SetRecommendationId(std::forward<RecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,15 +162,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
      * impressions data</a>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetImpression() const{ return m_impression; }
+    inline const Aws::Vector<Aws::String>& GetImpression() const { return m_impression; }
     inline bool ImpressionHasBeenSet() const { return m_impressionHasBeenSet; }
-    inline void SetImpression(const Aws::Vector<Aws::String>& value) { m_impressionHasBeenSet = true; m_impression = value; }
-    inline void SetImpression(Aws::Vector<Aws::String>&& value) { m_impressionHasBeenSet = true; m_impression = std::move(value); }
-    inline Event& WithImpression(const Aws::Vector<Aws::String>& value) { SetImpression(value); return *this;}
-    inline Event& WithImpression(Aws::Vector<Aws::String>&& value) { SetImpression(std::move(value)); return *this;}
-    inline Event& AddImpression(const Aws::String& value) { m_impressionHasBeenSet = true; m_impression.push_back(value); return *this; }
-    inline Event& AddImpression(Aws::String&& value) { m_impressionHasBeenSet = true; m_impression.push_back(std::move(value)); return *this; }
-    inline Event& AddImpression(const char* value) { m_impressionHasBeenSet = true; m_impression.push_back(value); return *this; }
+    template<typename ImpressionT = Aws::Vector<Aws::String>>
+    void SetImpression(ImpressionT&& value) { m_impressionHasBeenSet = true; m_impression = std::forward<ImpressionT>(value); }
+    template<typename ImpressionT = Aws::Vector<Aws::String>>
+    Event& WithImpression(ImpressionT&& value) { SetImpression(std::forward<ImpressionT>(value)); return *this;}
+    template<typename ImpressionT = Aws::String>
+    Event& AddImpression(ImpressionT&& value) { m_impressionHasBeenSet = true; m_impression.emplace_back(std::forward<ImpressionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -190,12 +179,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
      * impact of recommendations</a>.</p>
      */
-    inline const MetricAttribution& GetMetricAttribution() const{ return m_metricAttribution; }
+    inline const MetricAttribution& GetMetricAttribution() const { return m_metricAttribution; }
     inline bool MetricAttributionHasBeenSet() const { return m_metricAttributionHasBeenSet; }
-    inline void SetMetricAttribution(const MetricAttribution& value) { m_metricAttributionHasBeenSet = true; m_metricAttribution = value; }
-    inline void SetMetricAttribution(MetricAttribution&& value) { m_metricAttributionHasBeenSet = true; m_metricAttribution = std::move(value); }
-    inline Event& WithMetricAttribution(const MetricAttribution& value) { SetMetricAttribution(value); return *this;}
-    inline Event& WithMetricAttribution(MetricAttribution&& value) { SetMetricAttribution(std::move(value)); return *this;}
+    template<typename MetricAttributionT = MetricAttribution>
+    void SetMetricAttribution(MetricAttributionT&& value) { m_metricAttributionHasBeenSet = true; m_metricAttribution = std::forward<MetricAttributionT>(value); }
+    template<typename MetricAttributionT = MetricAttribution>
+    Event& WithMetricAttribution(MetricAttributionT&& value) { SetMetricAttribution(std::forward<MetricAttributionT>(value)); return *this;}
     ///@}
   private:
 
@@ -205,7 +194,7 @@ namespace Model
     Aws::String m_eventType;
     bool m_eventTypeHasBeenSet = false;
 
-    double m_eventValue;
+    double m_eventValue{0.0};
     bool m_eventValueHasBeenSet = false;
 
     Aws::String m_itemId;
@@ -214,7 +203,7 @@ namespace Model
     Aws::String m_properties;
     bool m_propertiesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_sentAt;
+    Aws::Utils::DateTime m_sentAt{};
     bool m_sentAtHasBeenSet = false;
 
     Aws::String m_recommendationId;

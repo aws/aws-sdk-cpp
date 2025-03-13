@@ -32,7 +32,7 @@ namespace Model
   class InstanceState
   {
   public:
-    AWS_SNOWDEVICEMANAGEMENT_API InstanceState();
+    AWS_SNOWDEVICEMANAGEMENT_API InstanceState() = default;
     AWS_SNOWDEVICEMANAGEMENT_API InstanceState(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWDEVICEMANAGEMENT_API InstanceState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,7 +54,7 @@ namespace Model
      * </p> </li> </ul> <p>You can ignore the high byte value by zeroing out all of the
      * bits above 2^8 or 256 in decimal. </p>
      */
-    inline int GetCode() const{ return m_code; }
+    inline int GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
     inline InstanceState& WithCode(int value) { SetCode(value); return *this;}
@@ -64,19 +64,17 @@ namespace Model
     /**
      * <p>The current state of the instance.</p>
      */
-    inline const InstanceStateName& GetName() const{ return m_name; }
+    inline InstanceStateName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const InstanceStateName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(InstanceStateName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline InstanceState& WithName(const InstanceStateName& value) { SetName(value); return *this;}
-    inline InstanceState& WithName(InstanceStateName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(InstanceStateName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline InstanceState& WithName(InstanceStateName value) { SetName(value); return *this;}
     ///@}
   private:
 
-    int m_code;
+    int m_code{0};
     bool m_codeHasBeenSet = false;
 
-    InstanceStateName m_name;
+    InstanceStateName m_name{InstanceStateName::NOT_SET};
     bool m_nameHasBeenSet = false;
   };
 

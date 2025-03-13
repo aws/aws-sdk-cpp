@@ -22,7 +22,7 @@ namespace Model
   class GetSSHPublicKeyRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API GetSSHPublicKeyRequest();
+    AWS_IAM_API GetSSHPublicKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline GetSSHPublicKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline GetSSHPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline GetSSHPublicKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    GetSSHPublicKeyRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * string of characters that can consist of any upper or lowercased letter or
      * digit.</p>
      */
-    inline const Aws::String& GetSSHPublicKeyId() const{ return m_sSHPublicKeyId; }
+    inline const Aws::String& GetSSHPublicKeyId() const { return m_sSHPublicKeyId; }
     inline bool SSHPublicKeyIdHasBeenSet() const { return m_sSHPublicKeyIdHasBeenSet; }
-    inline void SetSSHPublicKeyId(const Aws::String& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
-    inline void SetSSHPublicKeyId(Aws::String&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = std::move(value); }
-    inline void SetSSHPublicKeyId(const char* value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId.assign(value); }
-    inline GetSSHPublicKeyRequest& WithSSHPublicKeyId(const Aws::String& value) { SetSSHPublicKeyId(value); return *this;}
-    inline GetSSHPublicKeyRequest& WithSSHPublicKeyId(Aws::String&& value) { SetSSHPublicKeyId(std::move(value)); return *this;}
-    inline GetSSHPublicKeyRequest& WithSSHPublicKeyId(const char* value) { SetSSHPublicKeyId(value); return *this;}
+    template<typename SSHPublicKeyIdT = Aws::String>
+    void SetSSHPublicKeyId(SSHPublicKeyIdT&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = std::forward<SSHPublicKeyIdT>(value); }
+    template<typename SSHPublicKeyIdT = Aws::String>
+    GetSSHPublicKeyRequest& WithSSHPublicKeyId(SSHPublicKeyIdT&& value) { SetSSHPublicKeyId(std::forward<SSHPublicKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +74,10 @@ namespace Model
      * the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public
      * key in PEM format, use <code>PEM</code>.</p>
      */
-    inline const EncodingType& GetEncoding() const{ return m_encoding; }
+    inline EncodingType GetEncoding() const { return m_encoding; }
     inline bool EncodingHasBeenSet() const { return m_encodingHasBeenSet; }
-    inline void SetEncoding(const EncodingType& value) { m_encodingHasBeenSet = true; m_encoding = value; }
-    inline void SetEncoding(EncodingType&& value) { m_encodingHasBeenSet = true; m_encoding = std::move(value); }
-    inline GetSSHPublicKeyRequest& WithEncoding(const EncodingType& value) { SetEncoding(value); return *this;}
-    inline GetSSHPublicKeyRequest& WithEncoding(EncodingType&& value) { SetEncoding(std::move(value)); return *this;}
+    inline void SetEncoding(EncodingType value) { m_encodingHasBeenSet = true; m_encoding = value; }
+    inline GetSSHPublicKeyRequest& WithEncoding(EncodingType value) { SetEncoding(value); return *this;}
     ///@}
   private:
 
@@ -93,7 +87,7 @@ namespace Model
     Aws::String m_sSHPublicKeyId;
     bool m_sSHPublicKeyIdHasBeenSet = false;
 
-    EncodingType m_encoding;
+    EncodingType m_encoding{EncodingType::NOT_SET};
     bool m_encodingHasBeenSet = false;
   };
 

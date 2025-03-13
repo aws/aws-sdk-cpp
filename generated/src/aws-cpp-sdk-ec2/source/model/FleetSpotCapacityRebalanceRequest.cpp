@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FleetSpotCapacityRebalanceRequest::FleetSpotCapacityRebalanceRequest() : 
-    m_replacementStrategy(FleetReplacementStrategy::NOT_SET),
-    m_replacementStrategyHasBeenSet(false),
-    m_terminationDelay(0),
-    m_terminationDelayHasBeenSet(false)
-{
-}
-
 FleetSpotCapacityRebalanceRequest::FleetSpotCapacityRebalanceRequest(const XmlNode& xmlNode)
-  : FleetSpotCapacityRebalanceRequest()
 {
   *this = xmlNode;
 }
@@ -43,14 +34,16 @@ FleetSpotCapacityRebalanceRequest& FleetSpotCapacityRebalanceRequest::operator =
     XmlNode replacementStrategyNode = resultNode.FirstChild("ReplacementStrategy");
     if(!replacementStrategyNode.IsNull())
     {
-      m_replacementStrategy = FleetReplacementStrategyMapper::GetFleetReplacementStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replacementStrategyNode.GetText()).c_str()).c_str());
+      m_replacementStrategy = FleetReplacementStrategyMapper::GetFleetReplacementStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replacementStrategyNode.GetText()).c_str()));
       m_replacementStrategyHasBeenSet = true;
+       m_replacementStrategyHasBeenSet = true;
     }
     XmlNode terminationDelayNode = resultNode.FirstChild("TerminationDelay");
     if(!terminationDelayNode.IsNull())
     {
       m_terminationDelay = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(terminationDelayNode.GetText()).c_str()).c_str());
       m_terminationDelayHasBeenSet = true;
+       m_terminationDelayHasBeenSet = true;
     }
   }
 

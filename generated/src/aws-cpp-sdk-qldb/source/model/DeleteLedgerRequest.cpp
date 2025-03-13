@@ -12,11 +12,6 @@ using namespace Aws::QLDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLedgerRequest::DeleteLedgerRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLedgerRequest::SerializePayload() const
 {
   return {};

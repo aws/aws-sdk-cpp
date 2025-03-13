@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-S3TablesDestination::S3TablesDestination() : 
-    m_tableBucketArnHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
-{
-}
-
 S3TablesDestination::S3TablesDestination(const XmlNode& xmlNode)
-  : S3TablesDestination()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ S3TablesDestination& S3TablesDestination::operator =(const XmlNode& xmlNode)
     {
       m_tableBucketArn = Aws::Utils::Xml::DecodeEscapedXmlText(tableBucketArnNode.GetText());
       m_tableBucketArnHasBeenSet = true;
+       m_tableBucketArnHasBeenSet = true;
     }
     XmlNode tableNameNode = resultNode.FirstChild("TableName");
     if(!tableNameNode.IsNull())
     {
       m_tableName = Aws::Utils::Xml::DecodeEscapedXmlText(tableNameNode.GetText());
       m_tableNameHasBeenSet = true;
+       m_tableNameHasBeenSet = true;
     }
   }
 

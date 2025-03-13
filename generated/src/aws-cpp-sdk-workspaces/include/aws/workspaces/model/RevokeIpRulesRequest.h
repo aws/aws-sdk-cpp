@@ -22,7 +22,7 @@ namespace Model
   class RevokeIpRulesRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API RevokeIpRulesRequest();
+    AWS_WORKSPACES_API RevokeIpRulesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,29 +39,26 @@ namespace Model
     /**
      * <p>The identifier of the group.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline RevokeIpRulesRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline RevokeIpRulesRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline RevokeIpRulesRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    RevokeIpRulesRequest& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rules to remove from the group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUserRules() const{ return m_userRules; }
+    inline const Aws::Vector<Aws::String>& GetUserRules() const { return m_userRules; }
     inline bool UserRulesHasBeenSet() const { return m_userRulesHasBeenSet; }
-    inline void SetUserRules(const Aws::Vector<Aws::String>& value) { m_userRulesHasBeenSet = true; m_userRules = value; }
-    inline void SetUserRules(Aws::Vector<Aws::String>&& value) { m_userRulesHasBeenSet = true; m_userRules = std::move(value); }
-    inline RevokeIpRulesRequest& WithUserRules(const Aws::Vector<Aws::String>& value) { SetUserRules(value); return *this;}
-    inline RevokeIpRulesRequest& WithUserRules(Aws::Vector<Aws::String>&& value) { SetUserRules(std::move(value)); return *this;}
-    inline RevokeIpRulesRequest& AddUserRules(const Aws::String& value) { m_userRulesHasBeenSet = true; m_userRules.push_back(value); return *this; }
-    inline RevokeIpRulesRequest& AddUserRules(Aws::String&& value) { m_userRulesHasBeenSet = true; m_userRules.push_back(std::move(value)); return *this; }
-    inline RevokeIpRulesRequest& AddUserRules(const char* value) { m_userRulesHasBeenSet = true; m_userRules.push_back(value); return *this; }
+    template<typename UserRulesT = Aws::Vector<Aws::String>>
+    void SetUserRules(UserRulesT&& value) { m_userRulesHasBeenSet = true; m_userRules = std::forward<UserRulesT>(value); }
+    template<typename UserRulesT = Aws::Vector<Aws::String>>
+    RevokeIpRulesRequest& WithUserRules(UserRulesT&& value) { SetUserRules(std::forward<UserRulesT>(value)); return *this;}
+    template<typename UserRulesT = Aws::String>
+    RevokeIpRulesRequest& AddUserRules(UserRulesT&& value) { m_userRulesHasBeenSet = true; m_userRules.emplace_back(std::forward<UserRulesT>(value)); return *this; }
     ///@}
   private:
 

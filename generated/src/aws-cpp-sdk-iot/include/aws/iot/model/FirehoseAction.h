@@ -32,7 +32,7 @@ namespace Model
   class FirehoseAction
   {
   public:
-    AWS_IOT_API FirehoseAction();
+    AWS_IOT_API FirehoseAction() = default;
     AWS_IOT_API FirehoseAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API FirehoseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline FirehoseAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline FirehoseAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline FirehoseAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    FirehoseAction& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The delivery stream name.</p>
      */
-    inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
+    inline const Aws::String& GetDeliveryStreamName() const { return m_deliveryStreamName; }
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
-    inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
-    inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
-    inline void SetDeliveryStreamName(const char* value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName.assign(value); }
-    inline FirehoseAction& WithDeliveryStreamName(const Aws::String& value) { SetDeliveryStreamName(value); return *this;}
-    inline FirehoseAction& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
-    inline FirehoseAction& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
+    template<typename DeliveryStreamNameT = Aws::String>
+    void SetDeliveryStreamName(DeliveryStreamNameT&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::forward<DeliveryStreamNameT>(value); }
+    template<typename DeliveryStreamNameT = Aws::String>
+    FirehoseAction& WithDeliveryStreamName(DeliveryStreamNameT&& value) { SetDeliveryStreamName(std::forward<DeliveryStreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
      * newline), ',' (comma).</p>
      */
-    inline const Aws::String& GetSeparator() const{ return m_separator; }
+    inline const Aws::String& GetSeparator() const { return m_separator; }
     inline bool SeparatorHasBeenSet() const { return m_separatorHasBeenSet; }
-    inline void SetSeparator(const Aws::String& value) { m_separatorHasBeenSet = true; m_separator = value; }
-    inline void SetSeparator(Aws::String&& value) { m_separatorHasBeenSet = true; m_separator = std::move(value); }
-    inline void SetSeparator(const char* value) { m_separatorHasBeenSet = true; m_separator.assign(value); }
-    inline FirehoseAction& WithSeparator(const Aws::String& value) { SetSeparator(value); return *this;}
-    inline FirehoseAction& WithSeparator(Aws::String&& value) { SetSeparator(std::move(value)); return *this;}
-    inline FirehoseAction& WithSeparator(const char* value) { SetSeparator(value); return *this;}
+    template<typename SeparatorT = Aws::String>
+    void SetSeparator(SeparatorT&& value) { m_separatorHasBeenSet = true; m_separator = std::forward<SeparatorT>(value); }
+    template<typename SeparatorT = Aws::String>
+    FirehoseAction& WithSeparator(SeparatorT&& value) { SetSeparator(std::forward<SeparatorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,7 +87,7 @@ namespace Model
      * <code>PutRecordBatch</code> </a> request. The resulting array can't have more
      * than 500 records.</p>
      */
-    inline bool GetBatchMode() const{ return m_batchMode; }
+    inline bool GetBatchMode() const { return m_batchMode; }
     inline bool BatchModeHasBeenSet() const { return m_batchModeHasBeenSet; }
     inline void SetBatchMode(bool value) { m_batchModeHasBeenSet = true; m_batchMode = value; }
     inline FirehoseAction& WithBatchMode(bool value) { SetBatchMode(value); return *this;}
@@ -109,7 +103,7 @@ namespace Model
     Aws::String m_separator;
     bool m_separatorHasBeenSet = false;
 
-    bool m_batchMode;
+    bool m_batchMode{false};
     bool m_batchModeHasBeenSet = false;
   };
 

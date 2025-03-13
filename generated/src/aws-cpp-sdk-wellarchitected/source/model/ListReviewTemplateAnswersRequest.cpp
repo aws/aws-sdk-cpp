@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListReviewTemplateAnswersRequest::ListReviewTemplateAnswersRequest() : 
-    m_templateArnHasBeenSet(false),
-    m_lensAliasHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListReviewTemplateAnswersRequest::SerializePayload() const
 {
   return {};

@@ -34,7 +34,7 @@ namespace Model
   class AuthConfiguration
   {
   public:
-    AWS_GLUE_API AuthConfiguration();
+    AWS_GLUE_API AuthConfiguration() = default;
     AWS_GLUE_API AuthConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API AuthConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The type of authentication for a connection.</p>
      */
-    inline const Property& GetAuthenticationType() const{ return m_authenticationType; }
+    inline const Property& GetAuthenticationType() const { return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-    inline void SetAuthenticationType(const Property& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-    inline void SetAuthenticationType(Property&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-    inline AuthConfiguration& WithAuthenticationType(const Property& value) { SetAuthenticationType(value); return *this;}
-    inline AuthConfiguration& WithAuthenticationType(Property&& value) { SetAuthenticationType(std::move(value)); return *this;}
+    template<typename AuthenticationTypeT = Property>
+    void SetAuthenticationType(AuthenticationTypeT&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::forward<AuthenticationTypeT>(value); }
+    template<typename AuthenticationTypeT = Property>
+    AuthConfiguration& WithAuthenticationType(AuthenticationTypeT&& value) { SetAuthenticationType(std::forward<AuthenticationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the Secrets Manager.</p>
      */
-    inline const Property& GetSecretArn() const{ return m_secretArn; }
+    inline const Property& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Property& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Property&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline AuthConfiguration& WithSecretArn(const Property& value) { SetSecretArn(value); return *this;}
-    inline AuthConfiguration& WithSecretArn(Property&& value) { SetSecretArn(std::move(value)); return *this;}
+    template<typename SecretArnT = Property>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Property>
+    AuthConfiguration& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,18 +69,16 @@ namespace Model
      * <p>A map of key-value pairs for the OAuth2 properties. Each value is a a
      * <code>Property</code> object.</p>
      */
-    inline const Aws::Map<Aws::String, Property>& GetOAuth2Properties() const{ return m_oAuth2Properties; }
+    inline const Aws::Map<Aws::String, Property>& GetOAuth2Properties() const { return m_oAuth2Properties; }
     inline bool OAuth2PropertiesHasBeenSet() const { return m_oAuth2PropertiesHasBeenSet; }
-    inline void SetOAuth2Properties(const Aws::Map<Aws::String, Property>& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties = value; }
-    inline void SetOAuth2Properties(Aws::Map<Aws::String, Property>&& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties = std::move(value); }
-    inline AuthConfiguration& WithOAuth2Properties(const Aws::Map<Aws::String, Property>& value) { SetOAuth2Properties(value); return *this;}
-    inline AuthConfiguration& WithOAuth2Properties(Aws::Map<Aws::String, Property>&& value) { SetOAuth2Properties(std::move(value)); return *this;}
-    inline AuthConfiguration& AddOAuth2Properties(const Aws::String& key, const Property& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties.emplace(key, value); return *this; }
-    inline AuthConfiguration& AddOAuth2Properties(Aws::String&& key, const Property& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties.emplace(std::move(key), value); return *this; }
-    inline AuthConfiguration& AddOAuth2Properties(const Aws::String& key, Property&& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties.emplace(key, std::move(value)); return *this; }
-    inline AuthConfiguration& AddOAuth2Properties(Aws::String&& key, Property&& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties.emplace(std::move(key), std::move(value)); return *this; }
-    inline AuthConfiguration& AddOAuth2Properties(const char* key, Property&& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties.emplace(key, std::move(value)); return *this; }
-    inline AuthConfiguration& AddOAuth2Properties(const char* key, const Property& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties.emplace(key, value); return *this; }
+    template<typename OAuth2PropertiesT = Aws::Map<Aws::String, Property>>
+    void SetOAuth2Properties(OAuth2PropertiesT&& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties = std::forward<OAuth2PropertiesT>(value); }
+    template<typename OAuth2PropertiesT = Aws::Map<Aws::String, Property>>
+    AuthConfiguration& WithOAuth2Properties(OAuth2PropertiesT&& value) { SetOAuth2Properties(std::forward<OAuth2PropertiesT>(value)); return *this;}
+    template<typename OAuth2PropertiesKeyT = Aws::String, typename OAuth2PropertiesValueT = Property>
+    AuthConfiguration& AddOAuth2Properties(OAuth2PropertiesKeyT&& key, OAuth2PropertiesValueT&& value) {
+      m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties.emplace(std::forward<OAuth2PropertiesKeyT>(key), std::forward<OAuth2PropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -88,18 +86,16 @@ namespace Model
      * <p>A map of key-value pairs for the OAuth2 properties. Each value is a a
      * <code>Property</code> object.</p>
      */
-    inline const Aws::Map<Aws::String, Property>& GetBasicAuthenticationProperties() const{ return m_basicAuthenticationProperties; }
+    inline const Aws::Map<Aws::String, Property>& GetBasicAuthenticationProperties() const { return m_basicAuthenticationProperties; }
     inline bool BasicAuthenticationPropertiesHasBeenSet() const { return m_basicAuthenticationPropertiesHasBeenSet; }
-    inline void SetBasicAuthenticationProperties(const Aws::Map<Aws::String, Property>& value) { m_basicAuthenticationPropertiesHasBeenSet = true; m_basicAuthenticationProperties = value; }
-    inline void SetBasicAuthenticationProperties(Aws::Map<Aws::String, Property>&& value) { m_basicAuthenticationPropertiesHasBeenSet = true; m_basicAuthenticationProperties = std::move(value); }
-    inline AuthConfiguration& WithBasicAuthenticationProperties(const Aws::Map<Aws::String, Property>& value) { SetBasicAuthenticationProperties(value); return *this;}
-    inline AuthConfiguration& WithBasicAuthenticationProperties(Aws::Map<Aws::String, Property>&& value) { SetBasicAuthenticationProperties(std::move(value)); return *this;}
-    inline AuthConfiguration& AddBasicAuthenticationProperties(const Aws::String& key, const Property& value) { m_basicAuthenticationPropertiesHasBeenSet = true; m_basicAuthenticationProperties.emplace(key, value); return *this; }
-    inline AuthConfiguration& AddBasicAuthenticationProperties(Aws::String&& key, const Property& value) { m_basicAuthenticationPropertiesHasBeenSet = true; m_basicAuthenticationProperties.emplace(std::move(key), value); return *this; }
-    inline AuthConfiguration& AddBasicAuthenticationProperties(const Aws::String& key, Property&& value) { m_basicAuthenticationPropertiesHasBeenSet = true; m_basicAuthenticationProperties.emplace(key, std::move(value)); return *this; }
-    inline AuthConfiguration& AddBasicAuthenticationProperties(Aws::String&& key, Property&& value) { m_basicAuthenticationPropertiesHasBeenSet = true; m_basicAuthenticationProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline AuthConfiguration& AddBasicAuthenticationProperties(const char* key, Property&& value) { m_basicAuthenticationPropertiesHasBeenSet = true; m_basicAuthenticationProperties.emplace(key, std::move(value)); return *this; }
-    inline AuthConfiguration& AddBasicAuthenticationProperties(const char* key, const Property& value) { m_basicAuthenticationPropertiesHasBeenSet = true; m_basicAuthenticationProperties.emplace(key, value); return *this; }
+    template<typename BasicAuthenticationPropertiesT = Aws::Map<Aws::String, Property>>
+    void SetBasicAuthenticationProperties(BasicAuthenticationPropertiesT&& value) { m_basicAuthenticationPropertiesHasBeenSet = true; m_basicAuthenticationProperties = std::forward<BasicAuthenticationPropertiesT>(value); }
+    template<typename BasicAuthenticationPropertiesT = Aws::Map<Aws::String, Property>>
+    AuthConfiguration& WithBasicAuthenticationProperties(BasicAuthenticationPropertiesT&& value) { SetBasicAuthenticationProperties(std::forward<BasicAuthenticationPropertiesT>(value)); return *this;}
+    template<typename BasicAuthenticationPropertiesKeyT = Aws::String, typename BasicAuthenticationPropertiesValueT = Property>
+    AuthConfiguration& AddBasicAuthenticationProperties(BasicAuthenticationPropertiesKeyT&& key, BasicAuthenticationPropertiesValueT&& value) {
+      m_basicAuthenticationPropertiesHasBeenSet = true; m_basicAuthenticationProperties.emplace(std::forward<BasicAuthenticationPropertiesKeyT>(key), std::forward<BasicAuthenticationPropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -107,18 +103,16 @@ namespace Model
      * <p>A map of key-value pairs for the custom authentication properties. Each value
      * is a a <code>Property</code> object.</p>
      */
-    inline const Aws::Map<Aws::String, Property>& GetCustomAuthenticationProperties() const{ return m_customAuthenticationProperties; }
+    inline const Aws::Map<Aws::String, Property>& GetCustomAuthenticationProperties() const { return m_customAuthenticationProperties; }
     inline bool CustomAuthenticationPropertiesHasBeenSet() const { return m_customAuthenticationPropertiesHasBeenSet; }
-    inline void SetCustomAuthenticationProperties(const Aws::Map<Aws::String, Property>& value) { m_customAuthenticationPropertiesHasBeenSet = true; m_customAuthenticationProperties = value; }
-    inline void SetCustomAuthenticationProperties(Aws::Map<Aws::String, Property>&& value) { m_customAuthenticationPropertiesHasBeenSet = true; m_customAuthenticationProperties = std::move(value); }
-    inline AuthConfiguration& WithCustomAuthenticationProperties(const Aws::Map<Aws::String, Property>& value) { SetCustomAuthenticationProperties(value); return *this;}
-    inline AuthConfiguration& WithCustomAuthenticationProperties(Aws::Map<Aws::String, Property>&& value) { SetCustomAuthenticationProperties(std::move(value)); return *this;}
-    inline AuthConfiguration& AddCustomAuthenticationProperties(const Aws::String& key, const Property& value) { m_customAuthenticationPropertiesHasBeenSet = true; m_customAuthenticationProperties.emplace(key, value); return *this; }
-    inline AuthConfiguration& AddCustomAuthenticationProperties(Aws::String&& key, const Property& value) { m_customAuthenticationPropertiesHasBeenSet = true; m_customAuthenticationProperties.emplace(std::move(key), value); return *this; }
-    inline AuthConfiguration& AddCustomAuthenticationProperties(const Aws::String& key, Property&& value) { m_customAuthenticationPropertiesHasBeenSet = true; m_customAuthenticationProperties.emplace(key, std::move(value)); return *this; }
-    inline AuthConfiguration& AddCustomAuthenticationProperties(Aws::String&& key, Property&& value) { m_customAuthenticationPropertiesHasBeenSet = true; m_customAuthenticationProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline AuthConfiguration& AddCustomAuthenticationProperties(const char* key, Property&& value) { m_customAuthenticationPropertiesHasBeenSet = true; m_customAuthenticationProperties.emplace(key, std::move(value)); return *this; }
-    inline AuthConfiguration& AddCustomAuthenticationProperties(const char* key, const Property& value) { m_customAuthenticationPropertiesHasBeenSet = true; m_customAuthenticationProperties.emplace(key, value); return *this; }
+    template<typename CustomAuthenticationPropertiesT = Aws::Map<Aws::String, Property>>
+    void SetCustomAuthenticationProperties(CustomAuthenticationPropertiesT&& value) { m_customAuthenticationPropertiesHasBeenSet = true; m_customAuthenticationProperties = std::forward<CustomAuthenticationPropertiesT>(value); }
+    template<typename CustomAuthenticationPropertiesT = Aws::Map<Aws::String, Property>>
+    AuthConfiguration& WithCustomAuthenticationProperties(CustomAuthenticationPropertiesT&& value) { SetCustomAuthenticationProperties(std::forward<CustomAuthenticationPropertiesT>(value)); return *this;}
+    template<typename CustomAuthenticationPropertiesKeyT = Aws::String, typename CustomAuthenticationPropertiesValueT = Property>
+    AuthConfiguration& AddCustomAuthenticationProperties(CustomAuthenticationPropertiesKeyT&& key, CustomAuthenticationPropertiesValueT&& value) {
+      m_customAuthenticationPropertiesHasBeenSet = true; m_customAuthenticationProperties.emplace(std::forward<CustomAuthenticationPropertiesKeyT>(key), std::forward<CustomAuthenticationPropertiesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

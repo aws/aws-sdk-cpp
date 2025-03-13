@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteFacesResult::DeleteFacesResult()
-{
-}
-
 DeleteFacesResult::DeleteFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DeleteFacesResult& DeleteFacesResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_deletedFaces.push_back(deletedFacesJsonList[deletedFacesIndex].AsString());
     }
+    m_deletedFacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnsuccessfulFaceDeletions"))
   {
     Aws::Utils::Array<JsonView> unsuccessfulFaceDeletionsJsonList = jsonValue.GetArray("UnsuccessfulFaceDeletions");
@@ -45,14 +41,15 @@ DeleteFacesResult& DeleteFacesResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_unsuccessfulFaceDeletions.push_back(unsuccessfulFaceDeletionsJsonList[unsuccessfulFaceDeletionsIndex].AsObject());
     }
+    m_unsuccessfulFaceDeletionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

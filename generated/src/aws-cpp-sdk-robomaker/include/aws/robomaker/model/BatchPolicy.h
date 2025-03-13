@@ -29,7 +29,7 @@ namespace Model
   class BatchPolicy
   {
   public:
-    AWS_ROBOMAKER_API BatchPolicy();
+    AWS_ROBOMAKER_API BatchPolicy() = default;
     AWS_ROBOMAKER_API BatchPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API BatchPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * moved to the failed list and the batch status will be <code>TimedOut</code>.
      * </p>
      */
-    inline long long GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
+    inline long long GetTimeoutInSeconds() const { return m_timeoutInSeconds; }
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
     inline void SetTimeoutInSeconds(long long value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
     inline BatchPolicy& WithTimeoutInSeconds(long long value) { SetTimeoutInSeconds(value); return *this;}
@@ -59,17 +59,17 @@ namespace Model
      * <code>Restarting</code>, <code>RunningFailed</code> and
      * <code>Terminating</code>. All other states are terminal states. </p>
      */
-    inline int GetMaxConcurrency() const{ return m_maxConcurrency; }
+    inline int GetMaxConcurrency() const { return m_maxConcurrency; }
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
     inline void SetMaxConcurrency(int value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
     inline BatchPolicy& WithMaxConcurrency(int value) { SetMaxConcurrency(value); return *this;}
     ///@}
   private:
 
-    long long m_timeoutInSeconds;
+    long long m_timeoutInSeconds{0};
     bool m_timeoutInSecondsHasBeenSet = false;
 
-    int m_maxConcurrency;
+    int m_maxConcurrency{0};
     bool m_maxConcurrencyHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class EphemerisTypeDescription
   {
   public:
-    AWS_GROUNDSTATION_API EphemerisTypeDescription();
+    AWS_GROUNDSTATION_API EphemerisTypeDescription() = default;
     AWS_GROUNDSTATION_API EphemerisTypeDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API EphemerisTypeDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,22 +39,22 @@ namespace Model
 
     ///@{
     
-    inline const EphemerisDescription& GetOem() const{ return m_oem; }
+    inline const EphemerisDescription& GetOem() const { return m_oem; }
     inline bool OemHasBeenSet() const { return m_oemHasBeenSet; }
-    inline void SetOem(const EphemerisDescription& value) { m_oemHasBeenSet = true; m_oem = value; }
-    inline void SetOem(EphemerisDescription&& value) { m_oemHasBeenSet = true; m_oem = std::move(value); }
-    inline EphemerisTypeDescription& WithOem(const EphemerisDescription& value) { SetOem(value); return *this;}
-    inline EphemerisTypeDescription& WithOem(EphemerisDescription&& value) { SetOem(std::move(value)); return *this;}
+    template<typename OemT = EphemerisDescription>
+    void SetOem(OemT&& value) { m_oemHasBeenSet = true; m_oem = std::forward<OemT>(value); }
+    template<typename OemT = EphemerisDescription>
+    EphemerisTypeDescription& WithOem(OemT&& value) { SetOem(std::forward<OemT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EphemerisDescription& GetTle() const{ return m_tle; }
+    inline const EphemerisDescription& GetTle() const { return m_tle; }
     inline bool TleHasBeenSet() const { return m_tleHasBeenSet; }
-    inline void SetTle(const EphemerisDescription& value) { m_tleHasBeenSet = true; m_tle = value; }
-    inline void SetTle(EphemerisDescription&& value) { m_tleHasBeenSet = true; m_tle = std::move(value); }
-    inline EphemerisTypeDescription& WithTle(const EphemerisDescription& value) { SetTle(value); return *this;}
-    inline EphemerisTypeDescription& WithTle(EphemerisDescription&& value) { SetTle(std::move(value)); return *this;}
+    template<typename TleT = EphemerisDescription>
+    void SetTle(TleT&& value) { m_tleHasBeenSet = true; m_tle = std::forward<TleT>(value); }
+    template<typename TleT = EphemerisDescription>
+    EphemerisTypeDescription& WithTle(TleT&& value) { SetTle(std::forward<TleT>(value)); return *this;}
     ///@}
   private:
 

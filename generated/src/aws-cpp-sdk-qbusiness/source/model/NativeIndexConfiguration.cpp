@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-NativeIndexConfiguration::NativeIndexConfiguration() : 
-    m_indexIdHasBeenSet(false),
-    m_boostingOverrideHasBeenSet(false)
-{
-}
-
 NativeIndexConfiguration::NativeIndexConfiguration(JsonView jsonValue)
-  : NativeIndexConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ NativeIndexConfiguration& NativeIndexConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("indexId"))
   {
     m_indexId = jsonValue.GetString("indexId");
-
     m_indexIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("boostingOverride"))
   {
     Aws::Map<Aws::String, JsonView> boostingOverrideJsonMap = jsonValue.GetObject("boostingOverride").GetAllObjects();
@@ -48,7 +39,6 @@ NativeIndexConfiguration& NativeIndexConfiguration::operator =(JsonView jsonValu
     }
     m_boostingOverrideHasBeenSet = true;
   }
-
   return *this;
 }
 

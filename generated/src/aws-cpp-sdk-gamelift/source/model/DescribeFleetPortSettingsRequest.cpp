@@ -12,12 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFleetPortSettingsRequest::DescribeFleetPortSettingsRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFleetPortSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

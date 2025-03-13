@@ -14,10 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetHealthCheckLastFailureReasonRequest::GetHealthCheckLastFailureReasonRequest() : 
-    m_healthCheckIdHasBeenSet(false)
-{
-}
 
 Aws::String GetHealthCheckLastFailureReasonRequest::SerializePayload() const
 {

@@ -18,15 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-JobOutputSource::JobOutputSource() : 
-    m_kMSArnHasBeenSet(false),
-    m_outputS3PathHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 JobOutputSource::JobOutputSource(JsonView jsonValue)
-  : JobOutputSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ JobOutputSource& JobOutputSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KMSArn"))
   {
     m_kMSArn = jsonValue.GetString("KMSArn");
-
     m_kMSArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputS3Path"))
   {
     m_outputS3Path = jsonValue.GetString("outputS3Path");
-
     m_outputS3PathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

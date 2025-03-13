@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TaskTemplateField::TaskTemplateField() : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(TaskTemplateFieldType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_singleSelectOptionsHasBeenSet(false)
-{
-}
-
 TaskTemplateField::TaskTemplateField(JsonView jsonValue)
-  : TaskTemplateField()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TaskTemplateField& TaskTemplateField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetObject("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TaskTemplateFieldTypeMapper::GetTaskTemplateFieldTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SingleSelectOptions"))
   {
     Aws::Utils::Array<JsonView> singleSelectOptionsJsonList = jsonValue.GetArray("SingleSelectOptions");
@@ -65,7 +49,6 @@ TaskTemplateField& TaskTemplateField::operator =(JsonView jsonValue)
     }
     m_singleSelectOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

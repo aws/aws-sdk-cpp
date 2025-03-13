@@ -18,16 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-OpenSearchApplication::OpenSearchApplication() : 
-    m_applicationEndpointHasBeenSet(false),
-    m_applicationArnHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 OpenSearchApplication::OpenSearchApplication(JsonView jsonValue)
-  : OpenSearchApplication()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ OpenSearchApplication& OpenSearchApplication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationEndpoint"))
   {
     m_applicationEndpoint = jsonValue.GetString("applicationEndpoint");
-
     m_applicationEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationArn"))
   {
     m_applicationArn = jsonValue.GetString("applicationArn");
-
     m_applicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

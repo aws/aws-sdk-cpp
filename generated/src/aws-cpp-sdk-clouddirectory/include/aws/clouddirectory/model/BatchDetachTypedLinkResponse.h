@@ -30,7 +30,7 @@ namespace Model
   class BatchDetachTypedLinkResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchDetachTypedLinkResponse();
+    AWS_CLOUDDIRECTORY_API BatchDetachTypedLinkResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchDetachTypedLinkResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchDetachTypedLinkResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;

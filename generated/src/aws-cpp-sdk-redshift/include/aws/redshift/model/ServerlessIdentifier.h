@@ -31,7 +31,7 @@ namespace Model
   class ServerlessIdentifier
   {
   public:
-    AWS_REDSHIFT_API ServerlessIdentifier();
+    AWS_REDSHIFT_API ServerlessIdentifier() = default;
     AWS_REDSHIFT_API ServerlessIdentifier(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API ServerlessIdentifier& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The unique identifier for the serverless namespace.</p>
      */
-    inline const Aws::String& GetNamespaceIdentifier() const{ return m_namespaceIdentifier; }
+    inline const Aws::String& GetNamespaceIdentifier() const { return m_namespaceIdentifier; }
     inline bool NamespaceIdentifierHasBeenSet() const { return m_namespaceIdentifierHasBeenSet; }
-    inline void SetNamespaceIdentifier(const Aws::String& value) { m_namespaceIdentifierHasBeenSet = true; m_namespaceIdentifier = value; }
-    inline void SetNamespaceIdentifier(Aws::String&& value) { m_namespaceIdentifierHasBeenSet = true; m_namespaceIdentifier = std::move(value); }
-    inline void SetNamespaceIdentifier(const char* value) { m_namespaceIdentifierHasBeenSet = true; m_namespaceIdentifier.assign(value); }
-    inline ServerlessIdentifier& WithNamespaceIdentifier(const Aws::String& value) { SetNamespaceIdentifier(value); return *this;}
-    inline ServerlessIdentifier& WithNamespaceIdentifier(Aws::String&& value) { SetNamespaceIdentifier(std::move(value)); return *this;}
-    inline ServerlessIdentifier& WithNamespaceIdentifier(const char* value) { SetNamespaceIdentifier(value); return *this;}
+    template<typename NamespaceIdentifierT = Aws::String>
+    void SetNamespaceIdentifier(NamespaceIdentifierT&& value) { m_namespaceIdentifierHasBeenSet = true; m_namespaceIdentifier = std::forward<NamespaceIdentifierT>(value); }
+    template<typename NamespaceIdentifierT = Aws::String>
+    ServerlessIdentifier& WithNamespaceIdentifier(NamespaceIdentifierT&& value) { SetNamespaceIdentifier(std::forward<NamespaceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The unique identifier for the workgroup associated with the serverless
      * namespace.</p>
      */
-    inline const Aws::String& GetWorkgroupIdentifier() const{ return m_workgroupIdentifier; }
+    inline const Aws::String& GetWorkgroupIdentifier() const { return m_workgroupIdentifier; }
     inline bool WorkgroupIdentifierHasBeenSet() const { return m_workgroupIdentifierHasBeenSet; }
-    inline void SetWorkgroupIdentifier(const Aws::String& value) { m_workgroupIdentifierHasBeenSet = true; m_workgroupIdentifier = value; }
-    inline void SetWorkgroupIdentifier(Aws::String&& value) { m_workgroupIdentifierHasBeenSet = true; m_workgroupIdentifier = std::move(value); }
-    inline void SetWorkgroupIdentifier(const char* value) { m_workgroupIdentifierHasBeenSet = true; m_workgroupIdentifier.assign(value); }
-    inline ServerlessIdentifier& WithWorkgroupIdentifier(const Aws::String& value) { SetWorkgroupIdentifier(value); return *this;}
-    inline ServerlessIdentifier& WithWorkgroupIdentifier(Aws::String&& value) { SetWorkgroupIdentifier(std::move(value)); return *this;}
-    inline ServerlessIdentifier& WithWorkgroupIdentifier(const char* value) { SetWorkgroupIdentifier(value); return *this;}
+    template<typename WorkgroupIdentifierT = Aws::String>
+    void SetWorkgroupIdentifier(WorkgroupIdentifierT&& value) { m_workgroupIdentifierHasBeenSet = true; m_workgroupIdentifier = std::forward<WorkgroupIdentifierT>(value); }
+    template<typename WorkgroupIdentifierT = Aws::String>
+    ServerlessIdentifier& WithWorkgroupIdentifier(WorkgroupIdentifierT&& value) { SetWorkgroupIdentifier(std::forward<WorkgroupIdentifierT>(value)); return *this;}
     ///@}
   private:
 

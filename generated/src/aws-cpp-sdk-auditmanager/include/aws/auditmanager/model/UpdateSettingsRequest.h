@@ -26,7 +26,7 @@ namespace Model
   class UpdateSettingsRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API UpdateSettingsRequest();
+    AWS_AUDITMANAGER_API UpdateSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,54 +42,50 @@ namespace Model
      * <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager
      * sends notifications to. </p>
      */
-    inline const Aws::String& GetSnsTopic() const{ return m_snsTopic; }
+    inline const Aws::String& GetSnsTopic() const { return m_snsTopic; }
     inline bool SnsTopicHasBeenSet() const { return m_snsTopicHasBeenSet; }
-    inline void SetSnsTopic(const Aws::String& value) { m_snsTopicHasBeenSet = true; m_snsTopic = value; }
-    inline void SetSnsTopic(Aws::String&& value) { m_snsTopicHasBeenSet = true; m_snsTopic = std::move(value); }
-    inline void SetSnsTopic(const char* value) { m_snsTopicHasBeenSet = true; m_snsTopic.assign(value); }
-    inline UpdateSettingsRequest& WithSnsTopic(const Aws::String& value) { SetSnsTopic(value); return *this;}
-    inline UpdateSettingsRequest& WithSnsTopic(Aws::String&& value) { SetSnsTopic(std::move(value)); return *this;}
-    inline UpdateSettingsRequest& WithSnsTopic(const char* value) { SetSnsTopic(value); return *this;}
+    template<typename SnsTopicT = Aws::String>
+    void SetSnsTopic(SnsTopicT&& value) { m_snsTopicHasBeenSet = true; m_snsTopic = std::forward<SnsTopicT>(value); }
+    template<typename SnsTopicT = Aws::String>
+    UpdateSettingsRequest& WithSnsTopic(SnsTopicT&& value) { SetSnsTopic(std::forward<SnsTopicT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The default S3 destination bucket for storing assessment reports. </p>
      */
-    inline const AssessmentReportsDestination& GetDefaultAssessmentReportsDestination() const{ return m_defaultAssessmentReportsDestination; }
+    inline const AssessmentReportsDestination& GetDefaultAssessmentReportsDestination() const { return m_defaultAssessmentReportsDestination; }
     inline bool DefaultAssessmentReportsDestinationHasBeenSet() const { return m_defaultAssessmentReportsDestinationHasBeenSet; }
-    inline void SetDefaultAssessmentReportsDestination(const AssessmentReportsDestination& value) { m_defaultAssessmentReportsDestinationHasBeenSet = true; m_defaultAssessmentReportsDestination = value; }
-    inline void SetDefaultAssessmentReportsDestination(AssessmentReportsDestination&& value) { m_defaultAssessmentReportsDestinationHasBeenSet = true; m_defaultAssessmentReportsDestination = std::move(value); }
-    inline UpdateSettingsRequest& WithDefaultAssessmentReportsDestination(const AssessmentReportsDestination& value) { SetDefaultAssessmentReportsDestination(value); return *this;}
-    inline UpdateSettingsRequest& WithDefaultAssessmentReportsDestination(AssessmentReportsDestination&& value) { SetDefaultAssessmentReportsDestination(std::move(value)); return *this;}
+    template<typename DefaultAssessmentReportsDestinationT = AssessmentReportsDestination>
+    void SetDefaultAssessmentReportsDestination(DefaultAssessmentReportsDestinationT&& value) { m_defaultAssessmentReportsDestinationHasBeenSet = true; m_defaultAssessmentReportsDestination = std::forward<DefaultAssessmentReportsDestinationT>(value); }
+    template<typename DefaultAssessmentReportsDestinationT = AssessmentReportsDestination>
+    UpdateSettingsRequest& WithDefaultAssessmentReportsDestination(DefaultAssessmentReportsDestinationT&& value) { SetDefaultAssessmentReportsDestination(std::forward<DefaultAssessmentReportsDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of the default audit owners. </p>
      */
-    inline const Aws::Vector<Role>& GetDefaultProcessOwners() const{ return m_defaultProcessOwners; }
+    inline const Aws::Vector<Role>& GetDefaultProcessOwners() const { return m_defaultProcessOwners; }
     inline bool DefaultProcessOwnersHasBeenSet() const { return m_defaultProcessOwnersHasBeenSet; }
-    inline void SetDefaultProcessOwners(const Aws::Vector<Role>& value) { m_defaultProcessOwnersHasBeenSet = true; m_defaultProcessOwners = value; }
-    inline void SetDefaultProcessOwners(Aws::Vector<Role>&& value) { m_defaultProcessOwnersHasBeenSet = true; m_defaultProcessOwners = std::move(value); }
-    inline UpdateSettingsRequest& WithDefaultProcessOwners(const Aws::Vector<Role>& value) { SetDefaultProcessOwners(value); return *this;}
-    inline UpdateSettingsRequest& WithDefaultProcessOwners(Aws::Vector<Role>&& value) { SetDefaultProcessOwners(std::move(value)); return *this;}
-    inline UpdateSettingsRequest& AddDefaultProcessOwners(const Role& value) { m_defaultProcessOwnersHasBeenSet = true; m_defaultProcessOwners.push_back(value); return *this; }
-    inline UpdateSettingsRequest& AddDefaultProcessOwners(Role&& value) { m_defaultProcessOwnersHasBeenSet = true; m_defaultProcessOwners.push_back(std::move(value)); return *this; }
+    template<typename DefaultProcessOwnersT = Aws::Vector<Role>>
+    void SetDefaultProcessOwners(DefaultProcessOwnersT&& value) { m_defaultProcessOwnersHasBeenSet = true; m_defaultProcessOwners = std::forward<DefaultProcessOwnersT>(value); }
+    template<typename DefaultProcessOwnersT = Aws::Vector<Role>>
+    UpdateSettingsRequest& WithDefaultProcessOwners(DefaultProcessOwnersT&& value) { SetDefaultProcessOwners(std::forward<DefaultProcessOwnersT>(value)); return *this;}
+    template<typename DefaultProcessOwnersT = Role>
+    UpdateSettingsRequest& AddDefaultProcessOwners(DefaultProcessOwnersT&& value) { m_defaultProcessOwnersHasBeenSet = true; m_defaultProcessOwners.emplace_back(std::forward<DefaultProcessOwnersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The KMS key details. </p>
      */
-    inline const Aws::String& GetKmsKey() const{ return m_kmsKey; }
+    inline const Aws::String& GetKmsKey() const { return m_kmsKey; }
     inline bool KmsKeyHasBeenSet() const { return m_kmsKeyHasBeenSet; }
-    inline void SetKmsKey(const Aws::String& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = value; }
-    inline void SetKmsKey(Aws::String&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::move(value); }
-    inline void SetKmsKey(const char* value) { m_kmsKeyHasBeenSet = true; m_kmsKey.assign(value); }
-    inline UpdateSettingsRequest& WithKmsKey(const Aws::String& value) { SetKmsKey(value); return *this;}
-    inline UpdateSettingsRequest& WithKmsKey(Aws::String&& value) { SetKmsKey(std::move(value)); return *this;}
-    inline UpdateSettingsRequest& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
+    template<typename KmsKeyT = Aws::String>
+    void SetKmsKey(KmsKeyT&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::forward<KmsKeyT>(value); }
+    template<typename KmsKeyT = Aws::String>
+    UpdateSettingsRequest& WithKmsKey(KmsKeyT&& value) { SetKmsKey(std::forward<KmsKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,7 +100,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
      * Audit Manager. </p> 
      */
-    inline bool GetEvidenceFinderEnabled() const{ return m_evidenceFinderEnabled; }
+    inline bool GetEvidenceFinderEnabled() const { return m_evidenceFinderEnabled; }
     inline bool EvidenceFinderEnabledHasBeenSet() const { return m_evidenceFinderEnabledHasBeenSet; }
     inline void SetEvidenceFinderEnabled(bool value) { m_evidenceFinderEnabledHasBeenSet = true; m_evidenceFinderEnabled = value; }
     inline UpdateSettingsRequest& WithEvidenceFinderEnabled(bool value) { SetEvidenceFinderEnabled(value); return *this;}
@@ -116,24 +112,24 @@ namespace Model
      * attribute to determine how your data is handled when you deregister Audit
      * Manager.</p>
      */
-    inline const DeregistrationPolicy& GetDeregistrationPolicy() const{ return m_deregistrationPolicy; }
+    inline const DeregistrationPolicy& GetDeregistrationPolicy() const { return m_deregistrationPolicy; }
     inline bool DeregistrationPolicyHasBeenSet() const { return m_deregistrationPolicyHasBeenSet; }
-    inline void SetDeregistrationPolicy(const DeregistrationPolicy& value) { m_deregistrationPolicyHasBeenSet = true; m_deregistrationPolicy = value; }
-    inline void SetDeregistrationPolicy(DeregistrationPolicy&& value) { m_deregistrationPolicyHasBeenSet = true; m_deregistrationPolicy = std::move(value); }
-    inline UpdateSettingsRequest& WithDeregistrationPolicy(const DeregistrationPolicy& value) { SetDeregistrationPolicy(value); return *this;}
-    inline UpdateSettingsRequest& WithDeregistrationPolicy(DeregistrationPolicy&& value) { SetDeregistrationPolicy(std::move(value)); return *this;}
+    template<typename DeregistrationPolicyT = DeregistrationPolicy>
+    void SetDeregistrationPolicy(DeregistrationPolicyT&& value) { m_deregistrationPolicyHasBeenSet = true; m_deregistrationPolicy = std::forward<DeregistrationPolicyT>(value); }
+    template<typename DeregistrationPolicyT = DeregistrationPolicy>
+    UpdateSettingsRequest& WithDeregistrationPolicy(DeregistrationPolicyT&& value) { SetDeregistrationPolicy(std::forward<DeregistrationPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The default S3 destination bucket for storing evidence finder exports. </p>
      */
-    inline const DefaultExportDestination& GetDefaultExportDestination() const{ return m_defaultExportDestination; }
+    inline const DefaultExportDestination& GetDefaultExportDestination() const { return m_defaultExportDestination; }
     inline bool DefaultExportDestinationHasBeenSet() const { return m_defaultExportDestinationHasBeenSet; }
-    inline void SetDefaultExportDestination(const DefaultExportDestination& value) { m_defaultExportDestinationHasBeenSet = true; m_defaultExportDestination = value; }
-    inline void SetDefaultExportDestination(DefaultExportDestination&& value) { m_defaultExportDestinationHasBeenSet = true; m_defaultExportDestination = std::move(value); }
-    inline UpdateSettingsRequest& WithDefaultExportDestination(const DefaultExportDestination& value) { SetDefaultExportDestination(value); return *this;}
-    inline UpdateSettingsRequest& WithDefaultExportDestination(DefaultExportDestination&& value) { SetDefaultExportDestination(std::move(value)); return *this;}
+    template<typename DefaultExportDestinationT = DefaultExportDestination>
+    void SetDefaultExportDestination(DefaultExportDestinationT&& value) { m_defaultExportDestinationHasBeenSet = true; m_defaultExportDestination = std::forward<DefaultExportDestinationT>(value); }
+    template<typename DefaultExportDestinationT = DefaultExportDestination>
+    UpdateSettingsRequest& WithDefaultExportDestination(DefaultExportDestinationT&& value) { SetDefaultExportDestination(std::forward<DefaultExportDestinationT>(value)); return *this;}
     ///@}
   private:
 
@@ -149,7 +145,7 @@ namespace Model
     Aws::String m_kmsKey;
     bool m_kmsKeyHasBeenSet = false;
 
-    bool m_evidenceFinderEnabled;
+    bool m_evidenceFinderEnabled{false};
     bool m_evidenceFinderEnabledHasBeenSet = false;
 
     DeregistrationPolicy m_deregistrationPolicy;

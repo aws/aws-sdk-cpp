@@ -12,13 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTablesRequest::ListTablesRequest() : 
-    m_exclusiveStartTableNameHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListTablesRequest::SerializePayload() const
 {
   JsonValue payload;

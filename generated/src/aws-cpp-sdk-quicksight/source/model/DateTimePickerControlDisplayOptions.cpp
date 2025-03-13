@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DateTimePickerControlDisplayOptions::DateTimePickerControlDisplayOptions() : 
-    m_titleOptionsHasBeenSet(false),
-    m_dateTimeFormatHasBeenSet(false),
-    m_infoIconLabelOptionsHasBeenSet(false),
-    m_helperTextVisibility(Visibility::NOT_SET),
-    m_helperTextVisibilityHasBeenSet(false),
-    m_dateIconVisibility(Visibility::NOT_SET),
-    m_dateIconVisibilityHasBeenSet(false)
-{
-}
-
 DateTimePickerControlDisplayOptions::DateTimePickerControlDisplayOptions(JsonView jsonValue)
-  : DateTimePickerControlDisplayOptions()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ DateTimePickerControlDisplayOptions& DateTimePickerControlDisplayOptions::operat
   if(jsonValue.ValueExists("TitleOptions"))
   {
     m_titleOptions = jsonValue.GetObject("TitleOptions");
-
     m_titleOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateTimeFormat"))
   {
     m_dateTimeFormat = jsonValue.GetString("DateTimeFormat");
-
     m_dateTimeFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InfoIconLabelOptions"))
   {
     m_infoIconLabelOptions = jsonValue.GetObject("InfoIconLabelOptions");
-
     m_infoIconLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HelperTextVisibility"))
   {
     m_helperTextVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("HelperTextVisibility"));
-
     m_helperTextVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateIconVisibility"))
   {
     m_dateIconVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("DateIconVisibility"));
-
     m_dateIconVisibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

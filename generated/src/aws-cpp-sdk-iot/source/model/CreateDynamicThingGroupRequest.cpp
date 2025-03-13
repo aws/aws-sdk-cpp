@@ -12,16 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDynamicThingGroupRequest::CreateDynamicThingGroupRequest() : 
-    m_thingGroupNameHasBeenSet(false),
-    m_thingGroupPropertiesHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_queryVersionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDynamicThingGroupRequest::SerializePayload() const
 {
   JsonValue payload;

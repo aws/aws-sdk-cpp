@@ -33,7 +33,7 @@ namespace Model
   class BatchDeleteTaxRegistrationError
   {
   public:
-    AWS_TAXSETTINGS_API BatchDeleteTaxRegistrationError();
+    AWS_TAXSETTINGS_API BatchDeleteTaxRegistrationError() = default;
     AWS_TAXSETTINGS_API BatchDeleteTaxRegistrationError(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API BatchDeleteTaxRegistrationError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * couldn't be deleted during the <code>BatchDeleteTaxRegistration</code>
      * operation. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline BatchDeleteTaxRegistrationError& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline BatchDeleteTaxRegistrationError& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline BatchDeleteTaxRegistrationError& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    BatchDeleteTaxRegistrationError& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p> The error code for an individual failure in BatchDeleteTaxRegistration
      * operation. </p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline BatchDeleteTaxRegistrationError& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline BatchDeleteTaxRegistrationError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline BatchDeleteTaxRegistrationError& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    BatchDeleteTaxRegistrationError& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p> The error message for an individual failure in the
      * <code>BatchDeleteTaxRegistration</code> operation. </p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline BatchDeleteTaxRegistrationError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline BatchDeleteTaxRegistrationError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline BatchDeleteTaxRegistrationError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    BatchDeleteTaxRegistrationError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

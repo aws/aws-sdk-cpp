@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddStorageSystemResult::AddStorageSystemResult()
-{
-}
-
 AddStorageSystemResult::AddStorageSystemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ AddStorageSystemResult& AddStorageSystemResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("StorageSystemArn"))
   {
     m_storageSystemArn = jsonValue.GetString("StorageSystemArn");
-
+    m_storageSystemArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

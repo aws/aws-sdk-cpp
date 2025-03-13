@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PromptFlowNodeSourceConfiguration::PromptFlowNodeSourceConfiguration() : 
-    m_inlineHasBeenSet(false),
-    m_resourceHasBeenSet(false)
-{
-}
-
 PromptFlowNodeSourceConfiguration::PromptFlowNodeSourceConfiguration(JsonView jsonValue)
-  : PromptFlowNodeSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PromptFlowNodeSourceConfiguration& PromptFlowNodeSourceConfiguration::operator =
   if(jsonValue.ValueExists("inline"))
   {
     m_inline = jsonValue.GetObject("inline");
-
     m_inlineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetObject("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   return *this;
 }
 

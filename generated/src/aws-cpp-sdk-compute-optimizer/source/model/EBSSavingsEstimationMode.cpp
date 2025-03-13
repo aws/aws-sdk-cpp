@@ -18,14 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-EBSSavingsEstimationMode::EBSSavingsEstimationMode() : 
-    m_source(EBSSavingsEstimationModeSource::NOT_SET),
-    m_sourceHasBeenSet(false)
-{
-}
-
 EBSSavingsEstimationMode::EBSSavingsEstimationMode(JsonView jsonValue)
-  : EBSSavingsEstimationMode()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EBSSavingsEstimationMode& EBSSavingsEstimationMode::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("source"))
   {
     m_source = EBSSavingsEstimationModeSourceMapper::GetEBSSavingsEstimationModeSourceForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

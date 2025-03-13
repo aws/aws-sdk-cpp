@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetVariantImportJobRequest::GetVariantImportJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetVariantImportJobRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class SelfGrantStatusDetail
   {
   public:
-    AWS_DATAZONE_API SelfGrantStatusDetail();
+    AWS_DATAZONE_API SelfGrantStatusDetail() = default;
     AWS_DATAZONE_API SelfGrantStatusDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API SelfGrantStatusDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,54 +42,46 @@ namespace Model
     /**
      * <p>The name of the database used for the data source.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline SelfGrantStatusDetail& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline SelfGrantStatusDetail& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline SelfGrantStatusDetail& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    SelfGrantStatusDetail& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for why the operation failed.</p>
      */
-    inline const Aws::String& GetFailureCause() const{ return m_failureCause; }
+    inline const Aws::String& GetFailureCause() const { return m_failureCause; }
     inline bool FailureCauseHasBeenSet() const { return m_failureCauseHasBeenSet; }
-    inline void SetFailureCause(const Aws::String& value) { m_failureCauseHasBeenSet = true; m_failureCause = value; }
-    inline void SetFailureCause(Aws::String&& value) { m_failureCauseHasBeenSet = true; m_failureCause = std::move(value); }
-    inline void SetFailureCause(const char* value) { m_failureCauseHasBeenSet = true; m_failureCause.assign(value); }
-    inline SelfGrantStatusDetail& WithFailureCause(const Aws::String& value) { SetFailureCause(value); return *this;}
-    inline SelfGrantStatusDetail& WithFailureCause(Aws::String&& value) { SetFailureCause(std::move(value)); return *this;}
-    inline SelfGrantStatusDetail& WithFailureCause(const char* value) { SetFailureCause(value); return *this;}
+    template<typename FailureCauseT = Aws::String>
+    void SetFailureCause(FailureCauseT&& value) { m_failureCauseHasBeenSet = true; m_failureCause = std::forward<FailureCauseT>(value); }
+    template<typename FailureCauseT = Aws::String>
+    SelfGrantStatusDetail& WithFailureCause(FailureCauseT&& value) { SetFailureCause(std::forward<FailureCauseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the schema used in the data source.</p>
      */
-    inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
+    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
     inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
-    inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
-    inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::move(value); }
-    inline void SetSchemaName(const char* value) { m_schemaNameHasBeenSet = true; m_schemaName.assign(value); }
-    inline SelfGrantStatusDetail& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-    inline SelfGrantStatusDetail& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-    inline SelfGrantStatusDetail& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+    template<typename SchemaNameT = Aws::String>
+    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
+    template<typename SchemaNameT = Aws::String>
+    SelfGrantStatusDetail& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The self granting status of the data source.</p>
      */
-    inline const SelfGrantStatus& GetStatus() const{ return m_status; }
+    inline SelfGrantStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SelfGrantStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SelfGrantStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SelfGrantStatusDetail& WithStatus(const SelfGrantStatus& value) { SetStatus(value); return *this;}
-    inline SelfGrantStatusDetail& WithStatus(SelfGrantStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SelfGrantStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SelfGrantStatusDetail& WithStatus(SelfGrantStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -102,7 +94,7 @@ namespace Model
     Aws::String m_schemaName;
     bool m_schemaNameHasBeenSet = false;
 
-    SelfGrantStatus m_status;
+    SelfGrantStatus m_status{SelfGrantStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DeleteLaunchTemplateVersionsResponseErrorItem::DeleteLaunchTemplateVersionsResponseErrorItem() : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_responseErrorHasBeenSet(false)
-{
-}
-
 DeleteLaunchTemplateVersionsResponseErrorItem::DeleteLaunchTemplateVersionsResponseErrorItem(const XmlNode& xmlNode)
-  : DeleteLaunchTemplateVersionsResponseErrorItem()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ DeleteLaunchTemplateVersionsResponseErrorItem& DeleteLaunchTemplateVersionsRespo
     {
       m_launchTemplateId = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateIdNode.GetText());
       m_launchTemplateIdHasBeenSet = true;
+       m_launchTemplateIdHasBeenSet = true;
     }
     XmlNode launchTemplateNameNode = resultNode.FirstChild("launchTemplateName");
     if(!launchTemplateNameNode.IsNull())
     {
       m_launchTemplateName = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateNameNode.GetText());
       m_launchTemplateNameHasBeenSet = true;
+       m_launchTemplateNameHasBeenSet = true;
     }
     XmlNode versionNumberNode = resultNode.FirstChild("versionNumber");
     if(!versionNumberNode.IsNull())
     {
       m_versionNumber = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(versionNumberNode.GetText()).c_str()).c_str());
       m_versionNumberHasBeenSet = true;
+       m_versionNumberHasBeenSet = true;
     }
     XmlNode responseErrorNode = resultNode.FirstChild("responseError");
     if(!responseErrorNode.IsNull())
     {
       m_responseError = responseErrorNode;
       m_responseErrorHasBeenSet = true;
+       m_responseErrorHasBeenSet = true;
     }
   }
 

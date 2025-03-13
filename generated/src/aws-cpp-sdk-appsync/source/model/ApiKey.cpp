@@ -18,18 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-ApiKey::ApiKey() : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_expires(0),
-    m_expiresHasBeenSet(false),
-    m_deletes(0),
-    m_deletesHasBeenSet(false)
-{
-}
-
 ApiKey::ApiKey(JsonView jsonValue)
-  : ApiKey()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ApiKey& ApiKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expires"))
   {
     m_expires = jsonValue.GetInt64("expires");
-
     m_expiresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deletes"))
   {
     m_deletes = jsonValue.GetInt64("deletes");
-
     m_deletesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class GetServiceSettingsResult
   {
   public:
-    AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API GetServiceSettingsResult();
+    AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API GetServiceSettingsResult() = default;
     AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API GetServiceSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API GetServiceSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,25 +42,22 @@ namespace Model
      * <p>The Region in which License Manager displays the aggregated data for Linux
      * subscriptions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetHomeRegions() const{ return m_homeRegions; }
-    inline void SetHomeRegions(const Aws::Vector<Aws::String>& value) { m_homeRegions = value; }
-    inline void SetHomeRegions(Aws::Vector<Aws::String>&& value) { m_homeRegions = std::move(value); }
-    inline GetServiceSettingsResult& WithHomeRegions(const Aws::Vector<Aws::String>& value) { SetHomeRegions(value); return *this;}
-    inline GetServiceSettingsResult& WithHomeRegions(Aws::Vector<Aws::String>&& value) { SetHomeRegions(std::move(value)); return *this;}
-    inline GetServiceSettingsResult& AddHomeRegions(const Aws::String& value) { m_homeRegions.push_back(value); return *this; }
-    inline GetServiceSettingsResult& AddHomeRegions(Aws::String&& value) { m_homeRegions.push_back(std::move(value)); return *this; }
-    inline GetServiceSettingsResult& AddHomeRegions(const char* value) { m_homeRegions.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetHomeRegions() const { return m_homeRegions; }
+    template<typename HomeRegionsT = Aws::Vector<Aws::String>>
+    void SetHomeRegions(HomeRegionsT&& value) { m_homeRegionsHasBeenSet = true; m_homeRegions = std::forward<HomeRegionsT>(value); }
+    template<typename HomeRegionsT = Aws::Vector<Aws::String>>
+    GetServiceSettingsResult& WithHomeRegions(HomeRegionsT&& value) { SetHomeRegions(std::forward<HomeRegionsT>(value)); return *this;}
+    template<typename HomeRegionsT = Aws::String>
+    GetServiceSettingsResult& AddHomeRegions(HomeRegionsT&& value) { m_homeRegionsHasBeenSet = true; m_homeRegions.emplace_back(std::forward<HomeRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Lists if discovery has been enabled for Linux subscriptions.</p>
      */
-    inline const LinuxSubscriptionsDiscovery& GetLinuxSubscriptionsDiscovery() const{ return m_linuxSubscriptionsDiscovery; }
-    inline void SetLinuxSubscriptionsDiscovery(const LinuxSubscriptionsDiscovery& value) { m_linuxSubscriptionsDiscovery = value; }
-    inline void SetLinuxSubscriptionsDiscovery(LinuxSubscriptionsDiscovery&& value) { m_linuxSubscriptionsDiscovery = std::move(value); }
-    inline GetServiceSettingsResult& WithLinuxSubscriptionsDiscovery(const LinuxSubscriptionsDiscovery& value) { SetLinuxSubscriptionsDiscovery(value); return *this;}
-    inline GetServiceSettingsResult& WithLinuxSubscriptionsDiscovery(LinuxSubscriptionsDiscovery&& value) { SetLinuxSubscriptionsDiscovery(std::move(value)); return *this;}
+    inline LinuxSubscriptionsDiscovery GetLinuxSubscriptionsDiscovery() const { return m_linuxSubscriptionsDiscovery; }
+    inline void SetLinuxSubscriptionsDiscovery(LinuxSubscriptionsDiscovery value) { m_linuxSubscriptionsDiscoveryHasBeenSet = true; m_linuxSubscriptionsDiscovery = value; }
+    inline GetServiceSettingsResult& WithLinuxSubscriptionsDiscovery(LinuxSubscriptionsDiscovery value) { SetLinuxSubscriptionsDiscovery(value); return *this;}
     ///@}
 
     ///@{
@@ -69,22 +66,20 @@ namespace Model
      * include if Organizations integration has been enabled, and which Regions data
      * will be aggregated from.</p>
      */
-    inline const LinuxSubscriptionsDiscoverySettings& GetLinuxSubscriptionsDiscoverySettings() const{ return m_linuxSubscriptionsDiscoverySettings; }
-    inline void SetLinuxSubscriptionsDiscoverySettings(const LinuxSubscriptionsDiscoverySettings& value) { m_linuxSubscriptionsDiscoverySettings = value; }
-    inline void SetLinuxSubscriptionsDiscoverySettings(LinuxSubscriptionsDiscoverySettings&& value) { m_linuxSubscriptionsDiscoverySettings = std::move(value); }
-    inline GetServiceSettingsResult& WithLinuxSubscriptionsDiscoverySettings(const LinuxSubscriptionsDiscoverySettings& value) { SetLinuxSubscriptionsDiscoverySettings(value); return *this;}
-    inline GetServiceSettingsResult& WithLinuxSubscriptionsDiscoverySettings(LinuxSubscriptionsDiscoverySettings&& value) { SetLinuxSubscriptionsDiscoverySettings(std::move(value)); return *this;}
+    inline const LinuxSubscriptionsDiscoverySettings& GetLinuxSubscriptionsDiscoverySettings() const { return m_linuxSubscriptionsDiscoverySettings; }
+    template<typename LinuxSubscriptionsDiscoverySettingsT = LinuxSubscriptionsDiscoverySettings>
+    void SetLinuxSubscriptionsDiscoverySettings(LinuxSubscriptionsDiscoverySettingsT&& value) { m_linuxSubscriptionsDiscoverySettingsHasBeenSet = true; m_linuxSubscriptionsDiscoverySettings = std::forward<LinuxSubscriptionsDiscoverySettingsT>(value); }
+    template<typename LinuxSubscriptionsDiscoverySettingsT = LinuxSubscriptionsDiscoverySettings>
+    GetServiceSettingsResult& WithLinuxSubscriptionsDiscoverySettings(LinuxSubscriptionsDiscoverySettingsT&& value) { SetLinuxSubscriptionsDiscoverySettings(std::forward<LinuxSubscriptionsDiscoverySettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the status of Linux subscriptions settings being applied.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Status& value) { m_status = value; }
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-    inline GetServiceSettingsResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline GetServiceSettingsResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline Status GetStatus() const { return m_status; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetServiceSettingsResult& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -92,43 +87,44 @@ namespace Model
      * <p>A message which details the Linux subscriptions service settings current
      * status.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::Map<Aws::String, Aws::String>& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::Map<Aws::String, Aws::String>&& value) { m_statusMessage = std::move(value); }
-    inline GetServiceSettingsResult& WithStatusMessage(const Aws::Map<Aws::String, Aws::String>& value) { SetStatusMessage(value); return *this;}
-    inline GetServiceSettingsResult& WithStatusMessage(Aws::Map<Aws::String, Aws::String>&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline GetServiceSettingsResult& AddStatusMessage(const Aws::String& key, const Aws::String& value) { m_statusMessage.emplace(key, value); return *this; }
-    inline GetServiceSettingsResult& AddStatusMessage(Aws::String&& key, const Aws::String& value) { m_statusMessage.emplace(std::move(key), value); return *this; }
-    inline GetServiceSettingsResult& AddStatusMessage(const Aws::String& key, Aws::String&& value) { m_statusMessage.emplace(key, std::move(value)); return *this; }
-    inline GetServiceSettingsResult& AddStatusMessage(Aws::String&& key, Aws::String&& value) { m_statusMessage.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetServiceSettingsResult& AddStatusMessage(const char* key, Aws::String&& value) { m_statusMessage.emplace(key, std::move(value)); return *this; }
-    inline GetServiceSettingsResult& AddStatusMessage(Aws::String&& key, const char* value) { m_statusMessage.emplace(std::move(key), value); return *this; }
-    inline GetServiceSettingsResult& AddStatusMessage(const char* key, const char* value) { m_statusMessage.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::Map<Aws::String, Aws::String>>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::Map<Aws::String, Aws::String>>
+    GetServiceSettingsResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
+    template<typename StatusMessageKeyT = Aws::String, typename StatusMessageValueT = Aws::String>
+    GetServiceSettingsResult& AddStatusMessage(StatusMessageKeyT&& key, StatusMessageValueT&& value) {
+      m_statusMessageHasBeenSet = true; m_statusMessage.emplace(std::forward<StatusMessageKeyT>(key), std::forward<StatusMessageValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetServiceSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetServiceSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetServiceSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetServiceSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_homeRegions;
+    bool m_homeRegionsHasBeenSet = false;
 
-    LinuxSubscriptionsDiscovery m_linuxSubscriptionsDiscovery;
+    LinuxSubscriptionsDiscovery m_linuxSubscriptionsDiscovery{LinuxSubscriptionsDiscovery::NOT_SET};
+    bool m_linuxSubscriptionsDiscoveryHasBeenSet = false;
 
     LinuxSubscriptionsDiscoverySettings m_linuxSubscriptionsDiscoverySettings;
+    bool m_linuxSubscriptionsDiscoverySettingsHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

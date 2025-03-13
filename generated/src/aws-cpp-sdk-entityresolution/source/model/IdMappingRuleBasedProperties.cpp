@@ -18,19 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-IdMappingRuleBasedProperties::IdMappingRuleBasedProperties() : 
-    m_attributeMatchingModel(AttributeMatchingModel::NOT_SET),
-    m_attributeMatchingModelHasBeenSet(false),
-    m_recordMatchingModel(RecordMatchingModel::NOT_SET),
-    m_recordMatchingModelHasBeenSet(false),
-    m_ruleDefinitionType(IdMappingWorkflowRuleDefinitionType::NOT_SET),
-    m_ruleDefinitionTypeHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 IdMappingRuleBasedProperties::IdMappingRuleBasedProperties(JsonView jsonValue)
-  : IdMappingRuleBasedProperties()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ IdMappingRuleBasedProperties& IdMappingRuleBasedProperties::operator =(JsonView 
   if(jsonValue.ValueExists("attributeMatchingModel"))
   {
     m_attributeMatchingModel = AttributeMatchingModelMapper::GetAttributeMatchingModelForName(jsonValue.GetString("attributeMatchingModel"));
-
     m_attributeMatchingModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordMatchingModel"))
   {
     m_recordMatchingModel = RecordMatchingModelMapper::GetRecordMatchingModelForName(jsonValue.GetString("recordMatchingModel"));
-
     m_recordMatchingModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleDefinitionType"))
   {
     m_ruleDefinitionType = IdMappingWorkflowRuleDefinitionTypeMapper::GetIdMappingWorkflowRuleDefinitionTypeForName(jsonValue.GetString("ruleDefinitionType"));
-
     m_ruleDefinitionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
@@ -67,7 +49,6 @@ IdMappingRuleBasedProperties& IdMappingRuleBasedProperties::operator =(JsonView 
     }
     m_rulesHasBeenSet = true;
   }
-
   return *this;
 }
 

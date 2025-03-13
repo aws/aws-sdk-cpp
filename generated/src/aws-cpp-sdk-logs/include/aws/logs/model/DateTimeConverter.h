@@ -36,7 +36,7 @@ namespace Model
   class DateTimeConverter
   {
   public:
-    AWS_CLOUDWATCHLOGS_API DateTimeConverter();
+    AWS_CLOUDWATCHLOGS_API DateTimeConverter() = default;
     AWS_CLOUDWATCHLOGS_API DateTimeConverter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API DateTimeConverter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The key to apply the date conversion to.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline DateTimeConverter& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline DateTimeConverter& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline DateTimeConverter& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    DateTimeConverter& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The JSON field to store the result in.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline DateTimeConverter& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline DateTimeConverter& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline DateTimeConverter& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    DateTimeConverter& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,29 +72,26 @@ namespace Model
      * <p>If you omit this, the default of <code> yyyy-MM-dd'T'HH:mm:ss.SSS'Z</code> is
      * used.</p>
      */
-    inline const Aws::String& GetTargetFormat() const{ return m_targetFormat; }
+    inline const Aws::String& GetTargetFormat() const { return m_targetFormat; }
     inline bool TargetFormatHasBeenSet() const { return m_targetFormatHasBeenSet; }
-    inline void SetTargetFormat(const Aws::String& value) { m_targetFormatHasBeenSet = true; m_targetFormat = value; }
-    inline void SetTargetFormat(Aws::String&& value) { m_targetFormatHasBeenSet = true; m_targetFormat = std::move(value); }
-    inline void SetTargetFormat(const char* value) { m_targetFormatHasBeenSet = true; m_targetFormat.assign(value); }
-    inline DateTimeConverter& WithTargetFormat(const Aws::String& value) { SetTargetFormat(value); return *this;}
-    inline DateTimeConverter& WithTargetFormat(Aws::String&& value) { SetTargetFormat(std::move(value)); return *this;}
-    inline DateTimeConverter& WithTargetFormat(const char* value) { SetTargetFormat(value); return *this;}
+    template<typename TargetFormatT = Aws::String>
+    void SetTargetFormat(TargetFormatT&& value) { m_targetFormatHasBeenSet = true; m_targetFormat = std::forward<TargetFormatT>(value); }
+    template<typename TargetFormatT = Aws::String>
+    DateTimeConverter& WithTargetFormat(TargetFormatT&& value) { SetTargetFormat(std::forward<TargetFormatT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of patterns to match against the <code>source</code> field.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMatchPatterns() const{ return m_matchPatterns; }
+    inline const Aws::Vector<Aws::String>& GetMatchPatterns() const { return m_matchPatterns; }
     inline bool MatchPatternsHasBeenSet() const { return m_matchPatternsHasBeenSet; }
-    inline void SetMatchPatterns(const Aws::Vector<Aws::String>& value) { m_matchPatternsHasBeenSet = true; m_matchPatterns = value; }
-    inline void SetMatchPatterns(Aws::Vector<Aws::String>&& value) { m_matchPatternsHasBeenSet = true; m_matchPatterns = std::move(value); }
-    inline DateTimeConverter& WithMatchPatterns(const Aws::Vector<Aws::String>& value) { SetMatchPatterns(value); return *this;}
-    inline DateTimeConverter& WithMatchPatterns(Aws::Vector<Aws::String>&& value) { SetMatchPatterns(std::move(value)); return *this;}
-    inline DateTimeConverter& AddMatchPatterns(const Aws::String& value) { m_matchPatternsHasBeenSet = true; m_matchPatterns.push_back(value); return *this; }
-    inline DateTimeConverter& AddMatchPatterns(Aws::String&& value) { m_matchPatternsHasBeenSet = true; m_matchPatterns.push_back(std::move(value)); return *this; }
-    inline DateTimeConverter& AddMatchPatterns(const char* value) { m_matchPatternsHasBeenSet = true; m_matchPatterns.push_back(value); return *this; }
+    template<typename MatchPatternsT = Aws::Vector<Aws::String>>
+    void SetMatchPatterns(MatchPatternsT&& value) { m_matchPatternsHasBeenSet = true; m_matchPatterns = std::forward<MatchPatternsT>(value); }
+    template<typename MatchPatternsT = Aws::Vector<Aws::String>>
+    DateTimeConverter& WithMatchPatterns(MatchPatternsT&& value) { SetMatchPatterns(std::forward<MatchPatternsT>(value)); return *this;}
+    template<typename MatchPatternsT = Aws::String>
+    DateTimeConverter& AddMatchPatterns(MatchPatternsT&& value) { m_matchPatternsHasBeenSet = true; m_matchPatterns.emplace_back(std::forward<MatchPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -106,14 +99,12 @@ namespace Model
      * <p>The time zone of the source field. If you omit this, the default used is the
      * UTC zone.</p>
      */
-    inline const Aws::String& GetSourceTimezone() const{ return m_sourceTimezone; }
+    inline const Aws::String& GetSourceTimezone() const { return m_sourceTimezone; }
     inline bool SourceTimezoneHasBeenSet() const { return m_sourceTimezoneHasBeenSet; }
-    inline void SetSourceTimezone(const Aws::String& value) { m_sourceTimezoneHasBeenSet = true; m_sourceTimezone = value; }
-    inline void SetSourceTimezone(Aws::String&& value) { m_sourceTimezoneHasBeenSet = true; m_sourceTimezone = std::move(value); }
-    inline void SetSourceTimezone(const char* value) { m_sourceTimezoneHasBeenSet = true; m_sourceTimezone.assign(value); }
-    inline DateTimeConverter& WithSourceTimezone(const Aws::String& value) { SetSourceTimezone(value); return *this;}
-    inline DateTimeConverter& WithSourceTimezone(Aws::String&& value) { SetSourceTimezone(std::move(value)); return *this;}
-    inline DateTimeConverter& WithSourceTimezone(const char* value) { SetSourceTimezone(value); return *this;}
+    template<typename SourceTimezoneT = Aws::String>
+    void SetSourceTimezone(SourceTimezoneT&& value) { m_sourceTimezoneHasBeenSet = true; m_sourceTimezone = std::forward<SourceTimezoneT>(value); }
+    template<typename SourceTimezoneT = Aws::String>
+    DateTimeConverter& WithSourceTimezone(SourceTimezoneT&& value) { SetSourceTimezone(std::forward<SourceTimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +112,12 @@ namespace Model
      * <p>The time zone of the target field. If you omit this, the default used is the
      * UTC zone.</p>
      */
-    inline const Aws::String& GetTargetTimezone() const{ return m_targetTimezone; }
+    inline const Aws::String& GetTargetTimezone() const { return m_targetTimezone; }
     inline bool TargetTimezoneHasBeenSet() const { return m_targetTimezoneHasBeenSet; }
-    inline void SetTargetTimezone(const Aws::String& value) { m_targetTimezoneHasBeenSet = true; m_targetTimezone = value; }
-    inline void SetTargetTimezone(Aws::String&& value) { m_targetTimezoneHasBeenSet = true; m_targetTimezone = std::move(value); }
-    inline void SetTargetTimezone(const char* value) { m_targetTimezoneHasBeenSet = true; m_targetTimezone.assign(value); }
-    inline DateTimeConverter& WithTargetTimezone(const Aws::String& value) { SetTargetTimezone(value); return *this;}
-    inline DateTimeConverter& WithTargetTimezone(Aws::String&& value) { SetTargetTimezone(std::move(value)); return *this;}
-    inline DateTimeConverter& WithTargetTimezone(const char* value) { SetTargetTimezone(value); return *this;}
+    template<typename TargetTimezoneT = Aws::String>
+    void SetTargetTimezone(TargetTimezoneT&& value) { m_targetTimezoneHasBeenSet = true; m_targetTimezone = std::forward<TargetTimezoneT>(value); }
+    template<typename TargetTimezoneT = Aws::String>
+    DateTimeConverter& WithTargetTimezone(TargetTimezoneT&& value) { SetTargetTimezone(std::forward<TargetTimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +125,12 @@ namespace Model
      * <p>The locale of the source field. If you omit this, the default of
      * <code>locale.ROOT</code> is used.</p>
      */
-    inline const Aws::String& GetLocale() const{ return m_locale; }
+    inline const Aws::String& GetLocale() const { return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
-    inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
-    inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
-    inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
-    inline DateTimeConverter& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
-    inline DateTimeConverter& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
-    inline DateTimeConverter& WithLocale(const char* value) { SetLocale(value); return *this;}
+    template<typename LocaleT = Aws::String>
+    void SetLocale(LocaleT&& value) { m_localeHasBeenSet = true; m_locale = std::forward<LocaleT>(value); }
+    template<typename LocaleT = Aws::String>
+    DateTimeConverter& WithLocale(LocaleT&& value) { SetLocale(std::forward<LocaleT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSiteRequest::GetSiteRequest() : 
-    m_siteIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSiteRequest::SerializePayload() const
 {
   return {};

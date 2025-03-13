@@ -18,15 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-Tls::Tls() : 
-    m_certificateAuthorityArnListHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Tls::Tls(JsonView jsonValue)
-  : Tls()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ Tls& Tls::operator =(JsonView jsonValue)
     }
     m_certificateAuthorityArnListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

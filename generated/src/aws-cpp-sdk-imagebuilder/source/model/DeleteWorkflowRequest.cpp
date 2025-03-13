@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteWorkflowRequest::DeleteWorkflowRequest() : 
-    m_workflowBuildVersionArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkflowRequest::SerializePayload() const
 {
   return {};

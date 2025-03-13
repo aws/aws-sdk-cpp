@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-LoadBalancerState::LoadBalancerState() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 LoadBalancerState::LoadBalancerState(const XmlNode& xmlNode)
-  : LoadBalancerState()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ LoadBalancerState& LoadBalancerState::operator =(const XmlNode& xmlNode)
     {
       m_loadBalancerName = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerNameNode.GetText());
       m_loadBalancerNameHasBeenSet = true;
+       m_loadBalancerNameHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
   }
 

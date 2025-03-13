@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ServerSideEncryption::ServerSideEncryption() : 
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_kmsMasterKeyIdHasBeenSet(false)
-{
-}
-
 ServerSideEncryption::ServerSideEncryption(JsonView jsonValue)
-  : ServerSideEncryption()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ServerSideEncryption& ServerSideEncryption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("encryptionType"))
   {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("encryptionType"));
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsMasterKeyId"))
   {
     m_kmsMasterKeyId = jsonValue.GetString("kmsMasterKeyId");
-
     m_kmsMasterKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

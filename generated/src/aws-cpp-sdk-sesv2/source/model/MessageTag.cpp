@@ -18,14 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-MessageTag::MessageTag() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 MessageTag::MessageTag(JsonView jsonValue)
-  : MessageTag()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MessageTag& MessageTag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

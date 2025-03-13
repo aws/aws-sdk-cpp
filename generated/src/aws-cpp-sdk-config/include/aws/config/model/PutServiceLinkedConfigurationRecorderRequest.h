@@ -23,7 +23,7 @@ namespace Model
   class PutServiceLinkedConfigurationRecorderRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API PutServiceLinkedConfigurationRecorderRequest();
+    AWS_CONFIGSERVICE_API PutServiceLinkedConfigurationRecorderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The service principal of the Amazon Web Services service for the
      * service-linked configuration recorder that you want to create.</p>
      */
-    inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
+    inline const Aws::String& GetServicePrincipal() const { return m_servicePrincipal; }
     inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
-    inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
-    inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
-    inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
-    inline PutServiceLinkedConfigurationRecorderRequest& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
-    inline PutServiceLinkedConfigurationRecorderRequest& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
-    inline PutServiceLinkedConfigurationRecorderRequest& WithServicePrincipal(const char* value) { SetServicePrincipal(value); return *this;}
+    template<typename ServicePrincipalT = Aws::String>
+    void SetServicePrincipal(ServicePrincipalT&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::forward<ServicePrincipalT>(value); }
+    template<typename ServicePrincipalT = Aws::String>
+    PutServiceLinkedConfigurationRecorderRequest& WithServicePrincipal(ServicePrincipalT&& value) { SetServicePrincipal(std::forward<ServicePrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,14 @@ namespace Model
      * <p>The tags for a service-linked configuration recorder. Each tag consists of a
      * key and an optional value, both of which you define.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PutServiceLinkedConfigurationRecorderRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PutServiceLinkedConfigurationRecorderRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PutServiceLinkedConfigurationRecorderRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PutServiceLinkedConfigurationRecorderRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PutServiceLinkedConfigurationRecorderRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PutServiceLinkedConfigurationRecorderRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

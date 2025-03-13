@@ -22,7 +22,7 @@ namespace Model
   class DescribeActionTargetsRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API DescribeActionTargetsRequest();
+    AWS_SECURITYHUB_API DescribeActionTargetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,15 +38,14 @@ namespace Model
      * <p>A list of custom action target ARNs for the custom action targets to
      * retrieve.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetActionTargetArns() const{ return m_actionTargetArns; }
+    inline const Aws::Vector<Aws::String>& GetActionTargetArns() const { return m_actionTargetArns; }
     inline bool ActionTargetArnsHasBeenSet() const { return m_actionTargetArnsHasBeenSet; }
-    inline void SetActionTargetArns(const Aws::Vector<Aws::String>& value) { m_actionTargetArnsHasBeenSet = true; m_actionTargetArns = value; }
-    inline void SetActionTargetArns(Aws::Vector<Aws::String>&& value) { m_actionTargetArnsHasBeenSet = true; m_actionTargetArns = std::move(value); }
-    inline DescribeActionTargetsRequest& WithActionTargetArns(const Aws::Vector<Aws::String>& value) { SetActionTargetArns(value); return *this;}
-    inline DescribeActionTargetsRequest& WithActionTargetArns(Aws::Vector<Aws::String>&& value) { SetActionTargetArns(std::move(value)); return *this;}
-    inline DescribeActionTargetsRequest& AddActionTargetArns(const Aws::String& value) { m_actionTargetArnsHasBeenSet = true; m_actionTargetArns.push_back(value); return *this; }
-    inline DescribeActionTargetsRequest& AddActionTargetArns(Aws::String&& value) { m_actionTargetArnsHasBeenSet = true; m_actionTargetArns.push_back(std::move(value)); return *this; }
-    inline DescribeActionTargetsRequest& AddActionTargetArns(const char* value) { m_actionTargetArnsHasBeenSet = true; m_actionTargetArns.push_back(value); return *this; }
+    template<typename ActionTargetArnsT = Aws::Vector<Aws::String>>
+    void SetActionTargetArns(ActionTargetArnsT&& value) { m_actionTargetArnsHasBeenSet = true; m_actionTargetArns = std::forward<ActionTargetArnsT>(value); }
+    template<typename ActionTargetArnsT = Aws::Vector<Aws::String>>
+    DescribeActionTargetsRequest& WithActionTargetArns(ActionTargetArnsT&& value) { SetActionTargetArns(std::forward<ActionTargetArnsT>(value)); return *this;}
+    template<typename ActionTargetArnsT = Aws::String>
+    DescribeActionTargetsRequest& AddActionTargetArns(ActionTargetArnsT&& value) { m_actionTargetArnsHasBeenSet = true; m_actionTargetArns.emplace_back(std::forward<ActionTargetArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,21 +56,19 @@ namespace Model
      * listing data, set the value of this parameter to the value returned from the
      * previous response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeActionTargetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeActionTargetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeActionTargetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeActionTargetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeActionTargetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -84,7 +81,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

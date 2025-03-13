@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-TestResult::TestResult() : 
-    m_functionSummaryHasBeenSet(false),
-    m_computeUtilizationHasBeenSet(false),
-    m_functionExecutionLogsHasBeenSet(false),
-    m_functionErrorMessageHasBeenSet(false),
-    m_functionOutputHasBeenSet(false)
-{
-}
-
 TestResult::TestResult(const XmlNode& xmlNode)
-  : TestResult()
 {
   *this = xmlNode;
 }
@@ -46,36 +36,41 @@ TestResult& TestResult::operator =(const XmlNode& xmlNode)
     {
       m_functionSummary = functionSummaryNode;
       m_functionSummaryHasBeenSet = true;
+       m_functionSummaryHasBeenSet = true;
     }
     XmlNode computeUtilizationNode = resultNode.FirstChild("ComputeUtilization");
     if(!computeUtilizationNode.IsNull())
     {
       m_computeUtilization = Aws::Utils::Xml::DecodeEscapedXmlText(computeUtilizationNode.GetText());
       m_computeUtilizationHasBeenSet = true;
+       m_computeUtilizationHasBeenSet = true;
     }
     XmlNode functionExecutionLogsNode = resultNode.FirstChild("FunctionExecutionLogs");
     if(!functionExecutionLogsNode.IsNull())
     {
       XmlNode functionExecutionLogsMember = functionExecutionLogsNode.FirstChild("member");
+      m_functionExecutionLogsHasBeenSet = !functionExecutionLogsMember.IsNull();
       while(!functionExecutionLogsMember.IsNull())
       {
         m_functionExecutionLogs.push_back(functionExecutionLogsMember.GetText());
         functionExecutionLogsMember = functionExecutionLogsMember.NextNode("member");
       }
 
-      m_functionExecutionLogsHasBeenSet = true;
+       m_functionExecutionLogsHasBeenSet = true;
     }
     XmlNode functionErrorMessageNode = resultNode.FirstChild("FunctionErrorMessage");
     if(!functionErrorMessageNode.IsNull())
     {
       m_functionErrorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(functionErrorMessageNode.GetText());
       m_functionErrorMessageHasBeenSet = true;
+       m_functionErrorMessageHasBeenSet = true;
     }
     XmlNode functionOutputNode = resultNode.FirstChild("FunctionOutput");
     if(!functionOutputNode.IsNull())
     {
       m_functionOutput = Aws::Utils::Xml::DecodeEscapedXmlText(functionOutputNode.GetText());
       m_functionOutputHasBeenSet = true;
+       m_functionOutputHasBeenSet = true;
     }
   }
 

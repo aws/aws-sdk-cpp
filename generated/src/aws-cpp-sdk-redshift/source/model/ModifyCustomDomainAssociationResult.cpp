@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyCustomDomainAssociationResult::ModifyCustomDomainAssociationResult()
-{
-}
-
 ModifyCustomDomainAssociationResult::ModifyCustomDomainAssociationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,27 +38,32 @@ ModifyCustomDomainAssociationResult& ModifyCustomDomainAssociationResult::operat
     if(!customDomainNameNode.IsNull())
     {
       m_customDomainName = Aws::Utils::Xml::DecodeEscapedXmlText(customDomainNameNode.GetText());
+      m_customDomainNameHasBeenSet = true;
     }
     XmlNode customDomainCertificateArnNode = resultNode.FirstChild("CustomDomainCertificateArn");
     if(!customDomainCertificateArnNode.IsNull())
     {
       m_customDomainCertificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(customDomainCertificateArnNode.GetText());
+      m_customDomainCertificateArnHasBeenSet = true;
     }
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
     if(!clusterIdentifierNode.IsNull())
     {
       m_clusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(clusterIdentifierNode.GetText());
+      m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode customDomainCertExpiryTimeNode = resultNode.FirstChild("CustomDomainCertExpiryTime");
     if(!customDomainCertExpiryTimeNode.IsNull())
     {
       m_customDomainCertExpiryTime = Aws::Utils::Xml::DecodeEscapedXmlText(customDomainCertExpiryTimeNode.GetText());
+      m_customDomainCertExpiryTimeHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::ModifyCustomDomainAssociationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -29,7 +29,7 @@ namespace Model
   class ImportTaskSummaryWaves
   {
   public:
-    AWS_MGN_API ImportTaskSummaryWaves();
+    AWS_MGN_API ImportTaskSummaryWaves() = default;
     AWS_MGN_API ImportTaskSummaryWaves(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API ImportTaskSummaryWaves& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Import task summery waves created count.</p>
      */
-    inline long long GetCreatedCount() const{ return m_createdCount; }
+    inline long long GetCreatedCount() const { return m_createdCount; }
     inline bool CreatedCountHasBeenSet() const { return m_createdCountHasBeenSet; }
     inline void SetCreatedCount(long long value) { m_createdCountHasBeenSet = true; m_createdCount = value; }
     inline ImportTaskSummaryWaves& WithCreatedCount(long long value) { SetCreatedCount(value); return *this;}
@@ -49,17 +49,17 @@ namespace Model
     /**
      * <p>Import task summery waves modified count.</p>
      */
-    inline long long GetModifiedCount() const{ return m_modifiedCount; }
+    inline long long GetModifiedCount() const { return m_modifiedCount; }
     inline bool ModifiedCountHasBeenSet() const { return m_modifiedCountHasBeenSet; }
     inline void SetModifiedCount(long long value) { m_modifiedCountHasBeenSet = true; m_modifiedCount = value; }
     inline ImportTaskSummaryWaves& WithModifiedCount(long long value) { SetModifiedCount(value); return *this;}
     ///@}
   private:
 
-    long long m_createdCount;
+    long long m_createdCount{0};
     bool m_createdCountHasBeenSet = false;
 
-    long long m_modifiedCount;
+    long long m_modifiedCount{0};
     bool m_modifiedCountHasBeenSet = false;
   };
 

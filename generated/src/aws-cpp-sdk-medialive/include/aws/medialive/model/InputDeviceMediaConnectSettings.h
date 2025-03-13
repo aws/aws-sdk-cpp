@@ -32,7 +32,7 @@ namespace Model
   class InputDeviceMediaConnectSettings
   {
   public:
-    AWS_MEDIALIVE_API InputDeviceMediaConnectSettings();
+    AWS_MEDIALIVE_API InputDeviceMediaConnectSettings() = default;
     AWS_MEDIALIVE_API InputDeviceMediaConnectSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InputDeviceMediaConnectSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * The ARN of the MediaConnect flow.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-    inline InputDeviceMediaConnectSettings& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline InputDeviceMediaConnectSettings& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline InputDeviceMediaConnectSettings& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    InputDeviceMediaConnectSettings& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,42 +55,36 @@ namespace Model
      * The ARN for the role that MediaLive assumes to access the attached flow and
      * secret.
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline InputDeviceMediaConnectSettings& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline InputDeviceMediaConnectSettings& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline InputDeviceMediaConnectSettings& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    InputDeviceMediaConnectSettings& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ARN of the secret used to encrypt the stream.
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline InputDeviceMediaConnectSettings& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline InputDeviceMediaConnectSettings& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline InputDeviceMediaConnectSettings& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    InputDeviceMediaConnectSettings& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the MediaConnect flow source.
      */
-    inline const Aws::String& GetSourceName() const{ return m_sourceName; }
+    inline const Aws::String& GetSourceName() const { return m_sourceName; }
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }
-    inline void SetSourceName(const Aws::String& value) { m_sourceNameHasBeenSet = true; m_sourceName = value; }
-    inline void SetSourceName(Aws::String&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::move(value); }
-    inline void SetSourceName(const char* value) { m_sourceNameHasBeenSet = true; m_sourceName.assign(value); }
-    inline InputDeviceMediaConnectSettings& WithSourceName(const Aws::String& value) { SetSourceName(value); return *this;}
-    inline InputDeviceMediaConnectSettings& WithSourceName(Aws::String&& value) { SetSourceName(std::move(value)); return *this;}
-    inline InputDeviceMediaConnectSettings& WithSourceName(const char* value) { SetSourceName(value); return *this;}
+    template<typename SourceNameT = Aws::String>
+    void SetSourceName(SourceNameT&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::forward<SourceNameT>(value); }
+    template<typename SourceNameT = Aws::String>
+    InputDeviceMediaConnectSettings& WithSourceName(SourceNameT&& value) { SetSourceName(std::forward<SourceNameT>(value)); return *this;}
     ///@}
   private:
 

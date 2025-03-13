@@ -20,25 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-Recommendation::Recommendation() : 
-    m_idHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_namespaceArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_recommendationTypeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_observationHasBeenSet(false),
-    m_impactRanking(ImpactRankingType::NOT_SET),
-    m_impactRankingHasBeenSet(false),
-    m_recommendationTextHasBeenSet(false),
-    m_recommendedActionsHasBeenSet(false),
-    m_referenceLinksHasBeenSet(false)
-{
-}
-
 Recommendation::Recommendation(const XmlNode& xmlNode)
-  : Recommendation()
 {
   *this = xmlNode;
 }
@@ -54,84 +36,96 @@ Recommendation& Recommendation::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
     if(!clusterIdentifierNode.IsNull())
     {
       m_clusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(clusterIdentifierNode.GetText());
       m_clusterIdentifierHasBeenSet = true;
+       m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode namespaceArnNode = resultNode.FirstChild("NamespaceArn");
     if(!namespaceArnNode.IsNull())
     {
       m_namespaceArn = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceArnNode.GetText());
       m_namespaceArnHasBeenSet = true;
+       m_namespaceArnHasBeenSet = true;
     }
     XmlNode createdAtNode = resultNode.FirstChild("CreatedAt");
     if(!createdAtNode.IsNull())
     {
       m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAtHasBeenSet = true;
+       m_createdAtHasBeenSet = true;
     }
     XmlNode recommendationTypeNode = resultNode.FirstChild("RecommendationType");
     if(!recommendationTypeNode.IsNull())
     {
       m_recommendationType = Aws::Utils::Xml::DecodeEscapedXmlText(recommendationTypeNode.GetText());
       m_recommendationTypeHasBeenSet = true;
+       m_recommendationTypeHasBeenSet = true;
     }
     XmlNode titleNode = resultNode.FirstChild("Title");
     if(!titleNode.IsNull())
     {
       m_title = Aws::Utils::Xml::DecodeEscapedXmlText(titleNode.GetText());
       m_titleHasBeenSet = true;
+       m_titleHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode observationNode = resultNode.FirstChild("Observation");
     if(!observationNode.IsNull())
     {
       m_observation = Aws::Utils::Xml::DecodeEscapedXmlText(observationNode.GetText());
       m_observationHasBeenSet = true;
+       m_observationHasBeenSet = true;
     }
     XmlNode impactRankingNode = resultNode.FirstChild("ImpactRanking");
     if(!impactRankingNode.IsNull())
     {
-      m_impactRanking = ImpactRankingTypeMapper::GetImpactRankingTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(impactRankingNode.GetText()).c_str()).c_str());
+      m_impactRanking = ImpactRankingTypeMapper::GetImpactRankingTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(impactRankingNode.GetText()).c_str()));
       m_impactRankingHasBeenSet = true;
+       m_impactRankingHasBeenSet = true;
     }
     XmlNode recommendationTextNode = resultNode.FirstChild("RecommendationText");
     if(!recommendationTextNode.IsNull())
     {
       m_recommendationText = Aws::Utils::Xml::DecodeEscapedXmlText(recommendationTextNode.GetText());
       m_recommendationTextHasBeenSet = true;
+       m_recommendationTextHasBeenSet = true;
     }
     XmlNode recommendedActionsNode = resultNode.FirstChild("RecommendedActions");
     if(!recommendedActionsNode.IsNull())
     {
       XmlNode recommendedActionsMember = recommendedActionsNode.FirstChild("RecommendedAction");
+      m_recommendedActionsHasBeenSet = !recommendedActionsMember.IsNull();
       while(!recommendedActionsMember.IsNull())
       {
         m_recommendedActions.push_back(recommendedActionsMember);
         recommendedActionsMember = recommendedActionsMember.NextNode("RecommendedAction");
       }
 
-      m_recommendedActionsHasBeenSet = true;
+       m_recommendedActionsHasBeenSet = true;
     }
     XmlNode referenceLinksNode = resultNode.FirstChild("ReferenceLinks");
     if(!referenceLinksNode.IsNull())
     {
       XmlNode referenceLinksMember = referenceLinksNode.FirstChild("ReferenceLink");
+      m_referenceLinksHasBeenSet = !referenceLinksMember.IsNull();
       while(!referenceLinksMember.IsNull())
       {
         m_referenceLinks.push_back(referenceLinksMember);
         referenceLinksMember = referenceLinksMember.NextNode("ReferenceLink");
       }
 
-      m_referenceLinksHasBeenSet = true;
+       m_referenceLinksHasBeenSet = true;
     }
   }
 

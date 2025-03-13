@@ -12,14 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLoaRequest::DescribeLoaRequest() : 
-    m_connectionIdHasBeenSet(false),
-    m_providerNameHasBeenSet(false),
-    m_loaContentType(LoaContentType::NOT_SET),
-    m_loaContentTypeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLoaRequest::SerializePayload() const
 {
   JsonValue payload;

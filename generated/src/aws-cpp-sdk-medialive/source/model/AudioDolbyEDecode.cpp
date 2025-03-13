@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioDolbyEDecode::AudioDolbyEDecode() : 
-    m_programSelection(DolbyEProgramSelection::NOT_SET),
-    m_programSelectionHasBeenSet(false)
-{
-}
-
 AudioDolbyEDecode::AudioDolbyEDecode(JsonView jsonValue)
-  : AudioDolbyEDecode()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AudioDolbyEDecode& AudioDolbyEDecode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("programSelection"))
   {
     m_programSelection = DolbyEProgramSelectionMapper::GetDolbyEProgramSelectionForName(jsonValue.GetString("programSelection"));
-
     m_programSelectionHasBeenSet = true;
   }
-
   return *this;
 }
 

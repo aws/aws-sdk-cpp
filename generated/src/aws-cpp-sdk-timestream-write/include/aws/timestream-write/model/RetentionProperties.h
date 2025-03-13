@@ -31,7 +31,7 @@ namespace Model
   class RetentionProperties
   {
   public:
-    AWS_TIMESTREAMWRITE_API RetentionProperties();
+    AWS_TIMESTREAMWRITE_API RetentionProperties() = default;
     AWS_TIMESTREAMWRITE_API RetentionProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API RetentionProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The duration for which data must be stored in the memory store. </p>
      */
-    inline long long GetMemoryStoreRetentionPeriodInHours() const{ return m_memoryStoreRetentionPeriodInHours; }
+    inline long long GetMemoryStoreRetentionPeriodInHours() const { return m_memoryStoreRetentionPeriodInHours; }
     inline bool MemoryStoreRetentionPeriodInHoursHasBeenSet() const { return m_memoryStoreRetentionPeriodInHoursHasBeenSet; }
     inline void SetMemoryStoreRetentionPeriodInHours(long long value) { m_memoryStoreRetentionPeriodInHoursHasBeenSet = true; m_memoryStoreRetentionPeriodInHours = value; }
     inline RetentionProperties& WithMemoryStoreRetentionPeriodInHours(long long value) { SetMemoryStoreRetentionPeriodInHours(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>The duration for which data must be stored in the magnetic store. </p>
      */
-    inline long long GetMagneticStoreRetentionPeriodInDays() const{ return m_magneticStoreRetentionPeriodInDays; }
+    inline long long GetMagneticStoreRetentionPeriodInDays() const { return m_magneticStoreRetentionPeriodInDays; }
     inline bool MagneticStoreRetentionPeriodInDaysHasBeenSet() const { return m_magneticStoreRetentionPeriodInDaysHasBeenSet; }
     inline void SetMagneticStoreRetentionPeriodInDays(long long value) { m_magneticStoreRetentionPeriodInDaysHasBeenSet = true; m_magneticStoreRetentionPeriodInDays = value; }
     inline RetentionProperties& WithMagneticStoreRetentionPeriodInDays(long long value) { SetMagneticStoreRetentionPeriodInDays(value); return *this;}
     ///@}
   private:
 
-    long long m_memoryStoreRetentionPeriodInHours;
+    long long m_memoryStoreRetentionPeriodInHours{0};
     bool m_memoryStoreRetentionPeriodInHoursHasBeenSet = false;
 
-    long long m_magneticStoreRetentionPeriodInDays;
+    long long m_magneticStoreRetentionPeriodInDays{0};
     bool m_magneticStoreRetentionPeriodInDaysHasBeenSet = false;
   };
 

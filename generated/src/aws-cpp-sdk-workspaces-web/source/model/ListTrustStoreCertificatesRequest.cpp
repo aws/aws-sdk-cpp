@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTrustStoreCertificatesRequest::ListTrustStoreCertificatesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_trustStoreArnHasBeenSet(false)
-{
-}
-
 Aws::String ListTrustStoreCertificatesRequest::SerializePayload() const
 {
   return {};

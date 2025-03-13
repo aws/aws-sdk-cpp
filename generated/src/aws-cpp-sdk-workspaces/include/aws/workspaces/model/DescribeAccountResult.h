@@ -29,7 +29,7 @@ namespace Model
   class DescribeAccountResult
   {
   public:
-    AWS_WORKSPACES_API DescribeAccountResult();
+    AWS_WORKSPACES_API DescribeAccountResult() = default;
     AWS_WORKSPACES_API DescribeAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API DescribeAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,9 @@ namespace Model
     /**
      * <p>The status of BYOL (whether BYOL is enabled or disabled).</p>
      */
-    inline const DedicatedTenancySupportResultEnum& GetDedicatedTenancySupport() const{ return m_dedicatedTenancySupport; }
-    inline void SetDedicatedTenancySupport(const DedicatedTenancySupportResultEnum& value) { m_dedicatedTenancySupport = value; }
-    inline void SetDedicatedTenancySupport(DedicatedTenancySupportResultEnum&& value) { m_dedicatedTenancySupport = std::move(value); }
-    inline DescribeAccountResult& WithDedicatedTenancySupport(const DedicatedTenancySupportResultEnum& value) { SetDedicatedTenancySupport(value); return *this;}
-    inline DescribeAccountResult& WithDedicatedTenancySupport(DedicatedTenancySupportResultEnum&& value) { SetDedicatedTenancySupport(std::move(value)); return *this;}
+    inline DedicatedTenancySupportResultEnum GetDedicatedTenancySupport() const { return m_dedicatedTenancySupport; }
+    inline void SetDedicatedTenancySupport(DedicatedTenancySupportResultEnum value) { m_dedicatedTenancySupportHasBeenSet = true; m_dedicatedTenancySupport = value; }
+    inline DescribeAccountResult& WithDedicatedTenancySupport(DedicatedTenancySupportResultEnum value) { SetDedicatedTenancySupport(value); return *this;}
     ///@}
 
     ///@{
@@ -53,45 +51,43 @@ namespace Model
      * interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and
      * to allow Amazon WorkSpaces to manage the WorkSpace.</p>
      */
-    inline const Aws::String& GetDedicatedTenancyManagementCidrRange() const{ return m_dedicatedTenancyManagementCidrRange; }
-    inline void SetDedicatedTenancyManagementCidrRange(const Aws::String& value) { m_dedicatedTenancyManagementCidrRange = value; }
-    inline void SetDedicatedTenancyManagementCidrRange(Aws::String&& value) { m_dedicatedTenancyManagementCidrRange = std::move(value); }
-    inline void SetDedicatedTenancyManagementCidrRange(const char* value) { m_dedicatedTenancyManagementCidrRange.assign(value); }
-    inline DescribeAccountResult& WithDedicatedTenancyManagementCidrRange(const Aws::String& value) { SetDedicatedTenancyManagementCidrRange(value); return *this;}
-    inline DescribeAccountResult& WithDedicatedTenancyManagementCidrRange(Aws::String&& value) { SetDedicatedTenancyManagementCidrRange(std::move(value)); return *this;}
-    inline DescribeAccountResult& WithDedicatedTenancyManagementCidrRange(const char* value) { SetDedicatedTenancyManagementCidrRange(value); return *this;}
+    inline const Aws::String& GetDedicatedTenancyManagementCidrRange() const { return m_dedicatedTenancyManagementCidrRange; }
+    template<typename DedicatedTenancyManagementCidrRangeT = Aws::String>
+    void SetDedicatedTenancyManagementCidrRange(DedicatedTenancyManagementCidrRangeT&& value) { m_dedicatedTenancyManagementCidrRangeHasBeenSet = true; m_dedicatedTenancyManagementCidrRange = std::forward<DedicatedTenancyManagementCidrRangeT>(value); }
+    template<typename DedicatedTenancyManagementCidrRangeT = Aws::String>
+    DescribeAccountResult& WithDedicatedTenancyManagementCidrRange(DedicatedTenancyManagementCidrRangeT&& value) { SetDedicatedTenancyManagementCidrRange(std::forward<DedicatedTenancyManagementCidrRangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of linked account.</p>
      */
-    inline const DedicatedTenancyAccountType& GetDedicatedTenancyAccountType() const{ return m_dedicatedTenancyAccountType; }
-    inline void SetDedicatedTenancyAccountType(const DedicatedTenancyAccountType& value) { m_dedicatedTenancyAccountType = value; }
-    inline void SetDedicatedTenancyAccountType(DedicatedTenancyAccountType&& value) { m_dedicatedTenancyAccountType = std::move(value); }
-    inline DescribeAccountResult& WithDedicatedTenancyAccountType(const DedicatedTenancyAccountType& value) { SetDedicatedTenancyAccountType(value); return *this;}
-    inline DescribeAccountResult& WithDedicatedTenancyAccountType(DedicatedTenancyAccountType&& value) { SetDedicatedTenancyAccountType(std::move(value)); return *this;}
+    inline DedicatedTenancyAccountType GetDedicatedTenancyAccountType() const { return m_dedicatedTenancyAccountType; }
+    inline void SetDedicatedTenancyAccountType(DedicatedTenancyAccountType value) { m_dedicatedTenancyAccountTypeHasBeenSet = true; m_dedicatedTenancyAccountType = value; }
+    inline DescribeAccountResult& WithDedicatedTenancyAccountType(DedicatedTenancyAccountType value) { SetDedicatedTenancyAccountType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAccountResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    DedicatedTenancySupportResultEnum m_dedicatedTenancySupport;
+    DedicatedTenancySupportResultEnum m_dedicatedTenancySupport{DedicatedTenancySupportResultEnum::NOT_SET};
+    bool m_dedicatedTenancySupportHasBeenSet = false;
 
     Aws::String m_dedicatedTenancyManagementCidrRange;
+    bool m_dedicatedTenancyManagementCidrRangeHasBeenSet = false;
 
-    DedicatedTenancyAccountType m_dedicatedTenancyAccountType;
+    DedicatedTenancyAccountType m_dedicatedTenancyAccountType{DedicatedTenancyAccountType::NOT_SET};
+    bool m_dedicatedTenancyAccountTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

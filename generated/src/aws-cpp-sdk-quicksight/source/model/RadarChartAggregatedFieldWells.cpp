@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RadarChartAggregatedFieldWells::RadarChartAggregatedFieldWells() : 
-    m_categoryHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 RadarChartAggregatedFieldWells::RadarChartAggregatedFieldWells(JsonView jsonValue)
-  : RadarChartAggregatedFieldWells()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ RadarChartAggregatedFieldWells& RadarChartAggregatedFieldWells::operator =(JsonV
     }
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Color"))
   {
     Aws::Utils::Array<JsonView> colorJsonList = jsonValue.GetArray("Color");
@@ -52,7 +43,6 @@ RadarChartAggregatedFieldWells& RadarChartAggregatedFieldWells::operator =(JsonV
     }
     m_colorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -62,7 +52,6 @@ RadarChartAggregatedFieldWells& RadarChartAggregatedFieldWells::operator =(JsonV
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

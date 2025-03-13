@@ -33,7 +33,7 @@ namespace Model
   class ActionConfiguration
   {
   public:
-    AWS_QBUSINESS_API ActionConfiguration();
+    AWS_QBUSINESS_API ActionConfiguration() = default;
     AWS_QBUSINESS_API ActionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ActionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The Amazon Q Business action that is allowed.</p>
      */
-    inline const Aws::String& GetAction() const{ return m_action; }
+    inline const Aws::String& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
-    inline ActionConfiguration& WithAction(const Aws::String& value) { SetAction(value); return *this;}
-    inline ActionConfiguration& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
-    inline ActionConfiguration& WithAction(const char* value) { SetAction(value); return *this;}
+    template<typename ActionT = Aws::String>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = Aws::String>
+    ActionConfiguration& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter configuration for the action, if any.</p>
      */
-    inline const ActionFilterConfiguration& GetFilterConfiguration() const{ return m_filterConfiguration; }
+    inline const ActionFilterConfiguration& GetFilterConfiguration() const { return m_filterConfiguration; }
     inline bool FilterConfigurationHasBeenSet() const { return m_filterConfigurationHasBeenSet; }
-    inline void SetFilterConfiguration(const ActionFilterConfiguration& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = value; }
-    inline void SetFilterConfiguration(ActionFilterConfiguration&& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = std::move(value); }
-    inline ActionConfiguration& WithFilterConfiguration(const ActionFilterConfiguration& value) { SetFilterConfiguration(value); return *this;}
-    inline ActionConfiguration& WithFilterConfiguration(ActionFilterConfiguration&& value) { SetFilterConfiguration(std::move(value)); return *this;}
+    template<typename FilterConfigurationT = ActionFilterConfiguration>
+    void SetFilterConfiguration(FilterConfigurationT&& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = std::forward<FilterConfigurationT>(value); }
+    template<typename FilterConfigurationT = ActionFilterConfiguration>
+    ActionConfiguration& WithFilterConfiguration(FilterConfigurationT&& value) { SetFilterConfiguration(std::forward<FilterConfigurationT>(value)); return *this;}
     ///@}
   private:
 

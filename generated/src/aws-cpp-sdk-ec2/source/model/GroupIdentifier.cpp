@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-GroupIdentifier::GroupIdentifier() : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 GroupIdentifier::GroupIdentifier(const XmlNode& xmlNode)
-  : GroupIdentifier()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ GroupIdentifier& GroupIdentifier::operator =(const XmlNode& xmlNode)
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
+       m_groupIdHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("groupName");
     if(!groupNameNode.IsNull())
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
+       m_groupNameHasBeenSet = true;
     }
   }
 

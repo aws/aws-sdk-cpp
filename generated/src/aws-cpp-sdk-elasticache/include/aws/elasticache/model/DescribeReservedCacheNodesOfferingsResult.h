@@ -36,7 +36,7 @@ namespace Model
   class DescribeReservedCacheNodesOfferingsResult
   {
   public:
-    AWS_ELASTICACHE_API DescribeReservedCacheNodesOfferingsResult();
+    AWS_ELASTICACHE_API DescribeReservedCacheNodesOfferingsResult() = default;
     AWS_ELASTICACHE_API DescribeReservedCacheNodesOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API DescribeReservedCacheNodesOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,13 +45,11 @@ namespace Model
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeReservedCacheNodesOfferingsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeReservedCacheNodesOfferingsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeReservedCacheNodesOfferingsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeReservedCacheNodesOfferingsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,30 +57,33 @@ namespace Model
      * <p>A list of reserved cache node offerings. Each element in the list contains
      * detailed information about one offering.</p>
      */
-    inline const Aws::Vector<ReservedCacheNodesOffering>& GetReservedCacheNodesOfferings() const{ return m_reservedCacheNodesOfferings; }
-    inline void SetReservedCacheNodesOfferings(const Aws::Vector<ReservedCacheNodesOffering>& value) { m_reservedCacheNodesOfferings = value; }
-    inline void SetReservedCacheNodesOfferings(Aws::Vector<ReservedCacheNodesOffering>&& value) { m_reservedCacheNodesOfferings = std::move(value); }
-    inline DescribeReservedCacheNodesOfferingsResult& WithReservedCacheNodesOfferings(const Aws::Vector<ReservedCacheNodesOffering>& value) { SetReservedCacheNodesOfferings(value); return *this;}
-    inline DescribeReservedCacheNodesOfferingsResult& WithReservedCacheNodesOfferings(Aws::Vector<ReservedCacheNodesOffering>&& value) { SetReservedCacheNodesOfferings(std::move(value)); return *this;}
-    inline DescribeReservedCacheNodesOfferingsResult& AddReservedCacheNodesOfferings(const ReservedCacheNodesOffering& value) { m_reservedCacheNodesOfferings.push_back(value); return *this; }
-    inline DescribeReservedCacheNodesOfferingsResult& AddReservedCacheNodesOfferings(ReservedCacheNodesOffering&& value) { m_reservedCacheNodesOfferings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReservedCacheNodesOffering>& GetReservedCacheNodesOfferings() const { return m_reservedCacheNodesOfferings; }
+    template<typename ReservedCacheNodesOfferingsT = Aws::Vector<ReservedCacheNodesOffering>>
+    void SetReservedCacheNodesOfferings(ReservedCacheNodesOfferingsT&& value) { m_reservedCacheNodesOfferingsHasBeenSet = true; m_reservedCacheNodesOfferings = std::forward<ReservedCacheNodesOfferingsT>(value); }
+    template<typename ReservedCacheNodesOfferingsT = Aws::Vector<ReservedCacheNodesOffering>>
+    DescribeReservedCacheNodesOfferingsResult& WithReservedCacheNodesOfferings(ReservedCacheNodesOfferingsT&& value) { SetReservedCacheNodesOfferings(std::forward<ReservedCacheNodesOfferingsT>(value)); return *this;}
+    template<typename ReservedCacheNodesOfferingsT = ReservedCacheNodesOffering>
+    DescribeReservedCacheNodesOfferingsResult& AddReservedCacheNodesOfferings(ReservedCacheNodesOfferingsT&& value) { m_reservedCacheNodesOfferingsHasBeenSet = true; m_reservedCacheNodesOfferings.emplace_back(std::forward<ReservedCacheNodesOfferingsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeReservedCacheNodesOfferingsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeReservedCacheNodesOfferingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeReservedCacheNodesOfferingsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<ReservedCacheNodesOffering> m_reservedCacheNodesOfferings;
+    bool m_reservedCacheNodesOfferingsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVpnConnectionDeviceSampleConfigurationResponse::GetVpnConnectionDeviceSampleConfigurationResponse()
-{
-}
-
 GetVpnConnectionDeviceSampleConfigurationResponse::GetVpnConnectionDeviceSampleConfigurationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ GetVpnConnectionDeviceSampleConfigurationResponse& GetVpnConnectionDeviceSampleC
     if(!vpnConnectionDeviceSampleConfigurationNode.IsNull())
     {
       m_vpnConnectionDeviceSampleConfiguration = Aws::Utils::Xml::DecodeEscapedXmlText(vpnConnectionDeviceSampleConfigurationNode.GetText());
+      m_vpnConnectionDeviceSampleConfigurationHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ GetVpnConnectionDeviceSampleConfigurationResponse& GetVpnConnectionDeviceSampleC
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetVpnConnectionDeviceSampleConfigurationResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

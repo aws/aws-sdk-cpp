@@ -35,7 +35,7 @@ namespace Model
   class GameSessionCreationLimitPolicy
   {
   public:
-    AWS_GAMELIFT_API GameSessionCreationLimitPolicy();
+    AWS_GAMELIFT_API GameSessionCreationLimitPolicy() = default;
     AWS_GAMELIFT_API GameSessionCreationLimitPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API GameSessionCreationLimitPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,7 +51,7 @@ namespace Model
      * (identified by <code>CreatorId</code>) has created fewer than game session limit
      * in the specified time period.</p>
      */
-    inline int GetNewGameSessionsPerCreator() const{ return m_newGameSessionsPerCreator; }
+    inline int GetNewGameSessionsPerCreator() const { return m_newGameSessionsPerCreator; }
     inline bool NewGameSessionsPerCreatorHasBeenSet() const { return m_newGameSessionsPerCreatorHasBeenSet; }
     inline void SetNewGameSessionsPerCreator(int value) { m_newGameSessionsPerCreatorHasBeenSet = true; m_newGameSessionsPerCreator = value; }
     inline GameSessionCreationLimitPolicy& WithNewGameSessionsPerCreator(int value) { SetNewGameSessionsPerCreator(value); return *this;}
@@ -61,17 +61,17 @@ namespace Model
     /**
      * <p>The time span used in evaluating the resource creation limit policy. </p>
      */
-    inline int GetPolicyPeriodInMinutes() const{ return m_policyPeriodInMinutes; }
+    inline int GetPolicyPeriodInMinutes() const { return m_policyPeriodInMinutes; }
     inline bool PolicyPeriodInMinutesHasBeenSet() const { return m_policyPeriodInMinutesHasBeenSet; }
     inline void SetPolicyPeriodInMinutes(int value) { m_policyPeriodInMinutesHasBeenSet = true; m_policyPeriodInMinutes = value; }
     inline GameSessionCreationLimitPolicy& WithPolicyPeriodInMinutes(int value) { SetPolicyPeriodInMinutes(value); return *this;}
     ///@}
   private:
 
-    int m_newGameSessionsPerCreator;
+    int m_newGameSessionsPerCreator{0};
     bool m_newGameSessionsPerCreatorHasBeenSet = false;
 
-    int m_policyPeriodInMinutes;
+    int m_policyPeriodInMinutes{0};
     bool m_policyPeriodInMinutesHasBeenSet = false;
   };
 

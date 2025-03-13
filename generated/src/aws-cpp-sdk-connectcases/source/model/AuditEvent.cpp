@@ -18,20 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-AuditEvent::AuditEvent() : 
-    m_eventIdHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_performedByHasBeenSet(false),
-    m_performedTimeHasBeenSet(false),
-    m_relatedItemType(RelatedItemType::NOT_SET),
-    m_relatedItemTypeHasBeenSet(false),
-    m_type(AuditEventType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 AuditEvent::AuditEvent(JsonView jsonValue)
-  : AuditEvent()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ AuditEvent& AuditEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fields"))
   {
     Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
@@ -54,35 +39,26 @@ AuditEvent& AuditEvent::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performedBy"))
   {
     m_performedBy = jsonValue.GetObject("performedBy");
-
     m_performedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performedTime"))
   {
     m_performedTime = jsonValue.GetString("performedTime");
-
     m_performedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedItemType"))
   {
     m_relatedItemType = RelatedItemTypeMapper::GetRelatedItemTypeForName(jsonValue.GetString("relatedItemType"));
-
     m_relatedItemTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = AuditEventTypeMapper::GetAuditEventTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

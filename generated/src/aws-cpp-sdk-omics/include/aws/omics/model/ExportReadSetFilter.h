@@ -32,7 +32,7 @@ namespace Model
   class ExportReadSetFilter
   {
   public:
-    AWS_OMICS_API ExportReadSetFilter();
+    AWS_OMICS_API ExportReadSetFilter() = default;
     AWS_OMICS_API ExportReadSetFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API ExportReadSetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,46 +42,44 @@ namespace Model
     /**
      * <p>A status to filter on.</p>
      */
-    inline const ReadSetExportJobStatus& GetStatus() const{ return m_status; }
+    inline ReadSetExportJobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReadSetExportJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReadSetExportJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ExportReadSetFilter& WithStatus(const ReadSetExportJobStatus& value) { SetStatus(value); return *this;}
-    inline ExportReadSetFilter& WithStatus(ReadSetExportJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ReadSetExportJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ExportReadSetFilter& WithStatus(ReadSetExportJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter's start date.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAfter() const{ return m_createdAfter; }
+    inline const Aws::Utils::DateTime& GetCreatedAfter() const { return m_createdAfter; }
     inline bool CreatedAfterHasBeenSet() const { return m_createdAfterHasBeenSet; }
-    inline void SetCreatedAfter(const Aws::Utils::DateTime& value) { m_createdAfterHasBeenSet = true; m_createdAfter = value; }
-    inline void SetCreatedAfter(Aws::Utils::DateTime&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = std::move(value); }
-    inline ExportReadSetFilter& WithCreatedAfter(const Aws::Utils::DateTime& value) { SetCreatedAfter(value); return *this;}
-    inline ExportReadSetFilter& WithCreatedAfter(Aws::Utils::DateTime&& value) { SetCreatedAfter(std::move(value)); return *this;}
+    template<typename CreatedAfterT = Aws::Utils::DateTime>
+    void SetCreatedAfter(CreatedAfterT&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = std::forward<CreatedAfterT>(value); }
+    template<typename CreatedAfterT = Aws::Utils::DateTime>
+    ExportReadSetFilter& WithCreatedAfter(CreatedAfterT&& value) { SetCreatedAfter(std::forward<CreatedAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter's end date.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedBefore() const{ return m_createdBefore; }
+    inline const Aws::Utils::DateTime& GetCreatedBefore() const { return m_createdBefore; }
     inline bool CreatedBeforeHasBeenSet() const { return m_createdBeforeHasBeenSet; }
-    inline void SetCreatedBefore(const Aws::Utils::DateTime& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = value; }
-    inline void SetCreatedBefore(Aws::Utils::DateTime&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = std::move(value); }
-    inline ExportReadSetFilter& WithCreatedBefore(const Aws::Utils::DateTime& value) { SetCreatedBefore(value); return *this;}
-    inline ExportReadSetFilter& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(std::move(value)); return *this;}
+    template<typename CreatedBeforeT = Aws::Utils::DateTime>
+    void SetCreatedBefore(CreatedBeforeT&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = std::forward<CreatedBeforeT>(value); }
+    template<typename CreatedBeforeT = Aws::Utils::DateTime>
+    ExportReadSetFilter& WithCreatedBefore(CreatedBeforeT&& value) { SetCreatedBefore(std::forward<CreatedBeforeT>(value)); return *this;}
     ///@}
   private:
 
-    ReadSetExportJobStatus m_status;
+    ReadSetExportJobStatus m_status{ReadSetExportJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAfter;
+    Aws::Utils::DateTime m_createdAfter{};
     bool m_createdAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdBefore;
+    Aws::Utils::DateTime m_createdBefore{};
     bool m_createdBeforeHasBeenSet = false;
   };
 

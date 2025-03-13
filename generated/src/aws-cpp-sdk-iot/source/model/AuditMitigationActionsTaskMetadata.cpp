@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AuditMitigationActionsTaskMetadata::AuditMitigationActionsTaskMetadata() : 
-    m_taskIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_taskStatus(AuditMitigationActionsTaskStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false)
-{
-}
-
 AuditMitigationActionsTaskMetadata::AuditMitigationActionsTaskMetadata(JsonView jsonValue)
-  : AuditMitigationActionsTaskMetadata()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AuditMitigationActionsTaskMetadata& AuditMitigationActionsTaskMetadata::operator
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskStatus"))
   {
     m_taskStatus = AuditMitigationActionsTaskStatusMapper::GetAuditMitigationActionsTaskStatusForName(jsonValue.GetString("taskStatus"));
-
     m_taskStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

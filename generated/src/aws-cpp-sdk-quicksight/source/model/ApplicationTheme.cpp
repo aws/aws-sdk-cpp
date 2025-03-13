@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ApplicationTheme::ApplicationTheme() : 
-    m_brandColorPaletteHasBeenSet(false),
-    m_brandElementStyleHasBeenSet(false)
-{
-}
-
 ApplicationTheme::ApplicationTheme(JsonView jsonValue)
-  : ApplicationTheme()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ApplicationTheme& ApplicationTheme::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BrandColorPalette"))
   {
     m_brandColorPalette = jsonValue.GetObject("BrandColorPalette");
-
     m_brandColorPaletteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BrandElementStyle"))
   {
     m_brandElementStyle = jsonValue.GetObject("BrandElementStyle");
-
     m_brandElementStyleHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class SetRiskConfigurationRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API SetRiskConfigurationRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API SetRiskConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <code>ClientId</code> and <code>UserPoolId</code>, Amazon Cognito maps the
      * configuration to the app client only.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline SetRiskConfigurationRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline SetRiskConfigurationRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline SetRiskConfigurationRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    SetRiskConfigurationRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * <code>UserPoolId</code>, Amazon Cognito maps the configuration to the app client
      * only.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline SetRiskConfigurationRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline SetRiskConfigurationRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline SetRiskConfigurationRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    SetRiskConfigurationRequest& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,12 @@ namespace Model
      * Includes settings for blocking future sign-in requests and for the types of
      * password-submission events you want to monitor.</p>
      */
-    inline const CompromisedCredentialsRiskConfigurationType& GetCompromisedCredentialsRiskConfiguration() const{ return m_compromisedCredentialsRiskConfiguration; }
+    inline const CompromisedCredentialsRiskConfigurationType& GetCompromisedCredentialsRiskConfiguration() const { return m_compromisedCredentialsRiskConfiguration; }
     inline bool CompromisedCredentialsRiskConfigurationHasBeenSet() const { return m_compromisedCredentialsRiskConfigurationHasBeenSet; }
-    inline void SetCompromisedCredentialsRiskConfiguration(const CompromisedCredentialsRiskConfigurationType& value) { m_compromisedCredentialsRiskConfigurationHasBeenSet = true; m_compromisedCredentialsRiskConfiguration = value; }
-    inline void SetCompromisedCredentialsRiskConfiguration(CompromisedCredentialsRiskConfigurationType&& value) { m_compromisedCredentialsRiskConfigurationHasBeenSet = true; m_compromisedCredentialsRiskConfiguration = std::move(value); }
-    inline SetRiskConfigurationRequest& WithCompromisedCredentialsRiskConfiguration(const CompromisedCredentialsRiskConfigurationType& value) { SetCompromisedCredentialsRiskConfiguration(value); return *this;}
-    inline SetRiskConfigurationRequest& WithCompromisedCredentialsRiskConfiguration(CompromisedCredentialsRiskConfigurationType&& value) { SetCompromisedCredentialsRiskConfiguration(std::move(value)); return *this;}
+    template<typename CompromisedCredentialsRiskConfigurationT = CompromisedCredentialsRiskConfigurationType>
+    void SetCompromisedCredentialsRiskConfiguration(CompromisedCredentialsRiskConfigurationT&& value) { m_compromisedCredentialsRiskConfigurationHasBeenSet = true; m_compromisedCredentialsRiskConfiguration = std::forward<CompromisedCredentialsRiskConfigurationT>(value); }
+    template<typename CompromisedCredentialsRiskConfigurationT = CompromisedCredentialsRiskConfigurationType>
+    SetRiskConfigurationRequest& WithCompromisedCredentialsRiskConfiguration(CompromisedCredentialsRiskConfigurationT&& value) { SetCompromisedCredentialsRiskConfiguration(std::forward<CompromisedCredentialsRiskConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +92,12 @@ namespace Model
      * <p>The settings for automated responses and notification templates for adaptive
      * authentication with threat protection.</p>
      */
-    inline const AccountTakeoverRiskConfigurationType& GetAccountTakeoverRiskConfiguration() const{ return m_accountTakeoverRiskConfiguration; }
+    inline const AccountTakeoverRiskConfigurationType& GetAccountTakeoverRiskConfiguration() const { return m_accountTakeoverRiskConfiguration; }
     inline bool AccountTakeoverRiskConfigurationHasBeenSet() const { return m_accountTakeoverRiskConfigurationHasBeenSet; }
-    inline void SetAccountTakeoverRiskConfiguration(const AccountTakeoverRiskConfigurationType& value) { m_accountTakeoverRiskConfigurationHasBeenSet = true; m_accountTakeoverRiskConfiguration = value; }
-    inline void SetAccountTakeoverRiskConfiguration(AccountTakeoverRiskConfigurationType&& value) { m_accountTakeoverRiskConfigurationHasBeenSet = true; m_accountTakeoverRiskConfiguration = std::move(value); }
-    inline SetRiskConfigurationRequest& WithAccountTakeoverRiskConfiguration(const AccountTakeoverRiskConfigurationType& value) { SetAccountTakeoverRiskConfiguration(value); return *this;}
-    inline SetRiskConfigurationRequest& WithAccountTakeoverRiskConfiguration(AccountTakeoverRiskConfigurationType&& value) { SetAccountTakeoverRiskConfiguration(std::move(value)); return *this;}
+    template<typename AccountTakeoverRiskConfigurationT = AccountTakeoverRiskConfigurationType>
+    void SetAccountTakeoverRiskConfiguration(AccountTakeoverRiskConfigurationT&& value) { m_accountTakeoverRiskConfigurationHasBeenSet = true; m_accountTakeoverRiskConfiguration = std::forward<AccountTakeoverRiskConfigurationT>(value); }
+    template<typename AccountTakeoverRiskConfigurationT = AccountTakeoverRiskConfigurationType>
+    SetRiskConfigurationRequest& WithAccountTakeoverRiskConfiguration(AccountTakeoverRiskConfigurationT&& value) { SetAccountTakeoverRiskConfiguration(std::forward<AccountTakeoverRiskConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +105,12 @@ namespace Model
      * <p>A set of IP-address overrides to threat protection. You can set up IP-address
      * always-block and always-allow lists.</p>
      */
-    inline const RiskExceptionConfigurationType& GetRiskExceptionConfiguration() const{ return m_riskExceptionConfiguration; }
+    inline const RiskExceptionConfigurationType& GetRiskExceptionConfiguration() const { return m_riskExceptionConfiguration; }
     inline bool RiskExceptionConfigurationHasBeenSet() const { return m_riskExceptionConfigurationHasBeenSet; }
-    inline void SetRiskExceptionConfiguration(const RiskExceptionConfigurationType& value) { m_riskExceptionConfigurationHasBeenSet = true; m_riskExceptionConfiguration = value; }
-    inline void SetRiskExceptionConfiguration(RiskExceptionConfigurationType&& value) { m_riskExceptionConfigurationHasBeenSet = true; m_riskExceptionConfiguration = std::move(value); }
-    inline SetRiskConfigurationRequest& WithRiskExceptionConfiguration(const RiskExceptionConfigurationType& value) { SetRiskExceptionConfiguration(value); return *this;}
-    inline SetRiskConfigurationRequest& WithRiskExceptionConfiguration(RiskExceptionConfigurationType&& value) { SetRiskExceptionConfiguration(std::move(value)); return *this;}
+    template<typename RiskExceptionConfigurationT = RiskExceptionConfigurationType>
+    void SetRiskExceptionConfiguration(RiskExceptionConfigurationT&& value) { m_riskExceptionConfigurationHasBeenSet = true; m_riskExceptionConfiguration = std::forward<RiskExceptionConfigurationT>(value); }
+    template<typename RiskExceptionConfigurationT = RiskExceptionConfigurationType>
+    SetRiskConfigurationRequest& WithRiskExceptionConfiguration(RiskExceptionConfigurationT&& value) { SetRiskExceptionConfiguration(std::forward<RiskExceptionConfigurationT>(value)); return *this;}
     ///@}
   private:
 

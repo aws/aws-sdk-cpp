@@ -28,7 +28,7 @@ namespace Model
   class DeleteSparqlStatisticsResult
   {
   public:
-    AWS_NEPTUNEDATA_API DeleteSparqlStatisticsResult();
+    AWS_NEPTUNEDATA_API DeleteSparqlStatisticsResult() = default;
     AWS_NEPTUNEDATA_API DeleteSparqlStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEDATA_API DeleteSparqlStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
      * <p>The HTTP response code: 200 if the delete was successful, or 204 if there
      * were no statistics to delete.</p>
      */
-    inline int GetStatusCode() const{ return m_statusCode; }
-    inline void SetStatusCode(int value) { m_statusCode = value; }
+    inline int GetStatusCode() const { return m_statusCode; }
+    inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
     inline DeleteSparqlStatisticsResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
     ///@}
 
@@ -47,45 +47,45 @@ namespace Model
     /**
      * <p>The cancel status.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline DeleteSparqlStatisticsResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DeleteSparqlStatisticsResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DeleteSparqlStatisticsResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DeleteSparqlStatisticsResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The deletion payload.</p>
      */
-    inline const DeleteStatisticsValueMap& GetPayload() const{ return m_payload; }
-    inline void SetPayload(const DeleteStatisticsValueMap& value) { m_payload = value; }
-    inline void SetPayload(DeleteStatisticsValueMap&& value) { m_payload = std::move(value); }
-    inline DeleteSparqlStatisticsResult& WithPayload(const DeleteStatisticsValueMap& value) { SetPayload(value); return *this;}
-    inline DeleteSparqlStatisticsResult& WithPayload(DeleteStatisticsValueMap&& value) { SetPayload(std::move(value)); return *this;}
+    inline const DeleteStatisticsValueMap& GetPayload() const { return m_payload; }
+    template<typename PayloadT = DeleteStatisticsValueMap>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = DeleteStatisticsValueMap>
+    DeleteSparqlStatisticsResult& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteSparqlStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteSparqlStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteSparqlStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteSparqlStatisticsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_statusCode;
+    int m_statusCode{0};
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
     DeleteStatisticsValueMap m_payload;
+    bool m_payloadHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

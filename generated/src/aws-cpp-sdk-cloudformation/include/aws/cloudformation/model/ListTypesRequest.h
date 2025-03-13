@@ -26,7 +26,7 @@ namespace Model
   class ListTypesRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API ListTypesRequest();
+    AWS_CLOUDFORMATION_API ListTypesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,12 +54,10 @@ namespace Model
      * in addition to third-party publishers.</p> </li> </ul> <p>The default is
      * <code>PRIVATE</code>.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline ListTypesRequest& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline ListTypesRequest& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline ListTypesRequest& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +74,10 @@ namespace Model
      * and delete handlers, and therefore can't actually be provisioned.</p> </li>
      * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
-    inline const ProvisioningType& GetProvisioningType() const{ return m_provisioningType; }
+    inline ProvisioningType GetProvisioningType() const { return m_provisioningType; }
     inline bool ProvisioningTypeHasBeenSet() const { return m_provisioningTypeHasBeenSet; }
-    inline void SetProvisioningType(const ProvisioningType& value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = value; }
-    inline void SetProvisioningType(ProvisioningType&& value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = std::move(value); }
-    inline ListTypesRequest& WithProvisioningType(const ProvisioningType& value) { SetProvisioningType(value); return *this;}
-    inline ListTypesRequest& WithProvisioningType(ProvisioningType&& value) { SetProvisioningType(std::move(value)); return *this;}
+    inline void SetProvisioningType(ProvisioningType value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = value; }
+    inline ListTypesRequest& WithProvisioningType(ProvisioningType value) { SetProvisioningType(value); return *this;}
     ///@}
 
     ///@{
@@ -93,24 +89,20 @@ namespace Model
      * deregistered and can no longer be used in CloudFormation operations.</p> </li>
      * </ul>
      */
-    inline const DeprecatedStatus& GetDeprecatedStatus() const{ return m_deprecatedStatus; }
+    inline DeprecatedStatus GetDeprecatedStatus() const { return m_deprecatedStatus; }
     inline bool DeprecatedStatusHasBeenSet() const { return m_deprecatedStatusHasBeenSet; }
-    inline void SetDeprecatedStatus(const DeprecatedStatus& value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = value; }
-    inline void SetDeprecatedStatus(DeprecatedStatus&& value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = std::move(value); }
-    inline ListTypesRequest& WithDeprecatedStatus(const DeprecatedStatus& value) { SetDeprecatedStatus(value); return *this;}
-    inline ListTypesRequest& WithDeprecatedStatus(DeprecatedStatus&& value) { SetDeprecatedStatus(std::move(value)); return *this;}
+    inline void SetDeprecatedStatus(DeprecatedStatus value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = value; }
+    inline ListTypesRequest& WithDeprecatedStatus(DeprecatedStatus value) { SetDeprecatedStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of extension.</p>
      */
-    inline const RegistryType& GetType() const{ return m_type; }
+    inline RegistryType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RegistryType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RegistryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ListTypesRequest& WithType(const RegistryType& value) { SetType(value); return *this;}
-    inline ListTypesRequest& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RegistryType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ListTypesRequest& WithType(RegistryType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +114,12 @@ namespace Model
      * returns an empty list of types, but specifying <code>PUBLIC</code> for
      * <code>Visibility</code> returns the desired list.</p>
      */
-    inline const TypeFilters& GetFilters() const{ return m_filters; }
+    inline const TypeFilters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const TypeFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(TypeFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListTypesRequest& WithFilters(const TypeFilters& value) { SetFilters(value); return *this;}
-    inline ListTypesRequest& WithFilters(TypeFilters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = TypeFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = TypeFilters>
+    ListTypesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,7 +129,7 @@ namespace Model
      * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
      * request parameter to get the next set of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -152,33 +144,31 @@ namespace Model
      * remaining results, the previous response object's <code>NextToken</code>
      * parameter is set to <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTypesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTypesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
 
-    ProvisioningType m_provisioningType;
+    ProvisioningType m_provisioningType{ProvisioningType::NOT_SET};
     bool m_provisioningTypeHasBeenSet = false;
 
-    DeprecatedStatus m_deprecatedStatus;
+    DeprecatedStatus m_deprecatedStatus{DeprecatedStatus::NOT_SET};
     bool m_deprecatedStatusHasBeenSet = false;
 
-    RegistryType m_type;
+    RegistryType m_type{RegistryType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     TypeFilters m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

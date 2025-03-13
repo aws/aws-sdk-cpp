@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EmptyInputAndEmptyOutputResponse::EmptyInputAndEmptyOutputResponse()
-{
-}
-
 EmptyInputAndEmptyOutputResponse::EmptyInputAndEmptyOutputResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -45,6 +41,7 @@ EmptyInputAndEmptyOutputResponse& EmptyInputAndEmptyOutputResponse::operator =(c
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2Protocol::Model::EmptyInputAndEmptyOutputResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

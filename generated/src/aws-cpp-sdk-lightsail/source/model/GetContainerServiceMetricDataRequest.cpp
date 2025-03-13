@@ -12,18 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetContainerServiceMetricDataRequest::GetContainerServiceMetricDataRequest() : 
-    m_serviceNameHasBeenSet(false),
-    m_metricName(ContainerServiceMetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_statisticsHasBeenSet(false)
-{
-}
-
 Aws::String GetContainerServiceMetricDataRequest::SerializePayload() const
 {
   JsonValue payload;

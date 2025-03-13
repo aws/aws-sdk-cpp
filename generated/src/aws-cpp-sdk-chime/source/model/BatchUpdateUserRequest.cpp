@@ -12,12 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateUserRequest::BatchUpdateUserRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_updateUserRequestItemsHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateUserRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace PrometheusService
 namespace Model
 {
 
-LoggingConfigurationStatus::LoggingConfigurationStatus() : 
-    m_statusCode(LoggingConfigurationStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 LoggingConfigurationStatus::LoggingConfigurationStatus(JsonView jsonValue)
-  : LoggingConfigurationStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LoggingConfigurationStatus& LoggingConfigurationStatus::operator =(JsonView json
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = LoggingConfigurationStatusCodeMapper::GetLoggingConfigurationStatusCodeForName(jsonValue.GetString("statusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

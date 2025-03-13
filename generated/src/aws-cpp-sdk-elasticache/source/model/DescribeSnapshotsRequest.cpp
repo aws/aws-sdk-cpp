@@ -10,19 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DescribeSnapshotsRequest::DescribeSnapshotsRequest() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_cacheClusterIdHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_snapshotSourceHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_showNodeGroupConfig(false),
-    m_showNodeGroupConfigHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSnapshotsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

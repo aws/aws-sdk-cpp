@@ -33,7 +33,7 @@ namespace Model
   class ProtectedQuerySQLParameters
   {
   public:
-    AWS_CLEANROOMS_API ProtectedQuerySQLParameters();
+    AWS_CLEANROOMS_API ProtectedQuerySQLParameters() = default;
     AWS_CLEANROOMS_API ProtectedQuerySQLParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedQuerySQLParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The query string to be submitted.</p>
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
-    inline ProtectedQuerySQLParameters& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline ProtectedQuerySQLParameters& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline ProtectedQuerySQLParameters& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    ProtectedQuerySQLParameters& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,33 +56,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) associated with the analysis template within a
      * collaboration.</p>
      */
-    inline const Aws::String& GetAnalysisTemplateArn() const{ return m_analysisTemplateArn; }
+    inline const Aws::String& GetAnalysisTemplateArn() const { return m_analysisTemplateArn; }
     inline bool AnalysisTemplateArnHasBeenSet() const { return m_analysisTemplateArnHasBeenSet; }
-    inline void SetAnalysisTemplateArn(const Aws::String& value) { m_analysisTemplateArnHasBeenSet = true; m_analysisTemplateArn = value; }
-    inline void SetAnalysisTemplateArn(Aws::String&& value) { m_analysisTemplateArnHasBeenSet = true; m_analysisTemplateArn = std::move(value); }
-    inline void SetAnalysisTemplateArn(const char* value) { m_analysisTemplateArnHasBeenSet = true; m_analysisTemplateArn.assign(value); }
-    inline ProtectedQuerySQLParameters& WithAnalysisTemplateArn(const Aws::String& value) { SetAnalysisTemplateArn(value); return *this;}
-    inline ProtectedQuerySQLParameters& WithAnalysisTemplateArn(Aws::String&& value) { SetAnalysisTemplateArn(std::move(value)); return *this;}
-    inline ProtectedQuerySQLParameters& WithAnalysisTemplateArn(const char* value) { SetAnalysisTemplateArn(value); return *this;}
+    template<typename AnalysisTemplateArnT = Aws::String>
+    void SetAnalysisTemplateArn(AnalysisTemplateArnT&& value) { m_analysisTemplateArnHasBeenSet = true; m_analysisTemplateArn = std::forward<AnalysisTemplateArnT>(value); }
+    template<typename AnalysisTemplateArnT = Aws::String>
+    ProtectedQuerySQLParameters& WithAnalysisTemplateArn(AnalysisTemplateArnT&& value) { SetAnalysisTemplateArn(std::forward<AnalysisTemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The protected query SQL parameters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline ProtectedQuerySQLParameters& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline ProtectedQuerySQLParameters& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline ProtectedQuerySQLParameters& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline ProtectedQuerySQLParameters& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline ProtectedQuerySQLParameters& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline ProtectedQuerySQLParameters& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline ProtectedQuerySQLParameters& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline ProtectedQuerySQLParameters& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline ProtectedQuerySQLParameters& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    ProtectedQuerySQLParameters& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    ProtectedQuerySQLParameters& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

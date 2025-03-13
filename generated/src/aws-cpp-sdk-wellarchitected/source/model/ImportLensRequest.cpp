@@ -12,15 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportLensRequest::ImportLensRequest() : 
-    m_lensAliasHasBeenSet(false),
-    m_jSONStringHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ImportLensRequest::SerializePayload() const
 {
   JsonValue payload;

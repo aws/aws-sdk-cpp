@@ -20,17 +20,7 @@ namespace IAM
 namespace Model
 {
 
-Group::Group() : 
-    m_pathHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false)
-{
-}
-
 Group::Group(const XmlNode& xmlNode)
-  : Group()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ Group& Group::operator =(const XmlNode& xmlNode)
     {
       m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
+       m_pathHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("GroupName");
     if(!groupNameNode.IsNull())
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
+       m_groupNameHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("GroupId");
     if(!groupIdNode.IsNull())
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
+       m_groupIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
   }
 

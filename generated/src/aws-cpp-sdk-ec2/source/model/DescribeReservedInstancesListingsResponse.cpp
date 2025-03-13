@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReservedInstancesListingsResponse::DescribeReservedInstancesListingsResponse()
-{
-}
-
 DescribeReservedInstancesListingsResponse::DescribeReservedInstancesListingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeReservedInstancesListingsResponse& DescribeReservedInstancesListingsResp
     if(!reservedInstancesListingsNode.IsNull())
     {
       XmlNode reservedInstancesListingsMember = reservedInstancesListingsNode.FirstChild("item");
+      m_reservedInstancesListingsHasBeenSet = !reservedInstancesListingsMember.IsNull();
       while(!reservedInstancesListingsMember.IsNull())
       {
         m_reservedInstancesListings.push_back(reservedInstancesListingsMember);
@@ -56,6 +53,7 @@ DescribeReservedInstancesListingsResponse& DescribeReservedInstancesListingsResp
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeReservedInstancesListingsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

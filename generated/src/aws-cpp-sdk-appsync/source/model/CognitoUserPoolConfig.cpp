@@ -18,15 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-CognitoUserPoolConfig::CognitoUserPoolConfig() : 
-    m_userPoolIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_appIdClientRegexHasBeenSet(false)
-{
-}
-
 CognitoUserPoolConfig::CognitoUserPoolConfig(JsonView jsonValue)
-  : CognitoUserPoolConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CognitoUserPoolConfig& CognitoUserPoolConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userPoolId"))
   {
     m_userPoolId = jsonValue.GetString("userPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsRegion"))
   {
     m_awsRegion = jsonValue.GetString("awsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appIdClientRegex"))
   {
     m_appIdClientRegex = jsonValue.GetString("appIdClientRegex");
-
     m_appIdClientRegexHasBeenSet = true;
   }
-
   return *this;
 }
 

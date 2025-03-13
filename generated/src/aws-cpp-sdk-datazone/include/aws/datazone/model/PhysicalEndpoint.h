@@ -34,7 +34,7 @@ namespace Model
   class PhysicalEndpoint
   {
   public:
-    AWS_DATAZONE_API PhysicalEndpoint();
+    AWS_DATAZONE_API PhysicalEndpoint() = default;
     AWS_DATAZONE_API PhysicalEndpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API PhysicalEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,59 +44,55 @@ namespace Model
     /**
      * <p>The location of a connection.</p>
      */
-    inline const AwsLocation& GetAwsLocation() const{ return m_awsLocation; }
+    inline const AwsLocation& GetAwsLocation() const { return m_awsLocation; }
     inline bool AwsLocationHasBeenSet() const { return m_awsLocationHasBeenSet; }
-    inline void SetAwsLocation(const AwsLocation& value) { m_awsLocationHasBeenSet = true; m_awsLocation = value; }
-    inline void SetAwsLocation(AwsLocation&& value) { m_awsLocationHasBeenSet = true; m_awsLocation = std::move(value); }
-    inline PhysicalEndpoint& WithAwsLocation(const AwsLocation& value) { SetAwsLocation(value); return *this;}
-    inline PhysicalEndpoint& WithAwsLocation(AwsLocation&& value) { SetAwsLocation(std::move(value)); return *this;}
+    template<typename AwsLocationT = AwsLocation>
+    void SetAwsLocation(AwsLocationT&& value) { m_awsLocationHasBeenSet = true; m_awsLocation = std::forward<AwsLocationT>(value); }
+    template<typename AwsLocationT = AwsLocation>
+    PhysicalEndpoint& WithAwsLocation(AwsLocationT&& value) { SetAwsLocation(std::forward<AwsLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Glue connection.</p>
      */
-    inline const GlueConnection& GetGlueConnection() const{ return m_glueConnection; }
+    inline const GlueConnection& GetGlueConnection() const { return m_glueConnection; }
     inline bool GlueConnectionHasBeenSet() const { return m_glueConnectionHasBeenSet; }
-    inline void SetGlueConnection(const GlueConnection& value) { m_glueConnectionHasBeenSet = true; m_glueConnection = value; }
-    inline void SetGlueConnection(GlueConnection&& value) { m_glueConnectionHasBeenSet = true; m_glueConnection = std::move(value); }
-    inline PhysicalEndpoint& WithGlueConnection(const GlueConnection& value) { SetGlueConnection(value); return *this;}
-    inline PhysicalEndpoint& WithGlueConnection(GlueConnection&& value) { SetGlueConnection(std::move(value)); return *this;}
+    template<typename GlueConnectionT = GlueConnection>
+    void SetGlueConnection(GlueConnectionT&& value) { m_glueConnectionHasBeenSet = true; m_glueConnection = std::forward<GlueConnectionT>(value); }
+    template<typename GlueConnectionT = GlueConnection>
+    PhysicalEndpoint& WithGlueConnection(GlueConnectionT&& value) { SetGlueConnection(std::forward<GlueConnectionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Glue connection name.</p>
      */
-    inline const Aws::String& GetGlueConnectionName() const{ return m_glueConnectionName; }
+    inline const Aws::String& GetGlueConnectionName() const { return m_glueConnectionName; }
     inline bool GlueConnectionNameHasBeenSet() const { return m_glueConnectionNameHasBeenSet; }
-    inline void SetGlueConnectionName(const Aws::String& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = value; }
-    inline void SetGlueConnectionName(Aws::String&& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = std::move(value); }
-    inline void SetGlueConnectionName(const char* value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName.assign(value); }
-    inline PhysicalEndpoint& WithGlueConnectionName(const Aws::String& value) { SetGlueConnectionName(value); return *this;}
-    inline PhysicalEndpoint& WithGlueConnectionName(Aws::String&& value) { SetGlueConnectionName(std::move(value)); return *this;}
-    inline PhysicalEndpoint& WithGlueConnectionName(const char* value) { SetGlueConnectionName(value); return *this;}
+    template<typename GlueConnectionNameT = Aws::String>
+    void SetGlueConnectionName(GlueConnectionNameT&& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = std::forward<GlueConnectionNameT>(value); }
+    template<typename GlueConnectionNameT = Aws::String>
+    PhysicalEndpoint& WithGlueConnectionName(GlueConnectionNameT&& value) { SetGlueConnectionName(std::forward<GlueConnectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The host in the physical endpoints of a connection.</p>
      */
-    inline const Aws::String& GetHost() const{ return m_host; }
+    inline const Aws::String& GetHost() const { return m_host; }
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
-    inline void SetHost(const Aws::String& value) { m_hostHasBeenSet = true; m_host = value; }
-    inline void SetHost(Aws::String&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
-    inline void SetHost(const char* value) { m_hostHasBeenSet = true; m_host.assign(value); }
-    inline PhysicalEndpoint& WithHost(const Aws::String& value) { SetHost(value); return *this;}
-    inline PhysicalEndpoint& WithHost(Aws::String&& value) { SetHost(std::move(value)); return *this;}
-    inline PhysicalEndpoint& WithHost(const char* value) { SetHost(value); return *this;}
+    template<typename HostT = Aws::String>
+    void SetHost(HostT&& value) { m_hostHasBeenSet = true; m_host = std::forward<HostT>(value); }
+    template<typename HostT = Aws::String>
+    PhysicalEndpoint& WithHost(HostT&& value) { SetHost(std::forward<HostT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port in the physical endpoints of a connection.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline PhysicalEndpoint& WithPort(int value) { SetPort(value); return *this;}
@@ -106,26 +102,22 @@ namespace Model
     /**
      * <p>The protocol in the physical endpoints of a connection.</p>
      */
-    inline const Protocol& GetProtocol() const{ return m_protocol; }
+    inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline PhysicalEndpoint& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
-    inline PhysicalEndpoint& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(Protocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline PhysicalEndpoint& WithProtocol(Protocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stage in the physical endpoints of a connection.</p>
      */
-    inline const Aws::String& GetStage() const{ return m_stage; }
+    inline const Aws::String& GetStage() const { return m_stage; }
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
-    inline void SetStage(const Aws::String& value) { m_stageHasBeenSet = true; m_stage = value; }
-    inline void SetStage(Aws::String&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
-    inline void SetStage(const char* value) { m_stageHasBeenSet = true; m_stage.assign(value); }
-    inline PhysicalEndpoint& WithStage(const Aws::String& value) { SetStage(value); return *this;}
-    inline PhysicalEndpoint& WithStage(Aws::String&& value) { SetStage(std::move(value)); return *this;}
-    inline PhysicalEndpoint& WithStage(const char* value) { SetStage(value); return *this;}
+    template<typename StageT = Aws::String>
+    void SetStage(StageT&& value) { m_stageHasBeenSet = true; m_stage = std::forward<StageT>(value); }
+    template<typename StageT = Aws::String>
+    PhysicalEndpoint& WithStage(StageT&& value) { SetStage(std::forward<StageT>(value)); return *this;}
     ///@}
   private:
 
@@ -141,10 +133,10 @@ namespace Model
     Aws::String m_host;
     bool m_hostHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
-    Protocol m_protocol;
+    Protocol m_protocol{Protocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
     Aws::String m_stage;

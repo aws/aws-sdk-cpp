@@ -34,7 +34,7 @@ namespace Model
   class BillEstimateCostSummary
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BillEstimateCostSummary();
+    AWS_BCMPRICINGCALCULATOR_API BillEstimateCostSummary() = default;
     AWS_BCMPRICINGCALCULATOR_API BillEstimateCostSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API BillEstimateCostSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,30 +45,28 @@ namespace Model
      * <p> The total difference in cost between the estimated and historical costs.
      * </p>
      */
-    inline const CostDifference& GetTotalCostDifference() const{ return m_totalCostDifference; }
+    inline const CostDifference& GetTotalCostDifference() const { return m_totalCostDifference; }
     inline bool TotalCostDifferenceHasBeenSet() const { return m_totalCostDifferenceHasBeenSet; }
-    inline void SetTotalCostDifference(const CostDifference& value) { m_totalCostDifferenceHasBeenSet = true; m_totalCostDifference = value; }
-    inline void SetTotalCostDifference(CostDifference&& value) { m_totalCostDifferenceHasBeenSet = true; m_totalCostDifference = std::move(value); }
-    inline BillEstimateCostSummary& WithTotalCostDifference(const CostDifference& value) { SetTotalCostDifference(value); return *this;}
-    inline BillEstimateCostSummary& WithTotalCostDifference(CostDifference&& value) { SetTotalCostDifference(std::move(value)); return *this;}
+    template<typename TotalCostDifferenceT = CostDifference>
+    void SetTotalCostDifference(TotalCostDifferenceT&& value) { m_totalCostDifferenceHasBeenSet = true; m_totalCostDifference = std::forward<TotalCostDifferenceT>(value); }
+    template<typename TotalCostDifferenceT = CostDifference>
+    BillEstimateCostSummary& WithTotalCostDifference(TotalCostDifferenceT&& value) { SetTotalCostDifference(std::forward<TotalCostDifferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A breakdown of cost differences by Amazon Web Services service. </p>
      */
-    inline const Aws::Map<Aws::String, CostDifference>& GetServiceCostDifferences() const{ return m_serviceCostDifferences; }
+    inline const Aws::Map<Aws::String, CostDifference>& GetServiceCostDifferences() const { return m_serviceCostDifferences; }
     inline bool ServiceCostDifferencesHasBeenSet() const { return m_serviceCostDifferencesHasBeenSet; }
-    inline void SetServiceCostDifferences(const Aws::Map<Aws::String, CostDifference>& value) { m_serviceCostDifferencesHasBeenSet = true; m_serviceCostDifferences = value; }
-    inline void SetServiceCostDifferences(Aws::Map<Aws::String, CostDifference>&& value) { m_serviceCostDifferencesHasBeenSet = true; m_serviceCostDifferences = std::move(value); }
-    inline BillEstimateCostSummary& WithServiceCostDifferences(const Aws::Map<Aws::String, CostDifference>& value) { SetServiceCostDifferences(value); return *this;}
-    inline BillEstimateCostSummary& WithServiceCostDifferences(Aws::Map<Aws::String, CostDifference>&& value) { SetServiceCostDifferences(std::move(value)); return *this;}
-    inline BillEstimateCostSummary& AddServiceCostDifferences(const Aws::String& key, const CostDifference& value) { m_serviceCostDifferencesHasBeenSet = true; m_serviceCostDifferences.emplace(key, value); return *this; }
-    inline BillEstimateCostSummary& AddServiceCostDifferences(Aws::String&& key, const CostDifference& value) { m_serviceCostDifferencesHasBeenSet = true; m_serviceCostDifferences.emplace(std::move(key), value); return *this; }
-    inline BillEstimateCostSummary& AddServiceCostDifferences(const Aws::String& key, CostDifference&& value) { m_serviceCostDifferencesHasBeenSet = true; m_serviceCostDifferences.emplace(key, std::move(value)); return *this; }
-    inline BillEstimateCostSummary& AddServiceCostDifferences(Aws::String&& key, CostDifference&& value) { m_serviceCostDifferencesHasBeenSet = true; m_serviceCostDifferences.emplace(std::move(key), std::move(value)); return *this; }
-    inline BillEstimateCostSummary& AddServiceCostDifferences(const char* key, CostDifference&& value) { m_serviceCostDifferencesHasBeenSet = true; m_serviceCostDifferences.emplace(key, std::move(value)); return *this; }
-    inline BillEstimateCostSummary& AddServiceCostDifferences(const char* key, const CostDifference& value) { m_serviceCostDifferencesHasBeenSet = true; m_serviceCostDifferences.emplace(key, value); return *this; }
+    template<typename ServiceCostDifferencesT = Aws::Map<Aws::String, CostDifference>>
+    void SetServiceCostDifferences(ServiceCostDifferencesT&& value) { m_serviceCostDifferencesHasBeenSet = true; m_serviceCostDifferences = std::forward<ServiceCostDifferencesT>(value); }
+    template<typename ServiceCostDifferencesT = Aws::Map<Aws::String, CostDifference>>
+    BillEstimateCostSummary& WithServiceCostDifferences(ServiceCostDifferencesT&& value) { SetServiceCostDifferences(std::forward<ServiceCostDifferencesT>(value)); return *this;}
+    template<typename ServiceCostDifferencesKeyT = Aws::String, typename ServiceCostDifferencesValueT = CostDifference>
+    BillEstimateCostSummary& AddServiceCostDifferences(ServiceCostDifferencesKeyT&& key, ServiceCostDifferencesValueT&& value) {
+      m_serviceCostDifferencesHasBeenSet = true; m_serviceCostDifferences.emplace(std::forward<ServiceCostDifferencesKeyT>(key), std::forward<ServiceCostDifferencesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

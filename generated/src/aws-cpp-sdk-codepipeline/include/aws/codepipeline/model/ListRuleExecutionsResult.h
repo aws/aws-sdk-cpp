@@ -29,7 +29,7 @@ namespace Model
   class ListRuleExecutionsResult
   {
   public:
-    AWS_CODEPIPELINE_API ListRuleExecutionsResult();
+    AWS_CODEPIPELINE_API ListRuleExecutionsResult() = default;
     AWS_CODEPIPELINE_API ListRuleExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEPIPELINE_API ListRuleExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Details about the output for listing rule executions.</p>
      */
-    inline const Aws::Vector<RuleExecutionDetail>& GetRuleExecutionDetails() const{ return m_ruleExecutionDetails; }
-    inline void SetRuleExecutionDetails(const Aws::Vector<RuleExecutionDetail>& value) { m_ruleExecutionDetails = value; }
-    inline void SetRuleExecutionDetails(Aws::Vector<RuleExecutionDetail>&& value) { m_ruleExecutionDetails = std::move(value); }
-    inline ListRuleExecutionsResult& WithRuleExecutionDetails(const Aws::Vector<RuleExecutionDetail>& value) { SetRuleExecutionDetails(value); return *this;}
-    inline ListRuleExecutionsResult& WithRuleExecutionDetails(Aws::Vector<RuleExecutionDetail>&& value) { SetRuleExecutionDetails(std::move(value)); return *this;}
-    inline ListRuleExecutionsResult& AddRuleExecutionDetails(const RuleExecutionDetail& value) { m_ruleExecutionDetails.push_back(value); return *this; }
-    inline ListRuleExecutionsResult& AddRuleExecutionDetails(RuleExecutionDetail&& value) { m_ruleExecutionDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RuleExecutionDetail>& GetRuleExecutionDetails() const { return m_ruleExecutionDetails; }
+    template<typename RuleExecutionDetailsT = Aws::Vector<RuleExecutionDetail>>
+    void SetRuleExecutionDetails(RuleExecutionDetailsT&& value) { m_ruleExecutionDetailsHasBeenSet = true; m_ruleExecutionDetails = std::forward<RuleExecutionDetailsT>(value); }
+    template<typename RuleExecutionDetailsT = Aws::Vector<RuleExecutionDetail>>
+    ListRuleExecutionsResult& WithRuleExecutionDetails(RuleExecutionDetailsT&& value) { SetRuleExecutionDetails(std::forward<RuleExecutionDetailsT>(value)); return *this;}
+    template<typename RuleExecutionDetailsT = RuleExecutionDetail>
+    ListRuleExecutionsResult& AddRuleExecutionDetails(RuleExecutionDetailsT&& value) { m_ruleExecutionDetailsHasBeenSet = true; m_ruleExecutionDetails.emplace_back(std::forward<RuleExecutionDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * view all items in the list, continue to call this operation with each subsequent
      * token until no more nextToken values are returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRuleExecutionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRuleExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRuleExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRuleExecutionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRuleExecutionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRuleExecutionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRuleExecutionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRuleExecutionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RuleExecutionDetail> m_ruleExecutionDetails;
+    bool m_ruleExecutionDetailsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

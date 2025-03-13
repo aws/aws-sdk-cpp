@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateBasePathMappingResult::UpdateBasePathMappingResult()
-{
-}
-
 UpdateBasePathMappingResult::UpdateBasePathMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ UpdateBasePathMappingResult& UpdateBasePathMappingResult::operator =(const Aws::
   if(jsonValue.ValueExists("basePath"))
   {
     m_basePath = jsonValue.GetString("basePath");
-
+    m_basePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("restApiId"))
   {
     m_restApiId = jsonValue.GetString("restApiId");
-
+    m_restApiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = jsonValue.GetString("stage");
-
+    m_stageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

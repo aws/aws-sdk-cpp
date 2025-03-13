@@ -32,7 +32,7 @@ namespace Model
   class EngineVersionsSummary
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API EngineVersionsSummary();
+    AWS_MAINFRAMEMODERNIZATION_API EngineVersionsSummary() = default;
     AWS_MAINFRAMEMODERNIZATION_API EngineVersionsSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API EngineVersionsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The type of target platform for the application.</p>
      */
-    inline const Aws::String& GetEngineType() const{ return m_engineType; }
+    inline const Aws::String& GetEngineType() const { return m_engineType; }
     inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
-    inline void SetEngineType(const Aws::String& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
-    inline void SetEngineType(Aws::String&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::move(value); }
-    inline void SetEngineType(const char* value) { m_engineTypeHasBeenSet = true; m_engineType.assign(value); }
-    inline EngineVersionsSummary& WithEngineType(const Aws::String& value) { SetEngineType(value); return *this;}
-    inline EngineVersionsSummary& WithEngineType(Aws::String&& value) { SetEngineType(std::move(value)); return *this;}
-    inline EngineVersionsSummary& WithEngineType(const char* value) { SetEngineType(value); return *this;}
+    template<typename EngineTypeT = Aws::String>
+    void SetEngineType(EngineTypeT&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::forward<EngineTypeT>(value); }
+    template<typename EngineTypeT = Aws::String>
+    EngineVersionsSummary& WithEngineType(EngineTypeT&& value) { SetEngineType(std::forward<EngineTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the engine type used by the application.</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline EngineVersionsSummary& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline EngineVersionsSummary& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline EngineVersionsSummary& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    EngineVersionsSummary& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class NameValuePair
   {
   public:
-    AWS_PRIVATENETWORKS_API NameValuePair();
+    AWS_PRIVATENETWORKS_API NameValuePair() = default;
     AWS_PRIVATENETWORKS_API NameValuePair(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRIVATENETWORKS_API NameValuePair& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The name of the pair.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline NameValuePair& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline NameValuePair& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline NameValuePair& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    NameValuePair& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the pair.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline NameValuePair& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline NameValuePair& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline NameValuePair& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    NameValuePair& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

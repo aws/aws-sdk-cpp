@@ -33,7 +33,7 @@ namespace Model
   class OutpostResolver
   {
   public:
-    AWS_ROUTE53RESOLVER_API OutpostResolver();
+    AWS_ROUTE53RESOLVER_API OutpostResolver() = default;
     AWS_ROUTE53RESOLVER_API OutpostResolver(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API OutpostResolver& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) for the Resolver on an Outpost.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline OutpostResolver& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline OutpostResolver& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline OutpostResolver& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    OutpostResolver& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The date and time that the Outpost Resolver was created, in Unix time format
      * and Coordinated Universal Time (UTC).</p>
      */
-    inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::String&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline void SetCreationTime(const char* value) { m_creationTimeHasBeenSet = true; m_creationTime.assign(value); }
-    inline OutpostResolver& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
-    inline OutpostResolver& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
-    inline OutpostResolver& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
+    template<typename CreationTimeT = Aws::String>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::String>
+    OutpostResolver& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The date and time that the Outpost Resolver was modified, in Unix time format
      * and Coordinated Universal Time (UTC).</p>
      */
-    inline const Aws::String& GetModificationTime() const{ return m_modificationTime; }
+    inline const Aws::String& GetModificationTime() const { return m_modificationTime; }
     inline bool ModificationTimeHasBeenSet() const { return m_modificationTimeHasBeenSet; }
-    inline void SetModificationTime(const Aws::String& value) { m_modificationTimeHasBeenSet = true; m_modificationTime = value; }
-    inline void SetModificationTime(Aws::String&& value) { m_modificationTimeHasBeenSet = true; m_modificationTime = std::move(value); }
-    inline void SetModificationTime(const char* value) { m_modificationTimeHasBeenSet = true; m_modificationTime.assign(value); }
-    inline OutpostResolver& WithModificationTime(const Aws::String& value) { SetModificationTime(value); return *this;}
-    inline OutpostResolver& WithModificationTime(Aws::String&& value) { SetModificationTime(std::move(value)); return *this;}
-    inline OutpostResolver& WithModificationTime(const char* value) { SetModificationTime(value); return *this;}
+    template<typename ModificationTimeT = Aws::String>
+    void SetModificationTime(ModificationTimeT&& value) { m_modificationTimeHasBeenSet = true; m_modificationTime = std::forward<ModificationTimeT>(value); }
+    template<typename ModificationTimeT = Aws::String>
+    OutpostResolver& WithModificationTime(ModificationTimeT&& value) { SetModificationTime(std::forward<ModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,35 +83,31 @@ namespace Model
      * endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried
      * without the risk of running the operation twice.</p>
      */
-    inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+    inline const Aws::String& GetCreatorRequestId() const { return m_creatorRequestId; }
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
-    inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
-    inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
-    inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
-    inline OutpostResolver& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
-    inline OutpostResolver& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
-    inline OutpostResolver& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
+    template<typename CreatorRequestIdT = Aws::String>
+    void SetCreatorRequestId(CreatorRequestIdT&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::forward<CreatorRequestIdT>(value); }
+    template<typename CreatorRequestIdT = Aws::String>
+    OutpostResolver& WithCreatorRequestId(CreatorRequestIdT&& value) { SetCreatorRequestId(std::forward<CreatorRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Resolver on Outpost.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline OutpostResolver& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline OutpostResolver& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline OutpostResolver& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    OutpostResolver& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Amazon EC2 instance count for the Resolver on the Outpost.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline OutpostResolver& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -127,68 +117,58 @@ namespace Model
     /**
      * <p> The Amazon EC2 instance type. </p>
      */
-    inline const Aws::String& GetPreferredInstanceType() const{ return m_preferredInstanceType; }
+    inline const Aws::String& GetPreferredInstanceType() const { return m_preferredInstanceType; }
     inline bool PreferredInstanceTypeHasBeenSet() const { return m_preferredInstanceTypeHasBeenSet; }
-    inline void SetPreferredInstanceType(const Aws::String& value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType = value; }
-    inline void SetPreferredInstanceType(Aws::String&& value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType = std::move(value); }
-    inline void SetPreferredInstanceType(const char* value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType.assign(value); }
-    inline OutpostResolver& WithPreferredInstanceType(const Aws::String& value) { SetPreferredInstanceType(value); return *this;}
-    inline OutpostResolver& WithPreferredInstanceType(Aws::String&& value) { SetPreferredInstanceType(std::move(value)); return *this;}
-    inline OutpostResolver& WithPreferredInstanceType(const char* value) { SetPreferredInstanceType(value); return *this;}
+    template<typename PreferredInstanceTypeT = Aws::String>
+    void SetPreferredInstanceType(PreferredInstanceTypeT&& value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType = std::forward<PreferredInstanceTypeT>(value); }
+    template<typename PreferredInstanceTypeT = Aws::String>
+    OutpostResolver& WithPreferredInstanceType(PreferredInstanceTypeT&& value) { SetPreferredInstanceType(std::forward<PreferredInstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the Resolver.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline OutpostResolver& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline OutpostResolver& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline OutpostResolver& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    OutpostResolver& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of the Resolver.</p>
      */
-    inline const OutpostResolverStatus& GetStatus() const{ return m_status; }
+    inline OutpostResolverStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OutpostResolverStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OutpostResolverStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OutpostResolver& WithStatus(const OutpostResolverStatus& value) { SetStatus(value); return *this;}
-    inline OutpostResolver& WithStatus(OutpostResolverStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(OutpostResolverStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline OutpostResolver& WithStatus(OutpostResolverStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A detailed description of the Resolver.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline OutpostResolver& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline OutpostResolver& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline OutpostResolver& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    OutpostResolver& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN (Amazon Resource Name) for the Outpost.</p>
      */
-    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+    inline const Aws::String& GetOutpostArn() const { return m_outpostArn; }
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
-    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
-    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
-    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
-    inline OutpostResolver& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
-    inline OutpostResolver& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
-    inline OutpostResolver& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+    template<typename OutpostArnT = Aws::String>
+    void SetOutpostArn(OutpostArnT&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::forward<OutpostArnT>(value); }
+    template<typename OutpostArnT = Aws::String>
+    OutpostResolver& WithOutpostArn(OutpostArnT&& value) { SetOutpostArn(std::forward<OutpostArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -207,7 +187,7 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_preferredInstanceType;
@@ -216,7 +196,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    OutpostResolverStatus m_status;
+    OutpostResolverStatus m_status{OutpostResolverStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

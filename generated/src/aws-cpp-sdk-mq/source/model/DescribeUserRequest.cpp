@@ -12,12 +12,6 @@ using namespace Aws::MQ::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeUserRequest::DescribeUserRequest() : 
-    m_brokerIdHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUserRequest::SerializePayload() const
 {
   return {};

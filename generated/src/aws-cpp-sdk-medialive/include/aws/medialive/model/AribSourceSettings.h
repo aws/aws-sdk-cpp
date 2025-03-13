@@ -29,7 +29,7 @@ namespace Model
   class AribSourceSettings
   {
   public:
-    AWS_MEDIALIVE_API AribSourceSettings();
+    AWS_MEDIALIVE_API AribSourceSettings() = default;
     AWS_MEDIALIVE_API AribSourceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AribSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

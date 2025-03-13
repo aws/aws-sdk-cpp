@@ -33,7 +33,7 @@ namespace Model
   class AuthInfo
   {
   public:
-    AWS_IOT_API AuthInfo();
+    AWS_IOT_API AuthInfo() = default;
     AWS_IOT_API AuthInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AuthInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The type of action for which the principal is being authorized.</p>
      */
-    inline const ActionType& GetActionType() const{ return m_actionType; }
+    inline ActionType GetActionType() const { return m_actionType; }
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-    inline void SetActionType(const ActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-    inline void SetActionType(ActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-    inline AuthInfo& WithActionType(const ActionType& value) { SetActionType(value); return *this;}
-    inline AuthInfo& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
+    inline void SetActionType(ActionType value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
+    inline AuthInfo& WithActionType(ActionType value) { SetActionType(value); return *this;}
     ///@}
 
     ///@{
@@ -56,19 +54,18 @@ namespace Model
      * <p>The resources for which the principal is being authorized to perform the
      * specified action.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
+    inline const Aws::Vector<Aws::String>& GetResources() const { return m_resources; }
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-    inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-    inline AuthInfo& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
-    inline AuthInfo& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
-    inline AuthInfo& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-    inline AuthInfo& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
-    inline AuthInfo& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    template<typename ResourcesT = Aws::Vector<Aws::String>>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = Aws::Vector<Aws::String>>
+    AuthInfo& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
+    template<typename ResourcesT = Aws::String>
+    AuthInfo& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
     ///@}
   private:
 
-    ActionType m_actionType;
+    ActionType m_actionType{ActionType::NOT_SET};
     bool m_actionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resources;

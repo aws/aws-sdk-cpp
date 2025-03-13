@@ -12,20 +12,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCertificateAuthorityRequest::CreateCertificateAuthorityRequest() : 
-    m_certificateAuthorityConfigurationHasBeenSet(false),
-    m_revocationConfigurationHasBeenSet(false),
-    m_certificateAuthorityType(CertificateAuthorityType::NOT_SET),
-    m_certificateAuthorityTypeHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false),
-    m_keyStorageSecurityStandard(KeyStorageSecurityStandard::NOT_SET),
-    m_keyStorageSecurityStandardHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_usageMode(CertificateAuthorityUsageMode::NOT_SET),
-    m_usageModeHasBeenSet(false)
-{
-}
-
 Aws::String CreateCertificateAuthorityRequest::SerializePayload() const
 {
   JsonValue payload;

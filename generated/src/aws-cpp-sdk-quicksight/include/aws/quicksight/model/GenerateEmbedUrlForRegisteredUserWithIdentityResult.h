@@ -27,7 +27,7 @@ namespace Model
   class GenerateEmbedUrlForRegisteredUserWithIdentityResult
   {
   public:
-    AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserWithIdentityResult();
+    AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserWithIdentityResult() = default;
     AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserWithIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserWithIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,41 +36,40 @@ namespace Model
     /**
      * <p>The generated embed URL for the registered user.</p>
      */
-    inline const Aws::String& GetEmbedUrl() const{ return m_embedUrl; }
-    inline void SetEmbedUrl(const Aws::String& value) { m_embedUrl = value; }
-    inline void SetEmbedUrl(Aws::String&& value) { m_embedUrl = std::move(value); }
-    inline void SetEmbedUrl(const char* value) { m_embedUrl.assign(value); }
-    inline GenerateEmbedUrlForRegisteredUserWithIdentityResult& WithEmbedUrl(const Aws::String& value) { SetEmbedUrl(value); return *this;}
-    inline GenerateEmbedUrlForRegisteredUserWithIdentityResult& WithEmbedUrl(Aws::String&& value) { SetEmbedUrl(std::move(value)); return *this;}
-    inline GenerateEmbedUrlForRegisteredUserWithIdentityResult& WithEmbedUrl(const char* value) { SetEmbedUrl(value); return *this;}
+    inline const Aws::String& GetEmbedUrl() const { return m_embedUrl; }
+    template<typename EmbedUrlT = Aws::String>
+    void SetEmbedUrl(EmbedUrlT&& value) { m_embedUrlHasBeenSet = true; m_embedUrl = std::forward<EmbedUrlT>(value); }
+    template<typename EmbedUrlT = Aws::String>
+    GenerateEmbedUrlForRegisteredUserWithIdentityResult& WithEmbedUrl(EmbedUrlT&& value) { SetEmbedUrl(std::forward<EmbedUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline GenerateEmbedUrlForRegisteredUserWithIdentityResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GenerateEmbedUrlForRegisteredUserWithIdentityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GenerateEmbedUrlForRegisteredUserWithIdentityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GenerateEmbedUrlForRegisteredUserWithIdentityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GenerateEmbedUrlForRegisteredUserWithIdentityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_embedUrl;
+    bool m_embedUrlHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

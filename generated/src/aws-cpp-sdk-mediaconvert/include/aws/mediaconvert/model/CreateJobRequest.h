@@ -30,7 +30,7 @@ namespace Model
   class CreateJobRequest : public MediaConvertRequest
   {
   public:
-    AWS_MEDIACONVERT_API CreateJobRequest();
+    AWS_MEDIACONVERT_API CreateJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,12 +48,12 @@ namespace Model
      * For information about feature limitations, see the AWS Elemental MediaConvert
      * User Guide.
      */
-    inline const AccelerationSettings& GetAccelerationSettings() const{ return m_accelerationSettings; }
+    inline const AccelerationSettings& GetAccelerationSettings() const { return m_accelerationSettings; }
     inline bool AccelerationSettingsHasBeenSet() const { return m_accelerationSettingsHasBeenSet; }
-    inline void SetAccelerationSettings(const AccelerationSettings& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = value; }
-    inline void SetAccelerationSettings(AccelerationSettings&& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = std::move(value); }
-    inline CreateJobRequest& WithAccelerationSettings(const AccelerationSettings& value) { SetAccelerationSettings(value); return *this;}
-    inline CreateJobRequest& WithAccelerationSettings(AccelerationSettings&& value) { SetAccelerationSettings(std::move(value)); return *this;}
+    template<typename AccelerationSettingsT = AccelerationSettings>
+    void SetAccelerationSettings(AccelerationSettingsT&& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = std::forward<AccelerationSettingsT>(value); }
+    template<typename AccelerationSettingsT = AccelerationSettings>
+    CreateJobRequest& WithAccelerationSettings(AccelerationSettingsT&& value) { SetAccelerationSettings(std::forward<AccelerationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +64,10 @@ namespace Model
      * your billing report unsorted. If you don't choose a valid value for this field,
      * your job outputs will appear on the billing report unsorted.
      */
-    inline const BillingTagsSource& GetBillingTagsSource() const{ return m_billingTagsSource; }
+    inline BillingTagsSource GetBillingTagsSource() const { return m_billingTagsSource; }
     inline bool BillingTagsSourceHasBeenSet() const { return m_billingTagsSourceHasBeenSet; }
-    inline void SetBillingTagsSource(const BillingTagsSource& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = value; }
-    inline void SetBillingTagsSource(BillingTagsSource&& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = std::move(value); }
-    inline CreateJobRequest& WithBillingTagsSource(const BillingTagsSource& value) { SetBillingTagsSource(value); return *this;}
-    inline CreateJobRequest& WithBillingTagsSource(BillingTagsSource&& value) { SetBillingTagsSource(std::move(value)); return *this;}
+    inline void SetBillingTagsSource(BillingTagsSource value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = value; }
+    inline CreateJobRequest& WithBillingTagsSource(BillingTagsSource value) { SetBillingTagsSource(value); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +79,12 @@ namespace Model
      * instead. For more information see
      * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateJobRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateJobRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateJobRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateJobRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +94,14 @@ namespace Model
      * time that your job will wait in the initial queue before hopping. For more
      * information about this feature, see the AWS Elemental MediaConvert User Guide.
      */
-    inline const Aws::Vector<HopDestination>& GetHopDestinations() const{ return m_hopDestinations; }
+    inline const Aws::Vector<HopDestination>& GetHopDestinations() const { return m_hopDestinations; }
     inline bool HopDestinationsHasBeenSet() const { return m_hopDestinationsHasBeenSet; }
-    inline void SetHopDestinations(const Aws::Vector<HopDestination>& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations = value; }
-    inline void SetHopDestinations(Aws::Vector<HopDestination>&& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations = std::move(value); }
-    inline CreateJobRequest& WithHopDestinations(const Aws::Vector<HopDestination>& value) { SetHopDestinations(value); return *this;}
-    inline CreateJobRequest& WithHopDestinations(Aws::Vector<HopDestination>&& value) { SetHopDestinations(std::move(value)); return *this;}
-    inline CreateJobRequest& AddHopDestinations(const HopDestination& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations.push_back(value); return *this; }
-    inline CreateJobRequest& AddHopDestinations(HopDestination&& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations.push_back(std::move(value)); return *this; }
+    template<typename HopDestinationsT = Aws::Vector<HopDestination>>
+    void SetHopDestinations(HopDestinationsT&& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations = std::forward<HopDestinationsT>(value); }
+    template<typename HopDestinationsT = Aws::Vector<HopDestination>>
+    CreateJobRequest& WithHopDestinations(HopDestinationsT&& value) { SetHopDestinations(std::forward<HopDestinationsT>(value)); return *this;}
+    template<typename HopDestinationsT = HopDestination>
+    CreateJobRequest& AddHopDestinations(HopDestinationsT&& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations.emplace_back(std::forward<HopDestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -115,14 +111,12 @@ namespace Model
      * Enter a date in a YYYY-MM-DD format. For a list of valid Job engine versions,
      * submit a ListVersions request. To not specify a Job engine version: Leave blank.
      */
-    inline const Aws::String& GetJobEngineVersion() const{ return m_jobEngineVersion; }
+    inline const Aws::String& GetJobEngineVersion() const { return m_jobEngineVersion; }
     inline bool JobEngineVersionHasBeenSet() const { return m_jobEngineVersionHasBeenSet; }
-    inline void SetJobEngineVersion(const Aws::String& value) { m_jobEngineVersionHasBeenSet = true; m_jobEngineVersion = value; }
-    inline void SetJobEngineVersion(Aws::String&& value) { m_jobEngineVersionHasBeenSet = true; m_jobEngineVersion = std::move(value); }
-    inline void SetJobEngineVersion(const char* value) { m_jobEngineVersionHasBeenSet = true; m_jobEngineVersion.assign(value); }
-    inline CreateJobRequest& WithJobEngineVersion(const Aws::String& value) { SetJobEngineVersion(value); return *this;}
-    inline CreateJobRequest& WithJobEngineVersion(Aws::String&& value) { SetJobEngineVersion(std::move(value)); return *this;}
-    inline CreateJobRequest& WithJobEngineVersion(const char* value) { SetJobEngineVersion(value); return *this;}
+    template<typename JobEngineVersionT = Aws::String>
+    void SetJobEngineVersion(JobEngineVersionT&& value) { m_jobEngineVersionHasBeenSet = true; m_jobEngineVersion = std::forward<JobEngineVersionT>(value); }
+    template<typename JobEngineVersionT = Aws::String>
+    CreateJobRequest& WithJobEngineVersion(JobEngineVersionT&& value) { SetJobEngineVersion(std::forward<JobEngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +124,12 @@ namespace Model
      * Optional. When you create a job, you can either specify a job template or
      * specify the transcoding settings individually.
      */
-    inline const Aws::String& GetJobTemplate() const{ return m_jobTemplate; }
+    inline const Aws::String& GetJobTemplate() const { return m_jobTemplate; }
     inline bool JobTemplateHasBeenSet() const { return m_jobTemplateHasBeenSet; }
-    inline void SetJobTemplate(const Aws::String& value) { m_jobTemplateHasBeenSet = true; m_jobTemplate = value; }
-    inline void SetJobTemplate(Aws::String&& value) { m_jobTemplateHasBeenSet = true; m_jobTemplate = std::move(value); }
-    inline void SetJobTemplate(const char* value) { m_jobTemplateHasBeenSet = true; m_jobTemplate.assign(value); }
-    inline CreateJobRequest& WithJobTemplate(const Aws::String& value) { SetJobTemplate(value); return *this;}
-    inline CreateJobRequest& WithJobTemplate(Aws::String&& value) { SetJobTemplate(std::move(value)); return *this;}
-    inline CreateJobRequest& WithJobTemplate(const char* value) { SetJobTemplate(value); return *this;}
+    template<typename JobTemplateT = Aws::String>
+    void SetJobTemplate(JobTemplateT&& value) { m_jobTemplateHasBeenSet = true; m_jobTemplate = std::forward<JobTemplateT>(value); }
+    template<typename JobTemplateT = Aws::String>
+    CreateJobRequest& WithJobTemplate(JobTemplateT&& value) { SetJobTemplate(std::forward<JobTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,7 +140,7 @@ namespace Model
      * submitted first. If you don't specify a priority, the service uses the default
      * value 0.
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline CreateJobRequest& WithPriority(int value) { SetPriority(value); return *this;}
@@ -161,14 +153,12 @@ namespace Model
      * the User Guide topic at
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
      */
-    inline const Aws::String& GetQueue() const{ return m_queue; }
+    inline const Aws::String& GetQueue() const { return m_queue; }
     inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
-    inline void SetQueue(const Aws::String& value) { m_queueHasBeenSet = true; m_queue = value; }
-    inline void SetQueue(Aws::String&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
-    inline void SetQueue(const char* value) { m_queueHasBeenSet = true; m_queue.assign(value); }
-    inline CreateJobRequest& WithQueue(const Aws::String& value) { SetQueue(value); return *this;}
-    inline CreateJobRequest& WithQueue(Aws::String&& value) { SetQueue(std::move(value)); return *this;}
-    inline CreateJobRequest& WithQueue(const char* value) { SetQueue(value); return *this;}
+    template<typename QueueT = Aws::String>
+    void SetQueue(QueueT&& value) { m_queueHasBeenSet = true; m_queue = std::forward<QueueT>(value); }
+    template<typename QueueT = Aws::String>
+    CreateJobRequest& WithQueue(QueueT&& value) { SetQueue(std::forward<QueueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,26 +167,24 @@ namespace Model
      * permissions, see the User Guide topic at the User Guide at
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline CreateJobRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline CreateJobRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline CreateJobRequest& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    CreateJobRequest& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * JobSettings contains all the transcode settings for a job.
      */
-    inline const JobSettings& GetSettings() const{ return m_settings; }
+    inline const JobSettings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const JobSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(JobSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline CreateJobRequest& WithSettings(const JobSettings& value) { SetSettings(value); return *this;}
-    inline CreateJobRequest& WithSettings(JobSettings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = JobSettings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = JobSettings>
+    CreateJobRequest& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -206,12 +194,10 @@ namespace Model
      * runs your job from an on-demand queue with similar performance to what you will
      * see with one RTS in a reserved queue. This setting is disabled by default.
      */
-    inline const SimulateReservedQueue& GetSimulateReservedQueue() const{ return m_simulateReservedQueue; }
+    inline SimulateReservedQueue GetSimulateReservedQueue() const { return m_simulateReservedQueue; }
     inline bool SimulateReservedQueueHasBeenSet() const { return m_simulateReservedQueueHasBeenSet; }
-    inline void SetSimulateReservedQueue(const SimulateReservedQueue& value) { m_simulateReservedQueueHasBeenSet = true; m_simulateReservedQueue = value; }
-    inline void SetSimulateReservedQueue(SimulateReservedQueue&& value) { m_simulateReservedQueueHasBeenSet = true; m_simulateReservedQueue = std::move(value); }
-    inline CreateJobRequest& WithSimulateReservedQueue(const SimulateReservedQueue& value) { SetSimulateReservedQueue(value); return *this;}
-    inline CreateJobRequest& WithSimulateReservedQueue(SimulateReservedQueue&& value) { SetSimulateReservedQueue(std::move(value)); return *this;}
+    inline void SetSimulateReservedQueue(SimulateReservedQueue value) { m_simulateReservedQueueHasBeenSet = true; m_simulateReservedQueue = value; }
+    inline CreateJobRequest& WithSimulateReservedQueue(SimulateReservedQueue value) { SetSimulateReservedQueue(value); return *this;}
     ///@}
 
     ///@{
@@ -222,12 +208,10 @@ namespace Model
      * processing your job to the time it completes the transcode or encounters an
      * error.
      */
-    inline const StatusUpdateInterval& GetStatusUpdateInterval() const{ return m_statusUpdateInterval; }
+    inline StatusUpdateInterval GetStatusUpdateInterval() const { return m_statusUpdateInterval; }
     inline bool StatusUpdateIntervalHasBeenSet() const { return m_statusUpdateIntervalHasBeenSet; }
-    inline void SetStatusUpdateInterval(const StatusUpdateInterval& value) { m_statusUpdateIntervalHasBeenSet = true; m_statusUpdateInterval = value; }
-    inline void SetStatusUpdateInterval(StatusUpdateInterval&& value) { m_statusUpdateIntervalHasBeenSet = true; m_statusUpdateInterval = std::move(value); }
-    inline CreateJobRequest& WithStatusUpdateInterval(const StatusUpdateInterval& value) { SetStatusUpdateInterval(value); return *this;}
-    inline CreateJobRequest& WithStatusUpdateInterval(StatusUpdateInterval&& value) { SetStatusUpdateInterval(std::move(value)); return *this;}
+    inline void SetStatusUpdateInterval(StatusUpdateInterval value) { m_statusUpdateIntervalHasBeenSet = true; m_statusUpdateInterval = value; }
+    inline CreateJobRequest& WithStatusUpdateInterval(StatusUpdateInterval value) { SetStatusUpdateInterval(value); return *this;}
     ///@}
 
     ///@{
@@ -237,19 +221,16 @@ namespace Model
      * automatic integration with AWS services and for custom integrations and
      * workflows.
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateJobRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -259,26 +240,23 @@ namespace Model
      * integrations or workflows that rely on job metadata tags. Otherwise, we
      * recommend that you use standard AWS tags.
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetUserMetadata() const{ return m_userMetadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetUserMetadata() const { return m_userMetadata; }
     inline bool UserMetadataHasBeenSet() const { return m_userMetadataHasBeenSet; }
-    inline void SetUserMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_userMetadataHasBeenSet = true; m_userMetadata = value; }
-    inline void SetUserMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_userMetadataHasBeenSet = true; m_userMetadata = std::move(value); }
-    inline CreateJobRequest& WithUserMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetUserMetadata(value); return *this;}
-    inline CreateJobRequest& WithUserMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetUserMetadata(std::move(value)); return *this;}
-    inline CreateJobRequest& AddUserMetadata(const Aws::String& key, const Aws::String& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
-    inline CreateJobRequest& AddUserMetadata(Aws::String&& key, const Aws::String& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::move(key), value); return *this; }
-    inline CreateJobRequest& AddUserMetadata(const Aws::String& key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, std::move(value)); return *this; }
-    inline CreateJobRequest& AddUserMetadata(Aws::String&& key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateJobRequest& AddUserMetadata(const char* key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, std::move(value)); return *this; }
-    inline CreateJobRequest& AddUserMetadata(Aws::String&& key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::move(key), value); return *this; }
-    inline CreateJobRequest& AddUserMetadata(const char* key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
+    template<typename UserMetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetUserMetadata(UserMetadataT&& value) { m_userMetadataHasBeenSet = true; m_userMetadata = std::forward<UserMetadataT>(value); }
+    template<typename UserMetadataT = Aws::Map<Aws::String, Aws::String>>
+    CreateJobRequest& WithUserMetadata(UserMetadataT&& value) { SetUserMetadata(std::forward<UserMetadataT>(value)); return *this;}
+    template<typename UserMetadataKeyT = Aws::String, typename UserMetadataValueT = Aws::String>
+    CreateJobRequest& AddUserMetadata(UserMetadataKeyT&& key, UserMetadataValueT&& value) {
+      m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::forward<UserMetadataKeyT>(key), std::forward<UserMetadataValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     AccelerationSettings m_accelerationSettings;
     bool m_accelerationSettingsHasBeenSet = false;
 
-    BillingTagsSource m_billingTagsSource;
+    BillingTagsSource m_billingTagsSource{BillingTagsSource::NOT_SET};
     bool m_billingTagsSourceHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
@@ -293,7 +271,7 @@ namespace Model
     Aws::String m_jobTemplate;
     bool m_jobTemplateHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     Aws::String m_queue;
@@ -305,10 +283,10 @@ namespace Model
     JobSettings m_settings;
     bool m_settingsHasBeenSet = false;
 
-    SimulateReservedQueue m_simulateReservedQueue;
+    SimulateReservedQueue m_simulateReservedQueue{SimulateReservedQueue::NOT_SET};
     bool m_simulateReservedQueueHasBeenSet = false;
 
-    StatusUpdateInterval m_statusUpdateInterval;
+    StatusUpdateInterval m_statusUpdateInterval{StatusUpdateInterval::NOT_SET};
     bool m_statusUpdateIntervalHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

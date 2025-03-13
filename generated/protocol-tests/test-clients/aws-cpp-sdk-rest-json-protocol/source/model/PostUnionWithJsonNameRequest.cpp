@@ -12,11 +12,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PostUnionWithJsonNameRequest::PostUnionWithJsonNameRequest() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 Aws::String PostUnionWithJsonNameRequest::SerializePayload() const
 {
   JsonValue payload;

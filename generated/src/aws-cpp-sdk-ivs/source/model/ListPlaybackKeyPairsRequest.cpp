@@ -12,13 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPlaybackKeyPairsRequest::ListPlaybackKeyPairsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListPlaybackKeyPairsRequest::SerializePayload() const
 {
   JsonValue payload;

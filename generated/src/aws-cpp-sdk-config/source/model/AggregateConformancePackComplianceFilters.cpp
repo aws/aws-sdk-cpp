@@ -18,17 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-AggregateConformancePackComplianceFilters::AggregateConformancePackComplianceFilters() : 
-    m_conformancePackNameHasBeenSet(false),
-    m_complianceType(ConformancePackComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
-{
-}
-
 AggregateConformancePackComplianceFilters::AggregateConformancePackComplianceFilters(JsonView jsonValue)
-  : AggregateConformancePackComplianceFilters()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AggregateConformancePackComplianceFilters& AggregateConformancePackComplianceFil
   if(jsonValue.ValueExists("ConformancePackName"))
   {
     m_conformancePackName = jsonValue.GetString("ConformancePackName");
-
     m_conformancePackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceType"))
   {
     m_complianceType = ConformancePackComplianceTypeMapper::GetConformancePackComplianceTypeForName(jsonValue.GetString("ComplianceType"));
-
     m_complianceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegion"))
   {
     m_awsRegion = jsonValue.GetString("AwsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

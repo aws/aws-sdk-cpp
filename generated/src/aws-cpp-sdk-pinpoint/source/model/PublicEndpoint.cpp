@@ -18,24 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-PublicEndpoint::PublicEndpoint() : 
-    m_addressHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_channelType(ChannelType::NOT_SET),
-    m_channelTypeHasBeenSet(false),
-    m_demographicHasBeenSet(false),
-    m_effectiveDateHasBeenSet(false),
-    m_endpointStatusHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_optOutHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_userHasBeenSet(false)
-{
-}
-
 PublicEndpoint::PublicEndpoint(JsonView jsonValue)
-  : PublicEndpoint()
 {
   *this = jsonValue;
 }
@@ -45,10 +28,8 @@ PublicEndpoint& PublicEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetString("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -65,42 +46,31 @@ PublicEndpoint& PublicEndpoint::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelType"))
   {
     m_channelType = ChannelTypeMapper::GetChannelTypeForName(jsonValue.GetString("ChannelType"));
-
     m_channelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Demographic"))
   {
     m_demographic = jsonValue.GetObject("Demographic");
-
     m_demographicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EffectiveDate"))
   {
     m_effectiveDate = jsonValue.GetString("EffectiveDate");
-
     m_effectiveDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointStatus"))
   {
     m_endpointStatus = jsonValue.GetString("EndpointStatus");
-
     m_endpointStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetObject("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metrics"))
   {
     Aws::Map<Aws::String, JsonView> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
@@ -110,28 +80,21 @@ PublicEndpoint& PublicEndpoint::operator =(JsonView jsonValue)
     }
     m_metricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptOut"))
   {
     m_optOut = jsonValue.GetString("OptOut");
-
     m_optOutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("User"))
   {
     m_user = jsonValue.GetObject("User");
-
     m_userHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class MedicalScribeTranscriptItem
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeTranscriptItem();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeTranscriptItem() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeTranscriptItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeTranscriptItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The start time, in milliseconds, of the transcribed item.</p>
      */
-    inline double GetBeginAudioTime() const{ return m_beginAudioTime; }
+    inline double GetBeginAudioTime() const { return m_beginAudioTime; }
     inline bool BeginAudioTimeHasBeenSet() const { return m_beginAudioTimeHasBeenSet; }
     inline void SetBeginAudioTime(double value) { m_beginAudioTimeHasBeenSet = true; m_beginAudioTime = value; }
     inline MedicalScribeTranscriptItem& WithBeginAudioTime(double value) { SetBeginAudioTime(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>The end time, in milliseconds, of the transcribed item.</p>
      */
-    inline double GetEndAudioTime() const{ return m_endAudioTime; }
+    inline double GetEndAudioTime() const { return m_endAudioTime; }
     inline bool EndAudioTimeHasBeenSet() const { return m_endAudioTimeHasBeenSet; }
     inline void SetEndAudioTime(double value) { m_endAudioTimeHasBeenSet = true; m_endAudioTime = value; }
     inline MedicalScribeTranscriptItem& WithEndAudioTime(double value) { SetEndAudioTime(value); return *this;}
@@ -65,12 +65,10 @@ namespace Model
      * <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken
      * words) and <code>PUNCTUATION</code>. </p>
      */
-    inline const MedicalScribeTranscriptItemType& GetType() const{ return m_type; }
+    inline MedicalScribeTranscriptItemType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MedicalScribeTranscriptItemType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MedicalScribeTranscriptItemType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MedicalScribeTranscriptItem& WithType(const MedicalScribeTranscriptItemType& value) { SetType(value); return *this;}
-    inline MedicalScribeTranscriptItem& WithType(MedicalScribeTranscriptItemType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MedicalScribeTranscriptItemType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MedicalScribeTranscriptItem& WithType(MedicalScribeTranscriptItemType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +78,7 @@ namespace Model
      * higher probability that the identified item correctly matches the item spoken in
      * your media. </p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline MedicalScribeTranscriptItem& WithConfidence(double value) { SetConfidence(value); return *this;}
@@ -90,14 +88,12 @@ namespace Model
     /**
      * <p>The word, phrase or punctuation mark that was transcribed.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline MedicalScribeTranscriptItem& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline MedicalScribeTranscriptItem& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline MedicalScribeTranscriptItem& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    MedicalScribeTranscriptItem& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,29 +102,29 @@ namespace Model
      * included in your configuration event. If <code>true</code>, there is a
      * vocabulary filter match. </p>
      */
-    inline bool GetVocabularyFilterMatch() const{ return m_vocabularyFilterMatch; }
+    inline bool GetVocabularyFilterMatch() const { return m_vocabularyFilterMatch; }
     inline bool VocabularyFilterMatchHasBeenSet() const { return m_vocabularyFilterMatchHasBeenSet; }
     inline void SetVocabularyFilterMatch(bool value) { m_vocabularyFilterMatchHasBeenSet = true; m_vocabularyFilterMatch = value; }
     inline MedicalScribeTranscriptItem& WithVocabularyFilterMatch(bool value) { SetVocabularyFilterMatch(value); return *this;}
     ///@}
   private:
 
-    double m_beginAudioTime;
+    double m_beginAudioTime{0.0};
     bool m_beginAudioTimeHasBeenSet = false;
 
-    double m_endAudioTime;
+    double m_endAudioTime{0.0};
     bool m_endAudioTimeHasBeenSet = false;
 
-    MedicalScribeTranscriptItemType m_type;
+    MedicalScribeTranscriptItemType m_type{MedicalScribeTranscriptItemType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
 
     Aws::String m_content;
     bool m_contentHasBeenSet = false;
 
-    bool m_vocabularyFilterMatch;
+    bool m_vocabularyFilterMatch{false};
     bool m_vocabularyFilterMatchHasBeenSet = false;
   };
 

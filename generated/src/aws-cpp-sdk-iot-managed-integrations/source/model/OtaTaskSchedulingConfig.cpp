@@ -18,17 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-OtaTaskSchedulingConfig::OtaTaskSchedulingConfig() : 
-    m_endBehavior(SchedulingConfigEndBehavior::NOT_SET),
-    m_endBehaviorHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_maintenanceWindowsHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 OtaTaskSchedulingConfig::OtaTaskSchedulingConfig(JsonView jsonValue)
-  : OtaTaskSchedulingConfig()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ OtaTaskSchedulingConfig& OtaTaskSchedulingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndBehavior"))
   {
     m_endBehavior = SchedulingConfigEndBehaviorMapper::GetSchedulingConfigEndBehaviorForName(jsonValue.GetString("EndBehavior"));
-
     m_endBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetString("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaintenanceWindows"))
   {
     Aws::Utils::Array<JsonView> maintenanceWindowsJsonList = jsonValue.GetArray("MaintenanceWindows");
@@ -58,14 +44,11 @@ OtaTaskSchedulingConfig& OtaTaskSchedulingConfig::operator =(JsonView jsonValue)
     }
     m_maintenanceWindowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

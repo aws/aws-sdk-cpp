@@ -24,12 +24,6 @@ namespace ${serviceNamespace}
 namespace Model
 {
 
-#set($useRequiredField = true)
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
-${typeInfo.className}::${typeInfo.className}()$initializers
-{
-}
-
 ${typeInfo.className}::${typeInfo.className}(const XmlNode& xmlNode)
 #if($initializers)
   : ${typeInfo.className}()

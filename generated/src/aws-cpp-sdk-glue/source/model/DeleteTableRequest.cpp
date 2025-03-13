@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTableRequest::DeleteTableRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_transactionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTableRequest::SerializePayload() const
 {
   JsonValue payload;

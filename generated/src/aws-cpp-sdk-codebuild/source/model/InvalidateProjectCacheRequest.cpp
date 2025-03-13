@@ -12,11 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InvalidateProjectCacheRequest::InvalidateProjectCacheRequest() : 
-    m_projectNameHasBeenSet(false)
-{
-}
-
 Aws::String InvalidateProjectCacheRequest::SerializePayload() const
 {
   JsonValue payload;

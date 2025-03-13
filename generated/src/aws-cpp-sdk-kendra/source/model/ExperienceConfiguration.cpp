@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ExperienceConfiguration::ExperienceConfiguration() : 
-    m_contentSourceConfigurationHasBeenSet(false),
-    m_userIdentityConfigurationHasBeenSet(false)
-{
-}
-
 ExperienceConfiguration::ExperienceConfiguration(JsonView jsonValue)
-  : ExperienceConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExperienceConfiguration& ExperienceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContentSourceConfiguration"))
   {
     m_contentSourceConfiguration = jsonValue.GetObject("ContentSourceConfiguration");
-
     m_contentSourceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserIdentityConfiguration"))
   {
     m_userIdentityConfiguration = jsonValue.GetObject("UserIdentityConfiguration");
-
     m_userIdentityConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

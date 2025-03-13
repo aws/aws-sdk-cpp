@@ -35,7 +35,7 @@ namespace Model
   class ExportKeyMaterial
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyMaterial();
+    AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyMaterial() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyMaterial(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyMaterial& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>Parameter information for key material export using symmetric TR-31 key
      * exchange method.</p>
      */
-    inline const ExportTr31KeyBlock& GetTr31KeyBlock() const{ return m_tr31KeyBlock; }
+    inline const ExportTr31KeyBlock& GetTr31KeyBlock() const { return m_tr31KeyBlock; }
     inline bool Tr31KeyBlockHasBeenSet() const { return m_tr31KeyBlockHasBeenSet; }
-    inline void SetTr31KeyBlock(const ExportTr31KeyBlock& value) { m_tr31KeyBlockHasBeenSet = true; m_tr31KeyBlock = value; }
-    inline void SetTr31KeyBlock(ExportTr31KeyBlock&& value) { m_tr31KeyBlockHasBeenSet = true; m_tr31KeyBlock = std::move(value); }
-    inline ExportKeyMaterial& WithTr31KeyBlock(const ExportTr31KeyBlock& value) { SetTr31KeyBlock(value); return *this;}
-    inline ExportKeyMaterial& WithTr31KeyBlock(ExportTr31KeyBlock&& value) { SetTr31KeyBlock(std::move(value)); return *this;}
+    template<typename Tr31KeyBlockT = ExportTr31KeyBlock>
+    void SetTr31KeyBlock(Tr31KeyBlockT&& value) { m_tr31KeyBlockHasBeenSet = true; m_tr31KeyBlock = std::forward<Tr31KeyBlockT>(value); }
+    template<typename Tr31KeyBlockT = ExportTr31KeyBlock>
+    ExportKeyMaterial& WithTr31KeyBlock(Tr31KeyBlockT&& value) { SetTr31KeyBlock(std::forward<Tr31KeyBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>Parameter information for key material export using the asymmetric TR-34 key
      * exchange method.</p>
      */
-    inline const ExportTr34KeyBlock& GetTr34KeyBlock() const{ return m_tr34KeyBlock; }
+    inline const ExportTr34KeyBlock& GetTr34KeyBlock() const { return m_tr34KeyBlock; }
     inline bool Tr34KeyBlockHasBeenSet() const { return m_tr34KeyBlockHasBeenSet; }
-    inline void SetTr34KeyBlock(const ExportTr34KeyBlock& value) { m_tr34KeyBlockHasBeenSet = true; m_tr34KeyBlock = value; }
-    inline void SetTr34KeyBlock(ExportTr34KeyBlock&& value) { m_tr34KeyBlockHasBeenSet = true; m_tr34KeyBlock = std::move(value); }
-    inline ExportKeyMaterial& WithTr34KeyBlock(const ExportTr34KeyBlock& value) { SetTr34KeyBlock(value); return *this;}
-    inline ExportKeyMaterial& WithTr34KeyBlock(ExportTr34KeyBlock&& value) { SetTr34KeyBlock(std::move(value)); return *this;}
+    template<typename Tr34KeyBlockT = ExportTr34KeyBlock>
+    void SetTr34KeyBlock(Tr34KeyBlockT&& value) { m_tr34KeyBlockHasBeenSet = true; m_tr34KeyBlock = std::forward<Tr34KeyBlockT>(value); }
+    template<typename Tr34KeyBlockT = ExportTr34KeyBlock>
+    ExportKeyMaterial& WithTr34KeyBlock(Tr34KeyBlockT&& value) { SetTr34KeyBlock(std::forward<Tr34KeyBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * <p>Parameter information for key material export using asymmetric RSA wrap and
      * unwrap key exchange method</p>
      */
-    inline const ExportKeyCryptogram& GetKeyCryptogram() const{ return m_keyCryptogram; }
+    inline const ExportKeyCryptogram& GetKeyCryptogram() const { return m_keyCryptogram; }
     inline bool KeyCryptogramHasBeenSet() const { return m_keyCryptogramHasBeenSet; }
-    inline void SetKeyCryptogram(const ExportKeyCryptogram& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = value; }
-    inline void SetKeyCryptogram(ExportKeyCryptogram&& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = std::move(value); }
-    inline ExportKeyMaterial& WithKeyCryptogram(const ExportKeyCryptogram& value) { SetKeyCryptogram(value); return *this;}
-    inline ExportKeyMaterial& WithKeyCryptogram(ExportKeyCryptogram&& value) { SetKeyCryptogram(std::move(value)); return *this;}
+    template<typename KeyCryptogramT = ExportKeyCryptogram>
+    void SetKeyCryptogram(KeyCryptogramT&& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = std::forward<KeyCryptogramT>(value); }
+    template<typename KeyCryptogramT = ExportKeyCryptogram>
+    ExportKeyMaterial& WithKeyCryptogram(KeyCryptogramT&& value) { SetKeyCryptogram(std::forward<KeyCryptogramT>(value)); return *this;}
     ///@}
   private:
 

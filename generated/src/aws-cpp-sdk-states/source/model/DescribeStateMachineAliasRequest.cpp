@@ -12,11 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStateMachineAliasRequest::DescribeStateMachineAliasRequest() : 
-    m_stateMachineAliasArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStateMachineAliasRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class SuccessfulCampaignStateResponse
   {
   public:
-    AWS_CONNECTCAMPAIGNS_API SuccessfulCampaignStateResponse();
+    AWS_CONNECTCAMPAIGNS_API SuccessfulCampaignStateResponse() = default;
     AWS_CONNECTCAMPAIGNS_API SuccessfulCampaignStateResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNS_API SuccessfulCampaignStateResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,31 +40,27 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
+    inline const Aws::String& GetCampaignId() const { return m_campaignId; }
     inline bool CampaignIdHasBeenSet() const { return m_campaignIdHasBeenSet; }
-    inline void SetCampaignId(const Aws::String& value) { m_campaignIdHasBeenSet = true; m_campaignId = value; }
-    inline void SetCampaignId(Aws::String&& value) { m_campaignIdHasBeenSet = true; m_campaignId = std::move(value); }
-    inline void SetCampaignId(const char* value) { m_campaignIdHasBeenSet = true; m_campaignId.assign(value); }
-    inline SuccessfulCampaignStateResponse& WithCampaignId(const Aws::String& value) { SetCampaignId(value); return *this;}
-    inline SuccessfulCampaignStateResponse& WithCampaignId(Aws::String&& value) { SetCampaignId(std::move(value)); return *this;}
-    inline SuccessfulCampaignStateResponse& WithCampaignId(const char* value) { SetCampaignId(value); return *this;}
+    template<typename CampaignIdT = Aws::String>
+    void SetCampaignId(CampaignIdT&& value) { m_campaignIdHasBeenSet = true; m_campaignId = std::forward<CampaignIdT>(value); }
+    template<typename CampaignIdT = Aws::String>
+    SuccessfulCampaignStateResponse& WithCampaignId(CampaignIdT&& value) { SetCampaignId(std::forward<CampaignIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CampaignState& GetState() const{ return m_state; }
+    inline CampaignState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const CampaignState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(CampaignState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline SuccessfulCampaignStateResponse& WithState(const CampaignState& value) { SetState(value); return *this;}
-    inline SuccessfulCampaignStateResponse& WithState(CampaignState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(CampaignState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline SuccessfulCampaignStateResponse& WithState(CampaignState value) { SetState(value); return *this;}
     ///@}
   private:
 
     Aws::String m_campaignId;
     bool m_campaignIdHasBeenSet = false;
 
-    CampaignState m_state;
+    CampaignState m_state{CampaignState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

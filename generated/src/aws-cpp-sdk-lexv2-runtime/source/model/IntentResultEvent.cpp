@@ -18,20 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-IntentResultEvent::IntentResultEvent() : 
-    m_inputMode(InputMode::NOT_SET),
-    m_inputModeHasBeenSet(false),
-    m_interpretationsHasBeenSet(false),
-    m_sessionStateHasBeenSet(false),
-    m_requestAttributesHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_recognizedBotMemberHasBeenSet(false)
-{
-}
-
 IntentResultEvent::IntentResultEvent(JsonView jsonValue)
-  : IntentResultEvent()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ IntentResultEvent& IntentResultEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputMode"))
   {
     m_inputMode = InputModeMapper::GetInputModeForName(jsonValue.GetString("inputMode"));
-
     m_inputModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interpretations"))
   {
     Aws::Utils::Array<JsonView> interpretationsJsonList = jsonValue.GetArray("interpretations");
@@ -54,14 +39,11 @@ IntentResultEvent& IntentResultEvent::operator =(JsonView jsonValue)
     }
     m_interpretationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionState"))
   {
     m_sessionState = jsonValue.GetObject("sessionState");
-
     m_sessionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestAttributes"))
   {
     Aws::Map<Aws::String, JsonView> requestAttributesJsonMap = jsonValue.GetObject("requestAttributes").GetAllObjects();
@@ -71,28 +53,21 @@ IntentResultEvent& IntentResultEvent::operator =(JsonView jsonValue)
     }
     m_requestAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recognizedBotMember"))
   {
     m_recognizedBotMember = jsonValue.GetObject("recognizedBotMember");
-
     m_recognizedBotMemberHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDirectorySetupRequest::UpdateDirectorySetupRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_updateType(UpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false),
-    m_oSUpdateSettingsHasBeenSet(false),
-    m_createSnapshotBeforeUpdate(false),
-    m_createSnapshotBeforeUpdateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDirectorySetupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutInventoryRequest::PutInventoryRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 Aws::String PutInventoryRequest::SerializePayload() const
 {
   JsonValue payload;

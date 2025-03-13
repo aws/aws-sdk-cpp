@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetServiceLevelObjectiveBudgetReportResult::BatchGetServiceLevelObjectiveBudgetReportResult()
-{
-}
-
 BatchGetServiceLevelObjectiveBudgetReportResult::BatchGetServiceLevelObjectiveBudgetReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ BatchGetServiceLevelObjectiveBudgetReportResult& BatchGetServiceLevelObjectiveBu
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
+    m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reports"))
   {
     Aws::Utils::Array<JsonView> reportsJsonList = jsonValue.GetArray("Reports");
@@ -42,8 +37,8 @@ BatchGetServiceLevelObjectiveBudgetReportResult& BatchGetServiceLevelObjectiveBu
     {
       m_reports.push_back(reportsJsonList[reportsIndex].AsObject());
     }
+    m_reportsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -51,14 +46,15 @@ BatchGetServiceLevelObjectiveBudgetReportResult& BatchGetServiceLevelObjectiveBu
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

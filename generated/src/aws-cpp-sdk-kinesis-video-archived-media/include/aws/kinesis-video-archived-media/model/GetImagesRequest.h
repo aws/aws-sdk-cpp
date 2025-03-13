@@ -26,7 +26,7 @@ namespace Model
   class GetImagesRequest : public KinesisVideoArchivedMediaRequest
   {
   public:
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetImagesRequest();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetImagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The name of the stream from which to retrieve the images. You must specify
      * either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline GetImagesRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline GetImagesRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline GetImagesRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    GetImagesRequest& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * images. You must specify either the <code>StreamName</code> or the
      * <code>StreamARN</code>.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline GetImagesRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline GetImagesRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline GetImagesRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    GetImagesRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,10 @@ namespace Model
      * <p>The origin of the Server or Producer timestamps to use to generate the
      * images.</p>
      */
-    inline const ImageSelectorType& GetImageSelectorType() const{ return m_imageSelectorType; }
+    inline ImageSelectorType GetImageSelectorType() const { return m_imageSelectorType; }
     inline bool ImageSelectorTypeHasBeenSet() const { return m_imageSelectorTypeHasBeenSet; }
-    inline void SetImageSelectorType(const ImageSelectorType& value) { m_imageSelectorTypeHasBeenSet = true; m_imageSelectorType = value; }
-    inline void SetImageSelectorType(ImageSelectorType&& value) { m_imageSelectorTypeHasBeenSet = true; m_imageSelectorType = std::move(value); }
-    inline GetImagesRequest& WithImageSelectorType(const ImageSelectorType& value) { SetImageSelectorType(value); return *this;}
-    inline GetImagesRequest& WithImageSelectorType(ImageSelectorType&& value) { SetImageSelectorType(std::move(value)); return *this;}
+    inline void SetImageSelectorType(ImageSelectorType value) { m_imageSelectorTypeHasBeenSet = true; m_imageSelectorType = value; }
+    inline GetImagesRequest& WithImageSelectorType(ImageSelectorType value) { SetImageSelectorType(value); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +81,12 @@ namespace Model
      * <code>StartTimestamp</code> must be within an inclusive range of timestamps for
      * an image to be returned.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTimestamp() const{ return m_startTimestamp; }
+    inline const Aws::Utils::DateTime& GetStartTimestamp() const { return m_startTimestamp; }
     inline bool StartTimestampHasBeenSet() const { return m_startTimestampHasBeenSet; }
-    inline void SetStartTimestamp(const Aws::Utils::DateTime& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
-    inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::move(value); }
-    inline GetImagesRequest& WithStartTimestamp(const Aws::Utils::DateTime& value) { SetStartTimestamp(value); return *this;}
-    inline GetImagesRequest& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(std::move(value)); return *this;}
+    template<typename StartTimestampT = Aws::Utils::DateTime>
+    void SetStartTimestamp(StartTimestampT&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::forward<StartTimestampT>(value); }
+    template<typename StartTimestampT = Aws::Utils::DateTime>
+    GetImagesRequest& WithStartTimestamp(StartTimestampT&& value) { SetStartTimestamp(std::forward<StartTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +96,12 @@ namespace Model
      * 300 seconds above <code>StartTimestamp</code>, you will receive an
      * <code>IllegalArgumentException</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTimestamp() const{ return m_endTimestamp; }
+    inline const Aws::Utils::DateTime& GetEndTimestamp() const { return m_endTimestamp; }
     inline bool EndTimestampHasBeenSet() const { return m_endTimestampHasBeenSet; }
-    inline void SetEndTimestamp(const Aws::Utils::DateTime& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = value; }
-    inline void SetEndTimestamp(Aws::Utils::DateTime&& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = std::move(value); }
-    inline GetImagesRequest& WithEndTimestamp(const Aws::Utils::DateTime& value) { SetEndTimestamp(value); return *this;}
-    inline GetImagesRequest& WithEndTimestamp(Aws::Utils::DateTime&& value) { SetEndTimestamp(std::move(value)); return *this;}
+    template<typename EndTimestampT = Aws::Utils::DateTime>
+    void SetEndTimestamp(EndTimestampT&& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = std::forward<EndTimestampT>(value); }
+    template<typename EndTimestampT = Aws::Utils::DateTime>
+    GetImagesRequest& WithEndTimestamp(EndTimestampT&& value) { SetEndTimestamp(std::forward<EndTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,7 +112,7 @@ namespace Model
      * the image from the <code>startTimestamp</code> will be returned if available.
      * </p>
      */
-    inline int GetSamplingInterval() const{ return m_samplingInterval; }
+    inline int GetSamplingInterval() const { return m_samplingInterval; }
     inline bool SamplingIntervalHasBeenSet() const { return m_samplingIntervalHasBeenSet; }
     inline void SetSamplingInterval(int value) { m_samplingIntervalHasBeenSet = true; m_samplingInterval = value; }
     inline GetImagesRequest& WithSamplingInterval(int value) { SetSamplingInterval(value); return *this;}
@@ -128,12 +122,10 @@ namespace Model
     /**
      * <p>The format that will be used to encode the image.</p>
      */
-    inline const Format& GetFormat() const{ return m_format; }
+    inline Format GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Format& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Format&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline GetImagesRequest& WithFormat(const Format& value) { SetFormat(value); return *this;}
-    inline GetImagesRequest& WithFormat(Format&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(Format value) { m_formatHasBeenSet = true; m_format = value; }
+    inline GetImagesRequest& WithFormat(Format value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -147,18 +139,15 @@ namespace Model
      * quality and less compression. If no value is provided, the default value of the
      * <code>JPEGQuality</code> key will be set to 80.</p>
      */
-    inline const Aws::Map<FormatConfigKey, Aws::String>& GetFormatConfig() const{ return m_formatConfig; }
+    inline const Aws::Map<FormatConfigKey, Aws::String>& GetFormatConfig() const { return m_formatConfig; }
     inline bool FormatConfigHasBeenSet() const { return m_formatConfigHasBeenSet; }
-    inline void SetFormatConfig(const Aws::Map<FormatConfigKey, Aws::String>& value) { m_formatConfigHasBeenSet = true; m_formatConfig = value; }
-    inline void SetFormatConfig(Aws::Map<FormatConfigKey, Aws::String>&& value) { m_formatConfigHasBeenSet = true; m_formatConfig = std::move(value); }
-    inline GetImagesRequest& WithFormatConfig(const Aws::Map<FormatConfigKey, Aws::String>& value) { SetFormatConfig(value); return *this;}
-    inline GetImagesRequest& WithFormatConfig(Aws::Map<FormatConfigKey, Aws::String>&& value) { SetFormatConfig(std::move(value)); return *this;}
-    inline GetImagesRequest& AddFormatConfig(const FormatConfigKey& key, const Aws::String& value) { m_formatConfigHasBeenSet = true; m_formatConfig.emplace(key, value); return *this; }
-    inline GetImagesRequest& AddFormatConfig(FormatConfigKey&& key, const Aws::String& value) { m_formatConfigHasBeenSet = true; m_formatConfig.emplace(std::move(key), value); return *this; }
-    inline GetImagesRequest& AddFormatConfig(const FormatConfigKey& key, Aws::String&& value) { m_formatConfigHasBeenSet = true; m_formatConfig.emplace(key, std::move(value)); return *this; }
-    inline GetImagesRequest& AddFormatConfig(FormatConfigKey&& key, Aws::String&& value) { m_formatConfigHasBeenSet = true; m_formatConfig.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetImagesRequest& AddFormatConfig(FormatConfigKey&& key, const char* value) { m_formatConfigHasBeenSet = true; m_formatConfig.emplace(std::move(key), value); return *this; }
-    inline GetImagesRequest& AddFormatConfig(const FormatConfigKey& key, const char* value) { m_formatConfigHasBeenSet = true; m_formatConfig.emplace(key, value); return *this; }
+    template<typename FormatConfigT = Aws::Map<FormatConfigKey, Aws::String>>
+    void SetFormatConfig(FormatConfigT&& value) { m_formatConfigHasBeenSet = true; m_formatConfig = std::forward<FormatConfigT>(value); }
+    template<typename FormatConfigT = Aws::Map<FormatConfigKey, Aws::String>>
+    GetImagesRequest& WithFormatConfig(FormatConfigT&& value) { SetFormatConfig(std::forward<FormatConfigT>(value)); return *this;}
+    inline GetImagesRequest& AddFormatConfig(FormatConfigKey key, Aws::String value) {
+      m_formatConfigHasBeenSet = true; m_formatConfig.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -171,7 +160,7 @@ namespace Model
      * <code>ValidationException</code> will be thrown. If neither parameter is
      * provided, the original image size from the stream will be returned.</p>
      */
-    inline int GetWidthPixels() const{ return m_widthPixels; }
+    inline int GetWidthPixels() const { return m_widthPixels; }
     inline bool WidthPixelsHasBeenSet() const { return m_widthPixelsHasBeenSet; }
     inline void SetWidthPixels(int value) { m_widthPixelsHasBeenSet = true; m_widthPixels = value; }
     inline GetImagesRequest& WithWidthPixels(int value) { SetWidthPixels(value); return *this;}
@@ -187,7 +176,7 @@ namespace Model
      * <code>WidthPixels</code> ratio. If neither parameter is provided, the original
      * image size will be returned.</p>
      */
-    inline int GetHeightPixels() const{ return m_heightPixels; }
+    inline int GetHeightPixels() const { return m_heightPixels; }
     inline bool HeightPixelsHasBeenSet() const { return m_heightPixelsHasBeenSet; }
     inline void SetHeightPixels(int value) { m_heightPixelsHasBeenSet = true; m_heightPixels = value; }
     inline GetImagesRequest& WithHeightPixels(int value) { SetHeightPixels(value); return *this;}
@@ -200,7 +189,7 @@ namespace Model
      * greater than this value will result in a page size of 25. Any additional results
      * will be paginated. </p> 
      */
-    inline long long GetMaxResults() const{ return m_maxResults; }
+    inline long long GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(long long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetImagesRequest& WithMaxResults(long long value) { SetMaxResults(value); return *this;}
@@ -212,14 +201,12 @@ namespace Model
      * is the <code>GetImages:NextToken</code> from a previously truncated
      * response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetImagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetImagesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -229,31 +216,31 @@ namespace Model
     Aws::String m_streamARN;
     bool m_streamARNHasBeenSet = false;
 
-    ImageSelectorType m_imageSelectorType;
+    ImageSelectorType m_imageSelectorType{ImageSelectorType::NOT_SET};
     bool m_imageSelectorTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTimestamp;
+    Aws::Utils::DateTime m_startTimestamp{};
     bool m_startTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTimestamp;
+    Aws::Utils::DateTime m_endTimestamp{};
     bool m_endTimestampHasBeenSet = false;
 
-    int m_samplingInterval;
+    int m_samplingInterval{0};
     bool m_samplingIntervalHasBeenSet = false;
 
-    Format m_format;
+    Format m_format{Format::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::Map<FormatConfigKey, Aws::String> m_formatConfig;
     bool m_formatConfigHasBeenSet = false;
 
-    int m_widthPixels;
+    int m_widthPixels{0};
     bool m_widthPixelsHasBeenSet = false;
 
-    int m_heightPixels;
+    int m_heightPixels{0};
     bool m_heightPixelsHasBeenSet = false;
 
-    long long m_maxResults;
+    long long m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -34,7 +34,7 @@ namespace Model
   class Account
   {
   public:
-    AWS_INSPECTOR2_API Account();
+    AWS_INSPECTOR2_API Account() = default;
     AWS_INSPECTOR2_API Account(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Account& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,34 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline Account& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline Account& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline Account& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    Account& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details of the status of Amazon Inspector scans by resource type.</p>
      */
-    inline const ResourceStatus& GetResourceStatus() const{ return m_resourceStatus; }
+    inline const ResourceStatus& GetResourceStatus() const { return m_resourceStatus; }
     inline bool ResourceStatusHasBeenSet() const { return m_resourceStatusHasBeenSet; }
-    inline void SetResourceStatus(const ResourceStatus& value) { m_resourceStatusHasBeenSet = true; m_resourceStatus = value; }
-    inline void SetResourceStatus(ResourceStatus&& value) { m_resourceStatusHasBeenSet = true; m_resourceStatus = std::move(value); }
-    inline Account& WithResourceStatus(const ResourceStatus& value) { SetResourceStatus(value); return *this;}
-    inline Account& WithResourceStatus(ResourceStatus&& value) { SetResourceStatus(std::move(value)); return *this;}
+    template<typename ResourceStatusT = ResourceStatus>
+    void SetResourceStatus(ResourceStatusT&& value) { m_resourceStatusHasBeenSet = true; m_resourceStatus = std::forward<ResourceStatusT>(value); }
+    template<typename ResourceStatusT = ResourceStatus>
+    Account& WithResourceStatus(ResourceStatusT&& value) { SetResourceStatus(std::forward<ResourceStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of Amazon Inspector for the account.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
+    inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Account& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline Account& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Account& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +81,7 @@ namespace Model
     ResourceStatus m_resourceStatus;
     bool m_resourceStatusHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

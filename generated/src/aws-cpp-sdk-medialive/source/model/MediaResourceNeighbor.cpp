@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MediaResourceNeighbor::MediaResourceNeighbor() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 MediaResourceNeighbor::MediaResourceNeighbor(JsonView jsonValue)
-  : MediaResourceNeighbor()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MediaResourceNeighbor& MediaResourceNeighbor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

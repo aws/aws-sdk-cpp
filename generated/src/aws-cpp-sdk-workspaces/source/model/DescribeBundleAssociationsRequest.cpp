@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBundleAssociationsRequest::DescribeBundleAssociationsRequest() : 
-    m_bundleIdHasBeenSet(false),
-    m_associatedResourceTypesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBundleAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

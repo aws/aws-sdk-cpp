@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AttachLoadBalancerTlsCertificateRequest::AttachLoadBalancerTlsCertificateRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_certificateNameHasBeenSet(false)
-{
-}
-
 Aws::String AttachLoadBalancerTlsCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

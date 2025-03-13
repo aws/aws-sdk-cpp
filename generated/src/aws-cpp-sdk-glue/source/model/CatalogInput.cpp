@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CatalogInput::CatalogInput() : 
-    m_descriptionHasBeenSet(false),
-    m_federatedCatalogHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_targetRedshiftCatalogHasBeenSet(false),
-    m_catalogPropertiesHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false),
-    m_createDatabaseDefaultPermissionsHasBeenSet(false)
-{
-}
-
 CatalogInput::CatalogInput(JsonView jsonValue)
-  : CatalogInput()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ CatalogInput& CatalogInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FederatedCatalog"))
   {
     m_federatedCatalog = jsonValue.GetObject("FederatedCatalog");
-
     m_federatedCatalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -60,21 +44,16 @@ CatalogInput& CatalogInput::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetRedshiftCatalog"))
   {
     m_targetRedshiftCatalog = jsonValue.GetObject("TargetRedshiftCatalog");
-
     m_targetRedshiftCatalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogProperties"))
   {
     m_catalogProperties = jsonValue.GetObject("CatalogProperties");
-
     m_catalogPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTableDefaultPermissions"))
   {
     Aws::Utils::Array<JsonView> createTableDefaultPermissionsJsonList = jsonValue.GetArray("CreateTableDefaultPermissions");
@@ -84,7 +63,6 @@ CatalogInput& CatalogInput::operator =(JsonView jsonValue)
     }
     m_createTableDefaultPermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDatabaseDefaultPermissions"))
   {
     Aws::Utils::Array<JsonView> createDatabaseDefaultPermissionsJsonList = jsonValue.GetArray("CreateDatabaseDefaultPermissions");
@@ -94,7 +72,6 @@ CatalogInput& CatalogInput::operator =(JsonView jsonValue)
     }
     m_createDatabaseDefaultPermissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

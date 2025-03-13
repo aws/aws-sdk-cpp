@@ -18,16 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-TaskScheduleDetails::TaskScheduleDetails() : 
-    m_statusUpdateTimeHasBeenSet(false),
-    m_disabledReasonHasBeenSet(false),
-    m_disabledBy(ScheduleDisabledBy::NOT_SET),
-    m_disabledByHasBeenSet(false)
-{
-}
-
 TaskScheduleDetails::TaskScheduleDetails(JsonView jsonValue)
-  : TaskScheduleDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TaskScheduleDetails& TaskScheduleDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StatusUpdateTime"))
   {
     m_statusUpdateTime = jsonValue.GetDouble("StatusUpdateTime");
-
     m_statusUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisabledReason"))
   {
     m_disabledReason = jsonValue.GetString("DisabledReason");
-
     m_disabledReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisabledBy"))
   {
     m_disabledBy = ScheduleDisabledByMapper::GetScheduleDisabledByForName(jsonValue.GetString("DisabledBy"));
-
     m_disabledByHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-MicrosoftEntraConfig::MicrosoftEntraConfig() : 
-    m_tenantIdHasBeenSet(false),
-    m_applicationConfigSecretArnHasBeenSet(false)
-{
-}
-
 MicrosoftEntraConfig::MicrosoftEntraConfig(JsonView jsonValue)
-  : MicrosoftEntraConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MicrosoftEntraConfig& MicrosoftEntraConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TenantId"))
   {
     m_tenantId = jsonValue.GetString("TenantId");
-
     m_tenantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationConfigSecretArn"))
   {
     m_applicationConfigSecretArn = jsonValue.GetString("ApplicationConfigSecretArn");
-
     m_applicationConfigSecretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

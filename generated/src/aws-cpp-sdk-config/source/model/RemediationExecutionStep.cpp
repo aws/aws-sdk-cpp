@@ -18,18 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-RemediationExecutionStep::RemediationExecutionStep() : 
-    m_nameHasBeenSet(false),
-    m_state(RemediationExecutionStepState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_stopTimeHasBeenSet(false)
-{
-}
-
 RemediationExecutionStep::RemediationExecutionStep(JsonView jsonValue)
-  : RemediationExecutionStep()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ RemediationExecutionStep& RemediationExecutionStep::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = RemediationExecutionStepStateMapper::GetRemediationExecutionStepStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StopTime"))
   {
     m_stopTime = jsonValue.GetDouble("StopTime");
-
     m_stopTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

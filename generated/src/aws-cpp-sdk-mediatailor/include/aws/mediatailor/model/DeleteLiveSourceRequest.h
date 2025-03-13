@@ -21,7 +21,7 @@ namespace Model
   class DeleteLiveSourceRequest : public MediaTailorRequest
   {
   public:
-    AWS_MEDIATAILOR_API DeleteLiveSourceRequest();
+    AWS_MEDIATAILOR_API DeleteLiveSourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The name of the live source.</p>
      */
-    inline const Aws::String& GetLiveSourceName() const{ return m_liveSourceName; }
+    inline const Aws::String& GetLiveSourceName() const { return m_liveSourceName; }
     inline bool LiveSourceNameHasBeenSet() const { return m_liveSourceNameHasBeenSet; }
-    inline void SetLiveSourceName(const Aws::String& value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName = value; }
-    inline void SetLiveSourceName(Aws::String&& value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName = std::move(value); }
-    inline void SetLiveSourceName(const char* value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName.assign(value); }
-    inline DeleteLiveSourceRequest& WithLiveSourceName(const Aws::String& value) { SetLiveSourceName(value); return *this;}
-    inline DeleteLiveSourceRequest& WithLiveSourceName(Aws::String&& value) { SetLiveSourceName(std::move(value)); return *this;}
-    inline DeleteLiveSourceRequest& WithLiveSourceName(const char* value) { SetLiveSourceName(value); return *this;}
+    template<typename LiveSourceNameT = Aws::String>
+    void SetLiveSourceName(LiveSourceNameT&& value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName = std::forward<LiveSourceNameT>(value); }
+    template<typename LiveSourceNameT = Aws::String>
+    DeleteLiveSourceRequest& WithLiveSourceName(LiveSourceNameT&& value) { SetLiveSourceName(std::forward<LiveSourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the source location associated with this Live Source.</p>
      */
-    inline const Aws::String& GetSourceLocationName() const{ return m_sourceLocationName; }
+    inline const Aws::String& GetSourceLocationName() const { return m_sourceLocationName; }
     inline bool SourceLocationNameHasBeenSet() const { return m_sourceLocationNameHasBeenSet; }
-    inline void SetSourceLocationName(const Aws::String& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = value; }
-    inline void SetSourceLocationName(Aws::String&& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = std::move(value); }
-    inline void SetSourceLocationName(const char* value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName.assign(value); }
-    inline DeleteLiveSourceRequest& WithSourceLocationName(const Aws::String& value) { SetSourceLocationName(value); return *this;}
-    inline DeleteLiveSourceRequest& WithSourceLocationName(Aws::String&& value) { SetSourceLocationName(std::move(value)); return *this;}
-    inline DeleteLiveSourceRequest& WithSourceLocationName(const char* value) { SetSourceLocationName(value); return *this;}
+    template<typename SourceLocationNameT = Aws::String>
+    void SetSourceLocationName(SourceLocationNameT&& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = std::forward<SourceLocationNameT>(value); }
+    template<typename SourceLocationNameT = Aws::String>
+    DeleteLiveSourceRequest& WithSourceLocationName(SourceLocationNameT&& value) { SetSourceLocationName(std::forward<SourceLocationNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,13 +12,6 @@ using namespace Aws::inspectorscan::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ScanSbomRequest::ScanSbomRequest() : 
-    m_sbomHasBeenSet(false),
-    m_outputFormat(OutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false)
-{
-}
-
 Aws::String ScanSbomRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class AssociateConnectPeerResult
   {
   public:
-    AWS_NETWORKMANAGER_API AssociateConnectPeerResult();
+    AWS_NETWORKMANAGER_API AssociateConnectPeerResult() = default;
     AWS_NETWORKMANAGER_API AssociateConnectPeerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API AssociateConnectPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The response to the Connect peer request.</p>
      */
-    inline const ConnectPeerAssociation& GetConnectPeerAssociation() const{ return m_connectPeerAssociation; }
-    inline void SetConnectPeerAssociation(const ConnectPeerAssociation& value) { m_connectPeerAssociation = value; }
-    inline void SetConnectPeerAssociation(ConnectPeerAssociation&& value) { m_connectPeerAssociation = std::move(value); }
-    inline AssociateConnectPeerResult& WithConnectPeerAssociation(const ConnectPeerAssociation& value) { SetConnectPeerAssociation(value); return *this;}
-    inline AssociateConnectPeerResult& WithConnectPeerAssociation(ConnectPeerAssociation&& value) { SetConnectPeerAssociation(std::move(value)); return *this;}
+    inline const ConnectPeerAssociation& GetConnectPeerAssociation() const { return m_connectPeerAssociation; }
+    template<typename ConnectPeerAssociationT = ConnectPeerAssociation>
+    void SetConnectPeerAssociation(ConnectPeerAssociationT&& value) { m_connectPeerAssociationHasBeenSet = true; m_connectPeerAssociation = std::forward<ConnectPeerAssociationT>(value); }
+    template<typename ConnectPeerAssociationT = ConnectPeerAssociation>
+    AssociateConnectPeerResult& WithConnectPeerAssociation(ConnectPeerAssociationT&& value) { SetConnectPeerAssociation(std::forward<ConnectPeerAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateConnectPeerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateConnectPeerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateConnectPeerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateConnectPeerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ConnectPeerAssociation m_connectPeerAssociation;
+    bool m_connectPeerAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

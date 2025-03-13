@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResolverQueryLogConfigsResult::ListResolverQueryLogConfigsResult() : 
-    m_totalCount(0),
-    m_totalFilteredCount(0)
-{
-}
-
 ListResolverQueryLogConfigsResult::ListResolverQueryLogConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListResolverQueryLogConfigsResult()
 {
   *this = result;
 }
@@ -35,21 +28,18 @@ ListResolverQueryLogConfigsResult& ListResolverQueryLogConfigsResult::operator =
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCount"))
   {
     m_totalCount = jsonValue.GetInteger("TotalCount");
-
+    m_totalCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalFilteredCount"))
   {
     m_totalFilteredCount = jsonValue.GetInteger("TotalFilteredCount");
-
+    m_totalFilteredCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolverQueryLogConfigs"))
   {
     Aws::Utils::Array<JsonView> resolverQueryLogConfigsJsonList = jsonValue.GetArray("ResolverQueryLogConfigs");
@@ -57,14 +47,15 @@ ListResolverQueryLogConfigsResult& ListResolverQueryLogConfigsResult::operator =
     {
       m_resolverQueryLogConfigs.push_back(resolverQueryLogConfigsJsonList[resolverQueryLogConfigsIndex].AsObject());
     }
+    m_resolverQueryLogConfigsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

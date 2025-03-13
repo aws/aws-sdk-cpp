@@ -18,18 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-Ami::Ami() : 
-    m_regionHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Ami::Ami(JsonView jsonValue)
-  : Ami()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ Ami& Ami::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

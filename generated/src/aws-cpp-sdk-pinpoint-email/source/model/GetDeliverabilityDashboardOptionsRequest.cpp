@@ -12,10 +12,6 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeliverabilityDashboardOptionsRequest::GetDeliverabilityDashboardOptionsRequest()
-{
-}
-
 Aws::String GetDeliverabilityDashboardOptionsRequest::SerializePayload() const
 {
   return {};

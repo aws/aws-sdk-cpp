@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-HsmStatus::HsmStatus() : 
-    m_hsmClientCertificateIdentifierHasBeenSet(false),
-    m_hsmConfigurationIdentifierHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 HsmStatus::HsmStatus(const XmlNode& xmlNode)
-  : HsmStatus()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ HsmStatus& HsmStatus::operator =(const XmlNode& xmlNode)
     {
       m_hsmClientCertificateIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(hsmClientCertificateIdentifierNode.GetText());
       m_hsmClientCertificateIdentifierHasBeenSet = true;
+       m_hsmClientCertificateIdentifierHasBeenSet = true;
     }
     XmlNode hsmConfigurationIdentifierNode = resultNode.FirstChild("HsmConfigurationIdentifier");
     if(!hsmConfigurationIdentifierNode.IsNull())
     {
       m_hsmConfigurationIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(hsmConfigurationIdentifierNode.GetText());
       m_hsmConfigurationIdentifierHasBeenSet = true;
+       m_hsmConfigurationIdentifierHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

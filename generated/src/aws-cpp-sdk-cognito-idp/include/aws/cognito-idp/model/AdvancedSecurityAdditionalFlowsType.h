@@ -33,7 +33,7 @@ namespace Model
   class AdvancedSecurityAdditionalFlowsType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdvancedSecurityAdditionalFlowsType();
+    AWS_COGNITOIDENTITYPROVIDER_API AdvancedSecurityAdditionalFlowsType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AdvancedSecurityAdditionalFlowsType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API AdvancedSecurityAdditionalFlowsType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">
      * Custom authentication challenge Lambda triggers</a>. </p>
      */
-    inline const AdvancedSecurityEnabledModeType& GetCustomAuthMode() const{ return m_customAuthMode; }
+    inline AdvancedSecurityEnabledModeType GetCustomAuthMode() const { return m_customAuthMode; }
     inline bool CustomAuthModeHasBeenSet() const { return m_customAuthModeHasBeenSet; }
-    inline void SetCustomAuthMode(const AdvancedSecurityEnabledModeType& value) { m_customAuthModeHasBeenSet = true; m_customAuthMode = value; }
-    inline void SetCustomAuthMode(AdvancedSecurityEnabledModeType&& value) { m_customAuthModeHasBeenSet = true; m_customAuthMode = std::move(value); }
-    inline AdvancedSecurityAdditionalFlowsType& WithCustomAuthMode(const AdvancedSecurityEnabledModeType& value) { SetCustomAuthMode(value); return *this;}
-    inline AdvancedSecurityAdditionalFlowsType& WithCustomAuthMode(AdvancedSecurityEnabledModeType&& value) { SetCustomAuthMode(std::move(value)); return *this;}
+    inline void SetCustomAuthMode(AdvancedSecurityEnabledModeType value) { m_customAuthModeHasBeenSet = true; m_customAuthMode = value; }
+    inline AdvancedSecurityAdditionalFlowsType& WithCustomAuthMode(AdvancedSecurityEnabledModeType value) { SetCustomAuthMode(value); return *this;}
     ///@}
   private:
 
-    AdvancedSecurityEnabledModeType m_customAuthMode;
+    AdvancedSecurityEnabledModeType m_customAuthMode{AdvancedSecurityEnabledModeType::NOT_SET};
     bool m_customAuthModeHasBeenSet = false;
   };
 

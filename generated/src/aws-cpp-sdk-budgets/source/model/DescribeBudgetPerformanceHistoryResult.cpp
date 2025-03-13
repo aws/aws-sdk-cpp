@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeBudgetPerformanceHistoryResult::DescribeBudgetPerformanceHistoryResult()
-{
-}
-
 DescribeBudgetPerformanceHistoryResult::DescribeBudgetPerformanceHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DescribeBudgetPerformanceHistoryResult& DescribeBudgetPerformanceHistoryResult::
   if(jsonValue.ValueExists("BudgetPerformanceHistory"))
   {
     m_budgetPerformanceHistory = jsonValue.GetObject("BudgetPerformanceHistory");
-
+    m_budgetPerformanceHistoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

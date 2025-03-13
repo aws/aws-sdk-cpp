@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDataSetResult::DeleteDataSetResult() : 
-    m_status(0)
-{
-}
-
 DeleteDataSetResult::DeleteDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteDataSetResult()
 {
   *this = result;
 }
@@ -34,25 +28,24 @@ DeleteDataSetResult& DeleteDataSetResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
+    m_dataSetIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

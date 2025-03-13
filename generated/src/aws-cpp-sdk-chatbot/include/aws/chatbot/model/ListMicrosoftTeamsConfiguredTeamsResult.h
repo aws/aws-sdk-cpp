@@ -29,7 +29,7 @@ namespace Model
   class ListMicrosoftTeamsConfiguredTeamsResult
   {
   public:
-    AWS_CHATBOT_API ListMicrosoftTeamsConfiguredTeamsResult();
+    AWS_CHATBOT_API ListMicrosoftTeamsConfiguredTeamsResult() = default;
     AWS_CHATBOT_API ListMicrosoftTeamsConfiguredTeamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHATBOT_API ListMicrosoftTeamsConfiguredTeamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of teams in Microsoft Teams that are configured with AWS Chatbot.</p>
      */
-    inline const Aws::Vector<ConfiguredTeam>& GetConfiguredTeams() const{ return m_configuredTeams; }
-    inline void SetConfiguredTeams(const Aws::Vector<ConfiguredTeam>& value) { m_configuredTeams = value; }
-    inline void SetConfiguredTeams(Aws::Vector<ConfiguredTeam>&& value) { m_configuredTeams = std::move(value); }
-    inline ListMicrosoftTeamsConfiguredTeamsResult& WithConfiguredTeams(const Aws::Vector<ConfiguredTeam>& value) { SetConfiguredTeams(value); return *this;}
-    inline ListMicrosoftTeamsConfiguredTeamsResult& WithConfiguredTeams(Aws::Vector<ConfiguredTeam>&& value) { SetConfiguredTeams(std::move(value)); return *this;}
-    inline ListMicrosoftTeamsConfiguredTeamsResult& AddConfiguredTeams(const ConfiguredTeam& value) { m_configuredTeams.push_back(value); return *this; }
-    inline ListMicrosoftTeamsConfiguredTeamsResult& AddConfiguredTeams(ConfiguredTeam&& value) { m_configuredTeams.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConfiguredTeam>& GetConfiguredTeams() const { return m_configuredTeams; }
+    template<typename ConfiguredTeamsT = Aws::Vector<ConfiguredTeam>>
+    void SetConfiguredTeams(ConfiguredTeamsT&& value) { m_configuredTeamsHasBeenSet = true; m_configuredTeams = std::forward<ConfiguredTeamsT>(value); }
+    template<typename ConfiguredTeamsT = Aws::Vector<ConfiguredTeam>>
+    ListMicrosoftTeamsConfiguredTeamsResult& WithConfiguredTeams(ConfiguredTeamsT&& value) { SetConfiguredTeams(std::forward<ConfiguredTeamsT>(value)); return *this;}
+    template<typename ConfiguredTeamsT = ConfiguredTeam>
+    ListMicrosoftTeamsConfiguredTeamsResult& AddConfiguredTeams(ConfiguredTeamsT&& value) { m_configuredTeamsHasBeenSet = true; m_configuredTeams.emplace_back(std::forward<ConfiguredTeamsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * response includes only results beyond the token, up to the value specified by
      * MaxResults.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMicrosoftTeamsConfiguredTeamsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMicrosoftTeamsConfiguredTeamsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMicrosoftTeamsConfiguredTeamsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMicrosoftTeamsConfiguredTeamsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMicrosoftTeamsConfiguredTeamsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMicrosoftTeamsConfiguredTeamsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMicrosoftTeamsConfiguredTeamsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMicrosoftTeamsConfiguredTeamsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConfiguredTeam> m_configuredTeams;
+    bool m_configuredTeamsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

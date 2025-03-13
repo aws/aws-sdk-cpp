@@ -18,21 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-PhysicalNetworkInterface::PhysicalNetworkInterface() : 
-    m_defaultGatewayHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_ipAddressAssignment(IpAddressAssignment::NOT_SET),
-    m_ipAddressAssignmentHasBeenSet(false),
-    m_macAddressHasBeenSet(false),
-    m_netmaskHasBeenSet(false),
-    m_physicalConnectorType(PhysicalConnectorType::NOT_SET),
-    m_physicalConnectorTypeHasBeenSet(false),
-    m_physicalNetworkInterfaceIdHasBeenSet(false)
-{
-}
-
 PhysicalNetworkInterface::PhysicalNetworkInterface(JsonView jsonValue)
-  : PhysicalNetworkInterface()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ PhysicalNetworkInterface& PhysicalNetworkInterface::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("defaultGateway"))
   {
     m_defaultGateway = jsonValue.GetString("defaultGateway");
-
     m_defaultGatewayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddress"))
   {
     m_ipAddress = jsonValue.GetString("ipAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddressAssignment"))
   {
     m_ipAddressAssignment = IpAddressAssignmentMapper::GetIpAddressAssignmentForName(jsonValue.GetString("ipAddressAssignment"));
-
     m_ipAddressAssignmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("macAddress"))
   {
     m_macAddress = jsonValue.GetString("macAddress");
-
     m_macAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("netmask"))
   {
     m_netmask = jsonValue.GetString("netmask");
-
     m_netmaskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("physicalConnectorType"))
   {
     m_physicalConnectorType = PhysicalConnectorTypeMapper::GetPhysicalConnectorTypeForName(jsonValue.GetString("physicalConnectorType"));
-
     m_physicalConnectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("physicalNetworkInterfaceId"))
   {
     m_physicalNetworkInterfaceId = jsonValue.GetString("physicalNetworkInterfaceId");
-
     m_physicalNetworkInterfaceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

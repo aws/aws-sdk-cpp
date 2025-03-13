@@ -21,7 +21,7 @@ namespace Model
   class DeleteMatchingWorkflowRequest : public EntityResolutionRequest
   {
   public:
-    AWS_ENTITYRESOLUTION_API DeleteMatchingWorkflowRequest();
+    AWS_ENTITYRESOLUTION_API DeleteMatchingWorkflowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The name of the workflow to be retrieved.</p>
      */
-    inline const Aws::String& GetWorkflowName() const{ return m_workflowName; }
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
     inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-    inline void SetWorkflowName(const Aws::String& value) { m_workflowNameHasBeenSet = true; m_workflowName = value; }
-    inline void SetWorkflowName(Aws::String&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::move(value); }
-    inline void SetWorkflowName(const char* value) { m_workflowNameHasBeenSet = true; m_workflowName.assign(value); }
-    inline DeleteMatchingWorkflowRequest& WithWorkflowName(const Aws::String& value) { SetWorkflowName(value); return *this;}
-    inline DeleteMatchingWorkflowRequest& WithWorkflowName(Aws::String&& value) { SetWorkflowName(std::move(value)); return *this;}
-    inline DeleteMatchingWorkflowRequest& WithWorkflowName(const char* value) { SetWorkflowName(value); return *this;}
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    DeleteMatchingWorkflowRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
     ///@}
   private:
 

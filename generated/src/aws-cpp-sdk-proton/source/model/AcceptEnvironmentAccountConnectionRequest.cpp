@@ -12,11 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptEnvironmentAccountConnectionRequest::AcceptEnvironmentAccountConnectionRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String AcceptEnvironmentAccountConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

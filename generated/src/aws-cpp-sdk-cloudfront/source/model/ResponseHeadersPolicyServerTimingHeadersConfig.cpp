@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyServerTimingHeadersConfig::ResponseHeadersPolicyServerTimingHeadersConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_samplingRate(0.0),
-    m_samplingRateHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyServerTimingHeadersConfig::ResponseHeadersPolicyServerTimingHeadersConfig(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyServerTimingHeadersConfig()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ ResponseHeadersPolicyServerTimingHeadersConfig& ResponseHeadersPolicyServerTimin
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode samplingRateNode = resultNode.FirstChild("SamplingRate");
     if(!samplingRateNode.IsNull())
     {
       m_samplingRate = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(samplingRateNode.GetText()).c_str()).c_str());
       m_samplingRateHasBeenSet = true;
+       m_samplingRateHasBeenSet = true;
     }
   }
 

@@ -34,7 +34,7 @@ namespace Model
   class Coverage
   {
   public:
-    AWS_COSTEXPLORER_API Coverage();
+    AWS_COSTEXPLORER_API Coverage() = default;
     AWS_COSTEXPLORER_API Coverage(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Coverage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The amount of instance usage that the reservation covered, in hours.</p>
      */
-    inline const CoverageHours& GetCoverageHours() const{ return m_coverageHours; }
+    inline const CoverageHours& GetCoverageHours() const { return m_coverageHours; }
     inline bool CoverageHoursHasBeenSet() const { return m_coverageHoursHasBeenSet; }
-    inline void SetCoverageHours(const CoverageHours& value) { m_coverageHoursHasBeenSet = true; m_coverageHours = value; }
-    inline void SetCoverageHours(CoverageHours&& value) { m_coverageHoursHasBeenSet = true; m_coverageHours = std::move(value); }
-    inline Coverage& WithCoverageHours(const CoverageHours& value) { SetCoverageHours(value); return *this;}
-    inline Coverage& WithCoverageHours(CoverageHours&& value) { SetCoverageHours(std::move(value)); return *this;}
+    template<typename CoverageHoursT = CoverageHours>
+    void SetCoverageHours(CoverageHoursT&& value) { m_coverageHoursHasBeenSet = true; m_coverageHours = std::forward<CoverageHoursT>(value); }
+    template<typename CoverageHoursT = CoverageHours>
+    Coverage& WithCoverageHours(CoverageHoursT&& value) { SetCoverageHours(std::forward<CoverageHoursT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,24 +57,24 @@ namespace Model
      * <p>The amount of instance usage that the reservation covered, in normalized
      * units.</p>
      */
-    inline const CoverageNormalizedUnits& GetCoverageNormalizedUnits() const{ return m_coverageNormalizedUnits; }
+    inline const CoverageNormalizedUnits& GetCoverageNormalizedUnits() const { return m_coverageNormalizedUnits; }
     inline bool CoverageNormalizedUnitsHasBeenSet() const { return m_coverageNormalizedUnitsHasBeenSet; }
-    inline void SetCoverageNormalizedUnits(const CoverageNormalizedUnits& value) { m_coverageNormalizedUnitsHasBeenSet = true; m_coverageNormalizedUnits = value; }
-    inline void SetCoverageNormalizedUnits(CoverageNormalizedUnits&& value) { m_coverageNormalizedUnitsHasBeenSet = true; m_coverageNormalizedUnits = std::move(value); }
-    inline Coverage& WithCoverageNormalizedUnits(const CoverageNormalizedUnits& value) { SetCoverageNormalizedUnits(value); return *this;}
-    inline Coverage& WithCoverageNormalizedUnits(CoverageNormalizedUnits&& value) { SetCoverageNormalizedUnits(std::move(value)); return *this;}
+    template<typename CoverageNormalizedUnitsT = CoverageNormalizedUnits>
+    void SetCoverageNormalizedUnits(CoverageNormalizedUnitsT&& value) { m_coverageNormalizedUnitsHasBeenSet = true; m_coverageNormalizedUnits = std::forward<CoverageNormalizedUnitsT>(value); }
+    template<typename CoverageNormalizedUnitsT = CoverageNormalizedUnits>
+    Coverage& WithCoverageNormalizedUnits(CoverageNormalizedUnitsT&& value) { SetCoverageNormalizedUnits(std::forward<CoverageNormalizedUnitsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount of cost that the reservation covered.</p>
      */
-    inline const CoverageCost& GetCoverageCost() const{ return m_coverageCost; }
+    inline const CoverageCost& GetCoverageCost() const { return m_coverageCost; }
     inline bool CoverageCostHasBeenSet() const { return m_coverageCostHasBeenSet; }
-    inline void SetCoverageCost(const CoverageCost& value) { m_coverageCostHasBeenSet = true; m_coverageCost = value; }
-    inline void SetCoverageCost(CoverageCost&& value) { m_coverageCostHasBeenSet = true; m_coverageCost = std::move(value); }
-    inline Coverage& WithCoverageCost(const CoverageCost& value) { SetCoverageCost(value); return *this;}
-    inline Coverage& WithCoverageCost(CoverageCost&& value) { SetCoverageCost(std::move(value)); return *this;}
+    template<typename CoverageCostT = CoverageCost>
+    void SetCoverageCost(CoverageCostT&& value) { m_coverageCostHasBeenSet = true; m_coverageCost = std::forward<CoverageCostT>(value); }
+    template<typename CoverageCostT = CoverageCost>
+    Coverage& WithCoverageCost(CoverageCostT&& value) { SetCoverageCost(std::forward<CoverageCostT>(value)); return *this;}
     ///@}
   private:
 

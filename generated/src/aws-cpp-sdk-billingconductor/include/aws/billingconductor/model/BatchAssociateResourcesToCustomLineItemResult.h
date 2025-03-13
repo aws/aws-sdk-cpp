@@ -29,7 +29,7 @@ namespace Model
   class BatchAssociateResourcesToCustomLineItemResult
   {
   public:
-    AWS_BILLINGCONDUCTOR_API BatchAssociateResourcesToCustomLineItemResult();
+    AWS_BILLINGCONDUCTOR_API BatchAssociateResourcesToCustomLineItemResult() = default;
     AWS_BILLINGCONDUCTOR_API BatchAssociateResourcesToCustomLineItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BILLINGCONDUCTOR_API BatchAssociateResourcesToCustomLineItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p> A list of <code>AssociateResourceResponseElement</code> for each resource
      * that's been associated to a percentage custom line item successfully. </p>
      */
-    inline const Aws::Vector<AssociateResourceResponseElement>& GetSuccessfullyAssociatedResources() const{ return m_successfullyAssociatedResources; }
-    inline void SetSuccessfullyAssociatedResources(const Aws::Vector<AssociateResourceResponseElement>& value) { m_successfullyAssociatedResources = value; }
-    inline void SetSuccessfullyAssociatedResources(Aws::Vector<AssociateResourceResponseElement>&& value) { m_successfullyAssociatedResources = std::move(value); }
-    inline BatchAssociateResourcesToCustomLineItemResult& WithSuccessfullyAssociatedResources(const Aws::Vector<AssociateResourceResponseElement>& value) { SetSuccessfullyAssociatedResources(value); return *this;}
-    inline BatchAssociateResourcesToCustomLineItemResult& WithSuccessfullyAssociatedResources(Aws::Vector<AssociateResourceResponseElement>&& value) { SetSuccessfullyAssociatedResources(std::move(value)); return *this;}
-    inline BatchAssociateResourcesToCustomLineItemResult& AddSuccessfullyAssociatedResources(const AssociateResourceResponseElement& value) { m_successfullyAssociatedResources.push_back(value); return *this; }
-    inline BatchAssociateResourcesToCustomLineItemResult& AddSuccessfullyAssociatedResources(AssociateResourceResponseElement&& value) { m_successfullyAssociatedResources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssociateResourceResponseElement>& GetSuccessfullyAssociatedResources() const { return m_successfullyAssociatedResources; }
+    template<typename SuccessfullyAssociatedResourcesT = Aws::Vector<AssociateResourceResponseElement>>
+    void SetSuccessfullyAssociatedResources(SuccessfullyAssociatedResourcesT&& value) { m_successfullyAssociatedResourcesHasBeenSet = true; m_successfullyAssociatedResources = std::forward<SuccessfullyAssociatedResourcesT>(value); }
+    template<typename SuccessfullyAssociatedResourcesT = Aws::Vector<AssociateResourceResponseElement>>
+    BatchAssociateResourcesToCustomLineItemResult& WithSuccessfullyAssociatedResources(SuccessfullyAssociatedResourcesT&& value) { SetSuccessfullyAssociatedResources(std::forward<SuccessfullyAssociatedResourcesT>(value)); return *this;}
+    template<typename SuccessfullyAssociatedResourcesT = AssociateResourceResponseElement>
+    BatchAssociateResourcesToCustomLineItemResult& AddSuccessfullyAssociatedResources(SuccessfullyAssociatedResourcesT&& value) { m_successfullyAssociatedResourcesHasBeenSet = true; m_successfullyAssociatedResources.emplace_back(std::forward<SuccessfullyAssociatedResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,33 @@ namespace Model
      * <p> A list of <code>AssociateResourceResponseElement</code> for each resource
      * that failed association to a percentage custom line item. </p>
      */
-    inline const Aws::Vector<AssociateResourceResponseElement>& GetFailedAssociatedResources() const{ return m_failedAssociatedResources; }
-    inline void SetFailedAssociatedResources(const Aws::Vector<AssociateResourceResponseElement>& value) { m_failedAssociatedResources = value; }
-    inline void SetFailedAssociatedResources(Aws::Vector<AssociateResourceResponseElement>&& value) { m_failedAssociatedResources = std::move(value); }
-    inline BatchAssociateResourcesToCustomLineItemResult& WithFailedAssociatedResources(const Aws::Vector<AssociateResourceResponseElement>& value) { SetFailedAssociatedResources(value); return *this;}
-    inline BatchAssociateResourcesToCustomLineItemResult& WithFailedAssociatedResources(Aws::Vector<AssociateResourceResponseElement>&& value) { SetFailedAssociatedResources(std::move(value)); return *this;}
-    inline BatchAssociateResourcesToCustomLineItemResult& AddFailedAssociatedResources(const AssociateResourceResponseElement& value) { m_failedAssociatedResources.push_back(value); return *this; }
-    inline BatchAssociateResourcesToCustomLineItemResult& AddFailedAssociatedResources(AssociateResourceResponseElement&& value) { m_failedAssociatedResources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssociateResourceResponseElement>& GetFailedAssociatedResources() const { return m_failedAssociatedResources; }
+    template<typename FailedAssociatedResourcesT = Aws::Vector<AssociateResourceResponseElement>>
+    void SetFailedAssociatedResources(FailedAssociatedResourcesT&& value) { m_failedAssociatedResourcesHasBeenSet = true; m_failedAssociatedResources = std::forward<FailedAssociatedResourcesT>(value); }
+    template<typename FailedAssociatedResourcesT = Aws::Vector<AssociateResourceResponseElement>>
+    BatchAssociateResourcesToCustomLineItemResult& WithFailedAssociatedResources(FailedAssociatedResourcesT&& value) { SetFailedAssociatedResources(std::forward<FailedAssociatedResourcesT>(value)); return *this;}
+    template<typename FailedAssociatedResourcesT = AssociateResourceResponseElement>
+    BatchAssociateResourcesToCustomLineItemResult& AddFailedAssociatedResources(FailedAssociatedResourcesT&& value) { m_failedAssociatedResourcesHasBeenSet = true; m_failedAssociatedResources.emplace_back(std::forward<FailedAssociatedResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchAssociateResourcesToCustomLineItemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchAssociateResourcesToCustomLineItemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchAssociateResourcesToCustomLineItemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchAssociateResourcesToCustomLineItemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AssociateResourceResponseElement> m_successfullyAssociatedResources;
+    bool m_successfullyAssociatedResourcesHasBeenSet = false;
 
     Aws::Vector<AssociateResourceResponseElement> m_failedAssociatedResources;
+    bool m_failedAssociatedResourcesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

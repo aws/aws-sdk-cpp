@@ -29,7 +29,7 @@ namespace Model
   class DescribeAppBlockBuildersResult
   {
   public:
-    AWS_APPSTREAM_API DescribeAppBlockBuildersResult();
+    AWS_APPSTREAM_API DescribeAppBlockBuildersResult() = default;
     AWS_APPSTREAM_API DescribeAppBlockBuildersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API DescribeAppBlockBuildersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list that describes one or more app block builders.</p>
      */
-    inline const Aws::Vector<AppBlockBuilder>& GetAppBlockBuilders() const{ return m_appBlockBuilders; }
-    inline void SetAppBlockBuilders(const Aws::Vector<AppBlockBuilder>& value) { m_appBlockBuilders = value; }
-    inline void SetAppBlockBuilders(Aws::Vector<AppBlockBuilder>&& value) { m_appBlockBuilders = std::move(value); }
-    inline DescribeAppBlockBuildersResult& WithAppBlockBuilders(const Aws::Vector<AppBlockBuilder>& value) { SetAppBlockBuilders(value); return *this;}
-    inline DescribeAppBlockBuildersResult& WithAppBlockBuilders(Aws::Vector<AppBlockBuilder>&& value) { SetAppBlockBuilders(std::move(value)); return *this;}
-    inline DescribeAppBlockBuildersResult& AddAppBlockBuilders(const AppBlockBuilder& value) { m_appBlockBuilders.push_back(value); return *this; }
-    inline DescribeAppBlockBuildersResult& AddAppBlockBuilders(AppBlockBuilder&& value) { m_appBlockBuilders.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AppBlockBuilder>& GetAppBlockBuilders() const { return m_appBlockBuilders; }
+    template<typename AppBlockBuildersT = Aws::Vector<AppBlockBuilder>>
+    void SetAppBlockBuilders(AppBlockBuildersT&& value) { m_appBlockBuildersHasBeenSet = true; m_appBlockBuilders = std::forward<AppBlockBuildersT>(value); }
+    template<typename AppBlockBuildersT = Aws::Vector<AppBlockBuilder>>
+    DescribeAppBlockBuildersResult& WithAppBlockBuilders(AppBlockBuildersT&& value) { SetAppBlockBuilders(std::forward<AppBlockBuildersT>(value)); return *this;}
+    template<typename AppBlockBuildersT = AppBlockBuilder>
+    DescribeAppBlockBuildersResult& AddAppBlockBuilders(AppBlockBuildersT&& value) { m_appBlockBuildersHasBeenSet = true; m_appBlockBuilders.emplace_back(std::forward<AppBlockBuildersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The pagination token used to retrieve the next page of results for this
      * operation.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeAppBlockBuildersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAppBlockBuildersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAppBlockBuildersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAppBlockBuildersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAppBlockBuildersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAppBlockBuildersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAppBlockBuildersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAppBlockBuildersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AppBlockBuilder> m_appBlockBuilders;
+    bool m_appBlockBuildersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

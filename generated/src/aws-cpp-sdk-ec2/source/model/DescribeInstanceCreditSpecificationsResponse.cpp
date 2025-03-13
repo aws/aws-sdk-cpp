@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstanceCreditSpecificationsResponse::DescribeInstanceCreditSpecificationsResponse()
-{
-}
-
 DescribeInstanceCreditSpecificationsResponse::DescribeInstanceCreditSpecificationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeInstanceCreditSpecificationsResponse& DescribeInstanceCreditSpecificatio
     if(!instanceCreditSpecificationsNode.IsNull())
     {
       XmlNode instanceCreditSpecificationsMember = instanceCreditSpecificationsNode.FirstChild("item");
+      m_instanceCreditSpecificationsHasBeenSet = !instanceCreditSpecificationsMember.IsNull();
       while(!instanceCreditSpecificationsMember.IsNull())
       {
         m_instanceCreditSpecifications.push_back(instanceCreditSpecificationsMember);
@@ -53,6 +50,7 @@ DescribeInstanceCreditSpecificationsResponse& DescribeInstanceCreditSpecificatio
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeInstanceCreditSpecificationsResponse& DescribeInstanceCreditSpecificatio
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeInstanceCreditSpecificationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -12,14 +12,6 @@ using namespace Aws::Route53RecoveryCluster::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRoutingControlsRequest::ListRoutingControlsRequest() : 
-    m_controlPanelArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListRoutingControlsRequest::SerializePayload() const
 {
   JsonValue payload;

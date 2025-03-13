@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyVolumeResponse::ModifyVolumeResponse()
-{
-}
-
 ModifyVolumeResponse::ModifyVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ModifyVolumeResponse& ModifyVolumeResponse::operator =(const Aws::AmazonWebServi
     if(!volumeModificationNode.IsNull())
     {
       m_volumeModification = volumeModificationNode;
+      m_volumeModificationHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ ModifyVolumeResponse& ModifyVolumeResponse::operator =(const Aws::AmazonWebServi
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyVolumeResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

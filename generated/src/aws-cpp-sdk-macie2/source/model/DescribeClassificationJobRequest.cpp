@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeClassificationJobRequest::DescribeClassificationJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClassificationJobRequest::SerializePayload() const
 {
   return {};

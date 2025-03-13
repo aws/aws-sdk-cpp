@@ -18,18 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-SessionState::SessionState() : 
-    m_dialogActionHasBeenSet(false),
-    m_intentHasBeenSet(false),
-    m_activeContextsHasBeenSet(false),
-    m_sessionAttributesHasBeenSet(false),
-    m_originatingRequestIdHasBeenSet(false),
-    m_runtimeHintsHasBeenSet(false)
-{
-}
-
 SessionState::SessionState(JsonView jsonValue)
-  : SessionState()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ SessionState& SessionState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dialogAction"))
   {
     m_dialogAction = jsonValue.GetObject("dialogAction");
-
     m_dialogActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intent"))
   {
     m_intent = jsonValue.GetObject("intent");
-
     m_intentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activeContexts"))
   {
     Aws::Utils::Array<JsonView> activeContextsJsonList = jsonValue.GetArray("activeContexts");
@@ -59,7 +44,6 @@ SessionState& SessionState::operator =(JsonView jsonValue)
     }
     m_activeContextsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionAttributes"))
   {
     Aws::Map<Aws::String, JsonView> sessionAttributesJsonMap = jsonValue.GetObject("sessionAttributes").GetAllObjects();
@@ -69,21 +53,16 @@ SessionState& SessionState::operator =(JsonView jsonValue)
     }
     m_sessionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originatingRequestId"))
   {
     m_originatingRequestId = jsonValue.GetString("originatingRequestId");
-
     m_originatingRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimeHints"))
   {
     m_runtimeHints = jsonValue.GetObject("runtimeHints");
-
     m_runtimeHintsHasBeenSet = true;
   }
-
   return *this;
 }
 

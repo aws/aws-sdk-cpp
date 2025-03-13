@@ -20,21 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-UserGroup::UserGroup() : 
-    m_userGroupIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_userIdsHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false),
-    m_pendingChangesHasBeenSet(false),
-    m_replicationGroupsHasBeenSet(false),
-    m_serverlessCachesHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 UserGroup::UserGroup(const XmlNode& xmlNode)
-  : UserGroup()
 {
   *this = xmlNode;
 }
@@ -50,72 +36,81 @@ UserGroup& UserGroup::operator =(const XmlNode& xmlNode)
     {
       m_userGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(userGroupIdNode.GetText());
       m_userGroupIdHasBeenSet = true;
+       m_userGroupIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
     XmlNode userIdsNode = resultNode.FirstChild("UserIds");
     if(!userIdsNode.IsNull())
     {
       XmlNode userIdsMember = userIdsNode.FirstChild("member");
+      m_userIdsHasBeenSet = !userIdsMember.IsNull();
       while(!userIdsMember.IsNull())
       {
         m_userIds.push_back(userIdsMember.GetText());
         userIdsMember = userIdsMember.NextNode("member");
       }
 
-      m_userIdsHasBeenSet = true;
+       m_userIdsHasBeenSet = true;
     }
     XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
     if(!minimumEngineVersionNode.IsNull())
     {
       m_minimumEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(minimumEngineVersionNode.GetText());
       m_minimumEngineVersionHasBeenSet = true;
+       m_minimumEngineVersionHasBeenSet = true;
     }
     XmlNode pendingChangesNode = resultNode.FirstChild("PendingChanges");
     if(!pendingChangesNode.IsNull())
     {
       m_pendingChanges = pendingChangesNode;
       m_pendingChangesHasBeenSet = true;
+       m_pendingChangesHasBeenSet = true;
     }
     XmlNode replicationGroupsNode = resultNode.FirstChild("ReplicationGroups");
     if(!replicationGroupsNode.IsNull())
     {
       XmlNode replicationGroupsMember = replicationGroupsNode.FirstChild("member");
+      m_replicationGroupsHasBeenSet = !replicationGroupsMember.IsNull();
       while(!replicationGroupsMember.IsNull())
       {
         m_replicationGroups.push_back(replicationGroupsMember.GetText());
         replicationGroupsMember = replicationGroupsMember.NextNode("member");
       }
 
-      m_replicationGroupsHasBeenSet = true;
+       m_replicationGroupsHasBeenSet = true;
     }
     XmlNode serverlessCachesNode = resultNode.FirstChild("ServerlessCaches");
     if(!serverlessCachesNode.IsNull())
     {
       XmlNode serverlessCachesMember = serverlessCachesNode.FirstChild("member");
+      m_serverlessCachesHasBeenSet = !serverlessCachesMember.IsNull();
       while(!serverlessCachesMember.IsNull())
       {
         m_serverlessCaches.push_back(serverlessCachesMember.GetText());
         serverlessCachesMember = serverlessCachesMember.NextNode("member");
       }
 
-      m_serverlessCachesHasBeenSet = true;
+       m_serverlessCachesHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
   }
 

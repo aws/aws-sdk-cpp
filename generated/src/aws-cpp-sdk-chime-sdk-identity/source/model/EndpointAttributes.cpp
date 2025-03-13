@@ -18,14 +18,7 @@ namespace ChimeSDKIdentity
 namespace Model
 {
 
-EndpointAttributes::EndpointAttributes() : 
-    m_deviceTokenHasBeenSet(false),
-    m_voipDeviceTokenHasBeenSet(false)
-{
-}
-
 EndpointAttributes::EndpointAttributes(JsonView jsonValue)
-  : EndpointAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EndpointAttributes& EndpointAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceToken"))
   {
     m_deviceToken = jsonValue.GetString("DeviceToken");
-
     m_deviceTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VoipDeviceToken"))
   {
     m_voipDeviceToken = jsonValue.GetString("VoipDeviceToken");
-
     m_voipDeviceTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSignalMapRequest::DeleteSignalMapRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSignalMapRequest::SerializePayload() const
 {
   return {};

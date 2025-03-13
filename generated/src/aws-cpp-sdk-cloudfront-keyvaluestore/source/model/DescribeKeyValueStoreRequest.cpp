@@ -12,11 +12,6 @@ using namespace Aws::CloudFrontKeyValueStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeKeyValueStoreRequest::DescribeKeyValueStoreRequest() : 
-    m_kvsARNHasBeenSet(false)
-{
-}
-
 Aws::String DescribeKeyValueStoreRequest::SerializePayload() const
 {
   return {};

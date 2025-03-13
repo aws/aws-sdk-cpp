@@ -12,14 +12,6 @@ using namespace Aws::LicenseManagerUserSubscriptions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterIdentityProviderRequest::RegisterIdentityProviderRequest() : 
-    m_identityProviderHasBeenSet(false),
-    m_productHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String RegisterIdentityProviderRequest::SerializePayload() const
 {
   JsonValue payload;

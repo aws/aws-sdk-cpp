@@ -22,7 +22,7 @@ namespace Model
   class UpdateOpenIDConnectProviderThumbprintRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API UpdateOpenIDConnectProviderThumbprintRequest();
+    AWS_IAM_API UpdateOpenIDConnectProviderThumbprintRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::String& GetOpenIDConnectProviderArn() const{ return m_openIDConnectProviderArn; }
+    inline const Aws::String& GetOpenIDConnectProviderArn() const { return m_openIDConnectProviderArn; }
     inline bool OpenIDConnectProviderArnHasBeenSet() const { return m_openIDConnectProviderArnHasBeenSet; }
-    inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
-    inline void SetOpenIDConnectProviderArn(Aws::String&& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = std::move(value); }
-    inline void SetOpenIDConnectProviderArn(const char* value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn.assign(value); }
-    inline UpdateOpenIDConnectProviderThumbprintRequest& WithOpenIDConnectProviderArn(const Aws::String& value) { SetOpenIDConnectProviderArn(value); return *this;}
-    inline UpdateOpenIDConnectProviderThumbprintRequest& WithOpenIDConnectProviderArn(Aws::String&& value) { SetOpenIDConnectProviderArn(std::move(value)); return *this;}
-    inline UpdateOpenIDConnectProviderThumbprintRequest& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}
+    template<typename OpenIDConnectProviderArnT = Aws::String>
+    void SetOpenIDConnectProviderArn(OpenIDConnectProviderArnT&& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = std::forward<OpenIDConnectProviderArnT>(value); }
+    template<typename OpenIDConnectProviderArnT = Aws::String>
+    UpdateOpenIDConnectProviderThumbprintRequest& WithOpenIDConnectProviderArn(OpenIDConnectProviderArnT&& value) { SetOpenIDConnectProviderArn(std::forward<OpenIDConnectProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,15 +61,14 @@ namespace Model
      * OpenID Connect provider. For more information, see
      * <a>CreateOpenIDConnectProvider</a>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetThumbprintList() const{ return m_thumbprintList; }
+    inline const Aws::Vector<Aws::String>& GetThumbprintList() const { return m_thumbprintList; }
     inline bool ThumbprintListHasBeenSet() const { return m_thumbprintListHasBeenSet; }
-    inline void SetThumbprintList(const Aws::Vector<Aws::String>& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = value; }
-    inline void SetThumbprintList(Aws::Vector<Aws::String>&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = std::move(value); }
-    inline UpdateOpenIDConnectProviderThumbprintRequest& WithThumbprintList(const Aws::Vector<Aws::String>& value) { SetThumbprintList(value); return *this;}
-    inline UpdateOpenIDConnectProviderThumbprintRequest& WithThumbprintList(Aws::Vector<Aws::String>&& value) { SetThumbprintList(std::move(value)); return *this;}
-    inline UpdateOpenIDConnectProviderThumbprintRequest& AddThumbprintList(const Aws::String& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
-    inline UpdateOpenIDConnectProviderThumbprintRequest& AddThumbprintList(Aws::String&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(std::move(value)); return *this; }
-    inline UpdateOpenIDConnectProviderThumbprintRequest& AddThumbprintList(const char* value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
+    template<typename ThumbprintListT = Aws::Vector<Aws::String>>
+    void SetThumbprintList(ThumbprintListT&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = std::forward<ThumbprintListT>(value); }
+    template<typename ThumbprintListT = Aws::Vector<Aws::String>>
+    UpdateOpenIDConnectProviderThumbprintRequest& WithThumbprintList(ThumbprintListT&& value) { SetThumbprintList(std::forward<ThumbprintListT>(value)); return *this;}
+    template<typename ThumbprintListT = Aws::String>
+    UpdateOpenIDConnectProviderThumbprintRequest& AddThumbprintList(ThumbprintListT&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.emplace_back(std::forward<ThumbprintListT>(value)); return *this; }
     ///@}
   private:
 

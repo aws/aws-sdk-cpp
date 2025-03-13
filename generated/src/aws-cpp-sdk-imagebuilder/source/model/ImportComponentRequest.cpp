@@ -12,26 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportComponentRequest::ImportComponentRequest() : 
-    m_nameHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_changeDescriptionHasBeenSet(false),
-    m_type(ComponentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_format(ComponentFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String ImportComponentRequest::SerializePayload() const
 {
   JsonValue payload;

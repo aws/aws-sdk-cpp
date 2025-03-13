@@ -18,19 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-TrainingDatasetSummary::TrainingDatasetSummary() : 
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_trainingDatasetArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(TrainingDatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 TrainingDatasetSummary::TrainingDatasetSummary(JsonView jsonValue)
-  : TrainingDatasetSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ TrainingDatasetSummary& TrainingDatasetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trainingDatasetArn"))
   {
     m_trainingDatasetArn = jsonValue.GetString("trainingDatasetArn");
-
     m_trainingDatasetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TrainingDatasetStatusMapper::GetTrainingDatasetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

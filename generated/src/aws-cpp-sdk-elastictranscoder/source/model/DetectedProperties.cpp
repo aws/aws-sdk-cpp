@@ -18,21 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-DetectedProperties::DetectedProperties() : 
-    m_width(0),
-    m_widthHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_frameRateHasBeenSet(false),
-    m_fileSize(0),
-    m_fileSizeHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false)
-{
-}
-
 DetectedProperties::DetectedProperties(JsonView jsonValue)
-  : DetectedProperties()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ DetectedProperties& DetectedProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Width"))
   {
     m_width = jsonValue.GetInteger("Width");
-
     m_widthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Height"))
   {
     m_height = jsonValue.GetInteger("Height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FrameRate"))
   {
     m_frameRate = jsonValue.GetString("FrameRate");
-
     m_frameRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSize"))
   {
     m_fileSize = jsonValue.GetInt64("FileSize");
-
     m_fileSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationMillis"))
   {
     m_durationMillis = jsonValue.GetInt64("DurationMillis");
-
     m_durationMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

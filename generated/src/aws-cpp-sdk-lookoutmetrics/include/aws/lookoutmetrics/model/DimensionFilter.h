@@ -33,7 +33,7 @@ namespace Model
   class DimensionFilter
   {
   public:
-    AWS_LOOKOUTMETRICS_API DimensionFilter();
+    AWS_LOOKOUTMETRICS_API DimensionFilter() = default;
     AWS_LOOKOUTMETRICS_API DimensionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API DimensionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the dimension to filter on.</p>
      */
-    inline const Aws::String& GetDimensionName() const{ return m_dimensionName; }
+    inline const Aws::String& GetDimensionName() const { return m_dimensionName; }
     inline bool DimensionNameHasBeenSet() const { return m_dimensionNameHasBeenSet; }
-    inline void SetDimensionName(const Aws::String& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
-    inline void SetDimensionName(Aws::String&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
-    inline void SetDimensionName(const char* value) { m_dimensionNameHasBeenSet = true; m_dimensionName.assign(value); }
-    inline DimensionFilter& WithDimensionName(const Aws::String& value) { SetDimensionName(value); return *this;}
-    inline DimensionFilter& WithDimensionName(Aws::String&& value) { SetDimensionName(std::move(value)); return *this;}
-    inline DimensionFilter& WithDimensionName(const char* value) { SetDimensionName(value); return *this;}
+    template<typename DimensionNameT = Aws::String>
+    void SetDimensionName(DimensionNameT&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::forward<DimensionNameT>(value); }
+    template<typename DimensionNameT = Aws::String>
+    DimensionFilter& WithDimensionName(DimensionNameT&& value) { SetDimensionName(std::forward<DimensionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,15 +56,14 @@ namespace Model
      * <p>The list of values for the dimension specified in DimensionName that you want
      * to filter on.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDimensionValueList() const{ return m_dimensionValueList; }
+    inline const Aws::Vector<Aws::String>& GetDimensionValueList() const { return m_dimensionValueList; }
     inline bool DimensionValueListHasBeenSet() const { return m_dimensionValueListHasBeenSet; }
-    inline void SetDimensionValueList(const Aws::Vector<Aws::String>& value) { m_dimensionValueListHasBeenSet = true; m_dimensionValueList = value; }
-    inline void SetDimensionValueList(Aws::Vector<Aws::String>&& value) { m_dimensionValueListHasBeenSet = true; m_dimensionValueList = std::move(value); }
-    inline DimensionFilter& WithDimensionValueList(const Aws::Vector<Aws::String>& value) { SetDimensionValueList(value); return *this;}
-    inline DimensionFilter& WithDimensionValueList(Aws::Vector<Aws::String>&& value) { SetDimensionValueList(std::move(value)); return *this;}
-    inline DimensionFilter& AddDimensionValueList(const Aws::String& value) { m_dimensionValueListHasBeenSet = true; m_dimensionValueList.push_back(value); return *this; }
-    inline DimensionFilter& AddDimensionValueList(Aws::String&& value) { m_dimensionValueListHasBeenSet = true; m_dimensionValueList.push_back(std::move(value)); return *this; }
-    inline DimensionFilter& AddDimensionValueList(const char* value) { m_dimensionValueListHasBeenSet = true; m_dimensionValueList.push_back(value); return *this; }
+    template<typename DimensionValueListT = Aws::Vector<Aws::String>>
+    void SetDimensionValueList(DimensionValueListT&& value) { m_dimensionValueListHasBeenSet = true; m_dimensionValueList = std::forward<DimensionValueListT>(value); }
+    template<typename DimensionValueListT = Aws::Vector<Aws::String>>
+    DimensionFilter& WithDimensionValueList(DimensionValueListT&& value) { SetDimensionValueList(std::forward<DimensionValueListT>(value)); return *this;}
+    template<typename DimensionValueListT = Aws::String>
+    DimensionFilter& AddDimensionValueList(DimensionValueListT&& value) { m_dimensionValueListHasBeenSet = true; m_dimensionValueList.emplace_back(std::forward<DimensionValueListT>(value)); return *this; }
     ///@}
   private:
 

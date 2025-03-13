@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ProfileDimension::ProfileDimension() : 
-    m_dimensionType(StringDimensionType::NOT_SET),
-    m_dimensionTypeHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ProfileDimension::ProfileDimension(JsonView jsonValue)
-  : ProfileDimension()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ProfileDimension& ProfileDimension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DimensionType"))
   {
     m_dimensionType = StringDimensionTypeMapper::GetStringDimensionTypeForName(jsonValue.GetString("DimensionType"));
-
     m_dimensionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ ProfileDimension& ProfileDimension::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

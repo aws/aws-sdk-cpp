@@ -32,7 +32,7 @@ namespace Model
   class CustomDNSServer
   {
   public:
-    AWS_FINSPACE_API CustomDNSServer();
+    AWS_FINSPACE_API CustomDNSServer() = default;
     AWS_FINSPACE_API CustomDNSServer(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API CustomDNSServer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the DNS server.</p>
      */
-    inline const Aws::String& GetCustomDNSServerName() const{ return m_customDNSServerName; }
+    inline const Aws::String& GetCustomDNSServerName() const { return m_customDNSServerName; }
     inline bool CustomDNSServerNameHasBeenSet() const { return m_customDNSServerNameHasBeenSet; }
-    inline void SetCustomDNSServerName(const Aws::String& value) { m_customDNSServerNameHasBeenSet = true; m_customDNSServerName = value; }
-    inline void SetCustomDNSServerName(Aws::String&& value) { m_customDNSServerNameHasBeenSet = true; m_customDNSServerName = std::move(value); }
-    inline void SetCustomDNSServerName(const char* value) { m_customDNSServerNameHasBeenSet = true; m_customDNSServerName.assign(value); }
-    inline CustomDNSServer& WithCustomDNSServerName(const Aws::String& value) { SetCustomDNSServerName(value); return *this;}
-    inline CustomDNSServer& WithCustomDNSServerName(Aws::String&& value) { SetCustomDNSServerName(std::move(value)); return *this;}
-    inline CustomDNSServer& WithCustomDNSServerName(const char* value) { SetCustomDNSServerName(value); return *this;}
+    template<typename CustomDNSServerNameT = Aws::String>
+    void SetCustomDNSServerName(CustomDNSServerNameT&& value) { m_customDNSServerNameHasBeenSet = true; m_customDNSServerName = std::forward<CustomDNSServerNameT>(value); }
+    template<typename CustomDNSServerNameT = Aws::String>
+    CustomDNSServer& WithCustomDNSServerName(CustomDNSServerNameT&& value) { SetCustomDNSServerName(std::forward<CustomDNSServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IP address of the DNS server.</p>
      */
-    inline const Aws::String& GetCustomDNSServerIP() const{ return m_customDNSServerIP; }
+    inline const Aws::String& GetCustomDNSServerIP() const { return m_customDNSServerIP; }
     inline bool CustomDNSServerIPHasBeenSet() const { return m_customDNSServerIPHasBeenSet; }
-    inline void SetCustomDNSServerIP(const Aws::String& value) { m_customDNSServerIPHasBeenSet = true; m_customDNSServerIP = value; }
-    inline void SetCustomDNSServerIP(Aws::String&& value) { m_customDNSServerIPHasBeenSet = true; m_customDNSServerIP = std::move(value); }
-    inline void SetCustomDNSServerIP(const char* value) { m_customDNSServerIPHasBeenSet = true; m_customDNSServerIP.assign(value); }
-    inline CustomDNSServer& WithCustomDNSServerIP(const Aws::String& value) { SetCustomDNSServerIP(value); return *this;}
-    inline CustomDNSServer& WithCustomDNSServerIP(Aws::String&& value) { SetCustomDNSServerIP(std::move(value)); return *this;}
-    inline CustomDNSServer& WithCustomDNSServerIP(const char* value) { SetCustomDNSServerIP(value); return *this;}
+    template<typename CustomDNSServerIPT = Aws::String>
+    void SetCustomDNSServerIP(CustomDNSServerIPT&& value) { m_customDNSServerIPHasBeenSet = true; m_customDNSServerIP = std::forward<CustomDNSServerIPT>(value); }
+    template<typename CustomDNSServerIPT = Aws::String>
+    CustomDNSServer& WithCustomDNSServerIP(CustomDNSServerIPT&& value) { SetCustomDNSServerIP(std::forward<CustomDNSServerIPT>(value)); return *this;}
     ///@}
   private:
 

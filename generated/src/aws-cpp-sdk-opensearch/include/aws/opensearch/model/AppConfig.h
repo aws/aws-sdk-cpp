@@ -32,7 +32,7 @@ namespace Model
   class AppConfig
   {
   public:
-    AWS_OPENSEARCHSERVICE_API AppConfig();
+    AWS_OPENSEARCHSERVICE_API AppConfig() = default;
     AWS_OPENSEARCHSERVICE_API AppConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API AppConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
      * <p>Specify the item to configure, such as admin role for the OpenSearch
      * Application.</p>
      */
-    inline const AppConfigType& GetKey() const{ return m_key; }
+    inline AppConfigType GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const AppConfigType& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(AppConfigType&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline AppConfig& WithKey(const AppConfigType& value) { SetKey(value); return *this;}
-    inline AppConfig& WithKey(AppConfigType&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(AppConfigType value) { m_keyHasBeenSet = true; m_key = value; }
+    inline AppConfig& WithKey(AppConfigType value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the value to configure for the key, such as an IAM user ARN.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline AppConfig& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline AppConfig& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline AppConfig& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    AppConfig& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    AppConfigType m_key;
+    AppConfigType m_key{AppConfigType::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::String m_value;

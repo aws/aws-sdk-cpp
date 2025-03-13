@@ -30,7 +30,7 @@ namespace Model
   class MembershipModelInferencePaymentConfig
   {
   public:
-    AWS_CLEANROOMS_API MembershipModelInferencePaymentConfig();
+    AWS_CLEANROOMS_API MembershipModelInferencePaymentConfig() = default;
     AWS_CLEANROOMS_API MembershipModelInferencePaymentConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API MembershipModelInferencePaymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * you set the value to <code>TRUE</code> but you are not responsible to pay for
      * model inference costs. </p> </li> </ul>
      */
-    inline bool GetIsResponsible() const{ return m_isResponsible; }
+    inline bool GetIsResponsible() const { return m_isResponsible; }
     inline bool IsResponsibleHasBeenSet() const { return m_isResponsibleHasBeenSet; }
     inline void SetIsResponsible(bool value) { m_isResponsibleHasBeenSet = true; m_isResponsible = value; }
     inline MembershipModelInferencePaymentConfig& WithIsResponsible(bool value) { SetIsResponsible(value); return *this;}
     ///@}
   private:
 
-    bool m_isResponsible;
+    bool m_isResponsible{false};
     bool m_isResponsibleHasBeenSet = false;
   };
 

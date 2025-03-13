@@ -33,7 +33,7 @@ namespace Model
   class RetrievalFlowNodeConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API RetrievalFlowNodeConfiguration();
+    AWS_BEDROCKAGENT_API RetrievalFlowNodeConfiguration() = default;
     AWS_BEDROCKAGENT_API RetrievalFlowNodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API RetrievalFlowNodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Contains configurations for the service to use for retrieving data to return
      * as the output from the node.</p>
      */
-    inline const RetrievalFlowNodeServiceConfiguration& GetServiceConfiguration() const{ return m_serviceConfiguration; }
+    inline const RetrievalFlowNodeServiceConfiguration& GetServiceConfiguration() const { return m_serviceConfiguration; }
     inline bool ServiceConfigurationHasBeenSet() const { return m_serviceConfigurationHasBeenSet; }
-    inline void SetServiceConfiguration(const RetrievalFlowNodeServiceConfiguration& value) { m_serviceConfigurationHasBeenSet = true; m_serviceConfiguration = value; }
-    inline void SetServiceConfiguration(RetrievalFlowNodeServiceConfiguration&& value) { m_serviceConfigurationHasBeenSet = true; m_serviceConfiguration = std::move(value); }
-    inline RetrievalFlowNodeConfiguration& WithServiceConfiguration(const RetrievalFlowNodeServiceConfiguration& value) { SetServiceConfiguration(value); return *this;}
-    inline RetrievalFlowNodeConfiguration& WithServiceConfiguration(RetrievalFlowNodeServiceConfiguration&& value) { SetServiceConfiguration(std::move(value)); return *this;}
+    template<typename ServiceConfigurationT = RetrievalFlowNodeServiceConfiguration>
+    void SetServiceConfiguration(ServiceConfigurationT&& value) { m_serviceConfigurationHasBeenSet = true; m_serviceConfiguration = std::forward<ServiceConfigurationT>(value); }
+    template<typename ServiceConfigurationT = RetrievalFlowNodeServiceConfiguration>
+    RetrievalFlowNodeConfiguration& WithServiceConfiguration(ServiceConfigurationT&& value) { SetServiceConfiguration(std::forward<ServiceConfigurationT>(value)); return *this;}
     ///@}
   private:
 

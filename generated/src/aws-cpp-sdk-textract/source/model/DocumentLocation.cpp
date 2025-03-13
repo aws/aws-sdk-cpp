@@ -18,13 +18,7 @@ namespace Textract
 namespace Model
 {
 
-DocumentLocation::DocumentLocation() : 
-    m_s3ObjectHasBeenSet(false)
-{
-}
-
 DocumentLocation::DocumentLocation(JsonView jsonValue)
-  : DocumentLocation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DocumentLocation& DocumentLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Object"))
   {
     m_s3Object = jsonValue.GetObject("S3Object");
-
     m_s3ObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

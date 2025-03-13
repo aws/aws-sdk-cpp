@@ -12,14 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListVocabularyFiltersRequest::ListVocabularyFiltersRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameContainsHasBeenSet(false)
-{
-}
-
 Aws::String ListVocabularyFiltersRequest::SerializePayload() const
 {
   JsonValue payload;

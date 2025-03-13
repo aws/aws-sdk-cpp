@@ -18,14 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-VirtualGateway::VirtualGateway() : 
-    m_virtualGatewayIdHasBeenSet(false),
-    m_virtualGatewayStateHasBeenSet(false)
-{
-}
-
 VirtualGateway::VirtualGateway(JsonView jsonValue)
-  : VirtualGateway()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VirtualGateway& VirtualGateway::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("virtualGatewayId"))
   {
     m_virtualGatewayId = jsonValue.GetString("virtualGatewayId");
-
     m_virtualGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualGatewayState"))
   {
     m_virtualGatewayState = jsonValue.GetString("virtualGatewayState");
-
     m_virtualGatewayStateHasBeenSet = true;
   }
-
   return *this;
 }
 

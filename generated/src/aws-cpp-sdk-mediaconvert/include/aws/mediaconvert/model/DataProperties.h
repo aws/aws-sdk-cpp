@@ -31,7 +31,7 @@ namespace Model
   class DataProperties
   {
   public:
-    AWS_MEDIACONVERT_API DataProperties();
+    AWS_MEDIACONVERT_API DataProperties() = default;
     AWS_MEDIACONVERT_API DataProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API DataProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * the language code of the track
      */
-    inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+    inline const Aws::String& GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
-    inline DataProperties& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
-    inline DataProperties& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
-    inline DataProperties& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
+    template<typename LanguageCodeT = Aws::String>
+    void SetLanguageCode(LanguageCodeT&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::forward<LanguageCodeT>(value); }
+    template<typename LanguageCodeT = Aws::String>
+    DataProperties& WithLanguageCode(LanguageCodeT&& value) { SetLanguageCode(std::forward<LanguageCodeT>(value)); return *this;}
     ///@}
   private:
 

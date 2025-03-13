@@ -33,7 +33,7 @@ namespace Model
   class SourceAlgorithmSpecification
   {
   public:
-    AWS_SAGEMAKER_API SourceAlgorithmSpecification();
+    AWS_SAGEMAKER_API SourceAlgorithmSpecification() = default;
     AWS_SAGEMAKER_API SourceAlgorithmSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SourceAlgorithmSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>A list of the algorithms that were used to create a model package.</p>
      */
-    inline const Aws::Vector<SourceAlgorithm>& GetSourceAlgorithms() const{ return m_sourceAlgorithms; }
+    inline const Aws::Vector<SourceAlgorithm>& GetSourceAlgorithms() const { return m_sourceAlgorithms; }
     inline bool SourceAlgorithmsHasBeenSet() const { return m_sourceAlgorithmsHasBeenSet; }
-    inline void SetSourceAlgorithms(const Aws::Vector<SourceAlgorithm>& value) { m_sourceAlgorithmsHasBeenSet = true; m_sourceAlgorithms = value; }
-    inline void SetSourceAlgorithms(Aws::Vector<SourceAlgorithm>&& value) { m_sourceAlgorithmsHasBeenSet = true; m_sourceAlgorithms = std::move(value); }
-    inline SourceAlgorithmSpecification& WithSourceAlgorithms(const Aws::Vector<SourceAlgorithm>& value) { SetSourceAlgorithms(value); return *this;}
-    inline SourceAlgorithmSpecification& WithSourceAlgorithms(Aws::Vector<SourceAlgorithm>&& value) { SetSourceAlgorithms(std::move(value)); return *this;}
-    inline SourceAlgorithmSpecification& AddSourceAlgorithms(const SourceAlgorithm& value) { m_sourceAlgorithmsHasBeenSet = true; m_sourceAlgorithms.push_back(value); return *this; }
-    inline SourceAlgorithmSpecification& AddSourceAlgorithms(SourceAlgorithm&& value) { m_sourceAlgorithmsHasBeenSet = true; m_sourceAlgorithms.push_back(std::move(value)); return *this; }
+    template<typename SourceAlgorithmsT = Aws::Vector<SourceAlgorithm>>
+    void SetSourceAlgorithms(SourceAlgorithmsT&& value) { m_sourceAlgorithmsHasBeenSet = true; m_sourceAlgorithms = std::forward<SourceAlgorithmsT>(value); }
+    template<typename SourceAlgorithmsT = Aws::Vector<SourceAlgorithm>>
+    SourceAlgorithmSpecification& WithSourceAlgorithms(SourceAlgorithmsT&& value) { SetSourceAlgorithms(std::forward<SourceAlgorithmsT>(value)); return *this;}
+    template<typename SourceAlgorithmsT = SourceAlgorithm>
+    SourceAlgorithmSpecification& AddSourceAlgorithms(SourceAlgorithmsT&& value) { m_sourceAlgorithmsHasBeenSet = true; m_sourceAlgorithms.emplace_back(std::forward<SourceAlgorithmsT>(value)); return *this; }
     ///@}
   private:
 

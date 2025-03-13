@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RetrievalFlowNodeS3Configuration::RetrievalFlowNodeS3Configuration() : 
-    m_bucketNameHasBeenSet(false)
-{
-}
-
 RetrievalFlowNodeS3Configuration::RetrievalFlowNodeS3Configuration(JsonView jsonValue)
-  : RetrievalFlowNodeS3Configuration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RetrievalFlowNodeS3Configuration& RetrievalFlowNodeS3Configuration::operator =(J
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   return *this;
 }
 

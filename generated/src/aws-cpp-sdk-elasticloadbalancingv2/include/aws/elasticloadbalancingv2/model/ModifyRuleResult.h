@@ -29,7 +29,7 @@ namespace Model
   class ModifyRuleResult
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API ModifyRuleResult();
+    AWS_ELASTICLOADBALANCINGV2_API ModifyRuleResult() = default;
     AWS_ELASTICLOADBALANCINGV2_API ModifyRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCINGV2_API ModifyRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the modified rule.</p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rules = std::move(value); }
-    inline ModifyRuleResult& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline ModifyRuleResult& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline ModifyRuleResult& AddRules(const Rule& value) { m_rules.push_back(value); return *this; }
-    inline ModifyRuleResult& AddRules(Rule&& value) { m_rules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    ModifyRuleResult& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    ModifyRuleResult& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyRuleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyRuleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyRuleResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Rule> m_rules;
+    bool m_rulesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

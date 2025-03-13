@@ -18,14 +18,7 @@ namespace QLDBSession
 namespace Model
 {
 
-StartTransactionResult::StartTransactionResult() : 
-    m_transactionIdHasBeenSet(false),
-    m_timingInformationHasBeenSet(false)
-{
-}
-
 StartTransactionResult::StartTransactionResult(JsonView jsonValue)
-  : StartTransactionResult()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StartTransactionResult& StartTransactionResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TransactionId"))
   {
     m_transactionId = jsonValue.GetString("TransactionId");
-
     m_transactionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimingInformation"))
   {
     m_timingInformation = jsonValue.GetObject("TimingInformation");
-
     m_timingInformationHasBeenSet = true;
   }
-
   return *this;
 }
 

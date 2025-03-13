@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DateTimeFormatConfiguration::DateTimeFormatConfiguration() : 
-    m_dateTimeFormatHasBeenSet(false),
-    m_nullValueFormatConfigurationHasBeenSet(false),
-    m_numericFormatConfigurationHasBeenSet(false)
-{
-}
-
 DateTimeFormatConfiguration::DateTimeFormatConfiguration(JsonView jsonValue)
-  : DateTimeFormatConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DateTimeFormatConfiguration& DateTimeFormatConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("DateTimeFormat"))
   {
     m_dateTimeFormat = jsonValue.GetString("DateTimeFormat");
-
     m_dateTimeFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullValueFormatConfiguration"))
   {
     m_nullValueFormatConfiguration = jsonValue.GetObject("NullValueFormatConfiguration");
-
     m_nullValueFormatConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumericFormatConfiguration"))
   {
     m_numericFormatConfiguration = jsonValue.GetObject("NumericFormatConfiguration");
-
     m_numericFormatConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

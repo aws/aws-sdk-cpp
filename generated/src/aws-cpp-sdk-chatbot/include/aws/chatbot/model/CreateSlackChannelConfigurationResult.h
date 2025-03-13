@@ -28,7 +28,7 @@ namespace Model
   class CreateSlackChannelConfigurationResult
   {
   public:
-    AWS_CHATBOT_API CreateSlackChannelConfigurationResult();
+    AWS_CHATBOT_API CreateSlackChannelConfigurationResult() = default;
     AWS_CHATBOT_API CreateSlackChannelConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHATBOT_API CreateSlackChannelConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The configuration for a Slack channel configured with AWS Chatbot.</p>
      */
-    inline const SlackChannelConfiguration& GetChannelConfiguration() const{ return m_channelConfiguration; }
-    inline void SetChannelConfiguration(const SlackChannelConfiguration& value) { m_channelConfiguration = value; }
-    inline void SetChannelConfiguration(SlackChannelConfiguration&& value) { m_channelConfiguration = std::move(value); }
-    inline CreateSlackChannelConfigurationResult& WithChannelConfiguration(const SlackChannelConfiguration& value) { SetChannelConfiguration(value); return *this;}
-    inline CreateSlackChannelConfigurationResult& WithChannelConfiguration(SlackChannelConfiguration&& value) { SetChannelConfiguration(std::move(value)); return *this;}
+    inline const SlackChannelConfiguration& GetChannelConfiguration() const { return m_channelConfiguration; }
+    template<typename ChannelConfigurationT = SlackChannelConfiguration>
+    void SetChannelConfiguration(ChannelConfigurationT&& value) { m_channelConfigurationHasBeenSet = true; m_channelConfiguration = std::forward<ChannelConfigurationT>(value); }
+    template<typename ChannelConfigurationT = SlackChannelConfiguration>
+    CreateSlackChannelConfigurationResult& WithChannelConfiguration(ChannelConfigurationT&& value) { SetChannelConfiguration(std::forward<ChannelConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateSlackChannelConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateSlackChannelConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateSlackChannelConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateSlackChannelConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SlackChannelConfiguration m_channelConfiguration;
+    bool m_channelConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

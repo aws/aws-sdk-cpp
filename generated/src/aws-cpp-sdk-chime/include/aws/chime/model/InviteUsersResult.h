@@ -29,7 +29,7 @@ namespace Model
   class InviteUsersResult
   {
   public:
-    AWS_CHIME_API InviteUsersResult();
+    AWS_CHIME_API InviteUsersResult() = default;
     AWS_CHIME_API InviteUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIME_API InviteUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The email invitation details.</p>
      */
-    inline const Aws::Vector<Invite>& GetInvites() const{ return m_invites; }
-    inline void SetInvites(const Aws::Vector<Invite>& value) { m_invites = value; }
-    inline void SetInvites(Aws::Vector<Invite>&& value) { m_invites = std::move(value); }
-    inline InviteUsersResult& WithInvites(const Aws::Vector<Invite>& value) { SetInvites(value); return *this;}
-    inline InviteUsersResult& WithInvites(Aws::Vector<Invite>&& value) { SetInvites(std::move(value)); return *this;}
-    inline InviteUsersResult& AddInvites(const Invite& value) { m_invites.push_back(value); return *this; }
-    inline InviteUsersResult& AddInvites(Invite&& value) { m_invites.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Invite>& GetInvites() const { return m_invites; }
+    template<typename InvitesT = Aws::Vector<Invite>>
+    void SetInvites(InvitesT&& value) { m_invitesHasBeenSet = true; m_invites = std::forward<InvitesT>(value); }
+    template<typename InvitesT = Aws::Vector<Invite>>
+    InviteUsersResult& WithInvites(InvitesT&& value) { SetInvites(std::forward<InvitesT>(value)); return *this;}
+    template<typename InvitesT = Invite>
+    InviteUsersResult& AddInvites(InvitesT&& value) { m_invitesHasBeenSet = true; m_invites.emplace_back(std::forward<InvitesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline InviteUsersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline InviteUsersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline InviteUsersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    InviteUsersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Invite> m_invites;
+    bool m_invitesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

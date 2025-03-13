@@ -32,7 +32,7 @@ namespace Model
   class TimePeriod
   {
   public:
-    AWS_IOTFLEETWISE_API TimePeriod();
+    AWS_IOTFLEETWISE_API TimePeriod() = default;
     AWS_IOTFLEETWISE_API TimePeriod(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API TimePeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>A unit of time.</p>
      */
-    inline const TimeUnit& GetUnit() const{ return m_unit; }
+    inline TimeUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const TimeUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(TimeUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline TimePeriod& WithUnit(const TimeUnit& value) { SetUnit(value); return *this;}
-    inline TimePeriod& WithUnit(TimeUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(TimeUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline TimePeriod& WithUnit(TimeUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A number of time units.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline TimePeriod& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    TimeUnit m_unit;
+    TimeUnit m_unit{TimeUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateReviewTemplateResult::CreateReviewTemplateResult()
-{
-}
-
 CreateReviewTemplateResult::CreateReviewTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateReviewTemplateResult& CreateReviewTemplateResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("TemplateArn"))
   {
     m_templateArn = jsonValue.GetString("TemplateArn");
-
+    m_templateArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

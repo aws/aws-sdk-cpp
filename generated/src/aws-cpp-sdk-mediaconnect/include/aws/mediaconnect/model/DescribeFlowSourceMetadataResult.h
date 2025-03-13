@@ -31,7 +31,7 @@ namespace Model
   class DescribeFlowSourceMetadataResult
   {
   public:
-    AWS_MEDIACONNECT_API DescribeFlowSourceMetadataResult();
+    AWS_MEDIACONNECT_API DescribeFlowSourceMetadataResult() = default;
     AWS_MEDIACONNECT_API DescribeFlowSourceMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API DescribeFlowSourceMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
     /**
      * The ARN of the flow that DescribeFlowSourceMetadata was performed on.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-    inline DescribeFlowSourceMetadataResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline DescribeFlowSourceMetadataResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline DescribeFlowSourceMetadataResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    DescribeFlowSourceMetadataResult& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,56 +52,59 @@ namespace Model
      * Provides a status code and message regarding issues found with the flow source
      * metadata.
      */
-    inline const Aws::Vector<MessageDetail>& GetMessages() const{ return m_messages; }
-    inline void SetMessages(const Aws::Vector<MessageDetail>& value) { m_messages = value; }
-    inline void SetMessages(Aws::Vector<MessageDetail>&& value) { m_messages = std::move(value); }
-    inline DescribeFlowSourceMetadataResult& WithMessages(const Aws::Vector<MessageDetail>& value) { SetMessages(value); return *this;}
-    inline DescribeFlowSourceMetadataResult& WithMessages(Aws::Vector<MessageDetail>&& value) { SetMessages(std::move(value)); return *this;}
-    inline DescribeFlowSourceMetadataResult& AddMessages(const MessageDetail& value) { m_messages.push_back(value); return *this; }
-    inline DescribeFlowSourceMetadataResult& AddMessages(MessageDetail&& value) { m_messages.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MessageDetail>& GetMessages() const { return m_messages; }
+    template<typename MessagesT = Aws::Vector<MessageDetail>>
+    void SetMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages = std::forward<MessagesT>(value); }
+    template<typename MessagesT = Aws::Vector<MessageDetail>>
+    DescribeFlowSourceMetadataResult& WithMessages(MessagesT&& value) { SetMessages(std::forward<MessagesT>(value)); return *this;}
+    template<typename MessagesT = MessageDetail>
+    DescribeFlowSourceMetadataResult& AddMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages.emplace_back(std::forward<MessagesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The timestamp of the most recent change in metadata for this flow’s source.
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
-    inline DescribeFlowSourceMetadataResult& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline DescribeFlowSourceMetadataResult& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    DescribeFlowSourceMetadataResult& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TransportMediaInfo& GetTransportMediaInfo() const{ return m_transportMediaInfo; }
-    inline void SetTransportMediaInfo(const TransportMediaInfo& value) { m_transportMediaInfo = value; }
-    inline void SetTransportMediaInfo(TransportMediaInfo&& value) { m_transportMediaInfo = std::move(value); }
-    inline DescribeFlowSourceMetadataResult& WithTransportMediaInfo(const TransportMediaInfo& value) { SetTransportMediaInfo(value); return *this;}
-    inline DescribeFlowSourceMetadataResult& WithTransportMediaInfo(TransportMediaInfo&& value) { SetTransportMediaInfo(std::move(value)); return *this;}
+    inline const TransportMediaInfo& GetTransportMediaInfo() const { return m_transportMediaInfo; }
+    template<typename TransportMediaInfoT = TransportMediaInfo>
+    void SetTransportMediaInfo(TransportMediaInfoT&& value) { m_transportMediaInfoHasBeenSet = true; m_transportMediaInfo = std::forward<TransportMediaInfoT>(value); }
+    template<typename TransportMediaInfoT = TransportMediaInfo>
+    DescribeFlowSourceMetadataResult& WithTransportMediaInfo(TransportMediaInfoT&& value) { SetTransportMediaInfo(std::forward<TransportMediaInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFlowSourceMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFlowSourceMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFlowSourceMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFlowSourceMetadataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_flowArn;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::Vector<MessageDetail> m_messages;
+    bool m_messagesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
+    bool m_timestampHasBeenSet = false;
 
     TransportMediaInfo m_transportMediaInfo;
+    bool m_transportMediaInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

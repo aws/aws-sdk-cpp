@@ -18,26 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketDetails::AwsS3BucketDetails() : 
-    m_ownerIdHasBeenSet(false),
-    m_ownerNameHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_bucketLifecycleConfigurationHasBeenSet(false),
-    m_publicAccessBlockConfigurationHasBeenSet(false),
-    m_accessControlListHasBeenSet(false),
-    m_bucketLoggingConfigurationHasBeenSet(false),
-    m_bucketWebsiteConfigurationHasBeenSet(false),
-    m_bucketNotificationConfigurationHasBeenSet(false),
-    m_bucketVersioningConfigurationHasBeenSet(false),
-    m_objectLockConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AwsS3BucketDetails::AwsS3BucketDetails(JsonView jsonValue)
-  : AwsS3BucketDetails()
 {
   *this = jsonValue;
 }
@@ -47,101 +28,73 @@ AwsS3BucketDetails& AwsS3BucketDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerName"))
   {
     m_ownerName = jsonValue.GetString("OwnerName");
-
     m_ownerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerSideEncryptionConfiguration"))
   {
     m_serverSideEncryptionConfiguration = jsonValue.GetObject("ServerSideEncryptionConfiguration");
-
     m_serverSideEncryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketLifecycleConfiguration"))
   {
     m_bucketLifecycleConfiguration = jsonValue.GetObject("BucketLifecycleConfiguration");
-
     m_bucketLifecycleConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicAccessBlockConfiguration"))
   {
     m_publicAccessBlockConfiguration = jsonValue.GetObject("PublicAccessBlockConfiguration");
-
     m_publicAccessBlockConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessControlList"))
   {
     m_accessControlList = jsonValue.GetString("AccessControlList");
-
     m_accessControlListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketLoggingConfiguration"))
   {
     m_bucketLoggingConfiguration = jsonValue.GetObject("BucketLoggingConfiguration");
-
     m_bucketLoggingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketWebsiteConfiguration"))
   {
     m_bucketWebsiteConfiguration = jsonValue.GetObject("BucketWebsiteConfiguration");
-
     m_bucketWebsiteConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketNotificationConfiguration"))
   {
     m_bucketNotificationConfiguration = jsonValue.GetObject("BucketNotificationConfiguration");
-
     m_bucketNotificationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketVersioningConfiguration"))
   {
     m_bucketVersioningConfiguration = jsonValue.GetObject("BucketVersioningConfiguration");
-
     m_bucketVersioningConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectLockConfiguration"))
   {
     m_objectLockConfiguration = jsonValue.GetObject("ObjectLockConfiguration");
-
     m_objectLockConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

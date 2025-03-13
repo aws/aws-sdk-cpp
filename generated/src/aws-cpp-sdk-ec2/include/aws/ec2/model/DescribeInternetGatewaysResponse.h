@@ -30,7 +30,7 @@ namespace Model
   class DescribeInternetGatewaysResponse
   {
   public:
-    AWS_EC2_API DescribeInternetGatewaysResponse();
+    AWS_EC2_API DescribeInternetGatewaysResponse() = default;
     AWS_EC2_API DescribeInternetGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeInternetGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the internet gateways.</p>
      */
-    inline const Aws::Vector<InternetGateway>& GetInternetGateways() const{ return m_internetGateways; }
-    inline void SetInternetGateways(const Aws::Vector<InternetGateway>& value) { m_internetGateways = value; }
-    inline void SetInternetGateways(Aws::Vector<InternetGateway>&& value) { m_internetGateways = std::move(value); }
-    inline DescribeInternetGatewaysResponse& WithInternetGateways(const Aws::Vector<InternetGateway>& value) { SetInternetGateways(value); return *this;}
-    inline DescribeInternetGatewaysResponse& WithInternetGateways(Aws::Vector<InternetGateway>&& value) { SetInternetGateways(std::move(value)); return *this;}
-    inline DescribeInternetGatewaysResponse& AddInternetGateways(const InternetGateway& value) { m_internetGateways.push_back(value); return *this; }
-    inline DescribeInternetGatewaysResponse& AddInternetGateways(InternetGateway&& value) { m_internetGateways.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InternetGateway>& GetInternetGateways() const { return m_internetGateways; }
+    template<typename InternetGatewaysT = Aws::Vector<InternetGateway>>
+    void SetInternetGateways(InternetGatewaysT&& value) { m_internetGatewaysHasBeenSet = true; m_internetGateways = std::forward<InternetGatewaysT>(value); }
+    template<typename InternetGatewaysT = Aws::Vector<InternetGateway>>
+    DescribeInternetGatewaysResponse& WithInternetGateways(InternetGatewaysT&& value) { SetInternetGateways(std::forward<InternetGatewaysT>(value)); return *this;}
+    template<typename InternetGatewaysT = InternetGateway>
+    DescribeInternetGatewaysResponse& AddInternetGateways(InternetGatewaysT&& value) { m_internetGatewaysHasBeenSet = true; m_internetGateways.emplace_back(std::forward<InternetGatewaysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeInternetGatewaysResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeInternetGatewaysResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeInternetGatewaysResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeInternetGatewaysResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeInternetGatewaysResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeInternetGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeInternetGatewaysResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InternetGateway> m_internetGateways;
+    bool m_internetGatewaysHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

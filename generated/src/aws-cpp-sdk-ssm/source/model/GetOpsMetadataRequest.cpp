@@ -12,14 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOpsMetadataRequest::GetOpsMetadataRequest() : 
-    m_opsMetadataArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetOpsMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

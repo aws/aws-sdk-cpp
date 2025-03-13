@@ -12,12 +12,6 @@ using namespace Aws::PCS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterComputeNodeGroupInstanceRequest::RegisterComputeNodeGroupInstanceRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_bootstrapIdHasBeenSet(false)
-{
-}
-
 Aws::String RegisterComputeNodeGroupInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

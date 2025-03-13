@@ -28,7 +28,7 @@ namespace Model
   class UpdateServiceActionResult
   {
   public:
-    AWS_SERVICECATALOG_API UpdateServiceActionResult();
+    AWS_SERVICECATALOG_API UpdateServiceActionResult() = default;
     AWS_SERVICECATALOG_API UpdateServiceActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API UpdateServiceActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Detailed information about the self-service action.</p>
      */
-    inline const ServiceActionDetail& GetServiceActionDetail() const{ return m_serviceActionDetail; }
-    inline void SetServiceActionDetail(const ServiceActionDetail& value) { m_serviceActionDetail = value; }
-    inline void SetServiceActionDetail(ServiceActionDetail&& value) { m_serviceActionDetail = std::move(value); }
-    inline UpdateServiceActionResult& WithServiceActionDetail(const ServiceActionDetail& value) { SetServiceActionDetail(value); return *this;}
-    inline UpdateServiceActionResult& WithServiceActionDetail(ServiceActionDetail&& value) { SetServiceActionDetail(std::move(value)); return *this;}
+    inline const ServiceActionDetail& GetServiceActionDetail() const { return m_serviceActionDetail; }
+    template<typename ServiceActionDetailT = ServiceActionDetail>
+    void SetServiceActionDetail(ServiceActionDetailT&& value) { m_serviceActionDetailHasBeenSet = true; m_serviceActionDetail = std::forward<ServiceActionDetailT>(value); }
+    template<typename ServiceActionDetailT = ServiceActionDetail>
+    UpdateServiceActionResult& WithServiceActionDetail(ServiceActionDetailT&& value) { SetServiceActionDetail(std::forward<ServiceActionDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateServiceActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateServiceActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateServiceActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateServiceActionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ServiceActionDetail m_serviceActionDetail;
+    bool m_serviceActionDetailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

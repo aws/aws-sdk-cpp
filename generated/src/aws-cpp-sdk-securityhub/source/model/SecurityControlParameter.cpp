@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-SecurityControlParameter::SecurityControlParameter() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 SecurityControlParameter::SecurityControlParameter(JsonView jsonValue)
-  : SecurityControlParameter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SecurityControlParameter& SecurityControlParameter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     Aws::Utils::Array<JsonView> valueJsonList = jsonValue.GetArray("Value");
@@ -48,7 +39,6 @@ SecurityControlParameter& SecurityControlParameter::operator =(JsonView jsonValu
     }
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

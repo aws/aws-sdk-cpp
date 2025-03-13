@@ -23,7 +23,7 @@ namespace Model
   class StartMatchmakingRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API StartMatchmakingRequest();
+    AWS_GAMELIFT_API StartMatchmakingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * identifier to track the matchmaking ticket status and retrieve match
      * results.</p>
      */
-    inline const Aws::String& GetTicketId() const{ return m_ticketId; }
+    inline const Aws::String& GetTicketId() const { return m_ticketId; }
     inline bool TicketIdHasBeenSet() const { return m_ticketIdHasBeenSet; }
-    inline void SetTicketId(const Aws::String& value) { m_ticketIdHasBeenSet = true; m_ticketId = value; }
-    inline void SetTicketId(Aws::String&& value) { m_ticketIdHasBeenSet = true; m_ticketId = std::move(value); }
-    inline void SetTicketId(const char* value) { m_ticketIdHasBeenSet = true; m_ticketId.assign(value); }
-    inline StartMatchmakingRequest& WithTicketId(const Aws::String& value) { SetTicketId(value); return *this;}
-    inline StartMatchmakingRequest& WithTicketId(Aws::String&& value) { SetTicketId(std::move(value)); return *this;}
-    inline StartMatchmakingRequest& WithTicketId(const char* value) { SetTicketId(value); return *this;}
+    template<typename TicketIdT = Aws::String>
+    void SetTicketId(TicketIdT&& value) { m_ticketIdHasBeenSet = true; m_ticketId = std::forward<TicketIdT>(value); }
+    template<typename TicketIdT = Aws::String>
+    StartMatchmakingRequest& WithTicketId(TicketIdT&& value) { SetTicketId(std::forward<TicketIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * configurations must exist in the same Region as this request. You can use either
      * the configuration name or ARN value.</p>
      */
-    inline const Aws::String& GetConfigurationName() const{ return m_configurationName; }
+    inline const Aws::String& GetConfigurationName() const { return m_configurationName; }
     inline bool ConfigurationNameHasBeenSet() const { return m_configurationNameHasBeenSet; }
-    inline void SetConfigurationName(const Aws::String& value) { m_configurationNameHasBeenSet = true; m_configurationName = value; }
-    inline void SetConfigurationName(Aws::String&& value) { m_configurationNameHasBeenSet = true; m_configurationName = std::move(value); }
-    inline void SetConfigurationName(const char* value) { m_configurationNameHasBeenSet = true; m_configurationName.assign(value); }
-    inline StartMatchmakingRequest& WithConfigurationName(const Aws::String& value) { SetConfigurationName(value); return *this;}
-    inline StartMatchmakingRequest& WithConfigurationName(Aws::String&& value) { SetConfigurationName(std::move(value)); return *this;}
-    inline StartMatchmakingRequest& WithConfigurationName(const char* value) { SetConfigurationName(value); return *this;}
+    template<typename ConfigurationNameT = Aws::String>
+    void SetConfigurationName(ConfigurationNameT&& value) { m_configurationNameHasBeenSet = true; m_configurationName = std::forward<ConfigurationNameT>(value); }
+    template<typename ConfigurationNameT = Aws::String>
+    StartMatchmakingRequest& WithConfigurationName(ConfigurationNameT&& value) { SetConfigurationName(std::forward<ConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,14 @@ namespace Model
      * contain the name of the team the player is assigned to.</p> <p>You can include
      * up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
      */
-    inline const Aws::Vector<Player>& GetPlayers() const{ return m_players; }
+    inline const Aws::Vector<Player>& GetPlayers() const { return m_players; }
     inline bool PlayersHasBeenSet() const { return m_playersHasBeenSet; }
-    inline void SetPlayers(const Aws::Vector<Player>& value) { m_playersHasBeenSet = true; m_players = value; }
-    inline void SetPlayers(Aws::Vector<Player>&& value) { m_playersHasBeenSet = true; m_players = std::move(value); }
-    inline StartMatchmakingRequest& WithPlayers(const Aws::Vector<Player>& value) { SetPlayers(value); return *this;}
-    inline StartMatchmakingRequest& WithPlayers(Aws::Vector<Player>&& value) { SetPlayers(std::move(value)); return *this;}
-    inline StartMatchmakingRequest& AddPlayers(const Player& value) { m_playersHasBeenSet = true; m_players.push_back(value); return *this; }
-    inline StartMatchmakingRequest& AddPlayers(Player&& value) { m_playersHasBeenSet = true; m_players.push_back(std::move(value)); return *this; }
+    template<typename PlayersT = Aws::Vector<Player>>
+    void SetPlayers(PlayersT&& value) { m_playersHasBeenSet = true; m_players = std::forward<PlayersT>(value); }
+    template<typename PlayersT = Aws::Vector<Player>>
+    StartMatchmakingRequest& WithPlayers(PlayersT&& value) { SetPlayers(std::forward<PlayersT>(value)); return *this;}
+    template<typename PlayersT = Player>
+    StartMatchmakingRequest& AddPlayers(PlayersT&& value) { m_playersHasBeenSet = true; m_players.emplace_back(std::forward<PlayersT>(value)); return *this; }
     ///@}
   private:
 

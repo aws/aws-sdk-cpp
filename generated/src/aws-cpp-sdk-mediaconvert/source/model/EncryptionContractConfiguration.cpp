@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-EncryptionContractConfiguration::EncryptionContractConfiguration() : 
-    m_spekeAudioPreset(PresetSpeke20Audio::NOT_SET),
-    m_spekeAudioPresetHasBeenSet(false),
-    m_spekeVideoPreset(PresetSpeke20Video::NOT_SET),
-    m_spekeVideoPresetHasBeenSet(false)
-{
-}
-
 EncryptionContractConfiguration::EncryptionContractConfiguration(JsonView jsonValue)
-  : EncryptionContractConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ EncryptionContractConfiguration& EncryptionContractConfiguration::operator =(Jso
   if(jsonValue.ValueExists("spekeAudioPreset"))
   {
     m_spekeAudioPreset = PresetSpeke20AudioMapper::GetPresetSpeke20AudioForName(jsonValue.GetString("spekeAudioPreset"));
-
     m_spekeAudioPresetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spekeVideoPreset"))
   {
     m_spekeVideoPreset = PresetSpeke20VideoMapper::GetPresetSpeke20VideoForName(jsonValue.GetString("spekeVideoPreset"));
-
     m_spekeVideoPresetHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,19 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDevEndpointRequest::UpdateDevEndpointRequest() : 
-    m_endpointNameHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_addPublicKeysHasBeenSet(false),
-    m_deletePublicKeysHasBeenSet(false),
-    m_customLibrariesHasBeenSet(false),
-    m_updateEtlLibraries(false),
-    m_updateEtlLibrariesHasBeenSet(false),
-    m_deleteArgumentsHasBeenSet(false),
-    m_addArgumentsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDevEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

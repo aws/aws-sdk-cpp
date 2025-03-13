@@ -18,25 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-KubernetesWorkloadDetails::KubernetesWorkloadDetails() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_uidHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_hostNetwork(false),
-    m_hostNetworkHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_serviceAccountNameHasBeenSet(false),
-    m_hostIPC(false),
-    m_hostIPCHasBeenSet(false),
-    m_hostPID(false),
-    m_hostPIDHasBeenSet(false)
-{
-}
-
 KubernetesWorkloadDetails::KubernetesWorkloadDetails(JsonView jsonValue)
-  : KubernetesWorkloadDetails()
 {
   *this = jsonValue;
 }
@@ -46,38 +28,28 @@ KubernetesWorkloadDetails& KubernetesWorkloadDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uid"))
   {
     m_uid = jsonValue.GetString("uid");
-
     m_uidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostNetwork"))
   {
     m_hostNetwork = jsonValue.GetBool("hostNetwork");
-
     m_hostNetworkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containers"))
   {
     Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
@@ -87,7 +59,6 @@ KubernetesWorkloadDetails& KubernetesWorkloadDetails::operator =(JsonView jsonVa
     }
     m_containersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumes"))
   {
     Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
@@ -97,28 +68,21 @@ KubernetesWorkloadDetails& KubernetesWorkloadDetails::operator =(JsonView jsonVa
     }
     m_volumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceAccountName"))
   {
     m_serviceAccountName = jsonValue.GetString("serviceAccountName");
-
     m_serviceAccountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostIPC"))
   {
     m_hostIPC = jsonValue.GetBool("hostIPC");
-
     m_hostIPCHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostPID"))
   {
     m_hostPID = jsonValue.GetBool("hostPID");
-
     m_hostPIDHasBeenSet = true;
   }
-
   return *this;
 }
 

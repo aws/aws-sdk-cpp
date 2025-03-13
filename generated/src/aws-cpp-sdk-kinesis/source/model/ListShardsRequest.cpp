@@ -12,18 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListShardsRequest::ListShardsRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_exclusiveStartShardIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_streamCreationTimestampHasBeenSet(false),
-    m_shardFilterHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String ListShardsRequest::SerializePayload() const
 {
   JsonValue payload;

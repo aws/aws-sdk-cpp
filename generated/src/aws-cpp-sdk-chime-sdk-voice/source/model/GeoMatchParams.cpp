@@ -18,14 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-GeoMatchParams::GeoMatchParams() : 
-    m_countryHasBeenSet(false),
-    m_areaCodeHasBeenSet(false)
-{
-}
-
 GeoMatchParams::GeoMatchParams(JsonView jsonValue)
-  : GeoMatchParams()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GeoMatchParams& GeoMatchParams::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AreaCode"))
   {
     m_areaCode = jsonValue.GetString("AreaCode");
-
     m_areaCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

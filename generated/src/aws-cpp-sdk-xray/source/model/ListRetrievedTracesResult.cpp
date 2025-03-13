@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRetrievedTracesResult::ListRetrievedTracesResult() : 
-    m_retrievalStatus(RetrievalStatus::NOT_SET),
-    m_traceFormat(TraceFormatType::NOT_SET)
-{
-}
-
 ListRetrievedTracesResult::ListRetrievedTracesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListRetrievedTracesResult()
 {
   *this = result;
 }
@@ -35,15 +28,13 @@ ListRetrievedTracesResult& ListRetrievedTracesResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("RetrievalStatus"))
   {
     m_retrievalStatus = RetrievalStatusMapper::GetRetrievalStatusForName(jsonValue.GetString("RetrievalStatus"));
-
+    m_retrievalStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TraceFormat"))
   {
     m_traceFormat = TraceFormatTypeMapper::GetTraceFormatTypeForName(jsonValue.GetString("TraceFormat"));
-
+    m_traceFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Traces"))
   {
     Aws::Utils::Array<JsonView> tracesJsonList = jsonValue.GetArray("Traces");
@@ -51,20 +42,20 @@ ListRetrievedTracesResult& ListRetrievedTracesResult::operator =(const Aws::Amaz
     {
       m_traces.push_back(tracesJsonList[tracesIndex].AsObject());
     }
+    m_tracesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

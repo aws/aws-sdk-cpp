@@ -18,22 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-Gnss::Gnss() : 
-    m_payloadHasBeenSet(false),
-    m_captureTime(0.0),
-    m_captureTimeHasBeenSet(false),
-    m_captureTimeAccuracy(0.0),
-    m_captureTimeAccuracyHasBeenSet(false),
-    m_assistPositionHasBeenSet(false),
-    m_assistAltitude(0.0),
-    m_assistAltitudeHasBeenSet(false),
-    m_use2DSolver(false),
-    m_use2DSolverHasBeenSet(false)
-{
-}
-
 Gnss::Gnss(JsonView jsonValue)
-  : Gnss()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ Gnss& Gnss::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Payload"))
   {
     m_payload = jsonValue.GetString("Payload");
-
     m_payloadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaptureTime"))
   {
     m_captureTime = jsonValue.GetDouble("CaptureTime");
-
     m_captureTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaptureTimeAccuracy"))
   {
     m_captureTimeAccuracy = jsonValue.GetDouble("CaptureTimeAccuracy");
-
     m_captureTimeAccuracyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssistPosition"))
   {
     Aws::Utils::Array<JsonView> assistPositionJsonList = jsonValue.GetArray("AssistPosition");
@@ -70,21 +49,16 @@ Gnss& Gnss::operator =(JsonView jsonValue)
     }
     m_assistPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssistAltitude"))
   {
     m_assistAltitude = jsonValue.GetDouble("AssistAltitude");
-
     m_assistAltitudeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Use2DSolver"))
   {
     m_use2DSolver = jsonValue.GetBool("Use2DSolver");
-
     m_use2DSolverHasBeenSet = true;
   }
-
   return *this;
 }
 

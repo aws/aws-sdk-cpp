@@ -32,7 +32,7 @@ namespace Model
   class Regex
   {
   public:
-    AWS_WAFV2_API Regex();
+    AWS_WAFV2_API Regex() = default;
     AWS_WAFV2_API Regex(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Regex& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The string representing the regular expression.</p>
      */
-    inline const Aws::String& GetRegexString() const{ return m_regexString; }
+    inline const Aws::String& GetRegexString() const { return m_regexString; }
     inline bool RegexStringHasBeenSet() const { return m_regexStringHasBeenSet; }
-    inline void SetRegexString(const Aws::String& value) { m_regexStringHasBeenSet = true; m_regexString = value; }
-    inline void SetRegexString(Aws::String&& value) { m_regexStringHasBeenSet = true; m_regexString = std::move(value); }
-    inline void SetRegexString(const char* value) { m_regexStringHasBeenSet = true; m_regexString.assign(value); }
-    inline Regex& WithRegexString(const Aws::String& value) { SetRegexString(value); return *this;}
-    inline Regex& WithRegexString(Aws::String&& value) { SetRegexString(std::move(value)); return *this;}
-    inline Regex& WithRegexString(const char* value) { SetRegexString(value); return *this;}
+    template<typename RegexStringT = Aws::String>
+    void SetRegexString(RegexStringT&& value) { m_regexStringHasBeenSet = true; m_regexString = std::forward<RegexStringT>(value); }
+    template<typename RegexStringT = Aws::String>
+    Regex& WithRegexString(RegexStringT&& value) { SetRegexString(std::forward<RegexStringT>(value)); return *this;}
     ///@}
   private:
 

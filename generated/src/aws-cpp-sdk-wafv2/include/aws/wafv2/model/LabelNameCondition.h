@@ -32,7 +32,7 @@ namespace Model
   class LabelNameCondition
   {
   public:
-    AWS_WAFV2_API LabelNameCondition();
+    AWS_WAFV2_API LabelNameCondition() = default;
     AWS_WAFV2_API LabelNameCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API LabelNameCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * optional namespaces, and label name. The prefix identifies the rule group or web
      * ACL context of the rule that added the label. </p>
      */
-    inline const Aws::String& GetLabelName() const{ return m_labelName; }
+    inline const Aws::String& GetLabelName() const { return m_labelName; }
     inline bool LabelNameHasBeenSet() const { return m_labelNameHasBeenSet; }
-    inline void SetLabelName(const Aws::String& value) { m_labelNameHasBeenSet = true; m_labelName = value; }
-    inline void SetLabelName(Aws::String&& value) { m_labelNameHasBeenSet = true; m_labelName = std::move(value); }
-    inline void SetLabelName(const char* value) { m_labelNameHasBeenSet = true; m_labelName.assign(value); }
-    inline LabelNameCondition& WithLabelName(const Aws::String& value) { SetLabelName(value); return *this;}
-    inline LabelNameCondition& WithLabelName(Aws::String&& value) { SetLabelName(std::move(value)); return *this;}
-    inline LabelNameCondition& WithLabelName(const char* value) { SetLabelName(value); return *this;}
+    template<typename LabelNameT = Aws::String>
+    void SetLabelName(LabelNameT&& value) { m_labelNameHasBeenSet = true; m_labelName = std::forward<LabelNameT>(value); }
+    template<typename LabelNameT = Aws::String>
+    LabelNameCondition& WithLabelName(LabelNameT&& value) { SetLabelName(std::forward<LabelNameT>(value)); return *this;}
     ///@}
   private:
 

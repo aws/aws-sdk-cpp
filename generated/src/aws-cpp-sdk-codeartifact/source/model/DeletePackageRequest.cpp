@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeletePackageRequest::DeletePackageRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_packageHasBeenSet(false)
-{
-}
-
 Aws::String DeletePackageRequest::SerializePayload() const
 {
   return {};

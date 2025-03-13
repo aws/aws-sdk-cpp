@@ -32,7 +32,7 @@ namespace Model
   class RomaniaAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API RomaniaAdditionalInfo();
+    AWS_TAXSETTINGS_API RomaniaAdditionalInfo() = default;
     AWS_TAXSETTINGS_API RomaniaAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API RomaniaAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p> The tax registration number type. The value can be
      * <code>TaxRegistrationNumber</code> or <code>LocalRegistrationNumber</code>. </p>
      */
-    inline const TaxRegistrationNumberType& GetTaxRegistrationNumberType() const{ return m_taxRegistrationNumberType; }
+    inline TaxRegistrationNumberType GetTaxRegistrationNumberType() const { return m_taxRegistrationNumberType; }
     inline bool TaxRegistrationNumberTypeHasBeenSet() const { return m_taxRegistrationNumberTypeHasBeenSet; }
-    inline void SetTaxRegistrationNumberType(const TaxRegistrationNumberType& value) { m_taxRegistrationNumberTypeHasBeenSet = true; m_taxRegistrationNumberType = value; }
-    inline void SetTaxRegistrationNumberType(TaxRegistrationNumberType&& value) { m_taxRegistrationNumberTypeHasBeenSet = true; m_taxRegistrationNumberType = std::move(value); }
-    inline RomaniaAdditionalInfo& WithTaxRegistrationNumberType(const TaxRegistrationNumberType& value) { SetTaxRegistrationNumberType(value); return *this;}
-    inline RomaniaAdditionalInfo& WithTaxRegistrationNumberType(TaxRegistrationNumberType&& value) { SetTaxRegistrationNumberType(std::move(value)); return *this;}
+    inline void SetTaxRegistrationNumberType(TaxRegistrationNumberType value) { m_taxRegistrationNumberTypeHasBeenSet = true; m_taxRegistrationNumberType = value; }
+    inline RomaniaAdditionalInfo& WithTaxRegistrationNumberType(TaxRegistrationNumberType value) { SetTaxRegistrationNumberType(value); return *this;}
     ///@}
   private:
 
-    TaxRegistrationNumberType m_taxRegistrationNumberType;
+    TaxRegistrationNumberType m_taxRegistrationNumberType{TaxRegistrationNumberType::NOT_SET};
     bool m_taxRegistrationNumberTypeHasBeenSet = false;
   };
 

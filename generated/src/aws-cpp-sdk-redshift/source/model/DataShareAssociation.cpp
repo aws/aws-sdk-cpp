@@ -20,22 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-DataShareAssociation::DataShareAssociation() : 
-    m_consumerIdentifierHasBeenSet(false),
-    m_status(DataShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_consumerRegionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_statusChangeDateHasBeenSet(false),
-    m_producerAllowedWrites(false),
-    m_producerAllowedWritesHasBeenSet(false),
-    m_consumerAcceptedWrites(false),
-    m_consumerAcceptedWritesHasBeenSet(false)
-{
-}
-
 DataShareAssociation::DataShareAssociation(const XmlNode& xmlNode)
-  : DataShareAssociation()
 {
   *this = xmlNode;
 }
@@ -51,42 +36,49 @@ DataShareAssociation& DataShareAssociation::operator =(const XmlNode& xmlNode)
     {
       m_consumerIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(consumerIdentifierNode.GetText());
       m_consumerIdentifierHasBeenSet = true;
+       m_consumerIdentifierHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = DataShareStatusMapper::GetDataShareStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = DataShareStatusMapper::GetDataShareStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode consumerRegionNode = resultNode.FirstChild("ConsumerRegion");
     if(!consumerRegionNode.IsNull())
     {
       m_consumerRegion = Aws::Utils::Xml::DecodeEscapedXmlText(consumerRegionNode.GetText());
       m_consumerRegionHasBeenSet = true;
+       m_consumerRegionHasBeenSet = true;
     }
     XmlNode createdDateNode = resultNode.FirstChild("CreatedDate");
     if(!createdDateNode.IsNull())
     {
       m_createdDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdDateHasBeenSet = true;
+       m_createdDateHasBeenSet = true;
     }
     XmlNode statusChangeDateNode = resultNode.FirstChild("StatusChangeDate");
     if(!statusChangeDateNode.IsNull())
     {
       m_statusChangeDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusChangeDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_statusChangeDateHasBeenSet = true;
+       m_statusChangeDateHasBeenSet = true;
     }
     XmlNode producerAllowedWritesNode = resultNode.FirstChild("ProducerAllowedWrites");
     if(!producerAllowedWritesNode.IsNull())
     {
       m_producerAllowedWrites = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(producerAllowedWritesNode.GetText()).c_str()).c_str());
       m_producerAllowedWritesHasBeenSet = true;
+       m_producerAllowedWritesHasBeenSet = true;
     }
     XmlNode consumerAcceptedWritesNode = resultNode.FirstChild("ConsumerAcceptedWrites");
     if(!consumerAcceptedWritesNode.IsNull())
     {
       m_consumerAcceptedWrites = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(consumerAcceptedWritesNode.GetText()).c_str()).c_str());
       m_consumerAcceptedWritesHasBeenSet = true;
+       m_consumerAcceptedWritesHasBeenSet = true;
     }
   }
 

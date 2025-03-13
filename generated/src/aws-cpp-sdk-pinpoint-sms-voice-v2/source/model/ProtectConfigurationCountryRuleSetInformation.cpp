@@ -18,14 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-ProtectConfigurationCountryRuleSetInformation::ProtectConfigurationCountryRuleSetInformation() : 
-    m_protectStatus(ProtectStatus::NOT_SET),
-    m_protectStatusHasBeenSet(false)
-{
-}
-
 ProtectConfigurationCountryRuleSetInformation::ProtectConfigurationCountryRuleSetInformation(JsonView jsonValue)
-  : ProtectConfigurationCountryRuleSetInformation()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ProtectConfigurationCountryRuleSetInformation& ProtectConfigurationCountryRuleSe
   if(jsonValue.ValueExists("ProtectStatus"))
   {
     m_protectStatus = ProtectStatusMapper::GetProtectStatusForName(jsonValue.GetString("ProtectStatus"));
-
     m_protectStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

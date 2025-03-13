@@ -17,18 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateBotVersionResult::CreateBotVersionResult() : 
-    m_status(Status::NOT_SET),
-    m_idleSessionTTLInSeconds(0),
-    m_locale(Locale::NOT_SET),
-    m_childDirected(false),
-    m_enableModelImprovements(false),
-    m_detectSentiment(false)
-{
-}
-
 CreateBotVersionResult::CreateBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateBotVersionResult()
 {
   *this = result;
 }
@@ -39,15 +28,13 @@ CreateBotVersionResult& CreateBotVersionResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intents"))
   {
     Aws::Utils::Array<JsonView> intentsJsonList = jsonValue.GetArray("intents");
@@ -55,98 +42,85 @@ CreateBotVersionResult& CreateBotVersionResult::operator =(const Aws::AmazonWebS
     {
       m_intents.push_back(intentsJsonList[intentsIndex].AsObject());
     }
+    m_intentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clarificationPrompt"))
   {
     m_clarificationPrompt = jsonValue.GetObject("clarificationPrompt");
-
+    m_clarificationPromptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("abortStatement"))
   {
     m_abortStatement = jsonValue.GetObject("abortStatement");
-
+    m_abortStatementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetDouble("lastUpdatedDate");
-
+    m_lastUpdatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
+    m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idleSessionTTLInSeconds"))
   {
     m_idleSessionTTLInSeconds = jsonValue.GetInteger("idleSessionTTLInSeconds");
-
+    m_idleSessionTTLInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("voiceId"))
   {
     m_voiceId = jsonValue.GetString("voiceId");
-
+    m_voiceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("checksum"))
   {
     m_checksum = jsonValue.GetString("checksum");
-
+    m_checksumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
+    m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("locale"))
   {
     m_locale = LocaleMapper::GetLocaleForName(jsonValue.GetString("locale"));
-
+    m_localeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("childDirected"))
   {
     m_childDirected = jsonValue.GetBool("childDirected");
-
+    m_childDirectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableModelImprovements"))
   {
     m_enableModelImprovements = jsonValue.GetBool("enableModelImprovements");
-
+    m_enableModelImprovementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectSentiment"))
   {
     m_detectSentiment = jsonValue.GetBool("detectSentiment");
-
+    m_detectSentimentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

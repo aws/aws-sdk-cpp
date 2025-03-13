@@ -18,20 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConfigurationAggregator::ConfigurationAggregator() : 
-    m_configurationAggregatorNameHasBeenSet(false),
-    m_configurationAggregatorArnHasBeenSet(false),
-    m_accountAggregationSourcesHasBeenSet(false),
-    m_organizationAggregationSourceHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_aggregatorFiltersHasBeenSet(false)
-{
-}
-
 ConfigurationAggregator::ConfigurationAggregator(JsonView jsonValue)
-  : ConfigurationAggregator()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ ConfigurationAggregator& ConfigurationAggregator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConfigurationAggregatorName"))
   {
     m_configurationAggregatorName = jsonValue.GetString("ConfigurationAggregatorName");
-
     m_configurationAggregatorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationAggregatorArn"))
   {
     m_configurationAggregatorArn = jsonValue.GetString("ConfigurationAggregatorArn");
-
     m_configurationAggregatorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountAggregationSources"))
   {
     Aws::Utils::Array<JsonView> accountAggregationSourcesJsonList = jsonValue.GetArray("AccountAggregationSources");
@@ -61,42 +44,31 @@ ConfigurationAggregator& ConfigurationAggregator::operator =(JsonView jsonValue)
     }
     m_accountAggregationSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationAggregationSource"))
   {
     m_organizationAggregationSource = jsonValue.GetObject("OrganizationAggregationSource");
-
     m_organizationAggregationSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregatorFilters"))
   {
     m_aggregatorFilters = jsonValue.GetObject("AggregatorFilters");
-
     m_aggregatorFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

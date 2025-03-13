@@ -12,23 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAgentActionGroupRequest::UpdateAgentActionGroupRequest() : 
-    m_actionGroupExecutorHasBeenSet(false),
-    m_actionGroupIdHasBeenSet(false),
-    m_actionGroupNameHasBeenSet(false),
-    m_actionGroupState(ActionGroupState::NOT_SET),
-    m_actionGroupStateHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_apiSchemaHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_functionSchemaHasBeenSet(false),
-    m_parentActionGroupSignature(ActionGroupSignature::NOT_SET),
-    m_parentActionGroupSignatureHasBeenSet(false),
-    m_parentActionGroupSignatureParamsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAgentActionGroupRequest::SerializePayload() const
 {
   JsonValue payload;

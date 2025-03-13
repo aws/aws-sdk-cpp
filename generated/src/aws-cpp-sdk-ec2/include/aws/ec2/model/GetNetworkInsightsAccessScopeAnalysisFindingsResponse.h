@@ -31,7 +31,7 @@ namespace Model
   class GetNetworkInsightsAccessScopeAnalysisFindingsResponse
   {
   public:
-    AWS_EC2_API GetNetworkInsightsAccessScopeAnalysisFindingsResponse();
+    AWS_EC2_API GetNetworkInsightsAccessScopeAnalysisFindingsResponse() = default;
     AWS_EC2_API GetNetworkInsightsAccessScopeAnalysisFindingsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetNetworkInsightsAccessScopeAnalysisFindingsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,37 +40,33 @@ namespace Model
     /**
      * <p>The ID of the Network Access Scope analysis.</p>
      */
-    inline const Aws::String& GetNetworkInsightsAccessScopeAnalysisId() const{ return m_networkInsightsAccessScopeAnalysisId; }
-    inline void SetNetworkInsightsAccessScopeAnalysisId(const Aws::String& value) { m_networkInsightsAccessScopeAnalysisId = value; }
-    inline void SetNetworkInsightsAccessScopeAnalysisId(Aws::String&& value) { m_networkInsightsAccessScopeAnalysisId = std::move(value); }
-    inline void SetNetworkInsightsAccessScopeAnalysisId(const char* value) { m_networkInsightsAccessScopeAnalysisId.assign(value); }
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithNetworkInsightsAccessScopeAnalysisId(const Aws::String& value) { SetNetworkInsightsAccessScopeAnalysisId(value); return *this;}
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithNetworkInsightsAccessScopeAnalysisId(Aws::String&& value) { SetNetworkInsightsAccessScopeAnalysisId(std::move(value)); return *this;}
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithNetworkInsightsAccessScopeAnalysisId(const char* value) { SetNetworkInsightsAccessScopeAnalysisId(value); return *this;}
+    inline const Aws::String& GetNetworkInsightsAccessScopeAnalysisId() const { return m_networkInsightsAccessScopeAnalysisId; }
+    template<typename NetworkInsightsAccessScopeAnalysisIdT = Aws::String>
+    void SetNetworkInsightsAccessScopeAnalysisId(NetworkInsightsAccessScopeAnalysisIdT&& value) { m_networkInsightsAccessScopeAnalysisIdHasBeenSet = true; m_networkInsightsAccessScopeAnalysisId = std::forward<NetworkInsightsAccessScopeAnalysisIdT>(value); }
+    template<typename NetworkInsightsAccessScopeAnalysisIdT = Aws::String>
+    GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithNetworkInsightsAccessScopeAnalysisId(NetworkInsightsAccessScopeAnalysisIdT&& value) { SetNetworkInsightsAccessScopeAnalysisId(std::forward<NetworkInsightsAccessScopeAnalysisIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of Network Access Scope Analysis.</p>
      */
-    inline const AnalysisStatus& GetAnalysisStatus() const{ return m_analysisStatus; }
-    inline void SetAnalysisStatus(const AnalysisStatus& value) { m_analysisStatus = value; }
-    inline void SetAnalysisStatus(AnalysisStatus&& value) { m_analysisStatus = std::move(value); }
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithAnalysisStatus(const AnalysisStatus& value) { SetAnalysisStatus(value); return *this;}
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithAnalysisStatus(AnalysisStatus&& value) { SetAnalysisStatus(std::move(value)); return *this;}
+    inline AnalysisStatus GetAnalysisStatus() const { return m_analysisStatus; }
+    inline void SetAnalysisStatus(AnalysisStatus value) { m_analysisStatusHasBeenSet = true; m_analysisStatus = value; }
+    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithAnalysisStatus(AnalysisStatus value) { SetAnalysisStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The findings associated with Network Access Scope Analysis.</p>
      */
-    inline const Aws::Vector<AccessScopeAnalysisFinding>& GetAnalysisFindings() const{ return m_analysisFindings; }
-    inline void SetAnalysisFindings(const Aws::Vector<AccessScopeAnalysisFinding>& value) { m_analysisFindings = value; }
-    inline void SetAnalysisFindings(Aws::Vector<AccessScopeAnalysisFinding>&& value) { m_analysisFindings = std::move(value); }
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithAnalysisFindings(const Aws::Vector<AccessScopeAnalysisFinding>& value) { SetAnalysisFindings(value); return *this;}
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithAnalysisFindings(Aws::Vector<AccessScopeAnalysisFinding>&& value) { SetAnalysisFindings(std::move(value)); return *this;}
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& AddAnalysisFindings(const AccessScopeAnalysisFinding& value) { m_analysisFindings.push_back(value); return *this; }
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& AddAnalysisFindings(AccessScopeAnalysisFinding&& value) { m_analysisFindings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccessScopeAnalysisFinding>& GetAnalysisFindings() const { return m_analysisFindings; }
+    template<typename AnalysisFindingsT = Aws::Vector<AccessScopeAnalysisFinding>>
+    void SetAnalysisFindings(AnalysisFindingsT&& value) { m_analysisFindingsHasBeenSet = true; m_analysisFindings = std::forward<AnalysisFindingsT>(value); }
+    template<typename AnalysisFindingsT = Aws::Vector<AccessScopeAnalysisFinding>>
+    GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithAnalysisFindings(AnalysisFindingsT&& value) { SetAnalysisFindings(std::forward<AnalysisFindingsT>(value)); return *this;}
+    template<typename AnalysisFindingsT = AccessScopeAnalysisFinding>
+    GetNetworkInsightsAccessScopeAnalysisFindingsResponse& AddAnalysisFindings(AnalysisFindingsT&& value) { m_analysisFindingsHasBeenSet = true; m_analysisFindings.emplace_back(std::forward<AnalysisFindingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,34 +74,37 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetNetworkInsightsAccessScopeAnalysisFindingsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_networkInsightsAccessScopeAnalysisId;
+    bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
 
-    AnalysisStatus m_analysisStatus;
+    AnalysisStatus m_analysisStatus{AnalysisStatus::NOT_SET};
+    bool m_analysisStatusHasBeenSet = false;
 
     Aws::Vector<AccessScopeAnalysisFinding> m_analysisFindings;
+    bool m_analysisFindingsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

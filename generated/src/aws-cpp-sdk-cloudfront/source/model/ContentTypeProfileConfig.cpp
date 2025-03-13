@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ContentTypeProfileConfig::ContentTypeProfileConfig() : 
-    m_forwardWhenContentTypeIsUnknown(false),
-    m_forwardWhenContentTypeIsUnknownHasBeenSet(false),
-    m_contentTypeProfilesHasBeenSet(false)
-{
-}
-
 ContentTypeProfileConfig::ContentTypeProfileConfig(const XmlNode& xmlNode)
-  : ContentTypeProfileConfig()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ ContentTypeProfileConfig& ContentTypeProfileConfig::operator =(const XmlNode& xm
     {
       m_forwardWhenContentTypeIsUnknown = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forwardWhenContentTypeIsUnknownNode.GetText()).c_str()).c_str());
       m_forwardWhenContentTypeIsUnknownHasBeenSet = true;
+       m_forwardWhenContentTypeIsUnknownHasBeenSet = true;
     }
     XmlNode contentTypeProfilesNode = resultNode.FirstChild("ContentTypeProfiles");
     if(!contentTypeProfilesNode.IsNull())
     {
       m_contentTypeProfiles = contentTypeProfilesNode;
       m_contentTypeProfilesHasBeenSet = true;
+       m_contentTypeProfilesHasBeenSet = true;
     }
   }
 

@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-HostInstance::HostInstance() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
-{
-}
-
 HostInstance::HostInstance(const XmlNode& xmlNode)
-  : HostInstance()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ HostInstance& HostInstance::operator =(const XmlNode& xmlNode)
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
   }
 

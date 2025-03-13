@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoRollbackConfig::AutoRollbackConfig() : 
-    m_alarmsHasBeenSet(false)
-{
-}
-
 AutoRollbackConfig::AutoRollbackConfig(JsonView jsonValue)
-  : AutoRollbackConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AutoRollbackConfig& AutoRollbackConfig::operator =(JsonView jsonValue)
     }
     m_alarmsHasBeenSet = true;
   }
-
   return *this;
 }
 

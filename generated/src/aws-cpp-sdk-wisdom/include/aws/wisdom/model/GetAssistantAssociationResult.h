@@ -28,7 +28,7 @@ namespace Model
   class GetAssistantAssociationResult
   {
   public:
-    AWS_CONNECTWISDOMSERVICE_API GetAssistantAssociationResult();
+    AWS_CONNECTWISDOMSERVICE_API GetAssistantAssociationResult() = default;
     AWS_CONNECTWISDOMSERVICE_API GetAssistantAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTWISDOMSERVICE_API GetAssistantAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The assistant association.</p>
      */
-    inline const AssistantAssociationData& GetAssistantAssociation() const{ return m_assistantAssociation; }
-    inline void SetAssistantAssociation(const AssistantAssociationData& value) { m_assistantAssociation = value; }
-    inline void SetAssistantAssociation(AssistantAssociationData&& value) { m_assistantAssociation = std::move(value); }
-    inline GetAssistantAssociationResult& WithAssistantAssociation(const AssistantAssociationData& value) { SetAssistantAssociation(value); return *this;}
-    inline GetAssistantAssociationResult& WithAssistantAssociation(AssistantAssociationData&& value) { SetAssistantAssociation(std::move(value)); return *this;}
+    inline const AssistantAssociationData& GetAssistantAssociation() const { return m_assistantAssociation; }
+    template<typename AssistantAssociationT = AssistantAssociationData>
+    void SetAssistantAssociation(AssistantAssociationT&& value) { m_assistantAssociationHasBeenSet = true; m_assistantAssociation = std::forward<AssistantAssociationT>(value); }
+    template<typename AssistantAssociationT = AssistantAssociationData>
+    GetAssistantAssociationResult& WithAssistantAssociation(AssistantAssociationT&& value) { SetAssistantAssociation(std::forward<AssistantAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAssistantAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAssistantAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAssistantAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAssistantAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AssistantAssociationData m_assistantAssociation;
+    bool m_assistantAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

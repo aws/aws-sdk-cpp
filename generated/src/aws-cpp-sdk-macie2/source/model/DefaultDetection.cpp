@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-DefaultDetection::DefaultDetection() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_occurrencesHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 DefaultDetection::DefaultDetection(JsonView jsonValue)
-  : DefaultDetection()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DefaultDetection& DefaultDetection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInt64("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("occurrences"))
   {
     m_occurrences = jsonValue.GetObject("occurrences");
-
     m_occurrencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

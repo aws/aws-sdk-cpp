@@ -12,21 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchAssociatedTranscriptsRequest::SearchAssociatedTranscriptsRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_botRecommendationIdHasBeenSet(false),
-    m_searchOrder(SearchOrder::NOT_SET),
-    m_searchOrderHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextIndex(0),
-    m_nextIndexHasBeenSet(false)
-{
-}
-
 Aws::String SearchAssociatedTranscriptsRequest::SerializePayload() const
 {
   JsonValue payload;

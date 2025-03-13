@@ -12,17 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRuleRequest::UpdateRuleRequest() : 
-    m_ruleIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_publishStatus(RulePublishStatus::NOT_SET),
-    m_publishStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRuleRequest::SerializePayload() const
 {
   JsonValue payload;

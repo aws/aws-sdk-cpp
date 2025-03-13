@@ -18,16 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-SuppressedDestinationSummary::SuppressedDestinationSummary() : 
-    m_emailAddressHasBeenSet(false),
-    m_reason(SuppressionListReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
-{
-}
-
 SuppressedDestinationSummary::SuppressedDestinationSummary(JsonView jsonValue)
-  : SuppressedDestinationSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SuppressedDestinationSummary& SuppressedDestinationSummary::operator =(JsonView 
   if(jsonValue.ValueExists("EmailAddress"))
   {
     m_emailAddress = jsonValue.GetString("EmailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = SuppressionListReasonMapper::GetSuppressionListReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

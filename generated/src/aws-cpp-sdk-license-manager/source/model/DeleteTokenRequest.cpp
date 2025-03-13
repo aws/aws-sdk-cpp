@@ -12,11 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTokenRequest::DeleteTokenRequest() : 
-    m_tokenIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTokenRequest::SerializePayload() const
 {
   JsonValue payload;

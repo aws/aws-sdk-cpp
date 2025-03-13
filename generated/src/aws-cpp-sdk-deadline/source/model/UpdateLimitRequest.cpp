@@ -12,16 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLimitRequest::UpdateLimitRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_limitIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_maxCount(0),
-    m_maxCountHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLimitRequest::SerializePayload() const
 {
   JsonValue payload;

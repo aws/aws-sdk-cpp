@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-GuardrailTopicPolicyAssessment::GuardrailTopicPolicyAssessment() : 
-    m_topicsHasBeenSet(false)
-{
-}
-
 GuardrailTopicPolicyAssessment::GuardrailTopicPolicyAssessment(JsonView jsonValue)
-  : GuardrailTopicPolicyAssessment()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ GuardrailTopicPolicyAssessment& GuardrailTopicPolicyAssessment::operator =(JsonV
     }
     m_topicsHasBeenSet = true;
   }
-
   return *this;
 }
 

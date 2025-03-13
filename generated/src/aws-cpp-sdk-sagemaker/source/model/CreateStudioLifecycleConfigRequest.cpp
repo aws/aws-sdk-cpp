@@ -12,15 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStudioLifecycleConfigRequest::CreateStudioLifecycleConfigRequest() : 
-    m_studioLifecycleConfigNameHasBeenSet(false),
-    m_studioLifecycleConfigContentHasBeenSet(false),
-    m_studioLifecycleConfigAppType(StudioLifecycleConfigAppType::NOT_SET),
-    m_studioLifecycleConfigAppTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateStudioLifecycleConfigRequest::SerializePayload() const
 {
   JsonValue payload;

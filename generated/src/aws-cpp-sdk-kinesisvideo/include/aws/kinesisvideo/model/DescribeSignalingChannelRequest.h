@@ -21,7 +21,7 @@ namespace Model
   class DescribeSignalingChannelRequest : public KinesisVideoRequest
   {
   public:
-    AWS_KINESISVIDEO_API DescribeSignalingChannelRequest();
+    AWS_KINESISVIDEO_API DescribeSignalingChannelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The name of the signaling channel that you want to describe.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline DescribeSignalingChannelRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline DescribeSignalingChannelRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline DescribeSignalingChannelRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    DescribeSignalingChannelRequest& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the signaling channel that you want to describe.</p>
      */
-    inline const Aws::String& GetChannelARN() const{ return m_channelARN; }
+    inline const Aws::String& GetChannelARN() const { return m_channelARN; }
     inline bool ChannelARNHasBeenSet() const { return m_channelARNHasBeenSet; }
-    inline void SetChannelARN(const Aws::String& value) { m_channelARNHasBeenSet = true; m_channelARN = value; }
-    inline void SetChannelARN(Aws::String&& value) { m_channelARNHasBeenSet = true; m_channelARN = std::move(value); }
-    inline void SetChannelARN(const char* value) { m_channelARNHasBeenSet = true; m_channelARN.assign(value); }
-    inline DescribeSignalingChannelRequest& WithChannelARN(const Aws::String& value) { SetChannelARN(value); return *this;}
-    inline DescribeSignalingChannelRequest& WithChannelARN(Aws::String&& value) { SetChannelARN(std::move(value)); return *this;}
-    inline DescribeSignalingChannelRequest& WithChannelARN(const char* value) { SetChannelARN(value); return *this;}
+    template<typename ChannelARNT = Aws::String>
+    void SetChannelARN(ChannelARNT&& value) { m_channelARNHasBeenSet = true; m_channelARN = std::forward<ChannelARNT>(value); }
+    template<typename ChannelARNT = Aws::String>
+    DescribeSignalingChannelRequest& WithChannelARN(ChannelARNT&& value) { SetChannelARN(std::forward<ChannelARNT>(value)); return *this;}
     ///@}
   private:
 

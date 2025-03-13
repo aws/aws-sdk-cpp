@@ -22,7 +22,7 @@ namespace Model
   class DescribePullThroughCacheRulesRequest : public ECRRequest
   {
   public:
-    AWS_ECR_API DescribePullThroughCacheRulesRequest();
+    AWS_ECR_API DescribePullThroughCacheRulesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * pull through cache rules for. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
-    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
+    inline const Aws::String& GetRegistryId() const { return m_registryId; }
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-    inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-    inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-    inline DescribePullThroughCacheRulesRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-    inline DescribePullThroughCacheRulesRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-    inline DescribePullThroughCacheRulesRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    template<typename RegistryIdT = Aws::String>
+    void SetRegistryId(RegistryIdT&& value) { m_registryIdHasBeenSet = true; m_registryId = std::forward<RegistryIdT>(value); }
+    template<typename RegistryIdT = Aws::String>
+    DescribePullThroughCacheRulesRequest& WithRegistryId(RegistryIdT&& value) { SetRegistryId(std::forward<RegistryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,15 +55,14 @@ namespace Model
      * rules to return. If no repository prefix value is specified, all pull through
      * cache rules are returned.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEcrRepositoryPrefixes() const{ return m_ecrRepositoryPrefixes; }
+    inline const Aws::Vector<Aws::String>& GetEcrRepositoryPrefixes() const { return m_ecrRepositoryPrefixes; }
     inline bool EcrRepositoryPrefixesHasBeenSet() const { return m_ecrRepositoryPrefixesHasBeenSet; }
-    inline void SetEcrRepositoryPrefixes(const Aws::Vector<Aws::String>& value) { m_ecrRepositoryPrefixesHasBeenSet = true; m_ecrRepositoryPrefixes = value; }
-    inline void SetEcrRepositoryPrefixes(Aws::Vector<Aws::String>&& value) { m_ecrRepositoryPrefixesHasBeenSet = true; m_ecrRepositoryPrefixes = std::move(value); }
-    inline DescribePullThroughCacheRulesRequest& WithEcrRepositoryPrefixes(const Aws::Vector<Aws::String>& value) { SetEcrRepositoryPrefixes(value); return *this;}
-    inline DescribePullThroughCacheRulesRequest& WithEcrRepositoryPrefixes(Aws::Vector<Aws::String>&& value) { SetEcrRepositoryPrefixes(std::move(value)); return *this;}
-    inline DescribePullThroughCacheRulesRequest& AddEcrRepositoryPrefixes(const Aws::String& value) { m_ecrRepositoryPrefixesHasBeenSet = true; m_ecrRepositoryPrefixes.push_back(value); return *this; }
-    inline DescribePullThroughCacheRulesRequest& AddEcrRepositoryPrefixes(Aws::String&& value) { m_ecrRepositoryPrefixesHasBeenSet = true; m_ecrRepositoryPrefixes.push_back(std::move(value)); return *this; }
-    inline DescribePullThroughCacheRulesRequest& AddEcrRepositoryPrefixes(const char* value) { m_ecrRepositoryPrefixesHasBeenSet = true; m_ecrRepositoryPrefixes.push_back(value); return *this; }
+    template<typename EcrRepositoryPrefixesT = Aws::Vector<Aws::String>>
+    void SetEcrRepositoryPrefixes(EcrRepositoryPrefixesT&& value) { m_ecrRepositoryPrefixesHasBeenSet = true; m_ecrRepositoryPrefixes = std::forward<EcrRepositoryPrefixesT>(value); }
+    template<typename EcrRepositoryPrefixesT = Aws::Vector<Aws::String>>
+    DescribePullThroughCacheRulesRequest& WithEcrRepositoryPrefixes(EcrRepositoryPrefixesT&& value) { SetEcrRepositoryPrefixes(std::forward<EcrRepositoryPrefixesT>(value)); return *this;}
+    template<typename EcrRepositoryPrefixesT = Aws::String>
+    DescribePullThroughCacheRulesRequest& AddEcrRepositoryPrefixes(EcrRepositoryPrefixesT&& value) { m_ecrRepositoryPrefixesHasBeenSet = true; m_ecrRepositoryPrefixes.emplace_back(std::forward<EcrRepositoryPrefixesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,14 +74,12 @@ namespace Model
      * returned the <code>nextToken</code> value. This value is null when there are no
      * more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribePullThroughCacheRulesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribePullThroughCacheRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribePullThroughCacheRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribePullThroughCacheRulesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,7 +95,7 @@ namespace Model
      * parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code>
      * returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribePullThroughCacheRulesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -116,7 +111,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

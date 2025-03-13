@@ -34,7 +34,7 @@ namespace Model
   class FolderSearchFilter
   {
   public:
-    AWS_QUICKSIGHT_API FolderSearchFilter();
+    AWS_QUICKSIGHT_API FolderSearchFilter() = default;
     AWS_QUICKSIGHT_API FolderSearchFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FolderSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,10 @@ namespace Model
      * "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code>
      * operator only supports the <code>NAME</code> value <code>FOLDER_NAME</code>.</p>
      */
-    inline const FilterOperator& GetOperator() const{ return m_operator; }
+    inline FilterOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const FilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(FilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline FolderSearchFilter& WithOperator(const FilterOperator& value) { SetOperator(value); return *this;}
-    inline FolderSearchFilter& WithOperator(FilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(FilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline FolderSearchFilter& WithOperator(FilterOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +88,10 @@ namespace Model
      * option and leave the value blank, all root-level folders in the account are
      * returned. </p> </li> </ul>
      */
-    inline const FolderFilterAttribute& GetName() const{ return m_name; }
+    inline FolderFilterAttribute GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const FolderFilterAttribute& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(FolderFilterAttribute&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline FolderSearchFilter& WithName(const FolderFilterAttribute& value) { SetName(value); return *this;}
-    inline FolderSearchFilter& WithName(FolderFilterAttribute&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(FolderFilterAttribute value) { m_nameHasBeenSet = true; m_name = value; }
+    inline FolderSearchFilter& WithName(FolderFilterAttribute value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -104,21 +100,19 @@ namespace Model
      * <code>PARENT_FOLDER_ARN</code>), that you want to use as a filter. For example,
      * <code>"Value": "arn:aws:quicksight:us-east-1:1:folder/folderId"</code>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline FolderSearchFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline FolderSearchFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline FolderSearchFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    FolderSearchFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    FilterOperator m_operator;
+    FilterOperator m_operator{FilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
-    FolderFilterAttribute m_name;
+    FolderFilterAttribute m_name{FolderFilterAttribute::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

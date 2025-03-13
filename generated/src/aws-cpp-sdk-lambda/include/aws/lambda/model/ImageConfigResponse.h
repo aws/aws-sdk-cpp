@@ -33,7 +33,7 @@ namespace Model
   class ImageConfigResponse
   {
   public:
-    AWS_LAMBDA_API ImageConfigResponse();
+    AWS_LAMBDA_API ImageConfigResponse() = default;
     AWS_LAMBDA_API ImageConfigResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API ImageConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Configuration values that override the container image Dockerfile.</p>
      */
-    inline const ImageConfig& GetImageConfig() const{ return m_imageConfig; }
+    inline const ImageConfig& GetImageConfig() const { return m_imageConfig; }
     inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
-    inline void SetImageConfig(const ImageConfig& value) { m_imageConfigHasBeenSet = true; m_imageConfig = value; }
-    inline void SetImageConfig(ImageConfig&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::move(value); }
-    inline ImageConfigResponse& WithImageConfig(const ImageConfig& value) { SetImageConfig(value); return *this;}
-    inline ImageConfigResponse& WithImageConfig(ImageConfig&& value) { SetImageConfig(std::move(value)); return *this;}
+    template<typename ImageConfigT = ImageConfig>
+    void SetImageConfig(ImageConfigT&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::forward<ImageConfigT>(value); }
+    template<typename ImageConfigT = ImageConfig>
+    ImageConfigResponse& WithImageConfig(ImageConfigT&& value) { SetImageConfig(std::forward<ImageConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
      */
-    inline const ImageConfigError& GetError() const{ return m_error; }
+    inline const ImageConfigError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ImageConfigError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ImageConfigError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline ImageConfigResponse& WithError(const ImageConfigError& value) { SetError(value); return *this;}
-    inline ImageConfigResponse& WithError(ImageConfigError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ImageConfigError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ImageConfigError>
+    ImageConfigResponse& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 

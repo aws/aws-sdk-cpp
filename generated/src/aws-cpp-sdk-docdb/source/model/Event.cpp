@@ -20,19 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-Event::Event() : 
-    m_sourceIdentifierHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_sourceArnHasBeenSet(false)
-{
-}
-
 Event::Event(const XmlNode& xmlNode)
-  : Event()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,48 @@ Event& Event::operator =(const XmlNode& xmlNode)
     {
       m_sourceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(sourceIdentifierNode.GetText());
       m_sourceIdentifierHasBeenSet = true;
+       m_sourceIdentifierHasBeenSet = true;
     }
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
     if(!sourceTypeNode.IsNull())
     {
-      m_sourceType = SourceTypeMapper::GetSourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()).c_str());
+      m_sourceType = SourceTypeMapper::GetSourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()));
       m_sourceTypeHasBeenSet = true;
+       m_sourceTypeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
     XmlNode eventCategoriesNode = resultNode.FirstChild("EventCategories");
     if(!eventCategoriesNode.IsNull())
     {
       XmlNode eventCategoriesMember = eventCategoriesNode.FirstChild("EventCategory");
+      m_eventCategoriesHasBeenSet = !eventCategoriesMember.IsNull();
       while(!eventCategoriesMember.IsNull())
       {
         m_eventCategories.push_back(eventCategoriesMember.GetText());
         eventCategoriesMember = eventCategoriesMember.NextNode("EventCategory");
       }
 
-      m_eventCategoriesHasBeenSet = true;
+       m_eventCategoriesHasBeenSet = true;
     }
     XmlNode dateNode = resultNode.FirstChild("Date");
     if(!dateNode.IsNull())
     {
       m_date = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_dateHasBeenSet = true;
+       m_dateHasBeenSet = true;
     }
     XmlNode sourceArnNode = resultNode.FirstChild("SourceArn");
     if(!sourceArnNode.IsNull())
     {
       m_sourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(sourceArnNode.GetText());
       m_sourceArnHasBeenSet = true;
+       m_sourceArnHasBeenSet = true;
     }
   }
 

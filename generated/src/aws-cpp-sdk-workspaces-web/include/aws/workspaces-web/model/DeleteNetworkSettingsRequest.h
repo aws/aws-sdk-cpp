@@ -21,7 +21,7 @@ namespace Model
   class DeleteNetworkSettingsRequest : public WorkSpacesWebRequest
   {
   public:
-    AWS_WORKSPACESWEB_API DeleteNetworkSettingsRequest();
+    AWS_WORKSPACESWEB_API DeleteNetworkSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the network settings.</p>
      */
-    inline const Aws::String& GetNetworkSettingsArn() const{ return m_networkSettingsArn; }
+    inline const Aws::String& GetNetworkSettingsArn() const { return m_networkSettingsArn; }
     inline bool NetworkSettingsArnHasBeenSet() const { return m_networkSettingsArnHasBeenSet; }
-    inline void SetNetworkSettingsArn(const Aws::String& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = value; }
-    inline void SetNetworkSettingsArn(Aws::String&& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = std::move(value); }
-    inline void SetNetworkSettingsArn(const char* value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn.assign(value); }
-    inline DeleteNetworkSettingsRequest& WithNetworkSettingsArn(const Aws::String& value) { SetNetworkSettingsArn(value); return *this;}
-    inline DeleteNetworkSettingsRequest& WithNetworkSettingsArn(Aws::String&& value) { SetNetworkSettingsArn(std::move(value)); return *this;}
-    inline DeleteNetworkSettingsRequest& WithNetworkSettingsArn(const char* value) { SetNetworkSettingsArn(value); return *this;}
+    template<typename NetworkSettingsArnT = Aws::String>
+    void SetNetworkSettingsArn(NetworkSettingsArnT&& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = std::forward<NetworkSettingsArnT>(value); }
+    template<typename NetworkSettingsArnT = Aws::String>
+    DeleteNetworkSettingsRequest& WithNetworkSettingsArn(NetworkSettingsArnT&& value) { SetNetworkSettingsArn(std::forward<NetworkSettingsArnT>(value)); return *this;}
     ///@}
   private:
 

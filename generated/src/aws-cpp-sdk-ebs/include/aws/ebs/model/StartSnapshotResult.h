@@ -32,7 +32,7 @@ namespace Model
   class StartSnapshotResult
   {
   public:
-    AWS_EBS_API StartSnapshotResult();
+    AWS_EBS_API StartSnapshotResult() = default;
     AWS_EBS_API StartSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EBS_API StartSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,69 +41,61 @@ namespace Model
     /**
      * <p>The description of the snapshot.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline StartSnapshotResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StartSnapshotResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StartSnapshotResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    StartSnapshotResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the snapshot.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotId.assign(value); }
-    inline StartSnapshotResult& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline StartSnapshotResult& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline StartSnapshotResult& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    StartSnapshotResult& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID of the snapshot owner.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
-    inline StartSnapshotResult& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline StartSnapshotResult& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline StartSnapshotResult& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    StartSnapshotResult& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the snapshot.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Status& value) { m_status = value; }
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-    inline StartSnapshotResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline StartSnapshotResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline Status GetStatus() const { return m_status; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StartSnapshotResult& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the snapshot was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline StartSnapshotResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline StartSnapshotResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    StartSnapshotResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the volume, in GiB.</p>
      */
-    inline long long GetVolumeSize() const{ return m_volumeSize; }
-    inline void SetVolumeSize(long long value) { m_volumeSize = value; }
+    inline long long GetVolumeSize() const { return m_volumeSize; }
+    inline void SetVolumeSize(long long value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
     inline StartSnapshotResult& WithVolumeSize(long long value) { SetVolumeSize(value); return *this;}
     ///@}
 
@@ -111,8 +103,8 @@ namespace Model
     /**
      * <p>The size of the blocks in the snapshot, in bytes.</p>
      */
-    inline int GetBlockSize() const{ return m_blockSize; }
-    inline void SetBlockSize(int value) { m_blockSize = value; }
+    inline int GetBlockSize() const { return m_blockSize; }
+    inline void SetBlockSize(int value) { m_blockSizeHasBeenSet = true; m_blockSize = value; }
     inline StartSnapshotResult& WithBlockSize(int value) { SetBlockSize(value); return *this;}
     ///@}
 
@@ -124,26 +116,24 @@ namespace Model
      * Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud
      * User Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline StartSnapshotResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline StartSnapshotResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartSnapshotResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline StartSnapshotResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    StartSnapshotResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    StartSnapshotResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the parent snapshot.</p>
      */
-    inline const Aws::String& GetParentSnapshotId() const{ return m_parentSnapshotId; }
-    inline void SetParentSnapshotId(const Aws::String& value) { m_parentSnapshotId = value; }
-    inline void SetParentSnapshotId(Aws::String&& value) { m_parentSnapshotId = std::move(value); }
-    inline void SetParentSnapshotId(const char* value) { m_parentSnapshotId.assign(value); }
-    inline StartSnapshotResult& WithParentSnapshotId(const Aws::String& value) { SetParentSnapshotId(value); return *this;}
-    inline StartSnapshotResult& WithParentSnapshotId(Aws::String&& value) { SetParentSnapshotId(std::move(value)); return *this;}
-    inline StartSnapshotResult& WithParentSnapshotId(const char* value) { SetParentSnapshotId(value); return *this;}
+    inline const Aws::String& GetParentSnapshotId() const { return m_parentSnapshotId; }
+    template<typename ParentSnapshotIdT = Aws::String>
+    void SetParentSnapshotId(ParentSnapshotIdT&& value) { m_parentSnapshotIdHasBeenSet = true; m_parentSnapshotId = std::forward<ParentSnapshotIdT>(value); }
+    template<typename ParentSnapshotIdT = Aws::String>
+    StartSnapshotResult& WithParentSnapshotId(ParentSnapshotIdT&& value) { SetParentSnapshotId(std::forward<ParentSnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,61 +141,67 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
      * to encrypt the snapshot.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
-    inline StartSnapshotResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline StartSnapshotResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline StartSnapshotResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    StartSnapshotResult& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const SSEType& GetSseType() const{ return m_sseType; }
-    inline void SetSseType(const SSEType& value) { m_sseType = value; }
-    inline void SetSseType(SSEType&& value) { m_sseType = std::move(value); }
-    inline StartSnapshotResult& WithSseType(const SSEType& value) { SetSseType(value); return *this;}
-    inline StartSnapshotResult& WithSseType(SSEType&& value) { SetSseType(std::move(value)); return *this;}
+    inline SSEType GetSseType() const { return m_sseType; }
+    inline void SetSseType(SSEType value) { m_sseTypeHasBeenSet = true; m_sseType = value; }
+    inline StartSnapshotResult& WithSseType(SSEType value) { SetSseType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartSnapshotResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_snapshotId;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    long long m_volumeSize;
+    long long m_volumeSize{0};
+    bool m_volumeSizeHasBeenSet = false;
 
-    int m_blockSize;
+    int m_blockSize{0};
+    bool m_blockSizeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_parentSnapshotId;
+    bool m_parentSnapshotIdHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
 
-    SSEType m_sseType;
+    SSEType m_sseType{SSEType::NOT_SET};
+    bool m_sseTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

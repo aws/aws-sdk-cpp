@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Bias::Bias() : 
-    m_reportHasBeenSet(false),
-    m_preTrainingReportHasBeenSet(false),
-    m_postTrainingReportHasBeenSet(false)
-{
-}
-
 Bias::Bias(JsonView jsonValue)
-  : Bias()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Bias& Bias::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Report"))
   {
     m_report = jsonValue.GetObject("Report");
-
     m_reportHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreTrainingReport"))
   {
     m_preTrainingReport = jsonValue.GetObject("PreTrainingReport");
-
     m_preTrainingReportHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostTrainingReport"))
   {
     m_postTrainingReport = jsonValue.GetObject("PostTrainingReport");
-
     m_postTrainingReportHasBeenSet = true;
   }
-
   return *this;
 }
 

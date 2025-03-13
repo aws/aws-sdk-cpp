@@ -33,7 +33,7 @@ namespace Model
   class CallAnalyticsJobDetails
   {
   public:
-    AWS_TRANSCRIBESERVICE_API CallAnalyticsJobDetails();
+    AWS_TRANSCRIBESERVICE_API CallAnalyticsJobDetails() = default;
     AWS_TRANSCRIBESERVICE_API CallAnalyticsJobDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API CallAnalyticsJobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * of a call analytics job.</p> <p>This array lists all the analytics features that
      * were skipped, along with their corresponding reason code and message.</p>
      */
-    inline const Aws::Vector<CallAnalyticsSkippedFeature>& GetSkipped() const{ return m_skipped; }
+    inline const Aws::Vector<CallAnalyticsSkippedFeature>& GetSkipped() const { return m_skipped; }
     inline bool SkippedHasBeenSet() const { return m_skippedHasBeenSet; }
-    inline void SetSkipped(const Aws::Vector<CallAnalyticsSkippedFeature>& value) { m_skippedHasBeenSet = true; m_skipped = value; }
-    inline void SetSkipped(Aws::Vector<CallAnalyticsSkippedFeature>&& value) { m_skippedHasBeenSet = true; m_skipped = std::move(value); }
-    inline CallAnalyticsJobDetails& WithSkipped(const Aws::Vector<CallAnalyticsSkippedFeature>& value) { SetSkipped(value); return *this;}
-    inline CallAnalyticsJobDetails& WithSkipped(Aws::Vector<CallAnalyticsSkippedFeature>&& value) { SetSkipped(std::move(value)); return *this;}
-    inline CallAnalyticsJobDetails& AddSkipped(const CallAnalyticsSkippedFeature& value) { m_skippedHasBeenSet = true; m_skipped.push_back(value); return *this; }
-    inline CallAnalyticsJobDetails& AddSkipped(CallAnalyticsSkippedFeature&& value) { m_skippedHasBeenSet = true; m_skipped.push_back(std::move(value)); return *this; }
+    template<typename SkippedT = Aws::Vector<CallAnalyticsSkippedFeature>>
+    void SetSkipped(SkippedT&& value) { m_skippedHasBeenSet = true; m_skipped = std::forward<SkippedT>(value); }
+    template<typename SkippedT = Aws::Vector<CallAnalyticsSkippedFeature>>
+    CallAnalyticsJobDetails& WithSkipped(SkippedT&& value) { SetSkipped(std::forward<SkippedT>(value)); return *this;}
+    template<typename SkippedT = CallAnalyticsSkippedFeature>
+    CallAnalyticsJobDetails& AddSkipped(SkippedT&& value) { m_skippedHasBeenSet = true; m_skipped.emplace_back(std::forward<SkippedT>(value)); return *this; }
     ///@}
   private:
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartAssetBundleExportJobResult::StartAssetBundleExportJobResult() : 
-    m_status(0)
-{
-}
-
 StartAssetBundleExportJobResult::StartAssetBundleExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartAssetBundleExportJobResult()
 {
   *this = result;
 }
@@ -34,25 +28,24 @@ StartAssetBundleExportJobResult& StartAssetBundleExportJobResult::operator =(con
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssetBundleExportJobId"))
   {
     m_assetBundleExportJobId = jsonValue.GetString("AssetBundleExportJobId");
-
+    m_assetBundleExportJobIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

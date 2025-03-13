@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityReservationCommitmentInfo::CapacityReservationCommitmentInfo() : 
-    m_committedInstanceCount(0),
-    m_committedInstanceCountHasBeenSet(false),
-    m_commitmentEndDateHasBeenSet(false)
-{
-}
-
 CapacityReservationCommitmentInfo::CapacityReservationCommitmentInfo(const XmlNode& xmlNode)
-  : CapacityReservationCommitmentInfo()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ CapacityReservationCommitmentInfo& CapacityReservationCommitmentInfo::operator =
     {
       m_committedInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(committedInstanceCountNode.GetText()).c_str()).c_str());
       m_committedInstanceCountHasBeenSet = true;
+       m_committedInstanceCountHasBeenSet = true;
     }
     XmlNode commitmentEndDateNode = resultNode.FirstChild("commitmentEndDate");
     if(!commitmentEndDateNode.IsNull())
     {
       m_commitmentEndDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(commitmentEndDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_commitmentEndDateHasBeenSet = true;
+       m_commitmentEndDateHasBeenSet = true;
     }
   }
 

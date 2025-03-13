@@ -32,7 +32,7 @@ namespace Model
   class StartEarthObservationJobResult
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API StartEarthObservationJobResult();
+    AWS_SAGEMAKERGEOSPATIAL_API StartEarthObservationJobResult() = default;
     AWS_SAGEMAKERGEOSPATIAL_API StartEarthObservationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKERGEOSPATIAL_API StartEarthObservationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,32 +41,30 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline StartEarthObservationJobResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline StartEarthObservationJobResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline StartEarthObservationJobResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    StartEarthObservationJobResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline StartEarthObservationJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline StartEarthObservationJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    StartEarthObservationJobResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The duration of the session, in seconds.</p>
      */
-    inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
-    inline void SetDurationInSeconds(int value) { m_durationInSeconds = value; }
+    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
+    inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline StartEarthObservationJobResult& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
     ///@}
 
@@ -75,125 +73,123 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
      * job.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArn.assign(value); }
-    inline StartEarthObservationJobResult& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline StartEarthObservationJobResult& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline StartEarthObservationJobResult& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    StartEarthObservationJobResult& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Input configuration information for the Earth Observation job.</p>
      */
-    inline const InputConfigOutput& GetInputConfig() const{ return m_inputConfig; }
-    inline void SetInputConfig(const InputConfigOutput& value) { m_inputConfig = value; }
-    inline void SetInputConfig(InputConfigOutput&& value) { m_inputConfig = std::move(value); }
-    inline StartEarthObservationJobResult& WithInputConfig(const InputConfigOutput& value) { SetInputConfig(value); return *this;}
-    inline StartEarthObservationJobResult& WithInputConfig(InputConfigOutput&& value) { SetInputConfig(std::move(value)); return *this;}
+    inline const InputConfigOutput& GetInputConfig() const { return m_inputConfig; }
+    template<typename InputConfigT = InputConfigOutput>
+    void SetInputConfig(InputConfigT&& value) { m_inputConfigHasBeenSet = true; m_inputConfig = std::forward<InputConfigT>(value); }
+    template<typename InputConfigT = InputConfigOutput>
+    StartEarthObservationJobResult& WithInputConfig(InputConfigT&& value) { SetInputConfig(std::forward<InputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object containing information about the job configuration.</p>
      */
-    inline const JobConfigInput& GetJobConfig() const{ return m_jobConfig; }
-    inline void SetJobConfig(const JobConfigInput& value) { m_jobConfig = value; }
-    inline void SetJobConfig(JobConfigInput&& value) { m_jobConfig = std::move(value); }
-    inline StartEarthObservationJobResult& WithJobConfig(const JobConfigInput& value) { SetJobConfig(value); return *this;}
-    inline StartEarthObservationJobResult& WithJobConfig(JobConfigInput&& value) { SetJobConfig(std::move(value)); return *this;}
+    inline const JobConfigInput& GetJobConfig() const { return m_jobConfig; }
+    template<typename JobConfigT = JobConfigInput>
+    void SetJobConfig(JobConfigT&& value) { m_jobConfigHasBeenSet = true; m_jobConfig = std::forward<JobConfigT>(value); }
+    template<typename JobConfigT = JobConfigInput>
+    StartEarthObservationJobResult& WithJobConfig(JobConfigT&& value) { SetJobConfig(std::forward<JobConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Key Management Service key ID for server-side encryption.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
-    inline StartEarthObservationJobResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline StartEarthObservationJobResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline StartEarthObservationJobResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    StartEarthObservationJobResult& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Earth Observation job.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline StartEarthObservationJobResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StartEarthObservationJobResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StartEarthObservationJobResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StartEarthObservationJobResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the Earth Observation job.</p>
      */
-    inline const EarthObservationJobStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const EarthObservationJobStatus& value) { m_status = value; }
-    inline void SetStatus(EarthObservationJobStatus&& value) { m_status = std::move(value); }
-    inline StartEarthObservationJobResult& WithStatus(const EarthObservationJobStatus& value) { SetStatus(value); return *this;}
-    inline StartEarthObservationJobResult& WithStatus(EarthObservationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline EarthObservationJobStatus GetStatus() const { return m_status; }
+    inline void SetStatus(EarthObservationJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StartEarthObservationJobResult& WithStatus(EarthObservationJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Each tag consists of a key and a value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline StartEarthObservationJobResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline StartEarthObservationJobResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartEarthObservationJobResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline StartEarthObservationJobResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline StartEarthObservationJobResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartEarthObservationJobResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartEarthObservationJobResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartEarthObservationJobResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline StartEarthObservationJobResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    StartEarthObservationJobResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    StartEarthObservationJobResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartEarthObservationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartEarthObservationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartEarthObservationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartEarthObservationJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    int m_durationInSeconds;
+    int m_durationInSeconds{0};
+    bool m_durationInSecondsHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
+    bool m_executionRoleArnHasBeenSet = false;
 
     InputConfigOutput m_inputConfig;
+    bool m_inputConfigHasBeenSet = false;
 
     JobConfigInput m_jobConfig;
+    bool m_jobConfigHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    EarthObservationJobStatus m_status;
+    EarthObservationJobStatus m_status{EarthObservationJobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

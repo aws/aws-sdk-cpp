@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SecurityGroupReference::SecurityGroupReference() : 
-    m_groupIdHasBeenSet(false),
-    m_referencingVpcIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false)
-{
-}
-
 SecurityGroupReference::SecurityGroupReference(const XmlNode& xmlNode)
-  : SecurityGroupReference()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ SecurityGroupReference& SecurityGroupReference::operator =(const XmlNode& xmlNod
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
+       m_groupIdHasBeenSet = true;
     }
     XmlNode referencingVpcIdNode = resultNode.FirstChild("referencingVpcId");
     if(!referencingVpcIdNode.IsNull())
     {
       m_referencingVpcId = Aws::Utils::Xml::DecodeEscapedXmlText(referencingVpcIdNode.GetText());
       m_referencingVpcIdHasBeenSet = true;
+       m_referencingVpcIdHasBeenSet = true;
     }
     XmlNode vpcPeeringConnectionIdNode = resultNode.FirstChild("vpcPeeringConnectionId");
     if(!vpcPeeringConnectionIdNode.IsNull())
     {
       m_vpcPeeringConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcPeeringConnectionIdNode.GetText());
       m_vpcPeeringConnectionIdHasBeenSet = true;
+       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
       m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
+       m_transitGatewayIdHasBeenSet = true;
     }
   }
 

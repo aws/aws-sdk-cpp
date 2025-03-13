@@ -32,7 +32,7 @@ namespace Model
   class ElasticLoadBalancing
   {
   public:
-    AWS_EKS_API ElasticLoadBalancing();
+    AWS_EKS_API ElasticLoadBalancing() = default;
     AWS_EKS_API ElasticLoadBalancing(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API ElasticLoadBalancing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * cluster. If the load balancing capability is enabled, EKS Auto Mode will create
      * and delete load balancers in your Amazon Web Services account.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ElasticLoadBalancing& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

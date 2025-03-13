@@ -18,32 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-JobRun::JobRun() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_virtualClusterIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_state(JobRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_configurationOverridesHasBeenSet(false),
-    m_jobDriverHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_finishedAtHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_failureReason(FailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_retryPolicyConfigurationHasBeenSet(false),
-    m_retryPolicyExecutionHasBeenSet(false)
-{
-}
-
 JobRun::JobRun(JsonView jsonValue)
-  : JobRun()
 {
   *this = jsonValue;
 }
@@ -53,108 +28,78 @@ JobRun& JobRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualClusterId"))
   {
     m_virtualClusterId = jsonValue.GetString("virtualClusterId");
-
     m_virtualClusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = JobRunStateMapper::GetJobRunStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
     m_clientTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("releaseLabel"))
   {
     m_releaseLabel = jsonValue.GetString("releaseLabel");
-
     m_releaseLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationOverrides"))
   {
     m_configurationOverrides = jsonValue.GetObject("configurationOverrides");
-
     m_configurationOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobDriver"))
   {
     m_jobDriver = jsonValue.GetObject("jobDriver");
-
     m_jobDriverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("finishedAt"))
   {
     m_finishedAt = jsonValue.GetString("finishedAt");
-
     m_finishedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateDetails"))
   {
     m_stateDetails = jsonValue.GetString("stateDetails");
-
     m_stateDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = FailureReasonMapper::GetFailureReasonForName(jsonValue.GetString("failureReason"));
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -164,21 +109,16 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retryPolicyConfiguration"))
   {
     m_retryPolicyConfiguration = jsonValue.GetObject("retryPolicyConfiguration");
-
     m_retryPolicyConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retryPolicyExecution"))
   {
     m_retryPolicyExecution = jsonValue.GetObject("retryPolicyExecution");
-
     m_retryPolicyExecutionHasBeenSet = true;
   }
-
   return *this;
 }
 

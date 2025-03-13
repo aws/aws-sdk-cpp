@@ -22,7 +22,7 @@ namespace Model
   class UpdateConfigurationRequest : public KafkaRequest
   {
   public:
-    AWS_KAFKA_API UpdateConfigurationRequest();
+    AWS_KAFKA_API UpdateConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
        
      *  
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdateConfigurationRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateConfigurationRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateConfigurationRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateConfigurationRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
             <p>The description of the configuration revision.</p>
          
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateConfigurationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateConfigurationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateConfigurationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateConfigurationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +73,12 @@ namespace Model
      * plaintext.</p>
          
      */
-    inline const Aws::Utils::ByteBuffer& GetServerProperties() const{ return m_serverProperties; }
+    inline const Aws::Utils::ByteBuffer& GetServerProperties() const { return m_serverProperties; }
     inline bool ServerPropertiesHasBeenSet() const { return m_serverPropertiesHasBeenSet; }
-    inline void SetServerProperties(const Aws::Utils::ByteBuffer& value) { m_serverPropertiesHasBeenSet = true; m_serverProperties = value; }
-    inline void SetServerProperties(Aws::Utils::ByteBuffer&& value) { m_serverPropertiesHasBeenSet = true; m_serverProperties = std::move(value); }
-    inline UpdateConfigurationRequest& WithServerProperties(const Aws::Utils::ByteBuffer& value) { SetServerProperties(value); return *this;}
-    inline UpdateConfigurationRequest& WithServerProperties(Aws::Utils::ByteBuffer&& value) { SetServerProperties(std::move(value)); return *this;}
+    template<typename ServerPropertiesT = Aws::Utils::ByteBuffer>
+    void SetServerProperties(ServerPropertiesT&& value) { m_serverPropertiesHasBeenSet = true; m_serverProperties = std::forward<ServerPropertiesT>(value); }
+    template<typename ServerPropertiesT = Aws::Utils::ByteBuffer>
+    UpdateConfigurationRequest& WithServerProperties(ServerPropertiesT&& value) { SetServerProperties(std::forward<ServerPropertiesT>(value)); return *this;}
     ///@}
   private:
 
@@ -92,7 +88,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_serverProperties;
+    Aws::Utils::ByteBuffer m_serverProperties{};
     bool m_serverPropertiesHasBeenSet = false;
   };
 

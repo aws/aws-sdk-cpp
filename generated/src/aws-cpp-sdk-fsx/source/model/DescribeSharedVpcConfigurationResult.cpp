@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSharedVpcConfigurationResult::DescribeSharedVpcConfigurationResult()
-{
-}
-
 DescribeSharedVpcConfigurationResult::DescribeSharedVpcConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeSharedVpcConfigurationResult& DescribeSharedVpcConfigurationResult::oper
   if(jsonValue.ValueExists("EnableFsxRouteTableUpdatesFromParticipantAccounts"))
   {
     m_enableFsxRouteTableUpdatesFromParticipantAccounts = jsonValue.GetString("EnableFsxRouteTableUpdatesFromParticipantAccounts");
-
+    m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

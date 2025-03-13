@@ -28,7 +28,7 @@ namespace Model
   class UpdateAliasResult
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API UpdateAliasResult();
+    AWS_PAYMENTCRYPTOGRAPHY_API UpdateAliasResult() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API UpdateAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PAYMENTCRYPTOGRAPHY_API UpdateAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The alias name.</p>
      */
-    inline const Alias& GetAlias() const{ return m_alias; }
-    inline void SetAlias(const Alias& value) { m_alias = value; }
-    inline void SetAlias(Alias&& value) { m_alias = std::move(value); }
-    inline UpdateAliasResult& WithAlias(const Alias& value) { SetAlias(value); return *this;}
-    inline UpdateAliasResult& WithAlias(Alias&& value) { SetAlias(std::move(value)); return *this;}
+    inline const Alias& GetAlias() const { return m_alias; }
+    template<typename AliasT = Alias>
+    void SetAlias(AliasT&& value) { m_aliasHasBeenSet = true; m_alias = std::forward<AliasT>(value); }
+    template<typename AliasT = Alias>
+    UpdateAliasResult& WithAlias(AliasT&& value) { SetAlias(std::forward<AliasT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAliasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Alias m_alias;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

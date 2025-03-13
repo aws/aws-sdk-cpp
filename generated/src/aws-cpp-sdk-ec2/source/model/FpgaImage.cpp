@@ -20,30 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FpgaImage::FpgaImage() : 
-    m_fpgaImageIdHasBeenSet(false),
-    m_fpgaImageGlobalIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_shellVersionHasBeenSet(false),
-    m_pciIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_ownerAliasHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_public(false),
-    m_publicHasBeenSet(false),
-    m_dataRetentionSupport(false),
-    m_dataRetentionSupportHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false)
-{
-}
-
 FpgaImage::FpgaImage(const XmlNode& xmlNode)
-  : FpgaImage()
 {
   *this = xmlNode;
 }
@@ -59,114 +36,130 @@ FpgaImage& FpgaImage::operator =(const XmlNode& xmlNode)
     {
       m_fpgaImageId = Aws::Utils::Xml::DecodeEscapedXmlText(fpgaImageIdNode.GetText());
       m_fpgaImageIdHasBeenSet = true;
+       m_fpgaImageIdHasBeenSet = true;
     }
     XmlNode fpgaImageGlobalIdNode = resultNode.FirstChild("fpgaImageGlobalId");
     if(!fpgaImageGlobalIdNode.IsNull())
     {
       m_fpgaImageGlobalId = Aws::Utils::Xml::DecodeEscapedXmlText(fpgaImageGlobalIdNode.GetText());
       m_fpgaImageGlobalIdHasBeenSet = true;
+       m_fpgaImageGlobalIdHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode shellVersionNode = resultNode.FirstChild("shellVersion");
     if(!shellVersionNode.IsNull())
     {
       m_shellVersion = Aws::Utils::Xml::DecodeEscapedXmlText(shellVersionNode.GetText());
       m_shellVersionHasBeenSet = true;
+       m_shellVersionHasBeenSet = true;
     }
     XmlNode pciIdNode = resultNode.FirstChild("pciId");
     if(!pciIdNode.IsNull())
     {
       m_pciId = pciIdNode;
       m_pciIdHasBeenSet = true;
+       m_pciIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
       m_state = stateNode;
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
+       m_createTimeHasBeenSet = true;
     }
     XmlNode updateTimeNode = resultNode.FirstChild("updateTime");
     if(!updateTimeNode.IsNull())
     {
       m_updateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateTimeHasBeenSet = true;
+       m_updateTimeHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode ownerAliasNode = resultNode.FirstChild("ownerAlias");
     if(!ownerAliasNode.IsNull())
     {
       m_ownerAlias = Aws::Utils::Xml::DecodeEscapedXmlText(ownerAliasNode.GetText());
       m_ownerAliasHasBeenSet = true;
+       m_ownerAliasHasBeenSet = true;
     }
     XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");
+      m_productCodesHasBeenSet = !productCodesMember.IsNull();
       while(!productCodesMember.IsNull())
       {
         m_productCodes.push_back(productCodesMember);
         productCodesMember = productCodesMember.NextNode("item");
       }
 
-      m_productCodesHasBeenSet = true;
+       m_productCodesHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode publicNode = resultNode.FirstChild("public");
     if(!publicNode.IsNull())
     {
       m_public = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publicNode.GetText()).c_str()).c_str());
       m_publicHasBeenSet = true;
+       m_publicHasBeenSet = true;
     }
     XmlNode dataRetentionSupportNode = resultNode.FirstChild("dataRetentionSupport");
     if(!dataRetentionSupportNode.IsNull())
     {
       m_dataRetentionSupport = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataRetentionSupportNode.GetText()).c_str()).c_str());
       m_dataRetentionSupportHasBeenSet = true;
+       m_dataRetentionSupportHasBeenSet = true;
     }
     XmlNode instanceTypesNode = resultNode.FirstChild("instanceTypes");
     if(!instanceTypesNode.IsNull())
     {
       XmlNode instanceTypesMember = instanceTypesNode.FirstChild("item");
+      m_instanceTypesHasBeenSet = !instanceTypesMember.IsNull();
       while(!instanceTypesMember.IsNull())
       {
         m_instanceTypes.push_back(instanceTypesMember.GetText());
         instanceTypesMember = instanceTypesMember.NextNode("item");
       }
 
-      m_instanceTypesHasBeenSet = true;
+       m_instanceTypesHasBeenSet = true;
     }
   }
 

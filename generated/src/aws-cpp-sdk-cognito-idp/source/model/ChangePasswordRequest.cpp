@@ -12,13 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ChangePasswordRequest::ChangePasswordRequest() : 
-    m_previousPasswordHasBeenSet(false),
-    m_proposedPasswordHasBeenSet(false),
-    m_accessTokenHasBeenSet(false)
-{
-}
-
 Aws::String ChangePasswordRequest::SerializePayload() const
 {
   JsonValue payload;

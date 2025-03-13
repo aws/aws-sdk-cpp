@@ -12,15 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopExperimentRequest::StopExperimentRequest() : 
-    m_desiredState(ExperimentStopDesiredState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_experimentHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String StopExperimentRequest::SerializePayload() const
 {
   JsonValue payload;

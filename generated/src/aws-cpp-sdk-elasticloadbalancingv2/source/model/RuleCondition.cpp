@@ -20,20 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-RuleCondition::RuleCondition() : 
-    m_fieldHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_hostHeaderConfigHasBeenSet(false),
-    m_pathPatternConfigHasBeenSet(false),
-    m_httpHeaderConfigHasBeenSet(false),
-    m_queryStringConfigHasBeenSet(false),
-    m_httpRequestMethodConfigHasBeenSet(false),
-    m_sourceIpConfigHasBeenSet(false)
-{
-}
-
 RuleCondition::RuleCondition(const XmlNode& xmlNode)
-  : RuleCondition()
 {
   *this = xmlNode;
 }
@@ -49,54 +36,62 @@ RuleCondition& RuleCondition::operator =(const XmlNode& xmlNode)
     {
       m_field = Aws::Utils::Xml::DecodeEscapedXmlText(fieldNode.GetText());
       m_fieldHasBeenSet = true;
+       m_fieldHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("member");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember.GetText());
         valuesMember = valuesMember.NextNode("member");
       }
 
-      m_valuesHasBeenSet = true;
+       m_valuesHasBeenSet = true;
     }
     XmlNode hostHeaderConfigNode = resultNode.FirstChild("HostHeaderConfig");
     if(!hostHeaderConfigNode.IsNull())
     {
       m_hostHeaderConfig = hostHeaderConfigNode;
       m_hostHeaderConfigHasBeenSet = true;
+       m_hostHeaderConfigHasBeenSet = true;
     }
     XmlNode pathPatternConfigNode = resultNode.FirstChild("PathPatternConfig");
     if(!pathPatternConfigNode.IsNull())
     {
       m_pathPatternConfig = pathPatternConfigNode;
       m_pathPatternConfigHasBeenSet = true;
+       m_pathPatternConfigHasBeenSet = true;
     }
     XmlNode httpHeaderConfigNode = resultNode.FirstChild("HttpHeaderConfig");
     if(!httpHeaderConfigNode.IsNull())
     {
       m_httpHeaderConfig = httpHeaderConfigNode;
       m_httpHeaderConfigHasBeenSet = true;
+       m_httpHeaderConfigHasBeenSet = true;
     }
     XmlNode queryStringConfigNode = resultNode.FirstChild("QueryStringConfig");
     if(!queryStringConfigNode.IsNull())
     {
       m_queryStringConfig = queryStringConfigNode;
       m_queryStringConfigHasBeenSet = true;
+       m_queryStringConfigHasBeenSet = true;
     }
     XmlNode httpRequestMethodConfigNode = resultNode.FirstChild("HttpRequestMethodConfig");
     if(!httpRequestMethodConfigNode.IsNull())
     {
       m_httpRequestMethodConfig = httpRequestMethodConfigNode;
       m_httpRequestMethodConfigHasBeenSet = true;
+       m_httpRequestMethodConfigHasBeenSet = true;
     }
     XmlNode sourceIpConfigNode = resultNode.FirstChild("SourceIpConfig");
     if(!sourceIpConfigNode.IsNull())
     {
       m_sourceIpConfig = sourceIpConfigNode;
       m_sourceIpConfigHasBeenSet = true;
+       m_sourceIpConfigHasBeenSet = true;
     }
   }
 

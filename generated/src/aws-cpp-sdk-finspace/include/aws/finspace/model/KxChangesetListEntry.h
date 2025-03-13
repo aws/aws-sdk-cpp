@@ -33,7 +33,7 @@ namespace Model
   class KxChangesetListEntry
   {
   public:
-    AWS_FINSPACE_API KxChangesetListEntry();
+    AWS_FINSPACE_API KxChangesetListEntry() = default;
     AWS_FINSPACE_API KxChangesetListEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API KxChangesetListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>A unique identifier for the changeset.</p>
      */
-    inline const Aws::String& GetChangesetId() const{ return m_changesetId; }
+    inline const Aws::String& GetChangesetId() const { return m_changesetId; }
     inline bool ChangesetIdHasBeenSet() const { return m_changesetIdHasBeenSet; }
-    inline void SetChangesetId(const Aws::String& value) { m_changesetIdHasBeenSet = true; m_changesetId = value; }
-    inline void SetChangesetId(Aws::String&& value) { m_changesetIdHasBeenSet = true; m_changesetId = std::move(value); }
-    inline void SetChangesetId(const char* value) { m_changesetIdHasBeenSet = true; m_changesetId.assign(value); }
-    inline KxChangesetListEntry& WithChangesetId(const Aws::String& value) { SetChangesetId(value); return *this;}
-    inline KxChangesetListEntry& WithChangesetId(Aws::String&& value) { SetChangesetId(std::move(value)); return *this;}
-    inline KxChangesetListEntry& WithChangesetId(const char* value) { SetChangesetId(value); return *this;}
+    template<typename ChangesetIdT = Aws::String>
+    void SetChangesetId(ChangesetIdT&& value) { m_changesetIdHasBeenSet = true; m_changesetId = std::forward<ChangesetIdT>(value); }
+    template<typename ChangesetIdT = Aws::String>
+    KxChangesetListEntry& WithChangesetId(ChangesetIdT&& value) { SetChangesetId(std::forward<ChangesetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline KxChangesetListEntry& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline KxChangesetListEntry& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    KxChangesetListEntry& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +71,12 @@ namespace Model
      * epoch time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
-    inline const Aws::Utils::DateTime& GetActiveFromTimestamp() const{ return m_activeFromTimestamp; }
+    inline const Aws::Utils::DateTime& GetActiveFromTimestamp() const { return m_activeFromTimestamp; }
     inline bool ActiveFromTimestampHasBeenSet() const { return m_activeFromTimestampHasBeenSet; }
-    inline void SetActiveFromTimestamp(const Aws::Utils::DateTime& value) { m_activeFromTimestampHasBeenSet = true; m_activeFromTimestamp = value; }
-    inline void SetActiveFromTimestamp(Aws::Utils::DateTime&& value) { m_activeFromTimestampHasBeenSet = true; m_activeFromTimestamp = std::move(value); }
-    inline KxChangesetListEntry& WithActiveFromTimestamp(const Aws::Utils::DateTime& value) { SetActiveFromTimestamp(value); return *this;}
-    inline KxChangesetListEntry& WithActiveFromTimestamp(Aws::Utils::DateTime&& value) { SetActiveFromTimestamp(std::move(value)); return *this;}
+    template<typename ActiveFromTimestampT = Aws::Utils::DateTime>
+    void SetActiveFromTimestamp(ActiveFromTimestampT&& value) { m_activeFromTimestampHasBeenSet = true; m_activeFromTimestamp = std::forward<ActiveFromTimestampT>(value); }
+    template<typename ActiveFromTimestampT = Aws::Utils::DateTime>
+    KxChangesetListEntry& WithActiveFromTimestamp(ActiveFromTimestampT&& value) { SetActiveFromTimestamp(std::forward<ActiveFromTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +85,12 @@ namespace Model
      * epoch time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const{ return m_lastModifiedTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const { return m_lastModifiedTimestamp; }
     inline bool LastModifiedTimestampHasBeenSet() const { return m_lastModifiedTimestampHasBeenSet; }
-    inline void SetLastModifiedTimestamp(const Aws::Utils::DateTime& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = value; }
-    inline void SetLastModifiedTimestamp(Aws::Utils::DateTime&& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = std::move(value); }
-    inline KxChangesetListEntry& WithLastModifiedTimestamp(const Aws::Utils::DateTime& value) { SetLastModifiedTimestamp(value); return *this;}
-    inline KxChangesetListEntry& WithLastModifiedTimestamp(Aws::Utils::DateTime&& value) { SetLastModifiedTimestamp(std::move(value)); return *this;}
+    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
+    void SetLastModifiedTimestamp(LastModifiedTimestampT&& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = std::forward<LastModifiedTimestampT>(value); }
+    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
+    KxChangesetListEntry& WithLastModifiedTimestamp(LastModifiedTimestampT&& value) { SetLastModifiedTimestamp(std::forward<LastModifiedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,28 +100,26 @@ namespace Model
      * <li> <p>Failed – Changeset creation has failed.</p> </li> <li> <p>Complete –
      * Changeset creation has succeeded.</p> </li> </ul>
      */
-    inline const ChangesetStatus& GetStatus() const{ return m_status; }
+    inline ChangesetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ChangesetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ChangesetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline KxChangesetListEntry& WithStatus(const ChangesetStatus& value) { SetStatus(value); return *this;}
-    inline KxChangesetListEntry& WithStatus(ChangesetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ChangesetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline KxChangesetListEntry& WithStatus(ChangesetStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_changesetId;
     bool m_changesetIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_activeFromTimestamp;
+    Aws::Utils::DateTime m_activeFromTimestamp{};
     bool m_activeFromTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTimestamp;
+    Aws::Utils::DateTime m_lastModifiedTimestamp{};
     bool m_lastModifiedTimestampHasBeenSet = false;
 
-    ChangesetStatus m_status;
+    ChangesetStatus m_status{ChangesetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

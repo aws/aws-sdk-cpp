@@ -18,20 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ProcessDetails::ProcessDetails() : 
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false),
-    m_parentPid(0),
-    m_parentPidHasBeenSet(false),
-    m_launchedAtHasBeenSet(false),
-    m_terminatedAtHasBeenSet(false)
-{
-}
-
 ProcessDetails::ProcessDetails(JsonView jsonValue)
-  : ProcessDetails()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ProcessDetails& ProcessDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pid"))
   {
     m_pid = jsonValue.GetInteger("Pid");
-
     m_pidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentPid"))
   {
     m_parentPid = jsonValue.GetInteger("ParentPid");
-
     m_parentPidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchedAt"))
   {
     m_launchedAt = jsonValue.GetString("LaunchedAt");
-
     m_launchedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TerminatedAt"))
   {
     m_terminatedAt = jsonValue.GetString("TerminatedAt");
-
     m_terminatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

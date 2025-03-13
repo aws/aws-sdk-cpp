@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateParticipantConnectionResult::CreateParticipantConnectionResult()
-{
-}
-
 CreateParticipantConnectionResult::CreateParticipantConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateParticipantConnectionResult& CreateParticipantConnectionResult::operator =
   if(jsonValue.ValueExists("Websocket"))
   {
     m_websocket = jsonValue.GetObject("Websocket");
-
+    m_websocketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionCredentials"))
   {
     m_connectionCredentials = jsonValue.GetObject("ConnectionCredentials");
-
+    m_connectionCredentialsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

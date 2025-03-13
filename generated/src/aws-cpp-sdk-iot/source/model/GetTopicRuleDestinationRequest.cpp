@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTopicRuleDestinationRequest::GetTopicRuleDestinationRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetTopicRuleDestinationRequest::SerializePayload() const
 {
   return {};

@@ -12,16 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConsumableResourceRequest::UpdateConsumableResourceRequest() : 
-    m_consumableResourceHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateConsumableResourceRequest::SerializePayload() const
 {
   JsonValue payload;

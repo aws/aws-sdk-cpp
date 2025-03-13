@@ -21,7 +21,7 @@ namespace Model
   class DeleteSubnetCidrReservationRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteSubnetCidrReservationRequest();
+    AWS_EC2_API DeleteSubnetCidrReservationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the subnet CIDR reservation.</p>
      */
-    inline const Aws::String& GetSubnetCidrReservationId() const{ return m_subnetCidrReservationId; }
+    inline const Aws::String& GetSubnetCidrReservationId() const { return m_subnetCidrReservationId; }
     inline bool SubnetCidrReservationIdHasBeenSet() const { return m_subnetCidrReservationIdHasBeenSet; }
-    inline void SetSubnetCidrReservationId(const Aws::String& value) { m_subnetCidrReservationIdHasBeenSet = true; m_subnetCidrReservationId = value; }
-    inline void SetSubnetCidrReservationId(Aws::String&& value) { m_subnetCidrReservationIdHasBeenSet = true; m_subnetCidrReservationId = std::move(value); }
-    inline void SetSubnetCidrReservationId(const char* value) { m_subnetCidrReservationIdHasBeenSet = true; m_subnetCidrReservationId.assign(value); }
-    inline DeleteSubnetCidrReservationRequest& WithSubnetCidrReservationId(const Aws::String& value) { SetSubnetCidrReservationId(value); return *this;}
-    inline DeleteSubnetCidrReservationRequest& WithSubnetCidrReservationId(Aws::String&& value) { SetSubnetCidrReservationId(std::move(value)); return *this;}
-    inline DeleteSubnetCidrReservationRequest& WithSubnetCidrReservationId(const char* value) { SetSubnetCidrReservationId(value); return *this;}
+    template<typename SubnetCidrReservationIdT = Aws::String>
+    void SetSubnetCidrReservationId(SubnetCidrReservationIdT&& value) { m_subnetCidrReservationIdHasBeenSet = true; m_subnetCidrReservationId = std::forward<SubnetCidrReservationIdT>(value); }
+    template<typename SubnetCidrReservationIdT = Aws::String>
+    DeleteSubnetCidrReservationRequest& WithSubnetCidrReservationId(SubnetCidrReservationIdT&& value) { SetSubnetCidrReservationId(std::forward<SubnetCidrReservationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteSubnetCidrReservationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_subnetCidrReservationId;
     bool m_subnetCidrReservationIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

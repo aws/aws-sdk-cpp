@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AdminRespondToAuthChallengeResult::AdminRespondToAuthChallengeResult() : 
-    m_challengeName(ChallengeNameType::NOT_SET)
-{
-}
-
 AdminRespondToAuthChallengeResult::AdminRespondToAuthChallengeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : AdminRespondToAuthChallengeResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ AdminRespondToAuthChallengeResult& AdminRespondToAuthChallengeResult::operator =
   if(jsonValue.ValueExists("ChallengeName"))
   {
     m_challengeName = ChallengeNameTypeMapper::GetChallengeNameTypeForName(jsonValue.GetString("ChallengeName"));
-
+    m_challengeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Session"))
   {
     m_session = jsonValue.GetString("Session");
-
+    m_sessionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChallengeParameters"))
   {
     Aws::Map<Aws::String, JsonView> challengeParametersJsonMap = jsonValue.GetObject("ChallengeParameters").GetAllObjects();
@@ -50,20 +42,20 @@ AdminRespondToAuthChallengeResult& AdminRespondToAuthChallengeResult::operator =
     {
       m_challengeParameters[challengeParametersItem.first] = challengeParametersItem.second.AsString();
     }
+    m_challengeParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationResult"))
   {
     m_authenticationResult = jsonValue.GetObject("AuthenticationResult");
-
+    m_authenticationResultHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

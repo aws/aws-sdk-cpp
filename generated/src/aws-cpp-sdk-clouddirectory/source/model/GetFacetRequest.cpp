@@ -13,12 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFacetRequest::GetFacetRequest() : 
-    m_schemaArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetFacetRequest::SerializePayload() const
 {
   JsonValue payload;

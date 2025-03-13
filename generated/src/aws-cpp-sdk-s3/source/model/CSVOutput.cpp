@@ -20,18 +20,7 @@ namespace S3
 namespace Model
 {
 
-CSVOutput::CSVOutput() : 
-    m_quoteFields(QuoteFields::NOT_SET),
-    m_quoteFieldsHasBeenSet(false),
-    m_quoteEscapeCharacterHasBeenSet(false),
-    m_recordDelimiterHasBeenSet(false),
-    m_fieldDelimiterHasBeenSet(false),
-    m_quoteCharacterHasBeenSet(false)
-{
-}
-
 CSVOutput::CSVOutput(const XmlNode& xmlNode)
-  : CSVOutput()
 {
   *this = xmlNode;
 }
@@ -45,32 +34,37 @@ CSVOutput& CSVOutput::operator =(const XmlNode& xmlNode)
     XmlNode quoteFieldsNode = resultNode.FirstChild("QuoteFields");
     if(!quoteFieldsNode.IsNull())
     {
-      m_quoteFields = QuoteFieldsMapper::GetQuoteFieldsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quoteFieldsNode.GetText()).c_str()).c_str());
+      m_quoteFields = QuoteFieldsMapper::GetQuoteFieldsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quoteFieldsNode.GetText()).c_str()));
       m_quoteFieldsHasBeenSet = true;
+       m_quoteFieldsHasBeenSet = true;
     }
     XmlNode quoteEscapeCharacterNode = resultNode.FirstChild("QuoteEscapeCharacter");
     if(!quoteEscapeCharacterNode.IsNull())
     {
       m_quoteEscapeCharacter = Aws::Utils::Xml::DecodeEscapedXmlText(quoteEscapeCharacterNode.GetText());
       m_quoteEscapeCharacterHasBeenSet = true;
+       m_quoteEscapeCharacterHasBeenSet = true;
     }
     XmlNode recordDelimiterNode = resultNode.FirstChild("RecordDelimiter");
     if(!recordDelimiterNode.IsNull())
     {
       m_recordDelimiter = Aws::Utils::Xml::DecodeEscapedXmlText(recordDelimiterNode.GetText());
       m_recordDelimiterHasBeenSet = true;
+       m_recordDelimiterHasBeenSet = true;
     }
     XmlNode fieldDelimiterNode = resultNode.FirstChild("FieldDelimiter");
     if(!fieldDelimiterNode.IsNull())
     {
       m_fieldDelimiter = Aws::Utils::Xml::DecodeEscapedXmlText(fieldDelimiterNode.GetText());
       m_fieldDelimiterHasBeenSet = true;
+       m_fieldDelimiterHasBeenSet = true;
     }
     XmlNode quoteCharacterNode = resultNode.FirstChild("QuoteCharacter");
     if(!quoteCharacterNode.IsNull())
     {
       m_quoteCharacter = Aws::Utils::Xml::DecodeEscapedXmlText(quoteCharacterNode.GetText());
       m_quoteCharacterHasBeenSet = true;
+       m_quoteCharacterHasBeenSet = true;
     }
   }
 

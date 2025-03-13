@@ -18,22 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-GameSessionQueue::GameSessionQueue() : 
-    m_nameHasBeenSet(false),
-    m_gameSessionQueueArnHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_playerLatencyPoliciesHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_filterConfigurationHasBeenSet(false),
-    m_priorityConfigurationHasBeenSet(false),
-    m_customEventDataHasBeenSet(false),
-    m_notificationTargetHasBeenSet(false)
-{
-}
-
 GameSessionQueue::GameSessionQueue(JsonView jsonValue)
-  : GameSessionQueue()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ GameSessionQueue& GameSessionQueue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameSessionQueueArn"))
   {
     m_gameSessionQueueArn = jsonValue.GetString("GameSessionQueueArn");
-
     m_gameSessionQueueArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeoutInSeconds"))
   {
     m_timeoutInSeconds = jsonValue.GetInteger("TimeoutInSeconds");
-
     m_timeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlayerLatencyPolicies"))
   {
     Aws::Utils::Array<JsonView> playerLatencyPoliciesJsonList = jsonValue.GetArray("PlayerLatencyPolicies");
@@ -70,7 +49,6 @@ GameSessionQueue& GameSessionQueue::operator =(JsonView jsonValue)
     }
     m_playerLatencyPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destinations"))
   {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
@@ -80,35 +58,26 @@ GameSessionQueue& GameSessionQueue::operator =(JsonView jsonValue)
     }
     m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterConfiguration"))
   {
     m_filterConfiguration = jsonValue.GetObject("FilterConfiguration");
-
     m_filterConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PriorityConfiguration"))
   {
     m_priorityConfiguration = jsonValue.GetObject("PriorityConfiguration");
-
     m_priorityConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomEventData"))
   {
     m_customEventData = jsonValue.GetString("CustomEventData");
-
     m_customEventDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationTarget"))
   {
     m_notificationTarget = jsonValue.GetString("NotificationTarget");
-
     m_notificationTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

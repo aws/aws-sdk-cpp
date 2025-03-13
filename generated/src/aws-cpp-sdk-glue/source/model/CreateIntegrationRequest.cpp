@@ -12,18 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIntegrationRequest::CreateIntegrationRequest() : 
-    m_integrationNameHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataFilterHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_additionalEncryptionContextHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateIntegrationRequest::SerializePayload() const
 {
   JsonValue payload;

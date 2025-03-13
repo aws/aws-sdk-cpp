@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SankeyDiagramSortConfiguration::SankeyDiagramSortConfiguration() : 
-    m_weightSortHasBeenSet(false),
-    m_sourceItemsLimitHasBeenSet(false),
-    m_destinationItemsLimitHasBeenSet(false)
-{
-}
-
 SankeyDiagramSortConfiguration::SankeyDiagramSortConfiguration(JsonView jsonValue)
-  : SankeyDiagramSortConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ SankeyDiagramSortConfiguration& SankeyDiagramSortConfiguration::operator =(JsonV
     }
     m_weightSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceItemsLimit"))
   {
     m_sourceItemsLimit = jsonValue.GetObject("SourceItemsLimit");
-
     m_sourceItemsLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationItemsLimit"))
   {
     m_destinationItemsLimit = jsonValue.GetObject("DestinationItemsLimit");
-
     m_destinationItemsLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

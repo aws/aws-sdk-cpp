@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateServiceNetworkServiceAssociationResult::CreateServiceNetworkServiceAssociationResult() : 
-    m_status(ServiceNetworkServiceAssociationStatus::NOT_SET)
-{
-}
-
 CreateServiceNetworkServiceAssociationResult::CreateServiceNetworkServiceAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateServiceNetworkServiceAssociationResult()
 {
   *this = result;
 }
@@ -34,45 +28,40 @@ CreateServiceNetworkServiceAssociationResult& CreateServiceNetworkServiceAssocia
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
+    m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDomainName"))
   {
     m_customDomainName = jsonValue.GetString("customDomainName");
-
+    m_customDomainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dnsEntry"))
   {
     m_dnsEntry = jsonValue.GetObject("dnsEntry");
-
+    m_dnsEntryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ServiceNetworkServiceAssociationStatusMapper::GetServiceNetworkServiceAssociationStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

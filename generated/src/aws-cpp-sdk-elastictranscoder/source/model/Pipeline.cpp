@@ -18,23 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-Pipeline::Pipeline() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_inputBucketHasBeenSet(false),
-    m_outputBucketHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_awsKmsKeyArnHasBeenSet(false),
-    m_notificationsHasBeenSet(false),
-    m_contentConfigHasBeenSet(false),
-    m_thumbnailConfigHasBeenSet(false)
-{
-}
-
 Pipeline::Pipeline(JsonView jsonValue)
-  : Pipeline()
 {
   *this = jsonValue;
 }
@@ -44,80 +28,58 @@ Pipeline& Pipeline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputBucket"))
   {
     m_inputBucket = jsonValue.GetString("InputBucket");
-
     m_inputBucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputBucket"))
   {
     m_outputBucket = jsonValue.GetString("OutputBucket");
-
     m_outputBucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsKmsKeyArn"))
   {
     m_awsKmsKeyArn = jsonValue.GetString("AwsKmsKeyArn");
-
     m_awsKmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notifications"))
   {
     m_notifications = jsonValue.GetObject("Notifications");
-
     m_notificationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentConfig"))
   {
     m_contentConfig = jsonValue.GetObject("ContentConfig");
-
     m_contentConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThumbnailConfig"))
   {
     m_thumbnailConfig = jsonValue.GetObject("ThumbnailConfig");
-
     m_thumbnailConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

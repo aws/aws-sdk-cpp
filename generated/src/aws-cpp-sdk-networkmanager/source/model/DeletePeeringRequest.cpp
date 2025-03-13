@@ -12,11 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePeeringRequest::DeletePeeringRequest() : 
-    m_peeringIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePeeringRequest::SerializePayload() const
 {
   return {};

@@ -31,7 +31,7 @@ namespace Model
   class VerifyOTPMessageRequestParameters
   {
   public:
-    AWS_PINPOINT_API VerifyOTPMessageRequestParameters();
+    AWS_PINPOINT_API VerifyOTPMessageRequestParameters() = default;
     AWS_PINPOINT_API VerifyOTPMessageRequestParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API VerifyOTPMessageRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>The destination identity to send OTP to.</p>
      */
-    inline const Aws::String& GetDestinationIdentity() const{ return m_destinationIdentity; }
+    inline const Aws::String& GetDestinationIdentity() const { return m_destinationIdentity; }
     inline bool DestinationIdentityHasBeenSet() const { return m_destinationIdentityHasBeenSet; }
-    inline void SetDestinationIdentity(const Aws::String& value) { m_destinationIdentityHasBeenSet = true; m_destinationIdentity = value; }
-    inline void SetDestinationIdentity(Aws::String&& value) { m_destinationIdentityHasBeenSet = true; m_destinationIdentity = std::move(value); }
-    inline void SetDestinationIdentity(const char* value) { m_destinationIdentityHasBeenSet = true; m_destinationIdentity.assign(value); }
-    inline VerifyOTPMessageRequestParameters& WithDestinationIdentity(const Aws::String& value) { SetDestinationIdentity(value); return *this;}
-    inline VerifyOTPMessageRequestParameters& WithDestinationIdentity(Aws::String&& value) { SetDestinationIdentity(std::move(value)); return *this;}
-    inline VerifyOTPMessageRequestParameters& WithDestinationIdentity(const char* value) { SetDestinationIdentity(value); return *this;}
+    template<typename DestinationIdentityT = Aws::String>
+    void SetDestinationIdentity(DestinationIdentityT&& value) { m_destinationIdentityHasBeenSet = true; m_destinationIdentity = std::forward<DestinationIdentityT>(value); }
+    template<typename DestinationIdentityT = Aws::String>
+    VerifyOTPMessageRequestParameters& WithDestinationIdentity(DestinationIdentityT&& value) { SetDestinationIdentity(std::forward<DestinationIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OTP the end user provided for verification.</p>
      */
-    inline const Aws::String& GetOtp() const{ return m_otp; }
+    inline const Aws::String& GetOtp() const { return m_otp; }
     inline bool OtpHasBeenSet() const { return m_otpHasBeenSet; }
-    inline void SetOtp(const Aws::String& value) { m_otpHasBeenSet = true; m_otp = value; }
-    inline void SetOtp(Aws::String&& value) { m_otpHasBeenSet = true; m_otp = std::move(value); }
-    inline void SetOtp(const char* value) { m_otpHasBeenSet = true; m_otp.assign(value); }
-    inline VerifyOTPMessageRequestParameters& WithOtp(const Aws::String& value) { SetOtp(value); return *this;}
-    inline VerifyOTPMessageRequestParameters& WithOtp(Aws::String&& value) { SetOtp(std::move(value)); return *this;}
-    inline VerifyOTPMessageRequestParameters& WithOtp(const char* value) { SetOtp(value); return *this;}
+    template<typename OtpT = Aws::String>
+    void SetOtp(OtpT&& value) { m_otpHasBeenSet = true; m_otp = std::forward<OtpT>(value); }
+    template<typename OtpT = Aws::String>
+    VerifyOTPMessageRequestParameters& WithOtp(OtpT&& value) { SetOtp(std::forward<OtpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reference identifier provided when the OTP was previously sent.</p>
      */
-    inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
+    inline const Aws::String& GetReferenceId() const { return m_referenceId; }
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
-    inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
-    inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
-    inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
-    inline VerifyOTPMessageRequestParameters& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
-    inline VerifyOTPMessageRequestParameters& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
-    inline VerifyOTPMessageRequestParameters& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
+    template<typename ReferenceIdT = Aws::String>
+    void SetReferenceId(ReferenceIdT&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::forward<ReferenceIdT>(value); }
+    template<typename ReferenceIdT = Aws::String>
+    VerifyOTPMessageRequestParameters& WithReferenceId(ReferenceIdT&& value) { SetReferenceId(std::forward<ReferenceIdT>(value)); return *this;}
     ///@}
   private:
 

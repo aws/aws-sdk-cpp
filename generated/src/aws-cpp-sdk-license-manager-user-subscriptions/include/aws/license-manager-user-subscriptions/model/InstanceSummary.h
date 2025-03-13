@@ -33,7 +33,7 @@ namespace Model
   class InstanceSummary
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API InstanceSummary();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API InstanceSummary() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API InstanceSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API InstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,71 +43,62 @@ namespace Model
     /**
      * <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline InstanceSummary& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline InstanceSummary& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline InstanceSummary& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    InstanceSummary& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date of the last status check.</p>
      */
-    inline const Aws::String& GetLastStatusCheckDate() const{ return m_lastStatusCheckDate; }
+    inline const Aws::String& GetLastStatusCheckDate() const { return m_lastStatusCheckDate; }
     inline bool LastStatusCheckDateHasBeenSet() const { return m_lastStatusCheckDateHasBeenSet; }
-    inline void SetLastStatusCheckDate(const Aws::String& value) { m_lastStatusCheckDateHasBeenSet = true; m_lastStatusCheckDate = value; }
-    inline void SetLastStatusCheckDate(Aws::String&& value) { m_lastStatusCheckDateHasBeenSet = true; m_lastStatusCheckDate = std::move(value); }
-    inline void SetLastStatusCheckDate(const char* value) { m_lastStatusCheckDateHasBeenSet = true; m_lastStatusCheckDate.assign(value); }
-    inline InstanceSummary& WithLastStatusCheckDate(const Aws::String& value) { SetLastStatusCheckDate(value); return *this;}
-    inline InstanceSummary& WithLastStatusCheckDate(Aws::String&& value) { SetLastStatusCheckDate(std::move(value)); return *this;}
-    inline InstanceSummary& WithLastStatusCheckDate(const char* value) { SetLastStatusCheckDate(value); return *this;}
+    template<typename LastStatusCheckDateT = Aws::String>
+    void SetLastStatusCheckDate(LastStatusCheckDateT&& value) { m_lastStatusCheckDateHasBeenSet = true; m_lastStatusCheckDate = std::forward<LastStatusCheckDateT>(value); }
+    template<typename LastStatusCheckDateT = Aws::String>
+    InstanceSummary& WithLastStatusCheckDate(LastStatusCheckDateT&& value) { SetLastStatusCheckDate(std::forward<LastStatusCheckDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of provided user-based subscription products.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetProducts() const{ return m_products; }
+    inline const Aws::Vector<Aws::String>& GetProducts() const { return m_products; }
     inline bool ProductsHasBeenSet() const { return m_productsHasBeenSet; }
-    inline void SetProducts(const Aws::Vector<Aws::String>& value) { m_productsHasBeenSet = true; m_products = value; }
-    inline void SetProducts(Aws::Vector<Aws::String>&& value) { m_productsHasBeenSet = true; m_products = std::move(value); }
-    inline InstanceSummary& WithProducts(const Aws::Vector<Aws::String>& value) { SetProducts(value); return *this;}
-    inline InstanceSummary& WithProducts(Aws::Vector<Aws::String>&& value) { SetProducts(std::move(value)); return *this;}
-    inline InstanceSummary& AddProducts(const Aws::String& value) { m_productsHasBeenSet = true; m_products.push_back(value); return *this; }
-    inline InstanceSummary& AddProducts(Aws::String&& value) { m_productsHasBeenSet = true; m_products.push_back(std::move(value)); return *this; }
-    inline InstanceSummary& AddProducts(const char* value) { m_productsHasBeenSet = true; m_products.push_back(value); return *this; }
+    template<typename ProductsT = Aws::Vector<Aws::String>>
+    void SetProducts(ProductsT&& value) { m_productsHasBeenSet = true; m_products = std::forward<ProductsT>(value); }
+    template<typename ProductsT = Aws::Vector<Aws::String>>
+    InstanceSummary& WithProducts(ProductsT&& value) { SetProducts(std::forward<ProductsT>(value)); return *this;}
+    template<typename ProductsT = Aws::String>
+    InstanceSummary& AddProducts(ProductsT&& value) { m_productsHasBeenSet = true; m_products.emplace_back(std::forward<ProductsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status of an EC2 instance resource.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline InstanceSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline InstanceSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline InstanceSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    InstanceSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message for an EC2 instance.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline InstanceSummary& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline InstanceSummary& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline InstanceSummary& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    InstanceSummary& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 

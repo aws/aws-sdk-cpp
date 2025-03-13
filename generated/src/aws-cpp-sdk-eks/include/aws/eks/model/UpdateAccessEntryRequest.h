@@ -23,7 +23,7 @@ namespace Model
   class UpdateAccessEntryRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API UpdateAccessEntryRequest();
+    AWS_EKS_API UpdateAccessEntryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The name of your cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline UpdateAccessEntryRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline UpdateAccessEntryRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline UpdateAccessEntryRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    UpdateAccessEntryRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the IAM principal for the <code>AccessEntry</code>.</p>
      */
-    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
+    inline const Aws::String& GetPrincipalArn() const { return m_principalArn; }
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-    inline UpdateAccessEntryRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-    inline UpdateAccessEntryRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-    inline UpdateAccessEntryRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+    template<typename PrincipalArnT = Aws::String>
+    void SetPrincipalArn(PrincipalArnT&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::forward<PrincipalArnT>(value); }
+    template<typename PrincipalArnT = Aws::String>
+    UpdateAccessEntryRequest& WithPrincipalArn(PrincipalArnT&& value) { SetPrincipalArn(std::forward<PrincipalArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,15 +81,14 @@ namespace Model
      * policies and all permissions in any Kubernetes <code>Role</code> or
      * <code>ClusterRole</code> objects that the group names are bound to.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetKubernetesGroups() const{ return m_kubernetesGroups; }
+    inline const Aws::Vector<Aws::String>& GetKubernetesGroups() const { return m_kubernetesGroups; }
     inline bool KubernetesGroupsHasBeenSet() const { return m_kubernetesGroupsHasBeenSet; }
-    inline void SetKubernetesGroups(const Aws::Vector<Aws::String>& value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups = value; }
-    inline void SetKubernetesGroups(Aws::Vector<Aws::String>&& value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups = std::move(value); }
-    inline UpdateAccessEntryRequest& WithKubernetesGroups(const Aws::Vector<Aws::String>& value) { SetKubernetesGroups(value); return *this;}
-    inline UpdateAccessEntryRequest& WithKubernetesGroups(Aws::Vector<Aws::String>&& value) { SetKubernetesGroups(std::move(value)); return *this;}
-    inline UpdateAccessEntryRequest& AddKubernetesGroups(const Aws::String& value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups.push_back(value); return *this; }
-    inline UpdateAccessEntryRequest& AddKubernetesGroups(Aws::String&& value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups.push_back(std::move(value)); return *this; }
-    inline UpdateAccessEntryRequest& AddKubernetesGroups(const char* value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups.push_back(value); return *this; }
+    template<typename KubernetesGroupsT = Aws::Vector<Aws::String>>
+    void SetKubernetesGroups(KubernetesGroupsT&& value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups = std::forward<KubernetesGroupsT>(value); }
+    template<typename KubernetesGroupsT = Aws::Vector<Aws::String>>
+    UpdateAccessEntryRequest& WithKubernetesGroups(KubernetesGroupsT&& value) { SetKubernetesGroups(std::forward<KubernetesGroupsT>(value)); return *this;}
+    template<typename KubernetesGroupsT = Aws::String>
+    UpdateAccessEntryRequest& AddKubernetesGroups(KubernetesGroupsT&& value) { m_kubernetesGroupsHasBeenSet = true; m_kubernetesGroups.emplace_back(std::forward<KubernetesGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -101,14 +96,12 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpdateAccessEntryRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpdateAccessEntryRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpdateAccessEntryRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpdateAccessEntryRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +113,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html#creating-access-entries">Creating
      * access entries</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline UpdateAccessEntryRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline UpdateAccessEntryRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline UpdateAccessEntryRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    UpdateAccessEntryRequest& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
   private:
 

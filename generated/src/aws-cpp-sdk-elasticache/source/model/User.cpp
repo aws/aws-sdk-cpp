@@ -20,21 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-User::User() : 
-    m_userIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false),
-    m_accessStringHasBeenSet(false),
-    m_userGroupIdsHasBeenSet(false),
-    m_authenticationHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 User::User(const XmlNode& xmlNode)
-  : User()
 {
   *this = xmlNode;
 }
@@ -50,60 +36,69 @@ User& User::operator =(const XmlNode& xmlNode)
     {
       m_userId = Aws::Utils::Xml::DecodeEscapedXmlText(userIdNode.GetText());
       m_userIdHasBeenSet = true;
+       m_userIdHasBeenSet = true;
     }
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
       m_userName = Aws::Utils::Xml::DecodeEscapedXmlText(userNameNode.GetText());
       m_userNameHasBeenSet = true;
+       m_userNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
     XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
     if(!minimumEngineVersionNode.IsNull())
     {
       m_minimumEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(minimumEngineVersionNode.GetText());
       m_minimumEngineVersionHasBeenSet = true;
+       m_minimumEngineVersionHasBeenSet = true;
     }
     XmlNode accessStringNode = resultNode.FirstChild("AccessString");
     if(!accessStringNode.IsNull())
     {
       m_accessString = Aws::Utils::Xml::DecodeEscapedXmlText(accessStringNode.GetText());
       m_accessStringHasBeenSet = true;
+       m_accessStringHasBeenSet = true;
     }
     XmlNode userGroupIdsNode = resultNode.FirstChild("UserGroupIds");
     if(!userGroupIdsNode.IsNull())
     {
       XmlNode userGroupIdsMember = userGroupIdsNode.FirstChild("member");
+      m_userGroupIdsHasBeenSet = !userGroupIdsMember.IsNull();
       while(!userGroupIdsMember.IsNull())
       {
         m_userGroupIds.push_back(userGroupIdsMember.GetText());
         userGroupIdsMember = userGroupIdsMember.NextNode("member");
       }
 
-      m_userGroupIdsHasBeenSet = true;
+       m_userGroupIdsHasBeenSet = true;
     }
     XmlNode authenticationNode = resultNode.FirstChild("Authentication");
     if(!authenticationNode.IsNull())
     {
       m_authentication = authenticationNode;
       m_authenticationHasBeenSet = true;
+       m_authenticationHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
   }
 

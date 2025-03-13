@@ -30,7 +30,7 @@ namespace Model
   class DescribeVpcEndpointServicePermissionsResponse
   {
   public:
-    AWS_EC2_API DescribeVpcEndpointServicePermissionsResponse();
+    AWS_EC2_API DescribeVpcEndpointServicePermissionsResponse() = default;
     AWS_EC2_API DescribeVpcEndpointServicePermissionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeVpcEndpointServicePermissionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the allowed principals.</p>
      */
-    inline const Aws::Vector<AllowedPrincipal>& GetAllowedPrincipals() const{ return m_allowedPrincipals; }
-    inline void SetAllowedPrincipals(const Aws::Vector<AllowedPrincipal>& value) { m_allowedPrincipals = value; }
-    inline void SetAllowedPrincipals(Aws::Vector<AllowedPrincipal>&& value) { m_allowedPrincipals = std::move(value); }
-    inline DescribeVpcEndpointServicePermissionsResponse& WithAllowedPrincipals(const Aws::Vector<AllowedPrincipal>& value) { SetAllowedPrincipals(value); return *this;}
-    inline DescribeVpcEndpointServicePermissionsResponse& WithAllowedPrincipals(Aws::Vector<AllowedPrincipal>&& value) { SetAllowedPrincipals(std::move(value)); return *this;}
-    inline DescribeVpcEndpointServicePermissionsResponse& AddAllowedPrincipals(const AllowedPrincipal& value) { m_allowedPrincipals.push_back(value); return *this; }
-    inline DescribeVpcEndpointServicePermissionsResponse& AddAllowedPrincipals(AllowedPrincipal&& value) { m_allowedPrincipals.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AllowedPrincipal>& GetAllowedPrincipals() const { return m_allowedPrincipals; }
+    template<typename AllowedPrincipalsT = Aws::Vector<AllowedPrincipal>>
+    void SetAllowedPrincipals(AllowedPrincipalsT&& value) { m_allowedPrincipalsHasBeenSet = true; m_allowedPrincipals = std::forward<AllowedPrincipalsT>(value); }
+    template<typename AllowedPrincipalsT = Aws::Vector<AllowedPrincipal>>
+    DescribeVpcEndpointServicePermissionsResponse& WithAllowedPrincipals(AllowedPrincipalsT&& value) { SetAllowedPrincipals(std::forward<AllowedPrincipalsT>(value)); return *this;}
+    template<typename AllowedPrincipalsT = AllowedPrincipal>
+    DescribeVpcEndpointServicePermissionsResponse& AddAllowedPrincipals(AllowedPrincipalsT&& value) { m_allowedPrincipalsHasBeenSet = true; m_allowedPrincipals.emplace_back(std::forward<AllowedPrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeVpcEndpointServicePermissionsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeVpcEndpointServicePermissionsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeVpcEndpointServicePermissionsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeVpcEndpointServicePermissionsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeVpcEndpointServicePermissionsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeVpcEndpointServicePermissionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeVpcEndpointServicePermissionsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AllowedPrincipal> m_allowedPrincipals;
+    bool m_allowedPrincipalsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

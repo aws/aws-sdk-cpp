@@ -18,20 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-DescribeNetworkSummary::DescribeNetworkSummary() : 
-    m_arnHasBeenSet(false),
-    m_associatedClusterIdsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_ipPoolsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_routesHasBeenSet(false),
-    m_state(NetworkState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 DescribeNetworkSummary::DescribeNetworkSummary(JsonView jsonValue)
-  : DescribeNetworkSummary()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ DescribeNetworkSummary& DescribeNetworkSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedClusterIds"))
   {
     Aws::Utils::Array<JsonView> associatedClusterIdsJsonList = jsonValue.GetArray("associatedClusterIds");
@@ -54,14 +39,11 @@ DescribeNetworkSummary& DescribeNetworkSummary::operator =(JsonView jsonValue)
     }
     m_associatedClusterIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipPools"))
   {
     Aws::Utils::Array<JsonView> ipPoolsJsonList = jsonValue.GetArray("ipPools");
@@ -71,14 +53,11 @@ DescribeNetworkSummary& DescribeNetworkSummary::operator =(JsonView jsonValue)
     }
     m_ipPoolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routes"))
   {
     Aws::Utils::Array<JsonView> routesJsonList = jsonValue.GetArray("routes");
@@ -88,14 +67,11 @@ DescribeNetworkSummary& DescribeNetworkSummary::operator =(JsonView jsonValue)
     }
     m_routesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = NetworkStateMapper::GetNetworkStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace Batch
 namespace Model
 {
 
-NodePropertyOverride::NodePropertyOverride() : 
-    m_targetNodesHasBeenSet(false),
-    m_containerOverridesHasBeenSet(false),
-    m_ecsPropertiesOverrideHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false),
-    m_eksPropertiesOverrideHasBeenSet(false),
-    m_consumableResourcePropertiesOverrideHasBeenSet(false)
-{
-}
-
 NodePropertyOverride::NodePropertyOverride(JsonView jsonValue)
-  : NodePropertyOverride()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ NodePropertyOverride& NodePropertyOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("targetNodes"))
   {
     m_targetNodes = jsonValue.GetString("targetNodes");
-
     m_targetNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerOverrides"))
   {
     m_containerOverrides = jsonValue.GetObject("containerOverrides");
-
     m_containerOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecsPropertiesOverride"))
   {
     m_ecsPropertiesOverride = jsonValue.GetObject("ecsPropertiesOverride");
-
     m_ecsPropertiesOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceTypes"))
   {
     Aws::Utils::Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
@@ -66,21 +49,16 @@ NodePropertyOverride& NodePropertyOverride::operator =(JsonView jsonValue)
     }
     m_instanceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eksPropertiesOverride"))
   {
     m_eksPropertiesOverride = jsonValue.GetObject("eksPropertiesOverride");
-
     m_eksPropertiesOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("consumableResourcePropertiesOverride"))
   {
     m_consumableResourcePropertiesOverride = jsonValue.GetObject("consumableResourcePropertiesOverride");
-
     m_consumableResourcePropertiesOverrideHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSubscriberRequest::CreateSubscriberRequest() : 
-    m_accessTypesHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_subscriberDescriptionHasBeenSet(false),
-    m_subscriberIdentityHasBeenSet(false),
-    m_subscriberNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSubscriberRequest::SerializePayload() const
 {
   JsonValue payload;

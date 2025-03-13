@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAppBlockResult::CreateAppBlockResult()
-{
-}
-
 CreateAppBlockResult::CreateAppBlockResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateAppBlockResult& CreateAppBlockResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("AppBlock"))
   {
     m_appBlock = jsonValue.GetObject("AppBlock");
-
+    m_appBlockHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

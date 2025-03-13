@@ -32,7 +32,7 @@ namespace Model
   class VideoStandardOutputConfiguration
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API VideoStandardOutputConfiguration();
+    AWS_BEDROCKDATAAUTOMATION_API VideoStandardOutputConfiguration() = default;
     AWS_BEDROCKDATAAUTOMATION_API VideoStandardOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API VideoStandardOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,22 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const VideoStandardExtraction& GetExtraction() const{ return m_extraction; }
+    inline const VideoStandardExtraction& GetExtraction() const { return m_extraction; }
     inline bool ExtractionHasBeenSet() const { return m_extractionHasBeenSet; }
-    inline void SetExtraction(const VideoStandardExtraction& value) { m_extractionHasBeenSet = true; m_extraction = value; }
-    inline void SetExtraction(VideoStandardExtraction&& value) { m_extractionHasBeenSet = true; m_extraction = std::move(value); }
-    inline VideoStandardOutputConfiguration& WithExtraction(const VideoStandardExtraction& value) { SetExtraction(value); return *this;}
-    inline VideoStandardOutputConfiguration& WithExtraction(VideoStandardExtraction&& value) { SetExtraction(std::move(value)); return *this;}
+    template<typename ExtractionT = VideoStandardExtraction>
+    void SetExtraction(ExtractionT&& value) { m_extractionHasBeenSet = true; m_extraction = std::forward<ExtractionT>(value); }
+    template<typename ExtractionT = VideoStandardExtraction>
+    VideoStandardOutputConfiguration& WithExtraction(ExtractionT&& value) { SetExtraction(std::forward<ExtractionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VideoStandardGenerativeField& GetGenerativeField() const{ return m_generativeField; }
+    inline const VideoStandardGenerativeField& GetGenerativeField() const { return m_generativeField; }
     inline bool GenerativeFieldHasBeenSet() const { return m_generativeFieldHasBeenSet; }
-    inline void SetGenerativeField(const VideoStandardGenerativeField& value) { m_generativeFieldHasBeenSet = true; m_generativeField = value; }
-    inline void SetGenerativeField(VideoStandardGenerativeField&& value) { m_generativeFieldHasBeenSet = true; m_generativeField = std::move(value); }
-    inline VideoStandardOutputConfiguration& WithGenerativeField(const VideoStandardGenerativeField& value) { SetGenerativeField(value); return *this;}
-    inline VideoStandardOutputConfiguration& WithGenerativeField(VideoStandardGenerativeField&& value) { SetGenerativeField(std::move(value)); return *this;}
+    template<typename GenerativeFieldT = VideoStandardGenerativeField>
+    void SetGenerativeField(GenerativeFieldT&& value) { m_generativeFieldHasBeenSet = true; m_generativeField = std::forward<GenerativeFieldT>(value); }
+    template<typename GenerativeFieldT = VideoStandardGenerativeField>
+    VideoStandardOutputConfiguration& WithGenerativeField(GenerativeFieldT&& value) { SetGenerativeField(std::forward<GenerativeFieldT>(value)); return *this;}
     ///@}
   private:
 

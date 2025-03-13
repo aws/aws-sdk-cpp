@@ -23,7 +23,7 @@ namespace Model
   class UpdateChannelRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API UpdateChannelRequest();
+    AWS_CLOUDTRAIL_API UpdateChannelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ARN or ID (the ARN suffix) of the channel that you want to update.</p>
      */
-    inline const Aws::String& GetChannel() const{ return m_channel; }
+    inline const Aws::String& GetChannel() const { return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-    inline void SetChannel(const Aws::String& value) { m_channelHasBeenSet = true; m_channel = value; }
-    inline void SetChannel(Aws::String&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
-    inline void SetChannel(const char* value) { m_channelHasBeenSet = true; m_channel.assign(value); }
-    inline UpdateChannelRequest& WithChannel(const Aws::String& value) { SetChannel(value); return *this;}
-    inline UpdateChannelRequest& WithChannel(Aws::String&& value) { SetChannel(std::move(value)); return *this;}
-    inline UpdateChannelRequest& WithChannel(const char* value) { SetChannel(value); return *this;}
+    template<typename ChannelT = Aws::String>
+    void SetChannel(ChannelT&& value) { m_channelHasBeenSet = true; m_channel = std::forward<ChannelT>(value); }
+    template<typename ChannelT = Aws::String>
+    UpdateChannelRequest& WithChannel(ChannelT&& value) { SetChannel(std::forward<ChannelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,28 +53,26 @@ namespace Model
      * <p>The ARNs of event data stores that you want to log events arriving through
      * the channel.</p>
      */
-    inline const Aws::Vector<Destination>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<Destination>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<Destination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<Destination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline UpdateChannelRequest& WithDestinations(const Aws::Vector<Destination>& value) { SetDestinations(value); return *this;}
-    inline UpdateChannelRequest& WithDestinations(Aws::Vector<Destination>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline UpdateChannelRequest& AddDestinations(const Destination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline UpdateChannelRequest& AddDestinations(Destination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+    template<typename DestinationsT = Aws::Vector<Destination>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<Destination>>
+    UpdateChannelRequest& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = Destination>
+    UpdateChannelRequest& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Changes the name of the channel. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateChannelRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateChannelRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateChannelRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateChannelRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

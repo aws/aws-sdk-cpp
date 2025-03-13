@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ImageConfiguration::ImageConfiguration() : 
-    m_sourceHasBeenSet(false)
-{
-}
-
 ImageConfiguration::ImageConfiguration(JsonView jsonValue)
-  : ImageConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ImageConfiguration& ImageConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetObject("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

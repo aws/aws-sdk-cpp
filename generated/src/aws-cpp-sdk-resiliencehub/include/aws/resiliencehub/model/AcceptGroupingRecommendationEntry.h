@@ -32,7 +32,7 @@ namespace Model
   class AcceptGroupingRecommendationEntry
   {
   public:
-    AWS_RESILIENCEHUB_API AcceptGroupingRecommendationEntry();
+    AWS_RESILIENCEHUB_API AcceptGroupingRecommendationEntry() = default;
     AWS_RESILIENCEHUB_API AcceptGroupingRecommendationEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API AcceptGroupingRecommendationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Indicates the identifier of the grouping recommendation.</p>
      */
-    inline const Aws::String& GetGroupingRecommendationId() const{ return m_groupingRecommendationId; }
+    inline const Aws::String& GetGroupingRecommendationId() const { return m_groupingRecommendationId; }
     inline bool GroupingRecommendationIdHasBeenSet() const { return m_groupingRecommendationIdHasBeenSet; }
-    inline void SetGroupingRecommendationId(const Aws::String& value) { m_groupingRecommendationIdHasBeenSet = true; m_groupingRecommendationId = value; }
-    inline void SetGroupingRecommendationId(Aws::String&& value) { m_groupingRecommendationIdHasBeenSet = true; m_groupingRecommendationId = std::move(value); }
-    inline void SetGroupingRecommendationId(const char* value) { m_groupingRecommendationIdHasBeenSet = true; m_groupingRecommendationId.assign(value); }
-    inline AcceptGroupingRecommendationEntry& WithGroupingRecommendationId(const Aws::String& value) { SetGroupingRecommendationId(value); return *this;}
-    inline AcceptGroupingRecommendationEntry& WithGroupingRecommendationId(Aws::String&& value) { SetGroupingRecommendationId(std::move(value)); return *this;}
-    inline AcceptGroupingRecommendationEntry& WithGroupingRecommendationId(const char* value) { SetGroupingRecommendationId(value); return *this;}
+    template<typename GroupingRecommendationIdT = Aws::String>
+    void SetGroupingRecommendationId(GroupingRecommendationIdT&& value) { m_groupingRecommendationIdHasBeenSet = true; m_groupingRecommendationId = std::forward<GroupingRecommendationIdT>(value); }
+    template<typename GroupingRecommendationIdT = Aws::String>
+    AcceptGroupingRecommendationEntry& WithGroupingRecommendationId(GroupingRecommendationIdT&& value) { SetGroupingRecommendationId(std::forward<GroupingRecommendationIdT>(value)); return *this;}
     ///@}
   private:
 

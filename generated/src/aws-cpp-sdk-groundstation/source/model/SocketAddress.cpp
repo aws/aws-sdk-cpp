@@ -18,15 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-SocketAddress::SocketAddress() : 
-    m_nameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 SocketAddress::SocketAddress(JsonView jsonValue)
-  : SocketAddress()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SocketAddress& SocketAddress::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   return *this;
 }
 

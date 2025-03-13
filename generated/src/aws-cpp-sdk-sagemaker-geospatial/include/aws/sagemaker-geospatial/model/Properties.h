@@ -31,7 +31,7 @@ namespace Model
   class Properties
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API Properties();
+    AWS_SAGEMAKERGEOSPATIAL_API Properties() = default;
     AWS_SAGEMAKERGEOSPATIAL_API Properties(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Properties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Estimate of cloud cover.</p>
      */
-    inline double GetEoCloudCover() const{ return m_eoCloudCover; }
+    inline double GetEoCloudCover() const { return m_eoCloudCover; }
     inline bool EoCloudCoverHasBeenSet() const { return m_eoCloudCoverHasBeenSet; }
     inline void SetEoCloudCover(double value) { m_eoCloudCoverHasBeenSet = true; m_eoCloudCover = value; }
     inline Properties& WithEoCloudCover(double value) { SetEoCloudCover(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>Land cloud cover for Landsat Data Collection.</p>
      */
-    inline double GetLandsatCloudCoverLand() const{ return m_landsatCloudCoverLand; }
+    inline double GetLandsatCloudCoverLand() const { return m_landsatCloudCoverLand; }
     inline bool LandsatCloudCoverLandHasBeenSet() const { return m_landsatCloudCoverLandHasBeenSet; }
     inline void SetLandsatCloudCoverLand(double value) { m_landsatCloudCoverLandHasBeenSet = true; m_landsatCloudCoverLand = value; }
     inline Properties& WithLandsatCloudCoverLand(double value) { SetLandsatCloudCoverLand(value); return *this;}
@@ -63,14 +63,12 @@ namespace Model
      * platform the instrument is attached to. For satellites it is the name of the
      * satellite, eg. landsat-8 (Landsat-8), sentinel-2a.</p>
      */
-    inline const Aws::String& GetPlatform() const{ return m_platform; }
+    inline const Aws::String& GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
-    inline Properties& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
-    inline Properties& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
-    inline Properties& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+    template<typename PlatformT = Aws::String>
+    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
+    template<typename PlatformT = Aws::String>
+    Properties& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +76,7 @@ namespace Model
      * <p>The angle from the sensor between nadir (straight down) and the scene center.
      * Measured in degrees (0-90).</p>
      */
-    inline double GetViewOffNadir() const{ return m_viewOffNadir; }
+    inline double GetViewOffNadir() const { return m_viewOffNadir; }
     inline bool ViewOffNadirHasBeenSet() const { return m_viewOffNadirHasBeenSet; }
     inline void SetViewOffNadir(double value) { m_viewOffNadirHasBeenSet = true; m_viewOffNadir = value; }
     inline Properties& WithViewOffNadir(double value) { SetViewOffNadir(value); return *this;}
@@ -90,7 +88,7 @@ namespace Model
      * angle between truth north and the sun. Measured clockwise in degrees
      * (0-360).</p>
      */
-    inline double GetViewSunAzimuth() const{ return m_viewSunAzimuth; }
+    inline double GetViewSunAzimuth() const { return m_viewSunAzimuth; }
     inline bool ViewSunAzimuthHasBeenSet() const { return m_viewSunAzimuthHasBeenSet; }
     inline void SetViewSunAzimuth(double value) { m_viewSunAzimuthHasBeenSet = true; m_viewSunAzimuth = value; }
     inline Properties& WithViewSunAzimuth(double value) { SetViewSunAzimuth(value); return *this;}
@@ -105,29 +103,29 @@ namespace Model
      * href="https://www.timeanddate.com/astronomy/different-types-twilight.html">nautical
      * twilight</a>.</p>
      */
-    inline double GetViewSunElevation() const{ return m_viewSunElevation; }
+    inline double GetViewSunElevation() const { return m_viewSunElevation; }
     inline bool ViewSunElevationHasBeenSet() const { return m_viewSunElevationHasBeenSet; }
     inline void SetViewSunElevation(double value) { m_viewSunElevationHasBeenSet = true; m_viewSunElevation = value; }
     inline Properties& WithViewSunElevation(double value) { SetViewSunElevation(value); return *this;}
     ///@}
   private:
 
-    double m_eoCloudCover;
+    double m_eoCloudCover{0.0};
     bool m_eoCloudCoverHasBeenSet = false;
 
-    double m_landsatCloudCoverLand;
+    double m_landsatCloudCoverLand{0.0};
     bool m_landsatCloudCoverLandHasBeenSet = false;
 
     Aws::String m_platform;
     bool m_platformHasBeenSet = false;
 
-    double m_viewOffNadir;
+    double m_viewOffNadir{0.0};
     bool m_viewOffNadirHasBeenSet = false;
 
-    double m_viewSunAzimuth;
+    double m_viewSunAzimuth{0.0};
     bool m_viewSunAzimuthHasBeenSet = false;
 
-    double m_viewSunElevation;
+    double m_viewSunElevation{0.0};
     bool m_viewSunElevationHasBeenSet = false;
   };
 

@@ -18,20 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-MetricAttribution::MetricAttribution() : 
-    m_nameHasBeenSet(false),
-    m_metricAttributionArnHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_metricsOutputConfigHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 MetricAttribution::MetricAttribution(JsonView jsonValue)
-  : MetricAttribution()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ MetricAttribution& MetricAttribution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricAttributionArn"))
   {
     m_metricAttributionArn = jsonValue.GetString("metricAttributionArn");
-
     m_metricAttributionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetGroupArn"))
   {
     m_datasetGroupArn = jsonValue.GetString("datasetGroupArn");
-
     m_datasetGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricsOutputConfig"))
   {
     m_metricsOutputConfig = jsonValue.GetObject("metricsOutputConfig");
-
     m_metricsOutputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

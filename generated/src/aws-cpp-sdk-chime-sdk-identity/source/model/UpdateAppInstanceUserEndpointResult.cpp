@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAppInstanceUserEndpointResult::UpdateAppInstanceUserEndpointResult()
-{
-}
-
 UpdateAppInstanceUserEndpointResult::UpdateAppInstanceUserEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateAppInstanceUserEndpointResult& UpdateAppInstanceUserEndpointResult::operat
   if(jsonValue.ValueExists("AppInstanceUserArn"))
   {
     m_appInstanceUserArn = jsonValue.GetString("AppInstanceUserArn");
-
+    m_appInstanceUserArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
+    m_endpointIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

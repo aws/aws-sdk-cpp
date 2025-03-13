@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteOptionGroupRequest::DeleteOptionGroupRequest() : 
-    m_optionGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOptionGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

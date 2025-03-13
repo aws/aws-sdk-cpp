@@ -21,7 +21,7 @@ namespace Model
   class ExportSnapshotRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API ExportSnapshotRequest();
+    AWS_LIGHTSAIL_API ExportSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
      */
-    inline const Aws::String& GetSourceSnapshotName() const{ return m_sourceSnapshotName; }
+    inline const Aws::String& GetSourceSnapshotName() const { return m_sourceSnapshotName; }
     inline bool SourceSnapshotNameHasBeenSet() const { return m_sourceSnapshotNameHasBeenSet; }
-    inline void SetSourceSnapshotName(const Aws::String& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = value; }
-    inline void SetSourceSnapshotName(Aws::String&& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = std::move(value); }
-    inline void SetSourceSnapshotName(const char* value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName.assign(value); }
-    inline ExportSnapshotRequest& WithSourceSnapshotName(const Aws::String& value) { SetSourceSnapshotName(value); return *this;}
-    inline ExportSnapshotRequest& WithSourceSnapshotName(Aws::String&& value) { SetSourceSnapshotName(std::move(value)); return *this;}
-    inline ExportSnapshotRequest& WithSourceSnapshotName(const char* value) { SetSourceSnapshotName(value); return *this;}
+    template<typename SourceSnapshotNameT = Aws::String>
+    void SetSourceSnapshotName(SourceSnapshotNameT&& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = std::forward<SourceSnapshotNameT>(value); }
+    template<typename SourceSnapshotNameT = Aws::String>
+    ExportSnapshotRequest& WithSourceSnapshotName(SourceSnapshotNameT&& value) { SetSourceSnapshotName(std::forward<SourceSnapshotNameT>(value)); return *this;}
     ///@}
   private:
 

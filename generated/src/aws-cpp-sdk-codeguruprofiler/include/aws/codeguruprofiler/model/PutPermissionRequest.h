@@ -27,7 +27,7 @@ namespace Model
   class PutPermissionRequest : public CodeGuruProfilerRequest
   {
   public:
-    AWS_CODEGURUPROFILER_API PutPermissionRequest();
+    AWS_CODEGURUPROFILER_API PutPermissionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,12 +45,10 @@ namespace Model
      * which grants permission to perform actions required by the profiling agent,
      * <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
      */
-    inline const ActionGroup& GetActionGroup() const{ return m_actionGroup; }
+    inline ActionGroup GetActionGroup() const { return m_actionGroup; }
     inline bool ActionGroupHasBeenSet() const { return m_actionGroupHasBeenSet; }
-    inline void SetActionGroup(const ActionGroup& value) { m_actionGroupHasBeenSet = true; m_actionGroup = value; }
-    inline void SetActionGroup(ActionGroup&& value) { m_actionGroupHasBeenSet = true; m_actionGroup = std::move(value); }
-    inline PutPermissionRequest& WithActionGroup(const ActionGroup& value) { SetActionGroup(value); return *this;}
-    inline PutPermissionRequest& WithActionGroup(ActionGroup&& value) { SetActionGroup(std::move(value)); return *this;}
+    inline void SetActionGroup(ActionGroup value) { m_actionGroupHasBeenSet = true; m_actionGroup = value; }
+    inline PutPermissionRequest& WithActionGroup(ActionGroup value) { SetActionGroup(value); return *this;}
     ///@}
 
     ///@{
@@ -58,29 +56,26 @@ namespace Model
      * <p> A list ARNs for the roles and users you want to grant access to the
      * profiling group. Wildcards are not are supported in the ARNs. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
+    inline const Aws::Vector<Aws::String>& GetPrincipals() const { return m_principals; }
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
-    inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
-    inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
-    inline PutPermissionRequest& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
-    inline PutPermissionRequest& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
-    inline PutPermissionRequest& AddPrincipals(const Aws::String& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
-    inline PutPermissionRequest& AddPrincipals(Aws::String&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
-    inline PutPermissionRequest& AddPrincipals(const char* value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
+    template<typename PrincipalsT = Aws::Vector<Aws::String>>
+    void SetPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals = std::forward<PrincipalsT>(value); }
+    template<typename PrincipalsT = Aws::Vector<Aws::String>>
+    PutPermissionRequest& WithPrincipals(PrincipalsT&& value) { SetPrincipals(std::forward<PrincipalsT>(value)); return *this;}
+    template<typename PrincipalsT = Aws::String>
+    PutPermissionRequest& AddPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals.emplace_back(std::forward<PrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the profiling group to grant access to.</p>
      */
-    inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
+    inline const Aws::String& GetProfilingGroupName() const { return m_profilingGroupName; }
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
-    inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
-    inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
-    inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
-    inline PutPermissionRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
-    inline PutPermissionRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
-    inline PutPermissionRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
+    template<typename ProfilingGroupNameT = Aws::String>
+    void SetProfilingGroupName(ProfilingGroupNameT&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::forward<ProfilingGroupNameT>(value); }
+    template<typename ProfilingGroupNameT = Aws::String>
+    PutPermissionRequest& WithProfilingGroupName(ProfilingGroupNameT&& value) { SetProfilingGroupName(std::forward<ProfilingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,18 +85,16 @@ namespace Model
      * to a profiling group for the first time. If a policy already exists on the
      * profiling group, you must specify the <code>revisionId</code>. </p>
      */
-    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
-    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
-    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
-    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
-    inline PutPermissionRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-    inline PutPermissionRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-    inline PutPermissionRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    PutPermissionRequest& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
     ///@}
   private:
 
-    ActionGroup m_actionGroup;
+    ActionGroup m_actionGroup{ActionGroup::NOT_SET};
     bool m_actionGroupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_principals;

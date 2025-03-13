@@ -38,7 +38,7 @@ namespace Model
   class ManagedRuleGroupSummary
   {
   public:
-    AWS_WAFV2_API ManagedRuleGroupSummary();
+    AWS_WAFV2_API ManagedRuleGroupSummary() = default;
     AWS_WAFV2_API ManagedRuleGroupSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API ManagedRuleGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <p>The name of the managed rule group vendor. You use this, along with the rule
      * group name, to identify a rule group.</p>
      */
-    inline const Aws::String& GetVendorName() const{ return m_vendorName; }
+    inline const Aws::String& GetVendorName() const { return m_vendorName; }
     inline bool VendorNameHasBeenSet() const { return m_vendorNameHasBeenSet; }
-    inline void SetVendorName(const Aws::String& value) { m_vendorNameHasBeenSet = true; m_vendorName = value; }
-    inline void SetVendorName(Aws::String&& value) { m_vendorNameHasBeenSet = true; m_vendorName = std::move(value); }
-    inline void SetVendorName(const char* value) { m_vendorNameHasBeenSet = true; m_vendorName.assign(value); }
-    inline ManagedRuleGroupSummary& WithVendorName(const Aws::String& value) { SetVendorName(value); return *this;}
-    inline ManagedRuleGroupSummary& WithVendorName(Aws::String&& value) { SetVendorName(std::move(value)); return *this;}
-    inline ManagedRuleGroupSummary& WithVendorName(const char* value) { SetVendorName(value); return *this;}
+    template<typename VendorNameT = Aws::String>
+    void SetVendorName(VendorNameT&& value) { m_vendorNameHasBeenSet = true; m_vendorName = std::forward<VendorNameT>(value); }
+    template<typename VendorNameT = Aws::String>
+    ManagedRuleGroupSummary& WithVendorName(VendorNameT&& value) { SetVendorName(std::forward<VendorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>The name of the managed rule group. You use this, along with the vendor name,
      * to identify the rule group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ManagedRuleGroupSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ManagedRuleGroupSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ManagedRuleGroupSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ManagedRuleGroupSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +76,7 @@ namespace Model
      * retrieve the versions list by calling
      * <a>ListAvailableManagedRuleGroupVersions</a>. </p>
      */
-    inline bool GetVersioningSupported() const{ return m_versioningSupported; }
+    inline bool GetVersioningSupported() const { return m_versioningSupported; }
     inline bool VersioningSupportedHasBeenSet() const { return m_versioningSupportedHasBeenSet; }
     inline void SetVersioningSupported(bool value) { m_versioningSupportedHasBeenSet = true; m_versioningSupported = value; }
     inline ManagedRuleGroupSummary& WithVersioningSupported(bool value) { SetVersioningSupported(value); return *this;}
@@ -91,14 +87,12 @@ namespace Model
      * <p>The description of the managed rule group, provided by Amazon Web Services
      * Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ManagedRuleGroupSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ManagedRuleGroupSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ManagedRuleGroupSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ManagedRuleGroupSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
@@ -108,7 +102,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_versioningSupported;
+    bool m_versioningSupported{false};
     bool m_versioningSupportedHasBeenSet = false;
 
     Aws::String m_description;

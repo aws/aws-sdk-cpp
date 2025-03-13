@@ -34,7 +34,7 @@ namespace Model
   class AIGuardrailSensitiveInformationPolicyConfig
   {
   public:
-    AWS_QCONNECT_API AIGuardrailSensitiveInformationPolicyConfig();
+    AWS_QCONNECT_API AIGuardrailSensitiveInformationPolicyConfig() = default;
     AWS_QCONNECT_API AIGuardrailSensitiveInformationPolicyConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AIGuardrailSensitiveInformationPolicyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,28 @@ namespace Model
     /**
      * <p>A list of PII entities to configure to the AI Guardrail.</p>
      */
-    inline const Aws::Vector<GuardrailPiiEntityConfig>& GetPiiEntitiesConfig() const{ return m_piiEntitiesConfig; }
+    inline const Aws::Vector<GuardrailPiiEntityConfig>& GetPiiEntitiesConfig() const { return m_piiEntitiesConfig; }
     inline bool PiiEntitiesConfigHasBeenSet() const { return m_piiEntitiesConfigHasBeenSet; }
-    inline void SetPiiEntitiesConfig(const Aws::Vector<GuardrailPiiEntityConfig>& value) { m_piiEntitiesConfigHasBeenSet = true; m_piiEntitiesConfig = value; }
-    inline void SetPiiEntitiesConfig(Aws::Vector<GuardrailPiiEntityConfig>&& value) { m_piiEntitiesConfigHasBeenSet = true; m_piiEntitiesConfig = std::move(value); }
-    inline AIGuardrailSensitiveInformationPolicyConfig& WithPiiEntitiesConfig(const Aws::Vector<GuardrailPiiEntityConfig>& value) { SetPiiEntitiesConfig(value); return *this;}
-    inline AIGuardrailSensitiveInformationPolicyConfig& WithPiiEntitiesConfig(Aws::Vector<GuardrailPiiEntityConfig>&& value) { SetPiiEntitiesConfig(std::move(value)); return *this;}
-    inline AIGuardrailSensitiveInformationPolicyConfig& AddPiiEntitiesConfig(const GuardrailPiiEntityConfig& value) { m_piiEntitiesConfigHasBeenSet = true; m_piiEntitiesConfig.push_back(value); return *this; }
-    inline AIGuardrailSensitiveInformationPolicyConfig& AddPiiEntitiesConfig(GuardrailPiiEntityConfig&& value) { m_piiEntitiesConfigHasBeenSet = true; m_piiEntitiesConfig.push_back(std::move(value)); return *this; }
+    template<typename PiiEntitiesConfigT = Aws::Vector<GuardrailPiiEntityConfig>>
+    void SetPiiEntitiesConfig(PiiEntitiesConfigT&& value) { m_piiEntitiesConfigHasBeenSet = true; m_piiEntitiesConfig = std::forward<PiiEntitiesConfigT>(value); }
+    template<typename PiiEntitiesConfigT = Aws::Vector<GuardrailPiiEntityConfig>>
+    AIGuardrailSensitiveInformationPolicyConfig& WithPiiEntitiesConfig(PiiEntitiesConfigT&& value) { SetPiiEntitiesConfig(std::forward<PiiEntitiesConfigT>(value)); return *this;}
+    template<typename PiiEntitiesConfigT = GuardrailPiiEntityConfig>
+    AIGuardrailSensitiveInformationPolicyConfig& AddPiiEntitiesConfig(PiiEntitiesConfigT&& value) { m_piiEntitiesConfigHasBeenSet = true; m_piiEntitiesConfig.emplace_back(std::forward<PiiEntitiesConfigT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of regular expressions to configure to the AI Guardrail.</p>
      */
-    inline const Aws::Vector<GuardrailRegexConfig>& GetRegexesConfig() const{ return m_regexesConfig; }
+    inline const Aws::Vector<GuardrailRegexConfig>& GetRegexesConfig() const { return m_regexesConfig; }
     inline bool RegexesConfigHasBeenSet() const { return m_regexesConfigHasBeenSet; }
-    inline void SetRegexesConfig(const Aws::Vector<GuardrailRegexConfig>& value) { m_regexesConfigHasBeenSet = true; m_regexesConfig = value; }
-    inline void SetRegexesConfig(Aws::Vector<GuardrailRegexConfig>&& value) { m_regexesConfigHasBeenSet = true; m_regexesConfig = std::move(value); }
-    inline AIGuardrailSensitiveInformationPolicyConfig& WithRegexesConfig(const Aws::Vector<GuardrailRegexConfig>& value) { SetRegexesConfig(value); return *this;}
-    inline AIGuardrailSensitiveInformationPolicyConfig& WithRegexesConfig(Aws::Vector<GuardrailRegexConfig>&& value) { SetRegexesConfig(std::move(value)); return *this;}
-    inline AIGuardrailSensitiveInformationPolicyConfig& AddRegexesConfig(const GuardrailRegexConfig& value) { m_regexesConfigHasBeenSet = true; m_regexesConfig.push_back(value); return *this; }
-    inline AIGuardrailSensitiveInformationPolicyConfig& AddRegexesConfig(GuardrailRegexConfig&& value) { m_regexesConfigHasBeenSet = true; m_regexesConfig.push_back(std::move(value)); return *this; }
+    template<typename RegexesConfigT = Aws::Vector<GuardrailRegexConfig>>
+    void SetRegexesConfig(RegexesConfigT&& value) { m_regexesConfigHasBeenSet = true; m_regexesConfig = std::forward<RegexesConfigT>(value); }
+    template<typename RegexesConfigT = Aws::Vector<GuardrailRegexConfig>>
+    AIGuardrailSensitiveInformationPolicyConfig& WithRegexesConfig(RegexesConfigT&& value) { SetRegexesConfig(std::forward<RegexesConfigT>(value)); return *this;}
+    template<typename RegexesConfigT = GuardrailRegexConfig>
+    AIGuardrailSensitiveInformationPolicyConfig& AddRegexesConfig(RegexesConfigT&& value) { m_regexesConfigHasBeenSet = true; m_regexesConfig.emplace_back(std::forward<RegexesConfigT>(value)); return *this; }
     ///@}
   private:
 

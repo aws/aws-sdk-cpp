@@ -18,19 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-GsmNmrObj::GsmNmrObj() : 
-    m_bsic(0),
-    m_bsicHasBeenSet(false),
-    m_bcch(0),
-    m_bcchHasBeenSet(false),
-    m_rxLevel(0),
-    m_rxLevelHasBeenSet(false),
-    m_globalIdentityHasBeenSet(false)
-{
-}
-
 GsmNmrObj::GsmNmrObj(JsonView jsonValue)
-  : GsmNmrObj()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ GsmNmrObj& GsmNmrObj::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bsic"))
   {
     m_bsic = jsonValue.GetInteger("Bsic");
-
     m_bsicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Bcch"))
   {
     m_bcch = jsonValue.GetInteger("Bcch");
-
     m_bcchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RxLevel"))
   {
     m_rxLevel = jsonValue.GetInteger("RxLevel");
-
     m_rxLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalIdentity"))
   {
     m_globalIdentity = jsonValue.GetObject("GlobalIdentity");
-
     m_globalIdentityHasBeenSet = true;
   }
-
   return *this;
 }
 

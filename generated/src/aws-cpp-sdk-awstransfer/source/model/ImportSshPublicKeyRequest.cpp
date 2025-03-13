@@ -12,13 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportSshPublicKeyRequest::ImportSshPublicKeyRequest() : 
-    m_serverIdHasBeenSet(false),
-    m_sshPublicKeyBodyHasBeenSet(false),
-    m_userNameHasBeenSet(false)
-{
-}
-
 Aws::String ImportSshPublicKeyRequest::SerializePayload() const
 {
   JsonValue payload;

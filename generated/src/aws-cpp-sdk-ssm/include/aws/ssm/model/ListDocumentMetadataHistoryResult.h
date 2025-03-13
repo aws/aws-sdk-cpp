@@ -28,7 +28,7 @@ namespace Model
   class ListDocumentMetadataHistoryResult
   {
   public:
-    AWS_SSM_API ListDocumentMetadataHistoryResult();
+    AWS_SSM_API ListDocumentMetadataHistoryResult() = default;
     AWS_SSM_API ListDocumentMetadataHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API ListDocumentMetadataHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The name of the change template.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline ListDocumentMetadataHistoryResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ListDocumentMetadataHistoryResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ListDocumentMetadataHistoryResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ListDocumentMetadataHistoryResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the change template.</p>
      */
-    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
-    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersion = value; }
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersion = std::move(value); }
-    inline void SetDocumentVersion(const char* value) { m_documentVersion.assign(value); }
-    inline ListDocumentMetadataHistoryResult& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
-    inline ListDocumentMetadataHistoryResult& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
-    inline ListDocumentMetadataHistoryResult& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+    inline const Aws::String& GetDocumentVersion() const { return m_documentVersion; }
+    template<typename DocumentVersionT = Aws::String>
+    void SetDocumentVersion(DocumentVersionT&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::forward<DocumentVersionT>(value); }
+    template<typename DocumentVersionT = Aws::String>
+    ListDocumentMetadataHistoryResult& WithDocumentVersion(DocumentVersionT&& value) { SetDocumentVersion(std::forward<DocumentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,24 +60,22 @@ namespace Model
      * <p>The user ID of the person in the organization who requested the review of the
      * change template.</p>
      */
-    inline const Aws::String& GetAuthor() const{ return m_author; }
-    inline void SetAuthor(const Aws::String& value) { m_author = value; }
-    inline void SetAuthor(Aws::String&& value) { m_author = std::move(value); }
-    inline void SetAuthor(const char* value) { m_author.assign(value); }
-    inline ListDocumentMetadataHistoryResult& WithAuthor(const Aws::String& value) { SetAuthor(value); return *this;}
-    inline ListDocumentMetadataHistoryResult& WithAuthor(Aws::String&& value) { SetAuthor(std::move(value)); return *this;}
-    inline ListDocumentMetadataHistoryResult& WithAuthor(const char* value) { SetAuthor(value); return *this;}
+    inline const Aws::String& GetAuthor() const { return m_author; }
+    template<typename AuthorT = Aws::String>
+    void SetAuthor(AuthorT&& value) { m_authorHasBeenSet = true; m_author = std::forward<AuthorT>(value); }
+    template<typename AuthorT = Aws::String>
+    ListDocumentMetadataHistoryResult& WithAuthor(AuthorT&& value) { SetAuthor(std::forward<AuthorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the response to the change template approval request.</p>
      */
-    inline const DocumentMetadataResponseInfo& GetMetadata() const{ return m_metadata; }
-    inline void SetMetadata(const DocumentMetadataResponseInfo& value) { m_metadata = value; }
-    inline void SetMetadata(DocumentMetadataResponseInfo&& value) { m_metadata = std::move(value); }
-    inline ListDocumentMetadataHistoryResult& WithMetadata(const DocumentMetadataResponseInfo& value) { SetMetadata(value); return *this;}
-    inline ListDocumentMetadataHistoryResult& WithMetadata(DocumentMetadataResponseInfo&& value) { SetMetadata(std::move(value)); return *this;}
+    inline const DocumentMetadataResponseInfo& GetMetadata() const { return m_metadata; }
+    template<typename MetadataT = DocumentMetadataResponseInfo>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = DocumentMetadataResponseInfo>
+    ListDocumentMetadataHistoryResult& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,38 +84,40 @@ namespace Model
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDocumentMetadataHistoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDocumentMetadataHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDocumentMetadataHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDocumentMetadataHistoryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDocumentMetadataHistoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDocumentMetadataHistoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDocumentMetadataHistoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDocumentMetadataHistoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_documentVersion;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::String m_author;
+    bool m_authorHasBeenSet = false;
 
     DocumentMetadataResponseInfo m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

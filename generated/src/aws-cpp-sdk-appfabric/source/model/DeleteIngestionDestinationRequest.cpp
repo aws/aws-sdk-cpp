@@ -12,13 +12,6 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIngestionDestinationRequest::DeleteIngestionDestinationRequest() : 
-    m_appBundleIdentifierHasBeenSet(false),
-    m_ingestionIdentifierHasBeenSet(false),
-    m_ingestionDestinationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIngestionDestinationRequest::SerializePayload() const
 {
   return {};

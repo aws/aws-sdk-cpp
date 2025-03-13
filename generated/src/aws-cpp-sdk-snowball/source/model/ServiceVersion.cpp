@@ -18,13 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-ServiceVersion::ServiceVersion() : 
-    m_versionHasBeenSet(false)
-{
-}
-
 ServiceVersion::ServiceVersion(JsonView jsonValue)
-  : ServiceVersion()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServiceVersion& ServiceVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

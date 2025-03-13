@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-DolbyVisionLevel6Metadata::DolbyVisionLevel6Metadata() : 
-    m_maxCll(0),
-    m_maxCllHasBeenSet(false),
-    m_maxFall(0),
-    m_maxFallHasBeenSet(false)
-{
-}
-
 DolbyVisionLevel6Metadata::DolbyVisionLevel6Metadata(JsonView jsonValue)
-  : DolbyVisionLevel6Metadata()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DolbyVisionLevel6Metadata& DolbyVisionLevel6Metadata::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("maxCll"))
   {
     m_maxCll = jsonValue.GetInteger("maxCll");
-
     m_maxCllHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxFall"))
   {
     m_maxFall = jsonValue.GetInteger("maxFall");
-
     m_maxFallHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListStreamProcessorsResult::ListStreamProcessorsResult()
-{
-}
-
 ListStreamProcessorsResult::ListStreamProcessorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListStreamProcessorsResult& ListStreamProcessorsResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamProcessors"))
   {
     Aws::Utils::Array<JsonView> streamProcessorsJsonList = jsonValue.GetArray("StreamProcessors");
@@ -42,14 +37,15 @@ ListStreamProcessorsResult& ListStreamProcessorsResult::operator =(const Aws::Am
     {
       m_streamProcessors.push_back(streamProcessorsJsonList[streamProcessorsIndex].AsObject());
     }
+    m_streamProcessorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

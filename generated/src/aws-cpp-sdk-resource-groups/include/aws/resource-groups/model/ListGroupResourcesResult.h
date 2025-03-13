@@ -30,7 +30,7 @@ namespace Model
   class ListGroupResourcesResult
   {
   public:
-    AWS_RESOURCEGROUPS_API ListGroupResourcesResult();
+    AWS_RESOURCEGROUPS_API ListGroupResourcesResult() = default;
     AWS_RESOURCEGROUPS_API ListGroupResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEGROUPS_API ListGroupResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>An array of resources from which you can determine each resource's identity,
      * type, and group membership status.</p>
      */
-    inline const Aws::Vector<ListGroupResourcesItem>& GetResources() const{ return m_resources; }
-    inline void SetResources(const Aws::Vector<ListGroupResourcesItem>& value) { m_resources = value; }
-    inline void SetResources(Aws::Vector<ListGroupResourcesItem>&& value) { m_resources = std::move(value); }
-    inline ListGroupResourcesResult& WithResources(const Aws::Vector<ListGroupResourcesItem>& value) { SetResources(value); return *this;}
-    inline ListGroupResourcesResult& WithResources(Aws::Vector<ListGroupResourcesItem>&& value) { SetResources(std::move(value)); return *this;}
-    inline ListGroupResourcesResult& AddResources(const ListGroupResourcesItem& value) { m_resources.push_back(value); return *this; }
-    inline ListGroupResourcesResult& AddResources(ListGroupResourcesItem&& value) { m_resources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListGroupResourcesItem>& GetResources() const { return m_resources; }
+    template<typename ResourcesT = Aws::Vector<ListGroupResourcesItem>>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = Aws::Vector<ListGroupResourcesItem>>
+    ListGroupResourcesResult& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
+    template<typename ResourcesT = ListGroupResourcesItem>
+    ListGroupResourcesResult& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,13 +57,11 @@ namespace Model
      * should repeat this until the <code>NextToken</code> response element comes back
      * as <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListGroupResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListGroupResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListGroupResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListGroupResourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,34 +73,36 @@ namespace Model
      * <code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE</code> and
      * <code>RESOURCE_TYPE_NOT_SUPPORTED</code>. </p>
      */
-    inline const Aws::Vector<QueryError>& GetQueryErrors() const{ return m_queryErrors; }
-    inline void SetQueryErrors(const Aws::Vector<QueryError>& value) { m_queryErrors = value; }
-    inline void SetQueryErrors(Aws::Vector<QueryError>&& value) { m_queryErrors = std::move(value); }
-    inline ListGroupResourcesResult& WithQueryErrors(const Aws::Vector<QueryError>& value) { SetQueryErrors(value); return *this;}
-    inline ListGroupResourcesResult& WithQueryErrors(Aws::Vector<QueryError>&& value) { SetQueryErrors(std::move(value)); return *this;}
-    inline ListGroupResourcesResult& AddQueryErrors(const QueryError& value) { m_queryErrors.push_back(value); return *this; }
-    inline ListGroupResourcesResult& AddQueryErrors(QueryError&& value) { m_queryErrors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QueryError>& GetQueryErrors() const { return m_queryErrors; }
+    template<typename QueryErrorsT = Aws::Vector<QueryError>>
+    void SetQueryErrors(QueryErrorsT&& value) { m_queryErrorsHasBeenSet = true; m_queryErrors = std::forward<QueryErrorsT>(value); }
+    template<typename QueryErrorsT = Aws::Vector<QueryError>>
+    ListGroupResourcesResult& WithQueryErrors(QueryErrorsT&& value) { SetQueryErrors(std::forward<QueryErrorsT>(value)); return *this;}
+    template<typename QueryErrorsT = QueryError>
+    ListGroupResourcesResult& AddQueryErrors(QueryErrorsT&& value) { m_queryErrorsHasBeenSet = true; m_queryErrors.emplace_back(std::forward<QueryErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListGroupResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListGroupResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListGroupResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListGroupResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ListGroupResourcesItem> m_resources;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<QueryError> m_queryErrors;
+    bool m_queryErrorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DisassociateAwsAccountFromPartnerAccountRequest::DisassociateAwsAccountFromPartnerAccountRequest() : 
-    m_partnerAccountIdHasBeenSet(false),
-    m_partnerType(PartnerType::NOT_SET),
-    m_partnerTypeHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateAwsAccountFromPartnerAccountRequest::SerializePayload() const
 {
   return {};

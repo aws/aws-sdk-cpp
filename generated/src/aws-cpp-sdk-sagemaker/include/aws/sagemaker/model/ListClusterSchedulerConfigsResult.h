@@ -29,7 +29,7 @@ namespace Model
   class ListClusterSchedulerConfigsResult
   {
   public:
-    AWS_SAGEMAKER_API ListClusterSchedulerConfigsResult();
+    AWS_SAGEMAKER_API ListClusterSchedulerConfigsResult() = default;
     AWS_SAGEMAKER_API ListClusterSchedulerConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListClusterSchedulerConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summaries of the cluster policies.</p>
      */
-    inline const Aws::Vector<ClusterSchedulerConfigSummary>& GetClusterSchedulerConfigSummaries() const{ return m_clusterSchedulerConfigSummaries; }
-    inline void SetClusterSchedulerConfigSummaries(const Aws::Vector<ClusterSchedulerConfigSummary>& value) { m_clusterSchedulerConfigSummaries = value; }
-    inline void SetClusterSchedulerConfigSummaries(Aws::Vector<ClusterSchedulerConfigSummary>&& value) { m_clusterSchedulerConfigSummaries = std::move(value); }
-    inline ListClusterSchedulerConfigsResult& WithClusterSchedulerConfigSummaries(const Aws::Vector<ClusterSchedulerConfigSummary>& value) { SetClusterSchedulerConfigSummaries(value); return *this;}
-    inline ListClusterSchedulerConfigsResult& WithClusterSchedulerConfigSummaries(Aws::Vector<ClusterSchedulerConfigSummary>&& value) { SetClusterSchedulerConfigSummaries(std::move(value)); return *this;}
-    inline ListClusterSchedulerConfigsResult& AddClusterSchedulerConfigSummaries(const ClusterSchedulerConfigSummary& value) { m_clusterSchedulerConfigSummaries.push_back(value); return *this; }
-    inline ListClusterSchedulerConfigsResult& AddClusterSchedulerConfigSummaries(ClusterSchedulerConfigSummary&& value) { m_clusterSchedulerConfigSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ClusterSchedulerConfigSummary>& GetClusterSchedulerConfigSummaries() const { return m_clusterSchedulerConfigSummaries; }
+    template<typename ClusterSchedulerConfigSummariesT = Aws::Vector<ClusterSchedulerConfigSummary>>
+    void SetClusterSchedulerConfigSummaries(ClusterSchedulerConfigSummariesT&& value) { m_clusterSchedulerConfigSummariesHasBeenSet = true; m_clusterSchedulerConfigSummaries = std::forward<ClusterSchedulerConfigSummariesT>(value); }
+    template<typename ClusterSchedulerConfigSummariesT = Aws::Vector<ClusterSchedulerConfigSummary>>
+    ListClusterSchedulerConfigsResult& WithClusterSchedulerConfigSummaries(ClusterSchedulerConfigSummariesT&& value) { SetClusterSchedulerConfigSummaries(std::forward<ClusterSchedulerConfigSummariesT>(value)); return *this;}
+    template<typename ClusterSchedulerConfigSummariesT = ClusterSchedulerConfigSummary>
+    ListClusterSchedulerConfigsResult& AddClusterSchedulerConfigSummaries(ClusterSchedulerConfigSummariesT&& value) { m_clusterSchedulerConfigSummariesHasBeenSet = true; m_clusterSchedulerConfigSummaries.emplace_back(std::forward<ClusterSchedulerConfigSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If the previous response was truncated, you will receive this token. Use it
      * in your next request to receive the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListClusterSchedulerConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListClusterSchedulerConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListClusterSchedulerConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListClusterSchedulerConfigsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListClusterSchedulerConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListClusterSchedulerConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListClusterSchedulerConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListClusterSchedulerConfigsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ClusterSchedulerConfigSummary> m_clusterSchedulerConfigSummaries;
+    bool m_clusterSchedulerConfigSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

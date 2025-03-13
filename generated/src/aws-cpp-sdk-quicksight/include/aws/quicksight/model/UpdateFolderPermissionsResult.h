@@ -29,7 +29,7 @@ namespace Model
   class UpdateFolderPermissionsResult
   {
   public:
-    AWS_QUICKSIGHT_API UpdateFolderPermissionsResult();
+    AWS_QUICKSIGHT_API UpdateFolderPermissionsResult() = default;
     AWS_QUICKSIGHT_API UpdateFolderPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API UpdateFolderPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline UpdateFolderPermissionsResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
@@ -47,62 +47,61 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateFolderPermissionsResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateFolderPermissionsResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateFolderPermissionsResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateFolderPermissionsResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the folder.</p>
      */
-    inline const Aws::String& GetFolderId() const{ return m_folderId; }
-    inline void SetFolderId(const Aws::String& value) { m_folderId = value; }
-    inline void SetFolderId(Aws::String&& value) { m_folderId = std::move(value); }
-    inline void SetFolderId(const char* value) { m_folderId.assign(value); }
-    inline UpdateFolderPermissionsResult& WithFolderId(const Aws::String& value) { SetFolderId(value); return *this;}
-    inline UpdateFolderPermissionsResult& WithFolderId(Aws::String&& value) { SetFolderId(std::move(value)); return *this;}
-    inline UpdateFolderPermissionsResult& WithFolderId(const char* value) { SetFolderId(value); return *this;}
+    inline const Aws::String& GetFolderId() const { return m_folderId; }
+    template<typename FolderIdT = Aws::String>
+    void SetFolderId(FolderIdT&& value) { m_folderIdHasBeenSet = true; m_folderId = std::forward<FolderIdT>(value); }
+    template<typename FolderIdT = Aws::String>
+    UpdateFolderPermissionsResult& WithFolderId(FolderIdT&& value) { SetFolderId(std::forward<FolderIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the permissions for the folder.</p>
      */
-    inline const Aws::Vector<ResourcePermission>& GetPermissions() const{ return m_permissions; }
-    inline void SetPermissions(const Aws::Vector<ResourcePermission>& value) { m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<ResourcePermission>&& value) { m_permissions = std::move(value); }
-    inline UpdateFolderPermissionsResult& WithPermissions(const Aws::Vector<ResourcePermission>& value) { SetPermissions(value); return *this;}
-    inline UpdateFolderPermissionsResult& WithPermissions(Aws::Vector<ResourcePermission>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline UpdateFolderPermissionsResult& AddPermissions(const ResourcePermission& value) { m_permissions.push_back(value); return *this; }
-    inline UpdateFolderPermissionsResult& AddPermissions(ResourcePermission&& value) { m_permissions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourcePermission>& GetPermissions() const { return m_permissions; }
+    template<typename PermissionsT = Aws::Vector<ResourcePermission>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<ResourcePermission>>
+    UpdateFolderPermissionsResult& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    template<typename PermissionsT = ResourcePermission>
+    UpdateFolderPermissionsResult& AddPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions.emplace_back(std::forward<PermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateFolderPermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateFolderPermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateFolderPermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateFolderPermissionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_folderId;
+    bool m_folderIdHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_permissions;
+    bool m_permissionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

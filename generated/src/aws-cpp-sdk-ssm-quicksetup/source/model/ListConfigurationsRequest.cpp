@@ -12,16 +12,6 @@ using namespace Aws::SSMQuickSetup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListConfigurationsRequest::ListConfigurationsRequest() : 
-    m_configurationDefinitionIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_managerArnHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_startingTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CreditSpecification::CreditSpecification() : 
-    m_cpuCreditsHasBeenSet(false)
-{
-}
-
 CreditSpecification::CreditSpecification(const XmlNode& xmlNode)
-  : CreditSpecification()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ CreditSpecification& CreditSpecification::operator =(const XmlNode& xmlNode)
     {
       m_cpuCredits = Aws::Utils::Xml::DecodeEscapedXmlText(cpuCreditsNode.GetText());
       m_cpuCreditsHasBeenSet = true;
+       m_cpuCreditsHasBeenSet = true;
     }
   }
 

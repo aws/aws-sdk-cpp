@@ -18,17 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANMulticast::LoRaWANMulticast() : 
-    m_rfRegion(SupportedRfRegion::NOT_SET),
-    m_rfRegionHasBeenSet(false),
-    m_dlClass(DlClass::NOT_SET),
-    m_dlClassHasBeenSet(false),
-    m_participatingGatewaysHasBeenSet(false)
-{
-}
-
 LoRaWANMulticast::LoRaWANMulticast(JsonView jsonValue)
-  : LoRaWANMulticast()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ LoRaWANMulticast& LoRaWANMulticast::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RfRegion"))
   {
     m_rfRegion = SupportedRfRegionMapper::GetSupportedRfRegionForName(jsonValue.GetString("RfRegion"));
-
     m_rfRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DlClass"))
   {
     m_dlClass = DlClassMapper::GetDlClassForName(jsonValue.GetString("DlClass"));
-
     m_dlClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipatingGateways"))
   {
     m_participatingGateways = jsonValue.GetObject("ParticipatingGateways");
-
     m_participatingGatewaysHasBeenSet = true;
   }
-
   return *this;
 }
 

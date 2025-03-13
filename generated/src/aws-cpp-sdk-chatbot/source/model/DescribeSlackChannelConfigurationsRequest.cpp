@@ -12,14 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSlackChannelConfigurationsRequest::DescribeSlackChannelConfigurationsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_chatConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSlackChannelConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImportVolumeTaskDetails::ImportVolumeTaskDetails() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_bytesConverted(0),
-    m_bytesConvertedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_volumeHasBeenSet(false)
-{
-}
-
 ImportVolumeTaskDetails::ImportVolumeTaskDetails(const XmlNode& xmlNode)
-  : ImportVolumeTaskDetails()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ ImportVolumeTaskDetails& ImportVolumeTaskDetails::operator =(const XmlNode& xmlN
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode bytesConvertedNode = resultNode.FirstChild("bytesConverted");
     if(!bytesConvertedNode.IsNull())
     {
       m_bytesConverted = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bytesConvertedNode.GetText()).c_str()).c_str());
       m_bytesConvertedHasBeenSet = true;
+       m_bytesConvertedHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode imageNode = resultNode.FirstChild("image");
     if(!imageNode.IsNull())
     {
       m_image = imageNode;
       m_imageHasBeenSet = true;
+       m_imageHasBeenSet = true;
     }
     XmlNode volumeNode = resultNode.FirstChild("volume");
     if(!volumeNode.IsNull())
     {
       m_volume = volumeNode;
       m_volumeHasBeenSet = true;
+       m_volumeHasBeenSet = true;
     }
   }
 

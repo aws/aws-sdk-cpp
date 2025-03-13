@@ -33,7 +33,7 @@ namespace Model
   class RouteFerryNotice
   {
   public:
-    AWS_GEOROUTES_API RouteFerryNotice();
+    AWS_GEOROUTES_API RouteFerryNotice() = default;
     AWS_GEOROUTES_API RouteFerryNotice(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteFerryNotice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>Code corresponding to the issue.</p>
      */
-    inline const RouteFerryNoticeCode& GetCode() const{ return m_code; }
+    inline RouteFerryNoticeCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const RouteFerryNoticeCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(RouteFerryNoticeCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline RouteFerryNotice& WithCode(const RouteFerryNoticeCode& value) { SetCode(value); return *this;}
-    inline RouteFerryNotice& WithCode(RouteFerryNoticeCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(RouteFerryNoticeCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline RouteFerryNotice& WithCode(RouteFerryNoticeCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,17 @@ namespace Model
      * ignored, High impact notices must be evaluated further to determine the
      * impact.</p>
      */
-    inline const RouteNoticeImpact& GetImpact() const{ return m_impact; }
+    inline RouteNoticeImpact GetImpact() const { return m_impact; }
     inline bool ImpactHasBeenSet() const { return m_impactHasBeenSet; }
-    inline void SetImpact(const RouteNoticeImpact& value) { m_impactHasBeenSet = true; m_impact = value; }
-    inline void SetImpact(RouteNoticeImpact&& value) { m_impactHasBeenSet = true; m_impact = std::move(value); }
-    inline RouteFerryNotice& WithImpact(const RouteNoticeImpact& value) { SetImpact(value); return *this;}
-    inline RouteFerryNotice& WithImpact(RouteNoticeImpact&& value) { SetImpact(std::move(value)); return *this;}
+    inline void SetImpact(RouteNoticeImpact value) { m_impactHasBeenSet = true; m_impact = value; }
+    inline RouteFerryNotice& WithImpact(RouteNoticeImpact value) { SetImpact(value); return *this;}
     ///@}
   private:
 
-    RouteFerryNoticeCode m_code;
+    RouteFerryNoticeCode m_code{RouteFerryNoticeCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
-    RouteNoticeImpact m_impact;
+    RouteNoticeImpact m_impact{RouteNoticeImpact::NOT_SET};
     bool m_impactHasBeenSet = false;
   };
 

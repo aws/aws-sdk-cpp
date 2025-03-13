@@ -31,7 +31,7 @@ namespace Model
   class EstimatedResourceSize
   {
   public:
-    AWS_IOTANALYTICS_API EstimatedResourceSize();
+    AWS_IOTANALYTICS_API EstimatedResourceSize() = default;
     AWS_IOTANALYTICS_API EstimatedResourceSize(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API EstimatedResourceSize& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The estimated size of the resource, in bytes.</p>
      */
-    inline double GetEstimatedSizeInBytes() const{ return m_estimatedSizeInBytes; }
+    inline double GetEstimatedSizeInBytes() const { return m_estimatedSizeInBytes; }
     inline bool EstimatedSizeInBytesHasBeenSet() const { return m_estimatedSizeInBytesHasBeenSet; }
     inline void SetEstimatedSizeInBytes(double value) { m_estimatedSizeInBytesHasBeenSet = true; m_estimatedSizeInBytes = value; }
     inline EstimatedResourceSize& WithEstimatedSizeInBytes(double value) { SetEstimatedSizeInBytes(value); return *this;}
@@ -51,19 +51,19 @@ namespace Model
     /**
      * <p>The time when the estimate of the size of the resource was made.</p>
      */
-    inline const Aws::Utils::DateTime& GetEstimatedOn() const{ return m_estimatedOn; }
+    inline const Aws::Utils::DateTime& GetEstimatedOn() const { return m_estimatedOn; }
     inline bool EstimatedOnHasBeenSet() const { return m_estimatedOnHasBeenSet; }
-    inline void SetEstimatedOn(const Aws::Utils::DateTime& value) { m_estimatedOnHasBeenSet = true; m_estimatedOn = value; }
-    inline void SetEstimatedOn(Aws::Utils::DateTime&& value) { m_estimatedOnHasBeenSet = true; m_estimatedOn = std::move(value); }
-    inline EstimatedResourceSize& WithEstimatedOn(const Aws::Utils::DateTime& value) { SetEstimatedOn(value); return *this;}
-    inline EstimatedResourceSize& WithEstimatedOn(Aws::Utils::DateTime&& value) { SetEstimatedOn(std::move(value)); return *this;}
+    template<typename EstimatedOnT = Aws::Utils::DateTime>
+    void SetEstimatedOn(EstimatedOnT&& value) { m_estimatedOnHasBeenSet = true; m_estimatedOn = std::forward<EstimatedOnT>(value); }
+    template<typename EstimatedOnT = Aws::Utils::DateTime>
+    EstimatedResourceSize& WithEstimatedOn(EstimatedOnT&& value) { SetEstimatedOn(std::forward<EstimatedOnT>(value)); return *this;}
     ///@}
   private:
 
-    double m_estimatedSizeInBytes;
+    double m_estimatedSizeInBytes{0.0};
     bool m_estimatedSizeInBytesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_estimatedOn;
+    Aws::Utils::DateTime m_estimatedOn{};
     bool m_estimatedOnHasBeenSet = false;
   };
 

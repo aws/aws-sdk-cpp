@@ -18,43 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteVehicleSpan::RouteVehicleSpan() : 
-    m_bestCaseDuration(0),
-    m_bestCaseDurationHasBeenSet(false),
-    m_carAccessHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_distance(0),
-    m_distanceHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_dynamicSpeedHasBeenSet(false),
-    m_functionalClassification(0),
-    m_functionalClassificationHasBeenSet(false),
-    m_gate(RouteSpanGateAttribute::NOT_SET),
-    m_gateHasBeenSet(false),
-    m_geometryOffset(0),
-    m_geometryOffsetHasBeenSet(false),
-    m_incidentsHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_noticesHasBeenSet(false),
-    m_railwayCrossing(RouteSpanRailwayCrossingAttribute::NOT_SET),
-    m_railwayCrossingHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_roadAttributesHasBeenSet(false),
-    m_routeNumbersHasBeenSet(false),
-    m_scooterAccessHasBeenSet(false),
-    m_speedLimitHasBeenSet(false),
-    m_tollSystemsHasBeenSet(false),
-    m_truckAccessHasBeenSet(false),
-    m_truckRoadTypesHasBeenSet(false),
-    m_typicalDuration(0),
-    m_typicalDurationHasBeenSet(false),
-    m_zonesHasBeenSet(false)
-{
-}
-
 RouteVehicleSpan::RouteVehicleSpan(JsonView jsonValue)
-  : RouteVehicleSpan()
 {
   *this = jsonValue;
 }
@@ -64,10 +28,8 @@ RouteVehicleSpan& RouteVehicleSpan::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BestCaseDuration"))
   {
     m_bestCaseDuration = jsonValue.GetInt64("BestCaseDuration");
-
     m_bestCaseDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CarAccess"))
   {
     Aws::Utils::Array<JsonView> carAccessJsonList = jsonValue.GetArray("CarAccess");
@@ -77,56 +39,41 @@ RouteVehicleSpan& RouteVehicleSpan::operator =(JsonView jsonValue)
     }
     m_carAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetInt64("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInt64("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DynamicSpeed"))
   {
     m_dynamicSpeed = jsonValue.GetObject("DynamicSpeed");
-
     m_dynamicSpeedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunctionalClassification"))
   {
     m_functionalClassification = jsonValue.GetInteger("FunctionalClassification");
-
     m_functionalClassificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Gate"))
   {
     m_gate = RouteSpanGateAttributeMapper::GetRouteSpanGateAttributeForName(jsonValue.GetString("Gate"));
-
     m_gateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeometryOffset"))
   {
     m_geometryOffset = jsonValue.GetInteger("GeometryOffset");
-
     m_geometryOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Incidents"))
   {
     Aws::Utils::Array<JsonView> incidentsJsonList = jsonValue.GetArray("Incidents");
@@ -136,7 +83,6 @@ RouteVehicleSpan& RouteVehicleSpan::operator =(JsonView jsonValue)
     }
     m_incidentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Names"))
   {
     Aws::Utils::Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
@@ -146,7 +92,6 @@ RouteVehicleSpan& RouteVehicleSpan::operator =(JsonView jsonValue)
     }
     m_namesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notices"))
   {
     Aws::Utils::Array<JsonView> noticesJsonList = jsonValue.GetArray("Notices");
@@ -156,21 +101,16 @@ RouteVehicleSpan& RouteVehicleSpan::operator =(JsonView jsonValue)
     }
     m_noticesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RailwayCrossing"))
   {
     m_railwayCrossing = RouteSpanRailwayCrossingAttributeMapper::GetRouteSpanRailwayCrossingAttributeForName(jsonValue.GetString("RailwayCrossing"));
-
     m_railwayCrossingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoadAttributes"))
   {
     Aws::Utils::Array<JsonView> roadAttributesJsonList = jsonValue.GetArray("RoadAttributes");
@@ -180,7 +120,6 @@ RouteVehicleSpan& RouteVehicleSpan::operator =(JsonView jsonValue)
     }
     m_roadAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteNumbers"))
   {
     Aws::Utils::Array<JsonView> routeNumbersJsonList = jsonValue.GetArray("RouteNumbers");
@@ -190,7 +129,6 @@ RouteVehicleSpan& RouteVehicleSpan::operator =(JsonView jsonValue)
     }
     m_routeNumbersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScooterAccess"))
   {
     Aws::Utils::Array<JsonView> scooterAccessJsonList = jsonValue.GetArray("ScooterAccess");
@@ -200,14 +138,11 @@ RouteVehicleSpan& RouteVehicleSpan::operator =(JsonView jsonValue)
     }
     m_scooterAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpeedLimit"))
   {
     m_speedLimit = jsonValue.GetObject("SpeedLimit");
-
     m_speedLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TollSystems"))
   {
     Aws::Utils::Array<JsonView> tollSystemsJsonList = jsonValue.GetArray("TollSystems");
@@ -217,7 +152,6 @@ RouteVehicleSpan& RouteVehicleSpan::operator =(JsonView jsonValue)
     }
     m_tollSystemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TruckAccess"))
   {
     Aws::Utils::Array<JsonView> truckAccessJsonList = jsonValue.GetArray("TruckAccess");
@@ -227,7 +161,6 @@ RouteVehicleSpan& RouteVehicleSpan::operator =(JsonView jsonValue)
     }
     m_truckAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TruckRoadTypes"))
   {
     Aws::Utils::Array<JsonView> truckRoadTypesJsonList = jsonValue.GetArray("TruckRoadTypes");
@@ -237,14 +170,11 @@ RouteVehicleSpan& RouteVehicleSpan::operator =(JsonView jsonValue)
     }
     m_truckRoadTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypicalDuration"))
   {
     m_typicalDuration = jsonValue.GetInt64("TypicalDuration");
-
     m_typicalDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Zones"))
   {
     Aws::Utils::Array<JsonView> zonesJsonList = jsonValue.GetArray("Zones");
@@ -254,7 +184,6 @@ RouteVehicleSpan& RouteVehicleSpan::operator =(JsonView jsonValue)
     }
     m_zonesHasBeenSet = true;
   }
-
   return *this;
 }
 

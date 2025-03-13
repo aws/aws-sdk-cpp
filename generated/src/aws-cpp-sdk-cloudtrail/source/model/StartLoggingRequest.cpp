@@ -12,11 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartLoggingRequest::StartLoggingRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String StartLoggingRequest::SerializePayload() const
 {
   JsonValue payload;

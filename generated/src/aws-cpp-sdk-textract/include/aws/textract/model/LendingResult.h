@@ -34,7 +34,7 @@ namespace Model
   class LendingResult
   {
   public:
-    AWS_TEXTRACT_API LendingResult();
+    AWS_TEXTRACT_API LendingResult() = default;
     AWS_TEXTRACT_API LendingResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API LendingResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The page number for a page, with regard to whole submission.</p>
      */
-    inline int GetPage() const{ return m_page; }
+    inline int GetPage() const { return m_page; }
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
     inline LendingResult& WithPage(int value) { SetPage(value); return *this;}
@@ -54,12 +54,12 @@ namespace Model
     /**
      * <p>The classifier result for a given page.</p>
      */
-    inline const PageClassification& GetPageClassification() const{ return m_pageClassification; }
+    inline const PageClassification& GetPageClassification() const { return m_pageClassification; }
     inline bool PageClassificationHasBeenSet() const { return m_pageClassificationHasBeenSet; }
-    inline void SetPageClassification(const PageClassification& value) { m_pageClassificationHasBeenSet = true; m_pageClassification = value; }
-    inline void SetPageClassification(PageClassification&& value) { m_pageClassificationHasBeenSet = true; m_pageClassification = std::move(value); }
-    inline LendingResult& WithPageClassification(const PageClassification& value) { SetPageClassification(value); return *this;}
-    inline LendingResult& WithPageClassification(PageClassification&& value) { SetPageClassification(std::move(value)); return *this;}
+    template<typename PageClassificationT = PageClassification>
+    void SetPageClassification(PageClassificationT&& value) { m_pageClassificationHasBeenSet = true; m_pageClassification = std::forward<PageClassificationT>(value); }
+    template<typename PageClassificationT = PageClassification>
+    LendingResult& WithPageClassification(PageClassificationT&& value) { SetPageClassification(std::forward<PageClassificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,18 +67,18 @@ namespace Model
      * <p>An array of Extraction to hold structured data. e.g. normalized key value
      * pairs instead of raw OCR detections .</p>
      */
-    inline const Aws::Vector<Extraction>& GetExtractions() const{ return m_extractions; }
+    inline const Aws::Vector<Extraction>& GetExtractions() const { return m_extractions; }
     inline bool ExtractionsHasBeenSet() const { return m_extractionsHasBeenSet; }
-    inline void SetExtractions(const Aws::Vector<Extraction>& value) { m_extractionsHasBeenSet = true; m_extractions = value; }
-    inline void SetExtractions(Aws::Vector<Extraction>&& value) { m_extractionsHasBeenSet = true; m_extractions = std::move(value); }
-    inline LendingResult& WithExtractions(const Aws::Vector<Extraction>& value) { SetExtractions(value); return *this;}
-    inline LendingResult& WithExtractions(Aws::Vector<Extraction>&& value) { SetExtractions(std::move(value)); return *this;}
-    inline LendingResult& AddExtractions(const Extraction& value) { m_extractionsHasBeenSet = true; m_extractions.push_back(value); return *this; }
-    inline LendingResult& AddExtractions(Extraction&& value) { m_extractionsHasBeenSet = true; m_extractions.push_back(std::move(value)); return *this; }
+    template<typename ExtractionsT = Aws::Vector<Extraction>>
+    void SetExtractions(ExtractionsT&& value) { m_extractionsHasBeenSet = true; m_extractions = std::forward<ExtractionsT>(value); }
+    template<typename ExtractionsT = Aws::Vector<Extraction>>
+    LendingResult& WithExtractions(ExtractionsT&& value) { SetExtractions(std::forward<ExtractionsT>(value)); return *this;}
+    template<typename ExtractionsT = Extraction>
+    LendingResult& AddExtractions(ExtractionsT&& value) { m_extractionsHasBeenSet = true; m_extractions.emplace_back(std::forward<ExtractionsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_page;
+    int m_page{0};
     bool m_pageHasBeenSet = false;
 
     PageClassification m_pageClassification;

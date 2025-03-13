@@ -40,7 +40,7 @@ namespace Model
   class ColumnStatisticsData
   {
   public:
-    AWS_GLUE_API ColumnStatisticsData();
+    AWS_GLUE_API ColumnStatisticsData() = default;
     AWS_GLUE_API ColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,36 +50,34 @@ namespace Model
     /**
      * <p>The type of column statistics data.</p>
      */
-    inline const ColumnStatisticsType& GetType() const{ return m_type; }
+    inline ColumnStatisticsType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ColumnStatisticsType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ColumnStatisticsType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ColumnStatisticsData& WithType(const ColumnStatisticsType& value) { SetType(value); return *this;}
-    inline ColumnStatisticsData& WithType(ColumnStatisticsType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ColumnStatisticsType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ColumnStatisticsData& WithType(ColumnStatisticsType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Boolean column statistics data.</p>
      */
-    inline const BooleanColumnStatisticsData& GetBooleanColumnStatisticsData() const{ return m_booleanColumnStatisticsData; }
+    inline const BooleanColumnStatisticsData& GetBooleanColumnStatisticsData() const { return m_booleanColumnStatisticsData; }
     inline bool BooleanColumnStatisticsDataHasBeenSet() const { return m_booleanColumnStatisticsDataHasBeenSet; }
-    inline void SetBooleanColumnStatisticsData(const BooleanColumnStatisticsData& value) { m_booleanColumnStatisticsDataHasBeenSet = true; m_booleanColumnStatisticsData = value; }
-    inline void SetBooleanColumnStatisticsData(BooleanColumnStatisticsData&& value) { m_booleanColumnStatisticsDataHasBeenSet = true; m_booleanColumnStatisticsData = std::move(value); }
-    inline ColumnStatisticsData& WithBooleanColumnStatisticsData(const BooleanColumnStatisticsData& value) { SetBooleanColumnStatisticsData(value); return *this;}
-    inline ColumnStatisticsData& WithBooleanColumnStatisticsData(BooleanColumnStatisticsData&& value) { SetBooleanColumnStatisticsData(std::move(value)); return *this;}
+    template<typename BooleanColumnStatisticsDataT = BooleanColumnStatisticsData>
+    void SetBooleanColumnStatisticsData(BooleanColumnStatisticsDataT&& value) { m_booleanColumnStatisticsDataHasBeenSet = true; m_booleanColumnStatisticsData = std::forward<BooleanColumnStatisticsDataT>(value); }
+    template<typename BooleanColumnStatisticsDataT = BooleanColumnStatisticsData>
+    ColumnStatisticsData& WithBooleanColumnStatisticsData(BooleanColumnStatisticsDataT&& value) { SetBooleanColumnStatisticsData(std::forward<BooleanColumnStatisticsDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Date column statistics data.</p>
      */
-    inline const DateColumnStatisticsData& GetDateColumnStatisticsData() const{ return m_dateColumnStatisticsData; }
+    inline const DateColumnStatisticsData& GetDateColumnStatisticsData() const { return m_dateColumnStatisticsData; }
     inline bool DateColumnStatisticsDataHasBeenSet() const { return m_dateColumnStatisticsDataHasBeenSet; }
-    inline void SetDateColumnStatisticsData(const DateColumnStatisticsData& value) { m_dateColumnStatisticsDataHasBeenSet = true; m_dateColumnStatisticsData = value; }
-    inline void SetDateColumnStatisticsData(DateColumnStatisticsData&& value) { m_dateColumnStatisticsDataHasBeenSet = true; m_dateColumnStatisticsData = std::move(value); }
-    inline ColumnStatisticsData& WithDateColumnStatisticsData(const DateColumnStatisticsData& value) { SetDateColumnStatisticsData(value); return *this;}
-    inline ColumnStatisticsData& WithDateColumnStatisticsData(DateColumnStatisticsData&& value) { SetDateColumnStatisticsData(std::move(value)); return *this;}
+    template<typename DateColumnStatisticsDataT = DateColumnStatisticsData>
+    void SetDateColumnStatisticsData(DateColumnStatisticsDataT&& value) { m_dateColumnStatisticsDataHasBeenSet = true; m_dateColumnStatisticsData = std::forward<DateColumnStatisticsDataT>(value); }
+    template<typename DateColumnStatisticsDataT = DateColumnStatisticsData>
+    ColumnStatisticsData& WithDateColumnStatisticsData(DateColumnStatisticsDataT&& value) { SetDateColumnStatisticsData(std::forward<DateColumnStatisticsDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,64 +86,64 @@ namespace Model
      * binary objects storing big-endian, two's complement representations of the
      * decimal's unscaled value. </p>
      */
-    inline const DecimalColumnStatisticsData& GetDecimalColumnStatisticsData() const{ return m_decimalColumnStatisticsData; }
+    inline const DecimalColumnStatisticsData& GetDecimalColumnStatisticsData() const { return m_decimalColumnStatisticsData; }
     inline bool DecimalColumnStatisticsDataHasBeenSet() const { return m_decimalColumnStatisticsDataHasBeenSet; }
-    inline void SetDecimalColumnStatisticsData(const DecimalColumnStatisticsData& value) { m_decimalColumnStatisticsDataHasBeenSet = true; m_decimalColumnStatisticsData = value; }
-    inline void SetDecimalColumnStatisticsData(DecimalColumnStatisticsData&& value) { m_decimalColumnStatisticsDataHasBeenSet = true; m_decimalColumnStatisticsData = std::move(value); }
-    inline ColumnStatisticsData& WithDecimalColumnStatisticsData(const DecimalColumnStatisticsData& value) { SetDecimalColumnStatisticsData(value); return *this;}
-    inline ColumnStatisticsData& WithDecimalColumnStatisticsData(DecimalColumnStatisticsData&& value) { SetDecimalColumnStatisticsData(std::move(value)); return *this;}
+    template<typename DecimalColumnStatisticsDataT = DecimalColumnStatisticsData>
+    void SetDecimalColumnStatisticsData(DecimalColumnStatisticsDataT&& value) { m_decimalColumnStatisticsDataHasBeenSet = true; m_decimalColumnStatisticsData = std::forward<DecimalColumnStatisticsDataT>(value); }
+    template<typename DecimalColumnStatisticsDataT = DecimalColumnStatisticsData>
+    ColumnStatisticsData& WithDecimalColumnStatisticsData(DecimalColumnStatisticsDataT&& value) { SetDecimalColumnStatisticsData(std::forward<DecimalColumnStatisticsDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Double column statistics data.</p>
      */
-    inline const DoubleColumnStatisticsData& GetDoubleColumnStatisticsData() const{ return m_doubleColumnStatisticsData; }
+    inline const DoubleColumnStatisticsData& GetDoubleColumnStatisticsData() const { return m_doubleColumnStatisticsData; }
     inline bool DoubleColumnStatisticsDataHasBeenSet() const { return m_doubleColumnStatisticsDataHasBeenSet; }
-    inline void SetDoubleColumnStatisticsData(const DoubleColumnStatisticsData& value) { m_doubleColumnStatisticsDataHasBeenSet = true; m_doubleColumnStatisticsData = value; }
-    inline void SetDoubleColumnStatisticsData(DoubleColumnStatisticsData&& value) { m_doubleColumnStatisticsDataHasBeenSet = true; m_doubleColumnStatisticsData = std::move(value); }
-    inline ColumnStatisticsData& WithDoubleColumnStatisticsData(const DoubleColumnStatisticsData& value) { SetDoubleColumnStatisticsData(value); return *this;}
-    inline ColumnStatisticsData& WithDoubleColumnStatisticsData(DoubleColumnStatisticsData&& value) { SetDoubleColumnStatisticsData(std::move(value)); return *this;}
+    template<typename DoubleColumnStatisticsDataT = DoubleColumnStatisticsData>
+    void SetDoubleColumnStatisticsData(DoubleColumnStatisticsDataT&& value) { m_doubleColumnStatisticsDataHasBeenSet = true; m_doubleColumnStatisticsData = std::forward<DoubleColumnStatisticsDataT>(value); }
+    template<typename DoubleColumnStatisticsDataT = DoubleColumnStatisticsData>
+    ColumnStatisticsData& WithDoubleColumnStatisticsData(DoubleColumnStatisticsDataT&& value) { SetDoubleColumnStatisticsData(std::forward<DoubleColumnStatisticsDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Long column statistics data.</p>
      */
-    inline const LongColumnStatisticsData& GetLongColumnStatisticsData() const{ return m_longColumnStatisticsData; }
+    inline const LongColumnStatisticsData& GetLongColumnStatisticsData() const { return m_longColumnStatisticsData; }
     inline bool LongColumnStatisticsDataHasBeenSet() const { return m_longColumnStatisticsDataHasBeenSet; }
-    inline void SetLongColumnStatisticsData(const LongColumnStatisticsData& value) { m_longColumnStatisticsDataHasBeenSet = true; m_longColumnStatisticsData = value; }
-    inline void SetLongColumnStatisticsData(LongColumnStatisticsData&& value) { m_longColumnStatisticsDataHasBeenSet = true; m_longColumnStatisticsData = std::move(value); }
-    inline ColumnStatisticsData& WithLongColumnStatisticsData(const LongColumnStatisticsData& value) { SetLongColumnStatisticsData(value); return *this;}
-    inline ColumnStatisticsData& WithLongColumnStatisticsData(LongColumnStatisticsData&& value) { SetLongColumnStatisticsData(std::move(value)); return *this;}
+    template<typename LongColumnStatisticsDataT = LongColumnStatisticsData>
+    void SetLongColumnStatisticsData(LongColumnStatisticsDataT&& value) { m_longColumnStatisticsDataHasBeenSet = true; m_longColumnStatisticsData = std::forward<LongColumnStatisticsDataT>(value); }
+    template<typename LongColumnStatisticsDataT = LongColumnStatisticsData>
+    ColumnStatisticsData& WithLongColumnStatisticsData(LongColumnStatisticsDataT&& value) { SetLongColumnStatisticsData(std::forward<LongColumnStatisticsDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>String column statistics data.</p>
      */
-    inline const StringColumnStatisticsData& GetStringColumnStatisticsData() const{ return m_stringColumnStatisticsData; }
+    inline const StringColumnStatisticsData& GetStringColumnStatisticsData() const { return m_stringColumnStatisticsData; }
     inline bool StringColumnStatisticsDataHasBeenSet() const { return m_stringColumnStatisticsDataHasBeenSet; }
-    inline void SetStringColumnStatisticsData(const StringColumnStatisticsData& value) { m_stringColumnStatisticsDataHasBeenSet = true; m_stringColumnStatisticsData = value; }
-    inline void SetStringColumnStatisticsData(StringColumnStatisticsData&& value) { m_stringColumnStatisticsDataHasBeenSet = true; m_stringColumnStatisticsData = std::move(value); }
-    inline ColumnStatisticsData& WithStringColumnStatisticsData(const StringColumnStatisticsData& value) { SetStringColumnStatisticsData(value); return *this;}
-    inline ColumnStatisticsData& WithStringColumnStatisticsData(StringColumnStatisticsData&& value) { SetStringColumnStatisticsData(std::move(value)); return *this;}
+    template<typename StringColumnStatisticsDataT = StringColumnStatisticsData>
+    void SetStringColumnStatisticsData(StringColumnStatisticsDataT&& value) { m_stringColumnStatisticsDataHasBeenSet = true; m_stringColumnStatisticsData = std::forward<StringColumnStatisticsDataT>(value); }
+    template<typename StringColumnStatisticsDataT = StringColumnStatisticsData>
+    ColumnStatisticsData& WithStringColumnStatisticsData(StringColumnStatisticsDataT&& value) { SetStringColumnStatisticsData(std::forward<StringColumnStatisticsDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Binary column statistics data.</p>
      */
-    inline const BinaryColumnStatisticsData& GetBinaryColumnStatisticsData() const{ return m_binaryColumnStatisticsData; }
+    inline const BinaryColumnStatisticsData& GetBinaryColumnStatisticsData() const { return m_binaryColumnStatisticsData; }
     inline bool BinaryColumnStatisticsDataHasBeenSet() const { return m_binaryColumnStatisticsDataHasBeenSet; }
-    inline void SetBinaryColumnStatisticsData(const BinaryColumnStatisticsData& value) { m_binaryColumnStatisticsDataHasBeenSet = true; m_binaryColumnStatisticsData = value; }
-    inline void SetBinaryColumnStatisticsData(BinaryColumnStatisticsData&& value) { m_binaryColumnStatisticsDataHasBeenSet = true; m_binaryColumnStatisticsData = std::move(value); }
-    inline ColumnStatisticsData& WithBinaryColumnStatisticsData(const BinaryColumnStatisticsData& value) { SetBinaryColumnStatisticsData(value); return *this;}
-    inline ColumnStatisticsData& WithBinaryColumnStatisticsData(BinaryColumnStatisticsData&& value) { SetBinaryColumnStatisticsData(std::move(value)); return *this;}
+    template<typename BinaryColumnStatisticsDataT = BinaryColumnStatisticsData>
+    void SetBinaryColumnStatisticsData(BinaryColumnStatisticsDataT&& value) { m_binaryColumnStatisticsDataHasBeenSet = true; m_binaryColumnStatisticsData = std::forward<BinaryColumnStatisticsDataT>(value); }
+    template<typename BinaryColumnStatisticsDataT = BinaryColumnStatisticsData>
+    ColumnStatisticsData& WithBinaryColumnStatisticsData(BinaryColumnStatisticsDataT&& value) { SetBinaryColumnStatisticsData(std::forward<BinaryColumnStatisticsDataT>(value)); return *this;}
     ///@}
   private:
 
-    ColumnStatisticsType m_type;
+    ColumnStatisticsType m_type{ColumnStatisticsType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     BooleanColumnStatisticsData m_booleanColumnStatisticsData;

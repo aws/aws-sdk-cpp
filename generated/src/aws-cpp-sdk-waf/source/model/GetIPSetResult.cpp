@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIPSetResult::GetIPSetResult()
-{
-}
-
 GetIPSetResult::GetIPSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetIPSetResult& GetIPSetResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("IPSet"))
   {
     m_iPSet = jsonValue.GetObject("IPSet");
-
+    m_iPSetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

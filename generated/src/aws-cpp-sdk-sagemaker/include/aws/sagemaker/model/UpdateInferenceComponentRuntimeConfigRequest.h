@@ -22,7 +22,7 @@ namespace Model
   class UpdateInferenceComponentRuntimeConfigRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API UpdateInferenceComponentRuntimeConfigRequest();
+    AWS_SAGEMAKER_API UpdateInferenceComponentRuntimeConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the inference component to update.</p>
      */
-    inline const Aws::String& GetInferenceComponentName() const{ return m_inferenceComponentName; }
+    inline const Aws::String& GetInferenceComponentName() const { return m_inferenceComponentName; }
     inline bool InferenceComponentNameHasBeenSet() const { return m_inferenceComponentNameHasBeenSet; }
-    inline void SetInferenceComponentName(const Aws::String& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = value; }
-    inline void SetInferenceComponentName(Aws::String&& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = std::move(value); }
-    inline void SetInferenceComponentName(const char* value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName.assign(value); }
-    inline UpdateInferenceComponentRuntimeConfigRequest& WithInferenceComponentName(const Aws::String& value) { SetInferenceComponentName(value); return *this;}
-    inline UpdateInferenceComponentRuntimeConfigRequest& WithInferenceComponentName(Aws::String&& value) { SetInferenceComponentName(std::move(value)); return *this;}
-    inline UpdateInferenceComponentRuntimeConfigRequest& WithInferenceComponentName(const char* value) { SetInferenceComponentName(value); return *this;}
+    template<typename InferenceComponentNameT = Aws::String>
+    void SetInferenceComponentName(InferenceComponentNameT&& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = std::forward<InferenceComponentNameT>(value); }
+    template<typename InferenceComponentNameT = Aws::String>
+    UpdateInferenceComponentRuntimeConfigRequest& WithInferenceComponentName(InferenceComponentNameT&& value) { SetInferenceComponentName(std::forward<InferenceComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +52,12 @@ namespace Model
      * <p>Runtime settings for a model that is deployed with an inference
      * component.</p>
      */
-    inline const InferenceComponentRuntimeConfig& GetDesiredRuntimeConfig() const{ return m_desiredRuntimeConfig; }
+    inline const InferenceComponentRuntimeConfig& GetDesiredRuntimeConfig() const { return m_desiredRuntimeConfig; }
     inline bool DesiredRuntimeConfigHasBeenSet() const { return m_desiredRuntimeConfigHasBeenSet; }
-    inline void SetDesiredRuntimeConfig(const InferenceComponentRuntimeConfig& value) { m_desiredRuntimeConfigHasBeenSet = true; m_desiredRuntimeConfig = value; }
-    inline void SetDesiredRuntimeConfig(InferenceComponentRuntimeConfig&& value) { m_desiredRuntimeConfigHasBeenSet = true; m_desiredRuntimeConfig = std::move(value); }
-    inline UpdateInferenceComponentRuntimeConfigRequest& WithDesiredRuntimeConfig(const InferenceComponentRuntimeConfig& value) { SetDesiredRuntimeConfig(value); return *this;}
-    inline UpdateInferenceComponentRuntimeConfigRequest& WithDesiredRuntimeConfig(InferenceComponentRuntimeConfig&& value) { SetDesiredRuntimeConfig(std::move(value)); return *this;}
+    template<typename DesiredRuntimeConfigT = InferenceComponentRuntimeConfig>
+    void SetDesiredRuntimeConfig(DesiredRuntimeConfigT&& value) { m_desiredRuntimeConfigHasBeenSet = true; m_desiredRuntimeConfig = std::forward<DesiredRuntimeConfigT>(value); }
+    template<typename DesiredRuntimeConfigT = InferenceComponentRuntimeConfig>
+    UpdateInferenceComponentRuntimeConfigRequest& WithDesiredRuntimeConfig(DesiredRuntimeConfigT&& value) { SetDesiredRuntimeConfig(std::forward<DesiredRuntimeConfigT>(value)); return *this;}
     ///@}
   private:
 

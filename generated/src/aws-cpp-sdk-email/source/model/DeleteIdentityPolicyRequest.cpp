@@ -10,12 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DeleteIdentityPolicyRequest::DeleteIdentityPolicyRequest() : 
-    m_identityHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIdentityPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

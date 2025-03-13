@@ -29,7 +29,7 @@ namespace Model
   class ListCoreNetworksResult
   {
   public:
-    AWS_NETWORKMANAGER_API ListCoreNetworksResult();
+    AWS_NETWORKMANAGER_API ListCoreNetworksResult() = default;
     AWS_NETWORKMANAGER_API ListCoreNetworksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API ListCoreNetworksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Describes the list of core networks.</p>
      */
-    inline const Aws::Vector<CoreNetworkSummary>& GetCoreNetworks() const{ return m_coreNetworks; }
-    inline void SetCoreNetworks(const Aws::Vector<CoreNetworkSummary>& value) { m_coreNetworks = value; }
-    inline void SetCoreNetworks(Aws::Vector<CoreNetworkSummary>&& value) { m_coreNetworks = std::move(value); }
-    inline ListCoreNetworksResult& WithCoreNetworks(const Aws::Vector<CoreNetworkSummary>& value) { SetCoreNetworks(value); return *this;}
-    inline ListCoreNetworksResult& WithCoreNetworks(Aws::Vector<CoreNetworkSummary>&& value) { SetCoreNetworks(std::move(value)); return *this;}
-    inline ListCoreNetworksResult& AddCoreNetworks(const CoreNetworkSummary& value) { m_coreNetworks.push_back(value); return *this; }
-    inline ListCoreNetworksResult& AddCoreNetworks(CoreNetworkSummary&& value) { m_coreNetworks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CoreNetworkSummary>& GetCoreNetworks() const { return m_coreNetworks; }
+    template<typename CoreNetworksT = Aws::Vector<CoreNetworkSummary>>
+    void SetCoreNetworks(CoreNetworksT&& value) { m_coreNetworksHasBeenSet = true; m_coreNetworks = std::forward<CoreNetworksT>(value); }
+    template<typename CoreNetworksT = Aws::Vector<CoreNetworkSummary>>
+    ListCoreNetworksResult& WithCoreNetworks(CoreNetworksT&& value) { SetCoreNetworks(std::forward<CoreNetworksT>(value)); return *this;}
+    template<typename CoreNetworksT = CoreNetworkSummary>
+    ListCoreNetworksResult& AddCoreNetworks(CoreNetworksT&& value) { m_coreNetworksHasBeenSet = true; m_coreNetworks.emplace_back(std::forward<CoreNetworksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCoreNetworksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCoreNetworksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCoreNetworksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCoreNetworksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCoreNetworksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCoreNetworksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCoreNetworksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCoreNetworksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CoreNetworkSummary> m_coreNetworks;
+    bool m_coreNetworksHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

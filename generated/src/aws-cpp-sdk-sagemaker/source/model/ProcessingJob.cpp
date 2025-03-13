@@ -18,35 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProcessingJob::ProcessingJob() : 
-    m_processingInputsHasBeenSet(false),
-    m_processingOutputConfigHasBeenSet(false),
-    m_processingJobNameHasBeenSet(false),
-    m_processingResourcesHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_appSpecificationHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_networkConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_experimentConfigHasBeenSet(false),
-    m_processingJobArnHasBeenSet(false),
-    m_processingJobStatus(ProcessingJobStatus::NOT_SET),
-    m_processingJobStatusHasBeenSet(false),
-    m_exitMessageHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_processingEndTimeHasBeenSet(false),
-    m_processingStartTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_monitoringScheduleArnHasBeenSet(false),
-    m_autoMLJobArnHasBeenSet(false),
-    m_trainingJobArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ProcessingJob::ProcessingJob(JsonView jsonValue)
-  : ProcessingJob()
 {
   *this = jsonValue;
 }
@@ -62,42 +34,31 @@ ProcessingJob& ProcessingJob::operator =(JsonView jsonValue)
     }
     m_processingInputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingOutputConfig"))
   {
     m_processingOutputConfig = jsonValue.GetObject("ProcessingOutputConfig");
-
     m_processingOutputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingJobName"))
   {
     m_processingJobName = jsonValue.GetString("ProcessingJobName");
-
     m_processingJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingResources"))
   {
     m_processingResources = jsonValue.GetObject("ProcessingResources");
-
     m_processingResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StoppingCondition"))
   {
     m_stoppingCondition = jsonValue.GetObject("StoppingCondition");
-
     m_stoppingConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppSpecification"))
   {
     m_appSpecification = jsonValue.GetObject("AppSpecification");
-
     m_appSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -107,105 +68,76 @@ ProcessingJob& ProcessingJob::operator =(JsonView jsonValue)
     }
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkConfig"))
   {
     m_networkConfig = jsonValue.GetObject("NetworkConfig");
-
     m_networkConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExperimentConfig"))
   {
     m_experimentConfig = jsonValue.GetObject("ExperimentConfig");
-
     m_experimentConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingJobArn"))
   {
     m_processingJobArn = jsonValue.GetString("ProcessingJobArn");
-
     m_processingJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingJobStatus"))
   {
     m_processingJobStatus = ProcessingJobStatusMapper::GetProcessingJobStatusForName(jsonValue.GetString("ProcessingJobStatus"));
-
     m_processingJobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExitMessage"))
   {
     m_exitMessage = jsonValue.GetString("ExitMessage");
-
     m_exitMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingEndTime"))
   {
     m_processingEndTime = jsonValue.GetDouble("ProcessingEndTime");
-
     m_processingEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingStartTime"))
   {
     m_processingStartTime = jsonValue.GetDouble("ProcessingStartTime");
-
     m_processingStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringScheduleArn"))
   {
     m_monitoringScheduleArn = jsonValue.GetString("MonitoringScheduleArn");
-
     m_monitoringScheduleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoMLJobArn"))
   {
     m_autoMLJobArn = jsonValue.GetString("AutoMLJobArn");
-
     m_autoMLJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingJobArn"))
   {
     m_trainingJobArn = jsonValue.GetString("TrainingJobArn");
-
     m_trainingJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -215,7 +147,6 @@ ProcessingJob& ProcessingJob::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

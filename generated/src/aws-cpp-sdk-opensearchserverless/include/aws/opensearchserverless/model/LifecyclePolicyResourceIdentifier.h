@@ -33,7 +33,7 @@ namespace Model
   class LifecyclePolicyResourceIdentifier
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API LifecyclePolicyResourceIdentifier();
+    AWS_OPENSEARCHSERVERLESS_API LifecyclePolicyResourceIdentifier() = default;
     AWS_OPENSEARCHSERVERLESS_API LifecyclePolicyResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API LifecyclePolicyResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The type of lifecycle policy.</p>
      */
-    inline const LifecyclePolicyType& GetType() const{ return m_type; }
+    inline LifecyclePolicyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const LifecyclePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(LifecyclePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline LifecyclePolicyResourceIdentifier& WithType(const LifecyclePolicyType& value) { SetType(value); return *this;}
-    inline LifecyclePolicyResourceIdentifier& WithType(LifecyclePolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(LifecyclePolicyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline LifecyclePolicyResourceIdentifier& WithType(LifecyclePolicyType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the OpenSearch Serverless ilndex resource.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline LifecyclePolicyResourceIdentifier& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline LifecyclePolicyResourceIdentifier& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline LifecyclePolicyResourceIdentifier& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    LifecyclePolicyResourceIdentifier& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
   private:
 
-    LifecyclePolicyType m_type;
+    LifecyclePolicyType m_type{LifecyclePolicyType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_resource;

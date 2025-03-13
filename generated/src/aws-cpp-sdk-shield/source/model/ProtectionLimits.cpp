@@ -18,13 +18,7 @@ namespace Shield
 namespace Model
 {
 
-ProtectionLimits::ProtectionLimits() : 
-    m_protectedResourceTypeLimitsHasBeenSet(false)
-{
-}
-
 ProtectionLimits::ProtectionLimits(JsonView jsonValue)
-  : ProtectionLimits()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ProtectionLimits& ProtectionLimits::operator =(JsonView jsonValue)
     }
     m_protectedResourceTypeLimitsHasBeenSet = true;
   }
-
   return *this;
 }
 

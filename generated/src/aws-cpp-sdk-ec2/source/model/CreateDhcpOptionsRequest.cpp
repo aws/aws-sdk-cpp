@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateDhcpOptionsRequest::CreateDhcpOptionsRequest() : 
-    m_dhcpConfigurationsHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateDhcpOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

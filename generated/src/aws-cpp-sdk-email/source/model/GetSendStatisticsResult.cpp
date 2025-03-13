@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSendStatisticsResult::GetSendStatisticsResult()
-{
-}
-
 GetSendStatisticsResult::GetSendStatisticsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ GetSendStatisticsResult& GetSendStatisticsResult::operator =(const Aws::AmazonWe
     if(!sendDataPointsNode.IsNull())
     {
       XmlNode sendDataPointsMember = sendDataPointsNode.FirstChild("member");
+      m_sendDataPointsHasBeenSet = !sendDataPointsMember.IsNull();
       while(!sendDataPointsMember.IsNull())
       {
         m_sendDataPoints.push_back(sendDataPointsMember);
@@ -54,6 +51,7 @@ GetSendStatisticsResult& GetSendStatisticsResult::operator =(const Aws::AmazonWe
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::GetSendStatisticsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

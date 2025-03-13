@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-Rec709Settings::Rec709Settings()
-{
-}
-
 Rec709Settings::Rec709Settings(JsonView jsonValue)
 {
   *this = jsonValue;

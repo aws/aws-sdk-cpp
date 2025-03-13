@@ -33,7 +33,7 @@ namespace Model
   class RedshiftDestinationProperties
   {
   public:
-    AWS_APPFLOW_API RedshiftDestinationProperties();
+    AWS_APPFLOW_API RedshiftDestinationProperties() = default;
     AWS_APPFLOW_API RedshiftDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API RedshiftDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p> The object specified in the Amazon Redshift flow destination. </p>
      */
-    inline const Aws::String& GetObject() const{ return m_object; }
+    inline const Aws::String& GetObject() const { return m_object; }
     inline bool ObjectHasBeenSet() const { return m_objectHasBeenSet; }
-    inline void SetObject(const Aws::String& value) { m_objectHasBeenSet = true; m_object = value; }
-    inline void SetObject(Aws::String&& value) { m_objectHasBeenSet = true; m_object = std::move(value); }
-    inline void SetObject(const char* value) { m_objectHasBeenSet = true; m_object.assign(value); }
-    inline RedshiftDestinationProperties& WithObject(const Aws::String& value) { SetObject(value); return *this;}
-    inline RedshiftDestinationProperties& WithObject(Aws::String&& value) { SetObject(std::move(value)); return *this;}
-    inline RedshiftDestinationProperties& WithObject(const char* value) { SetObject(value); return *this;}
+    template<typename ObjectT = Aws::String>
+    void SetObject(ObjectT&& value) { m_objectHasBeenSet = true; m_object = std::forward<ObjectT>(value); }
+    template<typename ObjectT = Aws::String>
+    RedshiftDestinationProperties& WithObject(ObjectT&& value) { SetObject(std::forward<ObjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p> The intermediate bucket that Amazon AppFlow uses when moving data into
      * Amazon Redshift. </p>
      */
-    inline const Aws::String& GetIntermediateBucketName() const{ return m_intermediateBucketName; }
+    inline const Aws::String& GetIntermediateBucketName() const { return m_intermediateBucketName; }
     inline bool IntermediateBucketNameHasBeenSet() const { return m_intermediateBucketNameHasBeenSet; }
-    inline void SetIntermediateBucketName(const Aws::String& value) { m_intermediateBucketNameHasBeenSet = true; m_intermediateBucketName = value; }
-    inline void SetIntermediateBucketName(Aws::String&& value) { m_intermediateBucketNameHasBeenSet = true; m_intermediateBucketName = std::move(value); }
-    inline void SetIntermediateBucketName(const char* value) { m_intermediateBucketNameHasBeenSet = true; m_intermediateBucketName.assign(value); }
-    inline RedshiftDestinationProperties& WithIntermediateBucketName(const Aws::String& value) { SetIntermediateBucketName(value); return *this;}
-    inline RedshiftDestinationProperties& WithIntermediateBucketName(Aws::String&& value) { SetIntermediateBucketName(std::move(value)); return *this;}
-    inline RedshiftDestinationProperties& WithIntermediateBucketName(const char* value) { SetIntermediateBucketName(value); return *this;}
+    template<typename IntermediateBucketNameT = Aws::String>
+    void SetIntermediateBucketName(IntermediateBucketNameT&& value) { m_intermediateBucketNameHasBeenSet = true; m_intermediateBucketName = std::forward<IntermediateBucketNameT>(value); }
+    template<typename IntermediateBucketNameT = Aws::String>
+    RedshiftDestinationProperties& WithIntermediateBucketName(IntermediateBucketNameT&& value) { SetIntermediateBucketName(std::forward<IntermediateBucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p> The object key for the bucket in which Amazon AppFlow places the destination
      * files. </p>
      */
-    inline const Aws::String& GetBucketPrefix() const{ return m_bucketPrefix; }
+    inline const Aws::String& GetBucketPrefix() const { return m_bucketPrefix; }
     inline bool BucketPrefixHasBeenSet() const { return m_bucketPrefixHasBeenSet; }
-    inline void SetBucketPrefix(const Aws::String& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = value; }
-    inline void SetBucketPrefix(Aws::String&& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = std::move(value); }
-    inline void SetBucketPrefix(const char* value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix.assign(value); }
-    inline RedshiftDestinationProperties& WithBucketPrefix(const Aws::String& value) { SetBucketPrefix(value); return *this;}
-    inline RedshiftDestinationProperties& WithBucketPrefix(Aws::String&& value) { SetBucketPrefix(std::move(value)); return *this;}
-    inline RedshiftDestinationProperties& WithBucketPrefix(const char* value) { SetBucketPrefix(value); return *this;}
+    template<typename BucketPrefixT = Aws::String>
+    void SetBucketPrefix(BucketPrefixT&& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = std::forward<BucketPrefixT>(value); }
+    template<typename BucketPrefixT = Aws::String>
+    RedshiftDestinationProperties& WithBucketPrefix(BucketPrefixT&& value) { SetBucketPrefix(std::forward<BucketPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +86,12 @@ namespace Model
      * <code>ErrorHandlingConfig</code> is a part of the destination connector details.
      * </p>
      */
-    inline const ErrorHandlingConfig& GetErrorHandlingConfig() const{ return m_errorHandlingConfig; }
+    inline const ErrorHandlingConfig& GetErrorHandlingConfig() const { return m_errorHandlingConfig; }
     inline bool ErrorHandlingConfigHasBeenSet() const { return m_errorHandlingConfigHasBeenSet; }
-    inline void SetErrorHandlingConfig(const ErrorHandlingConfig& value) { m_errorHandlingConfigHasBeenSet = true; m_errorHandlingConfig = value; }
-    inline void SetErrorHandlingConfig(ErrorHandlingConfig&& value) { m_errorHandlingConfigHasBeenSet = true; m_errorHandlingConfig = std::move(value); }
-    inline RedshiftDestinationProperties& WithErrorHandlingConfig(const ErrorHandlingConfig& value) { SetErrorHandlingConfig(value); return *this;}
-    inline RedshiftDestinationProperties& WithErrorHandlingConfig(ErrorHandlingConfig&& value) { SetErrorHandlingConfig(std::move(value)); return *this;}
+    template<typename ErrorHandlingConfigT = ErrorHandlingConfig>
+    void SetErrorHandlingConfig(ErrorHandlingConfigT&& value) { m_errorHandlingConfigHasBeenSet = true; m_errorHandlingConfig = std::forward<ErrorHandlingConfigT>(value); }
+    template<typename ErrorHandlingConfigT = ErrorHandlingConfig>
+    RedshiftDestinationProperties& WithErrorHandlingConfig(ErrorHandlingConfigT&& value) { SetErrorHandlingConfig(std::forward<ErrorHandlingConfigT>(value)); return *this;}
     ///@}
   private:
 

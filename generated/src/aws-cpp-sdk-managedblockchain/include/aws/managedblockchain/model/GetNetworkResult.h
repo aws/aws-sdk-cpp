@@ -28,7 +28,7 @@ namespace Model
   class GetNetworkResult
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API GetNetworkResult();
+    AWS_MANAGEDBLOCKCHAIN_API GetNetworkResult() = default;
     AWS_MANAGEDBLOCKCHAIN_API GetNetworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDBLOCKCHAIN_API GetNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object containing network configuration parameters.</p>
      */
-    inline const Network& GetNetwork() const{ return m_network; }
-    inline void SetNetwork(const Network& value) { m_network = value; }
-    inline void SetNetwork(Network&& value) { m_network = std::move(value); }
-    inline GetNetworkResult& WithNetwork(const Network& value) { SetNetwork(value); return *this;}
-    inline GetNetworkResult& WithNetwork(Network&& value) { SetNetwork(std::move(value)); return *this;}
+    inline const Network& GetNetwork() const { return m_network; }
+    template<typename NetworkT = Network>
+    void SetNetwork(NetworkT&& value) { m_networkHasBeenSet = true; m_network = std::forward<NetworkT>(value); }
+    template<typename NetworkT = Network>
+    GetNetworkResult& WithNetwork(NetworkT&& value) { SetNetwork(std::forward<NetworkT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetNetworkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetNetworkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetNetworkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetNetworkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Network m_network;
+    bool m_networkHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

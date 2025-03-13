@@ -18,18 +18,7 @@ namespace MachineLearning
 namespace Model
 {
 
-RealtimeEndpointInfo::RealtimeEndpointInfo() : 
-    m_peakRequestsPerSecond(0),
-    m_peakRequestsPerSecondHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_endpointUrlHasBeenSet(false),
-    m_endpointStatus(RealtimeEndpointStatus::NOT_SET),
-    m_endpointStatusHasBeenSet(false)
-{
-}
-
 RealtimeEndpointInfo::RealtimeEndpointInfo(JsonView jsonValue)
-  : RealtimeEndpointInfo()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ RealtimeEndpointInfo& RealtimeEndpointInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PeakRequestsPerSecond"))
   {
     m_peakRequestsPerSecond = jsonValue.GetInteger("PeakRequestsPerSecond");
-
     m_peakRequestsPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointUrl"))
   {
     m_endpointUrl = jsonValue.GetString("EndpointUrl");
-
     m_endpointUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointStatus"))
   {
     m_endpointStatus = RealtimeEndpointStatusMapper::GetRealtimeEndpointStatusForName(jsonValue.GetString("EndpointStatus"));
-
     m_endpointStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

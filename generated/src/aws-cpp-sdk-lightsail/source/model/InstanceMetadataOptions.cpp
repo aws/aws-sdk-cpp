@@ -18,22 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-InstanceMetadataOptions::InstanceMetadataOptions() : 
-    m_state(InstanceMetadataState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_httpTokens(HttpTokens::NOT_SET),
-    m_httpTokensHasBeenSet(false),
-    m_httpEndpoint(HttpEndpoint::NOT_SET),
-    m_httpEndpointHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpProtocolIpv6(HttpProtocolIpv6::NOT_SET),
-    m_httpProtocolIpv6HasBeenSet(false)
-{
-}
-
 InstanceMetadataOptions::InstanceMetadataOptions(JsonView jsonValue)
-  : InstanceMetadataOptions()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ InstanceMetadataOptions& InstanceMetadataOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("state"))
   {
     m_state = InstanceMetadataStateMapper::GetInstanceMetadataStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpTokens"))
   {
     m_httpTokens = HttpTokensMapper::GetHttpTokensForName(jsonValue.GetString("httpTokens"));
-
     m_httpTokensHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpEndpoint"))
   {
     m_httpEndpoint = HttpEndpointMapper::GetHttpEndpointForName(jsonValue.GetString("httpEndpoint"));
-
     m_httpEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpPutResponseHopLimit"))
   {
     m_httpPutResponseHopLimit = jsonValue.GetInteger("httpPutResponseHopLimit");
-
     m_httpPutResponseHopLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpProtocolIpv6"))
   {
     m_httpProtocolIpv6 = HttpProtocolIpv6Mapper::GetHttpProtocolIpv6ForName(jsonValue.GetString("httpProtocolIpv6"));
-
     m_httpProtocolIpv6HasBeenSet = true;
   }
-
   return *this;
 }
 

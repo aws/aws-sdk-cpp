@@ -25,7 +25,7 @@ namespace Model
   class ListFindingAggregationsRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API ListFindingAggregationsRequest();
+    AWS_INSPECTOR2_API ListFindingAggregationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,14 @@ namespace Model
      * <p>The Amazon Web Services account IDs to retrieve finding aggregation data
      * for.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<StringFilter>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<StringFilter>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<StringFilter>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline ListFindingAggregationsRequest& WithAccountIds(const Aws::Vector<StringFilter>& value) { SetAccountIds(value); return *this;}
-    inline ListFindingAggregationsRequest& WithAccountIds(Aws::Vector<StringFilter>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline ListFindingAggregationsRequest& AddAccountIds(const StringFilter& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline ListFindingAggregationsRequest& AddAccountIds(StringFilter&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
+    template<typename AccountIdsT = Aws::Vector<StringFilter>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<StringFilter>>
+    ListFindingAggregationsRequest& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = StringFilter>
+    ListFindingAggregationsRequest& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,24 +56,22 @@ namespace Model
      * <p>Details of the aggregation request that is used to filter your aggregation
      * results.</p>
      */
-    inline const AggregationRequest& GetAggregationRequest() const{ return m_aggregationRequest; }
+    inline const AggregationRequest& GetAggregationRequest() const { return m_aggregationRequest; }
     inline bool AggregationRequestHasBeenSet() const { return m_aggregationRequestHasBeenSet; }
-    inline void SetAggregationRequest(const AggregationRequest& value) { m_aggregationRequestHasBeenSet = true; m_aggregationRequest = value; }
-    inline void SetAggregationRequest(AggregationRequest&& value) { m_aggregationRequestHasBeenSet = true; m_aggregationRequest = std::move(value); }
-    inline ListFindingAggregationsRequest& WithAggregationRequest(const AggregationRequest& value) { SetAggregationRequest(value); return *this;}
-    inline ListFindingAggregationsRequest& WithAggregationRequest(AggregationRequest&& value) { SetAggregationRequest(std::move(value)); return *this;}
+    template<typename AggregationRequestT = AggregationRequest>
+    void SetAggregationRequest(AggregationRequestT&& value) { m_aggregationRequestHasBeenSet = true; m_aggregationRequest = std::forward<AggregationRequestT>(value); }
+    template<typename AggregationRequestT = AggregationRequest>
+    ListFindingAggregationsRequest& WithAggregationRequest(AggregationRequestT&& value) { SetAggregationRequest(std::forward<AggregationRequestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the aggregation request.</p>
      */
-    inline const AggregationType& GetAggregationType() const{ return m_aggregationType; }
+    inline AggregationType GetAggregationType() const { return m_aggregationType; }
     inline bool AggregationTypeHasBeenSet() const { return m_aggregationTypeHasBeenSet; }
-    inline void SetAggregationType(const AggregationType& value) { m_aggregationTypeHasBeenSet = true; m_aggregationType = value; }
-    inline void SetAggregationType(AggregationType&& value) { m_aggregationTypeHasBeenSet = true; m_aggregationType = std::move(value); }
-    inline ListFindingAggregationsRequest& WithAggregationType(const AggregationType& value) { SetAggregationType(value); return *this;}
-    inline ListFindingAggregationsRequest& WithAggregationType(AggregationType&& value) { SetAggregationType(std::move(value)); return *this;}
+    inline void SetAggregationType(AggregationType value) { m_aggregationTypeHasBeenSet = true; m_aggregationType = value; }
+    inline ListFindingAggregationsRequest& WithAggregationType(AggregationType value) { SetAggregationType(value); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +81,7 @@ namespace Model
      * value, use this value when you call the action again to get the remaining
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListFindingAggregationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -98,14 +96,12 @@ namespace Model
      * <code>nextToken</code> value returned from the previous request to continue
      * listing results after the first page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListFindingAggregationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFindingAggregationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFindingAggregationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFindingAggregationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -115,10 +111,10 @@ namespace Model
     AggregationRequest m_aggregationRequest;
     bool m_aggregationRequestHasBeenSet = false;
 
-    AggregationType m_aggregationType;
+    AggregationType m_aggregationType{AggregationType::NOT_SET};
     bool m_aggregationTypeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

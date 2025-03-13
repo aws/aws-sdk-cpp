@@ -32,7 +32,7 @@ namespace Model
   class Timing
   {
   public:
-    AWS_MEDIACONVERT_API Timing();
+    AWS_MEDIACONVERT_API Timing() = default;
     AWS_MEDIACONVERT_API Timing(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Timing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,46 +42,46 @@ namespace Model
     /**
      * The time, in Unix epoch format, that the transcoding job finished
      */
-    inline const Aws::Utils::DateTime& GetFinishTime() const{ return m_finishTime; }
+    inline const Aws::Utils::DateTime& GetFinishTime() const { return m_finishTime; }
     inline bool FinishTimeHasBeenSet() const { return m_finishTimeHasBeenSet; }
-    inline void SetFinishTime(const Aws::Utils::DateTime& value) { m_finishTimeHasBeenSet = true; m_finishTime = value; }
-    inline void SetFinishTime(Aws::Utils::DateTime&& value) { m_finishTimeHasBeenSet = true; m_finishTime = std::move(value); }
-    inline Timing& WithFinishTime(const Aws::Utils::DateTime& value) { SetFinishTime(value); return *this;}
-    inline Timing& WithFinishTime(Aws::Utils::DateTime&& value) { SetFinishTime(std::move(value)); return *this;}
+    template<typename FinishTimeT = Aws::Utils::DateTime>
+    void SetFinishTime(FinishTimeT&& value) { m_finishTimeHasBeenSet = true; m_finishTime = std::forward<FinishTimeT>(value); }
+    template<typename FinishTimeT = Aws::Utils::DateTime>
+    Timing& WithFinishTime(FinishTimeT&& value) { SetFinishTime(std::forward<FinishTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The time, in Unix epoch format, that transcoding for the job began.
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline Timing& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline Timing& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    Timing& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The time, in Unix epoch format, that you submitted the job.
      */
-    inline const Aws::Utils::DateTime& GetSubmitTime() const{ return m_submitTime; }
+    inline const Aws::Utils::DateTime& GetSubmitTime() const { return m_submitTime; }
     inline bool SubmitTimeHasBeenSet() const { return m_submitTimeHasBeenSet; }
-    inline void SetSubmitTime(const Aws::Utils::DateTime& value) { m_submitTimeHasBeenSet = true; m_submitTime = value; }
-    inline void SetSubmitTime(Aws::Utils::DateTime&& value) { m_submitTimeHasBeenSet = true; m_submitTime = std::move(value); }
-    inline Timing& WithSubmitTime(const Aws::Utils::DateTime& value) { SetSubmitTime(value); return *this;}
-    inline Timing& WithSubmitTime(Aws::Utils::DateTime&& value) { SetSubmitTime(std::move(value)); return *this;}
+    template<typename SubmitTimeT = Aws::Utils::DateTime>
+    void SetSubmitTime(SubmitTimeT&& value) { m_submitTimeHasBeenSet = true; m_submitTime = std::forward<SubmitTimeT>(value); }
+    template<typename SubmitTimeT = Aws::Utils::DateTime>
+    Timing& WithSubmitTime(SubmitTimeT&& value) { SetSubmitTime(std::forward<SubmitTimeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_finishTime;
+    Aws::Utils::DateTime m_finishTime{};
     bool m_finishTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_submitTime;
+    Aws::Utils::DateTime m_submitTime{};
     bool m_submitTimeHasBeenSet = false;
   };
 

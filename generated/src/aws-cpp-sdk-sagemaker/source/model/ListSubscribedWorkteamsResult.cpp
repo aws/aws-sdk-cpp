@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSubscribedWorkteamsResult::ListSubscribedWorkteamsResult()
-{
-}
-
 ListSubscribedWorkteamsResult::ListSubscribedWorkteamsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListSubscribedWorkteamsResult& ListSubscribedWorkteamsResult::operator =(const A
     {
       m_subscribedWorkteams.push_back(subscribedWorkteamsJsonList[subscribedWorkteamsIndex].AsObject());
     }
+    m_subscribedWorkteamsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

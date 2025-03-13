@@ -20,20 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricStreamEntry::MetricStreamEntry() : 
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdateDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_firehoseArnHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_outputFormat(MetricStreamOutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false)
-{
-}
-
 MetricStreamEntry::MetricStreamEntry(const XmlNode& xmlNode)
-  : MetricStreamEntry()
 {
   *this = xmlNode;
 }
@@ -49,42 +36,49 @@ MetricStreamEntry& MetricStreamEntry::operator =(const XmlNode& xmlNode)
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
       m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationDateHasBeenSet = true;
+       m_creationDateHasBeenSet = true;
     }
     XmlNode lastUpdateDateNode = resultNode.FirstChild("LastUpdateDate");
     if(!lastUpdateDateNode.IsNull())
     {
       m_lastUpdateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdateDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUpdateDateHasBeenSet = true;
+       m_lastUpdateDateHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode firehoseArnNode = resultNode.FirstChild("FirehoseArn");
     if(!firehoseArnNode.IsNull())
     {
       m_firehoseArn = Aws::Utils::Xml::DecodeEscapedXmlText(firehoseArnNode.GetText());
       m_firehoseArnHasBeenSet = true;
+       m_firehoseArnHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode outputFormatNode = resultNode.FirstChild("OutputFormat");
     if(!outputFormatNode.IsNull())
     {
-      m_outputFormat = MetricStreamOutputFormatMapper::GetMetricStreamOutputFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputFormatNode.GetText()).c_str()).c_str());
+      m_outputFormat = MetricStreamOutputFormatMapper::GetMetricStreamOutputFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputFormatNode.GetText()).c_str()));
       m_outputFormatHasBeenSet = true;
+       m_outputFormatHasBeenSet = true;
     }
   }
 

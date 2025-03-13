@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-StringValueWhenUnsetConfiguration::StringValueWhenUnsetConfiguration() : 
-    m_valueWhenUnsetOption(ValueWhenUnsetOption::NOT_SET),
-    m_valueWhenUnsetOptionHasBeenSet(false),
-    m_customValueHasBeenSet(false)
-{
-}
-
 StringValueWhenUnsetConfiguration::StringValueWhenUnsetConfiguration(JsonView jsonValue)
-  : StringValueWhenUnsetConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StringValueWhenUnsetConfiguration& StringValueWhenUnsetConfiguration::operator =
   if(jsonValue.ValueExists("ValueWhenUnsetOption"))
   {
     m_valueWhenUnsetOption = ValueWhenUnsetOptionMapper::GetValueWhenUnsetOptionForName(jsonValue.GetString("ValueWhenUnsetOption"));
-
     m_valueWhenUnsetOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomValue"))
   {
     m_customValue = jsonValue.GetString("CustomValue");
-
     m_customValueHasBeenSet = true;
   }
-
   return *this;
 }
 

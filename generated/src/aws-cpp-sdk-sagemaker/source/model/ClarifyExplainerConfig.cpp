@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClarifyExplainerConfig::ClarifyExplainerConfig() : 
-    m_enableExplanationsHasBeenSet(false),
-    m_inferenceConfigHasBeenSet(false),
-    m_shapConfigHasBeenSet(false)
-{
-}
-
 ClarifyExplainerConfig::ClarifyExplainerConfig(JsonView jsonValue)
-  : ClarifyExplainerConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ClarifyExplainerConfig& ClarifyExplainerConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EnableExplanations"))
   {
     m_enableExplanations = jsonValue.GetString("EnableExplanations");
-
     m_enableExplanationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceConfig"))
   {
     m_inferenceConfig = jsonValue.GetObject("InferenceConfig");
-
     m_inferenceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShapConfig"))
   {
     m_shapConfig = jsonValue.GetObject("ShapConfig");
-
     m_shapConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

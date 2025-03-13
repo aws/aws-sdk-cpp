@@ -12,16 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListConnectionsRequest::ListConnectionsRequest() : 
-    m_namePrefixHasBeenSet(false),
-    m_connectionState(ConnectionState::NOT_SET),
-    m_connectionStateHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListConnectionsRequest::SerializePayload() const
 {
   JsonValue payload;

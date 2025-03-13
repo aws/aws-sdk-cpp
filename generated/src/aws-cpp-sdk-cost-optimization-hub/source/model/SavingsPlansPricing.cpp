@@ -18,20 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-SavingsPlansPricing::SavingsPlansPricing() : 
-    m_monthlySavingsPlansEligibleCost(0.0),
-    m_monthlySavingsPlansEligibleCostHasBeenSet(false),
-    m_estimatedMonthlyCommitment(0.0),
-    m_estimatedMonthlyCommitmentHasBeenSet(false),
-    m_savingsPercentage(0.0),
-    m_savingsPercentageHasBeenSet(false),
-    m_estimatedOnDemandCost(0.0),
-    m_estimatedOnDemandCostHasBeenSet(false)
-{
-}
-
 SavingsPlansPricing::SavingsPlansPricing(JsonView jsonValue)
-  : SavingsPlansPricing()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ SavingsPlansPricing& SavingsPlansPricing::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("monthlySavingsPlansEligibleCost"))
   {
     m_monthlySavingsPlansEligibleCost = jsonValue.GetDouble("monthlySavingsPlansEligibleCost");
-
     m_monthlySavingsPlansEligibleCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedMonthlyCommitment"))
   {
     m_estimatedMonthlyCommitment = jsonValue.GetDouble("estimatedMonthlyCommitment");
-
     m_estimatedMonthlyCommitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsPercentage"))
   {
     m_savingsPercentage = jsonValue.GetDouble("savingsPercentage");
-
     m_savingsPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedOnDemandCost"))
   {
     m_estimatedOnDemandCost = jsonValue.GetDouble("estimatedOnDemandCost");
-
     m_estimatedOnDemandCostHasBeenSet = true;
   }
-
   return *this;
 }
 

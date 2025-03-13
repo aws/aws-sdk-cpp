@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutCodeBindingRequest::PutCodeBindingRequest() : 
-    m_languageHasBeenSet(false),
-    m_registryNameHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false)
-{
-}
-
 Aws::String PutCodeBindingRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class SourceBackupUnavailable
   {
   public:
-    AWS_FSX_API SourceBackupUnavailable();
+    AWS_FSX_API SourceBackupUnavailable() = default;
     AWS_FSX_API SourceBackupUnavailable(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API SourceBackupUnavailable& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,26 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline SourceBackupUnavailable& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline SourceBackupUnavailable& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline SourceBackupUnavailable& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    SourceBackupUnavailable& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetBackupId() const{ return m_backupId; }
+    inline const Aws::String& GetBackupId() const { return m_backupId; }
     inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
-    inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
-    inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = std::move(value); }
-    inline void SetBackupId(const char* value) { m_backupIdHasBeenSet = true; m_backupId.assign(value); }
-    inline SourceBackupUnavailable& WithBackupId(const Aws::String& value) { SetBackupId(value); return *this;}
-    inline SourceBackupUnavailable& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
-    inline SourceBackupUnavailable& WithBackupId(const char* value) { SetBackupId(value); return *this;}
+    template<typename BackupIdT = Aws::String>
+    void SetBackupId(BackupIdT&& value) { m_backupIdHasBeenSet = true; m_backupId = std::forward<BackupIdT>(value); }
+    template<typename BackupIdT = Aws::String>
+    SourceBackupUnavailable& WithBackupId(BackupIdT&& value) { SetBackupId(std::forward<BackupIdT>(value)); return *this;}
     ///@}
   private:
 

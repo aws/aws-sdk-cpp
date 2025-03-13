@@ -18,22 +18,7 @@ namespace SFN
 namespace Model
 {
 
-InspectionData::InspectionData() : 
-    m_inputHasBeenSet(false),
-    m_afterArgumentsHasBeenSet(false),
-    m_afterInputPathHasBeenSet(false),
-    m_afterParametersHasBeenSet(false),
-    m_resultHasBeenSet(false),
-    m_afterResultSelectorHasBeenSet(false),
-    m_afterResultPathHasBeenSet(false),
-    m_requestHasBeenSet(false),
-    m_responseHasBeenSet(false),
-    m_variablesHasBeenSet(false)
-{
-}
-
 InspectionData::InspectionData(JsonView jsonValue)
-  : InspectionData()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ InspectionData& InspectionData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("afterArguments"))
   {
     m_afterArguments = jsonValue.GetString("afterArguments");
-
     m_afterArgumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("afterInputPath"))
   {
     m_afterInputPath = jsonValue.GetString("afterInputPath");
-
     m_afterInputPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("afterParameters"))
   {
     m_afterParameters = jsonValue.GetString("afterParameters");
-
     m_afterParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("result"))
   {
     m_result = jsonValue.GetString("result");
-
     m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("afterResultSelector"))
   {
     m_afterResultSelector = jsonValue.GetString("afterResultSelector");
-
     m_afterResultSelectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("afterResultPath"))
   {
     m_afterResultPath = jsonValue.GetString("afterResultPath");
-
     m_afterResultPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("request"))
   {
     m_request = jsonValue.GetObject("request");
-
     m_requestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("response"))
   {
     m_response = jsonValue.GetObject("response");
-
     m_responseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variables"))
   {
     m_variables = jsonValue.GetString("variables");
-
     m_variablesHasBeenSet = true;
   }
-
   return *this;
 }
 

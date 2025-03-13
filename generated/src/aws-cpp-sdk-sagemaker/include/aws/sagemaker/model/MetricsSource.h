@@ -31,7 +31,7 @@ namespace Model
   class MetricsSource
   {
   public:
-    AWS_SAGEMAKER_API MetricsSource();
+    AWS_SAGEMAKER_API MetricsSource() = default;
     AWS_SAGEMAKER_API MetricsSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API MetricsSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>The metric source content type.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline MetricsSource& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline MetricsSource& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline MetricsSource& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    MetricsSource& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The hash key used for the metrics source.</p>
      */
-    inline const Aws::String& GetContentDigest() const{ return m_contentDigest; }
+    inline const Aws::String& GetContentDigest() const { return m_contentDigest; }
     inline bool ContentDigestHasBeenSet() const { return m_contentDigestHasBeenSet; }
-    inline void SetContentDigest(const Aws::String& value) { m_contentDigestHasBeenSet = true; m_contentDigest = value; }
-    inline void SetContentDigest(Aws::String&& value) { m_contentDigestHasBeenSet = true; m_contentDigest = std::move(value); }
-    inline void SetContentDigest(const char* value) { m_contentDigestHasBeenSet = true; m_contentDigest.assign(value); }
-    inline MetricsSource& WithContentDigest(const Aws::String& value) { SetContentDigest(value); return *this;}
-    inline MetricsSource& WithContentDigest(Aws::String&& value) { SetContentDigest(std::move(value)); return *this;}
-    inline MetricsSource& WithContentDigest(const char* value) { SetContentDigest(value); return *this;}
+    template<typename ContentDigestT = Aws::String>
+    void SetContentDigest(ContentDigestT&& value) { m_contentDigestHasBeenSet = true; m_contentDigest = std::forward<ContentDigestT>(value); }
+    template<typename ContentDigestT = Aws::String>
+    MetricsSource& WithContentDigest(ContentDigestT&& value) { SetContentDigest(std::forward<ContentDigestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 URI for the metrics source.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline MetricsSource& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline MetricsSource& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline MetricsSource& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    MetricsSource& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
   private:
 

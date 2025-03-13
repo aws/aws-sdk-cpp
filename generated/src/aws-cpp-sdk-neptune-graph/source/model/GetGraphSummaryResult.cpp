@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetGraphSummaryResult::GetGraphSummaryResult()
-{
-}
-
 GetGraphSummaryResult::GetGraphSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ GetGraphSummaryResult& GetGraphSummaryResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
+    m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastStatisticsComputationTime"))
   {
     m_lastStatisticsComputationTime = jsonValue.GetString("lastStatisticsComputationTime");
-
+    m_lastStatisticsComputationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("graphSummary"))
   {
     m_graphSummary = jsonValue.GetObject("graphSummary");
-
+    m_graphSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

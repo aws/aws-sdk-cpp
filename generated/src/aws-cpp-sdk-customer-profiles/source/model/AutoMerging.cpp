@@ -18,18 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-AutoMerging::AutoMerging() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_consolidationHasBeenSet(false),
-    m_conflictResolutionHasBeenSet(false),
-    m_minAllowedConfidenceScoreForMerging(0.0),
-    m_minAllowedConfidenceScoreForMergingHasBeenSet(false)
-{
-}
-
 AutoMerging::AutoMerging(JsonView jsonValue)
-  : AutoMerging()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AutoMerging& AutoMerging::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Consolidation"))
   {
     m_consolidation = jsonValue.GetObject("Consolidation");
-
     m_consolidationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConflictResolution"))
   {
     m_conflictResolution = jsonValue.GetObject("ConflictResolution");
-
     m_conflictResolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinAllowedConfidenceScoreForMerging"))
   {
     m_minAllowedConfidenceScoreForMerging = jsonValue.GetDouble("MinAllowedConfidenceScoreForMerging");
-
     m_minAllowedConfidenceScoreForMergingHasBeenSet = true;
   }
-
   return *this;
 }
 

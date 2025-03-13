@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAudienceGenerationJobsRequest::ListAudienceGenerationJobsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_configuredAudienceModelArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false)
-{
-}
-
 Aws::String ListAudienceGenerationJobsRequest::SerializePayload() const
 {
   return {};

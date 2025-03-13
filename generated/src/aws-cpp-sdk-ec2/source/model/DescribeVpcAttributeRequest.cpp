@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeVpcAttributeRequest::DescribeVpcAttributeRequest() : 
-    m_attribute(VpcAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVpcAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

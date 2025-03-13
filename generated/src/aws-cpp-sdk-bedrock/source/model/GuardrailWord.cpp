@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-GuardrailWord::GuardrailWord() : 
-    m_textHasBeenSet(false)
-{
-}
-
 GuardrailWord::GuardrailWord(JsonView jsonValue)
-  : GuardrailWord()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GuardrailWord& GuardrailWord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

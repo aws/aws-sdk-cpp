@@ -22,7 +22,7 @@ namespace Model
   class CreateSmsTemplateRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API CreateSmsTemplateRequest();
+    AWS_PINPOINT_API CreateSmsTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,12 +35,12 @@ namespace Model
 
     ///@{
     
-    inline const SMSTemplateRequest& GetSMSTemplateRequest() const{ return m_sMSTemplateRequest; }
+    inline const SMSTemplateRequest& GetSMSTemplateRequest() const { return m_sMSTemplateRequest; }
     inline bool SMSTemplateRequestHasBeenSet() const { return m_sMSTemplateRequestHasBeenSet; }
-    inline void SetSMSTemplateRequest(const SMSTemplateRequest& value) { m_sMSTemplateRequestHasBeenSet = true; m_sMSTemplateRequest = value; }
-    inline void SetSMSTemplateRequest(SMSTemplateRequest&& value) { m_sMSTemplateRequestHasBeenSet = true; m_sMSTemplateRequest = std::move(value); }
-    inline CreateSmsTemplateRequest& WithSMSTemplateRequest(const SMSTemplateRequest& value) { SetSMSTemplateRequest(value); return *this;}
-    inline CreateSmsTemplateRequest& WithSMSTemplateRequest(SMSTemplateRequest&& value) { SetSMSTemplateRequest(std::move(value)); return *this;}
+    template<typename SMSTemplateRequestT = SMSTemplateRequest>
+    void SetSMSTemplateRequest(SMSTemplateRequestT&& value) { m_sMSTemplateRequestHasBeenSet = true; m_sMSTemplateRequest = std::forward<SMSTemplateRequestT>(value); }
+    template<typename SMSTemplateRequestT = SMSTemplateRequest>
+    CreateSmsTemplateRequest& WithSMSTemplateRequest(SMSTemplateRequestT&& value) { SetSMSTemplateRequest(std::forward<SMSTemplateRequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,14 +50,12 @@ namespace Model
      * characters can be alphanumeric characters, underscores (_), or hyphens (-).
      * Template names are case sensitive.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline CreateSmsTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline CreateSmsTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline CreateSmsTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    CreateSmsTemplateRequest& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
   private:
 

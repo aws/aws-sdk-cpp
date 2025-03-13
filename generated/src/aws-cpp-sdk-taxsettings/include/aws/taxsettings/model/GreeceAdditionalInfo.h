@@ -32,7 +32,7 @@ namespace Model
   class GreeceAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API GreeceAdditionalInfo();
+    AWS_TAXSETTINGS_API GreeceAdditionalInfo() = default;
     AWS_TAXSETTINGS_API GreeceAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API GreeceAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The code of contracting authority for e-invoicing.</p>
      */
-    inline const Aws::String& GetContractingAuthorityCode() const{ return m_contractingAuthorityCode; }
+    inline const Aws::String& GetContractingAuthorityCode() const { return m_contractingAuthorityCode; }
     inline bool ContractingAuthorityCodeHasBeenSet() const { return m_contractingAuthorityCodeHasBeenSet; }
-    inline void SetContractingAuthorityCode(const Aws::String& value) { m_contractingAuthorityCodeHasBeenSet = true; m_contractingAuthorityCode = value; }
-    inline void SetContractingAuthorityCode(Aws::String&& value) { m_contractingAuthorityCodeHasBeenSet = true; m_contractingAuthorityCode = std::move(value); }
-    inline void SetContractingAuthorityCode(const char* value) { m_contractingAuthorityCodeHasBeenSet = true; m_contractingAuthorityCode.assign(value); }
-    inline GreeceAdditionalInfo& WithContractingAuthorityCode(const Aws::String& value) { SetContractingAuthorityCode(value); return *this;}
-    inline GreeceAdditionalInfo& WithContractingAuthorityCode(Aws::String&& value) { SetContractingAuthorityCode(std::move(value)); return *this;}
-    inline GreeceAdditionalInfo& WithContractingAuthorityCode(const char* value) { SetContractingAuthorityCode(value); return *this;}
+    template<typename ContractingAuthorityCodeT = Aws::String>
+    void SetContractingAuthorityCode(ContractingAuthorityCodeT&& value) { m_contractingAuthorityCodeHasBeenSet = true; m_contractingAuthorityCode = std::forward<ContractingAuthorityCodeT>(value); }
+    template<typename ContractingAuthorityCodeT = Aws::String>
+    GreeceAdditionalInfo& WithContractingAuthorityCode(ContractingAuthorityCodeT&& value) { SetContractingAuthorityCode(std::forward<ContractingAuthorityCodeT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,19 +18,7 @@ namespace Batch
 namespace Model
 {
 
-AttemptContainerDetail::AttemptContainerDetail() : 
-    m_containerInstanceArnHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_logStreamNameHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
-{
-}
-
 AttemptContainerDetail::AttemptContainerDetail(JsonView jsonValue)
-  : AttemptContainerDetail()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AttemptContainerDetail& AttemptContainerDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerInstanceArn"))
   {
     m_containerInstanceArn = jsonValue.GetString("containerInstanceArn");
-
     m_containerInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskArn"))
   {
     m_taskArn = jsonValue.GetString("taskArn");
-
     m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exitCode"))
   {
     m_exitCode = jsonValue.GetInteger("exitCode");
-
     m_exitCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logStreamName"))
   {
     m_logStreamName = jsonValue.GetString("logStreamName");
-
     m_logStreamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterfaces"))
   {
     Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
@@ -81,7 +59,6 @@ AttemptContainerDetail& AttemptContainerDetail::operator =(JsonView jsonValue)
     }
     m_networkInterfacesHasBeenSet = true;
   }
-
   return *this;
 }
 

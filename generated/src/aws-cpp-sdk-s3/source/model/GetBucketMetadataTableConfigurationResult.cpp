@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-GetBucketMetadataTableConfigurationResult::GetBucketMetadataTableConfigurationResult() : 
-    m_metadataTableConfigurationResultHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 GetBucketMetadataTableConfigurationResult::GetBucketMetadataTableConfigurationResult(const XmlNode& xmlNode)
-  : GetBucketMetadataTableConfigurationResult()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ GetBucketMetadataTableConfigurationResult& GetBucketMetadataTableConfigurationRe
     {
       m_metadataTableConfigurationResult = metadataTableConfigurationResultNode;
       m_metadataTableConfigurationResultHasBeenSet = true;
+       m_metadataTableConfigurationResultHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode errorNode = resultNode.FirstChild("Error");
     if(!errorNode.IsNull())
     {
       m_error = errorNode;
       m_errorHasBeenSet = true;
+       m_errorHasBeenSet = true;
     }
   }
 

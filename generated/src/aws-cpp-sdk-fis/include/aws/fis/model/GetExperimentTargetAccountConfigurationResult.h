@@ -28,7 +28,7 @@ namespace Model
   class GetExperimentTargetAccountConfigurationResult
   {
   public:
-    AWS_FIS_API GetExperimentTargetAccountConfigurationResult();
+    AWS_FIS_API GetExperimentTargetAccountConfigurationResult() = default;
     AWS_FIS_API GetExperimentTargetAccountConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FIS_API GetExperimentTargetAccountConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the target account configuration.</p>
      */
-    inline const ExperimentTargetAccountConfiguration& GetTargetAccountConfiguration() const{ return m_targetAccountConfiguration; }
-    inline void SetTargetAccountConfiguration(const ExperimentTargetAccountConfiguration& value) { m_targetAccountConfiguration = value; }
-    inline void SetTargetAccountConfiguration(ExperimentTargetAccountConfiguration&& value) { m_targetAccountConfiguration = std::move(value); }
-    inline GetExperimentTargetAccountConfigurationResult& WithTargetAccountConfiguration(const ExperimentTargetAccountConfiguration& value) { SetTargetAccountConfiguration(value); return *this;}
-    inline GetExperimentTargetAccountConfigurationResult& WithTargetAccountConfiguration(ExperimentTargetAccountConfiguration&& value) { SetTargetAccountConfiguration(std::move(value)); return *this;}
+    inline const ExperimentTargetAccountConfiguration& GetTargetAccountConfiguration() const { return m_targetAccountConfiguration; }
+    template<typename TargetAccountConfigurationT = ExperimentTargetAccountConfiguration>
+    void SetTargetAccountConfiguration(TargetAccountConfigurationT&& value) { m_targetAccountConfigurationHasBeenSet = true; m_targetAccountConfiguration = std::forward<TargetAccountConfigurationT>(value); }
+    template<typename TargetAccountConfigurationT = ExperimentTargetAccountConfiguration>
+    GetExperimentTargetAccountConfigurationResult& WithTargetAccountConfiguration(TargetAccountConfigurationT&& value) { SetTargetAccountConfiguration(std::forward<TargetAccountConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetExperimentTargetAccountConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetExperimentTargetAccountConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetExperimentTargetAccountConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetExperimentTargetAccountConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ExperimentTargetAccountConfiguration m_targetAccountConfiguration;
+    bool m_targetAccountConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

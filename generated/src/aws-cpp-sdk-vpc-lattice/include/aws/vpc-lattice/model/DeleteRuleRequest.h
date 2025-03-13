@@ -21,7 +21,7 @@ namespace Model
   class DeleteRuleRequest : public VPCLatticeRequest
   {
   public:
-    AWS_VPCLATTICE_API DeleteRuleRequest();
+    AWS_VPCLATTICE_API DeleteRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>The ID or ARN of the listener.</p>
      */
-    inline const Aws::String& GetListenerIdentifier() const{ return m_listenerIdentifier; }
+    inline const Aws::String& GetListenerIdentifier() const { return m_listenerIdentifier; }
     inline bool ListenerIdentifierHasBeenSet() const { return m_listenerIdentifierHasBeenSet; }
-    inline void SetListenerIdentifier(const Aws::String& value) { m_listenerIdentifierHasBeenSet = true; m_listenerIdentifier = value; }
-    inline void SetListenerIdentifier(Aws::String&& value) { m_listenerIdentifierHasBeenSet = true; m_listenerIdentifier = std::move(value); }
-    inline void SetListenerIdentifier(const char* value) { m_listenerIdentifierHasBeenSet = true; m_listenerIdentifier.assign(value); }
-    inline DeleteRuleRequest& WithListenerIdentifier(const Aws::String& value) { SetListenerIdentifier(value); return *this;}
-    inline DeleteRuleRequest& WithListenerIdentifier(Aws::String&& value) { SetListenerIdentifier(std::move(value)); return *this;}
-    inline DeleteRuleRequest& WithListenerIdentifier(const char* value) { SetListenerIdentifier(value); return *this;}
+    template<typename ListenerIdentifierT = Aws::String>
+    void SetListenerIdentifier(ListenerIdentifierT&& value) { m_listenerIdentifierHasBeenSet = true; m_listenerIdentifier = std::forward<ListenerIdentifierT>(value); }
+    template<typename ListenerIdentifierT = Aws::String>
+    DeleteRuleRequest& WithListenerIdentifier(ListenerIdentifierT&& value) { SetListenerIdentifier(std::forward<ListenerIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID or ARN of the rule.</p>
      */
-    inline const Aws::String& GetRuleIdentifier() const{ return m_ruleIdentifier; }
+    inline const Aws::String& GetRuleIdentifier() const { return m_ruleIdentifier; }
     inline bool RuleIdentifierHasBeenSet() const { return m_ruleIdentifierHasBeenSet; }
-    inline void SetRuleIdentifier(const Aws::String& value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier = value; }
-    inline void SetRuleIdentifier(Aws::String&& value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier = std::move(value); }
-    inline void SetRuleIdentifier(const char* value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier.assign(value); }
-    inline DeleteRuleRequest& WithRuleIdentifier(const Aws::String& value) { SetRuleIdentifier(value); return *this;}
-    inline DeleteRuleRequest& WithRuleIdentifier(Aws::String&& value) { SetRuleIdentifier(std::move(value)); return *this;}
-    inline DeleteRuleRequest& WithRuleIdentifier(const char* value) { SetRuleIdentifier(value); return *this;}
+    template<typename RuleIdentifierT = Aws::String>
+    void SetRuleIdentifier(RuleIdentifierT&& value) { m_ruleIdentifierHasBeenSet = true; m_ruleIdentifier = std::forward<RuleIdentifierT>(value); }
+    template<typename RuleIdentifierT = Aws::String>
+    DeleteRuleRequest& WithRuleIdentifier(RuleIdentifierT&& value) { SetRuleIdentifier(std::forward<RuleIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID or ARN of the service.</p>
      */
-    inline const Aws::String& GetServiceIdentifier() const{ return m_serviceIdentifier; }
+    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
     inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-    inline void SetServiceIdentifier(const Aws::String& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = value; }
-    inline void SetServiceIdentifier(Aws::String&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::move(value); }
-    inline void SetServiceIdentifier(const char* value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier.assign(value); }
-    inline DeleteRuleRequest& WithServiceIdentifier(const Aws::String& value) { SetServiceIdentifier(value); return *this;}
-    inline DeleteRuleRequest& WithServiceIdentifier(Aws::String&& value) { SetServiceIdentifier(std::move(value)); return *this;}
-    inline DeleteRuleRequest& WithServiceIdentifier(const char* value) { SetServiceIdentifier(value); return *this;}
+    template<typename ServiceIdentifierT = Aws::String>
+    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
+    template<typename ServiceIdentifierT = Aws::String>
+    DeleteRuleRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
     ///@}
   private:
 

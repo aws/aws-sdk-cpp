@@ -26,7 +26,7 @@ namespace Model
   class DeleteRumMetricsDestinationRequest : public CloudWatchRUMRequest
   {
   public:
-    AWS_CLOUDWATCHRUM_API DeleteRumMetricsDestinationRequest();
+    AWS_CLOUDWATCHRUM_API DeleteRumMetricsDestinationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the app monitor that is sending metrics to the destination that
      * you want to delete.</p>
      */
-    inline const Aws::String& GetAppMonitorName() const{ return m_appMonitorName; }
+    inline const Aws::String& GetAppMonitorName() const { return m_appMonitorName; }
     inline bool AppMonitorNameHasBeenSet() const { return m_appMonitorNameHasBeenSet; }
-    inline void SetAppMonitorName(const Aws::String& value) { m_appMonitorNameHasBeenSet = true; m_appMonitorName = value; }
-    inline void SetAppMonitorName(Aws::String&& value) { m_appMonitorNameHasBeenSet = true; m_appMonitorName = std::move(value); }
-    inline void SetAppMonitorName(const char* value) { m_appMonitorNameHasBeenSet = true; m_appMonitorName.assign(value); }
-    inline DeleteRumMetricsDestinationRequest& WithAppMonitorName(const Aws::String& value) { SetAppMonitorName(value); return *this;}
-    inline DeleteRumMetricsDestinationRequest& WithAppMonitorName(Aws::String&& value) { SetAppMonitorName(std::move(value)); return *this;}
-    inline DeleteRumMetricsDestinationRequest& WithAppMonitorName(const char* value) { SetAppMonitorName(value); return *this;}
+    template<typename AppMonitorNameT = Aws::String>
+    void SetAppMonitorName(AppMonitorNameT&& value) { m_appMonitorNameHasBeenSet = true; m_appMonitorName = std::forward<AppMonitorNameT>(value); }
+    template<typename AppMonitorNameT = Aws::String>
+    DeleteRumMetricsDestinationRequest& WithAppMonitorName(AppMonitorNameT&& value) { SetAppMonitorName(std::forward<AppMonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <p>The type of destination to delete. Valid values are <code>CloudWatch</code>
      * and <code>Evidently</code>.</p>
      */
-    inline const MetricDestination& GetDestination() const{ return m_destination; }
+    inline MetricDestination GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const MetricDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(MetricDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline DeleteRumMetricsDestinationRequest& WithDestination(const MetricDestination& value) { SetDestination(value); return *this;}
-    inline DeleteRumMetricsDestinationRequest& WithDestination(MetricDestination&& value) { SetDestination(std::move(value)); return *this;}
+    inline void SetDestination(MetricDestination value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline DeleteRumMetricsDestinationRequest& WithDestination(MetricDestination value) { SetDestination(value); return *this;}
     ///@}
 
     ///@{
@@ -74,21 +70,19 @@ namespace Model
      * do not use this parameter. This parameter specifies the ARN of the Evidently
      * experiment that corresponds to the destination to delete.</p>
      */
-    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+    inline const Aws::String& GetDestinationArn() const { return m_destinationArn; }
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
-    inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
-    inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
-    inline DeleteRumMetricsDestinationRequest& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-    inline DeleteRumMetricsDestinationRequest& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-    inline DeleteRumMetricsDestinationRequest& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    template<typename DestinationArnT = Aws::String>
+    void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
+    template<typename DestinationArnT = Aws::String>
+    DeleteRumMetricsDestinationRequest& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appMonitorName;
     bool m_appMonitorNameHasBeenSet = false;
 
-    MetricDestination m_destination;
+    MetricDestination m_destination{MetricDestination::NOT_SET};
     bool m_destinationHasBeenSet = false;
 
     Aws::String m_destinationArn;

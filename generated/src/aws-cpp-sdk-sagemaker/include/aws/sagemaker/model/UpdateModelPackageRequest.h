@@ -28,7 +28,7 @@ namespace Model
   class UpdateModelPackageRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API UpdateModelPackageRequest();
+    AWS_SAGEMAKER_API UpdateModelPackageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,59 +45,50 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the model package.</p>
      */
-    inline const Aws::String& GetModelPackageArn() const{ return m_modelPackageArn; }
+    inline const Aws::String& GetModelPackageArn() const { return m_modelPackageArn; }
     inline bool ModelPackageArnHasBeenSet() const { return m_modelPackageArnHasBeenSet; }
-    inline void SetModelPackageArn(const Aws::String& value) { m_modelPackageArnHasBeenSet = true; m_modelPackageArn = value; }
-    inline void SetModelPackageArn(Aws::String&& value) { m_modelPackageArnHasBeenSet = true; m_modelPackageArn = std::move(value); }
-    inline void SetModelPackageArn(const char* value) { m_modelPackageArnHasBeenSet = true; m_modelPackageArn.assign(value); }
-    inline UpdateModelPackageRequest& WithModelPackageArn(const Aws::String& value) { SetModelPackageArn(value); return *this;}
-    inline UpdateModelPackageRequest& WithModelPackageArn(Aws::String&& value) { SetModelPackageArn(std::move(value)); return *this;}
-    inline UpdateModelPackageRequest& WithModelPackageArn(const char* value) { SetModelPackageArn(value); return *this;}
+    template<typename ModelPackageArnT = Aws::String>
+    void SetModelPackageArn(ModelPackageArnT&& value) { m_modelPackageArnHasBeenSet = true; m_modelPackageArn = std::forward<ModelPackageArnT>(value); }
+    template<typename ModelPackageArnT = Aws::String>
+    UpdateModelPackageRequest& WithModelPackageArn(ModelPackageArnT&& value) { SetModelPackageArn(std::forward<ModelPackageArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The approval status of the model.</p>
      */
-    inline const ModelApprovalStatus& GetModelApprovalStatus() const{ return m_modelApprovalStatus; }
+    inline ModelApprovalStatus GetModelApprovalStatus() const { return m_modelApprovalStatus; }
     inline bool ModelApprovalStatusHasBeenSet() const { return m_modelApprovalStatusHasBeenSet; }
-    inline void SetModelApprovalStatus(const ModelApprovalStatus& value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = value; }
-    inline void SetModelApprovalStatus(ModelApprovalStatus&& value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = std::move(value); }
-    inline UpdateModelPackageRequest& WithModelApprovalStatus(const ModelApprovalStatus& value) { SetModelApprovalStatus(value); return *this;}
-    inline UpdateModelPackageRequest& WithModelApprovalStatus(ModelApprovalStatus&& value) { SetModelApprovalStatus(std::move(value)); return *this;}
+    inline void SetModelApprovalStatus(ModelApprovalStatus value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = value; }
+    inline UpdateModelPackageRequest& WithModelApprovalStatus(ModelApprovalStatus value) { SetModelApprovalStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the approval status of the model.</p>
      */
-    inline const Aws::String& GetApprovalDescription() const{ return m_approvalDescription; }
+    inline const Aws::String& GetApprovalDescription() const { return m_approvalDescription; }
     inline bool ApprovalDescriptionHasBeenSet() const { return m_approvalDescriptionHasBeenSet; }
-    inline void SetApprovalDescription(const Aws::String& value) { m_approvalDescriptionHasBeenSet = true; m_approvalDescription = value; }
-    inline void SetApprovalDescription(Aws::String&& value) { m_approvalDescriptionHasBeenSet = true; m_approvalDescription = std::move(value); }
-    inline void SetApprovalDescription(const char* value) { m_approvalDescriptionHasBeenSet = true; m_approvalDescription.assign(value); }
-    inline UpdateModelPackageRequest& WithApprovalDescription(const Aws::String& value) { SetApprovalDescription(value); return *this;}
-    inline UpdateModelPackageRequest& WithApprovalDescription(Aws::String&& value) { SetApprovalDescription(std::move(value)); return *this;}
-    inline UpdateModelPackageRequest& WithApprovalDescription(const char* value) { SetApprovalDescription(value); return *this;}
+    template<typename ApprovalDescriptionT = Aws::String>
+    void SetApprovalDescription(ApprovalDescriptionT&& value) { m_approvalDescriptionHasBeenSet = true; m_approvalDescription = std::forward<ApprovalDescriptionT>(value); }
+    template<typename ApprovalDescriptionT = Aws::String>
+    UpdateModelPackageRequest& WithApprovalDescription(ApprovalDescriptionT&& value) { SetApprovalDescription(std::forward<ApprovalDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata properties associated with the model package versions.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerMetadataProperties() const{ return m_customerMetadataProperties; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerMetadataProperties() const { return m_customerMetadataProperties; }
     inline bool CustomerMetadataPropertiesHasBeenSet() const { return m_customerMetadataPropertiesHasBeenSet; }
-    inline void SetCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = value; }
-    inline void SetCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = std::move(value); }
-    inline UpdateModelPackageRequest& WithCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomerMetadataProperties(value); return *this;}
-    inline UpdateModelPackageRequest& WithCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerMetadataProperties(std::move(value)); return *this;}
-    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(const Aws::String& key, const Aws::String& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, value); return *this; }
-    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, const Aws::String& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
-    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(const Aws::String& key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
-    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(const char* key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
-    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, const char* value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
-    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(const char* key, const char* value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, value); return *this; }
+    template<typename CustomerMetadataPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomerMetadataProperties(CustomerMetadataPropertiesT&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = std::forward<CustomerMetadataPropertiesT>(value); }
+    template<typename CustomerMetadataPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    UpdateModelPackageRequest& WithCustomerMetadataProperties(CustomerMetadataPropertiesT&& value) { SetCustomerMetadataProperties(std::forward<CustomerMetadataPropertiesT>(value)); return *this;}
+    template<typename CustomerMetadataPropertiesKeyT = Aws::String, typename CustomerMetadataPropertiesValueT = Aws::String>
+    UpdateModelPackageRequest& AddCustomerMetadataProperties(CustomerMetadataPropertiesKeyT&& key, CustomerMetadataPropertiesValueT&& value) {
+      m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::forward<CustomerMetadataPropertiesKeyT>(key), std::forward<CustomerMetadataPropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -105,15 +96,14 @@ namespace Model
      * <p>The metadata properties associated with the model package versions to
      * remove.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCustomerMetadataPropertiesToRemove() const{ return m_customerMetadataPropertiesToRemove; }
+    inline const Aws::Vector<Aws::String>& GetCustomerMetadataPropertiesToRemove() const { return m_customerMetadataPropertiesToRemove; }
     inline bool CustomerMetadataPropertiesToRemoveHasBeenSet() const { return m_customerMetadataPropertiesToRemoveHasBeenSet; }
-    inline void SetCustomerMetadataPropertiesToRemove(const Aws::Vector<Aws::String>& value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove = value; }
-    inline void SetCustomerMetadataPropertiesToRemove(Aws::Vector<Aws::String>&& value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove = std::move(value); }
-    inline UpdateModelPackageRequest& WithCustomerMetadataPropertiesToRemove(const Aws::Vector<Aws::String>& value) { SetCustomerMetadataPropertiesToRemove(value); return *this;}
-    inline UpdateModelPackageRequest& WithCustomerMetadataPropertiesToRemove(Aws::Vector<Aws::String>&& value) { SetCustomerMetadataPropertiesToRemove(std::move(value)); return *this;}
-    inline UpdateModelPackageRequest& AddCustomerMetadataPropertiesToRemove(const Aws::String& value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove.push_back(value); return *this; }
-    inline UpdateModelPackageRequest& AddCustomerMetadataPropertiesToRemove(Aws::String&& value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove.push_back(std::move(value)); return *this; }
-    inline UpdateModelPackageRequest& AddCustomerMetadataPropertiesToRemove(const char* value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove.push_back(value); return *this; }
+    template<typename CustomerMetadataPropertiesToRemoveT = Aws::Vector<Aws::String>>
+    void SetCustomerMetadataPropertiesToRemove(CustomerMetadataPropertiesToRemoveT&& value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove = std::forward<CustomerMetadataPropertiesToRemoveT>(value); }
+    template<typename CustomerMetadataPropertiesToRemoveT = Aws::Vector<Aws::String>>
+    UpdateModelPackageRequest& WithCustomerMetadataPropertiesToRemove(CustomerMetadataPropertiesToRemoveT&& value) { SetCustomerMetadataPropertiesToRemove(std::forward<CustomerMetadataPropertiesToRemoveT>(value)); return *this;}
+    template<typename CustomerMetadataPropertiesToRemoveT = Aws::String>
+    UpdateModelPackageRequest& AddCustomerMetadataPropertiesToRemove(CustomerMetadataPropertiesToRemoveT&& value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove.emplace_back(std::forward<CustomerMetadataPropertiesToRemoveT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -125,14 +115,14 @@ namespace Model
      * on inference endpoints. Generally used with SageMaker Neo to store the compiled
      * artifacts.</p>
      */
-    inline const Aws::Vector<AdditionalInferenceSpecificationDefinition>& GetAdditionalInferenceSpecificationsToAdd() const{ return m_additionalInferenceSpecificationsToAdd; }
+    inline const Aws::Vector<AdditionalInferenceSpecificationDefinition>& GetAdditionalInferenceSpecificationsToAdd() const { return m_additionalInferenceSpecificationsToAdd; }
     inline bool AdditionalInferenceSpecificationsToAddHasBeenSet() const { return m_additionalInferenceSpecificationsToAddHasBeenSet; }
-    inline void SetAdditionalInferenceSpecificationsToAdd(const Aws::Vector<AdditionalInferenceSpecificationDefinition>& value) { m_additionalInferenceSpecificationsToAddHasBeenSet = true; m_additionalInferenceSpecificationsToAdd = value; }
-    inline void SetAdditionalInferenceSpecificationsToAdd(Aws::Vector<AdditionalInferenceSpecificationDefinition>&& value) { m_additionalInferenceSpecificationsToAddHasBeenSet = true; m_additionalInferenceSpecificationsToAdd = std::move(value); }
-    inline UpdateModelPackageRequest& WithAdditionalInferenceSpecificationsToAdd(const Aws::Vector<AdditionalInferenceSpecificationDefinition>& value) { SetAdditionalInferenceSpecificationsToAdd(value); return *this;}
-    inline UpdateModelPackageRequest& WithAdditionalInferenceSpecificationsToAdd(Aws::Vector<AdditionalInferenceSpecificationDefinition>&& value) { SetAdditionalInferenceSpecificationsToAdd(std::move(value)); return *this;}
-    inline UpdateModelPackageRequest& AddAdditionalInferenceSpecificationsToAdd(const AdditionalInferenceSpecificationDefinition& value) { m_additionalInferenceSpecificationsToAddHasBeenSet = true; m_additionalInferenceSpecificationsToAdd.push_back(value); return *this; }
-    inline UpdateModelPackageRequest& AddAdditionalInferenceSpecificationsToAdd(AdditionalInferenceSpecificationDefinition&& value) { m_additionalInferenceSpecificationsToAddHasBeenSet = true; m_additionalInferenceSpecificationsToAdd.push_back(std::move(value)); return *this; }
+    template<typename AdditionalInferenceSpecificationsToAddT = Aws::Vector<AdditionalInferenceSpecificationDefinition>>
+    void SetAdditionalInferenceSpecificationsToAdd(AdditionalInferenceSpecificationsToAddT&& value) { m_additionalInferenceSpecificationsToAddHasBeenSet = true; m_additionalInferenceSpecificationsToAdd = std::forward<AdditionalInferenceSpecificationsToAddT>(value); }
+    template<typename AdditionalInferenceSpecificationsToAddT = Aws::Vector<AdditionalInferenceSpecificationDefinition>>
+    UpdateModelPackageRequest& WithAdditionalInferenceSpecificationsToAdd(AdditionalInferenceSpecificationsToAddT&& value) { SetAdditionalInferenceSpecificationsToAdd(std::forward<AdditionalInferenceSpecificationsToAddT>(value)); return *this;}
+    template<typename AdditionalInferenceSpecificationsToAddT = AdditionalInferenceSpecificationDefinition>
+    UpdateModelPackageRequest& AddAdditionalInferenceSpecificationsToAdd(AdditionalInferenceSpecificationsToAddT&& value) { m_additionalInferenceSpecificationsToAddHasBeenSet = true; m_additionalInferenceSpecificationsToAdd.emplace_back(std::forward<AdditionalInferenceSpecificationsToAddT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -145,26 +135,24 @@ namespace Model
      * <p>The input and output content formats that the model package supports for
      * inference.</p> </li> </ul>
      */
-    inline const InferenceSpecification& GetInferenceSpecification() const{ return m_inferenceSpecification; }
+    inline const InferenceSpecification& GetInferenceSpecification() const { return m_inferenceSpecification; }
     inline bool InferenceSpecificationHasBeenSet() const { return m_inferenceSpecificationHasBeenSet; }
-    inline void SetInferenceSpecification(const InferenceSpecification& value) { m_inferenceSpecificationHasBeenSet = true; m_inferenceSpecification = value; }
-    inline void SetInferenceSpecification(InferenceSpecification&& value) { m_inferenceSpecificationHasBeenSet = true; m_inferenceSpecification = std::move(value); }
-    inline UpdateModelPackageRequest& WithInferenceSpecification(const InferenceSpecification& value) { SetInferenceSpecification(value); return *this;}
-    inline UpdateModelPackageRequest& WithInferenceSpecification(InferenceSpecification&& value) { SetInferenceSpecification(std::move(value)); return *this;}
+    template<typename InferenceSpecificationT = InferenceSpecification>
+    void SetInferenceSpecification(InferenceSpecificationT&& value) { m_inferenceSpecificationHasBeenSet = true; m_inferenceSpecification = std::forward<InferenceSpecificationT>(value); }
+    template<typename InferenceSpecificationT = InferenceSpecification>
+    UpdateModelPackageRequest& WithInferenceSpecification(InferenceSpecificationT&& value) { SetInferenceSpecification(std::forward<InferenceSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URI of the source for the model package.</p>
      */
-    inline const Aws::String& GetSourceUri() const{ return m_sourceUri; }
+    inline const Aws::String& GetSourceUri() const { return m_sourceUri; }
     inline bool SourceUriHasBeenSet() const { return m_sourceUriHasBeenSet; }
-    inline void SetSourceUri(const Aws::String& value) { m_sourceUriHasBeenSet = true; m_sourceUri = value; }
-    inline void SetSourceUri(Aws::String&& value) { m_sourceUriHasBeenSet = true; m_sourceUri = std::move(value); }
-    inline void SetSourceUri(const char* value) { m_sourceUriHasBeenSet = true; m_sourceUri.assign(value); }
-    inline UpdateModelPackageRequest& WithSourceUri(const Aws::String& value) { SetSourceUri(value); return *this;}
-    inline UpdateModelPackageRequest& WithSourceUri(Aws::String&& value) { SetSourceUri(std::move(value)); return *this;}
-    inline UpdateModelPackageRequest& WithSourceUri(const char* value) { SetSourceUri(value); return *this;}
+    template<typename SourceUriT = Aws::String>
+    void SetSourceUri(SourceUriT&& value) { m_sourceUriHasBeenSet = true; m_sourceUri = std::forward<SourceUriT>(value); }
+    template<typename SourceUriT = Aws::String>
+    UpdateModelPackageRequest& WithSourceUri(SourceUriT&& value) { SetSourceUri(std::forward<SourceUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,12 +171,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
      * the Details of a Model Version</a>.</p>
      */
-    inline const ModelPackageModelCard& GetModelCard() const{ return m_modelCard; }
+    inline const ModelPackageModelCard& GetModelCard() const { return m_modelCard; }
     inline bool ModelCardHasBeenSet() const { return m_modelCardHasBeenSet; }
-    inline void SetModelCard(const ModelPackageModelCard& value) { m_modelCardHasBeenSet = true; m_modelCard = value; }
-    inline void SetModelCard(ModelPackageModelCard&& value) { m_modelCardHasBeenSet = true; m_modelCard = std::move(value); }
-    inline UpdateModelPackageRequest& WithModelCard(const ModelPackageModelCard& value) { SetModelCard(value); return *this;}
-    inline UpdateModelPackageRequest& WithModelCard(ModelPackageModelCard&& value) { SetModelCard(std::move(value)); return *this;}
+    template<typename ModelCardT = ModelPackageModelCard>
+    void SetModelCard(ModelCardT&& value) { m_modelCardHasBeenSet = true; m_modelCard = std::forward<ModelCardT>(value); }
+    template<typename ModelCardT = ModelPackageModelCard>
+    UpdateModelPackageRequest& WithModelCard(ModelCardT&& value) { SetModelCard(std::forward<ModelCardT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -196,33 +184,31 @@ namespace Model
      * <p> A structure describing the current state of the model in its life cycle.
      * </p>
      */
-    inline const ModelLifeCycle& GetModelLifeCycle() const{ return m_modelLifeCycle; }
+    inline const ModelLifeCycle& GetModelLifeCycle() const { return m_modelLifeCycle; }
     inline bool ModelLifeCycleHasBeenSet() const { return m_modelLifeCycleHasBeenSet; }
-    inline void SetModelLifeCycle(const ModelLifeCycle& value) { m_modelLifeCycleHasBeenSet = true; m_modelLifeCycle = value; }
-    inline void SetModelLifeCycle(ModelLifeCycle&& value) { m_modelLifeCycleHasBeenSet = true; m_modelLifeCycle = std::move(value); }
-    inline UpdateModelPackageRequest& WithModelLifeCycle(const ModelLifeCycle& value) { SetModelLifeCycle(value); return *this;}
-    inline UpdateModelPackageRequest& WithModelLifeCycle(ModelLifeCycle&& value) { SetModelLifeCycle(std::move(value)); return *this;}
+    template<typename ModelLifeCycleT = ModelLifeCycle>
+    void SetModelLifeCycle(ModelLifeCycleT&& value) { m_modelLifeCycleHasBeenSet = true; m_modelLifeCycle = std::forward<ModelLifeCycleT>(value); }
+    template<typename ModelLifeCycleT = ModelLifeCycle>
+    UpdateModelPackageRequest& WithModelLifeCycle(ModelLifeCycleT&& value) { SetModelLifeCycle(std::forward<ModelLifeCycleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A unique token that guarantees that the call to this API is idempotent. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateModelPackageRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateModelPackageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateModelPackageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateModelPackageRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_modelPackageArn;
     bool m_modelPackageArnHasBeenSet = false;
 
-    ModelApprovalStatus m_modelApprovalStatus;
+    ModelApprovalStatus m_modelApprovalStatus{ModelApprovalStatus::NOT_SET};
     bool m_modelApprovalStatusHasBeenSet = false;
 
     Aws::String m_approvalDescription;

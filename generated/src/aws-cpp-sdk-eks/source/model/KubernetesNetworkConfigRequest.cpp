@@ -18,16 +18,7 @@ namespace EKS
 namespace Model
 {
 
-KubernetesNetworkConfigRequest::KubernetesNetworkConfigRequest() : 
-    m_serviceIpv4CidrHasBeenSet(false),
-    m_ipFamily(IpFamily::NOT_SET),
-    m_ipFamilyHasBeenSet(false),
-    m_elasticLoadBalancingHasBeenSet(false)
-{
-}
-
 KubernetesNetworkConfigRequest::KubernetesNetworkConfigRequest(JsonView jsonValue)
-  : KubernetesNetworkConfigRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ KubernetesNetworkConfigRequest& KubernetesNetworkConfigRequest::operator =(JsonV
   if(jsonValue.ValueExists("serviceIpv4Cidr"))
   {
     m_serviceIpv4Cidr = jsonValue.GetString("serviceIpv4Cidr");
-
     m_serviceIpv4CidrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipFamily"))
   {
     m_ipFamily = IpFamilyMapper::GetIpFamilyForName(jsonValue.GetString("ipFamily"));
-
     m_ipFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elasticLoadBalancing"))
   {
     m_elasticLoadBalancing = jsonValue.GetObject("elasticLoadBalancing");
-
     m_elasticLoadBalancingHasBeenSet = true;
   }
-
   return *this;
 }
 

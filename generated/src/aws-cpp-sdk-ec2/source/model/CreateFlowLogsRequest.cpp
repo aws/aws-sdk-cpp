@@ -10,29 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateFlowLogsRequest::CreateFlowLogsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_deliverLogsPermissionArnHasBeenSet(false),
-    m_deliverCrossAccountRoleHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_resourceType(FlowLogsResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_trafficType(TrafficType::NOT_SET),
-    m_trafficTypeHasBeenSet(false),
-    m_logDestinationType(LogDestinationType::NOT_SET),
-    m_logDestinationTypeHasBeenSet(false),
-    m_logDestinationHasBeenSet(false),
-    m_logFormatHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_maxAggregationInterval(0),
-    m_maxAggregationIntervalHasBeenSet(false),
-    m_destinationOptionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFlowLogsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

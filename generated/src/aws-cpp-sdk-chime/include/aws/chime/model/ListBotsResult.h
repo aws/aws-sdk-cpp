@@ -29,7 +29,7 @@ namespace Model
   class ListBotsResult
   {
   public:
-    AWS_CHIME_API ListBotsResult();
+    AWS_CHIME_API ListBotsResult() = default;
     AWS_CHIME_API ListBotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIME_API ListBotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>List of bots and bot details.</p>
      */
-    inline const Aws::Vector<Bot>& GetBots() const{ return m_bots; }
-    inline void SetBots(const Aws::Vector<Bot>& value) { m_bots = value; }
-    inline void SetBots(Aws::Vector<Bot>&& value) { m_bots = std::move(value); }
-    inline ListBotsResult& WithBots(const Aws::Vector<Bot>& value) { SetBots(value); return *this;}
-    inline ListBotsResult& WithBots(Aws::Vector<Bot>&& value) { SetBots(std::move(value)); return *this;}
-    inline ListBotsResult& AddBots(const Bot& value) { m_bots.push_back(value); return *this; }
-    inline ListBotsResult& AddBots(Bot&& value) { m_bots.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Bot>& GetBots() const { return m_bots; }
+    template<typename BotsT = Aws::Vector<Bot>>
+    void SetBots(BotsT&& value) { m_botsHasBeenSet = true; m_bots = std::forward<BotsT>(value); }
+    template<typename BotsT = Aws::Vector<Bot>>
+    ListBotsResult& WithBots(BotsT&& value) { SetBots(std::forward<BotsT>(value)); return *this;}
+    template<typename BotsT = Bot>
+    ListBotsResult& AddBots(BotsT&& value) { m_botsHasBeenSet = true; m_bots.emplace_back(std::forward<BotsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListBotsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBotsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBotsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBotsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBotsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBotsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBotsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBotsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Bot> m_bots;
+    bool m_botsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

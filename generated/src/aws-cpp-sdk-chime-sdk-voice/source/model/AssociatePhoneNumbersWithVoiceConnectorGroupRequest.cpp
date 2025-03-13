@@ -12,14 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociatePhoneNumbersWithVoiceConnectorGroupRequest::AssociatePhoneNumbersWithVoiceConnectorGroupRequest() : 
-    m_voiceConnectorGroupIdHasBeenSet(false),
-    m_e164PhoneNumbersHasBeenSet(false),
-    m_forceAssociate(false),
-    m_forceAssociateHasBeenSet(false)
-{
-}
-
 Aws::String AssociatePhoneNumbersWithVoiceConnectorGroupRequest::SerializePayload() const
 {
   JsonValue payload;

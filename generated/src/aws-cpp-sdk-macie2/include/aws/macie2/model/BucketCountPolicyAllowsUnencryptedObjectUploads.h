@@ -31,7 +31,7 @@ namespace Model
   class BucketCountPolicyAllowsUnencryptedObjectUploads
   {
   public:
-    AWS_MACIE2_API BucketCountPolicyAllowsUnencryptedObjectUploads();
+    AWS_MACIE2_API BucketCountPolicyAllowsUnencryptedObjectUploads() = default;
     AWS_MACIE2_API BucketCountPolicyAllowsUnencryptedObjectUploads(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API BucketCountPolicyAllowsUnencryptedObjectUploads& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * x-amz-server-side-encryption-customer-algorithm header with a value of
      * AES256.</p>
      */
-    inline long long GetAllowsUnencryptedObjectUploads() const{ return m_allowsUnencryptedObjectUploads; }
+    inline long long GetAllowsUnencryptedObjectUploads() const { return m_allowsUnencryptedObjectUploads; }
     inline bool AllowsUnencryptedObjectUploadsHasBeenSet() const { return m_allowsUnencryptedObjectUploadsHasBeenSet; }
     inline void SetAllowsUnencryptedObjectUploads(long long value) { m_allowsUnencryptedObjectUploadsHasBeenSet = true; m_allowsUnencryptedObjectUploads = value; }
     inline BucketCountPolicyAllowsUnencryptedObjectUploads& WithAllowsUnencryptedObjectUploads(long long value) { SetAllowsUnencryptedObjectUploads(value); return *this;}
@@ -62,7 +62,7 @@ namespace Model
      * x-amz-server-side-encryption-customer-algorithm header with a value of
      * AES256.</p>
      */
-    inline long long GetDeniesUnencryptedObjectUploads() const{ return m_deniesUnencryptedObjectUploads; }
+    inline long long GetDeniesUnencryptedObjectUploads() const { return m_deniesUnencryptedObjectUploads; }
     inline bool DeniesUnencryptedObjectUploadsHasBeenSet() const { return m_deniesUnencryptedObjectUploadsHasBeenSet; }
     inline void SetDeniesUnencryptedObjectUploads(long long value) { m_deniesUnencryptedObjectUploadsHasBeenSet = true; m_deniesUnencryptedObjectUploads = value; }
     inline BucketCountPolicyAllowsUnencryptedObjectUploads& WithDeniesUnencryptedObjectUploads(long long value) { SetDeniesUnencryptedObjectUploads(value); return *this;}
@@ -76,20 +76,20 @@ namespace Model
      * can't determine whether bucket policies for the buckets require server-side
      * encryption of new objects.</p>
      */
-    inline long long GetUnknown() const{ return m_unknown; }
+    inline long long GetUnknown() const { return m_unknown; }
     inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }
     inline void SetUnknown(long long value) { m_unknownHasBeenSet = true; m_unknown = value; }
     inline BucketCountPolicyAllowsUnencryptedObjectUploads& WithUnknown(long long value) { SetUnknown(value); return *this;}
     ///@}
   private:
 
-    long long m_allowsUnencryptedObjectUploads;
+    long long m_allowsUnencryptedObjectUploads{0};
     bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
 
-    long long m_deniesUnencryptedObjectUploads;
+    long long m_deniesUnencryptedObjectUploads{0};
     bool m_deniesUnencryptedObjectUploadsHasBeenSet = false;
 
-    long long m_unknown;
+    long long m_unknown{0};
     bool m_unknownHasBeenSet = false;
   };
 

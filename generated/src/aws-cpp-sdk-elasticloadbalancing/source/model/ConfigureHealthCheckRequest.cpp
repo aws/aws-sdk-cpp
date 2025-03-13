@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-ConfigureHealthCheckRequest::ConfigureHealthCheckRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_healthCheckHasBeenSet(false)
-{
-}
-
 Aws::String ConfigureHealthCheckRequest::SerializePayload() const
 {
   Aws::StringStream ss;

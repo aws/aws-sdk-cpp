@@ -21,7 +21,7 @@ namespace Model
   class CancelQueryRequest : public TimestreamQueryRequest
   {
   public:
-    AWS_TIMESTREAMQUERY_API CancelQueryRequest();
+    AWS_TIMESTREAMQUERY_API CancelQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is
      * returned as part of the query result. </p>
      */
-    inline const Aws::String& GetQueryId() const{ return m_queryId; }
+    inline const Aws::String& GetQueryId() const { return m_queryId; }
     inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
-    inline void SetQueryId(const Aws::String& value) { m_queryIdHasBeenSet = true; m_queryId = value; }
-    inline void SetQueryId(Aws::String&& value) { m_queryIdHasBeenSet = true; m_queryId = std::move(value); }
-    inline void SetQueryId(const char* value) { m_queryIdHasBeenSet = true; m_queryId.assign(value); }
-    inline CancelQueryRequest& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
-    inline CancelQueryRequest& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
-    inline CancelQueryRequest& WithQueryId(const char* value) { SetQueryId(value); return *this;}
+    template<typename QueryIdT = Aws::String>
+    void SetQueryId(QueryIdT&& value) { m_queryIdHasBeenSet = true; m_queryId = std::forward<QueryIdT>(value); }
+    template<typename QueryIdT = Aws::String>
+    CancelQueryRequest& WithQueryId(QueryIdT&& value) { SetQueryId(std::forward<QueryIdT>(value)); return *this;}
     ///@}
   private:
 

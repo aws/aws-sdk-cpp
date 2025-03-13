@@ -32,7 +32,7 @@ namespace Model
   class EgressFilter
   {
   public:
-    AWS_APPMESH_API EgressFilter();
+    AWS_APPMESH_API EgressFilter() = default;
     AWS_APPMESH_API EgressFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API EgressFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,16 +46,14 @@ namespace Model
      * API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to
      * allow egress to any endpoint inside or outside of the service mesh.</p>
      */
-    inline const EgressFilterType& GetType() const{ return m_type; }
+    inline EgressFilterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EgressFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EgressFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline EgressFilter& WithType(const EgressFilterType& value) { SetType(value); return *this;}
-    inline EgressFilter& WithType(EgressFilterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EgressFilterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EgressFilter& WithType(EgressFilterType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    EgressFilterType m_type;
+    EgressFilterType m_type{EgressFilterType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessEndpointEniOptions::VerifiedAccessEndpointEniOptions() : 
-    m_networkInterfaceIdHasBeenSet(false),
-    m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_portRangesHasBeenSet(false)
-{
-}
-
 VerifiedAccessEndpointEniOptions::VerifiedAccessEndpointEniOptions(const XmlNode& xmlNode)
-  : VerifiedAccessEndpointEniOptions()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,34 @@ VerifiedAccessEndpointEniOptions& VerifiedAccessEndpointEniOptions::operator =(c
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
+       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
     XmlNode portRangesNode = resultNode.FirstChild("portRangeSet");
     if(!portRangesNode.IsNull())
     {
       XmlNode portRangesMember = portRangesNode.FirstChild("item");
+      m_portRangesHasBeenSet = !portRangesMember.IsNull();
       while(!portRangesMember.IsNull())
       {
         m_portRanges.push_back(portRangesMember);
         portRangesMember = portRangesMember.NextNode("item");
       }
 
-      m_portRangesHasBeenSet = true;
+       m_portRangesHasBeenSet = true;
     }
   }
 

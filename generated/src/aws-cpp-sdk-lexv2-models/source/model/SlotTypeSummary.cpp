@@ -18,19 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SlotTypeSummary::SlotTypeSummary() : 
-    m_slotTypeIdHasBeenSet(false),
-    m_slotTypeNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parentSlotTypeSignatureHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_slotTypeCategory(SlotTypeCategory::NOT_SET),
-    m_slotTypeCategoryHasBeenSet(false)
-{
-}
-
 SlotTypeSummary::SlotTypeSummary(JsonView jsonValue)
-  : SlotTypeSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ SlotTypeSummary& SlotTypeSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("slotTypeId"))
   {
     m_slotTypeId = jsonValue.GetString("slotTypeId");
-
     m_slotTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotTypeName"))
   {
     m_slotTypeName = jsonValue.GetString("slotTypeName");
-
     m_slotTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentSlotTypeSignature"))
   {
     m_parentSlotTypeSignature = jsonValue.GetString("parentSlotTypeSignature");
-
     m_parentSlotTypeSignatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotTypeCategory"))
   {
     m_slotTypeCategory = SlotTypeCategoryMapper::GetSlotTypeCategoryForName(jsonValue.GetString("slotTypeCategory"));
-
     m_slotTypeCategoryHasBeenSet = true;
   }
-
   return *this;
 }
 

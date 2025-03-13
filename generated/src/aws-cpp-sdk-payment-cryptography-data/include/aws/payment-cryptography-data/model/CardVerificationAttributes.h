@@ -40,7 +40,7 @@ namespace Model
   class CardVerificationAttributes
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API CardVerificationAttributes();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API CardVerificationAttributes() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API CardVerificationAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API CardVerificationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
 
     ///@{
     
-    inline const AmexCardSecurityCodeVersion1& GetAmexCardSecurityCodeVersion1() const{ return m_amexCardSecurityCodeVersion1; }
+    inline const AmexCardSecurityCodeVersion1& GetAmexCardSecurityCodeVersion1() const { return m_amexCardSecurityCodeVersion1; }
     inline bool AmexCardSecurityCodeVersion1HasBeenSet() const { return m_amexCardSecurityCodeVersion1HasBeenSet; }
-    inline void SetAmexCardSecurityCodeVersion1(const AmexCardSecurityCodeVersion1& value) { m_amexCardSecurityCodeVersion1HasBeenSet = true; m_amexCardSecurityCodeVersion1 = value; }
-    inline void SetAmexCardSecurityCodeVersion1(AmexCardSecurityCodeVersion1&& value) { m_amexCardSecurityCodeVersion1HasBeenSet = true; m_amexCardSecurityCodeVersion1 = std::move(value); }
-    inline CardVerificationAttributes& WithAmexCardSecurityCodeVersion1(const AmexCardSecurityCodeVersion1& value) { SetAmexCardSecurityCodeVersion1(value); return *this;}
-    inline CardVerificationAttributes& WithAmexCardSecurityCodeVersion1(AmexCardSecurityCodeVersion1&& value) { SetAmexCardSecurityCodeVersion1(std::move(value)); return *this;}
+    template<typename AmexCardSecurityCodeVersion1T = AmexCardSecurityCodeVersion1>
+    void SetAmexCardSecurityCodeVersion1(AmexCardSecurityCodeVersion1T&& value) { m_amexCardSecurityCodeVersion1HasBeenSet = true; m_amexCardSecurityCodeVersion1 = std::forward<AmexCardSecurityCodeVersion1T>(value); }
+    template<typename AmexCardSecurityCodeVersion1T = AmexCardSecurityCodeVersion1>
+    CardVerificationAttributes& WithAmexCardSecurityCodeVersion1(AmexCardSecurityCodeVersion1T&& value) { SetAmexCardSecurityCodeVersion1(std::forward<AmexCardSecurityCodeVersion1T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * <p>Card data parameters that are required to verify a Card Security Code (CSC2)
      * for an AMEX payment card.</p>
      */
-    inline const AmexCardSecurityCodeVersion2& GetAmexCardSecurityCodeVersion2() const{ return m_amexCardSecurityCodeVersion2; }
+    inline const AmexCardSecurityCodeVersion2& GetAmexCardSecurityCodeVersion2() const { return m_amexCardSecurityCodeVersion2; }
     inline bool AmexCardSecurityCodeVersion2HasBeenSet() const { return m_amexCardSecurityCodeVersion2HasBeenSet; }
-    inline void SetAmexCardSecurityCodeVersion2(const AmexCardSecurityCodeVersion2& value) { m_amexCardSecurityCodeVersion2HasBeenSet = true; m_amexCardSecurityCodeVersion2 = value; }
-    inline void SetAmexCardSecurityCodeVersion2(AmexCardSecurityCodeVersion2&& value) { m_amexCardSecurityCodeVersion2HasBeenSet = true; m_amexCardSecurityCodeVersion2 = std::move(value); }
-    inline CardVerificationAttributes& WithAmexCardSecurityCodeVersion2(const AmexCardSecurityCodeVersion2& value) { SetAmexCardSecurityCodeVersion2(value); return *this;}
-    inline CardVerificationAttributes& WithAmexCardSecurityCodeVersion2(AmexCardSecurityCodeVersion2&& value) { SetAmexCardSecurityCodeVersion2(std::move(value)); return *this;}
+    template<typename AmexCardSecurityCodeVersion2T = AmexCardSecurityCodeVersion2>
+    void SetAmexCardSecurityCodeVersion2(AmexCardSecurityCodeVersion2T&& value) { m_amexCardSecurityCodeVersion2HasBeenSet = true; m_amexCardSecurityCodeVersion2 = std::forward<AmexCardSecurityCodeVersion2T>(value); }
+    template<typename AmexCardSecurityCodeVersion2T = AmexCardSecurityCodeVersion2>
+    CardVerificationAttributes& WithAmexCardSecurityCodeVersion2(AmexCardSecurityCodeVersion2T&& value) { SetAmexCardSecurityCodeVersion2(std::forward<AmexCardSecurityCodeVersion2T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +74,12 @@ namespace Model
      * <p>Card data parameters that are required to verify Card Verification Value
      * (CVV) for the payment card.</p>
      */
-    inline const CardVerificationValue1& GetCardVerificationValue1() const{ return m_cardVerificationValue1; }
+    inline const CardVerificationValue1& GetCardVerificationValue1() const { return m_cardVerificationValue1; }
     inline bool CardVerificationValue1HasBeenSet() const { return m_cardVerificationValue1HasBeenSet; }
-    inline void SetCardVerificationValue1(const CardVerificationValue1& value) { m_cardVerificationValue1HasBeenSet = true; m_cardVerificationValue1 = value; }
-    inline void SetCardVerificationValue1(CardVerificationValue1&& value) { m_cardVerificationValue1HasBeenSet = true; m_cardVerificationValue1 = std::move(value); }
-    inline CardVerificationAttributes& WithCardVerificationValue1(const CardVerificationValue1& value) { SetCardVerificationValue1(value); return *this;}
-    inline CardVerificationAttributes& WithCardVerificationValue1(CardVerificationValue1&& value) { SetCardVerificationValue1(std::move(value)); return *this;}
+    template<typename CardVerificationValue1T = CardVerificationValue1>
+    void SetCardVerificationValue1(CardVerificationValue1T&& value) { m_cardVerificationValue1HasBeenSet = true; m_cardVerificationValue1 = std::forward<CardVerificationValue1T>(value); }
+    template<typename CardVerificationValue1T = CardVerificationValue1>
+    CardVerificationAttributes& WithCardVerificationValue1(CardVerificationValue1T&& value) { SetCardVerificationValue1(std::forward<CardVerificationValue1T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +87,12 @@ namespace Model
      * <p>Card data parameters that are required to verify Card Verification Value
      * (CVV2) for the payment card.</p>
      */
-    inline const CardVerificationValue2& GetCardVerificationValue2() const{ return m_cardVerificationValue2; }
+    inline const CardVerificationValue2& GetCardVerificationValue2() const { return m_cardVerificationValue2; }
     inline bool CardVerificationValue2HasBeenSet() const { return m_cardVerificationValue2HasBeenSet; }
-    inline void SetCardVerificationValue2(const CardVerificationValue2& value) { m_cardVerificationValue2HasBeenSet = true; m_cardVerificationValue2 = value; }
-    inline void SetCardVerificationValue2(CardVerificationValue2&& value) { m_cardVerificationValue2HasBeenSet = true; m_cardVerificationValue2 = std::move(value); }
-    inline CardVerificationAttributes& WithCardVerificationValue2(const CardVerificationValue2& value) { SetCardVerificationValue2(value); return *this;}
-    inline CardVerificationAttributes& WithCardVerificationValue2(CardVerificationValue2&& value) { SetCardVerificationValue2(std::move(value)); return *this;}
+    template<typename CardVerificationValue2T = CardVerificationValue2>
+    void SetCardVerificationValue2(CardVerificationValue2T&& value) { m_cardVerificationValue2HasBeenSet = true; m_cardVerificationValue2 = std::forward<CardVerificationValue2T>(value); }
+    template<typename CardVerificationValue2T = CardVerificationValue2>
+    CardVerificationAttributes& WithCardVerificationValue2(CardVerificationValue2T&& value) { SetCardVerificationValue2(std::forward<CardVerificationValue2T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +100,12 @@ namespace Model
      * <p>Card data parameters that are required to verify a cardholder verification
      * value for the payment card.</p>
      */
-    inline const CardHolderVerificationValue& GetCardHolderVerificationValue() const{ return m_cardHolderVerificationValue; }
+    inline const CardHolderVerificationValue& GetCardHolderVerificationValue() const { return m_cardHolderVerificationValue; }
     inline bool CardHolderVerificationValueHasBeenSet() const { return m_cardHolderVerificationValueHasBeenSet; }
-    inline void SetCardHolderVerificationValue(const CardHolderVerificationValue& value) { m_cardHolderVerificationValueHasBeenSet = true; m_cardHolderVerificationValue = value; }
-    inline void SetCardHolderVerificationValue(CardHolderVerificationValue&& value) { m_cardHolderVerificationValueHasBeenSet = true; m_cardHolderVerificationValue = std::move(value); }
-    inline CardVerificationAttributes& WithCardHolderVerificationValue(const CardHolderVerificationValue& value) { SetCardHolderVerificationValue(value); return *this;}
-    inline CardVerificationAttributes& WithCardHolderVerificationValue(CardHolderVerificationValue&& value) { SetCardHolderVerificationValue(std::move(value)); return *this;}
+    template<typename CardHolderVerificationValueT = CardHolderVerificationValue>
+    void SetCardHolderVerificationValue(CardHolderVerificationValueT&& value) { m_cardHolderVerificationValueHasBeenSet = true; m_cardHolderVerificationValue = std::forward<CardHolderVerificationValueT>(value); }
+    template<typename CardHolderVerificationValueT = CardHolderVerificationValue>
+    CardVerificationAttributes& WithCardHolderVerificationValue(CardHolderVerificationValueT&& value) { SetCardHolderVerificationValue(std::forward<CardHolderVerificationValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +113,12 @@ namespace Model
      * <p>Card data parameters that are required to verify CDynamic Card Verification
      * Code (dCVC) for the payment card.</p>
      */
-    inline const DynamicCardVerificationCode& GetDynamicCardVerificationCode() const{ return m_dynamicCardVerificationCode; }
+    inline const DynamicCardVerificationCode& GetDynamicCardVerificationCode() const { return m_dynamicCardVerificationCode; }
     inline bool DynamicCardVerificationCodeHasBeenSet() const { return m_dynamicCardVerificationCodeHasBeenSet; }
-    inline void SetDynamicCardVerificationCode(const DynamicCardVerificationCode& value) { m_dynamicCardVerificationCodeHasBeenSet = true; m_dynamicCardVerificationCode = value; }
-    inline void SetDynamicCardVerificationCode(DynamicCardVerificationCode&& value) { m_dynamicCardVerificationCodeHasBeenSet = true; m_dynamicCardVerificationCode = std::move(value); }
-    inline CardVerificationAttributes& WithDynamicCardVerificationCode(const DynamicCardVerificationCode& value) { SetDynamicCardVerificationCode(value); return *this;}
-    inline CardVerificationAttributes& WithDynamicCardVerificationCode(DynamicCardVerificationCode&& value) { SetDynamicCardVerificationCode(std::move(value)); return *this;}
+    template<typename DynamicCardVerificationCodeT = DynamicCardVerificationCode>
+    void SetDynamicCardVerificationCode(DynamicCardVerificationCodeT&& value) { m_dynamicCardVerificationCodeHasBeenSet = true; m_dynamicCardVerificationCode = std::forward<DynamicCardVerificationCodeT>(value); }
+    template<typename DynamicCardVerificationCodeT = DynamicCardVerificationCode>
+    CardVerificationAttributes& WithDynamicCardVerificationCode(DynamicCardVerificationCodeT&& value) { SetDynamicCardVerificationCode(std::forward<DynamicCardVerificationCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,12 +126,12 @@ namespace Model
      * <p>Card data parameters that are required to verify CDynamic Card Verification
      * Value (dCVV) for the payment card.</p>
      */
-    inline const DynamicCardVerificationValue& GetDynamicCardVerificationValue() const{ return m_dynamicCardVerificationValue; }
+    inline const DynamicCardVerificationValue& GetDynamicCardVerificationValue() const { return m_dynamicCardVerificationValue; }
     inline bool DynamicCardVerificationValueHasBeenSet() const { return m_dynamicCardVerificationValueHasBeenSet; }
-    inline void SetDynamicCardVerificationValue(const DynamicCardVerificationValue& value) { m_dynamicCardVerificationValueHasBeenSet = true; m_dynamicCardVerificationValue = value; }
-    inline void SetDynamicCardVerificationValue(DynamicCardVerificationValue&& value) { m_dynamicCardVerificationValueHasBeenSet = true; m_dynamicCardVerificationValue = std::move(value); }
-    inline CardVerificationAttributes& WithDynamicCardVerificationValue(const DynamicCardVerificationValue& value) { SetDynamicCardVerificationValue(value); return *this;}
-    inline CardVerificationAttributes& WithDynamicCardVerificationValue(DynamicCardVerificationValue&& value) { SetDynamicCardVerificationValue(std::move(value)); return *this;}
+    template<typename DynamicCardVerificationValueT = DynamicCardVerificationValue>
+    void SetDynamicCardVerificationValue(DynamicCardVerificationValueT&& value) { m_dynamicCardVerificationValueHasBeenSet = true; m_dynamicCardVerificationValue = std::forward<DynamicCardVerificationValueT>(value); }
+    template<typename DynamicCardVerificationValueT = DynamicCardVerificationValue>
+    CardVerificationAttributes& WithDynamicCardVerificationValue(DynamicCardVerificationValueT&& value) { SetDynamicCardVerificationValue(std::forward<DynamicCardVerificationValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,12 +139,12 @@ namespace Model
      * <p>Card data parameters that are required to verify CDynamic Card Verification
      * Code (dCVC) for the payment card.</p>
      */
-    inline const DiscoverDynamicCardVerificationCode& GetDiscoverDynamicCardVerificationCode() const{ return m_discoverDynamicCardVerificationCode; }
+    inline const DiscoverDynamicCardVerificationCode& GetDiscoverDynamicCardVerificationCode() const { return m_discoverDynamicCardVerificationCode; }
     inline bool DiscoverDynamicCardVerificationCodeHasBeenSet() const { return m_discoverDynamicCardVerificationCodeHasBeenSet; }
-    inline void SetDiscoverDynamicCardVerificationCode(const DiscoverDynamicCardVerificationCode& value) { m_discoverDynamicCardVerificationCodeHasBeenSet = true; m_discoverDynamicCardVerificationCode = value; }
-    inline void SetDiscoverDynamicCardVerificationCode(DiscoverDynamicCardVerificationCode&& value) { m_discoverDynamicCardVerificationCodeHasBeenSet = true; m_discoverDynamicCardVerificationCode = std::move(value); }
-    inline CardVerificationAttributes& WithDiscoverDynamicCardVerificationCode(const DiscoverDynamicCardVerificationCode& value) { SetDiscoverDynamicCardVerificationCode(value); return *this;}
-    inline CardVerificationAttributes& WithDiscoverDynamicCardVerificationCode(DiscoverDynamicCardVerificationCode&& value) { SetDiscoverDynamicCardVerificationCode(std::move(value)); return *this;}
+    template<typename DiscoverDynamicCardVerificationCodeT = DiscoverDynamicCardVerificationCode>
+    void SetDiscoverDynamicCardVerificationCode(DiscoverDynamicCardVerificationCodeT&& value) { m_discoverDynamicCardVerificationCodeHasBeenSet = true; m_discoverDynamicCardVerificationCode = std::forward<DiscoverDynamicCardVerificationCodeT>(value); }
+    template<typename DiscoverDynamicCardVerificationCodeT = DiscoverDynamicCardVerificationCode>
+    CardVerificationAttributes& WithDiscoverDynamicCardVerificationCode(DiscoverDynamicCardVerificationCodeT&& value) { SetDiscoverDynamicCardVerificationCode(std::forward<DiscoverDynamicCardVerificationCodeT>(value)); return *this;}
     ///@}
   private:
 

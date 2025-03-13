@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-OptionRestrictionRegex::OptionRestrictionRegex() : 
-    m_patternHasBeenSet(false),
-    m_labelHasBeenSet(false)
-{
-}
-
 OptionRestrictionRegex::OptionRestrictionRegex(const XmlNode& xmlNode)
-  : OptionRestrictionRegex()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ OptionRestrictionRegex& OptionRestrictionRegex::operator =(const XmlNode& xmlNod
     {
       m_pattern = Aws::Utils::Xml::DecodeEscapedXmlText(patternNode.GetText());
       m_patternHasBeenSet = true;
+       m_patternHasBeenSet = true;
     }
     XmlNode labelNode = resultNode.FirstChild("Label");
     if(!labelNode.IsNull())
     {
       m_label = Aws::Utils::Xml::DecodeEscapedXmlText(labelNode.GetText());
       m_labelHasBeenSet = true;
+       m_labelHasBeenSet = true;
     }
   }
 

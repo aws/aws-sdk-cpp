@@ -26,7 +26,7 @@ namespace Model
   class ListBackupVaultsRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API ListBackupVaultsRequest();
+    AWS_BACKUP_API ListBackupVaultsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,19 +43,17 @@ namespace Model
     /**
      * <p>This parameter will sort the list of vaults by vault type.</p>
      */
-    inline const VaultType& GetByVaultType() const{ return m_byVaultType; }
+    inline VaultType GetByVaultType() const { return m_byVaultType; }
     inline bool ByVaultTypeHasBeenSet() const { return m_byVaultTypeHasBeenSet; }
-    inline void SetByVaultType(const VaultType& value) { m_byVaultTypeHasBeenSet = true; m_byVaultType = value; }
-    inline void SetByVaultType(VaultType&& value) { m_byVaultTypeHasBeenSet = true; m_byVaultType = std::move(value); }
-    inline ListBackupVaultsRequest& WithByVaultType(const VaultType& value) { SetByVaultType(value); return *this;}
-    inline ListBackupVaultsRequest& WithByVaultType(VaultType&& value) { SetByVaultType(std::move(value)); return *this;}
+    inline void SetByVaultType(VaultType value) { m_byVaultTypeHasBeenSet = true; m_byVaultType = value; }
+    inline ListBackupVaultsRequest& WithByVaultType(VaultType value) { SetByVaultType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This parameter will sort the list of vaults by shared vaults.</p>
      */
-    inline bool GetByShared() const{ return m_byShared; }
+    inline bool GetByShared() const { return m_byShared; }
     inline bool BySharedHasBeenSet() const { return m_bySharedHasBeenSet; }
     inline void SetByShared(bool value) { m_bySharedHasBeenSet = true; m_byShared = value; }
     inline ListBackupVaultsRequest& WithByShared(bool value) { SetByShared(value); return *this;}
@@ -68,37 +66,35 @@ namespace Model
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListBackupVaultsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBackupVaultsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBackupVaultsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBackupVaultsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items to be returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListBackupVaultsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    VaultType m_byVaultType;
+    VaultType m_byVaultType{VaultType::NOT_SET};
     bool m_byVaultTypeHasBeenSet = false;
 
-    bool m_byShared;
+    bool m_byShared{false};
     bool m_bySharedHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

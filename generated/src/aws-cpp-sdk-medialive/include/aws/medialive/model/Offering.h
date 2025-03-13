@@ -34,7 +34,7 @@ namespace Model
   class Offering
   {
   public:
-    AWS_MEDIALIVE_API Offering();
+    AWS_MEDIALIVE_API Offering() = default;
     AWS_MEDIALIVE_API Offering(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Offering& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,35 +45,31 @@ namespace Model
      * Unique offering ARN, e.g.
      * 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Offering& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Offering& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Offering& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Offering& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
      */
-    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+    inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-    inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
-    inline Offering& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
-    inline Offering& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
-    inline Offering& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+    template<typename CurrencyCodeT = Aws::String>
+    void SetCurrencyCode(CurrencyCodeT&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::forward<CurrencyCodeT>(value); }
+    template<typename CurrencyCodeT = Aws::String>
+    Offering& WithCurrencyCode(CurrencyCodeT&& value) { SetCurrencyCode(std::forward<CurrencyCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Lease duration, e.g. '12'
      */
-    inline int GetDuration() const{ return m_duration; }
+    inline int GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
     inline Offering& WithDuration(int value) { SetDuration(value); return *this;}
@@ -83,19 +79,17 @@ namespace Model
     /**
      * Units for duration, e.g. 'MONTHS'
      */
-    inline const OfferingDurationUnits& GetDurationUnits() const{ return m_durationUnits; }
+    inline OfferingDurationUnits GetDurationUnits() const { return m_durationUnits; }
     inline bool DurationUnitsHasBeenSet() const { return m_durationUnitsHasBeenSet; }
-    inline void SetDurationUnits(const OfferingDurationUnits& value) { m_durationUnitsHasBeenSet = true; m_durationUnits = value; }
-    inline void SetDurationUnits(OfferingDurationUnits&& value) { m_durationUnitsHasBeenSet = true; m_durationUnits = std::move(value); }
-    inline Offering& WithDurationUnits(const OfferingDurationUnits& value) { SetDurationUnits(value); return *this;}
-    inline Offering& WithDurationUnits(OfferingDurationUnits&& value) { SetDurationUnits(std::move(value)); return *this;}
+    inline void SetDurationUnits(OfferingDurationUnits value) { m_durationUnitsHasBeenSet = true; m_durationUnits = value; }
+    inline Offering& WithDurationUnits(OfferingDurationUnits value) { SetDurationUnits(value); return *this;}
     ///@}
 
     ///@{
     /**
      * One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
      */
-    inline double GetFixedPrice() const{ return m_fixedPrice; }
+    inline double GetFixedPrice() const { return m_fixedPrice; }
     inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
     inline void SetFixedPrice(double value) { m_fixedPriceHasBeenSet = true; m_fixedPrice = value; }
     inline Offering& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
@@ -106,73 +100,65 @@ namespace Model
      * Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ
      * in US West (Oregon)'
      */
-    inline const Aws::String& GetOfferingDescription() const{ return m_offeringDescription; }
+    inline const Aws::String& GetOfferingDescription() const { return m_offeringDescription; }
     inline bool OfferingDescriptionHasBeenSet() const { return m_offeringDescriptionHasBeenSet; }
-    inline void SetOfferingDescription(const Aws::String& value) { m_offeringDescriptionHasBeenSet = true; m_offeringDescription = value; }
-    inline void SetOfferingDescription(Aws::String&& value) { m_offeringDescriptionHasBeenSet = true; m_offeringDescription = std::move(value); }
-    inline void SetOfferingDescription(const char* value) { m_offeringDescriptionHasBeenSet = true; m_offeringDescription.assign(value); }
-    inline Offering& WithOfferingDescription(const Aws::String& value) { SetOfferingDescription(value); return *this;}
-    inline Offering& WithOfferingDescription(Aws::String&& value) { SetOfferingDescription(std::move(value)); return *this;}
-    inline Offering& WithOfferingDescription(const char* value) { SetOfferingDescription(value); return *this;}
+    template<typename OfferingDescriptionT = Aws::String>
+    void SetOfferingDescription(OfferingDescriptionT&& value) { m_offeringDescriptionHasBeenSet = true; m_offeringDescription = std::forward<OfferingDescriptionT>(value); }
+    template<typename OfferingDescriptionT = Aws::String>
+    Offering& WithOfferingDescription(OfferingDescriptionT&& value) { SetOfferingDescription(std::forward<OfferingDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Unique offering ID, e.g. '87654321'
      */
-    inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
+    inline const Aws::String& GetOfferingId() const { return m_offeringId; }
     inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
-    inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
-    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
-    inline void SetOfferingId(const char* value) { m_offeringIdHasBeenSet = true; m_offeringId.assign(value); }
-    inline Offering& WithOfferingId(const Aws::String& value) { SetOfferingId(value); return *this;}
-    inline Offering& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
-    inline Offering& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
+    template<typename OfferingIdT = Aws::String>
+    void SetOfferingId(OfferingIdT&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::forward<OfferingIdT>(value); }
+    template<typename OfferingIdT = Aws::String>
+    Offering& WithOfferingId(OfferingIdT&& value) { SetOfferingId(std::forward<OfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Offering type, e.g. 'NO_UPFRONT'
      */
-    inline const OfferingType& GetOfferingType() const{ return m_offeringType; }
+    inline OfferingType GetOfferingType() const { return m_offeringType; }
     inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
-    inline void SetOfferingType(const OfferingType& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
-    inline void SetOfferingType(OfferingType&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
-    inline Offering& WithOfferingType(const OfferingType& value) { SetOfferingType(value); return *this;}
-    inline Offering& WithOfferingType(OfferingType&& value) { SetOfferingType(std::move(value)); return *this;}
+    inline void SetOfferingType(OfferingType value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+    inline Offering& WithOfferingType(OfferingType value) { SetOfferingType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * AWS region, e.g. 'us-west-2'
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline Offering& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline Offering& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline Offering& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    Offering& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Resource configuration details
      */
-    inline const ReservationResourceSpecification& GetResourceSpecification() const{ return m_resourceSpecification; }
+    inline const ReservationResourceSpecification& GetResourceSpecification() const { return m_resourceSpecification; }
     inline bool ResourceSpecificationHasBeenSet() const { return m_resourceSpecificationHasBeenSet; }
-    inline void SetResourceSpecification(const ReservationResourceSpecification& value) { m_resourceSpecificationHasBeenSet = true; m_resourceSpecification = value; }
-    inline void SetResourceSpecification(ReservationResourceSpecification&& value) { m_resourceSpecificationHasBeenSet = true; m_resourceSpecification = std::move(value); }
-    inline Offering& WithResourceSpecification(const ReservationResourceSpecification& value) { SetResourceSpecification(value); return *this;}
-    inline Offering& WithResourceSpecification(ReservationResourceSpecification&& value) { SetResourceSpecification(std::move(value)); return *this;}
+    template<typename ResourceSpecificationT = ReservationResourceSpecification>
+    void SetResourceSpecification(ResourceSpecificationT&& value) { m_resourceSpecificationHasBeenSet = true; m_resourceSpecification = std::forward<ResourceSpecificationT>(value); }
+    template<typename ResourceSpecificationT = ReservationResourceSpecification>
+    Offering& WithResourceSpecification(ResourceSpecificationT&& value) { SetResourceSpecification(std::forward<ResourceSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Recurring usage charge for each reserved resource, e.g. '157.0'
      */
-    inline double GetUsagePrice() const{ return m_usagePrice; }
+    inline double GetUsagePrice() const { return m_usagePrice; }
     inline bool UsagePriceHasBeenSet() const { return m_usagePriceHasBeenSet; }
     inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
     inline Offering& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
@@ -185,13 +171,13 @@ namespace Model
     Aws::String m_currencyCode;
     bool m_currencyCodeHasBeenSet = false;
 
-    int m_duration;
+    int m_duration{0};
     bool m_durationHasBeenSet = false;
 
-    OfferingDurationUnits m_durationUnits;
+    OfferingDurationUnits m_durationUnits{OfferingDurationUnits::NOT_SET};
     bool m_durationUnitsHasBeenSet = false;
 
-    double m_fixedPrice;
+    double m_fixedPrice{0.0};
     bool m_fixedPriceHasBeenSet = false;
 
     Aws::String m_offeringDescription;
@@ -200,7 +186,7 @@ namespace Model
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet = false;
 
-    OfferingType m_offeringType;
+    OfferingType m_offeringType{OfferingType::NOT_SET};
     bool m_offeringTypeHasBeenSet = false;
 
     Aws::String m_region;
@@ -209,7 +195,7 @@ namespace Model
     ReservationResourceSpecification m_resourceSpecification;
     bool m_resourceSpecificationHasBeenSet = false;
 
-    double m_usagePrice;
+    double m_usagePrice{0.0};
     bool m_usagePriceHasBeenSet = false;
   };
 

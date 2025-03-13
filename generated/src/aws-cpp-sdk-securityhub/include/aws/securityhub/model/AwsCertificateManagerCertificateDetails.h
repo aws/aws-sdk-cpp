@@ -38,7 +38,7 @@ namespace Model
   class AwsCertificateManagerCertificateDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsCertificateManagerCertificateDetails();
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateDetails() = default;
     AWS_SECURITYHUB_API AwsCertificateManagerCertificateDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCertificateManagerCertificateDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <p>The ARN of the private certificate authority (CA) that will be used to issue
      * the certificate.</p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * about the validation and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+    template<typename CreatedAtT = Aws::String>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * <p>The fully qualified domain name (FQDN), such as www.example.com, that is
      * secured by the certificate.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,14 @@ namespace Model
      * occurs as a result of the <code>RequestCertificate</code> request.</p> <p>Only
      * provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
-    inline const Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
+    inline const Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>& GetDomainValidationOptions() const { return m_domainValidationOptions; }
     inline bool DomainValidationOptionsHasBeenSet() const { return m_domainValidationOptionsHasBeenSet; }
-    inline void SetDomainValidationOptions(const Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
-    inline void SetDomainValidationOptions(Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::move(value); }
-    inline AwsCertificateManagerCertificateDetails& WithDomainValidationOptions(const Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>& value) { SetDomainValidationOptions(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithDomainValidationOptions(Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>&& value) { SetDomainValidationOptions(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& AddDomainValidationOptions(const AwsCertificateManagerCertificateDomainValidationOption& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
-    inline AwsCertificateManagerCertificateDetails& AddDomainValidationOptions(AwsCertificateManagerCertificateDomainValidationOption&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
+    template<typename DomainValidationOptionsT = Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>>
+    void SetDomainValidationOptions(DomainValidationOptionsT&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::forward<DomainValidationOptionsT>(value); }
+    template<typename DomainValidationOptionsT = Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>>
+    AwsCertificateManagerCertificateDetails& WithDomainValidationOptions(DomainValidationOptionsT&& value) { SetDomainValidationOptions(std::forward<DomainValidationOptionsT>(value)); return *this;}
+    template<typename DomainValidationOptionsT = AwsCertificateManagerCertificateDomainValidationOption>
+    AwsCertificateManagerCertificateDetails& AddDomainValidationOptions(DomainValidationOptionsT&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.emplace_back(std::forward<DomainValidationOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -112,14 +106,14 @@ namespace Model
      * specifies a purpose for which the certificate public key can be used and
      * consists of a name and an object identifier (OID).</p>
      */
-    inline const Aws::Vector<AwsCertificateManagerCertificateExtendedKeyUsage>& GetExtendedKeyUsages() const{ return m_extendedKeyUsages; }
+    inline const Aws::Vector<AwsCertificateManagerCertificateExtendedKeyUsage>& GetExtendedKeyUsages() const { return m_extendedKeyUsages; }
     inline bool ExtendedKeyUsagesHasBeenSet() const { return m_extendedKeyUsagesHasBeenSet; }
-    inline void SetExtendedKeyUsages(const Aws::Vector<AwsCertificateManagerCertificateExtendedKeyUsage>& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages = value; }
-    inline void SetExtendedKeyUsages(Aws::Vector<AwsCertificateManagerCertificateExtendedKeyUsage>&& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages = std::move(value); }
-    inline AwsCertificateManagerCertificateDetails& WithExtendedKeyUsages(const Aws::Vector<AwsCertificateManagerCertificateExtendedKeyUsage>& value) { SetExtendedKeyUsages(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithExtendedKeyUsages(Aws::Vector<AwsCertificateManagerCertificateExtendedKeyUsage>&& value) { SetExtendedKeyUsages(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& AddExtendedKeyUsages(const AwsCertificateManagerCertificateExtendedKeyUsage& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages.push_back(value); return *this; }
-    inline AwsCertificateManagerCertificateDetails& AddExtendedKeyUsages(AwsCertificateManagerCertificateExtendedKeyUsage&& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages.push_back(std::move(value)); return *this; }
+    template<typename ExtendedKeyUsagesT = Aws::Vector<AwsCertificateManagerCertificateExtendedKeyUsage>>
+    void SetExtendedKeyUsages(ExtendedKeyUsagesT&& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages = std::forward<ExtendedKeyUsagesT>(value); }
+    template<typename ExtendedKeyUsagesT = Aws::Vector<AwsCertificateManagerCertificateExtendedKeyUsage>>
+    AwsCertificateManagerCertificateDetails& WithExtendedKeyUsages(ExtendedKeyUsagesT&& value) { SetExtendedKeyUsages(std::forward<ExtendedKeyUsagesT>(value)); return *this;}
+    template<typename ExtendedKeyUsagesT = AwsCertificateManagerCertificateExtendedKeyUsage>
+    AwsCertificateManagerCertificateDetails& AddExtendedKeyUsages(ExtendedKeyUsagesT&& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages.emplace_back(std::forward<ExtendedKeyUsagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -135,14 +129,12 @@ namespace Model
      * <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> |
      * <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,14 +144,12 @@ namespace Model
      * formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetImportedAt() const{ return m_importedAt; }
+    inline const Aws::String& GetImportedAt() const { return m_importedAt; }
     inline bool ImportedAtHasBeenSet() const { return m_importedAtHasBeenSet; }
-    inline void SetImportedAt(const Aws::String& value) { m_importedAtHasBeenSet = true; m_importedAt = value; }
-    inline void SetImportedAt(Aws::String&& value) { m_importedAtHasBeenSet = true; m_importedAt = std::move(value); }
-    inline void SetImportedAt(const char* value) { m_importedAtHasBeenSet = true; m_importedAt.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithImportedAt(const Aws::String& value) { SetImportedAt(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithImportedAt(Aws::String&& value) { SetImportedAt(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithImportedAt(const char* value) { SetImportedAt(value); return *this;}
+    template<typename ImportedAtT = Aws::String>
+    void SetImportedAt(ImportedAtT&& value) { m_importedAtHasBeenSet = true; m_importedAt = std::forward<ImportedAtT>(value); }
+    template<typename ImportedAtT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithImportedAt(ImportedAtT&& value) { SetImportedAt(std::forward<ImportedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,15 +157,14 @@ namespace Model
      * <p>The list of ARNs for the Amazon Web Services resources that use the
      * certificate.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInUseBy() const{ return m_inUseBy; }
+    inline const Aws::Vector<Aws::String>& GetInUseBy() const { return m_inUseBy; }
     inline bool InUseByHasBeenSet() const { return m_inUseByHasBeenSet; }
-    inline void SetInUseBy(const Aws::Vector<Aws::String>& value) { m_inUseByHasBeenSet = true; m_inUseBy = value; }
-    inline void SetInUseBy(Aws::Vector<Aws::String>&& value) { m_inUseByHasBeenSet = true; m_inUseBy = std::move(value); }
-    inline AwsCertificateManagerCertificateDetails& WithInUseBy(const Aws::Vector<Aws::String>& value) { SetInUseBy(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithInUseBy(Aws::Vector<Aws::String>&& value) { SetInUseBy(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& AddInUseBy(const Aws::String& value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
-    inline AwsCertificateManagerCertificateDetails& AddInUseBy(Aws::String&& value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(std::move(value)); return *this; }
-    inline AwsCertificateManagerCertificateDetails& AddInUseBy(const char* value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
+    template<typename InUseByT = Aws::Vector<Aws::String>>
+    void SetInUseBy(InUseByT&& value) { m_inUseByHasBeenSet = true; m_inUseBy = std::forward<InUseByT>(value); }
+    template<typename InUseByT = Aws::Vector<Aws::String>>
+    AwsCertificateManagerCertificateDetails& WithInUseBy(InUseByT&& value) { SetInUseBy(std::forward<InUseByT>(value)); return *this;}
+    template<typename InUseByT = Aws::String>
+    AwsCertificateManagerCertificateDetails& AddInUseBy(InUseByT&& value) { m_inUseByHasBeenSet = true; m_inUseBy.emplace_back(std::forward<InUseByT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -185,14 +174,12 @@ namespace Model
      * and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetIssuedAt() const{ return m_issuedAt; }
+    inline const Aws::String& GetIssuedAt() const { return m_issuedAt; }
     inline bool IssuedAtHasBeenSet() const { return m_issuedAtHasBeenSet; }
-    inline void SetIssuedAt(const Aws::String& value) { m_issuedAtHasBeenSet = true; m_issuedAt = value; }
-    inline void SetIssuedAt(Aws::String&& value) { m_issuedAtHasBeenSet = true; m_issuedAt = std::move(value); }
-    inline void SetIssuedAt(const char* value) { m_issuedAtHasBeenSet = true; m_issuedAt.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithIssuedAt(const Aws::String& value) { SetIssuedAt(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithIssuedAt(Aws::String&& value) { SetIssuedAt(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithIssuedAt(const char* value) { SetIssuedAt(value); return *this;}
+    template<typename IssuedAtT = Aws::String>
+    void SetIssuedAt(IssuedAtT&& value) { m_issuedAtHasBeenSet = true; m_issuedAt = std::forward<IssuedAtT>(value); }
+    template<typename IssuedAtT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithIssuedAt(IssuedAtT&& value) { SetIssuedAt(std::forward<IssuedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,14 +187,12 @@ namespace Model
      * <p>The name of the certificate authority that issued and signed the
      * certificate.</p>
      */
-    inline const Aws::String& GetIssuer() const{ return m_issuer; }
+    inline const Aws::String& GetIssuer() const { return m_issuer; }
     inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
-    inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
-    inline void SetIssuer(Aws::String&& value) { m_issuerHasBeenSet = true; m_issuer = std::move(value); }
-    inline void SetIssuer(const char* value) { m_issuerHasBeenSet = true; m_issuer.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithIssuer(const Aws::String& value) { SetIssuer(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithIssuer(Aws::String&& value) { SetIssuer(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithIssuer(const char* value) { SetIssuer(value); return *this;}
+    template<typename IssuerT = Aws::String>
+    void SetIssuer(IssuerT&& value) { m_issuerHasBeenSet = true; m_issuer = std::forward<IssuerT>(value); }
+    template<typename IssuerT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithIssuer(IssuerT&& value) { SetIssuer(std::forward<IssuerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -217,28 +202,26 @@ namespace Model
      * RSA_4096</code> | <code>EC_prime256v1</code> | <code>EC_secp384r1</code> |
      * <code>EC_secp521r1</code> </p>
      */
-    inline const Aws::String& GetKeyAlgorithm() const{ return m_keyAlgorithm; }
+    inline const Aws::String& GetKeyAlgorithm() const { return m_keyAlgorithm; }
     inline bool KeyAlgorithmHasBeenSet() const { return m_keyAlgorithmHasBeenSet; }
-    inline void SetKeyAlgorithm(const Aws::String& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = value; }
-    inline void SetKeyAlgorithm(Aws::String&& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = std::move(value); }
-    inline void SetKeyAlgorithm(const char* value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithKeyAlgorithm(const Aws::String& value) { SetKeyAlgorithm(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithKeyAlgorithm(Aws::String&& value) { SetKeyAlgorithm(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithKeyAlgorithm(const char* value) { SetKeyAlgorithm(value); return *this;}
+    template<typename KeyAlgorithmT = Aws::String>
+    void SetKeyAlgorithm(KeyAlgorithmT&& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = std::forward<KeyAlgorithmT>(value); }
+    template<typename KeyAlgorithmT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithKeyAlgorithm(KeyAlgorithmT&& value) { SetKeyAlgorithm(std::forward<KeyAlgorithmT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of key usage X.509 v3 extension objects.</p>
      */
-    inline const Aws::Vector<AwsCertificateManagerCertificateKeyUsage>& GetKeyUsages() const{ return m_keyUsages; }
+    inline const Aws::Vector<AwsCertificateManagerCertificateKeyUsage>& GetKeyUsages() const { return m_keyUsages; }
     inline bool KeyUsagesHasBeenSet() const { return m_keyUsagesHasBeenSet; }
-    inline void SetKeyUsages(const Aws::Vector<AwsCertificateManagerCertificateKeyUsage>& value) { m_keyUsagesHasBeenSet = true; m_keyUsages = value; }
-    inline void SetKeyUsages(Aws::Vector<AwsCertificateManagerCertificateKeyUsage>&& value) { m_keyUsagesHasBeenSet = true; m_keyUsages = std::move(value); }
-    inline AwsCertificateManagerCertificateDetails& WithKeyUsages(const Aws::Vector<AwsCertificateManagerCertificateKeyUsage>& value) { SetKeyUsages(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithKeyUsages(Aws::Vector<AwsCertificateManagerCertificateKeyUsage>&& value) { SetKeyUsages(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& AddKeyUsages(const AwsCertificateManagerCertificateKeyUsage& value) { m_keyUsagesHasBeenSet = true; m_keyUsages.push_back(value); return *this; }
-    inline AwsCertificateManagerCertificateDetails& AddKeyUsages(AwsCertificateManagerCertificateKeyUsage&& value) { m_keyUsagesHasBeenSet = true; m_keyUsages.push_back(std::move(value)); return *this; }
+    template<typename KeyUsagesT = Aws::Vector<AwsCertificateManagerCertificateKeyUsage>>
+    void SetKeyUsages(KeyUsagesT&& value) { m_keyUsagesHasBeenSet = true; m_keyUsages = std::forward<KeyUsagesT>(value); }
+    template<typename KeyUsagesT = Aws::Vector<AwsCertificateManagerCertificateKeyUsage>>
+    AwsCertificateManagerCertificateDetails& WithKeyUsages(KeyUsagesT&& value) { SetKeyUsages(std::forward<KeyUsagesT>(value)); return *this;}
+    template<typename KeyUsagesT = AwsCertificateManagerCertificateKeyUsage>
+    AwsCertificateManagerCertificateDetails& AddKeyUsages(KeyUsagesT&& value) { m_keyUsagesHasBeenSet = true; m_keyUsages.emplace_back(std::forward<KeyUsagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -248,14 +231,12 @@ namespace Model
      * Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetNotAfter() const{ return m_notAfter; }
+    inline const Aws::String& GetNotAfter() const { return m_notAfter; }
     inline bool NotAfterHasBeenSet() const { return m_notAfterHasBeenSet; }
-    inline void SetNotAfter(const Aws::String& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
-    inline void SetNotAfter(Aws::String&& value) { m_notAfterHasBeenSet = true; m_notAfter = std::move(value); }
-    inline void SetNotAfter(const char* value) { m_notAfterHasBeenSet = true; m_notAfter.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithNotAfter(const Aws::String& value) { SetNotAfter(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithNotAfter(Aws::String&& value) { SetNotAfter(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithNotAfter(const char* value) { SetNotAfter(value); return *this;}
+    template<typename NotAfterT = Aws::String>
+    void SetNotAfter(NotAfterT&& value) { m_notAfterHasBeenSet = true; m_notAfter = std::forward<NotAfterT>(value); }
+    template<typename NotAfterT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithNotAfter(NotAfterT&& value) { SetNotAfter(std::forward<NotAfterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -265,14 +246,12 @@ namespace Model
      * Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetNotBefore() const{ return m_notBefore; }
+    inline const Aws::String& GetNotBefore() const { return m_notBefore; }
     inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
-    inline void SetNotBefore(const Aws::String& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
-    inline void SetNotBefore(Aws::String&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::move(value); }
-    inline void SetNotBefore(const char* value) { m_notBeforeHasBeenSet = true; m_notBefore.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithNotBefore(const Aws::String& value) { SetNotBefore(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithNotBefore(Aws::String&& value) { SetNotBefore(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithNotBefore(const char* value) { SetNotBefore(value); return *this;}
+    template<typename NotBeforeT = Aws::String>
+    void SetNotBefore(NotBeforeT&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::forward<NotBeforeT>(value); }
+    template<typename NotBeforeT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithNotBefore(NotBeforeT&& value) { SetNotBefore(std::forward<NotBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -280,12 +259,12 @@ namespace Model
      * <p>Provides a value that specifies whether to add the certificate to a
      * transparency log.</p>
      */
-    inline const AwsCertificateManagerCertificateOptions& GetOptions() const{ return m_options; }
+    inline const AwsCertificateManagerCertificateOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const AwsCertificateManagerCertificateOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(AwsCertificateManagerCertificateOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline AwsCertificateManagerCertificateDetails& WithOptions(const AwsCertificateManagerCertificateOptions& value) { SetOptions(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithOptions(AwsCertificateManagerCertificateOptions&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = AwsCertificateManagerCertificateOptions>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = AwsCertificateManagerCertificateOptions>
+    AwsCertificateManagerCertificateDetails& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -293,14 +272,12 @@ namespace Model
      * <p>Whether the certificate is eligible for renewal.</p> <p>Valid values:
      * <code>ELIGIBLE</code> | <code>INELIGIBLE</code> </p>
      */
-    inline const Aws::String& GetRenewalEligibility() const{ return m_renewalEligibility; }
+    inline const Aws::String& GetRenewalEligibility() const { return m_renewalEligibility; }
     inline bool RenewalEligibilityHasBeenSet() const { return m_renewalEligibilityHasBeenSet; }
-    inline void SetRenewalEligibility(const Aws::String& value) { m_renewalEligibilityHasBeenSet = true; m_renewalEligibility = value; }
-    inline void SetRenewalEligibility(Aws::String&& value) { m_renewalEligibilityHasBeenSet = true; m_renewalEligibility = std::move(value); }
-    inline void SetRenewalEligibility(const char* value) { m_renewalEligibilityHasBeenSet = true; m_renewalEligibility.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithRenewalEligibility(const Aws::String& value) { SetRenewalEligibility(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithRenewalEligibility(Aws::String&& value) { SetRenewalEligibility(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithRenewalEligibility(const char* value) { SetRenewalEligibility(value); return *this;}
+    template<typename RenewalEligibilityT = Aws::String>
+    void SetRenewalEligibility(RenewalEligibilityT&& value) { m_renewalEligibilityHasBeenSet = true; m_renewalEligibility = std::forward<RenewalEligibilityT>(value); }
+    template<typename RenewalEligibilityT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithRenewalEligibility(RenewalEligibilityT&& value) { SetRenewalEligibility(std::forward<RenewalEligibilityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -309,40 +286,36 @@ namespace Model
      * the certificate. Provided only when the certificate type is
      * <code>AMAZON_ISSUED</code>.</p>
      */
-    inline const AwsCertificateManagerCertificateRenewalSummary& GetRenewalSummary() const{ return m_renewalSummary; }
+    inline const AwsCertificateManagerCertificateRenewalSummary& GetRenewalSummary() const { return m_renewalSummary; }
     inline bool RenewalSummaryHasBeenSet() const { return m_renewalSummaryHasBeenSet; }
-    inline void SetRenewalSummary(const AwsCertificateManagerCertificateRenewalSummary& value) { m_renewalSummaryHasBeenSet = true; m_renewalSummary = value; }
-    inline void SetRenewalSummary(AwsCertificateManagerCertificateRenewalSummary&& value) { m_renewalSummaryHasBeenSet = true; m_renewalSummary = std::move(value); }
-    inline AwsCertificateManagerCertificateDetails& WithRenewalSummary(const AwsCertificateManagerCertificateRenewalSummary& value) { SetRenewalSummary(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithRenewalSummary(AwsCertificateManagerCertificateRenewalSummary&& value) { SetRenewalSummary(std::move(value)); return *this;}
+    template<typename RenewalSummaryT = AwsCertificateManagerCertificateRenewalSummary>
+    void SetRenewalSummary(RenewalSummaryT&& value) { m_renewalSummaryHasBeenSet = true; m_renewalSummary = std::forward<RenewalSummaryT>(value); }
+    template<typename RenewalSummaryT = AwsCertificateManagerCertificateRenewalSummary>
+    AwsCertificateManagerCertificateDetails& WithRenewalSummary(RenewalSummaryT&& value) { SetRenewalSummary(std::forward<RenewalSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The serial number of the certificate.</p>
      */
-    inline const Aws::String& GetSerial() const{ return m_serial; }
+    inline const Aws::String& GetSerial() const { return m_serial; }
     inline bool SerialHasBeenSet() const { return m_serialHasBeenSet; }
-    inline void SetSerial(const Aws::String& value) { m_serialHasBeenSet = true; m_serial = value; }
-    inline void SetSerial(Aws::String&& value) { m_serialHasBeenSet = true; m_serial = std::move(value); }
-    inline void SetSerial(const char* value) { m_serialHasBeenSet = true; m_serial.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithSerial(const Aws::String& value) { SetSerial(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithSerial(Aws::String&& value) { SetSerial(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithSerial(const char* value) { SetSerial(value); return *this;}
+    template<typename SerialT = Aws::String>
+    void SetSerial(SerialT&& value) { m_serialHasBeenSet = true; m_serial = std::forward<SerialT>(value); }
+    template<typename SerialT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithSerial(SerialT&& value) { SetSerial(std::forward<SerialT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The algorithm that was used to sign the certificate.</p>
      */
-    inline const Aws::String& GetSignatureAlgorithm() const{ return m_signatureAlgorithm; }
+    inline const Aws::String& GetSignatureAlgorithm() const { return m_signatureAlgorithm; }
     inline bool SignatureAlgorithmHasBeenSet() const { return m_signatureAlgorithmHasBeenSet; }
-    inline void SetSignatureAlgorithm(const Aws::String& value) { m_signatureAlgorithmHasBeenSet = true; m_signatureAlgorithm = value; }
-    inline void SetSignatureAlgorithm(Aws::String&& value) { m_signatureAlgorithmHasBeenSet = true; m_signatureAlgorithm = std::move(value); }
-    inline void SetSignatureAlgorithm(const char* value) { m_signatureAlgorithmHasBeenSet = true; m_signatureAlgorithm.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithSignatureAlgorithm(const Aws::String& value) { SetSignatureAlgorithm(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithSignatureAlgorithm(Aws::String&& value) { SetSignatureAlgorithm(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithSignatureAlgorithm(const char* value) { SetSignatureAlgorithm(value); return *this;}
+    template<typename SignatureAlgorithmT = Aws::String>
+    void SetSignatureAlgorithm(SignatureAlgorithmT&& value) { m_signatureAlgorithmHasBeenSet = true; m_signatureAlgorithm = std::forward<SignatureAlgorithmT>(value); }
+    template<typename SignatureAlgorithmT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithSignatureAlgorithm(SignatureAlgorithmT&& value) { SetSignatureAlgorithm(std::forward<SignatureAlgorithmT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -352,14 +325,12 @@ namespace Model
      * <code>EXPIRED</code> | <code>VALIDATION_TIMED_OUT</code> | <code>REVOKED</code>
      * | <code>FAILED</code> </p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -367,14 +338,12 @@ namespace Model
      * <p>The name of the entity that is associated with the public key contained in
      * the certificate.</p>
      */
-    inline const Aws::String& GetSubject() const{ return m_subject; }
+    inline const Aws::String& GetSubject() const { return m_subject; }
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-    inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
-    inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
-    inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithSubject(const char* value) { SetSubject(value); return *this;}
+    template<typename SubjectT = Aws::String>
+    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
+    template<typename SubjectT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -385,15 +354,14 @@ namespace Model
      * include the canonical domain name (CN) of the certificate and additional domain
      * names that can be used to connect to the website.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubjectAlternativeNames() const{ return m_subjectAlternativeNames; }
+    inline const Aws::Vector<Aws::String>& GetSubjectAlternativeNames() const { return m_subjectAlternativeNames; }
     inline bool SubjectAlternativeNamesHasBeenSet() const { return m_subjectAlternativeNamesHasBeenSet; }
-    inline void SetSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = value; }
-    inline void SetSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = std::move(value); }
-    inline AwsCertificateManagerCertificateDetails& WithSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { SetSubjectAlternativeNames(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { SetSubjectAlternativeNames(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& AddSubjectAlternativeNames(const Aws::String& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
-    inline AwsCertificateManagerCertificateDetails& AddSubjectAlternativeNames(Aws::String&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(std::move(value)); return *this; }
-    inline AwsCertificateManagerCertificateDetails& AddSubjectAlternativeNames(const char* value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
+    template<typename SubjectAlternativeNamesT = Aws::Vector<Aws::String>>
+    void SetSubjectAlternativeNames(SubjectAlternativeNamesT&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = std::forward<SubjectAlternativeNamesT>(value); }
+    template<typename SubjectAlternativeNamesT = Aws::Vector<Aws::String>>
+    AwsCertificateManagerCertificateDetails& WithSubjectAlternativeNames(SubjectAlternativeNamesT&& value) { SetSubjectAlternativeNames(std::forward<SubjectAlternativeNamesT>(value)); return *this;}
+    template<typename SubjectAlternativeNamesT = Aws::String>
+    AwsCertificateManagerCertificateDetails& AddSubjectAlternativeNames(SubjectAlternativeNamesT&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.emplace_back(std::forward<SubjectAlternativeNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -404,14 +372,12 @@ namespace Model
      * <code>IMPORTED</code>.</p> <p>Valid values: <code>IMPORTED</code> |
      * <code>AMAZON_ISSUED</code> | <code>PRIVATE</code> </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsCertificateManagerCertificateDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsCertificateManagerCertificateDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

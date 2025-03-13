@@ -33,7 +33,7 @@ namespace Model
   class ProjectDataDelivery
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API ProjectDataDelivery();
+    AWS_CLOUDWATCHEVIDENTLY_API ProjectDataDelivery() = default;
     AWS_CLOUDWATCHEVIDENTLY_API ProjectDataDelivery(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API ProjectDataDelivery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>If the project stores evaluation events in CloudWatch Logs, this structure
      * stores the log group name.</p>
      */
-    inline const CloudWatchLogsDestination& GetCloudWatchLogs() const{ return m_cloudWatchLogs; }
+    inline const CloudWatchLogsDestination& GetCloudWatchLogs() const { return m_cloudWatchLogs; }
     inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }
-    inline void SetCloudWatchLogs(const CloudWatchLogsDestination& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = value; }
-    inline void SetCloudWatchLogs(CloudWatchLogsDestination&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::move(value); }
-    inline ProjectDataDelivery& WithCloudWatchLogs(const CloudWatchLogsDestination& value) { SetCloudWatchLogs(value); return *this;}
-    inline ProjectDataDelivery& WithCloudWatchLogs(CloudWatchLogsDestination&& value) { SetCloudWatchLogs(std::move(value)); return *this;}
+    template<typename CloudWatchLogsT = CloudWatchLogsDestination>
+    void SetCloudWatchLogs(CloudWatchLogsT&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::forward<CloudWatchLogsT>(value); }
+    template<typename CloudWatchLogsT = CloudWatchLogsDestination>
+    ProjectDataDelivery& WithCloudWatchLogs(CloudWatchLogsT&& value) { SetCloudWatchLogs(std::forward<CloudWatchLogsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>If the project stores evaluation events in an Amazon S3 bucket, this
      * structure stores the bucket name and bucket prefix.</p>
      */
-    inline const S3Destination& GetS3Destination() const{ return m_s3Destination; }
+    inline const S3Destination& GetS3Destination() const { return m_s3Destination; }
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-    inline void SetS3Destination(const S3Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-    inline void SetS3Destination(S3Destination&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-    inline ProjectDataDelivery& WithS3Destination(const S3Destination& value) { SetS3Destination(value); return *this;}
-    inline ProjectDataDelivery& WithS3Destination(S3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
+    template<typename S3DestinationT = S3Destination>
+    void SetS3Destination(S3DestinationT&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::forward<S3DestinationT>(value); }
+    template<typename S3DestinationT = S3Destination>
+    ProjectDataDelivery& WithS3Destination(S3DestinationT&& value) { SetS3Destination(std::forward<S3DestinationT>(value)); return *this;}
     ///@}
   private:
 

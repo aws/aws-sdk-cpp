@@ -18,14 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-DataSourceIntrospectionModelIndex::DataSourceIntrospectionModelIndex() : 
-    m_nameHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
-{
-}
-
 DataSourceIntrospectionModelIndex::DataSourceIntrospectionModelIndex(JsonView jsonValue)
-  : DataSourceIntrospectionModelIndex()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DataSourceIntrospectionModelIndex& DataSourceIntrospectionModelIndex::operator =
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fields"))
   {
     Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
@@ -48,7 +39,6 @@ DataSourceIntrospectionModelIndex& DataSourceIntrospectionModelIndex::operator =
     }
     m_fieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

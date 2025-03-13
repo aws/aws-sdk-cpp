@@ -31,7 +31,7 @@ namespace Model
   class AppValidationOutput
   {
   public:
-    AWS_SMS_API AppValidationOutput();
+    AWS_SMS_API AppValidationOutput() = default;
     AWS_SMS_API AppValidationOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API AppValidationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Output from using SSM to validate the application.</p>
      */
-    inline const SSMOutput& GetSsmOutput() const{ return m_ssmOutput; }
+    inline const SSMOutput& GetSsmOutput() const { return m_ssmOutput; }
     inline bool SsmOutputHasBeenSet() const { return m_ssmOutputHasBeenSet; }
-    inline void SetSsmOutput(const SSMOutput& value) { m_ssmOutputHasBeenSet = true; m_ssmOutput = value; }
-    inline void SetSsmOutput(SSMOutput&& value) { m_ssmOutputHasBeenSet = true; m_ssmOutput = std::move(value); }
-    inline AppValidationOutput& WithSsmOutput(const SSMOutput& value) { SetSsmOutput(value); return *this;}
-    inline AppValidationOutput& WithSsmOutput(SSMOutput&& value) { SetSsmOutput(std::move(value)); return *this;}
+    template<typename SsmOutputT = SSMOutput>
+    void SetSsmOutput(SsmOutputT&& value) { m_ssmOutputHasBeenSet = true; m_ssmOutput = std::forward<SsmOutputT>(value); }
+    template<typename SsmOutputT = SSMOutput>
+    AppValidationOutput& WithSsmOutput(SsmOutputT&& value) { SetSsmOutput(std::forward<SsmOutputT>(value)); return *this;}
     ///@}
   private:
 

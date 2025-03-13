@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutDeliveryDestinationResult::PutDeliveryDestinationResult()
-{
-}
-
 PutDeliveryDestinationResult::PutDeliveryDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutDeliveryDestinationResult& PutDeliveryDestinationResult::operator =(const Aws
   if(jsonValue.ValueExists("deliveryDestination"))
   {
     m_deliveryDestination = jsonValue.GetObject("deliveryDestination");
-
+    m_deliveryDestinationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

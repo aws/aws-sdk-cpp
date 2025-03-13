@@ -18,15 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-RouteMatrixEntryError::RouteMatrixEntryError() : 
-    m_code(RouteMatrixErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 RouteMatrixEntryError::RouteMatrixEntryError(JsonView jsonValue)
-  : RouteMatrixEntryError()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RouteMatrixEntryError& RouteMatrixEntryError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = RouteMatrixErrorCodeMapper::GetRouteMatrixErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

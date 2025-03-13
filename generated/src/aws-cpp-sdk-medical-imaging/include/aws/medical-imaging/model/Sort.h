@@ -32,7 +32,7 @@ namespace Model
   class Sort
   {
   public:
-    AWS_MEDICALIMAGING_API Sort();
+    AWS_MEDICALIMAGING_API Sort() = default;
     AWS_MEDICALIMAGING_API Sort(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API Sort& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>The sort order for search criteria.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline Sort& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline Sort& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline Sort& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort field for search criteria.</p>
      */
-    inline const SortField& GetSortField() const{ return m_sortField; }
+    inline SortField GetSortField() const { return m_sortField; }
     inline bool SortFieldHasBeenSet() const { return m_sortFieldHasBeenSet; }
-    inline void SetSortField(const SortField& value) { m_sortFieldHasBeenSet = true; m_sortField = value; }
-    inline void SetSortField(SortField&& value) { m_sortFieldHasBeenSet = true; m_sortField = std::move(value); }
-    inline Sort& WithSortField(const SortField& value) { SetSortField(value); return *this;}
-    inline Sort& WithSortField(SortField&& value) { SetSortField(std::move(value)); return *this;}
+    inline void SetSortField(SortField value) { m_sortFieldHasBeenSet = true; m_sortField = value; }
+    inline Sort& WithSortField(SortField value) { SetSortField(value); return *this;}
     ///@}
   private:
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
-    SortField m_sortField;
+    SortField m_sortField{SortField::NOT_SET};
     bool m_sortFieldHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class CreateProjectProfileResult
   {
   public:
-    AWS_DATAZONE_API CreateProjectProfileResult();
+    AWS_DATAZONE_API CreateProjectProfileResult() = default;
     AWS_DATAZONE_API CreateProjectProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API CreateProjectProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,159 +40,154 @@ namespace Model
     /**
      * <p>A timestamp at which a project profile is created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline CreateProjectProfileResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline CreateProjectProfileResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CreateProjectProfileResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user who created a project profile.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline CreateProjectProfileResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline CreateProjectProfileResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline CreateProjectProfileResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    CreateProjectProfileResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A project profile description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateProjectProfileResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateProjectProfileResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateProjectProfileResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateProjectProfileResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the domain where a project profile is created.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
-    inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainId.assign(value); }
-    inline CreateProjectProfileResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline CreateProjectProfileResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline CreateProjectProfileResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    CreateProjectProfileResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the domain unit where a project profile is created.</p>
      */
-    inline const Aws::String& GetDomainUnitId() const{ return m_domainUnitId; }
-    inline void SetDomainUnitId(const Aws::String& value) { m_domainUnitId = value; }
-    inline void SetDomainUnitId(Aws::String&& value) { m_domainUnitId = std::move(value); }
-    inline void SetDomainUnitId(const char* value) { m_domainUnitId.assign(value); }
-    inline CreateProjectProfileResult& WithDomainUnitId(const Aws::String& value) { SetDomainUnitId(value); return *this;}
-    inline CreateProjectProfileResult& WithDomainUnitId(Aws::String&& value) { SetDomainUnitId(std::move(value)); return *this;}
-    inline CreateProjectProfileResult& WithDomainUnitId(const char* value) { SetDomainUnitId(value); return *this;}
+    inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
+    template<typename DomainUnitIdT = Aws::String>
+    void SetDomainUnitId(DomainUnitIdT&& value) { m_domainUnitIdHasBeenSet = true; m_domainUnitId = std::forward<DomainUnitIdT>(value); }
+    template<typename DomainUnitIdT = Aws::String>
+    CreateProjectProfileResult& WithDomainUnitId(DomainUnitIdT&& value) { SetDomainUnitId(std::forward<DomainUnitIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Environment configurations of a project profile.</p>
      */
-    inline const Aws::Vector<EnvironmentConfiguration>& GetEnvironmentConfigurations() const{ return m_environmentConfigurations; }
-    inline void SetEnvironmentConfigurations(const Aws::Vector<EnvironmentConfiguration>& value) { m_environmentConfigurations = value; }
-    inline void SetEnvironmentConfigurations(Aws::Vector<EnvironmentConfiguration>&& value) { m_environmentConfigurations = std::move(value); }
-    inline CreateProjectProfileResult& WithEnvironmentConfigurations(const Aws::Vector<EnvironmentConfiguration>& value) { SetEnvironmentConfigurations(value); return *this;}
-    inline CreateProjectProfileResult& WithEnvironmentConfigurations(Aws::Vector<EnvironmentConfiguration>&& value) { SetEnvironmentConfigurations(std::move(value)); return *this;}
-    inline CreateProjectProfileResult& AddEnvironmentConfigurations(const EnvironmentConfiguration& value) { m_environmentConfigurations.push_back(value); return *this; }
-    inline CreateProjectProfileResult& AddEnvironmentConfigurations(EnvironmentConfiguration&& value) { m_environmentConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EnvironmentConfiguration>& GetEnvironmentConfigurations() const { return m_environmentConfigurations; }
+    template<typename EnvironmentConfigurationsT = Aws::Vector<EnvironmentConfiguration>>
+    void SetEnvironmentConfigurations(EnvironmentConfigurationsT&& value) { m_environmentConfigurationsHasBeenSet = true; m_environmentConfigurations = std::forward<EnvironmentConfigurationsT>(value); }
+    template<typename EnvironmentConfigurationsT = Aws::Vector<EnvironmentConfiguration>>
+    CreateProjectProfileResult& WithEnvironmentConfigurations(EnvironmentConfigurationsT&& value) { SetEnvironmentConfigurations(std::forward<EnvironmentConfigurationsT>(value)); return *this;}
+    template<typename EnvironmentConfigurationsT = EnvironmentConfiguration>
+    CreateProjectProfileResult& AddEnvironmentConfigurations(EnvironmentConfigurationsT&& value) { m_environmentConfigurationsHasBeenSet = true; m_environmentConfigurations.emplace_back(std::forward<EnvironmentConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Project profile ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateProjectProfileResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateProjectProfileResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateProjectProfileResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateProjectProfileResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp when a project profile was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline CreateProjectProfileResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline CreateProjectProfileResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    CreateProjectProfileResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Project profile name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateProjectProfileResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateProjectProfileResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateProjectProfileResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateProjectProfileResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Project profile status.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Status& value) { m_status = value; }
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-    inline CreateProjectProfileResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline CreateProjectProfileResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline Status GetStatus() const { return m_status; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateProjectProfileResult& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateProjectProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateProjectProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateProjectProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateProjectProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_domainId;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_domainUnitId;
+    bool m_domainUnitIdHasBeenSet = false;
 
     Aws::Vector<EnvironmentConfiguration> m_environmentConfigurations;
+    bool m_environmentConfigurationsHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

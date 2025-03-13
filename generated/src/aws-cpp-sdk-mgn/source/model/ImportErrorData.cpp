@@ -18,20 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ImportErrorData::ImportErrorData() : 
-    m_accountIDHasBeenSet(false),
-    m_applicationIDHasBeenSet(false),
-    m_ec2LaunchTemplateIDHasBeenSet(false),
-    m_rawErrorHasBeenSet(false),
-    m_rowNumber(0),
-    m_rowNumberHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false),
-    m_waveIDHasBeenSet(false)
-{
-}
-
 ImportErrorData::ImportErrorData(JsonView jsonValue)
-  : ImportErrorData()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ ImportErrorData& ImportErrorData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountID"))
   {
     m_accountID = jsonValue.GetString("accountID");
-
     m_accountIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationID"))
   {
     m_applicationID = jsonValue.GetString("applicationID");
-
     m_applicationIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2LaunchTemplateID"))
   {
     m_ec2LaunchTemplateID = jsonValue.GetString("ec2LaunchTemplateID");
-
     m_ec2LaunchTemplateIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rawError"))
   {
     m_rawError = jsonValue.GetString("rawError");
-
     m_rawErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rowNumber"))
   {
     m_rowNumber = jsonValue.GetInt64("rowNumber");
-
     m_rowNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceServerID"))
   {
     m_sourceServerID = jsonValue.GetString("sourceServerID");
-
     m_sourceServerIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("waveID"))
   {
     m_waveID = jsonValue.GetString("waveID");
-
     m_waveIDHasBeenSet = true;
   }
-
   return *this;
 }
 

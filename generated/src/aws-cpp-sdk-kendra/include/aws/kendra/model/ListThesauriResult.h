@@ -29,7 +29,7 @@ namespace Model
   class ListThesauriResult
   {
   public:
-    AWS_KENDRA_API ListThesauriResult();
+    AWS_KENDRA_API ListThesauriResult() = default;
     AWS_KENDRA_API ListThesauriResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KENDRA_API ListThesauriResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>If the response is truncated, Amazon Kendra returns this token that you can
      * use in the subsequent request to retrieve the next set of thesauri. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListThesauriResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListThesauriResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListThesauriResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListThesauriResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of summary information for a thesaurus or multiple thesauri.</p>
      */
-    inline const Aws::Vector<ThesaurusSummary>& GetThesaurusSummaryItems() const{ return m_thesaurusSummaryItems; }
-    inline void SetThesaurusSummaryItems(const Aws::Vector<ThesaurusSummary>& value) { m_thesaurusSummaryItems = value; }
-    inline void SetThesaurusSummaryItems(Aws::Vector<ThesaurusSummary>&& value) { m_thesaurusSummaryItems = std::move(value); }
-    inline ListThesauriResult& WithThesaurusSummaryItems(const Aws::Vector<ThesaurusSummary>& value) { SetThesaurusSummaryItems(value); return *this;}
-    inline ListThesauriResult& WithThesaurusSummaryItems(Aws::Vector<ThesaurusSummary>&& value) { SetThesaurusSummaryItems(std::move(value)); return *this;}
-    inline ListThesauriResult& AddThesaurusSummaryItems(const ThesaurusSummary& value) { m_thesaurusSummaryItems.push_back(value); return *this; }
-    inline ListThesauriResult& AddThesaurusSummaryItems(ThesaurusSummary&& value) { m_thesaurusSummaryItems.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ThesaurusSummary>& GetThesaurusSummaryItems() const { return m_thesaurusSummaryItems; }
+    template<typename ThesaurusSummaryItemsT = Aws::Vector<ThesaurusSummary>>
+    void SetThesaurusSummaryItems(ThesaurusSummaryItemsT&& value) { m_thesaurusSummaryItemsHasBeenSet = true; m_thesaurusSummaryItems = std::forward<ThesaurusSummaryItemsT>(value); }
+    template<typename ThesaurusSummaryItemsT = Aws::Vector<ThesaurusSummary>>
+    ListThesauriResult& WithThesaurusSummaryItems(ThesaurusSummaryItemsT&& value) { SetThesaurusSummaryItems(std::forward<ThesaurusSummaryItemsT>(value)); return *this;}
+    template<typename ThesaurusSummaryItemsT = ThesaurusSummary>
+    ListThesauriResult& AddThesaurusSummaryItems(ThesaurusSummaryItemsT&& value) { m_thesaurusSummaryItemsHasBeenSet = true; m_thesaurusSummaryItems.emplace_back(std::forward<ThesaurusSummaryItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListThesauriResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListThesauriResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListThesauriResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListThesauriResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ThesaurusSummary> m_thesaurusSummaryItems;
+    bool m_thesaurusSummaryItemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,7 +27,7 @@ namespace Model
   class CreateConfigurationManagerResult
   {
   public:
-    AWS_SSMQUICKSETUP_API CreateConfigurationManagerResult();
+    AWS_SSMQUICKSETUP_API CreateConfigurationManagerResult() = default;
     AWS_SSMQUICKSETUP_API CreateConfigurationManagerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSMQUICKSETUP_API CreateConfigurationManagerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN for the newly created configuration manager.</p>
      */
-    inline const Aws::String& GetManagerArn() const{ return m_managerArn; }
-    inline void SetManagerArn(const Aws::String& value) { m_managerArn = value; }
-    inline void SetManagerArn(Aws::String&& value) { m_managerArn = std::move(value); }
-    inline void SetManagerArn(const char* value) { m_managerArn.assign(value); }
-    inline CreateConfigurationManagerResult& WithManagerArn(const Aws::String& value) { SetManagerArn(value); return *this;}
-    inline CreateConfigurationManagerResult& WithManagerArn(Aws::String&& value) { SetManagerArn(std::move(value)); return *this;}
-    inline CreateConfigurationManagerResult& WithManagerArn(const char* value) { SetManagerArn(value); return *this;}
+    inline const Aws::String& GetManagerArn() const { return m_managerArn; }
+    template<typename ManagerArnT = Aws::String>
+    void SetManagerArn(ManagerArnT&& value) { m_managerArnHasBeenSet = true; m_managerArn = std::forward<ManagerArnT>(value); }
+    template<typename ManagerArnT = Aws::String>
+    CreateConfigurationManagerResult& WithManagerArn(ManagerArnT&& value) { SetManagerArn(std::forward<ManagerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateConfigurationManagerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateConfigurationManagerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateConfigurationManagerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateConfigurationManagerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_managerArn;
+    bool m_managerArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

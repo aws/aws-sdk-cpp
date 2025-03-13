@@ -18,15 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-DiscoveryJobListEntry::DiscoveryJobListEntry() : 
-    m_discoveryJobArnHasBeenSet(false),
-    m_status(DiscoveryJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DiscoveryJobListEntry::DiscoveryJobListEntry(JsonView jsonValue)
-  : DiscoveryJobListEntry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DiscoveryJobListEntry& DiscoveryJobListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DiscoveryJobArn"))
   {
     m_discoveryJobArn = jsonValue.GetString("DiscoveryJobArn");
-
     m_discoveryJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DiscoveryJobStatusMapper::GetDiscoveryJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

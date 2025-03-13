@@ -12,12 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAgreementRequest::DeleteAgreementRequest() : 
-    m_agreementIdHasBeenSet(false),
-    m_serverIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAgreementRequest::SerializePayload() const
 {
   JsonValue payload;

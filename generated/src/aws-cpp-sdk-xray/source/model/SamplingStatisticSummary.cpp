@@ -18,20 +18,7 @@ namespace XRay
 namespace Model
 {
 
-SamplingStatisticSummary::SamplingStatisticSummary() : 
-    m_ruleNameHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_requestCount(0),
-    m_requestCountHasBeenSet(false),
-    m_borrowCount(0),
-    m_borrowCountHasBeenSet(false),
-    m_sampledCount(0),
-    m_sampledCountHasBeenSet(false)
-{
-}
-
 SamplingStatisticSummary::SamplingStatisticSummary(JsonView jsonValue)
-  : SamplingStatisticSummary()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ SamplingStatisticSummary& SamplingStatisticSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("RuleName"))
   {
     m_ruleName = jsonValue.GetString("RuleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestCount"))
   {
     m_requestCount = jsonValue.GetInteger("RequestCount");
-
     m_requestCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BorrowCount"))
   {
     m_borrowCount = jsonValue.GetInteger("BorrowCount");
-
     m_borrowCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SampledCount"))
   {
     m_sampledCount = jsonValue.GetInteger("SampledCount");
-
     m_sampledCountHasBeenSet = true;
   }
-
   return *this;
 }
 

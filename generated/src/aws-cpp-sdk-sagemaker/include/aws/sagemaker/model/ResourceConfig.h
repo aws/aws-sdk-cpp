@@ -36,7 +36,7 @@ namespace Model
   class ResourceConfig
   {
   public:
-    AWS_SAGEMAKER_API ResourceConfig();
+    AWS_SAGEMAKER_API ResourceConfig() = default;
     AWS_SAGEMAKER_API ResourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,10 @@ namespace Model
      * limit increase and start using P4de instances, contact the SageMaker Training
      * service team through your account team.</p> 
      */
-    inline const TrainingInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline TrainingInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const TrainingInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(TrainingInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline ResourceConfig& WithInstanceType(const TrainingInstanceType& value) { SetInstanceType(value); return *this;}
-    inline ResourceConfig& WithInstanceType(TrainingInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(TrainingInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline ResourceConfig& WithInstanceType(TrainingInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * <p>The number of ML compute instances to use. For distributed training, provide
      * a value greater than 1. </p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline ResourceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -106,7 +104,7 @@ namespace Model
      * SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model
      * Artifacts, and Outputs</a>.</p>
      */
-    inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
+    inline int GetVolumeSizeInGB() const { return m_volumeSizeInGB; }
     inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
     inline ResourceConfig& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
@@ -132,14 +130,12 @@ namespace Model
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+    inline const Aws::String& GetVolumeKmsKeyId() const { return m_volumeKmsKeyId; }
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
-    inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
-    inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
-    inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
-    inline ResourceConfig& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
-    inline ResourceConfig& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
-    inline ResourceConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    void SetVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::forward<VolumeKmsKeyIdT>(value); }
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    ResourceConfig& WithVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { SetVolumeKmsKeyId(std::forward<VolumeKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,7 +143,7 @@ namespace Model
      * <p>The duration of time in seconds to retain configured resources in a warm pool
      * for subsequent training jobs.</p>
      */
-    inline int GetKeepAlivePeriodInSeconds() const{ return m_keepAlivePeriodInSeconds; }
+    inline int GetKeepAlivePeriodInSeconds() const { return m_keepAlivePeriodInSeconds; }
     inline bool KeepAlivePeriodInSecondsHasBeenSet() const { return m_keepAlivePeriodInSecondsHasBeenSet; }
     inline void SetKeepAlivePeriodInSeconds(int value) { m_keepAlivePeriodInSecondsHasBeenSet = true; m_keepAlivePeriodInSeconds = value; }
     inline ResourceConfig& WithKeepAlivePeriodInSeconds(int value) { SetKeepAlivePeriodInSeconds(value); return *this;}
@@ -157,14 +153,14 @@ namespace Model
     /**
      * <p>The configuration of a heterogeneous cluster in JSON format.</p>
      */
-    inline const Aws::Vector<InstanceGroup>& GetInstanceGroups() const{ return m_instanceGroups; }
+    inline const Aws::Vector<InstanceGroup>& GetInstanceGroups() const { return m_instanceGroups; }
     inline bool InstanceGroupsHasBeenSet() const { return m_instanceGroupsHasBeenSet; }
-    inline void SetInstanceGroups(const Aws::Vector<InstanceGroup>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
-    inline void SetInstanceGroups(Aws::Vector<InstanceGroup>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = std::move(value); }
-    inline ResourceConfig& WithInstanceGroups(const Aws::Vector<InstanceGroup>& value) { SetInstanceGroups(value); return *this;}
-    inline ResourceConfig& WithInstanceGroups(Aws::Vector<InstanceGroup>&& value) { SetInstanceGroups(std::move(value)); return *this;}
-    inline ResourceConfig& AddInstanceGroups(const InstanceGroup& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
-    inline ResourceConfig& AddInstanceGroups(InstanceGroup&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
+    template<typename InstanceGroupsT = Aws::Vector<InstanceGroup>>
+    void SetInstanceGroups(InstanceGroupsT&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = std::forward<InstanceGroupsT>(value); }
+    template<typename InstanceGroupsT = Aws::Vector<InstanceGroup>>
+    ResourceConfig& WithInstanceGroups(InstanceGroupsT&& value) { SetInstanceGroups(std::forward<InstanceGroupsT>(value)); return *this;}
+    template<typename InstanceGroupsT = InstanceGroup>
+    ResourceConfig& AddInstanceGroups(InstanceGroupsT&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.emplace_back(std::forward<InstanceGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -172,30 +168,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN); of the training plan to use for this resource
      * configuration.</p>
      */
-    inline const Aws::String& GetTrainingPlanArn() const{ return m_trainingPlanArn; }
+    inline const Aws::String& GetTrainingPlanArn() const { return m_trainingPlanArn; }
     inline bool TrainingPlanArnHasBeenSet() const { return m_trainingPlanArnHasBeenSet; }
-    inline void SetTrainingPlanArn(const Aws::String& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = value; }
-    inline void SetTrainingPlanArn(Aws::String&& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = std::move(value); }
-    inline void SetTrainingPlanArn(const char* value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn.assign(value); }
-    inline ResourceConfig& WithTrainingPlanArn(const Aws::String& value) { SetTrainingPlanArn(value); return *this;}
-    inline ResourceConfig& WithTrainingPlanArn(Aws::String&& value) { SetTrainingPlanArn(std::move(value)); return *this;}
-    inline ResourceConfig& WithTrainingPlanArn(const char* value) { SetTrainingPlanArn(value); return *this;}
+    template<typename TrainingPlanArnT = Aws::String>
+    void SetTrainingPlanArn(TrainingPlanArnT&& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = std::forward<TrainingPlanArnT>(value); }
+    template<typename TrainingPlanArnT = Aws::String>
+    ResourceConfig& WithTrainingPlanArn(TrainingPlanArnT&& value) { SetTrainingPlanArn(std::forward<TrainingPlanArnT>(value)); return *this;}
     ///@}
   private:
 
-    TrainingInstanceType m_instanceType;
+    TrainingInstanceType m_instanceType{TrainingInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
-    int m_volumeSizeInGB;
+    int m_volumeSizeInGB{0};
     bool m_volumeSizeInGBHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;
     bool m_volumeKmsKeyIdHasBeenSet = false;
 
-    int m_keepAlivePeriodInSeconds;
+    int m_keepAlivePeriodInSeconds{0};
     bool m_keepAlivePeriodInSecondsHasBeenSet = false;
 
     Aws::Vector<InstanceGroup> m_instanceGroups;

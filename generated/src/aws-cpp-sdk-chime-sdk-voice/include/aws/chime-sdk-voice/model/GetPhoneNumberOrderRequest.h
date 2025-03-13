@@ -21,7 +21,7 @@ namespace Model
   class GetPhoneNumberOrderRequest : public ChimeSDKVoiceRequest
   {
   public:
-    AWS_CHIMESDKVOICE_API GetPhoneNumberOrderRequest();
+    AWS_CHIMESDKVOICE_API GetPhoneNumberOrderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the phone number order .</p>
      */
-    inline const Aws::String& GetPhoneNumberOrderId() const{ return m_phoneNumberOrderId; }
+    inline const Aws::String& GetPhoneNumberOrderId() const { return m_phoneNumberOrderId; }
     inline bool PhoneNumberOrderIdHasBeenSet() const { return m_phoneNumberOrderIdHasBeenSet; }
-    inline void SetPhoneNumberOrderId(const Aws::String& value) { m_phoneNumberOrderIdHasBeenSet = true; m_phoneNumberOrderId = value; }
-    inline void SetPhoneNumberOrderId(Aws::String&& value) { m_phoneNumberOrderIdHasBeenSet = true; m_phoneNumberOrderId = std::move(value); }
-    inline void SetPhoneNumberOrderId(const char* value) { m_phoneNumberOrderIdHasBeenSet = true; m_phoneNumberOrderId.assign(value); }
-    inline GetPhoneNumberOrderRequest& WithPhoneNumberOrderId(const Aws::String& value) { SetPhoneNumberOrderId(value); return *this;}
-    inline GetPhoneNumberOrderRequest& WithPhoneNumberOrderId(Aws::String&& value) { SetPhoneNumberOrderId(std::move(value)); return *this;}
-    inline GetPhoneNumberOrderRequest& WithPhoneNumberOrderId(const char* value) { SetPhoneNumberOrderId(value); return *this;}
+    template<typename PhoneNumberOrderIdT = Aws::String>
+    void SetPhoneNumberOrderId(PhoneNumberOrderIdT&& value) { m_phoneNumberOrderIdHasBeenSet = true; m_phoneNumberOrderId = std::forward<PhoneNumberOrderIdT>(value); }
+    template<typename PhoneNumberOrderIdT = Aws::String>
+    GetPhoneNumberOrderRequest& WithPhoneNumberOrderId(PhoneNumberOrderIdT&& value) { SetPhoneNumberOrderId(std::forward<PhoneNumberOrderIdT>(value)); return *this;}
     ///@}
   private:
 

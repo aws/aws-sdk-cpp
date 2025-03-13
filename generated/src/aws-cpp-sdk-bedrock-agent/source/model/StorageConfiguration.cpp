@@ -18,20 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-StorageConfiguration::StorageConfiguration() : 
-    m_mongoDbAtlasConfigurationHasBeenSet(false),
-    m_neptuneAnalyticsConfigurationHasBeenSet(false),
-    m_opensearchServerlessConfigurationHasBeenSet(false),
-    m_pineconeConfigurationHasBeenSet(false),
-    m_rdsConfigurationHasBeenSet(false),
-    m_redisEnterpriseCloudConfigurationHasBeenSet(false),
-    m_type(KnowledgeBaseStorageType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 StorageConfiguration::StorageConfiguration(JsonView jsonValue)
-  : StorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("mongoDbAtlasConfiguration"))
   {
     m_mongoDbAtlasConfiguration = jsonValue.GetObject("mongoDbAtlasConfiguration");
-
     m_mongoDbAtlasConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("neptuneAnalyticsConfiguration"))
   {
     m_neptuneAnalyticsConfiguration = jsonValue.GetObject("neptuneAnalyticsConfiguration");
-
     m_neptuneAnalyticsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("opensearchServerlessConfiguration"))
   {
     m_opensearchServerlessConfiguration = jsonValue.GetObject("opensearchServerlessConfiguration");
-
     m_opensearchServerlessConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pineconeConfiguration"))
   {
     m_pineconeConfiguration = jsonValue.GetObject("pineconeConfiguration");
-
     m_pineconeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rdsConfiguration"))
   {
     m_rdsConfiguration = jsonValue.GetObject("rdsConfiguration");
-
     m_rdsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redisEnterpriseCloudConfiguration"))
   {
     m_redisEnterpriseCloudConfiguration = jsonValue.GetObject("redisEnterpriseCloudConfiguration");
-
     m_redisEnterpriseCloudConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = KnowledgeBaseStorageTypeMapper::GetKnowledgeBaseStorageTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

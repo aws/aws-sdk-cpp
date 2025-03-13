@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetJourneyRunExecutionMetricsRequest::GetJourneyRunExecutionMetricsRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_journeyIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_pageSizeHasBeenSet(false),
-    m_runIdHasBeenSet(false)
-{
-}
-
 Aws::String GetJourneyRunExecutionMetricsRequest::SerializePayload() const
 {
   return {};

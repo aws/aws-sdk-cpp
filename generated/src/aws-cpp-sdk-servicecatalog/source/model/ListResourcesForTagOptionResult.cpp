@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResourcesForTagOptionResult::ListResourcesForTagOptionResult()
-{
-}
-
 ListResourcesForTagOptionResult::ListResourcesForTagOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListResourcesForTagOptionResult& ListResourcesForTagOptionResult::operator =(con
     {
       m_resourceDetails.push_back(resourceDetailsJsonList[resourceDetailsIndex].AsObject());
     }
+    m_resourceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PageToken"))
   {
     m_pageToken = jsonValue.GetString("PageToken");
-
+    m_pageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

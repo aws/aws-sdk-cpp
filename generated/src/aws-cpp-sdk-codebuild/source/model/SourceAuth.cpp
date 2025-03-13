@@ -18,15 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-SourceAuth::SourceAuth() : 
-    m_type(SourceAuthType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourceHasBeenSet(false)
-{
-}
-
 SourceAuth::SourceAuth(JsonView jsonValue)
-  : SourceAuth()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SourceAuth& SourceAuth::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = SourceAuthTypeMapper::GetSourceAuthTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   return *this;
 }
 

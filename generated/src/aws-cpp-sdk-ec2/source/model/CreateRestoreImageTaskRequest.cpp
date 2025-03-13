@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateRestoreImageTaskRequest::CreateRestoreImageTaskRequest() : 
-    m_bucketHasBeenSet(false),
-    m_objectKeyHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateRestoreImageTaskRequest::SerializePayload() const
 {
   Aws::StringStream ss;

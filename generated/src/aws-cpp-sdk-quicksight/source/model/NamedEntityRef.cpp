@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NamedEntityRef::NamedEntityRef() : 
-    m_namedEntityNameHasBeenSet(false)
-{
-}
-
 NamedEntityRef::NamedEntityRef(JsonView jsonValue)
-  : NamedEntityRef()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NamedEntityRef& NamedEntityRef::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NamedEntityName"))
   {
     m_namedEntityName = jsonValue.GetString("NamedEntityName");
-
     m_namedEntityNameHasBeenSet = true;
   }
-
   return *this;
 }
 

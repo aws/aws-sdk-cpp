@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PathStatementRequest::PathStatementRequest() : 
-    m_packetHeaderStatementHasBeenSet(false),
-    m_resourceStatementHasBeenSet(false)
-{
-}
-
 PathStatementRequest::PathStatementRequest(const XmlNode& xmlNode)
-  : PathStatementRequest()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ PathStatementRequest& PathStatementRequest::operator =(const XmlNode& xmlNode)
     {
       m_packetHeaderStatement = packetHeaderStatementNode;
       m_packetHeaderStatementHasBeenSet = true;
+       m_packetHeaderStatementHasBeenSet = true;
     }
     XmlNode resourceStatementNode = resultNode.FirstChild("ResourceStatement");
     if(!resourceStatementNode.IsNull())
     {
       m_resourceStatement = resourceStatementNode;
       m_resourceStatementHasBeenSet = true;
+       m_resourceStatementHasBeenSet = true;
     }
   }
 

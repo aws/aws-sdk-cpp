@@ -21,7 +21,7 @@ namespace Model
   class DeleteProtectionGroupRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API DeleteProtectionGroupRequest();
+    AWS_SHIELD_API DeleteProtectionGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * group in lists and to manage the protection group, for example to update,
      * delete, or describe it. </p>
      */
-    inline const Aws::String& GetProtectionGroupId() const{ return m_protectionGroupId; }
+    inline const Aws::String& GetProtectionGroupId() const { return m_protectionGroupId; }
     inline bool ProtectionGroupIdHasBeenSet() const { return m_protectionGroupIdHasBeenSet; }
-    inline void SetProtectionGroupId(const Aws::String& value) { m_protectionGroupIdHasBeenSet = true; m_protectionGroupId = value; }
-    inline void SetProtectionGroupId(Aws::String&& value) { m_protectionGroupIdHasBeenSet = true; m_protectionGroupId = std::move(value); }
-    inline void SetProtectionGroupId(const char* value) { m_protectionGroupIdHasBeenSet = true; m_protectionGroupId.assign(value); }
-    inline DeleteProtectionGroupRequest& WithProtectionGroupId(const Aws::String& value) { SetProtectionGroupId(value); return *this;}
-    inline DeleteProtectionGroupRequest& WithProtectionGroupId(Aws::String&& value) { SetProtectionGroupId(std::move(value)); return *this;}
-    inline DeleteProtectionGroupRequest& WithProtectionGroupId(const char* value) { SetProtectionGroupId(value); return *this;}
+    template<typename ProtectionGroupIdT = Aws::String>
+    void SetProtectionGroupId(ProtectionGroupIdT&& value) { m_protectionGroupIdHasBeenSet = true; m_protectionGroupId = std::forward<ProtectionGroupIdT>(value); }
+    template<typename ProtectionGroupIdT = Aws::String>
+    DeleteProtectionGroupRequest& WithProtectionGroupId(ProtectionGroupIdT&& value) { SetProtectionGroupId(std::forward<ProtectionGroupIdT>(value)); return *this;}
     ///@}
   private:
 

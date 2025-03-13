@@ -33,7 +33,7 @@ namespace Model
   class InsightResourceDetail
   {
   public:
-    AWS_EKS_API InsightResourceDetail();
+    AWS_EKS_API InsightResourceDetail() = default;
     AWS_EKS_API InsightResourceDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API InsightResourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,36 @@ namespace Model
     /**
      * <p>An object containing more detail on the status of the insight resource.</p>
      */
-    inline const InsightStatus& GetInsightStatus() const{ return m_insightStatus; }
+    inline const InsightStatus& GetInsightStatus() const { return m_insightStatus; }
     inline bool InsightStatusHasBeenSet() const { return m_insightStatusHasBeenSet; }
-    inline void SetInsightStatus(const InsightStatus& value) { m_insightStatusHasBeenSet = true; m_insightStatus = value; }
-    inline void SetInsightStatus(InsightStatus&& value) { m_insightStatusHasBeenSet = true; m_insightStatus = std::move(value); }
-    inline InsightResourceDetail& WithInsightStatus(const InsightStatus& value) { SetInsightStatus(value); return *this;}
-    inline InsightResourceDetail& WithInsightStatus(InsightStatus&& value) { SetInsightStatus(std::move(value)); return *this;}
+    template<typename InsightStatusT = InsightStatus>
+    void SetInsightStatus(InsightStatusT&& value) { m_insightStatusHasBeenSet = true; m_insightStatus = std::forward<InsightStatusT>(value); }
+    template<typename InsightStatusT = InsightStatus>
+    InsightResourceDetail& WithInsightStatus(InsightStatusT&& value) { SetInsightStatus(std::forward<InsightStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Kubernetes resource URI if applicable.</p>
      */
-    inline const Aws::String& GetKubernetesResourceUri() const{ return m_kubernetesResourceUri; }
+    inline const Aws::String& GetKubernetesResourceUri() const { return m_kubernetesResourceUri; }
     inline bool KubernetesResourceUriHasBeenSet() const { return m_kubernetesResourceUriHasBeenSet; }
-    inline void SetKubernetesResourceUri(const Aws::String& value) { m_kubernetesResourceUriHasBeenSet = true; m_kubernetesResourceUri = value; }
-    inline void SetKubernetesResourceUri(Aws::String&& value) { m_kubernetesResourceUriHasBeenSet = true; m_kubernetesResourceUri = std::move(value); }
-    inline void SetKubernetesResourceUri(const char* value) { m_kubernetesResourceUriHasBeenSet = true; m_kubernetesResourceUri.assign(value); }
-    inline InsightResourceDetail& WithKubernetesResourceUri(const Aws::String& value) { SetKubernetesResourceUri(value); return *this;}
-    inline InsightResourceDetail& WithKubernetesResourceUri(Aws::String&& value) { SetKubernetesResourceUri(std::move(value)); return *this;}
-    inline InsightResourceDetail& WithKubernetesResourceUri(const char* value) { SetKubernetesResourceUri(value); return *this;}
+    template<typename KubernetesResourceUriT = Aws::String>
+    void SetKubernetesResourceUri(KubernetesResourceUriT&& value) { m_kubernetesResourceUriHasBeenSet = true; m_kubernetesResourceUri = std::forward<KubernetesResourceUriT>(value); }
+    template<typename KubernetesResourceUriT = Aws::String>
+    InsightResourceDetail& WithKubernetesResourceUri(KubernetesResourceUriT&& value) { SetKubernetesResourceUri(std::forward<KubernetesResourceUriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) if applicable.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline InsightResourceDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline InsightResourceDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline InsightResourceDetail& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    InsightResourceDetail& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

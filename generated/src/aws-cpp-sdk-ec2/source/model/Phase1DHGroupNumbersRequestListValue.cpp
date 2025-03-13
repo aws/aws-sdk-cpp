@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Phase1DHGroupNumbersRequestListValue::Phase1DHGroupNumbersRequestListValue() : 
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 Phase1DHGroupNumbersRequestListValue::Phase1DHGroupNumbersRequestListValue(const XmlNode& xmlNode)
-  : Phase1DHGroupNumbersRequestListValue()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ Phase1DHGroupNumbersRequestListValue& Phase1DHGroupNumbersRequestListValue::oper
     {
       m_value = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()).c_str()).c_str());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

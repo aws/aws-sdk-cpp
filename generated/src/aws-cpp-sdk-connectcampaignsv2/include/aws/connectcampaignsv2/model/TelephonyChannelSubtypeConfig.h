@@ -33,7 +33,7 @@ namespace Model
   class TelephonyChannelSubtypeConfig
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API TelephonyChannelSubtypeConfig();
+    AWS_CONNECTCAMPAIGNSV2_API TelephonyChannelSubtypeConfig() = default;
     AWS_CONNECTCAMPAIGNSV2_API TelephonyChannelSubtypeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API TelephonyChannelSubtypeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     
-    inline double GetCapacity() const{ return m_capacity; }
+    inline double GetCapacity() const { return m_capacity; }
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
     inline void SetCapacity(double value) { m_capacityHasBeenSet = true; m_capacity = value; }
     inline TelephonyChannelSubtypeConfig& WithCapacity(double value) { SetCapacity(value); return *this;}
@@ -49,38 +49,36 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetConnectQueueId() const{ return m_connectQueueId; }
+    inline const Aws::String& GetConnectQueueId() const { return m_connectQueueId; }
     inline bool ConnectQueueIdHasBeenSet() const { return m_connectQueueIdHasBeenSet; }
-    inline void SetConnectQueueId(const Aws::String& value) { m_connectQueueIdHasBeenSet = true; m_connectQueueId = value; }
-    inline void SetConnectQueueId(Aws::String&& value) { m_connectQueueIdHasBeenSet = true; m_connectQueueId = std::move(value); }
-    inline void SetConnectQueueId(const char* value) { m_connectQueueIdHasBeenSet = true; m_connectQueueId.assign(value); }
-    inline TelephonyChannelSubtypeConfig& WithConnectQueueId(const Aws::String& value) { SetConnectQueueId(value); return *this;}
-    inline TelephonyChannelSubtypeConfig& WithConnectQueueId(Aws::String&& value) { SetConnectQueueId(std::move(value)); return *this;}
-    inline TelephonyChannelSubtypeConfig& WithConnectQueueId(const char* value) { SetConnectQueueId(value); return *this;}
+    template<typename ConnectQueueIdT = Aws::String>
+    void SetConnectQueueId(ConnectQueueIdT&& value) { m_connectQueueIdHasBeenSet = true; m_connectQueueId = std::forward<ConnectQueueIdT>(value); }
+    template<typename ConnectQueueIdT = Aws::String>
+    TelephonyChannelSubtypeConfig& WithConnectQueueId(ConnectQueueIdT&& value) { SetConnectQueueId(std::forward<ConnectQueueIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TelephonyOutboundMode& GetOutboundMode() const{ return m_outboundMode; }
+    inline const TelephonyOutboundMode& GetOutboundMode() const { return m_outboundMode; }
     inline bool OutboundModeHasBeenSet() const { return m_outboundModeHasBeenSet; }
-    inline void SetOutboundMode(const TelephonyOutboundMode& value) { m_outboundModeHasBeenSet = true; m_outboundMode = value; }
-    inline void SetOutboundMode(TelephonyOutboundMode&& value) { m_outboundModeHasBeenSet = true; m_outboundMode = std::move(value); }
-    inline TelephonyChannelSubtypeConfig& WithOutboundMode(const TelephonyOutboundMode& value) { SetOutboundMode(value); return *this;}
-    inline TelephonyChannelSubtypeConfig& WithOutboundMode(TelephonyOutboundMode&& value) { SetOutboundMode(std::move(value)); return *this;}
+    template<typename OutboundModeT = TelephonyOutboundMode>
+    void SetOutboundMode(OutboundModeT&& value) { m_outboundModeHasBeenSet = true; m_outboundMode = std::forward<OutboundModeT>(value); }
+    template<typename OutboundModeT = TelephonyOutboundMode>
+    TelephonyChannelSubtypeConfig& WithOutboundMode(OutboundModeT&& value) { SetOutboundMode(std::forward<OutboundModeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TelephonyOutboundConfig& GetDefaultOutboundConfig() const{ return m_defaultOutboundConfig; }
+    inline const TelephonyOutboundConfig& GetDefaultOutboundConfig() const { return m_defaultOutboundConfig; }
     inline bool DefaultOutboundConfigHasBeenSet() const { return m_defaultOutboundConfigHasBeenSet; }
-    inline void SetDefaultOutboundConfig(const TelephonyOutboundConfig& value) { m_defaultOutboundConfigHasBeenSet = true; m_defaultOutboundConfig = value; }
-    inline void SetDefaultOutboundConfig(TelephonyOutboundConfig&& value) { m_defaultOutboundConfigHasBeenSet = true; m_defaultOutboundConfig = std::move(value); }
-    inline TelephonyChannelSubtypeConfig& WithDefaultOutboundConfig(const TelephonyOutboundConfig& value) { SetDefaultOutboundConfig(value); return *this;}
-    inline TelephonyChannelSubtypeConfig& WithDefaultOutboundConfig(TelephonyOutboundConfig&& value) { SetDefaultOutboundConfig(std::move(value)); return *this;}
+    template<typename DefaultOutboundConfigT = TelephonyOutboundConfig>
+    void SetDefaultOutboundConfig(DefaultOutboundConfigT&& value) { m_defaultOutboundConfigHasBeenSet = true; m_defaultOutboundConfig = std::forward<DefaultOutboundConfigT>(value); }
+    template<typename DefaultOutboundConfigT = TelephonyOutboundConfig>
+    TelephonyChannelSubtypeConfig& WithDefaultOutboundConfig(DefaultOutboundConfigT&& value) { SetDefaultOutboundConfig(std::forward<DefaultOutboundConfigT>(value)); return *this;}
     ///@}
   private:
 
-    double m_capacity;
+    double m_capacity{0.0};
     bool m_capacityHasBeenSet = false;
 
     Aws::String m_connectQueueId;

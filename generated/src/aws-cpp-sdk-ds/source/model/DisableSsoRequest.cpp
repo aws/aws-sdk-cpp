@@ -12,13 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableSsoRequest::DisableSsoRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
-{
-}
-
 Aws::String DisableSsoRequest::SerializePayload() const
 {
   JsonValue payload;

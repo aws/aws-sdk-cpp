@@ -32,7 +32,7 @@ namespace Model
   class SlackConnectorProfileProperties
   {
   public:
-    AWS_APPFLOW_API SlackConnectorProfileProperties();
+    AWS_APPFLOW_API SlackConnectorProfileProperties() = default;
     AWS_APPFLOW_API SlackConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SlackConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The location of the Slack resource. </p>
      */
-    inline const Aws::String& GetInstanceUrl() const{ return m_instanceUrl; }
+    inline const Aws::String& GetInstanceUrl() const { return m_instanceUrl; }
     inline bool InstanceUrlHasBeenSet() const { return m_instanceUrlHasBeenSet; }
-    inline void SetInstanceUrl(const Aws::String& value) { m_instanceUrlHasBeenSet = true; m_instanceUrl = value; }
-    inline void SetInstanceUrl(Aws::String&& value) { m_instanceUrlHasBeenSet = true; m_instanceUrl = std::move(value); }
-    inline void SetInstanceUrl(const char* value) { m_instanceUrlHasBeenSet = true; m_instanceUrl.assign(value); }
-    inline SlackConnectorProfileProperties& WithInstanceUrl(const Aws::String& value) { SetInstanceUrl(value); return *this;}
-    inline SlackConnectorProfileProperties& WithInstanceUrl(Aws::String&& value) { SetInstanceUrl(std::move(value)); return *this;}
-    inline SlackConnectorProfileProperties& WithInstanceUrl(const char* value) { SetInstanceUrl(value); return *this;}
+    template<typename InstanceUrlT = Aws::String>
+    void SetInstanceUrl(InstanceUrlT&& value) { m_instanceUrlHasBeenSet = true; m_instanceUrl = std::forward<InstanceUrlT>(value); }
+    template<typename InstanceUrlT = Aws::String>
+    SlackConnectorProfileProperties& WithInstanceUrl(InstanceUrlT&& value) { SetInstanceUrl(std::forward<InstanceUrlT>(value)); return *this;}
     ///@}
   private:
 

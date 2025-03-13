@@ -33,7 +33,7 @@ namespace Model
   class ProfilerConfig
   {
   public:
-    AWS_SAGEMAKER_API ProfilerConfig();
+    AWS_SAGEMAKER_API ProfilerConfig() = default;
     AWS_SAGEMAKER_API ProfilerConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ProfilerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>Path to Amazon S3 storage location for system and framework metrics.</p>
      */
-    inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
+    inline const Aws::String& GetS3OutputPath() const { return m_s3OutputPath; }
     inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }
-    inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
-    inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
-    inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
-    inline ProfilerConfig& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
-    inline ProfilerConfig& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
-    inline ProfilerConfig& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
+    template<typename S3OutputPathT = Aws::String>
+    void SetS3OutputPath(S3OutputPathT&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::forward<S3OutputPathT>(value); }
+    template<typename S3OutputPathT = Aws::String>
+    ProfilerConfig& WithS3OutputPath(S3OutputPathT&& value) { SetS3OutputPath(std::forward<S3OutputPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * values are 100, 200, 500, 1000 (1 second), 5000 (5 seconds), and 60000 (1
      * minute) milliseconds. The default value is 500 milliseconds.</p>
      */
-    inline long long GetProfilingIntervalInMilliseconds() const{ return m_profilingIntervalInMilliseconds; }
+    inline long long GetProfilingIntervalInMilliseconds() const { return m_profilingIntervalInMilliseconds; }
     inline bool ProfilingIntervalInMillisecondsHasBeenSet() const { return m_profilingIntervalInMillisecondsHasBeenSet; }
     inline void SetProfilingIntervalInMilliseconds(long long value) { m_profilingIntervalInMillisecondsHasBeenSet = true; m_profilingIntervalInMilliseconds = value; }
     inline ProfilerConfig& WithProfilingIntervalInMilliseconds(long long value) { SetProfilingIntervalInMilliseconds(value); return *this;}
@@ -77,19 +75,16 @@ namespace Model
      * the SageMaker and Debugger Configuration API Operations to Create, Update, and
      * Debug Your Training Job</a>. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetProfilingParameters() const{ return m_profilingParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetProfilingParameters() const { return m_profilingParameters; }
     inline bool ProfilingParametersHasBeenSet() const { return m_profilingParametersHasBeenSet; }
-    inline void SetProfilingParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_profilingParametersHasBeenSet = true; m_profilingParameters = value; }
-    inline void SetProfilingParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_profilingParametersHasBeenSet = true; m_profilingParameters = std::move(value); }
-    inline ProfilerConfig& WithProfilingParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetProfilingParameters(value); return *this;}
-    inline ProfilerConfig& WithProfilingParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetProfilingParameters(std::move(value)); return *this;}
-    inline ProfilerConfig& AddProfilingParameters(const Aws::String& key, const Aws::String& value) { m_profilingParametersHasBeenSet = true; m_profilingParameters.emplace(key, value); return *this; }
-    inline ProfilerConfig& AddProfilingParameters(Aws::String&& key, const Aws::String& value) { m_profilingParametersHasBeenSet = true; m_profilingParameters.emplace(std::move(key), value); return *this; }
-    inline ProfilerConfig& AddProfilingParameters(const Aws::String& key, Aws::String&& value) { m_profilingParametersHasBeenSet = true; m_profilingParameters.emplace(key, std::move(value)); return *this; }
-    inline ProfilerConfig& AddProfilingParameters(Aws::String&& key, Aws::String&& value) { m_profilingParametersHasBeenSet = true; m_profilingParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline ProfilerConfig& AddProfilingParameters(const char* key, Aws::String&& value) { m_profilingParametersHasBeenSet = true; m_profilingParameters.emplace(key, std::move(value)); return *this; }
-    inline ProfilerConfig& AddProfilingParameters(Aws::String&& key, const char* value) { m_profilingParametersHasBeenSet = true; m_profilingParameters.emplace(std::move(key), value); return *this; }
-    inline ProfilerConfig& AddProfilingParameters(const char* key, const char* value) { m_profilingParametersHasBeenSet = true; m_profilingParameters.emplace(key, value); return *this; }
+    template<typename ProfilingParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetProfilingParameters(ProfilingParametersT&& value) { m_profilingParametersHasBeenSet = true; m_profilingParameters = std::forward<ProfilingParametersT>(value); }
+    template<typename ProfilingParametersT = Aws::Map<Aws::String, Aws::String>>
+    ProfilerConfig& WithProfilingParameters(ProfilingParametersT&& value) { SetProfilingParameters(std::forward<ProfilingParametersT>(value)); return *this;}
+    template<typename ProfilingParametersKeyT = Aws::String, typename ProfilingParametersValueT = Aws::String>
+    ProfilerConfig& AddProfilingParameters(ProfilingParametersKeyT&& key, ProfilingParametersValueT&& value) {
+      m_profilingParametersHasBeenSet = true; m_profilingParameters.emplace(std::forward<ProfilingParametersKeyT>(key), std::forward<ProfilingParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -97,7 +92,7 @@ namespace Model
      * <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and
      * profiling functionality. To turn it off, set to <code>True</code>.</p>
      */
-    inline bool GetDisableProfiler() const{ return m_disableProfiler; }
+    inline bool GetDisableProfiler() const { return m_disableProfiler; }
     inline bool DisableProfilerHasBeenSet() const { return m_disableProfilerHasBeenSet; }
     inline void SetDisableProfiler(bool value) { m_disableProfilerHasBeenSet = true; m_disableProfiler = value; }
     inline ProfilerConfig& WithDisableProfiler(bool value) { SetDisableProfiler(value); return *this;}
@@ -107,13 +102,13 @@ namespace Model
     Aws::String m_s3OutputPath;
     bool m_s3OutputPathHasBeenSet = false;
 
-    long long m_profilingIntervalInMilliseconds;
+    long long m_profilingIntervalInMilliseconds{0};
     bool m_profilingIntervalInMillisecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_profilingParameters;
     bool m_profilingParametersHasBeenSet = false;
 
-    bool m_disableProfiler;
+    bool m_disableProfiler{false};
     bool m_disableProfilerHasBeenSet = false;
   };
 

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAnalysisResult::CreateAnalysisResult() : 
-    m_creationStatus(ResourceStatus::NOT_SET),
-    m_status(0)
-{
-}
-
 CreateAnalysisResult::CreateAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateAnalysisResult()
 {
   *this = result;
 }
@@ -35,31 +28,29 @@ CreateAnalysisResult& CreateAnalysisResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalysisId"))
   {
     m_analysisId = jsonValue.GetString("AnalysisId");
-
+    m_analysisIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationStatus"))
   {
     m_creationStatus = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("CreationStatus"));
-
+    m_creationStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

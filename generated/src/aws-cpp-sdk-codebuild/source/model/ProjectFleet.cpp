@@ -18,13 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ProjectFleet::ProjectFleet() : 
-    m_fleetArnHasBeenSet(false)
-{
-}
-
 ProjectFleet::ProjectFleet(JsonView jsonValue)
-  : ProjectFleet()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProjectFleet& ProjectFleet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fleetArn"))
   {
     m_fleetArn = jsonValue.GetString("fleetArn");
-
     m_fleetArnHasBeenSet = true;
   }
-
   return *this;
 }
 

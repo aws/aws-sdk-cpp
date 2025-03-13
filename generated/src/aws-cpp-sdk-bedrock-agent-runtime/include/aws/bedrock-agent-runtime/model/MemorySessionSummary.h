@@ -32,7 +32,7 @@ namespace Model
   class MemorySessionSummary
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API MemorySessionSummary();
+    AWS_BEDROCKAGENTRUNTIME_API MemorySessionSummary() = default;
     AWS_BEDROCKAGENTRUNTIME_API MemorySessionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API MemorySessionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,79 +42,73 @@ namespace Model
     /**
      * <p>The unique identifier of the memory where the session summary is stored.</p>
      */
-    inline const Aws::String& GetMemoryId() const{ return m_memoryId; }
+    inline const Aws::String& GetMemoryId() const { return m_memoryId; }
     inline bool MemoryIdHasBeenSet() const { return m_memoryIdHasBeenSet; }
-    inline void SetMemoryId(const Aws::String& value) { m_memoryIdHasBeenSet = true; m_memoryId = value; }
-    inline void SetMemoryId(Aws::String&& value) { m_memoryIdHasBeenSet = true; m_memoryId = std::move(value); }
-    inline void SetMemoryId(const char* value) { m_memoryIdHasBeenSet = true; m_memoryId.assign(value); }
-    inline MemorySessionSummary& WithMemoryId(const Aws::String& value) { SetMemoryId(value); return *this;}
-    inline MemorySessionSummary& WithMemoryId(Aws::String&& value) { SetMemoryId(std::move(value)); return *this;}
-    inline MemorySessionSummary& WithMemoryId(const char* value) { SetMemoryId(value); return *this;}
+    template<typename MemoryIdT = Aws::String>
+    void SetMemoryId(MemoryIdT&& value) { m_memoryIdHasBeenSet = true; m_memoryId = std::forward<MemoryIdT>(value); }
+    template<typename MemoryIdT = Aws::String>
+    MemorySessionSummary& WithMemoryId(MemoryIdT&& value) { SetMemoryId(std::forward<MemoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the memory duration for the session is set to end.</p>
      */
-    inline const Aws::Utils::DateTime& GetSessionExpiryTime() const{ return m_sessionExpiryTime; }
+    inline const Aws::Utils::DateTime& GetSessionExpiryTime() const { return m_sessionExpiryTime; }
     inline bool SessionExpiryTimeHasBeenSet() const { return m_sessionExpiryTimeHasBeenSet; }
-    inline void SetSessionExpiryTime(const Aws::Utils::DateTime& value) { m_sessionExpiryTimeHasBeenSet = true; m_sessionExpiryTime = value; }
-    inline void SetSessionExpiryTime(Aws::Utils::DateTime&& value) { m_sessionExpiryTimeHasBeenSet = true; m_sessionExpiryTime = std::move(value); }
-    inline MemorySessionSummary& WithSessionExpiryTime(const Aws::Utils::DateTime& value) { SetSessionExpiryTime(value); return *this;}
-    inline MemorySessionSummary& WithSessionExpiryTime(Aws::Utils::DateTime&& value) { SetSessionExpiryTime(std::move(value)); return *this;}
+    template<typename SessionExpiryTimeT = Aws::Utils::DateTime>
+    void SetSessionExpiryTime(SessionExpiryTimeT&& value) { m_sessionExpiryTimeHasBeenSet = true; m_sessionExpiryTime = std::forward<SessionExpiryTimeT>(value); }
+    template<typename SessionExpiryTimeT = Aws::Utils::DateTime>
+    MemorySessionSummary& WithSessionExpiryTime(SessionExpiryTimeT&& value) { SetSessionExpiryTime(std::forward<SessionExpiryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for this session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline MemorySessionSummary& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline MemorySessionSummary& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline MemorySessionSummary& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    MemorySessionSummary& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time for this session.</p>
      */
-    inline const Aws::Utils::DateTime& GetSessionStartTime() const{ return m_sessionStartTime; }
+    inline const Aws::Utils::DateTime& GetSessionStartTime() const { return m_sessionStartTime; }
     inline bool SessionStartTimeHasBeenSet() const { return m_sessionStartTimeHasBeenSet; }
-    inline void SetSessionStartTime(const Aws::Utils::DateTime& value) { m_sessionStartTimeHasBeenSet = true; m_sessionStartTime = value; }
-    inline void SetSessionStartTime(Aws::Utils::DateTime&& value) { m_sessionStartTimeHasBeenSet = true; m_sessionStartTime = std::move(value); }
-    inline MemorySessionSummary& WithSessionStartTime(const Aws::Utils::DateTime& value) { SetSessionStartTime(value); return *this;}
-    inline MemorySessionSummary& WithSessionStartTime(Aws::Utils::DateTime&& value) { SetSessionStartTime(std::move(value)); return *this;}
+    template<typename SessionStartTimeT = Aws::Utils::DateTime>
+    void SetSessionStartTime(SessionStartTimeT&& value) { m_sessionStartTimeHasBeenSet = true; m_sessionStartTime = std::forward<SessionStartTimeT>(value); }
+    template<typename SessionStartTimeT = Aws::Utils::DateTime>
+    MemorySessionSummary& WithSessionStartTime(SessionStartTimeT&& value) { SetSessionStartTime(std::forward<SessionStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The summarized text for this session.</p>
      */
-    inline const Aws::String& GetSummaryText() const{ return m_summaryText; }
+    inline const Aws::String& GetSummaryText() const { return m_summaryText; }
     inline bool SummaryTextHasBeenSet() const { return m_summaryTextHasBeenSet; }
-    inline void SetSummaryText(const Aws::String& value) { m_summaryTextHasBeenSet = true; m_summaryText = value; }
-    inline void SetSummaryText(Aws::String&& value) { m_summaryTextHasBeenSet = true; m_summaryText = std::move(value); }
-    inline void SetSummaryText(const char* value) { m_summaryTextHasBeenSet = true; m_summaryText.assign(value); }
-    inline MemorySessionSummary& WithSummaryText(const Aws::String& value) { SetSummaryText(value); return *this;}
-    inline MemorySessionSummary& WithSummaryText(Aws::String&& value) { SetSummaryText(std::move(value)); return *this;}
-    inline MemorySessionSummary& WithSummaryText(const char* value) { SetSummaryText(value); return *this;}
+    template<typename SummaryTextT = Aws::String>
+    void SetSummaryText(SummaryTextT&& value) { m_summaryTextHasBeenSet = true; m_summaryText = std::forward<SummaryTextT>(value); }
+    template<typename SummaryTextT = Aws::String>
+    MemorySessionSummary& WithSummaryText(SummaryTextT&& value) { SetSummaryText(std::forward<SummaryTextT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_memoryId;
     bool m_memoryIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_sessionExpiryTime;
+    Aws::Utils::DateTime m_sessionExpiryTime{};
     bool m_sessionExpiryTimeHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_sessionStartTime;
+    Aws::Utils::DateTime m_sessionStartTime{};
     bool m_sessionStartTimeHasBeenSet = false;
 
     Aws::String m_summaryText;

@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetResourceConfigRequest::BatchGetResourceConfigRequest() : 
-    m_resourceKeysHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetResourceConfigRequest::SerializePayload() const
 {
   JsonValue payload;

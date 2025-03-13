@@ -18,20 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-Page::Page() : 
-    m_pageArnHasBeenSet(false),
-    m_engagementArnHasBeenSet(false),
-    m_contactArnHasBeenSet(false),
-    m_senderHasBeenSet(false),
-    m_incidentIdHasBeenSet(false),
-    m_sentTimeHasBeenSet(false),
-    m_deliveryTimeHasBeenSet(false),
-    m_readTimeHasBeenSet(false)
-{
-}
-
 Page::Page(JsonView jsonValue)
-  : Page()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ Page& Page::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PageArn"))
   {
     m_pageArn = jsonValue.GetString("PageArn");
-
     m_pageArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngagementArn"))
   {
     m_engagementArn = jsonValue.GetString("EngagementArn");
-
     m_engagementArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactArn"))
   {
     m_contactArn = jsonValue.GetString("ContactArn");
-
     m_contactArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sender"))
   {
     m_sender = jsonValue.GetString("Sender");
-
     m_senderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncidentId"))
   {
     m_incidentId = jsonValue.GetString("IncidentId");
-
     m_incidentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SentTime"))
   {
     m_sentTime = jsonValue.GetDouble("SentTime");
-
     m_sentTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryTime"))
   {
     m_deliveryTime = jsonValue.GetDouble("DeliveryTime");
-
     m_deliveryTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadTime"))
   {
     m_readTime = jsonValue.GetDouble("ReadTime");
-
     m_readTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

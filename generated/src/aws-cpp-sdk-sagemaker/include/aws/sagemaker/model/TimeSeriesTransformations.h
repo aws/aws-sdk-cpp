@@ -38,7 +38,7 @@ namespace Model
   class TimeSeriesTransformations
   {
   public:
-    AWS_SAGEMAKER_API TimeSeriesTransformations();
+    AWS_SAGEMAKER_API TimeSeriesTransformations() = default;
     AWS_SAGEMAKER_API TimeSeriesTransformations(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TimeSeriesTransformations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,18 +64,16 @@ namespace Model
      * <code>2</code>, you must include two parameters: <code>"backfill":
      * "value"</code> and <code>"backfill_value":"2"</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Map<FillingType, Aws::String>>& GetFilling() const{ return m_filling; }
+    inline const Aws::Map<Aws::String, Aws::Map<FillingType, Aws::String>>& GetFilling() const { return m_filling; }
     inline bool FillingHasBeenSet() const { return m_fillingHasBeenSet; }
-    inline void SetFilling(const Aws::Map<Aws::String, Aws::Map<FillingType, Aws::String>>& value) { m_fillingHasBeenSet = true; m_filling = value; }
-    inline void SetFilling(Aws::Map<Aws::String, Aws::Map<FillingType, Aws::String>>&& value) { m_fillingHasBeenSet = true; m_filling = std::move(value); }
-    inline TimeSeriesTransformations& WithFilling(const Aws::Map<Aws::String, Aws::Map<FillingType, Aws::String>>& value) { SetFilling(value); return *this;}
-    inline TimeSeriesTransformations& WithFilling(Aws::Map<Aws::String, Aws::Map<FillingType, Aws::String>>&& value) { SetFilling(std::move(value)); return *this;}
-    inline TimeSeriesTransformations& AddFilling(const Aws::String& key, const Aws::Map<FillingType, Aws::String>& value) { m_fillingHasBeenSet = true; m_filling.emplace(key, value); return *this; }
-    inline TimeSeriesTransformations& AddFilling(Aws::String&& key, const Aws::Map<FillingType, Aws::String>& value) { m_fillingHasBeenSet = true; m_filling.emplace(std::move(key), value); return *this; }
-    inline TimeSeriesTransformations& AddFilling(const Aws::String& key, Aws::Map<FillingType, Aws::String>&& value) { m_fillingHasBeenSet = true; m_filling.emplace(key, std::move(value)); return *this; }
-    inline TimeSeriesTransformations& AddFilling(Aws::String&& key, Aws::Map<FillingType, Aws::String>&& value) { m_fillingHasBeenSet = true; m_filling.emplace(std::move(key), std::move(value)); return *this; }
-    inline TimeSeriesTransformations& AddFilling(const char* key, Aws::Map<FillingType, Aws::String>&& value) { m_fillingHasBeenSet = true; m_filling.emplace(key, std::move(value)); return *this; }
-    inline TimeSeriesTransformations& AddFilling(const char* key, const Aws::Map<FillingType, Aws::String>& value) { m_fillingHasBeenSet = true; m_filling.emplace(key, value); return *this; }
+    template<typename FillingT = Aws::Map<Aws::String, Aws::Map<FillingType, Aws::String>>>
+    void SetFilling(FillingT&& value) { m_fillingHasBeenSet = true; m_filling = std::forward<FillingT>(value); }
+    template<typename FillingT = Aws::Map<Aws::String, Aws::Map<FillingType, Aws::String>>>
+    TimeSeriesTransformations& WithFilling(FillingT&& value) { SetFilling(std::forward<FillingT>(value)); return *this;}
+    template<typename FillingKeyT = Aws::String, typename FillingValueT = Aws::Map<FillingType, Aws::String>>
+    TimeSeriesTransformations& AddFilling(FillingKeyT&& key, FillingValueT&& value) {
+      m_fillingHasBeenSet = true; m_filling.emplace(std::forward<FillingKeyT>(key), std::forward<FillingValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -86,18 +84,15 @@ namespace Model
      * <code>first</code>, <code>min</code>, <code>max</code>.</p> 
      * <p>Aggregation is only supported for the target column.</p> 
      */
-    inline const Aws::Map<Aws::String, AggregationTransformationValue>& GetAggregation() const{ return m_aggregation; }
+    inline const Aws::Map<Aws::String, AggregationTransformationValue>& GetAggregation() const { return m_aggregation; }
     inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
-    inline void SetAggregation(const Aws::Map<Aws::String, AggregationTransformationValue>& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
-    inline void SetAggregation(Aws::Map<Aws::String, AggregationTransformationValue>&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
-    inline TimeSeriesTransformations& WithAggregation(const Aws::Map<Aws::String, AggregationTransformationValue>& value) { SetAggregation(value); return *this;}
-    inline TimeSeriesTransformations& WithAggregation(Aws::Map<Aws::String, AggregationTransformationValue>&& value) { SetAggregation(std::move(value)); return *this;}
-    inline TimeSeriesTransformations& AddAggregation(const Aws::String& key, const AggregationTransformationValue& value) { m_aggregationHasBeenSet = true; m_aggregation.emplace(key, value); return *this; }
-    inline TimeSeriesTransformations& AddAggregation(Aws::String&& key, const AggregationTransformationValue& value) { m_aggregationHasBeenSet = true; m_aggregation.emplace(std::move(key), value); return *this; }
-    inline TimeSeriesTransformations& AddAggregation(const Aws::String& key, AggregationTransformationValue&& value) { m_aggregationHasBeenSet = true; m_aggregation.emplace(key, std::move(value)); return *this; }
-    inline TimeSeriesTransformations& AddAggregation(Aws::String&& key, AggregationTransformationValue&& value) { m_aggregationHasBeenSet = true; m_aggregation.emplace(std::move(key), std::move(value)); return *this; }
-    inline TimeSeriesTransformations& AddAggregation(const char* key, AggregationTransformationValue&& value) { m_aggregationHasBeenSet = true; m_aggregation.emplace(key, std::move(value)); return *this; }
-    inline TimeSeriesTransformations& AddAggregation(const char* key, const AggregationTransformationValue& value) { m_aggregationHasBeenSet = true; m_aggregation.emplace(key, value); return *this; }
+    template<typename AggregationT = Aws::Map<Aws::String, AggregationTransformationValue>>
+    void SetAggregation(AggregationT&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::forward<AggregationT>(value); }
+    template<typename AggregationT = Aws::Map<Aws::String, AggregationTransformationValue>>
+    TimeSeriesTransformations& WithAggregation(AggregationT&& value) { SetAggregation(std::forward<AggregationT>(value)); return *this;}
+    inline TimeSeriesTransformations& AddAggregation(Aws::String key, AggregationTransformationValue value) {
+      m_aggregationHasBeenSet = true; m_aggregation.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

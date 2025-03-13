@@ -18,13 +18,7 @@ namespace FSx
 namespace Model
 {
 
-BackupFailureDetails::BackupFailureDetails() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 BackupFailureDetails::BackupFailureDetails(JsonView jsonValue)
-  : BackupFailureDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BackupFailureDetails& BackupFailureDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

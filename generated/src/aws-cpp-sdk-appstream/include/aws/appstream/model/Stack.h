@@ -39,7 +39,7 @@ namespace Model
   class Stack
   {
   public:
-    AWS_APPSTREAM_API Stack();
+    AWS_APPSTREAM_API Stack() = default;
     AWS_APPSTREAM_API Stack(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API Stack& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,96 +49,86 @@ namespace Model
     /**
      * <p>The ARN of the stack.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Stack& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Stack& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Stack& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Stack& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the stack.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Stack& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Stack& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Stack& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Stack& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description to display.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Stack& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Stack& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Stack& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Stack& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stack name to display.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline Stack& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline Stack& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline Stack& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    Stack& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the stack was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline Stack& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline Stack& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    Stack& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The storage connectors to enable.</p>
      */
-    inline const Aws::Vector<StorageConnector>& GetStorageConnectors() const{ return m_storageConnectors; }
+    inline const Aws::Vector<StorageConnector>& GetStorageConnectors() const { return m_storageConnectors; }
     inline bool StorageConnectorsHasBeenSet() const { return m_storageConnectorsHasBeenSet; }
-    inline void SetStorageConnectors(const Aws::Vector<StorageConnector>& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors = value; }
-    inline void SetStorageConnectors(Aws::Vector<StorageConnector>&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors = std::move(value); }
-    inline Stack& WithStorageConnectors(const Aws::Vector<StorageConnector>& value) { SetStorageConnectors(value); return *this;}
-    inline Stack& WithStorageConnectors(Aws::Vector<StorageConnector>&& value) { SetStorageConnectors(std::move(value)); return *this;}
-    inline Stack& AddStorageConnectors(const StorageConnector& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(value); return *this; }
-    inline Stack& AddStorageConnectors(StorageConnector&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(std::move(value)); return *this; }
+    template<typename StorageConnectorsT = Aws::Vector<StorageConnector>>
+    void SetStorageConnectors(StorageConnectorsT&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors = std::forward<StorageConnectorsT>(value); }
+    template<typename StorageConnectorsT = Aws::Vector<StorageConnector>>
+    Stack& WithStorageConnectors(StorageConnectorsT&& value) { SetStorageConnectors(std::forward<StorageConnectorsT>(value)); return *this;}
+    template<typename StorageConnectorsT = StorageConnector>
+    Stack& AddStorageConnectors(StorageConnectorsT&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.emplace_back(std::forward<StorageConnectorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
-    inline const Aws::String& GetRedirectURL() const{ return m_redirectURL; }
+    inline const Aws::String& GetRedirectURL() const { return m_redirectURL; }
     inline bool RedirectURLHasBeenSet() const { return m_redirectURLHasBeenSet; }
-    inline void SetRedirectURL(const Aws::String& value) { m_redirectURLHasBeenSet = true; m_redirectURL = value; }
-    inline void SetRedirectURL(Aws::String&& value) { m_redirectURLHasBeenSet = true; m_redirectURL = std::move(value); }
-    inline void SetRedirectURL(const char* value) { m_redirectURLHasBeenSet = true; m_redirectURL.assign(value); }
-    inline Stack& WithRedirectURL(const Aws::String& value) { SetRedirectURL(value); return *this;}
-    inline Stack& WithRedirectURL(Aws::String&& value) { SetRedirectURL(std::move(value)); return *this;}
-    inline Stack& WithRedirectURL(const char* value) { SetRedirectURL(value); return *this;}
+    template<typename RedirectURLT = Aws::String>
+    void SetRedirectURL(RedirectURLT&& value) { m_redirectURLHasBeenSet = true; m_redirectURL = std::forward<RedirectURLT>(value); }
+    template<typename RedirectURLT = Aws::String>
+    Stack& WithRedirectURL(RedirectURLT&& value) { SetRedirectURL(std::forward<RedirectURLT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,28 +136,26 @@ namespace Model
      * <p>The URL that users are redirected to after they click the Send Feedback link.
      * If no URL is specified, no Send Feedback link is displayed.</p>
      */
-    inline const Aws::String& GetFeedbackURL() const{ return m_feedbackURL; }
+    inline const Aws::String& GetFeedbackURL() const { return m_feedbackURL; }
     inline bool FeedbackURLHasBeenSet() const { return m_feedbackURLHasBeenSet; }
-    inline void SetFeedbackURL(const Aws::String& value) { m_feedbackURLHasBeenSet = true; m_feedbackURL = value; }
-    inline void SetFeedbackURL(Aws::String&& value) { m_feedbackURLHasBeenSet = true; m_feedbackURL = std::move(value); }
-    inline void SetFeedbackURL(const char* value) { m_feedbackURLHasBeenSet = true; m_feedbackURL.assign(value); }
-    inline Stack& WithFeedbackURL(const Aws::String& value) { SetFeedbackURL(value); return *this;}
-    inline Stack& WithFeedbackURL(Aws::String&& value) { SetFeedbackURL(std::move(value)); return *this;}
-    inline Stack& WithFeedbackURL(const char* value) { SetFeedbackURL(value); return *this;}
+    template<typename FeedbackURLT = Aws::String>
+    void SetFeedbackURL(FeedbackURLT&& value) { m_feedbackURLHasBeenSet = true; m_feedbackURL = std::forward<FeedbackURLT>(value); }
+    template<typename FeedbackURLT = Aws::String>
+    Stack& WithFeedbackURL(FeedbackURLT&& value) { SetFeedbackURL(std::forward<FeedbackURLT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The errors for the stack.</p>
      */
-    inline const Aws::Vector<StackError>& GetStackErrors() const{ return m_stackErrors; }
+    inline const Aws::Vector<StackError>& GetStackErrors() const { return m_stackErrors; }
     inline bool StackErrorsHasBeenSet() const { return m_stackErrorsHasBeenSet; }
-    inline void SetStackErrors(const Aws::Vector<StackError>& value) { m_stackErrorsHasBeenSet = true; m_stackErrors = value; }
-    inline void SetStackErrors(Aws::Vector<StackError>&& value) { m_stackErrorsHasBeenSet = true; m_stackErrors = std::move(value); }
-    inline Stack& WithStackErrors(const Aws::Vector<StackError>& value) { SetStackErrors(value); return *this;}
-    inline Stack& WithStackErrors(Aws::Vector<StackError>&& value) { SetStackErrors(std::move(value)); return *this;}
-    inline Stack& AddStackErrors(const StackError& value) { m_stackErrorsHasBeenSet = true; m_stackErrors.push_back(value); return *this; }
-    inline Stack& AddStackErrors(StackError&& value) { m_stackErrorsHasBeenSet = true; m_stackErrors.push_back(std::move(value)); return *this; }
+    template<typename StackErrorsT = Aws::Vector<StackError>>
+    void SetStackErrors(StackErrorsT&& value) { m_stackErrorsHasBeenSet = true; m_stackErrors = std::forward<StackErrorsT>(value); }
+    template<typename StackErrorsT = Aws::Vector<StackError>>
+    Stack& WithStackErrors(StackErrorsT&& value) { SetStackErrors(std::forward<StackErrorsT>(value)); return *this;}
+    template<typename StackErrorsT = StackError>
+    Stack& AddStackErrors(StackErrorsT&& value) { m_stackErrorsHasBeenSet = true; m_stackErrors.emplace_back(std::forward<StackErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -175,26 +163,26 @@ namespace Model
      * <p>The actions that are enabled or disabled for users during their streaming
      * sessions. By default these actions are enabled.</p>
      */
-    inline const Aws::Vector<UserSetting>& GetUserSettings() const{ return m_userSettings; }
+    inline const Aws::Vector<UserSetting>& GetUserSettings() const { return m_userSettings; }
     inline bool UserSettingsHasBeenSet() const { return m_userSettingsHasBeenSet; }
-    inline void SetUserSettings(const Aws::Vector<UserSetting>& value) { m_userSettingsHasBeenSet = true; m_userSettings = value; }
-    inline void SetUserSettings(Aws::Vector<UserSetting>&& value) { m_userSettingsHasBeenSet = true; m_userSettings = std::move(value); }
-    inline Stack& WithUserSettings(const Aws::Vector<UserSetting>& value) { SetUserSettings(value); return *this;}
-    inline Stack& WithUserSettings(Aws::Vector<UserSetting>&& value) { SetUserSettings(std::move(value)); return *this;}
-    inline Stack& AddUserSettings(const UserSetting& value) { m_userSettingsHasBeenSet = true; m_userSettings.push_back(value); return *this; }
-    inline Stack& AddUserSettings(UserSetting&& value) { m_userSettingsHasBeenSet = true; m_userSettings.push_back(std::move(value)); return *this; }
+    template<typename UserSettingsT = Aws::Vector<UserSetting>>
+    void SetUserSettings(UserSettingsT&& value) { m_userSettingsHasBeenSet = true; m_userSettings = std::forward<UserSettingsT>(value); }
+    template<typename UserSettingsT = Aws::Vector<UserSetting>>
+    Stack& WithUserSettings(UserSettingsT&& value) { SetUserSettings(std::forward<UserSettingsT>(value)); return *this;}
+    template<typename UserSettingsT = UserSetting>
+    Stack& AddUserSettings(UserSettingsT&& value) { m_userSettingsHasBeenSet = true; m_userSettings.emplace_back(std::forward<UserSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The persistent application settings for users of the stack.</p>
      */
-    inline const ApplicationSettingsResponse& GetApplicationSettings() const{ return m_applicationSettings; }
+    inline const ApplicationSettingsResponse& GetApplicationSettings() const { return m_applicationSettings; }
     inline bool ApplicationSettingsHasBeenSet() const { return m_applicationSettingsHasBeenSet; }
-    inline void SetApplicationSettings(const ApplicationSettingsResponse& value) { m_applicationSettingsHasBeenSet = true; m_applicationSettings = value; }
-    inline void SetApplicationSettings(ApplicationSettingsResponse&& value) { m_applicationSettingsHasBeenSet = true; m_applicationSettings = std::move(value); }
-    inline Stack& WithApplicationSettings(const ApplicationSettingsResponse& value) { SetApplicationSettings(value); return *this;}
-    inline Stack& WithApplicationSettings(ApplicationSettingsResponse&& value) { SetApplicationSettings(std::move(value)); return *this;}
+    template<typename ApplicationSettingsT = ApplicationSettingsResponse>
+    void SetApplicationSettings(ApplicationSettingsT&& value) { m_applicationSettingsHasBeenSet = true; m_applicationSettings = std::forward<ApplicationSettingsT>(value); }
+    template<typename ApplicationSettingsT = ApplicationSettingsResponse>
+    Stack& WithApplicationSettings(ApplicationSettingsT&& value) { SetApplicationSettings(std::forward<ApplicationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -203,14 +191,14 @@ namespace Model
      * the stack can connect to AppStream 2.0 only through the specified endpoints.
      * </p>
      */
-    inline const Aws::Vector<AccessEndpoint>& GetAccessEndpoints() const{ return m_accessEndpoints; }
+    inline const Aws::Vector<AccessEndpoint>& GetAccessEndpoints() const { return m_accessEndpoints; }
     inline bool AccessEndpointsHasBeenSet() const { return m_accessEndpointsHasBeenSet; }
-    inline void SetAccessEndpoints(const Aws::Vector<AccessEndpoint>& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints = value; }
-    inline void SetAccessEndpoints(Aws::Vector<AccessEndpoint>&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints = std::move(value); }
-    inline Stack& WithAccessEndpoints(const Aws::Vector<AccessEndpoint>& value) { SetAccessEndpoints(value); return *this;}
-    inline Stack& WithAccessEndpoints(Aws::Vector<AccessEndpoint>&& value) { SetAccessEndpoints(std::move(value)); return *this;}
-    inline Stack& AddAccessEndpoints(const AccessEndpoint& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.push_back(value); return *this; }
-    inline Stack& AddAccessEndpoints(AccessEndpoint&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.push_back(std::move(value)); return *this; }
+    template<typename AccessEndpointsT = Aws::Vector<AccessEndpoint>>
+    void SetAccessEndpoints(AccessEndpointsT&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints = std::forward<AccessEndpointsT>(value); }
+    template<typename AccessEndpointsT = Aws::Vector<AccessEndpoint>>
+    Stack& WithAccessEndpoints(AccessEndpointsT&& value) { SetAccessEndpoints(std::forward<AccessEndpointsT>(value)); return *this;}
+    template<typename AccessEndpointsT = AccessEndpoint>
+    Stack& AddAccessEndpoints(AccessEndpointsT&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.emplace_back(std::forward<AccessEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -219,15 +207,14 @@ namespace Model
      * iframe. You must approve the domains that you want to host embedded AppStream
      * 2.0 streaming sessions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEmbedHostDomains() const{ return m_embedHostDomains; }
+    inline const Aws::Vector<Aws::String>& GetEmbedHostDomains() const { return m_embedHostDomains; }
     inline bool EmbedHostDomainsHasBeenSet() const { return m_embedHostDomainsHasBeenSet; }
-    inline void SetEmbedHostDomains(const Aws::Vector<Aws::String>& value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains = value; }
-    inline void SetEmbedHostDomains(Aws::Vector<Aws::String>&& value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains = std::move(value); }
-    inline Stack& WithEmbedHostDomains(const Aws::Vector<Aws::String>& value) { SetEmbedHostDomains(value); return *this;}
-    inline Stack& WithEmbedHostDomains(Aws::Vector<Aws::String>&& value) { SetEmbedHostDomains(std::move(value)); return *this;}
-    inline Stack& AddEmbedHostDomains(const Aws::String& value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains.push_back(value); return *this; }
-    inline Stack& AddEmbedHostDomains(Aws::String&& value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains.push_back(std::move(value)); return *this; }
-    inline Stack& AddEmbedHostDomains(const char* value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains.push_back(value); return *this; }
+    template<typename EmbedHostDomainsT = Aws::Vector<Aws::String>>
+    void SetEmbedHostDomains(EmbedHostDomainsT&& value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains = std::forward<EmbedHostDomainsT>(value); }
+    template<typename EmbedHostDomainsT = Aws::Vector<Aws::String>>
+    Stack& WithEmbedHostDomains(EmbedHostDomainsT&& value) { SetEmbedHostDomains(std::forward<EmbedHostDomainsT>(value)); return *this;}
+    template<typename EmbedHostDomainsT = Aws::String>
+    Stack& AddEmbedHostDomains(EmbedHostDomainsT&& value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains.emplace_back(std::forward<EmbedHostDomainsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -235,12 +222,12 @@ namespace Model
      * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
      * Currently, UDP is only supported in the Windows native client.</p>
      */
-    inline const StreamingExperienceSettings& GetStreamingExperienceSettings() const{ return m_streamingExperienceSettings; }
+    inline const StreamingExperienceSettings& GetStreamingExperienceSettings() const { return m_streamingExperienceSettings; }
     inline bool StreamingExperienceSettingsHasBeenSet() const { return m_streamingExperienceSettingsHasBeenSet; }
-    inline void SetStreamingExperienceSettings(const StreamingExperienceSettings& value) { m_streamingExperienceSettingsHasBeenSet = true; m_streamingExperienceSettings = value; }
-    inline void SetStreamingExperienceSettings(StreamingExperienceSettings&& value) { m_streamingExperienceSettingsHasBeenSet = true; m_streamingExperienceSettings = std::move(value); }
-    inline Stack& WithStreamingExperienceSettings(const StreamingExperienceSettings& value) { SetStreamingExperienceSettings(value); return *this;}
-    inline Stack& WithStreamingExperienceSettings(StreamingExperienceSettings&& value) { SetStreamingExperienceSettings(std::move(value)); return *this;}
+    template<typename StreamingExperienceSettingsT = StreamingExperienceSettings>
+    void SetStreamingExperienceSettings(StreamingExperienceSettingsT&& value) { m_streamingExperienceSettingsHasBeenSet = true; m_streamingExperienceSettings = std::forward<StreamingExperienceSettingsT>(value); }
+    template<typename StreamingExperienceSettingsT = StreamingExperienceSettings>
+    Stack& WithStreamingExperienceSettings(StreamingExperienceSettingsT&& value) { SetStreamingExperienceSettings(std::forward<StreamingExperienceSettingsT>(value)); return *this;}
     ///@}
   private:
 
@@ -256,7 +243,7 @@ namespace Model
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
     Aws::Vector<StorageConnector> m_storageConnectors;

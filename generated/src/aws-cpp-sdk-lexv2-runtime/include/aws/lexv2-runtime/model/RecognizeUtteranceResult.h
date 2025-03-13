@@ -22,10 +22,9 @@ namespace Model
   class RecognizeUtteranceResult
   {
   public:
-    AWS_LEXRUNTIMEV2_API RecognizeUtteranceResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_LEXRUNTIMEV2_API RecognizeUtteranceResult(RecognizeUtteranceResult&&);
-    AWS_LEXRUNTIMEV2_API RecognizeUtteranceResult& operator=(RecognizeUtteranceResult&&);
+    AWS_LEXRUNTIMEV2_API RecognizeUtteranceResult() = default;
+    AWS_LEXRUNTIMEV2_API RecognizeUtteranceResult(RecognizeUtteranceResult&&) = default;
+    AWS_LEXRUNTIMEV2_API RecognizeUtteranceResult& operator=(RecognizeUtteranceResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     RecognizeUtteranceResult(const RecognizeUtteranceResult&) = delete;
@@ -42,13 +41,11 @@ namespace Model
      * <p>Indicates whether the input mode to the operation was text, speech, or from a
      * touch-tone keypad. </p>
      */
-    inline const Aws::String& GetInputMode() const{ return m_inputMode; }
-    inline void SetInputMode(const Aws::String& value) { m_inputMode = value; }
-    inline void SetInputMode(Aws::String&& value) { m_inputMode = std::move(value); }
-    inline void SetInputMode(const char* value) { m_inputMode.assign(value); }
-    inline RecognizeUtteranceResult& WithInputMode(const Aws::String& value) { SetInputMode(value); return *this;}
-    inline RecognizeUtteranceResult& WithInputMode(Aws::String&& value) { SetInputMode(std::move(value)); return *this;}
-    inline RecognizeUtteranceResult& WithInputMode(const char* value) { SetInputMode(value); return *this;}
+    inline const Aws::String& GetInputMode() const { return m_inputMode; }
+    template<typename InputModeT = Aws::String>
+    void SetInputMode(InputModeT&& value) { m_inputModeHasBeenSet = true; m_inputMode = std::forward<InputModeT>(value); }
+    template<typename InputModeT = Aws::String>
+    RecognizeUtteranceResult& WithInputMode(InputModeT&& value) { SetInputMode(std::forward<InputModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,13 +53,11 @@ namespace Model
      * <p>Content type as specified in the <code>responseContentType</code> in the
      * request.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-    inline RecognizeUtteranceResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline RecognizeUtteranceResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline RecognizeUtteranceResult& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    RecognizeUtteranceResult& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,13 +70,11 @@ namespace Model
      * contents. See the example for a simple function to decode and decompress the
      * contents.</p>
      */
-    inline const Aws::String& GetMessages() const{ return m_messages; }
-    inline void SetMessages(const Aws::String& value) { m_messages = value; }
-    inline void SetMessages(Aws::String&& value) { m_messages = std::move(value); }
-    inline void SetMessages(const char* value) { m_messages.assign(value); }
-    inline RecognizeUtteranceResult& WithMessages(const Aws::String& value) { SetMessages(value); return *this;}
-    inline RecognizeUtteranceResult& WithMessages(Aws::String&& value) { SetMessages(std::move(value)); return *this;}
-    inline RecognizeUtteranceResult& WithMessages(const char* value) { SetMessages(value); return *this;}
+    inline const Aws::String& GetMessages() const { return m_messages; }
+    template<typename MessagesT = Aws::String>
+    void SetMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages = std::forward<MessagesT>(value); }
+    template<typename MessagesT = Aws::String>
+    RecognizeUtteranceResult& WithMessages(MessagesT&& value) { SetMessages(std::forward<MessagesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,13 +88,11 @@ namespace Model
      * you must decode and decompress the contents. See the example for a simple
      * function to decode and decompress the contents.</p>
      */
-    inline const Aws::String& GetInterpretations() const{ return m_interpretations; }
-    inline void SetInterpretations(const Aws::String& value) { m_interpretations = value; }
-    inline void SetInterpretations(Aws::String&& value) { m_interpretations = std::move(value); }
-    inline void SetInterpretations(const char* value) { m_interpretations.assign(value); }
-    inline RecognizeUtteranceResult& WithInterpretations(const Aws::String& value) { SetInterpretations(value); return *this;}
-    inline RecognizeUtteranceResult& WithInterpretations(Aws::String&& value) { SetInterpretations(std::move(value)); return *this;}
-    inline RecognizeUtteranceResult& WithInterpretations(const char* value) { SetInterpretations(value); return *this;}
+    inline const Aws::String& GetInterpretations() const { return m_interpretations; }
+    template<typename InterpretationsT = Aws::String>
+    void SetInterpretations(InterpretationsT&& value) { m_interpretationsHasBeenSet = true; m_interpretations = std::forward<InterpretationsT>(value); }
+    template<typename InterpretationsT = Aws::String>
+    RecognizeUtteranceResult& WithInterpretations(InterpretationsT&& value) { SetInterpretations(std::forward<InterpretationsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,13 +104,11 @@ namespace Model
      * must decode and decompress the contents. See the example for a simple function
      * to decode and decompress the contents.</p>
      */
-    inline const Aws::String& GetSessionState() const{ return m_sessionState; }
-    inline void SetSessionState(const Aws::String& value) { m_sessionState = value; }
-    inline void SetSessionState(Aws::String&& value) { m_sessionState = std::move(value); }
-    inline void SetSessionState(const char* value) { m_sessionState.assign(value); }
-    inline RecognizeUtteranceResult& WithSessionState(const Aws::String& value) { SetSessionState(value); return *this;}
-    inline RecognizeUtteranceResult& WithSessionState(Aws::String&& value) { SetSessionState(std::move(value)); return *this;}
-    inline RecognizeUtteranceResult& WithSessionState(const char* value) { SetSessionState(value); return *this;}
+    inline const Aws::String& GetSessionState() const { return m_sessionState; }
+    template<typename SessionStateT = Aws::String>
+    void SetSessionState(SessionStateT&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::forward<SessionStateT>(value); }
+    template<typename SessionStateT = Aws::String>
+    RecognizeUtteranceResult& WithSessionState(SessionStateT&& value) { SetSessionState(std::forward<SessionStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,26 +117,22 @@ namespace Model
      * field is compressed with gzip and then base64 encoded. Before you can use the
      * contents of the field, you must decode and decompress the contents.</p>
      */
-    inline const Aws::String& GetRequestAttributes() const{ return m_requestAttributes; }
-    inline void SetRequestAttributes(const Aws::String& value) { m_requestAttributes = value; }
-    inline void SetRequestAttributes(Aws::String&& value) { m_requestAttributes = std::move(value); }
-    inline void SetRequestAttributes(const char* value) { m_requestAttributes.assign(value); }
-    inline RecognizeUtteranceResult& WithRequestAttributes(const Aws::String& value) { SetRequestAttributes(value); return *this;}
-    inline RecognizeUtteranceResult& WithRequestAttributes(Aws::String&& value) { SetRequestAttributes(std::move(value)); return *this;}
-    inline RecognizeUtteranceResult& WithRequestAttributes(const char* value) { SetRequestAttributes(value); return *this;}
+    inline const Aws::String& GetRequestAttributes() const { return m_requestAttributes; }
+    template<typename RequestAttributesT = Aws::String>
+    void SetRequestAttributes(RequestAttributesT&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::forward<RequestAttributesT>(value); }
+    template<typename RequestAttributesT = Aws::String>
+    RecognizeUtteranceResult& WithRequestAttributes(RequestAttributesT&& value) { SetRequestAttributes(std::forward<RequestAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the session in use.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-    inline RecognizeUtteranceResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline RecognizeUtteranceResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline RecognizeUtteranceResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    RecognizeUtteranceResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,13 +147,11 @@ namespace Model
      * decompress the contents. See the example for a simple function to decode and
      * decompress the contents.</p>
      */
-    inline const Aws::String& GetInputTranscript() const{ return m_inputTranscript; }
-    inline void SetInputTranscript(const Aws::String& value) { m_inputTranscript = value; }
-    inline void SetInputTranscript(Aws::String&& value) { m_inputTranscript = std::move(value); }
-    inline void SetInputTranscript(const char* value) { m_inputTranscript.assign(value); }
-    inline RecognizeUtteranceResult& WithInputTranscript(const Aws::String& value) { SetInputTranscript(value); return *this;}
-    inline RecognizeUtteranceResult& WithInputTranscript(Aws::String&& value) { SetInputTranscript(std::move(value)); return *this;}
-    inline RecognizeUtteranceResult& WithInputTranscript(const char* value) { SetInputTranscript(value); return *this;}
+    inline const Aws::String& GetInputTranscript() const { return m_inputTranscript; }
+    template<typename InputTranscriptT = Aws::String>
+    void SetInputTranscript(InputTranscriptT&& value) { m_inputTranscriptHasBeenSet = true; m_inputTranscript = std::forward<InputTranscriptT>(value); }
+    template<typename InputTranscriptT = Aws::String>
+    RecognizeUtteranceResult& WithInputTranscript(InputTranscriptT&& value) { SetInputTranscript(std::forward<InputTranscriptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,48 +173,55 @@ namespace Model
     /**
      * <p>The bot member that recognized the utterance.</p>
      */
-    inline const Aws::String& GetRecognizedBotMember() const{ return m_recognizedBotMember; }
-    inline void SetRecognizedBotMember(const Aws::String& value) { m_recognizedBotMember = value; }
-    inline void SetRecognizedBotMember(Aws::String&& value) { m_recognizedBotMember = std::move(value); }
-    inline void SetRecognizedBotMember(const char* value) { m_recognizedBotMember.assign(value); }
-    inline RecognizeUtteranceResult& WithRecognizedBotMember(const Aws::String& value) { SetRecognizedBotMember(value); return *this;}
-    inline RecognizeUtteranceResult& WithRecognizedBotMember(Aws::String&& value) { SetRecognizedBotMember(std::move(value)); return *this;}
-    inline RecognizeUtteranceResult& WithRecognizedBotMember(const char* value) { SetRecognizedBotMember(value); return *this;}
+    inline const Aws::String& GetRecognizedBotMember() const { return m_recognizedBotMember; }
+    template<typename RecognizedBotMemberT = Aws::String>
+    void SetRecognizedBotMember(RecognizedBotMemberT&& value) { m_recognizedBotMemberHasBeenSet = true; m_recognizedBotMember = std::forward<RecognizedBotMemberT>(value); }
+    template<typename RecognizedBotMemberT = Aws::String>
+    RecognizeUtteranceResult& WithRecognizedBotMember(RecognizedBotMemberT&& value) { SetRecognizedBotMember(std::forward<RecognizedBotMemberT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RecognizeUtteranceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RecognizeUtteranceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RecognizeUtteranceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RecognizeUtteranceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_inputMode;
+    bool m_inputModeHasBeenSet = false;
 
     Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_messages;
+    bool m_messagesHasBeenSet = false;
 
     Aws::String m_interpretations;
+    bool m_interpretationsHasBeenSet = false;
 
     Aws::String m_sessionState;
+    bool m_sessionStateHasBeenSet = false;
 
     Aws::String m_requestAttributes;
+    bool m_requestAttributesHasBeenSet = false;
 
     Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_inputTranscript;
+    bool m_inputTranscriptHasBeenSet = false;
 
-    Aws::Utils::Stream::ResponseStream m_audioStream;
+    Aws::Utils::Stream::ResponseStream m_audioStream{};
+    bool m_audioStreamHasBeenSet = false;
 
     Aws::String m_recognizedBotMember;
+    bool m_recognizedBotMemberHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

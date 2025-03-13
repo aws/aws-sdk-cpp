@@ -12,10 +12,6 @@ using namespace Aws::SupportApp::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccountAliasRequest::GetAccountAliasRequest()
-{
-}
-
 Aws::String GetAccountAliasRequest::SerializePayload() const
 {
   return {};

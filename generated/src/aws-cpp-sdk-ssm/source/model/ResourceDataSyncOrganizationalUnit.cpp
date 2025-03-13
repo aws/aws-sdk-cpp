@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ResourceDataSyncOrganizationalUnit::ResourceDataSyncOrganizationalUnit() : 
-    m_organizationalUnitIdHasBeenSet(false)
-{
-}
-
 ResourceDataSyncOrganizationalUnit::ResourceDataSyncOrganizationalUnit(JsonView jsonValue)
-  : ResourceDataSyncOrganizationalUnit()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceDataSyncOrganizationalUnit& ResourceDataSyncOrganizationalUnit::operator
   if(jsonValue.ValueExists("OrganizationalUnitId"))
   {
     m_organizationalUnitId = jsonValue.GetString("OrganizationalUnitId");
-
     m_organizationalUnitIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class DestinationConfig
   {
   public:
-    AWS_IOTSECURETUNNELING_API DestinationConfig();
+    AWS_IOTSECURETUNNELING_API DestinationConfig() = default;
     AWS_IOTSECURETUNNELING_API DestinationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSECURETUNNELING_API DestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSECURETUNNELING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the IoT thing to which you want to connect.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline DestinationConfig& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline DestinationConfig& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline DestinationConfig& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    DestinationConfig& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,15 +57,14 @@ namespace Model
      * or an IP address and a port. The IoT client instantiates the local proxy, which
      * uses this information to connect to the destination application.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetServices() const{ return m_services; }
+    inline const Aws::Vector<Aws::String>& GetServices() const { return m_services; }
     inline bool ServicesHasBeenSet() const { return m_servicesHasBeenSet; }
-    inline void SetServices(const Aws::Vector<Aws::String>& value) { m_servicesHasBeenSet = true; m_services = value; }
-    inline void SetServices(Aws::Vector<Aws::String>&& value) { m_servicesHasBeenSet = true; m_services = std::move(value); }
-    inline DestinationConfig& WithServices(const Aws::Vector<Aws::String>& value) { SetServices(value); return *this;}
-    inline DestinationConfig& WithServices(Aws::Vector<Aws::String>&& value) { SetServices(std::move(value)); return *this;}
-    inline DestinationConfig& AddServices(const Aws::String& value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
-    inline DestinationConfig& AddServices(Aws::String&& value) { m_servicesHasBeenSet = true; m_services.push_back(std::move(value)); return *this; }
-    inline DestinationConfig& AddServices(const char* value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
+    template<typename ServicesT = Aws::Vector<Aws::String>>
+    void SetServices(ServicesT&& value) { m_servicesHasBeenSet = true; m_services = std::forward<ServicesT>(value); }
+    template<typename ServicesT = Aws::Vector<Aws::String>>
+    DestinationConfig& WithServices(ServicesT&& value) { SetServices(std::forward<ServicesT>(value)); return *this;}
+    template<typename ServicesT = Aws::String>
+    DestinationConfig& AddServices(ServicesT&& value) { m_servicesHasBeenSet = true; m_services.emplace_back(std::forward<ServicesT>(value)); return *this; }
     ///@}
   private:
 

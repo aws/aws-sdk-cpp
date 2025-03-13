@@ -37,7 +37,7 @@ namespace Model
   class FileCacheDataRepositoryAssociation
   {
   public:
-    AWS_FSX_API FileCacheDataRepositoryAssociation();
+    AWS_FSX_API FileCacheDataRepositoryAssociation() = default;
     AWS_FSX_API FileCacheDataRepositoryAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API FileCacheDataRepositoryAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,14 +59,12 @@ namespace Model
      * as the cache path, you can create only one DRA on the cache.</p> <p>The cache
      * path cannot be set to root (/) for an S3 DRA.</p> 
      */
-    inline const Aws::String& GetFileCachePath() const{ return m_fileCachePath; }
+    inline const Aws::String& GetFileCachePath() const { return m_fileCachePath; }
     inline bool FileCachePathHasBeenSet() const { return m_fileCachePathHasBeenSet; }
-    inline void SetFileCachePath(const Aws::String& value) { m_fileCachePathHasBeenSet = true; m_fileCachePath = value; }
-    inline void SetFileCachePath(Aws::String&& value) { m_fileCachePathHasBeenSet = true; m_fileCachePath = std::move(value); }
-    inline void SetFileCachePath(const char* value) { m_fileCachePathHasBeenSet = true; m_fileCachePath.assign(value); }
-    inline FileCacheDataRepositoryAssociation& WithFileCachePath(const Aws::String& value) { SetFileCachePath(value); return *this;}
-    inline FileCacheDataRepositoryAssociation& WithFileCachePath(Aws::String&& value) { SetFileCachePath(std::move(value)); return *this;}
-    inline FileCacheDataRepositoryAssociation& WithFileCachePath(const char* value) { SetFileCachePath(value); return *this;}
+    template<typename FileCachePathT = Aws::String>
+    void SetFileCachePath(FileCachePathT&& value) { m_fileCachePathHasBeenSet = true; m_fileCachePath = std::forward<FileCachePathT>(value); }
+    template<typename FileCachePathT = Aws::String>
+    FileCacheDataRepositoryAssociation& WithFileCachePath(FileCachePathT&& value) { SetFileCachePath(std::forward<FileCachePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +84,12 @@ namespace Model
      * in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code>
      * is optional).</p> </li> </ul>
      */
-    inline const Aws::String& GetDataRepositoryPath() const{ return m_dataRepositoryPath; }
+    inline const Aws::String& GetDataRepositoryPath() const { return m_dataRepositoryPath; }
     inline bool DataRepositoryPathHasBeenSet() const { return m_dataRepositoryPathHasBeenSet; }
-    inline void SetDataRepositoryPath(const Aws::String& value) { m_dataRepositoryPathHasBeenSet = true; m_dataRepositoryPath = value; }
-    inline void SetDataRepositoryPath(Aws::String&& value) { m_dataRepositoryPathHasBeenSet = true; m_dataRepositoryPath = std::move(value); }
-    inline void SetDataRepositoryPath(const char* value) { m_dataRepositoryPathHasBeenSet = true; m_dataRepositoryPath.assign(value); }
-    inline FileCacheDataRepositoryAssociation& WithDataRepositoryPath(const Aws::String& value) { SetDataRepositoryPath(value); return *this;}
-    inline FileCacheDataRepositoryAssociation& WithDataRepositoryPath(Aws::String&& value) { SetDataRepositoryPath(std::move(value)); return *this;}
-    inline FileCacheDataRepositoryAssociation& WithDataRepositoryPath(const char* value) { SetDataRepositoryPath(value); return *this;}
+    template<typename DataRepositoryPathT = Aws::String>
+    void SetDataRepositoryPath(DataRepositoryPathT&& value) { m_dataRepositoryPathHasBeenSet = true; m_dataRepositoryPath = std::forward<DataRepositoryPathT>(value); }
+    template<typename DataRepositoryPathT = Aws::String>
+    FileCacheDataRepositoryAssociation& WithDataRepositoryPath(DataRepositoryPathT&& value) { SetDataRepositoryPath(std::forward<DataRepositoryPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,15 +102,14 @@ namespace Model
      * <code>DataRepositorySubdirectories</code> is not supported for S3 data
      * repositories.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDataRepositorySubdirectories() const{ return m_dataRepositorySubdirectories; }
+    inline const Aws::Vector<Aws::String>& GetDataRepositorySubdirectories() const { return m_dataRepositorySubdirectories; }
     inline bool DataRepositorySubdirectoriesHasBeenSet() const { return m_dataRepositorySubdirectoriesHasBeenSet; }
-    inline void SetDataRepositorySubdirectories(const Aws::Vector<Aws::String>& value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories = value; }
-    inline void SetDataRepositorySubdirectories(Aws::Vector<Aws::String>&& value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories = std::move(value); }
-    inline FileCacheDataRepositoryAssociation& WithDataRepositorySubdirectories(const Aws::Vector<Aws::String>& value) { SetDataRepositorySubdirectories(value); return *this;}
-    inline FileCacheDataRepositoryAssociation& WithDataRepositorySubdirectories(Aws::Vector<Aws::String>&& value) { SetDataRepositorySubdirectories(std::move(value)); return *this;}
-    inline FileCacheDataRepositoryAssociation& AddDataRepositorySubdirectories(const Aws::String& value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories.push_back(value); return *this; }
-    inline FileCacheDataRepositoryAssociation& AddDataRepositorySubdirectories(Aws::String&& value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories.push_back(std::move(value)); return *this; }
-    inline FileCacheDataRepositoryAssociation& AddDataRepositorySubdirectories(const char* value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories.push_back(value); return *this; }
+    template<typename DataRepositorySubdirectoriesT = Aws::Vector<Aws::String>>
+    void SetDataRepositorySubdirectories(DataRepositorySubdirectoriesT&& value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories = std::forward<DataRepositorySubdirectoriesT>(value); }
+    template<typename DataRepositorySubdirectoriesT = Aws::Vector<Aws::String>>
+    FileCacheDataRepositoryAssociation& WithDataRepositorySubdirectories(DataRepositorySubdirectoriesT&& value) { SetDataRepositorySubdirectories(std::forward<DataRepositorySubdirectoriesT>(value)); return *this;}
+    template<typename DataRepositorySubdirectoriesT = Aws::String>
+    FileCacheDataRepositoryAssociation& AddDataRepositorySubdirectories(DataRepositorySubdirectoriesT&& value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories.emplace_back(std::forward<DataRepositorySubdirectoriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -122,12 +117,12 @@ namespace Model
      * <p>The configuration for a data repository association that links an Amazon File
      * Cache resource to an NFS data repository.</p>
      */
-    inline const FileCacheNFSConfiguration& GetNFS() const{ return m_nFS; }
+    inline const FileCacheNFSConfiguration& GetNFS() const { return m_nFS; }
     inline bool NFSHasBeenSet() const { return m_nFSHasBeenSet; }
-    inline void SetNFS(const FileCacheNFSConfiguration& value) { m_nFSHasBeenSet = true; m_nFS = value; }
-    inline void SetNFS(FileCacheNFSConfiguration&& value) { m_nFSHasBeenSet = true; m_nFS = std::move(value); }
-    inline FileCacheDataRepositoryAssociation& WithNFS(const FileCacheNFSConfiguration& value) { SetNFS(value); return *this;}
-    inline FileCacheDataRepositoryAssociation& WithNFS(FileCacheNFSConfiguration&& value) { SetNFS(std::move(value)); return *this;}
+    template<typename NFST = FileCacheNFSConfiguration>
+    void SetNFS(NFST&& value) { m_nFSHasBeenSet = true; m_nFS = std::forward<NFST>(value); }
+    template<typename NFST = FileCacheNFSConfiguration>
+    FileCacheDataRepositoryAssociation& WithNFS(NFST&& value) { SetNFS(std::forward<NFST>(value)); return *this;}
     ///@}
   private:
 

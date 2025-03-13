@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisableHttpEndpointResult::DisableHttpEndpointResult() : 
-    m_httpEndpointEnabled(false)
-{
-}
-
 DisableHttpEndpointResult::DisableHttpEndpointResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DisableHttpEndpointResult()
 {
   *this = result;
 }
@@ -44,17 +38,20 @@ DisableHttpEndpointResult& DisableHttpEndpointResult::operator =(const Aws::Amaz
     if(!resourceArnNode.IsNull())
     {
       m_resourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(resourceArnNode.GetText());
+      m_resourceArnHasBeenSet = true;
     }
     XmlNode httpEndpointEnabledNode = resultNode.FirstChild("HttpEndpointEnabled");
     if(!httpEndpointEnabledNode.IsNull())
     {
       m_httpEndpointEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpEndpointEnabledNode.GetText()).c_str()).c_str());
+      m_httpEndpointEnabledHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DisableHttpEndpointResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

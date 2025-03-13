@@ -30,7 +30,7 @@ namespace Model
   class NoAuthConfiguration
   {
   public:
-    AWS_QBUSINESS_API NoAuthConfiguration();
+    AWS_QBUSINESS_API NoAuthConfiguration() = default;
     AWS_QBUSINESS_API NoAuthConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API NoAuthConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;

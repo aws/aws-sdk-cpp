@@ -12,11 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApnsVoipSandboxChannelRequest::DeleteApnsVoipSandboxChannelRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApnsVoipSandboxChannelRequest::SerializePayload() const
 {
   return {};

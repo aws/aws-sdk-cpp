@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RejectAccountLinkInvitationRequest::RejectAccountLinkInvitationRequest() : 
-    m_linkIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String RejectAccountLinkInvitationRequest::SerializePayload() const
 {
   JsonValue payload;

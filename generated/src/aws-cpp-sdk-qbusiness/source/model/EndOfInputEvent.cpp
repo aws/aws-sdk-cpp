@@ -18,10 +18,6 @@ namespace QBusiness
 namespace Model
 {
 
-EndOfInputEvent::EndOfInputEvent()
-{
-}
-
 EndOfInputEvent::EndOfInputEvent(JsonView jsonValue)
 {
   *this = jsonValue;

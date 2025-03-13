@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobTimers::JobTimers() : 
-    m_elapsedTimeInActiveSeconds(0),
-    m_elapsedTimeInActiveSecondsHasBeenSet(false)
-{
-}
-
 JobTimers::JobTimers(const XmlNode& xmlNode)
-  : JobTimers()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ JobTimers& JobTimers::operator =(const XmlNode& xmlNode)
     {
       m_elapsedTimeInActiveSeconds = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(elapsedTimeInActiveSecondsNode.GetText()).c_str()).c_str());
       m_elapsedTimeInActiveSecondsHasBeenSet = true;
+       m_elapsedTimeInActiveSecondsHasBeenSet = true;
     }
   }
 

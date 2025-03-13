@@ -27,7 +27,7 @@ namespace Model
   class CreateConnectionAliasResult
   {
   public:
-    AWS_WORKSPACES_API CreateConnectionAliasResult();
+    AWS_WORKSPACES_API CreateConnectionAliasResult() = default;
     AWS_WORKSPACES_API CreateConnectionAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API CreateConnectionAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The identifier of the connection alias.</p>
      */
-    inline const Aws::String& GetAliasId() const{ return m_aliasId; }
-    inline void SetAliasId(const Aws::String& value) { m_aliasId = value; }
-    inline void SetAliasId(Aws::String&& value) { m_aliasId = std::move(value); }
-    inline void SetAliasId(const char* value) { m_aliasId.assign(value); }
-    inline CreateConnectionAliasResult& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
-    inline CreateConnectionAliasResult& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
-    inline CreateConnectionAliasResult& WithAliasId(const char* value) { SetAliasId(value); return *this;}
+    inline const Aws::String& GetAliasId() const { return m_aliasId; }
+    template<typename AliasIdT = Aws::String>
+    void SetAliasId(AliasIdT&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::forward<AliasIdT>(value); }
+    template<typename AliasIdT = Aws::String>
+    CreateConnectionAliasResult& WithAliasId(AliasIdT&& value) { SetAliasId(std::forward<AliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateConnectionAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateConnectionAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateConnectionAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateConnectionAliasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_aliasId;
+    bool m_aliasIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

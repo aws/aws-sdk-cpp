@@ -21,7 +21,7 @@ namespace Model
   class DescribeAuthenticationProfileRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API DescribeAuthenticationProfileRequest();
+    AWS_CONNECT_API DescribeAuthenticationProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>A unique identifier for the authentication profile. </p>
      */
-    inline const Aws::String& GetAuthenticationProfileId() const{ return m_authenticationProfileId; }
+    inline const Aws::String& GetAuthenticationProfileId() const { return m_authenticationProfileId; }
     inline bool AuthenticationProfileIdHasBeenSet() const { return m_authenticationProfileIdHasBeenSet; }
-    inline void SetAuthenticationProfileId(const Aws::String& value) { m_authenticationProfileIdHasBeenSet = true; m_authenticationProfileId = value; }
-    inline void SetAuthenticationProfileId(Aws::String&& value) { m_authenticationProfileIdHasBeenSet = true; m_authenticationProfileId = std::move(value); }
-    inline void SetAuthenticationProfileId(const char* value) { m_authenticationProfileIdHasBeenSet = true; m_authenticationProfileId.assign(value); }
-    inline DescribeAuthenticationProfileRequest& WithAuthenticationProfileId(const Aws::String& value) { SetAuthenticationProfileId(value); return *this;}
-    inline DescribeAuthenticationProfileRequest& WithAuthenticationProfileId(Aws::String&& value) { SetAuthenticationProfileId(std::move(value)); return *this;}
-    inline DescribeAuthenticationProfileRequest& WithAuthenticationProfileId(const char* value) { SetAuthenticationProfileId(value); return *this;}
+    template<typename AuthenticationProfileIdT = Aws::String>
+    void SetAuthenticationProfileId(AuthenticationProfileIdT&& value) { m_authenticationProfileIdHasBeenSet = true; m_authenticationProfileId = std::forward<AuthenticationProfileIdT>(value); }
+    template<typename AuthenticationProfileIdT = Aws::String>
+    DescribeAuthenticationProfileRequest& WithAuthenticationProfileId(AuthenticationProfileIdT&& value) { SetAuthenticationProfileId(std::forward<AuthenticationProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +50,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline DescribeAuthenticationProfileRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline DescribeAuthenticationProfileRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline DescribeAuthenticationProfileRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    DescribeAuthenticationProfileRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
   private:
 

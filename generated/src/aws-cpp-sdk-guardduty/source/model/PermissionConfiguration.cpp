@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-PermissionConfiguration::PermissionConfiguration() : 
-    m_bucketLevelPermissionsHasBeenSet(false),
-    m_accountLevelPermissionsHasBeenSet(false)
-{
-}
-
 PermissionConfiguration::PermissionConfiguration(JsonView jsonValue)
-  : PermissionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PermissionConfiguration& PermissionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketLevelPermissions"))
   {
     m_bucketLevelPermissions = jsonValue.GetObject("bucketLevelPermissions");
-
     m_bucketLevelPermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountLevelPermissions"))
   {
     m_accountLevelPermissions = jsonValue.GetObject("accountLevelPermissions");
-
     m_accountLevelPermissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

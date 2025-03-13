@@ -12,28 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateOpsItemRequest::UpdateOpsItemRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_operationalDataHasBeenSet(false),
-    m_operationalDataToDeleteHasBeenSet(false),
-    m_notificationsHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_relatedOpsItemsHasBeenSet(false),
-    m_status(OpsItemStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_opsItemIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_actualStartTimeHasBeenSet(false),
-    m_actualEndTimeHasBeenSet(false),
-    m_plannedStartTimeHasBeenSet(false),
-    m_plannedEndTimeHasBeenSet(false),
-    m_opsItemArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateOpsItemRequest::SerializePayload() const
 {
   JsonValue payload;

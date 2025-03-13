@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdatePackageGroupOriginConfigurationRequest::UpdatePackageGroupOriginConfigurationRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_packageGroupHasBeenSet(false),
-    m_restrictionsHasBeenSet(false),
-    m_addAllowedRepositoriesHasBeenSet(false),
-    m_removeAllowedRepositoriesHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePackageGroupOriginConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

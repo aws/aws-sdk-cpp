@@ -12,12 +12,6 @@ using namespace Aws::TaxSettings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTaxRegistrationDocumentRequest::GetTaxRegistrationDocumentRequest() : 
-    m_destinationS3LocationHasBeenSet(false),
-    m_taxDocumentMetadataHasBeenSet(false)
-{
-}
-
 Aws::String GetTaxRegistrationDocumentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeInstanceTypeLimitsRequest::DescribeInstanceTypeLimitsRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_instanceType(OpenSearchPartitionInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInstanceTypeLimitsRequest::SerializePayload() const
 {
   return {};

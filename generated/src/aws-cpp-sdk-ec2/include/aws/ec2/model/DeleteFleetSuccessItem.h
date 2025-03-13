@@ -33,7 +33,7 @@ namespace Model
   class DeleteFleetSuccessItem
   {
   public:
-    AWS_EC2_API DeleteFleetSuccessItem();
+    AWS_EC2_API DeleteFleetSuccessItem() = default;
     AWS_EC2_API DeleteFleetSuccessItem(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DeleteFleetSuccessItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,45 +45,39 @@ namespace Model
     /**
      * <p>The current state of the EC2 Fleet.</p>
      */
-    inline const FleetStateCode& GetCurrentFleetState() const{ return m_currentFleetState; }
+    inline FleetStateCode GetCurrentFleetState() const { return m_currentFleetState; }
     inline bool CurrentFleetStateHasBeenSet() const { return m_currentFleetStateHasBeenSet; }
-    inline void SetCurrentFleetState(const FleetStateCode& value) { m_currentFleetStateHasBeenSet = true; m_currentFleetState = value; }
-    inline void SetCurrentFleetState(FleetStateCode&& value) { m_currentFleetStateHasBeenSet = true; m_currentFleetState = std::move(value); }
-    inline DeleteFleetSuccessItem& WithCurrentFleetState(const FleetStateCode& value) { SetCurrentFleetState(value); return *this;}
-    inline DeleteFleetSuccessItem& WithCurrentFleetState(FleetStateCode&& value) { SetCurrentFleetState(std::move(value)); return *this;}
+    inline void SetCurrentFleetState(FleetStateCode value) { m_currentFleetStateHasBeenSet = true; m_currentFleetState = value; }
+    inline DeleteFleetSuccessItem& WithCurrentFleetState(FleetStateCode value) { SetCurrentFleetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The previous state of the EC2 Fleet.</p>
      */
-    inline const FleetStateCode& GetPreviousFleetState() const{ return m_previousFleetState; }
+    inline FleetStateCode GetPreviousFleetState() const { return m_previousFleetState; }
     inline bool PreviousFleetStateHasBeenSet() const { return m_previousFleetStateHasBeenSet; }
-    inline void SetPreviousFleetState(const FleetStateCode& value) { m_previousFleetStateHasBeenSet = true; m_previousFleetState = value; }
-    inline void SetPreviousFleetState(FleetStateCode&& value) { m_previousFleetStateHasBeenSet = true; m_previousFleetState = std::move(value); }
-    inline DeleteFleetSuccessItem& WithPreviousFleetState(const FleetStateCode& value) { SetPreviousFleetState(value); return *this;}
-    inline DeleteFleetSuccessItem& WithPreviousFleetState(FleetStateCode&& value) { SetPreviousFleetState(std::move(value)); return *this;}
+    inline void SetPreviousFleetState(FleetStateCode value) { m_previousFleetStateHasBeenSet = true; m_previousFleetState = value; }
+    inline DeleteFleetSuccessItem& WithPreviousFleetState(FleetStateCode value) { SetPreviousFleetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the EC2 Fleet.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline DeleteFleetSuccessItem& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline DeleteFleetSuccessItem& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline DeleteFleetSuccessItem& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    DeleteFleetSuccessItem& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
   private:
 
-    FleetStateCode m_currentFleetState;
+    FleetStateCode m_currentFleetState{FleetStateCode::NOT_SET};
     bool m_currentFleetStateHasBeenSet = false;
 
-    FleetStateCode m_previousFleetState;
+    FleetStateCode m_previousFleetState{FleetStateCode::NOT_SET};
     bool m_previousFleetStateHasBeenSet = false;
 
     Aws::String m_fleetId;

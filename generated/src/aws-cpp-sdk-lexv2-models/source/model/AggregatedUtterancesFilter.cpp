@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AggregatedUtterancesFilter::AggregatedUtterancesFilter() : 
-    m_name(AggregatedUtterancesFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(AggregatedUtterancesFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 AggregatedUtterancesFilter::AggregatedUtterancesFilter(JsonView jsonValue)
-  : AggregatedUtterancesFilter()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ AggregatedUtterancesFilter& AggregatedUtterancesFilter::operator =(JsonView json
   if(jsonValue.ValueExists("name"))
   {
     m_name = AggregatedUtterancesFilterNameMapper::GetAggregatedUtterancesFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -51,14 +39,11 @@ AggregatedUtterancesFilter& AggregatedUtterancesFilter::operator =(JsonView json
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = AggregatedUtterancesFilterOperatorMapper::GetAggregatedUtterancesFilterOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

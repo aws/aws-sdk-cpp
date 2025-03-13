@@ -26,7 +26,7 @@ namespace Model
   class GetClusterCredentialsRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API GetClusterCredentialsRequest();
+    AWS_REDSHIFT_API GetClusterCredentialsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -64,14 +64,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
-    inline const Aws::String& GetDbUser() const{ return m_dbUser; }
+    inline const Aws::String& GetDbUser() const { return m_dbUser; }
     inline bool DbUserHasBeenSet() const { return m_dbUserHasBeenSet; }
-    inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
-    inline void SetDbUser(Aws::String&& value) { m_dbUserHasBeenSet = true; m_dbUser = std::move(value); }
-    inline void SetDbUser(const char* value) { m_dbUserHasBeenSet = true; m_dbUser.assign(value); }
-    inline GetClusterCredentialsRequest& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
-    inline GetClusterCredentialsRequest& WithDbUser(Aws::String&& value) { SetDbUser(std::move(value)); return *this;}
-    inline GetClusterCredentialsRequest& WithDbUser(const char* value) { SetDbUser(value); return *this;}
+    template<typename DbUserT = Aws::String>
+    void SetDbUser(DbUserT&& value) { m_dbUserHasBeenSet = true; m_dbUser = std::forward<DbUserT>(value); }
+    template<typename DbUserT = Aws::String>
+    GetClusterCredentialsRequest& WithDbUser(DbUserT&& value) { SetDbUser(std::forward<DbUserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +85,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
-    inline const Aws::String& GetDbName() const{ return m_dbName; }
+    inline const Aws::String& GetDbName() const { return m_dbName; }
     inline bool DbNameHasBeenSet() const { return m_dbNameHasBeenSet; }
-    inline void SetDbName(const Aws::String& value) { m_dbNameHasBeenSet = true; m_dbName = value; }
-    inline void SetDbName(Aws::String&& value) { m_dbNameHasBeenSet = true; m_dbName = std::move(value); }
-    inline void SetDbName(const char* value) { m_dbNameHasBeenSet = true; m_dbName.assign(value); }
-    inline GetClusterCredentialsRequest& WithDbName(const Aws::String& value) { SetDbName(value); return *this;}
-    inline GetClusterCredentialsRequest& WithDbName(Aws::String&& value) { SetDbName(std::move(value)); return *this;}
-    inline GetClusterCredentialsRequest& WithDbName(const char* value) { SetDbName(value); return *this;}
+    template<typename DbNameT = Aws::String>
+    void SetDbName(DbNameT&& value) { m_dbNameHasBeenSet = true; m_dbName = std::forward<DbNameT>(value); }
+    template<typename DbNameT = Aws::String>
+    GetClusterCredentialsRequest& WithDbName(DbNameT&& value) { SetDbName(std::forward<DbNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +98,12 @@ namespace Model
      * <p>The unique identifier of the cluster that contains the database for which you
      * are requesting credentials. This parameter is case sensitive.</p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline GetClusterCredentialsRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline GetClusterCredentialsRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline GetClusterCredentialsRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    GetClusterCredentialsRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,7 +111,7 @@ namespace Model
      * <p>The number of seconds until the returned temporary password expires.</p>
      * <p>Constraint: minimum 900, maximum 3600.</p> <p>Default: 900</p>
      */
-    inline int GetDurationSeconds() const{ return m_durationSeconds; }
+    inline int GetDurationSeconds() const { return m_durationSeconds; }
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
     inline GetClusterCredentialsRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
@@ -128,7 +122,7 @@ namespace Model
      * <p>Create a database user with the name specified for the user named in
      * <code>DbUser</code> if one does not exist.</p>
      */
-    inline bool GetAutoCreate() const{ return m_autoCreate; }
+    inline bool GetAutoCreate() const { return m_autoCreate; }
     inline bool AutoCreateHasBeenSet() const { return m_autoCreateHasBeenSet; }
     inline void SetAutoCreate(bool value) { m_autoCreateHasBeenSet = true; m_autoCreate = value; }
     inline GetClusterCredentialsRequest& WithAutoCreate(bool value) { SetAutoCreate(value); return *this;}
@@ -148,29 +142,26 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetDbGroups() const{ return m_dbGroups; }
+    inline const Aws::Vector<Aws::String>& GetDbGroups() const { return m_dbGroups; }
     inline bool DbGroupsHasBeenSet() const { return m_dbGroupsHasBeenSet; }
-    inline void SetDbGroups(const Aws::Vector<Aws::String>& value) { m_dbGroupsHasBeenSet = true; m_dbGroups = value; }
-    inline void SetDbGroups(Aws::Vector<Aws::String>&& value) { m_dbGroupsHasBeenSet = true; m_dbGroups = std::move(value); }
-    inline GetClusterCredentialsRequest& WithDbGroups(const Aws::Vector<Aws::String>& value) { SetDbGroups(value); return *this;}
-    inline GetClusterCredentialsRequest& WithDbGroups(Aws::Vector<Aws::String>&& value) { SetDbGroups(std::move(value)); return *this;}
-    inline GetClusterCredentialsRequest& AddDbGroups(const Aws::String& value) { m_dbGroupsHasBeenSet = true; m_dbGroups.push_back(value); return *this; }
-    inline GetClusterCredentialsRequest& AddDbGroups(Aws::String&& value) { m_dbGroupsHasBeenSet = true; m_dbGroups.push_back(std::move(value)); return *this; }
-    inline GetClusterCredentialsRequest& AddDbGroups(const char* value) { m_dbGroupsHasBeenSet = true; m_dbGroups.push_back(value); return *this; }
+    template<typename DbGroupsT = Aws::Vector<Aws::String>>
+    void SetDbGroups(DbGroupsT&& value) { m_dbGroupsHasBeenSet = true; m_dbGroups = std::forward<DbGroupsT>(value); }
+    template<typename DbGroupsT = Aws::Vector<Aws::String>>
+    GetClusterCredentialsRequest& WithDbGroups(DbGroupsT&& value) { SetDbGroups(std::forward<DbGroupsT>(value)); return *this;}
+    template<typename DbGroupsT = Aws::String>
+    GetClusterCredentialsRequest& AddDbGroups(DbGroupsT&& value) { m_dbGroupsHasBeenSet = true; m_dbGroups.emplace_back(std::forward<DbGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The custom domain name for the cluster credentials.</p>
      */
-    inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
+    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
     inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
-    inline void SetCustomDomainName(const Aws::String& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = value; }
-    inline void SetCustomDomainName(Aws::String&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::move(value); }
-    inline void SetCustomDomainName(const char* value) { m_customDomainNameHasBeenSet = true; m_customDomainName.assign(value); }
-    inline GetClusterCredentialsRequest& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
-    inline GetClusterCredentialsRequest& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
-    inline GetClusterCredentialsRequest& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
+    template<typename CustomDomainNameT = Aws::String>
+    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
+    template<typename CustomDomainNameT = Aws::String>
+    GetClusterCredentialsRequest& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -183,10 +174,10 @@ namespace Model
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet = false;
 
-    int m_durationSeconds;
+    int m_durationSeconds{0};
     bool m_durationSecondsHasBeenSet = false;
 
-    bool m_autoCreate;
+    bool m_autoCreate{false};
     bool m_autoCreateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dbGroups;

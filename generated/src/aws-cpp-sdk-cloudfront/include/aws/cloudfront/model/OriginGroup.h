@@ -41,7 +41,7 @@ namespace Model
   class OriginGroup
   {
   public:
-    AWS_CLOUDFRONT_API OriginGroup();
+    AWS_CLOUDFRONT_API OriginGroup() = default;
     AWS_CLOUDFRONT_API OriginGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API OriginGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,14 +52,12 @@ namespace Model
     /**
      * <p>The origin group's ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline OriginGroup& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline OriginGroup& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline OriginGroup& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    OriginGroup& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,12 @@ namespace Model
      * <p>A complex type that contains information about the failover criteria for an
      * origin group.</p>
      */
-    inline const OriginGroupFailoverCriteria& GetFailoverCriteria() const{ return m_failoverCriteria; }
+    inline const OriginGroupFailoverCriteria& GetFailoverCriteria() const { return m_failoverCriteria; }
     inline bool FailoverCriteriaHasBeenSet() const { return m_failoverCriteriaHasBeenSet; }
-    inline void SetFailoverCriteria(const OriginGroupFailoverCriteria& value) { m_failoverCriteriaHasBeenSet = true; m_failoverCriteria = value; }
-    inline void SetFailoverCriteria(OriginGroupFailoverCriteria&& value) { m_failoverCriteriaHasBeenSet = true; m_failoverCriteria = std::move(value); }
-    inline OriginGroup& WithFailoverCriteria(const OriginGroupFailoverCriteria& value) { SetFailoverCriteria(value); return *this;}
-    inline OriginGroup& WithFailoverCriteria(OriginGroupFailoverCriteria&& value) { SetFailoverCriteria(std::move(value)); return *this;}
+    template<typename FailoverCriteriaT = OriginGroupFailoverCriteria>
+    void SetFailoverCriteria(FailoverCriteriaT&& value) { m_failoverCriteriaHasBeenSet = true; m_failoverCriteria = std::forward<FailoverCriteriaT>(value); }
+    template<typename FailoverCriteriaT = OriginGroupFailoverCriteria>
+    OriginGroup& WithFailoverCriteria(FailoverCriteriaT&& value) { SetFailoverCriteria(std::forward<FailoverCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +78,12 @@ namespace Model
      * <p>A complex type that contains information about the origins in an origin
      * group.</p>
      */
-    inline const OriginGroupMembers& GetMembers() const{ return m_members; }
+    inline const OriginGroupMembers& GetMembers() const { return m_members; }
     inline bool MembersHasBeenSet() const { return m_membersHasBeenSet; }
-    inline void SetMembers(const OriginGroupMembers& value) { m_membersHasBeenSet = true; m_members = value; }
-    inline void SetMembers(OriginGroupMembers&& value) { m_membersHasBeenSet = true; m_members = std::move(value); }
-    inline OriginGroup& WithMembers(const OriginGroupMembers& value) { SetMembers(value); return *this;}
-    inline OriginGroup& WithMembers(OriginGroupMembers&& value) { SetMembers(std::move(value)); return *this;}
+    template<typename MembersT = OriginGroupMembers>
+    void SetMembers(MembersT&& value) { m_membersHasBeenSet = true; m_members = std::forward<MembersT>(value); }
+    template<typename MembersT = OriginGroupMembers>
+    OriginGroup& WithMembers(MembersT&& value) { SetMembers(std::forward<MembersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +92,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html#concept_origin_groups.creating">Create
      * an origin group</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const OriginGroupSelectionCriteria& GetSelectionCriteria() const{ return m_selectionCriteria; }
+    inline OriginGroupSelectionCriteria GetSelectionCriteria() const { return m_selectionCriteria; }
     inline bool SelectionCriteriaHasBeenSet() const { return m_selectionCriteriaHasBeenSet; }
-    inline void SetSelectionCriteria(const OriginGroupSelectionCriteria& value) { m_selectionCriteriaHasBeenSet = true; m_selectionCriteria = value; }
-    inline void SetSelectionCriteria(OriginGroupSelectionCriteria&& value) { m_selectionCriteriaHasBeenSet = true; m_selectionCriteria = std::move(value); }
-    inline OriginGroup& WithSelectionCriteria(const OriginGroupSelectionCriteria& value) { SetSelectionCriteria(value); return *this;}
-    inline OriginGroup& WithSelectionCriteria(OriginGroupSelectionCriteria&& value) { SetSelectionCriteria(std::move(value)); return *this;}
+    inline void SetSelectionCriteria(OriginGroupSelectionCriteria value) { m_selectionCriteriaHasBeenSet = true; m_selectionCriteria = value; }
+    inline OriginGroup& WithSelectionCriteria(OriginGroupSelectionCriteria value) { SetSelectionCriteria(value); return *this;}
     ///@}
   private:
 
@@ -112,7 +108,7 @@ namespace Model
     OriginGroupMembers m_members;
     bool m_membersHasBeenSet = false;
 
-    OriginGroupSelectionCriteria m_selectionCriteria;
+    OriginGroupSelectionCriteria m_selectionCriteria{OriginGroupSelectionCriteria::NOT_SET};
     bool m_selectionCriteriaHasBeenSet = false;
   };
 

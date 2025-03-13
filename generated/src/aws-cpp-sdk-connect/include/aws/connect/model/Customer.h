@@ -32,7 +32,7 @@ namespace Model
   class Customer
   {
   public:
-    AWS_CONNECT_API Customer();
+    AWS_CONNECT_API Customer() = default;
     AWS_CONNECT_API Customer(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Customer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,22 +42,22 @@ namespace Model
     /**
      * <p>Information regarding Customer’s device.</p>
      */
-    inline const DeviceInfo& GetDeviceInfo() const{ return m_deviceInfo; }
+    inline const DeviceInfo& GetDeviceInfo() const { return m_deviceInfo; }
     inline bool DeviceInfoHasBeenSet() const { return m_deviceInfoHasBeenSet; }
-    inline void SetDeviceInfo(const DeviceInfo& value) { m_deviceInfoHasBeenSet = true; m_deviceInfo = value; }
-    inline void SetDeviceInfo(DeviceInfo&& value) { m_deviceInfoHasBeenSet = true; m_deviceInfo = std::move(value); }
-    inline Customer& WithDeviceInfo(const DeviceInfo& value) { SetDeviceInfo(value); return *this;}
-    inline Customer& WithDeviceInfo(DeviceInfo&& value) { SetDeviceInfo(std::move(value)); return *this;}
+    template<typename DeviceInfoT = DeviceInfo>
+    void SetDeviceInfo(DeviceInfoT&& value) { m_deviceInfoHasBeenSet = true; m_deviceInfo = std::forward<DeviceInfoT>(value); }
+    template<typename DeviceInfoT = DeviceInfo>
+    Customer& WithDeviceInfo(DeviceInfoT&& value) { SetDeviceInfo(std::forward<DeviceInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ParticipantCapabilities& GetCapabilities() const{ return m_capabilities; }
+    inline const ParticipantCapabilities& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const ParticipantCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(ParticipantCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline Customer& WithCapabilities(const ParticipantCapabilities& value) { SetCapabilities(value); return *this;}
-    inline Customer& WithCapabilities(ParticipantCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+    template<typename CapabilitiesT = ParticipantCapabilities>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = ParticipantCapabilities>
+    Customer& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
     ///@}
   private:
 

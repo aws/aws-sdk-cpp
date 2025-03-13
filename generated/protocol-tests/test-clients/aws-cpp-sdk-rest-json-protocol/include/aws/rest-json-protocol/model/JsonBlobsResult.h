@@ -28,35 +28,35 @@ namespace Model
   class JsonBlobsResult
   {
   public:
-    AWS_RESTJSONPROTOCOL_API JsonBlobsResult();
+    AWS_RESTJSONPROTOCOL_API JsonBlobsResult() = default;
     AWS_RESTJSONPROTOCOL_API JsonBlobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESTJSONPROTOCOL_API JsonBlobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_data = value; }
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_data = std::move(value); }
-    inline JsonBlobsResult& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-    inline JsonBlobsResult& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    JsonBlobsResult& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline JsonBlobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline JsonBlobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline JsonBlobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    JsonBlobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_data;
+    Aws::Utils::ByteBuffer m_data{};
+    bool m_dataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

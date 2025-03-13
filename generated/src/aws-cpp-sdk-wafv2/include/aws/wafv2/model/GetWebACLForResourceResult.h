@@ -28,7 +28,7 @@ namespace Model
   class GetWebACLForResourceResult
   {
   public:
-    AWS_WAFV2_API GetWebACLForResourceResult();
+    AWS_WAFV2_API GetWebACLForResourceResult() = default;
     AWS_WAFV2_API GetWebACLForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFV2_API GetWebACLForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The web ACL that is associated with the resource. If there is no associated
      * resource, WAF returns a null web ACL.</p>
      */
-    inline const WebACL& GetWebACL() const{ return m_webACL; }
-    inline void SetWebACL(const WebACL& value) { m_webACL = value; }
-    inline void SetWebACL(WebACL&& value) { m_webACL = std::move(value); }
-    inline GetWebACLForResourceResult& WithWebACL(const WebACL& value) { SetWebACL(value); return *this;}
-    inline GetWebACLForResourceResult& WithWebACL(WebACL&& value) { SetWebACL(std::move(value)); return *this;}
+    inline const WebACL& GetWebACL() const { return m_webACL; }
+    template<typename WebACLT = WebACL>
+    void SetWebACL(WebACLT&& value) { m_webACLHasBeenSet = true; m_webACL = std::forward<WebACLT>(value); }
+    template<typename WebACLT = WebACL>
+    GetWebACLForResourceResult& WithWebACL(WebACLT&& value) { SetWebACL(std::forward<WebACLT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetWebACLForResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetWebACLForResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetWebACLForResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetWebACLForResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     WebACL m_webACL;
+    bool m_webACLHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

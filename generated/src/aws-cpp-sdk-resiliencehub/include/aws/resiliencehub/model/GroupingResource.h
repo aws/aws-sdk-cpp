@@ -35,7 +35,7 @@ namespace Model
   class GroupingResource
   {
   public:
-    AWS_RESILIENCEHUB_API GroupingResource();
+    AWS_RESILIENCEHUB_API GroupingResource() = default;
     AWS_RESILIENCEHUB_API GroupingResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API GroupingResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,52 +45,48 @@ namespace Model
     /**
      * <p>Indicates the logical identifier of the resource.</p>
      */
-    inline const LogicalResourceId& GetLogicalResourceId() const{ return m_logicalResourceId; }
+    inline const LogicalResourceId& GetLogicalResourceId() const { return m_logicalResourceId; }
     inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
-    inline void SetLogicalResourceId(const LogicalResourceId& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
-    inline void SetLogicalResourceId(LogicalResourceId&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::move(value); }
-    inline GroupingResource& WithLogicalResourceId(const LogicalResourceId& value) { SetLogicalResourceId(value); return *this;}
-    inline GroupingResource& WithLogicalResourceId(LogicalResourceId&& value) { SetLogicalResourceId(std::move(value)); return *this;}
+    template<typename LogicalResourceIdT = LogicalResourceId>
+    void SetLogicalResourceId(LogicalResourceIdT&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::forward<LogicalResourceIdT>(value); }
+    template<typename LogicalResourceIdT = LogicalResourceId>
+    GroupingResource& WithLogicalResourceId(LogicalResourceIdT&& value) { SetLogicalResourceId(std::forward<LogicalResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the physical identifier of the resource.</p>
      */
-    inline const PhysicalResourceId& GetPhysicalResourceId() const{ return m_physicalResourceId; }
+    inline const PhysicalResourceId& GetPhysicalResourceId() const { return m_physicalResourceId; }
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
-    inline void SetPhysicalResourceId(const PhysicalResourceId& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
-    inline void SetPhysicalResourceId(PhysicalResourceId&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
-    inline GroupingResource& WithPhysicalResourceId(const PhysicalResourceId& value) { SetPhysicalResourceId(value); return *this;}
-    inline GroupingResource& WithPhysicalResourceId(PhysicalResourceId&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
+    template<typename PhysicalResourceIdT = PhysicalResourceId>
+    void SetPhysicalResourceId(PhysicalResourceIdT&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::forward<PhysicalResourceIdT>(value); }
+    template<typename PhysicalResourceIdT = PhysicalResourceId>
+    GroupingResource& WithPhysicalResourceId(PhysicalResourceIdT&& value) { SetPhysicalResourceId(std::forward<PhysicalResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the resource name.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline GroupingResource& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline GroupingResource& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline GroupingResource& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    GroupingResource& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the resource type.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline GroupingResource& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline GroupingResource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline GroupingResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    GroupingResource& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,15 +94,14 @@ namespace Model
      * <p>Indicates the identifier of the source AppComponents in which the resources
      * were previously grouped into.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceAppComponentIds() const{ return m_sourceAppComponentIds; }
+    inline const Aws::Vector<Aws::String>& GetSourceAppComponentIds() const { return m_sourceAppComponentIds; }
     inline bool SourceAppComponentIdsHasBeenSet() const { return m_sourceAppComponentIdsHasBeenSet; }
-    inline void SetSourceAppComponentIds(const Aws::Vector<Aws::String>& value) { m_sourceAppComponentIdsHasBeenSet = true; m_sourceAppComponentIds = value; }
-    inline void SetSourceAppComponentIds(Aws::Vector<Aws::String>&& value) { m_sourceAppComponentIdsHasBeenSet = true; m_sourceAppComponentIds = std::move(value); }
-    inline GroupingResource& WithSourceAppComponentIds(const Aws::Vector<Aws::String>& value) { SetSourceAppComponentIds(value); return *this;}
-    inline GroupingResource& WithSourceAppComponentIds(Aws::Vector<Aws::String>&& value) { SetSourceAppComponentIds(std::move(value)); return *this;}
-    inline GroupingResource& AddSourceAppComponentIds(const Aws::String& value) { m_sourceAppComponentIdsHasBeenSet = true; m_sourceAppComponentIds.push_back(value); return *this; }
-    inline GroupingResource& AddSourceAppComponentIds(Aws::String&& value) { m_sourceAppComponentIdsHasBeenSet = true; m_sourceAppComponentIds.push_back(std::move(value)); return *this; }
-    inline GroupingResource& AddSourceAppComponentIds(const char* value) { m_sourceAppComponentIdsHasBeenSet = true; m_sourceAppComponentIds.push_back(value); return *this; }
+    template<typename SourceAppComponentIdsT = Aws::Vector<Aws::String>>
+    void SetSourceAppComponentIds(SourceAppComponentIdsT&& value) { m_sourceAppComponentIdsHasBeenSet = true; m_sourceAppComponentIds = std::forward<SourceAppComponentIdsT>(value); }
+    template<typename SourceAppComponentIdsT = Aws::Vector<Aws::String>>
+    GroupingResource& WithSourceAppComponentIds(SourceAppComponentIdsT&& value) { SetSourceAppComponentIds(std::forward<SourceAppComponentIdsT>(value)); return *this;}
+    template<typename SourceAppComponentIdsT = Aws::String>
+    GroupingResource& AddSourceAppComponentIds(SourceAppComponentIdsT&& value) { m_sourceAppComponentIdsHasBeenSet = true; m_sourceAppComponentIds.emplace_back(std::forward<SourceAppComponentIdsT>(value)); return *this; }
     ///@}
   private:
 

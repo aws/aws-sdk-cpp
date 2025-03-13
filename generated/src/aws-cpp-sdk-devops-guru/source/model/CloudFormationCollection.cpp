@@ -18,13 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-CloudFormationCollection::CloudFormationCollection() : 
-    m_stackNamesHasBeenSet(false)
-{
-}
-
 CloudFormationCollection::CloudFormationCollection(JsonView jsonValue)
-  : CloudFormationCollection()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CloudFormationCollection& CloudFormationCollection::operator =(JsonView jsonValu
     }
     m_stackNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

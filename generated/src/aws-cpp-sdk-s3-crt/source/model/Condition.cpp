@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Condition::Condition() : 
-    m_httpErrorCodeReturnedEqualsHasBeenSet(false),
-    m_keyPrefixEqualsHasBeenSet(false)
-{
-}
-
 Condition::Condition(const XmlNode& xmlNode)
-  : Condition()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Condition& Condition::operator =(const XmlNode& xmlNode)
     {
       m_httpErrorCodeReturnedEquals = Aws::Utils::Xml::DecodeEscapedXmlText(httpErrorCodeReturnedEqualsNode.GetText());
       m_httpErrorCodeReturnedEqualsHasBeenSet = true;
+       m_httpErrorCodeReturnedEqualsHasBeenSet = true;
     }
     XmlNode keyPrefixEqualsNode = resultNode.FirstChild("KeyPrefixEquals");
     if(!keyPrefixEqualsNode.IsNull())
     {
       m_keyPrefixEquals = Aws::Utils::Xml::DecodeEscapedXmlText(keyPrefixEqualsNode.GetText());
       m_keyPrefixEqualsHasBeenSet = true;
+       m_keyPrefixEqualsHasBeenSet = true;
     }
   }
 

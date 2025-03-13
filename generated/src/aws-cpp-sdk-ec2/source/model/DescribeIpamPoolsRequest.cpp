@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeIpamPoolsRequest::DescribeIpamPoolsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_ipamPoolIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeIpamPoolsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

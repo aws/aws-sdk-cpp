@@ -33,7 +33,7 @@ namespace Model
   class SecurityGroupRuleDescription
   {
   public:
-    AWS_EC2_API SecurityGroupRuleDescription();
+    AWS_EC2_API SecurityGroupRuleDescription() = default;
     AWS_EC2_API SecurityGroupRuleDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SecurityGroupRuleDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The ID of the security group rule.</p>
      */
-    inline const Aws::String& GetSecurityGroupRuleId() const{ return m_securityGroupRuleId; }
+    inline const Aws::String& GetSecurityGroupRuleId() const { return m_securityGroupRuleId; }
     inline bool SecurityGroupRuleIdHasBeenSet() const { return m_securityGroupRuleIdHasBeenSet; }
-    inline void SetSecurityGroupRuleId(const Aws::String& value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId = value; }
-    inline void SetSecurityGroupRuleId(Aws::String&& value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId = std::move(value); }
-    inline void SetSecurityGroupRuleId(const char* value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId.assign(value); }
-    inline SecurityGroupRuleDescription& WithSecurityGroupRuleId(const Aws::String& value) { SetSecurityGroupRuleId(value); return *this;}
-    inline SecurityGroupRuleDescription& WithSecurityGroupRuleId(Aws::String&& value) { SetSecurityGroupRuleId(std::move(value)); return *this;}
-    inline SecurityGroupRuleDescription& WithSecurityGroupRuleId(const char* value) { SetSecurityGroupRuleId(value); return *this;}
+    template<typename SecurityGroupRuleIdT = Aws::String>
+    void SetSecurityGroupRuleId(SecurityGroupRuleIdT&& value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId = std::forward<SecurityGroupRuleIdT>(value); }
+    template<typename SecurityGroupRuleIdT = Aws::String>
+    SecurityGroupRuleDescription& WithSecurityGroupRuleId(SecurityGroupRuleIdT&& value) { SetSecurityGroupRuleId(std::forward<SecurityGroupRuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the security group rule.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SecurityGroupRuleDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SecurityGroupRuleDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SecurityGroupRuleDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    SecurityGroupRuleDescription& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

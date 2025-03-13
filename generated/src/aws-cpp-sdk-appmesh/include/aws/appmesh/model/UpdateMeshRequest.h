@@ -26,7 +26,7 @@ namespace Model
   class UpdateMeshRequest : public AppMeshRequest
   {
   public:
-    AWS_APPMESH_API UpdateMeshRequest();
+    AWS_APPMESH_API UpdateMeshRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,40 +43,36 @@ namespace Model
      * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateMeshRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateMeshRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateMeshRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateMeshRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service mesh to update.</p>
      */
-    inline const Aws::String& GetMeshName() const{ return m_meshName; }
+    inline const Aws::String& GetMeshName() const { return m_meshName; }
     inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
-    inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
-    inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
-    inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
-    inline UpdateMeshRequest& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
-    inline UpdateMeshRequest& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
-    inline UpdateMeshRequest& WithMeshName(const char* value) { SetMeshName(value); return *this;}
+    template<typename MeshNameT = Aws::String>
+    void SetMeshName(MeshNameT&& value) { m_meshNameHasBeenSet = true; m_meshName = std::forward<MeshNameT>(value); }
+    template<typename MeshNameT = Aws::String>
+    UpdateMeshRequest& WithMeshName(MeshNameT&& value) { SetMeshName(std::forward<MeshNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service mesh specification to apply.</p>
      */
-    inline const MeshSpec& GetSpec() const{ return m_spec; }
+    inline const MeshSpec& GetSpec() const { return m_spec; }
     inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
-    inline void SetSpec(const MeshSpec& value) { m_specHasBeenSet = true; m_spec = value; }
-    inline void SetSpec(MeshSpec&& value) { m_specHasBeenSet = true; m_spec = std::move(value); }
-    inline UpdateMeshRequest& WithSpec(const MeshSpec& value) { SetSpec(value); return *this;}
-    inline UpdateMeshRequest& WithSpec(MeshSpec&& value) { SetSpec(std::move(value)); return *this;}
+    template<typename SpecT = MeshSpec>
+    void SetSpec(SpecT&& value) { m_specHasBeenSet = true; m_spec = std::forward<SpecT>(value); }
+    template<typename SpecT = MeshSpec>
+    UpdateMeshRequest& WithSpec(SpecT&& value) { SetSpec(std::forward<SpecT>(value)); return *this;}
     ///@}
   private:
 

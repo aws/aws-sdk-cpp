@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-JsonMatchPattern::JsonMatchPattern() : 
-    m_allHasBeenSet(false),
-    m_includedPathsHasBeenSet(false)
-{
-}
-
 JsonMatchPattern::JsonMatchPattern(JsonView jsonValue)
-  : JsonMatchPattern()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ JsonMatchPattern& JsonMatchPattern::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("All"))
   {
     m_all = jsonValue.GetObject("All");
-
     m_allHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludedPaths"))
   {
     Aws::Utils::Array<JsonView> includedPathsJsonList = jsonValue.GetArray("IncludedPaths");
@@ -48,7 +39,6 @@ JsonMatchPattern& JsonMatchPattern::operator =(JsonView jsonValue)
     }
     m_includedPathsHasBeenSet = true;
   }
-
   return *this;
 }
 

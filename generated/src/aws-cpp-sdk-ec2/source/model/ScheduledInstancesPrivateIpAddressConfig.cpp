@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ScheduledInstancesPrivateIpAddressConfig::ScheduledInstancesPrivateIpAddressConfig() : 
-    m_primary(false),
-    m_primaryHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
-{
-}
-
 ScheduledInstancesPrivateIpAddressConfig::ScheduledInstancesPrivateIpAddressConfig(const XmlNode& xmlNode)
-  : ScheduledInstancesPrivateIpAddressConfig()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ ScheduledInstancesPrivateIpAddressConfig& ScheduledInstancesPrivateIpAddressConf
     {
       m_primary = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(primaryNode.GetText()).c_str()).c_str());
       m_primaryHasBeenSet = true;
+       m_primaryHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("PrivateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
       m_privateIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpAddressNode.GetText());
       m_privateIpAddressHasBeenSet = true;
+       m_privateIpAddressHasBeenSet = true;
     }
   }
 

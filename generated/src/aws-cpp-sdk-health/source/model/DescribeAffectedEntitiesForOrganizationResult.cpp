@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAffectedEntitiesForOrganizationResult::DescribeAffectedEntitiesForOrganizationResult()
-{
-}
-
 DescribeAffectedEntitiesForOrganizationResult::DescribeAffectedEntitiesForOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DescribeAffectedEntitiesForOrganizationResult& DescribeAffectedEntitiesForOrgani
     {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());
     }
+    m_entitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedSet"))
   {
     Aws::Utils::Array<JsonView> failedSetJsonList = jsonValue.GetArray("failedSet");
@@ -45,20 +41,20 @@ DescribeAffectedEntitiesForOrganizationResult& DescribeAffectedEntitiesForOrgani
     {
       m_failedSet.push_back(failedSetJsonList[failedSetIndex].AsObject());
     }
+    m_failedSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

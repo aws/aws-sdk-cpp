@@ -12,17 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStorageRequest::UpdateStorageRequest() : 
-    m_clusterArnHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_storageMode(StorageMode::NOT_SET),
-    m_storageModeHasBeenSet(false),
-    m_volumeSizeGB(0),
-    m_volumeSizeGBHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStorageRequest::SerializePayload() const
 {
   JsonValue payload;

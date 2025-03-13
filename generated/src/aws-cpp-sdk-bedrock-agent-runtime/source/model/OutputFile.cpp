@@ -19,15 +19,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-OutputFile::OutputFile() : 
-    m_bytesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 OutputFile::OutputFile(JsonView jsonValue)
-  : OutputFile()
 {
   *this = jsonValue;
 }
@@ -39,21 +31,16 @@ OutputFile& OutputFile::operator =(JsonView jsonValue)
     m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("bytes"));
     m_bytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

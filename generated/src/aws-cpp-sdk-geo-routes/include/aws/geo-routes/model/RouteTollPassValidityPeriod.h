@@ -31,7 +31,7 @@ namespace Model
   class RouteTollPassValidityPeriod
   {
   public:
-    AWS_GEOROUTES_API RouteTollPassValidityPeriod();
+    AWS_GEOROUTES_API RouteTollPassValidityPeriod() = default;
     AWS_GEOROUTES_API RouteTollPassValidityPeriod(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteTollPassValidityPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,29 +41,27 @@ namespace Model
     /**
      * <p>Validity period.</p>
      */
-    inline const RouteTollPassValidityPeriodType& GetPeriod() const{ return m_period; }
+    inline RouteTollPassValidityPeriodType GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
-    inline void SetPeriod(const RouteTollPassValidityPeriodType& value) { m_periodHasBeenSet = true; m_period = value; }
-    inline void SetPeriod(RouteTollPassValidityPeriodType&& value) { m_periodHasBeenSet = true; m_period = std::move(value); }
-    inline RouteTollPassValidityPeriod& WithPeriod(const RouteTollPassValidityPeriodType& value) { SetPeriod(value); return *this;}
-    inline RouteTollPassValidityPeriod& WithPeriod(RouteTollPassValidityPeriodType&& value) { SetPeriod(std::move(value)); return *this;}
+    inline void SetPeriod(RouteTollPassValidityPeriodType value) { m_periodHasBeenSet = true; m_period = value; }
+    inline RouteTollPassValidityPeriod& WithPeriod(RouteTollPassValidityPeriodType value) { SetPeriod(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Counts for the validity period.</p>
      */
-    inline int GetPeriodCount() const{ return m_periodCount; }
+    inline int GetPeriodCount() const { return m_periodCount; }
     inline bool PeriodCountHasBeenSet() const { return m_periodCountHasBeenSet; }
     inline void SetPeriodCount(int value) { m_periodCountHasBeenSet = true; m_periodCount = value; }
     inline RouteTollPassValidityPeriod& WithPeriodCount(int value) { SetPeriodCount(value); return *this;}
     ///@}
   private:
 
-    RouteTollPassValidityPeriodType m_period;
+    RouteTollPassValidityPeriodType m_period{RouteTollPassValidityPeriodType::NOT_SET};
     bool m_periodHasBeenSet = false;
 
-    int m_periodCount;
+    int m_periodCount{0};
     bool m_periodCountHasBeenSet = false;
   };
 

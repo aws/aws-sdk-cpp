@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RedisEnterpriseCloudConfiguration::RedisEnterpriseCloudConfiguration() : 
-    m_credentialsSecretArnHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_fieldMappingHasBeenSet(false),
-    m_vectorIndexNameHasBeenSet(false)
-{
-}
-
 RedisEnterpriseCloudConfiguration::RedisEnterpriseCloudConfiguration(JsonView jsonValue)
-  : RedisEnterpriseCloudConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RedisEnterpriseCloudConfiguration& RedisEnterpriseCloudConfiguration::operator =
   if(jsonValue.ValueExists("credentialsSecretArn"))
   {
     m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
-
     m_credentialsSecretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldMapping"))
   {
     m_fieldMapping = jsonValue.GetObject("fieldMapping");
-
     m_fieldMappingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vectorIndexName"))
   {
     m_vectorIndexName = jsonValue.GetString("vectorIndexName");
-
     m_vectorIndexNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class StepDetailsEntity
   {
   public:
-    AWS_DEADLINE_API StepDetailsEntity();
+    AWS_DEADLINE_API StepDetailsEntity() = default;
     AWS_DEADLINE_API StepDetailsEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API StepDetailsEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,69 +43,62 @@ namespace Model
     /**
      * <p>The job ID.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline StepDetailsEntity& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline StepDetailsEntity& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline StepDetailsEntity& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    StepDetailsEntity& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step ID.</p>
      */
-    inline const Aws::String& GetStepId() const{ return m_stepId; }
+    inline const Aws::String& GetStepId() const { return m_stepId; }
     inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
-    inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
-    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
-    inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
-    inline StepDetailsEntity& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
-    inline StepDetailsEntity& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
-    inline StepDetailsEntity& WithStepId(const char* value) { SetStepId(value); return *this;}
+    template<typename StepIdT = Aws::String>
+    void SetStepId(StepIdT&& value) { m_stepIdHasBeenSet = true; m_stepId = std::forward<StepIdT>(value); }
+    template<typename StepIdT = Aws::String>
+    StepDetailsEntity& WithStepId(StepIdT&& value) { SetStepId(std::forward<StepIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schema version for a step template.</p>
      */
-    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+    inline const Aws::String& GetSchemaVersion() const { return m_schemaVersion; }
     inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
-    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
-    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
-    inline void SetSchemaVersion(const char* value) { m_schemaVersionHasBeenSet = true; m_schemaVersion.assign(value); }
-    inline StepDetailsEntity& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
-    inline StepDetailsEntity& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
-    inline StepDetailsEntity& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
+    template<typename SchemaVersionT = Aws::String>
+    void SetSchemaVersion(SchemaVersionT&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::forward<SchemaVersionT>(value); }
+    template<typename SchemaVersionT = Aws::String>
+    StepDetailsEntity& WithSchemaVersion(SchemaVersionT&& value) { SetSchemaVersion(std::forward<SchemaVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The template for a step.</p>
      */
-    inline Aws::Utils::DocumentView GetTemplate() const{ return m_template; }
+    inline Aws::Utils::DocumentView GetTemplate() const { return m_template; }
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-    inline void SetTemplate(const Aws::Utils::Document& value) { m_templateHasBeenSet = true; m_template = value; }
-    inline void SetTemplate(Aws::Utils::Document&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-    inline StepDetailsEntity& WithTemplate(const Aws::Utils::Document& value) { SetTemplate(value); return *this;}
-    inline StepDetailsEntity& WithTemplate(Aws::Utils::Document&& value) { SetTemplate(std::move(value)); return *this;}
+    template<typename TemplateT = Aws::Utils::Document>
+    void SetTemplate(TemplateT&& value) { m_templateHasBeenSet = true; m_template = std::forward<TemplateT>(value); }
+    template<typename TemplateT = Aws::Utils::Document>
+    StepDetailsEntity& WithTemplate(TemplateT&& value) { SetTemplate(std::forward<TemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dependencies for a step.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDependencies() const{ return m_dependencies; }
+    inline const Aws::Vector<Aws::String>& GetDependencies() const { return m_dependencies; }
     inline bool DependenciesHasBeenSet() const { return m_dependenciesHasBeenSet; }
-    inline void SetDependencies(const Aws::Vector<Aws::String>& value) { m_dependenciesHasBeenSet = true; m_dependencies = value; }
-    inline void SetDependencies(Aws::Vector<Aws::String>&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::move(value); }
-    inline StepDetailsEntity& WithDependencies(const Aws::Vector<Aws::String>& value) { SetDependencies(value); return *this;}
-    inline StepDetailsEntity& WithDependencies(Aws::Vector<Aws::String>&& value) { SetDependencies(std::move(value)); return *this;}
-    inline StepDetailsEntity& AddDependencies(const Aws::String& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
-    inline StepDetailsEntity& AddDependencies(Aws::String&& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(std::move(value)); return *this; }
-    inline StepDetailsEntity& AddDependencies(const char* value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
+    template<typename DependenciesT = Aws::Vector<Aws::String>>
+    void SetDependencies(DependenciesT&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::forward<DependenciesT>(value); }
+    template<typename DependenciesT = Aws::Vector<Aws::String>>
+    StepDetailsEntity& WithDependencies(DependenciesT&& value) { SetDependencies(std::forward<DependenciesT>(value)); return *this;}
+    template<typename DependenciesT = Aws::String>
+    StepDetailsEntity& AddDependencies(DependenciesT&& value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace_back(std::forward<DependenciesT>(value)); return *this; }
     ///@}
   private:
 

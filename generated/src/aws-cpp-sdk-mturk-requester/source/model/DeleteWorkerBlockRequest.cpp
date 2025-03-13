@@ -12,12 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkerBlockRequest::DeleteWorkerBlockRequest() : 
-    m_workerIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkerBlockRequest::SerializePayload() const
 {
   JsonValue payload;

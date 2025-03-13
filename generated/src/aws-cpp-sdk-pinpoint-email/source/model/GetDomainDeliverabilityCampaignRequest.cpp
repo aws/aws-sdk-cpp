@@ -12,11 +12,6 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDomainDeliverabilityCampaignRequest::GetDomainDeliverabilityCampaignRequest() : 
-    m_campaignIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDomainDeliverabilityCampaignRequest::SerializePayload() const
 {
   return {};

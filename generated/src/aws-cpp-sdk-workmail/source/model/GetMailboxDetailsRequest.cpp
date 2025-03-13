@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMailboxDetailsRequest::GetMailboxDetailsRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMailboxDetailsRequest::SerializePayload() const
 {
   JsonValue payload;

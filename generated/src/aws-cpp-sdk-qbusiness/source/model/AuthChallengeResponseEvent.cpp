@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-AuthChallengeResponseEvent::AuthChallengeResponseEvent() : 
-    m_responseMapHasBeenSet(false)
-{
-}
-
 AuthChallengeResponseEvent::AuthChallengeResponseEvent(JsonView jsonValue)
-  : AuthChallengeResponseEvent()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AuthChallengeResponseEvent& AuthChallengeResponseEvent::operator =(JsonView json
     }
     m_responseMapHasBeenSet = true;
   }
-
   return *this;
 }
 

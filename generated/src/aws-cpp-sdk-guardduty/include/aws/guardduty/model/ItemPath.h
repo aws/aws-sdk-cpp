@@ -32,7 +32,7 @@ namespace Model
   class ItemPath
   {
   public:
-    AWS_GUARDDUTY_API ItemPath();
+    AWS_GUARDDUTY_API ItemPath() = default;
     AWS_GUARDDUTY_API ItemPath(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API ItemPath& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The nested item path where the infected file was found.</p>
      */
-    inline const Aws::String& GetNestedItemPath() const{ return m_nestedItemPath; }
+    inline const Aws::String& GetNestedItemPath() const { return m_nestedItemPath; }
     inline bool NestedItemPathHasBeenSet() const { return m_nestedItemPathHasBeenSet; }
-    inline void SetNestedItemPath(const Aws::String& value) { m_nestedItemPathHasBeenSet = true; m_nestedItemPath = value; }
-    inline void SetNestedItemPath(Aws::String&& value) { m_nestedItemPathHasBeenSet = true; m_nestedItemPath = std::move(value); }
-    inline void SetNestedItemPath(const char* value) { m_nestedItemPathHasBeenSet = true; m_nestedItemPath.assign(value); }
-    inline ItemPath& WithNestedItemPath(const Aws::String& value) { SetNestedItemPath(value); return *this;}
-    inline ItemPath& WithNestedItemPath(Aws::String&& value) { SetNestedItemPath(std::move(value)); return *this;}
-    inline ItemPath& WithNestedItemPath(const char* value) { SetNestedItemPath(value); return *this;}
+    template<typename NestedItemPathT = Aws::String>
+    void SetNestedItemPath(NestedItemPathT&& value) { m_nestedItemPathHasBeenSet = true; m_nestedItemPath = std::forward<NestedItemPathT>(value); }
+    template<typename NestedItemPathT = Aws::String>
+    ItemPath& WithNestedItemPath(NestedItemPathT&& value) { SetNestedItemPath(std::forward<NestedItemPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The hash value of the infected resource.</p>
      */
-    inline const Aws::String& GetHash() const{ return m_hash; }
+    inline const Aws::String& GetHash() const { return m_hash; }
     inline bool HashHasBeenSet() const { return m_hashHasBeenSet; }
-    inline void SetHash(const Aws::String& value) { m_hashHasBeenSet = true; m_hash = value; }
-    inline void SetHash(Aws::String&& value) { m_hashHasBeenSet = true; m_hash = std::move(value); }
-    inline void SetHash(const char* value) { m_hashHasBeenSet = true; m_hash.assign(value); }
-    inline ItemPath& WithHash(const Aws::String& value) { SetHash(value); return *this;}
-    inline ItemPath& WithHash(Aws::String&& value) { SetHash(std::move(value)); return *this;}
-    inline ItemPath& WithHash(const char* value) { SetHash(value); return *this;}
+    template<typename HashT = Aws::String>
+    void SetHash(HashT&& value) { m_hashHasBeenSet = true; m_hash = std::forward<HashT>(value); }
+    template<typename HashT = Aws::String>
+    ItemPath& WithHash(HashT&& value) { SetHash(std::forward<HashT>(value)); return *this;}
     ///@}
   private:
 

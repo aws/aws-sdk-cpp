@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAnnotationStoreResult::CreateAnnotationStoreResult() : 
-    m_storeFormat(StoreFormat::NOT_SET),
-    m_status(StoreStatus::NOT_SET)
-{
-}
-
 CreateAnnotationStoreResult::CreateAnnotationStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateAnnotationStoreResult()
 {
   *this = result;
 }
@@ -35,57 +28,50 @@ CreateAnnotationStoreResult& CreateAnnotationStoreResult::operator =(const Aws::
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reference"))
   {
     m_reference = jsonValue.GetObject("reference");
-
+    m_referenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storeFormat"))
   {
     m_storeFormat = StoreFormatMapper::GetStoreFormatForName(jsonValue.GetString("storeFormat"));
-
+    m_storeFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storeOptions"))
   {
     m_storeOptions = jsonValue.GetObject("storeOptions");
-
+    m_storeOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StoreStatusMapper::GetStoreStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionName"))
   {
     m_versionName = jsonValue.GetString("versionName");
-
+    m_versionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

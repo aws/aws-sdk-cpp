@@ -18,15 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-PagerDutyConfiguration::PagerDutyConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_pagerDutyIncidentConfigurationHasBeenSet(false),
-    m_secretIdHasBeenSet(false)
-{
-}
-
 PagerDutyConfiguration::PagerDutyConfiguration(JsonView jsonValue)
-  : PagerDutyConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PagerDutyConfiguration& PagerDutyConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pagerDutyIncidentConfiguration"))
   {
     m_pagerDutyIncidentConfiguration = jsonValue.GetObject("pagerDutyIncidentConfiguration");
-
     m_pagerDutyIncidentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretId"))
   {
     m_secretId = jsonValue.GetString("secretId");
-
     m_secretIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetCostEstimationRequest::GetCostEstimationRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetCostEstimationRequest::SerializePayload() const
 {
   return {};

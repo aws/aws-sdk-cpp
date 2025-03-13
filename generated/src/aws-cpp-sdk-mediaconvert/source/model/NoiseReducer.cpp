@@ -18,17 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-NoiseReducer::NoiseReducer() : 
-    m_filter(NoiseReducerFilter::NOT_SET),
-    m_filterHasBeenSet(false),
-    m_filterSettingsHasBeenSet(false),
-    m_spatialFilterSettingsHasBeenSet(false),
-    m_temporalFilterSettingsHasBeenSet(false)
-{
-}
-
 NoiseReducer::NoiseReducer(JsonView jsonValue)
-  : NoiseReducer()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ NoiseReducer& NoiseReducer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("filter"))
   {
     m_filter = NoiseReducerFilterMapper::GetNoiseReducerFilterForName(jsonValue.GetString("filter"));
-
     m_filterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterSettings"))
   {
     m_filterSettings = jsonValue.GetObject("filterSettings");
-
     m_filterSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spatialFilterSettings"))
   {
     m_spatialFilterSettings = jsonValue.GetObject("spatialFilterSettings");
-
     m_spatialFilterSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("temporalFilterSettings"))
   {
     m_temporalFilterSettings = jsonValue.GetObject("temporalFilterSettings");
-
     m_temporalFilterSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

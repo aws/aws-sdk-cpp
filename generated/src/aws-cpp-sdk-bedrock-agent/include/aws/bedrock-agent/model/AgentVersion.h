@@ -38,7 +38,7 @@ namespace Model
   class AgentVersion
   {
   public:
-    AWS_BEDROCKAGENT_API AgentVersion();
+    AWS_BEDROCKAGENT_API AgentVersion() = default;
     AWS_BEDROCKAGENT_API AgentVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API AgentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,54 +48,46 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the agent that the version belongs to.</p>
      */
-    inline const Aws::String& GetAgentArn() const{ return m_agentArn; }
+    inline const Aws::String& GetAgentArn() const { return m_agentArn; }
     inline bool AgentArnHasBeenSet() const { return m_agentArnHasBeenSet; }
-    inline void SetAgentArn(const Aws::String& value) { m_agentArnHasBeenSet = true; m_agentArn = value; }
-    inline void SetAgentArn(Aws::String&& value) { m_agentArnHasBeenSet = true; m_agentArn = std::move(value); }
-    inline void SetAgentArn(const char* value) { m_agentArnHasBeenSet = true; m_agentArn.assign(value); }
-    inline AgentVersion& WithAgentArn(const Aws::String& value) { SetAgentArn(value); return *this;}
-    inline AgentVersion& WithAgentArn(Aws::String&& value) { SetAgentArn(std::move(value)); return *this;}
-    inline AgentVersion& WithAgentArn(const char* value) { SetAgentArn(value); return *this;}
+    template<typename AgentArnT = Aws::String>
+    void SetAgentArn(AgentArnT&& value) { m_agentArnHasBeenSet = true; m_agentArn = std::forward<AgentArnT>(value); }
+    template<typename AgentArnT = Aws::String>
+    AgentVersion& WithAgentArn(AgentArnT&& value) { SetAgentArn(std::forward<AgentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The agent's collaboration settings.</p>
      */
-    inline const AgentCollaboration& GetAgentCollaboration() const{ return m_agentCollaboration; }
+    inline AgentCollaboration GetAgentCollaboration() const { return m_agentCollaboration; }
     inline bool AgentCollaborationHasBeenSet() const { return m_agentCollaborationHasBeenSet; }
-    inline void SetAgentCollaboration(const AgentCollaboration& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
-    inline void SetAgentCollaboration(AgentCollaboration&& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = std::move(value); }
-    inline AgentVersion& WithAgentCollaboration(const AgentCollaboration& value) { SetAgentCollaboration(value); return *this;}
-    inline AgentVersion& WithAgentCollaboration(AgentCollaboration&& value) { SetAgentCollaboration(std::move(value)); return *this;}
+    inline void SetAgentCollaboration(AgentCollaboration value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
+    inline AgentVersion& WithAgentCollaboration(AgentCollaboration value) { SetAgentCollaboration(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the agent that the version belongs to.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline AgentVersion& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline AgentVersion& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline AgentVersion& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    AgentVersion& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the agent that the version belongs to.</p>
      */
-    inline const Aws::String& GetAgentName() const{ return m_agentName; }
+    inline const Aws::String& GetAgentName() const { return m_agentName; }
     inline bool AgentNameHasBeenSet() const { return m_agentNameHasBeenSet; }
-    inline void SetAgentName(const Aws::String& value) { m_agentNameHasBeenSet = true; m_agentName = value; }
-    inline void SetAgentName(Aws::String&& value) { m_agentNameHasBeenSet = true; m_agentName = std::move(value); }
-    inline void SetAgentName(const char* value) { m_agentNameHasBeenSet = true; m_agentName.assign(value); }
-    inline AgentVersion& WithAgentName(const Aws::String& value) { SetAgentName(value); return *this;}
-    inline AgentVersion& WithAgentName(Aws::String&& value) { SetAgentName(std::move(value)); return *this;}
-    inline AgentVersion& WithAgentName(const char* value) { SetAgentName(value); return *this;}
+    template<typename AgentNameT = Aws::String>
+    void SetAgentName(AgentNameT&& value) { m_agentNameHasBeenSet = true; m_agentName = std::forward<AgentNameT>(value); }
+    template<typename AgentNameT = Aws::String>
+    AgentVersion& WithAgentName(AgentNameT&& value) { SetAgentName(std::forward<AgentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,107 +95,96 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
      * operations on the agent.</p>
      */
-    inline const Aws::String& GetAgentResourceRoleArn() const{ return m_agentResourceRoleArn; }
+    inline const Aws::String& GetAgentResourceRoleArn() const { return m_agentResourceRoleArn; }
     inline bool AgentResourceRoleArnHasBeenSet() const { return m_agentResourceRoleArnHasBeenSet; }
-    inline void SetAgentResourceRoleArn(const Aws::String& value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn = value; }
-    inline void SetAgentResourceRoleArn(Aws::String&& value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn = std::move(value); }
-    inline void SetAgentResourceRoleArn(const char* value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn.assign(value); }
-    inline AgentVersion& WithAgentResourceRoleArn(const Aws::String& value) { SetAgentResourceRoleArn(value); return *this;}
-    inline AgentVersion& WithAgentResourceRoleArn(Aws::String&& value) { SetAgentResourceRoleArn(std::move(value)); return *this;}
-    inline AgentVersion& WithAgentResourceRoleArn(const char* value) { SetAgentResourceRoleArn(value); return *this;}
+    template<typename AgentResourceRoleArnT = Aws::String>
+    void SetAgentResourceRoleArn(AgentResourceRoleArnT&& value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn = std::forward<AgentResourceRoleArnT>(value); }
+    template<typename AgentResourceRoleArnT = Aws::String>
+    AgentVersion& WithAgentResourceRoleArn(AgentResourceRoleArnT&& value) { SetAgentResourceRoleArn(std::forward<AgentResourceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the agent that the version belongs to.</p>
      */
-    inline const AgentStatus& GetAgentStatus() const{ return m_agentStatus; }
+    inline AgentStatus GetAgentStatus() const { return m_agentStatus; }
     inline bool AgentStatusHasBeenSet() const { return m_agentStatusHasBeenSet; }
-    inline void SetAgentStatus(const AgentStatus& value) { m_agentStatusHasBeenSet = true; m_agentStatus = value; }
-    inline void SetAgentStatus(AgentStatus&& value) { m_agentStatusHasBeenSet = true; m_agentStatus = std::move(value); }
-    inline AgentVersion& WithAgentStatus(const AgentStatus& value) { SetAgentStatus(value); return *this;}
-    inline AgentVersion& WithAgentStatus(AgentStatus&& value) { SetAgentStatus(std::move(value)); return *this;}
+    inline void SetAgentStatus(AgentStatus value) { m_agentStatusHasBeenSet = true; m_agentStatus = value; }
+    inline AgentVersion& WithAgentStatus(AgentStatus value) { SetAgentStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the version was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline AgentVersion& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline AgentVersion& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    AgentVersion& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
      */
-    inline const Aws::String& GetCustomerEncryptionKeyArn() const{ return m_customerEncryptionKeyArn; }
+    inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
     inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
-    inline void SetCustomerEncryptionKeyArn(const Aws::String& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = value; }
-    inline void SetCustomerEncryptionKeyArn(Aws::String&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::move(value); }
-    inline void SetCustomerEncryptionKeyArn(const char* value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn.assign(value); }
-    inline AgentVersion& WithCustomerEncryptionKeyArn(const Aws::String& value) { SetCustomerEncryptionKeyArn(value); return *this;}
-    inline AgentVersion& WithCustomerEncryptionKeyArn(Aws::String&& value) { SetCustomerEncryptionKeyArn(std::move(value)); return *this;}
-    inline AgentVersion& WithCustomerEncryptionKeyArn(const char* value) { SetCustomerEncryptionKeyArn(value); return *this;}
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value); }
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    AgentVersion& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the version.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AgentVersion& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AgentVersion& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AgentVersion& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AgentVersion& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of reasons that the API operation on the version failed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFailureReasons() const{ return m_failureReasons; }
+    inline const Aws::Vector<Aws::String>& GetFailureReasons() const { return m_failureReasons; }
     inline bool FailureReasonsHasBeenSet() const { return m_failureReasonsHasBeenSet; }
-    inline void SetFailureReasons(const Aws::Vector<Aws::String>& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = value; }
-    inline void SetFailureReasons(Aws::Vector<Aws::String>&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = std::move(value); }
-    inline AgentVersion& WithFailureReasons(const Aws::Vector<Aws::String>& value) { SetFailureReasons(value); return *this;}
-    inline AgentVersion& WithFailureReasons(Aws::Vector<Aws::String>&& value) { SetFailureReasons(std::move(value)); return *this;}
-    inline AgentVersion& AddFailureReasons(const Aws::String& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
-    inline AgentVersion& AddFailureReasons(Aws::String&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(std::move(value)); return *this; }
-    inline AgentVersion& AddFailureReasons(const char* value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
+    template<typename FailureReasonsT = Aws::Vector<Aws::String>>
+    void SetFailureReasons(FailureReasonsT&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = std::forward<FailureReasonsT>(value); }
+    template<typename FailureReasonsT = Aws::Vector<Aws::String>>
+    AgentVersion& WithFailureReasons(FailureReasonsT&& value) { SetFailureReasons(std::forward<FailureReasonsT>(value)); return *this;}
+    template<typename FailureReasonsT = Aws::String>
+    AgentVersion& AddFailureReasons(FailureReasonsT&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.emplace_back(std::forward<FailureReasonsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The foundation model that the version invokes.</p>
      */
-    inline const Aws::String& GetFoundationModel() const{ return m_foundationModel; }
+    inline const Aws::String& GetFoundationModel() const { return m_foundationModel; }
     inline bool FoundationModelHasBeenSet() const { return m_foundationModelHasBeenSet; }
-    inline void SetFoundationModel(const Aws::String& value) { m_foundationModelHasBeenSet = true; m_foundationModel = value; }
-    inline void SetFoundationModel(Aws::String&& value) { m_foundationModelHasBeenSet = true; m_foundationModel = std::move(value); }
-    inline void SetFoundationModel(const char* value) { m_foundationModelHasBeenSet = true; m_foundationModel.assign(value); }
-    inline AgentVersion& WithFoundationModel(const Aws::String& value) { SetFoundationModel(value); return *this;}
-    inline AgentVersion& WithFoundationModel(Aws::String&& value) { SetFoundationModel(std::move(value)); return *this;}
-    inline AgentVersion& WithFoundationModel(const char* value) { SetFoundationModel(value); return *this;}
+    template<typename FoundationModelT = Aws::String>
+    void SetFoundationModel(FoundationModelT&& value) { m_foundationModelHasBeenSet = true; m_foundationModel = std::forward<FoundationModelT>(value); }
+    template<typename FoundationModelT = Aws::String>
+    AgentVersion& WithFoundationModel(FoundationModelT&& value) { SetFoundationModel(std::forward<FoundationModelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the guardrail associated with the agent.</p>
      */
-    inline const GuardrailConfiguration& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
+    inline const GuardrailConfiguration& GetGuardrailConfiguration() const { return m_guardrailConfiguration; }
     inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
-    inline void SetGuardrailConfiguration(const GuardrailConfiguration& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = value; }
-    inline void SetGuardrailConfiguration(GuardrailConfiguration&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::move(value); }
-    inline AgentVersion& WithGuardrailConfiguration(const GuardrailConfiguration& value) { SetGuardrailConfiguration(value); return *this;}
-    inline AgentVersion& WithGuardrailConfiguration(GuardrailConfiguration&& value) { SetGuardrailConfiguration(std::move(value)); return *this;}
+    template<typename GuardrailConfigurationT = GuardrailConfiguration>
+    void SetGuardrailConfiguration(GuardrailConfigurationT&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::forward<GuardrailConfigurationT>(value); }
+    template<typename GuardrailConfigurationT = GuardrailConfiguration>
+    AgentVersion& WithGuardrailConfiguration(GuardrailConfigurationT&& value) { SetGuardrailConfiguration(std::forward<GuardrailConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -214,7 +195,7 @@ namespace Model
      * session expires and Amazon Bedrock deletes any data provided before the
      * timeout.</p>
      */
-    inline int GetIdleSessionTTLInSeconds() const{ return m_idleSessionTTLInSeconds; }
+    inline int GetIdleSessionTTLInSeconds() const { return m_idleSessionTTLInSeconds; }
     inline bool IdleSessionTTLInSecondsHasBeenSet() const { return m_idleSessionTTLInSecondsHasBeenSet; }
     inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSecondsHasBeenSet = true; m_idleSessionTTLInSeconds = value; }
     inline AgentVersion& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
@@ -224,14 +205,12 @@ namespace Model
     /**
      * <p>The instructions provided to the agent.</p>
      */
-    inline const Aws::String& GetInstruction() const{ return m_instruction; }
+    inline const Aws::String& GetInstruction() const { return m_instruction; }
     inline bool InstructionHasBeenSet() const { return m_instructionHasBeenSet; }
-    inline void SetInstruction(const Aws::String& value) { m_instructionHasBeenSet = true; m_instruction = value; }
-    inline void SetInstruction(Aws::String&& value) { m_instructionHasBeenSet = true; m_instruction = std::move(value); }
-    inline void SetInstruction(const char* value) { m_instructionHasBeenSet = true; m_instruction.assign(value); }
-    inline AgentVersion& WithInstruction(const Aws::String& value) { SetInstruction(value); return *this;}
-    inline AgentVersion& WithInstruction(Aws::String&& value) { SetInstruction(std::move(value)); return *this;}
-    inline AgentVersion& WithInstruction(const char* value) { SetInstruction(value); return *this;}
+    template<typename InstructionT = Aws::String>
+    void SetInstruction(InstructionT&& value) { m_instructionHasBeenSet = true; m_instruction = std::forward<InstructionT>(value); }
+    template<typename InstructionT = Aws::String>
+    AgentVersion& WithInstruction(InstructionT&& value) { SetInstruction(std::forward<InstructionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -239,12 +218,12 @@ namespace Model
      * <p> Contains details of the memory configuration on the version of the agent.
      * </p>
      */
-    inline const MemoryConfiguration& GetMemoryConfiguration() const{ return m_memoryConfiguration; }
+    inline const MemoryConfiguration& GetMemoryConfiguration() const { return m_memoryConfiguration; }
     inline bool MemoryConfigurationHasBeenSet() const { return m_memoryConfigurationHasBeenSet; }
-    inline void SetMemoryConfiguration(const MemoryConfiguration& value) { m_memoryConfigurationHasBeenSet = true; m_memoryConfiguration = value; }
-    inline void SetMemoryConfiguration(MemoryConfiguration&& value) { m_memoryConfigurationHasBeenSet = true; m_memoryConfiguration = std::move(value); }
-    inline AgentVersion& WithMemoryConfiguration(const MemoryConfiguration& value) { SetMemoryConfiguration(value); return *this;}
-    inline AgentVersion& WithMemoryConfiguration(MemoryConfiguration&& value) { SetMemoryConfiguration(std::move(value)); return *this;}
+    template<typename MemoryConfigurationT = MemoryConfiguration>
+    void SetMemoryConfiguration(MemoryConfigurationT&& value) { m_memoryConfigurationHasBeenSet = true; m_memoryConfiguration = std::forward<MemoryConfigurationT>(value); }
+    template<typename MemoryConfigurationT = MemoryConfiguration>
+    AgentVersion& WithMemoryConfiguration(MemoryConfigurationT&& value) { SetMemoryConfiguration(std::forward<MemoryConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -254,12 +233,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
      * prompts</a>.</p>
      */
-    inline const PromptOverrideConfiguration& GetPromptOverrideConfiguration() const{ return m_promptOverrideConfiguration; }
+    inline const PromptOverrideConfiguration& GetPromptOverrideConfiguration() const { return m_promptOverrideConfiguration; }
     inline bool PromptOverrideConfigurationHasBeenSet() const { return m_promptOverrideConfigurationHasBeenSet; }
-    inline void SetPromptOverrideConfiguration(const PromptOverrideConfiguration& value) { m_promptOverrideConfigurationHasBeenSet = true; m_promptOverrideConfiguration = value; }
-    inline void SetPromptOverrideConfiguration(PromptOverrideConfiguration&& value) { m_promptOverrideConfigurationHasBeenSet = true; m_promptOverrideConfiguration = std::move(value); }
-    inline AgentVersion& WithPromptOverrideConfiguration(const PromptOverrideConfiguration& value) { SetPromptOverrideConfiguration(value); return *this;}
-    inline AgentVersion& WithPromptOverrideConfiguration(PromptOverrideConfiguration&& value) { SetPromptOverrideConfiguration(std::move(value)); return *this;}
+    template<typename PromptOverrideConfigurationT = PromptOverrideConfiguration>
+    void SetPromptOverrideConfiguration(PromptOverrideConfigurationT&& value) { m_promptOverrideConfigurationHasBeenSet = true; m_promptOverrideConfiguration = std::forward<PromptOverrideConfigurationT>(value); }
+    template<typename PromptOverrideConfigurationT = PromptOverrideConfiguration>
+    AgentVersion& WithPromptOverrideConfiguration(PromptOverrideConfigurationT&& value) { SetPromptOverrideConfiguration(std::forward<PromptOverrideConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,48 +246,45 @@ namespace Model
      * <p>A list of recommended actions to take for the failed API operation on the
      * version to succeed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRecommendedActions() const{ return m_recommendedActions; }
+    inline const Aws::Vector<Aws::String>& GetRecommendedActions() const { return m_recommendedActions; }
     inline bool RecommendedActionsHasBeenSet() const { return m_recommendedActionsHasBeenSet; }
-    inline void SetRecommendedActions(const Aws::Vector<Aws::String>& value) { m_recommendedActionsHasBeenSet = true; m_recommendedActions = value; }
-    inline void SetRecommendedActions(Aws::Vector<Aws::String>&& value) { m_recommendedActionsHasBeenSet = true; m_recommendedActions = std::move(value); }
-    inline AgentVersion& WithRecommendedActions(const Aws::Vector<Aws::String>& value) { SetRecommendedActions(value); return *this;}
-    inline AgentVersion& WithRecommendedActions(Aws::Vector<Aws::String>&& value) { SetRecommendedActions(std::move(value)); return *this;}
-    inline AgentVersion& AddRecommendedActions(const Aws::String& value) { m_recommendedActionsHasBeenSet = true; m_recommendedActions.push_back(value); return *this; }
-    inline AgentVersion& AddRecommendedActions(Aws::String&& value) { m_recommendedActionsHasBeenSet = true; m_recommendedActions.push_back(std::move(value)); return *this; }
-    inline AgentVersion& AddRecommendedActions(const char* value) { m_recommendedActionsHasBeenSet = true; m_recommendedActions.push_back(value); return *this; }
+    template<typename RecommendedActionsT = Aws::Vector<Aws::String>>
+    void SetRecommendedActions(RecommendedActionsT&& value) { m_recommendedActionsHasBeenSet = true; m_recommendedActions = std::forward<RecommendedActionsT>(value); }
+    template<typename RecommendedActionsT = Aws::Vector<Aws::String>>
+    AgentVersion& WithRecommendedActions(RecommendedActionsT&& value) { SetRecommendedActions(std::forward<RecommendedActionsT>(value)); return *this;}
+    template<typename RecommendedActionsT = Aws::String>
+    AgentVersion& AddRecommendedActions(RecommendedActionsT&& value) { m_recommendedActionsHasBeenSet = true; m_recommendedActions.emplace_back(std::forward<RecommendedActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time at which the version was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline AgentVersion& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline AgentVersion& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    AgentVersion& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline AgentVersion& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline AgentVersion& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline AgentVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    AgentVersion& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_agentArn;
     bool m_agentArnHasBeenSet = false;
 
-    AgentCollaboration m_agentCollaboration;
+    AgentCollaboration m_agentCollaboration{AgentCollaboration::NOT_SET};
     bool m_agentCollaborationHasBeenSet = false;
 
     Aws::String m_agentId;
@@ -320,10 +296,10 @@ namespace Model
     Aws::String m_agentResourceRoleArn;
     bool m_agentResourceRoleArnHasBeenSet = false;
 
-    AgentStatus m_agentStatus;
+    AgentStatus m_agentStatus{AgentStatus::NOT_SET};
     bool m_agentStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_customerEncryptionKeyArn;
@@ -341,7 +317,7 @@ namespace Model
     GuardrailConfiguration m_guardrailConfiguration;
     bool m_guardrailConfigurationHasBeenSet = false;
 
-    int m_idleSessionTTLInSeconds;
+    int m_idleSessionTTLInSeconds{0};
     bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
     Aws::String m_instruction;
@@ -356,7 +332,7 @@ namespace Model
     Aws::Vector<Aws::String> m_recommendedActions;
     bool m_recommendedActionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_version;

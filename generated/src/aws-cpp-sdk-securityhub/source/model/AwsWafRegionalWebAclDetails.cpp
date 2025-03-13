@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsWafRegionalWebAclDetails::AwsWafRegionalWebAclDetails() : 
-    m_defaultActionHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rulesListHasBeenSet(false),
-    m_webAclIdHasBeenSet(false)
-{
-}
-
 AwsWafRegionalWebAclDetails::AwsWafRegionalWebAclDetails(JsonView jsonValue)
-  : AwsWafRegionalWebAclDetails()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AwsWafRegionalWebAclDetails& AwsWafRegionalWebAclDetails::operator =(JsonView js
   if(jsonValue.ValueExists("DefaultAction"))
   {
     m_defaultAction = jsonValue.GetString("DefaultAction");
-
     m_defaultActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RulesList"))
   {
     Aws::Utils::Array<JsonView> rulesListJsonList = jsonValue.GetArray("RulesList");
@@ -65,14 +49,11 @@ AwsWafRegionalWebAclDetails& AwsWafRegionalWebAclDetails::operator =(JsonView js
     }
     m_rulesListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebAclId"))
   {
     m_webAclId = jsonValue.GetString("WebAclId");
-
     m_webAclIdHasBeenSet = true;
   }
-
   return *this;
 }
 

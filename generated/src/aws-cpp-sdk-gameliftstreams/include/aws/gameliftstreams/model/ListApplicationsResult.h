@@ -29,7 +29,7 @@ namespace Model
   class ListApplicationsResult
   {
   public:
-    AWS_GAMELIFTSTREAMS_API ListApplicationsResult();
+    AWS_GAMELIFTSTREAMS_API ListApplicationsResult() = default;
     AWS_GAMELIFTSTREAMS_API ListApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFTSTREAMS_API ListApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * the Amazon Web Services account in use. Each item includes application metadata
      * and status.</p>
      */
-    inline const Aws::Vector<ApplicationSummary>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<ApplicationSummary>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<ApplicationSummary>&& value) { m_items = std::move(value); }
-    inline ListApplicationsResult& WithItems(const Aws::Vector<ApplicationSummary>& value) { SetItems(value); return *this;}
-    inline ListApplicationsResult& WithItems(Aws::Vector<ApplicationSummary>&& value) { SetItems(std::move(value)); return *this;}
-    inline ListApplicationsResult& AddItems(const ApplicationSummary& value) { m_items.push_back(value); return *this; }
-    inline ListApplicationsResult& AddItems(ApplicationSummary&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ApplicationSummary>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<ApplicationSummary>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<ApplicationSummary>>
+    ListApplicationsResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = ApplicationSummary>
+    ListApplicationsResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * <p>A token that marks the start of the next sequential page of results. If an
      * operation doesn't return a token, you've reached the end of the list. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListApplicationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListApplicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListApplicationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListApplicationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListApplicationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListApplicationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListApplicationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ApplicationSummary> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

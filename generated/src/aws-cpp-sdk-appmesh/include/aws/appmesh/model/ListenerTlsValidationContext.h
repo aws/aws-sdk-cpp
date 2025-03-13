@@ -33,7 +33,7 @@ namespace Model
   class ListenerTlsValidationContext
   {
   public:
-    AWS_APPMESH_API ListenerTlsValidationContext();
+    AWS_APPMESH_API ListenerTlsValidationContext() = default;
     AWS_APPMESH_API ListenerTlsValidationContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API ListenerTlsValidationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>A reference to an object that represents the SANs for a listener's Transport
      * Layer Security (TLS) validation context.</p>
      */
-    inline const SubjectAlternativeNames& GetSubjectAlternativeNames() const{ return m_subjectAlternativeNames; }
+    inline const SubjectAlternativeNames& GetSubjectAlternativeNames() const { return m_subjectAlternativeNames; }
     inline bool SubjectAlternativeNamesHasBeenSet() const { return m_subjectAlternativeNamesHasBeenSet; }
-    inline void SetSubjectAlternativeNames(const SubjectAlternativeNames& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = value; }
-    inline void SetSubjectAlternativeNames(SubjectAlternativeNames&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = std::move(value); }
-    inline ListenerTlsValidationContext& WithSubjectAlternativeNames(const SubjectAlternativeNames& value) { SetSubjectAlternativeNames(value); return *this;}
-    inline ListenerTlsValidationContext& WithSubjectAlternativeNames(SubjectAlternativeNames&& value) { SetSubjectAlternativeNames(std::move(value)); return *this;}
+    template<typename SubjectAlternativeNamesT = SubjectAlternativeNames>
+    void SetSubjectAlternativeNames(SubjectAlternativeNamesT&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = std::forward<SubjectAlternativeNamesT>(value); }
+    template<typename SubjectAlternativeNamesT = SubjectAlternativeNames>
+    ListenerTlsValidationContext& WithSubjectAlternativeNames(SubjectAlternativeNamesT&& value) { SetSubjectAlternativeNames(std::forward<SubjectAlternativeNamesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>A reference to where to retrieve the trust chain when validating a peer’s
      * Transport Layer Security (TLS) certificate.</p>
      */
-    inline const ListenerTlsValidationContextTrust& GetTrust() const{ return m_trust; }
+    inline const ListenerTlsValidationContextTrust& GetTrust() const { return m_trust; }
     inline bool TrustHasBeenSet() const { return m_trustHasBeenSet; }
-    inline void SetTrust(const ListenerTlsValidationContextTrust& value) { m_trustHasBeenSet = true; m_trust = value; }
-    inline void SetTrust(ListenerTlsValidationContextTrust&& value) { m_trustHasBeenSet = true; m_trust = std::move(value); }
-    inline ListenerTlsValidationContext& WithTrust(const ListenerTlsValidationContextTrust& value) { SetTrust(value); return *this;}
-    inline ListenerTlsValidationContext& WithTrust(ListenerTlsValidationContextTrust&& value) { SetTrust(std::move(value)); return *this;}
+    template<typename TrustT = ListenerTlsValidationContextTrust>
+    void SetTrust(TrustT&& value) { m_trustHasBeenSet = true; m_trust = std::forward<TrustT>(value); }
+    template<typename TrustT = ListenerTlsValidationContextTrust>
+    ListenerTlsValidationContext& WithTrust(TrustT&& value) { SetTrust(std::forward<TrustT>(value)); return *this;}
     ///@}
   private:
 

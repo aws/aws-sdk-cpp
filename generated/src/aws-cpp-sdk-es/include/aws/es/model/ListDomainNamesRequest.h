@@ -29,7 +29,7 @@ namespace Model
   class ListDomainNamesRequest : public ElasticsearchServiceRequest
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API ListDomainNamesRequest();
+    AWS_ELASTICSEARCHSERVICE_API ListDomainNamesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,16 +47,14 @@ namespace Model
      * <p> Optional parameter to filter the output by domain engine type. Acceptable
      * values are 'Elasticsearch' and 'OpenSearch'. </p>
      */
-    inline const EngineType& GetEngineType() const{ return m_engineType; }
+    inline EngineType GetEngineType() const { return m_engineType; }
     inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
-    inline void SetEngineType(const EngineType& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
-    inline void SetEngineType(EngineType&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::move(value); }
-    inline ListDomainNamesRequest& WithEngineType(const EngineType& value) { SetEngineType(value); return *this;}
-    inline ListDomainNamesRequest& WithEngineType(EngineType&& value) { SetEngineType(std::move(value)); return *this;}
+    inline void SetEngineType(EngineType value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
+    inline ListDomainNamesRequest& WithEngineType(EngineType value) { SetEngineType(value); return *this;}
     ///@}
   private:
 
-    EngineType m_engineType;
+    EngineType m_engineType{EngineType::NOT_SET};
     bool m_engineTypeHasBeenSet = false;
   };
 

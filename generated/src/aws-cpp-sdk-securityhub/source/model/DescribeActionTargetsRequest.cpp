@@ -12,14 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeActionTargetsRequest::DescribeActionTargetsRequest() : 
-    m_actionTargetArnsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeActionTargetsRequest::SerializePayload() const
 {
   JsonValue payload;

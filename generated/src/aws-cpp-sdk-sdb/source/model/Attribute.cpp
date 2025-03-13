@@ -20,16 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-Attribute::Attribute() : 
-    m_nameHasBeenSet(false),
-    m_alternateNameEncodingHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_alternateValueEncodingHasBeenSet(false)
-{
-}
-
 Attribute::Attribute(const XmlNode& xmlNode)
-  : Attribute()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ Attribute& Attribute::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode alternateNameEncodingNode = resultNode.FirstChild("AlternateNameEncoding");
     if(!alternateNameEncodingNode.IsNull())
     {
       m_alternateNameEncoding = Aws::Utils::Xml::DecodeEscapedXmlText(alternateNameEncodingNode.GetText());
       m_alternateNameEncodingHasBeenSet = true;
+       m_alternateNameEncodingHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
     XmlNode alternateValueEncodingNode = resultNode.FirstChild("AlternateValueEncoding");
     if(!alternateValueEncodingNode.IsNull())
     {
       m_alternateValueEncoding = Aws::Utils::Xml::DecodeEscapedXmlText(alternateValueEncodingNode.GetText());
       m_alternateValueEncodingHasBeenSet = true;
+       m_alternateValueEncodingHasBeenSet = true;
     }
   }
 

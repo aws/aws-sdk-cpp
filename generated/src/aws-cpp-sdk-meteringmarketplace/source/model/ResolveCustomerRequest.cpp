@@ -12,11 +12,6 @@ using namespace Aws::MarketplaceMetering::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResolveCustomerRequest::ResolveCustomerRequest() : 
-    m_registrationTokenHasBeenSet(false)
-{
-}
-
 Aws::String ResolveCustomerRequest::SerializePayload() const
 {
   JsonValue payload;

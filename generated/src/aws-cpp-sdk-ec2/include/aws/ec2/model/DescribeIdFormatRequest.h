@@ -21,7 +21,7 @@ namespace Model
   class DescribeIdFormatRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeIdFormatRequest();
+    AWS_EC2_API DescribeIdFormatRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -53,14 +53,12 @@ namespace Model
      * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
      * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline DescribeIdFormatRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline DescribeIdFormatRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline DescribeIdFormatRequest& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    DescribeIdFormatRequest& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
   private:
 

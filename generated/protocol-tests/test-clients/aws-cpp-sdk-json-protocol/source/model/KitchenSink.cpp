@@ -20,54 +20,10 @@ namespace JsonProtocol
 namespace Model
 {
 
-KitchenSink::KitchenSink() : 
-    m_blobHasBeenSet(false),
-    m_boolean(false),
-    m_booleanHasBeenSet(false),
-    m_double(0.0),
-    m_doubleHasBeenSet(false),
-    m_emptyStructHasBeenSet(false),
-    m_float(0.0),
-    m_floatHasBeenSet(false),
-    m_httpdateTimestampHasBeenSet(false),
-    m_integer(0),
-    m_integerHasBeenSet(false),
-    m_iso8601TimestampHasBeenSet(false),
-    m_jsonValueHasBeenSet(false),
-    m_listOfListsHasBeenSet(false),
-    m_listOfMapsOfStringsHasBeenSet(false),
-    m_listOfStringsHasBeenSet(false),
-    m_listOfStructsHasBeenSet(false),
-    m_long(0),
-    m_longHasBeenSet(false),
-    m_mapOfListsOfStringsHasBeenSet(false),
-    m_mapOfMapsHasBeenSet(false),
-    m_mapOfStringsHasBeenSet(false),
-    m_mapOfStructsHasBeenSet(false),
-    m_recursiveListHasBeenSet(false),
-    m_recursiveMapHasBeenSet(false),
-    m_recursiveStructHasBeenSet(false),
-    m_simpleStructHasBeenSet(false),
-    m_stringHasBeenSet(false),
-    m_structWithJsonNameHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_unixTimestampHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 KitchenSink::KitchenSink(JsonView jsonValue)
-  : KitchenSink()
 {
   *this = jsonValue;
 }
-
-const KitchenSink& KitchenSink::GetRecursiveStruct() const{ return *m_recursiveStruct; }
-bool KitchenSink::RecursiveStructHasBeenSet() const { return m_recursiveStructHasBeenSet; }
-void KitchenSink::SetRecursiveStruct(const KitchenSink& value) { m_recursiveStructHasBeenSet = true; m_recursiveStruct = Aws::MakeShared<KitchenSink>("KitchenSink", value); }
-void KitchenSink::SetRecursiveStruct(KitchenSink&& value) { m_recursiveStructHasBeenSet = true; m_recursiveStruct = Aws::MakeShared<KitchenSink>("KitchenSink", std::move(value)); }
-KitchenSink& KitchenSink::WithRecursiveStruct(const KitchenSink& value) { SetRecursiveStruct(value); return *this;}
-KitchenSink& KitchenSink::WithRecursiveStruct(KitchenSink&& value) { SetRecursiveStruct(std::move(value)); return *this;}
 
 KitchenSink& KitchenSink::operator =(JsonView jsonValue)
 {
@@ -76,63 +32,46 @@ KitchenSink& KitchenSink::operator =(JsonView jsonValue)
     m_blob = HashingUtils::Base64Decode(jsonValue.GetString("Blob"));
     m_blobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Boolean"))
   {
     m_boolean = jsonValue.GetBool("Boolean");
-
     m_booleanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Double"))
   {
     m_double = jsonValue.GetDouble("Double");
-
     m_doubleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmptyStruct"))
   {
     m_emptyStruct = jsonValue.GetObject("EmptyStruct");
-
     m_emptyStructHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Float"))
   {
     m_float = jsonValue.GetDouble("Float");
-
     m_floatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpdateTimestamp"))
   {
     m_httpdateTimestamp = jsonValue.GetString("HttpdateTimestamp");
-
     m_httpdateTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Integer"))
   {
     m_integer = jsonValue.GetInteger("Integer");
-
     m_integerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Iso8601Timestamp"))
   {
     m_iso8601Timestamp = jsonValue.GetString("Iso8601Timestamp");
-
     m_iso8601TimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JsonValue"))
   {
     m_jsonValue = jsonValue.GetString("JsonValue");
-
     m_jsonValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListOfLists"))
   {
     Aws::Utils::Array<JsonView> listOfListsJsonList = jsonValue.GetArray("ListOfLists");
@@ -149,7 +88,6 @@ KitchenSink& KitchenSink::operator =(JsonView jsonValue)
     }
     m_listOfListsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListOfMapsOfStrings"))
   {
     Aws::Utils::Array<JsonView> listOfMapsOfStringsJsonList = jsonValue.GetArray("ListOfMapsOfStrings");
@@ -165,7 +103,6 @@ KitchenSink& KitchenSink::operator =(JsonView jsonValue)
     }
     m_listOfMapsOfStringsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListOfStrings"))
   {
     Aws::Utils::Array<JsonView> listOfStringsJsonList = jsonValue.GetArray("ListOfStrings");
@@ -175,7 +112,6 @@ KitchenSink& KitchenSink::operator =(JsonView jsonValue)
     }
     m_listOfStringsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListOfStructs"))
   {
     Aws::Utils::Array<JsonView> listOfStructsJsonList = jsonValue.GetArray("ListOfStructs");
@@ -185,14 +121,11 @@ KitchenSink& KitchenSink::operator =(JsonView jsonValue)
     }
     m_listOfStructsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Long"))
   {
     m_long = jsonValue.GetInt64("Long");
-
     m_longHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapOfListsOfStrings"))
   {
     Aws::Map<Aws::String, JsonView> mapOfListsOfStringsJsonMap = jsonValue.GetObject("MapOfListsOfStrings").GetAllObjects();
@@ -209,7 +142,6 @@ KitchenSink& KitchenSink::operator =(JsonView jsonValue)
     }
     m_mapOfListsOfStringsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapOfMaps"))
   {
     Aws::Map<Aws::String, JsonView> mapOfMapsJsonMap = jsonValue.GetObject("MapOfMaps").GetAllObjects();
@@ -225,7 +157,6 @@ KitchenSink& KitchenSink::operator =(JsonView jsonValue)
     }
     m_mapOfMapsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapOfStrings"))
   {
     Aws::Map<Aws::String, JsonView> mapOfStringsJsonMap = jsonValue.GetObject("MapOfStrings").GetAllObjects();
@@ -235,7 +166,6 @@ KitchenSink& KitchenSink::operator =(JsonView jsonValue)
     }
     m_mapOfStringsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapOfStructs"))
   {
     Aws::Map<Aws::String, JsonView> mapOfStructsJsonMap = jsonValue.GetObject("MapOfStructs").GetAllObjects();
@@ -245,7 +175,6 @@ KitchenSink& KitchenSink::operator =(JsonView jsonValue)
     }
     m_mapOfStructsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecursiveList"))
   {
     Aws::Utils::Array<JsonView> recursiveListJsonList = jsonValue.GetArray("RecursiveList");
@@ -255,7 +184,6 @@ KitchenSink& KitchenSink::operator =(JsonView jsonValue)
     }
     m_recursiveListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecursiveMap"))
   {
     Aws::Map<Aws::String, JsonView> recursiveMapJsonMap = jsonValue.GetObject("RecursiveMap").GetAllObjects();
@@ -265,49 +193,36 @@ KitchenSink& KitchenSink::operator =(JsonView jsonValue)
     }
     m_recursiveMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecursiveStruct"))
   {
     m_recursiveStruct = Aws::MakeShared<KitchenSink>("KitchenSink", jsonValue.GetObject("RecursiveStruct"));
-
     m_recursiveStructHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SimpleStruct"))
   {
     m_simpleStruct = jsonValue.GetObject("SimpleStruct");
-
     m_simpleStructHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("String"))
   {
     m_string = jsonValue.GetString("String");
-
     m_stringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StructWithJsonName"))
   {
     m_structWithJsonName = jsonValue.GetObject("StructWithJsonName");
-
     m_structWithJsonNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnixTimestamp"))
   {
     m_unixTimestamp = jsonValue.GetDouble("UnixTimestamp");
-
     m_unixTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

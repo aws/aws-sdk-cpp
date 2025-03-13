@@ -31,7 +31,7 @@ namespace Model
   class GetGatewayResponsesRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetGatewayResponsesRequest();
+    AWS_APIGATEWAY_API GetGatewayResponsesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline GetGatewayResponsesRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline GetGatewayResponsesRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline GetGatewayResponsesRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    GetGatewayResponsesRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>The current pagination position in the paged result set. The GatewayResponse
      * collection does not support pagination and the position does not apply here.</p>
      */
-    inline const Aws::String& GetPosition() const{ return m_position; }
+    inline const Aws::String& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
-    inline GetGatewayResponsesRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline GetGatewayResponsesRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetGatewayResponsesRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    GetGatewayResponsesRequest& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,7 +75,7 @@ namespace Model
      * the maximum value is 500. The GatewayResponses collection does not support
      * pagination and the limit does not apply here.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetGatewayResponsesRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -92,7 +88,7 @@ namespace Model
     Aws::String m_position;
     bool m_positionHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

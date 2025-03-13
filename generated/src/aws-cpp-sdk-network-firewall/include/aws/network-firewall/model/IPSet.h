@@ -33,7 +33,7 @@ namespace Model
   class IPSet
   {
   public:
-    AWS_NETWORKFIREWALL_API IPSet();
+    AWS_NETWORKFIREWALL_API IPSet() = default;
     AWS_NETWORKFIREWALL_API IPSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API IPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>The list of IP addresses and address ranges, in CIDR notation. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetDefinition() const{ return m_definition; }
+    inline const Aws::Vector<Aws::String>& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const Aws::Vector<Aws::String>& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(Aws::Vector<Aws::String>&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline IPSet& WithDefinition(const Aws::Vector<Aws::String>& value) { SetDefinition(value); return *this;}
-    inline IPSet& WithDefinition(Aws::Vector<Aws::String>&& value) { SetDefinition(std::move(value)); return *this;}
-    inline IPSet& AddDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition.push_back(value); return *this; }
-    inline IPSet& AddDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition.push_back(std::move(value)); return *this; }
-    inline IPSet& AddDefinition(const char* value) { m_definitionHasBeenSet = true; m_definition.push_back(value); return *this; }
+    template<typename DefinitionT = Aws::Vector<Aws::String>>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = Aws::Vector<Aws::String>>
+    IPSet& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
+    template<typename DefinitionT = Aws::String>
+    IPSet& AddDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition.emplace_back(std::forward<DefinitionT>(value)); return *this; }
     ///@}
   private:
 

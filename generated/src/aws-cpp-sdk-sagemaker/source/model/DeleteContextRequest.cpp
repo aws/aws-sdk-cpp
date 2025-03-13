@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteContextRequest::DeleteContextRequest() : 
-    m_contextNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteContextRequest::SerializePayload() const
 {
   JsonValue payload;

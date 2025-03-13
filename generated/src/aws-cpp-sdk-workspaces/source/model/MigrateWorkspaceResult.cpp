@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-MigrateWorkspaceResult::MigrateWorkspaceResult()
-{
-}
-
 MigrateWorkspaceResult::MigrateWorkspaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ MigrateWorkspaceResult& MigrateWorkspaceResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("SourceWorkspaceId"))
   {
     m_sourceWorkspaceId = jsonValue.GetString("SourceWorkspaceId");
-
+    m_sourceWorkspaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetWorkspaceId"))
   {
     m_targetWorkspaceId = jsonValue.GetString("TargetWorkspaceId");
-
+    m_targetWorkspaceIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

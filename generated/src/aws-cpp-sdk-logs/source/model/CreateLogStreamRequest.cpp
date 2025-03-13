@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLogStreamRequest::CreateLogStreamRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_logStreamNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateLogStreamRequest::SerializePayload() const
 {
   JsonValue payload;

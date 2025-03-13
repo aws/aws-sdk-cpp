@@ -32,7 +32,7 @@ namespace Model
   class OrganizationScanEc2InstanceWithFindingsResult
   {
   public:
-    AWS_GUARDDUTY_API OrganizationScanEc2InstanceWithFindingsResult();
+    AWS_GUARDDUTY_API OrganizationScanEc2InstanceWithFindingsResult() = default;
     AWS_GUARDDUTY_API OrganizationScanEc2InstanceWithFindingsResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API OrganizationScanEc2InstanceWithFindingsResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Describes the configuration for scanning EBS volumes for an organization.</p>
      */
-    inline const OrganizationEbsVolumesResult& GetEbsVolumes() const{ return m_ebsVolumes; }
+    inline const OrganizationEbsVolumesResult& GetEbsVolumes() const { return m_ebsVolumes; }
     inline bool EbsVolumesHasBeenSet() const { return m_ebsVolumesHasBeenSet; }
-    inline void SetEbsVolumes(const OrganizationEbsVolumesResult& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = value; }
-    inline void SetEbsVolumes(OrganizationEbsVolumesResult&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = std::move(value); }
-    inline OrganizationScanEc2InstanceWithFindingsResult& WithEbsVolumes(const OrganizationEbsVolumesResult& value) { SetEbsVolumes(value); return *this;}
-    inline OrganizationScanEc2InstanceWithFindingsResult& WithEbsVolumes(OrganizationEbsVolumesResult&& value) { SetEbsVolumes(std::move(value)); return *this;}
+    template<typename EbsVolumesT = OrganizationEbsVolumesResult>
+    void SetEbsVolumes(EbsVolumesT&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = std::forward<EbsVolumesT>(value); }
+    template<typename EbsVolumesT = OrganizationEbsVolumesResult>
+    OrganizationScanEc2InstanceWithFindingsResult& WithEbsVolumes(EbsVolumesT&& value) { SetEbsVolumes(std::forward<EbsVolumesT>(value)); return *this;}
     ///@}
   private:
 

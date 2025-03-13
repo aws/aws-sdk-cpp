@@ -33,7 +33,7 @@ namespace Model
   class EksConfiguration
   {
   public:
-    AWS_BATCH_API EksConfiguration();
+    AWS_BATCH_API EksConfiguration() = default;
     AWS_BATCH_API EksConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <code>arn:<i>aws</i>:eks:<i>us-east-1</i>:<i>123456789012</i>:cluster/<i>ClusterForBatch</i>
      * </code>. </p>
      */
-    inline const Aws::String& GetEksClusterArn() const{ return m_eksClusterArn; }
+    inline const Aws::String& GetEksClusterArn() const { return m_eksClusterArn; }
     inline bool EksClusterArnHasBeenSet() const { return m_eksClusterArnHasBeenSet; }
-    inline void SetEksClusterArn(const Aws::String& value) { m_eksClusterArnHasBeenSet = true; m_eksClusterArn = value; }
-    inline void SetEksClusterArn(Aws::String&& value) { m_eksClusterArnHasBeenSet = true; m_eksClusterArn = std::move(value); }
-    inline void SetEksClusterArn(const char* value) { m_eksClusterArnHasBeenSet = true; m_eksClusterArn.assign(value); }
-    inline EksConfiguration& WithEksClusterArn(const Aws::String& value) { SetEksClusterArn(value); return *this;}
-    inline EksConfiguration& WithEksClusterArn(Aws::String&& value) { SetEksClusterArn(std::move(value)); return *this;}
-    inline EksConfiguration& WithEksClusterArn(const char* value) { SetEksClusterArn(value); return *this;}
+    template<typename EksClusterArnT = Aws::String>
+    void SetEksClusterArn(EksClusterArnT&& value) { m_eksClusterArnHasBeenSet = true; m_eksClusterArn = std::forward<EksClusterArnT>(value); }
+    template<typename EksClusterArnT = Aws::String>
+    EksConfiguration& WithEksClusterArn(EksClusterArnT&& value) { SetEksClusterArn(std::forward<EksClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespaces</a>
      * in the Kubernetes documentation.</p>
      */
-    inline const Aws::String& GetKubernetesNamespace() const{ return m_kubernetesNamespace; }
+    inline const Aws::String& GetKubernetesNamespace() const { return m_kubernetesNamespace; }
     inline bool KubernetesNamespaceHasBeenSet() const { return m_kubernetesNamespaceHasBeenSet; }
-    inline void SetKubernetesNamespace(const Aws::String& value) { m_kubernetesNamespaceHasBeenSet = true; m_kubernetesNamespace = value; }
-    inline void SetKubernetesNamespace(Aws::String&& value) { m_kubernetesNamespaceHasBeenSet = true; m_kubernetesNamespace = std::move(value); }
-    inline void SetKubernetesNamespace(const char* value) { m_kubernetesNamespaceHasBeenSet = true; m_kubernetesNamespace.assign(value); }
-    inline EksConfiguration& WithKubernetesNamespace(const Aws::String& value) { SetKubernetesNamespace(value); return *this;}
-    inline EksConfiguration& WithKubernetesNamespace(Aws::String&& value) { SetKubernetesNamespace(std::move(value)); return *this;}
-    inline EksConfiguration& WithKubernetesNamespace(const char* value) { SetKubernetesNamespace(value); return *this;}
+    template<typename KubernetesNamespaceT = Aws::String>
+    void SetKubernetesNamespace(KubernetesNamespaceT&& value) { m_kubernetesNamespaceHasBeenSet = true; m_kubernetesNamespace = std::forward<KubernetesNamespaceT>(value); }
+    template<typename KubernetesNamespaceT = Aws::String>
+    EksConfiguration& WithKubernetesNamespace(KubernetesNamespaceT&& value) { SetKubernetesNamespace(std::forward<KubernetesNamespaceT>(value)); return *this;}
     ///@}
   private:
 

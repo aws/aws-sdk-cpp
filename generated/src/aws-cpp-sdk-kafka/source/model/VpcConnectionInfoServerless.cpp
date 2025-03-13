@@ -18,16 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-VpcConnectionInfoServerless::VpcConnectionInfoServerless() : 
-    m_creationTimeHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_userIdentityHasBeenSet(false),
-    m_vpcConnectionArnHasBeenSet(false)
-{
-}
-
 VpcConnectionInfoServerless::VpcConnectionInfoServerless(JsonView jsonValue)
-  : VpcConnectionInfoServerless()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ VpcConnectionInfoServerless& VpcConnectionInfoServerless::operator =(JsonView js
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetString("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userIdentity"))
   {
     m_userIdentity = jsonValue.GetObject("userIdentity");
-
     m_userIdentityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConnectionArn"))
   {
     m_vpcConnectionArn = jsonValue.GetString("vpcConnectionArn");
-
     m_vpcConnectionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

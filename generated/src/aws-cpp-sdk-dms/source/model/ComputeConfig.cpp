@@ -18,24 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ComputeConfig::ComputeConfig() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_dnsNameServersHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_maxCapacityUnits(0),
-    m_maxCapacityUnitsHasBeenSet(false),
-    m_minCapacityUnits(0),
-    m_minCapacityUnitsHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_replicationSubnetGroupIdHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false)
-{
-}
-
 ComputeConfig::ComputeConfig(JsonView jsonValue)
-  : ComputeConfig()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ ComputeConfig& ComputeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsNameServers"))
   {
     m_dnsNameServers = jsonValue.GetString("DnsNameServers");
-
     m_dnsNameServersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCapacityUnits"))
   {
     m_maxCapacityUnits = jsonValue.GetInteger("MaxCapacityUnits");
-
     m_maxCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinCapacityUnits"))
   {
     m_minCapacityUnits = jsonValue.GetInteger("MinCapacityUnits");
-
     m_minCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiAZ"))
   {
     m_multiAZ = jsonValue.GetBool("MultiAZ");
-
     m_multiAZHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredMaintenanceWindow"))
   {
     m_preferredMaintenanceWindow = jsonValue.GetString("PreferredMaintenanceWindow");
-
     m_preferredMaintenanceWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationSubnetGroupId"))
   {
     m_replicationSubnetGroupId = jsonValue.GetString("ReplicationSubnetGroupId");
-
     m_replicationSubnetGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcSecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> vpcSecurityGroupIdsJsonList = jsonValue.GetArray("VpcSecurityGroupIds");
@@ -107,7 +74,6 @@ ComputeConfig& ComputeConfig::operator =(JsonView jsonValue)
     }
     m_vpcSecurityGroupIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

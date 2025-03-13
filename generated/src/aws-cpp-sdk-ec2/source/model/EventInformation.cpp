@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EventInformation::EventInformation() : 
-    m_eventDescriptionHasBeenSet(false),
-    m_eventSubTypeHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 EventInformation::EventInformation(const XmlNode& xmlNode)
-  : EventInformation()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ EventInformation& EventInformation::operator =(const XmlNode& xmlNode)
     {
       m_eventDescription = Aws::Utils::Xml::DecodeEscapedXmlText(eventDescriptionNode.GetText());
       m_eventDescriptionHasBeenSet = true;
+       m_eventDescriptionHasBeenSet = true;
     }
     XmlNode eventSubTypeNode = resultNode.FirstChild("eventSubType");
     if(!eventSubTypeNode.IsNull())
     {
       m_eventSubType = Aws::Utils::Xml::DecodeEscapedXmlText(eventSubTypeNode.GetText());
       m_eventSubTypeHasBeenSet = true;
+       m_eventSubTypeHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
   }
 

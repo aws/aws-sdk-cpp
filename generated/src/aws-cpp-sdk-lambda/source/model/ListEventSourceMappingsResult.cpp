@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListEventSourceMappingsResult::ListEventSourceMappingsResult()
-{
-}
-
 ListEventSourceMappingsResult::ListEventSourceMappingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListEventSourceMappingsResult& ListEventSourceMappingsResult::operator =(const A
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventSourceMappings"))
   {
     Aws::Utils::Array<JsonView> eventSourceMappingsJsonList = jsonValue.GetArray("EventSourceMappings");
@@ -42,14 +37,15 @@ ListEventSourceMappingsResult& ListEventSourceMappingsResult::operator =(const A
     {
       m_eventSourceMappings.push_back(eventSourceMappingsJsonList[eventSourceMappingsIndex].AsObject());
     }
+    m_eventSourceMappingsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

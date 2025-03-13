@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCoipPoolUsageResponse::GetCoipPoolUsageResponse()
-{
-}
-
 GetCoipPoolUsageResponse::GetCoipPoolUsageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ GetCoipPoolUsageResponse& GetCoipPoolUsageResponse::operator =(const Aws::Amazon
     if(!coipPoolIdNode.IsNull())
     {
       m_coipPoolId = Aws::Utils::Xml::DecodeEscapedXmlText(coipPoolIdNode.GetText());
+      m_coipPoolIdHasBeenSet = true;
     }
     XmlNode coipAddressUsagesNode = resultNode.FirstChild("coipAddressUsageSet");
     if(!coipAddressUsagesNode.IsNull())
     {
       XmlNode coipAddressUsagesMember = coipAddressUsagesNode.FirstChild("item");
+      m_coipAddressUsagesHasBeenSet = !coipAddressUsagesMember.IsNull();
       while(!coipAddressUsagesMember.IsNull())
       {
         m_coipAddressUsages.push_back(coipAddressUsagesMember);
@@ -58,11 +56,13 @@ GetCoipPoolUsageResponse& GetCoipPoolUsageResponse::operator =(const Aws::Amazon
     if(!localGatewayRouteTableIdNode.IsNull())
     {
       m_localGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableIdNode.GetText());
+      m_localGatewayRouteTableIdHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -71,6 +71,7 @@ GetCoipPoolUsageResponse& GetCoipPoolUsageResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetCoipPoolUsageResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

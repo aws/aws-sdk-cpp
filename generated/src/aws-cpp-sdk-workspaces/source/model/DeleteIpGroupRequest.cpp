@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIpGroupRequest::DeleteIpGroupRequest() : 
-    m_groupIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIpGroupRequest::SerializePayload() const
 {
   JsonValue payload;

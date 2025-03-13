@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-VerifyAuthRequestCryptogramResult::VerifyAuthRequestCryptogramResult()
-{
-}
-
 VerifyAuthRequestCryptogramResult::VerifyAuthRequestCryptogramResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ VerifyAuthRequestCryptogramResult& VerifyAuthRequestCryptogramResult::operator =
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
-
+    m_keyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyCheckValue"))
   {
     m_keyCheckValue = jsonValue.GetString("KeyCheckValue");
-
+    m_keyCheckValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthResponseValue"))
   {
     m_authResponseValue = jsonValue.GetString("AuthResponseValue");
-
+    m_authResponseValueHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

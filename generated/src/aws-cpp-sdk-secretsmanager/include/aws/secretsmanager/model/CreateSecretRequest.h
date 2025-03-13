@@ -26,7 +26,7 @@ namespace Model
   class CreateSecretRequest : public SecretsManagerRequest
   {
   public:
-    AWS_SECRETSMANAGER_API CreateSecretRequest();
+    AWS_SECRETSMANAGER_API CreateSecretRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * Manager automatically adds a hyphen and six random characters after the secret
      * name at the end of the ARN.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateSecretRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateSecretRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateSecretRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateSecretRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,28 +84,24 @@ namespace Model
      * version.</p> </li> </ul> <p>This value becomes the <code>VersionId</code> of the
      * new version.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateSecretRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateSecretRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateSecretRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateSecretRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the secret.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateSecretRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateSecretRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateSecretRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateSecretRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,14 +120,12 @@ namespace Model
      * <code>aws/secretsmanager</code> to encrypt the secret, and you must create and
      * use a customer managed KMS key. </p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CreateSecretRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateSecretRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateSecretRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateSecretRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,12 +139,12 @@ namespace Model
      * log entries. If you create your own log entries, you must also avoid logging the
      * information in this field.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const{ return m_secretBinary; }
+    inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const { return m_secretBinary; }
     inline bool SecretBinaryHasBeenSet() const { return m_secretBinaryHasBeenSet; }
-    inline void SetSecretBinary(const Aws::Utils::CryptoBuffer& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = value; }
-    inline void SetSecretBinary(Aws::Utils::CryptoBuffer&& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = std::move(value); }
-    inline CreateSecretRequest& WithSecretBinary(const Aws::Utils::CryptoBuffer& value) { SetSecretBinary(value); return *this;}
-    inline CreateSecretRequest& WithSecretBinary(Aws::Utils::CryptoBuffer&& value) { SetSecretBinary(std::move(value)); return *this;}
+    template<typename SecretBinaryT = Aws::Utils::CryptoBuffer>
+    void SetSecretBinary(SecretBinaryT&& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = std::forward<SecretBinaryT>(value); }
+    template<typename SecretBinaryT = Aws::Utils::CryptoBuffer>
+    CreateSecretRequest& WithSecretBinary(SecretBinaryT&& value) { SetSecretBinary(std::forward<SecretBinaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,14 +160,12 @@ namespace Model
      * so the service does not include it in CloudTrail log entries. If you create your
      * own log entries, you must also avoid logging the information in this field.</p>
      */
-    inline const Aws::String& GetSecretString() const{ return m_secretString; }
+    inline const Aws::String& GetSecretString() const { return m_secretString; }
     inline bool SecretStringHasBeenSet() const { return m_secretStringHasBeenSet; }
-    inline void SetSecretString(const Aws::String& value) { m_secretStringHasBeenSet = true; m_secretString = value; }
-    inline void SetSecretString(Aws::String&& value) { m_secretStringHasBeenSet = true; m_secretString = std::move(value); }
-    inline void SetSecretString(const char* value) { m_secretStringHasBeenSet = true; m_secretString.assign(value); }
-    inline CreateSecretRequest& WithSecretString(const Aws::String& value) { SetSecretString(value); return *this;}
-    inline CreateSecretRequest& WithSecretString(Aws::String&& value) { SetSecretString(std::move(value)); return *this;}
-    inline CreateSecretRequest& WithSecretString(const char* value) { SetSecretString(value); return *this;}
+    template<typename SecretStringT = Aws::String>
+    void SetSecretString(SecretStringT&& value) { m_secretStringHasBeenSet = true; m_secretString = std::forward<SecretStringT>(value); }
+    template<typename SecretStringT = Aws::String>
+    CreateSecretRequest& WithSecretString(SecretStringT&& value) { SetSecretString(std::forward<SecretStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -205,28 +195,28 @@ namespace Model
      * quotas for Tagging</a> in the <i>Amazon Web Services General Reference
      * guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSecretRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateSecretRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSecretRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateSecretRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateSecretRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateSecretRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of Regions and KMS keys to replicate secrets.</p>
      */
-    inline const Aws::Vector<ReplicaRegionType>& GetAddReplicaRegions() const{ return m_addReplicaRegions; }
+    inline const Aws::Vector<ReplicaRegionType>& GetAddReplicaRegions() const { return m_addReplicaRegions; }
     inline bool AddReplicaRegionsHasBeenSet() const { return m_addReplicaRegionsHasBeenSet; }
-    inline void SetAddReplicaRegions(const Aws::Vector<ReplicaRegionType>& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions = value; }
-    inline void SetAddReplicaRegions(Aws::Vector<ReplicaRegionType>&& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions = std::move(value); }
-    inline CreateSecretRequest& WithAddReplicaRegions(const Aws::Vector<ReplicaRegionType>& value) { SetAddReplicaRegions(value); return *this;}
-    inline CreateSecretRequest& WithAddReplicaRegions(Aws::Vector<ReplicaRegionType>&& value) { SetAddReplicaRegions(std::move(value)); return *this;}
-    inline CreateSecretRequest& AddAddReplicaRegions(const ReplicaRegionType& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions.push_back(value); return *this; }
-    inline CreateSecretRequest& AddAddReplicaRegions(ReplicaRegionType&& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions.push_back(std::move(value)); return *this; }
+    template<typename AddReplicaRegionsT = Aws::Vector<ReplicaRegionType>>
+    void SetAddReplicaRegions(AddReplicaRegionsT&& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions = std::forward<AddReplicaRegionsT>(value); }
+    template<typename AddReplicaRegionsT = Aws::Vector<ReplicaRegionType>>
+    CreateSecretRequest& WithAddReplicaRegions(AddReplicaRegionsT&& value) { SetAddReplicaRegions(std::forward<AddReplicaRegionsT>(value)); return *this;}
+    template<typename AddReplicaRegionsT = ReplicaRegionType>
+    CreateSecretRequest& AddAddReplicaRegions(AddReplicaRegionsT&& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions.emplace_back(std::forward<AddReplicaRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -234,7 +224,7 @@ namespace Model
      * <p>Specifies whether to overwrite a secret with the same name in the destination
      * Region. By default, secrets aren't overwritten.</p>
      */
-    inline bool GetForceOverwriteReplicaSecret() const{ return m_forceOverwriteReplicaSecret; }
+    inline bool GetForceOverwriteReplicaSecret() const { return m_forceOverwriteReplicaSecret; }
     inline bool ForceOverwriteReplicaSecretHasBeenSet() const { return m_forceOverwriteReplicaSecretHasBeenSet; }
     inline void SetForceOverwriteReplicaSecret(bool value) { m_forceOverwriteReplicaSecretHasBeenSet = true; m_forceOverwriteReplicaSecret = value; }
     inline CreateSecretRequest& WithForceOverwriteReplicaSecret(bool value) { SetForceOverwriteReplicaSecret(value); return *this;}
@@ -253,7 +243,7 @@ namespace Model
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    Aws::Utils::CryptoBuffer m_secretBinary;
+    Aws::Utils::CryptoBuffer m_secretBinary{};
     bool m_secretBinaryHasBeenSet = false;
 
     Aws::String m_secretString;
@@ -265,7 +255,7 @@ namespace Model
     Aws::Vector<ReplicaRegionType> m_addReplicaRegions;
     bool m_addReplicaRegionsHasBeenSet = false;
 
-    bool m_forceOverwriteReplicaSecret;
+    bool m_forceOverwriteReplicaSecret{false};
     bool m_forceOverwriteReplicaSecretHasBeenSet = false;
   };
 

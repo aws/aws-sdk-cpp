@@ -19,7 +19,7 @@ namespace Model
   class ContentTypeParametersRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API ContentTypeParametersRequest();
+    AWS_RESTXMLPROTOCOL_API ContentTypeParametersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,14 +32,14 @@ namespace Model
 
     ///@{
     
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline ContentTypeParametersRequest& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

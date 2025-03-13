@@ -37,7 +37,7 @@ namespace Model
   class DataLabelType
   {
   public:
-    AWS_QUICKSIGHT_API DataLabelType();
+    AWS_QUICKSIGHT_API DataLabelType() = default;
     AWS_QUICKSIGHT_API DataLabelType(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DataLabelType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,60 +47,60 @@ namespace Model
     /**
      * <p>Determines the label configuration for the entire field.</p>
      */
-    inline const FieldLabelType& GetFieldLabelType() const{ return m_fieldLabelType; }
+    inline const FieldLabelType& GetFieldLabelType() const { return m_fieldLabelType; }
     inline bool FieldLabelTypeHasBeenSet() const { return m_fieldLabelTypeHasBeenSet; }
-    inline void SetFieldLabelType(const FieldLabelType& value) { m_fieldLabelTypeHasBeenSet = true; m_fieldLabelType = value; }
-    inline void SetFieldLabelType(FieldLabelType&& value) { m_fieldLabelTypeHasBeenSet = true; m_fieldLabelType = std::move(value); }
-    inline DataLabelType& WithFieldLabelType(const FieldLabelType& value) { SetFieldLabelType(value); return *this;}
-    inline DataLabelType& WithFieldLabelType(FieldLabelType&& value) { SetFieldLabelType(std::move(value)); return *this;}
+    template<typename FieldLabelTypeT = FieldLabelType>
+    void SetFieldLabelType(FieldLabelTypeT&& value) { m_fieldLabelTypeHasBeenSet = true; m_fieldLabelType = std::forward<FieldLabelTypeT>(value); }
+    template<typename FieldLabelTypeT = FieldLabelType>
+    DataLabelType& WithFieldLabelType(FieldLabelTypeT&& value) { SetFieldLabelType(std::forward<FieldLabelTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The option that specifies individual data values for labels.</p>
      */
-    inline const DataPathLabelType& GetDataPathLabelType() const{ return m_dataPathLabelType; }
+    inline const DataPathLabelType& GetDataPathLabelType() const { return m_dataPathLabelType; }
     inline bool DataPathLabelTypeHasBeenSet() const { return m_dataPathLabelTypeHasBeenSet; }
-    inline void SetDataPathLabelType(const DataPathLabelType& value) { m_dataPathLabelTypeHasBeenSet = true; m_dataPathLabelType = value; }
-    inline void SetDataPathLabelType(DataPathLabelType&& value) { m_dataPathLabelTypeHasBeenSet = true; m_dataPathLabelType = std::move(value); }
-    inline DataLabelType& WithDataPathLabelType(const DataPathLabelType& value) { SetDataPathLabelType(value); return *this;}
-    inline DataLabelType& WithDataPathLabelType(DataPathLabelType&& value) { SetDataPathLabelType(std::move(value)); return *this;}
+    template<typename DataPathLabelTypeT = DataPathLabelType>
+    void SetDataPathLabelType(DataPathLabelTypeT&& value) { m_dataPathLabelTypeHasBeenSet = true; m_dataPathLabelType = std::forward<DataPathLabelTypeT>(value); }
+    template<typename DataPathLabelTypeT = DataPathLabelType>
+    DataLabelType& WithDataPathLabelType(DataPathLabelTypeT&& value) { SetDataPathLabelType(std::forward<DataPathLabelTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines the label configuration for range end value in a visual.</p>
      */
-    inline const RangeEndsLabelType& GetRangeEndsLabelType() const{ return m_rangeEndsLabelType; }
+    inline const RangeEndsLabelType& GetRangeEndsLabelType() const { return m_rangeEndsLabelType; }
     inline bool RangeEndsLabelTypeHasBeenSet() const { return m_rangeEndsLabelTypeHasBeenSet; }
-    inline void SetRangeEndsLabelType(const RangeEndsLabelType& value) { m_rangeEndsLabelTypeHasBeenSet = true; m_rangeEndsLabelType = value; }
-    inline void SetRangeEndsLabelType(RangeEndsLabelType&& value) { m_rangeEndsLabelTypeHasBeenSet = true; m_rangeEndsLabelType = std::move(value); }
-    inline DataLabelType& WithRangeEndsLabelType(const RangeEndsLabelType& value) { SetRangeEndsLabelType(value); return *this;}
-    inline DataLabelType& WithRangeEndsLabelType(RangeEndsLabelType&& value) { SetRangeEndsLabelType(std::move(value)); return *this;}
+    template<typename RangeEndsLabelTypeT = RangeEndsLabelType>
+    void SetRangeEndsLabelType(RangeEndsLabelTypeT&& value) { m_rangeEndsLabelTypeHasBeenSet = true; m_rangeEndsLabelType = std::forward<RangeEndsLabelTypeT>(value); }
+    template<typename RangeEndsLabelTypeT = RangeEndsLabelType>
+    DataLabelType& WithRangeEndsLabelType(RangeEndsLabelTypeT&& value) { SetRangeEndsLabelType(std::forward<RangeEndsLabelTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines the label configuration for the minimum value in a visual.</p>
      */
-    inline const MinimumLabelType& GetMinimumLabelType() const{ return m_minimumLabelType; }
+    inline const MinimumLabelType& GetMinimumLabelType() const { return m_minimumLabelType; }
     inline bool MinimumLabelTypeHasBeenSet() const { return m_minimumLabelTypeHasBeenSet; }
-    inline void SetMinimumLabelType(const MinimumLabelType& value) { m_minimumLabelTypeHasBeenSet = true; m_minimumLabelType = value; }
-    inline void SetMinimumLabelType(MinimumLabelType&& value) { m_minimumLabelTypeHasBeenSet = true; m_minimumLabelType = std::move(value); }
-    inline DataLabelType& WithMinimumLabelType(const MinimumLabelType& value) { SetMinimumLabelType(value); return *this;}
-    inline DataLabelType& WithMinimumLabelType(MinimumLabelType&& value) { SetMinimumLabelType(std::move(value)); return *this;}
+    template<typename MinimumLabelTypeT = MinimumLabelType>
+    void SetMinimumLabelType(MinimumLabelTypeT&& value) { m_minimumLabelTypeHasBeenSet = true; m_minimumLabelType = std::forward<MinimumLabelTypeT>(value); }
+    template<typename MinimumLabelTypeT = MinimumLabelType>
+    DataLabelType& WithMinimumLabelType(MinimumLabelTypeT&& value) { SetMinimumLabelType(std::forward<MinimumLabelTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines the label configuration for the maximum value in a visual.</p>
      */
-    inline const MaximumLabelType& GetMaximumLabelType() const{ return m_maximumLabelType; }
+    inline const MaximumLabelType& GetMaximumLabelType() const { return m_maximumLabelType; }
     inline bool MaximumLabelTypeHasBeenSet() const { return m_maximumLabelTypeHasBeenSet; }
-    inline void SetMaximumLabelType(const MaximumLabelType& value) { m_maximumLabelTypeHasBeenSet = true; m_maximumLabelType = value; }
-    inline void SetMaximumLabelType(MaximumLabelType&& value) { m_maximumLabelTypeHasBeenSet = true; m_maximumLabelType = std::move(value); }
-    inline DataLabelType& WithMaximumLabelType(const MaximumLabelType& value) { SetMaximumLabelType(value); return *this;}
-    inline DataLabelType& WithMaximumLabelType(MaximumLabelType&& value) { SetMaximumLabelType(std::move(value)); return *this;}
+    template<typename MaximumLabelTypeT = MaximumLabelType>
+    void SetMaximumLabelType(MaximumLabelTypeT&& value) { m_maximumLabelTypeHasBeenSet = true; m_maximumLabelType = std::forward<MaximumLabelTypeT>(value); }
+    template<typename MaximumLabelTypeT = MaximumLabelType>
+    DataLabelType& WithMaximumLabelType(MaximumLabelTypeT&& value) { SetMaximumLabelType(std::forward<MaximumLabelTypeT>(value)); return *this;}
     ///@}
   private:
 

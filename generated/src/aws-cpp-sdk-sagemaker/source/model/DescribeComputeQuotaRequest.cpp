@@ -12,13 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeComputeQuotaRequest::DescribeComputeQuotaRequest() : 
-    m_computeQuotaIdHasBeenSet(false),
-    m_computeQuotaVersion(0),
-    m_computeQuotaVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeComputeQuotaRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,20 +18,7 @@ namespace SSM
 namespace Model
 {
 
-PatchComplianceData::PatchComplianceData() : 
-    m_titleHasBeenSet(false),
-    m_kBIdHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_state(PatchComplianceDataState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_installedTimeHasBeenSet(false),
-    m_cVEIdsHasBeenSet(false)
-{
-}
-
 PatchComplianceData::PatchComplianceData(JsonView jsonValue)
-  : PatchComplianceData()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ PatchComplianceData& PatchComplianceData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KBId"))
   {
     m_kBId = jsonValue.GetString("KBId");
-
     m_kBIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Classification"))
   {
     m_classification = jsonValue.GetString("Classification");
-
     m_classificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = jsonValue.GetString("Severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = PatchComplianceDataStateMapper::GetPatchComplianceDataStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstalledTime"))
   {
     m_installedTime = jsonValue.GetDouble("InstalledTime");
-
     m_installedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CVEIds"))
   {
     m_cVEIds = jsonValue.GetString("CVEIds");
-
     m_cVEIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

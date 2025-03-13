@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayRouteTableRoute::TransitGatewayRouteTableRoute() : 
-    m_destinationCidrHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_routeOriginHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 TransitGatewayRouteTableRoute::TransitGatewayRouteTableRoute(const XmlNode& xmlNode)
-  : TransitGatewayRouteTableRoute()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,49 @@ TransitGatewayRouteTableRoute& TransitGatewayRouteTableRoute::operator =(const X
     {
       m_destinationCidr = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrNode.GetText());
       m_destinationCidrHasBeenSet = true;
+       m_destinationCidrHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode routeOriginNode = resultNode.FirstChild("routeOrigin");
     if(!routeOriginNode.IsNull())
     {
       m_routeOrigin = Aws::Utils::Xml::DecodeEscapedXmlText(routeOriginNode.GetText());
       m_routeOriginHasBeenSet = true;
+       m_routeOriginHasBeenSet = true;
     }
     XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
     if(!prefixListIdNode.IsNull())
     {
       m_prefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListIdNode.GetText());
       m_prefixListIdHasBeenSet = true;
+       m_prefixListIdHasBeenSet = true;
     }
     XmlNode attachmentIdNode = resultNode.FirstChild("attachmentId");
     if(!attachmentIdNode.IsNull())
     {
       m_attachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(attachmentIdNode.GetText());
       m_attachmentIdHasBeenSet = true;
+       m_attachmentIdHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("resourceId");
     if(!resourceIdNode.IsNull())
     {
       m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
+       m_resourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
   }
 

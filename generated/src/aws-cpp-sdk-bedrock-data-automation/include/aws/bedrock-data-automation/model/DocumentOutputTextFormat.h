@@ -32,7 +32,7 @@ namespace Model
   class DocumentOutputTextFormat
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API DocumentOutputTextFormat();
+    AWS_BEDROCKDATAAUTOMATION_API DocumentOutputTextFormat() = default;
     AWS_BEDROCKDATAAUTOMATION_API DocumentOutputTextFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API DocumentOutputTextFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,13 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<DocumentOutputTextFormatType>& GetTypes() const{ return m_types; }
+    inline const Aws::Vector<DocumentOutputTextFormatType>& GetTypes() const { return m_types; }
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-    inline void SetTypes(const Aws::Vector<DocumentOutputTextFormatType>& value) { m_typesHasBeenSet = true; m_types = value; }
-    inline void SetTypes(Aws::Vector<DocumentOutputTextFormatType>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
-    inline DocumentOutputTextFormat& WithTypes(const Aws::Vector<DocumentOutputTextFormatType>& value) { SetTypes(value); return *this;}
-    inline DocumentOutputTextFormat& WithTypes(Aws::Vector<DocumentOutputTextFormatType>&& value) { SetTypes(std::move(value)); return *this;}
-    inline DocumentOutputTextFormat& AddTypes(const DocumentOutputTextFormatType& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
-    inline DocumentOutputTextFormat& AddTypes(DocumentOutputTextFormatType&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
+    template<typename TypesT = Aws::Vector<DocumentOutputTextFormatType>>
+    void SetTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types = std::forward<TypesT>(value); }
+    template<typename TypesT = Aws::Vector<DocumentOutputTextFormatType>>
+    DocumentOutputTextFormat& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
+    inline DocumentOutputTextFormat& AddTypes(DocumentOutputTextFormatType value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
     ///@}
   private:
 

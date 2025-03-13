@@ -18,34 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-JobRun::JobRun() : 
-    m_attempt(0),
-    m_attemptHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_executionTime(0),
-    m_executionTimeHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_state(JobRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_logSubscription(LogSubscription::NOT_SET),
-    m_logSubscriptionHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_dataCatalogOutputsHasBeenSet(false),
-    m_databaseOutputsHasBeenSet(false),
-    m_recipeReferenceHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_jobSampleHasBeenSet(false),
-    m_validationConfigurationsHasBeenSet(false)
-{
-}
-
 JobRun::JobRun(JsonView jsonValue)
-  : JobRun()
 {
   *this = jsonValue;
 }
@@ -55,73 +28,53 @@ JobRun& JobRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Attempt"))
   {
     m_attempt = jsonValue.GetInteger("Attempt");
-
     m_attemptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedOn"))
   {
     m_completedOn = jsonValue.GetDouble("CompletedOn");
-
     m_completedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetName"))
   {
     m_datasetName = jsonValue.GetString("DatasetName");
-
     m_datasetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionTime"))
   {
     m_executionTime = jsonValue.GetInteger("ExecutionTime");
-
     m_executionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunId"))
   {
     m_runId = jsonValue.GetString("RunId");
-
     m_runIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = JobRunStateMapper::GetJobRunStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogSubscription"))
   {
     m_logSubscription = LogSubscriptionMapper::GetLogSubscriptionForName(jsonValue.GetString("LogSubscription"));
-
     m_logSubscriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogGroupName"))
   {
     m_logGroupName = jsonValue.GetString("LogGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
@@ -131,7 +84,6 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     }
     m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataCatalogOutputs"))
   {
     Aws::Utils::Array<JsonView> dataCatalogOutputsJsonList = jsonValue.GetArray("DataCatalogOutputs");
@@ -141,7 +93,6 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     }
     m_dataCatalogOutputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseOutputs"))
   {
     Aws::Utils::Array<JsonView> databaseOutputsJsonList = jsonValue.GetArray("DatabaseOutputs");
@@ -151,35 +102,26 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     }
     m_databaseOutputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecipeReference"))
   {
     m_recipeReference = jsonValue.GetObject("RecipeReference");
-
     m_recipeReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedBy"))
   {
     m_startedBy = jsonValue.GetString("StartedBy");
-
     m_startedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedOn"))
   {
     m_startedOn = jsonValue.GetDouble("StartedOn");
-
     m_startedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobSample"))
   {
     m_jobSample = jsonValue.GetObject("JobSample");
-
     m_jobSampleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationConfigurations"))
   {
     Aws::Utils::Array<JsonView> validationConfigurationsJsonList = jsonValue.GetArray("ValidationConfigurations");
@@ -189,7 +131,6 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     }
     m_validationConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,19 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportRDSDatabaseRecommendationsRequest::ExportRDSDatabaseRecommendationsRequest() : 
-    m_accountIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_fieldsToExportHasBeenSet(false),
-    m_s3DestinationConfigHasBeenSet(false),
-    m_fileFormat(FileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_includeMemberAccounts(false),
-    m_includeMemberAccountsHasBeenSet(false),
-    m_recommendationPreferencesHasBeenSet(false)
-{
-}
-
 Aws::String ExportRDSDatabaseRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

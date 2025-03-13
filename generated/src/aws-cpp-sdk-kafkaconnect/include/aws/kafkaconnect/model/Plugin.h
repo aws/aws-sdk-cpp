@@ -32,7 +32,7 @@ namespace Model
   class Plugin
   {
   public:
-    AWS_KAFKACONNECT_API Plugin();
+    AWS_KAFKACONNECT_API Plugin() = default;
     AWS_KAFKACONNECT_API Plugin(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Plugin& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Details about a custom plugin.</p>
      */
-    inline const CustomPlugin& GetCustomPlugin() const{ return m_customPlugin; }
+    inline const CustomPlugin& GetCustomPlugin() const { return m_customPlugin; }
     inline bool CustomPluginHasBeenSet() const { return m_customPluginHasBeenSet; }
-    inline void SetCustomPlugin(const CustomPlugin& value) { m_customPluginHasBeenSet = true; m_customPlugin = value; }
-    inline void SetCustomPlugin(CustomPlugin&& value) { m_customPluginHasBeenSet = true; m_customPlugin = std::move(value); }
-    inline Plugin& WithCustomPlugin(const CustomPlugin& value) { SetCustomPlugin(value); return *this;}
-    inline Plugin& WithCustomPlugin(CustomPlugin&& value) { SetCustomPlugin(std::move(value)); return *this;}
+    template<typename CustomPluginT = CustomPlugin>
+    void SetCustomPlugin(CustomPluginT&& value) { m_customPluginHasBeenSet = true; m_customPlugin = std::forward<CustomPluginT>(value); }
+    template<typename CustomPluginT = CustomPlugin>
+    Plugin& WithCustomPlugin(CustomPluginT&& value) { SetCustomPlugin(std::forward<CustomPluginT>(value)); return *this;}
     ///@}
   private:
 

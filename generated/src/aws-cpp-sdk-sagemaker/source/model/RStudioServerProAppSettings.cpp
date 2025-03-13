@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RStudioServerProAppSettings::RStudioServerProAppSettings() : 
-    m_accessStatus(RStudioServerProAccessStatus::NOT_SET),
-    m_accessStatusHasBeenSet(false),
-    m_userGroup(RStudioServerProUserGroup::NOT_SET),
-    m_userGroupHasBeenSet(false)
-{
-}
-
 RStudioServerProAppSettings::RStudioServerProAppSettings(JsonView jsonValue)
-  : RStudioServerProAppSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RStudioServerProAppSettings& RStudioServerProAppSettings::operator =(JsonView js
   if(jsonValue.ValueExists("AccessStatus"))
   {
     m_accessStatus = RStudioServerProAccessStatusMapper::GetRStudioServerProAccessStatusForName(jsonValue.GetString("AccessStatus"));
-
     m_accessStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserGroup"))
   {
     m_userGroup = RStudioServerProUserGroupMapper::GetRStudioServerProUserGroupForName(jsonValue.GetString("UserGroup"));
-
     m_userGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

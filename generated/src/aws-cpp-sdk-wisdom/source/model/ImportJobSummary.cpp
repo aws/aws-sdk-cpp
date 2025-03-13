@@ -18,24 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-ImportJobSummary::ImportJobSummary() : 
-    m_createdTimeHasBeenSet(false),
-    m_externalSourceConfigurationHasBeenSet(false),
-    m_importJobIdHasBeenSet(false),
-    m_importJobType(ImportJobType::NOT_SET),
-    m_importJobTypeHasBeenSet(false),
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_status(ImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_uploadIdHasBeenSet(false)
-{
-}
-
 ImportJobSummary::ImportJobSummary(JsonView jsonValue)
-  : ImportJobSummary()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ ImportJobSummary& ImportJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalSourceConfiguration"))
   {
     m_externalSourceConfiguration = jsonValue.GetObject("externalSourceConfiguration");
-
     m_externalSourceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importJobId"))
   {
     m_importJobId = jsonValue.GetString("importJobId");
-
     m_importJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importJobType"))
   {
     m_importJobType = ImportJobTypeMapper::GetImportJobTypeForName(jsonValue.GetString("importJobType"));
-
     m_importJobTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
-
     m_knowledgeBaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
@@ -100,21 +69,16 @@ ImportJobSummary& ImportJobSummary::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ImportJobStatusMapper::GetImportJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uploadId"))
   {
     m_uploadId = jsonValue.GetString("uploadId");
-
     m_uploadIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,22 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-AudienceExportJobSummary::AudienceExportJobSummary() : 
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_audienceGenerationJobArnHasBeenSet(false),
-    m_audienceSizeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(AudienceExportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_outputLocationHasBeenSet(false)
-{
-}
-
 AudienceExportJobSummary::AudienceExportJobSummary(JsonView jsonValue)
-  : AudienceExportJobSummary()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ AudienceExportJobSummary& AudienceExportJobSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audienceGenerationJobArn"))
   {
     m_audienceGenerationJobArn = jsonValue.GetString("audienceGenerationJobArn");
-
     m_audienceGenerationJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audienceSize"))
   {
     m_audienceSize = jsonValue.GetObject("audienceSize");
-
     m_audienceSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AudienceExportJobStatusMapper::GetAudienceExportJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusDetails"))
   {
     m_statusDetails = jsonValue.GetObject("statusDetails");
-
     m_statusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputLocation"))
   {
     m_outputLocation = jsonValue.GetString("outputLocation");
-
     m_outputLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

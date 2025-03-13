@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateFieldLevelEncryptionProfile2020_05_31Request::CreateFieldLevelEncryptionProfile2020_05_31Request() : 
-    m_fieldLevelEncryptionProfileConfigHasBeenSet(false)
-{
-}
 
 Aws::String CreateFieldLevelEncryptionProfile2020_05_31Request::SerializePayload() const
 {

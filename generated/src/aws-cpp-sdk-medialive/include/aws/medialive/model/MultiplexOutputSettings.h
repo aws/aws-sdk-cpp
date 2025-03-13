@@ -32,7 +32,7 @@ namespace Model
   class MultiplexOutputSettings
   {
   public:
-    AWS_MEDIALIVE_API MultiplexOutputSettings();
+    AWS_MEDIALIVE_API MultiplexOutputSettings() = default;
     AWS_MEDIALIVE_API MultiplexOutputSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MultiplexOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,22 +42,22 @@ namespace Model
     /**
      * Destination is a Multiplex.
      */
-    inline const OutputLocationRef& GetDestination() const{ return m_destination; }
+    inline const OutputLocationRef& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(OutputLocationRef&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline MultiplexOutputSettings& WithDestination(const OutputLocationRef& value) { SetDestination(value); return *this;}
-    inline MultiplexOutputSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = OutputLocationRef>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = OutputLocationRef>
+    MultiplexOutputSettings& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MultiplexContainerSettings& GetContainerSettings() const{ return m_containerSettings; }
+    inline const MultiplexContainerSettings& GetContainerSettings() const { return m_containerSettings; }
     inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }
-    inline void SetContainerSettings(const MultiplexContainerSettings& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = value; }
-    inline void SetContainerSettings(MultiplexContainerSettings&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::move(value); }
-    inline MultiplexOutputSettings& WithContainerSettings(const MultiplexContainerSettings& value) { SetContainerSettings(value); return *this;}
-    inline MultiplexOutputSettings& WithContainerSettings(MultiplexContainerSettings&& value) { SetContainerSettings(std::move(value)); return *this;}
+    template<typename ContainerSettingsT = MultiplexContainerSettings>
+    void SetContainerSettings(ContainerSettingsT&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::forward<ContainerSettingsT>(value); }
+    template<typename ContainerSettingsT = MultiplexContainerSettings>
+    MultiplexOutputSettings& WithContainerSettings(ContainerSettingsT&& value) { SetContainerSettings(std::forward<ContainerSettingsT>(value)); return *this;}
     ///@}
   private:
 

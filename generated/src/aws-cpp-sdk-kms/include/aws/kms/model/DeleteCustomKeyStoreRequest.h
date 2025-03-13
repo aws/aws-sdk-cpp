@@ -21,7 +21,7 @@ namespace Model
   class DeleteCustomKeyStoreRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API DeleteCustomKeyStoreRequest();
+    AWS_KMS_API DeleteCustomKeyStoreRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>Enter the ID of the custom key store you want to delete. To find the ID of a
      * custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
      */
-    inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
+    inline const Aws::String& GetCustomKeyStoreId() const { return m_customKeyStoreId; }
     inline bool CustomKeyStoreIdHasBeenSet() const { return m_customKeyStoreIdHasBeenSet; }
-    inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = value; }
-    inline void SetCustomKeyStoreId(Aws::String&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::move(value); }
-    inline void SetCustomKeyStoreId(const char* value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId.assign(value); }
-    inline DeleteCustomKeyStoreRequest& WithCustomKeyStoreId(const Aws::String& value) { SetCustomKeyStoreId(value); return *this;}
-    inline DeleteCustomKeyStoreRequest& WithCustomKeyStoreId(Aws::String&& value) { SetCustomKeyStoreId(std::move(value)); return *this;}
-    inline DeleteCustomKeyStoreRequest& WithCustomKeyStoreId(const char* value) { SetCustomKeyStoreId(value); return *this;}
+    template<typename CustomKeyStoreIdT = Aws::String>
+    void SetCustomKeyStoreId(CustomKeyStoreIdT&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::forward<CustomKeyStoreIdT>(value); }
+    template<typename CustomKeyStoreIdT = Aws::String>
+    DeleteCustomKeyStoreRequest& WithCustomKeyStoreId(CustomKeyStoreIdT&& value) { SetCustomKeyStoreId(std::forward<CustomKeyStoreIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,13 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpgradeReviewTemplateLensReviewRequest::UpgradeReviewTemplateLensReviewRequest() : 
-    m_templateArnHasBeenSet(false),
-    m_lensAliasHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String UpgradeReviewTemplateLensReviewRequest::SerializePayload() const
 {
   JsonValue payload;

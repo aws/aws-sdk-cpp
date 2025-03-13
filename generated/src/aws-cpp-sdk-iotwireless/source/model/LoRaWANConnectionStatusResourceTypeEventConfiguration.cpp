@@ -18,14 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANConnectionStatusResourceTypeEventConfiguration::LoRaWANConnectionStatusResourceTypeEventConfiguration() : 
-    m_wirelessGatewayEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_wirelessGatewayEventTopicHasBeenSet(false)
-{
-}
-
 LoRaWANConnectionStatusResourceTypeEventConfiguration::LoRaWANConnectionStatusResourceTypeEventConfiguration(JsonView jsonValue)
-  : LoRaWANConnectionStatusResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LoRaWANConnectionStatusResourceTypeEventConfiguration& LoRaWANConnectionStatusRe
   if(jsonValue.ValueExists("WirelessGatewayEventTopic"))
   {
     m_wirelessGatewayEventTopic = EventNotificationTopicStatusMapper::GetEventNotificationTopicStatusForName(jsonValue.GetString("WirelessGatewayEventTopic"));
-
     m_wirelessGatewayEventTopicHasBeenSet = true;
   }
-
   return *this;
 }
 

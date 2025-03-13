@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamPublicAddressSecurityGroup::IpamPublicAddressSecurityGroup() : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 IpamPublicAddressSecurityGroup::IpamPublicAddressSecurityGroup(const XmlNode& xmlNode)
-  : IpamPublicAddressSecurityGroup()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ IpamPublicAddressSecurityGroup& IpamPublicAddressSecurityGroup::operator =(const
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
+       m_groupNameHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("groupId");
     if(!groupIdNode.IsNull())
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
+       m_groupIdHasBeenSet = true;
     }
   }
 

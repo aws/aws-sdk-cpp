@@ -31,7 +31,7 @@ namespace Model
   class ClusterParameterStatus
   {
   public:
-    AWS_REDSHIFT_API ClusterParameterStatus();
+    AWS_REDSHIFT_API ClusterParameterStatus() = default;
     AWS_REDSHIFT_API ClusterParameterStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API ClusterParameterStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline const Aws::String& GetParameterName() const{ return m_parameterName; }
+    inline const Aws::String& GetParameterName() const { return m_parameterName; }
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
-    inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
-    inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
-    inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
-    inline ClusterParameterStatus& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
-    inline ClusterParameterStatus& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
-    inline ClusterParameterStatus& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+    template<typename ParameterNameT = Aws::String>
+    void SetParameterName(ParameterNameT&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::forward<ParameterNameT>(value); }
+    template<typename ParameterNameT = Aws::String>
+    ClusterParameterStatus& WithParameterName(ParameterNameT&& value) { SetParameterName(std::forward<ParameterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <code>unknown-error</code>: Cannot apply the parameter change right now. The
      * change will be applied after the cluster reboots.</p> </li> </ul>
      */
-    inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
+    inline const Aws::String& GetParameterApplyStatus() const { return m_parameterApplyStatus; }
     inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }
-    inline void SetParameterApplyStatus(const Aws::String& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
-    inline void SetParameterApplyStatus(Aws::String&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = std::move(value); }
-    inline void SetParameterApplyStatus(const char* value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus.assign(value); }
-    inline ClusterParameterStatus& WithParameterApplyStatus(const Aws::String& value) { SetParameterApplyStatus(value); return *this;}
-    inline ClusterParameterStatus& WithParameterApplyStatus(Aws::String&& value) { SetParameterApplyStatus(std::move(value)); return *this;}
-    inline ClusterParameterStatus& WithParameterApplyStatus(const char* value) { SetParameterApplyStatus(value); return *this;}
+    template<typename ParameterApplyStatusT = Aws::String>
+    void SetParameterApplyStatus(ParameterApplyStatusT&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = std::forward<ParameterApplyStatusT>(value); }
+    template<typename ParameterApplyStatusT = Aws::String>
+    ClusterParameterStatus& WithParameterApplyStatus(ParameterApplyStatusT&& value) { SetParameterApplyStatus(std::forward<ParameterApplyStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,12 @@ namespace Model
      * <p>The error that prevented the parameter from being applied to the
      * database.</p>
      */
-    inline const Aws::String& GetParameterApplyErrorDescription() const{ return m_parameterApplyErrorDescription; }
+    inline const Aws::String& GetParameterApplyErrorDescription() const { return m_parameterApplyErrorDescription; }
     inline bool ParameterApplyErrorDescriptionHasBeenSet() const { return m_parameterApplyErrorDescriptionHasBeenSet; }
-    inline void SetParameterApplyErrorDescription(const Aws::String& value) { m_parameterApplyErrorDescriptionHasBeenSet = true; m_parameterApplyErrorDescription = value; }
-    inline void SetParameterApplyErrorDescription(Aws::String&& value) { m_parameterApplyErrorDescriptionHasBeenSet = true; m_parameterApplyErrorDescription = std::move(value); }
-    inline void SetParameterApplyErrorDescription(const char* value) { m_parameterApplyErrorDescriptionHasBeenSet = true; m_parameterApplyErrorDescription.assign(value); }
-    inline ClusterParameterStatus& WithParameterApplyErrorDescription(const Aws::String& value) { SetParameterApplyErrorDescription(value); return *this;}
-    inline ClusterParameterStatus& WithParameterApplyErrorDescription(Aws::String&& value) { SetParameterApplyErrorDescription(std::move(value)); return *this;}
-    inline ClusterParameterStatus& WithParameterApplyErrorDescription(const char* value) { SetParameterApplyErrorDescription(value); return *this;}
+    template<typename ParameterApplyErrorDescriptionT = Aws::String>
+    void SetParameterApplyErrorDescription(ParameterApplyErrorDescriptionT&& value) { m_parameterApplyErrorDescriptionHasBeenSet = true; m_parameterApplyErrorDescription = std::forward<ParameterApplyErrorDescriptionT>(value); }
+    template<typename ParameterApplyErrorDescriptionT = Aws::String>
+    ClusterParameterStatus& WithParameterApplyErrorDescription(ParameterApplyErrorDescriptionT&& value) { SetParameterApplyErrorDescription(std::forward<ParameterApplyErrorDescriptionT>(value)); return *this;}
     ///@}
   private:
 

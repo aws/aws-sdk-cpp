@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-UpdateXMLClassifierRequest::UpdateXMLClassifierRequest() : 
-    m_nameHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_rowTagHasBeenSet(false)
-{
-}
-
 UpdateXMLClassifierRequest::UpdateXMLClassifierRequest(JsonView jsonValue)
-  : UpdateXMLClassifierRequest()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UpdateXMLClassifierRequest& UpdateXMLClassifierRequest::operator =(JsonView json
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Classification"))
   {
     m_classification = jsonValue.GetString("Classification");
-
     m_classificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowTag"))
   {
     m_rowTag = jsonValue.GetString("RowTag");
-
     m_rowTagHasBeenSet = true;
   }
-
   return *this;
 }
 

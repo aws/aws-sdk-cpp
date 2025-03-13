@@ -31,7 +31,7 @@ namespace Model
   class ContentBlockStartEvent
   {
   public:
-    AWS_BEDROCKRUNTIME_API ContentBlockStartEvent();
+    AWS_BEDROCKRUNTIME_API ContentBlockStartEvent() = default;
     AWS_BEDROCKRUNTIME_API ContentBlockStartEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ContentBlockStartEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,19 +41,19 @@ namespace Model
     /**
      * <p>Start information about a content block start event. </p>
      */
-    inline const ContentBlockStart& GetStart() const{ return m_start; }
+    inline const ContentBlockStart& GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-    inline void SetStart(const ContentBlockStart& value) { m_startHasBeenSet = true; m_start = value; }
-    inline void SetStart(ContentBlockStart&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
-    inline ContentBlockStartEvent& WithStart(const ContentBlockStart& value) { SetStart(value); return *this;}
-    inline ContentBlockStartEvent& WithStart(ContentBlockStart&& value) { SetStart(std::move(value)); return *this;}
+    template<typename StartT = ContentBlockStart>
+    void SetStart(StartT&& value) { m_startHasBeenSet = true; m_start = std::forward<StartT>(value); }
+    template<typename StartT = ContentBlockStart>
+    ContentBlockStartEvent& WithStart(StartT&& value) { SetStart(std::forward<StartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The index for a content block start event.</p>
      */
-    inline int GetContentBlockIndex() const{ return m_contentBlockIndex; }
+    inline int GetContentBlockIndex() const { return m_contentBlockIndex; }
     inline bool ContentBlockIndexHasBeenSet() const { return m_contentBlockIndexHasBeenSet; }
     inline void SetContentBlockIndex(int value) { m_contentBlockIndexHasBeenSet = true; m_contentBlockIndex = value; }
     inline ContentBlockStartEvent& WithContentBlockIndex(int value) { SetContentBlockIndex(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
     ContentBlockStart m_start;
     bool m_startHasBeenSet = false;
 
-    int m_contentBlockIndex;
+    int m_contentBlockIndex{0};
     bool m_contentBlockIndexHasBeenSet = false;
   };
 

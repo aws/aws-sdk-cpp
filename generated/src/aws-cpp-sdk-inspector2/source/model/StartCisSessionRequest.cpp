@@ -12,12 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartCisSessionRequest::StartCisSessionRequest() : 
-    m_messageHasBeenSet(false),
-    m_scanJobIdHasBeenSet(false)
-{
-}
-
 Aws::String StartCisSessionRequest::SerializePayload() const
 {
   JsonValue payload;

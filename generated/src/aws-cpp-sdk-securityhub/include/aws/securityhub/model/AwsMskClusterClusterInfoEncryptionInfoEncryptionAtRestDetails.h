@@ -32,7 +32,7 @@ namespace Model
   class AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails();
+    AWS_SECURITYHUB_API AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails() = default;
     AWS_SECURITYHUB_API AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest.
      * If you don't specify a KMS key, MSK creates one for you and uses it.</p>
      */
-    inline const Aws::String& GetDataVolumeKMSKeyId() const{ return m_dataVolumeKMSKeyId; }
+    inline const Aws::String& GetDataVolumeKMSKeyId() const { return m_dataVolumeKMSKeyId; }
     inline bool DataVolumeKMSKeyIdHasBeenSet() const { return m_dataVolumeKMSKeyIdHasBeenSet; }
-    inline void SetDataVolumeKMSKeyId(const Aws::String& value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId = value; }
-    inline void SetDataVolumeKMSKeyId(Aws::String&& value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId = std::move(value); }
-    inline void SetDataVolumeKMSKeyId(const char* value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId.assign(value); }
-    inline AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails& WithDataVolumeKMSKeyId(const Aws::String& value) { SetDataVolumeKMSKeyId(value); return *this;}
-    inline AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails& WithDataVolumeKMSKeyId(Aws::String&& value) { SetDataVolumeKMSKeyId(std::move(value)); return *this;}
-    inline AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails& WithDataVolumeKMSKeyId(const char* value) { SetDataVolumeKMSKeyId(value); return *this;}
+    template<typename DataVolumeKMSKeyIdT = Aws::String>
+    void SetDataVolumeKMSKeyId(DataVolumeKMSKeyIdT&& value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId = std::forward<DataVolumeKMSKeyIdT>(value); }
+    template<typename DataVolumeKMSKeyIdT = Aws::String>
+    AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails& WithDataVolumeKMSKeyId(DataVolumeKMSKeyIdT&& value) { SetDataVolumeKMSKeyId(std::forward<DataVolumeKMSKeyIdT>(value)); return *this;}
     ///@}
   private:
 

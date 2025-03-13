@@ -30,7 +30,7 @@ namespace Model
   class AssetBundleExportJobResourceIdOverrideConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleExportJobResourceIdOverrideConfiguration();
+    AWS_QUICKSIGHT_API AssetBundleExportJobResourceIdOverrideConfiguration() = default;
     AWS_QUICKSIGHT_API AssetBundleExportJobResourceIdOverrideConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleExportJobResourceIdOverrideConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * to each resource's ID before import. The prefix is only added to the asset IDs
      * and does not change the name of the asset.</p>
      */
-    inline bool GetPrefixForAllResources() const{ return m_prefixForAllResources; }
+    inline bool GetPrefixForAllResources() const { return m_prefixForAllResources; }
     inline bool PrefixForAllResourcesHasBeenSet() const { return m_prefixForAllResourcesHasBeenSet; }
     inline void SetPrefixForAllResources(bool value) { m_prefixForAllResourcesHasBeenSet = true; m_prefixForAllResources = value; }
     inline AssetBundleExportJobResourceIdOverrideConfiguration& WithPrefixForAllResources(bool value) { SetPrefixForAllResources(value); return *this;}
     ///@}
   private:
 
-    bool m_prefixForAllResources;
+    bool m_prefixForAllResources{false};
     bool m_prefixForAllResourcesHasBeenSet = false;
   };
 

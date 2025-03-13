@@ -38,7 +38,7 @@ namespace Model
   class BatchListIncomingTypedLinks
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchListIncomingTypedLinks();
+    AWS_CLOUDDIRECTORY_API BatchListIncomingTypedLinks() = default;
     AWS_CLOUDDIRECTORY_API BatchListIncomingTypedLinks(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchListIncomingTypedLinks& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
     /**
      * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
-    inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
+    inline const ObjectReference& GetObjectReference() const { return m_objectReference; }
     inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
-    inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
-    inline BatchListIncomingTypedLinks& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
-    inline BatchListIncomingTypedLinks& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+    template<typename ObjectReferenceT = ObjectReference>
+    void SetObjectReference(ObjectReferenceT&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::forward<ObjectReferenceT>(value); }
+    template<typename ObjectReferenceT = ObjectReference>
+    BatchListIncomingTypedLinks& WithObjectReference(ObjectReferenceT&& value) { SetObjectReference(std::forward<ObjectReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +63,14 @@ namespace Model
      * attributes that do not have a range specified are presumed to match the entire
      * range.</p>
      */
-    inline const Aws::Vector<TypedLinkAttributeRange>& GetFilterAttributeRanges() const{ return m_filterAttributeRanges; }
+    inline const Aws::Vector<TypedLinkAttributeRange>& GetFilterAttributeRanges() const { return m_filterAttributeRanges; }
     inline bool FilterAttributeRangesHasBeenSet() const { return m_filterAttributeRangesHasBeenSet; }
-    inline void SetFilterAttributeRanges(const Aws::Vector<TypedLinkAttributeRange>& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges = value; }
-    inline void SetFilterAttributeRanges(Aws::Vector<TypedLinkAttributeRange>&& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges = std::move(value); }
-    inline BatchListIncomingTypedLinks& WithFilterAttributeRanges(const Aws::Vector<TypedLinkAttributeRange>& value) { SetFilterAttributeRanges(value); return *this;}
-    inline BatchListIncomingTypedLinks& WithFilterAttributeRanges(Aws::Vector<TypedLinkAttributeRange>&& value) { SetFilterAttributeRanges(std::move(value)); return *this;}
-    inline BatchListIncomingTypedLinks& AddFilterAttributeRanges(const TypedLinkAttributeRange& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges.push_back(value); return *this; }
-    inline BatchListIncomingTypedLinks& AddFilterAttributeRanges(TypedLinkAttributeRange&& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges.push_back(std::move(value)); return *this; }
+    template<typename FilterAttributeRangesT = Aws::Vector<TypedLinkAttributeRange>>
+    void SetFilterAttributeRanges(FilterAttributeRangesT&& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges = std::forward<FilterAttributeRangesT>(value); }
+    template<typename FilterAttributeRangesT = Aws::Vector<TypedLinkAttributeRange>>
+    BatchListIncomingTypedLinks& WithFilterAttributeRanges(FilterAttributeRangesT&& value) { SetFilterAttributeRanges(std::forward<FilterAttributeRangesT>(value)); return *this;}
+    template<typename FilterAttributeRangesT = TypedLinkAttributeRange>
+    BatchListIncomingTypedLinks& AddFilterAttributeRanges(FilterAttributeRangesT&& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges.emplace_back(std::forward<FilterAttributeRangesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,33 +78,31 @@ namespace Model
      * <p>Filters are interpreted in the order of the attributes on the typed link
      * facet, not the order in which they are supplied to any API calls.</p>
      */
-    inline const TypedLinkSchemaAndFacetName& GetFilterTypedLink() const{ return m_filterTypedLink; }
+    inline const TypedLinkSchemaAndFacetName& GetFilterTypedLink() const { return m_filterTypedLink; }
     inline bool FilterTypedLinkHasBeenSet() const { return m_filterTypedLinkHasBeenSet; }
-    inline void SetFilterTypedLink(const TypedLinkSchemaAndFacetName& value) { m_filterTypedLinkHasBeenSet = true; m_filterTypedLink = value; }
-    inline void SetFilterTypedLink(TypedLinkSchemaAndFacetName&& value) { m_filterTypedLinkHasBeenSet = true; m_filterTypedLink = std::move(value); }
-    inline BatchListIncomingTypedLinks& WithFilterTypedLink(const TypedLinkSchemaAndFacetName& value) { SetFilterTypedLink(value); return *this;}
-    inline BatchListIncomingTypedLinks& WithFilterTypedLink(TypedLinkSchemaAndFacetName&& value) { SetFilterTypedLink(std::move(value)); return *this;}
+    template<typename FilterTypedLinkT = TypedLinkSchemaAndFacetName>
+    void SetFilterTypedLink(FilterTypedLinkT&& value) { m_filterTypedLinkHasBeenSet = true; m_filterTypedLink = std::forward<FilterTypedLinkT>(value); }
+    template<typename FilterTypedLinkT = TypedLinkSchemaAndFacetName>
+    BatchListIncomingTypedLinks& WithFilterTypedLink(FilterTypedLinkT&& value) { SetFilterTypedLink(std::forward<FilterTypedLinkT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline BatchListIncomingTypedLinks& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline BatchListIncomingTypedLinks& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline BatchListIncomingTypedLinks& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    BatchListIncomingTypedLinks& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline BatchListIncomingTypedLinks& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -123,7 +121,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

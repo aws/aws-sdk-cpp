@@ -36,7 +36,7 @@ namespace Model
   class TopicDetails
   {
   public:
-    AWS_QUICKSIGHT_API TopicDetails();
+    AWS_QUICKSIGHT_API TopicDetails() = default;
     AWS_QUICKSIGHT_API TopicDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,66 +46,60 @@ namespace Model
     /**
      * <p>The name of the topic.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TopicDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TopicDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TopicDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TopicDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the topic.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline TopicDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline TopicDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline TopicDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    TopicDetails& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user experience version of a topic.</p>
      */
-    inline const TopicUserExperienceVersion& GetUserExperienceVersion() const{ return m_userExperienceVersion; }
+    inline TopicUserExperienceVersion GetUserExperienceVersion() const { return m_userExperienceVersion; }
     inline bool UserExperienceVersionHasBeenSet() const { return m_userExperienceVersionHasBeenSet; }
-    inline void SetUserExperienceVersion(const TopicUserExperienceVersion& value) { m_userExperienceVersionHasBeenSet = true; m_userExperienceVersion = value; }
-    inline void SetUserExperienceVersion(TopicUserExperienceVersion&& value) { m_userExperienceVersionHasBeenSet = true; m_userExperienceVersion = std::move(value); }
-    inline TopicDetails& WithUserExperienceVersion(const TopicUserExperienceVersion& value) { SetUserExperienceVersion(value); return *this;}
-    inline TopicDetails& WithUserExperienceVersion(TopicUserExperienceVersion&& value) { SetUserExperienceVersion(std::move(value)); return *this;}
+    inline void SetUserExperienceVersion(TopicUserExperienceVersion value) { m_userExperienceVersionHasBeenSet = true; m_userExperienceVersion = value; }
+    inline TopicDetails& WithUserExperienceVersion(TopicUserExperienceVersion value) { SetUserExperienceVersion(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data sets that the topic is associated with.</p>
      */
-    inline const Aws::Vector<DatasetMetadata>& GetDataSets() const{ return m_dataSets; }
+    inline const Aws::Vector<DatasetMetadata>& GetDataSets() const { return m_dataSets; }
     inline bool DataSetsHasBeenSet() const { return m_dataSetsHasBeenSet; }
-    inline void SetDataSets(const Aws::Vector<DatasetMetadata>& value) { m_dataSetsHasBeenSet = true; m_dataSets = value; }
-    inline void SetDataSets(Aws::Vector<DatasetMetadata>&& value) { m_dataSetsHasBeenSet = true; m_dataSets = std::move(value); }
-    inline TopicDetails& WithDataSets(const Aws::Vector<DatasetMetadata>& value) { SetDataSets(value); return *this;}
-    inline TopicDetails& WithDataSets(Aws::Vector<DatasetMetadata>&& value) { SetDataSets(std::move(value)); return *this;}
-    inline TopicDetails& AddDataSets(const DatasetMetadata& value) { m_dataSetsHasBeenSet = true; m_dataSets.push_back(value); return *this; }
-    inline TopicDetails& AddDataSets(DatasetMetadata&& value) { m_dataSetsHasBeenSet = true; m_dataSets.push_back(std::move(value)); return *this; }
+    template<typename DataSetsT = Aws::Vector<DatasetMetadata>>
+    void SetDataSets(DataSetsT&& value) { m_dataSetsHasBeenSet = true; m_dataSets = std::forward<DataSetsT>(value); }
+    template<typename DataSetsT = Aws::Vector<DatasetMetadata>>
+    TopicDetails& WithDataSets(DataSetsT&& value) { SetDataSets(std::forward<DataSetsT>(value)); return *this;}
+    template<typename DataSetsT = DatasetMetadata>
+    TopicDetails& AddDataSets(DataSetsT&& value) { m_dataSetsHasBeenSet = true; m_dataSets.emplace_back(std::forward<DataSetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Configuration options for a <code>Topic</code>.</p>
      */
-    inline const TopicConfigOptions& GetConfigOptions() const{ return m_configOptions; }
+    inline const TopicConfigOptions& GetConfigOptions() const { return m_configOptions; }
     inline bool ConfigOptionsHasBeenSet() const { return m_configOptionsHasBeenSet; }
-    inline void SetConfigOptions(const TopicConfigOptions& value) { m_configOptionsHasBeenSet = true; m_configOptions = value; }
-    inline void SetConfigOptions(TopicConfigOptions&& value) { m_configOptionsHasBeenSet = true; m_configOptions = std::move(value); }
-    inline TopicDetails& WithConfigOptions(const TopicConfigOptions& value) { SetConfigOptions(value); return *this;}
-    inline TopicDetails& WithConfigOptions(TopicConfigOptions&& value) { SetConfigOptions(std::move(value)); return *this;}
+    template<typename ConfigOptionsT = TopicConfigOptions>
+    void SetConfigOptions(ConfigOptionsT&& value) { m_configOptionsHasBeenSet = true; m_configOptions = std::forward<ConfigOptionsT>(value); }
+    template<typename ConfigOptionsT = TopicConfigOptions>
+    TopicDetails& WithConfigOptions(ConfigOptionsT&& value) { SetConfigOptions(std::forward<ConfigOptionsT>(value)); return *this;}
     ///@}
   private:
 
@@ -115,7 +109,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    TopicUserExperienceVersion m_userExperienceVersion;
+    TopicUserExperienceVersion m_userExperienceVersion{TopicUserExperienceVersion::NOT_SET};
     bool m_userExperienceVersionHasBeenSet = false;
 
     Aws::Vector<DatasetMetadata> m_dataSets;

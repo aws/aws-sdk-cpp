@@ -18,15 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-FailedWorkspaceChangeRequest::FailedWorkspaceChangeRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 FailedWorkspaceChangeRequest::FailedWorkspaceChangeRequest(JsonView jsonValue)
-  : FailedWorkspaceChangeRequest()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FailedWorkspaceChangeRequest& FailedWorkspaceChangeRequest::operator =(JsonView 
   if(jsonValue.ValueExists("WorkspaceId"))
   {
     m_workspaceId = jsonValue.GetString("WorkspaceId");
-
     m_workspaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUserAttributesRequest::DeleteUserAttributesRequest() : 
-    m_userAttributeNamesHasBeenSet(false),
-    m_accessTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUserAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

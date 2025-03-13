@@ -24,7 +24,7 @@ namespace Model
   class CreateProfileRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API CreateProfileRequest();
+    AWS_TRANSFER_API CreateProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * header for the AS2 messages sent to the partner using the
      * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
-    inline const Aws::String& GetAs2Id() const{ return m_as2Id; }
+    inline const Aws::String& GetAs2Id() const { return m_as2Id; }
     inline bool As2IdHasBeenSet() const { return m_as2IdHasBeenSet; }
-    inline void SetAs2Id(const Aws::String& value) { m_as2IdHasBeenSet = true; m_as2Id = value; }
-    inline void SetAs2Id(Aws::String&& value) { m_as2IdHasBeenSet = true; m_as2Id = std::move(value); }
-    inline void SetAs2Id(const char* value) { m_as2IdHasBeenSet = true; m_as2Id.assign(value); }
-    inline CreateProfileRequest& WithAs2Id(const Aws::String& value) { SetAs2Id(value); return *this;}
-    inline CreateProfileRequest& WithAs2Id(Aws::String&& value) { SetAs2Id(std::move(value)); return *this;}
-    inline CreateProfileRequest& WithAs2Id(const char* value) { SetAs2Id(value); return *this;}
+    template<typename As2IdT = Aws::String>
+    void SetAs2Id(As2IdT&& value) { m_as2IdHasBeenSet = true; m_as2Id = std::forward<As2IdT>(value); }
+    template<typename As2IdT = Aws::String>
+    CreateProfileRequest& WithAs2Id(As2IdT&& value) { SetAs2Id(std::forward<As2IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,10 @@ namespace Model
      * <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile
      * represents a remote organization, external to Transfer Family.</p> </li> </ul>
      */
-    inline const ProfileType& GetProfileType() const{ return m_profileType; }
+    inline ProfileType GetProfileType() const { return m_profileType; }
     inline bool ProfileTypeHasBeenSet() const { return m_profileTypeHasBeenSet; }
-    inline void SetProfileType(const ProfileType& value) { m_profileTypeHasBeenSet = true; m_profileType = value; }
-    inline void SetProfileType(ProfileType&& value) { m_profileTypeHasBeenSet = true; m_profileType = std::move(value); }
-    inline CreateProfileRequest& WithProfileType(const ProfileType& value) { SetProfileType(value); return *this;}
-    inline CreateProfileRequest& WithProfileType(ProfileType&& value) { SetProfileType(std::move(value)); return *this;}
+    inline void SetProfileType(ProfileType value) { m_profileTypeHasBeenSet = true; m_profileType = value; }
+    inline CreateProfileRequest& WithProfileType(ProfileType value) { SetProfileType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,36 +73,35 @@ namespace Model
      * <p>An array of identifiers for the imported certificates. You use this
      * identifier for working with profiles and partner profiles.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCertificateIds() const{ return m_certificateIds; }
+    inline const Aws::Vector<Aws::String>& GetCertificateIds() const { return m_certificateIds; }
     inline bool CertificateIdsHasBeenSet() const { return m_certificateIdsHasBeenSet; }
-    inline void SetCertificateIds(const Aws::Vector<Aws::String>& value) { m_certificateIdsHasBeenSet = true; m_certificateIds = value; }
-    inline void SetCertificateIds(Aws::Vector<Aws::String>&& value) { m_certificateIdsHasBeenSet = true; m_certificateIds = std::move(value); }
-    inline CreateProfileRequest& WithCertificateIds(const Aws::Vector<Aws::String>& value) { SetCertificateIds(value); return *this;}
-    inline CreateProfileRequest& WithCertificateIds(Aws::Vector<Aws::String>&& value) { SetCertificateIds(std::move(value)); return *this;}
-    inline CreateProfileRequest& AddCertificateIds(const Aws::String& value) { m_certificateIdsHasBeenSet = true; m_certificateIds.push_back(value); return *this; }
-    inline CreateProfileRequest& AddCertificateIds(Aws::String&& value) { m_certificateIdsHasBeenSet = true; m_certificateIds.push_back(std::move(value)); return *this; }
-    inline CreateProfileRequest& AddCertificateIds(const char* value) { m_certificateIdsHasBeenSet = true; m_certificateIds.push_back(value); return *this; }
+    template<typename CertificateIdsT = Aws::Vector<Aws::String>>
+    void SetCertificateIds(CertificateIdsT&& value) { m_certificateIdsHasBeenSet = true; m_certificateIds = std::forward<CertificateIdsT>(value); }
+    template<typename CertificateIdsT = Aws::Vector<Aws::String>>
+    CreateProfileRequest& WithCertificateIds(CertificateIdsT&& value) { SetCertificateIds(std::forward<CertificateIdsT>(value)); return *this;}
+    template<typename CertificateIdsT = Aws::String>
+    CreateProfileRequest& AddCertificateIds(CertificateIdsT&& value) { m_certificateIdsHasBeenSet = true; m_certificateIds.emplace_back(std::forward<CertificateIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Key-value pairs that can be used to group and search for AS2 profiles.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateProfileRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateProfileRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateProfileRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateProfileRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateProfileRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateProfileRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_as2Id;
     bool m_as2IdHasBeenSet = false;
 
-    ProfileType m_profileType;
+    ProfileType m_profileType{ProfileType::NOT_SET};
     bool m_profileTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_certificateIds;

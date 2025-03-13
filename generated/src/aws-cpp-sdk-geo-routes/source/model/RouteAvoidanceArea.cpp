@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteAvoidanceArea::RouteAvoidanceArea() : 
-    m_exceptHasBeenSet(false),
-    m_geometryHasBeenSet(false)
-{
-}
-
 RouteAvoidanceArea::RouteAvoidanceArea(JsonView jsonValue)
-  : RouteAvoidanceArea()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ RouteAvoidanceArea& RouteAvoidanceArea::operator =(JsonView jsonValue)
     }
     m_exceptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   return *this;
 }
 

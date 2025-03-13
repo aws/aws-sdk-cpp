@@ -12,11 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCustomRoutingEndpointGroupRequest::DeleteCustomRoutingEndpointGroupRequest() : 
-    m_endpointGroupArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomRoutingEndpointGroupRequest::SerializePayload() const
 {
   JsonValue payload;

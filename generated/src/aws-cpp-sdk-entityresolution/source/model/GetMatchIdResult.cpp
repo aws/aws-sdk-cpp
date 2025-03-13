@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMatchIdResult::GetMatchIdResult()
-{
-}
-
 GetMatchIdResult::GetMatchIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetMatchIdResult& GetMatchIdResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("matchId"))
   {
     m_matchId = jsonValue.GetString("matchId");
-
+    m_matchIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("matchRule"))
   {
     m_matchRule = jsonValue.GetString("matchRule");
-
+    m_matchRuleHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

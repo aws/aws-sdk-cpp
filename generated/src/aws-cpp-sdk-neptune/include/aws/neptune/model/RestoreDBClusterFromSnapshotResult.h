@@ -28,33 +28,35 @@ namespace Model
   class RestoreDBClusterFromSnapshotResult
   {
   public:
-    AWS_NEPTUNE_API RestoreDBClusterFromSnapshotResult();
+    AWS_NEPTUNE_API RestoreDBClusterFromSnapshotResult() = default;
     AWS_NEPTUNE_API RestoreDBClusterFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_NEPTUNE_API RestoreDBClusterFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const DBCluster& GetDBCluster() const{ return m_dBCluster; }
-    inline void SetDBCluster(const DBCluster& value) { m_dBCluster = value; }
-    inline void SetDBCluster(DBCluster&& value) { m_dBCluster = std::move(value); }
-    inline RestoreDBClusterFromSnapshotResult& WithDBCluster(const DBCluster& value) { SetDBCluster(value); return *this;}
-    inline RestoreDBClusterFromSnapshotResult& WithDBCluster(DBCluster&& value) { SetDBCluster(std::move(value)); return *this;}
+    inline const DBCluster& GetDBCluster() const { return m_dBCluster; }
+    template<typename DBClusterT = DBCluster>
+    void SetDBCluster(DBClusterT&& value) { m_dBClusterHasBeenSet = true; m_dBCluster = std::forward<DBClusterT>(value); }
+    template<typename DBClusterT = DBCluster>
+    RestoreDBClusterFromSnapshotResult& WithDBCluster(DBClusterT&& value) { SetDBCluster(std::forward<DBClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RestoreDBClusterFromSnapshotResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RestoreDBClusterFromSnapshotResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RestoreDBClusterFromSnapshotResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBCluster m_dBCluster;
+    bool m_dBClusterHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

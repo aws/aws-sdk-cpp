@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-UdpContainerSettings::UdpContainerSettings() : 
-    m_m2tsSettingsHasBeenSet(false)
-{
-}
-
 UdpContainerSettings::UdpContainerSettings(JsonView jsonValue)
-  : UdpContainerSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UdpContainerSettings& UdpContainerSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("m2tsSettings"))
   {
     m_m2tsSettings = jsonValue.GetObject("m2tsSettings");
-
     m_m2tsSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

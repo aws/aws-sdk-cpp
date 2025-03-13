@@ -35,7 +35,7 @@ namespace Model
   class BuildGroup
   {
   public:
-    AWS_CODEBUILD_API BuildGroup();
+    AWS_CODEBUILD_API BuildGroup() = default;
     AWS_CODEBUILD_API BuildGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API BuildGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>Contains the identifier of the build group.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline BuildGroup& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline BuildGroup& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline BuildGroup& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    BuildGroup& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,22 +58,21 @@ namespace Model
      * <p>An array of strings that contain the identifiers of the build groups that
      * this build group depends on.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDependsOn() const{ return m_dependsOn; }
+    inline const Aws::Vector<Aws::String>& GetDependsOn() const { return m_dependsOn; }
     inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
-    inline void SetDependsOn(const Aws::Vector<Aws::String>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
-    inline void SetDependsOn(Aws::Vector<Aws::String>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
-    inline BuildGroup& WithDependsOn(const Aws::Vector<Aws::String>& value) { SetDependsOn(value); return *this;}
-    inline BuildGroup& WithDependsOn(Aws::Vector<Aws::String>&& value) { SetDependsOn(std::move(value)); return *this;}
-    inline BuildGroup& AddDependsOn(const Aws::String& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
-    inline BuildGroup& AddDependsOn(Aws::String&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
-    inline BuildGroup& AddDependsOn(const char* value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
+    template<typename DependsOnT = Aws::Vector<Aws::String>>
+    void SetDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::forward<DependsOnT>(value); }
+    template<typename DependsOnT = Aws::Vector<Aws::String>>
+    BuildGroup& WithDependsOn(DependsOnT&& value) { SetDependsOn(std::forward<DependsOnT>(value)); return *this;}
+    template<typename DependsOnT = Aws::String>
+    BuildGroup& AddDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.emplace_back(std::forward<DependsOnT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies if failures in this build group can be ignored.</p>
      */
-    inline bool GetIgnoreFailure() const{ return m_ignoreFailure; }
+    inline bool GetIgnoreFailure() const { return m_ignoreFailure; }
     inline bool IgnoreFailureHasBeenSet() const { return m_ignoreFailureHasBeenSet; }
     inline void SetIgnoreFailure(bool value) { m_ignoreFailureHasBeenSet = true; m_ignoreFailure = value; }
     inline BuildGroup& WithIgnoreFailure(bool value) { SetIgnoreFailure(value); return *this;}
@@ -86,12 +83,12 @@ namespace Model
      * <p>A <code>BuildSummary</code> object that contains a summary of the current
      * build group.</p>
      */
-    inline const BuildSummary& GetCurrentBuildSummary() const{ return m_currentBuildSummary; }
+    inline const BuildSummary& GetCurrentBuildSummary() const { return m_currentBuildSummary; }
     inline bool CurrentBuildSummaryHasBeenSet() const { return m_currentBuildSummaryHasBeenSet; }
-    inline void SetCurrentBuildSummary(const BuildSummary& value) { m_currentBuildSummaryHasBeenSet = true; m_currentBuildSummary = value; }
-    inline void SetCurrentBuildSummary(BuildSummary&& value) { m_currentBuildSummaryHasBeenSet = true; m_currentBuildSummary = std::move(value); }
-    inline BuildGroup& WithCurrentBuildSummary(const BuildSummary& value) { SetCurrentBuildSummary(value); return *this;}
-    inline BuildGroup& WithCurrentBuildSummary(BuildSummary&& value) { SetCurrentBuildSummary(std::move(value)); return *this;}
+    template<typename CurrentBuildSummaryT = BuildSummary>
+    void SetCurrentBuildSummary(CurrentBuildSummaryT&& value) { m_currentBuildSummaryHasBeenSet = true; m_currentBuildSummary = std::forward<CurrentBuildSummaryT>(value); }
+    template<typename CurrentBuildSummaryT = BuildSummary>
+    BuildGroup& WithCurrentBuildSummary(CurrentBuildSummaryT&& value) { SetCurrentBuildSummary(std::forward<CurrentBuildSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +96,14 @@ namespace Model
      * <p>An array of <code>BuildSummary</code> objects that contain summaries of
      * previous build groups.</p>
      */
-    inline const Aws::Vector<BuildSummary>& GetPriorBuildSummaryList() const{ return m_priorBuildSummaryList; }
+    inline const Aws::Vector<BuildSummary>& GetPriorBuildSummaryList() const { return m_priorBuildSummaryList; }
     inline bool PriorBuildSummaryListHasBeenSet() const { return m_priorBuildSummaryListHasBeenSet; }
-    inline void SetPriorBuildSummaryList(const Aws::Vector<BuildSummary>& value) { m_priorBuildSummaryListHasBeenSet = true; m_priorBuildSummaryList = value; }
-    inline void SetPriorBuildSummaryList(Aws::Vector<BuildSummary>&& value) { m_priorBuildSummaryListHasBeenSet = true; m_priorBuildSummaryList = std::move(value); }
-    inline BuildGroup& WithPriorBuildSummaryList(const Aws::Vector<BuildSummary>& value) { SetPriorBuildSummaryList(value); return *this;}
-    inline BuildGroup& WithPriorBuildSummaryList(Aws::Vector<BuildSummary>&& value) { SetPriorBuildSummaryList(std::move(value)); return *this;}
-    inline BuildGroup& AddPriorBuildSummaryList(const BuildSummary& value) { m_priorBuildSummaryListHasBeenSet = true; m_priorBuildSummaryList.push_back(value); return *this; }
-    inline BuildGroup& AddPriorBuildSummaryList(BuildSummary&& value) { m_priorBuildSummaryListHasBeenSet = true; m_priorBuildSummaryList.push_back(std::move(value)); return *this; }
+    template<typename PriorBuildSummaryListT = Aws::Vector<BuildSummary>>
+    void SetPriorBuildSummaryList(PriorBuildSummaryListT&& value) { m_priorBuildSummaryListHasBeenSet = true; m_priorBuildSummaryList = std::forward<PriorBuildSummaryListT>(value); }
+    template<typename PriorBuildSummaryListT = Aws::Vector<BuildSummary>>
+    BuildGroup& WithPriorBuildSummaryList(PriorBuildSummaryListT&& value) { SetPriorBuildSummaryList(std::forward<PriorBuildSummaryListT>(value)); return *this;}
+    template<typename PriorBuildSummaryListT = BuildSummary>
+    BuildGroup& AddPriorBuildSummaryList(PriorBuildSummaryListT&& value) { m_priorBuildSummaryListHasBeenSet = true; m_priorBuildSummaryList.emplace_back(std::forward<PriorBuildSummaryListT>(value)); return *this; }
     ///@}
   private:
 
@@ -116,7 +113,7 @@ namespace Model
     Aws::Vector<Aws::String> m_dependsOn;
     bool m_dependsOnHasBeenSet = false;
 
-    bool m_ignoreFailure;
+    bool m_ignoreFailure{false};
     bool m_ignoreFailureHasBeenSet = false;
 
     BuildSummary m_currentBuildSummary;

@@ -21,7 +21,7 @@ namespace Model
   class GetTestGridProjectRequest : public DeviceFarmRequest
   {
   public:
-    AWS_DEVICEFARM_API GetTestGridProjectRequest();
+    AWS_DEVICEFARM_API GetTestGridProjectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The ARN of the Selenium testing project, from either
      * <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
      */
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-    inline GetTestGridProjectRequest& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline GetTestGridProjectRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline GetTestGridProjectRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    GetTestGridProjectRequest& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
   private:
 

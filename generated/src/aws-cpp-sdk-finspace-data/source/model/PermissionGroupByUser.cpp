@@ -18,16 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-PermissionGroupByUser::PermissionGroupByUser() : 
-    m_permissionGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_membershipStatus(PermissionGroupMembershipStatus::NOT_SET),
-    m_membershipStatusHasBeenSet(false)
-{
-}
-
 PermissionGroupByUser::PermissionGroupByUser(JsonView jsonValue)
-  : PermissionGroupByUser()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PermissionGroupByUser& PermissionGroupByUser::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("permissionGroupId"))
   {
     m_permissionGroupId = jsonValue.GetString("permissionGroupId");
-
     m_permissionGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipStatus"))
   {
     m_membershipStatus = PermissionGroupMembershipStatusMapper::GetPermissionGroupMembershipStatusForName(jsonValue.GetString("membershipStatus"));
-
     m_membershipStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

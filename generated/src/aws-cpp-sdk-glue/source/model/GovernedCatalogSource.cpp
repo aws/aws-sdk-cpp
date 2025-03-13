@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-GovernedCatalogSource::GovernedCatalogSource() : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_partitionPredicateHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false)
-{
-}
-
 GovernedCatalogSource::GovernedCatalogSource(JsonView jsonValue)
-  : GovernedCatalogSource()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ GovernedCatalogSource& GovernedCatalogSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionPredicate"))
   {
     m_partitionPredicate = jsonValue.GetString("PartitionPredicate");
-
     m_partitionPredicateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalOptions"))
   {
     m_additionalOptions = jsonValue.GetObject("AdditionalOptions");
-
     m_additionalOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

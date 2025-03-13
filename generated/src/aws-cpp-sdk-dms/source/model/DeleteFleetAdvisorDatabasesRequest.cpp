@@ -12,11 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFleetAdvisorDatabasesRequest::DeleteFleetAdvisorDatabasesRequest() : 
-    m_databaseIdsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFleetAdvisorDatabasesRequest::SerializePayload() const
 {
   JsonValue payload;

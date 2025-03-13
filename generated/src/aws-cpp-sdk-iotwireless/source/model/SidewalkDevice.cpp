@@ -18,21 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SidewalkDevice::SidewalkDevice() : 
-    m_amazonIdHasBeenSet(false),
-    m_sidewalkIdHasBeenSet(false),
-    m_sidewalkManufacturingSnHasBeenSet(false),
-    m_deviceCertificatesHasBeenSet(false),
-    m_privateKeysHasBeenSet(false),
-    m_deviceProfileIdHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_status(WirelessDeviceSidewalkStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 SidewalkDevice::SidewalkDevice(JsonView jsonValue)
-  : SidewalkDevice()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ SidewalkDevice& SidewalkDevice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AmazonId"))
   {
     m_amazonId = jsonValue.GetString("AmazonId");
-
     m_amazonIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SidewalkId"))
   {
     m_sidewalkId = jsonValue.GetString("SidewalkId");
-
     m_sidewalkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SidewalkManufacturingSn"))
   {
     m_sidewalkManufacturingSn = jsonValue.GetString("SidewalkManufacturingSn");
-
     m_sidewalkManufacturingSnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceCertificates"))
   {
     Aws::Utils::Array<JsonView> deviceCertificatesJsonList = jsonValue.GetArray("DeviceCertificates");
@@ -69,7 +49,6 @@ SidewalkDevice& SidewalkDevice::operator =(JsonView jsonValue)
     }
     m_deviceCertificatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateKeys"))
   {
     Aws::Utils::Array<JsonView> privateKeysJsonList = jsonValue.GetArray("PrivateKeys");
@@ -79,28 +58,21 @@ SidewalkDevice& SidewalkDevice::operator =(JsonView jsonValue)
     }
     m_privateKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceProfileId"))
   {
     m_deviceProfileId = jsonValue.GetString("DeviceProfileId");
-
     m_deviceProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateId"))
   {
     m_certificateId = jsonValue.GetString("CertificateId");
-
     m_certificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = WirelessDeviceSidewalkStatusMapper::GetWirelessDeviceSidewalkStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

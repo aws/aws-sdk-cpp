@@ -18,14 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ServerGroupReplicationConfiguration::ServerGroupReplicationConfiguration() : 
-    m_serverGroupIdHasBeenSet(false),
-    m_serverReplicationConfigurationsHasBeenSet(false)
-{
-}
-
 ServerGroupReplicationConfiguration::ServerGroupReplicationConfiguration(JsonView jsonValue)
-  : ServerGroupReplicationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ServerGroupReplicationConfiguration& ServerGroupReplicationConfiguration::operat
   if(jsonValue.ValueExists("serverGroupId"))
   {
     m_serverGroupId = jsonValue.GetString("serverGroupId");
-
     m_serverGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverReplicationConfigurations"))
   {
     Aws::Utils::Array<JsonView> serverReplicationConfigurationsJsonList = jsonValue.GetArray("serverReplicationConfigurations");
@@ -48,7 +39,6 @@ ServerGroupReplicationConfiguration& ServerGroupReplicationConfiguration::operat
     }
     m_serverReplicationConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

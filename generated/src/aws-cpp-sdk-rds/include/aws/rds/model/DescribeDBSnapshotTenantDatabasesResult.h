@@ -30,7 +30,7 @@ namespace Model
   class DescribeDBSnapshotTenantDatabasesResult
   {
   public:
-    AWS_RDS_API DescribeDBSnapshotTenantDatabasesResult();
+    AWS_RDS_API DescribeDBSnapshotTenantDatabasesResult() = default;
     AWS_RDS_API DescribeDBSnapshotTenantDatabasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DescribeDBSnapshotTenantDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -41,43 +41,44 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeDBSnapshotTenantDatabasesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeDBSnapshotTenantDatabasesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeDBSnapshotTenantDatabasesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeDBSnapshotTenantDatabasesResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of DB snapshot tenant databases.</p>
      */
-    inline const Aws::Vector<DBSnapshotTenantDatabase>& GetDBSnapshotTenantDatabases() const{ return m_dBSnapshotTenantDatabases; }
-    inline void SetDBSnapshotTenantDatabases(const Aws::Vector<DBSnapshotTenantDatabase>& value) { m_dBSnapshotTenantDatabases = value; }
-    inline void SetDBSnapshotTenantDatabases(Aws::Vector<DBSnapshotTenantDatabase>&& value) { m_dBSnapshotTenantDatabases = std::move(value); }
-    inline DescribeDBSnapshotTenantDatabasesResult& WithDBSnapshotTenantDatabases(const Aws::Vector<DBSnapshotTenantDatabase>& value) { SetDBSnapshotTenantDatabases(value); return *this;}
-    inline DescribeDBSnapshotTenantDatabasesResult& WithDBSnapshotTenantDatabases(Aws::Vector<DBSnapshotTenantDatabase>&& value) { SetDBSnapshotTenantDatabases(std::move(value)); return *this;}
-    inline DescribeDBSnapshotTenantDatabasesResult& AddDBSnapshotTenantDatabases(const DBSnapshotTenantDatabase& value) { m_dBSnapshotTenantDatabases.push_back(value); return *this; }
-    inline DescribeDBSnapshotTenantDatabasesResult& AddDBSnapshotTenantDatabases(DBSnapshotTenantDatabase&& value) { m_dBSnapshotTenantDatabases.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DBSnapshotTenantDatabase>& GetDBSnapshotTenantDatabases() const { return m_dBSnapshotTenantDatabases; }
+    template<typename DBSnapshotTenantDatabasesT = Aws::Vector<DBSnapshotTenantDatabase>>
+    void SetDBSnapshotTenantDatabases(DBSnapshotTenantDatabasesT&& value) { m_dBSnapshotTenantDatabasesHasBeenSet = true; m_dBSnapshotTenantDatabases = std::forward<DBSnapshotTenantDatabasesT>(value); }
+    template<typename DBSnapshotTenantDatabasesT = Aws::Vector<DBSnapshotTenantDatabase>>
+    DescribeDBSnapshotTenantDatabasesResult& WithDBSnapshotTenantDatabases(DBSnapshotTenantDatabasesT&& value) { SetDBSnapshotTenantDatabases(std::forward<DBSnapshotTenantDatabasesT>(value)); return *this;}
+    template<typename DBSnapshotTenantDatabasesT = DBSnapshotTenantDatabase>
+    DescribeDBSnapshotTenantDatabasesResult& AddDBSnapshotTenantDatabases(DBSnapshotTenantDatabasesT&& value) { m_dBSnapshotTenantDatabasesHasBeenSet = true; m_dBSnapshotTenantDatabases.emplace_back(std::forward<DBSnapshotTenantDatabasesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeDBSnapshotTenantDatabasesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeDBSnapshotTenantDatabasesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeDBSnapshotTenantDatabasesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<DBSnapshotTenantDatabase> m_dBSnapshotTenantDatabases;
+    bool m_dBSnapshotTenantDatabasesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

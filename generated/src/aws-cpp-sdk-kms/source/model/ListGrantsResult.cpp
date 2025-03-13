@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListGrantsResult::ListGrantsResult() : 
-    m_truncated(false)
-{
-}
-
 ListGrantsResult::ListGrantsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListGrantsResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ ListGrantsResult& ListGrantsResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_grants.push_back(grantsJsonList[grantsIndex].AsObject());
     }
+    m_grantsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Truncated"))
   {
     m_truncated = jsonValue.GetBool("Truncated");
-
+    m_truncatedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

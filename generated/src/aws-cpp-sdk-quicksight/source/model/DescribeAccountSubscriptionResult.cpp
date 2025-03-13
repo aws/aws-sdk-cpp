@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAccountSubscriptionResult::DescribeAccountSubscriptionResult() : 
-    m_status(0)
-{
-}
-
 DescribeAccountSubscriptionResult::DescribeAccountSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeAccountSubscriptionResult()
 {
   *this = result;
 }
@@ -34,19 +28,19 @@ DescribeAccountSubscriptionResult& DescribeAccountSubscriptionResult::operator =
   if(jsonValue.ValueExists("AccountInfo"))
   {
     m_accountInfo = jsonValue.GetObject("AccountInfo");
-
+    m_accountInfoHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

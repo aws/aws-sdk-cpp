@@ -32,7 +32,7 @@ namespace Model
   class WaypointOptimizationClusteringOptions
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationClusteringOptions();
+    AWS_GEOROUTES_API WaypointOptimizationClusteringOptions() = default;
     AWS_GEOROUTES_API WaypointOptimizationClusteringOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationClusteringOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * topology segment into a single cluster. A Topology segment is a linear stretch
      * of road between two junctions.</p>
      */
-    inline const WaypointOptimizationClusteringAlgorithm& GetAlgorithm() const{ return m_algorithm; }
+    inline WaypointOptimizationClusteringAlgorithm GetAlgorithm() const { return m_algorithm; }
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
-    inline void SetAlgorithm(const WaypointOptimizationClusteringAlgorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
-    inline void SetAlgorithm(WaypointOptimizationClusteringAlgorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
-    inline WaypointOptimizationClusteringOptions& WithAlgorithm(const WaypointOptimizationClusteringAlgorithm& value) { SetAlgorithm(value); return *this;}
-    inline WaypointOptimizationClusteringOptions& WithAlgorithm(WaypointOptimizationClusteringAlgorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
+    inline void SetAlgorithm(WaypointOptimizationClusteringAlgorithm value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
+    inline WaypointOptimizationClusteringOptions& WithAlgorithm(WaypointOptimizationClusteringAlgorithm value) { SetAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -59,16 +57,16 @@ namespace Model
      * <p>Driving distance options to be used when the clustering algorithm is
      * DrivingDistance.</p>
      */
-    inline const WaypointOptimizationDrivingDistanceOptions& GetDrivingDistanceOptions() const{ return m_drivingDistanceOptions; }
+    inline const WaypointOptimizationDrivingDistanceOptions& GetDrivingDistanceOptions() const { return m_drivingDistanceOptions; }
     inline bool DrivingDistanceOptionsHasBeenSet() const { return m_drivingDistanceOptionsHasBeenSet; }
-    inline void SetDrivingDistanceOptions(const WaypointOptimizationDrivingDistanceOptions& value) { m_drivingDistanceOptionsHasBeenSet = true; m_drivingDistanceOptions = value; }
-    inline void SetDrivingDistanceOptions(WaypointOptimizationDrivingDistanceOptions&& value) { m_drivingDistanceOptionsHasBeenSet = true; m_drivingDistanceOptions = std::move(value); }
-    inline WaypointOptimizationClusteringOptions& WithDrivingDistanceOptions(const WaypointOptimizationDrivingDistanceOptions& value) { SetDrivingDistanceOptions(value); return *this;}
-    inline WaypointOptimizationClusteringOptions& WithDrivingDistanceOptions(WaypointOptimizationDrivingDistanceOptions&& value) { SetDrivingDistanceOptions(std::move(value)); return *this;}
+    template<typename DrivingDistanceOptionsT = WaypointOptimizationDrivingDistanceOptions>
+    void SetDrivingDistanceOptions(DrivingDistanceOptionsT&& value) { m_drivingDistanceOptionsHasBeenSet = true; m_drivingDistanceOptions = std::forward<DrivingDistanceOptionsT>(value); }
+    template<typename DrivingDistanceOptionsT = WaypointOptimizationDrivingDistanceOptions>
+    WaypointOptimizationClusteringOptions& WithDrivingDistanceOptions(DrivingDistanceOptionsT&& value) { SetDrivingDistanceOptions(std::forward<DrivingDistanceOptionsT>(value)); return *this;}
     ///@}
   private:
 
-    WaypointOptimizationClusteringAlgorithm m_algorithm;
+    WaypointOptimizationClusteringAlgorithm m_algorithm{WaypointOptimizationClusteringAlgorithm::NOT_SET};
     bool m_algorithmHasBeenSet = false;
 
     WaypointOptimizationDrivingDistanceOptions m_drivingDistanceOptions;

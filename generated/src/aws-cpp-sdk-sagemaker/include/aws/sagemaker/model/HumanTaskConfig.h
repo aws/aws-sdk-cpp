@@ -36,7 +36,7 @@ namespace Model
   class HumanTaskConfig
   {
   public:
-    AWS_SAGEMAKER_API HumanTaskConfig();
+    AWS_SAGEMAKER_API HumanTaskConfig() = default;
     AWS_SAGEMAKER_API HumanTaskConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HumanTaskConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the work team assigned to complete the
      * tasks.</p>
      */
-    inline const Aws::String& GetWorkteamArn() const{ return m_workteamArn; }
+    inline const Aws::String& GetWorkteamArn() const { return m_workteamArn; }
     inline bool WorkteamArnHasBeenSet() const { return m_workteamArnHasBeenSet; }
-    inline void SetWorkteamArn(const Aws::String& value) { m_workteamArnHasBeenSet = true; m_workteamArn = value; }
-    inline void SetWorkteamArn(Aws::String&& value) { m_workteamArnHasBeenSet = true; m_workteamArn = std::move(value); }
-    inline void SetWorkteamArn(const char* value) { m_workteamArnHasBeenSet = true; m_workteamArn.assign(value); }
-    inline HumanTaskConfig& WithWorkteamArn(const Aws::String& value) { SetWorkteamArn(value); return *this;}
-    inline HumanTaskConfig& WithWorkteamArn(Aws::String&& value) { SetWorkteamArn(std::move(value)); return *this;}
-    inline HumanTaskConfig& WithWorkteamArn(const char* value) { SetWorkteamArn(value); return *this;}
+    template<typename WorkteamArnT = Aws::String>
+    void SetWorkteamArn(WorkteamArnT&& value) { m_workteamArnHasBeenSet = true; m_workteamArn = std::forward<WorkteamArnT>(value); }
+    template<typename WorkteamArnT = Aws::String>
+    HumanTaskConfig& WithWorkteamArn(WorkteamArnT&& value) { SetWorkteamArn(std::forward<WorkteamArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * <p>Information about the user interface that workers use to complete the
      * labeling task.</p>
      */
-    inline const UiConfig& GetUiConfig() const{ return m_uiConfig; }
+    inline const UiConfig& GetUiConfig() const { return m_uiConfig; }
     inline bool UiConfigHasBeenSet() const { return m_uiConfigHasBeenSet; }
-    inline void SetUiConfig(const UiConfig& value) { m_uiConfigHasBeenSet = true; m_uiConfig = value; }
-    inline void SetUiConfig(UiConfig&& value) { m_uiConfigHasBeenSet = true; m_uiConfig = std::move(value); }
-    inline HumanTaskConfig& WithUiConfig(const UiConfig& value) { SetUiConfig(value); return *this;}
-    inline HumanTaskConfig& WithUiConfig(UiConfig&& value) { SetUiConfig(std::move(value)); return *this;}
+    template<typename UiConfigT = UiConfig>
+    void SetUiConfig(UiConfigT&& value) { m_uiConfigHasBeenSet = true; m_uiConfig = std::forward<UiConfigT>(value); }
+    template<typename UiConfigT = UiConfig>
+    HumanTaskConfig& WithUiConfig(UiConfigT&& value) { SetUiConfig(std::forward<UiConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -671,14 +669,12 @@ namespace Model
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetPreHumanTaskLambdaArn() const{ return m_preHumanTaskLambdaArn; }
+    inline const Aws::String& GetPreHumanTaskLambdaArn() const { return m_preHumanTaskLambdaArn; }
     inline bool PreHumanTaskLambdaArnHasBeenSet() const { return m_preHumanTaskLambdaArnHasBeenSet; }
-    inline void SetPreHumanTaskLambdaArn(const Aws::String& value) { m_preHumanTaskLambdaArnHasBeenSet = true; m_preHumanTaskLambdaArn = value; }
-    inline void SetPreHumanTaskLambdaArn(Aws::String&& value) { m_preHumanTaskLambdaArnHasBeenSet = true; m_preHumanTaskLambdaArn = std::move(value); }
-    inline void SetPreHumanTaskLambdaArn(const char* value) { m_preHumanTaskLambdaArnHasBeenSet = true; m_preHumanTaskLambdaArn.assign(value); }
-    inline HumanTaskConfig& WithPreHumanTaskLambdaArn(const Aws::String& value) { SetPreHumanTaskLambdaArn(value); return *this;}
-    inline HumanTaskConfig& WithPreHumanTaskLambdaArn(Aws::String&& value) { SetPreHumanTaskLambdaArn(std::move(value)); return *this;}
-    inline HumanTaskConfig& WithPreHumanTaskLambdaArn(const char* value) { SetPreHumanTaskLambdaArn(value); return *this;}
+    template<typename PreHumanTaskLambdaArnT = Aws::String>
+    void SetPreHumanTaskLambdaArn(PreHumanTaskLambdaArnT&& value) { m_preHumanTaskLambdaArnHasBeenSet = true; m_preHumanTaskLambdaArn = std::forward<PreHumanTaskLambdaArnT>(value); }
+    template<typename PreHumanTaskLambdaArnT = Aws::String>
+    HumanTaskConfig& WithPreHumanTaskLambdaArn(PreHumanTaskLambdaArnT&& value) { SetPreHumanTaskLambdaArn(std::forward<PreHumanTaskLambdaArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -686,50 +682,45 @@ namespace Model
      * <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk
      * can discover the task.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTaskKeywords() const{ return m_taskKeywords; }
+    inline const Aws::Vector<Aws::String>& GetTaskKeywords() const { return m_taskKeywords; }
     inline bool TaskKeywordsHasBeenSet() const { return m_taskKeywordsHasBeenSet; }
-    inline void SetTaskKeywords(const Aws::Vector<Aws::String>& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords = value; }
-    inline void SetTaskKeywords(Aws::Vector<Aws::String>&& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords = std::move(value); }
-    inline HumanTaskConfig& WithTaskKeywords(const Aws::Vector<Aws::String>& value) { SetTaskKeywords(value); return *this;}
-    inline HumanTaskConfig& WithTaskKeywords(Aws::Vector<Aws::String>&& value) { SetTaskKeywords(std::move(value)); return *this;}
-    inline HumanTaskConfig& AddTaskKeywords(const Aws::String& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords.push_back(value); return *this; }
-    inline HumanTaskConfig& AddTaskKeywords(Aws::String&& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords.push_back(std::move(value)); return *this; }
-    inline HumanTaskConfig& AddTaskKeywords(const char* value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords.push_back(value); return *this; }
+    template<typename TaskKeywordsT = Aws::Vector<Aws::String>>
+    void SetTaskKeywords(TaskKeywordsT&& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords = std::forward<TaskKeywordsT>(value); }
+    template<typename TaskKeywordsT = Aws::Vector<Aws::String>>
+    HumanTaskConfig& WithTaskKeywords(TaskKeywordsT&& value) { SetTaskKeywords(std::forward<TaskKeywordsT>(value)); return *this;}
+    template<typename TaskKeywordsT = Aws::String>
+    HumanTaskConfig& AddTaskKeywords(TaskKeywordsT&& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords.emplace_back(std::forward<TaskKeywordsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A title for the task for your human workers.</p>
      */
-    inline const Aws::String& GetTaskTitle() const{ return m_taskTitle; }
+    inline const Aws::String& GetTaskTitle() const { return m_taskTitle; }
     inline bool TaskTitleHasBeenSet() const { return m_taskTitleHasBeenSet; }
-    inline void SetTaskTitle(const Aws::String& value) { m_taskTitleHasBeenSet = true; m_taskTitle = value; }
-    inline void SetTaskTitle(Aws::String&& value) { m_taskTitleHasBeenSet = true; m_taskTitle = std::move(value); }
-    inline void SetTaskTitle(const char* value) { m_taskTitleHasBeenSet = true; m_taskTitle.assign(value); }
-    inline HumanTaskConfig& WithTaskTitle(const Aws::String& value) { SetTaskTitle(value); return *this;}
-    inline HumanTaskConfig& WithTaskTitle(Aws::String&& value) { SetTaskTitle(std::move(value)); return *this;}
-    inline HumanTaskConfig& WithTaskTitle(const char* value) { SetTaskTitle(value); return *this;}
+    template<typename TaskTitleT = Aws::String>
+    void SetTaskTitle(TaskTitleT&& value) { m_taskTitleHasBeenSet = true; m_taskTitle = std::forward<TaskTitleT>(value); }
+    template<typename TaskTitleT = Aws::String>
+    HumanTaskConfig& WithTaskTitle(TaskTitleT&& value) { SetTaskTitle(std::forward<TaskTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the task for your human workers.</p>
      */
-    inline const Aws::String& GetTaskDescription() const{ return m_taskDescription; }
+    inline const Aws::String& GetTaskDescription() const { return m_taskDescription; }
     inline bool TaskDescriptionHasBeenSet() const { return m_taskDescriptionHasBeenSet; }
-    inline void SetTaskDescription(const Aws::String& value) { m_taskDescriptionHasBeenSet = true; m_taskDescription = value; }
-    inline void SetTaskDescription(Aws::String&& value) { m_taskDescriptionHasBeenSet = true; m_taskDescription = std::move(value); }
-    inline void SetTaskDescription(const char* value) { m_taskDescriptionHasBeenSet = true; m_taskDescription.assign(value); }
-    inline HumanTaskConfig& WithTaskDescription(const Aws::String& value) { SetTaskDescription(value); return *this;}
-    inline HumanTaskConfig& WithTaskDescription(Aws::String&& value) { SetTaskDescription(std::move(value)); return *this;}
-    inline HumanTaskConfig& WithTaskDescription(const char* value) { SetTaskDescription(value); return *this;}
+    template<typename TaskDescriptionT = Aws::String>
+    void SetTaskDescription(TaskDescriptionT&& value) { m_taskDescriptionHasBeenSet = true; m_taskDescription = std::forward<TaskDescriptionT>(value); }
+    template<typename TaskDescriptionT = Aws::String>
+    HumanTaskConfig& WithTaskDescription(TaskDescriptionT&& value) { SetTaskDescription(std::forward<TaskDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of human workers that will label an object. </p>
      */
-    inline int GetNumberOfHumanWorkersPerDataObject() const{ return m_numberOfHumanWorkersPerDataObject; }
+    inline int GetNumberOfHumanWorkersPerDataObject() const { return m_numberOfHumanWorkersPerDataObject; }
     inline bool NumberOfHumanWorkersPerDataObjectHasBeenSet() const { return m_numberOfHumanWorkersPerDataObjectHasBeenSet; }
     inline void SetNumberOfHumanWorkersPerDataObject(int value) { m_numberOfHumanWorkersPerDataObjectHasBeenSet = true; m_numberOfHumanWorkersPerDataObject = value; }
     inline HumanTaskConfig& WithNumberOfHumanWorkersPerDataObject(int value) { SetNumberOfHumanWorkersPerDataObject(value); return *this;}
@@ -753,7 +744,7 @@ namespace Model
      * frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL
      * mode. For most users, the maximum is also 30 days.</p> </li> </ul>
      */
-    inline int GetTaskTimeLimitInSeconds() const{ return m_taskTimeLimitInSeconds; }
+    inline int GetTaskTimeLimitInSeconds() const { return m_taskTimeLimitInSeconds; }
     inline bool TaskTimeLimitInSecondsHasBeenSet() const { return m_taskTimeLimitInSecondsHasBeenSet; }
     inline void SetTaskTimeLimitInSeconds(int value) { m_taskTimeLimitInSecondsHasBeenSet = true; m_taskTimeLimitInSeconds = value; }
     inline HumanTaskConfig& WithTaskTimeLimitInSeconds(int value) { SetTaskTimeLimitInSeconds(value); return *this;}
@@ -769,7 +760,7 @@ namespace Model
      * the default value is 30 days (2592,000 seconds) for non-AL mode. For most users,
      * the maximum is also 30 days.</p> </li> </ul>
      */
-    inline int GetTaskAvailabilityLifetimeInSeconds() const{ return m_taskAvailabilityLifetimeInSeconds; }
+    inline int GetTaskAvailabilityLifetimeInSeconds() const { return m_taskAvailabilityLifetimeInSeconds; }
     inline bool TaskAvailabilityLifetimeInSecondsHasBeenSet() const { return m_taskAvailabilityLifetimeInSecondsHasBeenSet; }
     inline void SetTaskAvailabilityLifetimeInSeconds(int value) { m_taskAvailabilityLifetimeInSecondsHasBeenSet = true; m_taskAvailabilityLifetimeInSeconds = value; }
     inline HumanTaskConfig& WithTaskAvailabilityLifetimeInSeconds(int value) { SetTaskAvailabilityLifetimeInSeconds(value); return *this;}
@@ -782,7 +773,7 @@ namespace Model
      * more than one worker at one time. The default value is 1000 objects. To increase
      * the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
      */
-    inline int GetMaxConcurrentTaskCount() const{ return m_maxConcurrentTaskCount; }
+    inline int GetMaxConcurrentTaskCount() const { return m_maxConcurrentTaskCount; }
     inline bool MaxConcurrentTaskCountHasBeenSet() const { return m_maxConcurrentTaskCountHasBeenSet; }
     inline void SetMaxConcurrentTaskCount(int value) { m_maxConcurrentTaskCountHasBeenSet = true; m_maxConcurrentTaskCount = value; }
     inline HumanTaskConfig& WithMaxConcurrentTaskCount(int value) { SetMaxConcurrentTaskCount(value); return *this;}
@@ -792,12 +783,12 @@ namespace Model
     /**
      * <p>Configures how labels are consolidated across human workers.</p>
      */
-    inline const AnnotationConsolidationConfig& GetAnnotationConsolidationConfig() const{ return m_annotationConsolidationConfig; }
+    inline const AnnotationConsolidationConfig& GetAnnotationConsolidationConfig() const { return m_annotationConsolidationConfig; }
     inline bool AnnotationConsolidationConfigHasBeenSet() const { return m_annotationConsolidationConfigHasBeenSet; }
-    inline void SetAnnotationConsolidationConfig(const AnnotationConsolidationConfig& value) { m_annotationConsolidationConfigHasBeenSet = true; m_annotationConsolidationConfig = value; }
-    inline void SetAnnotationConsolidationConfig(AnnotationConsolidationConfig&& value) { m_annotationConsolidationConfigHasBeenSet = true; m_annotationConsolidationConfig = std::move(value); }
-    inline HumanTaskConfig& WithAnnotationConsolidationConfig(const AnnotationConsolidationConfig& value) { SetAnnotationConsolidationConfig(value); return *this;}
-    inline HumanTaskConfig& WithAnnotationConsolidationConfig(AnnotationConsolidationConfig&& value) { SetAnnotationConsolidationConfig(std::move(value)); return *this;}
+    template<typename AnnotationConsolidationConfigT = AnnotationConsolidationConfig>
+    void SetAnnotationConsolidationConfig(AnnotationConsolidationConfigT&& value) { m_annotationConsolidationConfigHasBeenSet = true; m_annotationConsolidationConfig = std::forward<AnnotationConsolidationConfigT>(value); }
+    template<typename AnnotationConsolidationConfigT = AnnotationConsolidationConfig>
+    HumanTaskConfig& WithAnnotationConsolidationConfig(AnnotationConsolidationConfigT&& value) { SetAnnotationConsolidationConfig(std::forward<AnnotationConsolidationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -805,12 +796,12 @@ namespace Model
      * <p>The price that you pay for each task performed by an Amazon Mechanical Turk
      * worker.</p>
      */
-    inline const PublicWorkforceTaskPrice& GetPublicWorkforceTaskPrice() const{ return m_publicWorkforceTaskPrice; }
+    inline const PublicWorkforceTaskPrice& GetPublicWorkforceTaskPrice() const { return m_publicWorkforceTaskPrice; }
     inline bool PublicWorkforceTaskPriceHasBeenSet() const { return m_publicWorkforceTaskPriceHasBeenSet; }
-    inline void SetPublicWorkforceTaskPrice(const PublicWorkforceTaskPrice& value) { m_publicWorkforceTaskPriceHasBeenSet = true; m_publicWorkforceTaskPrice = value; }
-    inline void SetPublicWorkforceTaskPrice(PublicWorkforceTaskPrice&& value) { m_publicWorkforceTaskPriceHasBeenSet = true; m_publicWorkforceTaskPrice = std::move(value); }
-    inline HumanTaskConfig& WithPublicWorkforceTaskPrice(const PublicWorkforceTaskPrice& value) { SetPublicWorkforceTaskPrice(value); return *this;}
-    inline HumanTaskConfig& WithPublicWorkforceTaskPrice(PublicWorkforceTaskPrice&& value) { SetPublicWorkforceTaskPrice(std::move(value)); return *this;}
+    template<typename PublicWorkforceTaskPriceT = PublicWorkforceTaskPrice>
+    void SetPublicWorkforceTaskPrice(PublicWorkforceTaskPriceT&& value) { m_publicWorkforceTaskPriceHasBeenSet = true; m_publicWorkforceTaskPrice = std::forward<PublicWorkforceTaskPriceT>(value); }
+    template<typename PublicWorkforceTaskPriceT = PublicWorkforceTaskPrice>
+    HumanTaskConfig& WithPublicWorkforceTaskPrice(PublicWorkforceTaskPriceT&& value) { SetPublicWorkforceTaskPrice(std::forward<PublicWorkforceTaskPriceT>(value)); return *this;}
     ///@}
   private:
 
@@ -832,16 +823,16 @@ namespace Model
     Aws::String m_taskDescription;
     bool m_taskDescriptionHasBeenSet = false;
 
-    int m_numberOfHumanWorkersPerDataObject;
+    int m_numberOfHumanWorkersPerDataObject{0};
     bool m_numberOfHumanWorkersPerDataObjectHasBeenSet = false;
 
-    int m_taskTimeLimitInSeconds;
+    int m_taskTimeLimitInSeconds{0};
     bool m_taskTimeLimitInSecondsHasBeenSet = false;
 
-    int m_taskAvailabilityLifetimeInSeconds;
+    int m_taskAvailabilityLifetimeInSeconds{0};
     bool m_taskAvailabilityLifetimeInSecondsHasBeenSet = false;
 
-    int m_maxConcurrentTaskCount;
+    int m_maxConcurrentTaskCount{0};
     bool m_maxConcurrentTaskCountHasBeenSet = false;
 
     AnnotationConsolidationConfig m_annotationConsolidationConfig;

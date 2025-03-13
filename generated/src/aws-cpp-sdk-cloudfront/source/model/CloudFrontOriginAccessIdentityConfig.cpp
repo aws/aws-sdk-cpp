@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CloudFrontOriginAccessIdentityConfig::CloudFrontOriginAccessIdentityConfig() : 
-    m_callerReferenceHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 CloudFrontOriginAccessIdentityConfig::CloudFrontOriginAccessIdentityConfig(const XmlNode& xmlNode)
-  : CloudFrontOriginAccessIdentityConfig()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CloudFrontOriginAccessIdentityConfig& CloudFrontOriginAccessIdentityConfig::oper
     {
       m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
+       m_callerReferenceHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
   }
 

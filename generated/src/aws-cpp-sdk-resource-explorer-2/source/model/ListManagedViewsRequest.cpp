@@ -12,14 +12,6 @@ using namespace Aws::ResourceExplorer2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListManagedViewsRequest::ListManagedViewsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_servicePrincipalHasBeenSet(false)
-{
-}
-
 Aws::String ListManagedViewsRequest::SerializePayload() const
 {
   JsonValue payload;

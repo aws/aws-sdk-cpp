@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListOpenCypherQueriesResult::ListOpenCypherQueriesResult() : 
-    m_acceptedQueryCount(0),
-    m_runningQueryCount(0)
-{
-}
-
 ListOpenCypherQueriesResult::ListOpenCypherQueriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListOpenCypherQueriesResult()
 {
   *this = result;
 }
@@ -35,15 +28,13 @@ ListOpenCypherQueriesResult& ListOpenCypherQueriesResult::operator =(const Aws::
   if(jsonValue.ValueExists("acceptedQueryCount"))
   {
     m_acceptedQueryCount = jsonValue.GetInteger("acceptedQueryCount");
-
+    m_acceptedQueryCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runningQueryCount"))
   {
     m_runningQueryCount = jsonValue.GetInteger("runningQueryCount");
-
+    m_runningQueryCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queries"))
   {
     Aws::Utils::Array<JsonView> queriesJsonList = jsonValue.GetArray("queries");
@@ -51,14 +42,15 @@ ListOpenCypherQueriesResult& ListOpenCypherQueriesResult::operator =(const Aws::
     {
       m_queries.push_back(queriesJsonList[queriesIndex].AsObject());
     }
+    m_queriesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

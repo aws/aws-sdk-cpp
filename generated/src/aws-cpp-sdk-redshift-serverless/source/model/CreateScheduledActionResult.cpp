@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateScheduledActionResult::CreateScheduledActionResult()
-{
-}
-
 CreateScheduledActionResult::CreateScheduledActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateScheduledActionResult& CreateScheduledActionResult::operator =(const Aws::
   if(jsonValue.ValueExists("scheduledAction"))
   {
     m_scheduledAction = jsonValue.GetObject("scheduledAction");
-
+    m_scheduledActionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

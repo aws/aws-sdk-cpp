@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-StateInfo::StateInfo() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 StateInfo::StateInfo(JsonView jsonValue)
-  : StateInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StateInfo& StateInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

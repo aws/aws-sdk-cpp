@@ -24,7 +24,7 @@ namespace Model
   class DeleteMeshRequest : public AppMeshRequest
   {
   public:
-    AWS_APPMESH_API DeleteMeshRequest();
+    AWS_APPMESH_API DeleteMeshRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the service mesh to delete.</p>
      */
-    inline const Aws::String& GetMeshName() const{ return m_meshName; }
+    inline const Aws::String& GetMeshName() const { return m_meshName; }
     inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
-    inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
-    inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
-    inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
-    inline DeleteMeshRequest& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
-    inline DeleteMeshRequest& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
-    inline DeleteMeshRequest& WithMeshName(const char* value) { SetMeshName(value); return *this;}
+    template<typename MeshNameT = Aws::String>
+    void SetMeshName(MeshNameT&& value) { m_meshNameHasBeenSet = true; m_meshName = std::forward<MeshNameT>(value); }
+    template<typename MeshNameT = Aws::String>
+    DeleteMeshRequest& WithMeshName(MeshNameT&& value) { SetMeshName(std::forward<MeshNameT>(value)); return *this;}
     ///@}
   private:
 

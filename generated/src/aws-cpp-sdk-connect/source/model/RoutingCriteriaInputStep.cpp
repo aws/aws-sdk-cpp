@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RoutingCriteriaInputStep::RoutingCriteriaInputStep() : 
-    m_expiryHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 RoutingCriteriaInputStep::RoutingCriteriaInputStep(JsonView jsonValue)
-  : RoutingCriteriaInputStep()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RoutingCriteriaInputStep& RoutingCriteriaInputStep::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Expiry"))
   {
     m_expiry = jsonValue.GetObject("Expiry");
-
     m_expiryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetObject("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

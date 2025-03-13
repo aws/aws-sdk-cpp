@@ -12,11 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterOrganizationAdminAccountRequest::DeregisterOrganizationAdminAccountRequest() : 
-    m_adminAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterOrganizationAdminAccountRequest::SerializePayload() const
 {
   JsonValue payload;

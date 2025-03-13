@@ -33,7 +33,7 @@ namespace Model
   class BatchItemError
   {
   public:
-    AWS_COMPREHEND_API BatchItemError();
+    AWS_COMPREHEND_API BatchItemError() = default;
     AWS_COMPREHEND_API BatchItemError(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API BatchItemError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
-    inline int GetIndex() const{ return m_index; }
+    inline int GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
     inline BatchItemError& WithIndex(int value) { SetIndex(value); return *this;}
@@ -53,32 +53,28 @@ namespace Model
     /**
      * <p>The numeric error code of the error.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline BatchItemError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline BatchItemError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline BatchItemError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    BatchItemError& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A text description of the error.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline BatchItemError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline BatchItemError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline BatchItemError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    BatchItemError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 
-    int m_index;
+    int m_index{0};
     bool m_indexHasBeenSet = false;
 
     Aws::String m_errorCode;

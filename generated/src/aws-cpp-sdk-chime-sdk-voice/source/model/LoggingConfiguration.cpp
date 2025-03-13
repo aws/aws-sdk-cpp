@@ -18,16 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-LoggingConfiguration::LoggingConfiguration() : 
-    m_enableSIPLogs(false),
-    m_enableSIPLogsHasBeenSet(false),
-    m_enableMediaMetricLogs(false),
-    m_enableMediaMetricLogsHasBeenSet(false)
-{
-}
-
 LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
-  : LoggingConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EnableSIPLogs"))
   {
     m_enableSIPLogs = jsonValue.GetBool("EnableSIPLogs");
-
     m_enableSIPLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableMediaMetricLogs"))
   {
     m_enableMediaMetricLogs = jsonValue.GetBool("EnableMediaMetricLogs");
-
     m_enableMediaMetricLogsHasBeenSet = true;
   }
-
   return *this;
 }
 

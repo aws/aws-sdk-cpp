@@ -20,19 +20,7 @@ namespace IAM
 namespace Model
 {
 
-ServiceSpecificCredentialMetadata::ServiceSpecificCredentialMetadata() : 
-    m_userNameHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_serviceUserNameHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_serviceSpecificCredentialIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 ServiceSpecificCredentialMetadata::ServiceSpecificCredentialMetadata(const XmlNode& xmlNode)
-  : ServiceSpecificCredentialMetadata()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,42 @@ ServiceSpecificCredentialMetadata& ServiceSpecificCredentialMetadata::operator =
     {
       m_userName = Aws::Utils::Xml::DecodeEscapedXmlText(userNameNode.GetText());
       m_userNameHasBeenSet = true;
+       m_userNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode serviceUserNameNode = resultNode.FirstChild("ServiceUserName");
     if(!serviceUserNameNode.IsNull())
     {
       m_serviceUserName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceUserNameNode.GetText());
       m_serviceUserNameHasBeenSet = true;
+       m_serviceUserNameHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
     XmlNode serviceSpecificCredentialIdNode = resultNode.FirstChild("ServiceSpecificCredentialId");
     if(!serviceSpecificCredentialIdNode.IsNull())
     {
       m_serviceSpecificCredentialId = Aws::Utils::Xml::DecodeEscapedXmlText(serviceSpecificCredentialIdNode.GetText());
       m_serviceSpecificCredentialIdHasBeenSet = true;
+       m_serviceSpecificCredentialIdHasBeenSet = true;
     }
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
     if(!serviceNameNode.IsNull())
     {
       m_serviceName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNameNode.GetText());
       m_serviceNameHasBeenSet = true;
+       m_serviceNameHasBeenSet = true;
     }
   }
 

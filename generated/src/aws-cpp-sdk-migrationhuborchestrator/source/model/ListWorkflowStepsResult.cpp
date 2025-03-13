@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWorkflowStepsResult::ListWorkflowStepsResult()
-{
-}
-
 ListWorkflowStepsResult::ListWorkflowStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListWorkflowStepsResult& ListWorkflowStepsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowStepsSummary"))
   {
     Aws::Utils::Array<JsonView> workflowStepsSummaryJsonList = jsonValue.GetArray("workflowStepsSummary");
@@ -42,14 +37,15 @@ ListWorkflowStepsResult& ListWorkflowStepsResult::operator =(const Aws::AmazonWe
     {
       m_workflowStepsSummary.push_back(workflowStepsSummaryJsonList[workflowStepsSummaryIndex].AsObject());
     }
+    m_workflowStepsSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

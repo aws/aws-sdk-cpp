@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-TimecodeConfig::TimecodeConfig() : 
-    m_source(TimecodeConfigSource::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_syncThreshold(0),
-    m_syncThresholdHasBeenSet(false)
-{
-}
-
 TimecodeConfig::TimecodeConfig(JsonView jsonValue)
-  : TimecodeConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TimecodeConfig& TimecodeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = TimecodeConfigSourceMapper::GetTimecodeConfigSourceForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("syncThreshold"))
   {
     m_syncThreshold = jsonValue.GetInteger("syncThreshold");
-
     m_syncThresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

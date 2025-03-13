@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-LambdaStepMetadata::LambdaStepMetadata() : 
-    m_arnHasBeenSet(false),
-    m_outputParametersHasBeenSet(false)
-{
-}
-
 LambdaStepMetadata::LambdaStepMetadata(JsonView jsonValue)
-  : LambdaStepMetadata()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LambdaStepMetadata& LambdaStepMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputParameters"))
   {
     Aws::Utils::Array<JsonView> outputParametersJsonList = jsonValue.GetArray("OutputParameters");
@@ -48,7 +39,6 @@ LambdaStepMetadata& LambdaStepMetadata::operator =(JsonView jsonValue)
     }
     m_outputParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

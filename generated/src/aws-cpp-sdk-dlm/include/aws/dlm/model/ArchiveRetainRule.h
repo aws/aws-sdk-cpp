@@ -32,7 +32,7 @@ namespace Model
   class ArchiveRetainRule
   {
   public:
-    AWS_DLM_API ArchiveRetainRule();
+    AWS_DLM_API ArchiveRetainRule() = default;
     AWS_DLM_API ArchiveRetainRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API ArchiveRetainRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive
      * Amazon EBS snapshots</a>.</p>
      */
-    inline const RetentionArchiveTier& GetRetentionArchiveTier() const{ return m_retentionArchiveTier; }
+    inline const RetentionArchiveTier& GetRetentionArchiveTier() const { return m_retentionArchiveTier; }
     inline bool RetentionArchiveTierHasBeenSet() const { return m_retentionArchiveTierHasBeenSet; }
-    inline void SetRetentionArchiveTier(const RetentionArchiveTier& value) { m_retentionArchiveTierHasBeenSet = true; m_retentionArchiveTier = value; }
-    inline void SetRetentionArchiveTier(RetentionArchiveTier&& value) { m_retentionArchiveTierHasBeenSet = true; m_retentionArchiveTier = std::move(value); }
-    inline ArchiveRetainRule& WithRetentionArchiveTier(const RetentionArchiveTier& value) { SetRetentionArchiveTier(value); return *this;}
-    inline ArchiveRetainRule& WithRetentionArchiveTier(RetentionArchiveTier&& value) { SetRetentionArchiveTier(std::move(value)); return *this;}
+    template<typename RetentionArchiveTierT = RetentionArchiveTier>
+    void SetRetentionArchiveTier(RetentionArchiveTierT&& value) { m_retentionArchiveTierHasBeenSet = true; m_retentionArchiveTier = std::forward<RetentionArchiveTierT>(value); }
+    template<typename RetentionArchiveTierT = RetentionArchiveTier>
+    ArchiveRetainRule& WithRetentionArchiveTier(RetentionArchiveTierT&& value) { SetRetentionArchiveTier(std::forward<RetentionArchiveTierT>(value)); return *this;}
     ///@}
   private:
 

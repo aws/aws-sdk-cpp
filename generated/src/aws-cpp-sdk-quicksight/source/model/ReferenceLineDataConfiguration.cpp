@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ReferenceLineDataConfiguration::ReferenceLineDataConfiguration() : 
-    m_staticConfigurationHasBeenSet(false),
-    m_dynamicConfigurationHasBeenSet(false),
-    m_axisBinding(AxisBinding::NOT_SET),
-    m_axisBindingHasBeenSet(false),
-    m_seriesType(ReferenceLineSeriesType::NOT_SET),
-    m_seriesTypeHasBeenSet(false)
-{
-}
-
 ReferenceLineDataConfiguration::ReferenceLineDataConfiguration(JsonView jsonValue)
-  : ReferenceLineDataConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ReferenceLineDataConfiguration& ReferenceLineDataConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("StaticConfiguration"))
   {
     m_staticConfiguration = jsonValue.GetObject("StaticConfiguration");
-
     m_staticConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DynamicConfiguration"))
   {
     m_dynamicConfiguration = jsonValue.GetObject("DynamicConfiguration");
-
     m_dynamicConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AxisBinding"))
   {
     m_axisBinding = AxisBindingMapper::GetAxisBindingForName(jsonValue.GetString("AxisBinding"));
-
     m_axisBindingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SeriesType"))
   {
     m_seriesType = ReferenceLineSeriesTypeMapper::GetReferenceLineSeriesTypeForName(jsonValue.GetString("SeriesType"));
-
     m_seriesTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

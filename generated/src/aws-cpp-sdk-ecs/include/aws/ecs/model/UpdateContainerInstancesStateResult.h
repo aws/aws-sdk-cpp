@@ -30,7 +30,7 @@ namespace Model
   class UpdateContainerInstancesStateResult
   {
   public:
-    AWS_ECS_API UpdateContainerInstancesStateResult();
+    AWS_ECS_API UpdateContainerInstancesStateResult() = default;
     AWS_ECS_API UpdateContainerInstancesStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API UpdateContainerInstancesStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>The list of container instances.</p>
      */
-    inline const Aws::Vector<ContainerInstance>& GetContainerInstances() const{ return m_containerInstances; }
-    inline void SetContainerInstances(const Aws::Vector<ContainerInstance>& value) { m_containerInstances = value; }
-    inline void SetContainerInstances(Aws::Vector<ContainerInstance>&& value) { m_containerInstances = std::move(value); }
-    inline UpdateContainerInstancesStateResult& WithContainerInstances(const Aws::Vector<ContainerInstance>& value) { SetContainerInstances(value); return *this;}
-    inline UpdateContainerInstancesStateResult& WithContainerInstances(Aws::Vector<ContainerInstance>&& value) { SetContainerInstances(std::move(value)); return *this;}
-    inline UpdateContainerInstancesStateResult& AddContainerInstances(const ContainerInstance& value) { m_containerInstances.push_back(value); return *this; }
-    inline UpdateContainerInstancesStateResult& AddContainerInstances(ContainerInstance&& value) { m_containerInstances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContainerInstance>& GetContainerInstances() const { return m_containerInstances; }
+    template<typename ContainerInstancesT = Aws::Vector<ContainerInstance>>
+    void SetContainerInstances(ContainerInstancesT&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = std::forward<ContainerInstancesT>(value); }
+    template<typename ContainerInstancesT = Aws::Vector<ContainerInstance>>
+    UpdateContainerInstancesStateResult& WithContainerInstances(ContainerInstancesT&& value) { SetContainerInstances(std::forward<ContainerInstancesT>(value)); return *this;}
+    template<typename ContainerInstancesT = ContainerInstance>
+    UpdateContainerInstancesStateResult& AddContainerInstances(ContainerInstancesT&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.emplace_back(std::forward<ContainerInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
-    inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
-    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
-    inline UpdateContainerInstancesStateResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
-    inline UpdateContainerInstancesStateResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
-    inline UpdateContainerInstancesStateResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
-    inline UpdateContainerInstancesStateResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Failure>& GetFailures() const { return m_failures; }
+    template<typename FailuresT = Aws::Vector<Failure>>
+    void SetFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures = std::forward<FailuresT>(value); }
+    template<typename FailuresT = Aws::Vector<Failure>>
+    UpdateContainerInstancesStateResult& WithFailures(FailuresT&& value) { SetFailures(std::forward<FailuresT>(value)); return *this;}
+    template<typename FailuresT = Failure>
+    UpdateContainerInstancesStateResult& AddFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures.emplace_back(std::forward<FailuresT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateContainerInstancesStateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateContainerInstancesStateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateContainerInstancesStateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateContainerInstancesStateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContainerInstance> m_containerInstances;
+    bool m_containerInstancesHasBeenSet = false;
 
     Aws::Vector<Failure> m_failures;
+    bool m_failuresHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

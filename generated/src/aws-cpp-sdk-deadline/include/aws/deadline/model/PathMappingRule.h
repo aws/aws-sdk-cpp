@@ -32,7 +32,7 @@ namespace Model
   class PathMappingRule
   {
   public:
-    AWS_DEADLINE_API PathMappingRule();
+    AWS_DEADLINE_API PathMappingRule() = default;
     AWS_DEADLINE_API PathMappingRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API PathMappingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,44 +42,38 @@ namespace Model
     /**
      * <p>The source path format.</p>
      */
-    inline const PathFormat& GetSourcePathFormat() const{ return m_sourcePathFormat; }
+    inline PathFormat GetSourcePathFormat() const { return m_sourcePathFormat; }
     inline bool SourcePathFormatHasBeenSet() const { return m_sourcePathFormatHasBeenSet; }
-    inline void SetSourcePathFormat(const PathFormat& value) { m_sourcePathFormatHasBeenSet = true; m_sourcePathFormat = value; }
-    inline void SetSourcePathFormat(PathFormat&& value) { m_sourcePathFormatHasBeenSet = true; m_sourcePathFormat = std::move(value); }
-    inline PathMappingRule& WithSourcePathFormat(const PathFormat& value) { SetSourcePathFormat(value); return *this;}
-    inline PathMappingRule& WithSourcePathFormat(PathFormat&& value) { SetSourcePathFormat(std::move(value)); return *this;}
+    inline void SetSourcePathFormat(PathFormat value) { m_sourcePathFormatHasBeenSet = true; m_sourcePathFormat = value; }
+    inline PathMappingRule& WithSourcePathFormat(PathFormat value) { SetSourcePathFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source path.</p>
      */
-    inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
+    inline const Aws::String& GetSourcePath() const { return m_sourcePath; }
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
-    inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
-    inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
-    inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
-    inline PathMappingRule& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
-    inline PathMappingRule& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
-    inline PathMappingRule& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
+    template<typename SourcePathT = Aws::String>
+    void SetSourcePath(SourcePathT&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::forward<SourcePathT>(value); }
+    template<typename SourcePathT = Aws::String>
+    PathMappingRule& WithSourcePath(SourcePathT&& value) { SetSourcePath(std::forward<SourcePathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination path.</p>
      */
-    inline const Aws::String& GetDestinationPath() const{ return m_destinationPath; }
+    inline const Aws::String& GetDestinationPath() const { return m_destinationPath; }
     inline bool DestinationPathHasBeenSet() const { return m_destinationPathHasBeenSet; }
-    inline void SetDestinationPath(const Aws::String& value) { m_destinationPathHasBeenSet = true; m_destinationPath = value; }
-    inline void SetDestinationPath(Aws::String&& value) { m_destinationPathHasBeenSet = true; m_destinationPath = std::move(value); }
-    inline void SetDestinationPath(const char* value) { m_destinationPathHasBeenSet = true; m_destinationPath.assign(value); }
-    inline PathMappingRule& WithDestinationPath(const Aws::String& value) { SetDestinationPath(value); return *this;}
-    inline PathMappingRule& WithDestinationPath(Aws::String&& value) { SetDestinationPath(std::move(value)); return *this;}
-    inline PathMappingRule& WithDestinationPath(const char* value) { SetDestinationPath(value); return *this;}
+    template<typename DestinationPathT = Aws::String>
+    void SetDestinationPath(DestinationPathT&& value) { m_destinationPathHasBeenSet = true; m_destinationPath = std::forward<DestinationPathT>(value); }
+    template<typename DestinationPathT = Aws::String>
+    PathMappingRule& WithDestinationPath(DestinationPathT&& value) { SetDestinationPath(std::forward<DestinationPathT>(value)); return *this;}
     ///@}
   private:
 
-    PathFormat m_sourcePathFormat;
+    PathFormat m_sourcePathFormat{PathFormat::NOT_SET};
     bool m_sourcePathFormatHasBeenSet = false;
 
     Aws::String m_sourcePath;

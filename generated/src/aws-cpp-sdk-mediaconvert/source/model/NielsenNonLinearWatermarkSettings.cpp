@@ -18,27 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-NielsenNonLinearWatermarkSettings::NielsenNonLinearWatermarkSettings() : 
-    m_activeWatermarkProcess(NielsenActiveWatermarkProcessType::NOT_SET),
-    m_activeWatermarkProcessHasBeenSet(false),
-    m_adiFilenameHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_assetNameHasBeenSet(false),
-    m_cbetSourceIdHasBeenSet(false),
-    m_episodeIdHasBeenSet(false),
-    m_metadataDestinationHasBeenSet(false),
-    m_sourceId(0),
-    m_sourceIdHasBeenSet(false),
-    m_sourceWatermarkStatus(NielsenSourceWatermarkStatusType::NOT_SET),
-    m_sourceWatermarkStatusHasBeenSet(false),
-    m_ticServerUrlHasBeenSet(false),
-    m_uniqueTicPerAudioTrack(NielsenUniqueTicPerAudioTrackType::NOT_SET),
-    m_uniqueTicPerAudioTrackHasBeenSet(false)
-{
-}
-
 NielsenNonLinearWatermarkSettings::NielsenNonLinearWatermarkSettings(JsonView jsonValue)
-  : NielsenNonLinearWatermarkSettings()
 {
   *this = jsonValue;
 }
@@ -48,80 +28,58 @@ NielsenNonLinearWatermarkSettings& NielsenNonLinearWatermarkSettings::operator =
   if(jsonValue.ValueExists("activeWatermarkProcess"))
   {
     m_activeWatermarkProcess = NielsenActiveWatermarkProcessTypeMapper::GetNielsenActiveWatermarkProcessTypeForName(jsonValue.GetString("activeWatermarkProcess"));
-
     m_activeWatermarkProcessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adiFilename"))
   {
     m_adiFilename = jsonValue.GetString("adiFilename");
-
     m_adiFilenameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetName"))
   {
     m_assetName = jsonValue.GetString("assetName");
-
     m_assetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cbetSourceId"))
   {
     m_cbetSourceId = jsonValue.GetString("cbetSourceId");
-
     m_cbetSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("episodeId"))
   {
     m_episodeId = jsonValue.GetString("episodeId");
-
     m_episodeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadataDestination"))
   {
     m_metadataDestination = jsonValue.GetString("metadataDestination");
-
     m_metadataDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceId"))
   {
     m_sourceId = jsonValue.GetInteger("sourceId");
-
     m_sourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceWatermarkStatus"))
   {
     m_sourceWatermarkStatus = NielsenSourceWatermarkStatusTypeMapper::GetNielsenSourceWatermarkStatusTypeForName(jsonValue.GetString("sourceWatermarkStatus"));
-
     m_sourceWatermarkStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ticServerUrl"))
   {
     m_ticServerUrl = jsonValue.GetString("ticServerUrl");
-
     m_ticServerUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uniqueTicPerAudioTrack"))
   {
     m_uniqueTicPerAudioTrack = NielsenUniqueTicPerAudioTrackTypeMapper::GetNielsenUniqueTicPerAudioTrackTypeForName(jsonValue.GetString("uniqueTicPerAudioTrack"));
-
     m_uniqueTicPerAudioTrackHasBeenSet = true;
   }
-
   return *this;
 }
 

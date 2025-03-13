@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFraudsterResult::DescribeFraudsterResult()
-{
-}
-
 DescribeFraudsterResult::DescribeFraudsterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeFraudsterResult& DescribeFraudsterResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("Fraudster"))
   {
     m_fraudster = jsonValue.GetObject("Fraudster");
-
+    m_fraudsterHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

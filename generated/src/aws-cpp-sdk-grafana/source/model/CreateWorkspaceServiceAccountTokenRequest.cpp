@@ -12,15 +12,6 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkspaceServiceAccountTokenRequest::CreateWorkspaceServiceAccountTokenRequest() : 
-    m_nameHasBeenSet(false),
-    m_secondsToLive(0),
-    m_secondsToLiveHasBeenSet(false),
-    m_serviceAccountIdHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkspaceServiceAccountTokenRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginAccessControl::OriginAccessControl() : 
-    m_idHasBeenSet(false),
-    m_originAccessControlConfigHasBeenSet(false)
-{
-}
-
 OriginAccessControl::OriginAccessControl(const XmlNode& xmlNode)
-  : OriginAccessControl()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ OriginAccessControl& OriginAccessControl::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode originAccessControlConfigNode = resultNode.FirstChild("OriginAccessControlConfig");
     if(!originAccessControlConfigNode.IsNull())
     {
       m_originAccessControlConfig = originAccessControlConfigNode;
       m_originAccessControlConfigHasBeenSet = true;
+       m_originAccessControlConfigHasBeenSet = true;
     }
   }
 

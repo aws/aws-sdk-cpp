@@ -21,7 +21,7 @@ namespace Model
   class DeleteIpamExternalResourceVerificationTokenRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteIpamExternalResourceVerificationTokenRequest();
+    AWS_EC2_API DeleteIpamExternalResourceVerificationTokenRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteIpamExternalResourceVerificationTokenRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>The token ID.</p>
      */
-    inline const Aws::String& GetIpamExternalResourceVerificationTokenId() const{ return m_ipamExternalResourceVerificationTokenId; }
+    inline const Aws::String& GetIpamExternalResourceVerificationTokenId() const { return m_ipamExternalResourceVerificationTokenId; }
     inline bool IpamExternalResourceVerificationTokenIdHasBeenSet() const { return m_ipamExternalResourceVerificationTokenIdHasBeenSet; }
-    inline void SetIpamExternalResourceVerificationTokenId(const Aws::String& value) { m_ipamExternalResourceVerificationTokenIdHasBeenSet = true; m_ipamExternalResourceVerificationTokenId = value; }
-    inline void SetIpamExternalResourceVerificationTokenId(Aws::String&& value) { m_ipamExternalResourceVerificationTokenIdHasBeenSet = true; m_ipamExternalResourceVerificationTokenId = std::move(value); }
-    inline void SetIpamExternalResourceVerificationTokenId(const char* value) { m_ipamExternalResourceVerificationTokenIdHasBeenSet = true; m_ipamExternalResourceVerificationTokenId.assign(value); }
-    inline DeleteIpamExternalResourceVerificationTokenRequest& WithIpamExternalResourceVerificationTokenId(const Aws::String& value) { SetIpamExternalResourceVerificationTokenId(value); return *this;}
-    inline DeleteIpamExternalResourceVerificationTokenRequest& WithIpamExternalResourceVerificationTokenId(Aws::String&& value) { SetIpamExternalResourceVerificationTokenId(std::move(value)); return *this;}
-    inline DeleteIpamExternalResourceVerificationTokenRequest& WithIpamExternalResourceVerificationTokenId(const char* value) { SetIpamExternalResourceVerificationTokenId(value); return *this;}
+    template<typename IpamExternalResourceVerificationTokenIdT = Aws::String>
+    void SetIpamExternalResourceVerificationTokenId(IpamExternalResourceVerificationTokenIdT&& value) { m_ipamExternalResourceVerificationTokenIdHasBeenSet = true; m_ipamExternalResourceVerificationTokenId = std::forward<IpamExternalResourceVerificationTokenIdT>(value); }
+    template<typename IpamExternalResourceVerificationTokenIdT = Aws::String>
+    DeleteIpamExternalResourceVerificationTokenRequest& WithIpamExternalResourceVerificationTokenId(IpamExternalResourceVerificationTokenIdT&& value) { SetIpamExternalResourceVerificationTokenId(std::forward<IpamExternalResourceVerificationTokenIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamExternalResourceVerificationTokenId;

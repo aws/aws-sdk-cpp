@@ -32,7 +32,7 @@ namespace Model
   class AudioNormalizationSettings
   {
   public:
-    AWS_MEDIALIVE_API AudioNormalizationSettings();
+    AWS_MEDIALIVE_API AudioNormalizationSettings() = default;
     AWS_MEDIALIVE_API AudioNormalizationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AudioNormalizationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
      * Audio normalization algorithm to use. itu17701 conforms to the CALM Act
      * specification, itu17702 conforms to the EBU R-128 specification.
      */
-    inline const AudioNormalizationAlgorithm& GetAlgorithm() const{ return m_algorithm; }
+    inline AudioNormalizationAlgorithm GetAlgorithm() const { return m_algorithm; }
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
-    inline void SetAlgorithm(const AudioNormalizationAlgorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
-    inline void SetAlgorithm(AudioNormalizationAlgorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
-    inline AudioNormalizationSettings& WithAlgorithm(const AudioNormalizationAlgorithm& value) { SetAlgorithm(value); return *this;}
-    inline AudioNormalizationSettings& WithAlgorithm(AudioNormalizationAlgorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
+    inline void SetAlgorithm(AudioNormalizationAlgorithm value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
+    inline AudioNormalizationSettings& WithAlgorithm(AudioNormalizationAlgorithm value) { SetAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +54,10 @@ namespace Model
      * When set to correctAudio the output audio is corrected using the chosen
      * algorithm. If set to measureOnly, the audio will be measured but not adjusted.
      */
-    inline const AudioNormalizationAlgorithmControl& GetAlgorithmControl() const{ return m_algorithmControl; }
+    inline AudioNormalizationAlgorithmControl GetAlgorithmControl() const { return m_algorithmControl; }
     inline bool AlgorithmControlHasBeenSet() const { return m_algorithmControlHasBeenSet; }
-    inline void SetAlgorithmControl(const AudioNormalizationAlgorithmControl& value) { m_algorithmControlHasBeenSet = true; m_algorithmControl = value; }
-    inline void SetAlgorithmControl(AudioNormalizationAlgorithmControl&& value) { m_algorithmControlHasBeenSet = true; m_algorithmControl = std::move(value); }
-    inline AudioNormalizationSettings& WithAlgorithmControl(const AudioNormalizationAlgorithmControl& value) { SetAlgorithmControl(value); return *this;}
-    inline AudioNormalizationSettings& WithAlgorithmControl(AudioNormalizationAlgorithmControl&& value) { SetAlgorithmControl(std::move(value)); return *this;}
+    inline void SetAlgorithmControl(AudioNormalizationAlgorithmControl value) { m_algorithmControlHasBeenSet = true; m_algorithmControl = value; }
+    inline AudioNormalizationSettings& WithAlgorithmControl(AudioNormalizationAlgorithmControl value) { SetAlgorithmControl(value); return *this;}
     ///@}
 
     ///@{
@@ -71,20 +67,20 @@ namespace Model
      * recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends
      * a target of -23 LKFS.
      */
-    inline double GetTargetLkfs() const{ return m_targetLkfs; }
+    inline double GetTargetLkfs() const { return m_targetLkfs; }
     inline bool TargetLkfsHasBeenSet() const { return m_targetLkfsHasBeenSet; }
     inline void SetTargetLkfs(double value) { m_targetLkfsHasBeenSet = true; m_targetLkfs = value; }
     inline AudioNormalizationSettings& WithTargetLkfs(double value) { SetTargetLkfs(value); return *this;}
     ///@}
   private:
 
-    AudioNormalizationAlgorithm m_algorithm;
+    AudioNormalizationAlgorithm m_algorithm{AudioNormalizationAlgorithm::NOT_SET};
     bool m_algorithmHasBeenSet = false;
 
-    AudioNormalizationAlgorithmControl m_algorithmControl;
+    AudioNormalizationAlgorithmControl m_algorithmControl{AudioNormalizationAlgorithmControl::NOT_SET};
     bool m_algorithmControlHasBeenSet = false;
 
-    double m_targetLkfs;
+    double m_targetLkfs{0.0};
     bool m_targetLkfsHasBeenSet = false;
   };
 

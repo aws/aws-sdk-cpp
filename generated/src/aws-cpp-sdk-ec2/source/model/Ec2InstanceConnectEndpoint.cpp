@@ -20,29 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ec2InstanceConnectEndpoint::Ec2InstanceConnectEndpoint() : 
-    m_ownerIdHasBeenSet(false),
-    m_instanceConnectEndpointIdHasBeenSet(false),
-    m_instanceConnectEndpointArnHasBeenSet(false),
-    m_state(Ec2InstanceConnectEndpointState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_fipsDnsNameHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_preserveClientIp(false),
-    m_preserveClientIpHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Ec2InstanceConnectEndpoint::Ec2InstanceConnectEndpoint(const XmlNode& xmlNode)
-  : Ec2InstanceConnectEndpoint()
 {
   *this = xmlNode;
 }
@@ -58,108 +36,123 @@ Ec2InstanceConnectEndpoint& Ec2InstanceConnectEndpoint::operator =(const XmlNode
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode instanceConnectEndpointIdNode = resultNode.FirstChild("instanceConnectEndpointId");
     if(!instanceConnectEndpointIdNode.IsNull())
     {
       m_instanceConnectEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceConnectEndpointIdNode.GetText());
       m_instanceConnectEndpointIdHasBeenSet = true;
+       m_instanceConnectEndpointIdHasBeenSet = true;
     }
     XmlNode instanceConnectEndpointArnNode = resultNode.FirstChild("instanceConnectEndpointArn");
     if(!instanceConnectEndpointArnNode.IsNull())
     {
       m_instanceConnectEndpointArn = Aws::Utils::Xml::DecodeEscapedXmlText(instanceConnectEndpointArnNode.GetText());
       m_instanceConnectEndpointArnHasBeenSet = true;
+       m_instanceConnectEndpointArnHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = Ec2InstanceConnectEndpointStateMapper::GetEc2InstanceConnectEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = Ec2InstanceConnectEndpointStateMapper::GetEc2InstanceConnectEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode stateMessageNode = resultNode.FirstChild("stateMessage");
     if(!stateMessageNode.IsNull())
     {
       m_stateMessage = Aws::Utils::Xml::DecodeEscapedXmlText(stateMessageNode.GetText());
       m_stateMessageHasBeenSet = true;
+       m_stateMessageHasBeenSet = true;
     }
     XmlNode dnsNameNode = resultNode.FirstChild("dnsName");
     if(!dnsNameNode.IsNull())
     {
       m_dnsName = Aws::Utils::Xml::DecodeEscapedXmlText(dnsNameNode.GetText());
       m_dnsNameHasBeenSet = true;
+       m_dnsNameHasBeenSet = true;
     }
     XmlNode fipsDnsNameNode = resultNode.FirstChild("fipsDnsName");
     if(!fipsDnsNameNode.IsNull())
     {
       m_fipsDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(fipsDnsNameNode.GetText());
       m_fipsDnsNameHasBeenSet = true;
+       m_fipsDnsNameHasBeenSet = true;
     }
     XmlNode networkInterfaceIdsNode = resultNode.FirstChild("networkInterfaceIdSet");
     if(!networkInterfaceIdsNode.IsNull())
     {
       XmlNode networkInterfaceIdsMember = networkInterfaceIdsNode.FirstChild("item");
+      m_networkInterfaceIdsHasBeenSet = !networkInterfaceIdsMember.IsNull();
       while(!networkInterfaceIdsMember.IsNull())
       {
         m_networkInterfaceIds.push_back(networkInterfaceIdsMember.GetText());
         networkInterfaceIdsMember = networkInterfaceIdsMember.NextNode("item");
       }
 
-      m_networkInterfaceIdsHasBeenSet = true;
+       m_networkInterfaceIdsHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode createdAtNode = resultNode.FirstChild("createdAt");
     if(!createdAtNode.IsNull())
     {
       m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAtHasBeenSet = true;
+       m_createdAtHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode preserveClientIpNode = resultNode.FirstChild("preserveClientIp");
     if(!preserveClientIpNode.IsNull())
     {
       m_preserveClientIp = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(preserveClientIpNode.GetText()).c_str()).c_str());
       m_preserveClientIpHasBeenSet = true;
+       m_preserveClientIpHasBeenSet = true;
     }
     XmlNode securityGroupIdsNode = resultNode.FirstChild("securityGroupIdSet");
     if(!securityGroupIdsNode.IsNull())
     {
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("item");
+      m_securityGroupIdsHasBeenSet = !securityGroupIdsMember.IsNull();
       while(!securityGroupIdsMember.IsNull())
       {
         m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
         securityGroupIdsMember = securityGroupIdsMember.NextNode("item");
       }
 
-      m_securityGroupIdsHasBeenSet = true;
+       m_securityGroupIdsHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

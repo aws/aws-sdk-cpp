@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyInstanceMetadataDefaultsResponse::ModifyInstanceMetadataDefaultsResponse() : 
-    m_return(false)
-{
-}
-
 ModifyInstanceMetadataDefaultsResponse::ModifyInstanceMetadataDefaultsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ModifyInstanceMetadataDefaultsResponse()
 {
   *this = result;
 }
@@ -44,6 +38,7 @@ ModifyInstanceMetadataDefaultsResponse& ModifyInstanceMetadataDefaultsResponse::
     if(!returnNode.IsNull())
     {
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
+      m_returnHasBeenSet = true;
     }
   }
 
@@ -52,6 +47,7 @@ ModifyInstanceMetadataDefaultsResponse& ModifyInstanceMetadataDefaultsResponse::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyInstanceMetadataDefaultsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

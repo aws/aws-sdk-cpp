@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-UnsuccessfulInstanceCreditSpecificationItem::UnsuccessfulInstanceCreditSpecificationItem() : 
-    m_instanceIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 UnsuccessfulInstanceCreditSpecificationItem::UnsuccessfulInstanceCreditSpecificationItem(const XmlNode& xmlNode)
-  : UnsuccessfulInstanceCreditSpecificationItem()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ UnsuccessfulInstanceCreditSpecificationItem& UnsuccessfulInstanceCreditSpecifica
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode errorNode = resultNode.FirstChild("error");
     if(!errorNode.IsNull())
     {
       m_error = errorNode;
       m_errorHasBeenSet = true;
+       m_errorHasBeenSet = true;
     }
   }
 

@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SecurityProfilesSearchFilter::SecurityProfilesSearchFilter() : 
-    m_tagFilterHasBeenSet(false)
-{
-}
-
 SecurityProfilesSearchFilter::SecurityProfilesSearchFilter(JsonView jsonValue)
-  : SecurityProfilesSearchFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SecurityProfilesSearchFilter& SecurityProfilesSearchFilter::operator =(JsonView 
   if(jsonValue.ValueExists("TagFilter"))
   {
     m_tagFilter = jsonValue.GetObject("TagFilter");
-
     m_tagFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

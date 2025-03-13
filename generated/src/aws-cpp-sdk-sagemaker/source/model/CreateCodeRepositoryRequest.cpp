@@ -12,13 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCodeRepositoryRequest::CreateCodeRepositoryRequest() : 
-    m_codeRepositoryNameHasBeenSet(false),
-    m_gitConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCodeRepositoryRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-SavingsOpportunity::SavingsOpportunity() : 
-    m_savingsOpportunityPercentage(0.0),
-    m_savingsOpportunityPercentageHasBeenSet(false),
-    m_estimatedMonthlySavingsHasBeenSet(false)
-{
-}
-
 SavingsOpportunity::SavingsOpportunity(JsonView jsonValue)
-  : SavingsOpportunity()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SavingsOpportunity& SavingsOpportunity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("savingsOpportunityPercentage"))
   {
     m_savingsOpportunityPercentage = jsonValue.GetDouble("savingsOpportunityPercentage");
-
     m_savingsOpportunityPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedMonthlySavings"))
   {
     m_estimatedMonthlySavings = jsonValue.GetObject("estimatedMonthlySavings");
-
     m_estimatedMonthlySavingsHasBeenSet = true;
   }
-
   return *this;
 }
 

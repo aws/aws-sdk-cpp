@@ -18,18 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SubscribedProductListing::SubscribedProductListing() : 
-    m_assetListingsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_entityRevisionHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 SubscribedProductListing::SubscribedProductListing(JsonView jsonValue)
-  : SubscribedProductListing()
 {
   *this = jsonValue;
 }
@@ -45,28 +34,21 @@ SubscribedProductListing& SubscribedProductListing::operator =(JsonView jsonValu
     }
     m_assetListingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityRevision"))
   {
     m_entityRevision = jsonValue.GetString("entityRevision");
-
     m_entityRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glossaryTerms"))
   {
     Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("glossaryTerms");
@@ -76,14 +58,11 @@ SubscribedProductListing& SubscribedProductListing::operator =(JsonView jsonValu
     }
     m_glossaryTermsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

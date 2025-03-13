@@ -12,12 +12,6 @@ using namespace Aws::GreengrassV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDisassociateClientDeviceFromCoreDeviceRequest::BatchDisassociateClientDeviceFromCoreDeviceRequest() : 
-    m_entriesHasBeenSet(false),
-    m_coreDeviceThingNameHasBeenSet(false)
-{
-}
-
 Aws::String BatchDisassociateClientDeviceFromCoreDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

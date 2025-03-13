@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-KernelGatewayAppSettings::KernelGatewayAppSettings() : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_customImagesHasBeenSet(false),
-    m_lifecycleConfigArnsHasBeenSet(false)
-{
-}
-
 KernelGatewayAppSettings::KernelGatewayAppSettings(JsonView jsonValue)
-  : KernelGatewayAppSettings()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ KernelGatewayAppSettings& KernelGatewayAppSettings::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("DefaultResourceSpec"))
   {
     m_defaultResourceSpec = jsonValue.GetObject("DefaultResourceSpec");
-
     m_defaultResourceSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomImages"))
   {
     Aws::Utils::Array<JsonView> customImagesJsonList = jsonValue.GetArray("CustomImages");
@@ -49,7 +39,6 @@ KernelGatewayAppSettings& KernelGatewayAppSettings::operator =(JsonView jsonValu
     }
     m_customImagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifecycleConfigArns"))
   {
     Aws::Utils::Array<JsonView> lifecycleConfigArnsJsonList = jsonValue.GetArray("LifecycleConfigArns");
@@ -59,7 +48,6 @@ KernelGatewayAppSettings& KernelGatewayAppSettings::operator =(JsonView jsonValu
     }
     m_lifecycleConfigArnsHasBeenSet = true;
   }
-
   return *this;
 }
 

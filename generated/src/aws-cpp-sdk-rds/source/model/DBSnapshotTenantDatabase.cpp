@@ -20,25 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBSnapshotTenantDatabase::DBSnapshotTenantDatabase() : 
-    m_dBSnapshotIdentifierHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_dbiResourceIdHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_tenantDatabaseCreateTimeHasBeenSet(false),
-    m_tenantDBNameHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_tenantDatabaseResourceIdHasBeenSet(false),
-    m_characterSetNameHasBeenSet(false),
-    m_dBSnapshotTenantDatabaseARNHasBeenSet(false),
-    m_ncharCharacterSetNameHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 DBSnapshotTenantDatabase::DBSnapshotTenantDatabase(const XmlNode& xmlNode)
-  : DBSnapshotTenantDatabase()
 {
   *this = xmlNode;
 }
@@ -54,84 +36,97 @@ DBSnapshotTenantDatabase& DBSnapshotTenantDatabase::operator =(const XmlNode& xm
     {
       m_dBSnapshotIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBSnapshotIdentifierNode.GetText());
       m_dBSnapshotIdentifierHasBeenSet = true;
+       m_dBSnapshotIdentifierHasBeenSet = true;
     }
     XmlNode dBInstanceIdentifierNode = resultNode.FirstChild("DBInstanceIdentifier");
     if(!dBInstanceIdentifierNode.IsNull())
     {
       m_dBInstanceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceIdentifierNode.GetText());
       m_dBInstanceIdentifierHasBeenSet = true;
+       m_dBInstanceIdentifierHasBeenSet = true;
     }
     XmlNode dbiResourceIdNode = resultNode.FirstChild("DbiResourceId");
     if(!dbiResourceIdNode.IsNull())
     {
       m_dbiResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(dbiResourceIdNode.GetText());
       m_dbiResourceIdHasBeenSet = true;
+       m_dbiResourceIdHasBeenSet = true;
     }
     XmlNode engineNameNode = resultNode.FirstChild("EngineName");
     if(!engineNameNode.IsNull())
     {
       m_engineName = Aws::Utils::Xml::DecodeEscapedXmlText(engineNameNode.GetText());
       m_engineNameHasBeenSet = true;
+       m_engineNameHasBeenSet = true;
     }
     XmlNode snapshotTypeNode = resultNode.FirstChild("SnapshotType");
     if(!snapshotTypeNode.IsNull())
     {
       m_snapshotType = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTypeNode.GetText());
       m_snapshotTypeHasBeenSet = true;
+       m_snapshotTypeHasBeenSet = true;
     }
     XmlNode tenantDatabaseCreateTimeNode = resultNode.FirstChild("TenantDatabaseCreateTime");
     if(!tenantDatabaseCreateTimeNode.IsNull())
     {
       m_tenantDatabaseCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenantDatabaseCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_tenantDatabaseCreateTimeHasBeenSet = true;
+       m_tenantDatabaseCreateTimeHasBeenSet = true;
     }
     XmlNode tenantDBNameNode = resultNode.FirstChild("TenantDBName");
     if(!tenantDBNameNode.IsNull())
     {
       m_tenantDBName = Aws::Utils::Xml::DecodeEscapedXmlText(tenantDBNameNode.GetText());
       m_tenantDBNameHasBeenSet = true;
+       m_tenantDBNameHasBeenSet = true;
     }
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
     if(!masterUsernameNode.IsNull())
     {
       m_masterUsername = Aws::Utils::Xml::DecodeEscapedXmlText(masterUsernameNode.GetText());
       m_masterUsernameHasBeenSet = true;
+       m_masterUsernameHasBeenSet = true;
     }
     XmlNode tenantDatabaseResourceIdNode = resultNode.FirstChild("TenantDatabaseResourceId");
     if(!tenantDatabaseResourceIdNode.IsNull())
     {
       m_tenantDatabaseResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(tenantDatabaseResourceIdNode.GetText());
       m_tenantDatabaseResourceIdHasBeenSet = true;
+       m_tenantDatabaseResourceIdHasBeenSet = true;
     }
     XmlNode characterSetNameNode = resultNode.FirstChild("CharacterSetName");
     if(!characterSetNameNode.IsNull())
     {
       m_characterSetName = Aws::Utils::Xml::DecodeEscapedXmlText(characterSetNameNode.GetText());
       m_characterSetNameHasBeenSet = true;
+       m_characterSetNameHasBeenSet = true;
     }
     XmlNode dBSnapshotTenantDatabaseARNNode = resultNode.FirstChild("DBSnapshotTenantDatabaseARN");
     if(!dBSnapshotTenantDatabaseARNNode.IsNull())
     {
       m_dBSnapshotTenantDatabaseARN = Aws::Utils::Xml::DecodeEscapedXmlText(dBSnapshotTenantDatabaseARNNode.GetText());
       m_dBSnapshotTenantDatabaseARNHasBeenSet = true;
+       m_dBSnapshotTenantDatabaseARNHasBeenSet = true;
     }
     XmlNode ncharCharacterSetNameNode = resultNode.FirstChild("NcharCharacterSetName");
     if(!ncharCharacterSetNameNode.IsNull())
     {
       m_ncharCharacterSetName = Aws::Utils::Xml::DecodeEscapedXmlText(ncharCharacterSetNameNode.GetText());
       m_ncharCharacterSetNameHasBeenSet = true;
+       m_ncharCharacterSetNameHasBeenSet = true;
     }
     XmlNode tagListNode = resultNode.FirstChild("TagList");
     if(!tagListNode.IsNull())
     {
       XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
       while(!tagListMember.IsNull())
       {
         m_tagList.push_back(tagListMember);
         tagListMember = tagListMember.NextNode("Tag");
       }
 
-      m_tagListHasBeenSet = true;
+       m_tagListHasBeenSet = true;
     }
   }
 

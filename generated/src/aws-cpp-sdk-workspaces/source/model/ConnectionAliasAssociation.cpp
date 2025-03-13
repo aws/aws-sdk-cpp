@@ -18,17 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ConnectionAliasAssociation::ConnectionAliasAssociation() : 
-    m_associationStatus(AssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false),
-    m_associatedAccountIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_connectionIdentifierHasBeenSet(false)
-{
-}
-
 ConnectionAliasAssociation::ConnectionAliasAssociation(JsonView jsonValue)
-  : ConnectionAliasAssociation()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ConnectionAliasAssociation& ConnectionAliasAssociation::operator =(JsonView json
   if(jsonValue.ValueExists("AssociationStatus"))
   {
     m_associationStatus = AssociationStatusMapper::GetAssociationStatusForName(jsonValue.GetString("AssociationStatus"));
-
     m_associationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedAccountId"))
   {
     m_associatedAccountId = jsonValue.GetString("AssociatedAccountId");
-
     m_associatedAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionIdentifier"))
   {
     m_connectionIdentifier = jsonValue.GetString("ConnectionIdentifier");
-
     m_connectionIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

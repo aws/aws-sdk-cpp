@@ -33,7 +33,7 @@ namespace Model
   class GeneratedQuery
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API GeneratedQuery();
+    AWS_BEDROCKAGENTRUNTIME_API GeneratedQuery() = default;
     AWS_BEDROCKAGENTRUNTIME_API GeneratedQuery(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API GeneratedQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>An SQL query that corresponds to the natural language query.</p>
      */
-    inline const Aws::String& GetSql() const{ return m_sql; }
+    inline const Aws::String& GetSql() const { return m_sql; }
     inline bool SqlHasBeenSet() const { return m_sqlHasBeenSet; }
-    inline void SetSql(const Aws::String& value) { m_sqlHasBeenSet = true; m_sql = value; }
-    inline void SetSql(Aws::String&& value) { m_sqlHasBeenSet = true; m_sql = std::move(value); }
-    inline void SetSql(const char* value) { m_sqlHasBeenSet = true; m_sql.assign(value); }
-    inline GeneratedQuery& WithSql(const Aws::String& value) { SetSql(value); return *this;}
-    inline GeneratedQuery& WithSql(Aws::String&& value) { SetSql(std::move(value)); return *this;}
-    inline GeneratedQuery& WithSql(const char* value) { SetSql(value); return *this;}
+    template<typename SqlT = Aws::String>
+    void SetSql(SqlT&& value) { m_sqlHasBeenSet = true; m_sql = std::forward<SqlT>(value); }
+    template<typename SqlT = Aws::String>
+    GeneratedQuery& WithSql(SqlT&& value) { SetSql(std::forward<SqlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of transformed query.</p>
      */
-    inline const GeneratedQueryType& GetType() const{ return m_type; }
+    inline GeneratedQueryType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const GeneratedQueryType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(GeneratedQueryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GeneratedQuery& WithType(const GeneratedQueryType& value) { SetType(value); return *this;}
-    inline GeneratedQuery& WithType(GeneratedQueryType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(GeneratedQueryType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GeneratedQuery& WithType(GeneratedQueryType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_sql;
     bool m_sqlHasBeenSet = false;
 
-    GeneratedQueryType m_type;
+    GeneratedQueryType m_type{GeneratedQueryType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class Restrictions
   {
   public:
-    AWS_CLOUDFRONT_API Restrictions();
+    AWS_CLOUDFRONT_API Restrictions() = default;
     AWS_CLOUDFRONT_API Restrictions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API Restrictions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,12 @@ namespace Model
      * distributed. CloudFront determines the location of your users using
      * <code>MaxMind</code> GeoIP databases.</p>
      */
-    inline const GeoRestriction& GetGeoRestriction() const{ return m_geoRestriction; }
+    inline const GeoRestriction& GetGeoRestriction() const { return m_geoRestriction; }
     inline bool GeoRestrictionHasBeenSet() const { return m_geoRestrictionHasBeenSet; }
-    inline void SetGeoRestriction(const GeoRestriction& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = value; }
-    inline void SetGeoRestriction(GeoRestriction&& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = std::move(value); }
-    inline Restrictions& WithGeoRestriction(const GeoRestriction& value) { SetGeoRestriction(value); return *this;}
-    inline Restrictions& WithGeoRestriction(GeoRestriction&& value) { SetGeoRestriction(std::move(value)); return *this;}
+    template<typename GeoRestrictionT = GeoRestriction>
+    void SetGeoRestriction(GeoRestrictionT&& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = std::forward<GeoRestrictionT>(value); }
+    template<typename GeoRestrictionT = GeoRestriction>
+    Restrictions& WithGeoRestriction(GeoRestrictionT&& value) { SetGeoRestriction(std::forward<GeoRestrictionT>(value)); return *this;}
     ///@}
   private:
 

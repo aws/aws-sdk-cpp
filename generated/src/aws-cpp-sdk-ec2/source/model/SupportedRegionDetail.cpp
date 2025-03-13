@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SupportedRegionDetail::SupportedRegionDetail() : 
-    m_regionHasBeenSet(false),
-    m_serviceStateHasBeenSet(false)
-{
-}
-
 SupportedRegionDetail::SupportedRegionDetail(const XmlNode& xmlNode)
-  : SupportedRegionDetail()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ SupportedRegionDetail& SupportedRegionDetail::operator =(const XmlNode& xmlNode)
     {
       m_region = Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText());
       m_regionHasBeenSet = true;
+       m_regionHasBeenSet = true;
     }
     XmlNode serviceStateNode = resultNode.FirstChild("serviceState");
     if(!serviceStateNode.IsNull())
     {
       m_serviceState = Aws::Utils::Xml::DecodeEscapedXmlText(serviceStateNode.GetText());
       m_serviceStateHasBeenSet = true;
+       m_serviceStateHasBeenSet = true;
     }
   }
 

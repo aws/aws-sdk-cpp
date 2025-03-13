@@ -38,7 +38,7 @@ namespace Model
   class AggregatedVariablesImportanceMetrics
   {
   public:
-    AWS_FRAUDDETECTOR_API AggregatedVariablesImportanceMetrics();
+    AWS_FRAUDDETECTOR_API AggregatedVariablesImportanceMetrics() = default;
     AWS_FRAUDDETECTOR_API AggregatedVariablesImportanceMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API AggregatedVariablesImportanceMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
     /**
      * <p> List of variables' metrics. </p>
      */
-    inline const Aws::Vector<AggregatedLogOddsMetric>& GetLogOddsMetrics() const{ return m_logOddsMetrics; }
+    inline const Aws::Vector<AggregatedLogOddsMetric>& GetLogOddsMetrics() const { return m_logOddsMetrics; }
     inline bool LogOddsMetricsHasBeenSet() const { return m_logOddsMetricsHasBeenSet; }
-    inline void SetLogOddsMetrics(const Aws::Vector<AggregatedLogOddsMetric>& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics = value; }
-    inline void SetLogOddsMetrics(Aws::Vector<AggregatedLogOddsMetric>&& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics = std::move(value); }
-    inline AggregatedVariablesImportanceMetrics& WithLogOddsMetrics(const Aws::Vector<AggregatedLogOddsMetric>& value) { SetLogOddsMetrics(value); return *this;}
-    inline AggregatedVariablesImportanceMetrics& WithLogOddsMetrics(Aws::Vector<AggregatedLogOddsMetric>&& value) { SetLogOddsMetrics(std::move(value)); return *this;}
-    inline AggregatedVariablesImportanceMetrics& AddLogOddsMetrics(const AggregatedLogOddsMetric& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics.push_back(value); return *this; }
-    inline AggregatedVariablesImportanceMetrics& AddLogOddsMetrics(AggregatedLogOddsMetric&& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics.push_back(std::move(value)); return *this; }
+    template<typename LogOddsMetricsT = Aws::Vector<AggregatedLogOddsMetric>>
+    void SetLogOddsMetrics(LogOddsMetricsT&& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics = std::forward<LogOddsMetricsT>(value); }
+    template<typename LogOddsMetricsT = Aws::Vector<AggregatedLogOddsMetric>>
+    AggregatedVariablesImportanceMetrics& WithLogOddsMetrics(LogOddsMetricsT&& value) { SetLogOddsMetrics(std::forward<LogOddsMetricsT>(value)); return *this;}
+    template<typename LogOddsMetricsT = AggregatedLogOddsMetric>
+    AggregatedVariablesImportanceMetrics& AddLogOddsMetrics(LogOddsMetricsT&& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics.emplace_back(std::forward<LogOddsMetricsT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDirectConnectGatewayAssociationProposalRequest::DeleteDirectConnectGatewayAssociationProposalRequest() : 
-    m_proposalIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDirectConnectGatewayAssociationProposalRequest::SerializePayload() const
 {
   JsonValue payload;

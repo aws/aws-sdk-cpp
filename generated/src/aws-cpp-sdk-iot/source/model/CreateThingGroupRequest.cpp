@@ -12,14 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateThingGroupRequest::CreateThingGroupRequest() : 
-    m_thingGroupNameHasBeenSet(false),
-    m_parentGroupNameHasBeenSet(false),
-    m_thingGroupPropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateThingGroupRequest::SerializePayload() const
 {
   JsonValue payload;

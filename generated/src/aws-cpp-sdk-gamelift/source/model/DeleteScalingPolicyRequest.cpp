@@ -12,12 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteScalingPolicyRequest::DeleteScalingPolicyRequest() : 
-    m_nameHasBeenSet(false),
-    m_fleetIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScalingPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

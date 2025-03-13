@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-PolicyStatus::PolicyStatus() : 
-    m_isPublic(false),
-    m_isPublicHasBeenSet(false)
-{
-}
-
 PolicyStatus::PolicyStatus(const XmlNode& xmlNode)
-  : PolicyStatus()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ PolicyStatus& PolicyStatus::operator =(const XmlNode& xmlNode)
     {
       m_isPublic = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isPublicNode.GetText()).c_str()).c_str());
       m_isPublicHasBeenSet = true;
+       m_isPublicHasBeenSet = true;
     }
   }
 

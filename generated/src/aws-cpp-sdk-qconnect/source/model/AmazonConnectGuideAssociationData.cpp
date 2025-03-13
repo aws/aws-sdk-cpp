@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AmazonConnectGuideAssociationData::AmazonConnectGuideAssociationData() : 
-    m_flowIdHasBeenSet(false)
-{
-}
-
 AmazonConnectGuideAssociationData::AmazonConnectGuideAssociationData(JsonView jsonValue)
-  : AmazonConnectGuideAssociationData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AmazonConnectGuideAssociationData& AmazonConnectGuideAssociationData::operator =
   if(jsonValue.ValueExists("flowId"))
   {
     m_flowId = jsonValue.GetString("flowId");
-
     m_flowIdHasBeenSet = true;
   }
-
   return *this;
 }
 

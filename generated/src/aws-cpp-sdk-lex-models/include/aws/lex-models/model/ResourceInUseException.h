@@ -38,7 +38,7 @@ namespace Model
   class ResourceInUseException
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API ResourceInUseException();
+    AWS_LEXMODELBUILDINGSERVICE_API ResourceInUseException() = default;
     AWS_LEXMODELBUILDINGSERVICE_API ResourceInUseException(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API ResourceInUseException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,24 @@ namespace Model
 
     ///@{
     
-    inline const ReferenceType& GetReferenceType() const{ return m_referenceType; }
+    inline ReferenceType GetReferenceType() const { return m_referenceType; }
     inline bool ReferenceTypeHasBeenSet() const { return m_referenceTypeHasBeenSet; }
-    inline void SetReferenceType(const ReferenceType& value) { m_referenceTypeHasBeenSet = true; m_referenceType = value; }
-    inline void SetReferenceType(ReferenceType&& value) { m_referenceTypeHasBeenSet = true; m_referenceType = std::move(value); }
-    inline ResourceInUseException& WithReferenceType(const ReferenceType& value) { SetReferenceType(value); return *this;}
-    inline ResourceInUseException& WithReferenceType(ReferenceType&& value) { SetReferenceType(std::move(value)); return *this;}
+    inline void SetReferenceType(ReferenceType value) { m_referenceTypeHasBeenSet = true; m_referenceType = value; }
+    inline ResourceInUseException& WithReferenceType(ReferenceType value) { SetReferenceType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceReference& GetExampleReference() const{ return m_exampleReference; }
+    inline const ResourceReference& GetExampleReference() const { return m_exampleReference; }
     inline bool ExampleReferenceHasBeenSet() const { return m_exampleReferenceHasBeenSet; }
-    inline void SetExampleReference(const ResourceReference& value) { m_exampleReferenceHasBeenSet = true; m_exampleReference = value; }
-    inline void SetExampleReference(ResourceReference&& value) { m_exampleReferenceHasBeenSet = true; m_exampleReference = std::move(value); }
-    inline ResourceInUseException& WithExampleReference(const ResourceReference& value) { SetExampleReference(value); return *this;}
-    inline ResourceInUseException& WithExampleReference(ResourceReference&& value) { SetExampleReference(std::move(value)); return *this;}
+    template<typename ExampleReferenceT = ResourceReference>
+    void SetExampleReference(ExampleReferenceT&& value) { m_exampleReferenceHasBeenSet = true; m_exampleReference = std::forward<ExampleReferenceT>(value); }
+    template<typename ExampleReferenceT = ResourceReference>
+    ResourceInUseException& WithExampleReference(ExampleReferenceT&& value) { SetExampleReference(std::forward<ExampleReferenceT>(value)); return *this;}
     ///@}
   private:
 
-    ReferenceType m_referenceType;
+    ReferenceType m_referenceType{ReferenceType::NOT_SET};
     bool m_referenceTypeHasBeenSet = false;
 
     ResourceReference m_exampleReference;

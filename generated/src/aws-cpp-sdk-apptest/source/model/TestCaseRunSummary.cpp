@@ -18,21 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-TestCaseRunSummary::TestCaseRunSummary() : 
-    m_testCaseIdHasBeenSet(false),
-    m_testCaseVersion(0),
-    m_testCaseVersionHasBeenSet(false),
-    m_testRunIdHasBeenSet(false),
-    m_status(TestCaseRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_runStartTimeHasBeenSet(false),
-    m_runEndTimeHasBeenSet(false)
-{
-}
-
 TestCaseRunSummary::TestCaseRunSummary(JsonView jsonValue)
-  : TestCaseRunSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ TestCaseRunSummary& TestCaseRunSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("testCaseId"))
   {
     m_testCaseId = jsonValue.GetString("testCaseId");
-
     m_testCaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testCaseVersion"))
   {
     m_testCaseVersion = jsonValue.GetInteger("testCaseVersion");
-
     m_testCaseVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testRunId"))
   {
     m_testRunId = jsonValue.GetString("testRunId");
-
     m_testRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TestCaseRunStatusMapper::GetTestCaseRunStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runStartTime"))
   {
     m_runStartTime = jsonValue.GetDouble("runStartTime");
-
     m_runStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runEndTime"))
   {
     m_runEndTime = jsonValue.GetDouble("runEndTime");
-
     m_runEndTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

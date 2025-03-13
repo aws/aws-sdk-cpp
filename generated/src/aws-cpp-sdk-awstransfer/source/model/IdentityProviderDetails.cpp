@@ -18,18 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-IdentityProviderDetails::IdentityProviderDetails() : 
-    m_urlHasBeenSet(false),
-    m_invocationRoleHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_sftpAuthenticationMethods(SftpAuthenticationMethods::NOT_SET),
-    m_sftpAuthenticationMethodsHasBeenSet(false)
-{
-}
-
 IdentityProviderDetails::IdentityProviderDetails(JsonView jsonValue)
-  : IdentityProviderDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ IdentityProviderDetails& IdentityProviderDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvocationRole"))
   {
     m_invocationRole = jsonValue.GetString("InvocationRole");
-
     m_invocationRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Function"))
   {
     m_function = jsonValue.GetString("Function");
-
     m_functionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SftpAuthenticationMethods"))
   {
     m_sftpAuthenticationMethods = SftpAuthenticationMethodsMapper::GetSftpAuthenticationMethodsForName(jsonValue.GetString("SftpAuthenticationMethods"));
-
     m_sftpAuthenticationMethodsHasBeenSet = true;
   }
-
   return *this;
 }
 

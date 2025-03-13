@@ -12,17 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateExperienceRequest::CreateExperienceRequest() : 
-    m_nameHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateExperienceRequest::SerializePayload() const
 {
   JsonValue payload;

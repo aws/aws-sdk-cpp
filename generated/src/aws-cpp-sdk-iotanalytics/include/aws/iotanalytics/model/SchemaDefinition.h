@@ -32,7 +32,7 @@ namespace Model
   class SchemaDefinition
   {
   public:
-    AWS_IOTANALYTICS_API SchemaDefinition();
+    AWS_IOTANALYTICS_API SchemaDefinition() = default;
     AWS_IOTANALYTICS_API SchemaDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API SchemaDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * <p>Specifies one or more columns that store your data.</p> <p>Each schema can
      * have up to 100 columns. Each column can have up to 100 nested types.</p>
      */
-    inline const Aws::Vector<Column>& GetColumns() const{ return m_columns; }
+    inline const Aws::Vector<Column>& GetColumns() const { return m_columns; }
     inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
-    inline void SetColumns(const Aws::Vector<Column>& value) { m_columnsHasBeenSet = true; m_columns = value; }
-    inline void SetColumns(Aws::Vector<Column>&& value) { m_columnsHasBeenSet = true; m_columns = std::move(value); }
-    inline SchemaDefinition& WithColumns(const Aws::Vector<Column>& value) { SetColumns(value); return *this;}
-    inline SchemaDefinition& WithColumns(Aws::Vector<Column>&& value) { SetColumns(std::move(value)); return *this;}
-    inline SchemaDefinition& AddColumns(const Column& value) { m_columnsHasBeenSet = true; m_columns.push_back(value); return *this; }
-    inline SchemaDefinition& AddColumns(Column&& value) { m_columnsHasBeenSet = true; m_columns.push_back(std::move(value)); return *this; }
+    template<typename ColumnsT = Aws::Vector<Column>>
+    void SetColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns = std::forward<ColumnsT>(value); }
+    template<typename ColumnsT = Aws::Vector<Column>>
+    SchemaDefinition& WithColumns(ColumnsT&& value) { SetColumns(std::forward<ColumnsT>(value)); return *this;}
+    template<typename ColumnsT = Column>
+    SchemaDefinition& AddColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns.emplace_back(std::forward<ColumnsT>(value)); return *this; }
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class SessionKeyAmex
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyAmex();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyAmex() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyAmex(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyAmex& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * identifier for a payment credit or debit card and associates the card to a
      * specific account holder.</p>
      */
-    inline const Aws::String& GetPrimaryAccountNumber() const{ return m_primaryAccountNumber; }
+    inline const Aws::String& GetPrimaryAccountNumber() const { return m_primaryAccountNumber; }
     inline bool PrimaryAccountNumberHasBeenSet() const { return m_primaryAccountNumberHasBeenSet; }
-    inline void SetPrimaryAccountNumber(const Aws::String& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = value; }
-    inline void SetPrimaryAccountNumber(Aws::String&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::move(value); }
-    inline void SetPrimaryAccountNumber(const char* value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber.assign(value); }
-    inline SessionKeyAmex& WithPrimaryAccountNumber(const Aws::String& value) { SetPrimaryAccountNumber(value); return *this;}
-    inline SessionKeyAmex& WithPrimaryAccountNumber(Aws::String&& value) { SetPrimaryAccountNumber(std::move(value)); return *this;}
-    inline SessionKeyAmex& WithPrimaryAccountNumber(const char* value) { SetPrimaryAccountNumber(value); return *this;}
+    template<typename PrimaryAccountNumberT = Aws::String>
+    void SetPrimaryAccountNumber(PrimaryAccountNumberT&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::forward<PrimaryAccountNumberT>(value); }
+    template<typename PrimaryAccountNumberT = Aws::String>
+    SessionKeyAmex& WithPrimaryAccountNumber(PrimaryAccountNumberT&& value) { SetPrimaryAccountNumber(std::forward<PrimaryAccountNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>A number that identifies and differentiates payment cards with the same
      * Primary Account Number (PAN).</p>
      */
-    inline const Aws::String& GetPanSequenceNumber() const{ return m_panSequenceNumber; }
+    inline const Aws::String& GetPanSequenceNumber() const { return m_panSequenceNumber; }
     inline bool PanSequenceNumberHasBeenSet() const { return m_panSequenceNumberHasBeenSet; }
-    inline void SetPanSequenceNumber(const Aws::String& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = value; }
-    inline void SetPanSequenceNumber(Aws::String&& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = std::move(value); }
-    inline void SetPanSequenceNumber(const char* value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber.assign(value); }
-    inline SessionKeyAmex& WithPanSequenceNumber(const Aws::String& value) { SetPanSequenceNumber(value); return *this;}
-    inline SessionKeyAmex& WithPanSequenceNumber(Aws::String&& value) { SetPanSequenceNumber(std::move(value)); return *this;}
-    inline SessionKeyAmex& WithPanSequenceNumber(const char* value) { SetPanSequenceNumber(value); return *this;}
+    template<typename PanSequenceNumberT = Aws::String>
+    void SetPanSequenceNumber(PanSequenceNumberT&& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = std::forward<PanSequenceNumberT>(value); }
+    template<typename PanSequenceNumberT = Aws::String>
+    SessionKeyAmex& WithPanSequenceNumber(PanSequenceNumberT&& value) { SetPanSequenceNumber(std::forward<PanSequenceNumberT>(value)); return *this;}
     ///@}
   private:
 

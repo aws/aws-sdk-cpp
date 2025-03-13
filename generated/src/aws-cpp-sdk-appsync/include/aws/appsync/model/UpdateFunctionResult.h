@@ -28,7 +28,7 @@ namespace Model
   class UpdateFunctionResult
   {
   public:
-    AWS_APPSYNC_API UpdateFunctionResult();
+    AWS_APPSYNC_API UpdateFunctionResult() = default;
     AWS_APPSYNC_API UpdateFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API UpdateFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The <code>Function</code> object.</p>
      */
-    inline const FunctionConfiguration& GetFunctionConfiguration() const{ return m_functionConfiguration; }
-    inline void SetFunctionConfiguration(const FunctionConfiguration& value) { m_functionConfiguration = value; }
-    inline void SetFunctionConfiguration(FunctionConfiguration&& value) { m_functionConfiguration = std::move(value); }
-    inline UpdateFunctionResult& WithFunctionConfiguration(const FunctionConfiguration& value) { SetFunctionConfiguration(value); return *this;}
-    inline UpdateFunctionResult& WithFunctionConfiguration(FunctionConfiguration&& value) { SetFunctionConfiguration(std::move(value)); return *this;}
+    inline const FunctionConfiguration& GetFunctionConfiguration() const { return m_functionConfiguration; }
+    template<typename FunctionConfigurationT = FunctionConfiguration>
+    void SetFunctionConfiguration(FunctionConfigurationT&& value) { m_functionConfigurationHasBeenSet = true; m_functionConfiguration = std::forward<FunctionConfigurationT>(value); }
+    template<typename FunctionConfigurationT = FunctionConfiguration>
+    UpdateFunctionResult& WithFunctionConfiguration(FunctionConfigurationT&& value) { SetFunctionConfiguration(std::forward<FunctionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateFunctionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateFunctionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateFunctionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateFunctionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FunctionConfiguration m_functionConfiguration;
+    bool m_functionConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

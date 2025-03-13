@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetExclusionsPreviewResult::GetExclusionsPreviewResult() : 
-    m_previewStatus(PreviewStatus::NOT_SET)
-{
-}
-
 GetExclusionsPreviewResult::GetExclusionsPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetExclusionsPreviewResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetExclusionsPreviewResult& GetExclusionsPreviewResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("previewStatus"))
   {
     m_previewStatus = PreviewStatusMapper::GetPreviewStatusForName(jsonValue.GetString("previewStatus"));
-
+    m_previewStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exclusionPreviews"))
   {
     Aws::Utils::Array<JsonView> exclusionPreviewsJsonList = jsonValue.GetArray("exclusionPreviews");
@@ -44,20 +37,20 @@ GetExclusionsPreviewResult& GetExclusionsPreviewResult::operator =(const Aws::Am
     {
       m_exclusionPreviews.push_back(exclusionPreviewsJsonList[exclusionPreviewsIndex].AsObject());
     }
+    m_exclusionPreviewsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

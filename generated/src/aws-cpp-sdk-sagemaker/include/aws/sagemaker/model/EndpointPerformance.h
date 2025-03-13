@@ -33,7 +33,7 @@ namespace Model
   class EndpointPerformance
   {
   public:
-    AWS_SAGEMAKER_API EndpointPerformance();
+    AWS_SAGEMAKER_API EndpointPerformance() = default;
     AWS_SAGEMAKER_API EndpointPerformance(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API EndpointPerformance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,22 +43,22 @@ namespace Model
     /**
      * <p>The metrics for an existing endpoint.</p>
      */
-    inline const InferenceMetrics& GetMetrics() const{ return m_metrics; }
+    inline const InferenceMetrics& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const InferenceMetrics& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(InferenceMetrics&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline EndpointPerformance& WithMetrics(const InferenceMetrics& value) { SetMetrics(value); return *this;}
-    inline EndpointPerformance& WithMetrics(InferenceMetrics&& value) { SetMetrics(std::move(value)); return *this;}
+    template<typename MetricsT = InferenceMetrics>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = InferenceMetrics>
+    EndpointPerformance& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EndpointInfo& GetEndpointInfo() const{ return m_endpointInfo; }
+    inline const EndpointInfo& GetEndpointInfo() const { return m_endpointInfo; }
     inline bool EndpointInfoHasBeenSet() const { return m_endpointInfoHasBeenSet; }
-    inline void SetEndpointInfo(const EndpointInfo& value) { m_endpointInfoHasBeenSet = true; m_endpointInfo = value; }
-    inline void SetEndpointInfo(EndpointInfo&& value) { m_endpointInfoHasBeenSet = true; m_endpointInfo = std::move(value); }
-    inline EndpointPerformance& WithEndpointInfo(const EndpointInfo& value) { SetEndpointInfo(value); return *this;}
-    inline EndpointPerformance& WithEndpointInfo(EndpointInfo&& value) { SetEndpointInfo(std::move(value)); return *this;}
+    template<typename EndpointInfoT = EndpointInfo>
+    void SetEndpointInfo(EndpointInfoT&& value) { m_endpointInfoHasBeenSet = true; m_endpointInfo = std::forward<EndpointInfoT>(value); }
+    template<typename EndpointInfoT = EndpointInfo>
+    EndpointPerformance& WithEndpointInfo(EndpointInfoT&& value) { SetEndpointInfo(std::forward<EndpointInfoT>(value)); return *this;}
     ///@}
   private:
 

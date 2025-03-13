@@ -33,7 +33,7 @@ namespace Model
   class ComboChartAggregatedFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API ComboChartAggregatedFieldWells();
+    AWS_QUICKSIGHT_API ComboChartAggregatedFieldWells() = default;
     AWS_QUICKSIGHT_API ComboChartAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ComboChartAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,56 +43,56 @@ namespace Model
     /**
      * <p>The aggregated category field wells of a combo chart.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetCategory() const{ return m_category; }
+    inline const Aws::Vector<DimensionField>& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const Aws::Vector<DimensionField>& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(Aws::Vector<DimensionField>&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline ComboChartAggregatedFieldWells& WithCategory(const Aws::Vector<DimensionField>& value) { SetCategory(value); return *this;}
-    inline ComboChartAggregatedFieldWells& WithCategory(Aws::Vector<DimensionField>&& value) { SetCategory(std::move(value)); return *this;}
-    inline ComboChartAggregatedFieldWells& AddCategory(const DimensionField& value) { m_categoryHasBeenSet = true; m_category.push_back(value); return *this; }
-    inline ComboChartAggregatedFieldWells& AddCategory(DimensionField&& value) { m_categoryHasBeenSet = true; m_category.push_back(std::move(value)); return *this; }
+    template<typename CategoryT = Aws::Vector<DimensionField>>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = Aws::Vector<DimensionField>>
+    ComboChartAggregatedFieldWells& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
+    template<typename CategoryT = DimensionField>
+    ComboChartAggregatedFieldWells& AddCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category.emplace_back(std::forward<CategoryT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The aggregated <code>BarValues</code> field well of a combo chart.</p>
      */
-    inline const Aws::Vector<MeasureField>& GetBarValues() const{ return m_barValues; }
+    inline const Aws::Vector<MeasureField>& GetBarValues() const { return m_barValues; }
     inline bool BarValuesHasBeenSet() const { return m_barValuesHasBeenSet; }
-    inline void SetBarValues(const Aws::Vector<MeasureField>& value) { m_barValuesHasBeenSet = true; m_barValues = value; }
-    inline void SetBarValues(Aws::Vector<MeasureField>&& value) { m_barValuesHasBeenSet = true; m_barValues = std::move(value); }
-    inline ComboChartAggregatedFieldWells& WithBarValues(const Aws::Vector<MeasureField>& value) { SetBarValues(value); return *this;}
-    inline ComboChartAggregatedFieldWells& WithBarValues(Aws::Vector<MeasureField>&& value) { SetBarValues(std::move(value)); return *this;}
-    inline ComboChartAggregatedFieldWells& AddBarValues(const MeasureField& value) { m_barValuesHasBeenSet = true; m_barValues.push_back(value); return *this; }
-    inline ComboChartAggregatedFieldWells& AddBarValues(MeasureField&& value) { m_barValuesHasBeenSet = true; m_barValues.push_back(std::move(value)); return *this; }
+    template<typename BarValuesT = Aws::Vector<MeasureField>>
+    void SetBarValues(BarValuesT&& value) { m_barValuesHasBeenSet = true; m_barValues = std::forward<BarValuesT>(value); }
+    template<typename BarValuesT = Aws::Vector<MeasureField>>
+    ComboChartAggregatedFieldWells& WithBarValues(BarValuesT&& value) { SetBarValues(std::forward<BarValuesT>(value)); return *this;}
+    template<typename BarValuesT = MeasureField>
+    ComboChartAggregatedFieldWells& AddBarValues(BarValuesT&& value) { m_barValuesHasBeenSet = true; m_barValues.emplace_back(std::forward<BarValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The aggregated colors field well of a combo chart.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetColors() const{ return m_colors; }
+    inline const Aws::Vector<DimensionField>& GetColors() const { return m_colors; }
     inline bool ColorsHasBeenSet() const { return m_colorsHasBeenSet; }
-    inline void SetColors(const Aws::Vector<DimensionField>& value) { m_colorsHasBeenSet = true; m_colors = value; }
-    inline void SetColors(Aws::Vector<DimensionField>&& value) { m_colorsHasBeenSet = true; m_colors = std::move(value); }
-    inline ComboChartAggregatedFieldWells& WithColors(const Aws::Vector<DimensionField>& value) { SetColors(value); return *this;}
-    inline ComboChartAggregatedFieldWells& WithColors(Aws::Vector<DimensionField>&& value) { SetColors(std::move(value)); return *this;}
-    inline ComboChartAggregatedFieldWells& AddColors(const DimensionField& value) { m_colorsHasBeenSet = true; m_colors.push_back(value); return *this; }
-    inline ComboChartAggregatedFieldWells& AddColors(DimensionField&& value) { m_colorsHasBeenSet = true; m_colors.push_back(std::move(value)); return *this; }
+    template<typename ColorsT = Aws::Vector<DimensionField>>
+    void SetColors(ColorsT&& value) { m_colorsHasBeenSet = true; m_colors = std::forward<ColorsT>(value); }
+    template<typename ColorsT = Aws::Vector<DimensionField>>
+    ComboChartAggregatedFieldWells& WithColors(ColorsT&& value) { SetColors(std::forward<ColorsT>(value)); return *this;}
+    template<typename ColorsT = DimensionField>
+    ComboChartAggregatedFieldWells& AddColors(ColorsT&& value) { m_colorsHasBeenSet = true; m_colors.emplace_back(std::forward<ColorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The aggregated <code>LineValues</code> field well of a combo chart.</p>
      */
-    inline const Aws::Vector<MeasureField>& GetLineValues() const{ return m_lineValues; }
+    inline const Aws::Vector<MeasureField>& GetLineValues() const { return m_lineValues; }
     inline bool LineValuesHasBeenSet() const { return m_lineValuesHasBeenSet; }
-    inline void SetLineValues(const Aws::Vector<MeasureField>& value) { m_lineValuesHasBeenSet = true; m_lineValues = value; }
-    inline void SetLineValues(Aws::Vector<MeasureField>&& value) { m_lineValuesHasBeenSet = true; m_lineValues = std::move(value); }
-    inline ComboChartAggregatedFieldWells& WithLineValues(const Aws::Vector<MeasureField>& value) { SetLineValues(value); return *this;}
-    inline ComboChartAggregatedFieldWells& WithLineValues(Aws::Vector<MeasureField>&& value) { SetLineValues(std::move(value)); return *this;}
-    inline ComboChartAggregatedFieldWells& AddLineValues(const MeasureField& value) { m_lineValuesHasBeenSet = true; m_lineValues.push_back(value); return *this; }
-    inline ComboChartAggregatedFieldWells& AddLineValues(MeasureField&& value) { m_lineValuesHasBeenSet = true; m_lineValues.push_back(std::move(value)); return *this; }
+    template<typename LineValuesT = Aws::Vector<MeasureField>>
+    void SetLineValues(LineValuesT&& value) { m_lineValuesHasBeenSet = true; m_lineValues = std::forward<LineValuesT>(value); }
+    template<typename LineValuesT = Aws::Vector<MeasureField>>
+    ComboChartAggregatedFieldWells& WithLineValues(LineValuesT&& value) { SetLineValues(std::forward<LineValuesT>(value)); return *this;}
+    template<typename LineValuesT = MeasureField>
+    ComboChartAggregatedFieldWells& AddLineValues(LineValuesT&& value) { m_lineValuesHasBeenSet = true; m_lineValues.emplace_back(std::forward<LineValuesT>(value)); return *this; }
     ///@}
   private:
 

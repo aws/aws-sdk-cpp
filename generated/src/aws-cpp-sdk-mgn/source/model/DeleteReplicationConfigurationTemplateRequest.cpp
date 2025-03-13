@@ -12,11 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteReplicationConfigurationTemplateRequest::DeleteReplicationConfigurationTemplateRequest() : 
-    m_replicationConfigurationTemplateIDHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReplicationConfigurationTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -31,7 +31,7 @@ namespace Model
   class ListHostedZonesByVPCRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API ListHostedZonesByVPCRequest();
+    AWS_ROUTE53_API ListHostedZonesByVPCRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
      */
-    inline const Aws::String& GetVPCId() const{ return m_vPCId; }
+    inline const Aws::String& GetVPCId() const { return m_vPCId; }
     inline bool VPCIdHasBeenSet() const { return m_vPCIdHasBeenSet; }
-    inline void SetVPCId(const Aws::String& value) { m_vPCIdHasBeenSet = true; m_vPCId = value; }
-    inline void SetVPCId(Aws::String&& value) { m_vPCIdHasBeenSet = true; m_vPCId = std::move(value); }
-    inline void SetVPCId(const char* value) { m_vPCIdHasBeenSet = true; m_vPCId.assign(value); }
-    inline ListHostedZonesByVPCRequest& WithVPCId(const Aws::String& value) { SetVPCId(value); return *this;}
-    inline ListHostedZonesByVPCRequest& WithVPCId(Aws::String&& value) { SetVPCId(std::move(value)); return *this;}
-    inline ListHostedZonesByVPCRequest& WithVPCId(const char* value) { SetVPCId(value); return *this;}
+    template<typename VPCIdT = Aws::String>
+    void SetVPCId(VPCIdT&& value) { m_vPCIdHasBeenSet = true; m_vPCId = std::forward<VPCIdT>(value); }
+    template<typename VPCIdT = Aws::String>
+    ListHostedZonesByVPCRequest& WithVPCId(VPCIdT&& value) { SetVPCId(std::forward<VPCIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web
      * Services Region that you created the VPC in. </p>
      */
-    inline const VPCRegion& GetVPCRegion() const{ return m_vPCRegion; }
+    inline VPCRegion GetVPCRegion() const { return m_vPCRegion; }
     inline bool VPCRegionHasBeenSet() const { return m_vPCRegionHasBeenSet; }
-    inline void SetVPCRegion(const VPCRegion& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = value; }
-    inline void SetVPCRegion(VPCRegion&& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = std::move(value); }
-    inline ListHostedZonesByVPCRequest& WithVPCRegion(const VPCRegion& value) { SetVPCRegion(value); return *this;}
-    inline ListHostedZonesByVPCRequest& WithVPCRegion(VPCRegion&& value) { SetVPCRegion(std::move(value)); return *this;}
+    inline void SetVPCRegion(VPCRegion value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = value; }
+    inline ListHostedZonesByVPCRequest& WithVPCRegion(VPCRegion value) { SetVPCRegion(value); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * token that identifies the first hosted zone that Route 53 will return if you
      * submit another request.</p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
-    inline ListHostedZonesByVPCRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListHostedZonesByVPCRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListHostedZonesByVPCRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListHostedZonesByVPCRequest& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,21 +93,19 @@ namespace Model
      * previous response.</p> <p>If the previous response didn't include a
      * <code>NextToken</code> element, there are no more hosted zones to get.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListHostedZonesByVPCRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListHostedZonesByVPCRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListHostedZonesByVPCRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListHostedZonesByVPCRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_vPCId;
     bool m_vPCIdHasBeenSet = false;
 
-    VPCRegion m_vPCRegion;
+    VPCRegion m_vPCRegion{VPCRegion::NOT_SET};
     bool m_vPCRegionHasBeenSet = false;
 
     Aws::String m_maxItems;

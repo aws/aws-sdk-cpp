@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialNullDataSettings::GeospatialNullDataSettings() : 
-    m_symbolStyleHasBeenSet(false)
-{
-}
-
 GeospatialNullDataSettings::GeospatialNullDataSettings(JsonView jsonValue)
-  : GeospatialNullDataSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GeospatialNullDataSettings& GeospatialNullDataSettings::operator =(JsonView json
   if(jsonValue.ValueExists("SymbolStyle"))
   {
     m_symbolStyle = jsonValue.GetObject("SymbolStyle");
-
     m_symbolStyleHasBeenSet = true;
   }
-
   return *this;
 }
 

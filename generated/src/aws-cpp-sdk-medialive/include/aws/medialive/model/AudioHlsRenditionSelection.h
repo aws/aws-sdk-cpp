@@ -31,7 +31,7 @@ namespace Model
   class AudioHlsRenditionSelection
   {
   public:
-    AWS_MEDIALIVE_API AudioHlsRenditionSelection();
+    AWS_MEDIALIVE_API AudioHlsRenditionSelection() = default;
     AWS_MEDIALIVE_API AudioHlsRenditionSelection(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AudioHlsRenditionSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
      * Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio
      * rendition.
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline AudioHlsRenditionSelection& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline AudioHlsRenditionSelection& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline AudioHlsRenditionSelection& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    AudioHlsRenditionSelection& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AudioHlsRenditionSelection& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AudioHlsRenditionSelection& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AudioHlsRenditionSelection& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AudioHlsRenditionSelection& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

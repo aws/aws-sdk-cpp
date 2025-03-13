@@ -18,26 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CisScan::CisScan() : 
-    m_failedChecks(0),
-    m_failedChecksHasBeenSet(false),
-    m_scanArnHasBeenSet(false),
-    m_scanConfigurationArnHasBeenSet(false),
-    m_scanDateHasBeenSet(false),
-    m_scanNameHasBeenSet(false),
-    m_scheduledByHasBeenSet(false),
-    m_securityLevel(CisSecurityLevel::NOT_SET),
-    m_securityLevelHasBeenSet(false),
-    m_status(CisScanStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_totalChecks(0),
-    m_totalChecksHasBeenSet(false)
-{
-}
-
 CisScan::CisScan(JsonView jsonValue)
-  : CisScan()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ CisScan& CisScan::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("failedChecks"))
   {
     m_failedChecks = jsonValue.GetInteger("failedChecks");
-
     m_failedChecksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanArn"))
   {
     m_scanArn = jsonValue.GetString("scanArn");
-
     m_scanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanConfigurationArn"))
   {
     m_scanConfigurationArn = jsonValue.GetString("scanConfigurationArn");
-
     m_scanConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanDate"))
   {
     m_scanDate = jsonValue.GetDouble("scanDate");
-
     m_scanDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanName"))
   {
     m_scanName = jsonValue.GetString("scanName");
-
     m_scanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduledBy"))
   {
     m_scheduledBy = jsonValue.GetString("scheduledBy");
-
     m_scheduledByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityLevel"))
   {
     m_securityLevel = CisSecurityLevelMapper::GetCisSecurityLevelForName(jsonValue.GetString("securityLevel"));
-
     m_securityLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CisScanStatusMapper::GetCisScanStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targets"))
   {
     m_targets = jsonValue.GetObject("targets");
-
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalChecks"))
   {
     m_totalChecks = jsonValue.GetInteger("totalChecks");
-
     m_totalChecksHasBeenSet = true;
   }
-
   return *this;
 }
 

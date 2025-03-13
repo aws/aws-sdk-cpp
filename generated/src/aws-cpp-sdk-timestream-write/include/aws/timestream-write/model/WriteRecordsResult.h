@@ -28,7 +28,7 @@ namespace Model
   class WriteRecordsResult
   {
   public:
-    AWS_TIMESTREAMWRITE_API WriteRecordsResult();
+    AWS_TIMESTREAMWRITE_API WriteRecordsResult() = default;
     AWS_TIMESTREAMWRITE_API WriteRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TIMESTREAMWRITE_API WriteRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information on the records ingested by this request.</p>
      */
-    inline const RecordsIngested& GetRecordsIngested() const{ return m_recordsIngested; }
-    inline void SetRecordsIngested(const RecordsIngested& value) { m_recordsIngested = value; }
-    inline void SetRecordsIngested(RecordsIngested&& value) { m_recordsIngested = std::move(value); }
-    inline WriteRecordsResult& WithRecordsIngested(const RecordsIngested& value) { SetRecordsIngested(value); return *this;}
-    inline WriteRecordsResult& WithRecordsIngested(RecordsIngested&& value) { SetRecordsIngested(std::move(value)); return *this;}
+    inline const RecordsIngested& GetRecordsIngested() const { return m_recordsIngested; }
+    template<typename RecordsIngestedT = RecordsIngested>
+    void SetRecordsIngested(RecordsIngestedT&& value) { m_recordsIngestedHasBeenSet = true; m_recordsIngested = std::forward<RecordsIngestedT>(value); }
+    template<typename RecordsIngestedT = RecordsIngested>
+    WriteRecordsResult& WithRecordsIngested(RecordsIngestedT&& value) { SetRecordsIngested(std::forward<RecordsIngestedT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline WriteRecordsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline WriteRecordsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline WriteRecordsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    WriteRecordsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RecordsIngested m_recordsIngested;
+    bool m_recordsIngestedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,21 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGuardrailRequest::UpdateGuardrailRequest() : 
-    m_guardrailIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_topicPolicyConfigHasBeenSet(false),
-    m_contentPolicyConfigHasBeenSet(false),
-    m_wordPolicyConfigHasBeenSet(false),
-    m_sensitiveInformationPolicyConfigHasBeenSet(false),
-    m_contextualGroundingPolicyConfigHasBeenSet(false),
-    m_blockedInputMessagingHasBeenSet(false),
-    m_blockedOutputsMessagingHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGuardrailRequest::SerializePayload() const
 {
   JsonValue payload;

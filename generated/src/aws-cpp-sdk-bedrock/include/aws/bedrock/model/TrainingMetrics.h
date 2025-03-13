@@ -29,7 +29,7 @@ namespace Model
   class TrainingMetrics
   {
   public:
-    AWS_BEDROCK_API TrainingMetrics();
+    AWS_BEDROCK_API TrainingMetrics() = default;
     AWS_BEDROCK_API TrainingMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API TrainingMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>Loss metric associated with the custom job.</p>
      */
-    inline double GetTrainingLoss() const{ return m_trainingLoss; }
+    inline double GetTrainingLoss() const { return m_trainingLoss; }
     inline bool TrainingLossHasBeenSet() const { return m_trainingLossHasBeenSet; }
     inline void SetTrainingLoss(double value) { m_trainingLossHasBeenSet = true; m_trainingLoss = value; }
     inline TrainingMetrics& WithTrainingLoss(double value) { SetTrainingLoss(value); return *this;}
     ///@}
   private:
 
-    double m_trainingLoss;
+    double m_trainingLoss{0.0};
     bool m_trainingLossHasBeenSet = false;
   };
 

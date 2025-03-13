@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConformancePackComplianceFilters::ConformancePackComplianceFilters() : 
-    m_configRuleNamesHasBeenSet(false),
-    m_complianceType(ConformancePackComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false)
-{
-}
-
 ConformancePackComplianceFilters::ConformancePackComplianceFilters(JsonView jsonValue)
-  : ConformancePackComplianceFilters()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ ConformancePackComplianceFilters& ConformancePackComplianceFilters::operator =(J
     }
     m_configRuleNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceType"))
   {
     m_complianceType = ConformancePackComplianceTypeMapper::GetConformancePackComplianceTypeForName(jsonValue.GetString("ComplianceType"));
-
     m_complianceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

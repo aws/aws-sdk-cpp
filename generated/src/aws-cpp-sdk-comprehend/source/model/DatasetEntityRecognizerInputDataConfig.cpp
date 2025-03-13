@@ -18,15 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DatasetEntityRecognizerInputDataConfig::DatasetEntityRecognizerInputDataConfig() : 
-    m_annotationsHasBeenSet(false),
-    m_documentsHasBeenSet(false),
-    m_entityListHasBeenSet(false)
-{
-}
-
 DatasetEntityRecognizerInputDataConfig::DatasetEntityRecognizerInputDataConfig(JsonView jsonValue)
-  : DatasetEntityRecognizerInputDataConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DatasetEntityRecognizerInputDataConfig& DatasetEntityRecognizerInputDataConfig::
   if(jsonValue.ValueExists("Annotations"))
   {
     m_annotations = jsonValue.GetObject("Annotations");
-
     m_annotationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Documents"))
   {
     m_documents = jsonValue.GetObject("Documents");
-
     m_documentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityList"))
   {
     m_entityList = jsonValue.GetObject("EntityList");
-
     m_entityListHasBeenSet = true;
   }
-
   return *this;
 }
 

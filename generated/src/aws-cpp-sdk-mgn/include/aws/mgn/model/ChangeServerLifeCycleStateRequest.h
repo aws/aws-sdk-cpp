@@ -22,7 +22,7 @@ namespace Model
   class ChangeServerLifeCycleStateRequest : public MgnRequest
   {
   public:
-    AWS_MGN_API ChangeServerLifeCycleStateRequest();
+    AWS_MGN_API ChangeServerLifeCycleStateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The request to change the source server migration account ID.</p>
      */
-    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+    inline const Aws::String& GetAccountID() const { return m_accountID; }
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-    inline ChangeServerLifeCycleStateRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-    inline ChangeServerLifeCycleStateRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-    inline ChangeServerLifeCycleStateRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    template<typename AccountIDT = Aws::String>
+    void SetAccountID(AccountIDT&& value) { m_accountIDHasBeenSet = true; m_accountID = std::forward<AccountIDT>(value); }
+    template<typename AccountIDT = Aws::String>
+    ChangeServerLifeCycleStateRequest& WithAccountID(AccountIDT&& value) { SetAccountID(std::forward<AccountIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The request to change the source server migration lifecycle state.</p>
      */
-    inline const ChangeServerLifeCycleStateSourceServerLifecycle& GetLifeCycle() const{ return m_lifeCycle; }
+    inline const ChangeServerLifeCycleStateSourceServerLifecycle& GetLifeCycle() const { return m_lifeCycle; }
     inline bool LifeCycleHasBeenSet() const { return m_lifeCycleHasBeenSet; }
-    inline void SetLifeCycle(const ChangeServerLifeCycleStateSourceServerLifecycle& value) { m_lifeCycleHasBeenSet = true; m_lifeCycle = value; }
-    inline void SetLifeCycle(ChangeServerLifeCycleStateSourceServerLifecycle&& value) { m_lifeCycleHasBeenSet = true; m_lifeCycle = std::move(value); }
-    inline ChangeServerLifeCycleStateRequest& WithLifeCycle(const ChangeServerLifeCycleStateSourceServerLifecycle& value) { SetLifeCycle(value); return *this;}
-    inline ChangeServerLifeCycleStateRequest& WithLifeCycle(ChangeServerLifeCycleStateSourceServerLifecycle&& value) { SetLifeCycle(std::move(value)); return *this;}
+    template<typename LifeCycleT = ChangeServerLifeCycleStateSourceServerLifecycle>
+    void SetLifeCycle(LifeCycleT&& value) { m_lifeCycleHasBeenSet = true; m_lifeCycle = std::forward<LifeCycleT>(value); }
+    template<typename LifeCycleT = ChangeServerLifeCycleStateSourceServerLifecycle>
+    ChangeServerLifeCycleStateRequest& WithLifeCycle(LifeCycleT&& value) { SetLifeCycle(std::forward<LifeCycleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>The request to change the source server migration lifecycle state by source
      * server ID.</p>
      */
-    inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
+    inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-    inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
-    inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
-    inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
-    inline ChangeServerLifeCycleStateRequest& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
-    inline ChangeServerLifeCycleStateRequest& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
-    inline ChangeServerLifeCycleStateRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
+    template<typename SourceServerIDT = Aws::String>
+    void SetSourceServerID(SourceServerIDT&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::forward<SourceServerIDT>(value); }
+    template<typename SourceServerIDT = Aws::String>
+    ChangeServerLifeCycleStateRequest& WithSourceServerID(SourceServerIDT&& value) { SetSourceServerID(std::forward<SourceServerIDT>(value)); return *this;}
     ///@}
   private:
 

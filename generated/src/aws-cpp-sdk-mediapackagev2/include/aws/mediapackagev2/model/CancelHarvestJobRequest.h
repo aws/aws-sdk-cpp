@@ -21,7 +21,7 @@ namespace Model
   class CancelHarvestJobRequest : public Mediapackagev2Request
   {
   public:
-    AWS_MEDIAPACKAGEV2_API CancelHarvestJobRequest();
+    AWS_MEDIAPACKAGEV2_API CancelHarvestJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The name of the channel group containing the channel from which the harvest
      * job is running.</p>
      */
-    inline const Aws::String& GetChannelGroupName() const{ return m_channelGroupName; }
+    inline const Aws::String& GetChannelGroupName() const { return m_channelGroupName; }
     inline bool ChannelGroupNameHasBeenSet() const { return m_channelGroupNameHasBeenSet; }
-    inline void SetChannelGroupName(const Aws::String& value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName = value; }
-    inline void SetChannelGroupName(Aws::String&& value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName = std::move(value); }
-    inline void SetChannelGroupName(const char* value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName.assign(value); }
-    inline CancelHarvestJobRequest& WithChannelGroupName(const Aws::String& value) { SetChannelGroupName(value); return *this;}
-    inline CancelHarvestJobRequest& WithChannelGroupName(Aws::String&& value) { SetChannelGroupName(std::move(value)); return *this;}
-    inline CancelHarvestJobRequest& WithChannelGroupName(const char* value) { SetChannelGroupName(value); return *this;}
+    template<typename ChannelGroupNameT = Aws::String>
+    void SetChannelGroupName(ChannelGroupNameT&& value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName = std::forward<ChannelGroupNameT>(value); }
+    template<typename ChannelGroupNameT = Aws::String>
+    CancelHarvestJobRequest& WithChannelGroupName(ChannelGroupNameT&& value) { SetChannelGroupName(std::forward<ChannelGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the channel from which the harvest job is running.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline CancelHarvestJobRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline CancelHarvestJobRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline CancelHarvestJobRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    CancelHarvestJobRequest& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,12 @@ namespace Model
      * <p>The name of the origin endpoint that the harvest job is harvesting from. This
      * cannot be changed after the harvest job is submitted.</p>
      */
-    inline const Aws::String& GetOriginEndpointName() const{ return m_originEndpointName; }
+    inline const Aws::String& GetOriginEndpointName() const { return m_originEndpointName; }
     inline bool OriginEndpointNameHasBeenSet() const { return m_originEndpointNameHasBeenSet; }
-    inline void SetOriginEndpointName(const Aws::String& value) { m_originEndpointNameHasBeenSet = true; m_originEndpointName = value; }
-    inline void SetOriginEndpointName(Aws::String&& value) { m_originEndpointNameHasBeenSet = true; m_originEndpointName = std::move(value); }
-    inline void SetOriginEndpointName(const char* value) { m_originEndpointNameHasBeenSet = true; m_originEndpointName.assign(value); }
-    inline CancelHarvestJobRequest& WithOriginEndpointName(const Aws::String& value) { SetOriginEndpointName(value); return *this;}
-    inline CancelHarvestJobRequest& WithOriginEndpointName(Aws::String&& value) { SetOriginEndpointName(std::move(value)); return *this;}
-    inline CancelHarvestJobRequest& WithOriginEndpointName(const char* value) { SetOriginEndpointName(value); return *this;}
+    template<typename OriginEndpointNameT = Aws::String>
+    void SetOriginEndpointName(OriginEndpointNameT&& value) { m_originEndpointNameHasBeenSet = true; m_originEndpointName = std::forward<OriginEndpointNameT>(value); }
+    template<typename OriginEndpointNameT = Aws::String>
+    CancelHarvestJobRequest& WithOriginEndpointName(OriginEndpointNameT&& value) { SetOriginEndpointName(std::forward<OriginEndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +77,12 @@ namespace Model
      * <p>The name of the harvest job to cancel. This name must be unique within the
      * channel and cannot be changed after the harvest job is submitted.</p>
      */
-    inline const Aws::String& GetHarvestJobName() const{ return m_harvestJobName; }
+    inline const Aws::String& GetHarvestJobName() const { return m_harvestJobName; }
     inline bool HarvestJobNameHasBeenSet() const { return m_harvestJobNameHasBeenSet; }
-    inline void SetHarvestJobName(const Aws::String& value) { m_harvestJobNameHasBeenSet = true; m_harvestJobName = value; }
-    inline void SetHarvestJobName(Aws::String&& value) { m_harvestJobNameHasBeenSet = true; m_harvestJobName = std::move(value); }
-    inline void SetHarvestJobName(const char* value) { m_harvestJobNameHasBeenSet = true; m_harvestJobName.assign(value); }
-    inline CancelHarvestJobRequest& WithHarvestJobName(const Aws::String& value) { SetHarvestJobName(value); return *this;}
-    inline CancelHarvestJobRequest& WithHarvestJobName(Aws::String&& value) { SetHarvestJobName(std::move(value)); return *this;}
-    inline CancelHarvestJobRequest& WithHarvestJobName(const char* value) { SetHarvestJobName(value); return *this;}
+    template<typename HarvestJobNameT = Aws::String>
+    void SetHarvestJobName(HarvestJobNameT&& value) { m_harvestJobNameHasBeenSet = true; m_harvestJobName = std::forward<HarvestJobNameT>(value); }
+    template<typename HarvestJobNameT = Aws::String>
+    CancelHarvestJobRequest& WithHarvestJobName(HarvestJobNameT&& value) { SetHarvestJobName(std::forward<HarvestJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +90,12 @@ namespace Model
      * <p>The current Entity Tag (ETag) associated with the harvest job. Used for
      * concurrency control.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-    inline CancelHarvestJobRequest& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline CancelHarvestJobRequest& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline CancelHarvestJobRequest& WithETag(const char* value) { SetETag(value); return *this;}
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    CancelHarvestJobRequest& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
   private:
 

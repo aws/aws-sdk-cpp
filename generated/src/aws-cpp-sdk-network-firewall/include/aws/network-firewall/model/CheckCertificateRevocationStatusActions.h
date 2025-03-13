@@ -33,7 +33,7 @@ namespace Model
   class CheckCertificateRevocationStatusActions
   {
   public:
-    AWS_NETWORKFIREWALL_API CheckCertificateRevocationStatusActions();
+    AWS_NETWORKFIREWALL_API CheckCertificateRevocationStatusActions() = default;
     AWS_NETWORKFIREWALL_API CheckCertificateRevocationStatusActions(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API CheckCertificateRevocationStatusActions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * and drops subsequent packets for that connection. <code>REJECT</code> is
      * available only for TCP traffic.</p> </li> </ul>
      */
-    inline const RevocationCheckAction& GetRevokedStatusAction() const{ return m_revokedStatusAction; }
+    inline RevocationCheckAction GetRevokedStatusAction() const { return m_revokedStatusAction; }
     inline bool RevokedStatusActionHasBeenSet() const { return m_revokedStatusActionHasBeenSet; }
-    inline void SetRevokedStatusAction(const RevocationCheckAction& value) { m_revokedStatusActionHasBeenSet = true; m_revokedStatusAction = value; }
-    inline void SetRevokedStatusAction(RevocationCheckAction&& value) { m_revokedStatusActionHasBeenSet = true; m_revokedStatusAction = std::move(value); }
-    inline CheckCertificateRevocationStatusActions& WithRevokedStatusAction(const RevocationCheckAction& value) { SetRevokedStatusAction(value); return *this;}
-    inline CheckCertificateRevocationStatusActions& WithRevokedStatusAction(RevocationCheckAction&& value) { SetRevokedStatusAction(std::move(value)); return *this;}
+    inline void SetRevokedStatusAction(RevocationCheckAction value) { m_revokedStatusActionHasBeenSet = true; m_revokedStatusAction = value; }
+    inline CheckCertificateRevocationStatusActions& WithRevokedStatusAction(RevocationCheckAction value) { SetRevokedStatusAction(value); return *this;}
     ///@}
 
     ///@{
@@ -73,19 +71,17 @@ namespace Model
      * closes the connection and drops subsequent packets for that connection.
      * <code>REJECT</code> is available only for TCP traffic.</p> </li> </ul>
      */
-    inline const RevocationCheckAction& GetUnknownStatusAction() const{ return m_unknownStatusAction; }
+    inline RevocationCheckAction GetUnknownStatusAction() const { return m_unknownStatusAction; }
     inline bool UnknownStatusActionHasBeenSet() const { return m_unknownStatusActionHasBeenSet; }
-    inline void SetUnknownStatusAction(const RevocationCheckAction& value) { m_unknownStatusActionHasBeenSet = true; m_unknownStatusAction = value; }
-    inline void SetUnknownStatusAction(RevocationCheckAction&& value) { m_unknownStatusActionHasBeenSet = true; m_unknownStatusAction = std::move(value); }
-    inline CheckCertificateRevocationStatusActions& WithUnknownStatusAction(const RevocationCheckAction& value) { SetUnknownStatusAction(value); return *this;}
-    inline CheckCertificateRevocationStatusActions& WithUnknownStatusAction(RevocationCheckAction&& value) { SetUnknownStatusAction(std::move(value)); return *this;}
+    inline void SetUnknownStatusAction(RevocationCheckAction value) { m_unknownStatusActionHasBeenSet = true; m_unknownStatusAction = value; }
+    inline CheckCertificateRevocationStatusActions& WithUnknownStatusAction(RevocationCheckAction value) { SetUnknownStatusAction(value); return *this;}
     ///@}
   private:
 
-    RevocationCheckAction m_revokedStatusAction;
+    RevocationCheckAction m_revokedStatusAction{RevocationCheckAction::NOT_SET};
     bool m_revokedStatusActionHasBeenSet = false;
 
-    RevocationCheckAction m_unknownStatusAction;
+    RevocationCheckAction m_unknownStatusAction{RevocationCheckAction::NOT_SET};
     bool m_unknownStatusActionHasBeenSet = false;
   };
 

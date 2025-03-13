@@ -10,27 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateVerifiedAccessTrustProviderRequest::CreateVerifiedAccessTrustProviderRequest() : 
-    m_trustProviderType(TrustProviderType::NOT_SET),
-    m_trustProviderTypeHasBeenSet(false),
-    m_userTrustProviderType(UserTrustProviderType::NOT_SET),
-    m_userTrustProviderTypeHasBeenSet(false),
-    m_deviceTrustProviderType(DeviceTrustProviderType::NOT_SET),
-    m_deviceTrustProviderTypeHasBeenSet(false),
-    m_oidcOptionsHasBeenSet(false),
-    m_deviceOptionsHasBeenSet(false),
-    m_policyReferenceNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_sseSpecificationHasBeenSet(false),
-    m_nativeApplicationOidcOptionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateVerifiedAccessTrustProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;

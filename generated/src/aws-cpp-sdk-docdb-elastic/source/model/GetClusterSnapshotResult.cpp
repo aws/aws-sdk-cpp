@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetClusterSnapshotResult::GetClusterSnapshotResult()
-{
-}
-
 GetClusterSnapshotResult::GetClusterSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetClusterSnapshotResult& GetClusterSnapshotResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("snapshot"))
   {
     m_snapshot = jsonValue.GetObject("snapshot");
-
+    m_snapshotHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

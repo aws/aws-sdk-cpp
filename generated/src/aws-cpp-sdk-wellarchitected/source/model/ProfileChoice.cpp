@@ -18,15 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ProfileChoice::ProfileChoice() : 
-    m_choiceIdHasBeenSet(false),
-    m_choiceTitleHasBeenSet(false),
-    m_choiceDescriptionHasBeenSet(false)
-{
-}
-
 ProfileChoice::ProfileChoice(JsonView jsonValue)
-  : ProfileChoice()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ProfileChoice& ProfileChoice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChoiceId"))
   {
     m_choiceId = jsonValue.GetString("ChoiceId");
-
     m_choiceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChoiceTitle"))
   {
     m_choiceTitle = jsonValue.GetString("ChoiceTitle");
-
     m_choiceTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChoiceDescription"))
   {
     m_choiceDescription = jsonValue.GetString("ChoiceDescription");
-
     m_choiceDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

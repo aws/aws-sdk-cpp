@@ -39,7 +39,7 @@ namespace Model
   class AWSService
   {
   public:
-    AWS_AUDITMANAGER_API AWSService();
+    AWS_AUDITMANAGER_API AWSService() = default;
     AWS_AUDITMANAGER_API AWSService(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API AWSService& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p> The name of the Amazon Web Service. </p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline AWSService& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline AWSService& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline AWSService& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    AWSService& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class DescribeTopicPermissionsResult
   {
   public:
-    AWS_QUICKSIGHT_API DescribeTopicPermissionsResult();
+    AWS_QUICKSIGHT_API DescribeTopicPermissionsResult() = default;
     AWS_QUICKSIGHT_API DescribeTopicPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API DescribeTopicPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,71 +39,70 @@ namespace Model
      * <p>The ID of the topic that you want to describe. This ID is unique per Amazon
      * Web Services Region for each Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetTopicId() const{ return m_topicId; }
-    inline void SetTopicId(const Aws::String& value) { m_topicId = value; }
-    inline void SetTopicId(Aws::String&& value) { m_topicId = std::move(value); }
-    inline void SetTopicId(const char* value) { m_topicId.assign(value); }
-    inline DescribeTopicPermissionsResult& WithTopicId(const Aws::String& value) { SetTopicId(value); return *this;}
-    inline DescribeTopicPermissionsResult& WithTopicId(Aws::String&& value) { SetTopicId(std::move(value)); return *this;}
-    inline DescribeTopicPermissionsResult& WithTopicId(const char* value) { SetTopicId(value); return *this;}
+    inline const Aws::String& GetTopicId() const { return m_topicId; }
+    template<typename TopicIdT = Aws::String>
+    void SetTopicId(TopicIdT&& value) { m_topicIdHasBeenSet = true; m_topicId = std::forward<TopicIdT>(value); }
+    template<typename TopicIdT = Aws::String>
+    DescribeTopicPermissionsResult& WithTopicId(TopicIdT&& value) { SetTopicId(std::forward<TopicIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the topic.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArn.assign(value); }
-    inline DescribeTopicPermissionsResult& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline DescribeTopicPermissionsResult& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline DescribeTopicPermissionsResult& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    DescribeTopicPermissionsResult& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of resource permissions that are configured to the topic.</p>
      */
-    inline const Aws::Vector<ResourcePermission>& GetPermissions() const{ return m_permissions; }
-    inline void SetPermissions(const Aws::Vector<ResourcePermission>& value) { m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<ResourcePermission>&& value) { m_permissions = std::move(value); }
-    inline DescribeTopicPermissionsResult& WithPermissions(const Aws::Vector<ResourcePermission>& value) { SetPermissions(value); return *this;}
-    inline DescribeTopicPermissionsResult& WithPermissions(Aws::Vector<ResourcePermission>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline DescribeTopicPermissionsResult& AddPermissions(const ResourcePermission& value) { m_permissions.push_back(value); return *this; }
-    inline DescribeTopicPermissionsResult& AddPermissions(ResourcePermission&& value) { m_permissions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourcePermission>& GetPermissions() const { return m_permissions; }
+    template<typename PermissionsT = Aws::Vector<ResourcePermission>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<ResourcePermission>>
+    DescribeTopicPermissionsResult& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    template<typename PermissionsT = ResourcePermission>
+    DescribeTopicPermissionsResult& AddPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions.emplace_back(std::forward<PermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline DescribeTopicPermissionsResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTopicPermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTopicPermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTopicPermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTopicPermissionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_topicId;
+    bool m_topicIdHasBeenSet = false;
 
     Aws::String m_topicArn;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_permissions;
+    bool m_permissionsHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

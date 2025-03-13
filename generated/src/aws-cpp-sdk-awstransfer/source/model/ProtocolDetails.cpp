@@ -18,18 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ProtocolDetails::ProtocolDetails() : 
-    m_passiveIpHasBeenSet(false),
-    m_tlsSessionResumptionMode(TlsSessionResumptionMode::NOT_SET),
-    m_tlsSessionResumptionModeHasBeenSet(false),
-    m_setStatOption(SetStatOption::NOT_SET),
-    m_setStatOptionHasBeenSet(false),
-    m_as2TransportsHasBeenSet(false)
-{
-}
-
 ProtocolDetails::ProtocolDetails(JsonView jsonValue)
-  : ProtocolDetails()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ProtocolDetails& ProtocolDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PassiveIp"))
   {
     m_passiveIp = jsonValue.GetString("PassiveIp");
-
     m_passiveIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TlsSessionResumptionMode"))
   {
     m_tlsSessionResumptionMode = TlsSessionResumptionModeMapper::GetTlsSessionResumptionModeForName(jsonValue.GetString("TlsSessionResumptionMode"));
-
     m_tlsSessionResumptionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SetStatOption"))
   {
     m_setStatOption = SetStatOptionMapper::GetSetStatOptionForName(jsonValue.GetString("SetStatOption"));
-
     m_setStatOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("As2Transports"))
   {
     Aws::Utils::Array<JsonView> as2TransportsJsonList = jsonValue.GetArray("As2Transports");
@@ -66,7 +49,6 @@ ProtocolDetails& ProtocolDetails::operator =(JsonView jsonValue)
     }
     m_as2TransportsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,17 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSegmentSnapshotRequest::CreateSegmentSnapshotRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_segmentDefinitionNameHasBeenSet(false),
-    m_dataFormat(DataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_destinationUriHasBeenSet(false)
-{
-}
-
 Aws::String CreateSegmentSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

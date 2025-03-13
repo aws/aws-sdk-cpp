@@ -43,7 +43,7 @@ namespace Model
   class RackPhysicalProperties
   {
   public:
-    AWS_OUTPOSTS_API RackPhysicalProperties();
+    AWS_OUTPOSTS_API RackPhysicalProperties() = default;
     AWS_OUTPOSTS_API RackPhysicalProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API RackPhysicalProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,84 +54,70 @@ namespace Model
      * <p>The power draw available at the hardware placement position for the rack.
      * </p>
      */
-    inline const PowerDrawKva& GetPowerDrawKva() const{ return m_powerDrawKva; }
+    inline PowerDrawKva GetPowerDrawKva() const { return m_powerDrawKva; }
     inline bool PowerDrawKvaHasBeenSet() const { return m_powerDrawKvaHasBeenSet; }
-    inline void SetPowerDrawKva(const PowerDrawKva& value) { m_powerDrawKvaHasBeenSet = true; m_powerDrawKva = value; }
-    inline void SetPowerDrawKva(PowerDrawKva&& value) { m_powerDrawKvaHasBeenSet = true; m_powerDrawKva = std::move(value); }
-    inline RackPhysicalProperties& WithPowerDrawKva(const PowerDrawKva& value) { SetPowerDrawKva(value); return *this;}
-    inline RackPhysicalProperties& WithPowerDrawKva(PowerDrawKva&& value) { SetPowerDrawKva(std::move(value)); return *this;}
+    inline void SetPowerDrawKva(PowerDrawKva value) { m_powerDrawKvaHasBeenSet = true; m_powerDrawKva = value; }
+    inline RackPhysicalProperties& WithPowerDrawKva(PowerDrawKva value) { SetPowerDrawKva(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The power option that you can provide for hardware.</p>
      */
-    inline const PowerPhase& GetPowerPhase() const{ return m_powerPhase; }
+    inline PowerPhase GetPowerPhase() const { return m_powerPhase; }
     inline bool PowerPhaseHasBeenSet() const { return m_powerPhaseHasBeenSet; }
-    inline void SetPowerPhase(const PowerPhase& value) { m_powerPhaseHasBeenSet = true; m_powerPhase = value; }
-    inline void SetPowerPhase(PowerPhase&& value) { m_powerPhaseHasBeenSet = true; m_powerPhase = std::move(value); }
-    inline RackPhysicalProperties& WithPowerPhase(const PowerPhase& value) { SetPowerPhase(value); return *this;}
-    inline RackPhysicalProperties& WithPowerPhase(PowerPhase&& value) { SetPowerPhase(std::move(value)); return *this;}
+    inline void SetPowerPhase(PowerPhase value) { m_powerPhaseHasBeenSet = true; m_powerPhase = value; }
+    inline RackPhysicalProperties& WithPowerPhase(PowerPhase value) { SetPowerPhase(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The power connector for the hardware. </p>
      */
-    inline const PowerConnector& GetPowerConnector() const{ return m_powerConnector; }
+    inline PowerConnector GetPowerConnector() const { return m_powerConnector; }
     inline bool PowerConnectorHasBeenSet() const { return m_powerConnectorHasBeenSet; }
-    inline void SetPowerConnector(const PowerConnector& value) { m_powerConnectorHasBeenSet = true; m_powerConnector = value; }
-    inline void SetPowerConnector(PowerConnector&& value) { m_powerConnectorHasBeenSet = true; m_powerConnector = std::move(value); }
-    inline RackPhysicalProperties& WithPowerConnector(const PowerConnector& value) { SetPowerConnector(value); return *this;}
-    inline RackPhysicalProperties& WithPowerConnector(PowerConnector&& value) { SetPowerConnector(std::move(value)); return *this;}
+    inline void SetPowerConnector(PowerConnector value) { m_powerConnectorHasBeenSet = true; m_powerConnector = value; }
+    inline RackPhysicalProperties& WithPowerConnector(PowerConnector value) { SetPowerConnector(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The position of the power feed.</p>
      */
-    inline const PowerFeedDrop& GetPowerFeedDrop() const{ return m_powerFeedDrop; }
+    inline PowerFeedDrop GetPowerFeedDrop() const { return m_powerFeedDrop; }
     inline bool PowerFeedDropHasBeenSet() const { return m_powerFeedDropHasBeenSet; }
-    inline void SetPowerFeedDrop(const PowerFeedDrop& value) { m_powerFeedDropHasBeenSet = true; m_powerFeedDrop = value; }
-    inline void SetPowerFeedDrop(PowerFeedDrop&& value) { m_powerFeedDropHasBeenSet = true; m_powerFeedDrop = std::move(value); }
-    inline RackPhysicalProperties& WithPowerFeedDrop(const PowerFeedDrop& value) { SetPowerFeedDrop(value); return *this;}
-    inline RackPhysicalProperties& WithPowerFeedDrop(PowerFeedDrop&& value) { SetPowerFeedDrop(std::move(value)); return *this;}
+    inline void SetPowerFeedDrop(PowerFeedDrop value) { m_powerFeedDropHasBeenSet = true; m_powerFeedDrop = value; }
+    inline RackPhysicalProperties& WithPowerFeedDrop(PowerFeedDrop value) { SetPowerFeedDrop(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The uplink speed the rack supports for the connection to the Region. </p>
      */
-    inline const UplinkGbps& GetUplinkGbps() const{ return m_uplinkGbps; }
+    inline UplinkGbps GetUplinkGbps() const { return m_uplinkGbps; }
     inline bool UplinkGbpsHasBeenSet() const { return m_uplinkGbpsHasBeenSet; }
-    inline void SetUplinkGbps(const UplinkGbps& value) { m_uplinkGbpsHasBeenSet = true; m_uplinkGbps = value; }
-    inline void SetUplinkGbps(UplinkGbps&& value) { m_uplinkGbpsHasBeenSet = true; m_uplinkGbps = std::move(value); }
-    inline RackPhysicalProperties& WithUplinkGbps(const UplinkGbps& value) { SetUplinkGbps(value); return *this;}
-    inline RackPhysicalProperties& WithUplinkGbps(UplinkGbps&& value) { SetUplinkGbps(std::move(value)); return *this;}
+    inline void SetUplinkGbps(UplinkGbps value) { m_uplinkGbpsHasBeenSet = true; m_uplinkGbps = value; }
+    inline RackPhysicalProperties& WithUplinkGbps(UplinkGbps value) { SetUplinkGbps(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of uplinks each Outpost network device.</p>
      */
-    inline const UplinkCount& GetUplinkCount() const{ return m_uplinkCount; }
+    inline UplinkCount GetUplinkCount() const { return m_uplinkCount; }
     inline bool UplinkCountHasBeenSet() const { return m_uplinkCountHasBeenSet; }
-    inline void SetUplinkCount(const UplinkCount& value) { m_uplinkCountHasBeenSet = true; m_uplinkCount = value; }
-    inline void SetUplinkCount(UplinkCount&& value) { m_uplinkCountHasBeenSet = true; m_uplinkCount = std::move(value); }
-    inline RackPhysicalProperties& WithUplinkCount(const UplinkCount& value) { SetUplinkCount(value); return *this;}
-    inline RackPhysicalProperties& WithUplinkCount(UplinkCount&& value) { SetUplinkCount(std::move(value)); return *this;}
+    inline void SetUplinkCount(UplinkCount value) { m_uplinkCountHasBeenSet = true; m_uplinkCount = value; }
+    inline RackPhysicalProperties& WithUplinkCount(UplinkCount value) { SetUplinkCount(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of fiber used to attach the Outpost to the network. </p>
      */
-    inline const FiberOpticCableType& GetFiberOpticCableType() const{ return m_fiberOpticCableType; }
+    inline FiberOpticCableType GetFiberOpticCableType() const { return m_fiberOpticCableType; }
     inline bool FiberOpticCableTypeHasBeenSet() const { return m_fiberOpticCableTypeHasBeenSet; }
-    inline void SetFiberOpticCableType(const FiberOpticCableType& value) { m_fiberOpticCableTypeHasBeenSet = true; m_fiberOpticCableType = value; }
-    inline void SetFiberOpticCableType(FiberOpticCableType&& value) { m_fiberOpticCableTypeHasBeenSet = true; m_fiberOpticCableType = std::move(value); }
-    inline RackPhysicalProperties& WithFiberOpticCableType(const FiberOpticCableType& value) { SetFiberOpticCableType(value); return *this;}
-    inline RackPhysicalProperties& WithFiberOpticCableType(FiberOpticCableType&& value) { SetFiberOpticCableType(std::move(value)); return *this;}
+    inline void SetFiberOpticCableType(FiberOpticCableType value) { m_fiberOpticCableTypeHasBeenSet = true; m_fiberOpticCableType = value; }
+    inline RackPhysicalProperties& WithFiberOpticCableType(FiberOpticCableType value) { SetFiberOpticCableType(value); return *this;}
     ///@}
 
     ///@{
@@ -142,12 +128,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
      * in the Amazon Web Services Outposts User Guide. </p>
      */
-    inline const OpticalStandard& GetOpticalStandard() const{ return m_opticalStandard; }
+    inline OpticalStandard GetOpticalStandard() const { return m_opticalStandard; }
     inline bool OpticalStandardHasBeenSet() const { return m_opticalStandardHasBeenSet; }
-    inline void SetOpticalStandard(const OpticalStandard& value) { m_opticalStandardHasBeenSet = true; m_opticalStandard = value; }
-    inline void SetOpticalStandard(OpticalStandard&& value) { m_opticalStandardHasBeenSet = true; m_opticalStandard = std::move(value); }
-    inline RackPhysicalProperties& WithOpticalStandard(const OpticalStandard& value) { SetOpticalStandard(value); return *this;}
-    inline RackPhysicalProperties& WithOpticalStandard(OpticalStandard&& value) { SetOpticalStandard(std::move(value)); return *this;}
+    inline void SetOpticalStandard(OpticalStandard value) { m_opticalStandardHasBeenSet = true; m_opticalStandard = value; }
+    inline RackPhysicalProperties& WithOpticalStandard(OpticalStandard value) { SetOpticalStandard(value); return *this;}
     ///@}
 
     ///@{
@@ -155,40 +139,38 @@ namespace Model
      * <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is
      * over 2000 lbs (907 kg). </p>
      */
-    inline const MaximumSupportedWeightLbs& GetMaximumSupportedWeightLbs() const{ return m_maximumSupportedWeightLbs; }
+    inline MaximumSupportedWeightLbs GetMaximumSupportedWeightLbs() const { return m_maximumSupportedWeightLbs; }
     inline bool MaximumSupportedWeightLbsHasBeenSet() const { return m_maximumSupportedWeightLbsHasBeenSet; }
-    inline void SetMaximumSupportedWeightLbs(const MaximumSupportedWeightLbs& value) { m_maximumSupportedWeightLbsHasBeenSet = true; m_maximumSupportedWeightLbs = value; }
-    inline void SetMaximumSupportedWeightLbs(MaximumSupportedWeightLbs&& value) { m_maximumSupportedWeightLbsHasBeenSet = true; m_maximumSupportedWeightLbs = std::move(value); }
-    inline RackPhysicalProperties& WithMaximumSupportedWeightLbs(const MaximumSupportedWeightLbs& value) { SetMaximumSupportedWeightLbs(value); return *this;}
-    inline RackPhysicalProperties& WithMaximumSupportedWeightLbs(MaximumSupportedWeightLbs&& value) { SetMaximumSupportedWeightLbs(std::move(value)); return *this;}
+    inline void SetMaximumSupportedWeightLbs(MaximumSupportedWeightLbs value) { m_maximumSupportedWeightLbsHasBeenSet = true; m_maximumSupportedWeightLbs = value; }
+    inline RackPhysicalProperties& WithMaximumSupportedWeightLbs(MaximumSupportedWeightLbs value) { SetMaximumSupportedWeightLbs(value); return *this;}
     ///@}
   private:
 
-    PowerDrawKva m_powerDrawKva;
+    PowerDrawKva m_powerDrawKva{PowerDrawKva::NOT_SET};
     bool m_powerDrawKvaHasBeenSet = false;
 
-    PowerPhase m_powerPhase;
+    PowerPhase m_powerPhase{PowerPhase::NOT_SET};
     bool m_powerPhaseHasBeenSet = false;
 
-    PowerConnector m_powerConnector;
+    PowerConnector m_powerConnector{PowerConnector::NOT_SET};
     bool m_powerConnectorHasBeenSet = false;
 
-    PowerFeedDrop m_powerFeedDrop;
+    PowerFeedDrop m_powerFeedDrop{PowerFeedDrop::NOT_SET};
     bool m_powerFeedDropHasBeenSet = false;
 
-    UplinkGbps m_uplinkGbps;
+    UplinkGbps m_uplinkGbps{UplinkGbps::NOT_SET};
     bool m_uplinkGbpsHasBeenSet = false;
 
-    UplinkCount m_uplinkCount;
+    UplinkCount m_uplinkCount{UplinkCount::NOT_SET};
     bool m_uplinkCountHasBeenSet = false;
 
-    FiberOpticCableType m_fiberOpticCableType;
+    FiberOpticCableType m_fiberOpticCableType{FiberOpticCableType::NOT_SET};
     bool m_fiberOpticCableTypeHasBeenSet = false;
 
-    OpticalStandard m_opticalStandard;
+    OpticalStandard m_opticalStandard{OpticalStandard::NOT_SET};
     bool m_opticalStandardHasBeenSet = false;
 
-    MaximumSupportedWeightLbs m_maximumSupportedWeightLbs;
+    MaximumSupportedWeightLbs m_maximumSupportedWeightLbs{MaximumSupportedWeightLbs::NOT_SET};
     bool m_maximumSupportedWeightLbsHasBeenSet = false;
   };
 

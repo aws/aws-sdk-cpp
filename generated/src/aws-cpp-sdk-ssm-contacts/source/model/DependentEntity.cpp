@@ -18,14 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-DependentEntity::DependentEntity() : 
-    m_relationTypeHasBeenSet(false),
-    m_dependentResourceIdsHasBeenSet(false)
-{
-}
-
 DependentEntity::DependentEntity(JsonView jsonValue)
-  : DependentEntity()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DependentEntity& DependentEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RelationType"))
   {
     m_relationType = jsonValue.GetString("RelationType");
-
     m_relationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DependentResourceIds"))
   {
     Aws::Utils::Array<JsonView> dependentResourceIdsJsonList = jsonValue.GetArray("DependentResourceIds");
@@ -48,7 +39,6 @@ DependentEntity& DependentEntity::operator =(JsonView jsonValue)
     }
     m_dependentResourceIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

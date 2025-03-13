@@ -29,7 +29,7 @@ namespace Model
   class GetRotationOverrideResult
   {
   public:
-    AWS_SSMCONTACTS_API GetRotationOverrideResult();
+    AWS_SSMCONTACTS_API GetRotationOverrideResult() = default;
     AWS_SSMCONTACTS_API GetRotationOverrideResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSMCONTACTS_API GetRotationOverrideResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
      */
-    inline const Aws::String& GetRotationOverrideId() const{ return m_rotationOverrideId; }
-    inline void SetRotationOverrideId(const Aws::String& value) { m_rotationOverrideId = value; }
-    inline void SetRotationOverrideId(Aws::String&& value) { m_rotationOverrideId = std::move(value); }
-    inline void SetRotationOverrideId(const char* value) { m_rotationOverrideId.assign(value); }
-    inline GetRotationOverrideResult& WithRotationOverrideId(const Aws::String& value) { SetRotationOverrideId(value); return *this;}
-    inline GetRotationOverrideResult& WithRotationOverrideId(Aws::String&& value) { SetRotationOverrideId(std::move(value)); return *this;}
-    inline GetRotationOverrideResult& WithRotationOverrideId(const char* value) { SetRotationOverrideId(value); return *this;}
+    inline const Aws::String& GetRotationOverrideId() const { return m_rotationOverrideId; }
+    template<typename RotationOverrideIdT = Aws::String>
+    void SetRotationOverrideId(RotationOverrideIdT&& value) { m_rotationOverrideIdHasBeenSet = true; m_rotationOverrideId = std::forward<RotationOverrideIdT>(value); }
+    template<typename RotationOverrideIdT = Aws::String>
+    GetRotationOverrideResult& WithRotationOverrideId(RotationOverrideIdT&& value) { SetRotationOverrideId(std::forward<RotationOverrideIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,13 +50,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the on-call rotation that was
      * overridden.</p>
      */
-    inline const Aws::String& GetRotationArn() const{ return m_rotationArn; }
-    inline void SetRotationArn(const Aws::String& value) { m_rotationArn = value; }
-    inline void SetRotationArn(Aws::String&& value) { m_rotationArn = std::move(value); }
-    inline void SetRotationArn(const char* value) { m_rotationArn.assign(value); }
-    inline GetRotationOverrideResult& WithRotationArn(const Aws::String& value) { SetRotationArn(value); return *this;}
-    inline GetRotationOverrideResult& WithRotationArn(Aws::String&& value) { SetRotationArn(std::move(value)); return *this;}
-    inline GetRotationOverrideResult& WithRotationArn(const char* value) { SetRotationArn(value); return *this;}
+    inline const Aws::String& GetRotationArn() const { return m_rotationArn; }
+    template<typename RotationArnT = Aws::String>
+    void SetRotationArn(RotationArnT&& value) { m_rotationArnHasBeenSet = true; m_rotationArn = std::forward<RotationArnT>(value); }
+    template<typename RotationArnT = Aws::String>
+    GetRotationOverrideResult& WithRotationArn(RotationArnT&& value) { SetRotationArn(std::forward<RotationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,74 +62,78 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of
      * the on-call rotation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNewContactIds() const{ return m_newContactIds; }
-    inline void SetNewContactIds(const Aws::Vector<Aws::String>& value) { m_newContactIds = value; }
-    inline void SetNewContactIds(Aws::Vector<Aws::String>&& value) { m_newContactIds = std::move(value); }
-    inline GetRotationOverrideResult& WithNewContactIds(const Aws::Vector<Aws::String>& value) { SetNewContactIds(value); return *this;}
-    inline GetRotationOverrideResult& WithNewContactIds(Aws::Vector<Aws::String>&& value) { SetNewContactIds(std::move(value)); return *this;}
-    inline GetRotationOverrideResult& AddNewContactIds(const Aws::String& value) { m_newContactIds.push_back(value); return *this; }
-    inline GetRotationOverrideResult& AddNewContactIds(Aws::String&& value) { m_newContactIds.push_back(std::move(value)); return *this; }
-    inline GetRotationOverrideResult& AddNewContactIds(const char* value) { m_newContactIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetNewContactIds() const { return m_newContactIds; }
+    template<typename NewContactIdsT = Aws::Vector<Aws::String>>
+    void SetNewContactIds(NewContactIdsT&& value) { m_newContactIdsHasBeenSet = true; m_newContactIds = std::forward<NewContactIdsT>(value); }
+    template<typename NewContactIdsT = Aws::Vector<Aws::String>>
+    GetRotationOverrideResult& WithNewContactIds(NewContactIdsT&& value) { SetNewContactIds(std::forward<NewContactIdsT>(value)); return *this;}
+    template<typename NewContactIdsT = Aws::String>
+    GetRotationOverrideResult& AddNewContactIds(NewContactIdsT&& value) { m_newContactIdsHasBeenSet = true; m_newContactIds.emplace_back(std::forward<NewContactIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the override goes into effect.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline GetRotationOverrideResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetRotationOverrideResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetRotationOverrideResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the override ends.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline GetRotationOverrideResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetRotationOverrideResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetRotationOverrideResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the override was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-    inline GetRotationOverrideResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline GetRotationOverrideResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    GetRotationOverrideResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRotationOverrideResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRotationOverrideResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRotationOverrideResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRotationOverrideResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_rotationOverrideId;
+    bool m_rotationOverrideIdHasBeenSet = false;
 
     Aws::String m_rotationArn;
+    bool m_rotationArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_newContactIds;
+    bool m_newContactIdsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

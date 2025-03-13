@@ -18,15 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-MessageDetail::MessageDetail() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
-{
-}
-
 MessageDetail::MessageDetail(JsonView jsonValue)
-  : MessageDetail()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MessageDetail& MessageDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceName"))
   {
     m_resourceName = jsonValue.GetString("resourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

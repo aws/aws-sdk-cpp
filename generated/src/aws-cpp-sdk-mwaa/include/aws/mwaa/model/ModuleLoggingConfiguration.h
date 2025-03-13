@@ -33,7 +33,7 @@ namespace Model
   class ModuleLoggingConfiguration
   {
   public:
-    AWS_MWAA_API ModuleLoggingConfiguration();
+    AWS_MWAA_API ModuleLoggingConfiguration() = default;
     AWS_MWAA_API ModuleLoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MWAA_API ModuleLoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Indicates whether the Apache Airflow log type (e.g.
      * <code>DagProcessingLogs</code>) is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ModuleLoggingConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -55,12 +55,10 @@ namespace Model
      * <p>The Apache Airflow log level for the log type (e.g.
      * <code>DagProcessingLogs</code>). </p>
      */
-    inline const LoggingLevel& GetLogLevel() const{ return m_logLevel; }
+    inline LoggingLevel GetLogLevel() const { return m_logLevel; }
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-    inline void SetLogLevel(const LoggingLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-    inline void SetLogLevel(LoggingLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-    inline ModuleLoggingConfiguration& WithLogLevel(const LoggingLevel& value) { SetLogLevel(value); return *this;}
-    inline ModuleLoggingConfiguration& WithLogLevel(LoggingLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline void SetLogLevel(LoggingLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline ModuleLoggingConfiguration& WithLogLevel(LoggingLevel value) { SetLogLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -70,21 +68,19 @@ namespace Model
      * example,
      * <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>.</p>
      */
-    inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
+    inline const Aws::String& GetCloudWatchLogGroupArn() const { return m_cloudWatchLogGroupArn; }
     inline bool CloudWatchLogGroupArnHasBeenSet() const { return m_cloudWatchLogGroupArnHasBeenSet; }
-    inline void SetCloudWatchLogGroupArn(const Aws::String& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = value; }
-    inline void SetCloudWatchLogGroupArn(Aws::String&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::move(value); }
-    inline void SetCloudWatchLogGroupArn(const char* value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn.assign(value); }
-    inline ModuleLoggingConfiguration& WithCloudWatchLogGroupArn(const Aws::String& value) { SetCloudWatchLogGroupArn(value); return *this;}
-    inline ModuleLoggingConfiguration& WithCloudWatchLogGroupArn(Aws::String&& value) { SetCloudWatchLogGroupArn(std::move(value)); return *this;}
-    inline ModuleLoggingConfiguration& WithCloudWatchLogGroupArn(const char* value) { SetCloudWatchLogGroupArn(value); return *this;}
+    template<typename CloudWatchLogGroupArnT = Aws::String>
+    void SetCloudWatchLogGroupArn(CloudWatchLogGroupArnT&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::forward<CloudWatchLogGroupArnT>(value); }
+    template<typename CloudWatchLogGroupArnT = Aws::String>
+    ModuleLoggingConfiguration& WithCloudWatchLogGroupArn(CloudWatchLogGroupArnT&& value) { SetCloudWatchLogGroupArn(std::forward<CloudWatchLogGroupArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    LoggingLevel m_logLevel;
+    LoggingLevel m_logLevel{LoggingLevel::NOT_SET};
     bool m_logLevelHasBeenSet = false;
 
     Aws::String m_cloudWatchLogGroupArn;

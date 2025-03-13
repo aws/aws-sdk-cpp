@@ -43,7 +43,7 @@ namespace Model
   class IcebergDestinationUpdate
   {
   public:
-    AWS_FIREHOSE_API IcebergDestinationUpdate();
+    AWS_FIREHOSE_API IcebergDestinationUpdate() = default;
     AWS_FIREHOSE_API IcebergDestinationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API IcebergDestinationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,14 @@ namespace Model
      * Firehose uses to deliver data to Apache Iceberg Tables. Firehose will write data
      * with insert if table specific configuration is not provided here.</p>
      */
-    inline const Aws::Vector<DestinationTableConfiguration>& GetDestinationTableConfigurationList() const{ return m_destinationTableConfigurationList; }
+    inline const Aws::Vector<DestinationTableConfiguration>& GetDestinationTableConfigurationList() const { return m_destinationTableConfigurationList; }
     inline bool DestinationTableConfigurationListHasBeenSet() const { return m_destinationTableConfigurationListHasBeenSet; }
-    inline void SetDestinationTableConfigurationList(const Aws::Vector<DestinationTableConfiguration>& value) { m_destinationTableConfigurationListHasBeenSet = true; m_destinationTableConfigurationList = value; }
-    inline void SetDestinationTableConfigurationList(Aws::Vector<DestinationTableConfiguration>&& value) { m_destinationTableConfigurationListHasBeenSet = true; m_destinationTableConfigurationList = std::move(value); }
-    inline IcebergDestinationUpdate& WithDestinationTableConfigurationList(const Aws::Vector<DestinationTableConfiguration>& value) { SetDestinationTableConfigurationList(value); return *this;}
-    inline IcebergDestinationUpdate& WithDestinationTableConfigurationList(Aws::Vector<DestinationTableConfiguration>&& value) { SetDestinationTableConfigurationList(std::move(value)); return *this;}
-    inline IcebergDestinationUpdate& AddDestinationTableConfigurationList(const DestinationTableConfiguration& value) { m_destinationTableConfigurationListHasBeenSet = true; m_destinationTableConfigurationList.push_back(value); return *this; }
-    inline IcebergDestinationUpdate& AddDestinationTableConfigurationList(DestinationTableConfiguration&& value) { m_destinationTableConfigurationListHasBeenSet = true; m_destinationTableConfigurationList.push_back(std::move(value)); return *this; }
+    template<typename DestinationTableConfigurationListT = Aws::Vector<DestinationTableConfiguration>>
+    void SetDestinationTableConfigurationList(DestinationTableConfigurationListT&& value) { m_destinationTableConfigurationListHasBeenSet = true; m_destinationTableConfigurationList = std::forward<DestinationTableConfigurationListT>(value); }
+    template<typename DestinationTableConfigurationListT = Aws::Vector<DestinationTableConfiguration>>
+    IcebergDestinationUpdate& WithDestinationTableConfigurationList(DestinationTableConfigurationListT&& value) { SetDestinationTableConfigurationList(std::forward<DestinationTableConfigurationListT>(value)); return *this;}
+    template<typename DestinationTableConfigurationListT = DestinationTableConfiguration>
+    IcebergDestinationUpdate& AddDestinationTableConfigurationList(DestinationTableConfigurationListT&& value) { m_destinationTableConfigurationListHasBeenSet = true; m_destinationTableConfigurationList.emplace_back(std::forward<DestinationTableConfigurationListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -70,12 +70,12 @@ namespace Model
      * <p> The configuration to enable automatic schema evolution. </p> <p>Amazon Data
      * Firehose is in preview release and is subject to change.</p>
      */
-    inline const SchemaEvolutionConfiguration& GetSchemaEvolutionConfiguration() const{ return m_schemaEvolutionConfiguration; }
+    inline const SchemaEvolutionConfiguration& GetSchemaEvolutionConfiguration() const { return m_schemaEvolutionConfiguration; }
     inline bool SchemaEvolutionConfigurationHasBeenSet() const { return m_schemaEvolutionConfigurationHasBeenSet; }
-    inline void SetSchemaEvolutionConfiguration(const SchemaEvolutionConfiguration& value) { m_schemaEvolutionConfigurationHasBeenSet = true; m_schemaEvolutionConfiguration = value; }
-    inline void SetSchemaEvolutionConfiguration(SchemaEvolutionConfiguration&& value) { m_schemaEvolutionConfigurationHasBeenSet = true; m_schemaEvolutionConfiguration = std::move(value); }
-    inline IcebergDestinationUpdate& WithSchemaEvolutionConfiguration(const SchemaEvolutionConfiguration& value) { SetSchemaEvolutionConfiguration(value); return *this;}
-    inline IcebergDestinationUpdate& WithSchemaEvolutionConfiguration(SchemaEvolutionConfiguration&& value) { SetSchemaEvolutionConfiguration(std::move(value)); return *this;}
+    template<typename SchemaEvolutionConfigurationT = SchemaEvolutionConfiguration>
+    void SetSchemaEvolutionConfiguration(SchemaEvolutionConfigurationT&& value) { m_schemaEvolutionConfigurationHasBeenSet = true; m_schemaEvolutionConfiguration = std::forward<SchemaEvolutionConfigurationT>(value); }
+    template<typename SchemaEvolutionConfigurationT = SchemaEvolutionConfiguration>
+    IcebergDestinationUpdate& WithSchemaEvolutionConfiguration(SchemaEvolutionConfigurationT&& value) { SetSchemaEvolutionConfiguration(std::forward<SchemaEvolutionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,42 +83,42 @@ namespace Model
      * <p> The configuration to enable automatic table creation. </p> <p>Amazon Data
      * Firehose is in preview release and is subject to change.</p>
      */
-    inline const TableCreationConfiguration& GetTableCreationConfiguration() const{ return m_tableCreationConfiguration; }
+    inline const TableCreationConfiguration& GetTableCreationConfiguration() const { return m_tableCreationConfiguration; }
     inline bool TableCreationConfigurationHasBeenSet() const { return m_tableCreationConfigurationHasBeenSet; }
-    inline void SetTableCreationConfiguration(const TableCreationConfiguration& value) { m_tableCreationConfigurationHasBeenSet = true; m_tableCreationConfiguration = value; }
-    inline void SetTableCreationConfiguration(TableCreationConfiguration&& value) { m_tableCreationConfigurationHasBeenSet = true; m_tableCreationConfiguration = std::move(value); }
-    inline IcebergDestinationUpdate& WithTableCreationConfiguration(const TableCreationConfiguration& value) { SetTableCreationConfiguration(value); return *this;}
-    inline IcebergDestinationUpdate& WithTableCreationConfiguration(TableCreationConfiguration&& value) { SetTableCreationConfiguration(std::move(value)); return *this;}
+    template<typename TableCreationConfigurationT = TableCreationConfiguration>
+    void SetTableCreationConfiguration(TableCreationConfigurationT&& value) { m_tableCreationConfigurationHasBeenSet = true; m_tableCreationConfiguration = std::forward<TableCreationConfigurationT>(value); }
+    template<typename TableCreationConfigurationT = TableCreationConfiguration>
+    IcebergDestinationUpdate& WithTableCreationConfiguration(TableCreationConfigurationT&& value) { SetTableCreationConfiguration(std::forward<TableCreationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
+    inline const BufferingHints& GetBufferingHints() const { return m_bufferingHints; }
     inline bool BufferingHintsHasBeenSet() const { return m_bufferingHintsHasBeenSet; }
-    inline void SetBufferingHints(const BufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
-    inline void SetBufferingHints(BufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
-    inline IcebergDestinationUpdate& WithBufferingHints(const BufferingHints& value) { SetBufferingHints(value); return *this;}
-    inline IcebergDestinationUpdate& WithBufferingHints(BufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
+    template<typename BufferingHintsT = BufferingHints>
+    void SetBufferingHints(BufferingHintsT&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::forward<BufferingHintsT>(value); }
+    template<typename BufferingHintsT = BufferingHints>
+    IcebergDestinationUpdate& WithBufferingHints(BufferingHintsT&& value) { SetBufferingHints(std::forward<BufferingHintsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const { return m_cloudWatchLoggingOptions; }
     inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
-    inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
-    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
-    inline IcebergDestinationUpdate& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
-    inline IcebergDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    void SetCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::forward<CloudWatchLoggingOptionsT>(value); }
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    IcebergDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { SetCloudWatchLoggingOptions(std::forward<CloudWatchLoggingOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ProcessingConfiguration& GetProcessingConfiguration() const{ return m_processingConfiguration; }
+    inline const ProcessingConfiguration& GetProcessingConfiguration() const { return m_processingConfiguration; }
     inline bool ProcessingConfigurationHasBeenSet() const { return m_processingConfigurationHasBeenSet; }
-    inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
-    inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::move(value); }
-    inline IcebergDestinationUpdate& WithProcessingConfiguration(const ProcessingConfiguration& value) { SetProcessingConfiguration(value); return *this;}
-    inline IcebergDestinationUpdate& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
+    template<typename ProcessingConfigurationT = ProcessingConfiguration>
+    void SetProcessingConfiguration(ProcessingConfigurationT&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::forward<ProcessingConfigurationT>(value); }
+    template<typename ProcessingConfigurationT = ProcessingConfiguration>
+    IcebergDestinationUpdate& WithProcessingConfiguration(ProcessingConfigurationT&& value) { SetProcessingConfiguration(std::forward<ProcessingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,22 +126,20 @@ namespace Model
      * <p> Describes how Firehose will backup records. Currently,Firehose only supports
      * <code>FailedDataOnly</code>. </p>
      */
-    inline const IcebergS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
+    inline IcebergS3BackupMode GetS3BackupMode() const { return m_s3BackupMode; }
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
-    inline void SetS3BackupMode(const IcebergS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
-    inline void SetS3BackupMode(IcebergS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
-    inline IcebergDestinationUpdate& WithS3BackupMode(const IcebergS3BackupMode& value) { SetS3BackupMode(value); return *this;}
-    inline IcebergDestinationUpdate& WithS3BackupMode(IcebergS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
+    inline void SetS3BackupMode(IcebergS3BackupMode value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
+    inline IcebergDestinationUpdate& WithS3BackupMode(IcebergS3BackupMode value) { SetS3BackupMode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const RetryOptions& GetRetryOptions() const{ return m_retryOptions; }
+    inline const RetryOptions& GetRetryOptions() const { return m_retryOptions; }
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
-    inline void SetRetryOptions(const RetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
-    inline void SetRetryOptions(RetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
-    inline IcebergDestinationUpdate& WithRetryOptions(const RetryOptions& value) { SetRetryOptions(value); return *this;}
-    inline IcebergDestinationUpdate& WithRetryOptions(RetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
+    template<typename RetryOptionsT = RetryOptions>
+    void SetRetryOptions(RetryOptionsT&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::forward<RetryOptionsT>(value); }
+    template<typename RetryOptionsT = RetryOptions>
+    IcebergDestinationUpdate& WithRetryOptions(RetryOptionsT&& value) { SetRetryOptions(std::forward<RetryOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,14 +147,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
      * calling Apache Iceberg Tables. </p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline IcebergDestinationUpdate& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline IcebergDestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline IcebergDestinationUpdate& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    IcebergDestinationUpdate& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,7 +165,7 @@ namespace Model
      * you set this parameter to true for a stream with updates and deletes, you will
      * see out of order delivery. </p>
      */
-    inline bool GetAppendOnly() const{ return m_appendOnly; }
+    inline bool GetAppendOnly() const { return m_appendOnly; }
     inline bool AppendOnlyHasBeenSet() const { return m_appendOnlyHasBeenSet; }
     inline void SetAppendOnly(bool value) { m_appendOnlyHasBeenSet = true; m_appendOnly = value; }
     inline IcebergDestinationUpdate& WithAppendOnly(bool value) { SetAppendOnly(value); return *this;}
@@ -180,22 +176,22 @@ namespace Model
      * <p> Configuration describing where the destination Iceberg tables are persisted.
      * </p>
      */
-    inline const CatalogConfiguration& GetCatalogConfiguration() const{ return m_catalogConfiguration; }
+    inline const CatalogConfiguration& GetCatalogConfiguration() const { return m_catalogConfiguration; }
     inline bool CatalogConfigurationHasBeenSet() const { return m_catalogConfigurationHasBeenSet; }
-    inline void SetCatalogConfiguration(const CatalogConfiguration& value) { m_catalogConfigurationHasBeenSet = true; m_catalogConfiguration = value; }
-    inline void SetCatalogConfiguration(CatalogConfiguration&& value) { m_catalogConfigurationHasBeenSet = true; m_catalogConfiguration = std::move(value); }
-    inline IcebergDestinationUpdate& WithCatalogConfiguration(const CatalogConfiguration& value) { SetCatalogConfiguration(value); return *this;}
-    inline IcebergDestinationUpdate& WithCatalogConfiguration(CatalogConfiguration&& value) { SetCatalogConfiguration(std::move(value)); return *this;}
+    template<typename CatalogConfigurationT = CatalogConfiguration>
+    void SetCatalogConfiguration(CatalogConfigurationT&& value) { m_catalogConfigurationHasBeenSet = true; m_catalogConfiguration = std::forward<CatalogConfigurationT>(value); }
+    template<typename CatalogConfigurationT = CatalogConfiguration>
+    IcebergDestinationUpdate& WithCatalogConfiguration(CatalogConfigurationT&& value) { SetCatalogConfiguration(std::forward<CatalogConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3DestinationConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const S3DestinationConfiguration& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const S3DestinationConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(S3DestinationConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline IcebergDestinationUpdate& WithS3Configuration(const S3DestinationConfiguration& value) { SetS3Configuration(value); return *this;}
-    inline IcebergDestinationUpdate& WithS3Configuration(S3DestinationConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = S3DestinationConfiguration>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = S3DestinationConfiguration>
+    IcebergDestinationUpdate& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -217,7 +213,7 @@ namespace Model
     ProcessingConfiguration m_processingConfiguration;
     bool m_processingConfigurationHasBeenSet = false;
 
-    IcebergS3BackupMode m_s3BackupMode;
+    IcebergS3BackupMode m_s3BackupMode{IcebergS3BackupMode::NOT_SET};
     bool m_s3BackupModeHasBeenSet = false;
 
     RetryOptions m_retryOptions;
@@ -226,7 +222,7 @@ namespace Model
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet = false;
 
-    bool m_appendOnly;
+    bool m_appendOnly{false};
     bool m_appendOnlyHasBeenSet = false;
 
     CatalogConfiguration m_catalogConfiguration;

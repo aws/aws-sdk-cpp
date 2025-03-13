@@ -24,7 +24,7 @@ namespace Model
   class StartNetworkResourceUpdateRequest : public PrivateNetworksRequest
   {
   public:
-    AWS_PRIVATENETWORKS_API StartNetworkResourceUpdateRequest();
+    AWS_PRIVATENETWORKS_API StartNetworkResourceUpdateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,40 +54,36 @@ namespace Model
      * href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G
      * Pricing</a>.</p>
      */
-    inline const CommitmentConfiguration& GetCommitmentConfiguration() const{ return m_commitmentConfiguration; }
+    inline const CommitmentConfiguration& GetCommitmentConfiguration() const { return m_commitmentConfiguration; }
     inline bool CommitmentConfigurationHasBeenSet() const { return m_commitmentConfigurationHasBeenSet; }
-    inline void SetCommitmentConfiguration(const CommitmentConfiguration& value) { m_commitmentConfigurationHasBeenSet = true; m_commitmentConfiguration = value; }
-    inline void SetCommitmentConfiguration(CommitmentConfiguration&& value) { m_commitmentConfigurationHasBeenSet = true; m_commitmentConfiguration = std::move(value); }
-    inline StartNetworkResourceUpdateRequest& WithCommitmentConfiguration(const CommitmentConfiguration& value) { SetCommitmentConfiguration(value); return *this;}
-    inline StartNetworkResourceUpdateRequest& WithCommitmentConfiguration(CommitmentConfiguration&& value) { SetCommitmentConfiguration(std::move(value)); return *this;}
+    template<typename CommitmentConfigurationT = CommitmentConfiguration>
+    void SetCommitmentConfiguration(CommitmentConfigurationT&& value) { m_commitmentConfigurationHasBeenSet = true; m_commitmentConfiguration = std::forward<CommitmentConfigurationT>(value); }
+    template<typename CommitmentConfigurationT = CommitmentConfiguration>
+    StartNetworkResourceUpdateRequest& WithCommitmentConfiguration(CommitmentConfigurationT&& value) { SetCommitmentConfiguration(std::forward<CommitmentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the network resource.</p>
      */
-    inline const Aws::String& GetNetworkResourceArn() const{ return m_networkResourceArn; }
+    inline const Aws::String& GetNetworkResourceArn() const { return m_networkResourceArn; }
     inline bool NetworkResourceArnHasBeenSet() const { return m_networkResourceArnHasBeenSet; }
-    inline void SetNetworkResourceArn(const Aws::String& value) { m_networkResourceArnHasBeenSet = true; m_networkResourceArn = value; }
-    inline void SetNetworkResourceArn(Aws::String&& value) { m_networkResourceArnHasBeenSet = true; m_networkResourceArn = std::move(value); }
-    inline void SetNetworkResourceArn(const char* value) { m_networkResourceArnHasBeenSet = true; m_networkResourceArn.assign(value); }
-    inline StartNetworkResourceUpdateRequest& WithNetworkResourceArn(const Aws::String& value) { SetNetworkResourceArn(value); return *this;}
-    inline StartNetworkResourceUpdateRequest& WithNetworkResourceArn(Aws::String&& value) { SetNetworkResourceArn(std::move(value)); return *this;}
-    inline StartNetworkResourceUpdateRequest& WithNetworkResourceArn(const char* value) { SetNetworkResourceArn(value); return *this;}
+    template<typename NetworkResourceArnT = Aws::String>
+    void SetNetworkResourceArn(NetworkResourceArnT&& value) { m_networkResourceArnHasBeenSet = true; m_networkResourceArn = std::forward<NetworkResourceArnT>(value); }
+    template<typename NetworkResourceArnT = Aws::String>
+    StartNetworkResourceUpdateRequest& WithNetworkResourceArn(NetworkResourceArnT&& value) { SetNetworkResourceArn(std::forward<NetworkResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the return. Providing a reason for a return is optional.</p>
      */
-    inline const Aws::String& GetReturnReason() const{ return m_returnReason; }
+    inline const Aws::String& GetReturnReason() const { return m_returnReason; }
     inline bool ReturnReasonHasBeenSet() const { return m_returnReasonHasBeenSet; }
-    inline void SetReturnReason(const Aws::String& value) { m_returnReasonHasBeenSet = true; m_returnReason = value; }
-    inline void SetReturnReason(Aws::String&& value) { m_returnReasonHasBeenSet = true; m_returnReason = std::move(value); }
-    inline void SetReturnReason(const char* value) { m_returnReasonHasBeenSet = true; m_returnReason.assign(value); }
-    inline StartNetworkResourceUpdateRequest& WithReturnReason(const Aws::String& value) { SetReturnReason(value); return *this;}
-    inline StartNetworkResourceUpdateRequest& WithReturnReason(Aws::String&& value) { SetReturnReason(std::move(value)); return *this;}
-    inline StartNetworkResourceUpdateRequest& WithReturnReason(const char* value) { SetReturnReason(value); return *this;}
+    template<typename ReturnReasonT = Aws::String>
+    void SetReturnReason(ReturnReasonT&& value) { m_returnReasonHasBeenSet = true; m_returnReason = std::forward<ReturnReasonT>(value); }
+    template<typename ReturnReasonT = Aws::String>
+    StartNetworkResourceUpdateRequest& WithReturnReason(ReturnReasonT&& value) { SetReturnReason(std::forward<ReturnReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +92,12 @@ namespace Model
      * or returning a network resource, we use the address from the original order for
      * the network resource.</p>
      */
-    inline const Address& GetShippingAddress() const{ return m_shippingAddress; }
+    inline const Address& GetShippingAddress() const { return m_shippingAddress; }
     inline bool ShippingAddressHasBeenSet() const { return m_shippingAddressHasBeenSet; }
-    inline void SetShippingAddress(const Address& value) { m_shippingAddressHasBeenSet = true; m_shippingAddress = value; }
-    inline void SetShippingAddress(Address&& value) { m_shippingAddressHasBeenSet = true; m_shippingAddress = std::move(value); }
-    inline StartNetworkResourceUpdateRequest& WithShippingAddress(const Address& value) { SetShippingAddress(value); return *this;}
-    inline StartNetworkResourceUpdateRequest& WithShippingAddress(Address&& value) { SetShippingAddress(std::move(value)); return *this;}
+    template<typename ShippingAddressT = Address>
+    void SetShippingAddress(ShippingAddressT&& value) { m_shippingAddressHasBeenSet = true; m_shippingAddress = std::forward<ShippingAddressT>(value); }
+    template<typename ShippingAddressT = Address>
+    StartNetworkResourceUpdateRequest& WithShippingAddress(ShippingAddressT&& value) { SetShippingAddress(std::forward<ShippingAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,12 +113,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration">
      * <code>commitmentConfiguration</code> </a>.</p> </li> </ul>
      */
-    inline const UpdateType& GetUpdateType() const{ return m_updateType; }
+    inline UpdateType GetUpdateType() const { return m_updateType; }
     inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
-    inline void SetUpdateType(const UpdateType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
-    inline void SetUpdateType(UpdateType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
-    inline StartNetworkResourceUpdateRequest& WithUpdateType(const UpdateType& value) { SetUpdateType(value); return *this;}
-    inline StartNetworkResourceUpdateRequest& WithUpdateType(UpdateType&& value) { SetUpdateType(std::move(value)); return *this;}
+    inline void SetUpdateType(UpdateType value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
+    inline StartNetworkResourceUpdateRequest& WithUpdateType(UpdateType value) { SetUpdateType(value); return *this;}
     ///@}
   private:
 
@@ -138,7 +132,7 @@ namespace Model
     Address m_shippingAddress;
     bool m_shippingAddressHasBeenSet = false;
 
-    UpdateType m_updateType;
+    UpdateType m_updateType{UpdateType::NOT_SET};
     bool m_updateTypeHasBeenSet = false;
   };
 

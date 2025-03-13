@@ -34,7 +34,7 @@ namespace Model
   class ListGroupResourcesItem
   {
   public:
-    AWS_RESOURCEGROUPS_API ListGroupResourcesItem();
+    AWS_RESOURCEGROUPS_API ListGroupResourcesItem() = default;
     AWS_RESOURCEGROUPS_API ListGroupResourcesItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API ListGroupResourcesItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
 
     ///@{
     
-    inline const ResourceIdentifier& GetIdentifier() const{ return m_identifier; }
+    inline const ResourceIdentifier& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const ResourceIdentifier& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(ResourceIdentifier&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline ListGroupResourcesItem& WithIdentifier(const ResourceIdentifier& value) { SetIdentifier(value); return *this;}
-    inline ListGroupResourcesItem& WithIdentifier(ResourceIdentifier&& value) { SetIdentifier(std::move(value)); return *this;}
+    template<typename IdentifierT = ResourceIdentifier>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = ResourceIdentifier>
+    ListGroupResourcesItem& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * group.</p>  <p>This field is present in the response only if the group is
      * of type <code>AWS::EC2::HostManagement</code>.</p> 
      */
-    inline const ResourceStatus& GetStatus() const{ return m_status; }
+    inline const ResourceStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListGroupResourcesItem& WithStatus(const ResourceStatus& value) { SetStatus(value); return *this;}
-    inline ListGroupResourcesItem& WithStatus(ResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = ResourceStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = ResourceStatus>
+    ListGroupResourcesItem& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

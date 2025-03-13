@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDatastoreResult::GetDatastoreResult()
-{
-}
-
 GetDatastoreResult::GetDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetDatastoreResult& GetDatastoreResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("datastoreProperties"))
   {
     m_datastoreProperties = jsonValue.GetObject("datastoreProperties");
-
+    m_datastorePropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-DataViewDestinationTypeParams::DataViewDestinationTypeParams() : 
-    m_destinationTypeHasBeenSet(false),
-    m_s3DestinationExportFileFormat(ExportFileFormat::NOT_SET),
-    m_s3DestinationExportFileFormatHasBeenSet(false),
-    m_s3DestinationExportFileFormatOptionsHasBeenSet(false)
-{
-}
-
 DataViewDestinationTypeParams::DataViewDestinationTypeParams(JsonView jsonValue)
-  : DataViewDestinationTypeParams()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DataViewDestinationTypeParams& DataViewDestinationTypeParams::operator =(JsonVie
   if(jsonValue.ValueExists("destinationType"))
   {
     m_destinationType = jsonValue.GetString("destinationType");
-
     m_destinationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3DestinationExportFileFormat"))
   {
     m_s3DestinationExportFileFormat = ExportFileFormatMapper::GetExportFileFormatForName(jsonValue.GetString("s3DestinationExportFileFormat"));
-
     m_s3DestinationExportFileFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3DestinationExportFileFormatOptions"))
   {
     Aws::Map<Aws::String, JsonView> s3DestinationExportFileFormatOptionsJsonMap = jsonValue.GetObject("s3DestinationExportFileFormatOptions").GetAllObjects();
@@ -57,7 +44,6 @@ DataViewDestinationTypeParams& DataViewDestinationTypeParams::operator =(JsonVie
     }
     m_s3DestinationExportFileFormatOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

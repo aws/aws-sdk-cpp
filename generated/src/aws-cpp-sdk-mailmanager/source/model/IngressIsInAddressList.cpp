@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-IngressIsInAddressList::IngressIsInAddressList() : 
-    m_addressListsHasBeenSet(false),
-    m_attribute(IngressAddressListEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
-{
-}
-
 IngressIsInAddressList::IngressIsInAddressList(JsonView jsonValue)
-  : IngressIsInAddressList()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ IngressIsInAddressList& IngressIsInAddressList::operator =(JsonView jsonValue)
     }
     m_addressListsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = IngressAddressListEmailAttributeMapper::GetIngressAddressListEmailAttributeForName(jsonValue.GetString("Attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   return *this;
 }
 

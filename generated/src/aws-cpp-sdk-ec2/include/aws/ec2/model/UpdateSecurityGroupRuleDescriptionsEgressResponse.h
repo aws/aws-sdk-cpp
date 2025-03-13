@@ -27,7 +27,7 @@ namespace Model
   class UpdateSecurityGroupRuleDescriptionsEgressResponse
   {
   public:
-    AWS_EC2_API UpdateSecurityGroupRuleDescriptionsEgressResponse();
+    AWS_EC2_API UpdateSecurityGroupRuleDescriptionsEgressResponse() = default;
     AWS_EC2_API UpdateSecurityGroupRuleDescriptionsEgressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API UpdateSecurityGroupRuleDescriptionsEgressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,24 +37,26 @@ namespace Model
      * <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
      * error.</p>
      */
-    inline bool GetReturn() const{ return m_return; }
-    inline void SetReturn(bool value) { m_return = value; }
+    inline bool GetReturn() const { return m_return; }
+    inline void SetReturn(bool value) { m_returnHasBeenSet = true; m_return = value; }
     inline UpdateSecurityGroupRuleDescriptionsEgressResponse& WithReturn(bool value) { SetReturn(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline UpdateSecurityGroupRuleDescriptionsEgressResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline UpdateSecurityGroupRuleDescriptionsEgressResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    UpdateSecurityGroupRuleDescriptionsEgressResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_return;
+    bool m_return{false};
+    bool m_returnHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

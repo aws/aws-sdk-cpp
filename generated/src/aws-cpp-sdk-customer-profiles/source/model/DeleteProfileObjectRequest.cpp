@@ -12,14 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProfileObjectRequest::DeleteProfileObjectRequest() : 
-    m_profileIdHasBeenSet(false),
-    m_profileObjectUniqueKeyHasBeenSet(false),
-    m_objectTypeNameHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProfileObjectRequest::SerializePayload() const
 {
   JsonValue payload;

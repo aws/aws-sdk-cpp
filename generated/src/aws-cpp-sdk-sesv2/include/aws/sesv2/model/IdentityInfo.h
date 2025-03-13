@@ -33,7 +33,7 @@ namespace Model
   class IdentityInfo
   {
   public:
-    AWS_SESV2_API IdentityInfo();
+    AWS_SESV2_API IdentityInfo() = default;
     AWS_SESV2_API IdentityInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API IdentityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,22 @@ namespace Model
      * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not
      * supported for email identity types.</p>
      */
-    inline const IdentityType& GetIdentityType() const{ return m_identityType; }
+    inline IdentityType GetIdentityType() const { return m_identityType; }
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
-    inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
-    inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
-    inline IdentityInfo& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
-    inline IdentityInfo& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
+    inline void SetIdentityType(IdentityType value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
+    inline IdentityInfo& WithIdentityType(IdentityType value) { SetIdentityType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The address or domain of the identity.</p>
      */
-    inline const Aws::String& GetIdentityName() const{ return m_identityName; }
+    inline const Aws::String& GetIdentityName() const { return m_identityName; }
     inline bool IdentityNameHasBeenSet() const { return m_identityNameHasBeenSet; }
-    inline void SetIdentityName(const Aws::String& value) { m_identityNameHasBeenSet = true; m_identityName = value; }
-    inline void SetIdentityName(Aws::String&& value) { m_identityNameHasBeenSet = true; m_identityName = std::move(value); }
-    inline void SetIdentityName(const char* value) { m_identityNameHasBeenSet = true; m_identityName.assign(value); }
-    inline IdentityInfo& WithIdentityName(const Aws::String& value) { SetIdentityName(value); return *this;}
-    inline IdentityInfo& WithIdentityName(Aws::String&& value) { SetIdentityName(std::move(value)); return *this;}
-    inline IdentityInfo& WithIdentityName(const char* value) { SetIdentityName(value); return *this;}
+    template<typename IdentityNameT = Aws::String>
+    void SetIdentityName(IdentityNameT&& value) { m_identityNameHasBeenSet = true; m_identityName = std::forward<IdentityNameT>(value); }
+    template<typename IdentityNameT = Aws::String>
+    IdentityInfo& WithIdentityName(IdentityNameT&& value) { SetIdentityName(std::forward<IdentityNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * identity, and that you authorize Amazon SES to send email from that
      * identity.</p>
      */
-    inline bool GetSendingEnabled() const{ return m_sendingEnabled; }
+    inline bool GetSendingEnabled() const { return m_sendingEnabled; }
     inline bool SendingEnabledHasBeenSet() const { return m_sendingEnabledHasBeenSet; }
     inline void SetSendingEnabled(bool value) { m_sendingEnabledHasBeenSet = true; m_sendingEnabled = value; }
     inline IdentityInfo& WithSendingEnabled(bool value) { SetSendingEnabled(value); return *this;}
@@ -92,25 +88,23 @@ namespace Model
      * identity.</p> </li> <li> <p> <code>NOT_STARTED</code> – The verification process
      * hasn't been initiated for the identity.</p> </li> </ul>
      */
-    inline const VerificationStatus& GetVerificationStatus() const{ return m_verificationStatus; }
+    inline VerificationStatus GetVerificationStatus() const { return m_verificationStatus; }
     inline bool VerificationStatusHasBeenSet() const { return m_verificationStatusHasBeenSet; }
-    inline void SetVerificationStatus(const VerificationStatus& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = value; }
-    inline void SetVerificationStatus(VerificationStatus&& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = std::move(value); }
-    inline IdentityInfo& WithVerificationStatus(const VerificationStatus& value) { SetVerificationStatus(value); return *this;}
-    inline IdentityInfo& WithVerificationStatus(VerificationStatus&& value) { SetVerificationStatus(std::move(value)); return *this;}
+    inline void SetVerificationStatus(VerificationStatus value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = value; }
+    inline IdentityInfo& WithVerificationStatus(VerificationStatus value) { SetVerificationStatus(value); return *this;}
     ///@}
   private:
 
-    IdentityType m_identityType;
+    IdentityType m_identityType{IdentityType::NOT_SET};
     bool m_identityTypeHasBeenSet = false;
 
     Aws::String m_identityName;
     bool m_identityNameHasBeenSet = false;
 
-    bool m_sendingEnabled;
+    bool m_sendingEnabled{false};
     bool m_sendingEnabledHasBeenSet = false;
 
-    VerificationStatus m_verificationStatus;
+    VerificationStatus m_verificationStatus{VerificationStatus::NOT_SET};
     bool m_verificationStatusHasBeenSet = false;
   };
 

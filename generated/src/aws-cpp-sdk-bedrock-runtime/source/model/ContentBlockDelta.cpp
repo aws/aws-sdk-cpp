@@ -18,15 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ContentBlockDelta::ContentBlockDelta() : 
-    m_textHasBeenSet(false),
-    m_toolUseHasBeenSet(false),
-    m_reasoningContentHasBeenSet(false)
-{
-}
-
 ContentBlockDelta::ContentBlockDelta(JsonView jsonValue)
-  : ContentBlockDelta()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ContentBlockDelta& ContentBlockDelta::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toolUse"))
   {
     m_toolUse = jsonValue.GetObject("toolUse");
-
     m_toolUseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasoningContent"))
   {
     m_reasoningContent = jsonValue.GetObject("reasoningContent");
-
     m_reasoningContentHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResetCacheRequest::ResetCacheRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String ResetCacheRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,21 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLagRequest::CreateLagRequest() : 
-    m_numberOfConnections(0),
-    m_numberOfConnectionsHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_connectionsBandwidthHasBeenSet(false),
-    m_lagNameHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_childConnectionTagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false),
-    m_requestMACSec(false),
-    m_requestMACSecHasBeenSet(false)
-{
-}
-
 Aws::String CreateLagRequest::SerializePayload() const
 {
   JsonValue payload;

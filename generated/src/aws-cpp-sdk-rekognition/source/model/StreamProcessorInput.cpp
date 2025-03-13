@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-StreamProcessorInput::StreamProcessorInput() : 
-    m_kinesisVideoStreamHasBeenSet(false)
-{
-}
-
 StreamProcessorInput::StreamProcessorInput(JsonView jsonValue)
-  : StreamProcessorInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StreamProcessorInput& StreamProcessorInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KinesisVideoStream"))
   {
     m_kinesisVideoStream = jsonValue.GetObject("KinesisVideoStream");
-
     m_kinesisVideoStreamHasBeenSet = true;
   }
-
   return *this;
 }
 

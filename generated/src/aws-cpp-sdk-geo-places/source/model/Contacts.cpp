@@ -18,16 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-Contacts::Contacts() : 
-    m_phonesHasBeenSet(false),
-    m_faxesHasBeenSet(false),
-    m_websitesHasBeenSet(false),
-    m_emailsHasBeenSet(false)
-{
-}
-
 Contacts::Contacts(JsonView jsonValue)
-  : Contacts()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ Contacts& Contacts::operator =(JsonView jsonValue)
     }
     m_phonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Faxes"))
   {
     Aws::Utils::Array<JsonView> faxesJsonList = jsonValue.GetArray("Faxes");
@@ -53,7 +43,6 @@ Contacts& Contacts::operator =(JsonView jsonValue)
     }
     m_faxesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Websites"))
   {
     Aws::Utils::Array<JsonView> websitesJsonList = jsonValue.GetArray("Websites");
@@ -63,7 +52,6 @@ Contacts& Contacts::operator =(JsonView jsonValue)
     }
     m_websitesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Emails"))
   {
     Aws::Utils::Array<JsonView> emailsJsonList = jsonValue.GetArray("Emails");
@@ -73,7 +61,6 @@ Contacts& Contacts::operator =(JsonView jsonValue)
     }
     m_emailsHasBeenSet = true;
   }
-
   return *this;
 }
 

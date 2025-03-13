@@ -18,15 +18,7 @@ namespace Textract
 namespace Model
 {
 
-SplitDocument::SplitDocument() : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_pagesHasBeenSet(false)
-{
-}
-
 SplitDocument::SplitDocument(JsonView jsonValue)
-  : SplitDocument()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ SplitDocument& SplitDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Index"))
   {
     m_index = jsonValue.GetInteger("Index");
-
     m_indexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pages"))
   {
     Aws::Utils::Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
@@ -49,7 +39,6 @@ SplitDocument& SplitDocument::operator =(JsonView jsonValue)
     }
     m_pagesHasBeenSet = true;
   }
-
   return *this;
 }
 

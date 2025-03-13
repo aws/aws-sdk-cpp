@@ -32,7 +32,7 @@ namespace Model
   class ApplicationCredential
   {
   public:
-    AWS_SSMSAP_API ApplicationCredential();
+    AWS_SSMSAP_API ApplicationCredential() = default;
     AWS_SSMSAP_API ApplicationCredential(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API ApplicationCredential& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,22 @@ namespace Model
     /**
      * <p>The name of the SAP HANA database.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline ApplicationCredential& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline ApplicationCredential& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline ApplicationCredential& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    ApplicationCredential& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the application credentials. </p>
      */
-    inline const CredentialType& GetCredentialType() const{ return m_credentialType; }
+    inline CredentialType GetCredentialType() const { return m_credentialType; }
     inline bool CredentialTypeHasBeenSet() const { return m_credentialTypeHasBeenSet; }
-    inline void SetCredentialType(const CredentialType& value) { m_credentialTypeHasBeenSet = true; m_credentialType = value; }
-    inline void SetCredentialType(CredentialType&& value) { m_credentialTypeHasBeenSet = true; m_credentialType = std::move(value); }
-    inline ApplicationCredential& WithCredentialType(const CredentialType& value) { SetCredentialType(value); return *this;}
-    inline ApplicationCredential& WithCredentialType(CredentialType&& value) { SetCredentialType(std::move(value)); return *this;}
+    inline void SetCredentialType(CredentialType value) { m_credentialTypeHasBeenSet = true; m_credentialType = value; }
+    inline ApplicationCredential& WithCredentialType(CredentialType value) { SetCredentialType(value); return *this;}
     ///@}
 
     ///@{
@@ -69,21 +65,19 @@ namespace Model
      * <p>The secret ID created in AWS Secrets Manager to store the credentials of the
      * SAP application. </p>
      */
-    inline const Aws::String& GetSecretId() const{ return m_secretId; }
+    inline const Aws::String& GetSecretId() const { return m_secretId; }
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
-    inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
-    inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
-    inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
-    inline ApplicationCredential& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
-    inline ApplicationCredential& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
-    inline ApplicationCredential& WithSecretId(const char* value) { SetSecretId(value); return *this;}
+    template<typename SecretIdT = Aws::String>
+    void SetSecretId(SecretIdT&& value) { m_secretIdHasBeenSet = true; m_secretId = std::forward<SecretIdT>(value); }
+    template<typename SecretIdT = Aws::String>
+    ApplicationCredential& WithSecretId(SecretIdT&& value) { SetSecretId(std::forward<SecretIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet = false;
 
-    CredentialType m_credentialType;
+    CredentialType m_credentialType{CredentialType::NOT_SET};
     bool m_credentialTypeHasBeenSet = false;
 
     Aws::String m_secretId;

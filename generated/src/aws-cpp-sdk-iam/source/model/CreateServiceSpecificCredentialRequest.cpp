@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-CreateServiceSpecificCredentialRequest::CreateServiceSpecificCredentialRequest() : 
-    m_userNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateServiceSpecificCredentialRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -28,7 +28,7 @@ namespace Model
   class ModifyVpcPeeringConnectionOptionsResponse
   {
   public:
-    AWS_EC2_API ModifyVpcPeeringConnectionOptionsResponse();
+    AWS_EC2_API ModifyVpcPeeringConnectionOptionsResponse() = default;
     AWS_EC2_API ModifyVpcPeeringConnectionOptionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyVpcPeeringConnectionOptionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,11 +38,11 @@ namespace Model
      * <p>Information about the VPC peering connection options for the accepter
      * VPC.</p>
      */
-    inline const PeeringConnectionOptions& GetAccepterPeeringConnectionOptions() const{ return m_accepterPeeringConnectionOptions; }
-    inline void SetAccepterPeeringConnectionOptions(const PeeringConnectionOptions& value) { m_accepterPeeringConnectionOptions = value; }
-    inline void SetAccepterPeeringConnectionOptions(PeeringConnectionOptions&& value) { m_accepterPeeringConnectionOptions = std::move(value); }
-    inline ModifyVpcPeeringConnectionOptionsResponse& WithAccepterPeeringConnectionOptions(const PeeringConnectionOptions& value) { SetAccepterPeeringConnectionOptions(value); return *this;}
-    inline ModifyVpcPeeringConnectionOptionsResponse& WithAccepterPeeringConnectionOptions(PeeringConnectionOptions&& value) { SetAccepterPeeringConnectionOptions(std::move(value)); return *this;}
+    inline const PeeringConnectionOptions& GetAccepterPeeringConnectionOptions() const { return m_accepterPeeringConnectionOptions; }
+    template<typename AccepterPeeringConnectionOptionsT = PeeringConnectionOptions>
+    void SetAccepterPeeringConnectionOptions(AccepterPeeringConnectionOptionsT&& value) { m_accepterPeeringConnectionOptionsHasBeenSet = true; m_accepterPeeringConnectionOptions = std::forward<AccepterPeeringConnectionOptionsT>(value); }
+    template<typename AccepterPeeringConnectionOptionsT = PeeringConnectionOptions>
+    ModifyVpcPeeringConnectionOptionsResponse& WithAccepterPeeringConnectionOptions(AccepterPeeringConnectionOptionsT&& value) { SetAccepterPeeringConnectionOptions(std::forward<AccepterPeeringConnectionOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,28 +50,31 @@ namespace Model
      * <p>Information about the VPC peering connection options for the requester
      * VPC.</p>
      */
-    inline const PeeringConnectionOptions& GetRequesterPeeringConnectionOptions() const{ return m_requesterPeeringConnectionOptions; }
-    inline void SetRequesterPeeringConnectionOptions(const PeeringConnectionOptions& value) { m_requesterPeeringConnectionOptions = value; }
-    inline void SetRequesterPeeringConnectionOptions(PeeringConnectionOptions&& value) { m_requesterPeeringConnectionOptions = std::move(value); }
-    inline ModifyVpcPeeringConnectionOptionsResponse& WithRequesterPeeringConnectionOptions(const PeeringConnectionOptions& value) { SetRequesterPeeringConnectionOptions(value); return *this;}
-    inline ModifyVpcPeeringConnectionOptionsResponse& WithRequesterPeeringConnectionOptions(PeeringConnectionOptions&& value) { SetRequesterPeeringConnectionOptions(std::move(value)); return *this;}
+    inline const PeeringConnectionOptions& GetRequesterPeeringConnectionOptions() const { return m_requesterPeeringConnectionOptions; }
+    template<typename RequesterPeeringConnectionOptionsT = PeeringConnectionOptions>
+    void SetRequesterPeeringConnectionOptions(RequesterPeeringConnectionOptionsT&& value) { m_requesterPeeringConnectionOptionsHasBeenSet = true; m_requesterPeeringConnectionOptions = std::forward<RequesterPeeringConnectionOptionsT>(value); }
+    template<typename RequesterPeeringConnectionOptionsT = PeeringConnectionOptions>
+    ModifyVpcPeeringConnectionOptionsResponse& WithRequesterPeeringConnectionOptions(RequesterPeeringConnectionOptionsT&& value) { SetRequesterPeeringConnectionOptions(std::forward<RequesterPeeringConnectionOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyVpcPeeringConnectionOptionsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyVpcPeeringConnectionOptionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyVpcPeeringConnectionOptionsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     PeeringConnectionOptions m_accepterPeeringConnectionOptions;
+    bool m_accepterPeeringConnectionOptionsHasBeenSet = false;
 
     PeeringConnectionOptions m_requesterPeeringConnectionOptions;
+    bool m_requesterPeeringConnectionOptionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

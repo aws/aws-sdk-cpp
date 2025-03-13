@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTrafficPolicyResult::GetTrafficPolicyResult()
-{
-}
-
 GetTrafficPolicyResult::GetTrafficPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ GetTrafficPolicyResult& GetTrafficPolicyResult::operator =(const Aws::AmazonWebS
     if(!trafficPolicyNode.IsNull())
     {
       m_trafficPolicy = trafficPolicyNode;
+      m_trafficPolicyHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ GetTrafficPolicyResult& GetTrafficPolicyResult::operator =(const Aws::AmazonWebS
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

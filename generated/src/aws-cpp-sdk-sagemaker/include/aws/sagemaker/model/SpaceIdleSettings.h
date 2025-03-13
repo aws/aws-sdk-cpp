@@ -30,7 +30,7 @@ namespace Model
   class SpaceIdleSettings
   {
   public:
-    AWS_SAGEMAKER_API SpaceIdleSettings();
+    AWS_SAGEMAKER_API SpaceIdleSettings() = default;
     AWS_SAGEMAKER_API SpaceIdleSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SpaceIdleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>The time that SageMaker waits after the application becomes idle before
      * shutting it down.</p>
      */
-    inline int GetIdleTimeoutInMinutes() const{ return m_idleTimeoutInMinutes; }
+    inline int GetIdleTimeoutInMinutes() const { return m_idleTimeoutInMinutes; }
     inline bool IdleTimeoutInMinutesHasBeenSet() const { return m_idleTimeoutInMinutesHasBeenSet; }
     inline void SetIdleTimeoutInMinutes(int value) { m_idleTimeoutInMinutesHasBeenSet = true; m_idleTimeoutInMinutes = value; }
     inline SpaceIdleSettings& WithIdleTimeoutInMinutes(int value) { SetIdleTimeoutInMinutes(value); return *this;}
     ///@}
   private:
 
-    int m_idleTimeoutInMinutes;
+    int m_idleTimeoutInMinutes{0};
     bool m_idleTimeoutInMinutesHasBeenSet = false;
   };
 

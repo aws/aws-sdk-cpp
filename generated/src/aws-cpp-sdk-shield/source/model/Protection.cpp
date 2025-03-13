@@ -18,18 +18,7 @@ namespace Shield
 namespace Model
 {
 
-Protection::Protection() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_healthCheckIdsHasBeenSet(false),
-    m_protectionArnHasBeenSet(false),
-    m_applicationLayerAutomaticResponseConfigurationHasBeenSet(false)
-{
-}
-
 Protection::Protection(JsonView jsonValue)
-  : Protection()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Protection& Protection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheckIds"))
   {
     Aws::Utils::Array<JsonView> healthCheckIdsJsonList = jsonValue.GetArray("HealthCheckIds");
@@ -66,21 +49,16 @@ Protection& Protection::operator =(JsonView jsonValue)
     }
     m_healthCheckIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectionArn"))
   {
     m_protectionArn = jsonValue.GetString("ProtectionArn");
-
     m_protectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationLayerAutomaticResponseConfiguration"))
   {
     m_applicationLayerAutomaticResponseConfiguration = jsonValue.GetObject("ApplicationLayerAutomaticResponseConfiguration");
-
     m_applicationLayerAutomaticResponseConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

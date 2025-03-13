@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-VpcConfig::VpcConfig() : 
-    m_subnetIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
-{
-}
-
 VpcConfig::VpcConfig(JsonView jsonValue)
-  : VpcConfig()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ VpcConfig& VpcConfig::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
@@ -59,7 +48,6 @@ VpcConfig& VpcConfig::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   return *this;
 }
 

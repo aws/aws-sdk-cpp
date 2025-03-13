@@ -36,7 +36,7 @@ namespace Model
   class AutocommitPeriod
   {
   public:
-    AWS_FSX_API AutocommitPeriod();
+    AWS_FSX_API AutocommitPeriod() = default;
     AWS_FSX_API AutocommitPeriod(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API AutocommitPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * ONTAP SnapLock volume. Setting this value to <code>NONE</code> disables
      * autocommit. The default value is <code>NONE</code>. </p>
      */
-    inline const AutocommitPeriodType& GetType() const{ return m_type; }
+    inline AutocommitPeriodType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AutocommitPeriodType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AutocommitPeriodType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AutocommitPeriod& WithType(const AutocommitPeriodType& value) { SetType(value); return *this;}
-    inline AutocommitPeriod& WithType(AutocommitPeriodType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AutocommitPeriodType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AutocommitPeriod& WithType(AutocommitPeriodType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -65,17 +63,17 @@ namespace Model
      * <code>Months</code>: 1 - 120</p> </li> <li> <p> <code>Years</code>: 1 - 10</p>
      * </li> </ul>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline AutocommitPeriod& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    AutocommitPeriodType m_type;
+    AutocommitPeriodType m_type{AutocommitPeriodType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

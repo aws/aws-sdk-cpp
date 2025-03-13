@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-InforNexusSourceProperties::InforNexusSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 InforNexusSourceProperties::InforNexusSourceProperties(JsonView jsonValue)
-  : InforNexusSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InforNexusSourceProperties& InforNexusSourceProperties::operator =(JsonView json
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

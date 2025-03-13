@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ComputeQuotaTarget::ComputeQuotaTarget() : 
-    m_teamNameHasBeenSet(false),
-    m_fairShareWeight(0),
-    m_fairShareWeightHasBeenSet(false)
-{
-}
-
 ComputeQuotaTarget::ComputeQuotaTarget(JsonView jsonValue)
-  : ComputeQuotaTarget()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ComputeQuotaTarget& ComputeQuotaTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TeamName"))
   {
     m_teamName = jsonValue.GetString("TeamName");
-
     m_teamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FairShareWeight"))
   {
     m_fairShareWeight = jsonValue.GetInteger("FairShareWeight");
-
     m_fairShareWeightHasBeenSet = true;
   }
-
   return *this;
 }
 

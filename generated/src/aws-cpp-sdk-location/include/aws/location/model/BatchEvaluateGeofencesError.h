@@ -35,7 +35,7 @@ namespace Model
   class BatchEvaluateGeofencesError
   {
   public:
-    AWS_LOCATIONSERVICE_API BatchEvaluateGeofencesError();
+    AWS_LOCATIONSERVICE_API BatchEvaluateGeofencesError() = default;
     AWS_LOCATIONSERVICE_API BatchEvaluateGeofencesError(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API BatchEvaluateGeofencesError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The device associated with the position evaluation error.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline BatchEvaluateGeofencesError& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline BatchEvaluateGeofencesError& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline BatchEvaluateGeofencesError& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    BatchEvaluateGeofencesError& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,31 +59,31 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
-    inline const Aws::Utils::DateTime& GetSampleTime() const{ return m_sampleTime; }
+    inline const Aws::Utils::DateTime& GetSampleTime() const { return m_sampleTime; }
     inline bool SampleTimeHasBeenSet() const { return m_sampleTimeHasBeenSet; }
-    inline void SetSampleTime(const Aws::Utils::DateTime& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = value; }
-    inline void SetSampleTime(Aws::Utils::DateTime&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::move(value); }
-    inline BatchEvaluateGeofencesError& WithSampleTime(const Aws::Utils::DateTime& value) { SetSampleTime(value); return *this;}
-    inline BatchEvaluateGeofencesError& WithSampleTime(Aws::Utils::DateTime&& value) { SetSampleTime(std::move(value)); return *this;}
+    template<typename SampleTimeT = Aws::Utils::DateTime>
+    void SetSampleTime(SampleTimeT&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::forward<SampleTimeT>(value); }
+    template<typename SampleTimeT = Aws::Utils::DateTime>
+    BatchEvaluateGeofencesError& WithSampleTime(SampleTimeT&& value) { SetSampleTime(std::forward<SampleTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details associated to the batch error.</p>
      */
-    inline const BatchItemError& GetError() const{ return m_error; }
+    inline const BatchItemError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const BatchItemError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(BatchItemError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline BatchEvaluateGeofencesError& WithError(const BatchItemError& value) { SetError(value); return *this;}
-    inline BatchEvaluateGeofencesError& WithError(BatchItemError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = BatchItemError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = BatchItemError>
+    BatchEvaluateGeofencesError& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_sampleTime;
+    Aws::Utils::DateTime m_sampleTime{};
     bool m_sampleTimeHasBeenSet = false;
 
     BatchItemError m_error;

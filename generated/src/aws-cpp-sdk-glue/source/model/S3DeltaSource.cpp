@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-S3DeltaSource::S3DeltaSource() : 
-    m_nameHasBeenSet(false),
-    m_pathsHasBeenSet(false),
-    m_additionalDeltaOptionsHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
-{
-}
-
 S3DeltaSource::S3DeltaSource(JsonView jsonValue)
-  : S3DeltaSource()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ S3DeltaSource& S3DeltaSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Paths"))
   {
     Aws::Utils::Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
@@ -51,7 +39,6 @@ S3DeltaSource& S3DeltaSource::operator =(JsonView jsonValue)
     }
     m_pathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalDeltaOptions"))
   {
     Aws::Map<Aws::String, JsonView> additionalDeltaOptionsJsonMap = jsonValue.GetObject("AdditionalDeltaOptions").GetAllObjects();
@@ -61,14 +48,11 @@ S3DeltaSource& S3DeltaSource::operator =(JsonView jsonValue)
     }
     m_additionalDeltaOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalOptions"))
   {
     m_additionalOptions = jsonValue.GetObject("AdditionalOptions");
-
     m_additionalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputSchemas"))
   {
     Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
@@ -78,7 +62,6 @@ S3DeltaSource& S3DeltaSource::operator =(JsonView jsonValue)
     }
     m_outputSchemasHasBeenSet = true;
   }
-
   return *this;
 }
 

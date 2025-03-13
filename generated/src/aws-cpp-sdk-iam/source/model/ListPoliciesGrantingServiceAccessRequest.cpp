@@ -10,13 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListPoliciesGrantingServiceAccessRequest::ListPoliciesGrantingServiceAccessRequest() : 
-    m_markerHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_serviceNamespacesHasBeenSet(false)
-{
-}
-
 Aws::String ListPoliciesGrantingServiceAccessRequest::SerializePayload() const
 {
   Aws::StringStream ss;

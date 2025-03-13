@@ -29,7 +29,7 @@ namespace Model
   class DescribeDeviceEc2InstancesResult
   {
   public:
-    AWS_SNOWDEVICEMANAGEMENT_API DescribeDeviceEc2InstancesResult();
+    AWS_SNOWDEVICEMANAGEMENT_API DescribeDeviceEc2InstancesResult() = default;
     AWS_SNOWDEVICEMANAGEMENT_API DescribeDeviceEc2InstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SNOWDEVICEMANAGEMENT_API DescribeDeviceEc2InstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>A list of structures containing information about each instance. </p>
      */
-    inline const Aws::Vector<InstanceSummary>& GetInstances() const{ return m_instances; }
-    inline void SetInstances(const Aws::Vector<InstanceSummary>& value) { m_instances = value; }
-    inline void SetInstances(Aws::Vector<InstanceSummary>&& value) { m_instances = std::move(value); }
-    inline DescribeDeviceEc2InstancesResult& WithInstances(const Aws::Vector<InstanceSummary>& value) { SetInstances(value); return *this;}
-    inline DescribeDeviceEc2InstancesResult& WithInstances(Aws::Vector<InstanceSummary>&& value) { SetInstances(std::move(value)); return *this;}
-    inline DescribeDeviceEc2InstancesResult& AddInstances(const InstanceSummary& value) { m_instances.push_back(value); return *this; }
-    inline DescribeDeviceEc2InstancesResult& AddInstances(InstanceSummary&& value) { m_instances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InstanceSummary>& GetInstances() const { return m_instances; }
+    template<typename InstancesT = Aws::Vector<InstanceSummary>>
+    void SetInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances = std::forward<InstancesT>(value); }
+    template<typename InstancesT = Aws::Vector<InstanceSummary>>
+    DescribeDeviceEc2InstancesResult& WithInstances(InstancesT&& value) { SetInstances(std::forward<InstancesT>(value)); return *this;}
+    template<typename InstancesT = InstanceSummary>
+    DescribeDeviceEc2InstancesResult& AddInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances.emplace_back(std::forward<InstancesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDeviceEc2InstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDeviceEc2InstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDeviceEc2InstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDeviceEc2InstancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InstanceSummary> m_instances;
+    bool m_instancesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

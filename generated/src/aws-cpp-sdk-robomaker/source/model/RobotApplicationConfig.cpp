@@ -18,17 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-RobotApplicationConfig::RobotApplicationConfig() : 
-    m_applicationHasBeenSet(false),
-    m_applicationVersionHasBeenSet(false),
-    m_launchConfigHasBeenSet(false),
-    m_uploadConfigurationsHasBeenSet(false),
-    m_toolsHasBeenSet(false)
-{
-}
-
 RobotApplicationConfig::RobotApplicationConfig(JsonView jsonValue)
-  : RobotApplicationConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RobotApplicationConfig& RobotApplicationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("application"))
   {
     m_application = jsonValue.GetString("application");
-
     m_applicationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationVersion"))
   {
     m_applicationVersion = jsonValue.GetString("applicationVersion");
-
     m_applicationVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchConfig"))
   {
     m_launchConfig = jsonValue.GetObject("launchConfig");
-
     m_launchConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uploadConfigurations"))
   {
     Aws::Utils::Array<JsonView> uploadConfigurationsJsonList = jsonValue.GetArray("uploadConfigurations");
@@ -65,7 +49,6 @@ RobotApplicationConfig& RobotApplicationConfig::operator =(JsonView jsonValue)
     }
     m_uploadConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tools"))
   {
     Aws::Utils::Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
@@ -75,7 +58,6 @@ RobotApplicationConfig& RobotApplicationConfig::operator =(JsonView jsonValue)
     }
     m_toolsHasBeenSet = true;
   }
-
   return *this;
 }
 

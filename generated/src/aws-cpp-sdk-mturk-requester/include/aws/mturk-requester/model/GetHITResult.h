@@ -28,7 +28,7 @@ namespace Model
   class GetHITResult
   {
   public:
-    AWS_MTURK_API GetHITResult();
+    AWS_MTURK_API GetHITResult() = default;
     AWS_MTURK_API GetHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MTURK_API GetHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p> Contains the requested HIT data.</p>
      */
-    inline const HIT& GetHIT() const{ return m_hIT; }
-    inline void SetHIT(const HIT& value) { m_hIT = value; }
-    inline void SetHIT(HIT&& value) { m_hIT = std::move(value); }
-    inline GetHITResult& WithHIT(const HIT& value) { SetHIT(value); return *this;}
-    inline GetHITResult& WithHIT(HIT&& value) { SetHIT(std::move(value)); return *this;}
+    inline const HIT& GetHIT() const { return m_hIT; }
+    template<typename HITT = HIT>
+    void SetHIT(HITT&& value) { m_hITHasBeenSet = true; m_hIT = std::forward<HITT>(value); }
+    template<typename HITT = HIT>
+    GetHITResult& WithHIT(HITT&& value) { SetHIT(std::forward<HITT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetHITResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetHITResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetHITResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetHITResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     HIT m_hIT;
+    bool m_hITHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

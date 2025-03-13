@@ -18,45 +18,23 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-DataType::DataType() : 
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nestedTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_unitOfMeasureHasBeenSet(false),
-    m_relationshipHasBeenSet(false)
-{
-}
-
 DataType::DataType(JsonView jsonValue)
-  : DataType()
 {
   *this = jsonValue;
 }
-
-const DataType& DataType::GetNestedType() const{ return *m_nestedType; }
-bool DataType::NestedTypeHasBeenSet() const { return m_nestedTypeHasBeenSet; }
-void DataType::SetNestedType(const DataType& value) { m_nestedTypeHasBeenSet = true; m_nestedType = Aws::MakeShared<DataType>("DataType", value); }
-void DataType::SetNestedType(DataType&& value) { m_nestedTypeHasBeenSet = true; m_nestedType = Aws::MakeShared<DataType>("DataType", std::move(value)); }
-DataType& DataType::WithNestedType(const DataType& value) { SetNestedType(value); return *this;}
-DataType& DataType::WithNestedType(DataType&& value) { SetNestedType(std::move(value)); return *this;}
 
 DataType& DataType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nestedType"))
   {
     m_nestedType = Aws::MakeShared<DataType>("DataType", jsonValue.GetObject("nestedType"));
-
     m_nestedTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedValues"))
   {
     Aws::Utils::Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
@@ -66,21 +44,16 @@ DataType& DataType::operator =(JsonView jsonValue)
     }
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unitOfMeasure"))
   {
     m_unitOfMeasure = jsonValue.GetString("unitOfMeasure");
-
     m_unitOfMeasureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationship"))
   {
     m_relationship = jsonValue.GetObject("relationship");
-
     m_relationshipHasBeenSet = true;
   }
-
   return *this;
 }
 

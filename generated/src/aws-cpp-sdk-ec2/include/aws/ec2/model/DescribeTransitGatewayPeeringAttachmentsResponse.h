@@ -30,7 +30,7 @@ namespace Model
   class DescribeTransitGatewayPeeringAttachmentsResponse
   {
   public:
-    AWS_EC2_API DescribeTransitGatewayPeeringAttachmentsResponse();
+    AWS_EC2_API DescribeTransitGatewayPeeringAttachmentsResponse() = default;
     AWS_EC2_API DescribeTransitGatewayPeeringAttachmentsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeTransitGatewayPeeringAttachmentsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>The transit gateway peering attachments.</p>
      */
-    inline const Aws::Vector<TransitGatewayPeeringAttachment>& GetTransitGatewayPeeringAttachments() const{ return m_transitGatewayPeeringAttachments; }
-    inline void SetTransitGatewayPeeringAttachments(const Aws::Vector<TransitGatewayPeeringAttachment>& value) { m_transitGatewayPeeringAttachments = value; }
-    inline void SetTransitGatewayPeeringAttachments(Aws::Vector<TransitGatewayPeeringAttachment>&& value) { m_transitGatewayPeeringAttachments = std::move(value); }
-    inline DescribeTransitGatewayPeeringAttachmentsResponse& WithTransitGatewayPeeringAttachments(const Aws::Vector<TransitGatewayPeeringAttachment>& value) { SetTransitGatewayPeeringAttachments(value); return *this;}
-    inline DescribeTransitGatewayPeeringAttachmentsResponse& WithTransitGatewayPeeringAttachments(Aws::Vector<TransitGatewayPeeringAttachment>&& value) { SetTransitGatewayPeeringAttachments(std::move(value)); return *this;}
-    inline DescribeTransitGatewayPeeringAttachmentsResponse& AddTransitGatewayPeeringAttachments(const TransitGatewayPeeringAttachment& value) { m_transitGatewayPeeringAttachments.push_back(value); return *this; }
-    inline DescribeTransitGatewayPeeringAttachmentsResponse& AddTransitGatewayPeeringAttachments(TransitGatewayPeeringAttachment&& value) { m_transitGatewayPeeringAttachments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TransitGatewayPeeringAttachment>& GetTransitGatewayPeeringAttachments() const { return m_transitGatewayPeeringAttachments; }
+    template<typename TransitGatewayPeeringAttachmentsT = Aws::Vector<TransitGatewayPeeringAttachment>>
+    void SetTransitGatewayPeeringAttachments(TransitGatewayPeeringAttachmentsT&& value) { m_transitGatewayPeeringAttachmentsHasBeenSet = true; m_transitGatewayPeeringAttachments = std::forward<TransitGatewayPeeringAttachmentsT>(value); }
+    template<typename TransitGatewayPeeringAttachmentsT = Aws::Vector<TransitGatewayPeeringAttachment>>
+    DescribeTransitGatewayPeeringAttachmentsResponse& WithTransitGatewayPeeringAttachments(TransitGatewayPeeringAttachmentsT&& value) { SetTransitGatewayPeeringAttachments(std::forward<TransitGatewayPeeringAttachmentsT>(value)); return *this;}
+    template<typename TransitGatewayPeeringAttachmentsT = TransitGatewayPeeringAttachment>
+    DescribeTransitGatewayPeeringAttachmentsResponse& AddTransitGatewayPeeringAttachments(TransitGatewayPeeringAttachmentsT&& value) { m_transitGatewayPeeringAttachmentsHasBeenSet = true; m_transitGatewayPeeringAttachments.emplace_back(std::forward<TransitGatewayPeeringAttachmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeTransitGatewayPeeringAttachmentsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeTransitGatewayPeeringAttachmentsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeTransitGatewayPeeringAttachmentsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeTransitGatewayPeeringAttachmentsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeTransitGatewayPeeringAttachmentsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeTransitGatewayPeeringAttachmentsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeTransitGatewayPeeringAttachmentsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TransitGatewayPeeringAttachment> m_transitGatewayPeeringAttachments;
+    bool m_transitGatewayPeeringAttachmentsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

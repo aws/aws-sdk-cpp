@@ -33,7 +33,7 @@ namespace Model
   class InstancesDistribution
   {
   public:
-    AWS_AUTOSCALING_API InstancesDistribution();
+    AWS_AUTOSCALING_API InstancesDistribution() = default;
     AWS_AUTOSCALING_API InstancesDistribution(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API InstancesDistribution& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -61,14 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>
      * and cannot be used for groups that do.</p> </dd> </dl>
      */
-    inline const Aws::String& GetOnDemandAllocationStrategy() const{ return m_onDemandAllocationStrategy; }
+    inline const Aws::String& GetOnDemandAllocationStrategy() const { return m_onDemandAllocationStrategy; }
     inline bool OnDemandAllocationStrategyHasBeenSet() const { return m_onDemandAllocationStrategyHasBeenSet; }
-    inline void SetOnDemandAllocationStrategy(const Aws::String& value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy = value; }
-    inline void SetOnDemandAllocationStrategy(Aws::String&& value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy = std::move(value); }
-    inline void SetOnDemandAllocationStrategy(const char* value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy.assign(value); }
-    inline InstancesDistribution& WithOnDemandAllocationStrategy(const Aws::String& value) { SetOnDemandAllocationStrategy(value); return *this;}
-    inline InstancesDistribution& WithOnDemandAllocationStrategy(Aws::String&& value) { SetOnDemandAllocationStrategy(std::move(value)); return *this;}
-    inline InstancesDistribution& WithOnDemandAllocationStrategy(const char* value) { SetOnDemandAllocationStrategy(value); return *this;}
+    template<typename OnDemandAllocationStrategyT = Aws::String>
+    void SetOnDemandAllocationStrategy(OnDemandAllocationStrategyT&& value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy = std::forward<OnDemandAllocationStrategyT>(value); }
+    template<typename OnDemandAllocationStrategyT = Aws::String>
+    InstancesDistribution& WithOnDemandAllocationStrategy(OnDemandAllocationStrategyT&& value) { SetOnDemandAllocationStrategy(std::forward<OnDemandAllocationStrategyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,7 +80,7 @@ namespace Model
      * group, you must specify this number using the same unit of measurement.</p>
      * <p>Default: 0</p>
      */
-    inline int GetOnDemandBaseCapacity() const{ return m_onDemandBaseCapacity; }
+    inline int GetOnDemandBaseCapacity() const { return m_onDemandBaseCapacity; }
     inline bool OnDemandBaseCapacityHasBeenSet() const { return m_onDemandBaseCapacityHasBeenSet; }
     inline void SetOnDemandBaseCapacity(int value) { m_onDemandBaseCapacityHasBeenSet = true; m_onDemandBaseCapacity = value; }
     inline InstancesDistribution& WithOnDemandBaseCapacity(int value) { SetOnDemandBaseCapacity(value); return *this;}
@@ -95,7 +93,7 @@ namespace Model
      * number (for example, 20 specifies 20% On-Demand Instances, 80% Spot Instances).
      * If set to 100, only On-Demand Instances are used.</p> <p>Default: 100</p>
      */
-    inline int GetOnDemandPercentageAboveBaseCapacity() const{ return m_onDemandPercentageAboveBaseCapacity; }
+    inline int GetOnDemandPercentageAboveBaseCapacity() const { return m_onDemandPercentageAboveBaseCapacity; }
     inline bool OnDemandPercentageAboveBaseCapacityHasBeenSet() const { return m_onDemandPercentageAboveBaseCapacityHasBeenSet; }
     inline void SetOnDemandPercentageAboveBaseCapacity(int value) { m_onDemandPercentageAboveBaseCapacityHasBeenSet = true; m_onDemandPercentageAboveBaseCapacity = value; }
     inline InstancesDistribution& WithOnDemandPercentageAboveBaseCapacity(int value) { SetOnDemandPercentageAboveBaseCapacity(value); return *this;}
@@ -129,14 +127,12 @@ namespace Model
      * select the Spot Instance pools that are the least likely to be interrupted and
      * have the lowest possible price.</p> </dd> </dl>
      */
-    inline const Aws::String& GetSpotAllocationStrategy() const{ return m_spotAllocationStrategy; }
+    inline const Aws::String& GetSpotAllocationStrategy() const { return m_spotAllocationStrategy; }
     inline bool SpotAllocationStrategyHasBeenSet() const { return m_spotAllocationStrategyHasBeenSet; }
-    inline void SetSpotAllocationStrategy(const Aws::String& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = value; }
-    inline void SetSpotAllocationStrategy(Aws::String&& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = std::move(value); }
-    inline void SetSpotAllocationStrategy(const char* value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy.assign(value); }
-    inline InstancesDistribution& WithSpotAllocationStrategy(const Aws::String& value) { SetSpotAllocationStrategy(value); return *this;}
-    inline InstancesDistribution& WithSpotAllocationStrategy(Aws::String&& value) { SetSpotAllocationStrategy(std::move(value)); return *this;}
-    inline InstancesDistribution& WithSpotAllocationStrategy(const char* value) { SetSpotAllocationStrategy(value); return *this;}
+    template<typename SpotAllocationStrategyT = Aws::String>
+    void SetSpotAllocationStrategy(SpotAllocationStrategyT&& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = std::forward<SpotAllocationStrategyT>(value); }
+    template<typename SpotAllocationStrategyT = Aws::String>
+    InstancesDistribution& WithSpotAllocationStrategy(SpotAllocationStrategyT&& value) { SetSpotAllocationStrategy(std::forward<SpotAllocationStrategyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,7 +143,7 @@ namespace Model
      * <code>lowest-price</code>. Value must be in the range of 1–20.</p> <p>Default:
      * 2</p>
      */
-    inline int GetSpotInstancePools() const{ return m_spotInstancePools; }
+    inline int GetSpotInstancePools() const { return m_spotInstancePools; }
     inline bool SpotInstancePoolsHasBeenSet() const { return m_spotInstancePoolsHasBeenSet; }
     inline void SetSpotInstancePools(int value) { m_spotInstancePoolsHasBeenSet = true; m_spotInstancePools = value; }
     inline InstancesDistribution& WithSpotInstancePools(int value) { SetSpotInstancePools(value); return *this;}
@@ -165,30 +161,28 @@ namespace Model
      * price, your instances will be interrupted more frequently than if you do not
      * specify one.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
-    inline const Aws::String& GetSpotMaxPrice() const{ return m_spotMaxPrice; }
+    inline const Aws::String& GetSpotMaxPrice() const { return m_spotMaxPrice; }
     inline bool SpotMaxPriceHasBeenSet() const { return m_spotMaxPriceHasBeenSet; }
-    inline void SetSpotMaxPrice(const Aws::String& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = value; }
-    inline void SetSpotMaxPrice(Aws::String&& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = std::move(value); }
-    inline void SetSpotMaxPrice(const char* value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice.assign(value); }
-    inline InstancesDistribution& WithSpotMaxPrice(const Aws::String& value) { SetSpotMaxPrice(value); return *this;}
-    inline InstancesDistribution& WithSpotMaxPrice(Aws::String&& value) { SetSpotMaxPrice(std::move(value)); return *this;}
-    inline InstancesDistribution& WithSpotMaxPrice(const char* value) { SetSpotMaxPrice(value); return *this;}
+    template<typename SpotMaxPriceT = Aws::String>
+    void SetSpotMaxPrice(SpotMaxPriceT&& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = std::forward<SpotMaxPriceT>(value); }
+    template<typename SpotMaxPriceT = Aws::String>
+    InstancesDistribution& WithSpotMaxPrice(SpotMaxPriceT&& value) { SetSpotMaxPrice(std::forward<SpotMaxPriceT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_onDemandAllocationStrategy;
     bool m_onDemandAllocationStrategyHasBeenSet = false;
 
-    int m_onDemandBaseCapacity;
+    int m_onDemandBaseCapacity{0};
     bool m_onDemandBaseCapacityHasBeenSet = false;
 
-    int m_onDemandPercentageAboveBaseCapacity;
+    int m_onDemandPercentageAboveBaseCapacity{0};
     bool m_onDemandPercentageAboveBaseCapacityHasBeenSet = false;
 
     Aws::String m_spotAllocationStrategy;
     bool m_spotAllocationStrategyHasBeenSet = false;
 
-    int m_spotInstancePools;
+    int m_spotInstancePools{0};
     bool m_spotInstancePoolsHasBeenSet = false;
 
     Aws::String m_spotMaxPrice;

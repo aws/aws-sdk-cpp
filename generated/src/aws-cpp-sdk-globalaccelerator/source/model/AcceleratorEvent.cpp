@@ -18,14 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-AcceleratorEvent::AcceleratorEvent() : 
-    m_messageHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 AcceleratorEvent::AcceleratorEvent(JsonView jsonValue)
-  : AcceleratorEvent()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AcceleratorEvent& AcceleratorEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

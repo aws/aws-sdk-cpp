@@ -22,7 +22,7 @@ namespace Model
   class ReleaseHostsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ReleaseHostsRequest();
+    AWS_EC2_API ReleaseHostsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts to release.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetHostIds() const{ return m_hostIds; }
+    inline const Aws::Vector<Aws::String>& GetHostIds() const { return m_hostIds; }
     inline bool HostIdsHasBeenSet() const { return m_hostIdsHasBeenSet; }
-    inline void SetHostIds(const Aws::Vector<Aws::String>& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
-    inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = std::move(value); }
-    inline ReleaseHostsRequest& WithHostIds(const Aws::Vector<Aws::String>& value) { SetHostIds(value); return *this;}
-    inline ReleaseHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(std::move(value)); return *this;}
-    inline ReleaseHostsRequest& AddHostIds(const Aws::String& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
-    inline ReleaseHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(std::move(value)); return *this; }
-    inline ReleaseHostsRequest& AddHostIds(const char* value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
+    template<typename HostIdsT = Aws::Vector<Aws::String>>
+    void SetHostIds(HostIdsT&& value) { m_hostIdsHasBeenSet = true; m_hostIds = std::forward<HostIdsT>(value); }
+    template<typename HostIdsT = Aws::Vector<Aws::String>>
+    ReleaseHostsRequest& WithHostIds(HostIdsT&& value) { SetHostIds(std::forward<HostIdsT>(value)); return *this;}
+    template<typename HostIdsT = Aws::String>
+    ReleaseHostsRequest& AddHostIds(HostIdsT&& value) { m_hostIdsHasBeenSet = true; m_hostIds.emplace_back(std::forward<HostIdsT>(value)); return *this; }
     ///@}
   private:
 

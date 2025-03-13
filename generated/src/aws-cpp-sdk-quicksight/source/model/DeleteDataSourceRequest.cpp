@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataSourceRequest::DeleteDataSourceRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataSourceRequest::SerializePayload() const
 {
   return {};

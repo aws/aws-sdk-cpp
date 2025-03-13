@@ -21,7 +21,7 @@ namespace Model
   class DescribeRouteCalculatorRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API DescribeRouteCalculatorRequest();
+    AWS_LOCATIONSERVICE_API DescribeRouteCalculatorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The name of the route calculator resource.</p>
      */
-    inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
+    inline const Aws::String& GetCalculatorName() const { return m_calculatorName; }
     inline bool CalculatorNameHasBeenSet() const { return m_calculatorNameHasBeenSet; }
-    inline void SetCalculatorName(const Aws::String& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = value; }
-    inline void SetCalculatorName(Aws::String&& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = std::move(value); }
-    inline void SetCalculatorName(const char* value) { m_calculatorNameHasBeenSet = true; m_calculatorName.assign(value); }
-    inline DescribeRouteCalculatorRequest& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
-    inline DescribeRouteCalculatorRequest& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
-    inline DescribeRouteCalculatorRequest& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
+    template<typename CalculatorNameT = Aws::String>
+    void SetCalculatorName(CalculatorNameT&& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = std::forward<CalculatorNameT>(value); }
+    template<typename CalculatorNameT = Aws::String>
+    DescribeRouteCalculatorRequest& WithCalculatorName(CalculatorNameT&& value) { SetCalculatorName(std::forward<CalculatorNameT>(value)); return *this;}
     ///@}
   private:
 

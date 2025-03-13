@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetFunctionDefinitionVersionRequest::GetFunctionDefinitionVersionRequest() : 
-    m_functionDefinitionIdHasBeenSet(false),
-    m_functionDefinitionVersionIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetFunctionDefinitionVersionRequest::SerializePayload() const
 {
   return {};

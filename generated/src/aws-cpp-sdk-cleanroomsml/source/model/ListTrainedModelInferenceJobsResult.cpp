@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTrainedModelInferenceJobsResult::ListTrainedModelInferenceJobsResult()
-{
-}
-
 ListTrainedModelInferenceJobsResult::ListTrainedModelInferenceJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListTrainedModelInferenceJobsResult& ListTrainedModelInferenceJobsResult::operat
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trainedModelInferenceJobs"))
   {
     Aws::Utils::Array<JsonView> trainedModelInferenceJobsJsonList = jsonValue.GetArray("trainedModelInferenceJobs");
@@ -42,14 +37,15 @@ ListTrainedModelInferenceJobsResult& ListTrainedModelInferenceJobsResult::operat
     {
       m_trainedModelInferenceJobs.push_back(trainedModelInferenceJobsJsonList[trainedModelInferenceJobsIndex].AsObject());
     }
+    m_trainedModelInferenceJobsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartReadSetActivationJobResult::StartReadSetActivationJobResult() : 
-    m_status(ReadSetActivationJobStatus::NOT_SET)
-{
-}
-
 StartReadSetActivationJobResult::StartReadSetActivationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartReadSetActivationJobResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ StartReadSetActivationJobResult& StartReadSetActivationJobResult::operator =(con
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sequenceStoreId"))
   {
     m_sequenceStoreId = jsonValue.GetString("sequenceStoreId");
-
+    m_sequenceStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReadSetActivationJobStatusMapper::GetReadSetActivationJobStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

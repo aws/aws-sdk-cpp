@@ -20,47 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-Snapshot::Snapshot() : 
-    m_snapshotNameHasBeenSet(false),
-    m_replicationGroupIdHasBeenSet(false),
-    m_replicationGroupDescriptionHasBeenSet(false),
-    m_cacheClusterIdHasBeenSet(false),
-    m_snapshotStatusHasBeenSet(false),
-    m_snapshotSourceHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_numCacheNodes(0),
-    m_numCacheNodesHasBeenSet(false),
-    m_preferredAvailabilityZoneHasBeenSet(false),
-    m_preferredOutpostArnHasBeenSet(false),
-    m_cacheClusterCreateTimeHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_topicArnHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_cacheParameterGroupNameHasBeenSet(false),
-    m_cacheSubnetGroupNameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false),
-    m_numNodeGroups(0),
-    m_numNodeGroupsHasBeenSet(false),
-    m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
-    m_automaticFailoverHasBeenSet(false),
-    m_nodeSnapshotsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_dataTiering(DataTieringStatus::NOT_SET),
-    m_dataTieringHasBeenSet(false)
-{
-}
-
 Snapshot::Snapshot(const XmlNode& xmlNode)
-  : Snapshot()
 {
   *this = xmlNode;
 }
@@ -76,174 +36,202 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     {
       m_snapshotName = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotNameNode.GetText());
       m_snapshotNameHasBeenSet = true;
+       m_snapshotNameHasBeenSet = true;
     }
     XmlNode replicationGroupIdNode = resultNode.FirstChild("ReplicationGroupId");
     if(!replicationGroupIdNode.IsNull())
     {
       m_replicationGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupIdNode.GetText());
       m_replicationGroupIdHasBeenSet = true;
+       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode replicationGroupDescriptionNode = resultNode.FirstChild("ReplicationGroupDescription");
     if(!replicationGroupDescriptionNode.IsNull())
     {
       m_replicationGroupDescription = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupDescriptionNode.GetText());
       m_replicationGroupDescriptionHasBeenSet = true;
+       m_replicationGroupDescriptionHasBeenSet = true;
     }
     XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
     if(!cacheClusterIdNode.IsNull())
     {
       m_cacheClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterIdNode.GetText());
       m_cacheClusterIdHasBeenSet = true;
+       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode snapshotStatusNode = resultNode.FirstChild("SnapshotStatus");
     if(!snapshotStatusNode.IsNull())
     {
       m_snapshotStatus = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotStatusNode.GetText());
       m_snapshotStatusHasBeenSet = true;
+       m_snapshotStatusHasBeenSet = true;
     }
     XmlNode snapshotSourceNode = resultNode.FirstChild("SnapshotSource");
     if(!snapshotSourceNode.IsNull())
     {
       m_snapshotSource = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotSourceNode.GetText());
       m_snapshotSourceHasBeenSet = true;
+       m_snapshotSourceHasBeenSet = true;
     }
     XmlNode cacheNodeTypeNode = resultNode.FirstChild("CacheNodeType");
     if(!cacheNodeTypeNode.IsNull())
     {
       m_cacheNodeType = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeTypeNode.GetText());
       m_cacheNodeTypeHasBeenSet = true;
+       m_cacheNodeTypeHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+       m_engineVersionHasBeenSet = true;
     }
     XmlNode numCacheNodesNode = resultNode.FirstChild("NumCacheNodes");
     if(!numCacheNodesNode.IsNull())
     {
       m_numCacheNodes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numCacheNodesNode.GetText()).c_str()).c_str());
       m_numCacheNodesHasBeenSet = true;
+       m_numCacheNodesHasBeenSet = true;
     }
     XmlNode preferredAvailabilityZoneNode = resultNode.FirstChild("PreferredAvailabilityZone");
     if(!preferredAvailabilityZoneNode.IsNull())
     {
       m_preferredAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(preferredAvailabilityZoneNode.GetText());
       m_preferredAvailabilityZoneHasBeenSet = true;
+       m_preferredAvailabilityZoneHasBeenSet = true;
     }
     XmlNode preferredOutpostArnNode = resultNode.FirstChild("PreferredOutpostArn");
     if(!preferredOutpostArnNode.IsNull())
     {
       m_preferredOutpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(preferredOutpostArnNode.GetText());
       m_preferredOutpostArnHasBeenSet = true;
+       m_preferredOutpostArnHasBeenSet = true;
     }
     XmlNode cacheClusterCreateTimeNode = resultNode.FirstChild("CacheClusterCreateTime");
     if(!cacheClusterCreateTimeNode.IsNull())
     {
       m_cacheClusterCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_cacheClusterCreateTimeHasBeenSet = true;
+       m_cacheClusterCreateTimeHasBeenSet = true;
     }
     XmlNode preferredMaintenanceWindowNode = resultNode.FirstChild("PreferredMaintenanceWindow");
     if(!preferredMaintenanceWindowNode.IsNull())
     {
       m_preferredMaintenanceWindow = Aws::Utils::Xml::DecodeEscapedXmlText(preferredMaintenanceWindowNode.GetText());
       m_preferredMaintenanceWindowHasBeenSet = true;
+       m_preferredMaintenanceWindowHasBeenSet = true;
     }
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
       m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
+       m_topicArnHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
     XmlNode cacheParameterGroupNameNode = resultNode.FirstChild("CacheParameterGroupName");
     if(!cacheParameterGroupNameNode.IsNull())
     {
       m_cacheParameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(cacheParameterGroupNameNode.GetText());
       m_cacheParameterGroupNameHasBeenSet = true;
+       m_cacheParameterGroupNameHasBeenSet = true;
     }
     XmlNode cacheSubnetGroupNameNode = resultNode.FirstChild("CacheSubnetGroupName");
     if(!cacheSubnetGroupNameNode.IsNull())
     {
       m_cacheSubnetGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(cacheSubnetGroupNameNode.GetText());
       m_cacheSubnetGroupNameHasBeenSet = true;
+       m_cacheSubnetGroupNameHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode autoMinorVersionUpgradeNode = resultNode.FirstChild("AutoMinorVersionUpgrade");
     if(!autoMinorVersionUpgradeNode.IsNull())
     {
       m_autoMinorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoMinorVersionUpgradeNode.GetText()).c_str()).c_str());
       m_autoMinorVersionUpgradeHasBeenSet = true;
+       m_autoMinorVersionUpgradeHasBeenSet = true;
     }
     XmlNode snapshotRetentionLimitNode = resultNode.FirstChild("SnapshotRetentionLimit");
     if(!snapshotRetentionLimitNode.IsNull())
     {
       m_snapshotRetentionLimit = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotRetentionLimitNode.GetText()).c_str()).c_str());
       m_snapshotRetentionLimitHasBeenSet = true;
+       m_snapshotRetentionLimitHasBeenSet = true;
     }
     XmlNode snapshotWindowNode = resultNode.FirstChild("SnapshotWindow");
     if(!snapshotWindowNode.IsNull())
     {
       m_snapshotWindow = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotWindowNode.GetText());
       m_snapshotWindowHasBeenSet = true;
+       m_snapshotWindowHasBeenSet = true;
     }
     XmlNode numNodeGroupsNode = resultNode.FirstChild("NumNodeGroups");
     if(!numNodeGroupsNode.IsNull())
     {
       m_numNodeGroups = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numNodeGroupsNode.GetText()).c_str()).c_str());
       m_numNodeGroupsHasBeenSet = true;
+       m_numNodeGroupsHasBeenSet = true;
     }
     XmlNode automaticFailoverNode = resultNode.FirstChild("AutomaticFailover");
     if(!automaticFailoverNode.IsNull())
     {
-      m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticFailoverNode.GetText()).c_str()).c_str());
+      m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticFailoverNode.GetText()).c_str()));
       m_automaticFailoverHasBeenSet = true;
+       m_automaticFailoverHasBeenSet = true;
     }
     XmlNode nodeSnapshotsNode = resultNode.FirstChild("NodeSnapshots");
     if(!nodeSnapshotsNode.IsNull())
     {
       XmlNode nodeSnapshotsMember = nodeSnapshotsNode.FirstChild("NodeSnapshot");
+      m_nodeSnapshotsHasBeenSet = !nodeSnapshotsMember.IsNull();
       while(!nodeSnapshotsMember.IsNull())
       {
         m_nodeSnapshots.push_back(nodeSnapshotsMember);
         nodeSnapshotsMember = nodeSnapshotsMember.NextNode("NodeSnapshot");
       }
 
-      m_nodeSnapshotsHasBeenSet = true;
+       m_nodeSnapshotsHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
+       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
     XmlNode dataTieringNode = resultNode.FirstChild("DataTiering");
     if(!dataTieringNode.IsNull())
     {
-      m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataTieringNode.GetText()).c_str()).c_str());
+      m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataTieringNode.GetText()).c_str()));
       m_dataTieringHasBeenSet = true;
+       m_dataTieringHasBeenSet = true;
     }
   }
 

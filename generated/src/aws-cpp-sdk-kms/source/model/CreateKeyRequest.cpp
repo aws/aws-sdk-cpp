@@ -12,25 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateKeyRequest::CreateKeyRequest() : 
-    m_policyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_keyUsage(KeyUsageType::NOT_SET),
-    m_keyUsageHasBeenSet(false),
-    m_keySpec(KeySpec::NOT_SET),
-    m_keySpecHasBeenSet(false),
-    m_origin(OriginType::NOT_SET),
-    m_originHasBeenSet(false),
-    m_customKeyStoreIdHasBeenSet(false),
-    m_bypassPolicyLockoutSafetyCheck(false),
-    m_bypassPolicyLockoutSafetyCheckHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_multiRegion(false),
-    m_multiRegionHasBeenSet(false),
-    m_xksKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateKeyRequest::SerializePayload() const
 {
   JsonValue payload;

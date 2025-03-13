@@ -10,11 +10,6 @@
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-DecodeAuthorizationMessageRequest::DecodeAuthorizationMessageRequest() : 
-    m_encodedMessageHasBeenSet(false)
-{
-}
-
 Aws::String DecodeAuthorizationMessageRequest::SerializePayload() const
 {
   Aws::StringStream ss;

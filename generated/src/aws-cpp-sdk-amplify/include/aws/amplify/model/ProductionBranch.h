@@ -33,7 +33,7 @@ namespace Model
   class ProductionBranch
   {
   public:
-    AWS_AMPLIFY_API ProductionBranch();
+    AWS_AMPLIFY_API ProductionBranch() = default;
     AWS_AMPLIFY_API ProductionBranch(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFY_API ProductionBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,58 +43,52 @@ namespace Model
     /**
      * <p>The last deploy time of the production branch. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastDeployTime() const{ return m_lastDeployTime; }
+    inline const Aws::Utils::DateTime& GetLastDeployTime() const { return m_lastDeployTime; }
     inline bool LastDeployTimeHasBeenSet() const { return m_lastDeployTimeHasBeenSet; }
-    inline void SetLastDeployTime(const Aws::Utils::DateTime& value) { m_lastDeployTimeHasBeenSet = true; m_lastDeployTime = value; }
-    inline void SetLastDeployTime(Aws::Utils::DateTime&& value) { m_lastDeployTimeHasBeenSet = true; m_lastDeployTime = std::move(value); }
-    inline ProductionBranch& WithLastDeployTime(const Aws::Utils::DateTime& value) { SetLastDeployTime(value); return *this;}
-    inline ProductionBranch& WithLastDeployTime(Aws::Utils::DateTime&& value) { SetLastDeployTime(std::move(value)); return *this;}
+    template<typename LastDeployTimeT = Aws::Utils::DateTime>
+    void SetLastDeployTime(LastDeployTimeT&& value) { m_lastDeployTimeHasBeenSet = true; m_lastDeployTime = std::forward<LastDeployTimeT>(value); }
+    template<typename LastDeployTimeT = Aws::Utils::DateTime>
+    ProductionBranch& WithLastDeployTime(LastDeployTimeT&& value) { SetLastDeployTime(std::forward<LastDeployTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the production branch. </p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline ProductionBranch& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ProductionBranch& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ProductionBranch& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ProductionBranch& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The thumbnail URL for the production branch. </p>
      */
-    inline const Aws::String& GetThumbnailUrl() const{ return m_thumbnailUrl; }
+    inline const Aws::String& GetThumbnailUrl() const { return m_thumbnailUrl; }
     inline bool ThumbnailUrlHasBeenSet() const { return m_thumbnailUrlHasBeenSet; }
-    inline void SetThumbnailUrl(const Aws::String& value) { m_thumbnailUrlHasBeenSet = true; m_thumbnailUrl = value; }
-    inline void SetThumbnailUrl(Aws::String&& value) { m_thumbnailUrlHasBeenSet = true; m_thumbnailUrl = std::move(value); }
-    inline void SetThumbnailUrl(const char* value) { m_thumbnailUrlHasBeenSet = true; m_thumbnailUrl.assign(value); }
-    inline ProductionBranch& WithThumbnailUrl(const Aws::String& value) { SetThumbnailUrl(value); return *this;}
-    inline ProductionBranch& WithThumbnailUrl(Aws::String&& value) { SetThumbnailUrl(std::move(value)); return *this;}
-    inline ProductionBranch& WithThumbnailUrl(const char* value) { SetThumbnailUrl(value); return *this;}
+    template<typename ThumbnailUrlT = Aws::String>
+    void SetThumbnailUrl(ThumbnailUrlT&& value) { m_thumbnailUrlHasBeenSet = true; m_thumbnailUrl = std::forward<ThumbnailUrlT>(value); }
+    template<typename ThumbnailUrlT = Aws::String>
+    ProductionBranch& WithThumbnailUrl(ThumbnailUrlT&& value) { SetThumbnailUrl(std::forward<ThumbnailUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The branch name for the production branch. </p>
      */
-    inline const Aws::String& GetBranchName() const{ return m_branchName; }
+    inline const Aws::String& GetBranchName() const { return m_branchName; }
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
-    inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
-    inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
-    inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
-    inline ProductionBranch& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
-    inline ProductionBranch& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
-    inline ProductionBranch& WithBranchName(const char* value) { SetBranchName(value); return *this;}
+    template<typename BranchNameT = Aws::String>
+    void SetBranchName(BranchNameT&& value) { m_branchNameHasBeenSet = true; m_branchName = std::forward<BranchNameT>(value); }
+    template<typename BranchNameT = Aws::String>
+    ProductionBranch& WithBranchName(BranchNameT&& value) { SetBranchName(std::forward<BranchNameT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_lastDeployTime;
+    Aws::Utils::DateTime m_lastDeployTime{};
     bool m_lastDeployTimeHasBeenSet = false;
 
     Aws::String m_status;

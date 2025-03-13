@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetConnectionResult::GetConnectionResult()
-{
-}
-
 GetConnectionResult::GetConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetConnectionResult& GetConnectionResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("ConnectionId"))
   {
     m_connectionId = jsonValue.GetString("ConnectionId");
-
+    m_connectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionDetails"))
   {
     m_connectionDetails = jsonValue.GetObject("ConnectionDetails");
-
+    m_connectionDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

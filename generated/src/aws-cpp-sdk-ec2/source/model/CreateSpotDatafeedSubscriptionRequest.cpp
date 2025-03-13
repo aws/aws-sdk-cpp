@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateSpotDatafeedSubscriptionRequest::CreateSpotDatafeedSubscriptionRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 Aws::String CreateSpotDatafeedSubscriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

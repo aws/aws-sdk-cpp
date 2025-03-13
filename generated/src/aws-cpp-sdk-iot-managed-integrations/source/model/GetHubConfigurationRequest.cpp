@@ -12,10 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetHubConfigurationRequest::GetHubConfigurationRequest()
-{
-}
-
 Aws::String GetHubConfigurationRequest::SerializePayload() const
 {
   return {};

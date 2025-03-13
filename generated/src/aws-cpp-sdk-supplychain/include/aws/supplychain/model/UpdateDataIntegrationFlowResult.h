@@ -34,7 +34,7 @@ namespace Model
   class UpdateDataIntegrationFlowResult
   {
   public:
-    AWS_SUPPLYCHAIN_API UpdateDataIntegrationFlowResult();
+    AWS_SUPPLYCHAIN_API UpdateDataIntegrationFlowResult() = default;
     AWS_SUPPLYCHAIN_API UpdateDataIntegrationFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPLYCHAIN_API UpdateDataIntegrationFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The details of the updated DataIntegrationFlow.</p>
      */
-    inline const DataIntegrationFlow& GetFlow() const{ return m_flow; }
-    inline void SetFlow(const DataIntegrationFlow& value) { m_flow = value; }
-    inline void SetFlow(DataIntegrationFlow&& value) { m_flow = std::move(value); }
-    inline UpdateDataIntegrationFlowResult& WithFlow(const DataIntegrationFlow& value) { SetFlow(value); return *this;}
-    inline UpdateDataIntegrationFlowResult& WithFlow(DataIntegrationFlow&& value) { SetFlow(std::move(value)); return *this;}
+    inline const DataIntegrationFlow& GetFlow() const { return m_flow; }
+    template<typename FlowT = DataIntegrationFlow>
+    void SetFlow(FlowT&& value) { m_flowHasBeenSet = true; m_flow = std::forward<FlowT>(value); }
+    template<typename FlowT = DataIntegrationFlow>
+    UpdateDataIntegrationFlowResult& WithFlow(FlowT&& value) { SetFlow(std::forward<FlowT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDataIntegrationFlowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDataIntegrationFlowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDataIntegrationFlowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDataIntegrationFlowResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DataIntegrationFlow m_flow;
+    bool m_flowHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

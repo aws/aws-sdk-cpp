@@ -32,7 +32,7 @@ namespace Model
   class DescribeDatasetResult
   {
   public:
-    AWS_FORECASTSERVICE_API DescribeDatasetResult();
+    AWS_FORECASTSERVICE_API DescribeDatasetResult() = default;
     AWS_FORECASTSERVICE_API DescribeDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API DescribeDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,48 +41,40 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArn.assign(value); }
-    inline DescribeDatasetResult& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline DescribeDatasetResult& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    DescribeDatasetResult& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the dataset.</p>
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetName.assign(value); }
-    inline DescribeDatasetResult& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline DescribeDatasetResult& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    DescribeDatasetResult& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain associated with the dataset.</p>
      */
-    inline const Domain& GetDomain() const{ return m_domain; }
-    inline void SetDomain(const Domain& value) { m_domain = value; }
-    inline void SetDomain(Domain&& value) { m_domain = std::move(value); }
-    inline DescribeDatasetResult& WithDomain(const Domain& value) { SetDomain(value); return *this;}
-    inline DescribeDatasetResult& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
+    inline Domain GetDomain() const { return m_domain; }
+    inline void SetDomain(Domain value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline DescribeDatasetResult& WithDomain(Domain value) { SetDomain(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dataset type.</p>
      */
-    inline const DatasetType& GetDatasetType() const{ return m_datasetType; }
-    inline void SetDatasetType(const DatasetType& value) { m_datasetType = value; }
-    inline void SetDatasetType(DatasetType&& value) { m_datasetType = std::move(value); }
-    inline DescribeDatasetResult& WithDatasetType(const DatasetType& value) { SetDatasetType(value); return *this;}
-    inline DescribeDatasetResult& WithDatasetType(DatasetType&& value) { SetDatasetType(std::move(value)); return *this;}
+    inline DatasetType GetDatasetType() const { return m_datasetType; }
+    inline void SetDatasetType(DatasetType value) { m_datasetTypeHasBeenSet = true; m_datasetType = value; }
+    inline DescribeDatasetResult& WithDatasetType(DatasetType value) { SetDatasetType(value); return *this;}
     ///@}
 
     ///@{
@@ -92,13 +84,11 @@ namespace Model
      * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M"
      * indicates every month and "30min" indicates every 30 minutes.</p>
      */
-    inline const Aws::String& GetDataFrequency() const{ return m_dataFrequency; }
-    inline void SetDataFrequency(const Aws::String& value) { m_dataFrequency = value; }
-    inline void SetDataFrequency(Aws::String&& value) { m_dataFrequency = std::move(value); }
-    inline void SetDataFrequency(const char* value) { m_dataFrequency.assign(value); }
-    inline DescribeDatasetResult& WithDataFrequency(const Aws::String& value) { SetDataFrequency(value); return *this;}
-    inline DescribeDatasetResult& WithDataFrequency(Aws::String&& value) { SetDataFrequency(std::move(value)); return *this;}
-    inline DescribeDatasetResult& WithDataFrequency(const char* value) { SetDataFrequency(value); return *this;}
+    inline const Aws::String& GetDataFrequency() const { return m_dataFrequency; }
+    template<typename DataFrequencyT = Aws::String>
+    void SetDataFrequency(DataFrequencyT&& value) { m_dataFrequencyHasBeenSet = true; m_dataFrequency = std::forward<DataFrequencyT>(value); }
+    template<typename DataFrequencyT = Aws::String>
+    DescribeDatasetResult& WithDataFrequency(DataFrequencyT&& value) { SetDataFrequency(std::forward<DataFrequencyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,11 +97,11 @@ namespace Model
      * fields. Each <code>SchemaAttribute</code> specifies the name and data type of a
      * field.</p>
      */
-    inline const Schema& GetSchema() const{ return m_schema; }
-    inline void SetSchema(const Schema& value) { m_schema = value; }
-    inline void SetSchema(Schema&& value) { m_schema = std::move(value); }
-    inline DescribeDatasetResult& WithSchema(const Schema& value) { SetSchema(value); return *this;}
-    inline DescribeDatasetResult& WithSchema(Schema&& value) { SetSchema(std::move(value)); return *this;}
+    inline const Schema& GetSchema() const { return m_schema; }
+    template<typename SchemaT = Schema>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Schema>
+    DescribeDatasetResult& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,11 +109,11 @@ namespace Model
      * <p>The Key Management Service (KMS) key and the Identity and Access Management
      * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
-    inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
-    inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfig = value; }
-    inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfig = std::move(value); }
-    inline DescribeDatasetResult& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
-    inline DescribeDatasetResult& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
+    inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
+    template<typename EncryptionConfigT = EncryptionConfig>
+    void SetEncryptionConfig(EncryptionConfigT&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::forward<EncryptionConfigT>(value); }
+    template<typename EncryptionConfigT = EncryptionConfig>
+    DescribeDatasetResult& WithEncryptionConfig(EncryptionConfigT&& value) { SetEncryptionConfig(std::forward<EncryptionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,24 +133,22 @@ namespace Model
      * <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can
      * import training data.</p> 
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline DescribeDatasetResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DescribeDatasetResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DescribeDatasetResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DescribeDatasetResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the dataset was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeDatasetResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeDatasetResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeDatasetResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,46 +161,55 @@ namespace Model
      * operation has finished, <code>LastModificationTime</code> is when the import job
      * completed or failed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline DescribeDatasetResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline DescribeDatasetResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    DescribeDatasetResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDatasetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDatasetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDatasetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDatasetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_datasetArn;
+    bool m_datasetArnHasBeenSet = false;
 
     Aws::String m_datasetName;
+    bool m_datasetNameHasBeenSet = false;
 
-    Domain m_domain;
+    Domain m_domain{Domain::NOT_SET};
+    bool m_domainHasBeenSet = false;
 
-    DatasetType m_datasetType;
+    DatasetType m_datasetType{DatasetType::NOT_SET};
+    bool m_datasetTypeHasBeenSet = false;
 
     Aws::String m_dataFrequency;
+    bool m_dataFrequencyHasBeenSet = false;
 
     Schema m_schema;
+    bool m_schemaHasBeenSet = false;
 
     EncryptionConfig m_encryptionConfig;
+    bool m_encryptionConfigHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

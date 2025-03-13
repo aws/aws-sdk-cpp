@@ -18,15 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-Batch::Batch() : 
-    m_batchJobNameHasBeenSet(false),
-    m_batchJobParametersHasBeenSet(false),
-    m_exportDataSetNamesHasBeenSet(false)
-{
-}
-
 Batch::Batch(JsonView jsonValue)
-  : Batch()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Batch& Batch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("batchJobName"))
   {
     m_batchJobName = jsonValue.GetString("batchJobName");
-
     m_batchJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchJobParameters"))
   {
     Aws::Map<Aws::String, JsonView> batchJobParametersJsonMap = jsonValue.GetObject("batchJobParameters").GetAllObjects();
@@ -49,7 +39,6 @@ Batch& Batch::operator =(JsonView jsonValue)
     }
     m_batchJobParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exportDataSetNames"))
   {
     Aws::Utils::Array<JsonView> exportDataSetNamesJsonList = jsonValue.GetArray("exportDataSetNames");
@@ -59,7 +48,6 @@ Batch& Batch::operator =(JsonView jsonValue)
     }
     m_exportDataSetNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

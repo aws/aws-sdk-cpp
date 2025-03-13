@@ -33,7 +33,7 @@ namespace Model
   class JobDependency
   {
   public:
-    AWS_BATCH_API JobDependency();
+    AWS_BATCH_API JobDependency() = default;
     AWS_BATCH_API JobDependency(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API JobDependency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The job ID of the Batch job that's associated with this dependency.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline JobDependency& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline JobDependency& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline JobDependency& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    JobDependency& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the job dependency.</p>
      */
-    inline const ArrayJobDependency& GetType() const{ return m_type; }
+    inline ArrayJobDependency GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ArrayJobDependency& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ArrayJobDependency&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline JobDependency& WithType(const ArrayJobDependency& value) { SetType(value); return *this;}
-    inline JobDependency& WithType(ArrayJobDependency&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ArrayJobDependency value) { m_typeHasBeenSet = true; m_type = value; }
+    inline JobDependency& WithType(ArrayJobDependency value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    ArrayJobDependency m_type;
+    ArrayJobDependency m_type{ArrayJobDependency::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

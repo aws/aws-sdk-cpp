@@ -34,7 +34,7 @@ namespace Model
   class VirtualGatewayTlsValidationContextTrust
   {
   public:
-    AWS_APPMESH_API VirtualGatewayTlsValidationContextTrust();
+    AWS_APPMESH_API VirtualGatewayTlsValidationContextTrust() = default;
     AWS_APPMESH_API VirtualGatewayTlsValidationContextTrust(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualGatewayTlsValidationContextTrust& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>A reference to an object that represents a Transport Layer Security (TLS)
      * validation context trust for an Certificate Manager certificate.</p>
      */
-    inline const VirtualGatewayTlsValidationContextAcmTrust& GetAcm() const{ return m_acm; }
+    inline const VirtualGatewayTlsValidationContextAcmTrust& GetAcm() const { return m_acm; }
     inline bool AcmHasBeenSet() const { return m_acmHasBeenSet; }
-    inline void SetAcm(const VirtualGatewayTlsValidationContextAcmTrust& value) { m_acmHasBeenSet = true; m_acm = value; }
-    inline void SetAcm(VirtualGatewayTlsValidationContextAcmTrust&& value) { m_acmHasBeenSet = true; m_acm = std::move(value); }
-    inline VirtualGatewayTlsValidationContextTrust& WithAcm(const VirtualGatewayTlsValidationContextAcmTrust& value) { SetAcm(value); return *this;}
-    inline VirtualGatewayTlsValidationContextTrust& WithAcm(VirtualGatewayTlsValidationContextAcmTrust&& value) { SetAcm(std::move(value)); return *this;}
+    template<typename AcmT = VirtualGatewayTlsValidationContextAcmTrust>
+    void SetAcm(AcmT&& value) { m_acmHasBeenSet = true; m_acm = std::forward<AcmT>(value); }
+    template<typename AcmT = VirtualGatewayTlsValidationContextAcmTrust>
+    VirtualGatewayTlsValidationContextTrust& WithAcm(AcmT&& value) { SetAcm(std::forward<AcmT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>An object that represents a Transport Layer Security (TLS) validation context
      * trust for a local file.</p>
      */
-    inline const VirtualGatewayTlsValidationContextFileTrust& GetFile() const{ return m_file; }
+    inline const VirtualGatewayTlsValidationContextFileTrust& GetFile() const { return m_file; }
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-    inline void SetFile(const VirtualGatewayTlsValidationContextFileTrust& value) { m_fileHasBeenSet = true; m_file = value; }
-    inline void SetFile(VirtualGatewayTlsValidationContextFileTrust&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-    inline VirtualGatewayTlsValidationContextTrust& WithFile(const VirtualGatewayTlsValidationContextFileTrust& value) { SetFile(value); return *this;}
-    inline VirtualGatewayTlsValidationContextTrust& WithFile(VirtualGatewayTlsValidationContextFileTrust&& value) { SetFile(std::move(value)); return *this;}
+    template<typename FileT = VirtualGatewayTlsValidationContextFileTrust>
+    void SetFile(FileT&& value) { m_fileHasBeenSet = true; m_file = std::forward<FileT>(value); }
+    template<typename FileT = VirtualGatewayTlsValidationContextFileTrust>
+    VirtualGatewayTlsValidationContextTrust& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * <p>A reference to an object that represents a virtual gateway's Transport Layer
      * Security (TLS) Secret Discovery Service validation context trust.</p>
      */
-    inline const VirtualGatewayTlsValidationContextSdsTrust& GetSds() const{ return m_sds; }
+    inline const VirtualGatewayTlsValidationContextSdsTrust& GetSds() const { return m_sds; }
     inline bool SdsHasBeenSet() const { return m_sdsHasBeenSet; }
-    inline void SetSds(const VirtualGatewayTlsValidationContextSdsTrust& value) { m_sdsHasBeenSet = true; m_sds = value; }
-    inline void SetSds(VirtualGatewayTlsValidationContextSdsTrust&& value) { m_sdsHasBeenSet = true; m_sds = std::move(value); }
-    inline VirtualGatewayTlsValidationContextTrust& WithSds(const VirtualGatewayTlsValidationContextSdsTrust& value) { SetSds(value); return *this;}
-    inline VirtualGatewayTlsValidationContextTrust& WithSds(VirtualGatewayTlsValidationContextSdsTrust&& value) { SetSds(std::move(value)); return *this;}
+    template<typename SdsT = VirtualGatewayTlsValidationContextSdsTrust>
+    void SetSds(SdsT&& value) { m_sdsHasBeenSet = true; m_sds = std::forward<SdsT>(value); }
+    template<typename SdsT = VirtualGatewayTlsValidationContextSdsTrust>
+    VirtualGatewayTlsValidationContextTrust& WithSds(SdsT&& value) { SetSds(std::forward<SdsT>(value)); return *this;}
     ///@}
   private:
 

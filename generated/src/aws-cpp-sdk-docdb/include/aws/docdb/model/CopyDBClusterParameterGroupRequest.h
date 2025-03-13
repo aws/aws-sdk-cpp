@@ -27,7 +27,7 @@ namespace Model
   class CopyDBClusterParameterGroupRequest : public DocDBRequest
   {
   public:
-    AWS_DOCDB_API CopyDBClusterParameterGroupRequest();
+    AWS_DOCDB_API CopyDBClusterParameterGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -55,14 +55,12 @@ namespace Model
      * <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetSourceDBClusterParameterGroupIdentifier() const{ return m_sourceDBClusterParameterGroupIdentifier; }
+    inline const Aws::String& GetSourceDBClusterParameterGroupIdentifier() const { return m_sourceDBClusterParameterGroupIdentifier; }
     inline bool SourceDBClusterParameterGroupIdentifierHasBeenSet() const { return m_sourceDBClusterParameterGroupIdentifierHasBeenSet; }
-    inline void SetSourceDBClusterParameterGroupIdentifier(const Aws::String& value) { m_sourceDBClusterParameterGroupIdentifierHasBeenSet = true; m_sourceDBClusterParameterGroupIdentifier = value; }
-    inline void SetSourceDBClusterParameterGroupIdentifier(Aws::String&& value) { m_sourceDBClusterParameterGroupIdentifierHasBeenSet = true; m_sourceDBClusterParameterGroupIdentifier = std::move(value); }
-    inline void SetSourceDBClusterParameterGroupIdentifier(const char* value) { m_sourceDBClusterParameterGroupIdentifierHasBeenSet = true; m_sourceDBClusterParameterGroupIdentifier.assign(value); }
-    inline CopyDBClusterParameterGroupRequest& WithSourceDBClusterParameterGroupIdentifier(const Aws::String& value) { SetSourceDBClusterParameterGroupIdentifier(value); return *this;}
-    inline CopyDBClusterParameterGroupRequest& WithSourceDBClusterParameterGroupIdentifier(Aws::String&& value) { SetSourceDBClusterParameterGroupIdentifier(std::move(value)); return *this;}
-    inline CopyDBClusterParameterGroupRequest& WithSourceDBClusterParameterGroupIdentifier(const char* value) { SetSourceDBClusterParameterGroupIdentifier(value); return *this;}
+    template<typename SourceDBClusterParameterGroupIdentifierT = Aws::String>
+    void SetSourceDBClusterParameterGroupIdentifier(SourceDBClusterParameterGroupIdentifierT&& value) { m_sourceDBClusterParameterGroupIdentifierHasBeenSet = true; m_sourceDBClusterParameterGroupIdentifier = std::forward<SourceDBClusterParameterGroupIdentifierT>(value); }
+    template<typename SourceDBClusterParameterGroupIdentifierT = Aws::String>
+    CopyDBClusterParameterGroupRequest& WithSourceDBClusterParameterGroupIdentifier(SourceDBClusterParameterGroupIdentifierT&& value) { SetSourceDBClusterParameterGroupIdentifier(std::forward<SourceDBClusterParameterGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,42 +72,38 @@ namespace Model
      * hyphen or contain two consecutive hyphens. </p> </li> </ul> <p>Example:
      * <code>my-cluster-param-group1</code> </p>
      */
-    inline const Aws::String& GetTargetDBClusterParameterGroupIdentifier() const{ return m_targetDBClusterParameterGroupIdentifier; }
+    inline const Aws::String& GetTargetDBClusterParameterGroupIdentifier() const { return m_targetDBClusterParameterGroupIdentifier; }
     inline bool TargetDBClusterParameterGroupIdentifierHasBeenSet() const { return m_targetDBClusterParameterGroupIdentifierHasBeenSet; }
-    inline void SetTargetDBClusterParameterGroupIdentifier(const Aws::String& value) { m_targetDBClusterParameterGroupIdentifierHasBeenSet = true; m_targetDBClusterParameterGroupIdentifier = value; }
-    inline void SetTargetDBClusterParameterGroupIdentifier(Aws::String&& value) { m_targetDBClusterParameterGroupIdentifierHasBeenSet = true; m_targetDBClusterParameterGroupIdentifier = std::move(value); }
-    inline void SetTargetDBClusterParameterGroupIdentifier(const char* value) { m_targetDBClusterParameterGroupIdentifierHasBeenSet = true; m_targetDBClusterParameterGroupIdentifier.assign(value); }
-    inline CopyDBClusterParameterGroupRequest& WithTargetDBClusterParameterGroupIdentifier(const Aws::String& value) { SetTargetDBClusterParameterGroupIdentifier(value); return *this;}
-    inline CopyDBClusterParameterGroupRequest& WithTargetDBClusterParameterGroupIdentifier(Aws::String&& value) { SetTargetDBClusterParameterGroupIdentifier(std::move(value)); return *this;}
-    inline CopyDBClusterParameterGroupRequest& WithTargetDBClusterParameterGroupIdentifier(const char* value) { SetTargetDBClusterParameterGroupIdentifier(value); return *this;}
+    template<typename TargetDBClusterParameterGroupIdentifierT = Aws::String>
+    void SetTargetDBClusterParameterGroupIdentifier(TargetDBClusterParameterGroupIdentifierT&& value) { m_targetDBClusterParameterGroupIdentifierHasBeenSet = true; m_targetDBClusterParameterGroupIdentifier = std::forward<TargetDBClusterParameterGroupIdentifierT>(value); }
+    template<typename TargetDBClusterParameterGroupIdentifierT = Aws::String>
+    CopyDBClusterParameterGroupRequest& WithTargetDBClusterParameterGroupIdentifier(TargetDBClusterParameterGroupIdentifierT&& value) { SetTargetDBClusterParameterGroupIdentifier(std::forward<TargetDBClusterParameterGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the copied cluster parameter group.</p>
      */
-    inline const Aws::String& GetTargetDBClusterParameterGroupDescription() const{ return m_targetDBClusterParameterGroupDescription; }
+    inline const Aws::String& GetTargetDBClusterParameterGroupDescription() const { return m_targetDBClusterParameterGroupDescription; }
     inline bool TargetDBClusterParameterGroupDescriptionHasBeenSet() const { return m_targetDBClusterParameterGroupDescriptionHasBeenSet; }
-    inline void SetTargetDBClusterParameterGroupDescription(const Aws::String& value) { m_targetDBClusterParameterGroupDescriptionHasBeenSet = true; m_targetDBClusterParameterGroupDescription = value; }
-    inline void SetTargetDBClusterParameterGroupDescription(Aws::String&& value) { m_targetDBClusterParameterGroupDescriptionHasBeenSet = true; m_targetDBClusterParameterGroupDescription = std::move(value); }
-    inline void SetTargetDBClusterParameterGroupDescription(const char* value) { m_targetDBClusterParameterGroupDescriptionHasBeenSet = true; m_targetDBClusterParameterGroupDescription.assign(value); }
-    inline CopyDBClusterParameterGroupRequest& WithTargetDBClusterParameterGroupDescription(const Aws::String& value) { SetTargetDBClusterParameterGroupDescription(value); return *this;}
-    inline CopyDBClusterParameterGroupRequest& WithTargetDBClusterParameterGroupDescription(Aws::String&& value) { SetTargetDBClusterParameterGroupDescription(std::move(value)); return *this;}
-    inline CopyDBClusterParameterGroupRequest& WithTargetDBClusterParameterGroupDescription(const char* value) { SetTargetDBClusterParameterGroupDescription(value); return *this;}
+    template<typename TargetDBClusterParameterGroupDescriptionT = Aws::String>
+    void SetTargetDBClusterParameterGroupDescription(TargetDBClusterParameterGroupDescriptionT&& value) { m_targetDBClusterParameterGroupDescriptionHasBeenSet = true; m_targetDBClusterParameterGroupDescription = std::forward<TargetDBClusterParameterGroupDescriptionT>(value); }
+    template<typename TargetDBClusterParameterGroupDescriptionT = Aws::String>
+    CopyDBClusterParameterGroupRequest& WithTargetDBClusterParameterGroupDescription(TargetDBClusterParameterGroupDescriptionT&& value) { SetTargetDBClusterParameterGroupDescription(std::forward<TargetDBClusterParameterGroupDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags that are to be assigned to the parameter group.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CopyDBClusterParameterGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CopyDBClusterParameterGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CopyDBClusterParameterGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CopyDBClusterParameterGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CopyDBClusterParameterGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CopyDBClusterParameterGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

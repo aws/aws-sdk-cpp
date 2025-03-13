@@ -20,26 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-Activity::Activity() : 
-    m_activityIdHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_causeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_statusCode(ScalingActivityStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_progress(0),
-    m_progressHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_autoScalingGroupStateHasBeenSet(false),
-    m_autoScalingGroupARNHasBeenSet(false)
-{
-}
-
 Activity::Activity(const XmlNode& xmlNode)
-  : Activity()
 {
   *this = xmlNode;
 }
@@ -55,72 +36,84 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
     {
       m_activityId = Aws::Utils::Xml::DecodeEscapedXmlText(activityIdNode.GetText());
       m_activityIdHasBeenSet = true;
+       m_activityIdHasBeenSet = true;
     }
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
     if(!autoScalingGroupNameNode.IsNull())
     {
       m_autoScalingGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupNameNode.GetText());
       m_autoScalingGroupNameHasBeenSet = true;
+       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode causeNode = resultNode.FirstChild("Cause");
     if(!causeNode.IsNull())
     {
       m_cause = Aws::Utils::Xml::DecodeEscapedXmlText(causeNode.GetText());
       m_causeHasBeenSet = true;
+       m_causeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
       m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
+       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
     if(!endTimeNode.IsNull())
     {
       m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
+       m_endTimeHasBeenSet = true;
     }
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
     if(!statusCodeNode.IsNull())
     {
-      m_statusCode = ScalingActivityStatusCodeMapper::GetScalingActivityStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText()).c_str()).c_str());
+      m_statusCode = ScalingActivityStatusCodeMapper::GetScalingActivityStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText()).c_str()));
       m_statusCodeHasBeenSet = true;
+       m_statusCodeHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("StatusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("Progress");
     if(!progressNode.IsNull())
     {
       m_progress = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(progressNode.GetText()).c_str()).c_str());
       m_progressHasBeenSet = true;
+       m_progressHasBeenSet = true;
     }
     XmlNode detailsNode = resultNode.FirstChild("Details");
     if(!detailsNode.IsNull())
     {
       m_details = Aws::Utils::Xml::DecodeEscapedXmlText(detailsNode.GetText());
       m_detailsHasBeenSet = true;
+       m_detailsHasBeenSet = true;
     }
     XmlNode autoScalingGroupStateNode = resultNode.FirstChild("AutoScalingGroupState");
     if(!autoScalingGroupStateNode.IsNull())
     {
       m_autoScalingGroupState = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupStateNode.GetText());
       m_autoScalingGroupStateHasBeenSet = true;
+       m_autoScalingGroupStateHasBeenSet = true;
     }
     XmlNode autoScalingGroupARNNode = resultNode.FirstChild("AutoScalingGroupARN");
     if(!autoScalingGroupARNNode.IsNull())
     {
       m_autoScalingGroupARN = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupARNNode.GetText());
       m_autoScalingGroupARNHasBeenSet = true;
+       m_autoScalingGroupARNHasBeenSet = true;
     }
   }
 

@@ -20,16 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-ConnectionDraining::ConnectionDraining() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false)
-{
-}
-
 ConnectionDraining::ConnectionDraining(const XmlNode& xmlNode)
-  : ConnectionDraining()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ ConnectionDraining& ConnectionDraining::operator =(const XmlNode& xmlNode)
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode timeoutNode = resultNode.FirstChild("Timeout");
     if(!timeoutNode.IsNull())
     {
       m_timeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeoutNode.GetText()).c_str()).c_str());
       m_timeoutHasBeenSet = true;
+       m_timeoutHasBeenSet = true;
     }
   }
 

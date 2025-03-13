@@ -12,13 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateListenerRequest::UpdateListenerRequest() : 
-    m_defaultActionHasBeenSet(false),
-    m_listenerIdentifierHasBeenSet(false),
-    m_serviceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String UpdateListenerRequest::SerializePayload() const
 {
   JsonValue payload;

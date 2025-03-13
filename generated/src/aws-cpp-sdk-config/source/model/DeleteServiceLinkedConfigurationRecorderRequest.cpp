@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServiceLinkedConfigurationRecorderRequest::DeleteServiceLinkedConfigurationRecorderRequest() : 
-    m_servicePrincipalHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServiceLinkedConfigurationRecorderRequest::SerializePayload() const
 {
   JsonValue payload;

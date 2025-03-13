@@ -27,7 +27,7 @@ namespace Model
   class PutResourcePolicyResult
   {
   public:
-    AWS_COMPREHEND_API PutResourcePolicyResult();
+    AWS_COMPREHEND_API PutResourcePolicyResult() = default;
     AWS_COMPREHEND_API PutResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API PutResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,28 @@ namespace Model
      * Comprehend assigns a new revision ID, and it deletes the prior version of the
      * policy.</p>
      */
-    inline const Aws::String& GetPolicyRevisionId() const{ return m_policyRevisionId; }
-    inline void SetPolicyRevisionId(const Aws::String& value) { m_policyRevisionId = value; }
-    inline void SetPolicyRevisionId(Aws::String&& value) { m_policyRevisionId = std::move(value); }
-    inline void SetPolicyRevisionId(const char* value) { m_policyRevisionId.assign(value); }
-    inline PutResourcePolicyResult& WithPolicyRevisionId(const Aws::String& value) { SetPolicyRevisionId(value); return *this;}
-    inline PutResourcePolicyResult& WithPolicyRevisionId(Aws::String&& value) { SetPolicyRevisionId(std::move(value)); return *this;}
-    inline PutResourcePolicyResult& WithPolicyRevisionId(const char* value) { SetPolicyRevisionId(value); return *this;}
+    inline const Aws::String& GetPolicyRevisionId() const { return m_policyRevisionId; }
+    template<typename PolicyRevisionIdT = Aws::String>
+    void SetPolicyRevisionId(PolicyRevisionIdT&& value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId = std::forward<PolicyRevisionIdT>(value); }
+    template<typename PolicyRevisionIdT = Aws::String>
+    PutResourcePolicyResult& WithPolicyRevisionId(PolicyRevisionIdT&& value) { SetPolicyRevisionId(std::forward<PolicyRevisionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutResourcePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutResourcePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutResourcePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutResourcePolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_policyRevisionId;
+    bool m_policyRevisionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

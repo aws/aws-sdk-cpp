@@ -34,7 +34,7 @@ namespace Model
   class CodeSigning
   {
   public:
-    AWS_IOT_API CodeSigning();
+    AWS_IOT_API CodeSigning() = default;
     AWS_IOT_API CodeSigning(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API CodeSigning& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,38 +45,36 @@ namespace Model
      * <p>The ID of the <code>AWSSignerJob</code> which was created to sign the
      * file.</p>
      */
-    inline const Aws::String& GetAwsSignerJobId() const{ return m_awsSignerJobId; }
+    inline const Aws::String& GetAwsSignerJobId() const { return m_awsSignerJobId; }
     inline bool AwsSignerJobIdHasBeenSet() const { return m_awsSignerJobIdHasBeenSet; }
-    inline void SetAwsSignerJobId(const Aws::String& value) { m_awsSignerJobIdHasBeenSet = true; m_awsSignerJobId = value; }
-    inline void SetAwsSignerJobId(Aws::String&& value) { m_awsSignerJobIdHasBeenSet = true; m_awsSignerJobId = std::move(value); }
-    inline void SetAwsSignerJobId(const char* value) { m_awsSignerJobIdHasBeenSet = true; m_awsSignerJobId.assign(value); }
-    inline CodeSigning& WithAwsSignerJobId(const Aws::String& value) { SetAwsSignerJobId(value); return *this;}
-    inline CodeSigning& WithAwsSignerJobId(Aws::String&& value) { SetAwsSignerJobId(std::move(value)); return *this;}
-    inline CodeSigning& WithAwsSignerJobId(const char* value) { SetAwsSignerJobId(value); return *this;}
+    template<typename AwsSignerJobIdT = Aws::String>
+    void SetAwsSignerJobId(AwsSignerJobIdT&& value) { m_awsSignerJobIdHasBeenSet = true; m_awsSignerJobId = std::forward<AwsSignerJobIdT>(value); }
+    template<typename AwsSignerJobIdT = Aws::String>
+    CodeSigning& WithAwsSignerJobId(AwsSignerJobIdT&& value) { SetAwsSignerJobId(std::forward<AwsSignerJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the code-signing job.</p>
      */
-    inline const StartSigningJobParameter& GetStartSigningJobParameter() const{ return m_startSigningJobParameter; }
+    inline const StartSigningJobParameter& GetStartSigningJobParameter() const { return m_startSigningJobParameter; }
     inline bool StartSigningJobParameterHasBeenSet() const { return m_startSigningJobParameterHasBeenSet; }
-    inline void SetStartSigningJobParameter(const StartSigningJobParameter& value) { m_startSigningJobParameterHasBeenSet = true; m_startSigningJobParameter = value; }
-    inline void SetStartSigningJobParameter(StartSigningJobParameter&& value) { m_startSigningJobParameterHasBeenSet = true; m_startSigningJobParameter = std::move(value); }
-    inline CodeSigning& WithStartSigningJobParameter(const StartSigningJobParameter& value) { SetStartSigningJobParameter(value); return *this;}
-    inline CodeSigning& WithStartSigningJobParameter(StartSigningJobParameter&& value) { SetStartSigningJobParameter(std::move(value)); return *this;}
+    template<typename StartSigningJobParameterT = StartSigningJobParameter>
+    void SetStartSigningJobParameter(StartSigningJobParameterT&& value) { m_startSigningJobParameterHasBeenSet = true; m_startSigningJobParameter = std::forward<StartSigningJobParameterT>(value); }
+    template<typename StartSigningJobParameterT = StartSigningJobParameter>
+    CodeSigning& WithStartSigningJobParameter(StartSigningJobParameterT&& value) { SetStartSigningJobParameter(std::forward<StartSigningJobParameterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A custom method for code signing a file.</p>
      */
-    inline const CustomCodeSigning& GetCustomCodeSigning() const{ return m_customCodeSigning; }
+    inline const CustomCodeSigning& GetCustomCodeSigning() const { return m_customCodeSigning; }
     inline bool CustomCodeSigningHasBeenSet() const { return m_customCodeSigningHasBeenSet; }
-    inline void SetCustomCodeSigning(const CustomCodeSigning& value) { m_customCodeSigningHasBeenSet = true; m_customCodeSigning = value; }
-    inline void SetCustomCodeSigning(CustomCodeSigning&& value) { m_customCodeSigningHasBeenSet = true; m_customCodeSigning = std::move(value); }
-    inline CodeSigning& WithCustomCodeSigning(const CustomCodeSigning& value) { SetCustomCodeSigning(value); return *this;}
-    inline CodeSigning& WithCustomCodeSigning(CustomCodeSigning&& value) { SetCustomCodeSigning(std::move(value)); return *this;}
+    template<typename CustomCodeSigningT = CustomCodeSigning>
+    void SetCustomCodeSigning(CustomCodeSigningT&& value) { m_customCodeSigningHasBeenSet = true; m_customCodeSigning = std::forward<CustomCodeSigningT>(value); }
+    template<typename CustomCodeSigningT = CustomCodeSigning>
+    CodeSigning& WithCustomCodeSigning(CustomCodeSigningT&& value) { SetCustomCodeSigning(std::forward<CustomCodeSigningT>(value)); return *this;}
     ///@}
   private:
 

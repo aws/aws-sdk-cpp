@@ -18,13 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-CreateTieringInput::CreateTieringInput() : 
-    m_freeTierHasBeenSet(false)
-{
-}
-
 CreateTieringInput::CreateTieringInput(JsonView jsonValue)
-  : CreateTieringInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CreateTieringInput& CreateTieringInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FreeTier"))
   {
     m_freeTier = jsonValue.GetObject("FreeTier");
-
     m_freeTierHasBeenSet = true;
   }
-
   return *this;
 }
 

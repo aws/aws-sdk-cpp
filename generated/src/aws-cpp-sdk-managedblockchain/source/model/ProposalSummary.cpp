@@ -18,21 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-ProposalSummary::ProposalSummary() : 
-    m_proposalIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_proposedByMemberIdHasBeenSet(false),
-    m_proposedByMemberNameHasBeenSet(false),
-    m_status(ProposalStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 ProposalSummary::ProposalSummary(JsonView jsonValue)
-  : ProposalSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ ProposalSummary& ProposalSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProposalId"))
   {
     m_proposalId = jsonValue.GetString("ProposalId");
-
     m_proposalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProposedByMemberId"))
   {
     m_proposedByMemberId = jsonValue.GetString("ProposedByMemberId");
-
     m_proposedByMemberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProposedByMemberName"))
   {
     m_proposedByMemberName = jsonValue.GetString("ProposedByMemberName");
-
     m_proposedByMemberNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ProposalStatusMapper::GetProposalStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationDate"))
   {
     m_expirationDate = jsonValue.GetString("ExpirationDate");
-
     m_expirationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

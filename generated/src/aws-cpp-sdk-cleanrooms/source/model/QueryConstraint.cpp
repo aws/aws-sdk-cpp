@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-QueryConstraint::QueryConstraint() : 
-    m_requireOverlapHasBeenSet(false)
-{
-}
-
 QueryConstraint::QueryConstraint(JsonView jsonValue)
-  : QueryConstraint()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QueryConstraint& QueryConstraint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("requireOverlap"))
   {
     m_requireOverlap = jsonValue.GetObject("requireOverlap");
-
     m_requireOverlapHasBeenSet = true;
   }
-
   return *this;
 }
 

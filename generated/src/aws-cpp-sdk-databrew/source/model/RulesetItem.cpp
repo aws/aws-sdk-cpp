@@ -18,24 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-RulesetItem::RulesetItem() : 
-    m_accountIdHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_ruleCount(0),
-    m_ruleCountHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_targetArnHasBeenSet(false)
-{
-}
-
 RulesetItem::RulesetItem(JsonView jsonValue)
-  : RulesetItem()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ RulesetItem& RulesetItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetDouble("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetString("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleCount"))
   {
     m_ruleCount = jsonValue.GetInteger("RuleCount");
-
     m_ruleCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -114,14 +79,11 @@ RulesetItem& RulesetItem::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetArn"))
   {
     m_targetArn = jsonValue.GetString("TargetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   return *this;
 }
 

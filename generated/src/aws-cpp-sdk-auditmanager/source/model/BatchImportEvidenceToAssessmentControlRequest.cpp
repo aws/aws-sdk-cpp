@@ -12,14 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchImportEvidenceToAssessmentControlRequest::BatchImportEvidenceToAssessmentControlRequest() : 
-    m_assessmentIdHasBeenSet(false),
-    m_controlSetIdHasBeenSet(false),
-    m_controlIdHasBeenSet(false),
-    m_manualEvidenceHasBeenSet(false)
-{
-}
-
 Aws::String BatchImportEvidenceToAssessmentControlRequest::SerializePayload() const
 {
   JsonValue payload;

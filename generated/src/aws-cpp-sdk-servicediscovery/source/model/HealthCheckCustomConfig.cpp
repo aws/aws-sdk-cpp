@@ -18,10 +18,6 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-HealthCheckCustomConfig::HealthCheckCustomConfig()
-{
-}
-
 HealthCheckCustomConfig::HealthCheckCustomConfig(JsonView jsonValue)
 {
   *this = jsonValue;

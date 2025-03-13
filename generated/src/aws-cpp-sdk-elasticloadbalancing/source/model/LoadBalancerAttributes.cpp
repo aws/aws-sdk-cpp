@@ -20,17 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-LoadBalancerAttributes::LoadBalancerAttributes() : 
-    m_crossZoneLoadBalancingHasBeenSet(false),
-    m_accessLogHasBeenSet(false),
-    m_connectionDrainingHasBeenSet(false),
-    m_connectionSettingsHasBeenSet(false),
-    m_additionalAttributesHasBeenSet(false)
-{
-}
-
 LoadBalancerAttributes::LoadBalancerAttributes(const XmlNode& xmlNode)
-  : LoadBalancerAttributes()
 {
   *this = xmlNode;
 }
@@ -46,36 +36,41 @@ LoadBalancerAttributes& LoadBalancerAttributes::operator =(const XmlNode& xmlNod
     {
       m_crossZoneLoadBalancing = crossZoneLoadBalancingNode;
       m_crossZoneLoadBalancingHasBeenSet = true;
+       m_crossZoneLoadBalancingHasBeenSet = true;
     }
     XmlNode accessLogNode = resultNode.FirstChild("AccessLog");
     if(!accessLogNode.IsNull())
     {
       m_accessLog = accessLogNode;
       m_accessLogHasBeenSet = true;
+       m_accessLogHasBeenSet = true;
     }
     XmlNode connectionDrainingNode = resultNode.FirstChild("ConnectionDraining");
     if(!connectionDrainingNode.IsNull())
     {
       m_connectionDraining = connectionDrainingNode;
       m_connectionDrainingHasBeenSet = true;
+       m_connectionDrainingHasBeenSet = true;
     }
     XmlNode connectionSettingsNode = resultNode.FirstChild("ConnectionSettings");
     if(!connectionSettingsNode.IsNull())
     {
       m_connectionSettings = connectionSettingsNode;
       m_connectionSettingsHasBeenSet = true;
+       m_connectionSettingsHasBeenSet = true;
     }
     XmlNode additionalAttributesNode = resultNode.FirstChild("AdditionalAttributes");
     if(!additionalAttributesNode.IsNull())
     {
       XmlNode additionalAttributesMember = additionalAttributesNode.FirstChild("member");
+      m_additionalAttributesHasBeenSet = !additionalAttributesMember.IsNull();
       while(!additionalAttributesMember.IsNull())
       {
         m_additionalAttributes.push_back(additionalAttributesMember);
         additionalAttributesMember = additionalAttributesMember.NextNode("member");
       }
 
-      m_additionalAttributesHasBeenSet = true;
+       m_additionalAttributesHasBeenSet = true;
     }
   }
 

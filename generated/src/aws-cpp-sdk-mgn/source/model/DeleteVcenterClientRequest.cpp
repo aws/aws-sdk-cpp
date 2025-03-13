@@ -12,11 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVcenterClientRequest::DeleteVcenterClientRequest() : 
-    m_vcenterClientIDHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVcenterClientRequest::SerializePayload() const
 {
   JsonValue payload;

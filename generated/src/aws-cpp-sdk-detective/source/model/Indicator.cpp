@@ -18,15 +18,7 @@ namespace Detective
 namespace Model
 {
 
-Indicator::Indicator() : 
-    m_indicatorType(IndicatorType::NOT_SET),
-    m_indicatorTypeHasBeenSet(false),
-    m_indicatorDetailHasBeenSet(false)
-{
-}
-
 Indicator::Indicator(JsonView jsonValue)
-  : Indicator()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Indicator& Indicator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IndicatorType"))
   {
     m_indicatorType = IndicatorTypeMapper::GetIndicatorTypeForName(jsonValue.GetString("IndicatorType"));
-
     m_indicatorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndicatorDetail"))
   {
     m_indicatorDetail = jsonValue.GetObject("IndicatorDetail");
-
     m_indicatorDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

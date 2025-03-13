@@ -34,7 +34,7 @@ namespace Model
   class ClusterInstanceStorageConfig
   {
   public:
-    AWS_SAGEMAKER_API ClusterInstanceStorageConfig();
+    AWS_SAGEMAKER_API ClusterInstanceStorageConfig() = default;
     AWS_SAGEMAKER_API ClusterInstanceStorageConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ClusterInstanceStorageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * The additional EBS volume is attached to each instance within the SageMaker
      * HyperPod cluster instance group and mounted to <code>/opt/sagemaker</code>.</p>
      */
-    inline const ClusterEbsVolumeConfig& GetEbsVolumeConfig() const{ return m_ebsVolumeConfig; }
+    inline const ClusterEbsVolumeConfig& GetEbsVolumeConfig() const { return m_ebsVolumeConfig; }
     inline bool EbsVolumeConfigHasBeenSet() const { return m_ebsVolumeConfigHasBeenSet; }
-    inline void SetEbsVolumeConfig(const ClusterEbsVolumeConfig& value) { m_ebsVolumeConfigHasBeenSet = true; m_ebsVolumeConfig = value; }
-    inline void SetEbsVolumeConfig(ClusterEbsVolumeConfig&& value) { m_ebsVolumeConfigHasBeenSet = true; m_ebsVolumeConfig = std::move(value); }
-    inline ClusterInstanceStorageConfig& WithEbsVolumeConfig(const ClusterEbsVolumeConfig& value) { SetEbsVolumeConfig(value); return *this;}
-    inline ClusterInstanceStorageConfig& WithEbsVolumeConfig(ClusterEbsVolumeConfig&& value) { SetEbsVolumeConfig(std::move(value)); return *this;}
+    template<typename EbsVolumeConfigT = ClusterEbsVolumeConfig>
+    void SetEbsVolumeConfig(EbsVolumeConfigT&& value) { m_ebsVolumeConfigHasBeenSet = true; m_ebsVolumeConfig = std::forward<EbsVolumeConfigT>(value); }
+    template<typename EbsVolumeConfigT = ClusterEbsVolumeConfig>
+    ClusterInstanceStorageConfig& WithEbsVolumeConfig(EbsVolumeConfigT&& value) { SetEbsVolumeConfig(std::forward<EbsVolumeConfigT>(value)); return *this;}
     ///@}
   private:
 

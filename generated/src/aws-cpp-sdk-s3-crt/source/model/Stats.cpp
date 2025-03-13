@@ -20,18 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Stats::Stats() : 
-    m_bytesScanned(0),
-    m_bytesScannedHasBeenSet(false),
-    m_bytesProcessed(0),
-    m_bytesProcessedHasBeenSet(false),
-    m_bytesReturned(0),
-    m_bytesReturnedHasBeenSet(false)
-{
-}
-
 Stats::Stats(const XmlNode& xmlNode)
-  : Stats()
 {
   *this = xmlNode;
 }
@@ -47,18 +36,21 @@ Stats& Stats::operator =(const XmlNode& xmlNode)
     {
       m_bytesScanned = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bytesScannedNode.GetText()).c_str()).c_str());
       m_bytesScannedHasBeenSet = true;
+       m_bytesScannedHasBeenSet = true;
     }
     XmlNode bytesProcessedNode = resultNode.FirstChild("BytesProcessed");
     if(!bytesProcessedNode.IsNull())
     {
       m_bytesProcessed = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bytesProcessedNode.GetText()).c_str()).c_str());
       m_bytesProcessedHasBeenSet = true;
+       m_bytesProcessedHasBeenSet = true;
     }
     XmlNode bytesReturnedNode = resultNode.FirstChild("BytesReturned");
     if(!bytesReturnedNode.IsNull())
     {
       m_bytesReturned = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bytesReturnedNode.GetText()).c_str()).c_str());
       m_bytesReturnedHasBeenSet = true;
+       m_bytesReturnedHasBeenSet = true;
     }
   }
 

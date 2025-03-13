@@ -29,7 +29,7 @@ namespace Model
   class ListExecutionsResult
   {
   public:
-    AWS_TRANSFER_API ListExecutionsResult();
+    AWS_TRANSFER_API ListExecutionsResult() = default;
     AWS_TRANSFER_API ListExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API ListExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,22 @@ namespace Model
      * the output. You can then pass the <code>NextToken</code> parameter in a
      * subsequent command to continue listing additional executions.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListExecutionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListExecutionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowId.assign(value); }
-    inline ListExecutionsResult& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline ListExecutionsResult& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline ListExecutionsResult& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    ListExecutionsResult& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,34 +63,36 @@ namespace Model
      * <p>Returns the details for each execution, in a <code>ListedExecution</code>
      * array.</p>
      */
-    inline const Aws::Vector<ListedExecution>& GetExecutions() const{ return m_executions; }
-    inline void SetExecutions(const Aws::Vector<ListedExecution>& value) { m_executions = value; }
-    inline void SetExecutions(Aws::Vector<ListedExecution>&& value) { m_executions = std::move(value); }
-    inline ListExecutionsResult& WithExecutions(const Aws::Vector<ListedExecution>& value) { SetExecutions(value); return *this;}
-    inline ListExecutionsResult& WithExecutions(Aws::Vector<ListedExecution>&& value) { SetExecutions(std::move(value)); return *this;}
-    inline ListExecutionsResult& AddExecutions(const ListedExecution& value) { m_executions.push_back(value); return *this; }
-    inline ListExecutionsResult& AddExecutions(ListedExecution&& value) { m_executions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListedExecution>& GetExecutions() const { return m_executions; }
+    template<typename ExecutionsT = Aws::Vector<ListedExecution>>
+    void SetExecutions(ExecutionsT&& value) { m_executionsHasBeenSet = true; m_executions = std::forward<ExecutionsT>(value); }
+    template<typename ExecutionsT = Aws::Vector<ListedExecution>>
+    ListExecutionsResult& WithExecutions(ExecutionsT&& value) { SetExecutions(std::forward<ExecutionsT>(value)); return *this;}
+    template<typename ExecutionsT = ListedExecution>
+    ListExecutionsResult& AddExecutions(ExecutionsT&& value) { m_executionsHasBeenSet = true; m_executions.emplace_back(std::forward<ExecutionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListExecutionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListExecutionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListExecutionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListExecutionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_workflowId;
+    bool m_workflowIdHasBeenSet = false;
 
     Aws::Vector<ListedExecution> m_executions;
+    bool m_executionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-RelatedOpsItem::RelatedOpsItem() : 
-    m_opsItemIdHasBeenSet(false)
-{
-}
-
 RelatedOpsItem::RelatedOpsItem(JsonView jsonValue)
-  : RelatedOpsItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RelatedOpsItem& RelatedOpsItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OpsItemId"))
   {
     m_opsItemId = jsonValue.GetString("OpsItemId");
-
     m_opsItemIdHasBeenSet = true;
   }
-
   return *this;
 }
 

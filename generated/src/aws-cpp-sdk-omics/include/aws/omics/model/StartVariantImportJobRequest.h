@@ -24,7 +24,7 @@ namespace Model
   class StartVariantImportJobRequest : public OmicsRequest
   {
   public:
-    AWS_OMICS_API StartVariantImportJobRequest();
+    AWS_OMICS_API StartVariantImportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,49 +39,45 @@ namespace Model
     /**
      * <p>The destination variant store for the job.</p>
      */
-    inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
+    inline const Aws::String& GetDestinationName() const { return m_destinationName; }
     inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }
-    inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
-    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::move(value); }
-    inline void SetDestinationName(const char* value) { m_destinationNameHasBeenSet = true; m_destinationName.assign(value); }
-    inline StartVariantImportJobRequest& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
-    inline StartVariantImportJobRequest& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
-    inline StartVariantImportJobRequest& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
+    template<typename DestinationNameT = Aws::String>
+    void SetDestinationName(DestinationNameT&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::forward<DestinationNameT>(value); }
+    template<typename DestinationNameT = Aws::String>
+    StartVariantImportJobRequest& WithDestinationName(DestinationNameT&& value) { SetDestinationName(std::forward<DestinationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A service role for the job.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline StartVariantImportJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline StartVariantImportJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline StartVariantImportJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    StartVariantImportJobRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Items to import.</p>
      */
-    inline const Aws::Vector<VariantImportItemSource>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<VariantImportItemSource>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<VariantImportItemSource>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<VariantImportItemSource>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline StartVariantImportJobRequest& WithItems(const Aws::Vector<VariantImportItemSource>& value) { SetItems(value); return *this;}
-    inline StartVariantImportJobRequest& WithItems(Aws::Vector<VariantImportItemSource>&& value) { SetItems(std::move(value)); return *this;}
-    inline StartVariantImportJobRequest& AddItems(const VariantImportItemSource& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline StartVariantImportJobRequest& AddItems(VariantImportItemSource&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<VariantImportItemSource>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<VariantImportItemSource>>
+    StartVariantImportJobRequest& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = VariantImportItemSource>
+    StartVariantImportJobRequest& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The job's left normalization setting.</p>
      */
-    inline bool GetRunLeftNormalization() const{ return m_runLeftNormalization; }
+    inline bool GetRunLeftNormalization() const { return m_runLeftNormalization; }
     inline bool RunLeftNormalizationHasBeenSet() const { return m_runLeftNormalizationHasBeenSet; }
     inline void SetRunLeftNormalization(bool value) { m_runLeftNormalizationHasBeenSet = true; m_runLeftNormalization = value; }
     inline StartVariantImportJobRequest& WithRunLeftNormalization(bool value) { SetRunLeftNormalization(value); return *this;}
@@ -91,19 +87,16 @@ namespace Model
     /**
      * <p>The annotation schema generated by the parsed annotation data.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAnnotationFields() const{ return m_annotationFields; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAnnotationFields() const { return m_annotationFields; }
     inline bool AnnotationFieldsHasBeenSet() const { return m_annotationFieldsHasBeenSet; }
-    inline void SetAnnotationFields(const Aws::Map<Aws::String, Aws::String>& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields = value; }
-    inline void SetAnnotationFields(Aws::Map<Aws::String, Aws::String>&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields = std::move(value); }
-    inline StartVariantImportJobRequest& WithAnnotationFields(const Aws::Map<Aws::String, Aws::String>& value) { SetAnnotationFields(value); return *this;}
-    inline StartVariantImportJobRequest& WithAnnotationFields(Aws::Map<Aws::String, Aws::String>&& value) { SetAnnotationFields(std::move(value)); return *this;}
-    inline StartVariantImportJobRequest& AddAnnotationFields(const Aws::String& key, const Aws::String& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(key, value); return *this; }
-    inline StartVariantImportJobRequest& AddAnnotationFields(Aws::String&& key, const Aws::String& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(std::move(key), value); return *this; }
-    inline StartVariantImportJobRequest& AddAnnotationFields(const Aws::String& key, Aws::String&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(key, std::move(value)); return *this; }
-    inline StartVariantImportJobRequest& AddAnnotationFields(Aws::String&& key, Aws::String&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartVariantImportJobRequest& AddAnnotationFields(const char* key, Aws::String&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(key, std::move(value)); return *this; }
-    inline StartVariantImportJobRequest& AddAnnotationFields(Aws::String&& key, const char* value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(std::move(key), value); return *this; }
-    inline StartVariantImportJobRequest& AddAnnotationFields(const char* key, const char* value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(key, value); return *this; }
+    template<typename AnnotationFieldsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAnnotationFields(AnnotationFieldsT&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields = std::forward<AnnotationFieldsT>(value); }
+    template<typename AnnotationFieldsT = Aws::Map<Aws::String, Aws::String>>
+    StartVariantImportJobRequest& WithAnnotationFields(AnnotationFieldsT&& value) { SetAnnotationFields(std::forward<AnnotationFieldsT>(value)); return *this;}
+    template<typename AnnotationFieldsKeyT = Aws::String, typename AnnotationFieldsValueT = Aws::String>
+    StartVariantImportJobRequest& AddAnnotationFields(AnnotationFieldsKeyT&& key, AnnotationFieldsValueT&& value) {
+      m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(std::forward<AnnotationFieldsKeyT>(key), std::forward<AnnotationFieldsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -116,7 +109,7 @@ namespace Model
     Aws::Vector<VariantImportItemSource> m_items;
     bool m_itemsHasBeenSet = false;
 
-    bool m_runLeftNormalization;
+    bool m_runLeftNormalization{false};
     bool m_runLeftNormalizationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_annotationFields;

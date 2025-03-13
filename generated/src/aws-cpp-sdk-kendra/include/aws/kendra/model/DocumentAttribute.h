@@ -35,7 +35,7 @@ namespace Model
   class DocumentAttribute
   {
   public:
-    AWS_KENDRA_API DocumentAttribute();
+    AWS_KENDRA_API DocumentAttribute() = default;
     AWS_KENDRA_API DocumentAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API DocumentAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>The identifier for the attribute.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline DocumentAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline DocumentAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline DocumentAttribute& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    DocumentAttribute& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the attribute.</p>
      */
-    inline const DocumentAttributeValue& GetValue() const{ return m_value; }
+    inline const DocumentAttributeValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const DocumentAttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(DocumentAttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline DocumentAttribute& WithValue(const DocumentAttributeValue& value) { SetValue(value); return *this;}
-    inline DocumentAttribute& WithValue(DocumentAttributeValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = DocumentAttributeValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = DocumentAttributeValue>
+    DocumentAttribute& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

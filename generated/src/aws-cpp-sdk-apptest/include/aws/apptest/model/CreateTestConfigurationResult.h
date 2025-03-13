@@ -27,7 +27,7 @@ namespace Model
   class CreateTestConfigurationResult
   {
   public:
-    AWS_APPTEST_API CreateTestConfigurationResult();
+    AWS_APPTEST_API CreateTestConfigurationResult() = default;
     AWS_APPTEST_API CreateTestConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPTEST_API CreateTestConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,41 +36,40 @@ namespace Model
     /**
      * <p>The test configuration ID.</p>
      */
-    inline const Aws::String& GetTestConfigurationId() const{ return m_testConfigurationId; }
-    inline void SetTestConfigurationId(const Aws::String& value) { m_testConfigurationId = value; }
-    inline void SetTestConfigurationId(Aws::String&& value) { m_testConfigurationId = std::move(value); }
-    inline void SetTestConfigurationId(const char* value) { m_testConfigurationId.assign(value); }
-    inline CreateTestConfigurationResult& WithTestConfigurationId(const Aws::String& value) { SetTestConfigurationId(value); return *this;}
-    inline CreateTestConfigurationResult& WithTestConfigurationId(Aws::String&& value) { SetTestConfigurationId(std::move(value)); return *this;}
-    inline CreateTestConfigurationResult& WithTestConfigurationId(const char* value) { SetTestConfigurationId(value); return *this;}
+    inline const Aws::String& GetTestConfigurationId() const { return m_testConfigurationId; }
+    template<typename TestConfigurationIdT = Aws::String>
+    void SetTestConfigurationId(TestConfigurationIdT&& value) { m_testConfigurationIdHasBeenSet = true; m_testConfigurationId = std::forward<TestConfigurationIdT>(value); }
+    template<typename TestConfigurationIdT = Aws::String>
+    CreateTestConfigurationResult& WithTestConfigurationId(TestConfigurationIdT&& value) { SetTestConfigurationId(std::forward<TestConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test configuration version.</p>
      */
-    inline int GetTestConfigurationVersion() const{ return m_testConfigurationVersion; }
-    inline void SetTestConfigurationVersion(int value) { m_testConfigurationVersion = value; }
+    inline int GetTestConfigurationVersion() const { return m_testConfigurationVersion; }
+    inline void SetTestConfigurationVersion(int value) { m_testConfigurationVersionHasBeenSet = true; m_testConfigurationVersion = value; }
     inline CreateTestConfigurationResult& WithTestConfigurationVersion(int value) { SetTestConfigurationVersion(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateTestConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateTestConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateTestConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateTestConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_testConfigurationId;
+    bool m_testConfigurationIdHasBeenSet = false;
 
-    int m_testConfigurationVersion;
+    int m_testConfigurationVersion{0};
+    bool m_testConfigurationVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

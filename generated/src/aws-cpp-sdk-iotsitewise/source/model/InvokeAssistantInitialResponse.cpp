@@ -21,13 +21,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-InvokeAssistantInitialResponse::InvokeAssistantInitialResponse() : 
-    m_conversationIdHasBeenSet(false)
-{
-}
-
 InvokeAssistantInitialResponse::InvokeAssistantInitialResponse(JsonView jsonValue)
-  : InvokeAssistantInitialResponse()
 {
   *this = jsonValue;
 }
@@ -44,6 +38,7 @@ InvokeAssistantInitialResponse::InvokeAssistantInitialResponse(const Http::Heade
   if(conversationIdIter != headers.end())
   {
     m_conversationId = conversationIdIter->second;
+    m_conversationIdHasBeenSet = true;
   }
 
 }

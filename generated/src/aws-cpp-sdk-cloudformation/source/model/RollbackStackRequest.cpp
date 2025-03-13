@@ -10,15 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-RollbackStackRequest::RollbackStackRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_retainExceptOnCreate(false),
-    m_retainExceptOnCreateHasBeenSet(false)
-{
-}
-
 Aws::String RollbackStackRequest::SerializePayload() const
 {
   Aws::StringStream ss;

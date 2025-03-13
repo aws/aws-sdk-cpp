@@ -20,30 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ScheduledInstance::ScheduledInstance() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_hourlyPriceHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_networkPlatformHasBeenSet(false),
-    m_nextSlotStartTimeHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_previousSlotEndTimeHasBeenSet(false),
-    m_recurrenceHasBeenSet(false),
-    m_scheduledInstanceIdHasBeenSet(false),
-    m_slotDurationInHours(0),
-    m_slotDurationInHoursHasBeenSet(false),
-    m_termEndDateHasBeenSet(false),
-    m_termStartDateHasBeenSet(false),
-    m_totalScheduledInstanceHours(0),
-    m_totalScheduledInstanceHoursHasBeenSet(false)
-{
-}
-
 ScheduledInstance::ScheduledInstance(const XmlNode& xmlNode)
-  : ScheduledInstance()
 {
   *this = xmlNode;
 }
@@ -59,90 +36,105 @@ ScheduledInstance& ScheduledInstance::operator =(const XmlNode& xmlNode)
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("createDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
     XmlNode hourlyPriceNode = resultNode.FirstChild("hourlyPrice");
     if(!hourlyPriceNode.IsNull())
     {
       m_hourlyPrice = Aws::Utils::Xml::DecodeEscapedXmlText(hourlyPriceNode.GetText());
       m_hourlyPriceHasBeenSet = true;
+       m_hourlyPriceHasBeenSet = true;
     }
     XmlNode instanceCountNode = resultNode.FirstChild("instanceCount");
     if(!instanceCountNode.IsNull())
     {
       m_instanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCountNode.GetText()).c_str()).c_str());
       m_instanceCountHasBeenSet = true;
+       m_instanceCountHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode networkPlatformNode = resultNode.FirstChild("networkPlatform");
     if(!networkPlatformNode.IsNull())
     {
       m_networkPlatform = Aws::Utils::Xml::DecodeEscapedXmlText(networkPlatformNode.GetText());
       m_networkPlatformHasBeenSet = true;
+       m_networkPlatformHasBeenSet = true;
     }
     XmlNode nextSlotStartTimeNode = resultNode.FirstChild("nextSlotStartTime");
     if(!nextSlotStartTimeNode.IsNull())
     {
       m_nextSlotStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nextSlotStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_nextSlotStartTimeHasBeenSet = true;
+       m_nextSlotStartTimeHasBeenSet = true;
     }
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
       m_platform = Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText());
       m_platformHasBeenSet = true;
+       m_platformHasBeenSet = true;
     }
     XmlNode previousSlotEndTimeNode = resultNode.FirstChild("previousSlotEndTime");
     if(!previousSlotEndTimeNode.IsNull())
     {
       m_previousSlotEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(previousSlotEndTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_previousSlotEndTimeHasBeenSet = true;
+       m_previousSlotEndTimeHasBeenSet = true;
     }
     XmlNode recurrenceNode = resultNode.FirstChild("recurrence");
     if(!recurrenceNode.IsNull())
     {
       m_recurrence = recurrenceNode;
       m_recurrenceHasBeenSet = true;
+       m_recurrenceHasBeenSet = true;
     }
     XmlNode scheduledInstanceIdNode = resultNode.FirstChild("scheduledInstanceId");
     if(!scheduledInstanceIdNode.IsNull())
     {
       m_scheduledInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(scheduledInstanceIdNode.GetText());
       m_scheduledInstanceIdHasBeenSet = true;
+       m_scheduledInstanceIdHasBeenSet = true;
     }
     XmlNode slotDurationInHoursNode = resultNode.FirstChild("slotDurationInHours");
     if(!slotDurationInHoursNode.IsNull())
     {
       m_slotDurationInHours = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(slotDurationInHoursNode.GetText()).c_str()).c_str());
       m_slotDurationInHoursHasBeenSet = true;
+       m_slotDurationInHoursHasBeenSet = true;
     }
     XmlNode termEndDateNode = resultNode.FirstChild("termEndDate");
     if(!termEndDateNode.IsNull())
     {
       m_termEndDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(termEndDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_termEndDateHasBeenSet = true;
+       m_termEndDateHasBeenSet = true;
     }
     XmlNode termStartDateNode = resultNode.FirstChild("termStartDate");
     if(!termStartDateNode.IsNull())
     {
       m_termStartDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(termStartDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_termStartDateHasBeenSet = true;
+       m_termStartDateHasBeenSet = true;
     }
     XmlNode totalScheduledInstanceHoursNode = resultNode.FirstChild("totalScheduledInstanceHours");
     if(!totalScheduledInstanceHoursNode.IsNull())
     {
       m_totalScheduledInstanceHours = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalScheduledInstanceHoursNode.GetText()).c_str()).c_str());
       m_totalScheduledInstanceHoursHasBeenSet = true;
+       m_totalScheduledInstanceHoursHasBeenSet = true;
     }
   }
 

@@ -18,16 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-ListFilteredTransactionEventsSort::ListFilteredTransactionEventsSort() : 
-    m_sortBy(ListFilteredTransactionEventsSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 ListFilteredTransactionEventsSort::ListFilteredTransactionEventsSort(JsonView jsonValue)
-  : ListFilteredTransactionEventsSort()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ListFilteredTransactionEventsSort& ListFilteredTransactionEventsSort::operator =
   if(jsonValue.ValueExists("sortBy"))
   {
     m_sortBy = ListFilteredTransactionEventsSortByMapper::GetListFilteredTransactionEventsSortByForName(jsonValue.GetString("sortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

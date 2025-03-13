@@ -12,20 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIndexRequest::UpdateIndexRequest() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_documentMetadataConfigurationUpdatesHasBeenSet(false),
-    m_capacityUnitsHasBeenSet(false),
-    m_userTokenConfigurationsHasBeenSet(false),
-    m_userContextPolicy(UserContextPolicy::NOT_SET),
-    m_userContextPolicyHasBeenSet(false),
-    m_userGroupResolutionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIndexRequest::SerializePayload() const
 {
   JsonValue payload;

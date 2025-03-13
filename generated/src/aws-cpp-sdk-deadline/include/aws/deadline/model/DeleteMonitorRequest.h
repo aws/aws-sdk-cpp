@@ -21,7 +21,7 @@ namespace Model
   class DeleteMonitorRequest : public DeadlineRequest
   {
   public:
-    AWS_DEADLINE_API DeleteMonitorRequest();
+    AWS_DEADLINE_API DeleteMonitorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <code>CreateMonitor</code> operation, and is included in the response to the
      * <code>GetMonitor</code> operation.</p>
      */
-    inline const Aws::String& GetMonitorId() const{ return m_monitorId; }
+    inline const Aws::String& GetMonitorId() const { return m_monitorId; }
     inline bool MonitorIdHasBeenSet() const { return m_monitorIdHasBeenSet; }
-    inline void SetMonitorId(const Aws::String& value) { m_monitorIdHasBeenSet = true; m_monitorId = value; }
-    inline void SetMonitorId(Aws::String&& value) { m_monitorIdHasBeenSet = true; m_monitorId = std::move(value); }
-    inline void SetMonitorId(const char* value) { m_monitorIdHasBeenSet = true; m_monitorId.assign(value); }
-    inline DeleteMonitorRequest& WithMonitorId(const Aws::String& value) { SetMonitorId(value); return *this;}
-    inline DeleteMonitorRequest& WithMonitorId(Aws::String&& value) { SetMonitorId(std::move(value)); return *this;}
-    inline DeleteMonitorRequest& WithMonitorId(const char* value) { SetMonitorId(value); return *this;}
+    template<typename MonitorIdT = Aws::String>
+    void SetMonitorId(MonitorIdT&& value) { m_monitorIdHasBeenSet = true; m_monitorId = std::forward<MonitorIdT>(value); }
+    template<typename MonitorIdT = Aws::String>
+    DeleteMonitorRequest& WithMonitorId(MonitorIdT&& value) { SetMonitorId(std::forward<MonitorIdT>(value)); return *this;}
     ///@}
   private:
 

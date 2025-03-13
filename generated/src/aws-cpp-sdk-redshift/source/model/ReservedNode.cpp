@@ -20,30 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ReservedNode::ReservedNode() : 
-    m_reservedNodeIdHasBeenSet(false),
-    m_reservedNodeOfferingIdHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_nodeCount(0),
-    m_nodeCountHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false),
-    m_reservedNodeOfferingType(ReservedNodeOfferingType::NOT_SET),
-    m_reservedNodeOfferingTypeHasBeenSet(false)
-{
-}
-
 ReservedNode::ReservedNode(const XmlNode& xmlNode)
-  : ReservedNode()
 {
   *this = xmlNode;
 }
@@ -59,84 +36,97 @@ ReservedNode& ReservedNode::operator =(const XmlNode& xmlNode)
     {
       m_reservedNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeIdNode.GetText());
       m_reservedNodeIdHasBeenSet = true;
+       m_reservedNodeIdHasBeenSet = true;
     }
     XmlNode reservedNodeOfferingIdNode = resultNode.FirstChild("ReservedNodeOfferingId");
     if(!reservedNodeOfferingIdNode.IsNull())
     {
       m_reservedNodeOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeOfferingIdNode.GetText());
       m_reservedNodeOfferingIdHasBeenSet = true;
+       m_reservedNodeOfferingIdHasBeenSet = true;
     }
     XmlNode nodeTypeNode = resultNode.FirstChild("NodeType");
     if(!nodeTypeNode.IsNull())
     {
       m_nodeType = Aws::Utils::Xml::DecodeEscapedXmlText(nodeTypeNode.GetText());
       m_nodeTypeHasBeenSet = true;
+       m_nodeTypeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
       m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
+       m_startTimeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
     if(!durationNode.IsNull())
     {
       m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
       m_durationHasBeenSet = true;
+       m_durationHasBeenSet = true;
     }
     XmlNode fixedPriceNode = resultNode.FirstChild("FixedPrice");
     if(!fixedPriceNode.IsNull())
     {
       m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fixedPriceNode.GetText()).c_str()).c_str());
       m_fixedPriceHasBeenSet = true;
+       m_fixedPriceHasBeenSet = true;
     }
     XmlNode usagePriceNode = resultNode.FirstChild("UsagePrice");
     if(!usagePriceNode.IsNull())
     {
       m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usagePriceNode.GetText()).c_str()).c_str());
       m_usagePriceHasBeenSet = true;
+       m_usagePriceHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("CurrencyCode");
     if(!currencyCodeNode.IsNull())
     {
       m_currencyCode = Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText());
       m_currencyCodeHasBeenSet = true;
+       m_currencyCodeHasBeenSet = true;
     }
     XmlNode nodeCountNode = resultNode.FirstChild("NodeCount");
     if(!nodeCountNode.IsNull())
     {
       m_nodeCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeCountNode.GetText()).c_str()).c_str());
       m_nodeCountHasBeenSet = true;
+       m_nodeCountHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
     if(!offeringTypeNode.IsNull())
     {
       m_offeringType = Aws::Utils::Xml::DecodeEscapedXmlText(offeringTypeNode.GetText());
       m_offeringTypeHasBeenSet = true;
+       m_offeringTypeHasBeenSet = true;
     }
     XmlNode recurringChargesNode = resultNode.FirstChild("RecurringCharges");
     if(!recurringChargesNode.IsNull())
     {
       XmlNode recurringChargesMember = recurringChargesNode.FirstChild("RecurringCharge");
+      m_recurringChargesHasBeenSet = !recurringChargesMember.IsNull();
       while(!recurringChargesMember.IsNull())
       {
         m_recurringCharges.push_back(recurringChargesMember);
         recurringChargesMember = recurringChargesMember.NextNode("RecurringCharge");
       }
 
-      m_recurringChargesHasBeenSet = true;
+       m_recurringChargesHasBeenSet = true;
     }
     XmlNode reservedNodeOfferingTypeNode = resultNode.FirstChild("ReservedNodeOfferingType");
     if(!reservedNodeOfferingTypeNode.IsNull())
     {
-      m_reservedNodeOfferingType = ReservedNodeOfferingTypeMapper::GetReservedNodeOfferingTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeOfferingTypeNode.GetText()).c_str()).c_str());
+      m_reservedNodeOfferingType = ReservedNodeOfferingTypeMapper::GetReservedNodeOfferingTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeOfferingTypeNode.GetText()).c_str()));
       m_reservedNodeOfferingTypeHasBeenSet = true;
+       m_reservedNodeOfferingTypeHasBeenSet = true;
     }
   }
 

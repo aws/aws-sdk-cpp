@@ -31,7 +31,7 @@ namespace Model
   class City
   {
   public:
-    AWS_SECURITYHUB_API City();
+    AWS_SECURITYHUB_API City() = default;
     AWS_SECURITYHUB_API City(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API City& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the city.</p>
      */
-    inline const Aws::String& GetCityName() const{ return m_cityName; }
+    inline const Aws::String& GetCityName() const { return m_cityName; }
     inline bool CityNameHasBeenSet() const { return m_cityNameHasBeenSet; }
-    inline void SetCityName(const Aws::String& value) { m_cityNameHasBeenSet = true; m_cityName = value; }
-    inline void SetCityName(Aws::String&& value) { m_cityNameHasBeenSet = true; m_cityName = std::move(value); }
-    inline void SetCityName(const char* value) { m_cityNameHasBeenSet = true; m_cityName.assign(value); }
-    inline City& WithCityName(const Aws::String& value) { SetCityName(value); return *this;}
-    inline City& WithCityName(Aws::String&& value) { SetCityName(std::move(value)); return *this;}
-    inline City& WithCityName(const char* value) { SetCityName(value); return *this;}
+    template<typename CityNameT = Aws::String>
+    void SetCityName(CityNameT&& value) { m_cityNameHasBeenSet = true; m_cityName = std::forward<CityNameT>(value); }
+    template<typename CityNameT = Aws::String>
+    City& WithCityName(CityNameT&& value) { SetCityName(std::forward<CityNameT>(value)); return *this;}
     ///@}
   private:
 

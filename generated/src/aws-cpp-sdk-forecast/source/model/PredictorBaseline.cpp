@@ -18,13 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-PredictorBaseline::PredictorBaseline() : 
-    m_baselineMetricsHasBeenSet(false)
-{
-}
-
 PredictorBaseline::PredictorBaseline(JsonView jsonValue)
-  : PredictorBaseline()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PredictorBaseline& PredictorBaseline::operator =(JsonView jsonValue)
     }
     m_baselineMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

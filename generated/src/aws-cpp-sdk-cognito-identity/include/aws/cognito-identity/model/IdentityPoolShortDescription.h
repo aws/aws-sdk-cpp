@@ -31,7 +31,7 @@ namespace Model
   class IdentityPoolShortDescription
   {
   public:
-    AWS_COGNITOIDENTITY_API IdentityPoolShortDescription();
+    AWS_COGNITOIDENTITY_API IdentityPoolShortDescription() = default;
     AWS_COGNITOIDENTITY_API IdentityPoolShortDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITY_API IdentityPoolShortDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+    inline const Aws::String& GetIdentityPoolId() const { return m_identityPoolId; }
     inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::move(value); }
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
-    inline IdentityPoolShortDescription& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
-    inline IdentityPoolShortDescription& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
-    inline IdentityPoolShortDescription& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+    template<typename IdentityPoolIdT = Aws::String>
+    void SetIdentityPoolId(IdentityPoolIdT&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::forward<IdentityPoolIdT>(value); }
+    template<typename IdentityPoolIdT = Aws::String>
+    IdentityPoolShortDescription& WithIdentityPoolId(IdentityPoolIdT&& value) { SetIdentityPoolId(std::forward<IdentityPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string that you provide.</p>
      */
-    inline const Aws::String& GetIdentityPoolName() const{ return m_identityPoolName; }
+    inline const Aws::String& GetIdentityPoolName() const { return m_identityPoolName; }
     inline bool IdentityPoolNameHasBeenSet() const { return m_identityPoolNameHasBeenSet; }
-    inline void SetIdentityPoolName(const Aws::String& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = value; }
-    inline void SetIdentityPoolName(Aws::String&& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = std::move(value); }
-    inline void SetIdentityPoolName(const char* value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName.assign(value); }
-    inline IdentityPoolShortDescription& WithIdentityPoolName(const Aws::String& value) { SetIdentityPoolName(value); return *this;}
-    inline IdentityPoolShortDescription& WithIdentityPoolName(Aws::String&& value) { SetIdentityPoolName(std::move(value)); return *this;}
-    inline IdentityPoolShortDescription& WithIdentityPoolName(const char* value) { SetIdentityPoolName(value); return *this;}
+    template<typename IdentityPoolNameT = Aws::String>
+    void SetIdentityPoolName(IdentityPoolNameT&& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = std::forward<IdentityPoolNameT>(value); }
+    template<typename IdentityPoolNameT = Aws::String>
+    IdentityPoolShortDescription& WithIdentityPoolName(IdentityPoolNameT&& value) { SetIdentityPoolName(std::forward<IdentityPoolNameT>(value)); return *this;}
     ///@}
   private:
 

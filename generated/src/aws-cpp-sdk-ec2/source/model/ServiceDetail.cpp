@@ -20,33 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ServiceDetail::ServiceDetail() : 
-    m_serviceNameHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false),
-    m_serviceRegionHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_baseEndpointDnsNamesHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_privateDnsNamesHasBeenSet(false),
-    m_vpcEndpointPolicySupported(false),
-    m_vpcEndpointPolicySupportedHasBeenSet(false),
-    m_acceptanceRequired(false),
-    m_acceptanceRequiredHasBeenSet(false),
-    m_managesVpcEndpoints(false),
-    m_managesVpcEndpointsHasBeenSet(false),
-    m_payerResponsibility(PayerResponsibility::NOT_SET),
-    m_payerResponsibilityHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_privateDnsNameVerificationState(DnsNameState::NOT_SET),
-    m_privateDnsNameVerificationStateHasBeenSet(false),
-    m_supportedIpAddressTypesHasBeenSet(false)
-{
-}
-
 ServiceDetail::ServiceDetail(const XmlNode& xmlNode)
-  : ServiceDetail()
 {
   *this = xmlNode;
 }
@@ -62,132 +36,148 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
     {
       m_serviceName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNameNode.GetText());
       m_serviceNameHasBeenSet = true;
+       m_serviceNameHasBeenSet = true;
     }
     XmlNode serviceIdNode = resultNode.FirstChild("serviceId");
     if(!serviceIdNode.IsNull())
     {
       m_serviceId = Aws::Utils::Xml::DecodeEscapedXmlText(serviceIdNode.GetText());
       m_serviceIdHasBeenSet = true;
+       m_serviceIdHasBeenSet = true;
     }
     XmlNode serviceTypeNode = resultNode.FirstChild("serviceType");
     if(!serviceTypeNode.IsNull())
     {
       XmlNode serviceTypeMember = serviceTypeNode.FirstChild("item");
+      m_serviceTypeHasBeenSet = !serviceTypeMember.IsNull();
       while(!serviceTypeMember.IsNull())
       {
         m_serviceType.push_back(serviceTypeMember);
         serviceTypeMember = serviceTypeMember.NextNode("item");
       }
 
-      m_serviceTypeHasBeenSet = true;
+       m_serviceTypeHasBeenSet = true;
     }
     XmlNode serviceRegionNode = resultNode.FirstChild("serviceRegion");
     if(!serviceRegionNode.IsNull())
     {
       m_serviceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(serviceRegionNode.GetText());
       m_serviceRegionHasBeenSet = true;
+       m_serviceRegionHasBeenSet = true;
     }
     XmlNode availabilityZonesNode = resultNode.FirstChild("availabilityZoneSet");
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("item");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember.GetText());
         availabilityZonesMember = availabilityZonesMember.NextNode("item");
       }
 
-      m_availabilityZonesHasBeenSet = true;
+       m_availabilityZonesHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("owner");
     if(!ownerNode.IsNull())
     {
       m_owner = Aws::Utils::Xml::DecodeEscapedXmlText(ownerNode.GetText());
       m_ownerHasBeenSet = true;
+       m_ownerHasBeenSet = true;
     }
     XmlNode baseEndpointDnsNamesNode = resultNode.FirstChild("baseEndpointDnsNameSet");
     if(!baseEndpointDnsNamesNode.IsNull())
     {
       XmlNode baseEndpointDnsNamesMember = baseEndpointDnsNamesNode.FirstChild("item");
+      m_baseEndpointDnsNamesHasBeenSet = !baseEndpointDnsNamesMember.IsNull();
       while(!baseEndpointDnsNamesMember.IsNull())
       {
         m_baseEndpointDnsNames.push_back(baseEndpointDnsNamesMember.GetText());
         baseEndpointDnsNamesMember = baseEndpointDnsNamesMember.NextNode("item");
       }
 
-      m_baseEndpointDnsNamesHasBeenSet = true;
+       m_baseEndpointDnsNamesHasBeenSet = true;
     }
     XmlNode privateDnsNameNode = resultNode.FirstChild("privateDnsName");
     if(!privateDnsNameNode.IsNull())
     {
       m_privateDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameNode.GetText());
       m_privateDnsNameHasBeenSet = true;
+       m_privateDnsNameHasBeenSet = true;
     }
     XmlNode privateDnsNamesNode = resultNode.FirstChild("privateDnsNameSet");
     if(!privateDnsNamesNode.IsNull())
     {
       XmlNode privateDnsNamesMember = privateDnsNamesNode.FirstChild("item");
+      m_privateDnsNamesHasBeenSet = !privateDnsNamesMember.IsNull();
       while(!privateDnsNamesMember.IsNull())
       {
         m_privateDnsNames.push_back(privateDnsNamesMember);
         privateDnsNamesMember = privateDnsNamesMember.NextNode("item");
       }
 
-      m_privateDnsNamesHasBeenSet = true;
+       m_privateDnsNamesHasBeenSet = true;
     }
     XmlNode vpcEndpointPolicySupportedNode = resultNode.FirstChild("vpcEndpointPolicySupported");
     if(!vpcEndpointPolicySupportedNode.IsNull())
     {
       m_vpcEndpointPolicySupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointPolicySupportedNode.GetText()).c_str()).c_str());
       m_vpcEndpointPolicySupportedHasBeenSet = true;
+       m_vpcEndpointPolicySupportedHasBeenSet = true;
     }
     XmlNode acceptanceRequiredNode = resultNode.FirstChild("acceptanceRequired");
     if(!acceptanceRequiredNode.IsNull())
     {
       m_acceptanceRequired = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(acceptanceRequiredNode.GetText()).c_str()).c_str());
       m_acceptanceRequiredHasBeenSet = true;
+       m_acceptanceRequiredHasBeenSet = true;
     }
     XmlNode managesVpcEndpointsNode = resultNode.FirstChild("managesVpcEndpoints");
     if(!managesVpcEndpointsNode.IsNull())
     {
       m_managesVpcEndpoints = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managesVpcEndpointsNode.GetText()).c_str()).c_str());
       m_managesVpcEndpointsHasBeenSet = true;
+       m_managesVpcEndpointsHasBeenSet = true;
     }
     XmlNode payerResponsibilityNode = resultNode.FirstChild("payerResponsibility");
     if(!payerResponsibilityNode.IsNull())
     {
-      m_payerResponsibility = PayerResponsibilityMapper::GetPayerResponsibilityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payerResponsibilityNode.GetText()).c_str()).c_str());
+      m_payerResponsibility = PayerResponsibilityMapper::GetPayerResponsibilityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payerResponsibilityNode.GetText()).c_str()));
       m_payerResponsibilityHasBeenSet = true;
+       m_payerResponsibilityHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode privateDnsNameVerificationStateNode = resultNode.FirstChild("privateDnsNameVerificationState");
     if(!privateDnsNameVerificationStateNode.IsNull())
     {
-      m_privateDnsNameVerificationState = DnsNameStateMapper::GetDnsNameStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameVerificationStateNode.GetText()).c_str()).c_str());
+      m_privateDnsNameVerificationState = DnsNameStateMapper::GetDnsNameStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameVerificationStateNode.GetText()).c_str()));
       m_privateDnsNameVerificationStateHasBeenSet = true;
+       m_privateDnsNameVerificationStateHasBeenSet = true;
     }
     XmlNode supportedIpAddressTypesNode = resultNode.FirstChild("supportedIpAddressTypeSet");
     if(!supportedIpAddressTypesNode.IsNull())
     {
       XmlNode supportedIpAddressTypesMember = supportedIpAddressTypesNode.FirstChild("item");
+      m_supportedIpAddressTypesHasBeenSet = !supportedIpAddressTypesMember.IsNull();
       while(!supportedIpAddressTypesMember.IsNull())
       {
         m_supportedIpAddressTypes.push_back(ServiceConnectivityTypeMapper::GetServiceConnectivityTypeForName(StringUtils::Trim(supportedIpAddressTypesMember.GetText().c_str())));
         supportedIpAddressTypesMember = supportedIpAddressTypesMember.NextNode("item");
       }
 
-      m_supportedIpAddressTypesHasBeenSet = true;
+       m_supportedIpAddressTypesHasBeenSet = true;
     }
   }
 

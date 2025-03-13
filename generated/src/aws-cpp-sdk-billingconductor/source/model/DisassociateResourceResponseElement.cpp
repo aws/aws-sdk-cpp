@@ -18,14 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-DisassociateResourceResponseElement::DisassociateResourceResponseElement() : 
-    m_arnHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 DisassociateResourceResponseElement::DisassociateResourceResponseElement(JsonView jsonValue)
-  : DisassociateResourceResponseElement()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DisassociateResourceResponseElement& DisassociateResourceResponseElement::operat
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

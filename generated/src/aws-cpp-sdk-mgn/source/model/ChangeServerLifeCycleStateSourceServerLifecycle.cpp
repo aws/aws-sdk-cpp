@@ -18,14 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ChangeServerLifeCycleStateSourceServerLifecycle::ChangeServerLifeCycleStateSourceServerLifecycle() : 
-    m_state(ChangeServerLifeCycleStateSourceServerLifecycleState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 ChangeServerLifeCycleStateSourceServerLifecycle::ChangeServerLifeCycleStateSourceServerLifecycle(JsonView jsonValue)
-  : ChangeServerLifeCycleStateSourceServerLifecycle()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ChangeServerLifeCycleStateSourceServerLifecycle& ChangeServerLifeCycleStateSourc
   if(jsonValue.ValueExists("state"))
   {
     m_state = ChangeServerLifeCycleStateSourceServerLifecycleStateMapper::GetChangeServerLifeCycleStateSourceServerLifecycleStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

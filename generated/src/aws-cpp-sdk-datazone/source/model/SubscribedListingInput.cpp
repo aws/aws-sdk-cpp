@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SubscribedListingInput::SubscribedListingInput() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 SubscribedListingInput::SubscribedListingInput(JsonView jsonValue)
-  : SubscribedListingInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SubscribedListingInput& SubscribedListingInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   return *this;
 }
 

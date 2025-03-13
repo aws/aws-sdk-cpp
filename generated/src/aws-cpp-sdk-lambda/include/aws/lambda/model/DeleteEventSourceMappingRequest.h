@@ -21,7 +21,7 @@ namespace Model
   class DeleteEventSourceMappingRequest : public LambdaRequest
   {
   public:
-    AWS_LAMBDA_API DeleteEventSourceMappingRequest();
+    AWS_LAMBDA_API DeleteEventSourceMappingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The identifier of the event source mapping.</p>
      */
-    inline const Aws::String& GetUUID() const{ return m_uUID; }
+    inline const Aws::String& GetUUID() const { return m_uUID; }
     inline bool UUIDHasBeenSet() const { return m_uUIDHasBeenSet; }
-    inline void SetUUID(const Aws::String& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
-    inline void SetUUID(Aws::String&& value) { m_uUIDHasBeenSet = true; m_uUID = std::move(value); }
-    inline void SetUUID(const char* value) { m_uUIDHasBeenSet = true; m_uUID.assign(value); }
-    inline DeleteEventSourceMappingRequest& WithUUID(const Aws::String& value) { SetUUID(value); return *this;}
-    inline DeleteEventSourceMappingRequest& WithUUID(Aws::String&& value) { SetUUID(std::move(value)); return *this;}
-    inline DeleteEventSourceMappingRequest& WithUUID(const char* value) { SetUUID(value); return *this;}
+    template<typename UUIDT = Aws::String>
+    void SetUUID(UUIDT&& value) { m_uUIDHasBeenSet = true; m_uUID = std::forward<UUIDT>(value); }
+    template<typename UUIDT = Aws::String>
+    DeleteEventSourceMappingRequest& WithUUID(UUIDT&& value) { SetUUID(std::forward<UUIDT>(value)); return *this;}
     ///@}
   private:
 

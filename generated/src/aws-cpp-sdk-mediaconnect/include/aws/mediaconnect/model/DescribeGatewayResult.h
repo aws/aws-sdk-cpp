@@ -28,35 +28,35 @@ namespace Model
   class DescribeGatewayResult
   {
   public:
-    AWS_MEDIACONNECT_API DescribeGatewayResult();
+    AWS_MEDIACONNECT_API DescribeGatewayResult() = default;
     AWS_MEDIACONNECT_API DescribeGatewayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API DescribeGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Gateway& GetGateway() const{ return m_gateway; }
-    inline void SetGateway(const Gateway& value) { m_gateway = value; }
-    inline void SetGateway(Gateway&& value) { m_gateway = std::move(value); }
-    inline DescribeGatewayResult& WithGateway(const Gateway& value) { SetGateway(value); return *this;}
-    inline DescribeGatewayResult& WithGateway(Gateway&& value) { SetGateway(std::move(value)); return *this;}
+    inline const Gateway& GetGateway() const { return m_gateway; }
+    template<typename GatewayT = Gateway>
+    void SetGateway(GatewayT&& value) { m_gatewayHasBeenSet = true; m_gateway = std::forward<GatewayT>(value); }
+    template<typename GatewayT = Gateway>
+    DescribeGatewayResult& WithGateway(GatewayT&& value) { SetGateway(std::forward<GatewayT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeGatewayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeGatewayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeGatewayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeGatewayResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Gateway m_gateway;
+    bool m_gatewayHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

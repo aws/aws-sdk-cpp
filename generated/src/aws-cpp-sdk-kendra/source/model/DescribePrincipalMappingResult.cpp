@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePrincipalMappingResult::DescribePrincipalMappingResult()
-{
-}
-
 DescribePrincipalMappingResult::DescribePrincipalMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ DescribePrincipalMappingResult& DescribePrincipalMappingResult::operator =(const
   if(jsonValue.ValueExists("IndexId"))
   {
     m_indexId = jsonValue.GetString("IndexId");
-
+    m_indexIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("DataSourceId");
-
+    m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
+    m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupOrderingIdSummaries"))
   {
     Aws::Utils::Array<JsonView> groupOrderingIdSummariesJsonList = jsonValue.GetArray("GroupOrderingIdSummaries");
@@ -54,14 +47,15 @@ DescribePrincipalMappingResult& DescribePrincipalMappingResult::operator =(const
     {
       m_groupOrderingIdSummaries.push_back(groupOrderingIdSummariesJsonList[groupOrderingIdSummariesIndex].AsObject());
     }
+    m_groupOrderingIdSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

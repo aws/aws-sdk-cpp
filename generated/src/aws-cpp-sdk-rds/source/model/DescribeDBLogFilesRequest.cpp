@@ -10,20 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBLogFilesRequest::DescribeDBLogFilesRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_filenameContainsHasBeenSet(false),
-    m_fileLastWritten(0),
-    m_fileLastWrittenHasBeenSet(false),
-    m_fileSize(0),
-    m_fileSizeHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBLogFilesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

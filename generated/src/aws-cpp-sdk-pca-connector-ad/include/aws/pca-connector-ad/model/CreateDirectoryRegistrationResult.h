@@ -27,7 +27,7 @@ namespace Model
   class CreateDirectoryRegistrationResult
   {
   public:
-    AWS_PCACONNECTORAD_API CreateDirectoryRegistrationResult();
+    AWS_PCACONNECTORAD_API CreateDirectoryRegistrationResult() = default;
     AWS_PCACONNECTORAD_API CreateDirectoryRegistrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PCACONNECTORAD_API CreateDirectoryRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that was returned when you called <a
      * href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
      */
-    inline const Aws::String& GetDirectoryRegistrationArn() const{ return m_directoryRegistrationArn; }
-    inline void SetDirectoryRegistrationArn(const Aws::String& value) { m_directoryRegistrationArn = value; }
-    inline void SetDirectoryRegistrationArn(Aws::String&& value) { m_directoryRegistrationArn = std::move(value); }
-    inline void SetDirectoryRegistrationArn(const char* value) { m_directoryRegistrationArn.assign(value); }
-    inline CreateDirectoryRegistrationResult& WithDirectoryRegistrationArn(const Aws::String& value) { SetDirectoryRegistrationArn(value); return *this;}
-    inline CreateDirectoryRegistrationResult& WithDirectoryRegistrationArn(Aws::String&& value) { SetDirectoryRegistrationArn(std::move(value)); return *this;}
-    inline CreateDirectoryRegistrationResult& WithDirectoryRegistrationArn(const char* value) { SetDirectoryRegistrationArn(value); return *this;}
+    inline const Aws::String& GetDirectoryRegistrationArn() const { return m_directoryRegistrationArn; }
+    template<typename DirectoryRegistrationArnT = Aws::String>
+    void SetDirectoryRegistrationArn(DirectoryRegistrationArnT&& value) { m_directoryRegistrationArnHasBeenSet = true; m_directoryRegistrationArn = std::forward<DirectoryRegistrationArnT>(value); }
+    template<typename DirectoryRegistrationArnT = Aws::String>
+    CreateDirectoryRegistrationResult& WithDirectoryRegistrationArn(DirectoryRegistrationArnT&& value) { SetDirectoryRegistrationArn(std::forward<DirectoryRegistrationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDirectoryRegistrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDirectoryRegistrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDirectoryRegistrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDirectoryRegistrationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_directoryRegistrationArn;
+    bool m_directoryRegistrationArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAccessPointsResult::ListAccessPointsResult()
-{
-}
-
 ListAccessPointsResult::ListAccessPointsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ ListAccessPointsResult& ListAccessPointsResult::operator =(const Aws::AmazonWebS
     if(!accessPointListNode.IsNull())
     {
       XmlNode accessPointListMember = accessPointListNode.FirstChild("AccessPoint");
+      m_accessPointListHasBeenSet = !accessPointListMember.IsNull();
       while(!accessPointListMember.IsNull())
       {
         m_accessPointList.push_back(accessPointListMember);
@@ -47,6 +44,7 @@ ListAccessPointsResult& ListAccessPointsResult::operator =(const Aws::AmazonWebS
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -55,12 +53,14 @@ ListAccessPointsResult& ListAccessPointsResult::operator =(const Aws::AmazonWebS
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

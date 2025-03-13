@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpnGateway::VpnGateway() : 
-    m_amazonSideAsn(0),
-    m_amazonSideAsnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpnGatewayIdHasBeenSet(false),
-    m_state(VpnState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_type(GatewayType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_vpcAttachmentsHasBeenSet(false)
-{
-}
-
 VpnGateway::VpnGateway(const XmlNode& xmlNode)
-  : VpnGateway()
 {
   *this = xmlNode;
 }
@@ -51,54 +36,61 @@ VpnGateway& VpnGateway::operator =(const XmlNode& xmlNode)
     {
       m_amazonSideAsn = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amazonSideAsnNode.GetText()).c_str()).c_str());
       m_amazonSideAsnHasBeenSet = true;
+       m_amazonSideAsnHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode vpnGatewayIdNode = resultNode.FirstChild("vpnGatewayId");
     if(!vpnGatewayIdNode.IsNull())
     {
       m_vpnGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(vpnGatewayIdNode.GetText());
       m_vpnGatewayIdHasBeenSet = true;
+       m_vpnGatewayIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = VpnStateMapper::GetVpnStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VpnStateMapper::GetVpnStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = GatewayTypeMapper::GetGatewayTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = GatewayTypeMapper::GetGatewayTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode vpcAttachmentsNode = resultNode.FirstChild("attachments");
     if(!vpcAttachmentsNode.IsNull())
     {
       XmlNode vpcAttachmentsMember = vpcAttachmentsNode.FirstChild("item");
+      m_vpcAttachmentsHasBeenSet = !vpcAttachmentsMember.IsNull();
       while(!vpcAttachmentsMember.IsNull())
       {
         m_vpcAttachments.push_back(vpcAttachmentsMember);
         vpcAttachmentsMember = vpcAttachmentsMember.NextNode("item");
       }
 
-      m_vpcAttachmentsHasBeenSet = true;
+       m_vpcAttachmentsHasBeenSet = true;
     }
   }
 

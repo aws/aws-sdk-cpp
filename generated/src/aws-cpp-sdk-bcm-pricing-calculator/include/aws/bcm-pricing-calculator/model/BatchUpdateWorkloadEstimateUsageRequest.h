@@ -23,7 +23,7 @@ namespace Model
   class BatchUpdateWorkloadEstimateUsageRequest : public BCMPricingCalculatorRequest
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchUpdateWorkloadEstimateUsageRequest();
+    AWS_BCMPRICINGCALCULATOR_API BatchUpdateWorkloadEstimateUsageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p> The ID of the Workload estimate for which you want to modify the usage
      * lines. </p>
      */
-    inline const Aws::String& GetWorkloadEstimateId() const{ return m_workloadEstimateId; }
+    inline const Aws::String& GetWorkloadEstimateId() const { return m_workloadEstimateId; }
     inline bool WorkloadEstimateIdHasBeenSet() const { return m_workloadEstimateIdHasBeenSet; }
-    inline void SetWorkloadEstimateId(const Aws::String& value) { m_workloadEstimateIdHasBeenSet = true; m_workloadEstimateId = value; }
-    inline void SetWorkloadEstimateId(Aws::String&& value) { m_workloadEstimateIdHasBeenSet = true; m_workloadEstimateId = std::move(value); }
-    inline void SetWorkloadEstimateId(const char* value) { m_workloadEstimateIdHasBeenSet = true; m_workloadEstimateId.assign(value); }
-    inline BatchUpdateWorkloadEstimateUsageRequest& WithWorkloadEstimateId(const Aws::String& value) { SetWorkloadEstimateId(value); return *this;}
-    inline BatchUpdateWorkloadEstimateUsageRequest& WithWorkloadEstimateId(Aws::String&& value) { SetWorkloadEstimateId(std::move(value)); return *this;}
-    inline BatchUpdateWorkloadEstimateUsageRequest& WithWorkloadEstimateId(const char* value) { SetWorkloadEstimateId(value); return *this;}
+    template<typename WorkloadEstimateIdT = Aws::String>
+    void SetWorkloadEstimateId(WorkloadEstimateIdT&& value) { m_workloadEstimateIdHasBeenSet = true; m_workloadEstimateId = std::forward<WorkloadEstimateIdT>(value); }
+    template<typename WorkloadEstimateIdT = Aws::String>
+    BatchUpdateWorkloadEstimateUsageRequest& WithWorkloadEstimateId(WorkloadEstimateIdT&& value) { SetWorkloadEstimateId(std::forward<WorkloadEstimateIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,14 @@ namespace Model
      * <p> List of usage line amounts and usage group that you want to update in a
      * Workload estimate identified by the usage ID. </p>
      */
-    inline const Aws::Vector<BatchUpdateWorkloadEstimateUsageEntry>& GetUsage() const{ return m_usage; }
+    inline const Aws::Vector<BatchUpdateWorkloadEstimateUsageEntry>& GetUsage() const { return m_usage; }
     inline bool UsageHasBeenSet() const { return m_usageHasBeenSet; }
-    inline void SetUsage(const Aws::Vector<BatchUpdateWorkloadEstimateUsageEntry>& value) { m_usageHasBeenSet = true; m_usage = value; }
-    inline void SetUsage(Aws::Vector<BatchUpdateWorkloadEstimateUsageEntry>&& value) { m_usageHasBeenSet = true; m_usage = std::move(value); }
-    inline BatchUpdateWorkloadEstimateUsageRequest& WithUsage(const Aws::Vector<BatchUpdateWorkloadEstimateUsageEntry>& value) { SetUsage(value); return *this;}
-    inline BatchUpdateWorkloadEstimateUsageRequest& WithUsage(Aws::Vector<BatchUpdateWorkloadEstimateUsageEntry>&& value) { SetUsage(std::move(value)); return *this;}
-    inline BatchUpdateWorkloadEstimateUsageRequest& AddUsage(const BatchUpdateWorkloadEstimateUsageEntry& value) { m_usageHasBeenSet = true; m_usage.push_back(value); return *this; }
-    inline BatchUpdateWorkloadEstimateUsageRequest& AddUsage(BatchUpdateWorkloadEstimateUsageEntry&& value) { m_usageHasBeenSet = true; m_usage.push_back(std::move(value)); return *this; }
+    template<typename UsageT = Aws::Vector<BatchUpdateWorkloadEstimateUsageEntry>>
+    void SetUsage(UsageT&& value) { m_usageHasBeenSet = true; m_usage = std::forward<UsageT>(value); }
+    template<typename UsageT = Aws::Vector<BatchUpdateWorkloadEstimateUsageEntry>>
+    BatchUpdateWorkloadEstimateUsageRequest& WithUsage(UsageT&& value) { SetUsage(std::forward<UsageT>(value)); return *this;}
+    template<typename UsageT = BatchUpdateWorkloadEstimateUsageEntry>
+    BatchUpdateWorkloadEstimateUsageRequest& AddUsage(UsageT&& value) { m_usageHasBeenSet = true; m_usage.emplace_back(std::forward<UsageT>(value)); return *this; }
     ///@}
   private:
 

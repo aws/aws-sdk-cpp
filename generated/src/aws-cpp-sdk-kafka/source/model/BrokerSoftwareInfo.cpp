@@ -18,16 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-BrokerSoftwareInfo::BrokerSoftwareInfo() : 
-    m_configurationArnHasBeenSet(false),
-    m_configurationRevision(0),
-    m_configurationRevisionHasBeenSet(false),
-    m_kafkaVersionHasBeenSet(false)
-{
-}
-
 BrokerSoftwareInfo::BrokerSoftwareInfo(JsonView jsonValue)
-  : BrokerSoftwareInfo()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BrokerSoftwareInfo& BrokerSoftwareInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("configurationArn"))
   {
     m_configurationArn = jsonValue.GetString("configurationArn");
-
     m_configurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationRevision"))
   {
     m_configurationRevision = jsonValue.GetInt64("configurationRevision");
-
     m_configurationRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kafkaVersion"))
   {
     m_kafkaVersion = jsonValue.GetString("kafkaVersion");
-
     m_kafkaVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

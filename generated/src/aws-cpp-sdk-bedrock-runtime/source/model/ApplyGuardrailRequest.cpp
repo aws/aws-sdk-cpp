@@ -12,15 +12,6 @@ using namespace Aws::BedrockRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ApplyGuardrailRequest::ApplyGuardrailRequest() : 
-    m_guardrailIdentifierHasBeenSet(false),
-    m_guardrailVersionHasBeenSet(false),
-    m_source(GuardrailContentSource::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 Aws::String ApplyGuardrailRequest::SerializePayload() const
 {
   JsonValue payload;

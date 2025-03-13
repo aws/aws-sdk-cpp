@@ -32,7 +32,7 @@ namespace Model
   class Platform
   {
   public:
-    AWS_DATASYNC_API Platform();
+    AWS_DATASYNC_API Platform() = default;
     AWS_DATASYNC_API Platform(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Platform& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The version of the DataSync agent.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline Platform& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline Platform& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline Platform& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    Platform& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStorageProfileRequest::DeleteStorageProfileRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_storageProfileIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStorageProfileRequest::SerializePayload() const
 {
   return {};

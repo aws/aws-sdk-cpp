@@ -28,7 +28,7 @@ namespace Model
   class CreateControlPanelResult
   {
   public:
-    AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateControlPanelResult();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateControlPanelResult() = default;
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateControlPanelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateControlPanelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about a control panel.</p>
      */
-    inline const ControlPanel& GetControlPanel() const{ return m_controlPanel; }
-    inline void SetControlPanel(const ControlPanel& value) { m_controlPanel = value; }
-    inline void SetControlPanel(ControlPanel&& value) { m_controlPanel = std::move(value); }
-    inline CreateControlPanelResult& WithControlPanel(const ControlPanel& value) { SetControlPanel(value); return *this;}
-    inline CreateControlPanelResult& WithControlPanel(ControlPanel&& value) { SetControlPanel(std::move(value)); return *this;}
+    inline const ControlPanel& GetControlPanel() const { return m_controlPanel; }
+    template<typename ControlPanelT = ControlPanel>
+    void SetControlPanel(ControlPanelT&& value) { m_controlPanelHasBeenSet = true; m_controlPanel = std::forward<ControlPanelT>(value); }
+    template<typename ControlPanelT = ControlPanel>
+    CreateControlPanelResult& WithControlPanel(ControlPanelT&& value) { SetControlPanel(std::forward<ControlPanelT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateControlPanelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateControlPanelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateControlPanelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateControlPanelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ControlPanel m_controlPanel;
+    bool m_controlPanelHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

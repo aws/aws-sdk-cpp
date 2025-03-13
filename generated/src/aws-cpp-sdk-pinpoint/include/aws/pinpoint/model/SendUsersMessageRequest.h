@@ -37,7 +37,7 @@ namespace Model
   class SendUsersMessageRequest
   {
   public:
-    AWS_PINPOINT_API SendUsersMessageRequest();
+    AWS_PINPOINT_API SendUsersMessageRequest() = default;
     AWS_PINPOINT_API SendUsersMessageRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API SendUsersMessageRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,19 +50,16 @@ namespace Model
      * notification payload. Amazon Pinpoint also provides these attributes in the
      * events that it generates for users-messages deliveries.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetContext() const{ return m_context; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Aws::Map<Aws::String, Aws::String>& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Aws::Map<Aws::String, Aws::String>&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline SendUsersMessageRequest& WithContext(const Aws::Map<Aws::String, Aws::String>& value) { SetContext(value); return *this;}
-    inline SendUsersMessageRequest& WithContext(Aws::Map<Aws::String, Aws::String>&& value) { SetContext(std::move(value)); return *this;}
-    inline SendUsersMessageRequest& AddContext(const Aws::String& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
-    inline SendUsersMessageRequest& AddContext(Aws::String&& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
-    inline SendUsersMessageRequest& AddContext(const Aws::String& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
-    inline SendUsersMessageRequest& AddContext(Aws::String&& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), std::move(value)); return *this; }
-    inline SendUsersMessageRequest& AddContext(const char* key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
-    inline SendUsersMessageRequest& AddContext(Aws::String&& key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
-    inline SendUsersMessageRequest& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
+    template<typename ContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = Aws::Map<Aws::String, Aws::String>>
+    SendUsersMessageRequest& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
+    template<typename ContextKeyT = Aws::String, typename ContextValueT = Aws::String>
+    SendUsersMessageRequest& AddContext(ContextKeyT&& key, ContextValueT&& value) {
+      m_contextHasBeenSet = true; m_context.emplace(std::forward<ContextKeyT>(key), std::forward<ContextValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -70,24 +67,24 @@ namespace Model
      * <p>The settings and content for the default message and any default messages
      * that you defined for specific channels.</p>
      */
-    inline const DirectMessageConfiguration& GetMessageConfiguration() const{ return m_messageConfiguration; }
+    inline const DirectMessageConfiguration& GetMessageConfiguration() const { return m_messageConfiguration; }
     inline bool MessageConfigurationHasBeenSet() const { return m_messageConfigurationHasBeenSet; }
-    inline void SetMessageConfiguration(const DirectMessageConfiguration& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = value; }
-    inline void SetMessageConfiguration(DirectMessageConfiguration&& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = std::move(value); }
-    inline SendUsersMessageRequest& WithMessageConfiguration(const DirectMessageConfiguration& value) { SetMessageConfiguration(value); return *this;}
-    inline SendUsersMessageRequest& WithMessageConfiguration(DirectMessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
+    template<typename MessageConfigurationT = DirectMessageConfiguration>
+    void SetMessageConfiguration(MessageConfigurationT&& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = std::forward<MessageConfigurationT>(value); }
+    template<typename MessageConfigurationT = DirectMessageConfiguration>
+    SendUsersMessageRequest& WithMessageConfiguration(MessageConfigurationT&& value) { SetMessageConfiguration(std::forward<MessageConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message template to use for the message.</p>
      */
-    inline const TemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
+    inline const TemplateConfiguration& GetTemplateConfiguration() const { return m_templateConfiguration; }
     inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
-    inline void SetTemplateConfiguration(const TemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
-    inline void SetTemplateConfiguration(TemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
-    inline SendUsersMessageRequest& WithTemplateConfiguration(const TemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
-    inline SendUsersMessageRequest& WithTemplateConfiguration(TemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
+    template<typename TemplateConfigurationT = TemplateConfiguration>
+    void SetTemplateConfiguration(TemplateConfigurationT&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::forward<TemplateConfigurationT>(value); }
+    template<typename TemplateConfigurationT = TemplateConfiguration>
+    SendUsersMessageRequest& WithTemplateConfiguration(TemplateConfigurationT&& value) { SetTemplateConfiguration(std::forward<TemplateConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +92,12 @@ namespace Model
      * <p>The unique identifier for tracing the message. This identifier is visible to
      * message recipients.</p>
      */
-    inline const Aws::String& GetTraceId() const{ return m_traceId; }
+    inline const Aws::String& GetTraceId() const { return m_traceId; }
     inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-    inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
-    inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
-    inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
-    inline SendUsersMessageRequest& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
-    inline SendUsersMessageRequest& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
-    inline SendUsersMessageRequest& WithTraceId(const char* value) { SetTraceId(value); return *this;}
+    template<typename TraceIdT = Aws::String>
+    void SetTraceId(TraceIdT&& value) { m_traceIdHasBeenSet = true; m_traceId = std::forward<TraceIdT>(value); }
+    template<typename TraceIdT = Aws::String>
+    SendUsersMessageRequest& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,18 +109,16 @@ namespace Model
      * object to tailor the message for a user by specifying settings such as content
      * overrides and message variables.</p>
      */
-    inline const Aws::Map<Aws::String, EndpointSendConfiguration>& GetUsers() const{ return m_users; }
+    inline const Aws::Map<Aws::String, EndpointSendConfiguration>& GetUsers() const { return m_users; }
     inline bool UsersHasBeenSet() const { return m_usersHasBeenSet; }
-    inline void SetUsers(const Aws::Map<Aws::String, EndpointSendConfiguration>& value) { m_usersHasBeenSet = true; m_users = value; }
-    inline void SetUsers(Aws::Map<Aws::String, EndpointSendConfiguration>&& value) { m_usersHasBeenSet = true; m_users = std::move(value); }
-    inline SendUsersMessageRequest& WithUsers(const Aws::Map<Aws::String, EndpointSendConfiguration>& value) { SetUsers(value); return *this;}
-    inline SendUsersMessageRequest& WithUsers(Aws::Map<Aws::String, EndpointSendConfiguration>&& value) { SetUsers(std::move(value)); return *this;}
-    inline SendUsersMessageRequest& AddUsers(const Aws::String& key, const EndpointSendConfiguration& value) { m_usersHasBeenSet = true; m_users.emplace(key, value); return *this; }
-    inline SendUsersMessageRequest& AddUsers(Aws::String&& key, const EndpointSendConfiguration& value) { m_usersHasBeenSet = true; m_users.emplace(std::move(key), value); return *this; }
-    inline SendUsersMessageRequest& AddUsers(const Aws::String& key, EndpointSendConfiguration&& value) { m_usersHasBeenSet = true; m_users.emplace(key, std::move(value)); return *this; }
-    inline SendUsersMessageRequest& AddUsers(Aws::String&& key, EndpointSendConfiguration&& value) { m_usersHasBeenSet = true; m_users.emplace(std::move(key), std::move(value)); return *this; }
-    inline SendUsersMessageRequest& AddUsers(const char* key, EndpointSendConfiguration&& value) { m_usersHasBeenSet = true; m_users.emplace(key, std::move(value)); return *this; }
-    inline SendUsersMessageRequest& AddUsers(const char* key, const EndpointSendConfiguration& value) { m_usersHasBeenSet = true; m_users.emplace(key, value); return *this; }
+    template<typename UsersT = Aws::Map<Aws::String, EndpointSendConfiguration>>
+    void SetUsers(UsersT&& value) { m_usersHasBeenSet = true; m_users = std::forward<UsersT>(value); }
+    template<typename UsersT = Aws::Map<Aws::String, EndpointSendConfiguration>>
+    SendUsersMessageRequest& WithUsers(UsersT&& value) { SetUsers(std::forward<UsersT>(value)); return *this;}
+    template<typename UsersKeyT = Aws::String, typename UsersValueT = EndpointSendConfiguration>
+    SendUsersMessageRequest& AddUsers(UsersKeyT&& key, UsersValueT&& value) {
+      m_usersHasBeenSet = true; m_users.emplace(std::forward<UsersKeyT>(key), std::forward<UsersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

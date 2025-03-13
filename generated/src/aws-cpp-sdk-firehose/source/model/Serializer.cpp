@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-Serializer::Serializer() : 
-    m_parquetSerDeHasBeenSet(false),
-    m_orcSerDeHasBeenSet(false)
-{
-}
-
 Serializer::Serializer(JsonView jsonValue)
-  : Serializer()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Serializer& Serializer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ParquetSerDe"))
   {
     m_parquetSerDe = jsonValue.GetObject("ParquetSerDe");
-
     m_parquetSerDeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrcSerDe"))
   {
     m_orcSerDe = jsonValue.GetObject("OrcSerDe");
-
     m_orcSerDeHasBeenSet = true;
   }
-
   return *this;
 }
 

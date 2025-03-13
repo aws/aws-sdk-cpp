@@ -31,7 +31,7 @@ namespace Model
   class InvalidInputException
   {
   public:
-    AWS_GLUE_API InvalidInputException();
+    AWS_GLUE_API InvalidInputException() = default;
     AWS_GLUE_API InvalidInputException(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API InvalidInputException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>A message describing the problem.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InvalidInputException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InvalidInputException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InvalidInputException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InvalidInputException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether or not the exception relates to a federated source.</p>
      */
-    inline bool GetFromFederationSource() const{ return m_fromFederationSource; }
+    inline bool GetFromFederationSource() const { return m_fromFederationSource; }
     inline bool FromFederationSourceHasBeenSet() const { return m_fromFederationSourceHasBeenSet; }
     inline void SetFromFederationSource(bool value) { m_fromFederationSourceHasBeenSet = true; m_fromFederationSource = value; }
     inline InvalidInputException& WithFromFederationSource(bool value) { SetFromFederationSource(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    bool m_fromFederationSource;
+    bool m_fromFederationSource{false};
     bool m_fromFederationSourceHasBeenSet = false;
   };
 

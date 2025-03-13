@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDashboardResult::CreateDashboardResult() : 
-    m_creationStatus(ResourceStatus::NOT_SET),
-    m_status(0)
-{
-}
-
 CreateDashboardResult::CreateDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateDashboardResult()
 {
   *this = result;
 }
@@ -35,37 +28,34 @@ CreateDashboardResult& CreateDashboardResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionArn"))
   {
     m_versionArn = jsonValue.GetString("VersionArn");
-
+    m_versionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DashboardId"))
   {
     m_dashboardId = jsonValue.GetString("DashboardId");
-
+    m_dashboardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationStatus"))
   {
     m_creationStatus = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("CreationStatus"));
-
+    m_creationStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

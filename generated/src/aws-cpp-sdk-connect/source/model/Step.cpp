@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Step::Step() : 
-    m_expiryHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_status(RoutingCriteriaStepStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Step::Step(JsonView jsonValue)
-  : Step()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Step& Step::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Expiry"))
   {
     m_expiry = jsonValue.GetObject("Expiry");
-
     m_expiryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetObject("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RoutingCriteriaStepStatusMapper::GetRoutingCriteriaStepStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

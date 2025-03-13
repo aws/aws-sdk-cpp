@@ -12,20 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReceiveMessageRequest::ReceiveMessageRequest() : 
-    m_queueUrlHasBeenSet(false),
-    m_messageSystemAttributeNamesHasBeenSet(false),
-    m_messageAttributeNamesHasBeenSet(false),
-    m_maxNumberOfMessages(0),
-    m_maxNumberOfMessagesHasBeenSet(false),
-    m_visibilityTimeout(0),
-    m_visibilityTimeoutHasBeenSet(false),
-    m_waitTimeSeconds(0),
-    m_waitTimeSecondsHasBeenSet(false),
-    m_receiveRequestAttemptIdHasBeenSet(false)
-{
-}
-
 Aws::String ReceiveMessageRequest::SerializePayload() const
 {
   JsonValue payload;

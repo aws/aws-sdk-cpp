@@ -18,13 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-NotificationConfiguration::NotificationConfiguration() : 
-    m_channelsHasBeenSet(false)
-{
-}
-
 NotificationConfiguration::NotificationConfiguration(JsonView jsonValue)
-  : NotificationConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ NotificationConfiguration& NotificationConfiguration::operator =(JsonView jsonVa
     }
     m_channelsHasBeenSet = true;
   }
-
   return *this;
 }
 

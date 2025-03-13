@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePortfolioShareResult::CreatePortfolioShareResult()
-{
-}
-
 CreatePortfolioShareResult::CreatePortfolioShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreatePortfolioShareResult& CreatePortfolioShareResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("PortfolioShareToken"))
   {
     m_portfolioShareToken = jsonValue.GetString("PortfolioShareToken");
-
+    m_portfolioShareTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

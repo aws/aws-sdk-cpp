@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-WorkmailAction::WorkmailAction() : 
-    m_topicArnHasBeenSet(false),
-    m_organizationArnHasBeenSet(false)
-{
-}
-
 WorkmailAction::WorkmailAction(const XmlNode& xmlNode)
-  : WorkmailAction()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ WorkmailAction& WorkmailAction::operator =(const XmlNode& xmlNode)
     {
       m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
+       m_topicArnHasBeenSet = true;
     }
     XmlNode organizationArnNode = resultNode.FirstChild("OrganizationArn");
     if(!organizationArnNode.IsNull())
     {
       m_organizationArn = Aws::Utils::Xml::DecodeEscapedXmlText(organizationArnNode.GetText());
       m_organizationArnHasBeenSet = true;
+       m_organizationArnHasBeenSet = true;
     }
   }
 

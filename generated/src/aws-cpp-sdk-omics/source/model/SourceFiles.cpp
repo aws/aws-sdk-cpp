@@ -18,14 +18,7 @@ namespace Omics
 namespace Model
 {
 
-SourceFiles::SourceFiles() : 
-    m_source1HasBeenSet(false),
-    m_source2HasBeenSet(false)
-{
-}
-
 SourceFiles::SourceFiles(JsonView jsonValue)
-  : SourceFiles()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SourceFiles& SourceFiles::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source1"))
   {
     m_source1 = jsonValue.GetString("source1");
-
     m_source1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source2"))
   {
     m_source2 = jsonValue.GetString("source2");
-
     m_source2HasBeenSet = true;
   }
-
   return *this;
 }
 

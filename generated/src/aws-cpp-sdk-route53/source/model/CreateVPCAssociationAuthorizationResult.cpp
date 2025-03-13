@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateVPCAssociationAuthorizationResult::CreateVPCAssociationAuthorizationResult()
-{
-}
-
 CreateVPCAssociationAuthorizationResult::CreateVPCAssociationAuthorizationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,11 +32,13 @@ CreateVPCAssociationAuthorizationResult& CreateVPCAssociationAuthorizationResult
     if(!hostedZoneIdNode.IsNull())
     {
       m_hostedZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneIdNode.GetText());
+      m_hostedZoneIdHasBeenSet = true;
     }
     XmlNode vPCNode = resultNode.FirstChild("VPC");
     if(!vPCNode.IsNull())
     {
       m_vPC = vPCNode;
+      m_vPCHasBeenSet = true;
     }
   }
 
@@ -49,6 +47,7 @@ CreateVPCAssociationAuthorizationResult& CreateVPCAssociationAuthorizationResult
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

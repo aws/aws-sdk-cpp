@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeLaunchTemplatesRequest::DescribeLaunchTemplatesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_launchTemplateIdsHasBeenSet(false),
-    m_launchTemplateNamesHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLaunchTemplatesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

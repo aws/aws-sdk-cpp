@@ -12,19 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProvisionedModelThroughputRequest::CreateProvisionedModelThroughputRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_modelUnits(0),
-    m_modelUnitsHasBeenSet(false),
-    m_provisionedModelNameHasBeenSet(false),
-    m_modelIdHasBeenSet(false),
-    m_commitmentDuration(CommitmentDuration::NOT_SET),
-    m_commitmentDurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateProvisionedModelThroughputRequest::SerializePayload() const
 {
   JsonValue payload;

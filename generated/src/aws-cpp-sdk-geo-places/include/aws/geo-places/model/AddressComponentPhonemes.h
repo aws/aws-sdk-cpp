@@ -33,7 +33,7 @@ namespace Model
   class AddressComponentPhonemes
   {
   public:
-    AWS_GEOPLACES_API AddressComponentPhonemes();
+    AWS_GEOPLACES_API AddressComponentPhonemes() = default;
     AWS_GEOPLACES_API AddressComponentPhonemes(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API AddressComponentPhonemes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,28 @@ namespace Model
      * <p>The alpha-2 or alpha-3 character code for the country that the results will
      * be present in.</p>
      */
-    inline const Aws::Vector<PhonemeTranscription>& GetCountry() const{ return m_country; }
+    inline const Aws::Vector<PhonemeTranscription>& GetCountry() const { return m_country; }
     inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
-    inline void SetCountry(const Aws::Vector<PhonemeTranscription>& value) { m_countryHasBeenSet = true; m_country = value; }
-    inline void SetCountry(Aws::Vector<PhonemeTranscription>&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
-    inline AddressComponentPhonemes& WithCountry(const Aws::Vector<PhonemeTranscription>& value) { SetCountry(value); return *this;}
-    inline AddressComponentPhonemes& WithCountry(Aws::Vector<PhonemeTranscription>&& value) { SetCountry(std::move(value)); return *this;}
-    inline AddressComponentPhonemes& AddCountry(const PhonemeTranscription& value) { m_countryHasBeenSet = true; m_country.push_back(value); return *this; }
-    inline AddressComponentPhonemes& AddCountry(PhonemeTranscription&& value) { m_countryHasBeenSet = true; m_country.push_back(std::move(value)); return *this; }
+    template<typename CountryT = Aws::Vector<PhonemeTranscription>>
+    void SetCountry(CountryT&& value) { m_countryHasBeenSet = true; m_country = std::forward<CountryT>(value); }
+    template<typename CountryT = Aws::Vector<PhonemeTranscription>>
+    AddressComponentPhonemes& WithCountry(CountryT&& value) { SetCountry(std::forward<CountryT>(value)); return *this;}
+    template<typename CountryT = PhonemeTranscription>
+    AddressComponentPhonemes& AddCountry(CountryT&& value) { m_countryHasBeenSet = true; m_country.emplace_back(std::forward<CountryT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>How to pronounce the region or state results should be to be present in.</p>
      */
-    inline const Aws::Vector<PhonemeTranscription>& GetRegion() const{ return m_region; }
+    inline const Aws::Vector<PhonemeTranscription>& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::Vector<PhonemeTranscription>& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::Vector<PhonemeTranscription>&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline AddressComponentPhonemes& WithRegion(const Aws::Vector<PhonemeTranscription>& value) { SetRegion(value); return *this;}
-    inline AddressComponentPhonemes& WithRegion(Aws::Vector<PhonemeTranscription>&& value) { SetRegion(std::move(value)); return *this;}
-    inline AddressComponentPhonemes& AddRegion(const PhonemeTranscription& value) { m_regionHasBeenSet = true; m_region.push_back(value); return *this; }
-    inline AddressComponentPhonemes& AddRegion(PhonemeTranscription&& value) { m_regionHasBeenSet = true; m_region.push_back(std::move(value)); return *this; }
+    template<typename RegionT = Aws::Vector<PhonemeTranscription>>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::Vector<PhonemeTranscription>>
+    AddressComponentPhonemes& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
+    template<typename RegionT = PhonemeTranscription>
+    AddressComponentPhonemes& AddRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region.emplace_back(std::forward<RegionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,14 +73,14 @@ namespace Model
      * <p>How to pronounce the sub-region or county for which results should be present
      * in. </p>
      */
-    inline const Aws::Vector<PhonemeTranscription>& GetSubRegion() const{ return m_subRegion; }
+    inline const Aws::Vector<PhonemeTranscription>& GetSubRegion() const { return m_subRegion; }
     inline bool SubRegionHasBeenSet() const { return m_subRegionHasBeenSet; }
-    inline void SetSubRegion(const Aws::Vector<PhonemeTranscription>& value) { m_subRegionHasBeenSet = true; m_subRegion = value; }
-    inline void SetSubRegion(Aws::Vector<PhonemeTranscription>&& value) { m_subRegionHasBeenSet = true; m_subRegion = std::move(value); }
-    inline AddressComponentPhonemes& WithSubRegion(const Aws::Vector<PhonemeTranscription>& value) { SetSubRegion(value); return *this;}
-    inline AddressComponentPhonemes& WithSubRegion(Aws::Vector<PhonemeTranscription>&& value) { SetSubRegion(std::move(value)); return *this;}
-    inline AddressComponentPhonemes& AddSubRegion(const PhonemeTranscription& value) { m_subRegionHasBeenSet = true; m_subRegion.push_back(value); return *this; }
-    inline AddressComponentPhonemes& AddSubRegion(PhonemeTranscription&& value) { m_subRegionHasBeenSet = true; m_subRegion.push_back(std::move(value)); return *this; }
+    template<typename SubRegionT = Aws::Vector<PhonemeTranscription>>
+    void SetSubRegion(SubRegionT&& value) { m_subRegionHasBeenSet = true; m_subRegion = std::forward<SubRegionT>(value); }
+    template<typename SubRegionT = Aws::Vector<PhonemeTranscription>>
+    AddressComponentPhonemes& WithSubRegion(SubRegionT&& value) { SetSubRegion(std::forward<SubRegionT>(value)); return *this;}
+    template<typename SubRegionT = PhonemeTranscription>
+    AddressComponentPhonemes& AddSubRegion(SubRegionT&& value) { m_subRegionHasBeenSet = true; m_subRegion.emplace_back(std::forward<SubRegionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,14 +88,14 @@ namespace Model
      * <p>How to pronounce the city or locality results should be present in. </p>
      * <p>Example: <code>Vancouver</code>.</p>
      */
-    inline const Aws::Vector<PhonemeTranscription>& GetLocality() const{ return m_locality; }
+    inline const Aws::Vector<PhonemeTranscription>& GetLocality() const { return m_locality; }
     inline bool LocalityHasBeenSet() const { return m_localityHasBeenSet; }
-    inline void SetLocality(const Aws::Vector<PhonemeTranscription>& value) { m_localityHasBeenSet = true; m_locality = value; }
-    inline void SetLocality(Aws::Vector<PhonemeTranscription>&& value) { m_localityHasBeenSet = true; m_locality = std::move(value); }
-    inline AddressComponentPhonemes& WithLocality(const Aws::Vector<PhonemeTranscription>& value) { SetLocality(value); return *this;}
-    inline AddressComponentPhonemes& WithLocality(Aws::Vector<PhonemeTranscription>&& value) { SetLocality(std::move(value)); return *this;}
-    inline AddressComponentPhonemes& AddLocality(const PhonemeTranscription& value) { m_localityHasBeenSet = true; m_locality.push_back(value); return *this; }
-    inline AddressComponentPhonemes& AddLocality(PhonemeTranscription&& value) { m_localityHasBeenSet = true; m_locality.push_back(std::move(value)); return *this; }
+    template<typename LocalityT = Aws::Vector<PhonemeTranscription>>
+    void SetLocality(LocalityT&& value) { m_localityHasBeenSet = true; m_locality = std::forward<LocalityT>(value); }
+    template<typename LocalityT = Aws::Vector<PhonemeTranscription>>
+    AddressComponentPhonemes& WithLocality(LocalityT&& value) { SetLocality(std::forward<LocalityT>(value)); return *this;}
+    template<typename LocalityT = PhonemeTranscription>
+    AddressComponentPhonemes& AddLocality(LocalityT&& value) { m_localityHasBeenSet = true; m_locality.emplace_back(std::forward<LocalityT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -103,14 +103,14 @@ namespace Model
      * <p>How to pronounce the district or division of a city results should be present
      * in.</p>
      */
-    inline const Aws::Vector<PhonemeTranscription>& GetDistrict() const{ return m_district; }
+    inline const Aws::Vector<PhonemeTranscription>& GetDistrict() const { return m_district; }
     inline bool DistrictHasBeenSet() const { return m_districtHasBeenSet; }
-    inline void SetDistrict(const Aws::Vector<PhonemeTranscription>& value) { m_districtHasBeenSet = true; m_district = value; }
-    inline void SetDistrict(Aws::Vector<PhonemeTranscription>&& value) { m_districtHasBeenSet = true; m_district = std::move(value); }
-    inline AddressComponentPhonemes& WithDistrict(const Aws::Vector<PhonemeTranscription>& value) { SetDistrict(value); return *this;}
-    inline AddressComponentPhonemes& WithDistrict(Aws::Vector<PhonemeTranscription>&& value) { SetDistrict(std::move(value)); return *this;}
-    inline AddressComponentPhonemes& AddDistrict(const PhonemeTranscription& value) { m_districtHasBeenSet = true; m_district.push_back(value); return *this; }
-    inline AddressComponentPhonemes& AddDistrict(PhonemeTranscription&& value) { m_districtHasBeenSet = true; m_district.push_back(std::move(value)); return *this; }
+    template<typename DistrictT = Aws::Vector<PhonemeTranscription>>
+    void SetDistrict(DistrictT&& value) { m_districtHasBeenSet = true; m_district = std::forward<DistrictT>(value); }
+    template<typename DistrictT = Aws::Vector<PhonemeTranscription>>
+    AddressComponentPhonemes& WithDistrict(DistrictT&& value) { SetDistrict(std::forward<DistrictT>(value)); return *this;}
+    template<typename DistrictT = PhonemeTranscription>
+    AddressComponentPhonemes& AddDistrict(DistrictT&& value) { m_districtHasBeenSet = true; m_district.emplace_back(std::forward<DistrictT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -118,56 +118,56 @@ namespace Model
      * <p>How to pronounce the sub-district or division of a city results should be
      * present in.</p>
      */
-    inline const Aws::Vector<PhonemeTranscription>& GetSubDistrict() const{ return m_subDistrict; }
+    inline const Aws::Vector<PhonemeTranscription>& GetSubDistrict() const { return m_subDistrict; }
     inline bool SubDistrictHasBeenSet() const { return m_subDistrictHasBeenSet; }
-    inline void SetSubDistrict(const Aws::Vector<PhonemeTranscription>& value) { m_subDistrictHasBeenSet = true; m_subDistrict = value; }
-    inline void SetSubDistrict(Aws::Vector<PhonemeTranscription>&& value) { m_subDistrictHasBeenSet = true; m_subDistrict = std::move(value); }
-    inline AddressComponentPhonemes& WithSubDistrict(const Aws::Vector<PhonemeTranscription>& value) { SetSubDistrict(value); return *this;}
-    inline AddressComponentPhonemes& WithSubDistrict(Aws::Vector<PhonemeTranscription>&& value) { SetSubDistrict(std::move(value)); return *this;}
-    inline AddressComponentPhonemes& AddSubDistrict(const PhonemeTranscription& value) { m_subDistrictHasBeenSet = true; m_subDistrict.push_back(value); return *this; }
-    inline AddressComponentPhonemes& AddSubDistrict(PhonemeTranscription&& value) { m_subDistrictHasBeenSet = true; m_subDistrict.push_back(std::move(value)); return *this; }
+    template<typename SubDistrictT = Aws::Vector<PhonemeTranscription>>
+    void SetSubDistrict(SubDistrictT&& value) { m_subDistrictHasBeenSet = true; m_subDistrict = std::forward<SubDistrictT>(value); }
+    template<typename SubDistrictT = Aws::Vector<PhonemeTranscription>>
+    AddressComponentPhonemes& WithSubDistrict(SubDistrictT&& value) { SetSubDistrict(std::forward<SubDistrictT>(value)); return *this;}
+    template<typename SubDistrictT = PhonemeTranscription>
+    AddressComponentPhonemes& AddSubDistrict(SubDistrictT&& value) { m_subDistrictHasBeenSet = true; m_subDistrict.emplace_back(std::forward<SubDistrictT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>How to pronounce the name of the block.</p>
      */
-    inline const Aws::Vector<PhonemeTranscription>& GetBlock() const{ return m_block; }
+    inline const Aws::Vector<PhonemeTranscription>& GetBlock() const { return m_block; }
     inline bool BlockHasBeenSet() const { return m_blockHasBeenSet; }
-    inline void SetBlock(const Aws::Vector<PhonemeTranscription>& value) { m_blockHasBeenSet = true; m_block = value; }
-    inline void SetBlock(Aws::Vector<PhonemeTranscription>&& value) { m_blockHasBeenSet = true; m_block = std::move(value); }
-    inline AddressComponentPhonemes& WithBlock(const Aws::Vector<PhonemeTranscription>& value) { SetBlock(value); return *this;}
-    inline AddressComponentPhonemes& WithBlock(Aws::Vector<PhonemeTranscription>&& value) { SetBlock(std::move(value)); return *this;}
-    inline AddressComponentPhonemes& AddBlock(const PhonemeTranscription& value) { m_blockHasBeenSet = true; m_block.push_back(value); return *this; }
-    inline AddressComponentPhonemes& AddBlock(PhonemeTranscription&& value) { m_blockHasBeenSet = true; m_block.push_back(std::move(value)); return *this; }
+    template<typename BlockT = Aws::Vector<PhonemeTranscription>>
+    void SetBlock(BlockT&& value) { m_blockHasBeenSet = true; m_block = std::forward<BlockT>(value); }
+    template<typename BlockT = Aws::Vector<PhonemeTranscription>>
+    AddressComponentPhonemes& WithBlock(BlockT&& value) { SetBlock(std::forward<BlockT>(value)); return *this;}
+    template<typename BlockT = PhonemeTranscription>
+    AddressComponentPhonemes& AddBlock(BlockT&& value) { m_blockHasBeenSet = true; m_block.emplace_back(std::forward<BlockT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>How to pronounce the name of the sub-block.</p>
      */
-    inline const Aws::Vector<PhonemeTranscription>& GetSubBlock() const{ return m_subBlock; }
+    inline const Aws::Vector<PhonemeTranscription>& GetSubBlock() const { return m_subBlock; }
     inline bool SubBlockHasBeenSet() const { return m_subBlockHasBeenSet; }
-    inline void SetSubBlock(const Aws::Vector<PhonemeTranscription>& value) { m_subBlockHasBeenSet = true; m_subBlock = value; }
-    inline void SetSubBlock(Aws::Vector<PhonemeTranscription>&& value) { m_subBlockHasBeenSet = true; m_subBlock = std::move(value); }
-    inline AddressComponentPhonemes& WithSubBlock(const Aws::Vector<PhonemeTranscription>& value) { SetSubBlock(value); return *this;}
-    inline AddressComponentPhonemes& WithSubBlock(Aws::Vector<PhonemeTranscription>&& value) { SetSubBlock(std::move(value)); return *this;}
-    inline AddressComponentPhonemes& AddSubBlock(const PhonemeTranscription& value) { m_subBlockHasBeenSet = true; m_subBlock.push_back(value); return *this; }
-    inline AddressComponentPhonemes& AddSubBlock(PhonemeTranscription&& value) { m_subBlockHasBeenSet = true; m_subBlock.push_back(std::move(value)); return *this; }
+    template<typename SubBlockT = Aws::Vector<PhonemeTranscription>>
+    void SetSubBlock(SubBlockT&& value) { m_subBlockHasBeenSet = true; m_subBlock = std::forward<SubBlockT>(value); }
+    template<typename SubBlockT = Aws::Vector<PhonemeTranscription>>
+    AddressComponentPhonemes& WithSubBlock(SubBlockT&& value) { SetSubBlock(std::forward<SubBlockT>(value)); return *this;}
+    template<typename SubBlockT = PhonemeTranscription>
+    AddressComponentPhonemes& AddSubBlock(SubBlockT&& value) { m_subBlockHasBeenSet = true; m_subBlock.emplace_back(std::forward<SubBlockT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>How to pronounce the name of the street results should be present in.</p>
      */
-    inline const Aws::Vector<PhonemeTranscription>& GetStreet() const{ return m_street; }
+    inline const Aws::Vector<PhonemeTranscription>& GetStreet() const { return m_street; }
     inline bool StreetHasBeenSet() const { return m_streetHasBeenSet; }
-    inline void SetStreet(const Aws::Vector<PhonemeTranscription>& value) { m_streetHasBeenSet = true; m_street = value; }
-    inline void SetStreet(Aws::Vector<PhonemeTranscription>&& value) { m_streetHasBeenSet = true; m_street = std::move(value); }
-    inline AddressComponentPhonemes& WithStreet(const Aws::Vector<PhonemeTranscription>& value) { SetStreet(value); return *this;}
-    inline AddressComponentPhonemes& WithStreet(Aws::Vector<PhonemeTranscription>&& value) { SetStreet(std::move(value)); return *this;}
-    inline AddressComponentPhonemes& AddStreet(const PhonemeTranscription& value) { m_streetHasBeenSet = true; m_street.push_back(value); return *this; }
-    inline AddressComponentPhonemes& AddStreet(PhonemeTranscription&& value) { m_streetHasBeenSet = true; m_street.push_back(std::move(value)); return *this; }
+    template<typename StreetT = Aws::Vector<PhonemeTranscription>>
+    void SetStreet(StreetT&& value) { m_streetHasBeenSet = true; m_street = std::forward<StreetT>(value); }
+    template<typename StreetT = Aws::Vector<PhonemeTranscription>>
+    AddressComponentPhonemes& WithStreet(StreetT&& value) { SetStreet(std::forward<StreetT>(value)); return *this;}
+    template<typename StreetT = PhonemeTranscription>
+    AddressComponentPhonemes& AddStreet(StreetT&& value) { m_streetHasBeenSet = true; m_street.emplace_back(std::forward<StreetT>(value)); return *this; }
     ///@}
   private:
 

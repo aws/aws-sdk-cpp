@@ -34,7 +34,7 @@ namespace Model
   class SelectFromCollection
   {
   public:
-    AWS_GLUE_API SelectFromCollection();
+    AWS_GLUE_API SelectFromCollection() = default;
     AWS_GLUE_API SelectFromCollection(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API SelectFromCollection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,33 @@ namespace Model
     /**
      * <p>The name of the transform node.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SelectFromCollection& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SelectFromCollection& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SelectFromCollection& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SelectFromCollection& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data inputs identified by their node names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInputs() const{ return m_inputs; }
+    inline const Aws::Vector<Aws::String>& GetInputs() const { return m_inputs; }
     inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
-    inline void SetInputs(const Aws::Vector<Aws::String>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
-    inline void SetInputs(Aws::Vector<Aws::String>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
-    inline SelectFromCollection& WithInputs(const Aws::Vector<Aws::String>& value) { SetInputs(value); return *this;}
-    inline SelectFromCollection& WithInputs(Aws::Vector<Aws::String>&& value) { SetInputs(std::move(value)); return *this;}
-    inline SelectFromCollection& AddInputs(const Aws::String& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
-    inline SelectFromCollection& AddInputs(Aws::String&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
-    inline SelectFromCollection& AddInputs(const char* value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    void SetInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs = std::forward<InputsT>(value); }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    SelectFromCollection& WithInputs(InputsT&& value) { SetInputs(std::forward<InputsT>(value)); return *this;}
+    template<typename InputsT = Aws::String>
+    SelectFromCollection& AddInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs.emplace_back(std::forward<InputsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The index for the DynamicFrame to be selected.</p>
      */
-    inline int GetIndex() const{ return m_index; }
+    inline int GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
     inline SelectFromCollection& WithIndex(int value) { SetIndex(value); return *this;}
@@ -86,7 +83,7 @@ namespace Model
     Aws::Vector<Aws::String> m_inputs;
     bool m_inputsHasBeenSet = false;
 
-    int m_index;
+    int m_index{0};
     bool m_indexHasBeenSet = false;
   };
 

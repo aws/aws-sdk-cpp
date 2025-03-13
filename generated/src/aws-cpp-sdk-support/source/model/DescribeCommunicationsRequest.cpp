@@ -12,16 +12,6 @@ using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCommunicationsRequest::DescribeCommunicationsRequest() : 
-    m_caseIdHasBeenSet(false),
-    m_beforeTimeHasBeenSet(false),
-    m_afterTimeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCommunicationsRequest::SerializePayload() const
 {
   JsonValue payload;

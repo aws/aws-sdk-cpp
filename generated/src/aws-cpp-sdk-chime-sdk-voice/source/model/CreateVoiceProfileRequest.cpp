@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVoiceProfileRequest::CreateVoiceProfileRequest() : 
-    m_speakerSearchTaskIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateVoiceProfileRequest::SerializePayload() const
 {
   JsonValue payload;

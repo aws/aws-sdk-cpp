@@ -21,7 +21,7 @@ namespace Model
   class DeleteEventTriggerRequest : public CustomerProfilesRequest
   {
   public:
-    AWS_CUSTOMERPROFILES_API DeleteEventTriggerRequest();
+    AWS_CUSTOMERPROFILES_API DeleteEventTriggerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DeleteEventTriggerRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DeleteEventTriggerRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DeleteEventTriggerRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DeleteEventTriggerRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name of the event trigger.</p>
      */
-    inline const Aws::String& GetEventTriggerName() const{ return m_eventTriggerName; }
+    inline const Aws::String& GetEventTriggerName() const { return m_eventTriggerName; }
     inline bool EventTriggerNameHasBeenSet() const { return m_eventTriggerNameHasBeenSet; }
-    inline void SetEventTriggerName(const Aws::String& value) { m_eventTriggerNameHasBeenSet = true; m_eventTriggerName = value; }
-    inline void SetEventTriggerName(Aws::String&& value) { m_eventTriggerNameHasBeenSet = true; m_eventTriggerName = std::move(value); }
-    inline void SetEventTriggerName(const char* value) { m_eventTriggerNameHasBeenSet = true; m_eventTriggerName.assign(value); }
-    inline DeleteEventTriggerRequest& WithEventTriggerName(const Aws::String& value) { SetEventTriggerName(value); return *this;}
-    inline DeleteEventTriggerRequest& WithEventTriggerName(Aws::String&& value) { SetEventTriggerName(std::move(value)); return *this;}
-    inline DeleteEventTriggerRequest& WithEventTriggerName(const char* value) { SetEventTriggerName(value); return *this;}
+    template<typename EventTriggerNameT = Aws::String>
+    void SetEventTriggerName(EventTriggerNameT&& value) { m_eventTriggerNameHasBeenSet = true; m_eventTriggerName = std::forward<EventTriggerNameT>(value); }
+    template<typename EventTriggerNameT = Aws::String>
+    DeleteEventTriggerRequest& WithEventTriggerName(EventTriggerNameT&& value) { SetEventTriggerName(std::forward<EventTriggerNameT>(value)); return *this;}
     ///@}
   private:
 

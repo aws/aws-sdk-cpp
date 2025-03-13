@@ -28,7 +28,7 @@ namespace Model
   class CreateUsageLimitResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API CreateUsageLimitResult();
+    AWS_REDSHIFTSERVERLESS_API CreateUsageLimitResult() = default;
     AWS_REDSHIFTSERVERLESS_API CreateUsageLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API CreateUsageLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The returned usage limit object.</p>
      */
-    inline const UsageLimit& GetUsageLimit() const{ return m_usageLimit; }
-    inline void SetUsageLimit(const UsageLimit& value) { m_usageLimit = value; }
-    inline void SetUsageLimit(UsageLimit&& value) { m_usageLimit = std::move(value); }
-    inline CreateUsageLimitResult& WithUsageLimit(const UsageLimit& value) { SetUsageLimit(value); return *this;}
-    inline CreateUsageLimitResult& WithUsageLimit(UsageLimit&& value) { SetUsageLimit(std::move(value)); return *this;}
+    inline const UsageLimit& GetUsageLimit() const { return m_usageLimit; }
+    template<typename UsageLimitT = UsageLimit>
+    void SetUsageLimit(UsageLimitT&& value) { m_usageLimitHasBeenSet = true; m_usageLimit = std::forward<UsageLimitT>(value); }
+    template<typename UsageLimitT = UsageLimit>
+    CreateUsageLimitResult& WithUsageLimit(UsageLimitT&& value) { SetUsageLimit(std::forward<UsageLimitT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateUsageLimitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateUsageLimitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateUsageLimitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateUsageLimitResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     UsageLimit m_usageLimit;
+    bool m_usageLimitHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetArchiveMessageContentResult::GetArchiveMessageContentResult()
-{
-}
-
 GetArchiveMessageContentResult::GetArchiveMessageContentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetArchiveMessageContentResult& GetArchiveMessageContentResult::operator =(const
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetObject("Body");
-
+    m_bodyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

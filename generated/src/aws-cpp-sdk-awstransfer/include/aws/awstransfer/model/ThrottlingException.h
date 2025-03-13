@@ -32,7 +32,7 @@ namespace Model
   class ThrottlingException
   {
   public:
-    AWS_TRANSFER_API ThrottlingException();
+    AWS_TRANSFER_API ThrottlingException() = default;
     AWS_TRANSFER_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
+    inline const Aws::String& GetRetryAfterSeconds() const { return m_retryAfterSeconds; }
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
-    inline void SetRetryAfterSeconds(const Aws::String& value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
-    inline void SetRetryAfterSeconds(Aws::String&& value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = std::move(value); }
-    inline void SetRetryAfterSeconds(const char* value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds.assign(value); }
-    inline ThrottlingException& WithRetryAfterSeconds(const Aws::String& value) { SetRetryAfterSeconds(value); return *this;}
-    inline ThrottlingException& WithRetryAfterSeconds(Aws::String&& value) { SetRetryAfterSeconds(std::move(value)); return *this;}
-    inline ThrottlingException& WithRetryAfterSeconds(const char* value) { SetRetryAfterSeconds(value); return *this;}
+    template<typename RetryAfterSecondsT = Aws::String>
+    void SetRetryAfterSeconds(RetryAfterSecondsT&& value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = std::forward<RetryAfterSecondsT>(value); }
+    template<typename RetryAfterSecondsT = Aws::String>
+    ThrottlingException& WithRetryAfterSeconds(RetryAfterSecondsT&& value) { SetRetryAfterSeconds(std::forward<RetryAfterSecondsT>(value)); return *this;}
     ///@}
   private:
 

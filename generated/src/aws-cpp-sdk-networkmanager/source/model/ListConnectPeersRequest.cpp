@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListConnectPeersRequest::ListConnectPeersRequest() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_connectAttachmentIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListConnectPeersRequest::SerializePayload() const
 {
   return {};

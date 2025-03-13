@@ -18,17 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-ManifestConfig::ManifestConfig() : 
-    m_action(ManifestAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_format(ManifestFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 ManifestConfig::ManifestConfig(JsonView jsonValue)
-  : ManifestConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ManifestConfig& ManifestConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ManifestActionMapper::GetManifestActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = ManifestFormatMapper::GetManifestFormatForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetObject("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

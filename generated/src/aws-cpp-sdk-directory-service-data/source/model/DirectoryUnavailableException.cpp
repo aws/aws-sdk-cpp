@@ -18,15 +18,7 @@ namespace DirectoryServiceData
 namespace Model
 {
 
-DirectoryUnavailableException::DirectoryUnavailableException() : 
-    m_messageHasBeenSet(false),
-    m_reason(DirectoryUnavailableReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 DirectoryUnavailableException::DirectoryUnavailableException(JsonView jsonValue)
-  : DirectoryUnavailableException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DirectoryUnavailableException& DirectoryUnavailableException::operator =(JsonVie
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = DirectoryUnavailableReasonMapper::GetDirectoryUnavailableReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

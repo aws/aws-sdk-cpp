@@ -12,16 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchRelatedItemsRequest::SearchRelatedItemsRequest() : 
-    m_caseIdHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String SearchRelatedItemsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class ActionState
   {
   public:
-    AWS_CODEPIPELINE_API ActionState();
+    AWS_CODEPIPELINE_API ActionState() = default;
     AWS_CODEPIPELINE_API ActionState(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ActionState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,36 @@ namespace Model
     /**
      * <p>The name of the action.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline ActionState& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline ActionState& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline ActionState& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    ActionState& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents information about the version (or revision) of an action.</p>
      */
-    inline const ActionRevision& GetCurrentRevision() const{ return m_currentRevision; }
+    inline const ActionRevision& GetCurrentRevision() const { return m_currentRevision; }
     inline bool CurrentRevisionHasBeenSet() const { return m_currentRevisionHasBeenSet; }
-    inline void SetCurrentRevision(const ActionRevision& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = value; }
-    inline void SetCurrentRevision(ActionRevision&& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = std::move(value); }
-    inline ActionState& WithCurrentRevision(const ActionRevision& value) { SetCurrentRevision(value); return *this;}
-    inline ActionState& WithCurrentRevision(ActionRevision&& value) { SetCurrentRevision(std::move(value)); return *this;}
+    template<typename CurrentRevisionT = ActionRevision>
+    void SetCurrentRevision(CurrentRevisionT&& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = std::forward<CurrentRevisionT>(value); }
+    template<typename CurrentRevisionT = ActionRevision>
+    ActionState& WithCurrentRevision(CurrentRevisionT&& value) { SetCurrentRevision(std::forward<CurrentRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents information about the run of an action.</p>
      */
-    inline const ActionExecution& GetLatestExecution() const{ return m_latestExecution; }
+    inline const ActionExecution& GetLatestExecution() const { return m_latestExecution; }
     inline bool LatestExecutionHasBeenSet() const { return m_latestExecutionHasBeenSet; }
-    inline void SetLatestExecution(const ActionExecution& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = value; }
-    inline void SetLatestExecution(ActionExecution&& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = std::move(value); }
-    inline ActionState& WithLatestExecution(const ActionExecution& value) { SetLatestExecution(value); return *this;}
-    inline ActionState& WithLatestExecution(ActionExecution&& value) { SetLatestExecution(std::move(value)); return *this;}
+    template<typename LatestExecutionT = ActionExecution>
+    void SetLatestExecution(LatestExecutionT&& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = std::forward<LatestExecutionT>(value); }
+    template<typename LatestExecutionT = ActionExecution>
+    ActionState& WithLatestExecution(LatestExecutionT&& value) { SetLatestExecution(std::forward<LatestExecutionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * <p>A URL link for more information about the state of the action, such as a
      * deployment group details page.</p>
      */
-    inline const Aws::String& GetEntityUrl() const{ return m_entityUrl; }
+    inline const Aws::String& GetEntityUrl() const { return m_entityUrl; }
     inline bool EntityUrlHasBeenSet() const { return m_entityUrlHasBeenSet; }
-    inline void SetEntityUrl(const Aws::String& value) { m_entityUrlHasBeenSet = true; m_entityUrl = value; }
-    inline void SetEntityUrl(Aws::String&& value) { m_entityUrlHasBeenSet = true; m_entityUrl = std::move(value); }
-    inline void SetEntityUrl(const char* value) { m_entityUrlHasBeenSet = true; m_entityUrl.assign(value); }
-    inline ActionState& WithEntityUrl(const Aws::String& value) { SetEntityUrl(value); return *this;}
-    inline ActionState& WithEntityUrl(Aws::String&& value) { SetEntityUrl(std::move(value)); return *this;}
-    inline ActionState& WithEntityUrl(const char* value) { SetEntityUrl(value); return *this;}
+    template<typename EntityUrlT = Aws::String>
+    void SetEntityUrl(EntityUrlT&& value) { m_entityUrlHasBeenSet = true; m_entityUrl = std::forward<EntityUrlT>(value); }
+    template<typename EntityUrlT = Aws::String>
+    ActionState& WithEntityUrl(EntityUrlT&& value) { SetEntityUrl(std::forward<EntityUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +94,12 @@ namespace Model
      * <p>A URL link for more information about the revision, such as a commit details
      * page.</p>
      */
-    inline const Aws::String& GetRevisionUrl() const{ return m_revisionUrl; }
+    inline const Aws::String& GetRevisionUrl() const { return m_revisionUrl; }
     inline bool RevisionUrlHasBeenSet() const { return m_revisionUrlHasBeenSet; }
-    inline void SetRevisionUrl(const Aws::String& value) { m_revisionUrlHasBeenSet = true; m_revisionUrl = value; }
-    inline void SetRevisionUrl(Aws::String&& value) { m_revisionUrlHasBeenSet = true; m_revisionUrl = std::move(value); }
-    inline void SetRevisionUrl(const char* value) { m_revisionUrlHasBeenSet = true; m_revisionUrl.assign(value); }
-    inline ActionState& WithRevisionUrl(const Aws::String& value) { SetRevisionUrl(value); return *this;}
-    inline ActionState& WithRevisionUrl(Aws::String&& value) { SetRevisionUrl(std::move(value)); return *this;}
-    inline ActionState& WithRevisionUrl(const char* value) { SetRevisionUrl(value); return *this;}
+    template<typename RevisionUrlT = Aws::String>
+    void SetRevisionUrl(RevisionUrlT&& value) { m_revisionUrlHasBeenSet = true; m_revisionUrl = std::forward<RevisionUrlT>(value); }
+    template<typename RevisionUrlT = Aws::String>
+    ActionState& WithRevisionUrl(RevisionUrlT&& value) { SetRevisionUrl(std::forward<RevisionUrlT>(value)); return *this;}
     ///@}
   private:
 

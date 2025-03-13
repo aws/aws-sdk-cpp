@@ -18,18 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-BuildGroup::BuildGroup() : 
-    m_identifierHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_ignoreFailure(false),
-    m_ignoreFailureHasBeenSet(false),
-    m_currentBuildSummaryHasBeenSet(false),
-    m_priorBuildSummaryListHasBeenSet(false)
-{
-}
-
 BuildGroup::BuildGroup(JsonView jsonValue)
-  : BuildGroup()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ BuildGroup& BuildGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dependsOn"))
   {
     Aws::Utils::Array<JsonView> dependsOnJsonList = jsonValue.GetArray("dependsOn");
@@ -52,21 +39,16 @@ BuildGroup& BuildGroup::operator =(JsonView jsonValue)
     }
     m_dependsOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ignoreFailure"))
   {
     m_ignoreFailure = jsonValue.GetBool("ignoreFailure");
-
     m_ignoreFailureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentBuildSummary"))
   {
     m_currentBuildSummary = jsonValue.GetObject("currentBuildSummary");
-
     m_currentBuildSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priorBuildSummaryList"))
   {
     Aws::Utils::Array<JsonView> priorBuildSummaryListJsonList = jsonValue.GetArray("priorBuildSummaryList");
@@ -76,7 +58,6 @@ BuildGroup& BuildGroup::operator =(JsonView jsonValue)
     }
     m_priorBuildSummaryListHasBeenSet = true;
   }
-
   return *this;
 }
 

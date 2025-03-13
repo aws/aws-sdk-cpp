@@ -18,20 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-Deployment::Deployment() : 
-    m_autoDeployed(false),
-    m_autoDeployedHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_deploymentStatusMessageHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Deployment::Deployment(JsonView jsonValue)
-  : Deployment()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ Deployment& Deployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("autoDeployed"))
   {
     m_autoDeployed = jsonValue.GetBool("autoDeployed");
-
     m_autoDeployedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetString("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentStatus"))
   {
     m_deploymentStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("deploymentStatus"));
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentStatusMessage"))
   {
     m_deploymentStatusMessage = jsonValue.GetString("deploymentStatusMessage");
-
     m_deploymentStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

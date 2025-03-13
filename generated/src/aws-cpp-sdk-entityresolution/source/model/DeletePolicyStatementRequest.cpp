@@ -12,12 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePolicyStatementRequest::DeletePolicyStatementRequest() : 
-    m_arnHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePolicyStatementRequest::SerializePayload() const
 {
   return {};

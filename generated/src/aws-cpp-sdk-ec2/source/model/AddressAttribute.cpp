@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AddressAttribute::AddressAttribute() : 
-    m_publicIpHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_ptrRecordHasBeenSet(false),
-    m_ptrRecordUpdateHasBeenSet(false)
-{
-}
-
 AddressAttribute::AddressAttribute(const XmlNode& xmlNode)
-  : AddressAttribute()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ AddressAttribute& AddressAttribute::operator =(const XmlNode& xmlNode)
     {
       m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
       m_publicIpHasBeenSet = true;
+       m_publicIpHasBeenSet = true;
     }
     XmlNode allocationIdNode = resultNode.FirstChild("allocationId");
     if(!allocationIdNode.IsNull())
     {
       m_allocationId = Aws::Utils::Xml::DecodeEscapedXmlText(allocationIdNode.GetText());
       m_allocationIdHasBeenSet = true;
+       m_allocationIdHasBeenSet = true;
     }
     XmlNode ptrRecordNode = resultNode.FirstChild("ptrRecord");
     if(!ptrRecordNode.IsNull())
     {
       m_ptrRecord = Aws::Utils::Xml::DecodeEscapedXmlText(ptrRecordNode.GetText());
       m_ptrRecordHasBeenSet = true;
+       m_ptrRecordHasBeenSet = true;
     }
     XmlNode ptrRecordUpdateNode = resultNode.FirstChild("ptrRecordUpdate");
     if(!ptrRecordUpdateNode.IsNull())
     {
       m_ptrRecordUpdate = ptrRecordUpdateNode;
       m_ptrRecordUpdateHasBeenSet = true;
+       m_ptrRecordUpdateHasBeenSet = true;
     }
   }
 

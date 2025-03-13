@@ -12,13 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutEmailMonitoringConfigurationRequest::PutEmailMonitoringConfigurationRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_logGroupArnHasBeenSet(false)
-{
-}
-
 Aws::String PutEmailMonitoringConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Severity::Severity() : 
-    m_product(0.0),
-    m_productHasBeenSet(false),
-    m_label(SeverityLabel::NOT_SET),
-    m_labelHasBeenSet(false),
-    m_normalized(0),
-    m_normalizedHasBeenSet(false),
-    m_originalHasBeenSet(false)
-{
-}
-
 Severity::Severity(JsonView jsonValue)
-  : Severity()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ Severity& Severity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Product"))
   {
     m_product = jsonValue.GetDouble("Product");
-
     m_productHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Label"))
   {
     m_label = SeverityLabelMapper::GetSeverityLabelForName(jsonValue.GetString("Label"));
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Normalized"))
   {
     m_normalized = jsonValue.GetInteger("Normalized");
-
     m_normalizedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Original"))
   {
     m_original = jsonValue.GetString("Original");
-
     m_originalHasBeenSet = true;
   }
-
   return *this;
 }
 

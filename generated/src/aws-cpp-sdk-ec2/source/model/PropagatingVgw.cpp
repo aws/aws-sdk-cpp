@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PropagatingVgw::PropagatingVgw() : 
-    m_gatewayIdHasBeenSet(false)
-{
-}
-
 PropagatingVgw::PropagatingVgw(const XmlNode& xmlNode)
-  : PropagatingVgw()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ PropagatingVgw& PropagatingVgw::operator =(const XmlNode& xmlNode)
     {
       m_gatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(gatewayIdNode.GetText());
       m_gatewayIdHasBeenSet = true;
+       m_gatewayIdHasBeenSet = true;
     }
   }
 

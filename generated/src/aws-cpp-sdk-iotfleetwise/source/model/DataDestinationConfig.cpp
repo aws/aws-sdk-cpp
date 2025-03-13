@@ -18,15 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-DataDestinationConfig::DataDestinationConfig() : 
-    m_s3ConfigHasBeenSet(false),
-    m_timestreamConfigHasBeenSet(false),
-    m_mqttTopicConfigHasBeenSet(false)
-{
-}
-
 DataDestinationConfig::DataDestinationConfig(JsonView jsonValue)
-  : DataDestinationConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DataDestinationConfig& DataDestinationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Config"))
   {
     m_s3Config = jsonValue.GetObject("s3Config");
-
     m_s3ConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestreamConfig"))
   {
     m_timestreamConfig = jsonValue.GetObject("timestreamConfig");
-
     m_timestreamConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mqttTopicConfig"))
   {
     m_mqttTopicConfig = jsonValue.GetObject("mqttTopicConfig");
-
     m_mqttTopicConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

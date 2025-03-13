@@ -12,30 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRecipeJobRequest::CreateRecipeJobRequest() : 
-    m_datasetNameHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_encryptionMode(EncryptionMode::NOT_SET),
-    m_encryptionModeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_logSubscription(LogSubscription::NOT_SET),
-    m_logSubscriptionHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_dataCatalogOutputsHasBeenSet(false),
-    m_databaseOutputsHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_recipeReferenceHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false)
-{
-}
-
 Aws::String CreateRecipeJobRequest::SerializePayload() const
 {
   JsonValue payload;

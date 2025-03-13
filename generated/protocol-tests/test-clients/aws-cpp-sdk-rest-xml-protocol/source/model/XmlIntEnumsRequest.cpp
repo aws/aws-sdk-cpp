@@ -14,18 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-XmlIntEnumsRequest::XmlIntEnumsRequest() : 
-    m_intEnum1(0),
-    m_intEnum1HasBeenSet(false),
-    m_intEnum2(0),
-    m_intEnum2HasBeenSet(false),
-    m_intEnum3(0),
-    m_intEnum3HasBeenSet(false),
-    m_intEnumListHasBeenSet(false),
-    m_intEnumSetHasBeenSet(false),
-    m_intEnumMapHasBeenSet(false)
-{
-}
 
 Aws::String XmlIntEnumsRequest::SerializePayload() const
 {

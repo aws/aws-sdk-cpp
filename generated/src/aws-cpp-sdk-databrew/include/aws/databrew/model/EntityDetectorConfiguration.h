@@ -34,7 +34,7 @@ namespace Model
   class EntityDetectorConfiguration
   {
   public:
-    AWS_GLUEDATABREW_API EntityDetectorConfiguration();
+    AWS_GLUEDATABREW_API EntityDetectorConfiguration() = default;
     AWS_GLUEDATABREW_API EntityDetectorConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API EntityDetectorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,15 +55,14 @@ namespace Model
      * group USA_ALL is also supported, and includes all of the above entity types
      * except PERSON_NAME and DATE.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEntityTypes() const{ return m_entityTypes; }
+    inline const Aws::Vector<Aws::String>& GetEntityTypes() const { return m_entityTypes; }
     inline bool EntityTypesHasBeenSet() const { return m_entityTypesHasBeenSet; }
-    inline void SetEntityTypes(const Aws::Vector<Aws::String>& value) { m_entityTypesHasBeenSet = true; m_entityTypes = value; }
-    inline void SetEntityTypes(Aws::Vector<Aws::String>&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::move(value); }
-    inline EntityDetectorConfiguration& WithEntityTypes(const Aws::Vector<Aws::String>& value) { SetEntityTypes(value); return *this;}
-    inline EntityDetectorConfiguration& WithEntityTypes(Aws::Vector<Aws::String>&& value) { SetEntityTypes(std::move(value)); return *this;}
-    inline EntityDetectorConfiguration& AddEntityTypes(const Aws::String& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(value); return *this; }
-    inline EntityDetectorConfiguration& AddEntityTypes(Aws::String&& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(std::move(value)); return *this; }
-    inline EntityDetectorConfiguration& AddEntityTypes(const char* value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(value); return *this; }
+    template<typename EntityTypesT = Aws::Vector<Aws::String>>
+    void SetEntityTypes(EntityTypesT&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::forward<EntityTypesT>(value); }
+    template<typename EntityTypesT = Aws::Vector<Aws::String>>
+    EntityDetectorConfiguration& WithEntityTypes(EntityTypesT&& value) { SetEntityTypes(std::forward<EntityTypesT>(value)); return *this;}
+    template<typename EntityTypesT = Aws::String>
+    EntityDetectorConfiguration& AddEntityTypes(EntityTypesT&& value) { m_entityTypesHasBeenSet = true; m_entityTypes.emplace_back(std::forward<EntityTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,14 +71,14 @@ namespace Model
      * contain detected entities. When undefined, no statistics will be computed on
      * columns that contain detected entities.</p>
      */
-    inline const Aws::Vector<AllowedStatistics>& GetAllowedStatistics() const{ return m_allowedStatistics; }
+    inline const Aws::Vector<AllowedStatistics>& GetAllowedStatistics() const { return m_allowedStatistics; }
     inline bool AllowedStatisticsHasBeenSet() const { return m_allowedStatisticsHasBeenSet; }
-    inline void SetAllowedStatistics(const Aws::Vector<AllowedStatistics>& value) { m_allowedStatisticsHasBeenSet = true; m_allowedStatistics = value; }
-    inline void SetAllowedStatistics(Aws::Vector<AllowedStatistics>&& value) { m_allowedStatisticsHasBeenSet = true; m_allowedStatistics = std::move(value); }
-    inline EntityDetectorConfiguration& WithAllowedStatistics(const Aws::Vector<AllowedStatistics>& value) { SetAllowedStatistics(value); return *this;}
-    inline EntityDetectorConfiguration& WithAllowedStatistics(Aws::Vector<AllowedStatistics>&& value) { SetAllowedStatistics(std::move(value)); return *this;}
-    inline EntityDetectorConfiguration& AddAllowedStatistics(const AllowedStatistics& value) { m_allowedStatisticsHasBeenSet = true; m_allowedStatistics.push_back(value); return *this; }
-    inline EntityDetectorConfiguration& AddAllowedStatistics(AllowedStatistics&& value) { m_allowedStatisticsHasBeenSet = true; m_allowedStatistics.push_back(std::move(value)); return *this; }
+    template<typename AllowedStatisticsT = Aws::Vector<AllowedStatistics>>
+    void SetAllowedStatistics(AllowedStatisticsT&& value) { m_allowedStatisticsHasBeenSet = true; m_allowedStatistics = std::forward<AllowedStatisticsT>(value); }
+    template<typename AllowedStatisticsT = Aws::Vector<AllowedStatistics>>
+    EntityDetectorConfiguration& WithAllowedStatistics(AllowedStatisticsT&& value) { SetAllowedStatistics(std::forward<AllowedStatisticsT>(value)); return *this;}
+    template<typename AllowedStatisticsT = AllowedStatistics>
+    EntityDetectorConfiguration& AddAllowedStatistics(AllowedStatisticsT&& value) { m_allowedStatisticsHasBeenSet = true; m_allowedStatistics.emplace_back(std::forward<AllowedStatisticsT>(value)); return *this; }
     ///@}
   private:
 

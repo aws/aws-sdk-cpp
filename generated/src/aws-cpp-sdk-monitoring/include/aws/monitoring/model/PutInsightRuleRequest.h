@@ -23,7 +23,7 @@ namespace Model
   class PutInsightRuleRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API PutInsightRuleRequest();
+    AWS_CLOUDWATCH_API PutInsightRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>A unique name for the rule.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline PutInsightRuleRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline PutInsightRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline PutInsightRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    PutInsightRuleRequest& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
      */
-    inline const Aws::String& GetRuleState() const{ return m_ruleState; }
+    inline const Aws::String& GetRuleState() const { return m_ruleState; }
     inline bool RuleStateHasBeenSet() const { return m_ruleStateHasBeenSet; }
-    inline void SetRuleState(const Aws::String& value) { m_ruleStateHasBeenSet = true; m_ruleState = value; }
-    inline void SetRuleState(Aws::String&& value) { m_ruleStateHasBeenSet = true; m_ruleState = std::move(value); }
-    inline void SetRuleState(const char* value) { m_ruleStateHasBeenSet = true; m_ruleState.assign(value); }
-    inline PutInsightRuleRequest& WithRuleState(const Aws::String& value) { SetRuleState(value); return *this;}
-    inline PutInsightRuleRequest& WithRuleState(Aws::String&& value) { SetRuleState(std::move(value)); return *this;}
-    inline PutInsightRuleRequest& WithRuleState(const char* value) { SetRuleState(value); return *this;}
+    template<typename RuleStateT = Aws::String>
+    void SetRuleState(RuleStateT&& value) { m_ruleStateHasBeenSet = true; m_ruleState = std::forward<RuleStateT>(value); }
+    template<typename RuleStateT = Aws::String>
+    PutInsightRuleRequest& WithRuleState(RuleStateT&& value) { SetRuleState(std::forward<RuleStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor
      * Insights Rule Syntax</a>.</p>
      */
-    inline const Aws::String& GetRuleDefinition() const{ return m_ruleDefinition; }
+    inline const Aws::String& GetRuleDefinition() const { return m_ruleDefinition; }
     inline bool RuleDefinitionHasBeenSet() const { return m_ruleDefinitionHasBeenSet; }
-    inline void SetRuleDefinition(const Aws::String& value) { m_ruleDefinitionHasBeenSet = true; m_ruleDefinition = value; }
-    inline void SetRuleDefinition(Aws::String&& value) { m_ruleDefinitionHasBeenSet = true; m_ruleDefinition = std::move(value); }
-    inline void SetRuleDefinition(const char* value) { m_ruleDefinitionHasBeenSet = true; m_ruleDefinition.assign(value); }
-    inline PutInsightRuleRequest& WithRuleDefinition(const Aws::String& value) { SetRuleDefinition(value); return *this;}
-    inline PutInsightRuleRequest& WithRuleDefinition(Aws::String&& value) { SetRuleDefinition(std::move(value)); return *this;}
-    inline PutInsightRuleRequest& WithRuleDefinition(const char* value) { SetRuleDefinition(value); return *this;}
+    template<typename RuleDefinitionT = Aws::String>
+    void SetRuleDefinition(RuleDefinitionT&& value) { m_ruleDefinitionHasBeenSet = true; m_ruleDefinition = std::forward<RuleDefinitionT>(value); }
+    template<typename RuleDefinitionT = Aws::String>
+    PutInsightRuleRequest& WithRuleDefinition(RuleDefinitionT&& value) { SetRuleDefinition(std::forward<RuleDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,14 @@ namespace Model
      * existing rule, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PutInsightRuleRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PutInsightRuleRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PutInsightRuleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PutInsightRuleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PutInsightRuleRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PutInsightRuleRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class SessionKeysAbpV1_1
   {
   public:
-    AWS_IOTWIRELESS_API SessionKeysAbpV1_1();
+    AWS_IOTWIRELESS_API SessionKeysAbpV1_1() = default;
     AWS_IOTWIRELESS_API SessionKeysAbpV1_1(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API SessionKeysAbpV1_1& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,56 +41,48 @@ namespace Model
     /**
      * <p>The FNwkSIntKey value.</p>
      */
-    inline const Aws::String& GetFNwkSIntKey() const{ return m_fNwkSIntKey; }
+    inline const Aws::String& GetFNwkSIntKey() const { return m_fNwkSIntKey; }
     inline bool FNwkSIntKeyHasBeenSet() const { return m_fNwkSIntKeyHasBeenSet; }
-    inline void SetFNwkSIntKey(const Aws::String& value) { m_fNwkSIntKeyHasBeenSet = true; m_fNwkSIntKey = value; }
-    inline void SetFNwkSIntKey(Aws::String&& value) { m_fNwkSIntKeyHasBeenSet = true; m_fNwkSIntKey = std::move(value); }
-    inline void SetFNwkSIntKey(const char* value) { m_fNwkSIntKeyHasBeenSet = true; m_fNwkSIntKey.assign(value); }
-    inline SessionKeysAbpV1_1& WithFNwkSIntKey(const Aws::String& value) { SetFNwkSIntKey(value); return *this;}
-    inline SessionKeysAbpV1_1& WithFNwkSIntKey(Aws::String&& value) { SetFNwkSIntKey(std::move(value)); return *this;}
-    inline SessionKeysAbpV1_1& WithFNwkSIntKey(const char* value) { SetFNwkSIntKey(value); return *this;}
+    template<typename FNwkSIntKeyT = Aws::String>
+    void SetFNwkSIntKey(FNwkSIntKeyT&& value) { m_fNwkSIntKeyHasBeenSet = true; m_fNwkSIntKey = std::forward<FNwkSIntKeyT>(value); }
+    template<typename FNwkSIntKeyT = Aws::String>
+    SessionKeysAbpV1_1& WithFNwkSIntKey(FNwkSIntKeyT&& value) { SetFNwkSIntKey(std::forward<FNwkSIntKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SNwkSIntKey value.</p>
      */
-    inline const Aws::String& GetSNwkSIntKey() const{ return m_sNwkSIntKey; }
+    inline const Aws::String& GetSNwkSIntKey() const { return m_sNwkSIntKey; }
     inline bool SNwkSIntKeyHasBeenSet() const { return m_sNwkSIntKeyHasBeenSet; }
-    inline void SetSNwkSIntKey(const Aws::String& value) { m_sNwkSIntKeyHasBeenSet = true; m_sNwkSIntKey = value; }
-    inline void SetSNwkSIntKey(Aws::String&& value) { m_sNwkSIntKeyHasBeenSet = true; m_sNwkSIntKey = std::move(value); }
-    inline void SetSNwkSIntKey(const char* value) { m_sNwkSIntKeyHasBeenSet = true; m_sNwkSIntKey.assign(value); }
-    inline SessionKeysAbpV1_1& WithSNwkSIntKey(const Aws::String& value) { SetSNwkSIntKey(value); return *this;}
-    inline SessionKeysAbpV1_1& WithSNwkSIntKey(Aws::String&& value) { SetSNwkSIntKey(std::move(value)); return *this;}
-    inline SessionKeysAbpV1_1& WithSNwkSIntKey(const char* value) { SetSNwkSIntKey(value); return *this;}
+    template<typename SNwkSIntKeyT = Aws::String>
+    void SetSNwkSIntKey(SNwkSIntKeyT&& value) { m_sNwkSIntKeyHasBeenSet = true; m_sNwkSIntKey = std::forward<SNwkSIntKeyT>(value); }
+    template<typename SNwkSIntKeyT = Aws::String>
+    SessionKeysAbpV1_1& WithSNwkSIntKey(SNwkSIntKeyT&& value) { SetSNwkSIntKey(std::forward<SNwkSIntKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The NwkSEncKey value.</p>
      */
-    inline const Aws::String& GetNwkSEncKey() const{ return m_nwkSEncKey; }
+    inline const Aws::String& GetNwkSEncKey() const { return m_nwkSEncKey; }
     inline bool NwkSEncKeyHasBeenSet() const { return m_nwkSEncKeyHasBeenSet; }
-    inline void SetNwkSEncKey(const Aws::String& value) { m_nwkSEncKeyHasBeenSet = true; m_nwkSEncKey = value; }
-    inline void SetNwkSEncKey(Aws::String&& value) { m_nwkSEncKeyHasBeenSet = true; m_nwkSEncKey = std::move(value); }
-    inline void SetNwkSEncKey(const char* value) { m_nwkSEncKeyHasBeenSet = true; m_nwkSEncKey.assign(value); }
-    inline SessionKeysAbpV1_1& WithNwkSEncKey(const Aws::String& value) { SetNwkSEncKey(value); return *this;}
-    inline SessionKeysAbpV1_1& WithNwkSEncKey(Aws::String&& value) { SetNwkSEncKey(std::move(value)); return *this;}
-    inline SessionKeysAbpV1_1& WithNwkSEncKey(const char* value) { SetNwkSEncKey(value); return *this;}
+    template<typename NwkSEncKeyT = Aws::String>
+    void SetNwkSEncKey(NwkSEncKeyT&& value) { m_nwkSEncKeyHasBeenSet = true; m_nwkSEncKey = std::forward<NwkSEncKeyT>(value); }
+    template<typename NwkSEncKeyT = Aws::String>
+    SessionKeysAbpV1_1& WithNwkSEncKey(NwkSEncKeyT&& value) { SetNwkSEncKey(std::forward<NwkSEncKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AppSKey value.</p>
      */
-    inline const Aws::String& GetAppSKey() const{ return m_appSKey; }
+    inline const Aws::String& GetAppSKey() const { return m_appSKey; }
     inline bool AppSKeyHasBeenSet() const { return m_appSKeyHasBeenSet; }
-    inline void SetAppSKey(const Aws::String& value) { m_appSKeyHasBeenSet = true; m_appSKey = value; }
-    inline void SetAppSKey(Aws::String&& value) { m_appSKeyHasBeenSet = true; m_appSKey = std::move(value); }
-    inline void SetAppSKey(const char* value) { m_appSKeyHasBeenSet = true; m_appSKey.assign(value); }
-    inline SessionKeysAbpV1_1& WithAppSKey(const Aws::String& value) { SetAppSKey(value); return *this;}
-    inline SessionKeysAbpV1_1& WithAppSKey(Aws::String&& value) { SetAppSKey(std::move(value)); return *this;}
-    inline SessionKeysAbpV1_1& WithAppSKey(const char* value) { SetAppSKey(value); return *this;}
+    template<typename AppSKeyT = Aws::String>
+    void SetAppSKey(AppSKeyT&& value) { m_appSKeyHasBeenSet = true; m_appSKey = std::forward<AppSKeyT>(value); }
+    template<typename AppSKeyT = Aws::String>
+    SessionKeysAbpV1_1& WithAppSKey(AppSKeyT&& value) { SetAppSKey(std::forward<AppSKeyT>(value)); return *this;}
     ///@}
   private:
 

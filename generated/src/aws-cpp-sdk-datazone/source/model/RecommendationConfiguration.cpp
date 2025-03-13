@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RecommendationConfiguration::RecommendationConfiguration() : 
-    m_enableBusinessNameGeneration(false),
-    m_enableBusinessNameGenerationHasBeenSet(false)
-{
-}
-
 RecommendationConfiguration::RecommendationConfiguration(JsonView jsonValue)
-  : RecommendationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RecommendationConfiguration& RecommendationConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("enableBusinessNameGeneration"))
   {
     m_enableBusinessNameGeneration = jsonValue.GetBool("enableBusinessNameGeneration");
-
     m_enableBusinessNameGenerationHasBeenSet = true;
   }
-
   return *this;
 }
 

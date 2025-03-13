@@ -17,15 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-ImportDocumentationPartsRequest::ImportDocumentationPartsRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_mode(PutMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_failOnWarnings(false),
-    m_failOnWarningsHasBeenSet(false)
-{
-}
-
 
 void ImportDocumentationPartsRequest::AddQueryStringParameters(URI& uri) const
 {

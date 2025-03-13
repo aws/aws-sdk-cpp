@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HierarchyLevelUpdate::HierarchyLevelUpdate() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 HierarchyLevelUpdate::HierarchyLevelUpdate(JsonView jsonValue)
-  : HierarchyLevelUpdate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HierarchyLevelUpdate& HierarchyLevelUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateVpcConnectionResult::CreateVpcConnectionResult() : 
-    m_state(VpcConnectionState::NOT_SET)
-{
-}
-
 CreateVpcConnectionResult::CreateVpcConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateVpcConnectionResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ CreateVpcConnectionResult& CreateVpcConnectionResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("vpcConnectionArn"))
   {
     m_vpcConnectionArn = jsonValue.GetString("vpcConnectionArn");
-
+    m_vpcConnectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = VpcConnectionStateMapper::GetVpcConnectionStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authentication"))
   {
     m_authentication = jsonValue.GetString("authentication");
-
+    m_authenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
+    m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientSubnets"))
   {
     Aws::Utils::Array<JsonView> clientSubnetsJsonList = jsonValue.GetArray("clientSubnets");
@@ -62,8 +52,8 @@ CreateVpcConnectionResult& CreateVpcConnectionResult::operator =(const Aws::Amaz
     {
       m_clientSubnets.push_back(clientSubnetsJsonList[clientSubnetsIndex].AsString());
     }
+    m_clientSubnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
@@ -71,14 +61,13 @@ CreateVpcConnectionResult& CreateVpcConnectionResult::operator =(const Aws::Amaz
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
     }
+    m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -86,14 +75,15 @@ CreateVpcConnectionResult& CreateVpcConnectionResult::operator =(const Aws::Amaz
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

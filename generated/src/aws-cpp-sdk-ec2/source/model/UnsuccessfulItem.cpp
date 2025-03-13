@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-UnsuccessfulItem::UnsuccessfulItem() : 
-    m_errorHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 UnsuccessfulItem::UnsuccessfulItem(const XmlNode& xmlNode)
-  : UnsuccessfulItem()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ UnsuccessfulItem& UnsuccessfulItem::operator =(const XmlNode& xmlNode)
     {
       m_error = errorNode;
       m_errorHasBeenSet = true;
+       m_errorHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("resourceId");
     if(!resourceIdNode.IsNull())
     {
       m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
+       m_resourceIdHasBeenSet = true;
     }
   }
 

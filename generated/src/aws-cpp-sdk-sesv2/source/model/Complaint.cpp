@@ -18,14 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-Complaint::Complaint() : 
-    m_complaintSubTypeHasBeenSet(false),
-    m_complaintFeedbackTypeHasBeenSet(false)
-{
-}
-
 Complaint::Complaint(JsonView jsonValue)
-  : Complaint()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Complaint& Complaint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComplaintSubType"))
   {
     m_complaintSubType = jsonValue.GetString("ComplaintSubType");
-
     m_complaintSubTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplaintFeedbackType"))
   {
     m_complaintFeedbackType = jsonValue.GetString("ComplaintFeedbackType");
-
     m_complaintFeedbackTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

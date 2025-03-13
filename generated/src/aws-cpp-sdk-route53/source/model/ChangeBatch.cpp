@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-ChangeBatch::ChangeBatch() : 
-    m_commentHasBeenSet(false),
-    m_changesHasBeenSet(false)
-{
-}
-
 ChangeBatch::ChangeBatch(const XmlNode& xmlNode)
-  : ChangeBatch()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ ChangeBatch& ChangeBatch::operator =(const XmlNode& xmlNode)
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
     XmlNode changesNode = resultNode.FirstChild("Changes");
     if(!changesNode.IsNull())
     {
       XmlNode changesMember = changesNode.FirstChild("Change");
+      m_changesHasBeenSet = !changesMember.IsNull();
       while(!changesMember.IsNull())
       {
         m_changes.push_back(changesMember);
         changesMember = changesMember.NextNode("Change");
       }
 
-      m_changesHasBeenSet = true;
+       m_changesHasBeenSet = true;
     }
   }
 

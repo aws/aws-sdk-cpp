@@ -12,12 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveFlowMediaStreamRequest::RemoveFlowMediaStreamRequest() : 
-    m_flowArnHasBeenSet(false),
-    m_mediaStreamNameHasBeenSet(false)
-{
-}
-
 Aws::String RemoveFlowMediaStreamRequest::SerializePayload() const
 {
   return {};

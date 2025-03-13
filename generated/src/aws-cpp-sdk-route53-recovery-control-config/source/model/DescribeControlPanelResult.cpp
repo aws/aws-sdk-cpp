@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeControlPanelResult::DescribeControlPanelResult()
-{
-}
-
 DescribeControlPanelResult::DescribeControlPanelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeControlPanelResult& DescribeControlPanelResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ControlPanel"))
   {
     m_controlPanel = jsonValue.GetObject("ControlPanel");
-
+    m_controlPanelHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

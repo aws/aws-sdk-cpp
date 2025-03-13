@@ -29,7 +29,7 @@ namespace Model
   class ListThemesResult
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ListThemesResult();
+    AWS_AMPLIFYUIBUILDER_API ListThemesResult() = default;
     AWS_AMPLIFYUIBUILDER_API ListThemesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFYUIBUILDER_API ListThemesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The list of themes for the Amplify app.</p>
      */
-    inline const Aws::Vector<ThemeSummary>& GetEntities() const{ return m_entities; }
-    inline void SetEntities(const Aws::Vector<ThemeSummary>& value) { m_entities = value; }
-    inline void SetEntities(Aws::Vector<ThemeSummary>&& value) { m_entities = std::move(value); }
-    inline ListThemesResult& WithEntities(const Aws::Vector<ThemeSummary>& value) { SetEntities(value); return *this;}
-    inline ListThemesResult& WithEntities(Aws::Vector<ThemeSummary>&& value) { SetEntities(std::move(value)); return *this;}
-    inline ListThemesResult& AddEntities(const ThemeSummary& value) { m_entities.push_back(value); return *this; }
-    inline ListThemesResult& AddEntities(ThemeSummary&& value) { m_entities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ThemeSummary>& GetEntities() const { return m_entities; }
+    template<typename EntitiesT = Aws::Vector<ThemeSummary>>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = Aws::Vector<ThemeSummary>>
+    ListThemesResult& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
+    template<typename EntitiesT = ThemeSummary>
+    ListThemesResult& AddEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities.emplace_back(std::forward<EntitiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's returned if more results are available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListThemesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListThemesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListThemesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListThemesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListThemesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListThemesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListThemesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListThemesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ThemeSummary> m_entities;
+    bool m_entitiesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

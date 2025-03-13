@@ -12,14 +12,6 @@ using namespace Aws::PcaConnectorAd::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTemplateRequest::UpdateTemplateRequest() : 
-    m_definitionHasBeenSet(false),
-    m_reenrollAllCertificateHolders(false),
-    m_reenrollAllCertificateHoldersHasBeenSet(false),
-    m_templateArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

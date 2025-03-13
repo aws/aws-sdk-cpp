@@ -12,18 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLaunchRequest::CreateLaunchRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_metricMonitorsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_randomizationSaltHasBeenSet(false),
-    m_scheduledSplitsConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLaunchRequest::SerializePayload() const
 {
   JsonValue payload;

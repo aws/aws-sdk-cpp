@@ -34,7 +34,7 @@ namespace Model
   class IdentitySourceFilter
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API IdentitySourceFilter();
+    AWS_VERIFIEDPERMISSIONS_API IdentitySourceFilter() = default;
     AWS_VERIFIEDPERMISSIONS_API IdentitySourceFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API IdentitySourceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The Cedar entity type of the principals returned by the identity provider
      * (IdP) associated with this identity source.</p>
      */
-    inline const Aws::String& GetPrincipalEntityType() const{ return m_principalEntityType; }
+    inline const Aws::String& GetPrincipalEntityType() const { return m_principalEntityType; }
     inline bool PrincipalEntityTypeHasBeenSet() const { return m_principalEntityTypeHasBeenSet; }
-    inline void SetPrincipalEntityType(const Aws::String& value) { m_principalEntityTypeHasBeenSet = true; m_principalEntityType = value; }
-    inline void SetPrincipalEntityType(Aws::String&& value) { m_principalEntityTypeHasBeenSet = true; m_principalEntityType = std::move(value); }
-    inline void SetPrincipalEntityType(const char* value) { m_principalEntityTypeHasBeenSet = true; m_principalEntityType.assign(value); }
-    inline IdentitySourceFilter& WithPrincipalEntityType(const Aws::String& value) { SetPrincipalEntityType(value); return *this;}
-    inline IdentitySourceFilter& WithPrincipalEntityType(Aws::String&& value) { SetPrincipalEntityType(std::move(value)); return *this;}
-    inline IdentitySourceFilter& WithPrincipalEntityType(const char* value) { SetPrincipalEntityType(value); return *this;}
+    template<typename PrincipalEntityTypeT = Aws::String>
+    void SetPrincipalEntityType(PrincipalEntityTypeT&& value) { m_principalEntityTypeHasBeenSet = true; m_principalEntityType = std::forward<PrincipalEntityTypeT>(value); }
+    template<typename PrincipalEntityTypeT = Aws::String>
+    IdentitySourceFilter& WithPrincipalEntityType(PrincipalEntityTypeT&& value) { SetPrincipalEntityType(std::forward<PrincipalEntityTypeT>(value)); return *this;}
     ///@}
   private:
 

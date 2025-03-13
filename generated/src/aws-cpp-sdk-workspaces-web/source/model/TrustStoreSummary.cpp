@@ -18,13 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-TrustStoreSummary::TrustStoreSummary() : 
-    m_trustStoreArnHasBeenSet(false)
-{
-}
-
 TrustStoreSummary::TrustStoreSummary(JsonView jsonValue)
-  : TrustStoreSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TrustStoreSummary& TrustStoreSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("trustStoreArn"))
   {
     m_trustStoreArn = jsonValue.GetString("trustStoreArn");
-
     m_trustStoreArnHasBeenSet = true;
   }
-
   return *this;
 }
 

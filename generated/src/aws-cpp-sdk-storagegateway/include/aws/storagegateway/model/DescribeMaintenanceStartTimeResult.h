@@ -40,20 +40,18 @@ namespace Model
   class DescribeMaintenanceStartTimeResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeMaintenanceStartTimeResult();
+    AWS_STORAGEGATEWAY_API DescribeMaintenanceStartTimeResult() = default;
     AWS_STORAGEGATEWAY_API DescribeMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeMaintenanceStartTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-    inline DescribeMaintenanceStartTimeResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline DescribeMaintenanceStartTimeResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline DescribeMaintenanceStartTimeResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    DescribeMaintenanceStartTimeResult& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,8 +60,8 @@ namespace Model
      * where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone
      * of the gateway.</p>
      */
-    inline int GetHourOfDay() const{ return m_hourOfDay; }
-    inline void SetHourOfDay(int value) { m_hourOfDay = value; }
+    inline int GetHourOfDay() const { return m_hourOfDay; }
+    inline void SetHourOfDay(int value) { m_hourOfDayHasBeenSet = true; m_hourOfDay = value; }
     inline DescribeMaintenanceStartTimeResult& WithHourOfDay(int value) { SetHourOfDay(value); return *this;}
     ///@}
 
@@ -73,8 +71,8 @@ namespace Model
      * where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time
      * zone of the gateway.</p>
      */
-    inline int GetMinuteOfHour() const{ return m_minuteOfHour; }
-    inline void SetMinuteOfHour(int value) { m_minuteOfHour = value; }
+    inline int GetMinuteOfHour() const { return m_minuteOfHour; }
+    inline void SetMinuteOfHour(int value) { m_minuteOfHourHasBeenSet = true; m_minuteOfHour = value; }
     inline DescribeMaintenanceStartTimeResult& WithMinuteOfHour(int value) { SetMinuteOfHour(value); return *this;}
     ///@}
 
@@ -84,8 +82,8 @@ namespace Model
      * 0 represents Sunday and 6 represents Saturday. The day of week is in the time
      * zone of the gateway.</p>
      */
-    inline int GetDayOfWeek() const{ return m_dayOfWeek; }
-    inline void SetDayOfWeek(int value) { m_dayOfWeek = value; }
+    inline int GetDayOfWeek() const { return m_dayOfWeek; }
+    inline void SetDayOfWeek(int value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
     inline DescribeMaintenanceStartTimeResult& WithDayOfWeek(int value) { SetDayOfWeek(value); return *this;}
     ///@}
 
@@ -96,8 +94,8 @@ namespace Model
      * It is not possible to set the maintenance schedule to start on days 29 through
      * 31.</p>
      */
-    inline int GetDayOfMonth() const{ return m_dayOfMonth; }
-    inline void SetDayOfMonth(int value) { m_dayOfMonth = value; }
+    inline int GetDayOfMonth() const { return m_dayOfMonth; }
+    inline void SetDayOfMonth(int value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = value; }
     inline DescribeMaintenanceStartTimeResult& WithDayOfMonth(int value) { SetDayOfMonth(value); return *this;}
     ///@}
 
@@ -106,13 +104,11 @@ namespace Model
      * <p>A value that indicates the time zone that is set for the gateway. The start
      * time and day of week specified should be in the time zone of the gateway.</p>
      */
-    inline const Aws::String& GetTimezone() const{ return m_timezone; }
-    inline void SetTimezone(const Aws::String& value) { m_timezone = value; }
-    inline void SetTimezone(Aws::String&& value) { m_timezone = std::move(value); }
-    inline void SetTimezone(const char* value) { m_timezone.assign(value); }
-    inline DescribeMaintenanceStartTimeResult& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
-    inline DescribeMaintenanceStartTimeResult& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
-    inline DescribeMaintenanceStartTimeResult& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+    inline const Aws::String& GetTimezone() const { return m_timezone; }
+    template<typename TimezoneT = Aws::String>
+    void SetTimezone(TimezoneT&& value) { m_timezoneHasBeenSet = true; m_timezone = std::forward<TimezoneT>(value); }
+    template<typename TimezoneT = Aws::String>
+    DescribeMaintenanceStartTimeResult& WithTimezone(TimezoneT&& value) { SetTimezone(std::forward<TimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,40 +123,46 @@ namespace Model
      * update is applied. These updates are applied during your gateway's scheduled
      * maintenance window.</p>
      */
-    inline const SoftwareUpdatePreferences& GetSoftwareUpdatePreferences() const{ return m_softwareUpdatePreferences; }
-    inline void SetSoftwareUpdatePreferences(const SoftwareUpdatePreferences& value) { m_softwareUpdatePreferences = value; }
-    inline void SetSoftwareUpdatePreferences(SoftwareUpdatePreferences&& value) { m_softwareUpdatePreferences = std::move(value); }
-    inline DescribeMaintenanceStartTimeResult& WithSoftwareUpdatePreferences(const SoftwareUpdatePreferences& value) { SetSoftwareUpdatePreferences(value); return *this;}
-    inline DescribeMaintenanceStartTimeResult& WithSoftwareUpdatePreferences(SoftwareUpdatePreferences&& value) { SetSoftwareUpdatePreferences(std::move(value)); return *this;}
+    inline const SoftwareUpdatePreferences& GetSoftwareUpdatePreferences() const { return m_softwareUpdatePreferences; }
+    template<typename SoftwareUpdatePreferencesT = SoftwareUpdatePreferences>
+    void SetSoftwareUpdatePreferences(SoftwareUpdatePreferencesT&& value) { m_softwareUpdatePreferencesHasBeenSet = true; m_softwareUpdatePreferences = std::forward<SoftwareUpdatePreferencesT>(value); }
+    template<typename SoftwareUpdatePreferencesT = SoftwareUpdatePreferences>
+    DescribeMaintenanceStartTimeResult& WithSoftwareUpdatePreferences(SoftwareUpdatePreferencesT&& value) { SetSoftwareUpdatePreferences(std::forward<SoftwareUpdatePreferencesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeMaintenanceStartTimeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeMaintenanceStartTimeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeMaintenanceStartTimeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeMaintenanceStartTimeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayARN;
+    bool m_gatewayARNHasBeenSet = false;
 
-    int m_hourOfDay;
+    int m_hourOfDay{0};
+    bool m_hourOfDayHasBeenSet = false;
 
-    int m_minuteOfHour;
+    int m_minuteOfHour{0};
+    bool m_minuteOfHourHasBeenSet = false;
 
-    int m_dayOfWeek;
+    int m_dayOfWeek{0};
+    bool m_dayOfWeekHasBeenSet = false;
 
-    int m_dayOfMonth;
+    int m_dayOfMonth{0};
+    bool m_dayOfMonthHasBeenSet = false;
 
     Aws::String m_timezone;
+    bool m_timezoneHasBeenSet = false;
 
     SoftwareUpdatePreferences m_softwareUpdatePreferences;
+    bool m_softwareUpdatePreferencesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

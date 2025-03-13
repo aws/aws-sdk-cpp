@@ -12,15 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateOutpostRequest::UpdateOutpostRequest() : 
-    m_outpostIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_supportedHardwareType(SupportedHardwareType::NOT_SET),
-    m_supportedHardwareTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateOutpostRequest::SerializePayload() const
 {
   JsonValue payload;

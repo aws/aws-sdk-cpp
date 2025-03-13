@@ -12,13 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConfigRequest::DeleteConfigRequest() : 
-    m_configIdHasBeenSet(false),
-    m_configType(ConfigCapabilityType::NOT_SET),
-    m_configTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConfigRequest::SerializePayload() const
 {
   return {};

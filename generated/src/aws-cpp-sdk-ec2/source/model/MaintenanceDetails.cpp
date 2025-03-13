@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MaintenanceDetails::MaintenanceDetails() : 
-    m_pendingMaintenanceHasBeenSet(false),
-    m_maintenanceAutoAppliedAfterHasBeenSet(false),
-    m_lastMaintenanceAppliedHasBeenSet(false)
-{
-}
-
 MaintenanceDetails::MaintenanceDetails(const XmlNode& xmlNode)
-  : MaintenanceDetails()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ MaintenanceDetails& MaintenanceDetails::operator =(const XmlNode& xmlNode)
     {
       m_pendingMaintenance = Aws::Utils::Xml::DecodeEscapedXmlText(pendingMaintenanceNode.GetText());
       m_pendingMaintenanceHasBeenSet = true;
+       m_pendingMaintenanceHasBeenSet = true;
     }
     XmlNode maintenanceAutoAppliedAfterNode = resultNode.FirstChild("maintenanceAutoAppliedAfter");
     if(!maintenanceAutoAppliedAfterNode.IsNull())
     {
       m_maintenanceAutoAppliedAfter = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maintenanceAutoAppliedAfterNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_maintenanceAutoAppliedAfterHasBeenSet = true;
+       m_maintenanceAutoAppliedAfterHasBeenSet = true;
     }
     XmlNode lastMaintenanceAppliedNode = resultNode.FirstChild("lastMaintenanceApplied");
     if(!lastMaintenanceAppliedNode.IsNull())
     {
       m_lastMaintenanceApplied = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastMaintenanceAppliedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastMaintenanceAppliedHasBeenSet = true;
+       m_lastMaintenanceAppliedHasBeenSet = true;
     }
   }
 

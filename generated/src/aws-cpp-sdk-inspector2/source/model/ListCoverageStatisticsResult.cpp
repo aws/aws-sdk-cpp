@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCoverageStatisticsResult::ListCoverageStatisticsResult() : 
-    m_totalCounts(0)
-{
-}
-
 ListCoverageStatisticsResult::ListCoverageStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListCoverageStatisticsResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ ListCoverageStatisticsResult& ListCoverageStatisticsResult::operator =(const Aws
     {
       m_countsByGroup.push_back(countsByGroupJsonList[countsByGroupIndex].AsObject());
     }
+    m_countsByGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalCounts"))
   {
     m_totalCounts = jsonValue.GetInt64("totalCounts");
-
+    m_totalCountsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

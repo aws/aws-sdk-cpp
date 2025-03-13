@@ -32,7 +32,7 @@ namespace Model
   class Location
   {
   public:
-    AWS_DIRECTCONNECT_API Location();
+    AWS_DIRECTCONNECT_API Location() = default;
     AWS_DIRECTCONNECT_API Location(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API Location& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The code for the location.</p>
      */
-    inline const Aws::String& GetLocationCode() const{ return m_locationCode; }
+    inline const Aws::String& GetLocationCode() const { return m_locationCode; }
     inline bool LocationCodeHasBeenSet() const { return m_locationCodeHasBeenSet; }
-    inline void SetLocationCode(const Aws::String& value) { m_locationCodeHasBeenSet = true; m_locationCode = value; }
-    inline void SetLocationCode(Aws::String&& value) { m_locationCodeHasBeenSet = true; m_locationCode = std::move(value); }
-    inline void SetLocationCode(const char* value) { m_locationCodeHasBeenSet = true; m_locationCode.assign(value); }
-    inline Location& WithLocationCode(const Aws::String& value) { SetLocationCode(value); return *this;}
-    inline Location& WithLocationCode(Aws::String&& value) { SetLocationCode(std::move(value)); return *this;}
-    inline Location& WithLocationCode(const char* value) { SetLocationCode(value); return *this;}
+    template<typename LocationCodeT = Aws::String>
+    void SetLocationCode(LocationCodeT&& value) { m_locationCodeHasBeenSet = true; m_locationCode = std::forward<LocationCodeT>(value); }
+    template<typename LocationCodeT = Aws::String>
+    Location& WithLocationCode(LocationCodeT&& value) { SetLocationCode(std::forward<LocationCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,73 +55,66 @@ namespace Model
      * <p>The name of the location. This includes the name of the colocation partner
      * and the physical site of the building.</p>
      */
-    inline const Aws::String& GetLocationName() const{ return m_locationName; }
+    inline const Aws::String& GetLocationName() const { return m_locationName; }
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
-    inline void SetLocationName(const Aws::String& value) { m_locationNameHasBeenSet = true; m_locationName = value; }
-    inline void SetLocationName(Aws::String&& value) { m_locationNameHasBeenSet = true; m_locationName = std::move(value); }
-    inline void SetLocationName(const char* value) { m_locationNameHasBeenSet = true; m_locationName.assign(value); }
-    inline Location& WithLocationName(const Aws::String& value) { SetLocationName(value); return *this;}
-    inline Location& WithLocationName(Aws::String&& value) { SetLocationName(std::move(value)); return *this;}
-    inline Location& WithLocationName(const char* value) { SetLocationName(value); return *this;}
+    template<typename LocationNameT = Aws::String>
+    void SetLocationName(LocationNameT&& value) { m_locationNameHasBeenSet = true; m_locationName = std::forward<LocationNameT>(value); }
+    template<typename LocationNameT = Aws::String>
+    Location& WithLocationName(LocationNameT&& value) { SetLocationName(std::forward<LocationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region for the location.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline Location& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline Location& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline Location& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    Location& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The available port speeds for the location.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAvailablePortSpeeds() const{ return m_availablePortSpeeds; }
+    inline const Aws::Vector<Aws::String>& GetAvailablePortSpeeds() const { return m_availablePortSpeeds; }
     inline bool AvailablePortSpeedsHasBeenSet() const { return m_availablePortSpeedsHasBeenSet; }
-    inline void SetAvailablePortSpeeds(const Aws::Vector<Aws::String>& value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds = value; }
-    inline void SetAvailablePortSpeeds(Aws::Vector<Aws::String>&& value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds = std::move(value); }
-    inline Location& WithAvailablePortSpeeds(const Aws::Vector<Aws::String>& value) { SetAvailablePortSpeeds(value); return *this;}
-    inline Location& WithAvailablePortSpeeds(Aws::Vector<Aws::String>&& value) { SetAvailablePortSpeeds(std::move(value)); return *this;}
-    inline Location& AddAvailablePortSpeeds(const Aws::String& value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds.push_back(value); return *this; }
-    inline Location& AddAvailablePortSpeeds(Aws::String&& value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds.push_back(std::move(value)); return *this; }
-    inline Location& AddAvailablePortSpeeds(const char* value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds.push_back(value); return *this; }
+    template<typename AvailablePortSpeedsT = Aws::Vector<Aws::String>>
+    void SetAvailablePortSpeeds(AvailablePortSpeedsT&& value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds = std::forward<AvailablePortSpeedsT>(value); }
+    template<typename AvailablePortSpeedsT = Aws::Vector<Aws::String>>
+    Location& WithAvailablePortSpeeds(AvailablePortSpeedsT&& value) { SetAvailablePortSpeeds(std::forward<AvailablePortSpeedsT>(value)); return *this;}
+    template<typename AvailablePortSpeedsT = Aws::String>
+    Location& AddAvailablePortSpeeds(AvailablePortSpeedsT&& value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds.emplace_back(std::forward<AvailablePortSpeedsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the service provider for the location.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAvailableProviders() const{ return m_availableProviders; }
+    inline const Aws::Vector<Aws::String>& GetAvailableProviders() const { return m_availableProviders; }
     inline bool AvailableProvidersHasBeenSet() const { return m_availableProvidersHasBeenSet; }
-    inline void SetAvailableProviders(const Aws::Vector<Aws::String>& value) { m_availableProvidersHasBeenSet = true; m_availableProviders = value; }
-    inline void SetAvailableProviders(Aws::Vector<Aws::String>&& value) { m_availableProvidersHasBeenSet = true; m_availableProviders = std::move(value); }
-    inline Location& WithAvailableProviders(const Aws::Vector<Aws::String>& value) { SetAvailableProviders(value); return *this;}
-    inline Location& WithAvailableProviders(Aws::Vector<Aws::String>&& value) { SetAvailableProviders(std::move(value)); return *this;}
-    inline Location& AddAvailableProviders(const Aws::String& value) { m_availableProvidersHasBeenSet = true; m_availableProviders.push_back(value); return *this; }
-    inline Location& AddAvailableProviders(Aws::String&& value) { m_availableProvidersHasBeenSet = true; m_availableProviders.push_back(std::move(value)); return *this; }
-    inline Location& AddAvailableProviders(const char* value) { m_availableProvidersHasBeenSet = true; m_availableProviders.push_back(value); return *this; }
+    template<typename AvailableProvidersT = Aws::Vector<Aws::String>>
+    void SetAvailableProviders(AvailableProvidersT&& value) { m_availableProvidersHasBeenSet = true; m_availableProviders = std::forward<AvailableProvidersT>(value); }
+    template<typename AvailableProvidersT = Aws::Vector<Aws::String>>
+    Location& WithAvailableProviders(AvailableProvidersT&& value) { SetAvailableProviders(std::forward<AvailableProvidersT>(value)); return *this;}
+    template<typename AvailableProvidersT = Aws::String>
+    Location& AddAvailableProviders(AvailableProvidersT&& value) { m_availableProvidersHasBeenSet = true; m_availableProviders.emplace_back(std::forward<AvailableProvidersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The available MAC Security (MACsec) port speeds for the location.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAvailableMacSecPortSpeeds() const{ return m_availableMacSecPortSpeeds; }
+    inline const Aws::Vector<Aws::String>& GetAvailableMacSecPortSpeeds() const { return m_availableMacSecPortSpeeds; }
     inline bool AvailableMacSecPortSpeedsHasBeenSet() const { return m_availableMacSecPortSpeedsHasBeenSet; }
-    inline void SetAvailableMacSecPortSpeeds(const Aws::Vector<Aws::String>& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds = value; }
-    inline void SetAvailableMacSecPortSpeeds(Aws::Vector<Aws::String>&& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds = std::move(value); }
-    inline Location& WithAvailableMacSecPortSpeeds(const Aws::Vector<Aws::String>& value) { SetAvailableMacSecPortSpeeds(value); return *this;}
-    inline Location& WithAvailableMacSecPortSpeeds(Aws::Vector<Aws::String>&& value) { SetAvailableMacSecPortSpeeds(std::move(value)); return *this;}
-    inline Location& AddAvailableMacSecPortSpeeds(const Aws::String& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds.push_back(value); return *this; }
-    inline Location& AddAvailableMacSecPortSpeeds(Aws::String&& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds.push_back(std::move(value)); return *this; }
-    inline Location& AddAvailableMacSecPortSpeeds(const char* value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds.push_back(value); return *this; }
+    template<typename AvailableMacSecPortSpeedsT = Aws::Vector<Aws::String>>
+    void SetAvailableMacSecPortSpeeds(AvailableMacSecPortSpeedsT&& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds = std::forward<AvailableMacSecPortSpeedsT>(value); }
+    template<typename AvailableMacSecPortSpeedsT = Aws::Vector<Aws::String>>
+    Location& WithAvailableMacSecPortSpeeds(AvailableMacSecPortSpeedsT&& value) { SetAvailableMacSecPortSpeeds(std::forward<AvailableMacSecPortSpeedsT>(value)); return *this;}
+    template<typename AvailableMacSecPortSpeedsT = Aws::String>
+    Location& AddAvailableMacSecPortSpeeds(AvailableMacSecPortSpeedsT&& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds.emplace_back(std::forward<AvailableMacSecPortSpeedsT>(value)); return *this; }
     ///@}
   private:
 

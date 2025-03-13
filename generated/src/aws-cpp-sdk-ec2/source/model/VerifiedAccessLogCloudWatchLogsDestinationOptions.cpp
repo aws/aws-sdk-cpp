@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessLogCloudWatchLogsDestinationOptions::VerifiedAccessLogCloudWatchLogsDestinationOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_logGroupHasBeenSet(false)
-{
-}
-
 VerifiedAccessLogCloudWatchLogsDestinationOptions::VerifiedAccessLogCloudWatchLogsDestinationOptions(const XmlNode& xmlNode)
-  : VerifiedAccessLogCloudWatchLogsDestinationOptions()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ VerifiedAccessLogCloudWatchLogsDestinationOptions& VerifiedAccessLogCloudWatchLo
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode logGroupNode = resultNode.FirstChild("LogGroup");
     if(!logGroupNode.IsNull())
     {
       m_logGroup = Aws::Utils::Xml::DecodeEscapedXmlText(logGroupNode.GetText());
       m_logGroupHasBeenSet = true;
+       m_logGroupHasBeenSet = true;
     }
   }
 

@@ -12,18 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptPageRequest::AcceptPageRequest() : 
-    m_pageIdHasBeenSet(false),
-    m_contactChannelIdHasBeenSet(false),
-    m_acceptType(AcceptType::NOT_SET),
-    m_acceptTypeHasBeenSet(false),
-    m_noteHasBeenSet(false),
-    m_acceptCodeHasBeenSet(false),
-    m_acceptCodeValidation(AcceptCodeValidation::NOT_SET),
-    m_acceptCodeValidationHasBeenSet(false)
-{
-}
-
 Aws::String AcceptPageRequest::SerializePayload() const
 {
   JsonValue payload;

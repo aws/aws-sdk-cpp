@@ -32,7 +32,7 @@ namespace Model
   class AwsSsmPatch
   {
   public:
-    AWS_SECURITYHUB_API AwsSsmPatch();
+    AWS_SECURITYHUB_API AwsSsmPatch() = default;
     AWS_SECURITYHUB_API AwsSsmPatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsSsmPatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The compliance status details for the patch.</p>
      */
-    inline const AwsSsmComplianceSummary& GetComplianceSummary() const{ return m_complianceSummary; }
+    inline const AwsSsmComplianceSummary& GetComplianceSummary() const { return m_complianceSummary; }
     inline bool ComplianceSummaryHasBeenSet() const { return m_complianceSummaryHasBeenSet; }
-    inline void SetComplianceSummary(const AwsSsmComplianceSummary& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = value; }
-    inline void SetComplianceSummary(AwsSsmComplianceSummary&& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = std::move(value); }
-    inline AwsSsmPatch& WithComplianceSummary(const AwsSsmComplianceSummary& value) { SetComplianceSummary(value); return *this;}
-    inline AwsSsmPatch& WithComplianceSummary(AwsSsmComplianceSummary&& value) { SetComplianceSummary(std::move(value)); return *this;}
+    template<typename ComplianceSummaryT = AwsSsmComplianceSummary>
+    void SetComplianceSummary(ComplianceSummaryT&& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = std::forward<ComplianceSummaryT>(value); }
+    template<typename ComplianceSummaryT = AwsSsmComplianceSummary>
+    AwsSsmPatch& WithComplianceSummary(ComplianceSummaryT&& value) { SetComplianceSummary(std::forward<ComplianceSummaryT>(value)); return *this;}
     ///@}
   private:
 

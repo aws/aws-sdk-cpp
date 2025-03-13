@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAppResult::GetAppResult()
-{
-}
-
 GetAppResult::GetAppResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetAppResult& GetAppResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
   if(jsonValue.ValueExists("appSummary"))
   {
     m_appSummary = jsonValue.GetObject("appSummary");
-
+    m_appSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverGroups"))
   {
     Aws::Utils::Array<JsonView> serverGroupsJsonList = jsonValue.GetArray("serverGroups");
@@ -42,8 +37,8 @@ GetAppResult& GetAppResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
     {
       m_serverGroups.push_back(serverGroupsJsonList[serverGroupsIndex].AsObject());
     }
+    m_serverGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -51,14 +46,15 @@ GetAppResult& GetAppResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

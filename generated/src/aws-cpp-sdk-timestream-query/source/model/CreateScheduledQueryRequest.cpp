@@ -12,21 +12,6 @@ using namespace Aws::TimestreamQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateScheduledQueryRequest::CreateScheduledQueryRequest() : 
-    m_nameHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_scheduleConfigurationHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_scheduledQueryExecutionRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_errorReportConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateScheduledQueryRequest::SerializePayload() const
 {
   JsonValue payload;

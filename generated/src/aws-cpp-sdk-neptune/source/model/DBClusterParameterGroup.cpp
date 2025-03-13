@@ -20,16 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-DBClusterParameterGroup::DBClusterParameterGroup() : 
-    m_dBClusterParameterGroupNameHasBeenSet(false),
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dBClusterParameterGroupArnHasBeenSet(false)
-{
-}
-
 DBClusterParameterGroup::DBClusterParameterGroup(const XmlNode& xmlNode)
-  : DBClusterParameterGroup()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ DBClusterParameterGroup& DBClusterParameterGroup::operator =(const XmlNode& xmlN
     {
       m_dBClusterParameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterParameterGroupNameNode.GetText());
       m_dBClusterParameterGroupNameHasBeenSet = true;
+       m_dBClusterParameterGroupNameHasBeenSet = true;
     }
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
     if(!dBParameterGroupFamilyNode.IsNull())
     {
       m_dBParameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupFamilyNode.GetText());
       m_dBParameterGroupFamilyHasBeenSet = true;
+       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode dBClusterParameterGroupArnNode = resultNode.FirstChild("DBClusterParameterGroupArn");
     if(!dBClusterParameterGroupArnNode.IsNull())
     {
       m_dBClusterParameterGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterParameterGroupArnNode.GetText());
       m_dBClusterParameterGroupArnHasBeenSet = true;
+       m_dBClusterParameterGroupArnHasBeenSet = true;
     }
   }
 

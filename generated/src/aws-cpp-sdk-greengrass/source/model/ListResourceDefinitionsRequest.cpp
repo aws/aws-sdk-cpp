@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListResourceDefinitionsRequest::ListResourceDefinitionsRequest() : 
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceDefinitionsRequest::SerializePayload() const
 {
   return {};

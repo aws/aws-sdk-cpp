@@ -33,7 +33,7 @@ namespace Model
   class UserFeedback
   {
   public:
-    AWS_CODEGURUPROFILER_API UserFeedback();
+    AWS_CODEGURUPROFILER_API UserFeedback() = default;
     AWS_CODEGURUPROFILER_API UserFeedback(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API UserFeedback& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
      * <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by
      * the user about whether the recommendation is useful or not.</p>
      */
-    inline const FeedbackType& GetType() const{ return m_type; }
+    inline FeedbackType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FeedbackType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FeedbackType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline UserFeedback& WithType(const FeedbackType& value) { SetType(value); return *this;}
-    inline UserFeedback& WithType(FeedbackType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FeedbackType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline UserFeedback& WithType(FeedbackType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    FeedbackType m_type;
+    FeedbackType m_type{FeedbackType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

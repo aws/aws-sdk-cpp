@@ -167,7 +167,7 @@ namespace Model
   class Decision
   {
   public:
-    AWS_SWF_API Decision();
+    AWS_SWF_API Decision() = default;
     AWS_SWF_API Decision(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Decision& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -177,12 +177,10 @@ namespace Model
     /**
      * <p>Specifies the type of the decision.</p>
      */
-    inline const DecisionType& GetDecisionType() const{ return m_decisionType; }
+    inline DecisionType GetDecisionType() const { return m_decisionType; }
     inline bool DecisionTypeHasBeenSet() const { return m_decisionTypeHasBeenSet; }
-    inline void SetDecisionType(const DecisionType& value) { m_decisionTypeHasBeenSet = true; m_decisionType = value; }
-    inline void SetDecisionType(DecisionType&& value) { m_decisionTypeHasBeenSet = true; m_decisionType = std::move(value); }
-    inline Decision& WithDecisionType(const DecisionType& value) { SetDecisionType(value); return *this;}
-    inline Decision& WithDecisionType(DecisionType&& value) { SetDecisionType(std::move(value)); return *this;}
+    inline void SetDecisionType(DecisionType value) { m_decisionTypeHasBeenSet = true; m_decisionType = value; }
+    inline Decision& WithDecisionType(DecisionType value) { SetDecisionType(value); return *this;}
     ///@}
 
     ///@{
@@ -190,12 +188,12 @@ namespace Model
      * <p>Provides the details of the <code>ScheduleActivityTask</code> decision. It
      * isn't set for other decision types.</p>
      */
-    inline const ScheduleActivityTaskDecisionAttributes& GetScheduleActivityTaskDecisionAttributes() const{ return m_scheduleActivityTaskDecisionAttributes; }
+    inline const ScheduleActivityTaskDecisionAttributes& GetScheduleActivityTaskDecisionAttributes() const { return m_scheduleActivityTaskDecisionAttributes; }
     inline bool ScheduleActivityTaskDecisionAttributesHasBeenSet() const { return m_scheduleActivityTaskDecisionAttributesHasBeenSet; }
-    inline void SetScheduleActivityTaskDecisionAttributes(const ScheduleActivityTaskDecisionAttributes& value) { m_scheduleActivityTaskDecisionAttributesHasBeenSet = true; m_scheduleActivityTaskDecisionAttributes = value; }
-    inline void SetScheduleActivityTaskDecisionAttributes(ScheduleActivityTaskDecisionAttributes&& value) { m_scheduleActivityTaskDecisionAttributesHasBeenSet = true; m_scheduleActivityTaskDecisionAttributes = std::move(value); }
-    inline Decision& WithScheduleActivityTaskDecisionAttributes(const ScheduleActivityTaskDecisionAttributes& value) { SetScheduleActivityTaskDecisionAttributes(value); return *this;}
-    inline Decision& WithScheduleActivityTaskDecisionAttributes(ScheduleActivityTaskDecisionAttributes&& value) { SetScheduleActivityTaskDecisionAttributes(std::move(value)); return *this;}
+    template<typename ScheduleActivityTaskDecisionAttributesT = ScheduleActivityTaskDecisionAttributes>
+    void SetScheduleActivityTaskDecisionAttributes(ScheduleActivityTaskDecisionAttributesT&& value) { m_scheduleActivityTaskDecisionAttributesHasBeenSet = true; m_scheduleActivityTaskDecisionAttributes = std::forward<ScheduleActivityTaskDecisionAttributesT>(value); }
+    template<typename ScheduleActivityTaskDecisionAttributesT = ScheduleActivityTaskDecisionAttributes>
+    Decision& WithScheduleActivityTaskDecisionAttributes(ScheduleActivityTaskDecisionAttributesT&& value) { SetScheduleActivityTaskDecisionAttributes(std::forward<ScheduleActivityTaskDecisionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -203,12 +201,12 @@ namespace Model
      * <p>Provides the details of the <code>RequestCancelActivityTask</code> decision.
      * It isn't set for other decision types.</p>
      */
-    inline const RequestCancelActivityTaskDecisionAttributes& GetRequestCancelActivityTaskDecisionAttributes() const{ return m_requestCancelActivityTaskDecisionAttributes; }
+    inline const RequestCancelActivityTaskDecisionAttributes& GetRequestCancelActivityTaskDecisionAttributes() const { return m_requestCancelActivityTaskDecisionAttributes; }
     inline bool RequestCancelActivityTaskDecisionAttributesHasBeenSet() const { return m_requestCancelActivityTaskDecisionAttributesHasBeenSet; }
-    inline void SetRequestCancelActivityTaskDecisionAttributes(const RequestCancelActivityTaskDecisionAttributes& value) { m_requestCancelActivityTaskDecisionAttributesHasBeenSet = true; m_requestCancelActivityTaskDecisionAttributes = value; }
-    inline void SetRequestCancelActivityTaskDecisionAttributes(RequestCancelActivityTaskDecisionAttributes&& value) { m_requestCancelActivityTaskDecisionAttributesHasBeenSet = true; m_requestCancelActivityTaskDecisionAttributes = std::move(value); }
-    inline Decision& WithRequestCancelActivityTaskDecisionAttributes(const RequestCancelActivityTaskDecisionAttributes& value) { SetRequestCancelActivityTaskDecisionAttributes(value); return *this;}
-    inline Decision& WithRequestCancelActivityTaskDecisionAttributes(RequestCancelActivityTaskDecisionAttributes&& value) { SetRequestCancelActivityTaskDecisionAttributes(std::move(value)); return *this;}
+    template<typename RequestCancelActivityTaskDecisionAttributesT = RequestCancelActivityTaskDecisionAttributes>
+    void SetRequestCancelActivityTaskDecisionAttributes(RequestCancelActivityTaskDecisionAttributesT&& value) { m_requestCancelActivityTaskDecisionAttributesHasBeenSet = true; m_requestCancelActivityTaskDecisionAttributes = std::forward<RequestCancelActivityTaskDecisionAttributesT>(value); }
+    template<typename RequestCancelActivityTaskDecisionAttributesT = RequestCancelActivityTaskDecisionAttributes>
+    Decision& WithRequestCancelActivityTaskDecisionAttributes(RequestCancelActivityTaskDecisionAttributesT&& value) { SetRequestCancelActivityTaskDecisionAttributes(std::forward<RequestCancelActivityTaskDecisionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -216,12 +214,12 @@ namespace Model
      * <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision.
      * It isn't set for other decision types.</p>
      */
-    inline const CompleteWorkflowExecutionDecisionAttributes& GetCompleteWorkflowExecutionDecisionAttributes() const{ return m_completeWorkflowExecutionDecisionAttributes; }
+    inline const CompleteWorkflowExecutionDecisionAttributes& GetCompleteWorkflowExecutionDecisionAttributes() const { return m_completeWorkflowExecutionDecisionAttributes; }
     inline bool CompleteWorkflowExecutionDecisionAttributesHasBeenSet() const { return m_completeWorkflowExecutionDecisionAttributesHasBeenSet; }
-    inline void SetCompleteWorkflowExecutionDecisionAttributes(const CompleteWorkflowExecutionDecisionAttributes& value) { m_completeWorkflowExecutionDecisionAttributesHasBeenSet = true; m_completeWorkflowExecutionDecisionAttributes = value; }
-    inline void SetCompleteWorkflowExecutionDecisionAttributes(CompleteWorkflowExecutionDecisionAttributes&& value) { m_completeWorkflowExecutionDecisionAttributesHasBeenSet = true; m_completeWorkflowExecutionDecisionAttributes = std::move(value); }
-    inline Decision& WithCompleteWorkflowExecutionDecisionAttributes(const CompleteWorkflowExecutionDecisionAttributes& value) { SetCompleteWorkflowExecutionDecisionAttributes(value); return *this;}
-    inline Decision& WithCompleteWorkflowExecutionDecisionAttributes(CompleteWorkflowExecutionDecisionAttributes&& value) { SetCompleteWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
+    template<typename CompleteWorkflowExecutionDecisionAttributesT = CompleteWorkflowExecutionDecisionAttributes>
+    void SetCompleteWorkflowExecutionDecisionAttributes(CompleteWorkflowExecutionDecisionAttributesT&& value) { m_completeWorkflowExecutionDecisionAttributesHasBeenSet = true; m_completeWorkflowExecutionDecisionAttributes = std::forward<CompleteWorkflowExecutionDecisionAttributesT>(value); }
+    template<typename CompleteWorkflowExecutionDecisionAttributesT = CompleteWorkflowExecutionDecisionAttributes>
+    Decision& WithCompleteWorkflowExecutionDecisionAttributes(CompleteWorkflowExecutionDecisionAttributesT&& value) { SetCompleteWorkflowExecutionDecisionAttributes(std::forward<CompleteWorkflowExecutionDecisionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,12 +227,12 @@ namespace Model
      * <p>Provides the details of the <code>FailWorkflowExecution</code> decision. It
      * isn't set for other decision types.</p>
      */
-    inline const FailWorkflowExecutionDecisionAttributes& GetFailWorkflowExecutionDecisionAttributes() const{ return m_failWorkflowExecutionDecisionAttributes; }
+    inline const FailWorkflowExecutionDecisionAttributes& GetFailWorkflowExecutionDecisionAttributes() const { return m_failWorkflowExecutionDecisionAttributes; }
     inline bool FailWorkflowExecutionDecisionAttributesHasBeenSet() const { return m_failWorkflowExecutionDecisionAttributesHasBeenSet; }
-    inline void SetFailWorkflowExecutionDecisionAttributes(const FailWorkflowExecutionDecisionAttributes& value) { m_failWorkflowExecutionDecisionAttributesHasBeenSet = true; m_failWorkflowExecutionDecisionAttributes = value; }
-    inline void SetFailWorkflowExecutionDecisionAttributes(FailWorkflowExecutionDecisionAttributes&& value) { m_failWorkflowExecutionDecisionAttributesHasBeenSet = true; m_failWorkflowExecutionDecisionAttributes = std::move(value); }
-    inline Decision& WithFailWorkflowExecutionDecisionAttributes(const FailWorkflowExecutionDecisionAttributes& value) { SetFailWorkflowExecutionDecisionAttributes(value); return *this;}
-    inline Decision& WithFailWorkflowExecutionDecisionAttributes(FailWorkflowExecutionDecisionAttributes&& value) { SetFailWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
+    template<typename FailWorkflowExecutionDecisionAttributesT = FailWorkflowExecutionDecisionAttributes>
+    void SetFailWorkflowExecutionDecisionAttributes(FailWorkflowExecutionDecisionAttributesT&& value) { m_failWorkflowExecutionDecisionAttributesHasBeenSet = true; m_failWorkflowExecutionDecisionAttributes = std::forward<FailWorkflowExecutionDecisionAttributesT>(value); }
+    template<typename FailWorkflowExecutionDecisionAttributesT = FailWorkflowExecutionDecisionAttributes>
+    Decision& WithFailWorkflowExecutionDecisionAttributes(FailWorkflowExecutionDecisionAttributesT&& value) { SetFailWorkflowExecutionDecisionAttributes(std::forward<FailWorkflowExecutionDecisionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -242,12 +240,12 @@ namespace Model
      * <p>Provides the details of the <code>CancelWorkflowExecution</code> decision. It
      * isn't set for other decision types.</p>
      */
-    inline const CancelWorkflowExecutionDecisionAttributes& GetCancelWorkflowExecutionDecisionAttributes() const{ return m_cancelWorkflowExecutionDecisionAttributes; }
+    inline const CancelWorkflowExecutionDecisionAttributes& GetCancelWorkflowExecutionDecisionAttributes() const { return m_cancelWorkflowExecutionDecisionAttributes; }
     inline bool CancelWorkflowExecutionDecisionAttributesHasBeenSet() const { return m_cancelWorkflowExecutionDecisionAttributesHasBeenSet; }
-    inline void SetCancelWorkflowExecutionDecisionAttributes(const CancelWorkflowExecutionDecisionAttributes& value) { m_cancelWorkflowExecutionDecisionAttributesHasBeenSet = true; m_cancelWorkflowExecutionDecisionAttributes = value; }
-    inline void SetCancelWorkflowExecutionDecisionAttributes(CancelWorkflowExecutionDecisionAttributes&& value) { m_cancelWorkflowExecutionDecisionAttributesHasBeenSet = true; m_cancelWorkflowExecutionDecisionAttributes = std::move(value); }
-    inline Decision& WithCancelWorkflowExecutionDecisionAttributes(const CancelWorkflowExecutionDecisionAttributes& value) { SetCancelWorkflowExecutionDecisionAttributes(value); return *this;}
-    inline Decision& WithCancelWorkflowExecutionDecisionAttributes(CancelWorkflowExecutionDecisionAttributes&& value) { SetCancelWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
+    template<typename CancelWorkflowExecutionDecisionAttributesT = CancelWorkflowExecutionDecisionAttributes>
+    void SetCancelWorkflowExecutionDecisionAttributes(CancelWorkflowExecutionDecisionAttributesT&& value) { m_cancelWorkflowExecutionDecisionAttributesHasBeenSet = true; m_cancelWorkflowExecutionDecisionAttributes = std::forward<CancelWorkflowExecutionDecisionAttributesT>(value); }
+    template<typename CancelWorkflowExecutionDecisionAttributesT = CancelWorkflowExecutionDecisionAttributes>
+    Decision& WithCancelWorkflowExecutionDecisionAttributes(CancelWorkflowExecutionDecisionAttributesT&& value) { SetCancelWorkflowExecutionDecisionAttributes(std::forward<CancelWorkflowExecutionDecisionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -255,12 +253,12 @@ namespace Model
      * <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code>
      * decision. It isn't set for other decision types.</p>
      */
-    inline const ContinueAsNewWorkflowExecutionDecisionAttributes& GetContinueAsNewWorkflowExecutionDecisionAttributes() const{ return m_continueAsNewWorkflowExecutionDecisionAttributes; }
+    inline const ContinueAsNewWorkflowExecutionDecisionAttributes& GetContinueAsNewWorkflowExecutionDecisionAttributes() const { return m_continueAsNewWorkflowExecutionDecisionAttributes; }
     inline bool ContinueAsNewWorkflowExecutionDecisionAttributesHasBeenSet() const { return m_continueAsNewWorkflowExecutionDecisionAttributesHasBeenSet; }
-    inline void SetContinueAsNewWorkflowExecutionDecisionAttributes(const ContinueAsNewWorkflowExecutionDecisionAttributes& value) { m_continueAsNewWorkflowExecutionDecisionAttributesHasBeenSet = true; m_continueAsNewWorkflowExecutionDecisionAttributes = value; }
-    inline void SetContinueAsNewWorkflowExecutionDecisionAttributes(ContinueAsNewWorkflowExecutionDecisionAttributes&& value) { m_continueAsNewWorkflowExecutionDecisionAttributesHasBeenSet = true; m_continueAsNewWorkflowExecutionDecisionAttributes = std::move(value); }
-    inline Decision& WithContinueAsNewWorkflowExecutionDecisionAttributes(const ContinueAsNewWorkflowExecutionDecisionAttributes& value) { SetContinueAsNewWorkflowExecutionDecisionAttributes(value); return *this;}
-    inline Decision& WithContinueAsNewWorkflowExecutionDecisionAttributes(ContinueAsNewWorkflowExecutionDecisionAttributes&& value) { SetContinueAsNewWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
+    template<typename ContinueAsNewWorkflowExecutionDecisionAttributesT = ContinueAsNewWorkflowExecutionDecisionAttributes>
+    void SetContinueAsNewWorkflowExecutionDecisionAttributes(ContinueAsNewWorkflowExecutionDecisionAttributesT&& value) { m_continueAsNewWorkflowExecutionDecisionAttributesHasBeenSet = true; m_continueAsNewWorkflowExecutionDecisionAttributes = std::forward<ContinueAsNewWorkflowExecutionDecisionAttributesT>(value); }
+    template<typename ContinueAsNewWorkflowExecutionDecisionAttributesT = ContinueAsNewWorkflowExecutionDecisionAttributes>
+    Decision& WithContinueAsNewWorkflowExecutionDecisionAttributes(ContinueAsNewWorkflowExecutionDecisionAttributesT&& value) { SetContinueAsNewWorkflowExecutionDecisionAttributes(std::forward<ContinueAsNewWorkflowExecutionDecisionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -268,12 +266,12 @@ namespace Model
      * <p>Provides the details of the <code>RecordMarker</code> decision. It isn't set
      * for other decision types.</p>
      */
-    inline const RecordMarkerDecisionAttributes& GetRecordMarkerDecisionAttributes() const{ return m_recordMarkerDecisionAttributes; }
+    inline const RecordMarkerDecisionAttributes& GetRecordMarkerDecisionAttributes() const { return m_recordMarkerDecisionAttributes; }
     inline bool RecordMarkerDecisionAttributesHasBeenSet() const { return m_recordMarkerDecisionAttributesHasBeenSet; }
-    inline void SetRecordMarkerDecisionAttributes(const RecordMarkerDecisionAttributes& value) { m_recordMarkerDecisionAttributesHasBeenSet = true; m_recordMarkerDecisionAttributes = value; }
-    inline void SetRecordMarkerDecisionAttributes(RecordMarkerDecisionAttributes&& value) { m_recordMarkerDecisionAttributesHasBeenSet = true; m_recordMarkerDecisionAttributes = std::move(value); }
-    inline Decision& WithRecordMarkerDecisionAttributes(const RecordMarkerDecisionAttributes& value) { SetRecordMarkerDecisionAttributes(value); return *this;}
-    inline Decision& WithRecordMarkerDecisionAttributes(RecordMarkerDecisionAttributes&& value) { SetRecordMarkerDecisionAttributes(std::move(value)); return *this;}
+    template<typename RecordMarkerDecisionAttributesT = RecordMarkerDecisionAttributes>
+    void SetRecordMarkerDecisionAttributes(RecordMarkerDecisionAttributesT&& value) { m_recordMarkerDecisionAttributesHasBeenSet = true; m_recordMarkerDecisionAttributes = std::forward<RecordMarkerDecisionAttributesT>(value); }
+    template<typename RecordMarkerDecisionAttributesT = RecordMarkerDecisionAttributes>
+    Decision& WithRecordMarkerDecisionAttributes(RecordMarkerDecisionAttributesT&& value) { SetRecordMarkerDecisionAttributes(std::forward<RecordMarkerDecisionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -281,12 +279,12 @@ namespace Model
      * <p>Provides the details of the <code>StartTimer</code> decision. It isn't set
      * for other decision types.</p>
      */
-    inline const StartTimerDecisionAttributes& GetStartTimerDecisionAttributes() const{ return m_startTimerDecisionAttributes; }
+    inline const StartTimerDecisionAttributes& GetStartTimerDecisionAttributes() const { return m_startTimerDecisionAttributes; }
     inline bool StartTimerDecisionAttributesHasBeenSet() const { return m_startTimerDecisionAttributesHasBeenSet; }
-    inline void SetStartTimerDecisionAttributes(const StartTimerDecisionAttributes& value) { m_startTimerDecisionAttributesHasBeenSet = true; m_startTimerDecisionAttributes = value; }
-    inline void SetStartTimerDecisionAttributes(StartTimerDecisionAttributes&& value) { m_startTimerDecisionAttributesHasBeenSet = true; m_startTimerDecisionAttributes = std::move(value); }
-    inline Decision& WithStartTimerDecisionAttributes(const StartTimerDecisionAttributes& value) { SetStartTimerDecisionAttributes(value); return *this;}
-    inline Decision& WithStartTimerDecisionAttributes(StartTimerDecisionAttributes&& value) { SetStartTimerDecisionAttributes(std::move(value)); return *this;}
+    template<typename StartTimerDecisionAttributesT = StartTimerDecisionAttributes>
+    void SetStartTimerDecisionAttributes(StartTimerDecisionAttributesT&& value) { m_startTimerDecisionAttributesHasBeenSet = true; m_startTimerDecisionAttributes = std::forward<StartTimerDecisionAttributesT>(value); }
+    template<typename StartTimerDecisionAttributesT = StartTimerDecisionAttributes>
+    Decision& WithStartTimerDecisionAttributes(StartTimerDecisionAttributesT&& value) { SetStartTimerDecisionAttributes(std::forward<StartTimerDecisionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -294,12 +292,12 @@ namespace Model
      * <p>Provides the details of the <code>CancelTimer</code> decision. It isn't set
      * for other decision types.</p>
      */
-    inline const CancelTimerDecisionAttributes& GetCancelTimerDecisionAttributes() const{ return m_cancelTimerDecisionAttributes; }
+    inline const CancelTimerDecisionAttributes& GetCancelTimerDecisionAttributes() const { return m_cancelTimerDecisionAttributes; }
     inline bool CancelTimerDecisionAttributesHasBeenSet() const { return m_cancelTimerDecisionAttributesHasBeenSet; }
-    inline void SetCancelTimerDecisionAttributes(const CancelTimerDecisionAttributes& value) { m_cancelTimerDecisionAttributesHasBeenSet = true; m_cancelTimerDecisionAttributes = value; }
-    inline void SetCancelTimerDecisionAttributes(CancelTimerDecisionAttributes&& value) { m_cancelTimerDecisionAttributesHasBeenSet = true; m_cancelTimerDecisionAttributes = std::move(value); }
-    inline Decision& WithCancelTimerDecisionAttributes(const CancelTimerDecisionAttributes& value) { SetCancelTimerDecisionAttributes(value); return *this;}
-    inline Decision& WithCancelTimerDecisionAttributes(CancelTimerDecisionAttributes&& value) { SetCancelTimerDecisionAttributes(std::move(value)); return *this;}
+    template<typename CancelTimerDecisionAttributesT = CancelTimerDecisionAttributes>
+    void SetCancelTimerDecisionAttributes(CancelTimerDecisionAttributesT&& value) { m_cancelTimerDecisionAttributesHasBeenSet = true; m_cancelTimerDecisionAttributes = std::forward<CancelTimerDecisionAttributesT>(value); }
+    template<typename CancelTimerDecisionAttributesT = CancelTimerDecisionAttributes>
+    Decision& WithCancelTimerDecisionAttributes(CancelTimerDecisionAttributesT&& value) { SetCancelTimerDecisionAttributes(std::forward<CancelTimerDecisionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -307,12 +305,12 @@ namespace Model
      * <p>Provides the details of the <code>SignalExternalWorkflowExecution</code>
      * decision. It isn't set for other decision types.</p>
      */
-    inline const SignalExternalWorkflowExecutionDecisionAttributes& GetSignalExternalWorkflowExecutionDecisionAttributes() const{ return m_signalExternalWorkflowExecutionDecisionAttributes; }
+    inline const SignalExternalWorkflowExecutionDecisionAttributes& GetSignalExternalWorkflowExecutionDecisionAttributes() const { return m_signalExternalWorkflowExecutionDecisionAttributes; }
     inline bool SignalExternalWorkflowExecutionDecisionAttributesHasBeenSet() const { return m_signalExternalWorkflowExecutionDecisionAttributesHasBeenSet; }
-    inline void SetSignalExternalWorkflowExecutionDecisionAttributes(const SignalExternalWorkflowExecutionDecisionAttributes& value) { m_signalExternalWorkflowExecutionDecisionAttributesHasBeenSet = true; m_signalExternalWorkflowExecutionDecisionAttributes = value; }
-    inline void SetSignalExternalWorkflowExecutionDecisionAttributes(SignalExternalWorkflowExecutionDecisionAttributes&& value) { m_signalExternalWorkflowExecutionDecisionAttributesHasBeenSet = true; m_signalExternalWorkflowExecutionDecisionAttributes = std::move(value); }
-    inline Decision& WithSignalExternalWorkflowExecutionDecisionAttributes(const SignalExternalWorkflowExecutionDecisionAttributes& value) { SetSignalExternalWorkflowExecutionDecisionAttributes(value); return *this;}
-    inline Decision& WithSignalExternalWorkflowExecutionDecisionAttributes(SignalExternalWorkflowExecutionDecisionAttributes&& value) { SetSignalExternalWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
+    template<typename SignalExternalWorkflowExecutionDecisionAttributesT = SignalExternalWorkflowExecutionDecisionAttributes>
+    void SetSignalExternalWorkflowExecutionDecisionAttributes(SignalExternalWorkflowExecutionDecisionAttributesT&& value) { m_signalExternalWorkflowExecutionDecisionAttributesHasBeenSet = true; m_signalExternalWorkflowExecutionDecisionAttributes = std::forward<SignalExternalWorkflowExecutionDecisionAttributesT>(value); }
+    template<typename SignalExternalWorkflowExecutionDecisionAttributesT = SignalExternalWorkflowExecutionDecisionAttributes>
+    Decision& WithSignalExternalWorkflowExecutionDecisionAttributes(SignalExternalWorkflowExecutionDecisionAttributesT&& value) { SetSignalExternalWorkflowExecutionDecisionAttributes(std::forward<SignalExternalWorkflowExecutionDecisionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -321,12 +319,12 @@ namespace Model
      * <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set for
      * other decision types.</p>
      */
-    inline const RequestCancelExternalWorkflowExecutionDecisionAttributes& GetRequestCancelExternalWorkflowExecutionDecisionAttributes() const{ return m_requestCancelExternalWorkflowExecutionDecisionAttributes; }
+    inline const RequestCancelExternalWorkflowExecutionDecisionAttributes& GetRequestCancelExternalWorkflowExecutionDecisionAttributes() const { return m_requestCancelExternalWorkflowExecutionDecisionAttributes; }
     inline bool RequestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet() const { return m_requestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet; }
-    inline void SetRequestCancelExternalWorkflowExecutionDecisionAttributes(const RequestCancelExternalWorkflowExecutionDecisionAttributes& value) { m_requestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet = true; m_requestCancelExternalWorkflowExecutionDecisionAttributes = value; }
-    inline void SetRequestCancelExternalWorkflowExecutionDecisionAttributes(RequestCancelExternalWorkflowExecutionDecisionAttributes&& value) { m_requestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet = true; m_requestCancelExternalWorkflowExecutionDecisionAttributes = std::move(value); }
-    inline Decision& WithRequestCancelExternalWorkflowExecutionDecisionAttributes(const RequestCancelExternalWorkflowExecutionDecisionAttributes& value) { SetRequestCancelExternalWorkflowExecutionDecisionAttributes(value); return *this;}
-    inline Decision& WithRequestCancelExternalWorkflowExecutionDecisionAttributes(RequestCancelExternalWorkflowExecutionDecisionAttributes&& value) { SetRequestCancelExternalWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
+    template<typename RequestCancelExternalWorkflowExecutionDecisionAttributesT = RequestCancelExternalWorkflowExecutionDecisionAttributes>
+    void SetRequestCancelExternalWorkflowExecutionDecisionAttributes(RequestCancelExternalWorkflowExecutionDecisionAttributesT&& value) { m_requestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet = true; m_requestCancelExternalWorkflowExecutionDecisionAttributes = std::forward<RequestCancelExternalWorkflowExecutionDecisionAttributesT>(value); }
+    template<typename RequestCancelExternalWorkflowExecutionDecisionAttributesT = RequestCancelExternalWorkflowExecutionDecisionAttributes>
+    Decision& WithRequestCancelExternalWorkflowExecutionDecisionAttributes(RequestCancelExternalWorkflowExecutionDecisionAttributesT&& value) { SetRequestCancelExternalWorkflowExecutionDecisionAttributes(std::forward<RequestCancelExternalWorkflowExecutionDecisionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -334,12 +332,12 @@ namespace Model
      * <p>Provides the details of the <code>StartChildWorkflowExecution</code>
      * decision. It isn't set for other decision types.</p>
      */
-    inline const StartChildWorkflowExecutionDecisionAttributes& GetStartChildWorkflowExecutionDecisionAttributes() const{ return m_startChildWorkflowExecutionDecisionAttributes; }
+    inline const StartChildWorkflowExecutionDecisionAttributes& GetStartChildWorkflowExecutionDecisionAttributes() const { return m_startChildWorkflowExecutionDecisionAttributes; }
     inline bool StartChildWorkflowExecutionDecisionAttributesHasBeenSet() const { return m_startChildWorkflowExecutionDecisionAttributesHasBeenSet; }
-    inline void SetStartChildWorkflowExecutionDecisionAttributes(const StartChildWorkflowExecutionDecisionAttributes& value) { m_startChildWorkflowExecutionDecisionAttributesHasBeenSet = true; m_startChildWorkflowExecutionDecisionAttributes = value; }
-    inline void SetStartChildWorkflowExecutionDecisionAttributes(StartChildWorkflowExecutionDecisionAttributes&& value) { m_startChildWorkflowExecutionDecisionAttributesHasBeenSet = true; m_startChildWorkflowExecutionDecisionAttributes = std::move(value); }
-    inline Decision& WithStartChildWorkflowExecutionDecisionAttributes(const StartChildWorkflowExecutionDecisionAttributes& value) { SetStartChildWorkflowExecutionDecisionAttributes(value); return *this;}
-    inline Decision& WithStartChildWorkflowExecutionDecisionAttributes(StartChildWorkflowExecutionDecisionAttributes&& value) { SetStartChildWorkflowExecutionDecisionAttributes(std::move(value)); return *this;}
+    template<typename StartChildWorkflowExecutionDecisionAttributesT = StartChildWorkflowExecutionDecisionAttributes>
+    void SetStartChildWorkflowExecutionDecisionAttributes(StartChildWorkflowExecutionDecisionAttributesT&& value) { m_startChildWorkflowExecutionDecisionAttributesHasBeenSet = true; m_startChildWorkflowExecutionDecisionAttributes = std::forward<StartChildWorkflowExecutionDecisionAttributesT>(value); }
+    template<typename StartChildWorkflowExecutionDecisionAttributesT = StartChildWorkflowExecutionDecisionAttributes>
+    Decision& WithStartChildWorkflowExecutionDecisionAttributes(StartChildWorkflowExecutionDecisionAttributesT&& value) { SetStartChildWorkflowExecutionDecisionAttributes(std::forward<StartChildWorkflowExecutionDecisionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -347,16 +345,16 @@ namespace Model
      * <p>Provides the details of the <code>ScheduleLambdaFunction</code> decision. It
      * isn't set for other decision types.</p>
      */
-    inline const ScheduleLambdaFunctionDecisionAttributes& GetScheduleLambdaFunctionDecisionAttributes() const{ return m_scheduleLambdaFunctionDecisionAttributes; }
+    inline const ScheduleLambdaFunctionDecisionAttributes& GetScheduleLambdaFunctionDecisionAttributes() const { return m_scheduleLambdaFunctionDecisionAttributes; }
     inline bool ScheduleLambdaFunctionDecisionAttributesHasBeenSet() const { return m_scheduleLambdaFunctionDecisionAttributesHasBeenSet; }
-    inline void SetScheduleLambdaFunctionDecisionAttributes(const ScheduleLambdaFunctionDecisionAttributes& value) { m_scheduleLambdaFunctionDecisionAttributesHasBeenSet = true; m_scheduleLambdaFunctionDecisionAttributes = value; }
-    inline void SetScheduleLambdaFunctionDecisionAttributes(ScheduleLambdaFunctionDecisionAttributes&& value) { m_scheduleLambdaFunctionDecisionAttributesHasBeenSet = true; m_scheduleLambdaFunctionDecisionAttributes = std::move(value); }
-    inline Decision& WithScheduleLambdaFunctionDecisionAttributes(const ScheduleLambdaFunctionDecisionAttributes& value) { SetScheduleLambdaFunctionDecisionAttributes(value); return *this;}
-    inline Decision& WithScheduleLambdaFunctionDecisionAttributes(ScheduleLambdaFunctionDecisionAttributes&& value) { SetScheduleLambdaFunctionDecisionAttributes(std::move(value)); return *this;}
+    template<typename ScheduleLambdaFunctionDecisionAttributesT = ScheduleLambdaFunctionDecisionAttributes>
+    void SetScheduleLambdaFunctionDecisionAttributes(ScheduleLambdaFunctionDecisionAttributesT&& value) { m_scheduleLambdaFunctionDecisionAttributesHasBeenSet = true; m_scheduleLambdaFunctionDecisionAttributes = std::forward<ScheduleLambdaFunctionDecisionAttributesT>(value); }
+    template<typename ScheduleLambdaFunctionDecisionAttributesT = ScheduleLambdaFunctionDecisionAttributes>
+    Decision& WithScheduleLambdaFunctionDecisionAttributes(ScheduleLambdaFunctionDecisionAttributesT&& value) { SetScheduleLambdaFunctionDecisionAttributes(std::forward<ScheduleLambdaFunctionDecisionAttributesT>(value)); return *this;}
     ///@}
   private:
 
-    DecisionType m_decisionType;
+    DecisionType m_decisionType{DecisionType::NOT_SET};
     bool m_decisionTypeHasBeenSet = false;
 
     ScheduleActivityTaskDecisionAttributes m_scheduleActivityTaskDecisionAttributes;

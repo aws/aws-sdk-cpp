@@ -18,17 +18,7 @@ namespace EMR
 namespace Model
 {
 
-StepStatus::StepStatus() : 
-    m_state(StepState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_timelineHasBeenSet(false)
-{
-}
-
 StepStatus::StepStatus(JsonView jsonValue)
-  : StepStatus()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ StepStatus& StepStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("State"))
   {
     m_state = StepStateMapper::GetStepStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateChangeReason"))
   {
     m_stateChangeReason = jsonValue.GetObject("StateChangeReason");
-
     m_stateChangeReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureDetails"))
   {
     m_failureDetails = jsonValue.GetObject("FailureDetails");
-
     m_failureDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeline"))
   {
     m_timeline = jsonValue.GetObject("Timeline");
-
     m_timelineHasBeenSet = true;
   }
-
   return *this;
 }
 

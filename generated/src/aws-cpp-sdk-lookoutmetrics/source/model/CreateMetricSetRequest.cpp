@@ -12,24 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMetricSetRequest::CreateMetricSetRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_metricSetNameHasBeenSet(false),
-    m_metricSetDescriptionHasBeenSet(false),
-    m_metricListHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false),
-    m_timestampColumnHasBeenSet(false),
-    m_dimensionListHasBeenSet(false),
-    m_metricSetFrequency(Frequency::NOT_SET),
-    m_metricSetFrequencyHasBeenSet(false),
-    m_metricSourceHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dimensionFilterListHasBeenSet(false)
-{
-}
-
 Aws::String CreateMetricSetRequest::SerializePayload() const
 {
   JsonValue payload;

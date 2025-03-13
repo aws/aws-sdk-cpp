@@ -18,14 +18,7 @@ namespace DataPipeline
 namespace Model
 {
 
-ParameterObject::ParameterObject() : 
-    m_idHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 ParameterObject::ParameterObject(JsonView jsonValue)
-  : ParameterObject()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ParameterObject& ParameterObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
@@ -48,7 +39,6 @@ ParameterObject& ParameterObject::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

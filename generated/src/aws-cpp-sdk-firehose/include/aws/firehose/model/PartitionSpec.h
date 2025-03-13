@@ -38,7 +38,7 @@ namespace Model
   class PartitionSpec
   {
   public:
-    AWS_FIREHOSE_API PartitionSpec();
+    AWS_FIREHOSE_API PartitionSpec() = default;
     AWS_FIREHOSE_API PartitionSpec(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API PartitionSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,14 @@ namespace Model
      * does not modify it. Result type is the source type.</p> <p>Amazon Data Firehose
      * is in preview release and is subject to change.</p>
      */
-    inline const Aws::Vector<PartitionField>& GetIdentity() const{ return m_identity; }
+    inline const Aws::Vector<PartitionField>& GetIdentity() const { return m_identity; }
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
-    inline void SetIdentity(const Aws::Vector<PartitionField>& value) { m_identityHasBeenSet = true; m_identity = value; }
-    inline void SetIdentity(Aws::Vector<PartitionField>&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
-    inline PartitionSpec& WithIdentity(const Aws::Vector<PartitionField>& value) { SetIdentity(value); return *this;}
-    inline PartitionSpec& WithIdentity(Aws::Vector<PartitionField>&& value) { SetIdentity(std::move(value)); return *this;}
-    inline PartitionSpec& AddIdentity(const PartitionField& value) { m_identityHasBeenSet = true; m_identity.push_back(value); return *this; }
-    inline PartitionSpec& AddIdentity(PartitionField&& value) { m_identityHasBeenSet = true; m_identity.push_back(std::move(value)); return *this; }
+    template<typename IdentityT = Aws::Vector<PartitionField>>
+    void SetIdentity(IdentityT&& value) { m_identityHasBeenSet = true; m_identity = std::forward<IdentityT>(value); }
+    template<typename IdentityT = Aws::Vector<PartitionField>>
+    PartitionSpec& WithIdentity(IdentityT&& value) { SetIdentity(std::forward<IdentityT>(value)); return *this;}
+    template<typename IdentityT = PartitionField>
+    PartitionSpec& AddIdentity(IdentityT&& value) { m_identityHasBeenSet = true; m_identity.emplace_back(std::forward<IdentityT>(value)); return *this; }
     ///@}
   private:
 

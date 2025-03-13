@@ -18,17 +18,7 @@ namespace SFN
 namespace Model
 {
 
-MapRunListItem::MapRunListItem() : 
-    m_executionArnHasBeenSet(false),
-    m_mapRunArnHasBeenSet(false),
-    m_stateMachineArnHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_stopDateHasBeenSet(false)
-{
-}
-
 MapRunListItem::MapRunListItem(JsonView jsonValue)
-  : MapRunListItem()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ MapRunListItem& MapRunListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("executionArn"))
   {
     m_executionArn = jsonValue.GetString("executionArn");
-
     m_executionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapRunArn"))
   {
     m_mapRunArn = jsonValue.GetString("mapRunArn");
-
     m_mapRunArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateMachineArn"))
   {
     m_stateMachineArn = jsonValue.GetString("stateMachineArn");
-
     m_stateMachineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startDate"))
   {
     m_startDate = jsonValue.GetDouble("startDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopDate"))
   {
     m_stopDate = jsonValue.GetDouble("stopDate");
-
     m_stopDateHasBeenSet = true;
   }
-
   return *this;
 }
 

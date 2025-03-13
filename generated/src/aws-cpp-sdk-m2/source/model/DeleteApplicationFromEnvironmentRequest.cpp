@@ -12,12 +12,6 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApplicationFromEnvironmentRequest::DeleteApplicationFromEnvironmentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApplicationFromEnvironmentRequest::SerializePayload() const
 {
   return {};

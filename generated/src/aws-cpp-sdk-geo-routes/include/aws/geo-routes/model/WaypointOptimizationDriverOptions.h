@@ -33,7 +33,7 @@ namespace Model
   class WaypointOptimizationDriverOptions
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationDriverOptions();
+    AWS_GEOROUTES_API WaypointOptimizationDriverOptions() = default;
     AWS_GEOROUTES_API WaypointOptimizationDriverOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationDriverOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * you hit the long work duration, at which point the long rest duration should be
      * taken before restarting.</p>
      */
-    inline const WaypointOptimizationRestCycles& GetRestCycles() const{ return m_restCycles; }
+    inline const WaypointOptimizationRestCycles& GetRestCycles() const { return m_restCycles; }
     inline bool RestCyclesHasBeenSet() const { return m_restCyclesHasBeenSet; }
-    inline void SetRestCycles(const WaypointOptimizationRestCycles& value) { m_restCyclesHasBeenSet = true; m_restCycles = value; }
-    inline void SetRestCycles(WaypointOptimizationRestCycles&& value) { m_restCyclesHasBeenSet = true; m_restCycles = std::move(value); }
-    inline WaypointOptimizationDriverOptions& WithRestCycles(const WaypointOptimizationRestCycles& value) { SetRestCycles(value); return *this;}
-    inline WaypointOptimizationDriverOptions& WithRestCycles(WaypointOptimizationRestCycles&& value) { SetRestCycles(std::move(value)); return *this;}
+    template<typename RestCyclesT = WaypointOptimizationRestCycles>
+    void SetRestCycles(RestCyclesT&& value) { m_restCyclesHasBeenSet = true; m_restCycles = std::forward<RestCyclesT>(value); }
+    template<typename RestCyclesT = WaypointOptimizationRestCycles>
+    WaypointOptimizationDriverOptions& WithRestCycles(RestCyclesT&& value) { SetRestCycles(std::forward<RestCyclesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>Pre defined rest profiles for a driver schedule. The only currently supported
      * profile is EU.</p>
      */
-    inline const WaypointOptimizationRestProfile& GetRestProfile() const{ return m_restProfile; }
+    inline const WaypointOptimizationRestProfile& GetRestProfile() const { return m_restProfile; }
     inline bool RestProfileHasBeenSet() const { return m_restProfileHasBeenSet; }
-    inline void SetRestProfile(const WaypointOptimizationRestProfile& value) { m_restProfileHasBeenSet = true; m_restProfile = value; }
-    inline void SetRestProfile(WaypointOptimizationRestProfile&& value) { m_restProfileHasBeenSet = true; m_restProfile = std::move(value); }
-    inline WaypointOptimizationDriverOptions& WithRestProfile(const WaypointOptimizationRestProfile& value) { SetRestProfile(value); return *this;}
-    inline WaypointOptimizationDriverOptions& WithRestProfile(WaypointOptimizationRestProfile&& value) { SetRestProfile(std::move(value)); return *this;}
+    template<typename RestProfileT = WaypointOptimizationRestProfile>
+    void SetRestProfile(RestProfileT&& value) { m_restProfileHasBeenSet = true; m_restProfile = std::forward<RestProfileT>(value); }
+    template<typename RestProfileT = WaypointOptimizationRestProfile>
+    WaypointOptimizationDriverOptions& WithRestProfile(RestProfileT&& value) { SetRestProfile(std::forward<RestProfileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,10 @@ namespace Model
      * as rest or work. This contributes to the total time breakdown returned within
      * the response.</p>
      */
-    inline const WaypointOptimizationServiceTimeTreatment& GetTreatServiceTimeAs() const{ return m_treatServiceTimeAs; }
+    inline WaypointOptimizationServiceTimeTreatment GetTreatServiceTimeAs() const { return m_treatServiceTimeAs; }
     inline bool TreatServiceTimeAsHasBeenSet() const { return m_treatServiceTimeAsHasBeenSet; }
-    inline void SetTreatServiceTimeAs(const WaypointOptimizationServiceTimeTreatment& value) { m_treatServiceTimeAsHasBeenSet = true; m_treatServiceTimeAs = value; }
-    inline void SetTreatServiceTimeAs(WaypointOptimizationServiceTimeTreatment&& value) { m_treatServiceTimeAsHasBeenSet = true; m_treatServiceTimeAs = std::move(value); }
-    inline WaypointOptimizationDriverOptions& WithTreatServiceTimeAs(const WaypointOptimizationServiceTimeTreatment& value) { SetTreatServiceTimeAs(value); return *this;}
-    inline WaypointOptimizationDriverOptions& WithTreatServiceTimeAs(WaypointOptimizationServiceTimeTreatment&& value) { SetTreatServiceTimeAs(std::move(value)); return *this;}
+    inline void SetTreatServiceTimeAs(WaypointOptimizationServiceTimeTreatment value) { m_treatServiceTimeAsHasBeenSet = true; m_treatServiceTimeAs = value; }
+    inline WaypointOptimizationDriverOptions& WithTreatServiceTimeAs(WaypointOptimizationServiceTimeTreatment value) { SetTreatServiceTimeAs(value); return *this;}
     ///@}
   private:
 
@@ -88,7 +86,7 @@ namespace Model
     WaypointOptimizationRestProfile m_restProfile;
     bool m_restProfileHasBeenSet = false;
 
-    WaypointOptimizationServiceTimeTreatment m_treatServiceTimeAs;
+    WaypointOptimizationServiceTimeTreatment m_treatServiceTimeAs{WaypointOptimizationServiceTimeTreatment::NOT_SET};
     bool m_treatServiceTimeAsHasBeenSet = false;
   };
 

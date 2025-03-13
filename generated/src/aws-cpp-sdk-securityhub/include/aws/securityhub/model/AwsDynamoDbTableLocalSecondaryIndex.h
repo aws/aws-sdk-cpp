@@ -35,7 +35,7 @@ namespace Model
   class AwsDynamoDbTableLocalSecondaryIndex
   {
   public:
-    AWS_SECURITYHUB_API AwsDynamoDbTableLocalSecondaryIndex();
+    AWS_SECURITYHUB_API AwsDynamoDbTableLocalSecondaryIndex() = default;
     AWS_SECURITYHUB_API AwsDynamoDbTableLocalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsDynamoDbTableLocalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,38 @@ namespace Model
     /**
      * <p>The ARN of the index.</p>
      */
-    inline const Aws::String& GetIndexArn() const{ return m_indexArn; }
+    inline const Aws::String& GetIndexArn() const { return m_indexArn; }
     inline bool IndexArnHasBeenSet() const { return m_indexArnHasBeenSet; }
-    inline void SetIndexArn(const Aws::String& value) { m_indexArnHasBeenSet = true; m_indexArn = value; }
-    inline void SetIndexArn(Aws::String&& value) { m_indexArnHasBeenSet = true; m_indexArn = std::move(value); }
-    inline void SetIndexArn(const char* value) { m_indexArnHasBeenSet = true; m_indexArn.assign(value); }
-    inline AwsDynamoDbTableLocalSecondaryIndex& WithIndexArn(const Aws::String& value) { SetIndexArn(value); return *this;}
-    inline AwsDynamoDbTableLocalSecondaryIndex& WithIndexArn(Aws::String&& value) { SetIndexArn(std::move(value)); return *this;}
-    inline AwsDynamoDbTableLocalSecondaryIndex& WithIndexArn(const char* value) { SetIndexArn(value); return *this;}
+    template<typename IndexArnT = Aws::String>
+    void SetIndexArn(IndexArnT&& value) { m_indexArnHasBeenSet = true; m_indexArn = std::forward<IndexArnT>(value); }
+    template<typename IndexArnT = Aws::String>
+    AwsDynamoDbTableLocalSecondaryIndex& WithIndexArn(IndexArnT&& value) { SetIndexArn(std::forward<IndexArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the index.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-    inline AwsDynamoDbTableLocalSecondaryIndex& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline AwsDynamoDbTableLocalSecondaryIndex& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline AwsDynamoDbTableLocalSecondaryIndex& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    AwsDynamoDbTableLocalSecondaryIndex& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The complete key schema for the index.</p>
      */
-    inline const Aws::Vector<AwsDynamoDbTableKeySchema>& GetKeySchema() const{ return m_keySchema; }
+    inline const Aws::Vector<AwsDynamoDbTableKeySchema>& GetKeySchema() const { return m_keySchema; }
     inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }
-    inline void SetKeySchema(const Aws::Vector<AwsDynamoDbTableKeySchema>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
-    inline void SetKeySchema(Aws::Vector<AwsDynamoDbTableKeySchema>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::move(value); }
-    inline AwsDynamoDbTableLocalSecondaryIndex& WithKeySchema(const Aws::Vector<AwsDynamoDbTableKeySchema>& value) { SetKeySchema(value); return *this;}
-    inline AwsDynamoDbTableLocalSecondaryIndex& WithKeySchema(Aws::Vector<AwsDynamoDbTableKeySchema>&& value) { SetKeySchema(std::move(value)); return *this;}
-    inline AwsDynamoDbTableLocalSecondaryIndex& AddKeySchema(const AwsDynamoDbTableKeySchema& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
-    inline AwsDynamoDbTableLocalSecondaryIndex& AddKeySchema(AwsDynamoDbTableKeySchema&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
+    template<typename KeySchemaT = Aws::Vector<AwsDynamoDbTableKeySchema>>
+    void SetKeySchema(KeySchemaT&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::forward<KeySchemaT>(value); }
+    template<typename KeySchemaT = Aws::Vector<AwsDynamoDbTableKeySchema>>
+    AwsDynamoDbTableLocalSecondaryIndex& WithKeySchema(KeySchemaT&& value) { SetKeySchema(std::forward<KeySchemaT>(value)); return *this;}
+    template<typename KeySchemaT = AwsDynamoDbTableKeySchema>
+    AwsDynamoDbTableLocalSecondaryIndex& AddKeySchema(KeySchemaT&& value) { m_keySchemaHasBeenSet = true; m_keySchema.emplace_back(std::forward<KeySchemaT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,12 +85,12 @@ namespace Model
      * addition to the primary key attributes and index key attributes, which are
      * automatically projected.</p>
      */
-    inline const AwsDynamoDbTableProjection& GetProjection() const{ return m_projection; }
+    inline const AwsDynamoDbTableProjection& GetProjection() const { return m_projection; }
     inline bool ProjectionHasBeenSet() const { return m_projectionHasBeenSet; }
-    inline void SetProjection(const AwsDynamoDbTableProjection& value) { m_projectionHasBeenSet = true; m_projection = value; }
-    inline void SetProjection(AwsDynamoDbTableProjection&& value) { m_projectionHasBeenSet = true; m_projection = std::move(value); }
-    inline AwsDynamoDbTableLocalSecondaryIndex& WithProjection(const AwsDynamoDbTableProjection& value) { SetProjection(value); return *this;}
-    inline AwsDynamoDbTableLocalSecondaryIndex& WithProjection(AwsDynamoDbTableProjection&& value) { SetProjection(std::move(value)); return *this;}
+    template<typename ProjectionT = AwsDynamoDbTableProjection>
+    void SetProjection(ProjectionT&& value) { m_projectionHasBeenSet = true; m_projection = std::forward<ProjectionT>(value); }
+    template<typename ProjectionT = AwsDynamoDbTableProjection>
+    AwsDynamoDbTableLocalSecondaryIndex& WithProjection(ProjectionT&& value) { SetProjection(std::forward<ProjectionT>(value)); return *this;}
     ///@}
   private:
 

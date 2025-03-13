@@ -24,7 +24,7 @@ namespace Model
   class ModifyCapacityReservationRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyCapacityReservationRequest();
+    AWS_EC2_API ModifyCapacityReservationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of the Capacity Reservation.</p>
      */
-    inline const Aws::String& GetCapacityReservationId() const{ return m_capacityReservationId; }
+    inline const Aws::String& GetCapacityReservationId() const { return m_capacityReservationId; }
     inline bool CapacityReservationIdHasBeenSet() const { return m_capacityReservationIdHasBeenSet; }
-    inline void SetCapacityReservationId(const Aws::String& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = value; }
-    inline void SetCapacityReservationId(Aws::String&& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = std::move(value); }
-    inline void SetCapacityReservationId(const char* value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId.assign(value); }
-    inline ModifyCapacityReservationRequest& WithCapacityReservationId(const Aws::String& value) { SetCapacityReservationId(value); return *this;}
-    inline ModifyCapacityReservationRequest& WithCapacityReservationId(Aws::String&& value) { SetCapacityReservationId(std::move(value)); return *this;}
-    inline ModifyCapacityReservationRequest& WithCapacityReservationId(const char* value) { SetCapacityReservationId(value); return *this;}
+    template<typename CapacityReservationIdT = Aws::String>
+    void SetCapacityReservationId(CapacityReservationIdT&& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = std::forward<CapacityReservationIdT>(value); }
+    template<typename CapacityReservationIdT = Aws::String>
+    ModifyCapacityReservationRequest& WithCapacityReservationId(CapacityReservationIdT&& value) { SetCapacityReservationId(std::forward<CapacityReservationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * instances can't be increased or decreased by more than <code>1000</code> in a
      * single request.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline ModifyCapacityReservationRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -78,12 +76,12 @@ namespace Model
      * Omit <code>EndDate</code> if <code>EndDateType</code> is
      * <code>unlimited</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
+    inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-    inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-    inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-    inline ModifyCapacityReservationRequest& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
-    inline ModifyCapacityReservationRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
+    template<typename EndDateT = Aws::Utils::DateTime>
+    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
+    template<typename EndDateT = Aws::Utils::DateTime>
+    ModifyCapacityReservationRequest& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,19 +95,17 @@ namespace Model
      * specified date and time. You must provide an <code>EndDate</code> value if
      * <code>EndDateType</code> is <code>limited</code>.</p> </li> </ul>
      */
-    inline const EndDateType& GetEndDateType() const{ return m_endDateType; }
+    inline EndDateType GetEndDateType() const { return m_endDateType; }
     inline bool EndDateTypeHasBeenSet() const { return m_endDateTypeHasBeenSet; }
-    inline void SetEndDateType(const EndDateType& value) { m_endDateTypeHasBeenSet = true; m_endDateType = value; }
-    inline void SetEndDateType(EndDateType&& value) { m_endDateTypeHasBeenSet = true; m_endDateType = std::move(value); }
-    inline ModifyCapacityReservationRequest& WithEndDateType(const EndDateType& value) { SetEndDateType(value); return *this;}
-    inline ModifyCapacityReservationRequest& WithEndDateType(EndDateType&& value) { SetEndDateType(std::move(value)); return *this;}
+    inline void SetEndDateType(EndDateType value) { m_endDateTypeHasBeenSet = true; m_endDateType = value; }
+    inline ModifyCapacityReservationRequest& WithEndDateType(EndDateType value) { SetEndDateType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved. Capacity Reservations you have created are accepted by default.</p>
      */
-    inline bool GetAccept() const{ return m_accept; }
+    inline bool GetAccept() const { return m_accept; }
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
     inline void SetAccept(bool value) { m_acceptHasBeenSet = true; m_accept = value; }
     inline ModifyCapacityReservationRequest& WithAccept(bool value) { SetAccept(value); return *this;}
@@ -122,7 +118,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyCapacityReservationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -132,14 +128,12 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
+    inline const Aws::String& GetAdditionalInfo() const { return m_additionalInfo; }
     inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
-    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
-    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
-    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
-    inline ModifyCapacityReservationRequest& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
-    inline ModifyCapacityReservationRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
-    inline ModifyCapacityReservationRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
+    template<typename AdditionalInfoT = Aws::String>
+    void SetAdditionalInfo(AdditionalInfoT&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::forward<AdditionalInfoT>(value); }
+    template<typename AdditionalInfoT = Aws::String>
+    ModifyCapacityReservationRequest& WithAdditionalInfo(AdditionalInfoT&& value) { SetAdditionalInfo(std::forward<AdditionalInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,37 +147,35 @@ namespace Model
      * modified Capacity Reservation. </p> <p>To modify the instance eligibility, the
      * Capacity Reservation must be completely idle (zero usage).</p>
      */
-    inline const InstanceMatchCriteria& GetInstanceMatchCriteria() const{ return m_instanceMatchCriteria; }
+    inline InstanceMatchCriteria GetInstanceMatchCriteria() const { return m_instanceMatchCriteria; }
     inline bool InstanceMatchCriteriaHasBeenSet() const { return m_instanceMatchCriteriaHasBeenSet; }
-    inline void SetInstanceMatchCriteria(const InstanceMatchCriteria& value) { m_instanceMatchCriteriaHasBeenSet = true; m_instanceMatchCriteria = value; }
-    inline void SetInstanceMatchCriteria(InstanceMatchCriteria&& value) { m_instanceMatchCriteriaHasBeenSet = true; m_instanceMatchCriteria = std::move(value); }
-    inline ModifyCapacityReservationRequest& WithInstanceMatchCriteria(const InstanceMatchCriteria& value) { SetInstanceMatchCriteria(value); return *this;}
-    inline ModifyCapacityReservationRequest& WithInstanceMatchCriteria(InstanceMatchCriteria&& value) { SetInstanceMatchCriteria(std::move(value)); return *this;}
+    inline void SetInstanceMatchCriteria(InstanceMatchCriteria value) { m_instanceMatchCriteriaHasBeenSet = true; m_instanceMatchCriteria = value; }
+    inline ModifyCapacityReservationRequest& WithInstanceMatchCriteria(InstanceMatchCriteria value) { SetInstanceMatchCriteria(value); return *this;}
     ///@}
   private:
 
     Aws::String m_capacityReservationId;
     bool m_capacityReservationIdHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endDate;
+    Aws::Utils::DateTime m_endDate{};
     bool m_endDateHasBeenSet = false;
 
-    EndDateType m_endDateType;
+    EndDateType m_endDateType{EndDateType::NOT_SET};
     bool m_endDateTypeHasBeenSet = false;
 
-    bool m_accept;
+    bool m_accept{false};
     bool m_acceptHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet = false;
 
-    InstanceMatchCriteria m_instanceMatchCriteria;
+    InstanceMatchCriteria m_instanceMatchCriteria{InstanceMatchCriteria::NOT_SET};
     bool m_instanceMatchCriteriaHasBeenSet = false;
   };
 

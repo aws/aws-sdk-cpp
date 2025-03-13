@@ -30,7 +30,7 @@ namespace Model
   class SecurityConfigStats
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API SecurityConfigStats();
+    AWS_OPENSEARCHSERVERLESS_API SecurityConfigStats() = default;
     AWS_OPENSEARCHSERVERLESS_API SecurityConfigStats(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API SecurityConfigStats& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The number of security configurations in the current account.</p>
      */
-    inline long long GetSamlConfigCount() const{ return m_samlConfigCount; }
+    inline long long GetSamlConfigCount() const { return m_samlConfigCount; }
     inline bool SamlConfigCountHasBeenSet() const { return m_samlConfigCountHasBeenSet; }
     inline void SetSamlConfigCount(long long value) { m_samlConfigCountHasBeenSet = true; m_samlConfigCount = value; }
     inline SecurityConfigStats& WithSamlConfigCount(long long value) { SetSamlConfigCount(value); return *this;}
     ///@}
   private:
 
-    long long m_samlConfigCount;
+    long long m_samlConfigCount{0};
     bool m_samlConfigCountHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-LabelingJobOutput::LabelingJobOutput() : 
-    m_outputDatasetS3UriHasBeenSet(false),
-    m_finalActiveLearningModelArnHasBeenSet(false)
-{
-}
-
 LabelingJobOutput::LabelingJobOutput(JsonView jsonValue)
-  : LabelingJobOutput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LabelingJobOutput& LabelingJobOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OutputDatasetS3Uri"))
   {
     m_outputDatasetS3Uri = jsonValue.GetString("OutputDatasetS3Uri");
-
     m_outputDatasetS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FinalActiveLearningModelArn"))
   {
     m_finalActiveLearningModelArn = jsonValue.GetString("FinalActiveLearningModelArn");
-
     m_finalActiveLearningModelArnHasBeenSet = true;
   }
-
   return *this;
 }
 

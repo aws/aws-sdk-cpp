@@ -10,14 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-PutAnomalyDetectorRequest::PutAnomalyDetectorRequest() : 
-    m_configurationHasBeenSet(false),
-    m_metricCharacteristicsHasBeenSet(false),
-    m_singleMetricAnomalyDetectorHasBeenSet(false),
-    m_metricMathAnomalyDetectorHasBeenSet(false)
-{
-}
-
 Aws::String PutAnomalyDetectorRequest::SerializePayload() const
 {
   Aws::StringStream ss;

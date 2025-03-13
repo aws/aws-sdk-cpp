@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeAddressesRequest::DescribeAddressesRequest() : 
-    m_publicIpsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_allocationIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAddressesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

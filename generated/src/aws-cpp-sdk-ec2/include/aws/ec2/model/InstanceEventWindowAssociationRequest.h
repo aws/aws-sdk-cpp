@@ -35,7 +35,7 @@ namespace Model
   class InstanceEventWindowAssociationRequest
   {
   public:
-    AWS_EC2_API InstanceEventWindowAssociationRequest();
+    AWS_EC2_API InstanceEventWindowAssociationRequest() = default;
     AWS_EC2_API InstanceEventWindowAssociationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceEventWindowAssociationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,15 +49,14 @@ namespace Model
      * is on a Dedicated Host, you can't specify the Instance ID parameter; you must
      * use the Dedicated Host ID parameter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
+    inline const Aws::Vector<Aws::String>& GetInstanceIds() const { return m_instanceIds; }
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
-    inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
-    inline InstanceEventWindowAssociationRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
-    inline InstanceEventWindowAssociationRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
-    inline InstanceEventWindowAssociationRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
-    inline InstanceEventWindowAssociationRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
-    inline InstanceEventWindowAssociationRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    template<typename InstanceIdsT = Aws::Vector<Aws::String>>
+    void SetInstanceIds(InstanceIdsT&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::forward<InstanceIdsT>(value); }
+    template<typename InstanceIdsT = Aws::Vector<Aws::String>>
+    InstanceEventWindowAssociationRequest& WithInstanceIds(InstanceIdsT&& value) { SetInstanceIds(std::forward<InstanceIdsT>(value)); return *this;}
+    template<typename InstanceIdsT = Aws::String>
+    InstanceEventWindowAssociationRequest& AddInstanceIds(InstanceIdsT&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.emplace_back(std::forward<InstanceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,29 +64,28 @@ namespace Model
      * <p>The instance tags to associate with the event window. Any instances
      * associated with the tags will be associated with the event window.</p>
      */
-    inline const Aws::Vector<Tag>& GetInstanceTags() const{ return m_instanceTags; }
+    inline const Aws::Vector<Tag>& GetInstanceTags() const { return m_instanceTags; }
     inline bool InstanceTagsHasBeenSet() const { return m_instanceTagsHasBeenSet; }
-    inline void SetInstanceTags(const Aws::Vector<Tag>& value) { m_instanceTagsHasBeenSet = true; m_instanceTags = value; }
-    inline void SetInstanceTags(Aws::Vector<Tag>&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags = std::move(value); }
-    inline InstanceEventWindowAssociationRequest& WithInstanceTags(const Aws::Vector<Tag>& value) { SetInstanceTags(value); return *this;}
-    inline InstanceEventWindowAssociationRequest& WithInstanceTags(Aws::Vector<Tag>&& value) { SetInstanceTags(std::move(value)); return *this;}
-    inline InstanceEventWindowAssociationRequest& AddInstanceTags(const Tag& value) { m_instanceTagsHasBeenSet = true; m_instanceTags.push_back(value); return *this; }
-    inline InstanceEventWindowAssociationRequest& AddInstanceTags(Tag&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags.push_back(std::move(value)); return *this; }
+    template<typename InstanceTagsT = Aws::Vector<Tag>>
+    void SetInstanceTags(InstanceTagsT&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags = std::forward<InstanceTagsT>(value); }
+    template<typename InstanceTagsT = Aws::Vector<Tag>>
+    InstanceEventWindowAssociationRequest& WithInstanceTags(InstanceTagsT&& value) { SetInstanceTags(std::forward<InstanceTagsT>(value)); return *this;}
+    template<typename InstanceTagsT = Tag>
+    InstanceEventWindowAssociationRequest& AddInstanceTags(InstanceTagsT&& value) { m_instanceTagsHasBeenSet = true; m_instanceTags.emplace_back(std::forward<InstanceTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the Dedicated Hosts to associate with the event window.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDedicatedHostIds() const{ return m_dedicatedHostIds; }
+    inline const Aws::Vector<Aws::String>& GetDedicatedHostIds() const { return m_dedicatedHostIds; }
     inline bool DedicatedHostIdsHasBeenSet() const { return m_dedicatedHostIdsHasBeenSet; }
-    inline void SetDedicatedHostIds(const Aws::Vector<Aws::String>& value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds = value; }
-    inline void SetDedicatedHostIds(Aws::Vector<Aws::String>&& value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds = std::move(value); }
-    inline InstanceEventWindowAssociationRequest& WithDedicatedHostIds(const Aws::Vector<Aws::String>& value) { SetDedicatedHostIds(value); return *this;}
-    inline InstanceEventWindowAssociationRequest& WithDedicatedHostIds(Aws::Vector<Aws::String>&& value) { SetDedicatedHostIds(std::move(value)); return *this;}
-    inline InstanceEventWindowAssociationRequest& AddDedicatedHostIds(const Aws::String& value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds.push_back(value); return *this; }
-    inline InstanceEventWindowAssociationRequest& AddDedicatedHostIds(Aws::String&& value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds.push_back(std::move(value)); return *this; }
-    inline InstanceEventWindowAssociationRequest& AddDedicatedHostIds(const char* value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds.push_back(value); return *this; }
+    template<typename DedicatedHostIdsT = Aws::Vector<Aws::String>>
+    void SetDedicatedHostIds(DedicatedHostIdsT&& value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds = std::forward<DedicatedHostIdsT>(value); }
+    template<typename DedicatedHostIdsT = Aws::Vector<Aws::String>>
+    InstanceEventWindowAssociationRequest& WithDedicatedHostIds(DedicatedHostIdsT&& value) { SetDedicatedHostIds(std::forward<DedicatedHostIdsT>(value)); return *this;}
+    template<typename DedicatedHostIdsT = Aws::String>
+    InstanceEventWindowAssociationRequest& AddDedicatedHostIds(DedicatedHostIdsT&& value) { m_dedicatedHostIdsHasBeenSet = true; m_dedicatedHostIds.emplace_back(std::forward<DedicatedHostIdsT>(value)); return *this; }
     ///@}
   private:
 

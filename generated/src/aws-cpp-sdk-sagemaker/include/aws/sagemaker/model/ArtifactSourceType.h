@@ -32,7 +32,7 @@ namespace Model
   class ArtifactSourceType
   {
   public:
-    AWS_SAGEMAKER_API ArtifactSourceType();
+    AWS_SAGEMAKER_API ArtifactSourceType() = default;
     AWS_SAGEMAKER_API ArtifactSourceType(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ArtifactSourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The type of ID.</p>
      */
-    inline const ArtifactSourceIdType& GetSourceIdType() const{ return m_sourceIdType; }
+    inline ArtifactSourceIdType GetSourceIdType() const { return m_sourceIdType; }
     inline bool SourceIdTypeHasBeenSet() const { return m_sourceIdTypeHasBeenSet; }
-    inline void SetSourceIdType(const ArtifactSourceIdType& value) { m_sourceIdTypeHasBeenSet = true; m_sourceIdType = value; }
-    inline void SetSourceIdType(ArtifactSourceIdType&& value) { m_sourceIdTypeHasBeenSet = true; m_sourceIdType = std::move(value); }
-    inline ArtifactSourceType& WithSourceIdType(const ArtifactSourceIdType& value) { SetSourceIdType(value); return *this;}
-    inline ArtifactSourceType& WithSourceIdType(ArtifactSourceIdType&& value) { SetSourceIdType(std::move(value)); return *this;}
+    inline void SetSourceIdType(ArtifactSourceIdType value) { m_sourceIdTypeHasBeenSet = true; m_sourceIdType = value; }
+    inline ArtifactSourceType& WithSourceIdType(ArtifactSourceIdType value) { SetSourceIdType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ArtifactSourceType& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ArtifactSourceType& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ArtifactSourceType& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ArtifactSourceType& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    ArtifactSourceIdType m_sourceIdType;
+    ArtifactSourceIdType m_sourceIdType{ArtifactSourceIdType::NOT_SET};
     bool m_sourceIdTypeHasBeenSet = false;
 
     Aws::String m_value;

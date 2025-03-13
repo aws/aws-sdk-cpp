@@ -24,7 +24,7 @@ namespace Model
   class CreateParticipantTokenRequest : public IvsrealtimeRequest
   {
   public:
-    AWS_IVSREALTIME_API CreateParticipantTokenRequest();
+    AWS_IVSREALTIME_API CreateParticipantTokenRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>ARN of the stage to which this token is scoped.</p>
      */
-    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
+    inline const Aws::String& GetStageArn() const { return m_stageArn; }
     inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
-    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
-    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
-    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
-    inline CreateParticipantTokenRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
-    inline CreateParticipantTokenRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
-    inline CreateParticipantTokenRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
+    template<typename StageArnT = Aws::String>
+    void SetStageArn(StageArnT&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::forward<StageArnT>(value); }
+    template<typename StageArnT = Aws::String>
+    CreateParticipantTokenRequest& WithStageArn(StageArnT&& value) { SetStageArn(std::forward<StageArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,7 +52,7 @@ namespace Model
      * <p>Duration (in minutes), after which the token expires. Default: 720 (12
      * hours).</p>
      */
-    inline int GetDuration() const{ return m_duration; }
+    inline int GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
     inline CreateParticipantTokenRequest& WithDuration(int value) { SetDuration(value); return *this;}
@@ -67,14 +65,12 @@ namespace Model
      * be used for personally identifying, confidential, or sensitive information.</i>
      * </p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline CreateParticipantTokenRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline CreateParticipantTokenRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline CreateParticipantTokenRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    CreateParticipantTokenRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,19 +81,16 @@ namespace Model
      * should not be used for personally identifying, confidential, or sensitive
      * information.</i> </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline CreateParticipantTokenRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline CreateParticipantTokenRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline CreateParticipantTokenRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline CreateParticipantTokenRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline CreateParticipantTokenRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CreateParticipantTokenRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateParticipantTokenRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CreateParticipantTokenRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline CreateParticipantTokenRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    CreateParticipantTokenRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    CreateParticipantTokenRequest& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -105,21 +98,20 @@ namespace Model
      * <p>Set of capabilities that the user is allowed to perform in the stage.
      * Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
      */
-    inline const Aws::Vector<ParticipantTokenCapability>& GetCapabilities() const{ return m_capabilities; }
+    inline const Aws::Vector<ParticipantTokenCapability>& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const Aws::Vector<ParticipantTokenCapability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(Aws::Vector<ParticipantTokenCapability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline CreateParticipantTokenRequest& WithCapabilities(const Aws::Vector<ParticipantTokenCapability>& value) { SetCapabilities(value); return *this;}
-    inline CreateParticipantTokenRequest& WithCapabilities(Aws::Vector<ParticipantTokenCapability>&& value) { SetCapabilities(std::move(value)); return *this;}
-    inline CreateParticipantTokenRequest& AddCapabilities(const ParticipantTokenCapability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
-    inline CreateParticipantTokenRequest& AddCapabilities(ParticipantTokenCapability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
+    template<typename CapabilitiesT = Aws::Vector<ParticipantTokenCapability>>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = Aws::Vector<ParticipantTokenCapability>>
+    CreateParticipantTokenRequest& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
+    inline CreateParticipantTokenRequest& AddCapabilities(ParticipantTokenCapability value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
     ///@}
   private:
 
     Aws::String m_stageArn;
     bool m_stageArnHasBeenSet = false;
 
-    int m_duration;
+    int m_duration{0};
     bool m_durationHasBeenSet = false;
 
     Aws::String m_userId;

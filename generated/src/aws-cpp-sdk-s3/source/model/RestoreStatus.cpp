@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-RestoreStatus::RestoreStatus() : 
-    m_isRestoreInProgress(false),
-    m_isRestoreInProgressHasBeenSet(false),
-    m_restoreExpiryDateHasBeenSet(false)
-{
-}
-
 RestoreStatus::RestoreStatus(const XmlNode& xmlNode)
-  : RestoreStatus()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ RestoreStatus& RestoreStatus::operator =(const XmlNode& xmlNode)
     {
       m_isRestoreInProgress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isRestoreInProgressNode.GetText()).c_str()).c_str());
       m_isRestoreInProgressHasBeenSet = true;
+       m_isRestoreInProgressHasBeenSet = true;
     }
     XmlNode restoreExpiryDateNode = resultNode.FirstChild("RestoreExpiryDate");
     if(!restoreExpiryDateNode.IsNull())
     {
       m_restoreExpiryDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreExpiryDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_restoreExpiryDateHasBeenSet = true;
+       m_restoreExpiryDateHasBeenSet = true;
     }
   }
 

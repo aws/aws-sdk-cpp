@@ -18,14 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-TimeSeriesTransformation::TimeSeriesTransformation() : 
-    m_actionHasBeenSet(false),
-    m_timeSeriesConditionsHasBeenSet(false)
-{
-}
-
 TimeSeriesTransformation::TimeSeriesTransformation(JsonView jsonValue)
-  : TimeSeriesTransformation()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TimeSeriesTransformation& TimeSeriesTransformation::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetObject("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeSeriesConditions"))
   {
     Aws::Utils::Array<JsonView> timeSeriesConditionsJsonList = jsonValue.GetArray("TimeSeriesConditions");
@@ -48,7 +39,6 @@ TimeSeriesTransformation& TimeSeriesTransformation::operator =(JsonView jsonValu
     }
     m_timeSeriesConditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

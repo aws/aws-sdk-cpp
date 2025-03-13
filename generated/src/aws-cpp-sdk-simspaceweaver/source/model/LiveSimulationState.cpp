@@ -18,14 +18,7 @@ namespace SimSpaceWeaver
 namespace Model
 {
 
-LiveSimulationState::LiveSimulationState() : 
-    m_clocksHasBeenSet(false),
-    m_domainsHasBeenSet(false)
-{
-}
-
 LiveSimulationState::LiveSimulationState(JsonView jsonValue)
-  : LiveSimulationState()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ LiveSimulationState& LiveSimulationState::operator =(JsonView jsonValue)
     }
     m_clocksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domains"))
   {
     Aws::Utils::Array<JsonView> domainsJsonList = jsonValue.GetArray("Domains");
@@ -51,7 +43,6 @@ LiveSimulationState& LiveSimulationState::operator =(JsonView jsonValue)
     }
     m_domainsHasBeenSet = true;
   }
-
   return *this;
 }
 

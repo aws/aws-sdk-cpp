@@ -18,17 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-OrganizationSummary::OrganizationSummary() : 
-    m_organizationIdHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_defaultMailDomainHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 OrganizationSummary::OrganizationSummary(JsonView jsonValue)
-  : OrganizationSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ OrganizationSummary& OrganizationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OrganizationId"))
   {
     m_organizationId = jsonValue.GetString("OrganizationId");
-
     m_organizationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Alias"))
   {
     m_alias = jsonValue.GetString("Alias");
-
     m_aliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultMailDomain"))
   {
     m_defaultMailDomain = jsonValue.GetString("DefaultMailDomain");
-
     m_defaultMailDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

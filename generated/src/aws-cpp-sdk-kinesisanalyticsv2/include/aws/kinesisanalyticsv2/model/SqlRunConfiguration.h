@@ -33,7 +33,7 @@ namespace Model
   class SqlRunConfiguration
   {
   public:
-    AWS_KINESISANALYTICSV2_API SqlRunConfiguration();
+    AWS_KINESISANALYTICSV2_API SqlRunConfiguration() = default;
     AWS_KINESISANALYTICSV2_API SqlRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API SqlRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The input source ID. You can get this ID by calling the
      * <a>DescribeApplication</a> operation. </p>
      */
-    inline const Aws::String& GetInputId() const{ return m_inputId; }
+    inline const Aws::String& GetInputId() const { return m_inputId; }
     inline bool InputIdHasBeenSet() const { return m_inputIdHasBeenSet; }
-    inline void SetInputId(const Aws::String& value) { m_inputIdHasBeenSet = true; m_inputId = value; }
-    inline void SetInputId(Aws::String&& value) { m_inputIdHasBeenSet = true; m_inputId = std::move(value); }
-    inline void SetInputId(const char* value) { m_inputIdHasBeenSet = true; m_inputId.assign(value); }
-    inline SqlRunConfiguration& WithInputId(const Aws::String& value) { SetInputId(value); return *this;}
-    inline SqlRunConfiguration& WithInputId(Aws::String&& value) { SetInputId(std::move(value)); return *this;}
-    inline SqlRunConfiguration& WithInputId(const char* value) { SetInputId(value); return *this;}
+    template<typename InputIdT = Aws::String>
+    void SetInputId(InputIdT&& value) { m_inputIdHasBeenSet = true; m_inputId = std::forward<InputIdT>(value); }
+    template<typename InputIdT = Aws::String>
+    SqlRunConfiguration& WithInputId(InputIdT&& value) { SetInputId(std::forward<InputIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>The point at which you want the application to start processing records from
      * the streaming source. </p>
      */
-    inline const InputStartingPositionConfiguration& GetInputStartingPositionConfiguration() const{ return m_inputStartingPositionConfiguration; }
+    inline const InputStartingPositionConfiguration& GetInputStartingPositionConfiguration() const { return m_inputStartingPositionConfiguration; }
     inline bool InputStartingPositionConfigurationHasBeenSet() const { return m_inputStartingPositionConfigurationHasBeenSet; }
-    inline void SetInputStartingPositionConfiguration(const InputStartingPositionConfiguration& value) { m_inputStartingPositionConfigurationHasBeenSet = true; m_inputStartingPositionConfiguration = value; }
-    inline void SetInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { m_inputStartingPositionConfigurationHasBeenSet = true; m_inputStartingPositionConfiguration = std::move(value); }
-    inline SqlRunConfiguration& WithInputStartingPositionConfiguration(const InputStartingPositionConfiguration& value) { SetInputStartingPositionConfiguration(value); return *this;}
-    inline SqlRunConfiguration& WithInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { SetInputStartingPositionConfiguration(std::move(value)); return *this;}
+    template<typename InputStartingPositionConfigurationT = InputStartingPositionConfiguration>
+    void SetInputStartingPositionConfiguration(InputStartingPositionConfigurationT&& value) { m_inputStartingPositionConfigurationHasBeenSet = true; m_inputStartingPositionConfiguration = std::forward<InputStartingPositionConfigurationT>(value); }
+    template<typename InputStartingPositionConfigurationT = InputStartingPositionConfiguration>
+    SqlRunConfiguration& WithInputStartingPositionConfiguration(InputStartingPositionConfigurationT&& value) { SetInputStartingPositionConfiguration(std::forward<InputStartingPositionConfigurationT>(value)); return *this;}
     ///@}
   private:
 

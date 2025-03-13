@@ -18,18 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionTypeExecutor::ActionTypeExecutor() : 
-    m_configurationHasBeenSet(false),
-    m_type(ExecutorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_policyStatementsTemplateHasBeenSet(false),
-    m_jobTimeout(0),
-    m_jobTimeoutHasBeenSet(false)
-{
-}
-
 ActionTypeExecutor::ActionTypeExecutor(JsonView jsonValue)
-  : ActionTypeExecutor()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ActionTypeExecutor& ActionTypeExecutor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ExecutorTypeMapper::GetExecutorTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyStatementsTemplate"))
   {
     m_policyStatementsTemplate = jsonValue.GetString("policyStatementsTemplate");
-
     m_policyStatementsTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobTimeout"))
   {
     m_jobTimeout = jsonValue.GetInteger("jobTimeout");
-
     m_jobTimeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

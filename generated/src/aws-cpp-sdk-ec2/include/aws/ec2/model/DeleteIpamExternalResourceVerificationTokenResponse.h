@@ -28,7 +28,7 @@ namespace Model
   class DeleteIpamExternalResourceVerificationTokenResponse
   {
   public:
-    AWS_EC2_API DeleteIpamExternalResourceVerificationTokenResponse();
+    AWS_EC2_API DeleteIpamExternalResourceVerificationTokenResponse() = default;
     AWS_EC2_API DeleteIpamExternalResourceVerificationTokenResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteIpamExternalResourceVerificationTokenResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The verification token.</p>
      */
-    inline const IpamExternalResourceVerificationToken& GetIpamExternalResourceVerificationToken() const{ return m_ipamExternalResourceVerificationToken; }
-    inline void SetIpamExternalResourceVerificationToken(const IpamExternalResourceVerificationToken& value) { m_ipamExternalResourceVerificationToken = value; }
-    inline void SetIpamExternalResourceVerificationToken(IpamExternalResourceVerificationToken&& value) { m_ipamExternalResourceVerificationToken = std::move(value); }
-    inline DeleteIpamExternalResourceVerificationTokenResponse& WithIpamExternalResourceVerificationToken(const IpamExternalResourceVerificationToken& value) { SetIpamExternalResourceVerificationToken(value); return *this;}
-    inline DeleteIpamExternalResourceVerificationTokenResponse& WithIpamExternalResourceVerificationToken(IpamExternalResourceVerificationToken&& value) { SetIpamExternalResourceVerificationToken(std::move(value)); return *this;}
+    inline const IpamExternalResourceVerificationToken& GetIpamExternalResourceVerificationToken() const { return m_ipamExternalResourceVerificationToken; }
+    template<typename IpamExternalResourceVerificationTokenT = IpamExternalResourceVerificationToken>
+    void SetIpamExternalResourceVerificationToken(IpamExternalResourceVerificationTokenT&& value) { m_ipamExternalResourceVerificationTokenHasBeenSet = true; m_ipamExternalResourceVerificationToken = std::forward<IpamExternalResourceVerificationTokenT>(value); }
+    template<typename IpamExternalResourceVerificationTokenT = IpamExternalResourceVerificationToken>
+    DeleteIpamExternalResourceVerificationTokenResponse& WithIpamExternalResourceVerificationToken(IpamExternalResourceVerificationTokenT&& value) { SetIpamExternalResourceVerificationToken(std::forward<IpamExternalResourceVerificationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteIpamExternalResourceVerificationTokenResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteIpamExternalResourceVerificationTokenResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteIpamExternalResourceVerificationTokenResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     IpamExternalResourceVerificationToken m_ipamExternalResourceVerificationToken;
+    bool m_ipamExternalResourceVerificationTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

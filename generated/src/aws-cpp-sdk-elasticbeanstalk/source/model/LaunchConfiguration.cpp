@@ -20,13 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-LaunchConfiguration::LaunchConfiguration() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode)
-  : LaunchConfiguration()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
   }
 

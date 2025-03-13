@@ -35,7 +35,7 @@ namespace Model
   class StorageLensGroup
   {
   public:
-    AWS_S3CONTROL_API StorageLensGroup();
+    AWS_S3CONTROL_API StorageLensGroup() = default;
     AWS_S3CONTROL_API StorageLensGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API StorageLensGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p> Contains the name of the Storage Lens group. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StorageLensGroup& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StorageLensGroup& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StorageLensGroup& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StorageLensGroup& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * multiple filter conditions, the <code>AND</code> or <code>OR</code> logical
      * operator is used.</p>
      */
-    inline const StorageLensGroupFilter& GetFilter() const{ return m_filter; }
+    inline const StorageLensGroupFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const StorageLensGroupFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(StorageLensGroupFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline StorageLensGroup& WithFilter(const StorageLensGroupFilter& value) { SetFilter(value); return *this;}
-    inline StorageLensGroup& WithFilter(StorageLensGroupFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = StorageLensGroupFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = StorageLensGroupFilter>
+    StorageLensGroup& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * <p> Contains the Amazon Resource Name (ARN) of the Storage Lens group. This
      * property is read-only. </p>
      */
-    inline const Aws::String& GetStorageLensGroupArn() const{ return m_storageLensGroupArn; }
+    inline const Aws::String& GetStorageLensGroupArn() const { return m_storageLensGroupArn; }
     inline bool StorageLensGroupArnHasBeenSet() const { return m_storageLensGroupArnHasBeenSet; }
-    inline void SetStorageLensGroupArn(const Aws::String& value) { m_storageLensGroupArnHasBeenSet = true; m_storageLensGroupArn = value; }
-    inline void SetStorageLensGroupArn(Aws::String&& value) { m_storageLensGroupArnHasBeenSet = true; m_storageLensGroupArn = std::move(value); }
-    inline void SetStorageLensGroupArn(const char* value) { m_storageLensGroupArnHasBeenSet = true; m_storageLensGroupArn.assign(value); }
-    inline StorageLensGroup& WithStorageLensGroupArn(const Aws::String& value) { SetStorageLensGroupArn(value); return *this;}
-    inline StorageLensGroup& WithStorageLensGroupArn(Aws::String&& value) { SetStorageLensGroupArn(std::move(value)); return *this;}
-    inline StorageLensGroup& WithStorageLensGroupArn(const char* value) { SetStorageLensGroupArn(value); return *this;}
+    template<typename StorageLensGroupArnT = Aws::String>
+    void SetStorageLensGroupArn(StorageLensGroupArnT&& value) { m_storageLensGroupArnHasBeenSet = true; m_storageLensGroupArn = std::forward<StorageLensGroupArnT>(value); }
+    template<typename StorageLensGroupArnT = Aws::String>
+    StorageLensGroup& WithStorageLensGroupArn(StorageLensGroupArnT&& value) { SetStorageLensGroupArn(std::forward<StorageLensGroupArnT>(value)); return *this;}
     ///@}
   private:
 

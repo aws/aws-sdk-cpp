@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryReadiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourceSetRequest::DeleteResourceSetRequest() : 
-    m_resourceSetNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourceSetRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-StatelessCustomPublishMetricActionDimension::StatelessCustomPublishMetricActionDimension() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 StatelessCustomPublishMetricActionDimension::StatelessCustomPublishMetricActionDimension(JsonView jsonValue)
-  : StatelessCustomPublishMetricActionDimension()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StatelessCustomPublishMetricActionDimension& StatelessCustomPublishMetricActionD
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

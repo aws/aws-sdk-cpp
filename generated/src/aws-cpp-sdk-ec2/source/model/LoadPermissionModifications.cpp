@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LoadPermissionModifications::LoadPermissionModifications() : 
-    m_addHasBeenSet(false),
-    m_removeHasBeenSet(false)
-{
-}
-
 LoadPermissionModifications::LoadPermissionModifications(const XmlNode& xmlNode)
-  : LoadPermissionModifications()
 {
   *this = xmlNode;
 }
@@ -42,25 +35,27 @@ LoadPermissionModifications& LoadPermissionModifications::operator =(const XmlNo
     if(!addNode.IsNull())
     {
       XmlNode addMember = addNode.FirstChild("item");
+      m_addHasBeenSet = !addMember.IsNull();
       while(!addMember.IsNull())
       {
         m_add.push_back(addMember);
         addMember = addMember.NextNode("item");
       }
 
-      m_addHasBeenSet = true;
+       m_addHasBeenSet = true;
     }
     XmlNode removeNode = resultNode.FirstChild("Remove");
     if(!removeNode.IsNull())
     {
       XmlNode removeMember = removeNode.FirstChild("item");
+      m_removeHasBeenSet = !removeMember.IsNull();
       while(!removeMember.IsNull())
       {
         m_remove.push_back(removeMember);
         removeMember = removeMember.NextNode("item");
       }
 
-      m_removeHasBeenSet = true;
+       m_removeHasBeenSet = true;
     }
   }
 

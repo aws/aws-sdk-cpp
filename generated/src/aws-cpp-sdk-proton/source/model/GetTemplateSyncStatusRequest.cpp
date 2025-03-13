@@ -12,14 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTemplateSyncStatusRequest::GetTemplateSyncStatusRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
-    m_templateVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetTemplateSyncStatusRequest::SerializePayload() const
 {
   JsonValue payload;

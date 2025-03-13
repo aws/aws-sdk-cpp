@@ -12,12 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCalendarStateRequest::GetCalendarStateRequest() : 
-    m_calendarNamesHasBeenSet(false),
-    m_atTimeHasBeenSet(false)
-{
-}
-
 Aws::String GetCalendarStateRequest::SerializePayload() const
 {
   JsonValue payload;

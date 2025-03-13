@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ArchiveContainerSettings::ArchiveContainerSettings() : 
-    m_m2tsSettingsHasBeenSet(false),
-    m_rawSettingsHasBeenSet(false)
-{
-}
-
 ArchiveContainerSettings::ArchiveContainerSettings(JsonView jsonValue)
-  : ArchiveContainerSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ArchiveContainerSettings& ArchiveContainerSettings::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("m2tsSettings"))
   {
     m_m2tsSettings = jsonValue.GetObject("m2tsSettings");
-
     m_m2tsSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rawSettings"))
   {
     m_rawSettings = jsonValue.GetObject("rawSettings");
-
     m_rawSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

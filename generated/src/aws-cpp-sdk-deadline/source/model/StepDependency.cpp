@@ -18,15 +18,7 @@ namespace deadline
 namespace Model
 {
 
-StepDependency::StepDependency() : 
-    m_stepIdHasBeenSet(false),
-    m_status(DependencyConsumerResolutionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 StepDependency::StepDependency(JsonView jsonValue)
-  : StepDependency()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StepDependency& StepDependency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stepId"))
   {
     m_stepId = jsonValue.GetString("stepId");
-
     m_stepIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DependencyConsumerResolutionStatusMapper::GetDependencyConsumerResolutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

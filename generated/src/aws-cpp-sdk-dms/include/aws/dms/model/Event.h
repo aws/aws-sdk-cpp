@@ -37,7 +37,7 @@ namespace Model
   class Event
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API Event();
+    AWS_DATABASEMIGRATIONSERVICE_API Event() = default;
     AWS_DATABASEMIGRATIONSERVICE_API Event(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Event& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p> The identifier of an event source.</p>
      */
-    inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
+    inline const Aws::String& GetSourceIdentifier() const { return m_sourceIdentifier; }
     inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
-    inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
-    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
-    inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
-    inline Event& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
-    inline Event& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
-    inline Event& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
+    template<typename SourceIdentifierT = Aws::String>
+    void SetSourceIdentifier(SourceIdentifierT&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::forward<SourceIdentifierT>(value); }
+    template<typename SourceIdentifierT = Aws::String>
+    Event& WithSourceIdentifier(SourceIdentifierT&& value) { SetSourceIdentifier(std::forward<SourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,60 +60,55 @@ namespace Model
      * <p> The type of DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | endpoint | replication-task</p>
      */
-    inline const SourceType& GetSourceType() const{ return m_sourceType; }
+    inline SourceType GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline Event& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
-    inline Event& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
+    inline void SetSourceType(SourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline Event& WithSourceType(SourceType value) { SetSourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline Event& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline Event& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline Event& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    Event& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event categories available for the specified source type.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+    inline const Aws::Vector<Aws::String>& GetEventCategories() const { return m_eventCategories; }
     inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
-    inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
-    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
-    inline Event& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
-    inline Event& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
-    inline Event& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
-    inline Event& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
-    inline Event& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
+    template<typename EventCategoriesT = Aws::Vector<Aws::String>>
+    void SetEventCategories(EventCategoriesT&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::forward<EventCategoriesT>(value); }
+    template<typename EventCategoriesT = Aws::Vector<Aws::String>>
+    Event& WithEventCategories(EventCategoriesT&& value) { SetEventCategories(std::forward<EventCategoriesT>(value)); return *this;}
+    template<typename EventCategoriesT = Aws::String>
+    Event& AddEventCategories(EventCategoriesT&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.emplace_back(std::forward<EventCategoriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The date of the event.</p>
      */
-    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
+    inline const Aws::Utils::DateTime& GetDate() const { return m_date; }
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
-    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-    inline Event& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
-    inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
+    template<typename DateT = Aws::Utils::DateTime>
+    void SetDate(DateT&& value) { m_dateHasBeenSet = true; m_date = std::forward<DateT>(value); }
+    template<typename DateT = Aws::Utils::DateTime>
+    Event& WithDate(DateT&& value) { SetDate(std::forward<DateT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sourceIdentifier;
     bool m_sourceIdentifierHasBeenSet = false;
 
-    SourceType m_sourceType;
+    SourceType m_sourceType{SourceType::NOT_SET};
     bool m_sourceTypeHasBeenSet = false;
 
     Aws::String m_message;
@@ -124,7 +117,7 @@ namespace Model
     Aws::Vector<Aws::String> m_eventCategories;
     bool m_eventCategoriesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_date;
+    Aws::Utils::DateTime m_date{};
     bool m_dateHasBeenSet = false;
   };
 

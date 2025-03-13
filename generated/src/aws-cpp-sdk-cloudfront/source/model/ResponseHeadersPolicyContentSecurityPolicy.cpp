@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyContentSecurityPolicy::ResponseHeadersPolicyContentSecurityPolicy() : 
-    m_override(false),
-    m_overrideHasBeenSet(false),
-    m_contentSecurityPolicyHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyContentSecurityPolicy::ResponseHeadersPolicyContentSecurityPolicy(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyContentSecurityPolicy()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ ResponseHeadersPolicyContentSecurityPolicy& ResponseHeadersPolicyContentSecurity
     {
       m_override = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overrideNode.GetText()).c_str()).c_str());
       m_overrideHasBeenSet = true;
+       m_overrideHasBeenSet = true;
     }
     XmlNode contentSecurityPolicyNode = resultNode.FirstChild("ContentSecurityPolicy");
     if(!contentSecurityPolicyNode.IsNull())
     {
       m_contentSecurityPolicy = Aws::Utils::Xml::DecodeEscapedXmlText(contentSecurityPolicyNode.GetText());
       m_contentSecurityPolicyHasBeenSet = true;
+       m_contentSecurityPolicyHasBeenSet = true;
     }
   }
 

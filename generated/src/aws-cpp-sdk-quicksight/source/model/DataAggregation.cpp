@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataAggregation::DataAggregation() : 
-    m_datasetRowDateGranularity(TopicTimeGranularity::NOT_SET),
-    m_datasetRowDateGranularityHasBeenSet(false),
-    m_defaultDateColumnNameHasBeenSet(false)
-{
-}
-
 DataAggregation::DataAggregation(JsonView jsonValue)
-  : DataAggregation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataAggregation& DataAggregation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatasetRowDateGranularity"))
   {
     m_datasetRowDateGranularity = TopicTimeGranularityMapper::GetTopicTimeGranularityForName(jsonValue.GetString("DatasetRowDateGranularity"));
-
     m_datasetRowDateGranularityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultDateColumnName"))
   {
     m_defaultDateColumnName = jsonValue.GetString("DefaultDateColumnName");
-
     m_defaultDateColumnNameHasBeenSet = true;
   }
-
   return *this;
 }
 

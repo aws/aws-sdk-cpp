@@ -32,7 +32,7 @@ namespace Model
   class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails() = default;
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The path inside the container at which to expose the host device.</p>
      */
-    inline const Aws::String& GetContainerPath() const{ return m_containerPath; }
+    inline const Aws::String& GetContainerPath() const { return m_containerPath; }
     inline bool ContainerPathHasBeenSet() const { return m_containerPathHasBeenSet; }
-    inline void SetContainerPath(const Aws::String& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
-    inline void SetContainerPath(Aws::String&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::move(value); }
-    inline void SetContainerPath(const char* value) { m_containerPathHasBeenSet = true; m_containerPath.assign(value); }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& WithContainerPath(const Aws::String& value) { SetContainerPath(value); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& WithContainerPath(Aws::String&& value) { SetContainerPath(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& WithContainerPath(const char* value) { SetContainerPath(value); return *this;}
+    template<typename ContainerPathT = Aws::String>
+    void SetContainerPath(ContainerPathT&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::forward<ContainerPathT>(value); }
+    template<typename ContainerPathT = Aws::String>
+    AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& WithContainerPath(ContainerPathT&& value) { SetContainerPath(std::forward<ContainerPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path for the device on the host container instance.</p>
      */
-    inline const Aws::String& GetHostPath() const{ return m_hostPath; }
+    inline const Aws::String& GetHostPath() const { return m_hostPath; }
     inline bool HostPathHasBeenSet() const { return m_hostPathHasBeenSet; }
-    inline void SetHostPath(const Aws::String& value) { m_hostPathHasBeenSet = true; m_hostPath = value; }
-    inline void SetHostPath(Aws::String&& value) { m_hostPathHasBeenSet = true; m_hostPath = std::move(value); }
-    inline void SetHostPath(const char* value) { m_hostPathHasBeenSet = true; m_hostPath.assign(value); }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& WithHostPath(const Aws::String& value) { SetHostPath(value); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& WithHostPath(Aws::String&& value) { SetHostPath(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& WithHostPath(const char* value) { SetHostPath(value); return *this;}
+    template<typename HostPathT = Aws::String>
+    void SetHostPath(HostPathT&& value) { m_hostPathHasBeenSet = true; m_hostPath = std::forward<HostPathT>(value); }
+    template<typename HostPathT = Aws::String>
+    AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& WithHostPath(HostPathT&& value) { SetHostPath(std::forward<HostPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,15 +68,14 @@ namespace Model
      * default, the container has permissions for read, write, and <code>mknod</code>
      * for the device.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPermissions() const{ return m_permissions; }
+    inline const Aws::Vector<Aws::String>& GetPermissions() const { return m_permissions; }
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-    inline void SetPermissions(const Aws::Vector<Aws::String>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<Aws::String>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& WithPermissions(const Aws::Vector<Aws::String>& value) { SetPermissions(value); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& WithPermissions(Aws::Vector<Aws::String>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& AddPermissions(const Aws::String& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& AddPermissions(Aws::String&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& AddPermissions(const char* value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
+    template<typename PermissionsT = Aws::Vector<Aws::String>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<Aws::String>>
+    AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    template<typename PermissionsT = Aws::String>
+    AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& AddPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions.emplace_back(std::forward<PermissionsT>(value)); return *this; }
     ///@}
   private:
 

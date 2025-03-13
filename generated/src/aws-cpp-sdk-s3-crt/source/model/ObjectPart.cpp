@@ -20,21 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-ObjectPart::ObjectPart() : 
-    m_partNumber(0),
-    m_partNumberHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_checksumCRC32HasBeenSet(false),
-    m_checksumCRC32CHasBeenSet(false),
-    m_checksumCRC64NVMEHasBeenSet(false),
-    m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false)
-{
-}
-
 ObjectPart::ObjectPart(const XmlNode& xmlNode)
-  : ObjectPart()
 {
   *this = xmlNode;
 }
@@ -50,42 +36,49 @@ ObjectPart& ObjectPart::operator =(const XmlNode& xmlNode)
     {
       m_partNumber = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partNumberNode.GetText()).c_str()).c_str());
       m_partNumberHasBeenSet = true;
+       m_partNumberHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
     if(!sizeNode.IsNull())
     {
       m_size = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeNode.GetText()).c_str()).c_str());
       m_sizeHasBeenSet = true;
+       m_sizeHasBeenSet = true;
     }
     XmlNode checksumCRC32Node = resultNode.FirstChild("ChecksumCRC32");
     if(!checksumCRC32Node.IsNull())
     {
       m_checksumCRC32 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC32Node.GetText());
       m_checksumCRC32HasBeenSet = true;
+       m_checksumCRC32HasBeenSet = true;
     }
     XmlNode checksumCRC32CNode = resultNode.FirstChild("ChecksumCRC32C");
     if(!checksumCRC32CNode.IsNull())
     {
       m_checksumCRC32C = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC32CNode.GetText());
       m_checksumCRC32CHasBeenSet = true;
+       m_checksumCRC32CHasBeenSet = true;
     }
     XmlNode checksumCRC64NVMENode = resultNode.FirstChild("ChecksumCRC64NVME");
     if(!checksumCRC64NVMENode.IsNull())
     {
       m_checksumCRC64NVME = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC64NVMENode.GetText());
       m_checksumCRC64NVMEHasBeenSet = true;
+       m_checksumCRC64NVMEHasBeenSet = true;
     }
     XmlNode checksumSHA1Node = resultNode.FirstChild("ChecksumSHA1");
     if(!checksumSHA1Node.IsNull())
     {
       m_checksumSHA1 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA1Node.GetText());
       m_checksumSHA1HasBeenSet = true;
+       m_checksumSHA1HasBeenSet = true;
     }
     XmlNode checksumSHA256Node = resultNode.FirstChild("ChecksumSHA256");
     if(!checksumSHA256Node.IsNull())
     {
       m_checksumSHA256 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA256Node.GetText());
       m_checksumSHA256HasBeenSet = true;
+       m_checksumSHA256HasBeenSet = true;
     }
   }
 

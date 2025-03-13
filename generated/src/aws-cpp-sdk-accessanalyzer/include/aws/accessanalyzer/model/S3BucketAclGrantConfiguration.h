@@ -35,7 +35,7 @@ namespace Model
   class S3BucketAclGrantConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API S3BucketAclGrantConfiguration();
+    AWS_ACCESSANALYZER_API S3BucketAclGrantConfiguration() = default;
     AWS_ACCESSANALYZER_API S3BucketAclGrantConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API S3BucketAclGrantConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
     /**
      * <p>The permissions being granted.</p>
      */
-    inline const AclPermission& GetPermission() const{ return m_permission; }
+    inline AclPermission GetPermission() const { return m_permission; }
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-    inline void SetPermission(const AclPermission& value) { m_permissionHasBeenSet = true; m_permission = value; }
-    inline void SetPermission(AclPermission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-    inline S3BucketAclGrantConfiguration& WithPermission(const AclPermission& value) { SetPermission(value); return *this;}
-    inline S3BucketAclGrantConfiguration& WithPermission(AclPermission&& value) { SetPermission(std::move(value)); return *this;}
+    inline void SetPermission(AclPermission value) { m_permissionHasBeenSet = true; m_permission = value; }
+    inline S3BucketAclGrantConfiguration& WithPermission(AclPermission value) { SetPermission(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The grantee to whom you’re assigning access rights.</p>
      */
-    inline const AclGrantee& GetGrantee() const{ return m_grantee; }
+    inline const AclGrantee& GetGrantee() const { return m_grantee; }
     inline bool GranteeHasBeenSet() const { return m_granteeHasBeenSet; }
-    inline void SetGrantee(const AclGrantee& value) { m_granteeHasBeenSet = true; m_grantee = value; }
-    inline void SetGrantee(AclGrantee&& value) { m_granteeHasBeenSet = true; m_grantee = std::move(value); }
-    inline S3BucketAclGrantConfiguration& WithGrantee(const AclGrantee& value) { SetGrantee(value); return *this;}
-    inline S3BucketAclGrantConfiguration& WithGrantee(AclGrantee&& value) { SetGrantee(std::move(value)); return *this;}
+    template<typename GranteeT = AclGrantee>
+    void SetGrantee(GranteeT&& value) { m_granteeHasBeenSet = true; m_grantee = std::forward<GranteeT>(value); }
+    template<typename GranteeT = AclGrantee>
+    S3BucketAclGrantConfiguration& WithGrantee(GranteeT&& value) { SetGrantee(std::forward<GranteeT>(value)); return *this;}
     ///@}
   private:
 
-    AclPermission m_permission;
+    AclPermission m_permission{AclPermission::NOT_SET};
     bool m_permissionHasBeenSet = false;
 
     AclGrantee m_grantee;

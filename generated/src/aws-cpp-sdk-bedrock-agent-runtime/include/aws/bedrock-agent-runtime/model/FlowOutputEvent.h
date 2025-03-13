@@ -34,7 +34,7 @@ namespace Model
   class FlowOutputEvent
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FlowOutputEvent();
+    AWS_BEDROCKAGENTRUNTIME_API FlowOutputEvent() = default;
     AWS_BEDROCKAGENTRUNTIME_API FlowOutputEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FlowOutputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,34 @@ namespace Model
     /**
      * <p>The content in the output.</p>
      */
-    inline const FlowOutputContent& GetContent() const{ return m_content; }
+    inline const FlowOutputContent& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const FlowOutputContent& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(FlowOutputContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline FlowOutputEvent& WithContent(const FlowOutputContent& value) { SetContent(value); return *this;}
-    inline FlowOutputEvent& WithContent(FlowOutputContent&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = FlowOutputContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = FlowOutputContent>
+    FlowOutputEvent& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the flow output node that the output is from.</p>
      */
-    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
+    inline const Aws::String& GetNodeName() const { return m_nodeName; }
     inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
-    inline void SetNodeName(const Aws::String& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
-    inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::move(value); }
-    inline void SetNodeName(const char* value) { m_nodeNameHasBeenSet = true; m_nodeName.assign(value); }
-    inline FlowOutputEvent& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
-    inline FlowOutputEvent& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
-    inline FlowOutputEvent& WithNodeName(const char* value) { SetNodeName(value); return *this;}
+    template<typename NodeNameT = Aws::String>
+    void SetNodeName(NodeNameT&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::forward<NodeNameT>(value); }
+    template<typename NodeNameT = Aws::String>
+    FlowOutputEvent& WithNodeName(NodeNameT&& value) { SetNodeName(std::forward<NodeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the node that the output is from.</p>
      */
-    inline const NodeType& GetNodeType() const{ return m_nodeType; }
+    inline NodeType GetNodeType() const { return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
-    inline void SetNodeType(const NodeType& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
-    inline void SetNodeType(NodeType&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
-    inline FlowOutputEvent& WithNodeType(const NodeType& value) { SetNodeType(value); return *this;}
-    inline FlowOutputEvent& WithNodeType(NodeType&& value) { SetNodeType(std::move(value)); return *this;}
+    inline void SetNodeType(NodeType value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+    inline FlowOutputEvent& WithNodeType(NodeType value) { SetNodeType(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_nodeName;
     bool m_nodeNameHasBeenSet = false;
 
-    NodeType m_nodeType;
+    NodeType m_nodeType{NodeType::NOT_SET};
     bool m_nodeTypeHasBeenSet = false;
   };
 

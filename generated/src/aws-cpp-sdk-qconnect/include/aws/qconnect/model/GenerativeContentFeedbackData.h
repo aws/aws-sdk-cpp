@@ -32,7 +32,7 @@ namespace Model
   class GenerativeContentFeedbackData
   {
   public:
-    AWS_QCONNECT_API GenerativeContentFeedbackData();
+    AWS_QCONNECT_API GenerativeContentFeedbackData() = default;
     AWS_QCONNECT_API GenerativeContentFeedbackData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API GenerativeContentFeedbackData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The relevance of the feedback.</p>
      */
-    inline const Relevance& GetRelevance() const{ return m_relevance; }
+    inline Relevance GetRelevance() const { return m_relevance; }
     inline bool RelevanceHasBeenSet() const { return m_relevanceHasBeenSet; }
-    inline void SetRelevance(const Relevance& value) { m_relevanceHasBeenSet = true; m_relevance = value; }
-    inline void SetRelevance(Relevance&& value) { m_relevanceHasBeenSet = true; m_relevance = std::move(value); }
-    inline GenerativeContentFeedbackData& WithRelevance(const Relevance& value) { SetRelevance(value); return *this;}
-    inline GenerativeContentFeedbackData& WithRelevance(Relevance&& value) { SetRelevance(std::move(value)); return *this;}
+    inline void SetRelevance(Relevance value) { m_relevanceHasBeenSet = true; m_relevance = value; }
+    inline GenerativeContentFeedbackData& WithRelevance(Relevance value) { SetRelevance(value); return *this;}
     ///@}
   private:
 
-    Relevance m_relevance;
+    Relevance m_relevance{Relevance::NOT_SET};
     bool m_relevanceHasBeenSet = false;
   };
 

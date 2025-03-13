@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RuleGroupTypePair::RuleGroupTypePair() : 
-    m_ruleGroupArnHasBeenSet(false),
-    m_ruleGroupTypeHasBeenSet(false)
-{
-}
-
 RuleGroupTypePair::RuleGroupTypePair(const XmlNode& xmlNode)
-  : RuleGroupTypePair()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ RuleGroupTypePair& RuleGroupTypePair::operator =(const XmlNode& xmlNode)
     {
       m_ruleGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(ruleGroupArnNode.GetText());
       m_ruleGroupArnHasBeenSet = true;
+       m_ruleGroupArnHasBeenSet = true;
     }
     XmlNode ruleGroupTypeNode = resultNode.FirstChild("ruleGroupType");
     if(!ruleGroupTypeNode.IsNull())
     {
       m_ruleGroupType = Aws::Utils::Xml::DecodeEscapedXmlText(ruleGroupTypeNode.GetText());
       m_ruleGroupTypeHasBeenSet = true;
+       m_ruleGroupTypeHasBeenSet = true;
     }
   }
 

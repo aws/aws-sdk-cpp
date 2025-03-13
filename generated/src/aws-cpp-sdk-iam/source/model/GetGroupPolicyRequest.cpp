@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetGroupPolicyRequest::GetGroupPolicyRequest() : 
-    m_groupNameHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
-{
-}
-
 Aws::String GetGroupPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

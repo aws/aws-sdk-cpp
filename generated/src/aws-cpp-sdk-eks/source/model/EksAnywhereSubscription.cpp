@@ -18,28 +18,7 @@ namespace EKS
 namespace Model
 {
 
-EksAnywhereSubscription::EksAnywhereSubscription() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_effectiveDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_licenseQuantity(0),
-    m_licenseQuantityHasBeenSet(false),
-    m_licenseType(EksAnywhereSubscriptionLicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_autoRenew(false),
-    m_autoRenewHasBeenSet(false),
-    m_licenseArnsHasBeenSet(false),
-    m_licensesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 EksAnywhereSubscription::EksAnywhereSubscription(JsonView jsonValue)
-  : EksAnywhereSubscription()
 {
   *this = jsonValue;
 }
@@ -49,73 +28,53 @@ EksAnywhereSubscription& EksAnywhereSubscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveDate"))
   {
     m_effectiveDate = jsonValue.GetDouble("effectiveDate");
-
     m_effectiveDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expirationDate"))
   {
     m_expirationDate = jsonValue.GetDouble("expirationDate");
-
     m_expirationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseQuantity"))
   {
     m_licenseQuantity = jsonValue.GetInteger("licenseQuantity");
-
     m_licenseQuantityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseType"))
   {
     m_licenseType = EksAnywhereSubscriptionLicenseTypeMapper::GetEksAnywhereSubscriptionLicenseTypeForName(jsonValue.GetString("licenseType"));
-
     m_licenseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("term"))
   {
     m_term = jsonValue.GetObject("term");
-
     m_termHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoRenew"))
   {
     m_autoRenew = jsonValue.GetBool("autoRenew");
-
     m_autoRenewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseArns"))
   {
     Aws::Utils::Array<JsonView> licenseArnsJsonList = jsonValue.GetArray("licenseArns");
@@ -125,7 +84,6 @@ EksAnywhereSubscription& EksAnywhereSubscription::operator =(JsonView jsonValue)
     }
     m_licenseArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenses"))
   {
     Aws::Utils::Array<JsonView> licensesJsonList = jsonValue.GetArray("licenses");
@@ -135,7 +93,6 @@ EksAnywhereSubscription& EksAnywhereSubscription::operator =(JsonView jsonValue)
     }
     m_licensesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -145,7 +102,6 @@ EksAnywhereSubscription& EksAnywhereSubscription::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

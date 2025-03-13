@@ -12,11 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteAgentsRequest::BatchDeleteAgentsRequest() : 
-    m_deleteAgentsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteAgentsRequest::SerializePayload() const
 {
   JsonValue payload;

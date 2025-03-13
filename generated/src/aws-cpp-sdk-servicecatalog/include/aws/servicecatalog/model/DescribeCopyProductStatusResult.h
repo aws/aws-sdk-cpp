@@ -28,7 +28,7 @@ namespace Model
   class DescribeCopyProductStatusResult
   {
   public:
-    AWS_SERVICECATALOG_API DescribeCopyProductStatusResult();
+    AWS_SERVICECATALOG_API DescribeCopyProductStatusResult() = default;
     AWS_SERVICECATALOG_API DescribeCopyProductStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API DescribeCopyProductStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,54 @@ namespace Model
     /**
      * <p>The status of the copy product operation.</p>
      */
-    inline const CopyProductStatus& GetCopyProductStatus() const{ return m_copyProductStatus; }
-    inline void SetCopyProductStatus(const CopyProductStatus& value) { m_copyProductStatus = value; }
-    inline void SetCopyProductStatus(CopyProductStatus&& value) { m_copyProductStatus = std::move(value); }
-    inline DescribeCopyProductStatusResult& WithCopyProductStatus(const CopyProductStatus& value) { SetCopyProductStatus(value); return *this;}
-    inline DescribeCopyProductStatusResult& WithCopyProductStatus(CopyProductStatus&& value) { SetCopyProductStatus(std::move(value)); return *this;}
+    inline CopyProductStatus GetCopyProductStatus() const { return m_copyProductStatus; }
+    inline void SetCopyProductStatus(CopyProductStatus value) { m_copyProductStatusHasBeenSet = true; m_copyProductStatus = value; }
+    inline DescribeCopyProductStatusResult& WithCopyProductStatus(CopyProductStatus value) { SetCopyProductStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the copied product.</p>
      */
-    inline const Aws::String& GetTargetProductId() const{ return m_targetProductId; }
-    inline void SetTargetProductId(const Aws::String& value) { m_targetProductId = value; }
-    inline void SetTargetProductId(Aws::String&& value) { m_targetProductId = std::move(value); }
-    inline void SetTargetProductId(const char* value) { m_targetProductId.assign(value); }
-    inline DescribeCopyProductStatusResult& WithTargetProductId(const Aws::String& value) { SetTargetProductId(value); return *this;}
-    inline DescribeCopyProductStatusResult& WithTargetProductId(Aws::String&& value) { SetTargetProductId(std::move(value)); return *this;}
-    inline DescribeCopyProductStatusResult& WithTargetProductId(const char* value) { SetTargetProductId(value); return *this;}
+    inline const Aws::String& GetTargetProductId() const { return m_targetProductId; }
+    template<typename TargetProductIdT = Aws::String>
+    void SetTargetProductId(TargetProductIdT&& value) { m_targetProductIdHasBeenSet = true; m_targetProductId = std::forward<TargetProductIdT>(value); }
+    template<typename TargetProductIdT = Aws::String>
+    DescribeCopyProductStatusResult& WithTargetProductId(TargetProductIdT&& value) { SetTargetProductId(std::forward<TargetProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message.</p>
      */
-    inline const Aws::String& GetStatusDetail() const{ return m_statusDetail; }
-    inline void SetStatusDetail(const Aws::String& value) { m_statusDetail = value; }
-    inline void SetStatusDetail(Aws::String&& value) { m_statusDetail = std::move(value); }
-    inline void SetStatusDetail(const char* value) { m_statusDetail.assign(value); }
-    inline DescribeCopyProductStatusResult& WithStatusDetail(const Aws::String& value) { SetStatusDetail(value); return *this;}
-    inline DescribeCopyProductStatusResult& WithStatusDetail(Aws::String&& value) { SetStatusDetail(std::move(value)); return *this;}
-    inline DescribeCopyProductStatusResult& WithStatusDetail(const char* value) { SetStatusDetail(value); return *this;}
+    inline const Aws::String& GetStatusDetail() const { return m_statusDetail; }
+    template<typename StatusDetailT = Aws::String>
+    void SetStatusDetail(StatusDetailT&& value) { m_statusDetailHasBeenSet = true; m_statusDetail = std::forward<StatusDetailT>(value); }
+    template<typename StatusDetailT = Aws::String>
+    DescribeCopyProductStatusResult& WithStatusDetail(StatusDetailT&& value) { SetStatusDetail(std::forward<StatusDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCopyProductStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCopyProductStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCopyProductStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCopyProductStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    CopyProductStatus m_copyProductStatus;
+    CopyProductStatus m_copyProductStatus{CopyProductStatus::NOT_SET};
+    bool m_copyProductStatusHasBeenSet = false;
 
     Aws::String m_targetProductId;
+    bool m_targetProductIdHasBeenSet = false;
 
     Aws::String m_statusDetail;
+    bool m_statusDetailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,23 +12,6 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApplicationRequest::UpdateApplicationRequest() : 
-    m_resourceGroupNameHasBeenSet(false),
-    m_opsCenterEnabled(false),
-    m_opsCenterEnabledHasBeenSet(false),
-    m_cWEMonitorEnabled(false),
-    m_cWEMonitorEnabledHasBeenSet(false),
-    m_opsItemSNSTopicArnHasBeenSet(false),
-    m_sNSNotificationArnHasBeenSet(false),
-    m_removeSNSTopic(false),
-    m_removeSNSTopicHasBeenSet(false),
-    m_autoConfigEnabled(false),
-    m_autoConfigEnabledHasBeenSet(false),
-    m_attachMissingPermission(false),
-    m_attachMissingPermissionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

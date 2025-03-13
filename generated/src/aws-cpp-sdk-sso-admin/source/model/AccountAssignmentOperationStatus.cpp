@@ -18,24 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-AccountAssignmentOperationStatus::AccountAssignmentOperationStatus() : 
-    m_createdDateHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_status(StatusValues::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false)
-{
-}
-
 AccountAssignmentOperationStatus::AccountAssignmentOperationStatus(JsonView jsonValue)
-  : AccountAssignmentOperationStatus()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ AccountAssignmentOperationStatus& AccountAssignmentOperationStatus::operator =(J
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionSetArn"))
   {
     m_permissionSetArn = jsonValue.GetString("PermissionSetArn");
-
     m_permissionSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrincipalId"))
   {
     m_principalId = jsonValue.GetString("PrincipalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrincipalType"))
   {
     m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("PrincipalType"));
-
     m_principalTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusValuesMapper::GetStatusValuesForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetId"))
   {
     m_targetId = jsonValue.GetString("TargetId");
-
     m_targetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetType"))
   {
     m_targetType = TargetTypeMapper::GetTargetTypeForName(jsonValue.GetString("TargetType"));
-
     m_targetTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

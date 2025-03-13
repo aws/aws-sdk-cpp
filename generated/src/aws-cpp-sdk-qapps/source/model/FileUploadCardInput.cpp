@@ -18,20 +18,7 @@ namespace QApps
 namespace Model
 {
 
-FileUploadCardInput::FileUploadCardInput() : 
-    m_titleHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(CardType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_filenameHasBeenSet(false),
-    m_fileIdHasBeenSet(false),
-    m_allowOverride(false),
-    m_allowOverrideHasBeenSet(false)
-{
-}
-
 FileUploadCardInput::FileUploadCardInput(JsonView jsonValue)
-  : FileUploadCardInput()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ FileUploadCardInput& FileUploadCardInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = CardTypeMapper::GetCardTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filename"))
   {
     m_filename = jsonValue.GetString("filename");
-
     m_filenameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileId"))
   {
     m_fileId = jsonValue.GetString("fileId");
-
     m_fileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowOverride"))
   {
     m_allowOverride = jsonValue.GetBool("allowOverride");
-
     m_allowOverrideHasBeenSet = true;
   }
-
   return *this;
 }
 

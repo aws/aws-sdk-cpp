@@ -12,14 +12,6 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRepositorySyncStatusRequest::GetRepositorySyncStatusRequest() : 
-    m_branchHasBeenSet(false),
-    m_repositoryLinkIdHasBeenSet(false),
-    m_syncType(SyncConfigurationType::NOT_SET),
-    m_syncTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetRepositorySyncStatusRequest::SerializePayload() const
 {
   JsonValue payload;

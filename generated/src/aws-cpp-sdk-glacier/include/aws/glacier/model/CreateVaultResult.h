@@ -33,7 +33,7 @@ namespace Model
   class CreateVaultResult
   {
   public:
-    AWS_GLACIER_API CreateVaultResult();
+    AWS_GLACIER_API CreateVaultResult() = default;
     AWS_GLACIER_API CreateVaultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLACIER_API CreateVaultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The URI of the vault that was created.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
-    inline void SetLocation(const Aws::String& value) { m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_location.assign(value); }
-    inline CreateVaultResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline CreateVaultResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline CreateVaultResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    inline const Aws::String& GetLocation() const { return m_location; }
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    CreateVaultResult& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateVaultResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateVaultResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateVaultResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateVaultResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_location;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

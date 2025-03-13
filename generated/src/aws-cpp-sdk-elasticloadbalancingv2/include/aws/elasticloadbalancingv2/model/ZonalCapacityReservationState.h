@@ -33,7 +33,7 @@ namespace Model
   class ZonalCapacityReservationState
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API ZonalCapacityReservationState();
+    AWS_ELASTICLOADBALANCINGV2_API ZonalCapacityReservationState() = default;
     AWS_ELASTICLOADBALANCINGV2_API ZonalCapacityReservationState(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API ZonalCapacityReservationState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,33 +45,31 @@ namespace Model
     /**
      * <p>The state of the capacity reservation.</p>
      */
-    inline const CapacityReservationStatus& GetState() const{ return m_state; }
+    inline const CapacityReservationStatus& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const CapacityReservationStatus& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(CapacityReservationStatus&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ZonalCapacityReservationState& WithState(const CapacityReservationStatus& value) { SetState(value); return *this;}
-    inline ZonalCapacityReservationState& WithState(CapacityReservationStatus&& value) { SetState(std::move(value)); return *this;}
+    template<typename StateT = CapacityReservationStatus>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = CapacityReservationStatus>
+    ZonalCapacityReservationState& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the availability zone.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline ZonalCapacityReservationState& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline ZonalCapacityReservationState& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline ZonalCapacityReservationState& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    ZonalCapacityReservationState& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of effective capacity units.</p>
      */
-    inline double GetEffectiveCapacityUnits() const{ return m_effectiveCapacityUnits; }
+    inline double GetEffectiveCapacityUnits() const { return m_effectiveCapacityUnits; }
     inline bool EffectiveCapacityUnitsHasBeenSet() const { return m_effectiveCapacityUnitsHasBeenSet; }
     inline void SetEffectiveCapacityUnits(double value) { m_effectiveCapacityUnitsHasBeenSet = true; m_effectiveCapacityUnits = value; }
     inline ZonalCapacityReservationState& WithEffectiveCapacityUnits(double value) { SetEffectiveCapacityUnits(value); return *this;}
@@ -84,7 +82,7 @@ namespace Model
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
 
-    double m_effectiveCapacityUnits;
+    double m_effectiveCapacityUnits{0.0};
     bool m_effectiveCapacityUnitsHasBeenSet = false;
   };
 

@@ -35,7 +35,7 @@ namespace Model
   class Capabilities
   {
   public:
-    AWS_GLUE_API Capabilities();
+    AWS_GLUE_API Capabilities() = default;
     AWS_GLUE_API Capabilities(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Capabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,39 @@ namespace Model
     /**
      * <p>A list of supported authentication types.</p>
      */
-    inline const Aws::Vector<AuthenticationType>& GetSupportedAuthenticationTypes() const{ return m_supportedAuthenticationTypes; }
+    inline const Aws::Vector<AuthenticationType>& GetSupportedAuthenticationTypes() const { return m_supportedAuthenticationTypes; }
     inline bool SupportedAuthenticationTypesHasBeenSet() const { return m_supportedAuthenticationTypesHasBeenSet; }
-    inline void SetSupportedAuthenticationTypes(const Aws::Vector<AuthenticationType>& value) { m_supportedAuthenticationTypesHasBeenSet = true; m_supportedAuthenticationTypes = value; }
-    inline void SetSupportedAuthenticationTypes(Aws::Vector<AuthenticationType>&& value) { m_supportedAuthenticationTypesHasBeenSet = true; m_supportedAuthenticationTypes = std::move(value); }
-    inline Capabilities& WithSupportedAuthenticationTypes(const Aws::Vector<AuthenticationType>& value) { SetSupportedAuthenticationTypes(value); return *this;}
-    inline Capabilities& WithSupportedAuthenticationTypes(Aws::Vector<AuthenticationType>&& value) { SetSupportedAuthenticationTypes(std::move(value)); return *this;}
-    inline Capabilities& AddSupportedAuthenticationTypes(const AuthenticationType& value) { m_supportedAuthenticationTypesHasBeenSet = true; m_supportedAuthenticationTypes.push_back(value); return *this; }
-    inline Capabilities& AddSupportedAuthenticationTypes(AuthenticationType&& value) { m_supportedAuthenticationTypesHasBeenSet = true; m_supportedAuthenticationTypes.push_back(std::move(value)); return *this; }
+    template<typename SupportedAuthenticationTypesT = Aws::Vector<AuthenticationType>>
+    void SetSupportedAuthenticationTypes(SupportedAuthenticationTypesT&& value) { m_supportedAuthenticationTypesHasBeenSet = true; m_supportedAuthenticationTypes = std::forward<SupportedAuthenticationTypesT>(value); }
+    template<typename SupportedAuthenticationTypesT = Aws::Vector<AuthenticationType>>
+    Capabilities& WithSupportedAuthenticationTypes(SupportedAuthenticationTypesT&& value) { SetSupportedAuthenticationTypes(std::forward<SupportedAuthenticationTypesT>(value)); return *this;}
+    inline Capabilities& AddSupportedAuthenticationTypes(AuthenticationType value) { m_supportedAuthenticationTypesHasBeenSet = true; m_supportedAuthenticationTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of supported data operations.</p>
      */
-    inline const Aws::Vector<DataOperation>& GetSupportedDataOperations() const{ return m_supportedDataOperations; }
+    inline const Aws::Vector<DataOperation>& GetSupportedDataOperations() const { return m_supportedDataOperations; }
     inline bool SupportedDataOperationsHasBeenSet() const { return m_supportedDataOperationsHasBeenSet; }
-    inline void SetSupportedDataOperations(const Aws::Vector<DataOperation>& value) { m_supportedDataOperationsHasBeenSet = true; m_supportedDataOperations = value; }
-    inline void SetSupportedDataOperations(Aws::Vector<DataOperation>&& value) { m_supportedDataOperationsHasBeenSet = true; m_supportedDataOperations = std::move(value); }
-    inline Capabilities& WithSupportedDataOperations(const Aws::Vector<DataOperation>& value) { SetSupportedDataOperations(value); return *this;}
-    inline Capabilities& WithSupportedDataOperations(Aws::Vector<DataOperation>&& value) { SetSupportedDataOperations(std::move(value)); return *this;}
-    inline Capabilities& AddSupportedDataOperations(const DataOperation& value) { m_supportedDataOperationsHasBeenSet = true; m_supportedDataOperations.push_back(value); return *this; }
-    inline Capabilities& AddSupportedDataOperations(DataOperation&& value) { m_supportedDataOperationsHasBeenSet = true; m_supportedDataOperations.push_back(std::move(value)); return *this; }
+    template<typename SupportedDataOperationsT = Aws::Vector<DataOperation>>
+    void SetSupportedDataOperations(SupportedDataOperationsT&& value) { m_supportedDataOperationsHasBeenSet = true; m_supportedDataOperations = std::forward<SupportedDataOperationsT>(value); }
+    template<typename SupportedDataOperationsT = Aws::Vector<DataOperation>>
+    Capabilities& WithSupportedDataOperations(SupportedDataOperationsT&& value) { SetSupportedDataOperations(std::forward<SupportedDataOperationsT>(value)); return *this;}
+    inline Capabilities& AddSupportedDataOperations(DataOperation value) { m_supportedDataOperationsHasBeenSet = true; m_supportedDataOperations.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of supported compute environments.</p>
      */
-    inline const Aws::Vector<ComputeEnvironment>& GetSupportedComputeEnvironments() const{ return m_supportedComputeEnvironments; }
+    inline const Aws::Vector<ComputeEnvironment>& GetSupportedComputeEnvironments() const { return m_supportedComputeEnvironments; }
     inline bool SupportedComputeEnvironmentsHasBeenSet() const { return m_supportedComputeEnvironmentsHasBeenSet; }
-    inline void SetSupportedComputeEnvironments(const Aws::Vector<ComputeEnvironment>& value) { m_supportedComputeEnvironmentsHasBeenSet = true; m_supportedComputeEnvironments = value; }
-    inline void SetSupportedComputeEnvironments(Aws::Vector<ComputeEnvironment>&& value) { m_supportedComputeEnvironmentsHasBeenSet = true; m_supportedComputeEnvironments = std::move(value); }
-    inline Capabilities& WithSupportedComputeEnvironments(const Aws::Vector<ComputeEnvironment>& value) { SetSupportedComputeEnvironments(value); return *this;}
-    inline Capabilities& WithSupportedComputeEnvironments(Aws::Vector<ComputeEnvironment>&& value) { SetSupportedComputeEnvironments(std::move(value)); return *this;}
-    inline Capabilities& AddSupportedComputeEnvironments(const ComputeEnvironment& value) { m_supportedComputeEnvironmentsHasBeenSet = true; m_supportedComputeEnvironments.push_back(value); return *this; }
-    inline Capabilities& AddSupportedComputeEnvironments(ComputeEnvironment&& value) { m_supportedComputeEnvironmentsHasBeenSet = true; m_supportedComputeEnvironments.push_back(std::move(value)); return *this; }
+    template<typename SupportedComputeEnvironmentsT = Aws::Vector<ComputeEnvironment>>
+    void SetSupportedComputeEnvironments(SupportedComputeEnvironmentsT&& value) { m_supportedComputeEnvironmentsHasBeenSet = true; m_supportedComputeEnvironments = std::forward<SupportedComputeEnvironmentsT>(value); }
+    template<typename SupportedComputeEnvironmentsT = Aws::Vector<ComputeEnvironment>>
+    Capabilities& WithSupportedComputeEnvironments(SupportedComputeEnvironmentsT&& value) { SetSupportedComputeEnvironments(std::forward<SupportedComputeEnvironmentsT>(value)); return *this;}
+    inline Capabilities& AddSupportedComputeEnvironments(ComputeEnvironment value) { m_supportedComputeEnvironmentsHasBeenSet = true; m_supportedComputeEnvironments.push_back(value); return *this; }
     ///@}
   private:
 

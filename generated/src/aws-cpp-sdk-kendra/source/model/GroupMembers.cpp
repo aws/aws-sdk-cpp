@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-GroupMembers::GroupMembers() : 
-    m_memberGroupsHasBeenSet(false),
-    m_memberUsersHasBeenSet(false),
-    m_s3PathforGroupMembersHasBeenSet(false)
-{
-}
-
 GroupMembers::GroupMembers(JsonView jsonValue)
-  : GroupMembers()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ GroupMembers& GroupMembers::operator =(JsonView jsonValue)
     }
     m_memberGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberUsers"))
   {
     Aws::Utils::Array<JsonView> memberUsersJsonList = jsonValue.GetArray("MemberUsers");
@@ -52,14 +43,11 @@ GroupMembers& GroupMembers::operator =(JsonView jsonValue)
     }
     m_memberUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3PathforGroupMembers"))
   {
     m_s3PathforGroupMembers = jsonValue.GetObject("S3PathforGroupMembers");
-
     m_s3PathforGroupMembersHasBeenSet = true;
   }
-
   return *this;
 }
 

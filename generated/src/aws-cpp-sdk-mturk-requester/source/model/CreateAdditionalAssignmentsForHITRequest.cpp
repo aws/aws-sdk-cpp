@@ -12,14 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAdditionalAssignmentsForHITRequest::CreateAdditionalAssignmentsForHITRequest() : 
-    m_hITIdHasBeenSet(false),
-    m_numberOfAdditionalAssignments(0),
-    m_numberOfAdditionalAssignmentsHasBeenSet(false),
-    m_uniqueRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateAdditionalAssignmentsForHITRequest::SerializePayload() const
 {
   JsonValue payload;

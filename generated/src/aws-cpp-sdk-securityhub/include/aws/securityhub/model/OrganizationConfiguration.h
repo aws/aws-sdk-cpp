@@ -34,7 +34,7 @@ namespace Model
   class OrganizationConfiguration
   {
   public:
-    AWS_SECURITYHUB_API OrganizationConfiguration();
+    AWS_SECURITYHUB_API OrganizationConfiguration() = default;
     AWS_SECURITYHUB_API OrganizationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API OrganizationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,12 +57,10 @@ namespace Model
      * units (OUs). New accounts will inherit the policy from the root or their
      * assigned OU. </p>
      */
-    inline const OrganizationConfigurationConfigurationType& GetConfigurationType() const{ return m_configurationType; }
+    inline OrganizationConfigurationConfigurationType GetConfigurationType() const { return m_configurationType; }
     inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
-    inline void SetConfigurationType(const OrganizationConfigurationConfigurationType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
-    inline void SetConfigurationType(OrganizationConfigurationConfigurationType&& value) { m_configurationTypeHasBeenSet = true; m_configurationType = std::move(value); }
-    inline OrganizationConfiguration& WithConfigurationType(const OrganizationConfigurationConfigurationType& value) { SetConfigurationType(value); return *this;}
-    inline OrganizationConfiguration& WithConfigurationType(OrganizationConfigurationConfigurationType&& value) { SetConfigurationType(std::move(value)); return *this;}
+    inline void SetConfigurationType(OrganizationConfigurationConfigurationType value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
+    inline OrganizationConfiguration& WithConfigurationType(OrganizationConfigurationConfigurationType value) { SetConfigurationType(value); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,10 @@ namespace Model
      * <code>ConfigurationType</code> is local configuration, then the value of
      * <code>Status</code> is always <code>ENABLED</code>. </p>
      */
-    inline const OrganizationConfigurationStatus& GetStatus() const{ return m_status; }
+    inline OrganizationConfigurationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OrganizationConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OrganizationConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OrganizationConfiguration& WithStatus(const OrganizationConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline OrganizationConfiguration& WithStatus(OrganizationConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(OrganizationConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline OrganizationConfiguration& WithStatus(OrganizationConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -86,21 +82,19 @@ namespace Model
      * <code>FAILED</code> when <code>ConfigurationType</code> is equal to
      * <code>CENTRAL</code>. </p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline OrganizationConfiguration& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline OrganizationConfiguration& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline OrganizationConfiguration& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    OrganizationConfiguration& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 
-    OrganizationConfigurationConfigurationType m_configurationType;
+    OrganizationConfigurationConfigurationType m_configurationType{OrganizationConfigurationConfigurationType::NOT_SET};
     bool m_configurationTypeHasBeenSet = false;
 
-    OrganizationConfigurationStatus m_status;
+    OrganizationConfigurationStatus m_status{OrganizationConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

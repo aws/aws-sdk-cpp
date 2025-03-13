@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRelationalDatabasesRequest::GetRelationalDatabasesRequest() : 
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetRelationalDatabasesRequest::SerializePayload() const
 {
   JsonValue payload;

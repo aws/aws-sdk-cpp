@@ -12,11 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSatelliteRequest::GetSatelliteRequest() : 
-    m_satelliteIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSatelliteRequest::SerializePayload() const
 {
   return {};

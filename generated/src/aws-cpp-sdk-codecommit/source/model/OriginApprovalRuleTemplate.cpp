@@ -18,14 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-OriginApprovalRuleTemplate::OriginApprovalRuleTemplate() : 
-    m_approvalRuleTemplateIdHasBeenSet(false),
-    m_approvalRuleTemplateNameHasBeenSet(false)
-{
-}
-
 OriginApprovalRuleTemplate::OriginApprovalRuleTemplate(JsonView jsonValue)
-  : OriginApprovalRuleTemplate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OriginApprovalRuleTemplate& OriginApprovalRuleTemplate::operator =(JsonView json
   if(jsonValue.ValueExists("approvalRuleTemplateId"))
   {
     m_approvalRuleTemplateId = jsonValue.GetString("approvalRuleTemplateId");
-
     m_approvalRuleTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("approvalRuleTemplateName"))
   {
     m_approvalRuleTemplateName = jsonValue.GetString("approvalRuleTemplateName");
-
     m_approvalRuleTemplateNameHasBeenSet = true;
   }
-
   return *this;
 }
 

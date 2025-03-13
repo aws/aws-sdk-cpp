@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyVpcPeeringConnectionOptionsResponse::ModifyVpcPeeringConnectionOptionsResponse()
-{
-}
-
 ModifyVpcPeeringConnectionOptionsResponse::ModifyVpcPeeringConnectionOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ ModifyVpcPeeringConnectionOptionsResponse& ModifyVpcPeeringConnectionOptionsResp
     if(!accepterPeeringConnectionOptionsNode.IsNull())
     {
       m_accepterPeeringConnectionOptions = accepterPeeringConnectionOptionsNode;
+      m_accepterPeeringConnectionOptionsHasBeenSet = true;
     }
     XmlNode requesterPeeringConnectionOptionsNode = resultNode.FirstChild("requesterPeeringConnectionOptions");
     if(!requesterPeeringConnectionOptionsNode.IsNull())
     {
       m_requesterPeeringConnectionOptions = requesterPeeringConnectionOptionsNode;
+      m_requesterPeeringConnectionOptionsHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ ModifyVpcPeeringConnectionOptionsResponse& ModifyVpcPeeringConnectionOptionsResp
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyVpcPeeringConnectionOptionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

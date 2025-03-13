@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateResourceResult::UpdateResourceResult()
-{
-}
-
 UpdateResourceResult::UpdateResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,23 @@ UpdateResourceResult& UpdateResourceResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentId"))
   {
     m_parentId = jsonValue.GetString("parentId");
-
+    m_parentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pathPart"))
   {
     m_pathPart = jsonValue.GetString("pathPart");
-
+    m_pathPartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
+    m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceMethods"))
   {
     Aws::Map<Aws::String, JsonView> resourceMethodsJsonMap = jsonValue.GetObject("resourceMethods").GetAllObjects();
@@ -60,14 +52,15 @@ UpdateResourceResult& UpdateResourceResult::operator =(const Aws::AmazonWebServi
     {
       m_resourceMethods[resourceMethodsItem.first] = resourceMethodsItem.second.AsObject();
     }
+    m_resourceMethodsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

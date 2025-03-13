@@ -18,14 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-ErrorDetail::ErrorDetail() : 
-    m_detailedErrorCodeHasBeenSet(false),
-    m_detailedErrorMessageHasBeenSet(false)
-{
-}
-
 ErrorDetail::ErrorDetail(JsonView jsonValue)
-  : ErrorDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ErrorDetail& ErrorDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DetailedErrorCode"))
   {
     m_detailedErrorCode = jsonValue.GetString("DetailedErrorCode");
-
     m_detailedErrorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetailedErrorMessage"))
   {
     m_detailedErrorMessage = jsonValue.GetString("DetailedErrorMessage");
-
     m_detailedErrorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

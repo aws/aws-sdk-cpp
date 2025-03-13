@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExportMetadataModelAssessmentResult::ExportMetadataModelAssessmentResult()
-{
-}
-
 ExportMetadataModelAssessmentResult::ExportMetadataModelAssessmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ ExportMetadataModelAssessmentResult& ExportMetadataModelAssessmentResult::operat
   if(jsonValue.ValueExists("PdfReport"))
   {
     m_pdfReport = jsonValue.GetObject("PdfReport");
-
+    m_pdfReportHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CsvReport"))
   {
     m_csvReport = jsonValue.GetObject("CsvReport");
-
+    m_csvReportHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

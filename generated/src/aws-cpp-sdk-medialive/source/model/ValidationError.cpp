@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ValidationError::ValidationError() : 
-    m_elementPathHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ValidationError::ValidationError(JsonView jsonValue)
-  : ValidationError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ValidationError& ValidationError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("elementPath"))
   {
     m_elementPath = jsonValue.GetString("elementPath");
-
     m_elementPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

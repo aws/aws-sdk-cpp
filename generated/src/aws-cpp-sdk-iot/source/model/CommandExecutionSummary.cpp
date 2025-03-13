@@ -18,20 +18,7 @@ namespace IoT
 namespace Model
 {
 
-CommandExecutionSummary::CommandExecutionSummary() : 
-    m_commandArnHasBeenSet(false),
-    m_executionIdHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_status(CommandExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_completedAtHasBeenSet(false)
-{
-}
-
 CommandExecutionSummary::CommandExecutionSummary(JsonView jsonValue)
-  : CommandExecutionSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ CommandExecutionSummary& CommandExecutionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("commandArn"))
   {
     m_commandArn = jsonValue.GetString("commandArn");
-
     m_commandArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionId"))
   {
     m_executionId = jsonValue.GetString("executionId");
-
     m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetArn"))
   {
     m_targetArn = jsonValue.GetString("targetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CommandExecutionStatusMapper::GetCommandExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetDouble("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completedAt"))
   {
     m_completedAt = jsonValue.GetDouble("completedAt");
-
     m_completedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

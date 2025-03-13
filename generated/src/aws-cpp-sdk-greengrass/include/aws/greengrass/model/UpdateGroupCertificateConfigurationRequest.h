@@ -21,7 +21,7 @@ namespace Model
   class UpdateGroupCertificateConfigurationRequest : public GreengrassRequest
   {
   public:
-    AWS_GREENGRASS_API UpdateGroupCertificateConfigurationRequest();
+    AWS_GREENGRASS_API UpdateGroupCertificateConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * The amount of time remaining before the certificate expires, in milliseconds.
      */
-    inline const Aws::String& GetCertificateExpiryInMilliseconds() const{ return m_certificateExpiryInMilliseconds; }
+    inline const Aws::String& GetCertificateExpiryInMilliseconds() const { return m_certificateExpiryInMilliseconds; }
     inline bool CertificateExpiryInMillisecondsHasBeenSet() const { return m_certificateExpiryInMillisecondsHasBeenSet; }
-    inline void SetCertificateExpiryInMilliseconds(const Aws::String& value) { m_certificateExpiryInMillisecondsHasBeenSet = true; m_certificateExpiryInMilliseconds = value; }
-    inline void SetCertificateExpiryInMilliseconds(Aws::String&& value) { m_certificateExpiryInMillisecondsHasBeenSet = true; m_certificateExpiryInMilliseconds = std::move(value); }
-    inline void SetCertificateExpiryInMilliseconds(const char* value) { m_certificateExpiryInMillisecondsHasBeenSet = true; m_certificateExpiryInMilliseconds.assign(value); }
-    inline UpdateGroupCertificateConfigurationRequest& WithCertificateExpiryInMilliseconds(const Aws::String& value) { SetCertificateExpiryInMilliseconds(value); return *this;}
-    inline UpdateGroupCertificateConfigurationRequest& WithCertificateExpiryInMilliseconds(Aws::String&& value) { SetCertificateExpiryInMilliseconds(std::move(value)); return *this;}
-    inline UpdateGroupCertificateConfigurationRequest& WithCertificateExpiryInMilliseconds(const char* value) { SetCertificateExpiryInMilliseconds(value); return *this;}
+    template<typename CertificateExpiryInMillisecondsT = Aws::String>
+    void SetCertificateExpiryInMilliseconds(CertificateExpiryInMillisecondsT&& value) { m_certificateExpiryInMillisecondsHasBeenSet = true; m_certificateExpiryInMilliseconds = std::forward<CertificateExpiryInMillisecondsT>(value); }
+    template<typename CertificateExpiryInMillisecondsT = Aws::String>
+    UpdateGroupCertificateConfigurationRequest& WithCertificateExpiryInMilliseconds(CertificateExpiryInMillisecondsT&& value) { SetCertificateExpiryInMilliseconds(std::forward<CertificateExpiryInMillisecondsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the Greengrass group.
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline UpdateGroupCertificateConfigurationRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline UpdateGroupCertificateConfigurationRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline UpdateGroupCertificateConfigurationRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    UpdateGroupCertificateConfigurationRequest& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-TextContentDoc::TextContentDoc() : 
-    m_dataHasBeenSet(false)
-{
-}
-
 TextContentDoc::TextContentDoc(JsonView jsonValue)
-  : TextContentDoc()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TextContentDoc& TextContentDoc::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetString("data");
-
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class EntityConfiguration
   {
   public:
-    AWS_KENDRA_API EntityConfiguration();
+    AWS_KENDRA_API EntityConfiguration() = default;
     AWS_KENDRA_API EntityConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API EntityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+    inline const Aws::String& GetEntityId() const { return m_entityId; }
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-    inline EntityConfiguration& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-    inline EntityConfiguration& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-    inline EntityConfiguration& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+    template<typename EntityIdT = Aws::String>
+    void SetEntityId(EntityIdT&& value) { m_entityIdHasBeenSet = true; m_entityId = std::forward<EntityIdT>(value); }
+    template<typename EntityIdT = Aws::String>
+    EntityConfiguration& WithEntityId(EntityIdT&& value) { SetEntityId(std::forward<EntityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * <p>Specifies whether you are configuring a <code>User</code> or a
      * <code>Group</code>.</p>
      */
-    inline const EntityType& GetEntityType() const{ return m_entityType; }
+    inline EntityType GetEntityType() const { return m_entityType; }
     inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
-    inline void SetEntityType(const EntityType& value) { m_entityTypeHasBeenSet = true; m_entityType = value; }
-    inline void SetEntityType(EntityType&& value) { m_entityTypeHasBeenSet = true; m_entityType = std::move(value); }
-    inline EntityConfiguration& WithEntityType(const EntityType& value) { SetEntityType(value); return *this;}
-    inline EntityConfiguration& WithEntityType(EntityType&& value) { SetEntityType(std::move(value)); return *this;}
+    inline void SetEntityType(EntityType value) { m_entityTypeHasBeenSet = true; m_entityType = value; }
+    inline EntityConfiguration& WithEntityType(EntityType value) { SetEntityType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_entityId;
     bool m_entityIdHasBeenSet = false;
 
-    EntityType m_entityType;
+    EntityType m_entityType{EntityType::NOT_SET};
     bool m_entityTypeHasBeenSet = false;
   };
 

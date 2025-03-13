@@ -33,7 +33,7 @@ namespace Model
   class PlatformDevice
   {
   public:
-    AWS_ECS_API PlatformDevice();
+    AWS_ECS_API PlatformDevice() = default;
     AWS_ECS_API PlatformDevice(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API PlatformDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * be obtained on the container instance in the
      * <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline PlatformDevice& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PlatformDevice& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PlatformDevice& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PlatformDevice& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * <p>The type of device that's available on the container instance. The only
      * supported value is <code>GPU</code>.</p>
      */
-    inline const PlatformDeviceType& GetType() const{ return m_type; }
+    inline PlatformDeviceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PlatformDeviceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PlatformDeviceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PlatformDevice& WithType(const PlatformDeviceType& value) { SetType(value); return *this;}
-    inline PlatformDevice& WithType(PlatformDeviceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(PlatformDeviceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PlatformDevice& WithType(PlatformDeviceType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    PlatformDeviceType m_type;
+    PlatformDeviceType m_type{PlatformDeviceType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

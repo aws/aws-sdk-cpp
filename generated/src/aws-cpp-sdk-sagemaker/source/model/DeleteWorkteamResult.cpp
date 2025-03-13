@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteWorkteamResult::DeleteWorkteamResult() : 
-    m_success(false)
-{
-}
-
 DeleteWorkteamResult::DeleteWorkteamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteWorkteamResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteWorkteamResult& DeleteWorkteamResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("Success"))
   {
     m_success = jsonValue.GetBool("Success");
-
+    m_successHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

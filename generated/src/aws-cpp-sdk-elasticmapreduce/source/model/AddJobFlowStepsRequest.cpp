@@ -12,13 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddJobFlowStepsRequest::AddJobFlowStepsRequest() : 
-    m_jobFlowIdHasBeenSet(false),
-    m_stepsHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String AddJobFlowStepsRequest::SerializePayload() const
 {
   JsonValue payload;

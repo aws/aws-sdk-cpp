@@ -27,7 +27,7 @@ namespace Model
   class AddAssociationResult
   {
   public:
-    AWS_SAGEMAKER_API AddAssociationResult();
+    AWS_SAGEMAKER_API AddAssociationResult() = default;
     AWS_SAGEMAKER_API AddAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API AddAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The ARN of the source.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArn.assign(value); }
-    inline AddAssociationResult& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline AddAssociationResult& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline AddAssociationResult& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    AddAssociationResult& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the destination.</p>
      */
-    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
-    inline void SetDestinationArn(const Aws::String& value) { m_destinationArn = value; }
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArn = std::move(value); }
-    inline void SetDestinationArn(const char* value) { m_destinationArn.assign(value); }
-    inline AddAssociationResult& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-    inline AddAssociationResult& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-    inline AddAssociationResult& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    inline const Aws::String& GetDestinationArn() const { return m_destinationArn; }
+    template<typename DestinationArnT = Aws::String>
+    void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
+    template<typename DestinationArnT = Aws::String>
+    AddAssociationResult& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sourceArn;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_destinationArn;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

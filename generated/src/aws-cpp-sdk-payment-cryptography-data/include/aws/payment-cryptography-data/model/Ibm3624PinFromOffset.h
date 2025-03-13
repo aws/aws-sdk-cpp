@@ -32,7 +32,7 @@ namespace Model
   class Ibm3624PinFromOffset
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API Ibm3624PinFromOffset();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API Ibm3624PinFromOffset() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Ibm3624PinFromOffset(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Ibm3624PinFromOffset& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,56 +44,48 @@ namespace Model
      * to convert the algorithm intermediate result from hexadecimal characters to
      * decimal.</p>
      */
-    inline const Aws::String& GetDecimalizationTable() const{ return m_decimalizationTable; }
+    inline const Aws::String& GetDecimalizationTable() const { return m_decimalizationTable; }
     inline bool DecimalizationTableHasBeenSet() const { return m_decimalizationTableHasBeenSet; }
-    inline void SetDecimalizationTable(const Aws::String& value) { m_decimalizationTableHasBeenSet = true; m_decimalizationTable = value; }
-    inline void SetDecimalizationTable(Aws::String&& value) { m_decimalizationTableHasBeenSet = true; m_decimalizationTable = std::move(value); }
-    inline void SetDecimalizationTable(const char* value) { m_decimalizationTableHasBeenSet = true; m_decimalizationTable.assign(value); }
-    inline Ibm3624PinFromOffset& WithDecimalizationTable(const Aws::String& value) { SetDecimalizationTable(value); return *this;}
-    inline Ibm3624PinFromOffset& WithDecimalizationTable(Aws::String&& value) { SetDecimalizationTable(std::move(value)); return *this;}
-    inline Ibm3624PinFromOffset& WithDecimalizationTable(const char* value) { SetDecimalizationTable(value); return *this;}
+    template<typename DecimalizationTableT = Aws::String>
+    void SetDecimalizationTable(DecimalizationTableT&& value) { m_decimalizationTableHasBeenSet = true; m_decimalizationTable = std::forward<DecimalizationTableT>(value); }
+    template<typename DecimalizationTableT = Aws::String>
+    Ibm3624PinFromOffset& WithDecimalizationTable(DecimalizationTableT&& value) { SetDecimalizationTable(std::forward<DecimalizationTableT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The padding character for validation data.</p>
      */
-    inline const Aws::String& GetPinValidationDataPadCharacter() const{ return m_pinValidationDataPadCharacter; }
+    inline const Aws::String& GetPinValidationDataPadCharacter() const { return m_pinValidationDataPadCharacter; }
     inline bool PinValidationDataPadCharacterHasBeenSet() const { return m_pinValidationDataPadCharacterHasBeenSet; }
-    inline void SetPinValidationDataPadCharacter(const Aws::String& value) { m_pinValidationDataPadCharacterHasBeenSet = true; m_pinValidationDataPadCharacter = value; }
-    inline void SetPinValidationDataPadCharacter(Aws::String&& value) { m_pinValidationDataPadCharacterHasBeenSet = true; m_pinValidationDataPadCharacter = std::move(value); }
-    inline void SetPinValidationDataPadCharacter(const char* value) { m_pinValidationDataPadCharacterHasBeenSet = true; m_pinValidationDataPadCharacter.assign(value); }
-    inline Ibm3624PinFromOffset& WithPinValidationDataPadCharacter(const Aws::String& value) { SetPinValidationDataPadCharacter(value); return *this;}
-    inline Ibm3624PinFromOffset& WithPinValidationDataPadCharacter(Aws::String&& value) { SetPinValidationDataPadCharacter(std::move(value)); return *this;}
-    inline Ibm3624PinFromOffset& WithPinValidationDataPadCharacter(const char* value) { SetPinValidationDataPadCharacter(value); return *this;}
+    template<typename PinValidationDataPadCharacterT = Aws::String>
+    void SetPinValidationDataPadCharacter(PinValidationDataPadCharacterT&& value) { m_pinValidationDataPadCharacterHasBeenSet = true; m_pinValidationDataPadCharacter = std::forward<PinValidationDataPadCharacterT>(value); }
+    template<typename PinValidationDataPadCharacterT = Aws::String>
+    Ibm3624PinFromOffset& WithPinValidationDataPadCharacter(PinValidationDataPadCharacterT&& value) { SetPinValidationDataPadCharacter(std::forward<PinValidationDataPadCharacterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique data for cardholder identification.</p>
      */
-    inline const Aws::String& GetPinValidationData() const{ return m_pinValidationData; }
+    inline const Aws::String& GetPinValidationData() const { return m_pinValidationData; }
     inline bool PinValidationDataHasBeenSet() const { return m_pinValidationDataHasBeenSet; }
-    inline void SetPinValidationData(const Aws::String& value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData = value; }
-    inline void SetPinValidationData(Aws::String&& value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData = std::move(value); }
-    inline void SetPinValidationData(const char* value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData.assign(value); }
-    inline Ibm3624PinFromOffset& WithPinValidationData(const Aws::String& value) { SetPinValidationData(value); return *this;}
-    inline Ibm3624PinFromOffset& WithPinValidationData(Aws::String&& value) { SetPinValidationData(std::move(value)); return *this;}
-    inline Ibm3624PinFromOffset& WithPinValidationData(const char* value) { SetPinValidationData(value); return *this;}
+    template<typename PinValidationDataT = Aws::String>
+    void SetPinValidationData(PinValidationDataT&& value) { m_pinValidationDataHasBeenSet = true; m_pinValidationData = std::forward<PinValidationDataT>(value); }
+    template<typename PinValidationDataT = Aws::String>
+    Ibm3624PinFromOffset& WithPinValidationData(PinValidationDataT&& value) { SetPinValidationData(std::forward<PinValidationDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The PIN offset value.</p>
      */
-    inline const Aws::String& GetPinOffset() const{ return m_pinOffset; }
+    inline const Aws::String& GetPinOffset() const { return m_pinOffset; }
     inline bool PinOffsetHasBeenSet() const { return m_pinOffsetHasBeenSet; }
-    inline void SetPinOffset(const Aws::String& value) { m_pinOffsetHasBeenSet = true; m_pinOffset = value; }
-    inline void SetPinOffset(Aws::String&& value) { m_pinOffsetHasBeenSet = true; m_pinOffset = std::move(value); }
-    inline void SetPinOffset(const char* value) { m_pinOffsetHasBeenSet = true; m_pinOffset.assign(value); }
-    inline Ibm3624PinFromOffset& WithPinOffset(const Aws::String& value) { SetPinOffset(value); return *this;}
-    inline Ibm3624PinFromOffset& WithPinOffset(Aws::String&& value) { SetPinOffset(std::move(value)); return *this;}
-    inline Ibm3624PinFromOffset& WithPinOffset(const char* value) { SetPinOffset(value); return *this;}
+    template<typename PinOffsetT = Aws::String>
+    void SetPinOffset(PinOffsetT&& value) { m_pinOffsetHasBeenSet = true; m_pinOffset = std::forward<PinOffsetT>(value); }
+    template<typename PinOffsetT = Aws::String>
+    Ibm3624PinFromOffset& WithPinOffset(PinOffsetT&& value) { SetPinOffset(std::forward<PinOffsetT>(value)); return *this;}
     ///@}
   private:
 

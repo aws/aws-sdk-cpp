@@ -32,7 +32,7 @@ namespace Model
   class FederatedCatalog
   {
   public:
-    AWS_GLUE_API FederatedCatalog();
+    AWS_GLUE_API FederatedCatalog() = default;
     AWS_GLUE_API FederatedCatalog(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API FederatedCatalog& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>A unique identifier for the federated catalog.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline FederatedCatalog& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline FederatedCatalog& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline FederatedCatalog& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    FederatedCatalog& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The name of the connection to an external data source, for example a
      * Redshift-federated catalog.</p>
      */
-    inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
+    inline const Aws::String& GetConnectionName() const { return m_connectionName; }
     inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
-    inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
-    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
-    inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
-    inline FederatedCatalog& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
-    inline FederatedCatalog& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
-    inline FederatedCatalog& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
+    template<typename ConnectionNameT = Aws::String>
+    void SetConnectionName(ConnectionNameT&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::forward<ConnectionNameT>(value); }
+    template<typename ConnectionNameT = Aws::String>
+    FederatedCatalog& WithConnectionName(ConnectionNameT&& value) { SetConnectionName(std::forward<ConnectionNameT>(value)); return *this;}
     ///@}
   private:
 

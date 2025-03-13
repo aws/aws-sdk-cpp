@@ -18,14 +18,7 @@ namespace ECR
 namespace Model
 {
 
-DescribeImagesFilter::DescribeImagesFilter() : 
-    m_tagStatus(TagStatus::NOT_SET),
-    m_tagStatusHasBeenSet(false)
-{
-}
-
 DescribeImagesFilter::DescribeImagesFilter(JsonView jsonValue)
-  : DescribeImagesFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DescribeImagesFilter& DescribeImagesFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tagStatus"))
   {
     m_tagStatus = TagStatusMapper::GetTagStatusForName(jsonValue.GetString("tagStatus"));
-
     m_tagStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

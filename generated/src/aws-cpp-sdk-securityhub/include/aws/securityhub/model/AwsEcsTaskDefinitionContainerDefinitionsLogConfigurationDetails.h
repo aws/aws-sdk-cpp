@@ -35,7 +35,7 @@ namespace Model
   class AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails() = default;
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * </li> <li> <p> <code>logentries</code> </p> </li> <li> <p> <code>splunk</code>
      * </p> </li> <li> <p> <code>syslog</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetLogDriver() const{ return m_logDriver; }
+    inline const Aws::String& GetLogDriver() const { return m_logDriver; }
     inline bool LogDriverHasBeenSet() const { return m_logDriverHasBeenSet; }
-    inline void SetLogDriver(const Aws::String& value) { m_logDriverHasBeenSet = true; m_logDriver = value; }
-    inline void SetLogDriver(Aws::String&& value) { m_logDriverHasBeenSet = true; m_logDriver = std::move(value); }
-    inline void SetLogDriver(const char* value) { m_logDriverHasBeenSet = true; m_logDriver.assign(value); }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithLogDriver(const Aws::String& value) { SetLogDriver(value); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithLogDriver(Aws::String&& value) { SetLogDriver(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithLogDriver(const char* value) { SetLogDriver(value); return *this;}
+    template<typename LogDriverT = Aws::String>
+    void SetLogDriver(LogDriverT&& value) { m_logDriverHasBeenSet = true; m_logDriver = std::forward<LogDriverT>(value); }
+    template<typename LogDriverT = Aws::String>
+    AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithLogDriver(LogDriverT&& value) { SetLogDriver(std::forward<LogDriverT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,33 +66,30 @@ namespace Model
      * <p>The configuration options to send to the log driver. Requires version 1.19 of
      * the Docker Remote API or greater on your container instance.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetOptions() const{ return m_options; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetOptions(value); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetOptions(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AddOptions(const Aws::String& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AddOptions(Aws::String&& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AddOptions(const Aws::String& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AddOptions(Aws::String&& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), std::move(value)); return *this; }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AddOptions(const char* key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AddOptions(Aws::String&& key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
+    template<typename OptionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Map<Aws::String, Aws::String>>
+    AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    template<typename OptionsKeyT = Aws::String, typename OptionsValueT = Aws::String>
+    AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AddOptions(OptionsKeyT&& key, OptionsValueT&& value) {
+      m_optionsHasBeenSet = true; m_options.emplace(std::forward<OptionsKeyT>(key), std::forward<OptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The secrets to pass to the log configuration.</p>
      */
-    inline const Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>& GetSecretOptions() const{ return m_secretOptions; }
+    inline const Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>& GetSecretOptions() const { return m_secretOptions; }
     inline bool SecretOptionsHasBeenSet() const { return m_secretOptionsHasBeenSet; }
-    inline void SetSecretOptions(const Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = value; }
-    inline void SetSecretOptions(Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = std::move(value); }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithSecretOptions(const Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>& value) { SetSecretOptions(value); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithSecretOptions(Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>&& value) { SetSecretOptions(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AddSecretOptions(const AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(value); return *this; }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AddSecretOptions(AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(std::move(value)); return *this; }
+    template<typename SecretOptionsT = Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>
+    void SetSecretOptions(SecretOptionsT&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = std::forward<SecretOptionsT>(value); }
+    template<typename SecretOptionsT = Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>
+    AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& WithSecretOptions(SecretOptionsT&& value) { SetSecretOptions(std::forward<SecretOptionsT>(value)); return *this;}
+    template<typename SecretOptionsT = AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>
+    AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AddSecretOptions(SecretOptionsT&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.emplace_back(std::forward<SecretOptionsT>(value)); return *this; }
     ///@}
   private:
 

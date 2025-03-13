@@ -13,13 +13,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutChannelExpirationSettingsRequest::PutChannelExpirationSettingsRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false),
-    m_expirationSettingsHasBeenSet(false)
-{
-}
-
 Aws::String PutChannelExpirationSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

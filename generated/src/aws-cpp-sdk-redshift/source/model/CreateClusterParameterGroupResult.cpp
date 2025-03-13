@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateClusterParameterGroupResult::CreateClusterParameterGroupResult()
-{
-}
-
 CreateClusterParameterGroupResult::CreateClusterParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreateClusterParameterGroupResult& CreateClusterParameterGroupResult::operator =
     if(!clusterParameterGroupNode.IsNull())
     {
       m_clusterParameterGroup = clusterParameterGroupNode;
+      m_clusterParameterGroupHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::CreateClusterParameterGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

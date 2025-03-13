@@ -24,7 +24,7 @@ namespace Model
   class UpdateWebhookRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API UpdateWebhookRequest();
+    AWS_CODEBUILD_API UpdateWebhookRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the CodeBuild project.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline UpdateWebhookRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline UpdateWebhookRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline UpdateWebhookRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    UpdateWebhookRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * branches are built.</p>  <p> It is recommended that you use
      * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
      */
-    inline const Aws::String& GetBranchFilter() const{ return m_branchFilter; }
+    inline const Aws::String& GetBranchFilter() const { return m_branchFilter; }
     inline bool BranchFilterHasBeenSet() const { return m_branchFilterHasBeenSet; }
-    inline void SetBranchFilter(const Aws::String& value) { m_branchFilterHasBeenSet = true; m_branchFilter = value; }
-    inline void SetBranchFilter(Aws::String&& value) { m_branchFilterHasBeenSet = true; m_branchFilter = std::move(value); }
-    inline void SetBranchFilter(const char* value) { m_branchFilterHasBeenSet = true; m_branchFilter.assign(value); }
-    inline UpdateWebhookRequest& WithBranchFilter(const Aws::String& value) { SetBranchFilter(value); return *this;}
-    inline UpdateWebhookRequest& WithBranchFilter(Aws::String&& value) { SetBranchFilter(std::move(value)); return *this;}
-    inline UpdateWebhookRequest& WithBranchFilter(const char* value) { SetBranchFilter(value); return *this;}
+    template<typename BranchFilterT = Aws::String>
+    void SetBranchFilter(BranchFilterT&& value) { m_branchFilterHasBeenSet = true; m_branchFilter = std::forward<BranchFilterT>(value); }
+    template<typename BranchFilterT = Aws::String>
+    UpdateWebhookRequest& WithBranchFilter(BranchFilterT&& value) { SetBranchFilter(std::forward<BranchFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +71,7 @@ namespace Model
      * secret token should be updated. If you use Bitbucket for your repository,
      * <code>rotateSecret</code> is ignored. </p>
      */
-    inline bool GetRotateSecret() const{ return m_rotateSecret; }
+    inline bool GetRotateSecret() const { return m_rotateSecret; }
     inline bool RotateSecretHasBeenSet() const { return m_rotateSecretHasBeenSet; }
     inline void SetRotateSecret(bool value) { m_rotateSecretHasBeenSet = true; m_rotateSecret = value; }
     inline UpdateWebhookRequest& WithRotateSecret(bool value) { SetRotateSecret(value); return *this;}
@@ -87,14 +83,14 @@ namespace Model
      * if a webhook event can trigger a build. A filter group must contain at least one
      * <code>EVENT</code> <code>WebhookFilter</code>. </p>
      */
-    inline const Aws::Vector<Aws::Vector<WebhookFilter>>& GetFilterGroups() const{ return m_filterGroups; }
+    inline const Aws::Vector<Aws::Vector<WebhookFilter>>& GetFilterGroups() const { return m_filterGroups; }
     inline bool FilterGroupsHasBeenSet() const { return m_filterGroupsHasBeenSet; }
-    inline void SetFilterGroups(const Aws::Vector<Aws::Vector<WebhookFilter>>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = value; }
-    inline void SetFilterGroups(Aws::Vector<Aws::Vector<WebhookFilter>>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = std::move(value); }
-    inline UpdateWebhookRequest& WithFilterGroups(const Aws::Vector<Aws::Vector<WebhookFilter>>& value) { SetFilterGroups(value); return *this;}
-    inline UpdateWebhookRequest& WithFilterGroups(Aws::Vector<Aws::Vector<WebhookFilter>>&& value) { SetFilterGroups(std::move(value)); return *this;}
-    inline UpdateWebhookRequest& AddFilterGroups(const Aws::Vector<WebhookFilter>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(value); return *this; }
-    inline UpdateWebhookRequest& AddFilterGroups(Aws::Vector<WebhookFilter>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(std::move(value)); return *this; }
+    template<typename FilterGroupsT = Aws::Vector<Aws::Vector<WebhookFilter>>>
+    void SetFilterGroups(FilterGroupsT&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = std::forward<FilterGroupsT>(value); }
+    template<typename FilterGroupsT = Aws::Vector<Aws::Vector<WebhookFilter>>>
+    UpdateWebhookRequest& WithFilterGroups(FilterGroupsT&& value) { SetFilterGroups(std::forward<FilterGroupsT>(value)); return *this;}
+    template<typename FilterGroupsT = Aws::Vector<WebhookFilter>>
+    UpdateWebhookRequest& AddFilterGroups(FilterGroupsT&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.emplace_back(std::forward<FilterGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -107,12 +103,10 @@ namespace Model
      * Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user
      * guide</i>.</p> 
      */
-    inline const WebhookBuildType& GetBuildType() const{ return m_buildType; }
+    inline WebhookBuildType GetBuildType() const { return m_buildType; }
     inline bool BuildTypeHasBeenSet() const { return m_buildTypeHasBeenSet; }
-    inline void SetBuildType(const WebhookBuildType& value) { m_buildTypeHasBeenSet = true; m_buildType = value; }
-    inline void SetBuildType(WebhookBuildType&& value) { m_buildTypeHasBeenSet = true; m_buildType = std::move(value); }
-    inline UpdateWebhookRequest& WithBuildType(const WebhookBuildType& value) { SetBuildType(value); return *this;}
-    inline UpdateWebhookRequest& WithBuildType(WebhookBuildType&& value) { SetBuildType(std::move(value)); return *this;}
+    inline void SetBuildType(WebhookBuildType value) { m_buildTypeHasBeenSet = true; m_buildType = value; }
+    inline UpdateWebhookRequest& WithBuildType(WebhookBuildType value) { SetBuildType(value); return *this;}
     ///@}
   private:
 
@@ -122,13 +116,13 @@ namespace Model
     Aws::String m_branchFilter;
     bool m_branchFilterHasBeenSet = false;
 
-    bool m_rotateSecret;
+    bool m_rotateSecret{false};
     bool m_rotateSecretHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<WebhookFilter>> m_filterGroups;
     bool m_filterGroupsHasBeenSet = false;
 
-    WebhookBuildType m_buildType;
+    WebhookBuildType m_buildType{WebhookBuildType::NOT_SET};
     bool m_buildTypeHasBeenSet = false;
   };
 

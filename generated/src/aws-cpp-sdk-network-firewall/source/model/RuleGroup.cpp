@@ -18,16 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-RuleGroup::RuleGroup() : 
-    m_ruleVariablesHasBeenSet(false),
-    m_referenceSetsHasBeenSet(false),
-    m_rulesSourceHasBeenSet(false),
-    m_statefulRuleOptionsHasBeenSet(false)
-{
-}
-
 RuleGroup::RuleGroup(JsonView jsonValue)
-  : RuleGroup()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleVariables"))
   {
     m_ruleVariables = jsonValue.GetObject("RuleVariables");
-
     m_ruleVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceSets"))
   {
     m_referenceSets = jsonValue.GetObject("ReferenceSets");
-
     m_referenceSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RulesSource"))
   {
     m_rulesSource = jsonValue.GetObject("RulesSource");
-
     m_rulesSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatefulRuleOptions"))
   {
     m_statefulRuleOptions = jsonValue.GetObject("StatefulRuleOptions");
-
     m_statefulRuleOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

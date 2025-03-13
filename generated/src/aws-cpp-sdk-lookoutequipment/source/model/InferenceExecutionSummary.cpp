@@ -18,28 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-InferenceExecutionSummary::InferenceExecutionSummary() : 
-    m_modelNameHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_inferenceSchedulerNameHasBeenSet(false),
-    m_inferenceSchedulerArnHasBeenSet(false),
-    m_scheduledStartTimeHasBeenSet(false),
-    m_dataStartTimeHasBeenSet(false),
-    m_dataEndTimeHasBeenSet(false),
-    m_dataInputConfigurationHasBeenSet(false),
-    m_dataOutputConfigurationHasBeenSet(false),
-    m_customerResultObjectHasBeenSet(false),
-    m_status(InferenceExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failedReasonHasBeenSet(false),
-    m_modelVersion(0),
-    m_modelVersionHasBeenSet(false),
-    m_modelVersionArnHasBeenSet(false)
-{
-}
-
 InferenceExecutionSummary::InferenceExecutionSummary(JsonView jsonValue)
-  : InferenceExecutionSummary()
 {
   *this = jsonValue;
 }
@@ -49,101 +28,73 @@ InferenceExecutionSummary& InferenceExecutionSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelArn"))
   {
     m_modelArn = jsonValue.GetString("ModelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceSchedulerName"))
   {
     m_inferenceSchedulerName = jsonValue.GetString("InferenceSchedulerName");
-
     m_inferenceSchedulerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceSchedulerArn"))
   {
     m_inferenceSchedulerArn = jsonValue.GetString("InferenceSchedulerArn");
-
     m_inferenceSchedulerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduledStartTime"))
   {
     m_scheduledStartTime = jsonValue.GetDouble("ScheduledStartTime");
-
     m_scheduledStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataStartTime"))
   {
     m_dataStartTime = jsonValue.GetDouble("DataStartTime");
-
     m_dataStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataEndTime"))
   {
     m_dataEndTime = jsonValue.GetDouble("DataEndTime");
-
     m_dataEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataInputConfiguration"))
   {
     m_dataInputConfiguration = jsonValue.GetObject("DataInputConfiguration");
-
     m_dataInputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataOutputConfiguration"))
   {
     m_dataOutputConfiguration = jsonValue.GetObject("DataOutputConfiguration");
-
     m_dataOutputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerResultObject"))
   {
     m_customerResultObject = jsonValue.GetObject("CustomerResultObject");
-
     m_customerResultObjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InferenceExecutionStatusMapper::GetInferenceExecutionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedReason"))
   {
     m_failedReason = jsonValue.GetString("FailedReason");
-
     m_failedReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelVersion"))
   {
     m_modelVersion = jsonValue.GetInt64("ModelVersion");
-
     m_modelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelVersionArn"))
   {
     m_modelVersionArn = jsonValue.GetString("ModelVersionArn");
-
     m_modelVersionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

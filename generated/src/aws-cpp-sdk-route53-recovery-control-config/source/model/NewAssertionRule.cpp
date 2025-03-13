@@ -18,18 +18,7 @@ namespace Route53RecoveryControlConfig
 namespace Model
 {
 
-NewAssertionRule::NewAssertionRule() : 
-    m_assertedControlsHasBeenSet(false),
-    m_controlPanelArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ruleConfigHasBeenSet(false),
-    m_waitPeriodMs(0),
-    m_waitPeriodMsHasBeenSet(false)
-{
-}
-
 NewAssertionRule::NewAssertionRule(JsonView jsonValue)
-  : NewAssertionRule()
 {
   *this = jsonValue;
 }
@@ -45,35 +34,26 @@ NewAssertionRule& NewAssertionRule::operator =(JsonView jsonValue)
     }
     m_assertedControlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlPanelArn"))
   {
     m_controlPanelArn = jsonValue.GetString("ControlPanelArn");
-
     m_controlPanelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleConfig"))
   {
     m_ruleConfig = jsonValue.GetObject("RuleConfig");
-
     m_ruleConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaitPeriodMs"))
   {
     m_waitPeriodMs = jsonValue.GetInteger("WaitPeriodMs");
-
     m_waitPeriodMsHasBeenSet = true;
   }
-
   return *this;
 }
 

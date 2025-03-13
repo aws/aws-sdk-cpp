@@ -18,26 +18,7 @@ namespace Health
 namespace Model
 {
 
-Event::Event() : 
-    m_arnHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_eventTypeCodeHasBeenSet(false),
-    m_eventTypeCategory(EventTypeCategory::NOT_SET),
-    m_eventTypeCategoryHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_statusCode(EventStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_eventScopeCode(EventScopeCode::NOT_SET),
-    m_eventScopeCodeHasBeenSet(false)
-{
-}
-
 Event::Event(JsonView jsonValue)
-  : Event()
 {
   *this = jsonValue;
 }
@@ -47,80 +28,58 @@ Event& Event::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("service"))
   {
     m_service = jsonValue.GetString("service");
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTypeCode"))
   {
     m_eventTypeCode = jsonValue.GetString("eventTypeCode");
-
     m_eventTypeCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTypeCategory"))
   {
     m_eventTypeCategory = EventTypeCategoryMapper::GetEventTypeCategoryForName(jsonValue.GetString("eventTypeCategory"));
-
     m_eventTypeCategoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = EventStatusCodeMapper::GetEventStatusCodeForName(jsonValue.GetString("statusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventScopeCode"))
   {
     m_eventScopeCode = EventScopeCodeMapper::GetEventScopeCodeForName(jsonValue.GetString("eventScopeCode"));
-
     m_eventScopeCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

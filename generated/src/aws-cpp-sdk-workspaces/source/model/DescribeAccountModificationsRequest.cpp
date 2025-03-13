@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccountModificationsRequest::DescribeAccountModificationsRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccountModificationsRequest::SerializePayload() const
 {
   JsonValue payload;

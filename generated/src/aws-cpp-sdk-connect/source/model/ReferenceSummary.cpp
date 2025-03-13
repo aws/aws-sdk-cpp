@@ -18,19 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ReferenceSummary::ReferenceSummary() : 
-    m_urlHasBeenSet(false),
-    m_attachmentHasBeenSet(false),
-    m_emailMessageHasBeenSet(false),
-    m_stringHasBeenSet(false),
-    m_numberHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_emailHasBeenSet(false)
-{
-}
-
 ReferenceSummary::ReferenceSummary(JsonView jsonValue)
-  : ReferenceSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ ReferenceSummary& ReferenceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetObject("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attachment"))
   {
     m_attachment = jsonValue.GetObject("Attachment");
-
     m_attachmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailMessage"))
   {
     m_emailMessage = jsonValue.GetObject("EmailMessage");
-
     m_emailMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("String"))
   {
     m_string = jsonValue.GetObject("String");
-
     m_stringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Number"))
   {
     m_number = jsonValue.GetObject("Number");
-
     m_numberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Date"))
   {
     m_date = jsonValue.GetObject("Date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Email"))
   {
     m_email = jsonValue.GetObject("Email");
-
     m_emailHasBeenSet = true;
   }
-
   return *this;
 }
 

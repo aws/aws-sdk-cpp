@@ -27,7 +27,7 @@ namespace Model
   class InvokeAssistantInitialResponse
   {
   public:
-    AWS_IOTSITEWISE_API InvokeAssistantInitialResponse();
+    AWS_IOTSITEWISE_API InvokeAssistantInitialResponse() = default;
     AWS_IOTSITEWISE_API InvokeAssistantInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API InvokeAssistantInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API InvokeAssistantInitialResponse(const Http::HeaderValueCollection& responseHeaders);
@@ -39,14 +39,12 @@ namespace Model
      * <p>The ID of the conversation, in UUID format. This ID uniquely identifies the
      * conversation within IoT SiteWise.</p>
      */
-    inline const Aws::String& GetConversationId() const{ return m_conversationId; }
+    inline const Aws::String& GetConversationId() const { return m_conversationId; }
     inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
-    inline void SetConversationId(const Aws::String& value) { m_conversationIdHasBeenSet = true; m_conversationId = value; }
-    inline void SetConversationId(Aws::String&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::move(value); }
-    inline void SetConversationId(const char* value) { m_conversationIdHasBeenSet = true; m_conversationId.assign(value); }
-    inline InvokeAssistantInitialResponse& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
-    inline InvokeAssistantInitialResponse& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
-    inline InvokeAssistantInitialResponse& WithConversationId(const char* value) { SetConversationId(value); return *this;}
+    template<typename ConversationIdT = Aws::String>
+    void SetConversationId(ConversationIdT&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::forward<ConversationIdT>(value); }
+    template<typename ConversationIdT = Aws::String>
+    InvokeAssistantInitialResponse& WithConversationId(ConversationIdT&& value) { SetConversationId(std::forward<ConversationIdT>(value)); return *this;}
     ///@}
   private:
 

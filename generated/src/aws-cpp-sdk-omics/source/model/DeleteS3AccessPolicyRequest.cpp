@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteS3AccessPolicyRequest::DeleteS3AccessPolicyRequest() : 
-    m_s3AccessPointArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteS3AccessPolicyRequest::SerializePayload() const
 {
   return {};

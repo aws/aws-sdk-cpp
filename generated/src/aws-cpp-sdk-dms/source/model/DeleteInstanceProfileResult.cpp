@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteInstanceProfileResult::DeleteInstanceProfileResult()
-{
-}
-
 DeleteInstanceProfileResult::DeleteInstanceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteInstanceProfileResult& DeleteInstanceProfileResult::operator =(const Aws::
   if(jsonValue.ValueExists("InstanceProfile"))
   {
     m_instanceProfile = jsonValue.GetObject("InstanceProfile");
-
+    m_instanceProfileHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

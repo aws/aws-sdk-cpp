@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Hdr10Plus::Hdr10Plus() : 
-    m_masteringMonitorNits(0),
-    m_masteringMonitorNitsHasBeenSet(false),
-    m_targetMonitorNits(0),
-    m_targetMonitorNitsHasBeenSet(false)
-{
-}
-
 Hdr10Plus::Hdr10Plus(JsonView jsonValue)
-  : Hdr10Plus()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Hdr10Plus& Hdr10Plus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("masteringMonitorNits"))
   {
     m_masteringMonitorNits = jsonValue.GetInteger("masteringMonitorNits");
-
     m_masteringMonitorNitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetMonitorNits"))
   {
     m_targetMonitorNits = jsonValue.GetInteger("targetMonitorNits");
-
     m_targetMonitorNitsHasBeenSet = true;
   }
-
   return *this;
 }
 

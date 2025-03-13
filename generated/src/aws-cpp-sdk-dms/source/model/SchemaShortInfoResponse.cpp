@@ -18,17 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-SchemaShortInfoResponse::SchemaShortInfoResponse() : 
-    m_schemaIdHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_databaseIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_databaseIpAddressHasBeenSet(false)
-{
-}
-
 SchemaShortInfoResponse::SchemaShortInfoResponse(JsonView jsonValue)
-  : SchemaShortInfoResponse()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ SchemaShortInfoResponse& SchemaShortInfoResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SchemaId"))
   {
     m_schemaId = jsonValue.GetString("SchemaId");
-
     m_schemaIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaName"))
   {
     m_schemaName = jsonValue.GetString("SchemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseId"))
   {
     m_databaseId = jsonValue.GetString("DatabaseId");
-
     m_databaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseIpAddress"))
   {
     m_databaseIpAddress = jsonValue.GetString("DatabaseIpAddress");
-
     m_databaseIpAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

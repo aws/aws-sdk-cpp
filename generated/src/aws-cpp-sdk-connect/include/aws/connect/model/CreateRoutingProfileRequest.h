@@ -26,7 +26,7 @@ namespace Model
   class CreateRoutingProfileRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API CreateRoutingProfileRequest();
+    AWS_CONNECT_API CreateRoutingProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,56 +43,48 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline CreateRoutingProfileRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline CreateRoutingProfileRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline CreateRoutingProfileRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    CreateRoutingProfileRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the routing profile. Must not be more than 127 characters.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateRoutingProfileRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateRoutingProfileRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateRoutingProfileRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateRoutingProfileRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description of the routing profile. Must not be more than 250 characters.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateRoutingProfileRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateRoutingProfileRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateRoutingProfileRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateRoutingProfileRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default outbound queue for the routing profile.</p>
      */
-    inline const Aws::String& GetDefaultOutboundQueueId() const{ return m_defaultOutboundQueueId; }
+    inline const Aws::String& GetDefaultOutboundQueueId() const { return m_defaultOutboundQueueId; }
     inline bool DefaultOutboundQueueIdHasBeenSet() const { return m_defaultOutboundQueueIdHasBeenSet; }
-    inline void SetDefaultOutboundQueueId(const Aws::String& value) { m_defaultOutboundQueueIdHasBeenSet = true; m_defaultOutboundQueueId = value; }
-    inline void SetDefaultOutboundQueueId(Aws::String&& value) { m_defaultOutboundQueueIdHasBeenSet = true; m_defaultOutboundQueueId = std::move(value); }
-    inline void SetDefaultOutboundQueueId(const char* value) { m_defaultOutboundQueueIdHasBeenSet = true; m_defaultOutboundQueueId.assign(value); }
-    inline CreateRoutingProfileRequest& WithDefaultOutboundQueueId(const Aws::String& value) { SetDefaultOutboundQueueId(value); return *this;}
-    inline CreateRoutingProfileRequest& WithDefaultOutboundQueueId(Aws::String&& value) { SetDefaultOutboundQueueId(std::move(value)); return *this;}
-    inline CreateRoutingProfileRequest& WithDefaultOutboundQueueId(const char* value) { SetDefaultOutboundQueueId(value); return *this;}
+    template<typename DefaultOutboundQueueIdT = Aws::String>
+    void SetDefaultOutboundQueueId(DefaultOutboundQueueIdT&& value) { m_defaultOutboundQueueIdHasBeenSet = true; m_defaultOutboundQueueId = std::forward<DefaultOutboundQueueIdT>(value); }
+    template<typename DefaultOutboundQueueIdT = Aws::String>
+    CreateRoutingProfileRequest& WithDefaultOutboundQueueId(DefaultOutboundQueueIdT&& value) { SetDefaultOutboundQueueId(std::forward<DefaultOutboundQueueIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +98,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
      * Connect service quotas</a>. </p>
      */
-    inline const Aws::Vector<RoutingProfileQueueConfig>& GetQueueConfigs() const{ return m_queueConfigs; }
+    inline const Aws::Vector<RoutingProfileQueueConfig>& GetQueueConfigs() const { return m_queueConfigs; }
     inline bool QueueConfigsHasBeenSet() const { return m_queueConfigsHasBeenSet; }
-    inline void SetQueueConfigs(const Aws::Vector<RoutingProfileQueueConfig>& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs = value; }
-    inline void SetQueueConfigs(Aws::Vector<RoutingProfileQueueConfig>&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs = std::move(value); }
-    inline CreateRoutingProfileRequest& WithQueueConfigs(const Aws::Vector<RoutingProfileQueueConfig>& value) { SetQueueConfigs(value); return *this;}
-    inline CreateRoutingProfileRequest& WithQueueConfigs(Aws::Vector<RoutingProfileQueueConfig>&& value) { SetQueueConfigs(std::move(value)); return *this;}
-    inline CreateRoutingProfileRequest& AddQueueConfigs(const RoutingProfileQueueConfig& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.push_back(value); return *this; }
-    inline CreateRoutingProfileRequest& AddQueueConfigs(RoutingProfileQueueConfig&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.push_back(std::move(value)); return *this; }
+    template<typename QueueConfigsT = Aws::Vector<RoutingProfileQueueConfig>>
+    void SetQueueConfigs(QueueConfigsT&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs = std::forward<QueueConfigsT>(value); }
+    template<typename QueueConfigsT = Aws::Vector<RoutingProfileQueueConfig>>
+    CreateRoutingProfileRequest& WithQueueConfigs(QueueConfigsT&& value) { SetQueueConfigs(std::forward<QueueConfigsT>(value)); return *this;}
+    template<typename QueueConfigsT = RoutingProfileQueueConfig>
+    CreateRoutingProfileRequest& AddQueueConfigs(QueueConfigsT&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.emplace_back(std::forward<QueueConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -121,14 +113,14 @@ namespace Model
      * <p>The channels that agents can handle in the Contact Control Panel (CCP) for
      * this routing profile.</p>
      */
-    inline const Aws::Vector<MediaConcurrency>& GetMediaConcurrencies() const{ return m_mediaConcurrencies; }
+    inline const Aws::Vector<MediaConcurrency>& GetMediaConcurrencies() const { return m_mediaConcurrencies; }
     inline bool MediaConcurrenciesHasBeenSet() const { return m_mediaConcurrenciesHasBeenSet; }
-    inline void SetMediaConcurrencies(const Aws::Vector<MediaConcurrency>& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies = value; }
-    inline void SetMediaConcurrencies(Aws::Vector<MediaConcurrency>&& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies = std::move(value); }
-    inline CreateRoutingProfileRequest& WithMediaConcurrencies(const Aws::Vector<MediaConcurrency>& value) { SetMediaConcurrencies(value); return *this;}
-    inline CreateRoutingProfileRequest& WithMediaConcurrencies(Aws::Vector<MediaConcurrency>&& value) { SetMediaConcurrencies(std::move(value)); return *this;}
-    inline CreateRoutingProfileRequest& AddMediaConcurrencies(const MediaConcurrency& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies.push_back(value); return *this; }
-    inline CreateRoutingProfileRequest& AddMediaConcurrencies(MediaConcurrency&& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies.push_back(std::move(value)); return *this; }
+    template<typename MediaConcurrenciesT = Aws::Vector<MediaConcurrency>>
+    void SetMediaConcurrencies(MediaConcurrenciesT&& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies = std::forward<MediaConcurrenciesT>(value); }
+    template<typename MediaConcurrenciesT = Aws::Vector<MediaConcurrency>>
+    CreateRoutingProfileRequest& WithMediaConcurrencies(MediaConcurrenciesT&& value) { SetMediaConcurrencies(std::forward<MediaConcurrenciesT>(value)); return *this;}
+    template<typename MediaConcurrenciesT = MediaConcurrency>
+    CreateRoutingProfileRequest& AddMediaConcurrencies(MediaConcurrenciesT&& value) { m_mediaConcurrenciesHasBeenSet = true; m_mediaConcurrencies.emplace_back(std::forward<MediaConcurrenciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -136,19 +128,16 @@ namespace Model
      * <p>The tags used to organize, track, or control access for this resource. For
      * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateRoutingProfileRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateRoutingProfileRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateRoutingProfileRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateRoutingProfileRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateRoutingProfileRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateRoutingProfileRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateRoutingProfileRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateRoutingProfileRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateRoutingProfileRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateRoutingProfileRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateRoutingProfileRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -157,12 +146,10 @@ namespace Model
      * calculated based on <i>longest idle time</i> or <i>time since their last inbound
      * contact</i>. </p>
      */
-    inline const AgentAvailabilityTimer& GetAgentAvailabilityTimer() const{ return m_agentAvailabilityTimer; }
+    inline AgentAvailabilityTimer GetAgentAvailabilityTimer() const { return m_agentAvailabilityTimer; }
     inline bool AgentAvailabilityTimerHasBeenSet() const { return m_agentAvailabilityTimerHasBeenSet; }
-    inline void SetAgentAvailabilityTimer(const AgentAvailabilityTimer& value) { m_agentAvailabilityTimerHasBeenSet = true; m_agentAvailabilityTimer = value; }
-    inline void SetAgentAvailabilityTimer(AgentAvailabilityTimer&& value) { m_agentAvailabilityTimerHasBeenSet = true; m_agentAvailabilityTimer = std::move(value); }
-    inline CreateRoutingProfileRequest& WithAgentAvailabilityTimer(const AgentAvailabilityTimer& value) { SetAgentAvailabilityTimer(value); return *this;}
-    inline CreateRoutingProfileRequest& WithAgentAvailabilityTimer(AgentAvailabilityTimer&& value) { SetAgentAvailabilityTimer(std::move(value)); return *this;}
+    inline void SetAgentAvailabilityTimer(AgentAvailabilityTimer value) { m_agentAvailabilityTimerHasBeenSet = true; m_agentAvailabilityTimer = value; }
+    inline CreateRoutingProfileRequest& WithAgentAvailabilityTimer(AgentAvailabilityTimer value) { SetAgentAvailabilityTimer(value); return *this;}
     ///@}
   private:
 
@@ -187,7 +174,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    AgentAvailabilityTimer m_agentAvailabilityTimer;
+    AgentAvailabilityTimer m_agentAvailabilityTimer{AgentAvailabilityTimer::NOT_SET};
     bool m_agentAvailabilityTimerHasBeenSet = false;
   };
 

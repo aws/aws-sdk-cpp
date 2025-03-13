@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-MultiRegionAccessPointPolicyDocument::MultiRegionAccessPointPolicyDocument() : 
-    m_establishedHasBeenSet(false),
-    m_proposedHasBeenSet(false)
-{
-}
-
 MultiRegionAccessPointPolicyDocument::MultiRegionAccessPointPolicyDocument(const XmlNode& xmlNode)
-  : MultiRegionAccessPointPolicyDocument()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ MultiRegionAccessPointPolicyDocument& MultiRegionAccessPointPolicyDocument::oper
     {
       m_established = establishedNode;
       m_establishedHasBeenSet = true;
+       m_establishedHasBeenSet = true;
     }
     XmlNode proposedNode = resultNode.FirstChild("Proposed");
     if(!proposedNode.IsNull())
     {
       m_proposed = proposedNode;
       m_proposedHasBeenSet = true;
+       m_proposedHasBeenSet = true;
     }
   }
 

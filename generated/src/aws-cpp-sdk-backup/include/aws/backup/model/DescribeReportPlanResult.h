@@ -28,7 +28,7 @@ namespace Model
   class DescribeReportPlanResult
   {
   public:
-    AWS_BACKUP_API DescribeReportPlanResult();
+    AWS_BACKUP_API DescribeReportPlanResult() = default;
     AWS_BACKUP_API DescribeReportPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API DescribeReportPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,28 +40,28 @@ namespace Model
      * settings, delivery channel, deployment status, creation time, and last attempted
      * and successful run times.</p>
      */
-    inline const ReportPlan& GetReportPlan() const{ return m_reportPlan; }
-    inline void SetReportPlan(const ReportPlan& value) { m_reportPlan = value; }
-    inline void SetReportPlan(ReportPlan&& value) { m_reportPlan = std::move(value); }
-    inline DescribeReportPlanResult& WithReportPlan(const ReportPlan& value) { SetReportPlan(value); return *this;}
-    inline DescribeReportPlanResult& WithReportPlan(ReportPlan&& value) { SetReportPlan(std::move(value)); return *this;}
+    inline const ReportPlan& GetReportPlan() const { return m_reportPlan; }
+    template<typename ReportPlanT = ReportPlan>
+    void SetReportPlan(ReportPlanT&& value) { m_reportPlanHasBeenSet = true; m_reportPlan = std::forward<ReportPlanT>(value); }
+    template<typename ReportPlanT = ReportPlan>
+    DescribeReportPlanResult& WithReportPlan(ReportPlanT&& value) { SetReportPlan(std::forward<ReportPlanT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeReportPlanResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeReportPlanResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeReportPlanResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeReportPlanResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ReportPlan m_reportPlan;
+    bool m_reportPlanHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

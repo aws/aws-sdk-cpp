@@ -18,14 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-WirelessConnection::WirelessConnection() : 
-    m_isWifiEnabled(false),
-    m_isWifiEnabledHasBeenSet(false)
-{
-}
-
 WirelessConnection::WirelessConnection(JsonView jsonValue)
-  : WirelessConnection()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WirelessConnection& WirelessConnection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IsWifiEnabled"))
   {
     m_isWifiEnabled = jsonValue.GetBool("IsWifiEnabled");
-
     m_isWifiEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

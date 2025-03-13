@@ -34,7 +34,7 @@ namespace Model
   class SeverityLevel
   {
   public:
-    AWS_MACIE2_API SeverityLevel();
+    AWS_MACIE2_API SeverityLevel() = default;
     AWS_MACIE2_API SeverityLevel(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API SeverityLevel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * identifier's detection criteria in order to produce a finding with the specified
      * severity (severity).</p>
      */
-    inline long long GetOccurrencesThreshold() const{ return m_occurrencesThreshold; }
+    inline long long GetOccurrencesThreshold() const { return m_occurrencesThreshold; }
     inline bool OccurrencesThresholdHasBeenSet() const { return m_occurrencesThresholdHasBeenSet; }
     inline void SetOccurrencesThreshold(long long value) { m_occurrencesThresholdHasBeenSet = true; m_occurrencesThreshold = value; }
     inline SeverityLevel& WithOccurrencesThreshold(long long value) { SetOccurrencesThreshold(value); return *this;}
@@ -60,19 +60,17 @@ namespace Model
      * consecutive severity level for the custom data identifier, moving from LOW to
      * HIGH.</p>
      */
-    inline const DataIdentifierSeverity& GetSeverity() const{ return m_severity; }
+    inline DataIdentifierSeverity GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const DataIdentifierSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(DataIdentifierSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline SeverityLevel& WithSeverity(const DataIdentifierSeverity& value) { SetSeverity(value); return *this;}
-    inline SeverityLevel& WithSeverity(DataIdentifierSeverity&& value) { SetSeverity(std::move(value)); return *this;}
+    inline void SetSeverity(DataIdentifierSeverity value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline SeverityLevel& WithSeverity(DataIdentifierSeverity value) { SetSeverity(value); return *this;}
     ///@}
   private:
 
-    long long m_occurrencesThreshold;
+    long long m_occurrencesThreshold{0};
     bool m_occurrencesThresholdHasBeenSet = false;
 
-    DataIdentifierSeverity m_severity;
+    DataIdentifierSeverity m_severity{DataIdentifierSeverity::NOT_SET};
     bool m_severityHasBeenSet = false;
   };
 

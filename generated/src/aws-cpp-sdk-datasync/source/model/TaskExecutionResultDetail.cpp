@@ -18,28 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-TaskExecutionResultDetail::TaskExecutionResultDetail() : 
-    m_prepareDuration(0),
-    m_prepareDurationHasBeenSet(false),
-    m_prepareStatus(PhaseStatus::NOT_SET),
-    m_prepareStatusHasBeenSet(false),
-    m_totalDuration(0),
-    m_totalDurationHasBeenSet(false),
-    m_transferDuration(0),
-    m_transferDurationHasBeenSet(false),
-    m_transferStatus(PhaseStatus::NOT_SET),
-    m_transferStatusHasBeenSet(false),
-    m_verifyDuration(0),
-    m_verifyDurationHasBeenSet(false),
-    m_verifyStatus(PhaseStatus::NOT_SET),
-    m_verifyStatusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
-{
-}
-
 TaskExecutionResultDetail::TaskExecutionResultDetail(JsonView jsonValue)
-  : TaskExecutionResultDetail()
 {
   *this = jsonValue;
 }
@@ -49,66 +28,48 @@ TaskExecutionResultDetail& TaskExecutionResultDetail::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("PrepareDuration"))
   {
     m_prepareDuration = jsonValue.GetInt64("PrepareDuration");
-
     m_prepareDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrepareStatus"))
   {
     m_prepareStatus = PhaseStatusMapper::GetPhaseStatusForName(jsonValue.GetString("PrepareStatus"));
-
     m_prepareStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalDuration"))
   {
     m_totalDuration = jsonValue.GetInt64("TotalDuration");
-
     m_totalDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransferDuration"))
   {
     m_transferDuration = jsonValue.GetInt64("TransferDuration");
-
     m_transferDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransferStatus"))
   {
     m_transferStatus = PhaseStatusMapper::GetPhaseStatusForName(jsonValue.GetString("TransferStatus"));
-
     m_transferStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerifyDuration"))
   {
     m_verifyDuration = jsonValue.GetInt64("VerifyDuration");
-
     m_verifyDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerifyStatus"))
   {
     m_verifyStatus = PhaseStatusMapper::GetPhaseStatusForName(jsonValue.GetString("VerifyStatus"));
-
     m_verifyStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorDetail"))
   {
     m_errorDetail = jsonValue.GetString("ErrorDetail");
-
     m_errorDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

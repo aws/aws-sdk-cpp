@@ -31,7 +31,7 @@ namespace Model
   class Cipher
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API Cipher();
+    AWS_ELASTICLOADBALANCINGV2_API Cipher() = default;
     AWS_ELASTICLOADBALANCINGV2_API Cipher(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API Cipher& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The name of the cipher.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Cipher& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Cipher& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Cipher& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Cipher& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The priority of the cipher.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline Cipher& WithPriority(int value) { SetPriority(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
   };
 

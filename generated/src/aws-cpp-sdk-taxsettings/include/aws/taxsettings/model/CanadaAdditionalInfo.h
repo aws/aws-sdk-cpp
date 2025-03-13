@@ -32,7 +32,7 @@ namespace Model
   class CanadaAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API CanadaAdditionalInfo();
+    AWS_TAXSETTINGS_API CanadaAdditionalInfo() = default;
     AWS_TAXSETTINGS_API CanadaAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API CanadaAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> The Quebec Sales Tax ID number. Leave blank if you do not have a Quebec
      * Sales Tax ID number. </p>
      */
-    inline const Aws::String& GetCanadaQuebecSalesTaxNumber() const{ return m_canadaQuebecSalesTaxNumber; }
+    inline const Aws::String& GetCanadaQuebecSalesTaxNumber() const { return m_canadaQuebecSalesTaxNumber; }
     inline bool CanadaQuebecSalesTaxNumberHasBeenSet() const { return m_canadaQuebecSalesTaxNumberHasBeenSet; }
-    inline void SetCanadaQuebecSalesTaxNumber(const Aws::String& value) { m_canadaQuebecSalesTaxNumberHasBeenSet = true; m_canadaQuebecSalesTaxNumber = value; }
-    inline void SetCanadaQuebecSalesTaxNumber(Aws::String&& value) { m_canadaQuebecSalesTaxNumberHasBeenSet = true; m_canadaQuebecSalesTaxNumber = std::move(value); }
-    inline void SetCanadaQuebecSalesTaxNumber(const char* value) { m_canadaQuebecSalesTaxNumberHasBeenSet = true; m_canadaQuebecSalesTaxNumber.assign(value); }
-    inline CanadaAdditionalInfo& WithCanadaQuebecSalesTaxNumber(const Aws::String& value) { SetCanadaQuebecSalesTaxNumber(value); return *this;}
-    inline CanadaAdditionalInfo& WithCanadaQuebecSalesTaxNumber(Aws::String&& value) { SetCanadaQuebecSalesTaxNumber(std::move(value)); return *this;}
-    inline CanadaAdditionalInfo& WithCanadaQuebecSalesTaxNumber(const char* value) { SetCanadaQuebecSalesTaxNumber(value); return *this;}
+    template<typename CanadaQuebecSalesTaxNumberT = Aws::String>
+    void SetCanadaQuebecSalesTaxNumber(CanadaQuebecSalesTaxNumberT&& value) { m_canadaQuebecSalesTaxNumberHasBeenSet = true; m_canadaQuebecSalesTaxNumber = std::forward<CanadaQuebecSalesTaxNumberT>(value); }
+    template<typename CanadaQuebecSalesTaxNumberT = Aws::String>
+    CanadaAdditionalInfo& WithCanadaQuebecSalesTaxNumber(CanadaQuebecSalesTaxNumberT&& value) { SetCanadaQuebecSalesTaxNumber(std::forward<CanadaQuebecSalesTaxNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * ID number in Manitoba or are not purchasing Amazon Web Services services for
      * resale. </p>
      */
-    inline const Aws::String& GetCanadaRetailSalesTaxNumber() const{ return m_canadaRetailSalesTaxNumber; }
+    inline const Aws::String& GetCanadaRetailSalesTaxNumber() const { return m_canadaRetailSalesTaxNumber; }
     inline bool CanadaRetailSalesTaxNumberHasBeenSet() const { return m_canadaRetailSalesTaxNumberHasBeenSet; }
-    inline void SetCanadaRetailSalesTaxNumber(const Aws::String& value) { m_canadaRetailSalesTaxNumberHasBeenSet = true; m_canadaRetailSalesTaxNumber = value; }
-    inline void SetCanadaRetailSalesTaxNumber(Aws::String&& value) { m_canadaRetailSalesTaxNumberHasBeenSet = true; m_canadaRetailSalesTaxNumber = std::move(value); }
-    inline void SetCanadaRetailSalesTaxNumber(const char* value) { m_canadaRetailSalesTaxNumberHasBeenSet = true; m_canadaRetailSalesTaxNumber.assign(value); }
-    inline CanadaAdditionalInfo& WithCanadaRetailSalesTaxNumber(const Aws::String& value) { SetCanadaRetailSalesTaxNumber(value); return *this;}
-    inline CanadaAdditionalInfo& WithCanadaRetailSalesTaxNumber(Aws::String&& value) { SetCanadaRetailSalesTaxNumber(std::move(value)); return *this;}
-    inline CanadaAdditionalInfo& WithCanadaRetailSalesTaxNumber(const char* value) { SetCanadaRetailSalesTaxNumber(value); return *this;}
+    template<typename CanadaRetailSalesTaxNumberT = Aws::String>
+    void SetCanadaRetailSalesTaxNumber(CanadaRetailSalesTaxNumberT&& value) { m_canadaRetailSalesTaxNumberHasBeenSet = true; m_canadaRetailSalesTaxNumber = std::forward<CanadaRetailSalesTaxNumberT>(value); }
+    template<typename CanadaRetailSalesTaxNumberT = Aws::String>
+    CanadaAdditionalInfo& WithCanadaRetailSalesTaxNumber(CanadaRetailSalesTaxNumberT&& value) { SetCanadaRetailSalesTaxNumber(std::forward<CanadaRetailSalesTaxNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +77,7 @@ namespace Model
      * or RST number from the <code>provincialSalesTaxId</code> parameter from your
      * request.</p>
      */
-    inline bool GetIsResellerAccount() const{ return m_isResellerAccount; }
+    inline bool GetIsResellerAccount() const { return m_isResellerAccount; }
     inline bool IsResellerAccountHasBeenSet() const { return m_isResellerAccountHasBeenSet; }
     inline void SetIsResellerAccount(bool value) { m_isResellerAccountHasBeenSet = true; m_isResellerAccount = value; }
     inline CanadaAdditionalInfo& WithIsResellerAccount(bool value) { SetIsResellerAccount(value); return *this;}
@@ -97,14 +93,12 @@ namespace Model
      * this parameter if the TRN is specified for the previous provinces. For other
      * provinces, the Tax Settings API doesn't accept this parameter. </p>
      */
-    inline const Aws::String& GetProvincialSalesTaxId() const{ return m_provincialSalesTaxId; }
+    inline const Aws::String& GetProvincialSalesTaxId() const { return m_provincialSalesTaxId; }
     inline bool ProvincialSalesTaxIdHasBeenSet() const { return m_provincialSalesTaxIdHasBeenSet; }
-    inline void SetProvincialSalesTaxId(const Aws::String& value) { m_provincialSalesTaxIdHasBeenSet = true; m_provincialSalesTaxId = value; }
-    inline void SetProvincialSalesTaxId(Aws::String&& value) { m_provincialSalesTaxIdHasBeenSet = true; m_provincialSalesTaxId = std::move(value); }
-    inline void SetProvincialSalesTaxId(const char* value) { m_provincialSalesTaxIdHasBeenSet = true; m_provincialSalesTaxId.assign(value); }
-    inline CanadaAdditionalInfo& WithProvincialSalesTaxId(const Aws::String& value) { SetProvincialSalesTaxId(value); return *this;}
-    inline CanadaAdditionalInfo& WithProvincialSalesTaxId(Aws::String&& value) { SetProvincialSalesTaxId(std::move(value)); return *this;}
-    inline CanadaAdditionalInfo& WithProvincialSalesTaxId(const char* value) { SetProvincialSalesTaxId(value); return *this;}
+    template<typename ProvincialSalesTaxIdT = Aws::String>
+    void SetProvincialSalesTaxId(ProvincialSalesTaxIdT&& value) { m_provincialSalesTaxIdHasBeenSet = true; m_provincialSalesTaxId = std::forward<ProvincialSalesTaxIdT>(value); }
+    template<typename ProvincialSalesTaxIdT = Aws::String>
+    CanadaAdditionalInfo& WithProvincialSalesTaxId(ProvincialSalesTaxIdT&& value) { SetProvincialSalesTaxId(std::forward<ProvincialSalesTaxIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -114,7 +108,7 @@ namespace Model
     Aws::String m_canadaRetailSalesTaxNumber;
     bool m_canadaRetailSalesTaxNumberHasBeenSet = false;
 
-    bool m_isResellerAccount;
+    bool m_isResellerAccount{false};
     bool m_isResellerAccountHasBeenSet = false;
 
     Aws::String m_provincialSalesTaxId;

@@ -27,7 +27,7 @@ namespace Model
   class DefineSuggesterRequest : public CloudSearchRequest
   {
   public:
-    AWS_CLOUDSEARCH_API DefineSuggesterRequest();
+    AWS_CLOUDSEARCH_API DefineSuggesterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,24 +44,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DefineSuggesterRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DefineSuggesterRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DefineSuggesterRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DefineSuggesterRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Suggester& GetSuggester() const{ return m_suggester; }
+    inline const Suggester& GetSuggester() const { return m_suggester; }
     inline bool SuggesterHasBeenSet() const { return m_suggesterHasBeenSet; }
-    inline void SetSuggester(const Suggester& value) { m_suggesterHasBeenSet = true; m_suggester = value; }
-    inline void SetSuggester(Suggester&& value) { m_suggesterHasBeenSet = true; m_suggester = std::move(value); }
-    inline DefineSuggesterRequest& WithSuggester(const Suggester& value) { SetSuggester(value); return *this;}
-    inline DefineSuggesterRequest& WithSuggester(Suggester&& value) { SetSuggester(std::move(value)); return *this;}
+    template<typename SuggesterT = Suggester>
+    void SetSuggester(SuggesterT&& value) { m_suggesterHasBeenSet = true; m_suggester = std::forward<SuggesterT>(value); }
+    template<typename SuggesterT = Suggester>
+    DefineSuggesterRequest& WithSuggester(SuggesterT&& value) { SetSuggester(std::forward<SuggesterT>(value)); return *this;}
     ///@}
   private:
 

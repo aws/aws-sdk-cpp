@@ -18,16 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-Bandwidth::Bandwidth() : 
-    m_uploadSpeed(0),
-    m_uploadSpeedHasBeenSet(false),
-    m_downloadSpeed(0),
-    m_downloadSpeedHasBeenSet(false)
-{
-}
-
 Bandwidth::Bandwidth(JsonView jsonValue)
-  : Bandwidth()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Bandwidth& Bandwidth::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UploadSpeed"))
   {
     m_uploadSpeed = jsonValue.GetInteger("UploadSpeed");
-
     m_uploadSpeedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DownloadSpeed"))
   {
     m_downloadSpeed = jsonValue.GetInteger("DownloadSpeed");
-
     m_downloadSpeedHasBeenSet = true;
   }
-
   return *this;
 }
 

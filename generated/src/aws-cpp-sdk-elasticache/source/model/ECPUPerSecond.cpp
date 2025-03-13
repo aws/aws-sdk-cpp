@@ -20,16 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ECPUPerSecond::ECPUPerSecond() : 
-    m_maximum(0),
-    m_maximumHasBeenSet(false),
-    m_minimum(0),
-    m_minimumHasBeenSet(false)
-{
-}
-
 ECPUPerSecond::ECPUPerSecond(const XmlNode& xmlNode)
-  : ECPUPerSecond()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ ECPUPerSecond& ECPUPerSecond::operator =(const XmlNode& xmlNode)
     {
       m_maximum = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNode.GetText()).c_str()).c_str());
       m_maximumHasBeenSet = true;
+       m_maximumHasBeenSet = true;
     }
     XmlNode minimumNode = resultNode.FirstChild("Minimum");
     if(!minimumNode.IsNull())
     {
       m_minimum = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minimumNode.GetText()).c_str()).c_str());
       m_minimumHasBeenSet = true;
+       m_minimumHasBeenSet = true;
     }
   }
 

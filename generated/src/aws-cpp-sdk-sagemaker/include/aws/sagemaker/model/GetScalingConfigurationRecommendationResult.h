@@ -30,7 +30,7 @@ namespace Model
   class GetScalingConfigurationRecommendationResult
   {
   public:
-    AWS_SAGEMAKER_API GetScalingConfigurationRecommendationResult();
+    AWS_SAGEMAKER_API GetScalingConfigurationRecommendationResult() = default;
     AWS_SAGEMAKER_API GetScalingConfigurationRecommendationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API GetScalingConfigurationRecommendationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,26 +39,22 @@ namespace Model
     /**
      * <p>The name of a previously completed Inference Recommender job.</p>
      */
-    inline const Aws::String& GetInferenceRecommendationsJobName() const{ return m_inferenceRecommendationsJobName; }
-    inline void SetInferenceRecommendationsJobName(const Aws::String& value) { m_inferenceRecommendationsJobName = value; }
-    inline void SetInferenceRecommendationsJobName(Aws::String&& value) { m_inferenceRecommendationsJobName = std::move(value); }
-    inline void SetInferenceRecommendationsJobName(const char* value) { m_inferenceRecommendationsJobName.assign(value); }
-    inline GetScalingConfigurationRecommendationResult& WithInferenceRecommendationsJobName(const Aws::String& value) { SetInferenceRecommendationsJobName(value); return *this;}
-    inline GetScalingConfigurationRecommendationResult& WithInferenceRecommendationsJobName(Aws::String&& value) { SetInferenceRecommendationsJobName(std::move(value)); return *this;}
-    inline GetScalingConfigurationRecommendationResult& WithInferenceRecommendationsJobName(const char* value) { SetInferenceRecommendationsJobName(value); return *this;}
+    inline const Aws::String& GetInferenceRecommendationsJobName() const { return m_inferenceRecommendationsJobName; }
+    template<typename InferenceRecommendationsJobNameT = Aws::String>
+    void SetInferenceRecommendationsJobName(InferenceRecommendationsJobNameT&& value) { m_inferenceRecommendationsJobNameHasBeenSet = true; m_inferenceRecommendationsJobName = std::forward<InferenceRecommendationsJobNameT>(value); }
+    template<typename InferenceRecommendationsJobNameT = Aws::String>
+    GetScalingConfigurationRecommendationResult& WithInferenceRecommendationsJobName(InferenceRecommendationsJobNameT&& value) { SetInferenceRecommendationsJobName(std::forward<InferenceRecommendationsJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The recommendation ID of a previously completed inference recommendation.</p>
      */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationId = value; }
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationId = std::move(value); }
-    inline void SetRecommendationId(const char* value) { m_recommendationId.assign(value); }
-    inline GetScalingConfigurationRecommendationResult& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-    inline GetScalingConfigurationRecommendationResult& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-    inline GetScalingConfigurationRecommendationResult& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
+    template<typename RecommendationIdT = Aws::String>
+    void SetRecommendationId(RecommendationIdT&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::forward<RecommendationIdT>(value); }
+    template<typename RecommendationIdT = Aws::String>
+    GetScalingConfigurationRecommendationResult& WithRecommendationId(RecommendationIdT&& value) { SetRecommendationId(std::forward<RecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,13 +62,11 @@ namespace Model
      * <p>The name of an endpoint benchmarked during a previously completed Inference
      * Recommender job.</p>
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointName.assign(value); }
-    inline GetScalingConfigurationRecommendationResult& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline GetScalingConfigurationRecommendationResult& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline GetScalingConfigurationRecommendationResult& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    GetScalingConfigurationRecommendationResult& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,8 +74,8 @@ namespace Model
      * <p>The percentage of how much utilization you want an instance to use before
      * autoscaling, which you specified in the request. The default value is 50%.</p>
      */
-    inline int GetTargetCpuUtilizationPerCore() const{ return m_targetCpuUtilizationPerCore; }
-    inline void SetTargetCpuUtilizationPerCore(int value) { m_targetCpuUtilizationPerCore = value; }
+    inline int GetTargetCpuUtilizationPerCore() const { return m_targetCpuUtilizationPerCore; }
+    inline void SetTargetCpuUtilizationPerCore(int value) { m_targetCpuUtilizationPerCoreHasBeenSet = true; m_targetCpuUtilizationPerCore = value; }
     inline GetScalingConfigurationRecommendationResult& WithTargetCpuUtilizationPerCore(int value) { SetTargetCpuUtilizationPerCore(value); return *this;}
     ///@}
 
@@ -90,11 +84,11 @@ namespace Model
      * <p>An object representing the anticipated traffic pattern for an endpoint that
      * you specified in the request.</p>
      */
-    inline const ScalingPolicyObjective& GetScalingPolicyObjective() const{ return m_scalingPolicyObjective; }
-    inline void SetScalingPolicyObjective(const ScalingPolicyObjective& value) { m_scalingPolicyObjective = value; }
-    inline void SetScalingPolicyObjective(ScalingPolicyObjective&& value) { m_scalingPolicyObjective = std::move(value); }
-    inline GetScalingConfigurationRecommendationResult& WithScalingPolicyObjective(const ScalingPolicyObjective& value) { SetScalingPolicyObjective(value); return *this;}
-    inline GetScalingConfigurationRecommendationResult& WithScalingPolicyObjective(ScalingPolicyObjective&& value) { SetScalingPolicyObjective(std::move(value)); return *this;}
+    inline const ScalingPolicyObjective& GetScalingPolicyObjective() const { return m_scalingPolicyObjective; }
+    template<typename ScalingPolicyObjectiveT = ScalingPolicyObjective>
+    void SetScalingPolicyObjective(ScalingPolicyObjectiveT&& value) { m_scalingPolicyObjectiveHasBeenSet = true; m_scalingPolicyObjective = std::forward<ScalingPolicyObjectiveT>(value); }
+    template<typename ScalingPolicyObjectiveT = ScalingPolicyObjective>
+    GetScalingConfigurationRecommendationResult& WithScalingPolicyObjective(ScalingPolicyObjectiveT&& value) { SetScalingPolicyObjective(std::forward<ScalingPolicyObjectiveT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,11 +96,11 @@ namespace Model
      * <p>An object with a list of metrics that were benchmarked during the previously
      * completed Inference Recommender job.</p>
      */
-    inline const ScalingPolicyMetric& GetMetric() const{ return m_metric; }
-    inline void SetMetric(const ScalingPolicyMetric& value) { m_metric = value; }
-    inline void SetMetric(ScalingPolicyMetric&& value) { m_metric = std::move(value); }
-    inline GetScalingConfigurationRecommendationResult& WithMetric(const ScalingPolicyMetric& value) { SetMetric(value); return *this;}
-    inline GetScalingConfigurationRecommendationResult& WithMetric(ScalingPolicyMetric&& value) { SetMetric(std::move(value)); return *this;}
+    inline const ScalingPolicyMetric& GetMetric() const { return m_metric; }
+    template<typename MetricT = ScalingPolicyMetric>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = ScalingPolicyMetric>
+    GetScalingConfigurationRecommendationResult& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,40 +108,46 @@ namespace Model
      * <p>An object with the recommended values for you to specify when creating an
      * autoscaling policy.</p>
      */
-    inline const DynamicScalingConfiguration& GetDynamicScalingConfiguration() const{ return m_dynamicScalingConfiguration; }
-    inline void SetDynamicScalingConfiguration(const DynamicScalingConfiguration& value) { m_dynamicScalingConfiguration = value; }
-    inline void SetDynamicScalingConfiguration(DynamicScalingConfiguration&& value) { m_dynamicScalingConfiguration = std::move(value); }
-    inline GetScalingConfigurationRecommendationResult& WithDynamicScalingConfiguration(const DynamicScalingConfiguration& value) { SetDynamicScalingConfiguration(value); return *this;}
-    inline GetScalingConfigurationRecommendationResult& WithDynamicScalingConfiguration(DynamicScalingConfiguration&& value) { SetDynamicScalingConfiguration(std::move(value)); return *this;}
+    inline const DynamicScalingConfiguration& GetDynamicScalingConfiguration() const { return m_dynamicScalingConfiguration; }
+    template<typename DynamicScalingConfigurationT = DynamicScalingConfiguration>
+    void SetDynamicScalingConfiguration(DynamicScalingConfigurationT&& value) { m_dynamicScalingConfigurationHasBeenSet = true; m_dynamicScalingConfiguration = std::forward<DynamicScalingConfigurationT>(value); }
+    template<typename DynamicScalingConfigurationT = DynamicScalingConfiguration>
+    GetScalingConfigurationRecommendationResult& WithDynamicScalingConfiguration(DynamicScalingConfigurationT&& value) { SetDynamicScalingConfiguration(std::forward<DynamicScalingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetScalingConfigurationRecommendationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetScalingConfigurationRecommendationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetScalingConfigurationRecommendationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetScalingConfigurationRecommendationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_inferenceRecommendationsJobName;
+    bool m_inferenceRecommendationsJobNameHasBeenSet = false;
 
     Aws::String m_recommendationId;
+    bool m_recommendationIdHasBeenSet = false;
 
     Aws::String m_endpointName;
+    bool m_endpointNameHasBeenSet = false;
 
-    int m_targetCpuUtilizationPerCore;
+    int m_targetCpuUtilizationPerCore{0};
+    bool m_targetCpuUtilizationPerCoreHasBeenSet = false;
 
     ScalingPolicyObjective m_scalingPolicyObjective;
+    bool m_scalingPolicyObjectiveHasBeenSet = false;
 
     ScalingPolicyMetric m_metric;
+    bool m_metricHasBeenSet = false;
 
     DynamicScalingConfiguration m_dynamicScalingConfiguration;
+    bool m_dynamicScalingConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

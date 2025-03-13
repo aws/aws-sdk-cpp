@@ -32,7 +32,7 @@ namespace Model
   class AccountSettingsDetail
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API AccountSettingsDetail();
+    AWS_OPENSEARCHSERVERLESS_API AccountSettingsDetail() = default;
     AWS_OPENSEARCHSERVERLESS_API AccountSettingsDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API AccountSettingsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const CapacityLimits& GetCapacityLimits() const{ return m_capacityLimits; }
+    inline const CapacityLimits& GetCapacityLimits() const { return m_capacityLimits; }
     inline bool CapacityLimitsHasBeenSet() const { return m_capacityLimitsHasBeenSet; }
-    inline void SetCapacityLimits(const CapacityLimits& value) { m_capacityLimitsHasBeenSet = true; m_capacityLimits = value; }
-    inline void SetCapacityLimits(CapacityLimits&& value) { m_capacityLimitsHasBeenSet = true; m_capacityLimits = std::move(value); }
-    inline AccountSettingsDetail& WithCapacityLimits(const CapacityLimits& value) { SetCapacityLimits(value); return *this;}
-    inline AccountSettingsDetail& WithCapacityLimits(CapacityLimits&& value) { SetCapacityLimits(std::move(value)); return *this;}
+    template<typename CapacityLimitsT = CapacityLimits>
+    void SetCapacityLimits(CapacityLimitsT&& value) { m_capacityLimitsHasBeenSet = true; m_capacityLimits = std::forward<CapacityLimitsT>(value); }
+    template<typename CapacityLimitsT = CapacityLimits>
+    AccountSettingsDetail& WithCapacityLimits(CapacityLimitsT&& value) { SetCapacityLimits(std::forward<CapacityLimitsT>(value)); return *this;}
     ///@}
   private:
 

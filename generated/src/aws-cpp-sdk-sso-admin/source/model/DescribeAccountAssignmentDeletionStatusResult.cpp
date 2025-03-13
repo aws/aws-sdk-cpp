@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAccountAssignmentDeletionStatusResult::DescribeAccountAssignmentDeletionStatusResult()
-{
-}
-
 DescribeAccountAssignmentDeletionStatusResult::DescribeAccountAssignmentDeletionStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeAccountAssignmentDeletionStatusResult& DescribeAccountAssignmentDeletion
   if(jsonValue.ValueExists("AccountAssignmentDeletionStatus"))
   {
     m_accountAssignmentDeletionStatus = jsonValue.GetObject("AccountAssignmentDeletionStatus");
-
+    m_accountAssignmentDeletionStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

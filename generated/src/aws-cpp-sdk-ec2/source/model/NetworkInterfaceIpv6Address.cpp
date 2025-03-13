@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInterfaceIpv6Address::NetworkInterfaceIpv6Address() : 
-    m_ipv6AddressHasBeenSet(false),
-    m_isPrimaryIpv6(false),
-    m_isPrimaryIpv6HasBeenSet(false)
-{
-}
-
 NetworkInterfaceIpv6Address::NetworkInterfaceIpv6Address(const XmlNode& xmlNode)
-  : NetworkInterfaceIpv6Address()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ NetworkInterfaceIpv6Address& NetworkInterfaceIpv6Address::operator =(const XmlNo
     {
       m_ipv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressNode.GetText());
       m_ipv6AddressHasBeenSet = true;
+       m_ipv6AddressHasBeenSet = true;
     }
     XmlNode isPrimaryIpv6Node = resultNode.FirstChild("isPrimaryIpv6");
     if(!isPrimaryIpv6Node.IsNull())
     {
       m_isPrimaryIpv6 = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isPrimaryIpv6Node.GetText()).c_str()).c_str());
       m_isPrimaryIpv6HasBeenSet = true;
+       m_isPrimaryIpv6HasBeenSet = true;
     }
   }
 

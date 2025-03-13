@@ -12,12 +12,6 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBackendConfigRequest::UpdateBackendConfigRequest() : 
-    m_appIdHasBeenSet(false),
-    m_loginAuthConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBackendConfigRequest::SerializePayload() const
 {
   JsonValue payload;

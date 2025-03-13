@@ -18,13 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-PartitionSpec::PartitionSpec() : 
-    m_identityHasBeenSet(false)
-{
-}
-
 PartitionSpec::PartitionSpec(JsonView jsonValue)
-  : PartitionSpec()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PartitionSpec& PartitionSpec::operator =(JsonView jsonValue)
     }
     m_identityHasBeenSet = true;
   }
-
   return *this;
 }
 

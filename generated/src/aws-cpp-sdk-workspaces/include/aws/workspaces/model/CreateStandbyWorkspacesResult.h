@@ -30,7 +30,7 @@ namespace Model
   class CreateStandbyWorkspacesResult
   {
   public:
-    AWS_WORKSPACES_API CreateStandbyWorkspacesResult();
+    AWS_WORKSPACES_API CreateStandbyWorkspacesResult() = default;
     AWS_WORKSPACES_API CreateStandbyWorkspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API CreateStandbyWorkspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>Information about the standby WorkSpace that could not be created. </p>
      */
-    inline const Aws::Vector<FailedCreateStandbyWorkspacesRequest>& GetFailedStandbyRequests() const{ return m_failedStandbyRequests; }
-    inline void SetFailedStandbyRequests(const Aws::Vector<FailedCreateStandbyWorkspacesRequest>& value) { m_failedStandbyRequests = value; }
-    inline void SetFailedStandbyRequests(Aws::Vector<FailedCreateStandbyWorkspacesRequest>&& value) { m_failedStandbyRequests = std::move(value); }
-    inline CreateStandbyWorkspacesResult& WithFailedStandbyRequests(const Aws::Vector<FailedCreateStandbyWorkspacesRequest>& value) { SetFailedStandbyRequests(value); return *this;}
-    inline CreateStandbyWorkspacesResult& WithFailedStandbyRequests(Aws::Vector<FailedCreateStandbyWorkspacesRequest>&& value) { SetFailedStandbyRequests(std::move(value)); return *this;}
-    inline CreateStandbyWorkspacesResult& AddFailedStandbyRequests(const FailedCreateStandbyWorkspacesRequest& value) { m_failedStandbyRequests.push_back(value); return *this; }
-    inline CreateStandbyWorkspacesResult& AddFailedStandbyRequests(FailedCreateStandbyWorkspacesRequest&& value) { m_failedStandbyRequests.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedCreateStandbyWorkspacesRequest>& GetFailedStandbyRequests() const { return m_failedStandbyRequests; }
+    template<typename FailedStandbyRequestsT = Aws::Vector<FailedCreateStandbyWorkspacesRequest>>
+    void SetFailedStandbyRequests(FailedStandbyRequestsT&& value) { m_failedStandbyRequestsHasBeenSet = true; m_failedStandbyRequests = std::forward<FailedStandbyRequestsT>(value); }
+    template<typename FailedStandbyRequestsT = Aws::Vector<FailedCreateStandbyWorkspacesRequest>>
+    CreateStandbyWorkspacesResult& WithFailedStandbyRequests(FailedStandbyRequestsT&& value) { SetFailedStandbyRequests(std::forward<FailedStandbyRequestsT>(value)); return *this;}
+    template<typename FailedStandbyRequestsT = FailedCreateStandbyWorkspacesRequest>
+    CreateStandbyWorkspacesResult& AddFailedStandbyRequests(FailedStandbyRequestsT&& value) { m_failedStandbyRequestsHasBeenSet = true; m_failedStandbyRequests.emplace_back(std::forward<FailedStandbyRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the standby WorkSpace that was created.</p>
      */
-    inline const Aws::Vector<PendingCreateStandbyWorkspacesRequest>& GetPendingStandbyRequests() const{ return m_pendingStandbyRequests; }
-    inline void SetPendingStandbyRequests(const Aws::Vector<PendingCreateStandbyWorkspacesRequest>& value) { m_pendingStandbyRequests = value; }
-    inline void SetPendingStandbyRequests(Aws::Vector<PendingCreateStandbyWorkspacesRequest>&& value) { m_pendingStandbyRequests = std::move(value); }
-    inline CreateStandbyWorkspacesResult& WithPendingStandbyRequests(const Aws::Vector<PendingCreateStandbyWorkspacesRequest>& value) { SetPendingStandbyRequests(value); return *this;}
-    inline CreateStandbyWorkspacesResult& WithPendingStandbyRequests(Aws::Vector<PendingCreateStandbyWorkspacesRequest>&& value) { SetPendingStandbyRequests(std::move(value)); return *this;}
-    inline CreateStandbyWorkspacesResult& AddPendingStandbyRequests(const PendingCreateStandbyWorkspacesRequest& value) { m_pendingStandbyRequests.push_back(value); return *this; }
-    inline CreateStandbyWorkspacesResult& AddPendingStandbyRequests(PendingCreateStandbyWorkspacesRequest&& value) { m_pendingStandbyRequests.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PendingCreateStandbyWorkspacesRequest>& GetPendingStandbyRequests() const { return m_pendingStandbyRequests; }
+    template<typename PendingStandbyRequestsT = Aws::Vector<PendingCreateStandbyWorkspacesRequest>>
+    void SetPendingStandbyRequests(PendingStandbyRequestsT&& value) { m_pendingStandbyRequestsHasBeenSet = true; m_pendingStandbyRequests = std::forward<PendingStandbyRequestsT>(value); }
+    template<typename PendingStandbyRequestsT = Aws::Vector<PendingCreateStandbyWorkspacesRequest>>
+    CreateStandbyWorkspacesResult& WithPendingStandbyRequests(PendingStandbyRequestsT&& value) { SetPendingStandbyRequests(std::forward<PendingStandbyRequestsT>(value)); return *this;}
+    template<typename PendingStandbyRequestsT = PendingCreateStandbyWorkspacesRequest>
+    CreateStandbyWorkspacesResult& AddPendingStandbyRequests(PendingStandbyRequestsT&& value) { m_pendingStandbyRequestsHasBeenSet = true; m_pendingStandbyRequests.emplace_back(std::forward<PendingStandbyRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateStandbyWorkspacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateStandbyWorkspacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateStandbyWorkspacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateStandbyWorkspacesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FailedCreateStandbyWorkspacesRequest> m_failedStandbyRequests;
+    bool m_failedStandbyRequestsHasBeenSet = false;
 
     Aws::Vector<PendingCreateStandbyWorkspacesRequest> m_pendingStandbyRequests;
+    bool m_pendingStandbyRequestsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

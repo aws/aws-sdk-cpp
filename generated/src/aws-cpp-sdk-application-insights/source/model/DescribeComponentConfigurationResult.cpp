@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeComponentConfigurationResult::DescribeComponentConfigurationResult() : 
-    m_monitor(false),
-    m_tier(Tier::NOT_SET)
-{
-}
-
 DescribeComponentConfigurationResult::DescribeComponentConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeComponentConfigurationResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ DescribeComponentConfigurationResult& DescribeComponentConfigurationResult::oper
   if(jsonValue.ValueExists("Monitor"))
   {
     m_monitor = jsonValue.GetBool("Monitor");
-
+    m_monitorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tier"))
   {
     m_tier = TierMapper::GetTierForName(jsonValue.GetString("Tier"));
-
+    m_tierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComponentConfiguration"))
   {
     m_componentConfiguration = jsonValue.GetString("ComponentConfiguration");
-
+    m_componentConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

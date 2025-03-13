@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCredentialsForIdentityResult::GetCredentialsForIdentityResult()
-{
-}
-
 GetCredentialsForIdentityResult::GetCredentialsForIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetCredentialsForIdentityResult& GetCredentialsForIdentityResult::operator =(con
   if(jsonValue.ValueExists("IdentityId"))
   {
     m_identityId = jsonValue.GetString("IdentityId");
-
+    m_identityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Credentials"))
   {
     m_credentials = jsonValue.GetObject("Credentials");
-
+    m_credentialsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,16 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAgentRequest::CreateAgentRequest() : 
-    m_activationKeyHasBeenSet(false),
-    m_agentNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_subnetArnsHasBeenSet(false),
-    m_securityGroupArnsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAgentRequest::SerializePayload() const
 {
   JsonValue payload;

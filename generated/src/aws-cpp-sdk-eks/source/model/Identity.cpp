@@ -18,13 +18,7 @@ namespace EKS
 namespace Model
 {
 
-Identity::Identity() : 
-    m_oidcHasBeenSet(false)
-{
-}
-
 Identity::Identity(JsonView jsonValue)
-  : Identity()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Identity& Identity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("oidc"))
   {
     m_oidc = jsonValue.GetObject("oidc");
-
     m_oidcHasBeenSet = true;
   }
-
   return *this;
 }
 

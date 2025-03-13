@@ -34,7 +34,7 @@ namespace Model
   class HlsSettings
   {
   public:
-    AWS_MEDIALIVE_API HlsSettings();
+    AWS_MEDIALIVE_API HlsSettings() = default;
     AWS_MEDIALIVE_API HlsSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API HlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,42 @@ namespace Model
 
     ///@{
     
-    inline const AudioOnlyHlsSettings& GetAudioOnlyHlsSettings() const{ return m_audioOnlyHlsSettings; }
+    inline const AudioOnlyHlsSettings& GetAudioOnlyHlsSettings() const { return m_audioOnlyHlsSettings; }
     inline bool AudioOnlyHlsSettingsHasBeenSet() const { return m_audioOnlyHlsSettingsHasBeenSet; }
-    inline void SetAudioOnlyHlsSettings(const AudioOnlyHlsSettings& value) { m_audioOnlyHlsSettingsHasBeenSet = true; m_audioOnlyHlsSettings = value; }
-    inline void SetAudioOnlyHlsSettings(AudioOnlyHlsSettings&& value) { m_audioOnlyHlsSettingsHasBeenSet = true; m_audioOnlyHlsSettings = std::move(value); }
-    inline HlsSettings& WithAudioOnlyHlsSettings(const AudioOnlyHlsSettings& value) { SetAudioOnlyHlsSettings(value); return *this;}
-    inline HlsSettings& WithAudioOnlyHlsSettings(AudioOnlyHlsSettings&& value) { SetAudioOnlyHlsSettings(std::move(value)); return *this;}
+    template<typename AudioOnlyHlsSettingsT = AudioOnlyHlsSettings>
+    void SetAudioOnlyHlsSettings(AudioOnlyHlsSettingsT&& value) { m_audioOnlyHlsSettingsHasBeenSet = true; m_audioOnlyHlsSettings = std::forward<AudioOnlyHlsSettingsT>(value); }
+    template<typename AudioOnlyHlsSettingsT = AudioOnlyHlsSettings>
+    HlsSettings& WithAudioOnlyHlsSettings(AudioOnlyHlsSettingsT&& value) { SetAudioOnlyHlsSettings(std::forward<AudioOnlyHlsSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Fmp4HlsSettings& GetFmp4HlsSettings() const{ return m_fmp4HlsSettings; }
+    inline const Fmp4HlsSettings& GetFmp4HlsSettings() const { return m_fmp4HlsSettings; }
     inline bool Fmp4HlsSettingsHasBeenSet() const { return m_fmp4HlsSettingsHasBeenSet; }
-    inline void SetFmp4HlsSettings(const Fmp4HlsSettings& value) { m_fmp4HlsSettingsHasBeenSet = true; m_fmp4HlsSettings = value; }
-    inline void SetFmp4HlsSettings(Fmp4HlsSettings&& value) { m_fmp4HlsSettingsHasBeenSet = true; m_fmp4HlsSettings = std::move(value); }
-    inline HlsSettings& WithFmp4HlsSettings(const Fmp4HlsSettings& value) { SetFmp4HlsSettings(value); return *this;}
-    inline HlsSettings& WithFmp4HlsSettings(Fmp4HlsSettings&& value) { SetFmp4HlsSettings(std::move(value)); return *this;}
+    template<typename Fmp4HlsSettingsT = Fmp4HlsSettings>
+    void SetFmp4HlsSettings(Fmp4HlsSettingsT&& value) { m_fmp4HlsSettingsHasBeenSet = true; m_fmp4HlsSettings = std::forward<Fmp4HlsSettingsT>(value); }
+    template<typename Fmp4HlsSettingsT = Fmp4HlsSettings>
+    HlsSettings& WithFmp4HlsSettings(Fmp4HlsSettingsT&& value) { SetFmp4HlsSettings(std::forward<Fmp4HlsSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const FrameCaptureHlsSettings& GetFrameCaptureHlsSettings() const{ return m_frameCaptureHlsSettings; }
+    inline const FrameCaptureHlsSettings& GetFrameCaptureHlsSettings() const { return m_frameCaptureHlsSettings; }
     inline bool FrameCaptureHlsSettingsHasBeenSet() const { return m_frameCaptureHlsSettingsHasBeenSet; }
-    inline void SetFrameCaptureHlsSettings(const FrameCaptureHlsSettings& value) { m_frameCaptureHlsSettingsHasBeenSet = true; m_frameCaptureHlsSettings = value; }
-    inline void SetFrameCaptureHlsSettings(FrameCaptureHlsSettings&& value) { m_frameCaptureHlsSettingsHasBeenSet = true; m_frameCaptureHlsSettings = std::move(value); }
-    inline HlsSettings& WithFrameCaptureHlsSettings(const FrameCaptureHlsSettings& value) { SetFrameCaptureHlsSettings(value); return *this;}
-    inline HlsSettings& WithFrameCaptureHlsSettings(FrameCaptureHlsSettings&& value) { SetFrameCaptureHlsSettings(std::move(value)); return *this;}
+    template<typename FrameCaptureHlsSettingsT = FrameCaptureHlsSettings>
+    void SetFrameCaptureHlsSettings(FrameCaptureHlsSettingsT&& value) { m_frameCaptureHlsSettingsHasBeenSet = true; m_frameCaptureHlsSettings = std::forward<FrameCaptureHlsSettingsT>(value); }
+    template<typename FrameCaptureHlsSettingsT = FrameCaptureHlsSettings>
+    HlsSettings& WithFrameCaptureHlsSettings(FrameCaptureHlsSettingsT&& value) { SetFrameCaptureHlsSettings(std::forward<FrameCaptureHlsSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const StandardHlsSettings& GetStandardHlsSettings() const{ return m_standardHlsSettings; }
+    inline const StandardHlsSettings& GetStandardHlsSettings() const { return m_standardHlsSettings; }
     inline bool StandardHlsSettingsHasBeenSet() const { return m_standardHlsSettingsHasBeenSet; }
-    inline void SetStandardHlsSettings(const StandardHlsSettings& value) { m_standardHlsSettingsHasBeenSet = true; m_standardHlsSettings = value; }
-    inline void SetStandardHlsSettings(StandardHlsSettings&& value) { m_standardHlsSettingsHasBeenSet = true; m_standardHlsSettings = std::move(value); }
-    inline HlsSettings& WithStandardHlsSettings(const StandardHlsSettings& value) { SetStandardHlsSettings(value); return *this;}
-    inline HlsSettings& WithStandardHlsSettings(StandardHlsSettings&& value) { SetStandardHlsSettings(std::move(value)); return *this;}
+    template<typename StandardHlsSettingsT = StandardHlsSettings>
+    void SetStandardHlsSettings(StandardHlsSettingsT&& value) { m_standardHlsSettingsHasBeenSet = true; m_standardHlsSettings = std::forward<StandardHlsSettingsT>(value); }
+    template<typename StandardHlsSettingsT = StandardHlsSettings>
+    HlsSettings& WithStandardHlsSettings(StandardHlsSettingsT&& value) { SetStandardHlsSettings(std::forward<StandardHlsSettingsT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class StandardsControlAssociationUpdate
   {
   public:
-    AWS_SECURITYHUB_API StandardsControlAssociationUpdate();
+    AWS_SECURITYHUB_API StandardsControlAssociationUpdate() = default;
     AWS_SECURITYHUB_API StandardsControlAssociationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API StandardsControlAssociationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the standard in which you want to update
      * the control's enablement status.</p>
      */
-    inline const Aws::String& GetStandardsArn() const{ return m_standardsArn; }
+    inline const Aws::String& GetStandardsArn() const { return m_standardsArn; }
     inline bool StandardsArnHasBeenSet() const { return m_standardsArnHasBeenSet; }
-    inline void SetStandardsArn(const Aws::String& value) { m_standardsArnHasBeenSet = true; m_standardsArn = value; }
-    inline void SetStandardsArn(Aws::String&& value) { m_standardsArnHasBeenSet = true; m_standardsArn = std::move(value); }
-    inline void SetStandardsArn(const char* value) { m_standardsArnHasBeenSet = true; m_standardsArn.assign(value); }
-    inline StandardsControlAssociationUpdate& WithStandardsArn(const Aws::String& value) { SetStandardsArn(value); return *this;}
-    inline StandardsControlAssociationUpdate& WithStandardsArn(Aws::String&& value) { SetStandardsArn(std::move(value)); return *this;}
-    inline StandardsControlAssociationUpdate& WithStandardsArn(const char* value) { SetStandardsArn(value); return *this;}
+    template<typename StandardsArnT = Aws::String>
+    void SetStandardsArn(StandardsArnT&& value) { m_standardsArnHasBeenSet = true; m_standardsArn = std::forward<StandardsArnT>(value); }
+    template<typename StandardsArnT = Aws::String>
+    StandardsControlAssociationUpdate& WithStandardsArn(StandardsArnT&& value) { SetStandardsArn(std::forward<StandardsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,40 +59,34 @@ namespace Model
      * <p>The unique identifier for the security control whose enablement status you
      * want to update.</p>
      */
-    inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }
+    inline const Aws::String& GetSecurityControlId() const { return m_securityControlId; }
     inline bool SecurityControlIdHasBeenSet() const { return m_securityControlIdHasBeenSet; }
-    inline void SetSecurityControlId(const Aws::String& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = value; }
-    inline void SetSecurityControlId(Aws::String&& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = std::move(value); }
-    inline void SetSecurityControlId(const char* value) { m_securityControlIdHasBeenSet = true; m_securityControlId.assign(value); }
-    inline StandardsControlAssociationUpdate& WithSecurityControlId(const Aws::String& value) { SetSecurityControlId(value); return *this;}
-    inline StandardsControlAssociationUpdate& WithSecurityControlId(Aws::String&& value) { SetSecurityControlId(std::move(value)); return *this;}
-    inline StandardsControlAssociationUpdate& WithSecurityControlId(const char* value) { SetSecurityControlId(value); return *this;}
+    template<typename SecurityControlIdT = Aws::String>
+    void SetSecurityControlId(SecurityControlIdT&& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = std::forward<SecurityControlIdT>(value); }
+    template<typename SecurityControlIdT = Aws::String>
+    StandardsControlAssociationUpdate& WithSecurityControlId(SecurityControlIdT&& value) { SetSecurityControlId(std::forward<SecurityControlIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The desired enablement status of the control in the standard.</p>
      */
-    inline const AssociationStatus& GetAssociationStatus() const{ return m_associationStatus; }
+    inline AssociationStatus GetAssociationStatus() const { return m_associationStatus; }
     inline bool AssociationStatusHasBeenSet() const { return m_associationStatusHasBeenSet; }
-    inline void SetAssociationStatus(const AssociationStatus& value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
-    inline void SetAssociationStatus(AssociationStatus&& value) { m_associationStatusHasBeenSet = true; m_associationStatus = std::move(value); }
-    inline StandardsControlAssociationUpdate& WithAssociationStatus(const AssociationStatus& value) { SetAssociationStatus(value); return *this;}
-    inline StandardsControlAssociationUpdate& WithAssociationStatus(AssociationStatus&& value) { SetAssociationStatus(std::move(value)); return *this;}
+    inline void SetAssociationStatus(AssociationStatus value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
+    inline StandardsControlAssociationUpdate& WithAssociationStatus(AssociationStatus value) { SetAssociationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for updating the control's enablement status in the standard.</p>
      */
-    inline const Aws::String& GetUpdatedReason() const{ return m_updatedReason; }
+    inline const Aws::String& GetUpdatedReason() const { return m_updatedReason; }
     inline bool UpdatedReasonHasBeenSet() const { return m_updatedReasonHasBeenSet; }
-    inline void SetUpdatedReason(const Aws::String& value) { m_updatedReasonHasBeenSet = true; m_updatedReason = value; }
-    inline void SetUpdatedReason(Aws::String&& value) { m_updatedReasonHasBeenSet = true; m_updatedReason = std::move(value); }
-    inline void SetUpdatedReason(const char* value) { m_updatedReasonHasBeenSet = true; m_updatedReason.assign(value); }
-    inline StandardsControlAssociationUpdate& WithUpdatedReason(const Aws::String& value) { SetUpdatedReason(value); return *this;}
-    inline StandardsControlAssociationUpdate& WithUpdatedReason(Aws::String&& value) { SetUpdatedReason(std::move(value)); return *this;}
-    inline StandardsControlAssociationUpdate& WithUpdatedReason(const char* value) { SetUpdatedReason(value); return *this;}
+    template<typename UpdatedReasonT = Aws::String>
+    void SetUpdatedReason(UpdatedReasonT&& value) { m_updatedReasonHasBeenSet = true; m_updatedReason = std::forward<UpdatedReasonT>(value); }
+    template<typename UpdatedReasonT = Aws::String>
+    StandardsControlAssociationUpdate& WithUpdatedReason(UpdatedReasonT&& value) { SetUpdatedReason(std::forward<UpdatedReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -104,7 +96,7 @@ namespace Model
     Aws::String m_securityControlId;
     bool m_securityControlIdHasBeenSet = false;
 
-    AssociationStatus m_associationStatus;
+    AssociationStatus m_associationStatus{AssociationStatus::NOT_SET};
     bool m_associationStatusHasBeenSet = false;
 
     Aws::String m_updatedReason;

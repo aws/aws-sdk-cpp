@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDomainNamesRequest::GetDomainNamesRequest() : 
-    m_positionHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_resourceOwner(ResourceOwner::NOT_SET),
-    m_resourceOwnerHasBeenSet(false)
-{
-}
-
 Aws::String GetDomainNamesRequest::SerializePayload() const
 {
   return {};

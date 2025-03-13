@@ -18,16 +18,7 @@ namespace ApplicationInsights
 namespace Model
 {
 
-WorkloadConfiguration::WorkloadConfiguration() : 
-    m_workloadNameHasBeenSet(false),
-    m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_configurationHasBeenSet(false)
-{
-}
-
 WorkloadConfiguration::WorkloadConfiguration(JsonView jsonValue)
-  : WorkloadConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ WorkloadConfiguration& WorkloadConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkloadName"))
   {
     m_workloadName = jsonValue.GetString("WorkloadName");
-
     m_workloadNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tier"))
   {
     m_tier = TierMapper::GetTierForName(jsonValue.GetString("Tier"));
-
     m_tierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Configuration"))
   {
     m_configuration = jsonValue.GetString("Configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   return *this;
 }
 

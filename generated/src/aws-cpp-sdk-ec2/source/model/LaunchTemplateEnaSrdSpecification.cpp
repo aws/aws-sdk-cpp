@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateEnaSrdSpecification::LaunchTemplateEnaSrdSpecification() : 
-    m_enaSrdEnabled(false),
-    m_enaSrdEnabledHasBeenSet(false),
-    m_enaSrdUdpSpecificationHasBeenSet(false)
-{
-}
-
 LaunchTemplateEnaSrdSpecification::LaunchTemplateEnaSrdSpecification(const XmlNode& xmlNode)
-  : LaunchTemplateEnaSrdSpecification()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ LaunchTemplateEnaSrdSpecification& LaunchTemplateEnaSrdSpecification::operator =
     {
       m_enaSrdEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSrdEnabledNode.GetText()).c_str()).c_str());
       m_enaSrdEnabledHasBeenSet = true;
+       m_enaSrdEnabledHasBeenSet = true;
     }
     XmlNode enaSrdUdpSpecificationNode = resultNode.FirstChild("enaSrdUdpSpecification");
     if(!enaSrdUdpSpecificationNode.IsNull())
     {
       m_enaSrdUdpSpecification = enaSrdUdpSpecificationNode;
       m_enaSrdUdpSpecificationHasBeenSet = true;
+       m_enaSrdUdpSpecificationHasBeenSet = true;
     }
   }
 

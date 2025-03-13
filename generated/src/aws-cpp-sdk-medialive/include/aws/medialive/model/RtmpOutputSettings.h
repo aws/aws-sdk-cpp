@@ -32,7 +32,7 @@ namespace Model
   class RtmpOutputSettings
   {
   public:
-    AWS_MEDIALIVE_API RtmpOutputSettings();
+    AWS_MEDIALIVE_API RtmpOutputSettings() = default;
     AWS_MEDIALIVE_API RtmpOutputSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API RtmpOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * Certificate Authority (CA).  This will cause rtmps outputs with self-signed
      * certificates to fail.
      */
-    inline const RtmpOutputCertificateMode& GetCertificateMode() const{ return m_certificateMode; }
+    inline RtmpOutputCertificateMode GetCertificateMode() const { return m_certificateMode; }
     inline bool CertificateModeHasBeenSet() const { return m_certificateModeHasBeenSet; }
-    inline void SetCertificateMode(const RtmpOutputCertificateMode& value) { m_certificateModeHasBeenSet = true; m_certificateMode = value; }
-    inline void SetCertificateMode(RtmpOutputCertificateMode&& value) { m_certificateModeHasBeenSet = true; m_certificateMode = std::move(value); }
-    inline RtmpOutputSettings& WithCertificateMode(const RtmpOutputCertificateMode& value) { SetCertificateMode(value); return *this;}
-    inline RtmpOutputSettings& WithCertificateMode(RtmpOutputCertificateMode&& value) { SetCertificateMode(std::move(value)); return *this;}
+    inline void SetCertificateMode(RtmpOutputCertificateMode value) { m_certificateModeHasBeenSet = true; m_certificateMode = value; }
+    inline RtmpOutputSettings& WithCertificateMode(RtmpOutputCertificateMode value) { SetCertificateMode(value); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * Number of seconds to wait before retrying a connection to the Flash Media server
      * if the connection is lost.
      */
-    inline int GetConnectionRetryInterval() const{ return m_connectionRetryInterval; }
+    inline int GetConnectionRetryInterval() const { return m_connectionRetryInterval; }
     inline bool ConnectionRetryIntervalHasBeenSet() const { return m_connectionRetryIntervalHasBeenSet; }
     inline void SetConnectionRetryInterval(int value) { m_connectionRetryIntervalHasBeenSet = true; m_connectionRetryInterval = value; }
     inline RtmpOutputSettings& WithConnectionRetryInterval(int value) { SetConnectionRetryInterval(value); return *this;}
@@ -69,35 +67,35 @@ namespace Model
      * connection to Akamai, a username and password must be supplied. URI fields
      * accept format identifiers.
      */
-    inline const OutputLocationRef& GetDestination() const{ return m_destination; }
+    inline const OutputLocationRef& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(OutputLocationRef&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline RtmpOutputSettings& WithDestination(const OutputLocationRef& value) { SetDestination(value); return *this;}
-    inline RtmpOutputSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = OutputLocationRef>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = OutputLocationRef>
+    RtmpOutputSettings& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Number of retry attempts.
      */
-    inline int GetNumRetries() const{ return m_numRetries; }
+    inline int GetNumRetries() const { return m_numRetries; }
     inline bool NumRetriesHasBeenSet() const { return m_numRetriesHasBeenSet; }
     inline void SetNumRetries(int value) { m_numRetriesHasBeenSet = true; m_numRetries = value; }
     inline RtmpOutputSettings& WithNumRetries(int value) { SetNumRetries(value); return *this;}
     ///@}
   private:
 
-    RtmpOutputCertificateMode m_certificateMode;
+    RtmpOutputCertificateMode m_certificateMode{RtmpOutputCertificateMode::NOT_SET};
     bool m_certificateModeHasBeenSet = false;
 
-    int m_connectionRetryInterval;
+    int m_connectionRetryInterval{0};
     bool m_connectionRetryIntervalHasBeenSet = false;
 
     OutputLocationRef m_destination;
     bool m_destinationHasBeenSet = false;
 
-    int m_numRetries;
+    int m_numRetries{0};
     bool m_numRetriesHasBeenSet = false;
   };
 

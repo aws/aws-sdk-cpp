@@ -42,7 +42,7 @@ namespace Model
   class Featurization
   {
   public:
-    AWS_FORECASTSERVICE_API Featurization();
+    AWS_FORECASTSERVICE_API Featurization() = default;
     AWS_FORECASTSERVICE_API Featurization(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Featurization& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,14 +58,12 @@ namespace Model
      * <code>target_value</code>. For more information, see
      * <a>howitworks-missing-values</a>.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline Featurization& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline Featurization& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline Featurization& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    Featurization& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,14 @@ namespace Model
      * <p>An array of one <code>FeaturizationMethod</code> object that specifies the
      * feature transformation method.</p>
      */
-    inline const Aws::Vector<FeaturizationMethod>& GetFeaturizationPipeline() const{ return m_featurizationPipeline; }
+    inline const Aws::Vector<FeaturizationMethod>& GetFeaturizationPipeline() const { return m_featurizationPipeline; }
     inline bool FeaturizationPipelineHasBeenSet() const { return m_featurizationPipelineHasBeenSet; }
-    inline void SetFeaturizationPipeline(const Aws::Vector<FeaturizationMethod>& value) { m_featurizationPipelineHasBeenSet = true; m_featurizationPipeline = value; }
-    inline void SetFeaturizationPipeline(Aws::Vector<FeaturizationMethod>&& value) { m_featurizationPipelineHasBeenSet = true; m_featurizationPipeline = std::move(value); }
-    inline Featurization& WithFeaturizationPipeline(const Aws::Vector<FeaturizationMethod>& value) { SetFeaturizationPipeline(value); return *this;}
-    inline Featurization& WithFeaturizationPipeline(Aws::Vector<FeaturizationMethod>&& value) { SetFeaturizationPipeline(std::move(value)); return *this;}
-    inline Featurization& AddFeaturizationPipeline(const FeaturizationMethod& value) { m_featurizationPipelineHasBeenSet = true; m_featurizationPipeline.push_back(value); return *this; }
-    inline Featurization& AddFeaturizationPipeline(FeaturizationMethod&& value) { m_featurizationPipelineHasBeenSet = true; m_featurizationPipeline.push_back(std::move(value)); return *this; }
+    template<typename FeaturizationPipelineT = Aws::Vector<FeaturizationMethod>>
+    void SetFeaturizationPipeline(FeaturizationPipelineT&& value) { m_featurizationPipelineHasBeenSet = true; m_featurizationPipeline = std::forward<FeaturizationPipelineT>(value); }
+    template<typename FeaturizationPipelineT = Aws::Vector<FeaturizationMethod>>
+    Featurization& WithFeaturizationPipeline(FeaturizationPipelineT&& value) { SetFeaturizationPipeline(std::forward<FeaturizationPipelineT>(value)); return *this;}
+    template<typename FeaturizationPipelineT = FeaturizationMethod>
+    Featurization& AddFeaturizationPipeline(FeaturizationPipelineT&& value) { m_featurizationPipelineHasBeenSet = true; m_featurizationPipeline.emplace_back(std::forward<FeaturizationPipelineT>(value)); return *this; }
     ///@}
   private:
 

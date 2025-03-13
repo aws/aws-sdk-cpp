@@ -12,15 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateOrganizationConfigurationRequest::UpdateOrganizationConfigurationRequest() : 
-    m_autoEnable(false),
-    m_autoEnableHasBeenSet(false),
-    m_autoEnableStandards(AutoEnableStandards::NOT_SET),
-    m_autoEnableStandardsHasBeenSet(false),
-    m_organizationConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateOrganizationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

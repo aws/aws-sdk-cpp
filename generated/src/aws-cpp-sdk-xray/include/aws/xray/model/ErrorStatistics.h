@@ -30,7 +30,7 @@ namespace Model
   class ErrorStatistics
   {
   public:
-    AWS_XRAY_API ErrorStatistics();
+    AWS_XRAY_API ErrorStatistics() = default;
     AWS_XRAY_API ErrorStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API ErrorStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The number of requests that failed with a 429 throttling status code.</p>
      */
-    inline long long GetThrottleCount() const{ return m_throttleCount; }
+    inline long long GetThrottleCount() const { return m_throttleCount; }
     inline bool ThrottleCountHasBeenSet() const { return m_throttleCountHasBeenSet; }
     inline void SetThrottleCount(long long value) { m_throttleCountHasBeenSet = true; m_throttleCount = value; }
     inline ErrorStatistics& WithThrottleCount(long long value) { SetThrottleCount(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
      * <p>The number of requests that failed with untracked 4xx Client Error status
      * codes.</p>
      */
-    inline long long GetOtherCount() const{ return m_otherCount; }
+    inline long long GetOtherCount() const { return m_otherCount; }
     inline bool OtherCountHasBeenSet() const { return m_otherCountHasBeenSet; }
     inline void SetOtherCount(long long value) { m_otherCountHasBeenSet = true; m_otherCount = value; }
     inline ErrorStatistics& WithOtherCount(long long value) { SetOtherCount(value); return *this;}
@@ -62,20 +62,20 @@ namespace Model
      * <p>The total number of requests that failed with a 4xx Client Error status
      * code.</p>
      */
-    inline long long GetTotalCount() const{ return m_totalCount; }
+    inline long long GetTotalCount() const { return m_totalCount; }
     inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
     inline void SetTotalCount(long long value) { m_totalCountHasBeenSet = true; m_totalCount = value; }
     inline ErrorStatistics& WithTotalCount(long long value) { SetTotalCount(value); return *this;}
     ///@}
   private:
 
-    long long m_throttleCount;
+    long long m_throttleCount{0};
     bool m_throttleCountHasBeenSet = false;
 
-    long long m_otherCount;
+    long long m_otherCount{0};
     bool m_otherCountHasBeenSet = false;
 
-    long long m_totalCount;
+    long long m_totalCount{0};
     bool m_totalCountHasBeenSet = false;
   };
 

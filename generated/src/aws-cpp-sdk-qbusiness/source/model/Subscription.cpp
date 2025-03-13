@@ -18,17 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-Subscription::Subscription() : 
-    m_subscriptionIdHasBeenSet(false),
-    m_subscriptionArnHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_currentSubscriptionHasBeenSet(false),
-    m_nextSubscriptionHasBeenSet(false)
-{
-}
-
 Subscription::Subscription(JsonView jsonValue)
-  : Subscription()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ Subscription& Subscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("subscriptionId"))
   {
     m_subscriptionId = jsonValue.GetString("subscriptionId");
-
     m_subscriptionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscriptionArn"))
   {
     m_subscriptionArn = jsonValue.GetString("subscriptionArn");
-
     m_subscriptionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principal"))
   {
     m_principal = jsonValue.GetObject("principal");
-
     m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentSubscription"))
   {
     m_currentSubscription = jsonValue.GetObject("currentSubscription");
-
     m_currentSubscriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextSubscription"))
   {
     m_nextSubscription = jsonValue.GetObject("nextSubscription");
-
     m_nextSubscriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

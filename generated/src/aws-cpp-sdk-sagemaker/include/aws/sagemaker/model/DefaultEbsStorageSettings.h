@@ -30,7 +30,7 @@ namespace Model
   class DefaultEbsStorageSettings
   {
   public:
-    AWS_SAGEMAKER_API DefaultEbsStorageSettings();
+    AWS_SAGEMAKER_API DefaultEbsStorageSettings() = default;
     AWS_SAGEMAKER_API DefaultEbsStorageSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DefaultEbsStorageSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The default size of the EBS storage volume for a space.</p>
      */
-    inline int GetDefaultEbsVolumeSizeInGb() const{ return m_defaultEbsVolumeSizeInGb; }
+    inline int GetDefaultEbsVolumeSizeInGb() const { return m_defaultEbsVolumeSizeInGb; }
     inline bool DefaultEbsVolumeSizeInGbHasBeenSet() const { return m_defaultEbsVolumeSizeInGbHasBeenSet; }
     inline void SetDefaultEbsVolumeSizeInGb(int value) { m_defaultEbsVolumeSizeInGbHasBeenSet = true; m_defaultEbsVolumeSizeInGb = value; }
     inline DefaultEbsStorageSettings& WithDefaultEbsVolumeSizeInGb(int value) { SetDefaultEbsVolumeSizeInGb(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The maximum size of the EBS storage volume for a space.</p>
      */
-    inline int GetMaximumEbsVolumeSizeInGb() const{ return m_maximumEbsVolumeSizeInGb; }
+    inline int GetMaximumEbsVolumeSizeInGb() const { return m_maximumEbsVolumeSizeInGb; }
     inline bool MaximumEbsVolumeSizeInGbHasBeenSet() const { return m_maximumEbsVolumeSizeInGbHasBeenSet; }
     inline void SetMaximumEbsVolumeSizeInGb(int value) { m_maximumEbsVolumeSizeInGbHasBeenSet = true; m_maximumEbsVolumeSizeInGb = value; }
     inline DefaultEbsStorageSettings& WithMaximumEbsVolumeSizeInGb(int value) { SetMaximumEbsVolumeSizeInGb(value); return *this;}
     ///@}
   private:
 
-    int m_defaultEbsVolumeSizeInGb;
+    int m_defaultEbsVolumeSizeInGb{0};
     bool m_defaultEbsVolumeSizeInGbHasBeenSet = false;
 
-    int m_maximumEbsVolumeSizeInGb;
+    int m_maximumEbsVolumeSizeInGb{0};
     bool m_maximumEbsVolumeSizeInGbHasBeenSet = false;
   };
 

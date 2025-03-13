@@ -12,22 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePortalRequest::CreatePortalRequest() : 
-    m_additionalEncryptionContextHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_customerManagedKeyHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_maxConcurrentSessions(0),
-    m_maxConcurrentSessionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePortalRequest::SerializePayload() const
 {
   JsonValue payload;

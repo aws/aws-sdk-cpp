@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetCaseRuleResult::BatchGetCaseRuleResult()
-{
-}
-
 BatchGetCaseRuleResult::BatchGetCaseRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetCaseRuleResult& BatchGetCaseRuleResult::operator =(const Aws::AmazonWebS
     {
       m_caseRules.push_back(caseRulesJsonList[caseRulesIndex].AsObject());
     }
+    m_caseRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -45,14 +41,15 @@ BatchGetCaseRuleResult& BatchGetCaseRuleResult::operator =(const Aws::AmazonWebS
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

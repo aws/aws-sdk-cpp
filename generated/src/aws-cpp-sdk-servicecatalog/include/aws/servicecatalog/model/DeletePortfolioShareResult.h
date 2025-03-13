@@ -27,7 +27,7 @@ namespace Model
   class DeletePortfolioShareResult
   {
   public:
-    AWS_SERVICECATALOG_API DeletePortfolioShareResult();
+    AWS_SERVICECATALOG_API DeletePortfolioShareResult() = default;
     AWS_SERVICECATALOG_API DeletePortfolioShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API DeletePortfolioShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The portfolio share unique identifier. This will only be returned if delete
      * is made to an organization node.</p>
      */
-    inline const Aws::String& GetPortfolioShareToken() const{ return m_portfolioShareToken; }
-    inline void SetPortfolioShareToken(const Aws::String& value) { m_portfolioShareToken = value; }
-    inline void SetPortfolioShareToken(Aws::String&& value) { m_portfolioShareToken = std::move(value); }
-    inline void SetPortfolioShareToken(const char* value) { m_portfolioShareToken.assign(value); }
-    inline DeletePortfolioShareResult& WithPortfolioShareToken(const Aws::String& value) { SetPortfolioShareToken(value); return *this;}
-    inline DeletePortfolioShareResult& WithPortfolioShareToken(Aws::String&& value) { SetPortfolioShareToken(std::move(value)); return *this;}
-    inline DeletePortfolioShareResult& WithPortfolioShareToken(const char* value) { SetPortfolioShareToken(value); return *this;}
+    inline const Aws::String& GetPortfolioShareToken() const { return m_portfolioShareToken; }
+    template<typename PortfolioShareTokenT = Aws::String>
+    void SetPortfolioShareToken(PortfolioShareTokenT&& value) { m_portfolioShareTokenHasBeenSet = true; m_portfolioShareToken = std::forward<PortfolioShareTokenT>(value); }
+    template<typename PortfolioShareTokenT = Aws::String>
+    DeletePortfolioShareResult& WithPortfolioShareToken(PortfolioShareTokenT&& value) { SetPortfolioShareToken(std::forward<PortfolioShareTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeletePortfolioShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeletePortfolioShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeletePortfolioShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeletePortfolioShareResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_portfolioShareToken;
+    bool m_portfolioShareTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

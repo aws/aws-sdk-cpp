@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEventLogConfigurationResult::GetEventLogConfigurationResult() : 
-    m_eventLogLevel(LogLevel::NOT_SET)
-{
-}
-
 GetEventLogConfigurationResult::GetEventLogConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetEventLogConfigurationResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ GetEventLogConfigurationResult& GetEventLogConfigurationResult::operator =(const
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
+    m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
+    m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventLogLevel"))
   {
     m_eventLogLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("EventLogLevel"));
-
+    m_eventLogLevelHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

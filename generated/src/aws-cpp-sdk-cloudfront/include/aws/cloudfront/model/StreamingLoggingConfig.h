@@ -31,7 +31,7 @@ namespace Model
   class StreamingLoggingConfig
   {
   public:
-    AWS_CLOUDFRONT_API StreamingLoggingConfig();
+    AWS_CLOUDFRONT_API StreamingLoggingConfig() = default;
     AWS_CLOUDFRONT_API StreamingLoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API StreamingLoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,7 +49,7 @@ namespace Model
      * <code>Bucket</code> and <code>Prefix</code>, the values are automatically
      * deleted.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline StreamingLoggingConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -60,14 +60,12 @@ namespace Model
      * <p>The Amazon S3 bucket to store the access logs in, for example,
      * <code>amzn-s3-demo-bucket.s3.amazonaws.com</code>.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline StreamingLoggingConfig& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline StreamingLoggingConfig& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline StreamingLoggingConfig& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    StreamingLoggingConfig& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,18 +76,16 @@ namespace Model
      * must include an empty <code>Prefix</code> element in the <code>Logging</code>
      * element.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline StreamingLoggingConfig& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline StreamingLoggingConfig& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline StreamingLoggingConfig& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    StreamingLoggingConfig& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_bucket;

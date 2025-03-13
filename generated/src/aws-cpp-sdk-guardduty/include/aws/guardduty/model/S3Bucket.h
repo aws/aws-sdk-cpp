@@ -36,7 +36,7 @@ namespace Model
   class S3Bucket
   {
   public:
-    AWS_GUARDDUTY_API S3Bucket();
+    AWS_GUARDDUTY_API S3Bucket() = default;
     AWS_GUARDDUTY_API S3Bucket(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API S3Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,24 @@ namespace Model
     /**
      * <p>The owner ID of the associated S3Amazon S3bucket.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline S3Bucket& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline S3Bucket& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline S3Bucket& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    S3Bucket& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which the Amazon S3 bucket was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline S3Bucket& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline S3Bucket& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    S3Bucket& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html">Protecting
      * data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetEncryptionType() const{ return m_encryptionType; }
+    inline const Aws::String& GetEncryptionType() const { return m_encryptionType; }
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
-    inline void SetEncryptionType(const Aws::String& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
-    inline void SetEncryptionType(Aws::String&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
-    inline void SetEncryptionType(const char* value) { m_encryptionTypeHasBeenSet = true; m_encryptionType.assign(value); }
-    inline S3Bucket& WithEncryptionType(const Aws::String& value) { SetEncryptionType(value); return *this;}
-    inline S3Bucket& WithEncryptionType(Aws::String&& value) { SetEncryptionType(std::move(value)); return *this;}
-    inline S3Bucket& WithEncryptionType(const char* value) { SetEncryptionType(value); return *this;}
+    template<typename EncryptionTypeT = Aws::String>
+    void SetEncryptionType(EncryptionTypeT&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::forward<EncryptionTypeT>(value); }
+    template<typename EncryptionTypeT = Aws::String>
+    S3Bucket& WithEncryptionType(EncryptionTypeT&& value) { SetEncryptionType(std::forward<EncryptionTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +86,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the encryption key that is used to encrypt
      * the Amazon S3 bucket and its objects.</p>
      */
-    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
-    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
-    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
-    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
-    inline S3Bucket& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-    inline S3Bucket& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-    inline S3Bucket& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    S3Bucket& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +99,12 @@ namespace Model
      * <p>Describes the effective permissions on this S3 bucket, after factoring all
      * the attached policies.</p>
      */
-    inline const Aws::String& GetEffectivePermission() const{ return m_effectivePermission; }
+    inline const Aws::String& GetEffectivePermission() const { return m_effectivePermission; }
     inline bool EffectivePermissionHasBeenSet() const { return m_effectivePermissionHasBeenSet; }
-    inline void SetEffectivePermission(const Aws::String& value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission = value; }
-    inline void SetEffectivePermission(Aws::String&& value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission = std::move(value); }
-    inline void SetEffectivePermission(const char* value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission.assign(value); }
-    inline S3Bucket& WithEffectivePermission(const Aws::String& value) { SetEffectivePermission(value); return *this;}
-    inline S3Bucket& WithEffectivePermission(Aws::String&& value) { SetEffectivePermission(std::move(value)); return *this;}
-    inline S3Bucket& WithEffectivePermission(const char* value) { SetEffectivePermission(value); return *this;}
+    template<typename EffectivePermissionT = Aws::String>
+    void SetEffectivePermission(EffectivePermissionT&& value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission = std::forward<EffectivePermissionT>(value); }
+    template<typename EffectivePermissionT = Aws::String>
+    S3Bucket& WithEffectivePermission(EffectivePermissionT&& value) { SetEffectivePermission(std::forward<EffectivePermissionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +112,10 @@ namespace Model
      * <p>Indicates whether or not the public read access is allowed for an Amazon S3
      * bucket.</p>
      */
-    inline const PublicAccessStatus& GetPublicReadAccess() const{ return m_publicReadAccess; }
+    inline PublicAccessStatus GetPublicReadAccess() const { return m_publicReadAccess; }
     inline bool PublicReadAccessHasBeenSet() const { return m_publicReadAccessHasBeenSet; }
-    inline void SetPublicReadAccess(const PublicAccessStatus& value) { m_publicReadAccessHasBeenSet = true; m_publicReadAccess = value; }
-    inline void SetPublicReadAccess(PublicAccessStatus&& value) { m_publicReadAccessHasBeenSet = true; m_publicReadAccess = std::move(value); }
-    inline S3Bucket& WithPublicReadAccess(const PublicAccessStatus& value) { SetPublicReadAccess(value); return *this;}
-    inline S3Bucket& WithPublicReadAccess(PublicAccessStatus&& value) { SetPublicReadAccess(std::move(value)); return *this;}
+    inline void SetPublicReadAccess(PublicAccessStatus value) { m_publicReadAccessHasBeenSet = true; m_publicReadAccess = value; }
+    inline S3Bucket& WithPublicReadAccess(PublicAccessStatus value) { SetPublicReadAccess(value); return *this;}
     ///@}
 
     ///@{
@@ -133,12 +123,10 @@ namespace Model
      * <p>Indicates whether or not the public write access is allowed for an Amazon S3
      * bucket.</p>
      */
-    inline const PublicAccessStatus& GetPublicWriteAccess() const{ return m_publicWriteAccess; }
+    inline PublicAccessStatus GetPublicWriteAccess() const { return m_publicWriteAccess; }
     inline bool PublicWriteAccessHasBeenSet() const { return m_publicWriteAccessHasBeenSet; }
-    inline void SetPublicWriteAccess(const PublicAccessStatus& value) { m_publicWriteAccessHasBeenSet = true; m_publicWriteAccess = value; }
-    inline void SetPublicWriteAccess(PublicAccessStatus&& value) { m_publicWriteAccessHasBeenSet = true; m_publicWriteAccess = std::move(value); }
-    inline S3Bucket& WithPublicWriteAccess(const PublicAccessStatus& value) { SetPublicWriteAccess(value); return *this;}
-    inline S3Bucket& WithPublicWriteAccess(PublicAccessStatus&& value) { SetPublicWriteAccess(std::move(value)); return *this;}
+    inline void SetPublicWriteAccess(PublicAccessStatus value) { m_publicWriteAccessHasBeenSet = true; m_publicWriteAccess = value; }
+    inline S3Bucket& WithPublicWriteAccess(PublicAccessStatus value) { SetPublicWriteAccess(value); return *this;}
     ///@}
 
     ///@{
@@ -146,12 +134,12 @@ namespace Model
      * <p>Contains information about the public access policies that apply to the
      * Amazon S3 bucket at the account level.</p>
      */
-    inline const PublicAccessConfiguration& GetAccountPublicAccess() const{ return m_accountPublicAccess; }
+    inline const PublicAccessConfiguration& GetAccountPublicAccess() const { return m_accountPublicAccess; }
     inline bool AccountPublicAccessHasBeenSet() const { return m_accountPublicAccessHasBeenSet; }
-    inline void SetAccountPublicAccess(const PublicAccessConfiguration& value) { m_accountPublicAccessHasBeenSet = true; m_accountPublicAccess = value; }
-    inline void SetAccountPublicAccess(PublicAccessConfiguration&& value) { m_accountPublicAccessHasBeenSet = true; m_accountPublicAccess = std::move(value); }
-    inline S3Bucket& WithAccountPublicAccess(const PublicAccessConfiguration& value) { SetAccountPublicAccess(value); return *this;}
-    inline S3Bucket& WithAccountPublicAccess(PublicAccessConfiguration&& value) { SetAccountPublicAccess(std::move(value)); return *this;}
+    template<typename AccountPublicAccessT = PublicAccessConfiguration>
+    void SetAccountPublicAccess(AccountPublicAccessT&& value) { m_accountPublicAccessHasBeenSet = true; m_accountPublicAccess = std::forward<AccountPublicAccessT>(value); }
+    template<typename AccountPublicAccessT = PublicAccessConfiguration>
+    S3Bucket& WithAccountPublicAccess(AccountPublicAccessT&& value) { SetAccountPublicAccess(std::forward<AccountPublicAccessT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,34 +147,33 @@ namespace Model
      * <p>Contains information about public access policies that apply to the Amazon S3
      * bucket.</p>
      */
-    inline const PublicAccessConfiguration& GetBucketPublicAccess() const{ return m_bucketPublicAccess; }
+    inline const PublicAccessConfiguration& GetBucketPublicAccess() const { return m_bucketPublicAccess; }
     inline bool BucketPublicAccessHasBeenSet() const { return m_bucketPublicAccessHasBeenSet; }
-    inline void SetBucketPublicAccess(const PublicAccessConfiguration& value) { m_bucketPublicAccessHasBeenSet = true; m_bucketPublicAccess = value; }
-    inline void SetBucketPublicAccess(PublicAccessConfiguration&& value) { m_bucketPublicAccessHasBeenSet = true; m_bucketPublicAccess = std::move(value); }
-    inline S3Bucket& WithBucketPublicAccess(const PublicAccessConfiguration& value) { SetBucketPublicAccess(value); return *this;}
-    inline S3Bucket& WithBucketPublicAccess(PublicAccessConfiguration&& value) { SetBucketPublicAccess(std::move(value)); return *this;}
+    template<typename BucketPublicAccessT = PublicAccessConfiguration>
+    void SetBucketPublicAccess(BucketPublicAccessT&& value) { m_bucketPublicAccessHasBeenSet = true; m_bucketPublicAccess = std::forward<BucketPublicAccessT>(value); }
+    template<typename BucketPublicAccessT = PublicAccessConfiguration>
+    S3Bucket& WithBucketPublicAccess(BucketPublicAccessT&& value) { SetBucketPublicAccess(std::forward<BucketPublicAccessT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents a list of Amazon S3 object identifiers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetS3ObjectUids() const{ return m_s3ObjectUids; }
+    inline const Aws::Vector<Aws::String>& GetS3ObjectUids() const { return m_s3ObjectUids; }
     inline bool S3ObjectUidsHasBeenSet() const { return m_s3ObjectUidsHasBeenSet; }
-    inline void SetS3ObjectUids(const Aws::Vector<Aws::String>& value) { m_s3ObjectUidsHasBeenSet = true; m_s3ObjectUids = value; }
-    inline void SetS3ObjectUids(Aws::Vector<Aws::String>&& value) { m_s3ObjectUidsHasBeenSet = true; m_s3ObjectUids = std::move(value); }
-    inline S3Bucket& WithS3ObjectUids(const Aws::Vector<Aws::String>& value) { SetS3ObjectUids(value); return *this;}
-    inline S3Bucket& WithS3ObjectUids(Aws::Vector<Aws::String>&& value) { SetS3ObjectUids(std::move(value)); return *this;}
-    inline S3Bucket& AddS3ObjectUids(const Aws::String& value) { m_s3ObjectUidsHasBeenSet = true; m_s3ObjectUids.push_back(value); return *this; }
-    inline S3Bucket& AddS3ObjectUids(Aws::String&& value) { m_s3ObjectUidsHasBeenSet = true; m_s3ObjectUids.push_back(std::move(value)); return *this; }
-    inline S3Bucket& AddS3ObjectUids(const char* value) { m_s3ObjectUidsHasBeenSet = true; m_s3ObjectUids.push_back(value); return *this; }
+    template<typename S3ObjectUidsT = Aws::Vector<Aws::String>>
+    void SetS3ObjectUids(S3ObjectUidsT&& value) { m_s3ObjectUidsHasBeenSet = true; m_s3ObjectUids = std::forward<S3ObjectUidsT>(value); }
+    template<typename S3ObjectUidsT = Aws::Vector<Aws::String>>
+    S3Bucket& WithS3ObjectUids(S3ObjectUidsT&& value) { SetS3ObjectUids(std::forward<S3ObjectUidsT>(value)); return *this;}
+    template<typename S3ObjectUidsT = Aws::String>
+    S3Bucket& AddS3ObjectUids(S3ObjectUidsT&& value) { m_s3ObjectUidsHasBeenSet = true; m_s3ObjectUids.emplace_back(std::forward<S3ObjectUidsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_encryptionType;
@@ -198,10 +185,10 @@ namespace Model
     Aws::String m_effectivePermission;
     bool m_effectivePermissionHasBeenSet = false;
 
-    PublicAccessStatus m_publicReadAccess;
+    PublicAccessStatus m_publicReadAccess{PublicAccessStatus::NOT_SET};
     bool m_publicReadAccessHasBeenSet = false;
 
-    PublicAccessStatus m_publicWriteAccess;
+    PublicAccessStatus m_publicWriteAccess{PublicAccessStatus::NOT_SET};
     bool m_publicWriteAccessHasBeenSet = false;
 
     PublicAccessConfiguration m_accountPublicAccess;

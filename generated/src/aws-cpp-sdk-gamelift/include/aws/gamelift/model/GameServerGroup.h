@@ -46,7 +46,7 @@ namespace Model
   class GameServerGroup
   {
   public:
-    AWS_GAMELIFT_API GameServerGroup();
+    AWS_GAMELIFT_API GameServerGroup() = default;
     AWS_GAMELIFT_API GameServerGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API GameServerGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,28 +57,24 @@ namespace Model
      * <p>A developer-defined identifier for the game server group. The name is unique
      * for each Region in each Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
+    inline const Aws::String& GetGameServerGroupName() const { return m_gameServerGroupName; }
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
-    inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
-    inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
-    inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
-    inline GameServerGroup& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
-    inline GameServerGroup& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
-    inline GameServerGroup& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
+    template<typename GameServerGroupNameT = Aws::String>
+    void SetGameServerGroupName(GameServerGroupNameT&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::forward<GameServerGroupNameT>(value); }
+    template<typename GameServerGroupNameT = Aws::String>
+    GameServerGroup& WithGameServerGroupName(GameServerGroupNameT&& value) { SetGameServerGroupName(std::forward<GameServerGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A generated unique ID for the game server group.</p>
      */
-    inline const Aws::String& GetGameServerGroupArn() const{ return m_gameServerGroupArn; }
+    inline const Aws::String& GetGameServerGroupArn() const { return m_gameServerGroupArn; }
     inline bool GameServerGroupArnHasBeenSet() const { return m_gameServerGroupArnHasBeenSet; }
-    inline void SetGameServerGroupArn(const Aws::String& value) { m_gameServerGroupArnHasBeenSet = true; m_gameServerGroupArn = value; }
-    inline void SetGameServerGroupArn(Aws::String&& value) { m_gameServerGroupArnHasBeenSet = true; m_gameServerGroupArn = std::move(value); }
-    inline void SetGameServerGroupArn(const char* value) { m_gameServerGroupArnHasBeenSet = true; m_gameServerGroupArn.assign(value); }
-    inline GameServerGroup& WithGameServerGroupArn(const Aws::String& value) { SetGameServerGroupArn(value); return *this;}
-    inline GameServerGroup& WithGameServerGroupArn(Aws::String&& value) { SetGameServerGroupArn(std::move(value)); return *this;}
-    inline GameServerGroup& WithGameServerGroupArn(const char* value) { SetGameServerGroupArn(value); return *this;}
+    template<typename GameServerGroupArnT = Aws::String>
+    void SetGameServerGroupArn(GameServerGroupArnT&& value) { m_gameServerGroupArnHasBeenSet = true; m_gameServerGroupArn = std::forward<GameServerGroupArnT>(value); }
+    template<typename GameServerGroupArnT = Aws::String>
+    GameServerGroup& WithGameServerGroupArn(GameServerGroupArnT&& value) { SetGameServerGroupArn(std::forward<GameServerGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +84,12 @@ namespace Model
      * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
      * Scaling groups.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline GameServerGroup& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline GameServerGroup& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline GameServerGroup& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    GameServerGroup& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +98,14 @@ namespace Model
      * when balancing and automatically scaling instances in the corresponding Auto
      * Scaling group. </p>
      */
-    inline const Aws::Vector<InstanceDefinition>& GetInstanceDefinitions() const{ return m_instanceDefinitions; }
+    inline const Aws::Vector<InstanceDefinition>& GetInstanceDefinitions() const { return m_instanceDefinitions; }
     inline bool InstanceDefinitionsHasBeenSet() const { return m_instanceDefinitionsHasBeenSet; }
-    inline void SetInstanceDefinitions(const Aws::Vector<InstanceDefinition>& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = value; }
-    inline void SetInstanceDefinitions(Aws::Vector<InstanceDefinition>&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = std::move(value); }
-    inline GameServerGroup& WithInstanceDefinitions(const Aws::Vector<InstanceDefinition>& value) { SetInstanceDefinitions(value); return *this;}
-    inline GameServerGroup& WithInstanceDefinitions(Aws::Vector<InstanceDefinition>&& value) { SetInstanceDefinitions(std::move(value)); return *this;}
-    inline GameServerGroup& AddInstanceDefinitions(const InstanceDefinition& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.push_back(value); return *this; }
-    inline GameServerGroup& AddInstanceDefinitions(InstanceDefinition&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.push_back(std::move(value)); return *this; }
+    template<typename InstanceDefinitionsT = Aws::Vector<InstanceDefinition>>
+    void SetInstanceDefinitions(InstanceDefinitionsT&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = std::forward<InstanceDefinitionsT>(value); }
+    template<typename InstanceDefinitionsT = Aws::Vector<InstanceDefinition>>
+    GameServerGroup& WithInstanceDefinitions(InstanceDefinitionsT&& value) { SetInstanceDefinitions(std::forward<InstanceDefinitionsT>(value)); return *this;}
+    template<typename InstanceDefinitionsT = InstanceDefinition>
+    GameServerGroup& AddInstanceDefinitions(InstanceDefinitionsT&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.emplace_back(std::forward<InstanceDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -133,12 +127,10 @@ namespace Model
      * used, even when available, while this balancing strategy is in force.</p> </li>
      * </ul>
      */
-    inline const BalancingStrategy& GetBalancingStrategy() const{ return m_balancingStrategy; }
+    inline BalancingStrategy GetBalancingStrategy() const { return m_balancingStrategy; }
     inline bool BalancingStrategyHasBeenSet() const { return m_balancingStrategyHasBeenSet; }
-    inline void SetBalancingStrategy(const BalancingStrategy& value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = value; }
-    inline void SetBalancingStrategy(BalancingStrategy&& value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = std::move(value); }
-    inline GameServerGroup& WithBalancingStrategy(const BalancingStrategy& value) { SetBalancingStrategy(value); return *this;}
-    inline GameServerGroup& WithBalancingStrategy(BalancingStrategy&& value) { SetBalancingStrategy(std::move(value)); return *this;}
+    inline void SetBalancingStrategy(BalancingStrategy value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = value; }
+    inline GameServerGroup& WithBalancingStrategy(BalancingStrategy value) { SetBalancingStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -151,12 +143,10 @@ namespace Model
      * server group deletion (see ). An exception to this is with Spot Instances, which
      * can be terminated by Amazon Web Services regardless of protection status. </p>
      */
-    inline const GameServerProtectionPolicy& GetGameServerProtectionPolicy() const{ return m_gameServerProtectionPolicy; }
+    inline GameServerProtectionPolicy GetGameServerProtectionPolicy() const { return m_gameServerProtectionPolicy; }
     inline bool GameServerProtectionPolicyHasBeenSet() const { return m_gameServerProtectionPolicyHasBeenSet; }
-    inline void SetGameServerProtectionPolicy(const GameServerProtectionPolicy& value) { m_gameServerProtectionPolicyHasBeenSet = true; m_gameServerProtectionPolicy = value; }
-    inline void SetGameServerProtectionPolicy(GameServerProtectionPolicy&& value) { m_gameServerProtectionPolicyHasBeenSet = true; m_gameServerProtectionPolicy = std::move(value); }
-    inline GameServerGroup& WithGameServerProtectionPolicy(const GameServerProtectionPolicy& value) { SetGameServerProtectionPolicy(value); return *this;}
-    inline GameServerGroup& WithGameServerProtectionPolicy(GameServerProtectionPolicy&& value) { SetGameServerProtectionPolicy(std::move(value)); return *this;}
+    inline void SetGameServerProtectionPolicy(GameServerProtectionPolicy value) { m_gameServerProtectionPolicyHasBeenSet = true; m_gameServerProtectionPolicy = value; }
+    inline GameServerGroup& WithGameServerProtectionPolicy(GameServerProtectionPolicy value) { SetGameServerProtectionPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -164,14 +154,12 @@ namespace Model
      * <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is
      * associated with this game server group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupArn() const{ return m_autoScalingGroupArn; }
+    inline const Aws::String& GetAutoScalingGroupArn() const { return m_autoScalingGroupArn; }
     inline bool AutoScalingGroupArnHasBeenSet() const { return m_autoScalingGroupArnHasBeenSet; }
-    inline void SetAutoScalingGroupArn(const Aws::String& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = value; }
-    inline void SetAutoScalingGroupArn(Aws::String&& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = std::move(value); }
-    inline void SetAutoScalingGroupArn(const char* value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn.assign(value); }
-    inline GameServerGroup& WithAutoScalingGroupArn(const Aws::String& value) { SetAutoScalingGroupArn(value); return *this;}
-    inline GameServerGroup& WithAutoScalingGroupArn(Aws::String&& value) { SetAutoScalingGroupArn(std::move(value)); return *this;}
-    inline GameServerGroup& WithAutoScalingGroupArn(const char* value) { SetAutoScalingGroupArn(value); return *this;}
+    template<typename AutoScalingGroupArnT = Aws::String>
+    void SetAutoScalingGroupArn(AutoScalingGroupArnT&& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = std::forward<AutoScalingGroupArnT>(value); }
+    template<typename AutoScalingGroupArnT = Aws::String>
+    GameServerGroup& WithAutoScalingGroupArn(AutoScalingGroupArnT&& value) { SetAutoScalingGroupArn(std::forward<AutoScalingGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,12 +181,10 @@ namespace Model
      * deleting a game server group has failed, resulting in an error state.</p> </li>
      * </ul>
      */
-    inline const GameServerGroupStatus& GetStatus() const{ return m_status; }
+    inline GameServerGroupStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const GameServerGroupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(GameServerGroupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline GameServerGroup& WithStatus(const GameServerGroupStatus& value) { SetStatus(value); return *this;}
-    inline GameServerGroup& WithStatus(GameServerGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(GameServerGroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GameServerGroup& WithStatus(GameServerGroupStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -207,14 +193,12 @@ namespace Model
      * information might provide additional insight on groups that are in
      * <code>ERROR</code> status.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline GameServerGroup& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline GameServerGroup& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline GameServerGroup& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    GameServerGroup& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,14 +206,13 @@ namespace Model
      * <p>A list of activities that are currently suspended for this game server group.
      * If this property is empty, all activities are occurring.</p>
      */
-    inline const Aws::Vector<GameServerGroupAction>& GetSuspendedActions() const{ return m_suspendedActions; }
+    inline const Aws::Vector<GameServerGroupAction>& GetSuspendedActions() const { return m_suspendedActions; }
     inline bool SuspendedActionsHasBeenSet() const { return m_suspendedActionsHasBeenSet; }
-    inline void SetSuspendedActions(const Aws::Vector<GameServerGroupAction>& value) { m_suspendedActionsHasBeenSet = true; m_suspendedActions = value; }
-    inline void SetSuspendedActions(Aws::Vector<GameServerGroupAction>&& value) { m_suspendedActionsHasBeenSet = true; m_suspendedActions = std::move(value); }
-    inline GameServerGroup& WithSuspendedActions(const Aws::Vector<GameServerGroupAction>& value) { SetSuspendedActions(value); return *this;}
-    inline GameServerGroup& WithSuspendedActions(Aws::Vector<GameServerGroupAction>&& value) { SetSuspendedActions(std::move(value)); return *this;}
-    inline GameServerGroup& AddSuspendedActions(const GameServerGroupAction& value) { m_suspendedActionsHasBeenSet = true; m_suspendedActions.push_back(value); return *this; }
-    inline GameServerGroup& AddSuspendedActions(GameServerGroupAction&& value) { m_suspendedActionsHasBeenSet = true; m_suspendedActions.push_back(std::move(value)); return *this; }
+    template<typename SuspendedActionsT = Aws::Vector<GameServerGroupAction>>
+    void SetSuspendedActions(SuspendedActionsT&& value) { m_suspendedActionsHasBeenSet = true; m_suspendedActions = std::forward<SuspendedActionsT>(value); }
+    template<typename SuspendedActionsT = Aws::Vector<GameServerGroupAction>>
+    GameServerGroup& WithSuspendedActions(SuspendedActionsT&& value) { SetSuspendedActions(std::forward<SuspendedActionsT>(value)); return *this;}
+    inline GameServerGroup& AddSuspendedActions(GameServerGroupAction value) { m_suspendedActionsHasBeenSet = true; m_suspendedActions.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -238,24 +221,24 @@ namespace Model
      * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline GameServerGroup& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GameServerGroup& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GameServerGroup& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that indicates when this game server group was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline GameServerGroup& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline GameServerGroup& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    GameServerGroup& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -271,16 +254,16 @@ namespace Model
     Aws::Vector<InstanceDefinition> m_instanceDefinitions;
     bool m_instanceDefinitionsHasBeenSet = false;
 
-    BalancingStrategy m_balancingStrategy;
+    BalancingStrategy m_balancingStrategy{BalancingStrategy::NOT_SET};
     bool m_balancingStrategyHasBeenSet = false;
 
-    GameServerProtectionPolicy m_gameServerProtectionPolicy;
+    GameServerProtectionPolicy m_gameServerProtectionPolicy{GameServerProtectionPolicy::NOT_SET};
     bool m_gameServerProtectionPolicyHasBeenSet = false;
 
     Aws::String m_autoScalingGroupArn;
     bool m_autoScalingGroupArnHasBeenSet = false;
 
-    GameServerGroupStatus m_status;
+    GameServerGroupStatus m_status{GameServerGroupStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
@@ -289,10 +272,10 @@ namespace Model
     Aws::Vector<GameServerGroupAction> m_suspendedActions;
     bool m_suspendedActionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
   };
 

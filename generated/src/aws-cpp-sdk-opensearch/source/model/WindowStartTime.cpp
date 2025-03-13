@@ -18,16 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-WindowStartTime::WindowStartTime() : 
-    m_hours(0),
-    m_hoursHasBeenSet(false),
-    m_minutes(0),
-    m_minutesHasBeenSet(false)
-{
-}
-
 WindowStartTime::WindowStartTime(JsonView jsonValue)
-  : WindowStartTime()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WindowStartTime& WindowStartTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Hours"))
   {
     m_hours = jsonValue.GetInt64("Hours");
-
     m_hoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Minutes"))
   {
     m_minutes = jsonValue.GetInt64("Minutes");
-
     m_minutesHasBeenSet = true;
   }
-
   return *this;
 }
 

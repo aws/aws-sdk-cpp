@@ -18,13 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-RunCommandParameters::RunCommandParameters() : 
-    m_runCommandTargetsHasBeenSet(false)
-{
-}
-
 RunCommandParameters::RunCommandParameters(JsonView jsonValue)
-  : RunCommandParameters()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RunCommandParameters& RunCommandParameters::operator =(JsonView jsonValue)
     }
     m_runCommandTargetsHasBeenSet = true;
   }
-
   return *this;
 }
 

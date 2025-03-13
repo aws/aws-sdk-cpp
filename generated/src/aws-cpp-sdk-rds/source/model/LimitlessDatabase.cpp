@@ -20,16 +20,7 @@ namespace RDS
 namespace Model
 {
 
-LimitlessDatabase::LimitlessDatabase() : 
-    m_status(LimitlessDatabaseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_minRequiredACU(0.0),
-    m_minRequiredACUHasBeenSet(false)
-{
-}
-
 LimitlessDatabase::LimitlessDatabase(const XmlNode& xmlNode)
-  : LimitlessDatabase()
 {
   *this = xmlNode;
 }
@@ -43,14 +34,16 @@ LimitlessDatabase& LimitlessDatabase::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = LimitlessDatabaseStatusMapper::GetLimitlessDatabaseStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = LimitlessDatabaseStatusMapper::GetLimitlessDatabaseStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode minRequiredACUNode = resultNode.FirstChild("MinRequiredACU");
     if(!minRequiredACUNode.IsNull())
     {
       m_minRequiredACU = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minRequiredACUNode.GetText()).c_str()).c_str());
       m_minRequiredACUHasBeenSet = true;
+       m_minRequiredACUHasBeenSet = true;
     }
   }
 

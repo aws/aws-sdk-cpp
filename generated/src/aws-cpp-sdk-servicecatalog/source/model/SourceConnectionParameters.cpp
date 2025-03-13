@@ -18,13 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-SourceConnectionParameters::SourceConnectionParameters() : 
-    m_codeStarHasBeenSet(false)
-{
-}
-
 SourceConnectionParameters::SourceConnectionParameters(JsonView jsonValue)
-  : SourceConnectionParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SourceConnectionParameters& SourceConnectionParameters::operator =(JsonView json
   if(jsonValue.ValueExists("CodeStar"))
   {
     m_codeStar = jsonValue.GetObject("CodeStar");
-
     m_codeStarHasBeenSet = true;
   }
-
   return *this;
 }
 

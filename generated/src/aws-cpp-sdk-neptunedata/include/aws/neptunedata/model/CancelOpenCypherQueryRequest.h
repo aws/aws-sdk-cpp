@@ -25,7 +25,7 @@ namespace Model
   class CancelOpenCypherQueryRequest : public NeptunedataRequest
   {
   public:
-    AWS_NEPTUNEDATA_API CancelOpenCypherQueryRequest();
+    AWS_NEPTUNEDATA_API CancelOpenCypherQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique ID of the openCypher query to cancel.</p>
      */
-    inline const Aws::String& GetQueryId() const{ return m_queryId; }
+    inline const Aws::String& GetQueryId() const { return m_queryId; }
     inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
-    inline void SetQueryId(const Aws::String& value) { m_queryIdHasBeenSet = true; m_queryId = value; }
-    inline void SetQueryId(Aws::String&& value) { m_queryIdHasBeenSet = true; m_queryId = std::move(value); }
-    inline void SetQueryId(const char* value) { m_queryIdHasBeenSet = true; m_queryId.assign(value); }
-    inline CancelOpenCypherQueryRequest& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
-    inline CancelOpenCypherQueryRequest& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
-    inline CancelOpenCypherQueryRequest& WithQueryId(const char* value) { SetQueryId(value); return *this;}
+    template<typename QueryIdT = Aws::String>
+    void SetQueryId(QueryIdT&& value) { m_queryIdHasBeenSet = true; m_queryId = std::forward<QueryIdT>(value); }
+    template<typename QueryIdT = Aws::String>
+    CancelOpenCypherQueryRequest& WithQueryId(QueryIdT&& value) { SetQueryId(std::forward<QueryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>If set to <code>TRUE</code>, causes the cancelation of the openCypher query
      * to happen silently.</p>
      */
-    inline bool GetSilent() const{ return m_silent; }
+    inline bool GetSilent() const { return m_silent; }
     inline bool SilentHasBeenSet() const { return m_silentHasBeenSet; }
     inline void SetSilent(bool value) { m_silentHasBeenSet = true; m_silent = value; }
     inline CancelOpenCypherQueryRequest& WithSilent(bool value) { SetSilent(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_queryId;
     bool m_queryIdHasBeenSet = false;
 
-    bool m_silent;
+    bool m_silent{false};
     bool m_silentHasBeenSet = false;
   };
 

@@ -25,7 +25,7 @@ namespace Model
   class DescribeEventTopicsRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API DescribeEventTopicsRequest();
+    AWS_DIRECTORYSERVICE_API DescribeEventTopicsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Directory ID for which to get the list of associated Amazon SNS topics.
      * If this member is null, associations for all Directory IDs are returned.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline DescribeEventTopicsRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline DescribeEventTopicsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline DescribeEventTopicsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    DescribeEventTopicsRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,15 +58,14 @@ namespace Model
      * returned.</p> <p>An empty list results in an
      * <code>InvalidParameterException</code> being thrown.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTopicNames() const{ return m_topicNames; }
+    inline const Aws::Vector<Aws::String>& GetTopicNames() const { return m_topicNames; }
     inline bool TopicNamesHasBeenSet() const { return m_topicNamesHasBeenSet; }
-    inline void SetTopicNames(const Aws::Vector<Aws::String>& value) { m_topicNamesHasBeenSet = true; m_topicNames = value; }
-    inline void SetTopicNames(Aws::Vector<Aws::String>&& value) { m_topicNamesHasBeenSet = true; m_topicNames = std::move(value); }
-    inline DescribeEventTopicsRequest& WithTopicNames(const Aws::Vector<Aws::String>& value) { SetTopicNames(value); return *this;}
-    inline DescribeEventTopicsRequest& WithTopicNames(Aws::Vector<Aws::String>&& value) { SetTopicNames(std::move(value)); return *this;}
-    inline DescribeEventTopicsRequest& AddTopicNames(const Aws::String& value) { m_topicNamesHasBeenSet = true; m_topicNames.push_back(value); return *this; }
-    inline DescribeEventTopicsRequest& AddTopicNames(Aws::String&& value) { m_topicNamesHasBeenSet = true; m_topicNames.push_back(std::move(value)); return *this; }
-    inline DescribeEventTopicsRequest& AddTopicNames(const char* value) { m_topicNamesHasBeenSet = true; m_topicNames.push_back(value); return *this; }
+    template<typename TopicNamesT = Aws::Vector<Aws::String>>
+    void SetTopicNames(TopicNamesT&& value) { m_topicNamesHasBeenSet = true; m_topicNames = std::forward<TopicNamesT>(value); }
+    template<typename TopicNamesT = Aws::Vector<Aws::String>>
+    DescribeEventTopicsRequest& WithTopicNames(TopicNamesT&& value) { SetTopicNames(std::forward<TopicNamesT>(value)); return *this;}
+    template<typename TopicNamesT = Aws::String>
+    DescribeEventTopicsRequest& AddTopicNames(TopicNamesT&& value) { m_topicNamesHasBeenSet = true; m_topicNames.emplace_back(std::forward<TopicNamesT>(value)); return *this; }
     ///@}
   private:
 

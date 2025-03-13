@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceTopology::InstanceTopology() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_networkNodesHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_zoneIdHasBeenSet(false)
-{
-}
-
 InstanceTopology::InstanceTopology(const XmlNode& xmlNode)
-  : InstanceTopology()
 {
   *this = xmlNode;
 }
@@ -47,42 +36,48 @@ InstanceTopology& InstanceTopology::operator =(const XmlNode& xmlNode)
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("groupName");
     if(!groupNameNode.IsNull())
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
+       m_groupNameHasBeenSet = true;
     }
     XmlNode networkNodesNode = resultNode.FirstChild("networkNodeSet");
     if(!networkNodesNode.IsNull())
     {
       XmlNode networkNodesMember = networkNodesNode.FirstChild("item");
+      m_networkNodesHasBeenSet = !networkNodesMember.IsNull();
       while(!networkNodesMember.IsNull())
       {
         m_networkNodes.push_back(networkNodesMember.GetText());
         networkNodesMember = networkNodesMember.NextNode("item");
       }
 
-      m_networkNodesHasBeenSet = true;
+       m_networkNodesHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode zoneIdNode = resultNode.FirstChild("zoneId");
     if(!zoneIdNode.IsNull())
     {
       m_zoneId = Aws::Utils::Xml::DecodeEscapedXmlText(zoneIdNode.GetText());
       m_zoneIdHasBeenSet = true;
+       m_zoneIdHasBeenSet = true;
     }
   }
 

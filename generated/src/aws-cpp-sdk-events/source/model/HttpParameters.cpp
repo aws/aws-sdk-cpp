@@ -18,15 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-HttpParameters::HttpParameters() : 
-    m_pathParameterValuesHasBeenSet(false),
-    m_headerParametersHasBeenSet(false),
-    m_queryStringParametersHasBeenSet(false)
-{
-}
-
 HttpParameters::HttpParameters(JsonView jsonValue)
-  : HttpParameters()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ HttpParameters& HttpParameters::operator =(JsonView jsonValue)
     }
     m_pathParameterValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeaderParameters"))
   {
     Aws::Map<Aws::String, JsonView> headerParametersJsonMap = jsonValue.GetObject("HeaderParameters").GetAllObjects();
@@ -52,7 +43,6 @@ HttpParameters& HttpParameters::operator =(JsonView jsonValue)
     }
     m_headerParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryStringParameters"))
   {
     Aws::Map<Aws::String, JsonView> queryStringParametersJsonMap = jsonValue.GetObject("QueryStringParameters").GetAllObjects();
@@ -62,7 +52,6 @@ HttpParameters& HttpParameters::operator =(JsonView jsonValue)
     }
     m_queryStringParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

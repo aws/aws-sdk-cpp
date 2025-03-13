@@ -20,20 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-StatisticSet::StatisticSet() : 
-    m_sampleCount(0.0),
-    m_sampleCountHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_minimum(0.0),
-    m_minimumHasBeenSet(false),
-    m_maximum(0.0),
-    m_maximumHasBeenSet(false)
-{
-}
-
 StatisticSet::StatisticSet(const XmlNode& xmlNode)
-  : StatisticSet()
 {
   *this = xmlNode;
 }
@@ -49,24 +36,28 @@ StatisticSet& StatisticSet::operator =(const XmlNode& xmlNode)
     {
       m_sampleCount = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sampleCountNode.GetText()).c_str()).c_str());
       m_sampleCountHasBeenSet = true;
+       m_sampleCountHasBeenSet = true;
     }
     XmlNode sumNode = resultNode.FirstChild("Sum");
     if(!sumNode.IsNull())
     {
       m_sum = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sumNode.GetText()).c_str()).c_str());
       m_sumHasBeenSet = true;
+       m_sumHasBeenSet = true;
     }
     XmlNode minimumNode = resultNode.FirstChild("Minimum");
     if(!minimumNode.IsNull())
     {
       m_minimum = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minimumNode.GetText()).c_str()).c_str());
       m_minimumHasBeenSet = true;
+       m_minimumHasBeenSet = true;
     }
     XmlNode maximumNode = resultNode.FirstChild("Maximum");
     if(!maximumNode.IsNull())
     {
       m_maximum = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNode.GetText()).c_str()).c_str());
       m_maximumHasBeenSet = true;
+       m_maximumHasBeenSet = true;
     }
   }
 

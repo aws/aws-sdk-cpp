@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-TextPrompt::TextPrompt() : 
-    m_textHasBeenSet(false)
-{
-}
-
 TextPrompt::TextPrompt(JsonView jsonValue)
-  : TextPrompt()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TextPrompt& TextPrompt::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

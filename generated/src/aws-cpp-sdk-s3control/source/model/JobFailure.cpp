@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobFailure::JobFailure() : 
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 JobFailure::JobFailure(const XmlNode& xmlNode)
-  : JobFailure()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ JobFailure& JobFailure::operator =(const XmlNode& xmlNode)
     {
       m_failureCode = Aws::Utils::Xml::DecodeEscapedXmlText(failureCodeNode.GetText());
       m_failureCodeHasBeenSet = true;
+       m_failureCodeHasBeenSet = true;
     }
     XmlNode failureReasonNode = resultNode.FirstChild("FailureReason");
     if(!failureReasonNode.IsNull())
     {
       m_failureReason = Aws::Utils::Xml::DecodeEscapedXmlText(failureReasonNode.GetText());
       m_failureReasonHasBeenSet = true;
+       m_failureReasonHasBeenSet = true;
     }
   }
 

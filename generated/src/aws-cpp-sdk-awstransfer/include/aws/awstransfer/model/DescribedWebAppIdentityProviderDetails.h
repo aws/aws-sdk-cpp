@@ -32,7 +32,7 @@ namespace Model
   class DescribedWebAppIdentityProviderDetails
   {
   public:
-    AWS_TRANSFER_API DescribedWebAppIdentityProviderDetails();
+    AWS_TRANSFER_API DescribedWebAppIdentityProviderDetails() = default;
     AWS_TRANSFER_API DescribedWebAppIdentityProviderDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API DescribedWebAppIdentityProviderDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Returns a structure for your identity provider details. This structure
      * contains the instance ARN and role being used for the web app.</p>
      */
-    inline const DescribedIdentityCenterConfig& GetIdentityCenterConfig() const{ return m_identityCenterConfig; }
+    inline const DescribedIdentityCenterConfig& GetIdentityCenterConfig() const { return m_identityCenterConfig; }
     inline bool IdentityCenterConfigHasBeenSet() const { return m_identityCenterConfigHasBeenSet; }
-    inline void SetIdentityCenterConfig(const DescribedIdentityCenterConfig& value) { m_identityCenterConfigHasBeenSet = true; m_identityCenterConfig = value; }
-    inline void SetIdentityCenterConfig(DescribedIdentityCenterConfig&& value) { m_identityCenterConfigHasBeenSet = true; m_identityCenterConfig = std::move(value); }
-    inline DescribedWebAppIdentityProviderDetails& WithIdentityCenterConfig(const DescribedIdentityCenterConfig& value) { SetIdentityCenterConfig(value); return *this;}
-    inline DescribedWebAppIdentityProviderDetails& WithIdentityCenterConfig(DescribedIdentityCenterConfig&& value) { SetIdentityCenterConfig(std::move(value)); return *this;}
+    template<typename IdentityCenterConfigT = DescribedIdentityCenterConfig>
+    void SetIdentityCenterConfig(IdentityCenterConfigT&& value) { m_identityCenterConfigHasBeenSet = true; m_identityCenterConfig = std::forward<IdentityCenterConfigT>(value); }
+    template<typename IdentityCenterConfigT = DescribedIdentityCenterConfig>
+    DescribedWebAppIdentityProviderDetails& WithIdentityCenterConfig(IdentityCenterConfigT&& value) { SetIdentityCenterConfig(std::forward<IdentityCenterConfigT>(value)); return *this;}
     ///@}
   private:
 

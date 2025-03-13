@@ -12,10 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteElasticsearchServiceRoleRequest::DeleteElasticsearchServiceRoleRequest()
-{
-}
-
 Aws::String DeleteElasticsearchServiceRoleRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class ComputeConfiguration
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API ComputeConfiguration();
+    AWS_COSTOPTIMIZATIONHUB_API ComputeConfiguration() = default;
     AWS_COSTOPTIMIZATIONHUB_API ComputeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API ComputeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The number of vCPU cores in the resource.</p>
      */
-    inline double GetVCpu() const{ return m_vCpu; }
+    inline double GetVCpu() const { return m_vCpu; }
     inline bool VCpuHasBeenSet() const { return m_vCpuHasBeenSet; }
     inline void SetVCpu(double value) { m_vCpuHasBeenSet = true; m_vCpu = value; }
     inline ComputeConfiguration& WithVCpu(double value) { SetVCpu(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>The memory size of the resource.</p>
      */
-    inline int GetMemorySizeInMB() const{ return m_memorySizeInMB; }
+    inline int GetMemorySizeInMB() const { return m_memorySizeInMB; }
     inline bool MemorySizeInMBHasBeenSet() const { return m_memorySizeInMBHasBeenSet; }
     inline void SetMemorySizeInMB(int value) { m_memorySizeInMBHasBeenSet = true; m_memorySizeInMB = value; }
     inline ComputeConfiguration& WithMemorySizeInMB(int value) { SetMemorySizeInMB(value); return *this;}
@@ -62,14 +62,12 @@ namespace Model
     /**
      * <p>The architecture of the resource.</p>
      */
-    inline const Aws::String& GetArchitecture() const{ return m_architecture; }
+    inline const Aws::String& GetArchitecture() const { return m_architecture; }
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-    inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-    inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
-    inline ComputeConfiguration& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
-    inline ComputeConfiguration& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
-    inline ComputeConfiguration& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
+    template<typename ArchitectureT = Aws::String>
+    void SetArchitecture(ArchitectureT&& value) { m_architectureHasBeenSet = true; m_architecture = std::forward<ArchitectureT>(value); }
+    template<typename ArchitectureT = Aws::String>
+    ComputeConfiguration& WithArchitecture(ArchitectureT&& value) { SetArchitecture(std::forward<ArchitectureT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,21 +75,19 @@ namespace Model
      * <p>The platform of the resource. The platform is the specific combination of
      * operating system, license model, and software on an instance.</p>
      */
-    inline const Aws::String& GetPlatform() const{ return m_platform; }
+    inline const Aws::String& GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
-    inline ComputeConfiguration& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
-    inline ComputeConfiguration& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
-    inline ComputeConfiguration& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+    template<typename PlatformT = Aws::String>
+    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
+    template<typename PlatformT = Aws::String>
+    ComputeConfiguration& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
   private:
 
-    double m_vCpu;
+    double m_vCpu{0.0};
     bool m_vCpuHasBeenSet = false;
 
-    int m_memorySizeInMB;
+    int m_memorySizeInMB{0};
     bool m_memorySizeInMBHasBeenSet = false;
 
     Aws::String m_architecture;

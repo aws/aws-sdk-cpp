@@ -12,12 +12,6 @@ using namespace Aws::BCMDataExports::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTableRequest::GetTableRequest() : 
-    m_tableNameHasBeenSet(false),
-    m_tablePropertiesHasBeenSet(false)
-{
-}
-
 Aws::String GetTableRequest::SerializePayload() const
 {
   JsonValue payload;

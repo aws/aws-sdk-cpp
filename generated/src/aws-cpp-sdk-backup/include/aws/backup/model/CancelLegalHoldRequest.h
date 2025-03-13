@@ -25,7 +25,7 @@ namespace Model
   class CancelLegalHoldRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API CancelLegalHoldRequest();
+    AWS_BACKUP_API CancelLegalHoldRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,35 +42,31 @@ namespace Model
     /**
      * <p>The ID of the legal hold.</p>
      */
-    inline const Aws::String& GetLegalHoldId() const{ return m_legalHoldId; }
+    inline const Aws::String& GetLegalHoldId() const { return m_legalHoldId; }
     inline bool LegalHoldIdHasBeenSet() const { return m_legalHoldIdHasBeenSet; }
-    inline void SetLegalHoldId(const Aws::String& value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId = value; }
-    inline void SetLegalHoldId(Aws::String&& value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId = std::move(value); }
-    inline void SetLegalHoldId(const char* value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId.assign(value); }
-    inline CancelLegalHoldRequest& WithLegalHoldId(const Aws::String& value) { SetLegalHoldId(value); return *this;}
-    inline CancelLegalHoldRequest& WithLegalHoldId(Aws::String&& value) { SetLegalHoldId(std::move(value)); return *this;}
-    inline CancelLegalHoldRequest& WithLegalHoldId(const char* value) { SetLegalHoldId(value); return *this;}
+    template<typename LegalHoldIdT = Aws::String>
+    void SetLegalHoldId(LegalHoldIdT&& value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId = std::forward<LegalHoldIdT>(value); }
+    template<typename LegalHoldIdT = Aws::String>
+    CancelLegalHoldRequest& WithLegalHoldId(LegalHoldIdT&& value) { SetLegalHoldId(std::forward<LegalHoldIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string the describes the reason for removing the legal hold.</p>
      */
-    inline const Aws::String& GetCancelDescription() const{ return m_cancelDescription; }
+    inline const Aws::String& GetCancelDescription() const { return m_cancelDescription; }
     inline bool CancelDescriptionHasBeenSet() const { return m_cancelDescriptionHasBeenSet; }
-    inline void SetCancelDescription(const Aws::String& value) { m_cancelDescriptionHasBeenSet = true; m_cancelDescription = value; }
-    inline void SetCancelDescription(Aws::String&& value) { m_cancelDescriptionHasBeenSet = true; m_cancelDescription = std::move(value); }
-    inline void SetCancelDescription(const char* value) { m_cancelDescriptionHasBeenSet = true; m_cancelDescription.assign(value); }
-    inline CancelLegalHoldRequest& WithCancelDescription(const Aws::String& value) { SetCancelDescription(value); return *this;}
-    inline CancelLegalHoldRequest& WithCancelDescription(Aws::String&& value) { SetCancelDescription(std::move(value)); return *this;}
-    inline CancelLegalHoldRequest& WithCancelDescription(const char* value) { SetCancelDescription(value); return *this;}
+    template<typename CancelDescriptionT = Aws::String>
+    void SetCancelDescription(CancelDescriptionT&& value) { m_cancelDescriptionHasBeenSet = true; m_cancelDescription = std::forward<CancelDescriptionT>(value); }
+    template<typename CancelDescriptionT = Aws::String>
+    CancelLegalHoldRequest& WithCancelDescription(CancelDescriptionT&& value) { SetCancelDescription(std::forward<CancelDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The integer amount, in days, after which to remove legal hold.</p>
      */
-    inline long long GetRetainRecordInDays() const{ return m_retainRecordInDays; }
+    inline long long GetRetainRecordInDays() const { return m_retainRecordInDays; }
     inline bool RetainRecordInDaysHasBeenSet() const { return m_retainRecordInDaysHasBeenSet; }
     inline void SetRetainRecordInDays(long long value) { m_retainRecordInDaysHasBeenSet = true; m_retainRecordInDays = value; }
     inline CancelLegalHoldRequest& WithRetainRecordInDays(long long value) { SetRetainRecordInDays(value); return *this;}
@@ -83,7 +79,7 @@ namespace Model
     Aws::String m_cancelDescription;
     bool m_cancelDescriptionHasBeenSet = false;
 
-    long long m_retainRecordInDays;
+    long long m_retainRecordInDays{0};
     bool m_retainRecordInDaysHasBeenSet = false;
   };
 

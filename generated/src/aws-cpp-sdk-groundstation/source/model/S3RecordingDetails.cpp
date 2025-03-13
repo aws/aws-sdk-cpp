@@ -18,14 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-S3RecordingDetails::S3RecordingDetails() : 
-    m_bucketArnHasBeenSet(false),
-    m_keyTemplateHasBeenSet(false)
-{
-}
-
 S3RecordingDetails::S3RecordingDetails(JsonView jsonValue)
-  : S3RecordingDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3RecordingDetails& S3RecordingDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketArn"))
   {
     m_bucketArn = jsonValue.GetString("bucketArn");
-
     m_bucketArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyTemplate"))
   {
     m_keyTemplate = jsonValue.GetString("keyTemplate");
-
     m_keyTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

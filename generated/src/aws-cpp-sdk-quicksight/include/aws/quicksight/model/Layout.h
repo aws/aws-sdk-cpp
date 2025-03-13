@@ -36,7 +36,7 @@ namespace Model
   class Layout
   {
   public:
-    AWS_QUICKSIGHT_API Layout();
+    AWS_QUICKSIGHT_API Layout() = default;
     AWS_QUICKSIGHT_API Layout(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Layout& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>The configuration that determines what the type of layout for a sheet.</p>
      */
-    inline const LayoutConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const LayoutConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const LayoutConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(LayoutConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline Layout& WithConfiguration(const LayoutConfiguration& value) { SetConfiguration(value); return *this;}
-    inline Layout& WithConfiguration(LayoutConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = LayoutConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = LayoutConfiguration>
+    Layout& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

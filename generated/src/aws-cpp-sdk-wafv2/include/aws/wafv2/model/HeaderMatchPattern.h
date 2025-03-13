@@ -37,7 +37,7 @@ namespace Model
   class HeaderMatchPattern
   {
   public:
-    AWS_WAFV2_API HeaderMatchPattern();
+    AWS_WAFV2_API HeaderMatchPattern() = default;
     AWS_WAFV2_API HeaderMatchPattern(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API HeaderMatchPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
     /**
      * <p>Inspect all headers. </p>
      */
-    inline const All& GetAll() const{ return m_all; }
+    inline const All& GetAll() const { return m_all; }
     inline bool AllHasBeenSet() const { return m_allHasBeenSet; }
-    inline void SetAll(const All& value) { m_allHasBeenSet = true; m_all = value; }
-    inline void SetAll(All&& value) { m_allHasBeenSet = true; m_all = std::move(value); }
-    inline HeaderMatchPattern& WithAll(const All& value) { SetAll(value); return *this;}
-    inline HeaderMatchPattern& WithAll(All&& value) { SetAll(std::move(value)); return *this;}
+    template<typename AllT = All>
+    void SetAll(AllT&& value) { m_allHasBeenSet = true; m_all = std::forward<AllT>(value); }
+    template<typename AllT = All>
+    HeaderMatchPattern& WithAll(AllT&& value) { SetAll(std::forward<AllT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,15 +60,14 @@ namespace Model
      * <p>Inspect only the headers that have a key that matches one of the strings
      * specified here. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludedHeaders() const{ return m_includedHeaders; }
+    inline const Aws::Vector<Aws::String>& GetIncludedHeaders() const { return m_includedHeaders; }
     inline bool IncludedHeadersHasBeenSet() const { return m_includedHeadersHasBeenSet; }
-    inline void SetIncludedHeaders(const Aws::Vector<Aws::String>& value) { m_includedHeadersHasBeenSet = true; m_includedHeaders = value; }
-    inline void SetIncludedHeaders(Aws::Vector<Aws::String>&& value) { m_includedHeadersHasBeenSet = true; m_includedHeaders = std::move(value); }
-    inline HeaderMatchPattern& WithIncludedHeaders(const Aws::Vector<Aws::String>& value) { SetIncludedHeaders(value); return *this;}
-    inline HeaderMatchPattern& WithIncludedHeaders(Aws::Vector<Aws::String>&& value) { SetIncludedHeaders(std::move(value)); return *this;}
-    inline HeaderMatchPattern& AddIncludedHeaders(const Aws::String& value) { m_includedHeadersHasBeenSet = true; m_includedHeaders.push_back(value); return *this; }
-    inline HeaderMatchPattern& AddIncludedHeaders(Aws::String&& value) { m_includedHeadersHasBeenSet = true; m_includedHeaders.push_back(std::move(value)); return *this; }
-    inline HeaderMatchPattern& AddIncludedHeaders(const char* value) { m_includedHeadersHasBeenSet = true; m_includedHeaders.push_back(value); return *this; }
+    template<typename IncludedHeadersT = Aws::Vector<Aws::String>>
+    void SetIncludedHeaders(IncludedHeadersT&& value) { m_includedHeadersHasBeenSet = true; m_includedHeaders = std::forward<IncludedHeadersT>(value); }
+    template<typename IncludedHeadersT = Aws::Vector<Aws::String>>
+    HeaderMatchPattern& WithIncludedHeaders(IncludedHeadersT&& value) { SetIncludedHeaders(std::forward<IncludedHeadersT>(value)); return *this;}
+    template<typename IncludedHeadersT = Aws::String>
+    HeaderMatchPattern& AddIncludedHeaders(IncludedHeadersT&& value) { m_includedHeadersHasBeenSet = true; m_includedHeaders.emplace_back(std::forward<IncludedHeadersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,15 +75,14 @@ namespace Model
      * <p>Inspect only the headers whose keys don't match any of the strings specified
      * here. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludedHeaders() const{ return m_excludedHeaders; }
+    inline const Aws::Vector<Aws::String>& GetExcludedHeaders() const { return m_excludedHeaders; }
     inline bool ExcludedHeadersHasBeenSet() const { return m_excludedHeadersHasBeenSet; }
-    inline void SetExcludedHeaders(const Aws::Vector<Aws::String>& value) { m_excludedHeadersHasBeenSet = true; m_excludedHeaders = value; }
-    inline void SetExcludedHeaders(Aws::Vector<Aws::String>&& value) { m_excludedHeadersHasBeenSet = true; m_excludedHeaders = std::move(value); }
-    inline HeaderMatchPattern& WithExcludedHeaders(const Aws::Vector<Aws::String>& value) { SetExcludedHeaders(value); return *this;}
-    inline HeaderMatchPattern& WithExcludedHeaders(Aws::Vector<Aws::String>&& value) { SetExcludedHeaders(std::move(value)); return *this;}
-    inline HeaderMatchPattern& AddExcludedHeaders(const Aws::String& value) { m_excludedHeadersHasBeenSet = true; m_excludedHeaders.push_back(value); return *this; }
-    inline HeaderMatchPattern& AddExcludedHeaders(Aws::String&& value) { m_excludedHeadersHasBeenSet = true; m_excludedHeaders.push_back(std::move(value)); return *this; }
-    inline HeaderMatchPattern& AddExcludedHeaders(const char* value) { m_excludedHeadersHasBeenSet = true; m_excludedHeaders.push_back(value); return *this; }
+    template<typename ExcludedHeadersT = Aws::Vector<Aws::String>>
+    void SetExcludedHeaders(ExcludedHeadersT&& value) { m_excludedHeadersHasBeenSet = true; m_excludedHeaders = std::forward<ExcludedHeadersT>(value); }
+    template<typename ExcludedHeadersT = Aws::Vector<Aws::String>>
+    HeaderMatchPattern& WithExcludedHeaders(ExcludedHeadersT&& value) { SetExcludedHeaders(std::forward<ExcludedHeadersT>(value)); return *this;}
+    template<typename ExcludedHeadersT = Aws::String>
+    HeaderMatchPattern& AddExcludedHeaders(ExcludedHeadersT&& value) { m_excludedHeadersHasBeenSet = true; m_excludedHeaders.emplace_back(std::forward<ExcludedHeadersT>(value)); return *this; }
     ///@}
   private:
 

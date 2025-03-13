@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-FindingStatistics::FindingStatistics() : 
-    m_groupedByAccountHasBeenSet(false),
-    m_groupedByDateHasBeenSet(false),
-    m_groupedByFindingTypeHasBeenSet(false),
-    m_groupedByResourceHasBeenSet(false),
-    m_groupedBySeverityHasBeenSet(false)
-{
-}
-
 FindingStatistics::FindingStatistics(JsonView jsonValue)
-  : FindingStatistics()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ FindingStatistics& FindingStatistics::operator =(JsonView jsonValue)
     }
     m_groupedByAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupedByDate"))
   {
     Aws::Utils::Array<JsonView> groupedByDateJsonList = jsonValue.GetArray("groupedByDate");
@@ -54,7 +43,6 @@ FindingStatistics& FindingStatistics::operator =(JsonView jsonValue)
     }
     m_groupedByDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupedByFindingType"))
   {
     Aws::Utils::Array<JsonView> groupedByFindingTypeJsonList = jsonValue.GetArray("groupedByFindingType");
@@ -64,7 +52,6 @@ FindingStatistics& FindingStatistics::operator =(JsonView jsonValue)
     }
     m_groupedByFindingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupedByResource"))
   {
     Aws::Utils::Array<JsonView> groupedByResourceJsonList = jsonValue.GetArray("groupedByResource");
@@ -74,7 +61,6 @@ FindingStatistics& FindingStatistics::operator =(JsonView jsonValue)
     }
     m_groupedByResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupedBySeverity"))
   {
     Aws::Utils::Array<JsonView> groupedBySeverityJsonList = jsonValue.GetArray("groupedBySeverity");
@@ -84,7 +70,6 @@ FindingStatistics& FindingStatistics::operator =(JsonView jsonValue)
     }
     m_groupedBySeverityHasBeenSet = true;
   }
-
   return *this;
 }
 

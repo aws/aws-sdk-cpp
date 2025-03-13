@@ -31,7 +31,7 @@ namespace Model
   class AuthorizerSummary
   {
   public:
-    AWS_IOT_API AuthorizerSummary();
+    AWS_IOT_API AuthorizerSummary() = default;
     AWS_IOT_API AuthorizerSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AuthorizerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The authorizer name.</p>
      */
-    inline const Aws::String& GetAuthorizerName() const{ return m_authorizerName; }
+    inline const Aws::String& GetAuthorizerName() const { return m_authorizerName; }
     inline bool AuthorizerNameHasBeenSet() const { return m_authorizerNameHasBeenSet; }
-    inline void SetAuthorizerName(const Aws::String& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = value; }
-    inline void SetAuthorizerName(Aws::String&& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = std::move(value); }
-    inline void SetAuthorizerName(const char* value) { m_authorizerNameHasBeenSet = true; m_authorizerName.assign(value); }
-    inline AuthorizerSummary& WithAuthorizerName(const Aws::String& value) { SetAuthorizerName(value); return *this;}
-    inline AuthorizerSummary& WithAuthorizerName(Aws::String&& value) { SetAuthorizerName(std::move(value)); return *this;}
-    inline AuthorizerSummary& WithAuthorizerName(const char* value) { SetAuthorizerName(value); return *this;}
+    template<typename AuthorizerNameT = Aws::String>
+    void SetAuthorizerName(AuthorizerNameT&& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = std::forward<AuthorizerNameT>(value); }
+    template<typename AuthorizerNameT = Aws::String>
+    AuthorizerSummary& WithAuthorizerName(AuthorizerNameT&& value) { SetAuthorizerName(std::forward<AuthorizerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authorizer ARN.</p>
      */
-    inline const Aws::String& GetAuthorizerArn() const{ return m_authorizerArn; }
+    inline const Aws::String& GetAuthorizerArn() const { return m_authorizerArn; }
     inline bool AuthorizerArnHasBeenSet() const { return m_authorizerArnHasBeenSet; }
-    inline void SetAuthorizerArn(const Aws::String& value) { m_authorizerArnHasBeenSet = true; m_authorizerArn = value; }
-    inline void SetAuthorizerArn(Aws::String&& value) { m_authorizerArnHasBeenSet = true; m_authorizerArn = std::move(value); }
-    inline void SetAuthorizerArn(const char* value) { m_authorizerArnHasBeenSet = true; m_authorizerArn.assign(value); }
-    inline AuthorizerSummary& WithAuthorizerArn(const Aws::String& value) { SetAuthorizerArn(value); return *this;}
-    inline AuthorizerSummary& WithAuthorizerArn(Aws::String&& value) { SetAuthorizerArn(std::move(value)); return *this;}
-    inline AuthorizerSummary& WithAuthorizerArn(const char* value) { SetAuthorizerArn(value); return *this;}
+    template<typename AuthorizerArnT = Aws::String>
+    void SetAuthorizerArn(AuthorizerArnT&& value) { m_authorizerArnHasBeenSet = true; m_authorizerArn = std::forward<AuthorizerArnT>(value); }
+    template<typename AuthorizerArnT = Aws::String>
+    AuthorizerSummary& WithAuthorizerArn(AuthorizerArnT&& value) { SetAuthorizerArn(std::forward<AuthorizerArnT>(value)); return *this;}
     ///@}
   private:
 

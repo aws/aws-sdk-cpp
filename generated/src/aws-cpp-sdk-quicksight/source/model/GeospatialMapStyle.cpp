@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialMapStyle::GeospatialMapStyle() : 
-    m_baseMapStyle(BaseMapStyleType::NOT_SET),
-    m_baseMapStyleHasBeenSet(false),
-    m_backgroundColorHasBeenSet(false),
-    m_baseMapVisibility(Visibility::NOT_SET),
-    m_baseMapVisibilityHasBeenSet(false)
-{
-}
-
 GeospatialMapStyle::GeospatialMapStyle(JsonView jsonValue)
-  : GeospatialMapStyle()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ GeospatialMapStyle& GeospatialMapStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BaseMapStyle"))
   {
     m_baseMapStyle = BaseMapStyleTypeMapper::GetBaseMapStyleTypeForName(jsonValue.GetString("BaseMapStyle"));
-
     m_baseMapStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackgroundColor"))
   {
     m_backgroundColor = jsonValue.GetString("BackgroundColor");
-
     m_backgroundColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseMapVisibility"))
   {
     m_baseMapVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("BaseMapVisibility"));
-
     m_baseMapVisibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,32 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-Row::Row() : 
-    m_archivedMessageIdHasBeenSet(false),
-    m_ccHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_envelopeHasBeenSet(false),
-    m_fromHasBeenSet(false),
-    m_hasAttachments(false),
-    m_hasAttachmentsHasBeenSet(false),
-    m_inReplyToHasBeenSet(false),
-    m_ingressPointIdHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_receivedHeadersHasBeenSet(false),
-    m_receivedTimestampHasBeenSet(false),
-    m_senderHostnameHasBeenSet(false),
-    m_senderIpAddressHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_toHasBeenSet(false),
-    m_xMailerHasBeenSet(false),
-    m_xOriginalMailerHasBeenSet(false),
-    m_xPriorityHasBeenSet(false)
-{
-}
-
 Row::Row(JsonView jsonValue)
-  : Row()
 {
   *this = jsonValue;
 }
@@ -53,66 +28,48 @@ Row& Row::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ArchivedMessageId"))
   {
     m_archivedMessageId = jsonValue.GetString("ArchivedMessageId");
-
     m_archivedMessageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cc"))
   {
     m_cc = jsonValue.GetString("Cc");
-
     m_ccHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Date"))
   {
     m_date = jsonValue.GetString("Date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Envelope"))
   {
     m_envelope = jsonValue.GetObject("Envelope");
-
     m_envelopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetString("From");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HasAttachments"))
   {
     m_hasAttachments = jsonValue.GetBool("HasAttachments");
-
     m_hasAttachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InReplyTo"))
   {
     m_inReplyTo = jsonValue.GetString("InReplyTo");
-
     m_inReplyToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngressPointId"))
   {
     m_ingressPointId = jsonValue.GetString("IngressPointId");
-
     m_ingressPointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageId"))
   {
     m_messageId = jsonValue.GetString("MessageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceivedHeaders"))
   {
     Aws::Utils::Array<JsonView> receivedHeadersJsonList = jsonValue.GetArray("ReceivedHeaders");
@@ -122,70 +79,51 @@ Row& Row::operator =(JsonView jsonValue)
     }
     m_receivedHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceivedTimestamp"))
   {
     m_receivedTimestamp = jsonValue.GetDouble("ReceivedTimestamp");
-
     m_receivedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderHostname"))
   {
     m_senderHostname = jsonValue.GetString("SenderHostname");
-
     m_senderHostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderIpAddress"))
   {
     m_senderIpAddress = jsonValue.GetString("SenderIpAddress");
-
     m_senderIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("To"))
   {
     m_to = jsonValue.GetString("To");
-
     m_toHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XMailer"))
   {
     m_xMailer = jsonValue.GetString("XMailer");
-
     m_xMailerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XOriginalMailer"))
   {
     m_xOriginalMailer = jsonValue.GetString("XOriginalMailer");
-
     m_xOriginalMailerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XPriority"))
   {
     m_xPriority = jsonValue.GetString("XPriority");
-
     m_xPriorityHasBeenSet = true;
   }
-
   return *this;
 }
 

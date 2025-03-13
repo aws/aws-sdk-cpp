@@ -18,17 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-SlackUserIdentity::SlackUserIdentity() : 
-    m_iamRoleArnHasBeenSet(false),
-    m_chatConfigurationArnHasBeenSet(false),
-    m_slackTeamIdHasBeenSet(false),
-    m_slackUserIdHasBeenSet(false),
-    m_awsUserIdentityHasBeenSet(false)
-{
-}
-
 SlackUserIdentity::SlackUserIdentity(JsonView jsonValue)
-  : SlackUserIdentity()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ SlackUserIdentity& SlackUserIdentity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChatConfigurationArn"))
   {
     m_chatConfigurationArn = jsonValue.GetString("ChatConfigurationArn");
-
     m_chatConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SlackTeamId"))
   {
     m_slackTeamId = jsonValue.GetString("SlackTeamId");
-
     m_slackTeamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SlackUserId"))
   {
     m_slackUserId = jsonValue.GetString("SlackUserId");
-
     m_slackUserIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsUserIdentity"))
   {
     m_awsUserIdentity = jsonValue.GetString("AwsUserIdentity");
-
     m_awsUserIdentityHasBeenSet = true;
   }
-
   return *this;
 }
 

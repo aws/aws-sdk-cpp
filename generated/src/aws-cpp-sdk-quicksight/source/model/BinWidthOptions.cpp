@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BinWidthOptions::BinWidthOptions() : 
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_binCountLimit(0),
-    m_binCountLimitHasBeenSet(false)
-{
-}
-
 BinWidthOptions::BinWidthOptions(JsonView jsonValue)
-  : BinWidthOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BinWidthOptions& BinWidthOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BinCountLimit"))
   {
     m_binCountLimit = jsonValue.GetInt64("BinCountLimit");
-
     m_binCountLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

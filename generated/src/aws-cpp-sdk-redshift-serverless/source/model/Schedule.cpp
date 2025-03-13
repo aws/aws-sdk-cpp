@@ -18,14 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-Schedule::Schedule() : 
-    m_atHasBeenSet(false),
-    m_cronHasBeenSet(false)
-{
-}
-
 Schedule::Schedule(JsonView jsonValue)
-  : Schedule()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Schedule& Schedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("at"))
   {
     m_at = jsonValue.GetDouble("at");
-
     m_atHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cron"))
   {
     m_cron = jsonValue.GetString("cron");
-
     m_cronHasBeenSet = true;
   }
-
   return *this;
 }
 

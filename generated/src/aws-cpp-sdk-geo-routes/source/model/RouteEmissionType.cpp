@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteEmissionType::RouteEmissionType() : 
-    m_co2EmissionClassHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 RouteEmissionType::RouteEmissionType(JsonView jsonValue)
-  : RouteEmissionType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RouteEmissionType& RouteEmissionType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Co2EmissionClass"))
   {
     m_co2EmissionClass = jsonValue.GetString("Co2EmissionClass");
-
     m_co2EmissionClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

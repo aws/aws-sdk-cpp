@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-TagsModel::TagsModel() : 
-    m_tagsHasBeenSet(false)
-{
-}
-
 TagsModel::TagsModel(JsonView jsonValue)
-  : TagsModel()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TagsModel& TagsModel::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

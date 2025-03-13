@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCapacityTasksRequest::ListCapacityTasksRequest() : 
-    m_outpostIdentifierFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_capacityTaskStatusFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListCapacityTasksRequest::SerializePayload() const
 {
   return {};

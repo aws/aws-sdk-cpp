@@ -18,16 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ExecutionDetails::ExecutionDetails() : 
-    m_mostRecentExecutionMessageHasBeenSet(false),
-    m_mostRecentExecutionTimeHasBeenSet(false),
-    m_mostRecentExecutionStatus(ExecutionStatus::NOT_SET),
-    m_mostRecentExecutionStatusHasBeenSet(false)
-{
-}
-
 ExecutionDetails::ExecutionDetails(JsonView jsonValue)
-  : ExecutionDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExecutionDetails& ExecutionDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("mostRecentExecutionMessage"))
   {
     m_mostRecentExecutionMessage = jsonValue.GetString("mostRecentExecutionMessage");
-
     m_mostRecentExecutionMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mostRecentExecutionTime"))
   {
     m_mostRecentExecutionTime = jsonValue.GetDouble("mostRecentExecutionTime");
-
     m_mostRecentExecutionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mostRecentExecutionStatus"))
   {
     m_mostRecentExecutionStatus = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("mostRecentExecutionStatus"));
-
     m_mostRecentExecutionStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

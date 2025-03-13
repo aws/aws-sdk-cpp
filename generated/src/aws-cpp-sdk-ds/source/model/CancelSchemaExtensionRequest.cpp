@@ -12,12 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelSchemaExtensionRequest::CancelSchemaExtensionRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_schemaExtensionIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelSchemaExtensionRequest::SerializePayload() const
 {
   JsonValue payload;

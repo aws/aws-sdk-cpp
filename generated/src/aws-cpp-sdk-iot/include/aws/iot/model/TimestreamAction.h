@@ -37,7 +37,7 @@ namespace Model
   class TimestreamAction
   {
   public:
-    AWS_IOT_API TimestreamAction();
+    AWS_IOT_API TimestreamAction() = default;
     AWS_IOT_API TimestreamAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API TimestreamAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,42 +48,36 @@ namespace Model
      * <p>The ARN of the role that grants permission to write to the Amazon Timestream
      * database table.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline TimestreamAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline TimestreamAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline TimestreamAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    TimestreamAction& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of an Amazon Timestream database.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline TimestreamAction& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline TimestreamAction& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline TimestreamAction& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    TimestreamAction& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the database table into which to write the measure records.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline TimestreamAction& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline TimestreamAction& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline TimestreamAction& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    TimestreamAction& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,14 @@ namespace Model
      * <p>Metadata attributes of the time series that are written in each measure
      * record.</p>
      */
-    inline const Aws::Vector<TimestreamDimension>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<TimestreamDimension>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<TimestreamDimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<TimestreamDimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline TimestreamAction& WithDimensions(const Aws::Vector<TimestreamDimension>& value) { SetDimensions(value); return *this;}
-    inline TimestreamAction& WithDimensions(Aws::Vector<TimestreamDimension>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline TimestreamAction& AddDimensions(const TimestreamDimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline TimestreamAction& AddDimensions(TimestreamDimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+    template<typename DimensionsT = Aws::Vector<TimestreamDimension>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<TimestreamDimension>>
+    TimestreamAction& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = TimestreamDimension>
+    TimestreamAction& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -110,12 +104,12 @@ namespace Model
      * computed by a substitution template.</p> <p>If omitted, the topic rule action
      * assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
      */
-    inline const TimestreamTimestamp& GetTimestamp() const{ return m_timestamp; }
+    inline const TimestreamTimestamp& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const TimestreamTimestamp& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(TimestreamTimestamp&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline TimestreamAction& WithTimestamp(const TimestreamTimestamp& value) { SetTimestamp(value); return *this;}
-    inline TimestreamAction& WithTimestamp(TimestreamTimestamp&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = TimestreamTimestamp>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = TimestreamTimestamp>
+    TimestreamAction& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 

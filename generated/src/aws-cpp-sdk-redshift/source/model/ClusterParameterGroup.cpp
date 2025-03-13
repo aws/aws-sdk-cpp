@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterParameterGroup::ClusterParameterGroup() : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_parameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ClusterParameterGroup::ClusterParameterGroup(const XmlNode& xmlNode)
-  : ClusterParameterGroup()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ ClusterParameterGroup& ClusterParameterGroup::operator =(const XmlNode& xmlNode)
     {
       m_parameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(parameterGroupNameNode.GetText());
       m_parameterGroupNameHasBeenSet = true;
+       m_parameterGroupNameHasBeenSet = true;
     }
     XmlNode parameterGroupFamilyNode = resultNode.FirstChild("ParameterGroupFamily");
     if(!parameterGroupFamilyNode.IsNull())
     {
       m_parameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(parameterGroupFamilyNode.GetText());
       m_parameterGroupFamilyHasBeenSet = true;
+       m_parameterGroupFamilyHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("Tag");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

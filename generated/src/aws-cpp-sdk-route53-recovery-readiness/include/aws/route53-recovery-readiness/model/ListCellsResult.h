@@ -29,7 +29,7 @@ namespace Model
   class ListCellsResult
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API ListCellsResult();
+    AWS_ROUTE53RECOVERYREADINESS_API ListCellsResult() = default;
     AWS_ROUTE53RECOVERYREADINESS_API ListCellsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RECOVERYREADINESS_API ListCellsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of cells.</p>
      */
-    inline const Aws::Vector<CellOutput>& GetCells() const{ return m_cells; }
-    inline void SetCells(const Aws::Vector<CellOutput>& value) { m_cells = value; }
-    inline void SetCells(Aws::Vector<CellOutput>&& value) { m_cells = std::move(value); }
-    inline ListCellsResult& WithCells(const Aws::Vector<CellOutput>& value) { SetCells(value); return *this;}
-    inline ListCellsResult& WithCells(Aws::Vector<CellOutput>&& value) { SetCells(std::move(value)); return *this;}
-    inline ListCellsResult& AddCells(const CellOutput& value) { m_cells.push_back(value); return *this; }
-    inline ListCellsResult& AddCells(CellOutput&& value) { m_cells.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CellOutput>& GetCells() const { return m_cells; }
+    template<typename CellsT = Aws::Vector<CellOutput>>
+    void SetCells(CellsT&& value) { m_cellsHasBeenSet = true; m_cells = std::forward<CellsT>(value); }
+    template<typename CellsT = Aws::Vector<CellOutput>>
+    ListCellsResult& WithCells(CellsT&& value) { SetCells(std::forward<CellsT>(value)); return *this;}
+    template<typename CellsT = CellOutput>
+    ListCellsResult& AddCells(CellsT&& value) { m_cellsHasBeenSet = true; m_cells.emplace_back(std::forward<CellsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token that identifies which batch of results you want to see.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCellsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCellsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCellsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCellsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCellsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCellsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCellsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCellsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CellOutput> m_cells;
+    bool m_cellsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

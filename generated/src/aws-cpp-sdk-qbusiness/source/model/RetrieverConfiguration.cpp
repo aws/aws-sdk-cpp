@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-RetrieverConfiguration::RetrieverConfiguration() : 
-    m_nativeIndexConfigurationHasBeenSet(false),
-    m_kendraIndexConfigurationHasBeenSet(false)
-{
-}
-
 RetrieverConfiguration::RetrieverConfiguration(JsonView jsonValue)
-  : RetrieverConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RetrieverConfiguration& RetrieverConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("nativeIndexConfiguration"))
   {
     m_nativeIndexConfiguration = jsonValue.GetObject("nativeIndexConfiguration");
-
     m_nativeIndexConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kendraIndexConfiguration"))
   {
     m_kendraIndexConfiguration = jsonValue.GetObject("kendraIndexConfiguration");
-
     m_kendraIndexConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

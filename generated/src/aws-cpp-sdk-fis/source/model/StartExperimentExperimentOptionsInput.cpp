@@ -18,14 +18,7 @@ namespace FIS
 namespace Model
 {
 
-StartExperimentExperimentOptionsInput::StartExperimentExperimentOptionsInput() : 
-    m_actionsMode(ActionsMode::NOT_SET),
-    m_actionsModeHasBeenSet(false)
-{
-}
-
 StartExperimentExperimentOptionsInput::StartExperimentExperimentOptionsInput(JsonView jsonValue)
-  : StartExperimentExperimentOptionsInput()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StartExperimentExperimentOptionsInput& StartExperimentExperimentOptionsInput::op
   if(jsonValue.ValueExists("actionsMode"))
   {
     m_actionsMode = ActionsModeMapper::GetActionsModeForName(jsonValue.GetString("actionsMode"));
-
     m_actionsModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ServiceNowConfiguration::ServiceNowConfiguration() : 
-    m_hostUrlHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_serviceNowBuildVersion(ServiceNowBuildVersionType::NOT_SET),
-    m_serviceNowBuildVersionHasBeenSet(false),
-    m_knowledgeArticleConfigurationHasBeenSet(false),
-    m_serviceCatalogConfigurationHasBeenSet(false),
-    m_authenticationType(ServiceNowAuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
-{
-}
-
 ServiceNowConfiguration::ServiceNowConfiguration(JsonView jsonValue)
-  : ServiceNowConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ServiceNowConfiguration& ServiceNowConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HostUrl"))
   {
     m_hostUrl = jsonValue.GetString("HostUrl");
-
     m_hostUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceNowBuildVersion"))
   {
     m_serviceNowBuildVersion = ServiceNowBuildVersionTypeMapper::GetServiceNowBuildVersionTypeForName(jsonValue.GetString("ServiceNowBuildVersion"));
-
     m_serviceNowBuildVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KnowledgeArticleConfiguration"))
   {
     m_knowledgeArticleConfiguration = jsonValue.GetObject("KnowledgeArticleConfiguration");
-
     m_knowledgeArticleConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceCatalogConfiguration"))
   {
     m_serviceCatalogConfiguration = jsonValue.GetObject("ServiceCatalogConfiguration");
-
     m_serviceCatalogConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = ServiceNowAuthenticationTypeMapper::GetServiceNowAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

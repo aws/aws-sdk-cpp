@@ -21,7 +21,7 @@ namespace Model
   class UpdateProvisionedModelThroughputRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API UpdateProvisionedModelThroughputRequest();
+    AWS_BEDROCK_API UpdateProvisionedModelThroughputRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput to
      * update.</p>
      */
-    inline const Aws::String& GetProvisionedModelId() const{ return m_provisionedModelId; }
+    inline const Aws::String& GetProvisionedModelId() const { return m_provisionedModelId; }
     inline bool ProvisionedModelIdHasBeenSet() const { return m_provisionedModelIdHasBeenSet; }
-    inline void SetProvisionedModelId(const Aws::String& value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId = value; }
-    inline void SetProvisionedModelId(Aws::String&& value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId = std::move(value); }
-    inline void SetProvisionedModelId(const char* value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId.assign(value); }
-    inline UpdateProvisionedModelThroughputRequest& WithProvisionedModelId(const Aws::String& value) { SetProvisionedModelId(value); return *this;}
-    inline UpdateProvisionedModelThroughputRequest& WithProvisionedModelId(Aws::String&& value) { SetProvisionedModelId(std::move(value)); return *this;}
-    inline UpdateProvisionedModelThroughputRequest& WithProvisionedModelId(const char* value) { SetProvisionedModelId(value); return *this;}
+    template<typename ProvisionedModelIdT = Aws::String>
+    void SetProvisionedModelId(ProvisionedModelIdT&& value) { m_provisionedModelIdHasBeenSet = true; m_provisionedModelId = std::forward<ProvisionedModelIdT>(value); }
+    template<typename ProvisionedModelIdT = Aws::String>
+    UpdateProvisionedModelThroughputRequest& WithProvisionedModelId(ProvisionedModelIdT&& value) { SetProvisionedModelId(std::forward<ProvisionedModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new name for this Provisioned Throughput.</p>
      */
-    inline const Aws::String& GetDesiredProvisionedModelName() const{ return m_desiredProvisionedModelName; }
+    inline const Aws::String& GetDesiredProvisionedModelName() const { return m_desiredProvisionedModelName; }
     inline bool DesiredProvisionedModelNameHasBeenSet() const { return m_desiredProvisionedModelNameHasBeenSet; }
-    inline void SetDesiredProvisionedModelName(const Aws::String& value) { m_desiredProvisionedModelNameHasBeenSet = true; m_desiredProvisionedModelName = value; }
-    inline void SetDesiredProvisionedModelName(Aws::String&& value) { m_desiredProvisionedModelNameHasBeenSet = true; m_desiredProvisionedModelName = std::move(value); }
-    inline void SetDesiredProvisionedModelName(const char* value) { m_desiredProvisionedModelNameHasBeenSet = true; m_desiredProvisionedModelName.assign(value); }
-    inline UpdateProvisionedModelThroughputRequest& WithDesiredProvisionedModelName(const Aws::String& value) { SetDesiredProvisionedModelName(value); return *this;}
-    inline UpdateProvisionedModelThroughputRequest& WithDesiredProvisionedModelName(Aws::String&& value) { SetDesiredProvisionedModelName(std::move(value)); return *this;}
-    inline UpdateProvisionedModelThroughputRequest& WithDesiredProvisionedModelName(const char* value) { SetDesiredProvisionedModelName(value); return *this;}
+    template<typename DesiredProvisionedModelNameT = Aws::String>
+    void SetDesiredProvisionedModelName(DesiredProvisionedModelNameT&& value) { m_desiredProvisionedModelNameHasBeenSet = true; m_desiredProvisionedModelName = std::forward<DesiredProvisionedModelNameT>(value); }
+    template<typename DesiredProvisionedModelNameT = Aws::String>
+    UpdateProvisionedModelThroughputRequest& WithDesiredProvisionedModelName(DesiredProvisionedModelNameT&& value) { SetDesiredProvisionedModelName(std::forward<DesiredProvisionedModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * was customized.</p> </li> <li> <p>Another custom model that was customized from
      * the same base model as the custom model.</p> </li> </ul>
      */
-    inline const Aws::String& GetDesiredModelId() const{ return m_desiredModelId; }
+    inline const Aws::String& GetDesiredModelId() const { return m_desiredModelId; }
     inline bool DesiredModelIdHasBeenSet() const { return m_desiredModelIdHasBeenSet; }
-    inline void SetDesiredModelId(const Aws::String& value) { m_desiredModelIdHasBeenSet = true; m_desiredModelId = value; }
-    inline void SetDesiredModelId(Aws::String&& value) { m_desiredModelIdHasBeenSet = true; m_desiredModelId = std::move(value); }
-    inline void SetDesiredModelId(const char* value) { m_desiredModelIdHasBeenSet = true; m_desiredModelId.assign(value); }
-    inline UpdateProvisionedModelThroughputRequest& WithDesiredModelId(const Aws::String& value) { SetDesiredModelId(value); return *this;}
-    inline UpdateProvisionedModelThroughputRequest& WithDesiredModelId(Aws::String&& value) { SetDesiredModelId(std::move(value)); return *this;}
-    inline UpdateProvisionedModelThroughputRequest& WithDesiredModelId(const char* value) { SetDesiredModelId(value); return *this;}
+    template<typename DesiredModelIdT = Aws::String>
+    void SetDesiredModelId(DesiredModelIdT&& value) { m_desiredModelIdHasBeenSet = true; m_desiredModelId = std::forward<DesiredModelIdT>(value); }
+    template<typename DesiredModelIdT = Aws::String>
+    UpdateProvisionedModelThroughputRequest& WithDesiredModelId(DesiredModelIdT&& value) { SetDesiredModelId(std::forward<DesiredModelIdT>(value)); return *this;}
     ///@}
   private:
 

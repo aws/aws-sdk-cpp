@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLJobCompletionCriteria::AutoMLJobCompletionCriteria() : 
-    m_maxCandidates(0),
-    m_maxCandidatesHasBeenSet(false),
-    m_maxRuntimePerTrainingJobInSeconds(0),
-    m_maxRuntimePerTrainingJobInSecondsHasBeenSet(false),
-    m_maxAutoMLJobRuntimeInSeconds(0),
-    m_maxAutoMLJobRuntimeInSecondsHasBeenSet(false)
-{
-}
-
 AutoMLJobCompletionCriteria::AutoMLJobCompletionCriteria(JsonView jsonValue)
-  : AutoMLJobCompletionCriteria()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AutoMLJobCompletionCriteria& AutoMLJobCompletionCriteria::operator =(JsonView js
   if(jsonValue.ValueExists("MaxCandidates"))
   {
     m_maxCandidates = jsonValue.GetInteger("MaxCandidates");
-
     m_maxCandidatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxRuntimePerTrainingJobInSeconds"))
   {
     m_maxRuntimePerTrainingJobInSeconds = jsonValue.GetInteger("MaxRuntimePerTrainingJobInSeconds");
-
     m_maxRuntimePerTrainingJobInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxAutoMLJobRuntimeInSeconds"))
   {
     m_maxAutoMLJobRuntimeInSeconds = jsonValue.GetInteger("MaxAutoMLJobRuntimeInSeconds");
-
     m_maxAutoMLJobRuntimeInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

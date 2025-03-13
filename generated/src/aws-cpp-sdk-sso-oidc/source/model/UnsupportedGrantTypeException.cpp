@@ -18,14 +18,7 @@ namespace SSOOIDC
 namespace Model
 {
 
-UnsupportedGrantTypeException::UnsupportedGrantTypeException() : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
-{
-}
-
 UnsupportedGrantTypeException::UnsupportedGrantTypeException(JsonView jsonValue)
-  : UnsupportedGrantTypeException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnsupportedGrantTypeException& UnsupportedGrantTypeException::operator =(JsonVie
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error_description"))
   {
     m_error_description = jsonValue.GetString("error_description");
-
     m_error_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

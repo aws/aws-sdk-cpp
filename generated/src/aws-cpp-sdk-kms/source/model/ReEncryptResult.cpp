@@ -18,14 +18,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ReEncryptResult::ReEncryptResult() : 
-    m_sourceEncryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET),
-    m_destinationEncryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET)
-{
-}
-
 ReEncryptResult::ReEncryptResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ReEncryptResult()
 {
   *this = result;
 }
@@ -36,38 +29,35 @@ ReEncryptResult& ReEncryptResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("CiphertextBlob"))
   {
     m_ciphertextBlob = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextBlob"));
+    m_ciphertextBlobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceKeyId"))
   {
     m_sourceKeyId = jsonValue.GetString("SourceKeyId");
-
+    m_sourceKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
+    m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceEncryptionAlgorithm"))
   {
     m_sourceEncryptionAlgorithm = EncryptionAlgorithmSpecMapper::GetEncryptionAlgorithmSpecForName(jsonValue.GetString("SourceEncryptionAlgorithm"));
-
+    m_sourceEncryptionAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationEncryptionAlgorithm"))
   {
     m_destinationEncryptionAlgorithm = EncryptionAlgorithmSpecMapper::GetEncryptionAlgorithmSpecForName(jsonValue.GetString("DestinationEncryptionAlgorithm"));
-
+    m_destinationEncryptionAlgorithmHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

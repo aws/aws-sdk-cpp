@@ -21,7 +21,7 @@ namespace Model
   class UpdateSMBFileShareVisibilityRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API UpdateSMBFileShareVisibilityRequest();
+    AWS_STORAGEGATEWAY_API UpdateSMBFileShareVisibilityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,21 +36,19 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline UpdateSMBFileShareVisibilityRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline UpdateSMBFileShareVisibilityRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline UpdateSMBFileShareVisibilityRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    UpdateSMBFileShareVisibilityRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The shares on this gateway appear when listing shares.</p>
      */
-    inline bool GetFileSharesVisible() const{ return m_fileSharesVisible; }
+    inline bool GetFileSharesVisible() const { return m_fileSharesVisible; }
     inline bool FileSharesVisibleHasBeenSet() const { return m_fileSharesVisibleHasBeenSet; }
     inline void SetFileSharesVisible(bool value) { m_fileSharesVisibleHasBeenSet = true; m_fileSharesVisible = value; }
     inline UpdateSMBFileShareVisibilityRequest& WithFileSharesVisible(bool value) { SetFileSharesVisible(value); return *this;}
@@ -60,7 +58,7 @@ namespace Model
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet = false;
 
-    bool m_fileSharesVisible;
+    bool m_fileSharesVisible{false};
     bool m_fileSharesVisibleHasBeenSet = false;
   };
 

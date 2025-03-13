@@ -39,7 +39,7 @@ namespace Model
   class LifecycleRule
   {
   public:
-    AWS_S3CONTROL_API LifecycleRule();
+    AWS_S3CONTROL_API LifecycleRule() = default;
     AWS_S3CONTROL_API LifecycleRule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API LifecycleRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,12 +51,12 @@ namespace Model
      * <p>Specifies the expiration for the lifecycle of the object in the form of date,
      * days and, whether the object has a delete marker.</p>
      */
-    inline const LifecycleExpiration& GetExpiration() const{ return m_expiration; }
+    inline const LifecycleExpiration& GetExpiration() const { return m_expiration; }
     inline bool ExpirationHasBeenSet() const { return m_expirationHasBeenSet; }
-    inline void SetExpiration(const LifecycleExpiration& value) { m_expirationHasBeenSet = true; m_expiration = value; }
-    inline void SetExpiration(LifecycleExpiration&& value) { m_expirationHasBeenSet = true; m_expiration = std::move(value); }
-    inline LifecycleRule& WithExpiration(const LifecycleExpiration& value) { SetExpiration(value); return *this;}
-    inline LifecycleRule& WithExpiration(LifecycleExpiration&& value) { SetExpiration(std::move(value)); return *this;}
+    template<typename ExpirationT = LifecycleExpiration>
+    void SetExpiration(ExpirationT&& value) { m_expirationHasBeenSet = true; m_expiration = std::forward<ExpirationT>(value); }
+    template<typename ExpirationT = LifecycleExpiration>
+    LifecycleRule& WithExpiration(ExpirationT&& value) { SetExpiration(std::forward<ExpirationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,26 +64,24 @@ namespace Model
      * <p>Unique identifier for the rule. The value cannot be longer than 255
      * characters.</p>
      */
-    inline const Aws::String& GetID() const{ return m_iD; }
+    inline const Aws::String& GetID() const { return m_iD; }
     inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
-    inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
-    inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
-    inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
-    inline LifecycleRule& WithID(const Aws::String& value) { SetID(value); return *this;}
-    inline LifecycleRule& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
-    inline LifecycleRule& WithID(const char* value) { SetID(value); return *this;}
+    template<typename IDT = Aws::String>
+    void SetID(IDT&& value) { m_iDHasBeenSet = true; m_iD = std::forward<IDT>(value); }
+    template<typename IDT = Aws::String>
+    LifecycleRule& WithID(IDT&& value) { SetID(std::forward<IDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The container for the filter of lifecycle rule.</p>
      */
-    inline const LifecycleRuleFilter& GetFilter() const{ return m_filter; }
+    inline const LifecycleRuleFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const LifecycleRuleFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(LifecycleRuleFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline LifecycleRule& WithFilter(const LifecycleRuleFilter& value) { SetFilter(value); return *this;}
-    inline LifecycleRule& WithFilter(LifecycleRuleFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = LifecycleRuleFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = LifecycleRuleFilter>
+    LifecycleRule& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +89,10 @@ namespace Model
      * <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
      * not currently being applied.</p>
      */
-    inline const ExpirationStatus& GetStatus() const{ return m_status; }
+    inline ExpirationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ExpirationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ExpirationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LifecycleRule& WithStatus(const ExpirationStatus& value) { SetStatus(value); return *this;}
-    inline LifecycleRule& WithStatus(ExpirationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ExpirationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LifecycleRule& WithStatus(ExpirationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +101,14 @@ namespace Model
      * class.</p>  <p>This is not supported by Amazon S3 on Outposts buckets.</p>
      * 
      */
-    inline const Aws::Vector<Transition>& GetTransitions() const{ return m_transitions; }
+    inline const Aws::Vector<Transition>& GetTransitions() const { return m_transitions; }
     inline bool TransitionsHasBeenSet() const { return m_transitionsHasBeenSet; }
-    inline void SetTransitions(const Aws::Vector<Transition>& value) { m_transitionsHasBeenSet = true; m_transitions = value; }
-    inline void SetTransitions(Aws::Vector<Transition>&& value) { m_transitionsHasBeenSet = true; m_transitions = std::move(value); }
-    inline LifecycleRule& WithTransitions(const Aws::Vector<Transition>& value) { SetTransitions(value); return *this;}
-    inline LifecycleRule& WithTransitions(Aws::Vector<Transition>&& value) { SetTransitions(std::move(value)); return *this;}
-    inline LifecycleRule& AddTransitions(const Transition& value) { m_transitionsHasBeenSet = true; m_transitions.push_back(value); return *this; }
-    inline LifecycleRule& AddTransitions(Transition&& value) { m_transitionsHasBeenSet = true; m_transitions.push_back(std::move(value)); return *this; }
+    template<typename TransitionsT = Aws::Vector<Transition>>
+    void SetTransitions(TransitionsT&& value) { m_transitionsHasBeenSet = true; m_transitions = std::forward<TransitionsT>(value); }
+    template<typename TransitionsT = Aws::Vector<Transition>>
+    LifecycleRule& WithTransitions(TransitionsT&& value) { SetTransitions(std::forward<TransitionsT>(value)); return *this;}
+    template<typename TransitionsT = Transition>
+    LifecycleRule& AddTransitions(TransitionsT&& value) { m_transitionsHasBeenSet = true; m_transitions.emplace_back(std::forward<TransitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -124,26 +120,26 @@ namespace Model
      * storage class at a set period in the object's lifetime. </p>  <p>This is
      * not supported by Amazon S3 on Outposts buckets.</p> 
      */
-    inline const Aws::Vector<NoncurrentVersionTransition>& GetNoncurrentVersionTransitions() const{ return m_noncurrentVersionTransitions; }
+    inline const Aws::Vector<NoncurrentVersionTransition>& GetNoncurrentVersionTransitions() const { return m_noncurrentVersionTransitions; }
     inline bool NoncurrentVersionTransitionsHasBeenSet() const { return m_noncurrentVersionTransitionsHasBeenSet; }
-    inline void SetNoncurrentVersionTransitions(const Aws::Vector<NoncurrentVersionTransition>& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions = value; }
-    inline void SetNoncurrentVersionTransitions(Aws::Vector<NoncurrentVersionTransition>&& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions = std::move(value); }
-    inline LifecycleRule& WithNoncurrentVersionTransitions(const Aws::Vector<NoncurrentVersionTransition>& value) { SetNoncurrentVersionTransitions(value); return *this;}
-    inline LifecycleRule& WithNoncurrentVersionTransitions(Aws::Vector<NoncurrentVersionTransition>&& value) { SetNoncurrentVersionTransitions(std::move(value)); return *this;}
-    inline LifecycleRule& AddNoncurrentVersionTransitions(const NoncurrentVersionTransition& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions.push_back(value); return *this; }
-    inline LifecycleRule& AddNoncurrentVersionTransitions(NoncurrentVersionTransition&& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions.push_back(std::move(value)); return *this; }
+    template<typename NoncurrentVersionTransitionsT = Aws::Vector<NoncurrentVersionTransition>>
+    void SetNoncurrentVersionTransitions(NoncurrentVersionTransitionsT&& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions = std::forward<NoncurrentVersionTransitionsT>(value); }
+    template<typename NoncurrentVersionTransitionsT = Aws::Vector<NoncurrentVersionTransition>>
+    LifecycleRule& WithNoncurrentVersionTransitions(NoncurrentVersionTransitionsT&& value) { SetNoncurrentVersionTransitions(std::forward<NoncurrentVersionTransitionsT>(value)); return *this;}
+    template<typename NoncurrentVersionTransitionsT = NoncurrentVersionTransition>
+    LifecycleRule& AddNoncurrentVersionTransitions(NoncurrentVersionTransitionsT&& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions.emplace_back(std::forward<NoncurrentVersionTransitionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The noncurrent version expiration of the lifecycle rule.</p>
      */
-    inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const{ return m_noncurrentVersionExpiration; }
+    inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const { return m_noncurrentVersionExpiration; }
     inline bool NoncurrentVersionExpirationHasBeenSet() const { return m_noncurrentVersionExpirationHasBeenSet; }
-    inline void SetNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = value; }
-    inline void SetNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = std::move(value); }
-    inline LifecycleRule& WithNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { SetNoncurrentVersionExpiration(value); return *this;}
-    inline LifecycleRule& WithNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { SetNoncurrentVersionExpiration(std::move(value)); return *this;}
+    template<typename NoncurrentVersionExpirationT = NoncurrentVersionExpiration>
+    void SetNoncurrentVersionExpiration(NoncurrentVersionExpirationT&& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = std::forward<NoncurrentVersionExpirationT>(value); }
+    template<typename NoncurrentVersionExpirationT = NoncurrentVersionExpiration>
+    LifecycleRule& WithNoncurrentVersionExpiration(NoncurrentVersionExpirationT&& value) { SetNoncurrentVersionExpiration(std::forward<NoncurrentVersionExpirationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,12 +151,12 @@ namespace Model
      * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
      * in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const{ return m_abortIncompleteMultipartUpload; }
+    inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const { return m_abortIncompleteMultipartUpload; }
     inline bool AbortIncompleteMultipartUploadHasBeenSet() const { return m_abortIncompleteMultipartUploadHasBeenSet; }
-    inline void SetAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = value; }
-    inline void SetAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = std::move(value); }
-    inline LifecycleRule& WithAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { SetAbortIncompleteMultipartUpload(value); return *this;}
-    inline LifecycleRule& WithAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { SetAbortIncompleteMultipartUpload(std::move(value)); return *this;}
+    template<typename AbortIncompleteMultipartUploadT = AbortIncompleteMultipartUpload>
+    void SetAbortIncompleteMultipartUpload(AbortIncompleteMultipartUploadT&& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = std::forward<AbortIncompleteMultipartUploadT>(value); }
+    template<typename AbortIncompleteMultipartUploadT = AbortIncompleteMultipartUpload>
+    LifecycleRule& WithAbortIncompleteMultipartUpload(AbortIncompleteMultipartUploadT&& value) { SetAbortIncompleteMultipartUpload(std::forward<AbortIncompleteMultipartUploadT>(value)); return *this;}
     ///@}
   private:
 
@@ -173,7 +169,7 @@ namespace Model
     LifecycleRuleFilter m_filter;
     bool m_filterHasBeenSet = false;
 
-    ExpirationStatus m_status;
+    ExpirationStatus m_status{ExpirationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Transition> m_transitions;

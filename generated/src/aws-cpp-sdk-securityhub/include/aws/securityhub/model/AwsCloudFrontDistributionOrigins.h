@@ -33,7 +33,7 @@ namespace Model
   class AwsCloudFrontDistributionOrigins
   {
   public:
-    AWS_SECURITYHUB_API AwsCloudFrontDistributionOrigins();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOrigins() = default;
     AWS_SECURITYHUB_API AwsCloudFrontDistributionOrigins(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCloudFrontDistributionOrigins& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>A complex type that contains origins or origin groups for this
      * distribution.</p>
      */
-    inline const Aws::Vector<AwsCloudFrontDistributionOriginItem>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<AwsCloudFrontDistributionOriginItem>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<AwsCloudFrontDistributionOriginItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<AwsCloudFrontDistributionOriginItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline AwsCloudFrontDistributionOrigins& WithItems(const Aws::Vector<AwsCloudFrontDistributionOriginItem>& value) { SetItems(value); return *this;}
-    inline AwsCloudFrontDistributionOrigins& WithItems(Aws::Vector<AwsCloudFrontDistributionOriginItem>&& value) { SetItems(std::move(value)); return *this;}
-    inline AwsCloudFrontDistributionOrigins& AddItems(const AwsCloudFrontDistributionOriginItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline AwsCloudFrontDistributionOrigins& AddItems(AwsCloudFrontDistributionOriginItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<AwsCloudFrontDistributionOriginItem>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<AwsCloudFrontDistributionOriginItem>>
+    AwsCloudFrontDistributionOrigins& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = AwsCloudFrontDistributionOriginItem>
+    AwsCloudFrontDistributionOrigins& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 

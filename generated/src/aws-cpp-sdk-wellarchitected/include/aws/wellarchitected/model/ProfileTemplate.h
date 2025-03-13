@@ -34,7 +34,7 @@ namespace Model
   class ProfileTemplate
   {
   public:
-    AWS_WELLARCHITECTED_API ProfileTemplate();
+    AWS_WELLARCHITECTED_API ProfileTemplate() = default;
     AWS_WELLARCHITECTED_API ProfileTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API ProfileTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,46 @@ namespace Model
     /**
      * <p>The name of the profile template.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline ProfileTemplate& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline ProfileTemplate& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline ProfileTemplate& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    ProfileTemplate& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Profile template questions.</p>
      */
-    inline const Aws::Vector<ProfileTemplateQuestion>& GetTemplateQuestions() const{ return m_templateQuestions; }
+    inline const Aws::Vector<ProfileTemplateQuestion>& GetTemplateQuestions() const { return m_templateQuestions; }
     inline bool TemplateQuestionsHasBeenSet() const { return m_templateQuestionsHasBeenSet; }
-    inline void SetTemplateQuestions(const Aws::Vector<ProfileTemplateQuestion>& value) { m_templateQuestionsHasBeenSet = true; m_templateQuestions = value; }
-    inline void SetTemplateQuestions(Aws::Vector<ProfileTemplateQuestion>&& value) { m_templateQuestionsHasBeenSet = true; m_templateQuestions = std::move(value); }
-    inline ProfileTemplate& WithTemplateQuestions(const Aws::Vector<ProfileTemplateQuestion>& value) { SetTemplateQuestions(value); return *this;}
-    inline ProfileTemplate& WithTemplateQuestions(Aws::Vector<ProfileTemplateQuestion>&& value) { SetTemplateQuestions(std::move(value)); return *this;}
-    inline ProfileTemplate& AddTemplateQuestions(const ProfileTemplateQuestion& value) { m_templateQuestionsHasBeenSet = true; m_templateQuestions.push_back(value); return *this; }
-    inline ProfileTemplate& AddTemplateQuestions(ProfileTemplateQuestion&& value) { m_templateQuestionsHasBeenSet = true; m_templateQuestions.push_back(std::move(value)); return *this; }
+    template<typename TemplateQuestionsT = Aws::Vector<ProfileTemplateQuestion>>
+    void SetTemplateQuestions(TemplateQuestionsT&& value) { m_templateQuestionsHasBeenSet = true; m_templateQuestions = std::forward<TemplateQuestionsT>(value); }
+    template<typename TemplateQuestionsT = Aws::Vector<ProfileTemplateQuestion>>
+    ProfileTemplate& WithTemplateQuestions(TemplateQuestionsT&& value) { SetTemplateQuestions(std::forward<TemplateQuestionsT>(value)); return *this;}
+    template<typename TemplateQuestionsT = ProfileTemplateQuestion>
+    ProfileTemplate& AddTemplateQuestions(TemplateQuestionsT&& value) { m_templateQuestionsHasBeenSet = true; m_templateQuestions.emplace_back(std::forward<TemplateQuestionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ProfileTemplate& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ProfileTemplate& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ProfileTemplate& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline ProfileTemplate& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline ProfileTemplate& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    ProfileTemplate& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -95,10 +93,10 @@ namespace Model
     Aws::Vector<ProfileTemplateQuestion> m_templateQuestions;
     bool m_templateQuestionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

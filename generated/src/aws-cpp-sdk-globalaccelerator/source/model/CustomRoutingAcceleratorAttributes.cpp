@@ -18,16 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-CustomRoutingAcceleratorAttributes::CustomRoutingAcceleratorAttributes() : 
-    m_flowLogsEnabled(false),
-    m_flowLogsEnabledHasBeenSet(false),
-    m_flowLogsS3BucketHasBeenSet(false),
-    m_flowLogsS3PrefixHasBeenSet(false)
-{
-}
-
 CustomRoutingAcceleratorAttributes::CustomRoutingAcceleratorAttributes(JsonView jsonValue)
-  : CustomRoutingAcceleratorAttributes()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CustomRoutingAcceleratorAttributes& CustomRoutingAcceleratorAttributes::operator
   if(jsonValue.ValueExists("FlowLogsEnabled"))
   {
     m_flowLogsEnabled = jsonValue.GetBool("FlowLogsEnabled");
-
     m_flowLogsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlowLogsS3Bucket"))
   {
     m_flowLogsS3Bucket = jsonValue.GetString("FlowLogsS3Bucket");
-
     m_flowLogsS3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlowLogsS3Prefix"))
   {
     m_flowLogsS3Prefix = jsonValue.GetString("FlowLogsS3Prefix");
-
     m_flowLogsS3PrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

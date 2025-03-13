@@ -20,15 +20,7 @@ namespace Route53
 namespace Model
 {
 
-DelegationSet::DelegationSet() : 
-    m_idHasBeenSet(false),
-    m_callerReferenceHasBeenSet(false),
-    m_nameServersHasBeenSet(false)
-{
-}
-
 DelegationSet::DelegationSet(const XmlNode& xmlNode)
-  : DelegationSet()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ DelegationSet& DelegationSet::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
       m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
+       m_callerReferenceHasBeenSet = true;
     }
     XmlNode nameServersNode = resultNode.FirstChild("NameServers");
     if(!nameServersNode.IsNull())
     {
       XmlNode nameServersMember = nameServersNode.FirstChild("NameServer");
+      m_nameServersHasBeenSet = !nameServersMember.IsNull();
       while(!nameServersMember.IsNull())
       {
         m_nameServers.push_back(nameServersMember.GetText());
         nameServersMember = nameServersMember.NextNode("NameServer");
       }
 
-      m_nameServersHasBeenSet = true;
+       m_nameServersHasBeenSet = true;
     }
   }
 

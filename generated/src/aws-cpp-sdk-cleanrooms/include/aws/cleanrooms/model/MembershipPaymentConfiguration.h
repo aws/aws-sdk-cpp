@@ -33,7 +33,7 @@ namespace Model
   class MembershipPaymentConfiguration
   {
   public:
-    AWS_CLEANROOMS_API MembershipPaymentConfiguration();
+    AWS_CLEANROOMS_API MembershipPaymentConfiguration() = default;
     AWS_CLEANROOMS_API MembershipPaymentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API MembershipPaymentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The payment responsibilities accepted by the collaboration member for query
      * compute costs.</p>
      */
-    inline const MembershipQueryComputePaymentConfig& GetQueryCompute() const{ return m_queryCompute; }
+    inline const MembershipQueryComputePaymentConfig& GetQueryCompute() const { return m_queryCompute; }
     inline bool QueryComputeHasBeenSet() const { return m_queryComputeHasBeenSet; }
-    inline void SetQueryCompute(const MembershipQueryComputePaymentConfig& value) { m_queryComputeHasBeenSet = true; m_queryCompute = value; }
-    inline void SetQueryCompute(MembershipQueryComputePaymentConfig&& value) { m_queryComputeHasBeenSet = true; m_queryCompute = std::move(value); }
-    inline MembershipPaymentConfiguration& WithQueryCompute(const MembershipQueryComputePaymentConfig& value) { SetQueryCompute(value); return *this;}
-    inline MembershipPaymentConfiguration& WithQueryCompute(MembershipQueryComputePaymentConfig&& value) { SetQueryCompute(std::move(value)); return *this;}
+    template<typename QueryComputeT = MembershipQueryComputePaymentConfig>
+    void SetQueryCompute(QueryComputeT&& value) { m_queryComputeHasBeenSet = true; m_queryCompute = std::forward<QueryComputeT>(value); }
+    template<typename QueryComputeT = MembershipQueryComputePaymentConfig>
+    MembershipPaymentConfiguration& WithQueryCompute(QueryComputeT&& value) { SetQueryCompute(std::forward<QueryComputeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>The payment responsibilities accepted by the collaboration member for machine
      * learning costs.</p>
      */
-    inline const MembershipMLPaymentConfig& GetMachineLearning() const{ return m_machineLearning; }
+    inline const MembershipMLPaymentConfig& GetMachineLearning() const { return m_machineLearning; }
     inline bool MachineLearningHasBeenSet() const { return m_machineLearningHasBeenSet; }
-    inline void SetMachineLearning(const MembershipMLPaymentConfig& value) { m_machineLearningHasBeenSet = true; m_machineLearning = value; }
-    inline void SetMachineLearning(MembershipMLPaymentConfig&& value) { m_machineLearningHasBeenSet = true; m_machineLearning = std::move(value); }
-    inline MembershipPaymentConfiguration& WithMachineLearning(const MembershipMLPaymentConfig& value) { SetMachineLearning(value); return *this;}
-    inline MembershipPaymentConfiguration& WithMachineLearning(MembershipMLPaymentConfig&& value) { SetMachineLearning(std::move(value)); return *this;}
+    template<typename MachineLearningT = MembershipMLPaymentConfig>
+    void SetMachineLearning(MachineLearningT&& value) { m_machineLearningHasBeenSet = true; m_machineLearning = std::forward<MachineLearningT>(value); }
+    template<typename MachineLearningT = MembershipMLPaymentConfig>
+    MembershipPaymentConfiguration& WithMachineLearning(MachineLearningT&& value) { SetMachineLearning(std::forward<MachineLearningT>(value)); return *this;}
     ///@}
   private:
 

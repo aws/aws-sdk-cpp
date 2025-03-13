@@ -47,7 +47,7 @@ namespace Model
   class ErrorsListItem
   {
   public:
-    AWS_COMPREHEND_API ErrorsListItem();
+    AWS_COMPREHEND_API ErrorsListItem() = default;
     AWS_COMPREHEND_API ErrorsListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API ErrorsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>Page number where the error occurred.</p>
      */
-    inline int GetPage() const{ return m_page; }
+    inline int GetPage() const { return m_page; }
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
     inline ErrorsListItem& WithPage(int value) { SetPage(value); return *this;}
@@ -67,33 +67,29 @@ namespace Model
     /**
      * <p>Error code for the cause of the error.</p>
      */
-    inline const PageBasedErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline PageBasedErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const PageBasedErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(PageBasedErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline ErrorsListItem& WithErrorCode(const PageBasedErrorCode& value) { SetErrorCode(value); return *this;}
-    inline ErrorsListItem& WithErrorCode(PageBasedErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(PageBasedErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline ErrorsListItem& WithErrorCode(PageBasedErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Text message explaining the reason for the error.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline ErrorsListItem& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline ErrorsListItem& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline ErrorsListItem& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    ErrorsListItem& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 
-    int m_page;
+    int m_page{0};
     bool m_pageHasBeenSet = false;
 
-    PageBasedErrorCode m_errorCode;
+    PageBasedErrorCode m_errorCode{PageBasedErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;

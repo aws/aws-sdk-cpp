@@ -28,7 +28,7 @@ namespace Model
   class ModifyVolumeResponse
   {
   public:
-    AWS_EC2_API ModifyVolumeResponse();
+    AWS_EC2_API ModifyVolumeResponse() = default;
     AWS_EC2_API ModifyVolumeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyVolumeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the volume modification.</p>
      */
-    inline const VolumeModification& GetVolumeModification() const{ return m_volumeModification; }
-    inline void SetVolumeModification(const VolumeModification& value) { m_volumeModification = value; }
-    inline void SetVolumeModification(VolumeModification&& value) { m_volumeModification = std::move(value); }
-    inline ModifyVolumeResponse& WithVolumeModification(const VolumeModification& value) { SetVolumeModification(value); return *this;}
-    inline ModifyVolumeResponse& WithVolumeModification(VolumeModification&& value) { SetVolumeModification(std::move(value)); return *this;}
+    inline const VolumeModification& GetVolumeModification() const { return m_volumeModification; }
+    template<typename VolumeModificationT = VolumeModification>
+    void SetVolumeModification(VolumeModificationT&& value) { m_volumeModificationHasBeenSet = true; m_volumeModification = std::forward<VolumeModificationT>(value); }
+    template<typename VolumeModificationT = VolumeModification>
+    ModifyVolumeResponse& WithVolumeModification(VolumeModificationT&& value) { SetVolumeModification(std::forward<VolumeModificationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyVolumeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyVolumeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyVolumeResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     VolumeModification m_volumeModification;
+    bool m_volumeModificationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

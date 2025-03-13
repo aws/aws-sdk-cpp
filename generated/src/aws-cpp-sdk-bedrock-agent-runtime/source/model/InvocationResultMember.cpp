@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InvocationResultMember::InvocationResultMember() : 
-    m_apiResultHasBeenSet(false),
-    m_functionResultHasBeenSet(false)
-{
-}
-
 InvocationResultMember::InvocationResultMember(JsonView jsonValue)
-  : InvocationResultMember()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvocationResultMember& InvocationResultMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("apiResult"))
   {
     m_apiResult = jsonValue.GetObject("apiResult");
-
     m_apiResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("functionResult"))
   {
     m_functionResult = jsonValue.GetObject("functionResult");
-
     m_functionResultHasBeenSet = true;
   }
-
   return *this;
 }
 

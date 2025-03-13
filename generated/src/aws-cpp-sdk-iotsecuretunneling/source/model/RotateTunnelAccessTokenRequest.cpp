@@ -12,14 +12,6 @@ using namespace Aws::IoTSecureTunneling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RotateTunnelAccessTokenRequest::RotateTunnelAccessTokenRequest() : 
-    m_tunnelIdHasBeenSet(false),
-    m_clientMode(ClientMode::NOT_SET),
-    m_clientModeHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false)
-{
-}
-
 Aws::String RotateTunnelAccessTokenRequest::SerializePayload() const
 {
   JsonValue payload;

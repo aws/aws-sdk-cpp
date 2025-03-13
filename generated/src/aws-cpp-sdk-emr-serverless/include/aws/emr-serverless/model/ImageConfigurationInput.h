@@ -31,7 +31,7 @@ namespace Model
   class ImageConfigurationInput
   {
   public:
-    AWS_EMRSERVERLESS_API ImageConfigurationInput();
+    AWS_EMRSERVERLESS_API ImageConfigurationInput() = default;
     AWS_EMRSERVERLESS_API ImageConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API ImageConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * you create a new application. If you leave this field blank in an update, Amazon
      * EMR will remove the image configuration.</p>
      */
-    inline const Aws::String& GetImageUri() const{ return m_imageUri; }
+    inline const Aws::String& GetImageUri() const { return m_imageUri; }
     inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
-    inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
-    inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
-    inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
-    inline ImageConfigurationInput& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
-    inline ImageConfigurationInput& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
-    inline ImageConfigurationInput& WithImageUri(const char* value) { SetImageUri(value); return *this;}
+    template<typename ImageUriT = Aws::String>
+    void SetImageUri(ImageUriT&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::forward<ImageUriT>(value); }
+    template<typename ImageUriT = Aws::String>
+    ImageConfigurationInput& WithImageUri(ImageUriT&& value) { SetImageUri(std::forward<ImageUriT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class OptimizationModelAccessConfig
   {
   public:
-    AWS_SAGEMAKER_API OptimizationModelAccessConfig();
+    AWS_SAGEMAKER_API OptimizationModelAccessConfig() = default;
     AWS_SAGEMAKER_API OptimizationModelAccessConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API OptimizationModelAccessConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * reviewing and complying with any applicable license terms and making sure they
      * are acceptable for your use case before downloading or using a model.</p>
      */
-    inline bool GetAcceptEula() const{ return m_acceptEula; }
+    inline bool GetAcceptEula() const { return m_acceptEula; }
     inline bool AcceptEulaHasBeenSet() const { return m_acceptEulaHasBeenSet; }
     inline void SetAcceptEula(bool value) { m_acceptEulaHasBeenSet = true; m_acceptEula = value; }
     inline OptimizationModelAccessConfig& WithAcceptEula(bool value) { SetAcceptEula(value); return *this;}
     ///@}
   private:
 
-    bool m_acceptEula;
+    bool m_acceptEula{false};
     bool m_acceptEulaHasBeenSet = false;
   };
 

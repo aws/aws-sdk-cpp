@@ -20,15 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-AvailabilityOptionsStatus::AvailabilityOptionsStatus() : 
-    m_options(false),
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AvailabilityOptionsStatus::AvailabilityOptionsStatus(const XmlNode& xmlNode)
-  : AvailabilityOptionsStatus()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ AvailabilityOptionsStatus& AvailabilityOptionsStatus::operator =(const XmlNode& 
     {
       m_options = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(optionsNode.GetText()).c_str()).c_str());
       m_optionsHasBeenSet = true;
+       m_optionsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

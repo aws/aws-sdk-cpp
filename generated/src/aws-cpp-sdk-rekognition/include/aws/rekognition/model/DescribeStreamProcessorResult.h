@@ -36,7 +36,7 @@ namespace Model
   class DescribeStreamProcessorResult
   {
   public:
-    AWS_REKOGNITION_API DescribeStreamProcessorResult();
+    AWS_REKOGNITION_API DescribeStreamProcessorResult() = default;
     AWS_REKOGNITION_API DescribeStreamProcessorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API DescribeStreamProcessorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,61 +45,53 @@ namespace Model
     /**
      * <p>Name of the stream processor. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeStreamProcessorResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeStreamProcessorResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeStreamProcessorResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeStreamProcessorResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ARN of the stream processor.</p>
      */
-    inline const Aws::String& GetStreamProcessorArn() const{ return m_streamProcessorArn; }
-    inline void SetStreamProcessorArn(const Aws::String& value) { m_streamProcessorArn = value; }
-    inline void SetStreamProcessorArn(Aws::String&& value) { m_streamProcessorArn = std::move(value); }
-    inline void SetStreamProcessorArn(const char* value) { m_streamProcessorArn.assign(value); }
-    inline DescribeStreamProcessorResult& WithStreamProcessorArn(const Aws::String& value) { SetStreamProcessorArn(value); return *this;}
-    inline DescribeStreamProcessorResult& WithStreamProcessorArn(Aws::String&& value) { SetStreamProcessorArn(std::move(value)); return *this;}
-    inline DescribeStreamProcessorResult& WithStreamProcessorArn(const char* value) { SetStreamProcessorArn(value); return *this;}
+    inline const Aws::String& GetStreamProcessorArn() const { return m_streamProcessorArn; }
+    template<typename StreamProcessorArnT = Aws::String>
+    void SetStreamProcessorArn(StreamProcessorArnT&& value) { m_streamProcessorArnHasBeenSet = true; m_streamProcessorArn = std::forward<StreamProcessorArnT>(value); }
+    template<typename StreamProcessorArnT = Aws::String>
+    DescribeStreamProcessorResult& WithStreamProcessorArn(StreamProcessorArnT&& value) { SetStreamProcessorArn(std::forward<StreamProcessorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Current status of the stream processor.</p>
      */
-    inline const StreamProcessorStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const StreamProcessorStatus& value) { m_status = value; }
-    inline void SetStatus(StreamProcessorStatus&& value) { m_status = std::move(value); }
-    inline DescribeStreamProcessorResult& WithStatus(const StreamProcessorStatus& value) { SetStatus(value); return *this;}
-    inline DescribeStreamProcessorResult& WithStatus(StreamProcessorStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline StreamProcessorStatus GetStatus() const { return m_status; }
+    inline void SetStatus(StreamProcessorStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeStreamProcessorResult& WithStatus(StreamProcessorStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Detailed status message about the stream processor.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline DescribeStreamProcessorResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline DescribeStreamProcessorResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline DescribeStreamProcessorResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    DescribeStreamProcessorResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Date and time the stream processor was created</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
-    inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestamp = value; }
-    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestamp = std::move(value); }
-    inline DescribeStreamProcessorResult& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
-    inline DescribeStreamProcessorResult& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTimestamp() const { return m_creationTimestamp; }
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    void SetCreationTimestamp(CreationTimestampT&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::forward<CreationTimestampT>(value); }
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    DescribeStreamProcessorResult& WithCreationTimestamp(CreationTimestampT&& value) { SetCreationTimestamp(std::forward<CreationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,22 +100,22 @@ namespace Model
      * when the stream processor moves from a running state to a failed state, or when
      * the user starts or stops the stream processor.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const{ return m_lastUpdateTimestamp; }
-    inline void SetLastUpdateTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdateTimestamp = value; }
-    inline void SetLastUpdateTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdateTimestamp = std::move(value); }
-    inline DescribeStreamProcessorResult& WithLastUpdateTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdateTimestamp(value); return *this;}
-    inline DescribeStreamProcessorResult& WithLastUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const { return m_lastUpdateTimestamp; }
+    template<typename LastUpdateTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdateTimestamp(LastUpdateTimestampT&& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = std::forward<LastUpdateTimestampT>(value); }
+    template<typename LastUpdateTimestampT = Aws::Utils::DateTime>
+    DescribeStreamProcessorResult& WithLastUpdateTimestamp(LastUpdateTimestampT&& value) { SetLastUpdateTimestamp(std::forward<LastUpdateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Kinesis video stream that provides the source streaming video.</p>
      */
-    inline const StreamProcessorInput& GetInput() const{ return m_input; }
-    inline void SetInput(const StreamProcessorInput& value) { m_input = value; }
-    inline void SetInput(StreamProcessorInput&& value) { m_input = std::move(value); }
-    inline DescribeStreamProcessorResult& WithInput(const StreamProcessorInput& value) { SetInput(value); return *this;}
-    inline DescribeStreamProcessorResult& WithInput(StreamProcessorInput&& value) { SetInput(std::move(value)); return *this;}
+    inline const StreamProcessorInput& GetInput() const { return m_input; }
+    template<typename InputT = StreamProcessorInput>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = StreamProcessorInput>
+    DescribeStreamProcessorResult& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,24 +123,22 @@ namespace Model
      * <p>Kinesis data stream to which Amazon Rekognition Video puts the analysis
      * results.</p>
      */
-    inline const StreamProcessorOutput& GetOutput() const{ return m_output; }
-    inline void SetOutput(const StreamProcessorOutput& value) { m_output = value; }
-    inline void SetOutput(StreamProcessorOutput&& value) { m_output = std::move(value); }
-    inline DescribeStreamProcessorResult& WithOutput(const StreamProcessorOutput& value) { SetOutput(value); return *this;}
-    inline DescribeStreamProcessorResult& WithOutput(StreamProcessorOutput&& value) { SetOutput(std::move(value)); return *this;}
+    inline const StreamProcessorOutput& GetOutput() const { return m_output; }
+    template<typename OutputT = StreamProcessorOutput>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = StreamProcessorOutput>
+    DescribeStreamProcessorResult& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ARN of the IAM role that allows access to the stream processor.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeStreamProcessorResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeStreamProcessorResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeStreamProcessorResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeStreamProcessorResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,20 +147,20 @@ namespace Model
      * You can use <code>FaceSearch</code> to recognize faces in a streaming video, or
      * you can use <code>ConnectedHome</code> to detect labels.</p>
      */
-    inline const StreamProcessorSettings& GetSettings() const{ return m_settings; }
-    inline void SetSettings(const StreamProcessorSettings& value) { m_settings = value; }
-    inline void SetSettings(StreamProcessorSettings&& value) { m_settings = std::move(value); }
-    inline DescribeStreamProcessorResult& WithSettings(const StreamProcessorSettings& value) { SetSettings(value); return *this;}
-    inline DescribeStreamProcessorResult& WithSettings(StreamProcessorSettings&& value) { SetSettings(std::move(value)); return *this;}
+    inline const StreamProcessorSettings& GetSettings() const { return m_settings; }
+    template<typename SettingsT = StreamProcessorSettings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = StreamProcessorSettings>
+    DescribeStreamProcessorResult& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const StreamProcessorNotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
-    inline void SetNotificationChannel(const StreamProcessorNotificationChannel& value) { m_notificationChannel = value; }
-    inline void SetNotificationChannel(StreamProcessorNotificationChannel&& value) { m_notificationChannel = std::move(value); }
-    inline DescribeStreamProcessorResult& WithNotificationChannel(const StreamProcessorNotificationChannel& value) { SetNotificationChannel(value); return *this;}
-    inline DescribeStreamProcessorResult& WithNotificationChannel(StreamProcessorNotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
+    inline const StreamProcessorNotificationChannel& GetNotificationChannel() const { return m_notificationChannel; }
+    template<typename NotificationChannelT = StreamProcessorNotificationChannel>
+    void SetNotificationChannel(NotificationChannelT&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::forward<NotificationChannelT>(value); }
+    template<typename NotificationChannelT = StreamProcessorNotificationChannel>
+    DescribeStreamProcessorResult& WithNotificationChannel(NotificationChannelT&& value) { SetNotificationChannel(std::forward<NotificationChannelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,13 +168,11 @@ namespace Model
      * <p> The identifier for your AWS Key Management Service key (AWS KMS key). This
      * is an optional parameter for label detection stream processors. </p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
-    inline DescribeStreamProcessorResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline DescribeStreamProcessorResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline DescribeStreamProcessorResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    DescribeStreamProcessorResult& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,13 +181,13 @@ namespace Model
      * objects or people. This is an optional parameter for label detection stream
      * processors. </p>
      */
-    inline const Aws::Vector<RegionOfInterest>& GetRegionsOfInterest() const{ return m_regionsOfInterest; }
-    inline void SetRegionsOfInterest(const Aws::Vector<RegionOfInterest>& value) { m_regionsOfInterest = value; }
-    inline void SetRegionsOfInterest(Aws::Vector<RegionOfInterest>&& value) { m_regionsOfInterest = std::move(value); }
-    inline DescribeStreamProcessorResult& WithRegionsOfInterest(const Aws::Vector<RegionOfInterest>& value) { SetRegionsOfInterest(value); return *this;}
-    inline DescribeStreamProcessorResult& WithRegionsOfInterest(Aws::Vector<RegionOfInterest>&& value) { SetRegionsOfInterest(std::move(value)); return *this;}
-    inline DescribeStreamProcessorResult& AddRegionsOfInterest(const RegionOfInterest& value) { m_regionsOfInterest.push_back(value); return *this; }
-    inline DescribeStreamProcessorResult& AddRegionsOfInterest(RegionOfInterest&& value) { m_regionsOfInterest.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RegionOfInterest>& GetRegionsOfInterest() const { return m_regionsOfInterest; }
+    template<typename RegionsOfInterestT = Aws::Vector<RegionOfInterest>>
+    void SetRegionsOfInterest(RegionsOfInterestT&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest = std::forward<RegionsOfInterestT>(value); }
+    template<typename RegionsOfInterestT = Aws::Vector<RegionOfInterest>>
+    DescribeStreamProcessorResult& WithRegionsOfInterest(RegionsOfInterestT&& value) { SetRegionsOfInterest(std::forward<RegionsOfInterestT>(value)); return *this;}
+    template<typename RegionsOfInterestT = RegionOfInterest>
+    DescribeStreamProcessorResult& AddRegionsOfInterest(RegionsOfInterestT&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest.emplace_back(std::forward<RegionsOfInterestT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -209,54 +197,67 @@ namespace Model
      * basis. Note that if you opt out at the account level this setting is ignored on
      * individual streams. </p>
      */
-    inline const StreamProcessorDataSharingPreference& GetDataSharingPreference() const{ return m_dataSharingPreference; }
-    inline void SetDataSharingPreference(const StreamProcessorDataSharingPreference& value) { m_dataSharingPreference = value; }
-    inline void SetDataSharingPreference(StreamProcessorDataSharingPreference&& value) { m_dataSharingPreference = std::move(value); }
-    inline DescribeStreamProcessorResult& WithDataSharingPreference(const StreamProcessorDataSharingPreference& value) { SetDataSharingPreference(value); return *this;}
-    inline DescribeStreamProcessorResult& WithDataSharingPreference(StreamProcessorDataSharingPreference&& value) { SetDataSharingPreference(std::move(value)); return *this;}
+    inline const StreamProcessorDataSharingPreference& GetDataSharingPreference() const { return m_dataSharingPreference; }
+    template<typename DataSharingPreferenceT = StreamProcessorDataSharingPreference>
+    void SetDataSharingPreference(DataSharingPreferenceT&& value) { m_dataSharingPreferenceHasBeenSet = true; m_dataSharingPreference = std::forward<DataSharingPreferenceT>(value); }
+    template<typename DataSharingPreferenceT = StreamProcessorDataSharingPreference>
+    DescribeStreamProcessorResult& WithDataSharingPreference(DataSharingPreferenceT&& value) { SetDataSharingPreference(std::forward<DataSharingPreferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeStreamProcessorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeStreamProcessorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeStreamProcessorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeStreamProcessorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_streamProcessorArn;
+    bool m_streamProcessorArnHasBeenSet = false;
 
-    StreamProcessorStatus m_status;
+    StreamProcessorStatus m_status{StreamProcessorStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimestamp;
+    Aws::Utils::DateTime m_creationTimestamp{};
+    bool m_creationTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTimestamp;
+    Aws::Utils::DateTime m_lastUpdateTimestamp{};
+    bool m_lastUpdateTimestampHasBeenSet = false;
 
     StreamProcessorInput m_input;
+    bool m_inputHasBeenSet = false;
 
     StreamProcessorOutput m_output;
+    bool m_outputHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     StreamProcessorSettings m_settings;
+    bool m_settingsHasBeenSet = false;
 
     StreamProcessorNotificationChannel m_notificationChannel;
+    bool m_notificationChannelHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<RegionOfInterest> m_regionsOfInterest;
+    bool m_regionsOfInterestHasBeenSet = false;
 
     StreamProcessorDataSharingPreference m_dataSharingPreference;
+    bool m_dataSharingPreferenceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,7 +27,7 @@ namespace Model
   class NestedStructWithList
   {
   public:
-    AWS_QUERYPROTOCOL_API NestedStructWithList();
+    AWS_QUERYPROTOCOL_API NestedStructWithList() = default;
     AWS_QUERYPROTOCOL_API NestedStructWithList(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_QUERYPROTOCOL_API NestedStructWithList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -37,15 +37,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetListArg() const{ return m_listArg; }
+    inline const Aws::Vector<Aws::String>& GetListArg() const { return m_listArg; }
     inline bool ListArgHasBeenSet() const { return m_listArgHasBeenSet; }
-    inline void SetListArg(const Aws::Vector<Aws::String>& value) { m_listArgHasBeenSet = true; m_listArg = value; }
-    inline void SetListArg(Aws::Vector<Aws::String>&& value) { m_listArgHasBeenSet = true; m_listArg = std::move(value); }
-    inline NestedStructWithList& WithListArg(const Aws::Vector<Aws::String>& value) { SetListArg(value); return *this;}
-    inline NestedStructWithList& WithListArg(Aws::Vector<Aws::String>&& value) { SetListArg(std::move(value)); return *this;}
-    inline NestedStructWithList& AddListArg(const Aws::String& value) { m_listArgHasBeenSet = true; m_listArg.push_back(value); return *this; }
-    inline NestedStructWithList& AddListArg(Aws::String&& value) { m_listArgHasBeenSet = true; m_listArg.push_back(std::move(value)); return *this; }
-    inline NestedStructWithList& AddListArg(const char* value) { m_listArgHasBeenSet = true; m_listArg.push_back(value); return *this; }
+    template<typename ListArgT = Aws::Vector<Aws::String>>
+    void SetListArg(ListArgT&& value) { m_listArgHasBeenSet = true; m_listArg = std::forward<ListArgT>(value); }
+    template<typename ListArgT = Aws::Vector<Aws::String>>
+    NestedStructWithList& WithListArg(ListArgT&& value) { SetListArg(std::forward<ListArgT>(value)); return *this;}
+    template<typename ListArgT = Aws::String>
+    NestedStructWithList& AddListArg(ListArgT&& value) { m_listArgHasBeenSet = true; m_listArg.emplace_back(std::forward<ListArgT>(value)); return *this; }
     ///@}
   private:
 

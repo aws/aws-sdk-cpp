@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateApplicationWithTokenExchangeGrantRequest::UpdateApplicationWithTokenExchangeGrantRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationWithTokenExchangeGrantRequest::SerializePayload() const
 {
   return {};

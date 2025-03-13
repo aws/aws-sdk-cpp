@@ -18,15 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-CardHolderVerificationValue::CardHolderVerificationValue() : 
-    m_unpredictableNumberHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_applicationTransactionCounterHasBeenSet(false)
-{
-}
-
 CardHolderVerificationValue::CardHolderVerificationValue(JsonView jsonValue)
-  : CardHolderVerificationValue()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CardHolderVerificationValue& CardHolderVerificationValue::operator =(JsonView js
   if(jsonValue.ValueExists("UnpredictableNumber"))
   {
     m_unpredictableNumber = jsonValue.GetString("UnpredictableNumber");
-
     m_unpredictableNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PanSequenceNumber"))
   {
     m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
     m_panSequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationTransactionCounter"))
   {
     m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
-
     m_applicationTransactionCounterHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class GetEmailContactResult
   {
   public:
-    AWS_NOTIFICATIONSCONTACTS_API GetEmailContactResult();
+    AWS_NOTIFICATIONSCONTACTS_API GetEmailContactResult() = default;
     AWS_NOTIFICATIONSCONTACTS_API GetEmailContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NOTIFICATIONSCONTACTS_API GetEmailContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The email contact for the provided email address.</p>
      */
-    inline const EmailContact& GetEmailContact() const{ return m_emailContact; }
-    inline void SetEmailContact(const EmailContact& value) { m_emailContact = value; }
-    inline void SetEmailContact(EmailContact&& value) { m_emailContact = std::move(value); }
-    inline GetEmailContactResult& WithEmailContact(const EmailContact& value) { SetEmailContact(value); return *this;}
-    inline GetEmailContactResult& WithEmailContact(EmailContact&& value) { SetEmailContact(std::move(value)); return *this;}
+    inline const EmailContact& GetEmailContact() const { return m_emailContact; }
+    template<typename EmailContactT = EmailContact>
+    void SetEmailContact(EmailContactT&& value) { m_emailContactHasBeenSet = true; m_emailContact = std::forward<EmailContactT>(value); }
+    template<typename EmailContactT = EmailContact>
+    GetEmailContactResult& WithEmailContact(EmailContactT&& value) { SetEmailContact(std::forward<EmailContactT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEmailContactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEmailContactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEmailContactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEmailContactResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EmailContact m_emailContact;
+    bool m_emailContactHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

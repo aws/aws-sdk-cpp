@@ -12,15 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConfigurationAggregatorSourcesStatusRequest::DescribeConfigurationAggregatorSourcesStatusRequest() : 
-    m_configurationAggregatorNameHasBeenSet(false),
-    m_updateStatusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConfigurationAggregatorSourcesStatusRequest::SerializePayload() const
 {
   JsonValue payload;

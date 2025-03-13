@@ -33,7 +33,7 @@ namespace Model
   class UpdateDomainNameserversResult
   {
   public:
-    AWS_ROUTE53DOMAINS_API UpdateDomainNameserversResult();
+    AWS_ROUTE53DOMAINS_API UpdateDomainNameserversResult() = default;
     AWS_ROUTE53DOMAINS_API UpdateDomainNameserversResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53DOMAINS_API UpdateDomainNameserversResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,28 @@ namespace Model
      * status, use <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
      */
-    inline const Aws::String& GetOperationId() const{ return m_operationId; }
-    inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
-    inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
-    inline void SetOperationId(const char* value) { m_operationId.assign(value); }
-    inline UpdateDomainNameserversResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-    inline UpdateDomainNameserversResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-    inline UpdateDomainNameserversResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    inline const Aws::String& GetOperationId() const { return m_operationId; }
+    template<typename OperationIdT = Aws::String>
+    void SetOperationId(OperationIdT&& value) { m_operationIdHasBeenSet = true; m_operationId = std::forward<OperationIdT>(value); }
+    template<typename OperationIdT = Aws::String>
+    UpdateDomainNameserversResult& WithOperationId(OperationIdT&& value) { SetOperationId(std::forward<OperationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDomainNameserversResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDomainNameserversResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDomainNameserversResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDomainNameserversResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_operationId;
+    bool m_operationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

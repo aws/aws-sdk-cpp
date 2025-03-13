@@ -18,13 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-CustomerSummary::CustomerSummary() : 
-    m_accountHasBeenSet(false)
-{
-}
-
 CustomerSummary::CustomerSummary(JsonView jsonValue)
-  : CustomerSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomerSummary& CustomerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Account"))
   {
     m_account = jsonValue.GetObject("Account");
-
     m_accountHasBeenSet = true;
   }
-
   return *this;
 }
 

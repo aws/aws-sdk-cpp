@@ -25,7 +25,7 @@ namespace Model
   class UpdateServiceTemplateVersionRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API UpdateServiceTemplateVersionRequest();
+    AWS_PROTON_API UpdateServiceTemplateVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,26 @@ namespace Model
      * service template version. A service instance based on this service template
      * version can run in environments based on compatible templates.</p>
      */
-    inline const Aws::Vector<CompatibleEnvironmentTemplateInput>& GetCompatibleEnvironmentTemplates() const{ return m_compatibleEnvironmentTemplates; }
+    inline const Aws::Vector<CompatibleEnvironmentTemplateInput>& GetCompatibleEnvironmentTemplates() const { return m_compatibleEnvironmentTemplates; }
     inline bool CompatibleEnvironmentTemplatesHasBeenSet() const { return m_compatibleEnvironmentTemplatesHasBeenSet; }
-    inline void SetCompatibleEnvironmentTemplates(const Aws::Vector<CompatibleEnvironmentTemplateInput>& value) { m_compatibleEnvironmentTemplatesHasBeenSet = true; m_compatibleEnvironmentTemplates = value; }
-    inline void SetCompatibleEnvironmentTemplates(Aws::Vector<CompatibleEnvironmentTemplateInput>&& value) { m_compatibleEnvironmentTemplatesHasBeenSet = true; m_compatibleEnvironmentTemplates = std::move(value); }
-    inline UpdateServiceTemplateVersionRequest& WithCompatibleEnvironmentTemplates(const Aws::Vector<CompatibleEnvironmentTemplateInput>& value) { SetCompatibleEnvironmentTemplates(value); return *this;}
-    inline UpdateServiceTemplateVersionRequest& WithCompatibleEnvironmentTemplates(Aws::Vector<CompatibleEnvironmentTemplateInput>&& value) { SetCompatibleEnvironmentTemplates(std::move(value)); return *this;}
-    inline UpdateServiceTemplateVersionRequest& AddCompatibleEnvironmentTemplates(const CompatibleEnvironmentTemplateInput& value) { m_compatibleEnvironmentTemplatesHasBeenSet = true; m_compatibleEnvironmentTemplates.push_back(value); return *this; }
-    inline UpdateServiceTemplateVersionRequest& AddCompatibleEnvironmentTemplates(CompatibleEnvironmentTemplateInput&& value) { m_compatibleEnvironmentTemplatesHasBeenSet = true; m_compatibleEnvironmentTemplates.push_back(std::move(value)); return *this; }
+    template<typename CompatibleEnvironmentTemplatesT = Aws::Vector<CompatibleEnvironmentTemplateInput>>
+    void SetCompatibleEnvironmentTemplates(CompatibleEnvironmentTemplatesT&& value) { m_compatibleEnvironmentTemplatesHasBeenSet = true; m_compatibleEnvironmentTemplates = std::forward<CompatibleEnvironmentTemplatesT>(value); }
+    template<typename CompatibleEnvironmentTemplatesT = Aws::Vector<CompatibleEnvironmentTemplateInput>>
+    UpdateServiceTemplateVersionRequest& WithCompatibleEnvironmentTemplates(CompatibleEnvironmentTemplatesT&& value) { SetCompatibleEnvironmentTemplates(std::forward<CompatibleEnvironmentTemplatesT>(value)); return *this;}
+    template<typename CompatibleEnvironmentTemplatesT = CompatibleEnvironmentTemplateInput>
+    UpdateServiceTemplateVersionRequest& AddCompatibleEnvironmentTemplates(CompatibleEnvironmentTemplatesT&& value) { m_compatibleEnvironmentTemplatesHasBeenSet = true; m_compatibleEnvironmentTemplates.emplace_back(std::forward<CompatibleEnvironmentTemplatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A description of a service template version to update.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateServiceTemplateVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateServiceTemplateVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateServiceTemplateVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateServiceTemplateVersionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * <p>To update a major version of a service template, include <code>major
      * Version</code>.</p>
      */
-    inline const Aws::String& GetMajorVersion() const{ return m_majorVersion; }
+    inline const Aws::String& GetMajorVersion() const { return m_majorVersion; }
     inline bool MajorVersionHasBeenSet() const { return m_majorVersionHasBeenSet; }
-    inline void SetMajorVersion(const Aws::String& value) { m_majorVersionHasBeenSet = true; m_majorVersion = value; }
-    inline void SetMajorVersion(Aws::String&& value) { m_majorVersionHasBeenSet = true; m_majorVersion = std::move(value); }
-    inline void SetMajorVersion(const char* value) { m_majorVersionHasBeenSet = true; m_majorVersion.assign(value); }
-    inline UpdateServiceTemplateVersionRequest& WithMajorVersion(const Aws::String& value) { SetMajorVersion(value); return *this;}
-    inline UpdateServiceTemplateVersionRequest& WithMajorVersion(Aws::String&& value) { SetMajorVersion(std::move(value)); return *this;}
-    inline UpdateServiceTemplateVersionRequest& WithMajorVersion(const char* value) { SetMajorVersion(value); return *this;}
+    template<typename MajorVersionT = Aws::String>
+    void SetMajorVersion(MajorVersionT&& value) { m_majorVersionHasBeenSet = true; m_majorVersion = std::forward<MajorVersionT>(value); }
+    template<typename MajorVersionT = Aws::String>
+    UpdateServiceTemplateVersionRequest& WithMajorVersion(MajorVersionT&& value) { SetMajorVersion(std::forward<MajorVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,26 +84,22 @@ namespace Model
      * <p>To update a minor version of a service template, include
      * <code>minorVersion</code>.</p>
      */
-    inline const Aws::String& GetMinorVersion() const{ return m_minorVersion; }
+    inline const Aws::String& GetMinorVersion() const { return m_minorVersion; }
     inline bool MinorVersionHasBeenSet() const { return m_minorVersionHasBeenSet; }
-    inline void SetMinorVersion(const Aws::String& value) { m_minorVersionHasBeenSet = true; m_minorVersion = value; }
-    inline void SetMinorVersion(Aws::String&& value) { m_minorVersionHasBeenSet = true; m_minorVersion = std::move(value); }
-    inline void SetMinorVersion(const char* value) { m_minorVersionHasBeenSet = true; m_minorVersion.assign(value); }
-    inline UpdateServiceTemplateVersionRequest& WithMinorVersion(const Aws::String& value) { SetMinorVersion(value); return *this;}
-    inline UpdateServiceTemplateVersionRequest& WithMinorVersion(Aws::String&& value) { SetMinorVersion(std::move(value)); return *this;}
-    inline UpdateServiceTemplateVersionRequest& WithMinorVersion(const char* value) { SetMinorVersion(value); return *this;}
+    template<typename MinorVersionT = Aws::String>
+    void SetMinorVersion(MinorVersionT&& value) { m_minorVersionHasBeenSet = true; m_minorVersion = std::forward<MinorVersionT>(value); }
+    template<typename MinorVersionT = Aws::String>
+    UpdateServiceTemplateVersionRequest& WithMinorVersion(MinorVersionT&& value) { SetMinorVersion(std::forward<MinorVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the service template minor version to update.</p>
      */
-    inline const TemplateVersionStatus& GetStatus() const{ return m_status; }
+    inline TemplateVersionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TemplateVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TemplateVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateServiceTemplateVersionRequest& WithStatus(const TemplateVersionStatus& value) { SetStatus(value); return *this;}
-    inline UpdateServiceTemplateVersionRequest& WithStatus(TemplateVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TemplateVersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateServiceTemplateVersionRequest& WithStatus(TemplateVersionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -121,28 +113,25 @@ namespace Model
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
      * components</a> in the <i>Proton User Guide</i>.</p>
      */
-    inline const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& GetSupportedComponentSources() const{ return m_supportedComponentSources; }
+    inline const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& GetSupportedComponentSources() const { return m_supportedComponentSources; }
     inline bool SupportedComponentSourcesHasBeenSet() const { return m_supportedComponentSourcesHasBeenSet; }
-    inline void SetSupportedComponentSources(const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources = value; }
-    inline void SetSupportedComponentSources(Aws::Vector<ServiceTemplateSupportedComponentSourceType>&& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources = std::move(value); }
-    inline UpdateServiceTemplateVersionRequest& WithSupportedComponentSources(const Aws::Vector<ServiceTemplateSupportedComponentSourceType>& value) { SetSupportedComponentSources(value); return *this;}
-    inline UpdateServiceTemplateVersionRequest& WithSupportedComponentSources(Aws::Vector<ServiceTemplateSupportedComponentSourceType>&& value) { SetSupportedComponentSources(std::move(value)); return *this;}
-    inline UpdateServiceTemplateVersionRequest& AddSupportedComponentSources(const ServiceTemplateSupportedComponentSourceType& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources.push_back(value); return *this; }
-    inline UpdateServiceTemplateVersionRequest& AddSupportedComponentSources(ServiceTemplateSupportedComponentSourceType&& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources.push_back(std::move(value)); return *this; }
+    template<typename SupportedComponentSourcesT = Aws::Vector<ServiceTemplateSupportedComponentSourceType>>
+    void SetSupportedComponentSources(SupportedComponentSourcesT&& value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources = std::forward<SupportedComponentSourcesT>(value); }
+    template<typename SupportedComponentSourcesT = Aws::Vector<ServiceTemplateSupportedComponentSourceType>>
+    UpdateServiceTemplateVersionRequest& WithSupportedComponentSources(SupportedComponentSourcesT&& value) { SetSupportedComponentSources(std::forward<SupportedComponentSourcesT>(value)); return *this;}
+    inline UpdateServiceTemplateVersionRequest& AddSupportedComponentSources(ServiceTemplateSupportedComponentSourceType value) { m_supportedComponentSourcesHasBeenSet = true; m_supportedComponentSources.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the service template.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline UpdateServiceTemplateVersionRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline UpdateServiceTemplateVersionRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline UpdateServiceTemplateVersionRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    UpdateServiceTemplateVersionRequest& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -158,7 +147,7 @@ namespace Model
     Aws::String m_minorVersion;
     bool m_minorVersionHasBeenSet = false;
 
-    TemplateVersionStatus m_status;
+    TemplateVersionStatus m_status{TemplateVersionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<ServiceTemplateSupportedComponentSourceType> m_supportedComponentSources;

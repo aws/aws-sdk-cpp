@@ -18,22 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-TestCaseSummary::TestCaseSummary() : 
-    m_testCaseIdHasBeenSet(false),
-    m_testCaseArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_latestVersion(0),
-    m_latestVersionHasBeenSet(false),
-    m_status(TestCaseLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
-{
-}
-
 TestCaseSummary::TestCaseSummary(JsonView jsonValue)
-  : TestCaseSummary()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ TestCaseSummary& TestCaseSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("testCaseId"))
   {
     m_testCaseId = jsonValue.GetString("testCaseId");
-
     m_testCaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testCaseArn"))
   {
     m_testCaseArn = jsonValue.GetString("testCaseArn");
-
     m_testCaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestVersion"))
   {
     m_latestVersion = jsonValue.GetInteger("latestVersion");
-
     m_latestVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TestCaseLifecycleMapper::GetTestCaseLifecycleForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

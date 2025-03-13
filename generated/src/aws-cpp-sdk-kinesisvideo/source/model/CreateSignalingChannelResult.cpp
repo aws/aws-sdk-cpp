@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSignalingChannelResult::CreateSignalingChannelResult()
-{
-}
-
 CreateSignalingChannelResult::CreateSignalingChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateSignalingChannelResult& CreateSignalingChannelResult::operator =(const Aws
   if(jsonValue.ValueExists("ChannelARN"))
   {
     m_channelARN = jsonValue.GetString("ChannelARN");
-
+    m_channelARNHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

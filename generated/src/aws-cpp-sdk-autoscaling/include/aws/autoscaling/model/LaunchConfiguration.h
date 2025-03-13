@@ -36,7 +36,7 @@ namespace Model
   class LaunchConfiguration
   {
   public:
-    AWS_AUTOSCALING_API LaunchConfiguration();
+    AWS_AUTOSCALING_API LaunchConfiguration() = default;
     AWS_AUTOSCALING_API LaunchConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API LaunchConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,28 +48,24 @@ namespace Model
     /**
      * <p>The name of the launch configuration.</p>
      */
-    inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
+    inline const Aws::String& GetLaunchConfigurationName() const { return m_launchConfigurationName; }
     inline bool LaunchConfigurationNameHasBeenSet() const { return m_launchConfigurationNameHasBeenSet; }
-    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
-    inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::move(value); }
-    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
-    inline LaunchConfiguration& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
-    inline LaunchConfiguration& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(std::move(value)); return *this;}
-    inline LaunchConfiguration& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
+    template<typename LaunchConfigurationNameT = Aws::String>
+    void SetLaunchConfigurationName(LaunchConfigurationNameT&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::forward<LaunchConfigurationNameT>(value); }
+    template<typename LaunchConfigurationNameT = Aws::String>
+    LaunchConfiguration& WithLaunchConfigurationName(LaunchConfigurationNameT&& value) { SetLaunchConfigurationName(std::forward<LaunchConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the launch configuration.</p>
      */
-    inline const Aws::String& GetLaunchConfigurationARN() const{ return m_launchConfigurationARN; }
+    inline const Aws::String& GetLaunchConfigurationARN() const { return m_launchConfigurationARN; }
     inline bool LaunchConfigurationARNHasBeenSet() const { return m_launchConfigurationARNHasBeenSet; }
-    inline void SetLaunchConfigurationARN(const Aws::String& value) { m_launchConfigurationARNHasBeenSet = true; m_launchConfigurationARN = value; }
-    inline void SetLaunchConfigurationARN(Aws::String&& value) { m_launchConfigurationARNHasBeenSet = true; m_launchConfigurationARN = std::move(value); }
-    inline void SetLaunchConfigurationARN(const char* value) { m_launchConfigurationARNHasBeenSet = true; m_launchConfigurationARN.assign(value); }
-    inline LaunchConfiguration& WithLaunchConfigurationARN(const Aws::String& value) { SetLaunchConfigurationARN(value); return *this;}
-    inline LaunchConfiguration& WithLaunchConfigurationARN(Aws::String&& value) { SetLaunchConfigurationARN(std::move(value)); return *this;}
-    inline LaunchConfiguration& WithLaunchConfigurationARN(const char* value) { SetLaunchConfigurationARN(value); return *this;}
+    template<typename LaunchConfigurationARNT = Aws::String>
+    void SetLaunchConfigurationARN(LaunchConfigurationARNT&& value) { m_launchConfigurationARNHasBeenSet = true; m_launchConfigurationARN = std::forward<LaunchConfigurationARNT>(value); }
+    template<typename LaunchConfigurationARNT = Aws::String>
+    LaunchConfiguration& WithLaunchConfigurationARN(LaunchConfigurationARNT&& value) { SetLaunchConfigurationARN(std::forward<LaunchConfigurationARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
      * a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline LaunchConfiguration& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline LaunchConfiguration& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline LaunchConfiguration& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    LaunchConfiguration& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * EC2 key pairs and Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide for
      * Linux Instances</i>.</p>
      */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+    inline const Aws::String& GetKeyName() const { return m_keyName; }
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-    inline LaunchConfiguration& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-    inline LaunchConfiguration& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-    inline LaunchConfiguration& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    template<typename KeyNameT = Aws::String>
+    void SetKeyName(KeyNameT&& value) { m_keyNameHasBeenSet = true; m_keyName = std::forward<KeyNameT>(value); }
+    template<typename KeyNameT = Aws::String>
+    LaunchConfiguration& WithKeyName(KeyNameT&& value) { SetKeyName(std::forward<KeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,44 +106,40 @@ namespace Model
      * traffic to your Amazon Web Services resources using security groups</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const { return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
-    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
-    inline LaunchConfiguration& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
-    inline LaunchConfiguration& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-    inline LaunchConfiguration& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
-    inline LaunchConfiguration& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
-    inline LaunchConfiguration& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::forward<SecurityGroupsT>(value); }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    LaunchConfiguration& WithSecurityGroups(SecurityGroupsT&& value) { SetSecurityGroups(std::forward<SecurityGroupsT>(value)); return *this;}
+    template<typename SecurityGroupsT = Aws::String>
+    LaunchConfiguration& AddSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.emplace_back(std::forward<SecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Available for backward compatibility.</p>
      */
-    inline const Aws::String& GetClassicLinkVPCId() const{ return m_classicLinkVPCId; }
+    inline const Aws::String& GetClassicLinkVPCId() const { return m_classicLinkVPCId; }
     inline bool ClassicLinkVPCIdHasBeenSet() const { return m_classicLinkVPCIdHasBeenSet; }
-    inline void SetClassicLinkVPCId(const Aws::String& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = value; }
-    inline void SetClassicLinkVPCId(Aws::String&& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = std::move(value); }
-    inline void SetClassicLinkVPCId(const char* value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId.assign(value); }
-    inline LaunchConfiguration& WithClassicLinkVPCId(const Aws::String& value) { SetClassicLinkVPCId(value); return *this;}
-    inline LaunchConfiguration& WithClassicLinkVPCId(Aws::String&& value) { SetClassicLinkVPCId(std::move(value)); return *this;}
-    inline LaunchConfiguration& WithClassicLinkVPCId(const char* value) { SetClassicLinkVPCId(value); return *this;}
+    template<typename ClassicLinkVPCIdT = Aws::String>
+    void SetClassicLinkVPCId(ClassicLinkVPCIdT&& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = std::forward<ClassicLinkVPCIdT>(value); }
+    template<typename ClassicLinkVPCIdT = Aws::String>
+    LaunchConfiguration& WithClassicLinkVPCId(ClassicLinkVPCIdT&& value) { SetClassicLinkVPCId(std::forward<ClassicLinkVPCIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Available for backward compatibility.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetClassicLinkVPCSecurityGroups() const{ return m_classicLinkVPCSecurityGroups; }
+    inline const Aws::Vector<Aws::String>& GetClassicLinkVPCSecurityGroups() const { return m_classicLinkVPCSecurityGroups; }
     inline bool ClassicLinkVPCSecurityGroupsHasBeenSet() const { return m_classicLinkVPCSecurityGroupsHasBeenSet; }
-    inline void SetClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = value; }
-    inline void SetClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = std::move(value); }
-    inline LaunchConfiguration& WithClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { SetClassicLinkVPCSecurityGroups(value); return *this;}
-    inline LaunchConfiguration& WithClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClassicLinkVPCSecurityGroups(std::move(value)); return *this;}
-    inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const Aws::String& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
-    inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(Aws::String&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(std::move(value)); return *this; }
-    inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const char* value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
+    template<typename ClassicLinkVPCSecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetClassicLinkVPCSecurityGroups(ClassicLinkVPCSecurityGroupsT&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = std::forward<ClassicLinkVPCSecurityGroupsT>(value); }
+    template<typename ClassicLinkVPCSecurityGroupsT = Aws::Vector<Aws::String>>
+    LaunchConfiguration& WithClassicLinkVPCSecurityGroups(ClassicLinkVPCSecurityGroupsT&& value) { SetClassicLinkVPCSecurityGroups(std::forward<ClassicLinkVPCSecurityGroupsT>(value)); return *this;}
+    template<typename ClassicLinkVPCSecurityGroupsT = Aws::String>
+    LaunchConfiguration& AddClassicLinkVPCSecurityGroups(ClassicLinkVPCSecurityGroupsT&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.emplace_back(std::forward<ClassicLinkVPCSecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -166,14 +154,12 @@ namespace Model
      * Otherwise, you must provide base64-encoded text. User data is limited to 16
      * KB.</p>
      */
-    inline const Aws::String& GetUserData() const{ return m_userData; }
+    inline const Aws::String& GetUserData() const { return m_userData; }
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
-    inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
-    inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
-    inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
-    inline LaunchConfiguration& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
-    inline LaunchConfiguration& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
-    inline LaunchConfiguration& WithUserData(const char* value) { SetUserData(value); return *this;}
+    template<typename UserDataT = Aws::String>
+    void SetUserData(UserDataT&& value) { m_userDataHasBeenSet = true; m_userData = std::forward<UserDataT>(value); }
+    template<typename UserDataT = Aws::String>
+    LaunchConfiguration& WithUserData(UserDataT&& value) { SetUserData(std::forward<UserDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,42 +169,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline LaunchConfiguration& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline LaunchConfiguration& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline LaunchConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    LaunchConfiguration& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the kernel associated with the AMI.</p>
      */
-    inline const Aws::String& GetKernelId() const{ return m_kernelId; }
+    inline const Aws::String& GetKernelId() const { return m_kernelId; }
     inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
-    inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
-    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
-    inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
-    inline LaunchConfiguration& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
-    inline LaunchConfiguration& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
-    inline LaunchConfiguration& WithKernelId(const char* value) { SetKernelId(value); return *this;}
+    template<typename KernelIdT = Aws::String>
+    void SetKernelId(KernelIdT&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::forward<KernelIdT>(value); }
+    template<typename KernelIdT = Aws::String>
+    LaunchConfiguration& WithKernelId(KernelIdT&& value) { SetKernelId(std::forward<KernelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the RAM disk associated with the AMI.</p>
      */
-    inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
+    inline const Aws::String& GetRamdiskId() const { return m_ramdiskId; }
     inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
-    inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
-    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
-    inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
-    inline LaunchConfiguration& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
-    inline LaunchConfiguration& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
-    inline LaunchConfiguration& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
+    template<typename RamdiskIdT = Aws::String>
+    void SetRamdiskId(RamdiskIdT&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::forward<RamdiskIdT>(value); }
+    template<typename RamdiskIdT = Aws::String>
+    LaunchConfiguration& WithRamdiskId(RamdiskIdT&& value) { SetRamdiskId(std::forward<RamdiskIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,14 +209,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
-    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
-    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
-    inline LaunchConfiguration& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-    inline LaunchConfiguration& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-    inline LaunchConfiguration& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
-    inline LaunchConfiguration& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    template<typename BlockDeviceMappingsT = Aws::Vector<BlockDeviceMapping>>
+    void SetBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::forward<BlockDeviceMappingsT>(value); }
+    template<typename BlockDeviceMappingsT = Aws::Vector<BlockDeviceMapping>>
+    LaunchConfiguration& WithBlockDeviceMappings(BlockDeviceMappingsT&& value) { SetBlockDeviceMappings(std::forward<BlockDeviceMappingsT>(value)); return *this;}
+    template<typename BlockDeviceMappingsT = BlockDeviceMapping>
+    LaunchConfiguration& AddBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.emplace_back(std::forward<BlockDeviceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -248,12 +228,12 @@ namespace Model
      * monitoring for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
-    inline const InstanceMonitoring& GetInstanceMonitoring() const{ return m_instanceMonitoring; }
+    inline const InstanceMonitoring& GetInstanceMonitoring() const { return m_instanceMonitoring; }
     inline bool InstanceMonitoringHasBeenSet() const { return m_instanceMonitoringHasBeenSet; }
-    inline void SetInstanceMonitoring(const InstanceMonitoring& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = value; }
-    inline void SetInstanceMonitoring(InstanceMonitoring&& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = std::move(value); }
-    inline LaunchConfiguration& WithInstanceMonitoring(const InstanceMonitoring& value) { SetInstanceMonitoring(value); return *this;}
-    inline LaunchConfiguration& WithInstanceMonitoring(InstanceMonitoring&& value) { SetInstanceMonitoring(std::move(value)); return *this;}
+    template<typename InstanceMonitoringT = InstanceMonitoring>
+    void SetInstanceMonitoring(InstanceMonitoringT&& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = std::forward<InstanceMonitoringT>(value); }
+    template<typename InstanceMonitoringT = InstanceMonitoring>
+    LaunchConfiguration& WithInstanceMonitoring(InstanceMonitoringT&& value) { SetInstanceMonitoring(std::forward<InstanceMonitoringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -265,14 +245,12 @@ namespace Model
      * Spot Instances for fault-tolerant and flexible applications</a> in the <i>Amazon
      * EC2 Auto Scaling User Guide</i>.</p>
      */
-    inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
+    inline const Aws::String& GetSpotPrice() const { return m_spotPrice; }
     inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
-    inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
-    inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
-    inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
-    inline LaunchConfiguration& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
-    inline LaunchConfiguration& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
-    inline LaunchConfiguration& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
+    template<typename SpotPriceT = Aws::String>
+    void SetSpotPrice(SpotPriceT&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::forward<SpotPriceT>(value); }
+    template<typename SpotPriceT = Aws::String>
+    LaunchConfiguration& WithSpotPrice(SpotPriceT&& value) { SetSpotPrice(std::forward<SpotPriceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -284,26 +262,24 @@ namespace Model
      * role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
-    inline const Aws::String& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
+    inline const Aws::String& GetIamInstanceProfile() const { return m_iamInstanceProfile; }
     inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
-    inline void SetIamInstanceProfile(const Aws::String& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
-    inline void SetIamInstanceProfile(Aws::String&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
-    inline void SetIamInstanceProfile(const char* value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile.assign(value); }
-    inline LaunchConfiguration& WithIamInstanceProfile(const Aws::String& value) { SetIamInstanceProfile(value); return *this;}
-    inline LaunchConfiguration& WithIamInstanceProfile(Aws::String&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
-    inline LaunchConfiguration& WithIamInstanceProfile(const char* value) { SetIamInstanceProfile(value); return *this;}
+    template<typename IamInstanceProfileT = Aws::String>
+    void SetIamInstanceProfile(IamInstanceProfileT&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::forward<IamInstanceProfileT>(value); }
+    template<typename IamInstanceProfileT = Aws::String>
+    LaunchConfiguration& WithIamInstanceProfile(IamInstanceProfileT&& value) { SetIamInstanceProfile(std::forward<IamInstanceProfileT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation date and time for the launch configuration.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline LaunchConfiguration& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline LaunchConfiguration& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    LaunchConfiguration& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -314,7 +290,7 @@ namespace Model
      * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p>
      */
-    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+    inline bool GetEbsOptimized() const { return m_ebsOptimized; }
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
     inline LaunchConfiguration& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
@@ -332,7 +308,7 @@ namespace Model
      * network connectivity for your Auto Scaling instances using Amazon VPC</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
-    inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
+    inline bool GetAssociatePublicIpAddress() const { return m_associatePublicIpAddress; }
     inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
     inline LaunchConfiguration& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
@@ -344,14 +320,12 @@ namespace Model
      * <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on
      * isolated, single-tenant hardware and can only be launched into a VPC.</p>
      */
-    inline const Aws::String& GetPlacementTenancy() const{ return m_placementTenancy; }
+    inline const Aws::String& GetPlacementTenancy() const { return m_placementTenancy; }
     inline bool PlacementTenancyHasBeenSet() const { return m_placementTenancyHasBeenSet; }
-    inline void SetPlacementTenancy(const Aws::String& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = value; }
-    inline void SetPlacementTenancy(Aws::String&& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = std::move(value); }
-    inline void SetPlacementTenancy(const char* value) { m_placementTenancyHasBeenSet = true; m_placementTenancy.assign(value); }
-    inline LaunchConfiguration& WithPlacementTenancy(const Aws::String& value) { SetPlacementTenancy(value); return *this;}
-    inline LaunchConfiguration& WithPlacementTenancy(Aws::String&& value) { SetPlacementTenancy(std::move(value)); return *this;}
-    inline LaunchConfiguration& WithPlacementTenancy(const char* value) { SetPlacementTenancy(value); return *this;}
+    template<typename PlacementTenancyT = Aws::String>
+    void SetPlacementTenancy(PlacementTenancyT&& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = std::forward<PlacementTenancyT>(value); }
+    template<typename PlacementTenancyT = Aws::String>
+    LaunchConfiguration& WithPlacementTenancy(PlacementTenancyT&& value) { SetPlacementTenancy(std::forward<PlacementTenancyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -361,12 +335,12 @@ namespace Model
      * the instance metadata options</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
-    inline const InstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }
+    inline const InstanceMetadataOptions& GetMetadataOptions() const { return m_metadataOptions; }
     inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
-    inline void SetMetadataOptions(const InstanceMetadataOptions& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
-    inline void SetMetadataOptions(InstanceMetadataOptions&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
-    inline LaunchConfiguration& WithMetadataOptions(const InstanceMetadataOptions& value) { SetMetadataOptions(value); return *this;}
-    inline LaunchConfiguration& WithMetadataOptions(InstanceMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
+    template<typename MetadataOptionsT = InstanceMetadataOptions>
+    void SetMetadataOptions(MetadataOptionsT&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::forward<MetadataOptionsT>(value); }
+    template<typename MetadataOptionsT = InstanceMetadataOptions>
+    LaunchConfiguration& WithMetadataOptions(MetadataOptionsT&& value) { SetMetadataOptions(std::forward<MetadataOptionsT>(value)); return *this;}
     ///@}
   private:
 
@@ -415,13 +389,13 @@ namespace Model
     Aws::String m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
-    bool m_ebsOptimized;
+    bool m_ebsOptimized{false};
     bool m_ebsOptimizedHasBeenSet = false;
 
-    bool m_associatePublicIpAddress;
+    bool m_associatePublicIpAddress{false};
     bool m_associatePublicIpAddressHasBeenSet = false;
 
     Aws::String m_placementTenancy;

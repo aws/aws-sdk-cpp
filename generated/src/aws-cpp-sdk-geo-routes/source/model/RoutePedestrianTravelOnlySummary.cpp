@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoutePedestrianTravelOnlySummary::RoutePedestrianTravelOnlySummary() : 
-    m_duration(0),
-    m_durationHasBeenSet(false)
-{
-}
-
 RoutePedestrianTravelOnlySummary::RoutePedestrianTravelOnlySummary(JsonView jsonValue)
-  : RoutePedestrianTravelOnlySummary()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RoutePedestrianTravelOnlySummary& RoutePedestrianTravelOnlySummary::operator =(J
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInt64("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   return *this;
 }
 

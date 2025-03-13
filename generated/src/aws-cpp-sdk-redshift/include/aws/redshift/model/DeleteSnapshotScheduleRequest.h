@@ -21,7 +21,7 @@ namespace Model
   class DeleteSnapshotScheduleRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DeleteSnapshotScheduleRequest();
+    AWS_REDSHIFT_API DeleteSnapshotScheduleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>A unique identifier of the snapshot schedule to delete.</p>
      */
-    inline const Aws::String& GetScheduleIdentifier() const{ return m_scheduleIdentifier; }
+    inline const Aws::String& GetScheduleIdentifier() const { return m_scheduleIdentifier; }
     inline bool ScheduleIdentifierHasBeenSet() const { return m_scheduleIdentifierHasBeenSet; }
-    inline void SetScheduleIdentifier(const Aws::String& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = value; }
-    inline void SetScheduleIdentifier(Aws::String&& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = std::move(value); }
-    inline void SetScheduleIdentifier(const char* value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier.assign(value); }
-    inline DeleteSnapshotScheduleRequest& WithScheduleIdentifier(const Aws::String& value) { SetScheduleIdentifier(value); return *this;}
-    inline DeleteSnapshotScheduleRequest& WithScheduleIdentifier(Aws::String&& value) { SetScheduleIdentifier(std::move(value)); return *this;}
-    inline DeleteSnapshotScheduleRequest& WithScheduleIdentifier(const char* value) { SetScheduleIdentifier(value); return *this;}
+    template<typename ScheduleIdentifierT = Aws::String>
+    void SetScheduleIdentifier(ScheduleIdentifierT&& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = std::forward<ScheduleIdentifierT>(value); }
+    template<typename ScheduleIdentifierT = Aws::String>
+    DeleteSnapshotScheduleRequest& WithScheduleIdentifier(ScheduleIdentifierT&& value) { SetScheduleIdentifier(std::forward<ScheduleIdentifierT>(value)); return *this;}
     ///@}
   private:
 

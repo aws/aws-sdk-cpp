@@ -33,7 +33,7 @@ namespace Model
   class ModifyReplicationSubnetGroupResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationSubnetGroupResult();
+    AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationSubnetGroupResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The modified replication subnet group.</p>
      */
-    inline const ReplicationSubnetGroup& GetReplicationSubnetGroup() const{ return m_replicationSubnetGroup; }
-    inline void SetReplicationSubnetGroup(const ReplicationSubnetGroup& value) { m_replicationSubnetGroup = value; }
-    inline void SetReplicationSubnetGroup(ReplicationSubnetGroup&& value) { m_replicationSubnetGroup = std::move(value); }
-    inline ModifyReplicationSubnetGroupResult& WithReplicationSubnetGroup(const ReplicationSubnetGroup& value) { SetReplicationSubnetGroup(value); return *this;}
-    inline ModifyReplicationSubnetGroupResult& WithReplicationSubnetGroup(ReplicationSubnetGroup&& value) { SetReplicationSubnetGroup(std::move(value)); return *this;}
+    inline const ReplicationSubnetGroup& GetReplicationSubnetGroup() const { return m_replicationSubnetGroup; }
+    template<typename ReplicationSubnetGroupT = ReplicationSubnetGroup>
+    void SetReplicationSubnetGroup(ReplicationSubnetGroupT&& value) { m_replicationSubnetGroupHasBeenSet = true; m_replicationSubnetGroup = std::forward<ReplicationSubnetGroupT>(value); }
+    template<typename ReplicationSubnetGroupT = ReplicationSubnetGroup>
+    ModifyReplicationSubnetGroupResult& WithReplicationSubnetGroup(ReplicationSubnetGroupT&& value) { SetReplicationSubnetGroup(std::forward<ReplicationSubnetGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ModifyReplicationSubnetGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ModifyReplicationSubnetGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ModifyReplicationSubnetGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ModifyReplicationSubnetGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ReplicationSubnetGroup m_replicationSubnetGroup;
+    bool m_replicationSubnetGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

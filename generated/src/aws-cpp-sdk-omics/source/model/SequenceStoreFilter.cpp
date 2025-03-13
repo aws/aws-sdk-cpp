@@ -18,19 +18,7 @@ namespace Omics
 namespace Model
 {
 
-SequenceStoreFilter::SequenceStoreFilter() : 
-    m_nameHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_status(SequenceStoreStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAfterHasBeenSet(false),
-    m_updatedBeforeHasBeenSet(false)
-{
-}
-
 SequenceStoreFilter::SequenceStoreFilter(JsonView jsonValue)
-  : SequenceStoreFilter()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ SequenceStoreFilter& SequenceStoreFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAfter"))
   {
     m_createdAfter = jsonValue.GetString("createdAfter");
-
     m_createdAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBefore"))
   {
     m_createdBefore = jsonValue.GetString("createdBefore");
-
     m_createdBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SequenceStoreStatusMapper::GetSequenceStoreStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAfter"))
   {
     m_updatedAfter = jsonValue.GetString("updatedAfter");
-
     m_updatedAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBefore"))
   {
     m_updatedBefore = jsonValue.GetString("updatedBefore");
-
     m_updatedBeforeHasBeenSet = true;
   }
-
   return *this;
 }
 

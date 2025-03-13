@@ -33,7 +33,7 @@ namespace Model
   class HLSTimestampRange
   {
   public:
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSTimestampRange();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSTimestampRange() = default;
     AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSTimestampRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSTimestampRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later
      * than the stream head. </p>
      */
-    inline const Aws::Utils::DateTime& GetStartTimestamp() const{ return m_startTimestamp; }
+    inline const Aws::Utils::DateTime& GetStartTimestamp() const { return m_startTimestamp; }
     inline bool StartTimestampHasBeenSet() const { return m_startTimestampHasBeenSet; }
-    inline void SetStartTimestamp(const Aws::Utils::DateTime& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
-    inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::move(value); }
-    inline HLSTimestampRange& WithStartTimestamp(const Aws::Utils::DateTime& value) { SetStartTimestamp(value); return *this;}
-    inline HLSTimestampRange& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(std::move(value)); return *this;}
+    template<typename StartTimestampT = Aws::Utils::DateTime>
+    void SetStartTimestamp(StartTimestampT&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::forward<StartTimestampT>(value); }
+    template<typename StartTimestampT = Aws::Utils::DateTime>
+    HLSTimestampRange& WithStartTimestamp(StartTimestampT&& value) { SetStartTimestamp(std::forward<StartTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,19 +74,19 @@ namespace Model
      * <code>EndTimestamp</code> value and continue past it are included in the
      * session.</p> 
      */
-    inline const Aws::Utils::DateTime& GetEndTimestamp() const{ return m_endTimestamp; }
+    inline const Aws::Utils::DateTime& GetEndTimestamp() const { return m_endTimestamp; }
     inline bool EndTimestampHasBeenSet() const { return m_endTimestampHasBeenSet; }
-    inline void SetEndTimestamp(const Aws::Utils::DateTime& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = value; }
-    inline void SetEndTimestamp(Aws::Utils::DateTime&& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = std::move(value); }
-    inline HLSTimestampRange& WithEndTimestamp(const Aws::Utils::DateTime& value) { SetEndTimestamp(value); return *this;}
-    inline HLSTimestampRange& WithEndTimestamp(Aws::Utils::DateTime&& value) { SetEndTimestamp(std::move(value)); return *this;}
+    template<typename EndTimestampT = Aws::Utils::DateTime>
+    void SetEndTimestamp(EndTimestampT&& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = std::forward<EndTimestampT>(value); }
+    template<typename EndTimestampT = Aws::Utils::DateTime>
+    HLSTimestampRange& WithEndTimestamp(EndTimestampT&& value) { SetEndTimestamp(std::forward<EndTimestampT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_startTimestamp;
+    Aws::Utils::DateTime m_startTimestamp{};
     bool m_startTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTimestamp;
+    Aws::Utils::DateTime m_endTimestamp{};
     bool m_endTimestampHasBeenSet = false;
   };
 

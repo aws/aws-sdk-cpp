@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultFilterDropDownControlOptions::DefaultFilterDropDownControlOptions() : 
-    m_displayOptionsHasBeenSet(false),
-    m_type(SheetControlListType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_selectableValuesHasBeenSet(false),
-    m_commitMode(CommitMode::NOT_SET),
-    m_commitModeHasBeenSet(false)
-{
-}
-
 DefaultFilterDropDownControlOptions::DefaultFilterDropDownControlOptions(JsonView jsonValue)
-  : DefaultFilterDropDownControlOptions()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DefaultFilterDropDownControlOptions& DefaultFilterDropDownControlOptions::operat
   if(jsonValue.ValueExists("DisplayOptions"))
   {
     m_displayOptions = jsonValue.GetObject("DisplayOptions");
-
     m_displayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SheetControlListTypeMapper::GetSheetControlListTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectableValues"))
   {
     m_selectableValues = jsonValue.GetObject("SelectableValues");
-
     m_selectableValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommitMode"))
   {
     m_commitMode = CommitModeMapper::GetCommitModeForName(jsonValue.GetString("CommitMode"));
-
     m_commitModeHasBeenSet = true;
   }
-
   return *this;
 }
 

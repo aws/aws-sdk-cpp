@@ -12,17 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMetadataGenerationRunRequest::StartMetadataGenerationRunRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_domainIdentifierHasBeenSet(false),
-    m_owningProjectIdentifierHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_type(MetadataGenerationRunType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String StartMetadataGenerationRunRequest::SerializePayload() const
 {
   JsonValue payload;

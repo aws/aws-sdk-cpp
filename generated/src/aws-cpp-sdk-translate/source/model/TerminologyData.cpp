@@ -19,17 +19,7 @@ namespace Translate
 namespace Model
 {
 
-TerminologyData::TerminologyData() : 
-    m_fileHasBeenSet(false),
-    m_format(TerminologyDataFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_directionality(Directionality::NOT_SET),
-    m_directionalityHasBeenSet(false)
-{
-}
-
 TerminologyData::TerminologyData(JsonView jsonValue)
-  : TerminologyData()
 {
   *this = jsonValue;
 }
@@ -41,21 +31,16 @@ TerminologyData& TerminologyData::operator =(JsonView jsonValue)
     m_file = HashingUtils::Base64Decode(jsonValue.GetString("File"));
     m_fileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = TerminologyDataFormatMapper::GetTerminologyDataFormatForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Directionality"))
   {
     m_directionality = DirectionalityMapper::GetDirectionalityForName(jsonValue.GetString("Directionality"));
-
     m_directionalityHasBeenSet = true;
   }
-
   return *this;
 }
 

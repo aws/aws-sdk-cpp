@@ -12,11 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInsightRequest::GetInsightRequest() : 
-    m_insightIdHasBeenSet(false)
-{
-}
-
 Aws::String GetInsightRequest::SerializePayload() const
 {
   JsonValue payload;

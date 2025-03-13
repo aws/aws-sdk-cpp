@@ -18,14 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ServiceConnectServiceResource::ServiceConnectServiceResource() : 
-    m_discoveryNameHasBeenSet(false),
-    m_discoveryArnHasBeenSet(false)
-{
-}
-
 ServiceConnectServiceResource::ServiceConnectServiceResource(JsonView jsonValue)
-  : ServiceConnectServiceResource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ServiceConnectServiceResource& ServiceConnectServiceResource::operator =(JsonVie
   if(jsonValue.ValueExists("discoveryName"))
   {
     m_discoveryName = jsonValue.GetString("discoveryName");
-
     m_discoveryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("discoveryArn"))
   {
     m_discoveryArn = jsonValue.GetString("discoveryArn");
-
     m_discoveryArnHasBeenSet = true;
   }
-
   return *this;
 }
 

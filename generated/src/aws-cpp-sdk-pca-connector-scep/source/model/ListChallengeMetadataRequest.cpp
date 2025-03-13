@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListChallengeMetadataRequest::ListChallengeMetadataRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_connectorArnHasBeenSet(false)
-{
-}
-
 Aws::String ListChallengeMetadataRequest::SerializePayload() const
 {
   return {};

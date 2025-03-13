@@ -32,7 +32,7 @@ namespace Model
   class SuccessfulQueuedPurchaseDeletion
   {
   public:
-    AWS_EC2_API SuccessfulQueuedPurchaseDeletion();
+    AWS_EC2_API SuccessfulQueuedPurchaseDeletion() = default;
     AWS_EC2_API SuccessfulQueuedPurchaseDeletion(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SuccessfulQueuedPurchaseDeletion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID of the Reserved Instance.</p>
      */
-    inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
+    inline const Aws::String& GetReservedInstancesId() const { return m_reservedInstancesId; }
     inline bool ReservedInstancesIdHasBeenSet() const { return m_reservedInstancesIdHasBeenSet; }
-    inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
-    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
-    inline void SetReservedInstancesId(const char* value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId.assign(value); }
-    inline SuccessfulQueuedPurchaseDeletion& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
-    inline SuccessfulQueuedPurchaseDeletion& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
-    inline SuccessfulQueuedPurchaseDeletion& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
+    template<typename ReservedInstancesIdT = Aws::String>
+    void SetReservedInstancesId(ReservedInstancesIdT&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::forward<ReservedInstancesIdT>(value); }
+    template<typename ReservedInstancesIdT = Aws::String>
+    SuccessfulQueuedPurchaseDeletion& WithReservedInstancesId(ReservedInstancesIdT&& value) { SetReservedInstancesId(std::forward<ReservedInstancesIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -27,7 +27,7 @@ namespace Model
   class DefineExpressionRequest : public CloudSearchRequest
   {
   public:
-    AWS_CLOUDSEARCH_API DefineExpressionRequest();
+    AWS_CLOUDSEARCH_API DefineExpressionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,24 +44,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DefineExpressionRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DefineExpressionRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DefineExpressionRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DefineExpressionRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Expression& GetExpression() const{ return m_expression; }
+    inline const Expression& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Expression& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Expression&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline DefineExpressionRequest& WithExpression(const Expression& value) { SetExpression(value); return *this;}
-    inline DefineExpressionRequest& WithExpression(Expression&& value) { SetExpression(std::move(value)); return *this;}
+    template<typename ExpressionT = Expression>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Expression>
+    DefineExpressionRequest& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
   private:
 

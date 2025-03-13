@@ -32,7 +32,7 @@ namespace Model
   class CompareDataSetsStepOutput
   {
   public:
-    AWS_APPTEST_API CompareDataSetsStepOutput();
+    AWS_APPTEST_API CompareDataSetsStepOutput() = default;
     AWS_APPTEST_API CompareDataSetsStepOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CompareDataSetsStepOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The comparison output location of the compare data sets step output.</p>
      */
-    inline const Aws::String& GetComparisonOutputLocation() const{ return m_comparisonOutputLocation; }
+    inline const Aws::String& GetComparisonOutputLocation() const { return m_comparisonOutputLocation; }
     inline bool ComparisonOutputLocationHasBeenSet() const { return m_comparisonOutputLocationHasBeenSet; }
-    inline void SetComparisonOutputLocation(const Aws::String& value) { m_comparisonOutputLocationHasBeenSet = true; m_comparisonOutputLocation = value; }
-    inline void SetComparisonOutputLocation(Aws::String&& value) { m_comparisonOutputLocationHasBeenSet = true; m_comparisonOutputLocation = std::move(value); }
-    inline void SetComparisonOutputLocation(const char* value) { m_comparisonOutputLocationHasBeenSet = true; m_comparisonOutputLocation.assign(value); }
-    inline CompareDataSetsStepOutput& WithComparisonOutputLocation(const Aws::String& value) { SetComparisonOutputLocation(value); return *this;}
-    inline CompareDataSetsStepOutput& WithComparisonOutputLocation(Aws::String&& value) { SetComparisonOutputLocation(std::move(value)); return *this;}
-    inline CompareDataSetsStepOutput& WithComparisonOutputLocation(const char* value) { SetComparisonOutputLocation(value); return *this;}
+    template<typename ComparisonOutputLocationT = Aws::String>
+    void SetComparisonOutputLocation(ComparisonOutputLocationT&& value) { m_comparisonOutputLocationHasBeenSet = true; m_comparisonOutputLocation = std::forward<ComparisonOutputLocationT>(value); }
+    template<typename ComparisonOutputLocationT = Aws::String>
+    CompareDataSetsStepOutput& WithComparisonOutputLocation(ComparisonOutputLocationT&& value) { SetComparisonOutputLocation(std::forward<ComparisonOutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The comparison status of the compare data sets step output.</p>
      */
-    inline const ComparisonStatusEnum& GetComparisonStatus() const{ return m_comparisonStatus; }
+    inline ComparisonStatusEnum GetComparisonStatus() const { return m_comparisonStatus; }
     inline bool ComparisonStatusHasBeenSet() const { return m_comparisonStatusHasBeenSet; }
-    inline void SetComparisonStatus(const ComparisonStatusEnum& value) { m_comparisonStatusHasBeenSet = true; m_comparisonStatus = value; }
-    inline void SetComparisonStatus(ComparisonStatusEnum&& value) { m_comparisonStatusHasBeenSet = true; m_comparisonStatus = std::move(value); }
-    inline CompareDataSetsStepOutput& WithComparisonStatus(const ComparisonStatusEnum& value) { SetComparisonStatus(value); return *this;}
-    inline CompareDataSetsStepOutput& WithComparisonStatus(ComparisonStatusEnum&& value) { SetComparisonStatus(std::move(value)); return *this;}
+    inline void SetComparisonStatus(ComparisonStatusEnum value) { m_comparisonStatusHasBeenSet = true; m_comparisonStatus = value; }
+    inline CompareDataSetsStepOutput& WithComparisonStatus(ComparisonStatusEnum value) { SetComparisonStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_comparisonOutputLocation;
     bool m_comparisonOutputLocationHasBeenSet = false;
 
-    ComparisonStatusEnum m_comparisonStatus;
+    ComparisonStatusEnum m_comparisonStatus{ComparisonStatusEnum::NOT_SET};
     bool m_comparisonStatusHasBeenSet = false;
   };
 

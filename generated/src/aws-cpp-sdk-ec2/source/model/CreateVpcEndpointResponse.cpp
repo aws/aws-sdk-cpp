@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateVpcEndpointResponse::CreateVpcEndpointResponse()
-{
-}
-
 CreateVpcEndpointResponse::CreateVpcEndpointResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ CreateVpcEndpointResponse& CreateVpcEndpointResponse::operator =(const Aws::Amaz
     if(!vpcEndpointNode.IsNull())
     {
       m_vpcEndpoint = vpcEndpointNode;
+      m_vpcEndpointHasBeenSet = true;
     }
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
       m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
+      m_clientTokenHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ CreateVpcEndpointResponse& CreateVpcEndpointResponse::operator =(const Aws::Amaz
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateVpcEndpointResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

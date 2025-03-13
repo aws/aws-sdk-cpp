@@ -12,14 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePortfolioShareRequest::DeletePortfolioShareRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_portfolioIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_organizationNodeHasBeenSet(false)
-{
-}
-
 Aws::String DeletePortfolioShareRequest::SerializePayload() const
 {
   JsonValue payload;

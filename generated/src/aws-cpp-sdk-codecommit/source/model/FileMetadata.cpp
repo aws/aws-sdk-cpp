@@ -18,16 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-FileMetadata::FileMetadata() : 
-    m_absolutePathHasBeenSet(false),
-    m_blobIdHasBeenSet(false),
-    m_fileMode(FileModeTypeEnum::NOT_SET),
-    m_fileModeHasBeenSet(false)
-{
-}
-
 FileMetadata::FileMetadata(JsonView jsonValue)
-  : FileMetadata()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FileMetadata& FileMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("absolutePath"))
   {
     m_absolutePath = jsonValue.GetString("absolutePath");
-
     m_absolutePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blobId"))
   {
     m_blobId = jsonValue.GetString("blobId");
-
     m_blobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileMode"))
   {
     m_fileMode = FileModeTypeEnumMapper::GetFileModeTypeEnumForName(jsonValue.GetString("fileMode"));
-
     m_fileModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,10 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDelegatedAdminAccountRequest::GetDelegatedAdminAccountRequest()
-{
-}
-
 Aws::String GetDelegatedAdminAccountRequest::SerializePayload() const
 {
   return {};

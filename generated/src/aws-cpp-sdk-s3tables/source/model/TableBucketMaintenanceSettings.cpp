@@ -18,13 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-TableBucketMaintenanceSettings::TableBucketMaintenanceSettings() : 
-    m_icebergUnreferencedFileRemovalHasBeenSet(false)
-{
-}
-
 TableBucketMaintenanceSettings::TableBucketMaintenanceSettings(JsonView jsonValue)
-  : TableBucketMaintenanceSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TableBucketMaintenanceSettings& TableBucketMaintenanceSettings::operator =(JsonV
   if(jsonValue.ValueExists("icebergUnreferencedFileRemoval"))
   {
     m_icebergUnreferencedFileRemoval = jsonValue.GetObject("icebergUnreferencedFileRemoval");
-
     m_icebergUnreferencedFileRemovalHasBeenSet = true;
   }
-
   return *this;
 }
 

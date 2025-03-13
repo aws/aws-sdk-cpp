@@ -29,7 +29,7 @@ namespace Model
   class BatchGetBlueprintsResult
   {
   public:
-    AWS_GLUE_API BatchGetBlueprintsResult();
+    AWS_GLUE_API BatchGetBlueprintsResult() = default;
     AWS_GLUE_API BatchGetBlueprintsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API BatchGetBlueprintsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,46 +38,46 @@ namespace Model
     /**
      * <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
      */
-    inline const Aws::Vector<Blueprint>& GetBlueprints() const{ return m_blueprints; }
-    inline void SetBlueprints(const Aws::Vector<Blueprint>& value) { m_blueprints = value; }
-    inline void SetBlueprints(Aws::Vector<Blueprint>&& value) { m_blueprints = std::move(value); }
-    inline BatchGetBlueprintsResult& WithBlueprints(const Aws::Vector<Blueprint>& value) { SetBlueprints(value); return *this;}
-    inline BatchGetBlueprintsResult& WithBlueprints(Aws::Vector<Blueprint>&& value) { SetBlueprints(std::move(value)); return *this;}
-    inline BatchGetBlueprintsResult& AddBlueprints(const Blueprint& value) { m_blueprints.push_back(value); return *this; }
-    inline BatchGetBlueprintsResult& AddBlueprints(Blueprint&& value) { m_blueprints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Blueprint>& GetBlueprints() const { return m_blueprints; }
+    template<typename BlueprintsT = Aws::Vector<Blueprint>>
+    void SetBlueprints(BlueprintsT&& value) { m_blueprintsHasBeenSet = true; m_blueprints = std::forward<BlueprintsT>(value); }
+    template<typename BlueprintsT = Aws::Vector<Blueprint>>
+    BatchGetBlueprintsResult& WithBlueprints(BlueprintsT&& value) { SetBlueprints(std::forward<BlueprintsT>(value)); return *this;}
+    template<typename BlueprintsT = Blueprint>
+    BatchGetBlueprintsResult& AddBlueprints(BlueprintsT&& value) { m_blueprintsHasBeenSet = true; m_blueprints.emplace_back(std::forward<BlueprintsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMissingBlueprints() const{ return m_missingBlueprints; }
-    inline void SetMissingBlueprints(const Aws::Vector<Aws::String>& value) { m_missingBlueprints = value; }
-    inline void SetMissingBlueprints(Aws::Vector<Aws::String>&& value) { m_missingBlueprints = std::move(value); }
-    inline BatchGetBlueprintsResult& WithMissingBlueprints(const Aws::Vector<Aws::String>& value) { SetMissingBlueprints(value); return *this;}
-    inline BatchGetBlueprintsResult& WithMissingBlueprints(Aws::Vector<Aws::String>&& value) { SetMissingBlueprints(std::move(value)); return *this;}
-    inline BatchGetBlueprintsResult& AddMissingBlueprints(const Aws::String& value) { m_missingBlueprints.push_back(value); return *this; }
-    inline BatchGetBlueprintsResult& AddMissingBlueprints(Aws::String&& value) { m_missingBlueprints.push_back(std::move(value)); return *this; }
-    inline BatchGetBlueprintsResult& AddMissingBlueprints(const char* value) { m_missingBlueprints.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetMissingBlueprints() const { return m_missingBlueprints; }
+    template<typename MissingBlueprintsT = Aws::Vector<Aws::String>>
+    void SetMissingBlueprints(MissingBlueprintsT&& value) { m_missingBlueprintsHasBeenSet = true; m_missingBlueprints = std::forward<MissingBlueprintsT>(value); }
+    template<typename MissingBlueprintsT = Aws::Vector<Aws::String>>
+    BatchGetBlueprintsResult& WithMissingBlueprints(MissingBlueprintsT&& value) { SetMissingBlueprints(std::forward<MissingBlueprintsT>(value)); return *this;}
+    template<typename MissingBlueprintsT = Aws::String>
+    BatchGetBlueprintsResult& AddMissingBlueprints(MissingBlueprintsT&& value) { m_missingBlueprintsHasBeenSet = true; m_missingBlueprints.emplace_back(std::forward<MissingBlueprintsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetBlueprintsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetBlueprintsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetBlueprintsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetBlueprintsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Blueprint> m_blueprints;
+    bool m_blueprintsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_missingBlueprints;
+    bool m_missingBlueprintsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

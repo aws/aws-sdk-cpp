@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdatePhoneNumberRequest::BatchUpdatePhoneNumberRequest() : 
-    m_updatePhoneNumberRequestItemsHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdatePhoneNumberRequest::SerializePayload() const
 {
   JsonValue payload;

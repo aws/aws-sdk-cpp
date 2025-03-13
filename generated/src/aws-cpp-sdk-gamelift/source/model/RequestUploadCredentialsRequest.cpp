@@ -12,11 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RequestUploadCredentialsRequest::RequestUploadCredentialsRequest() : 
-    m_buildIdHasBeenSet(false)
-{
-}
-
 Aws::String RequestUploadCredentialsRequest::SerializePayload() const
 {
   JsonValue payload;

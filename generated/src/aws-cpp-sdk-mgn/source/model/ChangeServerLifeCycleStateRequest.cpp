@@ -12,13 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ChangeServerLifeCycleStateRequest::ChangeServerLifeCycleStateRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_lifeCycleHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false)
-{
-}
-
 Aws::String ChangeServerLifeCycleStateRequest::SerializePayload() const
 {
   JsonValue payload;

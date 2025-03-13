@@ -35,7 +35,7 @@ namespace Model
   class Message
   {
   public:
-    AWS_LEXMODELSV2_API Message();
+    AWS_LEXMODELSV2_API Message() = default;
     AWS_LEXMODELSV2_API Message(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Message& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,36 +45,36 @@ namespace Model
     /**
      * <p>A message in plain text format.</p>
      */
-    inline const PlainTextMessage& GetPlainTextMessage() const{ return m_plainTextMessage; }
+    inline const PlainTextMessage& GetPlainTextMessage() const { return m_plainTextMessage; }
     inline bool PlainTextMessageHasBeenSet() const { return m_plainTextMessageHasBeenSet; }
-    inline void SetPlainTextMessage(const PlainTextMessage& value) { m_plainTextMessageHasBeenSet = true; m_plainTextMessage = value; }
-    inline void SetPlainTextMessage(PlainTextMessage&& value) { m_plainTextMessageHasBeenSet = true; m_plainTextMessage = std::move(value); }
-    inline Message& WithPlainTextMessage(const PlainTextMessage& value) { SetPlainTextMessage(value); return *this;}
-    inline Message& WithPlainTextMessage(PlainTextMessage&& value) { SetPlainTextMessage(std::move(value)); return *this;}
+    template<typename PlainTextMessageT = PlainTextMessage>
+    void SetPlainTextMessage(PlainTextMessageT&& value) { m_plainTextMessageHasBeenSet = true; m_plainTextMessage = std::forward<PlainTextMessageT>(value); }
+    template<typename PlainTextMessageT = PlainTextMessage>
+    Message& WithPlainTextMessage(PlainTextMessageT&& value) { SetPlainTextMessage(std::forward<PlainTextMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message in a custom format defined by the client application.</p>
      */
-    inline const CustomPayload& GetCustomPayload() const{ return m_customPayload; }
+    inline const CustomPayload& GetCustomPayload() const { return m_customPayload; }
     inline bool CustomPayloadHasBeenSet() const { return m_customPayloadHasBeenSet; }
-    inline void SetCustomPayload(const CustomPayload& value) { m_customPayloadHasBeenSet = true; m_customPayload = value; }
-    inline void SetCustomPayload(CustomPayload&& value) { m_customPayloadHasBeenSet = true; m_customPayload = std::move(value); }
-    inline Message& WithCustomPayload(const CustomPayload& value) { SetCustomPayload(value); return *this;}
-    inline Message& WithCustomPayload(CustomPayload&& value) { SetCustomPayload(std::move(value)); return *this;}
+    template<typename CustomPayloadT = CustomPayload>
+    void SetCustomPayload(CustomPayloadT&& value) { m_customPayloadHasBeenSet = true; m_customPayload = std::forward<CustomPayloadT>(value); }
+    template<typename CustomPayloadT = CustomPayload>
+    Message& WithCustomPayload(CustomPayloadT&& value) { SetCustomPayload(std::forward<CustomPayloadT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message in Speech Synthesis Markup Language (SSML).</p>
      */
-    inline const SSMLMessage& GetSsmlMessage() const{ return m_ssmlMessage; }
+    inline const SSMLMessage& GetSsmlMessage() const { return m_ssmlMessage; }
     inline bool SsmlMessageHasBeenSet() const { return m_ssmlMessageHasBeenSet; }
-    inline void SetSsmlMessage(const SSMLMessage& value) { m_ssmlMessageHasBeenSet = true; m_ssmlMessage = value; }
-    inline void SetSsmlMessage(SSMLMessage&& value) { m_ssmlMessageHasBeenSet = true; m_ssmlMessage = std::move(value); }
-    inline Message& WithSsmlMessage(const SSMLMessage& value) { SetSsmlMessage(value); return *this;}
-    inline Message& WithSsmlMessage(SSMLMessage&& value) { SetSsmlMessage(std::move(value)); return *this;}
+    template<typename SsmlMessageT = SSMLMessage>
+    void SetSsmlMessage(SsmlMessageT&& value) { m_ssmlMessageHasBeenSet = true; m_ssmlMessage = std::forward<SsmlMessageT>(value); }
+    template<typename SsmlMessageT = SSMLMessage>
+    Message& WithSsmlMessage(SsmlMessageT&& value) { SetSsmlMessage(std::forward<SsmlMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +82,12 @@ namespace Model
      * <p>A message that defines a response card that the client application can show
      * to the user.</p>
      */
-    inline const ImageResponseCard& GetImageResponseCard() const{ return m_imageResponseCard; }
+    inline const ImageResponseCard& GetImageResponseCard() const { return m_imageResponseCard; }
     inline bool ImageResponseCardHasBeenSet() const { return m_imageResponseCardHasBeenSet; }
-    inline void SetImageResponseCard(const ImageResponseCard& value) { m_imageResponseCardHasBeenSet = true; m_imageResponseCard = value; }
-    inline void SetImageResponseCard(ImageResponseCard&& value) { m_imageResponseCardHasBeenSet = true; m_imageResponseCard = std::move(value); }
-    inline Message& WithImageResponseCard(const ImageResponseCard& value) { SetImageResponseCard(value); return *this;}
-    inline Message& WithImageResponseCard(ImageResponseCard&& value) { SetImageResponseCard(std::move(value)); return *this;}
+    template<typename ImageResponseCardT = ImageResponseCard>
+    void SetImageResponseCard(ImageResponseCardT&& value) { m_imageResponseCardHasBeenSet = true; m_imageResponseCard = std::forward<ImageResponseCardT>(value); }
+    template<typename ImageResponseCardT = ImageResponseCard>
+    Message& WithImageResponseCard(ImageResponseCardT&& value) { SetImageResponseCard(std::forward<ImageResponseCardT>(value)); return *this;}
     ///@}
   private:
 

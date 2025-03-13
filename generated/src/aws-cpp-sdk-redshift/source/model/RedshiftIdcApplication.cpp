@@ -20,22 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-RedshiftIdcApplication::RedshiftIdcApplication() : 
-    m_idcInstanceArnHasBeenSet(false),
-    m_redshiftIdcApplicationNameHasBeenSet(false),
-    m_redshiftIdcApplicationArnHasBeenSet(false),
-    m_identityNamespaceHasBeenSet(false),
-    m_idcDisplayNameHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_idcManagedApplicationArnHasBeenSet(false),
-    m_idcOnboardStatusHasBeenSet(false),
-    m_authorizedTokenIssuerListHasBeenSet(false),
-    m_serviceIntegrationsHasBeenSet(false)
-{
-}
-
 RedshiftIdcApplication::RedshiftIdcApplication(const XmlNode& xmlNode)
-  : RedshiftIdcApplication()
 {
   *this = xmlNode;
 }
@@ -51,72 +36,82 @@ RedshiftIdcApplication& RedshiftIdcApplication::operator =(const XmlNode& xmlNod
     {
       m_idcInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(idcInstanceArnNode.GetText());
       m_idcInstanceArnHasBeenSet = true;
+       m_idcInstanceArnHasBeenSet = true;
     }
     XmlNode redshiftIdcApplicationNameNode = resultNode.FirstChild("RedshiftIdcApplicationName");
     if(!redshiftIdcApplicationNameNode.IsNull())
     {
       m_redshiftIdcApplicationName = Aws::Utils::Xml::DecodeEscapedXmlText(redshiftIdcApplicationNameNode.GetText());
       m_redshiftIdcApplicationNameHasBeenSet = true;
+       m_redshiftIdcApplicationNameHasBeenSet = true;
     }
     XmlNode redshiftIdcApplicationArnNode = resultNode.FirstChild("RedshiftIdcApplicationArn");
     if(!redshiftIdcApplicationArnNode.IsNull())
     {
       m_redshiftIdcApplicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(redshiftIdcApplicationArnNode.GetText());
       m_redshiftIdcApplicationArnHasBeenSet = true;
+       m_redshiftIdcApplicationArnHasBeenSet = true;
     }
     XmlNode identityNamespaceNode = resultNode.FirstChild("IdentityNamespace");
     if(!identityNamespaceNode.IsNull())
     {
       m_identityNamespace = Aws::Utils::Xml::DecodeEscapedXmlText(identityNamespaceNode.GetText());
       m_identityNamespaceHasBeenSet = true;
+       m_identityNamespaceHasBeenSet = true;
     }
     XmlNode idcDisplayNameNode = resultNode.FirstChild("IdcDisplayName");
     if(!idcDisplayNameNode.IsNull())
     {
       m_idcDisplayName = Aws::Utils::Xml::DecodeEscapedXmlText(idcDisplayNameNode.GetText());
       m_idcDisplayNameHasBeenSet = true;
+       m_idcDisplayNameHasBeenSet = true;
     }
     XmlNode iamRoleArnNode = resultNode.FirstChild("IamRoleArn");
     if(!iamRoleArnNode.IsNull())
     {
       m_iamRoleArn = Aws::Utils::Xml::DecodeEscapedXmlText(iamRoleArnNode.GetText());
       m_iamRoleArnHasBeenSet = true;
+       m_iamRoleArnHasBeenSet = true;
     }
     XmlNode idcManagedApplicationArnNode = resultNode.FirstChild("IdcManagedApplicationArn");
     if(!idcManagedApplicationArnNode.IsNull())
     {
       m_idcManagedApplicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(idcManagedApplicationArnNode.GetText());
       m_idcManagedApplicationArnHasBeenSet = true;
+       m_idcManagedApplicationArnHasBeenSet = true;
     }
     XmlNode idcOnboardStatusNode = resultNode.FirstChild("IdcOnboardStatus");
     if(!idcOnboardStatusNode.IsNull())
     {
       m_idcOnboardStatus = Aws::Utils::Xml::DecodeEscapedXmlText(idcOnboardStatusNode.GetText());
       m_idcOnboardStatusHasBeenSet = true;
+       m_idcOnboardStatusHasBeenSet = true;
     }
     XmlNode authorizedTokenIssuerListNode = resultNode.FirstChild("AuthorizedTokenIssuerList");
     if(!authorizedTokenIssuerListNode.IsNull())
     {
       XmlNode authorizedTokenIssuerListMember = authorizedTokenIssuerListNode.FirstChild("member");
+      m_authorizedTokenIssuerListHasBeenSet = !authorizedTokenIssuerListMember.IsNull();
       while(!authorizedTokenIssuerListMember.IsNull())
       {
         m_authorizedTokenIssuerList.push_back(authorizedTokenIssuerListMember);
         authorizedTokenIssuerListMember = authorizedTokenIssuerListMember.NextNode("member");
       }
 
-      m_authorizedTokenIssuerListHasBeenSet = true;
+       m_authorizedTokenIssuerListHasBeenSet = true;
     }
     XmlNode serviceIntegrationsNode = resultNode.FirstChild("ServiceIntegrations");
     if(!serviceIntegrationsNode.IsNull())
     {
       XmlNode serviceIntegrationsMember = serviceIntegrationsNode.FirstChild("member");
+      m_serviceIntegrationsHasBeenSet = !serviceIntegrationsMember.IsNull();
       while(!serviceIntegrationsMember.IsNull())
       {
         m_serviceIntegrations.push_back(serviceIntegrationsMember);
         serviceIntegrationsMember = serviceIntegrationsMember.NextNode("member");
       }
 
-      m_serviceIntegrationsHasBeenSet = true;
+       m_serviceIntegrationsHasBeenSet = true;
     }
   }
 

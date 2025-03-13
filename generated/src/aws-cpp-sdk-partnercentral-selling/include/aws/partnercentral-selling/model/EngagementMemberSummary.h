@@ -35,7 +35,7 @@ namespace Model
   class EngagementMemberSummary
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API EngagementMemberSummary();
+    AWS_PARTNERCENTRALSELLING_API EngagementMemberSummary() = default;
     AWS_PARTNERCENTRALSELLING_API EngagementMemberSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API EngagementMemberSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The official name of the member's company or organization.</p>
      */
-    inline const Aws::String& GetCompanyName() const{ return m_companyName; }
+    inline const Aws::String& GetCompanyName() const { return m_companyName; }
     inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
-    inline void SetCompanyName(const Aws::String& value) { m_companyNameHasBeenSet = true; m_companyName = value; }
-    inline void SetCompanyName(Aws::String&& value) { m_companyNameHasBeenSet = true; m_companyName = std::move(value); }
-    inline void SetCompanyName(const char* value) { m_companyNameHasBeenSet = true; m_companyName.assign(value); }
-    inline EngagementMemberSummary& WithCompanyName(const Aws::String& value) { SetCompanyName(value); return *this;}
-    inline EngagementMemberSummary& WithCompanyName(Aws::String&& value) { SetCompanyName(std::move(value)); return *this;}
-    inline EngagementMemberSummary& WithCompanyName(const char* value) { SetCompanyName(value); return *this;}
+    template<typename CompanyNameT = Aws::String>
+    void SetCompanyName(CompanyNameT&& value) { m_companyNameHasBeenSet = true; m_companyName = std::forward<CompanyNameT>(value); }
+    template<typename CompanyNameT = Aws::String>
+    EngagementMemberSummary& WithCompanyName(CompanyNameT&& value) { SetCompanyName(std::forward<CompanyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * information about the member organization and serves as an additional
      * identifier. </p>
      */
-    inline const Aws::String& GetWebsiteUrl() const{ return m_websiteUrl; }
+    inline const Aws::String& GetWebsiteUrl() const { return m_websiteUrl; }
     inline bool WebsiteUrlHasBeenSet() const { return m_websiteUrlHasBeenSet; }
-    inline void SetWebsiteUrl(const Aws::String& value) { m_websiteUrlHasBeenSet = true; m_websiteUrl = value; }
-    inline void SetWebsiteUrl(Aws::String&& value) { m_websiteUrlHasBeenSet = true; m_websiteUrl = std::move(value); }
-    inline void SetWebsiteUrl(const char* value) { m_websiteUrlHasBeenSet = true; m_websiteUrl.assign(value); }
-    inline EngagementMemberSummary& WithWebsiteUrl(const Aws::String& value) { SetWebsiteUrl(value); return *this;}
-    inline EngagementMemberSummary& WithWebsiteUrl(Aws::String&& value) { SetWebsiteUrl(std::move(value)); return *this;}
-    inline EngagementMemberSummary& WithWebsiteUrl(const char* value) { SetWebsiteUrl(value); return *this;}
+    template<typename WebsiteUrlT = Aws::String>
+    void SetWebsiteUrl(WebsiteUrlT&& value) { m_websiteUrlHasBeenSet = true; m_websiteUrl = std::forward<WebsiteUrlT>(value); }
+    template<typename WebsiteUrlT = Aws::String>
+    EngagementMemberSummary& WithWebsiteUrl(WebsiteUrlT&& value) { SetWebsiteUrl(std::forward<WebsiteUrlT>(value)); return *this;}
     ///@}
   private:
 

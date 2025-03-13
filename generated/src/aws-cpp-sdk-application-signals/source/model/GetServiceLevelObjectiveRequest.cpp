@@ -12,11 +12,6 @@ using namespace Aws::ApplicationSignals::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceLevelObjectiveRequest::GetServiceLevelObjectiveRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceLevelObjectiveRequest::SerializePayload() const
 {
   return {};

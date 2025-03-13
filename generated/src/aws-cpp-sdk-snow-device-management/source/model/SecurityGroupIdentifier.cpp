@@ -18,14 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-SecurityGroupIdentifier::SecurityGroupIdentifier() : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 SecurityGroupIdentifier::SecurityGroupIdentifier(JsonView jsonValue)
-  : SecurityGroupIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SecurityGroupIdentifier& SecurityGroupIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("groupId"))
   {
     m_groupId = jsonValue.GetString("groupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupName"))
   {
     m_groupName = jsonValue.GetString("groupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

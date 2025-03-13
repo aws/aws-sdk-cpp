@@ -18,17 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-Goal::Goal() : 
-    m_intervalHasBeenSet(false),
-    m_attainmentGoal(0.0),
-    m_attainmentGoalHasBeenSet(false),
-    m_warningThreshold(0.0),
-    m_warningThresholdHasBeenSet(false)
-{
-}
-
 Goal::Goal(JsonView jsonValue)
-  : Goal()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ Goal& Goal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Interval"))
   {
     m_interval = jsonValue.GetObject("Interval");
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttainmentGoal"))
   {
     m_attainmentGoal = jsonValue.GetDouble("AttainmentGoal");
-
     m_attainmentGoalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarningThreshold"))
   {
     m_warningThreshold = jsonValue.GetDouble("WarningThreshold");
-
     m_warningThresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

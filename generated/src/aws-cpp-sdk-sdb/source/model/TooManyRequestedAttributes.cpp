@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-TooManyRequestedAttributes::TooManyRequestedAttributes() : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
-{
-}
-
 TooManyRequestedAttributes::TooManyRequestedAttributes(const XmlNode& xmlNode)
-  : TooManyRequestedAttributes()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ TooManyRequestedAttributes& TooManyRequestedAttributes::operator =(const XmlNode
     {
       m_boxUsage = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(boxUsageNode.GetText()).c_str()).c_str());
       m_boxUsageHasBeenSet = true;
+       m_boxUsageHasBeenSet = true;
     }
   }
 

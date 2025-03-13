@@ -18,21 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CostCategoryReference::CostCategoryReference() : 
-    m_costCategoryArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_effectiveStartHasBeenSet(false),
-    m_effectiveEndHasBeenSet(false),
-    m_numberOfRules(0),
-    m_numberOfRulesHasBeenSet(false),
-    m_processingStatusHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 CostCategoryReference::CostCategoryReference(JsonView jsonValue)
-  : CostCategoryReference()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ CostCategoryReference& CostCategoryReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CostCategoryArn"))
   {
     m_costCategoryArn = jsonValue.GetString("CostCategoryArn");
-
     m_costCategoryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EffectiveStart"))
   {
     m_effectiveStart = jsonValue.GetString("EffectiveStart");
-
     m_effectiveStartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EffectiveEnd"))
   {
     m_effectiveEnd = jsonValue.GetString("EffectiveEnd");
-
     m_effectiveEndHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfRules"))
   {
     m_numberOfRules = jsonValue.GetInteger("NumberOfRules");
-
     m_numberOfRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingStatus"))
   {
     Aws::Utils::Array<JsonView> processingStatusJsonList = jsonValue.GetArray("ProcessingStatus");
@@ -83,7 +59,6 @@ CostCategoryReference& CostCategoryReference::operator =(JsonView jsonValue)
     }
     m_processingStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -93,14 +68,11 @@ CostCategoryReference& CostCategoryReference::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetString("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

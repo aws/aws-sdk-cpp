@@ -26,7 +26,7 @@ namespace Model
   class CreateAssessmentRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API CreateAssessmentRequest();
+    AWS_AUDITMANAGER_API CreateAssessmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p> The name of the assessment to be created. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateAssessmentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAssessmentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAssessmentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAssessmentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The optional description of the assessment to be created. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateAssessmentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateAssessmentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateAssessmentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateAssessmentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,36 +66,36 @@ namespace Model
      * <p> The assessment report storage destination for the assessment that's being
      * created. </p>
      */
-    inline const AssessmentReportsDestination& GetAssessmentReportsDestination() const{ return m_assessmentReportsDestination; }
+    inline const AssessmentReportsDestination& GetAssessmentReportsDestination() const { return m_assessmentReportsDestination; }
     inline bool AssessmentReportsDestinationHasBeenSet() const { return m_assessmentReportsDestinationHasBeenSet; }
-    inline void SetAssessmentReportsDestination(const AssessmentReportsDestination& value) { m_assessmentReportsDestinationHasBeenSet = true; m_assessmentReportsDestination = value; }
-    inline void SetAssessmentReportsDestination(AssessmentReportsDestination&& value) { m_assessmentReportsDestinationHasBeenSet = true; m_assessmentReportsDestination = std::move(value); }
-    inline CreateAssessmentRequest& WithAssessmentReportsDestination(const AssessmentReportsDestination& value) { SetAssessmentReportsDestination(value); return *this;}
-    inline CreateAssessmentRequest& WithAssessmentReportsDestination(AssessmentReportsDestination&& value) { SetAssessmentReportsDestination(std::move(value)); return *this;}
+    template<typename AssessmentReportsDestinationT = AssessmentReportsDestination>
+    void SetAssessmentReportsDestination(AssessmentReportsDestinationT&& value) { m_assessmentReportsDestinationHasBeenSet = true; m_assessmentReportsDestination = std::forward<AssessmentReportsDestinationT>(value); }
+    template<typename AssessmentReportsDestinationT = AssessmentReportsDestination>
+    CreateAssessmentRequest& WithAssessmentReportsDestination(AssessmentReportsDestinationT&& value) { SetAssessmentReportsDestination(std::forward<AssessmentReportsDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline const Scope& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline CreateAssessmentRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline CreateAssessmentRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    template<typename ScopeT = Scope>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Scope>
+    CreateAssessmentRequest& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The list of roles for the assessment. </p>
      */
-    inline const Aws::Vector<Role>& GetRoles() const{ return m_roles; }
+    inline const Aws::Vector<Role>& GetRoles() const { return m_roles; }
     inline bool RolesHasBeenSet() const { return m_rolesHasBeenSet; }
-    inline void SetRoles(const Aws::Vector<Role>& value) { m_rolesHasBeenSet = true; m_roles = value; }
-    inline void SetRoles(Aws::Vector<Role>&& value) { m_rolesHasBeenSet = true; m_roles = std::move(value); }
-    inline CreateAssessmentRequest& WithRoles(const Aws::Vector<Role>& value) { SetRoles(value); return *this;}
-    inline CreateAssessmentRequest& WithRoles(Aws::Vector<Role>&& value) { SetRoles(std::move(value)); return *this;}
-    inline CreateAssessmentRequest& AddRoles(const Role& value) { m_rolesHasBeenSet = true; m_roles.push_back(value); return *this; }
-    inline CreateAssessmentRequest& AddRoles(Role&& value) { m_rolesHasBeenSet = true; m_roles.push_back(std::move(value)); return *this; }
+    template<typename RolesT = Aws::Vector<Role>>
+    void SetRoles(RolesT&& value) { m_rolesHasBeenSet = true; m_roles = std::forward<RolesT>(value); }
+    template<typename RolesT = Aws::Vector<Role>>
+    CreateAssessmentRequest& WithRoles(RolesT&& value) { SetRoles(std::forward<RolesT>(value)); return *this;}
+    template<typename RolesT = Role>
+    CreateAssessmentRequest& AddRoles(RolesT&& value) { m_rolesHasBeenSet = true; m_roles.emplace_back(std::forward<RolesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -107,33 +103,28 @@ namespace Model
      * <p> The identifier for the framework that the assessment will be created from.
      * </p>
      */
-    inline const Aws::String& GetFrameworkId() const{ return m_frameworkId; }
+    inline const Aws::String& GetFrameworkId() const { return m_frameworkId; }
     inline bool FrameworkIdHasBeenSet() const { return m_frameworkIdHasBeenSet; }
-    inline void SetFrameworkId(const Aws::String& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = value; }
-    inline void SetFrameworkId(Aws::String&& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = std::move(value); }
-    inline void SetFrameworkId(const char* value) { m_frameworkIdHasBeenSet = true; m_frameworkId.assign(value); }
-    inline CreateAssessmentRequest& WithFrameworkId(const Aws::String& value) { SetFrameworkId(value); return *this;}
-    inline CreateAssessmentRequest& WithFrameworkId(Aws::String&& value) { SetFrameworkId(std::move(value)); return *this;}
-    inline CreateAssessmentRequest& WithFrameworkId(const char* value) { SetFrameworkId(value); return *this;}
+    template<typename FrameworkIdT = Aws::String>
+    void SetFrameworkId(FrameworkIdT&& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = std::forward<FrameworkIdT>(value); }
+    template<typename FrameworkIdT = Aws::String>
+    CreateAssessmentRequest& WithFrameworkId(FrameworkIdT&& value) { SetFrameworkId(std::forward<FrameworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The tags that are associated with the assessment. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAssessmentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateAssessmentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAssessmentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateAssessmentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAssessmentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAssessmentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateAssessmentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAssessmentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAssessmentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAssessmentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAssessmentRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace OpsWorksCM
 namespace Model
 {
 
-ServerEvent::ServerEvent() : 
-    m_createdAtHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_logUrlHasBeenSet(false)
-{
-}
-
 ServerEvent::ServerEvent(JsonView jsonValue)
-  : ServerEvent()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ServerEvent& ServerEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
     m_serverNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogUrl"))
   {
     m_logUrl = jsonValue.GetString("LogUrl");
-
     m_logUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

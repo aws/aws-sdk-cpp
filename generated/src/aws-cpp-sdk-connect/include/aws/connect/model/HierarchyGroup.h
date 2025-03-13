@@ -34,7 +34,7 @@ namespace Model
   class HierarchyGroup
   {
   public:
-    AWS_CONNECT_API HierarchyGroup();
+    AWS_CONNECT_API HierarchyGroup() = default;
     AWS_CONNECT_API HierarchyGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API HierarchyGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,68 +44,60 @@ namespace Model
     /**
      * <p>The identifier of the hierarchy group.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline HierarchyGroup& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline HierarchyGroup& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline HierarchyGroup& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    HierarchyGroup& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline HierarchyGroup& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline HierarchyGroup& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline HierarchyGroup& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    HierarchyGroup& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the hierarchy group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline HierarchyGroup& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline HierarchyGroup& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline HierarchyGroup& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    HierarchyGroup& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the level in the hierarchy group.</p>
      */
-    inline const Aws::String& GetLevelId() const{ return m_levelId; }
+    inline const Aws::String& GetLevelId() const { return m_levelId; }
     inline bool LevelIdHasBeenSet() const { return m_levelIdHasBeenSet; }
-    inline void SetLevelId(const Aws::String& value) { m_levelIdHasBeenSet = true; m_levelId = value; }
-    inline void SetLevelId(Aws::String&& value) { m_levelIdHasBeenSet = true; m_levelId = std::move(value); }
-    inline void SetLevelId(const char* value) { m_levelIdHasBeenSet = true; m_levelId.assign(value); }
-    inline HierarchyGroup& WithLevelId(const Aws::String& value) { SetLevelId(value); return *this;}
-    inline HierarchyGroup& WithLevelId(Aws::String&& value) { SetLevelId(std::move(value)); return *this;}
-    inline HierarchyGroup& WithLevelId(const char* value) { SetLevelId(value); return *this;}
+    template<typename LevelIdT = Aws::String>
+    void SetLevelId(LevelIdT&& value) { m_levelIdHasBeenSet = true; m_levelId = std::forward<LevelIdT>(value); }
+    template<typename LevelIdT = Aws::String>
+    HierarchyGroup& WithLevelId(LevelIdT&& value) { SetLevelId(std::forward<LevelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the levels in the hierarchy group.</p>
      */
-    inline const HierarchyPath& GetHierarchyPath() const{ return m_hierarchyPath; }
+    inline const HierarchyPath& GetHierarchyPath() const { return m_hierarchyPath; }
     inline bool HierarchyPathHasBeenSet() const { return m_hierarchyPathHasBeenSet; }
-    inline void SetHierarchyPath(const HierarchyPath& value) { m_hierarchyPathHasBeenSet = true; m_hierarchyPath = value; }
-    inline void SetHierarchyPath(HierarchyPath&& value) { m_hierarchyPathHasBeenSet = true; m_hierarchyPath = std::move(value); }
-    inline HierarchyGroup& WithHierarchyPath(const HierarchyPath& value) { SetHierarchyPath(value); return *this;}
-    inline HierarchyGroup& WithHierarchyPath(HierarchyPath&& value) { SetHierarchyPath(std::move(value)); return *this;}
+    template<typename HierarchyPathT = HierarchyPath>
+    void SetHierarchyPath(HierarchyPathT&& value) { m_hierarchyPathHasBeenSet = true; m_hierarchyPath = std::forward<HierarchyPathT>(value); }
+    template<typename HierarchyPathT = HierarchyPath>
+    HierarchyGroup& WithHierarchyPath(HierarchyPathT&& value) { SetHierarchyPath(std::forward<HierarchyPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,45 +105,40 @@ namespace Model
      * <p>The tags used to organize, track, or control access for this resource. For
      * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline HierarchyGroup& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline HierarchyGroup& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline HierarchyGroup& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline HierarchyGroup& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline HierarchyGroup& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline HierarchyGroup& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline HierarchyGroup& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline HierarchyGroup& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline HierarchyGroup& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    HierarchyGroup& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    HierarchyGroup& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when this resource was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline HierarchyGroup& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline HierarchyGroup& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    HierarchyGroup& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region where this resource was last modified.</p>
      */
-    inline const Aws::String& GetLastModifiedRegion() const{ return m_lastModifiedRegion; }
+    inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
     inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
-    inline void SetLastModifiedRegion(const Aws::String& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = value; }
-    inline void SetLastModifiedRegion(Aws::String&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::move(value); }
-    inline void SetLastModifiedRegion(const char* value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion.assign(value); }
-    inline HierarchyGroup& WithLastModifiedRegion(const Aws::String& value) { SetLastModifiedRegion(value); return *this;}
-    inline HierarchyGroup& WithLastModifiedRegion(Aws::String&& value) { SetLastModifiedRegion(std::move(value)); return *this;}
-    inline HierarchyGroup& WithLastModifiedRegion(const char* value) { SetLastModifiedRegion(value); return *this;}
+    template<typename LastModifiedRegionT = Aws::String>
+    void SetLastModifiedRegion(LastModifiedRegionT&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value); }
+    template<typename LastModifiedRegionT = Aws::String>
+    HierarchyGroup& WithLastModifiedRegion(LastModifiedRegionT&& value) { SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value)); return *this;}
     ///@}
   private:
 
@@ -173,7 +160,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_lastModifiedRegion;

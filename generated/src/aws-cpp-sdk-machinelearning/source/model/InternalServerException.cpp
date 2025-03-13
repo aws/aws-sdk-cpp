@@ -18,15 +18,7 @@ namespace MachineLearning
 namespace Model
 {
 
-InternalServerException::InternalServerException() : 
-    m_messageHasBeenSet(false),
-    m_code(0),
-    m_codeHasBeenSet(false)
-{
-}
-
 InternalServerException::InternalServerException(JsonView jsonValue)
-  : InternalServerException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InternalServerException& InternalServerException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetInteger("code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

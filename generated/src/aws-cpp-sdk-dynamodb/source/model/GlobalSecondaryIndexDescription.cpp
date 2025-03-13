@@ -18,27 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-GlobalSecondaryIndexDescription::GlobalSecondaryIndexDescription() : 
-    m_indexNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_projectionHasBeenSet(false),
-    m_indexStatus(IndexStatus::NOT_SET),
-    m_indexStatusHasBeenSet(false),
-    m_backfilling(false),
-    m_backfillingHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_indexSizeBytes(0),
-    m_indexSizeBytesHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_indexArnHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false),
-    m_warmThroughputHasBeenSet(false)
-{
-}
-
 GlobalSecondaryIndexDescription::GlobalSecondaryIndexDescription(JsonView jsonValue)
-  : GlobalSecondaryIndexDescription()
 {
   *this = jsonValue;
 }
@@ -48,10 +28,8 @@ GlobalSecondaryIndexDescription& GlobalSecondaryIndexDescription::operator =(Jso
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySchema"))
   {
     Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
@@ -61,70 +39,51 @@ GlobalSecondaryIndexDescription& GlobalSecondaryIndexDescription::operator =(Jso
     }
     m_keySchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Projection"))
   {
     m_projection = jsonValue.GetObject("Projection");
-
     m_projectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexStatus"))
   {
     m_indexStatus = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("IndexStatus"));
-
     m_indexStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Backfilling"))
   {
     m_backfilling = jsonValue.GetBool("Backfilling");
-
     m_backfillingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedThroughput"))
   {
     m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
-
     m_provisionedThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexSizeBytes"))
   {
     m_indexSizeBytes = jsonValue.GetInt64("IndexSizeBytes");
-
     m_indexSizeBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemCount"))
   {
     m_itemCount = jsonValue.GetInt64("ItemCount");
-
     m_itemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexArn"))
   {
     m_indexArn = jsonValue.GetString("IndexArn");
-
     m_indexArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandThroughput"))
   {
     m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
-
     m_onDemandThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarmThroughput"))
   {
     m_warmThroughput = jsonValue.GetObject("WarmThroughput");
-
     m_warmThroughputHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-SqsQueueSinkConfiguration::SqsQueueSinkConfiguration() : 
-    m_insightsTargetHasBeenSet(false)
-{
-}
-
 SqsQueueSinkConfiguration::SqsQueueSinkConfiguration(JsonView jsonValue)
-  : SqsQueueSinkConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SqsQueueSinkConfiguration& SqsQueueSinkConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("InsightsTarget"))
   {
     m_insightsTarget = jsonValue.GetString("InsightsTarget");
-
     m_insightsTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

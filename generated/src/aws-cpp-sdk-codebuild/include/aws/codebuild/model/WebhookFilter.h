@@ -33,7 +33,7 @@ namespace Model
   class WebhookFilter
   {
   public:
-    AWS_CODEBUILD_API WebhookFilter();
+    AWS_CODEBUILD_API WebhookFilter() = default;
     AWS_CODEBUILD_API WebhookFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API WebhookFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -96,12 +96,10 @@ namespace Model
      * builds, WORKFLOW_NAME filters will filter by pipeline name.</p>  </li>
      * </ul> </li> </ul>
      */
-    inline const WebhookFilterType& GetType() const{ return m_type; }
+    inline WebhookFilterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const WebhookFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(WebhookFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline WebhookFilter& WithType(const WebhookFilterType& value) { SetType(value); return *this;}
-    inline WebhookFilter& WithType(WebhookFilterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(WebhookFilterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline WebhookFilter& WithType(WebhookFilterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +115,12 @@ namespace Model
      * when the head reference is a branch with a reference name
      * <code>refs/heads/branch-name</code>. </p>
      */
-    inline const Aws::String& GetPattern() const{ return m_pattern; }
+    inline const Aws::String& GetPattern() const { return m_pattern; }
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
-    inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
-    inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
-    inline void SetPattern(const char* value) { m_patternHasBeenSet = true; m_pattern.assign(value); }
-    inline WebhookFilter& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
-    inline WebhookFilter& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
-    inline WebhookFilter& WithPattern(const char* value) { SetPattern(value); return *this;}
+    template<typename PatternT = Aws::String>
+    void SetPattern(PatternT&& value) { m_patternHasBeenSet = true; m_pattern = std::forward<PatternT>(value); }
+    template<typename PatternT = Aws::String>
+    WebhookFilter& WithPattern(PatternT&& value) { SetPattern(std::forward<PatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,20 +130,20 @@ namespace Model
      * the <code>pattern</code> triggers a build. If false, then a webhook event that
      * matches the <code>pattern</code> triggers a build. </p>
      */
-    inline bool GetExcludeMatchedPattern() const{ return m_excludeMatchedPattern; }
+    inline bool GetExcludeMatchedPattern() const { return m_excludeMatchedPattern; }
     inline bool ExcludeMatchedPatternHasBeenSet() const { return m_excludeMatchedPatternHasBeenSet; }
     inline void SetExcludeMatchedPattern(bool value) { m_excludeMatchedPatternHasBeenSet = true; m_excludeMatchedPattern = value; }
     inline WebhookFilter& WithExcludeMatchedPattern(bool value) { SetExcludeMatchedPattern(value); return *this;}
     ///@}
   private:
 
-    WebhookFilterType m_type;
+    WebhookFilterType m_type{WebhookFilterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_pattern;
     bool m_patternHasBeenSet = false;
 
-    bool m_excludeMatchedPattern;
+    bool m_excludeMatchedPattern{false};
     bool m_excludeMatchedPatternHasBeenSet = false;
   };
 

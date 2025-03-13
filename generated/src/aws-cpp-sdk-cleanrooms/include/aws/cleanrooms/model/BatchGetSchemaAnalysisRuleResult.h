@@ -30,7 +30,7 @@ namespace Model
   class BatchGetSchemaAnalysisRuleResult
   {
   public:
-    AWS_CLEANROOMS_API BatchGetSchemaAnalysisRuleResult();
+    AWS_CLEANROOMS_API BatchGetSchemaAnalysisRuleResult() = default;
     AWS_CLEANROOMS_API BatchGetSchemaAnalysisRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMS_API BatchGetSchemaAnalysisRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>The retrieved list of analysis rules.</p>
      */
-    inline const Aws::Vector<AnalysisRule>& GetAnalysisRules() const{ return m_analysisRules; }
-    inline void SetAnalysisRules(const Aws::Vector<AnalysisRule>& value) { m_analysisRules = value; }
-    inline void SetAnalysisRules(Aws::Vector<AnalysisRule>&& value) { m_analysisRules = std::move(value); }
-    inline BatchGetSchemaAnalysisRuleResult& WithAnalysisRules(const Aws::Vector<AnalysisRule>& value) { SetAnalysisRules(value); return *this;}
-    inline BatchGetSchemaAnalysisRuleResult& WithAnalysisRules(Aws::Vector<AnalysisRule>&& value) { SetAnalysisRules(std::move(value)); return *this;}
-    inline BatchGetSchemaAnalysisRuleResult& AddAnalysisRules(const AnalysisRule& value) { m_analysisRules.push_back(value); return *this; }
-    inline BatchGetSchemaAnalysisRuleResult& AddAnalysisRules(AnalysisRule&& value) { m_analysisRules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AnalysisRule>& GetAnalysisRules() const { return m_analysisRules; }
+    template<typename AnalysisRulesT = Aws::Vector<AnalysisRule>>
+    void SetAnalysisRules(AnalysisRulesT&& value) { m_analysisRulesHasBeenSet = true; m_analysisRules = std::forward<AnalysisRulesT>(value); }
+    template<typename AnalysisRulesT = Aws::Vector<AnalysisRule>>
+    BatchGetSchemaAnalysisRuleResult& WithAnalysisRules(AnalysisRulesT&& value) { SetAnalysisRules(std::forward<AnalysisRulesT>(value)); return *this;}
+    template<typename AnalysisRulesT = AnalysisRule>
+    BatchGetSchemaAnalysisRuleResult& AddAnalysisRules(AnalysisRulesT&& value) { m_analysisRulesHasBeenSet = true; m_analysisRules.emplace_back(std::forward<AnalysisRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,33 @@ namespace Model
      * <p>Error reasons for schemas that could not be retrieved. One error is returned
      * for every schema that could not be retrieved.</p>
      */
-    inline const Aws::Vector<BatchGetSchemaAnalysisRuleError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchGetSchemaAnalysisRuleError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchGetSchemaAnalysisRuleError>&& value) { m_errors = std::move(value); }
-    inline BatchGetSchemaAnalysisRuleResult& WithErrors(const Aws::Vector<BatchGetSchemaAnalysisRuleError>& value) { SetErrors(value); return *this;}
-    inline BatchGetSchemaAnalysisRuleResult& WithErrors(Aws::Vector<BatchGetSchemaAnalysisRuleError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetSchemaAnalysisRuleResult& AddErrors(const BatchGetSchemaAnalysisRuleError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetSchemaAnalysisRuleResult& AddErrors(BatchGetSchemaAnalysisRuleError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetSchemaAnalysisRuleError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchGetSchemaAnalysisRuleError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchGetSchemaAnalysisRuleError>>
+    BatchGetSchemaAnalysisRuleResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchGetSchemaAnalysisRuleError>
+    BatchGetSchemaAnalysisRuleResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetSchemaAnalysisRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetSchemaAnalysisRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetSchemaAnalysisRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetSchemaAnalysisRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AnalysisRule> m_analysisRules;
+    bool m_analysisRulesHasBeenSet = false;
 
     Aws::Vector<BatchGetSchemaAnalysisRuleError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,13 +10,6 @@
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-ListDomainsRequest::ListDomainsRequest() : 
-    m_maxNumberOfDomains(0),
-    m_maxNumberOfDomainsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDomainsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

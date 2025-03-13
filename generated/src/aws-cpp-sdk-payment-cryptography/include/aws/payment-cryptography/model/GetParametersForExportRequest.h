@@ -22,7 +22,7 @@ namespace Model
   class GetParametersForExportRequest : public PaymentCryptographyRequest
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API GetParametersForExportRequest();
+    AWS_PAYMENTCRYPTOGRAPHY_API GetParametersForExportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,10 @@ namespace Model
      * <code>TR34_KEY_BLOCK</code>. Export token is not required for TR-31 key
      * export.</p>
      */
-    inline const KeyMaterialType& GetKeyMaterialType() const{ return m_keyMaterialType; }
+    inline KeyMaterialType GetKeyMaterialType() const { return m_keyMaterialType; }
     inline bool KeyMaterialTypeHasBeenSet() const { return m_keyMaterialTypeHasBeenSet; }
-    inline void SetKeyMaterialType(const KeyMaterialType& value) { m_keyMaterialTypeHasBeenSet = true; m_keyMaterialType = value; }
-    inline void SetKeyMaterialType(KeyMaterialType&& value) { m_keyMaterialTypeHasBeenSet = true; m_keyMaterialType = std::move(value); }
-    inline GetParametersForExportRequest& WithKeyMaterialType(const KeyMaterialType& value) { SetKeyMaterialType(value); return *this;}
-    inline GetParametersForExportRequest& WithKeyMaterialType(KeyMaterialType&& value) { SetKeyMaterialType(std::move(value)); return *this;}
+    inline void SetKeyMaterialType(KeyMaterialType value) { m_keyMaterialTypeHasBeenSet = true; m_keyMaterialType = value; }
+    inline GetParametersForExportRequest& WithKeyMaterialType(KeyMaterialType value) { SetKeyMaterialType(value); return *this;}
     ///@}
 
     ///@{
@@ -56,19 +54,17 @@ namespace Model
      * certificate signs the wrapped key under export within the TR-34 key block.
      * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
      */
-    inline const KeyAlgorithm& GetSigningKeyAlgorithm() const{ return m_signingKeyAlgorithm; }
+    inline KeyAlgorithm GetSigningKeyAlgorithm() const { return m_signingKeyAlgorithm; }
     inline bool SigningKeyAlgorithmHasBeenSet() const { return m_signingKeyAlgorithmHasBeenSet; }
-    inline void SetSigningKeyAlgorithm(const KeyAlgorithm& value) { m_signingKeyAlgorithmHasBeenSet = true; m_signingKeyAlgorithm = value; }
-    inline void SetSigningKeyAlgorithm(KeyAlgorithm&& value) { m_signingKeyAlgorithmHasBeenSet = true; m_signingKeyAlgorithm = std::move(value); }
-    inline GetParametersForExportRequest& WithSigningKeyAlgorithm(const KeyAlgorithm& value) { SetSigningKeyAlgorithm(value); return *this;}
-    inline GetParametersForExportRequest& WithSigningKeyAlgorithm(KeyAlgorithm&& value) { SetSigningKeyAlgorithm(std::move(value)); return *this;}
+    inline void SetSigningKeyAlgorithm(KeyAlgorithm value) { m_signingKeyAlgorithmHasBeenSet = true; m_signingKeyAlgorithm = value; }
+    inline GetParametersForExportRequest& WithSigningKeyAlgorithm(KeyAlgorithm value) { SetSigningKeyAlgorithm(value); return *this;}
     ///@}
   private:
 
-    KeyMaterialType m_keyMaterialType;
+    KeyMaterialType m_keyMaterialType{KeyMaterialType::NOT_SET};
     bool m_keyMaterialTypeHasBeenSet = false;
 
-    KeyAlgorithm m_signingKeyAlgorithm;
+    KeyAlgorithm m_signingKeyAlgorithm{KeyAlgorithm::NOT_SET};
     bool m_signingKeyAlgorithmHasBeenSet = false;
   };
 

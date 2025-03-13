@@ -20,19 +20,7 @@ namespace SNS
 namespace Model
 {
 
-PublishBatchRequestEntry::PublishBatchRequestEntry() : 
-    m_idHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_messageStructureHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false),
-    m_messageDeduplicationIdHasBeenSet(false),
-    m_messageGroupIdHasBeenSet(false)
-{
-}
-
 PublishBatchRequestEntry::PublishBatchRequestEntry(const XmlNode& xmlNode)
-  : PublishBatchRequestEntry()
 {
   *this = xmlNode;
 }
@@ -48,30 +36,35 @@ PublishBatchRequestEntry& PublishBatchRequestEntry::operator =(const XmlNode& xm
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
     XmlNode subjectNode = resultNode.FirstChild("Subject");
     if(!subjectNode.IsNull())
     {
       m_subject = Aws::Utils::Xml::DecodeEscapedXmlText(subjectNode.GetText());
       m_subjectHasBeenSet = true;
+       m_subjectHasBeenSet = true;
     }
     XmlNode messageStructureNode = resultNode.FirstChild("MessageStructure");
     if(!messageStructureNode.IsNull())
     {
       m_messageStructure = Aws::Utils::Xml::DecodeEscapedXmlText(messageStructureNode.GetText());
       m_messageStructureHasBeenSet = true;
+       m_messageStructureHasBeenSet = true;
     }
     XmlNode messageAttributesNode = resultNode.FirstChild("MessageAttributes");
 
     if(!messageAttributesNode.IsNull())
     {
       XmlNode messageAttributesEntry = messageAttributesNode.FirstChild("entry");
+      m_messageAttributesHasBeenSet = !messageAttributesEntry.IsNull();
       while(!messageAttributesEntry.IsNull())
       {
         XmlNode keyNode = messageAttributesEntry.FirstChild("key");
@@ -81,19 +74,21 @@ PublishBatchRequestEntry& PublishBatchRequestEntry::operator =(const XmlNode& xm
         messageAttributesEntry = messageAttributesEntry.NextNode("entry");
       }
 
-      m_messageAttributesHasBeenSet = true;
+       m_messageAttributesHasBeenSet = true;
     }
     XmlNode messageDeduplicationIdNode = resultNode.FirstChild("MessageDeduplicationId");
     if(!messageDeduplicationIdNode.IsNull())
     {
       m_messageDeduplicationId = Aws::Utils::Xml::DecodeEscapedXmlText(messageDeduplicationIdNode.GetText());
       m_messageDeduplicationIdHasBeenSet = true;
+       m_messageDeduplicationIdHasBeenSet = true;
     }
     XmlNode messageGroupIdNode = resultNode.FirstChild("MessageGroupId");
     if(!messageGroupIdNode.IsNull())
     {
       m_messageGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(messageGroupIdNode.GetText());
       m_messageGroupIdHasBeenSet = true;
+       m_messageGroupIdHasBeenSet = true;
     }
   }
 

@@ -10,16 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeClusterParameterGroupsRequest::DescribeClusterParameterGroupsRequest() : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_tagKeysHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClusterParameterGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

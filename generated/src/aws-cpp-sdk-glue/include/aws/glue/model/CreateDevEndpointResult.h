@@ -31,7 +31,7 @@ namespace Model
   class CreateDevEndpointResult
   {
   public:
-    AWS_GLUE_API CreateDevEndpointResult();
+    AWS_GLUE_API CreateDevEndpointResult() = default;
     AWS_GLUE_API CreateDevEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API CreateDevEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,53 +40,46 @@ namespace Model
     /**
      * <p>The name assigned to the new <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointName.assign(value); }
-    inline CreateDevEndpointResult& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline CreateDevEndpointResult& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    CreateDevEndpointResult& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the new <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline CreateDevEndpointResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline CreateDevEndpointResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    CreateDevEndpointResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The security groups assigned to the new <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIds = std::move(value); }
-    inline CreateDevEndpointResult& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline CreateDevEndpointResult& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIds.push_back(value); return *this; }
-    inline CreateDevEndpointResult& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline CreateDevEndpointResult& AddSecurityGroupIds(const char* value) { m_securityGroupIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    CreateDevEndpointResult& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    CreateDevEndpointResult& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The subnet ID assigned to the new <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetId.assign(value); }
-    inline CreateDevEndpointResult& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline CreateDevEndpointResult& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    CreateDevEndpointResult& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,34 +87,30 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the role assigned to the new
      * <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline CreateDevEndpointResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateDevEndpointResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateDevEndpointResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The address of the YARN endpoint used by this <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetYarnEndpointAddress() const{ return m_yarnEndpointAddress; }
-    inline void SetYarnEndpointAddress(const Aws::String& value) { m_yarnEndpointAddress = value; }
-    inline void SetYarnEndpointAddress(Aws::String&& value) { m_yarnEndpointAddress = std::move(value); }
-    inline void SetYarnEndpointAddress(const char* value) { m_yarnEndpointAddress.assign(value); }
-    inline CreateDevEndpointResult& WithYarnEndpointAddress(const Aws::String& value) { SetYarnEndpointAddress(value); return *this;}
-    inline CreateDevEndpointResult& WithYarnEndpointAddress(Aws::String&& value) { SetYarnEndpointAddress(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithYarnEndpointAddress(const char* value) { SetYarnEndpointAddress(value); return *this;}
+    inline const Aws::String& GetYarnEndpointAddress() const { return m_yarnEndpointAddress; }
+    template<typename YarnEndpointAddressT = Aws::String>
+    void SetYarnEndpointAddress(YarnEndpointAddressT&& value) { m_yarnEndpointAddressHasBeenSet = true; m_yarnEndpointAddress = std::forward<YarnEndpointAddressT>(value); }
+    template<typename YarnEndpointAddressT = Aws::String>
+    CreateDevEndpointResult& WithYarnEndpointAddress(YarnEndpointAddressT&& value) { SetYarnEndpointAddress(std::forward<YarnEndpointAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
      */
-    inline int GetZeppelinRemoteSparkInterpreterPort() const{ return m_zeppelinRemoteSparkInterpreterPort; }
-    inline void SetZeppelinRemoteSparkInterpreterPort(int value) { m_zeppelinRemoteSparkInterpreterPort = value; }
+    inline int GetZeppelinRemoteSparkInterpreterPort() const { return m_zeppelinRemoteSparkInterpreterPort; }
+    inline void SetZeppelinRemoteSparkInterpreterPort(int value) { m_zeppelinRemoteSparkInterpreterPortHasBeenSet = true; m_zeppelinRemoteSparkInterpreterPort = value; }
     inline CreateDevEndpointResult& WithZeppelinRemoteSparkInterpreterPort(int value) { SetZeppelinRemoteSparkInterpreterPort(value); return *this;}
     ///@}
 
@@ -130,8 +119,8 @@ namespace Model
      * <p>The number of Glue Data Processing Units (DPUs) allocated to this
      * DevEndpoint.</p>
      */
-    inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
-    inline void SetNumberOfNodes(int value) { m_numberOfNodes = value; }
+    inline int GetNumberOfNodes() const { return m_numberOfNodes; }
+    inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
     inline CreateDevEndpointResult& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
     ///@}
 
@@ -140,11 +129,9 @@ namespace Model
      * <p>The type of predefined worker that is allocated to the development endpoint.
      * May be a value of Standard, G.1X, or G.2X.</p>
      */
-    inline const WorkerType& GetWorkerType() const{ return m_workerType; }
-    inline void SetWorkerType(const WorkerType& value) { m_workerType = value; }
-    inline void SetWorkerType(WorkerType&& value) { m_workerType = std::move(value); }
-    inline CreateDevEndpointResult& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
-    inline CreateDevEndpointResult& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
+    inline WorkerType GetWorkerType() const { return m_workerType; }
+    inline void SetWorkerType(WorkerType value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
+    inline CreateDevEndpointResult& WithWorkerType(WorkerType value) { SetWorkerType(value); return *this;}
     ///@}
 
     ///@{
@@ -156,13 +143,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p>
      */
-    inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
-    inline void SetGlueVersion(const Aws::String& value) { m_glueVersion = value; }
-    inline void SetGlueVersion(Aws::String&& value) { m_glueVersion = std::move(value); }
-    inline void SetGlueVersion(const char* value) { m_glueVersion.assign(value); }
-    inline CreateDevEndpointResult& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
-    inline CreateDevEndpointResult& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
+    inline const Aws::String& GetGlueVersion() const { return m_glueVersion; }
+    template<typename GlueVersionT = Aws::String>
+    void SetGlueVersion(GlueVersionT&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::forward<GlueVersionT>(value); }
+    template<typename GlueVersionT = Aws::String>
+    CreateDevEndpointResult& WithGlueVersion(GlueVersionT&& value) { SetGlueVersion(std::forward<GlueVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,8 +155,8 @@ namespace Model
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
      * to the development endpoint.</p>
      */
-    inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
-    inline void SetNumberOfWorkers(int value) { m_numberOfWorkers = value; }
+    inline int GetNumberOfWorkers() const { return m_numberOfWorkers; }
+    inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
     inline CreateDevEndpointResult& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
     ///@}
 
@@ -180,13 +165,11 @@ namespace Model
      * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
      * is located.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZone.assign(value); }
-    inline CreateDevEndpointResult& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline CreateDevEndpointResult& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    CreateDevEndpointResult& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -194,13 +177,11 @@ namespace Model
      * <p>The ID of the virtual private cloud (VPC) used by this
      * <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcId.assign(value); }
-    inline CreateDevEndpointResult& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline CreateDevEndpointResult& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    CreateDevEndpointResult& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -208,13 +189,11 @@ namespace Model
      * <p>The paths to one or more Python libraries in an S3 bucket that will be loaded
      * in your <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetExtraPythonLibsS3Path() const{ return m_extraPythonLibsS3Path; }
-    inline void SetExtraPythonLibsS3Path(const Aws::String& value) { m_extraPythonLibsS3Path = value; }
-    inline void SetExtraPythonLibsS3Path(Aws::String&& value) { m_extraPythonLibsS3Path = std::move(value); }
-    inline void SetExtraPythonLibsS3Path(const char* value) { m_extraPythonLibsS3Path.assign(value); }
-    inline CreateDevEndpointResult& WithExtraPythonLibsS3Path(const Aws::String& value) { SetExtraPythonLibsS3Path(value); return *this;}
-    inline CreateDevEndpointResult& WithExtraPythonLibsS3Path(Aws::String&& value) { SetExtraPythonLibsS3Path(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithExtraPythonLibsS3Path(const char* value) { SetExtraPythonLibsS3Path(value); return *this;}
+    inline const Aws::String& GetExtraPythonLibsS3Path() const { return m_extraPythonLibsS3Path; }
+    template<typename ExtraPythonLibsS3PathT = Aws::String>
+    void SetExtraPythonLibsS3Path(ExtraPythonLibsS3PathT&& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = std::forward<ExtraPythonLibsS3PathT>(value); }
+    template<typename ExtraPythonLibsS3PathT = Aws::String>
+    CreateDevEndpointResult& WithExtraPythonLibsS3Path(ExtraPythonLibsS3PathT&& value) { SetExtraPythonLibsS3Path(std::forward<ExtraPythonLibsS3PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,26 +201,22 @@ namespace Model
      * <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be
      * loaded in your <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetExtraJarsS3Path() const{ return m_extraJarsS3Path; }
-    inline void SetExtraJarsS3Path(const Aws::String& value) { m_extraJarsS3Path = value; }
-    inline void SetExtraJarsS3Path(Aws::String&& value) { m_extraJarsS3Path = std::move(value); }
-    inline void SetExtraJarsS3Path(const char* value) { m_extraJarsS3Path.assign(value); }
-    inline CreateDevEndpointResult& WithExtraJarsS3Path(const Aws::String& value) { SetExtraJarsS3Path(value); return *this;}
-    inline CreateDevEndpointResult& WithExtraJarsS3Path(Aws::String&& value) { SetExtraJarsS3Path(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithExtraJarsS3Path(const char* value) { SetExtraJarsS3Path(value); return *this;}
+    inline const Aws::String& GetExtraJarsS3Path() const { return m_extraJarsS3Path; }
+    template<typename ExtraJarsS3PathT = Aws::String>
+    void SetExtraJarsS3Path(ExtraJarsS3PathT&& value) { m_extraJarsS3PathHasBeenSet = true; m_extraJarsS3Path = std::forward<ExtraJarsS3PathT>(value); }
+    template<typename ExtraJarsS3PathT = Aws::String>
+    CreateDevEndpointResult& WithExtraJarsS3Path(ExtraJarsS3PathT&& value) { SetExtraJarsS3Path(std::forward<ExtraJarsS3PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline CreateDevEndpointResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline CreateDevEndpointResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    CreateDevEndpointResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -249,24 +224,22 @@ namespace Model
      * <p>The name of the <code>SecurityConfiguration</code> structure being used with
      * this <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
-    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfiguration = value; }
-    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfiguration = std::move(value); }
-    inline void SetSecurityConfiguration(const char* value) { m_securityConfiguration.assign(value); }
-    inline CreateDevEndpointResult& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
-    inline CreateDevEndpointResult& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+    inline const Aws::String& GetSecurityConfiguration() const { return m_securityConfiguration; }
+    template<typename SecurityConfigurationT = Aws::String>
+    void SetSecurityConfiguration(SecurityConfigurationT&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::forward<SecurityConfigurationT>(value); }
+    template<typename SecurityConfigurationT = Aws::String>
+    CreateDevEndpointResult& WithSecurityConfiguration(SecurityConfigurationT&& value) { SetSecurityConfiguration(std::forward<SecurityConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline CreateDevEndpointResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline CreateDevEndpointResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    CreateDevEndpointResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -278,71 +251,86 @@ namespace Model
      * <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no
      * arguments are provided, the version defaults to Python 2.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
-    inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_arguments = value; }
-    inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_arguments = std::move(value); }
-    inline CreateDevEndpointResult& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
-    inline CreateDevEndpointResult& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& AddArguments(const Aws::String& key, const Aws::String& value) { m_arguments.emplace(key, value); return *this; }
-    inline CreateDevEndpointResult& AddArguments(Aws::String&& key, const Aws::String& value) { m_arguments.emplace(std::move(key), value); return *this; }
-    inline CreateDevEndpointResult& AddArguments(const Aws::String& key, Aws::String&& value) { m_arguments.emplace(key, std::move(value)); return *this; }
-    inline CreateDevEndpointResult& AddArguments(Aws::String&& key, Aws::String&& value) { m_arguments.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateDevEndpointResult& AddArguments(const char* key, Aws::String&& value) { m_arguments.emplace(key, std::move(value)); return *this; }
-    inline CreateDevEndpointResult& AddArguments(Aws::String&& key, const char* value) { m_arguments.emplace(std::move(key), value); return *this; }
-    inline CreateDevEndpointResult& AddArguments(const char* key, const char* value) { m_arguments.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const { return m_arguments; }
+    template<typename ArgumentsT = Aws::Map<Aws::String, Aws::String>>
+    void SetArguments(ArgumentsT&& value) { m_argumentsHasBeenSet = true; m_arguments = std::forward<ArgumentsT>(value); }
+    template<typename ArgumentsT = Aws::Map<Aws::String, Aws::String>>
+    CreateDevEndpointResult& WithArguments(ArgumentsT&& value) { SetArguments(std::forward<ArgumentsT>(value)); return *this;}
+    template<typename ArgumentsKeyT = Aws::String, typename ArgumentsValueT = Aws::String>
+    CreateDevEndpointResult& AddArguments(ArgumentsKeyT&& key, ArgumentsValueT&& value) {
+      m_argumentsHasBeenSet = true; m_arguments.emplace(std::forward<ArgumentsKeyT>(key), std::forward<ArgumentsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDevEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDevEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDevEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDevEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_endpointName;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_yarnEndpointAddress;
+    bool m_yarnEndpointAddressHasBeenSet = false;
 
-    int m_zeppelinRemoteSparkInterpreterPort;
+    int m_zeppelinRemoteSparkInterpreterPort{0};
+    bool m_zeppelinRemoteSparkInterpreterPortHasBeenSet = false;
 
-    int m_numberOfNodes;
+    int m_numberOfNodes{0};
+    bool m_numberOfNodesHasBeenSet = false;
 
-    WorkerType m_workerType;
+    WorkerType m_workerType{WorkerType::NOT_SET};
+    bool m_workerTypeHasBeenSet = false;
 
     Aws::String m_glueVersion;
+    bool m_glueVersionHasBeenSet = false;
 
-    int m_numberOfWorkers;
+    int m_numberOfWorkers{0};
+    bool m_numberOfWorkersHasBeenSet = false;
 
     Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_extraPythonLibsS3Path;
+    bool m_extraPythonLibsS3PathHasBeenSet = false;
 
     Aws::String m_extraJarsS3Path;
+    bool m_extraJarsS3PathHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
+    bool m_securityConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_arguments;
+    bool m_argumentsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

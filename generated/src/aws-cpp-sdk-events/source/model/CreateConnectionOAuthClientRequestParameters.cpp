@@ -18,14 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-CreateConnectionOAuthClientRequestParameters::CreateConnectionOAuthClientRequestParameters() : 
-    m_clientIDHasBeenSet(false),
-    m_clientSecretHasBeenSet(false)
-{
-}
-
 CreateConnectionOAuthClientRequestParameters::CreateConnectionOAuthClientRequestParameters(JsonView jsonValue)
-  : CreateConnectionOAuthClientRequestParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CreateConnectionOAuthClientRequestParameters& CreateConnectionOAuthClientRequest
   if(jsonValue.ValueExists("ClientID"))
   {
     m_clientID = jsonValue.GetString("ClientID");
-
     m_clientIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientSecret"))
   {
     m_clientSecret = jsonValue.GetString("ClientSecret");
-
     m_clientSecretHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,10 +22,9 @@ namespace Model
   class GetImageFrameResult
   {
   public:
-    AWS_MEDICALIMAGING_API GetImageFrameResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_MEDICALIMAGING_API GetImageFrameResult(GetImageFrameResult&&);
-    AWS_MEDICALIMAGING_API GetImageFrameResult& operator=(GetImageFrameResult&&);
+    AWS_MEDICALIMAGING_API GetImageFrameResult() = default;
+    AWS_MEDICALIMAGING_API GetImageFrameResult(GetImageFrameResult&&) = default;
+    AWS_MEDICALIMAGING_API GetImageFrameResult& operator=(GetImageFrameResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetImageFrameResult(const GetImageFrameResult&) = delete;
@@ -51,32 +50,31 @@ namespace Model
      * <p>The format in which the image frame information is returned to the customer.
      * Default is <code>application/octet-stream</code>.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-    inline GetImageFrameResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline GetImageFrameResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline GetImageFrameResult& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    GetImageFrameResult& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetImageFrameResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetImageFrameResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetImageFrameResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetImageFrameResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_imageFrameBlob;
+    Aws::Utils::Stream::ResponseStream m_imageFrameBlob{};
+    bool m_imageFrameBlobHasBeenSet = false;
 
     Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

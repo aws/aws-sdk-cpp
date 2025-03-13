@@ -18,16 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-FileSystemAssociationSummary::FileSystemAssociationSummary() : 
-    m_fileSystemAssociationIdHasBeenSet(false),
-    m_fileSystemAssociationARNHasBeenSet(false),
-    m_fileSystemAssociationStatusHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 FileSystemAssociationSummary::FileSystemAssociationSummary(JsonView jsonValue)
-  : FileSystemAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ FileSystemAssociationSummary& FileSystemAssociationSummary::operator =(JsonView 
   if(jsonValue.ValueExists("FileSystemAssociationId"))
   {
     m_fileSystemAssociationId = jsonValue.GetString("FileSystemAssociationId");
-
     m_fileSystemAssociationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemAssociationARN"))
   {
     m_fileSystemAssociationARN = jsonValue.GetString("FileSystemAssociationARN");
-
     m_fileSystemAssociationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemAssociationStatus"))
   {
     m_fileSystemAssociationStatus = jsonValue.GetString("FileSystemAssociationStatus");
-
     m_fileSystemAssociationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
     m_gatewayARNHasBeenSet = true;
   }
-
   return *this;
 }
 

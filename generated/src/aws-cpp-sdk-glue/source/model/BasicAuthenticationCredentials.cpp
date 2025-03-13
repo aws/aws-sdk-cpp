@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-BasicAuthenticationCredentials::BasicAuthenticationCredentials() : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
-{
-}
-
 BasicAuthenticationCredentials::BasicAuthenticationCredentials(JsonView jsonValue)
-  : BasicAuthenticationCredentials()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BasicAuthenticationCredentials& BasicAuthenticationCredentials::operator =(JsonV
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   return *this;
 }
 

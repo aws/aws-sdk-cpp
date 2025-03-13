@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetApplicationComponentDetailsResult::GetApplicationComponentDetailsResult() : 
-    m_moreApplicationResource(false)
-{
-}
-
 GetApplicationComponentDetailsResult::GetApplicationComponentDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetApplicationComponentDetailsResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetApplicationComponentDetailsResult& GetApplicationComponentDetailsResult::oper
   if(jsonValue.ValueExists("applicationComponentDetail"))
   {
     m_applicationComponentDetail = jsonValue.GetObject("applicationComponentDetail");
-
+    m_applicationComponentDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedApplications"))
   {
     Aws::Utils::Array<JsonView> associatedApplicationsJsonList = jsonValue.GetArray("associatedApplications");
@@ -44,8 +37,8 @@ GetApplicationComponentDetailsResult& GetApplicationComponentDetailsResult::oper
     {
       m_associatedApplications.push_back(associatedApplicationsJsonList[associatedApplicationsIndex].AsObject());
     }
+    m_associatedApplicationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedServerIds"))
   {
     Aws::Utils::Array<JsonView> associatedServerIdsJsonList = jsonValue.GetArray("associatedServerIds");
@@ -53,20 +46,20 @@ GetApplicationComponentDetailsResult& GetApplicationComponentDetailsResult::oper
     {
       m_associatedServerIds.push_back(associatedServerIdsJsonList[associatedServerIdsIndex].AsString());
     }
+    m_associatedServerIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("moreApplicationResource"))
   {
     m_moreApplicationResource = jsonValue.GetBool("moreApplicationResource");
-
+    m_moreApplicationResourceHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

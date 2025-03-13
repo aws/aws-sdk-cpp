@@ -18,13 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-ForwardAction::ForwardAction() : 
-    m_targetGroupsHasBeenSet(false)
-{
-}
-
 ForwardAction::ForwardAction(JsonView jsonValue)
-  : ForwardAction()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ForwardAction& ForwardAction::operator =(JsonView jsonValue)
     }
     m_targetGroupsHasBeenSet = true;
   }
-
   return *this;
 }
 

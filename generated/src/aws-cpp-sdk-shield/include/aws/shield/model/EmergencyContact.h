@@ -33,7 +33,7 @@ namespace Model
   class EmergencyContact
   {
   public:
-    AWS_SHIELD_API EmergencyContact();
+    AWS_SHIELD_API EmergencyContact() = default;
     AWS_SHIELD_API EmergencyContact(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API EmergencyContact& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The email address for the contact.</p>
      */
-    inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+    inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-    inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
-    inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
-    inline EmergencyContact& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-    inline EmergencyContact& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-    inline EmergencyContact& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+    template<typename EmailAddressT = Aws::String>
+    void SetEmailAddress(EmailAddressT&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::forward<EmailAddressT>(value); }
+    template<typename EmailAddressT = Aws::String>
+    EmergencyContact& WithEmailAddress(EmailAddressT&& value) { SetEmailAddress(std::forward<EmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The phone number for the contact.</p>
      */
-    inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+    inline const Aws::String& GetPhoneNumber() const { return m_phoneNumber; }
     inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
-    inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
-    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
-    inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
-    inline EmergencyContact& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
-    inline EmergencyContact& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
-    inline EmergencyContact& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
+    template<typename PhoneNumberT = Aws::String>
+    void SetPhoneNumber(PhoneNumberT&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::forward<PhoneNumberT>(value); }
+    template<typename PhoneNumberT = Aws::String>
+    EmergencyContact& WithPhoneNumber(PhoneNumberT&& value) { SetPhoneNumber(std::forward<PhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional notes regarding the contact. </p>
      */
-    inline const Aws::String& GetContactNotes() const{ return m_contactNotes; }
+    inline const Aws::String& GetContactNotes() const { return m_contactNotes; }
     inline bool ContactNotesHasBeenSet() const { return m_contactNotesHasBeenSet; }
-    inline void SetContactNotes(const Aws::String& value) { m_contactNotesHasBeenSet = true; m_contactNotes = value; }
-    inline void SetContactNotes(Aws::String&& value) { m_contactNotesHasBeenSet = true; m_contactNotes = std::move(value); }
-    inline void SetContactNotes(const char* value) { m_contactNotesHasBeenSet = true; m_contactNotes.assign(value); }
-    inline EmergencyContact& WithContactNotes(const Aws::String& value) { SetContactNotes(value); return *this;}
-    inline EmergencyContact& WithContactNotes(Aws::String&& value) { SetContactNotes(std::move(value)); return *this;}
-    inline EmergencyContact& WithContactNotes(const char* value) { SetContactNotes(value); return *this;}
+    template<typename ContactNotesT = Aws::String>
+    void SetContactNotes(ContactNotesT&& value) { m_contactNotesHasBeenSet = true; m_contactNotes = std::forward<ContactNotesT>(value); }
+    template<typename ContactNotesT = Aws::String>
+    EmergencyContact& WithContactNotes(ContactNotesT&& value) { SetContactNotes(std::forward<ContactNotesT>(value)); return *this;}
     ///@}
   private:
 

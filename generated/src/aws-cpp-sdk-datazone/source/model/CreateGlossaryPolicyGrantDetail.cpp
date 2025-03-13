@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-CreateGlossaryPolicyGrantDetail::CreateGlossaryPolicyGrantDetail() : 
-    m_includeChildDomainUnits(false),
-    m_includeChildDomainUnitsHasBeenSet(false)
-{
-}
-
 CreateGlossaryPolicyGrantDetail::CreateGlossaryPolicyGrantDetail(JsonView jsonValue)
-  : CreateGlossaryPolicyGrantDetail()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CreateGlossaryPolicyGrantDetail& CreateGlossaryPolicyGrantDetail::operator =(Jso
   if(jsonValue.ValueExists("includeChildDomainUnits"))
   {
     m_includeChildDomainUnits = jsonValue.GetBool("includeChildDomainUnits");
-
     m_includeChildDomainUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

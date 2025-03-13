@@ -32,7 +32,7 @@ namespace Model
   class Acceptor
   {
   public:
-    AWS_AGREEMENTSERVICE_API Acceptor();
+    AWS_AGREEMENTSERVICE_API Acceptor() = default;
     AWS_AGREEMENTSERVICE_API Acceptor(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Acceptor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The AWS account ID of the acceptor.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline Acceptor& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline Acceptor& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline Acceptor& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    Acceptor& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
   private:
 

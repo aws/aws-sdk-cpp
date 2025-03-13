@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListIntentPathsResult::ListIntentPathsResult()
-{
-}
-
 ListIntentPathsResult::ListIntentPathsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ ListIntentPathsResult& ListIntentPathsResult::operator =(const Aws::AmazonWebSer
     {
       m_nodeSummaries.push_back(nodeSummariesJsonList[nodeSummariesIndex].AsObject());
     }
+    m_nodeSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

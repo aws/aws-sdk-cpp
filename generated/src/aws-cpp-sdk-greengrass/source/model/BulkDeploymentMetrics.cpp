@@ -18,18 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-BulkDeploymentMetrics::BulkDeploymentMetrics() : 
-    m_invalidInputRecords(0),
-    m_invalidInputRecordsHasBeenSet(false),
-    m_recordsProcessed(0),
-    m_recordsProcessedHasBeenSet(false),
-    m_retryAttempts(0),
-    m_retryAttemptsHasBeenSet(false)
-{
-}
-
 BulkDeploymentMetrics::BulkDeploymentMetrics(JsonView jsonValue)
-  : BulkDeploymentMetrics()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ BulkDeploymentMetrics& BulkDeploymentMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InvalidInputRecords"))
   {
     m_invalidInputRecords = jsonValue.GetInteger("InvalidInputRecords");
-
     m_invalidInputRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordsProcessed"))
   {
     m_recordsProcessed = jsonValue.GetInteger("RecordsProcessed");
-
     m_recordsProcessedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryAttempts"))
   {
     m_retryAttempts = jsonValue.GetInteger("RetryAttempts");
-
     m_retryAttemptsHasBeenSet = true;
   }
-
   return *this;
 }
 

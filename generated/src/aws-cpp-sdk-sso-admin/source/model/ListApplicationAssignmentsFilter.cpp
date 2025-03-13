@@ -18,13 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-ListApplicationAssignmentsFilter::ListApplicationAssignmentsFilter() : 
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 ListApplicationAssignmentsFilter::ListApplicationAssignmentsFilter(JsonView jsonValue)
-  : ListApplicationAssignmentsFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ListApplicationAssignmentsFilter& ListApplicationAssignmentsFilter::operator =(J
   if(jsonValue.ValueExists("ApplicationArn"))
   {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
-
     m_applicationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

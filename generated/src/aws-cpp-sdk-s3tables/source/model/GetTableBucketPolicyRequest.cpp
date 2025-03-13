@@ -12,11 +12,6 @@ using namespace Aws::S3Tables::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTableBucketPolicyRequest::GetTableBucketPolicyRequest() : 
-    m_tableBucketARNHasBeenSet(false)
-{
-}
-
 Aws::String GetTableBucketPolicyRequest::SerializePayload() const
 {
   return {};

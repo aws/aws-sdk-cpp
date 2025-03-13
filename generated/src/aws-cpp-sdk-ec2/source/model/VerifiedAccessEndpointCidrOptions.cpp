@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessEndpointCidrOptions::VerifiedAccessEndpointCidrOptions() : 
-    m_cidrHasBeenSet(false),
-    m_portRangesHasBeenSet(false),
-    m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
-{
-}
-
 VerifiedAccessEndpointCidrOptions::VerifiedAccessEndpointCidrOptions(const XmlNode& xmlNode)
-  : VerifiedAccessEndpointCidrOptions()
 {
   *this = xmlNode;
 }
@@ -46,36 +36,40 @@ VerifiedAccessEndpointCidrOptions& VerifiedAccessEndpointCidrOptions::operator =
     {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
+       m_cidrHasBeenSet = true;
     }
     XmlNode portRangesNode = resultNode.FirstChild("portRangeSet");
     if(!portRangesNode.IsNull())
     {
       XmlNode portRangesMember = portRangesNode.FirstChild("item");
+      m_portRangesHasBeenSet = !portRangesMember.IsNull();
       while(!portRangesMember.IsNull())
       {
         m_portRanges.push_back(portRangesMember);
         portRangesMember = portRangesMember.NextNode("item");
       }
 
-      m_portRangesHasBeenSet = true;
+       m_portRangesHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode subnetIdsNode = resultNode.FirstChild("subnetIdSet");
     if(!subnetIdsNode.IsNull())
     {
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
+      m_subnetIdsHasBeenSet = !subnetIdsMember.IsNull();
       while(!subnetIdsMember.IsNull())
       {
         m_subnetIds.push_back(subnetIdsMember.GetText());
         subnetIdsMember = subnetIdsMember.NextNode("item");
       }
 
-      m_subnetIdsHasBeenSet = true;
+       m_subnetIdsHasBeenSet = true;
     }
   }
 

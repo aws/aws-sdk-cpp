@@ -20,20 +20,7 @@ namespace Route53
 namespace Model
 {
 
-TrafficPolicy::TrafficPolicy() : 
-    m_idHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(RRType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_documentHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 TrafficPolicy::TrafficPolicy(const XmlNode& xmlNode)
-  : TrafficPolicy()
 {
   *this = xmlNode;
 }
@@ -49,36 +36,42 @@ TrafficPolicy& TrafficPolicy::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode versionNode = resultNode.FirstChild("Version");
     if(!versionNode.IsNull())
     {
       m_version = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(versionNode.GetText()).c_str()).c_str());
       m_versionHasBeenSet = true;
+       m_versionHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode documentNode = resultNode.FirstChild("Document");
     if(!documentNode.IsNull())
     {
       m_document = Aws::Utils::Xml::DecodeEscapedXmlText(documentNode.GetText());
       m_documentHasBeenSet = true;
+       m_documentHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
   }
 

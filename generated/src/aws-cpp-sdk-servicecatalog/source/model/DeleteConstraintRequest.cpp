@@ -12,12 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConstraintRequest::DeleteConstraintRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConstraintRequest::SerializePayload() const
 {
   JsonValue payload;

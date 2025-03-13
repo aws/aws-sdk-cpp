@@ -28,7 +28,7 @@ namespace Model
   class UpdateFlywheelResult
   {
   public:
-    AWS_COMPREHEND_API UpdateFlywheelResult();
+    AWS_COMPREHEND_API UpdateFlywheelResult() = default;
     AWS_COMPREHEND_API UpdateFlywheelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API UpdateFlywheelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The flywheel properties.</p>
      */
-    inline const FlywheelProperties& GetFlywheelProperties() const{ return m_flywheelProperties; }
-    inline void SetFlywheelProperties(const FlywheelProperties& value) { m_flywheelProperties = value; }
-    inline void SetFlywheelProperties(FlywheelProperties&& value) { m_flywheelProperties = std::move(value); }
-    inline UpdateFlywheelResult& WithFlywheelProperties(const FlywheelProperties& value) { SetFlywheelProperties(value); return *this;}
-    inline UpdateFlywheelResult& WithFlywheelProperties(FlywheelProperties&& value) { SetFlywheelProperties(std::move(value)); return *this;}
+    inline const FlywheelProperties& GetFlywheelProperties() const { return m_flywheelProperties; }
+    template<typename FlywheelPropertiesT = FlywheelProperties>
+    void SetFlywheelProperties(FlywheelPropertiesT&& value) { m_flywheelPropertiesHasBeenSet = true; m_flywheelProperties = std::forward<FlywheelPropertiesT>(value); }
+    template<typename FlywheelPropertiesT = FlywheelProperties>
+    UpdateFlywheelResult& WithFlywheelProperties(FlywheelPropertiesT&& value) { SetFlywheelProperties(std::forward<FlywheelPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateFlywheelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateFlywheelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateFlywheelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateFlywheelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FlywheelProperties m_flywheelProperties;
+    bool m_flywheelPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

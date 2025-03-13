@@ -32,7 +32,7 @@ namespace Model
   class CopySourceImageSetInformation
   {
   public:
-    AWS_MEDICALIMAGING_API CopySourceImageSetInformation();
+    AWS_MEDICALIMAGING_API CopySourceImageSetInformation() = default;
     AWS_MEDICALIMAGING_API CopySourceImageSetInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API CopySourceImageSetInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The latest version identifier for the source image set.</p>
      */
-    inline const Aws::String& GetLatestVersionId() const{ return m_latestVersionId; }
+    inline const Aws::String& GetLatestVersionId() const { return m_latestVersionId; }
     inline bool LatestVersionIdHasBeenSet() const { return m_latestVersionIdHasBeenSet; }
-    inline void SetLatestVersionId(const Aws::String& value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId = value; }
-    inline void SetLatestVersionId(Aws::String&& value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId = std::move(value); }
-    inline void SetLatestVersionId(const char* value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId.assign(value); }
-    inline CopySourceImageSetInformation& WithLatestVersionId(const Aws::String& value) { SetLatestVersionId(value); return *this;}
-    inline CopySourceImageSetInformation& WithLatestVersionId(Aws::String&& value) { SetLatestVersionId(std::move(value)); return *this;}
-    inline CopySourceImageSetInformation& WithLatestVersionId(const char* value) { SetLatestVersionId(value); return *this;}
+    template<typename LatestVersionIdT = Aws::String>
+    void SetLatestVersionId(LatestVersionIdT&& value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId = std::forward<LatestVersionIdT>(value); }
+    template<typename LatestVersionIdT = Aws::String>
+    CopySourceImageSetInformation& WithLatestVersionId(LatestVersionIdT&& value) { SetLatestVersionId(std::forward<LatestVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,12 @@ namespace Model
      * <p>Contains <code>MetadataCopies</code> structure and wraps information related
      * to specific copy use cases. For example, when copying subsets.</p>
      */
-    inline const MetadataCopies& GetDICOMCopies() const{ return m_dICOMCopies; }
+    inline const MetadataCopies& GetDICOMCopies() const { return m_dICOMCopies; }
     inline bool DICOMCopiesHasBeenSet() const { return m_dICOMCopiesHasBeenSet; }
-    inline void SetDICOMCopies(const MetadataCopies& value) { m_dICOMCopiesHasBeenSet = true; m_dICOMCopies = value; }
-    inline void SetDICOMCopies(MetadataCopies&& value) { m_dICOMCopiesHasBeenSet = true; m_dICOMCopies = std::move(value); }
-    inline CopySourceImageSetInformation& WithDICOMCopies(const MetadataCopies& value) { SetDICOMCopies(value); return *this;}
-    inline CopySourceImageSetInformation& WithDICOMCopies(MetadataCopies&& value) { SetDICOMCopies(std::move(value)); return *this;}
+    template<typename DICOMCopiesT = MetadataCopies>
+    void SetDICOMCopies(DICOMCopiesT&& value) { m_dICOMCopiesHasBeenSet = true; m_dICOMCopies = std::forward<DICOMCopiesT>(value); }
+    template<typename DICOMCopiesT = MetadataCopies>
+    CopySourceImageSetInformation& WithDICOMCopies(DICOMCopiesT&& value) { SetDICOMCopies(std::forward<DICOMCopiesT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,11 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-StartResourceScanRequest::StartResourceScanRequest() : 
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String StartResourceScanRequest::SerializePayload() const
 {
   Aws::StringStream ss;

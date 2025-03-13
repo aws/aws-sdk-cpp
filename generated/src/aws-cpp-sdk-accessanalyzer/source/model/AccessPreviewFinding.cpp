@@ -18,34 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-AccessPreviewFinding::AccessPreviewFinding() : 
-    m_idHasBeenSet(false),
-    m_existingFindingIdHasBeenSet(false),
-    m_existingFindingStatus(FindingStatus::NOT_SET),
-    m_existingFindingStatusHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_isPublic(false),
-    m_isPublicHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_changeType(FindingChangeType::NOT_SET),
-    m_changeTypeHasBeenSet(false),
-    m_status(FindingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resourceOwnerAccountHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_resourceControlPolicyRestriction(ResourceControlPolicyRestriction::NOT_SET),
-    m_resourceControlPolicyRestrictionHasBeenSet(false)
-{
-}
-
 AccessPreviewFinding::AccessPreviewFinding(JsonView jsonValue)
-  : AccessPreviewFinding()
 {
   *this = jsonValue;
 }
@@ -55,24 +28,18 @@ AccessPreviewFinding& AccessPreviewFinding::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("existingFindingId"))
   {
     m_existingFindingId = jsonValue.GetString("existingFindingId");
-
     m_existingFindingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("existingFindingStatus"))
   {
     m_existingFindingStatus = FindingStatusMapper::GetFindingStatusForName(jsonValue.GetString("existingFindingStatus"));
-
     m_existingFindingStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principal"))
   {
     Aws::Map<Aws::String, JsonView> principalJsonMap = jsonValue.GetObject("principal").GetAllObjects();
@@ -82,7 +49,6 @@ AccessPreviewFinding& AccessPreviewFinding::operator =(JsonView jsonValue)
     }
     m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     Aws::Utils::Array<JsonView> actionJsonList = jsonValue.GetArray("action");
@@ -92,7 +58,6 @@ AccessPreviewFinding& AccessPreviewFinding::operator =(JsonView jsonValue)
     }
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("condition"))
   {
     Aws::Map<Aws::String, JsonView> conditionJsonMap = jsonValue.GetObject("condition").GetAllObjects();
@@ -102,63 +67,46 @@ AccessPreviewFinding& AccessPreviewFinding::operator =(JsonView jsonValue)
     }
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isPublic"))
   {
     m_isPublic = jsonValue.GetBool("isPublic");
-
     m_isPublicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("changeType"))
   {
     m_changeType = FindingChangeTypeMapper::GetFindingChangeTypeForName(jsonValue.GetString("changeType"));
-
     m_changeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FindingStatusMapper::GetFindingStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceOwnerAccount"))
   {
     m_resourceOwnerAccount = jsonValue.GetString("resourceOwnerAccount");
-
     m_resourceOwnerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
@@ -168,14 +116,11 @@ AccessPreviewFinding& AccessPreviewFinding::operator =(JsonView jsonValue)
     }
     m_sourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceControlPolicyRestriction"))
   {
     m_resourceControlPolicyRestriction = ResourceControlPolicyRestrictionMapper::GetResourceControlPolicyRestrictionForName(jsonValue.GetString("resourceControlPolicyRestriction"));
-
     m_resourceControlPolicyRestrictionHasBeenSet = true;
   }
-
   return *this;
 }
 

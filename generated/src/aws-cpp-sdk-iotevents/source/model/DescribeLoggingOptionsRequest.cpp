@@ -12,10 +12,6 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLoggingOptionsRequest::DescribeLoggingOptionsRequest()
-{
-}
-
 Aws::String DescribeLoggingOptionsRequest::SerializePayload() const
 {
   return {};

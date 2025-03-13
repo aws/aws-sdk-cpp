@@ -12,15 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutIdentityProviderConfigurationRequest::PutIdentityProviderConfigurationRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_authenticationMode(IdentityProviderAuthenticationMode::NOT_SET),
-    m_authenticationModeHasBeenSet(false),
-    m_identityCenterConfigurationHasBeenSet(false),
-    m_personalAccessTokenConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String PutIdentityProviderConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

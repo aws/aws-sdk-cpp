@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetClusterCredentialsResult::GetClusterCredentialsResult()
-{
-}
-
 GetClusterCredentialsResult::GetClusterCredentialsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,22 +38,26 @@ GetClusterCredentialsResult& GetClusterCredentialsResult::operator =(const Aws::
     if(!dbUserNode.IsNull())
     {
       m_dbUser = Aws::Utils::Xml::DecodeEscapedXmlText(dbUserNode.GetText());
+      m_dbUserHasBeenSet = true;
     }
     XmlNode dbPasswordNode = resultNode.FirstChild("DbPassword");
     if(!dbPasswordNode.IsNull())
     {
       m_dbPassword = Aws::Utils::Xml::DecodeEscapedXmlText(dbPasswordNode.GetText());
+      m_dbPasswordHasBeenSet = true;
     }
     XmlNode expirationNode = resultNode.FirstChild("Expiration");
     if(!expirationNode.IsNull())
     {
       m_expiration = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_expirationHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::GetClusterCredentialsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

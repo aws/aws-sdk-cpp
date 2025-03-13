@@ -22,7 +22,7 @@ namespace Model
   class UpdateTemplateActiveVersionRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API UpdateTemplateActiveVersionRequest();
+    AWS_PINPOINT_API UpdateTemplateActiveVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,12 +35,12 @@ namespace Model
 
     ///@{
     
-    inline const TemplateActiveVersionRequest& GetTemplateActiveVersionRequest() const{ return m_templateActiveVersionRequest; }
+    inline const TemplateActiveVersionRequest& GetTemplateActiveVersionRequest() const { return m_templateActiveVersionRequest; }
     inline bool TemplateActiveVersionRequestHasBeenSet() const { return m_templateActiveVersionRequestHasBeenSet; }
-    inline void SetTemplateActiveVersionRequest(const TemplateActiveVersionRequest& value) { m_templateActiveVersionRequestHasBeenSet = true; m_templateActiveVersionRequest = value; }
-    inline void SetTemplateActiveVersionRequest(TemplateActiveVersionRequest&& value) { m_templateActiveVersionRequestHasBeenSet = true; m_templateActiveVersionRequest = std::move(value); }
-    inline UpdateTemplateActiveVersionRequest& WithTemplateActiveVersionRequest(const TemplateActiveVersionRequest& value) { SetTemplateActiveVersionRequest(value); return *this;}
-    inline UpdateTemplateActiveVersionRequest& WithTemplateActiveVersionRequest(TemplateActiveVersionRequest&& value) { SetTemplateActiveVersionRequest(std::move(value)); return *this;}
+    template<typename TemplateActiveVersionRequestT = TemplateActiveVersionRequest>
+    void SetTemplateActiveVersionRequest(TemplateActiveVersionRequestT&& value) { m_templateActiveVersionRequestHasBeenSet = true; m_templateActiveVersionRequest = std::forward<TemplateActiveVersionRequestT>(value); }
+    template<typename TemplateActiveVersionRequestT = TemplateActiveVersionRequest>
+    UpdateTemplateActiveVersionRequest& WithTemplateActiveVersionRequest(TemplateActiveVersionRequestT&& value) { SetTemplateActiveVersionRequest(std::forward<TemplateActiveVersionRequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,14 +50,12 @@ namespace Model
      * characters can be alphanumeric characters, underscores (_), or hyphens (-).
      * Template names are case sensitive.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline UpdateTemplateActiveVersionRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline UpdateTemplateActiveVersionRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline UpdateTemplateActiveVersionRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    UpdateTemplateActiveVersionRequest& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <p>The type of channel that the message template is designed for. Valid values
      * are: EMAIL, PUSH, SMS, and VOICE.</p>
      */
-    inline const Aws::String& GetTemplateType() const{ return m_templateType; }
+    inline const Aws::String& GetTemplateType() const { return m_templateType; }
     inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
-    inline void SetTemplateType(const Aws::String& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
-    inline void SetTemplateType(Aws::String&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
-    inline void SetTemplateType(const char* value) { m_templateTypeHasBeenSet = true; m_templateType.assign(value); }
-    inline UpdateTemplateActiveVersionRequest& WithTemplateType(const Aws::String& value) { SetTemplateType(value); return *this;}
-    inline UpdateTemplateActiveVersionRequest& WithTemplateType(Aws::String&& value) { SetTemplateType(std::move(value)); return *this;}
-    inline UpdateTemplateActiveVersionRequest& WithTemplateType(const char* value) { SetTemplateType(value); return *this;}
+    template<typename TemplateTypeT = Aws::String>
+    void SetTemplateType(TemplateTypeT&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::forward<TemplateTypeT>(value); }
+    template<typename TemplateTypeT = Aws::String>
+    UpdateTemplateActiveVersionRequest& WithTemplateType(TemplateTypeT&& value) { SetTemplateType(std::forward<TemplateTypeT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyContentTypeOptions::ResponseHeadersPolicyContentTypeOptions() : 
-    m_override(false),
-    m_overrideHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyContentTypeOptions::ResponseHeadersPolicyContentTypeOptions(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyContentTypeOptions()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ ResponseHeadersPolicyContentTypeOptions& ResponseHeadersPolicyContentTypeOptions
     {
       m_override = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overrideNode.GetText()).c_str()).c_str());
       m_overrideHasBeenSet = true;
+       m_overrideHasBeenSet = true;
     }
   }
 

@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopTriggerRequest::StopTriggerRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String StopTriggerRequest::SerializePayload() const
 {
   JsonValue payload;

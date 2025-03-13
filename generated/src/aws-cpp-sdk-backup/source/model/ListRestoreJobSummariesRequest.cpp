@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRestoreJobSummariesRequest::ListRestoreJobSummariesRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_state(RestoreJobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_aggregationPeriod(AggregationPeriod::NOT_SET),
-    m_aggregationPeriodHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListRestoreJobSummariesRequest::SerializePayload() const
 {
   return {};

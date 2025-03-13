@@ -32,7 +32,7 @@ namespace Model
   class AwsWafRegionalWebAclRulesListActionDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsWafRegionalWebAclRulesListActionDetails();
+    AWS_SECURITYHUB_API AwsWafRegionalWebAclRulesListActionDetails() = default;
     AWS_SECURITYHUB_API AwsWafRegionalWebAclRulesListActionDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsWafRegionalWebAclRulesListActionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>For actions that are associated with a rule, the action that WAF takes when a
      * web request matches all conditions in a rule. </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsWafRegionalWebAclRulesListActionDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsWafRegionalWebAclRulesListActionDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsWafRegionalWebAclRulesListActionDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsWafRegionalWebAclRulesListActionDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

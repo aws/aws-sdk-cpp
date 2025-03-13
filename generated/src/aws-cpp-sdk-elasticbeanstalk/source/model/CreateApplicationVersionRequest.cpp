@@ -10,21 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-CreateApplicationVersionRequest::CreateApplicationVersionRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceBuildInformationHasBeenSet(false),
-    m_sourceBundleHasBeenSet(false),
-    m_buildConfigurationHasBeenSet(false),
-    m_autoCreateApplication(false),
-    m_autoCreateApplicationHasBeenSet(false),
-    m_process(false),
-    m_processHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateApplicationVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

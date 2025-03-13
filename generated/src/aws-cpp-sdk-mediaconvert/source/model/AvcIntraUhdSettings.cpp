@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AvcIntraUhdSettings::AvcIntraUhdSettings() : 
-    m_qualityTuningLevel(AvcIntraUhdQualityTuningLevel::NOT_SET),
-    m_qualityTuningLevelHasBeenSet(false)
-{
-}
-
 AvcIntraUhdSettings::AvcIntraUhdSettings(JsonView jsonValue)
-  : AvcIntraUhdSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AvcIntraUhdSettings& AvcIntraUhdSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("qualityTuningLevel"))
   {
     m_qualityTuningLevel = AvcIntraUhdQualityTuningLevelMapper::GetAvcIntraUhdQualityTuningLevelForName(jsonValue.GetString("qualityTuningLevel"));
-
     m_qualityTuningLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

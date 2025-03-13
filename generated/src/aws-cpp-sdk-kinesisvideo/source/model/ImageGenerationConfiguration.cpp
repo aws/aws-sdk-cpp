@@ -18,26 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-ImageGenerationConfiguration::ImageGenerationConfiguration() : 
-    m_status(ConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_imageSelectorType(ImageSelectorType::NOT_SET),
-    m_imageSelectorTypeHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false),
-    m_samplingInterval(0),
-    m_samplingIntervalHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_formatConfigHasBeenSet(false),
-    m_widthPixels(0),
-    m_widthPixelsHasBeenSet(false),
-    m_heightPixels(0),
-    m_heightPixelsHasBeenSet(false)
-{
-}
-
 ImageGenerationConfiguration::ImageGenerationConfiguration(JsonView jsonValue)
-  : ImageGenerationConfiguration()
 {
   *this = jsonValue;
 }
@@ -47,38 +28,28 @@ ImageGenerationConfiguration& ImageGenerationConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ConfigurationStatusMapper::GetConfigurationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageSelectorType"))
   {
     m_imageSelectorType = ImageSelectorTypeMapper::GetImageSelectorTypeForName(jsonValue.GetString("ImageSelectorType"));
-
     m_imageSelectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationConfig"))
   {
     m_destinationConfig = jsonValue.GetObject("DestinationConfig");
-
     m_destinationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SamplingInterval"))
   {
     m_samplingInterval = jsonValue.GetInteger("SamplingInterval");
-
     m_samplingIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = FormatMapper::GetFormatForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FormatConfig"))
   {
     Aws::Map<Aws::String, JsonView> formatConfigJsonMap = jsonValue.GetObject("FormatConfig").GetAllObjects();
@@ -88,21 +59,16 @@ ImageGenerationConfiguration& ImageGenerationConfiguration::operator =(JsonView 
     }
     m_formatConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WidthPixels"))
   {
     m_widthPixels = jsonValue.GetInteger("WidthPixels");
-
     m_widthPixelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeightPixels"))
   {
     m_heightPixels = jsonValue.GetInteger("HeightPixels");
-
     m_heightPixelsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,18 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAccountAssignmentsForPrincipalRequest::ListAccountAssignmentsForPrincipalRequest() : 
-    m_filterHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListAccountAssignmentsForPrincipalRequest::SerializePayload() const
 {
   JsonValue payload;

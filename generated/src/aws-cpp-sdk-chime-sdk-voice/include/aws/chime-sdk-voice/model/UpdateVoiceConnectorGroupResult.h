@@ -28,7 +28,7 @@ namespace Model
   class UpdateVoiceConnectorGroupResult
   {
   public:
-    AWS_CHIMESDKVOICE_API UpdateVoiceConnectorGroupResult();
+    AWS_CHIMESDKVOICE_API UpdateVoiceConnectorGroupResult() = default;
     AWS_CHIMESDKVOICE_API UpdateVoiceConnectorGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API UpdateVoiceConnectorGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The updated Voice Connector group.</p>
      */
-    inline const VoiceConnectorGroup& GetVoiceConnectorGroup() const{ return m_voiceConnectorGroup; }
-    inline void SetVoiceConnectorGroup(const VoiceConnectorGroup& value) { m_voiceConnectorGroup = value; }
-    inline void SetVoiceConnectorGroup(VoiceConnectorGroup&& value) { m_voiceConnectorGroup = std::move(value); }
-    inline UpdateVoiceConnectorGroupResult& WithVoiceConnectorGroup(const VoiceConnectorGroup& value) { SetVoiceConnectorGroup(value); return *this;}
-    inline UpdateVoiceConnectorGroupResult& WithVoiceConnectorGroup(VoiceConnectorGroup&& value) { SetVoiceConnectorGroup(std::move(value)); return *this;}
+    inline const VoiceConnectorGroup& GetVoiceConnectorGroup() const { return m_voiceConnectorGroup; }
+    template<typename VoiceConnectorGroupT = VoiceConnectorGroup>
+    void SetVoiceConnectorGroup(VoiceConnectorGroupT&& value) { m_voiceConnectorGroupHasBeenSet = true; m_voiceConnectorGroup = std::forward<VoiceConnectorGroupT>(value); }
+    template<typename VoiceConnectorGroupT = VoiceConnectorGroup>
+    UpdateVoiceConnectorGroupResult& WithVoiceConnectorGroup(VoiceConnectorGroupT&& value) { SetVoiceConnectorGroup(std::forward<VoiceConnectorGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateVoiceConnectorGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateVoiceConnectorGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateVoiceConnectorGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateVoiceConnectorGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VoiceConnectorGroup m_voiceConnectorGroup;
+    bool m_voiceConnectorGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

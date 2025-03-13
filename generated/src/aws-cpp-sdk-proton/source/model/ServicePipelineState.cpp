@@ -18,16 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ServicePipelineState::ServicePipelineState() : 
-    m_specHasBeenSet(false),
-    m_templateMajorVersionHasBeenSet(false),
-    m_templateMinorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 ServicePipelineState::ServicePipelineState(JsonView jsonValue)
-  : ServicePipelineState()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ServicePipelineState& ServicePipelineState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("spec"))
   {
     m_spec = jsonValue.GetString("spec");
-
     m_specHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateMajorVersion"))
   {
     m_templateMajorVersion = jsonValue.GetString("templateMajorVersion");
-
     m_templateMajorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateMinorVersion"))
   {
     m_templateMinorVersion = jsonValue.GetString("templateMinorVersion");
-
     m_templateMinorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace QApps
 namespace Model
 {
 
-PredictAppDefinition::PredictAppDefinition() : 
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_appDefinitionHasBeenSet(false)
-{
-}
-
 PredictAppDefinition::PredictAppDefinition(JsonView jsonValue)
-  : PredictAppDefinition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PredictAppDefinition& PredictAppDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appDefinition"))
   {
     m_appDefinition = jsonValue.GetObject("appDefinition");
-
     m_appDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

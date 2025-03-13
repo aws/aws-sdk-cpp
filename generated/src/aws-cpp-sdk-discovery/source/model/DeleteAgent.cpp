@@ -18,15 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-DeleteAgent::DeleteAgent() : 
-    m_agentIdHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 DeleteAgent::DeleteAgent(JsonView jsonValue)
-  : DeleteAgent()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DeleteAgent& DeleteAgent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
-
     m_agentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("force"))
   {
     m_force = jsonValue.GetBool("force");
-
     m_forceHasBeenSet = true;
   }
-
   return *this;
 }
 

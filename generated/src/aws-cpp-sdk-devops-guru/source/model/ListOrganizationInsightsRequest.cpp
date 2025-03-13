@@ -12,16 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListOrganizationInsightsRequest::ListOrganizationInsightsRequest() : 
-    m_statusFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListOrganizationInsightsRequest::SerializePayload() const
 {
   JsonValue payload;

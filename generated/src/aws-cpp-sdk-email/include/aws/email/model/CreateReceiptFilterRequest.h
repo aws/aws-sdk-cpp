@@ -27,7 +27,7 @@ namespace Model
   class CreateReceiptFilterRequest : public SESRequest
   {
   public:
-    AWS_SES_API CreateReceiptFilterRequest();
+    AWS_SES_API CreateReceiptFilterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,12 +48,12 @@ namespace Model
      * consists of a name, an IP address range, and whether to allow or block mail from
      * it.</p>
      */
-    inline const ReceiptFilter& GetFilter() const{ return m_filter; }
+    inline const ReceiptFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const ReceiptFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(ReceiptFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline CreateReceiptFilterRequest& WithFilter(const ReceiptFilter& value) { SetFilter(value); return *this;}
-    inline CreateReceiptFilterRequest& WithFilter(ReceiptFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = ReceiptFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = ReceiptFilter>
+    CreateReceiptFilterRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
   private:
 

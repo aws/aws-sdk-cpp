@@ -18,17 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ReplicationTaskIndividualAssessment::ReplicationTaskIndividualAssessment() : 
-    m_replicationTaskIndividualAssessmentArnHasBeenSet(false),
-    m_replicationTaskAssessmentRunArnHasBeenSet(false),
-    m_individualAssessmentNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_replicationTaskIndividualAssessmentStartDateHasBeenSet(false)
-{
-}
-
 ReplicationTaskIndividualAssessment::ReplicationTaskIndividualAssessment(JsonView jsonValue)
-  : ReplicationTaskIndividualAssessment()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ReplicationTaskIndividualAssessment& ReplicationTaskIndividualAssessment::operat
   if(jsonValue.ValueExists("ReplicationTaskIndividualAssessmentArn"))
   {
     m_replicationTaskIndividualAssessmentArn = jsonValue.GetString("ReplicationTaskIndividualAssessmentArn");
-
     m_replicationTaskIndividualAssessmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationTaskAssessmentRunArn"))
   {
     m_replicationTaskAssessmentRunArn = jsonValue.GetString("ReplicationTaskAssessmentRunArn");
-
     m_replicationTaskAssessmentRunArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndividualAssessmentName"))
   {
     m_individualAssessmentName = jsonValue.GetString("IndividualAssessmentName");
-
     m_individualAssessmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationTaskIndividualAssessmentStartDate"))
   {
     m_replicationTaskIndividualAssessmentStartDate = jsonValue.GetDouble("ReplicationTaskIndividualAssessmentStartDate");
-
     m_replicationTaskIndividualAssessmentStartDateHasBeenSet = true;
   }
-
   return *this;
 }
 

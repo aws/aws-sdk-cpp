@@ -33,7 +33,7 @@ namespace Model
   class GatewayCapabilitySummary
   {
   public:
-    AWS_IOTSITEWISE_API GatewayCapabilitySummary();
+    AWS_IOTSITEWISE_API GatewayCapabilitySummary() = default;
     AWS_IOTSITEWISE_API GatewayCapabilitySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API GatewayCapabilitySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
      * where <code>version</code> is a number such as <code>1</code>.</p>
      */
-    inline const Aws::String& GetCapabilityNamespace() const{ return m_capabilityNamespace; }
+    inline const Aws::String& GetCapabilityNamespace() const { return m_capabilityNamespace; }
     inline bool CapabilityNamespaceHasBeenSet() const { return m_capabilityNamespaceHasBeenSet; }
-    inline void SetCapabilityNamespace(const Aws::String& value) { m_capabilityNamespaceHasBeenSet = true; m_capabilityNamespace = value; }
-    inline void SetCapabilityNamespace(Aws::String&& value) { m_capabilityNamespaceHasBeenSet = true; m_capabilityNamespace = std::move(value); }
-    inline void SetCapabilityNamespace(const char* value) { m_capabilityNamespaceHasBeenSet = true; m_capabilityNamespace.assign(value); }
-    inline GatewayCapabilitySummary& WithCapabilityNamespace(const Aws::String& value) { SetCapabilityNamespace(value); return *this;}
-    inline GatewayCapabilitySummary& WithCapabilityNamespace(Aws::String&& value) { SetCapabilityNamespace(std::move(value)); return *this;}
-    inline GatewayCapabilitySummary& WithCapabilityNamespace(const char* value) { SetCapabilityNamespace(value); return *this;}
+    template<typename CapabilityNamespaceT = Aws::String>
+    void SetCapabilityNamespace(CapabilityNamespaceT&& value) { m_capabilityNamespaceHasBeenSet = true; m_capabilityNamespace = std::forward<CapabilityNamespaceT>(value); }
+    template<typename CapabilityNamespaceT = Aws::String>
+    GatewayCapabilitySummary& WithCapabilityNamespace(CapabilityNamespaceT&& value) { SetCapabilityNamespace(std::forward<CapabilityNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,19 +68,17 @@ namespace Model
      * <code>UNKNOWN</code> – The synchronization status is currently unknown due to an
      * undetermined or temporary error.</p> </li> </ul>
      */
-    inline const CapabilitySyncStatus& GetCapabilitySyncStatus() const{ return m_capabilitySyncStatus; }
+    inline CapabilitySyncStatus GetCapabilitySyncStatus() const { return m_capabilitySyncStatus; }
     inline bool CapabilitySyncStatusHasBeenSet() const { return m_capabilitySyncStatusHasBeenSet; }
-    inline void SetCapabilitySyncStatus(const CapabilitySyncStatus& value) { m_capabilitySyncStatusHasBeenSet = true; m_capabilitySyncStatus = value; }
-    inline void SetCapabilitySyncStatus(CapabilitySyncStatus&& value) { m_capabilitySyncStatusHasBeenSet = true; m_capabilitySyncStatus = std::move(value); }
-    inline GatewayCapabilitySummary& WithCapabilitySyncStatus(const CapabilitySyncStatus& value) { SetCapabilitySyncStatus(value); return *this;}
-    inline GatewayCapabilitySummary& WithCapabilitySyncStatus(CapabilitySyncStatus&& value) { SetCapabilitySyncStatus(std::move(value)); return *this;}
+    inline void SetCapabilitySyncStatus(CapabilitySyncStatus value) { m_capabilitySyncStatusHasBeenSet = true; m_capabilitySyncStatus = value; }
+    inline GatewayCapabilitySummary& WithCapabilitySyncStatus(CapabilitySyncStatus value) { SetCapabilitySyncStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_capabilityNamespace;
     bool m_capabilityNamespaceHasBeenSet = false;
 
-    CapabilitySyncStatus m_capabilitySyncStatus;
+    CapabilitySyncStatus m_capabilitySyncStatus{CapabilitySyncStatus::NOT_SET};
     bool m_capabilitySyncStatusHasBeenSet = false;
   };
 

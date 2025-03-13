@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteIntegrationRequest::DeleteIntegrationRequest() : 
-    m_integrationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIntegrationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

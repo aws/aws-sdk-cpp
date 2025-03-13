@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SubnetIpPrefixes::SubnetIpPrefixes() : 
-    m_subnetIdHasBeenSet(false),
-    m_ipPrefixesHasBeenSet(false)
-{
-}
-
 SubnetIpPrefixes::SubnetIpPrefixes(const XmlNode& xmlNode)
-  : SubnetIpPrefixes()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ SubnetIpPrefixes& SubnetIpPrefixes::operator =(const XmlNode& xmlNode)
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode ipPrefixesNode = resultNode.FirstChild("ipPrefixSet");
     if(!ipPrefixesNode.IsNull())
     {
       XmlNode ipPrefixesMember = ipPrefixesNode.FirstChild("item");
+      m_ipPrefixesHasBeenSet = !ipPrefixesMember.IsNull();
       while(!ipPrefixesMember.IsNull())
       {
         m_ipPrefixes.push_back(ipPrefixesMember.GetText());
         ipPrefixesMember = ipPrefixesMember.NextNode("item");
       }
 
-      m_ipPrefixesHasBeenSet = true;
+       m_ipPrefixesHasBeenSet = true;
     }
   }
 

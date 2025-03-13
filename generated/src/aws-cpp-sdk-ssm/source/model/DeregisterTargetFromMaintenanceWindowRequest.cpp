@@ -12,14 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterTargetFromMaintenanceWindowRequest::DeregisterTargetFromMaintenanceWindowRequest() : 
-    m_windowIdHasBeenSet(false),
-    m_windowTargetIdHasBeenSet(false),
-    m_safe(false),
-    m_safeHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterTargetFromMaintenanceWindowRequest::SerializePayload() const
 {
   JsonValue payload;

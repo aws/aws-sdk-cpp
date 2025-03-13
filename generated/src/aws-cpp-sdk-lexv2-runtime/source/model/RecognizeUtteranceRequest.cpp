@@ -15,18 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RecognizeUtteranceRequest::RecognizeUtteranceRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botAliasIdHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_sessionStateHasBeenSet(false),
-    m_requestAttributesHasBeenSet(false),
-    m_requestContentTypeHasBeenSet(false),
-    m_responseContentTypeHasBeenSet(false)
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection RecognizeUtteranceRequest::GetRequestSpecificHeaders() const

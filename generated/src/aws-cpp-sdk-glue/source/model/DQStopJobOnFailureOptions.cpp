@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DQStopJobOnFailureOptions::DQStopJobOnFailureOptions() : 
-    m_stopJobOnFailureTiming(DQStopJobOnFailureTiming::NOT_SET),
-    m_stopJobOnFailureTimingHasBeenSet(false)
-{
-}
-
 DQStopJobOnFailureOptions::DQStopJobOnFailureOptions(JsonView jsonValue)
-  : DQStopJobOnFailureOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DQStopJobOnFailureOptions& DQStopJobOnFailureOptions::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("StopJobOnFailureTiming"))
   {
     m_stopJobOnFailureTiming = DQStopJobOnFailureTimingMapper::GetDQStopJobOnFailureTimingForName(jsonValue.GetString("StopJobOnFailureTiming"));
-
     m_stopJobOnFailureTimingHasBeenSet = true;
   }
-
   return *this;
 }
 

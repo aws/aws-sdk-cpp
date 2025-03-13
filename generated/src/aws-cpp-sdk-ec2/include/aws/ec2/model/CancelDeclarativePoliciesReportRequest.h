@@ -21,7 +21,7 @@ namespace Model
   class CancelDeclarativePoliciesReportRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CancelDeclarativePoliciesReportRequest();
+    AWS_EC2_API CancelDeclarativePoliciesReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CancelDeclarativePoliciesReportRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>The ID of the report.</p>
      */
-    inline const Aws::String& GetReportId() const{ return m_reportId; }
+    inline const Aws::String& GetReportId() const { return m_reportId; }
     inline bool ReportIdHasBeenSet() const { return m_reportIdHasBeenSet; }
-    inline void SetReportId(const Aws::String& value) { m_reportIdHasBeenSet = true; m_reportId = value; }
-    inline void SetReportId(Aws::String&& value) { m_reportIdHasBeenSet = true; m_reportId = std::move(value); }
-    inline void SetReportId(const char* value) { m_reportIdHasBeenSet = true; m_reportId.assign(value); }
-    inline CancelDeclarativePoliciesReportRequest& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-    inline CancelDeclarativePoliciesReportRequest& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-    inline CancelDeclarativePoliciesReportRequest& WithReportId(const char* value) { SetReportId(value); return *this;}
+    template<typename ReportIdT = Aws::String>
+    void SetReportId(ReportIdT&& value) { m_reportIdHasBeenSet = true; m_reportId = std::forward<ReportIdT>(value); }
+    template<typename ReportIdT = Aws::String>
+    CancelDeclarativePoliciesReportRequest& WithReportId(ReportIdT&& value) { SetReportId(std::forward<ReportIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_reportId;

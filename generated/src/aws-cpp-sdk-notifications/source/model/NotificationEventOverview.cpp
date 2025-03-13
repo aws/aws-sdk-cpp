@@ -18,21 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-NotificationEventOverview::NotificationEventOverview() : 
-    m_arnHasBeenSet(false),
-    m_notificationConfigurationArnHasBeenSet(false),
-    m_relatedAccountHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_notificationEventHasBeenSet(false),
-    m_aggregationEventType(AggregationEventType::NOT_SET),
-    m_aggregationEventTypeHasBeenSet(false),
-    m_aggregateNotificationEventArnHasBeenSet(false),
-    m_aggregationSummaryHasBeenSet(false)
-{
-}
-
 NotificationEventOverview::NotificationEventOverview(JsonView jsonValue)
-  : NotificationEventOverview()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ NotificationEventOverview& NotificationEventOverview::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationConfigurationArn"))
   {
     m_notificationConfigurationArn = jsonValue.GetString("notificationConfigurationArn");
-
     m_notificationConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedAccount"))
   {
     m_relatedAccount = jsonValue.GetString("relatedAccount");
-
     m_relatedAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationEvent"))
   {
     m_notificationEvent = jsonValue.GetObject("notificationEvent");
-
     m_notificationEventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationEventType"))
   {
     m_aggregationEventType = AggregationEventTypeMapper::GetAggregationEventTypeForName(jsonValue.GetString("aggregationEventType"));
-
     m_aggregationEventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregateNotificationEventArn"))
   {
     m_aggregateNotificationEventArn = jsonValue.GetString("aggregateNotificationEventArn");
-
     m_aggregateNotificationEventArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationSummary"))
   {
     m_aggregationSummary = jsonValue.GetObject("aggregationSummary");
-
     m_aggregationSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

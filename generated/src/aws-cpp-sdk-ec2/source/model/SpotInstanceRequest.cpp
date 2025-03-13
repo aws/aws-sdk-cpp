@@ -20,36 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SpotInstanceRequest::SpotInstanceRequest() : 
-    m_actualBlockHourlyPriceHasBeenSet(false),
-    m_availabilityZoneGroupHasBeenSet(false),
-    m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_faultHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_launchGroupHasBeenSet(false),
-    m_launchSpecificationHasBeenSet(false),
-    m_launchedAvailabilityZoneHasBeenSet(false),
-    m_productDescription(RIProductDescription::NOT_SET),
-    m_productDescriptionHasBeenSet(false),
-    m_spotInstanceRequestIdHasBeenSet(false),
-    m_spotPriceHasBeenSet(false),
-    m_state(SpotInstanceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(SpotInstanceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_validFromHasBeenSet(false),
-    m_validUntilHasBeenSet(false),
-    m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
-    m_instanceInterruptionBehaviorHasBeenSet(false)
-{
-}
-
 SpotInstanceRequest::SpotInstanceRequest(const XmlNode& xmlNode)
-  : SpotInstanceRequest()
 {
   *this = xmlNode;
 }
@@ -65,120 +36,139 @@ SpotInstanceRequest& SpotInstanceRequest::operator =(const XmlNode& xmlNode)
     {
       m_actualBlockHourlyPrice = Aws::Utils::Xml::DecodeEscapedXmlText(actualBlockHourlyPriceNode.GetText());
       m_actualBlockHourlyPriceHasBeenSet = true;
+       m_actualBlockHourlyPriceHasBeenSet = true;
     }
     XmlNode availabilityZoneGroupNode = resultNode.FirstChild("availabilityZoneGroup");
     if(!availabilityZoneGroupNode.IsNull())
     {
       m_availabilityZoneGroup = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneGroupNode.GetText());
       m_availabilityZoneGroupHasBeenSet = true;
+       m_availabilityZoneGroupHasBeenSet = true;
     }
     XmlNode blockDurationMinutesNode = resultNode.FirstChild("blockDurationMinutes");
     if(!blockDurationMinutesNode.IsNull())
     {
       m_blockDurationMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(blockDurationMinutesNode.GetText()).c_str()).c_str());
       m_blockDurationMinutesHasBeenSet = true;
+       m_blockDurationMinutesHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
+       m_createTimeHasBeenSet = true;
     }
     XmlNode faultNode = resultNode.FirstChild("fault");
     if(!faultNode.IsNull())
     {
       m_fault = faultNode;
       m_faultHasBeenSet = true;
+       m_faultHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode launchGroupNode = resultNode.FirstChild("launchGroup");
     if(!launchGroupNode.IsNull())
     {
       m_launchGroup = Aws::Utils::Xml::DecodeEscapedXmlText(launchGroupNode.GetText());
       m_launchGroupHasBeenSet = true;
+       m_launchGroupHasBeenSet = true;
     }
     XmlNode launchSpecificationNode = resultNode.FirstChild("launchSpecification");
     if(!launchSpecificationNode.IsNull())
     {
       m_launchSpecification = launchSpecificationNode;
       m_launchSpecificationHasBeenSet = true;
+       m_launchSpecificationHasBeenSet = true;
     }
     XmlNode launchedAvailabilityZoneNode = resultNode.FirstChild("launchedAvailabilityZone");
     if(!launchedAvailabilityZoneNode.IsNull())
     {
       m_launchedAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(launchedAvailabilityZoneNode.GetText());
       m_launchedAvailabilityZoneHasBeenSet = true;
+       m_launchedAvailabilityZoneHasBeenSet = true;
     }
     XmlNode productDescriptionNode = resultNode.FirstChild("productDescription");
     if(!productDescriptionNode.IsNull())
     {
-      m_productDescription = RIProductDescriptionMapper::GetRIProductDescriptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText()).c_str()).c_str());
+      m_productDescription = RIProductDescriptionMapper::GetRIProductDescriptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText()).c_str()));
       m_productDescriptionHasBeenSet = true;
+       m_productDescriptionHasBeenSet = true;
     }
     XmlNode spotInstanceRequestIdNode = resultNode.FirstChild("spotInstanceRequestId");
     if(!spotInstanceRequestIdNode.IsNull())
     {
       m_spotInstanceRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotInstanceRequestIdNode.GetText());
       m_spotInstanceRequestIdHasBeenSet = true;
+       m_spotInstanceRequestIdHasBeenSet = true;
     }
     XmlNode spotPriceNode = resultNode.FirstChild("spotPrice");
     if(!spotPriceNode.IsNull())
     {
       m_spotPrice = Aws::Utils::Xml::DecodeEscapedXmlText(spotPriceNode.GetText());
       m_spotPriceHasBeenSet = true;
+       m_spotPriceHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = SpotInstanceStateMapper::GetSpotInstanceStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = SpotInstanceStateMapper::GetSpotInstanceStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = SpotInstanceTypeMapper::GetSpotInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = SpotInstanceTypeMapper::GetSpotInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode validFromNode = resultNode.FirstChild("validFrom");
     if(!validFromNode.IsNull())
     {
       m_validFrom = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validFromNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_validFromHasBeenSet = true;
+       m_validFromHasBeenSet = true;
     }
     XmlNode validUntilNode = resultNode.FirstChild("validUntil");
     if(!validUntilNode.IsNull())
     {
       m_validUntil = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validUntilNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_validUntilHasBeenSet = true;
+       m_validUntilHasBeenSet = true;
     }
     XmlNode instanceInterruptionBehaviorNode = resultNode.FirstChild("instanceInterruptionBehavior");
     if(!instanceInterruptionBehaviorNode.IsNull())
     {
-      m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInterruptionBehaviorNode.GetText()).c_str()).c_str());
+      m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInterruptionBehaviorNode.GetText()).c_str()));
       m_instanceInterruptionBehaviorHasBeenSet = true;
+       m_instanceInterruptionBehaviorHasBeenSet = true;
     }
   }
 

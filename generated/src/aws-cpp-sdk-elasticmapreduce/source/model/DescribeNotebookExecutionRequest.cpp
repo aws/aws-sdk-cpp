@@ -12,11 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeNotebookExecutionRequest::DescribeNotebookExecutionRequest() : 
-    m_notebookExecutionIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNotebookExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

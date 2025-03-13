@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-MinimumEngineVersionPerAllowedValue::MinimumEngineVersionPerAllowedValue() : 
-    m_allowedValueHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false)
-{
-}
-
 MinimumEngineVersionPerAllowedValue::MinimumEngineVersionPerAllowedValue(const XmlNode& xmlNode)
-  : MinimumEngineVersionPerAllowedValue()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ MinimumEngineVersionPerAllowedValue& MinimumEngineVersionPerAllowedValue::operat
     {
       m_allowedValue = Aws::Utils::Xml::DecodeEscapedXmlText(allowedValueNode.GetText());
       m_allowedValueHasBeenSet = true;
+       m_allowedValueHasBeenSet = true;
     }
     XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
     if(!minimumEngineVersionNode.IsNull())
     {
       m_minimumEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(minimumEngineVersionNode.GetText());
       m_minimumEngineVersionHasBeenSet = true;
+       m_minimumEngineVersionHasBeenSet = true;
     }
   }
 

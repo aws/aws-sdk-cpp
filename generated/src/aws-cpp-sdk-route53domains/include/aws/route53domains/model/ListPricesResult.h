@@ -29,7 +29,7 @@ namespace Model
   class ListPricesResult
   {
   public:
-    AWS_ROUTE53DOMAINS_API ListPricesResult();
+    AWS_ROUTE53DOMAINS_API ListPricesResult() = default;
     AWS_ROUTE53DOMAINS_API ListPricesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53DOMAINS_API ListPricesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A complex type that includes all the pricing information. If you specify a
      * TLD, this array contains only the pricing for that TLD.</p>
      */
-    inline const Aws::Vector<DomainPrice>& GetPrices() const{ return m_prices; }
-    inline void SetPrices(const Aws::Vector<DomainPrice>& value) { m_prices = value; }
-    inline void SetPrices(Aws::Vector<DomainPrice>&& value) { m_prices = std::move(value); }
-    inline ListPricesResult& WithPrices(const Aws::Vector<DomainPrice>& value) { SetPrices(value); return *this;}
-    inline ListPricesResult& WithPrices(Aws::Vector<DomainPrice>&& value) { SetPrices(std::move(value)); return *this;}
-    inline ListPricesResult& AddPrices(const DomainPrice& value) { m_prices.push_back(value); return *this; }
-    inline ListPricesResult& AddPrices(DomainPrice&& value) { m_prices.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainPrice>& GetPrices() const { return m_prices; }
+    template<typename PricesT = Aws::Vector<DomainPrice>>
+    void SetPrices(PricesT&& value) { m_pricesHasBeenSet = true; m_prices = std::forward<PricesT>(value); }
+    template<typename PricesT = Aws::Vector<DomainPrice>>
+    ListPricesResult& WithPrices(PricesT&& value) { SetPrices(std::forward<PricesT>(value)); return *this;}
+    template<typename PricesT = DomainPrice>
+    ListPricesResult& AddPrices(PricesT&& value) { m_pricesHasBeenSet = true; m_prices.emplace_back(std::forward<PricesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * only for all TLDs. If you specify a TLD, don't specify a
      * <code>NextPageMarker</code>.</p>
      */
-    inline const Aws::String& GetNextPageMarker() const{ return m_nextPageMarker; }
-    inline void SetNextPageMarker(const Aws::String& value) { m_nextPageMarker = value; }
-    inline void SetNextPageMarker(Aws::String&& value) { m_nextPageMarker = std::move(value); }
-    inline void SetNextPageMarker(const char* value) { m_nextPageMarker.assign(value); }
-    inline ListPricesResult& WithNextPageMarker(const Aws::String& value) { SetNextPageMarker(value); return *this;}
-    inline ListPricesResult& WithNextPageMarker(Aws::String&& value) { SetNextPageMarker(std::move(value)); return *this;}
-    inline ListPricesResult& WithNextPageMarker(const char* value) { SetNextPageMarker(value); return *this;}
+    inline const Aws::String& GetNextPageMarker() const { return m_nextPageMarker; }
+    template<typename NextPageMarkerT = Aws::String>
+    void SetNextPageMarker(NextPageMarkerT&& value) { m_nextPageMarkerHasBeenSet = true; m_nextPageMarker = std::forward<NextPageMarkerT>(value); }
+    template<typename NextPageMarkerT = Aws::String>
+    ListPricesResult& WithNextPageMarker(NextPageMarkerT&& value) { SetNextPageMarker(std::forward<NextPageMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPricesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPricesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPricesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPricesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DomainPrice> m_prices;
+    bool m_pricesHasBeenSet = false;
 
     Aws::String m_nextPageMarker;
+    bool m_nextPageMarkerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

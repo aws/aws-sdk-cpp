@@ -29,7 +29,7 @@ namespace Model
   class ListSchemaExtensionsResult
   {
   public:
-    AWS_DIRECTORYSERVICE_API ListSchemaExtensionsResult();
+    AWS_DIRECTORYSERVICE_API ListSchemaExtensionsResult() = default;
     AWS_DIRECTORYSERVICE_API ListSchemaExtensionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICE_API ListSchemaExtensionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the schema extensions applied to the directory.</p>
      */
-    inline const Aws::Vector<SchemaExtensionInfo>& GetSchemaExtensionsInfo() const{ return m_schemaExtensionsInfo; }
-    inline void SetSchemaExtensionsInfo(const Aws::Vector<SchemaExtensionInfo>& value) { m_schemaExtensionsInfo = value; }
-    inline void SetSchemaExtensionsInfo(Aws::Vector<SchemaExtensionInfo>&& value) { m_schemaExtensionsInfo = std::move(value); }
-    inline ListSchemaExtensionsResult& WithSchemaExtensionsInfo(const Aws::Vector<SchemaExtensionInfo>& value) { SetSchemaExtensionsInfo(value); return *this;}
-    inline ListSchemaExtensionsResult& WithSchemaExtensionsInfo(Aws::Vector<SchemaExtensionInfo>&& value) { SetSchemaExtensionsInfo(std::move(value)); return *this;}
-    inline ListSchemaExtensionsResult& AddSchemaExtensionsInfo(const SchemaExtensionInfo& value) { m_schemaExtensionsInfo.push_back(value); return *this; }
-    inline ListSchemaExtensionsResult& AddSchemaExtensionsInfo(SchemaExtensionInfo&& value) { m_schemaExtensionsInfo.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SchemaExtensionInfo>& GetSchemaExtensionsInfo() const { return m_schemaExtensionsInfo; }
+    template<typename SchemaExtensionsInfoT = Aws::Vector<SchemaExtensionInfo>>
+    void SetSchemaExtensionsInfo(SchemaExtensionsInfoT&& value) { m_schemaExtensionsInfoHasBeenSet = true; m_schemaExtensionsInfo = std::forward<SchemaExtensionsInfoT>(value); }
+    template<typename SchemaExtensionsInfoT = Aws::Vector<SchemaExtensionInfo>>
+    ListSchemaExtensionsResult& WithSchemaExtensionsInfo(SchemaExtensionsInfoT&& value) { SetSchemaExtensionsInfo(std::forward<SchemaExtensionsInfoT>(value)); return *this;}
+    template<typename SchemaExtensionsInfoT = SchemaExtensionInfo>
+    ListSchemaExtensionsResult& AddSchemaExtensionsInfo(SchemaExtensionsInfoT&& value) { m_schemaExtensionsInfoHasBeenSet = true; m_schemaExtensionsInfo.emplace_back(std::forward<SchemaExtensionsInfoT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <code>NextToken</code> parameter in a subsequent call to
      * <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSchemaExtensionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSchemaExtensionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSchemaExtensionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSchemaExtensionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSchemaExtensionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSchemaExtensionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSchemaExtensionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSchemaExtensionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SchemaExtensionInfo> m_schemaExtensionsInfo;
+    bool m_schemaExtensionsInfoHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

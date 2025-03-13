@@ -32,7 +32,7 @@ namespace Model
   class EBSSavingsEstimationMode
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API EBSSavingsEstimationMode();
+    AWS_COMPUTEOPTIMIZER_API EBSSavingsEstimationMode() = default;
     AWS_COMPUTEOPTIMIZER_API EBSSavingsEstimationMode(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API EBSSavingsEstimationMode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p> Describes the source for calculating the savings opportunity for Amazon EBS
      * volumes. </p>
      */
-    inline const EBSSavingsEstimationModeSource& GetSource() const{ return m_source; }
+    inline EBSSavingsEstimationModeSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const EBSSavingsEstimationModeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(EBSSavingsEstimationModeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline EBSSavingsEstimationMode& WithSource(const EBSSavingsEstimationModeSource& value) { SetSource(value); return *this;}
-    inline EBSSavingsEstimationMode& WithSource(EBSSavingsEstimationModeSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(EBSSavingsEstimationModeSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline EBSSavingsEstimationMode& WithSource(EBSSavingsEstimationModeSource value) { SetSource(value); return *this;}
     ///@}
   private:
 
-    EBSSavingsEstimationModeSource m_source;
+    EBSSavingsEstimationModeSource m_source{EBSSavingsEstimationModeSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
   };
 

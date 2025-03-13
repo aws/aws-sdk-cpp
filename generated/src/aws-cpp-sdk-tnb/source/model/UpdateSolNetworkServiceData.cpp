@@ -18,14 +18,7 @@ namespace tnb
 namespace Model
 {
 
-UpdateSolNetworkServiceData::UpdateSolNetworkServiceData() : 
-    m_additionalParamsForNsHasBeenSet(false),
-    m_nsdInfoIdHasBeenSet(false)
-{
-}
-
 UpdateSolNetworkServiceData::UpdateSolNetworkServiceData(JsonView jsonValue)
-  : UpdateSolNetworkServiceData()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UpdateSolNetworkServiceData& UpdateSolNetworkServiceData::operator =(JsonView js
   if(jsonValue.ValueExists("additionalParamsForNs"))
   {
     m_additionalParamsForNs = jsonValue.GetObject("additionalParamsForNs");
-
     m_additionalParamsForNsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsdInfoId"))
   {
     m_nsdInfoId = jsonValue.GetString("nsdInfoId");
-
     m_nsdInfoIdHasBeenSet = true;
   }
-
   return *this;
 }
 

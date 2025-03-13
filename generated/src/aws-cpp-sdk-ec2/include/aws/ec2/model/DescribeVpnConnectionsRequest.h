@@ -27,7 +27,7 @@ namespace Model
   class DescribeVpnConnectionsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeVpnConnectionsRequest();
+    AWS_EC2_API DescribeVpnConnectionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -71,14 +71,14 @@ namespace Model
      * with the VPN connection.</p> </li> <li> <p> <code>transit-gateway-id</code> -
      * The ID of a transit gateway associated with the VPN connection.</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeVpnConnectionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeVpnConnectionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeVpnConnectionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeVpnConnectionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeVpnConnectionsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeVpnConnectionsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,15 +86,14 @@ namespace Model
      * <p>One or more VPN connection IDs.</p> <p>Default: Describes your VPN
      * connections.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpnConnectionIds() const{ return m_vpnConnectionIds; }
+    inline const Aws::Vector<Aws::String>& GetVpnConnectionIds() const { return m_vpnConnectionIds; }
     inline bool VpnConnectionIdsHasBeenSet() const { return m_vpnConnectionIdsHasBeenSet; }
-    inline void SetVpnConnectionIds(const Aws::Vector<Aws::String>& value) { m_vpnConnectionIdsHasBeenSet = true; m_vpnConnectionIds = value; }
-    inline void SetVpnConnectionIds(Aws::Vector<Aws::String>&& value) { m_vpnConnectionIdsHasBeenSet = true; m_vpnConnectionIds = std::move(value); }
-    inline DescribeVpnConnectionsRequest& WithVpnConnectionIds(const Aws::Vector<Aws::String>& value) { SetVpnConnectionIds(value); return *this;}
-    inline DescribeVpnConnectionsRequest& WithVpnConnectionIds(Aws::Vector<Aws::String>&& value) { SetVpnConnectionIds(std::move(value)); return *this;}
-    inline DescribeVpnConnectionsRequest& AddVpnConnectionIds(const Aws::String& value) { m_vpnConnectionIdsHasBeenSet = true; m_vpnConnectionIds.push_back(value); return *this; }
-    inline DescribeVpnConnectionsRequest& AddVpnConnectionIds(Aws::String&& value) { m_vpnConnectionIdsHasBeenSet = true; m_vpnConnectionIds.push_back(std::move(value)); return *this; }
-    inline DescribeVpnConnectionsRequest& AddVpnConnectionIds(const char* value) { m_vpnConnectionIdsHasBeenSet = true; m_vpnConnectionIds.push_back(value); return *this; }
+    template<typename VpnConnectionIdsT = Aws::Vector<Aws::String>>
+    void SetVpnConnectionIds(VpnConnectionIdsT&& value) { m_vpnConnectionIdsHasBeenSet = true; m_vpnConnectionIds = std::forward<VpnConnectionIdsT>(value); }
+    template<typename VpnConnectionIdsT = Aws::Vector<Aws::String>>
+    DescribeVpnConnectionsRequest& WithVpnConnectionIds(VpnConnectionIdsT&& value) { SetVpnConnectionIds(std::forward<VpnConnectionIdsT>(value)); return *this;}
+    template<typename VpnConnectionIdsT = Aws::String>
+    DescribeVpnConnectionsRequest& AddVpnConnectionIds(VpnConnectionIdsT&& value) { m_vpnConnectionIdsHasBeenSet = true; m_vpnConnectionIds.emplace_back(std::forward<VpnConnectionIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,7 +103,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeVpnConnectionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -117,7 +116,7 @@ namespace Model
     Aws::Vector<Aws::String> m_vpnConnectionIds;
     bool m_vpnConnectionIdsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

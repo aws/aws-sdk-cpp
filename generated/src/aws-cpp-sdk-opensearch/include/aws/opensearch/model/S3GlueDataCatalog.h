@@ -32,7 +32,7 @@ namespace Model
   class S3GlueDataCatalog
   {
   public:
-    AWS_OPENSEARCHSERVICE_API S3GlueDataCatalog();
+    AWS_OPENSEARCHSERVICE_API S3GlueDataCatalog() = default;
     AWS_OPENSEARCHSERVICE_API S3GlueDataCatalog(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API S3GlueDataCatalog& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>&gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline S3GlueDataCatalog& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline S3GlueDataCatalog& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline S3GlueDataCatalog& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    S3GlueDataCatalog& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

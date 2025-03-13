@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RejectTransitGatewayMulticastDomainAssociationsResponse::RejectTransitGatewayMulticastDomainAssociationsResponse()
-{
-}
-
 RejectTransitGatewayMulticastDomainAssociationsResponse::RejectTransitGatewayMulticastDomainAssociationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ RejectTransitGatewayMulticastDomainAssociationsResponse& RejectTransitGatewayMul
     if(!associationsNode.IsNull())
     {
       m_associations = associationsNode;
+      m_associationsHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ RejectTransitGatewayMulticastDomainAssociationsResponse& RejectTransitGatewayMul
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RejectTransitGatewayMulticastDomainAssociationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

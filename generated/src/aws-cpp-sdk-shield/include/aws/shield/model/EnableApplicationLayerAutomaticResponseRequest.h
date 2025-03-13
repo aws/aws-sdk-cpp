@@ -22,7 +22,7 @@ namespace Model
   class EnableApplicationLayerAutomaticResponseRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API EnableApplicationLayerAutomaticResponseRequest();
+    AWS_SHIELD_API EnableApplicationLayerAutomaticResponseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) of the protected resource.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline EnableApplicationLayerAutomaticResponseRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline EnableApplicationLayerAutomaticResponseRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline EnableApplicationLayerAutomaticResponseRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    EnableApplicationLayerAutomaticResponseRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group,
      * inside the web ACL that you have associated with the resource. </p>
      */
-    inline const ResponseAction& GetAction() const{ return m_action; }
+    inline const ResponseAction& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ResponseAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ResponseAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline EnableApplicationLayerAutomaticResponseRequest& WithAction(const ResponseAction& value) { SetAction(value); return *this;}
-    inline EnableApplicationLayerAutomaticResponseRequest& WithAction(ResponseAction&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = ResponseAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = ResponseAction>
+    EnableApplicationLayerAutomaticResponseRequest& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
   private:
 

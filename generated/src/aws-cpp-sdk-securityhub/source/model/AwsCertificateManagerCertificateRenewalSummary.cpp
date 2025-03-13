@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCertificateManagerCertificateRenewalSummary::AwsCertificateManagerCertificateRenewalSummary() : 
-    m_domainValidationOptionsHasBeenSet(false),
-    m_renewalStatusHasBeenSet(false),
-    m_renewalStatusReasonHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 AwsCertificateManagerCertificateRenewalSummary::AwsCertificateManagerCertificateRenewalSummary(JsonView jsonValue)
-  : AwsCertificateManagerCertificateRenewalSummary()
 {
   *this = jsonValue;
 }
@@ -43,28 +34,21 @@ AwsCertificateManagerCertificateRenewalSummary& AwsCertificateManagerCertificate
     }
     m_domainValidationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RenewalStatus"))
   {
     m_renewalStatus = jsonValue.GetString("RenewalStatus");
-
     m_renewalStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RenewalStatusReason"))
   {
     m_renewalStatusReason = jsonValue.GetString("RenewalStatusReason");
-
     m_renewalStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

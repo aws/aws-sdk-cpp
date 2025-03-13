@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringOutputConfig::MonitoringOutputConfig() : 
-    m_monitoringOutputsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 MonitoringOutputConfig::MonitoringOutputConfig(JsonView jsonValue)
-  : MonitoringOutputConfig()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ MonitoringOutputConfig& MonitoringOutputConfig::operator =(JsonView jsonValue)
     }
     m_monitoringOutputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

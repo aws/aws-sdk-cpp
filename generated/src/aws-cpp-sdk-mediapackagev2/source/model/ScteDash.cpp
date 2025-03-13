@@ -18,14 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-ScteDash::ScteDash() : 
-    m_adMarkerDash(AdMarkerDash::NOT_SET),
-    m_adMarkerDashHasBeenSet(false)
-{
-}
-
 ScteDash::ScteDash(JsonView jsonValue)
-  : ScteDash()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ScteDash& ScteDash::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AdMarkerDash"))
   {
     m_adMarkerDash = AdMarkerDashMapper::GetAdMarkerDashForName(jsonValue.GetString("AdMarkerDash"));
-
     m_adMarkerDashHasBeenSet = true;
   }
-
   return *this;
 }
 

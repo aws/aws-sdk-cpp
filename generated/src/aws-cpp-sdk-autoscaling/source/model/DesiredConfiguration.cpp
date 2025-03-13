@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-DesiredConfiguration::DesiredConfiguration() : 
-    m_launchTemplateHasBeenSet(false),
-    m_mixedInstancesPolicyHasBeenSet(false)
-{
-}
-
 DesiredConfiguration::DesiredConfiguration(const XmlNode& xmlNode)
-  : DesiredConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DesiredConfiguration& DesiredConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_launchTemplate = launchTemplateNode;
       m_launchTemplateHasBeenSet = true;
+       m_launchTemplateHasBeenSet = true;
     }
     XmlNode mixedInstancesPolicyNode = resultNode.FirstChild("MixedInstancesPolicy");
     if(!mixedInstancesPolicyNode.IsNull())
     {
       m_mixedInstancesPolicy = mixedInstancesPolicyNode;
       m_mixedInstancesPolicyHasBeenSet = true;
+       m_mixedInstancesPolicyHasBeenSet = true;
     }
   }
 

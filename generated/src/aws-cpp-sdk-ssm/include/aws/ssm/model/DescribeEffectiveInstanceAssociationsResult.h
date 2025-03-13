@@ -29,7 +29,7 @@ namespace Model
   class DescribeEffectiveInstanceAssociationsResult
   {
   public:
-    AWS_SSM_API DescribeEffectiveInstanceAssociationsResult();
+    AWS_SSM_API DescribeEffectiveInstanceAssociationsResult() = default;
     AWS_SSM_API DescribeEffectiveInstanceAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API DescribeEffectiveInstanceAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The associations for the requested managed node.</p>
      */
-    inline const Aws::Vector<InstanceAssociation>& GetAssociations() const{ return m_associations; }
-    inline void SetAssociations(const Aws::Vector<InstanceAssociation>& value) { m_associations = value; }
-    inline void SetAssociations(Aws::Vector<InstanceAssociation>&& value) { m_associations = std::move(value); }
-    inline DescribeEffectiveInstanceAssociationsResult& WithAssociations(const Aws::Vector<InstanceAssociation>& value) { SetAssociations(value); return *this;}
-    inline DescribeEffectiveInstanceAssociationsResult& WithAssociations(Aws::Vector<InstanceAssociation>&& value) { SetAssociations(std::move(value)); return *this;}
-    inline DescribeEffectiveInstanceAssociationsResult& AddAssociations(const InstanceAssociation& value) { m_associations.push_back(value); return *this; }
-    inline DescribeEffectiveInstanceAssociationsResult& AddAssociations(InstanceAssociation&& value) { m_associations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InstanceAssociation>& GetAssociations() const { return m_associations; }
+    template<typename AssociationsT = Aws::Vector<InstanceAssociation>>
+    void SetAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations = std::forward<AssociationsT>(value); }
+    template<typename AssociationsT = Aws::Vector<InstanceAssociation>>
+    DescribeEffectiveInstanceAssociationsResult& WithAssociations(AssociationsT&& value) { SetAssociations(std::forward<AssociationsT>(value)); return *this;}
+    template<typename AssociationsT = InstanceAssociation>
+    DescribeEffectiveInstanceAssociationsResult& AddAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations.emplace_back(std::forward<AssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeEffectiveInstanceAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeEffectiveInstanceAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeEffectiveInstanceAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeEffectiveInstanceAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEffectiveInstanceAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEffectiveInstanceAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEffectiveInstanceAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEffectiveInstanceAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InstanceAssociation> m_associations;
+    bool m_associationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

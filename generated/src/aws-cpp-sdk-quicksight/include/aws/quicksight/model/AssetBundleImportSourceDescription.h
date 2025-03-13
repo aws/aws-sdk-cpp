@@ -34,7 +34,7 @@ namespace Model
   class AssetBundleImportSourceDescription
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportSourceDescription();
+    AWS_QUICKSIGHT_API AssetBundleImportSourceDescription() = default;
     AWS_QUICKSIGHT_API AssetBundleImportSourceDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportSourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
      * after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh
      * URL if needed. The downloaded asset bundle is a <code>.qs</code> zip file.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline AssetBundleImportSourceDescription& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline AssetBundleImportSourceDescription& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline AssetBundleImportSourceDescription& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    AssetBundleImportSourceDescription& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 URI that you provided at the start of the import job.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline AssetBundleImportSourceDescription& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline AssetBundleImportSourceDescription& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline AssetBundleImportSourceDescription& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    AssetBundleImportSourceDescription& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
   private:
 

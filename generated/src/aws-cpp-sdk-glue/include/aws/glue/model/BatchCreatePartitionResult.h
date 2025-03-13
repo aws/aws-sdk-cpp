@@ -29,7 +29,7 @@ namespace Model
   class BatchCreatePartitionResult
   {
   public:
-    AWS_GLUE_API BatchCreatePartitionResult();
+    AWS_GLUE_API BatchCreatePartitionResult() = default;
     AWS_GLUE_API BatchCreatePartitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API BatchCreatePartitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The errors encountered when trying to create the requested partitions.</p>
      */
-    inline const Aws::Vector<PartitionError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<PartitionError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<PartitionError>&& value) { m_errors = std::move(value); }
-    inline BatchCreatePartitionResult& WithErrors(const Aws::Vector<PartitionError>& value) { SetErrors(value); return *this;}
-    inline BatchCreatePartitionResult& WithErrors(Aws::Vector<PartitionError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchCreatePartitionResult& AddErrors(const PartitionError& value) { m_errors.push_back(value); return *this; }
-    inline BatchCreatePartitionResult& AddErrors(PartitionError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PartitionError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<PartitionError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<PartitionError>>
+    BatchCreatePartitionResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = PartitionError>
+    BatchCreatePartitionResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchCreatePartitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchCreatePartitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchCreatePartitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchCreatePartitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PartitionError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class TransitionEvent
   {
   public:
-    AWS_IOTEVENTS_API TransitionEvent();
+    AWS_IOTEVENTS_API TransitionEvent() = default;
     AWS_IOTEVENTS_API TransitionEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API TransitionEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the transition event.</p>
      */
-    inline const Aws::String& GetEventName() const{ return m_eventName; }
+    inline const Aws::String& GetEventName() const { return m_eventName; }
     inline bool EventNameHasBeenSet() const { return m_eventNameHasBeenSet; }
-    inline void SetEventName(const Aws::String& value) { m_eventNameHasBeenSet = true; m_eventName = value; }
-    inline void SetEventName(Aws::String&& value) { m_eventNameHasBeenSet = true; m_eventName = std::move(value); }
-    inline void SetEventName(const char* value) { m_eventNameHasBeenSet = true; m_eventName.assign(value); }
-    inline TransitionEvent& WithEventName(const Aws::String& value) { SetEventName(value); return *this;}
-    inline TransitionEvent& WithEventName(Aws::String&& value) { SetEventName(std::move(value)); return *this;}
-    inline TransitionEvent& WithEventName(const char* value) { SetEventName(value); return *this;}
+    template<typename EventNameT = Aws::String>
+    void SetEventName(EventNameT&& value) { m_eventNameHasBeenSet = true; m_eventName = std::forward<EventNameT>(value); }
+    template<typename EventNameT = Aws::String>
+    TransitionEvent& WithEventName(EventNameT&& value) { SetEventName(std::forward<EventNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,42 +57,38 @@ namespace Model
      * <p>Required. A Boolean expression that when TRUE causes the actions to be
      * performed and the <code>nextState</code> to be entered.</p>
      */
-    inline const Aws::String& GetCondition() const{ return m_condition; }
+    inline const Aws::String& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
-    inline TransitionEvent& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
-    inline TransitionEvent& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
-    inline TransitionEvent& WithCondition(const char* value) { SetCondition(value); return *this;}
+    template<typename ConditionT = Aws::String>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = Aws::String>
+    TransitionEvent& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The actions to be performed.</p>
      */
-    inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Action>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline TransitionEvent& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
-    inline TransitionEvent& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
-    inline TransitionEvent& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline TransitionEvent& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<Action>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Action>>
+    TransitionEvent& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Action>
+    TransitionEvent& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The next state to enter.</p>
      */
-    inline const Aws::String& GetNextState() const{ return m_nextState; }
+    inline const Aws::String& GetNextState() const { return m_nextState; }
     inline bool NextStateHasBeenSet() const { return m_nextStateHasBeenSet; }
-    inline void SetNextState(const Aws::String& value) { m_nextStateHasBeenSet = true; m_nextState = value; }
-    inline void SetNextState(Aws::String&& value) { m_nextStateHasBeenSet = true; m_nextState = std::move(value); }
-    inline void SetNextState(const char* value) { m_nextStateHasBeenSet = true; m_nextState.assign(value); }
-    inline TransitionEvent& WithNextState(const Aws::String& value) { SetNextState(value); return *this;}
-    inline TransitionEvent& WithNextState(Aws::String&& value) { SetNextState(std::move(value)); return *this;}
-    inline TransitionEvent& WithNextState(const char* value) { SetNextState(value); return *this;}
+    template<typename NextStateT = Aws::String>
+    void SetNextState(NextStateT&& value) { m_nextStateHasBeenSet = true; m_nextState = std::forward<NextStateT>(value); }
+    template<typename NextStateT = Aws::String>
+    TransitionEvent& WithNextState(NextStateT&& value) { SetNextState(std::forward<NextStateT>(value)); return *this;}
     ///@}
   private:
 

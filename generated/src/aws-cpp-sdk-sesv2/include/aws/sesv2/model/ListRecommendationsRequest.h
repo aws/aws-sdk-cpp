@@ -27,7 +27,7 @@ namespace Model
   class ListRecommendationsRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API ListRecommendationsRequest();
+    AWS_SESV2_API ListRecommendationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,18 +44,15 @@ namespace Model
      * filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or
      * <code>STATUS</code> and <code>TYPE</code> </p>
      */
-    inline const Aws::Map<ListRecommendationsFilterKey, Aws::String>& GetFilter() const{ return m_filter; }
+    inline const Aws::Map<ListRecommendationsFilterKey, Aws::String>& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::Map<ListRecommendationsFilterKey, Aws::String>& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::Map<ListRecommendationsFilterKey, Aws::String>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListRecommendationsRequest& WithFilter(const Aws::Map<ListRecommendationsFilterKey, Aws::String>& value) { SetFilter(value); return *this;}
-    inline ListRecommendationsRequest& WithFilter(Aws::Map<ListRecommendationsFilterKey, Aws::String>&& value) { SetFilter(std::move(value)); return *this;}
-    inline ListRecommendationsRequest& AddFilter(const ListRecommendationsFilterKey& key, const Aws::String& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
-    inline ListRecommendationsRequest& AddFilter(ListRecommendationsFilterKey&& key, const Aws::String& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
-    inline ListRecommendationsRequest& AddFilter(const ListRecommendationsFilterKey& key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
-    inline ListRecommendationsRequest& AddFilter(ListRecommendationsFilterKey&& key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), std::move(value)); return *this; }
-    inline ListRecommendationsRequest& AddFilter(ListRecommendationsFilterKey&& key, const char* value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
-    inline ListRecommendationsRequest& AddFilter(const ListRecommendationsFilterKey& key, const char* value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
+    template<typename FilterT = Aws::Map<ListRecommendationsFilterKey, Aws::String>>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::Map<ListRecommendationsFilterKey, Aws::String>>
+    ListRecommendationsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
+    inline ListRecommendationsRequest& AddFilter(ListRecommendationsFilterKey key, Aws::String value) {
+      m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -63,14 +60,12 @@ namespace Model
      * <p>A token returned from a previous call to <code>ListRecommendations</code> to
      * indicate the position in the list of recommendations.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRecommendationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRecommendationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRecommendationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRecommendationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,7 +77,7 @@ namespace Model
      * results.</p> <p>The value you specify has to be at least 1, and can be no more
      * than 100.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline ListRecommendationsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -95,7 +90,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
   };
 

@@ -12,14 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReplicateSecretToRegionsRequest::ReplicateSecretToRegionsRequest() : 
-    m_secretIdHasBeenSet(false),
-    m_addReplicaRegionsHasBeenSet(false),
-    m_forceOverwriteReplicaSecret(false),
-    m_forceOverwriteReplicaSecretHasBeenSet(false)
-{
-}
-
 Aws::String ReplicateSecretToRegionsRequest::SerializePayload() const
 {
   JsonValue payload;

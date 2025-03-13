@@ -12,11 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBackupPlanRequest::DeleteBackupPlanRequest() : 
-    m_backupPlanIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBackupPlanRequest::SerializePayload() const
 {
   return {};

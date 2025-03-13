@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSolutionRequest::DescribeSolutionRequest() : 
-    m_solutionArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSolutionRequest::SerializePayload() const
 {
   JsonValue payload;

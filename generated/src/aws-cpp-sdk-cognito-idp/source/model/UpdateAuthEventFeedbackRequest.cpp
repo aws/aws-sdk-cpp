@@ -12,16 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAuthEventFeedbackRequest::UpdateAuthEventFeedbackRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_feedbackTokenHasBeenSet(false),
-    m_feedbackValue(FeedbackValueType::NOT_SET),
-    m_feedbackValueHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAuthEventFeedbackRequest::SerializePayload() const
 {
   JsonValue payload;

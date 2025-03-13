@@ -18,16 +18,7 @@ namespace ARCZonalShift
 namespace Model
 {
 
-AutoshiftInResource::AutoshiftInResource() : 
-    m_appliedStatus(AutoshiftAppliedStatus::NOT_SET),
-    m_appliedStatusHasBeenSet(false),
-    m_awayFromHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 AutoshiftInResource::AutoshiftInResource(JsonView jsonValue)
-  : AutoshiftInResource()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AutoshiftInResource& AutoshiftInResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appliedStatus"))
   {
     m_appliedStatus = AutoshiftAppliedStatusMapper::GetAutoshiftAppliedStatusForName(jsonValue.GetString("appliedStatus"));
-
     m_appliedStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awayFrom"))
   {
     m_awayFrom = jsonValue.GetString("awayFrom");
-
     m_awayFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAppValidationConfigurationRequest::PutAppValidationConfigurationRequest() : 
-    m_appIdHasBeenSet(false),
-    m_appValidationConfigurationsHasBeenSet(false),
-    m_serverGroupValidationConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String PutAppValidationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

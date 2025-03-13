@@ -31,7 +31,7 @@ namespace Model
   class ResourceNotFoundException
   {
   public:
-    AWS_TIMESTREAMQUERY_API ResourceNotFoundException();
+    AWS_TIMESTREAMQUERY_API ResourceNotFoundException() = default;
     AWS_TIMESTREAMQUERY_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,28 +39,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ResourceNotFoundException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ResourceNotFoundException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ResourceNotFoundException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ResourceNotFoundException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the scheduled query.</p>
      */
-    inline const Aws::String& GetScheduledQueryArn() const{ return m_scheduledQueryArn; }
+    inline const Aws::String& GetScheduledQueryArn() const { return m_scheduledQueryArn; }
     inline bool ScheduledQueryArnHasBeenSet() const { return m_scheduledQueryArnHasBeenSet; }
-    inline void SetScheduledQueryArn(const Aws::String& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = value; }
-    inline void SetScheduledQueryArn(Aws::String&& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = std::move(value); }
-    inline void SetScheduledQueryArn(const char* value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn.assign(value); }
-    inline ResourceNotFoundException& WithScheduledQueryArn(const Aws::String& value) { SetScheduledQueryArn(value); return *this;}
-    inline ResourceNotFoundException& WithScheduledQueryArn(Aws::String&& value) { SetScheduledQueryArn(std::move(value)); return *this;}
-    inline ResourceNotFoundException& WithScheduledQueryArn(const char* value) { SetScheduledQueryArn(value); return *this;}
+    template<typename ScheduledQueryArnT = Aws::String>
+    void SetScheduledQueryArn(ScheduledQueryArnT&& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = std::forward<ScheduledQueryArnT>(value); }
+    template<typename ScheduledQueryArnT = Aws::String>
+    ResourceNotFoundException& WithScheduledQueryArn(ScheduledQueryArnT&& value) { SetScheduledQueryArn(std::forward<ScheduledQueryArnT>(value)); return *this;}
     ///@}
   private:
 

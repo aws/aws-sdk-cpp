@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListJobsByStatusRequest::ListJobsByStatusRequest() : 
-    m_statusHasBeenSet(false),
-    m_ascendingHasBeenSet(false),
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListJobsByStatusRequest::SerializePayload() const
 {
   return {};

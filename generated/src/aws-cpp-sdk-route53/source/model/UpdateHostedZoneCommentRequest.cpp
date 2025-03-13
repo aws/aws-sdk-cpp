@@ -14,11 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-UpdateHostedZoneCommentRequest::UpdateHostedZoneCommentRequest() : 
-    m_idHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
 
 Aws::String UpdateHostedZoneCommentRequest::SerializePayload() const
 {

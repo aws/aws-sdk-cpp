@@ -33,7 +33,7 @@ namespace Model
   class SyncBlockerSummary
   {
   public:
-    AWS_CODESTARCONNECTIONS_API SyncBlockerSummary();
+    AWS_CODESTARCONNECTIONS_API SyncBlockerSummary() = default;
     AWS_CODESTARCONNECTIONS_API SyncBlockerSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODESTARCONNECTIONS_API SyncBlockerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODESTARCONNECTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,38 @@ namespace Model
     /**
      * <p>The resource name for sync blocker summary.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline SyncBlockerSummary& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline SyncBlockerSummary& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline SyncBlockerSummary& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    SyncBlockerSummary& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parent resource name for a sync blocker summary.</p>
      */
-    inline const Aws::String& GetParentResourceName() const{ return m_parentResourceName; }
+    inline const Aws::String& GetParentResourceName() const { return m_parentResourceName; }
     inline bool ParentResourceNameHasBeenSet() const { return m_parentResourceNameHasBeenSet; }
-    inline void SetParentResourceName(const Aws::String& value) { m_parentResourceNameHasBeenSet = true; m_parentResourceName = value; }
-    inline void SetParentResourceName(Aws::String&& value) { m_parentResourceNameHasBeenSet = true; m_parentResourceName = std::move(value); }
-    inline void SetParentResourceName(const char* value) { m_parentResourceNameHasBeenSet = true; m_parentResourceName.assign(value); }
-    inline SyncBlockerSummary& WithParentResourceName(const Aws::String& value) { SetParentResourceName(value); return *this;}
-    inline SyncBlockerSummary& WithParentResourceName(Aws::String&& value) { SetParentResourceName(std::move(value)); return *this;}
-    inline SyncBlockerSummary& WithParentResourceName(const char* value) { SetParentResourceName(value); return *this;}
+    template<typename ParentResourceNameT = Aws::String>
+    void SetParentResourceName(ParentResourceNameT&& value) { m_parentResourceNameHasBeenSet = true; m_parentResourceName = std::forward<ParentResourceNameT>(value); }
+    template<typename ParentResourceNameT = Aws::String>
+    SyncBlockerSummary& WithParentResourceName(ParentResourceNameT&& value) { SetParentResourceName(std::forward<ParentResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latest events for a sync blocker summary.</p>
      */
-    inline const Aws::Vector<SyncBlocker>& GetLatestBlockers() const{ return m_latestBlockers; }
+    inline const Aws::Vector<SyncBlocker>& GetLatestBlockers() const { return m_latestBlockers; }
     inline bool LatestBlockersHasBeenSet() const { return m_latestBlockersHasBeenSet; }
-    inline void SetLatestBlockers(const Aws::Vector<SyncBlocker>& value) { m_latestBlockersHasBeenSet = true; m_latestBlockers = value; }
-    inline void SetLatestBlockers(Aws::Vector<SyncBlocker>&& value) { m_latestBlockersHasBeenSet = true; m_latestBlockers = std::move(value); }
-    inline SyncBlockerSummary& WithLatestBlockers(const Aws::Vector<SyncBlocker>& value) { SetLatestBlockers(value); return *this;}
-    inline SyncBlockerSummary& WithLatestBlockers(Aws::Vector<SyncBlocker>&& value) { SetLatestBlockers(std::move(value)); return *this;}
-    inline SyncBlockerSummary& AddLatestBlockers(const SyncBlocker& value) { m_latestBlockersHasBeenSet = true; m_latestBlockers.push_back(value); return *this; }
-    inline SyncBlockerSummary& AddLatestBlockers(SyncBlocker&& value) { m_latestBlockersHasBeenSet = true; m_latestBlockers.push_back(std::move(value)); return *this; }
+    template<typename LatestBlockersT = Aws::Vector<SyncBlocker>>
+    void SetLatestBlockers(LatestBlockersT&& value) { m_latestBlockersHasBeenSet = true; m_latestBlockers = std::forward<LatestBlockersT>(value); }
+    template<typename LatestBlockersT = Aws::Vector<SyncBlocker>>
+    SyncBlockerSummary& WithLatestBlockers(LatestBlockersT&& value) { SetLatestBlockers(std::forward<LatestBlockersT>(value)); return *this;}
+    template<typename LatestBlockersT = SyncBlocker>
+    SyncBlockerSummary& AddLatestBlockers(LatestBlockersT&& value) { m_latestBlockersHasBeenSet = true; m_latestBlockers.emplace_back(std::forward<LatestBlockersT>(value)); return *this; }
     ///@}
   private:
 

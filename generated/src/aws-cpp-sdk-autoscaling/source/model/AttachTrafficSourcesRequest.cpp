@@ -10,14 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-AttachTrafficSourcesRequest::AttachTrafficSourcesRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_trafficSourcesHasBeenSet(false),
-    m_skipZonalShiftValidation(false),
-    m_skipZonalShiftValidationHasBeenSet(false)
-{
-}
-
 Aws::String AttachTrafficSourcesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,17 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-ConnectivityInfo::ConnectivityInfo() : 
-    m_idHasBeenSet(false),
-    m_hostAddressHasBeenSet(false),
-    m_portNumber(0),
-    m_portNumberHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 ConnectivityInfo::ConnectivityInfo(JsonView jsonValue)
-  : ConnectivityInfo()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ConnectivityInfo& ConnectivityInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostAddress"))
   {
     m_hostAddress = jsonValue.GetString("HostAddress");
-
     m_hostAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortNumber"))
   {
     m_portNumber = jsonValue.GetInteger("PortNumber");
-
     m_portNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metadata"))
   {
     m_metadata = jsonValue.GetString("Metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   return *this;
 }
 

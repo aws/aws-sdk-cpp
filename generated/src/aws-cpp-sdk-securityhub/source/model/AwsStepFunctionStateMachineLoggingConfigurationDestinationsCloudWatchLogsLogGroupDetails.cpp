@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails::AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails() : 
-    m_logGroupArnHasBeenSet(false)
-{
-}
-
 AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails::AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails(JsonView jsonValue)
-  : AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGrou
   if(jsonValue.ValueExists("LogGroupArn"))
   {
     m_logGroupArn = jsonValue.GetString("LogGroupArn");
-
     m_logGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

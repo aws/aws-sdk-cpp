@@ -12,17 +12,6 @@ using namespace Aws::MediaPackageVod::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePackagingConfigurationRequest::CreatePackagingConfigurationRequest() : 
-    m_cmafPackageHasBeenSet(false),
-    m_dashPackageHasBeenSet(false),
-    m_hlsPackageHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_mssPackageHasBeenSet(false),
-    m_packagingGroupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePackagingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace VoiceID
 namespace Model
 {
 
-InputDataConfig::InputDataConfig() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 InputDataConfig::InputDataConfig(JsonView jsonValue)
-  : InputDataConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputDataConfig& InputDataConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

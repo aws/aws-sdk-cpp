@@ -18,16 +18,7 @@ namespace ChimeSDKIdentity
 namespace Model
 {
 
-ExpirationSettings::ExpirationSettings() : 
-    m_expirationDays(0),
-    m_expirationDaysHasBeenSet(false),
-    m_expirationCriterion(ExpirationCriterion::NOT_SET),
-    m_expirationCriterionHasBeenSet(false)
-{
-}
-
 ExpirationSettings::ExpirationSettings(JsonView jsonValue)
-  : ExpirationSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ExpirationSettings& ExpirationSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExpirationDays"))
   {
     m_expirationDays = jsonValue.GetInteger("ExpirationDays");
-
     m_expirationDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationCriterion"))
   {
     m_expirationCriterion = ExpirationCriterionMapper::GetExpirationCriterionForName(jsonValue.GetString("ExpirationCriterion"));
-
     m_expirationCriterionHasBeenSet = true;
   }
-
   return *this;
 }
 

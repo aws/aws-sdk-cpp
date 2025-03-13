@@ -18,13 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-Qualifier::Qualifier() : 
-    m_cpsUriHasBeenSet(false)
-{
-}
-
 Qualifier::Qualifier(JsonView jsonValue)
-  : Qualifier()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Qualifier& Qualifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CpsUri"))
   {
     m_cpsUri = jsonValue.GetString("CpsUri");
-
     m_cpsUriHasBeenSet = true;
   }
-
   return *this;
 }
 

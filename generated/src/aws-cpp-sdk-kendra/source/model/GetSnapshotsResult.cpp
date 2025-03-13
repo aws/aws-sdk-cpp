@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSnapshotsResult::GetSnapshotsResult()
-{
-}
-
 GetSnapshotsResult::GetSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetSnapshotsResult& GetSnapshotsResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("SnapShotTimeFilter"))
   {
     m_snapShotTimeFilter = jsonValue.GetObject("SnapShotTimeFilter");
-
+    m_snapShotTimeFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotsDataHeader"))
   {
     Aws::Utils::Array<JsonView> snapshotsDataHeaderJsonList = jsonValue.GetArray("SnapshotsDataHeader");
@@ -42,8 +37,8 @@ GetSnapshotsResult& GetSnapshotsResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_snapshotsDataHeader.push_back(snapshotsDataHeaderJsonList[snapshotsDataHeaderIndex].AsString());
     }
+    m_snapshotsDataHeaderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotsData"))
   {
     Aws::Utils::Array<JsonView> snapshotsDataJsonList = jsonValue.GetArray("SnapshotsData");
@@ -58,20 +53,20 @@ GetSnapshotsResult& GetSnapshotsResult::operator =(const Aws::AmazonWebServiceRe
       }
       m_snapshotsData.push_back(std::move(snapshotsDataRecordList));
     }
+    m_snapshotsDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

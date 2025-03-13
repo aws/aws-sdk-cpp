@@ -12,15 +12,6 @@ using namespace Aws::SsmSap::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListOperationEventsRequest::ListOperationEventsRequest() : 
-    m_operationIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String ListOperationEventsRequest::SerializePayload() const
 {
   JsonValue payload;

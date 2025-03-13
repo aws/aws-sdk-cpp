@@ -28,7 +28,7 @@ namespace Model
   class DeactivateDeviceIdentifierResult
   {
   public:
-    AWS_PRIVATENETWORKS_API DeactivateDeviceIdentifierResult();
+    AWS_PRIVATENETWORKS_API DeactivateDeviceIdentifierResult() = default;
     AWS_PRIVATENETWORKS_API DeactivateDeviceIdentifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PRIVATENETWORKS_API DeactivateDeviceIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the device identifier.</p>
      */
-    inline const DeviceIdentifier& GetDeviceIdentifier() const{ return m_deviceIdentifier; }
-    inline void SetDeviceIdentifier(const DeviceIdentifier& value) { m_deviceIdentifier = value; }
-    inline void SetDeviceIdentifier(DeviceIdentifier&& value) { m_deviceIdentifier = std::move(value); }
-    inline DeactivateDeviceIdentifierResult& WithDeviceIdentifier(const DeviceIdentifier& value) { SetDeviceIdentifier(value); return *this;}
-    inline DeactivateDeviceIdentifierResult& WithDeviceIdentifier(DeviceIdentifier&& value) { SetDeviceIdentifier(std::move(value)); return *this;}
+    inline const DeviceIdentifier& GetDeviceIdentifier() const { return m_deviceIdentifier; }
+    template<typename DeviceIdentifierT = DeviceIdentifier>
+    void SetDeviceIdentifier(DeviceIdentifierT&& value) { m_deviceIdentifierHasBeenSet = true; m_deviceIdentifier = std::forward<DeviceIdentifierT>(value); }
+    template<typename DeviceIdentifierT = DeviceIdentifier>
+    DeactivateDeviceIdentifierResult& WithDeviceIdentifier(DeviceIdentifierT&& value) { SetDeviceIdentifier(std::forward<DeviceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeactivateDeviceIdentifierResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeactivateDeviceIdentifierResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeactivateDeviceIdentifierResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeactivateDeviceIdentifierResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DeviceIdentifier m_deviceIdentifier;
+    bool m_deviceIdentifierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

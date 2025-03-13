@@ -18,14 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-PropertyLatestValue::PropertyLatestValue() : 
-    m_propertyReferenceHasBeenSet(false),
-    m_propertyValueHasBeenSet(false)
-{
-}
-
 PropertyLatestValue::PropertyLatestValue(JsonView jsonValue)
-  : PropertyLatestValue()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PropertyLatestValue& PropertyLatestValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("propertyReference"))
   {
     m_propertyReference = jsonValue.GetObject("propertyReference");
-
     m_propertyReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyValue"))
   {
     m_propertyValue = jsonValue.GetObject("propertyValue");
-
     m_propertyValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelCommandRequest::CancelCommandRequest() : 
-    m_commandIdHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
-{
-}
-
 Aws::String CancelCommandRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class GetConnectionStatusResult
   {
   public:
-    AWS_SSM_API GetConnectionStatusResult();
+    AWS_SSM_API GetConnectionStatusResult() = default;
     AWS_SSM_API GetConnectionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API GetConnectionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,40 @@ namespace Model
     /**
      * <p>The ID of the managed node to check connection status. </p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
-    inline void SetTarget(const Aws::String& value) { m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_target.assign(value); }
-    inline GetConnectionStatusResult& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline GetConnectionStatusResult& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline GetConnectionStatusResult& WithTarget(const char* value) { SetTarget(value); return *this;}
+    inline const Aws::String& GetTarget() const { return m_target; }
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    GetConnectionStatusResult& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the connection to the managed node.</p>
      */
-    inline const ConnectionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ConnectionStatus& value) { m_status = value; }
-    inline void SetStatus(ConnectionStatus&& value) { m_status = std::move(value); }
-    inline GetConnectionStatusResult& WithStatus(const ConnectionStatus& value) { SetStatus(value); return *this;}
-    inline GetConnectionStatusResult& WithStatus(ConnectionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ConnectionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ConnectionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetConnectionStatusResult& WithStatus(ConnectionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetConnectionStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetConnectionStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetConnectionStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetConnectionStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_target;
+    bool m_targetHasBeenSet = false;
 
-    ConnectionStatus m_status;
+    ConnectionStatus m_status{ConnectionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

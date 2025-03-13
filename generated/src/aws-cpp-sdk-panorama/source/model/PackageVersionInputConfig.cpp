@@ -18,13 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-PackageVersionInputConfig::PackageVersionInputConfig() : 
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 PackageVersionInputConfig::PackageVersionInputConfig(JsonView jsonValue)
-  : PackageVersionInputConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PackageVersionInputConfig& PackageVersionInputConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("S3Location"))
   {
     m_s3Location = jsonValue.GetObject("S3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

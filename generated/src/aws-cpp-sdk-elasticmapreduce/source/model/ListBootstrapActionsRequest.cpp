@@ -12,12 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBootstrapActionsRequest::ListBootstrapActionsRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String ListBootstrapActionsRequest::SerializePayload() const
 {
   JsonValue payload;

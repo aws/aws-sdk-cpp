@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DeclarativePoliciesReport::DeclarativePoliciesReport() : 
-    m_reportIdHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(ReportState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DeclarativePoliciesReport::DeclarativePoliciesReport(const XmlNode& xmlNode)
-  : DeclarativePoliciesReport()
 {
   *this = xmlNode;
 }
@@ -50,54 +36,62 @@ DeclarativePoliciesReport& DeclarativePoliciesReport::operator =(const XmlNode& 
     {
       m_reportId = Aws::Utils::Xml::DecodeEscapedXmlText(reportIdNode.GetText());
       m_reportIdHasBeenSet = true;
+       m_reportIdHasBeenSet = true;
     }
     XmlNode s3BucketNode = resultNode.FirstChild("s3Bucket");
     if(!s3BucketNode.IsNull())
     {
       m_s3Bucket = Aws::Utils::Xml::DecodeEscapedXmlText(s3BucketNode.GetText());
       m_s3BucketHasBeenSet = true;
+       m_s3BucketHasBeenSet = true;
     }
     XmlNode s3PrefixNode = resultNode.FirstChild("s3Prefix");
     if(!s3PrefixNode.IsNull())
     {
       m_s3Prefix = Aws::Utils::Xml::DecodeEscapedXmlText(s3PrefixNode.GetText());
       m_s3PrefixHasBeenSet = true;
+       m_s3PrefixHasBeenSet = true;
     }
     XmlNode targetIdNode = resultNode.FirstChild("targetId");
     if(!targetIdNode.IsNull())
     {
       m_targetId = Aws::Utils::Xml::DecodeEscapedXmlText(targetIdNode.GetText());
       m_targetIdHasBeenSet = true;
+       m_targetIdHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
     if(!startTimeNode.IsNull())
     {
       m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
+       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("endTime");
     if(!endTimeNode.IsNull())
     {
       m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
+       m_endTimeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = ReportStateMapper::GetReportStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ReportStateMapper::GetReportStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

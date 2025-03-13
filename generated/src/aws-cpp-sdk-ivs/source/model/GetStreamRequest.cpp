@@ -12,11 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetStreamRequest::GetStreamRequest() : 
-    m_channelArnHasBeenSet(false)
-{
-}
-
 Aws::String GetStreamRequest::SerializePayload() const
 {
   JsonValue payload;

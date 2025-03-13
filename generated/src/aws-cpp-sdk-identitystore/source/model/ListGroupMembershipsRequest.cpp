@@ -12,15 +12,6 @@ using namespace Aws::IdentityStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListGroupMembershipsRequest::ListGroupMembershipsRequest() : 
-    m_identityStoreIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListGroupMembershipsRequest::SerializePayload() const
 {
   JsonValue payload;

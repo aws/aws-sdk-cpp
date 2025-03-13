@@ -12,15 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartPipelineExecutionRequest::StartPipelineExecutionRequest() : 
-    m_nameHasBeenSet(false),
-    m_variablesHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_sourceRevisionsHasBeenSet(false)
-{
-}
-
 Aws::String StartPipelineExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

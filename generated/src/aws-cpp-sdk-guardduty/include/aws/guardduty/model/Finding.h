@@ -34,7 +34,7 @@ namespace Model
   class Finding
   {
   public:
-    AWS_GUARDDUTY_API Finding();
+    AWS_GUARDDUTY_API Finding() = default;
     AWS_GUARDDUTY_API Finding(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Finding& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,35 +44,31 @@ namespace Model
     /**
      * <p>The ID of the account in which the finding was generated.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline Finding& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline Finding& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline Finding& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    Finding& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the finding.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Finding& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Finding& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Finding& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Finding& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The confidence score for the finding.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline Finding& WithConfidence(double value) { SetConfidence(value); return *this;}
@@ -82,111 +78,99 @@ namespace Model
     /**
      * <p>The time and date when the finding was created.</p>
      */
-    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
-    inline Finding& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
-    inline Finding& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
-    inline Finding& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+    template<typename CreatedAtT = Aws::String>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::String>
+    Finding& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the finding.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Finding& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Finding& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Finding& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Finding& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the finding.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Finding& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Finding& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Finding& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Finding& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The partition associated with the finding.</p>
      */
-    inline const Aws::String& GetPartition() const{ return m_partition; }
+    inline const Aws::String& GetPartition() const { return m_partition; }
     inline bool PartitionHasBeenSet() const { return m_partitionHasBeenSet; }
-    inline void SetPartition(const Aws::String& value) { m_partitionHasBeenSet = true; m_partition = value; }
-    inline void SetPartition(Aws::String&& value) { m_partitionHasBeenSet = true; m_partition = std::move(value); }
-    inline void SetPartition(const char* value) { m_partitionHasBeenSet = true; m_partition.assign(value); }
-    inline Finding& WithPartition(const Aws::String& value) { SetPartition(value); return *this;}
-    inline Finding& WithPartition(Aws::String&& value) { SetPartition(std::move(value)); return *this;}
-    inline Finding& WithPartition(const char* value) { SetPartition(value); return *this;}
+    template<typename PartitionT = Aws::String>
+    void SetPartition(PartitionT&& value) { m_partitionHasBeenSet = true; m_partition = std::forward<PartitionT>(value); }
+    template<typename PartitionT = Aws::String>
+    Finding& WithPartition(PartitionT&& value) { SetPartition(std::forward<PartitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Region where the finding was generated.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline Finding& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline Finding& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline Finding& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    Finding& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Resource& GetResource() const{ return m_resource; }
+    inline const Resource& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Resource& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Resource&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline Finding& WithResource(const Resource& value) { SetResource(value); return *this;}
-    inline Finding& WithResource(Resource&& value) { SetResource(std::move(value)); return *this;}
+    template<typename ResourceT = Resource>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Resource>
+    Finding& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the schema used for the finding.</p>
      */
-    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+    inline const Aws::String& GetSchemaVersion() const { return m_schemaVersion; }
     inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
-    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
-    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
-    inline void SetSchemaVersion(const char* value) { m_schemaVersionHasBeenSet = true; m_schemaVersion.assign(value); }
-    inline Finding& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
-    inline Finding& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
-    inline Finding& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
+    template<typename SchemaVersionT = Aws::String>
+    void SetSchemaVersion(SchemaVersionT&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::forward<SchemaVersionT>(value); }
+    template<typename SchemaVersionT = Aws::String>
+    Finding& WithSchemaVersion(SchemaVersionT&& value) { SetSchemaVersion(std::forward<SchemaVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Service& GetService() const{ return m_service; }
+    inline const Service& GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Service& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Service&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline Finding& WithService(const Service& value) { SetService(value); return *this;}
-    inline Finding& WithService(Service&& value) { SetService(std::move(value)); return *this;}
+    template<typename ServiceT = Service>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Service>
+    Finding& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The severity of the finding.</p>
      */
-    inline double GetSeverity() const{ return m_severity; }
+    inline double GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
     inline void SetSeverity(double value) { m_severityHasBeenSet = true; m_severity = value; }
     inline Finding& WithSeverity(double value) { SetSeverity(value); return *this;}
@@ -196,56 +180,48 @@ namespace Model
     /**
      * <p>The title of the finding.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline Finding& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline Finding& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline Finding& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    Finding& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of finding.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Finding& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Finding& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Finding& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Finding& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time and date when the finding was last updated.</p>
      */
-    inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::String& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::String& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::String&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline void SetUpdatedAt(const char* value) { m_updatedAtHasBeenSet = true; m_updatedAt.assign(value); }
-    inline Finding& WithUpdatedAt(const Aws::String& value) { SetUpdatedAt(value); return *this;}
-    inline Finding& WithUpdatedAt(Aws::String&& value) { SetUpdatedAt(std::move(value)); return *this;}
-    inline Finding& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
+    template<typename UpdatedAtT = Aws::String>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::String>
+    Finding& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Amazon Resource Name (ARN) associated with the attack sequence finding.</p>
      */
-    inline const Aws::String& GetAssociatedAttackSequenceArn() const{ return m_associatedAttackSequenceArn; }
+    inline const Aws::String& GetAssociatedAttackSequenceArn() const { return m_associatedAttackSequenceArn; }
     inline bool AssociatedAttackSequenceArnHasBeenSet() const { return m_associatedAttackSequenceArnHasBeenSet; }
-    inline void SetAssociatedAttackSequenceArn(const Aws::String& value) { m_associatedAttackSequenceArnHasBeenSet = true; m_associatedAttackSequenceArn = value; }
-    inline void SetAssociatedAttackSequenceArn(Aws::String&& value) { m_associatedAttackSequenceArnHasBeenSet = true; m_associatedAttackSequenceArn = std::move(value); }
-    inline void SetAssociatedAttackSequenceArn(const char* value) { m_associatedAttackSequenceArnHasBeenSet = true; m_associatedAttackSequenceArn.assign(value); }
-    inline Finding& WithAssociatedAttackSequenceArn(const Aws::String& value) { SetAssociatedAttackSequenceArn(value); return *this;}
-    inline Finding& WithAssociatedAttackSequenceArn(Aws::String&& value) { SetAssociatedAttackSequenceArn(std::move(value)); return *this;}
-    inline Finding& WithAssociatedAttackSequenceArn(const char* value) { SetAssociatedAttackSequenceArn(value); return *this;}
+    template<typename AssociatedAttackSequenceArnT = Aws::String>
+    void SetAssociatedAttackSequenceArn(AssociatedAttackSequenceArnT&& value) { m_associatedAttackSequenceArnHasBeenSet = true; m_associatedAttackSequenceArn = std::forward<AssociatedAttackSequenceArnT>(value); }
+    template<typename AssociatedAttackSequenceArnT = Aws::String>
+    Finding& WithAssociatedAttackSequenceArn(AssociatedAttackSequenceArnT&& value) { SetAssociatedAttackSequenceArn(std::forward<AssociatedAttackSequenceArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -255,7 +231,7 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
 
     Aws::String m_createdAt;
@@ -282,7 +258,7 @@ namespace Model
     Service m_service;
     bool m_serviceHasBeenSet = false;
 
-    double m_severity;
+    double m_severity{0.0};
     bool m_severityHasBeenSet = false;
 
     Aws::String m_title;

@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-ProjectResource::ProjectResource() : 
-    m_idHasBeenSet(false)
-{
-}
-
 ProjectResource::ProjectResource(JsonView jsonValue)
-  : ProjectResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProjectResource& ProjectResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReleaseFileSystemNfsV3LocksRequest::ReleaseFileSystemNfsV3LocksRequest() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String ReleaseFileSystemNfsV3LocksRequest::SerializePayload() const
 {
   JsonValue payload;

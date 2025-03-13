@@ -47,7 +47,7 @@ namespace Model
   class InstanceRecommendation
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API InstanceRecommendation();
+    AWS_COMPUTEOPTIMIZER_API InstanceRecommendation() = default;
     AWS_COMPUTEOPTIMIZER_API InstanceRecommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API InstanceRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,56 +57,48 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the current instance.</p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline InstanceRecommendation& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline InstanceRecommendation& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline InstanceRecommendation& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    InstanceRecommendation& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID of the instance.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline InstanceRecommendation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline InstanceRecommendation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline InstanceRecommendation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    InstanceRecommendation& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the current instance.</p>
      */
-    inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+    inline const Aws::String& GetInstanceName() const { return m_instanceName; }
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-    inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-    inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-    inline InstanceRecommendation& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-    inline InstanceRecommendation& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-    inline InstanceRecommendation& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+    template<typename InstanceNameT = Aws::String>
+    void SetInstanceName(InstanceNameT&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::forward<InstanceNameT>(value); }
+    template<typename InstanceNameT = Aws::String>
+    InstanceRecommendation& WithInstanceName(InstanceNameT&& value) { SetInstanceName(std::forward<InstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance type of the current instance.</p>
      */
-    inline const Aws::String& GetCurrentInstanceType() const{ return m_currentInstanceType; }
+    inline const Aws::String& GetCurrentInstanceType() const { return m_currentInstanceType; }
     inline bool CurrentInstanceTypeHasBeenSet() const { return m_currentInstanceTypeHasBeenSet; }
-    inline void SetCurrentInstanceType(const Aws::String& value) { m_currentInstanceTypeHasBeenSet = true; m_currentInstanceType = value; }
-    inline void SetCurrentInstanceType(Aws::String&& value) { m_currentInstanceTypeHasBeenSet = true; m_currentInstanceType = std::move(value); }
-    inline void SetCurrentInstanceType(const char* value) { m_currentInstanceTypeHasBeenSet = true; m_currentInstanceType.assign(value); }
-    inline InstanceRecommendation& WithCurrentInstanceType(const Aws::String& value) { SetCurrentInstanceType(value); return *this;}
-    inline InstanceRecommendation& WithCurrentInstanceType(Aws::String&& value) { SetCurrentInstanceType(std::move(value)); return *this;}
-    inline InstanceRecommendation& WithCurrentInstanceType(const char* value) { SetCurrentInstanceType(value); return *this;}
+    template<typename CurrentInstanceTypeT = Aws::String>
+    void SetCurrentInstanceType(CurrentInstanceTypeT&& value) { m_currentInstanceTypeHasBeenSet = true; m_currentInstanceType = std::forward<CurrentInstanceTypeT>(value); }
+    template<typename CurrentInstanceTypeT = Aws::String>
+    InstanceRecommendation& WithCurrentInstanceType(CurrentInstanceTypeT&& value) { SetCurrentInstanceType(std::forward<CurrentInstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +121,10 @@ namespace Model
      * values in your API responses appear as OVER_PROVISIONED, UNDER_PROVISIONED, or
      * OPTIMIZED.</p> 
      */
-    inline const Finding& GetFinding() const{ return m_finding; }
+    inline Finding GetFinding() const { return m_finding; }
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
-    inline void SetFinding(const Finding& value) { m_findingHasBeenSet = true; m_finding = value; }
-    inline void SetFinding(Finding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
-    inline InstanceRecommendation& WithFinding(const Finding& value) { SetFinding(value); return *this;}
-    inline InstanceRecommendation& WithFinding(Finding&& value) { SetFinding(std::move(value)); return *this;}
+    inline void SetFinding(Finding value) { m_findingHasBeenSet = true; m_finding = value; }
+    inline InstanceRecommendation& WithFinding(Finding value) { SetFinding(value); return *this;}
     ///@}
 
     ///@{
@@ -243,14 +233,13 @@ namespace Model
      * CloudWatch metrics for Amazon EBS</a> in the <i>Amazon Elastic Compute Cloud
      * User Guide</i>.</p> 
      */
-    inline const Aws::Vector<InstanceRecommendationFindingReasonCode>& GetFindingReasonCodes() const{ return m_findingReasonCodes; }
+    inline const Aws::Vector<InstanceRecommendationFindingReasonCode>& GetFindingReasonCodes() const { return m_findingReasonCodes; }
     inline bool FindingReasonCodesHasBeenSet() const { return m_findingReasonCodesHasBeenSet; }
-    inline void SetFindingReasonCodes(const Aws::Vector<InstanceRecommendationFindingReasonCode>& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = value; }
-    inline void SetFindingReasonCodes(Aws::Vector<InstanceRecommendationFindingReasonCode>&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = std::move(value); }
-    inline InstanceRecommendation& WithFindingReasonCodes(const Aws::Vector<InstanceRecommendationFindingReasonCode>& value) { SetFindingReasonCodes(value); return *this;}
-    inline InstanceRecommendation& WithFindingReasonCodes(Aws::Vector<InstanceRecommendationFindingReasonCode>&& value) { SetFindingReasonCodes(std::move(value)); return *this;}
-    inline InstanceRecommendation& AddFindingReasonCodes(const InstanceRecommendationFindingReasonCode& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(value); return *this; }
-    inline InstanceRecommendation& AddFindingReasonCodes(InstanceRecommendationFindingReasonCode&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(std::move(value)); return *this; }
+    template<typename FindingReasonCodesT = Aws::Vector<InstanceRecommendationFindingReasonCode>>
+    void SetFindingReasonCodes(FindingReasonCodesT&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = std::forward<FindingReasonCodesT>(value); }
+    template<typename FindingReasonCodesT = Aws::Vector<InstanceRecommendationFindingReasonCode>>
+    InstanceRecommendation& WithFindingReasonCodes(FindingReasonCodesT&& value) { SetFindingReasonCodes(std::forward<FindingReasonCodesT>(value)); return *this;}
+    inline InstanceRecommendation& AddFindingReasonCodes(InstanceRecommendationFindingReasonCode value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -258,14 +247,14 @@ namespace Model
      * <p>An array of objects that describe the utilization metrics of the
      * instance.</p>
      */
-    inline const Aws::Vector<UtilizationMetric>& GetUtilizationMetrics() const{ return m_utilizationMetrics; }
+    inline const Aws::Vector<UtilizationMetric>& GetUtilizationMetrics() const { return m_utilizationMetrics; }
     inline bool UtilizationMetricsHasBeenSet() const { return m_utilizationMetricsHasBeenSet; }
-    inline void SetUtilizationMetrics(const Aws::Vector<UtilizationMetric>& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = value; }
-    inline void SetUtilizationMetrics(Aws::Vector<UtilizationMetric>&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = std::move(value); }
-    inline InstanceRecommendation& WithUtilizationMetrics(const Aws::Vector<UtilizationMetric>& value) { SetUtilizationMetrics(value); return *this;}
-    inline InstanceRecommendation& WithUtilizationMetrics(Aws::Vector<UtilizationMetric>&& value) { SetUtilizationMetrics(std::move(value)); return *this;}
-    inline InstanceRecommendation& AddUtilizationMetrics(const UtilizationMetric& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.push_back(value); return *this; }
-    inline InstanceRecommendation& AddUtilizationMetrics(UtilizationMetric&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.push_back(std::move(value)); return *this; }
+    template<typename UtilizationMetricsT = Aws::Vector<UtilizationMetric>>
+    void SetUtilizationMetrics(UtilizationMetricsT&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = std::forward<UtilizationMetricsT>(value); }
+    template<typename UtilizationMetricsT = Aws::Vector<UtilizationMetric>>
+    InstanceRecommendation& WithUtilizationMetrics(UtilizationMetricsT&& value) { SetUtilizationMetrics(std::forward<UtilizationMetricsT>(value)); return *this;}
+    template<typename UtilizationMetricsT = UtilizationMetric>
+    InstanceRecommendation& AddUtilizationMetrics(UtilizationMetricsT&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.emplace_back(std::forward<UtilizationMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -273,7 +262,7 @@ namespace Model
      * <p>The number of days for which utilization metrics were analyzed for the
      * instance.</p>
      */
-    inline double GetLookBackPeriodInDays() const{ return m_lookBackPeriodInDays; }
+    inline double GetLookBackPeriodInDays() const { return m_lookBackPeriodInDays; }
     inline bool LookBackPeriodInDaysHasBeenSet() const { return m_lookBackPeriodInDaysHasBeenSet; }
     inline void SetLookBackPeriodInDays(double value) { m_lookBackPeriodInDaysHasBeenSet = true; m_lookBackPeriodInDays = value; }
     inline InstanceRecommendation& WithLookBackPeriodInDays(double value) { SetLookBackPeriodInDays(value); return *this;}
@@ -284,14 +273,14 @@ namespace Model
      * <p>An array of objects that describe the recommendation options for the
      * instance.</p>
      */
-    inline const Aws::Vector<InstanceRecommendationOption>& GetRecommendationOptions() const{ return m_recommendationOptions; }
+    inline const Aws::Vector<InstanceRecommendationOption>& GetRecommendationOptions() const { return m_recommendationOptions; }
     inline bool RecommendationOptionsHasBeenSet() const { return m_recommendationOptionsHasBeenSet; }
-    inline void SetRecommendationOptions(const Aws::Vector<InstanceRecommendationOption>& value) { m_recommendationOptionsHasBeenSet = true; m_recommendationOptions = value; }
-    inline void SetRecommendationOptions(Aws::Vector<InstanceRecommendationOption>&& value) { m_recommendationOptionsHasBeenSet = true; m_recommendationOptions = std::move(value); }
-    inline InstanceRecommendation& WithRecommendationOptions(const Aws::Vector<InstanceRecommendationOption>& value) { SetRecommendationOptions(value); return *this;}
-    inline InstanceRecommendation& WithRecommendationOptions(Aws::Vector<InstanceRecommendationOption>&& value) { SetRecommendationOptions(std::move(value)); return *this;}
-    inline InstanceRecommendation& AddRecommendationOptions(const InstanceRecommendationOption& value) { m_recommendationOptionsHasBeenSet = true; m_recommendationOptions.push_back(value); return *this; }
-    inline InstanceRecommendation& AddRecommendationOptions(InstanceRecommendationOption&& value) { m_recommendationOptionsHasBeenSet = true; m_recommendationOptions.push_back(std::move(value)); return *this; }
+    template<typename RecommendationOptionsT = Aws::Vector<InstanceRecommendationOption>>
+    void SetRecommendationOptions(RecommendationOptionsT&& value) { m_recommendationOptionsHasBeenSet = true; m_recommendationOptions = std::forward<RecommendationOptionsT>(value); }
+    template<typename RecommendationOptionsT = Aws::Vector<InstanceRecommendationOption>>
+    InstanceRecommendation& WithRecommendationOptions(RecommendationOptionsT&& value) { SetRecommendationOptions(std::forward<RecommendationOptionsT>(value)); return *this;}
+    template<typename RecommendationOptionsT = InstanceRecommendationOption>
+    InstanceRecommendation& AddRecommendationOptions(RecommendationOptionsT&& value) { m_recommendationOptionsHasBeenSet = true; m_recommendationOptions.emplace_back(std::forward<RecommendationOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -299,26 +288,26 @@ namespace Model
      * <p>An array of objects that describe the source resource of the
      * recommendation.</p>
      */
-    inline const Aws::Vector<RecommendationSource>& GetRecommendationSources() const{ return m_recommendationSources; }
+    inline const Aws::Vector<RecommendationSource>& GetRecommendationSources() const { return m_recommendationSources; }
     inline bool RecommendationSourcesHasBeenSet() const { return m_recommendationSourcesHasBeenSet; }
-    inline void SetRecommendationSources(const Aws::Vector<RecommendationSource>& value) { m_recommendationSourcesHasBeenSet = true; m_recommendationSources = value; }
-    inline void SetRecommendationSources(Aws::Vector<RecommendationSource>&& value) { m_recommendationSourcesHasBeenSet = true; m_recommendationSources = std::move(value); }
-    inline InstanceRecommendation& WithRecommendationSources(const Aws::Vector<RecommendationSource>& value) { SetRecommendationSources(value); return *this;}
-    inline InstanceRecommendation& WithRecommendationSources(Aws::Vector<RecommendationSource>&& value) { SetRecommendationSources(std::move(value)); return *this;}
-    inline InstanceRecommendation& AddRecommendationSources(const RecommendationSource& value) { m_recommendationSourcesHasBeenSet = true; m_recommendationSources.push_back(value); return *this; }
-    inline InstanceRecommendation& AddRecommendationSources(RecommendationSource&& value) { m_recommendationSourcesHasBeenSet = true; m_recommendationSources.push_back(std::move(value)); return *this; }
+    template<typename RecommendationSourcesT = Aws::Vector<RecommendationSource>>
+    void SetRecommendationSources(RecommendationSourcesT&& value) { m_recommendationSourcesHasBeenSet = true; m_recommendationSources = std::forward<RecommendationSourcesT>(value); }
+    template<typename RecommendationSourcesT = Aws::Vector<RecommendationSource>>
+    InstanceRecommendation& WithRecommendationSources(RecommendationSourcesT&& value) { SetRecommendationSources(std::forward<RecommendationSourcesT>(value)); return *this;}
+    template<typename RecommendationSourcesT = RecommendationSource>
+    InstanceRecommendation& AddRecommendationSources(RecommendationSourcesT&& value) { m_recommendationSourcesHasBeenSet = true; m_recommendationSources.emplace_back(std::forward<RecommendationSourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the instance recommendation was last generated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const { return m_lastRefreshTimestamp; }
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
-    inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
-    inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
-    inline InstanceRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
-    inline InstanceRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
+    template<typename LastRefreshTimestampT = Aws::Utils::DateTime>
+    void SetLastRefreshTimestamp(LastRefreshTimestampT&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::forward<LastRefreshTimestampT>(value); }
+    template<typename LastRefreshTimestampT = Aws::Utils::DateTime>
+    InstanceRecommendation& WithLastRefreshTimestamp(LastRefreshTimestampT&& value) { SetLastRefreshTimestamp(std::forward<LastRefreshTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -327,12 +316,10 @@ namespace Model
      * workloads. The higher the risk, the more likely the current instance cannot meet
      * the performance requirements of its workload.</p>
      */
-    inline const CurrentPerformanceRisk& GetCurrentPerformanceRisk() const{ return m_currentPerformanceRisk; }
+    inline CurrentPerformanceRisk GetCurrentPerformanceRisk() const { return m_currentPerformanceRisk; }
     inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
-    inline void SetCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
-    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = std::move(value); }
-    inline InstanceRecommendation& WithCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { SetCurrentPerformanceRisk(value); return *this;}
-    inline InstanceRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
+    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
+    inline InstanceRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk value) { SetCurrentPerformanceRisk(value); return *this;}
     ///@}
 
     ///@{
@@ -340,12 +327,12 @@ namespace Model
      * <p>An object that describes the effective recommendation preferences for the
      * instance.</p>
      */
-    inline const EffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const{ return m_effectiveRecommendationPreferences; }
+    inline const EffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const { return m_effectiveRecommendationPreferences; }
     inline bool EffectiveRecommendationPreferencesHasBeenSet() const { return m_effectiveRecommendationPreferencesHasBeenSet; }
-    inline void SetEffectiveRecommendationPreferences(const EffectiveRecommendationPreferences& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = value; }
-    inline void SetEffectiveRecommendationPreferences(EffectiveRecommendationPreferences&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::move(value); }
-    inline InstanceRecommendation& WithEffectiveRecommendationPreferences(const EffectiveRecommendationPreferences& value) { SetEffectiveRecommendationPreferences(value); return *this;}
-    inline InstanceRecommendation& WithEffectiveRecommendationPreferences(EffectiveRecommendationPreferences&& value) { SetEffectiveRecommendationPreferences(std::move(value)); return *this;}
+    template<typename EffectiveRecommendationPreferencesT = EffectiveRecommendationPreferences>
+    void SetEffectiveRecommendationPreferences(EffectiveRecommendationPreferencesT&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::forward<EffectiveRecommendationPreferencesT>(value); }
+    template<typename EffectiveRecommendationPreferencesT = EffectiveRecommendationPreferences>
+    InstanceRecommendation& WithEffectiveRecommendationPreferences(EffectiveRecommendationPreferencesT&& value) { SetEffectiveRecommendationPreferences(std::forward<EffectiveRecommendationPreferencesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -367,40 +354,37 @@ namespace Model
      * <code>SQLServer</code> - Infers that SQLServer might be running on the
      * instance.</p> </li> </ul>
      */
-    inline const Aws::Vector<InferredWorkloadType>& GetInferredWorkloadTypes() const{ return m_inferredWorkloadTypes; }
+    inline const Aws::Vector<InferredWorkloadType>& GetInferredWorkloadTypes() const { return m_inferredWorkloadTypes; }
     inline bool InferredWorkloadTypesHasBeenSet() const { return m_inferredWorkloadTypesHasBeenSet; }
-    inline void SetInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
-    inline void SetInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::move(value); }
-    inline InstanceRecommendation& WithInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { SetInferredWorkloadTypes(value); return *this;}
-    inline InstanceRecommendation& WithInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
-    inline InstanceRecommendation& AddInferredWorkloadTypes(const InferredWorkloadType& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(value); return *this; }
-    inline InstanceRecommendation& AddInferredWorkloadTypes(InferredWorkloadType&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(std::move(value)); return *this; }
+    template<typename InferredWorkloadTypesT = Aws::Vector<InferredWorkloadType>>
+    void SetInferredWorkloadTypes(InferredWorkloadTypesT&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::forward<InferredWorkloadTypesT>(value); }
+    template<typename InferredWorkloadTypesT = Aws::Vector<InferredWorkloadType>>
+    InstanceRecommendation& WithInferredWorkloadTypes(InferredWorkloadTypesT&& value) { SetInferredWorkloadTypes(std::forward<InferredWorkloadTypesT>(value)); return *this;}
+    inline InstanceRecommendation& AddInferredWorkloadTypes(InferredWorkloadType value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The state of the instance when the recommendation was generated. </p>
      */
-    inline const InstanceState& GetInstanceState() const{ return m_instanceState; }
+    inline InstanceState GetInstanceState() const { return m_instanceState; }
     inline bool InstanceStateHasBeenSet() const { return m_instanceStateHasBeenSet; }
-    inline void SetInstanceState(const InstanceState& value) { m_instanceStateHasBeenSet = true; m_instanceState = value; }
-    inline void SetInstanceState(InstanceState&& value) { m_instanceStateHasBeenSet = true; m_instanceState = std::move(value); }
-    inline InstanceRecommendation& WithInstanceState(const InstanceState& value) { SetInstanceState(value); return *this;}
-    inline InstanceRecommendation& WithInstanceState(InstanceState&& value) { SetInstanceState(std::move(value)); return *this;}
+    inline void SetInstanceState(InstanceState value) { m_instanceStateHasBeenSet = true; m_instanceState = value; }
+    inline InstanceRecommendation& WithInstanceState(InstanceState value) { SetInstanceState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline InstanceRecommendation& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline InstanceRecommendation& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline InstanceRecommendation& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline InstanceRecommendation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    InstanceRecommendation& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    InstanceRecommendation& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -408,36 +392,34 @@ namespace Model
      * <p> An object that describes Compute Optimizer's integration status with your
      * external metrics provider. </p>
      */
-    inline const ExternalMetricStatus& GetExternalMetricStatus() const{ return m_externalMetricStatus; }
+    inline const ExternalMetricStatus& GetExternalMetricStatus() const { return m_externalMetricStatus; }
     inline bool ExternalMetricStatusHasBeenSet() const { return m_externalMetricStatusHasBeenSet; }
-    inline void SetExternalMetricStatus(const ExternalMetricStatus& value) { m_externalMetricStatusHasBeenSet = true; m_externalMetricStatus = value; }
-    inline void SetExternalMetricStatus(ExternalMetricStatus&& value) { m_externalMetricStatusHasBeenSet = true; m_externalMetricStatus = std::move(value); }
-    inline InstanceRecommendation& WithExternalMetricStatus(const ExternalMetricStatus& value) { SetExternalMetricStatus(value); return *this;}
-    inline InstanceRecommendation& WithExternalMetricStatus(ExternalMetricStatus&& value) { SetExternalMetricStatus(std::move(value)); return *this;}
+    template<typename ExternalMetricStatusT = ExternalMetricStatus>
+    void SetExternalMetricStatus(ExternalMetricStatusT&& value) { m_externalMetricStatusHasBeenSet = true; m_externalMetricStatus = std::forward<ExternalMetricStatusT>(value); }
+    template<typename ExternalMetricStatusT = ExternalMetricStatus>
+    InstanceRecommendation& WithExternalMetricStatus(ExternalMetricStatusT&& value) { SetExternalMetricStatus(std::forward<ExternalMetricStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Describes the GPU accelerator settings for the current instance type. </p>
      */
-    inline const GpuInfo& GetCurrentInstanceGpuInfo() const{ return m_currentInstanceGpuInfo; }
+    inline const GpuInfo& GetCurrentInstanceGpuInfo() const { return m_currentInstanceGpuInfo; }
     inline bool CurrentInstanceGpuInfoHasBeenSet() const { return m_currentInstanceGpuInfoHasBeenSet; }
-    inline void SetCurrentInstanceGpuInfo(const GpuInfo& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = value; }
-    inline void SetCurrentInstanceGpuInfo(GpuInfo&& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = std::move(value); }
-    inline InstanceRecommendation& WithCurrentInstanceGpuInfo(const GpuInfo& value) { SetCurrentInstanceGpuInfo(value); return *this;}
-    inline InstanceRecommendation& WithCurrentInstanceGpuInfo(GpuInfo&& value) { SetCurrentInstanceGpuInfo(std::move(value)); return *this;}
+    template<typename CurrentInstanceGpuInfoT = GpuInfo>
+    void SetCurrentInstanceGpuInfo(CurrentInstanceGpuInfoT&& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = std::forward<CurrentInstanceGpuInfoT>(value); }
+    template<typename CurrentInstanceGpuInfoT = GpuInfo>
+    InstanceRecommendation& WithCurrentInstanceGpuInfo(CurrentInstanceGpuInfoT&& value) { SetCurrentInstanceGpuInfo(std::forward<CurrentInstanceGpuInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Describes if an Amazon EC2 instance is idle. </p>
      */
-    inline const InstanceIdle& GetIdle() const{ return m_idle; }
+    inline InstanceIdle GetIdle() const { return m_idle; }
     inline bool IdleHasBeenSet() const { return m_idleHasBeenSet; }
-    inline void SetIdle(const InstanceIdle& value) { m_idleHasBeenSet = true; m_idle = value; }
-    inline void SetIdle(InstanceIdle&& value) { m_idleHasBeenSet = true; m_idle = std::move(value); }
-    inline InstanceRecommendation& WithIdle(const InstanceIdle& value) { SetIdle(value); return *this;}
-    inline InstanceRecommendation& WithIdle(InstanceIdle&& value) { SetIdle(std::move(value)); return *this;}
+    inline void SetIdle(InstanceIdle value) { m_idleHasBeenSet = true; m_idle = value; }
+    inline InstanceRecommendation& WithIdle(InstanceIdle value) { SetIdle(value); return *this;}
     ///@}
   private:
 
@@ -453,7 +435,7 @@ namespace Model
     Aws::String m_currentInstanceType;
     bool m_currentInstanceTypeHasBeenSet = false;
 
-    Finding m_finding;
+    Finding m_finding{Finding::NOT_SET};
     bool m_findingHasBeenSet = false;
 
     Aws::Vector<InstanceRecommendationFindingReasonCode> m_findingReasonCodes;
@@ -462,7 +444,7 @@ namespace Model
     Aws::Vector<UtilizationMetric> m_utilizationMetrics;
     bool m_utilizationMetricsHasBeenSet = false;
 
-    double m_lookBackPeriodInDays;
+    double m_lookBackPeriodInDays{0.0};
     bool m_lookBackPeriodInDaysHasBeenSet = false;
 
     Aws::Vector<InstanceRecommendationOption> m_recommendationOptions;
@@ -471,10 +453,10 @@ namespace Model
     Aws::Vector<RecommendationSource> m_recommendationSources;
     bool m_recommendationSourcesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastRefreshTimestamp;
+    Aws::Utils::DateTime m_lastRefreshTimestamp{};
     bool m_lastRefreshTimestampHasBeenSet = false;
 
-    CurrentPerformanceRisk m_currentPerformanceRisk;
+    CurrentPerformanceRisk m_currentPerformanceRisk{CurrentPerformanceRisk::NOT_SET};
     bool m_currentPerformanceRiskHasBeenSet = false;
 
     EffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
@@ -483,7 +465,7 @@ namespace Model
     Aws::Vector<InferredWorkloadType> m_inferredWorkloadTypes;
     bool m_inferredWorkloadTypesHasBeenSet = false;
 
-    InstanceState m_instanceState;
+    InstanceState m_instanceState{InstanceState::NOT_SET};
     bool m_instanceStateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
@@ -495,7 +477,7 @@ namespace Model
     GpuInfo m_currentInstanceGpuInfo;
     bool m_currentInstanceGpuInfoHasBeenSet = false;
 
-    InstanceIdle m_idle;
+    InstanceIdle m_idle{InstanceIdle::NOT_SET};
     bool m_idleHasBeenSet = false;
   };
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSnapshotScheduleResult::CreateSnapshotScheduleResult() : 
-    m_associatedClusterCount(0)
-{
-}
-
 CreateSnapshotScheduleResult::CreateSnapshotScheduleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : CreateSnapshotScheduleResult()
 {
   *this = result;
 }
@@ -44,6 +38,7 @@ CreateSnapshotScheduleResult& CreateSnapshotScheduleResult::operator =(const Aws
     if(!scheduleDefinitionsNode.IsNull())
     {
       XmlNode scheduleDefinitionsMember = scheduleDefinitionsNode.FirstChild("ScheduleDefinition");
+      m_scheduleDefinitionsHasBeenSet = !scheduleDefinitionsMember.IsNull();
       while(!scheduleDefinitionsMember.IsNull())
       {
         m_scheduleDefinitions.push_back(scheduleDefinitionsMember.GetText());
@@ -55,16 +50,19 @@ CreateSnapshotScheduleResult& CreateSnapshotScheduleResult::operator =(const Aws
     if(!scheduleIdentifierNode.IsNull())
     {
       m_scheduleIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(scheduleIdentifierNode.GetText());
+      m_scheduleIdentifierHasBeenSet = true;
     }
     XmlNode scheduleDescriptionNode = resultNode.FirstChild("ScheduleDescription");
     if(!scheduleDescriptionNode.IsNull())
     {
       m_scheduleDescription = Aws::Utils::Xml::DecodeEscapedXmlText(scheduleDescriptionNode.GetText());
+      m_scheduleDescriptionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -76,6 +74,7 @@ CreateSnapshotScheduleResult& CreateSnapshotScheduleResult::operator =(const Aws
     if(!nextInvocationsNode.IsNull())
     {
       XmlNode nextInvocationsMember = nextInvocationsNode.FirstChild("SnapshotTime");
+      m_nextInvocationsHasBeenSet = !nextInvocationsMember.IsNull();
       while(!nextInvocationsMember.IsNull())
       {
         m_nextInvocations.push_back(DateTime(StringUtils::Trim(nextInvocationsMember.GetText().c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601));
@@ -87,11 +86,13 @@ CreateSnapshotScheduleResult& CreateSnapshotScheduleResult::operator =(const Aws
     if(!associatedClusterCountNode.IsNull())
     {
       m_associatedClusterCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associatedClusterCountNode.GetText()).c_str()).c_str());
+      m_associatedClusterCountHasBeenSet = true;
     }
     XmlNode associatedClustersNode = resultNode.FirstChild("AssociatedClusters");
     if(!associatedClustersNode.IsNull())
     {
       XmlNode associatedClustersMember = associatedClustersNode.FirstChild("ClusterAssociatedToSchedule");
+      m_associatedClustersHasBeenSet = !associatedClustersMember.IsNull();
       while(!associatedClustersMember.IsNull())
       {
         m_associatedClusters.push_back(associatedClustersMember);
@@ -104,6 +105,7 @@ CreateSnapshotScheduleResult& CreateSnapshotScheduleResult::operator =(const Aws
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::CreateSnapshotScheduleResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

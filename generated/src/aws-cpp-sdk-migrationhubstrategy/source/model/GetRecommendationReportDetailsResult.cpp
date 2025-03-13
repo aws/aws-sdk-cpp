@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRecommendationReportDetailsResult::GetRecommendationReportDetailsResult()
-{
-}
-
 GetRecommendationReportDetailsResult::GetRecommendationReportDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetRecommendationReportDetailsResult& GetRecommendationReportDetailsResult::oper
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationReportDetails"))
   {
     m_recommendationReportDetails = jsonValue.GetObject("recommendationReportDetails");
-
+    m_recommendationReportDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

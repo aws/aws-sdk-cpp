@@ -18,10 +18,6 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-NoApiRenderConfig::NoApiRenderConfig()
-{
-}
-
 NoApiRenderConfig::NoApiRenderConfig(JsonView jsonValue)
 {
   *this = jsonValue;

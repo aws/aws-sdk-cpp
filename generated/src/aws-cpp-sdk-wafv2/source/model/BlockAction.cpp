@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-BlockAction::BlockAction() : 
-    m_customResponseHasBeenSet(false)
-{
-}
-
 BlockAction::BlockAction(JsonView jsonValue)
-  : BlockAction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BlockAction& BlockAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomResponse"))
   {
     m_customResponse = jsonValue.GetObject("CustomResponse");
-
     m_customResponseHasBeenSet = true;
   }
-
   return *this;
 }
 

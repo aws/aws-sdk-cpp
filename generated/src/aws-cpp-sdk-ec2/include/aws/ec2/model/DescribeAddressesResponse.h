@@ -29,7 +29,7 @@ namespace Model
   class DescribeAddressesResponse
   {
   public:
-    AWS_EC2_API DescribeAddressesResponse();
+    AWS_EC2_API DescribeAddressesResponse() = default;
     AWS_EC2_API DescribeAddressesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeAddressesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the Elastic IP addresses.</p>
      */
-    inline const Aws::Vector<Address>& GetAddresses() const{ return m_addresses; }
-    inline void SetAddresses(const Aws::Vector<Address>& value) { m_addresses = value; }
-    inline void SetAddresses(Aws::Vector<Address>&& value) { m_addresses = std::move(value); }
-    inline DescribeAddressesResponse& WithAddresses(const Aws::Vector<Address>& value) { SetAddresses(value); return *this;}
-    inline DescribeAddressesResponse& WithAddresses(Aws::Vector<Address>&& value) { SetAddresses(std::move(value)); return *this;}
-    inline DescribeAddressesResponse& AddAddresses(const Address& value) { m_addresses.push_back(value); return *this; }
-    inline DescribeAddressesResponse& AddAddresses(Address&& value) { m_addresses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Address>& GetAddresses() const { return m_addresses; }
+    template<typename AddressesT = Aws::Vector<Address>>
+    void SetAddresses(AddressesT&& value) { m_addressesHasBeenSet = true; m_addresses = std::forward<AddressesT>(value); }
+    template<typename AddressesT = Aws::Vector<Address>>
+    DescribeAddressesResponse& WithAddresses(AddressesT&& value) { SetAddresses(std::forward<AddressesT>(value)); return *this;}
+    template<typename AddressesT = Address>
+    DescribeAddressesResponse& AddAddresses(AddressesT&& value) { m_addressesHasBeenSet = true; m_addresses.emplace_back(std::forward<AddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeAddressesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeAddressesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeAddressesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Address> m_addresses;
+    bool m_addressesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

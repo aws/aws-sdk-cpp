@@ -33,7 +33,7 @@ namespace Model
   class DataLakeSourceStatus
   {
   public:
-    AWS_SECURITYLAKE_API DataLakeSourceStatus();
+    AWS_SECURITYLAKE_API DataLakeSourceStatus() = default;
     AWS_SECURITYLAKE_API DataLakeSourceStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API DataLakeSourceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,29 @@ namespace Model
      * <p>Defines path the stored logs are available which has information on your
      * systems, applications, and services.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline DataLakeSourceStatus& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline DataLakeSourceStatus& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline DataLakeSourceStatus& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    DataLakeSourceStatus& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The health status of services, including error codes and patterns.</p>
      */
-    inline const SourceCollectionStatus& GetStatus() const{ return m_status; }
+    inline SourceCollectionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SourceCollectionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SourceCollectionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DataLakeSourceStatus& WithStatus(const SourceCollectionStatus& value) { SetStatus(value); return *this;}
-    inline DataLakeSourceStatus& WithStatus(SourceCollectionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SourceCollectionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DataLakeSourceStatus& WithStatus(SourceCollectionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_resource;
     bool m_resourceHasBeenSet = false;
 
-    SourceCollectionStatus m_status;
+    SourceCollectionStatus m_status{SourceCollectionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

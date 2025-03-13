@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LocalGatewayVirtualInterfaceGroup::LocalGatewayVirtualInterfaceGroup() : 
-    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
-    m_localGatewayVirtualInterfaceIdsHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 LocalGatewayVirtualInterfaceGroup::LocalGatewayVirtualInterfaceGroup(const XmlNode& xmlNode)
-  : LocalGatewayVirtualInterfaceGroup()
 {
   *this = xmlNode;
 }
@@ -46,42 +36,47 @@ LocalGatewayVirtualInterfaceGroup& LocalGatewayVirtualInterfaceGroup::operator =
     {
       m_localGatewayVirtualInterfaceGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayVirtualInterfaceGroupIdNode.GetText());
       m_localGatewayVirtualInterfaceGroupIdHasBeenSet = true;
+       m_localGatewayVirtualInterfaceGroupIdHasBeenSet = true;
     }
     XmlNode localGatewayVirtualInterfaceIdsNode = resultNode.FirstChild("localGatewayVirtualInterfaceIdSet");
     if(!localGatewayVirtualInterfaceIdsNode.IsNull())
     {
       XmlNode localGatewayVirtualInterfaceIdsMember = localGatewayVirtualInterfaceIdsNode.FirstChild("item");
+      m_localGatewayVirtualInterfaceIdsHasBeenSet = !localGatewayVirtualInterfaceIdsMember.IsNull();
       while(!localGatewayVirtualInterfaceIdsMember.IsNull())
       {
         m_localGatewayVirtualInterfaceIds.push_back(localGatewayVirtualInterfaceIdsMember.GetText());
         localGatewayVirtualInterfaceIdsMember = localGatewayVirtualInterfaceIdsMember.NextNode("item");
       }
 
-      m_localGatewayVirtualInterfaceIdsHasBeenSet = true;
+       m_localGatewayVirtualInterfaceIdsHasBeenSet = true;
     }
     XmlNode localGatewayIdNode = resultNode.FirstChild("localGatewayId");
     if(!localGatewayIdNode.IsNull())
     {
       m_localGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayIdNode.GetText());
       m_localGatewayIdHasBeenSet = true;
+       m_localGatewayIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

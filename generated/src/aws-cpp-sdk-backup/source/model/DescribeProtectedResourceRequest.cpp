@@ -12,11 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeProtectedResourceRequest::DescribeProtectedResourceRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeProtectedResourceRequest::SerializePayload() const
 {
   return {};

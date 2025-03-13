@@ -18,18 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedQueryS3OutputConfiguration::ProtectedQueryS3OutputConfiguration() : 
-    m_resultFormat(ResultFormat::NOT_SET),
-    m_resultFormatHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false),
-    m_singleFileOutput(false),
-    m_singleFileOutputHasBeenSet(false)
-{
-}
-
 ProtectedQueryS3OutputConfiguration::ProtectedQueryS3OutputConfiguration(JsonView jsonValue)
-  : ProtectedQueryS3OutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ProtectedQueryS3OutputConfiguration& ProtectedQueryS3OutputConfiguration::operat
   if(jsonValue.ValueExists("resultFormat"))
   {
     m_resultFormat = ResultFormatMapper::GetResultFormatForName(jsonValue.GetString("resultFormat"));
-
     m_resultFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyPrefix"))
   {
     m_keyPrefix = jsonValue.GetString("keyPrefix");
-
     m_keyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("singleFileOutput"))
   {
     m_singleFileOutput = jsonValue.GetBool("singleFileOutput");
-
     m_singleFileOutputHasBeenSet = true;
   }
-
   return *this;
 }
 

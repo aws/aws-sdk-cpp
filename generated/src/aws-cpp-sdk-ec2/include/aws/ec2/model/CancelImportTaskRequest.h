@@ -21,7 +21,7 @@ namespace Model
   class CancelImportTaskRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CancelImportTaskRequest();
+    AWS_EC2_API CancelImportTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The reason for canceling the task.</p>
      */
-    inline const Aws::String& GetCancelReason() const{ return m_cancelReason; }
+    inline const Aws::String& GetCancelReason() const { return m_cancelReason; }
     inline bool CancelReasonHasBeenSet() const { return m_cancelReasonHasBeenSet; }
-    inline void SetCancelReason(const Aws::String& value) { m_cancelReasonHasBeenSet = true; m_cancelReason = value; }
-    inline void SetCancelReason(Aws::String&& value) { m_cancelReasonHasBeenSet = true; m_cancelReason = std::move(value); }
-    inline void SetCancelReason(const char* value) { m_cancelReasonHasBeenSet = true; m_cancelReason.assign(value); }
-    inline CancelImportTaskRequest& WithCancelReason(const Aws::String& value) { SetCancelReason(value); return *this;}
-    inline CancelImportTaskRequest& WithCancelReason(Aws::String&& value) { SetCancelReason(std::move(value)); return *this;}
-    inline CancelImportTaskRequest& WithCancelReason(const char* value) { SetCancelReason(value); return *this;}
+    template<typename CancelReasonT = Aws::String>
+    void SetCancelReason(CancelReasonT&& value) { m_cancelReasonHasBeenSet = true; m_cancelReason = std::forward<CancelReasonT>(value); }
+    template<typename CancelReasonT = Aws::String>
+    CancelImportTaskRequest& WithCancelReason(CancelReasonT&& value) { SetCancelReason(std::forward<CancelReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CancelImportTaskRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -67,21 +65,19 @@ namespace Model
     /**
      * <p>The ID of the import image or import snapshot task to be canceled.</p>
      */
-    inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
+    inline const Aws::String& GetImportTaskId() const { return m_importTaskId; }
     inline bool ImportTaskIdHasBeenSet() const { return m_importTaskIdHasBeenSet; }
-    inline void SetImportTaskId(const Aws::String& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = value; }
-    inline void SetImportTaskId(Aws::String&& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = std::move(value); }
-    inline void SetImportTaskId(const char* value) { m_importTaskIdHasBeenSet = true; m_importTaskId.assign(value); }
-    inline CancelImportTaskRequest& WithImportTaskId(const Aws::String& value) { SetImportTaskId(value); return *this;}
-    inline CancelImportTaskRequest& WithImportTaskId(Aws::String&& value) { SetImportTaskId(std::move(value)); return *this;}
-    inline CancelImportTaskRequest& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
+    template<typename ImportTaskIdT = Aws::String>
+    void SetImportTaskId(ImportTaskIdT&& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = std::forward<ImportTaskIdT>(value); }
+    template<typename ImportTaskIdT = Aws::String>
+    CancelImportTaskRequest& WithImportTaskId(ImportTaskIdT&& value) { SetImportTaskId(std::forward<ImportTaskIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_cancelReason;
     bool m_cancelReasonHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_importTaskId;

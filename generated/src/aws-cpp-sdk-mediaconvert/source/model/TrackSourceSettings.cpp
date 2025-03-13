@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-TrackSourceSettings::TrackSourceSettings() : 
-    m_trackNumber(0),
-    m_trackNumberHasBeenSet(false)
-{
-}
-
 TrackSourceSettings::TrackSourceSettings(JsonView jsonValue)
-  : TrackSourceSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TrackSourceSettings& TrackSourceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("trackNumber"))
   {
     m_trackNumber = jsonValue.GetInteger("trackNumber");
-
     m_trackNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

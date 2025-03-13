@@ -18,20 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-LayerVersionsListItem::LayerVersionsListItem() : 
-    m_layerVersionArnHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_compatibleRuntimesHasBeenSet(false),
-    m_licenseInfoHasBeenSet(false),
-    m_compatibleArchitecturesHasBeenSet(false)
-{
-}
-
 LayerVersionsListItem::LayerVersionsListItem(JsonView jsonValue)
-  : LayerVersionsListItem()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ LayerVersionsListItem& LayerVersionsListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LayerVersionArn"))
   {
     m_layerVersionArn = jsonValue.GetString("LayerVersionArn");
-
     m_layerVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInt64("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetString("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompatibleRuntimes"))
   {
     Aws::Utils::Array<JsonView> compatibleRuntimesJsonList = jsonValue.GetArray("CompatibleRuntimes");
@@ -75,14 +54,11 @@ LayerVersionsListItem& LayerVersionsListItem::operator =(JsonView jsonValue)
     }
     m_compatibleRuntimesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseInfo"))
   {
     m_licenseInfo = jsonValue.GetString("LicenseInfo");
-
     m_licenseInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompatibleArchitectures"))
   {
     Aws::Utils::Array<JsonView> compatibleArchitecturesJsonList = jsonValue.GetArray("CompatibleArchitectures");
@@ -92,7 +68,6 @@ LayerVersionsListItem& LayerVersionsListItem::operator =(JsonView jsonValue)
     }
     m_compatibleArchitecturesHasBeenSet = true;
   }
-
   return *this;
 }
 

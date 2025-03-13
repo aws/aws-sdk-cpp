@@ -31,7 +31,7 @@ namespace Model
   class SourceSecurityGroup
   {
   public:
-    AWS_ELASTICLOADBALANCING_API SourceSecurityGroup();
+    AWS_ELASTICLOADBALANCING_API SourceSecurityGroup() = default;
     AWS_ELASTICLOADBALANCING_API SourceSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCING_API SourceSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The owner of the security group.</p>
      */
-    inline const Aws::String& GetOwnerAlias() const{ return m_ownerAlias; }
+    inline const Aws::String& GetOwnerAlias() const { return m_ownerAlias; }
     inline bool OwnerAliasHasBeenSet() const { return m_ownerAliasHasBeenSet; }
-    inline void SetOwnerAlias(const Aws::String& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = value; }
-    inline void SetOwnerAlias(Aws::String&& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = std::move(value); }
-    inline void SetOwnerAlias(const char* value) { m_ownerAliasHasBeenSet = true; m_ownerAlias.assign(value); }
-    inline SourceSecurityGroup& WithOwnerAlias(const Aws::String& value) { SetOwnerAlias(value); return *this;}
-    inline SourceSecurityGroup& WithOwnerAlias(Aws::String&& value) { SetOwnerAlias(std::move(value)); return *this;}
-    inline SourceSecurityGroup& WithOwnerAlias(const char* value) { SetOwnerAlias(value); return *this;}
+    template<typename OwnerAliasT = Aws::String>
+    void SetOwnerAlias(OwnerAliasT&& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = std::forward<OwnerAliasT>(value); }
+    template<typename OwnerAliasT = Aws::String>
+    SourceSecurityGroup& WithOwnerAlias(OwnerAliasT&& value) { SetOwnerAlias(std::forward<OwnerAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the security group.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline SourceSecurityGroup& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline SourceSecurityGroup& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline SourceSecurityGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    SourceSecurityGroup& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class AdvancedInputFilterSettings
   {
   public:
-    AWS_MEDIACONVERT_API AdvancedInputFilterSettings();
+    AWS_MEDIACONVERT_API AdvancedInputFilterSettings() = default;
     AWS_MEDIACONVERT_API AdvancedInputFilterSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AdvancedInputFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * doesn't have texture, including screen recordings, computer graphics, or
      * cartoons.
      */
-    inline const AdvancedInputFilterAddTexture& GetAddTexture() const{ return m_addTexture; }
+    inline AdvancedInputFilterAddTexture GetAddTexture() const { return m_addTexture; }
     inline bool AddTextureHasBeenSet() const { return m_addTextureHasBeenSet; }
-    inline void SetAddTexture(const AdvancedInputFilterAddTexture& value) { m_addTextureHasBeenSet = true; m_addTexture = value; }
-    inline void SetAddTexture(AdvancedInputFilterAddTexture&& value) { m_addTextureHasBeenSet = true; m_addTexture = std::move(value); }
-    inline AdvancedInputFilterSettings& WithAddTexture(const AdvancedInputFilterAddTexture& value) { SetAddTexture(value); return *this;}
-    inline AdvancedInputFilterSettings& WithAddTexture(AdvancedInputFilterAddTexture&& value) { SetAddTexture(std::move(value)); return *this;}
+    inline void SetAddTexture(AdvancedInputFilterAddTexture value) { m_addTextureHasBeenSet = true; m_addTexture = value; }
+    inline AdvancedInputFilterSettings& WithAddTexture(AdvancedInputFilterAddTexture value) { SetAddTexture(value); return *this;}
     ///@}
 
     ///@{
@@ -63,19 +61,17 @@ namespace Model
      * can reduce softness. To apply no sharpening: Keep the default value, Off. To
      * apply a minimal amount of sharpening choose Low, or for the maximum choose High.
      */
-    inline const AdvancedInputFilterSharpen& GetSharpening() const{ return m_sharpening; }
+    inline AdvancedInputFilterSharpen GetSharpening() const { return m_sharpening; }
     inline bool SharpeningHasBeenSet() const { return m_sharpeningHasBeenSet; }
-    inline void SetSharpening(const AdvancedInputFilterSharpen& value) { m_sharpeningHasBeenSet = true; m_sharpening = value; }
-    inline void SetSharpening(AdvancedInputFilterSharpen&& value) { m_sharpeningHasBeenSet = true; m_sharpening = std::move(value); }
-    inline AdvancedInputFilterSettings& WithSharpening(const AdvancedInputFilterSharpen& value) { SetSharpening(value); return *this;}
-    inline AdvancedInputFilterSettings& WithSharpening(AdvancedInputFilterSharpen&& value) { SetSharpening(std::move(value)); return *this;}
+    inline void SetSharpening(AdvancedInputFilterSharpen value) { m_sharpeningHasBeenSet = true; m_sharpening = value; }
+    inline AdvancedInputFilterSettings& WithSharpening(AdvancedInputFilterSharpen value) { SetSharpening(value); return *this;}
     ///@}
   private:
 
-    AdvancedInputFilterAddTexture m_addTexture;
+    AdvancedInputFilterAddTexture m_addTexture{AdvancedInputFilterAddTexture::NOT_SET};
     bool m_addTextureHasBeenSet = false;
 
-    AdvancedInputFilterSharpen m_sharpening;
+    AdvancedInputFilterSharpen m_sharpening{AdvancedInputFilterSharpen::NOT_SET};
     bool m_sharpeningHasBeenSet = false;
   };
 

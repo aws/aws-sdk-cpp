@@ -18,17 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualNodeSpec::VirtualNodeSpec() : 
-    m_backendDefaultsHasBeenSet(false),
-    m_backendsHasBeenSet(false),
-    m_listenersHasBeenSet(false),
-    m_loggingHasBeenSet(false),
-    m_serviceDiscoveryHasBeenSet(false)
-{
-}
-
 VirtualNodeSpec::VirtualNodeSpec(JsonView jsonValue)
-  : VirtualNodeSpec()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ VirtualNodeSpec& VirtualNodeSpec::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("backendDefaults"))
   {
     m_backendDefaults = jsonValue.GetObject("backendDefaults");
-
     m_backendDefaultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("backends"))
   {
     Aws::Utils::Array<JsonView> backendsJsonList = jsonValue.GetArray("backends");
@@ -51,7 +39,6 @@ VirtualNodeSpec& VirtualNodeSpec::operator =(JsonView jsonValue)
     }
     m_backendsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listeners"))
   {
     Aws::Utils::Array<JsonView> listenersJsonList = jsonValue.GetArray("listeners");
@@ -61,21 +48,16 @@ VirtualNodeSpec& VirtualNodeSpec::operator =(JsonView jsonValue)
     }
     m_listenersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logging"))
   {
     m_logging = jsonValue.GetObject("logging");
-
     m_loggingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceDiscovery"))
   {
     m_serviceDiscovery = jsonValue.GetObject("serviceDiscovery");
-
     m_serviceDiscoveryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,26 +18,7 @@ namespace Backup
 namespace Model
 {
 
-BackupRuleInput::BackupRuleInput() : 
-    m_ruleNameHasBeenSet(false),
-    m_targetBackupVaultNameHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_startWindowMinutes(0),
-    m_startWindowMinutesHasBeenSet(false),
-    m_completionWindowMinutes(0),
-    m_completionWindowMinutesHasBeenSet(false),
-    m_lifecycleHasBeenSet(false),
-    m_recoveryPointTagsHasBeenSet(false),
-    m_copyActionsHasBeenSet(false),
-    m_enableContinuousBackup(false),
-    m_enableContinuousBackupHasBeenSet(false),
-    m_scheduleExpressionTimezoneHasBeenSet(false),
-    m_indexActionsHasBeenSet(false)
-{
-}
-
 BackupRuleInput::BackupRuleInput(JsonView jsonValue)
-  : BackupRuleInput()
 {
   *this = jsonValue;
 }
@@ -47,45 +28,33 @@ BackupRuleInput& BackupRuleInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleName"))
   {
     m_ruleName = jsonValue.GetString("RuleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetBackupVaultName"))
   {
     m_targetBackupVaultName = jsonValue.GetString("TargetBackupVaultName");
-
     m_targetBackupVaultNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleExpression"))
   {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
-
     m_scheduleExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartWindowMinutes"))
   {
     m_startWindowMinutes = jsonValue.GetInt64("StartWindowMinutes");
-
     m_startWindowMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionWindowMinutes"))
   {
     m_completionWindowMinutes = jsonValue.GetInt64("CompletionWindowMinutes");
-
     m_completionWindowMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = jsonValue.GetObject("Lifecycle");
-
     m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecoveryPointTags"))
   {
     Aws::Map<Aws::String, JsonView> recoveryPointTagsJsonMap = jsonValue.GetObject("RecoveryPointTags").GetAllObjects();
@@ -95,7 +64,6 @@ BackupRuleInput& BackupRuleInput::operator =(JsonView jsonValue)
     }
     m_recoveryPointTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyActions"))
   {
     Aws::Utils::Array<JsonView> copyActionsJsonList = jsonValue.GetArray("CopyActions");
@@ -105,21 +73,16 @@ BackupRuleInput& BackupRuleInput::operator =(JsonView jsonValue)
     }
     m_copyActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableContinuousBackup"))
   {
     m_enableContinuousBackup = jsonValue.GetBool("EnableContinuousBackup");
-
     m_enableContinuousBackupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleExpressionTimezone"))
   {
     m_scheduleExpressionTimezone = jsonValue.GetString("ScheduleExpressionTimezone");
-
     m_scheduleExpressionTimezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexActions"))
   {
     Aws::Utils::Array<JsonView> indexActionsJsonList = jsonValue.GetArray("IndexActions");
@@ -129,7 +92,6 @@ BackupRuleInput& BackupRuleInput::operator =(JsonView jsonValue)
     }
     m_indexActionsHasBeenSet = true;
   }
-
   return *this;
 }
 

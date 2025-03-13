@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PublicIpv4PoolRange::PublicIpv4PoolRange() : 
-    m_firstAddressHasBeenSet(false),
-    m_lastAddressHasBeenSet(false),
-    m_addressCount(0),
-    m_addressCountHasBeenSet(false),
-    m_availableAddressCount(0),
-    m_availableAddressCountHasBeenSet(false)
-{
-}
-
 PublicIpv4PoolRange::PublicIpv4PoolRange(const XmlNode& xmlNode)
-  : PublicIpv4PoolRange()
 {
   *this = xmlNode;
 }
@@ -47,24 +36,28 @@ PublicIpv4PoolRange& PublicIpv4PoolRange::operator =(const XmlNode& xmlNode)
     {
       m_firstAddress = Aws::Utils::Xml::DecodeEscapedXmlText(firstAddressNode.GetText());
       m_firstAddressHasBeenSet = true;
+       m_firstAddressHasBeenSet = true;
     }
     XmlNode lastAddressNode = resultNode.FirstChild("lastAddress");
     if(!lastAddressNode.IsNull())
     {
       m_lastAddress = Aws::Utils::Xml::DecodeEscapedXmlText(lastAddressNode.GetText());
       m_lastAddressHasBeenSet = true;
+       m_lastAddressHasBeenSet = true;
     }
     XmlNode addressCountNode = resultNode.FirstChild("addressCount");
     if(!addressCountNode.IsNull())
     {
       m_addressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(addressCountNode.GetText()).c_str()).c_str());
       m_addressCountHasBeenSet = true;
+       m_addressCountHasBeenSet = true;
     }
     XmlNode availableAddressCountNode = resultNode.FirstChild("availableAddressCount");
     if(!availableAddressCountNode.IsNull())
     {
       m_availableAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableAddressCountNode.GetText()).c_str()).c_str());
       m_availableAddressCountHasBeenSet = true;
+       m_availableAddressCountHasBeenSet = true;
     }
   }
 

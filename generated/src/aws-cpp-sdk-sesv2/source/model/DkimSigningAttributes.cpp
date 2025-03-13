@@ -18,18 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-DkimSigningAttributes::DkimSigningAttributes() : 
-    m_domainSigningSelectorHasBeenSet(false),
-    m_domainSigningPrivateKeyHasBeenSet(false),
-    m_nextSigningKeyLength(DkimSigningKeyLength::NOT_SET),
-    m_nextSigningKeyLengthHasBeenSet(false),
-    m_domainSigningAttributesOrigin(DkimSigningAttributesOrigin::NOT_SET),
-    m_domainSigningAttributesOriginHasBeenSet(false)
-{
-}
-
 DkimSigningAttributes::DkimSigningAttributes(JsonView jsonValue)
-  : DkimSigningAttributes()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DkimSigningAttributes& DkimSigningAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DomainSigningSelector"))
   {
     m_domainSigningSelector = jsonValue.GetString("DomainSigningSelector");
-
     m_domainSigningSelectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainSigningPrivateKey"))
   {
     m_domainSigningPrivateKey = jsonValue.GetString("DomainSigningPrivateKey");
-
     m_domainSigningPrivateKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextSigningKeyLength"))
   {
     m_nextSigningKeyLength = DkimSigningKeyLengthMapper::GetDkimSigningKeyLengthForName(jsonValue.GetString("NextSigningKeyLength"));
-
     m_nextSigningKeyLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainSigningAttributesOrigin"))
   {
     m_domainSigningAttributesOrigin = DkimSigningAttributesOriginMapper::GetDkimSigningAttributesOriginForName(jsonValue.GetString("DomainSigningAttributesOrigin"));
-
     m_domainSigningAttributesOriginHasBeenSet = true;
   }
-
   return *this;
 }
 

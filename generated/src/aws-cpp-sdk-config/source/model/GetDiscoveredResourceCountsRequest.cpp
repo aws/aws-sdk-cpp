@@ -12,14 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDiscoveredResourceCountsRequest::GetDiscoveredResourceCountsRequest() : 
-    m_resourceTypesHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetDiscoveredResourceCountsRequest::SerializePayload() const
 {
   JsonValue payload;

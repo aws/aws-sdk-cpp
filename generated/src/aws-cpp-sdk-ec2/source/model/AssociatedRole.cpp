@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AssociatedRole::AssociatedRole() : 
-    m_associatedRoleArnHasBeenSet(false),
-    m_certificateS3BucketNameHasBeenSet(false),
-    m_certificateS3ObjectKeyHasBeenSet(false),
-    m_encryptionKmsKeyIdHasBeenSet(false)
-{
-}
-
 AssociatedRole::AssociatedRole(const XmlNode& xmlNode)
-  : AssociatedRole()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ AssociatedRole& AssociatedRole::operator =(const XmlNode& xmlNode)
     {
       m_associatedRoleArn = Aws::Utils::Xml::DecodeEscapedXmlText(associatedRoleArnNode.GetText());
       m_associatedRoleArnHasBeenSet = true;
+       m_associatedRoleArnHasBeenSet = true;
     }
     XmlNode certificateS3BucketNameNode = resultNode.FirstChild("certificateS3BucketName");
     if(!certificateS3BucketNameNode.IsNull())
     {
       m_certificateS3BucketName = Aws::Utils::Xml::DecodeEscapedXmlText(certificateS3BucketNameNode.GetText());
       m_certificateS3BucketNameHasBeenSet = true;
+       m_certificateS3BucketNameHasBeenSet = true;
     }
     XmlNode certificateS3ObjectKeyNode = resultNode.FirstChild("certificateS3ObjectKey");
     if(!certificateS3ObjectKeyNode.IsNull())
     {
       m_certificateS3ObjectKey = Aws::Utils::Xml::DecodeEscapedXmlText(certificateS3ObjectKeyNode.GetText());
       m_certificateS3ObjectKeyHasBeenSet = true;
+       m_certificateS3ObjectKeyHasBeenSet = true;
     }
     XmlNode encryptionKmsKeyIdNode = resultNode.FirstChild("encryptionKmsKeyId");
     if(!encryptionKmsKeyIdNode.IsNull())
     {
       m_encryptionKmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(encryptionKmsKeyIdNode.GetText());
       m_encryptionKmsKeyIdHasBeenSet = true;
+       m_encryptionKmsKeyIdHasBeenSet = true;
     }
   }
 

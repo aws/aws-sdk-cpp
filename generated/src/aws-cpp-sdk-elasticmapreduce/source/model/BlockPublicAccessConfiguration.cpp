@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-BlockPublicAccessConfiguration::BlockPublicAccessConfiguration() : 
-    m_blockPublicSecurityGroupRules(false),
-    m_blockPublicSecurityGroupRulesHasBeenSet(false),
-    m_permittedPublicSecurityGroupRuleRangesHasBeenSet(false)
-{
-}
-
 BlockPublicAccessConfiguration::BlockPublicAccessConfiguration(JsonView jsonValue)
-  : BlockPublicAccessConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ BlockPublicAccessConfiguration& BlockPublicAccessConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("BlockPublicSecurityGroupRules"))
   {
     m_blockPublicSecurityGroupRules = jsonValue.GetBool("BlockPublicSecurityGroupRules");
-
     m_blockPublicSecurityGroupRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermittedPublicSecurityGroupRuleRanges"))
   {
     Aws::Utils::Array<JsonView> permittedPublicSecurityGroupRuleRangesJsonList = jsonValue.GetArray("PermittedPublicSecurityGroupRuleRanges");
@@ -49,7 +39,6 @@ BlockPublicAccessConfiguration& BlockPublicAccessConfiguration::operator =(JsonV
     }
     m_permittedPublicSecurityGroupRuleRangesHasBeenSet = true;
   }
-
   return *this;
 }
 

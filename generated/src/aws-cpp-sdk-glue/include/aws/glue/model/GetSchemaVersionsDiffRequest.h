@@ -23,7 +23,7 @@ namespace Model
   class GetSchemaVersionsDiffRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API GetSchemaVersionsDiffRequest();
+    AWS_GLUE_API GetSchemaVersionsDiffRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,36 +45,36 @@ namespace Model
      * <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
      * </ul>
      */
-    inline const SchemaId& GetSchemaId() const{ return m_schemaId; }
+    inline const SchemaId& GetSchemaId() const { return m_schemaId; }
     inline bool SchemaIdHasBeenSet() const { return m_schemaIdHasBeenSet; }
-    inline void SetSchemaId(const SchemaId& value) { m_schemaIdHasBeenSet = true; m_schemaId = value; }
-    inline void SetSchemaId(SchemaId&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::move(value); }
-    inline GetSchemaVersionsDiffRequest& WithSchemaId(const SchemaId& value) { SetSchemaId(value); return *this;}
-    inline GetSchemaVersionsDiffRequest& WithSchemaId(SchemaId&& value) { SetSchemaId(std::move(value)); return *this;}
+    template<typename SchemaIdT = SchemaId>
+    void SetSchemaId(SchemaIdT&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::forward<SchemaIdT>(value); }
+    template<typename SchemaIdT = SchemaId>
+    GetSchemaVersionsDiffRequest& WithSchemaId(SchemaIdT&& value) { SetSchemaId(std::forward<SchemaIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The first of the two schema versions to be compared.</p>
      */
-    inline const SchemaVersionNumber& GetFirstSchemaVersionNumber() const{ return m_firstSchemaVersionNumber; }
+    inline const SchemaVersionNumber& GetFirstSchemaVersionNumber() const { return m_firstSchemaVersionNumber; }
     inline bool FirstSchemaVersionNumberHasBeenSet() const { return m_firstSchemaVersionNumberHasBeenSet; }
-    inline void SetFirstSchemaVersionNumber(const SchemaVersionNumber& value) { m_firstSchemaVersionNumberHasBeenSet = true; m_firstSchemaVersionNumber = value; }
-    inline void SetFirstSchemaVersionNumber(SchemaVersionNumber&& value) { m_firstSchemaVersionNumberHasBeenSet = true; m_firstSchemaVersionNumber = std::move(value); }
-    inline GetSchemaVersionsDiffRequest& WithFirstSchemaVersionNumber(const SchemaVersionNumber& value) { SetFirstSchemaVersionNumber(value); return *this;}
-    inline GetSchemaVersionsDiffRequest& WithFirstSchemaVersionNumber(SchemaVersionNumber&& value) { SetFirstSchemaVersionNumber(std::move(value)); return *this;}
+    template<typename FirstSchemaVersionNumberT = SchemaVersionNumber>
+    void SetFirstSchemaVersionNumber(FirstSchemaVersionNumberT&& value) { m_firstSchemaVersionNumberHasBeenSet = true; m_firstSchemaVersionNumber = std::forward<FirstSchemaVersionNumberT>(value); }
+    template<typename FirstSchemaVersionNumberT = SchemaVersionNumber>
+    GetSchemaVersionsDiffRequest& WithFirstSchemaVersionNumber(FirstSchemaVersionNumberT&& value) { SetFirstSchemaVersionNumber(std::forward<FirstSchemaVersionNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The second of the two schema versions to be compared.</p>
      */
-    inline const SchemaVersionNumber& GetSecondSchemaVersionNumber() const{ return m_secondSchemaVersionNumber; }
+    inline const SchemaVersionNumber& GetSecondSchemaVersionNumber() const { return m_secondSchemaVersionNumber; }
     inline bool SecondSchemaVersionNumberHasBeenSet() const { return m_secondSchemaVersionNumberHasBeenSet; }
-    inline void SetSecondSchemaVersionNumber(const SchemaVersionNumber& value) { m_secondSchemaVersionNumberHasBeenSet = true; m_secondSchemaVersionNumber = value; }
-    inline void SetSecondSchemaVersionNumber(SchemaVersionNumber&& value) { m_secondSchemaVersionNumberHasBeenSet = true; m_secondSchemaVersionNumber = std::move(value); }
-    inline GetSchemaVersionsDiffRequest& WithSecondSchemaVersionNumber(const SchemaVersionNumber& value) { SetSecondSchemaVersionNumber(value); return *this;}
-    inline GetSchemaVersionsDiffRequest& WithSecondSchemaVersionNumber(SchemaVersionNumber&& value) { SetSecondSchemaVersionNumber(std::move(value)); return *this;}
+    template<typename SecondSchemaVersionNumberT = SchemaVersionNumber>
+    void SetSecondSchemaVersionNumber(SecondSchemaVersionNumberT&& value) { m_secondSchemaVersionNumberHasBeenSet = true; m_secondSchemaVersionNumber = std::forward<SecondSchemaVersionNumberT>(value); }
+    template<typename SecondSchemaVersionNumberT = SchemaVersionNumber>
+    GetSchemaVersionsDiffRequest& WithSecondSchemaVersionNumber(SecondSchemaVersionNumberT&& value) { SetSecondSchemaVersionNumber(std::forward<SecondSchemaVersionNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +82,10 @@ namespace Model
      * <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff
      * type.</p>
      */
-    inline const SchemaDiffType& GetSchemaDiffType() const{ return m_schemaDiffType; }
+    inline SchemaDiffType GetSchemaDiffType() const { return m_schemaDiffType; }
     inline bool SchemaDiffTypeHasBeenSet() const { return m_schemaDiffTypeHasBeenSet; }
-    inline void SetSchemaDiffType(const SchemaDiffType& value) { m_schemaDiffTypeHasBeenSet = true; m_schemaDiffType = value; }
-    inline void SetSchemaDiffType(SchemaDiffType&& value) { m_schemaDiffTypeHasBeenSet = true; m_schemaDiffType = std::move(value); }
-    inline GetSchemaVersionsDiffRequest& WithSchemaDiffType(const SchemaDiffType& value) { SetSchemaDiffType(value); return *this;}
-    inline GetSchemaVersionsDiffRequest& WithSchemaDiffType(SchemaDiffType&& value) { SetSchemaDiffType(std::move(value)); return *this;}
+    inline void SetSchemaDiffType(SchemaDiffType value) { m_schemaDiffTypeHasBeenSet = true; m_schemaDiffType = value; }
+    inline GetSchemaVersionsDiffRequest& WithSchemaDiffType(SchemaDiffType value) { SetSchemaDiffType(value); return *this;}
     ///@}
   private:
 
@@ -100,7 +98,7 @@ namespace Model
     SchemaVersionNumber m_secondSchemaVersionNumber;
     bool m_secondSchemaVersionNumberHasBeenSet = false;
 
-    SchemaDiffType m_schemaDiffType;
+    SchemaDiffType m_schemaDiffType{SchemaDiffType::NOT_SET};
     bool m_schemaDiffTypeHasBeenSet = false;
   };
 

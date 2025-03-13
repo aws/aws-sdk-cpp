@@ -29,7 +29,7 @@ namespace Model
   class ListAvailableVoiceConnectorRegionsResult
   {
   public:
-    AWS_CHIMESDKVOICE_API ListAvailableVoiceConnectorRegionsResult();
+    AWS_CHIMESDKVOICE_API ListAvailableVoiceConnectorRegionsResult() = default;
     AWS_CHIMESDKVOICE_API ListAvailableVoiceConnectorRegionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API ListAvailableVoiceConnectorRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,29 @@ namespace Model
     /**
      * <p>The list of AWS Regions.</p>
      */
-    inline const Aws::Vector<VoiceConnectorAwsRegion>& GetVoiceConnectorRegions() const{ return m_voiceConnectorRegions; }
-    inline void SetVoiceConnectorRegions(const Aws::Vector<VoiceConnectorAwsRegion>& value) { m_voiceConnectorRegions = value; }
-    inline void SetVoiceConnectorRegions(Aws::Vector<VoiceConnectorAwsRegion>&& value) { m_voiceConnectorRegions = std::move(value); }
-    inline ListAvailableVoiceConnectorRegionsResult& WithVoiceConnectorRegions(const Aws::Vector<VoiceConnectorAwsRegion>& value) { SetVoiceConnectorRegions(value); return *this;}
-    inline ListAvailableVoiceConnectorRegionsResult& WithVoiceConnectorRegions(Aws::Vector<VoiceConnectorAwsRegion>&& value) { SetVoiceConnectorRegions(std::move(value)); return *this;}
-    inline ListAvailableVoiceConnectorRegionsResult& AddVoiceConnectorRegions(const VoiceConnectorAwsRegion& value) { m_voiceConnectorRegions.push_back(value); return *this; }
-    inline ListAvailableVoiceConnectorRegionsResult& AddVoiceConnectorRegions(VoiceConnectorAwsRegion&& value) { m_voiceConnectorRegions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VoiceConnectorAwsRegion>& GetVoiceConnectorRegions() const { return m_voiceConnectorRegions; }
+    template<typename VoiceConnectorRegionsT = Aws::Vector<VoiceConnectorAwsRegion>>
+    void SetVoiceConnectorRegions(VoiceConnectorRegionsT&& value) { m_voiceConnectorRegionsHasBeenSet = true; m_voiceConnectorRegions = std::forward<VoiceConnectorRegionsT>(value); }
+    template<typename VoiceConnectorRegionsT = Aws::Vector<VoiceConnectorAwsRegion>>
+    ListAvailableVoiceConnectorRegionsResult& WithVoiceConnectorRegions(VoiceConnectorRegionsT&& value) { SetVoiceConnectorRegions(std::forward<VoiceConnectorRegionsT>(value)); return *this;}
+    inline ListAvailableVoiceConnectorRegionsResult& AddVoiceConnectorRegions(VoiceConnectorAwsRegion value) { m_voiceConnectorRegionsHasBeenSet = true; m_voiceConnectorRegions.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAvailableVoiceConnectorRegionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAvailableVoiceConnectorRegionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAvailableVoiceConnectorRegionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAvailableVoiceConnectorRegionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VoiceConnectorAwsRegion> m_voiceConnectorRegions;
+    bool m_voiceConnectorRegionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

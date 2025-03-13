@@ -18,17 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-LogConfig::LogConfig() : 
-    m_fieldLogLevel(FieldLogLevel::NOT_SET),
-    m_fieldLogLevelHasBeenSet(false),
-    m_cloudWatchLogsRoleArnHasBeenSet(false),
-    m_excludeVerboseContent(false),
-    m_excludeVerboseContentHasBeenSet(false)
-{
-}
-
 LogConfig::LogConfig(JsonView jsonValue)
-  : LogConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ LogConfig& LogConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fieldLogLevel"))
   {
     m_fieldLogLevel = FieldLogLevelMapper::GetFieldLogLevelForName(jsonValue.GetString("fieldLogLevel"));
-
     m_fieldLogLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cloudWatchLogsRoleArn"))
   {
     m_cloudWatchLogsRoleArn = jsonValue.GetString("cloudWatchLogsRoleArn");
-
     m_cloudWatchLogsRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excludeVerboseContent"))
   {
     m_excludeVerboseContent = jsonValue.GetBool("excludeVerboseContent");
-
     m_excludeVerboseContentHasBeenSet = true;
   }
-
   return *this;
 }
 

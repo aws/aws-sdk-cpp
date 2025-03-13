@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-HoneycodeDestinationProperties::HoneycodeDestinationProperties() : 
-    m_objectHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false)
-{
-}
-
 HoneycodeDestinationProperties::HoneycodeDestinationProperties(JsonView jsonValue)
-  : HoneycodeDestinationProperties()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HoneycodeDestinationProperties& HoneycodeDestinationProperties::operator =(JsonV
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorHandlingConfig"))
   {
     m_errorHandlingConfig = jsonValue.GetObject("errorHandlingConfig");
-
     m_errorHandlingConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

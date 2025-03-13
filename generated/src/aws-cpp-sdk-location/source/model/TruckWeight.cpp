@@ -18,16 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-TruckWeight::TruckWeight() : 
-    m_total(0.0),
-    m_totalHasBeenSet(false),
-    m_unit(VehicleWeightUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 TruckWeight::TruckWeight(JsonView jsonValue)
-  : TruckWeight()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TruckWeight& TruckWeight::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetDouble("Total");
-
     m_totalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = VehicleWeightUnitMapper::GetVehicleWeightUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

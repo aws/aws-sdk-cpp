@@ -18,16 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-EnvironmentVariable::EnvironmentVariable() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_type(EnvironmentVariableType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 EnvironmentVariable::EnvironmentVariable(JsonView jsonValue)
-  : EnvironmentVariable()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ EnvironmentVariable& EnvironmentVariable::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = EnvironmentVariableTypeMapper::GetEnvironmentVariableTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

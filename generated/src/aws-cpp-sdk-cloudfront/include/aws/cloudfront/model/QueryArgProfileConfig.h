@@ -31,7 +31,7 @@ namespace Model
   class QueryArgProfileConfig
   {
   public:
-    AWS_CLOUDFRONT_API QueryArgProfileConfig();
+    AWS_CLOUDFRONT_API QueryArgProfileConfig() = default;
     AWS_CLOUDFRONT_API QueryArgProfileConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API QueryArgProfileConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
      * profile specified by the field-level encryption query argument, fle-profile, is
      * unknown.</p>
      */
-    inline bool GetForwardWhenQueryArgProfileIsUnknown() const{ return m_forwardWhenQueryArgProfileIsUnknown; }
+    inline bool GetForwardWhenQueryArgProfileIsUnknown() const { return m_forwardWhenQueryArgProfileIsUnknown; }
     inline bool ForwardWhenQueryArgProfileIsUnknownHasBeenSet() const { return m_forwardWhenQueryArgProfileIsUnknownHasBeenSet; }
     inline void SetForwardWhenQueryArgProfileIsUnknown(bool value) { m_forwardWhenQueryArgProfileIsUnknownHasBeenSet = true; m_forwardWhenQueryArgProfileIsUnknown = value; }
     inline QueryArgProfileConfig& WithForwardWhenQueryArgProfileIsUnknown(bool value) { SetForwardWhenQueryArgProfileIsUnknown(value); return *this;}
@@ -55,16 +55,16 @@ namespace Model
      * <p>Profiles specified for query argument-profile mapping for field-level
      * encryption.</p>
      */
-    inline const QueryArgProfiles& GetQueryArgProfiles() const{ return m_queryArgProfiles; }
+    inline const QueryArgProfiles& GetQueryArgProfiles() const { return m_queryArgProfiles; }
     inline bool QueryArgProfilesHasBeenSet() const { return m_queryArgProfilesHasBeenSet; }
-    inline void SetQueryArgProfiles(const QueryArgProfiles& value) { m_queryArgProfilesHasBeenSet = true; m_queryArgProfiles = value; }
-    inline void SetQueryArgProfiles(QueryArgProfiles&& value) { m_queryArgProfilesHasBeenSet = true; m_queryArgProfiles = std::move(value); }
-    inline QueryArgProfileConfig& WithQueryArgProfiles(const QueryArgProfiles& value) { SetQueryArgProfiles(value); return *this;}
-    inline QueryArgProfileConfig& WithQueryArgProfiles(QueryArgProfiles&& value) { SetQueryArgProfiles(std::move(value)); return *this;}
+    template<typename QueryArgProfilesT = QueryArgProfiles>
+    void SetQueryArgProfiles(QueryArgProfilesT&& value) { m_queryArgProfilesHasBeenSet = true; m_queryArgProfiles = std::forward<QueryArgProfilesT>(value); }
+    template<typename QueryArgProfilesT = QueryArgProfiles>
+    QueryArgProfileConfig& WithQueryArgProfiles(QueryArgProfilesT&& value) { SetQueryArgProfiles(std::forward<QueryArgProfilesT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_forwardWhenQueryArgProfileIsUnknown;
+    bool m_forwardWhenQueryArgProfileIsUnknown{false};
     bool m_forwardWhenQueryArgProfileIsUnknownHasBeenSet = false;
 
     QueryArgProfiles m_queryArgProfiles;

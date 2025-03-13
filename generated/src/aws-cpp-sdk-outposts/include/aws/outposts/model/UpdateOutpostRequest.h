@@ -22,7 +22,7 @@ namespace Model
   class UpdateOutpostRequest : public OutpostsRequest
   {
   public:
-    AWS_OUTPOSTS_API UpdateOutpostRequest();
+    AWS_OUTPOSTS_API UpdateOutpostRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,50 +37,42 @@ namespace Model
     /**
      * <p> The ID or ARN of the Outpost. </p>
      */
-    inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
+    inline const Aws::String& GetOutpostId() const { return m_outpostId; }
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
-    inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
-    inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
-    inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
-    inline UpdateOutpostRequest& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
-    inline UpdateOutpostRequest& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
-    inline UpdateOutpostRequest& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
+    template<typename OutpostIdT = Aws::String>
+    void SetOutpostId(OutpostIdT&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::forward<OutpostIdT>(value); }
+    template<typename OutpostIdT = Aws::String>
+    UpdateOutpostRequest& WithOutpostId(OutpostIdT&& value) { SetOutpostId(std::forward<OutpostIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateOutpostRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateOutpostRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateOutpostRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateOutpostRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateOutpostRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateOutpostRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateOutpostRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateOutpostRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of hardware for this Outpost. </p>
      */
-    inline const SupportedHardwareType& GetSupportedHardwareType() const{ return m_supportedHardwareType; }
+    inline SupportedHardwareType GetSupportedHardwareType() const { return m_supportedHardwareType; }
     inline bool SupportedHardwareTypeHasBeenSet() const { return m_supportedHardwareTypeHasBeenSet; }
-    inline void SetSupportedHardwareType(const SupportedHardwareType& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = value; }
-    inline void SetSupportedHardwareType(SupportedHardwareType&& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = std::move(value); }
-    inline UpdateOutpostRequest& WithSupportedHardwareType(const SupportedHardwareType& value) { SetSupportedHardwareType(value); return *this;}
-    inline UpdateOutpostRequest& WithSupportedHardwareType(SupportedHardwareType&& value) { SetSupportedHardwareType(std::move(value)); return *this;}
+    inline void SetSupportedHardwareType(SupportedHardwareType value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = value; }
+    inline UpdateOutpostRequest& WithSupportedHardwareType(SupportedHardwareType value) { SetSupportedHardwareType(value); return *this;}
     ///@}
   private:
 
@@ -93,7 +85,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    SupportedHardwareType m_supportedHardwareType;
+    SupportedHardwareType m_supportedHardwareType{SupportedHardwareType::NOT_SET};
     bool m_supportedHardwareTypeHasBeenSet = false;
   };
 

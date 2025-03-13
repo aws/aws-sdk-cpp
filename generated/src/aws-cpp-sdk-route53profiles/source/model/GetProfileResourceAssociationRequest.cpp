@@ -12,11 +12,6 @@ using namespace Aws::Route53Profiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProfileResourceAssociationRequest::GetProfileResourceAssociationRequest() : 
-    m_profileResourceAssociationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetProfileResourceAssociationRequest::SerializePayload() const
 {
   return {};

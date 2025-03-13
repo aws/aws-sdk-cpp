@@ -12,18 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceTemplateVersionRequest::UpdateServiceTemplateVersionRequest() : 
-    m_compatibleEnvironmentTemplatesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_majorVersionHasBeenSet(false),
-    m_minorVersionHasBeenSet(false),
-    m_status(TemplateVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_supportedComponentSourcesHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceTemplateVersionRequest::SerializePayload() const
 {
   JsonValue payload;

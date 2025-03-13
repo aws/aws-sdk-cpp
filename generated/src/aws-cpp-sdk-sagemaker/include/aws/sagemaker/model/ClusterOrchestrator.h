@@ -32,7 +32,7 @@ namespace Model
   class ClusterOrchestrator
   {
   public:
-    AWS_SAGEMAKER_API ClusterOrchestrator();
+    AWS_SAGEMAKER_API ClusterOrchestrator() = default;
     AWS_SAGEMAKER_API ClusterOrchestrator(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ClusterOrchestrator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The Amazon EKS cluster used as the orchestrator for the SageMaker HyperPod
      * cluster.</p>
      */
-    inline const ClusterOrchestratorEksConfig& GetEks() const{ return m_eks; }
+    inline const ClusterOrchestratorEksConfig& GetEks() const { return m_eks; }
     inline bool EksHasBeenSet() const { return m_eksHasBeenSet; }
-    inline void SetEks(const ClusterOrchestratorEksConfig& value) { m_eksHasBeenSet = true; m_eks = value; }
-    inline void SetEks(ClusterOrchestratorEksConfig&& value) { m_eksHasBeenSet = true; m_eks = std::move(value); }
-    inline ClusterOrchestrator& WithEks(const ClusterOrchestratorEksConfig& value) { SetEks(value); return *this;}
-    inline ClusterOrchestrator& WithEks(ClusterOrchestratorEksConfig&& value) { SetEks(std::move(value)); return *this;}
+    template<typename EksT = ClusterOrchestratorEksConfig>
+    void SetEks(EksT&& value) { m_eksHasBeenSet = true; m_eks = std::forward<EksT>(value); }
+    template<typename EksT = ClusterOrchestratorEksConfig>
+    ClusterOrchestrator& WithEks(EksT&& value) { SetEks(std::forward<EksT>(value)); return *this;}
     ///@}
   private:
 

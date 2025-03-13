@@ -21,7 +21,7 @@ namespace Model
   class CloseTunnelRequest : public IoTSecureTunnelingRequest
   {
   public:
-    AWS_IOTSECURETUNNELING_API CloseTunnelRequest();
+    AWS_IOTSECURETUNNELING_API CloseTunnelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the tunnel to close.</p>
      */
-    inline const Aws::String& GetTunnelId() const{ return m_tunnelId; }
+    inline const Aws::String& GetTunnelId() const { return m_tunnelId; }
     inline bool TunnelIdHasBeenSet() const { return m_tunnelIdHasBeenSet; }
-    inline void SetTunnelId(const Aws::String& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = value; }
-    inline void SetTunnelId(Aws::String&& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = std::move(value); }
-    inline void SetTunnelId(const char* value) { m_tunnelIdHasBeenSet = true; m_tunnelId.assign(value); }
-    inline CloseTunnelRequest& WithTunnelId(const Aws::String& value) { SetTunnelId(value); return *this;}
-    inline CloseTunnelRequest& WithTunnelId(Aws::String&& value) { SetTunnelId(std::move(value)); return *this;}
-    inline CloseTunnelRequest& WithTunnelId(const char* value) { SetTunnelId(value); return *this;}
+    template<typename TunnelIdT = Aws::String>
+    void SetTunnelId(TunnelIdT&& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = std::forward<TunnelIdT>(value); }
+    template<typename TunnelIdT = Aws::String>
+    CloseTunnelRequest& WithTunnelId(TunnelIdT&& value) { SetTunnelId(std::forward<TunnelIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,7 +51,7 @@ namespace Model
      * <p>When set to true, IoT Secure Tunneling deletes the tunnel data
      * immediately.</p>
      */
-    inline bool GetDelete() const{ return m_delete; }
+    inline bool GetDelete() const { return m_delete; }
     inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
     inline void SetDelete(bool value) { m_deleteHasBeenSet = true; m_delete = value; }
     inline CloseTunnelRequest& WithDelete(bool value) { SetDelete(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
     Aws::String m_tunnelId;
     bool m_tunnelIdHasBeenSet = false;
 
-    bool m_delete;
+    bool m_delete{false};
     bool m_deleteHasBeenSet = false;
   };
 

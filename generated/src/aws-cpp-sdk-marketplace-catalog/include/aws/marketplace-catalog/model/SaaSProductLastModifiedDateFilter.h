@@ -32,7 +32,7 @@ namespace Model
   class SaaSProductLastModifiedDateFilter
   {
   public:
-    AWS_MARKETPLACECATALOG_API SaaSProductLastModifiedDateFilter();
+    AWS_MARKETPLACECATALOG_API SaaSProductLastModifiedDateFilter() = default;
     AWS_MARKETPLACECATALOG_API SaaSProductLastModifiedDateFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API SaaSProductLastModifiedDateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Dates between which the SaaS product was last modified.</p>
      */
-    inline const SaaSProductLastModifiedDateFilterDateRange& GetDateRange() const{ return m_dateRange; }
+    inline const SaaSProductLastModifiedDateFilterDateRange& GetDateRange() const { return m_dateRange; }
     inline bool DateRangeHasBeenSet() const { return m_dateRangeHasBeenSet; }
-    inline void SetDateRange(const SaaSProductLastModifiedDateFilterDateRange& value) { m_dateRangeHasBeenSet = true; m_dateRange = value; }
-    inline void SetDateRange(SaaSProductLastModifiedDateFilterDateRange&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::move(value); }
-    inline SaaSProductLastModifiedDateFilter& WithDateRange(const SaaSProductLastModifiedDateFilterDateRange& value) { SetDateRange(value); return *this;}
-    inline SaaSProductLastModifiedDateFilter& WithDateRange(SaaSProductLastModifiedDateFilterDateRange&& value) { SetDateRange(std::move(value)); return *this;}
+    template<typename DateRangeT = SaaSProductLastModifiedDateFilterDateRange>
+    void SetDateRange(DateRangeT&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::forward<DateRangeT>(value); }
+    template<typename DateRangeT = SaaSProductLastModifiedDateFilterDateRange>
+    SaaSProductLastModifiedDateFilter& WithDateRange(DateRangeT&& value) { SetDateRange(std::forward<DateRangeT>(value)); return *this;}
     ///@}
   private:
 

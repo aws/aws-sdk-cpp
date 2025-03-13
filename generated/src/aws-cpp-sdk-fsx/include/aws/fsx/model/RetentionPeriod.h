@@ -35,7 +35,7 @@ namespace Model
   class RetentionPeriod
   {
   public:
-    AWS_FSX_API RetentionPeriod();
+    AWS_FSX_API RetentionPeriod() = default;
     AWS_FSX_API RetentionPeriod(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API RetentionPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * <code>UNSPECIFIED</code>, the files are retained until you set an explicit
      * retention period. </p>
      */
-    inline const RetentionPeriodType& GetType() const{ return m_type; }
+    inline RetentionPeriodType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RetentionPeriodType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RetentionPeriodType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RetentionPeriod& WithType(const RetentionPeriodType& value) { SetType(value); return *this;}
-    inline RetentionPeriod& WithType(RetentionPeriodType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RetentionPeriodType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RetentionPeriod& WithType(RetentionPeriodType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -68,17 +66,17 @@ namespace Model
      * <code>Months</code>: 0 - 12</p> </li> <li> <p> <code>Years</code>: 0 - 100</p>
      * </li> </ul>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline RetentionPeriod& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    RetentionPeriodType m_type;
+    RetentionPeriodType m_type{RetentionPeriodType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

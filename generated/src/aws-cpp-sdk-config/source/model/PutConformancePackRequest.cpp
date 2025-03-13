@@ -12,17 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutConformancePackRequest::PutConformancePackRequest() : 
-    m_conformancePackNameHasBeenSet(false),
-    m_templateS3UriHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_deliveryS3BucketHasBeenSet(false),
-    m_deliveryS3KeyPrefixHasBeenSet(false),
-    m_conformancePackInputParametersHasBeenSet(false),
-    m_templateSSMDocumentDetailsHasBeenSet(false)
-{
-}
-
 Aws::String PutConformancePackRequest::SerializePayload() const
 {
   JsonValue payload;

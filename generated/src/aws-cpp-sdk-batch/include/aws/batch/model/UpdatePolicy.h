@@ -33,7 +33,7 @@ namespace Model
   class UpdatePolicy
   {
   public:
-    AWS_BATCH_API UpdatePolicy();
+    AWS_BATCH_API UpdatePolicy() = default;
     AWS_BATCH_API UpdatePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API UpdatePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * environment infrastructure is updated. The default value is
      * <code>false</code>.</p>
      */
-    inline bool GetTerminateJobsOnUpdate() const{ return m_terminateJobsOnUpdate; }
+    inline bool GetTerminateJobsOnUpdate() const { return m_terminateJobsOnUpdate; }
     inline bool TerminateJobsOnUpdateHasBeenSet() const { return m_terminateJobsOnUpdateHasBeenSet; }
     inline void SetTerminateJobsOnUpdate(bool value) { m_terminateJobsOnUpdateHasBeenSet = true; m_terminateJobsOnUpdate = value; }
     inline UpdatePolicy& WithTerminateJobsOnUpdate(bool value) { SetTerminateJobsOnUpdate(value); return *this;}
@@ -56,17 +56,17 @@ namespace Model
      * <p>Specifies the job timeout (in minutes) when the compute environment
      * infrastructure is updated. The default value is 30.</p>
      */
-    inline long long GetJobExecutionTimeoutMinutes() const{ return m_jobExecutionTimeoutMinutes; }
+    inline long long GetJobExecutionTimeoutMinutes() const { return m_jobExecutionTimeoutMinutes; }
     inline bool JobExecutionTimeoutMinutesHasBeenSet() const { return m_jobExecutionTimeoutMinutesHasBeenSet; }
     inline void SetJobExecutionTimeoutMinutes(long long value) { m_jobExecutionTimeoutMinutesHasBeenSet = true; m_jobExecutionTimeoutMinutes = value; }
     inline UpdatePolicy& WithJobExecutionTimeoutMinutes(long long value) { SetJobExecutionTimeoutMinutes(value); return *this;}
     ///@}
   private:
 
-    bool m_terminateJobsOnUpdate;
+    bool m_terminateJobsOnUpdate{false};
     bool m_terminateJobsOnUpdateHasBeenSet = false;
 
-    long long m_jobExecutionTimeoutMinutes;
+    long long m_jobExecutionTimeoutMinutes{0};
     bool m_jobExecutionTimeoutMinutesHasBeenSet = false;
   };
 

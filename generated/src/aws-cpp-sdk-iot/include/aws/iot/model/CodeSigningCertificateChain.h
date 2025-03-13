@@ -32,7 +32,7 @@ namespace Model
   class CodeSigningCertificateChain
   {
   public:
-    AWS_IOT_API CodeSigningCertificateChain();
+    AWS_IOT_API CodeSigningCertificateChain() = default;
     AWS_IOT_API CodeSigningCertificateChain(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API CodeSigningCertificateChain& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the certificate.</p>
      */
-    inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
+    inline const Aws::String& GetCertificateName() const { return m_certificateName; }
     inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
-    inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
-    inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
-    inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
-    inline CodeSigningCertificateChain& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
-    inline CodeSigningCertificateChain& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
-    inline CodeSigningCertificateChain& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
+    template<typename CertificateNameT = Aws::String>
+    void SetCertificateName(CertificateNameT&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::forward<CertificateNameT>(value); }
+    template<typename CertificateNameT = Aws::String>
+    CodeSigningCertificateChain& WithCertificateName(CertificateNameT&& value) { SetCertificateName(std::forward<CertificateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>A base64 encoded binary representation of the code signing certificate
      * chain.</p>
      */
-    inline const Aws::String& GetInlineDocument() const{ return m_inlineDocument; }
+    inline const Aws::String& GetInlineDocument() const { return m_inlineDocument; }
     inline bool InlineDocumentHasBeenSet() const { return m_inlineDocumentHasBeenSet; }
-    inline void SetInlineDocument(const Aws::String& value) { m_inlineDocumentHasBeenSet = true; m_inlineDocument = value; }
-    inline void SetInlineDocument(Aws::String&& value) { m_inlineDocumentHasBeenSet = true; m_inlineDocument = std::move(value); }
-    inline void SetInlineDocument(const char* value) { m_inlineDocumentHasBeenSet = true; m_inlineDocument.assign(value); }
-    inline CodeSigningCertificateChain& WithInlineDocument(const Aws::String& value) { SetInlineDocument(value); return *this;}
-    inline CodeSigningCertificateChain& WithInlineDocument(Aws::String&& value) { SetInlineDocument(std::move(value)); return *this;}
-    inline CodeSigningCertificateChain& WithInlineDocument(const char* value) { SetInlineDocument(value); return *this;}
+    template<typename InlineDocumentT = Aws::String>
+    void SetInlineDocument(InlineDocumentT&& value) { m_inlineDocumentHasBeenSet = true; m_inlineDocument = std::forward<InlineDocumentT>(value); }
+    template<typename InlineDocumentT = Aws::String>
+    CodeSigningCertificateChain& WithInlineDocument(InlineDocumentT&& value) { SetInlineDocument(std::forward<InlineDocumentT>(value)); return *this;}
     ///@}
   private:
 

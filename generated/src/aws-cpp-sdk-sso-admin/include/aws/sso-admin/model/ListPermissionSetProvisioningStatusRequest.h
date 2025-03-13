@@ -22,7 +22,7 @@ namespace Model
   class ListPermissionSetProvisioningStatusRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API ListPermissionSetProvisioningStatusRequest();
+    AWS_SSOADMIN_API ListPermissionSetProvisioningStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,12 @@ namespace Model
     /**
      * <p>Filters results based on the passed attribute value.</p>
      */
-    inline const OperationStatusFilter& GetFilter() const{ return m_filter; }
+    inline const OperationStatusFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const OperationStatusFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(OperationStatusFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListPermissionSetProvisioningStatusRequest& WithFilter(const OperationStatusFilter& value) { SetFilter(value); return *this;}
-    inline ListPermissionSetProvisioningStatusRequest& WithFilter(OperationStatusFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = OperationStatusFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = OperationStatusFilter>
+    ListPermissionSetProvisioningStatusRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,21 +55,19 @@ namespace Model
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline ListPermissionSetProvisioningStatusRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline ListPermissionSetProvisioningStatusRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline ListPermissionSetProvisioningStatusRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    ListPermissionSetProvisioningStatusRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to display for the assignment.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListPermissionSetProvisioningStatusRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -80,14 +78,12 @@ namespace Model
      * <p>The pagination token for the list API. Initially the value is null. Use the
      * output of previous API calls to make subsequent calls.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListPermissionSetProvisioningStatusRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPermissionSetProvisioningStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPermissionSetProvisioningStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPermissionSetProvisioningStatusRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -97,7 +93,7 @@ namespace Model
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

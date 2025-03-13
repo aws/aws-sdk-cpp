@@ -31,7 +31,7 @@ namespace Model
   class ListStorageLensGroupEntry
   {
   public:
-    AWS_S3CONTROL_API ListStorageLensGroupEntry();
+    AWS_S3CONTROL_API ListStorageLensGroupEntry() = default;
     AWS_S3CONTROL_API ListStorageLensGroupEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API ListStorageLensGroupEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
      * <p> Contains the name of the Storage Lens group that exists in the specified
      * home Region. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ListStorageLensGroupEntry& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ListStorageLensGroupEntry& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ListStorageLensGroupEntry& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ListStorageLensGroupEntry& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p> Contains the Amazon Resource Name (ARN) of the Storage Lens group. This
      * property is read-only. </p>
      */
-    inline const Aws::String& GetStorageLensGroupArn() const{ return m_storageLensGroupArn; }
+    inline const Aws::String& GetStorageLensGroupArn() const { return m_storageLensGroupArn; }
     inline bool StorageLensGroupArnHasBeenSet() const { return m_storageLensGroupArnHasBeenSet; }
-    inline void SetStorageLensGroupArn(const Aws::String& value) { m_storageLensGroupArnHasBeenSet = true; m_storageLensGroupArn = value; }
-    inline void SetStorageLensGroupArn(Aws::String&& value) { m_storageLensGroupArnHasBeenSet = true; m_storageLensGroupArn = std::move(value); }
-    inline void SetStorageLensGroupArn(const char* value) { m_storageLensGroupArnHasBeenSet = true; m_storageLensGroupArn.assign(value); }
-    inline ListStorageLensGroupEntry& WithStorageLensGroupArn(const Aws::String& value) { SetStorageLensGroupArn(value); return *this;}
-    inline ListStorageLensGroupEntry& WithStorageLensGroupArn(Aws::String&& value) { SetStorageLensGroupArn(std::move(value)); return *this;}
-    inline ListStorageLensGroupEntry& WithStorageLensGroupArn(const char* value) { SetStorageLensGroupArn(value); return *this;}
+    template<typename StorageLensGroupArnT = Aws::String>
+    void SetStorageLensGroupArn(StorageLensGroupArnT&& value) { m_storageLensGroupArnHasBeenSet = true; m_storageLensGroupArn = std::forward<StorageLensGroupArnT>(value); }
+    template<typename StorageLensGroupArnT = Aws::String>
+    ListStorageLensGroupEntry& WithStorageLensGroupArn(StorageLensGroupArnT&& value) { SetStorageLensGroupArn(std::forward<StorageLensGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p> Contains the Amazon Web Services Region where the Storage Lens group was
      * created. </p>
      */
-    inline const Aws::String& GetHomeRegion() const{ return m_homeRegion; }
+    inline const Aws::String& GetHomeRegion() const { return m_homeRegion; }
     inline bool HomeRegionHasBeenSet() const { return m_homeRegionHasBeenSet; }
-    inline void SetHomeRegion(const Aws::String& value) { m_homeRegionHasBeenSet = true; m_homeRegion = value; }
-    inline void SetHomeRegion(Aws::String&& value) { m_homeRegionHasBeenSet = true; m_homeRegion = std::move(value); }
-    inline void SetHomeRegion(const char* value) { m_homeRegionHasBeenSet = true; m_homeRegion.assign(value); }
-    inline ListStorageLensGroupEntry& WithHomeRegion(const Aws::String& value) { SetHomeRegion(value); return *this;}
-    inline ListStorageLensGroupEntry& WithHomeRegion(Aws::String&& value) { SetHomeRegion(std::move(value)); return *this;}
-    inline ListStorageLensGroupEntry& WithHomeRegion(const char* value) { SetHomeRegion(value); return *this;}
+    template<typename HomeRegionT = Aws::String>
+    void SetHomeRegion(HomeRegionT&& value) { m_homeRegionHasBeenSet = true; m_homeRegion = std::forward<HomeRegionT>(value); }
+    template<typename HomeRegionT = Aws::String>
+    ListStorageLensGroupEntry& WithHomeRegion(HomeRegionT&& value) { SetHomeRegion(std::forward<HomeRegionT>(value)); return *this;}
     ///@}
   private:
 

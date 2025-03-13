@@ -22,7 +22,7 @@ namespace Model
   class ProvisionPermissionSetRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API ProvisionPermissionSetRequest();
+    AWS_SSOADMIN_API ProvisionPermissionSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline ProvisionPermissionSetRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline ProvisionPermissionSetRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline ProvisionPermissionSetRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    ProvisionPermissionSetRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the permission set.</p>
      */
-    inline const Aws::String& GetPermissionSetArn() const{ return m_permissionSetArn; }
+    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
     inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
-    inline void SetPermissionSetArn(const Aws::String& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = value; }
-    inline void SetPermissionSetArn(Aws::String&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::move(value); }
-    inline void SetPermissionSetArn(const char* value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn.assign(value); }
-    inline ProvisionPermissionSetRequest& WithPermissionSetArn(const Aws::String& value) { SetPermissionSetArn(value); return *this;}
-    inline ProvisionPermissionSetRequest& WithPermissionSetArn(Aws::String&& value) { SetPermissionSetArn(std::move(value)); return *this;}
-    inline ProvisionPermissionSetRequest& WithPermissionSetArn(const char* value) { SetPermissionSetArn(value); return *this;}
+    template<typename PermissionSetArnT = Aws::String>
+    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
+    template<typename PermissionSetArnT = Aws::String>
+    ProvisionPermissionSetRequest& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,26 +68,22 @@ namespace Model
      * <p>TargetID is an Amazon Web Services account identifier, (For example,
      * 123456789012).</p>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-    inline ProvisionPermissionSetRequest& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline ProvisionPermissionSetRequest& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline ProvisionPermissionSetRequest& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    ProvisionPermissionSetRequest& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The entity type for which the assignment will be created.</p>
      */
-    inline const ProvisionTargetType& GetTargetType() const{ return m_targetType; }
+    inline ProvisionTargetType GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const ProvisionTargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(ProvisionTargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline ProvisionPermissionSetRequest& WithTargetType(const ProvisionTargetType& value) { SetTargetType(value); return *this;}
-    inline ProvisionPermissionSetRequest& WithTargetType(ProvisionTargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline void SetTargetType(ProvisionTargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline ProvisionPermissionSetRequest& WithTargetType(ProvisionTargetType value) { SetTargetType(value); return *this;}
     ///@}
   private:
 
@@ -104,7 +96,7 @@ namespace Model
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet = false;
 
-    ProvisionTargetType m_targetType;
+    ProvisionTargetType m_targetType{ProvisionTargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
   };
 

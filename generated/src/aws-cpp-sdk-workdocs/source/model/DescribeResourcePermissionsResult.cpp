@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeResourcePermissionsResult::DescribeResourcePermissionsResult()
-{
-}
-
 DescribeResourcePermissionsResult::DescribeResourcePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ DescribeResourcePermissionsResult& DescribeResourcePermissionsResult::operator =
     {
       m_principals.push_back(principalsJsonList[principalsIndex].AsObject());
     }
+    m_principalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

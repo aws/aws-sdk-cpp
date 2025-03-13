@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateKeySigningKeyResult::CreateKeySigningKeyResult()
-{
-}
-
 CreateKeySigningKeyResult::CreateKeySigningKeyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,11 +32,13 @@ CreateKeySigningKeyResult& CreateKeySigningKeyResult::operator =(const Aws::Amaz
     if(!changeInfoNode.IsNull())
     {
       m_changeInfo = changeInfoNode;
+      m_changeInfoHasBeenSet = true;
     }
     XmlNode keySigningKeyNode = resultNode.FirstChild("KeySigningKey");
     if(!keySigningKeyNode.IsNull())
     {
       m_keySigningKey = keySigningKeyNode;
+      m_keySigningKeyHasBeenSet = true;
     }
   }
 
@@ -49,12 +47,14 @@ CreateKeySigningKeyResult& CreateKeySigningKeyResult::operator =(const Aws::Amaz
   if(locationIter != headers.end())
   {
     m_location = locationIter->second;
+    m_locationHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

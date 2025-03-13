@@ -18,21 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-DirectMessageConfiguration::DirectMessageConfiguration() : 
-    m_aDMMessageHasBeenSet(false),
-    m_aPNSMessageHasBeenSet(false),
-    m_baiduMessageHasBeenSet(false),
-    m_defaultMessageHasBeenSet(false),
-    m_defaultPushNotificationMessageHasBeenSet(false),
-    m_emailMessageHasBeenSet(false),
-    m_gCMMessageHasBeenSet(false),
-    m_sMSMessageHasBeenSet(false),
-    m_voiceMessageHasBeenSet(false)
-{
-}
-
 DirectMessageConfiguration::DirectMessageConfiguration(JsonView jsonValue)
-  : DirectMessageConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ DirectMessageConfiguration& DirectMessageConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("ADMMessage"))
   {
     m_aDMMessage = jsonValue.GetObject("ADMMessage");
-
     m_aDMMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("APNSMessage"))
   {
     m_aPNSMessage = jsonValue.GetObject("APNSMessage");
-
     m_aPNSMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaiduMessage"))
   {
     m_baiduMessage = jsonValue.GetObject("BaiduMessage");
-
     m_baiduMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultMessage"))
   {
     m_defaultMessage = jsonValue.GetObject("DefaultMessage");
-
     m_defaultMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultPushNotificationMessage"))
   {
     m_defaultPushNotificationMessage = jsonValue.GetObject("DefaultPushNotificationMessage");
-
     m_defaultPushNotificationMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailMessage"))
   {
     m_emailMessage = jsonValue.GetObject("EmailMessage");
-
     m_emailMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GCMMessage"))
   {
     m_gCMMessage = jsonValue.GetObject("GCMMessage");
-
     m_gCMMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SMSMessage"))
   {
     m_sMSMessage = jsonValue.GetObject("SMSMessage");
-
     m_sMSMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VoiceMessage"))
   {
     m_voiceMessage = jsonValue.GetObject("VoiceMessage");
-
     m_voiceMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

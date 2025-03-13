@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceEventWindow::InstanceEventWindow() : 
-    m_instanceEventWindowIdHasBeenSet(false),
-    m_timeRangesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_cronExpressionHasBeenSet(false),
-    m_associationTargetHasBeenSet(false),
-    m_state(InstanceEventWindowState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 InstanceEventWindow::InstanceEventWindow(const XmlNode& xmlNode)
-  : InstanceEventWindow()
 {
   *this = xmlNode;
 }
@@ -49,54 +36,61 @@ InstanceEventWindow& InstanceEventWindow::operator =(const XmlNode& xmlNode)
     {
       m_instanceEventWindowId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceEventWindowIdNode.GetText());
       m_instanceEventWindowIdHasBeenSet = true;
+       m_instanceEventWindowIdHasBeenSet = true;
     }
     XmlNode timeRangesNode = resultNode.FirstChild("timeRangeSet");
     if(!timeRangesNode.IsNull())
     {
       XmlNode timeRangesMember = timeRangesNode.FirstChild("item");
+      m_timeRangesHasBeenSet = !timeRangesMember.IsNull();
       while(!timeRangesMember.IsNull())
       {
         m_timeRanges.push_back(timeRangesMember);
         timeRangesMember = timeRangesMember.NextNode("item");
       }
 
-      m_timeRangesHasBeenSet = true;
+       m_timeRangesHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode cronExpressionNode = resultNode.FirstChild("cronExpression");
     if(!cronExpressionNode.IsNull())
     {
       m_cronExpression = Aws::Utils::Xml::DecodeEscapedXmlText(cronExpressionNode.GetText());
       m_cronExpressionHasBeenSet = true;
+       m_cronExpressionHasBeenSet = true;
     }
     XmlNode associationTargetNode = resultNode.FirstChild("associationTarget");
     if(!associationTargetNode.IsNull())
     {
       m_associationTarget = associationTargetNode;
       m_associationTargetHasBeenSet = true;
+       m_associationTargetHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = InstanceEventWindowStateMapper::GetInstanceEventWindowStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = InstanceEventWindowStateMapper::GetInstanceEventWindowStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

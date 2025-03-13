@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TaskRunFilterCriteria::TaskRunFilterCriteria() : 
-    m_taskRunType(TaskType::NOT_SET),
-    m_taskRunTypeHasBeenSet(false),
-    m_status(TaskStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startedBeforeHasBeenSet(false),
-    m_startedAfterHasBeenSet(false)
-{
-}
-
 TaskRunFilterCriteria::TaskRunFilterCriteria(JsonView jsonValue)
-  : TaskRunFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ TaskRunFilterCriteria& TaskRunFilterCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TaskRunType"))
   {
     m_taskRunType = TaskTypeMapper::GetTaskTypeForName(jsonValue.GetString("TaskRunType"));
-
     m_taskRunTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TaskStatusTypeMapper::GetTaskStatusTypeForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedBefore"))
   {
     m_startedBefore = jsonValue.GetDouble("StartedBefore");
-
     m_startedBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAfter"))
   {
     m_startedAfter = jsonValue.GetDouble("StartedAfter");
-
     m_startedAfterHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResolverTypeRequest::UpdateResolverTypeRequest() : 
-    m_caseIdHasBeenSet(false),
-    m_resolverType(ResolverType::NOT_SET),
-    m_resolverTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResolverTypeRequest::SerializePayload() const
 {
   JsonValue payload;

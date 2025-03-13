@@ -22,7 +22,7 @@ namespace Model
   class CreateSolNetworkInstanceRequest : public TnbRequest
   {
   public:
-    AWS_TNB_API CreateSolNetworkInstanceRequest();
+    AWS_TNB_API CreateSolNetworkInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,42 +37,36 @@ namespace Model
     /**
      * <p>Network instance description.</p>
      */
-    inline const Aws::String& GetNsDescription() const{ return m_nsDescription; }
+    inline const Aws::String& GetNsDescription() const { return m_nsDescription; }
     inline bool NsDescriptionHasBeenSet() const { return m_nsDescriptionHasBeenSet; }
-    inline void SetNsDescription(const Aws::String& value) { m_nsDescriptionHasBeenSet = true; m_nsDescription = value; }
-    inline void SetNsDescription(Aws::String&& value) { m_nsDescriptionHasBeenSet = true; m_nsDescription = std::move(value); }
-    inline void SetNsDescription(const char* value) { m_nsDescriptionHasBeenSet = true; m_nsDescription.assign(value); }
-    inline CreateSolNetworkInstanceRequest& WithNsDescription(const Aws::String& value) { SetNsDescription(value); return *this;}
-    inline CreateSolNetworkInstanceRequest& WithNsDescription(Aws::String&& value) { SetNsDescription(std::move(value)); return *this;}
-    inline CreateSolNetworkInstanceRequest& WithNsDescription(const char* value) { SetNsDescription(value); return *this;}
+    template<typename NsDescriptionT = Aws::String>
+    void SetNsDescription(NsDescriptionT&& value) { m_nsDescriptionHasBeenSet = true; m_nsDescription = std::forward<NsDescriptionT>(value); }
+    template<typename NsDescriptionT = Aws::String>
+    CreateSolNetworkInstanceRequest& WithNsDescription(NsDescriptionT&& value) { SetNsDescription(std::forward<NsDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Network instance name.</p>
      */
-    inline const Aws::String& GetNsName() const{ return m_nsName; }
+    inline const Aws::String& GetNsName() const { return m_nsName; }
     inline bool NsNameHasBeenSet() const { return m_nsNameHasBeenSet; }
-    inline void SetNsName(const Aws::String& value) { m_nsNameHasBeenSet = true; m_nsName = value; }
-    inline void SetNsName(Aws::String&& value) { m_nsNameHasBeenSet = true; m_nsName = std::move(value); }
-    inline void SetNsName(const char* value) { m_nsNameHasBeenSet = true; m_nsName.assign(value); }
-    inline CreateSolNetworkInstanceRequest& WithNsName(const Aws::String& value) { SetNsName(value); return *this;}
-    inline CreateSolNetworkInstanceRequest& WithNsName(Aws::String&& value) { SetNsName(std::move(value)); return *this;}
-    inline CreateSolNetworkInstanceRequest& WithNsName(const char* value) { SetNsName(value); return *this;}
+    template<typename NsNameT = Aws::String>
+    void SetNsName(NsNameT&& value) { m_nsNameHasBeenSet = true; m_nsName = std::forward<NsNameT>(value); }
+    template<typename NsNameT = Aws::String>
+    CreateSolNetworkInstanceRequest& WithNsName(NsNameT&& value) { SetNsName(std::forward<NsNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID for network service descriptor.</p>
      */
-    inline const Aws::String& GetNsdInfoId() const{ return m_nsdInfoId; }
+    inline const Aws::String& GetNsdInfoId() const { return m_nsdInfoId; }
     inline bool NsdInfoIdHasBeenSet() const { return m_nsdInfoIdHasBeenSet; }
-    inline void SetNsdInfoId(const Aws::String& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = value; }
-    inline void SetNsdInfoId(Aws::String&& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = std::move(value); }
-    inline void SetNsdInfoId(const char* value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId.assign(value); }
-    inline CreateSolNetworkInstanceRequest& WithNsdInfoId(const Aws::String& value) { SetNsdInfoId(value); return *this;}
-    inline CreateSolNetworkInstanceRequest& WithNsdInfoId(Aws::String&& value) { SetNsdInfoId(std::move(value)); return *this;}
-    inline CreateSolNetworkInstanceRequest& WithNsdInfoId(const char* value) { SetNsdInfoId(value); return *this;}
+    template<typename NsdInfoIdT = Aws::String>
+    void SetNsdInfoId(NsdInfoIdT&& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = std::forward<NsdInfoIdT>(value); }
+    template<typename NsdInfoIdT = Aws::String>
+    CreateSolNetworkInstanceRequest& WithNsdInfoId(NsdInfoIdT&& value) { SetNsdInfoId(std::forward<NsdInfoIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,19 +75,16 @@ namespace Model
      * consists of a key and an optional value. You can use tags to search and filter
      * your resources or track your Amazon Web Services costs.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSolNetworkInstanceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateSolNetworkInstanceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSolNetworkInstanceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateSolNetworkInstanceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSolNetworkInstanceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSolNetworkInstanceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateSolNetworkInstanceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSolNetworkInstanceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSolNetworkInstanceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateSolNetworkInstanceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateSolNetworkInstanceRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

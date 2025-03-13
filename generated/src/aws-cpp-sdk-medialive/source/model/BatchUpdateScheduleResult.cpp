@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchUpdateScheduleResult::BatchUpdateScheduleResult()
-{
-}
-
 BatchUpdateScheduleResult::BatchUpdateScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ BatchUpdateScheduleResult& BatchUpdateScheduleResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("creates"))
   {
     m_creates = jsonValue.GetObject("creates");
-
+    m_createsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deletes"))
   {
     m_deletes = jsonValue.GetObject("deletes");
-
+    m_deletesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

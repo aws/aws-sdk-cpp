@@ -12,21 +12,6 @@ using namespace Aws::ApplicationAutoScaling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutScheduledActionRequest::PutScheduledActionRequest() : 
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_scheduledActionNameHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_scalableTargetActionHasBeenSet(false)
-{
-}
-
 Aws::String PutScheduledActionRequest::SerializePayload() const
 {
   JsonValue payload;

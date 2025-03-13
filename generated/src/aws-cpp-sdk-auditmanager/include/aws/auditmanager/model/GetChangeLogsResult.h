@@ -29,7 +29,7 @@ namespace Model
   class GetChangeLogsResult
   {
   public:
-    AWS_AUDITMANAGER_API GetChangeLogsResult();
+    AWS_AUDITMANAGER_API GetChangeLogsResult() = default;
     AWS_AUDITMANAGER_API GetChangeLogsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUDITMANAGER_API GetChangeLogsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The list of user activity for the control. </p>
      */
-    inline const Aws::Vector<ChangeLog>& GetChangeLogs() const{ return m_changeLogs; }
-    inline void SetChangeLogs(const Aws::Vector<ChangeLog>& value) { m_changeLogs = value; }
-    inline void SetChangeLogs(Aws::Vector<ChangeLog>&& value) { m_changeLogs = std::move(value); }
-    inline GetChangeLogsResult& WithChangeLogs(const Aws::Vector<ChangeLog>& value) { SetChangeLogs(value); return *this;}
-    inline GetChangeLogsResult& WithChangeLogs(Aws::Vector<ChangeLog>&& value) { SetChangeLogs(std::move(value)); return *this;}
-    inline GetChangeLogsResult& AddChangeLogs(const ChangeLog& value) { m_changeLogs.push_back(value); return *this; }
-    inline GetChangeLogsResult& AddChangeLogs(ChangeLog&& value) { m_changeLogs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ChangeLog>& GetChangeLogs() const { return m_changeLogs; }
+    template<typename ChangeLogsT = Aws::Vector<ChangeLog>>
+    void SetChangeLogs(ChangeLogsT&& value) { m_changeLogsHasBeenSet = true; m_changeLogs = std::forward<ChangeLogsT>(value); }
+    template<typename ChangeLogsT = Aws::Vector<ChangeLog>>
+    GetChangeLogsResult& WithChangeLogs(ChangeLogsT&& value) { SetChangeLogs(std::forward<ChangeLogsT>(value)); return *this;}
+    template<typename ChangeLogsT = ChangeLog>
+    GetChangeLogsResult& AddChangeLogs(ChangeLogsT&& value) { m_changeLogsHasBeenSet = true; m_changeLogs.emplace_back(std::forward<ChangeLogsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's used to fetch the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetChangeLogsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetChangeLogsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetChangeLogsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetChangeLogsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetChangeLogsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetChangeLogsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetChangeLogsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetChangeLogsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ChangeLog> m_changeLogs;
+    bool m_changeLogsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

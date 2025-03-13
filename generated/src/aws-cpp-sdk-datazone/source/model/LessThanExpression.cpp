@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-LessThanExpression::LessThanExpression() : 
-    m_columnNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 LessThanExpression::LessThanExpression(JsonView jsonValue)
-  : LessThanExpression()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LessThanExpression& LessThanExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("columnName"))
   {
     m_columnName = jsonValue.GetString("columnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

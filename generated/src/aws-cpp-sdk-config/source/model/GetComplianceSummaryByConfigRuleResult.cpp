@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetComplianceSummaryByConfigRuleResult::GetComplianceSummaryByConfigRuleResult()
-{
-}
-
 GetComplianceSummaryByConfigRuleResult::GetComplianceSummaryByConfigRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetComplianceSummaryByConfigRuleResult& GetComplianceSummaryByConfigRuleResult::
   if(jsonValue.ValueExists("ComplianceSummary"))
   {
     m_complianceSummary = jsonValue.GetObject("ComplianceSummary");
-
+    m_complianceSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

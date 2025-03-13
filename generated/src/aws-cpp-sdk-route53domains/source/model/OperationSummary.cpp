@@ -18,23 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-OperationSummary::OperationSummary() : 
-    m_operationIdHasBeenSet(false),
-    m_status(OperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(OperationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_submittedDateHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_statusFlag(StatusFlag::NOT_SET),
-    m_statusFlagHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
-{
-}
-
 OperationSummary::OperationSummary(JsonView jsonValue)
-  : OperationSummary()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ OperationSummary& OperationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OperationId"))
   {
     m_operationId = jsonValue.GetString("OperationId");
-
     m_operationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OperationStatusMapper::GetOperationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = OperationTypeMapper::GetOperationTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmittedDate"))
   {
     m_submittedDate = jsonValue.GetDouble("SubmittedDate");
-
     m_submittedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusFlag"))
   {
     m_statusFlag = StatusFlagMapper::GetStatusFlagForName(jsonValue.GetString("StatusFlag"));
-
     m_statusFlagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetDouble("LastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

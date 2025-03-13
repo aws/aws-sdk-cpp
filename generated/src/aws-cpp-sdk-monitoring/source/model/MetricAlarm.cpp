@@ -20,51 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricAlarm::MetricAlarm() : 
-    m_alarmNameHasBeenSet(false),
-    m_alarmArnHasBeenSet(false),
-    m_alarmDescriptionHasBeenSet(false),
-    m_alarmConfigurationUpdatedTimestampHasBeenSet(false),
-    m_actionsEnabled(false),
-    m_actionsEnabledHasBeenSet(false),
-    m_oKActionsHasBeenSet(false),
-    m_alarmActionsHasBeenSet(false),
-    m_insufficientDataActionsHasBeenSet(false),
-    m_stateValue(StateValue::NOT_SET),
-    m_stateValueHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_stateReasonDataHasBeenSet(false),
-    m_stateUpdatedTimestampHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_statistic(Statistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_extendedStatisticHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_datapointsToAlarm(0),
-    m_datapointsToAlarmHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_treatMissingDataHasBeenSet(false),
-    m_evaluateLowSampleCountPercentileHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_thresholdMetricIdHasBeenSet(false),
-    m_evaluationState(EvaluationState::NOT_SET),
-    m_evaluationStateHasBeenSet(false),
-    m_stateTransitionedTimestampHasBeenSet(false)
-{
-}
-
 MetricAlarm::MetricAlarm(const XmlNode& xmlNode)
-  : MetricAlarm()
 {
   *this = xmlNode;
 }
@@ -80,204 +36,233 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     {
       m_alarmName = Aws::Utils::Xml::DecodeEscapedXmlText(alarmNameNode.GetText());
       m_alarmNameHasBeenSet = true;
+       m_alarmNameHasBeenSet = true;
     }
     XmlNode alarmArnNode = resultNode.FirstChild("AlarmArn");
     if(!alarmArnNode.IsNull())
     {
       m_alarmArn = Aws::Utils::Xml::DecodeEscapedXmlText(alarmArnNode.GetText());
       m_alarmArnHasBeenSet = true;
+       m_alarmArnHasBeenSet = true;
     }
     XmlNode alarmDescriptionNode = resultNode.FirstChild("AlarmDescription");
     if(!alarmDescriptionNode.IsNull())
     {
       m_alarmDescription = Aws::Utils::Xml::DecodeEscapedXmlText(alarmDescriptionNode.GetText());
       m_alarmDescriptionHasBeenSet = true;
+       m_alarmDescriptionHasBeenSet = true;
     }
     XmlNode alarmConfigurationUpdatedTimestampNode = resultNode.FirstChild("AlarmConfigurationUpdatedTimestamp");
     if(!alarmConfigurationUpdatedTimestampNode.IsNull())
     {
       m_alarmConfigurationUpdatedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(alarmConfigurationUpdatedTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_alarmConfigurationUpdatedTimestampHasBeenSet = true;
+       m_alarmConfigurationUpdatedTimestampHasBeenSet = true;
     }
     XmlNode actionsEnabledNode = resultNode.FirstChild("ActionsEnabled");
     if(!actionsEnabledNode.IsNull())
     {
       m_actionsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionsEnabledNode.GetText()).c_str()).c_str());
       m_actionsEnabledHasBeenSet = true;
+       m_actionsEnabledHasBeenSet = true;
     }
     XmlNode oKActionsNode = resultNode.FirstChild("OKActions");
     if(!oKActionsNode.IsNull())
     {
       XmlNode oKActionsMember = oKActionsNode.FirstChild("member");
+      m_oKActionsHasBeenSet = !oKActionsMember.IsNull();
       while(!oKActionsMember.IsNull())
       {
         m_oKActions.push_back(oKActionsMember.GetText());
         oKActionsMember = oKActionsMember.NextNode("member");
       }
 
-      m_oKActionsHasBeenSet = true;
+       m_oKActionsHasBeenSet = true;
     }
     XmlNode alarmActionsNode = resultNode.FirstChild("AlarmActions");
     if(!alarmActionsNode.IsNull())
     {
       XmlNode alarmActionsMember = alarmActionsNode.FirstChild("member");
+      m_alarmActionsHasBeenSet = !alarmActionsMember.IsNull();
       while(!alarmActionsMember.IsNull())
       {
         m_alarmActions.push_back(alarmActionsMember.GetText());
         alarmActionsMember = alarmActionsMember.NextNode("member");
       }
 
-      m_alarmActionsHasBeenSet = true;
+       m_alarmActionsHasBeenSet = true;
     }
     XmlNode insufficientDataActionsNode = resultNode.FirstChild("InsufficientDataActions");
     if(!insufficientDataActionsNode.IsNull())
     {
       XmlNode insufficientDataActionsMember = insufficientDataActionsNode.FirstChild("member");
+      m_insufficientDataActionsHasBeenSet = !insufficientDataActionsMember.IsNull();
       while(!insufficientDataActionsMember.IsNull())
       {
         m_insufficientDataActions.push_back(insufficientDataActionsMember.GetText());
         insufficientDataActionsMember = insufficientDataActionsMember.NextNode("member");
       }
 
-      m_insufficientDataActionsHasBeenSet = true;
+       m_insufficientDataActionsHasBeenSet = true;
     }
     XmlNode stateValueNode = resultNode.FirstChild("StateValue");
     if(!stateValueNode.IsNull())
     {
-      m_stateValue = StateValueMapper::GetStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()).c_str());
+      m_stateValue = StateValueMapper::GetStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()));
       m_stateValueHasBeenSet = true;
+       m_stateValueHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("StateReason");
     if(!stateReasonNode.IsNull())
     {
       m_stateReason = Aws::Utils::Xml::DecodeEscapedXmlText(stateReasonNode.GetText());
       m_stateReasonHasBeenSet = true;
+       m_stateReasonHasBeenSet = true;
     }
     XmlNode stateReasonDataNode = resultNode.FirstChild("StateReasonData");
     if(!stateReasonDataNode.IsNull())
     {
       m_stateReasonData = Aws::Utils::Xml::DecodeEscapedXmlText(stateReasonDataNode.GetText());
       m_stateReasonDataHasBeenSet = true;
+       m_stateReasonDataHasBeenSet = true;
     }
     XmlNode stateUpdatedTimestampNode = resultNode.FirstChild("StateUpdatedTimestamp");
     if(!stateUpdatedTimestampNode.IsNull())
     {
       m_stateUpdatedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateUpdatedTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_stateUpdatedTimestampHasBeenSet = true;
+       m_stateUpdatedTimestampHasBeenSet = true;
     }
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
     if(!metricNameNode.IsNull())
     {
       m_metricName = Aws::Utils::Xml::DecodeEscapedXmlText(metricNameNode.GetText());
       m_metricNameHasBeenSet = true;
+       m_metricNameHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
       m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
+       m_namespaceHasBeenSet = true;
     }
     XmlNode statisticNode = resultNode.FirstChild("Statistic");
     if(!statisticNode.IsNull())
     {
-      m_statistic = StatisticMapper::GetStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()).c_str());
+      m_statistic = StatisticMapper::GetStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()));
       m_statisticHasBeenSet = true;
+       m_statisticHasBeenSet = true;
     }
     XmlNode extendedStatisticNode = resultNode.FirstChild("ExtendedStatistic");
     if(!extendedStatisticNode.IsNull())
     {
       m_extendedStatistic = Aws::Utils::Xml::DecodeEscapedXmlText(extendedStatisticNode.GetText());
       m_extendedStatisticHasBeenSet = true;
+       m_extendedStatisticHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
     if(!dimensionsNode.IsNull())
     {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
+      m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
       while(!dimensionsMember.IsNull())
       {
         m_dimensions.push_back(dimensionsMember);
         dimensionsMember = dimensionsMember.NextNode("member");
       }
 
-      m_dimensionsHasBeenSet = true;
+       m_dimensionsHasBeenSet = true;
     }
     XmlNode periodNode = resultNode.FirstChild("Period");
     if(!periodNode.IsNull())
     {
       m_period = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
       m_periodHasBeenSet = true;
+       m_periodHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
     {
-      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()).c_str());
+      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
       m_unitHasBeenSet = true;
+       m_unitHasBeenSet = true;
     }
     XmlNode evaluationPeriodsNode = resultNode.FirstChild("EvaluationPeriods");
     if(!evaluationPeriodsNode.IsNull())
     {
       m_evaluationPeriods = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationPeriodsNode.GetText()).c_str()).c_str());
       m_evaluationPeriodsHasBeenSet = true;
+       m_evaluationPeriodsHasBeenSet = true;
     }
     XmlNode datapointsToAlarmNode = resultNode.FirstChild("DatapointsToAlarm");
     if(!datapointsToAlarmNode.IsNull())
     {
       m_datapointsToAlarm = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(datapointsToAlarmNode.GetText()).c_str()).c_str());
       m_datapointsToAlarmHasBeenSet = true;
+       m_datapointsToAlarmHasBeenSet = true;
     }
     XmlNode thresholdNode = resultNode.FirstChild("Threshold");
     if(!thresholdNode.IsNull())
     {
       m_threshold = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(thresholdNode.GetText()).c_str()).c_str());
       m_thresholdHasBeenSet = true;
+       m_thresholdHasBeenSet = true;
     }
     XmlNode comparisonOperatorNode = resultNode.FirstChild("ComparisonOperator");
     if(!comparisonOperatorNode.IsNull())
     {
-      m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(comparisonOperatorNode.GetText()).c_str()).c_str());
+      m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(comparisonOperatorNode.GetText()).c_str()));
       m_comparisonOperatorHasBeenSet = true;
+       m_comparisonOperatorHasBeenSet = true;
     }
     XmlNode treatMissingDataNode = resultNode.FirstChild("TreatMissingData");
     if(!treatMissingDataNode.IsNull())
     {
       m_treatMissingData = Aws::Utils::Xml::DecodeEscapedXmlText(treatMissingDataNode.GetText());
       m_treatMissingDataHasBeenSet = true;
+       m_treatMissingDataHasBeenSet = true;
     }
     XmlNode evaluateLowSampleCountPercentileNode = resultNode.FirstChild("EvaluateLowSampleCountPercentile");
     if(!evaluateLowSampleCountPercentileNode.IsNull())
     {
       m_evaluateLowSampleCountPercentile = Aws::Utils::Xml::DecodeEscapedXmlText(evaluateLowSampleCountPercentileNode.GetText());
       m_evaluateLowSampleCountPercentileHasBeenSet = true;
+       m_evaluateLowSampleCountPercentileHasBeenSet = true;
     }
     XmlNode metricsNode = resultNode.FirstChild("Metrics");
     if(!metricsNode.IsNull())
     {
       XmlNode metricsMember = metricsNode.FirstChild("member");
+      m_metricsHasBeenSet = !metricsMember.IsNull();
       while(!metricsMember.IsNull())
       {
         m_metrics.push_back(metricsMember);
         metricsMember = metricsMember.NextNode("member");
       }
 
-      m_metricsHasBeenSet = true;
+       m_metricsHasBeenSet = true;
     }
     XmlNode thresholdMetricIdNode = resultNode.FirstChild("ThresholdMetricId");
     if(!thresholdMetricIdNode.IsNull())
     {
       m_thresholdMetricId = Aws::Utils::Xml::DecodeEscapedXmlText(thresholdMetricIdNode.GetText());
       m_thresholdMetricIdHasBeenSet = true;
+       m_thresholdMetricIdHasBeenSet = true;
     }
     XmlNode evaluationStateNode = resultNode.FirstChild("EvaluationState");
     if(!evaluationStateNode.IsNull())
     {
-      m_evaluationState = EvaluationStateMapper::GetEvaluationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationStateNode.GetText()).c_str()).c_str());
+      m_evaluationState = EvaluationStateMapper::GetEvaluationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationStateNode.GetText()).c_str()));
       m_evaluationStateHasBeenSet = true;
+       m_evaluationStateHasBeenSet = true;
     }
     XmlNode stateTransitionedTimestampNode = resultNode.FirstChild("StateTransitionedTimestamp");
     if(!stateTransitionedTimestampNode.IsNull())
     {
       m_stateTransitionedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionedTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_stateTransitionedTimestampHasBeenSet = true;
+       m_stateTransitionedTimestampHasBeenSet = true;
     }
   }
 

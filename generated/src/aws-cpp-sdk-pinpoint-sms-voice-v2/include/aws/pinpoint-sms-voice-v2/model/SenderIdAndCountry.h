@@ -35,7 +35,7 @@ namespace Model
   class SenderIdAndCountry
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API SenderIdAndCountry();
+    AWS_PINPOINTSMSVOICEV2_API SenderIdAndCountry() = default;
     AWS_PINPOINTSMSVOICEV2_API SenderIdAndCountry(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API SenderIdAndCountry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The unique identifier of the sender.</p>
      */
-    inline const Aws::String& GetSenderId() const{ return m_senderId; }
+    inline const Aws::String& GetSenderId() const { return m_senderId; }
     inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
-    inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
-    inline void SetSenderId(Aws::String&& value) { m_senderIdHasBeenSet = true; m_senderId = std::move(value); }
-    inline void SetSenderId(const char* value) { m_senderIdHasBeenSet = true; m_senderId.assign(value); }
-    inline SenderIdAndCountry& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
-    inline SenderIdAndCountry& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
-    inline SenderIdAndCountry& WithSenderId(const char* value) { SetSenderId(value); return *this;}
+    template<typename SenderIdT = Aws::String>
+    void SetSenderId(SenderIdT&& value) { m_senderIdHasBeenSet = true; m_senderId = std::forward<SenderIdT>(value); }
+    template<typename SenderIdT = Aws::String>
+    SenderIdAndCountry& WithSenderId(SenderIdT&& value) { SetSenderId(std::forward<SenderIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
      * region. </p>
      */
-    inline const Aws::String& GetIsoCountryCode() const{ return m_isoCountryCode; }
+    inline const Aws::String& GetIsoCountryCode() const { return m_isoCountryCode; }
     inline bool IsoCountryCodeHasBeenSet() const { return m_isoCountryCodeHasBeenSet; }
-    inline void SetIsoCountryCode(const Aws::String& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = value; }
-    inline void SetIsoCountryCode(Aws::String&& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = std::move(value); }
-    inline void SetIsoCountryCode(const char* value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode.assign(value); }
-    inline SenderIdAndCountry& WithIsoCountryCode(const Aws::String& value) { SetIsoCountryCode(value); return *this;}
-    inline SenderIdAndCountry& WithIsoCountryCode(Aws::String&& value) { SetIsoCountryCode(std::move(value)); return *this;}
-    inline SenderIdAndCountry& WithIsoCountryCode(const char* value) { SetIsoCountryCode(value); return *this;}
+    template<typename IsoCountryCodeT = Aws::String>
+    void SetIsoCountryCode(IsoCountryCodeT&& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = std::forward<IsoCountryCodeT>(value); }
+    template<typename IsoCountryCodeT = Aws::String>
+    SenderIdAndCountry& WithIsoCountryCode(IsoCountryCodeT&& value) { SetIsoCountryCode(std::forward<IsoCountryCodeT>(value)); return *this;}
     ///@}
   private:
 

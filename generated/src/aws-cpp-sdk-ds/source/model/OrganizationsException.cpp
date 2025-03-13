@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-OrganizationsException::OrganizationsException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 OrganizationsException::OrganizationsException(JsonView jsonValue)
-  : OrganizationsException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OrganizationsException& OrganizationsException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

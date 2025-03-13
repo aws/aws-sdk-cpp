@@ -41,7 +41,7 @@ namespace Model
   class OpenSearchIntegrationDetails
   {
   public:
-    AWS_CLOUDWATCHLOGS_API OpenSearchIntegrationDetails();
+    AWS_CLOUDWATCHLOGS_API OpenSearchIntegrationDetails() = default;
     AWS_CLOUDWATCHLOGS_API OpenSearchIntegrationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API OpenSearchIntegrationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,12 +58,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html">Creating
      * OpenSearch Service data source integrations with Amazon S3.</a> </p>
      */
-    inline const OpenSearchDataSource& GetDataSource() const{ return m_dataSource; }
+    inline const OpenSearchDataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const OpenSearchDataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(OpenSearchDataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline OpenSearchIntegrationDetails& WithDataSource(const OpenSearchDataSource& value) { SetDataSource(value); return *this;}
-    inline OpenSearchIntegrationDetails& WithDataSource(OpenSearchDataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = OpenSearchDataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = OpenSearchDataSource>
+    OpenSearchIntegrationDetails& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * application that was created by the integration with CloudWatch Logs. It hosts
      * the vended logs dashboards.</p>
      */
-    inline const OpenSearchApplication& GetApplication() const{ return m_application; }
+    inline const OpenSearchApplication& GetApplication() const { return m_application; }
     inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
-    inline void SetApplication(const OpenSearchApplication& value) { m_applicationHasBeenSet = true; m_application = value; }
-    inline void SetApplication(OpenSearchApplication&& value) { m_applicationHasBeenSet = true; m_application = std::move(value); }
-    inline OpenSearchIntegrationDetails& WithApplication(const OpenSearchApplication& value) { SetApplication(value); return *this;}
-    inline OpenSearchIntegrationDetails& WithApplication(OpenSearchApplication&& value) { SetApplication(std::move(value)); return *this;}
+    template<typename ApplicationT = OpenSearchApplication>
+    void SetApplication(ApplicationT&& value) { m_applicationHasBeenSet = true; m_application = std::forward<ApplicationT>(value); }
+    template<typename ApplicationT = OpenSearchApplication>
+    OpenSearchIntegrationDetails& WithApplication(ApplicationT&& value) { SetApplication(std::forward<ApplicationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +91,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-collections.html">Creating
      * and managing OpenSearch Service Serverless collections</a>.</p>
      */
-    inline const OpenSearchCollection& GetCollection() const{ return m_collection; }
+    inline const OpenSearchCollection& GetCollection() const { return m_collection; }
     inline bool CollectionHasBeenSet() const { return m_collectionHasBeenSet; }
-    inline void SetCollection(const OpenSearchCollection& value) { m_collectionHasBeenSet = true; m_collection = value; }
-    inline void SetCollection(OpenSearchCollection&& value) { m_collectionHasBeenSet = true; m_collection = std::move(value); }
-    inline OpenSearchIntegrationDetails& WithCollection(const OpenSearchCollection& value) { SetCollection(value); return *this;}
-    inline OpenSearchIntegrationDetails& WithCollection(OpenSearchCollection&& value) { SetCollection(std::move(value)); return *this;}
+    template<typename CollectionT = OpenSearchCollection>
+    void SetCollection(CollectionT&& value) { m_collectionHasBeenSet = true; m_collection = std::forward<CollectionT>(value); }
+    template<typename CollectionT = OpenSearchCollection>
+    OpenSearchIntegrationDetails& WithCollection(CollectionT&& value) { SetCollection(std::forward<CollectionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +108,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html">Centralized
      * OpenSearch user interface (Dashboards) with OpenSearch Service</a>.</p>
      */
-    inline const OpenSearchWorkspace& GetWorkspace() const{ return m_workspace; }
+    inline const OpenSearchWorkspace& GetWorkspace() const { return m_workspace; }
     inline bool WorkspaceHasBeenSet() const { return m_workspaceHasBeenSet; }
-    inline void SetWorkspace(const OpenSearchWorkspace& value) { m_workspaceHasBeenSet = true; m_workspace = value; }
-    inline void SetWorkspace(OpenSearchWorkspace&& value) { m_workspaceHasBeenSet = true; m_workspace = std::move(value); }
-    inline OpenSearchIntegrationDetails& WithWorkspace(const OpenSearchWorkspace& value) { SetWorkspace(value); return *this;}
-    inline OpenSearchIntegrationDetails& WithWorkspace(OpenSearchWorkspace&& value) { SetWorkspace(std::move(value)); return *this;}
+    template<typename WorkspaceT = OpenSearchWorkspace>
+    void SetWorkspace(WorkspaceT&& value) { m_workspaceHasBeenSet = true; m_workspace = std::forward<WorkspaceT>(value); }
+    template<typename WorkspaceT = OpenSearchWorkspace>
+    OpenSearchIntegrationDetails& WithWorkspace(WorkspaceT&& value) { SetWorkspace(std::forward<WorkspaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +124,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-encryption.html#serverless-encryption-policies">Encryption
      * policies</a> in the OpenSearch Service Developer Guide. </p>
      */
-    inline const OpenSearchEncryptionPolicy& GetEncryptionPolicy() const{ return m_encryptionPolicy; }
+    inline const OpenSearchEncryptionPolicy& GetEncryptionPolicy() const { return m_encryptionPolicy; }
     inline bool EncryptionPolicyHasBeenSet() const { return m_encryptionPolicyHasBeenSet; }
-    inline void SetEncryptionPolicy(const OpenSearchEncryptionPolicy& value) { m_encryptionPolicyHasBeenSet = true; m_encryptionPolicy = value; }
-    inline void SetEncryptionPolicy(OpenSearchEncryptionPolicy&& value) { m_encryptionPolicyHasBeenSet = true; m_encryptionPolicy = std::move(value); }
-    inline OpenSearchIntegrationDetails& WithEncryptionPolicy(const OpenSearchEncryptionPolicy& value) { SetEncryptionPolicy(value); return *this;}
-    inline OpenSearchIntegrationDetails& WithEncryptionPolicy(OpenSearchEncryptionPolicy&& value) { SetEncryptionPolicy(std::move(value)); return *this;}
+    template<typename EncryptionPolicyT = OpenSearchEncryptionPolicy>
+    void SetEncryptionPolicy(EncryptionPolicyT&& value) { m_encryptionPolicyHasBeenSet = true; m_encryptionPolicy = std::forward<EncryptionPolicyT>(value); }
+    template<typename EncryptionPolicyT = OpenSearchEncryptionPolicy>
+    OpenSearchIntegrationDetails& WithEncryptionPolicy(EncryptionPolicyT&& value) { SetEncryptionPolicy(std::forward<EncryptionPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,12 +140,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-network.html#serverless-network-policies">Network
      * policies</a> in the OpenSearch Service Developer Guide.</p>
      */
-    inline const OpenSearchNetworkPolicy& GetNetworkPolicy() const{ return m_networkPolicy; }
+    inline const OpenSearchNetworkPolicy& GetNetworkPolicy() const { return m_networkPolicy; }
     inline bool NetworkPolicyHasBeenSet() const { return m_networkPolicyHasBeenSet; }
-    inline void SetNetworkPolicy(const OpenSearchNetworkPolicy& value) { m_networkPolicyHasBeenSet = true; m_networkPolicy = value; }
-    inline void SetNetworkPolicy(OpenSearchNetworkPolicy&& value) { m_networkPolicyHasBeenSet = true; m_networkPolicy = std::move(value); }
-    inline OpenSearchIntegrationDetails& WithNetworkPolicy(const OpenSearchNetworkPolicy& value) { SetNetworkPolicy(value); return *this;}
-    inline OpenSearchIntegrationDetails& WithNetworkPolicy(OpenSearchNetworkPolicy&& value) { SetNetworkPolicy(std::move(value)); return *this;}
+    template<typename NetworkPolicyT = OpenSearchNetworkPolicy>
+    void SetNetworkPolicy(NetworkPolicyT&& value) { m_networkPolicyHasBeenSet = true; m_networkPolicy = std::forward<NetworkPolicyT>(value); }
+    template<typename NetworkPolicyT = OpenSearchNetworkPolicy>
+    OpenSearchIntegrationDetails& WithNetworkPolicy(NetworkPolicyT&& value) { SetNetworkPolicy(std::forward<NetworkPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,12 +159,12 @@ namespace Model
      * access control for Amazon OpenSearch Serverless</a> in the OpenSearch Service
      * Developer Guide.</p>
      */
-    inline const OpenSearchDataAccessPolicy& GetAccessPolicy() const{ return m_accessPolicy; }
+    inline const OpenSearchDataAccessPolicy& GetAccessPolicy() const { return m_accessPolicy; }
     inline bool AccessPolicyHasBeenSet() const { return m_accessPolicyHasBeenSet; }
-    inline void SetAccessPolicy(const OpenSearchDataAccessPolicy& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = value; }
-    inline void SetAccessPolicy(OpenSearchDataAccessPolicy&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = std::move(value); }
-    inline OpenSearchIntegrationDetails& WithAccessPolicy(const OpenSearchDataAccessPolicy& value) { SetAccessPolicy(value); return *this;}
-    inline OpenSearchIntegrationDetails& WithAccessPolicy(OpenSearchDataAccessPolicy&& value) { SetAccessPolicy(std::move(value)); return *this;}
+    template<typename AccessPolicyT = OpenSearchDataAccessPolicy>
+    void SetAccessPolicy(AccessPolicyT&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = std::forward<AccessPolicyT>(value); }
+    template<typename AccessPolicyT = OpenSearchDataAccessPolicy>
+    OpenSearchIntegrationDetails& WithAccessPolicy(AccessPolicyT&& value) { SetAccessPolicy(std::forward<AccessPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,12 +177,12 @@ namespace Model
      * data lifecycle policies with OpenSearch Service Serverless</a> in the OpenSearch
      * Service Developer Guide.</p>
      */
-    inline const OpenSearchLifecyclePolicy& GetLifecyclePolicy() const{ return m_lifecyclePolicy; }
+    inline const OpenSearchLifecyclePolicy& GetLifecyclePolicy() const { return m_lifecyclePolicy; }
     inline bool LifecyclePolicyHasBeenSet() const { return m_lifecyclePolicyHasBeenSet; }
-    inline void SetLifecyclePolicy(const OpenSearchLifecyclePolicy& value) { m_lifecyclePolicyHasBeenSet = true; m_lifecyclePolicy = value; }
-    inline void SetLifecyclePolicy(OpenSearchLifecyclePolicy&& value) { m_lifecyclePolicyHasBeenSet = true; m_lifecyclePolicy = std::move(value); }
-    inline OpenSearchIntegrationDetails& WithLifecyclePolicy(const OpenSearchLifecyclePolicy& value) { SetLifecyclePolicy(value); return *this;}
-    inline OpenSearchIntegrationDetails& WithLifecyclePolicy(OpenSearchLifecyclePolicy&& value) { SetLifecyclePolicy(std::move(value)); return *this;}
+    template<typename LifecyclePolicyT = OpenSearchLifecyclePolicy>
+    void SetLifecyclePolicy(LifecyclePolicyT&& value) { m_lifecyclePolicyHasBeenSet = true; m_lifecyclePolicy = std::forward<LifecyclePolicyT>(value); }
+    template<typename LifecyclePolicyT = OpenSearchLifecyclePolicy>
+    OpenSearchIntegrationDetails& WithLifecyclePolicy(LifecyclePolicyT&& value) { SetLifecyclePolicy(std::forward<LifecyclePolicyT>(value)); return *this;}
     ///@}
   private:
 

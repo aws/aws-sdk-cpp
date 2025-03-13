@@ -12,12 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeHostKeyRequest::DescribeHostKeyRequest() : 
-    m_serverIdHasBeenSet(false),
-    m_hostKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeHostKeyRequest::SerializePayload() const
 {
   JsonValue payload;

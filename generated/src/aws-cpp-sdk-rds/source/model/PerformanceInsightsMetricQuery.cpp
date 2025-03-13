@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-PerformanceInsightsMetricQuery::PerformanceInsightsMetricQuery() : 
-    m_groupByHasBeenSet(false),
-    m_metricHasBeenSet(false)
-{
-}
-
 PerformanceInsightsMetricQuery::PerformanceInsightsMetricQuery(const XmlNode& xmlNode)
-  : PerformanceInsightsMetricQuery()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ PerformanceInsightsMetricQuery& PerformanceInsightsMetricQuery::operator =(const
     {
       m_groupBy = groupByNode;
       m_groupByHasBeenSet = true;
+       m_groupByHasBeenSet = true;
     }
     XmlNode metricNode = resultNode.FirstChild("Metric");
     if(!metricNode.IsNull())
     {
       m_metric = Aws::Utils::Xml::DecodeEscapedXmlText(metricNode.GetText());
       m_metricHasBeenSet = true;
+       m_metricHasBeenSet = true;
     }
   }
 

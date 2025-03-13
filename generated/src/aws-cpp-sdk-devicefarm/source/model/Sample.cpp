@@ -18,16 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-Sample::Sample() : 
-    m_arnHasBeenSet(false),
-    m_type(SampleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 Sample::Sample(JsonView jsonValue)
-  : Sample()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Sample& Sample::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = SampleTypeMapper::GetSampleTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

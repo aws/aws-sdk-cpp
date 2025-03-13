@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DiskImageDetail::DiskImageDetail() : 
-    m_format(DiskImageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_bytes(0),
-    m_bytesHasBeenSet(false),
-    m_importManifestUrlHasBeenSet(false)
-{
-}
-
 DiskImageDetail::DiskImageDetail(const XmlNode& xmlNode)
-  : DiskImageDetail()
 {
   *this = xmlNode;
 }
@@ -44,20 +34,23 @@ DiskImageDetail& DiskImageDetail::operator =(const XmlNode& xmlNode)
     XmlNode formatNode = resultNode.FirstChild("format");
     if(!formatNode.IsNull())
     {
-      m_format = DiskImageFormatMapper::GetDiskImageFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
+      m_format = DiskImageFormatMapper::GetDiskImageFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
+       m_formatHasBeenSet = true;
     }
     XmlNode bytesNode = resultNode.FirstChild("bytes");
     if(!bytesNode.IsNull())
     {
       m_bytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bytesNode.GetText()).c_str()).c_str());
       m_bytesHasBeenSet = true;
+       m_bytesHasBeenSet = true;
     }
     XmlNode importManifestUrlNode = resultNode.FirstChild("importManifestUrl");
     if(!importManifestUrlNode.IsNull())
     {
       m_importManifestUrl = Aws::Utils::Xml::DecodeEscapedXmlText(importManifestUrlNode.GetText());
       m_importManifestUrlHasBeenSet = true;
+       m_importManifestUrlHasBeenSet = true;
     }
   }
 

@@ -12,14 +12,6 @@ using namespace Aws::Billing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSourceViewsForBillingViewRequest::ListSourceViewsForBillingViewRequest() : 
-    m_arnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSourceViewsForBillingViewRequest::SerializePayload() const
 {
   JsonValue payload;

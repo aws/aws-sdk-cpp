@@ -18,13 +18,7 @@ namespace mgn
 namespace Model
 {
 
-LifeCycleLastTestReverted::LifeCycleLastTestReverted() : 
-    m_apiCallDateTimeHasBeenSet(false)
-{
-}
-
 LifeCycleLastTestReverted::LifeCycleLastTestReverted(JsonView jsonValue)
-  : LifeCycleLastTestReverted()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LifeCycleLastTestReverted& LifeCycleLastTestReverted::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("apiCallDateTime"))
   {
     m_apiCallDateTime = jsonValue.GetString("apiCallDateTime");
-
     m_apiCallDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

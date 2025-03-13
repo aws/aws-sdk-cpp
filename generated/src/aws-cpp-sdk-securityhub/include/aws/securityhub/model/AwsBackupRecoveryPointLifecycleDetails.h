@@ -31,7 +31,7 @@ namespace Model
   class AwsBackupRecoveryPointLifecycleDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsBackupRecoveryPointLifecycleDetails();
+    AWS_SECURITYHUB_API AwsBackupRecoveryPointLifecycleDetails() = default;
     AWS_SECURITYHUB_API AwsBackupRecoveryPointLifecycleDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsBackupRecoveryPointLifecycleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>Specifies the number of days after creation that a recovery point is deleted.
      * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
      */
-    inline long long GetDeleteAfterDays() const{ return m_deleteAfterDays; }
+    inline long long GetDeleteAfterDays() const { return m_deleteAfterDays; }
     inline bool DeleteAfterDaysHasBeenSet() const { return m_deleteAfterDaysHasBeenSet; }
     inline void SetDeleteAfterDays(long long value) { m_deleteAfterDaysHasBeenSet = true; m_deleteAfterDays = value; }
     inline AwsBackupRecoveryPointLifecycleDetails& WithDeleteAfterDays(long long value) { SetDeleteAfterDays(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
      * <p>Specifies the number of days after creation that a recovery point is moved to
      * cold storage. </p>
      */
-    inline long long GetMoveToColdStorageAfterDays() const{ return m_moveToColdStorageAfterDays; }
+    inline long long GetMoveToColdStorageAfterDays() const { return m_moveToColdStorageAfterDays; }
     inline bool MoveToColdStorageAfterDaysHasBeenSet() const { return m_moveToColdStorageAfterDaysHasBeenSet; }
     inline void SetMoveToColdStorageAfterDays(long long value) { m_moveToColdStorageAfterDaysHasBeenSet = true; m_moveToColdStorageAfterDays = value; }
     inline AwsBackupRecoveryPointLifecycleDetails& WithMoveToColdStorageAfterDays(long long value) { SetMoveToColdStorageAfterDays(value); return *this;}
     ///@}
   private:
 
-    long long m_deleteAfterDays;
+    long long m_deleteAfterDays{0};
     bool m_deleteAfterDaysHasBeenSet = false;
 
-    long long m_moveToColdStorageAfterDays;
+    long long m_moveToColdStorageAfterDays{0};
     bool m_moveToColdStorageAfterDaysHasBeenSet = false;
   };
 

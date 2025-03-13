@@ -29,7 +29,7 @@ namespace Model
   class GetPipelineChangeProgressResult
   {
   public:
-    AWS_OSIS_API GetPipelineChangeProgressResult();
+    AWS_OSIS_API GetPipelineChangeProgressResult() = default;
     AWS_OSIS_API GetPipelineChangeProgressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OSIS_API GetPipelineChangeProgressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The current status of the change happening on the pipeline.</p>
      */
-    inline const Aws::Vector<ChangeProgressStatus>& GetChangeProgressStatuses() const{ return m_changeProgressStatuses; }
-    inline void SetChangeProgressStatuses(const Aws::Vector<ChangeProgressStatus>& value) { m_changeProgressStatuses = value; }
-    inline void SetChangeProgressStatuses(Aws::Vector<ChangeProgressStatus>&& value) { m_changeProgressStatuses = std::move(value); }
-    inline GetPipelineChangeProgressResult& WithChangeProgressStatuses(const Aws::Vector<ChangeProgressStatus>& value) { SetChangeProgressStatuses(value); return *this;}
-    inline GetPipelineChangeProgressResult& WithChangeProgressStatuses(Aws::Vector<ChangeProgressStatus>&& value) { SetChangeProgressStatuses(std::move(value)); return *this;}
-    inline GetPipelineChangeProgressResult& AddChangeProgressStatuses(const ChangeProgressStatus& value) { m_changeProgressStatuses.push_back(value); return *this; }
-    inline GetPipelineChangeProgressResult& AddChangeProgressStatuses(ChangeProgressStatus&& value) { m_changeProgressStatuses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ChangeProgressStatus>& GetChangeProgressStatuses() const { return m_changeProgressStatuses; }
+    template<typename ChangeProgressStatusesT = Aws::Vector<ChangeProgressStatus>>
+    void SetChangeProgressStatuses(ChangeProgressStatusesT&& value) { m_changeProgressStatusesHasBeenSet = true; m_changeProgressStatuses = std::forward<ChangeProgressStatusesT>(value); }
+    template<typename ChangeProgressStatusesT = Aws::Vector<ChangeProgressStatus>>
+    GetPipelineChangeProgressResult& WithChangeProgressStatuses(ChangeProgressStatusesT&& value) { SetChangeProgressStatuses(std::forward<ChangeProgressStatusesT>(value)); return *this;}
+    template<typename ChangeProgressStatusesT = ChangeProgressStatus>
+    GetPipelineChangeProgressResult& AddChangeProgressStatuses(ChangeProgressStatusesT&& value) { m_changeProgressStatusesHasBeenSet = true; m_changeProgressStatuses.emplace_back(std::forward<ChangeProgressStatusesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPipelineChangeProgressResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPipelineChangeProgressResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPipelineChangeProgressResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPipelineChangeProgressResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ChangeProgressStatus> m_changeProgressStatuses;
+    bool m_changeProgressStatusesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

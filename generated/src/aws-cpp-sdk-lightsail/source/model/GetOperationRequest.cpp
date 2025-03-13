@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOperationRequest::GetOperationRequest() : 
-    m_operationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetOperationRequest::SerializePayload() const
 {
   JsonValue payload;

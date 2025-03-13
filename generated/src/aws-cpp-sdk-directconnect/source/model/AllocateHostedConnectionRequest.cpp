@@ -12,17 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AllocateHostedConnectionRequest::AllocateHostedConnectionRequest() : 
-    m_connectionIdHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_bandwidthHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_vlan(0),
-    m_vlanHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String AllocateHostedConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

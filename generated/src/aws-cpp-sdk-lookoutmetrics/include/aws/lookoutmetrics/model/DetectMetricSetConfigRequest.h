@@ -22,7 +22,7 @@ namespace Model
   class DetectMetricSetConfigRequest : public LookoutMetricsRequest
   {
   public:
-    AWS_LOOKOUTMETRICS_API DetectMetricSetConfigRequest();
+    AWS_LOOKOUTMETRICS_API DetectMetricSetConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>An anomaly detector ARN.</p>
      */
-    inline const Aws::String& GetAnomalyDetectorArn() const{ return m_anomalyDetectorArn; }
+    inline const Aws::String& GetAnomalyDetectorArn() const { return m_anomalyDetectorArn; }
     inline bool AnomalyDetectorArnHasBeenSet() const { return m_anomalyDetectorArnHasBeenSet; }
-    inline void SetAnomalyDetectorArn(const Aws::String& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = value; }
-    inline void SetAnomalyDetectorArn(Aws::String&& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = std::move(value); }
-    inline void SetAnomalyDetectorArn(const char* value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn.assign(value); }
-    inline DetectMetricSetConfigRequest& WithAnomalyDetectorArn(const Aws::String& value) { SetAnomalyDetectorArn(value); return *this;}
-    inline DetectMetricSetConfigRequest& WithAnomalyDetectorArn(Aws::String&& value) { SetAnomalyDetectorArn(std::move(value)); return *this;}
-    inline DetectMetricSetConfigRequest& WithAnomalyDetectorArn(const char* value) { SetAnomalyDetectorArn(value); return *this;}
+    template<typename AnomalyDetectorArnT = Aws::String>
+    void SetAnomalyDetectorArn(AnomalyDetectorArnT&& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = std::forward<AnomalyDetectorArnT>(value); }
+    template<typename AnomalyDetectorArnT = Aws::String>
+    DetectMetricSetConfigRequest& WithAnomalyDetectorArn(AnomalyDetectorArnT&& value) { SetAnomalyDetectorArn(std::forward<AnomalyDetectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A data source.</p>
      */
-    inline const AutoDetectionMetricSource& GetAutoDetectionMetricSource() const{ return m_autoDetectionMetricSource; }
+    inline const AutoDetectionMetricSource& GetAutoDetectionMetricSource() const { return m_autoDetectionMetricSource; }
     inline bool AutoDetectionMetricSourceHasBeenSet() const { return m_autoDetectionMetricSourceHasBeenSet; }
-    inline void SetAutoDetectionMetricSource(const AutoDetectionMetricSource& value) { m_autoDetectionMetricSourceHasBeenSet = true; m_autoDetectionMetricSource = value; }
-    inline void SetAutoDetectionMetricSource(AutoDetectionMetricSource&& value) { m_autoDetectionMetricSourceHasBeenSet = true; m_autoDetectionMetricSource = std::move(value); }
-    inline DetectMetricSetConfigRequest& WithAutoDetectionMetricSource(const AutoDetectionMetricSource& value) { SetAutoDetectionMetricSource(value); return *this;}
-    inline DetectMetricSetConfigRequest& WithAutoDetectionMetricSource(AutoDetectionMetricSource&& value) { SetAutoDetectionMetricSource(std::move(value)); return *this;}
+    template<typename AutoDetectionMetricSourceT = AutoDetectionMetricSource>
+    void SetAutoDetectionMetricSource(AutoDetectionMetricSourceT&& value) { m_autoDetectionMetricSourceHasBeenSet = true; m_autoDetectionMetricSource = std::forward<AutoDetectionMetricSourceT>(value); }
+    template<typename AutoDetectionMetricSourceT = AutoDetectionMetricSource>
+    DetectMetricSetConfigRequest& WithAutoDetectionMetricSource(AutoDetectionMetricSourceT&& value) { SetAutoDetectionMetricSource(std::forward<AutoDetectionMetricSourceT>(value)); return *this;}
     ///@}
   private:
 

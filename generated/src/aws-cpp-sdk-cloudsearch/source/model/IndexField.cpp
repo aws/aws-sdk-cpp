@@ -20,26 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-IndexField::IndexField() : 
-    m_indexFieldNameHasBeenSet(false),
-    m_indexFieldType(IndexFieldType::NOT_SET),
-    m_indexFieldTypeHasBeenSet(false),
-    m_intOptionsHasBeenSet(false),
-    m_doubleOptionsHasBeenSet(false),
-    m_literalOptionsHasBeenSet(false),
-    m_textOptionsHasBeenSet(false),
-    m_dateOptionsHasBeenSet(false),
-    m_latLonOptionsHasBeenSet(false),
-    m_intArrayOptionsHasBeenSet(false),
-    m_doubleArrayOptionsHasBeenSet(false),
-    m_literalArrayOptionsHasBeenSet(false),
-    m_textArrayOptionsHasBeenSet(false),
-    m_dateArrayOptionsHasBeenSet(false)
-{
-}
-
 IndexField::IndexField(const XmlNode& xmlNode)
-  : IndexField()
 {
   *this = xmlNode;
 }
@@ -55,78 +36,91 @@ IndexField& IndexField::operator =(const XmlNode& xmlNode)
     {
       m_indexFieldName = Aws::Utils::Xml::DecodeEscapedXmlText(indexFieldNameNode.GetText());
       m_indexFieldNameHasBeenSet = true;
+       m_indexFieldNameHasBeenSet = true;
     }
     XmlNode indexFieldTypeNode = resultNode.FirstChild("IndexFieldType");
     if(!indexFieldTypeNode.IsNull())
     {
-      m_indexFieldType = IndexFieldTypeMapper::GetIndexFieldTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(indexFieldTypeNode.GetText()).c_str()).c_str());
+      m_indexFieldType = IndexFieldTypeMapper::GetIndexFieldTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(indexFieldTypeNode.GetText()).c_str()));
       m_indexFieldTypeHasBeenSet = true;
+       m_indexFieldTypeHasBeenSet = true;
     }
     XmlNode intOptionsNode = resultNode.FirstChild("IntOptions");
     if(!intOptionsNode.IsNull())
     {
       m_intOptions = intOptionsNode;
       m_intOptionsHasBeenSet = true;
+       m_intOptionsHasBeenSet = true;
     }
     XmlNode doubleOptionsNode = resultNode.FirstChild("DoubleOptions");
     if(!doubleOptionsNode.IsNull())
     {
       m_doubleOptions = doubleOptionsNode;
       m_doubleOptionsHasBeenSet = true;
+       m_doubleOptionsHasBeenSet = true;
     }
     XmlNode literalOptionsNode = resultNode.FirstChild("LiteralOptions");
     if(!literalOptionsNode.IsNull())
     {
       m_literalOptions = literalOptionsNode;
       m_literalOptionsHasBeenSet = true;
+       m_literalOptionsHasBeenSet = true;
     }
     XmlNode textOptionsNode = resultNode.FirstChild("TextOptions");
     if(!textOptionsNode.IsNull())
     {
       m_textOptions = textOptionsNode;
       m_textOptionsHasBeenSet = true;
+       m_textOptionsHasBeenSet = true;
     }
     XmlNode dateOptionsNode = resultNode.FirstChild("DateOptions");
     if(!dateOptionsNode.IsNull())
     {
       m_dateOptions = dateOptionsNode;
       m_dateOptionsHasBeenSet = true;
+       m_dateOptionsHasBeenSet = true;
     }
     XmlNode latLonOptionsNode = resultNode.FirstChild("LatLonOptions");
     if(!latLonOptionsNode.IsNull())
     {
       m_latLonOptions = latLonOptionsNode;
       m_latLonOptionsHasBeenSet = true;
+       m_latLonOptionsHasBeenSet = true;
     }
     XmlNode intArrayOptionsNode = resultNode.FirstChild("IntArrayOptions");
     if(!intArrayOptionsNode.IsNull())
     {
       m_intArrayOptions = intArrayOptionsNode;
       m_intArrayOptionsHasBeenSet = true;
+       m_intArrayOptionsHasBeenSet = true;
     }
     XmlNode doubleArrayOptionsNode = resultNode.FirstChild("DoubleArrayOptions");
     if(!doubleArrayOptionsNode.IsNull())
     {
       m_doubleArrayOptions = doubleArrayOptionsNode;
       m_doubleArrayOptionsHasBeenSet = true;
+       m_doubleArrayOptionsHasBeenSet = true;
     }
     XmlNode literalArrayOptionsNode = resultNode.FirstChild("LiteralArrayOptions");
     if(!literalArrayOptionsNode.IsNull())
     {
       m_literalArrayOptions = literalArrayOptionsNode;
       m_literalArrayOptionsHasBeenSet = true;
+       m_literalArrayOptionsHasBeenSet = true;
     }
     XmlNode textArrayOptionsNode = resultNode.FirstChild("TextArrayOptions");
     if(!textArrayOptionsNode.IsNull())
     {
       m_textArrayOptions = textArrayOptionsNode;
       m_textArrayOptionsHasBeenSet = true;
+       m_textArrayOptionsHasBeenSet = true;
     }
     XmlNode dateArrayOptionsNode = resultNode.FirstChild("DateArrayOptions");
     if(!dateArrayOptionsNode.IsNull())
     {
       m_dateArrayOptions = dateArrayOptionsNode;
       m_dateArrayOptionsHasBeenSet = true;
+       m_dateArrayOptionsHasBeenSet = true;
     }
   }
 

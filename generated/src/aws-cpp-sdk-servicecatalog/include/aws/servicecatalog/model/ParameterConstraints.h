@@ -33,7 +33,7 @@ namespace Model
   class ParameterConstraints
   {
   public:
-    AWS_SERVICECATALOG_API ParameterConstraints();
+    AWS_SERVICECATALOG_API ParameterConstraints() = default;
     AWS_SERVICECATALOG_API ParameterConstraints(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API ParameterConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>The values that the administrator has allowed for the parameter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedValues() const{ return m_allowedValues; }
+    inline const Aws::Vector<Aws::String>& GetAllowedValues() const { return m_allowedValues; }
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
-    inline void SetAllowedValues(const Aws::Vector<Aws::String>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
-    inline void SetAllowedValues(Aws::Vector<Aws::String>&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
-    inline ParameterConstraints& WithAllowedValues(const Aws::Vector<Aws::String>& value) { SetAllowedValues(value); return *this;}
-    inline ParameterConstraints& WithAllowedValues(Aws::Vector<Aws::String>&& value) { SetAllowedValues(std::move(value)); return *this;}
-    inline ParameterConstraints& AddAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
-    inline ParameterConstraints& AddAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(std::move(value)); return *this; }
-    inline ParameterConstraints& AddAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
+    template<typename AllowedValuesT = Aws::Vector<Aws::String>>
+    void SetAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::forward<AllowedValuesT>(value); }
+    template<typename AllowedValuesT = Aws::Vector<Aws::String>>
+    ParameterConstraints& WithAllowedValues(AllowedValuesT&& value) { SetAllowedValues(std::forward<AllowedValuesT>(value)); return *this;}
+    template<typename AllowedValuesT = Aws::String>
+    ParameterConstraints& AddAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.emplace_back(std::forward<AllowedValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +59,12 @@ namespace Model
      * <code>String</code> types. The pattern must match the entire parameter value
      * provided.</p>
      */
-    inline const Aws::String& GetAllowedPattern() const{ return m_allowedPattern; }
+    inline const Aws::String& GetAllowedPattern() const { return m_allowedPattern; }
     inline bool AllowedPatternHasBeenSet() const { return m_allowedPatternHasBeenSet; }
-    inline void SetAllowedPattern(const Aws::String& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = value; }
-    inline void SetAllowedPattern(Aws::String&& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = std::move(value); }
-    inline void SetAllowedPattern(const char* value) { m_allowedPatternHasBeenSet = true; m_allowedPattern.assign(value); }
-    inline ParameterConstraints& WithAllowedPattern(const Aws::String& value) { SetAllowedPattern(value); return *this;}
-    inline ParameterConstraints& WithAllowedPattern(Aws::String&& value) { SetAllowedPattern(std::move(value)); return *this;}
-    inline ParameterConstraints& WithAllowedPattern(const char* value) { SetAllowedPattern(value); return *this;}
+    template<typename AllowedPatternT = Aws::String>
+    void SetAllowedPattern(AllowedPatternT&& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = std::forward<AllowedPatternT>(value); }
+    template<typename AllowedPatternT = Aws::String>
+    ParameterConstraints& WithAllowedPattern(AllowedPatternT&& value) { SetAllowedPattern(std::forward<AllowedPatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +79,12 @@ namespace Model
      * message:</p> <p> <code>Malformed input-Parameter MyParameter must only contain
      * uppercase and lowercase letters and numbers.</code> </p>
      */
-    inline const Aws::String& GetConstraintDescription() const{ return m_constraintDescription; }
+    inline const Aws::String& GetConstraintDescription() const { return m_constraintDescription; }
     inline bool ConstraintDescriptionHasBeenSet() const { return m_constraintDescriptionHasBeenSet; }
-    inline void SetConstraintDescription(const Aws::String& value) { m_constraintDescriptionHasBeenSet = true; m_constraintDescription = value; }
-    inline void SetConstraintDescription(Aws::String&& value) { m_constraintDescriptionHasBeenSet = true; m_constraintDescription = std::move(value); }
-    inline void SetConstraintDescription(const char* value) { m_constraintDescriptionHasBeenSet = true; m_constraintDescription.assign(value); }
-    inline ParameterConstraints& WithConstraintDescription(const Aws::String& value) { SetConstraintDescription(value); return *this;}
-    inline ParameterConstraints& WithConstraintDescription(Aws::String&& value) { SetConstraintDescription(std::move(value)); return *this;}
-    inline ParameterConstraints& WithConstraintDescription(const char* value) { SetConstraintDescription(value); return *this;}
+    template<typename ConstraintDescriptionT = Aws::String>
+    void SetConstraintDescription(ConstraintDescriptionT&& value) { m_constraintDescriptionHasBeenSet = true; m_constraintDescription = std::forward<ConstraintDescriptionT>(value); }
+    template<typename ConstraintDescriptionT = Aws::String>
+    ParameterConstraints& WithConstraintDescription(ConstraintDescriptionT&& value) { SetConstraintDescription(std::forward<ConstraintDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +92,12 @@ namespace Model
      * <p>An integer value that determines the largest number of characters you want to
      * allow for <code>String</code> types. </p>
      */
-    inline const Aws::String& GetMaxLength() const{ return m_maxLength; }
+    inline const Aws::String& GetMaxLength() const { return m_maxLength; }
     inline bool MaxLengthHasBeenSet() const { return m_maxLengthHasBeenSet; }
-    inline void SetMaxLength(const Aws::String& value) { m_maxLengthHasBeenSet = true; m_maxLength = value; }
-    inline void SetMaxLength(Aws::String&& value) { m_maxLengthHasBeenSet = true; m_maxLength = std::move(value); }
-    inline void SetMaxLength(const char* value) { m_maxLengthHasBeenSet = true; m_maxLength.assign(value); }
-    inline ParameterConstraints& WithMaxLength(const Aws::String& value) { SetMaxLength(value); return *this;}
-    inline ParameterConstraints& WithMaxLength(Aws::String&& value) { SetMaxLength(std::move(value)); return *this;}
-    inline ParameterConstraints& WithMaxLength(const char* value) { SetMaxLength(value); return *this;}
+    template<typename MaxLengthT = Aws::String>
+    void SetMaxLength(MaxLengthT&& value) { m_maxLengthHasBeenSet = true; m_maxLength = std::forward<MaxLengthT>(value); }
+    template<typename MaxLengthT = Aws::String>
+    ParameterConstraints& WithMaxLength(MaxLengthT&& value) { SetMaxLength(std::forward<MaxLengthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +105,12 @@ namespace Model
      * <p>An integer value that determines the smallest number of characters you want
      * to allow for <code>String</code> types.</p>
      */
-    inline const Aws::String& GetMinLength() const{ return m_minLength; }
+    inline const Aws::String& GetMinLength() const { return m_minLength; }
     inline bool MinLengthHasBeenSet() const { return m_minLengthHasBeenSet; }
-    inline void SetMinLength(const Aws::String& value) { m_minLengthHasBeenSet = true; m_minLength = value; }
-    inline void SetMinLength(Aws::String&& value) { m_minLengthHasBeenSet = true; m_minLength = std::move(value); }
-    inline void SetMinLength(const char* value) { m_minLengthHasBeenSet = true; m_minLength.assign(value); }
-    inline ParameterConstraints& WithMinLength(const Aws::String& value) { SetMinLength(value); return *this;}
-    inline ParameterConstraints& WithMinLength(Aws::String&& value) { SetMinLength(std::move(value)); return *this;}
-    inline ParameterConstraints& WithMinLength(const char* value) { SetMinLength(value); return *this;}
+    template<typename MinLengthT = Aws::String>
+    void SetMinLength(MinLengthT&& value) { m_minLengthHasBeenSet = true; m_minLength = std::forward<MinLengthT>(value); }
+    template<typename MinLengthT = Aws::String>
+    ParameterConstraints& WithMinLength(MinLengthT&& value) { SetMinLength(std::forward<MinLengthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +118,12 @@ namespace Model
      * <p>A numeric value that determines the largest numeric value you want to allow
      * for <code>Number</code> types.</p>
      */
-    inline const Aws::String& GetMaxValue() const{ return m_maxValue; }
+    inline const Aws::String& GetMaxValue() const { return m_maxValue; }
     inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
-    inline void SetMaxValue(const Aws::String& value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
-    inline void SetMaxValue(Aws::String&& value) { m_maxValueHasBeenSet = true; m_maxValue = std::move(value); }
-    inline void SetMaxValue(const char* value) { m_maxValueHasBeenSet = true; m_maxValue.assign(value); }
-    inline ParameterConstraints& WithMaxValue(const Aws::String& value) { SetMaxValue(value); return *this;}
-    inline ParameterConstraints& WithMaxValue(Aws::String&& value) { SetMaxValue(std::move(value)); return *this;}
-    inline ParameterConstraints& WithMaxValue(const char* value) { SetMaxValue(value); return *this;}
+    template<typename MaxValueT = Aws::String>
+    void SetMaxValue(MaxValueT&& value) { m_maxValueHasBeenSet = true; m_maxValue = std::forward<MaxValueT>(value); }
+    template<typename MaxValueT = Aws::String>
+    ParameterConstraints& WithMaxValue(MaxValueT&& value) { SetMaxValue(std::forward<MaxValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,14 +131,12 @@ namespace Model
      * <p>A numeric value that determines the smallest numeric value you want to allow
      * for <code>Number</code> types. </p>
      */
-    inline const Aws::String& GetMinValue() const{ return m_minValue; }
+    inline const Aws::String& GetMinValue() const { return m_minValue; }
     inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
-    inline void SetMinValue(const Aws::String& value) { m_minValueHasBeenSet = true; m_minValue = value; }
-    inline void SetMinValue(Aws::String&& value) { m_minValueHasBeenSet = true; m_minValue = std::move(value); }
-    inline void SetMinValue(const char* value) { m_minValueHasBeenSet = true; m_minValue.assign(value); }
-    inline ParameterConstraints& WithMinValue(const Aws::String& value) { SetMinValue(value); return *this;}
-    inline ParameterConstraints& WithMinValue(Aws::String&& value) { SetMinValue(std::move(value)); return *this;}
-    inline ParameterConstraints& WithMinValue(const char* value) { SetMinValue(value); return *this;}
+    template<typename MinValueT = Aws::String>
+    void SetMinValue(MinValueT&& value) { m_minValueHasBeenSet = true; m_minValue = std::forward<MinValueT>(value); }
+    template<typename MinValueT = Aws::String>
+    ParameterConstraints& WithMinValue(MinValueT&& value) { SetMinValue(std::forward<MinValueT>(value)); return *this;}
     ///@}
   private:
 

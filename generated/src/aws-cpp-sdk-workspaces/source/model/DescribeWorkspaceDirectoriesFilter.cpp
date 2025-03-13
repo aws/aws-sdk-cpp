@@ -18,15 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-DescribeWorkspaceDirectoriesFilter::DescribeWorkspaceDirectoriesFilter() : 
-    m_name(DescribeWorkspaceDirectoriesFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 DescribeWorkspaceDirectoriesFilter::DescribeWorkspaceDirectoriesFilter(JsonView jsonValue)
-  : DescribeWorkspaceDirectoriesFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DescribeWorkspaceDirectoriesFilter& DescribeWorkspaceDirectoriesFilter::operator
   if(jsonValue.ValueExists("Name"))
   {
     m_name = DescribeWorkspaceDirectoriesFilterNameMapper::GetDescribeWorkspaceDirectoriesFilterNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ DescribeWorkspaceDirectoriesFilter& DescribeWorkspaceDirectoriesFilter::operator
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

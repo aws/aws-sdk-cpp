@@ -18,15 +18,7 @@ namespace Textract
 namespace Model
 {
 
-Query::Query() : 
-    m_textHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_pagesHasBeenSet(false)
-{
-}
-
 Query::Query(JsonView jsonValue)
-  : Query()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Query& Query::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Alias"))
   {
     m_alias = jsonValue.GetString("Alias");
-
     m_aliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pages"))
   {
     Aws::Utils::Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
@@ -56,7 +44,6 @@ Query& Query::operator =(JsonView jsonValue)
     }
     m_pagesHasBeenSet = true;
   }
-
   return *this;
 }
 

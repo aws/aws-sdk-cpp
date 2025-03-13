@@ -32,7 +32,7 @@ namespace Model
   class RouteSignpostLabel
   {
   public:
-    AWS_GEOROUTES_API RouteSignpostLabel();
+    AWS_GEOROUTES_API RouteSignpostLabel() = default;
     AWS_GEOROUTES_API RouteSignpostLabel(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteSignpostLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Route number of the road.</p>
      */
-    inline const RouteNumber& GetRouteNumber() const{ return m_routeNumber; }
+    inline const RouteNumber& GetRouteNumber() const { return m_routeNumber; }
     inline bool RouteNumberHasBeenSet() const { return m_routeNumberHasBeenSet; }
-    inline void SetRouteNumber(const RouteNumber& value) { m_routeNumberHasBeenSet = true; m_routeNumber = value; }
-    inline void SetRouteNumber(RouteNumber&& value) { m_routeNumberHasBeenSet = true; m_routeNumber = std::move(value); }
-    inline RouteSignpostLabel& WithRouteNumber(const RouteNumber& value) { SetRouteNumber(value); return *this;}
-    inline RouteSignpostLabel& WithRouteNumber(RouteNumber&& value) { SetRouteNumber(std::move(value)); return *this;}
+    template<typename RouteNumberT = RouteNumber>
+    void SetRouteNumber(RouteNumberT&& value) { m_routeNumberHasBeenSet = true; m_routeNumber = std::forward<RouteNumberT>(value); }
+    template<typename RouteNumberT = RouteNumber>
+    RouteSignpostLabel& WithRouteNumber(RouteNumberT&& value) { SetRouteNumber(std::forward<RouteNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Signpost text.</p>
      */
-    inline const LocalizedString& GetText() const{ return m_text; }
+    inline const LocalizedString& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const LocalizedString& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(LocalizedString&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline RouteSignpostLabel& WithText(const LocalizedString& value) { SetText(value); return *this;}
-    inline RouteSignpostLabel& WithText(LocalizedString&& value) { SetText(std::move(value)); return *this;}
+    template<typename TextT = LocalizedString>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = LocalizedString>
+    RouteSignpostLabel& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

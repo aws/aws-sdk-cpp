@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANStartFuotaTask::LoRaWANStartFuotaTask() : 
-    m_startTimeHasBeenSet(false)
-{
-}
-
 LoRaWANStartFuotaTask::LoRaWANStartFuotaTask(JsonView jsonValue)
-  : LoRaWANStartFuotaTask()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LoRaWANStartFuotaTask& LoRaWANStartFuotaTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

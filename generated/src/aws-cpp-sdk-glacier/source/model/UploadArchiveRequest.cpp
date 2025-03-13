@@ -15,14 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UploadArchiveRequest::UploadArchiveRequest() : 
-    m_vaultNameHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_archiveDescriptionHasBeenSet(false),
-    m_checksumHasBeenSet(false)
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection UploadArchiveRequest::GetRequestSpecificHeaders() const

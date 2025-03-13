@@ -18,16 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-Rule::Rule() : 
-    m_ruleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_predicatesHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Rule& Rule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleId"))
   {
     m_ruleId = jsonValue.GetString("RuleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Predicates"))
   {
     Aws::Utils::Array<JsonView> predicatesJsonList = jsonValue.GetArray("Predicates");
@@ -64,7 +49,6 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_predicatesHasBeenSet = true;
   }
-
   return *this;
 }
 

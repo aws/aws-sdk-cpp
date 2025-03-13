@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIdentityProviderRequest::GetIdentityProviderRequest() : 
-    m_identityProviderArnHasBeenSet(false)
-{
-}
-
 Aws::String GetIdentityProviderRequest::SerializePayload() const
 {
   return {};

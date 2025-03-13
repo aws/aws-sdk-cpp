@@ -32,7 +32,7 @@ namespace Model
   class LakeFormationConfiguration
   {
   public:
-    AWS_GLUE_API LakeFormationConfiguration();
+    AWS_GLUE_API LakeFormationConfiguration() = default;
     AWS_GLUE_API LakeFormationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API LakeFormationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Specifies whether to use Lake Formation credentials for the crawler instead
      * of the IAM role credentials.</p>
      */
-    inline bool GetUseLakeFormationCredentials() const{ return m_useLakeFormationCredentials; }
+    inline bool GetUseLakeFormationCredentials() const { return m_useLakeFormationCredentials; }
     inline bool UseLakeFormationCredentialsHasBeenSet() const { return m_useLakeFormationCredentialsHasBeenSet; }
     inline void SetUseLakeFormationCredentials(bool value) { m_useLakeFormationCredentialsHasBeenSet = true; m_useLakeFormationCredentials = value; }
     inline LakeFormationConfiguration& WithUseLakeFormationCredentials(bool value) { SetUseLakeFormationCredentials(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
      * <p>Required for cross account crawls. For same account crawls as the target
      * data, this can be left as null.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline LakeFormationConfiguration& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline LakeFormationConfiguration& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline LakeFormationConfiguration& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    LakeFormationConfiguration& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_useLakeFormationCredentials;
+    bool m_useLakeFormationCredentials{false};
     bool m_useLakeFormationCredentialsHasBeenSet = false;
 
     Aws::String m_accountId;

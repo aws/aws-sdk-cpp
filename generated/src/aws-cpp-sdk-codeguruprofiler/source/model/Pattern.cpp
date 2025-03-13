@@ -18,20 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-Pattern::Pattern() : 
-    m_countersToAggregateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resolutionStepsHasBeenSet(false),
-    m_targetFramesHasBeenSet(false),
-    m_thresholdPercent(0.0),
-    m_thresholdPercentHasBeenSet(false)
-{
-}
-
 Pattern::Pattern(JsonView jsonValue)
-  : Pattern()
 {
   *this = jsonValue;
 }
@@ -47,35 +34,26 @@ Pattern& Pattern::operator =(JsonView jsonValue)
     }
     m_countersToAggregateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolutionSteps"))
   {
     m_resolutionSteps = jsonValue.GetString("resolutionSteps");
-
     m_resolutionStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetFrames"))
   {
     Aws::Utils::Array<JsonView> targetFramesJsonList = jsonValue.GetArray("targetFrames");
@@ -92,14 +70,11 @@ Pattern& Pattern::operator =(JsonView jsonValue)
     }
     m_targetFramesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thresholdPercent"))
   {
     m_thresholdPercent = jsonValue.GetDouble("thresholdPercent");
-
     m_thresholdPercentHasBeenSet = true;
   }
-
   return *this;
 }
 

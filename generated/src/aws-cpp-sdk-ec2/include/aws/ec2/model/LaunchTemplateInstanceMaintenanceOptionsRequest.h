@@ -31,7 +31,7 @@ namespace Model
   class LaunchTemplateInstanceMaintenanceOptionsRequest
   {
   public:
-    AWS_EC2_API LaunchTemplateInstanceMaintenanceOptionsRequest();
+    AWS_EC2_API LaunchTemplateInstanceMaintenanceOptionsRequest() = default;
     AWS_EC2_API LaunchTemplateInstanceMaintenanceOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LaunchTemplateInstanceMaintenanceOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,16 +46,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
      * automatic recovery</a>.</p>
      */
-    inline const LaunchTemplateAutoRecoveryState& GetAutoRecovery() const{ return m_autoRecovery; }
+    inline LaunchTemplateAutoRecoveryState GetAutoRecovery() const { return m_autoRecovery; }
     inline bool AutoRecoveryHasBeenSet() const { return m_autoRecoveryHasBeenSet; }
-    inline void SetAutoRecovery(const LaunchTemplateAutoRecoveryState& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = value; }
-    inline void SetAutoRecovery(LaunchTemplateAutoRecoveryState&& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = std::move(value); }
-    inline LaunchTemplateInstanceMaintenanceOptionsRequest& WithAutoRecovery(const LaunchTemplateAutoRecoveryState& value) { SetAutoRecovery(value); return *this;}
-    inline LaunchTemplateInstanceMaintenanceOptionsRequest& WithAutoRecovery(LaunchTemplateAutoRecoveryState&& value) { SetAutoRecovery(std::move(value)); return *this;}
+    inline void SetAutoRecovery(LaunchTemplateAutoRecoveryState value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = value; }
+    inline LaunchTemplateInstanceMaintenanceOptionsRequest& WithAutoRecovery(LaunchTemplateAutoRecoveryState value) { SetAutoRecovery(value); return *this;}
     ///@}
   private:
 
-    LaunchTemplateAutoRecoveryState m_autoRecovery;
+    LaunchTemplateAutoRecoveryState m_autoRecovery{LaunchTemplateAutoRecoveryState::NOT_SET};
     bool m_autoRecoveryHasBeenSet = false;
   };
 

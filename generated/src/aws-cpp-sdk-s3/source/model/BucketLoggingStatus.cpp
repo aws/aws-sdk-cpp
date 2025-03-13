@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-BucketLoggingStatus::BucketLoggingStatus() : 
-    m_loggingEnabledHasBeenSet(false)
-{
-}
-
 BucketLoggingStatus::BucketLoggingStatus(const XmlNode& xmlNode)
-  : BucketLoggingStatus()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ BucketLoggingStatus& BucketLoggingStatus::operator =(const XmlNode& xmlNode)
     {
       m_loggingEnabled = loggingEnabledNode;
       m_loggingEnabledHasBeenSet = true;
+       m_loggingEnabledHasBeenSet = true;
     }
   }
 

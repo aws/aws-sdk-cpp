@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClientVpnAuthenticationRequest::ClientVpnAuthenticationRequest() : 
-    m_type(ClientVpnAuthenticationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_activeDirectoryHasBeenSet(false),
-    m_mutualAuthenticationHasBeenSet(false),
-    m_federatedAuthenticationHasBeenSet(false)
-{
-}
-
 ClientVpnAuthenticationRequest::ClientVpnAuthenticationRequest(const XmlNode& xmlNode)
-  : ClientVpnAuthenticationRequest()
 {
   *this = xmlNode;
 }
@@ -44,26 +34,30 @@ ClientVpnAuthenticationRequest& ClientVpnAuthenticationRequest::operator =(const
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = ClientVpnAuthenticationTypeMapper::GetClientVpnAuthenticationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = ClientVpnAuthenticationTypeMapper::GetClientVpnAuthenticationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode activeDirectoryNode = resultNode.FirstChild("ActiveDirectory");
     if(!activeDirectoryNode.IsNull())
     {
       m_activeDirectory = activeDirectoryNode;
       m_activeDirectoryHasBeenSet = true;
+       m_activeDirectoryHasBeenSet = true;
     }
     XmlNode mutualAuthenticationNode = resultNode.FirstChild("MutualAuthentication");
     if(!mutualAuthenticationNode.IsNull())
     {
       m_mutualAuthentication = mutualAuthenticationNode;
       m_mutualAuthenticationHasBeenSet = true;
+       m_mutualAuthenticationHasBeenSet = true;
     }
     XmlNode federatedAuthenticationNode = resultNode.FirstChild("FederatedAuthentication");
     if(!federatedAuthenticationNode.IsNull())
     {
       m_federatedAuthentication = federatedAuthenticationNode;
       m_federatedAuthenticationHasBeenSet = true;
+       m_federatedAuthenticationHasBeenSet = true;
     }
   }
 

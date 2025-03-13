@@ -12,12 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GrantFlowEntitlementsRequest::GrantFlowEntitlementsRequest() : 
-    m_entitlementsHasBeenSet(false),
-    m_flowArnHasBeenSet(false)
-{
-}
-
 Aws::String GrantFlowEntitlementsRequest::SerializePayload() const
 {
   JsonValue payload;

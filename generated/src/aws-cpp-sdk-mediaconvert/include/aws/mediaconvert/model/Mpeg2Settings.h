@@ -49,7 +49,7 @@ namespace Model
   class Mpeg2Settings
   {
   public:
-    AWS_MEDIACONVERT_API Mpeg2Settings();
+    AWS_MEDIACONVERT_API Mpeg2Settings() = default;
     AWS_MEDIACONVERT_API Mpeg2Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Mpeg2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,12 +61,10 @@ namespace Model
      * value that you choose here applies to the following settings: Spatial adaptive
      * quantization, and Temporal adaptive quantization.
      */
-    inline const Mpeg2AdaptiveQuantization& GetAdaptiveQuantization() const{ return m_adaptiveQuantization; }
+    inline Mpeg2AdaptiveQuantization GetAdaptiveQuantization() const { return m_adaptiveQuantization; }
     inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
-    inline void SetAdaptiveQuantization(const Mpeg2AdaptiveQuantization& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
-    inline void SetAdaptiveQuantization(Mpeg2AdaptiveQuantization&& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = std::move(value); }
-    inline Mpeg2Settings& WithAdaptiveQuantization(const Mpeg2AdaptiveQuantization& value) { SetAdaptiveQuantization(value); return *this;}
-    inline Mpeg2Settings& WithAdaptiveQuantization(Mpeg2AdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
+    inline void SetAdaptiveQuantization(Mpeg2AdaptiveQuantization value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
+    inline Mpeg2Settings& WithAdaptiveQuantization(Mpeg2AdaptiveQuantization value) { SetAdaptiveQuantization(value); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +73,7 @@ namespace Model
      * Smooth outputs, bitrates must be unique when rounded down to the nearest
      * multiple of 1000.
      */
-    inline int GetBitrate() const{ return m_bitrate; }
+    inline int GetBitrate() const { return m_bitrate; }
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
     inline Mpeg2Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
@@ -85,24 +83,20 @@ namespace Model
     /**
      * Use Level to set the MPEG-2 level for the video output.
      */
-    inline const Mpeg2CodecLevel& GetCodecLevel() const{ return m_codecLevel; }
+    inline Mpeg2CodecLevel GetCodecLevel() const { return m_codecLevel; }
     inline bool CodecLevelHasBeenSet() const { return m_codecLevelHasBeenSet; }
-    inline void SetCodecLevel(const Mpeg2CodecLevel& value) { m_codecLevelHasBeenSet = true; m_codecLevel = value; }
-    inline void SetCodecLevel(Mpeg2CodecLevel&& value) { m_codecLevelHasBeenSet = true; m_codecLevel = std::move(value); }
-    inline Mpeg2Settings& WithCodecLevel(const Mpeg2CodecLevel& value) { SetCodecLevel(value); return *this;}
-    inline Mpeg2Settings& WithCodecLevel(Mpeg2CodecLevel&& value) { SetCodecLevel(std::move(value)); return *this;}
+    inline void SetCodecLevel(Mpeg2CodecLevel value) { m_codecLevelHasBeenSet = true; m_codecLevel = value; }
+    inline Mpeg2Settings& WithCodecLevel(Mpeg2CodecLevel value) { SetCodecLevel(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Use Profile to set the MPEG-2 profile for the video output.
      */
-    inline const Mpeg2CodecProfile& GetCodecProfile() const{ return m_codecProfile; }
+    inline Mpeg2CodecProfile GetCodecProfile() const { return m_codecProfile; }
     inline bool CodecProfileHasBeenSet() const { return m_codecProfileHasBeenSet; }
-    inline void SetCodecProfile(const Mpeg2CodecProfile& value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
-    inline void SetCodecProfile(Mpeg2CodecProfile&& value) { m_codecProfileHasBeenSet = true; m_codecProfile = std::move(value); }
-    inline Mpeg2Settings& WithCodecProfile(const Mpeg2CodecProfile& value) { SetCodecProfile(value); return *this;}
-    inline Mpeg2Settings& WithCodecProfile(Mpeg2CodecProfile&& value) { SetCodecProfile(std::move(value)); return *this;}
+    inline void SetCodecProfile(Mpeg2CodecProfile value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
+    inline Mpeg2Settings& WithCodecProfile(Mpeg2CodecProfile value) { SetCodecProfile(value); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +107,10 @@ namespace Model
      * low-motion portions. The maximum number of B-frames is limited by the value you
      * provide for the setting B frames between reference frames.
      */
-    inline const Mpeg2DynamicSubGop& GetDynamicSubGop() const{ return m_dynamicSubGop; }
+    inline Mpeg2DynamicSubGop GetDynamicSubGop() const { return m_dynamicSubGop; }
     inline bool DynamicSubGopHasBeenSet() const { return m_dynamicSubGopHasBeenSet; }
-    inline void SetDynamicSubGop(const Mpeg2DynamicSubGop& value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = value; }
-    inline void SetDynamicSubGop(Mpeg2DynamicSubGop&& value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = std::move(value); }
-    inline Mpeg2Settings& WithDynamicSubGop(const Mpeg2DynamicSubGop& value) { SetDynamicSubGop(value); return *this;}
-    inline Mpeg2Settings& WithDynamicSubGop(Mpeg2DynamicSubGop&& value) { SetDynamicSubGop(std::move(value)); return *this;}
+    inline void SetDynamicSubGop(Mpeg2DynamicSubGop value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = value; }
+    inline Mpeg2Settings& WithDynamicSubGop(Mpeg2DynamicSubGop value) { SetDynamicSubGop(value); return *this;}
     ///@}
 
     ///@{
@@ -130,12 +122,10 @@ namespace Model
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction.
      */
-    inline const Mpeg2FramerateControl& GetFramerateControl() const{ return m_framerateControl; }
+    inline Mpeg2FramerateControl GetFramerateControl() const { return m_framerateControl; }
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
-    inline void SetFramerateControl(const Mpeg2FramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
-    inline void SetFramerateControl(Mpeg2FramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
-    inline Mpeg2Settings& WithFramerateControl(const Mpeg2FramerateControl& value) { SetFramerateControl(value); return *this;}
-    inline Mpeg2Settings& WithFramerateControl(Mpeg2FramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
+    inline void SetFramerateControl(Mpeg2FramerateControl value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
+    inline Mpeg2Settings& WithFramerateControl(Mpeg2FramerateControl value) { SetFramerateControl(value); return *this;}
     ///@}
 
     ///@{
@@ -157,12 +147,10 @@ namespace Model
      * duration of your output will become shorter at higher frame rates and longer at
      * lower frame rates.
      */
-    inline const Mpeg2FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
+    inline Mpeg2FramerateConversionAlgorithm GetFramerateConversionAlgorithm() const { return m_framerateConversionAlgorithm; }
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
-    inline void SetFramerateConversionAlgorithm(const Mpeg2FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
-    inline void SetFramerateConversionAlgorithm(Mpeg2FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
-    inline Mpeg2Settings& WithFramerateConversionAlgorithm(const Mpeg2FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
-    inline Mpeg2Settings& WithFramerateConversionAlgorithm(Mpeg2FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
+    inline void SetFramerateConversionAlgorithm(Mpeg2FramerateConversionAlgorithm value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
+    inline Mpeg2Settings& WithFramerateConversionAlgorithm(Mpeg2FramerateConversionAlgorithm value) { SetFramerateConversionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -174,7 +162,7 @@ namespace Model
      * console for transcode jobs that use frame rate conversion, provide the value as
      * a decimal number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline int GetFramerateDenominator() const { return m_framerateDenominator; }
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
     inline Mpeg2Settings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
@@ -189,7 +177,7 @@ namespace Model
      * transcode jobs that use frame rate conversion, provide the value as a decimal
      * number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline int GetFramerateNumerator() const { return m_framerateNumerator; }
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
     inline Mpeg2Settings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
@@ -204,7 +192,7 @@ namespace Model
      * as quickly as possible. Don't set this value to 0; that would break output
      * segmenting.
      */
-    inline int GetGopClosedCadence() const{ return m_gopClosedCadence; }
+    inline int GetGopClosedCadence() const { return m_gopClosedCadence; }
     inline bool GopClosedCadenceHasBeenSet() const { return m_gopClosedCadenceHasBeenSet; }
     inline void SetGopClosedCadence(int value) { m_gopClosedCadenceHasBeenSet = true; m_gopClosedCadence = value; }
     inline Mpeg2Settings& WithGopClosedCadence(int value) { SetGopClosedCadence(value); return *this;}
@@ -217,7 +205,7 @@ namespace Model
      * mode control to Specified, seconds. The default value for GOP mode control is
      * Frames.
      */
-    inline double GetGopSize() const{ return m_gopSize; }
+    inline double GetGopSize() const { return m_gopSize; }
     inline bool GopSizeHasBeenSet() const { return m_gopSizeHasBeenSet; }
     inline void SetGopSize(double value) { m_gopSizeHasBeenSet = true; m_gopSize = value; }
     inline Mpeg2Settings& WithGopSize(double value) { SetGopSize(value); return *this;}
@@ -228,12 +216,10 @@ namespace Model
      * Specify the units for GOP size. If you don't specify a value here, by default
      * the encoder measures GOP size in frames.
      */
-    inline const Mpeg2GopSizeUnits& GetGopSizeUnits() const{ return m_gopSizeUnits; }
+    inline Mpeg2GopSizeUnits GetGopSizeUnits() const { return m_gopSizeUnits; }
     inline bool GopSizeUnitsHasBeenSet() const { return m_gopSizeUnitsHasBeenSet; }
-    inline void SetGopSizeUnits(const Mpeg2GopSizeUnits& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = value; }
-    inline void SetGopSizeUnits(Mpeg2GopSizeUnits&& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = std::move(value); }
-    inline Mpeg2Settings& WithGopSizeUnits(const Mpeg2GopSizeUnits& value) { SetGopSizeUnits(value); return *this;}
-    inline Mpeg2Settings& WithGopSizeUnits(Mpeg2GopSizeUnits&& value) { SetGopSizeUnits(std::move(value)); return *this;}
+    inline void SetGopSizeUnits(Mpeg2GopSizeUnits value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = value; }
+    inline Mpeg2Settings& WithGopSizeUnits(Mpeg2GopSizeUnits value) { SetGopSizeUnits(value); return *this;}
     ///@}
 
     ///@{
@@ -243,7 +229,7 @@ namespace Model
      * segment. For the best video quality: Set to 0 or leave blank to automatically
      * determine the final buffer fill percentage.
      */
-    inline int GetHrdBufferFinalFillPercentage() const{ return m_hrdBufferFinalFillPercentage; }
+    inline int GetHrdBufferFinalFillPercentage() const { return m_hrdBufferFinalFillPercentage; }
     inline bool HrdBufferFinalFillPercentageHasBeenSet() const { return m_hrdBufferFinalFillPercentageHasBeenSet; }
     inline void SetHrdBufferFinalFillPercentage(int value) { m_hrdBufferFinalFillPercentageHasBeenSet = true; m_hrdBufferFinalFillPercentage = value; }
     inline Mpeg2Settings& WithHrdBufferFinalFillPercentage(int value) { SetHrdBufferFinalFillPercentage(value); return *this;}
@@ -253,7 +239,7 @@ namespace Model
     /**
      * Percentage of the buffer that should initially be filled (HRD buffer model).
      */
-    inline int GetHrdBufferInitialFillPercentage() const{ return m_hrdBufferInitialFillPercentage; }
+    inline int GetHrdBufferInitialFillPercentage() const { return m_hrdBufferInitialFillPercentage; }
     inline bool HrdBufferInitialFillPercentageHasBeenSet() const { return m_hrdBufferInitialFillPercentageHasBeenSet; }
     inline void SetHrdBufferInitialFillPercentage(int value) { m_hrdBufferInitialFillPercentageHasBeenSet = true; m_hrdBufferInitialFillPercentage = value; }
     inline Mpeg2Settings& WithHrdBufferInitialFillPercentage(int value) { SetHrdBufferInitialFillPercentage(value); return *this;}
@@ -264,7 +250,7 @@ namespace Model
      * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
      * 5000000.
      */
-    inline int GetHrdBufferSize() const{ return m_hrdBufferSize; }
+    inline int GetHrdBufferSize() const { return m_hrdBufferSize; }
     inline bool HrdBufferSizeHasBeenSet() const { return m_hrdBufferSizeHasBeenSet; }
     inline void SetHrdBufferSize(int value) { m_hrdBufferSizeHasBeenSet = true; m_hrdBufferSize = value; }
     inline Mpeg2Settings& WithHrdBufferSize(int value) { SetHrdBufferSize(value); return *this;}
@@ -283,12 +269,10 @@ namespace Model
      * the source. If the source is progressive, the output will be interlaced with top
      * field bottom field first, depending on which of the Follow options you choose.
      */
-    inline const Mpeg2InterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
+    inline Mpeg2InterlaceMode GetInterlaceMode() const { return m_interlaceMode; }
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
-    inline void SetInterlaceMode(const Mpeg2InterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
-    inline void SetInterlaceMode(Mpeg2InterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
-    inline Mpeg2Settings& WithInterlaceMode(const Mpeg2InterlaceMode& value) { SetInterlaceMode(value); return *this;}
-    inline Mpeg2Settings& WithInterlaceMode(Mpeg2InterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
+    inline void SetInterlaceMode(Mpeg2InterlaceMode value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
+    inline Mpeg2Settings& WithInterlaceMode(Mpeg2InterlaceMode value) { SetInterlaceMode(value); return *this;}
     ///@}
 
     ///@{
@@ -297,12 +281,10 @@ namespace Model
      * coefficients. If you choose the value auto, the service will automatically
      * select the precision based on the per-frame compression ratio.
      */
-    inline const Mpeg2IntraDcPrecision& GetIntraDcPrecision() const{ return m_intraDcPrecision; }
+    inline Mpeg2IntraDcPrecision GetIntraDcPrecision() const { return m_intraDcPrecision; }
     inline bool IntraDcPrecisionHasBeenSet() const { return m_intraDcPrecisionHasBeenSet; }
-    inline void SetIntraDcPrecision(const Mpeg2IntraDcPrecision& value) { m_intraDcPrecisionHasBeenSet = true; m_intraDcPrecision = value; }
-    inline void SetIntraDcPrecision(Mpeg2IntraDcPrecision&& value) { m_intraDcPrecisionHasBeenSet = true; m_intraDcPrecision = std::move(value); }
-    inline Mpeg2Settings& WithIntraDcPrecision(const Mpeg2IntraDcPrecision& value) { SetIntraDcPrecision(value); return *this;}
-    inline Mpeg2Settings& WithIntraDcPrecision(Mpeg2IntraDcPrecision&& value) { SetIntraDcPrecision(std::move(value)); return *this;}
+    inline void SetIntraDcPrecision(Mpeg2IntraDcPrecision value) { m_intraDcPrecisionHasBeenSet = true; m_intraDcPrecision = value; }
+    inline Mpeg2Settings& WithIntraDcPrecision(Mpeg2IntraDcPrecision value) { SetIntraDcPrecision(value); return *this;}
     ///@}
 
     ///@{
@@ -310,7 +292,7 @@ namespace Model
      * Maximum bitrate in bits/second. For example, enter five megabits per second as
      * 5000000.
      */
-    inline int GetMaxBitrate() const{ return m_maxBitrate; }
+    inline int GetMaxBitrate() const { return m_maxBitrate; }
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
     inline Mpeg2Settings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
@@ -332,7 +314,7 @@ namespace Model
      * MediaConvert will only create IDR-frames at the start of your output's
      * cadence-driven GOP. Use when your downstream systems require a regular GOP size.
      */
-    inline int GetMinIInterval() const{ return m_minIInterval; }
+    inline int GetMinIInterval() const { return m_minIInterval; }
     inline bool MinIIntervalHasBeenSet() const { return m_minIIntervalHasBeenSet; }
     inline void SetMinIInterval(int value) { m_minIIntervalHasBeenSet = true; m_minIInterval = value; }
     inline Mpeg2Settings& WithMinIInterval(int value) { SetMinIInterval(value); return *this;}
@@ -344,7 +326,7 @@ namespace Model
      * in this output. Valid values are whole numbers from 0 through 7. When you don't
      * specify a value, MediaConvert defaults to 2.
      */
-    inline int GetNumberBFramesBetweenReferenceFrames() const{ return m_numberBFramesBetweenReferenceFrames; }
+    inline int GetNumberBFramesBetweenReferenceFrames() const { return m_numberBFramesBetweenReferenceFrames; }
     inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
     inline void SetNumberBFramesBetweenReferenceFrames(int value) { m_numberBFramesBetweenReferenceFramesHasBeenSet = true; m_numberBFramesBetweenReferenceFrames = value; }
     inline Mpeg2Settings& WithNumberBFramesBetweenReferenceFrames(int value) { SetNumberBFramesBetweenReferenceFrames(value); return *this;}
@@ -358,12 +340,10 @@ namespace Model
      * value other than Follow source. When you choose SPECIFIED for this setting, you
      * must also specify values for the parNumerator and parDenominator settings.
      */
-    inline const Mpeg2ParControl& GetParControl() const{ return m_parControl; }
+    inline Mpeg2ParControl GetParControl() const { return m_parControl; }
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
-    inline void SetParControl(const Mpeg2ParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
-    inline void SetParControl(Mpeg2ParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
-    inline Mpeg2Settings& WithParControl(const Mpeg2ParControl& value) { SetParControl(value); return *this;}
-    inline Mpeg2Settings& WithParControl(Mpeg2ParControl&& value) { SetParControl(std::move(value)); return *this;}
+    inline void SetParControl(Mpeg2ParControl value) { m_parControlHasBeenSet = true; m_parControl = value; }
+    inline Mpeg2Settings& WithParControl(Mpeg2ParControl value) { SetParControl(value); return *this;}
     ///@}
 
     ///@{
@@ -374,7 +354,7 @@ namespace Model
      * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
      * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
-    inline int GetParDenominator() const{ return m_parDenominator; }
+    inline int GetParDenominator() const { return m_parDenominator; }
     inline bool ParDenominatorHasBeenSet() const { return m_parDenominatorHasBeenSet; }
     inline void SetParDenominator(int value) { m_parDenominatorHasBeenSet = true; m_parDenominator = value; }
     inline Mpeg2Settings& WithParDenominator(int value) { SetParDenominator(value); return *this;}
@@ -388,7 +368,7 @@ namespace Model
      * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
      * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
-    inline int GetParNumerator() const{ return m_parNumerator; }
+    inline int GetParNumerator() const { return m_parNumerator; }
     inline bool ParNumeratorHasBeenSet() const { return m_parNumeratorHasBeenSet; }
     inline void SetParNumerator(int value) { m_parNumeratorHasBeenSet = true; m_parNumerator = value; }
     inline Mpeg2Settings& WithParNumerator(int value) { SetParNumerator(value); return *this;}
@@ -400,12 +380,10 @@ namespace Model
      * speed for output video quality. The default behavior is faster, lower quality,
      * single-pass encoding.
      */
-    inline const Mpeg2QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
+    inline Mpeg2QualityTuningLevel GetQualityTuningLevel() const { return m_qualityTuningLevel; }
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
-    inline void SetQualityTuningLevel(const Mpeg2QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
-    inline void SetQualityTuningLevel(Mpeg2QualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
-    inline Mpeg2Settings& WithQualityTuningLevel(const Mpeg2QualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
-    inline Mpeg2Settings& WithQualityTuningLevel(Mpeg2QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
+    inline void SetQualityTuningLevel(Mpeg2QualityTuningLevel value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
+    inline Mpeg2Settings& WithQualityTuningLevel(Mpeg2QualityTuningLevel value) { SetQualityTuningLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -413,12 +391,10 @@ namespace Model
      * Use Rate control mode to specify whether the bitrate is variable (vbr) or
      * constant (cbr).
      */
-    inline const Mpeg2RateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
+    inline Mpeg2RateControlMode GetRateControlMode() const { return m_rateControlMode; }
     inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
-    inline void SetRateControlMode(const Mpeg2RateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
-    inline void SetRateControlMode(Mpeg2RateControlMode&& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = std::move(value); }
-    inline Mpeg2Settings& WithRateControlMode(const Mpeg2RateControlMode& value) { SetRateControlMode(value); return *this;}
-    inline Mpeg2Settings& WithRateControlMode(Mpeg2RateControlMode&& value) { SetRateControlMode(std::move(value)); return *this;}
+    inline void SetRateControlMode(Mpeg2RateControlMode value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
+    inline Mpeg2Settings& WithRateControlMode(Mpeg2RateControlMode value) { SetRateControlMode(value); return *this;}
     ///@}
 
     ///@{
@@ -436,12 +412,10 @@ namespace Model
      * use optimized interlacing for hard telecine outputs. You must also set Interlace
      * mode to a value other than Progressive.
      */
-    inline const Mpeg2ScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+    inline Mpeg2ScanTypeConversionMode GetScanTypeConversionMode() const { return m_scanTypeConversionMode; }
     inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
-    inline void SetScanTypeConversionMode(const Mpeg2ScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
-    inline void SetScanTypeConversionMode(Mpeg2ScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
-    inline Mpeg2Settings& WithScanTypeConversionMode(const Mpeg2ScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
-    inline Mpeg2Settings& WithScanTypeConversionMode(Mpeg2ScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
+    inline void SetScanTypeConversionMode(Mpeg2ScanTypeConversionMode value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+    inline Mpeg2Settings& WithScanTypeConversionMode(Mpeg2ScanTypeConversionMode value) { SetScanTypeConversionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -449,12 +423,10 @@ namespace Model
      * Enable this setting to insert I-frames at scene changes that the service
      * automatically detects. This improves video quality and is enabled by default.
      */
-    inline const Mpeg2SceneChangeDetect& GetSceneChangeDetect() const{ return m_sceneChangeDetect; }
+    inline Mpeg2SceneChangeDetect GetSceneChangeDetect() const { return m_sceneChangeDetect; }
     inline bool SceneChangeDetectHasBeenSet() const { return m_sceneChangeDetectHasBeenSet; }
-    inline void SetSceneChangeDetect(const Mpeg2SceneChangeDetect& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = value; }
-    inline void SetSceneChangeDetect(Mpeg2SceneChangeDetect&& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = std::move(value); }
-    inline Mpeg2Settings& WithSceneChangeDetect(const Mpeg2SceneChangeDetect& value) { SetSceneChangeDetect(value); return *this;}
-    inline Mpeg2Settings& WithSceneChangeDetect(Mpeg2SceneChangeDetect&& value) { SetSceneChangeDetect(std::move(value)); return *this;}
+    inline void SetSceneChangeDetect(Mpeg2SceneChangeDetect value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = value; }
+    inline Mpeg2Settings& WithSceneChangeDetect(Mpeg2SceneChangeDetect value) { SetSceneChangeDetect(value); return *this;}
     ///@}
 
     ///@{
@@ -466,12 +438,10 @@ namespace Model
      * slightly reduce the duration of your video. Required settings: You must also set
      * Framerate to 25.
      */
-    inline const Mpeg2SlowPal& GetSlowPal() const{ return m_slowPal; }
+    inline Mpeg2SlowPal GetSlowPal() const { return m_slowPal; }
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
-    inline void SetSlowPal(const Mpeg2SlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
-    inline void SetSlowPal(Mpeg2SlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
-    inline Mpeg2Settings& WithSlowPal(const Mpeg2SlowPal& value) { SetSlowPal(value); return *this;}
-    inline Mpeg2Settings& WithSlowPal(Mpeg2SlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
+    inline void SetSlowPal(Mpeg2SlowPal value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
+    inline Mpeg2Settings& WithSlowPal(Mpeg2SlowPal value) { SetSlowPal(value); return *this;}
     ///@}
 
     ///@{
@@ -486,7 +456,7 @@ namespace Model
      * increasing reduction of high-frequency data. The value 128 results in the
      * softest video.
      */
-    inline int GetSoftness() const{ return m_softness; }
+    inline int GetSoftness() const { return m_softness; }
     inline bool SoftnessHasBeenSet() const { return m_softnessHasBeenSet; }
     inline void SetSoftness(int value) { m_softnessHasBeenSet = true; m_softness = value; }
     inline Mpeg2Settings& WithSoftness(int value) { SetSoftness(value); return *this;}
@@ -509,12 +479,10 @@ namespace Model
      * as cartoons and video games, set it to Low. For content with a wider variety of
      * textures, set it to High or Higher.
      */
-    inline const Mpeg2SpatialAdaptiveQuantization& GetSpatialAdaptiveQuantization() const{ return m_spatialAdaptiveQuantization; }
+    inline Mpeg2SpatialAdaptiveQuantization GetSpatialAdaptiveQuantization() const { return m_spatialAdaptiveQuantization; }
     inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
-    inline void SetSpatialAdaptiveQuantization(const Mpeg2SpatialAdaptiveQuantization& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
-    inline void SetSpatialAdaptiveQuantization(Mpeg2SpatialAdaptiveQuantization&& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = std::move(value); }
-    inline Mpeg2Settings& WithSpatialAdaptiveQuantization(const Mpeg2SpatialAdaptiveQuantization& value) { SetSpatialAdaptiveQuantization(value); return *this;}
-    inline Mpeg2Settings& WithSpatialAdaptiveQuantization(Mpeg2SpatialAdaptiveQuantization&& value) { SetSpatialAdaptiveQuantization(std::move(value)); return *this;}
+    inline void SetSpatialAdaptiveQuantization(Mpeg2SpatialAdaptiveQuantization value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
+    inline Mpeg2Settings& WithSpatialAdaptiveQuantization(Mpeg2SpatialAdaptiveQuantization value) { SetSpatialAdaptiveQuantization(value); return *this;}
     ///@}
 
     ///@{
@@ -523,12 +491,10 @@ namespace Model
      * to not use the syntax. Related settings: When you choose D10 for your MXF
      * profile, you must also set this value to D10.
      */
-    inline const Mpeg2Syntax& GetSyntax() const{ return m_syntax; }
+    inline Mpeg2Syntax GetSyntax() const { return m_syntax; }
     inline bool SyntaxHasBeenSet() const { return m_syntaxHasBeenSet; }
-    inline void SetSyntax(const Mpeg2Syntax& value) { m_syntaxHasBeenSet = true; m_syntax = value; }
-    inline void SetSyntax(Mpeg2Syntax&& value) { m_syntaxHasBeenSet = true; m_syntax = std::move(value); }
-    inline Mpeg2Settings& WithSyntax(const Mpeg2Syntax& value) { SetSyntax(value); return *this;}
-    inline Mpeg2Settings& WithSyntax(Mpeg2Syntax&& value) { SetSyntax(std::move(value)); return *this;}
+    inline void SetSyntax(Mpeg2Syntax value) { m_syntaxHasBeenSet = true; m_syntax = value; }
+    inline Mpeg2Settings& WithSyntax(Mpeg2Syntax value) { SetSyntax(value); return *this;}
     ///@}
 
     ///@{
@@ -541,12 +507,10 @@ namespace Model
      * default value, None, MediaConvert does a standard frame rate conversion to 29.97
      * without doing anything with the field polarity to create a smoother picture.
      */
-    inline const Mpeg2Telecine& GetTelecine() const{ return m_telecine; }
+    inline Mpeg2Telecine GetTelecine() const { return m_telecine; }
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
-    inline void SetTelecine(const Mpeg2Telecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
-    inline void SetTelecine(Mpeg2Telecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
-    inline Mpeg2Settings& WithTelecine(const Mpeg2Telecine& value) { SetTelecine(value); return *this;}
-    inline Mpeg2Settings& WithTelecine(Mpeg2Telecine&& value) { SetTelecine(std::move(value)); return *this;}
+    inline void SetTelecine(Mpeg2Telecine value) { m_telecineHasBeenSet = true; m_telecine = value; }
+    inline Mpeg2Settings& WithTelecine(Mpeg2Telecine value) { SetTelecine(value); return *this;}
     ///@}
 
     ///@{
@@ -564,112 +528,110 @@ namespace Model
      * Related setting: When you enable temporal quantization, adjust the strength of
      * the filter with the setting Adaptive quantization.
      */
-    inline const Mpeg2TemporalAdaptiveQuantization& GetTemporalAdaptiveQuantization() const{ return m_temporalAdaptiveQuantization; }
+    inline Mpeg2TemporalAdaptiveQuantization GetTemporalAdaptiveQuantization() const { return m_temporalAdaptiveQuantization; }
     inline bool TemporalAdaptiveQuantizationHasBeenSet() const { return m_temporalAdaptiveQuantizationHasBeenSet; }
-    inline void SetTemporalAdaptiveQuantization(const Mpeg2TemporalAdaptiveQuantization& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }
-    inline void SetTemporalAdaptiveQuantization(Mpeg2TemporalAdaptiveQuantization&& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = std::move(value); }
-    inline Mpeg2Settings& WithTemporalAdaptiveQuantization(const Mpeg2TemporalAdaptiveQuantization& value) { SetTemporalAdaptiveQuantization(value); return *this;}
-    inline Mpeg2Settings& WithTemporalAdaptiveQuantization(Mpeg2TemporalAdaptiveQuantization&& value) { SetTemporalAdaptiveQuantization(std::move(value)); return *this;}
+    inline void SetTemporalAdaptiveQuantization(Mpeg2TemporalAdaptiveQuantization value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }
+    inline Mpeg2Settings& WithTemporalAdaptiveQuantization(Mpeg2TemporalAdaptiveQuantization value) { SetTemporalAdaptiveQuantization(value); return *this;}
     ///@}
   private:
 
-    Mpeg2AdaptiveQuantization m_adaptiveQuantization;
+    Mpeg2AdaptiveQuantization m_adaptiveQuantization{Mpeg2AdaptiveQuantization::NOT_SET};
     bool m_adaptiveQuantizationHasBeenSet = false;
 
-    int m_bitrate;
+    int m_bitrate{0};
     bool m_bitrateHasBeenSet = false;
 
-    Mpeg2CodecLevel m_codecLevel;
+    Mpeg2CodecLevel m_codecLevel{Mpeg2CodecLevel::NOT_SET};
     bool m_codecLevelHasBeenSet = false;
 
-    Mpeg2CodecProfile m_codecProfile;
+    Mpeg2CodecProfile m_codecProfile{Mpeg2CodecProfile::NOT_SET};
     bool m_codecProfileHasBeenSet = false;
 
-    Mpeg2DynamicSubGop m_dynamicSubGop;
+    Mpeg2DynamicSubGop m_dynamicSubGop{Mpeg2DynamicSubGop::NOT_SET};
     bool m_dynamicSubGopHasBeenSet = false;
 
-    Mpeg2FramerateControl m_framerateControl;
+    Mpeg2FramerateControl m_framerateControl{Mpeg2FramerateControl::NOT_SET};
     bool m_framerateControlHasBeenSet = false;
 
-    Mpeg2FramerateConversionAlgorithm m_framerateConversionAlgorithm;
+    Mpeg2FramerateConversionAlgorithm m_framerateConversionAlgorithm{Mpeg2FramerateConversionAlgorithm::NOT_SET};
     bool m_framerateConversionAlgorithmHasBeenSet = false;
 
-    int m_framerateDenominator;
+    int m_framerateDenominator{0};
     bool m_framerateDenominatorHasBeenSet = false;
 
-    int m_framerateNumerator;
+    int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
 
-    int m_gopClosedCadence;
+    int m_gopClosedCadence{0};
     bool m_gopClosedCadenceHasBeenSet = false;
 
-    double m_gopSize;
+    double m_gopSize{0.0};
     bool m_gopSizeHasBeenSet = false;
 
-    Mpeg2GopSizeUnits m_gopSizeUnits;
+    Mpeg2GopSizeUnits m_gopSizeUnits{Mpeg2GopSizeUnits::NOT_SET};
     bool m_gopSizeUnitsHasBeenSet = false;
 
-    int m_hrdBufferFinalFillPercentage;
+    int m_hrdBufferFinalFillPercentage{0};
     bool m_hrdBufferFinalFillPercentageHasBeenSet = false;
 
-    int m_hrdBufferInitialFillPercentage;
+    int m_hrdBufferInitialFillPercentage{0};
     bool m_hrdBufferInitialFillPercentageHasBeenSet = false;
 
-    int m_hrdBufferSize;
+    int m_hrdBufferSize{0};
     bool m_hrdBufferSizeHasBeenSet = false;
 
-    Mpeg2InterlaceMode m_interlaceMode;
+    Mpeg2InterlaceMode m_interlaceMode{Mpeg2InterlaceMode::NOT_SET};
     bool m_interlaceModeHasBeenSet = false;
 
-    Mpeg2IntraDcPrecision m_intraDcPrecision;
+    Mpeg2IntraDcPrecision m_intraDcPrecision{Mpeg2IntraDcPrecision::NOT_SET};
     bool m_intraDcPrecisionHasBeenSet = false;
 
-    int m_maxBitrate;
+    int m_maxBitrate{0};
     bool m_maxBitrateHasBeenSet = false;
 
-    int m_minIInterval;
+    int m_minIInterval{0};
     bool m_minIIntervalHasBeenSet = false;
 
-    int m_numberBFramesBetweenReferenceFrames;
+    int m_numberBFramesBetweenReferenceFrames{0};
     bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
 
-    Mpeg2ParControl m_parControl;
+    Mpeg2ParControl m_parControl{Mpeg2ParControl::NOT_SET};
     bool m_parControlHasBeenSet = false;
 
-    int m_parDenominator;
+    int m_parDenominator{0};
     bool m_parDenominatorHasBeenSet = false;
 
-    int m_parNumerator;
+    int m_parNumerator{0};
     bool m_parNumeratorHasBeenSet = false;
 
-    Mpeg2QualityTuningLevel m_qualityTuningLevel;
+    Mpeg2QualityTuningLevel m_qualityTuningLevel{Mpeg2QualityTuningLevel::NOT_SET};
     bool m_qualityTuningLevelHasBeenSet = false;
 
-    Mpeg2RateControlMode m_rateControlMode;
+    Mpeg2RateControlMode m_rateControlMode{Mpeg2RateControlMode::NOT_SET};
     bool m_rateControlModeHasBeenSet = false;
 
-    Mpeg2ScanTypeConversionMode m_scanTypeConversionMode;
+    Mpeg2ScanTypeConversionMode m_scanTypeConversionMode{Mpeg2ScanTypeConversionMode::NOT_SET};
     bool m_scanTypeConversionModeHasBeenSet = false;
 
-    Mpeg2SceneChangeDetect m_sceneChangeDetect;
+    Mpeg2SceneChangeDetect m_sceneChangeDetect{Mpeg2SceneChangeDetect::NOT_SET};
     bool m_sceneChangeDetectHasBeenSet = false;
 
-    Mpeg2SlowPal m_slowPal;
+    Mpeg2SlowPal m_slowPal{Mpeg2SlowPal::NOT_SET};
     bool m_slowPalHasBeenSet = false;
 
-    int m_softness;
+    int m_softness{0};
     bool m_softnessHasBeenSet = false;
 
-    Mpeg2SpatialAdaptiveQuantization m_spatialAdaptiveQuantization;
+    Mpeg2SpatialAdaptiveQuantization m_spatialAdaptiveQuantization{Mpeg2SpatialAdaptiveQuantization::NOT_SET};
     bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 
-    Mpeg2Syntax m_syntax;
+    Mpeg2Syntax m_syntax{Mpeg2Syntax::NOT_SET};
     bool m_syntaxHasBeenSet = false;
 
-    Mpeg2Telecine m_telecine;
+    Mpeg2Telecine m_telecine{Mpeg2Telecine::NOT_SET};
     bool m_telecineHasBeenSet = false;
 
-    Mpeg2TemporalAdaptiveQuantization m_temporalAdaptiveQuantization;
+    Mpeg2TemporalAdaptiveQuantization m_temporalAdaptiveQuantization{Mpeg2TemporalAdaptiveQuantization::NOT_SET};
     bool m_temporalAdaptiveQuantizationHasBeenSet = false;
   };
 

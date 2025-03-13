@@ -33,7 +33,7 @@ namespace Model
   class FieldSummary
   {
   public:
-    AWS_CONNECTCASES_API FieldSummary();
+    AWS_CONNECTCASES_API FieldSummary() = default;
     AWS_CONNECTCASES_API FieldSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API FieldSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,66 +43,56 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the field.</p>
      */
-    inline const Aws::String& GetFieldArn() const{ return m_fieldArn; }
+    inline const Aws::String& GetFieldArn() const { return m_fieldArn; }
     inline bool FieldArnHasBeenSet() const { return m_fieldArnHasBeenSet; }
-    inline void SetFieldArn(const Aws::String& value) { m_fieldArnHasBeenSet = true; m_fieldArn = value; }
-    inline void SetFieldArn(Aws::String&& value) { m_fieldArnHasBeenSet = true; m_fieldArn = std::move(value); }
-    inline void SetFieldArn(const char* value) { m_fieldArnHasBeenSet = true; m_fieldArn.assign(value); }
-    inline FieldSummary& WithFieldArn(const Aws::String& value) { SetFieldArn(value); return *this;}
-    inline FieldSummary& WithFieldArn(Aws::String&& value) { SetFieldArn(std::move(value)); return *this;}
-    inline FieldSummary& WithFieldArn(const char* value) { SetFieldArn(value); return *this;}
+    template<typename FieldArnT = Aws::String>
+    void SetFieldArn(FieldArnT&& value) { m_fieldArnHasBeenSet = true; m_fieldArn = std::forward<FieldArnT>(value); }
+    template<typename FieldArnT = Aws::String>
+    FieldSummary& WithFieldArn(FieldArnT&& value) { SetFieldArn(std::forward<FieldArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of a field.</p>
      */
-    inline const Aws::String& GetFieldId() const{ return m_fieldId; }
+    inline const Aws::String& GetFieldId() const { return m_fieldId; }
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-    inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-    inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-    inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-    inline FieldSummary& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-    inline FieldSummary& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-    inline FieldSummary& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    template<typename FieldIdT = Aws::String>
+    void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
+    template<typename FieldIdT = Aws::String>
+    FieldSummary& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the field.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FieldSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FieldSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FieldSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FieldSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace of a field.</p>
      */
-    inline const FieldNamespace& GetNamespace() const{ return m_namespace; }
+    inline FieldNamespace GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const FieldNamespace& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(FieldNamespace&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline FieldSummary& WithNamespace(const FieldNamespace& value) { SetNamespace(value); return *this;}
-    inline FieldSummary& WithNamespace(FieldNamespace&& value) { SetNamespace(std::move(value)); return *this;}
+    inline void SetNamespace(FieldNamespace value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+    inline FieldSummary& WithNamespace(FieldNamespace value) { SetNamespace(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of a field.</p>
      */
-    inline const FieldType& GetType() const{ return m_type; }
+    inline FieldType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FieldType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FieldType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FieldSummary& WithType(const FieldType& value) { SetType(value); return *this;}
-    inline FieldSummary& WithType(FieldType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FieldType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FieldSummary& WithType(FieldType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -115,10 +105,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    FieldNamespace m_namespace;
+    FieldNamespace m_namespace{FieldNamespace::NOT_SET};
     bool m_namespaceHasBeenSet = false;
 
-    FieldType m_type;
+    FieldType m_type{FieldType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

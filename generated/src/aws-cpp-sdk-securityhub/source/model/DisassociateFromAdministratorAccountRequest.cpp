@@ -12,10 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateFromAdministratorAccountRequest::DisassociateFromAdministratorAccountRequest()
-{
-}
-
 Aws::String DisassociateFromAdministratorAccountRequest::SerializePayload() const
 {
   return {};

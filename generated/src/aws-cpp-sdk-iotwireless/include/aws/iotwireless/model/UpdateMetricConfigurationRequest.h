@@ -21,7 +21,7 @@ namespace Model
   class UpdateMetricConfigurationRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API UpdateMetricConfigurationRequest();
+    AWS_IOTWIRELESS_API UpdateMetricConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
     /**
      * <p>The value to be used to set summary metric configuration.</p>
      */
-    inline const SummaryMetricConfiguration& GetSummaryMetric() const{ return m_summaryMetric; }
+    inline const SummaryMetricConfiguration& GetSummaryMetric() const { return m_summaryMetric; }
     inline bool SummaryMetricHasBeenSet() const { return m_summaryMetricHasBeenSet; }
-    inline void SetSummaryMetric(const SummaryMetricConfiguration& value) { m_summaryMetricHasBeenSet = true; m_summaryMetric = value; }
-    inline void SetSummaryMetric(SummaryMetricConfiguration&& value) { m_summaryMetricHasBeenSet = true; m_summaryMetric = std::move(value); }
-    inline UpdateMetricConfigurationRequest& WithSummaryMetric(const SummaryMetricConfiguration& value) { SetSummaryMetric(value); return *this;}
-    inline UpdateMetricConfigurationRequest& WithSummaryMetric(SummaryMetricConfiguration&& value) { SetSummaryMetric(std::move(value)); return *this;}
+    template<typename SummaryMetricT = SummaryMetricConfiguration>
+    void SetSummaryMetric(SummaryMetricT&& value) { m_summaryMetricHasBeenSet = true; m_summaryMetric = std::forward<SummaryMetricT>(value); }
+    template<typename SummaryMetricT = SummaryMetricConfiguration>
+    UpdateMetricConfigurationRequest& WithSummaryMetric(SummaryMetricT&& value) { SetSummaryMetric(std::forward<SummaryMetricT>(value)); return *this;}
     ///@}
   private:
 

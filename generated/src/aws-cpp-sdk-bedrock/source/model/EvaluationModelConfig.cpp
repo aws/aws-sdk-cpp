@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-EvaluationModelConfig::EvaluationModelConfig() : 
-    m_bedrockModelHasBeenSet(false)
-{
-}
-
 EvaluationModelConfig::EvaluationModelConfig(JsonView jsonValue)
-  : EvaluationModelConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EvaluationModelConfig& EvaluationModelConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bedrockModel"))
   {
     m_bedrockModel = jsonValue.GetObject("bedrockModel");
-
     m_bedrockModelHasBeenSet = true;
   }
-
   return *this;
 }
 

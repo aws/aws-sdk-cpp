@@ -28,7 +28,7 @@ namespace Model
   class CreateCoreNetworkResult
   {
   public:
-    AWS_NETWORKMANAGER_API CreateCoreNetworkResult();
+    AWS_NETWORKMANAGER_API CreateCoreNetworkResult() = default;
     AWS_NETWORKMANAGER_API CreateCoreNetworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API CreateCoreNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Returns details about a core network.</p>
      */
-    inline const CoreNetwork& GetCoreNetwork() const{ return m_coreNetwork; }
-    inline void SetCoreNetwork(const CoreNetwork& value) { m_coreNetwork = value; }
-    inline void SetCoreNetwork(CoreNetwork&& value) { m_coreNetwork = std::move(value); }
-    inline CreateCoreNetworkResult& WithCoreNetwork(const CoreNetwork& value) { SetCoreNetwork(value); return *this;}
-    inline CreateCoreNetworkResult& WithCoreNetwork(CoreNetwork&& value) { SetCoreNetwork(std::move(value)); return *this;}
+    inline const CoreNetwork& GetCoreNetwork() const { return m_coreNetwork; }
+    template<typename CoreNetworkT = CoreNetwork>
+    void SetCoreNetwork(CoreNetworkT&& value) { m_coreNetworkHasBeenSet = true; m_coreNetwork = std::forward<CoreNetworkT>(value); }
+    template<typename CoreNetworkT = CoreNetwork>
+    CreateCoreNetworkResult& WithCoreNetwork(CoreNetworkT&& value) { SetCoreNetwork(std::forward<CoreNetworkT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCoreNetworkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCoreNetworkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCoreNetworkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCoreNetworkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CoreNetwork m_coreNetwork;
+    bool m_coreNetworkHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

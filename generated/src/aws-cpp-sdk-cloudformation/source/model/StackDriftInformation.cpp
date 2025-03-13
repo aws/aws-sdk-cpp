@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackDriftInformation::StackDriftInformation() : 
-    m_stackDriftStatus(StackDriftStatus::NOT_SET),
-    m_stackDriftStatusHasBeenSet(false),
-    m_lastCheckTimestampHasBeenSet(false)
-{
-}
-
 StackDriftInformation::StackDriftInformation(const XmlNode& xmlNode)
-  : StackDriftInformation()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ StackDriftInformation& StackDriftInformation::operator =(const XmlNode& xmlNode)
     XmlNode stackDriftStatusNode = resultNode.FirstChild("StackDriftStatus");
     if(!stackDriftStatusNode.IsNull())
     {
-      m_stackDriftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackDriftStatusNode.GetText()).c_str()).c_str());
+      m_stackDriftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackDriftStatusNode.GetText()).c_str()));
       m_stackDriftStatusHasBeenSet = true;
+       m_stackDriftStatusHasBeenSet = true;
     }
     XmlNode lastCheckTimestampNode = resultNode.FirstChild("LastCheckTimestamp");
     if(!lastCheckTimestampNode.IsNull())
     {
       m_lastCheckTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastCheckTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastCheckTimestampHasBeenSet = true;
+       m_lastCheckTimestampHasBeenSet = true;
     }
   }
 

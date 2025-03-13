@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateNetworkInsightsAccessScopeRequest::CreateNetworkInsightsAccessScopeRequest() : 
-    m_matchPathsHasBeenSet(false),
-    m_excludePathsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateNetworkInsightsAccessScopeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -32,7 +32,7 @@ namespace Model
   class AssetHierarchyInfo
   {
   public:
-    AWS_IOTSITEWISE_API AssetHierarchyInfo();
+    AWS_IOTSITEWISE_API AssetHierarchyInfo() = default;
     AWS_IOTSITEWISE_API AssetHierarchyInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API AssetHierarchyInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the parent asset in this asset relationship.</p>
      */
-    inline const Aws::String& GetParentAssetId() const{ return m_parentAssetId; }
+    inline const Aws::String& GetParentAssetId() const { return m_parentAssetId; }
     inline bool ParentAssetIdHasBeenSet() const { return m_parentAssetIdHasBeenSet; }
-    inline void SetParentAssetId(const Aws::String& value) { m_parentAssetIdHasBeenSet = true; m_parentAssetId = value; }
-    inline void SetParentAssetId(Aws::String&& value) { m_parentAssetIdHasBeenSet = true; m_parentAssetId = std::move(value); }
-    inline void SetParentAssetId(const char* value) { m_parentAssetIdHasBeenSet = true; m_parentAssetId.assign(value); }
-    inline AssetHierarchyInfo& WithParentAssetId(const Aws::String& value) { SetParentAssetId(value); return *this;}
-    inline AssetHierarchyInfo& WithParentAssetId(Aws::String&& value) { SetParentAssetId(std::move(value)); return *this;}
-    inline AssetHierarchyInfo& WithParentAssetId(const char* value) { SetParentAssetId(value); return *this;}
+    template<typename ParentAssetIdT = Aws::String>
+    void SetParentAssetId(ParentAssetIdT&& value) { m_parentAssetIdHasBeenSet = true; m_parentAssetId = std::forward<ParentAssetIdT>(value); }
+    template<typename ParentAssetIdT = Aws::String>
+    AssetHierarchyInfo& WithParentAssetId(ParentAssetIdT&& value) { SetParentAssetId(std::forward<ParentAssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the child asset in this asset relationship.</p>
      */
-    inline const Aws::String& GetChildAssetId() const{ return m_childAssetId; }
+    inline const Aws::String& GetChildAssetId() const { return m_childAssetId; }
     inline bool ChildAssetIdHasBeenSet() const { return m_childAssetIdHasBeenSet; }
-    inline void SetChildAssetId(const Aws::String& value) { m_childAssetIdHasBeenSet = true; m_childAssetId = value; }
-    inline void SetChildAssetId(Aws::String&& value) { m_childAssetIdHasBeenSet = true; m_childAssetId = std::move(value); }
-    inline void SetChildAssetId(const char* value) { m_childAssetIdHasBeenSet = true; m_childAssetId.assign(value); }
-    inline AssetHierarchyInfo& WithChildAssetId(const Aws::String& value) { SetChildAssetId(value); return *this;}
-    inline AssetHierarchyInfo& WithChildAssetId(Aws::String&& value) { SetChildAssetId(std::move(value)); return *this;}
-    inline AssetHierarchyInfo& WithChildAssetId(const char* value) { SetChildAssetId(value); return *this;}
+    template<typename ChildAssetIdT = Aws::String>
+    void SetChildAssetId(ChildAssetIdT&& value) { m_childAssetIdHasBeenSet = true; m_childAssetId = std::forward<ChildAssetIdT>(value); }
+    template<typename ChildAssetIdT = Aws::String>
+    AssetHierarchyInfo& WithChildAssetId(ChildAssetIdT&& value) { SetChildAssetId(std::forward<ChildAssetIdT>(value)); return *this;}
     ///@}
   private:
 

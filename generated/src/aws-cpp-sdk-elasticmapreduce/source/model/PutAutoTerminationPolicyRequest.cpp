@@ -12,12 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAutoTerminationPolicyRequest::PutAutoTerminationPolicyRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_autoTerminationPolicyHasBeenSet(false)
-{
-}
-
 Aws::String PutAutoTerminationPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

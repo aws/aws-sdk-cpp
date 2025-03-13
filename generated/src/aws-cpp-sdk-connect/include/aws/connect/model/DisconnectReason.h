@@ -32,7 +32,7 @@ namespace Model
   class DisconnectReason
   {
   public:
-    AWS_CONNECT_API DisconnectReason();
+    AWS_CONNECT_API DisconnectReason() = default;
     AWS_CONNECT_API DisconnectReason(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API DisconnectReason& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>A code that indicates how the contact was terminated.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline DisconnectReason& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline DisconnectReason& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline DisconnectReason& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    DisconnectReason& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
   private:
 

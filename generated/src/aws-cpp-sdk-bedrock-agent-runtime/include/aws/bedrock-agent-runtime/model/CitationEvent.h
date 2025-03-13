@@ -33,7 +33,7 @@ namespace Model
   class CitationEvent
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API CitationEvent();
+    AWS_BEDROCKAGENTRUNTIME_API CitationEvent() = default;
     AWS_BEDROCKAGENTRUNTIME_API CitationEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API CitationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,26 @@ namespace Model
     /**
      * <p>The generated response to the citation event.</p>
      */
-    inline const GeneratedResponsePart& GetGeneratedResponsePart() const{ return m_generatedResponsePart; }
+    inline const GeneratedResponsePart& GetGeneratedResponsePart() const { return m_generatedResponsePart; }
     inline bool GeneratedResponsePartHasBeenSet() const { return m_generatedResponsePartHasBeenSet; }
-    inline void SetGeneratedResponsePart(const GeneratedResponsePart& value) { m_generatedResponsePartHasBeenSet = true; m_generatedResponsePart = value; }
-    inline void SetGeneratedResponsePart(GeneratedResponsePart&& value) { m_generatedResponsePartHasBeenSet = true; m_generatedResponsePart = std::move(value); }
-    inline CitationEvent& WithGeneratedResponsePart(const GeneratedResponsePart& value) { SetGeneratedResponsePart(value); return *this;}
-    inline CitationEvent& WithGeneratedResponsePart(GeneratedResponsePart&& value) { SetGeneratedResponsePart(std::move(value)); return *this;}
+    template<typename GeneratedResponsePartT = GeneratedResponsePart>
+    void SetGeneratedResponsePart(GeneratedResponsePartT&& value) { m_generatedResponsePartHasBeenSet = true; m_generatedResponsePart = std::forward<GeneratedResponsePartT>(value); }
+    template<typename GeneratedResponsePartT = GeneratedResponsePart>
+    CitationEvent& WithGeneratedResponsePart(GeneratedResponsePartT&& value) { SetGeneratedResponsePart(std::forward<GeneratedResponsePartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The retrieved references of the citation event.</p>
      */
-    inline const Aws::Vector<RetrievedReference>& GetRetrievedReferences() const{ return m_retrievedReferences; }
+    inline const Aws::Vector<RetrievedReference>& GetRetrievedReferences() const { return m_retrievedReferences; }
     inline bool RetrievedReferencesHasBeenSet() const { return m_retrievedReferencesHasBeenSet; }
-    inline void SetRetrievedReferences(const Aws::Vector<RetrievedReference>& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = value; }
-    inline void SetRetrievedReferences(Aws::Vector<RetrievedReference>&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = std::move(value); }
-    inline CitationEvent& WithRetrievedReferences(const Aws::Vector<RetrievedReference>& value) { SetRetrievedReferences(value); return *this;}
-    inline CitationEvent& WithRetrievedReferences(Aws::Vector<RetrievedReference>&& value) { SetRetrievedReferences(std::move(value)); return *this;}
-    inline CitationEvent& AddRetrievedReferences(const RetrievedReference& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.push_back(value); return *this; }
-    inline CitationEvent& AddRetrievedReferences(RetrievedReference&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.push_back(std::move(value)); return *this; }
+    template<typename RetrievedReferencesT = Aws::Vector<RetrievedReference>>
+    void SetRetrievedReferences(RetrievedReferencesT&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = std::forward<RetrievedReferencesT>(value); }
+    template<typename RetrievedReferencesT = Aws::Vector<RetrievedReference>>
+    CitationEvent& WithRetrievedReferences(RetrievedReferencesT&& value) { SetRetrievedReferences(std::forward<RetrievedReferencesT>(value)); return *this;}
+    template<typename RetrievedReferencesT = RetrievedReference>
+    CitationEvent& AddRetrievedReferences(RetrievedReferencesT&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.emplace_back(std::forward<RetrievedReferencesT>(value)); return *this; }
     ///@}
   private:
 

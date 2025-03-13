@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeWatchlistResult::DescribeWatchlistResult()
-{
-}
-
 DescribeWatchlistResult::DescribeWatchlistResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeWatchlistResult& DescribeWatchlistResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("Watchlist"))
   {
     m_watchlist = jsonValue.GetObject("Watchlist");
-
+    m_watchlistHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

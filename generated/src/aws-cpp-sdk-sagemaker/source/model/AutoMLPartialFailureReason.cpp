@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLPartialFailureReason::AutoMLPartialFailureReason() : 
-    m_partialFailureMessageHasBeenSet(false)
-{
-}
-
 AutoMLPartialFailureReason::AutoMLPartialFailureReason(JsonView jsonValue)
-  : AutoMLPartialFailureReason()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutoMLPartialFailureReason& AutoMLPartialFailureReason::operator =(JsonView json
   if(jsonValue.ValueExists("PartialFailureMessage"))
   {
     m_partialFailureMessage = jsonValue.GetString("PartialFailureMessage");
-
     m_partialFailureMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

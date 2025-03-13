@@ -25,7 +25,7 @@ namespace Model
   class CreateReportGroupRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API CreateReportGroupRequest();
+    AWS_CODEBUILD_API CreateReportGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,26 +42,22 @@ namespace Model
     /**
      * <p> The name of the report group. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateReportGroupRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateReportGroupRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateReportGroupRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateReportGroupRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of report group. </p>
      */
-    inline const ReportType& GetType() const{ return m_type; }
+    inline ReportType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ReportType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ReportType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateReportGroupRequest& WithType(const ReportType& value) { SetType(value); return *this;}
-    inline CreateReportGroupRequest& WithType(ReportType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ReportType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateReportGroupRequest& WithType(ReportType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +65,12 @@ namespace Model
      * <p> A <code>ReportExportConfig</code> object that contains information about
      * where the report group test results are exported. </p>
      */
-    inline const ReportExportConfig& GetExportConfig() const{ return m_exportConfig; }
+    inline const ReportExportConfig& GetExportConfig() const { return m_exportConfig; }
     inline bool ExportConfigHasBeenSet() const { return m_exportConfigHasBeenSet; }
-    inline void SetExportConfig(const ReportExportConfig& value) { m_exportConfigHasBeenSet = true; m_exportConfig = value; }
-    inline void SetExportConfig(ReportExportConfig&& value) { m_exportConfigHasBeenSet = true; m_exportConfig = std::move(value); }
-    inline CreateReportGroupRequest& WithExportConfig(const ReportExportConfig& value) { SetExportConfig(value); return *this;}
-    inline CreateReportGroupRequest& WithExportConfig(ReportExportConfig&& value) { SetExportConfig(std::move(value)); return *this;}
+    template<typename ExportConfigT = ReportExportConfig>
+    void SetExportConfig(ExportConfigT&& value) { m_exportConfigHasBeenSet = true; m_exportConfig = std::forward<ExportConfigT>(value); }
+    template<typename ExportConfigT = ReportExportConfig>
+    CreateReportGroupRequest& WithExportConfig(ExportConfigT&& value) { SetExportConfig(std::forward<ExportConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,21 +79,21 @@ namespace Model
      * <p>These tags are available for use by Amazon Web Services services that support
      * CodeBuild report group tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateReportGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateReportGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateReportGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateReportGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateReportGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateReportGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ReportType m_type;
+    ReportType m_type{ReportType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     ReportExportConfig m_exportConfig;

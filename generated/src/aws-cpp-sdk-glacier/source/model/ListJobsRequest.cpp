@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListJobsRequest::ListJobsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_vaultNameHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_statuscodeHasBeenSet(false),
-    m_completedHasBeenSet(false)
-{
-}
-
 Aws::String ListJobsRequest::SerializePayload() const
 {
   return {};

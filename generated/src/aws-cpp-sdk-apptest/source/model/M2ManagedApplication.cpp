@@ -18,17 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-M2ManagedApplication::M2ManagedApplication() : 
-    m_applicationIdHasBeenSet(false),
-    m_runtime(M2ManagedRuntime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_vpcEndpointServiceNameHasBeenSet(false),
-    m_listenerPortHasBeenSet(false)
-{
-}
-
 M2ManagedApplication::M2ManagedApplication(JsonView jsonValue)
-  : M2ManagedApplication()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ M2ManagedApplication& M2ManagedApplication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtime"))
   {
     m_runtime = M2ManagedRuntimeMapper::GetM2ManagedRuntimeForName(jsonValue.GetString("runtime"));
-
     m_runtimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcEndpointServiceName"))
   {
     m_vpcEndpointServiceName = jsonValue.GetString("vpcEndpointServiceName");
-
     m_vpcEndpointServiceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listenerPort"))
   {
     m_listenerPort = jsonValue.GetString("listenerPort");
-
     m_listenerPortHasBeenSet = true;
   }
-
   return *this;
 }
 

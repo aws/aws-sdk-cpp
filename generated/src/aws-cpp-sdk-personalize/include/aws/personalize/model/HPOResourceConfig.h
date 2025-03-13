@@ -32,7 +32,7 @@ namespace Model
   class HPOResourceConfig
   {
   public:
-    AWS_PERSONALIZE_API HPOResourceConfig();
+    AWS_PERSONALIZE_API HPOResourceConfig() = default;
     AWS_PERSONALIZE_API HPOResourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API HPOResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The maximum number of training jobs when you create a solution version. The
      * maximum value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</p>
      */
-    inline const Aws::String& GetMaxNumberOfTrainingJobs() const{ return m_maxNumberOfTrainingJobs; }
+    inline const Aws::String& GetMaxNumberOfTrainingJobs() const { return m_maxNumberOfTrainingJobs; }
     inline bool MaxNumberOfTrainingJobsHasBeenSet() const { return m_maxNumberOfTrainingJobsHasBeenSet; }
-    inline void SetMaxNumberOfTrainingJobs(const Aws::String& value) { m_maxNumberOfTrainingJobsHasBeenSet = true; m_maxNumberOfTrainingJobs = value; }
-    inline void SetMaxNumberOfTrainingJobs(Aws::String&& value) { m_maxNumberOfTrainingJobsHasBeenSet = true; m_maxNumberOfTrainingJobs = std::move(value); }
-    inline void SetMaxNumberOfTrainingJobs(const char* value) { m_maxNumberOfTrainingJobsHasBeenSet = true; m_maxNumberOfTrainingJobs.assign(value); }
-    inline HPOResourceConfig& WithMaxNumberOfTrainingJobs(const Aws::String& value) { SetMaxNumberOfTrainingJobs(value); return *this;}
-    inline HPOResourceConfig& WithMaxNumberOfTrainingJobs(Aws::String&& value) { SetMaxNumberOfTrainingJobs(std::move(value)); return *this;}
-    inline HPOResourceConfig& WithMaxNumberOfTrainingJobs(const char* value) { SetMaxNumberOfTrainingJobs(value); return *this;}
+    template<typename MaxNumberOfTrainingJobsT = Aws::String>
+    void SetMaxNumberOfTrainingJobs(MaxNumberOfTrainingJobsT&& value) { m_maxNumberOfTrainingJobsHasBeenSet = true; m_maxNumberOfTrainingJobs = std::forward<MaxNumberOfTrainingJobsT>(value); }
+    template<typename MaxNumberOfTrainingJobsT = Aws::String>
+    HPOResourceConfig& WithMaxNumberOfTrainingJobs(MaxNumberOfTrainingJobsT&& value) { SetMaxNumberOfTrainingJobs(std::forward<MaxNumberOfTrainingJobsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * version. The maximum value for <code>maxParallelTrainingJobs</code> is
      * <code>10</code>.</p>
      */
-    inline const Aws::String& GetMaxParallelTrainingJobs() const{ return m_maxParallelTrainingJobs; }
+    inline const Aws::String& GetMaxParallelTrainingJobs() const { return m_maxParallelTrainingJobs; }
     inline bool MaxParallelTrainingJobsHasBeenSet() const { return m_maxParallelTrainingJobsHasBeenSet; }
-    inline void SetMaxParallelTrainingJobs(const Aws::String& value) { m_maxParallelTrainingJobsHasBeenSet = true; m_maxParallelTrainingJobs = value; }
-    inline void SetMaxParallelTrainingJobs(Aws::String&& value) { m_maxParallelTrainingJobsHasBeenSet = true; m_maxParallelTrainingJobs = std::move(value); }
-    inline void SetMaxParallelTrainingJobs(const char* value) { m_maxParallelTrainingJobsHasBeenSet = true; m_maxParallelTrainingJobs.assign(value); }
-    inline HPOResourceConfig& WithMaxParallelTrainingJobs(const Aws::String& value) { SetMaxParallelTrainingJobs(value); return *this;}
-    inline HPOResourceConfig& WithMaxParallelTrainingJobs(Aws::String&& value) { SetMaxParallelTrainingJobs(std::move(value)); return *this;}
-    inline HPOResourceConfig& WithMaxParallelTrainingJobs(const char* value) { SetMaxParallelTrainingJobs(value); return *this;}
+    template<typename MaxParallelTrainingJobsT = Aws::String>
+    void SetMaxParallelTrainingJobs(MaxParallelTrainingJobsT&& value) { m_maxParallelTrainingJobsHasBeenSet = true; m_maxParallelTrainingJobs = std::forward<MaxParallelTrainingJobsT>(value); }
+    template<typename MaxParallelTrainingJobsT = Aws::String>
+    HPOResourceConfig& WithMaxParallelTrainingJobs(MaxParallelTrainingJobsT&& value) { SetMaxParallelTrainingJobs(std::forward<MaxParallelTrainingJobsT>(value)); return *this;}
     ///@}
   private:
 

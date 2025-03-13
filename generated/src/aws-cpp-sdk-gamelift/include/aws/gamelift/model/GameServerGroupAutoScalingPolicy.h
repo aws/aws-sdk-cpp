@@ -37,7 +37,7 @@ namespace Model
   class GameServerGroupAutoScalingPolicy
   {
   public:
-    AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy();
+    AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy() = default;
     AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * time can be useful, particularly with game servers that take a long time to
      * start up, because it avoids prematurely starting new instances. </p>
      */
-    inline int GetEstimatedInstanceWarmup() const{ return m_estimatedInstanceWarmup; }
+    inline int GetEstimatedInstanceWarmup() const { return m_estimatedInstanceWarmup; }
     inline bool EstimatedInstanceWarmupHasBeenSet() const { return m_estimatedInstanceWarmupHasBeenSet; }
     inline void SetEstimatedInstanceWarmup(int value) { m_estimatedInstanceWarmupHasBeenSet = true; m_estimatedInstanceWarmup = value; }
     inline GameServerGroupAutoScalingPolicy& WithEstimatedInstanceWarmup(int value) { SetEstimatedInstanceWarmup(value); return *this;}
@@ -65,16 +65,16 @@ namespace Model
      * adjust the game server group capacity so that the metric returns to the target
      * value. </p>
      */
-    inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
+    inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const { return m_targetTrackingConfiguration; }
     inline bool TargetTrackingConfigurationHasBeenSet() const { return m_targetTrackingConfigurationHasBeenSet; }
-    inline void SetTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = value; }
-    inline void SetTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::move(value); }
-    inline GameServerGroupAutoScalingPolicy& WithTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { SetTargetTrackingConfiguration(value); return *this;}
-    inline GameServerGroupAutoScalingPolicy& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}
+    template<typename TargetTrackingConfigurationT = TargetTrackingConfiguration>
+    void SetTargetTrackingConfiguration(TargetTrackingConfigurationT&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::forward<TargetTrackingConfigurationT>(value); }
+    template<typename TargetTrackingConfigurationT = TargetTrackingConfiguration>
+    GameServerGroupAutoScalingPolicy& WithTargetTrackingConfiguration(TargetTrackingConfigurationT&& value) { SetTargetTrackingConfiguration(std::forward<TargetTrackingConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    int m_estimatedInstanceWarmup;
+    int m_estimatedInstanceWarmup{0};
     bool m_estimatedInstanceWarmupHasBeenSet = false;
 
     TargetTrackingConfiguration m_targetTrackingConfiguration;

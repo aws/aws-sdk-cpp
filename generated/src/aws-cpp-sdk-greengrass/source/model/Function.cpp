@@ -18,15 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-Function::Function() : 
-    m_functionArnHasBeenSet(false),
-    m_functionConfigurationHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Function::Function(JsonView jsonValue)
-  : Function()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Function& Function::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FunctionArn"))
   {
     m_functionArn = jsonValue.GetString("FunctionArn");
-
     m_functionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunctionConfiguration"))
   {
     m_functionConfiguration = jsonValue.GetObject("FunctionConfiguration");
-
     m_functionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

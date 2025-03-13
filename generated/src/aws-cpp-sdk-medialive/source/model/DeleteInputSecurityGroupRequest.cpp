@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInputSecurityGroupRequest::DeleteInputSecurityGroupRequest() : 
-    m_inputSecurityGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInputSecurityGroupRequest::SerializePayload() const
 {
   return {};

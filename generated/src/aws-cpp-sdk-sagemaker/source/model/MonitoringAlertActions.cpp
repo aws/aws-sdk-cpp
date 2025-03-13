@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringAlertActions::MonitoringAlertActions() : 
-    m_modelDashboardIndicatorHasBeenSet(false)
-{
-}
-
 MonitoringAlertActions::MonitoringAlertActions(JsonView jsonValue)
-  : MonitoringAlertActions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MonitoringAlertActions& MonitoringAlertActions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelDashboardIndicator"))
   {
     m_modelDashboardIndicator = jsonValue.GetObject("ModelDashboardIndicator");
-
     m_modelDashboardIndicatorHasBeenSet = true;
   }
-
   return *this;
 }
 

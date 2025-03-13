@@ -18,20 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-SupplementalTaxRegistration::SupplementalTaxRegistration() : 
-    m_addressHasBeenSet(false),
-    m_authorityIdHasBeenSet(false),
-    m_legalNameHasBeenSet(false),
-    m_registrationIdHasBeenSet(false),
-    m_registrationType(SupplementalTaxRegistrationType::NOT_SET),
-    m_registrationTypeHasBeenSet(false),
-    m_status(TaxRegistrationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 SupplementalTaxRegistration::SupplementalTaxRegistration(JsonView jsonValue)
-  : SupplementalTaxRegistration()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ SupplementalTaxRegistration& SupplementalTaxRegistration::operator =(JsonView js
   if(jsonValue.ValueExists("address"))
   {
     m_address = jsonValue.GetObject("address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorityId"))
   {
     m_authorityId = jsonValue.GetString("authorityId");
-
     m_authorityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("legalName"))
   {
     m_legalName = jsonValue.GetString("legalName");
-
     m_legalNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registrationId"))
   {
     m_registrationId = jsonValue.GetString("registrationId");
-
     m_registrationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registrationType"))
   {
     m_registrationType = SupplementalTaxRegistrationTypeMapper::GetSupplementalTaxRegistrationTypeForName(jsonValue.GetString("registrationType"));
-
     m_registrationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TaxRegistrationStatusMapper::GetTaxRegistrationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

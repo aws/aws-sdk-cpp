@@ -12,12 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteComponentTypeRequest::DeleteComponentTypeRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteComponentTypeRequest::SerializePayload() const
 {
   return {};

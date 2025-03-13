@@ -10,10 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeAutoScalingNotificationTypesRequest::DescribeAutoScalingNotificationTypesRequest()
-{
-}
-
 Aws::String DescribeAutoScalingNotificationTypesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

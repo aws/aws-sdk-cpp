@@ -33,7 +33,7 @@ namespace Model
   class ServerlessV2ScalingConfigurationInfo
   {
   public:
-    AWS_NEPTUNE_API ServerlessV2ScalingConfigurationInfo();
+    AWS_NEPTUNE_API ServerlessV2ScalingConfigurationInfo() = default;
     AWS_NEPTUNE_API ServerlessV2ScalingConfigurationInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_NEPTUNE_API ServerlessV2ScalingConfigurationInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,7 +47,7 @@ namespace Model
      * Neptune Serverless cluster. You can specify NCU values in half-step increments,
      * such as 8, 8.5, 9, and so on.</p>
      */
-    inline double GetMinCapacity() const{ return m_minCapacity; }
+    inline double GetMinCapacity() const { return m_minCapacity; }
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
     inline void SetMinCapacity(double value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
     inline ServerlessV2ScalingConfigurationInfo& WithMinCapacity(double value) { SetMinCapacity(value); return *this;}
@@ -59,17 +59,17 @@ namespace Model
      * Neptune Serverless cluster. You can specify NCU values in half-step increments,
      * such as 40, 40.5, 41, and so on.</p>
      */
-    inline double GetMaxCapacity() const{ return m_maxCapacity; }
+    inline double GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline ServerlessV2ScalingConfigurationInfo& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
     ///@}
   private:
 
-    double m_minCapacity;
+    double m_minCapacity{0.0};
     bool m_minCapacityHasBeenSet = false;
 
-    double m_maxCapacity;
+    double m_maxCapacity{0.0};
     bool m_maxCapacityHasBeenSet = false;
   };
 

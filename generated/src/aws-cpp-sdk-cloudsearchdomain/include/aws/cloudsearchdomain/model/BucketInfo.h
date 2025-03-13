@@ -33,7 +33,7 @@ namespace Model
   class BucketInfo
   {
   public:
-    AWS_CLOUDSEARCHDOMAIN_API BucketInfo();
+    AWS_CLOUDSEARCHDOMAIN_API BucketInfo() = default;
     AWS_CLOUDSEARCHDOMAIN_API BucketInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDSEARCHDOMAIN_API BucketInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>A list of the calculated facet values and counts.</p>
      */
-    inline const Aws::Vector<Bucket>& GetBuckets() const{ return m_buckets; }
+    inline const Aws::Vector<Bucket>& GetBuckets() const { return m_buckets; }
     inline bool BucketsHasBeenSet() const { return m_bucketsHasBeenSet; }
-    inline void SetBuckets(const Aws::Vector<Bucket>& value) { m_bucketsHasBeenSet = true; m_buckets = value; }
-    inline void SetBuckets(Aws::Vector<Bucket>&& value) { m_bucketsHasBeenSet = true; m_buckets = std::move(value); }
-    inline BucketInfo& WithBuckets(const Aws::Vector<Bucket>& value) { SetBuckets(value); return *this;}
-    inline BucketInfo& WithBuckets(Aws::Vector<Bucket>&& value) { SetBuckets(std::move(value)); return *this;}
-    inline BucketInfo& AddBuckets(const Bucket& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(value); return *this; }
-    inline BucketInfo& AddBuckets(Bucket&& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(std::move(value)); return *this; }
+    template<typename BucketsT = Aws::Vector<Bucket>>
+    void SetBuckets(BucketsT&& value) { m_bucketsHasBeenSet = true; m_buckets = std::forward<BucketsT>(value); }
+    template<typename BucketsT = Aws::Vector<Bucket>>
+    BucketInfo& WithBuckets(BucketsT&& value) { SetBuckets(std::forward<BucketsT>(value)); return *this;}
+    template<typename BucketsT = Bucket>
+    BucketInfo& AddBuckets(BucketsT&& value) { m_bucketsHasBeenSet = true; m_buckets.emplace_back(std::forward<BucketsT>(value)); return *this; }
     ///@}
   private:
 

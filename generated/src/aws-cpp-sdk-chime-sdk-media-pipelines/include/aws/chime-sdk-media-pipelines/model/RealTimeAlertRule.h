@@ -35,7 +35,7 @@ namespace Model
   class RealTimeAlertRule
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API RealTimeAlertRule();
+    AWS_CHIMESDKMEDIAPIPELINES_API RealTimeAlertRule() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API RealTimeAlertRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API RealTimeAlertRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>The type of alert rule.</p>
      */
-    inline const RealTimeAlertRuleType& GetType() const{ return m_type; }
+    inline RealTimeAlertRuleType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RealTimeAlertRuleType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RealTimeAlertRuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RealTimeAlertRule& WithType(const RealTimeAlertRuleType& value) { SetType(value); return *this;}
-    inline RealTimeAlertRule& WithType(RealTimeAlertRuleType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RealTimeAlertRuleType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RealTimeAlertRule& WithType(RealTimeAlertRuleType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p>Specifies the settings for matching the keywords in a real-time alert
      * rule.</p>
      */
-    inline const KeywordMatchConfiguration& GetKeywordMatchConfiguration() const{ return m_keywordMatchConfiguration; }
+    inline const KeywordMatchConfiguration& GetKeywordMatchConfiguration() const { return m_keywordMatchConfiguration; }
     inline bool KeywordMatchConfigurationHasBeenSet() const { return m_keywordMatchConfigurationHasBeenSet; }
-    inline void SetKeywordMatchConfiguration(const KeywordMatchConfiguration& value) { m_keywordMatchConfigurationHasBeenSet = true; m_keywordMatchConfiguration = value; }
-    inline void SetKeywordMatchConfiguration(KeywordMatchConfiguration&& value) { m_keywordMatchConfigurationHasBeenSet = true; m_keywordMatchConfiguration = std::move(value); }
-    inline RealTimeAlertRule& WithKeywordMatchConfiguration(const KeywordMatchConfiguration& value) { SetKeywordMatchConfiguration(value); return *this;}
-    inline RealTimeAlertRule& WithKeywordMatchConfiguration(KeywordMatchConfiguration&& value) { SetKeywordMatchConfiguration(std::move(value)); return *this;}
+    template<typename KeywordMatchConfigurationT = KeywordMatchConfiguration>
+    void SetKeywordMatchConfiguration(KeywordMatchConfigurationT&& value) { m_keywordMatchConfigurationHasBeenSet = true; m_keywordMatchConfiguration = std::forward<KeywordMatchConfigurationT>(value); }
+    template<typename KeywordMatchConfigurationT = KeywordMatchConfiguration>
+    RealTimeAlertRule& WithKeywordMatchConfiguration(KeywordMatchConfigurationT&& value) { SetKeywordMatchConfiguration(std::forward<KeywordMatchConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,28 +69,28 @@ namespace Model
      * <p>Specifies the settings for predicting sentiment in a real-time alert
      * rule.</p>
      */
-    inline const SentimentConfiguration& GetSentimentConfiguration() const{ return m_sentimentConfiguration; }
+    inline const SentimentConfiguration& GetSentimentConfiguration() const { return m_sentimentConfiguration; }
     inline bool SentimentConfigurationHasBeenSet() const { return m_sentimentConfigurationHasBeenSet; }
-    inline void SetSentimentConfiguration(const SentimentConfiguration& value) { m_sentimentConfigurationHasBeenSet = true; m_sentimentConfiguration = value; }
-    inline void SetSentimentConfiguration(SentimentConfiguration&& value) { m_sentimentConfigurationHasBeenSet = true; m_sentimentConfiguration = std::move(value); }
-    inline RealTimeAlertRule& WithSentimentConfiguration(const SentimentConfiguration& value) { SetSentimentConfiguration(value); return *this;}
-    inline RealTimeAlertRule& WithSentimentConfiguration(SentimentConfiguration&& value) { SetSentimentConfiguration(std::move(value)); return *this;}
+    template<typename SentimentConfigurationT = SentimentConfiguration>
+    void SetSentimentConfiguration(SentimentConfigurationT&& value) { m_sentimentConfigurationHasBeenSet = true; m_sentimentConfiguration = std::forward<SentimentConfigurationT>(value); }
+    template<typename SentimentConfigurationT = SentimentConfiguration>
+    RealTimeAlertRule& WithSentimentConfiguration(SentimentConfigurationT&& value) { SetSentimentConfiguration(std::forward<SentimentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the issue detection settings for a real-time alert rule.</p>
      */
-    inline const IssueDetectionConfiguration& GetIssueDetectionConfiguration() const{ return m_issueDetectionConfiguration; }
+    inline const IssueDetectionConfiguration& GetIssueDetectionConfiguration() const { return m_issueDetectionConfiguration; }
     inline bool IssueDetectionConfigurationHasBeenSet() const { return m_issueDetectionConfigurationHasBeenSet; }
-    inline void SetIssueDetectionConfiguration(const IssueDetectionConfiguration& value) { m_issueDetectionConfigurationHasBeenSet = true; m_issueDetectionConfiguration = value; }
-    inline void SetIssueDetectionConfiguration(IssueDetectionConfiguration&& value) { m_issueDetectionConfigurationHasBeenSet = true; m_issueDetectionConfiguration = std::move(value); }
-    inline RealTimeAlertRule& WithIssueDetectionConfiguration(const IssueDetectionConfiguration& value) { SetIssueDetectionConfiguration(value); return *this;}
-    inline RealTimeAlertRule& WithIssueDetectionConfiguration(IssueDetectionConfiguration&& value) { SetIssueDetectionConfiguration(std::move(value)); return *this;}
+    template<typename IssueDetectionConfigurationT = IssueDetectionConfiguration>
+    void SetIssueDetectionConfiguration(IssueDetectionConfigurationT&& value) { m_issueDetectionConfigurationHasBeenSet = true; m_issueDetectionConfiguration = std::forward<IssueDetectionConfigurationT>(value); }
+    template<typename IssueDetectionConfigurationT = IssueDetectionConfiguration>
+    RealTimeAlertRule& WithIssueDetectionConfiguration(IssueDetectionConfigurationT&& value) { SetIssueDetectionConfiguration(std::forward<IssueDetectionConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    RealTimeAlertRuleType m_type;
+    RealTimeAlertRuleType m_type{RealTimeAlertRuleType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     KeywordMatchConfiguration m_keywordMatchConfiguration;

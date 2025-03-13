@@ -36,7 +36,7 @@ namespace Model
   class Alias
   {
   public:
-    AWS_GAMELIFT_API Alias();
+    AWS_GAMELIFT_API Alias() = default;
     AWS_GAMELIFT_API Alias(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Alias& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
      */
-    inline const Aws::String& GetAliasId() const{ return m_aliasId; }
+    inline const Aws::String& GetAliasId() const { return m_aliasId; }
     inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
-    inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
-    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
-    inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
-    inline Alias& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
-    inline Alias& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
-    inline Alias& WithAliasId(const char* value) { SetAliasId(value); return *this;}
+    template<typename AliasIdT = Aws::String>
+    void SetAliasId(AliasIdT&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::forward<AliasIdT>(value); }
+    template<typename AliasIdT = Aws::String>
+    Alias& WithAliasId(AliasIdT&& value) { SetAliasId(std::forward<AliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>A descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Alias& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Alias& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Alias& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Alias& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,28 +76,24 @@ namespace Model
      * <code>arn:aws:gamelift:&lt;region&gt;::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift alias ARN, the resource ID matches the alias ID value.</p>
      */
-    inline const Aws::String& GetAliasArn() const{ return m_aliasArn; }
+    inline const Aws::String& GetAliasArn() const { return m_aliasArn; }
     inline bool AliasArnHasBeenSet() const { return m_aliasArnHasBeenSet; }
-    inline void SetAliasArn(const Aws::String& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
-    inline void SetAliasArn(Aws::String&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = std::move(value); }
-    inline void SetAliasArn(const char* value) { m_aliasArnHasBeenSet = true; m_aliasArn.assign(value); }
-    inline Alias& WithAliasArn(const Aws::String& value) { SetAliasArn(value); return *this;}
-    inline Alias& WithAliasArn(Aws::String&& value) { SetAliasArn(std::move(value)); return *this;}
-    inline Alias& WithAliasArn(const char* value) { SetAliasArn(value); return *this;}
+    template<typename AliasArnT = Aws::String>
+    void SetAliasArn(AliasArnT&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = std::forward<AliasArnT>(value); }
+    template<typename AliasArnT = Aws::String>
+    Alias& WithAliasArn(AliasArnT&& value) { SetAliasArn(std::forward<AliasArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A human-readable description of an alias.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Alias& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Alias& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Alias& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Alias& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +101,12 @@ namespace Model
      * <p>The routing configuration, including routing type and fleet target, for the
      * alias. </p>
      */
-    inline const RoutingStrategy& GetRoutingStrategy() const{ return m_routingStrategy; }
+    inline const RoutingStrategy& GetRoutingStrategy() const { return m_routingStrategy; }
     inline bool RoutingStrategyHasBeenSet() const { return m_routingStrategyHasBeenSet; }
-    inline void SetRoutingStrategy(const RoutingStrategy& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = value; }
-    inline void SetRoutingStrategy(RoutingStrategy&& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = std::move(value); }
-    inline Alias& WithRoutingStrategy(const RoutingStrategy& value) { SetRoutingStrategy(value); return *this;}
-    inline Alias& WithRoutingStrategy(RoutingStrategy&& value) { SetRoutingStrategy(std::move(value)); return *this;}
+    template<typename RoutingStrategyT = RoutingStrategy>
+    void SetRoutingStrategy(RoutingStrategyT&& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = std::forward<RoutingStrategyT>(value); }
+    template<typename RoutingStrategyT = RoutingStrategy>
+    Alias& WithRoutingStrategy(RoutingStrategyT&& value) { SetRoutingStrategy(std::forward<RoutingStrategyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +115,12 @@ namespace Model
      * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline Alias& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline Alias& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    Alias& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,12 +129,12 @@ namespace Model
      * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline Alias& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline Alias& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    Alias& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -161,10 +153,10 @@ namespace Model
     RoutingStrategy m_routingStrategy;
     bool m_routingStrategyHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
   };
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateBulkImportJobResult
   {
   public:
-    AWS_IOTSITEWISE_API CreateBulkImportJobResult();
+    AWS_IOTSITEWISE_API CreateBulkImportJobResult() = default;
     AWS_IOTSITEWISE_API CreateBulkImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API CreateBulkImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The ID of the job.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobId.assign(value); }
-    inline CreateBulkImportJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline CreateBulkImportJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline CreateBulkImportJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    inline const Aws::String& GetJobId() const { return m_jobId; }
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    CreateBulkImportJobResult& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name that helps identify the job request.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
-    inline void SetJobName(const Aws::String& value) { m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobName.assign(value); }
-    inline CreateBulkImportJobResult& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline CreateBulkImportJobResult& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline CreateBulkImportJobResult& WithJobName(const char* value) { SetJobName(value); return *this;}
+    inline const Aws::String& GetJobName() const { return m_jobName; }
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    CreateBulkImportJobResult& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,32 +71,32 @@ namespace Model
      * You can use logs saved in the specified error report location in Amazon S3 to
      * troubleshoot issues.</p> </li> </ul>
      */
-    inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
-    inline void SetJobStatus(const JobStatus& value) { m_jobStatus = value; }
-    inline void SetJobStatus(JobStatus&& value) { m_jobStatus = std::move(value); }
-    inline CreateBulkImportJobResult& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
-    inline CreateBulkImportJobResult& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    inline JobStatus GetJobStatus() const { return m_jobStatus; }
+    inline void SetJobStatus(JobStatus value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+    inline CreateBulkImportJobResult& WithJobStatus(JobStatus value) { SetJobStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBulkImportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBulkImportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBulkImportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBulkImportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_jobName;
+    bool m_jobNameHasBeenSet = false;
 
-    JobStatus m_jobStatus;
+    JobStatus m_jobStatus{JobStatus::NOT_SET};
+    bool m_jobStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

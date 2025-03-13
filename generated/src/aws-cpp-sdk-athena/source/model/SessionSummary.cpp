@@ -18,17 +18,7 @@ namespace Athena
 namespace Model
 {
 
-SessionSummary::SessionSummary() : 
-    m_sessionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_notebookVersionHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 SessionSummary::SessionSummary(JsonView jsonValue)
-  : SessionSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ SessionSummary& SessionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SessionId"))
   {
     m_sessionId = jsonValue.GetString("SessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetObject("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookVersion"))
   {
     m_notebookVersion = jsonValue.GetString("NotebookVersion");
-
     m_notebookVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

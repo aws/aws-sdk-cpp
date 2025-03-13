@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EnableFastSnapshotRestoreErrorItem::EnableFastSnapshotRestoreErrorItem() : 
-    m_snapshotIdHasBeenSet(false),
-    m_fastSnapshotRestoreStateErrorsHasBeenSet(false)
-{
-}
-
 EnableFastSnapshotRestoreErrorItem::EnableFastSnapshotRestoreErrorItem(const XmlNode& xmlNode)
-  : EnableFastSnapshotRestoreErrorItem()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ EnableFastSnapshotRestoreErrorItem& EnableFastSnapshotRestoreErrorItem::operator
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
       m_snapshotIdHasBeenSet = true;
+       m_snapshotIdHasBeenSet = true;
     }
     XmlNode fastSnapshotRestoreStateErrorsNode = resultNode.FirstChild("fastSnapshotRestoreStateErrorSet");
     if(!fastSnapshotRestoreStateErrorsNode.IsNull())
     {
       XmlNode fastSnapshotRestoreStateErrorsMember = fastSnapshotRestoreStateErrorsNode.FirstChild("item");
+      m_fastSnapshotRestoreStateErrorsHasBeenSet = !fastSnapshotRestoreStateErrorsMember.IsNull();
       while(!fastSnapshotRestoreStateErrorsMember.IsNull())
       {
         m_fastSnapshotRestoreStateErrors.push_back(fastSnapshotRestoreStateErrorsMember);
         fastSnapshotRestoreStateErrorsMember = fastSnapshotRestoreStateErrorsMember.NextNode("item");
       }
 
-      m_fastSnapshotRestoreStateErrorsHasBeenSet = true;
+       m_fastSnapshotRestoreStateErrorsHasBeenSet = true;
     }
   }
 

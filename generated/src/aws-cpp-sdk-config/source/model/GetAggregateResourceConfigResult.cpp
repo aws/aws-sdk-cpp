@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAggregateResourceConfigResult::GetAggregateResourceConfigResult()
-{
-}
-
 GetAggregateResourceConfigResult::GetAggregateResourceConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetAggregateResourceConfigResult& GetAggregateResourceConfigResult::operator =(c
   if(jsonValue.ValueExists("ConfigurationItem"))
   {
     m_configurationItem = jsonValue.GetObject("ConfigurationItem");
-
+    m_configurationItemHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

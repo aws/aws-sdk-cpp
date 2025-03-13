@@ -30,7 +30,7 @@ namespace Model
   class InstanceRefreshLivePoolProgress
   {
   public:
-    AWS_AUTOSCALING_API InstanceRefreshLivePoolProgress();
+    AWS_AUTOSCALING_API InstanceRefreshLivePoolProgress() = default;
     AWS_AUTOSCALING_API InstanceRefreshLivePoolProgress(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API InstanceRefreshLivePoolProgress& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,7 +46,7 @@ namespace Model
      * changes to healthy and the specified warm-up time passes, the instance is
      * considered updated and is added to the percentage complete.</p>
      */
-    inline int GetPercentageComplete() const{ return m_percentageComplete; }
+    inline int GetPercentageComplete() const { return m_percentageComplete; }
     inline bool PercentageCompleteHasBeenSet() const { return m_percentageCompleteHasBeenSet; }
     inline void SetPercentageComplete(int value) { m_percentageCompleteHasBeenSet = true; m_percentageComplete = value; }
     inline InstanceRefreshLivePoolProgress& WithPercentageComplete(int value) { SetPercentageComplete(value); return *this;}
@@ -56,17 +56,17 @@ namespace Model
     /**
      * <p>The number of instances remaining to update.</p>
      */
-    inline int GetInstancesToUpdate() const{ return m_instancesToUpdate; }
+    inline int GetInstancesToUpdate() const { return m_instancesToUpdate; }
     inline bool InstancesToUpdateHasBeenSet() const { return m_instancesToUpdateHasBeenSet; }
     inline void SetInstancesToUpdate(int value) { m_instancesToUpdateHasBeenSet = true; m_instancesToUpdate = value; }
     inline InstanceRefreshLivePoolProgress& WithInstancesToUpdate(int value) { SetInstancesToUpdate(value); return *this;}
     ///@}
   private:
 
-    int m_percentageComplete;
+    int m_percentageComplete{0};
     bool m_percentageCompleteHasBeenSet = false;
 
-    int m_instancesToUpdate;
+    int m_instancesToUpdate{0};
     bool m_instancesToUpdateHasBeenSet = false;
   };
 

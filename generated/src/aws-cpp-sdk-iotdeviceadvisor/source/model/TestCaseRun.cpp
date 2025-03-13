@@ -18,23 +18,7 @@ namespace IoTDeviceAdvisor
 namespace Model
 {
 
-TestCaseRun::TestCaseRun() : 
-    m_testCaseRunIdHasBeenSet(false),
-    m_testCaseDefinitionIdHasBeenSet(false),
-    m_testCaseDefinitionNameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_logUrlHasBeenSet(false),
-    m_warningsHasBeenSet(false),
-    m_failureHasBeenSet(false),
-    m_testScenariosHasBeenSet(false)
-{
-}
-
 TestCaseRun::TestCaseRun(JsonView jsonValue)
-  : TestCaseRun()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ TestCaseRun& TestCaseRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("testCaseRunId"))
   {
     m_testCaseRunId = jsonValue.GetString("testCaseRunId");
-
     m_testCaseRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testCaseDefinitionId"))
   {
     m_testCaseDefinitionId = jsonValue.GetString("testCaseDefinitionId");
-
     m_testCaseDefinitionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testCaseDefinitionName"))
   {
     m_testCaseDefinitionName = jsonValue.GetString("testCaseDefinitionName");
-
     m_testCaseDefinitionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logUrl"))
   {
     m_logUrl = jsonValue.GetString("logUrl");
-
     m_logUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("warnings"))
   {
     m_warnings = jsonValue.GetString("warnings");
-
     m_warningsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failure"))
   {
     m_failure = jsonValue.GetString("failure");
-
     m_failureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testScenarios"))
   {
     Aws::Utils::Array<JsonView> testScenariosJsonList = jsonValue.GetArray("testScenarios");
@@ -113,7 +79,6 @@ TestCaseRun& TestCaseRun::operator =(JsonView jsonValue)
     }
     m_testScenariosHasBeenSet = true;
   }
-
   return *this;
 }
 

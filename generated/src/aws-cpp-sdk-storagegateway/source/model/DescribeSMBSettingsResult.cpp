@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSMBSettingsResult::DescribeSMBSettingsResult() : 
-    m_activeDirectoryStatus(ActiveDirectoryStatus::NOT_SET),
-    m_sMBGuestPasswordSet(false),
-    m_sMBSecurityStrategy(SMBSecurityStrategy::NOT_SET),
-    m_fileSharesVisible(false)
-{
-}
-
 DescribeSMBSettingsResult::DescribeSMBSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeSMBSettingsResult()
 {
   *this = result;
 }
@@ -37,51 +28,45 @@ DescribeSMBSettingsResult& DescribeSMBSettingsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
+    m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
+    m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveDirectoryStatus"))
   {
     m_activeDirectoryStatus = ActiveDirectoryStatusMapper::GetActiveDirectoryStatusForName(jsonValue.GetString("ActiveDirectoryStatus"));
-
+    m_activeDirectoryStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SMBGuestPasswordSet"))
   {
     m_sMBGuestPasswordSet = jsonValue.GetBool("SMBGuestPasswordSet");
-
+    m_sMBGuestPasswordSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SMBSecurityStrategy"))
   {
     m_sMBSecurityStrategy = SMBSecurityStrategyMapper::GetSMBSecurityStrategyForName(jsonValue.GetString("SMBSecurityStrategy"));
-
+    m_sMBSecurityStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSharesVisible"))
   {
     m_fileSharesVisible = jsonValue.GetBool("FileSharesVisible");
-
+    m_fileSharesVisibleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SMBLocalGroups"))
   {
     m_sMBLocalGroups = jsonValue.GetObject("SMBLocalGroups");
-
+    m_sMBLocalGroupsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

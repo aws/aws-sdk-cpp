@@ -12,11 +12,6 @@ using namespace Aws::Synthetics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetGroupRequest::GetGroupRequest() : 
-    m_groupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetGroupRequest::SerializePayload() const
 {
   return {};

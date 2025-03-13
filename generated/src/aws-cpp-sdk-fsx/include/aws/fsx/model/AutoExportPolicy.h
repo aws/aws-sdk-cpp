@@ -39,7 +39,7 @@ namespace Model
   class AutoExportPolicy
   {
   public:
-    AWS_FSX_API AutoExportPolicy();
+    AWS_FSX_API AutoExportPolicy() = default;
     AWS_FSX_API AutoExportPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API AutoExportPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,14 +57,13 @@ namespace Model
      * can define any combination of event types for your
      * <code>AutoExportPolicy</code>.</p>
      */
-    inline const Aws::Vector<EventType>& GetEvents() const{ return m_events; }
+    inline const Aws::Vector<EventType>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Vector<EventType>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Vector<EventType>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline AutoExportPolicy& WithEvents(const Aws::Vector<EventType>& value) { SetEvents(value); return *this;}
-    inline AutoExportPolicy& WithEvents(Aws::Vector<EventType>&& value) { SetEvents(std::move(value)); return *this;}
-    inline AutoExportPolicy& AddEvents(const EventType& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-    inline AutoExportPolicy& AddEvents(EventType&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+    template<typename EventsT = Aws::Vector<EventType>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Vector<EventType>>
+    AutoExportPolicy& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    inline AutoExportPolicy& AddEvents(EventType value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
     ///@}
   private:
 

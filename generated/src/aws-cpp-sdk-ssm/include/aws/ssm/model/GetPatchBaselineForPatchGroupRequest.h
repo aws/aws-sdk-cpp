@@ -22,7 +22,7 @@ namespace Model
   class GetPatchBaselineForPatchGroupRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetPatchBaselineForPatchGroupRequest();
+    AWS_SSM_API GetPatchBaselineForPatchGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the patch group whose patch baseline should be retrieved.</p>
      */
-    inline const Aws::String& GetPatchGroup() const{ return m_patchGroup; }
+    inline const Aws::String& GetPatchGroup() const { return m_patchGroup; }
     inline bool PatchGroupHasBeenSet() const { return m_patchGroupHasBeenSet; }
-    inline void SetPatchGroup(const Aws::String& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
-    inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = std::move(value); }
-    inline void SetPatchGroup(const char* value) { m_patchGroupHasBeenSet = true; m_patchGroup.assign(value); }
-    inline GetPatchBaselineForPatchGroupRequest& WithPatchGroup(const Aws::String& value) { SetPatchGroup(value); return *this;}
-    inline GetPatchBaselineForPatchGroupRequest& WithPatchGroup(Aws::String&& value) { SetPatchGroup(std::move(value)); return *this;}
-    inline GetPatchBaselineForPatchGroupRequest& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
+    template<typename PatchGroupT = Aws::String>
+    void SetPatchGroup(PatchGroupT&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = std::forward<PatchGroupT>(value); }
+    template<typename PatchGroupT = Aws::String>
+    GetPatchBaselineForPatchGroupRequest& WithPatchGroup(PatchGroupT&& value) { SetPatchGroup(std::forward<PatchGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,19 +52,17 @@ namespace Model
      * <p>Returns the operating system rule specified for patch groups using the patch
      * baseline.</p>
      */
-    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+    inline OperatingSystem GetOperatingSystem() const { return m_operatingSystem; }
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
-    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
-    inline GetPatchBaselineForPatchGroupRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
-    inline GetPatchBaselineForPatchGroupRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+    inline void SetOperatingSystem(OperatingSystem value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+    inline GetPatchBaselineForPatchGroupRequest& WithOperatingSystem(OperatingSystem value) { SetOperatingSystem(value); return *this;}
     ///@}
   private:
 
     Aws::String m_patchGroup;
     bool m_patchGroupHasBeenSet = false;
 
-    OperatingSystem m_operatingSystem;
+    OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
     bool m_operatingSystemHasBeenSet = false;
   };
 

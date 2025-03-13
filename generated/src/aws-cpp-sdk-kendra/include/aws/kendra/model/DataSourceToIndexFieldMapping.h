@@ -41,7 +41,7 @@ namespace Model
   class DataSourceToIndexFieldMapping
   {
   public:
-    AWS_KENDRA_API DataSourceToIndexFieldMapping();
+    AWS_KENDRA_API DataSourceToIndexFieldMapping() = default;
     AWS_KENDRA_API DataSourceToIndexFieldMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API DataSourceToIndexFieldMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * <p>The name of the field in the data source. You must first create the index
      * field using the <code>UpdateIndex</code> API.</p>
      */
-    inline const Aws::String& GetDataSourceFieldName() const{ return m_dataSourceFieldName; }
+    inline const Aws::String& GetDataSourceFieldName() const { return m_dataSourceFieldName; }
     inline bool DataSourceFieldNameHasBeenSet() const { return m_dataSourceFieldNameHasBeenSet; }
-    inline void SetDataSourceFieldName(const Aws::String& value) { m_dataSourceFieldNameHasBeenSet = true; m_dataSourceFieldName = value; }
-    inline void SetDataSourceFieldName(Aws::String&& value) { m_dataSourceFieldNameHasBeenSet = true; m_dataSourceFieldName = std::move(value); }
-    inline void SetDataSourceFieldName(const char* value) { m_dataSourceFieldNameHasBeenSet = true; m_dataSourceFieldName.assign(value); }
-    inline DataSourceToIndexFieldMapping& WithDataSourceFieldName(const Aws::String& value) { SetDataSourceFieldName(value); return *this;}
-    inline DataSourceToIndexFieldMapping& WithDataSourceFieldName(Aws::String&& value) { SetDataSourceFieldName(std::move(value)); return *this;}
-    inline DataSourceToIndexFieldMapping& WithDataSourceFieldName(const char* value) { SetDataSourceFieldName(value); return *this;}
+    template<typename DataSourceFieldNameT = Aws::String>
+    void SetDataSourceFieldName(DataSourceFieldNameT&& value) { m_dataSourceFieldNameHasBeenSet = true; m_dataSourceFieldName = std::forward<DataSourceFieldNameT>(value); }
+    template<typename DataSourceFieldNameT = Aws::String>
+    DataSourceToIndexFieldMapping& WithDataSourceFieldName(DataSourceFieldNameT&& value) { SetDataSourceFieldName(std::forward<DataSourceFieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * <code>DataSourceFieldName</code> is a date field, you must specify the date
      * format. If the field is not a date field, an exception is thrown.</p>
      */
-    inline const Aws::String& GetDateFieldFormat() const{ return m_dateFieldFormat; }
+    inline const Aws::String& GetDateFieldFormat() const { return m_dateFieldFormat; }
     inline bool DateFieldFormatHasBeenSet() const { return m_dateFieldFormatHasBeenSet; }
-    inline void SetDateFieldFormat(const Aws::String& value) { m_dateFieldFormatHasBeenSet = true; m_dateFieldFormat = value; }
-    inline void SetDateFieldFormat(Aws::String&& value) { m_dateFieldFormatHasBeenSet = true; m_dateFieldFormat = std::move(value); }
-    inline void SetDateFieldFormat(const char* value) { m_dateFieldFormatHasBeenSet = true; m_dateFieldFormat.assign(value); }
-    inline DataSourceToIndexFieldMapping& WithDateFieldFormat(const Aws::String& value) { SetDateFieldFormat(value); return *this;}
-    inline DataSourceToIndexFieldMapping& WithDateFieldFormat(Aws::String&& value) { SetDateFieldFormat(std::move(value)); return *this;}
-    inline DataSourceToIndexFieldMapping& WithDateFieldFormat(const char* value) { SetDateFieldFormat(value); return *this;}
+    template<typename DateFieldFormatT = Aws::String>
+    void SetDateFieldFormat(DateFieldFormatT&& value) { m_dateFieldFormatHasBeenSet = true; m_dateFieldFormat = std::forward<DateFieldFormatT>(value); }
+    template<typename DateFieldFormatT = Aws::String>
+    DataSourceToIndexFieldMapping& WithDateFieldFormat(DateFieldFormatT&& value) { SetDateFieldFormat(std::forward<DateFieldFormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * <p>The name of the index field to map to the data source field. The index field
      * type must match the data source field type.</p>
      */
-    inline const Aws::String& GetIndexFieldName() const{ return m_indexFieldName; }
+    inline const Aws::String& GetIndexFieldName() const { return m_indexFieldName; }
     inline bool IndexFieldNameHasBeenSet() const { return m_indexFieldNameHasBeenSet; }
-    inline void SetIndexFieldName(const Aws::String& value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName = value; }
-    inline void SetIndexFieldName(Aws::String&& value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName = std::move(value); }
-    inline void SetIndexFieldName(const char* value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName.assign(value); }
-    inline DataSourceToIndexFieldMapping& WithIndexFieldName(const Aws::String& value) { SetIndexFieldName(value); return *this;}
-    inline DataSourceToIndexFieldMapping& WithIndexFieldName(Aws::String&& value) { SetIndexFieldName(std::move(value)); return *this;}
-    inline DataSourceToIndexFieldMapping& WithIndexFieldName(const char* value) { SetIndexFieldName(value); return *this;}
+    template<typename IndexFieldNameT = Aws::String>
+    void SetIndexFieldName(IndexFieldNameT&& value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName = std::forward<IndexFieldNameT>(value); }
+    template<typename IndexFieldNameT = Aws::String>
+    DataSourceToIndexFieldMapping& WithIndexFieldName(IndexFieldNameT&& value) { SetIndexFieldName(std::forward<IndexFieldNameT>(value)); return *this;}
     ///@}
   private:
 

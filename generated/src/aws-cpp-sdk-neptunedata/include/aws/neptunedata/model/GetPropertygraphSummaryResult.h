@@ -28,7 +28,7 @@ namespace Model
   class GetPropertygraphSummaryResult
   {
   public:
-    AWS_NEPTUNEDATA_API GetPropertygraphSummaryResult();
+    AWS_NEPTUNEDATA_API GetPropertygraphSummaryResult() = default;
     AWS_NEPTUNEDATA_API GetPropertygraphSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEDATA_API GetPropertygraphSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200.</p>
      */
-    inline int GetStatusCode() const{ return m_statusCode; }
-    inline void SetStatusCode(int value) { m_statusCode = value; }
+    inline int GetStatusCode() const { return m_statusCode; }
+    inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
     inline GetPropertygraphSummaryResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
     ///@}
 
@@ -47,30 +47,31 @@ namespace Model
     /**
      * <p>Payload containing the property graph summary response.</p>
      */
-    inline const PropertygraphSummaryValueMap& GetPayload() const{ return m_payload; }
-    inline void SetPayload(const PropertygraphSummaryValueMap& value) { m_payload = value; }
-    inline void SetPayload(PropertygraphSummaryValueMap&& value) { m_payload = std::move(value); }
-    inline GetPropertygraphSummaryResult& WithPayload(const PropertygraphSummaryValueMap& value) { SetPayload(value); return *this;}
-    inline GetPropertygraphSummaryResult& WithPayload(PropertygraphSummaryValueMap&& value) { SetPayload(std::move(value)); return *this;}
+    inline const PropertygraphSummaryValueMap& GetPayload() const { return m_payload; }
+    template<typename PayloadT = PropertygraphSummaryValueMap>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = PropertygraphSummaryValueMap>
+    GetPropertygraphSummaryResult& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPropertygraphSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPropertygraphSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPropertygraphSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPropertygraphSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_statusCode;
+    int m_statusCode{0};
+    bool m_statusCodeHasBeenSet = false;
 
     PropertygraphSummaryValueMap m_payload;
+    bool m_payloadHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

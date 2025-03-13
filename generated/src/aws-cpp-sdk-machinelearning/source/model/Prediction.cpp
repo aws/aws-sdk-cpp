@@ -18,17 +18,7 @@ namespace MachineLearning
 namespace Model
 {
 
-Prediction::Prediction() : 
-    m_predictedLabelHasBeenSet(false),
-    m_predictedValue(0.0),
-    m_predictedValueHasBeenSet(false),
-    m_predictedScoresHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 Prediction::Prediction(JsonView jsonValue)
-  : Prediction()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ Prediction& Prediction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("predictedLabel"))
   {
     m_predictedLabel = jsonValue.GetString("predictedLabel");
-
     m_predictedLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("predictedValue"))
   {
     m_predictedValue = jsonValue.GetDouble("predictedValue");
-
     m_predictedValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("predictedScores"))
   {
     Aws::Map<Aws::String, JsonView> predictedScoresJsonMap = jsonValue.GetObject("predictedScores").GetAllObjects();
@@ -58,7 +44,6 @@ Prediction& Prediction::operator =(JsonView jsonValue)
     }
     m_predictedScoresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     Aws::Map<Aws::String, JsonView> detailsJsonMap = jsonValue.GetObject("details").GetAllObjects();
@@ -68,7 +53,6 @@ Prediction& Prediction::operator =(JsonView jsonValue)
     }
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

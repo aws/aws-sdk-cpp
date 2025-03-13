@@ -18,15 +18,7 @@ namespace XRay
 namespace Model
 {
 
-UnprocessedTraceSegment::UnprocessedTraceSegment() : 
-    m_idHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 UnprocessedTraceSegment::UnprocessedTraceSegment(JsonView jsonValue)
-  : UnprocessedTraceSegment()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UnprocessedTraceSegment& UnprocessedTraceSegment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

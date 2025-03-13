@@ -30,7 +30,7 @@ namespace Model
   class ResultReuseByAgeConfiguration
   {
   public:
-    AWS_ATHENA_API ResultReuseByAgeConfiguration();
+    AWS_ATHENA_API ResultReuseByAgeConfiguration() = default;
     AWS_ATHENA_API ResultReuseByAgeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API ResultReuseByAgeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>True if previous query results can be reused when the query is run;
      * otherwise, false. The default is false.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ResultReuseByAgeConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>Specifies, in minutes, the maximum age of a previous query result that Athena
      * should consider for reuse. The default is 60.</p>
      */
-    inline int GetMaxAgeInMinutes() const{ return m_maxAgeInMinutes; }
+    inline int GetMaxAgeInMinutes() const { return m_maxAgeInMinutes; }
     inline bool MaxAgeInMinutesHasBeenSet() const { return m_maxAgeInMinutesHasBeenSet; }
     inline void SetMaxAgeInMinutes(int value) { m_maxAgeInMinutesHasBeenSet = true; m_maxAgeInMinutes = value; }
     inline ResultReuseByAgeConfiguration& WithMaxAgeInMinutes(int value) { SetMaxAgeInMinutes(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    int m_maxAgeInMinutes;
+    int m_maxAgeInMinutes{0};
     bool m_maxAgeInMinutesHasBeenSet = false;
   };
 

@@ -19,15 +19,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ByteContentDoc::ByteContentDoc() : 
-    m_contentTypeHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 ByteContentDoc::ByteContentDoc(JsonView jsonValue)
-  : ByteContentDoc()
 {
   *this = jsonValue;
 }
@@ -37,23 +29,18 @@ ByteContentDoc& ByteContentDoc::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contentType"))
   {
     m_contentType = jsonValue.GetString("contentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("data"))
   {
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   return *this;
 }
 

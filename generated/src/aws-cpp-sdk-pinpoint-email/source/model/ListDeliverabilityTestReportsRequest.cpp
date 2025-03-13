@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDeliverabilityTestReportsRequest::ListDeliverabilityTestReportsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String ListDeliverabilityTestReportsRequest::SerializePayload() const
 {
   return {};

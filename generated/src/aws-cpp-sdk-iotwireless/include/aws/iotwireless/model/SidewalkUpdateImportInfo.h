@@ -32,7 +32,7 @@ namespace Model
   class SidewalkUpdateImportInfo
   {
   public:
-    AWS_IOTWIRELESS_API SidewalkUpdateImportInfo();
+    AWS_IOTWIRELESS_API SidewalkUpdateImportInfo() = default;
     AWS_IOTWIRELESS_API SidewalkUpdateImportInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API SidewalkUpdateImportInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The CSV file contained in an S3 bucket that's used for appending devices to
      * an existing import task.</p>
      */
-    inline const Aws::String& GetDeviceCreationFile() const{ return m_deviceCreationFile; }
+    inline const Aws::String& GetDeviceCreationFile() const { return m_deviceCreationFile; }
     inline bool DeviceCreationFileHasBeenSet() const { return m_deviceCreationFileHasBeenSet; }
-    inline void SetDeviceCreationFile(const Aws::String& value) { m_deviceCreationFileHasBeenSet = true; m_deviceCreationFile = value; }
-    inline void SetDeviceCreationFile(Aws::String&& value) { m_deviceCreationFileHasBeenSet = true; m_deviceCreationFile = std::move(value); }
-    inline void SetDeviceCreationFile(const char* value) { m_deviceCreationFileHasBeenSet = true; m_deviceCreationFile.assign(value); }
-    inline SidewalkUpdateImportInfo& WithDeviceCreationFile(const Aws::String& value) { SetDeviceCreationFile(value); return *this;}
-    inline SidewalkUpdateImportInfo& WithDeviceCreationFile(Aws::String&& value) { SetDeviceCreationFile(std::move(value)); return *this;}
-    inline SidewalkUpdateImportInfo& WithDeviceCreationFile(const char* value) { SetDeviceCreationFile(value); return *this;}
+    template<typename DeviceCreationFileT = Aws::String>
+    void SetDeviceCreationFile(DeviceCreationFileT&& value) { m_deviceCreationFileHasBeenSet = true; m_deviceCreationFile = std::forward<DeviceCreationFileT>(value); }
+    template<typename DeviceCreationFileT = Aws::String>
+    SidewalkUpdateImportInfo& WithDeviceCreationFile(DeviceCreationFileT&& value) { SetDeviceCreationFile(std::forward<DeviceCreationFileT>(value)); return *this;}
     ///@}
   private:
 

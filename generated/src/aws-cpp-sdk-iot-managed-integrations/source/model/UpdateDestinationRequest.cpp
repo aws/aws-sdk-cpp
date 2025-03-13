@@ -12,16 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDestinationRequest::UpdateDestinationRequest() : 
-    m_nameHasBeenSet(false),
-    m_deliveryDestinationArnHasBeenSet(false),
-    m_deliveryDestinationType(DeliveryDestinationType::NOT_SET),
-    m_deliveryDestinationTypeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

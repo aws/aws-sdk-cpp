@@ -29,7 +29,7 @@ namespace Model
   class GetContactMethodsResult
   {
   public:
-    AWS_LIGHTSAIL_API GetContactMethodsResult();
+    AWS_LIGHTSAIL_API GetContactMethodsResult() = default;
     AWS_LIGHTSAIL_API GetContactMethodsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetContactMethodsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>An array of objects that describe the contact methods.</p>
      */
-    inline const Aws::Vector<ContactMethod>& GetContactMethods() const{ return m_contactMethods; }
-    inline void SetContactMethods(const Aws::Vector<ContactMethod>& value) { m_contactMethods = value; }
-    inline void SetContactMethods(Aws::Vector<ContactMethod>&& value) { m_contactMethods = std::move(value); }
-    inline GetContactMethodsResult& WithContactMethods(const Aws::Vector<ContactMethod>& value) { SetContactMethods(value); return *this;}
-    inline GetContactMethodsResult& WithContactMethods(Aws::Vector<ContactMethod>&& value) { SetContactMethods(std::move(value)); return *this;}
-    inline GetContactMethodsResult& AddContactMethods(const ContactMethod& value) { m_contactMethods.push_back(value); return *this; }
-    inline GetContactMethodsResult& AddContactMethods(ContactMethod&& value) { m_contactMethods.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContactMethod>& GetContactMethods() const { return m_contactMethods; }
+    template<typename ContactMethodsT = Aws::Vector<ContactMethod>>
+    void SetContactMethods(ContactMethodsT&& value) { m_contactMethodsHasBeenSet = true; m_contactMethods = std::forward<ContactMethodsT>(value); }
+    template<typename ContactMethodsT = Aws::Vector<ContactMethod>>
+    GetContactMethodsResult& WithContactMethods(ContactMethodsT&& value) { SetContactMethods(std::forward<ContactMethodsT>(value)); return *this;}
+    template<typename ContactMethodsT = ContactMethod>
+    GetContactMethodsResult& AddContactMethods(ContactMethodsT&& value) { m_contactMethodsHasBeenSet = true; m_contactMethods.emplace_back(std::forward<ContactMethodsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetContactMethodsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetContactMethodsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetContactMethodsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetContactMethodsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContactMethod> m_contactMethods;
+    bool m_contactMethodsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

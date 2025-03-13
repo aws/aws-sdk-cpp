@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Policy::Policy() : 
-    m_httpInputs(InputPolicy::NOT_SET),
-    m_httpInputsHasBeenSet(false),
-    m_httpsInputs(InputPolicy::NOT_SET),
-    m_httpsInputsHasBeenSet(false),
-    m_s3Inputs(InputPolicy::NOT_SET),
-    m_s3InputsHasBeenSet(false)
-{
-}
-
 Policy::Policy(JsonView jsonValue)
-  : Policy()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Policy& Policy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("httpInputs"))
   {
     m_httpInputs = InputPolicyMapper::GetInputPolicyForName(jsonValue.GetString("httpInputs"));
-
     m_httpInputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpsInputs"))
   {
     m_httpsInputs = InputPolicyMapper::GetInputPolicyForName(jsonValue.GetString("httpsInputs"));
-
     m_httpsInputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Inputs"))
   {
     m_s3Inputs = InputPolicyMapper::GetInputPolicyForName(jsonValue.GetString("s3Inputs"));
-
     m_s3InputsHasBeenSet = true;
   }
-
   return *this;
 }
 

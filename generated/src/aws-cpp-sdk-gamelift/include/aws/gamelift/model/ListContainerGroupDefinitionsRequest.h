@@ -22,7 +22,7 @@ namespace Model
   class ListContainerGroupDefinitionsRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API ListContainerGroupDefinitionsRequest();
+    AWS_GAMELIFT_API ListContainerGroupDefinitionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,10 @@ namespace Model
      * <p>The type of container group to retrieve. Container group type determines how
      * Amazon GameLift deploys the container group on each fleet instance.</p>
      */
-    inline const ContainerGroupType& GetContainerGroupType() const{ return m_containerGroupType; }
+    inline ContainerGroupType GetContainerGroupType() const { return m_containerGroupType; }
     inline bool ContainerGroupTypeHasBeenSet() const { return m_containerGroupTypeHasBeenSet; }
-    inline void SetContainerGroupType(const ContainerGroupType& value) { m_containerGroupTypeHasBeenSet = true; m_containerGroupType = value; }
-    inline void SetContainerGroupType(ContainerGroupType&& value) { m_containerGroupTypeHasBeenSet = true; m_containerGroupType = std::move(value); }
-    inline ListContainerGroupDefinitionsRequest& WithContainerGroupType(const ContainerGroupType& value) { SetContainerGroupType(value); return *this;}
-    inline ListContainerGroupDefinitionsRequest& WithContainerGroupType(ContainerGroupType&& value) { SetContainerGroupType(std::move(value)); return *this;}
+    inline void SetContainerGroupType(ContainerGroupType value) { m_containerGroupTypeHasBeenSet = true; m_containerGroupType = value; }
+    inline ListContainerGroupDefinitionsRequest& WithContainerGroupType(ContainerGroupType value) { SetContainerGroupType(value); return *this;}
     ///@}
 
     ///@{
@@ -53,7 +51,7 @@ namespace Model
      * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListContainerGroupDefinitionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -65,21 +63,19 @@ namespace Model
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListContainerGroupDefinitionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListContainerGroupDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListContainerGroupDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListContainerGroupDefinitionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    ContainerGroupType m_containerGroupType;
+    ContainerGroupType m_containerGroupType{ContainerGroupType::NOT_SET};
     bool m_containerGroupTypeHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

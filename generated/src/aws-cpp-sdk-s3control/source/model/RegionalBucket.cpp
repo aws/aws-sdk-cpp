@@ -20,18 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-RegionalBucket::RegionalBucket() : 
-    m_bucketHasBeenSet(false),
-    m_bucketArnHasBeenSet(false),
-    m_publicAccessBlockEnabled(false),
-    m_publicAccessBlockEnabledHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_outpostIdHasBeenSet(false)
-{
-}
-
 RegionalBucket::RegionalBucket(const XmlNode& xmlNode)
-  : RegionalBucket()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ RegionalBucket& RegionalBucket::operator =(const XmlNode& xmlNode)
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode bucketArnNode = resultNode.FirstChild("BucketArn");
     if(!bucketArnNode.IsNull())
     {
       m_bucketArn = Aws::Utils::Xml::DecodeEscapedXmlText(bucketArnNode.GetText());
       m_bucketArnHasBeenSet = true;
+       m_bucketArnHasBeenSet = true;
     }
     XmlNode publicAccessBlockEnabledNode = resultNode.FirstChild("PublicAccessBlockEnabled");
     if(!publicAccessBlockEnabledNode.IsNull())
     {
       m_publicAccessBlockEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publicAccessBlockEnabledNode.GetText()).c_str()).c_str());
       m_publicAccessBlockEnabledHasBeenSet = true;
+       m_publicAccessBlockEnabledHasBeenSet = true;
     }
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
       m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationDateHasBeenSet = true;
+       m_creationDateHasBeenSet = true;
     }
     XmlNode outpostIdNode = resultNode.FirstChild("OutpostId");
     if(!outpostIdNode.IsNull())
     {
       m_outpostId = Aws::Utils::Xml::DecodeEscapedXmlText(outpostIdNode.GetText());
       m_outpostIdHasBeenSet = true;
+       m_outpostIdHasBeenSet = true;
     }
   }
 

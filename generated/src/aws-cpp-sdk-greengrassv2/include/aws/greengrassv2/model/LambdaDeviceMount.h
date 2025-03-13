@@ -33,7 +33,7 @@ namespace Model
   class LambdaDeviceMount
   {
   public:
-    AWS_GREENGRASSV2_API LambdaDeviceMount();
+    AWS_GREENGRASSV2_API LambdaDeviceMount() = default;
     AWS_GREENGRASSV2_API LambdaDeviceMount(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API LambdaDeviceMount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The mount path for the device in the file system.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline LambdaDeviceMount& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline LambdaDeviceMount& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline LambdaDeviceMount& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    LambdaDeviceMount& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * <p>The permission to access the device: read/only (<code>ro</code>) or
      * read/write (<code>rw</code>).</p> <p>Default: <code>ro</code> </p>
      */
-    inline const LambdaFilesystemPermission& GetPermission() const{ return m_permission; }
+    inline LambdaFilesystemPermission GetPermission() const { return m_permission; }
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-    inline void SetPermission(const LambdaFilesystemPermission& value) { m_permissionHasBeenSet = true; m_permission = value; }
-    inline void SetPermission(LambdaFilesystemPermission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-    inline LambdaDeviceMount& WithPermission(const LambdaFilesystemPermission& value) { SetPermission(value); return *this;}
-    inline LambdaDeviceMount& WithPermission(LambdaFilesystemPermission&& value) { SetPermission(std::move(value)); return *this;}
+    inline void SetPermission(LambdaFilesystemPermission value) { m_permissionHasBeenSet = true; m_permission = value; }
+    inline LambdaDeviceMount& WithPermission(LambdaFilesystemPermission value) { SetPermission(value); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * <p>Whether or not to add the component's system user as an owner of the
      * device.</p> <p>Default: <code>false</code> </p>
      */
-    inline bool GetAddGroupOwner() const{ return m_addGroupOwner; }
+    inline bool GetAddGroupOwner() const { return m_addGroupOwner; }
     inline bool AddGroupOwnerHasBeenSet() const { return m_addGroupOwnerHasBeenSet; }
     inline void SetAddGroupOwner(bool value) { m_addGroupOwnerHasBeenSet = true; m_addGroupOwner = value; }
     inline LambdaDeviceMount& WithAddGroupOwner(bool value) { SetAddGroupOwner(value); return *this;}
@@ -81,10 +77,10 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    LambdaFilesystemPermission m_permission;
+    LambdaFilesystemPermission m_permission{LambdaFilesystemPermission::NOT_SET};
     bool m_permissionHasBeenSet = false;
 
-    bool m_addGroupOwner;
+    bool m_addGroupOwner{false};
     bool m_addGroupOwnerHasBeenSet = false;
   };
 

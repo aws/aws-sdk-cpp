@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SageMakerRunConfigurationInput::SageMakerRunConfigurationInput() : 
-    m_trackingAssetsHasBeenSet(false)
-{
-}
-
 SageMakerRunConfigurationInput::SageMakerRunConfigurationInput(JsonView jsonValue)
-  : SageMakerRunConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -47,7 +41,6 @@ SageMakerRunConfigurationInput& SageMakerRunConfigurationInput::operator =(JsonV
     }
     m_trackingAssetsHasBeenSet = true;
   }
-
   return *this;
 }
 

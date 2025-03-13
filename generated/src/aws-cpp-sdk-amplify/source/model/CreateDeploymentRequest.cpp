@@ -12,13 +12,6 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeploymentRequest::CreateDeploymentRequest() : 
-    m_appIdHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_fileMapHasBeenSet(false)
-{
-}
-
 Aws::String CreateDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

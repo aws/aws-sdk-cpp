@@ -32,7 +32,7 @@ namespace Model
   class ContinuousParameterRange
   {
   public:
-    AWS_SAGEMAKER_API ContinuousParameterRange();
+    AWS_SAGEMAKER_API ContinuousParameterRange() = default;
     AWS_SAGEMAKER_API ContinuousParameterRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ContinuousParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the continuous hyperparameter to tune.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ContinuousParameterRange& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ContinuousParameterRange& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ContinuousParameterRange& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ContinuousParameterRange& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The minimum value for the hyperparameter. The tuning job uses floating-point
      * values between this value and <code>MaxValue</code>for tuning.</p>
      */
-    inline const Aws::String& GetMinValue() const{ return m_minValue; }
+    inline const Aws::String& GetMinValue() const { return m_minValue; }
     inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
-    inline void SetMinValue(const Aws::String& value) { m_minValueHasBeenSet = true; m_minValue = value; }
-    inline void SetMinValue(Aws::String&& value) { m_minValueHasBeenSet = true; m_minValue = std::move(value); }
-    inline void SetMinValue(const char* value) { m_minValueHasBeenSet = true; m_minValue.assign(value); }
-    inline ContinuousParameterRange& WithMinValue(const Aws::String& value) { SetMinValue(value); return *this;}
-    inline ContinuousParameterRange& WithMinValue(Aws::String&& value) { SetMinValue(std::move(value)); return *this;}
-    inline ContinuousParameterRange& WithMinValue(const char* value) { SetMinValue(value); return *this;}
+    template<typename MinValueT = Aws::String>
+    void SetMinValue(MinValueT&& value) { m_minValueHasBeenSet = true; m_minValue = std::forward<MinValueT>(value); }
+    template<typename MinValueT = Aws::String>
+    ContinuousParameterRange& WithMinValue(MinValueT&& value) { SetMinValue(std::forward<MinValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The maximum value for the hyperparameter. The tuning job uses floating-point
      * values between <code>MinValue</code> value and this value for tuning.</p>
      */
-    inline const Aws::String& GetMaxValue() const{ return m_maxValue; }
+    inline const Aws::String& GetMaxValue() const { return m_maxValue; }
     inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
-    inline void SetMaxValue(const Aws::String& value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
-    inline void SetMaxValue(Aws::String&& value) { m_maxValueHasBeenSet = true; m_maxValue = std::move(value); }
-    inline void SetMaxValue(const char* value) { m_maxValueHasBeenSet = true; m_maxValue.assign(value); }
-    inline ContinuousParameterRange& WithMaxValue(const Aws::String& value) { SetMaxValue(value); return *this;}
-    inline ContinuousParameterRange& WithMaxValue(Aws::String&& value) { SetMaxValue(std::move(value)); return *this;}
-    inline ContinuousParameterRange& WithMaxValue(const char* value) { SetMaxValue(value); return *this;}
+    template<typename MaxValueT = Aws::String>
+    void SetMaxValue(MaxValueT&& value) { m_maxValueHasBeenSet = true; m_maxValue = std::forward<MaxValueT>(value); }
+    template<typename MaxValueT = Aws::String>
+    ContinuousParameterRange& WithMaxValue(MaxValueT&& value) { SetMaxValue(std::forward<MaxValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +93,10 @@ namespace Model
      * logarithmic scaling works only for ranges that are entirely within the range
      * 0&lt;=x&lt;1.0.</p> </dd> </dl>
      */
-    inline const HyperParameterScalingType& GetScalingType() const{ return m_scalingType; }
+    inline HyperParameterScalingType GetScalingType() const { return m_scalingType; }
     inline bool ScalingTypeHasBeenSet() const { return m_scalingTypeHasBeenSet; }
-    inline void SetScalingType(const HyperParameterScalingType& value) { m_scalingTypeHasBeenSet = true; m_scalingType = value; }
-    inline void SetScalingType(HyperParameterScalingType&& value) { m_scalingTypeHasBeenSet = true; m_scalingType = std::move(value); }
-    inline ContinuousParameterRange& WithScalingType(const HyperParameterScalingType& value) { SetScalingType(value); return *this;}
-    inline ContinuousParameterRange& WithScalingType(HyperParameterScalingType&& value) { SetScalingType(std::move(value)); return *this;}
+    inline void SetScalingType(HyperParameterScalingType value) { m_scalingTypeHasBeenSet = true; m_scalingType = value; }
+    inline ContinuousParameterRange& WithScalingType(HyperParameterScalingType value) { SetScalingType(value); return *this;}
     ///@}
   private:
 
@@ -117,7 +109,7 @@ namespace Model
     Aws::String m_maxValue;
     bool m_maxValueHasBeenSet = false;
 
-    HyperParameterScalingType m_scalingType;
+    HyperParameterScalingType m_scalingType{HyperParameterScalingType::NOT_SET};
     bool m_scalingTypeHasBeenSet = false;
   };
 

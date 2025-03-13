@@ -18,23 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-MemberSummary::MemberSummary() : 
-    m_accountIdHasBeenSet(false),
-    m_status(MemberStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_abilitiesHasBeenSet(false),
-    m_mlAbilitiesHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_paymentConfigurationHasBeenSet(false)
-{
-}
-
 MemberSummary::MemberSummary(JsonView jsonValue)
-  : MemberSummary()
 {
   *this = jsonValue;
 }
@@ -44,24 +28,18 @@ MemberSummary& MemberSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = MemberStatusMapper::GetMemberStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("abilities"))
   {
     Aws::Utils::Array<JsonView> abilitiesJsonList = jsonValue.GetArray("abilities");
@@ -71,49 +49,36 @@ MemberSummary& MemberSummary::operator =(JsonView jsonValue)
     }
     m_abilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mlAbilities"))
   {
     m_mlAbilities = jsonValue.GetObject("mlAbilities");
-
     m_mlAbilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipId"))
   {
     m_membershipId = jsonValue.GetString("membershipId");
-
     m_membershipIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipArn"))
   {
     m_membershipArn = jsonValue.GetString("membershipArn");
-
     m_membershipArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("paymentConfiguration"))
   {
     m_paymentConfiguration = jsonValue.GetObject("paymentConfiguration");
-
     m_paymentConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

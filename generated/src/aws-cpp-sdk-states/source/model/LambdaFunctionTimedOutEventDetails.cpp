@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-LambdaFunctionTimedOutEventDetails::LambdaFunctionTimedOutEventDetails() : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
-{
-}
-
 LambdaFunctionTimedOutEventDetails::LambdaFunctionTimedOutEventDetails(JsonView jsonValue)
-  : LambdaFunctionTimedOutEventDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LambdaFunctionTimedOutEventDetails& LambdaFunctionTimedOutEventDetails::operator
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cause"))
   {
     m_cause = jsonValue.GetString("cause");
-
     m_causeHasBeenSet = true;
   }
-
   return *this;
 }
 

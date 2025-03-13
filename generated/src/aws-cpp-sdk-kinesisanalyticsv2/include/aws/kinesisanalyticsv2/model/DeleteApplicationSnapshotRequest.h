@@ -22,7 +22,7 @@ namespace Model
   class DeleteApplicationSnapshotRequest : public KinesisAnalyticsV2Request
   {
   public:
-    AWS_KINESISANALYTICSV2_API DeleteApplicationSnapshotRequest();
+    AWS_KINESISANALYTICSV2_API DeleteApplicationSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The name of an existing application.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline DeleteApplicationSnapshotRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline DeleteApplicationSnapshotRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline DeleteApplicationSnapshotRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    DeleteApplicationSnapshotRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the snapshot delete.</p>
      */
-    inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+    inline const Aws::String& GetSnapshotName() const { return m_snapshotName; }
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
-    inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
-    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
-    inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
-    inline DeleteApplicationSnapshotRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
-    inline DeleteApplicationSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
-    inline DeleteApplicationSnapshotRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
+    template<typename SnapshotNameT = Aws::String>
+    void SetSnapshotName(SnapshotNameT&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::forward<SnapshotNameT>(value); }
+    template<typename SnapshotNameT = Aws::String>
+    DeleteApplicationSnapshotRequest& WithSnapshotName(SnapshotNameT&& value) { SetSnapshotName(std::forward<SnapshotNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +64,12 @@ namespace Model
      * <p>The creation timestamp of the application snapshot to delete. You can
      * retrieve this value using or .</p>
      */
-    inline const Aws::Utils::DateTime& GetSnapshotCreationTimestamp() const{ return m_snapshotCreationTimestamp; }
+    inline const Aws::Utils::DateTime& GetSnapshotCreationTimestamp() const { return m_snapshotCreationTimestamp; }
     inline bool SnapshotCreationTimestampHasBeenSet() const { return m_snapshotCreationTimestampHasBeenSet; }
-    inline void SetSnapshotCreationTimestamp(const Aws::Utils::DateTime& value) { m_snapshotCreationTimestampHasBeenSet = true; m_snapshotCreationTimestamp = value; }
-    inline void SetSnapshotCreationTimestamp(Aws::Utils::DateTime&& value) { m_snapshotCreationTimestampHasBeenSet = true; m_snapshotCreationTimestamp = std::move(value); }
-    inline DeleteApplicationSnapshotRequest& WithSnapshotCreationTimestamp(const Aws::Utils::DateTime& value) { SetSnapshotCreationTimestamp(value); return *this;}
-    inline DeleteApplicationSnapshotRequest& WithSnapshotCreationTimestamp(Aws::Utils::DateTime&& value) { SetSnapshotCreationTimestamp(std::move(value)); return *this;}
+    template<typename SnapshotCreationTimestampT = Aws::Utils::DateTime>
+    void SetSnapshotCreationTimestamp(SnapshotCreationTimestampT&& value) { m_snapshotCreationTimestampHasBeenSet = true; m_snapshotCreationTimestamp = std::forward<SnapshotCreationTimestampT>(value); }
+    template<typename SnapshotCreationTimestampT = Aws::Utils::DateTime>
+    DeleteApplicationSnapshotRequest& WithSnapshotCreationTimestamp(SnapshotCreationTimestampT&& value) { SetSnapshotCreationTimestamp(std::forward<SnapshotCreationTimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -83,7 +79,7 @@ namespace Model
     Aws::String m_snapshotName;
     bool m_snapshotNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_snapshotCreationTimestamp;
+    Aws::Utils::DateTime m_snapshotCreationTimestamp{};
     bool m_snapshotCreationTimestampHasBeenSet = false;
   };
 

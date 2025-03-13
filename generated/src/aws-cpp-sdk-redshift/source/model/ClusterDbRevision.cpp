@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterDbRevision::ClusterDbRevision() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_currentDatabaseRevisionHasBeenSet(false),
-    m_databaseRevisionReleaseDateHasBeenSet(false),
-    m_revisionTargetsHasBeenSet(false)
-{
-}
-
 ClusterDbRevision::ClusterDbRevision(const XmlNode& xmlNode)
-  : ClusterDbRevision()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ ClusterDbRevision& ClusterDbRevision::operator =(const XmlNode& xmlNode)
     {
       m_clusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(clusterIdentifierNode.GetText());
       m_clusterIdentifierHasBeenSet = true;
+       m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode currentDatabaseRevisionNode = resultNode.FirstChild("CurrentDatabaseRevision");
     if(!currentDatabaseRevisionNode.IsNull())
     {
       m_currentDatabaseRevision = Aws::Utils::Xml::DecodeEscapedXmlText(currentDatabaseRevisionNode.GetText());
       m_currentDatabaseRevisionHasBeenSet = true;
+       m_currentDatabaseRevisionHasBeenSet = true;
     }
     XmlNode databaseRevisionReleaseDateNode = resultNode.FirstChild("DatabaseRevisionReleaseDate");
     if(!databaseRevisionReleaseDateNode.IsNull())
     {
       m_databaseRevisionReleaseDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(databaseRevisionReleaseDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_databaseRevisionReleaseDateHasBeenSet = true;
+       m_databaseRevisionReleaseDateHasBeenSet = true;
     }
     XmlNode revisionTargetsNode = resultNode.FirstChild("RevisionTargets");
     if(!revisionTargetsNode.IsNull())
     {
       XmlNode revisionTargetsMember = revisionTargetsNode.FirstChild("RevisionTarget");
+      m_revisionTargetsHasBeenSet = !revisionTargetsMember.IsNull();
       while(!revisionTargetsMember.IsNull())
       {
         m_revisionTargets.push_back(revisionTargetsMember);
         revisionTargetsMember = revisionTargetsMember.NextNode("RevisionTarget");
       }
 
-      m_revisionTargetsHasBeenSet = true;
+       m_revisionTargetsHasBeenSet = true;
     }
   }
 

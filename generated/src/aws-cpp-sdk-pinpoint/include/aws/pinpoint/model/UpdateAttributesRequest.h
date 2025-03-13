@@ -33,7 +33,7 @@ namespace Model
   class UpdateAttributesRequest
   {
   public:
-    AWS_PINPOINT_API UpdateAttributesRequest();
+    AWS_PINPOINT_API UpdateAttributesRequest() = default;
     AWS_PINPOINT_API UpdateAttributesRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API UpdateAttributesRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,15 +46,14 @@ namespace Model
      * of each attribute to remove or it can specify a glob pattern that an attribute
      * name must match in order for the attribute to be removed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBlacklist() const{ return m_blacklist; }
+    inline const Aws::Vector<Aws::String>& GetBlacklist() const { return m_blacklist; }
     inline bool BlacklistHasBeenSet() const { return m_blacklistHasBeenSet; }
-    inline void SetBlacklist(const Aws::Vector<Aws::String>& value) { m_blacklistHasBeenSet = true; m_blacklist = value; }
-    inline void SetBlacklist(Aws::Vector<Aws::String>&& value) { m_blacklistHasBeenSet = true; m_blacklist = std::move(value); }
-    inline UpdateAttributesRequest& WithBlacklist(const Aws::Vector<Aws::String>& value) { SetBlacklist(value); return *this;}
-    inline UpdateAttributesRequest& WithBlacklist(Aws::Vector<Aws::String>&& value) { SetBlacklist(std::move(value)); return *this;}
-    inline UpdateAttributesRequest& AddBlacklist(const Aws::String& value) { m_blacklistHasBeenSet = true; m_blacklist.push_back(value); return *this; }
-    inline UpdateAttributesRequest& AddBlacklist(Aws::String&& value) { m_blacklistHasBeenSet = true; m_blacklist.push_back(std::move(value)); return *this; }
-    inline UpdateAttributesRequest& AddBlacklist(const char* value) { m_blacklistHasBeenSet = true; m_blacklist.push_back(value); return *this; }
+    template<typename BlacklistT = Aws::Vector<Aws::String>>
+    void SetBlacklist(BlacklistT&& value) { m_blacklistHasBeenSet = true; m_blacklist = std::forward<BlacklistT>(value); }
+    template<typename BlacklistT = Aws::Vector<Aws::String>>
+    UpdateAttributesRequest& WithBlacklist(BlacklistT&& value) { SetBlacklist(std::forward<BlacklistT>(value)); return *this;}
+    template<typename BlacklistT = Aws::String>
+    UpdateAttributesRequest& AddBlacklist(BlacklistT&& value) { m_blacklistHasBeenSet = true; m_blacklist.emplace_back(std::forward<BlacklistT>(value)); return *this; }
     ///@}
   private:
 

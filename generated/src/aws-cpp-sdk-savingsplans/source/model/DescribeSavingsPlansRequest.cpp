@@ -12,17 +12,6 @@ using namespace Aws::SavingsPlans::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSavingsPlansRequest::DescribeSavingsPlansRequest() : 
-    m_savingsPlanArnsHasBeenSet(false),
-    m_savingsPlanIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_statesHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSavingsPlansRequest::SerializePayload() const
 {
   JsonValue payload;

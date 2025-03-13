@@ -12,15 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTaskRequest::GetTaskRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_stepIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String GetTaskRequest::SerializePayload() const
 {
   return {};

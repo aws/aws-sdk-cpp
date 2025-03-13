@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetWirelessDeviceRequest::GetWirelessDeviceRequest() : 
-    m_identifierHasBeenSet(false),
-    m_identifierType(WirelessDeviceIdType::NOT_SET),
-    m_identifierTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetWirelessDeviceRequest::SerializePayload() const
 {
   return {};

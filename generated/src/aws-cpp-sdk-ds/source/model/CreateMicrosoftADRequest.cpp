@@ -12,18 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMicrosoftADRequest::CreateMicrosoftADRequest() : 
-    m_nameHasBeenSet(false),
-    m_shortNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_vpcSettingsHasBeenSet(false),
-    m_edition(DirectoryEdition::NOT_SET),
-    m_editionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMicrosoftADRequest::SerializePayload() const
 {
   JsonValue payload;

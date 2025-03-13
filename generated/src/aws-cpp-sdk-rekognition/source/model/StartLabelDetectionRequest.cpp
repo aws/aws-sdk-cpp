@@ -12,18 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartLabelDetectionRequest::StartLabelDetectionRequest() : 
-    m_videoHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false),
-    m_notificationChannelHasBeenSet(false),
-    m_jobTagHasBeenSet(false),
-    m_featuresHasBeenSet(false),
-    m_settingsHasBeenSet(false)
-{
-}
-
 Aws::String StartLabelDetectionRequest::SerializePayload() const
 {
   JsonValue payload;

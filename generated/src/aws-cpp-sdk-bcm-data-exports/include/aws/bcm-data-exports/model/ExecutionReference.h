@@ -32,7 +32,7 @@ namespace Model
   class ExecutionReference
   {
   public:
-    AWS_BCMDATAEXPORTS_API ExecutionReference();
+    AWS_BCMDATAEXPORTS_API ExecutionReference() = default;
     AWS_BCMDATAEXPORTS_API ExecutionReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMDATAEXPORTS_API ExecutionReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMDATAEXPORTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The ID for this specific execution.</p>
      */
-    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+    inline const Aws::String& GetExecutionId() const { return m_executionId; }
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-    inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-    inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-    inline ExecutionReference& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-    inline ExecutionReference& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-    inline ExecutionReference& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    template<typename ExecutionIdT = Aws::String>
+    void SetExecutionId(ExecutionIdT&& value) { m_executionIdHasBeenSet = true; m_executionId = std::forward<ExecutionIdT>(value); }
+    template<typename ExecutionIdT = Aws::String>
+    ExecutionReference& WithExecutionId(ExecutionIdT&& value) { SetExecutionId(std::forward<ExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of this specific execution.</p>
      */
-    inline const ExecutionStatus& GetExecutionStatus() const{ return m_executionStatus; }
+    inline const ExecutionStatus& GetExecutionStatus() const { return m_executionStatus; }
     inline bool ExecutionStatusHasBeenSet() const { return m_executionStatusHasBeenSet; }
-    inline void SetExecutionStatus(const ExecutionStatus& value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
-    inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatusHasBeenSet = true; m_executionStatus = std::move(value); }
-    inline ExecutionReference& WithExecutionStatus(const ExecutionStatus& value) { SetExecutionStatus(value); return *this;}
-    inline ExecutionReference& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
+    template<typename ExecutionStatusT = ExecutionStatus>
+    void SetExecutionStatus(ExecutionStatusT&& value) { m_executionStatusHasBeenSet = true; m_executionStatus = std::forward<ExecutionStatusT>(value); }
+    template<typename ExecutionStatusT = ExecutionStatus>
+    ExecutionReference& WithExecutionStatus(ExecutionStatusT&& value) { SetExecutionStatus(std::forward<ExecutionStatusT>(value)); return *this;}
     ///@}
   private:
 

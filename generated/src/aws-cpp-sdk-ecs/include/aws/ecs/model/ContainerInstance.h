@@ -41,7 +41,7 @@ namespace Model
   class ContainerInstance
   {
   public:
-    AWS_ECS_API ContainerInstance();
+    AWS_ECS_API ContainerInstance() = default;
     AWS_ECS_API ContainerInstance(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ContainerInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
      * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
+    inline const Aws::String& GetContainerInstanceArn() const { return m_containerInstanceArn; }
     inline bool ContainerInstanceArnHasBeenSet() const { return m_containerInstanceArnHasBeenSet; }
-    inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
-    inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = std::move(value); }
-    inline void SetContainerInstanceArn(const char* value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn.assign(value); }
-    inline ContainerInstance& WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
-    inline ContainerInstance& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(std::move(value)); return *this;}
-    inline ContainerInstance& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
+    template<typename ContainerInstanceArnT = Aws::String>
+    void SetContainerInstanceArn(ContainerInstanceArnT&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = std::forward<ContainerInstanceArnT>(value); }
+    template<typename ContainerInstanceArnT = Aws::String>
+    ContainerInstance& WithContainerInstanceArn(ContainerInstanceArnT&& value) { SetContainerInstanceArn(std::forward<ContainerInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,28 +68,24 @@ namespace Model
      * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
      * Services Systems Manager managed instance ID.</p>
      */
-    inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
+    inline const Aws::String& GetEc2InstanceId() const { return m_ec2InstanceId; }
     inline bool Ec2InstanceIdHasBeenSet() const { return m_ec2InstanceIdHasBeenSet; }
-    inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
-    inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::move(value); }
-    inline void SetEc2InstanceId(const char* value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId.assign(value); }
-    inline ContainerInstance& WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
-    inline ContainerInstance& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(std::move(value)); return *this;}
-    inline ContainerInstance& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
+    template<typename Ec2InstanceIdT = Aws::String>
+    void SetEc2InstanceId(Ec2InstanceIdT&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::forward<Ec2InstanceIdT>(value); }
+    template<typename Ec2InstanceIdT = Aws::String>
+    ContainerInstance& WithEc2InstanceId(Ec2InstanceIdT&& value) { SetEc2InstanceId(std::forward<Ec2InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The capacity provider that's associated with the container instance.</p>
      */
-    inline const Aws::String& GetCapacityProviderName() const{ return m_capacityProviderName; }
+    inline const Aws::String& GetCapacityProviderName() const { return m_capacityProviderName; }
     inline bool CapacityProviderNameHasBeenSet() const { return m_capacityProviderNameHasBeenSet; }
-    inline void SetCapacityProviderName(const Aws::String& value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName = value; }
-    inline void SetCapacityProviderName(Aws::String&& value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName = std::move(value); }
-    inline void SetCapacityProviderName(const char* value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName.assign(value); }
-    inline ContainerInstance& WithCapacityProviderName(const Aws::String& value) { SetCapacityProviderName(value); return *this;}
-    inline ContainerInstance& WithCapacityProviderName(Aws::String&& value) { SetCapacityProviderName(std::move(value)); return *this;}
-    inline ContainerInstance& WithCapacityProviderName(const char* value) { SetCapacityProviderName(value); return *this;}
+    template<typename CapacityProviderNameT = Aws::String>
+    void SetCapacityProviderName(CapacityProviderNameT&& value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName = std::forward<CapacityProviderNameT>(value); }
+    template<typename CapacityProviderNameT = Aws::String>
+    ContainerInstance& WithCapacityProviderName(CapacityProviderNameT&& value) { SetCapacityProviderName(std::forward<CapacityProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,7 +98,7 @@ namespace Model
      * Events for the container instance (inside the <code>detail</code> object) to
      * verify that the version in your event stream is current.</p>
      */
-    inline long long GetVersion() const{ return m_version; }
+    inline long long GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
     inline ContainerInstance& WithVersion(long long value) { SetVersion(value); return *this;}
@@ -115,12 +109,12 @@ namespace Model
      * <p>The version information for the Amazon ECS container agent and Docker daemon
      * running on the container instance.</p>
      */
-    inline const VersionInfo& GetVersionInfo() const{ return m_versionInfo; }
+    inline const VersionInfo& GetVersionInfo() const { return m_versionInfo; }
     inline bool VersionInfoHasBeenSet() const { return m_versionInfoHasBeenSet; }
-    inline void SetVersionInfo(const VersionInfo& value) { m_versionInfoHasBeenSet = true; m_versionInfo = value; }
-    inline void SetVersionInfo(VersionInfo&& value) { m_versionInfoHasBeenSet = true; m_versionInfo = std::move(value); }
-    inline ContainerInstance& WithVersionInfo(const VersionInfo& value) { SetVersionInfo(value); return *this;}
-    inline ContainerInstance& WithVersionInfo(VersionInfo&& value) { SetVersionInfo(std::move(value)); return *this;}
+    template<typename VersionInfoT = VersionInfo>
+    void SetVersionInfo(VersionInfoT&& value) { m_versionInfoHasBeenSet = true; m_versionInfo = std::forward<VersionInfoT>(value); }
+    template<typename VersionInfoT = VersionInfo>
+    ContainerInstance& WithVersionInfo(VersionInfoT&& value) { SetVersionInfo(std::forward<VersionInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +127,14 @@ namespace Model
      * <code>host</code> or <code>bridge</code> network mode). Any port that's not
      * specified here is available for new tasks.</p>
      */
-    inline const Aws::Vector<Resource>& GetRemainingResources() const{ return m_remainingResources; }
+    inline const Aws::Vector<Resource>& GetRemainingResources() const { return m_remainingResources; }
     inline bool RemainingResourcesHasBeenSet() const { return m_remainingResourcesHasBeenSet; }
-    inline void SetRemainingResources(const Aws::Vector<Resource>& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources = value; }
-    inline void SetRemainingResources(Aws::Vector<Resource>&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources = std::move(value); }
-    inline ContainerInstance& WithRemainingResources(const Aws::Vector<Resource>& value) { SetRemainingResources(value); return *this;}
-    inline ContainerInstance& WithRemainingResources(Aws::Vector<Resource>&& value) { SetRemainingResources(std::move(value)); return *this;}
-    inline ContainerInstance& AddRemainingResources(const Resource& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources.push_back(value); return *this; }
-    inline ContainerInstance& AddRemainingResources(Resource&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources.push_back(std::move(value)); return *this; }
+    template<typename RemainingResourcesT = Aws::Vector<Resource>>
+    void SetRemainingResources(RemainingResourcesT&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources = std::forward<RemainingResourcesT>(value); }
+    template<typename RemainingResourcesT = Aws::Vector<Resource>>
+    ContainerInstance& WithRemainingResources(RemainingResourcesT&& value) { SetRemainingResources(std::forward<RemainingResourcesT>(value)); return *this;}
+    template<typename RemainingResourcesT = Resource>
+    ContainerInstance& AddRemainingResources(RemainingResourcesT&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources.emplace_back(std::forward<RemainingResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -153,14 +147,14 @@ namespace Model
      * the Amazon ECS container agent when it registered the container instance with
      * Amazon ECS.</p>
      */
-    inline const Aws::Vector<Resource>& GetRegisteredResources() const{ return m_registeredResources; }
+    inline const Aws::Vector<Resource>& GetRegisteredResources() const { return m_registeredResources; }
     inline bool RegisteredResourcesHasBeenSet() const { return m_registeredResourcesHasBeenSet; }
-    inline void SetRegisteredResources(const Aws::Vector<Resource>& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources = value; }
-    inline void SetRegisteredResources(Aws::Vector<Resource>&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources = std::move(value); }
-    inline ContainerInstance& WithRegisteredResources(const Aws::Vector<Resource>& value) { SetRegisteredResources(value); return *this;}
-    inline ContainerInstance& WithRegisteredResources(Aws::Vector<Resource>&& value) { SetRegisteredResources(std::move(value)); return *this;}
-    inline ContainerInstance& AddRegisteredResources(const Resource& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources.push_back(value); return *this; }
-    inline ContainerInstance& AddRegisteredResources(Resource&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources.push_back(std::move(value)); return *this; }
+    template<typename RegisteredResourcesT = Aws::Vector<Resource>>
+    void SetRegisteredResources(RegisteredResourcesT&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources = std::forward<RegisteredResourcesT>(value); }
+    template<typename RegisteredResourcesT = Aws::Vector<Resource>>
+    ContainerInstance& WithRegisteredResources(RegisteredResourcesT&& value) { SetRegisteredResources(std::forward<RegisteredResourcesT>(value)); return *this;}
+    template<typename RegisteredResourcesT = Resource>
+    ContainerInstance& AddRegisteredResources(RegisteredResourcesT&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources.emplace_back(std::forward<RegisteredResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -186,28 +180,24 @@ namespace Model
      * instance draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline ContainerInstance& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ContainerInstance& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ContainerInstance& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ContainerInstance& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason that the container instance reached its current status.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline ContainerInstance& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline ContainerInstance& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline ContainerInstance& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    ContainerInstance& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -217,7 +207,7 @@ namespace Model
      * <code>false</code>. Only instances connected to an agent can accept task
      * placement requests.</p>
      */
-    inline bool GetAgentConnected() const{ return m_agentConnected; }
+    inline bool GetAgentConnected() const { return m_agentConnected; }
     inline bool AgentConnectedHasBeenSet() const { return m_agentConnectedHasBeenSet; }
     inline void SetAgentConnected(bool value) { m_agentConnectedHasBeenSet = true; m_agentConnected = value; }
     inline ContainerInstance& WithAgentConnected(bool value) { SetAgentConnected(value); return *this;}
@@ -228,7 +218,7 @@ namespace Model
      * <p>The number of tasks on the container instance that have a desired status
      * (<code>desiredStatus</code>) of <code>RUNNING</code>.</p>
      */
-    inline int GetRunningTasksCount() const{ return m_runningTasksCount; }
+    inline int GetRunningTasksCount() const { return m_runningTasksCount; }
     inline bool RunningTasksCountHasBeenSet() const { return m_runningTasksCountHasBeenSet; }
     inline void SetRunningTasksCount(int value) { m_runningTasksCountHasBeenSet = true; m_runningTasksCount = value; }
     inline ContainerInstance& WithRunningTasksCount(int value) { SetRunningTasksCount(value); return *this;}
@@ -239,7 +229,7 @@ namespace Model
      * <p>The number of tasks on the container instance that are in the
      * <code>PENDING</code> status.</p>
      */
-    inline int GetPendingTasksCount() const{ return m_pendingTasksCount; }
+    inline int GetPendingTasksCount() const { return m_pendingTasksCount; }
     inline bool PendingTasksCountHasBeenSet() const { return m_pendingTasksCountHasBeenSet; }
     inline void SetPendingTasksCount(int value) { m_pendingTasksCountHasBeenSet = true; m_pendingTasksCount = value; }
     inline ContainerInstance& WithPendingTasksCount(int value) { SetPendingTasksCount(value); return *this;}
@@ -250,12 +240,10 @@ namespace Model
      * <p>The status of the most recent agent update. If an update wasn't ever
      * requested, this value is <code>NULL</code>.</p>
      */
-    inline const AgentUpdateStatus& GetAgentUpdateStatus() const{ return m_agentUpdateStatus; }
+    inline AgentUpdateStatus GetAgentUpdateStatus() const { return m_agentUpdateStatus; }
     inline bool AgentUpdateStatusHasBeenSet() const { return m_agentUpdateStatusHasBeenSet; }
-    inline void SetAgentUpdateStatus(const AgentUpdateStatus& value) { m_agentUpdateStatusHasBeenSet = true; m_agentUpdateStatus = value; }
-    inline void SetAgentUpdateStatus(AgentUpdateStatus&& value) { m_agentUpdateStatusHasBeenSet = true; m_agentUpdateStatus = std::move(value); }
-    inline ContainerInstance& WithAgentUpdateStatus(const AgentUpdateStatus& value) { SetAgentUpdateStatus(value); return *this;}
-    inline ContainerInstance& WithAgentUpdateStatus(AgentUpdateStatus&& value) { SetAgentUpdateStatus(std::move(value)); return *this;}
+    inline void SetAgentUpdateStatus(AgentUpdateStatus value) { m_agentUpdateStatusHasBeenSet = true; m_agentUpdateStatus = value; }
+    inline ContainerInstance& WithAgentUpdateStatus(AgentUpdateStatus value) { SetAgentUpdateStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -265,14 +253,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html">PutAttributes</a>
      * operation.</p>
      */
-    inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<Attribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline ContainerInstance& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
-    inline ContainerInstance& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline ContainerInstance& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline ContainerInstance& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    ContainerInstance& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = Attribute>
+    ContainerInstance& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -280,12 +268,12 @@ namespace Model
      * <p>The Unix timestamp for the time when the container instance was
      * registered.</p>
      */
-    inline const Aws::Utils::DateTime& GetRegisteredAt() const{ return m_registeredAt; }
+    inline const Aws::Utils::DateTime& GetRegisteredAt() const { return m_registeredAt; }
     inline bool RegisteredAtHasBeenSet() const { return m_registeredAtHasBeenSet; }
-    inline void SetRegisteredAt(const Aws::Utils::DateTime& value) { m_registeredAtHasBeenSet = true; m_registeredAt = value; }
-    inline void SetRegisteredAt(Aws::Utils::DateTime&& value) { m_registeredAtHasBeenSet = true; m_registeredAt = std::move(value); }
-    inline ContainerInstance& WithRegisteredAt(const Aws::Utils::DateTime& value) { SetRegisteredAt(value); return *this;}
-    inline ContainerInstance& WithRegisteredAt(Aws::Utils::DateTime&& value) { SetRegisteredAt(std::move(value)); return *this;}
+    template<typename RegisteredAtT = Aws::Utils::DateTime>
+    void SetRegisteredAt(RegisteredAtT&& value) { m_registeredAtHasBeenSet = true; m_registeredAt = std::forward<RegisteredAtT>(value); }
+    template<typename RegisteredAtT = Aws::Utils::DateTime>
+    ContainerInstance& WithRegisteredAt(RegisteredAtT&& value) { SetRegisteredAt(std::forward<RegisteredAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -293,14 +281,14 @@ namespace Model
      * <p>The resources attached to a container instance, such as an elastic network
      * interface.</p>
      */
-    inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
+    inline const Aws::Vector<Attachment>& GetAttachments() const { return m_attachments; }
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
-    inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
-    inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
-    inline ContainerInstance& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
-    inline ContainerInstance& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
-    inline ContainerInstance& AddAttachments(const Attachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
-    inline ContainerInstance& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+    template<typename AttachmentsT = Aws::Vector<Attachment>>
+    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
+    template<typename AttachmentsT = Aws::Vector<Attachment>>
+    ContainerInstance& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
+    template<typename AttachmentsT = Attachment>
+    ContainerInstance& AddAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments.emplace_back(std::forward<AttachmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -322,26 +310,26 @@ namespace Model
      * edit or delete tag keys or values with this prefix. Tags with this prefix do not
      * count against your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ContainerInstance& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ContainerInstance& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ContainerInstance& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ContainerInstance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ContainerInstance& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ContainerInstance& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An object representing the health status of the container instance.</p>
      */
-    inline const ContainerInstanceHealthStatus& GetHealthStatus() const{ return m_healthStatus; }
+    inline const ContainerInstanceHealthStatus& GetHealthStatus() const { return m_healthStatus; }
     inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
-    inline void SetHealthStatus(const ContainerInstanceHealthStatus& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
-    inline void SetHealthStatus(ContainerInstanceHealthStatus&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
-    inline ContainerInstance& WithHealthStatus(const ContainerInstanceHealthStatus& value) { SetHealthStatus(value); return *this;}
-    inline ContainerInstance& WithHealthStatus(ContainerInstanceHealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
+    template<typename HealthStatusT = ContainerInstanceHealthStatus>
+    void SetHealthStatus(HealthStatusT&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::forward<HealthStatusT>(value); }
+    template<typename HealthStatusT = ContainerInstanceHealthStatus>
+    ContainerInstance& WithHealthStatus(HealthStatusT&& value) { SetHealthStatus(std::forward<HealthStatusT>(value)); return *this;}
     ///@}
   private:
 
@@ -354,7 +342,7 @@ namespace Model
     Aws::String m_capacityProviderName;
     bool m_capacityProviderNameHasBeenSet = false;
 
-    long long m_version;
+    long long m_version{0};
     bool m_versionHasBeenSet = false;
 
     VersionInfo m_versionInfo;
@@ -372,22 +360,22 @@ namespace Model
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
 
-    bool m_agentConnected;
+    bool m_agentConnected{false};
     bool m_agentConnectedHasBeenSet = false;
 
-    int m_runningTasksCount;
+    int m_runningTasksCount{0};
     bool m_runningTasksCountHasBeenSet = false;
 
-    int m_pendingTasksCount;
+    int m_pendingTasksCount{0};
     bool m_pendingTasksCountHasBeenSet = false;
 
-    AgentUpdateStatus m_agentUpdateStatus;
+    AgentUpdateStatus m_agentUpdateStatus{AgentUpdateStatus::NOT_SET};
     bool m_agentUpdateStatusHasBeenSet = false;
 
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_registeredAt;
+    Aws::Utils::DateTime m_registeredAt{};
     bool m_registeredAtHasBeenSet = false;
 
     Aws::Vector<Attachment> m_attachments;

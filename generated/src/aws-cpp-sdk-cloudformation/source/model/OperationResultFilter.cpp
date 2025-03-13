@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-OperationResultFilter::OperationResultFilter() : 
-    m_name(OperationResultFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 OperationResultFilter::OperationResultFilter(const XmlNode& xmlNode)
-  : OperationResultFilter()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ OperationResultFilter& OperationResultFilter::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = OperationResultFilterNameMapper::GetOperationResultFilterNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()).c_str());
+      m_name = OperationResultFilterNameMapper::GetOperationResultFilterNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()));
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");
     if(!valuesNode.IsNull())
     {
       m_values = Aws::Utils::Xml::DecodeEscapedXmlText(valuesNode.GetText());
       m_valuesHasBeenSet = true;
+       m_valuesHasBeenSet = true;
     }
   }
 

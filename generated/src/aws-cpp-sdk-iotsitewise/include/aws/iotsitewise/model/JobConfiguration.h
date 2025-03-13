@@ -32,7 +32,7 @@ namespace Model
   class JobConfiguration
   {
   public:
-    AWS_IOTSITEWISE_API JobConfiguration();
+    AWS_IOTSITEWISE_API JobConfiguration() = default;
     AWS_IOTSITEWISE_API JobConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API JobConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The file format of the data in S3.</p>
      */
-    inline const FileFormat& GetFileFormat() const{ return m_fileFormat; }
+    inline const FileFormat& GetFileFormat() const { return m_fileFormat; }
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
-    inline void SetFileFormat(const FileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
-    inline void SetFileFormat(FileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
-    inline JobConfiguration& WithFileFormat(const FileFormat& value) { SetFileFormat(value); return *this;}
-    inline JobConfiguration& WithFileFormat(FileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+    template<typename FileFormatT = FileFormat>
+    void SetFileFormat(FileFormatT&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::forward<FileFormatT>(value); }
+    template<typename FileFormatT = FileFormat>
+    JobConfiguration& WithFileFormat(FileFormatT&& value) { SetFileFormat(std::forward<FileFormatT>(value)); return *this;}
     ///@}
   private:
 

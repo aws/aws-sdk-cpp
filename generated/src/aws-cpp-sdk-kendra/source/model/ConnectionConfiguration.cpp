@@ -18,18 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ConnectionConfiguration::ConnectionConfiguration() : 
-    m_databaseHostHasBeenSet(false),
-    m_databasePort(0),
-    m_databasePortHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
-{
-}
-
 ConnectionConfiguration::ConnectionConfiguration(JsonView jsonValue)
-  : ConnectionConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ConnectionConfiguration& ConnectionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseHost"))
   {
     m_databaseHost = jsonValue.GetString("DatabaseHost");
-
     m_databaseHostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabasePort"))
   {
     m_databasePort = jsonValue.GetInteger("DatabasePort");
-
     m_databasePortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

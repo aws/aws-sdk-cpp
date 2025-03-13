@@ -27,7 +27,7 @@ namespace Model
   class UpdateSqlInjectionMatchSetRequest : public WAFRequest
   {
   public:
-    AWS_WAF_API UpdateSqlInjectionMatchSetRequest();
+    AWS_WAF_API UpdateSqlInjectionMatchSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,28 +47,24 @@ namespace Model
      * <code>SqlInjectionMatchSetId</code> is returned by
      * <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
      */
-    inline const Aws::String& GetSqlInjectionMatchSetId() const{ return m_sqlInjectionMatchSetId; }
+    inline const Aws::String& GetSqlInjectionMatchSetId() const { return m_sqlInjectionMatchSetId; }
     inline bool SqlInjectionMatchSetIdHasBeenSet() const { return m_sqlInjectionMatchSetIdHasBeenSet; }
-    inline void SetSqlInjectionMatchSetId(const Aws::String& value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId = value; }
-    inline void SetSqlInjectionMatchSetId(Aws::String&& value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId = std::move(value); }
-    inline void SetSqlInjectionMatchSetId(const char* value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId.assign(value); }
-    inline UpdateSqlInjectionMatchSetRequest& WithSqlInjectionMatchSetId(const Aws::String& value) { SetSqlInjectionMatchSetId(value); return *this;}
-    inline UpdateSqlInjectionMatchSetRequest& WithSqlInjectionMatchSetId(Aws::String&& value) { SetSqlInjectionMatchSetId(std::move(value)); return *this;}
-    inline UpdateSqlInjectionMatchSetRequest& WithSqlInjectionMatchSetId(const char* value) { SetSqlInjectionMatchSetId(value); return *this;}
+    template<typename SqlInjectionMatchSetIdT = Aws::String>
+    void SetSqlInjectionMatchSetId(SqlInjectionMatchSetIdT&& value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId = std::forward<SqlInjectionMatchSetIdT>(value); }
+    template<typename SqlInjectionMatchSetIdT = Aws::String>
+    UpdateSqlInjectionMatchSetRequest& WithSqlInjectionMatchSetId(SqlInjectionMatchSetIdT&& value) { SetSqlInjectionMatchSetId(std::forward<SqlInjectionMatchSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+    inline const Aws::String& GetChangeToken() const { return m_changeToken; }
     inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
-    inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
-    inline void SetChangeToken(const char* value) { m_changeTokenHasBeenSet = true; m_changeToken.assign(value); }
-    inline UpdateSqlInjectionMatchSetRequest& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-    inline UpdateSqlInjectionMatchSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-    inline UpdateSqlInjectionMatchSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    template<typename ChangeTokenT = Aws::String>
+    void SetChangeToken(ChangeTokenT&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::forward<ChangeTokenT>(value); }
+    template<typename ChangeTokenT = Aws::String>
+    UpdateSqlInjectionMatchSetRequest& WithChangeToken(ChangeTokenT&& value) { SetChangeToken(std::forward<ChangeTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,14 @@ namespace Model
      * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
      * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
-    inline const Aws::Vector<SqlInjectionMatchSetUpdate>& GetUpdates() const{ return m_updates; }
+    inline const Aws::Vector<SqlInjectionMatchSetUpdate>& GetUpdates() const { return m_updates; }
     inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
-    inline void SetUpdates(const Aws::Vector<SqlInjectionMatchSetUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
-    inline void SetUpdates(Aws::Vector<SqlInjectionMatchSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
-    inline UpdateSqlInjectionMatchSetRequest& WithUpdates(const Aws::Vector<SqlInjectionMatchSetUpdate>& value) { SetUpdates(value); return *this;}
-    inline UpdateSqlInjectionMatchSetRequest& WithUpdates(Aws::Vector<SqlInjectionMatchSetUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
-    inline UpdateSqlInjectionMatchSetRequest& AddUpdates(const SqlInjectionMatchSetUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
-    inline UpdateSqlInjectionMatchSetRequest& AddUpdates(SqlInjectionMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
+    template<typename UpdatesT = Aws::Vector<SqlInjectionMatchSetUpdate>>
+    void SetUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates = std::forward<UpdatesT>(value); }
+    template<typename UpdatesT = Aws::Vector<SqlInjectionMatchSetUpdate>>
+    UpdateSqlInjectionMatchSetRequest& WithUpdates(UpdatesT&& value) { SetUpdates(std::forward<UpdatesT>(value)); return *this;}
+    template<typename UpdatesT = SqlInjectionMatchSetUpdate>
+    UpdateSqlInjectionMatchSetRequest& AddUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates.emplace_back(std::forward<UpdatesT>(value)); return *this; }
     ///@}
   private:
 

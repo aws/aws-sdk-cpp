@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-RuleDoesNotExistException::RuleDoesNotExistException() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 RuleDoesNotExistException::RuleDoesNotExistException(const XmlNode& xmlNode)
-  : RuleDoesNotExistException()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ RuleDoesNotExistException& RuleDoesNotExistException::operator =(const XmlNode& 
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
   }
 

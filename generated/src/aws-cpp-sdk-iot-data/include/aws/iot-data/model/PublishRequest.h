@@ -30,7 +30,7 @@ namespace Model
   class PublishRequest : public StreamingIoTDataPlaneRequest
   {
   public:
-    AWS_IOTDATAPLANE_API PublishRequest();
+    AWS_IOTDATAPLANE_API PublishRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,21 +47,19 @@ namespace Model
     /**
      * <p>The name of the MQTT topic.</p>
      */
-    inline const Aws::String& GetTopic() const{ return m_topic; }
+    inline const Aws::String& GetTopic() const { return m_topic; }
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-    inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
-    inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
-    inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
-    inline PublishRequest& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-    inline PublishRequest& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-    inline PublishRequest& WithTopic(const char* value) { SetTopic(value); return *this;}
+    template<typename TopicT = Aws::String>
+    void SetTopic(TopicT&& value) { m_topicHasBeenSet = true; m_topic = std::forward<TopicT>(value); }
+    template<typename TopicT = Aws::String>
+    PublishRequest& WithTopic(TopicT&& value) { SetTopic(std::forward<TopicT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
      */
-    inline int GetQos() const{ return m_qos; }
+    inline int GetQos() const { return m_qos; }
     inline bool QosHasBeenSet() const { return m_qosHasBeenSet; }
     inline void SetQos(int value) { m_qosHasBeenSet = true; m_qos = value; }
     inline PublishRequest& WithQos(int value) { SetQos(value); return *this;}
@@ -75,7 +73,7 @@ namespace Model
      * <code>true</code> | <code>false</code> </p> <p>Default value: <code>false</code>
      * </p>
      */
-    inline bool GetRetain() const{ return m_retain; }
+    inline bool GetRetain() const { return m_retain; }
     inline bool RetainHasBeenSet() const { return m_retainHasBeenSet; }
     inline void SetRetain(bool value) { m_retainHasBeenSet = true; m_retain = value; }
     inline PublishRequest& WithRetain(bool value) { SetRetain(value); return *this;}
@@ -91,14 +89,12 @@ namespace Model
      * needs to be base64-encoded:</p> <p> <code>[{"deviceName": "alpha"},
      * {"deviceCnt": "45"}]</code> </p>
      */
-    inline const Aws::String& GetUserProperties() const{ return m_userProperties; }
+    inline const Aws::String& GetUserProperties() const { return m_userProperties; }
     inline bool UserPropertiesHasBeenSet() const { return m_userPropertiesHasBeenSet; }
-    inline void SetUserProperties(const Aws::String& value) { m_userPropertiesHasBeenSet = true; m_userProperties = value; }
-    inline void SetUserProperties(Aws::String&& value) { m_userPropertiesHasBeenSet = true; m_userProperties = std::move(value); }
-    inline void SetUserProperties(const char* value) { m_userPropertiesHasBeenSet = true; m_userProperties.assign(value); }
-    inline PublishRequest& WithUserProperties(const Aws::String& value) { SetUserProperties(value); return *this;}
-    inline PublishRequest& WithUserProperties(Aws::String&& value) { SetUserProperties(std::move(value)); return *this;}
-    inline PublishRequest& WithUserProperties(const char* value) { SetUserProperties(value); return *this;}
+    template<typename UserPropertiesT = Aws::String>
+    void SetUserProperties(UserPropertiesT&& value) { m_userPropertiesHasBeenSet = true; m_userProperties = std::forward<UserPropertiesT>(value); }
+    template<typename UserPropertiesT = Aws::String>
+    PublishRequest& WithUserProperties(UserPropertiesT&& value) { SetUserProperties(std::forward<UserPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +103,10 @@ namespace Model
      * formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value
      * in the API.</p>
      */
-    inline const PayloadFormatIndicator& GetPayloadFormatIndicator() const{ return m_payloadFormatIndicator; }
+    inline PayloadFormatIndicator GetPayloadFormatIndicator() const { return m_payloadFormatIndicator; }
     inline bool PayloadFormatIndicatorHasBeenSet() const { return m_payloadFormatIndicatorHasBeenSet; }
-    inline void SetPayloadFormatIndicator(const PayloadFormatIndicator& value) { m_payloadFormatIndicatorHasBeenSet = true; m_payloadFormatIndicator = value; }
-    inline void SetPayloadFormatIndicator(PayloadFormatIndicator&& value) { m_payloadFormatIndicatorHasBeenSet = true; m_payloadFormatIndicator = std::move(value); }
-    inline PublishRequest& WithPayloadFormatIndicator(const PayloadFormatIndicator& value) { SetPayloadFormatIndicator(value); return *this;}
-    inline PublishRequest& WithPayloadFormatIndicator(PayloadFormatIndicator&& value) { SetPayloadFormatIndicator(std::move(value)); return *this;}
+    inline void SetPayloadFormatIndicator(PayloadFormatIndicator value) { m_payloadFormatIndicatorHasBeenSet = true; m_payloadFormatIndicator = value; }
+    inline PublishRequest& WithPayloadFormatIndicator(PayloadFormatIndicator value) { SetPayloadFormatIndicator(value); return *this;}
     ///@}
 
     ///@{
@@ -122,14 +116,12 @@ namespace Model
      * publish to as part of the request-response flow. The topic must not contain
      * wildcard characters.</p>
      */
-    inline const Aws::String& GetResponseTopic() const{ return m_responseTopic; }
+    inline const Aws::String& GetResponseTopic() const { return m_responseTopic; }
     inline bool ResponseTopicHasBeenSet() const { return m_responseTopicHasBeenSet; }
-    inline void SetResponseTopic(const Aws::String& value) { m_responseTopicHasBeenSet = true; m_responseTopic = value; }
-    inline void SetResponseTopic(Aws::String&& value) { m_responseTopicHasBeenSet = true; m_responseTopic = std::move(value); }
-    inline void SetResponseTopic(const char* value) { m_responseTopicHasBeenSet = true; m_responseTopic.assign(value); }
-    inline PublishRequest& WithResponseTopic(const Aws::String& value) { SetResponseTopic(value); return *this;}
-    inline PublishRequest& WithResponseTopic(Aws::String&& value) { SetResponseTopic(std::move(value)); return *this;}
-    inline PublishRequest& WithResponseTopic(const char* value) { SetResponseTopic(value); return *this;}
+    template<typename ResponseTopicT = Aws::String>
+    void SetResponseTopic(ResponseTopicT&& value) { m_responseTopicHasBeenSet = true; m_responseTopic = std::forward<ResponseTopicT>(value); }
+    template<typename ResponseTopicT = Aws::String>
+    PublishRequest& WithResponseTopic(ResponseTopicT&& value) { SetResponseTopic(std::forward<ResponseTopicT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,14 +130,12 @@ namespace Model
      * identify which request the response message is for when it's received.
      * <code>correlationData</code> is an HTTP header value in the API.</p>
      */
-    inline const Aws::String& GetCorrelationData() const{ return m_correlationData; }
+    inline const Aws::String& GetCorrelationData() const { return m_correlationData; }
     inline bool CorrelationDataHasBeenSet() const { return m_correlationDataHasBeenSet; }
-    inline void SetCorrelationData(const Aws::String& value) { m_correlationDataHasBeenSet = true; m_correlationData = value; }
-    inline void SetCorrelationData(Aws::String&& value) { m_correlationDataHasBeenSet = true; m_correlationData = std::move(value); }
-    inline void SetCorrelationData(const char* value) { m_correlationDataHasBeenSet = true; m_correlationData.assign(value); }
-    inline PublishRequest& WithCorrelationData(const Aws::String& value) { SetCorrelationData(value); return *this;}
-    inline PublishRequest& WithCorrelationData(Aws::String&& value) { SetCorrelationData(std::move(value)); return *this;}
-    inline PublishRequest& WithCorrelationData(const char* value) { SetCorrelationData(value); return *this;}
+    template<typename CorrelationDataT = Aws::String>
+    void SetCorrelationData(CorrelationDataT&& value) { m_correlationDataHasBeenSet = true; m_correlationData = std::forward<CorrelationDataT>(value); }
+    template<typename CorrelationDataT = Aws::String>
+    PublishRequest& WithCorrelationData(CorrelationDataT&& value) { SetCorrelationData(std::forward<CorrelationDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,7 +147,7 @@ namespace Model
      * Web Services IoT Core message broker and protocol limits and quotas </a> from
      * the Amazon Web Services Reference Guide.</p>
      */
-    inline long long GetMessageExpiry() const{ return m_messageExpiry; }
+    inline long long GetMessageExpiry() const { return m_messageExpiry; }
     inline bool MessageExpiryHasBeenSet() const { return m_messageExpiryHasBeenSet; }
     inline void SetMessageExpiry(long long value) { m_messageExpiryHasBeenSet = true; m_messageExpiry = value; }
     inline PublishRequest& WithMessageExpiry(long long value) { SetMessageExpiry(value); return *this;}
@@ -167,17 +157,17 @@ namespace Model
     Aws::String m_topic;
     bool m_topicHasBeenSet = false;
 
-    int m_qos;
+    int m_qos{0};
     bool m_qosHasBeenSet = false;
 
-    bool m_retain;
+    bool m_retain{false};
     bool m_retainHasBeenSet = false;
 
 
     Aws::String m_userProperties;
     bool m_userPropertiesHasBeenSet = false;
 
-    PayloadFormatIndicator m_payloadFormatIndicator;
+    PayloadFormatIndicator m_payloadFormatIndicator{PayloadFormatIndicator::NOT_SET};
     bool m_payloadFormatIndicatorHasBeenSet = false;
 
     Aws::String m_responseTopic;
@@ -186,7 +176,7 @@ namespace Model
     Aws::String m_correlationData;
     bool m_correlationDataHasBeenSet = false;
 
-    long long m_messageExpiry;
+    long long m_messageExpiry{0};
     bool m_messageExpiryHasBeenSet = false;
   };
 

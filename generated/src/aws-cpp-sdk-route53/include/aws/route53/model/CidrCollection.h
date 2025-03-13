@@ -31,7 +31,7 @@ namespace Model
   class CidrCollection
   {
   public:
-    AWS_ROUTE53_API CidrCollection();
+    AWS_ROUTE53_API CidrCollection() = default;
     AWS_ROUTE53_API CidrCollection(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API CidrCollection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,42 +43,36 @@ namespace Model
      * <p>The ARN of the collection. Can be used to reference the collection in IAM
      * policy or in another Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline CidrCollection& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CidrCollection& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CidrCollection& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CidrCollection& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the CIDR collection.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline CidrCollection& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CidrCollection& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CidrCollection& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CidrCollection& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a CIDR collection.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CidrCollection& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CidrCollection& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CidrCollection& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CidrCollection& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +81,7 @@ namespace Model
      * collection and increments by 1 each time you update settings for the CIDR
      * collection.</p>
      */
-    inline long long GetVersion() const{ return m_version; }
+    inline long long GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
     inline CidrCollection& WithVersion(long long value) { SetVersion(value); return *this;}
@@ -103,7 +97,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    long long m_version;
+    long long m_version{0};
     bool m_versionHasBeenSet = false;
   };
 

@@ -27,7 +27,7 @@ namespace Model
   class CreateIpAccessSettingsResult
   {
   public:
-    AWS_WORKSPACESWEB_API CreateIpAccessSettingsResult();
+    AWS_WORKSPACESWEB_API CreateIpAccessSettingsResult() = default;
     AWS_WORKSPACESWEB_API CreateIpAccessSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACESWEB_API CreateIpAccessSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the IP access settings resource.</p>
      */
-    inline const Aws::String& GetIpAccessSettingsArn() const{ return m_ipAccessSettingsArn; }
-    inline void SetIpAccessSettingsArn(const Aws::String& value) { m_ipAccessSettingsArn = value; }
-    inline void SetIpAccessSettingsArn(Aws::String&& value) { m_ipAccessSettingsArn = std::move(value); }
-    inline void SetIpAccessSettingsArn(const char* value) { m_ipAccessSettingsArn.assign(value); }
-    inline CreateIpAccessSettingsResult& WithIpAccessSettingsArn(const Aws::String& value) { SetIpAccessSettingsArn(value); return *this;}
-    inline CreateIpAccessSettingsResult& WithIpAccessSettingsArn(Aws::String&& value) { SetIpAccessSettingsArn(std::move(value)); return *this;}
-    inline CreateIpAccessSettingsResult& WithIpAccessSettingsArn(const char* value) { SetIpAccessSettingsArn(value); return *this;}
+    inline const Aws::String& GetIpAccessSettingsArn() const { return m_ipAccessSettingsArn; }
+    template<typename IpAccessSettingsArnT = Aws::String>
+    void SetIpAccessSettingsArn(IpAccessSettingsArnT&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::forward<IpAccessSettingsArnT>(value); }
+    template<typename IpAccessSettingsArnT = Aws::String>
+    CreateIpAccessSettingsResult& WithIpAccessSettingsArn(IpAccessSettingsArnT&& value) { SetIpAccessSettingsArn(std::forward<IpAccessSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateIpAccessSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateIpAccessSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateIpAccessSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateIpAccessSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_ipAccessSettingsArn;
+    bool m_ipAccessSettingsArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ namespace Model
   class ResourceShare
   {
   public:
-    AWS_RAM_API ResourceShare();
+    AWS_RAM_API ResourceShare() = default;
     AWS_RAM_API ResourceShare(Aws::Utils::Json::JsonView jsonValue);
     AWS_RAM_API ResourceShare& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,42 +48,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of the resource share</p>
      */
-    inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
+    inline const Aws::String& GetResourceShareArn() const { return m_resourceShareArn; }
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
-    inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
-    inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
-    inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
-    inline ResourceShare& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
-    inline ResourceShare& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
-    inline ResourceShare& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
+    template<typename ResourceShareArnT = Aws::String>
+    void SetResourceShareArn(ResourceShareArnT&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::forward<ResourceShareArnT>(value); }
+    template<typename ResourceShareArnT = Aws::String>
+    ResourceShare& WithResourceShareArn(ResourceShareArnT&& value) { SetResourceShareArn(std::forward<ResourceShareArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the resource share.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ResourceShare& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ResourceShare& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ResourceShare& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ResourceShare& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services account that owns the resource share.</p>
      */
-    inline const Aws::String& GetOwningAccountId() const{ return m_owningAccountId; }
+    inline const Aws::String& GetOwningAccountId() const { return m_owningAccountId; }
     inline bool OwningAccountIdHasBeenSet() const { return m_owningAccountIdHasBeenSet; }
-    inline void SetOwningAccountId(const Aws::String& value) { m_owningAccountIdHasBeenSet = true; m_owningAccountId = value; }
-    inline void SetOwningAccountId(Aws::String&& value) { m_owningAccountIdHasBeenSet = true; m_owningAccountId = std::move(value); }
-    inline void SetOwningAccountId(const char* value) { m_owningAccountIdHasBeenSet = true; m_owningAccountId.assign(value); }
-    inline ResourceShare& WithOwningAccountId(const Aws::String& value) { SetOwningAccountId(value); return *this;}
-    inline ResourceShare& WithOwningAccountId(Aws::String&& value) { SetOwningAccountId(std::move(value)); return *this;}
-    inline ResourceShare& WithOwningAccountId(const char* value) { SetOwningAccountId(value); return *this;}
+    template<typename OwningAccountIdT = Aws::String>
+    void SetOwningAccountId(OwningAccountIdT&& value) { m_owningAccountIdHasBeenSet = true; m_owningAccountId = std::forward<OwningAccountIdT>(value); }
+    template<typename OwningAccountIdT = Aws::String>
+    ResourceShare& WithOwningAccountId(OwningAccountIdT&& value) { SetOwningAccountId(std::forward<OwningAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +89,7 @@ namespace Model
      * accounts in the same organization as the account that owns the resource
      * share.</p> </li> </ul>
      */
-    inline bool GetAllowExternalPrincipals() const{ return m_allowExternalPrincipals; }
+    inline bool GetAllowExternalPrincipals() const { return m_allowExternalPrincipals; }
     inline bool AllowExternalPrincipalsHasBeenSet() const { return m_allowExternalPrincipalsHasBeenSet; }
     inline void SetAllowExternalPrincipals(bool value) { m_allowExternalPrincipalsHasBeenSet = true; m_allowExternalPrincipals = value; }
     inline ResourceShare& WithAllowExternalPrincipals(bool value) { SetAllowExternalPrincipals(value); return *this;}
@@ -105,64 +99,60 @@ namespace Model
     /**
      * <p>The current status of the resource share.</p>
      */
-    inline const ResourceShareStatus& GetStatus() const{ return m_status; }
+    inline ResourceShareStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ResourceShareStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ResourceShareStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ResourceShare& WithStatus(const ResourceShareStatus& value) { SetStatus(value); return *this;}
-    inline ResourceShare& WithStatus(ResourceShareStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ResourceShareStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ResourceShare& WithStatus(ResourceShareStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message about the status of the resource share.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline ResourceShare& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ResourceShare& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ResourceShare& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ResourceShare& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tag key and value pairs attached to the resource share.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ResourceShare& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ResourceShare& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ResourceShare& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ResourceShare& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ResourceShare& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ResourceShare& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the resource share was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ResourceShare& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ResourceShare& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ResourceShare& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the resource share was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline ResourceShare& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline ResourceShare& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    ResourceShare& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -186,12 +176,10 @@ namespace Model
      * progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
      * </ul>
      */
-    inline const ResourceShareFeatureSet& GetFeatureSet() const{ return m_featureSet; }
+    inline ResourceShareFeatureSet GetFeatureSet() const { return m_featureSet; }
     inline bool FeatureSetHasBeenSet() const { return m_featureSetHasBeenSet; }
-    inline void SetFeatureSet(const ResourceShareFeatureSet& value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
-    inline void SetFeatureSet(ResourceShareFeatureSet&& value) { m_featureSetHasBeenSet = true; m_featureSet = std::move(value); }
-    inline ResourceShare& WithFeatureSet(const ResourceShareFeatureSet& value) { SetFeatureSet(value); return *this;}
-    inline ResourceShare& WithFeatureSet(ResourceShareFeatureSet&& value) { SetFeatureSet(std::move(value)); return *this;}
+    inline void SetFeatureSet(ResourceShareFeatureSet value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
+    inline ResourceShare& WithFeatureSet(ResourceShareFeatureSet value) { SetFeatureSet(value); return *this;}
     ///@}
   private:
 
@@ -204,10 +192,10 @@ namespace Model
     Aws::String m_owningAccountId;
     bool m_owningAccountIdHasBeenSet = false;
 
-    bool m_allowExternalPrincipals;
+    bool m_allowExternalPrincipals{false};
     bool m_allowExternalPrincipalsHasBeenSet = false;
 
-    ResourceShareStatus m_status;
+    ResourceShareStatus m_status{ResourceShareStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
@@ -216,13 +204,13 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
 
-    ResourceShareFeatureSet m_featureSet;
+    ResourceShareFeatureSet m_featureSet{ResourceShareFeatureSet::NOT_SET};
     bool m_featureSetHasBeenSet = false;
   };
 

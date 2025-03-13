@@ -10,24 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CopySnapshotRequest::CopySnapshotRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_destinationOutpostArnHasBeenSet(false),
-    m_destinationRegionHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_presignedUrlHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_sourceSnapshotIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_completionDurationMinutes(0),
-    m_completionDurationMinutesHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CopySnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

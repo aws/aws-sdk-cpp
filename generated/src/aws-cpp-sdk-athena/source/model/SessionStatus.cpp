@@ -18,19 +18,7 @@ namespace Athena
 namespace Model
 {
 
-SessionStatus::SessionStatus() : 
-    m_startDateTimeHasBeenSet(false),
-    m_lastModifiedDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_idleSinceDateTimeHasBeenSet(false),
-    m_state(SessionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false)
-{
-}
-
 SessionStatus::SessionStatus(JsonView jsonValue)
-  : SessionStatus()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ SessionStatus& SessionStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartDateTime"))
   {
     m_startDateTime = jsonValue.GetDouble("StartDateTime");
-
     m_startDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDateTime"))
   {
     m_lastModifiedDateTime = jsonValue.GetDouble("LastModifiedDateTime");
-
     m_lastModifiedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDateTime"))
   {
     m_endDateTime = jsonValue.GetDouble("EndDateTime");
-
     m_endDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdleSinceDateTime"))
   {
     m_idleSinceDateTime = jsonValue.GetDouble("IdleSinceDateTime");
-
     m_idleSinceDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = SessionStateMapper::GetSessionStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateChangeReason"))
   {
     m_stateChangeReason = jsonValue.GetString("StateChangeReason");
-
     m_stateChangeReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InviteUsersRequest::InviteUsersRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_userEmailListHasBeenSet(false),
-    m_userType(UserType::NOT_SET),
-    m_userTypeHasBeenSet(false)
-{
-}
-
 Aws::String InviteUsersRequest::SerializePayload() const
 {
   JsonValue payload;

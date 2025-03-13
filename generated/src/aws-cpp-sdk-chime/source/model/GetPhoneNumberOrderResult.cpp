@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPhoneNumberOrderResult::GetPhoneNumberOrderResult()
-{
-}
-
 GetPhoneNumberOrderResult::GetPhoneNumberOrderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetPhoneNumberOrderResult& GetPhoneNumberOrderResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("PhoneNumberOrder"))
   {
     m_phoneNumberOrder = jsonValue.GetObject("PhoneNumberOrder");
-
+    m_phoneNumberOrderHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

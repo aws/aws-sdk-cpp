@@ -33,7 +33,7 @@ namespace Model
   class IngressBooleanExpression
   {
   public:
-    AWS_MAILMANAGER_API IngressBooleanExpression();
+    AWS_MAILMANAGER_API IngressBooleanExpression() = default;
     AWS_MAILMANAGER_API IngressBooleanExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API IngressBooleanExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>The operand on which to perform a boolean condition operation.</p>
      */
-    inline const IngressBooleanToEvaluate& GetEvaluate() const{ return m_evaluate; }
+    inline const IngressBooleanToEvaluate& GetEvaluate() const { return m_evaluate; }
     inline bool EvaluateHasBeenSet() const { return m_evaluateHasBeenSet; }
-    inline void SetEvaluate(const IngressBooleanToEvaluate& value) { m_evaluateHasBeenSet = true; m_evaluate = value; }
-    inline void SetEvaluate(IngressBooleanToEvaluate&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::move(value); }
-    inline IngressBooleanExpression& WithEvaluate(const IngressBooleanToEvaluate& value) { SetEvaluate(value); return *this;}
-    inline IngressBooleanExpression& WithEvaluate(IngressBooleanToEvaluate&& value) { SetEvaluate(std::move(value)); return *this;}
+    template<typename EvaluateT = IngressBooleanToEvaluate>
+    void SetEvaluate(EvaluateT&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::forward<EvaluateT>(value); }
+    template<typename EvaluateT = IngressBooleanToEvaluate>
+    IngressBooleanExpression& WithEvaluate(EvaluateT&& value) { SetEvaluate(std::forward<EvaluateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The matching operator for a boolean condition expression.</p>
      */
-    inline const IngressBooleanOperator& GetOperator() const{ return m_operator; }
+    inline IngressBooleanOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const IngressBooleanOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(IngressBooleanOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline IngressBooleanExpression& WithOperator(const IngressBooleanOperator& value) { SetOperator(value); return *this;}
-    inline IngressBooleanExpression& WithOperator(IngressBooleanOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(IngressBooleanOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline IngressBooleanExpression& WithOperator(IngressBooleanOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
     IngressBooleanToEvaluate m_evaluate;
     bool m_evaluateHasBeenSet = false;
 
-    IngressBooleanOperator m_operator;
+    IngressBooleanOperator m_operator{IngressBooleanOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

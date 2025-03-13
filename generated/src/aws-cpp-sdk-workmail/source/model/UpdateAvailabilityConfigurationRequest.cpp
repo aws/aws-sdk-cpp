@@ -12,14 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAvailabilityConfigurationRequest::UpdateAvailabilityConfigurationRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_ewsProviderHasBeenSet(false),
-    m_lambdaProviderHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAvailabilityConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

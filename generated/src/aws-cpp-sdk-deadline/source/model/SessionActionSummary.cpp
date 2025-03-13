@@ -18,21 +18,7 @@ namespace deadline
 namespace Model
 {
 
-SessionActionSummary::SessionActionSummary() : 
-    m_sessionActionIdHasBeenSet(false),
-    m_status(SessionActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_workerUpdatedAtHasBeenSet(false),
-    m_progressPercent(0.0),
-    m_progressPercentHasBeenSet(false),
-    m_definitionHasBeenSet(false)
-{
-}
-
 SessionActionSummary::SessionActionSummary(JsonView jsonValue)
-  : SessionActionSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ SessionActionSummary& SessionActionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sessionActionId"))
   {
     m_sessionActionId = jsonValue.GetString("sessionActionId");
-
     m_sessionActionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SessionActionStatusMapper::GetSessionActionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetString("endedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workerUpdatedAt"))
   {
     m_workerUpdatedAt = jsonValue.GetString("workerUpdatedAt");
-
     m_workerUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progressPercent"))
   {
     m_progressPercent = jsonValue.GetDouble("progressPercent");
-
     m_progressPercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetObject("definition");
-
     m_definitionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,15 +20,7 @@ namespace Route53
 namespace Model
 {
 
-QueryLoggingConfig::QueryLoggingConfig() : 
-    m_idHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false)
-{
-}
-
 QueryLoggingConfig::QueryLoggingConfig(const XmlNode& xmlNode)
-  : QueryLoggingConfig()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ QueryLoggingConfig& QueryLoggingConfig::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
       m_hostedZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneIdNode.GetText());
       m_hostedZoneIdHasBeenSet = true;
+       m_hostedZoneIdHasBeenSet = true;
     }
     XmlNode cloudWatchLogsLogGroupArnNode = resultNode.FirstChild("CloudWatchLogsLogGroupArn");
     if(!cloudWatchLogsLogGroupArnNode.IsNull())
     {
       m_cloudWatchLogsLogGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(cloudWatchLogsLogGroupArnNode.GetText());
       m_cloudWatchLogsLogGroupArnHasBeenSet = true;
+       m_cloudWatchLogsLogGroupArnHasBeenSet = true;
     }
   }
 

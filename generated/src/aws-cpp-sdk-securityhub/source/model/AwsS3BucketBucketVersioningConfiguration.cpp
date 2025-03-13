@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketBucketVersioningConfiguration::AwsS3BucketBucketVersioningConfiguration() : 
-    m_isMfaDeleteEnabled(false),
-    m_isMfaDeleteEnabledHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsS3BucketBucketVersioningConfiguration::AwsS3BucketBucketVersioningConfiguration(JsonView jsonValue)
-  : AwsS3BucketBucketVersioningConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsS3BucketBucketVersioningConfiguration& AwsS3BucketBucketVersioningConfigurati
   if(jsonValue.ValueExists("IsMfaDeleteEnabled"))
   {
     m_isMfaDeleteEnabled = jsonValue.GetBool("IsMfaDeleteEnabled");
-
     m_isMfaDeleteEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class SOARecord
   {
   public:
-    AWS_SESV2_API SOARecord();
+    AWS_SESV2_API SOARecord() = default;
     AWS_SESV2_API SOARecord(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API SOARecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,35 +42,31 @@ namespace Model
     /**
      * <p>Primary name server specified in the SOA record.</p>
      */
-    inline const Aws::String& GetPrimaryNameServer() const{ return m_primaryNameServer; }
+    inline const Aws::String& GetPrimaryNameServer() const { return m_primaryNameServer; }
     inline bool PrimaryNameServerHasBeenSet() const { return m_primaryNameServerHasBeenSet; }
-    inline void SetPrimaryNameServer(const Aws::String& value) { m_primaryNameServerHasBeenSet = true; m_primaryNameServer = value; }
-    inline void SetPrimaryNameServer(Aws::String&& value) { m_primaryNameServerHasBeenSet = true; m_primaryNameServer = std::move(value); }
-    inline void SetPrimaryNameServer(const char* value) { m_primaryNameServerHasBeenSet = true; m_primaryNameServer.assign(value); }
-    inline SOARecord& WithPrimaryNameServer(const Aws::String& value) { SetPrimaryNameServer(value); return *this;}
-    inline SOARecord& WithPrimaryNameServer(Aws::String&& value) { SetPrimaryNameServer(std::move(value)); return *this;}
-    inline SOARecord& WithPrimaryNameServer(const char* value) { SetPrimaryNameServer(value); return *this;}
+    template<typename PrimaryNameServerT = Aws::String>
+    void SetPrimaryNameServer(PrimaryNameServerT&& value) { m_primaryNameServerHasBeenSet = true; m_primaryNameServer = std::forward<PrimaryNameServerT>(value); }
+    template<typename PrimaryNameServerT = Aws::String>
+    SOARecord& WithPrimaryNameServer(PrimaryNameServerT&& value) { SetPrimaryNameServer(std::forward<PrimaryNameServerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Administrative contact email from the SOA record.</p>
      */
-    inline const Aws::String& GetAdminEmail() const{ return m_adminEmail; }
+    inline const Aws::String& GetAdminEmail() const { return m_adminEmail; }
     inline bool AdminEmailHasBeenSet() const { return m_adminEmailHasBeenSet; }
-    inline void SetAdminEmail(const Aws::String& value) { m_adminEmailHasBeenSet = true; m_adminEmail = value; }
-    inline void SetAdminEmail(Aws::String&& value) { m_adminEmailHasBeenSet = true; m_adminEmail = std::move(value); }
-    inline void SetAdminEmail(const char* value) { m_adminEmailHasBeenSet = true; m_adminEmail.assign(value); }
-    inline SOARecord& WithAdminEmail(const Aws::String& value) { SetAdminEmail(value); return *this;}
-    inline SOARecord& WithAdminEmail(Aws::String&& value) { SetAdminEmail(std::move(value)); return *this;}
-    inline SOARecord& WithAdminEmail(const char* value) { SetAdminEmail(value); return *this;}
+    template<typename AdminEmailT = Aws::String>
+    void SetAdminEmail(AdminEmailT&& value) { m_adminEmailHasBeenSet = true; m_adminEmail = std::forward<AdminEmailT>(value); }
+    template<typename AdminEmailT = Aws::String>
+    SOARecord& WithAdminEmail(AdminEmailT&& value) { SetAdminEmail(std::forward<AdminEmailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Serial number from the SOA record.</p>
      */
-    inline long long GetSerialNumber() const{ return m_serialNumber; }
+    inline long long GetSerialNumber() const { return m_serialNumber; }
     inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
     inline void SetSerialNumber(long long value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
     inline SOARecord& WithSerialNumber(long long value) { SetSerialNumber(value); return *this;}
@@ -83,7 +79,7 @@ namespace Model
     Aws::String m_adminEmail;
     bool m_adminEmailHasBeenSet = false;
 
-    long long m_serialNumber;
+    long long m_serialNumber{0};
     bool m_serialNumberHasBeenSet = false;
   };
 

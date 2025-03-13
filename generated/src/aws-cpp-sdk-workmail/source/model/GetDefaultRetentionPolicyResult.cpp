@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDefaultRetentionPolicyResult::GetDefaultRetentionPolicyResult()
-{
-}
-
 GetDefaultRetentionPolicyResult::GetDefaultRetentionPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ GetDefaultRetentionPolicyResult& GetDefaultRetentionPolicyResult::operator =(con
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FolderConfigurations"))
   {
     Aws::Utils::Array<JsonView> folderConfigurationsJsonList = jsonValue.GetArray("FolderConfigurations");
@@ -54,14 +47,15 @@ GetDefaultRetentionPolicyResult& GetDefaultRetentionPolicyResult::operator =(con
     {
       m_folderConfigurations.push_back(folderConfigurationsJsonList[folderConfigurationsIndex].AsObject());
     }
+    m_folderConfigurationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

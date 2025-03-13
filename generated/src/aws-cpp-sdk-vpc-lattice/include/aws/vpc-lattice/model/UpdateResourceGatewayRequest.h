@@ -22,7 +22,7 @@ namespace Model
   class UpdateResourceGatewayRequest : public VPCLatticeRequest
   {
   public:
-    AWS_VPCLATTICE_API UpdateResourceGatewayRequest();
+    AWS_VPCLATTICE_API UpdateResourceGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,29 +37,26 @@ namespace Model
     /**
      * <p>The ID or ARN of the resource gateway.</p>
      */
-    inline const Aws::String& GetResourceGatewayIdentifier() const{ return m_resourceGatewayIdentifier; }
+    inline const Aws::String& GetResourceGatewayIdentifier() const { return m_resourceGatewayIdentifier; }
     inline bool ResourceGatewayIdentifierHasBeenSet() const { return m_resourceGatewayIdentifierHasBeenSet; }
-    inline void SetResourceGatewayIdentifier(const Aws::String& value) { m_resourceGatewayIdentifierHasBeenSet = true; m_resourceGatewayIdentifier = value; }
-    inline void SetResourceGatewayIdentifier(Aws::String&& value) { m_resourceGatewayIdentifierHasBeenSet = true; m_resourceGatewayIdentifier = std::move(value); }
-    inline void SetResourceGatewayIdentifier(const char* value) { m_resourceGatewayIdentifierHasBeenSet = true; m_resourceGatewayIdentifier.assign(value); }
-    inline UpdateResourceGatewayRequest& WithResourceGatewayIdentifier(const Aws::String& value) { SetResourceGatewayIdentifier(value); return *this;}
-    inline UpdateResourceGatewayRequest& WithResourceGatewayIdentifier(Aws::String&& value) { SetResourceGatewayIdentifier(std::move(value)); return *this;}
-    inline UpdateResourceGatewayRequest& WithResourceGatewayIdentifier(const char* value) { SetResourceGatewayIdentifier(value); return *this;}
+    template<typename ResourceGatewayIdentifierT = Aws::String>
+    void SetResourceGatewayIdentifier(ResourceGatewayIdentifierT&& value) { m_resourceGatewayIdentifierHasBeenSet = true; m_resourceGatewayIdentifier = std::forward<ResourceGatewayIdentifierT>(value); }
+    template<typename ResourceGatewayIdentifierT = Aws::String>
+    UpdateResourceGatewayRequest& WithResourceGatewayIdentifier(ResourceGatewayIdentifierT&& value) { SetResourceGatewayIdentifier(std::forward<ResourceGatewayIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the security groups associated with the resource gateway.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline UpdateResourceGatewayRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline UpdateResourceGatewayRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline UpdateResourceGatewayRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline UpdateResourceGatewayRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline UpdateResourceGatewayRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    UpdateResourceGatewayRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    UpdateResourceGatewayRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
   private:
 

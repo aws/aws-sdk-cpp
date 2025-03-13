@@ -18,15 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-CustomerArtifactPaths::CustomerArtifactPaths() : 
-    m_iosPathsHasBeenSet(false),
-    m_androidPathsHasBeenSet(false),
-    m_deviceHostPathsHasBeenSet(false)
-{
-}
-
 CustomerArtifactPaths::CustomerArtifactPaths(JsonView jsonValue)
-  : CustomerArtifactPaths()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ CustomerArtifactPaths& CustomerArtifactPaths::operator =(JsonView jsonValue)
     }
     m_iosPathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("androidPaths"))
   {
     Aws::Utils::Array<JsonView> androidPathsJsonList = jsonValue.GetArray("androidPaths");
@@ -52,7 +43,6 @@ CustomerArtifactPaths& CustomerArtifactPaths::operator =(JsonView jsonValue)
     }
     m_androidPathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceHostPaths"))
   {
     Aws::Utils::Array<JsonView> deviceHostPathsJsonList = jsonValue.GetArray("deviceHostPaths");
@@ -62,7 +52,6 @@ CustomerArtifactPaths& CustomerArtifactPaths::operator =(JsonView jsonValue)
     }
     m_deviceHostPathsHasBeenSet = true;
   }
-
   return *this;
 }
 

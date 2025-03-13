@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAccountsRequest::ListAccountsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_accessTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAccountsRequest::SerializePayload() const
 {
   return {};

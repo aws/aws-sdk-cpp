@@ -27,7 +27,7 @@ namespace Model
   class UpdateFleetPortSettingsResult
   {
   public:
-    AWS_GAMELIFT_API UpdateFleetPortSettingsResult();
+    AWS_GAMELIFT_API UpdateFleetPortSettingsResult() = default;
     AWS_GAMELIFT_API UpdateFleetPortSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API UpdateFleetPortSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>A unique identifier for the fleet that was updated.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
-    inline UpdateFleetPortSettingsResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline UpdateFleetPortSettingsResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline UpdateFleetPortSettingsResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    UpdateFleetPortSettingsResult& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,31 @@ namespace Model
      * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
-    inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
-    inline void SetFleetArn(const Aws::String& value) { m_fleetArn = value; }
-    inline void SetFleetArn(Aws::String&& value) { m_fleetArn = std::move(value); }
-    inline void SetFleetArn(const char* value) { m_fleetArn.assign(value); }
-    inline UpdateFleetPortSettingsResult& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
-    inline UpdateFleetPortSettingsResult& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
-    inline UpdateFleetPortSettingsResult& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
+    inline const Aws::String& GetFleetArn() const { return m_fleetArn; }
+    template<typename FleetArnT = Aws::String>
+    void SetFleetArn(FleetArnT&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::forward<FleetArnT>(value); }
+    template<typename FleetArnT = Aws::String>
+    UpdateFleetPortSettingsResult& WithFleetArn(FleetArnT&& value) { SetFleetArn(std::forward<FleetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateFleetPortSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateFleetPortSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateFleetPortSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateFleetPortSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fleetId;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_fleetArn;
+    bool m_fleetArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,12 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateFleetRequest::DisassociateFleetRequest() : 
-    m_fleetNameHasBeenSet(false),
-    m_stackNameHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateFleetRequest::SerializePayload() const
 {
   JsonValue payload;

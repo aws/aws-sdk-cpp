@@ -10,15 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-UpdateConfigurationTemplateRequest::UpdateConfigurationTemplateRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false),
-    m_optionsToRemoveHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConfigurationTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

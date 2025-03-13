@@ -12,19 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateNetworkAnalyzerConfigurationRequest::UpdateNetworkAnalyzerConfigurationRequest() : 
-    m_configurationNameHasBeenSet(false),
-    m_traceContentHasBeenSet(false),
-    m_wirelessDevicesToAddHasBeenSet(false),
-    m_wirelessDevicesToRemoveHasBeenSet(false),
-    m_wirelessGatewaysToAddHasBeenSet(false),
-    m_wirelessGatewaysToRemoveHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_multicastGroupsToAddHasBeenSet(false),
-    m_multicastGroupsToRemoveHasBeenSet(false)
-{
-}
-
 Aws::String UpdateNetworkAnalyzerConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

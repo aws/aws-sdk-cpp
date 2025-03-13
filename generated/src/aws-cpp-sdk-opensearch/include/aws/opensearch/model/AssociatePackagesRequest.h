@@ -23,7 +23,7 @@ namespace Model
   class AssociatePackagesRequest : public OpenSearchServiceRequest
   {
   public:
-    AWS_OPENSEARCHSERVICE_API AssociatePackagesRequest();
+    AWS_OPENSEARCHSERVICE_API AssociatePackagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
      * <p>A list of packages and their prerequisites to be associated with a
      * domain.</p>
      */
-    inline const Aws::Vector<PackageDetailsForAssociation>& GetPackageList() const{ return m_packageList; }
+    inline const Aws::Vector<PackageDetailsForAssociation>& GetPackageList() const { return m_packageList; }
     inline bool PackageListHasBeenSet() const { return m_packageListHasBeenSet; }
-    inline void SetPackageList(const Aws::Vector<PackageDetailsForAssociation>& value) { m_packageListHasBeenSet = true; m_packageList = value; }
-    inline void SetPackageList(Aws::Vector<PackageDetailsForAssociation>&& value) { m_packageListHasBeenSet = true; m_packageList = std::move(value); }
-    inline AssociatePackagesRequest& WithPackageList(const Aws::Vector<PackageDetailsForAssociation>& value) { SetPackageList(value); return *this;}
-    inline AssociatePackagesRequest& WithPackageList(Aws::Vector<PackageDetailsForAssociation>&& value) { SetPackageList(std::move(value)); return *this;}
-    inline AssociatePackagesRequest& AddPackageList(const PackageDetailsForAssociation& value) { m_packageListHasBeenSet = true; m_packageList.push_back(value); return *this; }
-    inline AssociatePackagesRequest& AddPackageList(PackageDetailsForAssociation&& value) { m_packageListHasBeenSet = true; m_packageList.push_back(std::move(value)); return *this; }
+    template<typename PackageListT = Aws::Vector<PackageDetailsForAssociation>>
+    void SetPackageList(PackageListT&& value) { m_packageListHasBeenSet = true; m_packageList = std::forward<PackageListT>(value); }
+    template<typename PackageListT = Aws::Vector<PackageDetailsForAssociation>>
+    AssociatePackagesRequest& WithPackageList(PackageListT&& value) { SetPackageList(std::forward<PackageListT>(value)); return *this;}
+    template<typename PackageListT = PackageDetailsForAssociation>
+    AssociatePackagesRequest& AddPackageList(PackageListT&& value) { m_packageListHasBeenSet = true; m_packageList.emplace_back(std::forward<PackageListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline AssociatePackagesRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline AssociatePackagesRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline AssociatePackagesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    AssociatePackagesRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
   private:
 

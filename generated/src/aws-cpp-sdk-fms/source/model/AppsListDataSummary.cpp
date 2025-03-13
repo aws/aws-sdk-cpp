@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-AppsListDataSummary::AppsListDataSummary() : 
-    m_listArnHasBeenSet(false),
-    m_listIdHasBeenSet(false),
-    m_listNameHasBeenSet(false),
-    m_appsListHasBeenSet(false)
-{
-}
-
 AppsListDataSummary::AppsListDataSummary(JsonView jsonValue)
-  : AppsListDataSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AppsListDataSummary& AppsListDataSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ListArn"))
   {
     m_listArn = jsonValue.GetString("ListArn");
-
     m_listArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListId"))
   {
     m_listId = jsonValue.GetString("ListId");
-
     m_listIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListName"))
   {
     m_listName = jsonValue.GetString("ListName");
-
     m_listNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppsList"))
   {
     Aws::Utils::Array<JsonView> appsListJsonList = jsonValue.GetArray("AppsList");
@@ -64,7 +49,6 @@ AppsListDataSummary& AppsListDataSummary::operator =(JsonView jsonValue)
     }
     m_appsListHasBeenSet = true;
   }
-
   return *this;
 }
 

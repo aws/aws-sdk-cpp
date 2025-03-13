@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails() : 
-    m_groupNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_streamNameHasBeenSet(false)
-{
-}
-
 AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails(JsonView jsonValue)
-  : AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& AwsCodeBuildProjectLogsConfi
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamName"))
   {
     m_streamName = jsonValue.GetString("StreamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   return *this;
 }
 

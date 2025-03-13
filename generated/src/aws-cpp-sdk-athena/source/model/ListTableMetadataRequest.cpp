@@ -12,17 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTableMetadataRequest::ListTableMetadataRequest() : 
-    m_catalogNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_workGroupHasBeenSet(false)
-{
-}
-
 Aws::String ListTableMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

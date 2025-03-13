@@ -18,16 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-ReactionForComment::ReactionForComment() : 
-    m_reactionHasBeenSet(false),
-    m_reactionUsersHasBeenSet(false),
-    m_reactionsFromDeletedUsersCount(0),
-    m_reactionsFromDeletedUsersCountHasBeenSet(false)
-{
-}
-
 ReactionForComment::ReactionForComment(JsonView jsonValue)
-  : ReactionForComment()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ReactionForComment& ReactionForComment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("reaction"))
   {
     m_reaction = jsonValue.GetObject("reaction");
-
     m_reactionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reactionUsers"))
   {
     Aws::Utils::Array<JsonView> reactionUsersJsonList = jsonValue.GetArray("reactionUsers");
@@ -50,14 +39,11 @@ ReactionForComment& ReactionForComment::operator =(JsonView jsonValue)
     }
     m_reactionUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reactionsFromDeletedUsersCount"))
   {
     m_reactionsFromDeletedUsersCount = jsonValue.GetInteger("reactionsFromDeletedUsersCount");
-
     m_reactionsFromDeletedUsersCountHasBeenSet = true;
   }
-
   return *this;
 }
 

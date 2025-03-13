@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ModifyVerifiedAccessEndpointRdsOptions::ModifyVerifiedAccessEndpointRdsOptions() : 
-    m_subnetIdsHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_rdsEndpointHasBeenSet(false)
-{
-}
-
 ModifyVerifiedAccessEndpointRdsOptions::ModifyVerifiedAccessEndpointRdsOptions(const XmlNode& xmlNode)
-  : ModifyVerifiedAccessEndpointRdsOptions()
 {
   *this = xmlNode;
 }
@@ -44,25 +35,28 @@ ModifyVerifiedAccessEndpointRdsOptions& ModifyVerifiedAccessEndpointRdsOptions::
     if(!subnetIdsNode.IsNull())
     {
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
+      m_subnetIdsHasBeenSet = !subnetIdsMember.IsNull();
       while(!subnetIdsMember.IsNull())
       {
         m_subnetIds.push_back(subnetIdsMember.GetText());
         subnetIdsMember = subnetIdsMember.NextNode("item");
       }
 
-      m_subnetIdsHasBeenSet = true;
+       m_subnetIdsHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
     XmlNode rdsEndpointNode = resultNode.FirstChild("RdsEndpoint");
     if(!rdsEndpointNode.IsNull())
     {
       m_rdsEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(rdsEndpointNode.GetText());
       m_rdsEndpointHasBeenSet = true;
+       m_rdsEndpointHasBeenSet = true;
     }
   }
 

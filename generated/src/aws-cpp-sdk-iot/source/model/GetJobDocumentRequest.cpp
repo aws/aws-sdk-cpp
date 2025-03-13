@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetJobDocumentRequest::GetJobDocumentRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_beforeSubstitution(false),
-    m_beforeSubstitutionHasBeenSet(false)
-{
-}
-
 Aws::String GetJobDocumentRequest::SerializePayload() const
 {
   return {};

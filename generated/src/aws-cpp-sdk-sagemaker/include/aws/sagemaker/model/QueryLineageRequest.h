@@ -24,7 +24,7 @@ namespace Model
   class QueryLineageRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API QueryLineageRequest();
+    AWS_SAGEMAKER_API QueryLineageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
      * <p>A list of resource Amazon Resource Name (ARN) that represent the starting
      * point for your lineage query.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStartArns() const{ return m_startArns; }
+    inline const Aws::Vector<Aws::String>& GetStartArns() const { return m_startArns; }
     inline bool StartArnsHasBeenSet() const { return m_startArnsHasBeenSet; }
-    inline void SetStartArns(const Aws::Vector<Aws::String>& value) { m_startArnsHasBeenSet = true; m_startArns = value; }
-    inline void SetStartArns(Aws::Vector<Aws::String>&& value) { m_startArnsHasBeenSet = true; m_startArns = std::move(value); }
-    inline QueryLineageRequest& WithStartArns(const Aws::Vector<Aws::String>& value) { SetStartArns(value); return *this;}
-    inline QueryLineageRequest& WithStartArns(Aws::Vector<Aws::String>&& value) { SetStartArns(std::move(value)); return *this;}
-    inline QueryLineageRequest& AddStartArns(const Aws::String& value) { m_startArnsHasBeenSet = true; m_startArns.push_back(value); return *this; }
-    inline QueryLineageRequest& AddStartArns(Aws::String&& value) { m_startArnsHasBeenSet = true; m_startArns.push_back(std::move(value)); return *this; }
-    inline QueryLineageRequest& AddStartArns(const char* value) { m_startArnsHasBeenSet = true; m_startArns.push_back(value); return *this; }
+    template<typename StartArnsT = Aws::Vector<Aws::String>>
+    void SetStartArns(StartArnsT&& value) { m_startArnsHasBeenSet = true; m_startArns = std::forward<StartArnsT>(value); }
+    template<typename StartArnsT = Aws::Vector<Aws::String>>
+    QueryLineageRequest& WithStartArns(StartArnsT&& value) { SetStartArns(std::forward<StartArnsT>(value)); return *this;}
+    template<typename StartArnsT = Aws::String>
+    QueryLineageRequest& AddStartArns(StartArnsT&& value) { m_startArnsHasBeenSet = true; m_startArns.emplace_back(std::forward<StartArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,12 +57,10 @@ namespace Model
      * <p>Associations between lineage entities have a direction. This parameter
      * determines the direction from the StartArn(s) that the query traverses.</p>
      */
-    inline const Direction& GetDirection() const{ return m_direction; }
+    inline Direction GetDirection() const { return m_direction; }
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
-    inline void SetDirection(const Direction& value) { m_directionHasBeenSet = true; m_direction = value; }
-    inline void SetDirection(Direction&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
-    inline QueryLineageRequest& WithDirection(const Direction& value) { SetDirection(value); return *this;}
-    inline QueryLineageRequest& WithDirection(Direction&& value) { SetDirection(std::move(value)); return *this;}
+    inline void SetDirection(Direction value) { m_directionHasBeenSet = true; m_direction = value; }
+    inline QueryLineageRequest& WithDirection(Direction value) { SetDirection(value); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +71,7 @@ namespace Model
      * and lineage entities on the path. Set to <code>False</code> to only return
      * lineage entities that match your query.</p>
      */
-    inline bool GetIncludeEdges() const{ return m_includeEdges; }
+    inline bool GetIncludeEdges() const { return m_includeEdges; }
     inline bool IncludeEdgesHasBeenSet() const { return m_includeEdgesHasBeenSet; }
     inline void SetIncludeEdges(bool value) { m_includeEdgesHasBeenSet = true; m_includeEdges = value; }
     inline QueryLineageRequest& WithIncludeEdges(bool value) { SetIncludeEdges(value); return *this;}
@@ -91,12 +88,12 @@ namespace Model
      * Filter entities modified before this date.</p> </li> <li> <p>ModifiedAfter -
      * Filter entities modified after this date.</p> </li> </ul>
      */
-    inline const QueryFilters& GetFilters() const{ return m_filters; }
+    inline const QueryFilters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const QueryFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(QueryFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline QueryLineageRequest& WithFilters(const QueryFilters& value) { SetFilters(value); return *this;}
-    inline QueryLineageRequest& WithFilters(QueryFilters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = QueryFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = QueryFilters>
+    QueryLineageRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,7 +103,7 @@ namespace Model
      * <code>Associations</code> from the <code>StartArn</code> entity to the matched
      * results.</p>
      */
-    inline int GetMaxDepth() const{ return m_maxDepth; }
+    inline int GetMaxDepth() const { return m_maxDepth; }
     inline bool MaxDepthHasBeenSet() const { return m_maxDepthHasBeenSet; }
     inline void SetMaxDepth(int value) { m_maxDepthHasBeenSet = true; m_maxDepth = value; }
     inline QueryLineageRequest& WithMaxDepth(int value) { SetMaxDepth(value); return *this;}
@@ -117,7 +114,7 @@ namespace Model
      * <p>Limits the number of vertices in the results. Use the <code>NextToken</code>
      * in a response to to retrieve the next page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline QueryLineageRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -128,33 +125,31 @@ namespace Model
      * <p>Limits the number of vertices in the request. Use the <code>NextToken</code>
      * in a response to to retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline QueryLineageRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline QueryLineageRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline QueryLineageRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    QueryLineageRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_startArns;
     bool m_startArnsHasBeenSet = false;
 
-    Direction m_direction;
+    Direction m_direction{Direction::NOT_SET};
     bool m_directionHasBeenSet = false;
 
-    bool m_includeEdges;
+    bool m_includeEdges{false};
     bool m_includeEdgesHasBeenSet = false;
 
     QueryFilters m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxDepth;
+    int m_maxDepth{0};
     bool m_maxDepthHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

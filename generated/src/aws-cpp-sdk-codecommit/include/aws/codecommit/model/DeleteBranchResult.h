@@ -34,7 +34,7 @@ namespace Model
   class DeleteBranchResult
   {
   public:
-    AWS_CODECOMMIT_API DeleteBranchResult();
+    AWS_CODECOMMIT_API DeleteBranchResult() = default;
     AWS_CODECOMMIT_API DeleteBranchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API DeleteBranchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>Information about the branch deleted by the operation, including the branch
      * name and the commit ID that was the tip of the branch.</p>
      */
-    inline const BranchInfo& GetDeletedBranch() const{ return m_deletedBranch; }
-    inline void SetDeletedBranch(const BranchInfo& value) { m_deletedBranch = value; }
-    inline void SetDeletedBranch(BranchInfo&& value) { m_deletedBranch = std::move(value); }
-    inline DeleteBranchResult& WithDeletedBranch(const BranchInfo& value) { SetDeletedBranch(value); return *this;}
-    inline DeleteBranchResult& WithDeletedBranch(BranchInfo&& value) { SetDeletedBranch(std::move(value)); return *this;}
+    inline const BranchInfo& GetDeletedBranch() const { return m_deletedBranch; }
+    template<typename DeletedBranchT = BranchInfo>
+    void SetDeletedBranch(DeletedBranchT&& value) { m_deletedBranchHasBeenSet = true; m_deletedBranch = std::forward<DeletedBranchT>(value); }
+    template<typename DeletedBranchT = BranchInfo>
+    DeleteBranchResult& WithDeletedBranch(DeletedBranchT&& value) { SetDeletedBranch(std::forward<DeletedBranchT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteBranchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteBranchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteBranchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteBranchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BranchInfo m_deletedBranch;
+    bool m_deletedBranchHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

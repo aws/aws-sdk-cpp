@@ -34,7 +34,7 @@ namespace Model
   class ZonalStatisticsConfigInput
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API ZonalStatisticsConfigInput();
+    AWS_SAGEMAKERGEOSPATIAL_API ZonalStatisticsConfigInput() = default;
     AWS_SAGEMAKERGEOSPATIAL_API ZonalStatisticsConfigInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API ZonalStatisticsConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,13 @@ namespace Model
     /**
      * <p>List of zonal statistics to compute.</p>
      */
-    inline const Aws::Vector<ZonalStatistics>& GetStatistics() const{ return m_statistics; }
+    inline const Aws::Vector<ZonalStatistics>& GetStatistics() const { return m_statistics; }
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
-    inline void SetStatistics(const Aws::Vector<ZonalStatistics>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
-    inline void SetStatistics(Aws::Vector<ZonalStatistics>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
-    inline ZonalStatisticsConfigInput& WithStatistics(const Aws::Vector<ZonalStatistics>& value) { SetStatistics(value); return *this;}
-    inline ZonalStatisticsConfigInput& WithStatistics(Aws::Vector<ZonalStatistics>&& value) { SetStatistics(std::move(value)); return *this;}
-    inline ZonalStatisticsConfigInput& AddStatistics(const ZonalStatistics& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
-    inline ZonalStatisticsConfigInput& AddStatistics(ZonalStatistics&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
+    template<typename StatisticsT = Aws::Vector<ZonalStatistics>>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = Aws::Vector<ZonalStatistics>>
+    ZonalStatisticsConfigInput& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
+    inline ZonalStatisticsConfigInput& AddStatistics(ZonalStatistics value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -59,15 +58,14 @@ namespace Model
      * <p>Bands used in the operation. If no target bands are specified, it uses all
      * bands available input.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTargetBands() const{ return m_targetBands; }
+    inline const Aws::Vector<Aws::String>& GetTargetBands() const { return m_targetBands; }
     inline bool TargetBandsHasBeenSet() const { return m_targetBandsHasBeenSet; }
-    inline void SetTargetBands(const Aws::Vector<Aws::String>& value) { m_targetBandsHasBeenSet = true; m_targetBands = value; }
-    inline void SetTargetBands(Aws::Vector<Aws::String>&& value) { m_targetBandsHasBeenSet = true; m_targetBands = std::move(value); }
-    inline ZonalStatisticsConfigInput& WithTargetBands(const Aws::Vector<Aws::String>& value) { SetTargetBands(value); return *this;}
-    inline ZonalStatisticsConfigInput& WithTargetBands(Aws::Vector<Aws::String>&& value) { SetTargetBands(std::move(value)); return *this;}
-    inline ZonalStatisticsConfigInput& AddTargetBands(const Aws::String& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
-    inline ZonalStatisticsConfigInput& AddTargetBands(Aws::String&& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(std::move(value)); return *this; }
-    inline ZonalStatisticsConfigInput& AddTargetBands(const char* value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
+    template<typename TargetBandsT = Aws::Vector<Aws::String>>
+    void SetTargetBands(TargetBandsT&& value) { m_targetBandsHasBeenSet = true; m_targetBands = std::forward<TargetBandsT>(value); }
+    template<typename TargetBandsT = Aws::Vector<Aws::String>>
+    ZonalStatisticsConfigInput& WithTargetBands(TargetBandsT&& value) { SetTargetBands(std::forward<TargetBandsT>(value)); return *this;}
+    template<typename TargetBandsT = Aws::String>
+    ZonalStatisticsConfigInput& AddTargetBands(TargetBandsT&& value) { m_targetBandsHasBeenSet = true; m_targetBands.emplace_back(std::forward<TargetBandsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * <p>The Amazon S3 path pointing to the GeoJSON containing the polygonal
      * zones.</p>
      */
-    inline const Aws::String& GetZoneS3Path() const{ return m_zoneS3Path; }
+    inline const Aws::String& GetZoneS3Path() const { return m_zoneS3Path; }
     inline bool ZoneS3PathHasBeenSet() const { return m_zoneS3PathHasBeenSet; }
-    inline void SetZoneS3Path(const Aws::String& value) { m_zoneS3PathHasBeenSet = true; m_zoneS3Path = value; }
-    inline void SetZoneS3Path(Aws::String&& value) { m_zoneS3PathHasBeenSet = true; m_zoneS3Path = std::move(value); }
-    inline void SetZoneS3Path(const char* value) { m_zoneS3PathHasBeenSet = true; m_zoneS3Path.assign(value); }
-    inline ZonalStatisticsConfigInput& WithZoneS3Path(const Aws::String& value) { SetZoneS3Path(value); return *this;}
-    inline ZonalStatisticsConfigInput& WithZoneS3Path(Aws::String&& value) { SetZoneS3Path(std::move(value)); return *this;}
-    inline ZonalStatisticsConfigInput& WithZoneS3Path(const char* value) { SetZoneS3Path(value); return *this;}
+    template<typename ZoneS3PathT = Aws::String>
+    void SetZoneS3Path(ZoneS3PathT&& value) { m_zoneS3PathHasBeenSet = true; m_zoneS3Path = std::forward<ZoneS3PathT>(value); }
+    template<typename ZoneS3PathT = Aws::String>
+    ZonalStatisticsConfigInput& WithZoneS3Path(ZoneS3PathT&& value) { SetZoneS3Path(std::forward<ZoneS3PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +97,12 @@ namespace Model
      * identifiers (KeyID)</a> in the Amazon Web Services Key Management Service
      * (Amazon Web Services KMS) documentation.</p>
      */
-    inline const Aws::String& GetZoneS3PathKmsKeyId() const{ return m_zoneS3PathKmsKeyId; }
+    inline const Aws::String& GetZoneS3PathKmsKeyId() const { return m_zoneS3PathKmsKeyId; }
     inline bool ZoneS3PathKmsKeyIdHasBeenSet() const { return m_zoneS3PathKmsKeyIdHasBeenSet; }
-    inline void SetZoneS3PathKmsKeyId(const Aws::String& value) { m_zoneS3PathKmsKeyIdHasBeenSet = true; m_zoneS3PathKmsKeyId = value; }
-    inline void SetZoneS3PathKmsKeyId(Aws::String&& value) { m_zoneS3PathKmsKeyIdHasBeenSet = true; m_zoneS3PathKmsKeyId = std::move(value); }
-    inline void SetZoneS3PathKmsKeyId(const char* value) { m_zoneS3PathKmsKeyIdHasBeenSet = true; m_zoneS3PathKmsKeyId.assign(value); }
-    inline ZonalStatisticsConfigInput& WithZoneS3PathKmsKeyId(const Aws::String& value) { SetZoneS3PathKmsKeyId(value); return *this;}
-    inline ZonalStatisticsConfigInput& WithZoneS3PathKmsKeyId(Aws::String&& value) { SetZoneS3PathKmsKeyId(std::move(value)); return *this;}
-    inline ZonalStatisticsConfigInput& WithZoneS3PathKmsKeyId(const char* value) { SetZoneS3PathKmsKeyId(value); return *this;}
+    template<typename ZoneS3PathKmsKeyIdT = Aws::String>
+    void SetZoneS3PathKmsKeyId(ZoneS3PathKmsKeyIdT&& value) { m_zoneS3PathKmsKeyIdHasBeenSet = true; m_zoneS3PathKmsKeyId = std::forward<ZoneS3PathKmsKeyIdT>(value); }
+    template<typename ZoneS3PathKmsKeyIdT = Aws::String>
+    ZonalStatisticsConfigInput& WithZoneS3PathKmsKeyId(ZoneS3PathKmsKeyIdT&& value) { SetZoneS3PathKmsKeyId(std::forward<ZoneS3PathKmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 

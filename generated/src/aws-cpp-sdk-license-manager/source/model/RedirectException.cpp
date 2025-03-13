@@ -18,14 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-RedirectException::RedirectException() : 
-    m_locationHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 RedirectException::RedirectException(JsonView jsonValue)
-  : RedirectException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RedirectException& RedirectException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

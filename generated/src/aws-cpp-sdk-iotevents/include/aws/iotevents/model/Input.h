@@ -32,7 +32,7 @@ namespace Model
   class Input
   {
   public:
-    AWS_IOTEVENTS_API Input();
+    AWS_IOTEVENTS_API Input() = default;
     AWS_IOTEVENTS_API Input(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Input& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Information about the configuration of an input.</p>
      */
-    inline const InputConfiguration& GetInputConfiguration() const{ return m_inputConfiguration; }
+    inline const InputConfiguration& GetInputConfiguration() const { return m_inputConfiguration; }
     inline bool InputConfigurationHasBeenSet() const { return m_inputConfigurationHasBeenSet; }
-    inline void SetInputConfiguration(const InputConfiguration& value) { m_inputConfigurationHasBeenSet = true; m_inputConfiguration = value; }
-    inline void SetInputConfiguration(InputConfiguration&& value) { m_inputConfigurationHasBeenSet = true; m_inputConfiguration = std::move(value); }
-    inline Input& WithInputConfiguration(const InputConfiguration& value) { SetInputConfiguration(value); return *this;}
-    inline Input& WithInputConfiguration(InputConfiguration&& value) { SetInputConfiguration(std::move(value)); return *this;}
+    template<typename InputConfigurationT = InputConfiguration>
+    void SetInputConfiguration(InputConfigurationT&& value) { m_inputConfigurationHasBeenSet = true; m_inputConfiguration = std::forward<InputConfigurationT>(value); }
+    template<typename InputConfigurationT = InputConfiguration>
+    Input& WithInputConfiguration(InputConfigurationT&& value) { SetInputConfiguration(std::forward<InputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The definition of the input.</p>
      */
-    inline const InputDefinition& GetInputDefinition() const{ return m_inputDefinition; }
+    inline const InputDefinition& GetInputDefinition() const { return m_inputDefinition; }
     inline bool InputDefinitionHasBeenSet() const { return m_inputDefinitionHasBeenSet; }
-    inline void SetInputDefinition(const InputDefinition& value) { m_inputDefinitionHasBeenSet = true; m_inputDefinition = value; }
-    inline void SetInputDefinition(InputDefinition&& value) { m_inputDefinitionHasBeenSet = true; m_inputDefinition = std::move(value); }
-    inline Input& WithInputDefinition(const InputDefinition& value) { SetInputDefinition(value); return *this;}
-    inline Input& WithInputDefinition(InputDefinition&& value) { SetInputDefinition(std::move(value)); return *this;}
+    template<typename InputDefinitionT = InputDefinition>
+    void SetInputDefinition(InputDefinitionT&& value) { m_inputDefinitionHasBeenSet = true; m_inputDefinition = std::forward<InputDefinitionT>(value); }
+    template<typename InputDefinitionT = InputDefinition>
+    Input& WithInputDefinition(InputDefinitionT&& value) { SetInputDefinition(std::forward<InputDefinitionT>(value)); return *this;}
     ///@}
   private:
 

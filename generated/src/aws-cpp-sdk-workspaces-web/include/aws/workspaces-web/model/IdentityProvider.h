@@ -33,7 +33,7 @@ namespace Model
   class IdentityProvider
   {
   public:
-    AWS_WORKSPACESWEB_API IdentityProvider();
+    AWS_WORKSPACESWEB_API IdentityProvider() = default;
     AWS_WORKSPACESWEB_API IdentityProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API IdentityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ARN of the identity provider.</p>
      */
-    inline const Aws::String& GetIdentityProviderArn() const{ return m_identityProviderArn; }
+    inline const Aws::String& GetIdentityProviderArn() const { return m_identityProviderArn; }
     inline bool IdentityProviderArnHasBeenSet() const { return m_identityProviderArnHasBeenSet; }
-    inline void SetIdentityProviderArn(const Aws::String& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = value; }
-    inline void SetIdentityProviderArn(Aws::String&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::move(value); }
-    inline void SetIdentityProviderArn(const char* value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn.assign(value); }
-    inline IdentityProvider& WithIdentityProviderArn(const Aws::String& value) { SetIdentityProviderArn(value); return *this;}
-    inline IdentityProvider& WithIdentityProviderArn(Aws::String&& value) { SetIdentityProviderArn(std::move(value)); return *this;}
-    inline IdentityProvider& WithIdentityProviderArn(const char* value) { SetIdentityProviderArn(value); return *this;}
+    template<typename IdentityProviderArnT = Aws::String>
+    void SetIdentityProviderArn(IdentityProviderArnT&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::forward<IdentityProviderArnT>(value); }
+    template<typename IdentityProviderArnT = Aws::String>
+    IdentityProvider& WithIdentityProviderArn(IdentityProviderArnT&& value) { SetIdentityProviderArn(std::forward<IdentityProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,45 +82,38 @@ namespace Model
      * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
      * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetIdentityProviderDetails() const{ return m_identityProviderDetails; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetIdentityProviderDetails() const { return m_identityProviderDetails; }
     inline bool IdentityProviderDetailsHasBeenSet() const { return m_identityProviderDetailsHasBeenSet; }
-    inline void SetIdentityProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = value; }
-    inline void SetIdentityProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = std::move(value); }
-    inline IdentityProvider& WithIdentityProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { SetIdentityProviderDetails(value); return *this;}
-    inline IdentityProvider& WithIdentityProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { SetIdentityProviderDetails(std::move(value)); return *this;}
-    inline IdentityProvider& AddIdentityProviderDetails(const Aws::String& key, const Aws::String& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(key, value); return *this; }
-    inline IdentityProvider& AddIdentityProviderDetails(Aws::String&& key, const Aws::String& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(std::move(key), value); return *this; }
-    inline IdentityProvider& AddIdentityProviderDetails(const Aws::String& key, Aws::String&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(key, std::move(value)); return *this; }
-    inline IdentityProvider& AddIdentityProviderDetails(Aws::String&& key, Aws::String&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(std::move(key), std::move(value)); return *this; }
-    inline IdentityProvider& AddIdentityProviderDetails(const char* key, Aws::String&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(key, std::move(value)); return *this; }
-    inline IdentityProvider& AddIdentityProviderDetails(Aws::String&& key, const char* value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(std::move(key), value); return *this; }
-    inline IdentityProvider& AddIdentityProviderDetails(const char* key, const char* value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(key, value); return *this; }
+    template<typename IdentityProviderDetailsT = Aws::Map<Aws::String, Aws::String>>
+    void SetIdentityProviderDetails(IdentityProviderDetailsT&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = std::forward<IdentityProviderDetailsT>(value); }
+    template<typename IdentityProviderDetailsT = Aws::Map<Aws::String, Aws::String>>
+    IdentityProvider& WithIdentityProviderDetails(IdentityProviderDetailsT&& value) { SetIdentityProviderDetails(std::forward<IdentityProviderDetailsT>(value)); return *this;}
+    template<typename IdentityProviderDetailsKeyT = Aws::String, typename IdentityProviderDetailsValueT = Aws::String>
+    IdentityProvider& AddIdentityProviderDetails(IdentityProviderDetailsKeyT&& key, IdentityProviderDetailsValueT&& value) {
+      m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(std::forward<IdentityProviderDetailsKeyT>(key), std::forward<IdentityProviderDetailsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The identity provider name.</p>
      */
-    inline const Aws::String& GetIdentityProviderName() const{ return m_identityProviderName; }
+    inline const Aws::String& GetIdentityProviderName() const { return m_identityProviderName; }
     inline bool IdentityProviderNameHasBeenSet() const { return m_identityProviderNameHasBeenSet; }
-    inline void SetIdentityProviderName(const Aws::String& value) { m_identityProviderNameHasBeenSet = true; m_identityProviderName = value; }
-    inline void SetIdentityProviderName(Aws::String&& value) { m_identityProviderNameHasBeenSet = true; m_identityProviderName = std::move(value); }
-    inline void SetIdentityProviderName(const char* value) { m_identityProviderNameHasBeenSet = true; m_identityProviderName.assign(value); }
-    inline IdentityProvider& WithIdentityProviderName(const Aws::String& value) { SetIdentityProviderName(value); return *this;}
-    inline IdentityProvider& WithIdentityProviderName(Aws::String&& value) { SetIdentityProviderName(std::move(value)); return *this;}
-    inline IdentityProvider& WithIdentityProviderName(const char* value) { SetIdentityProviderName(value); return *this;}
+    template<typename IdentityProviderNameT = Aws::String>
+    void SetIdentityProviderName(IdentityProviderNameT&& value) { m_identityProviderNameHasBeenSet = true; m_identityProviderName = std::forward<IdentityProviderNameT>(value); }
+    template<typename IdentityProviderNameT = Aws::String>
+    IdentityProvider& WithIdentityProviderName(IdentityProviderNameT&& value) { SetIdentityProviderName(std::forward<IdentityProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identity provider type.</p>
      */
-    inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
+    inline IdentityProviderType GetIdentityProviderType() const { return m_identityProviderType; }
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
-    inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
-    inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
-    inline IdentityProvider& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
-    inline IdentityProvider& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}
+    inline void SetIdentityProviderType(IdentityProviderType value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
+    inline IdentityProvider& WithIdentityProviderType(IdentityProviderType value) { SetIdentityProviderType(value); return *this;}
     ///@}
   private:
 
@@ -135,7 +126,7 @@ namespace Model
     Aws::String m_identityProviderName;
     bool m_identityProviderNameHasBeenSet = false;
 
-    IdentityProviderType m_identityProviderType;
+    IdentityProviderType m_identityProviderType{IdentityProviderType::NOT_SET};
     bool m_identityProviderTypeHasBeenSet = false;
   };
 

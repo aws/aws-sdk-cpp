@@ -23,7 +23,7 @@ namespace Model
   class CreateAssessmentTemplateRequest : public InspectorRequest
   {
   public:
-    AWS_INSPECTOR_API CreateAssessmentTemplateRequest();
+    AWS_INSPECTOR_API CreateAssessmentTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The ARN that specifies the assessment target for which you want to create the
      * assessment template.</p>
      */
-    inline const Aws::String& GetAssessmentTargetArn() const{ return m_assessmentTargetArn; }
+    inline const Aws::String& GetAssessmentTargetArn() const { return m_assessmentTargetArn; }
     inline bool AssessmentTargetArnHasBeenSet() const { return m_assessmentTargetArnHasBeenSet; }
-    inline void SetAssessmentTargetArn(const Aws::String& value) { m_assessmentTargetArnHasBeenSet = true; m_assessmentTargetArn = value; }
-    inline void SetAssessmentTargetArn(Aws::String&& value) { m_assessmentTargetArnHasBeenSet = true; m_assessmentTargetArn = std::move(value); }
-    inline void SetAssessmentTargetArn(const char* value) { m_assessmentTargetArnHasBeenSet = true; m_assessmentTargetArn.assign(value); }
-    inline CreateAssessmentTemplateRequest& WithAssessmentTargetArn(const Aws::String& value) { SetAssessmentTargetArn(value); return *this;}
-    inline CreateAssessmentTemplateRequest& WithAssessmentTargetArn(Aws::String&& value) { SetAssessmentTargetArn(std::move(value)); return *this;}
-    inline CreateAssessmentTemplateRequest& WithAssessmentTargetArn(const char* value) { SetAssessmentTargetArn(value); return *this;}
+    template<typename AssessmentTargetArnT = Aws::String>
+    void SetAssessmentTargetArn(AssessmentTargetArnT&& value) { m_assessmentTargetArnHasBeenSet = true; m_assessmentTargetArn = std::forward<AssessmentTargetArnT>(value); }
+    template<typename AssessmentTargetArnT = Aws::String>
+    CreateAssessmentTemplateRequest& WithAssessmentTargetArn(AssessmentTargetArnT&& value) { SetAssessmentTargetArn(std::forward<AssessmentTargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,21 +56,19 @@ namespace Model
      * The names of the assessment templates that correspond to a particular assessment
      * target must be unique.</p>
      */
-    inline const Aws::String& GetAssessmentTemplateName() const{ return m_assessmentTemplateName; }
+    inline const Aws::String& GetAssessmentTemplateName() const { return m_assessmentTemplateName; }
     inline bool AssessmentTemplateNameHasBeenSet() const { return m_assessmentTemplateNameHasBeenSet; }
-    inline void SetAssessmentTemplateName(const Aws::String& value) { m_assessmentTemplateNameHasBeenSet = true; m_assessmentTemplateName = value; }
-    inline void SetAssessmentTemplateName(Aws::String&& value) { m_assessmentTemplateNameHasBeenSet = true; m_assessmentTemplateName = std::move(value); }
-    inline void SetAssessmentTemplateName(const char* value) { m_assessmentTemplateNameHasBeenSet = true; m_assessmentTemplateName.assign(value); }
-    inline CreateAssessmentTemplateRequest& WithAssessmentTemplateName(const Aws::String& value) { SetAssessmentTemplateName(value); return *this;}
-    inline CreateAssessmentTemplateRequest& WithAssessmentTemplateName(Aws::String&& value) { SetAssessmentTemplateName(std::move(value)); return *this;}
-    inline CreateAssessmentTemplateRequest& WithAssessmentTemplateName(const char* value) { SetAssessmentTemplateName(value); return *this;}
+    template<typename AssessmentTemplateNameT = Aws::String>
+    void SetAssessmentTemplateName(AssessmentTemplateNameT&& value) { m_assessmentTemplateNameHasBeenSet = true; m_assessmentTemplateName = std::forward<AssessmentTemplateNameT>(value); }
+    template<typename AssessmentTemplateNameT = Aws::String>
+    CreateAssessmentTemplateRequest& WithAssessmentTemplateName(AssessmentTemplateNameT&& value) { SetAssessmentTemplateName(std::forward<AssessmentTemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The duration of the assessment run in seconds.</p>
      */
-    inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline CreateAssessmentTemplateRequest& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
@@ -83,15 +79,14 @@ namespace Model
      * <p>The ARNs that specify the rules packages that you want to attach to the
      * assessment template.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const{ return m_rulesPackageArns; }
+    inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const { return m_rulesPackageArns; }
     inline bool RulesPackageArnsHasBeenSet() const { return m_rulesPackageArnsHasBeenSet; }
-    inline void SetRulesPackageArns(const Aws::Vector<Aws::String>& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = value; }
-    inline void SetRulesPackageArns(Aws::Vector<Aws::String>&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = std::move(value); }
-    inline CreateAssessmentTemplateRequest& WithRulesPackageArns(const Aws::Vector<Aws::String>& value) { SetRulesPackageArns(value); return *this;}
-    inline CreateAssessmentTemplateRequest& WithRulesPackageArns(Aws::Vector<Aws::String>&& value) { SetRulesPackageArns(std::move(value)); return *this;}
-    inline CreateAssessmentTemplateRequest& AddRulesPackageArns(const Aws::String& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
-    inline CreateAssessmentTemplateRequest& AddRulesPackageArns(Aws::String&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(std::move(value)); return *this; }
-    inline CreateAssessmentTemplateRequest& AddRulesPackageArns(const char* value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
+    template<typename RulesPackageArnsT = Aws::Vector<Aws::String>>
+    void SetRulesPackageArns(RulesPackageArnsT&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = std::forward<RulesPackageArnsT>(value); }
+    template<typename RulesPackageArnsT = Aws::Vector<Aws::String>>
+    CreateAssessmentTemplateRequest& WithRulesPackageArns(RulesPackageArnsT&& value) { SetRulesPackageArns(std::forward<RulesPackageArnsT>(value)); return *this;}
+    template<typename RulesPackageArnsT = Aws::String>
+    CreateAssessmentTemplateRequest& AddRulesPackageArns(RulesPackageArnsT&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.emplace_back(std::forward<RulesPackageArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -101,14 +96,14 @@ namespace Model
      * is a key and value pair (an <a>Attribute</a> object). Within an assessment
      * template, each key must be unique.</p>
      */
-    inline const Aws::Vector<Attribute>& GetUserAttributesForFindings() const{ return m_userAttributesForFindings; }
+    inline const Aws::Vector<Attribute>& GetUserAttributesForFindings() const { return m_userAttributesForFindings; }
     inline bool UserAttributesForFindingsHasBeenSet() const { return m_userAttributesForFindingsHasBeenSet; }
-    inline void SetUserAttributesForFindings(const Aws::Vector<Attribute>& value) { m_userAttributesForFindingsHasBeenSet = true; m_userAttributesForFindings = value; }
-    inline void SetUserAttributesForFindings(Aws::Vector<Attribute>&& value) { m_userAttributesForFindingsHasBeenSet = true; m_userAttributesForFindings = std::move(value); }
-    inline CreateAssessmentTemplateRequest& WithUserAttributesForFindings(const Aws::Vector<Attribute>& value) { SetUserAttributesForFindings(value); return *this;}
-    inline CreateAssessmentTemplateRequest& WithUserAttributesForFindings(Aws::Vector<Attribute>&& value) { SetUserAttributesForFindings(std::move(value)); return *this;}
-    inline CreateAssessmentTemplateRequest& AddUserAttributesForFindings(const Attribute& value) { m_userAttributesForFindingsHasBeenSet = true; m_userAttributesForFindings.push_back(value); return *this; }
-    inline CreateAssessmentTemplateRequest& AddUserAttributesForFindings(Attribute&& value) { m_userAttributesForFindingsHasBeenSet = true; m_userAttributesForFindings.push_back(std::move(value)); return *this; }
+    template<typename UserAttributesForFindingsT = Aws::Vector<Attribute>>
+    void SetUserAttributesForFindings(UserAttributesForFindingsT&& value) { m_userAttributesForFindingsHasBeenSet = true; m_userAttributesForFindings = std::forward<UserAttributesForFindingsT>(value); }
+    template<typename UserAttributesForFindingsT = Aws::Vector<Attribute>>
+    CreateAssessmentTemplateRequest& WithUserAttributesForFindings(UserAttributesForFindingsT&& value) { SetUserAttributesForFindings(std::forward<UserAttributesForFindingsT>(value)); return *this;}
+    template<typename UserAttributesForFindingsT = Attribute>
+    CreateAssessmentTemplateRequest& AddUserAttributesForFindings(UserAttributesForFindingsT&& value) { m_userAttributesForFindingsHasBeenSet = true; m_userAttributesForFindings.emplace_back(std::forward<UserAttributesForFindingsT>(value)); return *this; }
     ///@}
   private:
 
@@ -118,7 +113,7 @@ namespace Model
     Aws::String m_assessmentTemplateName;
     bool m_assessmentTemplateNameHasBeenSet = false;
 
-    int m_durationInSeconds;
+    int m_durationInSeconds{0};
     bool m_durationInSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rulesPackageArns;

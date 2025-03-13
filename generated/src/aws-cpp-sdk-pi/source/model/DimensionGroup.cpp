@@ -18,16 +18,7 @@ namespace PI
 namespace Model
 {
 
-DimensionGroup::DimensionGroup() : 
-    m_groupHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 DimensionGroup::DimensionGroup(JsonView jsonValue)
-  : DimensionGroup()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ DimensionGroup& DimensionGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Group"))
   {
     m_group = jsonValue.GetString("Group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimensions"))
   {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
@@ -50,14 +39,11 @@ DimensionGroup& DimensionGroup::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Limit"))
   {
     m_limit = jsonValue.GetInteger("Limit");
-
     m_limitHasBeenSet = true;
   }
-
   return *this;
 }
 

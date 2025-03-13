@@ -32,7 +32,7 @@ namespace Model
   class EphemerisData
   {
   public:
-    AWS_GROUNDSTATION_API EphemerisData();
+    AWS_GROUNDSTATION_API EphemerisData() = default;
     AWS_GROUNDSTATION_API EphemerisData(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API EphemerisData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,22 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const OEMEphemeris& GetOem() const{ return m_oem; }
+    inline const OEMEphemeris& GetOem() const { return m_oem; }
     inline bool OemHasBeenSet() const { return m_oemHasBeenSet; }
-    inline void SetOem(const OEMEphemeris& value) { m_oemHasBeenSet = true; m_oem = value; }
-    inline void SetOem(OEMEphemeris&& value) { m_oemHasBeenSet = true; m_oem = std::move(value); }
-    inline EphemerisData& WithOem(const OEMEphemeris& value) { SetOem(value); return *this;}
-    inline EphemerisData& WithOem(OEMEphemeris&& value) { SetOem(std::move(value)); return *this;}
+    template<typename OemT = OEMEphemeris>
+    void SetOem(OemT&& value) { m_oemHasBeenSet = true; m_oem = std::forward<OemT>(value); }
+    template<typename OemT = OEMEphemeris>
+    EphemerisData& WithOem(OemT&& value) { SetOem(std::forward<OemT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TLEEphemeris& GetTle() const{ return m_tle; }
+    inline const TLEEphemeris& GetTle() const { return m_tle; }
     inline bool TleHasBeenSet() const { return m_tleHasBeenSet; }
-    inline void SetTle(const TLEEphemeris& value) { m_tleHasBeenSet = true; m_tle = value; }
-    inline void SetTle(TLEEphemeris&& value) { m_tleHasBeenSet = true; m_tle = std::move(value); }
-    inline EphemerisData& WithTle(const TLEEphemeris& value) { SetTle(value); return *this;}
-    inline EphemerisData& WithTle(TLEEphemeris&& value) { SetTle(std::move(value)); return *this;}
+    template<typename TleT = TLEEphemeris>
+    void SetTle(TleT&& value) { m_tleHasBeenSet = true; m_tle = std::forward<TleT>(value); }
+    template<typename TleT = TLEEphemeris>
+    EphemerisData& WithTle(TleT&& value) { SetTle(std::forward<TleT>(value)); return *this;}
     ///@}
   private:
 

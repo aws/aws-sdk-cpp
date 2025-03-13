@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ExportDestination::ExportDestination() : 
-    m_dataFormat(DataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_s3UrlHasBeenSet(false)
-{
-}
-
 ExportDestination::ExportDestination(JsonView jsonValue)
-  : ExportDestination()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExportDestination& ExportDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataFormat"))
   {
     m_dataFormat = DataFormatMapper::GetDataFormatForName(jsonValue.GetString("DataFormat"));
-
     m_dataFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Url"))
   {
     m_s3Url = jsonValue.GetString("S3Url");
-
     m_s3UrlHasBeenSet = true;
   }
-
   return *this;
 }
 

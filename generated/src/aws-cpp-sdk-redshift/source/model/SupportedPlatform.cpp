@@ -20,13 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-SupportedPlatform::SupportedPlatform() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 SupportedPlatform::SupportedPlatform(const XmlNode& xmlNode)
-  : SupportedPlatform()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ SupportedPlatform& SupportedPlatform::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
   }
 

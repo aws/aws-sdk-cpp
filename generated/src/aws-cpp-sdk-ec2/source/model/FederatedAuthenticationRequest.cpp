@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FederatedAuthenticationRequest::FederatedAuthenticationRequest() : 
-    m_sAMLProviderArnHasBeenSet(false),
-    m_selfServiceSAMLProviderArnHasBeenSet(false)
-{
-}
-
 FederatedAuthenticationRequest::FederatedAuthenticationRequest(const XmlNode& xmlNode)
-  : FederatedAuthenticationRequest()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ FederatedAuthenticationRequest& FederatedAuthenticationRequest::operator =(const
     {
       m_sAMLProviderArn = Aws::Utils::Xml::DecodeEscapedXmlText(sAMLProviderArnNode.GetText());
       m_sAMLProviderArnHasBeenSet = true;
+       m_sAMLProviderArnHasBeenSet = true;
     }
     XmlNode selfServiceSAMLProviderArnNode = resultNode.FirstChild("SelfServiceSAMLProviderArn");
     if(!selfServiceSAMLProviderArnNode.IsNull())
     {
       m_selfServiceSAMLProviderArn = Aws::Utils::Xml::DecodeEscapedXmlText(selfServiceSAMLProviderArnNode.GetText());
       m_selfServiceSAMLProviderArnHasBeenSet = true;
+       m_selfServiceSAMLProviderArnHasBeenSet = true;
     }
   }
 

@@ -32,7 +32,7 @@ namespace Model
   class InvokeWithResponseStreamCompleteEvent
   {
   public:
-    AWS_LAMBDA_API InvokeWithResponseStreamCompleteEvent();
+    AWS_LAMBDA_API InvokeWithResponseStreamCompleteEvent() = default;
     AWS_LAMBDA_API InvokeWithResponseStreamCompleteEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API InvokeWithResponseStreamCompleteEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>An error code.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline InvokeWithResponseStreamCompleteEvent& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline InvokeWithResponseStreamCompleteEvent& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline InvokeWithResponseStreamCompleteEvent& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    InvokeWithResponseStreamCompleteEvent& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of any returned error.</p>
      */
-    inline const Aws::String& GetErrorDetails() const{ return m_errorDetails; }
+    inline const Aws::String& GetErrorDetails() const { return m_errorDetails; }
     inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
-    inline void SetErrorDetails(const Aws::String& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
-    inline void SetErrorDetails(Aws::String&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
-    inline void SetErrorDetails(const char* value) { m_errorDetailsHasBeenSet = true; m_errorDetails.assign(value); }
-    inline InvokeWithResponseStreamCompleteEvent& WithErrorDetails(const Aws::String& value) { SetErrorDetails(value); return *this;}
-    inline InvokeWithResponseStreamCompleteEvent& WithErrorDetails(Aws::String&& value) { SetErrorDetails(std::move(value)); return *this;}
-    inline InvokeWithResponseStreamCompleteEvent& WithErrorDetails(const char* value) { SetErrorDetails(value); return *this;}
+    template<typename ErrorDetailsT = Aws::String>
+    void SetErrorDetails(ErrorDetailsT&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::forward<ErrorDetailsT>(value); }
+    template<typename ErrorDetailsT = Aws::String>
+    InvokeWithResponseStreamCompleteEvent& WithErrorDetails(ErrorDetailsT&& value) { SetErrorDetails(std::forward<ErrorDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last 4 KB of the execution log, which is base64-encoded.</p>
      */
-    inline const Aws::String& GetLogResult() const{ return m_logResult; }
+    inline const Aws::String& GetLogResult() const { return m_logResult; }
     inline bool LogResultHasBeenSet() const { return m_logResultHasBeenSet; }
-    inline void SetLogResult(const Aws::String& value) { m_logResultHasBeenSet = true; m_logResult = value; }
-    inline void SetLogResult(Aws::String&& value) { m_logResultHasBeenSet = true; m_logResult = std::move(value); }
-    inline void SetLogResult(const char* value) { m_logResultHasBeenSet = true; m_logResult.assign(value); }
-    inline InvokeWithResponseStreamCompleteEvent& WithLogResult(const Aws::String& value) { SetLogResult(value); return *this;}
-    inline InvokeWithResponseStreamCompleteEvent& WithLogResult(Aws::String&& value) { SetLogResult(std::move(value)); return *this;}
-    inline InvokeWithResponseStreamCompleteEvent& WithLogResult(const char* value) { SetLogResult(value); return *this;}
+    template<typename LogResultT = Aws::String>
+    void SetLogResult(LogResultT&& value) { m_logResultHasBeenSet = true; m_logResult = std::forward<LogResultT>(value); }
+    template<typename LogResultT = Aws::String>
+    InvokeWithResponseStreamCompleteEvent& WithLogResult(LogResultT&& value) { SetLogResult(std::forward<LogResultT>(value)); return *this;}
     ///@}
   private:
 

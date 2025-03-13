@@ -30,7 +30,7 @@ namespace Model
   class MissingCompleteSensorData
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API MissingCompleteSensorData();
+    AWS_LOOKOUTEQUIPMENT_API MissingCompleteSensorData() = default;
     AWS_LOOKOUTEQUIPMENT_API MissingCompleteSensorData(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API MissingCompleteSensorData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p> Indicates the number of sensors that have data missing completely. </p>
      */
-    inline int GetAffectedSensorCount() const{ return m_affectedSensorCount; }
+    inline int GetAffectedSensorCount() const { return m_affectedSensorCount; }
     inline bool AffectedSensorCountHasBeenSet() const { return m_affectedSensorCountHasBeenSet; }
     inline void SetAffectedSensorCount(int value) { m_affectedSensorCountHasBeenSet = true; m_affectedSensorCount = value; }
     inline MissingCompleteSensorData& WithAffectedSensorCount(int value) { SetAffectedSensorCount(value); return *this;}
     ///@}
   private:
 
-    int m_affectedSensorCount;
+    int m_affectedSensorCount{0};
     bool m_affectedSensorCountHasBeenSet = false;
   };
 

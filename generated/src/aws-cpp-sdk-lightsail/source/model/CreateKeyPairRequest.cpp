@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateKeyPairRequest::CreateKeyPairRequest() : 
-    m_keyPairNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateKeyPairRequest::SerializePayload() const
 {
   JsonValue payload;

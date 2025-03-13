@@ -18,14 +18,7 @@ namespace Textract
 namespace Model
 {
 
-PageClassification::PageClassification() : 
-    m_pageTypeHasBeenSet(false),
-    m_pageNumberHasBeenSet(false)
-{
-}
-
 PageClassification::PageClassification(JsonView jsonValue)
-  : PageClassification()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ PageClassification& PageClassification::operator =(JsonView jsonValue)
     }
     m_pageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PageNumber"))
   {
     Aws::Utils::Array<JsonView> pageNumberJsonList = jsonValue.GetArray("PageNumber");
@@ -51,7 +43,6 @@ PageClassification& PageClassification::operator =(JsonView jsonValue)
     }
     m_pageNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

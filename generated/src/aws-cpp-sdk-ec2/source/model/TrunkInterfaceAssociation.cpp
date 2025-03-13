@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TrunkInterfaceAssociation::TrunkInterfaceAssociation() : 
-    m_associationIdHasBeenSet(false),
-    m_branchInterfaceIdHasBeenSet(false),
-    m_trunkInterfaceIdHasBeenSet(false),
-    m_interfaceProtocol(InterfaceProtocolType::NOT_SET),
-    m_interfaceProtocolHasBeenSet(false),
-    m_vlanId(0),
-    m_vlanIdHasBeenSet(false),
-    m_greKey(0),
-    m_greKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TrunkInterfaceAssociation::TrunkInterfaceAssociation(const XmlNode& xmlNode)
-  : TrunkInterfaceAssociation()
 {
   *this = xmlNode;
 }
@@ -51,48 +36,55 @@ TrunkInterfaceAssociation& TrunkInterfaceAssociation::operator =(const XmlNode& 
     {
       m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
       m_associationIdHasBeenSet = true;
+       m_associationIdHasBeenSet = true;
     }
     XmlNode branchInterfaceIdNode = resultNode.FirstChild("branchInterfaceId");
     if(!branchInterfaceIdNode.IsNull())
     {
       m_branchInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(branchInterfaceIdNode.GetText());
       m_branchInterfaceIdHasBeenSet = true;
+       m_branchInterfaceIdHasBeenSet = true;
     }
     XmlNode trunkInterfaceIdNode = resultNode.FirstChild("trunkInterfaceId");
     if(!trunkInterfaceIdNode.IsNull())
     {
       m_trunkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(trunkInterfaceIdNode.GetText());
       m_trunkInterfaceIdHasBeenSet = true;
+       m_trunkInterfaceIdHasBeenSet = true;
     }
     XmlNode interfaceProtocolNode = resultNode.FirstChild("interfaceProtocol");
     if(!interfaceProtocolNode.IsNull())
     {
-      m_interfaceProtocol = InterfaceProtocolTypeMapper::GetInterfaceProtocolTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(interfaceProtocolNode.GetText()).c_str()).c_str());
+      m_interfaceProtocol = InterfaceProtocolTypeMapper::GetInterfaceProtocolTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(interfaceProtocolNode.GetText()).c_str()));
       m_interfaceProtocolHasBeenSet = true;
+       m_interfaceProtocolHasBeenSet = true;
     }
     XmlNode vlanIdNode = resultNode.FirstChild("vlanId");
     if(!vlanIdNode.IsNull())
     {
       m_vlanId = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vlanIdNode.GetText()).c_str()).c_str());
       m_vlanIdHasBeenSet = true;
+       m_vlanIdHasBeenSet = true;
     }
     XmlNode greKeyNode = resultNode.FirstChild("greKey");
     if(!greKeyNode.IsNull())
     {
       m_greKey = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(greKeyNode.GetText()).c_str()).c_str());
       m_greKeyHasBeenSet = true;
+       m_greKeyHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

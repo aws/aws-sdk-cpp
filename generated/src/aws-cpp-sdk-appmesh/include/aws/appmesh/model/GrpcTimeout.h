@@ -31,7 +31,7 @@ namespace Model
   class GrpcTimeout
   {
   public:
-    AWS_APPMESH_API GrpcTimeout();
+    AWS_APPMESH_API GrpcTimeout() = default;
     AWS_APPMESH_API GrpcTimeout(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API GrpcTimeout& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>An object that represents an idle timeout. An idle timeout bounds the amount
      * of time that a connection may be idle. The default value is none.</p>
      */
-    inline const Duration& GetIdle() const{ return m_idle; }
+    inline const Duration& GetIdle() const { return m_idle; }
     inline bool IdleHasBeenSet() const { return m_idleHasBeenSet; }
-    inline void SetIdle(const Duration& value) { m_idleHasBeenSet = true; m_idle = value; }
-    inline void SetIdle(Duration&& value) { m_idleHasBeenSet = true; m_idle = std::move(value); }
-    inline GrpcTimeout& WithIdle(const Duration& value) { SetIdle(value); return *this;}
-    inline GrpcTimeout& WithIdle(Duration&& value) { SetIdle(std::move(value)); return *this;}
+    template<typename IdleT = Duration>
+    void SetIdle(IdleT&& value) { m_idleHasBeenSet = true; m_idle = std::forward<IdleT>(value); }
+    template<typename IdleT = Duration>
+    GrpcTimeout& WithIdle(IdleT&& value) { SetIdle(std::forward<IdleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * the timeout should be greater than 15 seconds for the source and destination
      * virtual node and the route.</p>
      */
-    inline const Duration& GetPerRequest() const{ return m_perRequest; }
+    inline const Duration& GetPerRequest() const { return m_perRequest; }
     inline bool PerRequestHasBeenSet() const { return m_perRequestHasBeenSet; }
-    inline void SetPerRequest(const Duration& value) { m_perRequestHasBeenSet = true; m_perRequest = value; }
-    inline void SetPerRequest(Duration&& value) { m_perRequestHasBeenSet = true; m_perRequest = std::move(value); }
-    inline GrpcTimeout& WithPerRequest(const Duration& value) { SetPerRequest(value); return *this;}
-    inline GrpcTimeout& WithPerRequest(Duration&& value) { SetPerRequest(std::move(value)); return *this;}
+    template<typename PerRequestT = Duration>
+    void SetPerRequest(PerRequestT&& value) { m_perRequestHasBeenSet = true; m_perRequest = std::forward<PerRequestT>(value); }
+    template<typename PerRequestT = Duration>
+    GrpcTimeout& WithPerRequest(PerRequestT&& value) { SetPerRequest(std::forward<PerRequestT>(value)); return *this;}
     ///@}
   private:
 

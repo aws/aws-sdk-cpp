@@ -28,7 +28,7 @@ namespace Model
   class GetSettingsResult
   {
   public:
-    AWS_AUDITMANAGER_API GetSettingsResult();
+    AWS_AUDITMANAGER_API GetSettingsResult() = default;
     AWS_AUDITMANAGER_API GetSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUDITMANAGER_API GetSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p> The settings object that holds all supported Audit Manager settings. </p>
      */
-    inline const Settings& GetSettings() const{ return m_settings; }
-    inline void SetSettings(const Settings& value) { m_settings = value; }
-    inline void SetSettings(Settings&& value) { m_settings = std::move(value); }
-    inline GetSettingsResult& WithSettings(const Settings& value) { SetSettings(value); return *this;}
-    inline GetSettingsResult& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
+    inline const Settings& GetSettings() const { return m_settings; }
+    template<typename SettingsT = Settings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = Settings>
+    GetSettingsResult& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Settings m_settings;
+    bool m_settingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

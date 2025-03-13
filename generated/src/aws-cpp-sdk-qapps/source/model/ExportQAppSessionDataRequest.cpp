@@ -13,12 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportQAppSessionDataRequest::ExportQAppSessionDataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String ExportQAppSessionDataRequest::SerializePayload() const
 {
   JsonValue payload;

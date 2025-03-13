@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateIpamResourceDiscoveryResponse::AssociateIpamResourceDiscoveryResponse()
-{
-}
-
 AssociateIpamResourceDiscoveryResponse::AssociateIpamResourceDiscoveryResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ AssociateIpamResourceDiscoveryResponse& AssociateIpamResourceDiscoveryResponse::
     if(!ipamResourceDiscoveryAssociationNode.IsNull())
     {
       m_ipamResourceDiscoveryAssociation = ipamResourceDiscoveryAssociationNode;
+      m_ipamResourceDiscoveryAssociationHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ AssociateIpamResourceDiscoveryResponse& AssociateIpamResourceDiscoveryResponse::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssociateIpamResourceDiscoveryResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -18,18 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-ValidatePolicyFinding::ValidatePolicyFinding() : 
-    m_findingDetailsHasBeenSet(false),
-    m_findingType(ValidatePolicyFindingType::NOT_SET),
-    m_findingTypeHasBeenSet(false),
-    m_issueCodeHasBeenSet(false),
-    m_learnMoreLinkHasBeenSet(false),
-    m_locationsHasBeenSet(false)
-{
-}
-
 ValidatePolicyFinding::ValidatePolicyFinding(JsonView jsonValue)
-  : ValidatePolicyFinding()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ValidatePolicyFinding& ValidatePolicyFinding::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("findingDetails"))
   {
     m_findingDetails = jsonValue.GetString("findingDetails");
-
     m_findingDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingType"))
   {
     m_findingType = ValidatePolicyFindingTypeMapper::GetValidatePolicyFindingTypeForName(jsonValue.GetString("findingType"));
-
     m_findingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("issueCode"))
   {
     m_issueCode = jsonValue.GetString("issueCode");
-
     m_issueCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("learnMoreLink"))
   {
     m_learnMoreLink = jsonValue.GetString("learnMoreLink");
-
     m_learnMoreLinkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("locations"))
   {
     Aws::Utils::Array<JsonView> locationsJsonList = jsonValue.GetArray("locations");
@@ -73,7 +54,6 @@ ValidatePolicyFinding& ValidatePolicyFinding::operator =(JsonView jsonValue)
     }
     m_locationsHasBeenSet = true;
   }
-
   return *this;
 }
 

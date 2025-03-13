@@ -38,7 +38,7 @@ namespace Model
   class OpenZFSVolumeConfiguration
   {
   public:
-    AWS_FSX_API OpenZFSVolumeConfiguration();
+    AWS_FSX_API OpenZFSVolumeConfiguration() = default;
     AWS_FSX_API OpenZFSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API OpenZFSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The ID of the parent volume.</p>
      */
-    inline const Aws::String& GetParentVolumeId() const{ return m_parentVolumeId; }
+    inline const Aws::String& GetParentVolumeId() const { return m_parentVolumeId; }
     inline bool ParentVolumeIdHasBeenSet() const { return m_parentVolumeIdHasBeenSet; }
-    inline void SetParentVolumeId(const Aws::String& value) { m_parentVolumeIdHasBeenSet = true; m_parentVolumeId = value; }
-    inline void SetParentVolumeId(Aws::String&& value) { m_parentVolumeIdHasBeenSet = true; m_parentVolumeId = std::move(value); }
-    inline void SetParentVolumeId(const char* value) { m_parentVolumeIdHasBeenSet = true; m_parentVolumeId.assign(value); }
-    inline OpenZFSVolumeConfiguration& WithParentVolumeId(const Aws::String& value) { SetParentVolumeId(value); return *this;}
-    inline OpenZFSVolumeConfiguration& WithParentVolumeId(Aws::String&& value) { SetParentVolumeId(std::move(value)); return *this;}
-    inline OpenZFSVolumeConfiguration& WithParentVolumeId(const char* value) { SetParentVolumeId(value); return *this;}
+    template<typename ParentVolumeIdT = Aws::String>
+    void SetParentVolumeId(ParentVolumeIdT&& value) { m_parentVolumeIdHasBeenSet = true; m_parentVolumeId = std::forward<ParentVolumeIdT>(value); }
+    template<typename ParentVolumeIdT = Aws::String>
+    OpenZFSVolumeConfiguration& WithParentVolumeId(ParentVolumeIdT&& value) { SetParentVolumeId(std::forward<ParentVolumeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>The path to the volume from the root volume. For example,
      * <code>fsx/parentVolume/volume1</code>.</p>
      */
-    inline const Aws::String& GetVolumePath() const{ return m_volumePath; }
+    inline const Aws::String& GetVolumePath() const { return m_volumePath; }
     inline bool VolumePathHasBeenSet() const { return m_volumePathHasBeenSet; }
-    inline void SetVolumePath(const Aws::String& value) { m_volumePathHasBeenSet = true; m_volumePath = value; }
-    inline void SetVolumePath(Aws::String&& value) { m_volumePathHasBeenSet = true; m_volumePath = std::move(value); }
-    inline void SetVolumePath(const char* value) { m_volumePathHasBeenSet = true; m_volumePath.assign(value); }
-    inline OpenZFSVolumeConfiguration& WithVolumePath(const Aws::String& value) { SetVolumePath(value); return *this;}
-    inline OpenZFSVolumeConfiguration& WithVolumePath(Aws::String&& value) { SetVolumePath(std::move(value)); return *this;}
-    inline OpenZFSVolumeConfiguration& WithVolumePath(const char* value) { SetVolumePath(value); return *this;}
+    template<typename VolumePathT = Aws::String>
+    void SetVolumePath(VolumePathT&& value) { m_volumePathHasBeenSet = true; m_volumePath = std::forward<VolumePathT>(value); }
+    template<typename VolumePathT = Aws::String>
+    OpenZFSVolumeConfiguration& WithVolumePath(VolumePathT&& value) { SetVolumePath(std::forward<VolumePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume.
      * You can't reserve more storage than the parent volume has reserved.</p>
      */
-    inline int GetStorageCapacityReservationGiB() const{ return m_storageCapacityReservationGiB; }
+    inline int GetStorageCapacityReservationGiB() const { return m_storageCapacityReservationGiB; }
     inline bool StorageCapacityReservationGiBHasBeenSet() const { return m_storageCapacityReservationGiBHasBeenSet; }
     inline void SetStorageCapacityReservationGiB(int value) { m_storageCapacityReservationGiBHasBeenSet = true; m_storageCapacityReservationGiB = value; }
     inline OpenZFSVolumeConfiguration& WithStorageCapacityReservationGiB(int value) { SetStorageCapacityReservationGiB(value); return *this;}
@@ -90,7 +86,7 @@ namespace Model
      * its parent. You can specify a quota larger than the storage on the parent
      * volume.</p>
      */
-    inline int GetStorageCapacityQuotaGiB() const{ return m_storageCapacityQuotaGiB; }
+    inline int GetStorageCapacityQuotaGiB() const { return m_storageCapacityQuotaGiB; }
     inline bool StorageCapacityQuotaGiBHasBeenSet() const { return m_storageCapacityQuotaGiBHasBeenSet; }
     inline void SetStorageCapacityQuotaGiB(int value) { m_storageCapacityQuotaGiBHasBeenSet = true; m_storageCapacityQuotaGiB = value; }
     inline OpenZFSVolumeConfiguration& WithStorageCapacityQuotaGiB(int value) { SetStorageCapacityQuotaGiB(value); return *this;}
@@ -103,7 +99,7 @@ namespace Model
      * workloads should use the default record size. For guidance on when to set a
      * custom record size, see the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */
-    inline int GetRecordSizeKiB() const{ return m_recordSizeKiB; }
+    inline int GetRecordSizeKiB() const { return m_recordSizeKiB; }
     inline bool RecordSizeKiBHasBeenSet() const { return m_recordSizeKiBHasBeenSet; }
     inline void SetRecordSizeKiB(int value) { m_recordSizeKiBHasBeenSet = true; m_recordSizeKiB = value; }
     inline OpenZFSVolumeConfiguration& WithRecordSizeKiB(int value) { SetRecordSizeKiB(value); return *this;}
@@ -121,12 +117,10 @@ namespace Model
      * compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and
      * delivers higher write throughput speeds.</p> </li> </ul>
      */
-    inline const OpenZFSDataCompressionType& GetDataCompressionType() const{ return m_dataCompressionType; }
+    inline OpenZFSDataCompressionType GetDataCompressionType() const { return m_dataCompressionType; }
     inline bool DataCompressionTypeHasBeenSet() const { return m_dataCompressionTypeHasBeenSet; }
-    inline void SetDataCompressionType(const OpenZFSDataCompressionType& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = value; }
-    inline void SetDataCompressionType(OpenZFSDataCompressionType&& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = std::move(value); }
-    inline OpenZFSVolumeConfiguration& WithDataCompressionType(const OpenZFSDataCompressionType& value) { SetDataCompressionType(value); return *this;}
-    inline OpenZFSVolumeConfiguration& WithDataCompressionType(OpenZFSDataCompressionType&& value) { SetDataCompressionType(std::move(value)); return *this;}
+    inline void SetDataCompressionType(OpenZFSDataCompressionType value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = value; }
+    inline OpenZFSVolumeConfiguration& WithDataCompressionType(OpenZFSDataCompressionType value) { SetDataCompressionType(value); return *this;}
     ///@}
 
     ///@{
@@ -139,7 +133,7 @@ namespace Model
      * specify one or more tags when creating the snapshot, no tags are copied from the
      * volume, regardless of this value.</p>
      */
-    inline bool GetCopyTagsToSnapshots() const{ return m_copyTagsToSnapshots; }
+    inline bool GetCopyTagsToSnapshots() const { return m_copyTagsToSnapshots; }
     inline bool CopyTagsToSnapshotsHasBeenSet() const { return m_copyTagsToSnapshotsHasBeenSet; }
     inline void SetCopyTagsToSnapshots(bool value) { m_copyTagsToSnapshotsHasBeenSet = true; m_copyTagsToSnapshots = value; }
     inline OpenZFSVolumeConfiguration& WithCopyTagsToSnapshots(bool value) { SetCopyTagsToSnapshots(value); return *this;}
@@ -150,19 +144,19 @@ namespace Model
      * <p>The configuration object that specifies the snapshot to use as the origin of
      * the data for the volume.</p>
      */
-    inline const OpenZFSOriginSnapshotConfiguration& GetOriginSnapshot() const{ return m_originSnapshot; }
+    inline const OpenZFSOriginSnapshotConfiguration& GetOriginSnapshot() const { return m_originSnapshot; }
     inline bool OriginSnapshotHasBeenSet() const { return m_originSnapshotHasBeenSet; }
-    inline void SetOriginSnapshot(const OpenZFSOriginSnapshotConfiguration& value) { m_originSnapshotHasBeenSet = true; m_originSnapshot = value; }
-    inline void SetOriginSnapshot(OpenZFSOriginSnapshotConfiguration&& value) { m_originSnapshotHasBeenSet = true; m_originSnapshot = std::move(value); }
-    inline OpenZFSVolumeConfiguration& WithOriginSnapshot(const OpenZFSOriginSnapshotConfiguration& value) { SetOriginSnapshot(value); return *this;}
-    inline OpenZFSVolumeConfiguration& WithOriginSnapshot(OpenZFSOriginSnapshotConfiguration&& value) { SetOriginSnapshot(std::move(value)); return *this;}
+    template<typename OriginSnapshotT = OpenZFSOriginSnapshotConfiguration>
+    void SetOriginSnapshot(OriginSnapshotT&& value) { m_originSnapshotHasBeenSet = true; m_originSnapshot = std::forward<OriginSnapshotT>(value); }
+    template<typename OriginSnapshotT = OpenZFSOriginSnapshotConfiguration>
+    OpenZFSVolumeConfiguration& WithOriginSnapshot(OriginSnapshotT&& value) { SetOriginSnapshot(std::forward<OriginSnapshotT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A Boolean value indicating whether the volume is read-only.</p>
      */
-    inline bool GetReadOnly() const{ return m_readOnly; }
+    inline bool GetReadOnly() const { return m_readOnly; }
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
     inline OpenZFSVolumeConfiguration& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
@@ -173,14 +167,14 @@ namespace Model
      * <p>The configuration object for mounting a Network File System (NFS) file
      * system.</p>
      */
-    inline const Aws::Vector<OpenZFSNfsExport>& GetNfsExports() const{ return m_nfsExports; }
+    inline const Aws::Vector<OpenZFSNfsExport>& GetNfsExports() const { return m_nfsExports; }
     inline bool NfsExportsHasBeenSet() const { return m_nfsExportsHasBeenSet; }
-    inline void SetNfsExports(const Aws::Vector<OpenZFSNfsExport>& value) { m_nfsExportsHasBeenSet = true; m_nfsExports = value; }
-    inline void SetNfsExports(Aws::Vector<OpenZFSNfsExport>&& value) { m_nfsExportsHasBeenSet = true; m_nfsExports = std::move(value); }
-    inline OpenZFSVolumeConfiguration& WithNfsExports(const Aws::Vector<OpenZFSNfsExport>& value) { SetNfsExports(value); return *this;}
-    inline OpenZFSVolumeConfiguration& WithNfsExports(Aws::Vector<OpenZFSNfsExport>&& value) { SetNfsExports(std::move(value)); return *this;}
-    inline OpenZFSVolumeConfiguration& AddNfsExports(const OpenZFSNfsExport& value) { m_nfsExportsHasBeenSet = true; m_nfsExports.push_back(value); return *this; }
-    inline OpenZFSVolumeConfiguration& AddNfsExports(OpenZFSNfsExport&& value) { m_nfsExportsHasBeenSet = true; m_nfsExports.push_back(std::move(value)); return *this; }
+    template<typename NfsExportsT = Aws::Vector<OpenZFSNfsExport>>
+    void SetNfsExports(NfsExportsT&& value) { m_nfsExportsHasBeenSet = true; m_nfsExports = std::forward<NfsExportsT>(value); }
+    template<typename NfsExportsT = Aws::Vector<OpenZFSNfsExport>>
+    OpenZFSVolumeConfiguration& WithNfsExports(NfsExportsT&& value) { SetNfsExports(std::forward<NfsExportsT>(value)); return *this;}
+    template<typename NfsExportsT = OpenZFSNfsExport>
+    OpenZFSVolumeConfiguration& AddNfsExports(NfsExportsT&& value) { m_nfsExportsHasBeenSet = true; m_nfsExports.emplace_back(std::forward<NfsExportsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -188,28 +182,26 @@ namespace Model
      * <p>An object specifying how much storage users or groups can use on the
      * volume.</p>
      */
-    inline const Aws::Vector<OpenZFSUserOrGroupQuota>& GetUserAndGroupQuotas() const{ return m_userAndGroupQuotas; }
+    inline const Aws::Vector<OpenZFSUserOrGroupQuota>& GetUserAndGroupQuotas() const { return m_userAndGroupQuotas; }
     inline bool UserAndGroupQuotasHasBeenSet() const { return m_userAndGroupQuotasHasBeenSet; }
-    inline void SetUserAndGroupQuotas(const Aws::Vector<OpenZFSUserOrGroupQuota>& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas = value; }
-    inline void SetUserAndGroupQuotas(Aws::Vector<OpenZFSUserOrGroupQuota>&& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas = std::move(value); }
-    inline OpenZFSVolumeConfiguration& WithUserAndGroupQuotas(const Aws::Vector<OpenZFSUserOrGroupQuota>& value) { SetUserAndGroupQuotas(value); return *this;}
-    inline OpenZFSVolumeConfiguration& WithUserAndGroupQuotas(Aws::Vector<OpenZFSUserOrGroupQuota>&& value) { SetUserAndGroupQuotas(std::move(value)); return *this;}
-    inline OpenZFSVolumeConfiguration& AddUserAndGroupQuotas(const OpenZFSUserOrGroupQuota& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas.push_back(value); return *this; }
-    inline OpenZFSVolumeConfiguration& AddUserAndGroupQuotas(OpenZFSUserOrGroupQuota&& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas.push_back(std::move(value)); return *this; }
+    template<typename UserAndGroupQuotasT = Aws::Vector<OpenZFSUserOrGroupQuota>>
+    void SetUserAndGroupQuotas(UserAndGroupQuotasT&& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas = std::forward<UserAndGroupQuotasT>(value); }
+    template<typename UserAndGroupQuotasT = Aws::Vector<OpenZFSUserOrGroupQuota>>
+    OpenZFSVolumeConfiguration& WithUserAndGroupQuotas(UserAndGroupQuotasT&& value) { SetUserAndGroupQuotas(std::forward<UserAndGroupQuotasT>(value)); return *this;}
+    template<typename UserAndGroupQuotasT = OpenZFSUserOrGroupQuota>
+    OpenZFSVolumeConfiguration& AddUserAndGroupQuotas(UserAndGroupQuotasT&& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas.emplace_back(std::forward<UserAndGroupQuotasT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the ID of the snapshot to which the volume was restored.</p>
      */
-    inline const Aws::String& GetRestoreToSnapshot() const{ return m_restoreToSnapshot; }
+    inline const Aws::String& GetRestoreToSnapshot() const { return m_restoreToSnapshot; }
     inline bool RestoreToSnapshotHasBeenSet() const { return m_restoreToSnapshotHasBeenSet; }
-    inline void SetRestoreToSnapshot(const Aws::String& value) { m_restoreToSnapshotHasBeenSet = true; m_restoreToSnapshot = value; }
-    inline void SetRestoreToSnapshot(Aws::String&& value) { m_restoreToSnapshotHasBeenSet = true; m_restoreToSnapshot = std::move(value); }
-    inline void SetRestoreToSnapshot(const char* value) { m_restoreToSnapshotHasBeenSet = true; m_restoreToSnapshot.assign(value); }
-    inline OpenZFSVolumeConfiguration& WithRestoreToSnapshot(const Aws::String& value) { SetRestoreToSnapshot(value); return *this;}
-    inline OpenZFSVolumeConfiguration& WithRestoreToSnapshot(Aws::String&& value) { SetRestoreToSnapshot(std::move(value)); return *this;}
-    inline OpenZFSVolumeConfiguration& WithRestoreToSnapshot(const char* value) { SetRestoreToSnapshot(value); return *this;}
+    template<typename RestoreToSnapshotT = Aws::String>
+    void SetRestoreToSnapshot(RestoreToSnapshotT&& value) { m_restoreToSnapshotHasBeenSet = true; m_restoreToSnapshot = std::forward<RestoreToSnapshotT>(value); }
+    template<typename RestoreToSnapshotT = Aws::String>
+    OpenZFSVolumeConfiguration& WithRestoreToSnapshot(RestoreToSnapshotT&& value) { SetRestoreToSnapshot(std::forward<RestoreToSnapshotT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -218,7 +210,7 @@ namespace Model
      * the specified snapshot should be deleted when a volume is restored from
      * snapshot.</p>
      */
-    inline bool GetDeleteIntermediateSnaphots() const{ return m_deleteIntermediateSnaphots; }
+    inline bool GetDeleteIntermediateSnaphots() const { return m_deleteIntermediateSnaphots; }
     inline bool DeleteIntermediateSnaphotsHasBeenSet() const { return m_deleteIntermediateSnaphotsHasBeenSet; }
     inline void SetDeleteIntermediateSnaphots(bool value) { m_deleteIntermediateSnaphotsHasBeenSet = true; m_deleteIntermediateSnaphots = value; }
     inline OpenZFSVolumeConfiguration& WithDeleteIntermediateSnaphots(bool value) { SetDeleteIntermediateSnaphots(value); return *this;}
@@ -230,7 +222,7 @@ namespace Model
      * intermediate snapshots should be deleted when a volume is restored from
      * snapshot.</p>
      */
-    inline bool GetDeleteClonedVolumes() const{ return m_deleteClonedVolumes; }
+    inline bool GetDeleteClonedVolumes() const { return m_deleteClonedVolumes; }
     inline bool DeleteClonedVolumesHasBeenSet() const { return m_deleteClonedVolumesHasBeenSet; }
     inline void SetDeleteClonedVolumes(bool value) { m_deleteClonedVolumesHasBeenSet = true; m_deleteClonedVolumes = value; }
     inline OpenZFSVolumeConfiguration& WithDeleteClonedVolumes(bool value) { SetDeleteClonedVolumes(value); return *this;}
@@ -242,7 +234,7 @@ namespace Model
      * current state and the specified snapshot should be overwritten when a volume is
      * restored from a snapshot.</p>
      */
-    inline bool GetDeleteIntermediateData() const{ return m_deleteIntermediateData; }
+    inline bool GetDeleteIntermediateData() const { return m_deleteIntermediateData; }
     inline bool DeleteIntermediateDataHasBeenSet() const { return m_deleteIntermediateDataHasBeenSet; }
     inline void SetDeleteIntermediateData(bool value) { m_deleteIntermediateDataHasBeenSet = true; m_deleteIntermediateData = value; }
     inline OpenZFSVolumeConfiguration& WithDeleteIntermediateData(bool value) { SetDeleteIntermediateData(value); return *this;}
@@ -250,14 +242,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetSourceSnapshotARN() const{ return m_sourceSnapshotARN; }
+    inline const Aws::String& GetSourceSnapshotARN() const { return m_sourceSnapshotARN; }
     inline bool SourceSnapshotARNHasBeenSet() const { return m_sourceSnapshotARNHasBeenSet; }
-    inline void SetSourceSnapshotARN(const Aws::String& value) { m_sourceSnapshotARNHasBeenSet = true; m_sourceSnapshotARN = value; }
-    inline void SetSourceSnapshotARN(Aws::String&& value) { m_sourceSnapshotARNHasBeenSet = true; m_sourceSnapshotARN = std::move(value); }
-    inline void SetSourceSnapshotARN(const char* value) { m_sourceSnapshotARNHasBeenSet = true; m_sourceSnapshotARN.assign(value); }
-    inline OpenZFSVolumeConfiguration& WithSourceSnapshotARN(const Aws::String& value) { SetSourceSnapshotARN(value); return *this;}
-    inline OpenZFSVolumeConfiguration& WithSourceSnapshotARN(Aws::String&& value) { SetSourceSnapshotARN(std::move(value)); return *this;}
-    inline OpenZFSVolumeConfiguration& WithSourceSnapshotARN(const char* value) { SetSourceSnapshotARN(value); return *this;}
+    template<typename SourceSnapshotARNT = Aws::String>
+    void SetSourceSnapshotARN(SourceSnapshotARNT&& value) { m_sourceSnapshotARNHasBeenSet = true; m_sourceSnapshotARN = std::forward<SourceSnapshotARNT>(value); }
+    template<typename SourceSnapshotARNT = Aws::String>
+    OpenZFSVolumeConfiguration& WithSourceSnapshotARN(SourceSnapshotARNT&& value) { SetSourceSnapshotARN(std::forward<SourceSnapshotARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -265,14 +255,12 @@ namespace Model
      * <p>The ID of the snapshot that's being copied or was most recently copied to the
      * destination volume.</p>
      */
-    inline const Aws::String& GetDestinationSnapshot() const{ return m_destinationSnapshot; }
+    inline const Aws::String& GetDestinationSnapshot() const { return m_destinationSnapshot; }
     inline bool DestinationSnapshotHasBeenSet() const { return m_destinationSnapshotHasBeenSet; }
-    inline void SetDestinationSnapshot(const Aws::String& value) { m_destinationSnapshotHasBeenSet = true; m_destinationSnapshot = value; }
-    inline void SetDestinationSnapshot(Aws::String&& value) { m_destinationSnapshotHasBeenSet = true; m_destinationSnapshot = std::move(value); }
-    inline void SetDestinationSnapshot(const char* value) { m_destinationSnapshotHasBeenSet = true; m_destinationSnapshot.assign(value); }
-    inline OpenZFSVolumeConfiguration& WithDestinationSnapshot(const Aws::String& value) { SetDestinationSnapshot(value); return *this;}
-    inline OpenZFSVolumeConfiguration& WithDestinationSnapshot(Aws::String&& value) { SetDestinationSnapshot(std::move(value)); return *this;}
-    inline OpenZFSVolumeConfiguration& WithDestinationSnapshot(const char* value) { SetDestinationSnapshot(value); return *this;}
+    template<typename DestinationSnapshotT = Aws::String>
+    void SetDestinationSnapshot(DestinationSnapshotT&& value) { m_destinationSnapshotHasBeenSet = true; m_destinationSnapshot = std::forward<DestinationSnapshotT>(value); }
+    template<typename DestinationSnapshotT = Aws::String>
+    OpenZFSVolumeConfiguration& WithDestinationSnapshot(DestinationSnapshotT&& value) { SetDestinationSnapshot(std::forward<DestinationSnapshotT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -291,12 +279,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.</p>
      * 
      */
-    inline const OpenZFSCopyStrategy& GetCopyStrategy() const{ return m_copyStrategy; }
+    inline OpenZFSCopyStrategy GetCopyStrategy() const { return m_copyStrategy; }
     inline bool CopyStrategyHasBeenSet() const { return m_copyStrategyHasBeenSet; }
-    inline void SetCopyStrategy(const OpenZFSCopyStrategy& value) { m_copyStrategyHasBeenSet = true; m_copyStrategy = value; }
-    inline void SetCopyStrategy(OpenZFSCopyStrategy&& value) { m_copyStrategyHasBeenSet = true; m_copyStrategy = std::move(value); }
-    inline OpenZFSVolumeConfiguration& WithCopyStrategy(const OpenZFSCopyStrategy& value) { SetCopyStrategy(value); return *this;}
-    inline OpenZFSVolumeConfiguration& WithCopyStrategy(OpenZFSCopyStrategy&& value) { SetCopyStrategy(std::move(value)); return *this;}
+    inline void SetCopyStrategy(OpenZFSCopyStrategy value) { m_copyStrategyHasBeenSet = true; m_copyStrategy = value; }
+    inline OpenZFSVolumeConfiguration& WithCopyStrategy(OpenZFSCopyStrategy value) { SetCopyStrategy(value); return *this;}
     ///@}
   private:
 
@@ -306,25 +292,25 @@ namespace Model
     Aws::String m_volumePath;
     bool m_volumePathHasBeenSet = false;
 
-    int m_storageCapacityReservationGiB;
+    int m_storageCapacityReservationGiB{0};
     bool m_storageCapacityReservationGiBHasBeenSet = false;
 
-    int m_storageCapacityQuotaGiB;
+    int m_storageCapacityQuotaGiB{0};
     bool m_storageCapacityQuotaGiBHasBeenSet = false;
 
-    int m_recordSizeKiB;
+    int m_recordSizeKiB{0};
     bool m_recordSizeKiBHasBeenSet = false;
 
-    OpenZFSDataCompressionType m_dataCompressionType;
+    OpenZFSDataCompressionType m_dataCompressionType{OpenZFSDataCompressionType::NOT_SET};
     bool m_dataCompressionTypeHasBeenSet = false;
 
-    bool m_copyTagsToSnapshots;
+    bool m_copyTagsToSnapshots{false};
     bool m_copyTagsToSnapshotsHasBeenSet = false;
 
     OpenZFSOriginSnapshotConfiguration m_originSnapshot;
     bool m_originSnapshotHasBeenSet = false;
 
-    bool m_readOnly;
+    bool m_readOnly{false};
     bool m_readOnlyHasBeenSet = false;
 
     Aws::Vector<OpenZFSNfsExport> m_nfsExports;
@@ -336,13 +322,13 @@ namespace Model
     Aws::String m_restoreToSnapshot;
     bool m_restoreToSnapshotHasBeenSet = false;
 
-    bool m_deleteIntermediateSnaphots;
+    bool m_deleteIntermediateSnaphots{false};
     bool m_deleteIntermediateSnaphotsHasBeenSet = false;
 
-    bool m_deleteClonedVolumes;
+    bool m_deleteClonedVolumes{false};
     bool m_deleteClonedVolumesHasBeenSet = false;
 
-    bool m_deleteIntermediateData;
+    bool m_deleteIntermediateData{false};
     bool m_deleteIntermediateDataHasBeenSet = false;
 
     Aws::String m_sourceSnapshotARN;
@@ -351,7 +337,7 @@ namespace Model
     Aws::String m_destinationSnapshot;
     bool m_destinationSnapshotHasBeenSet = false;
 
-    OpenZFSCopyStrategy m_copyStrategy;
+    OpenZFSCopyStrategy m_copyStrategy{OpenZFSCopyStrategy::NOT_SET};
     bool m_copyStrategyHasBeenSet = false;
   };
 

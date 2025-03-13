@@ -18,16 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-ExcelOptions::ExcelOptions() : 
-    m_sheetNamesHasBeenSet(false),
-    m_sheetIndexesHasBeenSet(false),
-    m_headerRow(false),
-    m_headerRowHasBeenSet(false)
-{
-}
-
 ExcelOptions::ExcelOptions(JsonView jsonValue)
-  : ExcelOptions()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ ExcelOptions& ExcelOptions::operator =(JsonView jsonValue)
     }
     m_sheetNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SheetIndexes"))
   {
     Aws::Utils::Array<JsonView> sheetIndexesJsonList = jsonValue.GetArray("SheetIndexes");
@@ -53,14 +43,11 @@ ExcelOptions& ExcelOptions::operator =(JsonView jsonValue)
     }
     m_sheetIndexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeaderRow"))
   {
     m_headerRow = jsonValue.GetBool("HeaderRow");
-
     m_headerRowHasBeenSet = true;
   }
-
   return *this;
 }
 

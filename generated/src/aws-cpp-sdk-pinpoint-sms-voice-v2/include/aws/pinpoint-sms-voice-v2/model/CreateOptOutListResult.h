@@ -30,7 +30,7 @@ namespace Model
   class CreateOptOutListResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API CreateOptOutListResult();
+    AWS_PINPOINTSMSVOICEV2_API CreateOptOutListResult() = default;
     AWS_PINPOINTSMSVOICEV2_API CreateOptOutListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API CreateOptOutListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,26 +39,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the OptOutList.</p>
      */
-    inline const Aws::String& GetOptOutListArn() const{ return m_optOutListArn; }
-    inline void SetOptOutListArn(const Aws::String& value) { m_optOutListArn = value; }
-    inline void SetOptOutListArn(Aws::String&& value) { m_optOutListArn = std::move(value); }
-    inline void SetOptOutListArn(const char* value) { m_optOutListArn.assign(value); }
-    inline CreateOptOutListResult& WithOptOutListArn(const Aws::String& value) { SetOptOutListArn(value); return *this;}
-    inline CreateOptOutListResult& WithOptOutListArn(Aws::String&& value) { SetOptOutListArn(std::move(value)); return *this;}
-    inline CreateOptOutListResult& WithOptOutListArn(const char* value) { SetOptOutListArn(value); return *this;}
+    inline const Aws::String& GetOptOutListArn() const { return m_optOutListArn; }
+    template<typename OptOutListArnT = Aws::String>
+    void SetOptOutListArn(OptOutListArnT&& value) { m_optOutListArnHasBeenSet = true; m_optOutListArn = std::forward<OptOutListArnT>(value); }
+    template<typename OptOutListArnT = Aws::String>
+    CreateOptOutListResult& WithOptOutListArn(OptOutListArnT&& value) { SetOptOutListArn(std::forward<OptOutListArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the new OptOutList.</p>
      */
-    inline const Aws::String& GetOptOutListName() const{ return m_optOutListName; }
-    inline void SetOptOutListName(const Aws::String& value) { m_optOutListName = value; }
-    inline void SetOptOutListName(Aws::String&& value) { m_optOutListName = std::move(value); }
-    inline void SetOptOutListName(const char* value) { m_optOutListName.assign(value); }
-    inline CreateOptOutListResult& WithOptOutListName(const Aws::String& value) { SetOptOutListName(value); return *this;}
-    inline CreateOptOutListResult& WithOptOutListName(Aws::String&& value) { SetOptOutListName(std::move(value)); return *this;}
-    inline CreateOptOutListResult& WithOptOutListName(const char* value) { SetOptOutListName(value); return *this;}
+    inline const Aws::String& GetOptOutListName() const { return m_optOutListName; }
+    template<typename OptOutListNameT = Aws::String>
+    void SetOptOutListName(OptOutListNameT&& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = std::forward<OptOutListNameT>(value); }
+    template<typename OptOutListNameT = Aws::String>
+    CreateOptOutListResult& WithOptOutListName(OptOutListNameT&& value) { SetOptOutListName(std::forward<OptOutListNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,13 +62,13 @@ namespace Model
      * <p>An array of tags (key and value pairs) associated with the new
      * OptOutList.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline CreateOptOutListResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateOptOutListResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateOptOutListResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline CreateOptOutListResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateOptOutListResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateOptOutListResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,34 +76,37 @@ namespace Model
      * <p>The time when the pool was created, in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline CreateOptOutListResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline CreateOptOutListResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    CreateOptOutListResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateOptOutListResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateOptOutListResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateOptOutListResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateOptOutListResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_optOutListArn;
+    bool m_optOutListArnHasBeenSet = false;
 
     Aws::String m_optOutListName;
+    bool m_optOutListNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

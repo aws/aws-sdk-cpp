@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeInstanceStorageConfigRequest::DescribeInstanceStorageConfigRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_resourceType(InstanceStorageResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInstanceStorageConfigRequest::SerializePayload() const
 {
   return {};

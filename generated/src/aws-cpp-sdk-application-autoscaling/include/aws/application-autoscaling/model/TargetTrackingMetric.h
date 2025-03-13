@@ -34,7 +34,7 @@ namespace Model
   class TargetTrackingMetric
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API TargetTrackingMetric();
+    AWS_APPLICATIONAUTOSCALING_API TargetTrackingMetric() = default;
     AWS_APPLICATIONAUTOSCALING_API TargetTrackingMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API TargetTrackingMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,26 @@ namespace Model
      * with dimensions, you must specify the same dimensions in your scaling
      * policy.</p>
      */
-    inline const Aws::Vector<TargetTrackingMetricDimension>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<TargetTrackingMetricDimension>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<TargetTrackingMetricDimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<TargetTrackingMetricDimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline TargetTrackingMetric& WithDimensions(const Aws::Vector<TargetTrackingMetricDimension>& value) { SetDimensions(value); return *this;}
-    inline TargetTrackingMetric& WithDimensions(Aws::Vector<TargetTrackingMetricDimension>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline TargetTrackingMetric& AddDimensions(const TargetTrackingMetricDimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline TargetTrackingMetric& AddDimensions(TargetTrackingMetricDimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+    template<typename DimensionsT = Aws::Vector<TargetTrackingMetricDimension>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<TargetTrackingMetricDimension>>
+    TargetTrackingMetric& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = TargetTrackingMetricDimension>
+    TargetTrackingMetric& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the metric.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline TargetTrackingMetric& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline TargetTrackingMetric& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline TargetTrackingMetric& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    TargetTrackingMetric& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +79,12 @@ namespace Model
      * Web Services services that publish CloudWatch metrics </a> in the <i>Amazon
      * CloudWatch User Guide</i>.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline TargetTrackingMetric& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline TargetTrackingMetric& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline TargetTrackingMetric& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    TargetTrackingMetric& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
   private:
 

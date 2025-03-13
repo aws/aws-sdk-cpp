@@ -30,7 +30,7 @@ namespace Model
   class TokenExchangeGrant
   {
   public:
-    AWS_SSOADMIN_API TokenExchangeGrant();
+    AWS_SSOADMIN_API TokenExchangeGrant() = default;
     AWS_SSOADMIN_API TokenExchangeGrant(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API TokenExchangeGrant& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;

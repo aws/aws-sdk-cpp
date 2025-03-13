@@ -18,31 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-Endpoint::Endpoint() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_virtualClusterIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_state(EndpointState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_certificateAuthorityHasBeenSet(false),
-    m_configurationOverridesHasBeenSet(false),
-    m_serverUrlHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_securityGroupHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_failureReason(FailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Endpoint::Endpoint(JsonView jsonValue)
-  : Endpoint()
 {
   *this = jsonValue;
 }
@@ -52,94 +28,68 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualClusterId"))
   {
     m_virtualClusterId = jsonValue.GetString("virtualClusterId");
-
     m_virtualClusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = EndpointStateMapper::GetEndpointStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("releaseLabel"))
   {
     m_releaseLabel = jsonValue.GetString("releaseLabel");
-
     m_releaseLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateAuthority"))
   {
     m_certificateAuthority = jsonValue.GetObject("certificateAuthority");
-
     m_certificateAuthorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationOverrides"))
   {
     m_configurationOverrides = jsonValue.GetObject("configurationOverrides");
-
     m_configurationOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverUrl"))
   {
     m_serverUrl = jsonValue.GetString("serverUrl");
-
     m_serverUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroup"))
   {
     m_securityGroup = jsonValue.GetString("securityGroup");
-
     m_securityGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -149,21 +99,16 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateDetails"))
   {
     m_stateDetails = jsonValue.GetString("stateDetails");
-
     m_stateDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = FailureReasonMapper::GetFailureReasonForName(jsonValue.GetString("failureReason"));
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -173,7 +118,6 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

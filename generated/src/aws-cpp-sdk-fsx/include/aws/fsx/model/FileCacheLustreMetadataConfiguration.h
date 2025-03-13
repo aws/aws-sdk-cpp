@@ -31,7 +31,7 @@ namespace Model
   class FileCacheLustreMetadataConfiguration
   {
   public:
-    AWS_FSX_API FileCacheLustreMetadataConfiguration();
+    AWS_FSX_API FileCacheLustreMetadataConfiguration() = default;
     AWS_FSX_API FileCacheLustreMetadataConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API FileCacheLustreMetadataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in
      * gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
      */
-    inline int GetStorageCapacity() const{ return m_storageCapacity; }
+    inline int GetStorageCapacity() const { return m_storageCapacity; }
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
     inline FileCacheLustreMetadataConfiguration& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
     ///@}
   private:
 
-    int m_storageCapacity;
+    int m_storageCapacity{0};
     bool m_storageCapacityHasBeenSet = false;
   };
 

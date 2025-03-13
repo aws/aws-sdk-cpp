@@ -12,12 +12,6 @@ using namespace Aws::Keyspaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTypeRequest::DeleteTypeRequest() : 
-    m_keyspaceNameHasBeenSet(false),
-    m_typeNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTypeRequest::SerializePayload() const
 {
   JsonValue payload;

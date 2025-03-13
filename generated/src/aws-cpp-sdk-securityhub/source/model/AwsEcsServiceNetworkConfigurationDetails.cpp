@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsServiceNetworkConfigurationDetails::AwsEcsServiceNetworkConfigurationDetails() : 
-    m_awsVpcConfigurationHasBeenSet(false)
-{
-}
-
 AwsEcsServiceNetworkConfigurationDetails::AwsEcsServiceNetworkConfigurationDetails(JsonView jsonValue)
-  : AwsEcsServiceNetworkConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEcsServiceNetworkConfigurationDetails& AwsEcsServiceNetworkConfigurationDetai
   if(jsonValue.ValueExists("AwsVpcConfiguration"))
   {
     m_awsVpcConfiguration = jsonValue.GetObject("AwsVpcConfiguration");
-
     m_awsVpcConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

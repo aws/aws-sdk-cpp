@@ -32,7 +32,7 @@ namespace Model
   class TemplateSourceEntity
   {
   public:
-    AWS_QUICKSIGHT_API TemplateSourceEntity();
+    AWS_QUICKSIGHT_API TemplateSourceEntity() = default;
     AWS_QUICKSIGHT_API TemplateSourceEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TemplateSourceEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The source analysis, if it is based on an analysis.</p>
      */
-    inline const TemplateSourceAnalysis& GetSourceAnalysis() const{ return m_sourceAnalysis; }
+    inline const TemplateSourceAnalysis& GetSourceAnalysis() const { return m_sourceAnalysis; }
     inline bool SourceAnalysisHasBeenSet() const { return m_sourceAnalysisHasBeenSet; }
-    inline void SetSourceAnalysis(const TemplateSourceAnalysis& value) { m_sourceAnalysisHasBeenSet = true; m_sourceAnalysis = value; }
-    inline void SetSourceAnalysis(TemplateSourceAnalysis&& value) { m_sourceAnalysisHasBeenSet = true; m_sourceAnalysis = std::move(value); }
-    inline TemplateSourceEntity& WithSourceAnalysis(const TemplateSourceAnalysis& value) { SetSourceAnalysis(value); return *this;}
-    inline TemplateSourceEntity& WithSourceAnalysis(TemplateSourceAnalysis&& value) { SetSourceAnalysis(std::move(value)); return *this;}
+    template<typename SourceAnalysisT = TemplateSourceAnalysis>
+    void SetSourceAnalysis(SourceAnalysisT&& value) { m_sourceAnalysisHasBeenSet = true; m_sourceAnalysis = std::forward<SourceAnalysisT>(value); }
+    template<typename SourceAnalysisT = TemplateSourceAnalysis>
+    TemplateSourceEntity& WithSourceAnalysis(SourceAnalysisT&& value) { SetSourceAnalysis(std::forward<SourceAnalysisT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source template, if it is based on an template.</p>
      */
-    inline const TemplateSourceTemplate& GetSourceTemplate() const{ return m_sourceTemplate; }
+    inline const TemplateSourceTemplate& GetSourceTemplate() const { return m_sourceTemplate; }
     inline bool SourceTemplateHasBeenSet() const { return m_sourceTemplateHasBeenSet; }
-    inline void SetSourceTemplate(const TemplateSourceTemplate& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = value; }
-    inline void SetSourceTemplate(TemplateSourceTemplate&& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = std::move(value); }
-    inline TemplateSourceEntity& WithSourceTemplate(const TemplateSourceTemplate& value) { SetSourceTemplate(value); return *this;}
-    inline TemplateSourceEntity& WithSourceTemplate(TemplateSourceTemplate&& value) { SetSourceTemplate(std::move(value)); return *this;}
+    template<typename SourceTemplateT = TemplateSourceTemplate>
+    void SetSourceTemplate(SourceTemplateT&& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = std::forward<SourceTemplateT>(value); }
+    template<typename SourceTemplateT = TemplateSourceTemplate>
+    TemplateSourceEntity& WithSourceTemplate(SourceTemplateT&& value) { SetSourceTemplate(std::forward<SourceTemplateT>(value)); return *this;}
     ///@}
   private:
 

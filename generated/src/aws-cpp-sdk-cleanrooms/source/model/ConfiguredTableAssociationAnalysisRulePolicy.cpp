@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ConfiguredTableAssociationAnalysisRulePolicy::ConfiguredTableAssociationAnalysisRulePolicy() : 
-    m_v1HasBeenSet(false)
-{
-}
-
 ConfiguredTableAssociationAnalysisRulePolicy::ConfiguredTableAssociationAnalysisRulePolicy(JsonView jsonValue)
-  : ConfiguredTableAssociationAnalysisRulePolicy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ConfiguredTableAssociationAnalysisRulePolicy& ConfiguredTableAssociationAnalysis
   if(jsonValue.ValueExists("v1"))
   {
     m_v1 = jsonValue.GetObject("v1");
-
     m_v1HasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-SoftwareUpdatePreferences::SoftwareUpdatePreferences() : 
-    m_automaticUpdatePolicy(AutomaticUpdatePolicy::NOT_SET),
-    m_automaticUpdatePolicyHasBeenSet(false)
-{
-}
-
 SoftwareUpdatePreferences::SoftwareUpdatePreferences(JsonView jsonValue)
-  : SoftwareUpdatePreferences()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SoftwareUpdatePreferences& SoftwareUpdatePreferences::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("AutomaticUpdatePolicy"))
   {
     m_automaticUpdatePolicy = AutomaticUpdatePolicyMapper::GetAutomaticUpdatePolicyForName(jsonValue.GetString("AutomaticUpdatePolicy"));
-
     m_automaticUpdatePolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

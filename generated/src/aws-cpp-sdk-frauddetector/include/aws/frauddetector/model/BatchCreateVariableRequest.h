@@ -23,7 +23,7 @@ namespace Model
   class BatchCreateVariableRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API BatchCreateVariableRequest();
+    AWS_FRAUDDETECTOR_API BatchCreateVariableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,28 @@ namespace Model
     /**
      * <p>The list of variables for the batch create variable request.</p>
      */
-    inline const Aws::Vector<VariableEntry>& GetVariableEntries() const{ return m_variableEntries; }
+    inline const Aws::Vector<VariableEntry>& GetVariableEntries() const { return m_variableEntries; }
     inline bool VariableEntriesHasBeenSet() const { return m_variableEntriesHasBeenSet; }
-    inline void SetVariableEntries(const Aws::Vector<VariableEntry>& value) { m_variableEntriesHasBeenSet = true; m_variableEntries = value; }
-    inline void SetVariableEntries(Aws::Vector<VariableEntry>&& value) { m_variableEntriesHasBeenSet = true; m_variableEntries = std::move(value); }
-    inline BatchCreateVariableRequest& WithVariableEntries(const Aws::Vector<VariableEntry>& value) { SetVariableEntries(value); return *this;}
-    inline BatchCreateVariableRequest& WithVariableEntries(Aws::Vector<VariableEntry>&& value) { SetVariableEntries(std::move(value)); return *this;}
-    inline BatchCreateVariableRequest& AddVariableEntries(const VariableEntry& value) { m_variableEntriesHasBeenSet = true; m_variableEntries.push_back(value); return *this; }
-    inline BatchCreateVariableRequest& AddVariableEntries(VariableEntry&& value) { m_variableEntriesHasBeenSet = true; m_variableEntries.push_back(std::move(value)); return *this; }
+    template<typename VariableEntriesT = Aws::Vector<VariableEntry>>
+    void SetVariableEntries(VariableEntriesT&& value) { m_variableEntriesHasBeenSet = true; m_variableEntries = std::forward<VariableEntriesT>(value); }
+    template<typename VariableEntriesT = Aws::Vector<VariableEntry>>
+    BatchCreateVariableRequest& WithVariableEntries(VariableEntriesT&& value) { SetVariableEntries(std::forward<VariableEntriesT>(value)); return *this;}
+    template<typename VariableEntriesT = VariableEntry>
+    BatchCreateVariableRequest& AddVariableEntries(VariableEntriesT&& value) { m_variableEntriesHasBeenSet = true; m_variableEntries.emplace_back(std::forward<VariableEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A collection of key and value pairs.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline BatchCreateVariableRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline BatchCreateVariableRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline BatchCreateVariableRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline BatchCreateVariableRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    BatchCreateVariableRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    BatchCreateVariableRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

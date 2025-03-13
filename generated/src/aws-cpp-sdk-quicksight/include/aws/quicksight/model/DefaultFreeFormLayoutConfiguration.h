@@ -32,7 +32,7 @@ namespace Model
   class DefaultFreeFormLayoutConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API DefaultFreeFormLayoutConfiguration();
+    AWS_QUICKSIGHT_API DefaultFreeFormLayoutConfiguration() = default;
     AWS_QUICKSIGHT_API DefaultFreeFormLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DefaultFreeFormLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Determines the screen canvas size options for a free-form layout.</p>
      */
-    inline const FreeFormLayoutCanvasSizeOptions& GetCanvasSizeOptions() const{ return m_canvasSizeOptions; }
+    inline const FreeFormLayoutCanvasSizeOptions& GetCanvasSizeOptions() const { return m_canvasSizeOptions; }
     inline bool CanvasSizeOptionsHasBeenSet() const { return m_canvasSizeOptionsHasBeenSet; }
-    inline void SetCanvasSizeOptions(const FreeFormLayoutCanvasSizeOptions& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = value; }
-    inline void SetCanvasSizeOptions(FreeFormLayoutCanvasSizeOptions&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::move(value); }
-    inline DefaultFreeFormLayoutConfiguration& WithCanvasSizeOptions(const FreeFormLayoutCanvasSizeOptions& value) { SetCanvasSizeOptions(value); return *this;}
-    inline DefaultFreeFormLayoutConfiguration& WithCanvasSizeOptions(FreeFormLayoutCanvasSizeOptions&& value) { SetCanvasSizeOptions(std::move(value)); return *this;}
+    template<typename CanvasSizeOptionsT = FreeFormLayoutCanvasSizeOptions>
+    void SetCanvasSizeOptions(CanvasSizeOptionsT&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::forward<CanvasSizeOptionsT>(value); }
+    template<typename CanvasSizeOptionsT = FreeFormLayoutCanvasSizeOptions>
+    DefaultFreeFormLayoutConfiguration& WithCanvasSizeOptions(CanvasSizeOptionsT&& value) { SetCanvasSizeOptions(std::forward<CanvasSizeOptionsT>(value)); return *this;}
     ///@}
   private:
 

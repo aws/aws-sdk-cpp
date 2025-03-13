@@ -25,7 +25,7 @@ namespace Model
   class AcknowledgeJobRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API AcknowledgeJobRequest();
+    AWS_CODEPIPELINE_API AcknowledgeJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The unique system-generated ID of the job for which you want to confirm
      * receipt.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline AcknowledgeJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline AcknowledgeJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline AcknowledgeJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    AcknowledgeJobRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * job is being worked on by only one job worker. Get this number from the response
      * of the <a>PollForJobs</a> request that returned this job.</p>
      */
-    inline const Aws::String& GetNonce() const{ return m_nonce; }
+    inline const Aws::String& GetNonce() const { return m_nonce; }
     inline bool NonceHasBeenSet() const { return m_nonceHasBeenSet; }
-    inline void SetNonce(const Aws::String& value) { m_nonceHasBeenSet = true; m_nonce = value; }
-    inline void SetNonce(Aws::String&& value) { m_nonceHasBeenSet = true; m_nonce = std::move(value); }
-    inline void SetNonce(const char* value) { m_nonceHasBeenSet = true; m_nonce.assign(value); }
-    inline AcknowledgeJobRequest& WithNonce(const Aws::String& value) { SetNonce(value); return *this;}
-    inline AcknowledgeJobRequest& WithNonce(Aws::String&& value) { SetNonce(std::move(value)); return *this;}
-    inline AcknowledgeJobRequest& WithNonce(const char* value) { SetNonce(value); return *this;}
+    template<typename NonceT = Aws::String>
+    void SetNonce(NonceT&& value) { m_nonceHasBeenSet = true; m_nonce = std::forward<NonceT>(value); }
+    template<typename NonceT = Aws::String>
+    AcknowledgeJobRequest& WithNonce(NonceT&& value) { SetNonce(std::forward<NonceT>(value)); return *this;}
     ///@}
   private:
 

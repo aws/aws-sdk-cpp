@@ -12,11 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteActivityRequest::DeleteActivityRequest() : 
-    m_activityArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteActivityRequest::SerializePayload() const
 {
   JsonValue payload;

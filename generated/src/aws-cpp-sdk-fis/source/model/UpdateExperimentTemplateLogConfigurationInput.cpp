@@ -18,16 +18,7 @@ namespace FIS
 namespace Model
 {
 
-UpdateExperimentTemplateLogConfigurationInput::UpdateExperimentTemplateLogConfigurationInput() : 
-    m_cloudWatchLogsConfigurationHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_logSchemaVersion(0),
-    m_logSchemaVersionHasBeenSet(false)
-{
-}
-
 UpdateExperimentTemplateLogConfigurationInput::UpdateExperimentTemplateLogConfigurationInput(JsonView jsonValue)
-  : UpdateExperimentTemplateLogConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UpdateExperimentTemplateLogConfigurationInput& UpdateExperimentTemplateLogConfig
   if(jsonValue.ValueExists("cloudWatchLogsConfiguration"))
   {
     m_cloudWatchLogsConfiguration = jsonValue.GetObject("cloudWatchLogsConfiguration");
-
     m_cloudWatchLogsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Configuration"))
   {
     m_s3Configuration = jsonValue.GetObject("s3Configuration");
-
     m_s3ConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logSchemaVersion"))
   {
     m_logSchemaVersion = jsonValue.GetInteger("logSchemaVersion");
-
     m_logSchemaVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

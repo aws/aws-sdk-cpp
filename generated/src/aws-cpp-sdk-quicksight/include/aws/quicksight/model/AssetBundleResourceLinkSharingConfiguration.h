@@ -32,7 +32,7 @@ namespace Model
   class AssetBundleResourceLinkSharingConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleResourceLinkSharingConfiguration();
+    AWS_QUICKSIGHT_API AssetBundleResourceLinkSharingConfiguration() = default;
     AWS_QUICKSIGHT_API AssetBundleResourceLinkSharingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleResourceLinkSharingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>A list of link sharing permissions for the dashboards that you want to apply
      * overrides to.</p>
      */
-    inline const AssetBundleResourcePermissions& GetPermissions() const{ return m_permissions; }
+    inline const AssetBundleResourcePermissions& GetPermissions() const { return m_permissions; }
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-    inline void SetPermissions(const AssetBundleResourcePermissions& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-    inline void SetPermissions(AssetBundleResourcePermissions&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-    inline AssetBundleResourceLinkSharingConfiguration& WithPermissions(const AssetBundleResourcePermissions& value) { SetPermissions(value); return *this;}
-    inline AssetBundleResourceLinkSharingConfiguration& WithPermissions(AssetBundleResourcePermissions&& value) { SetPermissions(std::move(value)); return *this;}
+    template<typename PermissionsT = AssetBundleResourcePermissions>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = AssetBundleResourcePermissions>
+    AssetBundleResourceLinkSharingConfiguration& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
     ///@}
   private:
 

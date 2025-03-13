@@ -21,7 +21,7 @@ namespace Model
   class GetAliasRequest : public PaymentCryptographyRequest
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API GetAliasRequest();
+    AWS_PAYMENTCRYPTOGRAPHY_API GetAliasRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
      */
-    inline const Aws::String& GetAliasName() const{ return m_aliasName; }
+    inline const Aws::String& GetAliasName() const { return m_aliasName; }
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
-    inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
-    inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
-    inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
-    inline GetAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
-    inline GetAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
-    inline GetAliasRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
+    template<typename AliasNameT = Aws::String>
+    void SetAliasName(AliasNameT&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::forward<AliasNameT>(value); }
+    template<typename AliasNameT = Aws::String>
+    GetAliasRequest& WithAliasName(AliasNameT&& value) { SetAliasName(std::forward<AliasNameT>(value)); return *this;}
     ///@}
   private:
 

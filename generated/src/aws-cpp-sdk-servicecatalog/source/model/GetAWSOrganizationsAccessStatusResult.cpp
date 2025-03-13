@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAWSOrganizationsAccessStatusResult::GetAWSOrganizationsAccessStatusResult() : 
-    m_accessStatus(AccessStatus::NOT_SET)
-{
-}
-
 GetAWSOrganizationsAccessStatusResult::GetAWSOrganizationsAccessStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAWSOrganizationsAccessStatusResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetAWSOrganizationsAccessStatusResult& GetAWSOrganizationsAccessStatusResult::op
   if(jsonValue.ValueExists("AccessStatus"))
   {
     m_accessStatus = AccessStatusMapper::GetAccessStatusForName(jsonValue.GetString("AccessStatus"));
-
+    m_accessStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

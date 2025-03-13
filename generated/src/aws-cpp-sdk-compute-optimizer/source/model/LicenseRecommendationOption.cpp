@@ -18,20 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-LicenseRecommendationOption::LicenseRecommendationOption() : 
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false),
-    m_licenseEdition(LicenseEdition::NOT_SET),
-    m_licenseEditionHasBeenSet(false),
-    m_licenseModel(LicenseModel::NOT_SET),
-    m_licenseModelHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false)
-{
-}
-
 LicenseRecommendationOption::LicenseRecommendationOption(JsonView jsonValue)
-  : LicenseRecommendationOption()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ LicenseRecommendationOption& LicenseRecommendationOption::operator =(JsonView js
   if(jsonValue.ValueExists("rank"))
   {
     m_rank = jsonValue.GetInteger("rank");
-
     m_rankHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operatingSystem"))
   {
     m_operatingSystem = jsonValue.GetString("operatingSystem");
-
     m_operatingSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseEdition"))
   {
     m_licenseEdition = LicenseEditionMapper::GetLicenseEditionForName(jsonValue.GetString("licenseEdition"));
-
     m_licenseEditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseModel"))
   {
     m_licenseModel = LicenseModelMapper::GetLicenseModelForName(jsonValue.GetString("licenseModel"));
-
     m_licenseModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsOpportunity"))
   {
     m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
-
     m_savingsOpportunityHasBeenSet = true;
   }
-
   return *this;
 }
 

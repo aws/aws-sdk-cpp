@@ -12,22 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchRequest::SearchRequest() : 
-    m_additionalAttributesHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_owningProjectIdentifierHasBeenSet(false),
-    m_searchInHasBeenSet(false),
-    m_searchScope(InventorySearchScope::NOT_SET),
-    m_searchScopeHasBeenSet(false),
-    m_searchTextHasBeenSet(false),
-    m_sortHasBeenSet(false)
-{
-}
-
 Aws::String SearchRequest::SerializePayload() const
 {
   JsonValue payload;

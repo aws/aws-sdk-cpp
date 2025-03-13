@@ -42,7 +42,7 @@ namespace Model
   class DescribeTaskResult
   {
   public:
-    AWS_DATASYNC_API DescribeTaskResult();
+    AWS_DATASYNC_API DescribeTaskResult() = default;
     AWS_DATASYNC_API DescribeTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATASYNC_API DescribeTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -51,13 +51,11 @@ namespace Model
     /**
      * <p>The ARN of your task.</p>
      */
-    inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
-    inline void SetTaskArn(const Aws::String& value) { m_taskArn = value; }
-    inline void SetTaskArn(Aws::String&& value) { m_taskArn = std::move(value); }
-    inline void SetTaskArn(const char* value) { m_taskArn.assign(value); }
-    inline DescribeTaskResult& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-    inline DescribeTaskResult& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-    inline DescribeTaskResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+    inline const Aws::String& GetTaskArn() const { return m_taskArn; }
+    template<typename TaskArnT = Aws::String>
+    void SetTaskArn(TaskArnT&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::forward<TaskArnT>(value); }
+    template<typename TaskArnT = Aws::String>
+    DescribeTaskResult& WithTaskArn(TaskArnT&& value) { SetTaskArn(std::forward<TaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,63 +64,53 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task
      * statuses</a>.</p>
      */
-    inline const TaskStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const TaskStatus& value) { m_status = value; }
-    inline void SetStatus(TaskStatus&& value) { m_status = std::move(value); }
-    inline DescribeTaskResult& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
-    inline DescribeTaskResult& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline TaskStatus GetStatus() const { return m_status; }
+    inline void SetStatus(TaskStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeTaskResult& WithStatus(TaskStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of your task.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeTaskResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeTaskResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeTaskResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeTaskResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the most recent task execution.</p>
      */
-    inline const Aws::String& GetCurrentTaskExecutionArn() const{ return m_currentTaskExecutionArn; }
-    inline void SetCurrentTaskExecutionArn(const Aws::String& value) { m_currentTaskExecutionArn = value; }
-    inline void SetCurrentTaskExecutionArn(Aws::String&& value) { m_currentTaskExecutionArn = std::move(value); }
-    inline void SetCurrentTaskExecutionArn(const char* value) { m_currentTaskExecutionArn.assign(value); }
-    inline DescribeTaskResult& WithCurrentTaskExecutionArn(const Aws::String& value) { SetCurrentTaskExecutionArn(value); return *this;}
-    inline DescribeTaskResult& WithCurrentTaskExecutionArn(Aws::String&& value) { SetCurrentTaskExecutionArn(std::move(value)); return *this;}
-    inline DescribeTaskResult& WithCurrentTaskExecutionArn(const char* value) { SetCurrentTaskExecutionArn(value); return *this;}
+    inline const Aws::String& GetCurrentTaskExecutionArn() const { return m_currentTaskExecutionArn; }
+    template<typename CurrentTaskExecutionArnT = Aws::String>
+    void SetCurrentTaskExecutionArn(CurrentTaskExecutionArnT&& value) { m_currentTaskExecutionArnHasBeenSet = true; m_currentTaskExecutionArn = std::forward<CurrentTaskExecutionArnT>(value); }
+    template<typename CurrentTaskExecutionArnT = Aws::String>
+    DescribeTaskResult& WithCurrentTaskExecutionArn(CurrentTaskExecutionArnT&& value) { SetCurrentTaskExecutionArn(std::forward<CurrentTaskExecutionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of your transfer's source location.</p>
      */
-    inline const Aws::String& GetSourceLocationArn() const{ return m_sourceLocationArn; }
-    inline void SetSourceLocationArn(const Aws::String& value) { m_sourceLocationArn = value; }
-    inline void SetSourceLocationArn(Aws::String&& value) { m_sourceLocationArn = std::move(value); }
-    inline void SetSourceLocationArn(const char* value) { m_sourceLocationArn.assign(value); }
-    inline DescribeTaskResult& WithSourceLocationArn(const Aws::String& value) { SetSourceLocationArn(value); return *this;}
-    inline DescribeTaskResult& WithSourceLocationArn(Aws::String&& value) { SetSourceLocationArn(std::move(value)); return *this;}
-    inline DescribeTaskResult& WithSourceLocationArn(const char* value) { SetSourceLocationArn(value); return *this;}
+    inline const Aws::String& GetSourceLocationArn() const { return m_sourceLocationArn; }
+    template<typename SourceLocationArnT = Aws::String>
+    void SetSourceLocationArn(SourceLocationArnT&& value) { m_sourceLocationArnHasBeenSet = true; m_sourceLocationArn = std::forward<SourceLocationArnT>(value); }
+    template<typename SourceLocationArnT = Aws::String>
+    DescribeTaskResult& WithSourceLocationArn(SourceLocationArnT&& value) { SetSourceLocationArn(std::forward<SourceLocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of your transfer's destination location.</p>
      */
-    inline const Aws::String& GetDestinationLocationArn() const{ return m_destinationLocationArn; }
-    inline void SetDestinationLocationArn(const Aws::String& value) { m_destinationLocationArn = value; }
-    inline void SetDestinationLocationArn(Aws::String&& value) { m_destinationLocationArn = std::move(value); }
-    inline void SetDestinationLocationArn(const char* value) { m_destinationLocationArn.assign(value); }
-    inline DescribeTaskResult& WithDestinationLocationArn(const Aws::String& value) { SetDestinationLocationArn(value); return *this;}
-    inline DescribeTaskResult& WithDestinationLocationArn(Aws::String&& value) { SetDestinationLocationArn(std::move(value)); return *this;}
-    inline DescribeTaskResult& WithDestinationLocationArn(const char* value) { SetDestinationLocationArn(value); return *this;}
+    inline const Aws::String& GetDestinationLocationArn() const { return m_destinationLocationArn; }
+    template<typename DestinationLocationArnT = Aws::String>
+    void SetDestinationLocationArn(DestinationLocationArnT&& value) { m_destinationLocationArnHasBeenSet = true; m_destinationLocationArn = std::forward<DestinationLocationArnT>(value); }
+    template<typename DestinationLocationArnT = Aws::String>
+    DescribeTaskResult& WithDestinationLocationArn(DestinationLocationArnT&& value) { SetDestinationLocationArn(std::forward<DestinationLocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,13 +120,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring
      * data transfers with CloudWatch Logs</a>.</p>
      */
-    inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
-    inline void SetCloudWatchLogGroupArn(const Aws::String& value) { m_cloudWatchLogGroupArn = value; }
-    inline void SetCloudWatchLogGroupArn(Aws::String&& value) { m_cloudWatchLogGroupArn = std::move(value); }
-    inline void SetCloudWatchLogGroupArn(const char* value) { m_cloudWatchLogGroupArn.assign(value); }
-    inline DescribeTaskResult& WithCloudWatchLogGroupArn(const Aws::String& value) { SetCloudWatchLogGroupArn(value); return *this;}
-    inline DescribeTaskResult& WithCloudWatchLogGroupArn(Aws::String&& value) { SetCloudWatchLogGroupArn(std::move(value)); return *this;}
-    inline DescribeTaskResult& WithCloudWatchLogGroupArn(const char* value) { SetCloudWatchLogGroupArn(value); return *this;}
+    inline const Aws::String& GetCloudWatchLogGroupArn() const { return m_cloudWatchLogGroupArn; }
+    template<typename CloudWatchLogGroupArnT = Aws::String>
+    void SetCloudWatchLogGroupArn(CloudWatchLogGroupArnT&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::forward<CloudWatchLogGroupArnT>(value); }
+    template<typename CloudWatchLogGroupArnT = Aws::String>
+    DescribeTaskResult& WithCloudWatchLogGroupArn(CloudWatchLogGroupArnT&& value) { SetCloudWatchLogGroupArn(std::forward<CloudWatchLogGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,14 +133,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
      * interfaces</a> that DataSync created for your source location.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceNetworkInterfaceArns() const{ return m_sourceNetworkInterfaceArns; }
-    inline void SetSourceNetworkInterfaceArns(const Aws::Vector<Aws::String>& value) { m_sourceNetworkInterfaceArns = value; }
-    inline void SetSourceNetworkInterfaceArns(Aws::Vector<Aws::String>&& value) { m_sourceNetworkInterfaceArns = std::move(value); }
-    inline DescribeTaskResult& WithSourceNetworkInterfaceArns(const Aws::Vector<Aws::String>& value) { SetSourceNetworkInterfaceArns(value); return *this;}
-    inline DescribeTaskResult& WithSourceNetworkInterfaceArns(Aws::Vector<Aws::String>&& value) { SetSourceNetworkInterfaceArns(std::move(value)); return *this;}
-    inline DescribeTaskResult& AddSourceNetworkInterfaceArns(const Aws::String& value) { m_sourceNetworkInterfaceArns.push_back(value); return *this; }
-    inline DescribeTaskResult& AddSourceNetworkInterfaceArns(Aws::String&& value) { m_sourceNetworkInterfaceArns.push_back(std::move(value)); return *this; }
-    inline DescribeTaskResult& AddSourceNetworkInterfaceArns(const char* value) { m_sourceNetworkInterfaceArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSourceNetworkInterfaceArns() const { return m_sourceNetworkInterfaceArns; }
+    template<typename SourceNetworkInterfaceArnsT = Aws::Vector<Aws::String>>
+    void SetSourceNetworkInterfaceArns(SourceNetworkInterfaceArnsT&& value) { m_sourceNetworkInterfaceArnsHasBeenSet = true; m_sourceNetworkInterfaceArns = std::forward<SourceNetworkInterfaceArnsT>(value); }
+    template<typename SourceNetworkInterfaceArnsT = Aws::Vector<Aws::String>>
+    DescribeTaskResult& WithSourceNetworkInterfaceArns(SourceNetworkInterfaceArnsT&& value) { SetSourceNetworkInterfaceArns(std::forward<SourceNetworkInterfaceArnsT>(value)); return *this;}
+    template<typename SourceNetworkInterfaceArnsT = Aws::String>
+    DescribeTaskResult& AddSourceNetworkInterfaceArns(SourceNetworkInterfaceArnsT&& value) { m_sourceNetworkInterfaceArnsHasBeenSet = true; m_sourceNetworkInterfaceArns.emplace_back(std::forward<SourceNetworkInterfaceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -163,14 +148,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
      * interfaces</a> that DataSync created for your destination location.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDestinationNetworkInterfaceArns() const{ return m_destinationNetworkInterfaceArns; }
-    inline void SetDestinationNetworkInterfaceArns(const Aws::Vector<Aws::String>& value) { m_destinationNetworkInterfaceArns = value; }
-    inline void SetDestinationNetworkInterfaceArns(Aws::Vector<Aws::String>&& value) { m_destinationNetworkInterfaceArns = std::move(value); }
-    inline DescribeTaskResult& WithDestinationNetworkInterfaceArns(const Aws::Vector<Aws::String>& value) { SetDestinationNetworkInterfaceArns(value); return *this;}
-    inline DescribeTaskResult& WithDestinationNetworkInterfaceArns(Aws::Vector<Aws::String>&& value) { SetDestinationNetworkInterfaceArns(std::move(value)); return *this;}
-    inline DescribeTaskResult& AddDestinationNetworkInterfaceArns(const Aws::String& value) { m_destinationNetworkInterfaceArns.push_back(value); return *this; }
-    inline DescribeTaskResult& AddDestinationNetworkInterfaceArns(Aws::String&& value) { m_destinationNetworkInterfaceArns.push_back(std::move(value)); return *this; }
-    inline DescribeTaskResult& AddDestinationNetworkInterfaceArns(const char* value) { m_destinationNetworkInterfaceArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDestinationNetworkInterfaceArns() const { return m_destinationNetworkInterfaceArns; }
+    template<typename DestinationNetworkInterfaceArnsT = Aws::Vector<Aws::String>>
+    void SetDestinationNetworkInterfaceArns(DestinationNetworkInterfaceArnsT&& value) { m_destinationNetworkInterfaceArnsHasBeenSet = true; m_destinationNetworkInterfaceArns = std::forward<DestinationNetworkInterfaceArnsT>(value); }
+    template<typename DestinationNetworkInterfaceArnsT = Aws::Vector<Aws::String>>
+    DescribeTaskResult& WithDestinationNetworkInterfaceArns(DestinationNetworkInterfaceArnsT&& value) { SetDestinationNetworkInterfaceArns(std::forward<DestinationNetworkInterfaceArnsT>(value)); return *this;}
+    template<typename DestinationNetworkInterfaceArnsT = Aws::String>
+    DescribeTaskResult& AddDestinationNetworkInterfaceArns(DestinationNetworkInterfaceArnsT&& value) { m_destinationNetworkInterfaceArnsHasBeenSet = true; m_destinationNetworkInterfaceArns.emplace_back(std::forward<DestinationNetworkInterfaceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -179,11 +163,11 @@ namespace Model
      * integrity gets verified at the end of your transfer, bandwidth limits, among
      * other options.</p>
      */
-    inline const Options& GetOptions() const{ return m_options; }
-    inline void SetOptions(const Options& value) { m_options = value; }
-    inline void SetOptions(Options&& value) { m_options = std::move(value); }
-    inline DescribeTaskResult& WithOptions(const Options& value) { SetOptions(value); return *this;}
-    inline DescribeTaskResult& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
+    inline const Options& GetOptions() const { return m_options; }
+    template<typename OptionsT = Options>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Options>
+    DescribeTaskResult& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -194,13 +178,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
      * what DataSync transfers by using filters</a>.</p>
      */
-    inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
-    inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludes = value; }
-    inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludes = std::move(value); }
-    inline DescribeTaskResult& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
-    inline DescribeTaskResult& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
-    inline DescribeTaskResult& AddExcludes(const FilterRule& value) { m_excludes.push_back(value); return *this; }
-    inline DescribeTaskResult& AddExcludes(FilterRule&& value) { m_excludes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FilterRule>& GetExcludes() const { return m_excludes; }
+    template<typename ExcludesT = Aws::Vector<FilterRule>>
+    void SetExcludes(ExcludesT&& value) { m_excludesHasBeenSet = true; m_excludes = std::forward<ExcludesT>(value); }
+    template<typename ExcludesT = Aws::Vector<FilterRule>>
+    DescribeTaskResult& WithExcludes(ExcludesT&& value) { SetExcludes(std::forward<ExcludesT>(value)); return *this;}
+    template<typename ExcludesT = FilterRule>
+    DescribeTaskResult& AddExcludes(ExcludesT&& value) { m_excludesHasBeenSet = true; m_excludes.emplace_back(std::forward<ExcludesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -209,11 +193,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
      * your task</a>.</p>
      */
-    inline const TaskSchedule& GetSchedule() const{ return m_schedule; }
-    inline void SetSchedule(const TaskSchedule& value) { m_schedule = value; }
-    inline void SetSchedule(TaskSchedule&& value) { m_schedule = std::move(value); }
-    inline DescribeTaskResult& WithSchedule(const TaskSchedule& value) { SetSchedule(value); return *this;}
-    inline DescribeTaskResult& WithSchedule(TaskSchedule&& value) { SetSchedule(std::move(value)); return *this;}
+    inline const TaskSchedule& GetSchedule() const { return m_schedule; }
+    template<typename ScheduleT = TaskSchedule>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = TaskSchedule>
+    DescribeTaskResult& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -223,13 +207,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting
      * issues with DataSync transfers</a>.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCode.assign(value); }
-    inline DescribeTaskResult& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline DescribeTaskResult& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline DescribeTaskResult& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    DescribeTaskResult& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -239,24 +221,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting
      * issues with DataSync transfers</a>.</p>
      */
-    inline const Aws::String& GetErrorDetail() const{ return m_errorDetail; }
-    inline void SetErrorDetail(const Aws::String& value) { m_errorDetail = value; }
-    inline void SetErrorDetail(Aws::String&& value) { m_errorDetail = std::move(value); }
-    inline void SetErrorDetail(const char* value) { m_errorDetail.assign(value); }
-    inline DescribeTaskResult& WithErrorDetail(const Aws::String& value) { SetErrorDetail(value); return *this;}
-    inline DescribeTaskResult& WithErrorDetail(Aws::String&& value) { SetErrorDetail(std::move(value)); return *this;}
-    inline DescribeTaskResult& WithErrorDetail(const char* value) { SetErrorDetail(value); return *this;}
+    inline const Aws::String& GetErrorDetail() const { return m_errorDetail; }
+    template<typename ErrorDetailT = Aws::String>
+    void SetErrorDetail(ErrorDetailT&& value) { m_errorDetailHasBeenSet = true; m_errorDetail = std::forward<ErrorDetailT>(value); }
+    template<typename ErrorDetailT = Aws::String>
+    DescribeTaskResult& WithErrorDetail(ErrorDetailT&& value) { SetErrorDetail(std::forward<ErrorDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the task was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeTaskResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeTaskResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeTaskResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,13 +247,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
      * what DataSync transfers by using filters</a>.</p>
      */
-    inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
-    inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includes = value; }
-    inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includes = std::move(value); }
-    inline DescribeTaskResult& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
-    inline DescribeTaskResult& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
-    inline DescribeTaskResult& AddIncludes(const FilterRule& value) { m_includes.push_back(value); return *this; }
-    inline DescribeTaskResult& AddIncludes(FilterRule&& value) { m_includes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FilterRule>& GetIncludes() const { return m_includes; }
+    template<typename IncludesT = Aws::Vector<FilterRule>>
+    void SetIncludes(IncludesT&& value) { m_includesHasBeenSet = true; m_includes = std::forward<IncludesT>(value); }
+    template<typename IncludesT = Aws::Vector<FilterRule>>
+    DescribeTaskResult& WithIncludes(IncludesT&& value) { SetIncludes(std::forward<IncludesT>(value)); return *this;}
+    template<typename IncludesT = FilterRule>
+    DescribeTaskResult& AddIncludes(IncludesT&& value) { m_includesHasBeenSet = true; m_includes.emplace_back(std::forward<IncludesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -283,11 +263,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
      * what DataSync transfers by using a manifest</a>.</p>
      */
-    inline const ManifestConfig& GetManifestConfig() const{ return m_manifestConfig; }
-    inline void SetManifestConfig(const ManifestConfig& value) { m_manifestConfig = value; }
-    inline void SetManifestConfig(ManifestConfig&& value) { m_manifestConfig = std::move(value); }
-    inline DescribeTaskResult& WithManifestConfig(const ManifestConfig& value) { SetManifestConfig(value); return *this;}
-    inline DescribeTaskResult& WithManifestConfig(ManifestConfig&& value) { SetManifestConfig(std::move(value)); return *this;}
+    inline const ManifestConfig& GetManifestConfig() const { return m_manifestConfig; }
+    template<typename ManifestConfigT = ManifestConfig>
+    void SetManifestConfig(ManifestConfigT&& value) { m_manifestConfigHasBeenSet = true; m_manifestConfig = std::forward<ManifestConfigT>(value); }
+    template<typename ManifestConfigT = ManifestConfig>
+    DescribeTaskResult& WithManifestConfig(ManifestConfigT&& value) { SetManifestConfig(std::forward<ManifestConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -297,11 +277,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
      * your DataSync transfers with task reports</a>.</p>
      */
-    inline const TaskReportConfig& GetTaskReportConfig() const{ return m_taskReportConfig; }
-    inline void SetTaskReportConfig(const TaskReportConfig& value) { m_taskReportConfig = value; }
-    inline void SetTaskReportConfig(TaskReportConfig&& value) { m_taskReportConfig = std::move(value); }
-    inline DescribeTaskResult& WithTaskReportConfig(const TaskReportConfig& value) { SetTaskReportConfig(value); return *this;}
-    inline DescribeTaskResult& WithTaskReportConfig(TaskReportConfig&& value) { SetTaskReportConfig(std::move(value)); return *this;}
+    inline const TaskReportConfig& GetTaskReportConfig() const { return m_taskReportConfig; }
+    template<typename TaskReportConfigT = TaskReportConfig>
+    void SetTaskReportConfig(TaskReportConfigT&& value) { m_taskReportConfigHasBeenSet = true; m_taskReportConfig = std::forward<TaskReportConfigT>(value); }
+    template<typename TaskReportConfigT = TaskReportConfig>
+    DescribeTaskResult& WithTaskReportConfig(TaskReportConfigT&& value) { SetTaskReportConfig(std::forward<TaskReportConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -310,11 +290,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task
      * schedule</a>.</p>
      */
-    inline const TaskScheduleDetails& GetScheduleDetails() const{ return m_scheduleDetails; }
-    inline void SetScheduleDetails(const TaskScheduleDetails& value) { m_scheduleDetails = value; }
-    inline void SetScheduleDetails(TaskScheduleDetails&& value) { m_scheduleDetails = std::move(value); }
-    inline DescribeTaskResult& WithScheduleDetails(const TaskScheduleDetails& value) { SetScheduleDetails(value); return *this;}
-    inline DescribeTaskResult& WithScheduleDetails(TaskScheduleDetails&& value) { SetScheduleDetails(std::move(value)); return *this;}
+    inline const TaskScheduleDetails& GetScheduleDetails() const { return m_scheduleDetails; }
+    template<typename ScheduleDetailsT = TaskScheduleDetails>
+    void SetScheduleDetails(ScheduleDetailsT&& value) { m_scheduleDetailsHasBeenSet = true; m_scheduleDetails = std::forward<ScheduleDetailsT>(value); }
+    template<typename ScheduleDetailsT = TaskScheduleDetails>
+    DescribeTaskResult& WithScheduleDetails(ScheduleDetailsT&& value) { SetScheduleDetails(std::forward<ScheduleDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -323,66 +303,83 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing
      * a task mode for your data transfer</a>.</p>
      */
-    inline const TaskMode& GetTaskMode() const{ return m_taskMode; }
-    inline void SetTaskMode(const TaskMode& value) { m_taskMode = value; }
-    inline void SetTaskMode(TaskMode&& value) { m_taskMode = std::move(value); }
-    inline DescribeTaskResult& WithTaskMode(const TaskMode& value) { SetTaskMode(value); return *this;}
-    inline DescribeTaskResult& WithTaskMode(TaskMode&& value) { SetTaskMode(std::move(value)); return *this;}
+    inline TaskMode GetTaskMode() const { return m_taskMode; }
+    inline void SetTaskMode(TaskMode value) { m_taskModeHasBeenSet = true; m_taskMode = value; }
+    inline DescribeTaskResult& WithTaskMode(TaskMode value) { SetTaskMode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_taskArn;
+    bool m_taskArnHasBeenSet = false;
 
-    TaskStatus m_status;
+    TaskStatus m_status{TaskStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_currentTaskExecutionArn;
+    bool m_currentTaskExecutionArnHasBeenSet = false;
 
     Aws::String m_sourceLocationArn;
+    bool m_sourceLocationArnHasBeenSet = false;
 
     Aws::String m_destinationLocationArn;
+    bool m_destinationLocationArnHasBeenSet = false;
 
     Aws::String m_cloudWatchLogGroupArn;
+    bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceNetworkInterfaceArns;
+    bool m_sourceNetworkInterfaceArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_destinationNetworkInterfaceArns;
+    bool m_destinationNetworkInterfaceArnsHasBeenSet = false;
 
     Options m_options;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<FilterRule> m_excludes;
+    bool m_excludesHasBeenSet = false;
 
     TaskSchedule m_schedule;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::String m_errorCode;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorDetail;
+    bool m_errorDetailHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<FilterRule> m_includes;
+    bool m_includesHasBeenSet = false;
 
     ManifestConfig m_manifestConfig;
+    bool m_manifestConfigHasBeenSet = false;
 
     TaskReportConfig m_taskReportConfig;
+    bool m_taskReportConfigHasBeenSet = false;
 
     TaskScheduleDetails m_scheduleDetails;
+    bool m_scheduleDetailsHasBeenSet = false;
 
-    TaskMode m_taskMode;
+    TaskMode m_taskMode{TaskMode::NOT_SET};
+    bool m_taskModeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DecimalColumnStatisticsData::DecimalColumnStatisticsData() : 
-    m_minimumValueHasBeenSet(false),
-    m_maximumValueHasBeenSet(false),
-    m_numberOfNulls(0),
-    m_numberOfNullsHasBeenSet(false),
-    m_numberOfDistinctValues(0),
-    m_numberOfDistinctValuesHasBeenSet(false)
-{
-}
-
 DecimalColumnStatisticsData::DecimalColumnStatisticsData(JsonView jsonValue)
-  : DecimalColumnStatisticsData()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DecimalColumnStatisticsData& DecimalColumnStatisticsData::operator =(JsonView js
   if(jsonValue.ValueExists("MinimumValue"))
   {
     m_minimumValue = jsonValue.GetObject("MinimumValue");
-
     m_minimumValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumValue"))
   {
     m_maximumValue = jsonValue.GetObject("MaximumValue");
-
     m_maximumValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfNulls"))
   {
     m_numberOfNulls = jsonValue.GetInt64("NumberOfNulls");
-
     m_numberOfNullsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfDistinctValues"))
   {
     m_numberOfDistinctValues = jsonValue.GetInt64("NumberOfDistinctValues");
-
     m_numberOfDistinctValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

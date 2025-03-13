@@ -33,7 +33,7 @@ namespace Model
   class DomainEndpointOptions
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API DomainEndpointOptions();
+    AWS_ELASTICSEARCHSERVICE_API DomainEndpointOptions() = default;
     AWS_ELASTICSEARCHSERVICE_API DomainEndpointOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API DomainEndpointOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Specify if only HTTPS endpoint should be enabled for the Elasticsearch
      * domain.</p>
      */
-    inline bool GetEnforceHTTPS() const{ return m_enforceHTTPS; }
+    inline bool GetEnforceHTTPS() const { return m_enforceHTTPS; }
     inline bool EnforceHTTPSHasBeenSet() const { return m_enforceHTTPSHasBeenSet; }
     inline void SetEnforceHTTPS(bool value) { m_enforceHTTPSHasBeenSet = true; m_enforceHTTPS = value; }
     inline DomainEndpointOptions& WithEnforceHTTPS(bool value) { SetEnforceHTTPS(value); return *this;}
@@ -61,12 +61,10 @@ namespace Model
      * TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher
      * suites</li> </ul> </p>
      */
-    inline const TLSSecurityPolicy& GetTLSSecurityPolicy() const{ return m_tLSSecurityPolicy; }
+    inline TLSSecurityPolicy GetTLSSecurityPolicy() const { return m_tLSSecurityPolicy; }
     inline bool TLSSecurityPolicyHasBeenSet() const { return m_tLSSecurityPolicyHasBeenSet; }
-    inline void SetTLSSecurityPolicy(const TLSSecurityPolicy& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = value; }
-    inline void SetTLSSecurityPolicy(TLSSecurityPolicy&& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = std::move(value); }
-    inline DomainEndpointOptions& WithTLSSecurityPolicy(const TLSSecurityPolicy& value) { SetTLSSecurityPolicy(value); return *this;}
-    inline DomainEndpointOptions& WithTLSSecurityPolicy(TLSSecurityPolicy&& value) { SetTLSSecurityPolicy(std::move(value)); return *this;}
+    inline void SetTLSSecurityPolicy(TLSSecurityPolicy value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = value; }
+    inline DomainEndpointOptions& WithTLSSecurityPolicy(TLSSecurityPolicy value) { SetTLSSecurityPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +72,7 @@ namespace Model
      * <p>Specify if custom endpoint should be enabled for the Elasticsearch
      * domain.</p>
      */
-    inline bool GetCustomEndpointEnabled() const{ return m_customEndpointEnabled; }
+    inline bool GetCustomEndpointEnabled() const { return m_customEndpointEnabled; }
     inline bool CustomEndpointEnabledHasBeenSet() const { return m_customEndpointEnabledHasBeenSet; }
     inline void SetCustomEndpointEnabled(bool value) { m_customEndpointEnabledHasBeenSet = true; m_customEndpointEnabled = value; }
     inline DomainEndpointOptions& WithCustomEndpointEnabled(bool value) { SetCustomEndpointEnabled(value); return *this;}
@@ -84,38 +82,34 @@ namespace Model
     /**
      * <p>Specify the fully qualified domain for your custom endpoint.</p>
      */
-    inline const Aws::String& GetCustomEndpoint() const{ return m_customEndpoint; }
+    inline const Aws::String& GetCustomEndpoint() const { return m_customEndpoint; }
     inline bool CustomEndpointHasBeenSet() const { return m_customEndpointHasBeenSet; }
-    inline void SetCustomEndpoint(const Aws::String& value) { m_customEndpointHasBeenSet = true; m_customEndpoint = value; }
-    inline void SetCustomEndpoint(Aws::String&& value) { m_customEndpointHasBeenSet = true; m_customEndpoint = std::move(value); }
-    inline void SetCustomEndpoint(const char* value) { m_customEndpointHasBeenSet = true; m_customEndpoint.assign(value); }
-    inline DomainEndpointOptions& WithCustomEndpoint(const Aws::String& value) { SetCustomEndpoint(value); return *this;}
-    inline DomainEndpointOptions& WithCustomEndpoint(Aws::String&& value) { SetCustomEndpoint(std::move(value)); return *this;}
-    inline DomainEndpointOptions& WithCustomEndpoint(const char* value) { SetCustomEndpoint(value); return *this;}
+    template<typename CustomEndpointT = Aws::String>
+    void SetCustomEndpoint(CustomEndpointT&& value) { m_customEndpointHasBeenSet = true; m_customEndpoint = std::forward<CustomEndpointT>(value); }
+    template<typename CustomEndpointT = Aws::String>
+    DomainEndpointOptions& WithCustomEndpoint(CustomEndpointT&& value) { SetCustomEndpoint(std::forward<CustomEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specify ACM certificate ARN for your custom endpoint.</p>
      */
-    inline const Aws::String& GetCustomEndpointCertificateArn() const{ return m_customEndpointCertificateArn; }
+    inline const Aws::String& GetCustomEndpointCertificateArn() const { return m_customEndpointCertificateArn; }
     inline bool CustomEndpointCertificateArnHasBeenSet() const { return m_customEndpointCertificateArnHasBeenSet; }
-    inline void SetCustomEndpointCertificateArn(const Aws::String& value) { m_customEndpointCertificateArnHasBeenSet = true; m_customEndpointCertificateArn = value; }
-    inline void SetCustomEndpointCertificateArn(Aws::String&& value) { m_customEndpointCertificateArnHasBeenSet = true; m_customEndpointCertificateArn = std::move(value); }
-    inline void SetCustomEndpointCertificateArn(const char* value) { m_customEndpointCertificateArnHasBeenSet = true; m_customEndpointCertificateArn.assign(value); }
-    inline DomainEndpointOptions& WithCustomEndpointCertificateArn(const Aws::String& value) { SetCustomEndpointCertificateArn(value); return *this;}
-    inline DomainEndpointOptions& WithCustomEndpointCertificateArn(Aws::String&& value) { SetCustomEndpointCertificateArn(std::move(value)); return *this;}
-    inline DomainEndpointOptions& WithCustomEndpointCertificateArn(const char* value) { SetCustomEndpointCertificateArn(value); return *this;}
+    template<typename CustomEndpointCertificateArnT = Aws::String>
+    void SetCustomEndpointCertificateArn(CustomEndpointCertificateArnT&& value) { m_customEndpointCertificateArnHasBeenSet = true; m_customEndpointCertificateArn = std::forward<CustomEndpointCertificateArnT>(value); }
+    template<typename CustomEndpointCertificateArnT = Aws::String>
+    DomainEndpointOptions& WithCustomEndpointCertificateArn(CustomEndpointCertificateArnT&& value) { SetCustomEndpointCertificateArn(std::forward<CustomEndpointCertificateArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enforceHTTPS;
+    bool m_enforceHTTPS{false};
     bool m_enforceHTTPSHasBeenSet = false;
 
-    TLSSecurityPolicy m_tLSSecurityPolicy;
+    TLSSecurityPolicy m_tLSSecurityPolicy{TLSSecurityPolicy::NOT_SET};
     bool m_tLSSecurityPolicyHasBeenSet = false;
 
-    bool m_customEndpointEnabled;
+    bool m_customEndpointEnabled{false};
     bool m_customEndpointEnabledHasBeenSet = false;
 
     Aws::String m_customEndpoint;

@@ -36,7 +36,7 @@ namespace Model
   class Filter
   {
   public:
-    AWS_FORECASTSERVICE_API Filter();
+    AWS_FORECASTSERVICE_API Filter() = default;
     AWS_FORECASTSERVICE_API Filter(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The name of the parameter to filter on.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline Filter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline Filter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline Filter& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    Filter& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value to match.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Filter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Filter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Filter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Filter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,10 @@ namespace Model
      * specify <code>IS</code>. To exclude matching objects, specify
      * <code>IS_NOT</code>.</p>
      */
-    inline const FilterConditionString& GetCondition() const{ return m_condition; }
+    inline FilterConditionString GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const FilterConditionString& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(FilterConditionString&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline Filter& WithCondition(const FilterConditionString& value) { SetCondition(value); return *this;}
-    inline Filter& WithCondition(FilterConditionString&& value) { SetCondition(std::move(value)); return *this;}
+    inline void SetCondition(FilterConditionString value) { m_conditionHasBeenSet = true; m_condition = value; }
+    inline Filter& WithCondition(FilterConditionString value) { SetCondition(value); return *this;}
     ///@}
   private:
 
@@ -91,7 +85,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    FilterConditionString m_condition;
+    FilterConditionString m_condition{FilterConditionString::NOT_SET};
     bool m_conditionHasBeenSet = false;
   };
 

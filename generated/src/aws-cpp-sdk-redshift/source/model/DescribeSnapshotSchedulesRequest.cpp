@@ -10,17 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeSnapshotSchedulesRequest::DescribeSnapshotSchedulesRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_scheduleIdentifierHasBeenSet(false),
-    m_tagKeysHasBeenSet(false),
-    m_tagValuesHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSnapshotSchedulesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

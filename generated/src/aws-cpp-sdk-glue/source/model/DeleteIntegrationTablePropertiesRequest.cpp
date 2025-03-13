@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIntegrationTablePropertiesRequest::DeleteIntegrationTablePropertiesRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIntegrationTablePropertiesRequest::SerializePayload() const
 {
   JsonValue payload;

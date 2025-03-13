@@ -12,12 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAssessmentReportRequest::DeleteAssessmentReportRequest() : 
-    m_assessmentIdHasBeenSet(false),
-    m_assessmentReportIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAssessmentReportRequest::SerializePayload() const
 {
   return {};

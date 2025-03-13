@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBClusterSnapshotAttributesResult::DBClusterSnapshotAttributesResult() : 
-    m_dBClusterSnapshotIdentifierHasBeenSet(false),
-    m_dBClusterSnapshotAttributesHasBeenSet(false)
-{
-}
-
 DBClusterSnapshotAttributesResult::DBClusterSnapshotAttributesResult(const XmlNode& xmlNode)
-  : DBClusterSnapshotAttributesResult()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ DBClusterSnapshotAttributesResult& DBClusterSnapshotAttributesResult::operator =
     {
       m_dBClusterSnapshotIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterSnapshotIdentifierNode.GetText());
       m_dBClusterSnapshotIdentifierHasBeenSet = true;
+       m_dBClusterSnapshotIdentifierHasBeenSet = true;
     }
     XmlNode dBClusterSnapshotAttributesNode = resultNode.FirstChild("DBClusterSnapshotAttributes");
     if(!dBClusterSnapshotAttributesNode.IsNull())
     {
       XmlNode dBClusterSnapshotAttributesMember = dBClusterSnapshotAttributesNode.FirstChild("DBClusterSnapshotAttribute");
+      m_dBClusterSnapshotAttributesHasBeenSet = !dBClusterSnapshotAttributesMember.IsNull();
       while(!dBClusterSnapshotAttributesMember.IsNull())
       {
         m_dBClusterSnapshotAttributes.push_back(dBClusterSnapshotAttributesMember);
         dBClusterSnapshotAttributesMember = dBClusterSnapshotAttributesMember.NextNode("DBClusterSnapshotAttribute");
       }
 
-      m_dBClusterSnapshotAttributesHasBeenSet = true;
+       m_dBClusterSnapshotAttributesHasBeenSet = true;
     }
   }
 

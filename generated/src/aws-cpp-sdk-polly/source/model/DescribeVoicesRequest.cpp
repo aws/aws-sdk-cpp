@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeVoicesRequest::DescribeVoicesRequest() : 
-    m_engine(Engine::NOT_SET),
-    m_engineHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_includeAdditionalLanguageCodes(false),
-    m_includeAdditionalLanguageCodesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVoicesRequest::SerializePayload() const
 {
   return {};

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateAttributeGroupResult::AssociateAttributeGroupResult()
-{
-}
-
 AssociateAttributeGroupResult::AssociateAttributeGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ AssociateAttributeGroupResult& AssociateAttributeGroupResult::operator =(const A
   if(jsonValue.ValueExists("applicationArn"))
   {
     m_applicationArn = jsonValue.GetString("applicationArn");
-
+    m_applicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributeGroupArn"))
   {
     m_attributeGroupArn = jsonValue.GetString("attributeGroupArn");
-
+    m_attributeGroupArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopArchiveExportResult::StopArchiveExportResult()
-{
-}
-
 StopArchiveExportResult::StopArchiveExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,6 +31,7 @@ StopArchiveExportResult& StopArchiveExportResult::operator =(const Aws::AmazonWe
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RuleGroupRuleOptionsPair::RuleGroupRuleOptionsPair() : 
-    m_ruleGroupArnHasBeenSet(false),
-    m_ruleOptionsHasBeenSet(false)
-{
-}
-
 RuleGroupRuleOptionsPair::RuleGroupRuleOptionsPair(const XmlNode& xmlNode)
-  : RuleGroupRuleOptionsPair()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ RuleGroupRuleOptionsPair& RuleGroupRuleOptionsPair::operator =(const XmlNode& xm
     {
       m_ruleGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(ruleGroupArnNode.GetText());
       m_ruleGroupArnHasBeenSet = true;
+       m_ruleGroupArnHasBeenSet = true;
     }
     XmlNode ruleOptionsNode = resultNode.FirstChild("ruleOptionSet");
     if(!ruleOptionsNode.IsNull())
     {
       XmlNode ruleOptionsMember = ruleOptionsNode.FirstChild("item");
+      m_ruleOptionsHasBeenSet = !ruleOptionsMember.IsNull();
       while(!ruleOptionsMember.IsNull())
       {
         m_ruleOptions.push_back(ruleOptionsMember);
         ruleOptionsMember = ruleOptionsMember.NextNode("item");
       }
 
-      m_ruleOptionsHasBeenSet = true;
+       m_ruleOptionsHasBeenSet = true;
     }
   }
 

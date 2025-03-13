@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialLayerDefinition::GeospatialLayerDefinition() : 
-    m_pointLayerHasBeenSet(false),
-    m_lineLayerHasBeenSet(false),
-    m_polygonLayerHasBeenSet(false)
-{
-}
-
 GeospatialLayerDefinition::GeospatialLayerDefinition(JsonView jsonValue)
-  : GeospatialLayerDefinition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GeospatialLayerDefinition& GeospatialLayerDefinition::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("PointLayer"))
   {
     m_pointLayer = jsonValue.GetObject("PointLayer");
-
     m_pointLayerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineLayer"))
   {
     m_lineLayer = jsonValue.GetObject("LineLayer");
-
     m_lineLayerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolygonLayer"))
   {
     m_polygonLayer = jsonValue.GetObject("PolygonLayer");
-
     m_polygonLayerHasBeenSet = true;
   }
-
   return *this;
 }
 

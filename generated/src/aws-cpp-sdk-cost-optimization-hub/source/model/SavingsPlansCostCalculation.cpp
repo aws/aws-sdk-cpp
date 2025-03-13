@@ -18,13 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-SavingsPlansCostCalculation::SavingsPlansCostCalculation() : 
-    m_pricingHasBeenSet(false)
-{
-}
-
 SavingsPlansCostCalculation::SavingsPlansCostCalculation(JsonView jsonValue)
-  : SavingsPlansCostCalculation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SavingsPlansCostCalculation& SavingsPlansCostCalculation::operator =(JsonView js
   if(jsonValue.ValueExists("pricing"))
   {
     m_pricing = jsonValue.GetObject("pricing");
-
     m_pricingHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBucketRequest::DeleteBucketRequest() : 
-    m_bucketNameHasBeenSet(false),
-    m_forceDelete(false),
-    m_forceDeleteHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBucketRequest::SerializePayload() const
 {
   JsonValue payload;

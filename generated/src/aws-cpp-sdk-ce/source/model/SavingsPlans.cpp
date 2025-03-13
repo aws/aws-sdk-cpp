@@ -18,23 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlans::SavingsPlans() : 
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_savingsPlansType(SupportedSavingsPlansType::NOT_SET),
-    m_savingsPlansTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_termInYears(TermInYears::NOT_SET),
-    m_termInYearsHasBeenSet(false),
-    m_savingsPlansCommitment(0.0),
-    m_savingsPlansCommitmentHasBeenSet(false),
-    m_offeringIdHasBeenSet(false)
-{
-}
-
 SavingsPlans::SavingsPlans(JsonView jsonValue)
-  : SavingsPlans()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ SavingsPlans& SavingsPlans::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PaymentOption"))
   {
     m_paymentOption = PaymentOptionMapper::GetPaymentOptionForName(jsonValue.GetString("PaymentOption"));
-
     m_paymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SavingsPlansType"))
   {
     m_savingsPlansType = SupportedSavingsPlansTypeMapper::GetSupportedSavingsPlansTypeForName(jsonValue.GetString("SavingsPlansType"));
-
     m_savingsPlansTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceFamily"))
   {
     m_instanceFamily = jsonValue.GetString("InstanceFamily");
-
     m_instanceFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TermInYears"))
   {
     m_termInYears = TermInYearsMapper::GetTermInYearsForName(jsonValue.GetString("TermInYears"));
-
     m_termInYearsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SavingsPlansCommitment"))
   {
     m_savingsPlansCommitment = jsonValue.GetDouble("SavingsPlansCommitment");
-
     m_savingsPlansCommitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OfferingId"))
   {
     m_offeringId = jsonValue.GetString("OfferingId");
-
     m_offeringIdHasBeenSet = true;
   }
-
   return *this;
 }
 

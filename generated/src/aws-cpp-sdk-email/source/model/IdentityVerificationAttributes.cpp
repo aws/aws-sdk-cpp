@@ -20,15 +20,7 @@ namespace SES
 namespace Model
 {
 
-IdentityVerificationAttributes::IdentityVerificationAttributes() : 
-    m_verificationStatus(VerificationStatus::NOT_SET),
-    m_verificationStatusHasBeenSet(false),
-    m_verificationTokenHasBeenSet(false)
-{
-}
-
 IdentityVerificationAttributes::IdentityVerificationAttributes(const XmlNode& xmlNode)
-  : IdentityVerificationAttributes()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ IdentityVerificationAttributes& IdentityVerificationAttributes::operator =(const
     XmlNode verificationStatusNode = resultNode.FirstChild("VerificationStatus");
     if(!verificationStatusNode.IsNull())
     {
-      m_verificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(verificationStatusNode.GetText()).c_str()).c_str());
+      m_verificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(verificationStatusNode.GetText()).c_str()));
       m_verificationStatusHasBeenSet = true;
+       m_verificationStatusHasBeenSet = true;
     }
     XmlNode verificationTokenNode = resultNode.FirstChild("VerificationToken");
     if(!verificationTokenNode.IsNull())
     {
       m_verificationToken = Aws::Utils::Xml::DecodeEscapedXmlText(verificationTokenNode.GetText());
       m_verificationTokenHasBeenSet = true;
+       m_verificationTokenHasBeenSet = true;
     }
   }
 

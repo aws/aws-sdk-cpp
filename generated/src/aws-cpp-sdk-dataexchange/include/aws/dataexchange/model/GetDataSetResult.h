@@ -32,7 +32,7 @@ namespace Model
   class GetDataSetResult
   {
   public:
-    AWS_DATAEXCHANGE_API GetDataSetResult();
+    AWS_DATAEXCHANGE_API GetDataSetResult() = default;
     AWS_DATAEXCHANGE_API GetDataSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAEXCHANGE_API GetDataSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,74 +41,64 @@ namespace Model
     /**
      * <p>The ARN for the data set.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetDataSetResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetDataSetResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetDataSetResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetDataSetResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of asset that is added to a data set.</p>
      */
-    inline const AssetType& GetAssetType() const{ return m_assetType; }
-    inline void SetAssetType(const AssetType& value) { m_assetType = value; }
-    inline void SetAssetType(AssetType&& value) { m_assetType = std::move(value); }
-    inline GetDataSetResult& WithAssetType(const AssetType& value) { SetAssetType(value); return *this;}
-    inline GetDataSetResult& WithAssetType(AssetType&& value) { SetAssetType(std::move(value)); return *this;}
+    inline AssetType GetAssetType() const { return m_assetType; }
+    inline void SetAssetType(AssetType value) { m_assetTypeHasBeenSet = true; m_assetType = value; }
+    inline GetDataSetResult& WithAssetType(AssetType value) { SetAssetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the data set was created, in ISO 8601 format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetDataSetResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetDataSetResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetDataSetResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the data set.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetDataSetResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetDataSetResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetDataSetResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetDataSetResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the data set.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetDataSetResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetDataSetResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetDataSetResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetDataSetResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the data set.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetDataSetResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetDataSetResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetDataSetResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetDataSetResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,11 +106,9 @@ namespace Model
      * <p>A property that defines the data set as OWNED by the account (for providers)
      * or ENTITLED to the account (for subscribers).</p>
      */
-    inline const Origin& GetOrigin() const{ return m_origin; }
-    inline void SetOrigin(const Origin& value) { m_origin = value; }
-    inline void SetOrigin(Origin&& value) { m_origin = std::move(value); }
-    inline GetDataSetResult& WithOrigin(const Origin& value) { SetOrigin(value); return *this;}
-    inline GetDataSetResult& WithOrigin(Origin&& value) { SetOrigin(std::move(value)); return *this;}
+    inline Origin GetOrigin() const { return m_origin; }
+    inline void SetOrigin(Origin value) { m_originHasBeenSet = true; m_origin = value; }
+    inline GetDataSetResult& WithOrigin(Origin value) { SetOrigin(value); return *this;}
     ///@}
 
     ///@{
@@ -128,11 +116,11 @@ namespace Model
      * <p>If the origin of this data set is ENTITLED, includes the details for the
      * product on AWS Marketplace.</p>
      */
-    inline const OriginDetails& GetOriginDetails() const{ return m_originDetails; }
-    inline void SetOriginDetails(const OriginDetails& value) { m_originDetails = value; }
-    inline void SetOriginDetails(OriginDetails&& value) { m_originDetails = std::move(value); }
-    inline GetDataSetResult& WithOriginDetails(const OriginDetails& value) { SetOriginDetails(value); return *this;}
-    inline GetDataSetResult& WithOriginDetails(OriginDetails&& value) { SetOriginDetails(std::move(value)); return *this;}
+    inline const OriginDetails& GetOriginDetails() const { return m_originDetails; }
+    template<typename OriginDetailsT = OriginDetails>
+    void SetOriginDetails(OriginDetailsT&& value) { m_originDetailsHasBeenSet = true; m_originDetails = std::forward<OriginDetailsT>(value); }
+    template<typename OriginDetailsT = OriginDetails>
+    GetDataSetResult& WithOriginDetails(OriginDetailsT&& value) { SetOriginDetails(std::forward<OriginDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,79 +129,84 @@ namespace Model
      * being viewed. This parameter is returned when a data set owner is viewing the
      * entitled copy of its owned data set.</p>
      */
-    inline const Aws::String& GetSourceId() const{ return m_sourceId; }
-    inline void SetSourceId(const Aws::String& value) { m_sourceId = value; }
-    inline void SetSourceId(Aws::String&& value) { m_sourceId = std::move(value); }
-    inline void SetSourceId(const char* value) { m_sourceId.assign(value); }
-    inline GetDataSetResult& WithSourceId(const Aws::String& value) { SetSourceId(value); return *this;}
-    inline GetDataSetResult& WithSourceId(Aws::String&& value) { SetSourceId(std::move(value)); return *this;}
-    inline GetDataSetResult& WithSourceId(const char* value) { SetSourceId(value); return *this;}
+    inline const Aws::String& GetSourceId() const { return m_sourceId; }
+    template<typename SourceIdT = Aws::String>
+    void SetSourceId(SourceIdT&& value) { m_sourceIdHasBeenSet = true; m_sourceId = std::forward<SourceIdT>(value); }
+    template<typename SourceIdT = Aws::String>
+    GetDataSetResult& WithSourceId(SourceIdT&& value) { SetSourceId(std::forward<SourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags for the data set.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetDataSetResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetDataSetResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetDataSetResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetDataSetResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetDataSetResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetDataSetResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetDataSetResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetDataSetResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetDataSetResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetDataSetResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetDataSetResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
-    inline GetDataSetResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline GetDataSetResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    GetDataSetResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDataSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDataSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDataSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDataSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    AssetType m_assetType;
+    AssetType m_assetType{AssetType::NOT_SET};
+    bool m_assetTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    Origin m_origin;
+    Origin m_origin{Origin::NOT_SET};
+    bool m_originHasBeenSet = false;
 
     OriginDetails m_originDetails;
+    bool m_originDetailsHasBeenSet = false;
 
     Aws::String m_sourceId;
+    bool m_sourceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

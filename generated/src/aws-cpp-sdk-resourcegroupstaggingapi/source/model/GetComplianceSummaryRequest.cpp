@@ -12,18 +12,6 @@ using namespace Aws::ResourceGroupsTaggingAPI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetComplianceSummaryRequest::GetComplianceSummaryRequest() : 
-    m_targetIdFiltersHasBeenSet(false),
-    m_regionFiltersHasBeenSet(false),
-    m_resourceTypeFiltersHasBeenSet(false),
-    m_tagKeyFiltersHasBeenSet(false),
-    m_groupByHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_paginationTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetComplianceSummaryRequest::SerializePayload() const
 {
   JsonValue payload;

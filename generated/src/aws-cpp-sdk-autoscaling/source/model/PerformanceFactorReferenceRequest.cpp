@@ -20,13 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-PerformanceFactorReferenceRequest::PerformanceFactorReferenceRequest() : 
-    m_instanceFamilyHasBeenSet(false)
-{
-}
-
 PerformanceFactorReferenceRequest::PerformanceFactorReferenceRequest(const XmlNode& xmlNode)
-  : PerformanceFactorReferenceRequest()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ PerformanceFactorReferenceRequest& PerformanceFactorReferenceRequest::operator =
     {
       m_instanceFamily = Aws::Utils::Xml::DecodeEscapedXmlText(instanceFamilyNode.GetText());
       m_instanceFamilyHasBeenSet = true;
+       m_instanceFamilyHasBeenSet = true;
     }
   }
 

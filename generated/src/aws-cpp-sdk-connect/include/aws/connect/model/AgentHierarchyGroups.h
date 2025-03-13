@@ -36,7 +36,7 @@ namespace Model
   class AgentHierarchyGroups
   {
   public:
-    AWS_CONNECT_API AgentHierarchyGroups();
+    AWS_CONNECT_API AgentHierarchyGroups() = default;
     AWS_CONNECT_API AgentHierarchyGroups(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AgentHierarchyGroups& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,75 +46,70 @@ namespace Model
     /**
      * <p>The identifiers for level 1 hierarchy groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetL1Ids() const{ return m_l1Ids; }
+    inline const Aws::Vector<Aws::String>& GetL1Ids() const { return m_l1Ids; }
     inline bool L1IdsHasBeenSet() const { return m_l1IdsHasBeenSet; }
-    inline void SetL1Ids(const Aws::Vector<Aws::String>& value) { m_l1IdsHasBeenSet = true; m_l1Ids = value; }
-    inline void SetL1Ids(Aws::Vector<Aws::String>&& value) { m_l1IdsHasBeenSet = true; m_l1Ids = std::move(value); }
-    inline AgentHierarchyGroups& WithL1Ids(const Aws::Vector<Aws::String>& value) { SetL1Ids(value); return *this;}
-    inline AgentHierarchyGroups& WithL1Ids(Aws::Vector<Aws::String>&& value) { SetL1Ids(std::move(value)); return *this;}
-    inline AgentHierarchyGroups& AddL1Ids(const Aws::String& value) { m_l1IdsHasBeenSet = true; m_l1Ids.push_back(value); return *this; }
-    inline AgentHierarchyGroups& AddL1Ids(Aws::String&& value) { m_l1IdsHasBeenSet = true; m_l1Ids.push_back(std::move(value)); return *this; }
-    inline AgentHierarchyGroups& AddL1Ids(const char* value) { m_l1IdsHasBeenSet = true; m_l1Ids.push_back(value); return *this; }
+    template<typename L1IdsT = Aws::Vector<Aws::String>>
+    void SetL1Ids(L1IdsT&& value) { m_l1IdsHasBeenSet = true; m_l1Ids = std::forward<L1IdsT>(value); }
+    template<typename L1IdsT = Aws::Vector<Aws::String>>
+    AgentHierarchyGroups& WithL1Ids(L1IdsT&& value) { SetL1Ids(std::forward<L1IdsT>(value)); return *this;}
+    template<typename L1IdsT = Aws::String>
+    AgentHierarchyGroups& AddL1Ids(L1IdsT&& value) { m_l1IdsHasBeenSet = true; m_l1Ids.emplace_back(std::forward<L1IdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifiers for level 2 hierarchy groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetL2Ids() const{ return m_l2Ids; }
+    inline const Aws::Vector<Aws::String>& GetL2Ids() const { return m_l2Ids; }
     inline bool L2IdsHasBeenSet() const { return m_l2IdsHasBeenSet; }
-    inline void SetL2Ids(const Aws::Vector<Aws::String>& value) { m_l2IdsHasBeenSet = true; m_l2Ids = value; }
-    inline void SetL2Ids(Aws::Vector<Aws::String>&& value) { m_l2IdsHasBeenSet = true; m_l2Ids = std::move(value); }
-    inline AgentHierarchyGroups& WithL2Ids(const Aws::Vector<Aws::String>& value) { SetL2Ids(value); return *this;}
-    inline AgentHierarchyGroups& WithL2Ids(Aws::Vector<Aws::String>&& value) { SetL2Ids(std::move(value)); return *this;}
-    inline AgentHierarchyGroups& AddL2Ids(const Aws::String& value) { m_l2IdsHasBeenSet = true; m_l2Ids.push_back(value); return *this; }
-    inline AgentHierarchyGroups& AddL2Ids(Aws::String&& value) { m_l2IdsHasBeenSet = true; m_l2Ids.push_back(std::move(value)); return *this; }
-    inline AgentHierarchyGroups& AddL2Ids(const char* value) { m_l2IdsHasBeenSet = true; m_l2Ids.push_back(value); return *this; }
+    template<typename L2IdsT = Aws::Vector<Aws::String>>
+    void SetL2Ids(L2IdsT&& value) { m_l2IdsHasBeenSet = true; m_l2Ids = std::forward<L2IdsT>(value); }
+    template<typename L2IdsT = Aws::Vector<Aws::String>>
+    AgentHierarchyGroups& WithL2Ids(L2IdsT&& value) { SetL2Ids(std::forward<L2IdsT>(value)); return *this;}
+    template<typename L2IdsT = Aws::String>
+    AgentHierarchyGroups& AddL2Ids(L2IdsT&& value) { m_l2IdsHasBeenSet = true; m_l2Ids.emplace_back(std::forward<L2IdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifiers for level 3 hierarchy groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetL3Ids() const{ return m_l3Ids; }
+    inline const Aws::Vector<Aws::String>& GetL3Ids() const { return m_l3Ids; }
     inline bool L3IdsHasBeenSet() const { return m_l3IdsHasBeenSet; }
-    inline void SetL3Ids(const Aws::Vector<Aws::String>& value) { m_l3IdsHasBeenSet = true; m_l3Ids = value; }
-    inline void SetL3Ids(Aws::Vector<Aws::String>&& value) { m_l3IdsHasBeenSet = true; m_l3Ids = std::move(value); }
-    inline AgentHierarchyGroups& WithL3Ids(const Aws::Vector<Aws::String>& value) { SetL3Ids(value); return *this;}
-    inline AgentHierarchyGroups& WithL3Ids(Aws::Vector<Aws::String>&& value) { SetL3Ids(std::move(value)); return *this;}
-    inline AgentHierarchyGroups& AddL3Ids(const Aws::String& value) { m_l3IdsHasBeenSet = true; m_l3Ids.push_back(value); return *this; }
-    inline AgentHierarchyGroups& AddL3Ids(Aws::String&& value) { m_l3IdsHasBeenSet = true; m_l3Ids.push_back(std::move(value)); return *this; }
-    inline AgentHierarchyGroups& AddL3Ids(const char* value) { m_l3IdsHasBeenSet = true; m_l3Ids.push_back(value); return *this; }
+    template<typename L3IdsT = Aws::Vector<Aws::String>>
+    void SetL3Ids(L3IdsT&& value) { m_l3IdsHasBeenSet = true; m_l3Ids = std::forward<L3IdsT>(value); }
+    template<typename L3IdsT = Aws::Vector<Aws::String>>
+    AgentHierarchyGroups& WithL3Ids(L3IdsT&& value) { SetL3Ids(std::forward<L3IdsT>(value)); return *this;}
+    template<typename L3IdsT = Aws::String>
+    AgentHierarchyGroups& AddL3Ids(L3IdsT&& value) { m_l3IdsHasBeenSet = true; m_l3Ids.emplace_back(std::forward<L3IdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifiers for level 4 hierarchy groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetL4Ids() const{ return m_l4Ids; }
+    inline const Aws::Vector<Aws::String>& GetL4Ids() const { return m_l4Ids; }
     inline bool L4IdsHasBeenSet() const { return m_l4IdsHasBeenSet; }
-    inline void SetL4Ids(const Aws::Vector<Aws::String>& value) { m_l4IdsHasBeenSet = true; m_l4Ids = value; }
-    inline void SetL4Ids(Aws::Vector<Aws::String>&& value) { m_l4IdsHasBeenSet = true; m_l4Ids = std::move(value); }
-    inline AgentHierarchyGroups& WithL4Ids(const Aws::Vector<Aws::String>& value) { SetL4Ids(value); return *this;}
-    inline AgentHierarchyGroups& WithL4Ids(Aws::Vector<Aws::String>&& value) { SetL4Ids(std::move(value)); return *this;}
-    inline AgentHierarchyGroups& AddL4Ids(const Aws::String& value) { m_l4IdsHasBeenSet = true; m_l4Ids.push_back(value); return *this; }
-    inline AgentHierarchyGroups& AddL4Ids(Aws::String&& value) { m_l4IdsHasBeenSet = true; m_l4Ids.push_back(std::move(value)); return *this; }
-    inline AgentHierarchyGroups& AddL4Ids(const char* value) { m_l4IdsHasBeenSet = true; m_l4Ids.push_back(value); return *this; }
+    template<typename L4IdsT = Aws::Vector<Aws::String>>
+    void SetL4Ids(L4IdsT&& value) { m_l4IdsHasBeenSet = true; m_l4Ids = std::forward<L4IdsT>(value); }
+    template<typename L4IdsT = Aws::Vector<Aws::String>>
+    AgentHierarchyGroups& WithL4Ids(L4IdsT&& value) { SetL4Ids(std::forward<L4IdsT>(value)); return *this;}
+    template<typename L4IdsT = Aws::String>
+    AgentHierarchyGroups& AddL4Ids(L4IdsT&& value) { m_l4IdsHasBeenSet = true; m_l4Ids.emplace_back(std::forward<L4IdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifiers for level 5 hierarchy groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetL5Ids() const{ return m_l5Ids; }
+    inline const Aws::Vector<Aws::String>& GetL5Ids() const { return m_l5Ids; }
     inline bool L5IdsHasBeenSet() const { return m_l5IdsHasBeenSet; }
-    inline void SetL5Ids(const Aws::Vector<Aws::String>& value) { m_l5IdsHasBeenSet = true; m_l5Ids = value; }
-    inline void SetL5Ids(Aws::Vector<Aws::String>&& value) { m_l5IdsHasBeenSet = true; m_l5Ids = std::move(value); }
-    inline AgentHierarchyGroups& WithL5Ids(const Aws::Vector<Aws::String>& value) { SetL5Ids(value); return *this;}
-    inline AgentHierarchyGroups& WithL5Ids(Aws::Vector<Aws::String>&& value) { SetL5Ids(std::move(value)); return *this;}
-    inline AgentHierarchyGroups& AddL5Ids(const Aws::String& value) { m_l5IdsHasBeenSet = true; m_l5Ids.push_back(value); return *this; }
-    inline AgentHierarchyGroups& AddL5Ids(Aws::String&& value) { m_l5IdsHasBeenSet = true; m_l5Ids.push_back(std::move(value)); return *this; }
-    inline AgentHierarchyGroups& AddL5Ids(const char* value) { m_l5IdsHasBeenSet = true; m_l5Ids.push_back(value); return *this; }
+    template<typename L5IdsT = Aws::Vector<Aws::String>>
+    void SetL5Ids(L5IdsT&& value) { m_l5IdsHasBeenSet = true; m_l5Ids = std::forward<L5IdsT>(value); }
+    template<typename L5IdsT = Aws::Vector<Aws::String>>
+    AgentHierarchyGroups& WithL5Ids(L5IdsT&& value) { SetL5Ids(std::forward<L5IdsT>(value)); return *this;}
+    template<typename L5IdsT = Aws::String>
+    AgentHierarchyGroups& AddL5Ids(L5IdsT&& value) { m_l5IdsHasBeenSet = true; m_l5Ids.emplace_back(std::forward<L5IdsT>(value)); return *this; }
     ///@}
   private:
 

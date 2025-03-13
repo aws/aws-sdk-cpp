@@ -21,7 +21,7 @@ namespace Model
   class DeleteNatGatewayRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteNatGatewayRequest();
+    AWS_EC2_API DeleteNatGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteNatGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>The ID of the NAT gateway.</p>
      */
-    inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
+    inline const Aws::String& GetNatGatewayId() const { return m_natGatewayId; }
     inline bool NatGatewayIdHasBeenSet() const { return m_natGatewayIdHasBeenSet; }
-    inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
-    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::move(value); }
-    inline void SetNatGatewayId(const char* value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId.assign(value); }
-    inline DeleteNatGatewayRequest& WithNatGatewayId(const Aws::String& value) { SetNatGatewayId(value); return *this;}
-    inline DeleteNatGatewayRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
-    inline DeleteNatGatewayRequest& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
+    template<typename NatGatewayIdT = Aws::String>
+    void SetNatGatewayId(NatGatewayIdT&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::forward<NatGatewayIdT>(value); }
+    template<typename NatGatewayIdT = Aws::String>
+    DeleteNatGatewayRequest& WithNatGatewayId(NatGatewayIdT&& value) { SetNatGatewayId(std::forward<NatGatewayIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_natGatewayId;

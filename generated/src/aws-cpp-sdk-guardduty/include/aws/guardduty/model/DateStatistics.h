@@ -32,7 +32,7 @@ namespace Model
   class DateStatistics
   {
   public:
-    AWS_GUARDDUTY_API DateStatistics();
+    AWS_GUARDDUTY_API DateStatistics() = default;
     AWS_GUARDDUTY_API DateStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API DateStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * whereas <code>LastGeneratedAt</code> would look like
      * 2024-09-05T17:12:29-07:00".</p>
      */
-    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
+    inline const Aws::Utils::DateTime& GetDate() const { return m_date; }
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
-    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-    inline DateStatistics& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
-    inline DateStatistics& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
+    template<typename DateT = Aws::Utils::DateTime>
+    void SetDate(DateT&& value) { m_dateHasBeenSet = true; m_date = std::forward<DateT>(value); }
+    template<typename DateT = Aws::Utils::DateTime>
+    DateStatistics& WithDate(DateT&& value) { SetDate(std::forward<DateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +58,19 @@ namespace Model
      * <p>The timestamp at which the last finding in the findings count, was
      * generated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastGeneratedAt() const{ return m_lastGeneratedAt; }
+    inline const Aws::Utils::DateTime& GetLastGeneratedAt() const { return m_lastGeneratedAt; }
     inline bool LastGeneratedAtHasBeenSet() const { return m_lastGeneratedAtHasBeenSet; }
-    inline void SetLastGeneratedAt(const Aws::Utils::DateTime& value) { m_lastGeneratedAtHasBeenSet = true; m_lastGeneratedAt = value; }
-    inline void SetLastGeneratedAt(Aws::Utils::DateTime&& value) { m_lastGeneratedAtHasBeenSet = true; m_lastGeneratedAt = std::move(value); }
-    inline DateStatistics& WithLastGeneratedAt(const Aws::Utils::DateTime& value) { SetLastGeneratedAt(value); return *this;}
-    inline DateStatistics& WithLastGeneratedAt(Aws::Utils::DateTime&& value) { SetLastGeneratedAt(std::move(value)); return *this;}
+    template<typename LastGeneratedAtT = Aws::Utils::DateTime>
+    void SetLastGeneratedAt(LastGeneratedAtT&& value) { m_lastGeneratedAtHasBeenSet = true; m_lastGeneratedAt = std::forward<LastGeneratedAtT>(value); }
+    template<typename LastGeneratedAtT = Aws::Utils::DateTime>
+    DateStatistics& WithLastGeneratedAt(LastGeneratedAtT&& value) { SetLastGeneratedAt(std::forward<LastGeneratedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The severity of the findings generated on each date.</p>
      */
-    inline double GetSeverity() const{ return m_severity; }
+    inline double GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
     inline void SetSeverity(double value) { m_severityHasBeenSet = true; m_severity = value; }
     inline DateStatistics& WithSeverity(double value) { SetSeverity(value); return *this;}
@@ -81,23 +81,23 @@ namespace Model
      * <p>The total number of findings that were generated per severity level on each
      * date.</p>
      */
-    inline int GetTotalFindings() const{ return m_totalFindings; }
+    inline int GetTotalFindings() const { return m_totalFindings; }
     inline bool TotalFindingsHasBeenSet() const { return m_totalFindingsHasBeenSet; }
     inline void SetTotalFindings(int value) { m_totalFindingsHasBeenSet = true; m_totalFindings = value; }
     inline DateStatistics& WithTotalFindings(int value) { SetTotalFindings(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_date;
+    Aws::Utils::DateTime m_date{};
     bool m_dateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastGeneratedAt;
+    Aws::Utils::DateTime m_lastGeneratedAt{};
     bool m_lastGeneratedAtHasBeenSet = false;
 
-    double m_severity;
+    double m_severity{0.0};
     bool m_severityHasBeenSet = false;
 
-    int m_totalFindings;
+    int m_totalFindings{0};
     bool m_totalFindingsHasBeenSet = false;
   };
 

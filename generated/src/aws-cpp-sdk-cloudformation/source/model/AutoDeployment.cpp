@@ -20,16 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-AutoDeployment::AutoDeployment() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_retainStacksOnAccountRemoval(false),
-    m_retainStacksOnAccountRemovalHasBeenSet(false)
-{
-}
-
 AutoDeployment::AutoDeployment(const XmlNode& xmlNode)
-  : AutoDeployment()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ AutoDeployment& AutoDeployment::operator =(const XmlNode& xmlNode)
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode retainStacksOnAccountRemovalNode = resultNode.FirstChild("RetainStacksOnAccountRemoval");
     if(!retainStacksOnAccountRemovalNode.IsNull())
     {
       m_retainStacksOnAccountRemoval = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(retainStacksOnAccountRemovalNode.GetText()).c_str()).c_str());
       m_retainStacksOnAccountRemovalHasBeenSet = true;
+       m_retainStacksOnAccountRemovalHasBeenSet = true;
     }
   }
 

@@ -20,34 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-LaunchConfiguration::LaunchConfiguration() : 
-    m_launchConfigurationNameHasBeenSet(false),
-    m_launchConfigurationARNHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_classicLinkVPCIdHasBeenSet(false),
-    m_classicLinkVPCSecurityGroupsHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_instanceMonitoringHasBeenSet(false),
-    m_spotPriceHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_placementTenancyHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
-{
-}
-
 LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode)
-  : LaunchConfiguration()
 {
   *this = xmlNode;
 }
@@ -63,138 +36,158 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_launchConfigurationName = Aws::Utils::Xml::DecodeEscapedXmlText(launchConfigurationNameNode.GetText());
       m_launchConfigurationNameHasBeenSet = true;
+       m_launchConfigurationNameHasBeenSet = true;
     }
     XmlNode launchConfigurationARNNode = resultNode.FirstChild("LaunchConfigurationARN");
     if(!launchConfigurationARNNode.IsNull())
     {
       m_launchConfigurationARN = Aws::Utils::Xml::DecodeEscapedXmlText(launchConfigurationARNNode.GetText());
       m_launchConfigurationARNHasBeenSet = true;
+       m_launchConfigurationARNHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("ImageId");
     if(!imageIdNode.IsNull())
     {
       m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
       m_imageIdHasBeenSet = true;
+       m_imageIdHasBeenSet = true;
     }
     XmlNode keyNameNode = resultNode.FirstChild("KeyName");
     if(!keyNameNode.IsNull())
     {
       m_keyName = Aws::Utils::Xml::DecodeEscapedXmlText(keyNameNode.GetText());
       m_keyNameHasBeenSet = true;
+       m_keyNameHasBeenSet = true;
     }
     XmlNode securityGroupsNode = resultNode.FirstChild("SecurityGroups");
     if(!securityGroupsNode.IsNull())
     {
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("member");
+      m_securityGroupsHasBeenSet = !securityGroupsMember.IsNull();
       while(!securityGroupsMember.IsNull())
       {
         m_securityGroups.push_back(securityGroupsMember.GetText());
         securityGroupsMember = securityGroupsMember.NextNode("member");
       }
 
-      m_securityGroupsHasBeenSet = true;
+       m_securityGroupsHasBeenSet = true;
     }
     XmlNode classicLinkVPCIdNode = resultNode.FirstChild("ClassicLinkVPCId");
     if(!classicLinkVPCIdNode.IsNull())
     {
       m_classicLinkVPCId = Aws::Utils::Xml::DecodeEscapedXmlText(classicLinkVPCIdNode.GetText());
       m_classicLinkVPCIdHasBeenSet = true;
+       m_classicLinkVPCIdHasBeenSet = true;
     }
     XmlNode classicLinkVPCSecurityGroupsNode = resultNode.FirstChild("ClassicLinkVPCSecurityGroups");
     if(!classicLinkVPCSecurityGroupsNode.IsNull())
     {
       XmlNode classicLinkVPCSecurityGroupsMember = classicLinkVPCSecurityGroupsNode.FirstChild("member");
+      m_classicLinkVPCSecurityGroupsHasBeenSet = !classicLinkVPCSecurityGroupsMember.IsNull();
       while(!classicLinkVPCSecurityGroupsMember.IsNull())
       {
         m_classicLinkVPCSecurityGroups.push_back(classicLinkVPCSecurityGroupsMember.GetText());
         classicLinkVPCSecurityGroupsMember = classicLinkVPCSecurityGroupsMember.NextNode("member");
       }
 
-      m_classicLinkVPCSecurityGroupsHasBeenSet = true;
+       m_classicLinkVPCSecurityGroupsHasBeenSet = true;
     }
     XmlNode userDataNode = resultNode.FirstChild("UserData");
     if(!userDataNode.IsNull())
     {
       m_userData = Aws::Utils::Xml::DecodeEscapedXmlText(userDataNode.GetText());
       m_userDataHasBeenSet = true;
+       m_userDataHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("InstanceType");
     if(!instanceTypeNode.IsNull())
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode kernelIdNode = resultNode.FirstChild("KernelId");
     if(!kernelIdNode.IsNull())
     {
       m_kernelId = Aws::Utils::Xml::DecodeEscapedXmlText(kernelIdNode.GetText());
       m_kernelIdHasBeenSet = true;
+       m_kernelIdHasBeenSet = true;
     }
     XmlNode ramdiskIdNode = resultNode.FirstChild("RamdiskId");
     if(!ramdiskIdNode.IsNull())
     {
       m_ramdiskId = Aws::Utils::Xml::DecodeEscapedXmlText(ramdiskIdNode.GetText());
       m_ramdiskIdHasBeenSet = true;
+       m_ramdiskIdHasBeenSet = true;
     }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("BlockDeviceMappings");
     if(!blockDeviceMappingsNode.IsNull())
     {
       XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("member");
+      m_blockDeviceMappingsHasBeenSet = !blockDeviceMappingsMember.IsNull();
       while(!blockDeviceMappingsMember.IsNull())
       {
         m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
         blockDeviceMappingsMember = blockDeviceMappingsMember.NextNode("member");
       }
 
-      m_blockDeviceMappingsHasBeenSet = true;
+       m_blockDeviceMappingsHasBeenSet = true;
     }
     XmlNode instanceMonitoringNode = resultNode.FirstChild("InstanceMonitoring");
     if(!instanceMonitoringNode.IsNull())
     {
       m_instanceMonitoring = instanceMonitoringNode;
       m_instanceMonitoringHasBeenSet = true;
+       m_instanceMonitoringHasBeenSet = true;
     }
     XmlNode spotPriceNode = resultNode.FirstChild("SpotPrice");
     if(!spotPriceNode.IsNull())
     {
       m_spotPrice = Aws::Utils::Xml::DecodeEscapedXmlText(spotPriceNode.GetText());
       m_spotPriceHasBeenSet = true;
+       m_spotPriceHasBeenSet = true;
     }
     XmlNode iamInstanceProfileNode = resultNode.FirstChild("IamInstanceProfile");
     if(!iamInstanceProfileNode.IsNull())
     {
       m_iamInstanceProfile = Aws::Utils::Xml::DecodeEscapedXmlText(iamInstanceProfileNode.GetText());
       m_iamInstanceProfileHasBeenSet = true;
+       m_iamInstanceProfileHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
       m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
+       m_createdTimeHasBeenSet = true;
     }
     XmlNode ebsOptimizedNode = resultNode.FirstChild("EbsOptimized");
     if(!ebsOptimizedNode.IsNull())
     {
       m_ebsOptimized = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsOptimizedNode.GetText()).c_str()).c_str());
       m_ebsOptimizedHasBeenSet = true;
+       m_ebsOptimizedHasBeenSet = true;
     }
     XmlNode associatePublicIpAddressNode = resultNode.FirstChild("AssociatePublicIpAddress");
     if(!associatePublicIpAddressNode.IsNull())
     {
       m_associatePublicIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associatePublicIpAddressNode.GetText()).c_str()).c_str());
       m_associatePublicIpAddressHasBeenSet = true;
+       m_associatePublicIpAddressHasBeenSet = true;
     }
     XmlNode placementTenancyNode = resultNode.FirstChild("PlacementTenancy");
     if(!placementTenancyNode.IsNull())
     {
       m_placementTenancy = Aws::Utils::Xml::DecodeEscapedXmlText(placementTenancyNode.GetText());
       m_placementTenancyHasBeenSet = true;
+       m_placementTenancyHasBeenSet = true;
     }
     XmlNode metadataOptionsNode = resultNode.FirstChild("MetadataOptions");
     if(!metadataOptionsNode.IsNull())
     {
       m_metadataOptions = metadataOptionsNode;
       m_metadataOptionsHasBeenSet = true;
+       m_metadataOptionsHasBeenSet = true;
     }
   }
 

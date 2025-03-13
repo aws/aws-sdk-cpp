@@ -18,14 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-EventOrchestration::EventOrchestration() : 
-    m_eventBridgeEnabled(false),
-    m_eventBridgeEnabledHasBeenSet(false)
-{
-}
-
 EventOrchestration::EventOrchestration(JsonView jsonValue)
-  : EventOrchestration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EventOrchestration& EventOrchestration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventBridgeEnabled"))
   {
     m_eventBridgeEnabled = jsonValue.GetBool("eventBridgeEnabled");
-
     m_eventBridgeEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

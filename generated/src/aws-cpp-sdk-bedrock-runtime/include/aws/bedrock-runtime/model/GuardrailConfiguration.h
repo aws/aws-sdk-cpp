@@ -34,7 +34,7 @@ namespace Model
   class GuardrailConfiguration
   {
   public:
-    AWS_BEDROCKRUNTIME_API GuardrailConfiguration();
+    AWS_BEDROCKRUNTIME_API GuardrailConfiguration() = default;
     AWS_BEDROCKRUNTIME_API GuardrailConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API GuardrailConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,34 @@ namespace Model
     /**
      * <p>The identifier for the guardrail.</p>
      */
-    inline const Aws::String& GetGuardrailIdentifier() const{ return m_guardrailIdentifier; }
+    inline const Aws::String& GetGuardrailIdentifier() const { return m_guardrailIdentifier; }
     inline bool GuardrailIdentifierHasBeenSet() const { return m_guardrailIdentifierHasBeenSet; }
-    inline void SetGuardrailIdentifier(const Aws::String& value) { m_guardrailIdentifierHasBeenSet = true; m_guardrailIdentifier = value; }
-    inline void SetGuardrailIdentifier(Aws::String&& value) { m_guardrailIdentifierHasBeenSet = true; m_guardrailIdentifier = std::move(value); }
-    inline void SetGuardrailIdentifier(const char* value) { m_guardrailIdentifierHasBeenSet = true; m_guardrailIdentifier.assign(value); }
-    inline GuardrailConfiguration& WithGuardrailIdentifier(const Aws::String& value) { SetGuardrailIdentifier(value); return *this;}
-    inline GuardrailConfiguration& WithGuardrailIdentifier(Aws::String&& value) { SetGuardrailIdentifier(std::move(value)); return *this;}
-    inline GuardrailConfiguration& WithGuardrailIdentifier(const char* value) { SetGuardrailIdentifier(value); return *this;}
+    template<typename GuardrailIdentifierT = Aws::String>
+    void SetGuardrailIdentifier(GuardrailIdentifierT&& value) { m_guardrailIdentifierHasBeenSet = true; m_guardrailIdentifier = std::forward<GuardrailIdentifierT>(value); }
+    template<typename GuardrailIdentifierT = Aws::String>
+    GuardrailConfiguration& WithGuardrailIdentifier(GuardrailIdentifierT&& value) { SetGuardrailIdentifier(std::forward<GuardrailIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the guardrail.</p>
      */
-    inline const Aws::String& GetGuardrailVersion() const{ return m_guardrailVersion; }
+    inline const Aws::String& GetGuardrailVersion() const { return m_guardrailVersion; }
     inline bool GuardrailVersionHasBeenSet() const { return m_guardrailVersionHasBeenSet; }
-    inline void SetGuardrailVersion(const Aws::String& value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion = value; }
-    inline void SetGuardrailVersion(Aws::String&& value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion = std::move(value); }
-    inline void SetGuardrailVersion(const char* value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion.assign(value); }
-    inline GuardrailConfiguration& WithGuardrailVersion(const Aws::String& value) { SetGuardrailVersion(value); return *this;}
-    inline GuardrailConfiguration& WithGuardrailVersion(Aws::String&& value) { SetGuardrailVersion(std::move(value)); return *this;}
-    inline GuardrailConfiguration& WithGuardrailVersion(const char* value) { SetGuardrailVersion(value); return *this;}
+    template<typename GuardrailVersionT = Aws::String>
+    void SetGuardrailVersion(GuardrailVersionT&& value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion = std::forward<GuardrailVersionT>(value); }
+    template<typename GuardrailVersionT = Aws::String>
+    GuardrailConfiguration& WithGuardrailVersion(GuardrailVersionT&& value) { SetGuardrailVersion(std::forward<GuardrailVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The trace behavior for the guardrail.</p>
      */
-    inline const GuardrailTrace& GetTrace() const{ return m_trace; }
+    inline GuardrailTrace GetTrace() const { return m_trace; }
     inline bool TraceHasBeenSet() const { return m_traceHasBeenSet; }
-    inline void SetTrace(const GuardrailTrace& value) { m_traceHasBeenSet = true; m_trace = value; }
-    inline void SetTrace(GuardrailTrace&& value) { m_traceHasBeenSet = true; m_trace = std::move(value); }
-    inline GuardrailConfiguration& WithTrace(const GuardrailTrace& value) { SetTrace(value); return *this;}
-    inline GuardrailConfiguration& WithTrace(GuardrailTrace&& value) { SetTrace(std::move(value)); return *this;}
+    inline void SetTrace(GuardrailTrace value) { m_traceHasBeenSet = true; m_trace = value; }
+    inline GuardrailConfiguration& WithTrace(GuardrailTrace value) { SetTrace(value); return *this;}
     ///@}
   private:
 
@@ -87,7 +81,7 @@ namespace Model
     Aws::String m_guardrailVersion;
     bool m_guardrailVersionHasBeenSet = false;
 
-    GuardrailTrace m_trace;
+    GuardrailTrace m_trace{GuardrailTrace::NOT_SET};
     bool m_traceHasBeenSet = false;
   };
 

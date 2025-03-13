@@ -18,19 +18,7 @@ namespace Route53RecoveryCluster
 namespace Model
 {
 
-RoutingControl::RoutingControl() : 
-    m_controlPanelArnHasBeenSet(false),
-    m_controlPanelNameHasBeenSet(false),
-    m_routingControlArnHasBeenSet(false),
-    m_routingControlNameHasBeenSet(false),
-    m_routingControlState(RoutingControlState::NOT_SET),
-    m_routingControlStateHasBeenSet(false),
-    m_ownerHasBeenSet(false)
-{
-}
-
 RoutingControl::RoutingControl(JsonView jsonValue)
-  : RoutingControl()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ RoutingControl& RoutingControl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ControlPanelArn"))
   {
     m_controlPanelArn = jsonValue.GetString("ControlPanelArn");
-
     m_controlPanelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlPanelName"))
   {
     m_controlPanelName = jsonValue.GetString("ControlPanelName");
-
     m_controlPanelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingControlArn"))
   {
     m_routingControlArn = jsonValue.GetString("RoutingControlArn");
-
     m_routingControlArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingControlName"))
   {
     m_routingControlName = jsonValue.GetString("RoutingControlName");
-
     m_routingControlNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingControlState"))
   {
     m_routingControlState = RoutingControlStateMapper::GetRoutingControlStateForName(jsonValue.GetString("RoutingControlState"));
-
     m_routingControlStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   return *this;
 }
 

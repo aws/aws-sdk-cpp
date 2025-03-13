@@ -25,7 +25,7 @@ namespace Model
   class ListEventIntegrationAssociationsRequest : public AppIntegrationsServiceRequest
   {
   public:
-    AWS_APPINTEGRATIONSSERVICE_API ListEventIntegrationAssociationsRequest();
+    AWS_APPINTEGRATIONSSERVICE_API ListEventIntegrationAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the event integration. </p>
      */
-    inline const Aws::String& GetEventIntegrationName() const{ return m_eventIntegrationName; }
+    inline const Aws::String& GetEventIntegrationName() const { return m_eventIntegrationName; }
     inline bool EventIntegrationNameHasBeenSet() const { return m_eventIntegrationNameHasBeenSet; }
-    inline void SetEventIntegrationName(const Aws::String& value) { m_eventIntegrationNameHasBeenSet = true; m_eventIntegrationName = value; }
-    inline void SetEventIntegrationName(Aws::String&& value) { m_eventIntegrationNameHasBeenSet = true; m_eventIntegrationName = std::move(value); }
-    inline void SetEventIntegrationName(const char* value) { m_eventIntegrationNameHasBeenSet = true; m_eventIntegrationName.assign(value); }
-    inline ListEventIntegrationAssociationsRequest& WithEventIntegrationName(const Aws::String& value) { SetEventIntegrationName(value); return *this;}
-    inline ListEventIntegrationAssociationsRequest& WithEventIntegrationName(Aws::String&& value) { SetEventIntegrationName(std::move(value)); return *this;}
-    inline ListEventIntegrationAssociationsRequest& WithEventIntegrationName(const char* value) { SetEventIntegrationName(value); return *this;}
+    template<typename EventIntegrationNameT = Aws::String>
+    void SetEventIntegrationName(EventIntegrationNameT&& value) { m_eventIntegrationNameHasBeenSet = true; m_eventIntegrationName = std::forward<EventIntegrationNameT>(value); }
+    template<typename EventIntegrationNameT = Aws::String>
+    ListEventIntegrationAssociationsRequest& WithEventIntegrationName(EventIntegrationNameT&& value) { SetEventIntegrationName(std::forward<EventIntegrationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,21 +55,19 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEventIntegrationAssociationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEventIntegrationAssociationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEventIntegrationAssociationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEventIntegrationAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEventIntegrationAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

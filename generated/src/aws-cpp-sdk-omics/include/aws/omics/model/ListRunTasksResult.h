@@ -29,7 +29,7 @@ namespace Model
   class ListRunTasksResult
   {
   public:
-    AWS_OMICS_API ListRunTasksResult();
+    AWS_OMICS_API ListRunTasksResult() = default;
     AWS_OMICS_API ListRunTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API ListRunTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of tasks.</p>
      */
-    inline const Aws::Vector<TaskListItem>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<TaskListItem>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<TaskListItem>&& value) { m_items = std::move(value); }
-    inline ListRunTasksResult& WithItems(const Aws::Vector<TaskListItem>& value) { SetItems(value); return *this;}
-    inline ListRunTasksResult& WithItems(Aws::Vector<TaskListItem>&& value) { SetItems(std::move(value)); return *this;}
-    inline ListRunTasksResult& AddItems(const TaskListItem& value) { m_items.push_back(value); return *this; }
-    inline ListRunTasksResult& AddItems(TaskListItem&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TaskListItem>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<TaskListItem>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<TaskListItem>>
+    ListRunTasksResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = TaskListItem>
+    ListRunTasksResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A pagination token that's included if more results are available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRunTasksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRunTasksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRunTasksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRunTasksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRunTasksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRunTasksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRunTasksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRunTasksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TaskListItem> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

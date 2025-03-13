@@ -33,7 +33,7 @@ namespace Model
   class LakeFormationConfiguration
   {
   public:
-    AWS_EMRCONTAINERS_API LakeFormationConfiguration();
+    AWS_EMRCONTAINERS_API LakeFormationConfiguration() = default;
     AWS_EMRCONTAINERS_API LakeFormationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API LakeFormationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
      * <p>The session tag to authorize Amazon EMR on EKS for API calls to Lake
      * Formation.</p>
      */
-    inline const Aws::String& GetAuthorizedSessionTagValue() const{ return m_authorizedSessionTagValue; }
+    inline const Aws::String& GetAuthorizedSessionTagValue() const { return m_authorizedSessionTagValue; }
     inline bool AuthorizedSessionTagValueHasBeenSet() const { return m_authorizedSessionTagValueHasBeenSet; }
-    inline void SetAuthorizedSessionTagValue(const Aws::String& value) { m_authorizedSessionTagValueHasBeenSet = true; m_authorizedSessionTagValue = value; }
-    inline void SetAuthorizedSessionTagValue(Aws::String&& value) { m_authorizedSessionTagValueHasBeenSet = true; m_authorizedSessionTagValue = std::move(value); }
-    inline void SetAuthorizedSessionTagValue(const char* value) { m_authorizedSessionTagValueHasBeenSet = true; m_authorizedSessionTagValue.assign(value); }
-    inline LakeFormationConfiguration& WithAuthorizedSessionTagValue(const Aws::String& value) { SetAuthorizedSessionTagValue(value); return *this;}
-    inline LakeFormationConfiguration& WithAuthorizedSessionTagValue(Aws::String&& value) { SetAuthorizedSessionTagValue(std::move(value)); return *this;}
-    inline LakeFormationConfiguration& WithAuthorizedSessionTagValue(const char* value) { SetAuthorizedSessionTagValue(value); return *this;}
+    template<typename AuthorizedSessionTagValueT = Aws::String>
+    void SetAuthorizedSessionTagValue(AuthorizedSessionTagValueT&& value) { m_authorizedSessionTagValueHasBeenSet = true; m_authorizedSessionTagValue = std::forward<AuthorizedSessionTagValueT>(value); }
+    template<typename AuthorizedSessionTagValueT = Aws::String>
+    LakeFormationConfiguration& WithAuthorizedSessionTagValue(AuthorizedSessionTagValueT&& value) { SetAuthorizedSessionTagValue(std::forward<AuthorizedSessionTagValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace input of the system job.</p>
      */
-    inline const SecureNamespaceInfo& GetSecureNamespaceInfo() const{ return m_secureNamespaceInfo; }
+    inline const SecureNamespaceInfo& GetSecureNamespaceInfo() const { return m_secureNamespaceInfo; }
     inline bool SecureNamespaceInfoHasBeenSet() const { return m_secureNamespaceInfoHasBeenSet; }
-    inline void SetSecureNamespaceInfo(const SecureNamespaceInfo& value) { m_secureNamespaceInfoHasBeenSet = true; m_secureNamespaceInfo = value; }
-    inline void SetSecureNamespaceInfo(SecureNamespaceInfo&& value) { m_secureNamespaceInfoHasBeenSet = true; m_secureNamespaceInfo = std::move(value); }
-    inline LakeFormationConfiguration& WithSecureNamespaceInfo(const SecureNamespaceInfo& value) { SetSecureNamespaceInfo(value); return *this;}
-    inline LakeFormationConfiguration& WithSecureNamespaceInfo(SecureNamespaceInfo&& value) { SetSecureNamespaceInfo(std::move(value)); return *this;}
+    template<typename SecureNamespaceInfoT = SecureNamespaceInfo>
+    void SetSecureNamespaceInfo(SecureNamespaceInfoT&& value) { m_secureNamespaceInfoHasBeenSet = true; m_secureNamespaceInfo = std::forward<SecureNamespaceInfoT>(value); }
+    template<typename SecureNamespaceInfoT = SecureNamespaceInfo>
+    LakeFormationConfiguration& WithSecureNamespaceInfo(SecureNamespaceInfoT&& value) { SetSecureNamespaceInfo(std::forward<SecureNamespaceInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * <code>QueryEngine</code> role assumes the <code>JobExecutionRole</code> to
      * execute all the Lake Formation calls.</p>
      */
-    inline const Aws::String& GetQueryEngineRoleArn() const{ return m_queryEngineRoleArn; }
+    inline const Aws::String& GetQueryEngineRoleArn() const { return m_queryEngineRoleArn; }
     inline bool QueryEngineRoleArnHasBeenSet() const { return m_queryEngineRoleArnHasBeenSet; }
-    inline void SetQueryEngineRoleArn(const Aws::String& value) { m_queryEngineRoleArnHasBeenSet = true; m_queryEngineRoleArn = value; }
-    inline void SetQueryEngineRoleArn(Aws::String&& value) { m_queryEngineRoleArnHasBeenSet = true; m_queryEngineRoleArn = std::move(value); }
-    inline void SetQueryEngineRoleArn(const char* value) { m_queryEngineRoleArnHasBeenSet = true; m_queryEngineRoleArn.assign(value); }
-    inline LakeFormationConfiguration& WithQueryEngineRoleArn(const Aws::String& value) { SetQueryEngineRoleArn(value); return *this;}
-    inline LakeFormationConfiguration& WithQueryEngineRoleArn(Aws::String&& value) { SetQueryEngineRoleArn(std::move(value)); return *this;}
-    inline LakeFormationConfiguration& WithQueryEngineRoleArn(const char* value) { SetQueryEngineRoleArn(value); return *this;}
+    template<typename QueryEngineRoleArnT = Aws::String>
+    void SetQueryEngineRoleArn(QueryEngineRoleArnT&& value) { m_queryEngineRoleArnHasBeenSet = true; m_queryEngineRoleArn = std::forward<QueryEngineRoleArnT>(value); }
+    template<typename QueryEngineRoleArnT = Aws::String>
+    LakeFormationConfiguration& WithQueryEngineRoleArn(QueryEngineRoleArnT&& value) { SetQueryEngineRoleArn(std::forward<QueryEngineRoleArnT>(value)); return *this;}
     ///@}
   private:
 

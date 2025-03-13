@@ -35,7 +35,7 @@ namespace Model
   class AnalysisRulePolicyV1
   {
   public:
-    AWS_CLEANROOMS_API AnalysisRulePolicyV1();
+    AWS_CLEANROOMS_API AnalysisRulePolicyV1() = default;
     AWS_CLEANROOMS_API AnalysisRulePolicyV1(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API AnalysisRulePolicyV1& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>Analysis rule type that enables only list queries on a configured table.</p>
      */
-    inline const AnalysisRuleList& GetList() const{ return m_list; }
+    inline const AnalysisRuleList& GetList() const { return m_list; }
     inline bool ListHasBeenSet() const { return m_listHasBeenSet; }
-    inline void SetList(const AnalysisRuleList& value) { m_listHasBeenSet = true; m_list = value; }
-    inline void SetList(AnalysisRuleList&& value) { m_listHasBeenSet = true; m_list = std::move(value); }
-    inline AnalysisRulePolicyV1& WithList(const AnalysisRuleList& value) { SetList(value); return *this;}
-    inline AnalysisRulePolicyV1& WithList(AnalysisRuleList&& value) { SetList(std::move(value)); return *this;}
+    template<typename ListT = AnalysisRuleList>
+    void SetList(ListT&& value) { m_listHasBeenSet = true; m_list = std::forward<ListT>(value); }
+    template<typename ListT = AnalysisRuleList>
+    AnalysisRulePolicyV1& WithList(ListT&& value) { SetList(std::forward<ListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,36 +58,36 @@ namespace Model
      * <p>Analysis rule type that enables only aggregation queries on a configured
      * table.</p>
      */
-    inline const AnalysisRuleAggregation& GetAggregation() const{ return m_aggregation; }
+    inline const AnalysisRuleAggregation& GetAggregation() const { return m_aggregation; }
     inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
-    inline void SetAggregation(const AnalysisRuleAggregation& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
-    inline void SetAggregation(AnalysisRuleAggregation&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
-    inline AnalysisRulePolicyV1& WithAggregation(const AnalysisRuleAggregation& value) { SetAggregation(value); return *this;}
-    inline AnalysisRulePolicyV1& WithAggregation(AnalysisRuleAggregation&& value) { SetAggregation(std::move(value)); return *this;}
+    template<typename AggregationT = AnalysisRuleAggregation>
+    void SetAggregation(AggregationT&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::forward<AggregationT>(value); }
+    template<typename AggregationT = AnalysisRuleAggregation>
+    AnalysisRulePolicyV1& WithAggregation(AggregationT&& value) { SetAggregation(std::forward<AggregationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
      */
-    inline const AnalysisRuleCustom& GetCustom() const{ return m_custom; }
+    inline const AnalysisRuleCustom& GetCustom() const { return m_custom; }
     inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
-    inline void SetCustom(const AnalysisRuleCustom& value) { m_customHasBeenSet = true; m_custom = value; }
-    inline void SetCustom(AnalysisRuleCustom&& value) { m_customHasBeenSet = true; m_custom = std::move(value); }
-    inline AnalysisRulePolicyV1& WithCustom(const AnalysisRuleCustom& value) { SetCustom(value); return *this;}
-    inline AnalysisRulePolicyV1& WithCustom(AnalysisRuleCustom&& value) { SetCustom(std::move(value)); return *this;}
+    template<typename CustomT = AnalysisRuleCustom>
+    void SetCustom(CustomT&& value) { m_customHasBeenSet = true; m_custom = std::forward<CustomT>(value); }
+    template<typename CustomT = AnalysisRuleCustom>
+    AnalysisRulePolicyV1& WithCustom(CustomT&& value) { SetCustom(std::forward<CustomT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID mapping table.</p>
      */
-    inline const AnalysisRuleIdMappingTable& GetIdMappingTable() const{ return m_idMappingTable; }
+    inline const AnalysisRuleIdMappingTable& GetIdMappingTable() const { return m_idMappingTable; }
     inline bool IdMappingTableHasBeenSet() const { return m_idMappingTableHasBeenSet; }
-    inline void SetIdMappingTable(const AnalysisRuleIdMappingTable& value) { m_idMappingTableHasBeenSet = true; m_idMappingTable = value; }
-    inline void SetIdMappingTable(AnalysisRuleIdMappingTable&& value) { m_idMappingTableHasBeenSet = true; m_idMappingTable = std::move(value); }
-    inline AnalysisRulePolicyV1& WithIdMappingTable(const AnalysisRuleIdMappingTable& value) { SetIdMappingTable(value); return *this;}
-    inline AnalysisRulePolicyV1& WithIdMappingTable(AnalysisRuleIdMappingTable&& value) { SetIdMappingTable(std::move(value)); return *this;}
+    template<typename IdMappingTableT = AnalysisRuleIdMappingTable>
+    void SetIdMappingTable(IdMappingTableT&& value) { m_idMappingTableHasBeenSet = true; m_idMappingTable = std::forward<IdMappingTableT>(value); }
+    template<typename IdMappingTableT = AnalysisRuleIdMappingTable>
+    AnalysisRulePolicyV1& WithIdMappingTable(IdMappingTableT&& value) { SetIdMappingTable(std::forward<IdMappingTableT>(value)); return *this;}
     ///@}
   private:
 

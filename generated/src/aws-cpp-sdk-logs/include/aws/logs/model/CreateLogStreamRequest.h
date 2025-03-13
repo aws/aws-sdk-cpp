@@ -21,7 +21,7 @@ namespace Model
   class CreateLogStreamRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API CreateLogStreamRequest();
+    AWS_CLOUDWATCHLOGS_API CreateLogStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline CreateLogStreamRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline CreateLogStreamRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline CreateLogStreamRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    CreateLogStreamRequest& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the log stream.</p>
      */
-    inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+    inline const Aws::String& GetLogStreamName() const { return m_logStreamName; }
     inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
-    inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
-    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
-    inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
-    inline CreateLogStreamRequest& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
-    inline CreateLogStreamRequest& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
-    inline CreateLogStreamRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
+    template<typename LogStreamNameT = Aws::String>
+    void SetLogStreamName(LogStreamNameT&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::forward<LogStreamNameT>(value); }
+    template<typename LogStreamNameT = Aws::String>
+    CreateLogStreamRequest& WithLogStreamName(LogStreamNameT&& value) { SetLogStreamName(std::forward<LogStreamNameT>(value)); return *this;}
     ///@}
   private:
 

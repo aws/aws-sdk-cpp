@@ -12,11 +12,6 @@ using namespace Aws::MWAA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWebLoginTokenRequest::CreateWebLoginTokenRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String CreateWebLoginTokenRequest::SerializePayload() const
 {
   return {};

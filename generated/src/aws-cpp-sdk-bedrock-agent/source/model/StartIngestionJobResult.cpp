@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartIngestionJobResult::StartIngestionJobResult()
-{
-}
-
 StartIngestionJobResult::StartIngestionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartIngestionJobResult& StartIngestionJobResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ingestionJob"))
   {
     m_ingestionJob = jsonValue.GetObject("ingestionJob");
-
+    m_ingestionJobHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

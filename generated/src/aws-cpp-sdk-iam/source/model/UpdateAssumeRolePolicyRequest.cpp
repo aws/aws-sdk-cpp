@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateAssumeRolePolicyRequest::UpdateAssumeRolePolicyRequest() : 
-    m_roleNameHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAssumeRolePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

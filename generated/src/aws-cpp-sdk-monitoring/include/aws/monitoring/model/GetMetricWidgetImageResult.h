@@ -28,7 +28,7 @@ namespace Model
   class GetMetricWidgetImageResult
   {
   public:
-    AWS_CLOUDWATCH_API GetMetricWidgetImageResult();
+    AWS_CLOUDWATCH_API GetMetricWidgetImageResult() = default;
     AWS_CLOUDWATCH_API GetMetricWidgetImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDWATCH_API GetMetricWidgetImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,26 +38,28 @@ namespace Model
      * <p>The image of the graph, in the output format specified. The output is
      * base64-encoded.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetMetricWidgetImage() const{ return m_metricWidgetImage; }
-    inline void SetMetricWidgetImage(const Aws::Utils::ByteBuffer& value) { m_metricWidgetImage = value; }
-    inline void SetMetricWidgetImage(Aws::Utils::ByteBuffer&& value) { m_metricWidgetImage = std::move(value); }
-    inline GetMetricWidgetImageResult& WithMetricWidgetImage(const Aws::Utils::ByteBuffer& value) { SetMetricWidgetImage(value); return *this;}
-    inline GetMetricWidgetImageResult& WithMetricWidgetImage(Aws::Utils::ByteBuffer&& value) { SetMetricWidgetImage(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetMetricWidgetImage() const { return m_metricWidgetImage; }
+    template<typename MetricWidgetImageT = Aws::Utils::ByteBuffer>
+    void SetMetricWidgetImage(MetricWidgetImageT&& value) { m_metricWidgetImageHasBeenSet = true; m_metricWidgetImage = std::forward<MetricWidgetImageT>(value); }
+    template<typename MetricWidgetImageT = Aws::Utils::ByteBuffer>
+    GetMetricWidgetImageResult& WithMetricWidgetImage(MetricWidgetImageT&& value) { SetMetricWidgetImage(std::forward<MetricWidgetImageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetMetricWidgetImageResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetMetricWidgetImageResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetMetricWidgetImageResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_metricWidgetImage;
+    Aws::Utils::ByteBuffer m_metricWidgetImage{};
+    bool m_metricWidgetImageHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

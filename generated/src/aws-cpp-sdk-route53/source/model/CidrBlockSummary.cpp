@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-CidrBlockSummary::CidrBlockSummary() : 
-    m_cidrBlockHasBeenSet(false),
-    m_locationNameHasBeenSet(false)
-{
-}
-
 CidrBlockSummary::CidrBlockSummary(const XmlNode& xmlNode)
-  : CidrBlockSummary()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CidrBlockSummary& CidrBlockSummary::operator =(const XmlNode& xmlNode)
     {
       m_cidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(cidrBlockNode.GetText());
       m_cidrBlockHasBeenSet = true;
+       m_cidrBlockHasBeenSet = true;
     }
     XmlNode locationNameNode = resultNode.FirstChild("LocationName");
     if(!locationNameNode.IsNull())
     {
       m_locationName = Aws::Utils::Xml::DecodeEscapedXmlText(locationNameNode.GetText());
       m_locationNameHasBeenSet = true;
+       m_locationNameHasBeenSet = true;
     }
   }
 

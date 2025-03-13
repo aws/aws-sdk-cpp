@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchAttachToIndex::BatchAttachToIndex() : 
-    m_indexReferenceHasBeenSet(false),
-    m_targetReferenceHasBeenSet(false)
-{
-}
-
 BatchAttachToIndex::BatchAttachToIndex(JsonView jsonValue)
-  : BatchAttachToIndex()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BatchAttachToIndex& BatchAttachToIndex::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IndexReference"))
   {
     m_indexReference = jsonValue.GetObject("IndexReference");
-
     m_indexReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetReference"))
   {
     m_targetReference = jsonValue.GetObject("TargetReference");
-
     m_targetReferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

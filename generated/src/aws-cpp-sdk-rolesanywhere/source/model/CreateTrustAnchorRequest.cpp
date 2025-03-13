@@ -12,16 +12,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTrustAnchorRequest::CreateTrustAnchorRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_notificationSettingsHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTrustAnchorRequest::SerializePayload() const
 {
   JsonValue payload;

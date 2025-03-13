@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCurrentMetricDataResult::GetCurrentMetricDataResult() : 
-    m_approximateTotalCount(0)
-{
-}
-
 GetCurrentMetricDataResult::GetCurrentMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetCurrentMetricDataResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetCurrentMetricDataResult& GetCurrentMetricDataResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricResults"))
   {
     Aws::Utils::Array<JsonView> metricResultsJsonList = jsonValue.GetArray("MetricResults");
@@ -44,26 +37,25 @@ GetCurrentMetricDataResult& GetCurrentMetricDataResult::operator =(const Aws::Am
     {
       m_metricResults.push_back(metricResultsJsonList[metricResultsIndex].AsObject());
     }
+    m_metricResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSnapshotTime"))
   {
     m_dataSnapshotTime = jsonValue.GetDouble("DataSnapshotTime");
-
+    m_dataSnapshotTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApproximateTotalCount"))
   {
     m_approximateTotalCount = jsonValue.GetInt64("ApproximateTotalCount");
-
+    m_approximateTotalCountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

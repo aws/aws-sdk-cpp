@@ -27,7 +27,7 @@ namespace Model
   class GetRecordRequest : public SageMakerFeatureStoreRuntimeRequest
   {
   public:
-    AWS_SAGEMAKERFEATURESTORERUNTIME_API GetRecordRequest();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API GetRecordRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the feature group from which you
      * want to retrieve a record.</p>
      */
-    inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
+    inline const Aws::String& GetFeatureGroupName() const { return m_featureGroupName; }
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
-    inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
-    inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
-    inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
-    inline GetRecordRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
-    inline GetRecordRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
-    inline GetRecordRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
+    template<typename FeatureGroupNameT = Aws::String>
+    void SetFeatureGroupName(FeatureGroupNameT&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::forward<FeatureGroupNameT>(value); }
+    template<typename FeatureGroupNameT = Aws::String>
+    GetRecordRequest& WithFeatureGroupName(FeatureGroupNameT&& value) { SetFeatureGroupName(std::forward<FeatureGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely
      * identifies the record in the <code>FeatureGroup</code>. </p>
      */
-    inline const Aws::String& GetRecordIdentifierValueAsString() const{ return m_recordIdentifierValueAsString; }
+    inline const Aws::String& GetRecordIdentifierValueAsString() const { return m_recordIdentifierValueAsString; }
     inline bool RecordIdentifierValueAsStringHasBeenSet() const { return m_recordIdentifierValueAsStringHasBeenSet; }
-    inline void SetRecordIdentifierValueAsString(const Aws::String& value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString = value; }
-    inline void SetRecordIdentifierValueAsString(Aws::String&& value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString = std::move(value); }
-    inline void SetRecordIdentifierValueAsString(const char* value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString.assign(value); }
-    inline GetRecordRequest& WithRecordIdentifierValueAsString(const Aws::String& value) { SetRecordIdentifierValueAsString(value); return *this;}
-    inline GetRecordRequest& WithRecordIdentifierValueAsString(Aws::String&& value) { SetRecordIdentifierValueAsString(std::move(value)); return *this;}
-    inline GetRecordRequest& WithRecordIdentifierValueAsString(const char* value) { SetRecordIdentifierValueAsString(value); return *this;}
+    template<typename RecordIdentifierValueAsStringT = Aws::String>
+    void SetRecordIdentifierValueAsString(RecordIdentifierValueAsStringT&& value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString = std::forward<RecordIdentifierValueAsStringT>(value); }
+    template<typename RecordIdentifierValueAsStringT = Aws::String>
+    GetRecordRequest& WithRecordIdentifierValueAsString(RecordIdentifierValueAsStringT&& value) { SetRecordIdentifierValueAsString(std::forward<RecordIdentifierValueAsStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,15 +71,14 @@ namespace Model
      * <p>List of names of Features to be retrieved. If not specified, the latest value
      * for all the Features are returned.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFeatureNames() const{ return m_featureNames; }
+    inline const Aws::Vector<Aws::String>& GetFeatureNames() const { return m_featureNames; }
     inline bool FeatureNamesHasBeenSet() const { return m_featureNamesHasBeenSet; }
-    inline void SetFeatureNames(const Aws::Vector<Aws::String>& value) { m_featureNamesHasBeenSet = true; m_featureNames = value; }
-    inline void SetFeatureNames(Aws::Vector<Aws::String>&& value) { m_featureNamesHasBeenSet = true; m_featureNames = std::move(value); }
-    inline GetRecordRequest& WithFeatureNames(const Aws::Vector<Aws::String>& value) { SetFeatureNames(value); return *this;}
-    inline GetRecordRequest& WithFeatureNames(Aws::Vector<Aws::String>&& value) { SetFeatureNames(std::move(value)); return *this;}
-    inline GetRecordRequest& AddFeatureNames(const Aws::String& value) { m_featureNamesHasBeenSet = true; m_featureNames.push_back(value); return *this; }
-    inline GetRecordRequest& AddFeatureNames(Aws::String&& value) { m_featureNamesHasBeenSet = true; m_featureNames.push_back(std::move(value)); return *this; }
-    inline GetRecordRequest& AddFeatureNames(const char* value) { m_featureNamesHasBeenSet = true; m_featureNames.push_back(value); return *this; }
+    template<typename FeatureNamesT = Aws::Vector<Aws::String>>
+    void SetFeatureNames(FeatureNamesT&& value) { m_featureNamesHasBeenSet = true; m_featureNames = std::forward<FeatureNamesT>(value); }
+    template<typename FeatureNamesT = Aws::Vector<Aws::String>>
+    GetRecordRequest& WithFeatureNames(FeatureNamesT&& value) { SetFeatureNames(std::forward<FeatureNamesT>(value)); return *this;}
+    template<typename FeatureNamesT = Aws::String>
+    GetRecordRequest& AddFeatureNames(FeatureNamesT&& value) { m_featureNamesHasBeenSet = true; m_featureNames.emplace_back(std::forward<FeatureNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -93,12 +88,10 @@ namespace Model
      * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
      * <code>GetRecord</code> will return null.</p>
      */
-    inline const ExpirationTimeResponse& GetExpirationTimeResponse() const{ return m_expirationTimeResponse; }
+    inline ExpirationTimeResponse GetExpirationTimeResponse() const { return m_expirationTimeResponse; }
     inline bool ExpirationTimeResponseHasBeenSet() const { return m_expirationTimeResponseHasBeenSet; }
-    inline void SetExpirationTimeResponse(const ExpirationTimeResponse& value) { m_expirationTimeResponseHasBeenSet = true; m_expirationTimeResponse = value; }
-    inline void SetExpirationTimeResponse(ExpirationTimeResponse&& value) { m_expirationTimeResponseHasBeenSet = true; m_expirationTimeResponse = std::move(value); }
-    inline GetRecordRequest& WithExpirationTimeResponse(const ExpirationTimeResponse& value) { SetExpirationTimeResponse(value); return *this;}
-    inline GetRecordRequest& WithExpirationTimeResponse(ExpirationTimeResponse&& value) { SetExpirationTimeResponse(std::move(value)); return *this;}
+    inline void SetExpirationTimeResponse(ExpirationTimeResponse value) { m_expirationTimeResponseHasBeenSet = true; m_expirationTimeResponse = value; }
+    inline GetRecordRequest& WithExpirationTimeResponse(ExpirationTimeResponse value) { SetExpirationTimeResponse(value); return *this;}
     ///@}
   private:
 
@@ -111,7 +104,7 @@ namespace Model
     Aws::Vector<Aws::String> m_featureNames;
     bool m_featureNamesHasBeenSet = false;
 
-    ExpirationTimeResponse m_expirationTimeResponse;
+    ExpirationTimeResponse m_expirationTimeResponse{ExpirationTimeResponse::NOT_SET};
     bool m_expirationTimeResponseHasBeenSet = false;
   };
 

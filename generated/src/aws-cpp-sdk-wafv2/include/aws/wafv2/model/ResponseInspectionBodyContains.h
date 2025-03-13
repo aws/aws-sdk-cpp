@@ -38,7 +38,7 @@ namespace Model
   class ResponseInspectionBodyContains
   {
   public:
-    AWS_WAFV2_API ResponseInspectionBodyContains();
+    AWS_WAFV2_API ResponseInspectionBodyContains() = default;
     AWS_WAFV2_API ResponseInspectionBodyContains(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API ResponseInspectionBodyContains& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,15 +54,14 @@ namespace Model
      * <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!"
      * ]</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSuccessStrings() const{ return m_successStrings; }
+    inline const Aws::Vector<Aws::String>& GetSuccessStrings() const { return m_successStrings; }
     inline bool SuccessStringsHasBeenSet() const { return m_successStringsHasBeenSet; }
-    inline void SetSuccessStrings(const Aws::Vector<Aws::String>& value) { m_successStringsHasBeenSet = true; m_successStrings = value; }
-    inline void SetSuccessStrings(Aws::Vector<Aws::String>&& value) { m_successStringsHasBeenSet = true; m_successStrings = std::move(value); }
-    inline ResponseInspectionBodyContains& WithSuccessStrings(const Aws::Vector<Aws::String>& value) { SetSuccessStrings(value); return *this;}
-    inline ResponseInspectionBodyContains& WithSuccessStrings(Aws::Vector<Aws::String>&& value) { SetSuccessStrings(std::move(value)); return *this;}
-    inline ResponseInspectionBodyContains& AddSuccessStrings(const Aws::String& value) { m_successStringsHasBeenSet = true; m_successStrings.push_back(value); return *this; }
-    inline ResponseInspectionBodyContains& AddSuccessStrings(Aws::String&& value) { m_successStringsHasBeenSet = true; m_successStrings.push_back(std::move(value)); return *this; }
-    inline ResponseInspectionBodyContains& AddSuccessStrings(const char* value) { m_successStringsHasBeenSet = true; m_successStrings.push_back(value); return *this; }
+    template<typename SuccessStringsT = Aws::Vector<Aws::String>>
+    void SetSuccessStrings(SuccessStringsT&& value) { m_successStringsHasBeenSet = true; m_successStrings = std::forward<SuccessStringsT>(value); }
+    template<typename SuccessStringsT = Aws::Vector<Aws::String>>
+    ResponseInspectionBodyContains& WithSuccessStrings(SuccessStringsT&& value) { SetSuccessStrings(std::forward<SuccessStringsT>(value)); return *this;}
+    template<typename SuccessStringsT = Aws::String>
+    ResponseInspectionBodyContains& AddSuccessStrings(SuccessStringsT&& value) { m_successStringsHasBeenSet = true; m_successStrings.emplace_back(std::forward<SuccessStringsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,15 +72,14 @@ namespace Model
      * among the success and failure strings. </p> <p>JSON example:
      * <code>"FailureStrings": [ "Request failed" ]</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetFailureStrings() const{ return m_failureStrings; }
+    inline const Aws::Vector<Aws::String>& GetFailureStrings() const { return m_failureStrings; }
     inline bool FailureStringsHasBeenSet() const { return m_failureStringsHasBeenSet; }
-    inline void SetFailureStrings(const Aws::Vector<Aws::String>& value) { m_failureStringsHasBeenSet = true; m_failureStrings = value; }
-    inline void SetFailureStrings(Aws::Vector<Aws::String>&& value) { m_failureStringsHasBeenSet = true; m_failureStrings = std::move(value); }
-    inline ResponseInspectionBodyContains& WithFailureStrings(const Aws::Vector<Aws::String>& value) { SetFailureStrings(value); return *this;}
-    inline ResponseInspectionBodyContains& WithFailureStrings(Aws::Vector<Aws::String>&& value) { SetFailureStrings(std::move(value)); return *this;}
-    inline ResponseInspectionBodyContains& AddFailureStrings(const Aws::String& value) { m_failureStringsHasBeenSet = true; m_failureStrings.push_back(value); return *this; }
-    inline ResponseInspectionBodyContains& AddFailureStrings(Aws::String&& value) { m_failureStringsHasBeenSet = true; m_failureStrings.push_back(std::move(value)); return *this; }
-    inline ResponseInspectionBodyContains& AddFailureStrings(const char* value) { m_failureStringsHasBeenSet = true; m_failureStrings.push_back(value); return *this; }
+    template<typename FailureStringsT = Aws::Vector<Aws::String>>
+    void SetFailureStrings(FailureStringsT&& value) { m_failureStringsHasBeenSet = true; m_failureStrings = std::forward<FailureStringsT>(value); }
+    template<typename FailureStringsT = Aws::Vector<Aws::String>>
+    ResponseInspectionBodyContains& WithFailureStrings(FailureStringsT&& value) { SetFailureStrings(std::forward<FailureStringsT>(value)); return *this;}
+    template<typename FailureStringsT = Aws::String>
+    ResponseInspectionBodyContains& AddFailureStrings(FailureStringsT&& value) { m_failureStringsHasBeenSet = true; m_failureStrings.emplace_back(std::forward<FailureStringsT>(value)); return *this; }
     ///@}
   private:
 

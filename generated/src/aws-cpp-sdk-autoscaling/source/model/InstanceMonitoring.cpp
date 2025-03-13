@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-InstanceMonitoring::InstanceMonitoring() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 InstanceMonitoring::InstanceMonitoring(const XmlNode& xmlNode)
-  : InstanceMonitoring()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ InstanceMonitoring& InstanceMonitoring::operator =(const XmlNode& xmlNode)
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
   }
 

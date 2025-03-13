@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputRequestDestinationRoute::InputRequestDestinationRoute() : 
-    m_cidrHasBeenSet(false),
-    m_gatewayHasBeenSet(false)
-{
-}
-
 InputRequestDestinationRoute::InputRequestDestinationRoute(JsonView jsonValue)
-  : InputRequestDestinationRoute()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InputRequestDestinationRoute& InputRequestDestinationRoute::operator =(JsonView 
   if(jsonValue.ValueExists("cidr"))
   {
     m_cidr = jsonValue.GetString("cidr");
-
     m_cidrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gateway"))
   {
     m_gateway = jsonValue.GetString("gateway");
-
     m_gatewayHasBeenSet = true;
   }
-
   return *this;
 }
 

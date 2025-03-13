@@ -28,7 +28,7 @@ namespace Model
   class PutVoiceConnectorStreamingConfigurationResult
   {
   public:
-    AWS_CHIMESDKVOICE_API PutVoiceConnectorStreamingConfigurationResult();
+    AWS_CHIMESDKVOICE_API PutVoiceConnectorStreamingConfigurationResult() = default;
     AWS_CHIMESDKVOICE_API PutVoiceConnectorStreamingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API PutVoiceConnectorStreamingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The updated streaming settings.</p>
      */
-    inline const StreamingConfiguration& GetStreamingConfiguration() const{ return m_streamingConfiguration; }
-    inline void SetStreamingConfiguration(const StreamingConfiguration& value) { m_streamingConfiguration = value; }
-    inline void SetStreamingConfiguration(StreamingConfiguration&& value) { m_streamingConfiguration = std::move(value); }
-    inline PutVoiceConnectorStreamingConfigurationResult& WithStreamingConfiguration(const StreamingConfiguration& value) { SetStreamingConfiguration(value); return *this;}
-    inline PutVoiceConnectorStreamingConfigurationResult& WithStreamingConfiguration(StreamingConfiguration&& value) { SetStreamingConfiguration(std::move(value)); return *this;}
+    inline const StreamingConfiguration& GetStreamingConfiguration() const { return m_streamingConfiguration; }
+    template<typename StreamingConfigurationT = StreamingConfiguration>
+    void SetStreamingConfiguration(StreamingConfigurationT&& value) { m_streamingConfigurationHasBeenSet = true; m_streamingConfiguration = std::forward<StreamingConfigurationT>(value); }
+    template<typename StreamingConfigurationT = StreamingConfiguration>
+    PutVoiceConnectorStreamingConfigurationResult& WithStreamingConfiguration(StreamingConfigurationT&& value) { SetStreamingConfiguration(std::forward<StreamingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutVoiceConnectorStreamingConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutVoiceConnectorStreamingConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutVoiceConnectorStreamingConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutVoiceConnectorStreamingConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     StreamingConfiguration m_streamingConfiguration;
+    bool m_streamingConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

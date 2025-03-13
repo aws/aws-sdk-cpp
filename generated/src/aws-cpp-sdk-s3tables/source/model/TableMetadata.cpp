@@ -18,13 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-TableMetadata::TableMetadata() : 
-    m_icebergHasBeenSet(false)
-{
-}
-
 TableMetadata::TableMetadata(JsonView jsonValue)
-  : TableMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TableMetadata& TableMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("iceberg"))
   {
     m_iceberg = jsonValue.GetObject("iceberg");
-
     m_icebergHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class KendraKnowledgeBaseConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API KendraKnowledgeBaseConfiguration();
+    AWS_BEDROCKAGENT_API KendraKnowledgeBaseConfiguration() = default;
     AWS_BEDROCKAGENT_API KendraKnowledgeBaseConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API KendraKnowledgeBaseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ARN of the Amazon Kendra index.</p>
      */
-    inline const Aws::String& GetKendraIndexArn() const{ return m_kendraIndexArn; }
+    inline const Aws::String& GetKendraIndexArn() const { return m_kendraIndexArn; }
     inline bool KendraIndexArnHasBeenSet() const { return m_kendraIndexArnHasBeenSet; }
-    inline void SetKendraIndexArn(const Aws::String& value) { m_kendraIndexArnHasBeenSet = true; m_kendraIndexArn = value; }
-    inline void SetKendraIndexArn(Aws::String&& value) { m_kendraIndexArnHasBeenSet = true; m_kendraIndexArn = std::move(value); }
-    inline void SetKendraIndexArn(const char* value) { m_kendraIndexArnHasBeenSet = true; m_kendraIndexArn.assign(value); }
-    inline KendraKnowledgeBaseConfiguration& WithKendraIndexArn(const Aws::String& value) { SetKendraIndexArn(value); return *this;}
-    inline KendraKnowledgeBaseConfiguration& WithKendraIndexArn(Aws::String&& value) { SetKendraIndexArn(std::move(value)); return *this;}
-    inline KendraKnowledgeBaseConfiguration& WithKendraIndexArn(const char* value) { SetKendraIndexArn(value); return *this;}
+    template<typename KendraIndexArnT = Aws::String>
+    void SetKendraIndexArn(KendraIndexArnT&& value) { m_kendraIndexArnHasBeenSet = true; m_kendraIndexArn = std::forward<KendraIndexArnT>(value); }
+    template<typename KendraIndexArnT = Aws::String>
+    KendraKnowledgeBaseConfiguration& WithKendraIndexArn(KendraIndexArnT&& value) { SetKendraIndexArn(std::forward<KendraIndexArnT>(value)); return *this;}
     ///@}
   private:
 

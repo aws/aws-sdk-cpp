@@ -28,7 +28,7 @@ namespace Model
   class CreateIngestConfigurationResult
   {
   public:
-    AWS_IVSREALTIME_API CreateIngestConfigurationResult();
+    AWS_IVSREALTIME_API CreateIngestConfigurationResult() = default;
     AWS_IVSREALTIME_API CreateIngestConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API CreateIngestConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The IngestConfiguration that was created.</p>
      */
-    inline const IngestConfiguration& GetIngestConfiguration() const{ return m_ingestConfiguration; }
-    inline void SetIngestConfiguration(const IngestConfiguration& value) { m_ingestConfiguration = value; }
-    inline void SetIngestConfiguration(IngestConfiguration&& value) { m_ingestConfiguration = std::move(value); }
-    inline CreateIngestConfigurationResult& WithIngestConfiguration(const IngestConfiguration& value) { SetIngestConfiguration(value); return *this;}
-    inline CreateIngestConfigurationResult& WithIngestConfiguration(IngestConfiguration&& value) { SetIngestConfiguration(std::move(value)); return *this;}
+    inline const IngestConfiguration& GetIngestConfiguration() const { return m_ingestConfiguration; }
+    template<typename IngestConfigurationT = IngestConfiguration>
+    void SetIngestConfiguration(IngestConfigurationT&& value) { m_ingestConfigurationHasBeenSet = true; m_ingestConfiguration = std::forward<IngestConfigurationT>(value); }
+    template<typename IngestConfigurationT = IngestConfiguration>
+    CreateIngestConfigurationResult& WithIngestConfiguration(IngestConfigurationT&& value) { SetIngestConfiguration(std::forward<IngestConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateIngestConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateIngestConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateIngestConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateIngestConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     IngestConfiguration m_ingestConfiguration;
+    bool m_ingestConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

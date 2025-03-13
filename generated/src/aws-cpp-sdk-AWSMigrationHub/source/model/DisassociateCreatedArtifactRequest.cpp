@@ -12,15 +12,6 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateCreatedArtifactRequest::DisassociateCreatedArtifactRequest() : 
-    m_progressUpdateStreamHasBeenSet(false),
-    m_migrationTaskNameHasBeenSet(false),
-    m_createdArtifactNameHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateCreatedArtifactRequest::SerializePayload() const
 {
   JsonValue payload;

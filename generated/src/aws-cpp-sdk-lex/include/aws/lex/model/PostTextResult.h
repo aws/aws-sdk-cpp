@@ -36,7 +36,7 @@ namespace Model
   class PostTextResult
   {
   public:
-    AWS_LEXRUNTIMESERVICE_API PostTextResult();
+    AWS_LEXRUNTIMESERVICE_API PostTextResult() = default;
     AWS_LEXRUNTIMESERVICE_API PostTextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXRUNTIMESERVICE_API PostTextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,13 +45,11 @@ namespace Model
     /**
      * <p>The current user intent that Amazon Lex is aware of.</p>
      */
-    inline const Aws::String& GetIntentName() const{ return m_intentName; }
-    inline void SetIntentName(const Aws::String& value) { m_intentName = value; }
-    inline void SetIntentName(Aws::String&& value) { m_intentName = std::move(value); }
-    inline void SetIntentName(const char* value) { m_intentName.assign(value); }
-    inline PostTextResult& WithIntentName(const Aws::String& value) { SetIntentName(value); return *this;}
-    inline PostTextResult& WithIntentName(Aws::String&& value) { SetIntentName(std::move(value)); return *this;}
-    inline PostTextResult& WithIntentName(const char* value) { SetIntentName(value); return *this;}
+    inline const Aws::String& GetIntentName() const { return m_intentName; }
+    template<typename IntentNameT = Aws::String>
+    void SetIntentName(IntentNameT&& value) { m_intentNameHasBeenSet = true; m_intentName = std::forward<IntentNameT>(value); }
+    template<typename IntentNameT = Aws::String>
+    PostTextResult& WithIntentName(IntentNameT&& value) { SetIntentName(std::forward<IntentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,11 +61,11 @@ namespace Model
      * Scores</a>.</p> <p>The score is a relative score, not an absolute score. The
      * score may change based on improvements to Amazon Lex.</p>
      */
-    inline const IntentConfidence& GetNluIntentConfidence() const{ return m_nluIntentConfidence; }
-    inline void SetNluIntentConfidence(const IntentConfidence& value) { m_nluIntentConfidence = value; }
-    inline void SetNluIntentConfidence(IntentConfidence&& value) { m_nluIntentConfidence = std::move(value); }
-    inline PostTextResult& WithNluIntentConfidence(const IntentConfidence& value) { SetNluIntentConfidence(value); return *this;}
-    inline PostTextResult& WithNluIntentConfidence(IntentConfidence&& value) { SetNluIntentConfidence(std::move(value)); return *this;}
+    inline const IntentConfidence& GetNluIntentConfidence() const { return m_nluIntentConfidence; }
+    template<typename NluIntentConfidenceT = IntentConfidence>
+    void SetNluIntentConfidence(NluIntentConfidenceT&& value) { m_nluIntentConfidenceHasBeenSet = true; m_nluIntentConfidence = std::forward<NluIntentConfidenceT>(value); }
+    template<typename NluIntentConfidenceT = IntentConfidence>
+    PostTextResult& WithNluIntentConfidence(NluIntentConfidenceT&& value) { SetNluIntentConfidence(std::forward<NluIntentConfidenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,13 +75,13 @@ namespace Model
      * Amazon Lex is that the intent matches the user's intent. The intents are sorted
      * by the confidence score.</p>
      */
-    inline const Aws::Vector<PredictedIntent>& GetAlternativeIntents() const{ return m_alternativeIntents; }
-    inline void SetAlternativeIntents(const Aws::Vector<PredictedIntent>& value) { m_alternativeIntents = value; }
-    inline void SetAlternativeIntents(Aws::Vector<PredictedIntent>&& value) { m_alternativeIntents = std::move(value); }
-    inline PostTextResult& WithAlternativeIntents(const Aws::Vector<PredictedIntent>& value) { SetAlternativeIntents(value); return *this;}
-    inline PostTextResult& WithAlternativeIntents(Aws::Vector<PredictedIntent>&& value) { SetAlternativeIntents(std::move(value)); return *this;}
-    inline PostTextResult& AddAlternativeIntents(const PredictedIntent& value) { m_alternativeIntents.push_back(value); return *this; }
-    inline PostTextResult& AddAlternativeIntents(PredictedIntent&& value) { m_alternativeIntents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PredictedIntent>& GetAlternativeIntents() const { return m_alternativeIntents; }
+    template<typename AlternativeIntentsT = Aws::Vector<PredictedIntent>>
+    void SetAlternativeIntents(AlternativeIntentsT&& value) { m_alternativeIntentsHasBeenSet = true; m_alternativeIntents = std::forward<AlternativeIntentsT>(value); }
+    template<typename AlternativeIntentsT = Aws::Vector<PredictedIntent>>
+    PostTextResult& WithAlternativeIntents(AlternativeIntentsT&& value) { SetAlternativeIntents(std::forward<AlternativeIntentsT>(value)); return *this;}
+    template<typename AlternativeIntentsT = PredictedIntent>
+    PostTextResult& AddAlternativeIntents(AlternativeIntentsT&& value) { m_alternativeIntentsHasBeenSet = true; m_alternativeIntents.emplace_back(std::forward<AlternativeIntentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -100,18 +98,15 @@ namespace Model
      * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSlots() const{ return m_slots; }
-    inline void SetSlots(const Aws::Map<Aws::String, Aws::String>& value) { m_slots = value; }
-    inline void SetSlots(Aws::Map<Aws::String, Aws::String>&& value) { m_slots = std::move(value); }
-    inline PostTextResult& WithSlots(const Aws::Map<Aws::String, Aws::String>& value) { SetSlots(value); return *this;}
-    inline PostTextResult& WithSlots(Aws::Map<Aws::String, Aws::String>&& value) { SetSlots(std::move(value)); return *this;}
-    inline PostTextResult& AddSlots(const Aws::String& key, const Aws::String& value) { m_slots.emplace(key, value); return *this; }
-    inline PostTextResult& AddSlots(Aws::String&& key, const Aws::String& value) { m_slots.emplace(std::move(key), value); return *this; }
-    inline PostTextResult& AddSlots(const Aws::String& key, Aws::String&& value) { m_slots.emplace(key, std::move(value)); return *this; }
-    inline PostTextResult& AddSlots(Aws::String&& key, Aws::String&& value) { m_slots.emplace(std::move(key), std::move(value)); return *this; }
-    inline PostTextResult& AddSlots(const char* key, Aws::String&& value) { m_slots.emplace(key, std::move(value)); return *this; }
-    inline PostTextResult& AddSlots(Aws::String&& key, const char* value) { m_slots.emplace(std::move(key), value); return *this; }
-    inline PostTextResult& AddSlots(const char* key, const char* value) { m_slots.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSlots() const { return m_slots; }
+    template<typename SlotsT = Aws::Map<Aws::String, Aws::String>>
+    void SetSlots(SlotsT&& value) { m_slotsHasBeenSet = true; m_slots = std::forward<SlotsT>(value); }
+    template<typename SlotsT = Aws::Map<Aws::String, Aws::String>>
+    PostTextResult& WithSlots(SlotsT&& value) { SetSlots(std::forward<SlotsT>(value)); return *this;}
+    template<typename SlotsKeyT = Aws::String, typename SlotsValueT = Aws::String>
+    PostTextResult& AddSlots(SlotsKeyT&& key, SlotsValueT&& value) {
+      m_slotsHasBeenSet = true; m_slots.emplace(std::forward<SlotsKeyT>(key), std::forward<SlotsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -119,18 +114,15 @@ namespace Model
      * <p>A map of key-value pairs representing the session-specific context
      * information.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSessionAttributes() const{ return m_sessionAttributes; }
-    inline void SetSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_sessionAttributes = value; }
-    inline void SetSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_sessionAttributes = std::move(value); }
-    inline PostTextResult& WithSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetSessionAttributes(value); return *this;}
-    inline PostTextResult& WithSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetSessionAttributes(std::move(value)); return *this;}
-    inline PostTextResult& AddSessionAttributes(const Aws::String& key, const Aws::String& value) { m_sessionAttributes.emplace(key, value); return *this; }
-    inline PostTextResult& AddSessionAttributes(Aws::String&& key, const Aws::String& value) { m_sessionAttributes.emplace(std::move(key), value); return *this; }
-    inline PostTextResult& AddSessionAttributes(const Aws::String& key, Aws::String&& value) { m_sessionAttributes.emplace(key, std::move(value)); return *this; }
-    inline PostTextResult& AddSessionAttributes(Aws::String&& key, Aws::String&& value) { m_sessionAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline PostTextResult& AddSessionAttributes(const char* key, Aws::String&& value) { m_sessionAttributes.emplace(key, std::move(value)); return *this; }
-    inline PostTextResult& AddSessionAttributes(Aws::String&& key, const char* value) { m_sessionAttributes.emplace(std::move(key), value); return *this; }
-    inline PostTextResult& AddSessionAttributes(const char* key, const char* value) { m_sessionAttributes.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSessionAttributes() const { return m_sessionAttributes; }
+    template<typename SessionAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetSessionAttributes(SessionAttributesT&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::forward<SessionAttributesT>(value); }
+    template<typename SessionAttributesT = Aws::Map<Aws::String, Aws::String>>
+    PostTextResult& WithSessionAttributes(SessionAttributesT&& value) { SetSessionAttributes(std::forward<SessionAttributesT>(value)); return *this;}
+    template<typename SessionAttributesKeyT = Aws::String, typename SessionAttributesValueT = Aws::String>
+    PostTextResult& AddSessionAttributes(SessionAttributesKeyT&& key, SessionAttributesValueT&& value) {
+      m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::forward<SessionAttributesKeyT>(key), std::forward<SessionAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -149,13 +141,11 @@ namespace Model
      * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
      * a message, Amazon Lex passes it to the client in its response.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline PostTextResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline PostTextResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline PostTextResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    PostTextResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,11 +154,11 @@ namespace Model
      * to send utterances to Amazon Comprehend for sentiment analysis, this field
      * contains the result of the analysis.</p>
      */
-    inline const SentimentResponse& GetSentimentResponse() const{ return m_sentimentResponse; }
-    inline void SetSentimentResponse(const SentimentResponse& value) { m_sentimentResponse = value; }
-    inline void SetSentimentResponse(SentimentResponse&& value) { m_sentimentResponse = std::move(value); }
-    inline PostTextResult& WithSentimentResponse(const SentimentResponse& value) { SetSentimentResponse(value); return *this;}
-    inline PostTextResult& WithSentimentResponse(SentimentResponse&& value) { SetSentimentResponse(std::move(value)); return *this;}
+    inline const SentimentResponse& GetSentimentResponse() const { return m_sentimentResponse; }
+    template<typename SentimentResponseT = SentimentResponse>
+    void SetSentimentResponse(SentimentResponseT&& value) { m_sentimentResponseHasBeenSet = true; m_sentimentResponse = std::forward<SentimentResponseT>(value); }
+    template<typename SentimentResponseT = SentimentResponse>
+    PostTextResult& WithSentimentResponse(SentimentResponseT&& value) { SetSentimentResponse(std::forward<SentimentResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,11 +172,9 @@ namespace Model
      * one or more messages from the groups that messages were assigned to when the
      * intent was created.</p> </li> </ul>
      */
-    inline const MessageFormatType& GetMessageFormat() const{ return m_messageFormat; }
-    inline void SetMessageFormat(const MessageFormatType& value) { m_messageFormat = value; }
-    inline void SetMessageFormat(MessageFormatType&& value) { m_messageFormat = std::move(value); }
-    inline PostTextResult& WithMessageFormat(const MessageFormatType& value) { SetMessageFormat(value); return *this;}
-    inline PostTextResult& WithMessageFormat(MessageFormatType&& value) { SetMessageFormat(std::move(value)); return *this;}
+    inline MessageFormatType GetMessageFormat() const { return m_messageFormat; }
+    inline void SetMessageFormat(MessageFormatType value) { m_messageFormatHasBeenSet = true; m_messageFormat = value; }
+    inline PostTextResult& WithMessageFormat(MessageFormatType value) { SetMessageFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -219,11 +207,9 @@ namespace Model
      * times Amazon Lex can prompt a user for specific information), or the Lambda
      * function failed to fulfill the intent. </p> </li> </ul>
      */
-    inline const DialogState& GetDialogState() const{ return m_dialogState; }
-    inline void SetDialogState(const DialogState& value) { m_dialogState = value; }
-    inline void SetDialogState(DialogState&& value) { m_dialogState = std::move(value); }
-    inline PostTextResult& WithDialogState(const DialogState& value) { SetDialogState(value); return *this;}
-    inline PostTextResult& WithDialogState(DialogState&& value) { SetDialogState(std::move(value)); return *this;}
+    inline DialogState GetDialogState() const { return m_dialogState; }
+    inline void SetDialogState(DialogState value) { m_dialogStateHasBeenSet = true; m_dialogState = value; }
+    inline PostTextResult& WithDialogState(DialogState value) { SetDialogState(value); return *this;}
     ///@}
 
     ///@{
@@ -231,13 +217,11 @@ namespace Model
      * <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the
      * name of the slot for which Amazon Lex is eliciting a value. </p>
      */
-    inline const Aws::String& GetSlotToElicit() const{ return m_slotToElicit; }
-    inline void SetSlotToElicit(const Aws::String& value) { m_slotToElicit = value; }
-    inline void SetSlotToElicit(Aws::String&& value) { m_slotToElicit = std::move(value); }
-    inline void SetSlotToElicit(const char* value) { m_slotToElicit.assign(value); }
-    inline PostTextResult& WithSlotToElicit(const Aws::String& value) { SetSlotToElicit(value); return *this;}
-    inline PostTextResult& WithSlotToElicit(Aws::String&& value) { SetSlotToElicit(std::move(value)); return *this;}
-    inline PostTextResult& WithSlotToElicit(const char* value) { SetSlotToElicit(value); return *this;}
+    inline const Aws::String& GetSlotToElicit() const { return m_slotToElicit; }
+    template<typename SlotToElicitT = Aws::String>
+    void SetSlotToElicit(SlotToElicitT&& value) { m_slotToElicitHasBeenSet = true; m_slotToElicit = std::forward<SlotToElicitT>(value); }
+    template<typename SlotToElicitT = Aws::String>
+    PostTextResult& WithSlotToElicit(SlotToElicitT&& value) { SetSlotToElicit(std::forward<SlotToElicitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -247,24 +231,22 @@ namespace Model
      * choose the settings button next to a slot) or from a code hook (Lambda
      * function). </p>
      */
-    inline const ResponseCard& GetResponseCard() const{ return m_responseCard; }
-    inline void SetResponseCard(const ResponseCard& value) { m_responseCard = value; }
-    inline void SetResponseCard(ResponseCard&& value) { m_responseCard = std::move(value); }
-    inline PostTextResult& WithResponseCard(const ResponseCard& value) { SetResponseCard(value); return *this;}
-    inline PostTextResult& WithResponseCard(ResponseCard&& value) { SetResponseCard(std::move(value)); return *this;}
+    inline const ResponseCard& GetResponseCard() const { return m_responseCard; }
+    template<typename ResponseCardT = ResponseCard>
+    void SetResponseCard(ResponseCardT&& value) { m_responseCardHasBeenSet = true; m_responseCard = std::forward<ResponseCardT>(value); }
+    template<typename ResponseCardT = ResponseCard>
+    PostTextResult& WithResponseCard(ResponseCardT&& value) { SetResponseCard(std::forward<ResponseCardT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-    inline PostTextResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline PostTextResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline PostTextResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    PostTextResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -273,13 +255,11 @@ namespace Model
      * information to help determine if one version of a bot is performing better than
      * another version.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
-    inline PostTextResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline PostTextResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline PostTextResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    PostTextResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -290,56 +270,69 @@ namespace Model
      * a context to control the intents that can follow up an intent, or to modify the
      * operation of your application.</p>
      */
-    inline const Aws::Vector<ActiveContext>& GetActiveContexts() const{ return m_activeContexts; }
-    inline void SetActiveContexts(const Aws::Vector<ActiveContext>& value) { m_activeContexts = value; }
-    inline void SetActiveContexts(Aws::Vector<ActiveContext>&& value) { m_activeContexts = std::move(value); }
-    inline PostTextResult& WithActiveContexts(const Aws::Vector<ActiveContext>& value) { SetActiveContexts(value); return *this;}
-    inline PostTextResult& WithActiveContexts(Aws::Vector<ActiveContext>&& value) { SetActiveContexts(std::move(value)); return *this;}
-    inline PostTextResult& AddActiveContexts(const ActiveContext& value) { m_activeContexts.push_back(value); return *this; }
-    inline PostTextResult& AddActiveContexts(ActiveContext&& value) { m_activeContexts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ActiveContext>& GetActiveContexts() const { return m_activeContexts; }
+    template<typename ActiveContextsT = Aws::Vector<ActiveContext>>
+    void SetActiveContexts(ActiveContextsT&& value) { m_activeContextsHasBeenSet = true; m_activeContexts = std::forward<ActiveContextsT>(value); }
+    template<typename ActiveContextsT = Aws::Vector<ActiveContext>>
+    PostTextResult& WithActiveContexts(ActiveContextsT&& value) { SetActiveContexts(std::forward<ActiveContextsT>(value)); return *this;}
+    template<typename ActiveContextsT = ActiveContext>
+    PostTextResult& AddActiveContexts(ActiveContextsT&& value) { m_activeContextsHasBeenSet = true; m_activeContexts.emplace_back(std::forward<ActiveContextsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PostTextResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PostTextResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PostTextResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PostTextResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_intentName;
+    bool m_intentNameHasBeenSet = false;
 
     IntentConfidence m_nluIntentConfidence;
+    bool m_nluIntentConfidenceHasBeenSet = false;
 
     Aws::Vector<PredictedIntent> m_alternativeIntents;
+    bool m_alternativeIntentsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_slots;
+    bool m_slotsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
+    bool m_sessionAttributesHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
     SentimentResponse m_sentimentResponse;
+    bool m_sentimentResponseHasBeenSet = false;
 
-    MessageFormatType m_messageFormat;
+    MessageFormatType m_messageFormat{MessageFormatType::NOT_SET};
+    bool m_messageFormatHasBeenSet = false;
 
-    DialogState m_dialogState;
+    DialogState m_dialogState{DialogState::NOT_SET};
+    bool m_dialogStateHasBeenSet = false;
 
     Aws::String m_slotToElicit;
+    bool m_slotToElicitHasBeenSet = false;
 
     ResponseCard m_responseCard;
+    bool m_responseCardHasBeenSet = false;
 
     Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_botVersion;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::Vector<ActiveContext> m_activeContexts;
+    bool m_activeContextsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

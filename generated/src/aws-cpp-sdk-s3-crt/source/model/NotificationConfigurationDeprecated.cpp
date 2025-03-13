@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-NotificationConfigurationDeprecated::NotificationConfigurationDeprecated() : 
-    m_topicConfigurationHasBeenSet(false),
-    m_queueConfigurationHasBeenSet(false),
-    m_cloudFunctionConfigurationHasBeenSet(false)
-{
-}
-
 NotificationConfigurationDeprecated::NotificationConfigurationDeprecated(const XmlNode& xmlNode)
-  : NotificationConfigurationDeprecated()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ NotificationConfigurationDeprecated& NotificationConfigurationDeprecated::operat
     {
       m_topicConfiguration = topicConfigurationNode;
       m_topicConfigurationHasBeenSet = true;
+       m_topicConfigurationHasBeenSet = true;
     }
     XmlNode queueConfigurationNode = resultNode.FirstChild("QueueConfiguration");
     if(!queueConfigurationNode.IsNull())
     {
       m_queueConfiguration = queueConfigurationNode;
       m_queueConfigurationHasBeenSet = true;
+       m_queueConfigurationHasBeenSet = true;
     }
     XmlNode cloudFunctionConfigurationNode = resultNode.FirstChild("CloudFunctionConfiguration");
     if(!cloudFunctionConfigurationNode.IsNull())
     {
       m_cloudFunctionConfiguration = cloudFunctionConfigurationNode;
       m_cloudFunctionConfigurationHasBeenSet = true;
+       m_cloudFunctionConfigurationHasBeenSet = true;
     }
   }
 

@@ -18,17 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-Location::Location() : 
-    m_filePathHasBeenSet(false),
-    m_filePosition(0),
-    m_filePositionHasBeenSet(false),
-    m_relativeFileVersion(RelativeFileVersionEnum::NOT_SET),
-    m_relativeFileVersionHasBeenSet(false)
-{
-}
-
 Location::Location(JsonView jsonValue)
-  : Location()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ Location& Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filePosition"))
   {
     m_filePosition = jsonValue.GetInt64("filePosition");
-
     m_filePositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relativeFileVersion"))
   {
     m_relativeFileVersion = RelativeFileVersionEnumMapper::GetRelativeFileVersionEnumForName(jsonValue.GetString("relativeFileVersion"));
-
     m_relativeFileVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

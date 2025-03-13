@@ -18,13 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-DatasetExportJobOutput::DatasetExportJobOutput() : 
-    m_s3DataDestinationHasBeenSet(false)
-{
-}
-
 DatasetExportJobOutput::DatasetExportJobOutput(JsonView jsonValue)
-  : DatasetExportJobOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatasetExportJobOutput& DatasetExportJobOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3DataDestination"))
   {
     m_s3DataDestination = jsonValue.GetObject("s3DataDestination");
-
     m_s3DataDestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class AwsOpenSearchServiceDomainClusterConfigDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainClusterConfigDetails();
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainClusterConfigDetails() = default;
     AWS_SECURITYHUB_API AwsOpenSearchServiceDomainClusterConfigDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsOpenSearchServiceDomainClusterConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The number of data nodes to use in the OpenSearch domain.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline AwsOpenSearchServiceDomainClusterConfigDetails& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>Whether UltraWarm is enabled.</p>
      */
-    inline bool GetWarmEnabled() const{ return m_warmEnabled; }
+    inline bool GetWarmEnabled() const { return m_warmEnabled; }
     inline bool WarmEnabledHasBeenSet() const { return m_warmEnabledHasBeenSet; }
     inline void SetWarmEnabled(bool value) { m_warmEnabledHasBeenSet = true; m_warmEnabled = value; }
     inline AwsOpenSearchServiceDomainClusterConfigDetails& WithWarmEnabled(bool value) { SetWarmEnabled(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
     /**
      * <p>The number of UltraWarm instances.</p>
      */
-    inline int GetWarmCount() const{ return m_warmCount; }
+    inline int GetWarmCount() const { return m_warmCount; }
     inline bool WarmCountHasBeenSet() const { return m_warmCountHasBeenSet; }
     inline void SetWarmCount(int value) { m_warmCountHasBeenSet = true; m_warmCount = value; }
     inline AwsOpenSearchServiceDomainClusterConfigDetails& WithWarmCount(int value) { SetWarmCount(value); return *this;}
@@ -75,7 +75,7 @@ namespace Model
      * master node performs cluster management tasks, but does not hold data or respond
      * to data upload requests.</p>
      */
-    inline bool GetDedicatedMasterEnabled() const{ return m_dedicatedMasterEnabled; }
+    inline bool GetDedicatedMasterEnabled() const { return m_dedicatedMasterEnabled; }
     inline bool DedicatedMasterEnabledHasBeenSet() const { return m_dedicatedMasterEnabledHasBeenSet; }
     inline void SetDedicatedMasterEnabled(bool value) { m_dedicatedMasterEnabledHasBeenSet = true; m_dedicatedMasterEnabled = value; }
     inline AwsOpenSearchServiceDomainClusterConfigDetails& WithDedicatedMasterEnabled(bool value) { SetDedicatedMasterEnabled(value); return *this;}
@@ -86,12 +86,12 @@ namespace Model
      * <p>Configuration options for zone awareness. Provided if
      * <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
      */
-    inline const AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails& GetZoneAwarenessConfig() const{ return m_zoneAwarenessConfig; }
+    inline const AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails& GetZoneAwarenessConfig() const { return m_zoneAwarenessConfig; }
     inline bool ZoneAwarenessConfigHasBeenSet() const { return m_zoneAwarenessConfigHasBeenSet; }
-    inline void SetZoneAwarenessConfig(const AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails& value) { m_zoneAwarenessConfigHasBeenSet = true; m_zoneAwarenessConfig = value; }
-    inline void SetZoneAwarenessConfig(AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails&& value) { m_zoneAwarenessConfigHasBeenSet = true; m_zoneAwarenessConfig = std::move(value); }
-    inline AwsOpenSearchServiceDomainClusterConfigDetails& WithZoneAwarenessConfig(const AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails& value) { SetZoneAwarenessConfig(value); return *this;}
-    inline AwsOpenSearchServiceDomainClusterConfigDetails& WithZoneAwarenessConfig(AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails&& value) { SetZoneAwarenessConfig(std::move(value)); return *this;}
+    template<typename ZoneAwarenessConfigT = AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails>
+    void SetZoneAwarenessConfig(ZoneAwarenessConfigT&& value) { m_zoneAwarenessConfigHasBeenSet = true; m_zoneAwarenessConfig = std::forward<ZoneAwarenessConfigT>(value); }
+    template<typename ZoneAwarenessConfigT = AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails>
+    AwsOpenSearchServiceDomainClusterConfigDetails& WithZoneAwarenessConfig(ZoneAwarenessConfigT&& value) { SetZoneAwarenessConfig(std::forward<ZoneAwarenessConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,7 +100,7 @@ namespace Model
      * specified, then <code>DedicatedMasterEnabled</code> must be
      * <code>true</code>.</p>
      */
-    inline int GetDedicatedMasterCount() const{ return m_dedicatedMasterCount; }
+    inline int GetDedicatedMasterCount() const { return m_dedicatedMasterCount; }
     inline bool DedicatedMasterCountHasBeenSet() const { return m_dedicatedMasterCountHasBeenSet; }
     inline void SetDedicatedMasterCount(int value) { m_dedicatedMasterCountHasBeenSet = true; m_dedicatedMasterCount = value; }
     inline AwsOpenSearchServiceDomainClusterConfigDetails& WithDedicatedMasterCount(int value) { SetDedicatedMasterCount(value); return *this;}
@@ -114,28 +114,24 @@ namespace Model
      * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
      * Service Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline AwsOpenSearchServiceDomainClusterConfigDetails& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline AwsOpenSearchServiceDomainClusterConfigDetails& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainClusterConfigDetails& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    AwsOpenSearchServiceDomainClusterConfigDetails& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of UltraWarm instance.</p>
      */
-    inline const Aws::String& GetWarmType() const{ return m_warmType; }
+    inline const Aws::String& GetWarmType() const { return m_warmType; }
     inline bool WarmTypeHasBeenSet() const { return m_warmTypeHasBeenSet; }
-    inline void SetWarmType(const Aws::String& value) { m_warmTypeHasBeenSet = true; m_warmType = value; }
-    inline void SetWarmType(Aws::String&& value) { m_warmTypeHasBeenSet = true; m_warmType = std::move(value); }
-    inline void SetWarmType(const char* value) { m_warmTypeHasBeenSet = true; m_warmType.assign(value); }
-    inline AwsOpenSearchServiceDomainClusterConfigDetails& WithWarmType(const Aws::String& value) { SetWarmType(value); return *this;}
-    inline AwsOpenSearchServiceDomainClusterConfigDetails& WithWarmType(Aws::String&& value) { SetWarmType(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainClusterConfigDetails& WithWarmType(const char* value) { SetWarmType(value); return *this;}
+    template<typename WarmTypeT = Aws::String>
+    void SetWarmType(WarmTypeT&& value) { m_warmTypeHasBeenSet = true; m_warmType = std::forward<WarmTypeT>(value); }
+    template<typename WarmTypeT = Aws::String>
+    AwsOpenSearchServiceDomainClusterConfigDetails& WithWarmType(WarmTypeT&& value) { SetWarmType(std::forward<WarmTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,7 +141,7 @@ namespace Model
      * replica index shards across Availability Zones (AZs) in the same Region. This
      * prevents data loss and minimizes downtime if a node or data center fails.</p>
      */
-    inline bool GetZoneAwarenessEnabled() const{ return m_zoneAwarenessEnabled; }
+    inline bool GetZoneAwarenessEnabled() const { return m_zoneAwarenessEnabled; }
     inline bool ZoneAwarenessEnabledHasBeenSet() const { return m_zoneAwarenessEnabledHasBeenSet; }
     inline void SetZoneAwarenessEnabled(bool value) { m_zoneAwarenessEnabledHasBeenSet = true; m_zoneAwarenessEnabled = value; }
     inline AwsOpenSearchServiceDomainClusterConfigDetails& WithZoneAwarenessEnabled(bool value) { SetZoneAwarenessEnabled(value); return *this;}
@@ -157,33 +153,31 @@ namespace Model
      * node.</p> <p>If this attribute is specified, then
      * <code>DedicatedMasterEnabled</code> must be <code>true</code>. </p>
      */
-    inline const Aws::String& GetDedicatedMasterType() const{ return m_dedicatedMasterType; }
+    inline const Aws::String& GetDedicatedMasterType() const { return m_dedicatedMasterType; }
     inline bool DedicatedMasterTypeHasBeenSet() const { return m_dedicatedMasterTypeHasBeenSet; }
-    inline void SetDedicatedMasterType(const Aws::String& value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType = value; }
-    inline void SetDedicatedMasterType(Aws::String&& value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType = std::move(value); }
-    inline void SetDedicatedMasterType(const char* value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType.assign(value); }
-    inline AwsOpenSearchServiceDomainClusterConfigDetails& WithDedicatedMasterType(const Aws::String& value) { SetDedicatedMasterType(value); return *this;}
-    inline AwsOpenSearchServiceDomainClusterConfigDetails& WithDedicatedMasterType(Aws::String&& value) { SetDedicatedMasterType(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainClusterConfigDetails& WithDedicatedMasterType(const char* value) { SetDedicatedMasterType(value); return *this;}
+    template<typename DedicatedMasterTypeT = Aws::String>
+    void SetDedicatedMasterType(DedicatedMasterTypeT&& value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType = std::forward<DedicatedMasterTypeT>(value); }
+    template<typename DedicatedMasterTypeT = Aws::String>
+    AwsOpenSearchServiceDomainClusterConfigDetails& WithDedicatedMasterType(DedicatedMasterTypeT&& value) { SetDedicatedMasterType(std::forward<DedicatedMasterTypeT>(value)); return *this;}
     ///@}
   private:
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
-    bool m_warmEnabled;
+    bool m_warmEnabled{false};
     bool m_warmEnabledHasBeenSet = false;
 
-    int m_warmCount;
+    int m_warmCount{0};
     bool m_warmCountHasBeenSet = false;
 
-    bool m_dedicatedMasterEnabled;
+    bool m_dedicatedMasterEnabled{false};
     bool m_dedicatedMasterEnabledHasBeenSet = false;
 
     AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails m_zoneAwarenessConfig;
     bool m_zoneAwarenessConfigHasBeenSet = false;
 
-    int m_dedicatedMasterCount;
+    int m_dedicatedMasterCount{0};
     bool m_dedicatedMasterCountHasBeenSet = false;
 
     Aws::String m_instanceType;
@@ -192,7 +186,7 @@ namespace Model
     Aws::String m_warmType;
     bool m_warmTypeHasBeenSet = false;
 
-    bool m_zoneAwarenessEnabled;
+    bool m_zoneAwarenessEnabled{false};
     bool m_zoneAwarenessEnabledHasBeenSet = false;
 
     Aws::String m_dedicatedMasterType;

@@ -35,7 +35,7 @@ namespace Model
   class DescribeServiceErrorsResult
   {
   public:
-    AWS_OPSWORKS_API DescribeServiceErrorsResult();
+    AWS_OPSWORKS_API DescribeServiceErrorsResult() = default;
     AWS_OPSWORKS_API DescribeServiceErrorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API DescribeServiceErrorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>An array of <code>ServiceError</code> objects that describe the specified
      * service errors.</p>
      */
-    inline const Aws::Vector<ServiceError>& GetServiceErrors() const{ return m_serviceErrors; }
-    inline void SetServiceErrors(const Aws::Vector<ServiceError>& value) { m_serviceErrors = value; }
-    inline void SetServiceErrors(Aws::Vector<ServiceError>&& value) { m_serviceErrors = std::move(value); }
-    inline DescribeServiceErrorsResult& WithServiceErrors(const Aws::Vector<ServiceError>& value) { SetServiceErrors(value); return *this;}
-    inline DescribeServiceErrorsResult& WithServiceErrors(Aws::Vector<ServiceError>&& value) { SetServiceErrors(std::move(value)); return *this;}
-    inline DescribeServiceErrorsResult& AddServiceErrors(const ServiceError& value) { m_serviceErrors.push_back(value); return *this; }
-    inline DescribeServiceErrorsResult& AddServiceErrors(ServiceError&& value) { m_serviceErrors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceError>& GetServiceErrors() const { return m_serviceErrors; }
+    template<typename ServiceErrorsT = Aws::Vector<ServiceError>>
+    void SetServiceErrors(ServiceErrorsT&& value) { m_serviceErrorsHasBeenSet = true; m_serviceErrors = std::forward<ServiceErrorsT>(value); }
+    template<typename ServiceErrorsT = Aws::Vector<ServiceError>>
+    DescribeServiceErrorsResult& WithServiceErrors(ServiceErrorsT&& value) { SetServiceErrors(std::forward<ServiceErrorsT>(value)); return *this;}
+    template<typename ServiceErrorsT = ServiceError>
+    DescribeServiceErrorsResult& AddServiceErrors(ServiceErrorsT&& value) { m_serviceErrorsHasBeenSet = true; m_serviceErrors.emplace_back(std::forward<ServiceErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeServiceErrorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeServiceErrorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeServiceErrorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeServiceErrorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ServiceError> m_serviceErrors;
+    bool m_serviceErrorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

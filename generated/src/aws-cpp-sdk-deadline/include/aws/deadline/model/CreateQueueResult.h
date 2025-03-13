@@ -27,7 +27,7 @@ namespace Model
   class CreateQueueResult
   {
   public:
-    AWS_DEADLINE_API CreateQueueResult();
+    AWS_DEADLINE_API CreateQueueResult() = default;
     AWS_DEADLINE_API CreateQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API CreateQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The queue ID.</p>
      */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
-    inline void SetQueueId(const Aws::String& value) { m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueId.assign(value); }
-    inline CreateQueueResult& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline CreateQueueResult& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline CreateQueueResult& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    inline const Aws::String& GetQueueId() const { return m_queueId; }
+    template<typename QueueIdT = Aws::String>
+    void SetQueueId(QueueIdT&& value) { m_queueIdHasBeenSet = true; m_queueId = std::forward<QueueIdT>(value); }
+    template<typename QueueIdT = Aws::String>
+    CreateQueueResult& WithQueueId(QueueIdT&& value) { SetQueueId(std::forward<QueueIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateQueueResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateQueueResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateQueueResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateQueueResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_queueId;
+    bool m_queueIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

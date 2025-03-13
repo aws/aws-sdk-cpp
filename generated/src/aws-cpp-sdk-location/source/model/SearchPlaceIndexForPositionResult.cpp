@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchPlaceIndexForPositionResult::SearchPlaceIndexForPositionResult()
-{
-}
-
 SearchPlaceIndexForPositionResult::SearchPlaceIndexForPositionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ SearchPlaceIndexForPositionResult& SearchPlaceIndexForPositionResult::operator =
   if(jsonValue.ValueExists("Summary"))
   {
     m_summary = jsonValue.GetObject("Summary");
-
+    m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Results"))
   {
     Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
@@ -42,14 +37,15 @@ SearchPlaceIndexForPositionResult& SearchPlaceIndexForPositionResult::operator =
     {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());
     }
+    m_resultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace FSx
 namespace Model
 {
 
-DataRepositoryTaskFilter::DataRepositoryTaskFilter() : 
-    m_name(DataRepositoryTaskFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 DataRepositoryTaskFilter::DataRepositoryTaskFilter(JsonView jsonValue)
-  : DataRepositoryTaskFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DataRepositoryTaskFilter& DataRepositoryTaskFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = DataRepositoryTaskFilterNameMapper::GetDataRepositoryTaskFilterNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ DataRepositoryTaskFilter& DataRepositoryTaskFilter::operator =(JsonView jsonValu
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

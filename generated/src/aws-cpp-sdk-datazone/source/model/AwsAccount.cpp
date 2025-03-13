@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AwsAccount::AwsAccount() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_awsAccountIdPathHasBeenSet(false)
-{
-}
-
 AwsAccount::AwsAccount(JsonView jsonValue)
-  : AwsAccount()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsAccount& AwsAccount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsAccountIdPath"))
   {
     m_awsAccountIdPath = jsonValue.GetString("awsAccountIdPath");
-
     m_awsAccountIdPathHasBeenSet = true;
   }
-
   return *this;
 }
 

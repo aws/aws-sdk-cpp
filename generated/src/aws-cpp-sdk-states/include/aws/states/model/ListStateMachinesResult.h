@@ -29,20 +29,20 @@ namespace Model
   class ListStateMachinesResult
   {
   public:
-    AWS_SFN_API ListStateMachinesResult();
+    AWS_SFN_API ListStateMachinesResult() = default;
     AWS_SFN_API ListStateMachinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SFN_API ListStateMachinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::Vector<StateMachineListItem>& GetStateMachines() const{ return m_stateMachines; }
-    inline void SetStateMachines(const Aws::Vector<StateMachineListItem>& value) { m_stateMachines = value; }
-    inline void SetStateMachines(Aws::Vector<StateMachineListItem>&& value) { m_stateMachines = std::move(value); }
-    inline ListStateMachinesResult& WithStateMachines(const Aws::Vector<StateMachineListItem>& value) { SetStateMachines(value); return *this;}
-    inline ListStateMachinesResult& WithStateMachines(Aws::Vector<StateMachineListItem>&& value) { SetStateMachines(std::move(value)); return *this;}
-    inline ListStateMachinesResult& AddStateMachines(const StateMachineListItem& value) { m_stateMachines.push_back(value); return *this; }
-    inline ListStateMachinesResult& AddStateMachines(StateMachineListItem&& value) { m_stateMachines.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StateMachineListItem>& GetStateMachines() const { return m_stateMachines; }
+    template<typename StateMachinesT = Aws::Vector<StateMachineListItem>>
+    void SetStateMachines(StateMachinesT&& value) { m_stateMachinesHasBeenSet = true; m_stateMachines = std::forward<StateMachinesT>(value); }
+    template<typename StateMachinesT = Aws::Vector<StateMachineListItem>>
+    ListStateMachinesResult& WithStateMachines(StateMachinesT&& value) { SetStateMachines(std::forward<StateMachinesT>(value)); return *this;}
+    template<typename StateMachinesT = StateMachineListItem>
+    ListStateMachinesResult& AddStateMachines(StateMachinesT&& value) { m_stateMachinesHasBeenSet = true; m_stateMachines.emplace_back(std::forward<StateMachinesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * an expired pagination token will return an <i>HTTP 400 InvalidToken</i>
      * error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStateMachinesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStateMachinesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStateMachinesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStateMachinesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStateMachinesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStateMachinesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStateMachinesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStateMachinesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StateMachineListItem> m_stateMachines;
+    bool m_stateMachinesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

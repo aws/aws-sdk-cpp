@@ -12,11 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOutpostRequest::GetOutpostRequest() : 
-    m_outpostIdHasBeenSet(false)
-{
-}
-
 Aws::String GetOutpostRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class LabelDetectionSettings
   {
   public:
-    AWS_REKOGNITION_API LabelDetectionSettings();
+    AWS_REKOGNITION_API LabelDetectionSettings() = default;
     AWS_REKOGNITION_API LabelDetectionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API LabelDetectionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const GeneralLabelsSettings& GetGeneralLabels() const{ return m_generalLabels; }
+    inline const GeneralLabelsSettings& GetGeneralLabels() const { return m_generalLabels; }
     inline bool GeneralLabelsHasBeenSet() const { return m_generalLabelsHasBeenSet; }
-    inline void SetGeneralLabels(const GeneralLabelsSettings& value) { m_generalLabelsHasBeenSet = true; m_generalLabels = value; }
-    inline void SetGeneralLabels(GeneralLabelsSettings&& value) { m_generalLabelsHasBeenSet = true; m_generalLabels = std::move(value); }
-    inline LabelDetectionSettings& WithGeneralLabels(const GeneralLabelsSettings& value) { SetGeneralLabels(value); return *this;}
-    inline LabelDetectionSettings& WithGeneralLabels(GeneralLabelsSettings&& value) { SetGeneralLabels(std::move(value)); return *this;}
+    template<typename GeneralLabelsT = GeneralLabelsSettings>
+    void SetGeneralLabels(GeneralLabelsT&& value) { m_generalLabelsHasBeenSet = true; m_generalLabels = std::forward<GeneralLabelsT>(value); }
+    template<typename GeneralLabelsT = GeneralLabelsSettings>
+    LabelDetectionSettings& WithGeneralLabels(GeneralLabelsT&& value) { SetGeneralLabels(std::forward<GeneralLabelsT>(value)); return *this;}
     ///@}
   private:
 

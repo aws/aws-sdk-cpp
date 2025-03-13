@@ -12,13 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateObservabilityConfigurationRequest::CreateObservabilityConfigurationRequest() : 
-    m_observabilityConfigurationNameHasBeenSet(false),
-    m_traceConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateObservabilityConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

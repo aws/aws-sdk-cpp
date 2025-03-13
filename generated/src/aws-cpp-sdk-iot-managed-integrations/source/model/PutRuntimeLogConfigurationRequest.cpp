@@ -12,12 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRuntimeLogConfigurationRequest::PutRuntimeLogConfigurationRequest() : 
-    m_managedThingIdHasBeenSet(false),
-    m_runtimeLogConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String PutRuntimeLogConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

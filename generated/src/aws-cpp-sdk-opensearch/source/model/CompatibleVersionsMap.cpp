@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-CompatibleVersionsMap::CompatibleVersionsMap() : 
-    m_sourceVersionHasBeenSet(false),
-    m_targetVersionsHasBeenSet(false)
-{
-}
-
 CompatibleVersionsMap::CompatibleVersionsMap(JsonView jsonValue)
-  : CompatibleVersionsMap()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CompatibleVersionsMap& CompatibleVersionsMap::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceVersion"))
   {
     m_sourceVersion = jsonValue.GetString("SourceVersion");
-
     m_sourceVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetVersions"))
   {
     Aws::Utils::Array<JsonView> targetVersionsJsonList = jsonValue.GetArray("TargetVersions");
@@ -48,7 +39,6 @@ CompatibleVersionsMap& CompatibleVersionsMap::operator =(JsonView jsonValue)
     }
     m_targetVersionsHasBeenSet = true;
   }
-
   return *this;
 }
 

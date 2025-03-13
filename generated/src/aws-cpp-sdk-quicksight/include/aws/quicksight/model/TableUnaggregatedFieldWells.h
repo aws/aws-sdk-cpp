@@ -32,7 +32,7 @@ namespace Model
   class TableUnaggregatedFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API TableUnaggregatedFieldWells();
+    AWS_QUICKSIGHT_API TableUnaggregatedFieldWells() = default;
     AWS_QUICKSIGHT_API TableUnaggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TableUnaggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * <p>The values field well for a pivot table. Values are unaggregated for an
      * unaggregated table.</p>
      */
-    inline const Aws::Vector<UnaggregatedField>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<UnaggregatedField>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<UnaggregatedField>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<UnaggregatedField>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline TableUnaggregatedFieldWells& WithValues(const Aws::Vector<UnaggregatedField>& value) { SetValues(value); return *this;}
-    inline TableUnaggregatedFieldWells& WithValues(Aws::Vector<UnaggregatedField>&& value) { SetValues(std::move(value)); return *this;}
-    inline TableUnaggregatedFieldWells& AddValues(const UnaggregatedField& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline TableUnaggregatedFieldWells& AddValues(UnaggregatedField&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<UnaggregatedField>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<UnaggregatedField>>
+    TableUnaggregatedFieldWells& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = UnaggregatedField>
+    TableUnaggregatedFieldWells& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

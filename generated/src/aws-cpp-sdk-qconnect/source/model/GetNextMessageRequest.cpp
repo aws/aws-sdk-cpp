@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetNextMessageRequest::GetNextMessageRequest() : 
-    m_assistantIdHasBeenSet(false),
-    m_nextMessageTokenHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetNextMessageRequest::SerializePayload() const
 {
   return {};

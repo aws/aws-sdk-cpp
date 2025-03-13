@@ -18,18 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-Landmark::Landmark() : 
-    m_type(LandmarkType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_x(0.0),
-    m_xHasBeenSet(false),
-    m_y(0.0),
-    m_yHasBeenSet(false)
-{
-}
-
 Landmark::Landmark(JsonView jsonValue)
-  : Landmark()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Landmark& Landmark::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = LandmarkTypeMapper::GetLandmarkTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("X"))
   {
     m_x = jsonValue.GetDouble("X");
-
     m_xHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Y"))
   {
     m_y = jsonValue.GetDouble("Y");
-
     m_yHasBeenSet = true;
   }
-
   return *this;
 }
 

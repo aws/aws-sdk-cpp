@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetSecurityControlsResult::BatchGetSecurityControlsResult()
-{
-}
-
 BatchGetSecurityControlsResult::BatchGetSecurityControlsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetSecurityControlsResult& BatchGetSecurityControlsResult::operator =(const
     {
       m_securityControls.push_back(securityControlsJsonList[securityControlsIndex].AsObject());
     }
+    m_securityControlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedIds"))
   {
     Aws::Utils::Array<JsonView> unprocessedIdsJsonList = jsonValue.GetArray("UnprocessedIds");
@@ -45,14 +41,15 @@ BatchGetSecurityControlsResult& BatchGetSecurityControlsResult::operator =(const
     {
       m_unprocessedIds.push_back(unprocessedIdsJsonList[unprocessedIdsIndex].AsObject());
     }
+    m_unprocessedIdsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

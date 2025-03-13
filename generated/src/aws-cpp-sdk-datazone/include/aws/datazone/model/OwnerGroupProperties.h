@@ -31,7 +31,7 @@ namespace Model
   class OwnerGroupProperties
   {
   public:
-    AWS_DATAZONE_API OwnerGroupProperties();
+    AWS_DATAZONE_API OwnerGroupProperties() = default;
     AWS_DATAZONE_API OwnerGroupProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API OwnerGroupProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the domain unit owners group.</p>
      */
-    inline const Aws::String& GetGroupIdentifier() const{ return m_groupIdentifier; }
+    inline const Aws::String& GetGroupIdentifier() const { return m_groupIdentifier; }
     inline bool GroupIdentifierHasBeenSet() const { return m_groupIdentifierHasBeenSet; }
-    inline void SetGroupIdentifier(const Aws::String& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = value; }
-    inline void SetGroupIdentifier(Aws::String&& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = std::move(value); }
-    inline void SetGroupIdentifier(const char* value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier.assign(value); }
-    inline OwnerGroupProperties& WithGroupIdentifier(const Aws::String& value) { SetGroupIdentifier(value); return *this;}
-    inline OwnerGroupProperties& WithGroupIdentifier(Aws::String&& value) { SetGroupIdentifier(std::move(value)); return *this;}
-    inline OwnerGroupProperties& WithGroupIdentifier(const char* value) { SetGroupIdentifier(value); return *this;}
+    template<typename GroupIdentifierT = Aws::String>
+    void SetGroupIdentifier(GroupIdentifierT&& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = std::forward<GroupIdentifierT>(value); }
+    template<typename GroupIdentifierT = Aws::String>
+    OwnerGroupProperties& WithGroupIdentifier(GroupIdentifierT&& value) { SetGroupIdentifier(std::forward<GroupIdentifierT>(value)); return *this;}
     ///@}
   private:
 

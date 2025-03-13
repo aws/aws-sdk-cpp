@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRuleGroupResult::GetRuleGroupResult()
-{
-}
-
 GetRuleGroupResult::GetRuleGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetRuleGroupResult& GetRuleGroupResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("RuleGroup"))
   {
     m_ruleGroup = jsonValue.GetObject("RuleGroup");
-
+    m_ruleGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LockToken"))
   {
     m_lockToken = jsonValue.GetString("LockToken");
-
+    m_lockTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

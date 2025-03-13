@@ -18,20 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-TruckDimensions::TruckDimensions() : 
-    m_length(0.0),
-    m_lengthHasBeenSet(false),
-    m_height(0.0),
-    m_heightHasBeenSet(false),
-    m_width(0.0),
-    m_widthHasBeenSet(false),
-    m_unit(DimensionUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 TruckDimensions::TruckDimensions(JsonView jsonValue)
-  : TruckDimensions()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ TruckDimensions& TruckDimensions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Length"))
   {
     m_length = jsonValue.GetDouble("Length");
-
     m_lengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Height"))
   {
     m_height = jsonValue.GetDouble("Height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Width"))
   {
     m_width = jsonValue.GetDouble("Width");
-
     m_widthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = DimensionUnitMapper::GetDimensionUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

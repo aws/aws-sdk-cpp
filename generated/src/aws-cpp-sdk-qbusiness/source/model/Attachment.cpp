@@ -18,24 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-Attachment::Attachment() : 
-    m_attachmentIdHasBeenSet(false),
-    m_conversationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_copyFromHasBeenSet(false),
-    m_fileTypeHasBeenSet(false),
-    m_fileSize(0),
-    m_fileSizeHasBeenSet(false),
-    m_md5chksumHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 Attachment::Attachment(JsonView jsonValue)
-  : Attachment()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ Attachment& Attachment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attachmentId"))
   {
     m_attachmentId = jsonValue.GetString("attachmentId");
-
     m_attachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationId"))
   {
     m_conversationId = jsonValue.GetString("conversationId");
-
     m_conversationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("copyFrom"))
   {
     m_copyFrom = jsonValue.GetObject("copyFrom");
-
     m_copyFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileType"))
   {
     m_fileType = jsonValue.GetString("fileType");
-
     m_fileTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileSize"))
   {
     m_fileSize = jsonValue.GetInteger("fileSize");
-
     m_fileSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("md5chksum"))
   {
     m_md5chksum = jsonValue.GetString("md5chksum");
-
     m_md5chksumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AttachmentStatusMapper::GetAttachmentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Owner::Owner() : 
-    m_displayNameHasBeenSet(false),
-    m_iDHasBeenSet(false)
-{
-}
-
 Owner::Owner(const XmlNode& xmlNode)
-  : Owner()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Owner& Owner::operator =(const XmlNode& xmlNode)
     {
       m_displayName = Aws::Utils::Xml::DecodeEscapedXmlText(displayNameNode.GetText());
       m_displayNameHasBeenSet = true;
+       m_displayNameHasBeenSet = true;
     }
     XmlNode iDNode = resultNode.FirstChild("ID");
     if(!iDNode.IsNull())
     {
       m_iD = Aws::Utils::Xml::DecodeEscapedXmlText(iDNode.GetText());
       m_iDHasBeenSet = true;
+       m_iDHasBeenSet = true;
     }
   }
 

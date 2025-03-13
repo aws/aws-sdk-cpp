@@ -18,18 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-SearchForTextResult::SearchForTextResult() : 
-    m_placeHasBeenSet(false),
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_relevance(0.0),
-    m_relevanceHasBeenSet(false),
-    m_placeIdHasBeenSet(false)
-{
-}
-
 SearchForTextResult::SearchForTextResult(JsonView jsonValue)
-  : SearchForTextResult()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ SearchForTextResult& SearchForTextResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Place"))
   {
     m_place = jsonValue.GetObject("Place");
-
     m_placeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetDouble("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Relevance"))
   {
     m_relevance = jsonValue.GetDouble("Relevance");
-
     m_relevanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlaceId"))
   {
     m_placeId = jsonValue.GetString("PlaceId");
-
     m_placeIdHasBeenSet = true;
   }
-
   return *this;
 }
 

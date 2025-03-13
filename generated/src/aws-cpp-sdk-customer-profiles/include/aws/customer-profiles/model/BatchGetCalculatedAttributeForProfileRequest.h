@@ -23,7 +23,7 @@ namespace Model
   class BatchGetCalculatedAttributeForProfileRequest : public CustomerProfilesRequest
   {
   public:
-    AWS_CUSTOMERPROFILES_API BatchGetCalculatedAttributeForProfileRequest();
+    AWS_CUSTOMERPROFILES_API BatchGetCalculatedAttributeForProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,43 +38,38 @@ namespace Model
     /**
      * <p>The unique name of the calculated attribute.</p>
      */
-    inline const Aws::String& GetCalculatedAttributeName() const{ return m_calculatedAttributeName; }
+    inline const Aws::String& GetCalculatedAttributeName() const { return m_calculatedAttributeName; }
     inline bool CalculatedAttributeNameHasBeenSet() const { return m_calculatedAttributeNameHasBeenSet; }
-    inline void SetCalculatedAttributeName(const Aws::String& value) { m_calculatedAttributeNameHasBeenSet = true; m_calculatedAttributeName = value; }
-    inline void SetCalculatedAttributeName(Aws::String&& value) { m_calculatedAttributeNameHasBeenSet = true; m_calculatedAttributeName = std::move(value); }
-    inline void SetCalculatedAttributeName(const char* value) { m_calculatedAttributeNameHasBeenSet = true; m_calculatedAttributeName.assign(value); }
-    inline BatchGetCalculatedAttributeForProfileRequest& WithCalculatedAttributeName(const Aws::String& value) { SetCalculatedAttributeName(value); return *this;}
-    inline BatchGetCalculatedAttributeForProfileRequest& WithCalculatedAttributeName(Aws::String&& value) { SetCalculatedAttributeName(std::move(value)); return *this;}
-    inline BatchGetCalculatedAttributeForProfileRequest& WithCalculatedAttributeName(const char* value) { SetCalculatedAttributeName(value); return *this;}
+    template<typename CalculatedAttributeNameT = Aws::String>
+    void SetCalculatedAttributeName(CalculatedAttributeNameT&& value) { m_calculatedAttributeNameHasBeenSet = true; m_calculatedAttributeName = std::forward<CalculatedAttributeNameT>(value); }
+    template<typename CalculatedAttributeNameT = Aws::String>
+    BatchGetCalculatedAttributeForProfileRequest& WithCalculatedAttributeName(CalculatedAttributeNameT&& value) { SetCalculatedAttributeName(std::forward<CalculatedAttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline BatchGetCalculatedAttributeForProfileRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline BatchGetCalculatedAttributeForProfileRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline BatchGetCalculatedAttributeForProfileRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    BatchGetCalculatedAttributeForProfileRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of unique identifiers for customer profiles to retrieve.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetProfileIds() const{ return m_profileIds; }
+    inline const Aws::Vector<Aws::String>& GetProfileIds() const { return m_profileIds; }
     inline bool ProfileIdsHasBeenSet() const { return m_profileIdsHasBeenSet; }
-    inline void SetProfileIds(const Aws::Vector<Aws::String>& value) { m_profileIdsHasBeenSet = true; m_profileIds = value; }
-    inline void SetProfileIds(Aws::Vector<Aws::String>&& value) { m_profileIdsHasBeenSet = true; m_profileIds = std::move(value); }
-    inline BatchGetCalculatedAttributeForProfileRequest& WithProfileIds(const Aws::Vector<Aws::String>& value) { SetProfileIds(value); return *this;}
-    inline BatchGetCalculatedAttributeForProfileRequest& WithProfileIds(Aws::Vector<Aws::String>&& value) { SetProfileIds(std::move(value)); return *this;}
-    inline BatchGetCalculatedAttributeForProfileRequest& AddProfileIds(const Aws::String& value) { m_profileIdsHasBeenSet = true; m_profileIds.push_back(value); return *this; }
-    inline BatchGetCalculatedAttributeForProfileRequest& AddProfileIds(Aws::String&& value) { m_profileIdsHasBeenSet = true; m_profileIds.push_back(std::move(value)); return *this; }
-    inline BatchGetCalculatedAttributeForProfileRequest& AddProfileIds(const char* value) { m_profileIdsHasBeenSet = true; m_profileIds.push_back(value); return *this; }
+    template<typename ProfileIdsT = Aws::Vector<Aws::String>>
+    void SetProfileIds(ProfileIdsT&& value) { m_profileIdsHasBeenSet = true; m_profileIds = std::forward<ProfileIdsT>(value); }
+    template<typename ProfileIdsT = Aws::Vector<Aws::String>>
+    BatchGetCalculatedAttributeForProfileRequest& WithProfileIds(ProfileIdsT&& value) { SetProfileIds(std::forward<ProfileIdsT>(value)); return *this;}
+    template<typename ProfileIdsT = Aws::String>
+    BatchGetCalculatedAttributeForProfileRequest& AddProfileIds(ProfileIdsT&& value) { m_profileIdsHasBeenSet = true; m_profileIds.emplace_back(std::forward<ProfileIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,12 +77,12 @@ namespace Model
      * <p>Overrides the condition block within the original calculated attribute
      * definition.</p>
      */
-    inline const ConditionOverrides& GetConditionOverrides() const{ return m_conditionOverrides; }
+    inline const ConditionOverrides& GetConditionOverrides() const { return m_conditionOverrides; }
     inline bool ConditionOverridesHasBeenSet() const { return m_conditionOverridesHasBeenSet; }
-    inline void SetConditionOverrides(const ConditionOverrides& value) { m_conditionOverridesHasBeenSet = true; m_conditionOverrides = value; }
-    inline void SetConditionOverrides(ConditionOverrides&& value) { m_conditionOverridesHasBeenSet = true; m_conditionOverrides = std::move(value); }
-    inline BatchGetCalculatedAttributeForProfileRequest& WithConditionOverrides(const ConditionOverrides& value) { SetConditionOverrides(value); return *this;}
-    inline BatchGetCalculatedAttributeForProfileRequest& WithConditionOverrides(ConditionOverrides&& value) { SetConditionOverrides(std::move(value)); return *this;}
+    template<typename ConditionOverridesT = ConditionOverrides>
+    void SetConditionOverrides(ConditionOverridesT&& value) { m_conditionOverridesHasBeenSet = true; m_conditionOverrides = std::forward<ConditionOverridesT>(value); }
+    template<typename ConditionOverridesT = ConditionOverrides>
+    BatchGetCalculatedAttributeForProfileRequest& WithConditionOverrides(ConditionOverridesT&& value) { SetConditionOverrides(std::forward<ConditionOverridesT>(value)); return *this;}
     ///@}
   private:
 

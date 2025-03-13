@@ -21,7 +21,7 @@ namespace Model
   class ValidateFlowDefinitionRequest : public BedrockAgentRequest
   {
   public:
-    AWS_BEDROCKAGENT_API ValidateFlowDefinitionRequest();
+    AWS_BEDROCKAGENT_API ValidateFlowDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
     /**
      * <p>The definition of a flow to validate.</p>
      */
-    inline const FlowDefinition& GetDefinition() const{ return m_definition; }
+    inline const FlowDefinition& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const FlowDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(FlowDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline ValidateFlowDefinitionRequest& WithDefinition(const FlowDefinition& value) { SetDefinition(value); return *this;}
-    inline ValidateFlowDefinitionRequest& WithDefinition(FlowDefinition&& value) { SetDefinition(std::move(value)); return *this;}
+    template<typename DefinitionT = FlowDefinition>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = FlowDefinition>
+    ValidateFlowDefinitionRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,15 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTableRestoreStatusRequest::ListTableRestoreStatusRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Aws::String ListTableRestoreStatusRequest::SerializePayload() const
 {
   JsonValue payload;

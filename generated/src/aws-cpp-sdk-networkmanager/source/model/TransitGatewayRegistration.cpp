@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-TransitGatewayRegistration::TransitGatewayRegistration() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_transitGatewayArnHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 TransitGatewayRegistration::TransitGatewayRegistration(JsonView jsonValue)
-  : TransitGatewayRegistration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TransitGatewayRegistration& TransitGatewayRegistration::operator =(JsonView json
   if(jsonValue.ValueExists("GlobalNetworkId"))
   {
     m_globalNetworkId = jsonValue.GetString("GlobalNetworkId");
-
     m_globalNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransitGatewayArn"))
   {
     m_transitGatewayArn = jsonValue.GetString("TransitGatewayArn");
-
     m_transitGatewayArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetObject("State");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

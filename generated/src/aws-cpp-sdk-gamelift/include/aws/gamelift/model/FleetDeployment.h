@@ -35,7 +35,7 @@ namespace Model
   class FleetDeployment
   {
   public:
-    AWS_GAMELIFT_API FleetDeployment();
+    AWS_GAMELIFT_API FleetDeployment() = default;
     AWS_GAMELIFT_API FleetDeployment(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API FleetDeployment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>A unique identifier for the deployment. </p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-    inline FleetDeployment& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline FleetDeployment& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline FleetDeployment& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    FleetDeployment& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the container fleet. </p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline FleetDeployment& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline FleetDeployment& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline FleetDeployment& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    FleetDeployment& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The unique identifier for the version of the game server container group
      * definition that is being deployed.</p>
      */
-    inline const Aws::String& GetGameServerBinaryArn() const{ return m_gameServerBinaryArn; }
+    inline const Aws::String& GetGameServerBinaryArn() const { return m_gameServerBinaryArn; }
     inline bool GameServerBinaryArnHasBeenSet() const { return m_gameServerBinaryArnHasBeenSet; }
-    inline void SetGameServerBinaryArn(const Aws::String& value) { m_gameServerBinaryArnHasBeenSet = true; m_gameServerBinaryArn = value; }
-    inline void SetGameServerBinaryArn(Aws::String&& value) { m_gameServerBinaryArnHasBeenSet = true; m_gameServerBinaryArn = std::move(value); }
-    inline void SetGameServerBinaryArn(const char* value) { m_gameServerBinaryArnHasBeenSet = true; m_gameServerBinaryArn.assign(value); }
-    inline FleetDeployment& WithGameServerBinaryArn(const Aws::String& value) { SetGameServerBinaryArn(value); return *this;}
-    inline FleetDeployment& WithGameServerBinaryArn(Aws::String&& value) { SetGameServerBinaryArn(std::move(value)); return *this;}
-    inline FleetDeployment& WithGameServerBinaryArn(const char* value) { SetGameServerBinaryArn(value); return *this;}
+    template<typename GameServerBinaryArnT = Aws::String>
+    void SetGameServerBinaryArn(GameServerBinaryArnT&& value) { m_gameServerBinaryArnHasBeenSet = true; m_gameServerBinaryArn = std::forward<GameServerBinaryArnT>(value); }
+    template<typename GameServerBinaryArnT = Aws::String>
+    FleetDeployment& WithGameServerBinaryArn(GameServerBinaryArnT&& value) { SetGameServerBinaryArn(std::forward<GameServerBinaryArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * property to the container group definition version that the fleet used when it
      * was last active.</p>
      */
-    inline const Aws::String& GetRollbackGameServerBinaryArn() const{ return m_rollbackGameServerBinaryArn; }
+    inline const Aws::String& GetRollbackGameServerBinaryArn() const { return m_rollbackGameServerBinaryArn; }
     inline bool RollbackGameServerBinaryArnHasBeenSet() const { return m_rollbackGameServerBinaryArnHasBeenSet; }
-    inline void SetRollbackGameServerBinaryArn(const Aws::String& value) { m_rollbackGameServerBinaryArnHasBeenSet = true; m_rollbackGameServerBinaryArn = value; }
-    inline void SetRollbackGameServerBinaryArn(Aws::String&& value) { m_rollbackGameServerBinaryArnHasBeenSet = true; m_rollbackGameServerBinaryArn = std::move(value); }
-    inline void SetRollbackGameServerBinaryArn(const char* value) { m_rollbackGameServerBinaryArnHasBeenSet = true; m_rollbackGameServerBinaryArn.assign(value); }
-    inline FleetDeployment& WithRollbackGameServerBinaryArn(const Aws::String& value) { SetRollbackGameServerBinaryArn(value); return *this;}
-    inline FleetDeployment& WithRollbackGameServerBinaryArn(Aws::String&& value) { SetRollbackGameServerBinaryArn(std::move(value)); return *this;}
-    inline FleetDeployment& WithRollbackGameServerBinaryArn(const char* value) { SetRollbackGameServerBinaryArn(value); return *this;}
+    template<typename RollbackGameServerBinaryArnT = Aws::String>
+    void SetRollbackGameServerBinaryArn(RollbackGameServerBinaryArnT&& value) { m_rollbackGameServerBinaryArnHasBeenSet = true; m_rollbackGameServerBinaryArn = std::forward<RollbackGameServerBinaryArnT>(value); }
+    template<typename RollbackGameServerBinaryArnT = Aws::String>
+    FleetDeployment& WithRollbackGameServerBinaryArn(RollbackGameServerBinaryArnT&& value) { SetRollbackGameServerBinaryArn(std::forward<RollbackGameServerBinaryArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +98,12 @@ namespace Model
      * <p>The unique identifier for the version of the per-instance container group
      * definition that is being deployed. </p>
      */
-    inline const Aws::String& GetPerInstanceBinaryArn() const{ return m_perInstanceBinaryArn; }
+    inline const Aws::String& GetPerInstanceBinaryArn() const { return m_perInstanceBinaryArn; }
     inline bool PerInstanceBinaryArnHasBeenSet() const { return m_perInstanceBinaryArnHasBeenSet; }
-    inline void SetPerInstanceBinaryArn(const Aws::String& value) { m_perInstanceBinaryArnHasBeenSet = true; m_perInstanceBinaryArn = value; }
-    inline void SetPerInstanceBinaryArn(Aws::String&& value) { m_perInstanceBinaryArnHasBeenSet = true; m_perInstanceBinaryArn = std::move(value); }
-    inline void SetPerInstanceBinaryArn(const char* value) { m_perInstanceBinaryArnHasBeenSet = true; m_perInstanceBinaryArn.assign(value); }
-    inline FleetDeployment& WithPerInstanceBinaryArn(const Aws::String& value) { SetPerInstanceBinaryArn(value); return *this;}
-    inline FleetDeployment& WithPerInstanceBinaryArn(Aws::String&& value) { SetPerInstanceBinaryArn(std::move(value)); return *this;}
-    inline FleetDeployment& WithPerInstanceBinaryArn(const char* value) { SetPerInstanceBinaryArn(value); return *this;}
+    template<typename PerInstanceBinaryArnT = Aws::String>
+    void SetPerInstanceBinaryArn(PerInstanceBinaryArnT&& value) { m_perInstanceBinaryArnHasBeenSet = true; m_perInstanceBinaryArn = std::forward<PerInstanceBinaryArnT>(value); }
+    template<typename PerInstanceBinaryArnT = Aws::String>
+    FleetDeployment& WithPerInstanceBinaryArn(PerInstanceBinaryArnT&& value) { SetPerInstanceBinaryArn(std::forward<PerInstanceBinaryArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,14 +113,12 @@ namespace Model
      * property to the container group definition version that the fleet used when it
      * was last active.</p>
      */
-    inline const Aws::String& GetRollbackPerInstanceBinaryArn() const{ return m_rollbackPerInstanceBinaryArn; }
+    inline const Aws::String& GetRollbackPerInstanceBinaryArn() const { return m_rollbackPerInstanceBinaryArn; }
     inline bool RollbackPerInstanceBinaryArnHasBeenSet() const { return m_rollbackPerInstanceBinaryArnHasBeenSet; }
-    inline void SetRollbackPerInstanceBinaryArn(const Aws::String& value) { m_rollbackPerInstanceBinaryArnHasBeenSet = true; m_rollbackPerInstanceBinaryArn = value; }
-    inline void SetRollbackPerInstanceBinaryArn(Aws::String&& value) { m_rollbackPerInstanceBinaryArnHasBeenSet = true; m_rollbackPerInstanceBinaryArn = std::move(value); }
-    inline void SetRollbackPerInstanceBinaryArn(const char* value) { m_rollbackPerInstanceBinaryArnHasBeenSet = true; m_rollbackPerInstanceBinaryArn.assign(value); }
-    inline FleetDeployment& WithRollbackPerInstanceBinaryArn(const Aws::String& value) { SetRollbackPerInstanceBinaryArn(value); return *this;}
-    inline FleetDeployment& WithRollbackPerInstanceBinaryArn(Aws::String&& value) { SetRollbackPerInstanceBinaryArn(std::move(value)); return *this;}
-    inline FleetDeployment& WithRollbackPerInstanceBinaryArn(const char* value) { SetRollbackPerInstanceBinaryArn(value); return *this;}
+    template<typename RollbackPerInstanceBinaryArnT = Aws::String>
+    void SetRollbackPerInstanceBinaryArn(RollbackPerInstanceBinaryArnT&& value) { m_rollbackPerInstanceBinaryArnHasBeenSet = true; m_rollbackPerInstanceBinaryArn = std::forward<RollbackPerInstanceBinaryArnT>(value); }
+    template<typename RollbackPerInstanceBinaryArnT = Aws::String>
+    FleetDeployment& WithRollbackPerInstanceBinaryArn(RollbackPerInstanceBinaryArnT&& value) { SetRollbackPerInstanceBinaryArn(std::forward<RollbackPerInstanceBinaryArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,12 +133,10 @@ namespace Model
      * completed.</p> </li> <li> <p> <code>CANCELLED</code> -- The deployment was
      * cancelled.</p> </li> </ul>
      */
-    inline const DeploymentStatus& GetDeploymentStatus() const{ return m_deploymentStatus; }
+    inline DeploymentStatus GetDeploymentStatus() const { return m_deploymentStatus; }
     inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }
-    inline void SetDeploymentStatus(const DeploymentStatus& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
-    inline void SetDeploymentStatus(DeploymentStatus&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = std::move(value); }
-    inline FleetDeployment& WithDeploymentStatus(const DeploymentStatus& value) { SetDeploymentStatus(value); return *this;}
-    inline FleetDeployment& WithDeploymentStatus(DeploymentStatus&& value) { SetDeploymentStatus(std::move(value)); return *this;}
+    inline void SetDeploymentStatus(DeploymentStatus value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
+    inline FleetDeployment& WithDeploymentStatus(DeploymentStatus value) { SetDeploymentStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -158,12 +144,12 @@ namespace Model
      * <p>Instructions for how to deploy updates to a container fleet and what actions
      * to take if the deployment fails.</p>
      */
-    inline const DeploymentConfiguration& GetDeploymentConfiguration() const{ return m_deploymentConfiguration; }
+    inline const DeploymentConfiguration& GetDeploymentConfiguration() const { return m_deploymentConfiguration; }
     inline bool DeploymentConfigurationHasBeenSet() const { return m_deploymentConfigurationHasBeenSet; }
-    inline void SetDeploymentConfiguration(const DeploymentConfiguration& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
-    inline void SetDeploymentConfiguration(DeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = std::move(value); }
-    inline FleetDeployment& WithDeploymentConfiguration(const DeploymentConfiguration& value) { SetDeploymentConfiguration(value); return *this;}
-    inline FleetDeployment& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(std::move(value)); return *this;}
+    template<typename DeploymentConfigurationT = DeploymentConfiguration>
+    void SetDeploymentConfiguration(DeploymentConfigurationT&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = std::forward<DeploymentConfigurationT>(value); }
+    template<typename DeploymentConfigurationT = DeploymentConfiguration>
+    FleetDeployment& WithDeploymentConfiguration(DeploymentConfigurationT&& value) { SetDeploymentConfiguration(std::forward<DeploymentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,12 +158,12 @@ namespace Model
      * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline FleetDeployment& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline FleetDeployment& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    FleetDeployment& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -199,13 +185,13 @@ namespace Model
     Aws::String m_rollbackPerInstanceBinaryArn;
     bool m_rollbackPerInstanceBinaryArnHasBeenSet = false;
 
-    DeploymentStatus m_deploymentStatus;
+    DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
     bool m_deploymentStatusHasBeenSet = false;
 
     DeploymentConfiguration m_deploymentConfiguration;
     bool m_deploymentConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
   };
 

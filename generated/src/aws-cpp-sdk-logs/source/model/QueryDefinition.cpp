@@ -18,20 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-QueryDefinition::QueryDefinition() : 
-    m_queryLanguage(QueryLanguage::NOT_SET),
-    m_queryLanguageHasBeenSet(false),
-    m_queryDefinitionIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_lastModified(0),
-    m_lastModifiedHasBeenSet(false),
-    m_logGroupNamesHasBeenSet(false)
-{
-}
-
 QueryDefinition::QueryDefinition(JsonView jsonValue)
-  : QueryDefinition()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ QueryDefinition& QueryDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("queryLanguage"))
   {
     m_queryLanguage = QueryLanguageMapper::GetQueryLanguageForName(jsonValue.GetString("queryLanguage"));
-
     m_queryLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryDefinitionId"))
   {
     m_queryDefinitionId = jsonValue.GetString("queryDefinitionId");
-
     m_queryDefinitionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryString"))
   {
     m_queryString = jsonValue.GetString("queryString");
-
     m_queryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModified"))
   {
     m_lastModified = jsonValue.GetInt64("lastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupNames"))
   {
     Aws::Utils::Array<JsonView> logGroupNamesJsonList = jsonValue.GetArray("logGroupNames");
@@ -82,7 +59,6 @@ QueryDefinition& QueryDefinition::operator =(JsonView jsonValue)
     }
     m_logGroupNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-MetricsFilter::MetricsFilter() : 
-    m_prefixHasBeenSet(false),
-    m_tagHasBeenSet(false),
-    m_accessPointArnHasBeenSet(false),
-    m_andHasBeenSet(false)
-{
-}
-
 MetricsFilter::MetricsFilter(const XmlNode& xmlNode)
-  : MetricsFilter()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ MetricsFilter& MetricsFilter::operator =(const XmlNode& xmlNode)
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
     XmlNode tagNode = resultNode.FirstChild("Tag");
     if(!tagNode.IsNull())
     {
       m_tag = tagNode;
       m_tagHasBeenSet = true;
+       m_tagHasBeenSet = true;
     }
     XmlNode accessPointArnNode = resultNode.FirstChild("AccessPointArn");
     if(!accessPointArnNode.IsNull())
     {
       m_accessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessPointArnNode.GetText());
       m_accessPointArnHasBeenSet = true;
+       m_accessPointArnHasBeenSet = true;
     }
     XmlNode andNode = resultNode.FirstChild("And");
     if(!andNode.IsNull())
     {
       m_and = andNode;
       m_andHasBeenSet = true;
+       m_andHasBeenSet = true;
     }
   }
 

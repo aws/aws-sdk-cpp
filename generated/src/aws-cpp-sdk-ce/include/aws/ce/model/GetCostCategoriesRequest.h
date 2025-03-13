@@ -25,7 +25,7 @@ namespace Model
   class GetCostCategoriesRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API GetCostCategoriesRequest();
+    AWS_COSTEXPLORER_API GetCostCategoriesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,46 +47,42 @@ namespace Model
      * to filter Cost Category values that match the <code>SearchString</code>
      * pattern.</p>
      */
-    inline const Aws::String& GetSearchString() const{ return m_searchString; }
+    inline const Aws::String& GetSearchString() const { return m_searchString; }
     inline bool SearchStringHasBeenSet() const { return m_searchStringHasBeenSet; }
-    inline void SetSearchString(const Aws::String& value) { m_searchStringHasBeenSet = true; m_searchString = value; }
-    inline void SetSearchString(Aws::String&& value) { m_searchStringHasBeenSet = true; m_searchString = std::move(value); }
-    inline void SetSearchString(const char* value) { m_searchStringHasBeenSet = true; m_searchString.assign(value); }
-    inline GetCostCategoriesRequest& WithSearchString(const Aws::String& value) { SetSearchString(value); return *this;}
-    inline GetCostCategoriesRequest& WithSearchString(Aws::String&& value) { SetSearchString(std::move(value)); return *this;}
-    inline GetCostCategoriesRequest& WithSearchString(const char* value) { SetSearchString(value); return *this;}
+    template<typename SearchStringT = Aws::String>
+    void SetSearchString(SearchStringT&& value) { m_searchStringHasBeenSet = true; m_searchString = std::forward<SearchStringT>(value); }
+    template<typename SearchStringT = Aws::String>
+    GetCostCategoriesRequest& WithSearchString(SearchStringT&& value) { SetSearchString(std::forward<SearchStringT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline GetCostCategoriesRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline GetCostCategoriesRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    GetCostCategoriesRequest& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetCostCategoryName() const{ return m_costCategoryName; }
+    inline const Aws::String& GetCostCategoryName() const { return m_costCategoryName; }
     inline bool CostCategoryNameHasBeenSet() const { return m_costCategoryNameHasBeenSet; }
-    inline void SetCostCategoryName(const Aws::String& value) { m_costCategoryNameHasBeenSet = true; m_costCategoryName = value; }
-    inline void SetCostCategoryName(Aws::String&& value) { m_costCategoryNameHasBeenSet = true; m_costCategoryName = std::move(value); }
-    inline void SetCostCategoryName(const char* value) { m_costCategoryNameHasBeenSet = true; m_costCategoryName.assign(value); }
-    inline GetCostCategoriesRequest& WithCostCategoryName(const Aws::String& value) { SetCostCategoryName(value); return *this;}
-    inline GetCostCategoriesRequest& WithCostCategoryName(Aws::String&& value) { SetCostCategoryName(std::move(value)); return *this;}
-    inline GetCostCategoriesRequest& WithCostCategoryName(const char* value) { SetCostCategoryName(value); return *this;}
+    template<typename CostCategoryNameT = Aws::String>
+    void SetCostCategoryName(CostCategoryNameT&& value) { m_costCategoryNameHasBeenSet = true; m_costCategoryName = std::forward<CostCategoryNameT>(value); }
+    template<typename CostCategoryNameT = Aws::String>
+    GetCostCategoriesRequest& WithCostCategoryName(CostCategoryNameT&& value) { SetCostCategoryName(std::forward<CostCategoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Expression& GetFilter() const{ return m_filter; }
+    inline const Expression& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetCostCategoriesRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
-    inline GetCostCategoriesRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = Expression>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Expression>
+    GetCostCategoriesRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +99,14 @@ namespace Model
      * <code>NextPageToken</code> and <code>SearchString</code> key values aren't
      * supported.</p>
      */
-    inline const Aws::Vector<SortDefinition>& GetSortBy() const{ return m_sortBy; }
+    inline const Aws::Vector<SortDefinition>& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const Aws::Vector<SortDefinition>& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(Aws::Vector<SortDefinition>&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline GetCostCategoriesRequest& WithSortBy(const Aws::Vector<SortDefinition>& value) { SetSortBy(value); return *this;}
-    inline GetCostCategoriesRequest& WithSortBy(Aws::Vector<SortDefinition>&& value) { SetSortBy(std::move(value)); return *this;}
-    inline GetCostCategoriesRequest& AddSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(value); return *this; }
-    inline GetCostCategoriesRequest& AddSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(std::move(value)); return *this; }
+    template<typename SortByT = Aws::Vector<SortDefinition>>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = Aws::Vector<SortDefinition>>
+    GetCostCategoriesRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
+    template<typename SortByT = SortDefinition>
+    GetCostCategoriesRequest& AddSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy.emplace_back(std::forward<SortByT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -121,14 +117,12 @@ namespace Model
      * Amazon Web Services Billing and Cost Management features. The BillingViewArn can
      * be retrieved by calling the ListBillingViews API.</p>
      */
-    inline const Aws::String& GetBillingViewArn() const{ return m_billingViewArn; }
+    inline const Aws::String& GetBillingViewArn() const { return m_billingViewArn; }
     inline bool BillingViewArnHasBeenSet() const { return m_billingViewArnHasBeenSet; }
-    inline void SetBillingViewArn(const Aws::String& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = value; }
-    inline void SetBillingViewArn(Aws::String&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::move(value); }
-    inline void SetBillingViewArn(const char* value) { m_billingViewArnHasBeenSet = true; m_billingViewArn.assign(value); }
-    inline GetCostCategoriesRequest& WithBillingViewArn(const Aws::String& value) { SetBillingViewArn(value); return *this;}
-    inline GetCostCategoriesRequest& WithBillingViewArn(Aws::String&& value) { SetBillingViewArn(std::move(value)); return *this;}
-    inline GetCostCategoriesRequest& WithBillingViewArn(const char* value) { SetBillingViewArn(value); return *this;}
+    template<typename BillingViewArnT = Aws::String>
+    void SetBillingViewArn(BillingViewArnT&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::forward<BillingViewArnT>(value); }
+    template<typename BillingViewArnT = Aws::String>
+    GetCostCategoriesRequest& WithBillingViewArn(BillingViewArnT&& value) { SetBillingViewArn(std::forward<BillingViewArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,7 +134,7 @@ namespace Model
      * parameter.</p> <p>For <code>GetCostCategories</code>, MaxResults has an upper
      * quota of 1000.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetCostCategoriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -153,14 +147,12 @@ namespace Model
      * retrieve the next batch of objects, provide the NextPageToken from the previous
      * call in your next request.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
-    inline GetCostCategoriesRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetCostCategoriesRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetCostCategoriesRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetCostCategoriesRequest& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -182,7 +174,7 @@ namespace Model
     Aws::String m_billingViewArn;
     bool m_billingViewArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextPageToken;

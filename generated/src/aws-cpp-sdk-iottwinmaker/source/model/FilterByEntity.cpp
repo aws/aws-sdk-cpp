@@ -18,13 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-FilterByEntity::FilterByEntity() : 
-    m_entityIdHasBeenSet(false)
-{
-}
-
 FilterByEntity::FilterByEntity(JsonView jsonValue)
-  : FilterByEntity()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FilterByEntity& FilterByEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   return *this;
 }
 

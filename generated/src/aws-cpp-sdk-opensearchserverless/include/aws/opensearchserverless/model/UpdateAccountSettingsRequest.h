@@ -21,7 +21,7 @@ namespace Model
   class UpdateAccountSettingsRequest : public OpenSearchServerlessRequest
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API UpdateAccountSettingsRequest();
+    AWS_OPENSEARCHSERVERLESS_API UpdateAccountSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
 
     ///@{
     
-    inline const CapacityLimits& GetCapacityLimits() const{ return m_capacityLimits; }
+    inline const CapacityLimits& GetCapacityLimits() const { return m_capacityLimits; }
     inline bool CapacityLimitsHasBeenSet() const { return m_capacityLimitsHasBeenSet; }
-    inline void SetCapacityLimits(const CapacityLimits& value) { m_capacityLimitsHasBeenSet = true; m_capacityLimits = value; }
-    inline void SetCapacityLimits(CapacityLimits&& value) { m_capacityLimitsHasBeenSet = true; m_capacityLimits = std::move(value); }
-    inline UpdateAccountSettingsRequest& WithCapacityLimits(const CapacityLimits& value) { SetCapacityLimits(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithCapacityLimits(CapacityLimits&& value) { SetCapacityLimits(std::move(value)); return *this;}
+    template<typename CapacityLimitsT = CapacityLimits>
+    void SetCapacityLimits(CapacityLimitsT&& value) { m_capacityLimitsHasBeenSet = true; m_capacityLimits = std::forward<CapacityLimitsT>(value); }
+    template<typename CapacityLimitsT = CapacityLimits>
+    UpdateAccountSettingsRequest& WithCapacityLimits(CapacityLimitsT&& value) { SetCapacityLimits(std::forward<CapacityLimitsT>(value)); return *this;}
     ///@}
   private:
 

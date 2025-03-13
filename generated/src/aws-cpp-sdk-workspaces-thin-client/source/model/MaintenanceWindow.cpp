@@ -18,25 +18,7 @@ namespace WorkSpacesThinClient
 namespace Model
 {
 
-MaintenanceWindow::MaintenanceWindow() : 
-    m_type(MaintenanceWindowType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_startTimeHour(0),
-    m_startTimeHourHasBeenSet(false),
-    m_startTimeMinute(0),
-    m_startTimeMinuteHasBeenSet(false),
-    m_endTimeHour(0),
-    m_endTimeHourHasBeenSet(false),
-    m_endTimeMinute(0),
-    m_endTimeMinuteHasBeenSet(false),
-    m_daysOfTheWeekHasBeenSet(false),
-    m_applyTimeOf(ApplyTimeOf::NOT_SET),
-    m_applyTimeOfHasBeenSet(false)
-{
-}
-
 MaintenanceWindow::MaintenanceWindow(JsonView jsonValue)
-  : MaintenanceWindow()
 {
   *this = jsonValue;
 }
@@ -46,38 +28,28 @@ MaintenanceWindow& MaintenanceWindow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = MaintenanceWindowTypeMapper::GetMaintenanceWindowTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimeHour"))
   {
     m_startTimeHour = jsonValue.GetInteger("startTimeHour");
-
     m_startTimeHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimeMinute"))
   {
     m_startTimeMinute = jsonValue.GetInteger("startTimeMinute");
-
     m_startTimeMinuteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTimeHour"))
   {
     m_endTimeHour = jsonValue.GetInteger("endTimeHour");
-
     m_endTimeHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTimeMinute"))
   {
     m_endTimeMinute = jsonValue.GetInteger("endTimeMinute");
-
     m_endTimeMinuteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("daysOfTheWeek"))
   {
     Aws::Utils::Array<JsonView> daysOfTheWeekJsonList = jsonValue.GetArray("daysOfTheWeek");
@@ -87,14 +59,11 @@ MaintenanceWindow& MaintenanceWindow::operator =(JsonView jsonValue)
     }
     m_daysOfTheWeekHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applyTimeOf"))
   {
     m_applyTimeOf = ApplyTimeOfMapper::GetApplyTimeOfForName(jsonValue.GetString("applyTimeOf"));
-
     m_applyTimeOfHasBeenSet = true;
   }
-
   return *this;
 }
 

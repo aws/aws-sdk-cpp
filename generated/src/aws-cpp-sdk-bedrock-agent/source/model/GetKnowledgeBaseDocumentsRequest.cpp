@@ -12,13 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKnowledgeBaseDocumentsRequest::GetKnowledgeBaseDocumentsRequest() : 
-    m_dataSourceIdHasBeenSet(false),
-    m_documentIdentifiersHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false)
-{
-}
-
 Aws::String GetKnowledgeBaseDocumentsRequest::SerializePayload() const
 {
   JsonValue payload;

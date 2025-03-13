@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeOptimizationJobResult::DescribeOptimizationJobResult() : 
-    m_optimizationJobStatus(OptimizationJobStatus::NOT_SET),
-    m_deploymentInstanceType(OptimizationJobDeploymentInstanceType::NOT_SET)
-{
-}
-
 DescribeOptimizationJobResult::DescribeOptimizationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeOptimizationJobResult()
 {
   *this = result;
 }
@@ -35,57 +28,48 @@ DescribeOptimizationJobResult& DescribeOptimizationJobResult::operator =(const A
   if(jsonValue.ValueExists("OptimizationJobArn"))
   {
     m_optimizationJobArn = jsonValue.GetString("OptimizationJobArn");
-
+    m_optimizationJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationJobStatus"))
   {
     m_optimizationJobStatus = OptimizationJobStatusMapper::GetOptimizationJobStatusForName(jsonValue.GetString("OptimizationJobStatus"));
-
+    m_optimizationJobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationStartTime"))
   {
     m_optimizationStartTime = jsonValue.GetDouble("OptimizationStartTime");
-
+    m_optimizationStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationEndTime"))
   {
     m_optimizationEndTime = jsonValue.GetDouble("OptimizationEndTime");
-
+    m_optimizationEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationJobName"))
   {
     m_optimizationJobName = jsonValue.GetString("OptimizationJobName");
-
+    m_optimizationJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelSource"))
   {
     m_modelSource = jsonValue.GetObject("ModelSource");
-
+    m_modelSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationEnvironment"))
   {
     Aws::Map<Aws::String, JsonView> optimizationEnvironmentJsonMap = jsonValue.GetObject("OptimizationEnvironment").GetAllObjects();
@@ -93,14 +77,13 @@ DescribeOptimizationJobResult& DescribeOptimizationJobResult::operator =(const A
     {
       m_optimizationEnvironment[optimizationEnvironmentItem.first] = optimizationEnvironmentItem.second.AsString();
     }
+    m_optimizationEnvironmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentInstanceType"))
   {
     m_deploymentInstanceType = OptimizationJobDeploymentInstanceTypeMapper::GetOptimizationJobDeploymentInstanceTypeForName(jsonValue.GetString("DeploymentInstanceType"));
-
+    m_deploymentInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationConfigs"))
   {
     Aws::Utils::Array<JsonView> optimizationConfigsJsonList = jsonValue.GetArray("OptimizationConfigs");
@@ -108,44 +91,40 @@ DescribeOptimizationJobResult& DescribeOptimizationJobResult::operator =(const A
     {
       m_optimizationConfigs.push_back(optimizationConfigsJsonList[optimizationConfigsIndex].AsObject());
     }
+    m_optimizationConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputConfig"))
   {
     m_outputConfig = jsonValue.GetObject("OutputConfig");
-
+    m_outputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationOutput"))
   {
     m_optimizationOutput = jsonValue.GetObject("OptimizationOutput");
-
+    m_optimizationOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StoppingCondition"))
   {
     m_stoppingCondition = jsonValue.GetObject("StoppingCondition");
-
+    m_stoppingConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
+    m_vpcConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

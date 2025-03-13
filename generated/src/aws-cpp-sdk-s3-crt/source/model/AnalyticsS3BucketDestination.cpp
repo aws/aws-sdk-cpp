@@ -20,17 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-AnalyticsS3BucketDestination::AnalyticsS3BucketDestination() : 
-    m_format(AnalyticsS3ExportFileFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_bucketAccountIdHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 AnalyticsS3BucketDestination::AnalyticsS3BucketDestination(const XmlNode& xmlNode)
-  : AnalyticsS3BucketDestination()
 {
   *this = xmlNode;
 }
@@ -44,26 +34,30 @@ AnalyticsS3BucketDestination& AnalyticsS3BucketDestination::operator =(const Xml
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
-      m_format = AnalyticsS3ExportFileFormatMapper::GetAnalyticsS3ExportFileFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
+      m_format = AnalyticsS3ExportFileFormatMapper::GetAnalyticsS3ExportFileFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
+       m_formatHasBeenSet = true;
     }
     XmlNode bucketAccountIdNode = resultNode.FirstChild("BucketAccountId");
     if(!bucketAccountIdNode.IsNull())
     {
       m_bucketAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(bucketAccountIdNode.GetText());
       m_bucketAccountIdHasBeenSet = true;
+       m_bucketAccountIdHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
   }
 

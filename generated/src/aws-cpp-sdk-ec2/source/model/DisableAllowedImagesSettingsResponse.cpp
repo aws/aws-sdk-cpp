@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisableAllowedImagesSettingsResponse::DisableAllowedImagesSettingsResponse() : 
-    m_allowedImagesSettingsState(AllowedImagesSettingsDisabledState::NOT_SET)
-{
-}
-
 DisableAllowedImagesSettingsResponse::DisableAllowedImagesSettingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DisableAllowedImagesSettingsResponse()
 {
   *this = result;
 }
@@ -43,7 +37,8 @@ DisableAllowedImagesSettingsResponse& DisableAllowedImagesSettingsResponse::oper
     XmlNode allowedImagesSettingsStateNode = resultNode.FirstChild("allowedImagesSettingsState");
     if(!allowedImagesSettingsStateNode.IsNull())
     {
-      m_allowedImagesSettingsState = AllowedImagesSettingsDisabledStateMapper::GetAllowedImagesSettingsDisabledStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowedImagesSettingsStateNode.GetText()).c_str()).c_str());
+      m_allowedImagesSettingsState = AllowedImagesSettingsDisabledStateMapper::GetAllowedImagesSettingsDisabledStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowedImagesSettingsStateNode.GetText()).c_str()));
+      m_allowedImagesSettingsStateHasBeenSet = true;
     }
   }
 
@@ -52,6 +47,7 @@ DisableAllowedImagesSettingsResponse& DisableAllowedImagesSettingsResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DisableAllowedImagesSettingsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

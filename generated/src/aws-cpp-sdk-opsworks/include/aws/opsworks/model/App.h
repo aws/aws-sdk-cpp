@@ -39,7 +39,7 @@ namespace Model
   class App
   {
   public:
-    AWS_OPSWORKS_API App();
+    AWS_OPSWORKS_API App() = default;
     AWS_OPSWORKS_API App(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API App& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,108 +49,96 @@ namespace Model
     /**
      * <p>The app ID.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline App& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline App& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline App& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    App& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The app stack ID.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline App& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline App& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline App& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    App& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The app's short name.</p>
      */
-    inline const Aws::String& GetShortname() const{ return m_shortname; }
+    inline const Aws::String& GetShortname() const { return m_shortname; }
     inline bool ShortnameHasBeenSet() const { return m_shortnameHasBeenSet; }
-    inline void SetShortname(const Aws::String& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
-    inline void SetShortname(Aws::String&& value) { m_shortnameHasBeenSet = true; m_shortname = std::move(value); }
-    inline void SetShortname(const char* value) { m_shortnameHasBeenSet = true; m_shortname.assign(value); }
-    inline App& WithShortname(const Aws::String& value) { SetShortname(value); return *this;}
-    inline App& WithShortname(Aws::String&& value) { SetShortname(std::move(value)); return *this;}
-    inline App& WithShortname(const char* value) { SetShortname(value); return *this;}
+    template<typename ShortnameT = Aws::String>
+    void SetShortname(ShortnameT&& value) { m_shortnameHasBeenSet = true; m_shortname = std::forward<ShortnameT>(value); }
+    template<typename ShortnameT = Aws::String>
+    App& WithShortname(ShortnameT&& value) { SetShortname(std::forward<ShortnameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The app name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline App& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline App& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline App& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    App& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the app.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline App& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline App& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline App& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    App& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The app's data sources.</p>
      */
-    inline const Aws::Vector<DataSource>& GetDataSources() const{ return m_dataSources; }
+    inline const Aws::Vector<DataSource>& GetDataSources() const { return m_dataSources; }
     inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
-    inline void SetDataSources(const Aws::Vector<DataSource>& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
-    inline void SetDataSources(Aws::Vector<DataSource>&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
-    inline App& WithDataSources(const Aws::Vector<DataSource>& value) { SetDataSources(value); return *this;}
-    inline App& WithDataSources(Aws::Vector<DataSource>&& value) { SetDataSources(std::move(value)); return *this;}
-    inline App& AddDataSources(const DataSource& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(value); return *this; }
-    inline App& AddDataSources(DataSource&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(std::move(value)); return *this; }
+    template<typename DataSourcesT = Aws::Vector<DataSource>>
+    void SetDataSources(DataSourcesT&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::forward<DataSourcesT>(value); }
+    template<typename DataSourcesT = Aws::Vector<DataSource>>
+    App& WithDataSources(DataSourcesT&& value) { SetDataSources(std::forward<DataSourcesT>(value)); return *this;}
+    template<typename DataSourcesT = DataSource>
+    App& AddDataSources(DataSourcesT&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.emplace_back(std::forward<DataSourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The app type.</p>
      */
-    inline const AppType& GetType() const{ return m_type; }
+    inline AppType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AppType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AppType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline App& WithType(const AppType& value) { SetType(value); return *this;}
-    inline App& WithType(AppType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AppType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline App& WithType(AppType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A <code>Source</code> object that describes the app repository.</p>
      */
-    inline const Source& GetAppSource() const{ return m_appSource; }
+    inline const Source& GetAppSource() const { return m_appSource; }
     inline bool AppSourceHasBeenSet() const { return m_appSourceHasBeenSet; }
-    inline void SetAppSource(const Source& value) { m_appSourceHasBeenSet = true; m_appSource = value; }
-    inline void SetAppSource(Source&& value) { m_appSourceHasBeenSet = true; m_appSource = std::move(value); }
-    inline App& WithAppSource(const Source& value) { SetAppSource(value); return *this;}
-    inline App& WithAppSource(Source&& value) { SetAppSource(std::move(value)); return *this;}
+    template<typename AppSourceT = Source>
+    void SetAppSource(AppSourceT&& value) { m_appSourceHasBeenSet = true; m_appSource = std::forward<AppSourceT>(value); }
+    template<typename AppSourceT = Source>
+    App& WithAppSource(AppSourceT&& value) { SetAppSource(std::forward<AppSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,22 +146,21 @@ namespace Model
      * <p>The app vhost settings with multiple domains separated by commas. For
      * example: <code>'www.example.com, example.com'</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetDomains() const{ return m_domains; }
+    inline const Aws::Vector<Aws::String>& GetDomains() const { return m_domains; }
     inline bool DomainsHasBeenSet() const { return m_domainsHasBeenSet; }
-    inline void SetDomains(const Aws::Vector<Aws::String>& value) { m_domainsHasBeenSet = true; m_domains = value; }
-    inline void SetDomains(Aws::Vector<Aws::String>&& value) { m_domainsHasBeenSet = true; m_domains = std::move(value); }
-    inline App& WithDomains(const Aws::Vector<Aws::String>& value) { SetDomains(value); return *this;}
-    inline App& WithDomains(Aws::Vector<Aws::String>&& value) { SetDomains(std::move(value)); return *this;}
-    inline App& AddDomains(const Aws::String& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
-    inline App& AddDomains(Aws::String&& value) { m_domainsHasBeenSet = true; m_domains.push_back(std::move(value)); return *this; }
-    inline App& AddDomains(const char* value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
+    template<typename DomainsT = Aws::Vector<Aws::String>>
+    void SetDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains = std::forward<DomainsT>(value); }
+    template<typename DomainsT = Aws::Vector<Aws::String>>
+    App& WithDomains(DomainsT&& value) { SetDomains(std::forward<DomainsT>(value)); return *this;}
+    template<typename DomainsT = Aws::String>
+    App& AddDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains.emplace_back(std::forward<DomainsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Whether to enable SSL for the app.</p>
      */
-    inline bool GetEnableSsl() const{ return m_enableSsl; }
+    inline bool GetEnableSsl() const { return m_enableSsl; }
     inline bool EnableSslHasBeenSet() const { return m_enableSslHasBeenSet; }
     inline void SetEnableSsl(bool value) { m_enableSslHasBeenSet = true; m_enableSsl = value; }
     inline App& WithEnableSsl(bool value) { SetEnableSsl(value); return *this;}
@@ -183,44 +170,39 @@ namespace Model
     /**
      * <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
      */
-    inline const SslConfiguration& GetSslConfiguration() const{ return m_sslConfiguration; }
+    inline const SslConfiguration& GetSslConfiguration() const { return m_sslConfiguration; }
     inline bool SslConfigurationHasBeenSet() const { return m_sslConfigurationHasBeenSet; }
-    inline void SetSslConfiguration(const SslConfiguration& value) { m_sslConfigurationHasBeenSet = true; m_sslConfiguration = value; }
-    inline void SetSslConfiguration(SslConfiguration&& value) { m_sslConfigurationHasBeenSet = true; m_sslConfiguration = std::move(value); }
-    inline App& WithSslConfiguration(const SslConfiguration& value) { SetSslConfiguration(value); return *this;}
-    inline App& WithSslConfiguration(SslConfiguration&& value) { SetSslConfiguration(std::move(value)); return *this;}
+    template<typename SslConfigurationT = SslConfiguration>
+    void SetSslConfiguration(SslConfigurationT&& value) { m_sslConfigurationHasBeenSet = true; m_sslConfiguration = std::forward<SslConfigurationT>(value); }
+    template<typename SslConfigurationT = SslConfiguration>
+    App& WithSslConfiguration(SslConfigurationT&& value) { SetSslConfiguration(std::forward<SslConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stack attributes.</p>
      */
-    inline const Aws::Map<AppAttributesKeys, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<AppAttributesKeys, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<AppAttributesKeys, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<AppAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline App& WithAttributes(const Aws::Map<AppAttributesKeys, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline App& WithAttributes(Aws::Map<AppAttributesKeys, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline App& AddAttributes(const AppAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline App& AddAttributes(AppAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline App& AddAttributes(const AppAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline App& AddAttributes(AppAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline App& AddAttributes(AppAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline App& AddAttributes(const AppAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<AppAttributesKeys, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<AppAttributesKeys, Aws::String>>
+    App& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    inline App& AddAttributes(AppAttributesKeys key, Aws::String value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>When the app was created.</p>
      */
-    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
-    inline App& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
-    inline App& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
-    inline App& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+    template<typename CreatedAtT = Aws::String>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::String>
+    App& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -237,14 +219,14 @@ namespace Model
      * but if you do exceed it, you will cause an exception (API) with an "Environment:
      * is too large (maximum is 20 KB)" message.</p> 
      */
-    inline const Aws::Vector<EnvironmentVariable>& GetEnvironment() const{ return m_environment; }
+    inline const Aws::Vector<EnvironmentVariable>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const Aws::Vector<EnvironmentVariable>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(Aws::Vector<EnvironmentVariable>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline App& WithEnvironment(const Aws::Vector<EnvironmentVariable>& value) { SetEnvironment(value); return *this;}
-    inline App& WithEnvironment(Aws::Vector<EnvironmentVariable>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline App& AddEnvironment(const EnvironmentVariable& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
-    inline App& AddEnvironment(EnvironmentVariable&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
+    template<typename EnvironmentT = Aws::Vector<EnvironmentVariable>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Vector<EnvironmentVariable>>
+    App& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentT = EnvironmentVariable>
+    App& AddEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment.emplace_back(std::forward<EnvironmentT>(value)); return *this; }
     ///@}
   private:
 
@@ -266,7 +248,7 @@ namespace Model
     Aws::Vector<DataSource> m_dataSources;
     bool m_dataSourcesHasBeenSet = false;
 
-    AppType m_type;
+    AppType m_type{AppType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Source m_appSource;
@@ -275,7 +257,7 @@ namespace Model
     Aws::Vector<Aws::String> m_domains;
     bool m_domainsHasBeenSet = false;
 
-    bool m_enableSsl;
+    bool m_enableSsl{false};
     bool m_enableSslHasBeenSet = false;
 
     SslConfiguration m_sslConfiguration;

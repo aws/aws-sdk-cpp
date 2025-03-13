@@ -10,13 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-ListConfigurationSetsRequest::ListConfigurationSetsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListConfigurationSetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

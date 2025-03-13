@@ -38,7 +38,7 @@ namespace Model
   class HookProgressEvent
   {
   public:
-    AWS_CLOUDCONTROLAPI_API HookProgressEvent();
+    AWS_CLOUDCONTROLAPI_API HookProgressEvent() = default;
     AWS_CLOUDCONTROLAPI_API HookProgressEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDCONTROLAPI_API HookProgressEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDCONTROLAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,56 +48,48 @@ namespace Model
     /**
      * <p>The type name of the Hook being invoked.</p>
      */
-    inline const Aws::String& GetHookTypeName() const{ return m_hookTypeName; }
+    inline const Aws::String& GetHookTypeName() const { return m_hookTypeName; }
     inline bool HookTypeNameHasBeenSet() const { return m_hookTypeNameHasBeenSet; }
-    inline void SetHookTypeName(const Aws::String& value) { m_hookTypeNameHasBeenSet = true; m_hookTypeName = value; }
-    inline void SetHookTypeName(Aws::String&& value) { m_hookTypeNameHasBeenSet = true; m_hookTypeName = std::move(value); }
-    inline void SetHookTypeName(const char* value) { m_hookTypeNameHasBeenSet = true; m_hookTypeName.assign(value); }
-    inline HookProgressEvent& WithHookTypeName(const Aws::String& value) { SetHookTypeName(value); return *this;}
-    inline HookProgressEvent& WithHookTypeName(Aws::String&& value) { SetHookTypeName(std::move(value)); return *this;}
-    inline HookProgressEvent& WithHookTypeName(const char* value) { SetHookTypeName(value); return *this;}
+    template<typename HookTypeNameT = Aws::String>
+    void SetHookTypeName(HookTypeNameT&& value) { m_hookTypeNameHasBeenSet = true; m_hookTypeName = std::forward<HookTypeNameT>(value); }
+    template<typename HookTypeNameT = Aws::String>
+    HookProgressEvent& WithHookTypeName(HookTypeNameT&& value) { SetHookTypeName(std::forward<HookTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type version of the Hook being invoked.</p>
      */
-    inline const Aws::String& GetHookTypeVersionId() const{ return m_hookTypeVersionId; }
+    inline const Aws::String& GetHookTypeVersionId() const { return m_hookTypeVersionId; }
     inline bool HookTypeVersionIdHasBeenSet() const { return m_hookTypeVersionIdHasBeenSet; }
-    inline void SetHookTypeVersionId(const Aws::String& value) { m_hookTypeVersionIdHasBeenSet = true; m_hookTypeVersionId = value; }
-    inline void SetHookTypeVersionId(Aws::String&& value) { m_hookTypeVersionIdHasBeenSet = true; m_hookTypeVersionId = std::move(value); }
-    inline void SetHookTypeVersionId(const char* value) { m_hookTypeVersionIdHasBeenSet = true; m_hookTypeVersionId.assign(value); }
-    inline HookProgressEvent& WithHookTypeVersionId(const Aws::String& value) { SetHookTypeVersionId(value); return *this;}
-    inline HookProgressEvent& WithHookTypeVersionId(Aws::String&& value) { SetHookTypeVersionId(std::move(value)); return *this;}
-    inline HookProgressEvent& WithHookTypeVersionId(const char* value) { SetHookTypeVersionId(value); return *this;}
+    template<typename HookTypeVersionIdT = Aws::String>
+    void SetHookTypeVersionId(HookTypeVersionIdT&& value) { m_hookTypeVersionIdHasBeenSet = true; m_hookTypeVersionId = std::forward<HookTypeVersionIdT>(value); }
+    template<typename HookTypeVersionIdT = Aws::String>
+    HookProgressEvent& WithHookTypeVersionId(HookTypeVersionIdT&& value) { SetHookTypeVersionId(std::forward<HookTypeVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the Hook being invoked.</p>
      */
-    inline const Aws::String& GetHookTypeArn() const{ return m_hookTypeArn; }
+    inline const Aws::String& GetHookTypeArn() const { return m_hookTypeArn; }
     inline bool HookTypeArnHasBeenSet() const { return m_hookTypeArnHasBeenSet; }
-    inline void SetHookTypeArn(const Aws::String& value) { m_hookTypeArnHasBeenSet = true; m_hookTypeArn = value; }
-    inline void SetHookTypeArn(Aws::String&& value) { m_hookTypeArnHasBeenSet = true; m_hookTypeArn = std::move(value); }
-    inline void SetHookTypeArn(const char* value) { m_hookTypeArnHasBeenSet = true; m_hookTypeArn.assign(value); }
-    inline HookProgressEvent& WithHookTypeArn(const Aws::String& value) { SetHookTypeArn(value); return *this;}
-    inline HookProgressEvent& WithHookTypeArn(Aws::String&& value) { SetHookTypeArn(std::move(value)); return *this;}
-    inline HookProgressEvent& WithHookTypeArn(const char* value) { SetHookTypeArn(value); return *this;}
+    template<typename HookTypeArnT = Aws::String>
+    void SetHookTypeArn(HookTypeArnT&& value) { m_hookTypeArnHasBeenSet = true; m_hookTypeArn = std::forward<HookTypeArnT>(value); }
+    template<typename HookTypeArnT = Aws::String>
+    HookProgressEvent& WithHookTypeArn(HookTypeArnT&& value) { SetHookTypeArn(std::forward<HookTypeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>States whether the Hook is invoked before or after resource provisioning.</p>
      */
-    inline const Aws::String& GetInvocationPoint() const{ return m_invocationPoint; }
+    inline const Aws::String& GetInvocationPoint() const { return m_invocationPoint; }
     inline bool InvocationPointHasBeenSet() const { return m_invocationPointHasBeenSet; }
-    inline void SetInvocationPoint(const Aws::String& value) { m_invocationPointHasBeenSet = true; m_invocationPoint = value; }
-    inline void SetInvocationPoint(Aws::String&& value) { m_invocationPointHasBeenSet = true; m_invocationPoint = std::move(value); }
-    inline void SetInvocationPoint(const char* value) { m_invocationPointHasBeenSet = true; m_invocationPoint.assign(value); }
-    inline HookProgressEvent& WithInvocationPoint(const Aws::String& value) { SetInvocationPoint(value); return *this;}
-    inline HookProgressEvent& WithInvocationPoint(Aws::String&& value) { SetInvocationPoint(std::move(value)); return *this;}
-    inline HookProgressEvent& WithInvocationPoint(const char* value) { SetInvocationPoint(value); return *this;}
+    template<typename InvocationPointT = Aws::String>
+    void SetInvocationPoint(InvocationPointT&& value) { m_invocationPointHasBeenSet = true; m_invocationPoint = std::forward<InvocationPointT>(value); }
+    template<typename InvocationPointT = Aws::String>
+    HookProgressEvent& WithInvocationPoint(InvocationPointT&& value) { SetInvocationPoint(std::forward<InvocationPointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,40 +104,36 @@ namespace Model
      * <code>HOOK_FAILED</code>: The Hook invocation didn't complete successfully.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetHookStatus() const{ return m_hookStatus; }
+    inline const Aws::String& GetHookStatus() const { return m_hookStatus; }
     inline bool HookStatusHasBeenSet() const { return m_hookStatusHasBeenSet; }
-    inline void SetHookStatus(const Aws::String& value) { m_hookStatusHasBeenSet = true; m_hookStatus = value; }
-    inline void SetHookStatus(Aws::String&& value) { m_hookStatusHasBeenSet = true; m_hookStatus = std::move(value); }
-    inline void SetHookStatus(const char* value) { m_hookStatusHasBeenSet = true; m_hookStatus.assign(value); }
-    inline HookProgressEvent& WithHookStatus(const Aws::String& value) { SetHookStatus(value); return *this;}
-    inline HookProgressEvent& WithHookStatus(Aws::String&& value) { SetHookStatus(std::move(value)); return *this;}
-    inline HookProgressEvent& WithHookStatus(const char* value) { SetHookStatus(value); return *this;}
+    template<typename HookStatusT = Aws::String>
+    void SetHookStatus(HookStatusT&& value) { m_hookStatusHasBeenSet = true; m_hookStatus = std::forward<HookStatusT>(value); }
+    template<typename HookStatusT = Aws::String>
+    HookProgressEvent& WithHookStatus(HookStatusT&& value) { SetHookStatus(std::forward<HookStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the Hook invocation request initiated.</p>
      */
-    inline const Aws::Utils::DateTime& GetHookEventTime() const{ return m_hookEventTime; }
+    inline const Aws::Utils::DateTime& GetHookEventTime() const { return m_hookEventTime; }
     inline bool HookEventTimeHasBeenSet() const { return m_hookEventTimeHasBeenSet; }
-    inline void SetHookEventTime(const Aws::Utils::DateTime& value) { m_hookEventTimeHasBeenSet = true; m_hookEventTime = value; }
-    inline void SetHookEventTime(Aws::Utils::DateTime&& value) { m_hookEventTimeHasBeenSet = true; m_hookEventTime = std::move(value); }
-    inline HookProgressEvent& WithHookEventTime(const Aws::Utils::DateTime& value) { SetHookEventTime(value); return *this;}
-    inline HookProgressEvent& WithHookEventTime(Aws::Utils::DateTime&& value) { SetHookEventTime(std::move(value)); return *this;}
+    template<typename HookEventTimeT = Aws::Utils::DateTime>
+    void SetHookEventTime(HookEventTimeT&& value) { m_hookEventTimeHasBeenSet = true; m_hookEventTime = std::forward<HookEventTimeT>(value); }
+    template<typename HookEventTimeT = Aws::Utils::DateTime>
+    HookProgressEvent& WithHookEventTime(HookEventTimeT&& value) { SetHookEventTime(std::forward<HookEventTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message explaining the current Hook status.</p>
      */
-    inline const Aws::String& GetHookStatusMessage() const{ return m_hookStatusMessage; }
+    inline const Aws::String& GetHookStatusMessage() const { return m_hookStatusMessage; }
     inline bool HookStatusMessageHasBeenSet() const { return m_hookStatusMessageHasBeenSet; }
-    inline void SetHookStatusMessage(const Aws::String& value) { m_hookStatusMessageHasBeenSet = true; m_hookStatusMessage = value; }
-    inline void SetHookStatusMessage(Aws::String&& value) { m_hookStatusMessageHasBeenSet = true; m_hookStatusMessage = std::move(value); }
-    inline void SetHookStatusMessage(const char* value) { m_hookStatusMessageHasBeenSet = true; m_hookStatusMessage.assign(value); }
-    inline HookProgressEvent& WithHookStatusMessage(const Aws::String& value) { SetHookStatusMessage(value); return *this;}
-    inline HookProgressEvent& WithHookStatusMessage(Aws::String&& value) { SetHookStatusMessage(std::move(value)); return *this;}
-    inline HookProgressEvent& WithHookStatusMessage(const char* value) { SetHookStatusMessage(value); return *this;}
+    template<typename HookStatusMessageT = Aws::String>
+    void SetHookStatusMessage(HookStatusMessageT&& value) { m_hookStatusMessageHasBeenSet = true; m_hookStatusMessage = std::forward<HookStatusMessageT>(value); }
+    template<typename HookStatusMessageT = Aws::String>
+    HookProgressEvent& WithHookStatusMessage(HookStatusMessageT&& value) { SetHookStatusMessage(std::forward<HookStatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,14 +144,12 @@ namespace Model
      * <code>WARN</code>: This will fail the Hook invocation, but not the request
      * associated with it.</p> </li> </ul>
      */
-    inline const Aws::String& GetFailureMode() const{ return m_failureMode; }
+    inline const Aws::String& GetFailureMode() const { return m_failureMode; }
     inline bool FailureModeHasBeenSet() const { return m_failureModeHasBeenSet; }
-    inline void SetFailureMode(const Aws::String& value) { m_failureModeHasBeenSet = true; m_failureMode = value; }
-    inline void SetFailureMode(Aws::String&& value) { m_failureModeHasBeenSet = true; m_failureMode = std::move(value); }
-    inline void SetFailureMode(const char* value) { m_failureModeHasBeenSet = true; m_failureMode.assign(value); }
-    inline HookProgressEvent& WithFailureMode(const Aws::String& value) { SetFailureMode(value); return *this;}
-    inline HookProgressEvent& WithFailureMode(Aws::String&& value) { SetFailureMode(std::move(value)); return *this;}
-    inline HookProgressEvent& WithFailureMode(const char* value) { SetFailureMode(value); return *this;}
+    template<typename FailureModeT = Aws::String>
+    void SetFailureMode(FailureModeT&& value) { m_failureModeHasBeenSet = true; m_failureMode = std::forward<FailureModeT>(value); }
+    template<typename FailureModeT = Aws::String>
+    HookProgressEvent& WithFailureMode(FailureModeT&& value) { SetFailureMode(std::forward<FailureModeT>(value)); return *this;}
     ///@}
   private:
 
@@ -182,7 +168,7 @@ namespace Model
     Aws::String m_hookStatus;
     bool m_hookStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_hookEventTime;
+    Aws::Utils::DateTime m_hookEventTime{};
     bool m_hookEventTimeHasBeenSet = false;
 
     Aws::String m_hookStatusMessage;

@@ -18,16 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ProfileQueryResult::ProfileQueryResult() : 
-    m_profileIdHasBeenSet(false),
-    m_queryResult(QueryResult::NOT_SET),
-    m_queryResultHasBeenSet(false),
-    m_profileHasBeenSet(false)
-{
-}
-
 ProfileQueryResult::ProfileQueryResult(JsonView jsonValue)
-  : ProfileQueryResult()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ProfileQueryResult& ProfileQueryResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProfileId"))
   {
     m_profileId = jsonValue.GetString("ProfileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryResult"))
   {
     m_queryResult = QueryResultMapper::GetQueryResultForName(jsonValue.GetString("QueryResult"));
-
     m_queryResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Profile"))
   {
     m_profile = jsonValue.GetObject("Profile");
-
     m_profileHasBeenSet = true;
   }
-
   return *this;
 }
 

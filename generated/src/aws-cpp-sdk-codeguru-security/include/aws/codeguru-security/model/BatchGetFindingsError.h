@@ -33,7 +33,7 @@ namespace Model
   class BatchGetFindingsError
   {
   public:
-    AWS_CODEGURUSECURITY_API BatchGetFindingsError();
+    AWS_CODEGURUSECURITY_API BatchGetFindingsError() = default;
     AWS_CODEGURUSECURITY_API BatchGetFindingsError(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUSECURITY_API BatchGetFindingsError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUSECURITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,58 +43,50 @@ namespace Model
     /**
      * <p>A code associated with the type of error.</p>
      */
-    inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline ErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline BatchGetFindingsError& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
-    inline BatchGetFindingsError& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(ErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline BatchGetFindingsError& WithErrorCode(ErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The finding ID of the finding that was not fetched.</p>
      */
-    inline const Aws::String& GetFindingId() const{ return m_findingId; }
+    inline const Aws::String& GetFindingId() const { return m_findingId; }
     inline bool FindingIdHasBeenSet() const { return m_findingIdHasBeenSet; }
-    inline void SetFindingId(const Aws::String& value) { m_findingIdHasBeenSet = true; m_findingId = value; }
-    inline void SetFindingId(Aws::String&& value) { m_findingIdHasBeenSet = true; m_findingId = std::move(value); }
-    inline void SetFindingId(const char* value) { m_findingIdHasBeenSet = true; m_findingId.assign(value); }
-    inline BatchGetFindingsError& WithFindingId(const Aws::String& value) { SetFindingId(value); return *this;}
-    inline BatchGetFindingsError& WithFindingId(Aws::String&& value) { SetFindingId(std::move(value)); return *this;}
-    inline BatchGetFindingsError& WithFindingId(const char* value) { SetFindingId(value); return *this;}
+    template<typename FindingIdT = Aws::String>
+    void SetFindingId(FindingIdT&& value) { m_findingIdHasBeenSet = true; m_findingId = std::forward<FindingIdT>(value); }
+    template<typename FindingIdT = Aws::String>
+    BatchGetFindingsError& WithFindingId(FindingIdT&& value) { SetFindingId(std::forward<FindingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline BatchGetFindingsError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline BatchGetFindingsError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline BatchGetFindingsError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    BatchGetFindingsError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the scan that generated the finding.</p>
      */
-    inline const Aws::String& GetScanName() const{ return m_scanName; }
+    inline const Aws::String& GetScanName() const { return m_scanName; }
     inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
-    inline void SetScanName(const Aws::String& value) { m_scanNameHasBeenSet = true; m_scanName = value; }
-    inline void SetScanName(Aws::String&& value) { m_scanNameHasBeenSet = true; m_scanName = std::move(value); }
-    inline void SetScanName(const char* value) { m_scanNameHasBeenSet = true; m_scanName.assign(value); }
-    inline BatchGetFindingsError& WithScanName(const Aws::String& value) { SetScanName(value); return *this;}
-    inline BatchGetFindingsError& WithScanName(Aws::String&& value) { SetScanName(std::move(value)); return *this;}
-    inline BatchGetFindingsError& WithScanName(const char* value) { SetScanName(value); return *this;}
+    template<typename ScanNameT = Aws::String>
+    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
+    template<typename ScanNameT = Aws::String>
+    BatchGetFindingsError& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
     ///@}
   private:
 
-    ErrorCode m_errorCode;
+    ErrorCode m_errorCode{ErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_findingId;

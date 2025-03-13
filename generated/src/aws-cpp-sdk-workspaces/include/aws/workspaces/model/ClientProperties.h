@@ -32,7 +32,7 @@ namespace Model
   class ClientProperties
   {
   public:
-    AWS_WORKSPACES_API ClientProperties();
+    AWS_WORKSPACES_API ClientProperties() = default;
     AWS_WORKSPACES_API ClientProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API ClientProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * client. When enabled, users can choose to reconnect to their WorkSpaces without
      * re-entering their credentials. </p>
      */
-    inline const ReconnectEnum& GetReconnectEnabled() const{ return m_reconnectEnabled; }
+    inline ReconnectEnum GetReconnectEnabled() const { return m_reconnectEnabled; }
     inline bool ReconnectEnabledHasBeenSet() const { return m_reconnectEnabledHasBeenSet; }
-    inline void SetReconnectEnabled(const ReconnectEnum& value) { m_reconnectEnabledHasBeenSet = true; m_reconnectEnabled = value; }
-    inline void SetReconnectEnabled(ReconnectEnum&& value) { m_reconnectEnabledHasBeenSet = true; m_reconnectEnabled = std::move(value); }
-    inline ClientProperties& WithReconnectEnabled(const ReconnectEnum& value) { SetReconnectEnabled(value); return *this;}
-    inline ClientProperties& WithReconnectEnabled(ReconnectEnum&& value) { SetReconnectEnabled(std::move(value)); return *this;}
+    inline void SetReconnectEnabled(ReconnectEnum value) { m_reconnectEnabledHasBeenSet = true; m_reconnectEnabled = value; }
+    inline ClientProperties& WithReconnectEnabled(ReconnectEnum value) { SetReconnectEnabled(value); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,17 @@ namespace Model
      * client. When enabled, the log files will be sent to WorkSpaces automatically and
      * will be applied to all users in the specified directory.</p>
      */
-    inline const LogUploadEnum& GetLogUploadEnabled() const{ return m_logUploadEnabled; }
+    inline LogUploadEnum GetLogUploadEnabled() const { return m_logUploadEnabled; }
     inline bool LogUploadEnabledHasBeenSet() const { return m_logUploadEnabledHasBeenSet; }
-    inline void SetLogUploadEnabled(const LogUploadEnum& value) { m_logUploadEnabledHasBeenSet = true; m_logUploadEnabled = value; }
-    inline void SetLogUploadEnabled(LogUploadEnum&& value) { m_logUploadEnabledHasBeenSet = true; m_logUploadEnabled = std::move(value); }
-    inline ClientProperties& WithLogUploadEnabled(const LogUploadEnum& value) { SetLogUploadEnabled(value); return *this;}
-    inline ClientProperties& WithLogUploadEnabled(LogUploadEnum&& value) { SetLogUploadEnabled(std::move(value)); return *this;}
+    inline void SetLogUploadEnabled(LogUploadEnum value) { m_logUploadEnabledHasBeenSet = true; m_logUploadEnabled = value; }
+    inline ClientProperties& WithLogUploadEnabled(LogUploadEnum value) { SetLogUploadEnabled(value); return *this;}
     ///@}
   private:
 
-    ReconnectEnum m_reconnectEnabled;
+    ReconnectEnum m_reconnectEnabled{ReconnectEnum::NOT_SET};
     bool m_reconnectEnabledHasBeenSet = false;
 
-    LogUploadEnum m_logUploadEnabled;
+    LogUploadEnum m_logUploadEnabled{LogUploadEnum::NOT_SET};
     bool m_logUploadEnabledHasBeenSet = false;
   };
 

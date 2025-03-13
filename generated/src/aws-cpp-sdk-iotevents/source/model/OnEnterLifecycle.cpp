@@ -18,13 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-OnEnterLifecycle::OnEnterLifecycle() : 
-    m_eventsHasBeenSet(false)
-{
-}
-
 OnEnterLifecycle::OnEnterLifecycle(JsonView jsonValue)
-  : OnEnterLifecycle()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ OnEnterLifecycle& OnEnterLifecycle::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   return *this;
 }
 

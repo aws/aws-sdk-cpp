@@ -18,23 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-CollaborationMLInputChannelSummary::CollaborationMLInputChannelSummary() : 
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_membershipIdentifierHasBeenSet(false),
-    m_collaborationIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_configuredModelAlgorithmAssociationsHasBeenSet(false),
-    m_mlInputChannelArnHasBeenSet(false),
-    m_status(MLInputChannelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 CollaborationMLInputChannelSummary::CollaborationMLInputChannelSummary(JsonView jsonValue)
-  : CollaborationMLInputChannelSummary()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ CollaborationMLInputChannelSummary& CollaborationMLInputChannelSummary::operator
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipIdentifier"))
   {
     m_membershipIdentifier = jsonValue.GetString("membershipIdentifier");
-
     m_membershipIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationIdentifier"))
   {
     m_collaborationIdentifier = jsonValue.GetString("collaborationIdentifier");
-
     m_collaborationIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredModelAlgorithmAssociations"))
   {
     Aws::Utils::Array<JsonView> configuredModelAlgorithmAssociationsJsonList = jsonValue.GetArray("configuredModelAlgorithmAssociations");
@@ -85,35 +59,26 @@ CollaborationMLInputChannelSummary& CollaborationMLInputChannelSummary::operator
     }
     m_configuredModelAlgorithmAssociationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mlInputChannelArn"))
   {
     m_mlInputChannelArn = jsonValue.GetString("mlInputChannelArn");
-
     m_mlInputChannelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = MLInputChannelStatusMapper::GetMLInputChannelStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creatorAccountId"))
   {
     m_creatorAccountId = jsonValue.GetString("creatorAccountId");
-
     m_creatorAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

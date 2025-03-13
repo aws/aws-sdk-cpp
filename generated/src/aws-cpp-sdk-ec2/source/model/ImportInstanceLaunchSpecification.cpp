@@ -20,27 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImportInstanceLaunchSpecification::ImportInstanceLaunchSpecification() : 
-    m_architecture(ArchitectureValues::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_groupNamesHasBeenSet(false),
-    m_groupIdsHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_monitoring(false),
-    m_monitoringHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
-    m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
-{
-}
-
 ImportInstanceLaunchSpecification::ImportInstanceLaunchSpecification(const XmlNode& xmlNode)
-  : ImportInstanceLaunchSpecification()
 {
   *this = xmlNode;
 }
@@ -54,80 +34,91 @@ ImportInstanceLaunchSpecification& ImportInstanceLaunchSpecification::operator =
     XmlNode architectureNode = resultNode.FirstChild("architecture");
     if(!architectureNode.IsNull())
     {
-      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(architectureNode.GetText()).c_str()).c_str());
+      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(architectureNode.GetText()).c_str()));
       m_architectureHasBeenSet = true;
+       m_architectureHasBeenSet = true;
     }
     XmlNode groupNamesNode = resultNode.FirstChild("GroupName");
     if(!groupNamesNode.IsNull())
     {
       XmlNode groupNamesMember = groupNamesNode.FirstChild("SecurityGroup");
+      m_groupNamesHasBeenSet = !groupNamesMember.IsNull();
       while(!groupNamesMember.IsNull())
       {
         m_groupNames.push_back(groupNamesMember.GetText());
         groupNamesMember = groupNamesMember.NextNode("SecurityGroup");
       }
 
-      m_groupNamesHasBeenSet = true;
+       m_groupNamesHasBeenSet = true;
     }
     XmlNode groupIdsNode = resultNode.FirstChild("GroupId");
     if(!groupIdsNode.IsNull())
     {
       XmlNode groupIdsMember = groupIdsNode.FirstChild("SecurityGroupId");
+      m_groupIdsHasBeenSet = !groupIdsMember.IsNull();
       while(!groupIdsMember.IsNull())
       {
         m_groupIds.push_back(groupIdsMember.GetText());
         groupIdsMember = groupIdsMember.NextNode("SecurityGroupId");
       }
 
-      m_groupIdsHasBeenSet = true;
+       m_groupIdsHasBeenSet = true;
     }
     XmlNode additionalInfoNode = resultNode.FirstChild("additionalInfo");
     if(!additionalInfoNode.IsNull())
     {
       m_additionalInfo = Aws::Utils::Xml::DecodeEscapedXmlText(additionalInfoNode.GetText());
       m_additionalInfoHasBeenSet = true;
+       m_additionalInfoHasBeenSet = true;
     }
     XmlNode userDataNode = resultNode.FirstChild("userData");
     if(!userDataNode.IsNull())
     {
       m_userData = userDataNode;
       m_userDataHasBeenSet = true;
+       m_userDataHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode placementNode = resultNode.FirstChild("placement");
     if(!placementNode.IsNull())
     {
       m_placement = placementNode;
       m_placementHasBeenSet = true;
+       m_placementHasBeenSet = true;
     }
     XmlNode monitoringNode = resultNode.FirstChild("monitoring");
     if(!monitoringNode.IsNull())
     {
       m_monitoring = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(monitoringNode.GetText()).c_str()).c_str());
       m_monitoringHasBeenSet = true;
+       m_monitoringHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode instanceInitiatedShutdownBehaviorNode = resultNode.FirstChild("instanceInitiatedShutdownBehavior");
     if(!instanceInitiatedShutdownBehaviorNode.IsNull())
     {
-      m_instanceInitiatedShutdownBehavior = ShutdownBehaviorMapper::GetShutdownBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInitiatedShutdownBehaviorNode.GetText()).c_str()).c_str());
+      m_instanceInitiatedShutdownBehavior = ShutdownBehaviorMapper::GetShutdownBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInitiatedShutdownBehaviorNode.GetText()).c_str()));
       m_instanceInitiatedShutdownBehaviorHasBeenSet = true;
+       m_instanceInitiatedShutdownBehaviorHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
       m_privateIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpAddressNode.GetText());
       m_privateIpAddressHasBeenSet = true;
+       m_privateIpAddressHasBeenSet = true;
     }
   }
 

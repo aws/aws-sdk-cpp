@@ -12,12 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDisassociateScramSecretRequest::BatchDisassociateScramSecretRequest() : 
-    m_clusterArnHasBeenSet(false),
-    m_secretArnListHasBeenSet(false)
-{
-}
-
 Aws::String BatchDisassociateScramSecretRequest::SerializePayload() const
 {
   JsonValue payload;

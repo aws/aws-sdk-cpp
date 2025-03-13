@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetDataQualityResultRequest::BatchGetDataQualityResultRequest() : 
-    m_resultIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetDataQualityResultRequest::SerializePayload() const
 {
   JsonValue payload;

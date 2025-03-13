@@ -20,16 +20,7 @@ namespace Route53
 namespace Model
 {
 
-HealthCheckObservation::HealthCheckObservation() : 
-    m_region(HealthCheckRegion::NOT_SET),
-    m_regionHasBeenSet(false),
-    m_iPAddressHasBeenSet(false),
-    m_statusReportHasBeenSet(false)
-{
-}
-
 HealthCheckObservation::HealthCheckObservation(const XmlNode& xmlNode)
-  : HealthCheckObservation()
 {
   *this = xmlNode;
 }
@@ -43,20 +34,23 @@ HealthCheckObservation& HealthCheckObservation::operator =(const XmlNode& xmlNod
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
-      m_region = HealthCheckRegionMapper::GetHealthCheckRegionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText()).c_str()).c_str());
+      m_region = HealthCheckRegionMapper::GetHealthCheckRegionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText()).c_str()));
       m_regionHasBeenSet = true;
+       m_regionHasBeenSet = true;
     }
     XmlNode iPAddressNode = resultNode.FirstChild("IPAddress");
     if(!iPAddressNode.IsNull())
     {
       m_iPAddress = Aws::Utils::Xml::DecodeEscapedXmlText(iPAddressNode.GetText());
       m_iPAddressHasBeenSet = true;
+       m_iPAddressHasBeenSet = true;
     }
     XmlNode statusReportNode = resultNode.FirstChild("StatusReport");
     if(!statusReportNode.IsNull())
     {
       m_statusReport = statusReportNode;
       m_statusReportHasBeenSet = true;
+       m_statusReportHasBeenSet = true;
     }
   }
 

@@ -33,7 +33,7 @@ namespace Model
   class DataCatalogEncryptionSettings
   {
   public:
-    AWS_GLUE_API DataCatalogEncryptionSettings();
+    AWS_GLUE_API DataCatalogEncryptionSettings() = default;
     AWS_GLUE_API DataCatalogEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DataCatalogEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
      */
-    inline const EncryptionAtRest& GetEncryptionAtRest() const{ return m_encryptionAtRest; }
+    inline const EncryptionAtRest& GetEncryptionAtRest() const { return m_encryptionAtRest; }
     inline bool EncryptionAtRestHasBeenSet() const { return m_encryptionAtRestHasBeenSet; }
-    inline void SetEncryptionAtRest(const EncryptionAtRest& value) { m_encryptionAtRestHasBeenSet = true; m_encryptionAtRest = value; }
-    inline void SetEncryptionAtRest(EncryptionAtRest&& value) { m_encryptionAtRestHasBeenSet = true; m_encryptionAtRest = std::move(value); }
-    inline DataCatalogEncryptionSettings& WithEncryptionAtRest(const EncryptionAtRest& value) { SetEncryptionAtRest(value); return *this;}
-    inline DataCatalogEncryptionSettings& WithEncryptionAtRest(EncryptionAtRest&& value) { SetEncryptionAtRest(std::move(value)); return *this;}
+    template<typename EncryptionAtRestT = EncryptionAtRest>
+    void SetEncryptionAtRest(EncryptionAtRestT&& value) { m_encryptionAtRestHasBeenSet = true; m_encryptionAtRest = std::forward<EncryptionAtRestT>(value); }
+    template<typename EncryptionAtRestT = EncryptionAtRest>
+    DataCatalogEncryptionSettings& WithEncryptionAtRest(EncryptionAtRestT&& value) { SetEncryptionAtRest(std::forward<EncryptionAtRestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can
      * enable catalog encryption or only password encryption.</p>
      */
-    inline const ConnectionPasswordEncryption& GetConnectionPasswordEncryption() const{ return m_connectionPasswordEncryption; }
+    inline const ConnectionPasswordEncryption& GetConnectionPasswordEncryption() const { return m_connectionPasswordEncryption; }
     inline bool ConnectionPasswordEncryptionHasBeenSet() const { return m_connectionPasswordEncryptionHasBeenSet; }
-    inline void SetConnectionPasswordEncryption(const ConnectionPasswordEncryption& value) { m_connectionPasswordEncryptionHasBeenSet = true; m_connectionPasswordEncryption = value; }
-    inline void SetConnectionPasswordEncryption(ConnectionPasswordEncryption&& value) { m_connectionPasswordEncryptionHasBeenSet = true; m_connectionPasswordEncryption = std::move(value); }
-    inline DataCatalogEncryptionSettings& WithConnectionPasswordEncryption(const ConnectionPasswordEncryption& value) { SetConnectionPasswordEncryption(value); return *this;}
-    inline DataCatalogEncryptionSettings& WithConnectionPasswordEncryption(ConnectionPasswordEncryption&& value) { SetConnectionPasswordEncryption(std::move(value)); return *this;}
+    template<typename ConnectionPasswordEncryptionT = ConnectionPasswordEncryption>
+    void SetConnectionPasswordEncryption(ConnectionPasswordEncryptionT&& value) { m_connectionPasswordEncryptionHasBeenSet = true; m_connectionPasswordEncryption = std::forward<ConnectionPasswordEncryptionT>(value); }
+    template<typename ConnectionPasswordEncryptionT = ConnectionPasswordEncryption>
+    DataCatalogEncryptionSettings& WithConnectionPasswordEncryption(ConnectionPasswordEncryptionT&& value) { SetConnectionPasswordEncryption(std::forward<ConnectionPasswordEncryptionT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,22 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TreeMapConfiguration::TreeMapConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_groupLabelOptionsHasBeenSet(false),
-    m_sizeLabelOptionsHasBeenSet(false),
-    m_colorLabelOptionsHasBeenSet(false),
-    m_colorScaleHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 TreeMapConfiguration::TreeMapConfiguration(JsonView jsonValue)
-  : TreeMapConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ TreeMapConfiguration& TreeMapConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupLabelOptions"))
   {
     m_groupLabelOptions = jsonValue.GetObject("GroupLabelOptions");
-
     m_groupLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeLabelOptions"))
   {
     m_sizeLabelOptions = jsonValue.GetObject("SizeLabelOptions");
-
     m_sizeLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorLabelOptions"))
   {
     m_colorLabelOptions = jsonValue.GetObject("ColorLabelOptions");
-
     m_colorLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorScale"))
   {
     m_colorScale = jsonValue.GetObject("ColorScale");
-
     m_colorScaleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Legend"))
   {
     m_legend = jsonValue.GetObject("Legend");
-
     m_legendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataLabels"))
   {
     m_dataLabels = jsonValue.GetObject("DataLabels");
-
     m_dataLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tooltip"))
   {
     m_tooltip = jsonValue.GetObject("Tooltip");
-
     m_tooltipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

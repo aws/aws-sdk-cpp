@@ -28,7 +28,7 @@ namespace Model
   class CreateClassificationJobRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API CreateClassificationJobRequest();
+    AWS_MACIE2_API CreateClassificationJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,15 +44,14 @@ namespace Model
      * <p>An array of unique identifiers, one for each allow list for the job to use
      * when it analyzes data.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowListIds() const{ return m_allowListIds; }
+    inline const Aws::Vector<Aws::String>& GetAllowListIds() const { return m_allowListIds; }
     inline bool AllowListIdsHasBeenSet() const { return m_allowListIdsHasBeenSet; }
-    inline void SetAllowListIds(const Aws::Vector<Aws::String>& value) { m_allowListIdsHasBeenSet = true; m_allowListIds = value; }
-    inline void SetAllowListIds(Aws::Vector<Aws::String>&& value) { m_allowListIdsHasBeenSet = true; m_allowListIds = std::move(value); }
-    inline CreateClassificationJobRequest& WithAllowListIds(const Aws::Vector<Aws::String>& value) { SetAllowListIds(value); return *this;}
-    inline CreateClassificationJobRequest& WithAllowListIds(Aws::Vector<Aws::String>&& value) { SetAllowListIds(std::move(value)); return *this;}
-    inline CreateClassificationJobRequest& AddAllowListIds(const Aws::String& value) { m_allowListIdsHasBeenSet = true; m_allowListIds.push_back(value); return *this; }
-    inline CreateClassificationJobRequest& AddAllowListIds(Aws::String&& value) { m_allowListIdsHasBeenSet = true; m_allowListIds.push_back(std::move(value)); return *this; }
-    inline CreateClassificationJobRequest& AddAllowListIds(const char* value) { m_allowListIdsHasBeenSet = true; m_allowListIds.push_back(value); return *this; }
+    template<typename AllowListIdsT = Aws::Vector<Aws::String>>
+    void SetAllowListIds(AllowListIdsT&& value) { m_allowListIdsHasBeenSet = true; m_allowListIds = std::forward<AllowListIdsT>(value); }
+    template<typename AllowListIdsT = Aws::Vector<Aws::String>>
+    CreateClassificationJobRequest& WithAllowListIds(AllowListIdsT&& value) { SetAllowListIds(std::forward<AllowListIdsT>(value)); return *this;}
+    template<typename AllowListIdsT = Aws::String>
+    CreateClassificationJobRequest& AddAllowListIds(AllowListIdsT&& value) { m_allowListIdsHasBeenSet = true; m_allowListIds.emplace_back(std::forward<AllowListIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +59,12 @@ namespace Model
      * <p>A unique, case-sensitive token that you provide to ensure the idempotency of
      * the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateClassificationJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateClassificationJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateClassificationJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateClassificationJobRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,15 +74,14 @@ namespace Model
      * specify a value for this property and specify a value other than NONE for the
      * managedDataIdentifierSelector property.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCustomDataIdentifierIds() const{ return m_customDataIdentifierIds; }
+    inline const Aws::Vector<Aws::String>& GetCustomDataIdentifierIds() const { return m_customDataIdentifierIds; }
     inline bool CustomDataIdentifierIdsHasBeenSet() const { return m_customDataIdentifierIdsHasBeenSet; }
-    inline void SetCustomDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds = value; }
-    inline void SetCustomDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds = std::move(value); }
-    inline CreateClassificationJobRequest& WithCustomDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetCustomDataIdentifierIds(value); return *this;}
-    inline CreateClassificationJobRequest& WithCustomDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetCustomDataIdentifierIds(std::move(value)); return *this;}
-    inline CreateClassificationJobRequest& AddCustomDataIdentifierIds(const Aws::String& value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds.push_back(value); return *this; }
-    inline CreateClassificationJobRequest& AddCustomDataIdentifierIds(Aws::String&& value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds.push_back(std::move(value)); return *this; }
-    inline CreateClassificationJobRequest& AddCustomDataIdentifierIds(const char* value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds.push_back(value); return *this; }
+    template<typename CustomDataIdentifierIdsT = Aws::Vector<Aws::String>>
+    void SetCustomDataIdentifierIds(CustomDataIdentifierIdsT&& value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds = std::forward<CustomDataIdentifierIdsT>(value); }
+    template<typename CustomDataIdentifierIdsT = Aws::Vector<Aws::String>>
+    CreateClassificationJobRequest& WithCustomDataIdentifierIds(CustomDataIdentifierIdsT&& value) { SetCustomDataIdentifierIds(std::forward<CustomDataIdentifierIdsT>(value)); return *this;}
+    template<typename CustomDataIdentifierIdsT = Aws::String>
+    CreateClassificationJobRequest& AddCustomDataIdentifierIds(CustomDataIdentifierIdsT&& value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds.emplace_back(std::forward<CustomDataIdentifierIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -93,14 +89,12 @@ namespace Model
      * <p>A custom description of the job. The description can contain as many as 200
      * characters.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateClassificationJobRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateClassificationJobRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateClassificationJobRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateClassificationJobRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,7 +105,7 @@ namespace Model
      * job's first scheduled run, set this value to false.</p> <p>If you configure the
      * job to run only once, don't specify a value for this property.</p>
      */
-    inline bool GetInitialRun() const{ return m_initialRun; }
+    inline bool GetInitialRun() const { return m_initialRun; }
     inline bool InitialRunHasBeenSet() const { return m_initialRunHasBeenSet; }
     inline void SetInitialRun(bool value) { m_initialRunHasBeenSet = true; m_initialRun = value; }
     inline CreateClassificationJobRequest& WithInitialRun(bool value) { SetInitialRun(value); return *this;}
@@ -125,12 +119,10 @@ namespace Model
      * weekly, or monthly basis. If you specify this value, use the scheduleFrequency
      * property to specify the recurrence pattern for the job.</p></li></ul>
      */
-    inline const JobType& GetJobType() const{ return m_jobType; }
+    inline JobType GetJobType() const { return m_jobType; }
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
-    inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
-    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
-    inline CreateClassificationJobRequest& WithJobType(const JobType& value) { SetJobType(value); return *this;}
-    inline CreateClassificationJobRequest& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+    inline void SetJobType(JobType value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline CreateClassificationJobRequest& WithJobType(JobType value) { SetJobType(value); return *this;}
     ///@}
 
     ///@{
@@ -141,15 +133,14 @@ namespace Model
      * for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid
      * values for this property, use the ListManagedDataIdentifiers operation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetManagedDataIdentifierIds() const{ return m_managedDataIdentifierIds; }
+    inline const Aws::Vector<Aws::String>& GetManagedDataIdentifierIds() const { return m_managedDataIdentifierIds; }
     inline bool ManagedDataIdentifierIdsHasBeenSet() const { return m_managedDataIdentifierIdsHasBeenSet; }
-    inline void SetManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = value; }
-    inline void SetManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = std::move(value); }
-    inline CreateClassificationJobRequest& WithManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetManagedDataIdentifierIds(value); return *this;}
-    inline CreateClassificationJobRequest& WithManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetManagedDataIdentifierIds(std::move(value)); return *this;}
-    inline CreateClassificationJobRequest& AddManagedDataIdentifierIds(const Aws::String& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(value); return *this; }
-    inline CreateClassificationJobRequest& AddManagedDataIdentifierIds(Aws::String&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(std::move(value)); return *this; }
-    inline CreateClassificationJobRequest& AddManagedDataIdentifierIds(const char* value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(value); return *this; }
+    template<typename ManagedDataIdentifierIdsT = Aws::Vector<Aws::String>>
+    void SetManagedDataIdentifierIds(ManagedDataIdentifierIdsT&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = std::forward<ManagedDataIdentifierIdsT>(value); }
+    template<typename ManagedDataIdentifierIdsT = Aws::Vector<Aws::String>>
+    CreateClassificationJobRequest& WithManagedDataIdentifierIds(ManagedDataIdentifierIdsT&& value) { SetManagedDataIdentifierIds(std::forward<ManagedDataIdentifierIdsT>(value)); return *this;}
+    template<typename ManagedDataIdentifierIdsT = Aws::String>
+    CreateClassificationJobRequest& AddManagedDataIdentifierIds(ManagedDataIdentifierIdsT&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.emplace_back(std::forward<ManagedDataIdentifierIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -180,12 +171,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
      * managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
      */
-    inline const ManagedDataIdentifierSelector& GetManagedDataIdentifierSelector() const{ return m_managedDataIdentifierSelector; }
+    inline ManagedDataIdentifierSelector GetManagedDataIdentifierSelector() const { return m_managedDataIdentifierSelector; }
     inline bool ManagedDataIdentifierSelectorHasBeenSet() const { return m_managedDataIdentifierSelectorHasBeenSet; }
-    inline void SetManagedDataIdentifierSelector(const ManagedDataIdentifierSelector& value) { m_managedDataIdentifierSelectorHasBeenSet = true; m_managedDataIdentifierSelector = value; }
-    inline void SetManagedDataIdentifierSelector(ManagedDataIdentifierSelector&& value) { m_managedDataIdentifierSelectorHasBeenSet = true; m_managedDataIdentifierSelector = std::move(value); }
-    inline CreateClassificationJobRequest& WithManagedDataIdentifierSelector(const ManagedDataIdentifierSelector& value) { SetManagedDataIdentifierSelector(value); return *this;}
-    inline CreateClassificationJobRequest& WithManagedDataIdentifierSelector(ManagedDataIdentifierSelector&& value) { SetManagedDataIdentifierSelector(std::move(value)); return *this;}
+    inline void SetManagedDataIdentifierSelector(ManagedDataIdentifierSelector value) { m_managedDataIdentifierSelectorHasBeenSet = true; m_managedDataIdentifierSelector = value; }
+    inline CreateClassificationJobRequest& WithManagedDataIdentifierSelector(ManagedDataIdentifierSelector value) { SetManagedDataIdentifierSelector(value); return *this;}
     ///@}
 
     ///@{
@@ -193,14 +182,12 @@ namespace Model
      * <p>A custom name for the job. The name can contain as many as 500
      * characters.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateClassificationJobRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateClassificationJobRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateClassificationJobRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateClassificationJobRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -208,12 +195,12 @@ namespace Model
      * <p>The S3 buckets that contain the objects to analyze, and the scope of that
      * analysis.</p>
      */
-    inline const S3JobDefinition& GetS3JobDefinition() const{ return m_s3JobDefinition; }
+    inline const S3JobDefinition& GetS3JobDefinition() const { return m_s3JobDefinition; }
     inline bool S3JobDefinitionHasBeenSet() const { return m_s3JobDefinitionHasBeenSet; }
-    inline void SetS3JobDefinition(const S3JobDefinition& value) { m_s3JobDefinitionHasBeenSet = true; m_s3JobDefinition = value; }
-    inline void SetS3JobDefinition(S3JobDefinition&& value) { m_s3JobDefinitionHasBeenSet = true; m_s3JobDefinition = std::move(value); }
-    inline CreateClassificationJobRequest& WithS3JobDefinition(const S3JobDefinition& value) { SetS3JobDefinition(value); return *this;}
-    inline CreateClassificationJobRequest& WithS3JobDefinition(S3JobDefinition&& value) { SetS3JobDefinition(std::move(value)); return *this;}
+    template<typename S3JobDefinitionT = S3JobDefinition>
+    void SetS3JobDefinition(S3JobDefinitionT&& value) { m_s3JobDefinitionHasBeenSet = true; m_s3JobDefinition = std::forward<S3JobDefinitionT>(value); }
+    template<typename S3JobDefinitionT = S3JobDefinition>
+    CreateClassificationJobRequest& WithS3JobDefinition(S3JobDefinitionT&& value) { SetS3JobDefinition(std::forward<S3JobDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,7 +211,7 @@ namespace Model
      * analyze at random, up to the specified percentage, and analyzes all the data in
      * those objects.</p>
      */
-    inline int GetSamplingPercentage() const{ return m_samplingPercentage; }
+    inline int GetSamplingPercentage() const { return m_samplingPercentage; }
     inline bool SamplingPercentageHasBeenSet() const { return m_samplingPercentageHasBeenSet; }
     inline void SetSamplingPercentage(int value) { m_samplingPercentageHasBeenSet = true; m_samplingPercentage = value; }
     inline CreateClassificationJobRequest& WithSamplingPercentage(int value) { SetSamplingPercentage(value); return *this;}
@@ -236,12 +223,12 @@ namespace Model
      * specify a value for this property and set the value for the jobType property to
      * ONE_TIME.</p>
      */
-    inline const JobScheduleFrequency& GetScheduleFrequency() const{ return m_scheduleFrequency; }
+    inline const JobScheduleFrequency& GetScheduleFrequency() const { return m_scheduleFrequency; }
     inline bool ScheduleFrequencyHasBeenSet() const { return m_scheduleFrequencyHasBeenSet; }
-    inline void SetScheduleFrequency(const JobScheduleFrequency& value) { m_scheduleFrequencyHasBeenSet = true; m_scheduleFrequency = value; }
-    inline void SetScheduleFrequency(JobScheduleFrequency&& value) { m_scheduleFrequencyHasBeenSet = true; m_scheduleFrequency = std::move(value); }
-    inline CreateClassificationJobRequest& WithScheduleFrequency(const JobScheduleFrequency& value) { SetScheduleFrequency(value); return *this;}
-    inline CreateClassificationJobRequest& WithScheduleFrequency(JobScheduleFrequency&& value) { SetScheduleFrequency(std::move(value)); return *this;}
+    template<typename ScheduleFrequencyT = JobScheduleFrequency>
+    void SetScheduleFrequency(ScheduleFrequencyT&& value) { m_scheduleFrequencyHasBeenSet = true; m_scheduleFrequency = std::forward<ScheduleFrequencyT>(value); }
+    template<typename ScheduleFrequencyT = JobScheduleFrequency>
+    CreateClassificationJobRequest& WithScheduleFrequency(ScheduleFrequencyT&& value) { SetScheduleFrequency(std::forward<ScheduleFrequencyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -251,19 +238,16 @@ namespace Model
      * and an associated tag value. The maximum length of a tag key is 128 characters.
      * The maximum length of a tag value is 256 characters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateClassificationJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateClassificationJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateClassificationJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateClassificationJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateClassificationJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateClassificationJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateClassificationJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateClassificationJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateClassificationJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateClassificationJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateClassificationJobRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -279,16 +263,16 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_initialRun;
+    bool m_initialRun{false};
     bool m_initialRunHasBeenSet = false;
 
-    JobType m_jobType;
+    JobType m_jobType{JobType::NOT_SET};
     bool m_jobTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_managedDataIdentifierIds;
     bool m_managedDataIdentifierIdsHasBeenSet = false;
 
-    ManagedDataIdentifierSelector m_managedDataIdentifierSelector;
+    ManagedDataIdentifierSelector m_managedDataIdentifierSelector{ManagedDataIdentifierSelector::NOT_SET};
     bool m_managedDataIdentifierSelectorHasBeenSet = false;
 
     Aws::String m_name;
@@ -297,7 +281,7 @@ namespace Model
     S3JobDefinition m_s3JobDefinition;
     bool m_s3JobDefinitionHasBeenSet = false;
 
-    int m_samplingPercentage;
+    int m_samplingPercentage{0};
     bool m_samplingPercentageHasBeenSet = false;
 
     JobScheduleFrequency m_scheduleFrequency;

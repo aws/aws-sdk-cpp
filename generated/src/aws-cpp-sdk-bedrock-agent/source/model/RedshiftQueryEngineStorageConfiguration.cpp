@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RedshiftQueryEngineStorageConfiguration::RedshiftQueryEngineStorageConfiguration() : 
-    m_awsDataCatalogConfigurationHasBeenSet(false),
-    m_redshiftConfigurationHasBeenSet(false),
-    m_type(RedshiftQueryEngineStorageType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RedshiftQueryEngineStorageConfiguration::RedshiftQueryEngineStorageConfiguration(JsonView jsonValue)
-  : RedshiftQueryEngineStorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RedshiftQueryEngineStorageConfiguration& RedshiftQueryEngineStorageConfiguration
   if(jsonValue.ValueExists("awsDataCatalogConfiguration"))
   {
     m_awsDataCatalogConfiguration = jsonValue.GetObject("awsDataCatalogConfiguration");
-
     m_awsDataCatalogConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redshiftConfiguration"))
   {
     m_redshiftConfiguration = jsonValue.GetObject("redshiftConfiguration");
-
     m_redshiftConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RedshiftQueryEngineStorageTypeMapper::GetRedshiftQueryEngineStorageTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class InstanceResizePolicy
   {
   public:
-    AWS_EMR_API InstanceResizePolicy();
+    AWS_EMR_API InstanceResizePolicy() = default;
     AWS_EMR_API InstanceResizePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API InstanceResizePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * <p>Specific list of instances to be terminated when shrinking an instance
      * group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstancesToTerminate() const{ return m_instancesToTerminate; }
+    inline const Aws::Vector<Aws::String>& GetInstancesToTerminate() const { return m_instancesToTerminate; }
     inline bool InstancesToTerminateHasBeenSet() const { return m_instancesToTerminateHasBeenSet; }
-    inline void SetInstancesToTerminate(const Aws::Vector<Aws::String>& value) { m_instancesToTerminateHasBeenSet = true; m_instancesToTerminate = value; }
-    inline void SetInstancesToTerminate(Aws::Vector<Aws::String>&& value) { m_instancesToTerminateHasBeenSet = true; m_instancesToTerminate = std::move(value); }
-    inline InstanceResizePolicy& WithInstancesToTerminate(const Aws::Vector<Aws::String>& value) { SetInstancesToTerminate(value); return *this;}
-    inline InstanceResizePolicy& WithInstancesToTerminate(Aws::Vector<Aws::String>&& value) { SetInstancesToTerminate(std::move(value)); return *this;}
-    inline InstanceResizePolicy& AddInstancesToTerminate(const Aws::String& value) { m_instancesToTerminateHasBeenSet = true; m_instancesToTerminate.push_back(value); return *this; }
-    inline InstanceResizePolicy& AddInstancesToTerminate(Aws::String&& value) { m_instancesToTerminateHasBeenSet = true; m_instancesToTerminate.push_back(std::move(value)); return *this; }
-    inline InstanceResizePolicy& AddInstancesToTerminate(const char* value) { m_instancesToTerminateHasBeenSet = true; m_instancesToTerminate.push_back(value); return *this; }
+    template<typename InstancesToTerminateT = Aws::Vector<Aws::String>>
+    void SetInstancesToTerminate(InstancesToTerminateT&& value) { m_instancesToTerminateHasBeenSet = true; m_instancesToTerminate = std::forward<InstancesToTerminateT>(value); }
+    template<typename InstancesToTerminateT = Aws::Vector<Aws::String>>
+    InstanceResizePolicy& WithInstancesToTerminate(InstancesToTerminateT&& value) { SetInstancesToTerminate(std::forward<InstancesToTerminateT>(value)); return *this;}
+    template<typename InstancesToTerminateT = Aws::String>
+    InstanceResizePolicy& AddInstancesToTerminate(InstancesToTerminateT&& value) { m_instancesToTerminateHasBeenSet = true; m_instancesToTerminate.emplace_back(std::forward<InstancesToTerminateT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,15 +60,14 @@ namespace Model
      * <p>Specific list of instances to be protected when shrinking an instance
      * group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstancesToProtect() const{ return m_instancesToProtect; }
+    inline const Aws::Vector<Aws::String>& GetInstancesToProtect() const { return m_instancesToProtect; }
     inline bool InstancesToProtectHasBeenSet() const { return m_instancesToProtectHasBeenSet; }
-    inline void SetInstancesToProtect(const Aws::Vector<Aws::String>& value) { m_instancesToProtectHasBeenSet = true; m_instancesToProtect = value; }
-    inline void SetInstancesToProtect(Aws::Vector<Aws::String>&& value) { m_instancesToProtectHasBeenSet = true; m_instancesToProtect = std::move(value); }
-    inline InstanceResizePolicy& WithInstancesToProtect(const Aws::Vector<Aws::String>& value) { SetInstancesToProtect(value); return *this;}
-    inline InstanceResizePolicy& WithInstancesToProtect(Aws::Vector<Aws::String>&& value) { SetInstancesToProtect(std::move(value)); return *this;}
-    inline InstanceResizePolicy& AddInstancesToProtect(const Aws::String& value) { m_instancesToProtectHasBeenSet = true; m_instancesToProtect.push_back(value); return *this; }
-    inline InstanceResizePolicy& AddInstancesToProtect(Aws::String&& value) { m_instancesToProtectHasBeenSet = true; m_instancesToProtect.push_back(std::move(value)); return *this; }
-    inline InstanceResizePolicy& AddInstancesToProtect(const char* value) { m_instancesToProtectHasBeenSet = true; m_instancesToProtect.push_back(value); return *this; }
+    template<typename InstancesToProtectT = Aws::Vector<Aws::String>>
+    void SetInstancesToProtect(InstancesToProtectT&& value) { m_instancesToProtectHasBeenSet = true; m_instancesToProtect = std::forward<InstancesToProtectT>(value); }
+    template<typename InstancesToProtectT = Aws::Vector<Aws::String>>
+    InstanceResizePolicy& WithInstancesToProtect(InstancesToProtectT&& value) { SetInstancesToProtect(std::forward<InstancesToProtectT>(value)); return *this;}
+    template<typename InstancesToProtectT = Aws::String>
+    InstanceResizePolicy& AddInstancesToProtect(InstancesToProtectT&& value) { m_instancesToProtectHasBeenSet = true; m_instancesToProtect.emplace_back(std::forward<InstancesToProtectT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,7 +75,7 @@ namespace Model
      * <p>Decommissioning timeout override for the specific list of instances to be
      * terminated.</p>
      */
-    inline int GetInstanceTerminationTimeout() const{ return m_instanceTerminationTimeout; }
+    inline int GetInstanceTerminationTimeout() const { return m_instanceTerminationTimeout; }
     inline bool InstanceTerminationTimeoutHasBeenSet() const { return m_instanceTerminationTimeoutHasBeenSet; }
     inline void SetInstanceTerminationTimeout(int value) { m_instanceTerminationTimeoutHasBeenSet = true; m_instanceTerminationTimeout = value; }
     inline InstanceResizePolicy& WithInstanceTerminationTimeout(int value) { SetInstanceTerminationTimeout(value); return *this;}
@@ -90,7 +88,7 @@ namespace Model
     Aws::Vector<Aws::String> m_instancesToProtect;
     bool m_instancesToProtectHasBeenSet = false;
 
-    int m_instanceTerminationTimeout;
+    int m_instanceTerminationTimeout{0};
     bool m_instanceTerminationTimeoutHasBeenSet = false;
   };
 

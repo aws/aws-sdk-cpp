@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-EC2AccessDeniedException::EC2AccessDeniedException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 EC2AccessDeniedException::EC2AccessDeniedException(JsonView jsonValue)
-  : EC2AccessDeniedException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EC2AccessDeniedException& EC2AccessDeniedException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

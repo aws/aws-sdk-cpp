@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcEndpointConnection::VpcEndpointConnection() : 
-    m_serviceIdHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcEndpointOwnerHasBeenSet(false),
-    m_vpcEndpointState(State::NOT_SET),
-    m_vpcEndpointStateHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_dnsEntriesHasBeenSet(false),
-    m_networkLoadBalancerArnsHasBeenSet(false),
-    m_gatewayLoadBalancerArnsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_vpcEndpointConnectionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcEndpointRegionHasBeenSet(false)
-{
-}
-
 VpcEndpointConnection::VpcEndpointConnection(const XmlNode& xmlNode)
-  : VpcEndpointConnection()
 {
   *this = xmlNode;
 }
@@ -55,96 +36,108 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
     {
       m_serviceId = Aws::Utils::Xml::DecodeEscapedXmlText(serviceIdNode.GetText());
       m_serviceIdHasBeenSet = true;
+       m_serviceIdHasBeenSet = true;
     }
     XmlNode vpcEndpointIdNode = resultNode.FirstChild("vpcEndpointId");
     if(!vpcEndpointIdNode.IsNull())
     {
       m_vpcEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointIdNode.GetText());
       m_vpcEndpointIdHasBeenSet = true;
+       m_vpcEndpointIdHasBeenSet = true;
     }
     XmlNode vpcEndpointOwnerNode = resultNode.FirstChild("vpcEndpointOwner");
     if(!vpcEndpointOwnerNode.IsNull())
     {
       m_vpcEndpointOwner = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointOwnerNode.GetText());
       m_vpcEndpointOwnerHasBeenSet = true;
+       m_vpcEndpointOwnerHasBeenSet = true;
     }
     XmlNode vpcEndpointStateNode = resultNode.FirstChild("vpcEndpointState");
     if(!vpcEndpointStateNode.IsNull())
     {
-      m_vpcEndpointState = StateMapper::GetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointStateNode.GetText()).c_str()).c_str());
+      m_vpcEndpointState = StateMapper::GetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointStateNode.GetText()).c_str()));
       m_vpcEndpointStateHasBeenSet = true;
+       m_vpcEndpointStateHasBeenSet = true;
     }
     XmlNode creationTimestampNode = resultNode.FirstChild("creationTimestamp");
     if(!creationTimestampNode.IsNull())
     {
       m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimestampHasBeenSet = true;
+       m_creationTimestampHasBeenSet = true;
     }
     XmlNode dnsEntriesNode = resultNode.FirstChild("dnsEntrySet");
     if(!dnsEntriesNode.IsNull())
     {
       XmlNode dnsEntriesMember = dnsEntriesNode.FirstChild("item");
+      m_dnsEntriesHasBeenSet = !dnsEntriesMember.IsNull();
       while(!dnsEntriesMember.IsNull())
       {
         m_dnsEntries.push_back(dnsEntriesMember);
         dnsEntriesMember = dnsEntriesMember.NextNode("item");
       }
 
-      m_dnsEntriesHasBeenSet = true;
+       m_dnsEntriesHasBeenSet = true;
     }
     XmlNode networkLoadBalancerArnsNode = resultNode.FirstChild("networkLoadBalancerArnSet");
     if(!networkLoadBalancerArnsNode.IsNull())
     {
       XmlNode networkLoadBalancerArnsMember = networkLoadBalancerArnsNode.FirstChild("item");
+      m_networkLoadBalancerArnsHasBeenSet = !networkLoadBalancerArnsMember.IsNull();
       while(!networkLoadBalancerArnsMember.IsNull())
       {
         m_networkLoadBalancerArns.push_back(networkLoadBalancerArnsMember.GetText());
         networkLoadBalancerArnsMember = networkLoadBalancerArnsMember.NextNode("item");
       }
 
-      m_networkLoadBalancerArnsHasBeenSet = true;
+       m_networkLoadBalancerArnsHasBeenSet = true;
     }
     XmlNode gatewayLoadBalancerArnsNode = resultNode.FirstChild("gatewayLoadBalancerArnSet");
     if(!gatewayLoadBalancerArnsNode.IsNull())
     {
       XmlNode gatewayLoadBalancerArnsMember = gatewayLoadBalancerArnsNode.FirstChild("item");
+      m_gatewayLoadBalancerArnsHasBeenSet = !gatewayLoadBalancerArnsMember.IsNull();
       while(!gatewayLoadBalancerArnsMember.IsNull())
       {
         m_gatewayLoadBalancerArns.push_back(gatewayLoadBalancerArnsMember.GetText());
         gatewayLoadBalancerArnsMember = gatewayLoadBalancerArnsMember.NextNode("item");
       }
 
-      m_gatewayLoadBalancerArnsHasBeenSet = true;
+       m_gatewayLoadBalancerArnsHasBeenSet = true;
     }
     XmlNode ipAddressTypeNode = resultNode.FirstChild("ipAddressType");
     if(!ipAddressTypeNode.IsNull())
     {
-      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
       m_ipAddressTypeHasBeenSet = true;
+       m_ipAddressTypeHasBeenSet = true;
     }
     XmlNode vpcEndpointConnectionIdNode = resultNode.FirstChild("vpcEndpointConnectionId");
     if(!vpcEndpointConnectionIdNode.IsNull())
     {
       m_vpcEndpointConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointConnectionIdNode.GetText());
       m_vpcEndpointConnectionIdHasBeenSet = true;
+       m_vpcEndpointConnectionIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode vpcEndpointRegionNode = resultNode.FirstChild("vpcEndpointRegion");
     if(!vpcEndpointRegionNode.IsNull())
     {
       m_vpcEndpointRegion = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointRegionNode.GetText());
       m_vpcEndpointRegionHasBeenSet = true;
+       m_vpcEndpointRegionHasBeenSet = true;
     }
   }
 

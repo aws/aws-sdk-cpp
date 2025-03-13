@@ -18,19 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-WrappedKey::WrappedKey() : 
-    m_wrappingKeyArnHasBeenSet(false),
-    m_wrappedKeyMaterialFormat(WrappedKeyMaterialFormat::NOT_SET),
-    m_wrappedKeyMaterialFormatHasBeenSet(false),
-    m_keyMaterialHasBeenSet(false),
-    m_keyCheckValueHasBeenSet(false),
-    m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
-    m_keyCheckValueAlgorithmHasBeenSet(false)
-{
-}
-
 WrappedKey::WrappedKey(JsonView jsonValue)
-  : WrappedKey()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ WrappedKey& WrappedKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WrappingKeyArn"))
   {
     m_wrappingKeyArn = jsonValue.GetString("WrappingKeyArn");
-
     m_wrappingKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WrappedKeyMaterialFormat"))
   {
     m_wrappedKeyMaterialFormat = WrappedKeyMaterialFormatMapper::GetWrappedKeyMaterialFormatForName(jsonValue.GetString("WrappedKeyMaterialFormat"));
-
     m_wrappedKeyMaterialFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyMaterial"))
   {
     m_keyMaterial = jsonValue.GetString("KeyMaterial");
-
     m_keyMaterialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyCheckValue"))
   {
     m_keyCheckValue = jsonValue.GetString("KeyCheckValue");
-
     m_keyCheckValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyCheckValueAlgorithm"))
   {
     m_keyCheckValueAlgorithm = KeyCheckValueAlgorithmMapper::GetKeyCheckValueAlgorithmForName(jsonValue.GetString("KeyCheckValueAlgorithm"));
-
     m_keyCheckValueAlgorithmHasBeenSet = true;
   }
-
   return *this;
 }
 

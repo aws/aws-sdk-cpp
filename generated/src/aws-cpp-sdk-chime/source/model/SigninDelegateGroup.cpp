@@ -18,13 +18,7 @@ namespace Chime
 namespace Model
 {
 
-SigninDelegateGroup::SigninDelegateGroup() : 
-    m_groupNameHasBeenSet(false)
-{
-}
-
 SigninDelegateGroup::SigninDelegateGroup(JsonView jsonValue)
-  : SigninDelegateGroup()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SigninDelegateGroup& SigninDelegateGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

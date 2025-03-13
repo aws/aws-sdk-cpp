@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotLocaleHistoryEvent::BotLocaleHistoryEvent() : 
-    m_eventHasBeenSet(false),
-    m_eventDateHasBeenSet(false)
-{
-}
-
 BotLocaleHistoryEvent::BotLocaleHistoryEvent(JsonView jsonValue)
-  : BotLocaleHistoryEvent()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BotLocaleHistoryEvent& BotLocaleHistoryEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("event"))
   {
     m_event = jsonValue.GetString("event");
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventDate"))
   {
     m_eventDate = jsonValue.GetDouble("eventDate");
-
     m_eventDateHasBeenSet = true;
   }
-
   return *this;
 }
 

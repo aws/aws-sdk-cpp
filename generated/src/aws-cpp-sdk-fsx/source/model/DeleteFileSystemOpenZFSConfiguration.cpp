@@ -18,16 +18,7 @@ namespace FSx
 namespace Model
 {
 
-DeleteFileSystemOpenZFSConfiguration::DeleteFileSystemOpenZFSConfiguration() : 
-    m_skipFinalBackup(false),
-    m_skipFinalBackupHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 DeleteFileSystemOpenZFSConfiguration::DeleteFileSystemOpenZFSConfiguration(JsonView jsonValue)
-  : DeleteFileSystemOpenZFSConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ DeleteFileSystemOpenZFSConfiguration& DeleteFileSystemOpenZFSConfiguration::oper
   if(jsonValue.ValueExists("SkipFinalBackup"))
   {
     m_skipFinalBackup = jsonValue.GetBool("SkipFinalBackup");
-
     m_skipFinalBackupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FinalBackupTags"))
   {
     Aws::Utils::Array<JsonView> finalBackupTagsJsonList = jsonValue.GetArray("FinalBackupTags");
@@ -50,7 +39,6 @@ DeleteFileSystemOpenZFSConfiguration& DeleteFileSystemOpenZFSConfiguration::oper
     }
     m_finalBackupTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Options"))
   {
     Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("Options");
@@ -60,7 +48,6 @@ DeleteFileSystemOpenZFSConfiguration& DeleteFileSystemOpenZFSConfiguration::oper
     }
     m_optionsHasBeenSet = true;
   }
-
   return *this;
 }
 

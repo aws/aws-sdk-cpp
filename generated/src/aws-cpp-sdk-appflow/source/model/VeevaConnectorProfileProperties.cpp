@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-VeevaConnectorProfileProperties::VeevaConnectorProfileProperties() : 
-    m_instanceUrlHasBeenSet(false)
-{
-}
-
 VeevaConnectorProfileProperties::VeevaConnectorProfileProperties(JsonView jsonValue)
-  : VeevaConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VeevaConnectorProfileProperties& VeevaConnectorProfileProperties::operator =(Jso
   if(jsonValue.ValueExists("instanceUrl"))
   {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
-
     m_instanceUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

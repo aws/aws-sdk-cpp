@@ -18,25 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RuleSummary::RuleSummary() : 
-    m_action(RuleAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_ruleType(RuleType::NOT_SET),
-    m_ruleTypeHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_targetType(RuleTargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 RuleSummary::RuleSummary(JsonView jsonValue)
-  : RuleSummary()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ RuleSummary& RuleSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = RuleActionMapper::GetRuleActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedBy"))
   {
     m_lastUpdatedBy = jsonValue.GetString("lastUpdatedBy");
-
     m_lastUpdatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetString("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleType"))
   {
     m_ruleType = RuleTypeMapper::GetRuleTypeForName(jsonValue.GetString("ruleType"));
-
     m_ruleTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scope"))
   {
     m_scope = jsonValue.GetObject("scope");
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetObject("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetType"))
   {
     m_targetType = RuleTargetTypeMapper::GetRuleTargetTypeForName(jsonValue.GetString("targetType"));
-
     m_targetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

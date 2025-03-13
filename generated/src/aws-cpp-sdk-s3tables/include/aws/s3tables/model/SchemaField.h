@@ -31,7 +31,7 @@ namespace Model
   class SchemaField
   {
   public:
-    AWS_S3TABLES_API SchemaField();
+    AWS_S3TABLES_API SchemaField() = default;
     AWS_S3TABLES_API SchemaField(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API SchemaField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the field.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SchemaField& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SchemaField& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SchemaField& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SchemaField& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * href="https://iceberg.apache.org/spec/#primitive-types">Apache Iceberg
      * documentation</a>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline SchemaField& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline SchemaField& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline SchemaField& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    SchemaField& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +71,7 @@ namespace Model
      * in the field. If this is <code>true</code> the field does not allow null
      * values.</p>
      */
-    inline bool GetRequired() const{ return m_required; }
+    inline bool GetRequired() const { return m_required; }
     inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
     inline SchemaField& WithRequired(bool value) { SetRequired(value); return *this;}
@@ -88,7 +84,7 @@ namespace Model
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
 
-    bool m_required;
+    bool m_required{false};
     bool m_requiredHasBeenSet = false;
   };
 

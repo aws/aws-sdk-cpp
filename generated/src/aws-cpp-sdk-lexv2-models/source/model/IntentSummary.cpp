@@ -18,19 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-IntentSummary::IntentSummary() : 
-    m_intentIdHasBeenSet(false),
-    m_intentNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parentIntentSignatureHasBeenSet(false),
-    m_inputContextsHasBeenSet(false),
-    m_outputContextsHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
-{
-}
-
 IntentSummary::IntentSummary(JsonView jsonValue)
-  : IntentSummary()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ IntentSummary& IntentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("intentId"))
   {
     m_intentId = jsonValue.GetString("intentId");
-
     m_intentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
-
     m_intentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentIntentSignature"))
   {
     m_parentIntentSignature = jsonValue.GetString("parentIntentSignature");
-
     m_parentIntentSignatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputContexts"))
   {
     Aws::Utils::Array<JsonView> inputContextsJsonList = jsonValue.GetArray("inputContexts");
@@ -74,7 +54,6 @@ IntentSummary& IntentSummary::operator =(JsonView jsonValue)
     }
     m_inputContextsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputContexts"))
   {
     Aws::Utils::Array<JsonView> outputContextsJsonList = jsonValue.GetArray("outputContexts");
@@ -84,14 +63,11 @@ IntentSummary& IntentSummary::operator =(JsonView jsonValue)
     }
     m_outputContextsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

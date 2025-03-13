@@ -18,14 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeTargetSqsQueueParameters::PipeTargetSqsQueueParameters() : 
-    m_messageGroupIdHasBeenSet(false),
-    m_messageDeduplicationIdHasBeenSet(false)
-{
-}
-
 PipeTargetSqsQueueParameters::PipeTargetSqsQueueParameters(JsonView jsonValue)
-  : PipeTargetSqsQueueParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PipeTargetSqsQueueParameters& PipeTargetSqsQueueParameters::operator =(JsonView 
   if(jsonValue.ValueExists("MessageGroupId"))
   {
     m_messageGroupId = jsonValue.GetString("MessageGroupId");
-
     m_messageGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageDeduplicationId"))
   {
     m_messageDeduplicationId = jsonValue.GetString("MessageDeduplicationId");
-
     m_messageDeduplicationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

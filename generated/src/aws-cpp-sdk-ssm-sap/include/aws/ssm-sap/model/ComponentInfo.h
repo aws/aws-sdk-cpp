@@ -33,7 +33,7 @@ namespace Model
   class ComponentInfo
   {
   public:
-    AWS_SSMSAP_API ComponentInfo();
+    AWS_SSMSAP_API ComponentInfo() = default;
     AWS_SSMSAP_API ComponentInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API ComponentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>This string is the type of the component.</p> <p>Accepted value is
      * <code>WD</code>.</p>
      */
-    inline const ComponentType& GetComponentType() const{ return m_componentType; }
+    inline ComponentType GetComponentType() const { return m_componentType; }
     inline bool ComponentTypeHasBeenSet() const { return m_componentTypeHasBeenSet; }
-    inline void SetComponentType(const ComponentType& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
-    inline void SetComponentType(ComponentType&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
-    inline ComponentInfo& WithComponentType(const ComponentType& value) { SetComponentType(value); return *this;}
-    inline ComponentInfo& WithComponentType(ComponentType&& value) { SetComponentType(std::move(value)); return *this;}
+    inline void SetComponentType(ComponentType value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
+    inline ComponentInfo& WithComponentType(ComponentType value) { SetComponentType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>This string is the SAP System ID of the component.</p> <p>Accepted values are
      * alphanumeric.</p>
      */
-    inline const Aws::String& GetSid() const{ return m_sid; }
+    inline const Aws::String& GetSid() const { return m_sid; }
     inline bool SidHasBeenSet() const { return m_sidHasBeenSet; }
-    inline void SetSid(const Aws::String& value) { m_sidHasBeenSet = true; m_sid = value; }
-    inline void SetSid(Aws::String&& value) { m_sidHasBeenSet = true; m_sid = std::move(value); }
-    inline void SetSid(const char* value) { m_sidHasBeenSet = true; m_sid.assign(value); }
-    inline ComponentInfo& WithSid(const Aws::String& value) { SetSid(value); return *this;}
-    inline ComponentInfo& WithSid(Aws::String&& value) { SetSid(std::move(value)); return *this;}
-    inline ComponentInfo& WithSid(const char* value) { SetSid(value); return *this;}
+    template<typename SidT = Aws::String>
+    void SetSid(SidT&& value) { m_sidHasBeenSet = true; m_sid = std::forward<SidT>(value); }
+    template<typename SidT = Aws::String>
+    ComponentInfo& WithSid(SidT&& value) { SetSid(std::forward<SidT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,18 +68,16 @@ namespace Model
      * <p>This is the Amazon EC2 instance on which your SAP component is running.</p>
      * <p>Accepted values are alphanumeric.</p>
      */
-    inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
+    inline const Aws::String& GetEc2InstanceId() const { return m_ec2InstanceId; }
     inline bool Ec2InstanceIdHasBeenSet() const { return m_ec2InstanceIdHasBeenSet; }
-    inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
-    inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::move(value); }
-    inline void SetEc2InstanceId(const char* value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId.assign(value); }
-    inline ComponentInfo& WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
-    inline ComponentInfo& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(std::move(value)); return *this;}
-    inline ComponentInfo& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
+    template<typename Ec2InstanceIdT = Aws::String>
+    void SetEc2InstanceId(Ec2InstanceIdT&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::forward<Ec2InstanceIdT>(value); }
+    template<typename Ec2InstanceIdT = Aws::String>
+    ComponentInfo& WithEc2InstanceId(Ec2InstanceIdT&& value) { SetEc2InstanceId(std::forward<Ec2InstanceIdT>(value)); return *this;}
     ///@}
   private:
 
-    ComponentType m_componentType;
+    ComponentType m_componentType{ComponentType::NOT_SET};
     bool m_componentTypeHasBeenSet = false;
 
     Aws::String m_sid;

@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-InvalidSecurityGroupIDException::InvalidSecurityGroupIDException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InvalidSecurityGroupIDException::InvalidSecurityGroupIDException(JsonView jsonValue)
-  : InvalidSecurityGroupIDException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidSecurityGroupIDException& InvalidSecurityGroupIDException::operator =(Jso
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

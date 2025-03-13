@@ -28,7 +28,7 @@ namespace Model
   class DeleteBlueprintRequest : public BedrockDataAutomationRequest
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API DeleteBlueprintRequest();
+    AWS_BEDROCKDATAAUTOMATION_API DeleteBlueprintRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>ARN generated at the server side when a Blueprint is created</p>
      */
-    inline const Aws::String& GetBlueprintArn() const{ return m_blueprintArn; }
+    inline const Aws::String& GetBlueprintArn() const { return m_blueprintArn; }
     inline bool BlueprintArnHasBeenSet() const { return m_blueprintArnHasBeenSet; }
-    inline void SetBlueprintArn(const Aws::String& value) { m_blueprintArnHasBeenSet = true; m_blueprintArn = value; }
-    inline void SetBlueprintArn(Aws::String&& value) { m_blueprintArnHasBeenSet = true; m_blueprintArn = std::move(value); }
-    inline void SetBlueprintArn(const char* value) { m_blueprintArnHasBeenSet = true; m_blueprintArn.assign(value); }
-    inline DeleteBlueprintRequest& WithBlueprintArn(const Aws::String& value) { SetBlueprintArn(value); return *this;}
-    inline DeleteBlueprintRequest& WithBlueprintArn(Aws::String&& value) { SetBlueprintArn(std::move(value)); return *this;}
-    inline DeleteBlueprintRequest& WithBlueprintArn(const char* value) { SetBlueprintArn(value); return *this;}
+    template<typename BlueprintArnT = Aws::String>
+    void SetBlueprintArn(BlueprintArnT&& value) { m_blueprintArnHasBeenSet = true; m_blueprintArn = std::forward<BlueprintArnT>(value); }
+    template<typename BlueprintArnT = Aws::String>
+    DeleteBlueprintRequest& WithBlueprintArn(BlueprintArnT&& value) { SetBlueprintArn(std::forward<BlueprintArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Optional field to delete a specific Blueprint version</p>
      */
-    inline const Aws::String& GetBlueprintVersion() const{ return m_blueprintVersion; }
+    inline const Aws::String& GetBlueprintVersion() const { return m_blueprintVersion; }
     inline bool BlueprintVersionHasBeenSet() const { return m_blueprintVersionHasBeenSet; }
-    inline void SetBlueprintVersion(const Aws::String& value) { m_blueprintVersionHasBeenSet = true; m_blueprintVersion = value; }
-    inline void SetBlueprintVersion(Aws::String&& value) { m_blueprintVersionHasBeenSet = true; m_blueprintVersion = std::move(value); }
-    inline void SetBlueprintVersion(const char* value) { m_blueprintVersionHasBeenSet = true; m_blueprintVersion.assign(value); }
-    inline DeleteBlueprintRequest& WithBlueprintVersion(const Aws::String& value) { SetBlueprintVersion(value); return *this;}
-    inline DeleteBlueprintRequest& WithBlueprintVersion(Aws::String&& value) { SetBlueprintVersion(std::move(value)); return *this;}
-    inline DeleteBlueprintRequest& WithBlueprintVersion(const char* value) { SetBlueprintVersion(value); return *this;}
+    template<typename BlueprintVersionT = Aws::String>
+    void SetBlueprintVersion(BlueprintVersionT&& value) { m_blueprintVersionHasBeenSet = true; m_blueprintVersion = std::forward<BlueprintVersionT>(value); }
+    template<typename BlueprintVersionT = Aws::String>
+    DeleteBlueprintRequest& WithBlueprintVersion(BlueprintVersionT&& value) { SetBlueprintVersion(std::forward<BlueprintVersionT>(value)); return *this;}
     ///@}
   private:
 

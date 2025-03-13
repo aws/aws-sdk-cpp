@@ -19,15 +19,7 @@ namespace KMS
 namespace Model
 {
 
-RecipientInfo::RecipientInfo() : 
-    m_keyEncryptionAlgorithm(KeyEncryptionMechanism::NOT_SET),
-    m_keyEncryptionAlgorithmHasBeenSet(false),
-    m_attestationDocumentHasBeenSet(false)
-{
-}
-
 RecipientInfo::RecipientInfo(JsonView jsonValue)
-  : RecipientInfo()
 {
   *this = jsonValue;
 }
@@ -37,16 +29,13 @@ RecipientInfo& RecipientInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyEncryptionAlgorithm"))
   {
     m_keyEncryptionAlgorithm = KeyEncryptionMechanismMapper::GetKeyEncryptionMechanismForName(jsonValue.GetString("KeyEncryptionAlgorithm"));
-
     m_keyEncryptionAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttestationDocument"))
   {
     m_attestationDocument = HashingUtils::Base64Decode(jsonValue.GetString("AttestationDocument"));
     m_attestationDocumentHasBeenSet = true;
   }
-
   return *this;
 }
 

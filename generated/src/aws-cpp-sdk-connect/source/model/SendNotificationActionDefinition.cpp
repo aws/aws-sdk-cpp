@@ -18,19 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SendNotificationActionDefinition::SendNotificationActionDefinition() : 
-    m_deliveryMethod(NotificationDeliveryType::NOT_SET),
-    m_deliveryMethodHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_contentType(NotificationContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_recipientHasBeenSet(false)
-{
-}
-
 SendNotificationActionDefinition::SendNotificationActionDefinition(JsonView jsonValue)
-  : SendNotificationActionDefinition()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ SendNotificationActionDefinition& SendNotificationActionDefinition::operator =(J
   if(jsonValue.ValueExists("DeliveryMethod"))
   {
     m_deliveryMethod = NotificationDeliveryTypeMapper::GetNotificationDeliveryTypeForName(jsonValue.GetString("DeliveryMethod"));
-
     m_deliveryMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = NotificationContentTypeMapper::GetNotificationContentTypeForName(jsonValue.GetString("ContentType"));
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recipient"))
   {
     m_recipient = jsonValue.GetObject("Recipient");
-
     m_recipientHasBeenSet = true;
   }
-
   return *this;
 }
 

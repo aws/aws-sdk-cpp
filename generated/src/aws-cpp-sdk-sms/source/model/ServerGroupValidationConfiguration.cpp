@@ -18,14 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ServerGroupValidationConfiguration::ServerGroupValidationConfiguration() : 
-    m_serverGroupIdHasBeenSet(false),
-    m_serverValidationConfigurationsHasBeenSet(false)
-{
-}
-
 ServerGroupValidationConfiguration::ServerGroupValidationConfiguration(JsonView jsonValue)
-  : ServerGroupValidationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ServerGroupValidationConfiguration& ServerGroupValidationConfiguration::operator
   if(jsonValue.ValueExists("serverGroupId"))
   {
     m_serverGroupId = jsonValue.GetString("serverGroupId");
-
     m_serverGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverValidationConfigurations"))
   {
     Aws::Utils::Array<JsonView> serverValidationConfigurationsJsonList = jsonValue.GetArray("serverValidationConfigurations");
@@ -48,7 +39,6 @@ ServerGroupValidationConfiguration& ServerGroupValidationConfiguration::operator
     }
     m_serverValidationConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

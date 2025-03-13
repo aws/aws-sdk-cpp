@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-GuardrailEvent::GuardrailEvent() : 
-    m_action(GuadrailAction::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 GuardrailEvent::GuardrailEvent(JsonView jsonValue)
-  : GuardrailEvent()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GuardrailEvent& GuardrailEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = GuadrailActionMapper::GetGuadrailActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-VerifyOTPMessageRequestParameters::VerifyOTPMessageRequestParameters() : 
-    m_destinationIdentityHasBeenSet(false),
-    m_otpHasBeenSet(false),
-    m_referenceIdHasBeenSet(false)
-{
-}
-
 VerifyOTPMessageRequestParameters::VerifyOTPMessageRequestParameters(JsonView jsonValue)
-  : VerifyOTPMessageRequestParameters()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ VerifyOTPMessageRequestParameters& VerifyOTPMessageRequestParameters::operator =
   if(jsonValue.ValueExists("DestinationIdentity"))
   {
     m_destinationIdentity = jsonValue.GetString("DestinationIdentity");
-
     m_destinationIdentityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Otp"))
   {
     m_otp = jsonValue.GetString("Otp");
-
     m_otpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceId"))
   {
     m_referenceId = jsonValue.GetString("ReferenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

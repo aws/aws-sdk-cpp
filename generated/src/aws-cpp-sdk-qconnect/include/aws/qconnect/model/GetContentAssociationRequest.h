@@ -21,7 +21,7 @@ namespace Model
   class GetContentAssociationRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API GetContentAssociationRequest();
+    AWS_QCONNECT_API GetContentAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,42 +37,36 @@ namespace Model
      * <p>The identifier of the content association. Can be either the ID or the ARN.
      * URLs cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetContentAssociationId() const{ return m_contentAssociationId; }
+    inline const Aws::String& GetContentAssociationId() const { return m_contentAssociationId; }
     inline bool ContentAssociationIdHasBeenSet() const { return m_contentAssociationIdHasBeenSet; }
-    inline void SetContentAssociationId(const Aws::String& value) { m_contentAssociationIdHasBeenSet = true; m_contentAssociationId = value; }
-    inline void SetContentAssociationId(Aws::String&& value) { m_contentAssociationIdHasBeenSet = true; m_contentAssociationId = std::move(value); }
-    inline void SetContentAssociationId(const char* value) { m_contentAssociationIdHasBeenSet = true; m_contentAssociationId.assign(value); }
-    inline GetContentAssociationRequest& WithContentAssociationId(const Aws::String& value) { SetContentAssociationId(value); return *this;}
-    inline GetContentAssociationRequest& WithContentAssociationId(Aws::String&& value) { SetContentAssociationId(std::move(value)); return *this;}
-    inline GetContentAssociationRequest& WithContentAssociationId(const char* value) { SetContentAssociationId(value); return *this;}
+    template<typename ContentAssociationIdT = Aws::String>
+    void SetContentAssociationId(ContentAssociationIdT&& value) { m_contentAssociationIdHasBeenSet = true; m_contentAssociationId = std::forward<ContentAssociationIdT>(value); }
+    template<typename ContentAssociationIdT = Aws::String>
+    GetContentAssociationRequest& WithContentAssociationId(ContentAssociationIdT&& value) { SetContentAssociationId(std::forward<ContentAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the content.</p>
      */
-    inline const Aws::String& GetContentId() const{ return m_contentId; }
+    inline const Aws::String& GetContentId() const { return m_contentId; }
     inline bool ContentIdHasBeenSet() const { return m_contentIdHasBeenSet; }
-    inline void SetContentId(const Aws::String& value) { m_contentIdHasBeenSet = true; m_contentId = value; }
-    inline void SetContentId(Aws::String&& value) { m_contentIdHasBeenSet = true; m_contentId = std::move(value); }
-    inline void SetContentId(const char* value) { m_contentIdHasBeenSet = true; m_contentId.assign(value); }
-    inline GetContentAssociationRequest& WithContentId(const Aws::String& value) { SetContentId(value); return *this;}
-    inline GetContentAssociationRequest& WithContentId(Aws::String&& value) { SetContentId(std::move(value)); return *this;}
-    inline GetContentAssociationRequest& WithContentId(const char* value) { SetContentId(value); return *this;}
+    template<typename ContentIdT = Aws::String>
+    void SetContentId(ContentIdT&& value) { m_contentIdHasBeenSet = true; m_contentId = std::forward<ContentIdT>(value); }
+    template<typename ContentIdT = Aws::String>
+    GetContentAssociationRequest& WithContentId(ContentIdT&& value) { SetContentId(std::forward<ContentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the knowledge base.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-    inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-    inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-    inline GetContentAssociationRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-    inline GetContentAssociationRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-    inline GetContentAssociationRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    GetContentAssociationRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
   private:
 

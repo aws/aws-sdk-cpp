@@ -23,7 +23,7 @@ namespace Model
   class UpdateDataAccessorRequest : public QBusinessRequest
   {
   public:
-    AWS_QBUSINESS_API UpdateDataAccessorRequest();
+    AWS_QBUSINESS_API UpdateDataAccessorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The unique identifier of the Amazon Q Business application.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline UpdateDataAccessorRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline UpdateDataAccessorRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline UpdateDataAccessorRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    UpdateDataAccessorRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the data accessor to update.</p>
      */
-    inline const Aws::String& GetDataAccessorId() const{ return m_dataAccessorId; }
+    inline const Aws::String& GetDataAccessorId() const { return m_dataAccessorId; }
     inline bool DataAccessorIdHasBeenSet() const { return m_dataAccessorIdHasBeenSet; }
-    inline void SetDataAccessorId(const Aws::String& value) { m_dataAccessorIdHasBeenSet = true; m_dataAccessorId = value; }
-    inline void SetDataAccessorId(Aws::String&& value) { m_dataAccessorIdHasBeenSet = true; m_dataAccessorId = std::move(value); }
-    inline void SetDataAccessorId(const char* value) { m_dataAccessorIdHasBeenSet = true; m_dataAccessorId.assign(value); }
-    inline UpdateDataAccessorRequest& WithDataAccessorId(const Aws::String& value) { SetDataAccessorId(value); return *this;}
-    inline UpdateDataAccessorRequest& WithDataAccessorId(Aws::String&& value) { SetDataAccessorId(std::move(value)); return *this;}
-    inline UpdateDataAccessorRequest& WithDataAccessorId(const char* value) { SetDataAccessorId(value); return *this;}
+    template<typename DataAccessorIdT = Aws::String>
+    void SetDataAccessorId(DataAccessorIdT&& value) { m_dataAccessorIdHasBeenSet = true; m_dataAccessorId = std::forward<DataAccessorIdT>(value); }
+    template<typename DataAccessorIdT = Aws::String>
+    UpdateDataAccessorRequest& WithDataAccessorId(DataAccessorIdT&& value) { SetDataAccessorId(std::forward<DataAccessorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,28 +63,26 @@ namespace Model
      * <p>The updated list of action configurations specifying the allowed actions and
      * any associated filters.</p>
      */
-    inline const Aws::Vector<ActionConfiguration>& GetActionConfigurations() const{ return m_actionConfigurations; }
+    inline const Aws::Vector<ActionConfiguration>& GetActionConfigurations() const { return m_actionConfigurations; }
     inline bool ActionConfigurationsHasBeenSet() const { return m_actionConfigurationsHasBeenSet; }
-    inline void SetActionConfigurations(const Aws::Vector<ActionConfiguration>& value) { m_actionConfigurationsHasBeenSet = true; m_actionConfigurations = value; }
-    inline void SetActionConfigurations(Aws::Vector<ActionConfiguration>&& value) { m_actionConfigurationsHasBeenSet = true; m_actionConfigurations = std::move(value); }
-    inline UpdateDataAccessorRequest& WithActionConfigurations(const Aws::Vector<ActionConfiguration>& value) { SetActionConfigurations(value); return *this;}
-    inline UpdateDataAccessorRequest& WithActionConfigurations(Aws::Vector<ActionConfiguration>&& value) { SetActionConfigurations(std::move(value)); return *this;}
-    inline UpdateDataAccessorRequest& AddActionConfigurations(const ActionConfiguration& value) { m_actionConfigurationsHasBeenSet = true; m_actionConfigurations.push_back(value); return *this; }
-    inline UpdateDataAccessorRequest& AddActionConfigurations(ActionConfiguration&& value) { m_actionConfigurationsHasBeenSet = true; m_actionConfigurations.push_back(std::move(value)); return *this; }
+    template<typename ActionConfigurationsT = Aws::Vector<ActionConfiguration>>
+    void SetActionConfigurations(ActionConfigurationsT&& value) { m_actionConfigurationsHasBeenSet = true; m_actionConfigurations = std::forward<ActionConfigurationsT>(value); }
+    template<typename ActionConfigurationsT = Aws::Vector<ActionConfiguration>>
+    UpdateDataAccessorRequest& WithActionConfigurations(ActionConfigurationsT&& value) { SetActionConfigurations(std::forward<ActionConfigurationsT>(value)); return *this;}
+    template<typename ActionConfigurationsT = ActionConfiguration>
+    UpdateDataAccessorRequest& AddActionConfigurations(ActionConfigurationsT&& value) { m_actionConfigurationsHasBeenSet = true; m_actionConfigurations.emplace_back(std::forward<ActionConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The updated friendly name for the data accessor.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline UpdateDataAccessorRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline UpdateDataAccessorRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline UpdateDataAccessorRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    UpdateDataAccessorRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
   private:
 

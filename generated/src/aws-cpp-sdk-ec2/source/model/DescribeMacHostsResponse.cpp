@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeMacHostsResponse::DescribeMacHostsResponse()
-{
-}
-
 DescribeMacHostsResponse::DescribeMacHostsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeMacHostsResponse& DescribeMacHostsResponse::operator =(const Aws::Amazon
     if(!macHostsNode.IsNull())
     {
       XmlNode macHostsMember = macHostsNode.FirstChild("item");
+      m_macHostsHasBeenSet = !macHostsMember.IsNull();
       while(!macHostsMember.IsNull())
       {
         m_macHosts.push_back(macHostsMember);
@@ -53,6 +50,7 @@ DescribeMacHostsResponse& DescribeMacHostsResponse::operator =(const Aws::Amazon
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeMacHostsResponse& DescribeMacHostsResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeMacHostsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

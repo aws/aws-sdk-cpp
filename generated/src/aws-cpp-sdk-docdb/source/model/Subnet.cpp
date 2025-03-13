@@ -20,15 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-Subnet::Subnet() : 
-    m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetStatusHasBeenSet(false)
-{
-}
-
 Subnet::Subnet(const XmlNode& xmlNode)
-  : Subnet()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     {
       m_subnetIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdentifierNode.GetText());
       m_subnetIdentifierHasBeenSet = true;
+       m_subnetIdentifierHasBeenSet = true;
     }
     XmlNode subnetAvailabilityZoneNode = resultNode.FirstChild("SubnetAvailabilityZone");
     if(!subnetAvailabilityZoneNode.IsNull())
     {
       m_subnetAvailabilityZone = subnetAvailabilityZoneNode;
       m_subnetAvailabilityZoneHasBeenSet = true;
+       m_subnetAvailabilityZoneHasBeenSet = true;
     }
     XmlNode subnetStatusNode = resultNode.FirstChild("SubnetStatus");
     if(!subnetStatusNode.IsNull())
     {
       m_subnetStatus = Aws::Utils::Xml::DecodeEscapedXmlText(subnetStatusNode.GetText());
       m_subnetStatusHasBeenSet = true;
+       m_subnetStatusHasBeenSet = true;
     }
   }
 

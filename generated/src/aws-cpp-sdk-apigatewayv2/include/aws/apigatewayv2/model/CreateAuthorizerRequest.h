@@ -28,7 +28,7 @@ namespace Model
   class CreateAuthorizerRequest : public ApiGatewayV2Request
   {
   public:
-    AWS_APIGATEWAYV2_API CreateAuthorizerRequest();
+    AWS_APIGATEWAYV2_API CreateAuthorizerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline CreateAuthorizerRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline CreateAuthorizerRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline CreateAuthorizerRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    CreateAuthorizerRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * function, don't specify this parameter. Supported only for REQUEST
      * authorizers.</p>
      */
-    inline const Aws::String& GetAuthorizerCredentialsArn() const{ return m_authorizerCredentialsArn; }
+    inline const Aws::String& GetAuthorizerCredentialsArn() const { return m_authorizerCredentialsArn; }
     inline bool AuthorizerCredentialsArnHasBeenSet() const { return m_authorizerCredentialsArnHasBeenSet; }
-    inline void SetAuthorizerCredentialsArn(const Aws::String& value) { m_authorizerCredentialsArnHasBeenSet = true; m_authorizerCredentialsArn = value; }
-    inline void SetAuthorizerCredentialsArn(Aws::String&& value) { m_authorizerCredentialsArnHasBeenSet = true; m_authorizerCredentialsArn = std::move(value); }
-    inline void SetAuthorizerCredentialsArn(const char* value) { m_authorizerCredentialsArnHasBeenSet = true; m_authorizerCredentialsArn.assign(value); }
-    inline CreateAuthorizerRequest& WithAuthorizerCredentialsArn(const Aws::String& value) { SetAuthorizerCredentialsArn(value); return *this;}
-    inline CreateAuthorizerRequest& WithAuthorizerCredentialsArn(Aws::String&& value) { SetAuthorizerCredentialsArn(std::move(value)); return *this;}
-    inline CreateAuthorizerRequest& WithAuthorizerCredentialsArn(const char* value) { SetAuthorizerCredentialsArn(value); return *this;}
+    template<typename AuthorizerCredentialsArnT = Aws::String>
+    void SetAuthorizerCredentialsArn(AuthorizerCredentialsArnT&& value) { m_authorizerCredentialsArnHasBeenSet = true; m_authorizerCredentialsArn = std::forward<AuthorizerCredentialsArnT>(value); }
+    template<typename AuthorizerCredentialsArnT = Aws::String>
+    CreateAuthorizerRequest& WithAuthorizerCredentialsArn(AuthorizerCredentialsArnT&& value) { SetAuthorizerCredentialsArn(std::forward<AuthorizerCredentialsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
      * with AWS Lambda authorizers for HTTP APIs</a>.</p>
      */
-    inline const Aws::String& GetAuthorizerPayloadFormatVersion() const{ return m_authorizerPayloadFormatVersion; }
+    inline const Aws::String& GetAuthorizerPayloadFormatVersion() const { return m_authorizerPayloadFormatVersion; }
     inline bool AuthorizerPayloadFormatVersionHasBeenSet() const { return m_authorizerPayloadFormatVersionHasBeenSet; }
-    inline void SetAuthorizerPayloadFormatVersion(const Aws::String& value) { m_authorizerPayloadFormatVersionHasBeenSet = true; m_authorizerPayloadFormatVersion = value; }
-    inline void SetAuthorizerPayloadFormatVersion(Aws::String&& value) { m_authorizerPayloadFormatVersionHasBeenSet = true; m_authorizerPayloadFormatVersion = std::move(value); }
-    inline void SetAuthorizerPayloadFormatVersion(const char* value) { m_authorizerPayloadFormatVersionHasBeenSet = true; m_authorizerPayloadFormatVersion.assign(value); }
-    inline CreateAuthorizerRequest& WithAuthorizerPayloadFormatVersion(const Aws::String& value) { SetAuthorizerPayloadFormatVersion(value); return *this;}
-    inline CreateAuthorizerRequest& WithAuthorizerPayloadFormatVersion(Aws::String&& value) { SetAuthorizerPayloadFormatVersion(std::move(value)); return *this;}
-    inline CreateAuthorizerRequest& WithAuthorizerPayloadFormatVersion(const char* value) { SetAuthorizerPayloadFormatVersion(value); return *this;}
+    template<typename AuthorizerPayloadFormatVersionT = Aws::String>
+    void SetAuthorizerPayloadFormatVersion(AuthorizerPayloadFormatVersionT&& value) { m_authorizerPayloadFormatVersionHasBeenSet = true; m_authorizerPayloadFormatVersion = std::forward<AuthorizerPayloadFormatVersionT>(value); }
+    template<typename AuthorizerPayloadFormatVersionT = Aws::String>
+    CreateAuthorizerRequest& WithAuthorizerPayloadFormatVersion(AuthorizerPayloadFormatVersionT&& value) { SetAuthorizerPayloadFormatVersion(std::forward<AuthorizerPayloadFormatVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,7 +90,7 @@ namespace Model
      * Gateway caches authorizer responses. The maximum value is 3600, or 1 hour.
      * Supported only for HTTP API Lambda authorizers.</p>
      */
-    inline int GetAuthorizerResultTtlInSeconds() const{ return m_authorizerResultTtlInSeconds; }
+    inline int GetAuthorizerResultTtlInSeconds() const { return m_authorizerResultTtlInSeconds; }
     inline bool AuthorizerResultTtlInSecondsHasBeenSet() const { return m_authorizerResultTtlInSecondsHasBeenSet; }
     inline void SetAuthorizerResultTtlInSeconds(int value) { m_authorizerResultTtlInSecondsHasBeenSet = true; m_authorizerResultTtlInSeconds = value; }
     inline CreateAuthorizerRequest& WithAuthorizerResultTtlInSeconds(int value) { SetAuthorizerResultTtlInSeconds(value); return *this;}
@@ -108,12 +102,10 @@ namespace Model
      * request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP
      * APIs).</p>
      */
-    inline const AuthorizerType& GetAuthorizerType() const{ return m_authorizerType; }
+    inline AuthorizerType GetAuthorizerType() const { return m_authorizerType; }
     inline bool AuthorizerTypeHasBeenSet() const { return m_authorizerTypeHasBeenSet; }
-    inline void SetAuthorizerType(const AuthorizerType& value) { m_authorizerTypeHasBeenSet = true; m_authorizerType = value; }
-    inline void SetAuthorizerType(AuthorizerType&& value) { m_authorizerTypeHasBeenSet = true; m_authorizerType = std::move(value); }
-    inline CreateAuthorizerRequest& WithAuthorizerType(const AuthorizerType& value) { SetAuthorizerType(value); return *this;}
-    inline CreateAuthorizerRequest& WithAuthorizerType(AuthorizerType&& value) { SetAuthorizerType(std::move(value)); return *this;}
+    inline void SetAuthorizerType(AuthorizerType value) { m_authorizerTypeHasBeenSet = true; m_authorizerType = value; }
+    inline CreateAuthorizerRequest& WithAuthorizerType(AuthorizerType value) { SetAuthorizerType(value); return *this;}
     ///@}
 
     ///@{
@@ -131,14 +123,12 @@ namespace Model
      * /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST
      * authorizers.</p>
      */
-    inline const Aws::String& GetAuthorizerUri() const{ return m_authorizerUri; }
+    inline const Aws::String& GetAuthorizerUri() const { return m_authorizerUri; }
     inline bool AuthorizerUriHasBeenSet() const { return m_authorizerUriHasBeenSet; }
-    inline void SetAuthorizerUri(const Aws::String& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = value; }
-    inline void SetAuthorizerUri(Aws::String&& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = std::move(value); }
-    inline void SetAuthorizerUri(const char* value) { m_authorizerUriHasBeenSet = true; m_authorizerUri.assign(value); }
-    inline CreateAuthorizerRequest& WithAuthorizerUri(const Aws::String& value) { SetAuthorizerUri(value); return *this;}
-    inline CreateAuthorizerRequest& WithAuthorizerUri(Aws::String&& value) { SetAuthorizerUri(std::move(value)); return *this;}
-    inline CreateAuthorizerRequest& WithAuthorizerUri(const char* value) { SetAuthorizerUri(value); return *this;}
+    template<typename AuthorizerUriT = Aws::String>
+    void SetAuthorizerUri(AuthorizerUriT&& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = std::forward<AuthorizerUriT>(value); }
+    template<typename AuthorizerUriT = Aws::String>
+    CreateAuthorizerRequest& WithAuthorizerUri(AuthorizerUriT&& value) { SetAuthorizerUri(std::forward<AuthorizerUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,7 +140,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working
      * with AWS Lambda authorizers for HTTP APIs</a></p>
      */
-    inline bool GetEnableSimpleResponses() const{ return m_enableSimpleResponses; }
+    inline bool GetEnableSimpleResponses() const { return m_enableSimpleResponses; }
     inline bool EnableSimpleResponsesHasBeenSet() const { return m_enableSimpleResponsesHasBeenSet; }
     inline void SetEnableSimpleResponses(bool value) { m_enableSimpleResponsesHasBeenSet = true; m_enableSimpleResponses = value; }
     inline CreateAuthorizerRequest& WithEnableSimpleResponses(bool value) { SetEnableSimpleResponses(value); return *this;}
@@ -179,29 +169,26 @@ namespace Model
      * Currently only header-based and query parameter-based selections are supported,
      * for example $request.header.Authorization.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIdentitySource() const{ return m_identitySource; }
+    inline const Aws::Vector<Aws::String>& GetIdentitySource() const { return m_identitySource; }
     inline bool IdentitySourceHasBeenSet() const { return m_identitySourceHasBeenSet; }
-    inline void SetIdentitySource(const Aws::Vector<Aws::String>& value) { m_identitySourceHasBeenSet = true; m_identitySource = value; }
-    inline void SetIdentitySource(Aws::Vector<Aws::String>&& value) { m_identitySourceHasBeenSet = true; m_identitySource = std::move(value); }
-    inline CreateAuthorizerRequest& WithIdentitySource(const Aws::Vector<Aws::String>& value) { SetIdentitySource(value); return *this;}
-    inline CreateAuthorizerRequest& WithIdentitySource(Aws::Vector<Aws::String>&& value) { SetIdentitySource(std::move(value)); return *this;}
-    inline CreateAuthorizerRequest& AddIdentitySource(const Aws::String& value) { m_identitySourceHasBeenSet = true; m_identitySource.push_back(value); return *this; }
-    inline CreateAuthorizerRequest& AddIdentitySource(Aws::String&& value) { m_identitySourceHasBeenSet = true; m_identitySource.push_back(std::move(value)); return *this; }
-    inline CreateAuthorizerRequest& AddIdentitySource(const char* value) { m_identitySourceHasBeenSet = true; m_identitySource.push_back(value); return *this; }
+    template<typename IdentitySourceT = Aws::Vector<Aws::String>>
+    void SetIdentitySource(IdentitySourceT&& value) { m_identitySourceHasBeenSet = true; m_identitySource = std::forward<IdentitySourceT>(value); }
+    template<typename IdentitySourceT = Aws::Vector<Aws::String>>
+    CreateAuthorizerRequest& WithIdentitySource(IdentitySourceT&& value) { SetIdentitySource(std::forward<IdentitySourceT>(value)); return *this;}
+    template<typename IdentitySourceT = Aws::String>
+    CreateAuthorizerRequest& AddIdentitySource(IdentitySourceT&& value) { m_identitySourceHasBeenSet = true; m_identitySource.emplace_back(std::forward<IdentitySourceT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>This parameter is not used.</p>
      */
-    inline const Aws::String& GetIdentityValidationExpression() const{ return m_identityValidationExpression; }
+    inline const Aws::String& GetIdentityValidationExpression() const { return m_identityValidationExpression; }
     inline bool IdentityValidationExpressionHasBeenSet() const { return m_identityValidationExpressionHasBeenSet; }
-    inline void SetIdentityValidationExpression(const Aws::String& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = value; }
-    inline void SetIdentityValidationExpression(Aws::String&& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = std::move(value); }
-    inline void SetIdentityValidationExpression(const char* value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression.assign(value); }
-    inline CreateAuthorizerRequest& WithIdentityValidationExpression(const Aws::String& value) { SetIdentityValidationExpression(value); return *this;}
-    inline CreateAuthorizerRequest& WithIdentityValidationExpression(Aws::String&& value) { SetIdentityValidationExpression(std::move(value)); return *this;}
-    inline CreateAuthorizerRequest& WithIdentityValidationExpression(const char* value) { SetIdentityValidationExpression(value); return *this;}
+    template<typename IdentityValidationExpressionT = Aws::String>
+    void SetIdentityValidationExpression(IdentityValidationExpressionT&& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = std::forward<IdentityValidationExpressionT>(value); }
+    template<typename IdentityValidationExpressionT = Aws::String>
+    CreateAuthorizerRequest& WithIdentityValidationExpression(IdentityValidationExpressionT&& value) { SetIdentityValidationExpression(std::forward<IdentityValidationExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -209,26 +196,24 @@ namespace Model
      * <p>Represents the configuration of a JWT authorizer. Required for the JWT
      * authorizer type. Supported only for HTTP APIs.</p>
      */
-    inline const JWTConfiguration& GetJwtConfiguration() const{ return m_jwtConfiguration; }
+    inline const JWTConfiguration& GetJwtConfiguration() const { return m_jwtConfiguration; }
     inline bool JwtConfigurationHasBeenSet() const { return m_jwtConfigurationHasBeenSet; }
-    inline void SetJwtConfiguration(const JWTConfiguration& value) { m_jwtConfigurationHasBeenSet = true; m_jwtConfiguration = value; }
-    inline void SetJwtConfiguration(JWTConfiguration&& value) { m_jwtConfigurationHasBeenSet = true; m_jwtConfiguration = std::move(value); }
-    inline CreateAuthorizerRequest& WithJwtConfiguration(const JWTConfiguration& value) { SetJwtConfiguration(value); return *this;}
-    inline CreateAuthorizerRequest& WithJwtConfiguration(JWTConfiguration&& value) { SetJwtConfiguration(std::move(value)); return *this;}
+    template<typename JwtConfigurationT = JWTConfiguration>
+    void SetJwtConfiguration(JwtConfigurationT&& value) { m_jwtConfigurationHasBeenSet = true; m_jwtConfiguration = std::forward<JwtConfigurationT>(value); }
+    template<typename JwtConfigurationT = JWTConfiguration>
+    CreateAuthorizerRequest& WithJwtConfiguration(JwtConfigurationT&& value) { SetJwtConfiguration(std::forward<JwtConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the authorizer.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateAuthorizerRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAuthorizerRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAuthorizerRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAuthorizerRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
@@ -241,16 +226,16 @@ namespace Model
     Aws::String m_authorizerPayloadFormatVersion;
     bool m_authorizerPayloadFormatVersionHasBeenSet = false;
 
-    int m_authorizerResultTtlInSeconds;
+    int m_authorizerResultTtlInSeconds{0};
     bool m_authorizerResultTtlInSecondsHasBeenSet = false;
 
-    AuthorizerType m_authorizerType;
+    AuthorizerType m_authorizerType{AuthorizerType::NOT_SET};
     bool m_authorizerTypeHasBeenSet = false;
 
     Aws::String m_authorizerUri;
     bool m_authorizerUriHasBeenSet = false;
 
-    bool m_enableSimpleResponses;
+    bool m_enableSimpleResponses{false};
     bool m_enableSimpleResponsesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_identitySource;

@@ -18,14 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-AclGrantee::AclGrantee() : 
-    m_idHasBeenSet(false),
-    m_uriHasBeenSet(false)
-{
-}
-
 AclGrantee::AclGrantee(JsonView jsonValue)
-  : AclGrantee()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AclGrantee& AclGrantee::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,13 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-StopActivityStreamRequest::StopActivityStreamRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false)
-{
-}
-
 Aws::String StopActivityStreamRequest::SerializePayload() const
 {
   Aws::StringStream ss;

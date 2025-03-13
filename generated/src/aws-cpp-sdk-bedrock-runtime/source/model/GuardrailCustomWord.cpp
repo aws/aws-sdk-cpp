@@ -18,15 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailCustomWord::GuardrailCustomWord() : 
-    m_matchHasBeenSet(false),
-    m_action(GuardrailWordPolicyAction::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 GuardrailCustomWord::GuardrailCustomWord(JsonView jsonValue)
-  : GuardrailCustomWord()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GuardrailCustomWord& GuardrailCustomWord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetString("match");
-
     m_matchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     m_action = GuardrailWordPolicyActionMapper::GetGuardrailWordPolicyActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-DNSSECStatus::DNSSECStatus() : 
-    m_serveSignatureHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 DNSSECStatus::DNSSECStatus(const XmlNode& xmlNode)
-  : DNSSECStatus()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DNSSECStatus& DNSSECStatus::operator =(const XmlNode& xmlNode)
     {
       m_serveSignature = Aws::Utils::Xml::DecodeEscapedXmlText(serveSignatureNode.GetText());
       m_serveSignatureHasBeenSet = true;
+       m_serveSignatureHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("StatusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
   }
 

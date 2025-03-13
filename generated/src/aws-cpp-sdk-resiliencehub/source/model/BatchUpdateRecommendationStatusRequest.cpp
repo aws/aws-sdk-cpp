@@ -12,12 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateRecommendationStatusRequest::BatchUpdateRecommendationStatusRequest() : 
-    m_appArnHasBeenSet(false),
-    m_requestEntriesHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateRecommendationStatusRequest::SerializePayload() const
 {
   JsonValue payload;

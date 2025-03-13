@@ -18,18 +18,7 @@ namespace FMS
 namespace Model
 {
 
-DnsRuleGroupPriorityConflictViolation::DnsRuleGroupPriorityConflictViolation() : 
-    m_violationTargetHasBeenSet(false),
-    m_violationTargetDescriptionHasBeenSet(false),
-    m_conflictingPriority(0),
-    m_conflictingPriorityHasBeenSet(false),
-    m_conflictingPolicyIdHasBeenSet(false),
-    m_unavailablePrioritiesHasBeenSet(false)
-{
-}
-
 DnsRuleGroupPriorityConflictViolation::DnsRuleGroupPriorityConflictViolation(JsonView jsonValue)
-  : DnsRuleGroupPriorityConflictViolation()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DnsRuleGroupPriorityConflictViolation& DnsRuleGroupPriorityConflictViolation::op
   if(jsonValue.ValueExists("ViolationTarget"))
   {
     m_violationTarget = jsonValue.GetString("ViolationTarget");
-
     m_violationTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViolationTargetDescription"))
   {
     m_violationTargetDescription = jsonValue.GetString("ViolationTargetDescription");
-
     m_violationTargetDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConflictingPriority"))
   {
     m_conflictingPriority = jsonValue.GetInteger("ConflictingPriority");
-
     m_conflictingPriorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConflictingPolicyId"))
   {
     m_conflictingPolicyId = jsonValue.GetString("ConflictingPolicyId");
-
     m_conflictingPolicyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnavailablePriorities"))
   {
     Aws::Utils::Array<JsonView> unavailablePrioritiesJsonList = jsonValue.GetArray("UnavailablePriorities");
@@ -73,7 +54,6 @@ DnsRuleGroupPriorityConflictViolation& DnsRuleGroupPriorityConflictViolation::op
     }
     m_unavailablePrioritiesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualNodeData::VirtualNodeData() : 
-    m_meshNameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_virtualNodeNameHasBeenSet(false)
-{
-}
-
 VirtualNodeData::VirtualNodeData(JsonView jsonValue)
-  : VirtualNodeData()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ VirtualNodeData& VirtualNodeData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("meshName"))
   {
     m_meshName = jsonValue.GetString("meshName");
-
     m_meshNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spec"))
   {
     m_spec = jsonValue.GetObject("spec");
-
     m_specHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualNodeName"))
   {
     m_virtualNodeName = jsonValue.GetString("virtualNodeName");
-
     m_virtualNodeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

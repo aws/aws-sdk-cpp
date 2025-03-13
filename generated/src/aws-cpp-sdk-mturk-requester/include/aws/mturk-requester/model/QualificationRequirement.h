@@ -38,7 +38,7 @@ namespace Model
   class QualificationRequirement
   {
   public:
-    AWS_MTURK_API QualificationRequirement();
+    AWS_MTURK_API QualificationRequirement() = default;
     AWS_MTURK_API QualificationRequirement(Aws::Utils::Json::JsonView jsonValue);
     AWS_MTURK_API QualificationRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p> The ID of the Qualification type for the requirement.</p>
      */
-    inline const Aws::String& GetQualificationTypeId() const{ return m_qualificationTypeId; }
+    inline const Aws::String& GetQualificationTypeId() const { return m_qualificationTypeId; }
     inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
-    inline void SetQualificationTypeId(const Aws::String& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
-    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
-    inline void SetQualificationTypeId(const char* value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId.assign(value); }
-    inline QualificationRequirement& WithQualificationTypeId(const Aws::String& value) { SetQualificationTypeId(value); return *this;}
-    inline QualificationRequirement& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
-    inline QualificationRequirement& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
+    template<typename QualificationTypeIdT = Aws::String>
+    void SetQualificationTypeId(QualificationTypeIdT&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::forward<QualificationTypeIdT>(value); }
+    template<typename QualificationTypeIdT = Aws::String>
+    QualificationRequirement& WithQualificationTypeId(QualificationTypeIdT&& value) { SetQualificationTypeId(std::forward<QualificationTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +67,10 @@ namespace Model
      * can also test if a Qualification Exists or DoesNotExist in the user's profile,
      * regardless of its value. </p>
      */
-    inline const Comparator& GetComparator() const{ return m_comparator; }
+    inline Comparator GetComparator() const { return m_comparator; }
     inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
-    inline void SetComparator(const Comparator& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
-    inline void SetComparator(Comparator&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
-    inline QualificationRequirement& WithComparator(const Comparator& value) { SetComparator(value); return *this;}
-    inline QualificationRequirement& WithComparator(Comparator&& value) { SetComparator(std::move(value)); return *this;}
+    inline void SetComparator(Comparator value) { m_comparatorHasBeenSet = true; m_comparator = value; }
+    inline QualificationRequirement& WithComparator(Comparator value) { SetComparator(value); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,12 @@ namespace Model
      * using the In or the NotIn comparator, you can use up to 15 IntegerValue elements
      * in a QualificationRequirement data structure. </p>
      */
-    inline const Aws::Vector<int>& GetIntegerValues() const{ return m_integerValues; }
+    inline const Aws::Vector<int>& GetIntegerValues() const { return m_integerValues; }
     inline bool IntegerValuesHasBeenSet() const { return m_integerValuesHasBeenSet; }
-    inline void SetIntegerValues(const Aws::Vector<int>& value) { m_integerValuesHasBeenSet = true; m_integerValues = value; }
-    inline void SetIntegerValues(Aws::Vector<int>&& value) { m_integerValuesHasBeenSet = true; m_integerValues = std::move(value); }
-    inline QualificationRequirement& WithIntegerValues(const Aws::Vector<int>& value) { SetIntegerValues(value); return *this;}
-    inline QualificationRequirement& WithIntegerValues(Aws::Vector<int>&& value) { SetIntegerValues(std::move(value)); return *this;}
+    template<typename IntegerValuesT = Aws::Vector<int>>
+    void SetIntegerValues(IntegerValuesT&& value) { m_integerValuesHasBeenSet = true; m_integerValues = std::forward<IntegerValuesT>(value); }
+    template<typename IntegerValuesT = Aws::Vector<int>>
+    QualificationRequirement& WithIntegerValues(IntegerValuesT&& value) { SetIntegerValues(std::forward<IntegerValuesT>(value)); return *this;}
     inline QualificationRequirement& AddIntegerValues(int value) { m_integerValuesHasBeenSet = true; m_integerValues.push_back(value); return *this; }
     ///@}
 
@@ -106,14 +102,14 @@ namespace Model
      * In or the NotIn comparator, you can use up to 30 LocaleValue elements in a
      * QualificationRequirement data structure. </p>
      */
-    inline const Aws::Vector<Locale>& GetLocaleValues() const{ return m_localeValues; }
+    inline const Aws::Vector<Locale>& GetLocaleValues() const { return m_localeValues; }
     inline bool LocaleValuesHasBeenSet() const { return m_localeValuesHasBeenSet; }
-    inline void SetLocaleValues(const Aws::Vector<Locale>& value) { m_localeValuesHasBeenSet = true; m_localeValues = value; }
-    inline void SetLocaleValues(Aws::Vector<Locale>&& value) { m_localeValuesHasBeenSet = true; m_localeValues = std::move(value); }
-    inline QualificationRequirement& WithLocaleValues(const Aws::Vector<Locale>& value) { SetLocaleValues(value); return *this;}
-    inline QualificationRequirement& WithLocaleValues(Aws::Vector<Locale>&& value) { SetLocaleValues(std::move(value)); return *this;}
-    inline QualificationRequirement& AddLocaleValues(const Locale& value) { m_localeValuesHasBeenSet = true; m_localeValues.push_back(value); return *this; }
-    inline QualificationRequirement& AddLocaleValues(Locale&& value) { m_localeValuesHasBeenSet = true; m_localeValues.push_back(std::move(value)); return *this; }
+    template<typename LocaleValuesT = Aws::Vector<Locale>>
+    void SetLocaleValues(LocaleValuesT&& value) { m_localeValuesHasBeenSet = true; m_localeValues = std::forward<LocaleValuesT>(value); }
+    template<typename LocaleValuesT = Aws::Vector<Locale>>
+    QualificationRequirement& WithLocaleValues(LocaleValuesT&& value) { SetLocaleValues(std::forward<LocaleValuesT>(value)); return *this;}
+    template<typename LocaleValuesT = Locale>
+    QualificationRequirement& AddLocaleValues(LocaleValuesT&& value) { m_localeValuesHasBeenSet = true; m_localeValues.emplace_back(std::forward<LocaleValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -136,19 +132,17 @@ namespace Model
      * ActionsGuarded should not be used in combination with the
      * <code>RequiredToPreview</code> field. </p>
      */
-    inline const HITAccessActions& GetActionsGuarded() const{ return m_actionsGuarded; }
+    inline HITAccessActions GetActionsGuarded() const { return m_actionsGuarded; }
     inline bool ActionsGuardedHasBeenSet() const { return m_actionsGuardedHasBeenSet; }
-    inline void SetActionsGuarded(const HITAccessActions& value) { m_actionsGuardedHasBeenSet = true; m_actionsGuarded = value; }
-    inline void SetActionsGuarded(HITAccessActions&& value) { m_actionsGuardedHasBeenSet = true; m_actionsGuarded = std::move(value); }
-    inline QualificationRequirement& WithActionsGuarded(const HITAccessActions& value) { SetActionsGuarded(value); return *this;}
-    inline QualificationRequirement& WithActionsGuarded(HITAccessActions&& value) { SetActionsGuarded(std::move(value)); return *this;}
+    inline void SetActionsGuarded(HITAccessActions value) { m_actionsGuardedHasBeenSet = true; m_actionsGuarded = value; }
+    inline QualificationRequirement& WithActionsGuarded(HITAccessActions value) { SetActionsGuarded(value); return *this;}
     ///@}
   private:
 
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet = false;
 
-    Comparator m_comparator;
+    Comparator m_comparator{Comparator::NOT_SET};
     bool m_comparatorHasBeenSet = false;
 
     Aws::Vector<int> m_integerValues;
@@ -157,7 +151,7 @@ namespace Model
     Aws::Vector<Locale> m_localeValues;
     bool m_localeValuesHasBeenSet = false;
 
-    HITAccessActions m_actionsGuarded;
+    HITAccessActions m_actionsGuarded{HITAccessActions::NOT_SET};
     bool m_actionsGuardedHasBeenSet = false;
   };
 

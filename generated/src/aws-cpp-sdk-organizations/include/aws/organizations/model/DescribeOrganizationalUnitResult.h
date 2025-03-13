@@ -28,7 +28,7 @@ namespace Model
   class DescribeOrganizationalUnitResult
   {
   public:
-    AWS_ORGANIZATIONS_API DescribeOrganizationalUnitResult();
+    AWS_ORGANIZATIONS_API DescribeOrganizationalUnitResult() = default;
     AWS_ORGANIZATIONS_API DescribeOrganizationalUnitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ORGANIZATIONS_API DescribeOrganizationalUnitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A structure that contains details about the specified OU.</p>
      */
-    inline const OrganizationalUnit& GetOrganizationalUnit() const{ return m_organizationalUnit; }
-    inline void SetOrganizationalUnit(const OrganizationalUnit& value) { m_organizationalUnit = value; }
-    inline void SetOrganizationalUnit(OrganizationalUnit&& value) { m_organizationalUnit = std::move(value); }
-    inline DescribeOrganizationalUnitResult& WithOrganizationalUnit(const OrganizationalUnit& value) { SetOrganizationalUnit(value); return *this;}
-    inline DescribeOrganizationalUnitResult& WithOrganizationalUnit(OrganizationalUnit&& value) { SetOrganizationalUnit(std::move(value)); return *this;}
+    inline const OrganizationalUnit& GetOrganizationalUnit() const { return m_organizationalUnit; }
+    template<typename OrganizationalUnitT = OrganizationalUnit>
+    void SetOrganizationalUnit(OrganizationalUnitT&& value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit = std::forward<OrganizationalUnitT>(value); }
+    template<typename OrganizationalUnitT = OrganizationalUnit>
+    DescribeOrganizationalUnitResult& WithOrganizationalUnit(OrganizationalUnitT&& value) { SetOrganizationalUnit(std::forward<OrganizationalUnitT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeOrganizationalUnitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeOrganizationalUnitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeOrganizationalUnitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeOrganizationalUnitResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     OrganizationalUnit m_organizationalUnit;
+    bool m_organizationalUnitHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,7 @@ namespace Model
   class ListReplicationSetsResult
   {
   public:
-    AWS_SSMINCIDENTS_API ListReplicationSetsResult();
+    AWS_SSMINCIDENTS_API ListReplicationSetsResult() = default;
     AWS_SSMINCIDENTS_API ListReplicationSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSMINCIDENTS_API ListReplicationSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,46 +38,44 @@ namespace Model
      * <p>The pagination token to use when requesting the next set of items. If there
      * are no additional items to return, the string is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListReplicationSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListReplicationSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListReplicationSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListReplicationSetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the list replication set.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReplicationSetArns() const{ return m_replicationSetArns; }
-    inline void SetReplicationSetArns(const Aws::Vector<Aws::String>& value) { m_replicationSetArns = value; }
-    inline void SetReplicationSetArns(Aws::Vector<Aws::String>&& value) { m_replicationSetArns = std::move(value); }
-    inline ListReplicationSetsResult& WithReplicationSetArns(const Aws::Vector<Aws::String>& value) { SetReplicationSetArns(value); return *this;}
-    inline ListReplicationSetsResult& WithReplicationSetArns(Aws::Vector<Aws::String>&& value) { SetReplicationSetArns(std::move(value)); return *this;}
-    inline ListReplicationSetsResult& AddReplicationSetArns(const Aws::String& value) { m_replicationSetArns.push_back(value); return *this; }
-    inline ListReplicationSetsResult& AddReplicationSetArns(Aws::String&& value) { m_replicationSetArns.push_back(std::move(value)); return *this; }
-    inline ListReplicationSetsResult& AddReplicationSetArns(const char* value) { m_replicationSetArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetReplicationSetArns() const { return m_replicationSetArns; }
+    template<typename ReplicationSetArnsT = Aws::Vector<Aws::String>>
+    void SetReplicationSetArns(ReplicationSetArnsT&& value) { m_replicationSetArnsHasBeenSet = true; m_replicationSetArns = std::forward<ReplicationSetArnsT>(value); }
+    template<typename ReplicationSetArnsT = Aws::Vector<Aws::String>>
+    ListReplicationSetsResult& WithReplicationSetArns(ReplicationSetArnsT&& value) { SetReplicationSetArns(std::forward<ReplicationSetArnsT>(value)); return *this;}
+    template<typename ReplicationSetArnsT = Aws::String>
+    ListReplicationSetsResult& AddReplicationSetArns(ReplicationSetArnsT&& value) { m_replicationSetArnsHasBeenSet = true; m_replicationSetArns.emplace_back(std::forward<ReplicationSetArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListReplicationSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListReplicationSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListReplicationSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListReplicationSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicationSetArns;
+    bool m_replicationSetArnsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

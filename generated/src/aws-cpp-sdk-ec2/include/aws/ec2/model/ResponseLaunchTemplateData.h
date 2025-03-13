@@ -55,7 +55,7 @@ namespace Model
   class ResponseLaunchTemplateData
   {
   public:
-    AWS_EC2_API ResponseLaunchTemplateData();
+    AWS_EC2_API ResponseLaunchTemplateData() = default;
     AWS_EC2_API ResponseLaunchTemplateData(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ResponseLaunchTemplateData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -67,21 +67,19 @@ namespace Model
     /**
      * <p>The ID of the kernel, if applicable.</p>
      */
-    inline const Aws::String& GetKernelId() const{ return m_kernelId; }
+    inline const Aws::String& GetKernelId() const { return m_kernelId; }
     inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
-    inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
-    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
-    inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
-    inline ResponseLaunchTemplateData& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
-    inline ResponseLaunchTemplateData& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& WithKernelId(const char* value) { SetKernelId(value); return *this;}
+    template<typename KernelIdT = Aws::String>
+    void SetKernelId(KernelIdT&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::forward<KernelIdT>(value); }
+    template<typename KernelIdT = Aws::String>
+    ResponseLaunchTemplateData& WithKernelId(KernelIdT&& value) { SetKernelId(std::forward<KernelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the instance is optimized for Amazon EBS I/O. </p>
      */
-    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+    inline bool GetEbsOptimized() const { return m_ebsOptimized; }
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
     inline ResponseLaunchTemplateData& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
@@ -91,40 +89,40 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
-    inline const LaunchTemplateIamInstanceProfileSpecification& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
+    inline const LaunchTemplateIamInstanceProfileSpecification& GetIamInstanceProfile() const { return m_iamInstanceProfile; }
     inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
-    inline void SetIamInstanceProfile(const LaunchTemplateIamInstanceProfileSpecification& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
-    inline void SetIamInstanceProfile(LaunchTemplateIamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
-    inline ResponseLaunchTemplateData& WithIamInstanceProfile(const LaunchTemplateIamInstanceProfileSpecification& value) { SetIamInstanceProfile(value); return *this;}
-    inline ResponseLaunchTemplateData& WithIamInstanceProfile(LaunchTemplateIamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
+    template<typename IamInstanceProfileT = LaunchTemplateIamInstanceProfileSpecification>
+    void SetIamInstanceProfile(IamInstanceProfileT&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::forward<IamInstanceProfileT>(value); }
+    template<typename IamInstanceProfileT = LaunchTemplateIamInstanceProfileSpecification>
+    ResponseLaunchTemplateData& WithIamInstanceProfile(IamInstanceProfileT&& value) { SetIamInstanceProfile(std::forward<IamInstanceProfileT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The block device mappings.</p>
      */
-    inline const Aws::Vector<LaunchTemplateBlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline const Aws::Vector<LaunchTemplateBlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
-    inline void SetBlockDeviceMappings(const Aws::Vector<LaunchTemplateBlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
-    inline void SetBlockDeviceMappings(Aws::Vector<LaunchTemplateBlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
-    inline ResponseLaunchTemplateData& WithBlockDeviceMappings(const Aws::Vector<LaunchTemplateBlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-    inline ResponseLaunchTemplateData& WithBlockDeviceMappings(Aws::Vector<LaunchTemplateBlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& AddBlockDeviceMappings(const LaunchTemplateBlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
-    inline ResponseLaunchTemplateData& AddBlockDeviceMappings(LaunchTemplateBlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    template<typename BlockDeviceMappingsT = Aws::Vector<LaunchTemplateBlockDeviceMapping>>
+    void SetBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::forward<BlockDeviceMappingsT>(value); }
+    template<typename BlockDeviceMappingsT = Aws::Vector<LaunchTemplateBlockDeviceMapping>>
+    ResponseLaunchTemplateData& WithBlockDeviceMappings(BlockDeviceMappingsT&& value) { SetBlockDeviceMappings(std::forward<BlockDeviceMappingsT>(value)); return *this;}
+    template<typename BlockDeviceMappingsT = LaunchTemplateBlockDeviceMapping>
+    ResponseLaunchTemplateData& AddBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.emplace_back(std::forward<BlockDeviceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The network interfaces.</p>
      */
-    inline const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+    inline const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const { return m_networkInterfaces; }
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
-    inline void SetNetworkInterfaces(const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
-    inline void SetNetworkInterfaces(Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
-    inline ResponseLaunchTemplateData& WithNetworkInterfaces(const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
-    inline ResponseLaunchTemplateData& WithNetworkInterfaces(Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& AddNetworkInterfaces(const LaunchTemplateInstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
-    inline ResponseLaunchTemplateData& AddNetworkInterfaces(LaunchTemplateInstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+    template<typename NetworkInterfacesT = Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecification>>
+    void SetNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::forward<NetworkInterfacesT>(value); }
+    template<typename NetworkInterfacesT = Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecification>>
+    ResponseLaunchTemplateData& WithNetworkInterfaces(NetworkInterfacesT&& value) { SetNetworkInterfaces(std::forward<NetworkInterfacesT>(value)); return *this;}
+    template<typename NetworkInterfacesT = LaunchTemplateInstanceNetworkInterfaceSpecification>
+    ResponseLaunchTemplateData& AddNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.emplace_back(std::forward<NetworkInterfacesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -143,78 +141,70 @@ namespace Model
      * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline ResponseLaunchTemplateData& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline ResponseLaunchTemplateData& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    ResponseLaunchTemplateData& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance type.</p>
      */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline ResponseLaunchTemplateData& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-    inline ResponseLaunchTemplateData& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline ResponseLaunchTemplateData& WithInstanceType(InstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the key pair.</p>
      */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+    inline const Aws::String& GetKeyName() const { return m_keyName; }
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-    inline ResponseLaunchTemplateData& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-    inline ResponseLaunchTemplateData& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    template<typename KeyNameT = Aws::String>
+    void SetKeyName(KeyNameT&& value) { m_keyNameHasBeenSet = true; m_keyName = std::forward<KeyNameT>(value); }
+    template<typename KeyNameT = Aws::String>
+    ResponseLaunchTemplateData& WithKeyName(KeyNameT&& value) { SetKeyName(std::forward<KeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The monitoring for the instance.</p>
      */
-    inline const LaunchTemplatesMonitoring& GetMonitoring() const{ return m_monitoring; }
+    inline const LaunchTemplatesMonitoring& GetMonitoring() const { return m_monitoring; }
     inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
-    inline void SetMonitoring(const LaunchTemplatesMonitoring& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
-    inline void SetMonitoring(LaunchTemplatesMonitoring&& value) { m_monitoringHasBeenSet = true; m_monitoring = std::move(value); }
-    inline ResponseLaunchTemplateData& WithMonitoring(const LaunchTemplatesMonitoring& value) { SetMonitoring(value); return *this;}
-    inline ResponseLaunchTemplateData& WithMonitoring(LaunchTemplatesMonitoring&& value) { SetMonitoring(std::move(value)); return *this;}
+    template<typename MonitoringT = LaunchTemplatesMonitoring>
+    void SetMonitoring(MonitoringT&& value) { m_monitoringHasBeenSet = true; m_monitoring = std::forward<MonitoringT>(value); }
+    template<typename MonitoringT = LaunchTemplatesMonitoring>
+    ResponseLaunchTemplateData& WithMonitoring(MonitoringT&& value) { SetMonitoring(std::forward<MonitoringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The placement of the instance.</p>
      */
-    inline const LaunchTemplatePlacement& GetPlacement() const{ return m_placement; }
+    inline const LaunchTemplatePlacement& GetPlacement() const { return m_placement; }
     inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
-    inline void SetPlacement(const LaunchTemplatePlacement& value) { m_placementHasBeenSet = true; m_placement = value; }
-    inline void SetPlacement(LaunchTemplatePlacement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
-    inline ResponseLaunchTemplateData& WithPlacement(const LaunchTemplatePlacement& value) { SetPlacement(value); return *this;}
-    inline ResponseLaunchTemplateData& WithPlacement(LaunchTemplatePlacement&& value) { SetPlacement(std::move(value)); return *this;}
+    template<typename PlacementT = LaunchTemplatePlacement>
+    void SetPlacement(PlacementT&& value) { m_placementHasBeenSet = true; m_placement = std::forward<PlacementT>(value); }
+    template<typename PlacementT = LaunchTemplatePlacement>
+    ResponseLaunchTemplateData& WithPlacement(PlacementT&& value) { SetPlacement(std::forward<PlacementT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the RAM disk, if applicable.</p>
      */
-    inline const Aws::String& GetRamDiskId() const{ return m_ramDiskId; }
+    inline const Aws::String& GetRamDiskId() const { return m_ramDiskId; }
     inline bool RamDiskIdHasBeenSet() const { return m_ramDiskIdHasBeenSet; }
-    inline void SetRamDiskId(const Aws::String& value) { m_ramDiskIdHasBeenSet = true; m_ramDiskId = value; }
-    inline void SetRamDiskId(Aws::String&& value) { m_ramDiskIdHasBeenSet = true; m_ramDiskId = std::move(value); }
-    inline void SetRamDiskId(const char* value) { m_ramDiskIdHasBeenSet = true; m_ramDiskId.assign(value); }
-    inline ResponseLaunchTemplateData& WithRamDiskId(const Aws::String& value) { SetRamDiskId(value); return *this;}
-    inline ResponseLaunchTemplateData& WithRamDiskId(Aws::String&& value) { SetRamDiskId(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& WithRamDiskId(const char* value) { SetRamDiskId(value); return *this;}
+    template<typename RamDiskIdT = Aws::String>
+    void SetRamDiskId(RamDiskIdT&& value) { m_ramDiskIdHasBeenSet = true; m_ramDiskId = std::forward<RamDiskIdT>(value); }
+    template<typename RamDiskIdT = Aws::String>
+    ResponseLaunchTemplateData& WithRamDiskId(RamDiskIdT&& value) { SetRamDiskId(std::forward<RamDiskIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,7 +212,7 @@ namespace Model
      * <p>If set to <code>true</code>, indicates that the instance cannot be terminated
      * using the Amazon EC2 console, command line tool, or API.</p>
      */
-    inline bool GetDisableApiTermination() const{ return m_disableApiTermination; }
+    inline bool GetDisableApiTermination() const { return m_disableApiTermination; }
     inline bool DisableApiTerminationHasBeenSet() const { return m_disableApiTerminationHasBeenSet; }
     inline void SetDisableApiTermination(bool value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
     inline ResponseLaunchTemplateData& WithDisableApiTermination(bool value) { SetDisableApiTermination(value); return *this;}
@@ -233,26 +223,22 @@ namespace Model
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
      */
-    inline const ShutdownBehavior& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
+    inline ShutdownBehavior GetInstanceInitiatedShutdownBehavior() const { return m_instanceInitiatedShutdownBehavior; }
     inline bool InstanceInitiatedShutdownBehaviorHasBeenSet() const { return m_instanceInitiatedShutdownBehaviorHasBeenSet; }
-    inline void SetInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
-    inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::move(value); }
-    inline ResponseLaunchTemplateData& WithInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
-    inline ResponseLaunchTemplateData& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
+    inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
+    inline ResponseLaunchTemplateData& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user data for the instance. </p>
      */
-    inline const Aws::String& GetUserData() const{ return m_userData; }
+    inline const Aws::String& GetUserData() const { return m_userData; }
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
-    inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
-    inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
-    inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
-    inline ResponseLaunchTemplateData& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
-    inline ResponseLaunchTemplateData& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& WithUserData(const char* value) { SetUserData(value); return *this;}
+    template<typename UserDataT = Aws::String>
+    void SetUserData(UserDataT&& value) { m_userDataHasBeenSet = true; m_userData = std::forward<UserDataT>(value); }
+    template<typename UserDataT = Aws::String>
+    ResponseLaunchTemplateData& WithUserData(UserDataT&& value) { SetUserData(std::forward<UserDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -260,14 +246,14 @@ namespace Model
      * <p>The tags that are applied to the resources that are created during instance
      * launch.</p>
      */
-    inline const Aws::Vector<LaunchTemplateTagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<LaunchTemplateTagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<LaunchTemplateTagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline ResponseLaunchTemplateData& WithTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline ResponseLaunchTemplateData& WithTagSpecifications(Aws::Vector<LaunchTemplateTagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& AddTagSpecifications(const LaunchTemplateTagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline ResponseLaunchTemplateData& AddTagSpecifications(LaunchTemplateTagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<LaunchTemplateTagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<LaunchTemplateTagSpecification>>
+    ResponseLaunchTemplateData& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = LaunchTemplateTagSpecification>
+    ResponseLaunchTemplateData& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -276,14 +262,14 @@ namespace Model
      * January 8, 2024. For workloads that require graphics acceleration, we recommend
      * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
-    inline const Aws::Vector<ElasticGpuSpecificationResponse>& GetElasticGpuSpecifications() const{ return m_elasticGpuSpecifications; }
+    inline const Aws::Vector<ElasticGpuSpecificationResponse>& GetElasticGpuSpecifications() const { return m_elasticGpuSpecifications; }
     inline bool ElasticGpuSpecificationsHasBeenSet() const { return m_elasticGpuSpecificationsHasBeenSet; }
-    inline void SetElasticGpuSpecifications(const Aws::Vector<ElasticGpuSpecificationResponse>& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications = value; }
-    inline void SetElasticGpuSpecifications(Aws::Vector<ElasticGpuSpecificationResponse>&& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications = std::move(value); }
-    inline ResponseLaunchTemplateData& WithElasticGpuSpecifications(const Aws::Vector<ElasticGpuSpecificationResponse>& value) { SetElasticGpuSpecifications(value); return *this;}
-    inline ResponseLaunchTemplateData& WithElasticGpuSpecifications(Aws::Vector<ElasticGpuSpecificationResponse>&& value) { SetElasticGpuSpecifications(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& AddElasticGpuSpecifications(const ElasticGpuSpecificationResponse& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications.push_back(value); return *this; }
-    inline ResponseLaunchTemplateData& AddElasticGpuSpecifications(ElasticGpuSpecificationResponse&& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications.push_back(std::move(value)); return *this; }
+    template<typename ElasticGpuSpecificationsT = Aws::Vector<ElasticGpuSpecificationResponse>>
+    void SetElasticGpuSpecifications(ElasticGpuSpecificationsT&& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications = std::forward<ElasticGpuSpecificationsT>(value); }
+    template<typename ElasticGpuSpecificationsT = Aws::Vector<ElasticGpuSpecificationResponse>>
+    ResponseLaunchTemplateData& WithElasticGpuSpecifications(ElasticGpuSpecificationsT&& value) { SetElasticGpuSpecifications(std::forward<ElasticGpuSpecificationsT>(value)); return *this;}
+    template<typename ElasticGpuSpecificationsT = ElasticGpuSpecificationResponse>
+    ResponseLaunchTemplateData& AddElasticGpuSpecifications(ElasticGpuSpecificationsT&& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications.emplace_back(std::forward<ElasticGpuSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -302,68 +288,66 @@ namespace Model
      * considered current customers and will be able to continue using the service.</p>
      * 
      */
-    inline const Aws::Vector<LaunchTemplateElasticInferenceAcceleratorResponse>& GetElasticInferenceAccelerators() const{ return m_elasticInferenceAccelerators; }
+    inline const Aws::Vector<LaunchTemplateElasticInferenceAcceleratorResponse>& GetElasticInferenceAccelerators() const { return m_elasticInferenceAccelerators; }
     inline bool ElasticInferenceAcceleratorsHasBeenSet() const { return m_elasticInferenceAcceleratorsHasBeenSet; }
-    inline void SetElasticInferenceAccelerators(const Aws::Vector<LaunchTemplateElasticInferenceAcceleratorResponse>& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = value; }
-    inline void SetElasticInferenceAccelerators(Aws::Vector<LaunchTemplateElasticInferenceAcceleratorResponse>&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = std::move(value); }
-    inline ResponseLaunchTemplateData& WithElasticInferenceAccelerators(const Aws::Vector<LaunchTemplateElasticInferenceAcceleratorResponse>& value) { SetElasticInferenceAccelerators(value); return *this;}
-    inline ResponseLaunchTemplateData& WithElasticInferenceAccelerators(Aws::Vector<LaunchTemplateElasticInferenceAcceleratorResponse>&& value) { SetElasticInferenceAccelerators(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& AddElasticInferenceAccelerators(const LaunchTemplateElasticInferenceAcceleratorResponse& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.push_back(value); return *this; }
-    inline ResponseLaunchTemplateData& AddElasticInferenceAccelerators(LaunchTemplateElasticInferenceAcceleratorResponse&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.push_back(std::move(value)); return *this; }
+    template<typename ElasticInferenceAcceleratorsT = Aws::Vector<LaunchTemplateElasticInferenceAcceleratorResponse>>
+    void SetElasticInferenceAccelerators(ElasticInferenceAcceleratorsT&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = std::forward<ElasticInferenceAcceleratorsT>(value); }
+    template<typename ElasticInferenceAcceleratorsT = Aws::Vector<LaunchTemplateElasticInferenceAcceleratorResponse>>
+    ResponseLaunchTemplateData& WithElasticInferenceAccelerators(ElasticInferenceAcceleratorsT&& value) { SetElasticInferenceAccelerators(std::forward<ElasticInferenceAcceleratorsT>(value)); return *this;}
+    template<typename ElasticInferenceAcceleratorsT = LaunchTemplateElasticInferenceAcceleratorResponse>
+    ResponseLaunchTemplateData& AddElasticInferenceAccelerators(ElasticInferenceAcceleratorsT&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.emplace_back(std::forward<ElasticInferenceAcceleratorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The security group IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline ResponseLaunchTemplateData& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline ResponseLaunchTemplateData& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline ResponseLaunchTemplateData& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline ResponseLaunchTemplateData& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    ResponseLaunchTemplateData& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    ResponseLaunchTemplateData& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The security group names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const { return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
-    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
-    inline ResponseLaunchTemplateData& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
-    inline ResponseLaunchTemplateData& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
-    inline ResponseLaunchTemplateData& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
-    inline ResponseLaunchTemplateData& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::forward<SecurityGroupsT>(value); }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    ResponseLaunchTemplateData& WithSecurityGroups(SecurityGroupsT&& value) { SetSecurityGroups(std::forward<SecurityGroupsT>(value)); return *this;}
+    template<typename SecurityGroupsT = Aws::String>
+    ResponseLaunchTemplateData& AddSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.emplace_back(std::forward<SecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The market (purchasing) option for the instances.</p>
      */
-    inline const LaunchTemplateInstanceMarketOptions& GetInstanceMarketOptions() const{ return m_instanceMarketOptions; }
+    inline const LaunchTemplateInstanceMarketOptions& GetInstanceMarketOptions() const { return m_instanceMarketOptions; }
     inline bool InstanceMarketOptionsHasBeenSet() const { return m_instanceMarketOptionsHasBeenSet; }
-    inline void SetInstanceMarketOptions(const LaunchTemplateInstanceMarketOptions& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = value; }
-    inline void SetInstanceMarketOptions(LaunchTemplateInstanceMarketOptions&& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = std::move(value); }
-    inline ResponseLaunchTemplateData& WithInstanceMarketOptions(const LaunchTemplateInstanceMarketOptions& value) { SetInstanceMarketOptions(value); return *this;}
-    inline ResponseLaunchTemplateData& WithInstanceMarketOptions(LaunchTemplateInstanceMarketOptions&& value) { SetInstanceMarketOptions(std::move(value)); return *this;}
+    template<typename InstanceMarketOptionsT = LaunchTemplateInstanceMarketOptions>
+    void SetInstanceMarketOptions(InstanceMarketOptionsT&& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = std::forward<InstanceMarketOptionsT>(value); }
+    template<typename InstanceMarketOptionsT = LaunchTemplateInstanceMarketOptions>
+    ResponseLaunchTemplateData& WithInstanceMarketOptions(InstanceMarketOptionsT&& value) { SetInstanceMarketOptions(std::forward<InstanceMarketOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The credit option for CPU usage of the instance.</p>
      */
-    inline const CreditSpecification& GetCreditSpecification() const{ return m_creditSpecification; }
+    inline const CreditSpecification& GetCreditSpecification() const { return m_creditSpecification; }
     inline bool CreditSpecificationHasBeenSet() const { return m_creditSpecificationHasBeenSet; }
-    inline void SetCreditSpecification(const CreditSpecification& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = value; }
-    inline void SetCreditSpecification(CreditSpecification&& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = std::move(value); }
-    inline ResponseLaunchTemplateData& WithCreditSpecification(const CreditSpecification& value) { SetCreditSpecification(value); return *this;}
-    inline ResponseLaunchTemplateData& WithCreditSpecification(CreditSpecification&& value) { SetCreditSpecification(std::move(value)); return *this;}
+    template<typename CreditSpecificationT = CreditSpecification>
+    void SetCreditSpecification(CreditSpecificationT&& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = std::forward<CreditSpecificationT>(value); }
+    template<typename CreditSpecificationT = CreditSpecification>
+    ResponseLaunchTemplateData& WithCreditSpecification(CreditSpecificationT&& value) { SetCreditSpecification(std::forward<CreditSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -372,38 +356,38 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU
      * options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const LaunchTemplateCpuOptions& GetCpuOptions() const{ return m_cpuOptions; }
+    inline const LaunchTemplateCpuOptions& GetCpuOptions() const { return m_cpuOptions; }
     inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
-    inline void SetCpuOptions(const LaunchTemplateCpuOptions& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = value; }
-    inline void SetCpuOptions(LaunchTemplateCpuOptions&& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = std::move(value); }
-    inline ResponseLaunchTemplateData& WithCpuOptions(const LaunchTemplateCpuOptions& value) { SetCpuOptions(value); return *this;}
-    inline ResponseLaunchTemplateData& WithCpuOptions(LaunchTemplateCpuOptions&& value) { SetCpuOptions(std::move(value)); return *this;}
+    template<typename CpuOptionsT = LaunchTemplateCpuOptions>
+    void SetCpuOptions(CpuOptionsT&& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = std::forward<CpuOptionsT>(value); }
+    template<typename CpuOptionsT = LaunchTemplateCpuOptions>
+    ResponseLaunchTemplateData& WithCpuOptions(CpuOptionsT&& value) { SetCpuOptions(std::forward<CpuOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the Capacity Reservation targeting option.</p>
      */
-    inline const LaunchTemplateCapacityReservationSpecificationResponse& GetCapacityReservationSpecification() const{ return m_capacityReservationSpecification; }
+    inline const LaunchTemplateCapacityReservationSpecificationResponse& GetCapacityReservationSpecification() const { return m_capacityReservationSpecification; }
     inline bool CapacityReservationSpecificationHasBeenSet() const { return m_capacityReservationSpecificationHasBeenSet; }
-    inline void SetCapacityReservationSpecification(const LaunchTemplateCapacityReservationSpecificationResponse& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = value; }
-    inline void SetCapacityReservationSpecification(LaunchTemplateCapacityReservationSpecificationResponse&& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = std::move(value); }
-    inline ResponseLaunchTemplateData& WithCapacityReservationSpecification(const LaunchTemplateCapacityReservationSpecificationResponse& value) { SetCapacityReservationSpecification(value); return *this;}
-    inline ResponseLaunchTemplateData& WithCapacityReservationSpecification(LaunchTemplateCapacityReservationSpecificationResponse&& value) { SetCapacityReservationSpecification(std::move(value)); return *this;}
+    template<typename CapacityReservationSpecificationT = LaunchTemplateCapacityReservationSpecificationResponse>
+    void SetCapacityReservationSpecification(CapacityReservationSpecificationT&& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = std::forward<CapacityReservationSpecificationT>(value); }
+    template<typename CapacityReservationSpecificationT = LaunchTemplateCapacityReservationSpecificationResponse>
+    ResponseLaunchTemplateData& WithCapacityReservationSpecification(CapacityReservationSpecificationT&& value) { SetCapacityReservationSpecification(std::forward<CapacityReservationSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The license configurations.</p>
      */
-    inline const Aws::Vector<LaunchTemplateLicenseConfiguration>& GetLicenseSpecifications() const{ return m_licenseSpecifications; }
+    inline const Aws::Vector<LaunchTemplateLicenseConfiguration>& GetLicenseSpecifications() const { return m_licenseSpecifications; }
     inline bool LicenseSpecificationsHasBeenSet() const { return m_licenseSpecificationsHasBeenSet; }
-    inline void SetLicenseSpecifications(const Aws::Vector<LaunchTemplateLicenseConfiguration>& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = value; }
-    inline void SetLicenseSpecifications(Aws::Vector<LaunchTemplateLicenseConfiguration>&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = std::move(value); }
-    inline ResponseLaunchTemplateData& WithLicenseSpecifications(const Aws::Vector<LaunchTemplateLicenseConfiguration>& value) { SetLicenseSpecifications(value); return *this;}
-    inline ResponseLaunchTemplateData& WithLicenseSpecifications(Aws::Vector<LaunchTemplateLicenseConfiguration>&& value) { SetLicenseSpecifications(std::move(value)); return *this;}
-    inline ResponseLaunchTemplateData& AddLicenseSpecifications(const LaunchTemplateLicenseConfiguration& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(value); return *this; }
-    inline ResponseLaunchTemplateData& AddLicenseSpecifications(LaunchTemplateLicenseConfiguration&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(std::move(value)); return *this; }
+    template<typename LicenseSpecificationsT = Aws::Vector<LaunchTemplateLicenseConfiguration>>
+    void SetLicenseSpecifications(LicenseSpecificationsT&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = std::forward<LicenseSpecificationsT>(value); }
+    template<typename LicenseSpecificationsT = Aws::Vector<LaunchTemplateLicenseConfiguration>>
+    ResponseLaunchTemplateData& WithLicenseSpecifications(LicenseSpecificationsT&& value) { SetLicenseSpecifications(std::forward<LicenseSpecificationsT>(value)); return *this;}
+    template<typename LicenseSpecificationsT = LaunchTemplateLicenseConfiguration>
+    ResponseLaunchTemplateData& AddLicenseSpecifications(LicenseSpecificationsT&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.emplace_back(std::forward<LicenseSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -413,12 +397,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const LaunchTemplateHibernationOptions& GetHibernationOptions() const{ return m_hibernationOptions; }
+    inline const LaunchTemplateHibernationOptions& GetHibernationOptions() const { return m_hibernationOptions; }
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
-    inline void SetHibernationOptions(const LaunchTemplateHibernationOptions& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
-    inline void SetHibernationOptions(LaunchTemplateHibernationOptions&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::move(value); }
-    inline ResponseLaunchTemplateData& WithHibernationOptions(const LaunchTemplateHibernationOptions& value) { SetHibernationOptions(value); return *this;}
-    inline ResponseLaunchTemplateData& WithHibernationOptions(LaunchTemplateHibernationOptions&& value) { SetHibernationOptions(std::move(value)); return *this;}
+    template<typename HibernationOptionsT = LaunchTemplateHibernationOptions>
+    void SetHibernationOptions(HibernationOptionsT&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::forward<HibernationOptionsT>(value); }
+    template<typename HibernationOptionsT = LaunchTemplateHibernationOptions>
+    ResponseLaunchTemplateData& WithHibernationOptions(HibernationOptionsT&& value) { SetHibernationOptions(std::forward<HibernationOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -428,12 +412,12 @@ namespace Model
      * the Instance Metadata Service options</a> in the <i>Amazon EC2 User
      * Guide</i>.</p>
      */
-    inline const LaunchTemplateInstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }
+    inline const LaunchTemplateInstanceMetadataOptions& GetMetadataOptions() const { return m_metadataOptions; }
     inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
-    inline void SetMetadataOptions(const LaunchTemplateInstanceMetadataOptions& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
-    inline void SetMetadataOptions(LaunchTemplateInstanceMetadataOptions&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
-    inline ResponseLaunchTemplateData& WithMetadataOptions(const LaunchTemplateInstanceMetadataOptions& value) { SetMetadataOptions(value); return *this;}
-    inline ResponseLaunchTemplateData& WithMetadataOptions(LaunchTemplateInstanceMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
+    template<typename MetadataOptionsT = LaunchTemplateInstanceMetadataOptions>
+    void SetMetadataOptions(MetadataOptionsT&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::forward<MetadataOptionsT>(value); }
+    template<typename MetadataOptionsT = LaunchTemplateInstanceMetadataOptions>
+    ResponseLaunchTemplateData& WithMetadataOptions(MetadataOptionsT&& value) { SetMetadataOptions(std::forward<MetadataOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -441,12 +425,12 @@ namespace Model
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves.</p>
      */
-    inline const LaunchTemplateEnclaveOptions& GetEnclaveOptions() const{ return m_enclaveOptions; }
+    inline const LaunchTemplateEnclaveOptions& GetEnclaveOptions() const { return m_enclaveOptions; }
     inline bool EnclaveOptionsHasBeenSet() const { return m_enclaveOptionsHasBeenSet; }
-    inline void SetEnclaveOptions(const LaunchTemplateEnclaveOptions& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = value; }
-    inline void SetEnclaveOptions(LaunchTemplateEnclaveOptions&& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = std::move(value); }
-    inline ResponseLaunchTemplateData& WithEnclaveOptions(const LaunchTemplateEnclaveOptions& value) { SetEnclaveOptions(value); return *this;}
-    inline ResponseLaunchTemplateData& WithEnclaveOptions(LaunchTemplateEnclaveOptions&& value) { SetEnclaveOptions(std::move(value)); return *this;}
+    template<typename EnclaveOptionsT = LaunchTemplateEnclaveOptions>
+    void SetEnclaveOptions(EnclaveOptionsT&& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = std::forward<EnclaveOptionsT>(value); }
+    template<typename EnclaveOptionsT = LaunchTemplateEnclaveOptions>
+    ResponseLaunchTemplateData& WithEnclaveOptions(EnclaveOptionsT&& value) { SetEnclaveOptions(std::forward<EnclaveOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -456,36 +440,36 @@ namespace Model
      * specify <code>InstanceRequirements</code>, you can't specify
      * <code>InstanceTypes</code>.</p>
      */
-    inline const InstanceRequirements& GetInstanceRequirements() const{ return m_instanceRequirements; }
+    inline const InstanceRequirements& GetInstanceRequirements() const { return m_instanceRequirements; }
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
-    inline void SetInstanceRequirements(const InstanceRequirements& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
-    inline void SetInstanceRequirements(InstanceRequirements&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
-    inline ResponseLaunchTemplateData& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
-    inline ResponseLaunchTemplateData& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
+    template<typename InstanceRequirementsT = InstanceRequirements>
+    void SetInstanceRequirements(InstanceRequirementsT&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::forward<InstanceRequirementsT>(value); }
+    template<typename InstanceRequirementsT = InstanceRequirements>
+    ResponseLaunchTemplateData& WithInstanceRequirements(InstanceRequirementsT&& value) { SetInstanceRequirements(std::forward<InstanceRequirementsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options for the instance hostname.</p>
      */
-    inline const LaunchTemplatePrivateDnsNameOptions& GetPrivateDnsNameOptions() const{ return m_privateDnsNameOptions; }
+    inline const LaunchTemplatePrivateDnsNameOptions& GetPrivateDnsNameOptions() const { return m_privateDnsNameOptions; }
     inline bool PrivateDnsNameOptionsHasBeenSet() const { return m_privateDnsNameOptionsHasBeenSet; }
-    inline void SetPrivateDnsNameOptions(const LaunchTemplatePrivateDnsNameOptions& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = value; }
-    inline void SetPrivateDnsNameOptions(LaunchTemplatePrivateDnsNameOptions&& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = std::move(value); }
-    inline ResponseLaunchTemplateData& WithPrivateDnsNameOptions(const LaunchTemplatePrivateDnsNameOptions& value) { SetPrivateDnsNameOptions(value); return *this;}
-    inline ResponseLaunchTemplateData& WithPrivateDnsNameOptions(LaunchTemplatePrivateDnsNameOptions&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
+    template<typename PrivateDnsNameOptionsT = LaunchTemplatePrivateDnsNameOptions>
+    void SetPrivateDnsNameOptions(PrivateDnsNameOptionsT&& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = std::forward<PrivateDnsNameOptionsT>(value); }
+    template<typename PrivateDnsNameOptionsT = LaunchTemplatePrivateDnsNameOptions>
+    ResponseLaunchTemplateData& WithPrivateDnsNameOptions(PrivateDnsNameOptionsT&& value) { SetPrivateDnsNameOptions(std::forward<PrivateDnsNameOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maintenance options for your instance.</p>
      */
-    inline const LaunchTemplateInstanceMaintenanceOptions& GetMaintenanceOptions() const{ return m_maintenanceOptions; }
+    inline const LaunchTemplateInstanceMaintenanceOptions& GetMaintenanceOptions() const { return m_maintenanceOptions; }
     inline bool MaintenanceOptionsHasBeenSet() const { return m_maintenanceOptionsHasBeenSet; }
-    inline void SetMaintenanceOptions(const LaunchTemplateInstanceMaintenanceOptions& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = value; }
-    inline void SetMaintenanceOptions(LaunchTemplateInstanceMaintenanceOptions&& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = std::move(value); }
-    inline ResponseLaunchTemplateData& WithMaintenanceOptions(const LaunchTemplateInstanceMaintenanceOptions& value) { SetMaintenanceOptions(value); return *this;}
-    inline ResponseLaunchTemplateData& WithMaintenanceOptions(LaunchTemplateInstanceMaintenanceOptions&& value) { SetMaintenanceOptions(std::move(value)); return *this;}
+    template<typename MaintenanceOptionsT = LaunchTemplateInstanceMaintenanceOptions>
+    void SetMaintenanceOptions(MaintenanceOptionsT&& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = std::forward<MaintenanceOptionsT>(value); }
+    template<typename MaintenanceOptionsT = LaunchTemplateInstanceMaintenanceOptions>
+    ResponseLaunchTemplateData& WithMaintenanceOptions(MaintenanceOptionsT&& value) { SetMaintenanceOptions(std::forward<MaintenanceOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -496,7 +480,7 @@ namespace Model
      * stop protection for your EC2 instances</a> in the <i>Amazon EC2 User
      * Guide</i>.</p>
      */
-    inline bool GetDisableApiStop() const{ return m_disableApiStop; }
+    inline bool GetDisableApiStop() const { return m_disableApiStop; }
     inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
     inline void SetDisableApiStop(bool value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
     inline ResponseLaunchTemplateData& WithDisableApiStop(bool value) { SetDisableApiStop(value); return *this;}
@@ -506,12 +490,12 @@ namespace Model
     /**
      * <p>The entity that manages the launch template.</p>
      */
-    inline const OperatorResponse& GetOperator() const{ return m_operator; }
+    inline const OperatorResponse& GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const OperatorResponse& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(OperatorResponse&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline ResponseLaunchTemplateData& WithOperator(const OperatorResponse& value) { SetOperator(value); return *this;}
-    inline ResponseLaunchTemplateData& WithOperator(OperatorResponse&& value) { SetOperator(std::move(value)); return *this;}
+    template<typename OperatorT = OperatorResponse>
+    void SetOperator(OperatorT&& value) { m_operatorHasBeenSet = true; m_operator = std::forward<OperatorT>(value); }
+    template<typename OperatorT = OperatorResponse>
+    ResponseLaunchTemplateData& WithOperator(OperatorT&& value) { SetOperator(std::forward<OperatorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -519,19 +503,19 @@ namespace Model
      * <p>Contains the launch template settings for network performance options for
      * your instance.</p>
      */
-    inline const LaunchTemplateNetworkPerformanceOptions& GetNetworkPerformanceOptions() const{ return m_networkPerformanceOptions; }
+    inline const LaunchTemplateNetworkPerformanceOptions& GetNetworkPerformanceOptions() const { return m_networkPerformanceOptions; }
     inline bool NetworkPerformanceOptionsHasBeenSet() const { return m_networkPerformanceOptionsHasBeenSet; }
-    inline void SetNetworkPerformanceOptions(const LaunchTemplateNetworkPerformanceOptions& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = value; }
-    inline void SetNetworkPerformanceOptions(LaunchTemplateNetworkPerformanceOptions&& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = std::move(value); }
-    inline ResponseLaunchTemplateData& WithNetworkPerformanceOptions(const LaunchTemplateNetworkPerformanceOptions& value) { SetNetworkPerformanceOptions(value); return *this;}
-    inline ResponseLaunchTemplateData& WithNetworkPerformanceOptions(LaunchTemplateNetworkPerformanceOptions&& value) { SetNetworkPerformanceOptions(std::move(value)); return *this;}
+    template<typename NetworkPerformanceOptionsT = LaunchTemplateNetworkPerformanceOptions>
+    void SetNetworkPerformanceOptions(NetworkPerformanceOptionsT&& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = std::forward<NetworkPerformanceOptionsT>(value); }
+    template<typename NetworkPerformanceOptionsT = LaunchTemplateNetworkPerformanceOptions>
+    ResponseLaunchTemplateData& WithNetworkPerformanceOptions(NetworkPerformanceOptionsT&& value) { SetNetworkPerformanceOptions(std::forward<NetworkPerformanceOptionsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_kernelId;
     bool m_kernelIdHasBeenSet = false;
 
-    bool m_ebsOptimized;
+    bool m_ebsOptimized{false};
     bool m_ebsOptimizedHasBeenSet = false;
 
     LaunchTemplateIamInstanceProfileSpecification m_iamInstanceProfile;
@@ -546,7 +530,7 @@ namespace Model
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet = false;
 
-    InstanceType m_instanceType;
+    InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_keyName;
@@ -561,10 +545,10 @@ namespace Model
     Aws::String m_ramDiskId;
     bool m_ramDiskIdHasBeenSet = false;
 
-    bool m_disableApiTermination;
+    bool m_disableApiTermination{false};
     bool m_disableApiTerminationHasBeenSet = false;
 
-    ShutdownBehavior m_instanceInitiatedShutdownBehavior;
+    ShutdownBehavior m_instanceInitiatedShutdownBehavior{ShutdownBehavior::NOT_SET};
     bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
     Aws::String m_userData;
@@ -618,7 +602,7 @@ namespace Model
     LaunchTemplateInstanceMaintenanceOptions m_maintenanceOptions;
     bool m_maintenanceOptionsHasBeenSet = false;
 
-    bool m_disableApiStop;
+    bool m_disableApiStop{false};
     bool m_disableApiStopHasBeenSet = false;
 
     OperatorResponse m_operator;

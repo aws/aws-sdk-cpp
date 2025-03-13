@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterClientResult::RegisterClientResult() : 
-    m_clientIdIssuedAt(0),
-    m_clientSecretExpiresAt(0)
-{
-}
-
 RegisterClientResult::RegisterClientResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RegisterClientResult()
 {
   *this = result;
 }
@@ -35,45 +28,40 @@ RegisterClientResult& RegisterClientResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("clientId"))
   {
     m_clientId = jsonValue.GetString("clientId");
-
+    m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientSecret"))
   {
     m_clientSecret = jsonValue.GetString("clientSecret");
-
+    m_clientSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientIdIssuedAt"))
   {
     m_clientIdIssuedAt = jsonValue.GetInt64("clientIdIssuedAt");
-
+    m_clientIdIssuedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientSecretExpiresAt"))
   {
     m_clientSecretExpiresAt = jsonValue.GetInt64("clientSecretExpiresAt");
-
+    m_clientSecretExpiresAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizationEndpoint"))
   {
     m_authorizationEndpoint = jsonValue.GetString("authorizationEndpoint");
-
+    m_authorizationEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenEndpoint"))
   {
     m_tokenEndpoint = jsonValue.GetString("tokenEndpoint");
-
+    m_tokenEndpointHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

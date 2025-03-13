@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TargetGroupsConfig::TargetGroupsConfig() : 
-    m_targetGroupsHasBeenSet(false)
-{
-}
-
 TargetGroupsConfig::TargetGroupsConfig(const XmlNode& xmlNode)
-  : TargetGroupsConfig()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ TargetGroupsConfig& TargetGroupsConfig::operator =(const XmlNode& xmlNode)
     if(!targetGroupsNode.IsNull())
     {
       XmlNode targetGroupsMember = targetGroupsNode.FirstChild("item");
+      m_targetGroupsHasBeenSet = !targetGroupsMember.IsNull();
       while(!targetGroupsMember.IsNull())
       {
         m_targetGroups.push_back(targetGroupsMember);
         targetGroupsMember = targetGroupsMember.NextNode("item");
       }
 
-      m_targetGroupsHasBeenSet = true;
+       m_targetGroupsHasBeenSet = true;
     }
   }
 

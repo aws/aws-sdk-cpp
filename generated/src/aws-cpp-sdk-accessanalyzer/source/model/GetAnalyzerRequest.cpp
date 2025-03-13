@@ -12,11 +12,6 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAnalyzerRequest::GetAnalyzerRequest() : 
-    m_analyzerNameHasBeenSet(false)
-{
-}
-
 Aws::String GetAnalyzerRequest::SerializePayload() const
 {
   return {};

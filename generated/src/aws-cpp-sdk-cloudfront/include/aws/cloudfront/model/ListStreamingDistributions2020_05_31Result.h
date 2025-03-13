@@ -34,7 +34,7 @@ namespace Model
   class ListStreamingDistributions2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API ListStreamingDistributions2020_05_31Result();
+    AWS_CLOUDFRONT_API ListStreamingDistributions2020_05_31Result() = default;
     AWS_CLOUDFRONT_API ListStreamingDistributions2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API ListStreamingDistributions2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The <code>StreamingDistributionList</code> type.</p>
      */
-    inline const StreamingDistributionList& GetStreamingDistributionList() const{ return m_streamingDistributionList; }
-    inline void SetStreamingDistributionList(const StreamingDistributionList& value) { m_streamingDistributionList = value; }
-    inline void SetStreamingDistributionList(StreamingDistributionList&& value) { m_streamingDistributionList = std::move(value); }
-    inline ListStreamingDistributions2020_05_31Result& WithStreamingDistributionList(const StreamingDistributionList& value) { SetStreamingDistributionList(value); return *this;}
-    inline ListStreamingDistributions2020_05_31Result& WithStreamingDistributionList(StreamingDistributionList&& value) { SetStreamingDistributionList(std::move(value)); return *this;}
+    inline const StreamingDistributionList& GetStreamingDistributionList() const { return m_streamingDistributionList; }
+    template<typename StreamingDistributionListT = StreamingDistributionList>
+    void SetStreamingDistributionList(StreamingDistributionListT&& value) { m_streamingDistributionListHasBeenSet = true; m_streamingDistributionList = std::forward<StreamingDistributionListT>(value); }
+    template<typename StreamingDistributionListT = StreamingDistributionList>
+    ListStreamingDistributions2020_05_31Result& WithStreamingDistributionList(StreamingDistributionListT&& value) { SetStreamingDistributionList(std::forward<StreamingDistributionListT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStreamingDistributions2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStreamingDistributions2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStreamingDistributions2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStreamingDistributions2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     StreamingDistributionList m_streamingDistributionList;
+    bool m_streamingDistributionListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

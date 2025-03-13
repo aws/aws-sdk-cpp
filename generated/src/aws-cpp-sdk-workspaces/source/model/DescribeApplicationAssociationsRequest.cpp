@@ -12,15 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeApplicationAssociationsRequest::DescribeApplicationAssociationsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_associatedResourceTypesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeApplicationAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

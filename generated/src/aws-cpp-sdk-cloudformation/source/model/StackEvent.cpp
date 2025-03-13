@@ -20,34 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackEvent::StackEvent() : 
-    m_stackIdHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_resourceStatus(ResourceStatus::NOT_SET),
-    m_resourceStatusHasBeenSet(false),
-    m_resourceStatusReasonHasBeenSet(false),
-    m_resourcePropertiesHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_hookTypeHasBeenSet(false),
-    m_hookStatus(HookStatus::NOT_SET),
-    m_hookStatusHasBeenSet(false),
-    m_hookStatusReasonHasBeenSet(false),
-    m_hookInvocationPoint(HookInvocationPoint::NOT_SET),
-    m_hookInvocationPointHasBeenSet(false),
-    m_hookFailureMode(HookFailureMode::NOT_SET),
-    m_hookFailureModeHasBeenSet(false),
-    m_detailedStatus(DetailedStatus::NOT_SET),
-    m_detailedStatusHasBeenSet(false)
-{
-}
-
 StackEvent::StackEvent(const XmlNode& xmlNode)
-  : StackEvent()
 {
   *this = xmlNode;
 }
@@ -63,102 +36,119 @@ StackEvent& StackEvent::operator =(const XmlNode& xmlNode)
     {
       m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
       m_stackIdHasBeenSet = true;
+       m_stackIdHasBeenSet = true;
     }
     XmlNode eventIdNode = resultNode.FirstChild("EventId");
     if(!eventIdNode.IsNull())
     {
       m_eventId = Aws::Utils::Xml::DecodeEscapedXmlText(eventIdNode.GetText());
       m_eventIdHasBeenSet = true;
+       m_eventIdHasBeenSet = true;
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
     if(!stackNameNode.IsNull())
     {
       m_stackName = Aws::Utils::Xml::DecodeEscapedXmlText(stackNameNode.GetText());
       m_stackNameHasBeenSet = true;
+       m_stackNameHasBeenSet = true;
     }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
     if(!logicalResourceIdNode.IsNull())
     {
       m_logicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(logicalResourceIdNode.GetText());
       m_logicalResourceIdHasBeenSet = true;
+       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdNode = resultNode.FirstChild("PhysicalResourceId");
     if(!physicalResourceIdNode.IsNull())
     {
       m_physicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(physicalResourceIdNode.GetText());
       m_physicalResourceIdHasBeenSet = true;
+       m_physicalResourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
+       m_timestampHasBeenSet = true;
     }
     XmlNode resourceStatusNode = resultNode.FirstChild("ResourceStatus");
     if(!resourceStatusNode.IsNull())
     {
-      m_resourceStatus = ResourceStatusMapper::GetResourceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceStatusNode.GetText()).c_str()).c_str());
+      m_resourceStatus = ResourceStatusMapper::GetResourceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceStatusNode.GetText()).c_str()));
       m_resourceStatusHasBeenSet = true;
+       m_resourceStatusHasBeenSet = true;
     }
     XmlNode resourceStatusReasonNode = resultNode.FirstChild("ResourceStatusReason");
     if(!resourceStatusReasonNode.IsNull())
     {
       m_resourceStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(resourceStatusReasonNode.GetText());
       m_resourceStatusReasonHasBeenSet = true;
+       m_resourceStatusReasonHasBeenSet = true;
     }
     XmlNode resourcePropertiesNode = resultNode.FirstChild("ResourceProperties");
     if(!resourcePropertiesNode.IsNull())
     {
       m_resourceProperties = Aws::Utils::Xml::DecodeEscapedXmlText(resourcePropertiesNode.GetText());
       m_resourcePropertiesHasBeenSet = true;
+       m_resourcePropertiesHasBeenSet = true;
     }
     XmlNode clientRequestTokenNode = resultNode.FirstChild("ClientRequestToken");
     if(!clientRequestTokenNode.IsNull())
     {
       m_clientRequestToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientRequestTokenNode.GetText());
       m_clientRequestTokenHasBeenSet = true;
+       m_clientRequestTokenHasBeenSet = true;
     }
     XmlNode hookTypeNode = resultNode.FirstChild("HookType");
     if(!hookTypeNode.IsNull())
     {
       m_hookType = Aws::Utils::Xml::DecodeEscapedXmlText(hookTypeNode.GetText());
       m_hookTypeHasBeenSet = true;
+       m_hookTypeHasBeenSet = true;
     }
     XmlNode hookStatusNode = resultNode.FirstChild("HookStatus");
     if(!hookStatusNode.IsNull())
     {
-      m_hookStatus = HookStatusMapper::GetHookStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hookStatusNode.GetText()).c_str()).c_str());
+      m_hookStatus = HookStatusMapper::GetHookStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hookStatusNode.GetText()).c_str()));
       m_hookStatusHasBeenSet = true;
+       m_hookStatusHasBeenSet = true;
     }
     XmlNode hookStatusReasonNode = resultNode.FirstChild("HookStatusReason");
     if(!hookStatusReasonNode.IsNull())
     {
       m_hookStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(hookStatusReasonNode.GetText());
       m_hookStatusReasonHasBeenSet = true;
+       m_hookStatusReasonHasBeenSet = true;
     }
     XmlNode hookInvocationPointNode = resultNode.FirstChild("HookInvocationPoint");
     if(!hookInvocationPointNode.IsNull())
     {
-      m_hookInvocationPoint = HookInvocationPointMapper::GetHookInvocationPointForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hookInvocationPointNode.GetText()).c_str()).c_str());
+      m_hookInvocationPoint = HookInvocationPointMapper::GetHookInvocationPointForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hookInvocationPointNode.GetText()).c_str()));
       m_hookInvocationPointHasBeenSet = true;
+       m_hookInvocationPointHasBeenSet = true;
     }
     XmlNode hookFailureModeNode = resultNode.FirstChild("HookFailureMode");
     if(!hookFailureModeNode.IsNull())
     {
-      m_hookFailureMode = HookFailureModeMapper::GetHookFailureModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hookFailureModeNode.GetText()).c_str()).c_str());
+      m_hookFailureMode = HookFailureModeMapper::GetHookFailureModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hookFailureModeNode.GetText()).c_str()));
       m_hookFailureModeHasBeenSet = true;
+       m_hookFailureModeHasBeenSet = true;
     }
     XmlNode detailedStatusNode = resultNode.FirstChild("DetailedStatus");
     if(!detailedStatusNode.IsNull())
     {
-      m_detailedStatus = DetailedStatusMapper::GetDetailedStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(detailedStatusNode.GetText()).c_str()).c_str());
+      m_detailedStatus = DetailedStatusMapper::GetDetailedStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(detailedStatusNode.GetText()).c_str()));
       m_detailedStatusHasBeenSet = true;
+       m_detailedStatusHasBeenSet = true;
     }
   }
 

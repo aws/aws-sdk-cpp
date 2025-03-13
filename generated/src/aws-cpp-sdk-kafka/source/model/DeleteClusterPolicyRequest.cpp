@@ -12,11 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteClusterPolicyRequest::DeleteClusterPolicyRequest() : 
-    m_clusterArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClusterPolicyRequest::SerializePayload() const
 {
   return {};

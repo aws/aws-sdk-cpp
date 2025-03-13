@@ -18,25 +18,7 @@ namespace QLDB
 namespace Model
 {
 
-JournalKinesisStreamDescription::JournalKinesisStreamDescription() : 
-    m_ledgerNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_inclusiveStartTimeHasBeenSet(false),
-    m_exclusiveEndTimeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(StreamStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_kinesisConfigurationHasBeenSet(false),
-    m_errorCause(ErrorCause::NOT_SET),
-    m_errorCauseHasBeenSet(false),
-    m_streamNameHasBeenSet(false)
-{
-}
-
 JournalKinesisStreamDescription::JournalKinesisStreamDescription(JsonView jsonValue)
-  : JournalKinesisStreamDescription()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ JournalKinesisStreamDescription& JournalKinesisStreamDescription::operator =(Jso
   if(jsonValue.ValueExists("LedgerName"))
   {
     m_ledgerName = jsonValue.GetString("LedgerName");
-
     m_ledgerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusiveStartTime"))
   {
     m_inclusiveStartTime = jsonValue.GetDouble("InclusiveStartTime");
-
     m_inclusiveStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusiveEndTime"))
   {
     m_exclusiveEndTime = jsonValue.GetDouble("ExclusiveEndTime");
-
     m_exclusiveEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamId"))
   {
     m_streamId = jsonValue.GetString("StreamId");
-
     m_streamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StreamStatusMapper::GetStreamStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisConfiguration"))
   {
     m_kinesisConfiguration = jsonValue.GetObject("KinesisConfiguration");
-
     m_kinesisConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCause"))
   {
     m_errorCause = ErrorCauseMapper::GetErrorCauseForName(jsonValue.GetString("ErrorCause"));
-
     m_errorCauseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamName"))
   {
     m_streamName = jsonValue.GetString("StreamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   return *this;
 }
 

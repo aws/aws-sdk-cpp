@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-CrawlFilterConfiguration::CrawlFilterConfiguration() : 
-    m_patternObjectFilterHasBeenSet(false),
-    m_type(CrawlFilterConfigurationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 CrawlFilterConfiguration::CrawlFilterConfiguration(JsonView jsonValue)
-  : CrawlFilterConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CrawlFilterConfiguration& CrawlFilterConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("patternObjectFilter"))
   {
     m_patternObjectFilter = jsonValue.GetObject("patternObjectFilter");
-
     m_patternObjectFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = CrawlFilterConfigurationTypeMapper::GetCrawlFilterConfigurationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

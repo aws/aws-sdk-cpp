@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-NewSessionDetails::NewSessionDetails() : 
-    m_supportedMessagingContentTypesHasBeenSet(false),
-    m_participantDetailsHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_streamingConfigurationHasBeenSet(false)
-{
-}
-
 NewSessionDetails::NewSessionDetails(JsonView jsonValue)
-  : NewSessionDetails()
 {
   *this = jsonValue;
 }
@@ -43,14 +34,11 @@ NewSessionDetails& NewSessionDetails::operator =(JsonView jsonValue)
     }
     m_supportedMessagingContentTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantDetails"))
   {
     m_participantDetails = jsonValue.GetObject("ParticipantDetails");
-
     m_participantDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -60,14 +48,11 @@ NewSessionDetails& NewSessionDetails::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamingConfiguration"))
   {
     m_streamingConfiguration = jsonValue.GetObject("StreamingConfiguration");
-
     m_streamingConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

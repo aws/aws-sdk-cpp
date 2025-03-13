@@ -33,7 +33,7 @@ namespace Model
   class ApiAssociation
   {
   public:
-    AWS_APPSYNC_API ApiAssociation();
+    AWS_APPSYNC_API ApiAssociation() = default;
     AWS_APPSYNC_API ApiAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API ApiAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The domain name.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline ApiAssociation& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline ApiAssociation& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline ApiAssociation& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    ApiAssociation& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The API ID.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline ApiAssociation& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline ApiAssociation& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline ApiAssociation& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    ApiAssociation& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,26 +72,22 @@ namespace Model
      * <b>FAILED</b>: The API association has failed. You can modify associations after
      * failure.</p> </li> </ul>
      */
-    inline const AssociationStatus& GetAssociationStatus() const{ return m_associationStatus; }
+    inline AssociationStatus GetAssociationStatus() const { return m_associationStatus; }
     inline bool AssociationStatusHasBeenSet() const { return m_associationStatusHasBeenSet; }
-    inline void SetAssociationStatus(const AssociationStatus& value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
-    inline void SetAssociationStatus(AssociationStatus&& value) { m_associationStatusHasBeenSet = true; m_associationStatus = std::move(value); }
-    inline ApiAssociation& WithAssociationStatus(const AssociationStatus& value) { SetAssociationStatus(value); return *this;}
-    inline ApiAssociation& WithAssociationStatus(AssociationStatus&& value) { SetAssociationStatus(std::move(value)); return *this;}
+    inline void SetAssociationStatus(AssociationStatus value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
+    inline ApiAssociation& WithAssociationStatus(AssociationStatus value) { SetAssociationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the last deployment status.</p>
      */
-    inline const Aws::String& GetDeploymentDetail() const{ return m_deploymentDetail; }
+    inline const Aws::String& GetDeploymentDetail() const { return m_deploymentDetail; }
     inline bool DeploymentDetailHasBeenSet() const { return m_deploymentDetailHasBeenSet; }
-    inline void SetDeploymentDetail(const Aws::String& value) { m_deploymentDetailHasBeenSet = true; m_deploymentDetail = value; }
-    inline void SetDeploymentDetail(Aws::String&& value) { m_deploymentDetailHasBeenSet = true; m_deploymentDetail = std::move(value); }
-    inline void SetDeploymentDetail(const char* value) { m_deploymentDetailHasBeenSet = true; m_deploymentDetail.assign(value); }
-    inline ApiAssociation& WithDeploymentDetail(const Aws::String& value) { SetDeploymentDetail(value); return *this;}
-    inline ApiAssociation& WithDeploymentDetail(Aws::String&& value) { SetDeploymentDetail(std::move(value)); return *this;}
-    inline ApiAssociation& WithDeploymentDetail(const char* value) { SetDeploymentDetail(value); return *this;}
+    template<typename DeploymentDetailT = Aws::String>
+    void SetDeploymentDetail(DeploymentDetailT&& value) { m_deploymentDetailHasBeenSet = true; m_deploymentDetail = std::forward<DeploymentDetailT>(value); }
+    template<typename DeploymentDetailT = Aws::String>
+    ApiAssociation& WithDeploymentDetail(DeploymentDetailT&& value) { SetDeploymentDetail(std::forward<DeploymentDetailT>(value)); return *this;}
     ///@}
   private:
 
@@ -105,7 +97,7 @@ namespace Model
     Aws::String m_apiId;
     bool m_apiIdHasBeenSet = false;
 
-    AssociationStatus m_associationStatus;
+    AssociationStatus m_associationStatus{AssociationStatus::NOT_SET};
     bool m_associationStatusHasBeenSet = false;
 
     Aws::String m_deploymentDetail;

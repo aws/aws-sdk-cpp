@@ -47,7 +47,7 @@ namespace Model
   class SizeConstraintStatement
   {
   public:
-    AWS_WAFV2_API SizeConstraintStatement();
+    AWS_WAFV2_API SizeConstraintStatement() = default;
     AWS_WAFV2_API SizeConstraintStatement(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API SizeConstraintStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,24 +57,22 @@ namespace Model
     /**
      * <p>The part of the web request that you want WAF to inspect. </p>
      */
-    inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
+    inline const FieldToMatch& GetFieldToMatch() const { return m_fieldToMatch; }
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
-    inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
-    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
-    inline SizeConstraintStatement& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
-    inline SizeConstraintStatement& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
+    template<typename FieldToMatchT = FieldToMatch>
+    void SetFieldToMatch(FieldToMatchT&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::forward<FieldToMatchT>(value); }
+    template<typename FieldToMatchT = FieldToMatch>
+    SizeConstraintStatement& WithFieldToMatch(FieldToMatchT&& value) { SetFieldToMatch(std::forward<FieldToMatchT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operator to use to compare the request part to the size setting. </p>
      */
-    inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline SizeConstraintStatement& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline SizeConstraintStatement& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline SizeConstraintStatement& WithComparisonOperator(ComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -82,7 +80,7 @@ namespace Model
      * <p>The size, in byte, to compare to the request part, after any
      * transformations.</p>
      */
-    inline long long GetSize() const{ return m_size; }
+    inline long long GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
     inline SizeConstraintStatement& WithSize(long long value) { SetSize(value); return *this;}
@@ -99,24 +97,24 @@ namespace Model
      * performs all transformations on the specified content, starting from the lowest
      * priority setting, and then uses the transformed component contents. </p>
      */
-    inline const Aws::Vector<TextTransformation>& GetTextTransformations() const{ return m_textTransformations; }
+    inline const Aws::Vector<TextTransformation>& GetTextTransformations() const { return m_textTransformations; }
     inline bool TextTransformationsHasBeenSet() const { return m_textTransformationsHasBeenSet; }
-    inline void SetTextTransformations(const Aws::Vector<TextTransformation>& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = value; }
-    inline void SetTextTransformations(Aws::Vector<TextTransformation>&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::move(value); }
-    inline SizeConstraintStatement& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
-    inline SizeConstraintStatement& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
-    inline SizeConstraintStatement& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
-    inline SizeConstraintStatement& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
+    template<typename TextTransformationsT = Aws::Vector<TextTransformation>>
+    void SetTextTransformations(TextTransformationsT&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::forward<TextTransformationsT>(value); }
+    template<typename TextTransformationsT = Aws::Vector<TextTransformation>>
+    SizeConstraintStatement& WithTextTransformations(TextTransformationsT&& value) { SetTextTransformations(std::forward<TextTransformationsT>(value)); return *this;}
+    template<typename TextTransformationsT = TextTransformation>
+    SizeConstraintStatement& AddTextTransformations(TextTransformationsT&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.emplace_back(std::forward<TextTransformationsT>(value)); return *this; }
     ///@}
   private:
 
     FieldToMatch m_fieldToMatch;
     bool m_fieldToMatchHasBeenSet = false;
 
-    ComparisonOperator m_comparisonOperator;
+    ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
 
-    long long m_size;
+    long long m_size{0};
     bool m_sizeHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;

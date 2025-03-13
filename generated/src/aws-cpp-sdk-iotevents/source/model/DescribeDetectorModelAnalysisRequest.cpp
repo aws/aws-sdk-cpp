@@ -12,11 +12,6 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDetectorModelAnalysisRequest::DescribeDetectorModelAnalysisRequest() : 
-    m_analysisIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDetectorModelAnalysisRequest::SerializePayload() const
 {
   return {};

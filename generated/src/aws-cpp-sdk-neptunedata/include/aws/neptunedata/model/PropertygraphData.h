@@ -32,7 +32,7 @@ namespace Model
   class PropertygraphData
   {
   public:
-    AWS_NEPTUNEDATA_API PropertygraphData();
+    AWS_NEPTUNEDATA_API PropertygraphData() = default;
     AWS_NEPTUNEDATA_API PropertygraphData(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API PropertygraphData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the Gremlin or openCypher element.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline PropertygraphData& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PropertygraphData& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PropertygraphData& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PropertygraphData& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,28 +61,24 @@ namespace Model
      * -   Edge properties for Gremlin, or relationship properties for openCypher.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline PropertygraphData& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline PropertygraphData& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline PropertygraphData& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    PropertygraphData& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The property name. For element labels, this is <code>label</code>.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline PropertygraphData& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline PropertygraphData& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline PropertygraphData& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    PropertygraphData& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +86,12 @@ namespace Model
      * <p>This is a JSON object that contains a value field for the value itself, and a
      * datatype field for the JSON data type of that value:</p>
      */
-    inline Aws::Utils::DocumentView GetValue() const{ return m_value; }
+    inline Aws::Utils::DocumentView GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Utils::Document& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Utils::Document&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline PropertygraphData& WithValue(const Aws::Utils::Document& value) { SetValue(value); return *this;}
-    inline PropertygraphData& WithValue(Aws::Utils::Document&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Aws::Utils::Document>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Utils::Document>
+    PropertygraphData& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +99,12 @@ namespace Model
      * <p>If this is an edge (type = <code>e</code>), the ID of the corresponding
      * <code>from</code> vertex or source node.</p>
      */
-    inline const Aws::String& GetFrom() const{ return m_from; }
+    inline const Aws::String& GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-    inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
-    inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-    inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
-    inline PropertygraphData& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
-    inline PropertygraphData& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
-    inline PropertygraphData& WithFrom(const char* value) { SetFrom(value); return *this;}
+    template<typename FromT = Aws::String>
+    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
+    template<typename FromT = Aws::String>
+    PropertygraphData& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +112,12 @@ namespace Model
      * <p>If this is an edge (type = <code>e</code>), the ID of the corresponding
      * <code>to</code> vertex or target node.</p>
      */
-    inline const Aws::String& GetTo() const{ return m_to; }
+    inline const Aws::String& GetTo() const { return m_to; }
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-    inline void SetTo(const Aws::String& value) { m_toHasBeenSet = true; m_to = value; }
-    inline void SetTo(Aws::String&& value) { m_toHasBeenSet = true; m_to = std::move(value); }
-    inline void SetTo(const char* value) { m_toHasBeenSet = true; m_to.assign(value); }
-    inline PropertygraphData& WithTo(const Aws::String& value) { SetTo(value); return *this;}
-    inline PropertygraphData& WithTo(Aws::String&& value) { SetTo(std::move(value)); return *this;}
-    inline PropertygraphData& WithTo(const char* value) { SetTo(value); return *this;}
+    template<typename ToT = Aws::String>
+    void SetTo(ToT&& value) { m_toHasBeenSet = true; m_to = std::forward<ToT>(value); }
+    template<typename ToT = Aws::String>
+    PropertygraphData& WithTo(ToT&& value) { SetTo(std::forward<ToT>(value)); return *this;}
     ///@}
   private:
 

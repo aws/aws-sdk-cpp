@@ -20,18 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3JobManifestGenerator::S3JobManifestGenerator() : 
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_sourceBucketHasBeenSet(false),
-    m_manifestOutputLocationHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_enableManifestOutput(false),
-    m_enableManifestOutputHasBeenSet(false)
-{
-}
-
 S3JobManifestGenerator::S3JobManifestGenerator(const XmlNode& xmlNode)
-  : S3JobManifestGenerator()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ S3JobManifestGenerator& S3JobManifestGenerator::operator =(const XmlNode& xmlNod
     {
       m_expectedBucketOwner = Aws::Utils::Xml::DecodeEscapedXmlText(expectedBucketOwnerNode.GetText());
       m_expectedBucketOwnerHasBeenSet = true;
+       m_expectedBucketOwnerHasBeenSet = true;
     }
     XmlNode sourceBucketNode = resultNode.FirstChild("SourceBucket");
     if(!sourceBucketNode.IsNull())
     {
       m_sourceBucket = Aws::Utils::Xml::DecodeEscapedXmlText(sourceBucketNode.GetText());
       m_sourceBucketHasBeenSet = true;
+       m_sourceBucketHasBeenSet = true;
     }
     XmlNode manifestOutputLocationNode = resultNode.FirstChild("ManifestOutputLocation");
     if(!manifestOutputLocationNode.IsNull())
     {
       m_manifestOutputLocation = manifestOutputLocationNode;
       m_manifestOutputLocationHasBeenSet = true;
+       m_manifestOutputLocationHasBeenSet = true;
     }
     XmlNode filterNode = resultNode.FirstChild("Filter");
     if(!filterNode.IsNull())
     {
       m_filter = filterNode;
       m_filterHasBeenSet = true;
+       m_filterHasBeenSet = true;
     }
     XmlNode enableManifestOutputNode = resultNode.FirstChild("EnableManifestOutput");
     if(!enableManifestOutputNode.IsNull())
     {
       m_enableManifestOutput = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableManifestOutputNode.GetText()).c_str()).c_str());
       m_enableManifestOutputHasBeenSet = true;
+       m_enableManifestOutputHasBeenSet = true;
     }
   }
 

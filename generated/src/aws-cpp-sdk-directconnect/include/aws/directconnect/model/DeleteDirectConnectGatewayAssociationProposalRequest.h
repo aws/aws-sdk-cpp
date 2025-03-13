@@ -21,7 +21,7 @@ namespace Model
   class DeleteDirectConnectGatewayAssociationProposalRequest : public DirectConnectRequest
   {
   public:
-    AWS_DIRECTCONNECT_API DeleteDirectConnectGatewayAssociationProposalRequest();
+    AWS_DIRECTCONNECT_API DeleteDirectConnectGatewayAssociationProposalRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the proposal.</p>
      */
-    inline const Aws::String& GetProposalId() const{ return m_proposalId; }
+    inline const Aws::String& GetProposalId() const { return m_proposalId; }
     inline bool ProposalIdHasBeenSet() const { return m_proposalIdHasBeenSet; }
-    inline void SetProposalId(const Aws::String& value) { m_proposalIdHasBeenSet = true; m_proposalId = value; }
-    inline void SetProposalId(Aws::String&& value) { m_proposalIdHasBeenSet = true; m_proposalId = std::move(value); }
-    inline void SetProposalId(const char* value) { m_proposalIdHasBeenSet = true; m_proposalId.assign(value); }
-    inline DeleteDirectConnectGatewayAssociationProposalRequest& WithProposalId(const Aws::String& value) { SetProposalId(value); return *this;}
-    inline DeleteDirectConnectGatewayAssociationProposalRequest& WithProposalId(Aws::String&& value) { SetProposalId(std::move(value)); return *this;}
-    inline DeleteDirectConnectGatewayAssociationProposalRequest& WithProposalId(const char* value) { SetProposalId(value); return *this;}
+    template<typename ProposalIdT = Aws::String>
+    void SetProposalId(ProposalIdT&& value) { m_proposalIdHasBeenSet = true; m_proposalId = std::forward<ProposalIdT>(value); }
+    template<typename ProposalIdT = Aws::String>
+    DeleteDirectConnectGatewayAssociationProposalRequest& WithProposalId(ProposalIdT&& value) { SetProposalId(std::forward<ProposalIdT>(value)); return *this;}
     ///@}
   private:
 

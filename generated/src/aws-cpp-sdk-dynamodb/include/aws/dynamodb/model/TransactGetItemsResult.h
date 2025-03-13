@@ -30,7 +30,7 @@ namespace Model
   class TransactGetItemsResult
   {
   public:
-    AWS_DYNAMODB_API TransactGetItemsResult();
+    AWS_DYNAMODB_API TransactGetItemsResult() = default;
     AWS_DYNAMODB_API TransactGetItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API TransactGetItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,13 @@ namespace Model
      * These <code>ConsumedCapacity</code> objects report the read-capacity units
      * consumed by the <code>TransactGetItems</code> call in that table.</p>
      */
-    inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const{ return m_consumedCapacity; }
-    inline void SetConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { m_consumedCapacity = value; }
-    inline void SetConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { m_consumedCapacity = std::move(value); }
-    inline TransactGetItemsResult& WithConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { SetConsumedCapacity(value); return *this;}
-    inline TransactGetItemsResult& WithConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { SetConsumedCapacity(std::move(value)); return *this;}
-    inline TransactGetItemsResult& AddConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity.push_back(value); return *this; }
-    inline TransactGetItemsResult& AddConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const { return m_consumedCapacity; }
+    template<typename ConsumedCapacityT = Aws::Vector<ConsumedCapacity>>
+    void SetConsumedCapacity(ConsumedCapacityT&& value) { m_consumedCapacityHasBeenSet = true; m_consumedCapacity = std::forward<ConsumedCapacityT>(value); }
+    template<typename ConsumedCapacityT = Aws::Vector<ConsumedCapacity>>
+    TransactGetItemsResult& WithConsumedCapacity(ConsumedCapacityT&& value) { SetConsumedCapacity(std::forward<ConsumedCapacityT>(value)); return *this;}
+    template<typename ConsumedCapacityT = ConsumedCapacity>
+    TransactGetItemsResult& AddConsumedCapacity(ConsumedCapacityT&& value) { m_consumedCapacityHasBeenSet = true; m_consumedCapacity.emplace_back(std::forward<ConsumedCapacityT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,32 +63,33 @@ namespace Model
      * has no projected attributes, the corresponding <code>ItemResponse</code> object
      * is an empty Map. </p>
      */
-    inline const Aws::Vector<ItemResponse>& GetResponses() const{ return m_responses; }
-    inline void SetResponses(const Aws::Vector<ItemResponse>& value) { m_responses = value; }
-    inline void SetResponses(Aws::Vector<ItemResponse>&& value) { m_responses = std::move(value); }
-    inline TransactGetItemsResult& WithResponses(const Aws::Vector<ItemResponse>& value) { SetResponses(value); return *this;}
-    inline TransactGetItemsResult& WithResponses(Aws::Vector<ItemResponse>&& value) { SetResponses(std::move(value)); return *this;}
-    inline TransactGetItemsResult& AddResponses(const ItemResponse& value) { m_responses.push_back(value); return *this; }
-    inline TransactGetItemsResult& AddResponses(ItemResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ItemResponse>& GetResponses() const { return m_responses; }
+    template<typename ResponsesT = Aws::Vector<ItemResponse>>
+    void SetResponses(ResponsesT&& value) { m_responsesHasBeenSet = true; m_responses = std::forward<ResponsesT>(value); }
+    template<typename ResponsesT = Aws::Vector<ItemResponse>>
+    TransactGetItemsResult& WithResponses(ResponsesT&& value) { SetResponses(std::forward<ResponsesT>(value)); return *this;}
+    template<typename ResponsesT = ItemResponse>
+    TransactGetItemsResult& AddResponses(ResponsesT&& value) { m_responsesHasBeenSet = true; m_responses.emplace_back(std::forward<ResponsesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TransactGetItemsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TransactGetItemsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TransactGetItemsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TransactGetItemsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConsumedCapacity> m_consumedCapacity;
+    bool m_consumedCapacityHasBeenSet = false;
 
     Aws::Vector<ItemResponse> m_responses;
+    bool m_responsesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

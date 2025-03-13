@@ -43,7 +43,7 @@ namespace Model
   class HyperParameterTuningJobWarmStartConfig
   {
   public:
-    AWS_SAGEMAKER_API HyperParameterTuningJobWarmStartConfig();
+    AWS_SAGEMAKER_API HyperParameterTuningJobWarmStartConfig() = default;
     AWS_SAGEMAKER_API HyperParameterTuningJobWarmStartConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HyperParameterTuningJobWarmStartConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,14 +59,14 @@ namespace Model
      * <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as
      * parent jobs for warm start tuning jobs.</p>
      */
-    inline const Aws::Vector<ParentHyperParameterTuningJob>& GetParentHyperParameterTuningJobs() const{ return m_parentHyperParameterTuningJobs; }
+    inline const Aws::Vector<ParentHyperParameterTuningJob>& GetParentHyperParameterTuningJobs() const { return m_parentHyperParameterTuningJobs; }
     inline bool ParentHyperParameterTuningJobsHasBeenSet() const { return m_parentHyperParameterTuningJobsHasBeenSet; }
-    inline void SetParentHyperParameterTuningJobs(const Aws::Vector<ParentHyperParameterTuningJob>& value) { m_parentHyperParameterTuningJobsHasBeenSet = true; m_parentHyperParameterTuningJobs = value; }
-    inline void SetParentHyperParameterTuningJobs(Aws::Vector<ParentHyperParameterTuningJob>&& value) { m_parentHyperParameterTuningJobsHasBeenSet = true; m_parentHyperParameterTuningJobs = std::move(value); }
-    inline HyperParameterTuningJobWarmStartConfig& WithParentHyperParameterTuningJobs(const Aws::Vector<ParentHyperParameterTuningJob>& value) { SetParentHyperParameterTuningJobs(value); return *this;}
-    inline HyperParameterTuningJobWarmStartConfig& WithParentHyperParameterTuningJobs(Aws::Vector<ParentHyperParameterTuningJob>&& value) { SetParentHyperParameterTuningJobs(std::move(value)); return *this;}
-    inline HyperParameterTuningJobWarmStartConfig& AddParentHyperParameterTuningJobs(const ParentHyperParameterTuningJob& value) { m_parentHyperParameterTuningJobsHasBeenSet = true; m_parentHyperParameterTuningJobs.push_back(value); return *this; }
-    inline HyperParameterTuningJobWarmStartConfig& AddParentHyperParameterTuningJobs(ParentHyperParameterTuningJob&& value) { m_parentHyperParameterTuningJobsHasBeenSet = true; m_parentHyperParameterTuningJobs.push_back(std::move(value)); return *this; }
+    template<typename ParentHyperParameterTuningJobsT = Aws::Vector<ParentHyperParameterTuningJob>>
+    void SetParentHyperParameterTuningJobs(ParentHyperParameterTuningJobsT&& value) { m_parentHyperParameterTuningJobsHasBeenSet = true; m_parentHyperParameterTuningJobs = std::forward<ParentHyperParameterTuningJobsT>(value); }
+    template<typename ParentHyperParameterTuningJobsT = Aws::Vector<ParentHyperParameterTuningJob>>
+    HyperParameterTuningJobWarmStartConfig& WithParentHyperParameterTuningJobs(ParentHyperParameterTuningJobsT&& value) { SetParentHyperParameterTuningJobs(std::forward<ParentHyperParameterTuningJobsT>(value)); return *this;}
+    template<typename ParentHyperParameterTuningJobsT = ParentHyperParameterTuningJob>
+    HyperParameterTuningJobWarmStartConfig& AddParentHyperParameterTuningJobs(ParentHyperParameterTuningJobsT&& value) { m_parentHyperParameterTuningJobsHasBeenSet = true; m_parentHyperParameterTuningJobs.emplace_back(std::forward<ParentHyperParameterTuningJobsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -93,19 +93,17 @@ namespace Model
      * The objective metric for the new tuning job must be the same as for all parent
      * jobs.</p> </dd> </dl>
      */
-    inline const HyperParameterTuningJobWarmStartType& GetWarmStartType() const{ return m_warmStartType; }
+    inline HyperParameterTuningJobWarmStartType GetWarmStartType() const { return m_warmStartType; }
     inline bool WarmStartTypeHasBeenSet() const { return m_warmStartTypeHasBeenSet; }
-    inline void SetWarmStartType(const HyperParameterTuningJobWarmStartType& value) { m_warmStartTypeHasBeenSet = true; m_warmStartType = value; }
-    inline void SetWarmStartType(HyperParameterTuningJobWarmStartType&& value) { m_warmStartTypeHasBeenSet = true; m_warmStartType = std::move(value); }
-    inline HyperParameterTuningJobWarmStartConfig& WithWarmStartType(const HyperParameterTuningJobWarmStartType& value) { SetWarmStartType(value); return *this;}
-    inline HyperParameterTuningJobWarmStartConfig& WithWarmStartType(HyperParameterTuningJobWarmStartType&& value) { SetWarmStartType(std::move(value)); return *this;}
+    inline void SetWarmStartType(HyperParameterTuningJobWarmStartType value) { m_warmStartTypeHasBeenSet = true; m_warmStartType = value; }
+    inline HyperParameterTuningJobWarmStartConfig& WithWarmStartType(HyperParameterTuningJobWarmStartType value) { SetWarmStartType(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<ParentHyperParameterTuningJob> m_parentHyperParameterTuningJobs;
     bool m_parentHyperParameterTuningJobsHasBeenSet = false;
 
-    HyperParameterTuningJobWarmStartType m_warmStartType;
+    HyperParameterTuningJobWarmStartType m_warmStartType{HyperParameterTuningJobWarmStartType::NOT_SET};
     bool m_warmStartTypeHasBeenSet = false;
   };
 

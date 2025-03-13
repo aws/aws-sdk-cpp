@@ -36,7 +36,7 @@ namespace Model
   class OpenXJsonSerDe
   {
   public:
-    AWS_FIREHOSE_API OpenXJsonSerDe();
+    AWS_FIREHOSE_API OpenXJsonSerDe() = default;
     AWS_FIREHOSE_API OpenXJsonSerDe(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API OpenXJsonSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * JSON contains a key whose name is "a.b", you can define the column name to be
      * "a_b" when using this option.</p> <p>The default is <code>false</code>.</p>
      */
-    inline bool GetConvertDotsInJsonKeysToUnderscores() const{ return m_convertDotsInJsonKeysToUnderscores; }
+    inline bool GetConvertDotsInJsonKeysToUnderscores() const { return m_convertDotsInJsonKeysToUnderscores; }
     inline bool ConvertDotsInJsonKeysToUnderscoresHasBeenSet() const { return m_convertDotsInJsonKeysToUnderscoresHasBeenSet; }
     inline void SetConvertDotsInJsonKeysToUnderscores(bool value) { m_convertDotsInJsonKeysToUnderscoresHasBeenSet = true; m_convertDotsInJsonKeysToUnderscores = value; }
     inline OpenXJsonSerDe& WithConvertDotsInJsonKeysToUnderscores(bool value) { SetConvertDotsInJsonKeysToUnderscores(value); return *this;}
@@ -61,7 +61,7 @@ namespace Model
      * <p>When set to <code>true</code>, which is the default, Firehose converts JSON
      * keys to lowercase before deserializing them.</p>
      */
-    inline bool GetCaseInsensitive() const{ return m_caseInsensitive; }
+    inline bool GetCaseInsensitive() const { return m_caseInsensitive; }
     inline bool CaseInsensitiveHasBeenSet() const { return m_caseInsensitiveHasBeenSet; }
     inline void SetCaseInsensitive(bool value) { m_caseInsensitiveHasBeenSet = true; m_caseInsensitive = value; }
     inline OpenXJsonSerDe& WithCaseInsensitive(bool value) { SetCaseInsensitive(value); return *this;}
@@ -75,26 +75,23 @@ namespace Model
      * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
      * to map this key to a column named <code>ts</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetColumnToJsonKeyMappings() const{ return m_columnToJsonKeyMappings; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetColumnToJsonKeyMappings() const { return m_columnToJsonKeyMappings; }
     inline bool ColumnToJsonKeyMappingsHasBeenSet() const { return m_columnToJsonKeyMappingsHasBeenSet; }
-    inline void SetColumnToJsonKeyMappings(const Aws::Map<Aws::String, Aws::String>& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings = value; }
-    inline void SetColumnToJsonKeyMappings(Aws::Map<Aws::String, Aws::String>&& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings = std::move(value); }
-    inline OpenXJsonSerDe& WithColumnToJsonKeyMappings(const Aws::Map<Aws::String, Aws::String>& value) { SetColumnToJsonKeyMappings(value); return *this;}
-    inline OpenXJsonSerDe& WithColumnToJsonKeyMappings(Aws::Map<Aws::String, Aws::String>&& value) { SetColumnToJsonKeyMappings(std::move(value)); return *this;}
-    inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(const Aws::String& key, const Aws::String& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(key, value); return *this; }
-    inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(Aws::String&& key, const Aws::String& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(std::move(key), value); return *this; }
-    inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(const Aws::String& key, Aws::String&& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(key, std::move(value)); return *this; }
-    inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(Aws::String&& key, Aws::String&& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(std::move(key), std::move(value)); return *this; }
-    inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(const char* key, Aws::String&& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(key, std::move(value)); return *this; }
-    inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(Aws::String&& key, const char* value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(std::move(key), value); return *this; }
-    inline OpenXJsonSerDe& AddColumnToJsonKeyMappings(const char* key, const char* value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(key, value); return *this; }
+    template<typename ColumnToJsonKeyMappingsT = Aws::Map<Aws::String, Aws::String>>
+    void SetColumnToJsonKeyMappings(ColumnToJsonKeyMappingsT&& value) { m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings = std::forward<ColumnToJsonKeyMappingsT>(value); }
+    template<typename ColumnToJsonKeyMappingsT = Aws::Map<Aws::String, Aws::String>>
+    OpenXJsonSerDe& WithColumnToJsonKeyMappings(ColumnToJsonKeyMappingsT&& value) { SetColumnToJsonKeyMappings(std::forward<ColumnToJsonKeyMappingsT>(value)); return *this;}
+    template<typename ColumnToJsonKeyMappingsKeyT = Aws::String, typename ColumnToJsonKeyMappingsValueT = Aws::String>
+    OpenXJsonSerDe& AddColumnToJsonKeyMappings(ColumnToJsonKeyMappingsKeyT&& key, ColumnToJsonKeyMappingsValueT&& value) {
+      m_columnToJsonKeyMappingsHasBeenSet = true; m_columnToJsonKeyMappings.emplace(std::forward<ColumnToJsonKeyMappingsKeyT>(key), std::forward<ColumnToJsonKeyMappingsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    bool m_convertDotsInJsonKeysToUnderscores;
+    bool m_convertDotsInJsonKeysToUnderscores{false};
     bool m_convertDotsInJsonKeysToUnderscoresHasBeenSet = false;
 
-    bool m_caseInsensitive;
+    bool m_caseInsensitive{false};
     bool m_caseInsensitiveHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_columnToJsonKeyMappings;

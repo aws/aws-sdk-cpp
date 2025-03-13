@@ -28,7 +28,7 @@ namespace Model
   class DescribeCreateAccountStatusResult
   {
   public:
-    AWS_ORGANIZATIONS_API DescribeCreateAccountStatusResult();
+    AWS_ORGANIZATIONS_API DescribeCreateAccountStatusResult() = default;
     AWS_ORGANIZATIONS_API DescribeCreateAccountStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ORGANIZATIONS_API DescribeCreateAccountStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A structure that contains the current status of an account creation
      * request.</p>
      */
-    inline const CreateAccountStatus& GetCreateAccountStatus() const{ return m_createAccountStatus; }
-    inline void SetCreateAccountStatus(const CreateAccountStatus& value) { m_createAccountStatus = value; }
-    inline void SetCreateAccountStatus(CreateAccountStatus&& value) { m_createAccountStatus = std::move(value); }
-    inline DescribeCreateAccountStatusResult& WithCreateAccountStatus(const CreateAccountStatus& value) { SetCreateAccountStatus(value); return *this;}
-    inline DescribeCreateAccountStatusResult& WithCreateAccountStatus(CreateAccountStatus&& value) { SetCreateAccountStatus(std::move(value)); return *this;}
+    inline const CreateAccountStatus& GetCreateAccountStatus() const { return m_createAccountStatus; }
+    template<typename CreateAccountStatusT = CreateAccountStatus>
+    void SetCreateAccountStatus(CreateAccountStatusT&& value) { m_createAccountStatusHasBeenSet = true; m_createAccountStatus = std::forward<CreateAccountStatusT>(value); }
+    template<typename CreateAccountStatusT = CreateAccountStatus>
+    DescribeCreateAccountStatusResult& WithCreateAccountStatus(CreateAccountStatusT&& value) { SetCreateAccountStatus(std::forward<CreateAccountStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCreateAccountStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCreateAccountStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCreateAccountStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCreateAccountStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CreateAccountStatus m_createAccountStatus;
+    bool m_createAccountStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

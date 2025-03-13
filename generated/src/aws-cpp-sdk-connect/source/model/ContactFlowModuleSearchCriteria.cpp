@@ -18,19 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactFlowModuleSearchCriteria::ContactFlowModuleSearchCriteria() : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false),
-    m_stateCondition(ContactFlowModuleState::NOT_SET),
-    m_stateConditionHasBeenSet(false),
-    m_statusCondition(ContactFlowModuleStatus::NOT_SET),
-    m_statusConditionHasBeenSet(false)
-{
-}
-
 ContactFlowModuleSearchCriteria::ContactFlowModuleSearchCriteria(JsonView jsonValue)
-  : ContactFlowModuleSearchCriteria()
 {
   *this = jsonValue;
 }
@@ -46,7 +34,6 @@ ContactFlowModuleSearchCriteria& ContactFlowModuleSearchCriteria::operator =(Jso
     }
     m_orConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AndConditions"))
   {
     Aws::Utils::Array<JsonView> andConditionsJsonList = jsonValue.GetArray("AndConditions");
@@ -56,28 +43,21 @@ ContactFlowModuleSearchCriteria& ContactFlowModuleSearchCriteria::operator =(Jso
     }
     m_andConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringCondition"))
   {
     m_stringCondition = jsonValue.GetObject("StringCondition");
-
     m_stringConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateCondition"))
   {
     m_stateCondition = ContactFlowModuleStateMapper::GetContactFlowModuleStateForName(jsonValue.GetString("StateCondition"));
-
     m_stateConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusCondition"))
   {
     m_statusCondition = ContactFlowModuleStatusMapper::GetContactFlowModuleStatusForName(jsonValue.GetString("StatusCondition"));
-
     m_statusConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

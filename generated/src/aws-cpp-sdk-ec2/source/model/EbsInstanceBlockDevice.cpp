@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EbsInstanceBlockDevice::EbsInstanceBlockDevice() : 
-    m_attachTimeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_associatedResourceHasBeenSet(false),
-    m_volumeOwnerIdHasBeenSet(false),
-    m_operatorHasBeenSet(false)
-{
-}
-
 EbsInstanceBlockDevice::EbsInstanceBlockDevice(const XmlNode& xmlNode)
-  : EbsInstanceBlockDevice()
 {
   *this = xmlNode;
 }
@@ -50,42 +36,49 @@ EbsInstanceBlockDevice& EbsInstanceBlockDevice::operator =(const XmlNode& xmlNod
     {
       m_attachTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_attachTimeHasBeenSet = true;
+       m_attachTimeHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())
     {
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
+       m_deleteOnTerminationHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
       m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
       m_volumeIdHasBeenSet = true;
+       m_volumeIdHasBeenSet = true;
     }
     XmlNode associatedResourceNode = resultNode.FirstChild("associatedResource");
     if(!associatedResourceNode.IsNull())
     {
       m_associatedResource = Aws::Utils::Xml::DecodeEscapedXmlText(associatedResourceNode.GetText());
       m_associatedResourceHasBeenSet = true;
+       m_associatedResourceHasBeenSet = true;
     }
     XmlNode volumeOwnerIdNode = resultNode.FirstChild("volumeOwnerId");
     if(!volumeOwnerIdNode.IsNull())
     {
       m_volumeOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeOwnerIdNode.GetText());
       m_volumeOwnerIdHasBeenSet = true;
+       m_volumeOwnerIdHasBeenSet = true;
     }
     XmlNode operatorNode = resultNode.FirstChild("operator");
     if(!operatorNode.IsNull())
     {
       m_operator = operatorNode;
       m_operatorHasBeenSet = true;
+       m_operatorHasBeenSet = true;
     }
   }
 

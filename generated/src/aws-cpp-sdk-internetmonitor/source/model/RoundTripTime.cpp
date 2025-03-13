@@ -18,18 +18,7 @@ namespace InternetMonitor
 namespace Model
 {
 
-RoundTripTime::RoundTripTime() : 
-    m_p50(0.0),
-    m_p50HasBeenSet(false),
-    m_p90(0.0),
-    m_p90HasBeenSet(false),
-    m_p95(0.0),
-    m_p95HasBeenSet(false)
-{
-}
-
 RoundTripTime::RoundTripTime(JsonView jsonValue)
-  : RoundTripTime()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RoundTripTime& RoundTripTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("P50"))
   {
     m_p50 = jsonValue.GetDouble("P50");
-
     m_p50HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("P90"))
   {
     m_p90 = jsonValue.GetDouble("P90");
-
     m_p90HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("P95"))
   {
     m_p95 = jsonValue.GetDouble("P95");
-
     m_p95HasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-IsMemberInGroupsResult::IsMemberInGroupsResult()
-{
-}
-
 IsMemberInGroupsResult::IsMemberInGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ IsMemberInGroupsResult& IsMemberInGroupsResult::operator =(const Aws::AmazonWebS
     {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());
     }
+    m_resultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

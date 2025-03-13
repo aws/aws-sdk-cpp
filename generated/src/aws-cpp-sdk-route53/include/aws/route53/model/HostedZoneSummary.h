@@ -36,7 +36,7 @@ namespace Model
   class HostedZoneSummary
   {
   public:
-    AWS_ROUTE53_API HostedZoneSummary();
+    AWS_ROUTE53_API HostedZoneSummary() = default;
     AWS_ROUTE53_API HostedZoneSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API HostedZoneSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,28 +48,24 @@ namespace Model
      * <p>The Route 53 hosted zone ID of a private hosted zone that the specified VPC
      * is associated with.</p>
      */
-    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+    inline const Aws::String& GetHostedZoneId() const { return m_hostedZoneId; }
     inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
-    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
-    inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
-    inline HostedZoneSummary& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-    inline HostedZoneSummary& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-    inline HostedZoneSummary& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+    template<typename HostedZoneIdT = Aws::String>
+    void SetHostedZoneId(HostedZoneIdT&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::forward<HostedZoneIdT>(value); }
+    template<typename HostedZoneIdT = Aws::String>
+    HostedZoneSummary& WithHostedZoneId(HostedZoneIdT&& value) { SetHostedZoneId(std::forward<HostedZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline HostedZoneSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline HostedZoneSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline HostedZoneSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    HostedZoneSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +74,12 @@ namespace Model
      * The owner can be either an Amazon Web Services account or an Amazon Web Services
      * service.</p>
      */
-    inline const HostedZoneOwner& GetOwner() const{ return m_owner; }
+    inline const HostedZoneOwner& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const HostedZoneOwner& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(HostedZoneOwner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline HostedZoneSummary& WithOwner(const HostedZoneOwner& value) { SetOwner(value); return *this;}
-    inline HostedZoneSummary& WithOwner(HostedZoneOwner&& value) { SetOwner(std::move(value)); return *this;}
+    template<typename OwnerT = HostedZoneOwner>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = HostedZoneOwner>
+    HostedZoneSummary& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
   private:
 

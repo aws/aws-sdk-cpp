@@ -18,18 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationScore::EvaluationScore() : 
-    m_percentage(0.0),
-    m_percentageHasBeenSet(false),
-    m_notApplicable(false),
-    m_notApplicableHasBeenSet(false),
-    m_automaticFail(false),
-    m_automaticFailHasBeenSet(false)
-{
-}
-
 EvaluationScore::EvaluationScore(JsonView jsonValue)
-  : EvaluationScore()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ EvaluationScore& EvaluationScore::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Percentage"))
   {
     m_percentage = jsonValue.GetDouble("Percentage");
-
     m_percentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotApplicable"))
   {
     m_notApplicable = jsonValue.GetBool("NotApplicable");
-
     m_notApplicableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutomaticFail"))
   {
     m_automaticFail = jsonValue.GetBool("AutomaticFail");
-
     m_automaticFailHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class BatchGetPolicyErrorItem
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API BatchGetPolicyErrorItem();
+    AWS_VERIFIEDPERMISSIONS_API BatchGetPolicyErrorItem() = default;
     AWS_VERIFIEDPERMISSIONS_API BatchGetPolicyErrorItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API BatchGetPolicyErrorItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,58 +43,50 @@ namespace Model
     /**
      * <p>The error code that was returned.</p>
      */
-    inline const BatchGetPolicyErrorCode& GetCode() const{ return m_code; }
+    inline BatchGetPolicyErrorCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const BatchGetPolicyErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(BatchGetPolicyErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline BatchGetPolicyErrorItem& WithCode(const BatchGetPolicyErrorCode& value) { SetCode(value); return *this;}
-    inline BatchGetPolicyErrorItem& WithCode(BatchGetPolicyErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(BatchGetPolicyErrorCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline BatchGetPolicyErrorItem& WithCode(BatchGetPolicyErrorCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the policy store associated with the failed request.</p>
      */
-    inline const Aws::String& GetPolicyStoreId() const{ return m_policyStoreId; }
+    inline const Aws::String& GetPolicyStoreId() const { return m_policyStoreId; }
     inline bool PolicyStoreIdHasBeenSet() const { return m_policyStoreIdHasBeenSet; }
-    inline void SetPolicyStoreId(const Aws::String& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = value; }
-    inline void SetPolicyStoreId(Aws::String&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::move(value); }
-    inline void SetPolicyStoreId(const char* value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId.assign(value); }
-    inline BatchGetPolicyErrorItem& WithPolicyStoreId(const Aws::String& value) { SetPolicyStoreId(value); return *this;}
-    inline BatchGetPolicyErrorItem& WithPolicyStoreId(Aws::String&& value) { SetPolicyStoreId(std::move(value)); return *this;}
-    inline BatchGetPolicyErrorItem& WithPolicyStoreId(const char* value) { SetPolicyStoreId(value); return *this;}
+    template<typename PolicyStoreIdT = Aws::String>
+    void SetPolicyStoreId(PolicyStoreIdT&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::forward<PolicyStoreIdT>(value); }
+    template<typename PolicyStoreIdT = Aws::String>
+    BatchGetPolicyErrorItem& WithPolicyStoreId(PolicyStoreIdT&& value) { SetPolicyStoreId(std::forward<PolicyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the policy associated with the failed request.</p>
      */
-    inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+    inline const Aws::String& GetPolicyId() const { return m_policyId; }
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
-    inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
-    inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
-    inline BatchGetPolicyErrorItem& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-    inline BatchGetPolicyErrorItem& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-    inline BatchGetPolicyErrorItem& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+    template<typename PolicyIdT = Aws::String>
+    void SetPolicyId(PolicyIdT&& value) { m_policyIdHasBeenSet = true; m_policyId = std::forward<PolicyIdT>(value); }
+    template<typename PolicyIdT = Aws::String>
+    BatchGetPolicyErrorItem& WithPolicyId(PolicyIdT&& value) { SetPolicyId(std::forward<PolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A detailed error message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline BatchGetPolicyErrorItem& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline BatchGetPolicyErrorItem& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline BatchGetPolicyErrorItem& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    BatchGetPolicyErrorItem& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    BatchGetPolicyErrorCode m_code;
+    BatchGetPolicyErrorCode m_code{BatchGetPolicyErrorCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_policyStoreId;

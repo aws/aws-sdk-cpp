@@ -18,14 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-PredictiveScalingPredefinedMetricPairSpecification::PredictiveScalingPredefinedMetricPairSpecification() : 
-    m_predefinedMetricTypeHasBeenSet(false),
-    m_resourceLabelHasBeenSet(false)
-{
-}
-
 PredictiveScalingPredefinedMetricPairSpecification::PredictiveScalingPredefinedMetricPairSpecification(JsonView jsonValue)
-  : PredictiveScalingPredefinedMetricPairSpecification()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PredictiveScalingPredefinedMetricPairSpecification& PredictiveScalingPredefinedM
   if(jsonValue.ValueExists("PredefinedMetricType"))
   {
     m_predefinedMetricType = jsonValue.GetString("PredefinedMetricType");
-
     m_predefinedMetricTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceLabel"))
   {
     m_resourceLabel = jsonValue.GetString("ResourceLabel");
-
     m_resourceLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

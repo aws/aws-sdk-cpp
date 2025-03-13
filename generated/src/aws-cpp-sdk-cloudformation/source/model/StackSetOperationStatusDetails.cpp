@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackSetOperationStatusDetails::StackSetOperationStatusDetails() : 
-    m_failedStackInstancesCount(0),
-    m_failedStackInstancesCountHasBeenSet(false)
-{
-}
-
 StackSetOperationStatusDetails::StackSetOperationStatusDetails(const XmlNode& xmlNode)
-  : StackSetOperationStatusDetails()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ StackSetOperationStatusDetails& StackSetOperationStatusDetails::operator =(const
     {
       m_failedStackInstancesCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failedStackInstancesCountNode.GetText()).c_str()).c_str());
       m_failedStackInstancesCountHasBeenSet = true;
+       m_failedStackInstancesCountHasBeenSet = true;
     }
   }
 

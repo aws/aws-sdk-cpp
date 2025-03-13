@@ -18,14 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-Transcript::Transcript() : 
-    m_transcriptFileUriHasBeenSet(false),
-    m_redactedTranscriptFileUriHasBeenSet(false)
-{
-}
-
 Transcript::Transcript(JsonView jsonValue)
-  : Transcript()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Transcript& Transcript::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TranscriptFileUri"))
   {
     m_transcriptFileUri = jsonValue.GetString("TranscriptFileUri");
-
     m_transcriptFileUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedactedTranscriptFileUri"))
   {
     m_redactedTranscriptFileUri = jsonValue.GetString("RedactedTranscriptFileUri");
-
     m_redactedTranscriptFileUriHasBeenSet = true;
   }
-
   return *this;
 }
 

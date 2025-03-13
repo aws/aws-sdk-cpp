@@ -18,17 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-StreamingProperties::StreamingProperties() : 
-    m_streamingExperiencePreferredProtocol(StreamingExperiencePreferredProtocolEnum::NOT_SET),
-    m_streamingExperiencePreferredProtocolHasBeenSet(false),
-    m_userSettingsHasBeenSet(false),
-    m_storageConnectorsHasBeenSet(false),
-    m_globalAcceleratorHasBeenSet(false)
-{
-}
-
 StreamingProperties::StreamingProperties(JsonView jsonValue)
-  : StreamingProperties()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ StreamingProperties& StreamingProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StreamingExperiencePreferredProtocol"))
   {
     m_streamingExperiencePreferredProtocol = StreamingExperiencePreferredProtocolEnumMapper::GetStreamingExperiencePreferredProtocolEnumForName(jsonValue.GetString("StreamingExperiencePreferredProtocol"));
-
     m_streamingExperiencePreferredProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserSettings"))
   {
     Aws::Utils::Array<JsonView> userSettingsJsonList = jsonValue.GetArray("UserSettings");
@@ -51,7 +39,6 @@ StreamingProperties& StreamingProperties::operator =(JsonView jsonValue)
     }
     m_userSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageConnectors"))
   {
     Aws::Utils::Array<JsonView> storageConnectorsJsonList = jsonValue.GetArray("StorageConnectors");
@@ -61,14 +48,11 @@ StreamingProperties& StreamingProperties::operator =(JsonView jsonValue)
     }
     m_storageConnectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalAccelerator"))
   {
     m_globalAccelerator = jsonValue.GetObject("GlobalAccelerator");
-
     m_globalAcceleratorHasBeenSet = true;
   }
-
   return *this;
 }
 

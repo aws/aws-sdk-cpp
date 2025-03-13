@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginShield::OriginShield() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_originShieldRegionHasBeenSet(false)
-{
-}
-
 OriginShield::OriginShield(const XmlNode& xmlNode)
-  : OriginShield()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ OriginShield& OriginShield::operator =(const XmlNode& xmlNode)
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode originShieldRegionNode = resultNode.FirstChild("OriginShieldRegion");
     if(!originShieldRegionNode.IsNull())
     {
       m_originShieldRegion = Aws::Utils::Xml::DecodeEscapedXmlText(originShieldRegionNode.GetText());
       m_originShieldRegionHasBeenSet = true;
+       m_originShieldRegionHasBeenSet = true;
     }
   }
 

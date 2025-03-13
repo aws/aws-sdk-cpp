@@ -42,7 +42,7 @@ namespace Model
   class ClarifyShapBaselineConfig
   {
   public:
-    AWS_SAGEMAKER_API ClarifyShapBaselineConfig();
+    AWS_SAGEMAKER_API ClarifyShapBaselineConfig() = default;
     AWS_SAGEMAKER_API ClarifyShapBaselineConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ClarifyShapBaselineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * <p>The MIME type of the baseline data. Choose from <code>'text/csv'</code> or
      * <code>'application/jsonlines'</code>. Defaults to <code>'text/csv'</code>.</p>
      */
-    inline const Aws::String& GetMimeType() const{ return m_mimeType; }
+    inline const Aws::String& GetMimeType() const { return m_mimeType; }
     inline bool MimeTypeHasBeenSet() const { return m_mimeTypeHasBeenSet; }
-    inline void SetMimeType(const Aws::String& value) { m_mimeTypeHasBeenSet = true; m_mimeType = value; }
-    inline void SetMimeType(Aws::String&& value) { m_mimeTypeHasBeenSet = true; m_mimeType = std::move(value); }
-    inline void SetMimeType(const char* value) { m_mimeTypeHasBeenSet = true; m_mimeType.assign(value); }
-    inline ClarifyShapBaselineConfig& WithMimeType(const Aws::String& value) { SetMimeType(value); return *this;}
-    inline ClarifyShapBaselineConfig& WithMimeType(Aws::String&& value) { SetMimeType(std::move(value)); return *this;}
-    inline ClarifyShapBaselineConfig& WithMimeType(const char* value) { SetMimeType(value); return *this;}
+    template<typename MimeTypeT = Aws::String>
+    void SetMimeType(MimeTypeT&& value) { m_mimeTypeHasBeenSet = true; m_mimeType = std::forward<MimeTypeT>(value); }
+    template<typename MimeTypeT = Aws::String>
+    ClarifyShapBaselineConfig& WithMimeType(MimeTypeT&& value) { SetMimeType(std::forward<MimeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * <code>ShapBaselineUri</code> parameter if you want to provide more than 4 KB of
      * baseline data.</p>
      */
-    inline const Aws::String& GetShapBaseline() const{ return m_shapBaseline; }
+    inline const Aws::String& GetShapBaseline() const { return m_shapBaseline; }
     inline bool ShapBaselineHasBeenSet() const { return m_shapBaselineHasBeenSet; }
-    inline void SetShapBaseline(const Aws::String& value) { m_shapBaselineHasBeenSet = true; m_shapBaseline = value; }
-    inline void SetShapBaseline(Aws::String&& value) { m_shapBaselineHasBeenSet = true; m_shapBaseline = std::move(value); }
-    inline void SetShapBaseline(const char* value) { m_shapBaselineHasBeenSet = true; m_shapBaseline.assign(value); }
-    inline ClarifyShapBaselineConfig& WithShapBaseline(const Aws::String& value) { SetShapBaseline(value); return *this;}
-    inline ClarifyShapBaselineConfig& WithShapBaseline(Aws::String&& value) { SetShapBaseline(std::move(value)); return *this;}
-    inline ClarifyShapBaselineConfig& WithShapBaseline(const char* value) { SetShapBaseline(value); return *this;}
+    template<typename ShapBaselineT = Aws::String>
+    void SetShapBaseline(ShapBaselineT&& value) { m_shapBaselineHasBeenSet = true; m_shapBaseline = std::forward<ShapBaselineT>(value); }
+    template<typename ShapBaselineT = Aws::String>
+    ClarifyShapBaselineConfig& WithShapBaseline(ShapBaselineT&& value) { SetShapBaseline(std::forward<ShapBaselineT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +97,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give
      * SageMaker access to Resources in your Amazon Virtual Private Cloud</a>.</p>
      */
-    inline const Aws::String& GetShapBaselineUri() const{ return m_shapBaselineUri; }
+    inline const Aws::String& GetShapBaselineUri() const { return m_shapBaselineUri; }
     inline bool ShapBaselineUriHasBeenSet() const { return m_shapBaselineUriHasBeenSet; }
-    inline void SetShapBaselineUri(const Aws::String& value) { m_shapBaselineUriHasBeenSet = true; m_shapBaselineUri = value; }
-    inline void SetShapBaselineUri(Aws::String&& value) { m_shapBaselineUriHasBeenSet = true; m_shapBaselineUri = std::move(value); }
-    inline void SetShapBaselineUri(const char* value) { m_shapBaselineUriHasBeenSet = true; m_shapBaselineUri.assign(value); }
-    inline ClarifyShapBaselineConfig& WithShapBaselineUri(const Aws::String& value) { SetShapBaselineUri(value); return *this;}
-    inline ClarifyShapBaselineConfig& WithShapBaselineUri(Aws::String&& value) { SetShapBaselineUri(std::move(value)); return *this;}
-    inline ClarifyShapBaselineConfig& WithShapBaselineUri(const char* value) { SetShapBaselineUri(value); return *this;}
+    template<typename ShapBaselineUriT = Aws::String>
+    void SetShapBaselineUri(ShapBaselineUriT&& value) { m_shapBaselineUriHasBeenSet = true; m_shapBaselineUri = std::forward<ShapBaselineUriT>(value); }
+    template<typename ShapBaselineUriT = Aws::String>
+    ClarifyShapBaselineConfig& WithShapBaselineUri(ShapBaselineUriT&& value) { SetShapBaselineUri(std::forward<ShapBaselineUriT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,15 +12,6 @@ using namespace Aws::Translate::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLanguagesRequest::ListLanguagesRequest() : 
-    m_displayLanguageCode(DisplayLanguageCode::NOT_SET),
-    m_displayLanguageCodeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListLanguagesRequest::SerializePayload() const
 {
   JsonValue payload;

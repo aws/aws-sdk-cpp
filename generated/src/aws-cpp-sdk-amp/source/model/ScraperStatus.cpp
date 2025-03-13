@@ -18,14 +18,7 @@ namespace PrometheusService
 namespace Model
 {
 
-ScraperStatus::ScraperStatus() : 
-    m_statusCode(ScraperStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false)
-{
-}
-
 ScraperStatus::ScraperStatus(JsonView jsonValue)
-  : ScraperStatus()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ScraperStatus& ScraperStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = ScraperStatusCodeMapper::GetScraperStatusCodeForName(jsonValue.GetString("statusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

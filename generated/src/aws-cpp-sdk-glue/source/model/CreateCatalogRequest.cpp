@@ -12,13 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCatalogRequest::CreateCatalogRequest() : 
-    m_nameHasBeenSet(false),
-    m_catalogInputHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCatalogRequest::SerializePayload() const
 {
   JsonValue payload;

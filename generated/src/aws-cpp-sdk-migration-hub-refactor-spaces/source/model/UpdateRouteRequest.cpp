@@ -12,15 +12,6 @@ using namespace Aws::MigrationHubRefactorSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRouteRequest::UpdateRouteRequest() : 
-    m_activationState(RouteActivationState::NOT_SET),
-    m_activationStateHasBeenSet(false),
-    m_applicationIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_routeIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRouteRequest::SerializePayload() const
 {
   JsonValue payload;

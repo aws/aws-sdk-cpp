@@ -20,16 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-UpdateCondition::UpdateCondition() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_exists(false),
-    m_existsHasBeenSet(false)
-{
-}
-
 UpdateCondition::UpdateCondition(const XmlNode& xmlNode)
-  : UpdateCondition()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ UpdateCondition& UpdateCondition::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
     XmlNode existsNode = resultNode.FirstChild("Exists");
     if(!existsNode.IsNull())
     {
       m_exists = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(existsNode.GetText()).c_str()).c_str());
       m_existsHasBeenSet = true;
+       m_existsHasBeenSet = true;
     }
   }
 

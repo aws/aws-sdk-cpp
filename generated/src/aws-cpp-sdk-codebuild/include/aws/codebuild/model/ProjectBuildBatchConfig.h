@@ -34,7 +34,7 @@ namespace Model
   class ProjectBuildBatchConfig
   {
   public:
-    AWS_CODEBUILD_API ProjectBuildBatchConfig();
+    AWS_CODEBUILD_API ProjectBuildBatchConfig() = default;
     AWS_CODEBUILD_API ProjectBuildBatchConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ProjectBuildBatchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>Specifies the service role ARN for the batch build project.</p>
      */
-    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+    inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
-    inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
-    inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
-    inline ProjectBuildBatchConfig& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
-    inline ProjectBuildBatchConfig& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
-    inline ProjectBuildBatchConfig& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    template<typename ServiceRoleT = Aws::String>
+    void SetServiceRole(ServiceRoleT&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::forward<ServiceRoleT>(value); }
+    template<typename ServiceRoleT = Aws::String>
+    ProjectBuildBatchConfig& WithServiceRole(ServiceRoleT&& value) { SetServiceRole(std::forward<ServiceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <p>Specifies if the build artifacts for the batch build should be combined into
      * a single artifact location.</p>
      */
-    inline bool GetCombineArtifacts() const{ return m_combineArtifacts; }
+    inline bool GetCombineArtifacts() const { return m_combineArtifacts; }
     inline bool CombineArtifactsHasBeenSet() const { return m_combineArtifactsHasBeenSet; }
     inline void SetCombineArtifacts(bool value) { m_combineArtifactsHasBeenSet = true; m_combineArtifacts = value; }
     inline ProjectBuildBatchConfig& WithCombineArtifacts(bool value) { SetCombineArtifacts(value); return *this;}
@@ -70,12 +68,12 @@ namespace Model
      * <p>A <code>BatchRestrictions</code> object that specifies the restrictions for
      * the batch build.</p>
      */
-    inline const BatchRestrictions& GetRestrictions() const{ return m_restrictions; }
+    inline const BatchRestrictions& GetRestrictions() const { return m_restrictions; }
     inline bool RestrictionsHasBeenSet() const { return m_restrictionsHasBeenSet; }
-    inline void SetRestrictions(const BatchRestrictions& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
-    inline void SetRestrictions(BatchRestrictions&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::move(value); }
-    inline ProjectBuildBatchConfig& WithRestrictions(const BatchRestrictions& value) { SetRestrictions(value); return *this;}
-    inline ProjectBuildBatchConfig& WithRestrictions(BatchRestrictions&& value) { SetRestrictions(std::move(value)); return *this;}
+    template<typename RestrictionsT = BatchRestrictions>
+    void SetRestrictions(RestrictionsT&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::forward<RestrictionsT>(value); }
+    template<typename RestrictionsT = BatchRestrictions>
+    ProjectBuildBatchConfig& WithRestrictions(RestrictionsT&& value) { SetRestrictions(std::forward<RestrictionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +81,7 @@ namespace Model
      * <p>Specifies the maximum amount of time, in minutes, that the batch build must
      * be completed in.</p>
      */
-    inline int GetTimeoutInMins() const{ return m_timeoutInMins; }
+    inline int GetTimeoutInMins() const { return m_timeoutInMins; }
     inline bool TimeoutInMinsHasBeenSet() const { return m_timeoutInMinsHasBeenSet; }
     inline void SetTimeoutInMins(int value) { m_timeoutInMinsHasBeenSet = true; m_timeoutInMins = value; }
     inline ProjectBuildBatchConfig& WithTimeoutInMins(int value) { SetTimeoutInMins(value); return *this;}
@@ -100,28 +98,26 @@ namespace Model
      * <dt>REPORT_INDIVIDUAL_BUILDS</dt> <dd> <p>Send a separate status report for each
      * individual build.</p> </dd> </dl>
      */
-    inline const BatchReportModeType& GetBatchReportMode() const{ return m_batchReportMode; }
+    inline BatchReportModeType GetBatchReportMode() const { return m_batchReportMode; }
     inline bool BatchReportModeHasBeenSet() const { return m_batchReportModeHasBeenSet; }
-    inline void SetBatchReportMode(const BatchReportModeType& value) { m_batchReportModeHasBeenSet = true; m_batchReportMode = value; }
-    inline void SetBatchReportMode(BatchReportModeType&& value) { m_batchReportModeHasBeenSet = true; m_batchReportMode = std::move(value); }
-    inline ProjectBuildBatchConfig& WithBatchReportMode(const BatchReportModeType& value) { SetBatchReportMode(value); return *this;}
-    inline ProjectBuildBatchConfig& WithBatchReportMode(BatchReportModeType&& value) { SetBatchReportMode(std::move(value)); return *this;}
+    inline void SetBatchReportMode(BatchReportModeType value) { m_batchReportModeHasBeenSet = true; m_batchReportMode = value; }
+    inline ProjectBuildBatchConfig& WithBatchReportMode(BatchReportModeType value) { SetBatchReportMode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet = false;
 
-    bool m_combineArtifacts;
+    bool m_combineArtifacts{false};
     bool m_combineArtifactsHasBeenSet = false;
 
     BatchRestrictions m_restrictions;
     bool m_restrictionsHasBeenSet = false;
 
-    int m_timeoutInMins;
+    int m_timeoutInMins{0};
     bool m_timeoutInMinsHasBeenSet = false;
 
-    BatchReportModeType m_batchReportMode;
+    BatchReportModeType m_batchReportMode{BatchReportModeType::NOT_SET};
     bool m_batchReportModeHasBeenSet = false;
   };
 

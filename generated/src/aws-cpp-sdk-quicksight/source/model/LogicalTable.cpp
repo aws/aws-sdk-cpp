@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LogicalTable::LogicalTable() : 
-    m_aliasHasBeenSet(false),
-    m_dataTransformsHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 LogicalTable::LogicalTable(JsonView jsonValue)
-  : LogicalTable()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ LogicalTable& LogicalTable::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Alias"))
   {
     m_alias = jsonValue.GetString("Alias");
-
     m_aliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataTransforms"))
   {
     Aws::Utils::Array<JsonView> dataTransformsJsonList = jsonValue.GetArray("DataTransforms");
@@ -49,14 +39,11 @@ LogicalTable& LogicalTable::operator =(JsonView jsonValue)
     }
     m_dataTransformsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetObject("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

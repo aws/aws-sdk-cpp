@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationExclusionOptions::WaypointOptimizationExclusionOptions() : 
-    m_countriesHasBeenSet(false)
-{
-}
-
 WaypointOptimizationExclusionOptions::WaypointOptimizationExclusionOptions(JsonView jsonValue)
-  : WaypointOptimizationExclusionOptions()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ WaypointOptimizationExclusionOptions& WaypointOptimizationExclusionOptions::oper
     }
     m_countriesHasBeenSet = true;
   }
-
   return *this;
 }
 

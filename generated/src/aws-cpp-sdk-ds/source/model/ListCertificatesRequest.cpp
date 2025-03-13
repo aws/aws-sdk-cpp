@@ -12,14 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCertificatesRequest::ListCertificatesRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListCertificatesRequest::SerializePayload() const
 {
   JsonValue payload;

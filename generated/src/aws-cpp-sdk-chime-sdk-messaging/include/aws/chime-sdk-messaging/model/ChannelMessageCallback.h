@@ -34,7 +34,7 @@ namespace Model
   class ChannelMessageCallback
   {
   public:
-    AWS_CHIMESDKMESSAGING_API ChannelMessageCallback();
+    AWS_CHIMESDKMESSAGING_API ChannelMessageCallback() = default;
     AWS_CHIMESDKMESSAGING_API ChannelMessageCallback(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API ChannelMessageCallback& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The message ID.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline ChannelMessageCallback& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline ChannelMessageCallback& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline ChannelMessageCallback& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    ChannelMessageCallback& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,40 +60,36 @@ namespace Model
      * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
      * Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline ChannelMessageCallback& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline ChannelMessageCallback& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline ChannelMessageCallback& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    ChannelMessageCallback& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message metadata.</p>
      */
-    inline const Aws::String& GetMetadata() const{ return m_metadata; }
+    inline const Aws::String& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline void SetMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.assign(value); }
-    inline ChannelMessageCallback& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
-    inline ChannelMessageCallback& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
-    inline ChannelMessageCallback& WithMetadata(const char* value) { SetMetadata(value); return *this;}
+    template<typename MetadataT = Aws::String>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::String>
+    ChannelMessageCallback& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The push notification configuration of the message.</p>
      */
-    inline const PushNotificationConfiguration& GetPushNotification() const{ return m_pushNotification; }
+    inline const PushNotificationConfiguration& GetPushNotification() const { return m_pushNotification; }
     inline bool PushNotificationHasBeenSet() const { return m_pushNotificationHasBeenSet; }
-    inline void SetPushNotification(const PushNotificationConfiguration& value) { m_pushNotificationHasBeenSet = true; m_pushNotification = value; }
-    inline void SetPushNotification(PushNotificationConfiguration&& value) { m_pushNotificationHasBeenSet = true; m_pushNotification = std::move(value); }
-    inline ChannelMessageCallback& WithPushNotification(const PushNotificationConfiguration& value) { SetPushNotification(value); return *this;}
-    inline ChannelMessageCallback& WithPushNotification(PushNotificationConfiguration&& value) { SetPushNotification(std::move(value)); return *this;}
+    template<typename PushNotificationT = PushNotificationConfiguration>
+    void SetPushNotification(PushNotificationT&& value) { m_pushNotificationHasBeenSet = true; m_pushNotification = std::forward<PushNotificationT>(value); }
+    template<typename PushNotificationT = PushNotificationConfiguration>
+    ChannelMessageCallback& WithPushNotification(PushNotificationT&& value) { SetPushNotification(std::forward<PushNotificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,32 +101,28 @@ namespace Model
      * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
      * Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const{ return m_messageAttributes; }
+    inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const { return m_messageAttributes; }
     inline bool MessageAttributesHasBeenSet() const { return m_messageAttributesHasBeenSet; }
-    inline void SetMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
-    inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = std::move(value); }
-    inline ChannelMessageCallback& WithMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { SetMessageAttributes(value); return *this;}
-    inline ChannelMessageCallback& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(std::move(value)); return *this;}
-    inline ChannelMessageCallback& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
-    inline ChannelMessageCallback& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), value); return *this; }
-    inline ChannelMessageCallback& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
-    inline ChannelMessageCallback& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline ChannelMessageCallback& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
-    inline ChannelMessageCallback& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
+    template<typename MessageAttributesT = Aws::Map<Aws::String, MessageAttributeValue>>
+    void SetMessageAttributes(MessageAttributesT&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = std::forward<MessageAttributesT>(value); }
+    template<typename MessageAttributesT = Aws::Map<Aws::String, MessageAttributeValue>>
+    ChannelMessageCallback& WithMessageAttributes(MessageAttributesT&& value) { SetMessageAttributes(std::forward<MessageAttributesT>(value)); return *this;}
+    template<typename MessageAttributesKeyT = Aws::String, typename MessageAttributesValueT = MessageAttributeValue>
+    ChannelMessageCallback& AddMessageAttributes(MessageAttributesKeyT&& key, MessageAttributesValueT&& value) {
+      m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::forward<MessageAttributesKeyT>(key), std::forward<MessageAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the SubChannel.</p>
      */
-    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+    inline const Aws::String& GetSubChannelId() const { return m_subChannelId; }
     inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
-    inline void SetSubChannelId(const Aws::String& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = value; }
-    inline void SetSubChannelId(Aws::String&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::move(value); }
-    inline void SetSubChannelId(const char* value) { m_subChannelIdHasBeenSet = true; m_subChannelId.assign(value); }
-    inline ChannelMessageCallback& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
-    inline ChannelMessageCallback& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
-    inline ChannelMessageCallback& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+    template<typename SubChannelIdT = Aws::String>
+    void SetSubChannelId(SubChannelIdT&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::forward<SubChannelIdT>(value); }
+    template<typename SubChannelIdT = Aws::String>
+    ChannelMessageCallback& WithSubChannelId(SubChannelIdT&& value) { SetSubChannelId(std::forward<SubChannelIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +135,12 @@ namespace Model
      * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging
      * Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline ChannelMessageCallback& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline ChannelMessageCallback& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline ChannelMessageCallback& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    ChannelMessageCallback& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
   private:
 

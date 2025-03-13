@@ -18,17 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-LogDestinationConfig::LogDestinationConfig() : 
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_logDestinationType(LogDestinationType::NOT_SET),
-    m_logDestinationTypeHasBeenSet(false),
-    m_logDestinationHasBeenSet(false)
-{
-}
-
 LogDestinationConfig::LogDestinationConfig(JsonView jsonValue)
-  : LogDestinationConfig()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ LogDestinationConfig& LogDestinationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LogType"))
   {
     m_logType = LogTypeMapper::GetLogTypeForName(jsonValue.GetString("LogType"));
-
     m_logTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogDestinationType"))
   {
     m_logDestinationType = LogDestinationTypeMapper::GetLogDestinationTypeForName(jsonValue.GetString("LogDestinationType"));
-
     m_logDestinationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogDestination"))
   {
     Aws::Map<Aws::String, JsonView> logDestinationJsonMap = jsonValue.GetObject("LogDestination").GetAllObjects();
@@ -58,7 +44,6 @@ LogDestinationConfig& LogDestinationConfig::operator =(JsonView jsonValue)
     }
     m_logDestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

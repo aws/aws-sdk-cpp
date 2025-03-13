@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateConnectorRequest::UpdateConnectorRequest() : 
-    m_capacityHasBeenSet(false),
-    m_connectorConfigurationHasBeenSet(false),
-    m_connectorArnHasBeenSet(false),
-    m_currentVersionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConnectorRequest::SerializePayload() const
 {
   JsonValue payload;

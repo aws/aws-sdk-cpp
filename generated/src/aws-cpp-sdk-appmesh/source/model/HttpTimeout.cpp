@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-HttpTimeout::HttpTimeout() : 
-    m_idleHasBeenSet(false),
-    m_perRequestHasBeenSet(false)
-{
-}
-
 HttpTimeout::HttpTimeout(JsonView jsonValue)
-  : HttpTimeout()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HttpTimeout& HttpTimeout::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("idle"))
   {
     m_idle = jsonValue.GetObject("idle");
-
     m_idleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("perRequest"))
   {
     m_perRequest = jsonValue.GetObject("perRequest");
-
     m_perRequestHasBeenSet = true;
   }
-
   return *this;
 }
 

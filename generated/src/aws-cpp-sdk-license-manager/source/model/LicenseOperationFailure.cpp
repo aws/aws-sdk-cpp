@@ -18,21 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-LicenseOperationFailure::LicenseOperationFailure() : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_failureTimeHasBeenSet(false),
-    m_operationNameHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_operationRequestedByHasBeenSet(false),
-    m_metadataListHasBeenSet(false)
-{
-}
-
 LicenseOperationFailure::LicenseOperationFailure(JsonView jsonValue)
-  : LicenseOperationFailure()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ LicenseOperationFailure& LicenseOperationFailure::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureTime"))
   {
     m_failureTime = jsonValue.GetDouble("FailureTime");
-
     m_failureTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationName"))
   {
     m_operationName = jsonValue.GetString("OperationName");
-
     m_operationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceOwnerId"))
   {
     m_resourceOwnerId = jsonValue.GetString("ResourceOwnerId");
-
     m_resourceOwnerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationRequestedBy"))
   {
     m_operationRequestedBy = jsonValue.GetString("OperationRequestedBy");
-
     m_operationRequestedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetadataList"))
   {
     Aws::Utils::Array<JsonView> metadataListJsonList = jsonValue.GetArray("MetadataList");
@@ -97,7 +69,6 @@ LicenseOperationFailure& LicenseOperationFailure::operator =(JsonView jsonValue)
     }
     m_metadataListHasBeenSet = true;
   }
-
   return *this;
 }
 

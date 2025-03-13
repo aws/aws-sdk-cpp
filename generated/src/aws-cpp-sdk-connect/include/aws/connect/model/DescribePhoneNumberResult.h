@@ -28,7 +28,7 @@ namespace Model
   class DescribePhoneNumberResult
   {
   public:
-    AWS_CONNECT_API DescribePhoneNumberResult();
+    AWS_CONNECT_API DescribePhoneNumberResult() = default;
     AWS_CONNECT_API DescribePhoneNumberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribePhoneNumberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Information about a phone number that's been claimed to your Amazon Connect
      * instance or traffic distribution group.</p>
      */
-    inline const ClaimedPhoneNumberSummary& GetClaimedPhoneNumberSummary() const{ return m_claimedPhoneNumberSummary; }
-    inline void SetClaimedPhoneNumberSummary(const ClaimedPhoneNumberSummary& value) { m_claimedPhoneNumberSummary = value; }
-    inline void SetClaimedPhoneNumberSummary(ClaimedPhoneNumberSummary&& value) { m_claimedPhoneNumberSummary = std::move(value); }
-    inline DescribePhoneNumberResult& WithClaimedPhoneNumberSummary(const ClaimedPhoneNumberSummary& value) { SetClaimedPhoneNumberSummary(value); return *this;}
-    inline DescribePhoneNumberResult& WithClaimedPhoneNumberSummary(ClaimedPhoneNumberSummary&& value) { SetClaimedPhoneNumberSummary(std::move(value)); return *this;}
+    inline const ClaimedPhoneNumberSummary& GetClaimedPhoneNumberSummary() const { return m_claimedPhoneNumberSummary; }
+    template<typename ClaimedPhoneNumberSummaryT = ClaimedPhoneNumberSummary>
+    void SetClaimedPhoneNumberSummary(ClaimedPhoneNumberSummaryT&& value) { m_claimedPhoneNumberSummaryHasBeenSet = true; m_claimedPhoneNumberSummary = std::forward<ClaimedPhoneNumberSummaryT>(value); }
+    template<typename ClaimedPhoneNumberSummaryT = ClaimedPhoneNumberSummary>
+    DescribePhoneNumberResult& WithClaimedPhoneNumberSummary(ClaimedPhoneNumberSummaryT&& value) { SetClaimedPhoneNumberSummary(std::forward<ClaimedPhoneNumberSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribePhoneNumberResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribePhoneNumberResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribePhoneNumberResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribePhoneNumberResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ClaimedPhoneNumberSummary m_claimedPhoneNumberSummary;
+    bool m_claimedPhoneNumberSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

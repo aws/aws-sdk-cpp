@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-TopicConfiguration::TopicConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_exampleChatMessagesHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 TopicConfiguration::TopicConfiguration(JsonView jsonValue)
-  : TopicConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TopicConfiguration& TopicConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exampleChatMessages"))
   {
     Aws::Utils::Array<JsonView> exampleChatMessagesJsonList = jsonValue.GetArray("exampleChatMessages");
@@ -57,7 +44,6 @@ TopicConfiguration& TopicConfiguration::operator =(JsonView jsonValue)
     }
     m_exampleChatMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
@@ -67,7 +53,6 @@ TopicConfiguration& TopicConfiguration::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   return *this;
 }
 

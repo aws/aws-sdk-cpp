@@ -18,37 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-JobOutput::JobOutput() : 
-    m_idHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_thumbnailPatternHasBeenSet(false),
-    m_thumbnailEncryptionHasBeenSet(false),
-    m_rotateHasBeenSet(false),
-    m_presetIdHasBeenSet(false),
-    m_segmentDurationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusDetailHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_frameRateHasBeenSet(false),
-    m_fileSize(0),
-    m_fileSizeHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false),
-    m_watermarksHasBeenSet(false),
-    m_albumArtHasBeenSet(false),
-    m_captionsHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_appliedColorSpaceConversionHasBeenSet(false)
-{
-}
-
 JobOutput::JobOutput(JsonView jsonValue)
-  : JobOutput()
 {
   *this = jsonValue;
 }
@@ -58,108 +28,78 @@ JobOutput& JobOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThumbnailPattern"))
   {
     m_thumbnailPattern = jsonValue.GetString("ThumbnailPattern");
-
     m_thumbnailPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThumbnailEncryption"))
   {
     m_thumbnailEncryption = jsonValue.GetObject("ThumbnailEncryption");
-
     m_thumbnailEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rotate"))
   {
     m_rotate = jsonValue.GetString("Rotate");
-
     m_rotateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PresetId"))
   {
     m_presetId = jsonValue.GetString("PresetId");
-
     m_presetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentDuration"))
   {
     m_segmentDuration = jsonValue.GetString("SegmentDuration");
-
     m_segmentDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetail"))
   {
     m_statusDetail = jsonValue.GetString("StatusDetail");
-
     m_statusDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInt64("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Width"))
   {
     m_width = jsonValue.GetInteger("Width");
-
     m_widthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Height"))
   {
     m_height = jsonValue.GetInteger("Height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FrameRate"))
   {
     m_frameRate = jsonValue.GetString("FrameRate");
-
     m_frameRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSize"))
   {
     m_fileSize = jsonValue.GetInt64("FileSize");
-
     m_fileSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationMillis"))
   {
     m_durationMillis = jsonValue.GetInt64("DurationMillis");
-
     m_durationMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Watermarks"))
   {
     Aws::Utils::Array<JsonView> watermarksJsonList = jsonValue.GetArray("Watermarks");
@@ -169,35 +109,26 @@ JobOutput& JobOutput::operator =(JsonView jsonValue)
     }
     m_watermarksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlbumArt"))
   {
     m_albumArt = jsonValue.GetObject("AlbumArt");
-
     m_albumArtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Captions"))
   {
     m_captions = jsonValue.GetObject("Captions");
-
     m_captionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encryption"))
   {
     m_encryption = jsonValue.GetObject("Encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppliedColorSpaceConversion"))
   {
     m_appliedColorSpaceConversion = jsonValue.GetString("AppliedColorSpaceConversion");
-
     m_appliedColorSpaceConversionHasBeenSet = true;
   }
-
   return *this;
 }
 

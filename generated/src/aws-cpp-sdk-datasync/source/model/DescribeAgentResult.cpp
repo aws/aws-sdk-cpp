@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAgentResult::DescribeAgentResult() : 
-    m_status(AgentStatus::NOT_SET),
-    m_endpointType(EndpointType::NOT_SET)
-{
-}
-
 DescribeAgentResult::DescribeAgentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeAgentResult()
 {
   *this = result;
 }
@@ -35,57 +28,50 @@ DescribeAgentResult& DescribeAgentResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("AgentArn"))
   {
     m_agentArn = jsonValue.GetString("AgentArn");
-
+    m_agentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastConnectionTime"))
   {
     m_lastConnectionTime = jsonValue.GetDouble("LastConnectionTime");
-
+    m_lastConnectionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointType"))
   {
     m_endpointType = EndpointTypeMapper::GetEndpointTypeForName(jsonValue.GetString("EndpointType"));
-
+    m_endpointTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateLinkConfig"))
   {
     m_privateLinkConfig = jsonValue.GetObject("PrivateLinkConfig");
-
+    m_privateLinkConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = jsonValue.GetObject("Platform");
-
+    m_platformHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -34,7 +34,7 @@ namespace Model
   class PredictQAppInputOptions
   {
   public:
-    AWS_QAPPS_API PredictQAppInputOptions();
+    AWS_QAPPS_API PredictQAppInputOptions() = default;
     AWS_QAPPS_API PredictQAppInputOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API PredictQAppInputOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>A conversation to use as input for generating the Q App definition.</p>
      */
-    inline const Aws::Vector<ConversationMessage>& GetConversation() const{ return m_conversation; }
+    inline const Aws::Vector<ConversationMessage>& GetConversation() const { return m_conversation; }
     inline bool ConversationHasBeenSet() const { return m_conversationHasBeenSet; }
-    inline void SetConversation(const Aws::Vector<ConversationMessage>& value) { m_conversationHasBeenSet = true; m_conversation = value; }
-    inline void SetConversation(Aws::Vector<ConversationMessage>&& value) { m_conversationHasBeenSet = true; m_conversation = std::move(value); }
-    inline PredictQAppInputOptions& WithConversation(const Aws::Vector<ConversationMessage>& value) { SetConversation(value); return *this;}
-    inline PredictQAppInputOptions& WithConversation(Aws::Vector<ConversationMessage>&& value) { SetConversation(std::move(value)); return *this;}
-    inline PredictQAppInputOptions& AddConversation(const ConversationMessage& value) { m_conversationHasBeenSet = true; m_conversation.push_back(value); return *this; }
-    inline PredictQAppInputOptions& AddConversation(ConversationMessage&& value) { m_conversationHasBeenSet = true; m_conversation.push_back(std::move(value)); return *this; }
+    template<typename ConversationT = Aws::Vector<ConversationMessage>>
+    void SetConversation(ConversationT&& value) { m_conversationHasBeenSet = true; m_conversation = std::forward<ConversationT>(value); }
+    template<typename ConversationT = Aws::Vector<ConversationMessage>>
+    PredictQAppInputOptions& WithConversation(ConversationT&& value) { SetConversation(std::forward<ConversationT>(value)); return *this;}
+    template<typename ConversationT = ConversationMessage>
+    PredictQAppInputOptions& AddConversation(ConversationT&& value) { m_conversationHasBeenSet = true; m_conversation.emplace_back(std::forward<ConversationT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A problem statement to use as input for generating the Q App definition.</p>
      */
-    inline const Aws::String& GetProblemStatement() const{ return m_problemStatement; }
+    inline const Aws::String& GetProblemStatement() const { return m_problemStatement; }
     inline bool ProblemStatementHasBeenSet() const { return m_problemStatementHasBeenSet; }
-    inline void SetProblemStatement(const Aws::String& value) { m_problemStatementHasBeenSet = true; m_problemStatement = value; }
-    inline void SetProblemStatement(Aws::String&& value) { m_problemStatementHasBeenSet = true; m_problemStatement = std::move(value); }
-    inline void SetProblemStatement(const char* value) { m_problemStatementHasBeenSet = true; m_problemStatement.assign(value); }
-    inline PredictQAppInputOptions& WithProblemStatement(const Aws::String& value) { SetProblemStatement(value); return *this;}
-    inline PredictQAppInputOptions& WithProblemStatement(Aws::String&& value) { SetProblemStatement(std::move(value)); return *this;}
-    inline PredictQAppInputOptions& WithProblemStatement(const char* value) { SetProblemStatement(value); return *this;}
+    template<typename ProblemStatementT = Aws::String>
+    void SetProblemStatement(ProblemStatementT&& value) { m_problemStatementHasBeenSet = true; m_problemStatement = std::forward<ProblemStatementT>(value); }
+    template<typename ProblemStatementT = Aws::String>
+    PredictQAppInputOptions& WithProblemStatement(ProblemStatementT&& value) { SetProblemStatement(std::forward<ProblemStatementT>(value)); return *this;}
     ///@}
   private:
 

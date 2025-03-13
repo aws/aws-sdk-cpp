@@ -18,13 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-AssessmentTargetFilter::AssessmentTargetFilter() : 
-    m_assessmentTargetNamePatternHasBeenSet(false)
-{
-}
-
 AssessmentTargetFilter::AssessmentTargetFilter(JsonView jsonValue)
-  : AssessmentTargetFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AssessmentTargetFilter& AssessmentTargetFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assessmentTargetNamePattern"))
   {
     m_assessmentTargetNamePattern = jsonValue.GetString("assessmentTargetNamePattern");
-
     m_assessmentTargetNamePatternHasBeenSet = true;
   }
-
   return *this;
 }
 

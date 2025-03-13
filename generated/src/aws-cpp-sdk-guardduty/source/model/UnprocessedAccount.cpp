@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-UnprocessedAccount::UnprocessedAccount() : 
-    m_accountIdHasBeenSet(false),
-    m_resultHasBeenSet(false)
-{
-}
-
 UnprocessedAccount::UnprocessedAccount(JsonView jsonValue)
-  : UnprocessedAccount()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnprocessedAccount& UnprocessedAccount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("result"))
   {
     m_result = jsonValue.GetString("result");
-
     m_resultHasBeenSet = true;
   }
-
   return *this;
 }
 

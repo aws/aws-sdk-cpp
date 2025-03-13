@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ActionGroupInvocationOutput::ActionGroupInvocationOutput() : 
-    m_textHasBeenSet(false)
-{
-}
-
 ActionGroupInvocationOutput::ActionGroupInvocationOutput(JsonView jsonValue)
-  : ActionGroupInvocationOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ActionGroupInvocationOutput& ActionGroupInvocationOutput::operator =(JsonView js
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

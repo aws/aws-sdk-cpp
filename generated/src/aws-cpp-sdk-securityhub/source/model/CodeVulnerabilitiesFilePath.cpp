@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-CodeVulnerabilitiesFilePath::CodeVulnerabilitiesFilePath() : 
-    m_endLine(0),
-    m_endLineHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_startLine(0),
-    m_startLineHasBeenSet(false)
-{
-}
-
 CodeVulnerabilitiesFilePath::CodeVulnerabilitiesFilePath(JsonView jsonValue)
-  : CodeVulnerabilitiesFilePath()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ CodeVulnerabilitiesFilePath& CodeVulnerabilitiesFilePath::operator =(JsonView js
   if(jsonValue.ValueExists("EndLine"))
   {
     m_endLine = jsonValue.GetInteger("EndLine");
-
     m_endLineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileName"))
   {
     m_fileName = jsonValue.GetString("FileName");
-
     m_fileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilePath"))
   {
     m_filePath = jsonValue.GetString("FilePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartLine"))
   {
     m_startLine = jsonValue.GetInteger("StartLine");
-
     m_startLineHasBeenSet = true;
   }
-
   return *this;
 }
 

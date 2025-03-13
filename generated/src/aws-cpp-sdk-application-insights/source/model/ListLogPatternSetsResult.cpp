@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListLogPatternSetsResult::ListLogPatternSetsResult()
-{
-}
-
 ListLogPatternSetsResult::ListLogPatternSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListLogPatternSetsResult& ListLogPatternSetsResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ResourceGroupName"))
   {
     m_resourceGroupName = jsonValue.GetString("ResourceGroupName");
-
+    m_resourceGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
+    m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogPatternSets"))
   {
     Aws::Utils::Array<JsonView> logPatternSetsJsonList = jsonValue.GetArray("LogPatternSets");
@@ -48,20 +42,20 @@ ListLogPatternSetsResult& ListLogPatternSetsResult::operator =(const Aws::Amazon
     {
       m_logPatternSets.push_back(logPatternSetsJsonList[logPatternSetsIndex].AsString());
     }
+    m_logPatternSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

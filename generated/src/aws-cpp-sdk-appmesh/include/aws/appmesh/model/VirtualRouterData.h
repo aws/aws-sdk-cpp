@@ -35,7 +35,7 @@ namespace Model
   class VirtualRouterData
   {
   public:
-    AWS_APPMESH_API VirtualRouterData();
+    AWS_APPMESH_API VirtualRouterData() = default;
     AWS_APPMESH_API VirtualRouterData(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualRouterData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,64 +45,60 @@ namespace Model
     /**
      * <p>The name of the service mesh that the virtual router resides in.</p>
      */
-    inline const Aws::String& GetMeshName() const{ return m_meshName; }
+    inline const Aws::String& GetMeshName() const { return m_meshName; }
     inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
-    inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
-    inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
-    inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
-    inline VirtualRouterData& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
-    inline VirtualRouterData& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
-    inline VirtualRouterData& WithMeshName(const char* value) { SetMeshName(value); return *this;}
+    template<typename MeshNameT = Aws::String>
+    void SetMeshName(MeshNameT&& value) { m_meshNameHasBeenSet = true; m_meshName = std::forward<MeshNameT>(value); }
+    template<typename MeshNameT = Aws::String>
+    VirtualRouterData& WithMeshName(MeshNameT&& value) { SetMeshName(std::forward<MeshNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The associated metadata for the virtual router.</p>
      */
-    inline const ResourceMetadata& GetMetadata() const{ return m_metadata; }
+    inline const ResourceMetadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const ResourceMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(ResourceMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline VirtualRouterData& WithMetadata(const ResourceMetadata& value) { SetMetadata(value); return *this;}
-    inline VirtualRouterData& WithMetadata(ResourceMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = ResourceMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = ResourceMetadata>
+    VirtualRouterData& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specifications of the virtual router.</p>
      */
-    inline const VirtualRouterSpec& GetSpec() const{ return m_spec; }
+    inline const VirtualRouterSpec& GetSpec() const { return m_spec; }
     inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
-    inline void SetSpec(const VirtualRouterSpec& value) { m_specHasBeenSet = true; m_spec = value; }
-    inline void SetSpec(VirtualRouterSpec&& value) { m_specHasBeenSet = true; m_spec = std::move(value); }
-    inline VirtualRouterData& WithSpec(const VirtualRouterSpec& value) { SetSpec(value); return *this;}
-    inline VirtualRouterData& WithSpec(VirtualRouterSpec&& value) { SetSpec(std::move(value)); return *this;}
+    template<typename SpecT = VirtualRouterSpec>
+    void SetSpec(SpecT&& value) { m_specHasBeenSet = true; m_spec = std::forward<SpecT>(value); }
+    template<typename SpecT = VirtualRouterSpec>
+    VirtualRouterData& WithSpec(SpecT&& value) { SetSpec(std::forward<SpecT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the virtual router.</p>
      */
-    inline const VirtualRouterStatus& GetStatus() const{ return m_status; }
+    inline const VirtualRouterStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const VirtualRouterStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(VirtualRouterStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline VirtualRouterData& WithStatus(const VirtualRouterStatus& value) { SetStatus(value); return *this;}
-    inline VirtualRouterData& WithStatus(VirtualRouterStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = VirtualRouterStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = VirtualRouterStatus>
+    VirtualRouterData& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the virtual router.</p>
      */
-    inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
+    inline const Aws::String& GetVirtualRouterName() const { return m_virtualRouterName; }
     inline bool VirtualRouterNameHasBeenSet() const { return m_virtualRouterNameHasBeenSet; }
-    inline void SetVirtualRouterName(const Aws::String& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = value; }
-    inline void SetVirtualRouterName(Aws::String&& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = std::move(value); }
-    inline void SetVirtualRouterName(const char* value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName.assign(value); }
-    inline VirtualRouterData& WithVirtualRouterName(const Aws::String& value) { SetVirtualRouterName(value); return *this;}
-    inline VirtualRouterData& WithVirtualRouterName(Aws::String&& value) { SetVirtualRouterName(std::move(value)); return *this;}
-    inline VirtualRouterData& WithVirtualRouterName(const char* value) { SetVirtualRouterName(value); return *this;}
+    template<typename VirtualRouterNameT = Aws::String>
+    void SetVirtualRouterName(VirtualRouterNameT&& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = std::forward<VirtualRouterNameT>(value); }
+    template<typename VirtualRouterNameT = Aws::String>
+    VirtualRouterData& WithVirtualRouterName(VirtualRouterNameT&& value) { SetVirtualRouterName(std::forward<VirtualRouterNameT>(value)); return *this;}
     ///@}
   private:
 

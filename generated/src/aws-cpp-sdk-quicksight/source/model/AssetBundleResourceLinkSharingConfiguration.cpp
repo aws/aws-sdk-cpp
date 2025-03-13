@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleResourceLinkSharingConfiguration::AssetBundleResourceLinkSharingConfiguration() : 
-    m_permissionsHasBeenSet(false)
-{
-}
-
 AssetBundleResourceLinkSharingConfiguration::AssetBundleResourceLinkSharingConfiguration(JsonView jsonValue)
-  : AssetBundleResourceLinkSharingConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AssetBundleResourceLinkSharingConfiguration& AssetBundleResourceLinkSharingConfi
   if(jsonValue.ValueExists("Permissions"))
   {
     m_permissions = jsonValue.GetObject("Permissions");
-
     m_permissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

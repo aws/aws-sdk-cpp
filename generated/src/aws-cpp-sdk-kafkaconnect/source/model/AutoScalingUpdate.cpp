@@ -18,20 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-AutoScalingUpdate::AutoScalingUpdate() : 
-    m_maxWorkerCount(0),
-    m_maxWorkerCountHasBeenSet(false),
-    m_mcuCount(0),
-    m_mcuCountHasBeenSet(false),
-    m_minWorkerCount(0),
-    m_minWorkerCountHasBeenSet(false),
-    m_scaleInPolicyHasBeenSet(false),
-    m_scaleOutPolicyHasBeenSet(false)
-{
-}
-
 AutoScalingUpdate::AutoScalingUpdate(JsonView jsonValue)
-  : AutoScalingUpdate()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ AutoScalingUpdate& AutoScalingUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxWorkerCount"))
   {
     m_maxWorkerCount = jsonValue.GetInteger("maxWorkerCount");
-
     m_maxWorkerCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mcuCount"))
   {
     m_mcuCount = jsonValue.GetInteger("mcuCount");
-
     m_mcuCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minWorkerCount"))
   {
     m_minWorkerCount = jsonValue.GetInteger("minWorkerCount");
-
     m_minWorkerCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scaleInPolicy"))
   {
     m_scaleInPolicy = jsonValue.GetObject("scaleInPolicy");
-
     m_scaleInPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scaleOutPolicy"))
   {
     m_scaleOutPolicy = jsonValue.GetObject("scaleOutPolicy");
-
     m_scaleOutPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

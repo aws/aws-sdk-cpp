@@ -18,13 +18,7 @@ namespace Chime
 namespace Model
 {
 
-BusinessCallingSettings::BusinessCallingSettings() : 
-    m_cdrBucketHasBeenSet(false)
-{
-}
-
 BusinessCallingSettings::BusinessCallingSettings(JsonView jsonValue)
-  : BusinessCallingSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BusinessCallingSettings& BusinessCallingSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CdrBucket"))
   {
     m_cdrBucket = jsonValue.GetString("CdrBucket");
-
     m_cdrBucketHasBeenSet = true;
   }
-
   return *this;
 }
 

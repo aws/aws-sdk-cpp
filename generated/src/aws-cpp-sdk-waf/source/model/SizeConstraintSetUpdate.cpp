@@ -18,15 +18,7 @@ namespace WAF
 namespace Model
 {
 
-SizeConstraintSetUpdate::SizeConstraintSetUpdate() : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_sizeConstraintHasBeenSet(false)
-{
-}
-
 SizeConstraintSetUpdate::SizeConstraintSetUpdate(JsonView jsonValue)
-  : SizeConstraintSetUpdate()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SizeConstraintSetUpdate& SizeConstraintSetUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ChangeActionMapper::GetChangeActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeConstraint"))
   {
     m_sizeConstraint = jsonValue.GetObject("SizeConstraint");
-
     m_sizeConstraintHasBeenSet = true;
   }
-
   return *this;
 }
 

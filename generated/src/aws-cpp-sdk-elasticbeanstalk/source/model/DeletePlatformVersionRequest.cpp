@@ -10,11 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DeletePlatformVersionRequest::DeletePlatformVersionRequest() : 
-    m_platformArnHasBeenSet(false)
-{
-}
-
 Aws::String DeletePlatformVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

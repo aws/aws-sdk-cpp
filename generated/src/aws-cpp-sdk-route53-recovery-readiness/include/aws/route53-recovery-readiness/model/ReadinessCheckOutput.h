@@ -32,7 +32,7 @@ namespace Model
   class ReadinessCheckOutput
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API ReadinessCheckOutput();
+    AWS_ROUTE53RECOVERYREADINESS_API ReadinessCheckOutput() = default;
     AWS_ROUTE53RECOVERYREADINESS_API ReadinessCheckOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYREADINESS_API ReadinessCheckOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,59 +42,50 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
      */
-    inline const Aws::String& GetReadinessCheckArn() const{ return m_readinessCheckArn; }
+    inline const Aws::String& GetReadinessCheckArn() const { return m_readinessCheckArn; }
     inline bool ReadinessCheckArnHasBeenSet() const { return m_readinessCheckArnHasBeenSet; }
-    inline void SetReadinessCheckArn(const Aws::String& value) { m_readinessCheckArnHasBeenSet = true; m_readinessCheckArn = value; }
-    inline void SetReadinessCheckArn(Aws::String&& value) { m_readinessCheckArnHasBeenSet = true; m_readinessCheckArn = std::move(value); }
-    inline void SetReadinessCheckArn(const char* value) { m_readinessCheckArnHasBeenSet = true; m_readinessCheckArn.assign(value); }
-    inline ReadinessCheckOutput& WithReadinessCheckArn(const Aws::String& value) { SetReadinessCheckArn(value); return *this;}
-    inline ReadinessCheckOutput& WithReadinessCheckArn(Aws::String&& value) { SetReadinessCheckArn(std::move(value)); return *this;}
-    inline ReadinessCheckOutput& WithReadinessCheckArn(const char* value) { SetReadinessCheckArn(value); return *this;}
+    template<typename ReadinessCheckArnT = Aws::String>
+    void SetReadinessCheckArn(ReadinessCheckArnT&& value) { m_readinessCheckArnHasBeenSet = true; m_readinessCheckArn = std::forward<ReadinessCheckArnT>(value); }
+    template<typename ReadinessCheckArnT = Aws::String>
+    ReadinessCheckOutput& WithReadinessCheckArn(ReadinessCheckArnT&& value) { SetReadinessCheckArn(std::forward<ReadinessCheckArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of a readiness check.</p>
      */
-    inline const Aws::String& GetReadinessCheckName() const{ return m_readinessCheckName; }
+    inline const Aws::String& GetReadinessCheckName() const { return m_readinessCheckName; }
     inline bool ReadinessCheckNameHasBeenSet() const { return m_readinessCheckNameHasBeenSet; }
-    inline void SetReadinessCheckName(const Aws::String& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = value; }
-    inline void SetReadinessCheckName(Aws::String&& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = std::move(value); }
-    inline void SetReadinessCheckName(const char* value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName.assign(value); }
-    inline ReadinessCheckOutput& WithReadinessCheckName(const Aws::String& value) { SetReadinessCheckName(value); return *this;}
-    inline ReadinessCheckOutput& WithReadinessCheckName(Aws::String&& value) { SetReadinessCheckName(std::move(value)); return *this;}
-    inline ReadinessCheckOutput& WithReadinessCheckName(const char* value) { SetReadinessCheckName(value); return *this;}
+    template<typename ReadinessCheckNameT = Aws::String>
+    void SetReadinessCheckName(ReadinessCheckNameT&& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = std::forward<ReadinessCheckNameT>(value); }
+    template<typename ReadinessCheckNameT = Aws::String>
+    ReadinessCheckOutput& WithReadinessCheckName(ReadinessCheckNameT&& value) { SetReadinessCheckName(std::forward<ReadinessCheckNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the resource set to be checked.</p>
      */
-    inline const Aws::String& GetResourceSet() const{ return m_resourceSet; }
+    inline const Aws::String& GetResourceSet() const { return m_resourceSet; }
     inline bool ResourceSetHasBeenSet() const { return m_resourceSetHasBeenSet; }
-    inline void SetResourceSet(const Aws::String& value) { m_resourceSetHasBeenSet = true; m_resourceSet = value; }
-    inline void SetResourceSet(Aws::String&& value) { m_resourceSetHasBeenSet = true; m_resourceSet = std::move(value); }
-    inline void SetResourceSet(const char* value) { m_resourceSetHasBeenSet = true; m_resourceSet.assign(value); }
-    inline ReadinessCheckOutput& WithResourceSet(const Aws::String& value) { SetResourceSet(value); return *this;}
-    inline ReadinessCheckOutput& WithResourceSet(Aws::String&& value) { SetResourceSet(std::move(value)); return *this;}
-    inline ReadinessCheckOutput& WithResourceSet(const char* value) { SetResourceSet(value); return *this;}
+    template<typename ResourceSetT = Aws::String>
+    void SetResourceSet(ResourceSetT&& value) { m_resourceSetHasBeenSet = true; m_resourceSet = std::forward<ResourceSetT>(value); }
+    template<typename ResourceSetT = Aws::String>
+    ReadinessCheckOutput& WithResourceSet(ResourceSetT&& value) { SetResourceSet(std::forward<ResourceSetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ReadinessCheckOutput& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ReadinessCheckOutput& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ReadinessCheckOutput& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline ReadinessCheckOutput& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ReadinessCheckOutput& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ReadinessCheckOutput& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ReadinessCheckOutput& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ReadinessCheckOutput& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ReadinessCheckOutput& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ReadinessCheckOutput& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ReadinessCheckOutput& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

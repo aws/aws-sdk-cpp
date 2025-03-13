@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobManifestLocation::JobManifestLocation() : 
-    m_objectArnHasBeenSet(false),
-    m_objectVersionIdHasBeenSet(false),
-    m_eTagHasBeenSet(false)
-{
-}
-
 JobManifestLocation::JobManifestLocation(const XmlNode& xmlNode)
-  : JobManifestLocation()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ JobManifestLocation& JobManifestLocation::operator =(const XmlNode& xmlNode)
     {
       m_objectArn = Aws::Utils::Xml::DecodeEscapedXmlText(objectArnNode.GetText());
       m_objectArnHasBeenSet = true;
+       m_objectArnHasBeenSet = true;
     }
     XmlNode objectVersionIdNode = resultNode.FirstChild("ObjectVersionId");
     if(!objectVersionIdNode.IsNull())
     {
       m_objectVersionId = Aws::Utils::Xml::DecodeEscapedXmlText(objectVersionIdNode.GetText());
       m_objectVersionIdHasBeenSet = true;
+       m_objectVersionIdHasBeenSet = true;
     }
     XmlNode eTagNode = resultNode.FirstChild("ETag");
     if(!eTagNode.IsNull())
     {
       m_eTag = Aws::Utils::Xml::DecodeEscapedXmlText(eTagNode.GetText());
       m_eTagHasBeenSet = true;
+       m_eTagHasBeenSet = true;
     }
   }
 

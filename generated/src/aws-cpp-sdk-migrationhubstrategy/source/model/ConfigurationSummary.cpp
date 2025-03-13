@@ -18,17 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-ConfigurationSummary::ConfigurationSummary() : 
-    m_ipAddressBasedRemoteInfoListHasBeenSet(false),
-    m_pipelineInfoListHasBeenSet(false),
-    m_remoteSourceCodeAnalysisServerInfoHasBeenSet(false),
-    m_vcenterBasedRemoteInfoListHasBeenSet(false),
-    m_versionControlInfoListHasBeenSet(false)
-{
-}
-
 ConfigurationSummary::ConfigurationSummary(JsonView jsonValue)
-  : ConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ ConfigurationSummary& ConfigurationSummary::operator =(JsonView jsonValue)
     }
     m_ipAddressBasedRemoteInfoListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineInfoList"))
   {
     Aws::Utils::Array<JsonView> pipelineInfoListJsonList = jsonValue.GetArray("pipelineInfoList");
@@ -54,14 +43,11 @@ ConfigurationSummary& ConfigurationSummary::operator =(JsonView jsonValue)
     }
     m_pipelineInfoListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteSourceCodeAnalysisServerInfo"))
   {
     m_remoteSourceCodeAnalysisServerInfo = jsonValue.GetObject("remoteSourceCodeAnalysisServerInfo");
-
     m_remoteSourceCodeAnalysisServerInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vcenterBasedRemoteInfoList"))
   {
     Aws::Utils::Array<JsonView> vcenterBasedRemoteInfoListJsonList = jsonValue.GetArray("vcenterBasedRemoteInfoList");
@@ -71,7 +57,6 @@ ConfigurationSummary& ConfigurationSummary::operator =(JsonView jsonValue)
     }
     m_vcenterBasedRemoteInfoListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionControlInfoList"))
   {
     Aws::Utils::Array<JsonView> versionControlInfoListJsonList = jsonValue.GetArray("versionControlInfoList");
@@ -81,7 +66,6 @@ ConfigurationSummary& ConfigurationSummary::operator =(JsonView jsonValue)
     }
     m_versionControlInfoListHasBeenSet = true;
   }
-
   return *this;
 }
 

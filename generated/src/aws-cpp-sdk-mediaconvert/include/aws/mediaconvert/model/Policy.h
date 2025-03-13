@@ -34,7 +34,7 @@ namespace Model
   class Policy
   {
   public:
-    AWS_MEDIACONVERT_API Policy();
+    AWS_MEDIACONVERT_API Policy() = default;
     AWS_MEDIACONVERT_API Policy(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Policy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,46 +44,40 @@ namespace Model
     /**
      * Allow or disallow jobs that specify HTTP inputs.
      */
-    inline const InputPolicy& GetHttpInputs() const{ return m_httpInputs; }
+    inline InputPolicy GetHttpInputs() const { return m_httpInputs; }
     inline bool HttpInputsHasBeenSet() const { return m_httpInputsHasBeenSet; }
-    inline void SetHttpInputs(const InputPolicy& value) { m_httpInputsHasBeenSet = true; m_httpInputs = value; }
-    inline void SetHttpInputs(InputPolicy&& value) { m_httpInputsHasBeenSet = true; m_httpInputs = std::move(value); }
-    inline Policy& WithHttpInputs(const InputPolicy& value) { SetHttpInputs(value); return *this;}
-    inline Policy& WithHttpInputs(InputPolicy&& value) { SetHttpInputs(std::move(value)); return *this;}
+    inline void SetHttpInputs(InputPolicy value) { m_httpInputsHasBeenSet = true; m_httpInputs = value; }
+    inline Policy& WithHttpInputs(InputPolicy value) { SetHttpInputs(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Allow or disallow jobs that specify HTTPS inputs.
      */
-    inline const InputPolicy& GetHttpsInputs() const{ return m_httpsInputs; }
+    inline InputPolicy GetHttpsInputs() const { return m_httpsInputs; }
     inline bool HttpsInputsHasBeenSet() const { return m_httpsInputsHasBeenSet; }
-    inline void SetHttpsInputs(const InputPolicy& value) { m_httpsInputsHasBeenSet = true; m_httpsInputs = value; }
-    inline void SetHttpsInputs(InputPolicy&& value) { m_httpsInputsHasBeenSet = true; m_httpsInputs = std::move(value); }
-    inline Policy& WithHttpsInputs(const InputPolicy& value) { SetHttpsInputs(value); return *this;}
-    inline Policy& WithHttpsInputs(InputPolicy&& value) { SetHttpsInputs(std::move(value)); return *this;}
+    inline void SetHttpsInputs(InputPolicy value) { m_httpsInputsHasBeenSet = true; m_httpsInputs = value; }
+    inline Policy& WithHttpsInputs(InputPolicy value) { SetHttpsInputs(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Allow or disallow jobs that specify Amazon S3 inputs.
      */
-    inline const InputPolicy& GetS3Inputs() const{ return m_s3Inputs; }
+    inline InputPolicy GetS3Inputs() const { return m_s3Inputs; }
     inline bool S3InputsHasBeenSet() const { return m_s3InputsHasBeenSet; }
-    inline void SetS3Inputs(const InputPolicy& value) { m_s3InputsHasBeenSet = true; m_s3Inputs = value; }
-    inline void SetS3Inputs(InputPolicy&& value) { m_s3InputsHasBeenSet = true; m_s3Inputs = std::move(value); }
-    inline Policy& WithS3Inputs(const InputPolicy& value) { SetS3Inputs(value); return *this;}
-    inline Policy& WithS3Inputs(InputPolicy&& value) { SetS3Inputs(std::move(value)); return *this;}
+    inline void SetS3Inputs(InputPolicy value) { m_s3InputsHasBeenSet = true; m_s3Inputs = value; }
+    inline Policy& WithS3Inputs(InputPolicy value) { SetS3Inputs(value); return *this;}
     ///@}
   private:
 
-    InputPolicy m_httpInputs;
+    InputPolicy m_httpInputs{InputPolicy::NOT_SET};
     bool m_httpInputsHasBeenSet = false;
 
-    InputPolicy m_httpsInputs;
+    InputPolicy m_httpsInputs{InputPolicy::NOT_SET};
     bool m_httpsInputsHasBeenSet = false;
 
-    InputPolicy m_s3Inputs;
+    InputPolicy m_s3Inputs{InputPolicy::NOT_SET};
     bool m_s3InputsHasBeenSet = false;
   };
 

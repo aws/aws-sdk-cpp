@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectLabelsResult::DetectLabelsResult() : 
-    m_orientationCorrection(OrientationCorrection::NOT_SET)
-{
-}
-
 DetectLabelsResult::DetectLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DetectLabelsResult()
 {
   *this = result;
 }
@@ -38,32 +32,30 @@ DetectLabelsResult& DetectLabelsResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsObject());
     }
+    m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrientationCorrection"))
   {
     m_orientationCorrection = OrientationCorrectionMapper::GetOrientationCorrectionForName(jsonValue.GetString("OrientationCorrection"));
-
+    m_orientationCorrectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelModelVersion"))
   {
     m_labelModelVersion = jsonValue.GetString("LabelModelVersion");
-
+    m_labelModelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageProperties"))
   {
     m_imageProperties = jsonValue.GetObject("ImageProperties");
-
+    m_imagePropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

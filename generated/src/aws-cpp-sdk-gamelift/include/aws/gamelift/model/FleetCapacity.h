@@ -42,7 +42,7 @@ namespace Model
   class FleetCapacity
   {
   public:
-    AWS_GAMELIFT_API FleetCapacity();
+    AWS_GAMELIFT_API FleetCapacity() = default;
     AWS_GAMELIFT_API FleetCapacity(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API FleetCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
     /**
      * <p>A unique identifier for the fleet associated with the location.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline FleetCapacity& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline FleetCapacity& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline FleetCapacity& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    FleetCapacity& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
-    inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
+    inline const Aws::String& GetFleetArn() const { return m_fleetArn; }
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
-    inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
-    inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
-    inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
-    inline FleetCapacity& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
-    inline FleetCapacity& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
-    inline FleetCapacity& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
+    template<typename FleetArnT = Aws::String>
+    void SetFleetArn(FleetArnT&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::forward<FleetArnT>(value); }
+    template<typename FleetArnT = Aws::String>
+    FleetCapacity& WithFleetArn(FleetArnT&& value) { SetFleetArn(std::forward<FleetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +84,10 @@ namespace Model
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
      * Instance Types</a> for detailed descriptions.</p>
      */
-    inline const EC2InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline EC2InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const EC2InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(EC2InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline FleetCapacity& WithInstanceType(const EC2InstanceType& value) { SetInstanceType(value); return *this;}
-    inline FleetCapacity& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(EC2InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline FleetCapacity& WithInstanceType(EC2InstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +97,12 @@ namespace Model
      * adjusting to a scaling event or if access to resources is temporarily
      * affected.</p>
      */
-    inline const EC2InstanceCounts& GetInstanceCounts() const{ return m_instanceCounts; }
+    inline const EC2InstanceCounts& GetInstanceCounts() const { return m_instanceCounts; }
     inline bool InstanceCountsHasBeenSet() const { return m_instanceCountsHasBeenSet; }
-    inline void SetInstanceCounts(const EC2InstanceCounts& value) { m_instanceCountsHasBeenSet = true; m_instanceCounts = value; }
-    inline void SetInstanceCounts(EC2InstanceCounts&& value) { m_instanceCountsHasBeenSet = true; m_instanceCounts = std::move(value); }
-    inline FleetCapacity& WithInstanceCounts(const EC2InstanceCounts& value) { SetInstanceCounts(value); return *this;}
-    inline FleetCapacity& WithInstanceCounts(EC2InstanceCounts&& value) { SetInstanceCounts(std::move(value)); return *this;}
+    template<typename InstanceCountsT = EC2InstanceCounts>
+    void SetInstanceCounts(InstanceCountsT&& value) { m_instanceCountsHasBeenSet = true; m_instanceCounts = std::forward<InstanceCountsT>(value); }
+    template<typename InstanceCountsT = EC2InstanceCounts>
+    FleetCapacity& WithInstanceCounts(InstanceCountsT&& value) { SetInstanceCounts(std::forward<InstanceCountsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +110,12 @@ namespace Model
      * <p>The fleet location for the instance count information, expressed as an Amazon
      * Web Services Region code, such as <code>us-west-2</code>. </p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline FleetCapacity& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline FleetCapacity& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline FleetCapacity& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    FleetCapacity& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +123,12 @@ namespace Model
      * <p>The number and status of game server container groups deployed in a container
      * fleet. </p>
      */
-    inline const GameServerContainerGroupCounts& GetGameServerContainerGroupCounts() const{ return m_gameServerContainerGroupCounts; }
+    inline const GameServerContainerGroupCounts& GetGameServerContainerGroupCounts() const { return m_gameServerContainerGroupCounts; }
     inline bool GameServerContainerGroupCountsHasBeenSet() const { return m_gameServerContainerGroupCountsHasBeenSet; }
-    inline void SetGameServerContainerGroupCounts(const GameServerContainerGroupCounts& value) { m_gameServerContainerGroupCountsHasBeenSet = true; m_gameServerContainerGroupCounts = value; }
-    inline void SetGameServerContainerGroupCounts(GameServerContainerGroupCounts&& value) { m_gameServerContainerGroupCountsHasBeenSet = true; m_gameServerContainerGroupCounts = std::move(value); }
-    inline FleetCapacity& WithGameServerContainerGroupCounts(const GameServerContainerGroupCounts& value) { SetGameServerContainerGroupCounts(value); return *this;}
-    inline FleetCapacity& WithGameServerContainerGroupCounts(GameServerContainerGroupCounts&& value) { SetGameServerContainerGroupCounts(std::move(value)); return *this;}
+    template<typename GameServerContainerGroupCountsT = GameServerContainerGroupCounts>
+    void SetGameServerContainerGroupCounts(GameServerContainerGroupCountsT&& value) { m_gameServerContainerGroupCountsHasBeenSet = true; m_gameServerContainerGroupCounts = std::forward<GameServerContainerGroupCountsT>(value); }
+    template<typename GameServerContainerGroupCountsT = GameServerContainerGroupCounts>
+    FleetCapacity& WithGameServerContainerGroupCounts(GameServerContainerGroupCountsT&& value) { SetGameServerContainerGroupCounts(std::forward<GameServerContainerGroupCountsT>(value)); return *this;}
     ///@}
   private:
 
@@ -146,7 +138,7 @@ namespace Model
     Aws::String m_fleetArn;
     bool m_fleetArnHasBeenSet = false;
 
-    EC2InstanceType m_instanceType;
+    EC2InstanceType m_instanceType{EC2InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
     EC2InstanceCounts m_instanceCounts;

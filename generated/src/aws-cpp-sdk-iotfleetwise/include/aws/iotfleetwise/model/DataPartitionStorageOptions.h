@@ -34,7 +34,7 @@ namespace Model
   class DataPartitionStorageOptions
   {
   public:
-    AWS_IOTFLEETWISE_API DataPartitionStorageOptions();
+    AWS_IOTFLEETWISE_API DataPartitionStorageOptions() = default;
     AWS_IOTFLEETWISE_API DataPartitionStorageOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API DataPartitionStorageOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,24 @@ namespace Model
      * <p>Newer data overwrites older data when the partition reaches the maximum
      * size.</p> 
      */
-    inline const StorageMaximumSize& GetMaximumSize() const{ return m_maximumSize; }
+    inline const StorageMaximumSize& GetMaximumSize() const { return m_maximumSize; }
     inline bool MaximumSizeHasBeenSet() const { return m_maximumSizeHasBeenSet; }
-    inline void SetMaximumSize(const StorageMaximumSize& value) { m_maximumSizeHasBeenSet = true; m_maximumSize = value; }
-    inline void SetMaximumSize(StorageMaximumSize&& value) { m_maximumSizeHasBeenSet = true; m_maximumSize = std::move(value); }
-    inline DataPartitionStorageOptions& WithMaximumSize(const StorageMaximumSize& value) { SetMaximumSize(value); return *this;}
-    inline DataPartitionStorageOptions& WithMaximumSize(StorageMaximumSize&& value) { SetMaximumSize(std::move(value)); return *this;}
+    template<typename MaximumSizeT = StorageMaximumSize>
+    void SetMaximumSize(MaximumSizeT&& value) { m_maximumSizeHasBeenSet = true; m_maximumSize = std::forward<MaximumSizeT>(value); }
+    template<typename MaximumSizeT = StorageMaximumSize>
+    DataPartitionStorageOptions& WithMaximumSize(MaximumSizeT&& value) { SetMaximumSize(std::forward<MaximumSizeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The folder name for the data partition under the campaign storage folder.</p>
      */
-    inline const Aws::String& GetStorageLocation() const{ return m_storageLocation; }
+    inline const Aws::String& GetStorageLocation() const { return m_storageLocation; }
     inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }
-    inline void SetStorageLocation(const Aws::String& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
-    inline void SetStorageLocation(Aws::String&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::move(value); }
-    inline void SetStorageLocation(const char* value) { m_storageLocationHasBeenSet = true; m_storageLocation.assign(value); }
-    inline DataPartitionStorageOptions& WithStorageLocation(const Aws::String& value) { SetStorageLocation(value); return *this;}
-    inline DataPartitionStorageOptions& WithStorageLocation(Aws::String&& value) { SetStorageLocation(std::move(value)); return *this;}
-    inline DataPartitionStorageOptions& WithStorageLocation(const char* value) { SetStorageLocation(value); return *this;}
+    template<typename StorageLocationT = Aws::String>
+    void SetStorageLocation(StorageLocationT&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::forward<StorageLocationT>(value); }
+    template<typename StorageLocationT = Aws::String>
+    DataPartitionStorageOptions& WithStorageLocation(StorageLocationT&& value) { SetStorageLocation(std::forward<StorageLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,12 @@ namespace Model
      * configured maximum size.</p> </li> <li> <p>Newer data will overwrite older data
      * when the partition reaches the maximum size.</p> </li> </ul>
      */
-    inline const StorageMinimumTimeToLive& GetMinimumTimeToLive() const{ return m_minimumTimeToLive; }
+    inline const StorageMinimumTimeToLive& GetMinimumTimeToLive() const { return m_minimumTimeToLive; }
     inline bool MinimumTimeToLiveHasBeenSet() const { return m_minimumTimeToLiveHasBeenSet; }
-    inline void SetMinimumTimeToLive(const StorageMinimumTimeToLive& value) { m_minimumTimeToLiveHasBeenSet = true; m_minimumTimeToLive = value; }
-    inline void SetMinimumTimeToLive(StorageMinimumTimeToLive&& value) { m_minimumTimeToLiveHasBeenSet = true; m_minimumTimeToLive = std::move(value); }
-    inline DataPartitionStorageOptions& WithMinimumTimeToLive(const StorageMinimumTimeToLive& value) { SetMinimumTimeToLive(value); return *this;}
-    inline DataPartitionStorageOptions& WithMinimumTimeToLive(StorageMinimumTimeToLive&& value) { SetMinimumTimeToLive(std::move(value)); return *this;}
+    template<typename MinimumTimeToLiveT = StorageMinimumTimeToLive>
+    void SetMinimumTimeToLive(MinimumTimeToLiveT&& value) { m_minimumTimeToLiveHasBeenSet = true; m_minimumTimeToLive = std::forward<MinimumTimeToLiveT>(value); }
+    template<typename MinimumTimeToLiveT = StorageMinimumTimeToLive>
+    DataPartitionStorageOptions& WithMinimumTimeToLive(MinimumTimeToLiveT&& value) { SetMinimumTimeToLive(std::forward<MinimumTimeToLiveT>(value)); return *this;}
     ///@}
   private:
 

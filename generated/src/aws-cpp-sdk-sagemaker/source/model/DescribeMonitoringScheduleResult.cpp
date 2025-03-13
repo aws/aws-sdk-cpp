@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeMonitoringScheduleResult::DescribeMonitoringScheduleResult() : 
-    m_monitoringScheduleStatus(ScheduleStatus::NOT_SET),
-    m_monitoringType(MonitoringType::NOT_SET)
-{
-}
-
 DescribeMonitoringScheduleResult::DescribeMonitoringScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeMonitoringScheduleResult()
 {
   *this = result;
 }
@@ -35,69 +28,60 @@ DescribeMonitoringScheduleResult& DescribeMonitoringScheduleResult::operator =(c
   if(jsonValue.ValueExists("MonitoringScheduleArn"))
   {
     m_monitoringScheduleArn = jsonValue.GetString("MonitoringScheduleArn");
-
+    m_monitoringScheduleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringScheduleName"))
   {
     m_monitoringScheduleName = jsonValue.GetString("MonitoringScheduleName");
-
+    m_monitoringScheduleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringScheduleStatus"))
   {
     m_monitoringScheduleStatus = ScheduleStatusMapper::GetScheduleStatusForName(jsonValue.GetString("MonitoringScheduleStatus"));
-
+    m_monitoringScheduleStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringType"))
   {
     m_monitoringType = MonitoringTypeMapper::GetMonitoringTypeForName(jsonValue.GetString("MonitoringType"));
-
+    m_monitoringTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringScheduleConfig"))
   {
     m_monitoringScheduleConfig = jsonValue.GetObject("MonitoringScheduleConfig");
-
+    m_monitoringScheduleConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointName"))
   {
     m_endpointName = jsonValue.GetString("EndpointName");
-
+    m_endpointNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastMonitoringExecutionSummary"))
   {
     m_lastMonitoringExecutionSummary = jsonValue.GetObject("LastMonitoringExecutionSummary");
-
+    m_lastMonitoringExecutionSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -20,20 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-AlarmHistoryItem::AlarmHistoryItem() : 
-    m_alarmNameHasBeenSet(false),
-    m_alarmType(AlarmType::NOT_SET),
-    m_alarmTypeHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_historyItemType(HistoryItemType::NOT_SET),
-    m_historyItemTypeHasBeenSet(false),
-    m_historySummaryHasBeenSet(false),
-    m_historyDataHasBeenSet(false)
-{
-}
-
 AlarmHistoryItem::AlarmHistoryItem(const XmlNode& xmlNode)
-  : AlarmHistoryItem()
 {
   *this = xmlNode;
 }
@@ -49,36 +36,42 @@ AlarmHistoryItem& AlarmHistoryItem::operator =(const XmlNode& xmlNode)
     {
       m_alarmName = Aws::Utils::Xml::DecodeEscapedXmlText(alarmNameNode.GetText());
       m_alarmNameHasBeenSet = true;
+       m_alarmNameHasBeenSet = true;
     }
     XmlNode alarmTypeNode = resultNode.FirstChild("AlarmType");
     if(!alarmTypeNode.IsNull())
     {
-      m_alarmType = AlarmTypeMapper::GetAlarmTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(alarmTypeNode.GetText()).c_str()).c_str());
+      m_alarmType = AlarmTypeMapper::GetAlarmTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(alarmTypeNode.GetText()).c_str()));
       m_alarmTypeHasBeenSet = true;
+       m_alarmTypeHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
+       m_timestampHasBeenSet = true;
     }
     XmlNode historyItemTypeNode = resultNode.FirstChild("HistoryItemType");
     if(!historyItemTypeNode.IsNull())
     {
-      m_historyItemType = HistoryItemTypeMapper::GetHistoryItemTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(historyItemTypeNode.GetText()).c_str()).c_str());
+      m_historyItemType = HistoryItemTypeMapper::GetHistoryItemTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(historyItemTypeNode.GetText()).c_str()));
       m_historyItemTypeHasBeenSet = true;
+       m_historyItemTypeHasBeenSet = true;
     }
     XmlNode historySummaryNode = resultNode.FirstChild("HistorySummary");
     if(!historySummaryNode.IsNull())
     {
       m_historySummary = Aws::Utils::Xml::DecodeEscapedXmlText(historySummaryNode.GetText());
       m_historySummaryHasBeenSet = true;
+       m_historySummaryHasBeenSet = true;
     }
     XmlNode historyDataNode = resultNode.FirstChild("HistoryData");
     if(!historyDataNode.IsNull())
     {
       m_historyData = Aws::Utils::Xml::DecodeEscapedXmlText(historyDataNode.GetText());
       m_historyDataHasBeenSet = true;
+       m_historyDataHasBeenSet = true;
     }
   }
 

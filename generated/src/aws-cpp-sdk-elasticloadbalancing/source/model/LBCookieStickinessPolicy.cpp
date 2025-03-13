@@ -20,15 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-LBCookieStickinessPolicy::LBCookieStickinessPolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_cookieExpirationPeriod(0),
-    m_cookieExpirationPeriodHasBeenSet(false)
-{
-}
-
 LBCookieStickinessPolicy::LBCookieStickinessPolicy(const XmlNode& xmlNode)
-  : LBCookieStickinessPolicy()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ LBCookieStickinessPolicy& LBCookieStickinessPolicy::operator =(const XmlNode& xm
     {
       m_policyName = Aws::Utils::Xml::DecodeEscapedXmlText(policyNameNode.GetText());
       m_policyNameHasBeenSet = true;
+       m_policyNameHasBeenSet = true;
     }
     XmlNode cookieExpirationPeriodNode = resultNode.FirstChild("CookieExpirationPeriod");
     if(!cookieExpirationPeriodNode.IsNull())
     {
       m_cookieExpirationPeriod = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cookieExpirationPeriodNode.GetText()).c_str()).c_str());
       m_cookieExpirationPeriodHasBeenSet = true;
+       m_cookieExpirationPeriodHasBeenSet = true;
     }
   }
 

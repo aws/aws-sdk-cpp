@@ -32,7 +32,7 @@ namespace Model
   class ConnectionApiKeyAuthResponseParameters
   {
   public:
-    AWS_EVENTBRIDGE_API ConnectionApiKeyAuthResponseParameters();
+    AWS_EVENTBRIDGE_API ConnectionApiKeyAuthResponseParameters() = default;
     AWS_EVENTBRIDGE_API ConnectionApiKeyAuthResponseParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API ConnectionApiKeyAuthResponseParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the header to use for the <code>APIKeyValue</code> used for
      * authorization.</p>
      */
-    inline const Aws::String& GetApiKeyName() const{ return m_apiKeyName; }
+    inline const Aws::String& GetApiKeyName() const { return m_apiKeyName; }
     inline bool ApiKeyNameHasBeenSet() const { return m_apiKeyNameHasBeenSet; }
-    inline void SetApiKeyName(const Aws::String& value) { m_apiKeyNameHasBeenSet = true; m_apiKeyName = value; }
-    inline void SetApiKeyName(Aws::String&& value) { m_apiKeyNameHasBeenSet = true; m_apiKeyName = std::move(value); }
-    inline void SetApiKeyName(const char* value) { m_apiKeyNameHasBeenSet = true; m_apiKeyName.assign(value); }
-    inline ConnectionApiKeyAuthResponseParameters& WithApiKeyName(const Aws::String& value) { SetApiKeyName(value); return *this;}
-    inline ConnectionApiKeyAuthResponseParameters& WithApiKeyName(Aws::String&& value) { SetApiKeyName(std::move(value)); return *this;}
-    inline ConnectionApiKeyAuthResponseParameters& WithApiKeyName(const char* value) { SetApiKeyName(value); return *this;}
+    template<typename ApiKeyNameT = Aws::String>
+    void SetApiKeyName(ApiKeyNameT&& value) { m_apiKeyNameHasBeenSet = true; m_apiKeyName = std::forward<ApiKeyNameT>(value); }
+    template<typename ApiKeyNameT = Aws::String>
+    ConnectionApiKeyAuthResponseParameters& WithApiKeyName(ApiKeyNameT&& value) { SetApiKeyName(std::forward<ApiKeyNameT>(value)); return *this;}
     ///@}
   private:
 

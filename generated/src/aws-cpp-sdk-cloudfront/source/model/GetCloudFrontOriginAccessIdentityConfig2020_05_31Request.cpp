@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetCloudFrontOriginAccessIdentityConfig2020_05_31Request::GetCloudFrontOriginAccessIdentityConfig2020_05_31Request() : 
-    m_idHasBeenSet(false)
-{
-}
 
 Aws::String GetCloudFrontOriginAccessIdentityConfig2020_05_31Request::SerializePayload() const
 {

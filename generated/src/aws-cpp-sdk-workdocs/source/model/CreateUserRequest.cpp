@@ -13,19 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserRequest::CreateUserRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_givenNameHasBeenSet(false),
-    m_surnameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_timeZoneIdHasBeenSet(false),
-    m_storageRuleHasBeenSet(false),
-    m_authenticationTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserRequest::SerializePayload() const
 {
   JsonValue payload;

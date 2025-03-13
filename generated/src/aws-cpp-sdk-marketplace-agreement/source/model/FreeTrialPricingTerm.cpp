@@ -18,15 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-FreeTrialPricingTerm::FreeTrialPricingTerm() : 
-    m_durationHasBeenSet(false),
-    m_grantsHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 FreeTrialPricingTerm::FreeTrialPricingTerm(JsonView jsonValue)
-  : FreeTrialPricingTerm()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ FreeTrialPricingTerm& FreeTrialPricingTerm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("duration"))
   {
     m_duration = jsonValue.GetString("duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("grants"))
   {
     Aws::Utils::Array<JsonView> grantsJsonList = jsonValue.GetArray("grants");
@@ -49,14 +39,11 @@ FreeTrialPricingTerm& FreeTrialPricingTerm::operator =(JsonView jsonValue)
     }
     m_grantsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-GatewayRouteStatus::GatewayRouteStatus() : 
-    m_status(GatewayRouteStatusCode::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 GatewayRouteStatus::GatewayRouteStatus(JsonView jsonValue)
-  : GatewayRouteStatus()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GatewayRouteStatus& GatewayRouteStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = GatewayRouteStatusCodeMapper::GetGatewayRouteStatusCodeForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

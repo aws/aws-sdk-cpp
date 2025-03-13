@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-JobConfiguration::JobConfiguration() : 
-    m_fileFormatHasBeenSet(false)
-{
-}
-
 JobConfiguration::JobConfiguration(JsonView jsonValue)
-  : JobConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ JobConfiguration& JobConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileFormat"))
   {
     m_fileFormat = jsonValue.GetObject("fileFormat");
-
     m_fileFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,32 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-RuleGroupResponse::RuleGroupResponse() : 
-    m_ruleGroupArnHasBeenSet(false),
-    m_ruleGroupNameHasBeenSet(false),
-    m_ruleGroupIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(RuleGroupType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_ruleGroupStatus(ResourceStatus::NOT_SET),
-    m_ruleGroupStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_consumedCapacity(0),
-    m_consumedCapacityHasBeenSet(false),
-    m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_sourceMetadataHasBeenSet(false),
-    m_snsTopicHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_analysisResultsHasBeenSet(false)
-{
-}
-
 RuleGroupResponse::RuleGroupResponse(JsonView jsonValue)
-  : RuleGroupResponse()
 {
   *this = jsonValue;
 }
@@ -53,52 +28,38 @@ RuleGroupResponse& RuleGroupResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleGroupArn"))
   {
     m_ruleGroupArn = jsonValue.GetString("RuleGroupArn");
-
     m_ruleGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleGroupName"))
   {
     m_ruleGroupName = jsonValue.GetString("RuleGroupName");
-
     m_ruleGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleGroupId"))
   {
     m_ruleGroupId = jsonValue.GetString("RuleGroupId");
-
     m_ruleGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RuleGroupTypeMapper::GetRuleGroupTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Capacity"))
   {
     m_capacity = jsonValue.GetInteger("Capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleGroupStatus"))
   {
     m_ruleGroupStatus = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("RuleGroupStatus"));
-
     m_ruleGroupStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -108,49 +69,36 @@ RuleGroupResponse& RuleGroupResponse::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedCapacity"))
   {
     m_consumedCapacity = jsonValue.GetInteger("ConsumedCapacity");
-
     m_consumedCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfAssociations"))
   {
     m_numberOfAssociations = jsonValue.GetInteger("NumberOfAssociations");
-
     m_numberOfAssociationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceMetadata"))
   {
     m_sourceMetadata = jsonValue.GetObject("SourceMetadata");
-
     m_sourceMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsTopic"))
   {
     m_snsTopic = jsonValue.GetString("SnsTopic");
-
     m_snsTopicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalysisResults"))
   {
     Aws::Utils::Array<JsonView> analysisResultsJsonList = jsonValue.GetArray("AnalysisResults");
@@ -160,7 +108,6 @@ RuleGroupResponse& RuleGroupResponse::operator =(JsonView jsonValue)
     }
     m_analysisResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

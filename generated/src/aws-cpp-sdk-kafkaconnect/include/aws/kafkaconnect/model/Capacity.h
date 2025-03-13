@@ -33,7 +33,7 @@ namespace Model
   class Capacity
   {
   public:
-    AWS_KAFKACONNECT_API Capacity();
+    AWS_KAFKACONNECT_API Capacity() = default;
     AWS_KAFKACONNECT_API Capacity(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Capacity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Information about the auto scaling parameters for the connector.</p>
      */
-    inline const AutoScaling& GetAutoScaling() const{ return m_autoScaling; }
+    inline const AutoScaling& GetAutoScaling() const { return m_autoScaling; }
     inline bool AutoScalingHasBeenSet() const { return m_autoScalingHasBeenSet; }
-    inline void SetAutoScaling(const AutoScaling& value) { m_autoScalingHasBeenSet = true; m_autoScaling = value; }
-    inline void SetAutoScaling(AutoScaling&& value) { m_autoScalingHasBeenSet = true; m_autoScaling = std::move(value); }
-    inline Capacity& WithAutoScaling(const AutoScaling& value) { SetAutoScaling(value); return *this;}
-    inline Capacity& WithAutoScaling(AutoScaling&& value) { SetAutoScaling(std::move(value)); return *this;}
+    template<typename AutoScalingT = AutoScaling>
+    void SetAutoScaling(AutoScalingT&& value) { m_autoScalingHasBeenSet = true; m_autoScaling = std::forward<AutoScalingT>(value); }
+    template<typename AutoScalingT = AutoScaling>
+    Capacity& WithAutoScaling(AutoScalingT&& value) { SetAutoScaling(std::forward<AutoScalingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about a fixed capacity allocated to a connector.</p>
      */
-    inline const ProvisionedCapacity& GetProvisionedCapacity() const{ return m_provisionedCapacity; }
+    inline const ProvisionedCapacity& GetProvisionedCapacity() const { return m_provisionedCapacity; }
     inline bool ProvisionedCapacityHasBeenSet() const { return m_provisionedCapacityHasBeenSet; }
-    inline void SetProvisionedCapacity(const ProvisionedCapacity& value) { m_provisionedCapacityHasBeenSet = true; m_provisionedCapacity = value; }
-    inline void SetProvisionedCapacity(ProvisionedCapacity&& value) { m_provisionedCapacityHasBeenSet = true; m_provisionedCapacity = std::move(value); }
-    inline Capacity& WithProvisionedCapacity(const ProvisionedCapacity& value) { SetProvisionedCapacity(value); return *this;}
-    inline Capacity& WithProvisionedCapacity(ProvisionedCapacity&& value) { SetProvisionedCapacity(std::move(value)); return *this;}
+    template<typename ProvisionedCapacityT = ProvisionedCapacity>
+    void SetProvisionedCapacity(ProvisionedCapacityT&& value) { m_provisionedCapacityHasBeenSet = true; m_provisionedCapacity = std::forward<ProvisionedCapacityT>(value); }
+    template<typename ProvisionedCapacityT = ProvisionedCapacity>
+    Capacity& WithProvisionedCapacity(ProvisionedCapacityT&& value) { SetProvisionedCapacity(std::forward<ProvisionedCapacityT>(value)); return *this;}
     ///@}
   private:
 

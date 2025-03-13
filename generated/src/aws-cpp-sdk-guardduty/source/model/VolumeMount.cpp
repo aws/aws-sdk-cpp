@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-VolumeMount::VolumeMount() : 
-    m_nameHasBeenSet(false),
-    m_mountPathHasBeenSet(false)
-{
-}
-
 VolumeMount::VolumeMount(JsonView jsonValue)
-  : VolumeMount()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VolumeMount& VolumeMount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mountPath"))
   {
     m_mountPath = jsonValue.GetString("mountPath");
-
     m_mountPathHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-PackageSource::PackageSource() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
-{
-}
-
 PackageSource::PackageSource(JsonView jsonValue)
-  : PackageSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PackageSource& PackageSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Key"))
   {
     m_s3Key = jsonValue.GetString("S3Key");
-
     m_s3KeyHasBeenSet = true;
   }
-
   return *this;
 }
 

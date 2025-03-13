@@ -12,11 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveApplicationInstanceRequest::RemoveApplicationInstanceRequest() : 
-    m_applicationInstanceIdHasBeenSet(false)
-{
-}
-
 Aws::String RemoveApplicationInstanceRequest::SerializePayload() const
 {
   return {};

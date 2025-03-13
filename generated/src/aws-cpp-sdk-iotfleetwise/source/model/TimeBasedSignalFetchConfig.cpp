@@ -18,14 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-TimeBasedSignalFetchConfig::TimeBasedSignalFetchConfig() : 
-    m_executionFrequencyMs(0),
-    m_executionFrequencyMsHasBeenSet(false)
-{
-}
-
 TimeBasedSignalFetchConfig::TimeBasedSignalFetchConfig(JsonView jsonValue)
-  : TimeBasedSignalFetchConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TimeBasedSignalFetchConfig& TimeBasedSignalFetchConfig::operator =(JsonView json
   if(jsonValue.ValueExists("executionFrequencyMs"))
   {
     m_executionFrequencyMs = jsonValue.GetInt64("executionFrequencyMs");
-
     m_executionFrequencyMsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartDeploymentResult::StartDeploymentResult()
-{
-}
-
 StartDeploymentResult::StartDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartDeploymentResult& StartDeploymentResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("OperationId"))
   {
     m_operationId = jsonValue.GetString("OperationId");
-
+    m_operationIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -33,7 +33,7 @@ namespace Model
   class Group
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Group();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Group() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Group(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Group& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p> The key of the specific import group. </p>
      */
-    inline const GroupName& GetName() const{ return m_name; }
+    inline GroupName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const GroupName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(GroupName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline Group& WithName(const GroupName& value) { SetName(value); return *this;}
-    inline Group& WithName(GroupName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(GroupName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline Group& WithName(GroupName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The value of the specific import group. </p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Group& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Group& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Group& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Group& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    GroupName m_name;
+    GroupName m_name{GroupName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

@@ -34,7 +34,7 @@ namespace Model
   class DockerSettings
   {
   public:
-    AWS_SAGEMAKER_API DockerSettings();
+    AWS_SAGEMAKER_API DockerSettings() = default;
     AWS_SAGEMAKER_API DockerSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DockerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>Indicates whether the domain can access Docker.</p>
      */
-    inline const FeatureStatus& GetEnableDockerAccess() const{ return m_enableDockerAccess; }
+    inline FeatureStatus GetEnableDockerAccess() const { return m_enableDockerAccess; }
     inline bool EnableDockerAccessHasBeenSet() const { return m_enableDockerAccessHasBeenSet; }
-    inline void SetEnableDockerAccess(const FeatureStatus& value) { m_enableDockerAccessHasBeenSet = true; m_enableDockerAccess = value; }
-    inline void SetEnableDockerAccess(FeatureStatus&& value) { m_enableDockerAccessHasBeenSet = true; m_enableDockerAccess = std::move(value); }
-    inline DockerSettings& WithEnableDockerAccess(const FeatureStatus& value) { SetEnableDockerAccess(value); return *this;}
-    inline DockerSettings& WithEnableDockerAccess(FeatureStatus&& value) { SetEnableDockerAccess(std::move(value)); return *this;}
+    inline void SetEnableDockerAccess(FeatureStatus value) { m_enableDockerAccessHasBeenSet = true; m_enableDockerAccess = value; }
+    inline DockerSettings& WithEnableDockerAccess(FeatureStatus value) { SetEnableDockerAccess(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,18 @@ namespace Model
      * <p>The list of Amazon Web Services accounts that are trusted when the domain is
      * created in VPC-only mode.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcOnlyTrustedAccounts() const{ return m_vpcOnlyTrustedAccounts; }
+    inline const Aws::Vector<Aws::String>& GetVpcOnlyTrustedAccounts() const { return m_vpcOnlyTrustedAccounts; }
     inline bool VpcOnlyTrustedAccountsHasBeenSet() const { return m_vpcOnlyTrustedAccountsHasBeenSet; }
-    inline void SetVpcOnlyTrustedAccounts(const Aws::Vector<Aws::String>& value) { m_vpcOnlyTrustedAccountsHasBeenSet = true; m_vpcOnlyTrustedAccounts = value; }
-    inline void SetVpcOnlyTrustedAccounts(Aws::Vector<Aws::String>&& value) { m_vpcOnlyTrustedAccountsHasBeenSet = true; m_vpcOnlyTrustedAccounts = std::move(value); }
-    inline DockerSettings& WithVpcOnlyTrustedAccounts(const Aws::Vector<Aws::String>& value) { SetVpcOnlyTrustedAccounts(value); return *this;}
-    inline DockerSettings& WithVpcOnlyTrustedAccounts(Aws::Vector<Aws::String>&& value) { SetVpcOnlyTrustedAccounts(std::move(value)); return *this;}
-    inline DockerSettings& AddVpcOnlyTrustedAccounts(const Aws::String& value) { m_vpcOnlyTrustedAccountsHasBeenSet = true; m_vpcOnlyTrustedAccounts.push_back(value); return *this; }
-    inline DockerSettings& AddVpcOnlyTrustedAccounts(Aws::String&& value) { m_vpcOnlyTrustedAccountsHasBeenSet = true; m_vpcOnlyTrustedAccounts.push_back(std::move(value)); return *this; }
-    inline DockerSettings& AddVpcOnlyTrustedAccounts(const char* value) { m_vpcOnlyTrustedAccountsHasBeenSet = true; m_vpcOnlyTrustedAccounts.push_back(value); return *this; }
+    template<typename VpcOnlyTrustedAccountsT = Aws::Vector<Aws::String>>
+    void SetVpcOnlyTrustedAccounts(VpcOnlyTrustedAccountsT&& value) { m_vpcOnlyTrustedAccountsHasBeenSet = true; m_vpcOnlyTrustedAccounts = std::forward<VpcOnlyTrustedAccountsT>(value); }
+    template<typename VpcOnlyTrustedAccountsT = Aws::Vector<Aws::String>>
+    DockerSettings& WithVpcOnlyTrustedAccounts(VpcOnlyTrustedAccountsT&& value) { SetVpcOnlyTrustedAccounts(std::forward<VpcOnlyTrustedAccountsT>(value)); return *this;}
+    template<typename VpcOnlyTrustedAccountsT = Aws::String>
+    DockerSettings& AddVpcOnlyTrustedAccounts(VpcOnlyTrustedAccountsT&& value) { m_vpcOnlyTrustedAccountsHasBeenSet = true; m_vpcOnlyTrustedAccounts.emplace_back(std::forward<VpcOnlyTrustedAccountsT>(value)); return *this; }
     ///@}
   private:
 
-    FeatureStatus m_enableDockerAccess;
+    FeatureStatus m_enableDockerAccess{FeatureStatus::NOT_SET};
     bool m_enableDockerAccessHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcOnlyTrustedAccounts;

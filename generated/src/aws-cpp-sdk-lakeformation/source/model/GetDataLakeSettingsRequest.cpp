@@ -12,11 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataLakeSettingsRequest::GetDataLakeSettingsRequest() : 
-    m_catalogIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDataLakeSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

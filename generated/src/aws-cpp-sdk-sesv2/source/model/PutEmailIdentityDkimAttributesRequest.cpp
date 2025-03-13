@@ -12,13 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutEmailIdentityDkimAttributesRequest::PutEmailIdentityDkimAttributesRequest() : 
-    m_emailIdentityHasBeenSet(false),
-    m_signingEnabled(false),
-    m_signingEnabledHasBeenSet(false)
-{
-}
-
 Aws::String PutEmailIdentityDkimAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

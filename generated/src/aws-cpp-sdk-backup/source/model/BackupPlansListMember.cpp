@@ -18,21 +18,7 @@ namespace Backup
 namespace Model
 {
 
-BackupPlansListMember::BackupPlansListMember() : 
-    m_backupPlanArnHasBeenSet(false),
-    m_backupPlanIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_deletionDateHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_backupPlanNameHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_lastExecutionDateHasBeenSet(false),
-    m_advancedBackupSettingsHasBeenSet(false)
-{
-}
-
 BackupPlansListMember::BackupPlansListMember(JsonView jsonValue)
-  : BackupPlansListMember()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ BackupPlansListMember& BackupPlansListMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BackupPlanArn"))
   {
     m_backupPlanArn = jsonValue.GetString("BackupPlanArn");
-
     m_backupPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupPlanId"))
   {
     m_backupPlanId = jsonValue.GetString("BackupPlanId");
-
     m_backupPlanIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionDate"))
   {
     m_deletionDate = jsonValue.GetDouble("DeletionDate");
-
     m_deletionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupPlanName"))
   {
     m_backupPlanName = jsonValue.GetString("BackupPlanName");
-
     m_backupPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorRequestId"))
   {
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
-
     m_creatorRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastExecutionDate"))
   {
     m_lastExecutionDate = jsonValue.GetDouble("LastExecutionDate");
-
     m_lastExecutionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdvancedBackupSettings"))
   {
     Aws::Utils::Array<JsonView> advancedBackupSettingsJsonList = jsonValue.GetArray("AdvancedBackupSettings");
@@ -104,7 +74,6 @@ BackupPlansListMember& BackupPlansListMember::operator =(JsonView jsonValue)
     }
     m_advancedBackupSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

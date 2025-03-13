@@ -31,7 +31,7 @@ namespace Model
   class WaypointOptimizationAvoidanceAreaGeometry
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationAvoidanceAreaGeometry();
+    AWS_GEOROUTES_API WaypointOptimizationAvoidanceAreaGeometry() = default;
     AWS_GEOROUTES_API WaypointOptimizationAvoidanceAreaGeometry(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationAvoidanceAreaGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * box; the second pair represents the X and Y coordinates (longitude and latitude)
      * of the northeast corner.</p>
      */
-    inline const Aws::Vector<double>& GetBoundingBox() const{ return m_boundingBox; }
+    inline const Aws::Vector<double>& GetBoundingBox() const { return m_boundingBox; }
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-    inline void SetBoundingBox(const Aws::Vector<double>& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-    inline void SetBoundingBox(Aws::Vector<double>&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-    inline WaypointOptimizationAvoidanceAreaGeometry& WithBoundingBox(const Aws::Vector<double>& value) { SetBoundingBox(value); return *this;}
-    inline WaypointOptimizationAvoidanceAreaGeometry& WithBoundingBox(Aws::Vector<double>&& value) { SetBoundingBox(std::move(value)); return *this;}
+    template<typename BoundingBoxT = Aws::Vector<double>>
+    void SetBoundingBox(BoundingBoxT&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::forward<BoundingBoxT>(value); }
+    template<typename BoundingBoxT = Aws::Vector<double>>
+    WaypointOptimizationAvoidanceAreaGeometry& WithBoundingBox(BoundingBoxT&& value) { SetBoundingBox(std::forward<BoundingBoxT>(value)); return *this;}
     inline WaypointOptimizationAvoidanceAreaGeometry& AddBoundingBox(double value) { m_boundingBoxHasBeenSet = true; m_boundingBox.push_back(value); return *this; }
     ///@}
   private:

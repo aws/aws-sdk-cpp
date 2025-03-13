@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLicenseManagerReportGeneratorResult::CreateLicenseManagerReportGeneratorResult()
-{
-}
-
 CreateLicenseManagerReportGeneratorResult::CreateLicenseManagerReportGeneratorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateLicenseManagerReportGeneratorResult& CreateLicenseManagerReportGeneratorRe
   if(jsonValue.ValueExists("LicenseManagerReportGeneratorArn"))
   {
     m_licenseManagerReportGeneratorArn = jsonValue.GetString("LicenseManagerReportGeneratorArn");
-
+    m_licenseManagerReportGeneratorArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

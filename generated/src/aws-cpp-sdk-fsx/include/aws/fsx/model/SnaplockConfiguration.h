@@ -35,7 +35,7 @@ namespace Model
   class SnaplockConfiguration
   {
   public:
-    AWS_FSX_API SnaplockConfiguration();
+    AWS_FSX_API SnaplockConfiguration() = default;
     AWS_FSX_API SnaplockConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API SnaplockConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,7 +51,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-audit-log-volume">
      * SnapLock audit log volumes</a>. </p>
      */
-    inline bool GetAuditLogVolume() const{ return m_auditLogVolume; }
+    inline bool GetAuditLogVolume() const { return m_auditLogVolume; }
     inline bool AuditLogVolumeHasBeenSet() const { return m_auditLogVolumeHasBeenSet; }
     inline void SetAuditLogVolume(bool value) { m_auditLogVolumeHasBeenSet = true; m_auditLogVolume = value; }
     inline SnaplockConfiguration& WithAuditLogVolume(bool value) { SetAuditLogVolume(value); return *this;}
@@ -62,12 +62,12 @@ namespace Model
      * <p>The configuration object for setting the autocommit period of files in an FSx
      * for ONTAP SnapLock volume. </p>
      */
-    inline const AutocommitPeriod& GetAutocommitPeriod() const{ return m_autocommitPeriod; }
+    inline const AutocommitPeriod& GetAutocommitPeriod() const { return m_autocommitPeriod; }
     inline bool AutocommitPeriodHasBeenSet() const { return m_autocommitPeriodHasBeenSet; }
-    inline void SetAutocommitPeriod(const AutocommitPeriod& value) { m_autocommitPeriodHasBeenSet = true; m_autocommitPeriod = value; }
-    inline void SetAutocommitPeriod(AutocommitPeriod&& value) { m_autocommitPeriodHasBeenSet = true; m_autocommitPeriod = std::move(value); }
-    inline SnaplockConfiguration& WithAutocommitPeriod(const AutocommitPeriod& value) { SetAutocommitPeriod(value); return *this;}
-    inline SnaplockConfiguration& WithAutocommitPeriod(AutocommitPeriod&& value) { SetAutocommitPeriod(std::move(value)); return *this;}
+    template<typename AutocommitPeriodT = AutocommitPeriod>
+    void SetAutocommitPeriod(AutocommitPeriodT&& value) { m_autocommitPeriodHasBeenSet = true; m_autocommitPeriod = std::forward<AutocommitPeriodT>(value); }
+    template<typename AutocommitPeriodT = AutocommitPeriod>
+    SnaplockConfiguration& WithAutocommitPeriod(AutocommitPeriodT&& value) { SetAutocommitPeriod(std::forward<AutocommitPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,24 +82,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
-    inline const PrivilegedDelete& GetPrivilegedDelete() const{ return m_privilegedDelete; }
+    inline PrivilegedDelete GetPrivilegedDelete() const { return m_privilegedDelete; }
     inline bool PrivilegedDeleteHasBeenSet() const { return m_privilegedDeleteHasBeenSet; }
-    inline void SetPrivilegedDelete(const PrivilegedDelete& value) { m_privilegedDeleteHasBeenSet = true; m_privilegedDelete = value; }
-    inline void SetPrivilegedDelete(PrivilegedDelete&& value) { m_privilegedDeleteHasBeenSet = true; m_privilegedDelete = std::move(value); }
-    inline SnaplockConfiguration& WithPrivilegedDelete(const PrivilegedDelete& value) { SetPrivilegedDelete(value); return *this;}
-    inline SnaplockConfiguration& WithPrivilegedDelete(PrivilegedDelete&& value) { SetPrivilegedDelete(std::move(value)); return *this;}
+    inline void SetPrivilegedDelete(PrivilegedDelete value) { m_privilegedDeleteHasBeenSet = true; m_privilegedDelete = value; }
+    inline SnaplockConfiguration& WithPrivilegedDelete(PrivilegedDelete value) { SetPrivilegedDelete(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the retention period of an FSx for ONTAP SnapLock volume. </p>
      */
-    inline const SnaplockRetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+    inline const SnaplockRetentionPeriod& GetRetentionPeriod() const { return m_retentionPeriod; }
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
-    inline void SetRetentionPeriod(const SnaplockRetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
-    inline void SetRetentionPeriod(SnaplockRetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
-    inline SnaplockConfiguration& WithRetentionPeriod(const SnaplockRetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
-    inline SnaplockConfiguration& WithRetentionPeriod(SnaplockRetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
+    template<typename RetentionPeriodT = SnaplockRetentionPeriod>
+    void SetRetentionPeriod(RetentionPeriodT&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::forward<RetentionPeriodT>(value); }
+    template<typename RetentionPeriodT = SnaplockRetentionPeriod>
+    SnaplockConfiguration& WithRetentionPeriod(RetentionPeriodT&& value) { SetRetentionPeriod(std::forward<RetentionPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,12 +119,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html">SnapLock
      * Enterprise</a>. </p> </li> </ul>
      */
-    inline const SnaplockType& GetSnaplockType() const{ return m_snaplockType; }
+    inline SnaplockType GetSnaplockType() const { return m_snaplockType; }
     inline bool SnaplockTypeHasBeenSet() const { return m_snaplockTypeHasBeenSet; }
-    inline void SetSnaplockType(const SnaplockType& value) { m_snaplockTypeHasBeenSet = true; m_snaplockType = value; }
-    inline void SetSnaplockType(SnaplockType&& value) { m_snaplockTypeHasBeenSet = true; m_snaplockType = std::move(value); }
-    inline SnaplockConfiguration& WithSnaplockType(const SnaplockType& value) { SetSnaplockType(value); return *this;}
-    inline SnaplockConfiguration& WithSnaplockType(SnaplockType&& value) { SetSnaplockType(std::move(value)); return *this;}
+    inline void SetSnaplockType(SnaplockType value) { m_snaplockTypeHasBeenSet = true; m_snaplockType = value; }
+    inline SnaplockConfiguration& WithSnaplockType(SnaplockType value) { SetSnaplockType(value); return *this;}
     ///@}
 
     ///@{
@@ -138,29 +134,29 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/worm-state.html#worm-state-append">Volume-append
      * mode</a>. </p>
      */
-    inline bool GetVolumeAppendModeEnabled() const{ return m_volumeAppendModeEnabled; }
+    inline bool GetVolumeAppendModeEnabled() const { return m_volumeAppendModeEnabled; }
     inline bool VolumeAppendModeEnabledHasBeenSet() const { return m_volumeAppendModeEnabledHasBeenSet; }
     inline void SetVolumeAppendModeEnabled(bool value) { m_volumeAppendModeEnabledHasBeenSet = true; m_volumeAppendModeEnabled = value; }
     inline SnaplockConfiguration& WithVolumeAppendModeEnabled(bool value) { SetVolumeAppendModeEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_auditLogVolume;
+    bool m_auditLogVolume{false};
     bool m_auditLogVolumeHasBeenSet = false;
 
     AutocommitPeriod m_autocommitPeriod;
     bool m_autocommitPeriodHasBeenSet = false;
 
-    PrivilegedDelete m_privilegedDelete;
+    PrivilegedDelete m_privilegedDelete{PrivilegedDelete::NOT_SET};
     bool m_privilegedDeleteHasBeenSet = false;
 
     SnaplockRetentionPeriod m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet = false;
 
-    SnaplockType m_snaplockType;
+    SnaplockType m_snaplockType{SnaplockType::NOT_SET};
     bool m_snaplockTypeHasBeenSet = false;
 
-    bool m_volumeAppendModeEnabled;
+    bool m_volumeAppendModeEnabled{false};
     bool m_volumeAppendModeEnabledHasBeenSet = false;
   };
 

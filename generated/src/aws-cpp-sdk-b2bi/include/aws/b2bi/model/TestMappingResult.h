@@ -27,7 +27,7 @@ namespace Model
   class TestMappingResult
   {
   public:
-    AWS_B2BI_API TestMappingResult();
+    AWS_B2BI_API TestMappingResult() = default;
     AWS_B2BI_API TestMappingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_B2BI_API TestMappingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>Returns a string for the mapping that can be used to identify the mapping.
      * Similar to a fingerprint</p>
      */
-    inline const Aws::String& GetMappedFileContent() const{ return m_mappedFileContent; }
-    inline void SetMappedFileContent(const Aws::String& value) { m_mappedFileContent = value; }
-    inline void SetMappedFileContent(Aws::String&& value) { m_mappedFileContent = std::move(value); }
-    inline void SetMappedFileContent(const char* value) { m_mappedFileContent.assign(value); }
-    inline TestMappingResult& WithMappedFileContent(const Aws::String& value) { SetMappedFileContent(value); return *this;}
-    inline TestMappingResult& WithMappedFileContent(Aws::String&& value) { SetMappedFileContent(std::move(value)); return *this;}
-    inline TestMappingResult& WithMappedFileContent(const char* value) { SetMappedFileContent(value); return *this;}
+    inline const Aws::String& GetMappedFileContent() const { return m_mappedFileContent; }
+    template<typename MappedFileContentT = Aws::String>
+    void SetMappedFileContent(MappedFileContentT&& value) { m_mappedFileContentHasBeenSet = true; m_mappedFileContent = std::forward<MappedFileContentT>(value); }
+    template<typename MappedFileContentT = Aws::String>
+    TestMappingResult& WithMappedFileContent(MappedFileContentT&& value) { SetMappedFileContent(std::forward<MappedFileContentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TestMappingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TestMappingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TestMappingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TestMappingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_mappedFileContent;
+    bool m_mappedFileContentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

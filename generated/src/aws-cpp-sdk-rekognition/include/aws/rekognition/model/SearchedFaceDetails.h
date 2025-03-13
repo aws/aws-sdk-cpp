@@ -32,7 +32,7 @@ namespace Model
   class SearchedFaceDetails
   {
   public:
-    AWS_REKOGNITION_API SearchedFaceDetails();
+    AWS_REKOGNITION_API SearchedFaceDetails() = default;
     AWS_REKOGNITION_API SearchedFaceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API SearchedFaceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const FaceDetail& GetFaceDetail() const{ return m_faceDetail; }
+    inline const FaceDetail& GetFaceDetail() const { return m_faceDetail; }
     inline bool FaceDetailHasBeenSet() const { return m_faceDetailHasBeenSet; }
-    inline void SetFaceDetail(const FaceDetail& value) { m_faceDetailHasBeenSet = true; m_faceDetail = value; }
-    inline void SetFaceDetail(FaceDetail&& value) { m_faceDetailHasBeenSet = true; m_faceDetail = std::move(value); }
-    inline SearchedFaceDetails& WithFaceDetail(const FaceDetail& value) { SetFaceDetail(value); return *this;}
-    inline SearchedFaceDetails& WithFaceDetail(FaceDetail&& value) { SetFaceDetail(std::move(value)); return *this;}
+    template<typename FaceDetailT = FaceDetail>
+    void SetFaceDetail(FaceDetailT&& value) { m_faceDetailHasBeenSet = true; m_faceDetail = std::forward<FaceDetailT>(value); }
+    template<typename FaceDetailT = FaceDetail>
+    SearchedFaceDetails& WithFaceDetail(FaceDetailT&& value) { SetFaceDetail(std::forward<FaceDetailT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class TargetTrackingConfiguration
   {
   public:
-    AWS_AUTOSCALINGPLANS_API TargetTrackingConfiguration();
+    AWS_AUTOSCALINGPLANS_API TargetTrackingConfiguration() = default;
     AWS_AUTOSCALINGPLANS_API TargetTrackingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUTOSCALINGPLANS_API TargetTrackingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>A predefined metric. You can specify either a predefined metric or a
      * customized metric.</p>
      */
-    inline const PredefinedScalingMetricSpecification& GetPredefinedScalingMetricSpecification() const{ return m_predefinedScalingMetricSpecification; }
+    inline const PredefinedScalingMetricSpecification& GetPredefinedScalingMetricSpecification() const { return m_predefinedScalingMetricSpecification; }
     inline bool PredefinedScalingMetricSpecificationHasBeenSet() const { return m_predefinedScalingMetricSpecificationHasBeenSet; }
-    inline void SetPredefinedScalingMetricSpecification(const PredefinedScalingMetricSpecification& value) { m_predefinedScalingMetricSpecificationHasBeenSet = true; m_predefinedScalingMetricSpecification = value; }
-    inline void SetPredefinedScalingMetricSpecification(PredefinedScalingMetricSpecification&& value) { m_predefinedScalingMetricSpecificationHasBeenSet = true; m_predefinedScalingMetricSpecification = std::move(value); }
-    inline TargetTrackingConfiguration& WithPredefinedScalingMetricSpecification(const PredefinedScalingMetricSpecification& value) { SetPredefinedScalingMetricSpecification(value); return *this;}
-    inline TargetTrackingConfiguration& WithPredefinedScalingMetricSpecification(PredefinedScalingMetricSpecification&& value) { SetPredefinedScalingMetricSpecification(std::move(value)); return *this;}
+    template<typename PredefinedScalingMetricSpecificationT = PredefinedScalingMetricSpecification>
+    void SetPredefinedScalingMetricSpecification(PredefinedScalingMetricSpecificationT&& value) { m_predefinedScalingMetricSpecificationHasBeenSet = true; m_predefinedScalingMetricSpecification = std::forward<PredefinedScalingMetricSpecificationT>(value); }
+    template<typename PredefinedScalingMetricSpecificationT = PredefinedScalingMetricSpecification>
+    TargetTrackingConfiguration& WithPredefinedScalingMetricSpecification(PredefinedScalingMetricSpecificationT&& value) { SetPredefinedScalingMetricSpecification(std::forward<PredefinedScalingMetricSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>A customized metric. You can specify either a predefined metric or a
      * customized metric. </p>
      */
-    inline const CustomizedScalingMetricSpecification& GetCustomizedScalingMetricSpecification() const{ return m_customizedScalingMetricSpecification; }
+    inline const CustomizedScalingMetricSpecification& GetCustomizedScalingMetricSpecification() const { return m_customizedScalingMetricSpecification; }
     inline bool CustomizedScalingMetricSpecificationHasBeenSet() const { return m_customizedScalingMetricSpecificationHasBeenSet; }
-    inline void SetCustomizedScalingMetricSpecification(const CustomizedScalingMetricSpecification& value) { m_customizedScalingMetricSpecificationHasBeenSet = true; m_customizedScalingMetricSpecification = value; }
-    inline void SetCustomizedScalingMetricSpecification(CustomizedScalingMetricSpecification&& value) { m_customizedScalingMetricSpecificationHasBeenSet = true; m_customizedScalingMetricSpecification = std::move(value); }
-    inline TargetTrackingConfiguration& WithCustomizedScalingMetricSpecification(const CustomizedScalingMetricSpecification& value) { SetCustomizedScalingMetricSpecification(value); return *this;}
-    inline TargetTrackingConfiguration& WithCustomizedScalingMetricSpecification(CustomizedScalingMetricSpecification&& value) { SetCustomizedScalingMetricSpecification(std::move(value)); return *this;}
+    template<typename CustomizedScalingMetricSpecificationT = CustomizedScalingMetricSpecification>
+    void SetCustomizedScalingMetricSpecification(CustomizedScalingMetricSpecificationT&& value) { m_customizedScalingMetricSpecificationHasBeenSet = true; m_customizedScalingMetricSpecification = std::forward<CustomizedScalingMetricSpecificationT>(value); }
+    template<typename CustomizedScalingMetricSpecificationT = CustomizedScalingMetricSpecification>
+    TargetTrackingConfiguration& WithCustomizedScalingMetricSpecification(CustomizedScalingMetricSpecificationT&& value) { SetCustomizedScalingMetricSpecification(std::forward<CustomizedScalingMetricSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +72,7 @@ namespace Model
      * type Double, it won't accept values that are either too small or too large.
      * Values must be in the range of -2^360 to 2^360.</p>
      */
-    inline double GetTargetValue() const{ return m_targetValue; }
+    inline double GetTargetValue() const { return m_targetValue; }
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
     inline TargetTrackingConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
@@ -86,7 +86,7 @@ namespace Model
      * scale in is enabled and the target tracking scaling policy can remove capacity
      * from the scalable resource. </p> <p>The default value is <code>false</code>.</p>
      */
-    inline bool GetDisableScaleIn() const{ return m_disableScaleIn; }
+    inline bool GetDisableScaleIn() const { return m_disableScaleIn; }
     inline bool DisableScaleInHasBeenSet() const { return m_disableScaleInHasBeenSet; }
     inline void SetDisableScaleIn(bool value) { m_disableScaleInHasBeenSet = true; m_disableScaleIn = value; }
     inline TargetTrackingConfiguration& WithDisableScaleIn(bool value) { SetDisableScaleIn(value); return *this;}
@@ -103,7 +103,7 @@ namespace Model
      * capacity again unless either a larger scale out is triggered or the cooldown
      * period ends.</p>
      */
-    inline int GetScaleOutCooldown() const{ return m_scaleOutCooldown; }
+    inline int GetScaleOutCooldown() const { return m_scaleOutCooldown; }
     inline bool ScaleOutCooldownHasBeenSet() const { return m_scaleOutCooldownHasBeenSet; }
     inline void SetScaleOutCooldown(int value) { m_scaleOutCooldownHasBeenSet = true; m_scaleOutCooldown = value; }
     inline TargetTrackingConfiguration& WithScaleOutCooldown(int value) { SetScaleOutCooldown(value); return *this;}
@@ -121,7 +121,7 @@ namespace Model
      * immediately. In this case, the scale-in cooldown period stops and doesn't
      * complete.</p>
      */
-    inline int GetScaleInCooldown() const{ return m_scaleInCooldown; }
+    inline int GetScaleInCooldown() const { return m_scaleInCooldown; }
     inline bool ScaleInCooldownHasBeenSet() const { return m_scaleInCooldownHasBeenSet; }
     inline void SetScaleInCooldown(int value) { m_scaleInCooldownHasBeenSet = true; m_scaleInCooldown = value; }
     inline TargetTrackingConfiguration& WithScaleInCooldown(int value) { SetScaleInCooldown(value); return *this;}
@@ -133,7 +133,7 @@ namespace Model
      * contribute to the CloudWatch metrics. This value is used only if the resource is
      * an Auto Scaling group.</p>
      */
-    inline int GetEstimatedInstanceWarmup() const{ return m_estimatedInstanceWarmup; }
+    inline int GetEstimatedInstanceWarmup() const { return m_estimatedInstanceWarmup; }
     inline bool EstimatedInstanceWarmupHasBeenSet() const { return m_estimatedInstanceWarmupHasBeenSet; }
     inline void SetEstimatedInstanceWarmup(int value) { m_estimatedInstanceWarmupHasBeenSet = true; m_estimatedInstanceWarmup = value; }
     inline TargetTrackingConfiguration& WithEstimatedInstanceWarmup(int value) { SetEstimatedInstanceWarmup(value); return *this;}
@@ -146,19 +146,19 @@ namespace Model
     CustomizedScalingMetricSpecification m_customizedScalingMetricSpecification;
     bool m_customizedScalingMetricSpecificationHasBeenSet = false;
 
-    double m_targetValue;
+    double m_targetValue{0.0};
     bool m_targetValueHasBeenSet = false;
 
-    bool m_disableScaleIn;
+    bool m_disableScaleIn{false};
     bool m_disableScaleInHasBeenSet = false;
 
-    int m_scaleOutCooldown;
+    int m_scaleOutCooldown{0};
     bool m_scaleOutCooldownHasBeenSet = false;
 
-    int m_scaleInCooldown;
+    int m_scaleInCooldown{0};
     bool m_scaleInCooldownHasBeenSet = false;
 
-    int m_estimatedInstanceWarmup;
+    int m_estimatedInstanceWarmup{0};
     bool m_estimatedInstanceWarmupHasBeenSet = false;
   };
 

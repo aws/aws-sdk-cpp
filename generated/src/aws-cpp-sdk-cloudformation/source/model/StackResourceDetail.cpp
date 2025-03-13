@@ -20,25 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackResourceDetail::StackResourceDetail() : 
-    m_stackNameHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_resourceStatus(ResourceStatus::NOT_SET),
-    m_resourceStatusHasBeenSet(false),
-    m_resourceStatusReasonHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_driftInformationHasBeenSet(false),
-    m_moduleInfoHasBeenSet(false)
-{
-}
-
 StackResourceDetail::StackResourceDetail(const XmlNode& xmlNode)
-  : StackResourceDetail()
 {
   *this = xmlNode;
 }
@@ -54,72 +36,84 @@ StackResourceDetail& StackResourceDetail::operator =(const XmlNode& xmlNode)
     {
       m_stackName = Aws::Utils::Xml::DecodeEscapedXmlText(stackNameNode.GetText());
       m_stackNameHasBeenSet = true;
+       m_stackNameHasBeenSet = true;
     }
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
       m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
       m_stackIdHasBeenSet = true;
+       m_stackIdHasBeenSet = true;
     }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
     if(!logicalResourceIdNode.IsNull())
     {
       m_logicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(logicalResourceIdNode.GetText());
       m_logicalResourceIdHasBeenSet = true;
+       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdNode = resultNode.FirstChild("PhysicalResourceId");
     if(!physicalResourceIdNode.IsNull())
     {
       m_physicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(physicalResourceIdNode.GetText());
       m_physicalResourceIdHasBeenSet = true;
+       m_physicalResourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimestampNode = resultNode.FirstChild("LastUpdatedTimestamp");
     if(!lastUpdatedTimestampNode.IsNull())
     {
       m_lastUpdatedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUpdatedTimestampHasBeenSet = true;
+       m_lastUpdatedTimestampHasBeenSet = true;
     }
     XmlNode resourceStatusNode = resultNode.FirstChild("ResourceStatus");
     if(!resourceStatusNode.IsNull())
     {
-      m_resourceStatus = ResourceStatusMapper::GetResourceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceStatusNode.GetText()).c_str()).c_str());
+      m_resourceStatus = ResourceStatusMapper::GetResourceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceStatusNode.GetText()).c_str()));
       m_resourceStatusHasBeenSet = true;
+       m_resourceStatusHasBeenSet = true;
     }
     XmlNode resourceStatusReasonNode = resultNode.FirstChild("ResourceStatusReason");
     if(!resourceStatusReasonNode.IsNull())
     {
       m_resourceStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(resourceStatusReasonNode.GetText());
       m_resourceStatusReasonHasBeenSet = true;
+       m_resourceStatusReasonHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode metadataNode = resultNode.FirstChild("Metadata");
     if(!metadataNode.IsNull())
     {
       m_metadata = Aws::Utils::Xml::DecodeEscapedXmlText(metadataNode.GetText());
       m_metadataHasBeenSet = true;
+       m_metadataHasBeenSet = true;
     }
     XmlNode driftInformationNode = resultNode.FirstChild("DriftInformation");
     if(!driftInformationNode.IsNull())
     {
       m_driftInformation = driftInformationNode;
       m_driftInformationHasBeenSet = true;
+       m_driftInformationHasBeenSet = true;
     }
     XmlNode moduleInfoNode = resultNode.FirstChild("ModuleInfo");
     if(!moduleInfoNode.IsNull())
     {
       m_moduleInfo = moduleInfoNode;
       m_moduleInfoHasBeenSet = true;
+       m_moduleInfoHasBeenSet = true;
     }
   }
 

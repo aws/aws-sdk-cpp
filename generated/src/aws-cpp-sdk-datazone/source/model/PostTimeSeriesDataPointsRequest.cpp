@@ -12,17 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PostTimeSeriesDataPointsRequest::PostTimeSeriesDataPointsRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_domainIdentifierHasBeenSet(false),
-    m_entityIdentifierHasBeenSet(false),
-    m_entityType(TimeSeriesEntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false),
-    m_formsHasBeenSet(false)
-{
-}
-
 Aws::String PostTimeSeriesDataPointsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class PackageGroupOriginConfiguration
   {
   public:
-    AWS_CODEARTIFACT_API PackageGroupOriginConfiguration();
+    AWS_CODEARTIFACT_API PackageGroupOriginConfiguration() = default;
     AWS_CODEARTIFACT_API PackageGroupOriginConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API PackageGroupOriginConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,15 @@ namespace Model
      * <p>The origin configuration settings that determine how package versions can
      * enter repositories.</p>
      */
-    inline const Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>& GetRestrictions() const{ return m_restrictions; }
+    inline const Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>& GetRestrictions() const { return m_restrictions; }
     inline bool RestrictionsHasBeenSet() const { return m_restrictionsHasBeenSet; }
-    inline void SetRestrictions(const Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
-    inline void SetRestrictions(Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::move(value); }
-    inline PackageGroupOriginConfiguration& WithRestrictions(const Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>& value) { SetRestrictions(value); return *this;}
-    inline PackageGroupOriginConfiguration& WithRestrictions(Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>&& value) { SetRestrictions(std::move(value)); return *this;}
-    inline PackageGroupOriginConfiguration& AddRestrictions(const PackageGroupOriginRestrictionType& key, const PackageGroupOriginRestriction& value) { m_restrictionsHasBeenSet = true; m_restrictions.emplace(key, value); return *this; }
-    inline PackageGroupOriginConfiguration& AddRestrictions(PackageGroupOriginRestrictionType&& key, const PackageGroupOriginRestriction& value) { m_restrictionsHasBeenSet = true; m_restrictions.emplace(std::move(key), value); return *this; }
-    inline PackageGroupOriginConfiguration& AddRestrictions(const PackageGroupOriginRestrictionType& key, PackageGroupOriginRestriction&& value) { m_restrictionsHasBeenSet = true; m_restrictions.emplace(key, std::move(value)); return *this; }
-    inline PackageGroupOriginConfiguration& AddRestrictions(PackageGroupOriginRestrictionType&& key, PackageGroupOriginRestriction&& value) { m_restrictionsHasBeenSet = true; m_restrictions.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename RestrictionsT = Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>>
+    void SetRestrictions(RestrictionsT&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::forward<RestrictionsT>(value); }
+    template<typename RestrictionsT = Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>>
+    PackageGroupOriginConfiguration& WithRestrictions(RestrictionsT&& value) { SetRestrictions(std::forward<RestrictionsT>(value)); return *this;}
+    inline PackageGroupOriginConfiguration& AddRestrictions(PackageGroupOriginRestrictionType key, PackageGroupOriginRestriction value) {
+      m_restrictionsHasBeenSet = true; m_restrictions.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

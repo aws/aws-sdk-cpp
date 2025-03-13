@@ -33,7 +33,7 @@ namespace Model
   class Details
   {
   public:
-    AWS_SESV2_API Details();
+    AWS_SESV2_API Details() = default;
     AWS_SESV2_API Details(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Details& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>A list of route configuration details. Must contain exactly one route
      * configuration.</p>
      */
-    inline const Aws::Vector<RouteDetails>& GetRoutesDetails() const{ return m_routesDetails; }
+    inline const Aws::Vector<RouteDetails>& GetRoutesDetails() const { return m_routesDetails; }
     inline bool RoutesDetailsHasBeenSet() const { return m_routesDetailsHasBeenSet; }
-    inline void SetRoutesDetails(const Aws::Vector<RouteDetails>& value) { m_routesDetailsHasBeenSet = true; m_routesDetails = value; }
-    inline void SetRoutesDetails(Aws::Vector<RouteDetails>&& value) { m_routesDetailsHasBeenSet = true; m_routesDetails = std::move(value); }
-    inline Details& WithRoutesDetails(const Aws::Vector<RouteDetails>& value) { SetRoutesDetails(value); return *this;}
-    inline Details& WithRoutesDetails(Aws::Vector<RouteDetails>&& value) { SetRoutesDetails(std::move(value)); return *this;}
-    inline Details& AddRoutesDetails(const RouteDetails& value) { m_routesDetailsHasBeenSet = true; m_routesDetails.push_back(value); return *this; }
-    inline Details& AddRoutesDetails(RouteDetails&& value) { m_routesDetailsHasBeenSet = true; m_routesDetails.push_back(std::move(value)); return *this; }
+    template<typename RoutesDetailsT = Aws::Vector<RouteDetails>>
+    void SetRoutesDetails(RoutesDetailsT&& value) { m_routesDetailsHasBeenSet = true; m_routesDetails = std::forward<RoutesDetailsT>(value); }
+    template<typename RoutesDetailsT = Aws::Vector<RouteDetails>>
+    Details& WithRoutesDetails(RoutesDetailsT&& value) { SetRoutesDetails(std::forward<RoutesDetailsT>(value)); return *this;}
+    template<typename RoutesDetailsT = RouteDetails>
+    Details& AddRoutesDetails(RoutesDetailsT&& value) { m_routesDetailsHasBeenSet = true; m_routesDetails.emplace_back(std::forward<RoutesDetailsT>(value)); return *this; }
     ///@}
   private:
 

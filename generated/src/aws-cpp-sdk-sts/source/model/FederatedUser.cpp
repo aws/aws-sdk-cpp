@@ -20,14 +20,7 @@ namespace STS
 namespace Model
 {
 
-FederatedUser::FederatedUser() : 
-    m_federatedUserIdHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 FederatedUser::FederatedUser(const XmlNode& xmlNode)
-  : FederatedUser()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ FederatedUser& FederatedUser::operator =(const XmlNode& xmlNode)
     {
       m_federatedUserId = Aws::Utils::Xml::DecodeEscapedXmlText(federatedUserIdNode.GetText());
       m_federatedUserIdHasBeenSet = true;
+       m_federatedUserIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
   }
 

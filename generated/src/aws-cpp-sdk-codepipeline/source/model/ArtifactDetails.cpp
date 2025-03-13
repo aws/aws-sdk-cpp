@@ -18,16 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ArtifactDetails::ArtifactDetails() : 
-    m_minimumCount(0),
-    m_minimumCountHasBeenSet(false),
-    m_maximumCount(0),
-    m_maximumCountHasBeenSet(false)
-{
-}
-
 ArtifactDetails::ArtifactDetails(JsonView jsonValue)
-  : ArtifactDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ArtifactDetails& ArtifactDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("minimumCount"))
   {
     m_minimumCount = jsonValue.GetInteger("minimumCount");
-
     m_minimumCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maximumCount"))
   {
     m_maximumCount = jsonValue.GetInteger("maximumCount");
-
     m_maximumCountHasBeenSet = true;
   }
-
   return *this;
 }
 

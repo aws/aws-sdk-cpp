@@ -25,7 +25,7 @@ namespace Model
   class DescribeStreamRequest : public DynamoDBStreamsRequest
   {
   public:
-    AWS_DYNAMODBSTREAMS_API DescribeStreamRequest();
+    AWS_DYNAMODBSTREAMS_API DescribeStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
-    inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
+    inline const Aws::String& GetStreamArn() const { return m_streamArn; }
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
-    inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
-    inline void SetStreamArn(Aws::String&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::move(value); }
-    inline void SetStreamArn(const char* value) { m_streamArnHasBeenSet = true; m_streamArn.assign(value); }
-    inline DescribeStreamRequest& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
-    inline DescribeStreamRequest& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
-    inline DescribeStreamRequest& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
+    template<typename StreamArnT = Aws::String>
+    void SetStreamArn(StreamArnT&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::forward<StreamArnT>(value); }
+    template<typename StreamArnT = Aws::String>
+    DescribeStreamRequest& WithStreamArn(StreamArnT&& value) { SetStreamArn(std::forward<StreamArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of shard objects to return. The upper limit is 100.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -68,21 +66,19 @@ namespace Model
      * value that was returned for <code>LastEvaluatedShardId</code> in the previous
      * operation. </p>
      */
-    inline const Aws::String& GetExclusiveStartShardId() const{ return m_exclusiveStartShardId; }
+    inline const Aws::String& GetExclusiveStartShardId() const { return m_exclusiveStartShardId; }
     inline bool ExclusiveStartShardIdHasBeenSet() const { return m_exclusiveStartShardIdHasBeenSet; }
-    inline void SetExclusiveStartShardId(const Aws::String& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = value; }
-    inline void SetExclusiveStartShardId(Aws::String&& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = std::move(value); }
-    inline void SetExclusiveStartShardId(const char* value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId.assign(value); }
-    inline DescribeStreamRequest& WithExclusiveStartShardId(const Aws::String& value) { SetExclusiveStartShardId(value); return *this;}
-    inline DescribeStreamRequest& WithExclusiveStartShardId(Aws::String&& value) { SetExclusiveStartShardId(std::move(value)); return *this;}
-    inline DescribeStreamRequest& WithExclusiveStartShardId(const char* value) { SetExclusiveStartShardId(value); return *this;}
+    template<typename ExclusiveStartShardIdT = Aws::String>
+    void SetExclusiveStartShardId(ExclusiveStartShardIdT&& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = std::forward<ExclusiveStartShardIdT>(value); }
+    template<typename ExclusiveStartShardIdT = Aws::String>
+    DescribeStreamRequest& WithExclusiveStartShardId(ExclusiveStartShardIdT&& value) { SetExclusiveStartShardId(std::forward<ExclusiveStartShardIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_streamArn;
     bool m_streamArnHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_exclusiveStartShardId;

@@ -30,7 +30,7 @@ namespace Model
   class StartTaskResult
   {
   public:
-    AWS_ECS_API StartTaskResult();
+    AWS_ECS_API StartTaskResult() = default;
     AWS_ECS_API StartTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API StartTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,46 @@ namespace Model
      * <p>A full description of the tasks that were started. Each task that was
      * successfully placed on your container instances is described.</p>
      */
-    inline const Aws::Vector<Task>& GetTasks() const{ return m_tasks; }
-    inline void SetTasks(const Aws::Vector<Task>& value) { m_tasks = value; }
-    inline void SetTasks(Aws::Vector<Task>&& value) { m_tasks = std::move(value); }
-    inline StartTaskResult& WithTasks(const Aws::Vector<Task>& value) { SetTasks(value); return *this;}
-    inline StartTaskResult& WithTasks(Aws::Vector<Task>&& value) { SetTasks(std::move(value)); return *this;}
-    inline StartTaskResult& AddTasks(const Task& value) { m_tasks.push_back(value); return *this; }
-    inline StartTaskResult& AddTasks(Task&& value) { m_tasks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Task>& GetTasks() const { return m_tasks; }
+    template<typename TasksT = Aws::Vector<Task>>
+    void SetTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks = std::forward<TasksT>(value); }
+    template<typename TasksT = Aws::Vector<Task>>
+    StartTaskResult& WithTasks(TasksT&& value) { SetTasks(std::forward<TasksT>(value)); return *this;}
+    template<typename TasksT = Task>
+    StartTaskResult& AddTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks.emplace_back(std::forward<TasksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
-    inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
-    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
-    inline StartTaskResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
-    inline StartTaskResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
-    inline StartTaskResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
-    inline StartTaskResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Failure>& GetFailures() const { return m_failures; }
+    template<typename FailuresT = Aws::Vector<Failure>>
+    void SetFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures = std::forward<FailuresT>(value); }
+    template<typename FailuresT = Aws::Vector<Failure>>
+    StartTaskResult& WithFailures(FailuresT&& value) { SetFailures(std::forward<FailuresT>(value)); return *this;}
+    template<typename FailuresT = Failure>
+    StartTaskResult& AddFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures.emplace_back(std::forward<FailuresT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Task> m_tasks;
+    bool m_tasksHasBeenSet = false;
 
     Aws::Vector<Failure> m_failures;
+    bool m_failuresHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

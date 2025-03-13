@@ -33,7 +33,7 @@ namespace Model
   class SimpleRuleEvaluation
   {
   public:
-    AWS_IOTEVENTSDATA_API SimpleRuleEvaluation();
+    AWS_IOTEVENTSDATA_API SimpleRuleEvaluation() = default;
     AWS_IOTEVENTSDATA_API SimpleRuleEvaluation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API SimpleRuleEvaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,47 +44,41 @@ namespace Model
      * <p>The value of the input property, on the left side of the comparison
      * operator.</p>
      */
-    inline const Aws::String& GetInputPropertyValue() const{ return m_inputPropertyValue; }
+    inline const Aws::String& GetInputPropertyValue() const { return m_inputPropertyValue; }
     inline bool InputPropertyValueHasBeenSet() const { return m_inputPropertyValueHasBeenSet; }
-    inline void SetInputPropertyValue(const Aws::String& value) { m_inputPropertyValueHasBeenSet = true; m_inputPropertyValue = value; }
-    inline void SetInputPropertyValue(Aws::String&& value) { m_inputPropertyValueHasBeenSet = true; m_inputPropertyValue = std::move(value); }
-    inline void SetInputPropertyValue(const char* value) { m_inputPropertyValueHasBeenSet = true; m_inputPropertyValue.assign(value); }
-    inline SimpleRuleEvaluation& WithInputPropertyValue(const Aws::String& value) { SetInputPropertyValue(value); return *this;}
-    inline SimpleRuleEvaluation& WithInputPropertyValue(Aws::String&& value) { SetInputPropertyValue(std::move(value)); return *this;}
-    inline SimpleRuleEvaluation& WithInputPropertyValue(const char* value) { SetInputPropertyValue(value); return *this;}
+    template<typename InputPropertyValueT = Aws::String>
+    void SetInputPropertyValue(InputPropertyValueT&& value) { m_inputPropertyValueHasBeenSet = true; m_inputPropertyValue = std::forward<InputPropertyValueT>(value); }
+    template<typename InputPropertyValueT = Aws::String>
+    SimpleRuleEvaluation& WithInputPropertyValue(InputPropertyValueT&& value) { SetInputPropertyValue(std::forward<InputPropertyValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The comparison operator.</p>
      */
-    inline const ComparisonOperator& GetOperator() const{ return m_operator; }
+    inline ComparisonOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const ComparisonOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(ComparisonOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline SimpleRuleEvaluation& WithOperator(const ComparisonOperator& value) { SetOperator(value); return *this;}
-    inline SimpleRuleEvaluation& WithOperator(ComparisonOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(ComparisonOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline SimpleRuleEvaluation& WithOperator(ComparisonOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The threshold value, on the right side of the comparison operator.</p>
      */
-    inline const Aws::String& GetThresholdValue() const{ return m_thresholdValue; }
+    inline const Aws::String& GetThresholdValue() const { return m_thresholdValue; }
     inline bool ThresholdValueHasBeenSet() const { return m_thresholdValueHasBeenSet; }
-    inline void SetThresholdValue(const Aws::String& value) { m_thresholdValueHasBeenSet = true; m_thresholdValue = value; }
-    inline void SetThresholdValue(Aws::String&& value) { m_thresholdValueHasBeenSet = true; m_thresholdValue = std::move(value); }
-    inline void SetThresholdValue(const char* value) { m_thresholdValueHasBeenSet = true; m_thresholdValue.assign(value); }
-    inline SimpleRuleEvaluation& WithThresholdValue(const Aws::String& value) { SetThresholdValue(value); return *this;}
-    inline SimpleRuleEvaluation& WithThresholdValue(Aws::String&& value) { SetThresholdValue(std::move(value)); return *this;}
-    inline SimpleRuleEvaluation& WithThresholdValue(const char* value) { SetThresholdValue(value); return *this;}
+    template<typename ThresholdValueT = Aws::String>
+    void SetThresholdValue(ThresholdValueT&& value) { m_thresholdValueHasBeenSet = true; m_thresholdValue = std::forward<ThresholdValueT>(value); }
+    template<typename ThresholdValueT = Aws::String>
+    SimpleRuleEvaluation& WithThresholdValue(ThresholdValueT&& value) { SetThresholdValue(std::forward<ThresholdValueT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_inputPropertyValue;
     bool m_inputPropertyValueHasBeenSet = false;
 
-    ComparisonOperator m_operator;
+    ComparisonOperator m_operator{ComparisonOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
     Aws::String m_thresholdValue;

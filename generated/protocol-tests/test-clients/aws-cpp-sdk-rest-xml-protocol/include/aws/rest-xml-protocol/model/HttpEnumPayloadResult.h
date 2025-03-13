@@ -28,35 +28,33 @@ namespace Model
   class HttpEnumPayloadResult
   {
   public:
-    AWS_RESTXMLPROTOCOL_API HttpEnumPayloadResult();
+    AWS_RESTXMLPROTOCOL_API HttpEnumPayloadResult() = default;
     AWS_RESTXMLPROTOCOL_API HttpEnumPayloadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RESTXMLPROTOCOL_API HttpEnumPayloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const StringEnum& GetPayload() const{ return m_payload; }
-    inline void SetPayload(const StringEnum& value) { m_payload = value; }
-    inline void SetPayload(StringEnum&& value) { m_payload = std::move(value); }
-    inline HttpEnumPayloadResult& WithPayload(const StringEnum& value) { SetPayload(value); return *this;}
-    inline HttpEnumPayloadResult& WithPayload(StringEnum&& value) { SetPayload(std::move(value)); return *this;}
+    inline StringEnum GetPayload() const { return m_payload; }
+    inline void SetPayload(StringEnum value) { m_payloadHasBeenSet = true; m_payload = value; }
+    inline HttpEnumPayloadResult& WithPayload(StringEnum value) { SetPayload(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline HttpEnumPayloadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline HttpEnumPayloadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline HttpEnumPayloadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    HttpEnumPayloadResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    StringEnum m_payload;
+    StringEnum m_payload{StringEnum::NOT_SET};
+    bool m_payloadHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

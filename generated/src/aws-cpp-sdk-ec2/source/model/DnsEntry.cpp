@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DnsEntry::DnsEntry() : 
-    m_dnsNameHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
-{
-}
-
 DnsEntry::DnsEntry(const XmlNode& xmlNode)
-  : DnsEntry()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DnsEntry& DnsEntry::operator =(const XmlNode& xmlNode)
     {
       m_dnsName = Aws::Utils::Xml::DecodeEscapedXmlText(dnsNameNode.GetText());
       m_dnsNameHasBeenSet = true;
+       m_dnsNameHasBeenSet = true;
     }
     XmlNode hostedZoneIdNode = resultNode.FirstChild("hostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
       m_hostedZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneIdNode.GetText());
       m_hostedZoneIdHasBeenSet = true;
+       m_hostedZoneIdHasBeenSet = true;
     }
   }
 

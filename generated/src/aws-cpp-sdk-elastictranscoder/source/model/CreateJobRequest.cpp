@@ -12,18 +12,6 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateJobRequest::CreateJobRequest() : 
-    m_pipelineIdHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_outputKeyPrefixHasBeenSet(false),
-    m_playlistsHasBeenSet(false),
-    m_userMetadataHasBeenSet(false)
-{
-}
-
 Aws::String CreateJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class CreateMediaCapturePipelineRequest : public ChimeSDKMediaPipelinesRequest
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineRequest();
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,26 +44,22 @@ namespace Model
      * <p>Source type from which the media artifacts are captured. A Chime SDK Meeting
      * is the only supported source.</p>
      */
-    inline const MediaPipelineSourceType& GetSourceType() const{ return m_sourceType; }
+    inline MediaPipelineSourceType GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const MediaPipelineSourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(MediaPipelineSourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline CreateMediaCapturePipelineRequest& WithSourceType(const MediaPipelineSourceType& value) { SetSourceType(value); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithSourceType(MediaPipelineSourceType&& value) { SetSourceType(std::move(value)); return *this;}
+    inline void SetSourceType(MediaPipelineSourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline CreateMediaCapturePipelineRequest& WithSourceType(MediaPipelineSourceType value) { SetSourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ARN of the source from which the media artifacts are captured.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline CreateMediaCapturePipelineRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    CreateMediaCapturePipelineRequest& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,26 +67,22 @@ namespace Model
      * <p>Destination type to which the media artifacts are saved. You must use an S3
      * bucket.</p>
      */
-    inline const MediaPipelineSinkType& GetSinkType() const{ return m_sinkType; }
+    inline MediaPipelineSinkType GetSinkType() const { return m_sinkType; }
     inline bool SinkTypeHasBeenSet() const { return m_sinkTypeHasBeenSet; }
-    inline void SetSinkType(const MediaPipelineSinkType& value) { m_sinkTypeHasBeenSet = true; m_sinkType = value; }
-    inline void SetSinkType(MediaPipelineSinkType&& value) { m_sinkTypeHasBeenSet = true; m_sinkType = std::move(value); }
-    inline CreateMediaCapturePipelineRequest& WithSinkType(const MediaPipelineSinkType& value) { SetSinkType(value); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithSinkType(MediaPipelineSinkType&& value) { SetSinkType(std::move(value)); return *this;}
+    inline void SetSinkType(MediaPipelineSinkType value) { m_sinkTypeHasBeenSet = true; m_sinkType = value; }
+    inline CreateMediaCapturePipelineRequest& WithSinkType(MediaPipelineSinkType value) { SetSinkType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the sink type.</p>
      */
-    inline const Aws::String& GetSinkArn() const{ return m_sinkArn; }
+    inline const Aws::String& GetSinkArn() const { return m_sinkArn; }
     inline bool SinkArnHasBeenSet() const { return m_sinkArnHasBeenSet; }
-    inline void SetSinkArn(const Aws::String& value) { m_sinkArnHasBeenSet = true; m_sinkArn = value; }
-    inline void SetSinkArn(Aws::String&& value) { m_sinkArnHasBeenSet = true; m_sinkArn = std::move(value); }
-    inline void SetSinkArn(const char* value) { m_sinkArnHasBeenSet = true; m_sinkArn.assign(value); }
-    inline CreateMediaCapturePipelineRequest& WithSinkArn(const Aws::String& value) { SetSinkArn(value); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithSinkArn(Aws::String&& value) { SetSinkArn(std::move(value)); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithSinkArn(const char* value) { SetSinkArn(value); return *this;}
+    template<typename SinkArnT = Aws::String>
+    void SetSinkArn(SinkArnT&& value) { m_sinkArnHasBeenSet = true; m_sinkArn = std::forward<SinkArnT>(value); }
+    template<typename SinkArnT = Aws::String>
+    CreateMediaCapturePipelineRequest& WithSinkArn(SinkArnT&& value) { SetSinkArn(std::forward<SinkArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +90,12 @@ namespace Model
      * <p>The unique identifier for the client request. The token makes the API request
      * idempotent. Use a unique token for each media pipeline request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateMediaCapturePipelineRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateMediaCapturePipelineRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +103,12 @@ namespace Model
      * <p>The configuration for a specified media pipeline. <code>SourceType</code>
      * must be <code>ChimeSdkMeeting</code>.</p>
      */
-    inline const ChimeSdkMeetingConfiguration& GetChimeSdkMeetingConfiguration() const{ return m_chimeSdkMeetingConfiguration; }
+    inline const ChimeSdkMeetingConfiguration& GetChimeSdkMeetingConfiguration() const { return m_chimeSdkMeetingConfiguration; }
     inline bool ChimeSdkMeetingConfigurationHasBeenSet() const { return m_chimeSdkMeetingConfigurationHasBeenSet; }
-    inline void SetChimeSdkMeetingConfiguration(const ChimeSdkMeetingConfiguration& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = value; }
-    inline void SetChimeSdkMeetingConfiguration(ChimeSdkMeetingConfiguration&& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = std::move(value); }
-    inline CreateMediaCapturePipelineRequest& WithChimeSdkMeetingConfiguration(const ChimeSdkMeetingConfiguration& value) { SetChimeSdkMeetingConfiguration(value); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithChimeSdkMeetingConfiguration(ChimeSdkMeetingConfiguration&& value) { SetChimeSdkMeetingConfiguration(std::move(value)); return *this;}
+    template<typename ChimeSdkMeetingConfigurationT = ChimeSdkMeetingConfiguration>
+    void SetChimeSdkMeetingConfiguration(ChimeSdkMeetingConfigurationT&& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = std::forward<ChimeSdkMeetingConfigurationT>(value); }
+    template<typename ChimeSdkMeetingConfigurationT = ChimeSdkMeetingConfiguration>
+    CreateMediaCapturePipelineRequest& WithChimeSdkMeetingConfiguration(ChimeSdkMeetingConfigurationT&& value) { SetChimeSdkMeetingConfiguration(std::forward<ChimeSdkMeetingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,12 +117,12 @@ namespace Model
      * capture pipeline. The parameters can also be used by media concatenation
      * pipeline taking media capture pipeline as a media source.</p>
      */
-    inline const SseAwsKeyManagementParams& GetSseAwsKeyManagementParams() const{ return m_sseAwsKeyManagementParams; }
+    inline const SseAwsKeyManagementParams& GetSseAwsKeyManagementParams() const { return m_sseAwsKeyManagementParams; }
     inline bool SseAwsKeyManagementParamsHasBeenSet() const { return m_sseAwsKeyManagementParamsHasBeenSet; }
-    inline void SetSseAwsKeyManagementParams(const SseAwsKeyManagementParams& value) { m_sseAwsKeyManagementParamsHasBeenSet = true; m_sseAwsKeyManagementParams = value; }
-    inline void SetSseAwsKeyManagementParams(SseAwsKeyManagementParams&& value) { m_sseAwsKeyManagementParamsHasBeenSet = true; m_sseAwsKeyManagementParams = std::move(value); }
-    inline CreateMediaCapturePipelineRequest& WithSseAwsKeyManagementParams(const SseAwsKeyManagementParams& value) { SetSseAwsKeyManagementParams(value); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithSseAwsKeyManagementParams(SseAwsKeyManagementParams&& value) { SetSseAwsKeyManagementParams(std::move(value)); return *this;}
+    template<typename SseAwsKeyManagementParamsT = SseAwsKeyManagementParams>
+    void SetSseAwsKeyManagementParams(SseAwsKeyManagementParamsT&& value) { m_sseAwsKeyManagementParamsHasBeenSet = true; m_sseAwsKeyManagementParams = std::forward<SseAwsKeyManagementParamsT>(value); }
+    template<typename SseAwsKeyManagementParamsT = SseAwsKeyManagementParams>
+    CreateMediaCapturePipelineRequest& WithSseAwsKeyManagementParams(SseAwsKeyManagementParamsT&& value) { SetSseAwsKeyManagementParams(std::forward<SseAwsKeyManagementParamsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,38 +139,36 @@ namespace Model
      * concatenation will be required later, the role must also have permission to
      * <code>kms:Decrypt</code> for the same KMS key.</p>
      */
-    inline const Aws::String& GetSinkIamRoleArn() const{ return m_sinkIamRoleArn; }
+    inline const Aws::String& GetSinkIamRoleArn() const { return m_sinkIamRoleArn; }
     inline bool SinkIamRoleArnHasBeenSet() const { return m_sinkIamRoleArnHasBeenSet; }
-    inline void SetSinkIamRoleArn(const Aws::String& value) { m_sinkIamRoleArnHasBeenSet = true; m_sinkIamRoleArn = value; }
-    inline void SetSinkIamRoleArn(Aws::String&& value) { m_sinkIamRoleArnHasBeenSet = true; m_sinkIamRoleArn = std::move(value); }
-    inline void SetSinkIamRoleArn(const char* value) { m_sinkIamRoleArnHasBeenSet = true; m_sinkIamRoleArn.assign(value); }
-    inline CreateMediaCapturePipelineRequest& WithSinkIamRoleArn(const Aws::String& value) { SetSinkIamRoleArn(value); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithSinkIamRoleArn(Aws::String&& value) { SetSinkIamRoleArn(std::move(value)); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithSinkIamRoleArn(const char* value) { SetSinkIamRoleArn(value); return *this;}
+    template<typename SinkIamRoleArnT = Aws::String>
+    void SetSinkIamRoleArn(SinkIamRoleArnT&& value) { m_sinkIamRoleArnHasBeenSet = true; m_sinkIamRoleArn = std::forward<SinkIamRoleArnT>(value); }
+    template<typename SinkIamRoleArnT = Aws::String>
+    CreateMediaCapturePipelineRequest& WithSinkIamRoleArn(SinkIamRoleArnT&& value) { SetSinkIamRoleArn(std::forward<SinkIamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tag key-value pairs.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateMediaCapturePipelineRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateMediaCapturePipelineRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateMediaCapturePipelineRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateMediaCapturePipelineRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateMediaCapturePipelineRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateMediaCapturePipelineRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
-    MediaPipelineSourceType m_sourceType;
+    MediaPipelineSourceType m_sourceType{MediaPipelineSourceType::NOT_SET};
     bool m_sourceTypeHasBeenSet = false;
 
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet = false;
 
-    MediaPipelineSinkType m_sinkType;
+    MediaPipelineSinkType m_sinkType{MediaPipelineSinkType::NOT_SET};
     bool m_sinkTypeHasBeenSet = false;
 
     Aws::String m_sinkArn;

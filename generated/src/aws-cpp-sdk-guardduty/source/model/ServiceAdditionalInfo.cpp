@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ServiceAdditionalInfo::ServiceAdditionalInfo() : 
-    m_valueHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 ServiceAdditionalInfo::ServiceAdditionalInfo(JsonView jsonValue)
-  : ServiceAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ServiceAdditionalInfo& ServiceAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

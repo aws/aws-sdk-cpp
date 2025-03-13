@@ -34,7 +34,7 @@ namespace Model
   class AccessLogSubscriptionSummary
   {
   public:
-    AWS_VPCLATTICE_API AccessLogSubscriptionSummary();
+    AWS_VPCLATTICE_API AccessLogSubscriptionSummary() = default;
     AWS_VPCLATTICE_API AccessLogSubscriptionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API AccessLogSubscriptionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the access log subscription</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AccessLogSubscriptionSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AccessLogSubscriptionSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AccessLogSubscriptionSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AccessLogSubscriptionSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,40 +57,36 @@ namespace Model
      * <p>The date and time that the access log subscription was created, in ISO-8601
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline AccessLogSubscriptionSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline AccessLogSubscriptionSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    AccessLogSubscriptionSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the destination.</p>
      */
-    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+    inline const Aws::String& GetDestinationArn() const { return m_destinationArn; }
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
-    inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
-    inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
-    inline AccessLogSubscriptionSummary& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-    inline AccessLogSubscriptionSummary& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-    inline AccessLogSubscriptionSummary& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    template<typename DestinationArnT = Aws::String>
+    void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
+    template<typename DestinationArnT = Aws::String>
+    AccessLogSubscriptionSummary& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the access log subscription.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AccessLogSubscriptionSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AccessLogSubscriptionSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AccessLogSubscriptionSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AccessLogSubscriptionSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,59 +94,53 @@ namespace Model
      * <p>The date and time that the access log subscription was last updated, in
      * ISO-8601 format.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline AccessLogSubscriptionSummary& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline AccessLogSubscriptionSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    AccessLogSubscriptionSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the service or service network.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline AccessLogSubscriptionSummary& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline AccessLogSubscriptionSummary& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline AccessLogSubscriptionSummary& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    AccessLogSubscriptionSummary& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the service or service network.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline AccessLogSubscriptionSummary& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline AccessLogSubscriptionSummary& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline AccessLogSubscriptionSummary& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    AccessLogSubscriptionSummary& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Log type of the service network.</p>
      */
-    inline const ServiceNetworkLogType& GetServiceNetworkLogType() const{ return m_serviceNetworkLogType; }
+    inline ServiceNetworkLogType GetServiceNetworkLogType() const { return m_serviceNetworkLogType; }
     inline bool ServiceNetworkLogTypeHasBeenSet() const { return m_serviceNetworkLogTypeHasBeenSet; }
-    inline void SetServiceNetworkLogType(const ServiceNetworkLogType& value) { m_serviceNetworkLogTypeHasBeenSet = true; m_serviceNetworkLogType = value; }
-    inline void SetServiceNetworkLogType(ServiceNetworkLogType&& value) { m_serviceNetworkLogTypeHasBeenSet = true; m_serviceNetworkLogType = std::move(value); }
-    inline AccessLogSubscriptionSummary& WithServiceNetworkLogType(const ServiceNetworkLogType& value) { SetServiceNetworkLogType(value); return *this;}
-    inline AccessLogSubscriptionSummary& WithServiceNetworkLogType(ServiceNetworkLogType&& value) { SetServiceNetworkLogType(std::move(value)); return *this;}
+    inline void SetServiceNetworkLogType(ServiceNetworkLogType value) { m_serviceNetworkLogTypeHasBeenSet = true; m_serviceNetworkLogType = value; }
+    inline AccessLogSubscriptionSummary& WithServiceNetworkLogType(ServiceNetworkLogType value) { SetServiceNetworkLogType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_destinationArn;
@@ -161,7 +149,7 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_resourceArn;
@@ -170,7 +158,7 @@ namespace Model
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ServiceNetworkLogType m_serviceNetworkLogType;
+    ServiceNetworkLogType m_serviceNetworkLogType{ServiceNetworkLogType::NOT_SET};
     bool m_serviceNetworkLogTypeHasBeenSet = false;
   };
 

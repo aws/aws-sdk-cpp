@@ -21,7 +21,7 @@ namespace Model
   class DeleteRelationalDatabaseSnapshotRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API DeleteRelationalDatabaseSnapshotRequest();
+    AWS_LIGHTSAIL_API DeleteRelationalDatabaseSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the database snapshot that you are deleting.</p>
      */
-    inline const Aws::String& GetRelationalDatabaseSnapshotName() const{ return m_relationalDatabaseSnapshotName; }
+    inline const Aws::String& GetRelationalDatabaseSnapshotName() const { return m_relationalDatabaseSnapshotName; }
     inline bool RelationalDatabaseSnapshotNameHasBeenSet() const { return m_relationalDatabaseSnapshotNameHasBeenSet; }
-    inline void SetRelationalDatabaseSnapshotName(const Aws::String& value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName = value; }
-    inline void SetRelationalDatabaseSnapshotName(Aws::String&& value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName = std::move(value); }
-    inline void SetRelationalDatabaseSnapshotName(const char* value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName.assign(value); }
-    inline DeleteRelationalDatabaseSnapshotRequest& WithRelationalDatabaseSnapshotName(const Aws::String& value) { SetRelationalDatabaseSnapshotName(value); return *this;}
-    inline DeleteRelationalDatabaseSnapshotRequest& WithRelationalDatabaseSnapshotName(Aws::String&& value) { SetRelationalDatabaseSnapshotName(std::move(value)); return *this;}
-    inline DeleteRelationalDatabaseSnapshotRequest& WithRelationalDatabaseSnapshotName(const char* value) { SetRelationalDatabaseSnapshotName(value); return *this;}
+    template<typename RelationalDatabaseSnapshotNameT = Aws::String>
+    void SetRelationalDatabaseSnapshotName(RelationalDatabaseSnapshotNameT&& value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName = std::forward<RelationalDatabaseSnapshotNameT>(value); }
+    template<typename RelationalDatabaseSnapshotNameT = Aws::String>
+    DeleteRelationalDatabaseSnapshotRequest& WithRelationalDatabaseSnapshotName(RelationalDatabaseSnapshotNameT&& value) { SetRelationalDatabaseSnapshotName(std::forward<RelationalDatabaseSnapshotNameT>(value)); return *this;}
     ///@}
   private:
 

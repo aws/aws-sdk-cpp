@@ -12,12 +12,6 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopIngestionRequest::StopIngestionRequest() : 
-    m_ingestionIdentifierHasBeenSet(false),
-    m_appBundleIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StopIngestionRequest::SerializePayload() const
 {
   return {};

@@ -33,7 +33,7 @@ namespace Model
   class CustomActionAttachmentCriteria
   {
   public:
-    AWS_CHATBOT_API CustomActionAttachmentCriteria();
+    AWS_CHATBOT_API CustomActionAttachmentCriteria() = default;
     AWS_CHATBOT_API CustomActionAttachmentCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API CustomActionAttachmentCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>The operation to perform on the named variable.</p>
      */
-    inline const CustomActionAttachmentCriteriaOperator& GetOperator() const{ return m_operator; }
+    inline CustomActionAttachmentCriteriaOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const CustomActionAttachmentCriteriaOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(CustomActionAttachmentCriteriaOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline CustomActionAttachmentCriteria& WithOperator(const CustomActionAttachmentCriteriaOperator& value) { SetOperator(value); return *this;}
-    inline CustomActionAttachmentCriteria& WithOperator(CustomActionAttachmentCriteriaOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(CustomActionAttachmentCriteriaOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline CustomActionAttachmentCriteria& WithOperator(CustomActionAttachmentCriteriaOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the variable to operate on.</p>
      */
-    inline const Aws::String& GetVariableName() const{ return m_variableName; }
+    inline const Aws::String& GetVariableName() const { return m_variableName; }
     inline bool VariableNameHasBeenSet() const { return m_variableNameHasBeenSet; }
-    inline void SetVariableName(const Aws::String& value) { m_variableNameHasBeenSet = true; m_variableName = value; }
-    inline void SetVariableName(Aws::String&& value) { m_variableNameHasBeenSet = true; m_variableName = std::move(value); }
-    inline void SetVariableName(const char* value) { m_variableNameHasBeenSet = true; m_variableName.assign(value); }
-    inline CustomActionAttachmentCriteria& WithVariableName(const Aws::String& value) { SetVariableName(value); return *this;}
-    inline CustomActionAttachmentCriteria& WithVariableName(Aws::String&& value) { SetVariableName(std::move(value)); return *this;}
-    inline CustomActionAttachmentCriteria& WithVariableName(const char* value) { SetVariableName(value); return *this;}
+    template<typename VariableNameT = Aws::String>
+    void SetVariableName(VariableNameT&& value) { m_variableNameHasBeenSet = true; m_variableName = std::forward<VariableNameT>(value); }
+    template<typename VariableNameT = Aws::String>
+    CustomActionAttachmentCriteria& WithVariableName(VariableNameT&& value) { SetVariableName(std::forward<VariableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,18 +66,16 @@ namespace Model
      * <p>A value that is compared with the actual value of the variable based on the
      * behavior of the operator.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline CustomActionAttachmentCriteria& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline CustomActionAttachmentCriteria& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline CustomActionAttachmentCriteria& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    CustomActionAttachmentCriteria& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    CustomActionAttachmentCriteriaOperator m_operator;
+    CustomActionAttachmentCriteriaOperator m_operator{CustomActionAttachmentCriteriaOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
     Aws::String m_variableName;

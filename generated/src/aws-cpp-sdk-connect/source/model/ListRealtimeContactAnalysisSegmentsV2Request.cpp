@@ -12,18 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRealtimeContactAnalysisSegmentsV2Request::ListRealtimeContactAnalysisSegmentsV2Request() : 
-    m_instanceIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_outputType(RealTimeContactAnalysisOutputType::NOT_SET),
-    m_outputTypeHasBeenSet(false),
-    m_segmentTypesHasBeenSet(false)
-{
-}
-
 Aws::String ListRealtimeContactAnalysisSegmentsV2Request::SerializePayload() const
 {
   JsonValue payload;

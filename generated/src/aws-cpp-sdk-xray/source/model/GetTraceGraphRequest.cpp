@@ -12,12 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTraceGraphRequest::GetTraceGraphRequest() : 
-    m_traceIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetTraceGraphRequest::SerializePayload() const
 {
   JsonValue payload;

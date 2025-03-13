@@ -20,38 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Host::Host() : 
-    m_autoPlacement(AutoPlacement::NOT_SET),
-    m_autoPlacementHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_availableCapacityHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_hostIdHasBeenSet(false),
-    m_hostPropertiesHasBeenSet(false),
-    m_hostReservationIdHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_state(AllocationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_allocationTimeHasBeenSet(false),
-    m_releaseTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_hostRecovery(HostRecovery::NOT_SET),
-    m_hostRecoveryHasBeenSet(false),
-    m_allowsMultipleInstanceTypes(AllowsMultipleInstanceTypes::NOT_SET),
-    m_allowsMultipleInstanceTypesHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_memberOfServiceLinkedResourceGroup(false),
-    m_memberOfServiceLinkedResourceGroupHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_hostMaintenance(HostMaintenance::NOT_SET),
-    m_hostMaintenanceHasBeenSet(false),
-    m_assetIdHasBeenSet(false)
-{
-}
-
 Host::Host(const XmlNode& xmlNode)
-  : Host()
 {
   *this = xmlNode;
 }
@@ -65,134 +34,154 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode autoPlacementNode = resultNode.FirstChild("autoPlacement");
     if(!autoPlacementNode.IsNull())
     {
-      m_autoPlacement = AutoPlacementMapper::GetAutoPlacementForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoPlacementNode.GetText()).c_str()).c_str());
+      m_autoPlacement = AutoPlacementMapper::GetAutoPlacementForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoPlacementNode.GetText()).c_str()));
       m_autoPlacementHasBeenSet = true;
+       m_autoPlacementHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode availableCapacityNode = resultNode.FirstChild("availableCapacity");
     if(!availableCapacityNode.IsNull())
     {
       m_availableCapacity = availableCapacityNode;
       m_availableCapacityHasBeenSet = true;
+       m_availableCapacityHasBeenSet = true;
     }
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
       m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
       m_clientTokenHasBeenSet = true;
+       m_clientTokenHasBeenSet = true;
     }
     XmlNode hostIdNode = resultNode.FirstChild("hostId");
     if(!hostIdNode.IsNull())
     {
       m_hostId = Aws::Utils::Xml::DecodeEscapedXmlText(hostIdNode.GetText());
       m_hostIdHasBeenSet = true;
+       m_hostIdHasBeenSet = true;
     }
     XmlNode hostPropertiesNode = resultNode.FirstChild("hostProperties");
     if(!hostPropertiesNode.IsNull())
     {
       m_hostProperties = hostPropertiesNode;
       m_hostPropertiesHasBeenSet = true;
+       m_hostPropertiesHasBeenSet = true;
     }
     XmlNode hostReservationIdNode = resultNode.FirstChild("hostReservationId");
     if(!hostReservationIdNode.IsNull())
     {
       m_hostReservationId = Aws::Utils::Xml::DecodeEscapedXmlText(hostReservationIdNode.GetText());
       m_hostReservationIdHasBeenSet = true;
+       m_hostReservationIdHasBeenSet = true;
     }
     XmlNode instancesNode = resultNode.FirstChild("instances");
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("item");
+      m_instancesHasBeenSet = !instancesMember.IsNull();
       while(!instancesMember.IsNull())
       {
         m_instances.push_back(instancesMember);
         instancesMember = instancesMember.NextNode("item");
       }
 
-      m_instancesHasBeenSet = true;
+       m_instancesHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = AllocationStateMapper::GetAllocationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = AllocationStateMapper::GetAllocationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode allocationTimeNode = resultNode.FirstChild("allocationTime");
     if(!allocationTimeNode.IsNull())
     {
       m_allocationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_allocationTimeHasBeenSet = true;
+       m_allocationTimeHasBeenSet = true;
     }
     XmlNode releaseTimeNode = resultNode.FirstChild("releaseTime");
     if(!releaseTimeNode.IsNull())
     {
       m_releaseTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(releaseTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_releaseTimeHasBeenSet = true;
+       m_releaseTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode hostRecoveryNode = resultNode.FirstChild("hostRecovery");
     if(!hostRecoveryNode.IsNull())
     {
-      m_hostRecovery = HostRecoveryMapper::GetHostRecoveryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostRecoveryNode.GetText()).c_str()).c_str());
+      m_hostRecovery = HostRecoveryMapper::GetHostRecoveryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostRecoveryNode.GetText()).c_str()));
       m_hostRecoveryHasBeenSet = true;
+       m_hostRecoveryHasBeenSet = true;
     }
     XmlNode allowsMultipleInstanceTypesNode = resultNode.FirstChild("allowsMultipleInstanceTypes");
     if(!allowsMultipleInstanceTypesNode.IsNull())
     {
-      m_allowsMultipleInstanceTypes = AllowsMultipleInstanceTypesMapper::GetAllowsMultipleInstanceTypesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowsMultipleInstanceTypesNode.GetText()).c_str()).c_str());
+      m_allowsMultipleInstanceTypes = AllowsMultipleInstanceTypesMapper::GetAllowsMultipleInstanceTypesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowsMultipleInstanceTypesNode.GetText()).c_str()));
       m_allowsMultipleInstanceTypesHasBeenSet = true;
+       m_allowsMultipleInstanceTypesHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
     if(!availabilityZoneIdNode.IsNull())
     {
       m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
       m_availabilityZoneIdHasBeenSet = true;
+       m_availabilityZoneIdHasBeenSet = true;
     }
     XmlNode memberOfServiceLinkedResourceGroupNode = resultNode.FirstChild("memberOfServiceLinkedResourceGroup");
     if(!memberOfServiceLinkedResourceGroupNode.IsNull())
     {
       m_memberOfServiceLinkedResourceGroup = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(memberOfServiceLinkedResourceGroupNode.GetText()).c_str()).c_str());
       m_memberOfServiceLinkedResourceGroupHasBeenSet = true;
+       m_memberOfServiceLinkedResourceGroupHasBeenSet = true;
     }
     XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
     if(!outpostArnNode.IsNull())
     {
       m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
       m_outpostArnHasBeenSet = true;
+       m_outpostArnHasBeenSet = true;
     }
     XmlNode hostMaintenanceNode = resultNode.FirstChild("hostMaintenance");
     if(!hostMaintenanceNode.IsNull())
     {
-      m_hostMaintenance = HostMaintenanceMapper::GetHostMaintenanceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostMaintenanceNode.GetText()).c_str()).c_str());
+      m_hostMaintenance = HostMaintenanceMapper::GetHostMaintenanceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostMaintenanceNode.GetText()).c_str()));
       m_hostMaintenanceHasBeenSet = true;
+       m_hostMaintenanceHasBeenSet = true;
     }
     XmlNode assetIdNode = resultNode.FirstChild("assetId");
     if(!assetIdNode.IsNull())
     {
       m_assetId = Aws::Utils::Xml::DecodeEscapedXmlText(assetIdNode.GetText());
       m_assetIdHasBeenSet = true;
+       m_assetIdHasBeenSet = true;
     }
   }
 

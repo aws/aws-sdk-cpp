@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EmrServerlessSettings::EmrServerlessSettings() : 
-    m_executionRoleArnHasBeenSet(false),
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 EmrServerlessSettings::EmrServerlessSettings(JsonView jsonValue)
-  : EmrServerlessSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EmrServerlessSettings& EmrServerlessSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

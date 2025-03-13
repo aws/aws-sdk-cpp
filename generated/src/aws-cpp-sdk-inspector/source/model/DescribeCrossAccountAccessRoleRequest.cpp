@@ -12,10 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCrossAccountAccessRoleRequest::DescribeCrossAccountAccessRoleRequest()
-{
-}
-
 Aws::String DescribeCrossAccountAccessRoleRequest::SerializePayload() const
 {
   return "{}";

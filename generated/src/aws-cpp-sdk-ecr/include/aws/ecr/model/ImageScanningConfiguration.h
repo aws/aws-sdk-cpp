@@ -30,7 +30,7 @@ namespace Model
   class ImageScanningConfiguration
   {
   public:
-    AWS_ECR_API ImageScanningConfiguration();
+    AWS_ECR_API ImageScanningConfiguration() = default;
     AWS_ECR_API ImageScanningConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API ImageScanningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a>
      * API.</p>
      */
-    inline bool GetScanOnPush() const{ return m_scanOnPush; }
+    inline bool GetScanOnPush() const { return m_scanOnPush; }
     inline bool ScanOnPushHasBeenSet() const { return m_scanOnPushHasBeenSet; }
     inline void SetScanOnPush(bool value) { m_scanOnPushHasBeenSet = true; m_scanOnPush = value; }
     inline ImageScanningConfiguration& WithScanOnPush(bool value) { SetScanOnPush(value); return *this;}
     ///@}
   private:
 
-    bool m_scanOnPush;
+    bool m_scanOnPush{false};
     bool m_scanOnPushHasBeenSet = false;
   };
 

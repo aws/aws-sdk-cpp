@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAssociationsForLicenseConfigurationResult::ListAssociationsForLicenseConfigurationResult()
-{
-}
-
 ListAssociationsForLicenseConfigurationResult::ListAssociationsForLicenseConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListAssociationsForLicenseConfigurationResult& ListAssociationsForLicenseConfigu
     {
       m_licenseConfigurationAssociations.push_back(licenseConfigurationAssociationsJsonList[licenseConfigurationAssociationsIndex].AsObject());
     }
+    m_licenseConfigurationAssociationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

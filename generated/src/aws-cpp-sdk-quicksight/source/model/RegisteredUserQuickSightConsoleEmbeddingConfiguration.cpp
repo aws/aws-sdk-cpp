@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RegisteredUserQuickSightConsoleEmbeddingConfiguration::RegisteredUserQuickSightConsoleEmbeddingConfiguration() : 
-    m_initialPathHasBeenSet(false),
-    m_featureConfigurationsHasBeenSet(false)
-{
-}
-
 RegisteredUserQuickSightConsoleEmbeddingConfiguration::RegisteredUserQuickSightConsoleEmbeddingConfiguration(JsonView jsonValue)
-  : RegisteredUserQuickSightConsoleEmbeddingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RegisteredUserQuickSightConsoleEmbeddingConfiguration& RegisteredUserQuickSightC
   if(jsonValue.ValueExists("InitialPath"))
   {
     m_initialPath = jsonValue.GetString("InitialPath");
-
     m_initialPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureConfigurations"))
   {
     m_featureConfigurations = jsonValue.GetObject("FeatureConfigurations");
-
     m_featureConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

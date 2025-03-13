@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-OrderableClusterOption::OrderableClusterOption() : 
-    m_clusterVersionHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
-{
-}
-
 OrderableClusterOption::OrderableClusterOption(const XmlNode& xmlNode)
-  : OrderableClusterOption()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ OrderableClusterOption& OrderableClusterOption::operator =(const XmlNode& xmlNod
     {
       m_clusterVersion = Aws::Utils::Xml::DecodeEscapedXmlText(clusterVersionNode.GetText());
       m_clusterVersionHasBeenSet = true;
+       m_clusterVersionHasBeenSet = true;
     }
     XmlNode clusterTypeNode = resultNode.FirstChild("ClusterType");
     if(!clusterTypeNode.IsNull())
     {
       m_clusterType = Aws::Utils::Xml::DecodeEscapedXmlText(clusterTypeNode.GetText());
       m_clusterTypeHasBeenSet = true;
+       m_clusterTypeHasBeenSet = true;
     }
     XmlNode nodeTypeNode = resultNode.FirstChild("NodeType");
     if(!nodeTypeNode.IsNull())
     {
       m_nodeType = Aws::Utils::Xml::DecodeEscapedXmlText(nodeTypeNode.GetText());
       m_nodeTypeHasBeenSet = true;
+       m_nodeTypeHasBeenSet = true;
     }
     XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("AvailabilityZone");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember);
         availabilityZonesMember = availabilityZonesMember.NextNode("AvailabilityZone");
       }
 
-      m_availabilityZonesHasBeenSet = true;
+       m_availabilityZonesHasBeenSet = true;
     }
   }
 

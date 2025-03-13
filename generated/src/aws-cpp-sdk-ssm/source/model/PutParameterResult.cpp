@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutParameterResult::PutParameterResult() : 
-    m_version(0),
-    m_tier(ParameterTier::NOT_SET)
-{
-}
-
 PutParameterResult::PutParameterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutParameterResult()
 {
   *this = result;
 }
@@ -35,21 +28,20 @@ PutParameterResult& PutParameterResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInt64("Version");
-
+    m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tier"))
   {
     m_tier = ParameterTierMapper::GetParameterTierForName(jsonValue.GetString("Tier"));
-
+    m_tierHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

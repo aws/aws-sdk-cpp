@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-EphemeralStorage::EphemeralStorage() : 
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 EphemeralStorage::EphemeralStorage(JsonView jsonValue)
-  : EphemeralStorage()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EphemeralStorage& EphemeralStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetInteger("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   return *this;
 }
 

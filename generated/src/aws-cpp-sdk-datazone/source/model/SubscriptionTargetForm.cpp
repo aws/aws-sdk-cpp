@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SubscriptionTargetForm::SubscriptionTargetForm() : 
-    m_contentHasBeenSet(false),
-    m_formNameHasBeenSet(false)
-{
-}
-
 SubscriptionTargetForm::SubscriptionTargetForm(JsonView jsonValue)
-  : SubscriptionTargetForm()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SubscriptionTargetForm& SubscriptionTargetForm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetString("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("formName"))
   {
     m_formName = jsonValue.GetString("formName");
-
     m_formNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class AwsRdsDbStatusInfo
   {
   public:
-    AWS_SECURITYHUB_API AwsRdsDbStatusInfo();
+    AWS_SECURITYHUB_API AwsRdsDbStatusInfo() = default;
     AWS_SECURITYHUB_API AwsRdsDbStatusInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRdsDbStatusInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
      * <p>The type of status. For a read replica, the status type is read
      * replication.</p>
      */
-    inline const Aws::String& GetStatusType() const{ return m_statusType; }
+    inline const Aws::String& GetStatusType() const { return m_statusType; }
     inline bool StatusTypeHasBeenSet() const { return m_statusTypeHasBeenSet; }
-    inline void SetStatusType(const Aws::String& value) { m_statusTypeHasBeenSet = true; m_statusType = value; }
-    inline void SetStatusType(Aws::String&& value) { m_statusTypeHasBeenSet = true; m_statusType = std::move(value); }
-    inline void SetStatusType(const char* value) { m_statusTypeHasBeenSet = true; m_statusType.assign(value); }
-    inline AwsRdsDbStatusInfo& WithStatusType(const Aws::String& value) { SetStatusType(value); return *this;}
-    inline AwsRdsDbStatusInfo& WithStatusType(Aws::String&& value) { SetStatusType(std::move(value)); return *this;}
-    inline AwsRdsDbStatusInfo& WithStatusType(const char* value) { SetStatusType(value); return *this;}
+    template<typename StatusTypeT = Aws::String>
+    void SetStatusType(StatusTypeT&& value) { m_statusTypeHasBeenSet = true; m_statusType = std::forward<StatusTypeT>(value); }
+    template<typename StatusTypeT = Aws::String>
+    AwsRdsDbStatusInfo& WithStatusType(StatusTypeT&& value) { SetStatusType(std::forward<StatusTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the read replica instance is operating normally.</p>
      */
-    inline bool GetNormal() const{ return m_normal; }
+    inline bool GetNormal() const { return m_normal; }
     inline bool NormalHasBeenSet() const { return m_normalHasBeenSet; }
     inline void SetNormal(bool value) { m_normalHasBeenSet = true; m_normal = value; }
     inline AwsRdsDbStatusInfo& WithNormal(bool value) { SetNormal(value); return *this;}
@@ -66,14 +64,12 @@ namespace Model
     /**
      * <p>The status of the read replica instance.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsRdsDbStatusInfo& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsRdsDbStatusInfo& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsRdsDbStatusInfo& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsRdsDbStatusInfo& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,21 +77,19 @@ namespace Model
      * <p>If the read replica is currently in an error state, provides the error
      * details.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AwsRdsDbStatusInfo& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AwsRdsDbStatusInfo& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AwsRdsDbStatusInfo& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AwsRdsDbStatusInfo& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_statusType;
     bool m_statusTypeHasBeenSet = false;
 
-    bool m_normal;
+    bool m_normal{false};
     bool m_normalHasBeenSet = false;
 
     Aws::String m_status;

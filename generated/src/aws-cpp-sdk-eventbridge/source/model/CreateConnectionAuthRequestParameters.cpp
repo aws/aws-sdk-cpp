@@ -18,17 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-CreateConnectionAuthRequestParameters::CreateConnectionAuthRequestParameters() : 
-    m_basicAuthParametersHasBeenSet(false),
-    m_oAuthParametersHasBeenSet(false),
-    m_apiKeyAuthParametersHasBeenSet(false),
-    m_invocationHttpParametersHasBeenSet(false),
-    m_connectivityParametersHasBeenSet(false)
-{
-}
-
 CreateConnectionAuthRequestParameters::CreateConnectionAuthRequestParameters(JsonView jsonValue)
-  : CreateConnectionAuthRequestParameters()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ CreateConnectionAuthRequestParameters& CreateConnectionAuthRequestParameters::op
   if(jsonValue.ValueExists("BasicAuthParameters"))
   {
     m_basicAuthParameters = jsonValue.GetObject("BasicAuthParameters");
-
     m_basicAuthParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OAuthParameters"))
   {
     m_oAuthParameters = jsonValue.GetObject("OAuthParameters");
-
     m_oAuthParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApiKeyAuthParameters"))
   {
     m_apiKeyAuthParameters = jsonValue.GetObject("ApiKeyAuthParameters");
-
     m_apiKeyAuthParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvocationHttpParameters"))
   {
     m_invocationHttpParameters = jsonValue.GetObject("InvocationHttpParameters");
-
     m_invocationHttpParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectivityParameters"))
   {
     m_connectivityParameters = jsonValue.GetObject("ConnectivityParameters");
-
     m_connectivityParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

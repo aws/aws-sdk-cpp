@@ -33,7 +33,7 @@ namespace Model
   class ComponentPropertyBindingProperties
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ComponentPropertyBindingProperties();
+    AWS_AMPLIFYUIBUILDER_API ComponentPropertyBindingProperties() = default;
     AWS_AMPLIFYUIBUILDER_API ComponentPropertyBindingProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ComponentPropertyBindingProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The component property to bind to the data field.</p>
      */
-    inline const Aws::String& GetProperty() const{ return m_property; }
+    inline const Aws::String& GetProperty() const { return m_property; }
     inline bool PropertyHasBeenSet() const { return m_propertyHasBeenSet; }
-    inline void SetProperty(const Aws::String& value) { m_propertyHasBeenSet = true; m_property = value; }
-    inline void SetProperty(Aws::String&& value) { m_propertyHasBeenSet = true; m_property = std::move(value); }
-    inline void SetProperty(const char* value) { m_propertyHasBeenSet = true; m_property.assign(value); }
-    inline ComponentPropertyBindingProperties& WithProperty(const Aws::String& value) { SetProperty(value); return *this;}
-    inline ComponentPropertyBindingProperties& WithProperty(Aws::String&& value) { SetProperty(std::move(value)); return *this;}
-    inline ComponentPropertyBindingProperties& WithProperty(const char* value) { SetProperty(value); return *this;}
+    template<typename PropertyT = Aws::String>
+    void SetProperty(PropertyT&& value) { m_propertyHasBeenSet = true; m_property = std::forward<PropertyT>(value); }
+    template<typename PropertyT = Aws::String>
+    ComponentPropertyBindingProperties& WithProperty(PropertyT&& value) { SetProperty(std::forward<PropertyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data field to bind the property to.</p>
      */
-    inline const Aws::String& GetField() const{ return m_field; }
+    inline const Aws::String& GetField() const { return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-    inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
-    inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-    inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
-    inline ComponentPropertyBindingProperties& WithField(const Aws::String& value) { SetField(value); return *this;}
-    inline ComponentPropertyBindingProperties& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
-    inline ComponentPropertyBindingProperties& WithField(const char* value) { SetField(value); return *this;}
+    template<typename FieldT = Aws::String>
+    void SetField(FieldT&& value) { m_fieldHasBeenSet = true; m_field = std::forward<FieldT>(value); }
+    template<typename FieldT = Aws::String>
+    ComponentPropertyBindingProperties& WithField(FieldT&& value) { SetField(std::forward<FieldT>(value)); return *this;}
     ///@}
   private:
 

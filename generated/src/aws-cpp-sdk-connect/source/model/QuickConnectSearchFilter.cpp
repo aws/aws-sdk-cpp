@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-QuickConnectSearchFilter::QuickConnectSearchFilter() : 
-    m_tagFilterHasBeenSet(false)
-{
-}
-
 QuickConnectSearchFilter::QuickConnectSearchFilter(JsonView jsonValue)
-  : QuickConnectSearchFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QuickConnectSearchFilter& QuickConnectSearchFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("TagFilter"))
   {
     m_tagFilter = jsonValue.GetObject("TagFilter");
-
     m_tagFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class AddMaintenance
   {
   public:
-    AWS_MEDIACONNECT_API AddMaintenance();
+    AWS_MEDIACONNECT_API AddMaintenance() = default;
     AWS_MEDIACONNECT_API AddMaintenance(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API AddMaintenance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
      * A day of a week when the maintenance will happen. Use
      * Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
      */
-    inline const MaintenanceDay& GetMaintenanceDay() const{ return m_maintenanceDay; }
+    inline MaintenanceDay GetMaintenanceDay() const { return m_maintenanceDay; }
     inline bool MaintenanceDayHasBeenSet() const { return m_maintenanceDayHasBeenSet; }
-    inline void SetMaintenanceDay(const MaintenanceDay& value) { m_maintenanceDayHasBeenSet = true; m_maintenanceDay = value; }
-    inline void SetMaintenanceDay(MaintenanceDay&& value) { m_maintenanceDayHasBeenSet = true; m_maintenanceDay = std::move(value); }
-    inline AddMaintenance& WithMaintenanceDay(const MaintenanceDay& value) { SetMaintenanceDay(value); return *this;}
-    inline AddMaintenance& WithMaintenanceDay(MaintenanceDay&& value) { SetMaintenanceDay(std::move(value)); return *this;}
+    inline void SetMaintenanceDay(MaintenanceDay value) { m_maintenanceDayHasBeenSet = true; m_maintenanceDay = value; }
+    inline AddMaintenance& WithMaintenanceDay(MaintenanceDay value) { SetMaintenanceDay(value); return *this;}
     ///@}
 
     ///@{
@@ -56,18 +54,16 @@ namespace Model
      * UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes
      * must be 00. Example: 13:00. The default value is 02:00.
      */
-    inline const Aws::String& GetMaintenanceStartHour() const{ return m_maintenanceStartHour; }
+    inline const Aws::String& GetMaintenanceStartHour() const { return m_maintenanceStartHour; }
     inline bool MaintenanceStartHourHasBeenSet() const { return m_maintenanceStartHourHasBeenSet; }
-    inline void SetMaintenanceStartHour(const Aws::String& value) { m_maintenanceStartHourHasBeenSet = true; m_maintenanceStartHour = value; }
-    inline void SetMaintenanceStartHour(Aws::String&& value) { m_maintenanceStartHourHasBeenSet = true; m_maintenanceStartHour = std::move(value); }
-    inline void SetMaintenanceStartHour(const char* value) { m_maintenanceStartHourHasBeenSet = true; m_maintenanceStartHour.assign(value); }
-    inline AddMaintenance& WithMaintenanceStartHour(const Aws::String& value) { SetMaintenanceStartHour(value); return *this;}
-    inline AddMaintenance& WithMaintenanceStartHour(Aws::String&& value) { SetMaintenanceStartHour(std::move(value)); return *this;}
-    inline AddMaintenance& WithMaintenanceStartHour(const char* value) { SetMaintenanceStartHour(value); return *this;}
+    template<typename MaintenanceStartHourT = Aws::String>
+    void SetMaintenanceStartHour(MaintenanceStartHourT&& value) { m_maintenanceStartHourHasBeenSet = true; m_maintenanceStartHour = std::forward<MaintenanceStartHourT>(value); }
+    template<typename MaintenanceStartHourT = Aws::String>
+    AddMaintenance& WithMaintenanceStartHour(MaintenanceStartHourT&& value) { SetMaintenanceStartHour(std::forward<MaintenanceStartHourT>(value)); return *this;}
     ///@}
   private:
 
-    MaintenanceDay m_maintenanceDay;
+    MaintenanceDay m_maintenanceDay{MaintenanceDay::NOT_SET};
     bool m_maintenanceDayHasBeenSet = false;
 
     Aws::String m_maintenanceStartHour;

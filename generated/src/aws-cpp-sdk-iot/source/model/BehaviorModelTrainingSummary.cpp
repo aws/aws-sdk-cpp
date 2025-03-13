@@ -18,20 +18,7 @@ namespace IoT
 namespace Model
 {
 
-BehaviorModelTrainingSummary::BehaviorModelTrainingSummary() : 
-    m_securityProfileNameHasBeenSet(false),
-    m_behaviorNameHasBeenSet(false),
-    m_trainingDataCollectionStartDateHasBeenSet(false),
-    m_modelStatus(ModelStatus::NOT_SET),
-    m_modelStatusHasBeenSet(false),
-    m_datapointsCollectionPercentage(0.0),
-    m_datapointsCollectionPercentageHasBeenSet(false),
-    m_lastModelRefreshDateHasBeenSet(false)
-{
-}
-
 BehaviorModelTrainingSummary::BehaviorModelTrainingSummary(JsonView jsonValue)
-  : BehaviorModelTrainingSummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ BehaviorModelTrainingSummary& BehaviorModelTrainingSummary::operator =(JsonView 
   if(jsonValue.ValueExists("securityProfileName"))
   {
     m_securityProfileName = jsonValue.GetString("securityProfileName");
-
     m_securityProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("behaviorName"))
   {
     m_behaviorName = jsonValue.GetString("behaviorName");
-
     m_behaviorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trainingDataCollectionStartDate"))
   {
     m_trainingDataCollectionStartDate = jsonValue.GetDouble("trainingDataCollectionStartDate");
-
     m_trainingDataCollectionStartDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelStatus"))
   {
     m_modelStatus = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("modelStatus"));
-
     m_modelStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datapointsCollectionPercentage"))
   {
     m_datapointsCollectionPercentage = jsonValue.GetDouble("datapointsCollectionPercentage");
-
     m_datapointsCollectionPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModelRefreshDate"))
   {
     m_lastModelRefreshDate = jsonValue.GetDouble("lastModelRefreshDate");
-
     m_lastModelRefreshDateHasBeenSet = true;
   }
-
   return *this;
 }
 

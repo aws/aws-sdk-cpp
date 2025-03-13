@@ -35,7 +35,7 @@ namespace Model
   class CreateIamIdentityCenterConfigOptions
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API CreateIamIdentityCenterConfigOptions();
+    AWS_OPENSEARCHSERVERLESS_API CreateIamIdentityCenterConfigOptions() = default;
     AWS_OPENSEARCHSERVERLESS_API CreateIamIdentityCenterConfigOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API CreateIamIdentityCenterConfigOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance used to integrate with OpenSearch
      * Serverless.</p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline CreateIamIdentityCenterConfigOptions& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline CreateIamIdentityCenterConfigOptions& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline CreateIamIdentityCenterConfigOptions& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    CreateIamIdentityCenterConfigOptions& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * <p>The user attribute for this IAM Identity Center integration. Defaults to
      * <code>UserId</code>.</p>
      */
-    inline const IamIdentityCenterUserAttribute& GetUserAttribute() const{ return m_userAttribute; }
+    inline IamIdentityCenterUserAttribute GetUserAttribute() const { return m_userAttribute; }
     inline bool UserAttributeHasBeenSet() const { return m_userAttributeHasBeenSet; }
-    inline void SetUserAttribute(const IamIdentityCenterUserAttribute& value) { m_userAttributeHasBeenSet = true; m_userAttribute = value; }
-    inline void SetUserAttribute(IamIdentityCenterUserAttribute&& value) { m_userAttributeHasBeenSet = true; m_userAttribute = std::move(value); }
-    inline CreateIamIdentityCenterConfigOptions& WithUserAttribute(const IamIdentityCenterUserAttribute& value) { SetUserAttribute(value); return *this;}
-    inline CreateIamIdentityCenterConfigOptions& WithUserAttribute(IamIdentityCenterUserAttribute&& value) { SetUserAttribute(std::move(value)); return *this;}
+    inline void SetUserAttribute(IamIdentityCenterUserAttribute value) { m_userAttributeHasBeenSet = true; m_userAttribute = value; }
+    inline CreateIamIdentityCenterConfigOptions& WithUserAttribute(IamIdentityCenterUserAttribute value) { SetUserAttribute(value); return *this;}
     ///@}
 
     ///@{
@@ -74,22 +70,20 @@ namespace Model
      * <p>The group attribute for this IAM Identity Center integration. Defaults to
      * <code>GroupId</code>.</p>
      */
-    inline const IamIdentityCenterGroupAttribute& GetGroupAttribute() const{ return m_groupAttribute; }
+    inline IamIdentityCenterGroupAttribute GetGroupAttribute() const { return m_groupAttribute; }
     inline bool GroupAttributeHasBeenSet() const { return m_groupAttributeHasBeenSet; }
-    inline void SetGroupAttribute(const IamIdentityCenterGroupAttribute& value) { m_groupAttributeHasBeenSet = true; m_groupAttribute = value; }
-    inline void SetGroupAttribute(IamIdentityCenterGroupAttribute&& value) { m_groupAttributeHasBeenSet = true; m_groupAttribute = std::move(value); }
-    inline CreateIamIdentityCenterConfigOptions& WithGroupAttribute(const IamIdentityCenterGroupAttribute& value) { SetGroupAttribute(value); return *this;}
-    inline CreateIamIdentityCenterConfigOptions& WithGroupAttribute(IamIdentityCenterGroupAttribute&& value) { SetGroupAttribute(std::move(value)); return *this;}
+    inline void SetGroupAttribute(IamIdentityCenterGroupAttribute value) { m_groupAttributeHasBeenSet = true; m_groupAttribute = value; }
+    inline CreateIamIdentityCenterConfigOptions& WithGroupAttribute(IamIdentityCenterGroupAttribute value) { SetGroupAttribute(value); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
-    IamIdentityCenterUserAttribute m_userAttribute;
+    IamIdentityCenterUserAttribute m_userAttribute{IamIdentityCenterUserAttribute::NOT_SET};
     bool m_userAttributeHasBeenSet = false;
 
-    IamIdentityCenterGroupAttribute m_groupAttribute;
+    IamIdentityCenterGroupAttribute m_groupAttribute{IamIdentityCenterGroupAttribute::NOT_SET};
     bool m_groupAttributeHasBeenSet = false;
   };
 

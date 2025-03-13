@@ -12,11 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRulesetRequest::DeleteRulesetRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRulesetRequest::SerializePayload() const
 {
   return {};

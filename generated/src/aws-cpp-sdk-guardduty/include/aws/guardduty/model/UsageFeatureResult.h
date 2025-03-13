@@ -33,7 +33,7 @@ namespace Model
   class UsageFeatureResult
   {
   public:
-    AWS_GUARDDUTY_API UsageFeatureResult();
+    AWS_GUARDDUTY_API UsageFeatureResult() = default;
     AWS_GUARDDUTY_API UsageFeatureResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API UsageFeatureResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The feature that generated the usage cost.</p>
      */
-    inline const UsageFeature& GetFeature() const{ return m_feature; }
+    inline UsageFeature GetFeature() const { return m_feature; }
     inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }
-    inline void SetFeature(const UsageFeature& value) { m_featureHasBeenSet = true; m_feature = value; }
-    inline void SetFeature(UsageFeature&& value) { m_featureHasBeenSet = true; m_feature = std::move(value); }
-    inline UsageFeatureResult& WithFeature(const UsageFeature& value) { SetFeature(value); return *this;}
-    inline UsageFeatureResult& WithFeature(UsageFeature&& value) { SetFeature(std::move(value)); return *this;}
+    inline void SetFeature(UsageFeature value) { m_featureHasBeenSet = true; m_feature = value; }
+    inline UsageFeatureResult& WithFeature(UsageFeature value) { SetFeature(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Total& GetTotal() const{ return m_total; }
+    inline const Total& GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-    inline void SetTotal(const Total& value) { m_totalHasBeenSet = true; m_total = value; }
-    inline void SetTotal(Total&& value) { m_totalHasBeenSet = true; m_total = std::move(value); }
-    inline UsageFeatureResult& WithTotal(const Total& value) { SetTotal(value); return *this;}
-    inline UsageFeatureResult& WithTotal(Total&& value) { SetTotal(std::move(value)); return *this;}
+    template<typename TotalT = Total>
+    void SetTotal(TotalT&& value) { m_totalHasBeenSet = true; m_total = std::forward<TotalT>(value); }
+    template<typename TotalT = Total>
+    UsageFeatureResult& WithTotal(TotalT&& value) { SetTotal(std::forward<TotalT>(value)); return *this;}
     ///@}
   private:
 
-    UsageFeature m_feature;
+    UsageFeature m_feature{UsageFeature::NOT_SET};
     bool m_featureHasBeenSet = false;
 
     Total m_total;

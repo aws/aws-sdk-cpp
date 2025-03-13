@@ -32,7 +32,7 @@ namespace Model
   class TargetDestination
   {
   public:
-    AWS_TIMESTREAMQUERY_API TargetDestination();
+    AWS_TIMESTREAMQUERY_API TargetDestination() = default;
     AWS_TIMESTREAMQUERY_API TargetDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API TargetDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Query result destination details for Timestream data source.</p>
      */
-    inline const TimestreamDestination& GetTimestreamDestination() const{ return m_timestreamDestination; }
+    inline const TimestreamDestination& GetTimestreamDestination() const { return m_timestreamDestination; }
     inline bool TimestreamDestinationHasBeenSet() const { return m_timestreamDestinationHasBeenSet; }
-    inline void SetTimestreamDestination(const TimestreamDestination& value) { m_timestreamDestinationHasBeenSet = true; m_timestreamDestination = value; }
-    inline void SetTimestreamDestination(TimestreamDestination&& value) { m_timestreamDestinationHasBeenSet = true; m_timestreamDestination = std::move(value); }
-    inline TargetDestination& WithTimestreamDestination(const TimestreamDestination& value) { SetTimestreamDestination(value); return *this;}
-    inline TargetDestination& WithTimestreamDestination(TimestreamDestination&& value) { SetTimestreamDestination(std::move(value)); return *this;}
+    template<typename TimestreamDestinationT = TimestreamDestination>
+    void SetTimestreamDestination(TimestreamDestinationT&& value) { m_timestreamDestinationHasBeenSet = true; m_timestreamDestination = std::forward<TimestreamDestinationT>(value); }
+    template<typename TimestreamDestinationT = TimestreamDestination>
+    TargetDestination& WithTimestreamDestination(TimestreamDestinationT&& value) { SetTimestreamDestination(std::forward<TimestreamDestinationT>(value)); return *this;}
     ///@}
   private:
 

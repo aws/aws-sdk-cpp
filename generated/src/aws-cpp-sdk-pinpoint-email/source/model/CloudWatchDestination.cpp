@@ -18,13 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-CloudWatchDestination::CloudWatchDestination() : 
-    m_dimensionConfigurationsHasBeenSet(false)
-{
-}
-
 CloudWatchDestination::CloudWatchDestination(JsonView jsonValue)
-  : CloudWatchDestination()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CloudWatchDestination& CloudWatchDestination::operator =(JsonView jsonValue)
     }
     m_dimensionConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

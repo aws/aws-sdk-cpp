@@ -10,13 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-UpdateConfigurationSetReputationMetricsEnabledRequest::UpdateConfigurationSetReputationMetricsEnabledRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConfigurationSetReputationMetricsEnabledRequest::SerializePayload() const
 {
   Aws::StringStream ss;

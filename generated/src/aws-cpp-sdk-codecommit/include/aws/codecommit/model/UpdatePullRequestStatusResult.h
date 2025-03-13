@@ -28,7 +28,7 @@ namespace Model
   class UpdatePullRequestStatusResult
   {
   public:
-    AWS_CODECOMMIT_API UpdatePullRequestStatusResult();
+    AWS_CODECOMMIT_API UpdatePullRequestStatusResult() = default;
     AWS_CODECOMMIT_API UpdatePullRequestStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API UpdatePullRequestStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the pull request.</p>
      */
-    inline const PullRequest& GetPullRequest() const{ return m_pullRequest; }
-    inline void SetPullRequest(const PullRequest& value) { m_pullRequest = value; }
-    inline void SetPullRequest(PullRequest&& value) { m_pullRequest = std::move(value); }
-    inline UpdatePullRequestStatusResult& WithPullRequest(const PullRequest& value) { SetPullRequest(value); return *this;}
-    inline UpdatePullRequestStatusResult& WithPullRequest(PullRequest&& value) { SetPullRequest(std::move(value)); return *this;}
+    inline const PullRequest& GetPullRequest() const { return m_pullRequest; }
+    template<typename PullRequestT = PullRequest>
+    void SetPullRequest(PullRequestT&& value) { m_pullRequestHasBeenSet = true; m_pullRequest = std::forward<PullRequestT>(value); }
+    template<typename PullRequestT = PullRequest>
+    UpdatePullRequestStatusResult& WithPullRequest(PullRequestT&& value) { SetPullRequest(std::forward<PullRequestT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdatePullRequestStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdatePullRequestStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdatePullRequestStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdatePullRequestStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PullRequest m_pullRequest;
+    bool m_pullRequestHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

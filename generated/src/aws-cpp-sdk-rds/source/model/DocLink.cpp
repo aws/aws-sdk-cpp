@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DocLink::DocLink() : 
-    m_textHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 DocLink::DocLink(const XmlNode& xmlNode)
-  : DocLink()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DocLink& DocLink::operator =(const XmlNode& xmlNode)
     {
       m_text = Aws::Utils::Xml::DecodeEscapedXmlText(textNode.GetText());
       m_textHasBeenSet = true;
+       m_textHasBeenSet = true;
     }
     XmlNode urlNode = resultNode.FirstChild("Url");
     if(!urlNode.IsNull())
     {
       m_url = Aws::Utils::Xml::DecodeEscapedXmlText(urlNode.GetText());
       m_urlHasBeenSet = true;
+       m_urlHasBeenSet = true;
     }
   }
 

@@ -31,7 +31,7 @@ namespace Model
   class ActionPayload
   {
   public:
-    AWS_IOTSITEWISE_API ActionPayload();
+    AWS_IOTSITEWISE_API ActionPayload() = default;
     AWS_IOTSITEWISE_API ActionPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API ActionPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The payload of the action in a JSON string.</p>
      */
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-    inline ActionPayload& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline ActionPayload& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline ActionPayload& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    ActionPayload& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
   private:
 

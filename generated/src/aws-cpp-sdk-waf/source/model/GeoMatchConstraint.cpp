@@ -18,16 +18,7 @@ namespace WAF
 namespace Model
 {
 
-GeoMatchConstraint::GeoMatchConstraint() : 
-    m_type(GeoMatchConstraintType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(GeoMatchConstraintValue::NOT_SET),
-    m_valueHasBeenSet(false)
-{
-}
-
 GeoMatchConstraint::GeoMatchConstraint(JsonView jsonValue)
-  : GeoMatchConstraint()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GeoMatchConstraint& GeoMatchConstraint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = GeoMatchConstraintTypeMapper::GetGeoMatchConstraintTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = GeoMatchConstraintValueMapper::GetGeoMatchConstraintValueForName(jsonValue.GetString("Value"));
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

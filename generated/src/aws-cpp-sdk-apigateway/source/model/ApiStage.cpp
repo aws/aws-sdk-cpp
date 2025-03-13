@@ -18,15 +18,7 @@ namespace APIGateway
 namespace Model
 {
 
-ApiStage::ApiStage() : 
-    m_apiIdHasBeenSet(false),
-    m_stageHasBeenSet(false),
-    m_throttleHasBeenSet(false)
-{
-}
-
 ApiStage::ApiStage(JsonView jsonValue)
-  : ApiStage()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ApiStage& ApiStage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("apiId"))
   {
     m_apiId = jsonValue.GetString("apiId");
-
     m_apiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = jsonValue.GetString("stage");
-
     m_stageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("throttle"))
   {
     Aws::Map<Aws::String, JsonView> throttleJsonMap = jsonValue.GetObject("throttle").GetAllObjects();
@@ -56,7 +44,6 @@ ApiStage& ApiStage::operator =(JsonView jsonValue)
     }
     m_throttleHasBeenSet = true;
   }
-
   return *this;
 }
 

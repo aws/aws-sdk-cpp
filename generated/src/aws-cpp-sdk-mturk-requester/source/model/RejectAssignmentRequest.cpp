@@ -12,12 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RejectAssignmentRequest::RejectAssignmentRequest() : 
-    m_assignmentIdHasBeenSet(false),
-    m_requesterFeedbackHasBeenSet(false)
-{
-}
-
 Aws::String RejectAssignmentRequest::SerializePayload() const
 {
   JsonValue payload;

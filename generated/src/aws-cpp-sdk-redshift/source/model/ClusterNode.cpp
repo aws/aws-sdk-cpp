@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterNode::ClusterNode() : 
-    m_nodeRoleHasBeenSet(false),
-    m_privateIPAddressHasBeenSet(false),
-    m_publicIPAddressHasBeenSet(false)
-{
-}
-
 ClusterNode::ClusterNode(const XmlNode& xmlNode)
-  : ClusterNode()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ClusterNode& ClusterNode::operator =(const XmlNode& xmlNode)
     {
       m_nodeRole = Aws::Utils::Xml::DecodeEscapedXmlText(nodeRoleNode.GetText());
       m_nodeRoleHasBeenSet = true;
+       m_nodeRoleHasBeenSet = true;
     }
     XmlNode privateIPAddressNode = resultNode.FirstChild("PrivateIPAddress");
     if(!privateIPAddressNode.IsNull())
     {
       m_privateIPAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIPAddressNode.GetText());
       m_privateIPAddressHasBeenSet = true;
+       m_privateIPAddressHasBeenSet = true;
     }
     XmlNode publicIPAddressNode = resultNode.FirstChild("PublicIPAddress");
     if(!publicIPAddressNode.IsNull())
     {
       m_publicIPAddress = Aws::Utils::Xml::DecodeEscapedXmlText(publicIPAddressNode.GetText());
       m_publicIPAddressHasBeenSet = true;
+       m_publicIPAddressHasBeenSet = true;
     }
   }
 

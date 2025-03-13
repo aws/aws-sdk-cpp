@@ -18,16 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-WorldCount::WorldCount() : 
-    m_floorplanCount(0),
-    m_floorplanCountHasBeenSet(false),
-    m_interiorCountPerFloorplan(0),
-    m_interiorCountPerFloorplanHasBeenSet(false)
-{
-}
-
 WorldCount::WorldCount(JsonView jsonValue)
-  : WorldCount()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WorldCount& WorldCount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("floorplanCount"))
   {
     m_floorplanCount = jsonValue.GetInteger("floorplanCount");
-
     m_floorplanCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interiorCountPerFloorplan"))
   {
     m_interiorCountPerFloorplan = jsonValue.GetInteger("interiorCountPerFloorplan");
-
     m_interiorCountPerFloorplanHasBeenSet = true;
   }
-
   return *this;
 }
 

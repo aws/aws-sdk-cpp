@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSecurityConfigurationRequest::CreateSecurityConfigurationRequest() : 
-    m_nameHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateSecurityConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

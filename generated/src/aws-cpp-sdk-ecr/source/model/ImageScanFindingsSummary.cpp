@@ -18,15 +18,7 @@ namespace ECR
 namespace Model
 {
 
-ImageScanFindingsSummary::ImageScanFindingsSummary() : 
-    m_imageScanCompletedAtHasBeenSet(false),
-    m_vulnerabilitySourceUpdatedAtHasBeenSet(false),
-    m_findingSeverityCountsHasBeenSet(false)
-{
-}
-
 ImageScanFindingsSummary::ImageScanFindingsSummary(JsonView jsonValue)
-  : ImageScanFindingsSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ImageScanFindingsSummary& ImageScanFindingsSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("imageScanCompletedAt"))
   {
     m_imageScanCompletedAt = jsonValue.GetDouble("imageScanCompletedAt");
-
     m_imageScanCompletedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vulnerabilitySourceUpdatedAt"))
   {
     m_vulnerabilitySourceUpdatedAt = jsonValue.GetDouble("vulnerabilitySourceUpdatedAt");
-
     m_vulnerabilitySourceUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingSeverityCounts"))
   {
     Aws::Map<Aws::String, JsonView> findingSeverityCountsJsonMap = jsonValue.GetObject("findingSeverityCounts").GetAllObjects();
@@ -56,7 +44,6 @@ ImageScanFindingsSummary& ImageScanFindingsSummary::operator =(JsonView jsonValu
     }
     m_findingSeverityCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

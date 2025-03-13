@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportVmImageResult::ImportVmImageResult()
-{
-}
-
 ImportVmImageResult::ImportVmImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,21 +27,18 @@ ImportVmImageResult& ImportVmImageResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageArn"))
   {
     m_imageArn = jsonValue.GetString("imageArn");
-
+    m_imageArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
+    m_clientTokenHasBeenSet = true;
   }
-
 
 
   return *this;

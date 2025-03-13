@@ -12,11 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePlaybackRestrictionPolicyRequest::DeletePlaybackRestrictionPolicyRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeletePlaybackRestrictionPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class ListLexiconsResult
   {
   public:
-    AWS_POLLY_API ListLexiconsResult();
+    AWS_POLLY_API ListLexiconsResult() = default;
     AWS_POLLY_API ListLexiconsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_POLLY_API ListLexiconsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of lexicon names and attributes.</p>
      */
-    inline const Aws::Vector<LexiconDescription>& GetLexicons() const{ return m_lexicons; }
-    inline void SetLexicons(const Aws::Vector<LexiconDescription>& value) { m_lexicons = value; }
-    inline void SetLexicons(Aws::Vector<LexiconDescription>&& value) { m_lexicons = std::move(value); }
-    inline ListLexiconsResult& WithLexicons(const Aws::Vector<LexiconDescription>& value) { SetLexicons(value); return *this;}
-    inline ListLexiconsResult& WithLexicons(Aws::Vector<LexiconDescription>&& value) { SetLexicons(std::move(value)); return *this;}
-    inline ListLexiconsResult& AddLexicons(const LexiconDescription& value) { m_lexicons.push_back(value); return *this; }
-    inline ListLexiconsResult& AddLexicons(LexiconDescription&& value) { m_lexicons.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LexiconDescription>& GetLexicons() const { return m_lexicons; }
+    template<typename LexiconsT = Aws::Vector<LexiconDescription>>
+    void SetLexicons(LexiconsT&& value) { m_lexiconsHasBeenSet = true; m_lexicons = std::forward<LexiconsT>(value); }
+    template<typename LexiconsT = Aws::Vector<LexiconDescription>>
+    ListLexiconsResult& WithLexicons(LexiconsT&& value) { SetLexicons(std::forward<LexiconsT>(value)); return *this;}
+    template<typename LexiconsT = LexiconDescription>
+    ListLexiconsResult& AddLexicons(LexiconsT&& value) { m_lexiconsHasBeenSet = true; m_lexicons.emplace_back(std::forward<LexiconsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * lexicons. <code>NextToken</code> is returned only if the response is
      * truncated.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLexiconsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLexiconsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLexiconsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLexiconsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLexiconsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLexiconsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLexiconsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLexiconsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LexiconDescription> m_lexicons;
+    bool m_lexiconsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

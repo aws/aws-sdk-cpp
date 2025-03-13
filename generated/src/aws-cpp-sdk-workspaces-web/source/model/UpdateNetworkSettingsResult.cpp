@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateNetworkSettingsResult::UpdateNetworkSettingsResult()
-{
-}
-
 UpdateNetworkSettingsResult::UpdateNetworkSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateNetworkSettingsResult& UpdateNetworkSettingsResult::operator =(const Aws::
   if(jsonValue.ValueExists("networkSettings"))
   {
     m_networkSettings = jsonValue.GetObject("networkSettings");
-
+    m_networkSettingsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

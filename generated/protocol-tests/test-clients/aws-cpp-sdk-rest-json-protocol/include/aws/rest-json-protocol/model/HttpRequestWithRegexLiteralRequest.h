@@ -21,7 +21,7 @@ namespace Model
   class HttpRequestWithRegexLiteralRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API HttpRequestWithRegexLiteralRequest();
+    AWS_RESTJSONPROTOCOL_API HttpRequestWithRegexLiteralRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,14 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetStr() const{ return m_str; }
+    inline const Aws::String& GetStr() const { return m_str; }
     inline bool StrHasBeenSet() const { return m_strHasBeenSet; }
-    inline void SetStr(const Aws::String& value) { m_strHasBeenSet = true; m_str = value; }
-    inline void SetStr(Aws::String&& value) { m_strHasBeenSet = true; m_str = std::move(value); }
-    inline void SetStr(const char* value) { m_strHasBeenSet = true; m_str.assign(value); }
-    inline HttpRequestWithRegexLiteralRequest& WithStr(const Aws::String& value) { SetStr(value); return *this;}
-    inline HttpRequestWithRegexLiteralRequest& WithStr(Aws::String&& value) { SetStr(std::move(value)); return *this;}
-    inline HttpRequestWithRegexLiteralRequest& WithStr(const char* value) { SetStr(value); return *this;}
+    template<typename StrT = Aws::String>
+    void SetStr(StrT&& value) { m_strHasBeenSet = true; m_str = std::forward<StrT>(value); }
+    template<typename StrT = Aws::String>
+    HttpRequestWithRegexLiteralRequest& WithStr(StrT&& value) { SetStr(std::forward<StrT>(value)); return *this;}
     ///@}
   private:
 

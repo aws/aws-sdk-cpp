@@ -18,20 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ParallelismConfiguration::ParallelismConfiguration() : 
-    m_configurationType(ConfigurationType::NOT_SET),
-    m_configurationTypeHasBeenSet(false),
-    m_parallelism(0),
-    m_parallelismHasBeenSet(false),
-    m_parallelismPerKPU(0),
-    m_parallelismPerKPUHasBeenSet(false),
-    m_autoScalingEnabled(false),
-    m_autoScalingEnabledHasBeenSet(false)
-{
-}
-
 ParallelismConfiguration::ParallelismConfiguration(JsonView jsonValue)
-  : ParallelismConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ ParallelismConfiguration& ParallelismConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ConfigurationType"))
   {
     m_configurationType = ConfigurationTypeMapper::GetConfigurationTypeForName(jsonValue.GetString("ConfigurationType"));
-
     m_configurationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parallelism"))
   {
     m_parallelism = jsonValue.GetInteger("Parallelism");
-
     m_parallelismHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParallelismPerKPU"))
   {
     m_parallelismPerKPU = jsonValue.GetInteger("ParallelismPerKPU");
-
     m_parallelismPerKPUHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoScalingEnabled"))
   {
     m_autoScalingEnabled = jsonValue.GetBool("AutoScalingEnabled");
-
     m_autoScalingEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

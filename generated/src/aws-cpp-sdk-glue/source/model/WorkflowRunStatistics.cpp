@@ -18,28 +18,7 @@ namespace Glue
 namespace Model
 {
 
-WorkflowRunStatistics::WorkflowRunStatistics() : 
-    m_totalActions(0),
-    m_totalActionsHasBeenSet(false),
-    m_timeoutActions(0),
-    m_timeoutActionsHasBeenSet(false),
-    m_failedActions(0),
-    m_failedActionsHasBeenSet(false),
-    m_stoppedActions(0),
-    m_stoppedActionsHasBeenSet(false),
-    m_succeededActions(0),
-    m_succeededActionsHasBeenSet(false),
-    m_runningActions(0),
-    m_runningActionsHasBeenSet(false),
-    m_erroredActions(0),
-    m_erroredActionsHasBeenSet(false),
-    m_waitingActions(0),
-    m_waitingActionsHasBeenSet(false)
-{
-}
-
 WorkflowRunStatistics::WorkflowRunStatistics(JsonView jsonValue)
-  : WorkflowRunStatistics()
 {
   *this = jsonValue;
 }
@@ -49,59 +28,43 @@ WorkflowRunStatistics& WorkflowRunStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TotalActions"))
   {
     m_totalActions = jsonValue.GetInteger("TotalActions");
-
     m_totalActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeoutActions"))
   {
     m_timeoutActions = jsonValue.GetInteger("TimeoutActions");
-
     m_timeoutActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedActions"))
   {
     m_failedActions = jsonValue.GetInteger("FailedActions");
-
     m_failedActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StoppedActions"))
   {
     m_stoppedActions = jsonValue.GetInteger("StoppedActions");
-
     m_stoppedActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SucceededActions"))
   {
     m_succeededActions = jsonValue.GetInteger("SucceededActions");
-
     m_succeededActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunningActions"))
   {
     m_runningActions = jsonValue.GetInteger("RunningActions");
-
     m_runningActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErroredActions"))
   {
     m_erroredActions = jsonValue.GetInteger("ErroredActions");
-
     m_erroredActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaitingActions"))
   {
     m_waitingActions = jsonValue.GetInteger("WaitingActions");
-
     m_waitingActionsHasBeenSet = true;
   }
-
   return *this;
 }
 

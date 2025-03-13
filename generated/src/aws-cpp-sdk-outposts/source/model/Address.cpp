@@ -18,23 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-Address::Address() : 
-    m_contactNameHasBeenSet(false),
-    m_contactPhoneNumberHasBeenSet(false),
-    m_addressLine1HasBeenSet(false),
-    m_addressLine2HasBeenSet(false),
-    m_addressLine3HasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_stateOrRegionHasBeenSet(false),
-    m_districtOrCountyHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_countryCodeHasBeenSet(false),
-    m_municipalityHasBeenSet(false)
-{
-}
-
 Address::Address(JsonView jsonValue)
-  : Address()
 {
   *this = jsonValue;
 }
@@ -44,80 +28,58 @@ Address& Address::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContactName"))
   {
     m_contactName = jsonValue.GetString("ContactName");
-
     m_contactNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactPhoneNumber"))
   {
     m_contactPhoneNumber = jsonValue.GetString("ContactPhoneNumber");
-
     m_contactPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressLine1"))
   {
     m_addressLine1 = jsonValue.GetString("AddressLine1");
-
     m_addressLine1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressLine2"))
   {
     m_addressLine2 = jsonValue.GetString("AddressLine2");
-
     m_addressLine2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressLine3"))
   {
     m_addressLine3 = jsonValue.GetString("AddressLine3");
-
     m_addressLine3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("City"))
   {
     m_city = jsonValue.GetString("City");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateOrRegion"))
   {
     m_stateOrRegion = jsonValue.GetString("StateOrRegion");
-
     m_stateOrRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DistrictOrCounty"))
   {
     m_districtOrCounty = jsonValue.GetString("DistrictOrCounty");
-
     m_districtOrCountyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCode"))
   {
     m_postalCode = jsonValue.GetString("PostalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CountryCode"))
   {
     m_countryCode = jsonValue.GetString("CountryCode");
-
     m_countryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Municipality"))
   {
     m_municipality = jsonValue.GetString("Municipality");
-
     m_municipalityHasBeenSet = true;
   }
-
   return *this;
 }
 

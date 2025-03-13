@@ -13,11 +13,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResponseCodeHttpFallbackRequest::ResponseCodeHttpFallbackRequest() : 
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String ResponseCodeHttpFallbackRequest::SerializePayload() const
 {
   return {};

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpRange::IpRange() : 
-    m_descriptionHasBeenSet(false),
-    m_cidrIpHasBeenSet(false)
-{
-}
-
 IpRange::IpRange(const XmlNode& xmlNode)
-  : IpRange()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ IpRange& IpRange::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode cidrIpNode = resultNode.FirstChild("cidrIp");
     if(!cidrIpNode.IsNull())
     {
       m_cidrIp = Aws::Utils::Xml::DecodeEscapedXmlText(cidrIpNode.GetText());
       m_cidrIpHasBeenSet = true;
+       m_cidrIpHasBeenSet = true;
     }
   }
 

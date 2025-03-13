@@ -24,7 +24,7 @@ namespace Model
   class DownloadDBLogFilePortionRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API DownloadDBLogFilePortionRequest();
+    AWS_RDS_API DownloadDBLogFilePortionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
      * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
      * an existing DBInstance.</p> </li> </ul>
      */
-    inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+    inline const Aws::String& GetDBInstanceIdentifier() const { return m_dBInstanceIdentifier; }
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
-    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
-    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
-    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
-    inline DownloadDBLogFilePortionRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
-    inline DownloadDBLogFilePortionRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
-    inline DownloadDBLogFilePortionRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+    template<typename DBInstanceIdentifierT = Aws::String>
+    void SetDBInstanceIdentifier(DBInstanceIdentifierT&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::forward<DBInstanceIdentifierT>(value); }
+    template<typename DBInstanceIdentifierT = Aws::String>
+    DownloadDBLogFilePortionRequest& WithDBInstanceIdentifier(DBInstanceIdentifierT&& value) { SetDBInstanceIdentifier(std::forward<DBInstanceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the log file to be downloaded.</p>
      */
-    inline const Aws::String& GetLogFileName() const{ return m_logFileName; }
+    inline const Aws::String& GetLogFileName() const { return m_logFileName; }
     inline bool LogFileNameHasBeenSet() const { return m_logFileNameHasBeenSet; }
-    inline void SetLogFileName(const Aws::String& value) { m_logFileNameHasBeenSet = true; m_logFileName = value; }
-    inline void SetLogFileName(Aws::String&& value) { m_logFileNameHasBeenSet = true; m_logFileName = std::move(value); }
-    inline void SetLogFileName(const char* value) { m_logFileNameHasBeenSet = true; m_logFileName.assign(value); }
-    inline DownloadDBLogFilePortionRequest& WithLogFileName(const Aws::String& value) { SetLogFileName(value); return *this;}
-    inline DownloadDBLogFilePortionRequest& WithLogFileName(Aws::String&& value) { SetLogFileName(std::move(value)); return *this;}
-    inline DownloadDBLogFilePortionRequest& WithLogFileName(const char* value) { SetLogFileName(value); return *this;}
+    template<typename LogFileNameT = Aws::String>
+    void SetLogFileName(LogFileNameT&& value) { m_logFileNameHasBeenSet = true; m_logFileName = std::forward<LogFileNameT>(value); }
+    template<typename LogFileNameT = Aws::String>
+    DownloadDBLogFilePortionRequest& WithLogFileName(LogFileNameT&& value) { SetLogFileName(std::forward<LogFileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * parameter is specified the response includes only records beyond the marker
      * until the end of the file or up to NumberOfLines.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DownloadDBLogFilePortionRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DownloadDBLogFilePortionRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DownloadDBLogFilePortionRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DownloadDBLogFilePortionRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,7 +98,7 @@ namespace Model
      * next request, continuing until the AdditionalDataPending response element
      * returns false.</p> </li> </ul>
      */
-    inline int GetNumberOfLines() const{ return m_numberOfLines; }
+    inline int GetNumberOfLines() const { return m_numberOfLines; }
     inline bool NumberOfLinesHasBeenSet() const { return m_numberOfLinesHasBeenSet; }
     inline void SetNumberOfLines(int value) { m_numberOfLinesHasBeenSet = true; m_numberOfLines = value; }
     inline DownloadDBLogFilePortionRequest& WithNumberOfLines(int value) { SetNumberOfLines(value); return *this;}
@@ -120,7 +114,7 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_numberOfLines;
+    int m_numberOfLines{0};
     bool m_numberOfLinesHasBeenSet = false;
   };
 

@@ -20,19 +20,7 @@ namespace SES
 namespace Model
 {
 
-EventDestination::EventDestination() : 
-    m_nameHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_matchingEventTypesHasBeenSet(false),
-    m_kinesisFirehoseDestinationHasBeenSet(false),
-    m_cloudWatchDestinationHasBeenSet(false),
-    m_sNSDestinationHasBeenSet(false)
-{
-}
-
 EventDestination::EventDestination(const XmlNode& xmlNode)
-  : EventDestination()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,48 @@ EventDestination& EventDestination::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode matchingEventTypesNode = resultNode.FirstChild("MatchingEventTypes");
     if(!matchingEventTypesNode.IsNull())
     {
       XmlNode matchingEventTypesMember = matchingEventTypesNode.FirstChild("member");
+      m_matchingEventTypesHasBeenSet = !matchingEventTypesMember.IsNull();
       while(!matchingEventTypesMember.IsNull())
       {
         m_matchingEventTypes.push_back(EventTypeMapper::GetEventTypeForName(StringUtils::Trim(matchingEventTypesMember.GetText().c_str())));
         matchingEventTypesMember = matchingEventTypesMember.NextNode("member");
       }
 
-      m_matchingEventTypesHasBeenSet = true;
+       m_matchingEventTypesHasBeenSet = true;
     }
     XmlNode kinesisFirehoseDestinationNode = resultNode.FirstChild("KinesisFirehoseDestination");
     if(!kinesisFirehoseDestinationNode.IsNull())
     {
       m_kinesisFirehoseDestination = kinesisFirehoseDestinationNode;
       m_kinesisFirehoseDestinationHasBeenSet = true;
+       m_kinesisFirehoseDestinationHasBeenSet = true;
     }
     XmlNode cloudWatchDestinationNode = resultNode.FirstChild("CloudWatchDestination");
     if(!cloudWatchDestinationNode.IsNull())
     {
       m_cloudWatchDestination = cloudWatchDestinationNode;
       m_cloudWatchDestinationHasBeenSet = true;
+       m_cloudWatchDestinationHasBeenSet = true;
     }
     XmlNode sNSDestinationNode = resultNode.FirstChild("SNSDestination");
     if(!sNSDestinationNode.IsNull())
     {
       m_sNSDestination = sNSDestinationNode;
       m_sNSDestinationHasBeenSet = true;
+       m_sNSDestinationHasBeenSet = true;
     }
   }
 

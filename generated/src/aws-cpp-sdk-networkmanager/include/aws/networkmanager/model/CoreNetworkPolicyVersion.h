@@ -34,7 +34,7 @@ namespace Model
   class CoreNetworkPolicyVersion
   {
   public:
-    AWS_NETWORKMANAGER_API CoreNetworkPolicyVersion();
+    AWS_NETWORKMANAGER_API CoreNetworkPolicyVersion() = default;
     AWS_NETWORKMANAGER_API CoreNetworkPolicyVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API CoreNetworkPolicyVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The ID of a core network.</p>
      */
-    inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
+    inline const Aws::String& GetCoreNetworkId() const { return m_coreNetworkId; }
     inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
-    inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
-    inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
-    inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
-    inline CoreNetworkPolicyVersion& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
-    inline CoreNetworkPolicyVersion& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
-    inline CoreNetworkPolicyVersion& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
+    template<typename CoreNetworkIdT = Aws::String>
+    void SetCoreNetworkId(CoreNetworkIdT&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::forward<CoreNetworkIdT>(value); }
+    template<typename CoreNetworkIdT = Aws::String>
+    CoreNetworkPolicyVersion& WithCoreNetworkId(CoreNetworkIdT&& value) { SetCoreNetworkId(std::forward<CoreNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the policy version.</p>
      */
-    inline int GetPolicyVersionId() const{ return m_policyVersionId; }
+    inline int GetPolicyVersionId() const { return m_policyVersionId; }
     inline bool PolicyVersionIdHasBeenSet() const { return m_policyVersionIdHasBeenSet; }
     inline void SetPolicyVersionId(int value) { m_policyVersionIdHasBeenSet = true; m_policyVersionId = value; }
     inline CoreNetworkPolicyVersion& WithPolicyVersionId(int value) { SetPolicyVersionId(value); return *this;}
@@ -69,69 +67,63 @@ namespace Model
      * <p>Whether a core network policy is the current policy or the most recently
      * submitted policy.</p>
      */
-    inline const CoreNetworkPolicyAlias& GetAlias() const{ return m_alias; }
+    inline CoreNetworkPolicyAlias GetAlias() const { return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-    inline void SetAlias(const CoreNetworkPolicyAlias& value) { m_aliasHasBeenSet = true; m_alias = value; }
-    inline void SetAlias(CoreNetworkPolicyAlias&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-    inline CoreNetworkPolicyVersion& WithAlias(const CoreNetworkPolicyAlias& value) { SetAlias(value); return *this;}
-    inline CoreNetworkPolicyVersion& WithAlias(CoreNetworkPolicyAlias&& value) { SetAlias(std::move(value)); return *this;}
+    inline void SetAlias(CoreNetworkPolicyAlias value) { m_aliasHasBeenSet = true; m_alias = value; }
+    inline CoreNetworkPolicyVersion& WithAlias(CoreNetworkPolicyAlias value) { SetAlias(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of a core network policy version.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CoreNetworkPolicyVersion& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CoreNetworkPolicyVersion& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CoreNetworkPolicyVersion& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CoreNetworkPolicyVersion& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when a core network policy version was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline CoreNetworkPolicyVersion& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline CoreNetworkPolicyVersion& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CoreNetworkPolicyVersion& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the policy version change set.</p>
      */
-    inline const ChangeSetState& GetChangeSetState() const{ return m_changeSetState; }
+    inline ChangeSetState GetChangeSetState() const { return m_changeSetState; }
     inline bool ChangeSetStateHasBeenSet() const { return m_changeSetStateHasBeenSet; }
-    inline void SetChangeSetState(const ChangeSetState& value) { m_changeSetStateHasBeenSet = true; m_changeSetState = value; }
-    inline void SetChangeSetState(ChangeSetState&& value) { m_changeSetStateHasBeenSet = true; m_changeSetState = std::move(value); }
-    inline CoreNetworkPolicyVersion& WithChangeSetState(const ChangeSetState& value) { SetChangeSetState(value); return *this;}
-    inline CoreNetworkPolicyVersion& WithChangeSetState(ChangeSetState&& value) { SetChangeSetState(std::move(value)); return *this;}
+    inline void SetChangeSetState(ChangeSetState value) { m_changeSetStateHasBeenSet = true; m_changeSetState = value; }
+    inline CoreNetworkPolicyVersion& WithChangeSetState(ChangeSetState value) { SetChangeSetState(value); return *this;}
     ///@}
   private:
 
     Aws::String m_coreNetworkId;
     bool m_coreNetworkIdHasBeenSet = false;
 
-    int m_policyVersionId;
+    int m_policyVersionId{0};
     bool m_policyVersionIdHasBeenSet = false;
 
-    CoreNetworkPolicyAlias m_alias;
+    CoreNetworkPolicyAlias m_alias{CoreNetworkPolicyAlias::NOT_SET};
     bool m_aliasHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    ChangeSetState m_changeSetState;
+    ChangeSetState m_changeSetState{ChangeSetState::NOT_SET};
     bool m_changeSetStateHasBeenSet = false;
   };
 

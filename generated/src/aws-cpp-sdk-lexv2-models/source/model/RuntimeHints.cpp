@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-RuntimeHints::RuntimeHints() : 
-    m_slotHintsHasBeenSet(false)
-{
-}
-
 RuntimeHints::RuntimeHints(JsonView jsonValue)
-  : RuntimeHints()
 {
   *this = jsonValue;
 }
@@ -46,7 +40,6 @@ RuntimeHints& RuntimeHints::operator =(JsonView jsonValue)
     }
     m_slotHintsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -19,7 +19,7 @@ namespace Model
   class DisableAWSOrganizationsAccessRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API DisableAWSOrganizationsAccessRequest();
+    AWS_SERVICECATALOG_API DisableAWSOrganizationsAccessRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

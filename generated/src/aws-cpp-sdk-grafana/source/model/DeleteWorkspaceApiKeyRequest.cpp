@@ -12,12 +12,6 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkspaceApiKeyRequest::DeleteWorkspaceApiKeyRequest() : 
-    m_keyNameHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkspaceApiKeyRequest::SerializePayload() const
 {
   return {};

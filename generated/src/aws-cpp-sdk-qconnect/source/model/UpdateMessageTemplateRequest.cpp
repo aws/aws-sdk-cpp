@@ -12,15 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMessageTemplateRequest::UpdateMessageTemplateRequest() : 
-    m_contentHasBeenSet(false),
-    m_defaultAttributesHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_messageTemplateIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMessageTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

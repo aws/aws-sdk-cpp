@@ -18,20 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-DefaultButtonConfiguration::DefaultButtonConfiguration() : 
-    m_backgroundColorHasBeenSet(false),
-    m_borderRadius(0),
-    m_borderRadiusHasBeenSet(false),
-    m_buttonAction(ButtonAction::NOT_SET),
-    m_buttonActionHasBeenSet(false),
-    m_linkHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_textColorHasBeenSet(false)
-{
-}
-
 DefaultButtonConfiguration::DefaultButtonConfiguration(JsonView jsonValue)
-  : DefaultButtonConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ DefaultButtonConfiguration& DefaultButtonConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("BackgroundColor"))
   {
     m_backgroundColor = jsonValue.GetString("BackgroundColor");
-
     m_backgroundColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BorderRadius"))
   {
     m_borderRadius = jsonValue.GetInteger("BorderRadius");
-
     m_borderRadiusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ButtonAction"))
   {
     m_buttonAction = ButtonActionMapper::GetButtonActionForName(jsonValue.GetString("ButtonAction"));
-
     m_buttonActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Link"))
   {
     m_link = jsonValue.GetString("Link");
-
     m_linkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextColor"))
   {
     m_textColor = jsonValue.GetString("TextColor");
-
     m_textColorHasBeenSet = true;
   }
-
   return *this;
 }
 

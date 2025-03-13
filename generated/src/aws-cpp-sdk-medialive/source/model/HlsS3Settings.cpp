@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-HlsS3Settings::HlsS3Settings() : 
-    m_cannedAcl(S3CannedAcl::NOT_SET),
-    m_cannedAclHasBeenSet(false)
-{
-}
-
 HlsS3Settings::HlsS3Settings(JsonView jsonValue)
-  : HlsS3Settings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ HlsS3Settings& HlsS3Settings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cannedAcl"))
   {
     m_cannedAcl = S3CannedAclMapper::GetS3CannedAclForName(jsonValue.GetString("cannedAcl"));
-
     m_cannedAclHasBeenSet = true;
   }
-
   return *this;
 }
 

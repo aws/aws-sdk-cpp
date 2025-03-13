@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ScheduledInstanceRecurrenceRequest::ScheduledInstanceRecurrenceRequest() : 
-    m_frequencyHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_occurrenceDaysHasBeenSet(false),
-    m_occurrenceRelativeToEnd(false),
-    m_occurrenceRelativeToEndHasBeenSet(false),
-    m_occurrenceUnitHasBeenSet(false)
-{
-}
-
 ScheduledInstanceRecurrenceRequest::ScheduledInstanceRecurrenceRequest(const XmlNode& xmlNode)
-  : ScheduledInstanceRecurrenceRequest()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,41 @@ ScheduledInstanceRecurrenceRequest& ScheduledInstanceRecurrenceRequest::operator
     {
       m_frequency = Aws::Utils::Xml::DecodeEscapedXmlText(frequencyNode.GetText());
       m_frequencyHasBeenSet = true;
+       m_frequencyHasBeenSet = true;
     }
     XmlNode intervalNode = resultNode.FirstChild("Interval");
     if(!intervalNode.IsNull())
     {
       m_interval = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(intervalNode.GetText()).c_str()).c_str());
       m_intervalHasBeenSet = true;
+       m_intervalHasBeenSet = true;
     }
     XmlNode occurrenceDaysNode = resultNode.FirstChild("OccurrenceDay");
     if(!occurrenceDaysNode.IsNull())
     {
       XmlNode occurrenceDaysMember = occurrenceDaysNode.FirstChild("OccurenceDay");
+      m_occurrenceDaysHasBeenSet = !occurrenceDaysMember.IsNull();
       while(!occurrenceDaysMember.IsNull())
       {
         m_occurrenceDays.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(occurrenceDaysMember.GetText().c_str()).c_str()));
         occurrenceDaysMember = occurrenceDaysMember.NextNode("OccurenceDay");
       }
 
-      m_occurrenceDaysHasBeenSet = true;
+       m_occurrenceDaysHasBeenSet = true;
     }
     XmlNode occurrenceRelativeToEndNode = resultNode.FirstChild("OccurrenceRelativeToEnd");
     if(!occurrenceRelativeToEndNode.IsNull())
     {
       m_occurrenceRelativeToEnd = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(occurrenceRelativeToEndNode.GetText()).c_str()).c_str());
       m_occurrenceRelativeToEndHasBeenSet = true;
+       m_occurrenceRelativeToEndHasBeenSet = true;
     }
     XmlNode occurrenceUnitNode = resultNode.FirstChild("OccurrenceUnit");
     if(!occurrenceUnitNode.IsNull())
     {
       m_occurrenceUnit = Aws::Utils::Xml::DecodeEscapedXmlText(occurrenceUnitNode.GetText());
       m_occurrenceUnitHasBeenSet = true;
+       m_occurrenceUnitHasBeenSet = true;
     }
   }
 

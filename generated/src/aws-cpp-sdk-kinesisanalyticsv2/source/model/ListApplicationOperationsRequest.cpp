@@ -12,17 +12,6 @@ using namespace Aws::KinesisAnalyticsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListApplicationOperationsRequest::ListApplicationOperationsRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_operationStatus(OperationStatus::NOT_SET),
-    m_operationStatusHasBeenSet(false)
-{
-}
-
 Aws::String ListApplicationOperationsRequest::SerializePayload() const
 {
   JsonValue payload;

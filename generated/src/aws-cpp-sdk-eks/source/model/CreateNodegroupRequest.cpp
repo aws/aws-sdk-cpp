@@ -12,33 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNodegroupRequest::CreateNodegroupRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false),
-    m_scalingConfigHasBeenSet(false),
-    m_diskSize(0),
-    m_diskSizeHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false),
-    m_amiType(AMITypes::NOT_SET),
-    m_amiTypeHasBeenSet(false),
-    m_remoteAccessHasBeenSet(false),
-    m_nodeRoleHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_taintsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_launchTemplateHasBeenSet(false),
-    m_updateConfigHasBeenSet(false),
-    m_nodeRepairConfigHasBeenSet(false),
-    m_capacityType(CapacityTypes::NOT_SET),
-    m_capacityTypeHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_releaseVersionHasBeenSet(false)
-{
-}
-
 Aws::String CreateNodegroupRequest::SerializePayload() const
 {
   JsonValue payload;

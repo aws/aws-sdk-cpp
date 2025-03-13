@@ -32,7 +32,7 @@ namespace Model
   class CreateCacheClusterRequest : public ElastiCacheRequest
   {
   public:
-    AWS_ELASTICACHE_API CreateCacheClusterRequest();
+    AWS_ELASTICACHE_API CreateCacheClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -55,14 +55,12 @@ namespace Model
      * must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
      */
-    inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
+    inline const Aws::String& GetCacheClusterId() const { return m_cacheClusterId; }
     inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
-    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
-    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
-    inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
-    inline CreateCacheClusterRequest& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
-    inline CreateCacheClusterRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+    template<typename CacheClusterIdT = Aws::String>
+    void SetCacheClusterId(CacheClusterIdT&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::forward<CacheClusterIdT>(value); }
+    template<typename CacheClusterIdT = Aws::String>
+    CreateCacheClusterRequest& WithCacheClusterId(CacheClusterIdT&& value) { SetCacheClusterId(std::forward<CacheClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * across Availability Zones.</p>  <p>This parameter is only valid if the
      * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
-    inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
+    inline const Aws::String& GetReplicationGroupId() const { return m_replicationGroupId; }
     inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
-    inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
-    inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
-    inline CreateCacheClusterRequest& WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
-    inline CreateCacheClusterRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
+    template<typename ReplicationGroupIdT = Aws::String>
+    void SetReplicationGroupId(ReplicationGroupIdT&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::forward<ReplicationGroupIdT>(value); }
+    template<typename ReplicationGroupIdT = Aws::String>
+    CreateCacheClusterRequest& WithReplicationGroupId(ReplicationGroupIdT&& value) { SetReplicationGroupId(std::forward<ReplicationGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +90,10 @@ namespace Model
      * <p>If the <code>AZMode</code> and <code>PreferredAvailabilityZones</code> are
      * not specified, ElastiCache assumes <code>single-az</code> mode.</p>
      */
-    inline const AZMode& GetAZMode() const{ return m_aZMode; }
+    inline AZMode GetAZMode() const { return m_aZMode; }
     inline bool AZModeHasBeenSet() const { return m_aZModeHasBeenSet; }
-    inline void SetAZMode(const AZMode& value) { m_aZModeHasBeenSet = true; m_aZMode = value; }
-    inline void SetAZMode(AZMode&& value) { m_aZModeHasBeenSet = true; m_aZMode = std::move(value); }
-    inline CreateCacheClusterRequest& WithAZMode(const AZMode& value) { SetAZMode(value); return *this;}
-    inline CreateCacheClusterRequest& WithAZMode(AZMode&& value) { SetAZMode(std::move(value)); return *this;}
+    inline void SetAZMode(AZMode value) { m_aZModeHasBeenSet = true; m_aZMode = value; }
+    inline CreateCacheClusterRequest& WithAZMode(AZMode value) { SetAZMode(value); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +104,12 @@ namespace Model
      * <code>PreferredAvailabilityZones</code>.</p> <p>Default: System chosen
      * Availability Zone.</p>
      */
-    inline const Aws::String& GetPreferredAvailabilityZone() const{ return m_preferredAvailabilityZone; }
+    inline const Aws::String& GetPreferredAvailabilityZone() const { return m_preferredAvailabilityZone; }
     inline bool PreferredAvailabilityZoneHasBeenSet() const { return m_preferredAvailabilityZoneHasBeenSet; }
-    inline void SetPreferredAvailabilityZone(const Aws::String& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = value; }
-    inline void SetPreferredAvailabilityZone(Aws::String&& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = std::move(value); }
-    inline void SetPreferredAvailabilityZone(const char* value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone.assign(value); }
-    inline CreateCacheClusterRequest& WithPreferredAvailabilityZone(const Aws::String& value) { SetPreferredAvailabilityZone(value); return *this;}
-    inline CreateCacheClusterRequest& WithPreferredAvailabilityZone(Aws::String&& value) { SetPreferredAvailabilityZone(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithPreferredAvailabilityZone(const char* value) { SetPreferredAvailabilityZone(value); return *this;}
+    template<typename PreferredAvailabilityZoneT = Aws::String>
+    void SetPreferredAvailabilityZone(PreferredAvailabilityZoneT&& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = std::forward<PreferredAvailabilityZoneT>(value); }
+    template<typename PreferredAvailabilityZoneT = Aws::String>
+    CreateCacheClusterRequest& WithPreferredAvailabilityZone(PreferredAvailabilityZoneT&& value) { SetPreferredAvailabilityZone(std::forward<PreferredAvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,15 +125,14 @@ namespace Model
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPreferredAvailabilityZones() const{ return m_preferredAvailabilityZones; }
+    inline const Aws::Vector<Aws::String>& GetPreferredAvailabilityZones() const { return m_preferredAvailabilityZones; }
     inline bool PreferredAvailabilityZonesHasBeenSet() const { return m_preferredAvailabilityZonesHasBeenSet; }
-    inline void SetPreferredAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones = value; }
-    inline void SetPreferredAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones = std::move(value); }
-    inline CreateCacheClusterRequest& WithPreferredAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetPreferredAvailabilityZones(value); return *this;}
-    inline CreateCacheClusterRequest& WithPreferredAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetPreferredAvailabilityZones(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& AddPreferredAvailabilityZones(const Aws::String& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(value); return *this; }
-    inline CreateCacheClusterRequest& AddPreferredAvailabilityZones(Aws::String&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(std::move(value)); return *this; }
-    inline CreateCacheClusterRequest& AddPreferredAvailabilityZones(const char* value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(value); return *this; }
+    template<typename PreferredAvailabilityZonesT = Aws::Vector<Aws::String>>
+    void SetPreferredAvailabilityZones(PreferredAvailabilityZonesT&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones = std::forward<PreferredAvailabilityZonesT>(value); }
+    template<typename PreferredAvailabilityZonesT = Aws::Vector<Aws::String>>
+    CreateCacheClusterRequest& WithPreferredAvailabilityZones(PreferredAvailabilityZonesT&& value) { SetPreferredAvailabilityZones(std::forward<PreferredAvailabilityZonesT>(value)); return *this;}
+    template<typename PreferredAvailabilityZonesT = Aws::String>
+    CreateCacheClusterRequest& AddPreferredAvailabilityZones(PreferredAvailabilityZonesT&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.emplace_back(std::forward<PreferredAvailabilityZonesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -153,7 +144,7 @@ namespace Model
      * Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
      */
-    inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
+    inline int GetNumCacheNodes() const { return m_numCacheNodes; }
     inline bool NumCacheNodesHasBeenSet() const { return m_numCacheNodesHasBeenSet; }
     inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
     inline CreateCacheClusterRequest& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
@@ -235,14 +226,12 @@ namespace Model
      * and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS
      * version 2.8.22 and later.</p> </li> </ul>
      */
-    inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+    inline const Aws::String& GetCacheNodeType() const { return m_cacheNodeType; }
     inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
-    inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
-    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
-    inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
-    inline CreateCacheClusterRequest& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
-    inline CreateCacheClusterRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
+    template<typename CacheNodeTypeT = Aws::String>
+    void SetCacheNodeType(CacheNodeTypeT&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::forward<CacheNodeTypeT>(value); }
+    template<typename CacheNodeTypeT = Aws::String>
+    CreateCacheClusterRequest& WithCacheNodeType(CacheNodeTypeT&& value) { SetCacheNodeType(std::forward<CacheNodeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -250,14 +239,12 @@ namespace Model
      * <p>The name of the cache engine to be used for this cluster.</p> <p>Valid values
      * for this parameter are: <code>memcached</code> | <code>redis</code> </p>
      */
-    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline const Aws::String& GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
-    inline CreateCacheClusterRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-    inline CreateCacheClusterRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    CreateCacheClusterRequest& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -272,14 +259,12 @@ namespace Model
      * existing cluster or replication group and create it anew with the earlier engine
      * version. </p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline CreateCacheClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline CreateCacheClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    CreateCacheClusterRequest& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -289,14 +274,12 @@ namespace Model
      * used. You cannot use any parameter group which has
      * <code>cluster-enabled='yes'</code> when creating a cluster.</p>
      */
-    inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
+    inline const Aws::String& GetCacheParameterGroupName() const { return m_cacheParameterGroupName; }
     inline bool CacheParameterGroupNameHasBeenSet() const { return m_cacheParameterGroupNameHasBeenSet; }
-    inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
-    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::move(value); }
-    inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
-    inline CreateCacheClusterRequest& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
-    inline CreateCacheClusterRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
+    template<typename CacheParameterGroupNameT = Aws::String>
+    void SetCacheParameterGroupName(CacheParameterGroupNameT&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::forward<CacheParameterGroupNameT>(value); }
+    template<typename CacheParameterGroupNameT = Aws::String>
+    CreateCacheClusterRequest& WithCacheParameterGroupName(CacheParameterGroupNameT&& value) { SetCacheParameterGroupName(std::forward<CacheParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -309,14 +292,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> 
      */
-    inline const Aws::String& GetCacheSubnetGroupName() const{ return m_cacheSubnetGroupName; }
+    inline const Aws::String& GetCacheSubnetGroupName() const { return m_cacheSubnetGroupName; }
     inline bool CacheSubnetGroupNameHasBeenSet() const { return m_cacheSubnetGroupNameHasBeenSet; }
-    inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
-    inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::move(value); }
-    inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName.assign(value); }
-    inline CreateCacheClusterRequest& WithCacheSubnetGroupName(const Aws::String& value) { SetCacheSubnetGroupName(value); return *this;}
-    inline CreateCacheClusterRequest& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
+    template<typename CacheSubnetGroupNameT = Aws::String>
+    void SetCacheSubnetGroupName(CacheSubnetGroupNameT&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::forward<CacheSubnetGroupNameT>(value); }
+    template<typename CacheSubnetGroupNameT = Aws::String>
+    CreateCacheClusterRequest& WithCacheSubnetGroupName(CacheSubnetGroupNameT&& value) { SetCacheSubnetGroupName(std::forward<CacheSubnetGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -325,15 +306,14 @@ namespace Model
      * this parameter only when you are creating a cluster outside of an Amazon Virtual
      * Private Cloud (Amazon VPC).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCacheSecurityGroupNames() const{ return m_cacheSecurityGroupNames; }
+    inline const Aws::Vector<Aws::String>& GetCacheSecurityGroupNames() const { return m_cacheSecurityGroupNames; }
     inline bool CacheSecurityGroupNamesHasBeenSet() const { return m_cacheSecurityGroupNamesHasBeenSet; }
-    inline void SetCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
-    inline void SetCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = std::move(value); }
-    inline CreateCacheClusterRequest& WithCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { SetCacheSecurityGroupNames(value); return *this;}
-    inline CreateCacheClusterRequest& WithCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { SetCacheSecurityGroupNames(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& AddCacheSecurityGroupNames(const Aws::String& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
-    inline CreateCacheClusterRequest& AddCacheSecurityGroupNames(Aws::String&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(std::move(value)); return *this; }
-    inline CreateCacheClusterRequest& AddCacheSecurityGroupNames(const char* value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
+    template<typename CacheSecurityGroupNamesT = Aws::Vector<Aws::String>>
+    void SetCacheSecurityGroupNames(CacheSecurityGroupNamesT&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = std::forward<CacheSecurityGroupNamesT>(value); }
+    template<typename CacheSecurityGroupNamesT = Aws::Vector<Aws::String>>
+    CreateCacheClusterRequest& WithCacheSecurityGroupNames(CacheSecurityGroupNamesT&& value) { SetCacheSecurityGroupNames(std::forward<CacheSecurityGroupNamesT>(value)); return *this;}
+    template<typename CacheSecurityGroupNamesT = Aws::String>
+    CreateCacheClusterRequest& AddCacheSecurityGroupNames(CacheSecurityGroupNamesT&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.emplace_back(std::forward<CacheSecurityGroupNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -342,29 +322,28 @@ namespace Model
      * parameter only when you are creating a cluster in an Amazon Virtual Private
      * Cloud (Amazon VPC).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline CreateCacheClusterRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline CreateCacheClusterRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline CreateCacheClusterRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline CreateCacheClusterRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    CreateCacheClusterRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    CreateCacheClusterRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of tags to be added to this resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateCacheClusterRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateCacheClusterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateCacheClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateCacheClusterRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateCacheClusterRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -377,15 +356,14 @@ namespace Model
      *  <p>Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSnapshotArns() const{ return m_snapshotArns; }
+    inline const Aws::Vector<Aws::String>& GetSnapshotArns() const { return m_snapshotArns; }
     inline bool SnapshotArnsHasBeenSet() const { return m_snapshotArnsHasBeenSet; }
-    inline void SetSnapshotArns(const Aws::Vector<Aws::String>& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns = value; }
-    inline void SetSnapshotArns(Aws::Vector<Aws::String>&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns = std::move(value); }
-    inline CreateCacheClusterRequest& WithSnapshotArns(const Aws::Vector<Aws::String>& value) { SetSnapshotArns(value); return *this;}
-    inline CreateCacheClusterRequest& WithSnapshotArns(Aws::Vector<Aws::String>&& value) { SetSnapshotArns(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& AddSnapshotArns(const Aws::String& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(value); return *this; }
-    inline CreateCacheClusterRequest& AddSnapshotArns(Aws::String&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(std::move(value)); return *this; }
-    inline CreateCacheClusterRequest& AddSnapshotArns(const char* value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(value); return *this; }
+    template<typename SnapshotArnsT = Aws::Vector<Aws::String>>
+    void SetSnapshotArns(SnapshotArnsT&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns = std::forward<SnapshotArnsT>(value); }
+    template<typename SnapshotArnsT = Aws::Vector<Aws::String>>
+    CreateCacheClusterRequest& WithSnapshotArns(SnapshotArnsT&& value) { SetSnapshotArns(std::forward<SnapshotArnsT>(value)); return *this;}
+    template<typename SnapshotArnsT = Aws::String>
+    CreateCacheClusterRequest& AddSnapshotArns(SnapshotArnsT&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.emplace_back(std::forward<SnapshotArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -396,14 +374,12 @@ namespace Model
      *  <p>This parameter is only valid if the <code>Engine</code> parameter is
      * <code>redis</code>.</p> 
      */
-    inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+    inline const Aws::String& GetSnapshotName() const { return m_snapshotName; }
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
-    inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
-    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
-    inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
-    inline CreateCacheClusterRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
-    inline CreateCacheClusterRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
+    template<typename SnapshotNameT = Aws::String>
+    void SetSnapshotName(SnapshotNameT&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::forward<SnapshotNameT>(value); }
+    template<typename SnapshotNameT = Aws::String>
+    CreateCacheClusterRequest& WithSnapshotName(SnapshotNameT&& value) { SetSnapshotName(std::forward<SnapshotNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -412,21 +388,19 @@ namespace Model
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
      * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
-    inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+    inline const Aws::String& GetPreferredMaintenanceWindow() const { return m_preferredMaintenanceWindow; }
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
-    inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
-    inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
-    inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
-    inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    void SetPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::forward<PreferredMaintenanceWindowT>(value); }
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    CreateCacheClusterRequest& WithPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { SetPreferredMaintenanceWindow(std::forward<PreferredMaintenanceWindowT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port number on which each of the cache nodes accepts connections.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline CreateCacheClusterRequest& WithPort(int value) { SetPort(value); return *this;}
@@ -438,14 +412,12 @@ namespace Model
      * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
      * owner must be the same as the cluster owner.</p> 
      */
-    inline const Aws::String& GetNotificationTopicArn() const{ return m_notificationTopicArn; }
+    inline const Aws::String& GetNotificationTopicArn() const { return m_notificationTopicArn; }
     inline bool NotificationTopicArnHasBeenSet() const { return m_notificationTopicArnHasBeenSet; }
-    inline void SetNotificationTopicArn(const Aws::String& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
-    inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::move(value); }
-    inline void SetNotificationTopicArn(const char* value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn.assign(value); }
-    inline CreateCacheClusterRequest& WithNotificationTopicArn(const Aws::String& value) { SetNotificationTopicArn(value); return *this;}
-    inline CreateCacheClusterRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
+    template<typename NotificationTopicArnT = Aws::String>
+    void SetNotificationTopicArn(NotificationTopicArnT&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::forward<NotificationTopicArnT>(value); }
+    template<typename NotificationTopicArnT = Aws::String>
+    CreateCacheClusterRequest& WithNotificationTopicArn(NotificationTopicArnT&& value) { SetNotificationTopicArn(std::forward<NotificationTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -454,7 +426,7 @@ namespace Model
      * above, set this parameter to yes to opt-in to the next auto minor version
      * upgrade campaign. This parameter is disabled for previous versions.  </p>
      */
-    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+    inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
     inline CreateCacheClusterRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
@@ -469,7 +441,7 @@ namespace Model
      * <code>redis</code>.</p>  <p>Default: 0 (i.e., automatic backups are
      * disabled for this cache cluster).</p>
      */
-    inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
+    inline int GetSnapshotRetentionLimit() const { return m_snapshotRetentionLimit; }
     inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
     inline CreateCacheClusterRequest& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
@@ -483,14 +455,12 @@ namespace Model
      * an appropriate time range.</p>  <p>This parameter is only valid if the
      * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
-    inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
+    inline const Aws::String& GetSnapshotWindow() const { return m_snapshotWindow; }
     inline bool SnapshotWindowHasBeenSet() const { return m_snapshotWindowHasBeenSet; }
-    inline void SetSnapshotWindow(const Aws::String& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
-    inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::move(value); }
-    inline void SetSnapshotWindow(const char* value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow.assign(value); }
-    inline CreateCacheClusterRequest& WithSnapshotWindow(const Aws::String& value) { SetSnapshotWindow(value); return *this;}
-    inline CreateCacheClusterRequest& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
+    template<typename SnapshotWindowT = Aws::String>
+    void SetSnapshotWindow(SnapshotWindowT&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::forward<SnapshotWindowT>(value); }
+    template<typename SnapshotWindowT = Aws::String>
+    CreateCacheClusterRequest& WithSnapshotWindow(SnapshotWindowT&& value) { SetSnapshotWindow(std::forward<SnapshotWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -504,14 +474,12 @@ namespace Model
      * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
-    inline const Aws::String& GetAuthToken() const{ return m_authToken; }
+    inline const Aws::String& GetAuthToken() const { return m_authToken; }
     inline bool AuthTokenHasBeenSet() const { return m_authTokenHasBeenSet; }
-    inline void SetAuthToken(const Aws::String& value) { m_authTokenHasBeenSet = true; m_authToken = value; }
-    inline void SetAuthToken(Aws::String&& value) { m_authTokenHasBeenSet = true; m_authToken = std::move(value); }
-    inline void SetAuthToken(const char* value) { m_authTokenHasBeenSet = true; m_authToken.assign(value); }
-    inline CreateCacheClusterRequest& WithAuthToken(const Aws::String& value) { SetAuthToken(value); return *this;}
-    inline CreateCacheClusterRequest& WithAuthToken(Aws::String&& value) { SetAuthToken(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithAuthToken(const char* value) { SetAuthToken(value); return *this;}
+    template<typename AuthTokenT = Aws::String>
+    void SetAuthToken(AuthTokenT&& value) { m_authTokenHasBeenSet = true; m_authToken = std::forward<AuthTokenT>(value); }
+    template<typename AuthTokenT = Aws::String>
+    CreateCacheClusterRequest& WithAuthToken(AuthTokenT&& value) { SetAuthToken(std::forward<AuthTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -519,62 +487,57 @@ namespace Model
      * <p>Specifies whether the nodes in the cluster are created in a single outpost or
      * across multiple outposts.</p>
      */
-    inline const OutpostMode& GetOutpostMode() const{ return m_outpostMode; }
+    inline OutpostMode GetOutpostMode() const { return m_outpostMode; }
     inline bool OutpostModeHasBeenSet() const { return m_outpostModeHasBeenSet; }
-    inline void SetOutpostMode(const OutpostMode& value) { m_outpostModeHasBeenSet = true; m_outpostMode = value; }
-    inline void SetOutpostMode(OutpostMode&& value) { m_outpostModeHasBeenSet = true; m_outpostMode = std::move(value); }
-    inline CreateCacheClusterRequest& WithOutpostMode(const OutpostMode& value) { SetOutpostMode(value); return *this;}
-    inline CreateCacheClusterRequest& WithOutpostMode(OutpostMode&& value) { SetOutpostMode(std::move(value)); return *this;}
+    inline void SetOutpostMode(OutpostMode value) { m_outpostModeHasBeenSet = true; m_outpostMode = value; }
+    inline CreateCacheClusterRequest& WithOutpostMode(OutpostMode value) { SetOutpostMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The outpost ARN in which the cache cluster is created.</p>
      */
-    inline const Aws::String& GetPreferredOutpostArn() const{ return m_preferredOutpostArn; }
+    inline const Aws::String& GetPreferredOutpostArn() const { return m_preferredOutpostArn; }
     inline bool PreferredOutpostArnHasBeenSet() const { return m_preferredOutpostArnHasBeenSet; }
-    inline void SetPreferredOutpostArn(const Aws::String& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = value; }
-    inline void SetPreferredOutpostArn(Aws::String&& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = std::move(value); }
-    inline void SetPreferredOutpostArn(const char* value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn.assign(value); }
-    inline CreateCacheClusterRequest& WithPreferredOutpostArn(const Aws::String& value) { SetPreferredOutpostArn(value); return *this;}
-    inline CreateCacheClusterRequest& WithPreferredOutpostArn(Aws::String&& value) { SetPreferredOutpostArn(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& WithPreferredOutpostArn(const char* value) { SetPreferredOutpostArn(value); return *this;}
+    template<typename PreferredOutpostArnT = Aws::String>
+    void SetPreferredOutpostArn(PreferredOutpostArnT&& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = std::forward<PreferredOutpostArnT>(value); }
+    template<typename PreferredOutpostArnT = Aws::String>
+    CreateCacheClusterRequest& WithPreferredOutpostArn(PreferredOutpostArnT&& value) { SetPreferredOutpostArn(std::forward<PreferredOutpostArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The outpost ARNs in which the cache cluster is created.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPreferredOutpostArns() const{ return m_preferredOutpostArns; }
+    inline const Aws::Vector<Aws::String>& GetPreferredOutpostArns() const { return m_preferredOutpostArns; }
     inline bool PreferredOutpostArnsHasBeenSet() const { return m_preferredOutpostArnsHasBeenSet; }
-    inline void SetPreferredOutpostArns(const Aws::Vector<Aws::String>& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns = value; }
-    inline void SetPreferredOutpostArns(Aws::Vector<Aws::String>&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns = std::move(value); }
-    inline CreateCacheClusterRequest& WithPreferredOutpostArns(const Aws::Vector<Aws::String>& value) { SetPreferredOutpostArns(value); return *this;}
-    inline CreateCacheClusterRequest& WithPreferredOutpostArns(Aws::Vector<Aws::String>&& value) { SetPreferredOutpostArns(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& AddPreferredOutpostArns(const Aws::String& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
-    inline CreateCacheClusterRequest& AddPreferredOutpostArns(Aws::String&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(std::move(value)); return *this; }
-    inline CreateCacheClusterRequest& AddPreferredOutpostArns(const char* value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
+    template<typename PreferredOutpostArnsT = Aws::Vector<Aws::String>>
+    void SetPreferredOutpostArns(PreferredOutpostArnsT&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns = std::forward<PreferredOutpostArnsT>(value); }
+    template<typename PreferredOutpostArnsT = Aws::Vector<Aws::String>>
+    CreateCacheClusterRequest& WithPreferredOutpostArns(PreferredOutpostArnsT&& value) { SetPreferredOutpostArns(std::forward<PreferredOutpostArnsT>(value)); return *this;}
+    template<typename PreferredOutpostArnsT = Aws::String>
+    CreateCacheClusterRequest& AddPreferredOutpostArns(PreferredOutpostArnsT&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.emplace_back(std::forward<PreferredOutpostArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the destination, format and type of the logs. </p>
      */
-    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const { return m_logDeliveryConfigurations; }
     inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
-    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
-    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
-    inline CreateCacheClusterRequest& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { SetLogDeliveryConfigurations(value); return *this;}
-    inline CreateCacheClusterRequest& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
-    inline CreateCacheClusterRequest& AddLogDeliveryConfigurations(const LogDeliveryConfigurationRequest& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
-    inline CreateCacheClusterRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+    template<typename LogDeliveryConfigurationsT = Aws::Vector<LogDeliveryConfigurationRequest>>
+    void SetLogDeliveryConfigurations(LogDeliveryConfigurationsT&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::forward<LogDeliveryConfigurationsT>(value); }
+    template<typename LogDeliveryConfigurationsT = Aws::Vector<LogDeliveryConfigurationRequest>>
+    CreateCacheClusterRequest& WithLogDeliveryConfigurations(LogDeliveryConfigurationsT&& value) { SetLogDeliveryConfigurations(std::forward<LogDeliveryConfigurationsT>(value)); return *this;}
+    template<typename LogDeliveryConfigurationsT = LogDeliveryConfigurationRequest>
+    CreateCacheClusterRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationsT&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.emplace_back(std::forward<LogDeliveryConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A flag that enables in-transit encryption when set to true.</p>
      */
-    inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
+    inline bool GetTransitEncryptionEnabled() const { return m_transitEncryptionEnabled; }
     inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
     inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
     inline CreateCacheClusterRequest& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
@@ -588,12 +551,10 @@ namespace Model
      * and above on all instances built on the <a
      * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>. </p>
      */
-    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
+    inline NetworkType GetNetworkType() const { return m_networkType; }
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    inline void SetNetworkType(const NetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
-    inline void SetNetworkType(NetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
-    inline CreateCacheClusterRequest& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
-    inline CreateCacheClusterRequest& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline CreateCacheClusterRequest& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
     ///@}
 
     ///@{
@@ -604,12 +565,10 @@ namespace Model
      * version 1.6.6 and above on all instances built on the <a
      * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
-    inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
+    inline IpDiscovery GetIpDiscovery() const { return m_ipDiscovery; }
     inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
-    inline void SetIpDiscovery(const IpDiscovery& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
-    inline void SetIpDiscovery(IpDiscovery&& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = std::move(value); }
-    inline CreateCacheClusterRequest& WithIpDiscovery(const IpDiscovery& value) { SetIpDiscovery(value); return *this;}
-    inline CreateCacheClusterRequest& WithIpDiscovery(IpDiscovery&& value) { SetIpDiscovery(std::move(value)); return *this;}
+    inline void SetIpDiscovery(IpDiscovery value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
+    inline CreateCacheClusterRequest& WithIpDiscovery(IpDiscovery value) { SetIpDiscovery(value); return *this;}
     ///@}
   private:
 
@@ -619,7 +578,7 @@ namespace Model
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet = false;
 
-    AZMode m_aZMode;
+    AZMode m_aZMode{AZMode::NOT_SET};
     bool m_aZModeHasBeenSet = false;
 
     Aws::String m_preferredAvailabilityZone;
@@ -628,7 +587,7 @@ namespace Model
     Aws::Vector<Aws::String> m_preferredAvailabilityZones;
     bool m_preferredAvailabilityZonesHasBeenSet = false;
 
-    int m_numCacheNodes;
+    int m_numCacheNodes{0};
     bool m_numCacheNodesHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
@@ -664,16 +623,16 @@ namespace Model
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_notificationTopicArn;
     bool m_notificationTopicArnHasBeenSet = false;
 
-    bool m_autoMinorVersionUpgrade;
+    bool m_autoMinorVersionUpgrade{false};
     bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
-    int m_snapshotRetentionLimit;
+    int m_snapshotRetentionLimit{0};
     bool m_snapshotRetentionLimitHasBeenSet = false;
 
     Aws::String m_snapshotWindow;
@@ -682,7 +641,7 @@ namespace Model
     Aws::String m_authToken;
     bool m_authTokenHasBeenSet = false;
 
-    OutpostMode m_outpostMode;
+    OutpostMode m_outpostMode{OutpostMode::NOT_SET};
     bool m_outpostModeHasBeenSet = false;
 
     Aws::String m_preferredOutpostArn;
@@ -694,13 +653,13 @@ namespace Model
     Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
     bool m_logDeliveryConfigurationsHasBeenSet = false;
 
-    bool m_transitEncryptionEnabled;
+    bool m_transitEncryptionEnabled{false};
     bool m_transitEncryptionEnabledHasBeenSet = false;
 
-    NetworkType m_networkType;
+    NetworkType m_networkType{NetworkType::NOT_SET};
     bool m_networkTypeHasBeenSet = false;
 
-    IpDiscovery m_ipDiscovery;
+    IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
     bool m_ipDiscoveryHasBeenSet = false;
   };
 

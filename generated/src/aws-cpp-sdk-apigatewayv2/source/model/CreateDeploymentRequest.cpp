@@ -12,13 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeploymentRequest::CreateDeploymentRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_stageNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

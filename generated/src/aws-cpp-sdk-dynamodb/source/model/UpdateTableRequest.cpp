@@ -12,27 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTableRequest::UpdateTableRequest() : 
-    m_attributeDefinitionsHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_billingMode(BillingMode::NOT_SET),
-    m_billingModeHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_globalSecondaryIndexUpdatesHasBeenSet(false),
-    m_streamSpecificationHasBeenSet(false),
-    m_sSESpecificationHasBeenSet(false),
-    m_replicaUpdatesHasBeenSet(false),
-    m_tableClass(TableClass::NOT_SET),
-    m_tableClassHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false),
-    m_multiRegionConsistency(MultiRegionConsistency::NOT_SET),
-    m_multiRegionConsistencyHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false),
-    m_warmThroughputHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTableRequest::SerializePayload() const
 {
   JsonValue payload;

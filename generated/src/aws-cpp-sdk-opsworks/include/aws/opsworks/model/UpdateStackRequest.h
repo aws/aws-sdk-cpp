@@ -27,7 +27,7 @@ namespace Model
   class UpdateStackRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API UpdateStackRequest();
+    AWS_OPSWORKS_API UpdateStackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline UpdateStackRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline UpdateStackRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    UpdateStackRequest& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stack's new name. Stack names can be a maximum of 64 characters.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateStackRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateStackRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateStackRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,32 +69,27 @@ namespace Model
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p>
      */
-    inline const Aws::Map<StackAttributesKeys, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<StackAttributesKeys, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<StackAttributesKeys, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline UpdateStackRequest& WithAttributes(const Aws::Map<StackAttributesKeys, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline UpdateStackRequest& WithAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline UpdateStackRequest& AddAttributes(const StackAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline UpdateStackRequest& AddAttributes(StackAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline UpdateStackRequest& AddAttributes(const StackAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline UpdateStackRequest& AddAttributes(StackAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateStackRequest& AddAttributes(StackAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline UpdateStackRequest& AddAttributes(const StackAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<StackAttributesKeys, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<StackAttributesKeys, Aws::String>>
+    UpdateStackRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    inline UpdateStackRequest& AddAttributes(StackAttributesKeys key, Aws::String value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Do not use this parameter. You cannot update a stack's service role.</p>
      */
-    inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+    inline const Aws::String& GetServiceRoleArn() const { return m_serviceRoleArn; }
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
-    inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
-    inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
-    inline UpdateStackRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
-    inline UpdateStackRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+    template<typename ServiceRoleArnT = Aws::String>
+    void SetServiceRoleArn(ServiceRoleArnT&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::forward<ServiceRoleArnT>(value); }
+    template<typename ServiceRoleArnT = Aws::String>
+    UpdateStackRequest& WithServiceRoleArn(ServiceRoleArnT&& value) { SetServiceRoleArn(std::forward<ServiceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +99,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
-    inline const Aws::String& GetDefaultInstanceProfileArn() const{ return m_defaultInstanceProfileArn; }
+    inline const Aws::String& GetDefaultInstanceProfileArn() const { return m_defaultInstanceProfileArn; }
     inline bool DefaultInstanceProfileArnHasBeenSet() const { return m_defaultInstanceProfileArnHasBeenSet; }
-    inline void SetDefaultInstanceProfileArn(const Aws::String& value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn = value; }
-    inline void SetDefaultInstanceProfileArn(Aws::String&& value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn = std::move(value); }
-    inline void SetDefaultInstanceProfileArn(const char* value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn.assign(value); }
-    inline UpdateStackRequest& WithDefaultInstanceProfileArn(const Aws::String& value) { SetDefaultInstanceProfileArn(value); return *this;}
-    inline UpdateStackRequest& WithDefaultInstanceProfileArn(Aws::String&& value) { SetDefaultInstanceProfileArn(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithDefaultInstanceProfileArn(const char* value) { SetDefaultInstanceProfileArn(value); return *this;}
+    template<typename DefaultInstanceProfileArnT = Aws::String>
+    void SetDefaultInstanceProfileArn(DefaultInstanceProfileArnT&& value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn = std::forward<DefaultInstanceProfileArnT>(value); }
+    template<typename DefaultInstanceProfileArnT = Aws::String>
+    UpdateStackRequest& WithDefaultInstanceProfileArn(DefaultInstanceProfileArnT&& value) { SetDefaultInstanceProfileArn(std::forward<DefaultInstanceProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,14 +133,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks
      * Stacks Operating Systems</a>.</p>
      */
-    inline const Aws::String& GetDefaultOs() const{ return m_defaultOs; }
+    inline const Aws::String& GetDefaultOs() const { return m_defaultOs; }
     inline bool DefaultOsHasBeenSet() const { return m_defaultOsHasBeenSet; }
-    inline void SetDefaultOs(const Aws::String& value) { m_defaultOsHasBeenSet = true; m_defaultOs = value; }
-    inline void SetDefaultOs(Aws::String&& value) { m_defaultOsHasBeenSet = true; m_defaultOs = std::move(value); }
-    inline void SetDefaultOs(const char* value) { m_defaultOsHasBeenSet = true; m_defaultOs.assign(value); }
-    inline UpdateStackRequest& WithDefaultOs(const Aws::String& value) { SetDefaultOs(value); return *this;}
-    inline UpdateStackRequest& WithDefaultOs(Aws::String&& value) { SetDefaultOs(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithDefaultOs(const char* value) { SetDefaultOs(value); return *this;}
+    template<typename DefaultOsT = Aws::String>
+    void SetDefaultOs(DefaultOsT&& value) { m_defaultOsHasBeenSet = true; m_defaultOs = std::forward<DefaultOsT>(value); }
+    template<typename DefaultOsT = Aws::String>
+    UpdateStackRequest& WithDefaultOs(DefaultOsT&& value) { SetDefaultOs(std::forward<DefaultOsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,14 +159,12 @@ namespace Model
      * <code>GetHostNameSuggestion</code>, which returns a host name based on the
      * current theme.</p>
      */
-    inline const Aws::String& GetHostnameTheme() const{ return m_hostnameTheme; }
+    inline const Aws::String& GetHostnameTheme() const { return m_hostnameTheme; }
     inline bool HostnameThemeHasBeenSet() const { return m_hostnameThemeHasBeenSet; }
-    inline void SetHostnameTheme(const Aws::String& value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme = value; }
-    inline void SetHostnameTheme(Aws::String&& value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme = std::move(value); }
-    inline void SetHostnameTheme(const char* value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme.assign(value); }
-    inline UpdateStackRequest& WithHostnameTheme(const Aws::String& value) { SetHostnameTheme(value); return *this;}
-    inline UpdateStackRequest& WithHostnameTheme(Aws::String&& value) { SetHostnameTheme(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithHostnameTheme(const char* value) { SetHostnameTheme(value); return *this;}
+    template<typename HostnameThemeT = Aws::String>
+    void SetHostnameTheme(HostnameThemeT&& value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme = std::forward<HostnameThemeT>(value); }
+    template<typename HostnameThemeT = Aws::String>
+    UpdateStackRequest& WithHostnameTheme(HostnameThemeT&& value) { SetHostnameTheme(std::forward<HostnameThemeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,14 +176,12 @@ namespace Model
      * subnet must be in the same zone. For more information, see <a>CreateStack</a>.
      * </p>
      */
-    inline const Aws::String& GetDefaultAvailabilityZone() const{ return m_defaultAvailabilityZone; }
+    inline const Aws::String& GetDefaultAvailabilityZone() const { return m_defaultAvailabilityZone; }
     inline bool DefaultAvailabilityZoneHasBeenSet() const { return m_defaultAvailabilityZoneHasBeenSet; }
-    inline void SetDefaultAvailabilityZone(const Aws::String& value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone = value; }
-    inline void SetDefaultAvailabilityZone(Aws::String&& value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone = std::move(value); }
-    inline void SetDefaultAvailabilityZone(const char* value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone.assign(value); }
-    inline UpdateStackRequest& WithDefaultAvailabilityZone(const Aws::String& value) { SetDefaultAvailabilityZone(value); return *this;}
-    inline UpdateStackRequest& WithDefaultAvailabilityZone(Aws::String&& value) { SetDefaultAvailabilityZone(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithDefaultAvailabilityZone(const char* value) { SetDefaultAvailabilityZone(value); return *this;}
+    template<typename DefaultAvailabilityZoneT = Aws::String>
+    void SetDefaultAvailabilityZone(DefaultAvailabilityZoneT&& value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone = std::forward<DefaultAvailabilityZoneT>(value); }
+    template<typename DefaultAvailabilityZoneT = Aws::String>
+    UpdateStackRequest& WithDefaultAvailabilityZone(DefaultAvailabilityZoneT&& value) { SetDefaultAvailabilityZone(std::forward<DefaultAvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -210,14 +193,12 @@ namespace Model
      * be in that zone. For information on default values and when this parameter is
      * required, see the <code>VpcId</code> parameter description. </p>
      */
-    inline const Aws::String& GetDefaultSubnetId() const{ return m_defaultSubnetId; }
+    inline const Aws::String& GetDefaultSubnetId() const { return m_defaultSubnetId; }
     inline bool DefaultSubnetIdHasBeenSet() const { return m_defaultSubnetIdHasBeenSet; }
-    inline void SetDefaultSubnetId(const Aws::String& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = value; }
-    inline void SetDefaultSubnetId(Aws::String&& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = std::move(value); }
-    inline void SetDefaultSubnetId(const char* value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId.assign(value); }
-    inline UpdateStackRequest& WithDefaultSubnetId(const Aws::String& value) { SetDefaultSubnetId(value); return *this;}
-    inline UpdateStackRequest& WithDefaultSubnetId(Aws::String&& value) { SetDefaultSubnetId(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithDefaultSubnetId(const char* value) { SetDefaultSubnetId(value); return *this;}
+    template<typename DefaultSubnetIdT = Aws::String>
+    void SetDefaultSubnetId(DefaultSubnetIdT&& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = std::forward<DefaultSubnetIdT>(value); }
+    template<typename DefaultSubnetIdT = Aws::String>
+    UpdateStackRequest& WithDefaultSubnetId(DefaultSubnetIdT&& value) { SetDefaultSubnetId(std::forward<DefaultSubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -230,14 +211,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
-    inline const Aws::String& GetCustomJson() const{ return m_customJson; }
+    inline const Aws::String& GetCustomJson() const { return m_customJson; }
     inline bool CustomJsonHasBeenSet() const { return m_customJsonHasBeenSet; }
-    inline void SetCustomJson(const Aws::String& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
-    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = std::move(value); }
-    inline void SetCustomJson(const char* value) { m_customJsonHasBeenSet = true; m_customJson.assign(value); }
-    inline UpdateStackRequest& WithCustomJson(const Aws::String& value) { SetCustomJson(value); return *this;}
-    inline UpdateStackRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
+    template<typename CustomJsonT = Aws::String>
+    void SetCustomJson(CustomJsonT&& value) { m_customJsonHasBeenSet = true; m_customJson = std::forward<CustomJsonT>(value); }
+    template<typename CustomJsonT = Aws::String>
+    UpdateStackRequest& WithCustomJson(CustomJsonT&& value) { SetCustomJson(std::forward<CustomJsonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -247,12 +226,12 @@ namespace Model
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
      * currently 12.</p>
      */
-    inline const StackConfigurationManager& GetConfigurationManager() const{ return m_configurationManager; }
+    inline const StackConfigurationManager& GetConfigurationManager() const { return m_configurationManager; }
     inline bool ConfigurationManagerHasBeenSet() const { return m_configurationManagerHasBeenSet; }
-    inline void SetConfigurationManager(const StackConfigurationManager& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
-    inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::move(value); }
-    inline UpdateStackRequest& WithConfigurationManager(const StackConfigurationManager& value) { SetConfigurationManager(value); return *this;}
-    inline UpdateStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
+    template<typename ConfigurationManagerT = StackConfigurationManager>
+    void SetConfigurationManager(ConfigurationManagerT&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::forward<ConfigurationManagerT>(value); }
+    template<typename ConfigurationManagerT = StackConfigurationManager>
+    UpdateStackRequest& WithConfigurationManager(ConfigurationManagerT&& value) { SetConfigurationManager(std::forward<ConfigurationManagerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -263,19 +242,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
-    inline const ChefConfiguration& GetChefConfiguration() const{ return m_chefConfiguration; }
+    inline const ChefConfiguration& GetChefConfiguration() const { return m_chefConfiguration; }
     inline bool ChefConfigurationHasBeenSet() const { return m_chefConfigurationHasBeenSet; }
-    inline void SetChefConfiguration(const ChefConfiguration& value) { m_chefConfigurationHasBeenSet = true; m_chefConfiguration = value; }
-    inline void SetChefConfiguration(ChefConfiguration&& value) { m_chefConfigurationHasBeenSet = true; m_chefConfiguration = std::move(value); }
-    inline UpdateStackRequest& WithChefConfiguration(const ChefConfiguration& value) { SetChefConfiguration(value); return *this;}
-    inline UpdateStackRequest& WithChefConfiguration(ChefConfiguration&& value) { SetChefConfiguration(std::move(value)); return *this;}
+    template<typename ChefConfigurationT = ChefConfiguration>
+    void SetChefConfiguration(ChefConfigurationT&& value) { m_chefConfigurationHasBeenSet = true; m_chefConfiguration = std::forward<ChefConfigurationT>(value); }
+    template<typename ChefConfigurationT = ChefConfiguration>
+    UpdateStackRequest& WithChefConfiguration(ChefConfigurationT&& value) { SetChefConfiguration(std::forward<ChefConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the stack uses custom cookbooks.</p>
      */
-    inline bool GetUseCustomCookbooks() const{ return m_useCustomCookbooks; }
+    inline bool GetUseCustomCookbooks() const { return m_useCustomCookbooks; }
     inline bool UseCustomCookbooksHasBeenSet() const { return m_useCustomCookbooksHasBeenSet; }
     inline void SetUseCustomCookbooks(bool value) { m_useCustomCookbooksHasBeenSet = true; m_useCustomCookbooks = value; }
     inline UpdateStackRequest& WithUseCustomCookbooks(bool value) { SetUseCustomCookbooks(value); return *this;}
@@ -290,12 +269,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks
      * and Recipes</a>.</p>
      */
-    inline const Source& GetCustomCookbooksSource() const{ return m_customCookbooksSource; }
+    inline const Source& GetCustomCookbooksSource() const { return m_customCookbooksSource; }
     inline bool CustomCookbooksSourceHasBeenSet() const { return m_customCookbooksSourceHasBeenSet; }
-    inline void SetCustomCookbooksSource(const Source& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = value; }
-    inline void SetCustomCookbooksSource(Source&& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = std::move(value); }
-    inline UpdateStackRequest& WithCustomCookbooksSource(const Source& value) { SetCustomCookbooksSource(value); return *this;}
-    inline UpdateStackRequest& WithCustomCookbooksSource(Source&& value) { SetCustomCookbooksSource(std::move(value)); return *this;}
+    template<typename CustomCookbooksSourceT = Source>
+    void SetCustomCookbooksSource(CustomCookbooksSourceT&& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = std::forward<CustomCookbooksSourceT>(value); }
+    template<typename CustomCookbooksSourceT = Source>
+    UpdateStackRequest& WithCustomCookbooksSource(CustomCookbooksSourceT&& value) { SetCustomCookbooksSource(std::forward<CustomCookbooksSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -312,14 +291,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
      * create an instance</a>. </p>
      */
-    inline const Aws::String& GetDefaultSshKeyName() const{ return m_defaultSshKeyName; }
+    inline const Aws::String& GetDefaultSshKeyName() const { return m_defaultSshKeyName; }
     inline bool DefaultSshKeyNameHasBeenSet() const { return m_defaultSshKeyNameHasBeenSet; }
-    inline void SetDefaultSshKeyName(const Aws::String& value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName = value; }
-    inline void SetDefaultSshKeyName(Aws::String&& value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName = std::move(value); }
-    inline void SetDefaultSshKeyName(const char* value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName.assign(value); }
-    inline UpdateStackRequest& WithDefaultSshKeyName(const Aws::String& value) { SetDefaultSshKeyName(value); return *this;}
-    inline UpdateStackRequest& WithDefaultSshKeyName(Aws::String&& value) { SetDefaultSshKeyName(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithDefaultSshKeyName(const char* value) { SetDefaultSshKeyName(value); return *this;}
+    template<typename DefaultSshKeyNameT = Aws::String>
+    void SetDefaultSshKeyName(DefaultSshKeyNameT&& value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName = std::forward<DefaultSshKeyNameT>(value); }
+    template<typename DefaultSshKeyNameT = Aws::String>
+    UpdateStackRequest& WithDefaultSshKeyName(DefaultSshKeyNameT&& value) { SetDefaultSshKeyName(std::forward<DefaultSshKeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -330,12 +307,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
-    inline const RootDeviceType& GetDefaultRootDeviceType() const{ return m_defaultRootDeviceType; }
+    inline RootDeviceType GetDefaultRootDeviceType() const { return m_defaultRootDeviceType; }
     inline bool DefaultRootDeviceTypeHasBeenSet() const { return m_defaultRootDeviceTypeHasBeenSet; }
-    inline void SetDefaultRootDeviceType(const RootDeviceType& value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = value; }
-    inline void SetDefaultRootDeviceType(RootDeviceType&& value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = std::move(value); }
-    inline UpdateStackRequest& WithDefaultRootDeviceType(const RootDeviceType& value) { SetDefaultRootDeviceType(value); return *this;}
-    inline UpdateStackRequest& WithDefaultRootDeviceType(RootDeviceType&& value) { SetDefaultRootDeviceType(std::move(value)); return *this;}
+    inline void SetDefaultRootDeviceType(RootDeviceType value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = value; }
+    inline UpdateStackRequest& WithDefaultRootDeviceType(RootDeviceType value) { SetDefaultRootDeviceType(value); return *this;}
     ///@}
 
     ///@{
@@ -358,7 +333,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
-    inline bool GetUseOpsworksSecurityGroups() const{ return m_useOpsworksSecurityGroups; }
+    inline bool GetUseOpsworksSecurityGroups() const { return m_useOpsworksSecurityGroups; }
     inline bool UseOpsworksSecurityGroupsHasBeenSet() const { return m_useOpsworksSecurityGroupsHasBeenSet; }
     inline void SetUseOpsworksSecurityGroups(bool value) { m_useOpsworksSecurityGroupsHasBeenSet = true; m_useOpsworksSecurityGroups = value; }
     inline UpdateStackRequest& WithUseOpsworksSecurityGroups(bool value) { SetUseOpsworksSecurityGroups(value); return *this;}
@@ -380,14 +355,12 @@ namespace Model
      *  <p>You can also specify an agent version when you create or update an
      * instance, which overrides the stack's default setting.</p> 
      */
-    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-    inline UpdateStackRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-    inline UpdateStackRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-    inline UpdateStackRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    template<typename AgentVersionT = Aws::String>
+    void SetAgentVersion(AgentVersionT&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::forward<AgentVersionT>(value); }
+    template<typename AgentVersionT = Aws::String>
+    UpdateStackRequest& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
     ///@}
   private:
 
@@ -427,7 +400,7 @@ namespace Model
     ChefConfiguration m_chefConfiguration;
     bool m_chefConfigurationHasBeenSet = false;
 
-    bool m_useCustomCookbooks;
+    bool m_useCustomCookbooks{false};
     bool m_useCustomCookbooksHasBeenSet = false;
 
     Source m_customCookbooksSource;
@@ -436,10 +409,10 @@ namespace Model
     Aws::String m_defaultSshKeyName;
     bool m_defaultSshKeyNameHasBeenSet = false;
 
-    RootDeviceType m_defaultRootDeviceType;
+    RootDeviceType m_defaultRootDeviceType{RootDeviceType::NOT_SET};
     bool m_defaultRootDeviceTypeHasBeenSet = false;
 
-    bool m_useOpsworksSecurityGroups;
+    bool m_useOpsworksSecurityGroups{false};
     bool m_useOpsworksSecurityGroupsHasBeenSet = false;
 
     Aws::String m_agentVersion;

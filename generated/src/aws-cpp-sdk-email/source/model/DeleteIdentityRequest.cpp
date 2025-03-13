@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DeleteIdentityRequest::DeleteIdentityRequest() : 
-    m_identityHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIdentityRequest::SerializePayload() const
 {
   Aws::StringStream ss;

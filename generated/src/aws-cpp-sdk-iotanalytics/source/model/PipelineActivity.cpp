@@ -18,22 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-PipelineActivity::PipelineActivity() : 
-    m_channelHasBeenSet(false),
-    m_lambdaHasBeenSet(false),
-    m_datastoreHasBeenSet(false),
-    m_addAttributesHasBeenSet(false),
-    m_removeAttributesHasBeenSet(false),
-    m_selectAttributesHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_mathHasBeenSet(false),
-    m_deviceRegistryEnrichHasBeenSet(false),
-    m_deviceShadowEnrichHasBeenSet(false)
-{
-}
-
 PipelineActivity::PipelineActivity(JsonView jsonValue)
-  : PipelineActivity()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ PipelineActivity& PipelineActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channel"))
   {
     m_channel = jsonValue.GetObject("channel");
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambda"))
   {
     m_lambda = jsonValue.GetObject("lambda");
-
     m_lambdaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datastore"))
   {
     m_datastore = jsonValue.GetObject("datastore");
-
     m_datastoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addAttributes"))
   {
     m_addAttributes = jsonValue.GetObject("addAttributes");
-
     m_addAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("removeAttributes"))
   {
     m_removeAttributes = jsonValue.GetObject("removeAttributes");
-
     m_removeAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectAttributes"))
   {
     m_selectAttributes = jsonValue.GetObject("selectAttributes");
-
     m_selectAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filter"))
   {
     m_filter = jsonValue.GetObject("filter");
-
     m_filterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("math"))
   {
     m_math = jsonValue.GetObject("math");
-
     m_mathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceRegistryEnrich"))
   {
     m_deviceRegistryEnrich = jsonValue.GetObject("deviceRegistryEnrich");
-
     m_deviceRegistryEnrichHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceShadowEnrich"))
   {
     m_deviceShadowEnrich = jsonValue.GetObject("deviceShadowEnrich");
-
     m_deviceShadowEnrichHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateVpcConnectorResult
   {
   public:
-    AWS_APPRUNNER_API CreateVpcConnectorResult();
+    AWS_APPRUNNER_API CreateVpcConnectorResult() = default;
     AWS_APPRUNNER_API CreateVpcConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPRUNNER_API CreateVpcConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A description of the App Runner VPC connector that's created by this
      * request.</p>
      */
-    inline const VpcConnector& GetVpcConnector() const{ return m_vpcConnector; }
-    inline void SetVpcConnector(const VpcConnector& value) { m_vpcConnector = value; }
-    inline void SetVpcConnector(VpcConnector&& value) { m_vpcConnector = std::move(value); }
-    inline CreateVpcConnectorResult& WithVpcConnector(const VpcConnector& value) { SetVpcConnector(value); return *this;}
-    inline CreateVpcConnectorResult& WithVpcConnector(VpcConnector&& value) { SetVpcConnector(std::move(value)); return *this;}
+    inline const VpcConnector& GetVpcConnector() const { return m_vpcConnector; }
+    template<typename VpcConnectorT = VpcConnector>
+    void SetVpcConnector(VpcConnectorT&& value) { m_vpcConnectorHasBeenSet = true; m_vpcConnector = std::forward<VpcConnectorT>(value); }
+    template<typename VpcConnectorT = VpcConnector>
+    CreateVpcConnectorResult& WithVpcConnector(VpcConnectorT&& value) { SetVpcConnector(std::forward<VpcConnectorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateVpcConnectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateVpcConnectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateVpcConnectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateVpcConnectorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VpcConnector m_vpcConnector;
+    bool m_vpcConnectorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

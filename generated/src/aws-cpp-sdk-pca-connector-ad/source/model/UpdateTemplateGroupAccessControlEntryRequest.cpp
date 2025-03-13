@@ -12,14 +12,6 @@ using namespace Aws::PcaConnectorAd::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTemplateGroupAccessControlEntryRequest::UpdateTemplateGroupAccessControlEntryRequest() : 
-    m_accessRightsHasBeenSet(false),
-    m_groupDisplayNameHasBeenSet(false),
-    m_groupSecurityIdentifierHasBeenSet(false),
-    m_templateArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTemplateGroupAccessControlEntryRequest::SerializePayload() const
 {
   JsonValue payload;

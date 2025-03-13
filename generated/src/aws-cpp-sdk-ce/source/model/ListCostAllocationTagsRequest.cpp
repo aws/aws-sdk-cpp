@@ -12,18 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCostAllocationTagsRequest::ListCostAllocationTagsRequest() : 
-    m_status(CostAllocationTagStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagKeysHasBeenSet(false),
-    m_type(CostAllocationTagType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListCostAllocationTagsRequest::SerializePayload() const
 {
   JsonValue payload;

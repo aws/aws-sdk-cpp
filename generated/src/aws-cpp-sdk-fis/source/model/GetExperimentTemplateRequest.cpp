@@ -12,11 +12,6 @@ using namespace Aws::FIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetExperimentTemplateRequest::GetExperimentTemplateRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetExperimentTemplateRequest::SerializePayload() const
 {
   return {};

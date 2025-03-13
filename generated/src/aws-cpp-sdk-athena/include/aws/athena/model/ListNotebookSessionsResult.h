@@ -29,7 +29,7 @@ namespace Model
   class ListNotebookSessionsResult
   {
   public:
-    AWS_ATHENA_API ListNotebookSessionsResult();
+    AWS_ATHENA_API ListNotebookSessionsResult() = default;
     AWS_ATHENA_API ListNotebookSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API ListNotebookSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of the sessions belonging to the notebook.</p>
      */
-    inline const Aws::Vector<NotebookSessionSummary>& GetNotebookSessionsList() const{ return m_notebookSessionsList; }
-    inline void SetNotebookSessionsList(const Aws::Vector<NotebookSessionSummary>& value) { m_notebookSessionsList = value; }
-    inline void SetNotebookSessionsList(Aws::Vector<NotebookSessionSummary>&& value) { m_notebookSessionsList = std::move(value); }
-    inline ListNotebookSessionsResult& WithNotebookSessionsList(const Aws::Vector<NotebookSessionSummary>& value) { SetNotebookSessionsList(value); return *this;}
-    inline ListNotebookSessionsResult& WithNotebookSessionsList(Aws::Vector<NotebookSessionSummary>&& value) { SetNotebookSessionsList(std::move(value)); return *this;}
-    inline ListNotebookSessionsResult& AddNotebookSessionsList(const NotebookSessionSummary& value) { m_notebookSessionsList.push_back(value); return *this; }
-    inline ListNotebookSessionsResult& AddNotebookSessionsList(NotebookSessionSummary&& value) { m_notebookSessionsList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<NotebookSessionSummary>& GetNotebookSessionsList() const { return m_notebookSessionsList; }
+    template<typename NotebookSessionsListT = Aws::Vector<NotebookSessionSummary>>
+    void SetNotebookSessionsList(NotebookSessionsListT&& value) { m_notebookSessionsListHasBeenSet = true; m_notebookSessionsList = std::forward<NotebookSessionsListT>(value); }
+    template<typename NotebookSessionsListT = Aws::Vector<NotebookSessionSummary>>
+    ListNotebookSessionsResult& WithNotebookSessionsList(NotebookSessionsListT&& value) { SetNotebookSessionsList(std::forward<NotebookSessionsListT>(value)); return *this;}
+    template<typename NotebookSessionsListT = NotebookSessionSummary>
+    ListNotebookSessionsResult& AddNotebookSessionsList(NotebookSessionsListT&& value) { m_notebookSessionsListHasBeenSet = true; m_notebookSessionsList.emplace_back(std::forward<NotebookSessionsListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * pass in the <code>NextToken</code> from the response object of the previous page
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListNotebookSessionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListNotebookSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListNotebookSessionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListNotebookSessionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListNotebookSessionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListNotebookSessionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListNotebookSessionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListNotebookSessionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<NotebookSessionSummary> m_notebookSessionsList;
+    bool m_notebookSessionsListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

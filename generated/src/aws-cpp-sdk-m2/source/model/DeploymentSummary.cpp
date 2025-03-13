@@ -18,21 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-DeploymentSummary::DeploymentSummary() : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationVersion(0),
-    m_applicationVersionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_status(DeploymentLifecycle::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 DeploymentSummary::DeploymentSummary(JsonView jsonValue)
-  : DeploymentSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ DeploymentSummary& DeploymentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationVersion"))
   {
     m_applicationVersion = jsonValue.GetInteger("applicationVersion");
-
     m_applicationVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DeploymentLifecycleMapper::GetDeploymentLifecycleForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

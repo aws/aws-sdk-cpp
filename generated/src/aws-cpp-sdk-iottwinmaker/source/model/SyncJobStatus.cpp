@@ -18,15 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-SyncJobStatus::SyncJobStatus() : 
-    m_state(SyncJobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 SyncJobStatus::SyncJobStatus(JsonView jsonValue)
-  : SyncJobStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SyncJobStatus& SyncJobStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("state"))
   {
     m_state = SyncJobStateMapper::GetSyncJobStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

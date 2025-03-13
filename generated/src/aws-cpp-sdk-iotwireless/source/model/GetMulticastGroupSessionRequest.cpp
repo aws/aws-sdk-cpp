@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMulticastGroupSessionRequest::GetMulticastGroupSessionRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetMulticastGroupSessionRequest::SerializePayload() const
 {
   return {};

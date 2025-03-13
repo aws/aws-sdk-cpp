@@ -26,7 +26,7 @@ namespace Model
   class ListTestConfigurationsRequest : public AppTestRequest
   {
   public:
-    AWS_APPTEST_API ListTestConfigurationsRequest();
+    AWS_APPTEST_API ListTestConfigurationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,36 +43,33 @@ namespace Model
     /**
      * <p>The configuration IDs of the test configurations.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTestConfigurationIds() const{ return m_testConfigurationIds; }
+    inline const Aws::Vector<Aws::String>& GetTestConfigurationIds() const { return m_testConfigurationIds; }
     inline bool TestConfigurationIdsHasBeenSet() const { return m_testConfigurationIdsHasBeenSet; }
-    inline void SetTestConfigurationIds(const Aws::Vector<Aws::String>& value) { m_testConfigurationIdsHasBeenSet = true; m_testConfigurationIds = value; }
-    inline void SetTestConfigurationIds(Aws::Vector<Aws::String>&& value) { m_testConfigurationIdsHasBeenSet = true; m_testConfigurationIds = std::move(value); }
-    inline ListTestConfigurationsRequest& WithTestConfigurationIds(const Aws::Vector<Aws::String>& value) { SetTestConfigurationIds(value); return *this;}
-    inline ListTestConfigurationsRequest& WithTestConfigurationIds(Aws::Vector<Aws::String>&& value) { SetTestConfigurationIds(std::move(value)); return *this;}
-    inline ListTestConfigurationsRequest& AddTestConfigurationIds(const Aws::String& value) { m_testConfigurationIdsHasBeenSet = true; m_testConfigurationIds.push_back(value); return *this; }
-    inline ListTestConfigurationsRequest& AddTestConfigurationIds(Aws::String&& value) { m_testConfigurationIdsHasBeenSet = true; m_testConfigurationIds.push_back(std::move(value)); return *this; }
-    inline ListTestConfigurationsRequest& AddTestConfigurationIds(const char* value) { m_testConfigurationIdsHasBeenSet = true; m_testConfigurationIds.push_back(value); return *this; }
+    template<typename TestConfigurationIdsT = Aws::Vector<Aws::String>>
+    void SetTestConfigurationIds(TestConfigurationIdsT&& value) { m_testConfigurationIdsHasBeenSet = true; m_testConfigurationIds = std::forward<TestConfigurationIdsT>(value); }
+    template<typename TestConfigurationIdsT = Aws::Vector<Aws::String>>
+    ListTestConfigurationsRequest& WithTestConfigurationIds(TestConfigurationIdsT&& value) { SetTestConfigurationIds(std::forward<TestConfigurationIdsT>(value)); return *this;}
+    template<typename TestConfigurationIdsT = Aws::String>
+    ListTestConfigurationsRequest& AddTestConfigurationIds(TestConfigurationIdsT&& value) { m_testConfigurationIdsHasBeenSet = true; m_testConfigurationIds.emplace_back(std::forward<TestConfigurationIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The next token for the test configurations.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTestConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTestConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTestConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTestConfigurationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum results of the test configuration.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTestConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -85,7 +82,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

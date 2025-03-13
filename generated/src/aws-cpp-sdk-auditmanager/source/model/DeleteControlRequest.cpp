@@ -12,11 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteControlRequest::DeleteControlRequest() : 
-    m_controlIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteControlRequest::SerializePayload() const
 {
   return {};

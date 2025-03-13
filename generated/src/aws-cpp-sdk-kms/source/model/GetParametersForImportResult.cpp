@@ -18,10 +18,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetParametersForImportResult::GetParametersForImportResult()
-{
-}
-
 GetParametersForImportResult::GetParametersForImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -33,31 +29,30 @@ GetParametersForImportResult& GetParametersForImportResult::operator =(const Aws
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
+    m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportToken"))
   {
     m_importToken = HashingUtils::Base64Decode(jsonValue.GetString("ImportToken"));
+    m_importTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicKey"))
   {
     m_publicKey = HashingUtils::Base64Decode(jsonValue.GetString("PublicKey"));
+    m_publicKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParametersValidTo"))
   {
     m_parametersValidTo = jsonValue.GetDouble("ParametersValidTo");
-
+    m_parametersValidToHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

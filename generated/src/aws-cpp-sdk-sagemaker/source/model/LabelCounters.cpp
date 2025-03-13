@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-LabelCounters::LabelCounters() : 
-    m_totalLabeled(0),
-    m_totalLabeledHasBeenSet(false),
-    m_humanLabeled(0),
-    m_humanLabeledHasBeenSet(false),
-    m_machineLabeled(0),
-    m_machineLabeledHasBeenSet(false),
-    m_failedNonRetryableError(0),
-    m_failedNonRetryableErrorHasBeenSet(false),
-    m_unlabeled(0),
-    m_unlabeledHasBeenSet(false)
-{
-}
-
 LabelCounters::LabelCounters(JsonView jsonValue)
-  : LabelCounters()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ LabelCounters& LabelCounters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TotalLabeled"))
   {
     m_totalLabeled = jsonValue.GetInteger("TotalLabeled");
-
     m_totalLabeledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HumanLabeled"))
   {
     m_humanLabeled = jsonValue.GetInteger("HumanLabeled");
-
     m_humanLabeledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MachineLabeled"))
   {
     m_machineLabeled = jsonValue.GetInteger("MachineLabeled");
-
     m_machineLabeledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedNonRetryableError"))
   {
     m_failedNonRetryableError = jsonValue.GetInteger("FailedNonRetryableError");
-
     m_failedNonRetryableErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unlabeled"))
   {
     m_unlabeled = jsonValue.GetInteger("Unlabeled");
-
     m_unlabeledHasBeenSet = true;
   }
-
   return *this;
 }
 

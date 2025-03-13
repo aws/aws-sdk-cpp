@@ -18,21 +18,7 @@ namespace IoT
 namespace Model
 {
 
-StreamInfo::StreamInfo() : 
-    m_streamIdHasBeenSet(false),
-    m_streamArnHasBeenSet(false),
-    m_streamVersion(0),
-    m_streamVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_filesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 StreamInfo::StreamInfo(JsonView jsonValue)
-  : StreamInfo()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ StreamInfo& StreamInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");
-
     m_streamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamArn"))
   {
     m_streamArn = jsonValue.GetString("streamArn");
-
     m_streamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamVersion"))
   {
     m_streamVersion = jsonValue.GetInteger("streamVersion");
-
     m_streamVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("files"))
   {
     Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
@@ -76,28 +54,21 @@ StreamInfo& StreamInfo::operator =(JsonView jsonValue)
     }
     m_filesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

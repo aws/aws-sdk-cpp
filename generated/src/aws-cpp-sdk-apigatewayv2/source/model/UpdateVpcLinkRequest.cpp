@@ -12,12 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateVpcLinkRequest::UpdateVpcLinkRequest() : 
-    m_nameHasBeenSet(false),
-    m_vpcLinkIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVpcLinkRequest::SerializePayload() const
 {
   JsonValue payload;

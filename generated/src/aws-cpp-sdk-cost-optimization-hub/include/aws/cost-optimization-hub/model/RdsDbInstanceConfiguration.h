@@ -32,7 +32,7 @@ namespace Model
   class RdsDbInstanceConfiguration
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API RdsDbInstanceConfiguration();
+    AWS_COSTOPTIMIZATIONHUB_API RdsDbInstanceConfiguration() = default;
     AWS_COSTOPTIMIZATIONHUB_API RdsDbInstanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API RdsDbInstanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Details about the instance configuration.</p>
      */
-    inline const DbInstanceConfiguration& GetInstance() const{ return m_instance; }
+    inline const DbInstanceConfiguration& GetInstance() const { return m_instance; }
     inline bool InstanceHasBeenSet() const { return m_instanceHasBeenSet; }
-    inline void SetInstance(const DbInstanceConfiguration& value) { m_instanceHasBeenSet = true; m_instance = value; }
-    inline void SetInstance(DbInstanceConfiguration&& value) { m_instanceHasBeenSet = true; m_instance = std::move(value); }
-    inline RdsDbInstanceConfiguration& WithInstance(const DbInstanceConfiguration& value) { SetInstance(value); return *this;}
-    inline RdsDbInstanceConfiguration& WithInstance(DbInstanceConfiguration&& value) { SetInstance(std::move(value)); return *this;}
+    template<typename InstanceT = DbInstanceConfiguration>
+    void SetInstance(InstanceT&& value) { m_instanceHasBeenSet = true; m_instance = std::forward<InstanceT>(value); }
+    template<typename InstanceT = DbInstanceConfiguration>
+    RdsDbInstanceConfiguration& WithInstance(InstanceT&& value) { SetInstance(std::forward<InstanceT>(value)); return *this;}
     ///@}
   private:
 

@@ -27,7 +27,7 @@ namespace Model
   class VerifyMacResult
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API VerifyMacResult();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API VerifyMacResult() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API VerifyMacResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API VerifyMacResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
      * <p>The <code>keyARN</code> of the encryption key that Amazon Web Services
      * Payment Cryptography uses for MAC verification.</p>
      */
-    inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
-    inline void SetKeyArn(const Aws::String& value) { m_keyArn = value; }
-    inline void SetKeyArn(Aws::String&& value) { m_keyArn = std::move(value); }
-    inline void SetKeyArn(const char* value) { m_keyArn.assign(value); }
-    inline VerifyMacResult& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-    inline VerifyMacResult& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-    inline VerifyMacResult& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    inline const Aws::String& GetKeyArn() const { return m_keyArn; }
+    template<typename KeyArnT = Aws::String>
+    void SetKeyArn(KeyArnT&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::forward<KeyArnT>(value); }
+    template<typename KeyArnT = Aws::String>
+    VerifyMacResult& WithKeyArn(KeyArnT&& value) { SetKeyArn(std::forward<KeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,31 @@ namespace Model
      * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
      * according to the CMAC specification.</p>
      */
-    inline const Aws::String& GetKeyCheckValue() const{ return m_keyCheckValue; }
-    inline void SetKeyCheckValue(const Aws::String& value) { m_keyCheckValue = value; }
-    inline void SetKeyCheckValue(Aws::String&& value) { m_keyCheckValue = std::move(value); }
-    inline void SetKeyCheckValue(const char* value) { m_keyCheckValue.assign(value); }
-    inline VerifyMacResult& WithKeyCheckValue(const Aws::String& value) { SetKeyCheckValue(value); return *this;}
-    inline VerifyMacResult& WithKeyCheckValue(Aws::String&& value) { SetKeyCheckValue(std::move(value)); return *this;}
-    inline VerifyMacResult& WithKeyCheckValue(const char* value) { SetKeyCheckValue(value); return *this;}
+    inline const Aws::String& GetKeyCheckValue() const { return m_keyCheckValue; }
+    template<typename KeyCheckValueT = Aws::String>
+    void SetKeyCheckValue(KeyCheckValueT&& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = std::forward<KeyCheckValueT>(value); }
+    template<typename KeyCheckValueT = Aws::String>
+    VerifyMacResult& WithKeyCheckValue(KeyCheckValueT&& value) { SetKeyCheckValue(std::forward<KeyCheckValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline VerifyMacResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline VerifyMacResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline VerifyMacResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    VerifyMacResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyArn;
+    bool m_keyArnHasBeenSet = false;
 
     Aws::String m_keyCheckValue;
+    bool m_keyCheckValueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

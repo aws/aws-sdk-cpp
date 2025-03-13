@@ -33,7 +33,7 @@ namespace Model
   class MessageReviewHandler
   {
   public:
-    AWS_IVSCHAT_API MessageReviewHandler();
+    AWS_IVSCHAT_API MessageReviewHandler() = default;
     AWS_IVSCHAT_API MessageReviewHandler(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSCHAT_API MessageReviewHandler& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>Identifier of the message review handler. Currently this must be an ARN of a
      * lambda function.</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline MessageReviewHandler& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline MessageReviewHandler& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline MessageReviewHandler& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    MessageReviewHandler& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,19 +62,17 @@ namespace Model
      * to all users connected to the room. If denied, the message is not delivered to
      * any user. Default: <code>ALLOW</code>.</p>
      */
-    inline const FallbackResult& GetFallbackResult() const{ return m_fallbackResult; }
+    inline FallbackResult GetFallbackResult() const { return m_fallbackResult; }
     inline bool FallbackResultHasBeenSet() const { return m_fallbackResultHasBeenSet; }
-    inline void SetFallbackResult(const FallbackResult& value) { m_fallbackResultHasBeenSet = true; m_fallbackResult = value; }
-    inline void SetFallbackResult(FallbackResult&& value) { m_fallbackResultHasBeenSet = true; m_fallbackResult = std::move(value); }
-    inline MessageReviewHandler& WithFallbackResult(const FallbackResult& value) { SetFallbackResult(value); return *this;}
-    inline MessageReviewHandler& WithFallbackResult(FallbackResult&& value) { SetFallbackResult(std::move(value)); return *this;}
+    inline void SetFallbackResult(FallbackResult value) { m_fallbackResultHasBeenSet = true; m_fallbackResult = value; }
+    inline MessageReviewHandler& WithFallbackResult(FallbackResult value) { SetFallbackResult(value); return *this;}
     ///@}
   private:
 
     Aws::String m_uri;
     bool m_uriHasBeenSet = false;
 
-    FallbackResult m_fallbackResult;
+    FallbackResult m_fallbackResult{FallbackResult::NOT_SET};
     bool m_fallbackResultHasBeenSet = false;
   };
 

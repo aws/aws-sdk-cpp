@@ -32,7 +32,7 @@ namespace Model
   class AssociatedStandard
   {
   public:
-    AWS_SECURITYHUB_API AssociatedStandard();
+    AWS_SECURITYHUB_API AssociatedStandard() = default;
     AWS_SECURITYHUB_API AssociatedStandard(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AssociatedStandard& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
      * API response. </p>
      */
-    inline const Aws::String& GetStandardsId() const{ return m_standardsId; }
+    inline const Aws::String& GetStandardsId() const { return m_standardsId; }
     inline bool StandardsIdHasBeenSet() const { return m_standardsIdHasBeenSet; }
-    inline void SetStandardsId(const Aws::String& value) { m_standardsIdHasBeenSet = true; m_standardsId = value; }
-    inline void SetStandardsId(Aws::String&& value) { m_standardsIdHasBeenSet = true; m_standardsId = std::move(value); }
-    inline void SetStandardsId(const char* value) { m_standardsIdHasBeenSet = true; m_standardsId.assign(value); }
-    inline AssociatedStandard& WithStandardsId(const Aws::String& value) { SetStandardsId(value); return *this;}
-    inline AssociatedStandard& WithStandardsId(Aws::String&& value) { SetStandardsId(std::move(value)); return *this;}
-    inline AssociatedStandard& WithStandardsId(const char* value) { SetStandardsId(value); return *this;}
+    template<typename StandardsIdT = Aws::String>
+    void SetStandardsId(StandardsIdT&& value) { m_standardsIdHasBeenSet = true; m_standardsId = std::forward<StandardsIdT>(value); }
+    template<typename StandardsIdT = Aws::String>
+    AssociatedStandard& WithStandardsId(StandardsIdT&& value) { SetStandardsId(std::forward<StandardsIdT>(value)); return *this;}
     ///@}
   private:
 

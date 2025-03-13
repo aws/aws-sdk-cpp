@@ -20,14 +20,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-NestedPayload::NestedPayload() : 
-    m_greetingHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 NestedPayload::NestedPayload(const XmlNode& xmlNode)
-  : NestedPayload()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ NestedPayload& NestedPayload::operator =(const XmlNode& xmlNode)
     {
       m_greeting = Aws::Utils::Xml::DecodeEscapedXmlText(greetingNode.GetText());
       m_greetingHasBeenSet = true;
+       m_greetingHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
   }
 

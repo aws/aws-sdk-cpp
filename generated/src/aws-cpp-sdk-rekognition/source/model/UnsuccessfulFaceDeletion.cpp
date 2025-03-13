@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-UnsuccessfulFaceDeletion::UnsuccessfulFaceDeletion() : 
-    m_faceIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_reasonsHasBeenSet(false)
-{
-}
-
 UnsuccessfulFaceDeletion::UnsuccessfulFaceDeletion(JsonView jsonValue)
-  : UnsuccessfulFaceDeletion()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UnsuccessfulFaceDeletion& UnsuccessfulFaceDeletion::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("FaceId"))
   {
     m_faceId = jsonValue.GetString("FaceId");
-
     m_faceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reasons"))
   {
     Aws::Utils::Array<JsonView> reasonsJsonList = jsonValue.GetArray("Reasons");
@@ -56,7 +44,6 @@ UnsuccessfulFaceDeletion& UnsuccessfulFaceDeletion::operator =(JsonView jsonValu
     }
     m_reasonsHasBeenSet = true;
   }
-
   return *this;
 }
 

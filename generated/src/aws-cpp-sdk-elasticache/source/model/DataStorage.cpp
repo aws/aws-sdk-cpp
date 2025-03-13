@@ -20,18 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-DataStorage::DataStorage() : 
-    m_maximum(0),
-    m_maximumHasBeenSet(false),
-    m_minimum(0),
-    m_minimumHasBeenSet(false),
-    m_unit(DataStorageUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 DataStorage::DataStorage(const XmlNode& xmlNode)
-  : DataStorage()
 {
   *this = xmlNode;
 }
@@ -47,18 +36,21 @@ DataStorage& DataStorage::operator =(const XmlNode& xmlNode)
     {
       m_maximum = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNode.GetText()).c_str()).c_str());
       m_maximumHasBeenSet = true;
+       m_maximumHasBeenSet = true;
     }
     XmlNode minimumNode = resultNode.FirstChild("Minimum");
     if(!minimumNode.IsNull())
     {
       m_minimum = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minimumNode.GetText()).c_str()).c_str());
       m_minimumHasBeenSet = true;
+       m_minimumHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
     {
-      m_unit = DataStorageUnitMapper::GetDataStorageUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()).c_str());
+      m_unit = DataStorageUnitMapper::GetDataStorageUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
       m_unitHasBeenSet = true;
+       m_unitHasBeenSet = true;
     }
   }
 

@@ -18,15 +18,7 @@ namespace Route53RecoveryReadiness
 namespace Model
 {
 
-ReadinessCheckSummary::ReadinessCheckSummary() : 
-    m_readiness(Readiness::NOT_SET),
-    m_readinessHasBeenSet(false),
-    m_readinessCheckNameHasBeenSet(false)
-{
-}
-
 ReadinessCheckSummary::ReadinessCheckSummary(JsonView jsonValue)
-  : ReadinessCheckSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ReadinessCheckSummary& ReadinessCheckSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("readiness"))
   {
     m_readiness = ReadinessMapper::GetReadinessForName(jsonValue.GetString("readiness"));
-
     m_readinessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readinessCheckName"))
   {
     m_readinessCheckName = jsonValue.GetString("readinessCheckName");
-
     m_readinessCheckNameHasBeenSet = true;
   }
-
   return *this;
 }
 

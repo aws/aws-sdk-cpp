@@ -10,21 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CreateDBShardGroupRequest::CreateDBShardGroupRequest() : 
-    m_dBShardGroupIdentifierHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_computeRedundancy(0),
-    m_computeRedundancyHasBeenSet(false),
-    m_maxACU(0.0),
-    m_maxACUHasBeenSet(false),
-    m_minACU(0.0),
-    m_minACUHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDBShardGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUseCaseRequest::CreateUseCaseRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_integrationAssociationIdHasBeenSet(false),
-    m_useCaseType(UseCaseType::NOT_SET),
-    m_useCaseTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateUseCaseRequest::SerializePayload() const
 {
   JsonValue payload;

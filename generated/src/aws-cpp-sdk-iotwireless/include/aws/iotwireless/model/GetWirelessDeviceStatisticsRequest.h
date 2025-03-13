@@ -21,7 +21,7 @@ namespace Model
   class GetWirelessDeviceStatisticsRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API GetWirelessDeviceStatisticsRequest();
+    AWS_IOTWIRELESS_API GetWirelessDeviceStatisticsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the wireless device for which to get the data.</p>
      */
-    inline const Aws::String& GetWirelessDeviceId() const{ return m_wirelessDeviceId; }
+    inline const Aws::String& GetWirelessDeviceId() const { return m_wirelessDeviceId; }
     inline bool WirelessDeviceIdHasBeenSet() const { return m_wirelessDeviceIdHasBeenSet; }
-    inline void SetWirelessDeviceId(const Aws::String& value) { m_wirelessDeviceIdHasBeenSet = true; m_wirelessDeviceId = value; }
-    inline void SetWirelessDeviceId(Aws::String&& value) { m_wirelessDeviceIdHasBeenSet = true; m_wirelessDeviceId = std::move(value); }
-    inline void SetWirelessDeviceId(const char* value) { m_wirelessDeviceIdHasBeenSet = true; m_wirelessDeviceId.assign(value); }
-    inline GetWirelessDeviceStatisticsRequest& WithWirelessDeviceId(const Aws::String& value) { SetWirelessDeviceId(value); return *this;}
-    inline GetWirelessDeviceStatisticsRequest& WithWirelessDeviceId(Aws::String&& value) { SetWirelessDeviceId(std::move(value)); return *this;}
-    inline GetWirelessDeviceStatisticsRequest& WithWirelessDeviceId(const char* value) { SetWirelessDeviceId(value); return *this;}
+    template<typename WirelessDeviceIdT = Aws::String>
+    void SetWirelessDeviceId(WirelessDeviceIdT&& value) { m_wirelessDeviceIdHasBeenSet = true; m_wirelessDeviceId = std::forward<WirelessDeviceIdT>(value); }
+    template<typename WirelessDeviceIdT = Aws::String>
+    GetWirelessDeviceStatisticsRequest& WithWirelessDeviceId(WirelessDeviceIdT&& value) { SetWirelessDeviceId(std::forward<WirelessDeviceIdT>(value)); return *this;}
     ///@}
   private:
 

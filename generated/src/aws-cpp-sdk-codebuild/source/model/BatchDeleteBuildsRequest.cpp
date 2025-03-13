@@ -12,11 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteBuildsRequest::BatchDeleteBuildsRequest() : 
-    m_idsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteBuildsRequest::SerializePayload() const
 {
   JsonValue payload;

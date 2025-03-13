@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLineageGroupPolicyResult::GetLineageGroupPolicyResult()
-{
-}
-
 GetLineageGroupPolicyResult::GetLineageGroupPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetLineageGroupPolicyResult& GetLineageGroupPolicyResult::operator =(const Aws::
   if(jsonValue.ValueExists("LineageGroupArn"))
   {
     m_lineageGroupArn = jsonValue.GetString("LineageGroupArn");
-
+    m_lineageGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourcePolicy"))
   {
     m_resourcePolicy = jsonValue.GetString("ResourcePolicy");
-
+    m_resourcePolicyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -29,7 +29,7 @@ namespace Model
   class ListComputeQuotasResult
   {
   public:
-    AWS_SAGEMAKER_API ListComputeQuotasResult();
+    AWS_SAGEMAKER_API ListComputeQuotasResult() = default;
     AWS_SAGEMAKER_API ListComputeQuotasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListComputeQuotasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summaries of the compute allocation definitions.</p>
      */
-    inline const Aws::Vector<ComputeQuotaSummary>& GetComputeQuotaSummaries() const{ return m_computeQuotaSummaries; }
-    inline void SetComputeQuotaSummaries(const Aws::Vector<ComputeQuotaSummary>& value) { m_computeQuotaSummaries = value; }
-    inline void SetComputeQuotaSummaries(Aws::Vector<ComputeQuotaSummary>&& value) { m_computeQuotaSummaries = std::move(value); }
-    inline ListComputeQuotasResult& WithComputeQuotaSummaries(const Aws::Vector<ComputeQuotaSummary>& value) { SetComputeQuotaSummaries(value); return *this;}
-    inline ListComputeQuotasResult& WithComputeQuotaSummaries(Aws::Vector<ComputeQuotaSummary>&& value) { SetComputeQuotaSummaries(std::move(value)); return *this;}
-    inline ListComputeQuotasResult& AddComputeQuotaSummaries(const ComputeQuotaSummary& value) { m_computeQuotaSummaries.push_back(value); return *this; }
-    inline ListComputeQuotasResult& AddComputeQuotaSummaries(ComputeQuotaSummary&& value) { m_computeQuotaSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ComputeQuotaSummary>& GetComputeQuotaSummaries() const { return m_computeQuotaSummaries; }
+    template<typename ComputeQuotaSummariesT = Aws::Vector<ComputeQuotaSummary>>
+    void SetComputeQuotaSummaries(ComputeQuotaSummariesT&& value) { m_computeQuotaSummariesHasBeenSet = true; m_computeQuotaSummaries = std::forward<ComputeQuotaSummariesT>(value); }
+    template<typename ComputeQuotaSummariesT = Aws::Vector<ComputeQuotaSummary>>
+    ListComputeQuotasResult& WithComputeQuotaSummaries(ComputeQuotaSummariesT&& value) { SetComputeQuotaSummaries(std::forward<ComputeQuotaSummariesT>(value)); return *this;}
+    template<typename ComputeQuotaSummariesT = ComputeQuotaSummary>
+    ListComputeQuotasResult& AddComputeQuotaSummaries(ComputeQuotaSummariesT&& value) { m_computeQuotaSummariesHasBeenSet = true; m_computeQuotaSummaries.emplace_back(std::forward<ComputeQuotaSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If the previous response was truncated, you will receive this token. Use it
      * in your next request to receive the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListComputeQuotasResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListComputeQuotasResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListComputeQuotasResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListComputeQuotasResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListComputeQuotasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListComputeQuotasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListComputeQuotasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListComputeQuotasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ComputeQuotaSummary> m_computeQuotaSummaries;
+    bool m_computeQuotaSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

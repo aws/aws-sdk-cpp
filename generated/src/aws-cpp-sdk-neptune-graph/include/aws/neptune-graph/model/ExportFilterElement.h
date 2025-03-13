@@ -34,7 +34,7 @@ namespace Model
   class ExportFilterElement
   {
   public:
-    AWS_NEPTUNEGRAPH_API ExportFilterElement();
+    AWS_NEPTUNEGRAPH_API ExportFilterElement() = default;
     AWS_NEPTUNEGRAPH_API ExportFilterElement(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEGRAPH_API ExportFilterElement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,18 +45,16 @@ namespace Model
      * <p>Each property is defined by a key-value pair, where the key is the desired
      * output property name (e.g. "name"), and the value is an object.</p>
      */
-    inline const Aws::Map<Aws::String, ExportFilterPropertyAttributes>& GetProperties() const{ return m_properties; }
+    inline const Aws::Map<Aws::String, ExportFilterPropertyAttributes>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Map<Aws::String, ExportFilterPropertyAttributes>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Map<Aws::String, ExportFilterPropertyAttributes>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline ExportFilterElement& WithProperties(const Aws::Map<Aws::String, ExportFilterPropertyAttributes>& value) { SetProperties(value); return *this;}
-    inline ExportFilterElement& WithProperties(Aws::Map<Aws::String, ExportFilterPropertyAttributes>&& value) { SetProperties(std::move(value)); return *this;}
-    inline ExportFilterElement& AddProperties(const Aws::String& key, const ExportFilterPropertyAttributes& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
-    inline ExportFilterElement& AddProperties(Aws::String&& key, const ExportFilterPropertyAttributes& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
-    inline ExportFilterElement& AddProperties(const Aws::String& key, ExportFilterPropertyAttributes&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
-    inline ExportFilterElement& AddProperties(Aws::String&& key, ExportFilterPropertyAttributes&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), std::move(value)); return *this; }
-    inline ExportFilterElement& AddProperties(const char* key, ExportFilterPropertyAttributes&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
-    inline ExportFilterElement& AddProperties(const char* key, const ExportFilterPropertyAttributes& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
+    template<typename PropertiesT = Aws::Map<Aws::String, ExportFilterPropertyAttributes>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Map<Aws::String, ExportFilterPropertyAttributes>>
+    ExportFilterElement& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesKeyT = Aws::String, typename PropertiesValueT = ExportFilterPropertyAttributes>
+    ExportFilterElement& AddProperties(PropertiesKeyT&& key, PropertiesValueT&& value) {
+      m_propertiesHasBeenSet = true; m_properties.emplace(std::forward<PropertiesKeyT>(key), std::forward<PropertiesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

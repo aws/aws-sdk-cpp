@@ -35,7 +35,7 @@ namespace Model
   class StartCondition
   {
   public:
-    AWS_PINPOINT_API StartCondition();
+    AWS_PINPOINT_API StartCondition() = default;
     AWS_PINPOINT_API StartCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API StartCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,22 @@ namespace Model
     /**
      * <p>The custom description of the condition.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline StartCondition& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StartCondition& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StartCondition& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    StartCondition& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EventStartCondition& GetEventStartCondition() const{ return m_eventStartCondition; }
+    inline const EventStartCondition& GetEventStartCondition() const { return m_eventStartCondition; }
     inline bool EventStartConditionHasBeenSet() const { return m_eventStartConditionHasBeenSet; }
-    inline void SetEventStartCondition(const EventStartCondition& value) { m_eventStartConditionHasBeenSet = true; m_eventStartCondition = value; }
-    inline void SetEventStartCondition(EventStartCondition&& value) { m_eventStartConditionHasBeenSet = true; m_eventStartCondition = std::move(value); }
-    inline StartCondition& WithEventStartCondition(const EventStartCondition& value) { SetEventStartCondition(value); return *this;}
-    inline StartCondition& WithEventStartCondition(EventStartCondition&& value) { SetEventStartCondition(std::move(value)); return *this;}
+    template<typename EventStartConditionT = EventStartCondition>
+    void SetEventStartCondition(EventStartConditionT&& value) { m_eventStartConditionHasBeenSet = true; m_eventStartCondition = std::forward<EventStartConditionT>(value); }
+    template<typename EventStartConditionT = EventStartCondition>
+    StartCondition& WithEventStartCondition(EventStartConditionT&& value) { SetEventStartCondition(std::forward<EventStartConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,12 @@ namespace Model
      * <p>The segment that's associated with the first activity in the journey. This
      * segment determines which users are participants in the journey.</p>
      */
-    inline const SegmentCondition& GetSegmentStartCondition() const{ return m_segmentStartCondition; }
+    inline const SegmentCondition& GetSegmentStartCondition() const { return m_segmentStartCondition; }
     inline bool SegmentStartConditionHasBeenSet() const { return m_segmentStartConditionHasBeenSet; }
-    inline void SetSegmentStartCondition(const SegmentCondition& value) { m_segmentStartConditionHasBeenSet = true; m_segmentStartCondition = value; }
-    inline void SetSegmentStartCondition(SegmentCondition&& value) { m_segmentStartConditionHasBeenSet = true; m_segmentStartCondition = std::move(value); }
-    inline StartCondition& WithSegmentStartCondition(const SegmentCondition& value) { SetSegmentStartCondition(value); return *this;}
-    inline StartCondition& WithSegmentStartCondition(SegmentCondition&& value) { SetSegmentStartCondition(std::move(value)); return *this;}
+    template<typename SegmentStartConditionT = SegmentCondition>
+    void SetSegmentStartCondition(SegmentStartConditionT&& value) { m_segmentStartConditionHasBeenSet = true; m_segmentStartCondition = std::forward<SegmentStartConditionT>(value); }
+    template<typename SegmentStartConditionT = SegmentCondition>
+    StartCondition& WithSegmentStartCondition(SegmentStartConditionT&& value) { SetSegmentStartCondition(std::forward<SegmentStartConditionT>(value)); return *this;}
     ///@}
   private:
 

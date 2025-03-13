@@ -12,15 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDataIngestionJobRequest::StartDataIngestionJobRequest() : 
-    m_datasetNameHasBeenSet(false),
-    m_ingestionInputConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartDataIngestionJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreSecretRequest::RestoreSecretRequest() : 
-    m_secretIdHasBeenSet(false)
-{
-}
-
 Aws::String RestoreSecretRequest::SerializePayload() const
 {
   JsonValue payload;

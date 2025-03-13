@@ -12,22 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFunctionRequest::CreateFunctionRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourceNameHasBeenSet(false),
-    m_requestMappingTemplateHasBeenSet(false),
-    m_responseMappingTemplateHasBeenSet(false),
-    m_functionVersionHasBeenSet(false),
-    m_syncConfigHasBeenSet(false),
-    m_maxBatchSize(0),
-    m_maxBatchSizeHasBeenSet(false),
-    m_runtimeHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 Aws::String CreateFunctionRequest::SerializePayload() const
 {
   JsonValue payload;

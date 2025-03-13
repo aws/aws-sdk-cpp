@@ -32,7 +32,7 @@ namespace Model
   class CloudFormationStepSummary
   {
   public:
-    AWS_APPTEST_API CloudFormationStepSummary();
+    AWS_APPTEST_API CloudFormationStepSummary() = default;
     AWS_APPTEST_API CloudFormationStepSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CloudFormationStepSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Creates the CloudFormation summary of the step.</p>
      */
-    inline const CreateCloudFormationSummary& GetCreateCloudformation() const{ return m_createCloudformation; }
+    inline const CreateCloudFormationSummary& GetCreateCloudformation() const { return m_createCloudformation; }
     inline bool CreateCloudformationHasBeenSet() const { return m_createCloudformationHasBeenSet; }
-    inline void SetCreateCloudformation(const CreateCloudFormationSummary& value) { m_createCloudformationHasBeenSet = true; m_createCloudformation = value; }
-    inline void SetCreateCloudformation(CreateCloudFormationSummary&& value) { m_createCloudformationHasBeenSet = true; m_createCloudformation = std::move(value); }
-    inline CloudFormationStepSummary& WithCreateCloudformation(const CreateCloudFormationSummary& value) { SetCreateCloudformation(value); return *this;}
-    inline CloudFormationStepSummary& WithCreateCloudformation(CreateCloudFormationSummary&& value) { SetCreateCloudformation(std::move(value)); return *this;}
+    template<typename CreateCloudformationT = CreateCloudFormationSummary>
+    void SetCreateCloudformation(CreateCloudformationT&& value) { m_createCloudformationHasBeenSet = true; m_createCloudformation = std::forward<CreateCloudformationT>(value); }
+    template<typename CreateCloudformationT = CreateCloudFormationSummary>
+    CloudFormationStepSummary& WithCreateCloudformation(CreateCloudformationT&& value) { SetCreateCloudformation(std::forward<CreateCloudformationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Deletes the CloudFormation summary of the CloudFormation step summary.</p>
      */
-    inline const DeleteCloudFormationSummary& GetDeleteCloudformation() const{ return m_deleteCloudformation; }
+    inline const DeleteCloudFormationSummary& GetDeleteCloudformation() const { return m_deleteCloudformation; }
     inline bool DeleteCloudformationHasBeenSet() const { return m_deleteCloudformationHasBeenSet; }
-    inline void SetDeleteCloudformation(const DeleteCloudFormationSummary& value) { m_deleteCloudformationHasBeenSet = true; m_deleteCloudformation = value; }
-    inline void SetDeleteCloudformation(DeleteCloudFormationSummary&& value) { m_deleteCloudformationHasBeenSet = true; m_deleteCloudformation = std::move(value); }
-    inline CloudFormationStepSummary& WithDeleteCloudformation(const DeleteCloudFormationSummary& value) { SetDeleteCloudformation(value); return *this;}
-    inline CloudFormationStepSummary& WithDeleteCloudformation(DeleteCloudFormationSummary&& value) { SetDeleteCloudformation(std::move(value)); return *this;}
+    template<typename DeleteCloudformationT = DeleteCloudFormationSummary>
+    void SetDeleteCloudformation(DeleteCloudformationT&& value) { m_deleteCloudformationHasBeenSet = true; m_deleteCloudformation = std::forward<DeleteCloudformationT>(value); }
+    template<typename DeleteCloudformationT = DeleteCloudFormationSummary>
+    CloudFormationStepSummary& WithDeleteCloudformation(DeleteCloudformationT&& value) { SetDeleteCloudformation(std::forward<DeleteCloudformationT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSPICECapacityConfigurationRequest::UpdateSPICECapacityConfigurationRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_purchaseMode(PurchaseMode::NOT_SET),
-    m_purchaseModeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSPICECapacityConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

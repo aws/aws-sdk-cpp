@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HyperParameterSpecification::HyperParameterSpecification() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(ParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_rangeHasBeenSet(false),
-    m_isTunable(false),
-    m_isTunableHasBeenSet(false),
-    m_isRequired(false),
-    m_isRequiredHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 HyperParameterSpecification::HyperParameterSpecification(JsonView jsonValue)
-  : HyperParameterSpecification()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ HyperParameterSpecification& HyperParameterSpecification::operator =(JsonView js
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ParameterTypeMapper::GetParameterTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Range"))
   {
     m_range = jsonValue.GetObject("Range");
-
     m_rangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsTunable"))
   {
     m_isTunable = jsonValue.GetBool("IsTunable");
-
     m_isTunableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsRequired"))
   {
     m_isRequired = jsonValue.GetBool("IsRequired");
-
     m_isRequiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetString("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ScheduleAction::ScheduleAction() : 
-    m_actionNameHasBeenSet(false),
-    m_scheduleActionSettingsHasBeenSet(false),
-    m_scheduleActionStartSettingsHasBeenSet(false)
-{
-}
-
 ScheduleAction::ScheduleAction(JsonView jsonValue)
-  : ScheduleAction()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ScheduleAction& ScheduleAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = jsonValue.GetString("actionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduleActionSettings"))
   {
     m_scheduleActionSettings = jsonValue.GetObject("scheduleActionSettings");
-
     m_scheduleActionSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduleActionStartSettings"))
   {
     m_scheduleActionStartSettings = jsonValue.GetObject("scheduleActionStartSettings");
-
     m_scheduleActionStartSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

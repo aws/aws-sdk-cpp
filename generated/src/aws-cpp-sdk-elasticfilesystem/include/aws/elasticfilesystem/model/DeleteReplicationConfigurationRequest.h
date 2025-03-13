@@ -26,7 +26,7 @@ namespace Model
   class DeleteReplicationConfigurationRequest : public EFSRequest
   {
   public:
-    AWS_EFS_API DeleteReplicationConfigurationRequest();
+    AWS_EFS_API DeleteReplicationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of the source file system in the replication configuration.</p>
      */
-    inline const Aws::String& GetSourceFileSystemId() const{ return m_sourceFileSystemId; }
+    inline const Aws::String& GetSourceFileSystemId() const { return m_sourceFileSystemId; }
     inline bool SourceFileSystemIdHasBeenSet() const { return m_sourceFileSystemIdHasBeenSet; }
-    inline void SetSourceFileSystemId(const Aws::String& value) { m_sourceFileSystemIdHasBeenSet = true; m_sourceFileSystemId = value; }
-    inline void SetSourceFileSystemId(Aws::String&& value) { m_sourceFileSystemIdHasBeenSet = true; m_sourceFileSystemId = std::move(value); }
-    inline void SetSourceFileSystemId(const char* value) { m_sourceFileSystemIdHasBeenSet = true; m_sourceFileSystemId.assign(value); }
-    inline DeleteReplicationConfigurationRequest& WithSourceFileSystemId(const Aws::String& value) { SetSourceFileSystemId(value); return *this;}
-    inline DeleteReplicationConfigurationRequest& WithSourceFileSystemId(Aws::String&& value) { SetSourceFileSystemId(std::move(value)); return *this;}
-    inline DeleteReplicationConfigurationRequest& WithSourceFileSystemId(const char* value) { SetSourceFileSystemId(value); return *this;}
+    template<typename SourceFileSystemIdT = Aws::String>
+    void SetSourceFileSystemId(SourceFileSystemIdT&& value) { m_sourceFileSystemIdHasBeenSet = true; m_sourceFileSystemId = std::forward<SourceFileSystemIdT>(value); }
+    template<typename SourceFileSystemIdT = Aws::String>
+    DeleteReplicationConfigurationRequest& WithSourceFileSystemId(SourceFileSystemIdT&& value) { SetSourceFileSystemId(std::forward<SourceFileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,19 +68,17 @@ namespace Model
      * mode for same-account, same-region replication as doing so results in a
      * BadRequest exception error.</p> 
      */
-    inline const DeletionMode& GetDeletionMode() const{ return m_deletionMode; }
+    inline DeletionMode GetDeletionMode() const { return m_deletionMode; }
     inline bool DeletionModeHasBeenSet() const { return m_deletionModeHasBeenSet; }
-    inline void SetDeletionMode(const DeletionMode& value) { m_deletionModeHasBeenSet = true; m_deletionMode = value; }
-    inline void SetDeletionMode(DeletionMode&& value) { m_deletionModeHasBeenSet = true; m_deletionMode = std::move(value); }
-    inline DeleteReplicationConfigurationRequest& WithDeletionMode(const DeletionMode& value) { SetDeletionMode(value); return *this;}
-    inline DeleteReplicationConfigurationRequest& WithDeletionMode(DeletionMode&& value) { SetDeletionMode(std::move(value)); return *this;}
+    inline void SetDeletionMode(DeletionMode value) { m_deletionModeHasBeenSet = true; m_deletionMode = value; }
+    inline DeleteReplicationConfigurationRequest& WithDeletionMode(DeletionMode value) { SetDeletionMode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_sourceFileSystemId;
     bool m_sourceFileSystemIdHasBeenSet = false;
 
-    DeletionMode m_deletionMode;
+    DeletionMode m_deletionMode{DeletionMode::NOT_SET};
     bool m_deletionModeHasBeenSet = false;
   };
 

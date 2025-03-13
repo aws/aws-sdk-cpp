@@ -12,12 +12,6 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAccountConfigurationRequest::PutAccountConfigurationRequest() : 
-    m_expiryEventsHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false)
-{
-}
-
 Aws::String PutAccountConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

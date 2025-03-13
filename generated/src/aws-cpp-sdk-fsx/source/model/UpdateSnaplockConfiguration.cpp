@@ -18,20 +18,7 @@ namespace FSx
 namespace Model
 {
 
-UpdateSnaplockConfiguration::UpdateSnaplockConfiguration() : 
-    m_auditLogVolume(false),
-    m_auditLogVolumeHasBeenSet(false),
-    m_autocommitPeriodHasBeenSet(false),
-    m_privilegedDelete(PrivilegedDelete::NOT_SET),
-    m_privilegedDeleteHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false),
-    m_volumeAppendModeEnabled(false),
-    m_volumeAppendModeEnabledHasBeenSet(false)
-{
-}
-
 UpdateSnaplockConfiguration::UpdateSnaplockConfiguration(JsonView jsonValue)
-  : UpdateSnaplockConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ UpdateSnaplockConfiguration& UpdateSnaplockConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("AuditLogVolume"))
   {
     m_auditLogVolume = jsonValue.GetBool("AuditLogVolume");
-
     m_auditLogVolumeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutocommitPeriod"))
   {
     m_autocommitPeriod = jsonValue.GetObject("AutocommitPeriod");
-
     m_autocommitPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivilegedDelete"))
   {
     m_privilegedDelete = PrivilegedDeleteMapper::GetPrivilegedDeleteForName(jsonValue.GetString("PrivilegedDelete"));
-
     m_privilegedDeleteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetentionPeriod"))
   {
     m_retentionPeriod = jsonValue.GetObject("RetentionPeriod");
-
     m_retentionPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeAppendModeEnabled"))
   {
     m_volumeAppendModeEnabled = jsonValue.GetBool("VolumeAppendModeEnabled");
-
     m_volumeAppendModeEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

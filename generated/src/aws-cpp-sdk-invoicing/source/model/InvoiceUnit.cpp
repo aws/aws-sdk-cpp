@@ -18,20 +18,7 @@ namespace Invoicing
 namespace Model
 {
 
-InvoiceUnit::InvoiceUnit() : 
-    m_invoiceUnitArnHasBeenSet(false),
-    m_invoiceReceiverHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_taxInheritanceDisabled(false),
-    m_taxInheritanceDisabledHasBeenSet(false),
-    m_ruleHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
-{
-}
-
 InvoiceUnit::InvoiceUnit(JsonView jsonValue)
-  : InvoiceUnit()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ InvoiceUnit& InvoiceUnit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InvoiceUnitArn"))
   {
     m_invoiceUnitArn = jsonValue.GetString("InvoiceUnitArn");
-
     m_invoiceUnitArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvoiceReceiver"))
   {
     m_invoiceReceiver = jsonValue.GetString("InvoiceReceiver");
-
     m_invoiceReceiverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaxInheritanceDisabled"))
   {
     m_taxInheritanceDisabled = jsonValue.GetBool("TaxInheritanceDisabled");
-
     m_taxInheritanceDisabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rule"))
   {
     m_rule = jsonValue.GetObject("Rule");
-
     m_ruleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModified"))
   {
     m_lastModified = jsonValue.GetDouble("LastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   return *this;
 }
 

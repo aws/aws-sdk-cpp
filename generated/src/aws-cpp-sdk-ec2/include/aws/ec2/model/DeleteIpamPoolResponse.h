@@ -28,7 +28,7 @@ namespace Model
   class DeleteIpamPoolResponse
   {
   public:
-    AWS_EC2_API DeleteIpamPoolResponse();
+    AWS_EC2_API DeleteIpamPoolResponse() = default;
     AWS_EC2_API DeleteIpamPoolResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteIpamPoolResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the results of the deletion.</p>
      */
-    inline const IpamPool& GetIpamPool() const{ return m_ipamPool; }
-    inline void SetIpamPool(const IpamPool& value) { m_ipamPool = value; }
-    inline void SetIpamPool(IpamPool&& value) { m_ipamPool = std::move(value); }
-    inline DeleteIpamPoolResponse& WithIpamPool(const IpamPool& value) { SetIpamPool(value); return *this;}
-    inline DeleteIpamPoolResponse& WithIpamPool(IpamPool&& value) { SetIpamPool(std::move(value)); return *this;}
+    inline const IpamPool& GetIpamPool() const { return m_ipamPool; }
+    template<typename IpamPoolT = IpamPool>
+    void SetIpamPool(IpamPoolT&& value) { m_ipamPoolHasBeenSet = true; m_ipamPool = std::forward<IpamPoolT>(value); }
+    template<typename IpamPoolT = IpamPool>
+    DeleteIpamPoolResponse& WithIpamPool(IpamPoolT&& value) { SetIpamPool(std::forward<IpamPoolT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteIpamPoolResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteIpamPoolResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteIpamPoolResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     IpamPool m_ipamPool;
+    bool m_ipamPoolHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

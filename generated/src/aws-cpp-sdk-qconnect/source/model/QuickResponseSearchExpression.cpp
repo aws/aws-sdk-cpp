@@ -18,15 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-QuickResponseSearchExpression::QuickResponseSearchExpression() : 
-    m_filtersHasBeenSet(false),
-    m_orderOnFieldHasBeenSet(false),
-    m_queriesHasBeenSet(false)
-{
-}
-
 QuickResponseSearchExpression::QuickResponseSearchExpression(JsonView jsonValue)
-  : QuickResponseSearchExpression()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ QuickResponseSearchExpression& QuickResponseSearchExpression::operator =(JsonVie
     }
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orderOnField"))
   {
     m_orderOnField = jsonValue.GetObject("orderOnField");
-
     m_orderOnFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queries"))
   {
     Aws::Utils::Array<JsonView> queriesJsonList = jsonValue.GetArray("queries");
@@ -59,7 +48,6 @@ QuickResponseSearchExpression& QuickResponseSearchExpression::operator =(JsonVie
     }
     m_queriesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,17 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ListStorageLensConfigurationEntry::ListStorageLensConfigurationEntry() : 
-    m_idHasBeenSet(false),
-    m_storageLensArnHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
-{
-}
-
 ListStorageLensConfigurationEntry::ListStorageLensConfigurationEntry(const XmlNode& xmlNode)
-  : ListStorageLensConfigurationEntry()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ ListStorageLensConfigurationEntry& ListStorageLensConfigurationEntry::operator =
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode storageLensArnNode = resultNode.FirstChild("StorageLensArn");
     if(!storageLensArnNode.IsNull())
     {
       m_storageLensArn = Aws::Utils::Xml::DecodeEscapedXmlText(storageLensArnNode.GetText());
       m_storageLensArnHasBeenSet = true;
+       m_storageLensArnHasBeenSet = true;
     }
     XmlNode homeRegionNode = resultNode.FirstChild("HomeRegion");
     if(!homeRegionNode.IsNull())
     {
       m_homeRegion = Aws::Utils::Xml::DecodeEscapedXmlText(homeRegionNode.GetText());
       m_homeRegionHasBeenSet = true;
+       m_homeRegionHasBeenSet = true;
     }
     XmlNode isEnabledNode = resultNode.FirstChild("IsEnabled");
     if(!isEnabledNode.IsNull())
     {
       m_isEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isEnabledNode.GetText()).c_str()).c_str());
       m_isEnabledHasBeenSet = true;
+       m_isEnabledHasBeenSet = true;
     }
   }
 

@@ -34,7 +34,7 @@ namespace Model
   class PermissionEntry
   {
   public:
-    AWS_MANAGEDGRAFANA_API PermissionEntry();
+    AWS_MANAGEDGRAFANA_API PermissionEntry() = default;
     AWS_MANAGEDGRAFANA_API PermissionEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API PermissionEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
      * <p>Specifies whether the user or group has the <code>Admin</code>,
      * <code>Editor</code>, or <code>Viewer</code> role.</p>
      */
-    inline const Role& GetRole() const{ return m_role; }
+    inline Role GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Role& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Role&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline PermissionEntry& WithRole(const Role& value) { SetRole(value); return *this;}
-    inline PermissionEntry& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(Role value) { m_roleHasBeenSet = true; m_role = value; }
+    inline PermissionEntry& WithRole(Role value) { SetRole(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A structure with the ID of the user or group with this role.</p>
      */
-    inline const User& GetUser() const{ return m_user; }
+    inline const User& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const User& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(User&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline PermissionEntry& WithUser(const User& value) { SetUser(value); return *this;}
-    inline PermissionEntry& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
+    template<typename UserT = User>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = User>
+    PermissionEntry& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
   private:
 
-    Role m_role;
+    Role m_role{Role::NOT_SET};
     bool m_roleHasBeenSet = false;
 
     User m_user;

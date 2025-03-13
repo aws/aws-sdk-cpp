@@ -21,7 +21,7 @@ namespace Model
   class CreateOrganizationRequest : public OrganizationsRequest
   {
   public:
-    AWS_ORGANIZATIONS_API CreateOrganizationRequest();
+    AWS_ORGANIZATIONS_API CreateOrganizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,16 +50,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>Organizations User Guide</i>.</p> </li> </ul>
      */
-    inline const OrganizationFeatureSet& GetFeatureSet() const{ return m_featureSet; }
+    inline OrganizationFeatureSet GetFeatureSet() const { return m_featureSet; }
     inline bool FeatureSetHasBeenSet() const { return m_featureSetHasBeenSet; }
-    inline void SetFeatureSet(const OrganizationFeatureSet& value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
-    inline void SetFeatureSet(OrganizationFeatureSet&& value) { m_featureSetHasBeenSet = true; m_featureSet = std::move(value); }
-    inline CreateOrganizationRequest& WithFeatureSet(const OrganizationFeatureSet& value) { SetFeatureSet(value); return *this;}
-    inline CreateOrganizationRequest& WithFeatureSet(OrganizationFeatureSet&& value) { SetFeatureSet(std::move(value)); return *this;}
+    inline void SetFeatureSet(OrganizationFeatureSet value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
+    inline CreateOrganizationRequest& WithFeatureSet(OrganizationFeatureSet value) { SetFeatureSet(value); return *this;}
     ///@}
   private:
 
-    OrganizationFeatureSet m_featureSet;
+    OrganizationFeatureSet m_featureSet{OrganizationFeatureSet::NOT_SET};
     bool m_featureSetHasBeenSet = false;
   };
 

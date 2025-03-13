@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-AssignedVariablesDetails::AssignedVariablesDetails() : 
-    m_truncated(false),
-    m_truncatedHasBeenSet(false)
-{
-}
-
 AssignedVariablesDetails::AssignedVariablesDetails(JsonView jsonValue)
-  : AssignedVariablesDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AssignedVariablesDetails& AssignedVariablesDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("truncated"))
   {
     m_truncated = jsonValue.GetBool("truncated");
-
     m_truncatedHasBeenSet = true;
   }
-
   return *this;
 }
 

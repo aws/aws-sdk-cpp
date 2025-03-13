@@ -18,13 +18,7 @@ namespace RecycleBin
 namespace Model
 {
 
-LockConfiguration::LockConfiguration() : 
-    m_unlockDelayHasBeenSet(false)
-{
-}
-
 LockConfiguration::LockConfiguration(JsonView jsonValue)
-  : LockConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LockConfiguration& LockConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UnlockDelay"))
   {
     m_unlockDelay = jsonValue.GetObject("UnlockDelay");
-
     m_unlockDelayHasBeenSet = true;
   }
-
   return *this;
 }
 

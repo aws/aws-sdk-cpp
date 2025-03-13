@@ -12,13 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceTemplateRequest::UpdateServiceTemplateRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

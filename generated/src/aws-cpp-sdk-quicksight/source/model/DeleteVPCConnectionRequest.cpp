@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVPCConnectionRequest::DeleteVPCConnectionRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_vPCConnectionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVPCConnectionRequest::SerializePayload() const
 {
   return {};

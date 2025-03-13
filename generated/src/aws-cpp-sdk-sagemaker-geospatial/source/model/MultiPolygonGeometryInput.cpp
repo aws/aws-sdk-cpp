@@ -18,13 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-MultiPolygonGeometryInput::MultiPolygonGeometryInput() : 
-    m_coordinatesHasBeenSet(false)
-{
-}
-
 MultiPolygonGeometryInput::MultiPolygonGeometryInput(JsonView jsonValue)
-  : MultiPolygonGeometryInput()
 {
   *this = jsonValue;
 }
@@ -61,7 +55,6 @@ MultiPolygonGeometryInput& MultiPolygonGeometryInput::operator =(JsonView jsonVa
     }
     m_coordinatesHasBeenSet = true;
   }
-
   return *this;
 }
 

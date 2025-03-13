@@ -12,11 +12,6 @@ using namespace Aws::GameLiftStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApplicationRequest::DeleteApplicationRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApplicationRequest::SerializePayload() const
 {
   return {};

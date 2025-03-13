@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyFpgaImageAttributeResponse::ModifyFpgaImageAttributeResponse()
-{
-}
-
 ModifyFpgaImageAttributeResponse::ModifyFpgaImageAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ModifyFpgaImageAttributeResponse& ModifyFpgaImageAttributeResponse::operator =(c
     if(!fpgaImageAttributeNode.IsNull())
     {
       m_fpgaImageAttribute = fpgaImageAttributeNode;
+      m_fpgaImageAttributeHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ ModifyFpgaImageAttributeResponse& ModifyFpgaImageAttributeResponse::operator =(c
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyFpgaImageAttributeResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

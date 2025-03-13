@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetOtaTaskResult::GetOtaTaskResult() : 
-    m_protocol(OtaProtocol::NOT_SET),
-    m_otaType(OtaType::NOT_SET),
-    m_otaMechanism(OtaMechanism::NOT_SET),
-    m_status(OtaStatus::NOT_SET)
-{
-}
-
 GetOtaTaskResult::GetOtaTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetOtaTaskResult()
 {
   *this = result;
 }
@@ -37,51 +28,43 @@ GetOtaTaskResult& GetOtaTaskResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("TaskId"))
   {
     m_taskId = jsonValue.GetString("TaskId");
-
+    m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskArn"))
   {
     m_taskArn = jsonValue.GetString("TaskArn");
-
+    m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Url"))
   {
     m_s3Url = jsonValue.GetString("S3Url");
-
+    m_s3UrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = OtaProtocolMapper::GetOtaProtocolForName(jsonValue.GetString("Protocol"));
-
+    m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtaType"))
   {
     m_otaType = OtaTypeMapper::GetOtaTypeForName(jsonValue.GetString("OtaType"));
-
+    m_otaTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtaTargetQueryString"))
   {
     m_otaTargetQueryString = jsonValue.GetString("OtaTargetQueryString");
-
+    m_otaTargetQueryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtaMechanism"))
   {
     m_otaMechanism = OtaMechanismMapper::GetOtaMechanismForName(jsonValue.GetString("OtaMechanism"));
-
+    m_otaMechanismHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     Aws::Utils::Array<JsonView> targetJsonList = jsonValue.GetArray("Target");
@@ -89,56 +72,50 @@ GetOtaTaskResult& GetOtaTaskResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_target.push_back(targetJsonList[targetIndex].AsString());
     }
+    m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
+    m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskConfigurationId"))
   {
     m_taskConfigurationId = jsonValue.GetString("TaskConfigurationId");
-
+    m_taskConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskProcessingDetails"))
   {
     m_taskProcessingDetails = jsonValue.GetObject("TaskProcessingDetails");
-
+    m_taskProcessingDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtaSchedulingConfig"))
   {
     m_otaSchedulingConfig = jsonValue.GetObject("OtaSchedulingConfig");
-
+    m_otaSchedulingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtaTaskExecutionRetryConfig"))
   {
     m_otaTaskExecutionRetryConfig = jsonValue.GetObject("OtaTaskExecutionRetryConfig");
-
+    m_otaTaskExecutionRetryConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OtaStatusMapper::GetOtaStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

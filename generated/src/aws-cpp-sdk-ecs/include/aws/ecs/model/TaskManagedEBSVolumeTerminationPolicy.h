@@ -32,7 +32,7 @@ namespace Model
   class TaskManagedEBSVolumeTerminationPolicy
   {
   public:
-    AWS_ECS_API TaskManagedEBSVolumeTerminationPolicy();
+    AWS_ECS_API TaskManagedEBSVolumeTerminationPolicy() = default;
     AWS_ECS_API TaskManagedEBSVolumeTerminationPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API TaskManagedEBSVolumeTerminationPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * is used. When set to <code>false</code>, Amazon ECS leaves the volume in your
      * &#x2028;account.</p>
      */
-    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+    inline bool GetDeleteOnTermination() const { return m_deleteOnTermination; }
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
     inline TaskManagedEBSVolumeTerminationPolicy& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
     ///@}
   private:
 
-    bool m_deleteOnTermination;
+    bool m_deleteOnTermination{false};
     bool m_deleteOnTerminationHasBeenSet = false;
   };
 

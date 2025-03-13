@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopQueryResult::StopQueryResult() : 
-    m_success(false)
-{
-}
-
 StopQueryResult::StopQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StopQueryResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ StopQueryResult& StopQueryResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("success"))
   {
     m_success = jsonValue.GetBool("success");
-
+    m_successHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

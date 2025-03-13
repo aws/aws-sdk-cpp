@@ -18,15 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-SouthKoreaAdditionalInfo::SouthKoreaAdditionalInfo() : 
-    m_businessRepresentativeNameHasBeenSet(false),
-    m_itemOfBusinessHasBeenSet(false),
-    m_lineOfBusinessHasBeenSet(false)
-{
-}
-
 SouthKoreaAdditionalInfo::SouthKoreaAdditionalInfo(JsonView jsonValue)
-  : SouthKoreaAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SouthKoreaAdditionalInfo& SouthKoreaAdditionalInfo::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("businessRepresentativeName"))
   {
     m_businessRepresentativeName = jsonValue.GetString("businessRepresentativeName");
-
     m_businessRepresentativeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("itemOfBusiness"))
   {
     m_itemOfBusiness = jsonValue.GetString("itemOfBusiness");
-
     m_itemOfBusinessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lineOfBusiness"))
   {
     m_lineOfBusiness = jsonValue.GetString("lineOfBusiness");
-
     m_lineOfBusinessHasBeenSet = true;
   }
-
   return *this;
 }
 

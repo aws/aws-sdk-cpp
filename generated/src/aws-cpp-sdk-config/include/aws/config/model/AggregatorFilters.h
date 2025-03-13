@@ -33,7 +33,7 @@ namespace Model
   class AggregatorFilters
   {
   public:
-    AWS_CONFIGSERVICE_API AggregatorFilters();
+    AWS_CONFIGSERVICE_API AggregatorFilters() = default;
     AWS_CONFIGSERVICE_API AggregatorFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API AggregatorFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>An object to filter the configuration recorders based on the resource types
      * in scope for recording.</p>
      */
-    inline const AggregatorFilterResourceType& GetResourceType() const{ return m_resourceType; }
+    inline const AggregatorFilterResourceType& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const AggregatorFilterResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(AggregatorFilterResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline AggregatorFilters& WithResourceType(const AggregatorFilterResourceType& value) { SetResourceType(value); return *this;}
-    inline AggregatorFilters& WithResourceType(AggregatorFilterResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    template<typename ResourceTypeT = AggregatorFilterResourceType>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = AggregatorFilterResourceType>
+    AggregatorFilters& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>An object to filter service-linked configuration recorders in an aggregator
      * based on the linked Amazon Web Services service.</p>
      */
-    inline const AggregatorFilterServicePrincipal& GetServicePrincipal() const{ return m_servicePrincipal; }
+    inline const AggregatorFilterServicePrincipal& GetServicePrincipal() const { return m_servicePrincipal; }
     inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
-    inline void SetServicePrincipal(const AggregatorFilterServicePrincipal& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
-    inline void SetServicePrincipal(AggregatorFilterServicePrincipal&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
-    inline AggregatorFilters& WithServicePrincipal(const AggregatorFilterServicePrincipal& value) { SetServicePrincipal(value); return *this;}
-    inline AggregatorFilters& WithServicePrincipal(AggregatorFilterServicePrincipal&& value) { SetServicePrincipal(std::move(value)); return *this;}
+    template<typename ServicePrincipalT = AggregatorFilterServicePrincipal>
+    void SetServicePrincipal(ServicePrincipalT&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::forward<ServicePrincipalT>(value); }
+    template<typename ServicePrincipalT = AggregatorFilterServicePrincipal>
+    AggregatorFilters& WithServicePrincipal(ServicePrincipalT&& value) { SetServicePrincipal(std::forward<ServicePrincipalT>(value)); return *this;}
     ///@}
   private:
 

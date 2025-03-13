@@ -12,15 +12,6 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMediaLiveConnectorPipelineRequest::CreateMediaLiveConnectorPipelineRequest() : 
-    m_sourcesHasBeenSet(false),
-    m_sinksHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMediaLiveConnectorPipelineRequest::SerializePayload() const
 {
   JsonValue payload;

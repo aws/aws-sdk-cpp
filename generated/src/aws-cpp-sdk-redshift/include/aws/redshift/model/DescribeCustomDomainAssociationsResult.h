@@ -30,7 +30,7 @@ namespace Model
   class DescribeCustomDomainAssociationsResult
   {
   public:
-    AWS_REDSHIFT_API DescribeCustomDomainAssociationsResult();
+    AWS_REDSHIFT_API DescribeCustomDomainAssociationsResult() = default;
     AWS_REDSHIFT_API DescribeCustomDomainAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DescribeCustomDomainAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,43 +39,44 @@ namespace Model
     /**
      * <p>The marker for the custom domain association.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeCustomDomainAssociationsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeCustomDomainAssociationsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeCustomDomainAssociationsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeCustomDomainAssociationsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The associations for the custom domain.</p>
      */
-    inline const Aws::Vector<Association>& GetAssociations() const{ return m_associations; }
-    inline void SetAssociations(const Aws::Vector<Association>& value) { m_associations = value; }
-    inline void SetAssociations(Aws::Vector<Association>&& value) { m_associations = std::move(value); }
-    inline DescribeCustomDomainAssociationsResult& WithAssociations(const Aws::Vector<Association>& value) { SetAssociations(value); return *this;}
-    inline DescribeCustomDomainAssociationsResult& WithAssociations(Aws::Vector<Association>&& value) { SetAssociations(std::move(value)); return *this;}
-    inline DescribeCustomDomainAssociationsResult& AddAssociations(const Association& value) { m_associations.push_back(value); return *this; }
-    inline DescribeCustomDomainAssociationsResult& AddAssociations(Association&& value) { m_associations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Association>& GetAssociations() const { return m_associations; }
+    template<typename AssociationsT = Aws::Vector<Association>>
+    void SetAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations = std::forward<AssociationsT>(value); }
+    template<typename AssociationsT = Aws::Vector<Association>>
+    DescribeCustomDomainAssociationsResult& WithAssociations(AssociationsT&& value) { SetAssociations(std::forward<AssociationsT>(value)); return *this;}
+    template<typename AssociationsT = Association>
+    DescribeCustomDomainAssociationsResult& AddAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations.emplace_back(std::forward<AssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeCustomDomainAssociationsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeCustomDomainAssociationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeCustomDomainAssociationsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<Association> m_associations;
+    bool m_associationsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

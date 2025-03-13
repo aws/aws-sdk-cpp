@@ -32,7 +32,7 @@ namespace Model
   class ConnectionsList
   {
   public:
-    AWS_GLUE_API ConnectionsList();
+    AWS_GLUE_API ConnectionsList() = default;
     AWS_GLUE_API ConnectionsList(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ConnectionsList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>A list of connections used by the job.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConnections() const{ return m_connections; }
+    inline const Aws::Vector<Aws::String>& GetConnections() const { return m_connections; }
     inline bool ConnectionsHasBeenSet() const { return m_connectionsHasBeenSet; }
-    inline void SetConnections(const Aws::Vector<Aws::String>& value) { m_connectionsHasBeenSet = true; m_connections = value; }
-    inline void SetConnections(Aws::Vector<Aws::String>&& value) { m_connectionsHasBeenSet = true; m_connections = std::move(value); }
-    inline ConnectionsList& WithConnections(const Aws::Vector<Aws::String>& value) { SetConnections(value); return *this;}
-    inline ConnectionsList& WithConnections(Aws::Vector<Aws::String>&& value) { SetConnections(std::move(value)); return *this;}
-    inline ConnectionsList& AddConnections(const Aws::String& value) { m_connectionsHasBeenSet = true; m_connections.push_back(value); return *this; }
-    inline ConnectionsList& AddConnections(Aws::String&& value) { m_connectionsHasBeenSet = true; m_connections.push_back(std::move(value)); return *this; }
-    inline ConnectionsList& AddConnections(const char* value) { m_connectionsHasBeenSet = true; m_connections.push_back(value); return *this; }
+    template<typename ConnectionsT = Aws::Vector<Aws::String>>
+    void SetConnections(ConnectionsT&& value) { m_connectionsHasBeenSet = true; m_connections = std::forward<ConnectionsT>(value); }
+    template<typename ConnectionsT = Aws::Vector<Aws::String>>
+    ConnectionsList& WithConnections(ConnectionsT&& value) { SetConnections(std::forward<ConnectionsT>(value)); return *this;}
+    template<typename ConnectionsT = Aws::String>
+    ConnectionsList& AddConnections(ConnectionsT&& value) { m_connectionsHasBeenSet = true; m_connections.emplace_back(std::forward<ConnectionsT>(value)); return *this; }
     ///@}
   private:
 

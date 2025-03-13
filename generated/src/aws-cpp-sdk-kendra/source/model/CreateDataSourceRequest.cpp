@@ -12,24 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataSourceRequest::CreateDataSourceRequest() : 
-    m_nameHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_languageCodeHasBeenSet(false),
-    m_customDocumentEnrichmentConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

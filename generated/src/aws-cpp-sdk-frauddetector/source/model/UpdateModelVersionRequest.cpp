@@ -12,17 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateModelVersionRequest::UpdateModelVersionRequest() : 
-    m_modelIdHasBeenSet(false),
-    m_modelType(ModelTypeEnum::NOT_SET),
-    m_modelTypeHasBeenSet(false),
-    m_majorVersionNumberHasBeenSet(false),
-    m_externalEventsDetailHasBeenSet(false),
-    m_ingestedEventsDetailHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateModelVersionRequest::SerializePayload() const
 {
   JsonValue payload;

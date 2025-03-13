@@ -24,7 +24,7 @@ namespace Model
   class DescribeDBRecommendationsRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API DescribeDBRecommendationsRequest();
+    AWS_RDS_API DescribeDBRecommendationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,12 @@ namespace Model
      * <p>A filter to include only the recommendations that were updated after this
      * specified time.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAfter() const{ return m_lastUpdatedAfter; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAfter() const { return m_lastUpdatedAfter; }
     inline bool LastUpdatedAfterHasBeenSet() const { return m_lastUpdatedAfterHasBeenSet; }
-    inline void SetLastUpdatedAfter(const Aws::Utils::DateTime& value) { m_lastUpdatedAfterHasBeenSet = true; m_lastUpdatedAfter = value; }
-    inline void SetLastUpdatedAfter(Aws::Utils::DateTime&& value) { m_lastUpdatedAfterHasBeenSet = true; m_lastUpdatedAfter = std::move(value); }
-    inline DescribeDBRecommendationsRequest& WithLastUpdatedAfter(const Aws::Utils::DateTime& value) { SetLastUpdatedAfter(value); return *this;}
-    inline DescribeDBRecommendationsRequest& WithLastUpdatedAfter(Aws::Utils::DateTime&& value) { SetLastUpdatedAfter(std::move(value)); return *this;}
+    template<typename LastUpdatedAfterT = Aws::Utils::DateTime>
+    void SetLastUpdatedAfter(LastUpdatedAfterT&& value) { m_lastUpdatedAfterHasBeenSet = true; m_lastUpdatedAfter = std::forward<LastUpdatedAfterT>(value); }
+    template<typename LastUpdatedAfterT = Aws::Utils::DateTime>
+    DescribeDBRecommendationsRequest& WithLastUpdatedAfter(LastUpdatedAfterT&& value) { SetLastUpdatedAfter(std::forward<LastUpdatedAfterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>A filter to include only the recommendations that were updated before this
      * specified time.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedBefore() const{ return m_lastUpdatedBefore; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedBefore() const { return m_lastUpdatedBefore; }
     inline bool LastUpdatedBeforeHasBeenSet() const { return m_lastUpdatedBeforeHasBeenSet; }
-    inline void SetLastUpdatedBefore(const Aws::Utils::DateTime& value) { m_lastUpdatedBeforeHasBeenSet = true; m_lastUpdatedBefore = value; }
-    inline void SetLastUpdatedBefore(Aws::Utils::DateTime&& value) { m_lastUpdatedBeforeHasBeenSet = true; m_lastUpdatedBefore = std::move(value); }
-    inline DescribeDBRecommendationsRequest& WithLastUpdatedBefore(const Aws::Utils::DateTime& value) { SetLastUpdatedBefore(value); return *this;}
-    inline DescribeDBRecommendationsRequest& WithLastUpdatedBefore(Aws::Utils::DateTime&& value) { SetLastUpdatedBefore(std::move(value)); return *this;}
+    template<typename LastUpdatedBeforeT = Aws::Utils::DateTime>
+    void SetLastUpdatedBefore(LastUpdatedBeforeT&& value) { m_lastUpdatedBeforeHasBeenSet = true; m_lastUpdatedBefore = std::forward<LastUpdatedBeforeT>(value); }
+    template<typename LastUpdatedBeforeT = Aws::Utils::DateTime>
+    DescribeDBRecommendationsRequest& WithLastUpdatedBefore(LastUpdatedBeforeT&& value) { SetLastUpdatedBefore(std::forward<LastUpdatedBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +76,12 @@ namespace Model
      * <code>pt_BR</code> </p> </li> <li> <p> <code>zh_TW</code> </p> </li> <li> <p>
      * <code>zh_CN</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetLocale() const{ return m_locale; }
+    inline const Aws::String& GetLocale() const { return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
-    inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
-    inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
-    inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
-    inline DescribeDBRecommendationsRequest& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
-    inline DescribeDBRecommendationsRequest& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
-    inline DescribeDBRecommendationsRequest& WithLocale(const char* value) { SetLocale(value); return *this;}
+    template<typename LocaleT = Aws::String>
+    void SetLocale(LocaleT&& value) { m_localeHasBeenSet = true; m_locale = std::forward<LocaleT>(value); }
+    template<typename LocaleT = Aws::String>
+    DescribeDBRecommendationsRequest& WithLocale(LocaleT&& value) { SetLocale(std::forward<LocaleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +118,14 @@ namespace Model
      * recommendations that generated for the specified cluster parameter groups.</p>
      * </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeDBRecommendationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeDBRecommendationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeDBRecommendationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeDBRecommendationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeDBRecommendationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeDBRecommendationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -137,7 +135,7 @@ namespace Model
      * token called a marker is included in the response so that you can retrieve the
      * remaining results.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeDBRecommendationsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -150,21 +148,19 @@ namespace Model
      * the response includes only records beyond the marker, up to the value specified
      * by <code>MaxRecords</code>. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeDBRecommendationsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeDBRecommendationsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeDBRecommendationsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeDBRecommendationsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_lastUpdatedAfter;
+    Aws::Utils::DateTime m_lastUpdatedAfter{};
     bool m_lastUpdatedAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedBefore;
+    Aws::Utils::DateTime m_lastUpdatedBefore{};
     bool m_lastUpdatedBeforeHasBeenSet = false;
 
     Aws::String m_locale;
@@ -173,7 +169,7 @@ namespace Model
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;

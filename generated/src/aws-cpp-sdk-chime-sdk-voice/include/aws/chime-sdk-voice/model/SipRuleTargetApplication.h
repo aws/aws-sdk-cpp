@@ -33,7 +33,7 @@ namespace Model
   class SipRuleTargetApplication
   {
   public:
-    AWS_CHIMESDKVOICE_API SipRuleTargetApplication();
+    AWS_CHIMESDKVOICE_API SipRuleTargetApplication() = default;
     AWS_CHIMESDKVOICE_API SipRuleTargetApplication(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API SipRuleTargetApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The ID of a rule's target SIP media application.</p>
      */
-    inline const Aws::String& GetSipMediaApplicationId() const{ return m_sipMediaApplicationId; }
+    inline const Aws::String& GetSipMediaApplicationId() const { return m_sipMediaApplicationId; }
     inline bool SipMediaApplicationIdHasBeenSet() const { return m_sipMediaApplicationIdHasBeenSet; }
-    inline void SetSipMediaApplicationId(const Aws::String& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = value; }
-    inline void SetSipMediaApplicationId(Aws::String&& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = std::move(value); }
-    inline void SetSipMediaApplicationId(const char* value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId.assign(value); }
-    inline SipRuleTargetApplication& WithSipMediaApplicationId(const Aws::String& value) { SetSipMediaApplicationId(value); return *this;}
-    inline SipRuleTargetApplication& WithSipMediaApplicationId(Aws::String&& value) { SetSipMediaApplicationId(std::move(value)); return *this;}
-    inline SipRuleTargetApplication& WithSipMediaApplicationId(const char* value) { SetSipMediaApplicationId(value); return *this;}
+    template<typename SipMediaApplicationIdT = Aws::String>
+    void SetSipMediaApplicationId(SipMediaApplicationIdT&& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = std::forward<SipMediaApplicationIdT>(value); }
+    template<typename SipMediaApplicationIdT = Aws::String>
+    SipRuleTargetApplication& WithSipMediaApplicationId(SipMediaApplicationIdT&& value) { SetSipMediaApplicationId(std::forward<SipMediaApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The priority setting of a rule's target SIP media application.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline SipRuleTargetApplication& WithPriority(int value) { SetPriority(value); return *this;}
@@ -67,21 +65,19 @@ namespace Model
     /**
      * <p>The AWS Region of a rule's target SIP media application.</p>
      */
-    inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+    inline const Aws::String& GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-    inline SipRuleTargetApplication& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-    inline SipRuleTargetApplication& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-    inline SipRuleTargetApplication& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    template<typename AwsRegionT = Aws::String>
+    void SetAwsRegion(AwsRegionT&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::forward<AwsRegionT>(value); }
+    template<typename AwsRegionT = Aws::String>
+    SipRuleTargetApplication& WithAwsRegion(AwsRegionT&& value) { SetAwsRegion(std::forward<AwsRegionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sipMediaApplicationId;
     bool m_sipMediaApplicationIdHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     Aws::String m_awsRegion;

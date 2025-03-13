@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-RAGConfig::RAGConfig() : 
-    m_knowledgeBaseConfigHasBeenSet(false)
-{
-}
-
 RAGConfig::RAGConfig(JsonView jsonValue)
-  : RAGConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RAGConfig& RAGConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("knowledgeBaseConfig"))
   {
     m_knowledgeBaseConfig = jsonValue.GetObject("knowledgeBaseConfig");
-
     m_knowledgeBaseConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

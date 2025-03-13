@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-DNSLogsConfigurationResult::DNSLogsConfigurationResult() : 
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DNSLogsConfigurationResult::DNSLogsConfigurationResult(JsonView jsonValue)
-  : DNSLogsConfigurationResult()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DNSLogsConfigurationResult& DNSLogsConfigurationResult::operator =(JsonView json
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

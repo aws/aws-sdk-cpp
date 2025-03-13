@@ -32,7 +32,7 @@ namespace Model
   class ExternalWorkflowExecutionSignaledEventAttributes
   {
   public:
-    AWS_SWF_API ExternalWorkflowExecutionSignaledEventAttributes();
+    AWS_SWF_API ExternalWorkflowExecutionSignaledEventAttributes() = default;
     AWS_SWF_API ExternalWorkflowExecutionSignaledEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API ExternalWorkflowExecutionSignaledEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The external workflow execution that the signal was delivered to.</p>
      */
-    inline const WorkflowExecution& GetWorkflowExecution() const{ return m_workflowExecution; }
+    inline const WorkflowExecution& GetWorkflowExecution() const { return m_workflowExecution; }
     inline bool WorkflowExecutionHasBeenSet() const { return m_workflowExecutionHasBeenSet; }
-    inline void SetWorkflowExecution(const WorkflowExecution& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = value; }
-    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = std::move(value); }
-    inline ExternalWorkflowExecutionSignaledEventAttributes& WithWorkflowExecution(const WorkflowExecution& value) { SetWorkflowExecution(value); return *this;}
-    inline ExternalWorkflowExecutionSignaledEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
+    template<typename WorkflowExecutionT = WorkflowExecution>
+    void SetWorkflowExecution(WorkflowExecutionT&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = std::forward<WorkflowExecutionT>(value); }
+    template<typename WorkflowExecutionT = WorkflowExecution>
+    ExternalWorkflowExecutionSignaledEventAttributes& WithWorkflowExecution(WorkflowExecutionT&& value) { SetWorkflowExecution(std::forward<WorkflowExecutionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +57,7 @@ namespace Model
      * request this signal. This information can be useful for diagnosing problems by
      * tracing back the chain of events leading up to this event.</p>
      */
-    inline long long GetInitiatedEventId() const{ return m_initiatedEventId; }
+    inline long long GetInitiatedEventId() const { return m_initiatedEventId; }
     inline bool InitiatedEventIdHasBeenSet() const { return m_initiatedEventIdHasBeenSet; }
     inline void SetInitiatedEventId(long long value) { m_initiatedEventIdHasBeenSet = true; m_initiatedEventId = value; }
     inline ExternalWorkflowExecutionSignaledEventAttributes& WithInitiatedEventId(long long value) { SetInitiatedEventId(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
     WorkflowExecution m_workflowExecution;
     bool m_workflowExecutionHasBeenSet = false;
 
-    long long m_initiatedEventId;
+    long long m_initiatedEventId{0};
     bool m_initiatedEventIdHasBeenSet = false;
   };
 

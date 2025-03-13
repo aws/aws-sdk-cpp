@@ -33,7 +33,7 @@ namespace Model
   class ApplicationRestoreConfiguration
   {
   public:
-    AWS_KINESISANALYTICSV2_API ApplicationRestoreConfiguration();
+    AWS_KINESISANALYTICSV2_API ApplicationRestoreConfiguration() = default;
     AWS_KINESISANALYTICSV2_API ApplicationRestoreConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ApplicationRestoreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>Specifies how the application should be restored.</p>
      */
-    inline const ApplicationRestoreType& GetApplicationRestoreType() const{ return m_applicationRestoreType; }
+    inline ApplicationRestoreType GetApplicationRestoreType() const { return m_applicationRestoreType; }
     inline bool ApplicationRestoreTypeHasBeenSet() const { return m_applicationRestoreTypeHasBeenSet; }
-    inline void SetApplicationRestoreType(const ApplicationRestoreType& value) { m_applicationRestoreTypeHasBeenSet = true; m_applicationRestoreType = value; }
-    inline void SetApplicationRestoreType(ApplicationRestoreType&& value) { m_applicationRestoreTypeHasBeenSet = true; m_applicationRestoreType = std::move(value); }
-    inline ApplicationRestoreConfiguration& WithApplicationRestoreType(const ApplicationRestoreType& value) { SetApplicationRestoreType(value); return *this;}
-    inline ApplicationRestoreConfiguration& WithApplicationRestoreType(ApplicationRestoreType&& value) { SetApplicationRestoreType(std::move(value)); return *this;}
+    inline void SetApplicationRestoreType(ApplicationRestoreType value) { m_applicationRestoreTypeHasBeenSet = true; m_applicationRestoreType = value; }
+    inline ApplicationRestoreConfiguration& WithApplicationRestoreType(ApplicationRestoreType value) { SetApplicationRestoreType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +56,16 @@ namespace Model
      * <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
      * <code>ApplicationRestoreType</code>.</p>
      */
-    inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+    inline const Aws::String& GetSnapshotName() const { return m_snapshotName; }
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
-    inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
-    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
-    inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
-    inline ApplicationRestoreConfiguration& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
-    inline ApplicationRestoreConfiguration& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
-    inline ApplicationRestoreConfiguration& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
+    template<typename SnapshotNameT = Aws::String>
+    void SetSnapshotName(SnapshotNameT&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::forward<SnapshotNameT>(value); }
+    template<typename SnapshotNameT = Aws::String>
+    ApplicationRestoreConfiguration& WithSnapshotName(SnapshotNameT&& value) { SetSnapshotName(std::forward<SnapshotNameT>(value)); return *this;}
     ///@}
   private:
 
-    ApplicationRestoreType m_applicationRestoreType;
+    ApplicationRestoreType m_applicationRestoreType{ApplicationRestoreType::NOT_SET};
     bool m_applicationRestoreTypeHasBeenSet = false;
 
     Aws::String m_snapshotName;

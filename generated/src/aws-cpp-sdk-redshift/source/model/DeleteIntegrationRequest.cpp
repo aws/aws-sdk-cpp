@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteIntegrationRequest::DeleteIntegrationRequest() : 
-    m_integrationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIntegrationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

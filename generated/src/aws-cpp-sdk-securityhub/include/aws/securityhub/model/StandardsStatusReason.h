@@ -32,7 +32,7 @@ namespace Model
   class StandardsStatusReason
   {
   public:
-    AWS_SECURITYHUB_API StandardsStatusReason();
+    AWS_SECURITYHUB_API StandardsStatusReason() = default;
     AWS_SECURITYHUB_API StandardsStatusReason(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API StandardsStatusReason& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>The reason code that represents the reason for the current status of a
      * standard subscription.</p>
      */
-    inline const StatusReasonCode& GetStatusReasonCode() const{ return m_statusReasonCode; }
+    inline StatusReasonCode GetStatusReasonCode() const { return m_statusReasonCode; }
     inline bool StatusReasonCodeHasBeenSet() const { return m_statusReasonCodeHasBeenSet; }
-    inline void SetStatusReasonCode(const StatusReasonCode& value) { m_statusReasonCodeHasBeenSet = true; m_statusReasonCode = value; }
-    inline void SetStatusReasonCode(StatusReasonCode&& value) { m_statusReasonCodeHasBeenSet = true; m_statusReasonCode = std::move(value); }
-    inline StandardsStatusReason& WithStatusReasonCode(const StatusReasonCode& value) { SetStatusReasonCode(value); return *this;}
-    inline StandardsStatusReason& WithStatusReasonCode(StatusReasonCode&& value) { SetStatusReasonCode(std::move(value)); return *this;}
+    inline void SetStatusReasonCode(StatusReasonCode value) { m_statusReasonCodeHasBeenSet = true; m_statusReasonCode = value; }
+    inline StandardsStatusReason& WithStatusReasonCode(StatusReasonCode value) { SetStatusReasonCode(value); return *this;}
     ///@}
   private:
 
-    StatusReasonCode m_statusReasonCode;
+    StatusReasonCode m_statusReasonCode{StatusReasonCode::NOT_SET};
     bool m_statusReasonCodeHasBeenSet = false;
   };
 

@@ -36,7 +36,7 @@ namespace Model
   class EBSUtilizationMetric
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API EBSUtilizationMetric();
+    AWS_COMPUTEOPTIMIZER_API EBSUtilizationMetric() = default;
     AWS_COMPUTEOPTIMIZER_API EBSUtilizationMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API EBSUtilizationMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,10 @@ namespace Model
      * <code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a
      * specified period of time.</p> <p>Unit: Bytes</p> </li> </ul>
      */
-    inline const EBSMetricName& GetName() const{ return m_name; }
+    inline EBSMetricName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const EBSMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(EBSMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline EBSUtilizationMetric& WithName(const EBSMetricName& value) { SetName(value); return *this;}
-    inline EBSUtilizationMetric& WithName(EBSMetricName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(EBSMetricName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline EBSUtilizationMetric& WithName(EBSMetricName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -79,32 +77,30 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon
      * CloudWatch User Guide</a>.</p>
      */
-    inline const MetricStatistic& GetStatistic() const{ return m_statistic; }
+    inline MetricStatistic GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const MetricStatistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(MetricStatistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline EBSUtilizationMetric& WithStatistic(const MetricStatistic& value) { SetStatistic(value); return *this;}
-    inline EBSUtilizationMetric& WithStatistic(MetricStatistic&& value) { SetStatistic(std::move(value)); return *this;}
+    inline void SetStatistic(MetricStatistic value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline EBSUtilizationMetric& WithStatistic(MetricStatistic value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the utilization metric.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline EBSUtilizationMetric& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    EBSMetricName m_name;
+    EBSMetricName m_name{EBSMetricName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    MetricStatistic m_statistic;
+    MetricStatistic m_statistic{MetricStatistic::NOT_SET};
     bool m_statisticHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

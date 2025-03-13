@@ -12,13 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetDefaultMessageTypeRequest::SetDefaultMessageTypeRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false)
-{
-}
-
 Aws::String SetDefaultMessageTypeRequest::SerializePayload() const
 {
   JsonValue payload;

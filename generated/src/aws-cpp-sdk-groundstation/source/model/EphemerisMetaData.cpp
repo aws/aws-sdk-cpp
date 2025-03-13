@@ -18,17 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-EphemerisMetaData::EphemerisMetaData() : 
-    m_ephemerisIdHasBeenSet(false),
-    m_epochHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_source(EphemerisSource::NOT_SET),
-    m_sourceHasBeenSet(false)
-{
-}
-
 EphemerisMetaData::EphemerisMetaData(JsonView jsonValue)
-  : EphemerisMetaData()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ EphemerisMetaData& EphemerisMetaData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ephemerisId"))
   {
     m_ephemerisId = jsonValue.GetString("ephemerisId");
-
     m_ephemerisIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("epoch"))
   {
     m_epoch = jsonValue.GetDouble("epoch");
-
     m_epochHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = EphemerisSourceMapper::GetEphemerisSourceForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

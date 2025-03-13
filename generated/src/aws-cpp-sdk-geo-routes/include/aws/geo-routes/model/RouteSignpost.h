@@ -33,7 +33,7 @@ namespace Model
   class RouteSignpost
   {
   public:
-    AWS_GEOROUTES_API RouteSignpost();
+    AWS_GEOROUTES_API RouteSignpost() = default;
     AWS_GEOROUTES_API RouteSignpost(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteSignpost& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Labels present on the sign post.</p>
      */
-    inline const Aws::Vector<RouteSignpostLabel>& GetLabels() const{ return m_labels; }
+    inline const Aws::Vector<RouteSignpostLabel>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Vector<RouteSignpostLabel>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Vector<RouteSignpostLabel>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline RouteSignpost& WithLabels(const Aws::Vector<RouteSignpostLabel>& value) { SetLabels(value); return *this;}
-    inline RouteSignpost& WithLabels(Aws::Vector<RouteSignpostLabel>&& value) { SetLabels(std::move(value)); return *this;}
-    inline RouteSignpost& AddLabels(const RouteSignpostLabel& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-    inline RouteSignpost& AddLabels(RouteSignpostLabel&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
+    template<typename LabelsT = Aws::Vector<RouteSignpostLabel>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Vector<RouteSignpostLabel>>
+    RouteSignpost& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsT = RouteSignpostLabel>
+    RouteSignpost& AddLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels.emplace_back(std::forward<LabelsT>(value)); return *this; }
     ///@}
   private:
 

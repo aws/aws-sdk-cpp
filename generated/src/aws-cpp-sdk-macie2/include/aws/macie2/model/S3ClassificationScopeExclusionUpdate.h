@@ -34,7 +34,7 @@ namespace Model
   class S3ClassificationScopeExclusionUpdate
   {
   public:
-    AWS_MACIE2_API S3ClassificationScopeExclusionUpdate();
+    AWS_MACIE2_API S3ClassificationScopeExclusionUpdate() = default;
     AWS_MACIE2_API S3ClassificationScopeExclusionUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API S3ClassificationScopeExclusionUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ namespace Model
      * names that overwrites all existing names in the list. Each string must be the
      * full name of an existing S3 bucket. Values are case sensitive.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBucketNames() const{ return m_bucketNames; }
+    inline const Aws::Vector<Aws::String>& GetBucketNames() const { return m_bucketNames; }
     inline bool BucketNamesHasBeenSet() const { return m_bucketNamesHasBeenSet; }
-    inline void SetBucketNames(const Aws::Vector<Aws::String>& value) { m_bucketNamesHasBeenSet = true; m_bucketNames = value; }
-    inline void SetBucketNames(Aws::Vector<Aws::String>&& value) { m_bucketNamesHasBeenSet = true; m_bucketNames = std::move(value); }
-    inline S3ClassificationScopeExclusionUpdate& WithBucketNames(const Aws::Vector<Aws::String>& value) { SetBucketNames(value); return *this;}
-    inline S3ClassificationScopeExclusionUpdate& WithBucketNames(Aws::Vector<Aws::String>&& value) { SetBucketNames(std::move(value)); return *this;}
-    inline S3ClassificationScopeExclusionUpdate& AddBucketNames(const Aws::String& value) { m_bucketNamesHasBeenSet = true; m_bucketNames.push_back(value); return *this; }
-    inline S3ClassificationScopeExclusionUpdate& AddBucketNames(Aws::String&& value) { m_bucketNamesHasBeenSet = true; m_bucketNames.push_back(std::move(value)); return *this; }
-    inline S3ClassificationScopeExclusionUpdate& AddBucketNames(const char* value) { m_bucketNamesHasBeenSet = true; m_bucketNames.push_back(value); return *this; }
+    template<typename BucketNamesT = Aws::Vector<Aws::String>>
+    void SetBucketNames(BucketNamesT&& value) { m_bucketNamesHasBeenSet = true; m_bucketNames = std::forward<BucketNamesT>(value); }
+    template<typename BucketNamesT = Aws::Vector<Aws::String>>
+    S3ClassificationScopeExclusionUpdate& WithBucketNames(BucketNamesT&& value) { SetBucketNames(std::forward<BucketNamesT>(value)); return *this;}
+    template<typename BucketNamesT = Aws::String>
+    S3ClassificationScopeExclusionUpdate& AddBucketNames(BucketNamesT&& value) { m_bucketNamesHasBeenSet = true; m_bucketNames.emplace_back(std::forward<BucketNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,19 +68,17 @@ namespace Model
      * all existing names from the list and adds all the specified names to the
      * list.</p></li></ul>
      */
-    inline const ClassificationScopeUpdateOperation& GetOperation() const{ return m_operation; }
+    inline ClassificationScopeUpdateOperation GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const ClassificationScopeUpdateOperation& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(ClassificationScopeUpdateOperation&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline S3ClassificationScopeExclusionUpdate& WithOperation(const ClassificationScopeUpdateOperation& value) { SetOperation(value); return *this;}
-    inline S3ClassificationScopeExclusionUpdate& WithOperation(ClassificationScopeUpdateOperation&& value) { SetOperation(std::move(value)); return *this;}
+    inline void SetOperation(ClassificationScopeUpdateOperation value) { m_operationHasBeenSet = true; m_operation = value; }
+    inline S3ClassificationScopeExclusionUpdate& WithOperation(ClassificationScopeUpdateOperation value) { SetOperation(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_bucketNames;
     bool m_bucketNamesHasBeenSet = false;
 
-    ClassificationScopeUpdateOperation m_operation;
+    ClassificationScopeUpdateOperation m_operation{ClassificationScopeUpdateOperation::NOT_SET};
     bool m_operationHasBeenSet = false;
   };
 

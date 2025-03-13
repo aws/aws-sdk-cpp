@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-SingleHeader::SingleHeader() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 SingleHeader::SingleHeader(JsonView jsonValue)
-  : SingleHeader()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SingleHeader& SingleHeader::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

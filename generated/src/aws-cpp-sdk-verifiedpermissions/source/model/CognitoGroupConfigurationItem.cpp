@@ -18,13 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-CognitoGroupConfigurationItem::CognitoGroupConfigurationItem() : 
-    m_groupEntityTypeHasBeenSet(false)
-{
-}
-
 CognitoGroupConfigurationItem::CognitoGroupConfigurationItem(JsonView jsonValue)
-  : CognitoGroupConfigurationItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CognitoGroupConfigurationItem& CognitoGroupConfigurationItem::operator =(JsonVie
   if(jsonValue.ValueExists("groupEntityType"))
   {
     m_groupEntityType = jsonValue.GetString("groupEntityType");
-
     m_groupEntityTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

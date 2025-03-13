@@ -18,22 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ConnectorOperator::ConnectorOperator() : 
-    m_marketo(MarketoConnectorOperator::NOT_SET),
-    m_marketoHasBeenSet(false),
-    m_s3(S3ConnectorOperator::NOT_SET),
-    m_s3HasBeenSet(false),
-    m_salesforce(SalesforceConnectorOperator::NOT_SET),
-    m_salesforceHasBeenSet(false),
-    m_serviceNow(ServiceNowConnectorOperator::NOT_SET),
-    m_serviceNowHasBeenSet(false),
-    m_zendesk(ZendeskConnectorOperator::NOT_SET),
-    m_zendeskHasBeenSet(false)
-{
-}
-
 ConnectorOperator::ConnectorOperator(JsonView jsonValue)
-  : ConnectorOperator()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ ConnectorOperator& ConnectorOperator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Marketo"))
   {
     m_marketo = MarketoConnectorOperatorMapper::GetMarketoConnectorOperatorForName(jsonValue.GetString("Marketo"));
-
     m_marketoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3"))
   {
     m_s3 = S3ConnectorOperatorMapper::GetS3ConnectorOperatorForName(jsonValue.GetString("S3"));
-
     m_s3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Salesforce"))
   {
     m_salesforce = SalesforceConnectorOperatorMapper::GetSalesforceConnectorOperatorForName(jsonValue.GetString("Salesforce"));
-
     m_salesforceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceNow"))
   {
     m_serviceNow = ServiceNowConnectorOperatorMapper::GetServiceNowConnectorOperatorForName(jsonValue.GetString("ServiceNow"));
-
     m_serviceNowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Zendesk"))
   {
     m_zendesk = ZendeskConnectorOperatorMapper::GetZendeskConnectorOperatorForName(jsonValue.GetString("Zendesk"));
-
     m_zendeskHasBeenSet = true;
   }
-
   return *this;
 }
 

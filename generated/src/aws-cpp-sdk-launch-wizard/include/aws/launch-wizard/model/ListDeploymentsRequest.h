@@ -23,7 +23,7 @@ namespace Model
   class ListDeploymentsRequest : public LaunchWizardRequest
   {
   public:
-    AWS_LAUNCHWIZARD_API ListDeploymentsRequest();
+    AWS_LAUNCHWIZARD_API ListDeploymentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,14 @@ namespace Model
      * <code>DELETED</code> | <code>FAILED</code> | <code>IN_PROGRESS</code> |
      * <code>VALIDATING</code> </p> </li> </ul>
      */
-    inline const Aws::Vector<DeploymentFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<DeploymentFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<DeploymentFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<DeploymentFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListDeploymentsRequest& WithFilters(const Aws::Vector<DeploymentFilter>& value) { SetFilters(value); return *this;}
-    inline ListDeploymentsRequest& WithFilters(Aws::Vector<DeploymentFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListDeploymentsRequest& AddFilters(const DeploymentFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListDeploymentsRequest& AddFilters(DeploymentFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<DeploymentFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<DeploymentFilter>>
+    ListDeploymentsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = DeploymentFilter>
+    ListDeploymentsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,7 +59,7 @@ namespace Model
      * <p>The maximum number of items to return for this request. To get the next page
      * of items, make another request with the token returned in the output.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListDeploymentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -70,21 +70,19 @@ namespace Model
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDeploymentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDeploymentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDeploymentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDeploymentsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DeploymentFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

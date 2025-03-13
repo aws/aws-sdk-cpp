@@ -21,7 +21,7 @@ namespace Model
   class DeleteScalingPlanRequest : public AutoScalingPlansRequest
   {
   public:
-    AWS_AUTOSCALINGPLANS_API DeleteScalingPlanRequest();
+    AWS_AUTOSCALINGPLANS_API DeleteScalingPlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the scaling plan.</p>
      */
-    inline const Aws::String& GetScalingPlanName() const{ return m_scalingPlanName; }
+    inline const Aws::String& GetScalingPlanName() const { return m_scalingPlanName; }
     inline bool ScalingPlanNameHasBeenSet() const { return m_scalingPlanNameHasBeenSet; }
-    inline void SetScalingPlanName(const Aws::String& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = value; }
-    inline void SetScalingPlanName(Aws::String&& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = std::move(value); }
-    inline void SetScalingPlanName(const char* value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName.assign(value); }
-    inline DeleteScalingPlanRequest& WithScalingPlanName(const Aws::String& value) { SetScalingPlanName(value); return *this;}
-    inline DeleteScalingPlanRequest& WithScalingPlanName(Aws::String&& value) { SetScalingPlanName(std::move(value)); return *this;}
-    inline DeleteScalingPlanRequest& WithScalingPlanName(const char* value) { SetScalingPlanName(value); return *this;}
+    template<typename ScalingPlanNameT = Aws::String>
+    void SetScalingPlanName(ScalingPlanNameT&& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = std::forward<ScalingPlanNameT>(value); }
+    template<typename ScalingPlanNameT = Aws::String>
+    DeleteScalingPlanRequest& WithScalingPlanName(ScalingPlanNameT&& value) { SetScalingPlanName(std::forward<ScalingPlanNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,7 +51,7 @@ namespace Model
      * <p>The version number of the scaling plan. Currently, the only valid value is
      * <code>1</code>.</p>
      */
-    inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
+    inline long long GetScalingPlanVersion() const { return m_scalingPlanVersion; }
     inline bool ScalingPlanVersionHasBeenSet() const { return m_scalingPlanVersionHasBeenSet; }
     inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
     inline DeleteScalingPlanRequest& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
     Aws::String m_scalingPlanName;
     bool m_scalingPlanNameHasBeenSet = false;
 
-    long long m_scalingPlanVersion;
+    long long m_scalingPlanVersion{0};
     bool m_scalingPlanVersionHasBeenSet = false;
   };
 

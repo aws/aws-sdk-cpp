@@ -18,20 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-MetricFilter::MetricFilter() : 
-    m_filterNameHasBeenSet(false),
-    m_filterPatternHasBeenSet(false),
-    m_metricTransformationsHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_applyOnTransformedLogs(false),
-    m_applyOnTransformedLogsHasBeenSet(false)
-{
-}
-
 MetricFilter::MetricFilter(JsonView jsonValue)
-  : MetricFilter()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ MetricFilter& MetricFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("filterName"))
   {
     m_filterName = jsonValue.GetString("filterName");
-
     m_filterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterPattern"))
   {
     m_filterPattern = jsonValue.GetString("filterPattern");
-
     m_filterPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricTransformations"))
   {
     Aws::Utils::Array<JsonView> metricTransformationsJsonList = jsonValue.GetArray("metricTransformations");
@@ -61,28 +44,21 @@ MetricFilter& MetricFilter::operator =(JsonView jsonValue)
     }
     m_metricTransformationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetInt64("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupName"))
   {
     m_logGroupName = jsonValue.GetString("logGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applyOnTransformedLogs"))
   {
     m_applyOnTransformedLogs = jsonValue.GetBool("applyOnTransformedLogs");
-
     m_applyOnTransformedLogsHasBeenSet = true;
   }
-
   return *this;
 }
 

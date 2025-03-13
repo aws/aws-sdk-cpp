@@ -33,7 +33,7 @@ namespace Model
   class Warnings
   {
   public:
-    AWS_CLOUDFORMATION_API Warnings();
+    AWS_CLOUDFORMATION_API Warnings() = default;
     AWS_CLOUDFORMATION_API Warnings(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API Warnings& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,15 +48,14 @@ namespace Model
      * <code>TreatUnrecognizedResourceTypesAsWarning</code> configuration set to
      * <code>True</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUnrecognizedResourceTypes() const{ return m_unrecognizedResourceTypes; }
+    inline const Aws::Vector<Aws::String>& GetUnrecognizedResourceTypes() const { return m_unrecognizedResourceTypes; }
     inline bool UnrecognizedResourceTypesHasBeenSet() const { return m_unrecognizedResourceTypesHasBeenSet; }
-    inline void SetUnrecognizedResourceTypes(const Aws::Vector<Aws::String>& value) { m_unrecognizedResourceTypesHasBeenSet = true; m_unrecognizedResourceTypes = value; }
-    inline void SetUnrecognizedResourceTypes(Aws::Vector<Aws::String>&& value) { m_unrecognizedResourceTypesHasBeenSet = true; m_unrecognizedResourceTypes = std::move(value); }
-    inline Warnings& WithUnrecognizedResourceTypes(const Aws::Vector<Aws::String>& value) { SetUnrecognizedResourceTypes(value); return *this;}
-    inline Warnings& WithUnrecognizedResourceTypes(Aws::Vector<Aws::String>&& value) { SetUnrecognizedResourceTypes(std::move(value)); return *this;}
-    inline Warnings& AddUnrecognizedResourceTypes(const Aws::String& value) { m_unrecognizedResourceTypesHasBeenSet = true; m_unrecognizedResourceTypes.push_back(value); return *this; }
-    inline Warnings& AddUnrecognizedResourceTypes(Aws::String&& value) { m_unrecognizedResourceTypesHasBeenSet = true; m_unrecognizedResourceTypes.push_back(std::move(value)); return *this; }
-    inline Warnings& AddUnrecognizedResourceTypes(const char* value) { m_unrecognizedResourceTypesHasBeenSet = true; m_unrecognizedResourceTypes.push_back(value); return *this; }
+    template<typename UnrecognizedResourceTypesT = Aws::Vector<Aws::String>>
+    void SetUnrecognizedResourceTypes(UnrecognizedResourceTypesT&& value) { m_unrecognizedResourceTypesHasBeenSet = true; m_unrecognizedResourceTypes = std::forward<UnrecognizedResourceTypesT>(value); }
+    template<typename UnrecognizedResourceTypesT = Aws::Vector<Aws::String>>
+    Warnings& WithUnrecognizedResourceTypes(UnrecognizedResourceTypesT&& value) { SetUnrecognizedResourceTypes(std::forward<UnrecognizedResourceTypesT>(value)); return *this;}
+    template<typename UnrecognizedResourceTypesT = Aws::String>
+    Warnings& AddUnrecognizedResourceTypes(UnrecognizedResourceTypesT&& value) { m_unrecognizedResourceTypesHasBeenSet = true; m_unrecognizedResourceTypes.emplace_back(std::forward<UnrecognizedResourceTypesT>(value)); return *this; }
     ///@}
   private:
 

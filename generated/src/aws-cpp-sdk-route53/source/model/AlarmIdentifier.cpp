@@ -20,15 +20,7 @@ namespace Route53
 namespace Model
 {
 
-AlarmIdentifier::AlarmIdentifier() : 
-    m_region(CloudWatchRegion::NOT_SET),
-    m_regionHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AlarmIdentifier::AlarmIdentifier(const XmlNode& xmlNode)
-  : AlarmIdentifier()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ AlarmIdentifier& AlarmIdentifier::operator =(const XmlNode& xmlNode)
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
-      m_region = CloudWatchRegionMapper::GetCloudWatchRegionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText()).c_str()).c_str());
+      m_region = CloudWatchRegionMapper::GetCloudWatchRegionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText()).c_str()));
       m_regionHasBeenSet = true;
+       m_regionHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
   }
 

@@ -22,7 +22,7 @@ namespace Model
   class MoveCapacityReservationInstancesRequest : public EC2Request
   {
   public:
-    AWS_EC2_API MoveCapacityReservationInstancesRequest();
+    AWS_EC2_API MoveCapacityReservationInstancesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline MoveCapacityReservationInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -57,14 +57,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
      * Idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline MoveCapacityReservationInstancesRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline MoveCapacityReservationInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline MoveCapacityReservationInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    MoveCapacityReservationInstancesRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,28 +70,24 @@ namespace Model
      * <p> The ID of the Capacity Reservation from which you want to move capacity.
      * </p>
      */
-    inline const Aws::String& GetSourceCapacityReservationId() const{ return m_sourceCapacityReservationId; }
+    inline const Aws::String& GetSourceCapacityReservationId() const { return m_sourceCapacityReservationId; }
     inline bool SourceCapacityReservationIdHasBeenSet() const { return m_sourceCapacityReservationIdHasBeenSet; }
-    inline void SetSourceCapacityReservationId(const Aws::String& value) { m_sourceCapacityReservationIdHasBeenSet = true; m_sourceCapacityReservationId = value; }
-    inline void SetSourceCapacityReservationId(Aws::String&& value) { m_sourceCapacityReservationIdHasBeenSet = true; m_sourceCapacityReservationId = std::move(value); }
-    inline void SetSourceCapacityReservationId(const char* value) { m_sourceCapacityReservationIdHasBeenSet = true; m_sourceCapacityReservationId.assign(value); }
-    inline MoveCapacityReservationInstancesRequest& WithSourceCapacityReservationId(const Aws::String& value) { SetSourceCapacityReservationId(value); return *this;}
-    inline MoveCapacityReservationInstancesRequest& WithSourceCapacityReservationId(Aws::String&& value) { SetSourceCapacityReservationId(std::move(value)); return *this;}
-    inline MoveCapacityReservationInstancesRequest& WithSourceCapacityReservationId(const char* value) { SetSourceCapacityReservationId(value); return *this;}
+    template<typename SourceCapacityReservationIdT = Aws::String>
+    void SetSourceCapacityReservationId(SourceCapacityReservationIdT&& value) { m_sourceCapacityReservationIdHasBeenSet = true; m_sourceCapacityReservationId = std::forward<SourceCapacityReservationIdT>(value); }
+    template<typename SourceCapacityReservationIdT = Aws::String>
+    MoveCapacityReservationInstancesRequest& WithSourceCapacityReservationId(SourceCapacityReservationIdT&& value) { SetSourceCapacityReservationId(std::forward<SourceCapacityReservationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the Capacity Reservation that you want to move capacity into. </p>
      */
-    inline const Aws::String& GetDestinationCapacityReservationId() const{ return m_destinationCapacityReservationId; }
+    inline const Aws::String& GetDestinationCapacityReservationId() const { return m_destinationCapacityReservationId; }
     inline bool DestinationCapacityReservationIdHasBeenSet() const { return m_destinationCapacityReservationIdHasBeenSet; }
-    inline void SetDestinationCapacityReservationId(const Aws::String& value) { m_destinationCapacityReservationIdHasBeenSet = true; m_destinationCapacityReservationId = value; }
-    inline void SetDestinationCapacityReservationId(Aws::String&& value) { m_destinationCapacityReservationIdHasBeenSet = true; m_destinationCapacityReservationId = std::move(value); }
-    inline void SetDestinationCapacityReservationId(const char* value) { m_destinationCapacityReservationIdHasBeenSet = true; m_destinationCapacityReservationId.assign(value); }
-    inline MoveCapacityReservationInstancesRequest& WithDestinationCapacityReservationId(const Aws::String& value) { SetDestinationCapacityReservationId(value); return *this;}
-    inline MoveCapacityReservationInstancesRequest& WithDestinationCapacityReservationId(Aws::String&& value) { SetDestinationCapacityReservationId(std::move(value)); return *this;}
-    inline MoveCapacityReservationInstancesRequest& WithDestinationCapacityReservationId(const char* value) { SetDestinationCapacityReservationId(value); return *this;}
+    template<typename DestinationCapacityReservationIdT = Aws::String>
+    void SetDestinationCapacityReservationId(DestinationCapacityReservationIdT&& value) { m_destinationCapacityReservationIdHasBeenSet = true; m_destinationCapacityReservationId = std::forward<DestinationCapacityReservationIdT>(value); }
+    template<typename DestinationCapacityReservationIdT = Aws::String>
+    MoveCapacityReservationInstancesRequest& WithDestinationCapacityReservationId(DestinationCapacityReservationIdT&& value) { SetDestinationCapacityReservationId(std::forward<DestinationCapacityReservationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,14 @@ namespace Model
      * <p>The number of instances that you want to move from the source Capacity
      * Reservation. </p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline MoveCapacityReservationInstancesRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
@@ -120,7 +114,7 @@ namespace Model
     Aws::String m_destinationCapacityReservationId;
     bool m_destinationCapacityReservationIdHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
   };
 

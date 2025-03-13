@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-IcebergRetentionConfiguration::IcebergRetentionConfiguration() : 
-    m_snapshotRetentionPeriodInDays(0),
-    m_snapshotRetentionPeriodInDaysHasBeenSet(false),
-    m_numberOfSnapshotsToRetain(0),
-    m_numberOfSnapshotsToRetainHasBeenSet(false),
-    m_cleanExpiredFiles(false),
-    m_cleanExpiredFilesHasBeenSet(false)
-{
-}
-
 IcebergRetentionConfiguration::IcebergRetentionConfiguration(JsonView jsonValue)
-  : IcebergRetentionConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ IcebergRetentionConfiguration& IcebergRetentionConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("snapshotRetentionPeriodInDays"))
   {
     m_snapshotRetentionPeriodInDays = jsonValue.GetInteger("snapshotRetentionPeriodInDays");
-
     m_snapshotRetentionPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfSnapshotsToRetain"))
   {
     m_numberOfSnapshotsToRetain = jsonValue.GetInteger("numberOfSnapshotsToRetain");
-
     m_numberOfSnapshotsToRetainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cleanExpiredFiles"))
   {
     m_cleanExpiredFiles = jsonValue.GetBool("cleanExpiredFiles");
-
     m_cleanExpiredFilesHasBeenSet = true;
   }
-
   return *this;
 }
 

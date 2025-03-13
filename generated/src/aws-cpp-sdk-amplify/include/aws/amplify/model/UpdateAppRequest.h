@@ -31,7 +31,7 @@ namespace Model
   class UpdateAppRequest : public AmplifyRequest
   {
   public:
-    AWS_AMPLIFY_API UpdateAppRequest();
+    AWS_AMPLIFY_API UpdateAppRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,42 +46,36 @@ namespace Model
     /**
      * <p>The unique ID for an Amplify app. </p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline UpdateAppRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline UpdateAppRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    UpdateAppRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for an Amplify app. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateAppRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateAppRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateAppRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for an Amplify app. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateAppRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateAppRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateAppRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +88,10 @@ namespace Model
      * Next.js version 14 or later, you must set the platform type to
      * <code>WEB_COMPUTE</code>.</p>
      */
-    inline const Platform& GetPlatform() const{ return m_platform; }
+    inline Platform GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline UpdateAppRequest& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
-    inline UpdateAppRequest& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
+    inline void SetPlatform(Platform value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline UpdateAppRequest& WithPlatform(Platform value) { SetPlatform(value); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +103,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-SSR-compute-role.html">Adding
      * an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
      */
-    inline const Aws::String& GetComputeRoleArn() const{ return m_computeRoleArn; }
+    inline const Aws::String& GetComputeRoleArn() const { return m_computeRoleArn; }
     inline bool ComputeRoleArnHasBeenSet() const { return m_computeRoleArnHasBeenSet; }
-    inline void SetComputeRoleArn(const Aws::String& value) { m_computeRoleArnHasBeenSet = true; m_computeRoleArn = value; }
-    inline void SetComputeRoleArn(Aws::String&& value) { m_computeRoleArnHasBeenSet = true; m_computeRoleArn = std::move(value); }
-    inline void SetComputeRoleArn(const char* value) { m_computeRoleArnHasBeenSet = true; m_computeRoleArn.assign(value); }
-    inline UpdateAppRequest& WithComputeRoleArn(const Aws::String& value) { SetComputeRoleArn(value); return *this;}
-    inline UpdateAppRequest& WithComputeRoleArn(Aws::String&& value) { SetComputeRoleArn(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithComputeRoleArn(const char* value) { SetComputeRoleArn(value); return *this;}
+    template<typename ComputeRoleArnT = Aws::String>
+    void SetComputeRoleArn(ComputeRoleArnT&& value) { m_computeRoleArnHasBeenSet = true; m_computeRoleArn = std::forward<ComputeRoleArnT>(value); }
+    template<typename ComputeRoleArnT = Aws::String>
+    UpdateAppRequest& WithComputeRoleArn(ComputeRoleArnT&& value) { SetComputeRoleArn(std::forward<ComputeRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,40 +116,35 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify
      * app.</p>
      */
-    inline const Aws::String& GetIamServiceRoleArn() const{ return m_iamServiceRoleArn; }
+    inline const Aws::String& GetIamServiceRoleArn() const { return m_iamServiceRoleArn; }
     inline bool IamServiceRoleArnHasBeenSet() const { return m_iamServiceRoleArnHasBeenSet; }
-    inline void SetIamServiceRoleArn(const Aws::String& value) { m_iamServiceRoleArnHasBeenSet = true; m_iamServiceRoleArn = value; }
-    inline void SetIamServiceRoleArn(Aws::String&& value) { m_iamServiceRoleArnHasBeenSet = true; m_iamServiceRoleArn = std::move(value); }
-    inline void SetIamServiceRoleArn(const char* value) { m_iamServiceRoleArnHasBeenSet = true; m_iamServiceRoleArn.assign(value); }
-    inline UpdateAppRequest& WithIamServiceRoleArn(const Aws::String& value) { SetIamServiceRoleArn(value); return *this;}
-    inline UpdateAppRequest& WithIamServiceRoleArn(Aws::String&& value) { SetIamServiceRoleArn(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithIamServiceRoleArn(const char* value) { SetIamServiceRoleArn(value); return *this;}
+    template<typename IamServiceRoleArnT = Aws::String>
+    void SetIamServiceRoleArn(IamServiceRoleArnT&& value) { m_iamServiceRoleArnHasBeenSet = true; m_iamServiceRoleArn = std::forward<IamServiceRoleArnT>(value); }
+    template<typename IamServiceRoleArnT = Aws::String>
+    UpdateAppRequest& WithIamServiceRoleArn(IamServiceRoleArnT&& value) { SetIamServiceRoleArn(std::forward<IamServiceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The environment variables for an Amplify app. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const { return m_environmentVariables; }
     inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
-    inline void SetEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = value; }
-    inline void SetEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::move(value); }
-    inline UpdateAppRequest& WithEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironmentVariables(value); return *this;}
-    inline UpdateAppRequest& WithEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironmentVariables(std::move(value)); return *this;}
-    inline UpdateAppRequest& AddEnvironmentVariables(const Aws::String& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
-    inline UpdateAppRequest& AddEnvironmentVariables(Aws::String&& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
-    inline UpdateAppRequest& AddEnvironmentVariables(const Aws::String& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
-    inline UpdateAppRequest& AddEnvironmentVariables(Aws::String&& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateAppRequest& AddEnvironmentVariables(const char* key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
-    inline UpdateAppRequest& AddEnvironmentVariables(Aws::String&& key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
-    inline UpdateAppRequest& AddEnvironmentVariables(const char* key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
+    template<typename EnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetEnvironmentVariables(EnvironmentVariablesT&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::forward<EnvironmentVariablesT>(value); }
+    template<typename EnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    UpdateAppRequest& WithEnvironmentVariables(EnvironmentVariablesT&& value) { SetEnvironmentVariables(std::forward<EnvironmentVariablesT>(value)); return *this;}
+    template<typename EnvironmentVariablesKeyT = Aws::String, typename EnvironmentVariablesValueT = Aws::String>
+    UpdateAppRequest& AddEnvironmentVariables(EnvironmentVariablesKeyT&& key, EnvironmentVariablesValueT&& value) {
+      m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::forward<EnvironmentVariablesKeyT>(key), std::forward<EnvironmentVariablesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Enables branch auto-building for an Amplify app. </p>
      */
-    inline bool GetEnableBranchAutoBuild() const{ return m_enableBranchAutoBuild; }
+    inline bool GetEnableBranchAutoBuild() const { return m_enableBranchAutoBuild; }
     inline bool EnableBranchAutoBuildHasBeenSet() const { return m_enableBranchAutoBuildHasBeenSet; }
     inline void SetEnableBranchAutoBuild(bool value) { m_enableBranchAutoBuildHasBeenSet = true; m_enableBranchAutoBuild = value; }
     inline UpdateAppRequest& WithEnableBranchAutoBuild(bool value) { SetEnableBranchAutoBuild(value); return *this;}
@@ -170,7 +155,7 @@ namespace Model
      * <p>Automatically disconnects a branch in the Amplify console when you delete a
      * branch from your Git repository. </p>
      */
-    inline bool GetEnableBranchAutoDeletion() const{ return m_enableBranchAutoDeletion; }
+    inline bool GetEnableBranchAutoDeletion() const { return m_enableBranchAutoDeletion; }
     inline bool EnableBranchAutoDeletionHasBeenSet() const { return m_enableBranchAutoDeletionHasBeenSet; }
     inline void SetEnableBranchAutoDeletion(bool value) { m_enableBranchAutoDeletionHasBeenSet = true; m_enableBranchAutoDeletion = value; }
     inline UpdateAppRequest& WithEnableBranchAutoDeletion(bool value) { SetEnableBranchAutoDeletion(value); return *this;}
@@ -180,7 +165,7 @@ namespace Model
     /**
      * <p>Enables basic authorization for an Amplify app. </p>
      */
-    inline bool GetEnableBasicAuth() const{ return m_enableBasicAuth; }
+    inline bool GetEnableBasicAuth() const { return m_enableBasicAuth; }
     inline bool EnableBasicAuthHasBeenSet() const { return m_enableBasicAuthHasBeenSet; }
     inline void SetEnableBasicAuth(bool value) { m_enableBasicAuthHasBeenSet = true; m_enableBasicAuth = value; }
     inline UpdateAppRequest& WithEnableBasicAuth(bool value) { SetEnableBasicAuth(value); return *this;}
@@ -192,63 +177,57 @@ namespace Model
      * base64-encode the authorization credentials and provide them in the format
      * <code>user:password</code>.</p>
      */
-    inline const Aws::String& GetBasicAuthCredentials() const{ return m_basicAuthCredentials; }
+    inline const Aws::String& GetBasicAuthCredentials() const { return m_basicAuthCredentials; }
     inline bool BasicAuthCredentialsHasBeenSet() const { return m_basicAuthCredentialsHasBeenSet; }
-    inline void SetBasicAuthCredentials(const Aws::String& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = value; }
-    inline void SetBasicAuthCredentials(Aws::String&& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = std::move(value); }
-    inline void SetBasicAuthCredentials(const char* value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials.assign(value); }
-    inline UpdateAppRequest& WithBasicAuthCredentials(const Aws::String& value) { SetBasicAuthCredentials(value); return *this;}
-    inline UpdateAppRequest& WithBasicAuthCredentials(Aws::String&& value) { SetBasicAuthCredentials(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithBasicAuthCredentials(const char* value) { SetBasicAuthCredentials(value); return *this;}
+    template<typename BasicAuthCredentialsT = Aws::String>
+    void SetBasicAuthCredentials(BasicAuthCredentialsT&& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = std::forward<BasicAuthCredentialsT>(value); }
+    template<typename BasicAuthCredentialsT = Aws::String>
+    UpdateAppRequest& WithBasicAuthCredentials(BasicAuthCredentialsT&& value) { SetBasicAuthCredentials(std::forward<BasicAuthCredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom redirect and rewrite rules for an Amplify app. </p>
      */
-    inline const Aws::Vector<CustomRule>& GetCustomRules() const{ return m_customRules; }
+    inline const Aws::Vector<CustomRule>& GetCustomRules() const { return m_customRules; }
     inline bool CustomRulesHasBeenSet() const { return m_customRulesHasBeenSet; }
-    inline void SetCustomRules(const Aws::Vector<CustomRule>& value) { m_customRulesHasBeenSet = true; m_customRules = value; }
-    inline void SetCustomRules(Aws::Vector<CustomRule>&& value) { m_customRulesHasBeenSet = true; m_customRules = std::move(value); }
-    inline UpdateAppRequest& WithCustomRules(const Aws::Vector<CustomRule>& value) { SetCustomRules(value); return *this;}
-    inline UpdateAppRequest& WithCustomRules(Aws::Vector<CustomRule>&& value) { SetCustomRules(std::move(value)); return *this;}
-    inline UpdateAppRequest& AddCustomRules(const CustomRule& value) { m_customRulesHasBeenSet = true; m_customRules.push_back(value); return *this; }
-    inline UpdateAppRequest& AddCustomRules(CustomRule&& value) { m_customRulesHasBeenSet = true; m_customRules.push_back(std::move(value)); return *this; }
+    template<typename CustomRulesT = Aws::Vector<CustomRule>>
+    void SetCustomRules(CustomRulesT&& value) { m_customRulesHasBeenSet = true; m_customRules = std::forward<CustomRulesT>(value); }
+    template<typename CustomRulesT = Aws::Vector<CustomRule>>
+    UpdateAppRequest& WithCustomRules(CustomRulesT&& value) { SetCustomRules(std::forward<CustomRulesT>(value)); return *this;}
+    template<typename CustomRulesT = CustomRule>
+    UpdateAppRequest& AddCustomRules(CustomRulesT&& value) { m_customRulesHasBeenSet = true; m_customRules.emplace_back(std::forward<CustomRulesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The build specification (build spec) for an Amplify app. </p>
      */
-    inline const Aws::String& GetBuildSpec() const{ return m_buildSpec; }
+    inline const Aws::String& GetBuildSpec() const { return m_buildSpec; }
     inline bool BuildSpecHasBeenSet() const { return m_buildSpecHasBeenSet; }
-    inline void SetBuildSpec(const Aws::String& value) { m_buildSpecHasBeenSet = true; m_buildSpec = value; }
-    inline void SetBuildSpec(Aws::String&& value) { m_buildSpecHasBeenSet = true; m_buildSpec = std::move(value); }
-    inline void SetBuildSpec(const char* value) { m_buildSpecHasBeenSet = true; m_buildSpec.assign(value); }
-    inline UpdateAppRequest& WithBuildSpec(const Aws::String& value) { SetBuildSpec(value); return *this;}
-    inline UpdateAppRequest& WithBuildSpec(Aws::String&& value) { SetBuildSpec(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithBuildSpec(const char* value) { SetBuildSpec(value); return *this;}
+    template<typename BuildSpecT = Aws::String>
+    void SetBuildSpec(BuildSpecT&& value) { m_buildSpecHasBeenSet = true; m_buildSpec = std::forward<BuildSpecT>(value); }
+    template<typename BuildSpecT = Aws::String>
+    UpdateAppRequest& WithBuildSpec(BuildSpecT&& value) { SetBuildSpec(std::forward<BuildSpecT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom HTTP headers for an Amplify app.</p>
      */
-    inline const Aws::String& GetCustomHeaders() const{ return m_customHeaders; }
+    inline const Aws::String& GetCustomHeaders() const { return m_customHeaders; }
     inline bool CustomHeadersHasBeenSet() const { return m_customHeadersHasBeenSet; }
-    inline void SetCustomHeaders(const Aws::String& value) { m_customHeadersHasBeenSet = true; m_customHeaders = value; }
-    inline void SetCustomHeaders(Aws::String&& value) { m_customHeadersHasBeenSet = true; m_customHeaders = std::move(value); }
-    inline void SetCustomHeaders(const char* value) { m_customHeadersHasBeenSet = true; m_customHeaders.assign(value); }
-    inline UpdateAppRequest& WithCustomHeaders(const Aws::String& value) { SetCustomHeaders(value); return *this;}
-    inline UpdateAppRequest& WithCustomHeaders(Aws::String&& value) { SetCustomHeaders(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithCustomHeaders(const char* value) { SetCustomHeaders(value); return *this;}
+    template<typename CustomHeadersT = Aws::String>
+    void SetCustomHeaders(CustomHeadersT&& value) { m_customHeadersHasBeenSet = true; m_customHeaders = std::forward<CustomHeadersT>(value); }
+    template<typename CustomHeadersT = Aws::String>
+    UpdateAppRequest& WithCustomHeaders(CustomHeadersT&& value) { SetCustomHeaders(std::forward<CustomHeadersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Enables automated branch creation for an Amplify app. </p>
      */
-    inline bool GetEnableAutoBranchCreation() const{ return m_enableAutoBranchCreation; }
+    inline bool GetEnableAutoBranchCreation() const { return m_enableAutoBranchCreation; }
     inline bool EnableAutoBranchCreationHasBeenSet() const { return m_enableAutoBranchCreationHasBeenSet; }
     inline void SetEnableAutoBranchCreation(bool value) { m_enableAutoBranchCreationHasBeenSet = true; m_enableAutoBranchCreation = value; }
     inline UpdateAppRequest& WithEnableAutoBranchCreation(bool value) { SetEnableAutoBranchCreation(value); return *this;}
@@ -259,41 +238,38 @@ namespace Model
      * <p>Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAutoBranchCreationPatterns() const{ return m_autoBranchCreationPatterns; }
+    inline const Aws::Vector<Aws::String>& GetAutoBranchCreationPatterns() const { return m_autoBranchCreationPatterns; }
     inline bool AutoBranchCreationPatternsHasBeenSet() const { return m_autoBranchCreationPatternsHasBeenSet; }
-    inline void SetAutoBranchCreationPatterns(const Aws::Vector<Aws::String>& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns = value; }
-    inline void SetAutoBranchCreationPatterns(Aws::Vector<Aws::String>&& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns = std::move(value); }
-    inline UpdateAppRequest& WithAutoBranchCreationPatterns(const Aws::Vector<Aws::String>& value) { SetAutoBranchCreationPatterns(value); return *this;}
-    inline UpdateAppRequest& WithAutoBranchCreationPatterns(Aws::Vector<Aws::String>&& value) { SetAutoBranchCreationPatterns(std::move(value)); return *this;}
-    inline UpdateAppRequest& AddAutoBranchCreationPatterns(const Aws::String& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns.push_back(value); return *this; }
-    inline UpdateAppRequest& AddAutoBranchCreationPatterns(Aws::String&& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns.push_back(std::move(value)); return *this; }
-    inline UpdateAppRequest& AddAutoBranchCreationPatterns(const char* value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns.push_back(value); return *this; }
+    template<typename AutoBranchCreationPatternsT = Aws::Vector<Aws::String>>
+    void SetAutoBranchCreationPatterns(AutoBranchCreationPatternsT&& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns = std::forward<AutoBranchCreationPatternsT>(value); }
+    template<typename AutoBranchCreationPatternsT = Aws::Vector<Aws::String>>
+    UpdateAppRequest& WithAutoBranchCreationPatterns(AutoBranchCreationPatternsT&& value) { SetAutoBranchCreationPatterns(std::forward<AutoBranchCreationPatternsT>(value)); return *this;}
+    template<typename AutoBranchCreationPatternsT = Aws::String>
+    UpdateAppRequest& AddAutoBranchCreationPatterns(AutoBranchCreationPatternsT&& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns.emplace_back(std::forward<AutoBranchCreationPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The automated branch creation configuration for an Amplify app. </p>
      */
-    inline const AutoBranchCreationConfig& GetAutoBranchCreationConfig() const{ return m_autoBranchCreationConfig; }
+    inline const AutoBranchCreationConfig& GetAutoBranchCreationConfig() const { return m_autoBranchCreationConfig; }
     inline bool AutoBranchCreationConfigHasBeenSet() const { return m_autoBranchCreationConfigHasBeenSet; }
-    inline void SetAutoBranchCreationConfig(const AutoBranchCreationConfig& value) { m_autoBranchCreationConfigHasBeenSet = true; m_autoBranchCreationConfig = value; }
-    inline void SetAutoBranchCreationConfig(AutoBranchCreationConfig&& value) { m_autoBranchCreationConfigHasBeenSet = true; m_autoBranchCreationConfig = std::move(value); }
-    inline UpdateAppRequest& WithAutoBranchCreationConfig(const AutoBranchCreationConfig& value) { SetAutoBranchCreationConfig(value); return *this;}
-    inline UpdateAppRequest& WithAutoBranchCreationConfig(AutoBranchCreationConfig&& value) { SetAutoBranchCreationConfig(std::move(value)); return *this;}
+    template<typename AutoBranchCreationConfigT = AutoBranchCreationConfig>
+    void SetAutoBranchCreationConfig(AutoBranchCreationConfigT&& value) { m_autoBranchCreationConfigHasBeenSet = true; m_autoBranchCreationConfig = std::forward<AutoBranchCreationConfigT>(value); }
+    template<typename AutoBranchCreationConfigT = AutoBranchCreationConfig>
+    UpdateAppRequest& WithAutoBranchCreationConfig(AutoBranchCreationConfigT&& value) { SetAutoBranchCreationConfig(std::forward<AutoBranchCreationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Git repository for an Amplify app.</p>
      */
-    inline const Aws::String& GetRepository() const{ return m_repository; }
+    inline const Aws::String& GetRepository() const { return m_repository; }
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
-    inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
-    inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
-    inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
-    inline UpdateAppRequest& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
-    inline UpdateAppRequest& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithRepository(const char* value) { SetRepository(value); return *this;}
+    template<typename RepositoryT = Aws::String>
+    void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
+    template<typename RepositoryT = Aws::String>
+    UpdateAppRequest& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -312,14 +288,12 @@ namespace Model
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
-    inline const Aws::String& GetOauthToken() const{ return m_oauthToken; }
+    inline const Aws::String& GetOauthToken() const { return m_oauthToken; }
     inline bool OauthTokenHasBeenSet() const { return m_oauthTokenHasBeenSet; }
-    inline void SetOauthToken(const Aws::String& value) { m_oauthTokenHasBeenSet = true; m_oauthToken = value; }
-    inline void SetOauthToken(Aws::String&& value) { m_oauthTokenHasBeenSet = true; m_oauthToken = std::move(value); }
-    inline void SetOauthToken(const char* value) { m_oauthTokenHasBeenSet = true; m_oauthToken.assign(value); }
-    inline UpdateAppRequest& WithOauthToken(const Aws::String& value) { SetOauthToken(value); return *this;}
-    inline UpdateAppRequest& WithOauthToken(Aws::String&& value) { SetOauthToken(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithOauthToken(const char* value) { SetOauthToken(value); return *this;}
+    template<typename OauthTokenT = Aws::String>
+    void SetOauthToken(OauthTokenT&& value) { m_oauthTokenHasBeenSet = true; m_oauthToken = std::forward<OauthTokenT>(value); }
+    template<typename OauthTokenT = Aws::String>
+    UpdateAppRequest& WithOauthToken(OauthTokenT&& value) { SetOauthToken(std::forward<OauthTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -338,26 +312,24 @@ namespace Model
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-    inline UpdateAppRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline UpdateAppRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline UpdateAppRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    UpdateAppRequest& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cache configuration for the Amplify app.</p>
      */
-    inline const CacheConfig& GetCacheConfig() const{ return m_cacheConfig; }
+    inline const CacheConfig& GetCacheConfig() const { return m_cacheConfig; }
     inline bool CacheConfigHasBeenSet() const { return m_cacheConfigHasBeenSet; }
-    inline void SetCacheConfig(const CacheConfig& value) { m_cacheConfigHasBeenSet = true; m_cacheConfig = value; }
-    inline void SetCacheConfig(CacheConfig&& value) { m_cacheConfigHasBeenSet = true; m_cacheConfig = std::move(value); }
-    inline UpdateAppRequest& WithCacheConfig(const CacheConfig& value) { SetCacheConfig(value); return *this;}
-    inline UpdateAppRequest& WithCacheConfig(CacheConfig&& value) { SetCacheConfig(std::move(value)); return *this;}
+    template<typename CacheConfigT = CacheConfig>
+    void SetCacheConfig(CacheConfigT&& value) { m_cacheConfigHasBeenSet = true; m_cacheConfig = std::forward<CacheConfigT>(value); }
+    template<typename CacheConfigT = CacheConfig>
+    UpdateAppRequest& WithCacheConfig(CacheConfigT&& value) { SetCacheConfig(std::forward<CacheConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -370,7 +342,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Platform m_platform;
+    Platform m_platform{Platform::NOT_SET};
     bool m_platformHasBeenSet = false;
 
     Aws::String m_computeRoleArn;
@@ -382,13 +354,13 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
     bool m_environmentVariablesHasBeenSet = false;
 
-    bool m_enableBranchAutoBuild;
+    bool m_enableBranchAutoBuild{false};
     bool m_enableBranchAutoBuildHasBeenSet = false;
 
-    bool m_enableBranchAutoDeletion;
+    bool m_enableBranchAutoDeletion{false};
     bool m_enableBranchAutoDeletionHasBeenSet = false;
 
-    bool m_enableBasicAuth;
+    bool m_enableBasicAuth{false};
     bool m_enableBasicAuthHasBeenSet = false;
 
     Aws::String m_basicAuthCredentials;
@@ -403,7 +375,7 @@ namespace Model
     Aws::String m_customHeaders;
     bool m_customHeadersHasBeenSet = false;
 
-    bool m_enableAutoBranchCreation;
+    bool m_enableAutoBranchCreation{false};
     bool m_enableAutoBranchCreationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoBranchCreationPatterns;

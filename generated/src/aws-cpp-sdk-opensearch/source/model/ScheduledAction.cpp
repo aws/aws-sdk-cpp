@@ -18,28 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-ScheduledAction::ScheduledAction() : 
-    m_idHasBeenSet(false),
-    m_type(ActionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_severity(ActionSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_scheduledTime(0),
-    m_scheduledTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scheduledBy(ScheduledBy::NOT_SET),
-    m_scheduledByHasBeenSet(false),
-    m_status(ActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_mandatory(false),
-    m_mandatoryHasBeenSet(false),
-    m_cancellable(false),
-    m_cancellableHasBeenSet(false)
-{
-}
-
 ScheduledAction::ScheduledAction(JsonView jsonValue)
-  : ScheduledAction()
 {
   *this = jsonValue;
 }
@@ -49,66 +28,48 @@ ScheduledAction& ScheduledAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ActionTypeMapper::GetActionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = ActionSeverityMapper::GetActionSeverityForName(jsonValue.GetString("Severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduledTime"))
   {
     m_scheduledTime = jsonValue.GetInt64("ScheduledTime");
-
     m_scheduledTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduledBy"))
   {
     m_scheduledBy = ScheduledByMapper::GetScheduledByForName(jsonValue.GetString("ScheduledBy"));
-
     m_scheduledByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ActionStatusMapper::GetActionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mandatory"))
   {
     m_mandatory = jsonValue.GetBool("Mandatory");
-
     m_mandatoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cancellable"))
   {
     m_cancellable = jsonValue.GetBool("Cancellable");
-
     m_cancellableHasBeenSet = true;
   }
-
   return *this;
 }
 

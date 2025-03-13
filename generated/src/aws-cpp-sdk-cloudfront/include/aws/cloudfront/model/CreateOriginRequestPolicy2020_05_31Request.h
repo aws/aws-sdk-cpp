@@ -21,7 +21,7 @@ namespace Model
   class CreateOriginRequestPolicy2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API CreateOriginRequestPolicy2020_05_31Request();
+    AWS_CLOUDFRONT_API CreateOriginRequestPolicy2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
     /**
      * <p>An origin request policy configuration.</p>
      */
-    inline const OriginRequestPolicyConfig& GetOriginRequestPolicyConfig() const{ return m_originRequestPolicyConfig; }
+    inline const OriginRequestPolicyConfig& GetOriginRequestPolicyConfig() const { return m_originRequestPolicyConfig; }
     inline bool OriginRequestPolicyConfigHasBeenSet() const { return m_originRequestPolicyConfigHasBeenSet; }
-    inline void SetOriginRequestPolicyConfig(const OriginRequestPolicyConfig& value) { m_originRequestPolicyConfigHasBeenSet = true; m_originRequestPolicyConfig = value; }
-    inline void SetOriginRequestPolicyConfig(OriginRequestPolicyConfig&& value) { m_originRequestPolicyConfigHasBeenSet = true; m_originRequestPolicyConfig = std::move(value); }
-    inline CreateOriginRequestPolicy2020_05_31Request& WithOriginRequestPolicyConfig(const OriginRequestPolicyConfig& value) { SetOriginRequestPolicyConfig(value); return *this;}
-    inline CreateOriginRequestPolicy2020_05_31Request& WithOriginRequestPolicyConfig(OriginRequestPolicyConfig&& value) { SetOriginRequestPolicyConfig(std::move(value)); return *this;}
+    template<typename OriginRequestPolicyConfigT = OriginRequestPolicyConfig>
+    void SetOriginRequestPolicyConfig(OriginRequestPolicyConfigT&& value) { m_originRequestPolicyConfigHasBeenSet = true; m_originRequestPolicyConfig = std::forward<OriginRequestPolicyConfigT>(value); }
+    template<typename OriginRequestPolicyConfigT = OriginRequestPolicyConfig>
+    CreateOriginRequestPolicy2020_05_31Request& WithOriginRequestPolicyConfig(OriginRequestPolicyConfigT&& value) { SetOriginRequestPolicyConfig(std::forward<OriginRequestPolicyConfigT>(value)); return *this;}
     ///@}
   private:
 

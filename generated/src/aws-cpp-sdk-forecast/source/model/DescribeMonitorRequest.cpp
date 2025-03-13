@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMonitorRequest::DescribeMonitorRequest() : 
-    m_monitorArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMonitorRequest::SerializePayload() const
 {
   JsonValue payload;

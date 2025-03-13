@@ -32,7 +32,7 @@ namespace Model
   class ModelPerformanceConfiguration
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API ModelPerformanceConfiguration();
+    AWS_BEDROCKAGENTRUNTIME_API ModelPerformanceConfiguration() = default;
     AWS_BEDROCKAGENTRUNTIME_API ModelPerformanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API ModelPerformanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The latency configuration for the model.</p>
      */
-    inline const PerformanceConfiguration& GetPerformanceConfig() const{ return m_performanceConfig; }
+    inline const PerformanceConfiguration& GetPerformanceConfig() const { return m_performanceConfig; }
     inline bool PerformanceConfigHasBeenSet() const { return m_performanceConfigHasBeenSet; }
-    inline void SetPerformanceConfig(const PerformanceConfiguration& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = value; }
-    inline void SetPerformanceConfig(PerformanceConfiguration&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::move(value); }
-    inline ModelPerformanceConfiguration& WithPerformanceConfig(const PerformanceConfiguration& value) { SetPerformanceConfig(value); return *this;}
-    inline ModelPerformanceConfiguration& WithPerformanceConfig(PerformanceConfiguration&& value) { SetPerformanceConfig(std::move(value)); return *this;}
+    template<typename PerformanceConfigT = PerformanceConfiguration>
+    void SetPerformanceConfig(PerformanceConfigT&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::forward<PerformanceConfigT>(value); }
+    template<typename PerformanceConfigT = PerformanceConfiguration>
+    ModelPerformanceConfiguration& WithPerformanceConfig(PerformanceConfigT&& value) { SetPerformanceConfig(std::forward<PerformanceConfigT>(value)); return *this;}
     ///@}
   private:
 

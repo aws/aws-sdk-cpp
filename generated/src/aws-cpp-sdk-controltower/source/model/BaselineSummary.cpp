@@ -18,15 +18,7 @@ namespace ControlTower
 namespace Model
 {
 
-BaselineSummary::BaselineSummary() : 
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 BaselineSummary::BaselineSummary(JsonView jsonValue)
-  : BaselineSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BaselineSummary& BaselineSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

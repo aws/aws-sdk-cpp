@@ -18,21 +18,7 @@ namespace FSx
 namespace Model
 {
 
-UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration() : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_throughputCapacity(0),
-    m_throughputCapacityHasBeenSet(false),
-    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
-    m_auditLogConfigurationHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false)
-{
-}
-
 UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration(JsonView jsonValue)
-  : UpdateFileSystemWindowsConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ UpdateFileSystemWindowsConfiguration& UpdateFileSystemWindowsConfiguration::oper
   if(jsonValue.ValueExists("WeeklyMaintenanceStartTime"))
   {
     m_weeklyMaintenanceStartTime = jsonValue.GetString("WeeklyMaintenanceStartTime");
-
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DailyAutomaticBackupStartTime"))
   {
     m_dailyAutomaticBackupStartTime = jsonValue.GetString("DailyAutomaticBackupStartTime");
-
     m_dailyAutomaticBackupStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutomaticBackupRetentionDays"))
   {
     m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
-
     m_automaticBackupRetentionDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThroughputCapacity"))
   {
     m_throughputCapacity = jsonValue.GetInteger("ThroughputCapacity");
-
     m_throughputCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelfManagedActiveDirectoryConfiguration"))
   {
     m_selfManagedActiveDirectoryConfiguration = jsonValue.GetObject("SelfManagedActiveDirectoryConfiguration");
-
     m_selfManagedActiveDirectoryConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuditLogConfiguration"))
   {
     m_auditLogConfiguration = jsonValue.GetObject("AuditLogConfiguration");
-
     m_auditLogConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskIopsConfiguration"))
   {
     m_diskIopsConfiguration = jsonValue.GetObject("DiskIopsConfiguration");
-
     m_diskIopsConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-InvalidS3ConfigurationException::InvalidS3ConfigurationException() : 
-    m_bucketHasBeenSet(false)
-{
-}
-
 InvalidS3ConfigurationException::InvalidS3ConfigurationException(const XmlNode& xmlNode)
-  : InvalidS3ConfigurationException()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ InvalidS3ConfigurationException& InvalidS3ConfigurationException::operator =(con
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
   }
 

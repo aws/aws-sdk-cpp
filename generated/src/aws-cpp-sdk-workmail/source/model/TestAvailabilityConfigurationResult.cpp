@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestAvailabilityConfigurationResult::TestAvailabilityConfigurationResult() : 
-    m_testPassed(false)
-{
-}
-
 TestAvailabilityConfigurationResult::TestAvailabilityConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : TestAvailabilityConfigurationResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ TestAvailabilityConfigurationResult& TestAvailabilityConfigurationResult::operat
   if(jsonValue.ValueExists("TestPassed"))
   {
     m_testPassed = jsonValue.GetBool("TestPassed");
-
+    m_testPassedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

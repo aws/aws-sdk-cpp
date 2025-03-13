@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetConsoleOutputResponse::GetConsoleOutputResponse()
-{
-}
-
 GetConsoleOutputResponse::GetConsoleOutputResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,16 +38,19 @@ GetConsoleOutputResponse& GetConsoleOutputResponse::operator =(const Aws::Amazon
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
+      m_instanceIdHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())
     {
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_timestampHasBeenSet = true;
     }
     XmlNode outputNode = resultNode.FirstChild("output");
     if(!outputNode.IsNull())
     {
       m_output = Aws::Utils::Xml::DecodeEscapedXmlText(outputNode.GetText());
+      m_outputHasBeenSet = true;
     }
   }
 
@@ -60,6 +59,7 @@ GetConsoleOutputResponse& GetConsoleOutputResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetConsoleOutputResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

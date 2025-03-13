@@ -12,12 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAttributesRequest::DeleteAttributesRequest() : 
-    m_clusterHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

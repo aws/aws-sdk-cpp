@@ -25,7 +25,7 @@ namespace Model
   class CreateSlotRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API CreateSlotRequest();
+    AWS_LEXMODELSV2_API CreateSlotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
      * <p>The name of the slot. Slot names must be unique within the bot that contains
      * the slot.</p>
      */
-    inline const Aws::String& GetSlotName() const{ return m_slotName; }
+    inline const Aws::String& GetSlotName() const { return m_slotName; }
     inline bool SlotNameHasBeenSet() const { return m_slotNameHasBeenSet; }
-    inline void SetSlotName(const Aws::String& value) { m_slotNameHasBeenSet = true; m_slotName = value; }
-    inline void SetSlotName(Aws::String&& value) { m_slotNameHasBeenSet = true; m_slotName = std::move(value); }
-    inline void SetSlotName(const char* value) { m_slotNameHasBeenSet = true; m_slotName.assign(value); }
-    inline CreateSlotRequest& WithSlotName(const Aws::String& value) { SetSlotName(value); return *this;}
-    inline CreateSlotRequest& WithSlotName(Aws::String&& value) { SetSlotName(std::move(value)); return *this;}
-    inline CreateSlotRequest& WithSlotName(const char* value) { SetSlotName(value); return *this;}
+    template<typename SlotNameT = Aws::String>
+    void SetSlotName(SlotNameT&& value) { m_slotNameHasBeenSet = true; m_slotName = std::forward<SlotNameT>(value); }
+    template<typename SlotNameT = Aws::String>
+    CreateSlotRequest& WithSlotName(SlotNameT&& value) { SetSlotName(std::forward<SlotNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the slot. Use this to help identify the slot in lists.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateSlotRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateSlotRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateSlotRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateSlotRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +66,12 @@ namespace Model
      * <p>The unique identifier for the slot type associated with this slot. The slot
      * type determines the values that can be entered into the slot.</p>
      */
-    inline const Aws::String& GetSlotTypeId() const{ return m_slotTypeId; }
+    inline const Aws::String& GetSlotTypeId() const { return m_slotTypeId; }
     inline bool SlotTypeIdHasBeenSet() const { return m_slotTypeIdHasBeenSet; }
-    inline void SetSlotTypeId(const Aws::String& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = value; }
-    inline void SetSlotTypeId(Aws::String&& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = std::move(value); }
-    inline void SetSlotTypeId(const char* value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId.assign(value); }
-    inline CreateSlotRequest& WithSlotTypeId(const Aws::String& value) { SetSlotTypeId(value); return *this;}
-    inline CreateSlotRequest& WithSlotTypeId(Aws::String&& value) { SetSlotTypeId(std::move(value)); return *this;}
-    inline CreateSlotRequest& WithSlotTypeId(const char* value) { SetSlotTypeId(value); return *this;}
+    template<typename SlotTypeIdT = Aws::String>
+    void SetSlotTypeId(SlotTypeIdT&& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = std::forward<SlotTypeIdT>(value); }
+    template<typename SlotTypeIdT = Aws::String>
+    CreateSlotRequest& WithSlotTypeId(SlotTypeIdT&& value) { SetSlotTypeId(std::forward<SlotTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +79,12 @@ namespace Model
      * <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that
      * provides the value for the slot. </p>
      */
-    inline const SlotValueElicitationSetting& GetValueElicitationSetting() const{ return m_valueElicitationSetting; }
+    inline const SlotValueElicitationSetting& GetValueElicitationSetting() const { return m_valueElicitationSetting; }
     inline bool ValueElicitationSettingHasBeenSet() const { return m_valueElicitationSettingHasBeenSet; }
-    inline void SetValueElicitationSetting(const SlotValueElicitationSetting& value) { m_valueElicitationSettingHasBeenSet = true; m_valueElicitationSetting = value; }
-    inline void SetValueElicitationSetting(SlotValueElicitationSetting&& value) { m_valueElicitationSettingHasBeenSet = true; m_valueElicitationSetting = std::move(value); }
-    inline CreateSlotRequest& WithValueElicitationSetting(const SlotValueElicitationSetting& value) { SetValueElicitationSetting(value); return *this;}
-    inline CreateSlotRequest& WithValueElicitationSetting(SlotValueElicitationSetting&& value) { SetValueElicitationSetting(std::move(value)); return *this;}
+    template<typename ValueElicitationSettingT = SlotValueElicitationSetting>
+    void SetValueElicitationSetting(ValueElicitationSettingT&& value) { m_valueElicitationSettingHasBeenSet = true; m_valueElicitationSetting = std::forward<ValueElicitationSettingT>(value); }
+    template<typename ValueElicitationSettingT = SlotValueElicitationSetting>
+    CreateSlotRequest& WithValueElicitationSetting(ValueElicitationSettingT&& value) { SetValueElicitationSetting(std::forward<ValueElicitationSettingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,40 +95,36 @@ namespace Model
      * If the value is <code>None</code>, the actual value is present in the log
      * output.</p> <p>The default is to obfuscate values in the CloudWatch logs.</p>
      */
-    inline const ObfuscationSetting& GetObfuscationSetting() const{ return m_obfuscationSetting; }
+    inline const ObfuscationSetting& GetObfuscationSetting() const { return m_obfuscationSetting; }
     inline bool ObfuscationSettingHasBeenSet() const { return m_obfuscationSettingHasBeenSet; }
-    inline void SetObfuscationSetting(const ObfuscationSetting& value) { m_obfuscationSettingHasBeenSet = true; m_obfuscationSetting = value; }
-    inline void SetObfuscationSetting(ObfuscationSetting&& value) { m_obfuscationSettingHasBeenSet = true; m_obfuscationSetting = std::move(value); }
-    inline CreateSlotRequest& WithObfuscationSetting(const ObfuscationSetting& value) { SetObfuscationSetting(value); return *this;}
-    inline CreateSlotRequest& WithObfuscationSetting(ObfuscationSetting&& value) { SetObfuscationSetting(std::move(value)); return *this;}
+    template<typename ObfuscationSettingT = ObfuscationSetting>
+    void SetObfuscationSetting(ObfuscationSettingT&& value) { m_obfuscationSettingHasBeenSet = true; m_obfuscationSetting = std::forward<ObfuscationSettingT>(value); }
+    template<typename ObfuscationSettingT = ObfuscationSetting>
+    CreateSlotRequest& WithObfuscationSetting(ObfuscationSettingT&& value) { SetObfuscationSetting(std::forward<ObfuscationSettingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the bot associated with the slot.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline CreateSlotRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline CreateSlotRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline CreateSlotRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    CreateSlotRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the bot associated with the slot.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
     inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersionHasBeenSet = true; m_botVersion.assign(value); }
-    inline CreateSlotRequest& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline CreateSlotRequest& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline CreateSlotRequest& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    CreateSlotRequest& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,28 +135,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
      * languages</a>.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
-    inline CreateSlotRequest& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline CreateSlotRequest& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline CreateSlotRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    CreateSlotRequest& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the intent that contains the slot.</p>
      */
-    inline const Aws::String& GetIntentId() const{ return m_intentId; }
+    inline const Aws::String& GetIntentId() const { return m_intentId; }
     inline bool IntentIdHasBeenSet() const { return m_intentIdHasBeenSet; }
-    inline void SetIntentId(const Aws::String& value) { m_intentIdHasBeenSet = true; m_intentId = value; }
-    inline void SetIntentId(Aws::String&& value) { m_intentIdHasBeenSet = true; m_intentId = std::move(value); }
-    inline void SetIntentId(const char* value) { m_intentIdHasBeenSet = true; m_intentId.assign(value); }
-    inline CreateSlotRequest& WithIntentId(const Aws::String& value) { SetIntentId(value); return *this;}
-    inline CreateSlotRequest& WithIntentId(Aws::String&& value) { SetIntentId(std::move(value)); return *this;}
-    inline CreateSlotRequest& WithIntentId(const char* value) { SetIntentId(value); return *this;}
+    template<typename IntentIdT = Aws::String>
+    void SetIntentId(IntentIdT&& value) { m_intentIdHasBeenSet = true; m_intentId = std::forward<IntentIdT>(value); }
+    template<typename IntentIdT = Aws::String>
+    CreateSlotRequest& WithIntentId(IntentIdT&& value) { SetIntentId(std::forward<IntentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,12 +164,12 @@ namespace Model
      * <code>multipleValuesSetting</code> is not set, the default value is
      * <code>false</code>.</p>
      */
-    inline const MultipleValuesSetting& GetMultipleValuesSetting() const{ return m_multipleValuesSetting; }
+    inline const MultipleValuesSetting& GetMultipleValuesSetting() const { return m_multipleValuesSetting; }
     inline bool MultipleValuesSettingHasBeenSet() const { return m_multipleValuesSettingHasBeenSet; }
-    inline void SetMultipleValuesSetting(const MultipleValuesSetting& value) { m_multipleValuesSettingHasBeenSet = true; m_multipleValuesSetting = value; }
-    inline void SetMultipleValuesSetting(MultipleValuesSetting&& value) { m_multipleValuesSettingHasBeenSet = true; m_multipleValuesSetting = std::move(value); }
-    inline CreateSlotRequest& WithMultipleValuesSetting(const MultipleValuesSetting& value) { SetMultipleValuesSetting(value); return *this;}
-    inline CreateSlotRequest& WithMultipleValuesSetting(MultipleValuesSetting&& value) { SetMultipleValuesSetting(std::move(value)); return *this;}
+    template<typename MultipleValuesSettingT = MultipleValuesSetting>
+    void SetMultipleValuesSetting(MultipleValuesSettingT&& value) { m_multipleValuesSettingHasBeenSet = true; m_multipleValuesSetting = std::forward<MultipleValuesSettingT>(value); }
+    template<typename MultipleValuesSettingT = MultipleValuesSetting>
+    CreateSlotRequest& WithMultipleValuesSetting(MultipleValuesSettingT&& value) { SetMultipleValuesSetting(std::forward<MultipleValuesSettingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,12 +177,12 @@ namespace Model
      * <p>Specifications for the constituent sub slots and the expression for the
      * composite slot.</p>
      */
-    inline const SubSlotSetting& GetSubSlotSetting() const{ return m_subSlotSetting; }
+    inline const SubSlotSetting& GetSubSlotSetting() const { return m_subSlotSetting; }
     inline bool SubSlotSettingHasBeenSet() const { return m_subSlotSettingHasBeenSet; }
-    inline void SetSubSlotSetting(const SubSlotSetting& value) { m_subSlotSettingHasBeenSet = true; m_subSlotSetting = value; }
-    inline void SetSubSlotSetting(SubSlotSetting&& value) { m_subSlotSettingHasBeenSet = true; m_subSlotSetting = std::move(value); }
-    inline CreateSlotRequest& WithSubSlotSetting(const SubSlotSetting& value) { SetSubSlotSetting(value); return *this;}
-    inline CreateSlotRequest& WithSubSlotSetting(SubSlotSetting&& value) { SetSubSlotSetting(std::move(value)); return *this;}
+    template<typename SubSlotSettingT = SubSlotSetting>
+    void SetSubSlotSetting(SubSlotSettingT&& value) { m_subSlotSettingHasBeenSet = true; m_subSlotSetting = std::forward<SubSlotSettingT>(value); }
+    template<typename SubSlotSettingT = SubSlotSetting>
+    CreateSlotRequest& WithSubSlotSetting(SubSlotSettingT&& value) { SetSubSlotSetting(std::forward<SubSlotSettingT>(value)); return *this;}
     ///@}
   private:
 

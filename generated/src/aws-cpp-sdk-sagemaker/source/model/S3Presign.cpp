@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-S3Presign::S3Presign() : 
-    m_iamPolicyConstraintsHasBeenSet(false)
-{
-}
-
 S3Presign::S3Presign(JsonView jsonValue)
-  : S3Presign()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3Presign& S3Presign::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IamPolicyConstraints"))
   {
     m_iamPolicyConstraints = jsonValue.GetObject("IamPolicyConstraints");
-
     m_iamPolicyConstraintsHasBeenSet = true;
   }
-
   return *this;
 }
 

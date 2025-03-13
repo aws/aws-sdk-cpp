@@ -18,26 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-EC2InstanceCounts::EC2InstanceCounts() : 
-    m_dESIRED(0),
-    m_dESIREDHasBeenSet(false),
-    m_mINIMUM(0),
-    m_mINIMUMHasBeenSet(false),
-    m_mAXIMUM(0),
-    m_mAXIMUMHasBeenSet(false),
-    m_pENDING(0),
-    m_pENDINGHasBeenSet(false),
-    m_aCTIVE(0),
-    m_aCTIVEHasBeenSet(false),
-    m_iDLE(0),
-    m_iDLEHasBeenSet(false),
-    m_tERMINATING(0),
-    m_tERMINATINGHasBeenSet(false)
-{
-}
-
 EC2InstanceCounts::EC2InstanceCounts(JsonView jsonValue)
-  : EC2InstanceCounts()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ EC2InstanceCounts& EC2InstanceCounts::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DESIRED"))
   {
     m_dESIRED = jsonValue.GetInteger("DESIRED");
-
     m_dESIREDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MINIMUM"))
   {
     m_mINIMUM = jsonValue.GetInteger("MINIMUM");
-
     m_mINIMUMHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MAXIMUM"))
   {
     m_mAXIMUM = jsonValue.GetInteger("MAXIMUM");
-
     m_mAXIMUMHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PENDING"))
   {
     m_pENDING = jsonValue.GetInteger("PENDING");
-
     m_pENDINGHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ACTIVE"))
   {
     m_aCTIVE = jsonValue.GetInteger("ACTIVE");
-
     m_aCTIVEHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IDLE"))
   {
     m_iDLE = jsonValue.GetInteger("IDLE");
-
     m_iDLEHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TERMINATING"))
   {
     m_tERMINATING = jsonValue.GetInteger("TERMINATING");
-
     m_tERMINATINGHasBeenSet = true;
   }
-
   return *this;
 }
 

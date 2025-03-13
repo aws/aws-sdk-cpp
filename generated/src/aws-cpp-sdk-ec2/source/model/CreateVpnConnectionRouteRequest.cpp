@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateVpnConnectionRouteRequest::CreateVpnConnectionRouteRequest() : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_vpnConnectionIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateVpnConnectionRouteRequest::SerializePayload() const
 {
   Aws::StringStream ss;

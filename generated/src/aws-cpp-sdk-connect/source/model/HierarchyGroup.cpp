@@ -18,20 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HierarchyGroup::HierarchyGroup() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_levelIdHasBeenSet(false),
-    m_hierarchyPathHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
-{
-}
-
 HierarchyGroup::HierarchyGroup(JsonView jsonValue)
-  : HierarchyGroup()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ HierarchyGroup& HierarchyGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LevelId"))
   {
     m_levelId = jsonValue.GetString("LevelId");
-
     m_levelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HierarchyPath"))
   {
     m_hierarchyPath = jsonValue.GetObject("HierarchyPath");
-
     m_hierarchyPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -82,21 +59,16 @@ HierarchyGroup& HierarchyGroup::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedRegion"))
   {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
-
     m_lastModifiedRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

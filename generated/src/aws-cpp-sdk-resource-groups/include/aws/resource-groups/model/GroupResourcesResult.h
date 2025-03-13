@@ -30,7 +30,7 @@ namespace Model
   class GroupResourcesResult
   {
   public:
-    AWS_RESOURCEGROUPS_API GroupResourcesResult();
+    AWS_RESOURCEGROUPS_API GroupResourcesResult() = default;
     AWS_RESOURCEGROUPS_API GroupResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEGROUPS_API GroupResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,14 +40,13 @@ namespace Model
      * <p>A list of Amazon resource names (ARNs) of the resources that this operation
      * successfully added to the group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSucceeded() const{ return m_succeeded; }
-    inline void SetSucceeded(const Aws::Vector<Aws::String>& value) { m_succeeded = value; }
-    inline void SetSucceeded(Aws::Vector<Aws::String>&& value) { m_succeeded = std::move(value); }
-    inline GroupResourcesResult& WithSucceeded(const Aws::Vector<Aws::String>& value) { SetSucceeded(value); return *this;}
-    inline GroupResourcesResult& WithSucceeded(Aws::Vector<Aws::String>&& value) { SetSucceeded(std::move(value)); return *this;}
-    inline GroupResourcesResult& AddSucceeded(const Aws::String& value) { m_succeeded.push_back(value); return *this; }
-    inline GroupResourcesResult& AddSucceeded(Aws::String&& value) { m_succeeded.push_back(std::move(value)); return *this; }
-    inline GroupResourcesResult& AddSucceeded(const char* value) { m_succeeded.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSucceeded() const { return m_succeeded; }
+    template<typename SucceededT = Aws::Vector<Aws::String>>
+    void SetSucceeded(SucceededT&& value) { m_succeededHasBeenSet = true; m_succeeded = std::forward<SucceededT>(value); }
+    template<typename SucceededT = Aws::Vector<Aws::String>>
+    GroupResourcesResult& WithSucceeded(SucceededT&& value) { SetSucceeded(std::forward<SucceededT>(value)); return *this;}
+    template<typename SucceededT = Aws::String>
+    GroupResourcesResult& AddSucceeded(SucceededT&& value) { m_succeededHasBeenSet = true; m_succeeded.emplace_back(std::forward<SucceededT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,13 +54,13 @@ namespace Model
      * <p>A list of Amazon resource names (ARNs) of any resources that this operation
      * failed to add to the group.</p>
      */
-    inline const Aws::Vector<FailedResource>& GetFailed() const{ return m_failed; }
-    inline void SetFailed(const Aws::Vector<FailedResource>& value) { m_failed = value; }
-    inline void SetFailed(Aws::Vector<FailedResource>&& value) { m_failed = std::move(value); }
-    inline GroupResourcesResult& WithFailed(const Aws::Vector<FailedResource>& value) { SetFailed(value); return *this;}
-    inline GroupResourcesResult& WithFailed(Aws::Vector<FailedResource>&& value) { SetFailed(std::move(value)); return *this;}
-    inline GroupResourcesResult& AddFailed(const FailedResource& value) { m_failed.push_back(value); return *this; }
-    inline GroupResourcesResult& AddFailed(FailedResource&& value) { m_failed.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedResource>& GetFailed() const { return m_failed; }
+    template<typename FailedT = Aws::Vector<FailedResource>>
+    void SetFailed(FailedT&& value) { m_failedHasBeenSet = true; m_failed = std::forward<FailedT>(value); }
+    template<typename FailedT = Aws::Vector<FailedResource>>
+    GroupResourcesResult& WithFailed(FailedT&& value) { SetFailed(std::forward<FailedT>(value)); return *this;}
+    template<typename FailedT = FailedResource>
+    GroupResourcesResult& AddFailed(FailedT&& value) { m_failedHasBeenSet = true; m_failed.emplace_back(std::forward<FailedT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,34 +72,36 @@ namespace Model
      * <code>Resources</code> array in the response and the <code>Status</code> field
      * of each object in that array. </p>
      */
-    inline const Aws::Vector<PendingResource>& GetPending() const{ return m_pending; }
-    inline void SetPending(const Aws::Vector<PendingResource>& value) { m_pending = value; }
-    inline void SetPending(Aws::Vector<PendingResource>&& value) { m_pending = std::move(value); }
-    inline GroupResourcesResult& WithPending(const Aws::Vector<PendingResource>& value) { SetPending(value); return *this;}
-    inline GroupResourcesResult& WithPending(Aws::Vector<PendingResource>&& value) { SetPending(std::move(value)); return *this;}
-    inline GroupResourcesResult& AddPending(const PendingResource& value) { m_pending.push_back(value); return *this; }
-    inline GroupResourcesResult& AddPending(PendingResource&& value) { m_pending.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PendingResource>& GetPending() const { return m_pending; }
+    template<typename PendingT = Aws::Vector<PendingResource>>
+    void SetPending(PendingT&& value) { m_pendingHasBeenSet = true; m_pending = std::forward<PendingT>(value); }
+    template<typename PendingT = Aws::Vector<PendingResource>>
+    GroupResourcesResult& WithPending(PendingT&& value) { SetPending(std::forward<PendingT>(value)); return *this;}
+    template<typename PendingT = PendingResource>
+    GroupResourcesResult& AddPending(PendingT&& value) { m_pendingHasBeenSet = true; m_pending.emplace_back(std::forward<PendingT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GroupResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GroupResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GroupResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GroupResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_succeeded;
+    bool m_succeededHasBeenSet = false;
 
     Aws::Vector<FailedResource> m_failed;
+    bool m_failedHasBeenSet = false;
 
     Aws::Vector<PendingResource> m_pending;
+    bool m_pendingHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

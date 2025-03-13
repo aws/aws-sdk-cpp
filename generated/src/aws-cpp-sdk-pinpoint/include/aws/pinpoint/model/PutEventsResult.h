@@ -28,35 +28,35 @@ namespace Model
   class PutEventsResult
   {
   public:
-    AWS_PINPOINT_API PutEventsResult();
+    AWS_PINPOINT_API PutEventsResult() = default;
     AWS_PINPOINT_API PutEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API PutEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const EventsResponse& GetEventsResponse() const{ return m_eventsResponse; }
-    inline void SetEventsResponse(const EventsResponse& value) { m_eventsResponse = value; }
-    inline void SetEventsResponse(EventsResponse&& value) { m_eventsResponse = std::move(value); }
-    inline PutEventsResult& WithEventsResponse(const EventsResponse& value) { SetEventsResponse(value); return *this;}
-    inline PutEventsResult& WithEventsResponse(EventsResponse&& value) { SetEventsResponse(std::move(value)); return *this;}
+    inline const EventsResponse& GetEventsResponse() const { return m_eventsResponse; }
+    template<typename EventsResponseT = EventsResponse>
+    void SetEventsResponse(EventsResponseT&& value) { m_eventsResponseHasBeenSet = true; m_eventsResponse = std::forward<EventsResponseT>(value); }
+    template<typename EventsResponseT = EventsResponse>
+    PutEventsResult& WithEventsResponse(EventsResponseT&& value) { SetEventsResponse(std::forward<EventsResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutEventsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EventsResponse m_eventsResponse;
+    bool m_eventsResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

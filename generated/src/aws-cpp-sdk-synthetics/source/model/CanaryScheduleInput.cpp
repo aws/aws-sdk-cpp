@@ -18,15 +18,7 @@ namespace Synthetics
 namespace Model
 {
 
-CanaryScheduleInput::CanaryScheduleInput() : 
-    m_expressionHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
-{
-}
-
 CanaryScheduleInput::CanaryScheduleInput(JsonView jsonValue)
-  : CanaryScheduleInput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CanaryScheduleInput& CanaryScheduleInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInt64("DurationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

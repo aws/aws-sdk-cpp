@@ -34,7 +34,7 @@ namespace Model
   class TopicRefreshSchedule
   {
   public:
-    AWS_QUICKSIGHT_API TopicRefreshSchedule();
+    AWS_QUICKSIGHT_API TopicRefreshSchedule() = default;
     AWS_QUICKSIGHT_API TopicRefreshSchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicRefreshSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>A Boolean value that controls whether to schedule is enabled.</p>
      */
-    inline bool GetIsEnabled() const{ return m_isEnabled; }
+    inline bool GetIsEnabled() const { return m_isEnabled; }
     inline bool IsEnabledHasBeenSet() const { return m_isEnabledHasBeenSet; }
     inline void SetIsEnabled(bool value) { m_isEnabledHasBeenSet = true; m_isEnabled = value; }
     inline TopicRefreshSchedule& WithIsEnabled(bool value) { SetIsEnabled(value); return *this;}
@@ -55,7 +55,7 @@ namespace Model
      * <p>A Boolean value that controls whether to schedule runs at the same schedule
      * that is specified in SPICE dataset.</p>
      */
-    inline bool GetBasedOnSpiceSchedule() const{ return m_basedOnSpiceSchedule; }
+    inline bool GetBasedOnSpiceSchedule() const { return m_basedOnSpiceSchedule; }
     inline bool BasedOnSpiceScheduleHasBeenSet() const { return m_basedOnSpiceScheduleHasBeenSet; }
     inline void SetBasedOnSpiceSchedule(bool value) { m_basedOnSpiceScheduleHasBeenSet = true; m_basedOnSpiceSchedule = value; }
     inline TopicRefreshSchedule& WithBasedOnSpiceSchedule(bool value) { SetBasedOnSpiceSchedule(value); return *this;}
@@ -65,40 +65,36 @@ namespace Model
     /**
      * <p>The starting date and time for the refresh schedule.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartingAt() const{ return m_startingAt; }
+    inline const Aws::Utils::DateTime& GetStartingAt() const { return m_startingAt; }
     inline bool StartingAtHasBeenSet() const { return m_startingAtHasBeenSet; }
-    inline void SetStartingAt(const Aws::Utils::DateTime& value) { m_startingAtHasBeenSet = true; m_startingAt = value; }
-    inline void SetStartingAt(Aws::Utils::DateTime&& value) { m_startingAtHasBeenSet = true; m_startingAt = std::move(value); }
-    inline TopicRefreshSchedule& WithStartingAt(const Aws::Utils::DateTime& value) { SetStartingAt(value); return *this;}
-    inline TopicRefreshSchedule& WithStartingAt(Aws::Utils::DateTime&& value) { SetStartingAt(std::move(value)); return *this;}
+    template<typename StartingAtT = Aws::Utils::DateTime>
+    void SetStartingAt(StartingAtT&& value) { m_startingAtHasBeenSet = true; m_startingAt = std::forward<StartingAtT>(value); }
+    template<typename StartingAtT = Aws::Utils::DateTime>
+    TopicRefreshSchedule& WithStartingAt(StartingAtT&& value) { SetStartingAt(std::forward<StartingAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timezone that you want the refresh schedule to use.</p>
      */
-    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+    inline const Aws::String& GetTimezone() const { return m_timezone; }
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
-    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
-    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
-    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
-    inline TopicRefreshSchedule& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
-    inline TopicRefreshSchedule& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
-    inline TopicRefreshSchedule& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+    template<typename TimezoneT = Aws::String>
+    void SetTimezone(TimezoneT&& value) { m_timezoneHasBeenSet = true; m_timezone = std::forward<TimezoneT>(value); }
+    template<typename TimezoneT = Aws::String>
+    TopicRefreshSchedule& WithTimezone(TimezoneT&& value) { SetTimezone(std::forward<TimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time of day when the refresh should run, for example, Monday-Sunday.</p>
      */
-    inline const Aws::String& GetRepeatAt() const{ return m_repeatAt; }
+    inline const Aws::String& GetRepeatAt() const { return m_repeatAt; }
     inline bool RepeatAtHasBeenSet() const { return m_repeatAtHasBeenSet; }
-    inline void SetRepeatAt(const Aws::String& value) { m_repeatAtHasBeenSet = true; m_repeatAt = value; }
-    inline void SetRepeatAt(Aws::String&& value) { m_repeatAtHasBeenSet = true; m_repeatAt = std::move(value); }
-    inline void SetRepeatAt(const char* value) { m_repeatAtHasBeenSet = true; m_repeatAt.assign(value); }
-    inline TopicRefreshSchedule& WithRepeatAt(const Aws::String& value) { SetRepeatAt(value); return *this;}
-    inline TopicRefreshSchedule& WithRepeatAt(Aws::String&& value) { SetRepeatAt(std::move(value)); return *this;}
-    inline TopicRefreshSchedule& WithRepeatAt(const char* value) { SetRepeatAt(value); return *this;}
+    template<typename RepeatAtT = Aws::String>
+    void SetRepeatAt(RepeatAtT&& value) { m_repeatAtHasBeenSet = true; m_repeatAt = std::forward<RepeatAtT>(value); }
+    template<typename RepeatAtT = Aws::String>
+    TopicRefreshSchedule& WithRepeatAt(RepeatAtT&& value) { SetRepeatAt(std::forward<RepeatAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,22 +103,20 @@ namespace Model
      * <code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>, and
      * <code>MONTHLY</code>.</p>
      */
-    inline const TopicScheduleType& GetTopicScheduleType() const{ return m_topicScheduleType; }
+    inline TopicScheduleType GetTopicScheduleType() const { return m_topicScheduleType; }
     inline bool TopicScheduleTypeHasBeenSet() const { return m_topicScheduleTypeHasBeenSet; }
-    inline void SetTopicScheduleType(const TopicScheduleType& value) { m_topicScheduleTypeHasBeenSet = true; m_topicScheduleType = value; }
-    inline void SetTopicScheduleType(TopicScheduleType&& value) { m_topicScheduleTypeHasBeenSet = true; m_topicScheduleType = std::move(value); }
-    inline TopicRefreshSchedule& WithTopicScheduleType(const TopicScheduleType& value) { SetTopicScheduleType(value); return *this;}
-    inline TopicRefreshSchedule& WithTopicScheduleType(TopicScheduleType&& value) { SetTopicScheduleType(std::move(value)); return *this;}
+    inline void SetTopicScheduleType(TopicScheduleType value) { m_topicScheduleTypeHasBeenSet = true; m_topicScheduleType = value; }
+    inline TopicRefreshSchedule& WithTopicScheduleType(TopicScheduleType value) { SetTopicScheduleType(value); return *this;}
     ///@}
   private:
 
-    bool m_isEnabled;
+    bool m_isEnabled{false};
     bool m_isEnabledHasBeenSet = false;
 
-    bool m_basedOnSpiceSchedule;
+    bool m_basedOnSpiceSchedule{false};
     bool m_basedOnSpiceScheduleHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startingAt;
+    Aws::Utils::DateTime m_startingAt{};
     bool m_startingAtHasBeenSet = false;
 
     Aws::String m_timezone;
@@ -131,7 +125,7 @@ namespace Model
     Aws::String m_repeatAt;
     bool m_repeatAtHasBeenSet = false;
 
-    TopicScheduleType m_topicScheduleType;
+    TopicScheduleType m_topicScheduleType{TopicScheduleType::NOT_SET};
     bool m_topicScheduleTypeHasBeenSet = false;
   };
 

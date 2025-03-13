@@ -18,13 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-Matcher::Matcher() : 
-    m_httpCodeHasBeenSet(false)
-{
-}
-
 Matcher::Matcher(JsonView jsonValue)
-  : Matcher()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Matcher& Matcher::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("httpCode"))
   {
     m_httpCode = jsonValue.GetString("httpCode");
-
     m_httpCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

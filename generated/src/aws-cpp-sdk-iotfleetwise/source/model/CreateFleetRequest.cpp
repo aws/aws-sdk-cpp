@@ -12,14 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFleetRequest::CreateFleetRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_signalCatalogArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFleetRequest::SerializePayload() const
 {
   JsonValue payload;

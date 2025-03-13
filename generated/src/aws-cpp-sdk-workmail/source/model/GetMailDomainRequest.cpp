@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMailDomainRequest::GetMailDomainRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String GetMailDomainRequest::SerializePayload() const
 {
   JsonValue payload;

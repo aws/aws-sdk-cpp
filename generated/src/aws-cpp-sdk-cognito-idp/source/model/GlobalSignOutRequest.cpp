@@ -12,11 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GlobalSignOutRequest::GlobalSignOutRequest() : 
-    m_accessTokenHasBeenSet(false)
-{
-}
-
 Aws::String GlobalSignOutRequest::SerializePayload() const
 {
   JsonValue payload;

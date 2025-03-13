@@ -18,16 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-State::State() : 
-    m_stateNameHasBeenSet(false),
-    m_onInputHasBeenSet(false),
-    m_onEnterHasBeenSet(false),
-    m_onExitHasBeenSet(false)
-{
-}
-
 State::State(JsonView jsonValue)
-  : State()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ State& State::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stateName"))
   {
     m_stateName = jsonValue.GetString("stateName");
-
     m_stateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("onInput"))
   {
     m_onInput = jsonValue.GetObject("onInput");
-
     m_onInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("onEnter"))
   {
     m_onEnter = jsonValue.GetObject("onEnter");
-
     m_onEnterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("onExit"))
   {
     m_onExit = jsonValue.GetObject("onExit");
-
     m_onExitHasBeenSet = true;
   }
-
   return *this;
 }
 

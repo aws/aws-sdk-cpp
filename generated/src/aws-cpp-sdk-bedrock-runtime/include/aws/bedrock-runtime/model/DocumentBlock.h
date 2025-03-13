@@ -33,7 +33,7 @@ namespace Model
   class DocumentBlock
   {
   public:
-    AWS_BEDROCKRUNTIME_API DocumentBlock();
+    AWS_BEDROCKRUNTIME_API DocumentBlock() = default;
     AWS_BEDROCKRUNTIME_API DocumentBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API DocumentBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The format of a document, or its extension.</p>
      */
-    inline const DocumentFormat& GetFormat() const{ return m_format; }
+    inline DocumentFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const DocumentFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(DocumentFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline DocumentBlock& WithFormat(const DocumentFormat& value) { SetFormat(value); return *this;}
-    inline DocumentBlock& WithFormat(DocumentFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(DocumentFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline DocumentBlock& WithFormat(DocumentFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -61,30 +59,28 @@ namespace Model
      * model might inadvertently interpret it as instructions. Therefore, we recommend
      * that you specify a neutral name.</p> 
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DocumentBlock& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DocumentBlock& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DocumentBlock& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DocumentBlock& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the content of the document.</p>
      */
-    inline const DocumentSource& GetSource() const{ return m_source; }
+    inline const DocumentSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const DocumentSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(DocumentSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline DocumentBlock& WithSource(const DocumentSource& value) { SetSource(value); return *this;}
-    inline DocumentBlock& WithSource(DocumentSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = DocumentSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = DocumentSource>
+    DocumentBlock& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 
-    DocumentFormat m_format;
+    DocumentFormat m_format{DocumentFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::String m_name;

@@ -18,13 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-RecommendationData::RecommendationData() : 
-    m_rdsEngineHasBeenSet(false)
-{
-}
-
 RecommendationData::RecommendationData(JsonView jsonValue)
-  : RecommendationData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RecommendationData& RecommendationData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RdsEngine"))
   {
     m_rdsEngine = jsonValue.GetObject("RdsEngine");
-
     m_rdsEngineHasBeenSet = true;
   }
-
   return *this;
 }
 

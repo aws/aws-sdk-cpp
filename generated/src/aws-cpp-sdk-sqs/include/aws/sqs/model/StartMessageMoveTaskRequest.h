@@ -21,7 +21,7 @@ namespace Model
   class StartMessageMoveTaskRequest : public SQSRequest
   {
   public:
-    AWS_SQS_API StartMessageMoveTaskRequest();
+    AWS_SQS_API StartMessageMoveTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda
      * or Amazon SNS topics, are not currently supported.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline StartMessageMoveTaskRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline StartMessageMoveTaskRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline StartMessageMoveTaskRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    StartMessageMoveTaskRequest& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * this field is left blank, the messages will be redriven back to their respective
      * original source queues.</p>
      */
-    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+    inline const Aws::String& GetDestinationArn() const { return m_destinationArn; }
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
-    inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
-    inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
-    inline StartMessageMoveTaskRequest& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-    inline StartMessageMoveTaskRequest& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-    inline StartMessageMoveTaskRequest& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    template<typename DestinationArnT = Aws::String>
+    void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
+    template<typename DestinationArnT = Aws::String>
+    StartMessageMoveTaskRequest& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * will optimize the rate based on the queue message backlog size, which may vary
      * throughout the duration of the message movement task.</p>
      */
-    inline int GetMaxNumberOfMessagesPerSecond() const{ return m_maxNumberOfMessagesPerSecond; }
+    inline int GetMaxNumberOfMessagesPerSecond() const { return m_maxNumberOfMessagesPerSecond; }
     inline bool MaxNumberOfMessagesPerSecondHasBeenSet() const { return m_maxNumberOfMessagesPerSecondHasBeenSet; }
     inline void SetMaxNumberOfMessagesPerSecond(int value) { m_maxNumberOfMessagesPerSecondHasBeenSet = true; m_maxNumberOfMessagesPerSecond = value; }
     inline StartMessageMoveTaskRequest& WithMaxNumberOfMessagesPerSecond(int value) { SetMaxNumberOfMessagesPerSecond(value); return *this;}
@@ -89,7 +85,7 @@ namespace Model
     Aws::String m_destinationArn;
     bool m_destinationArnHasBeenSet = false;
 
-    int m_maxNumberOfMessagesPerSecond;
+    int m_maxNumberOfMessagesPerSecond{0};
     bool m_maxNumberOfMessagesPerSecondHasBeenSet = false;
   };
 

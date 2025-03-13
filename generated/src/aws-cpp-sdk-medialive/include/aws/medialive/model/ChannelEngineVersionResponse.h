@@ -33,7 +33,7 @@ namespace Model
   class ChannelEngineVersionResponse
   {
   public:
-    AWS_MEDIALIVE_API ChannelEngineVersionResponse();
+    AWS_MEDIALIVE_API ChannelEngineVersionResponse() = default;
     AWS_MEDIALIVE_API ChannelEngineVersionResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API ChannelEngineVersionResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,28 @@ namespace Model
     /**
      * The UTC time when the version expires.
      */
-    inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
+    inline const Aws::Utils::DateTime& GetExpirationDate() const { return m_expirationDate; }
     inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
-    inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
-    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::move(value); }
-    inline ChannelEngineVersionResponse& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
-    inline ChannelEngineVersionResponse& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    void SetExpirationDate(ExpirationDateT&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::forward<ExpirationDateT>(value); }
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    ChannelEngineVersionResponse& WithExpirationDate(ExpirationDateT&& value) { SetExpirationDate(std::forward<ExpirationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The build identifier for this version of the channel version.
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline ChannelEngineVersionResponse& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline ChannelEngineVersionResponse& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline ChannelEngineVersionResponse& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    ChannelEngineVersionResponse& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_expirationDate;
+    Aws::Utils::DateTime m_expirationDate{};
     bool m_expirationDateHasBeenSet = false;
 
     Aws::String m_version;

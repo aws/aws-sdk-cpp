@@ -12,15 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserRequest::CreateUserRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_userType(UserType::NOT_SET),
-    m_userTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserRequest::SerializePayload() const
 {
   JsonValue payload;

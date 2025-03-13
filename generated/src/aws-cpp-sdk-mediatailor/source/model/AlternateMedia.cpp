@@ -18,21 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-AlternateMedia::AlternateMedia() : 
-    m_sourceLocationNameHasBeenSet(false),
-    m_liveSourceNameHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false),
-    m_clipRangeHasBeenSet(false),
-    m_scheduledStartTimeMillis(0),
-    m_scheduledStartTimeMillisHasBeenSet(false),
-    m_adBreaksHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false)
-{
-}
-
 AlternateMedia::AlternateMedia(JsonView jsonValue)
-  : AlternateMedia()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ AlternateMedia& AlternateMedia::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceLocationName"))
   {
     m_sourceLocationName = jsonValue.GetString("SourceLocationName");
-
     m_sourceLocationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LiveSourceName"))
   {
     m_liveSourceName = jsonValue.GetString("LiveSourceName");
-
     m_liveSourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VodSourceName"))
   {
     m_vodSourceName = jsonValue.GetString("VodSourceName");
-
     m_vodSourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClipRange"))
   {
     m_clipRange = jsonValue.GetObject("ClipRange");
-
     m_clipRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduledStartTimeMillis"))
   {
     m_scheduledStartTimeMillis = jsonValue.GetInt64("ScheduledStartTimeMillis");
-
     m_scheduledStartTimeMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdBreaks"))
   {
     Aws::Utils::Array<JsonView> adBreaksJsonList = jsonValue.GetArray("AdBreaks");
@@ -83,14 +59,11 @@ AlternateMedia& AlternateMedia::operator =(JsonView jsonValue)
     }
     m_adBreaksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationMillis"))
   {
     m_durationMillis = jsonValue.GetInt64("DurationMillis");
-
     m_durationMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

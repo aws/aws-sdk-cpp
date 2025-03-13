@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails() : 
-    m_clientRootCertificateChainHasBeenSet(false)
-{
-}
-
 AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails(JsonView jsonValue)
-  : AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails& AwsEc2C
   if(jsonValue.ValueExists("ClientRootCertificateChain"))
   {
     m_clientRootCertificateChain = jsonValue.GetString("ClientRootCertificateChain");
-
     m_clientRootCertificateChainHasBeenSet = true;
   }
-
   return *this;
 }
 

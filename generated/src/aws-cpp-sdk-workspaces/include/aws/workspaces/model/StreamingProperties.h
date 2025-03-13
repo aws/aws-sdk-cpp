@@ -35,7 +35,7 @@ namespace Model
   class StreamingProperties
   {
   public:
-    AWS_WORKSPACES_API StreamingProperties();
+    AWS_WORKSPACES_API StreamingProperties() = default;
     AWS_WORKSPACES_API StreamingProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API StreamingProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,56 +45,54 @@ namespace Model
     /**
      * <p>Indicates the type of preferred protocol for the streaming experience.</p>
      */
-    inline const StreamingExperiencePreferredProtocolEnum& GetStreamingExperiencePreferredProtocol() const{ return m_streamingExperiencePreferredProtocol; }
+    inline StreamingExperiencePreferredProtocolEnum GetStreamingExperiencePreferredProtocol() const { return m_streamingExperiencePreferredProtocol; }
     inline bool StreamingExperiencePreferredProtocolHasBeenSet() const { return m_streamingExperiencePreferredProtocolHasBeenSet; }
-    inline void SetStreamingExperiencePreferredProtocol(const StreamingExperiencePreferredProtocolEnum& value) { m_streamingExperiencePreferredProtocolHasBeenSet = true; m_streamingExperiencePreferredProtocol = value; }
-    inline void SetStreamingExperiencePreferredProtocol(StreamingExperiencePreferredProtocolEnum&& value) { m_streamingExperiencePreferredProtocolHasBeenSet = true; m_streamingExperiencePreferredProtocol = std::move(value); }
-    inline StreamingProperties& WithStreamingExperiencePreferredProtocol(const StreamingExperiencePreferredProtocolEnum& value) { SetStreamingExperiencePreferredProtocol(value); return *this;}
-    inline StreamingProperties& WithStreamingExperiencePreferredProtocol(StreamingExperiencePreferredProtocolEnum&& value) { SetStreamingExperiencePreferredProtocol(std::move(value)); return *this;}
+    inline void SetStreamingExperiencePreferredProtocol(StreamingExperiencePreferredProtocolEnum value) { m_streamingExperiencePreferredProtocolHasBeenSet = true; m_streamingExperiencePreferredProtocol = value; }
+    inline StreamingProperties& WithStreamingExperiencePreferredProtocol(StreamingExperiencePreferredProtocolEnum value) { SetStreamingExperiencePreferredProtocol(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the permission settings asscoiated with the user.</p>
      */
-    inline const Aws::Vector<UserSetting>& GetUserSettings() const{ return m_userSettings; }
+    inline const Aws::Vector<UserSetting>& GetUserSettings() const { return m_userSettings; }
     inline bool UserSettingsHasBeenSet() const { return m_userSettingsHasBeenSet; }
-    inline void SetUserSettings(const Aws::Vector<UserSetting>& value) { m_userSettingsHasBeenSet = true; m_userSettings = value; }
-    inline void SetUserSettings(Aws::Vector<UserSetting>&& value) { m_userSettingsHasBeenSet = true; m_userSettings = std::move(value); }
-    inline StreamingProperties& WithUserSettings(const Aws::Vector<UserSetting>& value) { SetUserSettings(value); return *this;}
-    inline StreamingProperties& WithUserSettings(Aws::Vector<UserSetting>&& value) { SetUserSettings(std::move(value)); return *this;}
-    inline StreamingProperties& AddUserSettings(const UserSetting& value) { m_userSettingsHasBeenSet = true; m_userSettings.push_back(value); return *this; }
-    inline StreamingProperties& AddUserSettings(UserSetting&& value) { m_userSettingsHasBeenSet = true; m_userSettings.push_back(std::move(value)); return *this; }
+    template<typename UserSettingsT = Aws::Vector<UserSetting>>
+    void SetUserSettings(UserSettingsT&& value) { m_userSettingsHasBeenSet = true; m_userSettings = std::forward<UserSettingsT>(value); }
+    template<typename UserSettingsT = Aws::Vector<UserSetting>>
+    StreamingProperties& WithUserSettings(UserSettingsT&& value) { SetUserSettings(std::forward<UserSettingsT>(value)); return *this;}
+    template<typename UserSettingsT = UserSetting>
+    StreamingProperties& AddUserSettings(UserSettingsT&& value) { m_userSettingsHasBeenSet = true; m_userSettings.emplace_back(std::forward<UserSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Indicates the storage connector used </p>
      */
-    inline const Aws::Vector<StorageConnector>& GetStorageConnectors() const{ return m_storageConnectors; }
+    inline const Aws::Vector<StorageConnector>& GetStorageConnectors() const { return m_storageConnectors; }
     inline bool StorageConnectorsHasBeenSet() const { return m_storageConnectorsHasBeenSet; }
-    inline void SetStorageConnectors(const Aws::Vector<StorageConnector>& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors = value; }
-    inline void SetStorageConnectors(Aws::Vector<StorageConnector>&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors = std::move(value); }
-    inline StreamingProperties& WithStorageConnectors(const Aws::Vector<StorageConnector>& value) { SetStorageConnectors(value); return *this;}
-    inline StreamingProperties& WithStorageConnectors(Aws::Vector<StorageConnector>&& value) { SetStorageConnectors(std::move(value)); return *this;}
-    inline StreamingProperties& AddStorageConnectors(const StorageConnector& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(value); return *this; }
-    inline StreamingProperties& AddStorageConnectors(StorageConnector&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(std::move(value)); return *this; }
+    template<typename StorageConnectorsT = Aws::Vector<StorageConnector>>
+    void SetStorageConnectors(StorageConnectorsT&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors = std::forward<StorageConnectorsT>(value); }
+    template<typename StorageConnectorsT = Aws::Vector<StorageConnector>>
+    StreamingProperties& WithStorageConnectors(StorageConnectorsT&& value) { SetStorageConnectors(std::forward<StorageConnectorsT>(value)); return *this;}
+    template<typename StorageConnectorsT = StorageConnector>
+    StreamingProperties& AddStorageConnectors(StorageConnectorsT&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.emplace_back(std::forward<StorageConnectorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Indicates the Global Accelerator properties.</p>
      */
-    inline const GlobalAcceleratorForDirectory& GetGlobalAccelerator() const{ return m_globalAccelerator; }
+    inline const GlobalAcceleratorForDirectory& GetGlobalAccelerator() const { return m_globalAccelerator; }
     inline bool GlobalAcceleratorHasBeenSet() const { return m_globalAcceleratorHasBeenSet; }
-    inline void SetGlobalAccelerator(const GlobalAcceleratorForDirectory& value) { m_globalAcceleratorHasBeenSet = true; m_globalAccelerator = value; }
-    inline void SetGlobalAccelerator(GlobalAcceleratorForDirectory&& value) { m_globalAcceleratorHasBeenSet = true; m_globalAccelerator = std::move(value); }
-    inline StreamingProperties& WithGlobalAccelerator(const GlobalAcceleratorForDirectory& value) { SetGlobalAccelerator(value); return *this;}
-    inline StreamingProperties& WithGlobalAccelerator(GlobalAcceleratorForDirectory&& value) { SetGlobalAccelerator(std::move(value)); return *this;}
+    template<typename GlobalAcceleratorT = GlobalAcceleratorForDirectory>
+    void SetGlobalAccelerator(GlobalAcceleratorT&& value) { m_globalAcceleratorHasBeenSet = true; m_globalAccelerator = std::forward<GlobalAcceleratorT>(value); }
+    template<typename GlobalAcceleratorT = GlobalAcceleratorForDirectory>
+    StreamingProperties& WithGlobalAccelerator(GlobalAcceleratorT&& value) { SetGlobalAccelerator(std::forward<GlobalAcceleratorT>(value)); return *this;}
     ///@}
   private:
 
-    StreamingExperiencePreferredProtocolEnum m_streamingExperiencePreferredProtocol;
+    StreamingExperiencePreferredProtocolEnum m_streamingExperiencePreferredProtocol{StreamingExperiencePreferredProtocolEnum::NOT_SET};
     bool m_streamingExperiencePreferredProtocolHasBeenSet = false;
 
     Aws::Vector<UserSetting> m_userSettings;

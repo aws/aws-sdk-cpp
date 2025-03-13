@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcCidrBlockAssociation::VpcCidrBlockAssociation() : 
-    m_associationIdHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_cidrBlockStateHasBeenSet(false)
-{
-}
-
 VpcCidrBlockAssociation::VpcCidrBlockAssociation(const XmlNode& xmlNode)
-  : VpcCidrBlockAssociation()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ VpcCidrBlockAssociation& VpcCidrBlockAssociation::operator =(const XmlNode& xmlN
     {
       m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
       m_associationIdHasBeenSet = true;
+       m_associationIdHasBeenSet = true;
     }
     XmlNode cidrBlockNode = resultNode.FirstChild("cidrBlock");
     if(!cidrBlockNode.IsNull())
     {
       m_cidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(cidrBlockNode.GetText());
       m_cidrBlockHasBeenSet = true;
+       m_cidrBlockHasBeenSet = true;
     }
     XmlNode cidrBlockStateNode = resultNode.FirstChild("cidrBlockState");
     if(!cidrBlockStateNode.IsNull())
     {
       m_cidrBlockState = cidrBlockStateNode;
       m_cidrBlockStateHasBeenSet = true;
+       m_cidrBlockStateHasBeenSet = true;
     }
   }
 

@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MulticastInputSettings::MulticastInputSettings() : 
-    m_sourceIpAddressHasBeenSet(false)
-{
-}
-
 MulticastInputSettings::MulticastInputSettings(JsonView jsonValue)
-  : MulticastInputSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MulticastInputSettings& MulticastInputSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceIpAddress"))
   {
     m_sourceIpAddress = jsonValue.GetString("sourceIpAddress");
-
     m_sourceIpAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

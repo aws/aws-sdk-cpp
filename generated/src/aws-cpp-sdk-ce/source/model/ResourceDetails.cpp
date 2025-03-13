@@ -18,13 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-ResourceDetails::ResourceDetails() : 
-    m_eC2ResourceDetailsHasBeenSet(false)
-{
-}
-
 ResourceDetails::ResourceDetails(JsonView jsonValue)
-  : ResourceDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EC2ResourceDetails"))
   {
     m_eC2ResourceDetails = jsonValue.GetObject("EC2ResourceDetails");
-
     m_eC2ResourceDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

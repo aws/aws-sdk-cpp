@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-AdminAccount::AdminAccount() : 
-    m_adminAccountIdHasBeenSet(false),
-    m_adminStatus(AdminStatus::NOT_SET),
-    m_adminStatusHasBeenSet(false)
-{
-}
-
 AdminAccount::AdminAccount(JsonView jsonValue)
-  : AdminAccount()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AdminAccount& AdminAccount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("adminAccountId"))
   {
     m_adminAccountId = jsonValue.GetString("adminAccountId");
-
     m_adminAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adminStatus"))
   {
     m_adminStatus = AdminStatusMapper::GetAdminStatusForName(jsonValue.GetString("adminStatus"));
-
     m_adminStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

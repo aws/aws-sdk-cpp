@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInvitationsRequest::DeleteInvitationsRequest() : 
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInvitationsRequest::SerializePayload() const
 {
   JsonValue payload;

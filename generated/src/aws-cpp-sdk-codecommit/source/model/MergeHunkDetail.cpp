@@ -18,17 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-MergeHunkDetail::MergeHunkDetail() : 
-    m_startLine(0),
-    m_startLineHasBeenSet(false),
-    m_endLine(0),
-    m_endLineHasBeenSet(false),
-    m_hunkContentHasBeenSet(false)
-{
-}
-
 MergeHunkDetail::MergeHunkDetail(JsonView jsonValue)
-  : MergeHunkDetail()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ MergeHunkDetail& MergeHunkDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startLine"))
   {
     m_startLine = jsonValue.GetInteger("startLine");
-
     m_startLineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endLine"))
   {
     m_endLine = jsonValue.GetInteger("endLine");
-
     m_endLineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hunkContent"))
   {
     m_hunkContent = jsonValue.GetString("hunkContent");
-
     m_hunkContentHasBeenSet = true;
   }
-
   return *this;
 }
 

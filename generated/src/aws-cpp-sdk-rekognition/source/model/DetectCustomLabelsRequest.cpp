@@ -12,16 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectCustomLabelsRequest::DetectCustomLabelsRequest() : 
-    m_projectVersionArnHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false)
-{
-}
-
 Aws::String DetectCustomLabelsRequest::SerializePayload() const
 {
   JsonValue payload;

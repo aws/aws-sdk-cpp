@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-FlowNodeInput::FlowNodeInput() : 
-    m_expressionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(FlowNodeIODataType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 FlowNodeInput::FlowNodeInput(JsonView jsonValue)
-  : FlowNodeInput()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FlowNodeInput& FlowNodeInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = FlowNodeIODataTypeMapper::GetFlowNodeIODataTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

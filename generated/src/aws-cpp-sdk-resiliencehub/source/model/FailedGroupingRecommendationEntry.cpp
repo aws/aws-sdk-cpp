@@ -18,14 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-FailedGroupingRecommendationEntry::FailedGroupingRecommendationEntry() : 
-    m_errorMessageHasBeenSet(false),
-    m_groupingRecommendationIdHasBeenSet(false)
-{
-}
-
 FailedGroupingRecommendationEntry::FailedGroupingRecommendationEntry(JsonView jsonValue)
-  : FailedGroupingRecommendationEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FailedGroupingRecommendationEntry& FailedGroupingRecommendationEntry::operator =
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupingRecommendationId"))
   {
     m_groupingRecommendationId = jsonValue.GetString("groupingRecommendationId");
-
     m_groupingRecommendationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

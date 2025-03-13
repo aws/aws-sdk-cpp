@@ -32,7 +32,7 @@ namespace Model
   class DecimalParameter
   {
   public:
-    AWS_QUICKSIGHT_API DecimalParameter();
+    AWS_QUICKSIGHT_API DecimalParameter() = default;
     AWS_QUICKSIGHT_API DecimalParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DecimalParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>A display name for the decimal parameter.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DecimalParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DecimalParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DecimalParameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DecimalParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The values for the decimal parameter.</p>
      */
-    inline const Aws::Vector<double>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<double>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<double>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<double>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline DecimalParameter& WithValues(const Aws::Vector<double>& value) { SetValues(value); return *this;}
-    inline DecimalParameter& WithValues(Aws::Vector<double>&& value) { SetValues(std::move(value)); return *this;}
+    template<typename ValuesT = Aws::Vector<double>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<double>>
+    DecimalParameter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
     inline DecimalParameter& AddValues(double value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
     ///@}
   private:

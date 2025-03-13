@@ -18,18 +18,7 @@ namespace FMS
 namespace Model
 {
 
-ExpectedRoute::ExpectedRoute() : 
-    m_ipV4CidrHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_ipV6CidrHasBeenSet(false),
-    m_contributingSubnetsHasBeenSet(false),
-    m_allowedTargetsHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false)
-{
-}
-
 ExpectedRoute::ExpectedRoute(JsonView jsonValue)
-  : ExpectedRoute()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ExpectedRoute& ExpectedRoute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IpV4Cidr"))
   {
     m_ipV4Cidr = jsonValue.GetString("IpV4Cidr");
-
     m_ipV4CidrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrefixListId"))
   {
     m_prefixListId = jsonValue.GetString("PrefixListId");
-
     m_prefixListIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpV6Cidr"))
   {
     m_ipV6Cidr = jsonValue.GetString("IpV6Cidr");
-
     m_ipV6CidrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContributingSubnets"))
   {
     Aws::Utils::Array<JsonView> contributingSubnetsJsonList = jsonValue.GetArray("ContributingSubnets");
@@ -66,7 +49,6 @@ ExpectedRoute& ExpectedRoute::operator =(JsonView jsonValue)
     }
     m_contributingSubnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedTargets"))
   {
     Aws::Utils::Array<JsonView> allowedTargetsJsonList = jsonValue.GetArray("AllowedTargets");
@@ -76,14 +58,11 @@ ExpectedRoute& ExpectedRoute::operator =(JsonView jsonValue)
     }
     m_allowedTargetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteTableId"))
   {
     m_routeTableId = jsonValue.GetString("RouteTableId");
-
     m_routeTableIdHasBeenSet = true;
   }
-
   return *this;
 }
 

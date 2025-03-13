@@ -21,7 +21,7 @@ namespace Model
   class CreateProgressUpdateStreamRequest : public MigrationHubRequest
   {
   public:
-    AWS_MIGRATIONHUB_API CreateProgressUpdateStreamRequest();
+    AWS_MIGRATIONHUB_API CreateProgressUpdateStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
      * field.</i> </p>
      */
-    inline const Aws::String& GetProgressUpdateStreamName() const{ return m_progressUpdateStreamName; }
+    inline const Aws::String& GetProgressUpdateStreamName() const { return m_progressUpdateStreamName; }
     inline bool ProgressUpdateStreamNameHasBeenSet() const { return m_progressUpdateStreamNameHasBeenSet; }
-    inline void SetProgressUpdateStreamName(const Aws::String& value) { m_progressUpdateStreamNameHasBeenSet = true; m_progressUpdateStreamName = value; }
-    inline void SetProgressUpdateStreamName(Aws::String&& value) { m_progressUpdateStreamNameHasBeenSet = true; m_progressUpdateStreamName = std::move(value); }
-    inline void SetProgressUpdateStreamName(const char* value) { m_progressUpdateStreamNameHasBeenSet = true; m_progressUpdateStreamName.assign(value); }
-    inline CreateProgressUpdateStreamRequest& WithProgressUpdateStreamName(const Aws::String& value) { SetProgressUpdateStreamName(value); return *this;}
-    inline CreateProgressUpdateStreamRequest& WithProgressUpdateStreamName(Aws::String&& value) { SetProgressUpdateStreamName(std::move(value)); return *this;}
-    inline CreateProgressUpdateStreamRequest& WithProgressUpdateStreamName(const char* value) { SetProgressUpdateStreamName(value); return *this;}
+    template<typename ProgressUpdateStreamNameT = Aws::String>
+    void SetProgressUpdateStreamName(ProgressUpdateStreamNameT&& value) { m_progressUpdateStreamNameHasBeenSet = true; m_progressUpdateStreamName = std::forward<ProgressUpdateStreamNameT>(value); }
+    template<typename ProgressUpdateStreamNameT = Aws::String>
+    CreateProgressUpdateStreamRequest& WithProgressUpdateStreamName(ProgressUpdateStreamNameT&& value) { SetProgressUpdateStreamName(std::forward<ProgressUpdateStreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,7 +52,7 @@ namespace Model
      * <p>Optional boolean flag to indicate whether any effect should take place. Used
      * to test if the caller has permission to make the call.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateProgressUpdateStreamRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -64,7 +62,7 @@ namespace Model
     Aws::String m_progressUpdateStreamName;
     bool m_progressUpdateStreamNameHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

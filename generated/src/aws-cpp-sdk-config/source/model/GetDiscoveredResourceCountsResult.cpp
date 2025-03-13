@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDiscoveredResourceCountsResult::GetDiscoveredResourceCountsResult() : 
-    m_totalDiscoveredResources(0)
-{
-}
-
 GetDiscoveredResourceCountsResult::GetDiscoveredResourceCountsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDiscoveredResourceCountsResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetDiscoveredResourceCountsResult& GetDiscoveredResourceCountsResult::operator =
   if(jsonValue.ValueExists("totalDiscoveredResources"))
   {
     m_totalDiscoveredResources = jsonValue.GetInt64("totalDiscoveredResources");
-
+    m_totalDiscoveredResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceCounts"))
   {
     Aws::Utils::Array<JsonView> resourceCountsJsonList = jsonValue.GetArray("resourceCounts");
@@ -44,20 +37,20 @@ GetDiscoveredResourceCountsResult& GetDiscoveredResourceCountsResult::operator =
     {
       m_resourceCounts.push_back(resourceCountsJsonList[resourceCountsIndex].AsObject());
     }
+    m_resourceCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

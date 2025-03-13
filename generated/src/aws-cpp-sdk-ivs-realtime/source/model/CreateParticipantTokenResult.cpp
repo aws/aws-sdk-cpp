@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateParticipantTokenResult::CreateParticipantTokenResult()
-{
-}
-
 CreateParticipantTokenResult::CreateParticipantTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateParticipantTokenResult& CreateParticipantTokenResult::operator =(const Aws
   if(jsonValue.ValueExists("participantToken"))
   {
     m_participantToken = jsonValue.GetObject("participantToken");
-
+    m_participantTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

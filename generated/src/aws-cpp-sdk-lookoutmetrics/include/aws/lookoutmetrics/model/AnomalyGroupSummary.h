@@ -31,7 +31,7 @@ namespace Model
   class AnomalyGroupSummary
   {
   public:
-    AWS_LOOKOUTMETRICS_API AnomalyGroupSummary();
+    AWS_LOOKOUTMETRICS_API AnomalyGroupSummary() = default;
     AWS_LOOKOUTMETRICS_API AnomalyGroupSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API AnomalyGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,49 +41,43 @@ namespace Model
     /**
      * <p>The start time for the group.</p>
      */
-    inline const Aws::String& GetStartTime() const{ return m_startTime; }
+    inline const Aws::String& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
-    inline AnomalyGroupSummary& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
-    inline AnomalyGroupSummary& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
-    inline AnomalyGroupSummary& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+    template<typename StartTimeT = Aws::String>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::String>
+    AnomalyGroupSummary& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end time for the group.</p>
      */
-    inline const Aws::String& GetEndTime() const{ return m_endTime; }
+    inline const Aws::String& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::String& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::String&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline void SetEndTime(const char* value) { m_endTimeHasBeenSet = true; m_endTime.assign(value); }
-    inline AnomalyGroupSummary& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
-    inline AnomalyGroupSummary& WithEndTime(Aws::String&& value) { SetEndTime(std::move(value)); return *this;}
-    inline AnomalyGroupSummary& WithEndTime(const char* value) { SetEndTime(value); return *this;}
+    template<typename EndTimeT = Aws::String>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::String>
+    AnomalyGroupSummary& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the anomaly group.</p>
      */
-    inline const Aws::String& GetAnomalyGroupId() const{ return m_anomalyGroupId; }
+    inline const Aws::String& GetAnomalyGroupId() const { return m_anomalyGroupId; }
     inline bool AnomalyGroupIdHasBeenSet() const { return m_anomalyGroupIdHasBeenSet; }
-    inline void SetAnomalyGroupId(const Aws::String& value) { m_anomalyGroupIdHasBeenSet = true; m_anomalyGroupId = value; }
-    inline void SetAnomalyGroupId(Aws::String&& value) { m_anomalyGroupIdHasBeenSet = true; m_anomalyGroupId = std::move(value); }
-    inline void SetAnomalyGroupId(const char* value) { m_anomalyGroupIdHasBeenSet = true; m_anomalyGroupId.assign(value); }
-    inline AnomalyGroupSummary& WithAnomalyGroupId(const Aws::String& value) { SetAnomalyGroupId(value); return *this;}
-    inline AnomalyGroupSummary& WithAnomalyGroupId(Aws::String&& value) { SetAnomalyGroupId(std::move(value)); return *this;}
-    inline AnomalyGroupSummary& WithAnomalyGroupId(const char* value) { SetAnomalyGroupId(value); return *this;}
+    template<typename AnomalyGroupIdT = Aws::String>
+    void SetAnomalyGroupId(AnomalyGroupIdT&& value) { m_anomalyGroupIdHasBeenSet = true; m_anomalyGroupId = std::forward<AnomalyGroupIdT>(value); }
+    template<typename AnomalyGroupIdT = Aws::String>
+    AnomalyGroupSummary& WithAnomalyGroupId(AnomalyGroupIdT&& value) { SetAnomalyGroupId(std::forward<AnomalyGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The severity score of the group.</p>
      */
-    inline double GetAnomalyGroupScore() const{ return m_anomalyGroupScore; }
+    inline double GetAnomalyGroupScore() const { return m_anomalyGroupScore; }
     inline bool AnomalyGroupScoreHasBeenSet() const { return m_anomalyGroupScoreHasBeenSet; }
     inline void SetAnomalyGroupScore(double value) { m_anomalyGroupScoreHasBeenSet = true; m_anomalyGroupScore = value; }
     inline AnomalyGroupSummary& WithAnomalyGroupScore(double value) { SetAnomalyGroupScore(value); return *this;}
@@ -93,14 +87,12 @@ namespace Model
     /**
      * <p>The name of the primary affected measure for the group.</p>
      */
-    inline const Aws::String& GetPrimaryMetricName() const{ return m_primaryMetricName; }
+    inline const Aws::String& GetPrimaryMetricName() const { return m_primaryMetricName; }
     inline bool PrimaryMetricNameHasBeenSet() const { return m_primaryMetricNameHasBeenSet; }
-    inline void SetPrimaryMetricName(const Aws::String& value) { m_primaryMetricNameHasBeenSet = true; m_primaryMetricName = value; }
-    inline void SetPrimaryMetricName(Aws::String&& value) { m_primaryMetricNameHasBeenSet = true; m_primaryMetricName = std::move(value); }
-    inline void SetPrimaryMetricName(const char* value) { m_primaryMetricNameHasBeenSet = true; m_primaryMetricName.assign(value); }
-    inline AnomalyGroupSummary& WithPrimaryMetricName(const Aws::String& value) { SetPrimaryMetricName(value); return *this;}
-    inline AnomalyGroupSummary& WithPrimaryMetricName(Aws::String&& value) { SetPrimaryMetricName(std::move(value)); return *this;}
-    inline AnomalyGroupSummary& WithPrimaryMetricName(const char* value) { SetPrimaryMetricName(value); return *this;}
+    template<typename PrimaryMetricNameT = Aws::String>
+    void SetPrimaryMetricName(PrimaryMetricNameT&& value) { m_primaryMetricNameHasBeenSet = true; m_primaryMetricName = std::forward<PrimaryMetricNameT>(value); }
+    template<typename PrimaryMetricNameT = Aws::String>
+    AnomalyGroupSummary& WithPrimaryMetricName(PrimaryMetricNameT&& value) { SetPrimaryMetricName(std::forward<PrimaryMetricNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -113,7 +105,7 @@ namespace Model
     Aws::String m_anomalyGroupId;
     bool m_anomalyGroupIdHasBeenSet = false;
 
-    double m_anomalyGroupScore;
+    double m_anomalyGroupScore{0.0};
     bool m_anomalyGroupScoreHasBeenSet = false;
 
     Aws::String m_primaryMetricName;

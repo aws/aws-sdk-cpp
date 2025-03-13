@@ -32,7 +32,7 @@ namespace Model
   class AlreadyExistsException
   {
   public:
-    AWS_SES_API AlreadyExistsException();
+    AWS_SES_API AlreadyExistsException() = default;
     AWS_SES_API AlreadyExistsException(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API AlreadyExistsException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p>Indicates that a resource could not be created because the resource name
      * already exists.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AlreadyExistsException& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AlreadyExistsException& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AlreadyExistsException& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AlreadyExistsException& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

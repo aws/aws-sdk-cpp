@@ -21,7 +21,7 @@ namespace Model
   class GetStreamKeyRequest : public IVSRequest
   {
   public:
-    AWS_IVS_API GetStreamKeyRequest();
+    AWS_IVS_API GetStreamKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>ARN for the stream key to be retrieved.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline GetStreamKeyRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetStreamKeyRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetStreamKeyRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetStreamKeyRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class GetApplicationResult
   {
   public:
-    AWS_GAMELIFTSTREAMS_API GetApplicationResult();
+    AWS_GAMELIFTSTREAMS_API GetApplicationResult() = default;
     AWS_GAMELIFTSTREAMS_API GetApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFTSTREAMS_API GetApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,13 +45,11 @@ namespace Model
      * name]/[prefix]</code>. Required if you specify one or more
      * <code>LogPaths</code>.</p>
      */
-    inline const Aws::String& GetApplicationLogOutputUri() const{ return m_applicationLogOutputUri; }
-    inline void SetApplicationLogOutputUri(const Aws::String& value) { m_applicationLogOutputUri = value; }
-    inline void SetApplicationLogOutputUri(Aws::String&& value) { m_applicationLogOutputUri = std::move(value); }
-    inline void SetApplicationLogOutputUri(const char* value) { m_applicationLogOutputUri.assign(value); }
-    inline GetApplicationResult& WithApplicationLogOutputUri(const Aws::String& value) { SetApplicationLogOutputUri(value); return *this;}
-    inline GetApplicationResult& WithApplicationLogOutputUri(Aws::String&& value) { SetApplicationLogOutputUri(std::move(value)); return *this;}
-    inline GetApplicationResult& WithApplicationLogOutputUri(const char* value) { SetApplicationLogOutputUri(value); return *this;}
+    inline const Aws::String& GetApplicationLogOutputUri() const { return m_applicationLogOutputUri; }
+    template<typename ApplicationLogOutputUriT = Aws::String>
+    void SetApplicationLogOutputUri(ApplicationLogOutputUriT&& value) { m_applicationLogOutputUriHasBeenSet = true; m_applicationLogOutputUri = std::forward<ApplicationLogOutputUriT>(value); }
+    template<typename ApplicationLogOutputUriT = Aws::String>
+    GetApplicationResult& WithApplicationLogOutputUri(ApplicationLogOutputUriT&& value) { SetApplicationLogOutputUri(std::forward<ApplicationLogOutputUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,13 @@ namespace Model
      * To retrieve stored log files, call <a>GetStreamSession</a> and get the
      * <code>LogFileLocationUri</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetApplicationLogPaths() const{ return m_applicationLogPaths; }
-    inline void SetApplicationLogPaths(const Aws::Vector<Aws::String>& value) { m_applicationLogPaths = value; }
-    inline void SetApplicationLogPaths(Aws::Vector<Aws::String>&& value) { m_applicationLogPaths = std::move(value); }
-    inline GetApplicationResult& WithApplicationLogPaths(const Aws::Vector<Aws::String>& value) { SetApplicationLogPaths(value); return *this;}
-    inline GetApplicationResult& WithApplicationLogPaths(Aws::Vector<Aws::String>&& value) { SetApplicationLogPaths(std::move(value)); return *this;}
-    inline GetApplicationResult& AddApplicationLogPaths(const Aws::String& value) { m_applicationLogPaths.push_back(value); return *this; }
-    inline GetApplicationResult& AddApplicationLogPaths(Aws::String&& value) { m_applicationLogPaths.push_back(std::move(value)); return *this; }
-    inline GetApplicationResult& AddApplicationLogPaths(const char* value) { m_applicationLogPaths.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetApplicationLogPaths() const { return m_applicationLogPaths; }
+    template<typename ApplicationLogPathsT = Aws::Vector<Aws::String>>
+    void SetApplicationLogPaths(ApplicationLogPathsT&& value) { m_applicationLogPathsHasBeenSet = true; m_applicationLogPaths = std::forward<ApplicationLogPathsT>(value); }
+    template<typename ApplicationLogPathsT = Aws::Vector<Aws::String>>
+    GetApplicationResult& WithApplicationLogPaths(ApplicationLogPathsT&& value) { SetApplicationLogPaths(std::forward<ApplicationLogPathsT>(value)); return *this;}
+    template<typename ApplicationLogPathsT = Aws::String>
+    GetApplicationResult& AddApplicationLogPaths(ApplicationLogPathsT&& value) { m_applicationLogPathsHasBeenSet = true; m_applicationLogPaths.emplace_back(std::forward<ApplicationLogPathsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,13 +74,11 @@ namespace Model
      * <p>The original Amazon S3 location of uploaded stream content for the
      * application.</p>
      */
-    inline const Aws::String& GetApplicationSourceUri() const{ return m_applicationSourceUri; }
-    inline void SetApplicationSourceUri(const Aws::String& value) { m_applicationSourceUri = value; }
-    inline void SetApplicationSourceUri(Aws::String&& value) { m_applicationSourceUri = std::move(value); }
-    inline void SetApplicationSourceUri(const char* value) { m_applicationSourceUri.assign(value); }
-    inline GetApplicationResult& WithApplicationSourceUri(const Aws::String& value) { SetApplicationSourceUri(value); return *this;}
-    inline GetApplicationResult& WithApplicationSourceUri(Aws::String&& value) { SetApplicationSourceUri(std::move(value)); return *this;}
-    inline GetApplicationResult& WithApplicationSourceUri(const char* value) { SetApplicationSourceUri(value); return *this;}
+    inline const Aws::String& GetApplicationSourceUri() const { return m_applicationSourceUri; }
+    template<typename ApplicationSourceUriT = Aws::String>
+    void SetApplicationSourceUri(ApplicationSourceUriT&& value) { m_applicationSourceUriHasBeenSet = true; m_applicationSourceUri = std::forward<ApplicationSourceUriT>(value); }
+    template<typename ApplicationSourceUriT = Aws::String>
+    GetApplicationResult& WithApplicationSourceUri(ApplicationSourceUriT&& value) { SetApplicationSourceUri(std::forward<ApplicationSourceUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,13 +88,11 @@ namespace Model
      * <code>arn:aws:gameliftstreams:[AWS Region]:[AWS account]:application/[resource
      * ID]</code>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetApplicationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetApplicationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetApplicationResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetApplicationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +106,13 @@ namespace Model
      * <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>.
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssociatedStreamGroups() const{ return m_associatedStreamGroups; }
-    inline void SetAssociatedStreamGroups(const Aws::Vector<Aws::String>& value) { m_associatedStreamGroups = value; }
-    inline void SetAssociatedStreamGroups(Aws::Vector<Aws::String>&& value) { m_associatedStreamGroups = std::move(value); }
-    inline GetApplicationResult& WithAssociatedStreamGroups(const Aws::Vector<Aws::String>& value) { SetAssociatedStreamGroups(value); return *this;}
-    inline GetApplicationResult& WithAssociatedStreamGroups(Aws::Vector<Aws::String>&& value) { SetAssociatedStreamGroups(std::move(value)); return *this;}
-    inline GetApplicationResult& AddAssociatedStreamGroups(const Aws::String& value) { m_associatedStreamGroups.push_back(value); return *this; }
-    inline GetApplicationResult& AddAssociatedStreamGroups(Aws::String&& value) { m_associatedStreamGroups.push_back(std::move(value)); return *this; }
-    inline GetApplicationResult& AddAssociatedStreamGroups(const char* value) { m_associatedStreamGroups.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAssociatedStreamGroups() const { return m_associatedStreamGroups; }
+    template<typename AssociatedStreamGroupsT = Aws::Vector<Aws::String>>
+    void SetAssociatedStreamGroups(AssociatedStreamGroupsT&& value) { m_associatedStreamGroupsHasBeenSet = true; m_associatedStreamGroups = std::forward<AssociatedStreamGroupsT>(value); }
+    template<typename AssociatedStreamGroupsT = Aws::Vector<Aws::String>>
+    GetApplicationResult& WithAssociatedStreamGroups(AssociatedStreamGroupsT&& value) { SetAssociatedStreamGroups(std::forward<AssociatedStreamGroupsT>(value)); return *this;}
+    template<typename AssociatedStreamGroupsT = Aws::String>
+    GetApplicationResult& AddAssociatedStreamGroups(AssociatedStreamGroupsT&& value) { m_associatedStreamGroupsHasBeenSet = true; m_associatedStreamGroups.emplace_back(std::forward<AssociatedStreamGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -129,24 +121,22 @@ namespace Model
      * expressed using in ISO8601 format, such as:
      * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetApplicationResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetApplicationResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetApplicationResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A human-readable label for the application. You can edit this value. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetApplicationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetApplicationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetApplicationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetApplicationResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,13 +144,11 @@ namespace Model
      * <p>The path and file name of the executable file that launches the content for
      * streaming.</p>
      */
-    inline const Aws::String& GetExecutablePath() const{ return m_executablePath; }
-    inline void SetExecutablePath(const Aws::String& value) { m_executablePath = value; }
-    inline void SetExecutablePath(Aws::String&& value) { m_executablePath = std::move(value); }
-    inline void SetExecutablePath(const char* value) { m_executablePath.assign(value); }
-    inline GetApplicationResult& WithExecutablePath(const Aws::String& value) { SetExecutablePath(value); return *this;}
-    inline GetApplicationResult& WithExecutablePath(Aws::String&& value) { SetExecutablePath(std::move(value)); return *this;}
-    inline GetApplicationResult& WithExecutablePath(const char* value) { SetExecutablePath(value); return *this;}
+    inline const Aws::String& GetExecutablePath() const { return m_executablePath; }
+    template<typename ExecutablePathT = Aws::String>
+    void SetExecutablePath(ExecutablePathT&& value) { m_executablePathHasBeenSet = true; m_executablePath = std::forward<ExecutablePathT>(value); }
+    template<typename ExecutablePathT = Aws::String>
+    GetApplicationResult& WithExecutablePath(ExecutablePathT&& value) { SetExecutablePath(std::forward<ExecutablePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,13 +160,11 @@ namespace Model
      * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>
      * or ID-<code>9ZY8X7Wv6</code>. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetApplicationResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetApplicationResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetApplicationResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetApplicationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,24 +173,24 @@ namespace Model
      * are expressed using in ISO8601 format, such as:
      * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline GetApplicationResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline GetApplicationResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetApplicationResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A set of replication statuses for each location.</p>
      */
-    inline const Aws::Vector<ReplicationStatus>& GetReplicationStatuses() const{ return m_replicationStatuses; }
-    inline void SetReplicationStatuses(const Aws::Vector<ReplicationStatus>& value) { m_replicationStatuses = value; }
-    inline void SetReplicationStatuses(Aws::Vector<ReplicationStatus>&& value) { m_replicationStatuses = std::move(value); }
-    inline GetApplicationResult& WithReplicationStatuses(const Aws::Vector<ReplicationStatus>& value) { SetReplicationStatuses(value); return *this;}
-    inline GetApplicationResult& WithReplicationStatuses(Aws::Vector<ReplicationStatus>&& value) { SetReplicationStatuses(std::move(value)); return *this;}
-    inline GetApplicationResult& AddReplicationStatuses(const ReplicationStatus& value) { m_replicationStatuses.push_back(value); return *this; }
-    inline GetApplicationResult& AddReplicationStatuses(ReplicationStatus&& value) { m_replicationStatuses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReplicationStatus>& GetReplicationStatuses() const { return m_replicationStatuses; }
+    template<typename ReplicationStatusesT = Aws::Vector<ReplicationStatus>>
+    void SetReplicationStatuses(ReplicationStatusesT&& value) { m_replicationStatusesHasBeenSet = true; m_replicationStatuses = std::forward<ReplicationStatusesT>(value); }
+    template<typename ReplicationStatusesT = Aws::Vector<ReplicationStatus>>
+    GetApplicationResult& WithReplicationStatuses(ReplicationStatusesT&& value) { SetReplicationStatuses(std::forward<ReplicationStatusesT>(value)); return *this;}
+    template<typename ReplicationStatusesT = ReplicationStatus>
+    GetApplicationResult& AddReplicationStatuses(ReplicationStatusesT&& value) { m_replicationStatusesHasBeenSet = true; m_replicationStatuses.emplace_back(std::forward<ReplicationStatusesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -219,11 +205,11 @@ namespace Model
      * (<code>Type=PROTON, Version=20241007</code>)</p> </li> <li> <p>Proton 8.0-2c
      * (<code>Type=PROTON, Version=20230704</code>)</p> </li> </ul> </li> </ul>
      */
-    inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
-    inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironment = value; }
-    inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironment = std::move(value); }
-    inline GetApplicationResult& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
-    inline GetApplicationResult& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
+    inline const RuntimeEnvironment& GetRuntimeEnvironment() const { return m_runtimeEnvironment; }
+    template<typename RuntimeEnvironmentT = RuntimeEnvironment>
+    void SetRuntimeEnvironment(RuntimeEnvironmentT&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::forward<RuntimeEnvironmentT>(value); }
+    template<typename RuntimeEnvironmentT = RuntimeEnvironment>
+    GetApplicationResult& WithRuntimeEnvironment(RuntimeEnvironmentT&& value) { SetRuntimeEnvironment(std::forward<RuntimeEnvironmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -240,11 +226,9 @@ namespace Model
      * <p> <code>DELETING</code>: Amazon GameLift Streams is in the process of deleting
      * the application.</p> </li> </ul>
      */
-    inline const ApplicationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ApplicationStatus& value) { m_status = value; }
-    inline void SetStatus(ApplicationStatus&& value) { m_status = std::move(value); }
-    inline GetApplicationResult& WithStatus(const ApplicationStatus& value) { SetStatus(value); return *this;}
-    inline GetApplicationResult& WithStatus(ApplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ApplicationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ApplicationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetApplicationResult& WithStatus(ApplicationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -252,54 +236,65 @@ namespace Model
      * <p>A short description of the status reason when the application is in
      * <code>ERROR</code> status.</p>
      */
-    inline const ApplicationStatusReason& GetStatusReason() const{ return m_statusReason; }
-    inline void SetStatusReason(const ApplicationStatusReason& value) { m_statusReason = value; }
-    inline void SetStatusReason(ApplicationStatusReason&& value) { m_statusReason = std::move(value); }
-    inline GetApplicationResult& WithStatusReason(const ApplicationStatusReason& value) { SetStatusReason(value); return *this;}
-    inline GetApplicationResult& WithStatusReason(ApplicationStatusReason&& value) { SetStatusReason(std::move(value)); return *this;}
+    inline ApplicationStatusReason GetStatusReason() const { return m_statusReason; }
+    inline void SetStatusReason(ApplicationStatusReason value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+    inline GetApplicationResult& WithStatusReason(ApplicationStatusReason value) { SetStatusReason(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApplicationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationLogOutputUri;
+    bool m_applicationLogOutputUriHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_applicationLogPaths;
+    bool m_applicationLogPathsHasBeenSet = false;
 
     Aws::String m_applicationSourceUri;
+    bool m_applicationSourceUriHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedStreamGroups;
+    bool m_associatedStreamGroupsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_executablePath;
+    bool m_executablePathHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Vector<ReplicationStatus> m_replicationStatuses;
+    bool m_replicationStatusesHasBeenSet = false;
 
     RuntimeEnvironment m_runtimeEnvironment;
+    bool m_runtimeEnvironmentHasBeenSet = false;
 
-    ApplicationStatus m_status;
+    ApplicationStatus m_status{ApplicationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    ApplicationStatusReason m_statusReason;
+    ApplicationStatusReason m_statusReason{ApplicationStatusReason::NOT_SET};
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

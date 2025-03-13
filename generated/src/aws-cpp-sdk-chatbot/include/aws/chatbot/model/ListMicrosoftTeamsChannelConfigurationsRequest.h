@@ -21,7 +21,7 @@ namespace Model
   class ListMicrosoftTeamsChannelConfigurationsRequest : public ChatbotRequest
   {
   public:
-    AWS_CHATBOT_API ListMicrosoftTeamsChannelConfigurationsRequest();
+    AWS_CHATBOT_API ListMicrosoftTeamsChannelConfigurationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
      * exist than the specified MaxResults value, a token is included in the response
      * so that the remaining results can be retrieved.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListMicrosoftTeamsChannelConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -51,14 +51,12 @@ namespace Model
      * response includes only results beyond the token, up to the value specified by
      * MaxResults.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListMicrosoftTeamsChannelConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMicrosoftTeamsChannelConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMicrosoftTeamsChannelConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMicrosoftTeamsChannelConfigurationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,18 +69,16 @@ namespace Model
      * 1: Configure a Microsoft Teams client</a> in the <i> AWS Chatbot Administrator
      * Guide</i>. </p>
      */
-    inline const Aws::String& GetTeamId() const{ return m_teamId; }
+    inline const Aws::String& GetTeamId() const { return m_teamId; }
     inline bool TeamIdHasBeenSet() const { return m_teamIdHasBeenSet; }
-    inline void SetTeamId(const Aws::String& value) { m_teamIdHasBeenSet = true; m_teamId = value; }
-    inline void SetTeamId(Aws::String&& value) { m_teamIdHasBeenSet = true; m_teamId = std::move(value); }
-    inline void SetTeamId(const char* value) { m_teamIdHasBeenSet = true; m_teamId.assign(value); }
-    inline ListMicrosoftTeamsChannelConfigurationsRequest& WithTeamId(const Aws::String& value) { SetTeamId(value); return *this;}
-    inline ListMicrosoftTeamsChannelConfigurationsRequest& WithTeamId(Aws::String&& value) { SetTeamId(std::move(value)); return *this;}
-    inline ListMicrosoftTeamsChannelConfigurationsRequest& WithTeamId(const char* value) { SetTeamId(value); return *this;}
+    template<typename TeamIdT = Aws::String>
+    void SetTeamId(TeamIdT&& value) { m_teamIdHasBeenSet = true; m_teamId = std::forward<TeamIdT>(value); }
+    template<typename TeamIdT = Aws::String>
+    ListMicrosoftTeamsChannelConfigurationsRequest& WithTeamId(TeamIdT&& value) { SetTeamId(std::forward<TeamIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

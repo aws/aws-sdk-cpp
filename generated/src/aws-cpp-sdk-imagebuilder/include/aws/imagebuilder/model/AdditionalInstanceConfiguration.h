@@ -40,7 +40,7 @@ namespace Model
   class AdditionalInstanceConfiguration
   {
   public:
-    AWS_IMAGEBUILDER_API AdditionalInstanceConfiguration();
+    AWS_IMAGEBUILDER_API AdditionalInstanceConfiguration() = default;
     AWS_IMAGEBUILDER_API AdditionalInstanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API AdditionalInstanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
     /**
      * <p>Contains settings for the Systems Manager agent on your build instance.</p>
      */
-    inline const SystemsManagerAgent& GetSystemsManagerAgent() const{ return m_systemsManagerAgent; }
+    inline const SystemsManagerAgent& GetSystemsManagerAgent() const { return m_systemsManagerAgent; }
     inline bool SystemsManagerAgentHasBeenSet() const { return m_systemsManagerAgentHasBeenSet; }
-    inline void SetSystemsManagerAgent(const SystemsManagerAgent& value) { m_systemsManagerAgentHasBeenSet = true; m_systemsManagerAgent = value; }
-    inline void SetSystemsManagerAgent(SystemsManagerAgent&& value) { m_systemsManagerAgentHasBeenSet = true; m_systemsManagerAgent = std::move(value); }
-    inline AdditionalInstanceConfiguration& WithSystemsManagerAgent(const SystemsManagerAgent& value) { SetSystemsManagerAgent(value); return *this;}
-    inline AdditionalInstanceConfiguration& WithSystemsManagerAgent(SystemsManagerAgent&& value) { SetSystemsManagerAgent(std::move(value)); return *this;}
+    template<typename SystemsManagerAgentT = SystemsManagerAgent>
+    void SetSystemsManagerAgent(SystemsManagerAgentT&& value) { m_systemsManagerAgentHasBeenSet = true; m_systemsManagerAgent = std::forward<SystemsManagerAgentT>(value); }
+    template<typename SystemsManagerAgentT = SystemsManagerAgent>
+    AdditionalInstanceConfiguration& WithSystemsManagerAgent(SystemsManagerAgentT&& value) { SetSystemsManagerAgent(std::forward<SystemsManagerAgentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +70,12 @@ namespace Model
      * <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p> <p>
      * <i>#!/bin/bash</i> </p> <p>mkdir -p /var/bb/</p> <p>touch /var</p> 
      */
-    inline const Aws::String& GetUserDataOverride() const{ return m_userDataOverride; }
+    inline const Aws::String& GetUserDataOverride() const { return m_userDataOverride; }
     inline bool UserDataOverrideHasBeenSet() const { return m_userDataOverrideHasBeenSet; }
-    inline void SetUserDataOverride(const Aws::String& value) { m_userDataOverrideHasBeenSet = true; m_userDataOverride = value; }
-    inline void SetUserDataOverride(Aws::String&& value) { m_userDataOverrideHasBeenSet = true; m_userDataOverride = std::move(value); }
-    inline void SetUserDataOverride(const char* value) { m_userDataOverrideHasBeenSet = true; m_userDataOverride.assign(value); }
-    inline AdditionalInstanceConfiguration& WithUserDataOverride(const Aws::String& value) { SetUserDataOverride(value); return *this;}
-    inline AdditionalInstanceConfiguration& WithUserDataOverride(Aws::String&& value) { SetUserDataOverride(std::move(value)); return *this;}
-    inline AdditionalInstanceConfiguration& WithUserDataOverride(const char* value) { SetUserDataOverride(value); return *this;}
+    template<typename UserDataOverrideT = Aws::String>
+    void SetUserDataOverride(UserDataOverrideT&& value) { m_userDataOverrideHasBeenSet = true; m_userDataOverride = std::forward<UserDataOverrideT>(value); }
+    template<typename UserDataOverrideT = Aws::String>
+    AdditionalInstanceConfiguration& WithUserDataOverride(UserDataOverrideT&& value) { SetUserDataOverride(std::forward<UserDataOverrideT>(value)); return *this;}
     ///@}
   private:
 

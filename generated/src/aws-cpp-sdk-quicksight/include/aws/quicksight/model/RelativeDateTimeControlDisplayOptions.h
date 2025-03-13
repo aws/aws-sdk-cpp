@@ -33,7 +33,7 @@ namespace Model
   class RelativeDateTimeControlDisplayOptions
   {
   public:
-    AWS_QUICKSIGHT_API RelativeDateTimeControlDisplayOptions();
+    AWS_QUICKSIGHT_API RelativeDateTimeControlDisplayOptions() = default;
     AWS_QUICKSIGHT_API RelativeDateTimeControlDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RelativeDateTimeControlDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,38 +43,36 @@ namespace Model
     /**
      * <p>The options to configure the title visibility, name, and font size.</p>
      */
-    inline const LabelOptions& GetTitleOptions() const{ return m_titleOptions; }
+    inline const LabelOptions& GetTitleOptions() const { return m_titleOptions; }
     inline bool TitleOptionsHasBeenSet() const { return m_titleOptionsHasBeenSet; }
-    inline void SetTitleOptions(const LabelOptions& value) { m_titleOptionsHasBeenSet = true; m_titleOptions = value; }
-    inline void SetTitleOptions(LabelOptions&& value) { m_titleOptionsHasBeenSet = true; m_titleOptions = std::move(value); }
-    inline RelativeDateTimeControlDisplayOptions& WithTitleOptions(const LabelOptions& value) { SetTitleOptions(value); return *this;}
-    inline RelativeDateTimeControlDisplayOptions& WithTitleOptions(LabelOptions&& value) { SetTitleOptions(std::move(value)); return *this;}
+    template<typename TitleOptionsT = LabelOptions>
+    void SetTitleOptions(TitleOptionsT&& value) { m_titleOptionsHasBeenSet = true; m_titleOptions = std::forward<TitleOptionsT>(value); }
+    template<typename TitleOptionsT = LabelOptions>
+    RelativeDateTimeControlDisplayOptions& WithTitleOptions(TitleOptionsT&& value) { SetTitleOptions(std::forward<TitleOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Customize how dates are formatted in controls.</p>
      */
-    inline const Aws::String& GetDateTimeFormat() const{ return m_dateTimeFormat; }
+    inline const Aws::String& GetDateTimeFormat() const { return m_dateTimeFormat; }
     inline bool DateTimeFormatHasBeenSet() const { return m_dateTimeFormatHasBeenSet; }
-    inline void SetDateTimeFormat(const Aws::String& value) { m_dateTimeFormatHasBeenSet = true; m_dateTimeFormat = value; }
-    inline void SetDateTimeFormat(Aws::String&& value) { m_dateTimeFormatHasBeenSet = true; m_dateTimeFormat = std::move(value); }
-    inline void SetDateTimeFormat(const char* value) { m_dateTimeFormatHasBeenSet = true; m_dateTimeFormat.assign(value); }
-    inline RelativeDateTimeControlDisplayOptions& WithDateTimeFormat(const Aws::String& value) { SetDateTimeFormat(value); return *this;}
-    inline RelativeDateTimeControlDisplayOptions& WithDateTimeFormat(Aws::String&& value) { SetDateTimeFormat(std::move(value)); return *this;}
-    inline RelativeDateTimeControlDisplayOptions& WithDateTimeFormat(const char* value) { SetDateTimeFormat(value); return *this;}
+    template<typename DateTimeFormatT = Aws::String>
+    void SetDateTimeFormat(DateTimeFormatT&& value) { m_dateTimeFormatHasBeenSet = true; m_dateTimeFormat = std::forward<DateTimeFormatT>(value); }
+    template<typename DateTimeFormatT = Aws::String>
+    RelativeDateTimeControlDisplayOptions& WithDateTimeFormat(DateTimeFormatT&& value) { SetDateTimeFormat(std::forward<DateTimeFormatT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration of info icon label options.</p>
      */
-    inline const SheetControlInfoIconLabelOptions& GetInfoIconLabelOptions() const{ return m_infoIconLabelOptions; }
+    inline const SheetControlInfoIconLabelOptions& GetInfoIconLabelOptions() const { return m_infoIconLabelOptions; }
     inline bool InfoIconLabelOptionsHasBeenSet() const { return m_infoIconLabelOptionsHasBeenSet; }
-    inline void SetInfoIconLabelOptions(const SheetControlInfoIconLabelOptions& value) { m_infoIconLabelOptionsHasBeenSet = true; m_infoIconLabelOptions = value; }
-    inline void SetInfoIconLabelOptions(SheetControlInfoIconLabelOptions&& value) { m_infoIconLabelOptionsHasBeenSet = true; m_infoIconLabelOptions = std::move(value); }
-    inline RelativeDateTimeControlDisplayOptions& WithInfoIconLabelOptions(const SheetControlInfoIconLabelOptions& value) { SetInfoIconLabelOptions(value); return *this;}
-    inline RelativeDateTimeControlDisplayOptions& WithInfoIconLabelOptions(SheetControlInfoIconLabelOptions&& value) { SetInfoIconLabelOptions(std::move(value)); return *this;}
+    template<typename InfoIconLabelOptionsT = SheetControlInfoIconLabelOptions>
+    void SetInfoIconLabelOptions(InfoIconLabelOptionsT&& value) { m_infoIconLabelOptionsHasBeenSet = true; m_infoIconLabelOptions = std::forward<InfoIconLabelOptionsT>(value); }
+    template<typename InfoIconLabelOptionsT = SheetControlInfoIconLabelOptions>
+    RelativeDateTimeControlDisplayOptions& WithInfoIconLabelOptions(InfoIconLabelOptionsT&& value) { SetInfoIconLabelOptions(std::forward<InfoIconLabelOptionsT>(value)); return *this;}
     ///@}
   private:
 

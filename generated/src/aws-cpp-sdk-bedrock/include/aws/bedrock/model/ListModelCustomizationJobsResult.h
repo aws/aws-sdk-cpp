@@ -29,7 +29,7 @@ namespace Model
   class ListModelCustomizationJobsResult
   {
   public:
-    AWS_BEDROCK_API ListModelCustomizationJobsResult();
+    AWS_BEDROCK_API ListModelCustomizationJobsResult() = default;
     AWS_BEDROCK_API ListModelCustomizationJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API ListModelCustomizationJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * value provided in the request, use this token when making another request in the
      * <code>nextToken</code> field to return the next batch of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListModelCustomizationJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListModelCustomizationJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListModelCustomizationJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListModelCustomizationJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Job summaries.</p>
      */
-    inline const Aws::Vector<ModelCustomizationJobSummary>& GetModelCustomizationJobSummaries() const{ return m_modelCustomizationJobSummaries; }
-    inline void SetModelCustomizationJobSummaries(const Aws::Vector<ModelCustomizationJobSummary>& value) { m_modelCustomizationJobSummaries = value; }
-    inline void SetModelCustomizationJobSummaries(Aws::Vector<ModelCustomizationJobSummary>&& value) { m_modelCustomizationJobSummaries = std::move(value); }
-    inline ListModelCustomizationJobsResult& WithModelCustomizationJobSummaries(const Aws::Vector<ModelCustomizationJobSummary>& value) { SetModelCustomizationJobSummaries(value); return *this;}
-    inline ListModelCustomizationJobsResult& WithModelCustomizationJobSummaries(Aws::Vector<ModelCustomizationJobSummary>&& value) { SetModelCustomizationJobSummaries(std::move(value)); return *this;}
-    inline ListModelCustomizationJobsResult& AddModelCustomizationJobSummaries(const ModelCustomizationJobSummary& value) { m_modelCustomizationJobSummaries.push_back(value); return *this; }
-    inline ListModelCustomizationJobsResult& AddModelCustomizationJobSummaries(ModelCustomizationJobSummary&& value) { m_modelCustomizationJobSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ModelCustomizationJobSummary>& GetModelCustomizationJobSummaries() const { return m_modelCustomizationJobSummaries; }
+    template<typename ModelCustomizationJobSummariesT = Aws::Vector<ModelCustomizationJobSummary>>
+    void SetModelCustomizationJobSummaries(ModelCustomizationJobSummariesT&& value) { m_modelCustomizationJobSummariesHasBeenSet = true; m_modelCustomizationJobSummaries = std::forward<ModelCustomizationJobSummariesT>(value); }
+    template<typename ModelCustomizationJobSummariesT = Aws::Vector<ModelCustomizationJobSummary>>
+    ListModelCustomizationJobsResult& WithModelCustomizationJobSummaries(ModelCustomizationJobSummariesT&& value) { SetModelCustomizationJobSummaries(std::forward<ModelCustomizationJobSummariesT>(value)); return *this;}
+    template<typename ModelCustomizationJobSummariesT = ModelCustomizationJobSummary>
+    ListModelCustomizationJobsResult& AddModelCustomizationJobSummaries(ModelCustomizationJobSummariesT&& value) { m_modelCustomizationJobSummariesHasBeenSet = true; m_modelCustomizationJobSummaries.emplace_back(std::forward<ModelCustomizationJobSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListModelCustomizationJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListModelCustomizationJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListModelCustomizationJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListModelCustomizationJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ModelCustomizationJobSummary> m_modelCustomizationJobSummaries;
+    bool m_modelCustomizationJobSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

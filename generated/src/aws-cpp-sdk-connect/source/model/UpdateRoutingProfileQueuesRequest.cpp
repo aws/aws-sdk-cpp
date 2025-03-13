@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRoutingProfileQueuesRequest::UpdateRoutingProfileQueuesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_routingProfileIdHasBeenSet(false),
-    m_queueConfigsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRoutingProfileQueuesRequest::SerializePayload() const
 {
   JsonValue payload;

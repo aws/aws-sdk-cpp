@@ -18,14 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-LakeFormationTagPolicyDetails::LakeFormationTagPolicyDetails() : 
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
-{
-}
-
 LakeFormationTagPolicyDetails::LakeFormationTagPolicyDetails(JsonView jsonValue)
-  : LakeFormationTagPolicyDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LakeFormationTagPolicyDetails& LakeFormationTagPolicyDetails::operator =(JsonVie
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   return *this;
 }
 

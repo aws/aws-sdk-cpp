@@ -29,7 +29,7 @@ namespace Model
   class GetTagSyncTaskResult
   {
   public:
-    AWS_RESOURCEGROUPS_API GetTagSyncTaskResult();
+    AWS_RESOURCEGROUPS_API GetTagSyncTaskResult() = default;
     AWS_RESOURCEGROUPS_API GetTagSyncTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEGROUPS_API GetTagSyncTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,65 +38,55 @@ namespace Model
     /**
      * <p>The Amazon resource name (ARN) of the application group. </p>
      */
-    inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
-    inline void SetGroupArn(const Aws::String& value) { m_groupArn = value; }
-    inline void SetGroupArn(Aws::String&& value) { m_groupArn = std::move(value); }
-    inline void SetGroupArn(const char* value) { m_groupArn.assign(value); }
-    inline GetTagSyncTaskResult& WithGroupArn(const Aws::String& value) { SetGroupArn(value); return *this;}
-    inline GetTagSyncTaskResult& WithGroupArn(Aws::String&& value) { SetGroupArn(std::move(value)); return *this;}
-    inline GetTagSyncTaskResult& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
+    inline const Aws::String& GetGroupArn() const { return m_groupArn; }
+    template<typename GroupArnT = Aws::String>
+    void SetGroupArn(GroupArnT&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::forward<GroupArnT>(value); }
+    template<typename GroupArnT = Aws::String>
+    GetTagSyncTaskResult& WithGroupArn(GroupArnT&& value) { SetGroupArn(std::forward<GroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the application group. </p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
-    inline void SetGroupName(const Aws::String& value) { m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupName.assign(value); }
-    inline GetTagSyncTaskResult& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline GetTagSyncTaskResult& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline GetTagSyncTaskResult& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    GetTagSyncTaskResult& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon resource name (ARN) of the tag-sync task. </p>
      */
-    inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
-    inline void SetTaskArn(const Aws::String& value) { m_taskArn = value; }
-    inline void SetTaskArn(Aws::String&& value) { m_taskArn = std::move(value); }
-    inline void SetTaskArn(const char* value) { m_taskArn.assign(value); }
-    inline GetTagSyncTaskResult& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-    inline GetTagSyncTaskResult& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-    inline GetTagSyncTaskResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+    inline const Aws::String& GetTaskArn() const { return m_taskArn; }
+    template<typename TaskArnT = Aws::String>
+    void SetTaskArn(TaskArnT&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::forward<TaskArnT>(value); }
+    template<typename TaskArnT = Aws::String>
+    GetTagSyncTaskResult& WithTaskArn(TaskArnT&& value) { SetTaskArn(std::forward<TaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tag key. </p>
      */
-    inline const Aws::String& GetTagKey() const{ return m_tagKey; }
-    inline void SetTagKey(const Aws::String& value) { m_tagKey = value; }
-    inline void SetTagKey(Aws::String&& value) { m_tagKey = std::move(value); }
-    inline void SetTagKey(const char* value) { m_tagKey.assign(value); }
-    inline GetTagSyncTaskResult& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
-    inline GetTagSyncTaskResult& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
-    inline GetTagSyncTaskResult& WithTagKey(const char* value) { SetTagKey(value); return *this;}
+    inline const Aws::String& GetTagKey() const { return m_tagKey; }
+    template<typename TagKeyT = Aws::String>
+    void SetTagKey(TagKeyT&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::forward<TagKeyT>(value); }
+    template<typename TagKeyT = Aws::String>
+    GetTagSyncTaskResult& WithTagKey(TagKeyT&& value) { SetTagKey(std::forward<TagKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tag value. </p>
      */
-    inline const Aws::String& GetTagValue() const{ return m_tagValue; }
-    inline void SetTagValue(const Aws::String& value) { m_tagValue = value; }
-    inline void SetTagValue(Aws::String&& value) { m_tagValue = std::move(value); }
-    inline void SetTagValue(const char* value) { m_tagValue.assign(value); }
-    inline GetTagSyncTaskResult& WithTagValue(const Aws::String& value) { SetTagValue(value); return *this;}
-    inline GetTagSyncTaskResult& WithTagValue(Aws::String&& value) { SetTagValue(std::move(value)); return *this;}
-    inline GetTagSyncTaskResult& WithTagValue(const char* value) { SetTagValue(value); return *this;}
+    inline const Aws::String& GetTagValue() const { return m_tagValue; }
+    template<typename TagValueT = Aws::String>
+    void SetTagValue(TagValueT&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::forward<TagValueT>(value); }
+    template<typename TagValueT = Aws::String>
+    GetTagSyncTaskResult& WithTagValue(TagValueT&& value) { SetTagValue(std::forward<TagValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,13 +97,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/app-tag-sync.html#tag-sync-role">Tag-sync
      * required permissions</a>. </p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline GetTagSyncTaskResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline GetTagSyncTaskResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline GetTagSyncTaskResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    GetTagSyncTaskResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,11 +114,9 @@ namespace Model
      * managing resources in the application. Review the <code>ErrorMessage</code> for
      * more information about resolving the error. </p> </li> </ul>
      */
-    inline const TagSyncTaskStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const TagSyncTaskStatus& value) { m_status = value; }
-    inline void SetStatus(TagSyncTaskStatus&& value) { m_status = std::move(value); }
-    inline GetTagSyncTaskResult& WithStatus(const TagSyncTaskStatus& value) { SetStatus(value); return *this;}
-    inline GetTagSyncTaskResult& WithStatus(TagSyncTaskStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline TagSyncTaskStatus GetStatus() const { return m_status; }
+    inline void SetStatus(TagSyncTaskStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetTagSyncTaskResult& WithStatus(TagSyncTaskStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -138,57 +124,63 @@ namespace Model
      * <p>The specific error message in cases where the tag-sync task status is
      * <code>ERROR</code>. </p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline GetTagSyncTaskResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline GetTagSyncTaskResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline GetTagSyncTaskResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    GetTagSyncTaskResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the tag-sync task was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetTagSyncTaskResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetTagSyncTaskResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetTagSyncTaskResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTagSyncTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTagSyncTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTagSyncTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTagSyncTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_groupArn;
+    bool m_groupArnHasBeenSet = false;
 
     Aws::String m_groupName;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_taskArn;
+    bool m_taskArnHasBeenSet = false;
 
     Aws::String m_tagKey;
+    bool m_tagKeyHasBeenSet = false;
 
     Aws::String m_tagValue;
+    bool m_tagValueHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
-    TagSyncTaskStatus m_status;
+    TagSyncTaskStatus m_status{TagSyncTaskStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

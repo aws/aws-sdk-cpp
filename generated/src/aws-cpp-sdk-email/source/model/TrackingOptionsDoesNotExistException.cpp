@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-TrackingOptionsDoesNotExistException::TrackingOptionsDoesNotExistException() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 TrackingOptionsDoesNotExistException::TrackingOptionsDoesNotExistException(const XmlNode& xmlNode)
-  : TrackingOptionsDoesNotExistException()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ TrackingOptionsDoesNotExistException& TrackingOptionsDoesNotExistException::oper
     {
       m_configurationSetName = Aws::Utils::Xml::DecodeEscapedXmlText(configurationSetNameNode.GetText());
       m_configurationSetNameHasBeenSet = true;
+       m_configurationSetNameHasBeenSet = true;
     }
   }
 

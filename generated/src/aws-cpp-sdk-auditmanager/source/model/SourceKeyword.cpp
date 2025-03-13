@@ -18,15 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-SourceKeyword::SourceKeyword() : 
-    m_keywordInputType(KeywordInputType::NOT_SET),
-    m_keywordInputTypeHasBeenSet(false),
-    m_keywordValueHasBeenSet(false)
-{
-}
-
 SourceKeyword::SourceKeyword(JsonView jsonValue)
-  : SourceKeyword()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SourceKeyword& SourceKeyword::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("keywordInputType"))
   {
     m_keywordInputType = KeywordInputTypeMapper::GetKeywordInputTypeForName(jsonValue.GetString("keywordInputType"));
-
     m_keywordInputTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keywordValue"))
   {
     m_keywordValue = jsonValue.GetString("keywordValue");
-
     m_keywordValueHasBeenSet = true;
   }
-
   return *this;
 }
 

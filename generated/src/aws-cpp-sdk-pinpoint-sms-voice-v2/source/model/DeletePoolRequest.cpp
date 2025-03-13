@@ -12,11 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePoolRequest::DeletePoolRequest() : 
-    m_poolIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePoolRequest::SerializePayload() const
 {
   JsonValue payload;

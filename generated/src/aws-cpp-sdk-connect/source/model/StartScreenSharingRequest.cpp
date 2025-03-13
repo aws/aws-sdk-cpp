@@ -12,14 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartScreenSharingRequest::StartScreenSharingRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_instanceIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false)
-{
-}
-
 Aws::String StartScreenSharingRequest::SerializePayload() const
 {
   JsonValue payload;

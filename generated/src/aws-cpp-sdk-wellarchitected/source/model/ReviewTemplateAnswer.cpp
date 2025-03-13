@@ -18,29 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ReviewTemplateAnswer::ReviewTemplateAnswer() : 
-    m_questionIdHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_questionDescriptionHasBeenSet(false),
-    m_improvementPlanUrlHasBeenSet(false),
-    m_helpfulResourceUrlHasBeenSet(false),
-    m_helpfulResourceDisplayTextHasBeenSet(false),
-    m_choicesHasBeenSet(false),
-    m_selectedChoicesHasBeenSet(false),
-    m_choiceAnswersHasBeenSet(false),
-    m_isApplicable(false),
-    m_isApplicableHasBeenSet(false),
-    m_answerStatus(ReviewTemplateAnswerStatus::NOT_SET),
-    m_answerStatusHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_reason(AnswerReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ReviewTemplateAnswer::ReviewTemplateAnswer(JsonView jsonValue)
-  : ReviewTemplateAnswer()
 {
   *this = jsonValue;
 }
@@ -50,52 +28,38 @@ ReviewTemplateAnswer& ReviewTemplateAnswer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QuestionId"))
   {
     m_questionId = jsonValue.GetString("QuestionId");
-
     m_questionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PillarId"))
   {
     m_pillarId = jsonValue.GetString("PillarId");
-
     m_pillarIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionTitle"))
   {
     m_questionTitle = jsonValue.GetString("QuestionTitle");
-
     m_questionTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionDescription"))
   {
     m_questionDescription = jsonValue.GetString("QuestionDescription");
-
     m_questionDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImprovementPlanUrl"))
   {
     m_improvementPlanUrl = jsonValue.GetString("ImprovementPlanUrl");
-
     m_improvementPlanUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HelpfulResourceUrl"))
   {
     m_helpfulResourceUrl = jsonValue.GetString("HelpfulResourceUrl");
-
     m_helpfulResourceUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HelpfulResourceDisplayText"))
   {
     m_helpfulResourceDisplayText = jsonValue.GetString("HelpfulResourceDisplayText");
-
     m_helpfulResourceDisplayTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Choices"))
   {
     Aws::Utils::Array<JsonView> choicesJsonList = jsonValue.GetArray("Choices");
@@ -105,7 +69,6 @@ ReviewTemplateAnswer& ReviewTemplateAnswer::operator =(JsonView jsonValue)
     }
     m_choicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectedChoices"))
   {
     Aws::Utils::Array<JsonView> selectedChoicesJsonList = jsonValue.GetArray("SelectedChoices");
@@ -115,7 +78,6 @@ ReviewTemplateAnswer& ReviewTemplateAnswer::operator =(JsonView jsonValue)
     }
     m_selectedChoicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChoiceAnswers"))
   {
     Aws::Utils::Array<JsonView> choiceAnswersJsonList = jsonValue.GetArray("ChoiceAnswers");
@@ -125,35 +87,26 @@ ReviewTemplateAnswer& ReviewTemplateAnswer::operator =(JsonView jsonValue)
     }
     m_choiceAnswersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsApplicable"))
   {
     m_isApplicable = jsonValue.GetBool("IsApplicable");
-
     m_isApplicableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnswerStatus"))
   {
     m_answerStatus = ReviewTemplateAnswerStatusMapper::GetReviewTemplateAnswerStatusForName(jsonValue.GetString("AnswerStatus"));
-
     m_answerStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notes"))
   {
     m_notes = jsonValue.GetString("Notes");
-
     m_notesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = AnswerReasonMapper::GetAnswerReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

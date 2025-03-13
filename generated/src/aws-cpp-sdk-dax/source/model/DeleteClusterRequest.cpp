@@ -12,11 +12,6 @@ using namespace Aws::DAX::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteClusterRequest::DeleteClusterRequest() : 
-    m_clusterNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClusterRequest::SerializePayload() const
 {
   JsonValue payload;

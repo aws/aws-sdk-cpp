@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCommentsResult::ListCommentsResult() : 
-    m_total(0)
-{
-}
-
 ListCommentsResult::ListCommentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListCommentsResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ ListCommentsResult& ListCommentsResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
@@ -44,20 +37,20 @@ ListCommentsResult& ListCommentsResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
     }
+    m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("total"))
   {
     m_total = jsonValue.GetInteger("total");
-
+    m_totalHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

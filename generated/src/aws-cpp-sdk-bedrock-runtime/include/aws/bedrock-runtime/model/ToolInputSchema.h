@@ -32,7 +32,7 @@ namespace Model
   class ToolInputSchema
   {
   public:
-    AWS_BEDROCKRUNTIME_API ToolInputSchema();
+    AWS_BEDROCKRUNTIME_API ToolInputSchema() = default;
     AWS_BEDROCKRUNTIME_API ToolInputSchema(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ToolInputSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * href="https://json-schema.org/understanding-json-schema/reference">JSON Schema
      * Reference</a>.</p>
      */
-    inline Aws::Utils::DocumentView GetJson() const{ return m_json; }
+    inline Aws::Utils::DocumentView GetJson() const { return m_json; }
     inline bool JsonHasBeenSet() const { return m_jsonHasBeenSet; }
-    inline void SetJson(const Aws::Utils::Document& value) { m_jsonHasBeenSet = true; m_json = value; }
-    inline void SetJson(Aws::Utils::Document&& value) { m_jsonHasBeenSet = true; m_json = std::move(value); }
-    inline ToolInputSchema& WithJson(const Aws::Utils::Document& value) { SetJson(value); return *this;}
-    inline ToolInputSchema& WithJson(Aws::Utils::Document&& value) { SetJson(std::move(value)); return *this;}
+    template<typename JsonT = Aws::Utils::Document>
+    void SetJson(JsonT&& value) { m_jsonHasBeenSet = true; m_json = std::forward<JsonT>(value); }
+    template<typename JsonT = Aws::Utils::Document>
+    ToolInputSchema& WithJson(JsonT&& value) { SetJson(std::forward<JsonT>(value)); return *this;}
     ///@}
   private:
 

@@ -25,7 +25,7 @@ namespace Model
   class DescribeAlarmRequest : public IoTEventsDataRequest
   {
   public:
-    AWS_IOTEVENTSDATA_API DescribeAlarmRequest();
+    AWS_IOTEVENTSDATA_API DescribeAlarmRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the alarm model.</p>
      */
-    inline const Aws::String& GetAlarmModelName() const{ return m_alarmModelName; }
+    inline const Aws::String& GetAlarmModelName() const { return m_alarmModelName; }
     inline bool AlarmModelNameHasBeenSet() const { return m_alarmModelNameHasBeenSet; }
-    inline void SetAlarmModelName(const Aws::String& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = value; }
-    inline void SetAlarmModelName(Aws::String&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::move(value); }
-    inline void SetAlarmModelName(const char* value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName.assign(value); }
-    inline DescribeAlarmRequest& WithAlarmModelName(const Aws::String& value) { SetAlarmModelName(value); return *this;}
-    inline DescribeAlarmRequest& WithAlarmModelName(Aws::String&& value) { SetAlarmModelName(std::move(value)); return *this;}
-    inline DescribeAlarmRequest& WithAlarmModelName(const char* value) { SetAlarmModelName(value); return *this;}
+    template<typename AlarmModelNameT = Aws::String>
+    void SetAlarmModelName(AlarmModelNameT&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::forward<AlarmModelNameT>(value); }
+    template<typename AlarmModelNameT = Aws::String>
+    DescribeAlarmRequest& WithAlarmModelName(AlarmModelNameT&& value) { SetAlarmModelName(std::forward<AlarmModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * with the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
      */
-    inline const Aws::String& GetKeyValue() const{ return m_keyValue; }
+    inline const Aws::String& GetKeyValue() const { return m_keyValue; }
     inline bool KeyValueHasBeenSet() const { return m_keyValueHasBeenSet; }
-    inline void SetKeyValue(const Aws::String& value) { m_keyValueHasBeenSet = true; m_keyValue = value; }
-    inline void SetKeyValue(Aws::String&& value) { m_keyValueHasBeenSet = true; m_keyValue = std::move(value); }
-    inline void SetKeyValue(const char* value) { m_keyValueHasBeenSet = true; m_keyValue.assign(value); }
-    inline DescribeAlarmRequest& WithKeyValue(const Aws::String& value) { SetKeyValue(value); return *this;}
-    inline DescribeAlarmRequest& WithKeyValue(Aws::String&& value) { SetKeyValue(std::move(value)); return *this;}
-    inline DescribeAlarmRequest& WithKeyValue(const char* value) { SetKeyValue(value); return *this;}
+    template<typename KeyValueT = Aws::String>
+    void SetKeyValue(KeyValueT&& value) { m_keyValueHasBeenSet = true; m_keyValue = std::forward<KeyValueT>(value); }
+    template<typename KeyValueT = Aws::String>
+    DescribeAlarmRequest& WithKeyValue(KeyValueT&& value) { SetKeyValue(std::forward<KeyValueT>(value)); return *this;}
     ///@}
   private:
 

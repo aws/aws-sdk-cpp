@@ -29,7 +29,7 @@ namespace Model
   class DescribeMaintenanceWindowsResult
   {
   public:
-    AWS_SSM_API DescribeMaintenanceWindowsResult();
+    AWS_SSM_API DescribeMaintenanceWindowsResult() = default;
     AWS_SSM_API DescribeMaintenanceWindowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API DescribeMaintenanceWindowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the maintenance windows.</p>
      */
-    inline const Aws::Vector<MaintenanceWindowIdentity>& GetWindowIdentities() const{ return m_windowIdentities; }
-    inline void SetWindowIdentities(const Aws::Vector<MaintenanceWindowIdentity>& value) { m_windowIdentities = value; }
-    inline void SetWindowIdentities(Aws::Vector<MaintenanceWindowIdentity>&& value) { m_windowIdentities = std::move(value); }
-    inline DescribeMaintenanceWindowsResult& WithWindowIdentities(const Aws::Vector<MaintenanceWindowIdentity>& value) { SetWindowIdentities(value); return *this;}
-    inline DescribeMaintenanceWindowsResult& WithWindowIdentities(Aws::Vector<MaintenanceWindowIdentity>&& value) { SetWindowIdentities(std::move(value)); return *this;}
-    inline DescribeMaintenanceWindowsResult& AddWindowIdentities(const MaintenanceWindowIdentity& value) { m_windowIdentities.push_back(value); return *this; }
-    inline DescribeMaintenanceWindowsResult& AddWindowIdentities(MaintenanceWindowIdentity&& value) { m_windowIdentities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MaintenanceWindowIdentity>& GetWindowIdentities() const { return m_windowIdentities; }
+    template<typename WindowIdentitiesT = Aws::Vector<MaintenanceWindowIdentity>>
+    void SetWindowIdentities(WindowIdentitiesT&& value) { m_windowIdentitiesHasBeenSet = true; m_windowIdentities = std::forward<WindowIdentitiesT>(value); }
+    template<typename WindowIdentitiesT = Aws::Vector<MaintenanceWindowIdentity>>
+    DescribeMaintenanceWindowsResult& WithWindowIdentities(WindowIdentitiesT&& value) { SetWindowIdentities(std::forward<WindowIdentitiesT>(value)); return *this;}
+    template<typename WindowIdentitiesT = MaintenanceWindowIdentity>
+    DescribeMaintenanceWindowsResult& AddWindowIdentities(WindowIdentitiesT&& value) { m_windowIdentitiesHasBeenSet = true; m_windowIdentities.emplace_back(std::forward<WindowIdentitiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeMaintenanceWindowsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeMaintenanceWindowsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeMaintenanceWindowsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeMaintenanceWindowsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeMaintenanceWindowsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeMaintenanceWindowsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeMaintenanceWindowsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeMaintenanceWindowsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MaintenanceWindowIdentity> m_windowIdentities;
+    bool m_windowIdentitiesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

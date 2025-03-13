@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAvailableSolutionStacksResult::ListAvailableSolutionStacksResult()
-{
-}
-
 ListAvailableSolutionStacksResult::ListAvailableSolutionStacksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ListAvailableSolutionStacksResult& ListAvailableSolutionStacksResult::operator =
     if(!solutionStacksNode.IsNull())
     {
       XmlNode solutionStacksMember = solutionStacksNode.FirstChild("member");
+      m_solutionStacksHasBeenSet = !solutionStacksMember.IsNull();
       while(!solutionStacksMember.IsNull())
       {
         m_solutionStacks.push_back(solutionStacksMember.GetText());
@@ -53,6 +50,7 @@ ListAvailableSolutionStacksResult& ListAvailableSolutionStacksResult::operator =
     if(!solutionStackDetailsNode.IsNull())
     {
       XmlNode solutionStackDetailsMember = solutionStackDetailsNode.FirstChild("member");
+      m_solutionStackDetailsHasBeenSet = !solutionStackDetailsMember.IsNull();
       while(!solutionStackDetailsMember.IsNull())
       {
         m_solutionStackDetails.push_back(solutionStackDetailsMember);
@@ -65,6 +63,7 @@ ListAvailableSolutionStacksResult& ListAvailableSolutionStacksResult::operator =
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::ListAvailableSolutionStacksResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

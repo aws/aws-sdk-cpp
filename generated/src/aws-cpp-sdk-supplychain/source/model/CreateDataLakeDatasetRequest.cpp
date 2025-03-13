@@ -12,16 +12,6 @@ using namespace Aws::SupplyChain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataLakeDatasetRequest::CreateDataLakeDatasetRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataLakeDatasetRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,20 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ActionReviewEvent::ActionReviewEvent() : 
-    m_conversationIdHasBeenSet(false),
-    m_userMessageIdHasBeenSet(false),
-    m_systemMessageIdHasBeenSet(false),
-    m_pluginIdHasBeenSet(false),
-    m_pluginType(PluginType::NOT_SET),
-    m_pluginTypeHasBeenSet(false),
-    m_payloadHasBeenSet(false),
-    m_payloadFieldNameSeparatorHasBeenSet(false)
-{
-}
-
 ActionReviewEvent::ActionReviewEvent(JsonView jsonValue)
-  : ActionReviewEvent()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ ActionReviewEvent& ActionReviewEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("conversationId"))
   {
     m_conversationId = jsonValue.GetString("conversationId");
-
     m_conversationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userMessageId"))
   {
     m_userMessageId = jsonValue.GetString("userMessageId");
-
     m_userMessageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("systemMessageId"))
   {
     m_systemMessageId = jsonValue.GetString("systemMessageId");
-
     m_systemMessageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pluginId"))
   {
     m_pluginId = jsonValue.GetString("pluginId");
-
     m_pluginIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pluginType"))
   {
     m_pluginType = PluginTypeMapper::GetPluginTypeForName(jsonValue.GetString("pluginType"));
-
     m_pluginTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payload"))
   {
     Aws::Map<Aws::String, JsonView> payloadJsonMap = jsonValue.GetObject("payload").GetAllObjects();
@@ -82,14 +59,11 @@ ActionReviewEvent& ActionReviewEvent::operator =(JsonView jsonValue)
     }
     m_payloadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payloadFieldNameSeparator"))
   {
     m_payloadFieldNameSeparator = jsonValue.GetString("payloadFieldNameSeparator");
-
     m_payloadFieldNameSeparatorHasBeenSet = true;
   }
-
   return *this;
 }
 

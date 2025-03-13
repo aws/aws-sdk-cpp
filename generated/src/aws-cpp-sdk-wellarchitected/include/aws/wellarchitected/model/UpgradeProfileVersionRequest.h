@@ -22,7 +22,7 @@ namespace Model
   class UpgradeProfileVersionRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API UpgradeProfileVersionRequest();
+    AWS_WELLARCHITECTED_API UpgradeProfileVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,52 +35,44 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline UpgradeProfileVersionRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline UpgradeProfileVersionRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline UpgradeProfileVersionRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    UpgradeProfileVersionRequest& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The profile ARN.</p>
      */
-    inline const Aws::String& GetProfileArn() const{ return m_profileArn; }
+    inline const Aws::String& GetProfileArn() const { return m_profileArn; }
     inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
-    inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
-    inline void SetProfileArn(Aws::String&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::move(value); }
-    inline void SetProfileArn(const char* value) { m_profileArnHasBeenSet = true; m_profileArn.assign(value); }
-    inline UpgradeProfileVersionRequest& WithProfileArn(const Aws::String& value) { SetProfileArn(value); return *this;}
-    inline UpgradeProfileVersionRequest& WithProfileArn(Aws::String&& value) { SetProfileArn(std::move(value)); return *this;}
-    inline UpgradeProfileVersionRequest& WithProfileArn(const char* value) { SetProfileArn(value); return *this;}
+    template<typename ProfileArnT = Aws::String>
+    void SetProfileArn(ProfileArnT&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::forward<ProfileArnT>(value); }
+    template<typename ProfileArnT = Aws::String>
+    UpgradeProfileVersionRequest& WithProfileArn(ProfileArnT&& value) { SetProfileArn(std::forward<ProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMilestoneName() const{ return m_milestoneName; }
+    inline const Aws::String& GetMilestoneName() const { return m_milestoneName; }
     inline bool MilestoneNameHasBeenSet() const { return m_milestoneNameHasBeenSet; }
-    inline void SetMilestoneName(const Aws::String& value) { m_milestoneNameHasBeenSet = true; m_milestoneName = value; }
-    inline void SetMilestoneName(Aws::String&& value) { m_milestoneNameHasBeenSet = true; m_milestoneName = std::move(value); }
-    inline void SetMilestoneName(const char* value) { m_milestoneNameHasBeenSet = true; m_milestoneName.assign(value); }
-    inline UpgradeProfileVersionRequest& WithMilestoneName(const Aws::String& value) { SetMilestoneName(value); return *this;}
-    inline UpgradeProfileVersionRequest& WithMilestoneName(Aws::String&& value) { SetMilestoneName(std::move(value)); return *this;}
-    inline UpgradeProfileVersionRequest& WithMilestoneName(const char* value) { SetMilestoneName(value); return *this;}
+    template<typename MilestoneNameT = Aws::String>
+    void SetMilestoneName(MilestoneNameT&& value) { m_milestoneNameHasBeenSet = true; m_milestoneName = std::forward<MilestoneNameT>(value); }
+    template<typename MilestoneNameT = Aws::String>
+    UpgradeProfileVersionRequest& WithMilestoneName(MilestoneNameT&& value) { SetMilestoneName(std::forward<MilestoneNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpgradeProfileVersionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpgradeProfileVersionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpgradeProfileVersionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpgradeProfileVersionRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

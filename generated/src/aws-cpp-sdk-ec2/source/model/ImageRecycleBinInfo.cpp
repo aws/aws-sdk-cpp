@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImageRecycleBinInfo::ImageRecycleBinInfo() : 
-    m_imageIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_recycleBinEnterTimeHasBeenSet(false),
-    m_recycleBinExitTimeHasBeenSet(false)
-{
-}
-
 ImageRecycleBinInfo::ImageRecycleBinInfo(const XmlNode& xmlNode)
-  : ImageRecycleBinInfo()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ ImageRecycleBinInfo& ImageRecycleBinInfo::operator =(const XmlNode& xmlNode)
     {
       m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
       m_imageIdHasBeenSet = true;
+       m_imageIdHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode recycleBinEnterTimeNode = resultNode.FirstChild("recycleBinEnterTime");
     if(!recycleBinEnterTimeNode.IsNull())
     {
       m_recycleBinEnterTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(recycleBinEnterTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_recycleBinEnterTimeHasBeenSet = true;
+       m_recycleBinEnterTimeHasBeenSet = true;
     }
     XmlNode recycleBinExitTimeNode = resultNode.FirstChild("recycleBinExitTime");
     if(!recycleBinExitTimeNode.IsNull())
     {
       m_recycleBinExitTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(recycleBinExitTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_recycleBinExitTimeHasBeenSet = true;
+       m_recycleBinExitTimeHasBeenSet = true;
     }
   }
 

@@ -20,19 +20,7 @@ namespace S3
 namespace Model
 {
 
-CORSRule::CORSRule() : 
-    m_iDHasBeenSet(false),
-    m_allowedHeadersHasBeenSet(false),
-    m_allowedMethodsHasBeenSet(false),
-    m_allowedOriginsHasBeenSet(false),
-    m_exposeHeadersHasBeenSet(false),
-    m_maxAgeSeconds(0),
-    m_maxAgeSecondsHasBeenSet(false)
-{
-}
-
 CORSRule::CORSRule(const XmlNode& xmlNode)
-  : CORSRule()
 {
   *this = xmlNode;
 }
@@ -48,60 +36,66 @@ CORSRule& CORSRule::operator =(const XmlNode& xmlNode)
     {
       m_iD = Aws::Utils::Xml::DecodeEscapedXmlText(iDNode.GetText());
       m_iDHasBeenSet = true;
+       m_iDHasBeenSet = true;
     }
     XmlNode allowedHeadersNode = resultNode.FirstChild("AllowedHeader");
     if(!allowedHeadersNode.IsNull())
     {
       XmlNode allowedHeaderMember = allowedHeadersNode;
+      m_allowedHeadersHasBeenSet = !allowedHeaderMember.IsNull();
       while(!allowedHeaderMember.IsNull())
       {
         m_allowedHeaders.push_back(allowedHeaderMember.GetText());
         allowedHeaderMember = allowedHeaderMember.NextNode("AllowedHeader");
       }
 
-      m_allowedHeadersHasBeenSet = true;
+       m_allowedHeadersHasBeenSet = true;
     }
     XmlNode allowedMethodsNode = resultNode.FirstChild("AllowedMethod");
     if(!allowedMethodsNode.IsNull())
     {
       XmlNode allowedMethodMember = allowedMethodsNode;
+      m_allowedMethodsHasBeenSet = !allowedMethodMember.IsNull();
       while(!allowedMethodMember.IsNull())
       {
         m_allowedMethods.push_back(allowedMethodMember.GetText());
         allowedMethodMember = allowedMethodMember.NextNode("AllowedMethod");
       }
 
-      m_allowedMethodsHasBeenSet = true;
+       m_allowedMethodsHasBeenSet = true;
     }
     XmlNode allowedOriginsNode = resultNode.FirstChild("AllowedOrigin");
     if(!allowedOriginsNode.IsNull())
     {
       XmlNode allowedOriginMember = allowedOriginsNode;
+      m_allowedOriginsHasBeenSet = !allowedOriginMember.IsNull();
       while(!allowedOriginMember.IsNull())
       {
         m_allowedOrigins.push_back(allowedOriginMember.GetText());
         allowedOriginMember = allowedOriginMember.NextNode("AllowedOrigin");
       }
 
-      m_allowedOriginsHasBeenSet = true;
+       m_allowedOriginsHasBeenSet = true;
     }
     XmlNode exposeHeadersNode = resultNode.FirstChild("ExposeHeader");
     if(!exposeHeadersNode.IsNull())
     {
       XmlNode exposeHeaderMember = exposeHeadersNode;
+      m_exposeHeadersHasBeenSet = !exposeHeaderMember.IsNull();
       while(!exposeHeaderMember.IsNull())
       {
         m_exposeHeaders.push_back(exposeHeaderMember.GetText());
         exposeHeaderMember = exposeHeaderMember.NextNode("ExposeHeader");
       }
 
-      m_exposeHeadersHasBeenSet = true;
+       m_exposeHeadersHasBeenSet = true;
     }
     XmlNode maxAgeSecondsNode = resultNode.FirstChild("MaxAgeSeconds");
     if(!maxAgeSecondsNode.IsNull())
     {
       m_maxAgeSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxAgeSecondsNode.GetText()).c_str()).c_str());
       m_maxAgeSecondsHasBeenSet = true;
+       m_maxAgeSecondsHasBeenSet = true;
     }
   }
 

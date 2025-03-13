@@ -28,7 +28,7 @@ namespace Model
   class GetDataCatalogEncryptionSettingsResult
   {
   public:
-    AWS_GLUE_API GetDataCatalogEncryptionSettingsResult();
+    AWS_GLUE_API GetDataCatalogEncryptionSettingsResult() = default;
     AWS_GLUE_API GetDataCatalogEncryptionSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetDataCatalogEncryptionSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The requested security configuration.</p>
      */
-    inline const DataCatalogEncryptionSettings& GetDataCatalogEncryptionSettings() const{ return m_dataCatalogEncryptionSettings; }
-    inline void SetDataCatalogEncryptionSettings(const DataCatalogEncryptionSettings& value) { m_dataCatalogEncryptionSettings = value; }
-    inline void SetDataCatalogEncryptionSettings(DataCatalogEncryptionSettings&& value) { m_dataCatalogEncryptionSettings = std::move(value); }
-    inline GetDataCatalogEncryptionSettingsResult& WithDataCatalogEncryptionSettings(const DataCatalogEncryptionSettings& value) { SetDataCatalogEncryptionSettings(value); return *this;}
-    inline GetDataCatalogEncryptionSettingsResult& WithDataCatalogEncryptionSettings(DataCatalogEncryptionSettings&& value) { SetDataCatalogEncryptionSettings(std::move(value)); return *this;}
+    inline const DataCatalogEncryptionSettings& GetDataCatalogEncryptionSettings() const { return m_dataCatalogEncryptionSettings; }
+    template<typename DataCatalogEncryptionSettingsT = DataCatalogEncryptionSettings>
+    void SetDataCatalogEncryptionSettings(DataCatalogEncryptionSettingsT&& value) { m_dataCatalogEncryptionSettingsHasBeenSet = true; m_dataCatalogEncryptionSettings = std::forward<DataCatalogEncryptionSettingsT>(value); }
+    template<typename DataCatalogEncryptionSettingsT = DataCatalogEncryptionSettings>
+    GetDataCatalogEncryptionSettingsResult& WithDataCatalogEncryptionSettings(DataCatalogEncryptionSettingsT&& value) { SetDataCatalogEncryptionSettings(std::forward<DataCatalogEncryptionSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDataCatalogEncryptionSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDataCatalogEncryptionSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDataCatalogEncryptionSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDataCatalogEncryptionSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DataCatalogEncryptionSettings m_dataCatalogEncryptionSettings;
+    bool m_dataCatalogEncryptionSettingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

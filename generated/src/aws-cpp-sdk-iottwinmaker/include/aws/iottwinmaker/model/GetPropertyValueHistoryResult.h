@@ -29,7 +29,7 @@ namespace Model
   class GetPropertyValueHistoryResult
   {
   public:
-    AWS_IOTTWINMAKER_API GetPropertyValueHistoryResult();
+    AWS_IOTTWINMAKER_API GetPropertyValueHistoryResult() = default;
     AWS_IOTTWINMAKER_API GetPropertyValueHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTTWINMAKER_API GetPropertyValueHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>An object that maps strings to the property definitions in the component
      * type. Each string in the mapping must be unique to this object.</p>
      */
-    inline const Aws::Vector<PropertyValueHistory>& GetPropertyValues() const{ return m_propertyValues; }
-    inline void SetPropertyValues(const Aws::Vector<PropertyValueHistory>& value) { m_propertyValues = value; }
-    inline void SetPropertyValues(Aws::Vector<PropertyValueHistory>&& value) { m_propertyValues = std::move(value); }
-    inline GetPropertyValueHistoryResult& WithPropertyValues(const Aws::Vector<PropertyValueHistory>& value) { SetPropertyValues(value); return *this;}
-    inline GetPropertyValueHistoryResult& WithPropertyValues(Aws::Vector<PropertyValueHistory>&& value) { SetPropertyValues(std::move(value)); return *this;}
-    inline GetPropertyValueHistoryResult& AddPropertyValues(const PropertyValueHistory& value) { m_propertyValues.push_back(value); return *this; }
-    inline GetPropertyValueHistoryResult& AddPropertyValues(PropertyValueHistory&& value) { m_propertyValues.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PropertyValueHistory>& GetPropertyValues() const { return m_propertyValues; }
+    template<typename PropertyValuesT = Aws::Vector<PropertyValueHistory>>
+    void SetPropertyValues(PropertyValuesT&& value) { m_propertyValuesHasBeenSet = true; m_propertyValues = std::forward<PropertyValuesT>(value); }
+    template<typename PropertyValuesT = Aws::Vector<PropertyValueHistory>>
+    GetPropertyValueHistoryResult& WithPropertyValues(PropertyValuesT&& value) { SetPropertyValues(std::forward<PropertyValuesT>(value)); return *this;}
+    template<typename PropertyValuesT = PropertyValueHistory>
+    GetPropertyValueHistoryResult& AddPropertyValues(PropertyValuesT&& value) { m_propertyValuesHasBeenSet = true; m_propertyValues.emplace_back(std::forward<PropertyValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The string that specifies the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetPropertyValueHistoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetPropertyValueHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetPropertyValueHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetPropertyValueHistoryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPropertyValueHistoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPropertyValueHistoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPropertyValueHistoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPropertyValueHistoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PropertyValueHistory> m_propertyValues;
+    bool m_propertyValuesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

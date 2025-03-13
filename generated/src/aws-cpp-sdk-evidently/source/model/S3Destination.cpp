@@ -18,14 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-S3Destination::S3Destination() : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 S3Destination::S3Destination(JsonView jsonValue)
-  : S3Destination()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Destination& S3Destination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

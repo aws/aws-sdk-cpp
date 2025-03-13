@@ -38,7 +38,7 @@ namespace Model
   class BatchDeleteConfigurationTask
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteConfigurationTask();
+    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteConfigurationTask() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteConfigurationTask(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteConfigurationTask& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p> The deletion task's unique identifier. </p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline BatchDeleteConfigurationTask& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline BatchDeleteConfigurationTask& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline BatchDeleteConfigurationTask& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    BatchDeleteConfigurationTask& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,24 +61,22 @@ namespace Model
      * <p> The current execution status of the deletion task. Valid status are:
      * INITIALIZING | VALIDATING | DELETING | COMPLETED | FAILED. </p>
      */
-    inline const BatchDeleteConfigurationTaskStatus& GetStatus() const{ return m_status; }
+    inline BatchDeleteConfigurationTaskStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const BatchDeleteConfigurationTaskStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(BatchDeleteConfigurationTaskStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline BatchDeleteConfigurationTask& WithStatus(const BatchDeleteConfigurationTaskStatus& value) { SetStatus(value); return *this;}
-    inline BatchDeleteConfigurationTask& WithStatus(BatchDeleteConfigurationTaskStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(BatchDeleteConfigurationTaskStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline BatchDeleteConfigurationTask& WithStatus(BatchDeleteConfigurationTaskStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An epoch seconds timestamp (UTC) of when the deletion task was started. </p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline BatchDeleteConfigurationTask& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline BatchDeleteConfigurationTask& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    BatchDeleteConfigurationTask& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,24 +84,22 @@ namespace Model
      * <p> An epoch seconds timestamp (UTC) of when the deletion task was completed or
      * failed. </p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline BatchDeleteConfigurationTask& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline BatchDeleteConfigurationTask& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    BatchDeleteConfigurationTask& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of configuration item to delete. Supported types are: SERVER. </p>
      */
-    inline const DeletionConfigurationItemType& GetConfigurationType() const{ return m_configurationType; }
+    inline DeletionConfigurationItemType GetConfigurationType() const { return m_configurationType; }
     inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
-    inline void SetConfigurationType(const DeletionConfigurationItemType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
-    inline void SetConfigurationType(DeletionConfigurationItemType&& value) { m_configurationTypeHasBeenSet = true; m_configurationType = std::move(value); }
-    inline BatchDeleteConfigurationTask& WithConfigurationType(const DeletionConfigurationItemType& value) { SetConfigurationType(value); return *this;}
-    inline BatchDeleteConfigurationTask& WithConfigurationType(DeletionConfigurationItemType&& value) { SetConfigurationType(std::move(value)); return *this;}
+    inline void SetConfigurationType(DeletionConfigurationItemType value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
+    inline BatchDeleteConfigurationTask& WithConfigurationType(DeletionConfigurationItemType value) { SetConfigurationType(value); return *this;}
     ///@}
 
     ///@{
@@ -113,15 +107,14 @@ namespace Model
      * <p> The list of configuration IDs that were originally requested to be deleted
      * by the deletion task. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetRequestedConfigurations() const{ return m_requestedConfigurations; }
+    inline const Aws::Vector<Aws::String>& GetRequestedConfigurations() const { return m_requestedConfigurations; }
     inline bool RequestedConfigurationsHasBeenSet() const { return m_requestedConfigurationsHasBeenSet; }
-    inline void SetRequestedConfigurations(const Aws::Vector<Aws::String>& value) { m_requestedConfigurationsHasBeenSet = true; m_requestedConfigurations = value; }
-    inline void SetRequestedConfigurations(Aws::Vector<Aws::String>&& value) { m_requestedConfigurationsHasBeenSet = true; m_requestedConfigurations = std::move(value); }
-    inline BatchDeleteConfigurationTask& WithRequestedConfigurations(const Aws::Vector<Aws::String>& value) { SetRequestedConfigurations(value); return *this;}
-    inline BatchDeleteConfigurationTask& WithRequestedConfigurations(Aws::Vector<Aws::String>&& value) { SetRequestedConfigurations(std::move(value)); return *this;}
-    inline BatchDeleteConfigurationTask& AddRequestedConfigurations(const Aws::String& value) { m_requestedConfigurationsHasBeenSet = true; m_requestedConfigurations.push_back(value); return *this; }
-    inline BatchDeleteConfigurationTask& AddRequestedConfigurations(Aws::String&& value) { m_requestedConfigurationsHasBeenSet = true; m_requestedConfigurations.push_back(std::move(value)); return *this; }
-    inline BatchDeleteConfigurationTask& AddRequestedConfigurations(const char* value) { m_requestedConfigurationsHasBeenSet = true; m_requestedConfigurations.push_back(value); return *this; }
+    template<typename RequestedConfigurationsT = Aws::Vector<Aws::String>>
+    void SetRequestedConfigurations(RequestedConfigurationsT&& value) { m_requestedConfigurationsHasBeenSet = true; m_requestedConfigurations = std::forward<RequestedConfigurationsT>(value); }
+    template<typename RequestedConfigurationsT = Aws::Vector<Aws::String>>
+    BatchDeleteConfigurationTask& WithRequestedConfigurations(RequestedConfigurationsT&& value) { SetRequestedConfigurations(std::forward<RequestedConfigurationsT>(value)); return *this;}
+    template<typename RequestedConfigurationsT = Aws::String>
+    BatchDeleteConfigurationTask& AddRequestedConfigurations(RequestedConfigurationsT&& value) { m_requestedConfigurationsHasBeenSet = true; m_requestedConfigurations.emplace_back(std::forward<RequestedConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -129,15 +122,14 @@ namespace Model
      * <p> The list of configuration IDs that were successfully deleted by the deletion
      * task. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetDeletedConfigurations() const{ return m_deletedConfigurations; }
+    inline const Aws::Vector<Aws::String>& GetDeletedConfigurations() const { return m_deletedConfigurations; }
     inline bool DeletedConfigurationsHasBeenSet() const { return m_deletedConfigurationsHasBeenSet; }
-    inline void SetDeletedConfigurations(const Aws::Vector<Aws::String>& value) { m_deletedConfigurationsHasBeenSet = true; m_deletedConfigurations = value; }
-    inline void SetDeletedConfigurations(Aws::Vector<Aws::String>&& value) { m_deletedConfigurationsHasBeenSet = true; m_deletedConfigurations = std::move(value); }
-    inline BatchDeleteConfigurationTask& WithDeletedConfigurations(const Aws::Vector<Aws::String>& value) { SetDeletedConfigurations(value); return *this;}
-    inline BatchDeleteConfigurationTask& WithDeletedConfigurations(Aws::Vector<Aws::String>&& value) { SetDeletedConfigurations(std::move(value)); return *this;}
-    inline BatchDeleteConfigurationTask& AddDeletedConfigurations(const Aws::String& value) { m_deletedConfigurationsHasBeenSet = true; m_deletedConfigurations.push_back(value); return *this; }
-    inline BatchDeleteConfigurationTask& AddDeletedConfigurations(Aws::String&& value) { m_deletedConfigurationsHasBeenSet = true; m_deletedConfigurations.push_back(std::move(value)); return *this; }
-    inline BatchDeleteConfigurationTask& AddDeletedConfigurations(const char* value) { m_deletedConfigurationsHasBeenSet = true; m_deletedConfigurations.push_back(value); return *this; }
+    template<typename DeletedConfigurationsT = Aws::Vector<Aws::String>>
+    void SetDeletedConfigurations(DeletedConfigurationsT&& value) { m_deletedConfigurationsHasBeenSet = true; m_deletedConfigurations = std::forward<DeletedConfigurationsT>(value); }
+    template<typename DeletedConfigurationsT = Aws::Vector<Aws::String>>
+    BatchDeleteConfigurationTask& WithDeletedConfigurations(DeletedConfigurationsT&& value) { SetDeletedConfigurations(std::forward<DeletedConfigurationsT>(value)); return *this;}
+    template<typename DeletedConfigurationsT = Aws::String>
+    BatchDeleteConfigurationTask& AddDeletedConfigurations(DeletedConfigurationsT&& value) { m_deletedConfigurationsHasBeenSet = true; m_deletedConfigurations.emplace_back(std::forward<DeletedConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -145,14 +137,14 @@ namespace Model
      * <p> A list of configuration IDs that failed to delete during the deletion task,
      * each paired with an error message. </p>
      */
-    inline const Aws::Vector<FailedConfiguration>& GetFailedConfigurations() const{ return m_failedConfigurations; }
+    inline const Aws::Vector<FailedConfiguration>& GetFailedConfigurations() const { return m_failedConfigurations; }
     inline bool FailedConfigurationsHasBeenSet() const { return m_failedConfigurationsHasBeenSet; }
-    inline void SetFailedConfigurations(const Aws::Vector<FailedConfiguration>& value) { m_failedConfigurationsHasBeenSet = true; m_failedConfigurations = value; }
-    inline void SetFailedConfigurations(Aws::Vector<FailedConfiguration>&& value) { m_failedConfigurationsHasBeenSet = true; m_failedConfigurations = std::move(value); }
-    inline BatchDeleteConfigurationTask& WithFailedConfigurations(const Aws::Vector<FailedConfiguration>& value) { SetFailedConfigurations(value); return *this;}
-    inline BatchDeleteConfigurationTask& WithFailedConfigurations(Aws::Vector<FailedConfiguration>&& value) { SetFailedConfigurations(std::move(value)); return *this;}
-    inline BatchDeleteConfigurationTask& AddFailedConfigurations(const FailedConfiguration& value) { m_failedConfigurationsHasBeenSet = true; m_failedConfigurations.push_back(value); return *this; }
-    inline BatchDeleteConfigurationTask& AddFailedConfigurations(FailedConfiguration&& value) { m_failedConfigurationsHasBeenSet = true; m_failedConfigurations.push_back(std::move(value)); return *this; }
+    template<typename FailedConfigurationsT = Aws::Vector<FailedConfiguration>>
+    void SetFailedConfigurations(FailedConfigurationsT&& value) { m_failedConfigurationsHasBeenSet = true; m_failedConfigurations = std::forward<FailedConfigurationsT>(value); }
+    template<typename FailedConfigurationsT = Aws::Vector<FailedConfiguration>>
+    BatchDeleteConfigurationTask& WithFailedConfigurations(FailedConfigurationsT&& value) { SetFailedConfigurations(std::forward<FailedConfigurationsT>(value)); return *this;}
+    template<typename FailedConfigurationsT = FailedConfiguration>
+    BatchDeleteConfigurationTask& AddFailedConfigurations(FailedConfigurationsT&& value) { m_failedConfigurationsHasBeenSet = true; m_failedConfigurations.emplace_back(std::forward<FailedConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -160,30 +152,30 @@ namespace Model
      * <p> A list of configuration IDs that produced warnings regarding their deletion,
      * paired with a warning message. </p>
      */
-    inline const Aws::Vector<DeletionWarning>& GetDeletionWarnings() const{ return m_deletionWarnings; }
+    inline const Aws::Vector<DeletionWarning>& GetDeletionWarnings() const { return m_deletionWarnings; }
     inline bool DeletionWarningsHasBeenSet() const { return m_deletionWarningsHasBeenSet; }
-    inline void SetDeletionWarnings(const Aws::Vector<DeletionWarning>& value) { m_deletionWarningsHasBeenSet = true; m_deletionWarnings = value; }
-    inline void SetDeletionWarnings(Aws::Vector<DeletionWarning>&& value) { m_deletionWarningsHasBeenSet = true; m_deletionWarnings = std::move(value); }
-    inline BatchDeleteConfigurationTask& WithDeletionWarnings(const Aws::Vector<DeletionWarning>& value) { SetDeletionWarnings(value); return *this;}
-    inline BatchDeleteConfigurationTask& WithDeletionWarnings(Aws::Vector<DeletionWarning>&& value) { SetDeletionWarnings(std::move(value)); return *this;}
-    inline BatchDeleteConfigurationTask& AddDeletionWarnings(const DeletionWarning& value) { m_deletionWarningsHasBeenSet = true; m_deletionWarnings.push_back(value); return *this; }
-    inline BatchDeleteConfigurationTask& AddDeletionWarnings(DeletionWarning&& value) { m_deletionWarningsHasBeenSet = true; m_deletionWarnings.push_back(std::move(value)); return *this; }
+    template<typename DeletionWarningsT = Aws::Vector<DeletionWarning>>
+    void SetDeletionWarnings(DeletionWarningsT&& value) { m_deletionWarningsHasBeenSet = true; m_deletionWarnings = std::forward<DeletionWarningsT>(value); }
+    template<typename DeletionWarningsT = Aws::Vector<DeletionWarning>>
+    BatchDeleteConfigurationTask& WithDeletionWarnings(DeletionWarningsT&& value) { SetDeletionWarnings(std::forward<DeletionWarningsT>(value)); return *this;}
+    template<typename DeletionWarningsT = DeletionWarning>
+    BatchDeleteConfigurationTask& AddDeletionWarnings(DeletionWarningsT&& value) { m_deletionWarningsHasBeenSet = true; m_deletionWarnings.emplace_back(std::forward<DeletionWarningsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet = false;
 
-    BatchDeleteConfigurationTaskStatus m_status;
+    BatchDeleteConfigurationTaskStatus m_status{BatchDeleteConfigurationTaskStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    DeletionConfigurationItemType m_configurationType;
+    DeletionConfigurationItemType m_configurationType{DeletionConfigurationItemType::NOT_SET};
     bool m_configurationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_requestedConfigurations;

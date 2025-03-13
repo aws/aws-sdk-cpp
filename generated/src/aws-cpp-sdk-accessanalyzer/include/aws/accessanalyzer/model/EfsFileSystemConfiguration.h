@@ -43,7 +43,7 @@ namespace Model
   class EfsFileSystemConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API EfsFileSystemConfiguration();
+    AWS_ACCESSANALYZER_API EfsFileSystemConfiguration() = default;
     AWS_ACCESSANALYZER_API EfsFileSystemConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API EfsFileSystemConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon
      * EFS Resource-based policies</a>.</p>
      */
-    inline const Aws::String& GetFileSystemPolicy() const{ return m_fileSystemPolicy; }
+    inline const Aws::String& GetFileSystemPolicy() const { return m_fileSystemPolicy; }
     inline bool FileSystemPolicyHasBeenSet() const { return m_fileSystemPolicyHasBeenSet; }
-    inline void SetFileSystemPolicy(const Aws::String& value) { m_fileSystemPolicyHasBeenSet = true; m_fileSystemPolicy = value; }
-    inline void SetFileSystemPolicy(Aws::String&& value) { m_fileSystemPolicyHasBeenSet = true; m_fileSystemPolicy = std::move(value); }
-    inline void SetFileSystemPolicy(const char* value) { m_fileSystemPolicyHasBeenSet = true; m_fileSystemPolicy.assign(value); }
-    inline EfsFileSystemConfiguration& WithFileSystemPolicy(const Aws::String& value) { SetFileSystemPolicy(value); return *this;}
-    inline EfsFileSystemConfiguration& WithFileSystemPolicy(Aws::String&& value) { SetFileSystemPolicy(std::move(value)); return *this;}
-    inline EfsFileSystemConfiguration& WithFileSystemPolicy(const char* value) { SetFileSystemPolicy(value); return *this;}
+    template<typename FileSystemPolicyT = Aws::String>
+    void SetFileSystemPolicy(FileSystemPolicyT&& value) { m_fileSystemPolicyHasBeenSet = true; m_fileSystemPolicy = std::forward<FileSystemPolicyT>(value); }
+    template<typename FileSystemPolicyT = Aws::String>
+    EfsFileSystemConfiguration& WithFileSystemPolicy(FileSystemPolicyT&& value) { SetFileSystemPolicy(std::forward<FileSystemPolicyT>(value)); return *this;}
     ///@}
   private:
 

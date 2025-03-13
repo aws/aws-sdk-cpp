@@ -12,12 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchRevokePermissionsRequest::BatchRevokePermissionsRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_entriesHasBeenSet(false)
-{
-}
-
 Aws::String BatchRevokePermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

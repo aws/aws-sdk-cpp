@@ -26,7 +26,7 @@ namespace Model
   class StartLabelDetectionRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API StartLabelDetectionRequest();
+    AWS_REKOGNITION_API StartLabelDetectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,12 @@ namespace Model
      * <p>The video in which you want to detect labels. The video must be stored in an
      * Amazon S3 bucket.</p>
      */
-    inline const Video& GetVideo() const{ return m_video; }
+    inline const Video& GetVideo() const { return m_video; }
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-    inline void SetVideo(const Video& value) { m_videoHasBeenSet = true; m_video = value; }
-    inline void SetVideo(Video&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
-    inline StartLabelDetectionRequest& WithVideo(const Video& value) { SetVideo(value); return *this;}
-    inline StartLabelDetectionRequest& WithVideo(Video&& value) { SetVideo(std::move(value)); return *this;}
+    template<typename VideoT = Video>
+    void SetVideo(VideoT&& value) { m_videoHasBeenSet = true; m_video = std::forward<VideoT>(value); }
+    template<typename VideoT = Video>
+    StartLabelDetectionRequest& WithVideo(VideoT&& value) { SetVideo(std::forward<VideoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent
      * the same job from being accidently started more than once. </p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline StartLabelDetectionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline StartLabelDetectionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline StartLabelDetectionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    StartLabelDetectionRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +78,7 @@ namespace Model
      * bounding boxes (if detected) with confidence values greater than or equal to 50
      * percent.</p>
      */
-    inline double GetMinConfidence() const{ return m_minConfidence; }
+    inline double GetMinConfidence() const { return m_minConfidence; }
     inline bool MinConfidenceHasBeenSet() const { return m_minConfidenceHasBeenSet; }
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
     inline StartLabelDetectionRequest& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
@@ -93,12 +91,12 @@ namespace Model
      * have a topic name that begins with <i>AmazonRekognition</i> if you are using the
      * AmazonRekognitionServiceRole permissions policy.</p>
      */
-    inline const NotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
+    inline const NotificationChannel& GetNotificationChannel() const { return m_notificationChannel; }
     inline bool NotificationChannelHasBeenSet() const { return m_notificationChannelHasBeenSet; }
-    inline void SetNotificationChannel(const NotificationChannel& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = value; }
-    inline void SetNotificationChannel(NotificationChannel&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::move(value); }
-    inline StartLabelDetectionRequest& WithNotificationChannel(const NotificationChannel& value) { SetNotificationChannel(value); return *this;}
-    inline StartLabelDetectionRequest& WithNotificationChannel(NotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
+    template<typename NotificationChannelT = NotificationChannel>
+    void SetNotificationChannel(NotificationChannelT&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::forward<NotificationChannelT>(value); }
+    template<typename NotificationChannelT = NotificationChannel>
+    StartLabelDetectionRequest& WithNotificationChannel(NotificationChannelT&& value) { SetNotificationChannel(std::forward<NotificationChannelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +106,12 @@ namespace Model
      * you can use <code>JobTag</code> to group related jobs and identify them in the
      * completion notification.</p>
      */
-    inline const Aws::String& GetJobTag() const{ return m_jobTag; }
+    inline const Aws::String& GetJobTag() const { return m_jobTag; }
     inline bool JobTagHasBeenSet() const { return m_jobTagHasBeenSet; }
-    inline void SetJobTag(const Aws::String& value) { m_jobTagHasBeenSet = true; m_jobTag = value; }
-    inline void SetJobTag(Aws::String&& value) { m_jobTagHasBeenSet = true; m_jobTag = std::move(value); }
-    inline void SetJobTag(const char* value) { m_jobTagHasBeenSet = true; m_jobTag.assign(value); }
-    inline StartLabelDetectionRequest& WithJobTag(const Aws::String& value) { SetJobTag(value); return *this;}
-    inline StartLabelDetectionRequest& WithJobTag(Aws::String&& value) { SetJobTag(std::move(value)); return *this;}
-    inline StartLabelDetectionRequest& WithJobTag(const char* value) { SetJobTag(value); return *this;}
+    template<typename JobTagT = Aws::String>
+    void SetJobTag(JobTagT&& value) { m_jobTagHasBeenSet = true; m_jobTag = std::forward<JobTagT>(value); }
+    template<typename JobTagT = Aws::String>
+    StartLabelDetectionRequest& WithJobTag(JobTagT&& value) { SetJobTag(std::forward<JobTagT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,14 +119,13 @@ namespace Model
      * <p>The features to return after video analysis. You can specify that
      * GENERAL_LABELS are returned.</p>
      */
-    inline const Aws::Vector<LabelDetectionFeatureName>& GetFeatures() const{ return m_features; }
+    inline const Aws::Vector<LabelDetectionFeatureName>& GetFeatures() const { return m_features; }
     inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
-    inline void SetFeatures(const Aws::Vector<LabelDetectionFeatureName>& value) { m_featuresHasBeenSet = true; m_features = value; }
-    inline void SetFeatures(Aws::Vector<LabelDetectionFeatureName>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
-    inline StartLabelDetectionRequest& WithFeatures(const Aws::Vector<LabelDetectionFeatureName>& value) { SetFeatures(value); return *this;}
-    inline StartLabelDetectionRequest& WithFeatures(Aws::Vector<LabelDetectionFeatureName>&& value) { SetFeatures(std::move(value)); return *this;}
-    inline StartLabelDetectionRequest& AddFeatures(const LabelDetectionFeatureName& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
-    inline StartLabelDetectionRequest& AddFeatures(LabelDetectionFeatureName&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
+    template<typename FeaturesT = Aws::Vector<LabelDetectionFeatureName>>
+    void SetFeatures(FeaturesT&& value) { m_featuresHasBeenSet = true; m_features = std::forward<FeaturesT>(value); }
+    template<typename FeaturesT = Aws::Vector<LabelDetectionFeatureName>>
+    StartLabelDetectionRequest& WithFeatures(FeaturesT&& value) { SetFeatures(std::forward<FeaturesT>(value)); return *this;}
+    inline StartLabelDetectionRequest& AddFeatures(LabelDetectionFeatureName value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -139,12 +134,12 @@ namespace Model
      * parameters for the label detection request of an asynchronous label analysis
      * operation. Settings can include filters for GENERAL_LABELS.</p>
      */
-    inline const LabelDetectionSettings& GetSettings() const{ return m_settings; }
+    inline const LabelDetectionSettings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const LabelDetectionSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(LabelDetectionSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline StartLabelDetectionRequest& WithSettings(const LabelDetectionSettings& value) { SetSettings(value); return *this;}
-    inline StartLabelDetectionRequest& WithSettings(LabelDetectionSettings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = LabelDetectionSettings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = LabelDetectionSettings>
+    StartLabelDetectionRequest& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
   private:
 
@@ -154,7 +149,7 @@ namespace Model
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
 
-    double m_minConfidence;
+    double m_minConfidence{0.0};
     bool m_minConfidenceHasBeenSet = false;
 
     NotificationChannel m_notificationChannel;

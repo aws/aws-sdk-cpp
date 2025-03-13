@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PieChartFieldWells::PieChartFieldWells() : 
-    m_pieChartAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 PieChartFieldWells::PieChartFieldWells(JsonView jsonValue)
-  : PieChartFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PieChartFieldWells& PieChartFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PieChartAggregatedFieldWells"))
   {
     m_pieChartAggregatedFieldWells = jsonValue.GetObject("PieChartAggregatedFieldWells");
-
     m_pieChartAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

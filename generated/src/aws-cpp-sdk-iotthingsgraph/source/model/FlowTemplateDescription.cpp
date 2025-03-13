@@ -18,16 +18,7 @@ namespace IoTThingsGraph
 namespace Model
 {
 
-FlowTemplateDescription::FlowTemplateDescription() : 
-    m_summaryHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_validatedNamespaceVersion(0),
-    m_validatedNamespaceVersionHasBeenSet(false)
-{
-}
-
 FlowTemplateDescription::FlowTemplateDescription(JsonView jsonValue)
-  : FlowTemplateDescription()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FlowTemplateDescription& FlowTemplateDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetObject("summary");
-
     m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetObject("definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validatedNamespaceVersion"))
   {
     m_validatedNamespaceVersion = jsonValue.GetInt64("validatedNamespaceVersion");
-
     m_validatedNamespaceVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

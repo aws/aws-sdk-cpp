@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRegionsResult::ListRegionsResult()
-{
-}
-
 ListRegionsResult::ListRegionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListRegionsResult& ListRegionsResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Regions"))
   {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
@@ -42,14 +37,15 @@ ListRegionsResult& ListRegionsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_regions.push_back(regionsJsonList[regionsIndex].AsObject());
     }
+    m_regionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

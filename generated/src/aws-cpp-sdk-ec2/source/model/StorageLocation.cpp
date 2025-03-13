@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-StorageLocation::StorageLocation() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 StorageLocation::StorageLocation(const XmlNode& xmlNode)
-  : StorageLocation()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ StorageLocation& StorageLocation::operator =(const XmlNode& xmlNode)
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
       m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
+       m_keyHasBeenSet = true;
     }
   }
 

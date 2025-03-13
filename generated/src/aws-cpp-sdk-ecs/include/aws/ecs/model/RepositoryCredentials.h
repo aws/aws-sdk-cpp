@@ -32,7 +32,7 @@ namespace Model
   class RepositoryCredentials
   {
   public:
-    AWS_ECS_API RepositoryCredentials();
+    AWS_ECS_API RepositoryCredentials() = default;
     AWS_ECS_API RepositoryCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API RepositoryCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * secret. When you use the Amazon Web Services Management Console, you must
      * specify the full ARN of the secret.</p> 
      */
-    inline const Aws::String& GetCredentialsParameter() const{ return m_credentialsParameter; }
+    inline const Aws::String& GetCredentialsParameter() const { return m_credentialsParameter; }
     inline bool CredentialsParameterHasBeenSet() const { return m_credentialsParameterHasBeenSet; }
-    inline void SetCredentialsParameter(const Aws::String& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = value; }
-    inline void SetCredentialsParameter(Aws::String&& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = std::move(value); }
-    inline void SetCredentialsParameter(const char* value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter.assign(value); }
-    inline RepositoryCredentials& WithCredentialsParameter(const Aws::String& value) { SetCredentialsParameter(value); return *this;}
-    inline RepositoryCredentials& WithCredentialsParameter(Aws::String&& value) { SetCredentialsParameter(std::move(value)); return *this;}
-    inline RepositoryCredentials& WithCredentialsParameter(const char* value) { SetCredentialsParameter(value); return *this;}
+    template<typename CredentialsParameterT = Aws::String>
+    void SetCredentialsParameter(CredentialsParameterT&& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = std::forward<CredentialsParameterT>(value); }
+    template<typename CredentialsParameterT = Aws::String>
+    RepositoryCredentials& WithCredentialsParameter(CredentialsParameterT&& value) { SetCredentialsParameter(std::forward<CredentialsParameterT>(value)); return *this;}
     ///@}
   private:
 

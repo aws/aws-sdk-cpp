@@ -33,7 +33,7 @@ namespace Model
   class BatchGetObjectAttributesResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchGetObjectAttributesResponse();
+    AWS_CLOUDDIRECTORY_API BatchGetObjectAttributesResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchGetObjectAttributesResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchGetObjectAttributesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The attribute values that are associated with an object.</p>
      */
-    inline const Aws::Vector<AttributeKeyAndValue>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<AttributeKeyAndValue>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline BatchGetObjectAttributesResponse& WithAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { SetAttributes(value); return *this;}
-    inline BatchGetObjectAttributesResponse& WithAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline BatchGetObjectAttributesResponse& AddAttributes(const AttributeKeyAndValue& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline BatchGetObjectAttributesResponse& AddAttributes(AttributeKeyAndValue&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<AttributeKeyAndValue>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<AttributeKeyAndValue>>
+    BatchGetObjectAttributesResponse& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = AttributeKeyAndValue>
+    BatchGetObjectAttributesResponse& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 

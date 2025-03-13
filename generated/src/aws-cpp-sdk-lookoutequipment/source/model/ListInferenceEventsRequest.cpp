@@ -12,16 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListInferenceEventsRequest::ListInferenceEventsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_inferenceSchedulerNameHasBeenSet(false),
-    m_intervalStartTimeHasBeenSet(false),
-    m_intervalEndTimeHasBeenSet(false)
-{
-}
-
 Aws::String ListInferenceEventsRequest::SerializePayload() const
 {
   JsonValue payload;

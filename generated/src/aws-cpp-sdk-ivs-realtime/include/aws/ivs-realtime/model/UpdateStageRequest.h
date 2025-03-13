@@ -22,7 +22,7 @@ namespace Model
   class UpdateStageRequest : public IvsrealtimeRequest
   {
   public:
-    AWS_IVSREALTIME_API UpdateStageRequest();
+    AWS_IVSREALTIME_API UpdateStageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
     /**
      * <p>ARN of the stage to be updated.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdateStageRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateStageRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateStageRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateStageRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the stage to be updated.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateStageRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateStageRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateStageRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateStageRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +62,12 @@ namespace Model
      * <p>Configuration object for individual participant recording, to attach to the
      * stage. Note that this cannot be updated while recording is active.</p>
      */
-    inline const AutoParticipantRecordingConfiguration& GetAutoParticipantRecordingConfiguration() const{ return m_autoParticipantRecordingConfiguration; }
+    inline const AutoParticipantRecordingConfiguration& GetAutoParticipantRecordingConfiguration() const { return m_autoParticipantRecordingConfiguration; }
     inline bool AutoParticipantRecordingConfigurationHasBeenSet() const { return m_autoParticipantRecordingConfigurationHasBeenSet; }
-    inline void SetAutoParticipantRecordingConfiguration(const AutoParticipantRecordingConfiguration& value) { m_autoParticipantRecordingConfigurationHasBeenSet = true; m_autoParticipantRecordingConfiguration = value; }
-    inline void SetAutoParticipantRecordingConfiguration(AutoParticipantRecordingConfiguration&& value) { m_autoParticipantRecordingConfigurationHasBeenSet = true; m_autoParticipantRecordingConfiguration = std::move(value); }
-    inline UpdateStageRequest& WithAutoParticipantRecordingConfiguration(const AutoParticipantRecordingConfiguration& value) { SetAutoParticipantRecordingConfiguration(value); return *this;}
-    inline UpdateStageRequest& WithAutoParticipantRecordingConfiguration(AutoParticipantRecordingConfiguration&& value) { SetAutoParticipantRecordingConfiguration(std::move(value)); return *this;}
+    template<typename AutoParticipantRecordingConfigurationT = AutoParticipantRecordingConfiguration>
+    void SetAutoParticipantRecordingConfiguration(AutoParticipantRecordingConfigurationT&& value) { m_autoParticipantRecordingConfigurationHasBeenSet = true; m_autoParticipantRecordingConfiguration = std::forward<AutoParticipantRecordingConfigurationT>(value); }
+    template<typename AutoParticipantRecordingConfigurationT = AutoParticipantRecordingConfiguration>
+    UpdateStageRequest& WithAutoParticipantRecordingConfiguration(AutoParticipantRecordingConfigurationT&& value) { SetAutoParticipantRecordingConfiguration(std::forward<AutoParticipantRecordingConfigurationT>(value)); return *this;}
     ///@}
   private:
 

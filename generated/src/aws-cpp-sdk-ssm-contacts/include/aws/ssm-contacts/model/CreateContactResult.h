@@ -27,7 +27,7 @@ namespace Model
   class CreateContactResult
   {
   public:
-    AWS_SSMCONTACTS_API CreateContactResult();
+    AWS_SSMCONTACTS_API CreateContactResult() = default;
     AWS_SSMCONTACTS_API CreateContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSMCONTACTS_API CreateContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
      */
-    inline const Aws::String& GetContactArn() const{ return m_contactArn; }
-    inline void SetContactArn(const Aws::String& value) { m_contactArn = value; }
-    inline void SetContactArn(Aws::String&& value) { m_contactArn = std::move(value); }
-    inline void SetContactArn(const char* value) { m_contactArn.assign(value); }
-    inline CreateContactResult& WithContactArn(const Aws::String& value) { SetContactArn(value); return *this;}
-    inline CreateContactResult& WithContactArn(Aws::String&& value) { SetContactArn(std::move(value)); return *this;}
-    inline CreateContactResult& WithContactArn(const char* value) { SetContactArn(value); return *this;}
+    inline const Aws::String& GetContactArn() const { return m_contactArn; }
+    template<typename ContactArnT = Aws::String>
+    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
+    template<typename ContactArnT = Aws::String>
+    CreateContactResult& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateContactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateContactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateContactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateContactResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_contactArn;
+    bool m_contactArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

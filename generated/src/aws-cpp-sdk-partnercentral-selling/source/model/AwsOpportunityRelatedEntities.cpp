@@ -18,14 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-AwsOpportunityRelatedEntities::AwsOpportunityRelatedEntities() : 
-    m_awsProductsHasBeenSet(false),
-    m_solutionsHasBeenSet(false)
-{
-}
-
 AwsOpportunityRelatedEntities::AwsOpportunityRelatedEntities(JsonView jsonValue)
-  : AwsOpportunityRelatedEntities()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ AwsOpportunityRelatedEntities& AwsOpportunityRelatedEntities::operator =(JsonVie
     }
     m_awsProductsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Solutions"))
   {
     Aws::Utils::Array<JsonView> solutionsJsonList = jsonValue.GetArray("Solutions");
@@ -51,7 +43,6 @@ AwsOpportunityRelatedEntities& AwsOpportunityRelatedEntities::operator =(JsonVie
     }
     m_solutionsHasBeenSet = true;
   }
-
   return *this;
 }
 

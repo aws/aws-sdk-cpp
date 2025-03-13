@@ -20,13 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-KeyGroupSummary::KeyGroupSummary() : 
-    m_keyGroupHasBeenSet(false)
-{
-}
-
 KeyGroupSummary::KeyGroupSummary(const XmlNode& xmlNode)
-  : KeyGroupSummary()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ KeyGroupSummary& KeyGroupSummary::operator =(const XmlNode& xmlNode)
     {
       m_keyGroup = keyGroupNode;
       m_keyGroupHasBeenSet = true;
+       m_keyGroupHasBeenSet = true;
     }
   }
 

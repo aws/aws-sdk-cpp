@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FpgaDeviceMemoryInfo::FpgaDeviceMemoryInfo() : 
-    m_sizeInMiB(0),
-    m_sizeInMiBHasBeenSet(false)
-{
-}
-
 FpgaDeviceMemoryInfo::FpgaDeviceMemoryInfo(const XmlNode& xmlNode)
-  : FpgaDeviceMemoryInfo()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ FpgaDeviceMemoryInfo& FpgaDeviceMemoryInfo::operator =(const XmlNode& xmlNode)
     {
       m_sizeInMiB = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeInMiBNode.GetText()).c_str()).c_str());
       m_sizeInMiBHasBeenSet = true;
+       m_sizeInMiBHasBeenSet = true;
     }
   }
 

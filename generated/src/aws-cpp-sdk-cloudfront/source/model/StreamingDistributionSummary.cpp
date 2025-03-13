@@ -20,25 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-StreamingDistributionSummary::StreamingDistributionSummary() : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_s3OriginHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_trustedSignersHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_priceClass(PriceClass::NOT_SET),
-    m_priceClassHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 StreamingDistributionSummary::StreamingDistributionSummary(const XmlNode& xmlNode)
-  : StreamingDistributionSummary()
 {
   *this = xmlNode;
 }
@@ -54,66 +36,77 @@ StreamingDistributionSummary& StreamingDistributionSummary::operator =(const Xml
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
+       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
     if(!domainNameNode.IsNull())
     {
       m_domainName = Aws::Utils::Xml::DecodeEscapedXmlText(domainNameNode.GetText());
       m_domainNameHasBeenSet = true;
+       m_domainNameHasBeenSet = true;
     }
     XmlNode s3OriginNode = resultNode.FirstChild("S3Origin");
     if(!s3OriginNode.IsNull())
     {
       m_s3Origin = s3OriginNode;
       m_s3OriginHasBeenSet = true;
+       m_s3OriginHasBeenSet = true;
     }
     XmlNode aliasesNode = resultNode.FirstChild("Aliases");
     if(!aliasesNode.IsNull())
     {
       m_aliases = aliasesNode;
       m_aliasesHasBeenSet = true;
+       m_aliasesHasBeenSet = true;
     }
     XmlNode trustedSignersNode = resultNode.FirstChild("TrustedSigners");
     if(!trustedSignersNode.IsNull())
     {
       m_trustedSigners = trustedSignersNode;
       m_trustedSignersHasBeenSet = true;
+       m_trustedSignersHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
     if(!priceClassNode.IsNull())
     {
-      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceClassNode.GetText()).c_str()).c_str());
+      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceClassNode.GetText()).c_str()));
       m_priceClassHasBeenSet = true;
+       m_priceClassHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
   }
 

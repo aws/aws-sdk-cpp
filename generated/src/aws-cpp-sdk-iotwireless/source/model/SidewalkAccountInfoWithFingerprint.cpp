@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SidewalkAccountInfoWithFingerprint::SidewalkAccountInfoWithFingerprint() : 
-    m_amazonIdHasBeenSet(false),
-    m_fingerprintHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 SidewalkAccountInfoWithFingerprint::SidewalkAccountInfoWithFingerprint(JsonView jsonValue)
-  : SidewalkAccountInfoWithFingerprint()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SidewalkAccountInfoWithFingerprint& SidewalkAccountInfoWithFingerprint::operator
   if(jsonValue.ValueExists("AmazonId"))
   {
     m_amazonId = jsonValue.GetString("AmazonId");
-
     m_amazonIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Fingerprint"))
   {
     m_fingerprint = jsonValue.GetString("Fingerprint");
-
     m_fingerprintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

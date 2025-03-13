@@ -18,17 +18,7 @@ namespace Detective
 namespace Model
 {
 
-FilterCriteria::FilterCriteria() : 
-    m_severityHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_entityArnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
-{
-}
-
 FilterCriteria::FilterCriteria(JsonView jsonValue)
-  : FilterCriteria()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = jsonValue.GetObject("Severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetObject("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityArn"))
   {
     m_entityArn = jsonValue.GetObject("EntityArn");
-
     m_entityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetObject("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

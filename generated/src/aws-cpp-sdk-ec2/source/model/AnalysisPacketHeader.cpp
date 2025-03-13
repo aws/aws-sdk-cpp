@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AnalysisPacketHeader::AnalysisPacketHeader() : 
-    m_destinationAddressesHasBeenSet(false),
-    m_destinationPortRangesHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_sourceAddressesHasBeenSet(false),
-    m_sourcePortRangesHasBeenSet(false)
-{
-}
-
 AnalysisPacketHeader::AnalysisPacketHeader(const XmlNode& xmlNode)
-  : AnalysisPacketHeader()
 {
   *this = xmlNode;
 }
@@ -45,55 +35,60 @@ AnalysisPacketHeader& AnalysisPacketHeader::operator =(const XmlNode& xmlNode)
     if(!destinationAddressesNode.IsNull())
     {
       XmlNode destinationAddressesMember = destinationAddressesNode.FirstChild("item");
+      m_destinationAddressesHasBeenSet = !destinationAddressesMember.IsNull();
       while(!destinationAddressesMember.IsNull())
       {
         m_destinationAddresses.push_back(destinationAddressesMember.GetText());
         destinationAddressesMember = destinationAddressesMember.NextNode("item");
       }
 
-      m_destinationAddressesHasBeenSet = true;
+       m_destinationAddressesHasBeenSet = true;
     }
     XmlNode destinationPortRangesNode = resultNode.FirstChild("destinationPortRangeSet");
     if(!destinationPortRangesNode.IsNull())
     {
       XmlNode destinationPortRangesMember = destinationPortRangesNode.FirstChild("item");
+      m_destinationPortRangesHasBeenSet = !destinationPortRangesMember.IsNull();
       while(!destinationPortRangesMember.IsNull())
       {
         m_destinationPortRanges.push_back(destinationPortRangesMember);
         destinationPortRangesMember = destinationPortRangesMember.NextNode("item");
       }
 
-      m_destinationPortRangesHasBeenSet = true;
+       m_destinationPortRangesHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
       m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode sourceAddressesNode = resultNode.FirstChild("sourceAddressSet");
     if(!sourceAddressesNode.IsNull())
     {
       XmlNode sourceAddressesMember = sourceAddressesNode.FirstChild("item");
+      m_sourceAddressesHasBeenSet = !sourceAddressesMember.IsNull();
       while(!sourceAddressesMember.IsNull())
       {
         m_sourceAddresses.push_back(sourceAddressesMember.GetText());
         sourceAddressesMember = sourceAddressesMember.NextNode("item");
       }
 
-      m_sourceAddressesHasBeenSet = true;
+       m_sourceAddressesHasBeenSet = true;
     }
     XmlNode sourcePortRangesNode = resultNode.FirstChild("sourcePortRangeSet");
     if(!sourcePortRangesNode.IsNull())
     {
       XmlNode sourcePortRangesMember = sourcePortRangesNode.FirstChild("item");
+      m_sourcePortRangesHasBeenSet = !sourcePortRangesMember.IsNull();
       while(!sourcePortRangesMember.IsNull())
       {
         m_sourcePortRanges.push_back(sourcePortRangesMember);
         sourcePortRangesMember = sourcePortRangesMember.NextNode("item");
       }
 
-      m_sourcePortRangesHasBeenSet = true;
+       m_sourcePortRangesHasBeenSet = true;
     }
   }
 

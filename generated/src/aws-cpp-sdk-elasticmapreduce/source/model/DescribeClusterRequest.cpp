@@ -12,11 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeClusterRequest::DescribeClusterRequest() : 
-    m_clusterIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClusterRequest::SerializePayload() const
 {
   JsonValue payload;

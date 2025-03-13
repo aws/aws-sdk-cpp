@@ -33,7 +33,7 @@ namespace Model
   class CodeCoverageReportSummary
   {
   public:
-    AWS_CODEBUILD_API CodeCoverageReportSummary();
+    AWS_CODEBUILD_API CodeCoverageReportSummary() = default;
     AWS_CODEBUILD_API CodeCoverageReportSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API CodeCoverageReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The percentage of lines that are covered by your tests.</p>
      */
-    inline double GetLineCoveragePercentage() const{ return m_lineCoveragePercentage; }
+    inline double GetLineCoveragePercentage() const { return m_lineCoveragePercentage; }
     inline bool LineCoveragePercentageHasBeenSet() const { return m_lineCoveragePercentageHasBeenSet; }
     inline void SetLineCoveragePercentage(double value) { m_lineCoveragePercentageHasBeenSet = true; m_lineCoveragePercentage = value; }
     inline CodeCoverageReportSummary& WithLineCoveragePercentage(double value) { SetLineCoveragePercentage(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>The number of lines that are covered by your tests.</p>
      */
-    inline int GetLinesCovered() const{ return m_linesCovered; }
+    inline int GetLinesCovered() const { return m_linesCovered; }
     inline bool LinesCoveredHasBeenSet() const { return m_linesCoveredHasBeenSet; }
     inline void SetLinesCovered(int value) { m_linesCoveredHasBeenSet = true; m_linesCovered = value; }
     inline CodeCoverageReportSummary& WithLinesCovered(int value) { SetLinesCovered(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
     /**
      * <p>The number of lines that are not covered by your tests.</p>
      */
-    inline int GetLinesMissed() const{ return m_linesMissed; }
+    inline int GetLinesMissed() const { return m_linesMissed; }
     inline bool LinesMissedHasBeenSet() const { return m_linesMissedHasBeenSet; }
     inline void SetLinesMissed(int value) { m_linesMissedHasBeenSet = true; m_linesMissed = value; }
     inline CodeCoverageReportSummary& WithLinesMissed(int value) { SetLinesMissed(value); return *this;}
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>The percentage of branches that are covered by your tests.</p>
      */
-    inline double GetBranchCoveragePercentage() const{ return m_branchCoveragePercentage; }
+    inline double GetBranchCoveragePercentage() const { return m_branchCoveragePercentage; }
     inline bool BranchCoveragePercentageHasBeenSet() const { return m_branchCoveragePercentageHasBeenSet; }
     inline void SetBranchCoveragePercentage(double value) { m_branchCoveragePercentageHasBeenSet = true; m_branchCoveragePercentage = value; }
     inline CodeCoverageReportSummary& WithBranchCoveragePercentage(double value) { SetBranchCoveragePercentage(value); return *this;}
@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>The number of conditional branches that are covered by your tests.</p>
      */
-    inline int GetBranchesCovered() const{ return m_branchesCovered; }
+    inline int GetBranchesCovered() const { return m_branchesCovered; }
     inline bool BranchesCoveredHasBeenSet() const { return m_branchesCoveredHasBeenSet; }
     inline void SetBranchesCovered(int value) { m_branchesCoveredHasBeenSet = true; m_branchesCovered = value; }
     inline CodeCoverageReportSummary& WithBranchesCovered(int value) { SetBranchesCovered(value); return *this;}
@@ -93,29 +93,29 @@ namespace Model
     /**
      * <p>The number of conditional branches that are not covered by your tests.</p>
      */
-    inline int GetBranchesMissed() const{ return m_branchesMissed; }
+    inline int GetBranchesMissed() const { return m_branchesMissed; }
     inline bool BranchesMissedHasBeenSet() const { return m_branchesMissedHasBeenSet; }
     inline void SetBranchesMissed(int value) { m_branchesMissedHasBeenSet = true; m_branchesMissed = value; }
     inline CodeCoverageReportSummary& WithBranchesMissed(int value) { SetBranchesMissed(value); return *this;}
     ///@}
   private:
 
-    double m_lineCoveragePercentage;
+    double m_lineCoveragePercentage{0.0};
     bool m_lineCoveragePercentageHasBeenSet = false;
 
-    int m_linesCovered;
+    int m_linesCovered{0};
     bool m_linesCoveredHasBeenSet = false;
 
-    int m_linesMissed;
+    int m_linesMissed{0};
     bool m_linesMissedHasBeenSet = false;
 
-    double m_branchCoveragePercentage;
+    double m_branchCoveragePercentage{0.0};
     bool m_branchCoveragePercentageHasBeenSet = false;
 
-    int m_branchesCovered;
+    int m_branchesCovered{0};
     bool m_branchesCoveredHasBeenSet = false;
 
-    int m_branchesMissed;
+    int m_branchesMissed{0};
     bool m_branchesMissedHasBeenSet = false;
   };
 

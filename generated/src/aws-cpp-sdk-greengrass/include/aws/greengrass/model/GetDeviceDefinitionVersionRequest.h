@@ -25,7 +25,7 @@ namespace Model
   class GetDeviceDefinitionVersionRequest : public GreengrassRequest
   {
   public:
-    AWS_GREENGRASS_API GetDeviceDefinitionVersionRequest();
+    AWS_GREENGRASS_API GetDeviceDefinitionVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * The ID of the device definition.
      */
-    inline const Aws::String& GetDeviceDefinitionId() const{ return m_deviceDefinitionId; }
+    inline const Aws::String& GetDeviceDefinitionId() const { return m_deviceDefinitionId; }
     inline bool DeviceDefinitionIdHasBeenSet() const { return m_deviceDefinitionIdHasBeenSet; }
-    inline void SetDeviceDefinitionId(const Aws::String& value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId = value; }
-    inline void SetDeviceDefinitionId(Aws::String&& value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId = std::move(value); }
-    inline void SetDeviceDefinitionId(const char* value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId.assign(value); }
-    inline GetDeviceDefinitionVersionRequest& WithDeviceDefinitionId(const Aws::String& value) { SetDeviceDefinitionId(value); return *this;}
-    inline GetDeviceDefinitionVersionRequest& WithDeviceDefinitionId(Aws::String&& value) { SetDeviceDefinitionId(std::move(value)); return *this;}
-    inline GetDeviceDefinitionVersionRequest& WithDeviceDefinitionId(const char* value) { SetDeviceDefinitionId(value); return *this;}
+    template<typename DeviceDefinitionIdT = Aws::String>
+    void SetDeviceDefinitionId(DeviceDefinitionIdT&& value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId = std::forward<DeviceDefinitionIdT>(value); }
+    template<typename DeviceDefinitionIdT = Aws::String>
+    GetDeviceDefinitionVersionRequest& WithDeviceDefinitionId(DeviceDefinitionIdT&& value) { SetDeviceDefinitionId(std::forward<DeviceDefinitionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
      * object.
      */
-    inline const Aws::String& GetDeviceDefinitionVersionId() const{ return m_deviceDefinitionVersionId; }
+    inline const Aws::String& GetDeviceDefinitionVersionId() const { return m_deviceDefinitionVersionId; }
     inline bool DeviceDefinitionVersionIdHasBeenSet() const { return m_deviceDefinitionVersionIdHasBeenSet; }
-    inline void SetDeviceDefinitionVersionId(const Aws::String& value) { m_deviceDefinitionVersionIdHasBeenSet = true; m_deviceDefinitionVersionId = value; }
-    inline void SetDeviceDefinitionVersionId(Aws::String&& value) { m_deviceDefinitionVersionIdHasBeenSet = true; m_deviceDefinitionVersionId = std::move(value); }
-    inline void SetDeviceDefinitionVersionId(const char* value) { m_deviceDefinitionVersionIdHasBeenSet = true; m_deviceDefinitionVersionId.assign(value); }
-    inline GetDeviceDefinitionVersionRequest& WithDeviceDefinitionVersionId(const Aws::String& value) { SetDeviceDefinitionVersionId(value); return *this;}
-    inline GetDeviceDefinitionVersionRequest& WithDeviceDefinitionVersionId(Aws::String&& value) { SetDeviceDefinitionVersionId(std::move(value)); return *this;}
-    inline GetDeviceDefinitionVersionRequest& WithDeviceDefinitionVersionId(const char* value) { SetDeviceDefinitionVersionId(value); return *this;}
+    template<typename DeviceDefinitionVersionIdT = Aws::String>
+    void SetDeviceDefinitionVersionId(DeviceDefinitionVersionIdT&& value) { m_deviceDefinitionVersionIdHasBeenSet = true; m_deviceDefinitionVersionId = std::forward<DeviceDefinitionVersionIdT>(value); }
+    template<typename DeviceDefinitionVersionIdT = Aws::String>
+    GetDeviceDefinitionVersionRequest& WithDeviceDefinitionVersionId(DeviceDefinitionVersionIdT&& value) { SetDeviceDefinitionVersionId(std::forward<DeviceDefinitionVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * The token for the next set of results, or ''null'' if there are no additional
      * results.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetDeviceDefinitionVersionRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetDeviceDefinitionVersionRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetDeviceDefinitionVersionRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetDeviceDefinitionVersionRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,18 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-FindingsFilterListItem::FindingsFilterListItem() : 
-    m_action(FindingsFilterAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 FindingsFilterListItem::FindingsFilterListItem(JsonView jsonValue)
-  : FindingsFilterListItem()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ FindingsFilterListItem& FindingsFilterListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = FindingsFilterActionMapper::GetFindingsFilterActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -73,7 +54,6 @@ FindingsFilterListItem& FindingsFilterListItem::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

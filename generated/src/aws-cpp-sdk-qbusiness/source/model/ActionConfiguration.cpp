@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ActionConfiguration::ActionConfiguration() : 
-    m_actionHasBeenSet(false),
-    m_filterConfigurationHasBeenSet(false)
-{
-}
-
 ActionConfiguration::ActionConfiguration(JsonView jsonValue)
-  : ActionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ActionConfiguration& ActionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetString("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterConfiguration"))
   {
     m_filterConfiguration = jsonValue.GetObject("filterConfiguration");
-
     m_filterConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

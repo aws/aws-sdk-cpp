@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RuleGroupDetails::RuleGroupDetails() : 
-    m_ruleVariablesHasBeenSet(false),
-    m_rulesSourceHasBeenSet(false)
-{
-}
-
 RuleGroupDetails::RuleGroupDetails(JsonView jsonValue)
-  : RuleGroupDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RuleGroupDetails& RuleGroupDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleVariables"))
   {
     m_ruleVariables = jsonValue.GetObject("RuleVariables");
-
     m_ruleVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RulesSource"))
   {
     m_rulesSource = jsonValue.GetObject("RulesSource");
-
     m_rulesSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-MqttTopicConfig::MqttTopicConfig() : 
-    m_mqttTopicArnHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false)
-{
-}
-
 MqttTopicConfig::MqttTopicConfig(JsonView jsonValue)
-  : MqttTopicConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MqttTopicConfig& MqttTopicConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("mqttTopicArn"))
   {
     m_mqttTopicArn = jsonValue.GetString("mqttTopicArn");
-
     m_mqttTopicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

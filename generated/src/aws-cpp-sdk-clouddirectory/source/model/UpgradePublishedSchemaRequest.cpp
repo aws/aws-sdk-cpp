@@ -12,15 +12,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpgradePublishedSchemaRequest::UpgradePublishedSchemaRequest() : 
-    m_developmentSchemaArnHasBeenSet(false),
-    m_publishedSchemaArnHasBeenSet(false),
-    m_minorVersionHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String UpgradePublishedSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

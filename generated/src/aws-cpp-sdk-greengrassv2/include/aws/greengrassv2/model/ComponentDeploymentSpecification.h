@@ -34,7 +34,7 @@ namespace Model
   class ComponentDeploymentSpecification
   {
   public:
-    AWS_GREENGRASSV2_API ComponentDeploymentSpecification();
+    AWS_GREENGRASSV2_API ComponentDeploymentSpecification() = default;
     AWS_GREENGRASSV2_API ComponentDeploymentSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API ComponentDeploymentSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The version of the component.</p>
      */
-    inline const Aws::String& GetComponentVersion() const{ return m_componentVersion; }
+    inline const Aws::String& GetComponentVersion() const { return m_componentVersion; }
     inline bool ComponentVersionHasBeenSet() const { return m_componentVersionHasBeenSet; }
-    inline void SetComponentVersion(const Aws::String& value) { m_componentVersionHasBeenSet = true; m_componentVersion = value; }
-    inline void SetComponentVersion(Aws::String&& value) { m_componentVersionHasBeenSet = true; m_componentVersion = std::move(value); }
-    inline void SetComponentVersion(const char* value) { m_componentVersionHasBeenSet = true; m_componentVersion.assign(value); }
-    inline ComponentDeploymentSpecification& WithComponentVersion(const Aws::String& value) { SetComponentVersion(value); return *this;}
-    inline ComponentDeploymentSpecification& WithComponentVersion(Aws::String&& value) { SetComponentVersion(std::move(value)); return *this;}
-    inline ComponentDeploymentSpecification& WithComponentVersion(const char* value) { SetComponentVersion(value); return *this;}
+    template<typename ComponentVersionT = Aws::String>
+    void SetComponentVersion(ComponentVersionT&& value) { m_componentVersionHasBeenSet = true; m_componentVersion = std::forward<ComponentVersionT>(value); }
+    template<typename ComponentVersionT = Aws::String>
+    ComponentDeploymentSpecification& WithComponentVersion(ComponentVersionT&& value) { SetComponentVersion(std::forward<ComponentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,12 @@ namespace Model
      * component configurations</a> in the <i>IoT Greengrass V2 Developer
      * Guide</i>.</p>
      */
-    inline const ComponentConfigurationUpdate& GetConfigurationUpdate() const{ return m_configurationUpdate; }
+    inline const ComponentConfigurationUpdate& GetConfigurationUpdate() const { return m_configurationUpdate; }
     inline bool ConfigurationUpdateHasBeenSet() const { return m_configurationUpdateHasBeenSet; }
-    inline void SetConfigurationUpdate(const ComponentConfigurationUpdate& value) { m_configurationUpdateHasBeenSet = true; m_configurationUpdate = value; }
-    inline void SetConfigurationUpdate(ComponentConfigurationUpdate&& value) { m_configurationUpdateHasBeenSet = true; m_configurationUpdate = std::move(value); }
-    inline ComponentDeploymentSpecification& WithConfigurationUpdate(const ComponentConfigurationUpdate& value) { SetConfigurationUpdate(value); return *this;}
-    inline ComponentDeploymentSpecification& WithConfigurationUpdate(ComponentConfigurationUpdate&& value) { SetConfigurationUpdate(std::move(value)); return *this;}
+    template<typename ConfigurationUpdateT = ComponentConfigurationUpdate>
+    void SetConfigurationUpdate(ConfigurationUpdateT&& value) { m_configurationUpdateHasBeenSet = true; m_configurationUpdate = std::forward<ConfigurationUpdateT>(value); }
+    template<typename ConfigurationUpdateT = ComponentConfigurationUpdate>
+    ComponentDeploymentSpecification& WithConfigurationUpdate(ConfigurationUpdateT&& value) { SetConfigurationUpdate(std::forward<ConfigurationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +82,12 @@ namespace Model
      * the user and group that run components</a> in the <i>IoT Greengrass V2 Developer
      * Guide</i>.</p>
      */
-    inline const ComponentRunWith& GetRunWith() const{ return m_runWith; }
+    inline const ComponentRunWith& GetRunWith() const { return m_runWith; }
     inline bool RunWithHasBeenSet() const { return m_runWithHasBeenSet; }
-    inline void SetRunWith(const ComponentRunWith& value) { m_runWithHasBeenSet = true; m_runWith = value; }
-    inline void SetRunWith(ComponentRunWith&& value) { m_runWithHasBeenSet = true; m_runWith = std::move(value); }
-    inline ComponentDeploymentSpecification& WithRunWith(const ComponentRunWith& value) { SetRunWith(value); return *this;}
-    inline ComponentDeploymentSpecification& WithRunWith(ComponentRunWith&& value) { SetRunWith(std::move(value)); return *this;}
+    template<typename RunWithT = ComponentRunWith>
+    void SetRunWith(RunWithT&& value) { m_runWithHasBeenSet = true; m_runWith = std::forward<RunWithT>(value); }
+    template<typename RunWithT = ComponentRunWith>
+    ComponentDeploymentSpecification& WithRunWith(RunWithT&& value) { SetRunWith(std::forward<RunWithT>(value)); return *this;}
     ///@}
   private:
 

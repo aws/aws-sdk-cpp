@@ -12,13 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIntegrationRequest::DeleteIntegrationRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_httpMethodHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIntegrationRequest::SerializePayload() const
 {
   return {};

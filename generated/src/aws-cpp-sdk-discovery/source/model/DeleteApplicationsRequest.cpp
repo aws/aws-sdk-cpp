@@ -12,11 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApplicationsRequest::DeleteApplicationsRequest() : 
-    m_configurationIdsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApplicationsRequest::SerializePayload() const
 {
   JsonValue payload;

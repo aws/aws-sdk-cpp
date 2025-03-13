@@ -36,7 +36,7 @@ namespace Model
   class ParameterHistory
   {
   public:
-    AWS_SSM_API ParameterHistory();
+    AWS_SSM_API ParameterHistory() = default;
     AWS_SSM_API ParameterHistory(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ParameterHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,22 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ParameterHistory& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ParameterHistory& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ParameterHistory& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ParameterHistory& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of parameter used.</p>
      */
-    inline const ParameterType& GetType() const{ return m_type; }
+    inline ParameterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ParameterHistory& WithType(const ParameterType& value) { SetType(value); return *this;}
-    inline ParameterHistory& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ParameterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ParameterHistory& WithType(ParameterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -73,26 +69,24 @@ namespace Model
      * <p>The alias of the Key Management Service (KMS) key used to encrypt the
      * parameter. Applies to <code>SecureString</code> parameters only</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline ParameterHistory& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline ParameterHistory& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline ParameterHistory& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    ParameterHistory& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Date the parameter was last changed or updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline ParameterHistory& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline ParameterHistory& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    ParameterHistory& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,42 +94,36 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
      * the parameter.</p>
      */
-    inline const Aws::String& GetLastModifiedUser() const{ return m_lastModifiedUser; }
+    inline const Aws::String& GetLastModifiedUser() const { return m_lastModifiedUser; }
     inline bool LastModifiedUserHasBeenSet() const { return m_lastModifiedUserHasBeenSet; }
-    inline void SetLastModifiedUser(const Aws::String& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = value; }
-    inline void SetLastModifiedUser(Aws::String&& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = std::move(value); }
-    inline void SetLastModifiedUser(const char* value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser.assign(value); }
-    inline ParameterHistory& WithLastModifiedUser(const Aws::String& value) { SetLastModifiedUser(value); return *this;}
-    inline ParameterHistory& WithLastModifiedUser(Aws::String&& value) { SetLastModifiedUser(std::move(value)); return *this;}
-    inline ParameterHistory& WithLastModifiedUser(const char* value) { SetLastModifiedUser(value); return *this;}
+    template<typename LastModifiedUserT = Aws::String>
+    void SetLastModifiedUser(LastModifiedUserT&& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = std::forward<LastModifiedUserT>(value); }
+    template<typename LastModifiedUserT = Aws::String>
+    ParameterHistory& WithLastModifiedUser(LastModifiedUserT&& value) { SetLastModifiedUser(std::forward<LastModifiedUserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the parameter.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ParameterHistory& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ParameterHistory& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ParameterHistory& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ParameterHistory& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameter value.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ParameterHistory& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ParameterHistory& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ParameterHistory& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ParameterHistory& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,21 +131,19 @@ namespace Model
      * <p>Parameter names can include the following letters and symbols.</p>
      * <p>a-zA-Z0-9_.-</p>
      */
-    inline const Aws::String& GetAllowedPattern() const{ return m_allowedPattern; }
+    inline const Aws::String& GetAllowedPattern() const { return m_allowedPattern; }
     inline bool AllowedPatternHasBeenSet() const { return m_allowedPatternHasBeenSet; }
-    inline void SetAllowedPattern(const Aws::String& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = value; }
-    inline void SetAllowedPattern(Aws::String&& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = std::move(value); }
-    inline void SetAllowedPattern(const char* value) { m_allowedPatternHasBeenSet = true; m_allowedPattern.assign(value); }
-    inline ParameterHistory& WithAllowedPattern(const Aws::String& value) { SetAllowedPattern(value); return *this;}
-    inline ParameterHistory& WithAllowedPattern(Aws::String&& value) { SetAllowedPattern(std::move(value)); return *this;}
-    inline ParameterHistory& WithAllowedPattern(const char* value) { SetAllowedPattern(value); return *this;}
+    template<typename AllowedPatternT = Aws::String>
+    void SetAllowedPattern(AllowedPatternT&& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = std::forward<AllowedPatternT>(value); }
+    template<typename AllowedPatternT = Aws::String>
+    ParameterHistory& WithAllowedPattern(AllowedPatternT&& value) { SetAllowedPattern(std::forward<AllowedPatternT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameter version.</p>
      */
-    inline long long GetVersion() const{ return m_version; }
+    inline long long GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
     inline ParameterHistory& WithVersion(long long value) { SetVersion(value); return *this;}
@@ -167,27 +153,24 @@ namespace Model
     /**
      * <p>Labels assigned to the parameter version.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+    inline const Aws::Vector<Aws::String>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline ParameterHistory& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
-    inline ParameterHistory& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-    inline ParameterHistory& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-    inline ParameterHistory& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
-    inline ParameterHistory& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    ParameterHistory& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsT = Aws::String>
+    ParameterHistory& AddLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels.emplace_back(std::forward<LabelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The parameter tier.</p>
      */
-    inline const ParameterTier& GetTier() const{ return m_tier; }
+    inline ParameterTier GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const ParameterTier& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(ParameterTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline ParameterHistory& WithTier(const ParameterTier& value) { SetTier(value); return *this;}
-    inline ParameterHistory& WithTier(ParameterTier&& value) { SetTier(std::move(value)); return *this;}
+    inline void SetTier(ParameterTier value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline ParameterHistory& WithTier(ParameterTier value) { SetTier(value); return *this;}
     ///@}
 
     ///@{
@@ -197,14 +180,14 @@ namespace Model
      * parameter policies</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<ParameterInlinePolicy>& GetPolicies() const{ return m_policies; }
+    inline const Aws::Vector<ParameterInlinePolicy>& GetPolicies() const { return m_policies; }
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
-    inline void SetPolicies(const Aws::Vector<ParameterInlinePolicy>& value) { m_policiesHasBeenSet = true; m_policies = value; }
-    inline void SetPolicies(Aws::Vector<ParameterInlinePolicy>&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
-    inline ParameterHistory& WithPolicies(const Aws::Vector<ParameterInlinePolicy>& value) { SetPolicies(value); return *this;}
-    inline ParameterHistory& WithPolicies(Aws::Vector<ParameterInlinePolicy>&& value) { SetPolicies(std::move(value)); return *this;}
-    inline ParameterHistory& AddPolicies(const ParameterInlinePolicy& value) { m_policiesHasBeenSet = true; m_policies.push_back(value); return *this; }
-    inline ParameterHistory& AddPolicies(ParameterInlinePolicy&& value) { m_policiesHasBeenSet = true; m_policies.push_back(std::move(value)); return *this; }
+    template<typename PoliciesT = Aws::Vector<ParameterInlinePolicy>>
+    void SetPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies = std::forward<PoliciesT>(value); }
+    template<typename PoliciesT = Aws::Vector<ParameterInlinePolicy>>
+    ParameterHistory& WithPolicies(PoliciesT&& value) { SetPolicies(std::forward<PoliciesT>(value)); return *this;}
+    template<typename PoliciesT = ParameterInlinePolicy>
+    ParameterHistory& AddPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies.emplace_back(std::forward<PoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -212,27 +195,25 @@ namespace Model
      * <p>The data type of the parameter, such as <code>text</code> or
      * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
      */
-    inline const Aws::String& GetDataType() const{ return m_dataType; }
+    inline const Aws::String& GetDataType() const { return m_dataType; }
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
-    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
-    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
-    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
-    inline ParameterHistory& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
-    inline ParameterHistory& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
-    inline ParameterHistory& WithDataType(const char* value) { SetDataType(value); return *this;}
+    template<typename DataTypeT = Aws::String>
+    void SetDataType(DataTypeT&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::forward<DataTypeT>(value); }
+    template<typename DataTypeT = Aws::String>
+    ParameterHistory& WithDataType(DataTypeT&& value) { SetDataType(std::forward<DataTypeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ParameterType m_type;
+    ParameterType m_type{ParameterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
     bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_lastModifiedUser;
@@ -247,13 +228,13 @@ namespace Model
     Aws::String m_allowedPattern;
     bool m_allowedPatternHasBeenSet = false;
 
-    long long m_version;
+    long long m_version{0};
     bool m_versionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_labels;
     bool m_labelsHasBeenSet = false;
 
-    ParameterTier m_tier;
+    ParameterTier m_tier{ParameterTier::NOT_SET};
     bool m_tierHasBeenSet = false;
 
     Aws::Vector<ParameterInlinePolicy> m_policies;

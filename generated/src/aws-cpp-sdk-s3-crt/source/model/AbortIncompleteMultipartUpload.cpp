@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-AbortIncompleteMultipartUpload::AbortIncompleteMultipartUpload() : 
-    m_daysAfterInitiation(0),
-    m_daysAfterInitiationHasBeenSet(false)
-{
-}
-
 AbortIncompleteMultipartUpload::AbortIncompleteMultipartUpload(const XmlNode& xmlNode)
-  : AbortIncompleteMultipartUpload()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ AbortIncompleteMultipartUpload& AbortIncompleteMultipartUpload::operator =(const
     {
       m_daysAfterInitiation = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysAfterInitiationNode.GetText()).c_str()).c_str());
       m_daysAfterInitiationHasBeenSet = true;
+       m_daysAfterInitiationHasBeenSet = true;
     }
   }
 

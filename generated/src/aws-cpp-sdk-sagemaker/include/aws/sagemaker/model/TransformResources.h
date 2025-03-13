@@ -33,7 +33,7 @@ namespace Model
   class TransformResources
   {
   public:
-    AWS_SAGEMAKER_API TransformResources();
+    AWS_SAGEMAKER_API TransformResources() = default;
     AWS_SAGEMAKER_API TransformResources(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TransformResources& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * algorithms to transform moderately sized datasets, we recommend using
      * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
      */
-    inline const TransformInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline TransformInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const TransformInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(TransformInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline TransformResources& WithInstanceType(const TransformInstanceType& value) { SetInstanceType(value); return *this;}
-    inline TransformResources& WithInstanceType(TransformInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(TransformInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline TransformResources& WithInstanceType(TransformInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * value is <code>1</code>, and the maximum is <code>100</code>. For distributed
      * transform jobs, specify a value greater than <code>1</code>.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline TransformResources& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -88,21 +86,19 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
      * </ul>
      */
-    inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+    inline const Aws::String& GetVolumeKmsKeyId() const { return m_volumeKmsKeyId; }
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
-    inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
-    inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
-    inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
-    inline TransformResources& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
-    inline TransformResources& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
-    inline TransformResources& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    void SetVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::forward<VolumeKmsKeyIdT>(value); }
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    TransformResources& WithVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { SetVolumeKmsKeyId(std::forward<VolumeKmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 
-    TransformInstanceType m_instanceType;
+    TransformInstanceType m_instanceType{TransformInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;

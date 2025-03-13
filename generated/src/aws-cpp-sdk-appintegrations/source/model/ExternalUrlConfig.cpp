@@ -18,14 +18,7 @@ namespace AppIntegrationsService
 namespace Model
 {
 
-ExternalUrlConfig::ExternalUrlConfig() : 
-    m_accessUrlHasBeenSet(false),
-    m_approvedOriginsHasBeenSet(false)
-{
-}
-
 ExternalUrlConfig::ExternalUrlConfig(JsonView jsonValue)
-  : ExternalUrlConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ExternalUrlConfig& ExternalUrlConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccessUrl"))
   {
     m_accessUrl = jsonValue.GetString("AccessUrl");
-
     m_accessUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovedOrigins"))
   {
     Aws::Utils::Array<JsonView> approvedOriginsJsonList = jsonValue.GetArray("ApprovedOrigins");
@@ -48,7 +39,6 @@ ExternalUrlConfig& ExternalUrlConfig::operator =(JsonView jsonValue)
     }
     m_approvedOriginsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-Task::Task() : 
-    m_sourceFieldsHasBeenSet(false),
-    m_connectorOperatorHasBeenSet(false),
-    m_destinationFieldHasBeenSet(false),
-    m_taskType(TaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false),
-    m_taskPropertiesHasBeenSet(false)
-{
-}
-
 Task::Task(JsonView jsonValue)
-  : Task()
 {
   *this = jsonValue;
 }
@@ -45,28 +34,21 @@ Task& Task::operator =(JsonView jsonValue)
     }
     m_sourceFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorOperator"))
   {
     m_connectorOperator = jsonValue.GetObject("connectorOperator");
-
     m_connectorOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationField"))
   {
     m_destinationField = jsonValue.GetString("destinationField");
-
     m_destinationFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskType"))
   {
     m_taskType = TaskTypeMapper::GetTaskTypeForName(jsonValue.GetString("taskType"));
-
     m_taskTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskProperties"))
   {
     Aws::Map<Aws::String, JsonView> taskPropertiesJsonMap = jsonValue.GetObject("taskProperties").GetAllObjects();
@@ -76,7 +58,6 @@ Task& Task::operator =(JsonView jsonValue)
     }
     m_taskPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

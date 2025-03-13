@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateVpcCidrBlockResponse::AssociateVpcCidrBlockResponse()
-{
-}
-
 AssociateVpcCidrBlockResponse::AssociateVpcCidrBlockResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,16 +38,19 @@ AssociateVpcCidrBlockResponse& AssociateVpcCidrBlockResponse::operator =(const A
     if(!ipv6CidrBlockAssociationNode.IsNull())
     {
       m_ipv6CidrBlockAssociation = ipv6CidrBlockAssociationNode;
+      m_ipv6CidrBlockAssociationHasBeenSet = true;
     }
     XmlNode cidrBlockAssociationNode = resultNode.FirstChild("cidrBlockAssociation");
     if(!cidrBlockAssociationNode.IsNull())
     {
       m_cidrBlockAssociation = cidrBlockAssociationNode;
+      m_cidrBlockAssociationHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
+      m_vpcIdHasBeenSet = true;
     }
   }
 
@@ -60,6 +59,7 @@ AssociateVpcCidrBlockResponse& AssociateVpcCidrBlockResponse::operator =(const A
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssociateVpcCidrBlockResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

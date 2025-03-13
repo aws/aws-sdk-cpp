@@ -33,7 +33,7 @@ namespace Model
   class DataSetImportItem
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API DataSetImportItem();
+    AWS_MAINFRAMEMODERNIZATION_API DataSetImportItem() = default;
     AWS_MAINFRAMEMODERNIZATION_API DataSetImportItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API DataSetImportItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The data set.</p>
      */
-    inline const DataSet& GetDataSet() const{ return m_dataSet; }
+    inline const DataSet& GetDataSet() const { return m_dataSet; }
     inline bool DataSetHasBeenSet() const { return m_dataSetHasBeenSet; }
-    inline void SetDataSet(const DataSet& value) { m_dataSetHasBeenSet = true; m_dataSet = value; }
-    inline void SetDataSet(DataSet&& value) { m_dataSetHasBeenSet = true; m_dataSet = std::move(value); }
-    inline DataSetImportItem& WithDataSet(const DataSet& value) { SetDataSet(value); return *this;}
-    inline DataSetImportItem& WithDataSet(DataSet&& value) { SetDataSet(std::move(value)); return *this;}
+    template<typename DataSetT = DataSet>
+    void SetDataSet(DataSetT&& value) { m_dataSetHasBeenSet = true; m_dataSet = std::forward<DataSetT>(value); }
+    template<typename DataSetT = DataSet>
+    DataSetImportItem& WithDataSet(DataSetT&& value) { SetDataSet(std::forward<DataSetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location of the data set.</p>
      */
-    inline const ExternalLocation& GetExternalLocation() const{ return m_externalLocation; }
+    inline const ExternalLocation& GetExternalLocation() const { return m_externalLocation; }
     inline bool ExternalLocationHasBeenSet() const { return m_externalLocationHasBeenSet; }
-    inline void SetExternalLocation(const ExternalLocation& value) { m_externalLocationHasBeenSet = true; m_externalLocation = value; }
-    inline void SetExternalLocation(ExternalLocation&& value) { m_externalLocationHasBeenSet = true; m_externalLocation = std::move(value); }
-    inline DataSetImportItem& WithExternalLocation(const ExternalLocation& value) { SetExternalLocation(value); return *this;}
-    inline DataSetImportItem& WithExternalLocation(ExternalLocation&& value) { SetExternalLocation(std::move(value)); return *this;}
+    template<typename ExternalLocationT = ExternalLocation>
+    void SetExternalLocation(ExternalLocationT&& value) { m_externalLocationHasBeenSet = true; m_externalLocation = std::forward<ExternalLocationT>(value); }
+    template<typename ExternalLocationT = ExternalLocation>
+    DataSetImportItem& WithExternalLocation(ExternalLocationT&& value) { SetExternalLocation(std::forward<ExternalLocationT>(value)); return *this;}
     ///@}
   private:
 

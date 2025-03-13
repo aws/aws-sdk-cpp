@@ -21,7 +21,7 @@ namespace Model
   class DescribeNotebookInstanceRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DescribeNotebookInstanceRequest();
+    AWS_SAGEMAKER_API DescribeNotebookInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the notebook instance that you want information about.</p>
      */
-    inline const Aws::String& GetNotebookInstanceName() const{ return m_notebookInstanceName; }
+    inline const Aws::String& GetNotebookInstanceName() const { return m_notebookInstanceName; }
     inline bool NotebookInstanceNameHasBeenSet() const { return m_notebookInstanceNameHasBeenSet; }
-    inline void SetNotebookInstanceName(const Aws::String& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = value; }
-    inline void SetNotebookInstanceName(Aws::String&& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = std::move(value); }
-    inline void SetNotebookInstanceName(const char* value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName.assign(value); }
-    inline DescribeNotebookInstanceRequest& WithNotebookInstanceName(const Aws::String& value) { SetNotebookInstanceName(value); return *this;}
-    inline DescribeNotebookInstanceRequest& WithNotebookInstanceName(Aws::String&& value) { SetNotebookInstanceName(std::move(value)); return *this;}
-    inline DescribeNotebookInstanceRequest& WithNotebookInstanceName(const char* value) { SetNotebookInstanceName(value); return *this;}
+    template<typename NotebookInstanceNameT = Aws::String>
+    void SetNotebookInstanceName(NotebookInstanceNameT&& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = std::forward<NotebookInstanceNameT>(value); }
+    template<typename NotebookInstanceNameT = Aws::String>
+    DescribeNotebookInstanceRequest& WithNotebookInstanceName(NotebookInstanceNameT&& value) { SetNotebookInstanceName(std::forward<NotebookInstanceNameT>(value)); return *this;}
     ///@}
   private:
 

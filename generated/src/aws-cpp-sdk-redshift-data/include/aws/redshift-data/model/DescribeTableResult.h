@@ -29,7 +29,7 @@ namespace Model
   class DescribeTableResult
   {
   public:
-    AWS_REDSHIFTDATAAPISERVICE_API DescribeTableResult();
+    AWS_REDSHIFTDATAAPISERVICE_API DescribeTableResult() = default;
     AWS_REDSHIFTDATAAPISERVICE_API DescribeTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTDATAAPISERVICE_API DescribeTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of columns in the table. </p>
      */
-    inline const Aws::Vector<ColumnMetadata>& GetColumnList() const{ return m_columnList; }
-    inline void SetColumnList(const Aws::Vector<ColumnMetadata>& value) { m_columnList = value; }
-    inline void SetColumnList(Aws::Vector<ColumnMetadata>&& value) { m_columnList = std::move(value); }
-    inline DescribeTableResult& WithColumnList(const Aws::Vector<ColumnMetadata>& value) { SetColumnList(value); return *this;}
-    inline DescribeTableResult& WithColumnList(Aws::Vector<ColumnMetadata>&& value) { SetColumnList(std::move(value)); return *this;}
-    inline DescribeTableResult& AddColumnList(const ColumnMetadata& value) { m_columnList.push_back(value); return *this; }
-    inline DescribeTableResult& AddColumnList(ColumnMetadata&& value) { m_columnList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ColumnMetadata>& GetColumnList() const { return m_columnList; }
+    template<typename ColumnListT = Aws::Vector<ColumnMetadata>>
+    void SetColumnList(ColumnListT&& value) { m_columnListHasBeenSet = true; m_columnList = std::forward<ColumnListT>(value); }
+    template<typename ColumnListT = Aws::Vector<ColumnMetadata>>
+    DescribeTableResult& WithColumnList(ColumnListT&& value) { SetColumnList(std::forward<ColumnListT>(value)); return *this;}
+    template<typename ColumnListT = ColumnMetadata>
+    DescribeTableResult& AddColumnList(ColumnListT&& value) { m_columnListHasBeenSet = true; m_columnList.emplace_back(std::forward<ColumnListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,47 +55,45 @@ namespace Model
      * the next NextToken parameter and retrying the command. If the NextToken field is
      * empty, all response records have been retrieved for the request. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeTableResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeTableResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeTableResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeTableResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The table name. </p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
-    inline void SetTableName(const Aws::String& value) { m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableName.assign(value); }
-    inline DescribeTableResult& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline DescribeTableResult& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline DescribeTableResult& WithTableName(const char* value) { SetTableName(value); return *this;}
+    inline const Aws::String& GetTableName() const { return m_tableName; }
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    DescribeTableResult& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTableResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ColumnMetadata> m_columnList;
+    bool m_columnListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_tableName;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

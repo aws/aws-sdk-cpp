@@ -18,19 +18,7 @@ namespace Batch
 namespace Model
 {
 
-ConsumableResourceSummary::ConsumableResourceSummary() : 
-    m_consumableResourceArnHasBeenSet(false),
-    m_consumableResourceNameHasBeenSet(false),
-    m_totalQuantity(0),
-    m_totalQuantityHasBeenSet(false),
-    m_inUseQuantity(0),
-    m_inUseQuantityHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ConsumableResourceSummary::ConsumableResourceSummary(JsonView jsonValue)
-  : ConsumableResourceSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ConsumableResourceSummary& ConsumableResourceSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("consumableResourceArn"))
   {
     m_consumableResourceArn = jsonValue.GetString("consumableResourceArn");
-
     m_consumableResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("consumableResourceName"))
   {
     m_consumableResourceName = jsonValue.GetString("consumableResourceName");
-
     m_consumableResourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalQuantity"))
   {
     m_totalQuantity = jsonValue.GetInt64("totalQuantity");
-
     m_totalQuantityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inUseQuantity"))
   {
     m_inUseQuantity = jsonValue.GetInt64("inUseQuantity");
-
     m_inUseQuantityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetServiceEndpointResult::GetServiceEndpointResult() : 
-    m_serviceType(WirelessGatewayServiceType::NOT_SET)
-{
-}
-
 GetServiceEndpointResult::GetServiceEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetServiceEndpointResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ GetServiceEndpointResult& GetServiceEndpointResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ServiceType"))
   {
     m_serviceType = WirelessGatewayServiceTypeMapper::GetWirelessGatewayServiceTypeForName(jsonValue.GetString("ServiceType"));
-
+    m_serviceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceEndpoint"))
   {
     m_serviceEndpoint = jsonValue.GetString("ServiceEndpoint");
-
+    m_serviceEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerTrust"))
   {
     m_serverTrust = jsonValue.GetString("ServerTrust");
-
+    m_serverTrustHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -27,7 +27,7 @@ namespace Model
   class CreateWorkteamResult
   {
   public:
-    AWS_SAGEMAKER_API CreateWorkteamResult();
+    AWS_SAGEMAKER_API CreateWorkteamResult() = default;
     AWS_SAGEMAKER_API CreateWorkteamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateWorkteamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the work team. You can use this ARN to
      * identify the work team.</p>
      */
-    inline const Aws::String& GetWorkteamArn() const{ return m_workteamArn; }
-    inline void SetWorkteamArn(const Aws::String& value) { m_workteamArn = value; }
-    inline void SetWorkteamArn(Aws::String&& value) { m_workteamArn = std::move(value); }
-    inline void SetWorkteamArn(const char* value) { m_workteamArn.assign(value); }
-    inline CreateWorkteamResult& WithWorkteamArn(const Aws::String& value) { SetWorkteamArn(value); return *this;}
-    inline CreateWorkteamResult& WithWorkteamArn(Aws::String&& value) { SetWorkteamArn(std::move(value)); return *this;}
-    inline CreateWorkteamResult& WithWorkteamArn(const char* value) { SetWorkteamArn(value); return *this;}
+    inline const Aws::String& GetWorkteamArn() const { return m_workteamArn; }
+    template<typename WorkteamArnT = Aws::String>
+    void SetWorkteamArn(WorkteamArnT&& value) { m_workteamArnHasBeenSet = true; m_workteamArn = std::forward<WorkteamArnT>(value); }
+    template<typename WorkteamArnT = Aws::String>
+    CreateWorkteamResult& WithWorkteamArn(WorkteamArnT&& value) { SetWorkteamArn(std::forward<WorkteamArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateWorkteamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWorkteamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWorkteamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWorkteamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workteamArn;
+    bool m_workteamArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

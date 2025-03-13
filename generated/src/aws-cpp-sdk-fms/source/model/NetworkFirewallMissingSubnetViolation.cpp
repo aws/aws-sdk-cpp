@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-NetworkFirewallMissingSubnetViolation::NetworkFirewallMissingSubnetViolation() : 
-    m_violationTargetHasBeenSet(false),
-    m_vPCHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_targetViolationReasonHasBeenSet(false)
-{
-}
-
 NetworkFirewallMissingSubnetViolation::NetworkFirewallMissingSubnetViolation(JsonView jsonValue)
-  : NetworkFirewallMissingSubnetViolation()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ NetworkFirewallMissingSubnetViolation& NetworkFirewallMissingSubnetViolation::op
   if(jsonValue.ValueExists("ViolationTarget"))
   {
     m_violationTarget = jsonValue.GetString("ViolationTarget");
-
     m_violationTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VPC"))
   {
     m_vPC = jsonValue.GetString("VPC");
-
     m_vPCHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetViolationReason"))
   {
     m_targetViolationReason = jsonValue.GetString("TargetViolationReason");
-
     m_targetViolationReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

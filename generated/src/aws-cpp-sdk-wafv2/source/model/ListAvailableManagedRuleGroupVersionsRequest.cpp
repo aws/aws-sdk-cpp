@@ -12,17 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAvailableManagedRuleGroupVersionsRequest::ListAvailableManagedRuleGroupVersionsRequest() : 
-    m_vendorNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListAvailableManagedRuleGroupVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

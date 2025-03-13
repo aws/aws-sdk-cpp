@@ -29,7 +29,7 @@ namespace Model
   class DescribeAccountModificationsResult
   {
   public:
-    AWS_WORKSPACES_API DescribeAccountModificationsResult();
+    AWS_WORKSPACES_API DescribeAccountModificationsResult() = default;
     AWS_WORKSPACES_API DescribeAccountModificationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API DescribeAccountModificationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of modifications to the configuration of BYOL.</p>
      */
-    inline const Aws::Vector<AccountModification>& GetAccountModifications() const{ return m_accountModifications; }
-    inline void SetAccountModifications(const Aws::Vector<AccountModification>& value) { m_accountModifications = value; }
-    inline void SetAccountModifications(Aws::Vector<AccountModification>&& value) { m_accountModifications = std::move(value); }
-    inline DescribeAccountModificationsResult& WithAccountModifications(const Aws::Vector<AccountModification>& value) { SetAccountModifications(value); return *this;}
-    inline DescribeAccountModificationsResult& WithAccountModifications(Aws::Vector<AccountModification>&& value) { SetAccountModifications(std::move(value)); return *this;}
-    inline DescribeAccountModificationsResult& AddAccountModifications(const AccountModification& value) { m_accountModifications.push_back(value); return *this; }
-    inline DescribeAccountModificationsResult& AddAccountModifications(AccountModification&& value) { m_accountModifications.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccountModification>& GetAccountModifications() const { return m_accountModifications; }
+    template<typename AccountModificationsT = Aws::Vector<AccountModification>>
+    void SetAccountModifications(AccountModificationsT&& value) { m_accountModificationsHasBeenSet = true; m_accountModifications = std::forward<AccountModificationsT>(value); }
+    template<typename AccountModificationsT = Aws::Vector<AccountModification>>
+    DescribeAccountModificationsResult& WithAccountModifications(AccountModificationsT&& value) { SetAccountModifications(std::forward<AccountModificationsT>(value)); return *this;}
+    template<typename AccountModificationsT = AccountModification>
+    DescribeAccountModificationsResult& AddAccountModifications(AccountModificationsT&& value) { m_accountModificationsHasBeenSet = true; m_accountModifications.emplace_back(std::forward<AccountModificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is null
      * when there are no more results to return. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeAccountModificationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAccountModificationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAccountModificationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAccountModificationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAccountModificationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAccountModificationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAccountModificationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAccountModificationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AccountModification> m_accountModifications;
+    bool m_accountModificationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

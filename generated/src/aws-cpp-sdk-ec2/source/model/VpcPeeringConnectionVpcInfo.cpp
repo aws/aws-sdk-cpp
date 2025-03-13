@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo() : 
-    m_cidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockSetHasBeenSet(false),
-    m_cidrBlockSetHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_peeringOptionsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo(const XmlNode& xmlNode)
-  : VpcPeeringConnectionVpcInfo()
 {
   *this = xmlNode;
 }
@@ -48,54 +36,61 @@ VpcPeeringConnectionVpcInfo& VpcPeeringConnectionVpcInfo::operator =(const XmlNo
     {
       m_cidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(cidrBlockNode.GetText());
       m_cidrBlockHasBeenSet = true;
+       m_cidrBlockHasBeenSet = true;
     }
     XmlNode ipv6CidrBlockSetNode = resultNode.FirstChild("ipv6CidrBlockSet");
     if(!ipv6CidrBlockSetNode.IsNull())
     {
       XmlNode ipv6CidrBlockSetMember = ipv6CidrBlockSetNode.FirstChild("item");
+      m_ipv6CidrBlockSetHasBeenSet = !ipv6CidrBlockSetMember.IsNull();
       while(!ipv6CidrBlockSetMember.IsNull())
       {
         m_ipv6CidrBlockSet.push_back(ipv6CidrBlockSetMember);
         ipv6CidrBlockSetMember = ipv6CidrBlockSetMember.NextNode("item");
       }
 
-      m_ipv6CidrBlockSetHasBeenSet = true;
+       m_ipv6CidrBlockSetHasBeenSet = true;
     }
     XmlNode cidrBlockSetNode = resultNode.FirstChild("cidrBlockSet");
     if(!cidrBlockSetNode.IsNull())
     {
       XmlNode cidrBlockSetMember = cidrBlockSetNode.FirstChild("item");
+      m_cidrBlockSetHasBeenSet = !cidrBlockSetMember.IsNull();
       while(!cidrBlockSetMember.IsNull())
       {
         m_cidrBlockSet.push_back(cidrBlockSetMember);
         cidrBlockSetMember = cidrBlockSetMember.NextNode("item");
       }
 
-      m_cidrBlockSetHasBeenSet = true;
+       m_cidrBlockSetHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode peeringOptionsNode = resultNode.FirstChild("peeringOptions");
     if(!peeringOptionsNode.IsNull())
     {
       m_peeringOptions = peeringOptionsNode;
       m_peeringOptionsHasBeenSet = true;
+       m_peeringOptionsHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("region");
     if(!regionNode.IsNull())
     {
       m_region = Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText());
       m_regionHasBeenSet = true;
+       m_regionHasBeenSet = true;
     }
   }
 

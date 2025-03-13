@@ -29,7 +29,7 @@ namespace Model
   class DetectProfileObjectTypeResult
   {
   public:
-    AWS_CUSTOMERPROFILES_API DetectProfileObjectTypeResult();
+    AWS_CUSTOMERPROFILES_API DetectProfileObjectTypeResult() = default;
     AWS_CUSTOMERPROFILES_API DetectProfileObjectTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CUSTOMERPROFILES_API DetectProfileObjectTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>Detected <code>ProfileObjectType</code> mappings from given objects. A
      * maximum of one mapping is supported.</p>
      */
-    inline const Aws::Vector<DetectedProfileObjectType>& GetDetectedProfileObjectTypes() const{ return m_detectedProfileObjectTypes; }
-    inline void SetDetectedProfileObjectTypes(const Aws::Vector<DetectedProfileObjectType>& value) { m_detectedProfileObjectTypes = value; }
-    inline void SetDetectedProfileObjectTypes(Aws::Vector<DetectedProfileObjectType>&& value) { m_detectedProfileObjectTypes = std::move(value); }
-    inline DetectProfileObjectTypeResult& WithDetectedProfileObjectTypes(const Aws::Vector<DetectedProfileObjectType>& value) { SetDetectedProfileObjectTypes(value); return *this;}
-    inline DetectProfileObjectTypeResult& WithDetectedProfileObjectTypes(Aws::Vector<DetectedProfileObjectType>&& value) { SetDetectedProfileObjectTypes(std::move(value)); return *this;}
-    inline DetectProfileObjectTypeResult& AddDetectedProfileObjectTypes(const DetectedProfileObjectType& value) { m_detectedProfileObjectTypes.push_back(value); return *this; }
-    inline DetectProfileObjectTypeResult& AddDetectedProfileObjectTypes(DetectedProfileObjectType&& value) { m_detectedProfileObjectTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DetectedProfileObjectType>& GetDetectedProfileObjectTypes() const { return m_detectedProfileObjectTypes; }
+    template<typename DetectedProfileObjectTypesT = Aws::Vector<DetectedProfileObjectType>>
+    void SetDetectedProfileObjectTypes(DetectedProfileObjectTypesT&& value) { m_detectedProfileObjectTypesHasBeenSet = true; m_detectedProfileObjectTypes = std::forward<DetectedProfileObjectTypesT>(value); }
+    template<typename DetectedProfileObjectTypesT = Aws::Vector<DetectedProfileObjectType>>
+    DetectProfileObjectTypeResult& WithDetectedProfileObjectTypes(DetectedProfileObjectTypesT&& value) { SetDetectedProfileObjectTypes(std::forward<DetectedProfileObjectTypesT>(value)); return *this;}
+    template<typename DetectedProfileObjectTypesT = DetectedProfileObjectType>
+    DetectProfileObjectTypeResult& AddDetectedProfileObjectTypes(DetectedProfileObjectTypesT&& value) { m_detectedProfileObjectTypesHasBeenSet = true; m_detectedProfileObjectTypes.emplace_back(std::forward<DetectedProfileObjectTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetectProfileObjectTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetectProfileObjectTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetectProfileObjectTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetectProfileObjectTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DetectedProfileObjectType> m_detectedProfileObjectTypes;
+    bool m_detectedProfileObjectTypesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

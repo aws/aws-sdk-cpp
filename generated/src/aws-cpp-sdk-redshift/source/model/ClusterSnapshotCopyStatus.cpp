@@ -20,18 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterSnapshotCopyStatus::ClusterSnapshotCopyStatus() : 
-    m_destinationRegionHasBeenSet(false),
-    m_retentionPeriod(0),
-    m_retentionPeriodHasBeenSet(false),
-    m_manualSnapshotRetentionPeriod(0),
-    m_manualSnapshotRetentionPeriodHasBeenSet(false),
-    m_snapshotCopyGrantNameHasBeenSet(false)
-{
-}
-
 ClusterSnapshotCopyStatus::ClusterSnapshotCopyStatus(const XmlNode& xmlNode)
-  : ClusterSnapshotCopyStatus()
 {
   *this = xmlNode;
 }
@@ -47,24 +36,28 @@ ClusterSnapshotCopyStatus& ClusterSnapshotCopyStatus::operator =(const XmlNode& 
     {
       m_destinationRegion = Aws::Utils::Xml::DecodeEscapedXmlText(destinationRegionNode.GetText());
       m_destinationRegionHasBeenSet = true;
+       m_destinationRegionHasBeenSet = true;
     }
     XmlNode retentionPeriodNode = resultNode.FirstChild("RetentionPeriod");
     if(!retentionPeriodNode.IsNull())
     {
       m_retentionPeriod = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(retentionPeriodNode.GetText()).c_str()).c_str());
       m_retentionPeriodHasBeenSet = true;
+       m_retentionPeriodHasBeenSet = true;
     }
     XmlNode manualSnapshotRetentionPeriodNode = resultNode.FirstChild("ManualSnapshotRetentionPeriod");
     if(!manualSnapshotRetentionPeriodNode.IsNull())
     {
       m_manualSnapshotRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(manualSnapshotRetentionPeriodNode.GetText()).c_str()).c_str());
       m_manualSnapshotRetentionPeriodHasBeenSet = true;
+       m_manualSnapshotRetentionPeriodHasBeenSet = true;
     }
     XmlNode snapshotCopyGrantNameNode = resultNode.FirstChild("SnapshotCopyGrantName");
     if(!snapshotCopyGrantNameNode.IsNull())
     {
       m_snapshotCopyGrantName = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotCopyGrantNameNode.GetText());
       m_snapshotCopyGrantNameHasBeenSet = true;
+       m_snapshotCopyGrantNameHasBeenSet = true;
     }
   }
 

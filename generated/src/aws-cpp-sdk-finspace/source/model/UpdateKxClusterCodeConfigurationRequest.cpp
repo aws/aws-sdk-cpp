@@ -12,18 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateKxClusterCodeConfigurationRequest::UpdateKxClusterCodeConfigurationRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_codeHasBeenSet(false),
-    m_initializationScriptHasBeenSet(false),
-    m_commandLineArgumentsHasBeenSet(false),
-    m_deploymentConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateKxClusterCodeConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

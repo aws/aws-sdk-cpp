@@ -34,7 +34,7 @@ namespace Model
   class ExportPreferences
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API ExportPreferences();
+    AWS_APPLICATIONDISCOVERYSERVICE_API ExportPreferences() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API ExportPreferences(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API ExportPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * servers discovered through Amazon Web Services Application Discovery Service.
      * </p>
      */
-    inline const Ec2RecommendationsExportPreferences& GetEc2RecommendationsPreferences() const{ return m_ec2RecommendationsPreferences; }
+    inline const Ec2RecommendationsExportPreferences& GetEc2RecommendationsPreferences() const { return m_ec2RecommendationsPreferences; }
     inline bool Ec2RecommendationsPreferencesHasBeenSet() const { return m_ec2RecommendationsPreferencesHasBeenSet; }
-    inline void SetEc2RecommendationsPreferences(const Ec2RecommendationsExportPreferences& value) { m_ec2RecommendationsPreferencesHasBeenSet = true; m_ec2RecommendationsPreferences = value; }
-    inline void SetEc2RecommendationsPreferences(Ec2RecommendationsExportPreferences&& value) { m_ec2RecommendationsPreferencesHasBeenSet = true; m_ec2RecommendationsPreferences = std::move(value); }
-    inline ExportPreferences& WithEc2RecommendationsPreferences(const Ec2RecommendationsExportPreferences& value) { SetEc2RecommendationsPreferences(value); return *this;}
-    inline ExportPreferences& WithEc2RecommendationsPreferences(Ec2RecommendationsExportPreferences&& value) { SetEc2RecommendationsPreferences(std::move(value)); return *this;}
+    template<typename Ec2RecommendationsPreferencesT = Ec2RecommendationsExportPreferences>
+    void SetEc2RecommendationsPreferences(Ec2RecommendationsPreferencesT&& value) { m_ec2RecommendationsPreferencesHasBeenSet = true; m_ec2RecommendationsPreferences = std::forward<Ec2RecommendationsPreferencesT>(value); }
+    template<typename Ec2RecommendationsPreferencesT = Ec2RecommendationsExportPreferences>
+    ExportPreferences& WithEc2RecommendationsPreferences(Ec2RecommendationsPreferencesT&& value) { SetEc2RecommendationsPreferences(std::forward<Ec2RecommendationsPreferencesT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class UpdateEndpointResult
   {
   public:
-    AWS_EVENTBRIDGE_API UpdateEndpointResult();
+    AWS_EVENTBRIDGE_API UpdateEndpointResult() = default;
     AWS_EVENTBRIDGE_API UpdateEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EVENTBRIDGE_API UpdateEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,37 +41,33 @@ namespace Model
     /**
      * <p>The name of the endpoint you updated in this request.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateEndpointResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateEndpointResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateEndpointResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateEndpointResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the endpoint you updated in this request.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateEndpointResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateEndpointResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateEndpointResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateEndpointResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The routing configuration you updated in this request.</p>
      */
-    inline const RoutingConfig& GetRoutingConfig() const{ return m_routingConfig; }
-    inline void SetRoutingConfig(const RoutingConfig& value) { m_routingConfig = value; }
-    inline void SetRoutingConfig(RoutingConfig&& value) { m_routingConfig = std::move(value); }
-    inline UpdateEndpointResult& WithRoutingConfig(const RoutingConfig& value) { SetRoutingConfig(value); return *this;}
-    inline UpdateEndpointResult& WithRoutingConfig(RoutingConfig&& value) { SetRoutingConfig(std::move(value)); return *this;}
+    inline const RoutingConfig& GetRoutingConfig() const { return m_routingConfig; }
+    template<typename RoutingConfigT = RoutingConfig>
+    void SetRoutingConfig(RoutingConfigT&& value) { m_routingConfigHasBeenSet = true; m_routingConfig = std::forward<RoutingConfigT>(value); }
+    template<typename RoutingConfigT = RoutingConfig>
+    UpdateEndpointResult& WithRoutingConfig(RoutingConfigT&& value) { SetRoutingConfig(std::forward<RoutingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,11 +75,11 @@ namespace Model
      * <p>Whether event replication was enabled or disabled for the endpoint you
      * updated in this request.</p>
      */
-    inline const ReplicationConfig& GetReplicationConfig() const{ return m_replicationConfig; }
-    inline void SetReplicationConfig(const ReplicationConfig& value) { m_replicationConfig = value; }
-    inline void SetReplicationConfig(ReplicationConfig&& value) { m_replicationConfig = std::move(value); }
-    inline UpdateEndpointResult& WithReplicationConfig(const ReplicationConfig& value) { SetReplicationConfig(value); return *this;}
-    inline UpdateEndpointResult& WithReplicationConfig(ReplicationConfig&& value) { SetReplicationConfig(std::move(value)); return *this;}
+    inline const ReplicationConfig& GetReplicationConfig() const { return m_replicationConfig; }
+    template<typename ReplicationConfigT = ReplicationConfig>
+    void SetReplicationConfig(ReplicationConfigT&& value) { m_replicationConfigHasBeenSet = true; m_replicationConfig = std::forward<ReplicationConfigT>(value); }
+    template<typename ReplicationConfigT = ReplicationConfig>
+    UpdateEndpointResult& WithReplicationConfig(ReplicationConfigT&& value) { SetReplicationConfig(std::forward<ReplicationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,13 +87,13 @@ namespace Model
      * <p>The event buses used for replication for the endpoint you updated in this
      * request.</p>
      */
-    inline const Aws::Vector<EndpointEventBus>& GetEventBuses() const{ return m_eventBuses; }
-    inline void SetEventBuses(const Aws::Vector<EndpointEventBus>& value) { m_eventBuses = value; }
-    inline void SetEventBuses(Aws::Vector<EndpointEventBus>&& value) { m_eventBuses = std::move(value); }
-    inline UpdateEndpointResult& WithEventBuses(const Aws::Vector<EndpointEventBus>& value) { SetEventBuses(value); return *this;}
-    inline UpdateEndpointResult& WithEventBuses(Aws::Vector<EndpointEventBus>&& value) { SetEventBuses(std::move(value)); return *this;}
-    inline UpdateEndpointResult& AddEventBuses(const EndpointEventBus& value) { m_eventBuses.push_back(value); return *this; }
-    inline UpdateEndpointResult& AddEventBuses(EndpointEventBus&& value) { m_eventBuses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EndpointEventBus>& GetEventBuses() const { return m_eventBuses; }
+    template<typename EventBusesT = Aws::Vector<EndpointEventBus>>
+    void SetEventBuses(EventBusesT&& value) { m_eventBusesHasBeenSet = true; m_eventBuses = std::forward<EventBusesT>(value); }
+    template<typename EventBusesT = Aws::Vector<EndpointEventBus>>
+    UpdateEndpointResult& WithEventBuses(EventBusesT&& value) { SetEventBuses(std::forward<EventBusesT>(value)); return *this;}
+    template<typename EventBusesT = EndpointEventBus>
+    UpdateEndpointResult& AddEventBuses(EventBusesT&& value) { m_eventBusesHasBeenSet = true; m_eventBuses.emplace_back(std::forward<EventBusesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,83 +101,83 @@ namespace Model
      * <p>The ARN of the role used by event replication for the endpoint you updated in
      * this request.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline UpdateEndpointResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline UpdateEndpointResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline UpdateEndpointResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    UpdateEndpointResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the endpoint you updated in this request.</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointId.assign(value); }
-    inline UpdateEndpointResult& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline UpdateEndpointResult& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline UpdateEndpointResult& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    UpdateEndpointResult& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL of the endpoint you updated in this request.</p>
      */
-    inline const Aws::String& GetEndpointUrl() const{ return m_endpointUrl; }
-    inline void SetEndpointUrl(const Aws::String& value) { m_endpointUrl = value; }
-    inline void SetEndpointUrl(Aws::String&& value) { m_endpointUrl = std::move(value); }
-    inline void SetEndpointUrl(const char* value) { m_endpointUrl.assign(value); }
-    inline UpdateEndpointResult& WithEndpointUrl(const Aws::String& value) { SetEndpointUrl(value); return *this;}
-    inline UpdateEndpointResult& WithEndpointUrl(Aws::String&& value) { SetEndpointUrl(std::move(value)); return *this;}
-    inline UpdateEndpointResult& WithEndpointUrl(const char* value) { SetEndpointUrl(value); return *this;}
+    inline const Aws::String& GetEndpointUrl() const { return m_endpointUrl; }
+    template<typename EndpointUrlT = Aws::String>
+    void SetEndpointUrl(EndpointUrlT&& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = std::forward<EndpointUrlT>(value); }
+    template<typename EndpointUrlT = Aws::String>
+    UpdateEndpointResult& WithEndpointUrl(EndpointUrlT&& value) { SetEndpointUrl(std::forward<EndpointUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the endpoint you updated in this request.</p>
      */
-    inline const EndpointState& GetState() const{ return m_state; }
-    inline void SetState(const EndpointState& value) { m_state = value; }
-    inline void SetState(EndpointState&& value) { m_state = std::move(value); }
-    inline UpdateEndpointResult& WithState(const EndpointState& value) { SetState(value); return *this;}
-    inline UpdateEndpointResult& WithState(EndpointState&& value) { SetState(std::move(value)); return *this;}
+    inline EndpointState GetState() const { return m_state; }
+    inline void SetState(EndpointState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline UpdateEndpointResult& WithState(EndpointState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     RoutingConfig m_routingConfig;
+    bool m_routingConfigHasBeenSet = false;
 
     ReplicationConfig m_replicationConfig;
+    bool m_replicationConfigHasBeenSet = false;
 
     Aws::Vector<EndpointEventBus> m_eventBuses;
+    bool m_eventBusesHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_endpointId;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::String m_endpointUrl;
+    bool m_endpointUrlHasBeenSet = false;
 
-    EndpointState m_state;
+    EndpointState m_state{EndpointState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

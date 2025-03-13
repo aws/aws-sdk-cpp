@@ -18,15 +18,7 @@ namespace Athena
 namespace Model
 {
 
-Column::Column() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 Column::Column(JsonView jsonValue)
-  : Column()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Column& Column::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Comment"))
   {
     m_comment = jsonValue.GetString("Comment");
-
     m_commentHasBeenSet = true;
   }
-
   return *this;
 }
 

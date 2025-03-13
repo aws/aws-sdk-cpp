@@ -18,13 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchCreateIndexResponse::BatchCreateIndexResponse() : 
-    m_objectIdentifierHasBeenSet(false)
-{
-}
-
 BatchCreateIndexResponse::BatchCreateIndexResponse(JsonView jsonValue)
-  : BatchCreateIndexResponse()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BatchCreateIndexResponse& BatchCreateIndexResponse::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ObjectIdentifier"))
   {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");
-
     m_objectIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

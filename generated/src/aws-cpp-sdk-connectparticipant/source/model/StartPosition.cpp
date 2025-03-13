@@ -18,16 +18,7 @@ namespace ConnectParticipant
 namespace Model
 {
 
-StartPosition::StartPosition() : 
-    m_idHasBeenSet(false),
-    m_absoluteTimeHasBeenSet(false),
-    m_mostRecent(0),
-    m_mostRecentHasBeenSet(false)
-{
-}
-
 StartPosition::StartPosition(JsonView jsonValue)
-  : StartPosition()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ StartPosition& StartPosition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AbsoluteTime"))
   {
     m_absoluteTime = jsonValue.GetString("AbsoluteTime");
-
     m_absoluteTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MostRecent"))
   {
     m_mostRecent = jsonValue.GetInteger("MostRecent");
-
     m_mostRecentHasBeenSet = true;
   }
-
   return *this;
 }
 

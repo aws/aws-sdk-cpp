@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResourcesAssociatedToCustomLineItemResult::ListResourcesAssociatedToCustomLineItemResult()
-{
-}
-
 ListResourcesAssociatedToCustomLineItemResult::ListResourcesAssociatedToCustomLineItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListResourcesAssociatedToCustomLineItemResult& ListResourcesAssociatedToCustomLi
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedResources"))
   {
     Aws::Utils::Array<JsonView> associatedResourcesJsonList = jsonValue.GetArray("AssociatedResources");
@@ -42,20 +37,20 @@ ListResourcesAssociatedToCustomLineItemResult& ListResourcesAssociatedToCustomLi
     {
       m_associatedResources.push_back(associatedResourcesJsonList[associatedResourcesIndex].AsObject());
     }
+    m_associatedResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

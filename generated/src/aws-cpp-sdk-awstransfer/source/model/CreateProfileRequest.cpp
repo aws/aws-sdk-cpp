@@ -12,15 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProfileRequest::CreateProfileRequest() : 
-    m_as2IdHasBeenSet(false),
-    m_profileType(ProfileType::NOT_SET),
-    m_profileTypeHasBeenSet(false),
-    m_certificateIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateProfileRequest::SerializePayload() const
 {
   JsonValue payload;

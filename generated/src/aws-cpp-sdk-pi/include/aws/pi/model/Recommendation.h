@@ -31,7 +31,7 @@ namespace Model
   class Recommendation
   {
   public:
-    AWS_PI_API Recommendation();
+    AWS_PI_API Recommendation() = default;
     AWS_PI_API Recommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The unique identifier for the recommendation.</p>
      */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+    inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
     inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
-    inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
-    inline Recommendation& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-    inline Recommendation& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-    inline Recommendation& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    template<typename RecommendationIdT = Aws::String>
+    void SetRecommendationId(RecommendationIdT&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::forward<RecommendationIdT>(value); }
+    template<typename RecommendationIdT = Aws::String>
+    Recommendation& WithRecommendationId(RecommendationIdT&& value) { SetRecommendationId(std::forward<RecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * example, <code>Investigate the following SQLs that contributed to 100% of the
      * total DBLoad during that time period: sql-id</code> </p>
      */
-    inline const Aws::String& GetRecommendationDescription() const{ return m_recommendationDescription; }
+    inline const Aws::String& GetRecommendationDescription() const { return m_recommendationDescription; }
     inline bool RecommendationDescriptionHasBeenSet() const { return m_recommendationDescriptionHasBeenSet; }
-    inline void SetRecommendationDescription(const Aws::String& value) { m_recommendationDescriptionHasBeenSet = true; m_recommendationDescription = value; }
-    inline void SetRecommendationDescription(Aws::String&& value) { m_recommendationDescriptionHasBeenSet = true; m_recommendationDescription = std::move(value); }
-    inline void SetRecommendationDescription(const char* value) { m_recommendationDescriptionHasBeenSet = true; m_recommendationDescription.assign(value); }
-    inline Recommendation& WithRecommendationDescription(const Aws::String& value) { SetRecommendationDescription(value); return *this;}
-    inline Recommendation& WithRecommendationDescription(Aws::String&& value) { SetRecommendationDescription(std::move(value)); return *this;}
-    inline Recommendation& WithRecommendationDescription(const char* value) { SetRecommendationDescription(value); return *this;}
+    template<typename RecommendationDescriptionT = Aws::String>
+    void SetRecommendationDescription(RecommendationDescriptionT&& value) { m_recommendationDescriptionHasBeenSet = true; m_recommendationDescription = std::forward<RecommendationDescriptionT>(value); }
+    template<typename RecommendationDescriptionT = Aws::String>
+    Recommendation& WithRecommendationDescription(RecommendationDescriptionT&& value) { SetRecommendationDescription(std::forward<RecommendationDescriptionT>(value)); return *this;}
     ///@}
   private:
 

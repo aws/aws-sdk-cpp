@@ -27,7 +27,7 @@ namespace Model
   class GetBackupVaultAccessPolicyResult
   {
   public:
-    AWS_BACKUP_API GetBackupVaultAccessPolicyResult();
+    AWS_BACKUP_API GetBackupVaultAccessPolicyResult() = default;
     AWS_BACKUP_API GetBackupVaultAccessPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API GetBackupVaultAccessPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * identified by names that are unique to the account used to create them and the
      * Region where they are created.</p>
      */
-    inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
-    inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultName = value; }
-    inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultName = std::move(value); }
-    inline void SetBackupVaultName(const char* value) { m_backupVaultName.assign(value); }
-    inline GetBackupVaultAccessPolicyResult& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
-    inline GetBackupVaultAccessPolicyResult& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
-    inline GetBackupVaultAccessPolicyResult& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
+    inline const Aws::String& GetBackupVaultName() const { return m_backupVaultName; }
+    template<typename BackupVaultNameT = Aws::String>
+    void SetBackupVaultName(BackupVaultNameT&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::forward<BackupVaultNameT>(value); }
+    template<typename BackupVaultNameT = Aws::String>
+    GetBackupVaultAccessPolicyResult& WithBackupVaultName(BackupVaultNameT&& value) { SetBackupVaultName(std::forward<BackupVaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,47 +51,45 @@ namespace Model
      * example,
      * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
-    inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
-    inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArn = value; }
-    inline void SetBackupVaultArn(Aws::String&& value) { m_backupVaultArn = std::move(value); }
-    inline void SetBackupVaultArn(const char* value) { m_backupVaultArn.assign(value); }
-    inline GetBackupVaultAccessPolicyResult& WithBackupVaultArn(const Aws::String& value) { SetBackupVaultArn(value); return *this;}
-    inline GetBackupVaultAccessPolicyResult& WithBackupVaultArn(Aws::String&& value) { SetBackupVaultArn(std::move(value)); return *this;}
-    inline GetBackupVaultAccessPolicyResult& WithBackupVaultArn(const char* value) { SetBackupVaultArn(value); return *this;}
+    inline const Aws::String& GetBackupVaultArn() const { return m_backupVaultArn; }
+    template<typename BackupVaultArnT = Aws::String>
+    void SetBackupVaultArn(BackupVaultArnT&& value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn = std::forward<BackupVaultArnT>(value); }
+    template<typename BackupVaultArnT = Aws::String>
+    GetBackupVaultAccessPolicyResult& WithBackupVaultArn(BackupVaultArnT&& value) { SetBackupVaultArn(std::forward<BackupVaultArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The backup vault access policy document in JSON format.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
-    inline void SetPolicy(const Aws::String& value) { m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policy.assign(value); }
-    inline GetBackupVaultAccessPolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline GetBackupVaultAccessPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline GetBackupVaultAccessPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    inline const Aws::String& GetPolicy() const { return m_policy; }
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    GetBackupVaultAccessPolicyResult& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBackupVaultAccessPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBackupVaultAccessPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBackupVaultAccessPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBackupVaultAccessPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_backupVaultName;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_backupVaultArn;
+    bool m_backupVaultArnHasBeenSet = false;
 
     Aws::String m_policy;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

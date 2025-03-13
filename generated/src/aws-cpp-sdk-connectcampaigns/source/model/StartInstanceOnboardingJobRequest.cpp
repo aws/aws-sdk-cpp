@@ -12,12 +12,6 @@ using namespace Aws::ConnectCampaigns::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartInstanceOnboardingJobRequest::StartInstanceOnboardingJobRequest() : 
-    m_connectInstanceIdHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false)
-{
-}
-
 Aws::String StartInstanceOnboardingJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -19,69 +19,38 @@ namespace WAFV2
 namespace Model
 {
 
-RateBasedStatement::RateBasedStatement() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_evaluationWindowSec(0),
-    m_evaluationWindowSecHasBeenSet(false),
-    m_aggregateKeyType(RateBasedStatementAggregateKeyType::NOT_SET),
-    m_aggregateKeyTypeHasBeenSet(false),
-    m_scopeDownStatementHasBeenSet(false),
-    m_forwardedIPConfigHasBeenSet(false),
-    m_customKeysHasBeenSet(false)
-{
-}
-
 RateBasedStatement::RateBasedStatement(JsonView jsonValue)
-  : RateBasedStatement()
 {
   *this = jsonValue;
 }
-
-const Statement& RateBasedStatement::GetScopeDownStatement() const{ return *m_scopeDownStatement; }
-bool RateBasedStatement::ScopeDownStatementHasBeenSet() const { return m_scopeDownStatementHasBeenSet; }
-void RateBasedStatement::SetScopeDownStatement(const Statement& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement = Aws::MakeShared<Statement>("RateBasedStatement", value); }
-void RateBasedStatement::SetScopeDownStatement(Statement&& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement = Aws::MakeShared<Statement>("RateBasedStatement", std::move(value)); }
-RateBasedStatement& RateBasedStatement::WithScopeDownStatement(const Statement& value) { SetScopeDownStatement(value); return *this;}
-RateBasedStatement& RateBasedStatement::WithScopeDownStatement(Statement&& value) { SetScopeDownStatement(std::move(value)); return *this;}
 
 RateBasedStatement& RateBasedStatement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Limit"))
   {
     m_limit = jsonValue.GetInt64("Limit");
-
     m_limitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationWindowSec"))
   {
     m_evaluationWindowSec = jsonValue.GetInt64("EvaluationWindowSec");
-
     m_evaluationWindowSecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregateKeyType"))
   {
     m_aggregateKeyType = RateBasedStatementAggregateKeyTypeMapper::GetRateBasedStatementAggregateKeyTypeForName(jsonValue.GetString("AggregateKeyType"));
-
     m_aggregateKeyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScopeDownStatement"))
   {
     m_scopeDownStatement = Aws::MakeShared<Statement>("RateBasedStatement", jsonValue.GetObject("ScopeDownStatement"));
-
     m_scopeDownStatementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForwardedIPConfig"))
   {
     m_forwardedIPConfig = jsonValue.GetObject("ForwardedIPConfig");
-
     m_forwardedIPConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomKeys"))
   {
     Aws::Utils::Array<JsonView> customKeysJsonList = jsonValue.GetArray("CustomKeys");
@@ -91,7 +60,6 @@ RateBasedStatement& RateBasedStatement::operator =(JsonView jsonValue)
     }
     m_customKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

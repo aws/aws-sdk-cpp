@@ -32,7 +32,7 @@ namespace Model
   class CisTargetStatusReasonFilter
   {
   public:
-    AWS_INSPECTOR2_API CisTargetStatusReasonFilter();
+    AWS_INSPECTOR2_API CisTargetStatusReasonFilter() = default;
     AWS_INSPECTOR2_API CisTargetStatusReasonFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API CisTargetStatusReasonFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>The comparison value of the CIS target status reason filter.</p>
      */
-    inline const CisTargetStatusComparison& GetComparison() const{ return m_comparison; }
+    inline CisTargetStatusComparison GetComparison() const { return m_comparison; }
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
-    inline void SetComparison(const CisTargetStatusComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
-    inline void SetComparison(CisTargetStatusComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
-    inline CisTargetStatusReasonFilter& WithComparison(const CisTargetStatusComparison& value) { SetComparison(value); return *this;}
-    inline CisTargetStatusReasonFilter& WithComparison(CisTargetStatusComparison&& value) { SetComparison(std::move(value)); return *this;}
+    inline void SetComparison(CisTargetStatusComparison value) { m_comparisonHasBeenSet = true; m_comparison = value; }
+    inline CisTargetStatusReasonFilter& WithComparison(CisTargetStatusComparison value) { SetComparison(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the CIS target status reason filter.</p>
      */
-    inline const CisTargetStatusReason& GetValue() const{ return m_value; }
+    inline CisTargetStatusReason GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const CisTargetStatusReason& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(CisTargetStatusReason&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline CisTargetStatusReasonFilter& WithValue(const CisTargetStatusReason& value) { SetValue(value); return *this;}
-    inline CisTargetStatusReasonFilter& WithValue(CisTargetStatusReason&& value) { SetValue(std::move(value)); return *this;}
+    inline void SetValue(CisTargetStatusReason value) { m_valueHasBeenSet = true; m_value = value; }
+    inline CisTargetStatusReasonFilter& WithValue(CisTargetStatusReason value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    CisTargetStatusComparison m_comparison;
+    CisTargetStatusComparison m_comparison{CisTargetStatusComparison::NOT_SET};
     bool m_comparisonHasBeenSet = false;
 
-    CisTargetStatusReason m_value;
+    CisTargetStatusReason m_value{CisTargetStatusReason::NOT_SET};
     bool m_valueHasBeenSet = false;
   };
 

@@ -20,13 +20,7 @@ namespace RDS
 namespace Model
 {
 
-MetricQuery::MetricQuery() : 
-    m_performanceInsightsMetricQueryHasBeenSet(false)
-{
-}
-
 MetricQuery::MetricQuery(const XmlNode& xmlNode)
-  : MetricQuery()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ MetricQuery& MetricQuery::operator =(const XmlNode& xmlNode)
     {
       m_performanceInsightsMetricQuery = performanceInsightsMetricQueryNode;
       m_performanceInsightsMetricQueryHasBeenSet = true;
+       m_performanceInsightsMetricQueryHasBeenSet = true;
     }
   }
 

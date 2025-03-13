@@ -22,7 +22,7 @@ namespace Model
   class DeleteArtifactRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeleteArtifactRequest();
+    AWS_SAGEMAKER_API DeleteArtifactRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
      */
-    inline const Aws::String& GetArtifactArn() const{ return m_artifactArn; }
+    inline const Aws::String& GetArtifactArn() const { return m_artifactArn; }
     inline bool ArtifactArnHasBeenSet() const { return m_artifactArnHasBeenSet; }
-    inline void SetArtifactArn(const Aws::String& value) { m_artifactArnHasBeenSet = true; m_artifactArn = value; }
-    inline void SetArtifactArn(Aws::String&& value) { m_artifactArnHasBeenSet = true; m_artifactArn = std::move(value); }
-    inline void SetArtifactArn(const char* value) { m_artifactArnHasBeenSet = true; m_artifactArn.assign(value); }
-    inline DeleteArtifactRequest& WithArtifactArn(const Aws::String& value) { SetArtifactArn(value); return *this;}
-    inline DeleteArtifactRequest& WithArtifactArn(Aws::String&& value) { SetArtifactArn(std::move(value)); return *this;}
-    inline DeleteArtifactRequest& WithArtifactArn(const char* value) { SetArtifactArn(value); return *this;}
+    template<typename ArtifactArnT = Aws::String>
+    void SetArtifactArn(ArtifactArnT&& value) { m_artifactArnHasBeenSet = true; m_artifactArn = std::forward<ArtifactArnT>(value); }
+    template<typename ArtifactArnT = Aws::String>
+    DeleteArtifactRequest& WithArtifactArn(ArtifactArnT&& value) { SetArtifactArn(std::forward<ArtifactArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URI of the source.</p>
      */
-    inline const ArtifactSource& GetSource() const{ return m_source; }
+    inline const ArtifactSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ArtifactSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ArtifactSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline DeleteArtifactRequest& WithSource(const ArtifactSource& value) { SetSource(value); return *this;}
-    inline DeleteArtifactRequest& WithSource(ArtifactSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = ArtifactSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = ArtifactSource>
+    DeleteArtifactRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 

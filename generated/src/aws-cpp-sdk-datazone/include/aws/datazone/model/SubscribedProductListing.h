@@ -34,7 +34,7 @@ namespace Model
   class SubscribedProductListing
   {
   public:
-    AWS_DATAZONE_API SubscribedProductListing();
+    AWS_DATAZONE_API SubscribedProductListing() = default;
     AWS_DATAZONE_API SubscribedProductListing(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API SubscribedProductListing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,84 +44,76 @@ namespace Model
     /**
      * <p>The data assets of the data product listing.</p>
      */
-    inline const Aws::Vector<AssetInDataProductListingItem>& GetAssetListings() const{ return m_assetListings; }
+    inline const Aws::Vector<AssetInDataProductListingItem>& GetAssetListings() const { return m_assetListings; }
     inline bool AssetListingsHasBeenSet() const { return m_assetListingsHasBeenSet; }
-    inline void SetAssetListings(const Aws::Vector<AssetInDataProductListingItem>& value) { m_assetListingsHasBeenSet = true; m_assetListings = value; }
-    inline void SetAssetListings(Aws::Vector<AssetInDataProductListingItem>&& value) { m_assetListingsHasBeenSet = true; m_assetListings = std::move(value); }
-    inline SubscribedProductListing& WithAssetListings(const Aws::Vector<AssetInDataProductListingItem>& value) { SetAssetListings(value); return *this;}
-    inline SubscribedProductListing& WithAssetListings(Aws::Vector<AssetInDataProductListingItem>&& value) { SetAssetListings(std::move(value)); return *this;}
-    inline SubscribedProductListing& AddAssetListings(const AssetInDataProductListingItem& value) { m_assetListingsHasBeenSet = true; m_assetListings.push_back(value); return *this; }
-    inline SubscribedProductListing& AddAssetListings(AssetInDataProductListingItem&& value) { m_assetListingsHasBeenSet = true; m_assetListings.push_back(std::move(value)); return *this; }
+    template<typename AssetListingsT = Aws::Vector<AssetInDataProductListingItem>>
+    void SetAssetListings(AssetListingsT&& value) { m_assetListingsHasBeenSet = true; m_assetListings = std::forward<AssetListingsT>(value); }
+    template<typename AssetListingsT = Aws::Vector<AssetInDataProductListingItem>>
+    SubscribedProductListing& WithAssetListings(AssetListingsT&& value) { SetAssetListings(std::forward<AssetListingsT>(value)); return *this;}
+    template<typename AssetListingsT = AssetInDataProductListingItem>
+    SubscribedProductListing& AddAssetListings(AssetListingsT&& value) { m_assetListingsHasBeenSet = true; m_assetListings.emplace_back(std::forward<AssetListingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The description of the data product listing.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SubscribedProductListing& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SubscribedProductListing& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SubscribedProductListing& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    SubscribedProductListing& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the data product listing.</p>
      */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+    inline const Aws::String& GetEntityId() const { return m_entityId; }
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-    inline SubscribedProductListing& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-    inline SubscribedProductListing& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-    inline SubscribedProductListing& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+    template<typename EntityIdT = Aws::String>
+    void SetEntityId(EntityIdT&& value) { m_entityIdHasBeenSet = true; m_entityId = std::forward<EntityIdT>(value); }
+    template<typename EntityIdT = Aws::String>
+    SubscribedProductListing& WithEntityId(EntityIdT&& value) { SetEntityId(std::forward<EntityIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revision of the data product listing.</p>
      */
-    inline const Aws::String& GetEntityRevision() const{ return m_entityRevision; }
+    inline const Aws::String& GetEntityRevision() const { return m_entityRevision; }
     inline bool EntityRevisionHasBeenSet() const { return m_entityRevisionHasBeenSet; }
-    inline void SetEntityRevision(const Aws::String& value) { m_entityRevisionHasBeenSet = true; m_entityRevision = value; }
-    inline void SetEntityRevision(Aws::String&& value) { m_entityRevisionHasBeenSet = true; m_entityRevision = std::move(value); }
-    inline void SetEntityRevision(const char* value) { m_entityRevisionHasBeenSet = true; m_entityRevision.assign(value); }
-    inline SubscribedProductListing& WithEntityRevision(const Aws::String& value) { SetEntityRevision(value); return *this;}
-    inline SubscribedProductListing& WithEntityRevision(Aws::String&& value) { SetEntityRevision(std::move(value)); return *this;}
-    inline SubscribedProductListing& WithEntityRevision(const char* value) { SetEntityRevision(value); return *this;}
+    template<typename EntityRevisionT = Aws::String>
+    void SetEntityRevision(EntityRevisionT&& value) { m_entityRevisionHasBeenSet = true; m_entityRevision = std::forward<EntityRevisionT>(value); }
+    template<typename EntityRevisionT = Aws::String>
+    SubscribedProductListing& WithEntityRevision(EntityRevisionT&& value) { SetEntityRevision(std::forward<EntityRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The glossary terms of the data product listing.</p>
      */
-    inline const Aws::Vector<DetailedGlossaryTerm>& GetGlossaryTerms() const{ return m_glossaryTerms; }
+    inline const Aws::Vector<DetailedGlossaryTerm>& GetGlossaryTerms() const { return m_glossaryTerms; }
     inline bool GlossaryTermsHasBeenSet() const { return m_glossaryTermsHasBeenSet; }
-    inline void SetGlossaryTerms(const Aws::Vector<DetailedGlossaryTerm>& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = value; }
-    inline void SetGlossaryTerms(Aws::Vector<DetailedGlossaryTerm>&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = std::move(value); }
-    inline SubscribedProductListing& WithGlossaryTerms(const Aws::Vector<DetailedGlossaryTerm>& value) { SetGlossaryTerms(value); return *this;}
-    inline SubscribedProductListing& WithGlossaryTerms(Aws::Vector<DetailedGlossaryTerm>&& value) { SetGlossaryTerms(std::move(value)); return *this;}
-    inline SubscribedProductListing& AddGlossaryTerms(const DetailedGlossaryTerm& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(value); return *this; }
-    inline SubscribedProductListing& AddGlossaryTerms(DetailedGlossaryTerm&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(std::move(value)); return *this; }
+    template<typename GlossaryTermsT = Aws::Vector<DetailedGlossaryTerm>>
+    void SetGlossaryTerms(GlossaryTermsT&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = std::forward<GlossaryTermsT>(value); }
+    template<typename GlossaryTermsT = Aws::Vector<DetailedGlossaryTerm>>
+    SubscribedProductListing& WithGlossaryTerms(GlossaryTermsT&& value) { SetGlossaryTerms(std::forward<GlossaryTermsT>(value)); return *this;}
+    template<typename GlossaryTermsT = DetailedGlossaryTerm>
+    SubscribedProductListing& AddGlossaryTerms(GlossaryTermsT&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the data product listing.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SubscribedProductListing& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SubscribedProductListing& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SubscribedProductListing& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SubscribedProductListing& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

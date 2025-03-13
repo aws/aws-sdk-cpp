@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-SuspendProcessesRequest::SuspendProcessesRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_scalingProcessesHasBeenSet(false)
-{
-}
-
 Aws::String SuspendProcessesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

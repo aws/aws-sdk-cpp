@@ -12,14 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutTelemetryRecordsRequest::PutTelemetryRecordsRequest() : 
-    m_telemetryRecordsHasBeenSet(false),
-    m_eC2InstanceIdHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_resourceARNHasBeenSet(false)
-{
-}
-
 Aws::String PutTelemetryRecordsRequest::SerializePayload() const
 {
   JsonValue payload;

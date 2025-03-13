@@ -29,7 +29,7 @@ namespace Model
   class PutTargetsResult
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API PutTargetsResult();
+    AWS_CLOUDWATCHEVENTS_API PutTargetsResult() = default;
     AWS_CLOUDWATCHEVENTS_API PutTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVENTS_API PutTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
     /**
      * <p>The number of failed entries.</p>
      */
-    inline int GetFailedEntryCount() const{ return m_failedEntryCount; }
-    inline void SetFailedEntryCount(int value) { m_failedEntryCount = value; }
+    inline int GetFailedEntryCount() const { return m_failedEntryCount; }
+    inline void SetFailedEntryCount(int value) { m_failedEntryCountHasBeenSet = true; m_failedEntryCount = value; }
     inline PutTargetsResult& WithFailedEntryCount(int value) { SetFailedEntryCount(value); return *this;}
     ///@}
 
@@ -47,32 +47,33 @@ namespace Model
     /**
      * <p>The failed target entries.</p>
      */
-    inline const Aws::Vector<PutTargetsResultEntry>& GetFailedEntries() const{ return m_failedEntries; }
-    inline void SetFailedEntries(const Aws::Vector<PutTargetsResultEntry>& value) { m_failedEntries = value; }
-    inline void SetFailedEntries(Aws::Vector<PutTargetsResultEntry>&& value) { m_failedEntries = std::move(value); }
-    inline PutTargetsResult& WithFailedEntries(const Aws::Vector<PutTargetsResultEntry>& value) { SetFailedEntries(value); return *this;}
-    inline PutTargetsResult& WithFailedEntries(Aws::Vector<PutTargetsResultEntry>&& value) { SetFailedEntries(std::move(value)); return *this;}
-    inline PutTargetsResult& AddFailedEntries(const PutTargetsResultEntry& value) { m_failedEntries.push_back(value); return *this; }
-    inline PutTargetsResult& AddFailedEntries(PutTargetsResultEntry&& value) { m_failedEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PutTargetsResultEntry>& GetFailedEntries() const { return m_failedEntries; }
+    template<typename FailedEntriesT = Aws::Vector<PutTargetsResultEntry>>
+    void SetFailedEntries(FailedEntriesT&& value) { m_failedEntriesHasBeenSet = true; m_failedEntries = std::forward<FailedEntriesT>(value); }
+    template<typename FailedEntriesT = Aws::Vector<PutTargetsResultEntry>>
+    PutTargetsResult& WithFailedEntries(FailedEntriesT&& value) { SetFailedEntries(std::forward<FailedEntriesT>(value)); return *this;}
+    template<typename FailedEntriesT = PutTargetsResultEntry>
+    PutTargetsResult& AddFailedEntries(FailedEntriesT&& value) { m_failedEntriesHasBeenSet = true; m_failedEntries.emplace_back(std::forward<FailedEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutTargetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutTargetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutTargetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutTargetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_failedEntryCount;
+    int m_failedEntryCount{0};
+    bool m_failedEntryCountHasBeenSet = false;
 
     Aws::Vector<PutTargetsResultEntry> m_failedEntries;
+    bool m_failedEntriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,13 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateAccessPolicyRequest::DisassociateAccessPolicyRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateAccessPolicyRequest::SerializePayload() const
 {
   return {};

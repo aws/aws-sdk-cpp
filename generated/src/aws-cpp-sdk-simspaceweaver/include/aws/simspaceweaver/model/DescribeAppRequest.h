@@ -25,7 +25,7 @@ namespace Model
   class DescribeAppRequest : public SimSpaceWeaverRequest
   {
   public:
-    AWS_SIMSPACEWEAVER_API DescribeAppRequest();
+    AWS_SIMSPACEWEAVER_API DescribeAppRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The name of the app.</p>
      */
-    inline const Aws::String& GetApp() const{ return m_app; }
+    inline const Aws::String& GetApp() const { return m_app; }
     inline bool AppHasBeenSet() const { return m_appHasBeenSet; }
-    inline void SetApp(const Aws::String& value) { m_appHasBeenSet = true; m_app = value; }
-    inline void SetApp(Aws::String&& value) { m_appHasBeenSet = true; m_app = std::move(value); }
-    inline void SetApp(const char* value) { m_appHasBeenSet = true; m_app.assign(value); }
-    inline DescribeAppRequest& WithApp(const Aws::String& value) { SetApp(value); return *this;}
-    inline DescribeAppRequest& WithApp(Aws::String&& value) { SetApp(std::move(value)); return *this;}
-    inline DescribeAppRequest& WithApp(const char* value) { SetApp(value); return *this;}
+    template<typename AppT = Aws::String>
+    void SetApp(AppT&& value) { m_appHasBeenSet = true; m_app = std::forward<AppT>(value); }
+    template<typename AppT = Aws::String>
+    DescribeAppRequest& WithApp(AppT&& value) { SetApp(std::forward<AppT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the domain of the app.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline DescribeAppRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline DescribeAppRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline DescribeAppRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    DescribeAppRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the simulation of the app.</p>
      */
-    inline const Aws::String& GetSimulation() const{ return m_simulation; }
+    inline const Aws::String& GetSimulation() const { return m_simulation; }
     inline bool SimulationHasBeenSet() const { return m_simulationHasBeenSet; }
-    inline void SetSimulation(const Aws::String& value) { m_simulationHasBeenSet = true; m_simulation = value; }
-    inline void SetSimulation(Aws::String&& value) { m_simulationHasBeenSet = true; m_simulation = std::move(value); }
-    inline void SetSimulation(const char* value) { m_simulationHasBeenSet = true; m_simulation.assign(value); }
-    inline DescribeAppRequest& WithSimulation(const Aws::String& value) { SetSimulation(value); return *this;}
-    inline DescribeAppRequest& WithSimulation(Aws::String&& value) { SetSimulation(std::move(value)); return *this;}
-    inline DescribeAppRequest& WithSimulation(const char* value) { SetSimulation(value); return *this;}
+    template<typename SimulationT = Aws::String>
+    void SetSimulation(SimulationT&& value) { m_simulationHasBeenSet = true; m_simulation = std::forward<SimulationT>(value); }
+    template<typename SimulationT = Aws::String>
+    DescribeAppRequest& WithSimulation(SimulationT&& value) { SetSimulation(std::forward<SimulationT>(value)); return *this;}
     ///@}
   private:
 

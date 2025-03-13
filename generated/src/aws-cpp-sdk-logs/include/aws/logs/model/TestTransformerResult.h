@@ -29,7 +29,7 @@ namespace Model
   class TestTransformerResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API TestTransformerResult();
+    AWS_CLOUDWATCHLOGS_API TestTransformerResult() = default;
     AWS_CLOUDWATCHLOGS_API TestTransformerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API TestTransformerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>An array where each member of the array includes both the original version
      * and the transformed version of one of the log events that you input.</p>
      */
-    inline const Aws::Vector<TransformedLogRecord>& GetTransformedLogs() const{ return m_transformedLogs; }
-    inline void SetTransformedLogs(const Aws::Vector<TransformedLogRecord>& value) { m_transformedLogs = value; }
-    inline void SetTransformedLogs(Aws::Vector<TransformedLogRecord>&& value) { m_transformedLogs = std::move(value); }
-    inline TestTransformerResult& WithTransformedLogs(const Aws::Vector<TransformedLogRecord>& value) { SetTransformedLogs(value); return *this;}
-    inline TestTransformerResult& WithTransformedLogs(Aws::Vector<TransformedLogRecord>&& value) { SetTransformedLogs(std::move(value)); return *this;}
-    inline TestTransformerResult& AddTransformedLogs(const TransformedLogRecord& value) { m_transformedLogs.push_back(value); return *this; }
-    inline TestTransformerResult& AddTransformedLogs(TransformedLogRecord&& value) { m_transformedLogs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TransformedLogRecord>& GetTransformedLogs() const { return m_transformedLogs; }
+    template<typename TransformedLogsT = Aws::Vector<TransformedLogRecord>>
+    void SetTransformedLogs(TransformedLogsT&& value) { m_transformedLogsHasBeenSet = true; m_transformedLogs = std::forward<TransformedLogsT>(value); }
+    template<typename TransformedLogsT = Aws::Vector<TransformedLogRecord>>
+    TestTransformerResult& WithTransformedLogs(TransformedLogsT&& value) { SetTransformedLogs(std::forward<TransformedLogsT>(value)); return *this;}
+    template<typename TransformedLogsT = TransformedLogRecord>
+    TestTransformerResult& AddTransformedLogs(TransformedLogsT&& value) { m_transformedLogsHasBeenSet = true; m_transformedLogs.emplace_back(std::forward<TransformedLogsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TestTransformerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TestTransformerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TestTransformerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TestTransformerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TransformedLogRecord> m_transformedLogs;
+    bool m_transformedLogsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

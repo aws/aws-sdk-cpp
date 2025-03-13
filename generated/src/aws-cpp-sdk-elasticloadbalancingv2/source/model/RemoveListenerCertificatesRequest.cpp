@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-RemoveListenerCertificatesRequest::RemoveListenerCertificatesRequest() : 
-    m_listenerArnHasBeenSet(false),
-    m_certificatesHasBeenSet(false)
-{
-}
-
 Aws::String RemoveListenerCertificatesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

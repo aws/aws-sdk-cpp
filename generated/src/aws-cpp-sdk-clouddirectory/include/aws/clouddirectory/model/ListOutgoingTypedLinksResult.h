@@ -29,7 +29,7 @@ namespace Model
   class ListOutgoingTypedLinksResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API ListOutgoingTypedLinksResult();
+    AWS_CLOUDDIRECTORY_API ListOutgoingTypedLinksResult() = default;
     AWS_CLOUDDIRECTORY_API ListOutgoingTypedLinksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API ListOutgoingTypedLinksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Returns a typed link specifier as output.</p>
      */
-    inline const Aws::Vector<TypedLinkSpecifier>& GetTypedLinkSpecifiers() const{ return m_typedLinkSpecifiers; }
-    inline void SetTypedLinkSpecifiers(const Aws::Vector<TypedLinkSpecifier>& value) { m_typedLinkSpecifiers = value; }
-    inline void SetTypedLinkSpecifiers(Aws::Vector<TypedLinkSpecifier>&& value) { m_typedLinkSpecifiers = std::move(value); }
-    inline ListOutgoingTypedLinksResult& WithTypedLinkSpecifiers(const Aws::Vector<TypedLinkSpecifier>& value) { SetTypedLinkSpecifiers(value); return *this;}
-    inline ListOutgoingTypedLinksResult& WithTypedLinkSpecifiers(Aws::Vector<TypedLinkSpecifier>&& value) { SetTypedLinkSpecifiers(std::move(value)); return *this;}
-    inline ListOutgoingTypedLinksResult& AddTypedLinkSpecifiers(const TypedLinkSpecifier& value) { m_typedLinkSpecifiers.push_back(value); return *this; }
-    inline ListOutgoingTypedLinksResult& AddTypedLinkSpecifiers(TypedLinkSpecifier&& value) { m_typedLinkSpecifiers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TypedLinkSpecifier>& GetTypedLinkSpecifiers() const { return m_typedLinkSpecifiers; }
+    template<typename TypedLinkSpecifiersT = Aws::Vector<TypedLinkSpecifier>>
+    void SetTypedLinkSpecifiers(TypedLinkSpecifiersT&& value) { m_typedLinkSpecifiersHasBeenSet = true; m_typedLinkSpecifiers = std::forward<TypedLinkSpecifiersT>(value); }
+    template<typename TypedLinkSpecifiersT = Aws::Vector<TypedLinkSpecifier>>
+    ListOutgoingTypedLinksResult& WithTypedLinkSpecifiers(TypedLinkSpecifiersT&& value) { SetTypedLinkSpecifiers(std::forward<TypedLinkSpecifiersT>(value)); return *this;}
+    template<typename TypedLinkSpecifiersT = TypedLinkSpecifier>
+    ListOutgoingTypedLinksResult& AddTypedLinkSpecifiers(TypedLinkSpecifiersT&& value) { m_typedLinkSpecifiersHasBeenSet = true; m_typedLinkSpecifiers.emplace_back(std::forward<TypedLinkSpecifiersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListOutgoingTypedLinksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOutgoingTypedLinksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOutgoingTypedLinksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOutgoingTypedLinksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOutgoingTypedLinksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOutgoingTypedLinksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOutgoingTypedLinksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOutgoingTypedLinksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TypedLinkSpecifier> m_typedLinkSpecifiers;
+    bool m_typedLinkSpecifiersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

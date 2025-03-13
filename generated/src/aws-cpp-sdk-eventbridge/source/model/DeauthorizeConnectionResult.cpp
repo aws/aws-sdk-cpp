@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeauthorizeConnectionResult::DeauthorizeConnectionResult() : 
-    m_connectionState(ConnectionState::NOT_SET)
-{
-}
-
 DeauthorizeConnectionResult::DeauthorizeConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeauthorizeConnectionResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ DeauthorizeConnectionResult& DeauthorizeConnectionResult::operator =(const Aws::
   if(jsonValue.ValueExists("ConnectionArn"))
   {
     m_connectionArn = jsonValue.GetString("ConnectionArn");
-
+    m_connectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionState"))
   {
     m_connectionState = ConnectionStateMapper::GetConnectionStateForName(jsonValue.GetString("ConnectionState"));
-
+    m_connectionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAuthorizedTime"))
   {
     m_lastAuthorizedTime = jsonValue.GetDouble("LastAuthorizedTime");
-
+    m_lastAuthorizedTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

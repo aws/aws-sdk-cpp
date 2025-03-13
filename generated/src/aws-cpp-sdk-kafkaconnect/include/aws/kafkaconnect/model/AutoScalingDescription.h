@@ -33,7 +33,7 @@ namespace Model
   class AutoScalingDescription
   {
   public:
-    AWS_KAFKACONNECT_API AutoScalingDescription();
+    AWS_KAFKACONNECT_API AutoScalingDescription() = default;
     AWS_KAFKACONNECT_API AutoScalingDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API AutoScalingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The maximum number of workers allocated to the connector.</p>
      */
-    inline int GetMaxWorkerCount() const{ return m_maxWorkerCount; }
+    inline int GetMaxWorkerCount() const { return m_maxWorkerCount; }
     inline bool MaxWorkerCountHasBeenSet() const { return m_maxWorkerCountHasBeenSet; }
     inline void SetMaxWorkerCount(int value) { m_maxWorkerCountHasBeenSet = true; m_maxWorkerCount = value; }
     inline AutoScalingDescription& WithMaxWorkerCount(int value) { SetMaxWorkerCount(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * <p>The number of microcontroller units (MCUs) allocated to each connector
      * worker. The valid values are 1,2,4,8.</p>
      */
-    inline int GetMcuCount() const{ return m_mcuCount; }
+    inline int GetMcuCount() const { return m_mcuCount; }
     inline bool McuCountHasBeenSet() const { return m_mcuCountHasBeenSet; }
     inline void SetMcuCount(int value) { m_mcuCountHasBeenSet = true; m_mcuCount = value; }
     inline AutoScalingDescription& WithMcuCount(int value) { SetMcuCount(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
     /**
      * <p>The minimum number of workers allocated to the connector.</p>
      */
-    inline int GetMinWorkerCount() const{ return m_minWorkerCount; }
+    inline int GetMinWorkerCount() const { return m_minWorkerCount; }
     inline bool MinWorkerCountHasBeenSet() const { return m_minWorkerCountHasBeenSet; }
     inline void SetMinWorkerCount(int value) { m_minWorkerCountHasBeenSet = true; m_minWorkerCount = value; }
     inline AutoScalingDescription& WithMinWorkerCount(int value) { SetMinWorkerCount(value); return *this;}
@@ -74,34 +74,34 @@ namespace Model
     /**
      * <p>The sacle-in policy for the connector.</p>
      */
-    inline const ScaleInPolicyDescription& GetScaleInPolicy() const{ return m_scaleInPolicy; }
+    inline const ScaleInPolicyDescription& GetScaleInPolicy() const { return m_scaleInPolicy; }
     inline bool ScaleInPolicyHasBeenSet() const { return m_scaleInPolicyHasBeenSet; }
-    inline void SetScaleInPolicy(const ScaleInPolicyDescription& value) { m_scaleInPolicyHasBeenSet = true; m_scaleInPolicy = value; }
-    inline void SetScaleInPolicy(ScaleInPolicyDescription&& value) { m_scaleInPolicyHasBeenSet = true; m_scaleInPolicy = std::move(value); }
-    inline AutoScalingDescription& WithScaleInPolicy(const ScaleInPolicyDescription& value) { SetScaleInPolicy(value); return *this;}
-    inline AutoScalingDescription& WithScaleInPolicy(ScaleInPolicyDescription&& value) { SetScaleInPolicy(std::move(value)); return *this;}
+    template<typename ScaleInPolicyT = ScaleInPolicyDescription>
+    void SetScaleInPolicy(ScaleInPolicyT&& value) { m_scaleInPolicyHasBeenSet = true; m_scaleInPolicy = std::forward<ScaleInPolicyT>(value); }
+    template<typename ScaleInPolicyT = ScaleInPolicyDescription>
+    AutoScalingDescription& WithScaleInPolicy(ScaleInPolicyT&& value) { SetScaleInPolicy(std::forward<ScaleInPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sacle-out policy for the connector.&gt;</p>
      */
-    inline const ScaleOutPolicyDescription& GetScaleOutPolicy() const{ return m_scaleOutPolicy; }
+    inline const ScaleOutPolicyDescription& GetScaleOutPolicy() const { return m_scaleOutPolicy; }
     inline bool ScaleOutPolicyHasBeenSet() const { return m_scaleOutPolicyHasBeenSet; }
-    inline void SetScaleOutPolicy(const ScaleOutPolicyDescription& value) { m_scaleOutPolicyHasBeenSet = true; m_scaleOutPolicy = value; }
-    inline void SetScaleOutPolicy(ScaleOutPolicyDescription&& value) { m_scaleOutPolicyHasBeenSet = true; m_scaleOutPolicy = std::move(value); }
-    inline AutoScalingDescription& WithScaleOutPolicy(const ScaleOutPolicyDescription& value) { SetScaleOutPolicy(value); return *this;}
-    inline AutoScalingDescription& WithScaleOutPolicy(ScaleOutPolicyDescription&& value) { SetScaleOutPolicy(std::move(value)); return *this;}
+    template<typename ScaleOutPolicyT = ScaleOutPolicyDescription>
+    void SetScaleOutPolicy(ScaleOutPolicyT&& value) { m_scaleOutPolicyHasBeenSet = true; m_scaleOutPolicy = std::forward<ScaleOutPolicyT>(value); }
+    template<typename ScaleOutPolicyT = ScaleOutPolicyDescription>
+    AutoScalingDescription& WithScaleOutPolicy(ScaleOutPolicyT&& value) { SetScaleOutPolicy(std::forward<ScaleOutPolicyT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxWorkerCount;
+    int m_maxWorkerCount{0};
     bool m_maxWorkerCountHasBeenSet = false;
 
-    int m_mcuCount;
+    int m_mcuCount{0};
     bool m_mcuCountHasBeenSet = false;
 
-    int m_minWorkerCount;
+    int m_minWorkerCount{0};
     bool m_minWorkerCountHasBeenSet = false;
 
     ScaleInPolicyDescription m_scaleInPolicy;

@@ -12,15 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBucketsRequest::DescribeBucketsRequest() : 
-    m_criteriaHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortCriteriaHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBucketsRequest::SerializePayload() const
 {
   JsonValue payload;

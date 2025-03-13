@@ -12,11 +12,6 @@ using namespace Aws::AppRegistry::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutConfigurationRequest::PutConfigurationRequest() : 
-    m_configurationHasBeenSet(false)
-{
-}
-
 Aws::String PutConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

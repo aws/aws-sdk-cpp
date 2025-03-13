@@ -20,18 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3ManifestOutputLocation::S3ManifestOutputLocation() : 
-    m_expectedManifestBucketOwnerHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_manifestPrefixHasBeenSet(false),
-    m_manifestEncryptionHasBeenSet(false),
-    m_manifestFormat(GeneratedManifestFormat::NOT_SET),
-    m_manifestFormatHasBeenSet(false)
-{
-}
-
 S3ManifestOutputLocation::S3ManifestOutputLocation(const XmlNode& xmlNode)
-  : S3ManifestOutputLocation()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ S3ManifestOutputLocation& S3ManifestOutputLocation::operator =(const XmlNode& xm
     {
       m_expectedManifestBucketOwner = Aws::Utils::Xml::DecodeEscapedXmlText(expectedManifestBucketOwnerNode.GetText());
       m_expectedManifestBucketOwnerHasBeenSet = true;
+       m_expectedManifestBucketOwnerHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode manifestPrefixNode = resultNode.FirstChild("ManifestPrefix");
     if(!manifestPrefixNode.IsNull())
     {
       m_manifestPrefix = Aws::Utils::Xml::DecodeEscapedXmlText(manifestPrefixNode.GetText());
       m_manifestPrefixHasBeenSet = true;
+       m_manifestPrefixHasBeenSet = true;
     }
     XmlNode manifestEncryptionNode = resultNode.FirstChild("ManifestEncryption");
     if(!manifestEncryptionNode.IsNull())
     {
       m_manifestEncryption = manifestEncryptionNode;
       m_manifestEncryptionHasBeenSet = true;
+       m_manifestEncryptionHasBeenSet = true;
     }
     XmlNode manifestFormatNode = resultNode.FirstChild("ManifestFormat");
     if(!manifestFormatNode.IsNull())
     {
-      m_manifestFormat = GeneratedManifestFormatMapper::GetGeneratedManifestFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(manifestFormatNode.GetText()).c_str()).c_str());
+      m_manifestFormat = GeneratedManifestFormatMapper::GetGeneratedManifestFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(manifestFormatNode.GetText()).c_str()));
       m_manifestFormatHasBeenSet = true;
+       m_manifestFormatHasBeenSet = true;
     }
   }
 

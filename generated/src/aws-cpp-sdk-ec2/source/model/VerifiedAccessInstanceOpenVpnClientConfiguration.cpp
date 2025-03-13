@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessInstanceOpenVpnClientConfiguration::VerifiedAccessInstanceOpenVpnClientConfiguration() : 
-    m_configHasBeenSet(false),
-    m_routesHasBeenSet(false)
-{
-}
-
 VerifiedAccessInstanceOpenVpnClientConfiguration::VerifiedAccessInstanceOpenVpnClientConfiguration(const XmlNode& xmlNode)
-  : VerifiedAccessInstanceOpenVpnClientConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ VerifiedAccessInstanceOpenVpnClientConfiguration& VerifiedAccessInstanceOpenVpnC
     {
       m_config = Aws::Utils::Xml::DecodeEscapedXmlText(configNode.GetText());
       m_configHasBeenSet = true;
+       m_configHasBeenSet = true;
     }
     XmlNode routesNode = resultNode.FirstChild("routeSet");
     if(!routesNode.IsNull())
     {
       XmlNode routesMember = routesNode.FirstChild("item");
+      m_routesHasBeenSet = !routesMember.IsNull();
       while(!routesMember.IsNull())
       {
         m_routes.push_back(routesMember);
         routesMember = routesMember.NextNode("item");
       }
 
-      m_routesHasBeenSet = true;
+       m_routesHasBeenSet = true;
     }
   }
 

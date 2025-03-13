@@ -12,15 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSipMediaApplicationCallRequest::CreateSipMediaApplicationCallRequest() : 
-    m_fromPhoneNumberHasBeenSet(false),
-    m_toPhoneNumberHasBeenSet(false),
-    m_sipMediaApplicationIdHasBeenSet(false),
-    m_sipHeadersHasBeenSet(false),
-    m_argumentsMapHasBeenSet(false)
-{
-}
-
 Aws::String CreateSipMediaApplicationCallRequest::SerializePayload() const
 {
   JsonValue payload;

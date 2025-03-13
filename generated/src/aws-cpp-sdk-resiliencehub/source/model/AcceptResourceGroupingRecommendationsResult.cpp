@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcceptResourceGroupingRecommendationsResult::AcceptResourceGroupingRecommendationsResult()
-{
-}
-
 AcceptResourceGroupingRecommendationsResult::AcceptResourceGroupingRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ AcceptResourceGroupingRecommendationsResult& AcceptResourceGroupingRecommendatio
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
+    m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedEntries"))
   {
     Aws::Utils::Array<JsonView> failedEntriesJsonList = jsonValue.GetArray("failedEntries");
@@ -42,14 +37,15 @@ AcceptResourceGroupingRecommendationsResult& AcceptResourceGroupingRecommendatio
     {
       m_failedEntries.push_back(failedEntriesJsonList[failedEntriesIndex].AsObject());
     }
+    m_failedEntriesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

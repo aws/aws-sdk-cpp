@@ -12,12 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeNodeRequest::DescribeNodeRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNodeRequest::SerializePayload() const
 {
   return {};

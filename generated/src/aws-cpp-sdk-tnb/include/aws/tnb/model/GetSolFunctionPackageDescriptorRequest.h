@@ -22,7 +22,7 @@ namespace Model
   class GetSolFunctionPackageDescriptorRequest : public TnbRequest
   {
   public:
-    AWS_TNB_API GetSolFunctionPackageDescriptorRequest();
+    AWS_TNB_API GetSolFunctionPackageDescriptorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,30 +40,26 @@ namespace Model
      * <p>Indicates which content types, expressed as MIME types, the client is able to
      * understand.</p>
      */
-    inline const DescriptorContentType& GetAccept() const{ return m_accept; }
+    inline DescriptorContentType GetAccept() const { return m_accept; }
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
-    inline void SetAccept(const DescriptorContentType& value) { m_acceptHasBeenSet = true; m_accept = value; }
-    inline void SetAccept(DescriptorContentType&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
-    inline GetSolFunctionPackageDescriptorRequest& WithAccept(const DescriptorContentType& value) { SetAccept(value); return *this;}
-    inline GetSolFunctionPackageDescriptorRequest& WithAccept(DescriptorContentType&& value) { SetAccept(std::move(value)); return *this;}
+    inline void SetAccept(DescriptorContentType value) { m_acceptHasBeenSet = true; m_accept = value; }
+    inline GetSolFunctionPackageDescriptorRequest& WithAccept(DescriptorContentType value) { SetAccept(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of the function package.</p>
      */
-    inline const Aws::String& GetVnfPkgId() const{ return m_vnfPkgId; }
+    inline const Aws::String& GetVnfPkgId() const { return m_vnfPkgId; }
     inline bool VnfPkgIdHasBeenSet() const { return m_vnfPkgIdHasBeenSet; }
-    inline void SetVnfPkgId(const Aws::String& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = value; }
-    inline void SetVnfPkgId(Aws::String&& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = std::move(value); }
-    inline void SetVnfPkgId(const char* value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId.assign(value); }
-    inline GetSolFunctionPackageDescriptorRequest& WithVnfPkgId(const Aws::String& value) { SetVnfPkgId(value); return *this;}
-    inline GetSolFunctionPackageDescriptorRequest& WithVnfPkgId(Aws::String&& value) { SetVnfPkgId(std::move(value)); return *this;}
-    inline GetSolFunctionPackageDescriptorRequest& WithVnfPkgId(const char* value) { SetVnfPkgId(value); return *this;}
+    template<typename VnfPkgIdT = Aws::String>
+    void SetVnfPkgId(VnfPkgIdT&& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = std::forward<VnfPkgIdT>(value); }
+    template<typename VnfPkgIdT = Aws::String>
+    GetSolFunctionPackageDescriptorRequest& WithVnfPkgId(VnfPkgIdT&& value) { SetVnfPkgId(std::forward<VnfPkgIdT>(value)); return *this;}
     ///@}
   private:
 
-    DescriptorContentType m_accept;
+    DescriptorContentType m_accept{DescriptorContentType::NOT_SET};
     bool m_acceptHasBeenSet = false;
 
     Aws::String m_vnfPkgId;

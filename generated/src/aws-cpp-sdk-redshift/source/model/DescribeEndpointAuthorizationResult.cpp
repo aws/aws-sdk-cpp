@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEndpointAuthorizationResult::DescribeEndpointAuthorizationResult()
-{
-}
-
 DescribeEndpointAuthorizationResult::DescribeEndpointAuthorizationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeEndpointAuthorizationResult& DescribeEndpointAuthorizationResult::operat
     if(!endpointAuthorizationListNode.IsNull())
     {
       XmlNode endpointAuthorizationListMember = endpointAuthorizationListNode.FirstChild("member");
+      m_endpointAuthorizationListHasBeenSet = !endpointAuthorizationListMember.IsNull();
       while(!endpointAuthorizationListMember.IsNull())
       {
         m_endpointAuthorizationList.push_back(endpointAuthorizationListMember);
@@ -53,12 +50,14 @@ DescribeEndpointAuthorizationResult& DescribeEndpointAuthorizationResult::operat
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeEndpointAuthorizationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

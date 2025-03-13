@@ -12,13 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNotebookInstanceLifecycleConfigRequest::CreateNotebookInstanceLifecycleConfigRequest() : 
-    m_notebookInstanceLifecycleConfigNameHasBeenSet(false),
-    m_onCreateHasBeenSet(false),
-    m_onStartHasBeenSet(false)
-{
-}
-
 Aws::String CreateNotebookInstanceLifecycleConfigRequest::SerializePayload() const
 {
   JsonValue payload;

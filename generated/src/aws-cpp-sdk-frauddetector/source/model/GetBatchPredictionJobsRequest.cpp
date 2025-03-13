@@ -12,14 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBatchPredictionJobsRequest::GetBatchPredictionJobsRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetBatchPredictionJobsRequest::SerializePayload() const
 {
   JsonValue payload;

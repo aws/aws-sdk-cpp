@@ -18,16 +18,7 @@ namespace PCS
 namespace Model
 {
 
-ClusterSlurmConfiguration::ClusterSlurmConfiguration() : 
-    m_scaleDownIdleTimeInSeconds(0),
-    m_scaleDownIdleTimeInSecondsHasBeenSet(false),
-    m_slurmCustomSettingsHasBeenSet(false),
-    m_authKeyHasBeenSet(false)
-{
-}
-
 ClusterSlurmConfiguration::ClusterSlurmConfiguration(JsonView jsonValue)
-  : ClusterSlurmConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ClusterSlurmConfiguration& ClusterSlurmConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("scaleDownIdleTimeInSeconds"))
   {
     m_scaleDownIdleTimeInSeconds = jsonValue.GetInteger("scaleDownIdleTimeInSeconds");
-
     m_scaleDownIdleTimeInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slurmCustomSettings"))
   {
     Aws::Utils::Array<JsonView> slurmCustomSettingsJsonList = jsonValue.GetArray("slurmCustomSettings");
@@ -50,14 +39,11 @@ ClusterSlurmConfiguration& ClusterSlurmConfiguration::operator =(JsonView jsonVa
     }
     m_slurmCustomSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authKey"))
   {
     m_authKey = jsonValue.GetObject("authKey");
-
     m_authKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

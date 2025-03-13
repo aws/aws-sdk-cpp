@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeTransitGatewayConnectPeersRequest::DescribeTransitGatewayConnectPeersRequest() : 
-    m_transitGatewayConnectPeerIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTransitGatewayConnectPeersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

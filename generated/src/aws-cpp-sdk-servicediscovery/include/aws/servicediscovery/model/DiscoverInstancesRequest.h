@@ -23,7 +23,7 @@ namespace Model
   class DiscoverInstancesRequest : public ServiceDiscoveryRequest
   {
   public:
-    AWS_SERVICEDISCOVERY_API DiscoverInstancesRequest();
+    AWS_SERVICEDISCOVERY_API DiscoverInstancesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * However, if you reuse <code>Name</code> for namespace creation, a generated hash
      * is added to <code>HttpName</code> to distinguish the two.</p>
      */
-    inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
+    inline const Aws::String& GetNamespaceName() const { return m_namespaceName; }
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
-    inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
-    inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
-    inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
-    inline DiscoverInstancesRequest& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
-    inline DiscoverInstancesRequest& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
-    inline DiscoverInstancesRequest& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
+    template<typename NamespaceNameT = Aws::String>
+    void SetNamespaceName(NamespaceNameT&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::forward<NamespaceNameT>(value); }
+    template<typename NamespaceNameT = Aws::String>
+    DiscoverInstancesRequest& WithNamespaceName(NamespaceNameT&& value) { SetNamespaceName(std::forward<NamespaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The name of the service that you specified when you registered the
      * instance.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline DiscoverInstancesRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline DiscoverInstancesRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline DiscoverInstancesRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    DiscoverInstancesRequest& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +71,7 @@ namespace Model
      * response to a <code>DiscoverInstances</code> request. If you don't specify a
      * value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DiscoverInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -87,19 +83,16 @@ namespace Model
      * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
      * specified key-value pairs are returned.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetQueryParameters() const{ return m_queryParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetQueryParameters() const { return m_queryParameters; }
     inline bool QueryParametersHasBeenSet() const { return m_queryParametersHasBeenSet; }
-    inline void SetQueryParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_queryParametersHasBeenSet = true; m_queryParameters = value; }
-    inline void SetQueryParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_queryParametersHasBeenSet = true; m_queryParameters = std::move(value); }
-    inline DiscoverInstancesRequest& WithQueryParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetQueryParameters(value); return *this;}
-    inline DiscoverInstancesRequest& WithQueryParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetQueryParameters(std::move(value)); return *this;}
-    inline DiscoverInstancesRequest& AddQueryParameters(const Aws::String& key, const Aws::String& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, value); return *this; }
-    inline DiscoverInstancesRequest& AddQueryParameters(Aws::String&& key, const Aws::String& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::move(key), value); return *this; }
-    inline DiscoverInstancesRequest& AddQueryParameters(const Aws::String& key, Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, std::move(value)); return *this; }
-    inline DiscoverInstancesRequest& AddQueryParameters(Aws::String&& key, Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline DiscoverInstancesRequest& AddQueryParameters(const char* key, Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, std::move(value)); return *this; }
-    inline DiscoverInstancesRequest& AddQueryParameters(Aws::String&& key, const char* value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::move(key), value); return *this; }
-    inline DiscoverInstancesRequest& AddQueryParameters(const char* key, const char* value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, value); return *this; }
+    template<typename QueryParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetQueryParameters(QueryParametersT&& value) { m_queryParametersHasBeenSet = true; m_queryParameters = std::forward<QueryParametersT>(value); }
+    template<typename QueryParametersT = Aws::Map<Aws::String, Aws::String>>
+    DiscoverInstancesRequest& WithQueryParameters(QueryParametersT&& value) { SetQueryParameters(std::forward<QueryParametersT>(value)); return *this;}
+    template<typename QueryParametersKeyT = Aws::String, typename QueryParametersValueT = Aws::String>
+    DiscoverInstancesRequest& AddQueryParameters(QueryParametersKeyT&& key, QueryParametersValueT&& value) {
+      m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::forward<QueryParametersKeyT>(key), std::forward<QueryParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -111,19 +104,16 @@ namespace Model
      * that match the filters that are specified in the <code>QueryParameters</code>
      * parameter are returned.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetOptionalParameters() const{ return m_optionalParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetOptionalParameters() const { return m_optionalParameters; }
     inline bool OptionalParametersHasBeenSet() const { return m_optionalParametersHasBeenSet; }
-    inline void SetOptionalParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters = value; }
-    inline void SetOptionalParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters = std::move(value); }
-    inline DiscoverInstancesRequest& WithOptionalParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetOptionalParameters(value); return *this;}
-    inline DiscoverInstancesRequest& WithOptionalParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetOptionalParameters(std::move(value)); return *this;}
-    inline DiscoverInstancesRequest& AddOptionalParameters(const Aws::String& key, const Aws::String& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(key, value); return *this; }
-    inline DiscoverInstancesRequest& AddOptionalParameters(Aws::String&& key, const Aws::String& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(std::move(key), value); return *this; }
-    inline DiscoverInstancesRequest& AddOptionalParameters(const Aws::String& key, Aws::String&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(key, std::move(value)); return *this; }
-    inline DiscoverInstancesRequest& AddOptionalParameters(Aws::String&& key, Aws::String&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline DiscoverInstancesRequest& AddOptionalParameters(const char* key, Aws::String&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(key, std::move(value)); return *this; }
-    inline DiscoverInstancesRequest& AddOptionalParameters(Aws::String&& key, const char* value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(std::move(key), value); return *this; }
-    inline DiscoverInstancesRequest& AddOptionalParameters(const char* key, const char* value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(key, value); return *this; }
+    template<typename OptionalParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetOptionalParameters(OptionalParametersT&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters = std::forward<OptionalParametersT>(value); }
+    template<typename OptionalParametersT = Aws::Map<Aws::String, Aws::String>>
+    DiscoverInstancesRequest& WithOptionalParameters(OptionalParametersT&& value) { SetOptionalParameters(std::forward<OptionalParametersT>(value)); return *this;}
+    template<typename OptionalParametersKeyT = Aws::String, typename OptionalParametersValueT = Aws::String>
+    DiscoverInstancesRequest& AddOptionalParameters(OptionalParametersKeyT&& key, OptionalParametersValueT&& value) {
+      m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(std::forward<OptionalParametersKeyT>(key), std::forward<OptionalParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -137,12 +127,10 @@ namespace Model
      * reporting a healthy state. In that case, return all instances. This is also
      * called failing open.</p> </dd> </dl>
      */
-    inline const HealthStatusFilter& GetHealthStatus() const{ return m_healthStatus; }
+    inline HealthStatusFilter GetHealthStatus() const { return m_healthStatus; }
     inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
-    inline void SetHealthStatus(const HealthStatusFilter& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
-    inline void SetHealthStatus(HealthStatusFilter&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
-    inline DiscoverInstancesRequest& WithHealthStatus(const HealthStatusFilter& value) { SetHealthStatus(value); return *this;}
-    inline DiscoverInstancesRequest& WithHealthStatus(HealthStatusFilter&& value) { SetHealthStatus(std::move(value)); return *this;}
+    inline void SetHealthStatus(HealthStatusFilter value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
+    inline DiscoverInstancesRequest& WithHealthStatus(HealthStatusFilter value) { SetHealthStatus(value); return *this;}
     ///@}
   private:
 
@@ -152,7 +140,7 @@ namespace Model
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_queryParameters;
@@ -161,7 +149,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_optionalParameters;
     bool m_optionalParametersHasBeenSet = false;
 
-    HealthStatusFilter m_healthStatus;
+    HealthStatusFilter m_healthStatus{HealthStatusFilter::NOT_SET};
     bool m_healthStatusHasBeenSet = false;
   };
 

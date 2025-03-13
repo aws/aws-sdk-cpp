@@ -18,13 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-StartCisSessionMessage::StartCisSessionMessage() : 
-    m_sessionTokenHasBeenSet(false)
-{
-}
-
 StartCisSessionMessage::StartCisSessionMessage(JsonView jsonValue)
-  : StartCisSessionMessage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StartCisSessionMessage& StartCisSessionMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sessionToken"))
   {
     m_sessionToken = jsonValue.GetString("sessionToken");
-
     m_sessionTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

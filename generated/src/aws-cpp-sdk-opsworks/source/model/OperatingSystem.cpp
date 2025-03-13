@@ -18,20 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-OperatingSystem::OperatingSystem() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_configurationManagersHasBeenSet(false),
-    m_reportedNameHasBeenSet(false),
-    m_reportedVersionHasBeenSet(false),
-    m_supported(false),
-    m_supportedHasBeenSet(false)
-{
-}
-
 OperatingSystem::OperatingSystem(JsonView jsonValue)
-  : OperatingSystem()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ OperatingSystem& OperatingSystem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationManagers"))
   {
     Aws::Utils::Array<JsonView> configurationManagersJsonList = jsonValue.GetArray("ConfigurationManagers");
@@ -68,28 +49,21 @@ OperatingSystem& OperatingSystem::operator =(JsonView jsonValue)
     }
     m_configurationManagersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportedName"))
   {
     m_reportedName = jsonValue.GetString("ReportedName");
-
     m_reportedNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportedVersion"))
   {
     m_reportedVersion = jsonValue.GetString("ReportedVersion");
-
     m_reportedVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Supported"))
   {
     m_supported = jsonValue.GetBool("Supported");
-
     m_supportedHasBeenSet = true;
   }
-
   return *this;
 }
 

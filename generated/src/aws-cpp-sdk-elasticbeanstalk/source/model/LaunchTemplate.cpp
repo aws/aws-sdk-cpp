@@ -20,13 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-LaunchTemplate::LaunchTemplate() : 
-    m_idHasBeenSet(false)
-{
-}
-
 LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode)
-  : LaunchTemplate()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ LaunchTemplate& LaunchTemplate::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
   }
 

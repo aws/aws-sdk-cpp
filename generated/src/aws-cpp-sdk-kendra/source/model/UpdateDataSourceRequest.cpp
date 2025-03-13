@@ -12,20 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataSourceRequest::UpdateDataSourceRequest() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_customDocumentEnrichmentConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

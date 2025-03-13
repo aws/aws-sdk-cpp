@@ -37,7 +37,7 @@ namespace Model
   class WorkloadSummary
   {
   public:
-    AWS_WELLARCHITECTED_API WorkloadSummary();
+    AWS_WELLARCHITECTED_API WorkloadSummary() = default;
     AWS_WELLARCHITECTED_API WorkloadSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API WorkloadSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,121 +45,112 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline WorkloadSummary& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline WorkloadSummary& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline WorkloadSummary& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    WorkloadSummary& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWorkloadArn() const{ return m_workloadArn; }
+    inline const Aws::String& GetWorkloadArn() const { return m_workloadArn; }
     inline bool WorkloadArnHasBeenSet() const { return m_workloadArnHasBeenSet; }
-    inline void SetWorkloadArn(const Aws::String& value) { m_workloadArnHasBeenSet = true; m_workloadArn = value; }
-    inline void SetWorkloadArn(Aws::String&& value) { m_workloadArnHasBeenSet = true; m_workloadArn = std::move(value); }
-    inline void SetWorkloadArn(const char* value) { m_workloadArnHasBeenSet = true; m_workloadArn.assign(value); }
-    inline WorkloadSummary& WithWorkloadArn(const Aws::String& value) { SetWorkloadArn(value); return *this;}
-    inline WorkloadSummary& WithWorkloadArn(Aws::String&& value) { SetWorkloadArn(std::move(value)); return *this;}
-    inline WorkloadSummary& WithWorkloadArn(const char* value) { SetWorkloadArn(value); return *this;}
+    template<typename WorkloadArnT = Aws::String>
+    void SetWorkloadArn(WorkloadArnT&& value) { m_workloadArnHasBeenSet = true; m_workloadArn = std::forward<WorkloadArnT>(value); }
+    template<typename WorkloadArnT = Aws::String>
+    WorkloadSummary& WithWorkloadArn(WorkloadArnT&& value) { SetWorkloadArn(std::forward<WorkloadArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
+    inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-    inline void SetWorkloadName(const Aws::String& value) { m_workloadNameHasBeenSet = true; m_workloadName = value; }
-    inline void SetWorkloadName(Aws::String&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::move(value); }
-    inline void SetWorkloadName(const char* value) { m_workloadNameHasBeenSet = true; m_workloadName.assign(value); }
-    inline WorkloadSummary& WithWorkloadName(const Aws::String& value) { SetWorkloadName(value); return *this;}
-    inline WorkloadSummary& WithWorkloadName(Aws::String&& value) { SetWorkloadName(std::move(value)); return *this;}
-    inline WorkloadSummary& WithWorkloadName(const char* value) { SetWorkloadName(value); return *this;}
+    template<typename WorkloadNameT = Aws::String>
+    void SetWorkloadName(WorkloadNameT&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::forward<WorkloadNameT>(value); }
+    template<typename WorkloadNameT = Aws::String>
+    WorkloadSummary& WithWorkloadName(WorkloadNameT&& value) { SetWorkloadName(std::forward<WorkloadNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline WorkloadSummary& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline WorkloadSummary& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline WorkloadSummary& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    WorkloadSummary& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline WorkloadSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline WorkloadSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    WorkloadSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetLenses() const{ return m_lenses; }
+    inline const Aws::Vector<Aws::String>& GetLenses() const { return m_lenses; }
     inline bool LensesHasBeenSet() const { return m_lensesHasBeenSet; }
-    inline void SetLenses(const Aws::Vector<Aws::String>& value) { m_lensesHasBeenSet = true; m_lenses = value; }
-    inline void SetLenses(Aws::Vector<Aws::String>&& value) { m_lensesHasBeenSet = true; m_lenses = std::move(value); }
-    inline WorkloadSummary& WithLenses(const Aws::Vector<Aws::String>& value) { SetLenses(value); return *this;}
-    inline WorkloadSummary& WithLenses(Aws::Vector<Aws::String>&& value) { SetLenses(std::move(value)); return *this;}
-    inline WorkloadSummary& AddLenses(const Aws::String& value) { m_lensesHasBeenSet = true; m_lenses.push_back(value); return *this; }
-    inline WorkloadSummary& AddLenses(Aws::String&& value) { m_lensesHasBeenSet = true; m_lenses.push_back(std::move(value)); return *this; }
-    inline WorkloadSummary& AddLenses(const char* value) { m_lensesHasBeenSet = true; m_lenses.push_back(value); return *this; }
+    template<typename LensesT = Aws::Vector<Aws::String>>
+    void SetLenses(LensesT&& value) { m_lensesHasBeenSet = true; m_lenses = std::forward<LensesT>(value); }
+    template<typename LensesT = Aws::Vector<Aws::String>>
+    WorkloadSummary& WithLenses(LensesT&& value) { SetLenses(std::forward<LensesT>(value)); return *this;}
+    template<typename LensesT = Aws::String>
+    WorkloadSummary& AddLenses(LensesT&& value) { m_lensesHasBeenSet = true; m_lenses.emplace_back(std::forward<LensesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Risk, int>& GetRiskCounts() const{ return m_riskCounts; }
+    inline const Aws::Map<Risk, int>& GetRiskCounts() const { return m_riskCounts; }
     inline bool RiskCountsHasBeenSet() const { return m_riskCountsHasBeenSet; }
-    inline void SetRiskCounts(const Aws::Map<Risk, int>& value) { m_riskCountsHasBeenSet = true; m_riskCounts = value; }
-    inline void SetRiskCounts(Aws::Map<Risk, int>&& value) { m_riskCountsHasBeenSet = true; m_riskCounts = std::move(value); }
-    inline WorkloadSummary& WithRiskCounts(const Aws::Map<Risk, int>& value) { SetRiskCounts(value); return *this;}
-    inline WorkloadSummary& WithRiskCounts(Aws::Map<Risk, int>&& value) { SetRiskCounts(std::move(value)); return *this;}
-    inline WorkloadSummary& AddRiskCounts(const Risk& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(key, value); return *this; }
-    inline WorkloadSummary& AddRiskCounts(Risk&& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(std::move(key), value); return *this; }
+    template<typename RiskCountsT = Aws::Map<Risk, int>>
+    void SetRiskCounts(RiskCountsT&& value) { m_riskCountsHasBeenSet = true; m_riskCounts = std::forward<RiskCountsT>(value); }
+    template<typename RiskCountsT = Aws::Map<Risk, int>>
+    WorkloadSummary& WithRiskCounts(RiskCountsT&& value) { SetRiskCounts(std::forward<RiskCountsT>(value)); return *this;}
+    inline WorkloadSummary& AddRiskCounts(Risk key, int value) {
+      m_riskCountsHasBeenSet = true; m_riskCounts.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const WorkloadImprovementStatus& GetImprovementStatus() const{ return m_improvementStatus; }
+    inline WorkloadImprovementStatus GetImprovementStatus() const { return m_improvementStatus; }
     inline bool ImprovementStatusHasBeenSet() const { return m_improvementStatusHasBeenSet; }
-    inline void SetImprovementStatus(const WorkloadImprovementStatus& value) { m_improvementStatusHasBeenSet = true; m_improvementStatus = value; }
-    inline void SetImprovementStatus(WorkloadImprovementStatus&& value) { m_improvementStatusHasBeenSet = true; m_improvementStatus = std::move(value); }
-    inline WorkloadSummary& WithImprovementStatus(const WorkloadImprovementStatus& value) { SetImprovementStatus(value); return *this;}
-    inline WorkloadSummary& WithImprovementStatus(WorkloadImprovementStatus&& value) { SetImprovementStatus(std::move(value)); return *this;}
+    inline void SetImprovementStatus(WorkloadImprovementStatus value) { m_improvementStatusHasBeenSet = true; m_improvementStatus = value; }
+    inline WorkloadSummary& WithImprovementStatus(WorkloadImprovementStatus value) { SetImprovementStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Profile associated with a workload.</p>
      */
-    inline const Aws::Vector<WorkloadProfile>& GetProfiles() const{ return m_profiles; }
+    inline const Aws::Vector<WorkloadProfile>& GetProfiles() const { return m_profiles; }
     inline bool ProfilesHasBeenSet() const { return m_profilesHasBeenSet; }
-    inline void SetProfiles(const Aws::Vector<WorkloadProfile>& value) { m_profilesHasBeenSet = true; m_profiles = value; }
-    inline void SetProfiles(Aws::Vector<WorkloadProfile>&& value) { m_profilesHasBeenSet = true; m_profiles = std::move(value); }
-    inline WorkloadSummary& WithProfiles(const Aws::Vector<WorkloadProfile>& value) { SetProfiles(value); return *this;}
-    inline WorkloadSummary& WithProfiles(Aws::Vector<WorkloadProfile>&& value) { SetProfiles(std::move(value)); return *this;}
-    inline WorkloadSummary& AddProfiles(const WorkloadProfile& value) { m_profilesHasBeenSet = true; m_profiles.push_back(value); return *this; }
-    inline WorkloadSummary& AddProfiles(WorkloadProfile&& value) { m_profilesHasBeenSet = true; m_profiles.push_back(std::move(value)); return *this; }
+    template<typename ProfilesT = Aws::Vector<WorkloadProfile>>
+    void SetProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles = std::forward<ProfilesT>(value); }
+    template<typename ProfilesT = Aws::Vector<WorkloadProfile>>
+    WorkloadSummary& WithProfiles(ProfilesT&& value) { SetProfiles(std::forward<ProfilesT>(value)); return *this;}
+    template<typename ProfilesT = WorkloadProfile>
+    WorkloadSummary& AddProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles.emplace_back(std::forward<ProfilesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Risk, int>& GetPrioritizedRiskCounts() const{ return m_prioritizedRiskCounts; }
+    inline const Aws::Map<Risk, int>& GetPrioritizedRiskCounts() const { return m_prioritizedRiskCounts; }
     inline bool PrioritizedRiskCountsHasBeenSet() const { return m_prioritizedRiskCountsHasBeenSet; }
-    inline void SetPrioritizedRiskCounts(const Aws::Map<Risk, int>& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = value; }
-    inline void SetPrioritizedRiskCounts(Aws::Map<Risk, int>&& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = std::move(value); }
-    inline WorkloadSummary& WithPrioritizedRiskCounts(const Aws::Map<Risk, int>& value) { SetPrioritizedRiskCounts(value); return *this;}
-    inline WorkloadSummary& WithPrioritizedRiskCounts(Aws::Map<Risk, int>&& value) { SetPrioritizedRiskCounts(std::move(value)); return *this;}
-    inline WorkloadSummary& AddPrioritizedRiskCounts(const Risk& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(key, value); return *this; }
-    inline WorkloadSummary& AddPrioritizedRiskCounts(Risk&& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(std::move(key), value); return *this; }
+    template<typename PrioritizedRiskCountsT = Aws::Map<Risk, int>>
+    void SetPrioritizedRiskCounts(PrioritizedRiskCountsT&& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = std::forward<PrioritizedRiskCountsT>(value); }
+    template<typename PrioritizedRiskCountsT = Aws::Map<Risk, int>>
+    WorkloadSummary& WithPrioritizedRiskCounts(PrioritizedRiskCountsT&& value) { SetPrioritizedRiskCounts(std::forward<PrioritizedRiskCountsT>(value)); return *this;}
+    inline WorkloadSummary& AddPrioritizedRiskCounts(Risk key, int value) {
+      m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
@@ -175,7 +166,7 @@ namespace Model
     Aws::String m_owner;
     bool m_ownerHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lenses;
@@ -184,7 +175,7 @@ namespace Model
     Aws::Map<Risk, int> m_riskCounts;
     bool m_riskCountsHasBeenSet = false;
 
-    WorkloadImprovementStatus m_improvementStatus;
+    WorkloadImprovementStatus m_improvementStatus{WorkloadImprovementStatus::NOT_SET};
     bool m_improvementStatusHasBeenSet = false;
 
     Aws::Vector<WorkloadProfile> m_profiles;

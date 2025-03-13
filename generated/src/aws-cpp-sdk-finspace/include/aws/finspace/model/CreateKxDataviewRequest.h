@@ -26,7 +26,7 @@ namespace Model
   class CreateKxDataviewRequest : public FinspaceRequest
   {
   public:
-    AWS_FINSPACE_API CreateKxDataviewRequest();
+    AWS_FINSPACE_API CreateKxDataviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,42 +42,36 @@ namespace Model
      * <p>A unique identifier for the kdb environment, where you want to create the
      * dataview. </p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline CreateKxDataviewRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline CreateKxDataviewRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline CreateKxDataviewRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    CreateKxDataviewRequest& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the database where you want to create a dataview. </p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline CreateKxDataviewRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline CreateKxDataviewRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline CreateKxDataviewRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    CreateKxDataviewRequest& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the dataview.</p>
      */
-    inline const Aws::String& GetDataviewName() const{ return m_dataviewName; }
+    inline const Aws::String& GetDataviewName() const { return m_dataviewName; }
     inline bool DataviewNameHasBeenSet() const { return m_dataviewNameHasBeenSet; }
-    inline void SetDataviewName(const Aws::String& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = value; }
-    inline void SetDataviewName(Aws::String&& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = std::move(value); }
-    inline void SetDataviewName(const char* value) { m_dataviewNameHasBeenSet = true; m_dataviewName.assign(value); }
-    inline CreateKxDataviewRequest& WithDataviewName(const Aws::String& value) { SetDataviewName(value); return *this;}
-    inline CreateKxDataviewRequest& WithDataviewName(Aws::String&& value) { SetDataviewName(std::move(value)); return *this;}
-    inline CreateKxDataviewRequest& WithDataviewName(const char* value) { SetDataviewName(value); return *this;}
+    template<typename DataviewNameT = Aws::String>
+    void SetDataviewName(DataviewNameT&& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = std::forward<DataviewNameT>(value); }
+    template<typename DataviewNameT = Aws::String>
+    CreateKxDataviewRequest& WithDataviewName(DataviewNameT&& value) { SetDataviewName(std::forward<DataviewNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,26 +80,22 @@ namespace Model
      * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
      * a single AZ.</p>
      */
-    inline const KxAzMode& GetAzMode() const{ return m_azMode; }
+    inline KxAzMode GetAzMode() const { return m_azMode; }
     inline bool AzModeHasBeenSet() const { return m_azModeHasBeenSet; }
-    inline void SetAzMode(const KxAzMode& value) { m_azModeHasBeenSet = true; m_azMode = value; }
-    inline void SetAzMode(KxAzMode&& value) { m_azModeHasBeenSet = true; m_azMode = std::move(value); }
-    inline CreateKxDataviewRequest& WithAzMode(const KxAzMode& value) { SetAzMode(value); return *this;}
-    inline CreateKxDataviewRequest& WithAzMode(KxAzMode&& value) { SetAzMode(std::move(value)); return *this;}
+    inline void SetAzMode(KxAzMode value) { m_azModeHasBeenSet = true; m_azMode = value; }
+    inline CreateKxDataviewRequest& WithAzMode(KxAzMode value) { SetAzMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier of the availability zones. </p>
      */
-    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
     inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
-    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
-    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
-    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
-    inline CreateKxDataviewRequest& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
-    inline CreateKxDataviewRequest& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
-    inline CreateKxDataviewRequest& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    CreateKxDataviewRequest& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +103,12 @@ namespace Model
      * <p> A unique identifier of the changeset that you want to use to ingest data.
      * </p>
      */
-    inline const Aws::String& GetChangesetId() const{ return m_changesetId; }
+    inline const Aws::String& GetChangesetId() const { return m_changesetId; }
     inline bool ChangesetIdHasBeenSet() const { return m_changesetIdHasBeenSet; }
-    inline void SetChangesetId(const Aws::String& value) { m_changesetIdHasBeenSet = true; m_changesetId = value; }
-    inline void SetChangesetId(Aws::String&& value) { m_changesetIdHasBeenSet = true; m_changesetId = std::move(value); }
-    inline void SetChangesetId(const char* value) { m_changesetIdHasBeenSet = true; m_changesetId.assign(value); }
-    inline CreateKxDataviewRequest& WithChangesetId(const Aws::String& value) { SetChangesetId(value); return *this;}
-    inline CreateKxDataviewRequest& WithChangesetId(Aws::String&& value) { SetChangesetId(std::move(value)); return *this;}
-    inline CreateKxDataviewRequest& WithChangesetId(const char* value) { SetChangesetId(value); return *this;}
+    template<typename ChangesetIdT = Aws::String>
+    void SetChangesetId(ChangesetIdT&& value) { m_changesetIdHasBeenSet = true; m_changesetId = std::forward<ChangesetIdT>(value); }
+    template<typename ChangesetIdT = Aws::String>
+    CreateKxDataviewRequest& WithChangesetId(ChangesetIdT&& value) { SetChangesetId(std::forward<ChangesetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,14 +119,14 @@ namespace Model
      * volume, they are accessible from the cluster through the default S3/object store
      * segment. </p>
      */
-    inline const Aws::Vector<KxDataviewSegmentConfiguration>& GetSegmentConfigurations() const{ return m_segmentConfigurations; }
+    inline const Aws::Vector<KxDataviewSegmentConfiguration>& GetSegmentConfigurations() const { return m_segmentConfigurations; }
     inline bool SegmentConfigurationsHasBeenSet() const { return m_segmentConfigurationsHasBeenSet; }
-    inline void SetSegmentConfigurations(const Aws::Vector<KxDataviewSegmentConfiguration>& value) { m_segmentConfigurationsHasBeenSet = true; m_segmentConfigurations = value; }
-    inline void SetSegmentConfigurations(Aws::Vector<KxDataviewSegmentConfiguration>&& value) { m_segmentConfigurationsHasBeenSet = true; m_segmentConfigurations = std::move(value); }
-    inline CreateKxDataviewRequest& WithSegmentConfigurations(const Aws::Vector<KxDataviewSegmentConfiguration>& value) { SetSegmentConfigurations(value); return *this;}
-    inline CreateKxDataviewRequest& WithSegmentConfigurations(Aws::Vector<KxDataviewSegmentConfiguration>&& value) { SetSegmentConfigurations(std::move(value)); return *this;}
-    inline CreateKxDataviewRequest& AddSegmentConfigurations(const KxDataviewSegmentConfiguration& value) { m_segmentConfigurationsHasBeenSet = true; m_segmentConfigurations.push_back(value); return *this; }
-    inline CreateKxDataviewRequest& AddSegmentConfigurations(KxDataviewSegmentConfiguration&& value) { m_segmentConfigurationsHasBeenSet = true; m_segmentConfigurations.push_back(std::move(value)); return *this; }
+    template<typename SegmentConfigurationsT = Aws::Vector<KxDataviewSegmentConfiguration>>
+    void SetSegmentConfigurations(SegmentConfigurationsT&& value) { m_segmentConfigurationsHasBeenSet = true; m_segmentConfigurations = std::forward<SegmentConfigurationsT>(value); }
+    template<typename SegmentConfigurationsT = Aws::Vector<KxDataviewSegmentConfiguration>>
+    CreateKxDataviewRequest& WithSegmentConfigurations(SegmentConfigurationsT&& value) { SetSegmentConfigurations(std::forward<SegmentConfigurationsT>(value)); return *this;}
+    template<typename SegmentConfigurationsT = KxDataviewSegmentConfiguration>
+    CreateKxDataviewRequest& AddSegmentConfigurations(SegmentConfigurationsT&& value) { m_segmentConfigurationsHasBeenSet = true; m_segmentConfigurations.emplace_back(std::forward<SegmentConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -147,7 +135,7 @@ namespace Model
      * corrections automatically to the dataview, when you ingest new changesets. The
      * default value is false.</p>
      */
-    inline bool GetAutoUpdate() const{ return m_autoUpdate; }
+    inline bool GetAutoUpdate() const { return m_autoUpdate; }
     inline bool AutoUpdateHasBeenSet() const { return m_autoUpdateHasBeenSet; }
     inline void SetAutoUpdate(bool value) { m_autoUpdateHasBeenSet = true; m_autoUpdate = value; }
     inline CreateKxDataviewRequest& WithAutoUpdate(bool value) { SetAutoUpdate(value); return *this;}
@@ -168,7 +156,7 @@ namespace Model
      * cannot change it to read-only. So, you cannot update the <code>readWrite</code>
      * parameter later.</p> </li> </ul>
      */
-    inline bool GetReadWrite() const{ return m_readWrite; }
+    inline bool GetReadWrite() const { return m_readWrite; }
     inline bool ReadWriteHasBeenSet() const { return m_readWriteHasBeenSet; }
     inline void SetReadWrite(bool value) { m_readWriteHasBeenSet = true; m_readWrite = value; }
     inline CreateKxDataviewRequest& WithReadWrite(bool value) { SetReadWrite(value); return *this;}
@@ -178,14 +166,12 @@ namespace Model
     /**
      * <p>A description of the dataview.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateKxDataviewRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateKxDataviewRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateKxDataviewRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateKxDataviewRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,33 +179,28 @@ namespace Model
      * <p> A list of key-value pairs to label the dataview. You can add up to 50 tags
      * to a dataview. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateKxDataviewRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateKxDataviewRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateKxDataviewRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateKxDataviewRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateKxDataviewRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateKxDataviewRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateKxDataviewRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateKxDataviewRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateKxDataviewRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateKxDataviewRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateKxDataviewRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateKxDataviewRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateKxDataviewRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateKxDataviewRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateKxDataviewRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -232,7 +213,7 @@ namespace Model
     Aws::String m_dataviewName;
     bool m_dataviewNameHasBeenSet = false;
 
-    KxAzMode m_azMode;
+    KxAzMode m_azMode{KxAzMode::NOT_SET};
     bool m_azModeHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
@@ -244,10 +225,10 @@ namespace Model
     Aws::Vector<KxDataviewSegmentConfiguration> m_segmentConfigurations;
     bool m_segmentConfigurationsHasBeenSet = false;
 
-    bool m_autoUpdate;
+    bool m_autoUpdate{false};
     bool m_autoUpdateHasBeenSet = false;
 
-    bool m_readWrite;
+    bool m_readWrite{false};
     bool m_readWriteHasBeenSet = false;
 
     Aws::String m_description;

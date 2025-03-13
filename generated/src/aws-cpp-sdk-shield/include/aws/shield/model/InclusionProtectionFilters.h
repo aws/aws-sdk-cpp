@@ -38,7 +38,7 @@ namespace Model
   class InclusionProtectionFilters
   {
   public:
-    AWS_SHIELD_API InclusionProtectionFilters();
+    AWS_SHIELD_API InclusionProtectionFilters() = default;
     AWS_SHIELD_API InclusionProtectionFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API InclusionProtectionFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,44 +49,41 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) of the resource whose protection you want to
      * retrieve. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
+    inline const Aws::Vector<Aws::String>& GetResourceArns() const { return m_resourceArns; }
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
-    inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
-    inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
-    inline InclusionProtectionFilters& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
-    inline InclusionProtectionFilters& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
-    inline InclusionProtectionFilters& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
-    inline InclusionProtectionFilters& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
-    inline InclusionProtectionFilters& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    void SetResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::forward<ResourceArnsT>(value); }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    InclusionProtectionFilters& WithResourceArns(ResourceArnsT&& value) { SetResourceArns(std::forward<ResourceArnsT>(value)); return *this;}
+    template<typename ResourceArnsT = Aws::String>
+    InclusionProtectionFilters& AddResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.emplace_back(std::forward<ResourceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the protection that you want to retrieve. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetProtectionNames() const{ return m_protectionNames; }
+    inline const Aws::Vector<Aws::String>& GetProtectionNames() const { return m_protectionNames; }
     inline bool ProtectionNamesHasBeenSet() const { return m_protectionNamesHasBeenSet; }
-    inline void SetProtectionNames(const Aws::Vector<Aws::String>& value) { m_protectionNamesHasBeenSet = true; m_protectionNames = value; }
-    inline void SetProtectionNames(Aws::Vector<Aws::String>&& value) { m_protectionNamesHasBeenSet = true; m_protectionNames = std::move(value); }
-    inline InclusionProtectionFilters& WithProtectionNames(const Aws::Vector<Aws::String>& value) { SetProtectionNames(value); return *this;}
-    inline InclusionProtectionFilters& WithProtectionNames(Aws::Vector<Aws::String>&& value) { SetProtectionNames(std::move(value)); return *this;}
-    inline InclusionProtectionFilters& AddProtectionNames(const Aws::String& value) { m_protectionNamesHasBeenSet = true; m_protectionNames.push_back(value); return *this; }
-    inline InclusionProtectionFilters& AddProtectionNames(Aws::String&& value) { m_protectionNamesHasBeenSet = true; m_protectionNames.push_back(std::move(value)); return *this; }
-    inline InclusionProtectionFilters& AddProtectionNames(const char* value) { m_protectionNamesHasBeenSet = true; m_protectionNames.push_back(value); return *this; }
+    template<typename ProtectionNamesT = Aws::Vector<Aws::String>>
+    void SetProtectionNames(ProtectionNamesT&& value) { m_protectionNamesHasBeenSet = true; m_protectionNames = std::forward<ProtectionNamesT>(value); }
+    template<typename ProtectionNamesT = Aws::Vector<Aws::String>>
+    InclusionProtectionFilters& WithProtectionNames(ProtectionNamesT&& value) { SetProtectionNames(std::forward<ProtectionNamesT>(value)); return *this;}
+    template<typename ProtectionNamesT = Aws::String>
+    InclusionProtectionFilters& AddProtectionNames(ProtectionNamesT&& value) { m_protectionNamesHasBeenSet = true; m_protectionNames.emplace_back(std::forward<ProtectionNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of protected resource whose protections you want to retrieve. </p>
      */
-    inline const Aws::Vector<ProtectedResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<ProtectedResourceType>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<ProtectedResourceType>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<ProtectedResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline InclusionProtectionFilters& WithResourceTypes(const Aws::Vector<ProtectedResourceType>& value) { SetResourceTypes(value); return *this;}
-    inline InclusionProtectionFilters& WithResourceTypes(Aws::Vector<ProtectedResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline InclusionProtectionFilters& AddResourceTypes(const ProtectedResourceType& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline InclusionProtectionFilters& AddResourceTypes(ProtectedResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<ProtectedResourceType>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<ProtectedResourceType>>
+    InclusionProtectionFilters& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    inline InclusionProtectionFilters& AddResourceTypes(ProtectedResourceType value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
     ///@}
   private:
 

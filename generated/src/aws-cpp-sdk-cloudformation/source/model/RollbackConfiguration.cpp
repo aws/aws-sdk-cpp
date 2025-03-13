@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-RollbackConfiguration::RollbackConfiguration() : 
-    m_rollbackTriggersHasBeenSet(false),
-    m_monitoringTimeInMinutes(0),
-    m_monitoringTimeInMinutesHasBeenSet(false)
-{
-}
-
 RollbackConfiguration::RollbackConfiguration(const XmlNode& xmlNode)
-  : RollbackConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,19 +35,21 @@ RollbackConfiguration& RollbackConfiguration::operator =(const XmlNode& xmlNode)
     if(!rollbackTriggersNode.IsNull())
     {
       XmlNode rollbackTriggersMember = rollbackTriggersNode.FirstChild("member");
+      m_rollbackTriggersHasBeenSet = !rollbackTriggersMember.IsNull();
       while(!rollbackTriggersMember.IsNull())
       {
         m_rollbackTriggers.push_back(rollbackTriggersMember);
         rollbackTriggersMember = rollbackTriggersMember.NextNode("member");
       }
 
-      m_rollbackTriggersHasBeenSet = true;
+       m_rollbackTriggersHasBeenSet = true;
     }
     XmlNode monitoringTimeInMinutesNode = resultNode.FirstChild("MonitoringTimeInMinutes");
     if(!monitoringTimeInMinutesNode.IsNull())
     {
       m_monitoringTimeInMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(monitoringTimeInMinutesNode.GetText()).c_str()).c_str());
       m_monitoringTimeInMinutesHasBeenSet = true;
+       m_monitoringTimeInMinutesHasBeenSet = true;
     }
   }
 

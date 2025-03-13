@@ -13,12 +13,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RecursiveShapesRequest::RecursiveShapesRequest() : 
-    m_nestedHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String RecursiveShapesRequest::SerializePayload() const
 {
   JsonValue payload;

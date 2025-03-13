@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDocumentClassifierRequest::DescribeDocumentClassifierRequest() : 
-    m_documentClassifierArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDocumentClassifierRequest::SerializePayload() const
 {
   JsonValue payload;

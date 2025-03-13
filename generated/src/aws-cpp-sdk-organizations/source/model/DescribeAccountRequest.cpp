@@ -12,11 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccountRequest::DescribeAccountRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccountRequest::SerializePayload() const
 {
   JsonValue payload;

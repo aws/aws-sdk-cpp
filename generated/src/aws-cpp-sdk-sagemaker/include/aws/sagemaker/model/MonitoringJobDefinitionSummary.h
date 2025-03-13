@@ -32,7 +32,7 @@ namespace Model
   class MonitoringJobDefinitionSummary
   {
   public:
-    AWS_SAGEMAKER_API MonitoringJobDefinitionSummary();
+    AWS_SAGEMAKER_API MonitoringJobDefinitionSummary() = default;
     AWS_SAGEMAKER_API MonitoringJobDefinitionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API MonitoringJobDefinitionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,54 +42,48 @@ namespace Model
     /**
      * <p>The name of the monitoring job.</p>
      */
-    inline const Aws::String& GetMonitoringJobDefinitionName() const{ return m_monitoringJobDefinitionName; }
+    inline const Aws::String& GetMonitoringJobDefinitionName() const { return m_monitoringJobDefinitionName; }
     inline bool MonitoringJobDefinitionNameHasBeenSet() const { return m_monitoringJobDefinitionNameHasBeenSet; }
-    inline void SetMonitoringJobDefinitionName(const Aws::String& value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName = value; }
-    inline void SetMonitoringJobDefinitionName(Aws::String&& value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName = std::move(value); }
-    inline void SetMonitoringJobDefinitionName(const char* value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName.assign(value); }
-    inline MonitoringJobDefinitionSummary& WithMonitoringJobDefinitionName(const Aws::String& value) { SetMonitoringJobDefinitionName(value); return *this;}
-    inline MonitoringJobDefinitionSummary& WithMonitoringJobDefinitionName(Aws::String&& value) { SetMonitoringJobDefinitionName(std::move(value)); return *this;}
-    inline MonitoringJobDefinitionSummary& WithMonitoringJobDefinitionName(const char* value) { SetMonitoringJobDefinitionName(value); return *this;}
+    template<typename MonitoringJobDefinitionNameT = Aws::String>
+    void SetMonitoringJobDefinitionName(MonitoringJobDefinitionNameT&& value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName = std::forward<MonitoringJobDefinitionNameT>(value); }
+    template<typename MonitoringJobDefinitionNameT = Aws::String>
+    MonitoringJobDefinitionSummary& WithMonitoringJobDefinitionName(MonitoringJobDefinitionNameT&& value) { SetMonitoringJobDefinitionName(std::forward<MonitoringJobDefinitionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
      */
-    inline const Aws::String& GetMonitoringJobDefinitionArn() const{ return m_monitoringJobDefinitionArn; }
+    inline const Aws::String& GetMonitoringJobDefinitionArn() const { return m_monitoringJobDefinitionArn; }
     inline bool MonitoringJobDefinitionArnHasBeenSet() const { return m_monitoringJobDefinitionArnHasBeenSet; }
-    inline void SetMonitoringJobDefinitionArn(const Aws::String& value) { m_monitoringJobDefinitionArnHasBeenSet = true; m_monitoringJobDefinitionArn = value; }
-    inline void SetMonitoringJobDefinitionArn(Aws::String&& value) { m_monitoringJobDefinitionArnHasBeenSet = true; m_monitoringJobDefinitionArn = std::move(value); }
-    inline void SetMonitoringJobDefinitionArn(const char* value) { m_monitoringJobDefinitionArnHasBeenSet = true; m_monitoringJobDefinitionArn.assign(value); }
-    inline MonitoringJobDefinitionSummary& WithMonitoringJobDefinitionArn(const Aws::String& value) { SetMonitoringJobDefinitionArn(value); return *this;}
-    inline MonitoringJobDefinitionSummary& WithMonitoringJobDefinitionArn(Aws::String&& value) { SetMonitoringJobDefinitionArn(std::move(value)); return *this;}
-    inline MonitoringJobDefinitionSummary& WithMonitoringJobDefinitionArn(const char* value) { SetMonitoringJobDefinitionArn(value); return *this;}
+    template<typename MonitoringJobDefinitionArnT = Aws::String>
+    void SetMonitoringJobDefinitionArn(MonitoringJobDefinitionArnT&& value) { m_monitoringJobDefinitionArnHasBeenSet = true; m_monitoringJobDefinitionArn = std::forward<MonitoringJobDefinitionArnT>(value); }
+    template<typename MonitoringJobDefinitionArnT = Aws::String>
+    MonitoringJobDefinitionSummary& WithMonitoringJobDefinitionArn(MonitoringJobDefinitionArnT&& value) { SetMonitoringJobDefinitionArn(std::forward<MonitoringJobDefinitionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the monitoring job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline MonitoringJobDefinitionSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline MonitoringJobDefinitionSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    MonitoringJobDefinitionSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the endpoint that the job monitors.</p>
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-    inline MonitoringJobDefinitionSummary& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline MonitoringJobDefinitionSummary& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline MonitoringJobDefinitionSummary& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    MonitoringJobDefinitionSummary& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -99,7 +93,7 @@ namespace Model
     Aws::String m_monitoringJobDefinitionArn;
     bool m_monitoringJobDefinitionArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_endpointName;

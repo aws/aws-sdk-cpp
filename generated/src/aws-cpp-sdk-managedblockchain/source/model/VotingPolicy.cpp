@@ -18,13 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-VotingPolicy::VotingPolicy() : 
-    m_approvalThresholdPolicyHasBeenSet(false)
-{
-}
-
 VotingPolicy::VotingPolicy(JsonView jsonValue)
-  : VotingPolicy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VotingPolicy& VotingPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApprovalThresholdPolicy"))
   {
     m_approvalThresholdPolicy = jsonValue.GetObject("ApprovalThresholdPolicy");
-
     m_approvalThresholdPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

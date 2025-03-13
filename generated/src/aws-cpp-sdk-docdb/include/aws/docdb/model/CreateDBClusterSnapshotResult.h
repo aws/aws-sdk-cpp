@@ -28,33 +28,35 @@ namespace Model
   class CreateDBClusterSnapshotResult
   {
   public:
-    AWS_DOCDB_API CreateDBClusterSnapshotResult();
+    AWS_DOCDB_API CreateDBClusterSnapshotResult() = default;
     AWS_DOCDB_API CreateDBClusterSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_DOCDB_API CreateDBClusterSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const DBClusterSnapshot& GetDBClusterSnapshot() const{ return m_dBClusterSnapshot; }
-    inline void SetDBClusterSnapshot(const DBClusterSnapshot& value) { m_dBClusterSnapshot = value; }
-    inline void SetDBClusterSnapshot(DBClusterSnapshot&& value) { m_dBClusterSnapshot = std::move(value); }
-    inline CreateDBClusterSnapshotResult& WithDBClusterSnapshot(const DBClusterSnapshot& value) { SetDBClusterSnapshot(value); return *this;}
-    inline CreateDBClusterSnapshotResult& WithDBClusterSnapshot(DBClusterSnapshot&& value) { SetDBClusterSnapshot(std::move(value)); return *this;}
+    inline const DBClusterSnapshot& GetDBClusterSnapshot() const { return m_dBClusterSnapshot; }
+    template<typename DBClusterSnapshotT = DBClusterSnapshot>
+    void SetDBClusterSnapshot(DBClusterSnapshotT&& value) { m_dBClusterSnapshotHasBeenSet = true; m_dBClusterSnapshot = std::forward<DBClusterSnapshotT>(value); }
+    template<typename DBClusterSnapshotT = DBClusterSnapshot>
+    CreateDBClusterSnapshotResult& WithDBClusterSnapshot(DBClusterSnapshotT&& value) { SetDBClusterSnapshot(std::forward<DBClusterSnapshotT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateDBClusterSnapshotResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateDBClusterSnapshotResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateDBClusterSnapshotResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBClusterSnapshot m_dBClusterSnapshot;
+    bool m_dBClusterSnapshotHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

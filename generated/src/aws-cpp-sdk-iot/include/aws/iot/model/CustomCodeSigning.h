@@ -34,7 +34,7 @@ namespace Model
   class CustomCodeSigning
   {
   public:
-    AWS_IOT_API CustomCodeSigning();
+    AWS_IOT_API CustomCodeSigning() = default;
     AWS_IOT_API CustomCodeSigning(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API CustomCodeSigning& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The signature for the file.</p>
      */
-    inline const CodeSigningSignature& GetSignature() const{ return m_signature; }
+    inline const CodeSigningSignature& GetSignature() const { return m_signature; }
     inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
-    inline void SetSignature(const CodeSigningSignature& value) { m_signatureHasBeenSet = true; m_signature = value; }
-    inline void SetSignature(CodeSigningSignature&& value) { m_signatureHasBeenSet = true; m_signature = std::move(value); }
-    inline CustomCodeSigning& WithSignature(const CodeSigningSignature& value) { SetSignature(value); return *this;}
-    inline CustomCodeSigning& WithSignature(CodeSigningSignature&& value) { SetSignature(std::move(value)); return *this;}
+    template<typename SignatureT = CodeSigningSignature>
+    void SetSignature(SignatureT&& value) { m_signatureHasBeenSet = true; m_signature = std::forward<SignatureT>(value); }
+    template<typename SignatureT = CodeSigningSignature>
+    CustomCodeSigning& WithSignature(SignatureT&& value) { SetSignature(std::forward<SignatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The certificate chain.</p>
      */
-    inline const CodeSigningCertificateChain& GetCertificateChain() const{ return m_certificateChain; }
+    inline const CodeSigningCertificateChain& GetCertificateChain() const { return m_certificateChain; }
     inline bool CertificateChainHasBeenSet() const { return m_certificateChainHasBeenSet; }
-    inline void SetCertificateChain(const CodeSigningCertificateChain& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
-    inline void SetCertificateChain(CodeSigningCertificateChain&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::move(value); }
-    inline CustomCodeSigning& WithCertificateChain(const CodeSigningCertificateChain& value) { SetCertificateChain(value); return *this;}
-    inline CustomCodeSigning& WithCertificateChain(CodeSigningCertificateChain&& value) { SetCertificateChain(std::move(value)); return *this;}
+    template<typename CertificateChainT = CodeSigningCertificateChain>
+    void SetCertificateChain(CertificateChainT&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::forward<CertificateChainT>(value); }
+    template<typename CertificateChainT = CodeSigningCertificateChain>
+    CustomCodeSigning& WithCertificateChain(CertificateChainT&& value) { SetCertificateChain(std::forward<CertificateChainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +72,12 @@ namespace Model
      * example, FreeRTOS uses <code>SHA256</code> or <code>SHA1</code>, so you can pass
      * either of them based on which was used for generating the signature.</p>
      */
-    inline const Aws::String& GetHashAlgorithm() const{ return m_hashAlgorithm; }
+    inline const Aws::String& GetHashAlgorithm() const { return m_hashAlgorithm; }
     inline bool HashAlgorithmHasBeenSet() const { return m_hashAlgorithmHasBeenSet; }
-    inline void SetHashAlgorithm(const Aws::String& value) { m_hashAlgorithmHasBeenSet = true; m_hashAlgorithm = value; }
-    inline void SetHashAlgorithm(Aws::String&& value) { m_hashAlgorithmHasBeenSet = true; m_hashAlgorithm = std::move(value); }
-    inline void SetHashAlgorithm(const char* value) { m_hashAlgorithmHasBeenSet = true; m_hashAlgorithm.assign(value); }
-    inline CustomCodeSigning& WithHashAlgorithm(const Aws::String& value) { SetHashAlgorithm(value); return *this;}
-    inline CustomCodeSigning& WithHashAlgorithm(Aws::String&& value) { SetHashAlgorithm(std::move(value)); return *this;}
-    inline CustomCodeSigning& WithHashAlgorithm(const char* value) { SetHashAlgorithm(value); return *this;}
+    template<typename HashAlgorithmT = Aws::String>
+    void SetHashAlgorithm(HashAlgorithmT&& value) { m_hashAlgorithmHasBeenSet = true; m_hashAlgorithm = std::forward<HashAlgorithmT>(value); }
+    template<typename HashAlgorithmT = Aws::String>
+    CustomCodeSigning& WithHashAlgorithm(HashAlgorithmT&& value) { SetHashAlgorithm(std::forward<HashAlgorithmT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +88,12 @@ namespace Model
      * example, FreeRTOS uses <code>ECDSA</code> or <code>RSA</code>, so you can pass
      * either of them based on which was used for generating the signature.</p>
      */
-    inline const Aws::String& GetSignatureAlgorithm() const{ return m_signatureAlgorithm; }
+    inline const Aws::String& GetSignatureAlgorithm() const { return m_signatureAlgorithm; }
     inline bool SignatureAlgorithmHasBeenSet() const { return m_signatureAlgorithmHasBeenSet; }
-    inline void SetSignatureAlgorithm(const Aws::String& value) { m_signatureAlgorithmHasBeenSet = true; m_signatureAlgorithm = value; }
-    inline void SetSignatureAlgorithm(Aws::String&& value) { m_signatureAlgorithmHasBeenSet = true; m_signatureAlgorithm = std::move(value); }
-    inline void SetSignatureAlgorithm(const char* value) { m_signatureAlgorithmHasBeenSet = true; m_signatureAlgorithm.assign(value); }
-    inline CustomCodeSigning& WithSignatureAlgorithm(const Aws::String& value) { SetSignatureAlgorithm(value); return *this;}
-    inline CustomCodeSigning& WithSignatureAlgorithm(Aws::String&& value) { SetSignatureAlgorithm(std::move(value)); return *this;}
-    inline CustomCodeSigning& WithSignatureAlgorithm(const char* value) { SetSignatureAlgorithm(value); return *this;}
+    template<typename SignatureAlgorithmT = Aws::String>
+    void SetSignatureAlgorithm(SignatureAlgorithmT&& value) { m_signatureAlgorithmHasBeenSet = true; m_signatureAlgorithm = std::forward<SignatureAlgorithmT>(value); }
+    template<typename SignatureAlgorithmT = Aws::String>
+    CustomCodeSigning& WithSignatureAlgorithm(SignatureAlgorithmT&& value) { SetSignatureAlgorithm(std::forward<SignatureAlgorithmT>(value)); return *this;}
     ///@}
   private:
 

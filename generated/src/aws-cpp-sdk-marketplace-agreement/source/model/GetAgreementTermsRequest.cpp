@@ -12,14 +12,6 @@ using namespace Aws::AgreementService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAgreementTermsRequest::GetAgreementTermsRequest() : 
-    m_agreementIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetAgreementTermsRequest::SerializePayload() const
 {
   JsonValue payload;

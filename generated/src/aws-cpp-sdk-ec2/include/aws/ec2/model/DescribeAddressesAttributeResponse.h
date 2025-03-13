@@ -30,7 +30,7 @@ namespace Model
   class DescribeAddressesAttributeResponse
   {
   public:
-    AWS_EC2_API DescribeAddressesAttributeResponse();
+    AWS_EC2_API DescribeAddressesAttributeResponse() = default;
     AWS_EC2_API DescribeAddressesAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeAddressesAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the IP addresses.</p>
      */
-    inline const Aws::Vector<AddressAttribute>& GetAddresses() const{ return m_addresses; }
-    inline void SetAddresses(const Aws::Vector<AddressAttribute>& value) { m_addresses = value; }
-    inline void SetAddresses(Aws::Vector<AddressAttribute>&& value) { m_addresses = std::move(value); }
-    inline DescribeAddressesAttributeResponse& WithAddresses(const Aws::Vector<AddressAttribute>& value) { SetAddresses(value); return *this;}
-    inline DescribeAddressesAttributeResponse& WithAddresses(Aws::Vector<AddressAttribute>&& value) { SetAddresses(std::move(value)); return *this;}
-    inline DescribeAddressesAttributeResponse& AddAddresses(const AddressAttribute& value) { m_addresses.push_back(value); return *this; }
-    inline DescribeAddressesAttributeResponse& AddAddresses(AddressAttribute&& value) { m_addresses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AddressAttribute>& GetAddresses() const { return m_addresses; }
+    template<typename AddressesT = Aws::Vector<AddressAttribute>>
+    void SetAddresses(AddressesT&& value) { m_addressesHasBeenSet = true; m_addresses = std::forward<AddressesT>(value); }
+    template<typename AddressesT = Aws::Vector<AddressAttribute>>
+    DescribeAddressesAttributeResponse& WithAddresses(AddressesT&& value) { SetAddresses(std::forward<AddressesT>(value)); return *this;}
+    template<typename AddressesT = AddressAttribute>
+    DescribeAddressesAttributeResponse& AddAddresses(AddressesT&& value) { m_addressesHasBeenSet = true; m_addresses.emplace_back(std::forward<AddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeAddressesAttributeResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAddressesAttributeResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAddressesAttributeResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAddressesAttributeResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeAddressesAttributeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeAddressesAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeAddressesAttributeResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AddressAttribute> m_addresses;
+    bool m_addressesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

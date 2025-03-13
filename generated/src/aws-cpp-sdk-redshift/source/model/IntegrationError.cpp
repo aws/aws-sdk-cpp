@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-IntegrationError::IntegrationError() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 IntegrationError::IntegrationError(const XmlNode& xmlNode)
-  : IntegrationError()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ IntegrationError& IntegrationError::operator =(const XmlNode& xmlNode)
     {
       m_errorCode = Aws::Utils::Xml::DecodeEscapedXmlText(errorCodeNode.GetText());
       m_errorCodeHasBeenSet = true;
+       m_errorCodeHasBeenSet = true;
     }
     XmlNode errorMessageNode = resultNode.FirstChild("ErrorMessage");
     if(!errorMessageNode.IsNull())
     {
       m_errorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(errorMessageNode.GetText());
       m_errorMessageHasBeenSet = true;
+       m_errorMessageHasBeenSet = true;
     }
   }
 

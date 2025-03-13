@@ -12,15 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFeedbackRequest::GetFeedbackRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_anomalyGroupTimeSeriesFeedbackHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetFeedbackRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RawResponse::RawResponse() : 
-    m_contentHasBeenSet(false)
-{
-}
-
 RawResponse::RawResponse(JsonView jsonValue)
-  : RawResponse()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RawResponse& RawResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetString("content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

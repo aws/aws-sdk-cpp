@@ -18,18 +18,7 @@ namespace IoT
 namespace Model
 {
 
-SbomValidationResultSummary::SbomValidationResultSummary() : 
-    m_fileNameHasBeenSet(false),
-    m_validationResult(SbomValidationResult::NOT_SET),
-    m_validationResultHasBeenSet(false),
-    m_errorCode(SbomValidationErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 SbomValidationResultSummary::SbomValidationResultSummary(JsonView jsonValue)
-  : SbomValidationResultSummary()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ SbomValidationResultSummary& SbomValidationResultSummary::operator =(JsonView js
   if(jsonValue.ValueExists("fileName"))
   {
     m_fileName = jsonValue.GetString("fileName");
-
     m_fileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validationResult"))
   {
     m_validationResult = SbomValidationResultMapper::GetSbomValidationResultForName(jsonValue.GetString("validationResult"));
-
     m_validationResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = SbomValidationErrorCodeMapper::GetSbomValidationErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

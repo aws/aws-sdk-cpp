@@ -18,15 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-AsyncInvokeS3OutputDataConfig::AsyncInvokeS3OutputDataConfig() : 
-    m_s3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_bucketOwnerHasBeenSet(false)
-{
-}
-
 AsyncInvokeS3OutputDataConfig::AsyncInvokeS3OutputDataConfig(JsonView jsonValue)
-  : AsyncInvokeS3OutputDataConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AsyncInvokeS3OutputDataConfig& AsyncInvokeS3OutputDataConfig::operator =(JsonVie
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketOwner"))
   {
     m_bucketOwner = jsonValue.GetString("bucketOwner");
-
     m_bucketOwnerHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class GetFormTypeResult
   {
   public:
-    AWS_DATAZONE_API GetFormTypeResult();
+    AWS_DATAZONE_API GetFormTypeResult() = default;
     AWS_DATAZONE_API GetFormTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API GetFormTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,37 +41,33 @@ namespace Model
     /**
      * <p>The timestamp of when this metadata form type was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetFormTypeResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetFormTypeResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetFormTypeResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon DataZone user who created this metadata form type.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline GetFormTypeResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline GetFormTypeResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline GetFormTypeResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    GetFormTypeResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the metadata form type.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetFormTypeResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetFormTypeResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetFormTypeResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetFormTypeResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,50 +75,46 @@ namespace Model
      * <p>The ID of the Amazon DataZone domain in which this metadata form type
      * exists.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
-    inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainId.assign(value); }
-    inline GetFormTypeResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline GetFormTypeResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline GetFormTypeResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    GetFormTypeResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The imports of the metadata form type.</p>
      */
-    inline const Aws::Vector<Import>& GetImports() const{ return m_imports; }
-    inline void SetImports(const Aws::Vector<Import>& value) { m_imports = value; }
-    inline void SetImports(Aws::Vector<Import>&& value) { m_imports = std::move(value); }
-    inline GetFormTypeResult& WithImports(const Aws::Vector<Import>& value) { SetImports(value); return *this;}
-    inline GetFormTypeResult& WithImports(Aws::Vector<Import>&& value) { SetImports(std::move(value)); return *this;}
-    inline GetFormTypeResult& AddImports(const Import& value) { m_imports.push_back(value); return *this; }
-    inline GetFormTypeResult& AddImports(Import&& value) { m_imports.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Import>& GetImports() const { return m_imports; }
+    template<typename ImportsT = Aws::Vector<Import>>
+    void SetImports(ImportsT&& value) { m_importsHasBeenSet = true; m_imports = std::forward<ImportsT>(value); }
+    template<typename ImportsT = Aws::Vector<Import>>
+    GetFormTypeResult& WithImports(ImportsT&& value) { SetImports(std::forward<ImportsT>(value)); return *this;}
+    template<typename ImportsT = Import>
+    GetFormTypeResult& AddImports(ImportsT&& value) { m_importsHasBeenSet = true; m_imports.emplace_back(std::forward<ImportsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The model of the metadata form type.</p>
      */
-    inline const Model& GetModel() const{ return m_model; }
-    inline void SetModel(const Model& value) { m_model = value; }
-    inline void SetModel(Model&& value) { m_model = std::move(value); }
-    inline GetFormTypeResult& WithModel(const Model& value) { SetModel(value); return *this;}
-    inline GetFormTypeResult& WithModel(Model&& value) { SetModel(std::move(value)); return *this;}
+    inline const Model& GetModel() const { return m_model; }
+    template<typename ModelT = Model>
+    void SetModel(ModelT&& value) { m_modelHasBeenSet = true; m_model = std::forward<ModelT>(value); }
+    template<typename ModelT = Model>
+    GetFormTypeResult& WithModel(ModelT&& value) { SetModel(std::forward<ModelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the metadata form type.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetFormTypeResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetFormTypeResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetFormTypeResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetFormTypeResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,13 +122,11 @@ namespace Model
      * <p>The ID of the Amazon DataZone domain in which the metadata form type was
      * originally created.</p>
      */
-    inline const Aws::String& GetOriginDomainId() const{ return m_originDomainId; }
-    inline void SetOriginDomainId(const Aws::String& value) { m_originDomainId = value; }
-    inline void SetOriginDomainId(Aws::String&& value) { m_originDomainId = std::move(value); }
-    inline void SetOriginDomainId(const char* value) { m_originDomainId.assign(value); }
-    inline GetFormTypeResult& WithOriginDomainId(const Aws::String& value) { SetOriginDomainId(value); return *this;}
-    inline GetFormTypeResult& WithOriginDomainId(Aws::String&& value) { SetOriginDomainId(std::move(value)); return *this;}
-    inline GetFormTypeResult& WithOriginDomainId(const char* value) { SetOriginDomainId(value); return *this;}
+    inline const Aws::String& GetOriginDomainId() const { return m_originDomainId; }
+    template<typename OriginDomainIdT = Aws::String>
+    void SetOriginDomainId(OriginDomainIdT&& value) { m_originDomainIdHasBeenSet = true; m_originDomainId = std::forward<OriginDomainIdT>(value); }
+    template<typename OriginDomainIdT = Aws::String>
+    GetFormTypeResult& WithOriginDomainId(OriginDomainIdT&& value) { SetOriginDomainId(std::forward<OriginDomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,89 +134,92 @@ namespace Model
      * <p>The ID of the project in which this metadata form type was originally
      * created.</p>
      */
-    inline const Aws::String& GetOriginProjectId() const{ return m_originProjectId; }
-    inline void SetOriginProjectId(const Aws::String& value) { m_originProjectId = value; }
-    inline void SetOriginProjectId(Aws::String&& value) { m_originProjectId = std::move(value); }
-    inline void SetOriginProjectId(const char* value) { m_originProjectId.assign(value); }
-    inline GetFormTypeResult& WithOriginProjectId(const Aws::String& value) { SetOriginProjectId(value); return *this;}
-    inline GetFormTypeResult& WithOriginProjectId(Aws::String&& value) { SetOriginProjectId(std::move(value)); return *this;}
-    inline GetFormTypeResult& WithOriginProjectId(const char* value) { SetOriginProjectId(value); return *this;}
+    inline const Aws::String& GetOriginProjectId() const { return m_originProjectId; }
+    template<typename OriginProjectIdT = Aws::String>
+    void SetOriginProjectId(OriginProjectIdT&& value) { m_originProjectIdHasBeenSet = true; m_originProjectId = std::forward<OriginProjectIdT>(value); }
+    template<typename OriginProjectIdT = Aws::String>
+    GetFormTypeResult& WithOriginProjectId(OriginProjectIdT&& value) { SetOriginProjectId(std::forward<OriginProjectIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the project that owns this metadata form type.</p>
      */
-    inline const Aws::String& GetOwningProjectId() const{ return m_owningProjectId; }
-    inline void SetOwningProjectId(const Aws::String& value) { m_owningProjectId = value; }
-    inline void SetOwningProjectId(Aws::String&& value) { m_owningProjectId = std::move(value); }
-    inline void SetOwningProjectId(const char* value) { m_owningProjectId.assign(value); }
-    inline GetFormTypeResult& WithOwningProjectId(const Aws::String& value) { SetOwningProjectId(value); return *this;}
-    inline GetFormTypeResult& WithOwningProjectId(Aws::String&& value) { SetOwningProjectId(std::move(value)); return *this;}
-    inline GetFormTypeResult& WithOwningProjectId(const char* value) { SetOwningProjectId(value); return *this;}
+    inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
+    template<typename OwningProjectIdT = Aws::String>
+    void SetOwningProjectId(OwningProjectIdT&& value) { m_owningProjectIdHasBeenSet = true; m_owningProjectId = std::forward<OwningProjectIdT>(value); }
+    template<typename OwningProjectIdT = Aws::String>
+    GetFormTypeResult& WithOwningProjectId(OwningProjectIdT&& value) { SetOwningProjectId(std::forward<OwningProjectIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revision of the metadata form type.</p>
      */
-    inline const Aws::String& GetRevision() const{ return m_revision; }
-    inline void SetRevision(const Aws::String& value) { m_revision = value; }
-    inline void SetRevision(Aws::String&& value) { m_revision = std::move(value); }
-    inline void SetRevision(const char* value) { m_revision.assign(value); }
-    inline GetFormTypeResult& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
-    inline GetFormTypeResult& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
-    inline GetFormTypeResult& WithRevision(const char* value) { SetRevision(value); return *this;}
+    inline const Aws::String& GetRevision() const { return m_revision; }
+    template<typename RevisionT = Aws::String>
+    void SetRevision(RevisionT&& value) { m_revisionHasBeenSet = true; m_revision = std::forward<RevisionT>(value); }
+    template<typename RevisionT = Aws::String>
+    GetFormTypeResult& WithRevision(RevisionT&& value) { SetRevision(std::forward<RevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the metadata form type.</p>
      */
-    inline const FormTypeStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const FormTypeStatus& value) { m_status = value; }
-    inline void SetStatus(FormTypeStatus&& value) { m_status = std::move(value); }
-    inline GetFormTypeResult& WithStatus(const FormTypeStatus& value) { SetStatus(value); return *this;}
-    inline GetFormTypeResult& WithStatus(FormTypeStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline FormTypeStatus GetStatus() const { return m_status; }
+    inline void SetStatus(FormTypeStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetFormTypeResult& WithStatus(FormTypeStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFormTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFormTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFormTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFormTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_domainId;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::Vector<Import> m_imports;
+    bool m_importsHasBeenSet = false;
 
     Model m_model;
+    bool m_modelHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_originDomainId;
+    bool m_originDomainIdHasBeenSet = false;
 
     Aws::String m_originProjectId;
+    bool m_originProjectIdHasBeenSet = false;
 
     Aws::String m_owningProjectId;
+    bool m_owningProjectIdHasBeenSet = false;
 
     Aws::String m_revision;
+    bool m_revisionHasBeenSet = false;
 
-    FormTypeStatus m_status;
+    FormTypeStatus m_status{FormTypeStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

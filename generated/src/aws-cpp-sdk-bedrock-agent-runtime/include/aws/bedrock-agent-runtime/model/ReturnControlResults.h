@@ -33,7 +33,7 @@ namespace Model
   class ReturnControlResults
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API ReturnControlResults();
+    AWS_BEDROCKAGENTRUNTIME_API ReturnControlResults() = default;
     AWS_BEDROCKAGENTRUNTIME_API ReturnControlResults(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API ReturnControlResults& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The action's invocation ID.</p>
      */
-    inline const Aws::String& GetInvocationId() const{ return m_invocationId; }
+    inline const Aws::String& GetInvocationId() const { return m_invocationId; }
     inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
-    inline void SetInvocationId(const Aws::String& value) { m_invocationIdHasBeenSet = true; m_invocationId = value; }
-    inline void SetInvocationId(Aws::String&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::move(value); }
-    inline void SetInvocationId(const char* value) { m_invocationIdHasBeenSet = true; m_invocationId.assign(value); }
-    inline ReturnControlResults& WithInvocationId(const Aws::String& value) { SetInvocationId(value); return *this;}
-    inline ReturnControlResults& WithInvocationId(Aws::String&& value) { SetInvocationId(std::move(value)); return *this;}
-    inline ReturnControlResults& WithInvocationId(const char* value) { SetInvocationId(value); return *this;}
+    template<typename InvocationIdT = Aws::String>
+    void SetInvocationId(InvocationIdT&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::forward<InvocationIdT>(value); }
+    template<typename InvocationIdT = Aws::String>
+    ReturnControlResults& WithInvocationId(InvocationIdT&& value) { SetInvocationId(std::forward<InvocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action invocation result.</p>
      */
-    inline const Aws::Vector<InvocationResultMember>& GetReturnControlInvocationResults() const{ return m_returnControlInvocationResults; }
+    inline const Aws::Vector<InvocationResultMember>& GetReturnControlInvocationResults() const { return m_returnControlInvocationResults; }
     inline bool ReturnControlInvocationResultsHasBeenSet() const { return m_returnControlInvocationResultsHasBeenSet; }
-    inline void SetReturnControlInvocationResults(const Aws::Vector<InvocationResultMember>& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults = value; }
-    inline void SetReturnControlInvocationResults(Aws::Vector<InvocationResultMember>&& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults = std::move(value); }
-    inline ReturnControlResults& WithReturnControlInvocationResults(const Aws::Vector<InvocationResultMember>& value) { SetReturnControlInvocationResults(value); return *this;}
-    inline ReturnControlResults& WithReturnControlInvocationResults(Aws::Vector<InvocationResultMember>&& value) { SetReturnControlInvocationResults(std::move(value)); return *this;}
-    inline ReturnControlResults& AddReturnControlInvocationResults(const InvocationResultMember& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults.push_back(value); return *this; }
-    inline ReturnControlResults& AddReturnControlInvocationResults(InvocationResultMember&& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults.push_back(std::move(value)); return *this; }
+    template<typename ReturnControlInvocationResultsT = Aws::Vector<InvocationResultMember>>
+    void SetReturnControlInvocationResults(ReturnControlInvocationResultsT&& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults = std::forward<ReturnControlInvocationResultsT>(value); }
+    template<typename ReturnControlInvocationResultsT = Aws::Vector<InvocationResultMember>>
+    ReturnControlResults& WithReturnControlInvocationResults(ReturnControlInvocationResultsT&& value) { SetReturnControlInvocationResults(std::forward<ReturnControlInvocationResultsT>(value)); return *this;}
+    template<typename ReturnControlInvocationResultsT = InvocationResultMember>
+    ReturnControlResults& AddReturnControlInvocationResults(ReturnControlInvocationResultsT&& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults.emplace_back(std::forward<ReturnControlInvocationResultsT>(value)); return *this; }
     ///@}
   private:
 

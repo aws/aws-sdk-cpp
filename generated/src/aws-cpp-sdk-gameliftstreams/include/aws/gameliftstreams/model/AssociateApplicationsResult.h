@@ -28,7 +28,7 @@ namespace Model
   class AssociateApplicationsResult
   {
   public:
-    AWS_GAMELIFTSTREAMS_API AssociateApplicationsResult();
+    AWS_GAMELIFTSTREAMS_API AssociateApplicationsResult() = default;
     AWS_GAMELIFTSTREAMS_API AssociateApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFTSTREAMS_API AssociateApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,14 +43,13 @@ namespace Model
      * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>
      * or ID-<code>9ZY8X7Wv6</code>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetApplicationArns() const{ return m_applicationArns; }
-    inline void SetApplicationArns(const Aws::Vector<Aws::String>& value) { m_applicationArns = value; }
-    inline void SetApplicationArns(Aws::Vector<Aws::String>&& value) { m_applicationArns = std::move(value); }
-    inline AssociateApplicationsResult& WithApplicationArns(const Aws::Vector<Aws::String>& value) { SetApplicationArns(value); return *this;}
-    inline AssociateApplicationsResult& WithApplicationArns(Aws::Vector<Aws::String>&& value) { SetApplicationArns(std::move(value)); return *this;}
-    inline AssociateApplicationsResult& AddApplicationArns(const Aws::String& value) { m_applicationArns.push_back(value); return *this; }
-    inline AssociateApplicationsResult& AddApplicationArns(Aws::String&& value) { m_applicationArns.push_back(std::move(value)); return *this; }
-    inline AssociateApplicationsResult& AddApplicationArns(const char* value) { m_applicationArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetApplicationArns() const { return m_applicationArns; }
+    template<typename ApplicationArnsT = Aws::Vector<Aws::String>>
+    void SetApplicationArns(ApplicationArnsT&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns = std::forward<ApplicationArnsT>(value); }
+    template<typename ApplicationArnsT = Aws::Vector<Aws::String>>
+    AssociateApplicationsResult& WithApplicationArns(ApplicationArnsT&& value) { SetApplicationArns(std::forward<ApplicationArnsT>(value)); return *this;}
+    template<typename ApplicationArnsT = Aws::String>
+    AssociateApplicationsResult& AddApplicationArns(ApplicationArnsT&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns.emplace_back(std::forward<ApplicationArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,32 +62,31 @@ namespace Model
      * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>
      * or ID-<code>1AB2C3De4</code>. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline AssociateApplicationsResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AssociateApplicationsResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AssociateApplicationsResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AssociateApplicationsResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateApplicationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateApplicationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateApplicationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateApplicationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_applicationArns;
+    bool m_applicationArnsHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

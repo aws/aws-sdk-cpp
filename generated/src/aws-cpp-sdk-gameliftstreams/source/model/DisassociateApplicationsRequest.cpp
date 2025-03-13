@@ -12,12 +12,6 @@ using namespace Aws::GameLiftStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateApplicationsRequest::DisassociateApplicationsRequest() : 
-    m_applicationIdentifiersHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateApplicationsRequest::SerializePayload() const
 {
   JsonValue payload;

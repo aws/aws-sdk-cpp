@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-IdentityProviderConfiguration::IdentityProviderConfiguration() : 
-    m_samlConfigurationHasBeenSet(false),
-    m_openIDConnectConfigurationHasBeenSet(false)
-{
-}
-
 IdentityProviderConfiguration::IdentityProviderConfiguration(JsonView jsonValue)
-  : IdentityProviderConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IdentityProviderConfiguration& IdentityProviderConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("samlConfiguration"))
   {
     m_samlConfiguration = jsonValue.GetObject("samlConfiguration");
-
     m_samlConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openIDConnectConfiguration"))
   {
     m_openIDConnectConfiguration = jsonValue.GetObject("openIDConnectConfiguration");
-
     m_openIDConnectConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

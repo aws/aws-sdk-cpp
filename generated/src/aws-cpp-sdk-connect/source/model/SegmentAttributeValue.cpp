@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SegmentAttributeValue::SegmentAttributeValue() : 
-    m_valueStringHasBeenSet(false),
-    m_valueMapHasBeenSet(false),
-    m_valueInteger(0),
-    m_valueIntegerHasBeenSet(false)
-{
-}
-
 SegmentAttributeValue::SegmentAttributeValue(JsonView jsonValue)
-  : SegmentAttributeValue()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ SegmentAttributeValue& SegmentAttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ValueString"))
   {
     m_valueString = jsonValue.GetString("ValueString");
-
     m_valueStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueMap"))
   {
     Aws::Map<Aws::String, JsonView> valueMapJsonMap = jsonValue.GetObject("ValueMap").GetAllObjects();
@@ -50,14 +39,11 @@ SegmentAttributeValue& SegmentAttributeValue::operator =(JsonView jsonValue)
     }
     m_valueMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueInteger"))
   {
     m_valueInteger = jsonValue.GetInteger("ValueInteger");
-
     m_valueIntegerHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,23 +12,6 @@ using namespace Aws::PCS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateComputeNodeGroupRequest::UpdateComputeNodeGroupRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_computeNodeGroupIdentifierHasBeenSet(false),
-    m_amiIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_customLaunchTemplateHasBeenSet(false),
-    m_purchaseOption(PurchaseOption::NOT_SET),
-    m_purchaseOptionHasBeenSet(false),
-    m_spotOptionsHasBeenSet(false),
-    m_scalingConfigurationHasBeenSet(false),
-    m_iamInstanceProfileArnHasBeenSet(false),
-    m_slurmConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateComputeNodeGroupRequest::SerializePayload() const
 {
   JsonValue payload;

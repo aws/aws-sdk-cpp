@@ -12,14 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListInsightsRequest::ListInsightsRequest() : 
-    m_statusFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListInsightsRequest::SerializePayload() const
 {
   JsonValue payload;

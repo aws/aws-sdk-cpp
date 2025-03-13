@@ -29,7 +29,7 @@ namespace Model
   class ListQueryLoggingConfigsResult
   {
   public:
-    AWS_ROUTE53_API ListQueryLoggingConfigsResult();
+    AWS_ROUTE53_API ListQueryLoggingConfigsResult() = default;
     AWS_ROUTE53_API ListQueryLoggingConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API ListQueryLoggingConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -41,13 +41,13 @@ namespace Model
      * element for each configuration for DNS query logging that is associated with the
      * current Amazon Web Services account.</p>
      */
-    inline const Aws::Vector<QueryLoggingConfig>& GetQueryLoggingConfigs() const{ return m_queryLoggingConfigs; }
-    inline void SetQueryLoggingConfigs(const Aws::Vector<QueryLoggingConfig>& value) { m_queryLoggingConfigs = value; }
-    inline void SetQueryLoggingConfigs(Aws::Vector<QueryLoggingConfig>&& value) { m_queryLoggingConfigs = std::move(value); }
-    inline ListQueryLoggingConfigsResult& WithQueryLoggingConfigs(const Aws::Vector<QueryLoggingConfig>& value) { SetQueryLoggingConfigs(value); return *this;}
-    inline ListQueryLoggingConfigsResult& WithQueryLoggingConfigs(Aws::Vector<QueryLoggingConfig>&& value) { SetQueryLoggingConfigs(std::move(value)); return *this;}
-    inline ListQueryLoggingConfigsResult& AddQueryLoggingConfigs(const QueryLoggingConfig& value) { m_queryLoggingConfigs.push_back(value); return *this; }
-    inline ListQueryLoggingConfigsResult& AddQueryLoggingConfigs(QueryLoggingConfig&& value) { m_queryLoggingConfigs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QueryLoggingConfig>& GetQueryLoggingConfigs() const { return m_queryLoggingConfigs; }
+    template<typename QueryLoggingConfigsT = Aws::Vector<QueryLoggingConfig>>
+    void SetQueryLoggingConfigs(QueryLoggingConfigsT&& value) { m_queryLoggingConfigsHasBeenSet = true; m_queryLoggingConfigs = std::forward<QueryLoggingConfigsT>(value); }
+    template<typename QueryLoggingConfigsT = Aws::Vector<QueryLoggingConfig>>
+    ListQueryLoggingConfigsResult& WithQueryLoggingConfigs(QueryLoggingConfigsT&& value) { SetQueryLoggingConfigs(std::forward<QueryLoggingConfigsT>(value)); return *this;}
+    template<typename QueryLoggingConfigsT = QueryLoggingConfig>
+    ListQueryLoggingConfigsResult& AddQueryLoggingConfigs(QueryLoggingConfigsT&& value) { m_queryLoggingConfigsHasBeenSet = true; m_queryLoggingConfigs.emplace_back(std::forward<QueryLoggingConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,32 +61,31 @@ namespace Model
      * in the previous response and include it in <code>NextToken</code> in the next
      * request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListQueryLoggingConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListQueryLoggingConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListQueryLoggingConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListQueryLoggingConfigsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListQueryLoggingConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListQueryLoggingConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListQueryLoggingConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListQueryLoggingConfigsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<QueryLoggingConfig> m_queryLoggingConfigs;
+    bool m_queryLoggingConfigsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

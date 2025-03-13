@@ -12,12 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest::BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest() : 
-    m_approvalRuleTemplateNameHasBeenSet(false),
-    m_repositoryNamesHasBeenSet(false)
-{
-}
-
 Aws::String BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest::SerializePayload() const
 {
   JsonValue payload;

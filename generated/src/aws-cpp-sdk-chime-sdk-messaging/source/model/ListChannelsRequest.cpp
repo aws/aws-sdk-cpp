@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListChannelsRequest::ListChannelsRequest() : 
-    m_appInstanceArnHasBeenSet(false),
-    m_privacy(ChannelPrivacy::NOT_SET),
-    m_privacyHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
-{
-}
-
 Aws::String ListChannelsRequest::SerializePayload() const
 {
   return {};

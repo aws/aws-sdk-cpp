@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-FieldLevelEncryptionProfileConfig::FieldLevelEncryptionProfileConfig() : 
-    m_nameHasBeenSet(false),
-    m_callerReferenceHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_encryptionEntitiesHasBeenSet(false)
-{
-}
-
 FieldLevelEncryptionProfileConfig::FieldLevelEncryptionProfileConfig(const XmlNode& xmlNode)
-  : FieldLevelEncryptionProfileConfig()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ FieldLevelEncryptionProfileConfig& FieldLevelEncryptionProfileConfig::operator =
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
       m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
+       m_callerReferenceHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
     XmlNode encryptionEntitiesNode = resultNode.FirstChild("EncryptionEntities");
     if(!encryptionEntitiesNode.IsNull())
     {
       m_encryptionEntities = encryptionEntitiesNode;
       m_encryptionEntitiesHasBeenSet = true;
+       m_encryptionEntitiesHasBeenSet = true;
     }
   }
 

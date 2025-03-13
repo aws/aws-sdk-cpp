@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateProfilingGroupResult::UpdateProfilingGroupResult()
-{
-}
-
 UpdateProfilingGroupResult::UpdateProfilingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ UpdateProfilingGroupResult& UpdateProfilingGroupResult::operator =(const Aws::Am
 {
   JsonView jsonValue = result.GetPayload().View();
   m_profilingGroup = jsonValue;
+  m_profilingGroupHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

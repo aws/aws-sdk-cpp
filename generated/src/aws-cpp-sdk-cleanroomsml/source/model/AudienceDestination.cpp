@@ -18,13 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-AudienceDestination::AudienceDestination() : 
-    m_s3DestinationHasBeenSet(false)
-{
-}
-
 AudienceDestination::AudienceDestination(JsonView jsonValue)
-  : AudienceDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AudienceDestination& AudienceDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Destination"))
   {
     m_s3Destination = jsonValue.GetObject("s3Destination");
-
     m_s3DestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

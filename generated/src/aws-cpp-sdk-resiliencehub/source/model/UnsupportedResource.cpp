@@ -18,16 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-UnsupportedResource::UnsupportedResource() : 
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_unsupportedResourceStatusHasBeenSet(false)
-{
-}
-
 UnsupportedResource::UnsupportedResource(JsonView jsonValue)
-  : UnsupportedResource()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ UnsupportedResource& UnsupportedResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logicalResourceId"))
   {
     m_logicalResourceId = jsonValue.GetObject("logicalResourceId");
-
     m_logicalResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("physicalResourceId"))
   {
     m_physicalResourceId = jsonValue.GetObject("physicalResourceId");
-
     m_physicalResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unsupportedResourceStatus"))
   {
     m_unsupportedResourceStatus = jsonValue.GetString("unsupportedResourceStatus");
-
     m_unsupportedResourceStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

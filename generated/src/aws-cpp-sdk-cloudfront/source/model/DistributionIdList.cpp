@@ -20,21 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-DistributionIdList::DistributionIdList() : 
-    m_markerHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 DistributionIdList::DistributionIdList(const XmlNode& xmlNode)
-  : DistributionIdList()
 {
   *this = xmlNode;
 }
@@ -50,42 +36,48 @@ DistributionIdList& DistributionIdList::operator =(const XmlNode& xmlNode)
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
+       m_markerHasBeenSet = true;
     }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
       m_nextMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextMarkerNode.GetText());
       m_nextMarkerHasBeenSet = true;
+       m_nextMarkerHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
       m_maxItems = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxItemsNode.GetText()).c_str()).c_str());
       m_maxItemsHasBeenSet = true;
+       m_maxItemsHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
       m_isTruncatedHasBeenSet = true;
+       m_isTruncatedHasBeenSet = true;
     }
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
     if(!quantityNode.IsNull())
     {
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quantityNode.GetText()).c_str()).c_str());
       m_quantityHasBeenSet = true;
+       m_quantityHasBeenSet = true;
     }
     XmlNode itemsNode = resultNode.FirstChild("Items");
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("DistributionId");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember.GetText());
         itemsMember = itemsMember.NextNode("DistributionId");
       }
 
-      m_itemsHasBeenSet = true;
+       m_itemsHasBeenSet = true;
     }
   }
 

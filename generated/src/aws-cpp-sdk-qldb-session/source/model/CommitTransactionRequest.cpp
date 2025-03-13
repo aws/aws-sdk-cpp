@@ -19,14 +19,7 @@ namespace QLDBSession
 namespace Model
 {
 
-CommitTransactionRequest::CommitTransactionRequest() : 
-    m_transactionIdHasBeenSet(false),
-    m_commitDigestHasBeenSet(false)
-{
-}
-
 CommitTransactionRequest::CommitTransactionRequest(JsonView jsonValue)
-  : CommitTransactionRequest()
 {
   *this = jsonValue;
 }
@@ -36,16 +29,13 @@ CommitTransactionRequest& CommitTransactionRequest::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("TransactionId"))
   {
     m_transactionId = jsonValue.GetString("TransactionId");
-
     m_transactionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommitDigest"))
   {
     m_commitDigest = HashingUtils::Base64Decode(jsonValue.GetString("CommitDigest"));
     m_commitDigestHasBeenSet = true;
   }
-
   return *this;
 }
 

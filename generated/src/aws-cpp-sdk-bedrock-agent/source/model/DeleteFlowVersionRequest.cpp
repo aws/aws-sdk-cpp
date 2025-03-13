@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteFlowVersionRequest::DeleteFlowVersionRequest() : 
-    m_flowIdentifierHasBeenSet(false),
-    m_flowVersionHasBeenSet(false),
-    m_skipResourceInUseCheck(false),
-    m_skipResourceInUseCheckHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFlowVersionRequest::SerializePayload() const
 {
   return {};

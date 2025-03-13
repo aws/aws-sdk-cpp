@@ -30,7 +30,7 @@ namespace Model
   class BatchGetDevicePositionResult
   {
   public:
-    AWS_LOCATIONSERVICE_API BatchGetDevicePositionResult();
+    AWS_LOCATIONSERVICE_API BatchGetDevicePositionResult() = default;
     AWS_LOCATIONSERVICE_API BatchGetDevicePositionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API BatchGetDevicePositionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>Contains error details for each device that failed to send its position to
      * the tracker resource.</p>
      */
-    inline const Aws::Vector<BatchGetDevicePositionError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchGetDevicePositionError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchGetDevicePositionError>&& value) { m_errors = std::move(value); }
-    inline BatchGetDevicePositionResult& WithErrors(const Aws::Vector<BatchGetDevicePositionError>& value) { SetErrors(value); return *this;}
-    inline BatchGetDevicePositionResult& WithErrors(Aws::Vector<BatchGetDevicePositionError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetDevicePositionResult& AddErrors(const BatchGetDevicePositionError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetDevicePositionResult& AddErrors(BatchGetDevicePositionError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetDevicePositionError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchGetDevicePositionError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchGetDevicePositionError>>
+    BatchGetDevicePositionResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchGetDevicePositionError>
+    BatchGetDevicePositionResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,33 @@ namespace Model
      * <p>Contains device position details such as the device ID, position, and
      * timestamps for when the position was received and sampled.</p>
      */
-    inline const Aws::Vector<DevicePosition>& GetDevicePositions() const{ return m_devicePositions; }
-    inline void SetDevicePositions(const Aws::Vector<DevicePosition>& value) { m_devicePositions = value; }
-    inline void SetDevicePositions(Aws::Vector<DevicePosition>&& value) { m_devicePositions = std::move(value); }
-    inline BatchGetDevicePositionResult& WithDevicePositions(const Aws::Vector<DevicePosition>& value) { SetDevicePositions(value); return *this;}
-    inline BatchGetDevicePositionResult& WithDevicePositions(Aws::Vector<DevicePosition>&& value) { SetDevicePositions(std::move(value)); return *this;}
-    inline BatchGetDevicePositionResult& AddDevicePositions(const DevicePosition& value) { m_devicePositions.push_back(value); return *this; }
-    inline BatchGetDevicePositionResult& AddDevicePositions(DevicePosition&& value) { m_devicePositions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DevicePosition>& GetDevicePositions() const { return m_devicePositions; }
+    template<typename DevicePositionsT = Aws::Vector<DevicePosition>>
+    void SetDevicePositions(DevicePositionsT&& value) { m_devicePositionsHasBeenSet = true; m_devicePositions = std::forward<DevicePositionsT>(value); }
+    template<typename DevicePositionsT = Aws::Vector<DevicePosition>>
+    BatchGetDevicePositionResult& WithDevicePositions(DevicePositionsT&& value) { SetDevicePositions(std::forward<DevicePositionsT>(value)); return *this;}
+    template<typename DevicePositionsT = DevicePosition>
+    BatchGetDevicePositionResult& AddDevicePositions(DevicePositionsT&& value) { m_devicePositionsHasBeenSet = true; m_devicePositions.emplace_back(std::forward<DevicePositionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetDevicePositionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetDevicePositionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetDevicePositionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetDevicePositionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchGetDevicePositionError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<DevicePosition> m_devicePositions;
+    bool m_devicePositionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

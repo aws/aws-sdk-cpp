@@ -12,11 +12,6 @@ using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopDeliveryStreamEncryptionRequest::StopDeliveryStreamEncryptionRequest() : 
-    m_deliveryStreamNameHasBeenSet(false)
-{
-}
-
 Aws::String StopDeliveryStreamEncryptionRequest::SerializePayload() const
 {
   JsonValue payload;

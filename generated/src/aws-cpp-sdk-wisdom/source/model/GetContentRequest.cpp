@@ -12,12 +12,6 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetContentRequest::GetContentRequest() : 
-    m_contentIdHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false)
-{
-}
-
 Aws::String GetContentRequest::SerializePayload() const
 {
   return {};

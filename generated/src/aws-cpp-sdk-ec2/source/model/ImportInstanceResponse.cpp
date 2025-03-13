@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportInstanceResponse::ImportInstanceResponse()
-{
-}
-
 ImportInstanceResponse::ImportInstanceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ImportInstanceResponse& ImportInstanceResponse::operator =(const Aws::AmazonWebS
     if(!conversionTaskNode.IsNull())
     {
       m_conversionTask = conversionTaskNode;
+      m_conversionTaskHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ ImportInstanceResponse& ImportInstanceResponse::operator =(const Aws::AmazonWebS
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ImportInstanceResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

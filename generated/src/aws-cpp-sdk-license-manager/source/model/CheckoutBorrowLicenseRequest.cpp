@@ -12,17 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CheckoutBorrowLicenseRequest::CheckoutBorrowLicenseRequest() : 
-    m_licenseArnHasBeenSet(false),
-    m_entitlementsHasBeenSet(false),
-    m_digitalSignatureMethod(DigitalSignatureMethod::NOT_SET),
-    m_digitalSignatureMethodHasBeenSet(false),
-    m_nodeIdHasBeenSet(false),
-    m_checkoutMetadataHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String CheckoutBorrowLicenseRequest::SerializePayload() const
 {
   JsonValue payload;

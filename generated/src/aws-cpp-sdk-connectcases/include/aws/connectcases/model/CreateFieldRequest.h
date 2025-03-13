@@ -22,7 +22,7 @@ namespace Model
   class CreateFieldRequest : public ConnectCasesRequest
   {
   public:
-    AWS_CONNECTCASES_API CreateFieldRequest();
+    AWS_CONNECTCASES_API CreateFieldRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,42 +37,36 @@ namespace Model
     /**
      * <p>The description of the field.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateFieldRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateFieldRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateFieldRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateFieldRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the Cases domain. </p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline CreateFieldRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline CreateFieldRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline CreateFieldRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    CreateFieldRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the field.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateFieldRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateFieldRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateFieldRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateFieldRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +74,10 @@ namespace Model
      * <p>Defines the data type, some system constraints, and default display of the
      * field.</p>
      */
-    inline const FieldType& GetType() const{ return m_type; }
+    inline FieldType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FieldType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FieldType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateFieldRequest& WithType(const FieldType& value) { SetType(value); return *this;}
-    inline CreateFieldRequest& WithType(FieldType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FieldType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateFieldRequest& WithType(FieldType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -98,7 +90,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    FieldType m_type;
+    FieldType m_type{FieldType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

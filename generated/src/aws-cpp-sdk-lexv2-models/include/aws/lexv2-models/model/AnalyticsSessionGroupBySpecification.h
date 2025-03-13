@@ -32,7 +32,7 @@ namespace Model
   class AnalyticsSessionGroupBySpecification
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsSessionGroupBySpecification();
+    AWS_LEXMODELSV2_API AnalyticsSessionGroupBySpecification() = default;
     AWS_LEXMODELSV2_API AnalyticsSessionGroupBySpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsSessionGroupBySpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Specifies whether to group the session by their end state or their
      * locale.</p>
      */
-    inline const AnalyticsSessionField& GetName() const{ return m_name; }
+    inline AnalyticsSessionField GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsSessionField& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsSessionField&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsSessionGroupBySpecification& WithName(const AnalyticsSessionField& value) { SetName(value); return *this;}
-    inline AnalyticsSessionGroupBySpecification& WithName(AnalyticsSessionField&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsSessionField value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsSessionGroupBySpecification& WithName(AnalyticsSessionField value) { SetName(value); return *this;}
     ///@}
   private:
 
-    AnalyticsSessionField m_name;
+    AnalyticsSessionField m_name{AnalyticsSessionField::NOT_SET};
     bool m_nameHasBeenSet = false;
   };
 

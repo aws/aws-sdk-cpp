@@ -18,16 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-KeywordMatchConfiguration::KeywordMatchConfiguration() : 
-    m_ruleNameHasBeenSet(false),
-    m_keywordsHasBeenSet(false),
-    m_negate(false),
-    m_negateHasBeenSet(false)
-{
-}
-
 KeywordMatchConfiguration::KeywordMatchConfiguration(JsonView jsonValue)
-  : KeywordMatchConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ KeywordMatchConfiguration& KeywordMatchConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("RuleName"))
   {
     m_ruleName = jsonValue.GetString("RuleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Keywords"))
   {
     Aws::Utils::Array<JsonView> keywordsJsonList = jsonValue.GetArray("Keywords");
@@ -50,14 +39,11 @@ KeywordMatchConfiguration& KeywordMatchConfiguration::operator =(JsonView jsonVa
     }
     m_keywordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Negate"))
   {
     m_negate = jsonValue.GetBool("Negate");
-
     m_negateHasBeenSet = true;
   }
-
   return *this;
 }
 

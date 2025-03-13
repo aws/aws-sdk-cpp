@@ -37,7 +37,7 @@ namespace Model
   class UploadArchiveResult
   {
   public:
-    AWS_GLACIER_API UploadArchiveResult();
+    AWS_GLACIER_API UploadArchiveResult() = default;
     AWS_GLACIER_API UploadArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLACIER_API UploadArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,26 +46,22 @@ namespace Model
     /**
      * <p>The relative URI path of the newly added archive resource.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
-    inline void SetLocation(const Aws::String& value) { m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_location.assign(value); }
-    inline UploadArchiveResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline UploadArchiveResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline UploadArchiveResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    inline const Aws::String& GetLocation() const { return m_location; }
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    UploadArchiveResult& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
-    inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksum.assign(value); }
-    inline UploadArchiveResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline UploadArchiveResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline UploadArchiveResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    UploadArchiveResult& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,34 +69,34 @@ namespace Model
      * <p>The ID of the archive. This value is also included as part of the
      * location.</p>
      */
-    inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
-    inline void SetArchiveId(const Aws::String& value) { m_archiveId = value; }
-    inline void SetArchiveId(Aws::String&& value) { m_archiveId = std::move(value); }
-    inline void SetArchiveId(const char* value) { m_archiveId.assign(value); }
-    inline UploadArchiveResult& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-    inline UploadArchiveResult& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-    inline UploadArchiveResult& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
+    inline const Aws::String& GetArchiveId() const { return m_archiveId; }
+    template<typename ArchiveIdT = Aws::String>
+    void SetArchiveId(ArchiveIdT&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::forward<ArchiveIdT>(value); }
+    template<typename ArchiveIdT = Aws::String>
+    UploadArchiveResult& WithArchiveId(ArchiveIdT&& value) { SetArchiveId(std::forward<ArchiveIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UploadArchiveResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UploadArchiveResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UploadArchiveResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UploadArchiveResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_location;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_checksum;
+    bool m_checksumHasBeenSet = false;
 
     Aws::String m_archiveId;
+    bool m_archiveIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ namespace Model
   class ListArchiveExportsRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API ListArchiveExportsRequest();
+    AWS_MAILMANAGER_API ListArchiveExportsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the archive.</p>
      */
-    inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
+    inline const Aws::String& GetArchiveId() const { return m_archiveId; }
     inline bool ArchiveIdHasBeenSet() const { return m_archiveIdHasBeenSet; }
-    inline void SetArchiveId(const Aws::String& value) { m_archiveIdHasBeenSet = true; m_archiveId = value; }
-    inline void SetArchiveId(Aws::String&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::move(value); }
-    inline void SetArchiveId(const char* value) { m_archiveIdHasBeenSet = true; m_archiveId.assign(value); }
-    inline ListArchiveExportsRequest& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-    inline ListArchiveExportsRequest& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-    inline ListArchiveExportsRequest& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
+    template<typename ArchiveIdT = Aws::String>
+    void SetArchiveId(ArchiveIdT&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::forward<ArchiveIdT>(value); }
+    template<typename ArchiveIdT = Aws::String>
+    ListArchiveExportsRequest& WithArchiveId(ArchiveIdT&& value) { SetArchiveId(std::forward<ArchiveIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * NextToken is a unique pagination token for each page. Make the call again using
      * the returned token to retrieve the next page. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListArchiveExportsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListArchiveExportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListArchiveExportsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListArchiveExportsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * <p>The maximum number of archive export jobs that are returned per call. You can
      * use NextToken to obtain further pages of archives. </p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline ListArchiveExportsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -86,7 +82,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
   };
 

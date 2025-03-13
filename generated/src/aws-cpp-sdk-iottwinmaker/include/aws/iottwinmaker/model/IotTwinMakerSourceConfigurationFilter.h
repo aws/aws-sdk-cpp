@@ -33,7 +33,7 @@ namespace Model
   class IotTwinMakerSourceConfigurationFilter
   {
   public:
-    AWS_IOTTWINMAKER_API IotTwinMakerSourceConfigurationFilter();
+    AWS_IOTTWINMAKER_API IotTwinMakerSourceConfigurationFilter() = default;
     AWS_IOTTWINMAKER_API IotTwinMakerSourceConfigurationFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API IotTwinMakerSourceConfigurationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Filter by component type.</p>
      */
-    inline const FilterByComponentType& GetFilterByComponentType() const{ return m_filterByComponentType; }
+    inline const FilterByComponentType& GetFilterByComponentType() const { return m_filterByComponentType; }
     inline bool FilterByComponentTypeHasBeenSet() const { return m_filterByComponentTypeHasBeenSet; }
-    inline void SetFilterByComponentType(const FilterByComponentType& value) { m_filterByComponentTypeHasBeenSet = true; m_filterByComponentType = value; }
-    inline void SetFilterByComponentType(FilterByComponentType&& value) { m_filterByComponentTypeHasBeenSet = true; m_filterByComponentType = std::move(value); }
-    inline IotTwinMakerSourceConfigurationFilter& WithFilterByComponentType(const FilterByComponentType& value) { SetFilterByComponentType(value); return *this;}
-    inline IotTwinMakerSourceConfigurationFilter& WithFilterByComponentType(FilterByComponentType&& value) { SetFilterByComponentType(std::move(value)); return *this;}
+    template<typename FilterByComponentTypeT = FilterByComponentType>
+    void SetFilterByComponentType(FilterByComponentTypeT&& value) { m_filterByComponentTypeHasBeenSet = true; m_filterByComponentType = std::forward<FilterByComponentTypeT>(value); }
+    template<typename FilterByComponentTypeT = FilterByComponentType>
+    IotTwinMakerSourceConfigurationFilter& WithFilterByComponentType(FilterByComponentTypeT&& value) { SetFilterByComponentType(std::forward<FilterByComponentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter by entity.</p>
      */
-    inline const FilterByEntity& GetFilterByEntity() const{ return m_filterByEntity; }
+    inline const FilterByEntity& GetFilterByEntity() const { return m_filterByEntity; }
     inline bool FilterByEntityHasBeenSet() const { return m_filterByEntityHasBeenSet; }
-    inline void SetFilterByEntity(const FilterByEntity& value) { m_filterByEntityHasBeenSet = true; m_filterByEntity = value; }
-    inline void SetFilterByEntity(FilterByEntity&& value) { m_filterByEntityHasBeenSet = true; m_filterByEntity = std::move(value); }
-    inline IotTwinMakerSourceConfigurationFilter& WithFilterByEntity(const FilterByEntity& value) { SetFilterByEntity(value); return *this;}
-    inline IotTwinMakerSourceConfigurationFilter& WithFilterByEntity(FilterByEntity&& value) { SetFilterByEntity(std::move(value)); return *this;}
+    template<typename FilterByEntityT = FilterByEntity>
+    void SetFilterByEntity(FilterByEntityT&& value) { m_filterByEntityHasBeenSet = true; m_filterByEntity = std::forward<FilterByEntityT>(value); }
+    template<typename FilterByEntityT = FilterByEntity>
+    IotTwinMakerSourceConfigurationFilter& WithFilterByEntity(FilterByEntityT&& value) { SetFilterByEntity(std::forward<FilterByEntityT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,19 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-OrganizationConformancePack::OrganizationConformancePack() : 
-    m_organizationConformancePackNameHasBeenSet(false),
-    m_organizationConformancePackArnHasBeenSet(false),
-    m_deliveryS3BucketHasBeenSet(false),
-    m_deliveryS3KeyPrefixHasBeenSet(false),
-    m_conformancePackInputParametersHasBeenSet(false),
-    m_excludedAccountsHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
-{
-}
-
 OrganizationConformancePack::OrganizationConformancePack(JsonView jsonValue)
-  : OrganizationConformancePack()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ OrganizationConformancePack& OrganizationConformancePack::operator =(JsonView js
   if(jsonValue.ValueExists("OrganizationConformancePackName"))
   {
     m_organizationConformancePackName = jsonValue.GetString("OrganizationConformancePackName");
-
     m_organizationConformancePackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationConformancePackArn"))
   {
     m_organizationConformancePackArn = jsonValue.GetString("OrganizationConformancePackArn");
-
     m_organizationConformancePackArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryS3Bucket"))
   {
     m_deliveryS3Bucket = jsonValue.GetString("DeliveryS3Bucket");
-
     m_deliveryS3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryS3KeyPrefix"))
   {
     m_deliveryS3KeyPrefix = jsonValue.GetString("DeliveryS3KeyPrefix");
-
     m_deliveryS3KeyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConformancePackInputParameters"))
   {
     Aws::Utils::Array<JsonView> conformancePackInputParametersJsonList = jsonValue.GetArray("ConformancePackInputParameters");
@@ -74,7 +54,6 @@ OrganizationConformancePack& OrganizationConformancePack::operator =(JsonView js
     }
     m_conformancePackInputParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludedAccounts"))
   {
     Aws::Utils::Array<JsonView> excludedAccountsJsonList = jsonValue.GetArray("ExcludedAccounts");
@@ -84,14 +63,11 @@ OrganizationConformancePack& OrganizationConformancePack::operator =(JsonView js
     }
     m_excludedAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

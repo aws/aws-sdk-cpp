@@ -21,7 +21,7 @@ namespace Model
   class PutImageRecipePolicyRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API PutImageRecipePolicyRequest();
+    AWS_IMAGEBUILDER_API PutImageRecipePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be
      * applied to.</p>
      */
-    inline const Aws::String& GetImageRecipeArn() const{ return m_imageRecipeArn; }
+    inline const Aws::String& GetImageRecipeArn() const { return m_imageRecipeArn; }
     inline bool ImageRecipeArnHasBeenSet() const { return m_imageRecipeArnHasBeenSet; }
-    inline void SetImageRecipeArn(const Aws::String& value) { m_imageRecipeArnHasBeenSet = true; m_imageRecipeArn = value; }
-    inline void SetImageRecipeArn(Aws::String&& value) { m_imageRecipeArnHasBeenSet = true; m_imageRecipeArn = std::move(value); }
-    inline void SetImageRecipeArn(const char* value) { m_imageRecipeArnHasBeenSet = true; m_imageRecipeArn.assign(value); }
-    inline PutImageRecipePolicyRequest& WithImageRecipeArn(const Aws::String& value) { SetImageRecipeArn(value); return *this;}
-    inline PutImageRecipePolicyRequest& WithImageRecipeArn(Aws::String&& value) { SetImageRecipeArn(std::move(value)); return *this;}
-    inline PutImageRecipePolicyRequest& WithImageRecipeArn(const char* value) { SetImageRecipeArn(value); return *this;}
+    template<typename ImageRecipeArnT = Aws::String>
+    void SetImageRecipeArn(ImageRecipeArnT&& value) { m_imageRecipeArnHasBeenSet = true; m_imageRecipeArn = std::forward<ImageRecipeArnT>(value); }
+    template<typename ImageRecipeArnT = Aws::String>
+    PutImageRecipePolicyRequest& WithImageRecipeArn(ImageRecipeArnT&& value) { SetImageRecipeArn(std::forward<ImageRecipeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The policy to apply.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline PutImageRecipePolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline PutImageRecipePolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline PutImageRecipePolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    PutImageRecipePolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,26 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-FolderMetadata::FolderMetadata() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_creatorIdHasBeenSet(false),
-    m_parentFolderIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_modifiedTimestampHasBeenSet(false),
-    m_resourceState(ResourceStateType::NOT_SET),
-    m_resourceStateHasBeenSet(false),
-    m_signatureHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_latestVersionSize(0),
-    m_latestVersionSizeHasBeenSet(false)
-{
-}
-
 FolderMetadata::FolderMetadata(JsonView jsonValue)
-  : FolderMetadata()
 {
   *this = jsonValue;
 }
@@ -47,59 +28,43 @@ FolderMetadata& FolderMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorId"))
   {
     m_creatorId = jsonValue.GetString("CreatorId");
-
     m_creatorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentFolderId"))
   {
     m_parentFolderId = jsonValue.GetString("ParentFolderId");
-
     m_parentFolderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifiedTimestamp"))
   {
     m_modifiedTimestamp = jsonValue.GetDouble("ModifiedTimestamp");
-
     m_modifiedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceState"))
   {
     m_resourceState = ResourceStateTypeMapper::GetResourceStateTypeForName(jsonValue.GetString("ResourceState"));
-
     m_resourceStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Signature"))
   {
     m_signature = jsonValue.GetString("Signature");
-
     m_signatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Labels"))
   {
     Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
@@ -109,21 +74,16 @@ FolderMetadata& FolderMetadata::operator =(JsonView jsonValue)
     }
     m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetInt64("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestVersionSize"))
   {
     m_latestVersionSize = jsonValue.GetInt64("LatestVersionSize");
-
     m_latestVersionSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

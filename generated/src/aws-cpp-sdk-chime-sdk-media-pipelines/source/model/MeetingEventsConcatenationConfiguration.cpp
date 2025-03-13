@@ -18,14 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-MeetingEventsConcatenationConfiguration::MeetingEventsConcatenationConfiguration() : 
-    m_state(ArtifactsConcatenationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 MeetingEventsConcatenationConfiguration::MeetingEventsConcatenationConfiguration(JsonView jsonValue)
-  : MeetingEventsConcatenationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MeetingEventsConcatenationConfiguration& MeetingEventsConcatenationConfiguration
   if(jsonValue.ValueExists("State"))
   {
     m_state = ArtifactsConcatenationStateMapper::GetArtifactsConcatenationStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

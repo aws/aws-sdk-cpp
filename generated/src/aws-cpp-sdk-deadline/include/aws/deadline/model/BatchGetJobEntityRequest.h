@@ -23,7 +23,7 @@ namespace Model
   class BatchGetJobEntityRequest : public DeadlineRequest
   {
   public:
-    AWS_DEADLINE_API BatchGetJobEntityRequest();
+    AWS_DEADLINE_API BatchGetJobEntityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The farm ID of the worker that's fetching job details. The worker must have
      * an assignment on a job to fetch job details.</p>
      */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline const Aws::String& GetFarmId() const { return m_farmId; }
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline BatchGetJobEntityRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline BatchGetJobEntityRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline BatchGetJobEntityRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    template<typename FarmIdT = Aws::String>
+    void SetFarmId(FarmIdT&& value) { m_farmIdHasBeenSet = true; m_farmId = std::forward<FarmIdT>(value); }
+    template<typename FarmIdT = Aws::String>
+    BatchGetJobEntityRequest& WithFarmId(FarmIdT&& value) { SetFarmId(std::forward<FarmIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,42 +52,38 @@ namespace Model
      * <p>The fleet ID of the worker that's fetching job details. The worker must have
      * an assignment on a job to fetch job details.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline BatchGetJobEntityRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline BatchGetJobEntityRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline BatchGetJobEntityRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    BatchGetJobEntityRequest& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The worker ID of the worker containing the job details to get.</p>
      */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+    inline const Aws::String& GetWorkerId() const { return m_workerId; }
     inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-    inline BatchGetJobEntityRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline BatchGetJobEntityRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline BatchGetJobEntityRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+    template<typename WorkerIdT = Aws::String>
+    void SetWorkerId(WorkerIdT&& value) { m_workerIdHasBeenSet = true; m_workerId = std::forward<WorkerIdT>(value); }
+    template<typename WorkerIdT = Aws::String>
+    BatchGetJobEntityRequest& WithWorkerId(WorkerIdT&& value) { SetWorkerId(std::forward<WorkerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job identifiers to include within the job entity batch details.</p>
      */
-    inline const Aws::Vector<JobEntityIdentifiersUnion>& GetIdentifiers() const{ return m_identifiers; }
+    inline const Aws::Vector<JobEntityIdentifiersUnion>& GetIdentifiers() const { return m_identifiers; }
     inline bool IdentifiersHasBeenSet() const { return m_identifiersHasBeenSet; }
-    inline void SetIdentifiers(const Aws::Vector<JobEntityIdentifiersUnion>& value) { m_identifiersHasBeenSet = true; m_identifiers = value; }
-    inline void SetIdentifiers(Aws::Vector<JobEntityIdentifiersUnion>&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::move(value); }
-    inline BatchGetJobEntityRequest& WithIdentifiers(const Aws::Vector<JobEntityIdentifiersUnion>& value) { SetIdentifiers(value); return *this;}
-    inline BatchGetJobEntityRequest& WithIdentifiers(Aws::Vector<JobEntityIdentifiersUnion>&& value) { SetIdentifiers(std::move(value)); return *this;}
-    inline BatchGetJobEntityRequest& AddIdentifiers(const JobEntityIdentifiersUnion& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(value); return *this; }
-    inline BatchGetJobEntityRequest& AddIdentifiers(JobEntityIdentifiersUnion&& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(std::move(value)); return *this; }
+    template<typename IdentifiersT = Aws::Vector<JobEntityIdentifiersUnion>>
+    void SetIdentifiers(IdentifiersT&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::forward<IdentifiersT>(value); }
+    template<typename IdentifiersT = Aws::Vector<JobEntityIdentifiersUnion>>
+    BatchGetJobEntityRequest& WithIdentifiers(IdentifiersT&& value) { SetIdentifiers(std::forward<IdentifiersT>(value)); return *this;}
+    template<typename IdentifiersT = JobEntityIdentifiersUnion>
+    BatchGetJobEntityRequest& AddIdentifiers(IdentifiersT&& value) { m_identifiersHasBeenSet = true; m_identifiers.emplace_back(std::forward<IdentifiersT>(value)); return *this; }
     ///@}
   private:
 

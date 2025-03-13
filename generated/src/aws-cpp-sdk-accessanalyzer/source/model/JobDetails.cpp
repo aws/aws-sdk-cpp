@@ -18,18 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-JobDetails::JobDetails() : 
-    m_jobIdHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_jobErrorHasBeenSet(false)
-{
-}
-
 JobDetails::JobDetails(JsonView jsonValue)
-  : JobDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ JobDetails& JobDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedOn"))
   {
     m_startedOn = jsonValue.GetString("startedOn");
-
     m_startedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completedOn"))
   {
     m_completedOn = jsonValue.GetString("completedOn");
-
     m_completedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobError"))
   {
     m_jobError = jsonValue.GetObject("jobError");
-
     m_jobErrorHasBeenSet = true;
   }
-
   return *this;
 }
 

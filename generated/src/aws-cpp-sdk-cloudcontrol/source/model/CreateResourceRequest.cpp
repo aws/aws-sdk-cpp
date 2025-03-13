@@ -12,16 +12,6 @@ using namespace Aws::CloudControlApi::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateResourceRequest::CreateResourceRequest() : 
-    m_typeNameHasBeenSet(false),
-    m_typeVersionIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_desiredStateHasBeenSet(false)
-{
-}
-
 Aws::String CreateResourceRequest::SerializePayload() const
 {
   JsonValue payload;

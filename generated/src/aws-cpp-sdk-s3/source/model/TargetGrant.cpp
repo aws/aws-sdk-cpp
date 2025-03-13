@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-TargetGrant::TargetGrant() : 
-    m_granteeHasBeenSet(false),
-    m_permission(BucketLogsPermission::NOT_SET),
-    m_permissionHasBeenSet(false)
-{
-}
-
 TargetGrant::TargetGrant(const XmlNode& xmlNode)
-  : TargetGrant()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ TargetGrant& TargetGrant::operator =(const XmlNode& xmlNode)
     {
       m_grantee = granteeNode;
       m_granteeHasBeenSet = true;
+       m_granteeHasBeenSet = true;
     }
     XmlNode permissionNode = resultNode.FirstChild("Permission");
     if(!permissionNode.IsNull())
     {
-      m_permission = BucketLogsPermissionMapper::GetBucketLogsPermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()).c_str());
+      m_permission = BucketLogsPermissionMapper::GetBucketLogsPermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()));
       m_permissionHasBeenSet = true;
+       m_permissionHasBeenSet = true;
     }
   }
 

@@ -12,14 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutGeofenceRequest::PutGeofenceRequest() : 
-    m_collectionNameHasBeenSet(false),
-    m_geofenceIdHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_geofencePropertiesHasBeenSet(false)
-{
-}
-
 Aws::String PutGeofenceRequest::SerializePayload() const
 {
   JsonValue payload;

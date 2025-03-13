@@ -22,7 +22,7 @@ namespace Model
   class BatchAssociateUserStackRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API BatchAssociateUserStackRequest();
+    AWS_APPSTREAM_API BatchAssociateUserStackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The list of UserStackAssociation objects.</p>
      */
-    inline const Aws::Vector<UserStackAssociation>& GetUserStackAssociations() const{ return m_userStackAssociations; }
+    inline const Aws::Vector<UserStackAssociation>& GetUserStackAssociations() const { return m_userStackAssociations; }
     inline bool UserStackAssociationsHasBeenSet() const { return m_userStackAssociationsHasBeenSet; }
-    inline void SetUserStackAssociations(const Aws::Vector<UserStackAssociation>& value) { m_userStackAssociationsHasBeenSet = true; m_userStackAssociations = value; }
-    inline void SetUserStackAssociations(Aws::Vector<UserStackAssociation>&& value) { m_userStackAssociationsHasBeenSet = true; m_userStackAssociations = std::move(value); }
-    inline BatchAssociateUserStackRequest& WithUserStackAssociations(const Aws::Vector<UserStackAssociation>& value) { SetUserStackAssociations(value); return *this;}
-    inline BatchAssociateUserStackRequest& WithUserStackAssociations(Aws::Vector<UserStackAssociation>&& value) { SetUserStackAssociations(std::move(value)); return *this;}
-    inline BatchAssociateUserStackRequest& AddUserStackAssociations(const UserStackAssociation& value) { m_userStackAssociationsHasBeenSet = true; m_userStackAssociations.push_back(value); return *this; }
-    inline BatchAssociateUserStackRequest& AddUserStackAssociations(UserStackAssociation&& value) { m_userStackAssociationsHasBeenSet = true; m_userStackAssociations.push_back(std::move(value)); return *this; }
+    template<typename UserStackAssociationsT = Aws::Vector<UserStackAssociation>>
+    void SetUserStackAssociations(UserStackAssociationsT&& value) { m_userStackAssociationsHasBeenSet = true; m_userStackAssociations = std::forward<UserStackAssociationsT>(value); }
+    template<typename UserStackAssociationsT = Aws::Vector<UserStackAssociation>>
+    BatchAssociateUserStackRequest& WithUserStackAssociations(UserStackAssociationsT&& value) { SetUserStackAssociations(std::forward<UserStackAssociationsT>(value)); return *this;}
+    template<typename UserStackAssociationsT = UserStackAssociation>
+    BatchAssociateUserStackRequest& AddUserStackAssociations(UserStackAssociationsT&& value) { m_userStackAssociationsHasBeenSet = true; m_userStackAssociations.emplace_back(std::forward<UserStackAssociationsT>(value)); return *this; }
     ///@}
   private:
 

@@ -28,7 +28,7 @@ namespace Model
   class GetContentSummaryResult
   {
   public:
-    AWS_CONNECTWISDOMSERVICE_API GetContentSummaryResult();
+    AWS_CONNECTWISDOMSERVICE_API GetContentSummaryResult() = default;
     AWS_CONNECTWISDOMSERVICE_API GetContentSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTWISDOMSERVICE_API GetContentSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The content summary.</p>
      */
-    inline const ContentSummary& GetContentSummary() const{ return m_contentSummary; }
-    inline void SetContentSummary(const ContentSummary& value) { m_contentSummary = value; }
-    inline void SetContentSummary(ContentSummary&& value) { m_contentSummary = std::move(value); }
-    inline GetContentSummaryResult& WithContentSummary(const ContentSummary& value) { SetContentSummary(value); return *this;}
-    inline GetContentSummaryResult& WithContentSummary(ContentSummary&& value) { SetContentSummary(std::move(value)); return *this;}
+    inline const ContentSummary& GetContentSummary() const { return m_contentSummary; }
+    template<typename ContentSummaryT = ContentSummary>
+    void SetContentSummary(ContentSummaryT&& value) { m_contentSummaryHasBeenSet = true; m_contentSummary = std::forward<ContentSummaryT>(value); }
+    template<typename ContentSummaryT = ContentSummary>
+    GetContentSummaryResult& WithContentSummary(ContentSummaryT&& value) { SetContentSummary(std::forward<ContentSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetContentSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetContentSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetContentSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetContentSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ContentSummary m_contentSummary;
+    bool m_contentSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

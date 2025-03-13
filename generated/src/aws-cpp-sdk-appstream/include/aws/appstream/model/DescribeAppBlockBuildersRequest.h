@@ -22,7 +22,7 @@ namespace Model
   class DescribeAppBlockBuildersRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API DescribeAppBlockBuildersRequest();
+    AWS_APPSTREAM_API DescribeAppBlockBuildersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,15 +39,14 @@ namespace Model
     /**
      * <p>The names of the app block builders.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
+    inline const Aws::Vector<Aws::String>& GetNames() const { return m_names; }
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
-    inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
-    inline DescribeAppBlockBuildersRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
-    inline DescribeAppBlockBuildersRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
-    inline DescribeAppBlockBuildersRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-    inline DescribeAppBlockBuildersRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
-    inline DescribeAppBlockBuildersRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    template<typename NamesT = Aws::Vector<Aws::String>>
+    void SetNames(NamesT&& value) { m_namesHasBeenSet = true; m_names = std::forward<NamesT>(value); }
+    template<typename NamesT = Aws::Vector<Aws::String>>
+    DescribeAppBlockBuildersRequest& WithNames(NamesT&& value) { SetNames(std::forward<NamesT>(value)); return *this;}
+    template<typename NamesT = Aws::String>
+    DescribeAppBlockBuildersRequest& AddNames(NamesT&& value) { m_namesHasBeenSet = true; m_names.emplace_back(std::forward<NamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,21 +54,19 @@ namespace Model
      * <p>The pagination token used to retrieve the next page of results for this
      * operation.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeAppBlockBuildersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAppBlockBuildersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAppBlockBuildersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAppBlockBuildersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum size of each page of results. The maximum value is 25.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeAppBlockBuildersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -82,7 +79,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

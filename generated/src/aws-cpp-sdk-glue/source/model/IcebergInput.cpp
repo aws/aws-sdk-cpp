@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-IcebergInput::IcebergInput() : 
-    m_metadataOperation(MetadataOperation::NOT_SET),
-    m_metadataOperationHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 IcebergInput::IcebergInput(JsonView jsonValue)
-  : IcebergInput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ IcebergInput& IcebergInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetadataOperation"))
   {
     m_metadataOperation = MetadataOperationMapper::GetMetadataOperationForName(jsonValue.GetString("MetadataOperation"));
-
     m_metadataOperationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

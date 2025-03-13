@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataQualityResultDescription::DataQualityResultDescription() : 
-    m_resultIdHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false),
-    m_startedOnHasBeenSet(false)
-{
-}
-
 DataQualityResultDescription::DataQualityResultDescription(JsonView jsonValue)
-  : DataQualityResultDescription()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DataQualityResultDescription& DataQualityResultDescription::operator =(JsonView 
   if(jsonValue.ValueExists("ResultId"))
   {
     m_resultId = jsonValue.GetString("ResultId");
-
     m_resultIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetObject("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobRunId"))
   {
     m_jobRunId = jsonValue.GetString("JobRunId");
-
     m_jobRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedOn"))
   {
     m_startedOn = jsonValue.GetDouble("StartedOn");
-
     m_startedOnHasBeenSet = true;
   }
-
   return *this;
 }
 

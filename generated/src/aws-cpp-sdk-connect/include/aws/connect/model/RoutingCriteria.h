@@ -33,7 +33,7 @@ namespace Model
   class RoutingCriteria
   {
   public:
-    AWS_CONNECT_API RoutingCriteria();
+    AWS_CONNECT_API RoutingCriteria() = default;
     AWS_CONNECT_API RoutingCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RoutingCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * with an agent. When all steps are exhausted, the contact will be offered to any
      * agent in the queue.</p>
      */
-    inline const Aws::Vector<Step>& GetSteps() const{ return m_steps; }
+    inline const Aws::Vector<Step>& GetSteps() const { return m_steps; }
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
-    inline void SetSteps(const Aws::Vector<Step>& value) { m_stepsHasBeenSet = true; m_steps = value; }
-    inline void SetSteps(Aws::Vector<Step>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
-    inline RoutingCriteria& WithSteps(const Aws::Vector<Step>& value) { SetSteps(value); return *this;}
-    inline RoutingCriteria& WithSteps(Aws::Vector<Step>&& value) { SetSteps(std::move(value)); return *this;}
-    inline RoutingCriteria& AddSteps(const Step& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
-    inline RoutingCriteria& AddSteps(Step&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
+    template<typename StepsT = Aws::Vector<Step>>
+    void SetSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps = std::forward<StepsT>(value); }
+    template<typename StepsT = Aws::Vector<Step>>
+    RoutingCriteria& WithSteps(StepsT&& value) { SetSteps(std::forward<StepsT>(value)); return *this;}
+    template<typename StepsT = Step>
+    RoutingCriteria& AddSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps.emplace_back(std::forward<StepsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,19 +64,19 @@ namespace Model
      * ActivationTimestamp will be set on routing criteria for contacts in agent queue
      * even though Routing criteria is never activated for contacts in agent queue.</p>
      */
-    inline const Aws::Utils::DateTime& GetActivationTimestamp() const{ return m_activationTimestamp; }
+    inline const Aws::Utils::DateTime& GetActivationTimestamp() const { return m_activationTimestamp; }
     inline bool ActivationTimestampHasBeenSet() const { return m_activationTimestampHasBeenSet; }
-    inline void SetActivationTimestamp(const Aws::Utils::DateTime& value) { m_activationTimestampHasBeenSet = true; m_activationTimestamp = value; }
-    inline void SetActivationTimestamp(Aws::Utils::DateTime&& value) { m_activationTimestampHasBeenSet = true; m_activationTimestamp = std::move(value); }
-    inline RoutingCriteria& WithActivationTimestamp(const Aws::Utils::DateTime& value) { SetActivationTimestamp(value); return *this;}
-    inline RoutingCriteria& WithActivationTimestamp(Aws::Utils::DateTime&& value) { SetActivationTimestamp(std::move(value)); return *this;}
+    template<typename ActivationTimestampT = Aws::Utils::DateTime>
+    void SetActivationTimestamp(ActivationTimestampT&& value) { m_activationTimestampHasBeenSet = true; m_activationTimestamp = std::forward<ActivationTimestampT>(value); }
+    template<typename ActivationTimestampT = Aws::Utils::DateTime>
+    RoutingCriteria& WithActivationTimestamp(ActivationTimestampT&& value) { SetActivationTimestamp(std::forward<ActivationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the index of the routing criteria.</p>
      */
-    inline int GetIndex() const{ return m_index; }
+    inline int GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
     inline RoutingCriteria& WithIndex(int value) { SetIndex(value); return *this;}
@@ -86,10 +86,10 @@ namespace Model
     Aws::Vector<Step> m_steps;
     bool m_stepsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_activationTimestamp;
+    Aws::Utils::DateTime m_activationTimestamp{};
     bool m_activationTimestampHasBeenSet = false;
 
-    int m_index;
+    int m_index{0};
     bool m_indexHasBeenSet = false;
   };
 

@@ -28,7 +28,7 @@ namespace Model
   class ModifyTransitGatewayVpcAttachmentResponse
   {
   public:
-    AWS_EC2_API ModifyTransitGatewayVpcAttachmentResponse();
+    AWS_EC2_API ModifyTransitGatewayVpcAttachmentResponse() = default;
     AWS_EC2_API ModifyTransitGatewayVpcAttachmentResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyTransitGatewayVpcAttachmentResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the modified attachment.</p>
      */
-    inline const TransitGatewayVpcAttachment& GetTransitGatewayVpcAttachment() const{ return m_transitGatewayVpcAttachment; }
-    inline void SetTransitGatewayVpcAttachment(const TransitGatewayVpcAttachment& value) { m_transitGatewayVpcAttachment = value; }
-    inline void SetTransitGatewayVpcAttachment(TransitGatewayVpcAttachment&& value) { m_transitGatewayVpcAttachment = std::move(value); }
-    inline ModifyTransitGatewayVpcAttachmentResponse& WithTransitGatewayVpcAttachment(const TransitGatewayVpcAttachment& value) { SetTransitGatewayVpcAttachment(value); return *this;}
-    inline ModifyTransitGatewayVpcAttachmentResponse& WithTransitGatewayVpcAttachment(TransitGatewayVpcAttachment&& value) { SetTransitGatewayVpcAttachment(std::move(value)); return *this;}
+    inline const TransitGatewayVpcAttachment& GetTransitGatewayVpcAttachment() const { return m_transitGatewayVpcAttachment; }
+    template<typename TransitGatewayVpcAttachmentT = TransitGatewayVpcAttachment>
+    void SetTransitGatewayVpcAttachment(TransitGatewayVpcAttachmentT&& value) { m_transitGatewayVpcAttachmentHasBeenSet = true; m_transitGatewayVpcAttachment = std::forward<TransitGatewayVpcAttachmentT>(value); }
+    template<typename TransitGatewayVpcAttachmentT = TransitGatewayVpcAttachment>
+    ModifyTransitGatewayVpcAttachmentResponse& WithTransitGatewayVpcAttachment(TransitGatewayVpcAttachmentT&& value) { SetTransitGatewayVpcAttachment(std::forward<TransitGatewayVpcAttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyTransitGatewayVpcAttachmentResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyTransitGatewayVpcAttachmentResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyTransitGatewayVpcAttachmentResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayVpcAttachment m_transitGatewayVpcAttachment;
+    bool m_transitGatewayVpcAttachmentHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

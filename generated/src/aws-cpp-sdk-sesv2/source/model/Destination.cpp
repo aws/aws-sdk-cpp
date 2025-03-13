@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-Destination::Destination() : 
-    m_toAddressesHasBeenSet(false),
-    m_ccAddressesHasBeenSet(false),
-    m_bccAddressesHasBeenSet(false)
-{
-}
-
 Destination::Destination(JsonView jsonValue)
-  : Destination()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ Destination& Destination::operator =(JsonView jsonValue)
     }
     m_toAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CcAddresses"))
   {
     Aws::Utils::Array<JsonView> ccAddressesJsonList = jsonValue.GetArray("CcAddresses");
@@ -52,7 +43,6 @@ Destination& Destination::operator =(JsonView jsonValue)
     }
     m_ccAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BccAddresses"))
   {
     Aws::Utils::Array<JsonView> bccAddressesJsonList = jsonValue.GetArray("BccAddresses");
@@ -62,7 +52,6 @@ Destination& Destination::operator =(JsonView jsonValue)
     }
     m_bccAddressesHasBeenSet = true;
   }
-
   return *this;
 }
 

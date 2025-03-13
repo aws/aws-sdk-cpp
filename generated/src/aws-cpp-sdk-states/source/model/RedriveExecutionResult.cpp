@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RedriveExecutionResult::RedriveExecutionResult()
-{
-}
-
 RedriveExecutionResult::RedriveExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ RedriveExecutionResult& RedriveExecutionResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("redriveDate"))
   {
     m_redriveDate = jsonValue.GetDouble("redriveDate");
-
+    m_redriveDateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

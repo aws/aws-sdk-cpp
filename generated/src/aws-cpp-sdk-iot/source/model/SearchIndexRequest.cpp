@@ -12,16 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchIndexRequest::SearchIndexRequest() : 
-    m_indexNameHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_queryVersionHasBeenSet(false)
-{
-}
-
 Aws::String SearchIndexRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RejectSharedDirectoryRequest::RejectSharedDirectoryRequest() : 
-    m_sharedDirectoryIdHasBeenSet(false)
-{
-}
-
 Aws::String RejectSharedDirectoryRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-TargetObjectKeyFormat::TargetObjectKeyFormat() : 
-    m_simplePrefixHasBeenSet(false),
-    m_partitionedPrefixHasBeenSet(false)
-{
-}
-
 TargetObjectKeyFormat::TargetObjectKeyFormat(const XmlNode& xmlNode)
-  : TargetObjectKeyFormat()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ TargetObjectKeyFormat& TargetObjectKeyFormat::operator =(const XmlNode& xmlNode)
     {
       m_simplePrefix = simplePrefixNode;
       m_simplePrefixHasBeenSet = true;
+       m_simplePrefixHasBeenSet = true;
     }
     XmlNode partitionedPrefixNode = resultNode.FirstChild("PartitionedPrefix");
     if(!partitionedPrefixNode.IsNull())
     {
       m_partitionedPrefix = partitionedPrefixNode;
       m_partitionedPrefixHasBeenSet = true;
+       m_partitionedPrefixHasBeenSet = true;
     }
   }
 

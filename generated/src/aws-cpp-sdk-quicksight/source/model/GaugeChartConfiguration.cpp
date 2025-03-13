@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GaugeChartConfiguration::GaugeChartConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_gaugeChartOptionsHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipOptionsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_colorConfigurationHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 GaugeChartConfiguration::GaugeChartConfiguration(JsonView jsonValue)
-  : GaugeChartConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ GaugeChartConfiguration& GaugeChartConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GaugeChartOptions"))
   {
     m_gaugeChartOptions = jsonValue.GetObject("GaugeChartOptions");
-
     m_gaugeChartOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataLabels"))
   {
     m_dataLabels = jsonValue.GetObject("DataLabels");
-
     m_dataLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TooltipOptions"))
   {
     m_tooltipOptions = jsonValue.GetObject("TooltipOptions");
-
     m_tooltipOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualPalette"))
   {
     m_visualPalette = jsonValue.GetObject("VisualPalette");
-
     m_visualPaletteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorConfiguration"))
   {
     m_colorConfiguration = jsonValue.GetObject("ColorConfiguration");
-
     m_colorConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

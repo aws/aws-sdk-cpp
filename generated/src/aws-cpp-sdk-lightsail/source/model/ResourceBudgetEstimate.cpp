@@ -18,18 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-ResourceBudgetEstimate::ResourceBudgetEstimate() : 
-    m_resourceNameHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_costEstimatesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 ResourceBudgetEstimate::ResourceBudgetEstimate(JsonView jsonValue)
-  : ResourceBudgetEstimate()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ ResourceBudgetEstimate& ResourceBudgetEstimate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceName"))
   {
     m_resourceName = jsonValue.GetString("resourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("costEstimates"))
   {
     Aws::Utils::Array<JsonView> costEstimatesJsonList = jsonValue.GetArray("costEstimates");
@@ -59,21 +44,16 @@ ResourceBudgetEstimate& ResourceBudgetEstimate::operator =(JsonView jsonValue)
     }
     m_costEstimatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

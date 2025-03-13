@@ -27,7 +27,7 @@ namespace Model
   class CreatePushNotificationRegistrationResult
   {
   public:
-    AWS_CONNECT_API CreatePushNotificationRegistrationResult();
+    AWS_CONNECT_API CreatePushNotificationRegistrationResult() = default;
     AWS_CONNECT_API CreatePushNotificationRegistrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API CreatePushNotificationRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The identifier for the registration.</p>
      */
-    inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
-    inline void SetRegistrationId(const Aws::String& value) { m_registrationId = value; }
-    inline void SetRegistrationId(Aws::String&& value) { m_registrationId = std::move(value); }
-    inline void SetRegistrationId(const char* value) { m_registrationId.assign(value); }
-    inline CreatePushNotificationRegistrationResult& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
-    inline CreatePushNotificationRegistrationResult& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
-    inline CreatePushNotificationRegistrationResult& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
+    inline const Aws::String& GetRegistrationId() const { return m_registrationId; }
+    template<typename RegistrationIdT = Aws::String>
+    void SetRegistrationId(RegistrationIdT&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::forward<RegistrationIdT>(value); }
+    template<typename RegistrationIdT = Aws::String>
+    CreatePushNotificationRegistrationResult& WithRegistrationId(RegistrationIdT&& value) { SetRegistrationId(std::forward<RegistrationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePushNotificationRegistrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePushNotificationRegistrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePushNotificationRegistrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePushNotificationRegistrationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registrationId;
+    bool m_registrationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

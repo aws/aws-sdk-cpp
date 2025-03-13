@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GaugeChartPrimaryValueConditionalFormatting::GaugeChartPrimaryValueConditionalFormatting() : 
-    m_textColorHasBeenSet(false),
-    m_iconHasBeenSet(false)
-{
-}
-
 GaugeChartPrimaryValueConditionalFormatting::GaugeChartPrimaryValueConditionalFormatting(JsonView jsonValue)
-  : GaugeChartPrimaryValueConditionalFormatting()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GaugeChartPrimaryValueConditionalFormatting& GaugeChartPrimaryValueConditionalFo
   if(jsonValue.ValueExists("TextColor"))
   {
     m_textColor = jsonValue.GetObject("TextColor");
-
     m_textColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Icon"))
   {
     m_icon = jsonValue.GetObject("Icon");
-
     m_iconHasBeenSet = true;
   }
-
   return *this;
 }
 

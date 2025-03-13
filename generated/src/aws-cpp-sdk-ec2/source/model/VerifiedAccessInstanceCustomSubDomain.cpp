@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessInstanceCustomSubDomain::VerifiedAccessInstanceCustomSubDomain() : 
-    m_subDomainHasBeenSet(false),
-    m_nameserversHasBeenSet(false)
-{
-}
-
 VerifiedAccessInstanceCustomSubDomain::VerifiedAccessInstanceCustomSubDomain(const XmlNode& xmlNode)
-  : VerifiedAccessInstanceCustomSubDomain()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ VerifiedAccessInstanceCustomSubDomain& VerifiedAccessInstanceCustomSubDomain::op
     {
       m_subDomain = Aws::Utils::Xml::DecodeEscapedXmlText(subDomainNode.GetText());
       m_subDomainHasBeenSet = true;
+       m_subDomainHasBeenSet = true;
     }
     XmlNode nameserversNode = resultNode.FirstChild("nameserverSet");
     if(!nameserversNode.IsNull())
     {
       XmlNode nameserversMember = nameserversNode.FirstChild("item");
+      m_nameserversHasBeenSet = !nameserversMember.IsNull();
       while(!nameserversMember.IsNull())
       {
         m_nameservers.push_back(nameserversMember.GetText());
         nameserversMember = nameserversMember.NextNode("item");
       }
 
-      m_nameserversHasBeenSet = true;
+       m_nameserversHasBeenSet = true;
     }
   }
 

@@ -18,10 +18,6 @@ namespace SecurityLake
 namespace Model
 {
 
-SqsNotificationConfiguration::SqsNotificationConfiguration()
-{
-}
-
 SqsNotificationConfiguration::SqsNotificationConfiguration(JsonView jsonValue)
 {
   *this = jsonValue;

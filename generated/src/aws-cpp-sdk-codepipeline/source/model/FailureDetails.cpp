@@ -18,16 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-FailureDetails::FailureDetails() : 
-    m_type(FailureType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_externalExecutionIdHasBeenSet(false)
-{
-}
-
 FailureDetails::FailureDetails(JsonView jsonValue)
-  : FailureDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FailureDetails& FailureDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = FailureTypeMapper::GetFailureTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalExecutionId"))
   {
     m_externalExecutionId = jsonValue.GetString("externalExecutionId");
-
     m_externalExecutionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

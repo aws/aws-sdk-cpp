@@ -20,19 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-AsyncOperation::AsyncOperation() : 
-    m_creationTimeHasBeenSet(false),
-    m_operation(AsyncOperationName::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_requestTokenARNHasBeenSet(false),
-    m_requestParametersHasBeenSet(false),
-    m_requestStatusHasBeenSet(false),
-    m_responseDetailsHasBeenSet(false)
-{
-}
-
 AsyncOperation::AsyncOperation(const XmlNode& xmlNode)
-  : AsyncOperation()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,42 @@ AsyncOperation& AsyncOperation::operator =(const XmlNode& xmlNode)
     {
       m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode operationNode = resultNode.FirstChild("Operation");
     if(!operationNode.IsNull())
     {
-      m_operation = AsyncOperationNameMapper::GetAsyncOperationNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(operationNode.GetText()).c_str()).c_str());
+      m_operation = AsyncOperationNameMapper::GetAsyncOperationNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(operationNode.GetText()).c_str()));
       m_operationHasBeenSet = true;
+       m_operationHasBeenSet = true;
     }
     XmlNode requestTokenARNNode = resultNode.FirstChild("RequestTokenARN");
     if(!requestTokenARNNode.IsNull())
     {
       m_requestTokenARN = Aws::Utils::Xml::DecodeEscapedXmlText(requestTokenARNNode.GetText());
       m_requestTokenARNHasBeenSet = true;
+       m_requestTokenARNHasBeenSet = true;
     }
     XmlNode requestParametersNode = resultNode.FirstChild("RequestParameters");
     if(!requestParametersNode.IsNull())
     {
       m_requestParameters = requestParametersNode;
       m_requestParametersHasBeenSet = true;
+       m_requestParametersHasBeenSet = true;
     }
     XmlNode requestStatusNode = resultNode.FirstChild("RequestStatus");
     if(!requestStatusNode.IsNull())
     {
       m_requestStatus = Aws::Utils::Xml::DecodeEscapedXmlText(requestStatusNode.GetText());
       m_requestStatusHasBeenSet = true;
+       m_requestStatusHasBeenSet = true;
     }
     XmlNode responseDetailsNode = resultNode.FirstChild("ResponseDetails");
     if(!responseDetailsNode.IsNull())
     {
       m_responseDetails = responseDetailsNode;
       m_responseDetailsHasBeenSet = true;
+       m_responseDetailsHasBeenSet = true;
     }
   }
 

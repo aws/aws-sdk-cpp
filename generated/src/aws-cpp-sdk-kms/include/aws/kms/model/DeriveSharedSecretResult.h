@@ -30,7 +30,7 @@ namespace Model
   class DeriveSharedSecretResult
   {
   public:
-    AWS_KMS_API DeriveSharedSecretResult();
+    AWS_KMS_API DeriveSharedSecretResult() = default;
     AWS_KMS_API DeriveSharedSecretResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KMS_API DeriveSharedSecretResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>Identifies the KMS key used to derive the shared secret.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
-    inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyId.assign(value); }
-    inline DeriveSharedSecretResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline DeriveSharedSecretResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline DeriveSharedSecretResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    DeriveSharedSecretResult& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,11 +53,11 @@ namespace Model
      * response includes the <code>CiphertextForRecipient</code> field, the
      * <code>SharedSecret</code> field is null or empty.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetSharedSecret() const{ return m_sharedSecret; }
-    inline void SetSharedSecret(const Aws::Utils::CryptoBuffer& value) { m_sharedSecret = value; }
-    inline void SetSharedSecret(Aws::Utils::CryptoBuffer&& value) { m_sharedSecret = std::move(value); }
-    inline DeriveSharedSecretResult& WithSharedSecret(const Aws::Utils::CryptoBuffer& value) { SetSharedSecret(value); return *this;}
-    inline DeriveSharedSecretResult& WithSharedSecret(Aws::Utils::CryptoBuffer&& value) { SetSharedSecret(std::move(value)); return *this;}
+    inline const Aws::Utils::CryptoBuffer& GetSharedSecret() const { return m_sharedSecret; }
+    template<typename SharedSecretT = Aws::Utils::CryptoBuffer>
+    void SetSharedSecret(SharedSecretT&& value) { m_sharedSecretHasBeenSet = true; m_sharedSecret = std::forward<SharedSecretT>(value); }
+    template<typename SharedSecretT = Aws::Utils::CryptoBuffer>
+    DeriveSharedSecretResult& WithSharedSecret(SharedSecretT&& value) { SetSharedSecret(std::forward<SharedSecretT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,22 +71,20 @@ namespace Model
      * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetCiphertextForRecipient() const{ return m_ciphertextForRecipient; }
-    inline void SetCiphertextForRecipient(const Aws::Utils::ByteBuffer& value) { m_ciphertextForRecipient = value; }
-    inline void SetCiphertextForRecipient(Aws::Utils::ByteBuffer&& value) { m_ciphertextForRecipient = std::move(value); }
-    inline DeriveSharedSecretResult& WithCiphertextForRecipient(const Aws::Utils::ByteBuffer& value) { SetCiphertextForRecipient(value); return *this;}
-    inline DeriveSharedSecretResult& WithCiphertextForRecipient(Aws::Utils::ByteBuffer&& value) { SetCiphertextForRecipient(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetCiphertextForRecipient() const { return m_ciphertextForRecipient; }
+    template<typename CiphertextForRecipientT = Aws::Utils::ByteBuffer>
+    void SetCiphertextForRecipient(CiphertextForRecipientT&& value) { m_ciphertextForRecipientHasBeenSet = true; m_ciphertextForRecipient = std::forward<CiphertextForRecipientT>(value); }
+    template<typename CiphertextForRecipientT = Aws::Utils::ByteBuffer>
+    DeriveSharedSecretResult& WithCiphertextForRecipient(CiphertextForRecipientT&& value) { SetCiphertextForRecipient(std::forward<CiphertextForRecipientT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifies the key agreement algorithm used to derive the shared secret.</p>
      */
-    inline const KeyAgreementAlgorithmSpec& GetKeyAgreementAlgorithm() const{ return m_keyAgreementAlgorithm; }
-    inline void SetKeyAgreementAlgorithm(const KeyAgreementAlgorithmSpec& value) { m_keyAgreementAlgorithm = value; }
-    inline void SetKeyAgreementAlgorithm(KeyAgreementAlgorithmSpec&& value) { m_keyAgreementAlgorithm = std::move(value); }
-    inline DeriveSharedSecretResult& WithKeyAgreementAlgorithm(const KeyAgreementAlgorithmSpec& value) { SetKeyAgreementAlgorithm(value); return *this;}
-    inline DeriveSharedSecretResult& WithKeyAgreementAlgorithm(KeyAgreementAlgorithmSpec&& value) { SetKeyAgreementAlgorithm(std::move(value)); return *this;}
+    inline KeyAgreementAlgorithmSpec GetKeyAgreementAlgorithm() const { return m_keyAgreementAlgorithm; }
+    inline void SetKeyAgreementAlgorithm(KeyAgreementAlgorithmSpec value) { m_keyAgreementAlgorithmHasBeenSet = true; m_keyAgreementAlgorithm = value; }
+    inline DeriveSharedSecretResult& WithKeyAgreementAlgorithm(KeyAgreementAlgorithmSpec value) { SetKeyAgreementAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -101,36 +97,38 @@ namespace Model
      * support KMS keys with a <code>KeyOrigin</code> value of
      * <code>AWS_CLOUDHSM</code> or <code>EXTERNAL_KEY_STORE</code>.</p>
      */
-    inline const OriginType& GetKeyOrigin() const{ return m_keyOrigin; }
-    inline void SetKeyOrigin(const OriginType& value) { m_keyOrigin = value; }
-    inline void SetKeyOrigin(OriginType&& value) { m_keyOrigin = std::move(value); }
-    inline DeriveSharedSecretResult& WithKeyOrigin(const OriginType& value) { SetKeyOrigin(value); return *this;}
-    inline DeriveSharedSecretResult& WithKeyOrigin(OriginType&& value) { SetKeyOrigin(std::move(value)); return *this;}
+    inline OriginType GetKeyOrigin() const { return m_keyOrigin; }
+    inline void SetKeyOrigin(OriginType value) { m_keyOriginHasBeenSet = true; m_keyOrigin = value; }
+    inline DeriveSharedSecretResult& WithKeyOrigin(OriginType value) { SetKeyOrigin(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeriveSharedSecretResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeriveSharedSecretResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeriveSharedSecretResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeriveSharedSecretResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyId;
+    bool m_keyIdHasBeenSet = false;
 
-    Aws::Utils::CryptoBuffer m_sharedSecret;
+    Aws::Utils::CryptoBuffer m_sharedSecret{};
+    bool m_sharedSecretHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_ciphertextForRecipient;
+    Aws::Utils::ByteBuffer m_ciphertextForRecipient{};
+    bool m_ciphertextForRecipientHasBeenSet = false;
 
-    KeyAgreementAlgorithmSpec m_keyAgreementAlgorithm;
+    KeyAgreementAlgorithmSpec m_keyAgreementAlgorithm{KeyAgreementAlgorithmSpec::NOT_SET};
+    bool m_keyAgreementAlgorithmHasBeenSet = false;
 
-    OriginType m_keyOrigin;
+    OriginType m_keyOrigin{OriginType::NOT_SET};
+    bool m_keyOriginHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

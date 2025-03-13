@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-CaptionSelector::CaptionSelector() : 
-    m_languageCodeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_selectorSettingsHasBeenSet(false)
-{
-}
-
 CaptionSelector::CaptionSelector(JsonView jsonValue)
-  : CaptionSelector()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CaptionSelector& CaptionSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = jsonValue.GetString("languageCode");
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectorSettings"))
   {
     m_selectorSettings = jsonValue.GetObject("selectorSettings");
-
     m_selectorSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

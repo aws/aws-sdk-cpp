@@ -33,7 +33,7 @@ namespace Model
   class SortCriteria
   {
   public:
-    AWS_MACIE2_API SortCriteria();
+    AWS_MACIE2_API SortCriteria() = default;
     AWS_MACIE2_API SortCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API SortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * policyDetails.action.apiCallDetails.lastSeen, resourcesAffected, severity.score,
      * type, and updatedAt.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline SortCriteria& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline SortCriteria& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline SortCriteria& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    SortCriteria& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,19 +60,17 @@ namespace Model
      * specified by the attributeName property. Valid values are: ASC, sort the results
      * in ascending order; and, DESC, sort the results in descending order.</p>
      */
-    inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
+    inline OrderBy GetOrderBy() const { return m_orderBy; }
     inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
-    inline void SetOrderBy(const OrderBy& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
-    inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
-    inline SortCriteria& WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
-    inline SortCriteria& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
+    inline void SetOrderBy(OrderBy value) { m_orderByHasBeenSet = true; m_orderBy = value; }
+    inline SortCriteria& WithOrderBy(OrderBy value) { SetOrderBy(value); return *this;}
     ///@}
   private:
 
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet = false;
 
-    OrderBy m_orderBy;
+    OrderBy m_orderBy{OrderBy::NOT_SET};
     bool m_orderByHasBeenSet = false;
   };
 

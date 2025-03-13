@@ -18,15 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-ImageBuilderStateChangeReason::ImageBuilderStateChangeReason() : 
-    m_code(ImageBuilderStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ImageBuilderStateChangeReason::ImageBuilderStateChangeReason(JsonView jsonValue)
-  : ImageBuilderStateChangeReason()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ImageBuilderStateChangeReason& ImageBuilderStateChangeReason::operator =(JsonVie
   if(jsonValue.ValueExists("Code"))
   {
     m_code = ImageBuilderStateChangeReasonCodeMapper::GetImageBuilderStateChangeReasonCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

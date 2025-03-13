@@ -28,35 +28,35 @@ namespace Model
   class PhoneNumberValidateResult
   {
   public:
-    AWS_PINPOINT_API PhoneNumberValidateResult();
+    AWS_PINPOINT_API PhoneNumberValidateResult() = default;
     AWS_PINPOINT_API PhoneNumberValidateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API PhoneNumberValidateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const NumberValidateResponse& GetNumberValidateResponse() const{ return m_numberValidateResponse; }
-    inline void SetNumberValidateResponse(const NumberValidateResponse& value) { m_numberValidateResponse = value; }
-    inline void SetNumberValidateResponse(NumberValidateResponse&& value) { m_numberValidateResponse = std::move(value); }
-    inline PhoneNumberValidateResult& WithNumberValidateResponse(const NumberValidateResponse& value) { SetNumberValidateResponse(value); return *this;}
-    inline PhoneNumberValidateResult& WithNumberValidateResponse(NumberValidateResponse&& value) { SetNumberValidateResponse(std::move(value)); return *this;}
+    inline const NumberValidateResponse& GetNumberValidateResponse() const { return m_numberValidateResponse; }
+    template<typename NumberValidateResponseT = NumberValidateResponse>
+    void SetNumberValidateResponse(NumberValidateResponseT&& value) { m_numberValidateResponseHasBeenSet = true; m_numberValidateResponse = std::forward<NumberValidateResponseT>(value); }
+    template<typename NumberValidateResponseT = NumberValidateResponse>
+    PhoneNumberValidateResult& WithNumberValidateResponse(NumberValidateResponseT&& value) { SetNumberValidateResponse(std::forward<NumberValidateResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PhoneNumberValidateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PhoneNumberValidateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PhoneNumberValidateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PhoneNumberValidateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     NumberValidateResponse m_numberValidateResponse;
+    bool m_numberValidateResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

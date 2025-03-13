@@ -21,7 +21,7 @@ namespace Model
   class DeleteFirewallManagerRuleGroupsRequest : public WAFV2Request
   {
   public:
-    AWS_WAFV2_API DeleteFirewallManagerRuleGroupsRequest();
+    AWS_WAFV2_API DeleteFirewallManagerRuleGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the web ACL.</p>
      */
-    inline const Aws::String& GetWebACLArn() const{ return m_webACLArn; }
+    inline const Aws::String& GetWebACLArn() const { return m_webACLArn; }
     inline bool WebACLArnHasBeenSet() const { return m_webACLArnHasBeenSet; }
-    inline void SetWebACLArn(const Aws::String& value) { m_webACLArnHasBeenSet = true; m_webACLArn = value; }
-    inline void SetWebACLArn(Aws::String&& value) { m_webACLArnHasBeenSet = true; m_webACLArn = std::move(value); }
-    inline void SetWebACLArn(const char* value) { m_webACLArnHasBeenSet = true; m_webACLArn.assign(value); }
-    inline DeleteFirewallManagerRuleGroupsRequest& WithWebACLArn(const Aws::String& value) { SetWebACLArn(value); return *this;}
-    inline DeleteFirewallManagerRuleGroupsRequest& WithWebACLArn(Aws::String&& value) { SetWebACLArn(std::move(value)); return *this;}
-    inline DeleteFirewallManagerRuleGroupsRequest& WithWebACLArn(const char* value) { SetWebACLArn(value); return *this;}
+    template<typename WebACLArnT = Aws::String>
+    void SetWebACLArn(WebACLArnT&& value) { m_webACLArnHasBeenSet = true; m_webACLArn = std::forward<WebACLArnT>(value); }
+    template<typename WebACLArnT = Aws::String>
+    DeleteFirewallManagerRuleGroupsRequest& WithWebACLArn(WebACLArnT&& value) { SetWebACLArn(std::forward<WebACLArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
      * another <code>get</code>, and use the new token returned by that operation. </p>
      */
-    inline const Aws::String& GetWebACLLockToken() const{ return m_webACLLockToken; }
+    inline const Aws::String& GetWebACLLockToken() const { return m_webACLLockToken; }
     inline bool WebACLLockTokenHasBeenSet() const { return m_webACLLockTokenHasBeenSet; }
-    inline void SetWebACLLockToken(const Aws::String& value) { m_webACLLockTokenHasBeenSet = true; m_webACLLockToken = value; }
-    inline void SetWebACLLockToken(Aws::String&& value) { m_webACLLockTokenHasBeenSet = true; m_webACLLockToken = std::move(value); }
-    inline void SetWebACLLockToken(const char* value) { m_webACLLockTokenHasBeenSet = true; m_webACLLockToken.assign(value); }
-    inline DeleteFirewallManagerRuleGroupsRequest& WithWebACLLockToken(const Aws::String& value) { SetWebACLLockToken(value); return *this;}
-    inline DeleteFirewallManagerRuleGroupsRequest& WithWebACLLockToken(Aws::String&& value) { SetWebACLLockToken(std::move(value)); return *this;}
-    inline DeleteFirewallManagerRuleGroupsRequest& WithWebACLLockToken(const char* value) { SetWebACLLockToken(value); return *this;}
+    template<typename WebACLLockTokenT = Aws::String>
+    void SetWebACLLockToken(WebACLLockTokenT&& value) { m_webACLLockTokenHasBeenSet = true; m_webACLLockToken = std::forward<WebACLLockTokenT>(value); }
+    template<typename WebACLLockTokenT = Aws::String>
+    DeleteFirewallManagerRuleGroupsRequest& WithWebACLLockToken(WebACLLockTokenT&& value) { SetWebACLLockToken(std::forward<WebACLLockTokenT>(value)); return *this;}
     ///@}
   private:
 

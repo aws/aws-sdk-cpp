@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PollForDecisionTaskResult::PollForDecisionTaskResult() : 
-    m_startedEventId(0),
-    m_previousStartedEventId(0)
-{
-}
-
 PollForDecisionTaskResult::PollForDecisionTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PollForDecisionTaskResult()
 {
   *this = result;
 }
@@ -35,27 +28,23 @@ PollForDecisionTaskResult& PollForDecisionTaskResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("taskToken"))
   {
     m_taskToken = jsonValue.GetString("taskToken");
-
+    m_taskTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedEventId"))
   {
     m_startedEventId = jsonValue.GetInt64("startedEventId");
-
+    m_startedEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowExecution"))
   {
     m_workflowExecution = jsonValue.GetObject("workflowExecution");
-
+    m_workflowExecutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowType"))
   {
     m_workflowType = jsonValue.GetObject("workflowType");
-
+    m_workflowTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("events"))
   {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
@@ -63,26 +52,25 @@ PollForDecisionTaskResult& PollForDecisionTaskResult::operator =(const Aws::Amaz
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
     }
+    m_eventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("nextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("previousStartedEventId"))
   {
     m_previousStartedEventId = jsonValue.GetInt64("previousStartedEventId");
-
+    m_previousStartedEventIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

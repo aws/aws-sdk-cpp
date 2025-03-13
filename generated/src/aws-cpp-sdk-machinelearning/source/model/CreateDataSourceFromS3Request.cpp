@@ -12,15 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataSourceFromS3Request::CreateDataSourceFromS3Request() : 
-    m_dataSourceIdHasBeenSet(false),
-    m_dataSourceNameHasBeenSet(false),
-    m_dataSpecHasBeenSet(false),
-    m_computeStatistics(false),
-    m_computeStatisticsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataSourceFromS3Request::SerializePayload() const
 {
   JsonValue payload;

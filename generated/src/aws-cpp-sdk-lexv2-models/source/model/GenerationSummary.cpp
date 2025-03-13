@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-GenerationSummary::GenerationSummary() : 
-    m_generationIdHasBeenSet(false),
-    m_generationStatus(GenerationStatus::NOT_SET),
-    m_generationStatusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
-{
-}
-
 GenerationSummary::GenerationSummary(JsonView jsonValue)
-  : GenerationSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ GenerationSummary& GenerationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("generationId"))
   {
     m_generationId = jsonValue.GetString("generationId");
-
     m_generationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generationStatus"))
   {
     m_generationStatus = GenerationStatusMapper::GetGenerationStatusForName(jsonValue.GetString("generationStatus"));
-
     m_generationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

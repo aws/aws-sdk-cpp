@@ -41,7 +41,7 @@ namespace Model
   class EnaSrdSpecification
   {
   public:
-    AWS_EC2_API EnaSrdSpecification();
+    AWS_EC2_API EnaSrdSpecification() = default;
     AWS_EC2_API EnaSrdSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API EnaSrdSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>Indicates whether ENA Express is enabled for the network interface.</p>
      */
-    inline bool GetEnaSrdEnabled() const{ return m_enaSrdEnabled; }
+    inline bool GetEnaSrdEnabled() const { return m_enaSrdEnabled; }
     inline bool EnaSrdEnabledHasBeenSet() const { return m_enaSrdEnabledHasBeenSet; }
     inline void SetEnaSrdEnabled(bool value) { m_enaSrdEnabledHasBeenSet = true; m_enaSrdEnabled = value; }
     inline EnaSrdSpecification& WithEnaSrdEnabled(bool value) { SetEnaSrdEnabled(value); return *this;}
@@ -63,16 +63,16 @@ namespace Model
     /**
      * <p>Configures ENA Express for UDP network traffic.</p>
      */
-    inline const EnaSrdUdpSpecification& GetEnaSrdUdpSpecification() const{ return m_enaSrdUdpSpecification; }
+    inline const EnaSrdUdpSpecification& GetEnaSrdUdpSpecification() const { return m_enaSrdUdpSpecification; }
     inline bool EnaSrdUdpSpecificationHasBeenSet() const { return m_enaSrdUdpSpecificationHasBeenSet; }
-    inline void SetEnaSrdUdpSpecification(const EnaSrdUdpSpecification& value) { m_enaSrdUdpSpecificationHasBeenSet = true; m_enaSrdUdpSpecification = value; }
-    inline void SetEnaSrdUdpSpecification(EnaSrdUdpSpecification&& value) { m_enaSrdUdpSpecificationHasBeenSet = true; m_enaSrdUdpSpecification = std::move(value); }
-    inline EnaSrdSpecification& WithEnaSrdUdpSpecification(const EnaSrdUdpSpecification& value) { SetEnaSrdUdpSpecification(value); return *this;}
-    inline EnaSrdSpecification& WithEnaSrdUdpSpecification(EnaSrdUdpSpecification&& value) { SetEnaSrdUdpSpecification(std::move(value)); return *this;}
+    template<typename EnaSrdUdpSpecificationT = EnaSrdUdpSpecification>
+    void SetEnaSrdUdpSpecification(EnaSrdUdpSpecificationT&& value) { m_enaSrdUdpSpecificationHasBeenSet = true; m_enaSrdUdpSpecification = std::forward<EnaSrdUdpSpecificationT>(value); }
+    template<typename EnaSrdUdpSpecificationT = EnaSrdUdpSpecification>
+    EnaSrdSpecification& WithEnaSrdUdpSpecification(EnaSrdUdpSpecificationT&& value) { SetEnaSrdUdpSpecification(std::forward<EnaSrdUdpSpecificationT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enaSrdEnabled;
+    bool m_enaSrdEnabled{false};
     bool m_enaSrdEnabledHasBeenSet = false;
 
     EnaSrdUdpSpecification m_enaSrdUdpSpecification;

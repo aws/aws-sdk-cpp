@@ -31,7 +31,7 @@ namespace Model
   class CreateSolFunctionPackageResult
   {
   public:
-    AWS_TNB_API CreateSolFunctionPackageResult();
+    AWS_TNB_API CreateSolFunctionPackageResult() = default;
     AWS_TNB_API CreateSolFunctionPackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TNB_API CreateSolFunctionPackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,48 +40,40 @@ namespace Model
     /**
      * <p>Function package ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateSolFunctionPackageResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateSolFunctionPackageResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateSolFunctionPackageResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateSolFunctionPackageResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of the function package.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateSolFunctionPackageResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateSolFunctionPackageResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateSolFunctionPackageResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateSolFunctionPackageResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Onboarding state of the function package.</p>
      */
-    inline const OnboardingState& GetOnboardingState() const{ return m_onboardingState; }
-    inline void SetOnboardingState(const OnboardingState& value) { m_onboardingState = value; }
-    inline void SetOnboardingState(OnboardingState&& value) { m_onboardingState = std::move(value); }
-    inline CreateSolFunctionPackageResult& WithOnboardingState(const OnboardingState& value) { SetOnboardingState(value); return *this;}
-    inline CreateSolFunctionPackageResult& WithOnboardingState(OnboardingState&& value) { SetOnboardingState(std::move(value)); return *this;}
+    inline OnboardingState GetOnboardingState() const { return m_onboardingState; }
+    inline void SetOnboardingState(OnboardingState value) { m_onboardingStateHasBeenSet = true; m_onboardingState = value; }
+    inline CreateSolFunctionPackageResult& WithOnboardingState(OnboardingState value) { SetOnboardingState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Operational state of the function package.</p>
      */
-    inline const OperationalState& GetOperationalState() const{ return m_operationalState; }
-    inline void SetOperationalState(const OperationalState& value) { m_operationalState = value; }
-    inline void SetOperationalState(OperationalState&& value) { m_operationalState = std::move(value); }
-    inline CreateSolFunctionPackageResult& WithOperationalState(const OperationalState& value) { SetOperationalState(value); return *this;}
-    inline CreateSolFunctionPackageResult& WithOperationalState(OperationalState&& value) { SetOperationalState(std::move(value)); return *this;}
+    inline OperationalState GetOperationalState() const { return m_operationalState; }
+    inline void SetOperationalState(OperationalState value) { m_operationalStateHasBeenSet = true; m_operationalState = value; }
+    inline CreateSolFunctionPackageResult& WithOperationalState(OperationalState value) { SetOperationalState(value); return *this;}
     ///@}
 
     ///@{
@@ -90,56 +82,56 @@ namespace Model
      * consists of a key and an optional value. You can use tags to search and filter
      * your resources or track your Amazon Web Services costs.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline CreateSolFunctionPackageResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateSolFunctionPackageResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSolFunctionPackageResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline CreateSolFunctionPackageResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSolFunctionPackageResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSolFunctionPackageResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateSolFunctionPackageResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSolFunctionPackageResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSolFunctionPackageResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateSolFunctionPackageResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateSolFunctionPackageResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Usage state of the function package.</p>
      */
-    inline const UsageState& GetUsageState() const{ return m_usageState; }
-    inline void SetUsageState(const UsageState& value) { m_usageState = value; }
-    inline void SetUsageState(UsageState&& value) { m_usageState = std::move(value); }
-    inline CreateSolFunctionPackageResult& WithUsageState(const UsageState& value) { SetUsageState(value); return *this;}
-    inline CreateSolFunctionPackageResult& WithUsageState(UsageState&& value) { SetUsageState(std::move(value)); return *this;}
+    inline UsageState GetUsageState() const { return m_usageState; }
+    inline void SetUsageState(UsageState value) { m_usageStateHasBeenSet = true; m_usageState = value; }
+    inline CreateSolFunctionPackageResult& WithUsageState(UsageState value) { SetUsageState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateSolFunctionPackageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateSolFunctionPackageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateSolFunctionPackageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateSolFunctionPackageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    OnboardingState m_onboardingState;
+    OnboardingState m_onboardingState{OnboardingState::NOT_SET};
+    bool m_onboardingStateHasBeenSet = false;
 
-    OperationalState m_operationalState;
+    OperationalState m_operationalState{OperationalState::NOT_SET};
+    bool m_operationalStateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
-    UsageState m_usageState;
+    UsageState m_usageState{UsageState::NOT_SET};
+    bool m_usageStateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

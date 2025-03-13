@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifySnapshotTierRequest::ModifySnapshotTierRequest() : 
-    m_snapshotIdHasBeenSet(false),
-    m_storageTier(TargetStorageTier::NOT_SET),
-    m_storageTierHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifySnapshotTierRequest::SerializePayload() const
 {
   Aws::StringStream ss;

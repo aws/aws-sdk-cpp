@@ -12,14 +12,6 @@ using namespace Aws::TimestreamInfluxDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDbInstancesForClusterRequest::ListDbInstancesForClusterRequest() : 
-    m_dbClusterIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDbInstancesForClusterRequest::SerializePayload() const
 {
   JsonValue payload;

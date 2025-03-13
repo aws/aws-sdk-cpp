@@ -33,7 +33,7 @@ namespace Model
   class SNSTopicPublishAction
   {
   public:
-    AWS_IOTEVENTS_API SNSTopicPublishAction();
+    AWS_IOTEVENTS_API SNSTopicPublishAction() = default;
     AWS_IOTEVENTS_API SNSTopicPublishAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API SNSTopicPublishAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ARN of the Amazon SNS target where the message is sent.</p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-    inline SNSTopicPublishAction& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline SNSTopicPublishAction& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline SNSTopicPublishAction& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    SNSTopicPublishAction& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p>You can configure the action payload when you send a message as an Amazon SNS
      * push notification.</p>
      */
-    inline const Payload& GetPayload() const{ return m_payload; }
+    inline const Payload& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Payload& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Payload&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline SNSTopicPublishAction& WithPayload(const Payload& value) { SetPayload(value); return *this;}
-    inline SNSTopicPublishAction& WithPayload(Payload&& value) { SetPayload(std::move(value)); return *this;}
+    template<typename PayloadT = Payload>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Payload>
+    SNSTopicPublishAction& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
   private:
 

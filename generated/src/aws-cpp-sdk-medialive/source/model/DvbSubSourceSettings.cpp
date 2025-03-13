@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-DvbSubSourceSettings::DvbSubSourceSettings() : 
-    m_ocrLanguage(DvbSubOcrLanguage::NOT_SET),
-    m_ocrLanguageHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false)
-{
-}
-
 DvbSubSourceSettings::DvbSubSourceSettings(JsonView jsonValue)
-  : DvbSubSourceSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DvbSubSourceSettings& DvbSubSourceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ocrLanguage"))
   {
     m_ocrLanguage = DvbSubOcrLanguageMapper::GetDvbSubOcrLanguageForName(jsonValue.GetString("ocrLanguage"));
-
     m_ocrLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pid"))
   {
     m_pid = jsonValue.GetInteger("pid");
-
     m_pidHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class DeleteDedicatedIpPoolRequest : public PinpointEmailRequest
   {
   public:
-    AWS_PINPOINTEMAIL_API DeleteDedicatedIpPoolRequest();
+    AWS_PINPOINTEMAIL_API DeleteDedicatedIpPoolRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the dedicated IP pool that you want to delete.</p>
      */
-    inline const Aws::String& GetPoolName() const{ return m_poolName; }
+    inline const Aws::String& GetPoolName() const { return m_poolName; }
     inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
-    inline void SetPoolName(const Aws::String& value) { m_poolNameHasBeenSet = true; m_poolName = value; }
-    inline void SetPoolName(Aws::String&& value) { m_poolNameHasBeenSet = true; m_poolName = std::move(value); }
-    inline void SetPoolName(const char* value) { m_poolNameHasBeenSet = true; m_poolName.assign(value); }
-    inline DeleteDedicatedIpPoolRequest& WithPoolName(const Aws::String& value) { SetPoolName(value); return *this;}
-    inline DeleteDedicatedIpPoolRequest& WithPoolName(Aws::String&& value) { SetPoolName(std::move(value)); return *this;}
-    inline DeleteDedicatedIpPoolRequest& WithPoolName(const char* value) { SetPoolName(value); return *this;}
+    template<typename PoolNameT = Aws::String>
+    void SetPoolName(PoolNameT&& value) { m_poolNameHasBeenSet = true; m_poolName = std::forward<PoolNameT>(value); }
+    template<typename PoolNameT = Aws::String>
+    DeleteDedicatedIpPoolRequest& WithPoolName(PoolNameT&& value) { SetPoolName(std::forward<PoolNameT>(value)); return *this;}
     ///@}
   private:
 

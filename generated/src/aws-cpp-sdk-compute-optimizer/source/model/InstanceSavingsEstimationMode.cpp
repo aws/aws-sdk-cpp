@@ -18,14 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-InstanceSavingsEstimationMode::InstanceSavingsEstimationMode() : 
-    m_source(InstanceSavingsEstimationModeSource::NOT_SET),
-    m_sourceHasBeenSet(false)
-{
-}
-
 InstanceSavingsEstimationMode::InstanceSavingsEstimationMode(JsonView jsonValue)
-  : InstanceSavingsEstimationMode()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InstanceSavingsEstimationMode& InstanceSavingsEstimationMode::operator =(JsonVie
   if(jsonValue.ValueExists("source"))
   {
     m_source = InstanceSavingsEstimationModeSourceMapper::GetInstanceSavingsEstimationModeSourceForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

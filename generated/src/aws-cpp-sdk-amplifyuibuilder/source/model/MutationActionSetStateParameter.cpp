@@ -18,15 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-MutationActionSetStateParameter::MutationActionSetStateParameter() : 
-    m_componentNameHasBeenSet(false),
-    m_propertyHasBeenSet(false),
-    m_setHasBeenSet(false)
-{
-}
-
 MutationActionSetStateParameter::MutationActionSetStateParameter(JsonView jsonValue)
-  : MutationActionSetStateParameter()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MutationActionSetStateParameter& MutationActionSetStateParameter::operator =(Jso
   if(jsonValue.ValueExists("componentName"))
   {
     m_componentName = jsonValue.GetString("componentName");
-
     m_componentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("property"))
   {
     m_property = jsonValue.GetString("property");
-
     m_propertyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("set"))
   {
     m_set = jsonValue.GetObject("set");
-
     m_setHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,25 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-EvaluationSummary::EvaluationSummary() : 
-    m_jobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_status(EvaluationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_jobType(EvaluationJobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_evaluationTaskTypesHasBeenSet(false),
-    m_modelIdentifiersHasBeenSet(false),
-    m_ragIdentifiersHasBeenSet(false),
-    m_evaluatorModelIdentifiersHasBeenSet(false),
-    m_applicationType(ApplicationType::NOT_SET),
-    m_applicationTypeHasBeenSet(false)
-{
-}
-
 EvaluationSummary::EvaluationSummary(JsonView jsonValue)
-  : EvaluationSummary()
 {
   *this = jsonValue;
 }
@@ -46,38 +28,28 @@ EvaluationSummary& EvaluationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobArn"))
   {
     m_jobArn = jsonValue.GetString("jobArn");
-
     m_jobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = EvaluationJobStatusMapper::GetEvaluationJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobType"))
   {
     m_jobType = EvaluationJobTypeMapper::GetEvaluationJobTypeForName(jsonValue.GetString("jobType"));
-
     m_jobTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluationTaskTypes"))
   {
     Aws::Utils::Array<JsonView> evaluationTaskTypesJsonList = jsonValue.GetArray("evaluationTaskTypes");
@@ -87,7 +59,6 @@ EvaluationSummary& EvaluationSummary::operator =(JsonView jsonValue)
     }
     m_evaluationTaskTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelIdentifiers"))
   {
     Aws::Utils::Array<JsonView> modelIdentifiersJsonList = jsonValue.GetArray("modelIdentifiers");
@@ -97,7 +68,6 @@ EvaluationSummary& EvaluationSummary::operator =(JsonView jsonValue)
     }
     m_modelIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ragIdentifiers"))
   {
     Aws::Utils::Array<JsonView> ragIdentifiersJsonList = jsonValue.GetArray("ragIdentifiers");
@@ -107,7 +77,6 @@ EvaluationSummary& EvaluationSummary::operator =(JsonView jsonValue)
     }
     m_ragIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluatorModelIdentifiers"))
   {
     Aws::Utils::Array<JsonView> evaluatorModelIdentifiersJsonList = jsonValue.GetArray("evaluatorModelIdentifiers");
@@ -117,14 +86,11 @@ EvaluationSummary& EvaluationSummary::operator =(JsonView jsonValue)
     }
     m_evaluatorModelIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationType"))
   {
     m_applicationType = ApplicationTypeMapper::GetApplicationTypeForName(jsonValue.GetString("applicationType"));
-
     m_applicationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

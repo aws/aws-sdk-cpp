@@ -25,7 +25,7 @@ namespace Model
   class DeletePromptRequest : public BedrockAgentRequest
   {
   public:
-    AWS_BEDROCKAGENT_API DeletePromptRequest();
+    AWS_BEDROCKAGENT_API DeletePromptRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identifier of the prompt.</p>
      */
-    inline const Aws::String& GetPromptIdentifier() const{ return m_promptIdentifier; }
+    inline const Aws::String& GetPromptIdentifier() const { return m_promptIdentifier; }
     inline bool PromptIdentifierHasBeenSet() const { return m_promptIdentifierHasBeenSet; }
-    inline void SetPromptIdentifier(const Aws::String& value) { m_promptIdentifierHasBeenSet = true; m_promptIdentifier = value; }
-    inline void SetPromptIdentifier(Aws::String&& value) { m_promptIdentifierHasBeenSet = true; m_promptIdentifier = std::move(value); }
-    inline void SetPromptIdentifier(const char* value) { m_promptIdentifierHasBeenSet = true; m_promptIdentifier.assign(value); }
-    inline DeletePromptRequest& WithPromptIdentifier(const Aws::String& value) { SetPromptIdentifier(value); return *this;}
-    inline DeletePromptRequest& WithPromptIdentifier(Aws::String&& value) { SetPromptIdentifier(std::move(value)); return *this;}
-    inline DeletePromptRequest& WithPromptIdentifier(const char* value) { SetPromptIdentifier(value); return *this;}
+    template<typename PromptIdentifierT = Aws::String>
+    void SetPromptIdentifier(PromptIdentifierT&& value) { m_promptIdentifierHasBeenSet = true; m_promptIdentifier = std::forward<PromptIdentifierT>(value); }
+    template<typename PromptIdentifierT = Aws::String>
+    DeletePromptRequest& WithPromptIdentifier(PromptIdentifierT&& value) { SetPromptIdentifier(std::forward<PromptIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The version of the prompt to delete. To delete the prompt, omit this
      * field.</p>
      */
-    inline const Aws::String& GetPromptVersion() const{ return m_promptVersion; }
+    inline const Aws::String& GetPromptVersion() const { return m_promptVersion; }
     inline bool PromptVersionHasBeenSet() const { return m_promptVersionHasBeenSet; }
-    inline void SetPromptVersion(const Aws::String& value) { m_promptVersionHasBeenSet = true; m_promptVersion = value; }
-    inline void SetPromptVersion(Aws::String&& value) { m_promptVersionHasBeenSet = true; m_promptVersion = std::move(value); }
-    inline void SetPromptVersion(const char* value) { m_promptVersionHasBeenSet = true; m_promptVersion.assign(value); }
-    inline DeletePromptRequest& WithPromptVersion(const Aws::String& value) { SetPromptVersion(value); return *this;}
-    inline DeletePromptRequest& WithPromptVersion(Aws::String&& value) { SetPromptVersion(std::move(value)); return *this;}
-    inline DeletePromptRequest& WithPromptVersion(const char* value) { SetPromptVersion(value); return *this;}
+    template<typename PromptVersionT = Aws::String>
+    void SetPromptVersion(PromptVersionT&& value) { m_promptVersionHasBeenSet = true; m_promptVersion = std::forward<PromptVersionT>(value); }
+    template<typename PromptVersionT = Aws::String>
+    DeletePromptRequest& WithPromptVersion(PromptVersionT&& value) { SetPromptVersion(std::forward<PromptVersionT>(value)); return *this;}
     ///@}
   private:
 

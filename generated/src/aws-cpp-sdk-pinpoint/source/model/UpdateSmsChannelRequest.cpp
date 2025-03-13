@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSmsChannelRequest::UpdateSmsChannelRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_sMSChannelRequestHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSmsChannelRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CacheBehaviors::CacheBehaviors() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 CacheBehaviors::CacheBehaviors(const XmlNode& xmlNode)
-  : CacheBehaviors()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,20 @@ CacheBehaviors& CacheBehaviors::operator =(const XmlNode& xmlNode)
     {
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quantityNode.GetText()).c_str()).c_str());
       m_quantityHasBeenSet = true;
+       m_quantityHasBeenSet = true;
     }
     XmlNode itemsNode = resultNode.FirstChild("Items");
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("CacheBehavior");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);
         itemsMember = itemsMember.NextNode("CacheBehavior");
       }
 
-      m_itemsHasBeenSet = true;
+       m_itemsHasBeenSet = true;
     }
   }
 

@@ -27,7 +27,7 @@ namespace Model
   class CreateEventIntegrationResult
   {
   public:
-    AWS_APPINTEGRATIONSSERVICE_API CreateEventIntegrationResult();
+    AWS_APPINTEGRATIONSSERVICE_API CreateEventIntegrationResult() = default;
     AWS_APPINTEGRATIONSSERVICE_API CreateEventIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPINTEGRATIONSSERVICE_API CreateEventIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the event integration. </p>
      */
-    inline const Aws::String& GetEventIntegrationArn() const{ return m_eventIntegrationArn; }
-    inline void SetEventIntegrationArn(const Aws::String& value) { m_eventIntegrationArn = value; }
-    inline void SetEventIntegrationArn(Aws::String&& value) { m_eventIntegrationArn = std::move(value); }
-    inline void SetEventIntegrationArn(const char* value) { m_eventIntegrationArn.assign(value); }
-    inline CreateEventIntegrationResult& WithEventIntegrationArn(const Aws::String& value) { SetEventIntegrationArn(value); return *this;}
-    inline CreateEventIntegrationResult& WithEventIntegrationArn(Aws::String&& value) { SetEventIntegrationArn(std::move(value)); return *this;}
-    inline CreateEventIntegrationResult& WithEventIntegrationArn(const char* value) { SetEventIntegrationArn(value); return *this;}
+    inline const Aws::String& GetEventIntegrationArn() const { return m_eventIntegrationArn; }
+    template<typename EventIntegrationArnT = Aws::String>
+    void SetEventIntegrationArn(EventIntegrationArnT&& value) { m_eventIntegrationArnHasBeenSet = true; m_eventIntegrationArn = std::forward<EventIntegrationArnT>(value); }
+    template<typename EventIntegrationArnT = Aws::String>
+    CreateEventIntegrationResult& WithEventIntegrationArn(EventIntegrationArnT&& value) { SetEventIntegrationArn(std::forward<EventIntegrationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateEventIntegrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateEventIntegrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateEventIntegrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateEventIntegrationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventIntegrationArn;
+    bool m_eventIntegrationArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,12 +12,6 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataSetDetailsRequest::GetDataSetDetailsRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_dataSetNameHasBeenSet(false)
-{
-}
-
 Aws::String GetDataSetDetailsRequest::SerializePayload() const
 {
   return {};

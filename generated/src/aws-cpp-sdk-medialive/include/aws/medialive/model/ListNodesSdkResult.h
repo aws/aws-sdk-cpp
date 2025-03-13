@@ -34,7 +34,7 @@ namespace Model
   class ListNodesSdkResult
   {
   public:
-    AWS_MEDIALIVE_API ListNodesSdkResult();
+    AWS_MEDIALIVE_API ListNodesSdkResult() = default;
     AWS_MEDIALIVE_API ListNodesSdkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API ListNodesSdkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,45 +43,44 @@ namespace Model
     /**
      * Token for the next result.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListNodesSdkResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListNodesSdkResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListNodesSdkResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListNodesSdkResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * An array of Nodes that exist in the Cluster.
      */
-    inline const Aws::Vector<DescribeNodeSummary>& GetNodes() const{ return m_nodes; }
-    inline void SetNodes(const Aws::Vector<DescribeNodeSummary>& value) { m_nodes = value; }
-    inline void SetNodes(Aws::Vector<DescribeNodeSummary>&& value) { m_nodes = std::move(value); }
-    inline ListNodesSdkResult& WithNodes(const Aws::Vector<DescribeNodeSummary>& value) { SetNodes(value); return *this;}
-    inline ListNodesSdkResult& WithNodes(Aws::Vector<DescribeNodeSummary>&& value) { SetNodes(std::move(value)); return *this;}
-    inline ListNodesSdkResult& AddNodes(const DescribeNodeSummary& value) { m_nodes.push_back(value); return *this; }
-    inline ListNodesSdkResult& AddNodes(DescribeNodeSummary&& value) { m_nodes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DescribeNodeSummary>& GetNodes() const { return m_nodes; }
+    template<typename NodesT = Aws::Vector<DescribeNodeSummary>>
+    void SetNodes(NodesT&& value) { m_nodesHasBeenSet = true; m_nodes = std::forward<NodesT>(value); }
+    template<typename NodesT = Aws::Vector<DescribeNodeSummary>>
+    ListNodesSdkResult& WithNodes(NodesT&& value) { SetNodes(std::forward<NodesT>(value)); return *this;}
+    template<typename NodesT = DescribeNodeSummary>
+    ListNodesSdkResult& AddNodes(NodesT&& value) { m_nodesHasBeenSet = true; m_nodes.emplace_back(std::forward<NodesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListNodesSdkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListNodesSdkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListNodesSdkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListNodesSdkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<DescribeNodeSummary> m_nodes;
+    bool m_nodesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

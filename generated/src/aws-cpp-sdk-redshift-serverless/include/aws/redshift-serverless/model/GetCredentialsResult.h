@@ -28,7 +28,7 @@ namespace Model
   class GetCredentialsResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API GetCredentialsResult();
+    AWS_REDSHIFTSERVERLESS_API GetCredentialsResult() = default;
     AWS_REDSHIFTSERVERLESS_API GetCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API GetCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * <p>A temporary password that authorizes the user name returned by
      * <code>DbUser</code> to log on to the database <code>DbName</code>.</p>
      */
-    inline const Aws::String& GetDbPassword() const{ return m_dbPassword; }
-    inline void SetDbPassword(const Aws::String& value) { m_dbPassword = value; }
-    inline void SetDbPassword(Aws::String&& value) { m_dbPassword = std::move(value); }
-    inline void SetDbPassword(const char* value) { m_dbPassword.assign(value); }
-    inline GetCredentialsResult& WithDbPassword(const Aws::String& value) { SetDbPassword(value); return *this;}
-    inline GetCredentialsResult& WithDbPassword(Aws::String&& value) { SetDbPassword(std::move(value)); return *this;}
-    inline GetCredentialsResult& WithDbPassword(const char* value) { SetDbPassword(value); return *this;}
+    inline const Aws::String& GetDbPassword() const { return m_dbPassword; }
+    template<typename DbPasswordT = Aws::String>
+    void SetDbPassword(DbPasswordT&& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = std::forward<DbPasswordT>(value); }
+    template<typename DbPasswordT = Aws::String>
+    GetCredentialsResult& WithDbPassword(DbPasswordT&& value) { SetDbPassword(std::forward<DbPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,24 +53,22 @@ namespace Model
      * database privileges as the the user named in <code>DbUser</code>. By default,
      * the user is added to PUBLIC.</p>
      */
-    inline const Aws::String& GetDbUser() const{ return m_dbUser; }
-    inline void SetDbUser(const Aws::String& value) { m_dbUser = value; }
-    inline void SetDbUser(Aws::String&& value) { m_dbUser = std::move(value); }
-    inline void SetDbUser(const char* value) { m_dbUser.assign(value); }
-    inline GetCredentialsResult& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
-    inline GetCredentialsResult& WithDbUser(Aws::String&& value) { SetDbUser(std::move(value)); return *this;}
-    inline GetCredentialsResult& WithDbUser(const char* value) { SetDbUser(value); return *this;}
+    inline const Aws::String& GetDbUser() const { return m_dbUser; }
+    template<typename DbUserT = Aws::String>
+    void SetDbUser(DbUserT&& value) { m_dbUserHasBeenSet = true; m_dbUser = std::forward<DbUserT>(value); }
+    template<typename DbUserT = Aws::String>
+    GetCredentialsResult& WithDbUser(DbUserT&& value) { SetDbUser(std::forward<DbUserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the password in <code>DbPassword</code> expires.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiration() const{ return m_expiration; }
-    inline void SetExpiration(const Aws::Utils::DateTime& value) { m_expiration = value; }
-    inline void SetExpiration(Aws::Utils::DateTime&& value) { m_expiration = std::move(value); }
-    inline GetCredentialsResult& WithExpiration(const Aws::Utils::DateTime& value) { SetExpiration(value); return *this;}
-    inline GetCredentialsResult& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpiration() const { return m_expiration; }
+    template<typename ExpirationT = Aws::Utils::DateTime>
+    void SetExpiration(ExpirationT&& value) { m_expirationHasBeenSet = true; m_expiration = std::forward<ExpirationT>(value); }
+    template<typename ExpirationT = Aws::Utils::DateTime>
+    GetCredentialsResult& WithExpiration(ExpirationT&& value) { SetExpiration(std::forward<ExpirationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,34 +76,37 @@ namespace Model
      * <p>The date and time of when the <code>DbUser</code> and <code>DbPassword</code>
      * authorization refreshes.</p>
      */
-    inline const Aws::Utils::DateTime& GetNextRefreshTime() const{ return m_nextRefreshTime; }
-    inline void SetNextRefreshTime(const Aws::Utils::DateTime& value) { m_nextRefreshTime = value; }
-    inline void SetNextRefreshTime(Aws::Utils::DateTime&& value) { m_nextRefreshTime = std::move(value); }
-    inline GetCredentialsResult& WithNextRefreshTime(const Aws::Utils::DateTime& value) { SetNextRefreshTime(value); return *this;}
-    inline GetCredentialsResult& WithNextRefreshTime(Aws::Utils::DateTime&& value) { SetNextRefreshTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetNextRefreshTime() const { return m_nextRefreshTime; }
+    template<typename NextRefreshTimeT = Aws::Utils::DateTime>
+    void SetNextRefreshTime(NextRefreshTimeT&& value) { m_nextRefreshTimeHasBeenSet = true; m_nextRefreshTime = std::forward<NextRefreshTimeT>(value); }
+    template<typename NextRefreshTimeT = Aws::Utils::DateTime>
+    GetCredentialsResult& WithNextRefreshTime(NextRefreshTimeT&& value) { SetNextRefreshTime(std::forward<NextRefreshTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCredentialsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCredentialsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCredentialsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCredentialsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dbPassword;
+    bool m_dbPasswordHasBeenSet = false;
 
     Aws::String m_dbUser;
+    bool m_dbUserHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiration;
+    Aws::Utils::DateTime m_expiration{};
+    bool m_expirationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_nextRefreshTime;
+    Aws::Utils::DateTime m_nextRefreshTime{};
+    bool m_nextRefreshTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

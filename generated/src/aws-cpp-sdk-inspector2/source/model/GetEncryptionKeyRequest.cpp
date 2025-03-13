@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetEncryptionKeyRequest::GetEncryptionKeyRequest() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_scanType(ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetEncryptionKeyRequest::SerializePayload() const
 {
   return {};

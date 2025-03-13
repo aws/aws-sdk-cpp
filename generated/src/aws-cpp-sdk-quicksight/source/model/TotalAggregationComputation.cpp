@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TotalAggregationComputation::TotalAggregationComputation() : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 TotalAggregationComputation::TotalAggregationComputation(JsonView jsonValue)
-  : TotalAggregationComputation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TotalAggregationComputation& TotalAggregationComputation::operator =(JsonView js
   if(jsonValue.ValueExists("ComputationId"))
   {
     m_computationId = jsonValue.GetString("ComputationId");
-
     m_computationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetObject("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

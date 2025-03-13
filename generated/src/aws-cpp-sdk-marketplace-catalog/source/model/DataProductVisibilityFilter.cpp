@@ -18,13 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-DataProductVisibilityFilter::DataProductVisibilityFilter() : 
-    m_valueListHasBeenSet(false)
-{
-}
-
 DataProductVisibilityFilter::DataProductVisibilityFilter(JsonView jsonValue)
-  : DataProductVisibilityFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DataProductVisibilityFilter& DataProductVisibilityFilter::operator =(JsonView js
     }
     m_valueListHasBeenSet = true;
   }
-
   return *this;
 }
 

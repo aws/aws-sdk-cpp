@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ListingRevisionInput::ListingRevisionInput() : 
-    m_identifierHasBeenSet(false),
-    m_revisionHasBeenSet(false)
-{
-}
-
 ListingRevisionInput::ListingRevisionInput(JsonView jsonValue)
-  : ListingRevisionInput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ListingRevisionInput& ListingRevisionInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetString("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   return *this;
 }
 

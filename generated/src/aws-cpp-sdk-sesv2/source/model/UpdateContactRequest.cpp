@@ -12,16 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateContactRequest::UpdateContactRequest() : 
-    m_contactListNameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_topicPreferencesHasBeenSet(false),
-    m_unsubscribeAll(false),
-    m_unsubscribeAllHasBeenSet(false),
-    m_attributesDataHasBeenSet(false)
-{
-}
-
 Aws::String UpdateContactRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-HttpHeader::HttpHeader() : 
-    m_headerNameHasBeenSet(false),
-    m_headerValueHasBeenSet(false)
-{
-}
-
 HttpHeader::HttpHeader(JsonView jsonValue)
-  : HttpHeader()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HttpHeader& HttpHeader::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("headerName"))
   {
     m_headerName = jsonValue.GetString("headerName");
-
     m_headerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("headerValue"))
   {
     m_headerValue = jsonValue.GetString("headerValue");
-
     m_headerValueHasBeenSet = true;
   }
-
   return *this;
 }
 

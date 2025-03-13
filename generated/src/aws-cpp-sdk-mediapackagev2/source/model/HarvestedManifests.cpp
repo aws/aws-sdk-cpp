@@ -18,15 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-HarvestedManifests::HarvestedManifests() : 
-    m_hlsManifestsHasBeenSet(false),
-    m_dashManifestsHasBeenSet(false),
-    m_lowLatencyHlsManifestsHasBeenSet(false)
-{
-}
-
 HarvestedManifests::HarvestedManifests(JsonView jsonValue)
-  : HarvestedManifests()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ HarvestedManifests& HarvestedManifests::operator =(JsonView jsonValue)
     }
     m_hlsManifestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DashManifests"))
   {
     Aws::Utils::Array<JsonView> dashManifestsJsonList = jsonValue.GetArray("DashManifests");
@@ -52,7 +43,6 @@ HarvestedManifests& HarvestedManifests::operator =(JsonView jsonValue)
     }
     m_dashManifestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LowLatencyHlsManifests"))
   {
     Aws::Utils::Array<JsonView> lowLatencyHlsManifestsJsonList = jsonValue.GetArray("LowLatencyHlsManifests");
@@ -62,7 +52,6 @@ HarvestedManifests& HarvestedManifests::operator =(JsonView jsonValue)
     }
     m_lowLatencyHlsManifestsHasBeenSet = true;
   }
-
   return *this;
 }
 

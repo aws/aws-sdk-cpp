@@ -12,12 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDimensionRequest::UpdateDimensionRequest() : 
-    m_nameHasBeenSet(false),
-    m_stringValuesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDimensionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,20 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-NodeGroupConfiguration::NodeGroupConfiguration() : 
-    m_nodeGroupIdHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_replicaCount(0),
-    m_replicaCountHasBeenSet(false),
-    m_primaryAvailabilityZoneHasBeenSet(false),
-    m_replicaAvailabilityZonesHasBeenSet(false),
-    m_primaryOutpostArnHasBeenSet(false),
-    m_replicaOutpostArnsHasBeenSet(false)
-{
-}
-
 NodeGroupConfiguration::NodeGroupConfiguration(const XmlNode& xmlNode)
-  : NodeGroupConfiguration()
 {
   *this = xmlNode;
 }
@@ -49,54 +36,61 @@ NodeGroupConfiguration& NodeGroupConfiguration::operator =(const XmlNode& xmlNod
     {
       m_nodeGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(nodeGroupIdNode.GetText());
       m_nodeGroupIdHasBeenSet = true;
+       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode slotsNode = resultNode.FirstChild("Slots");
     if(!slotsNode.IsNull())
     {
       m_slots = Aws::Utils::Xml::DecodeEscapedXmlText(slotsNode.GetText());
       m_slotsHasBeenSet = true;
+       m_slotsHasBeenSet = true;
     }
     XmlNode replicaCountNode = resultNode.FirstChild("ReplicaCount");
     if(!replicaCountNode.IsNull())
     {
       m_replicaCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicaCountNode.GetText()).c_str()).c_str());
       m_replicaCountHasBeenSet = true;
+       m_replicaCountHasBeenSet = true;
     }
     XmlNode primaryAvailabilityZoneNode = resultNode.FirstChild("PrimaryAvailabilityZone");
     if(!primaryAvailabilityZoneNode.IsNull())
     {
       m_primaryAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(primaryAvailabilityZoneNode.GetText());
       m_primaryAvailabilityZoneHasBeenSet = true;
+       m_primaryAvailabilityZoneHasBeenSet = true;
     }
     XmlNode replicaAvailabilityZonesNode = resultNode.FirstChild("ReplicaAvailabilityZones");
     if(!replicaAvailabilityZonesNode.IsNull())
     {
       XmlNode replicaAvailabilityZonesMember = replicaAvailabilityZonesNode.FirstChild("AvailabilityZone");
+      m_replicaAvailabilityZonesHasBeenSet = !replicaAvailabilityZonesMember.IsNull();
       while(!replicaAvailabilityZonesMember.IsNull())
       {
         m_replicaAvailabilityZones.push_back(replicaAvailabilityZonesMember.GetText());
         replicaAvailabilityZonesMember = replicaAvailabilityZonesMember.NextNode("AvailabilityZone");
       }
 
-      m_replicaAvailabilityZonesHasBeenSet = true;
+       m_replicaAvailabilityZonesHasBeenSet = true;
     }
     XmlNode primaryOutpostArnNode = resultNode.FirstChild("PrimaryOutpostArn");
     if(!primaryOutpostArnNode.IsNull())
     {
       m_primaryOutpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(primaryOutpostArnNode.GetText());
       m_primaryOutpostArnHasBeenSet = true;
+       m_primaryOutpostArnHasBeenSet = true;
     }
     XmlNode replicaOutpostArnsNode = resultNode.FirstChild("ReplicaOutpostArns");
     if(!replicaOutpostArnsNode.IsNull())
     {
       XmlNode replicaOutpostArnsMember = replicaOutpostArnsNode.FirstChild("OutpostArn");
+      m_replicaOutpostArnsHasBeenSet = !replicaOutpostArnsMember.IsNull();
       while(!replicaOutpostArnsMember.IsNull())
       {
         m_replicaOutpostArns.push_back(replicaOutpostArnsMember.GetText());
         replicaOutpostArnsMember = replicaOutpostArnsMember.NextNode("OutpostArn");
       }
 
-      m_replicaOutpostArnsHasBeenSet = true;
+       m_replicaOutpostArnsHasBeenSet = true;
     }
   }
 

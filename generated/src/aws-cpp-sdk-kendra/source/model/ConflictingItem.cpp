@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ConflictingItem::ConflictingItem() : 
-    m_queryTextHasBeenSet(false),
-    m_setNameHasBeenSet(false),
-    m_setIdHasBeenSet(false)
-{
-}
-
 ConflictingItem::ConflictingItem(JsonView jsonValue)
-  : ConflictingItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ConflictingItem& ConflictingItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QueryText"))
   {
     m_queryText = jsonValue.GetString("QueryText");
-
     m_queryTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SetName"))
   {
     m_setName = jsonValue.GetString("SetName");
-
     m_setNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SetId"))
   {
     m_setId = jsonValue.GetString("SetId");
-
     m_setIdHasBeenSet = true;
   }
-
   return *this;
 }
 

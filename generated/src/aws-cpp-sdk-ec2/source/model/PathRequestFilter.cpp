@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PathRequestFilter::PathRequestFilter() : 
-    m_sourceAddressHasBeenSet(false),
-    m_sourcePortRangeHasBeenSet(false),
-    m_destinationAddressHasBeenSet(false),
-    m_destinationPortRangeHasBeenSet(false)
-{
-}
-
 PathRequestFilter::PathRequestFilter(const XmlNode& xmlNode)
-  : PathRequestFilter()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ PathRequestFilter& PathRequestFilter::operator =(const XmlNode& xmlNode)
     {
       m_sourceAddress = Aws::Utils::Xml::DecodeEscapedXmlText(sourceAddressNode.GetText());
       m_sourceAddressHasBeenSet = true;
+       m_sourceAddressHasBeenSet = true;
     }
     XmlNode sourcePortRangeNode = resultNode.FirstChild("SourcePortRange");
     if(!sourcePortRangeNode.IsNull())
     {
       m_sourcePortRange = sourcePortRangeNode;
       m_sourcePortRangeHasBeenSet = true;
+       m_sourcePortRangeHasBeenSet = true;
     }
     XmlNode destinationAddressNode = resultNode.FirstChild("DestinationAddress");
     if(!destinationAddressNode.IsNull())
     {
       m_destinationAddress = Aws::Utils::Xml::DecodeEscapedXmlText(destinationAddressNode.GetText());
       m_destinationAddressHasBeenSet = true;
+       m_destinationAddressHasBeenSet = true;
     }
     XmlNode destinationPortRangeNode = resultNode.FirstChild("DestinationPortRange");
     if(!destinationPortRangeNode.IsNull())
     {
       m_destinationPortRange = destinationPortRangeNode;
       m_destinationPortRangeHasBeenSet = true;
+       m_destinationPortRangeHasBeenSet = true;
     }
   }
 

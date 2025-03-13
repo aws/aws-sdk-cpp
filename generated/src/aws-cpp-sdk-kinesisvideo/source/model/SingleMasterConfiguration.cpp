@@ -18,14 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-SingleMasterConfiguration::SingleMasterConfiguration() : 
-    m_messageTtlSeconds(0),
-    m_messageTtlSecondsHasBeenSet(false)
-{
-}
-
 SingleMasterConfiguration::SingleMasterConfiguration(JsonView jsonValue)
-  : SingleMasterConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SingleMasterConfiguration& SingleMasterConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("MessageTtlSeconds"))
   {
     m_messageTtlSeconds = jsonValue.GetInteger("MessageTtlSeconds");
-
     m_messageTtlSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -39,7 +39,7 @@ namespace Model
   class SearchCriteria
   {
   public:
-    AWS_CONNECT_API SearchCriteria();
+    AWS_CONNECT_API SearchCriteria() = default;
     AWS_CONNECT_API SearchCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API SearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,15 +49,14 @@ namespace Model
     /**
      * <p>The identifiers of agents who handled the contacts.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAgentIds() const{ return m_agentIds; }
+    inline const Aws::Vector<Aws::String>& GetAgentIds() const { return m_agentIds; }
     inline bool AgentIdsHasBeenSet() const { return m_agentIdsHasBeenSet; }
-    inline void SetAgentIds(const Aws::Vector<Aws::String>& value) { m_agentIdsHasBeenSet = true; m_agentIds = value; }
-    inline void SetAgentIds(Aws::Vector<Aws::String>&& value) { m_agentIdsHasBeenSet = true; m_agentIds = std::move(value); }
-    inline SearchCriteria& WithAgentIds(const Aws::Vector<Aws::String>& value) { SetAgentIds(value); return *this;}
-    inline SearchCriteria& WithAgentIds(Aws::Vector<Aws::String>&& value) { SetAgentIds(std::move(value)); return *this;}
-    inline SearchCriteria& AddAgentIds(const Aws::String& value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
-    inline SearchCriteria& AddAgentIds(Aws::String&& value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(std::move(value)); return *this; }
-    inline SearchCriteria& AddAgentIds(const char* value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
+    template<typename AgentIdsT = Aws::Vector<Aws::String>>
+    void SetAgentIds(AgentIdsT&& value) { m_agentIdsHasBeenSet = true; m_agentIds = std::forward<AgentIdsT>(value); }
+    template<typename AgentIdsT = Aws::Vector<Aws::String>>
+    SearchCriteria& WithAgentIds(AgentIdsT&& value) { SetAgentIds(std::forward<AgentIdsT>(value)); return *this;}
+    template<typename AgentIdsT = Aws::String>
+    SearchCriteria& AddAgentIds(AgentIdsT&& value) { m_agentIdsHasBeenSet = true; m_agentIds.emplace_back(std::forward<AgentIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,26 +64,25 @@ namespace Model
      * <p>The agent hierarchy groups of the agent at the time of handling the
      * contact.</p>
      */
-    inline const AgentHierarchyGroups& GetAgentHierarchyGroups() const{ return m_agentHierarchyGroups; }
+    inline const AgentHierarchyGroups& GetAgentHierarchyGroups() const { return m_agentHierarchyGroups; }
     inline bool AgentHierarchyGroupsHasBeenSet() const { return m_agentHierarchyGroupsHasBeenSet; }
-    inline void SetAgentHierarchyGroups(const AgentHierarchyGroups& value) { m_agentHierarchyGroupsHasBeenSet = true; m_agentHierarchyGroups = value; }
-    inline void SetAgentHierarchyGroups(AgentHierarchyGroups&& value) { m_agentHierarchyGroupsHasBeenSet = true; m_agentHierarchyGroups = std::move(value); }
-    inline SearchCriteria& WithAgentHierarchyGroups(const AgentHierarchyGroups& value) { SetAgentHierarchyGroups(value); return *this;}
-    inline SearchCriteria& WithAgentHierarchyGroups(AgentHierarchyGroups&& value) { SetAgentHierarchyGroups(std::move(value)); return *this;}
+    template<typename AgentHierarchyGroupsT = AgentHierarchyGroups>
+    void SetAgentHierarchyGroups(AgentHierarchyGroupsT&& value) { m_agentHierarchyGroupsHasBeenSet = true; m_agentHierarchyGroups = std::forward<AgentHierarchyGroupsT>(value); }
+    template<typename AgentHierarchyGroupsT = AgentHierarchyGroups>
+    SearchCriteria& WithAgentHierarchyGroups(AgentHierarchyGroupsT&& value) { SetAgentHierarchyGroups(std::forward<AgentHierarchyGroupsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of channels associated with contacts.</p>
      */
-    inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
+    inline const Aws::Vector<Channel>& GetChannels() const { return m_channels; }
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
-    inline void SetChannels(const Aws::Vector<Channel>& value) { m_channelsHasBeenSet = true; m_channels = value; }
-    inline void SetChannels(Aws::Vector<Channel>&& value) { m_channelsHasBeenSet = true; m_channels = std::move(value); }
-    inline SearchCriteria& WithChannels(const Aws::Vector<Channel>& value) { SetChannels(value); return *this;}
-    inline SearchCriteria& WithChannels(Aws::Vector<Channel>&& value) { SetChannels(std::move(value)); return *this;}
-    inline SearchCriteria& AddChannels(const Channel& value) { m_channelsHasBeenSet = true; m_channels.push_back(value); return *this; }
-    inline SearchCriteria& AddChannels(Channel&& value) { m_channelsHasBeenSet = true; m_channels.push_back(std::move(value)); return *this; }
+    template<typename ChannelsT = Aws::Vector<Channel>>
+    void SetChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels = std::forward<ChannelsT>(value); }
+    template<typename ChannelsT = Aws::Vector<Channel>>
+    SearchCriteria& WithChannels(ChannelsT&& value) { SetChannels(std::forward<ChannelsT>(value)); return *this;}
+    inline SearchCriteria& AddChannels(Channel value) { m_channelsHasBeenSet = true; m_channels.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -92,41 +90,39 @@ namespace Model
      * <p>Search criteria based on analysis outputs from Amazon Connect Contact
      * Lens.</p>
      */
-    inline const ContactAnalysis& GetContactAnalysis() const{ return m_contactAnalysis; }
+    inline const ContactAnalysis& GetContactAnalysis() const { return m_contactAnalysis; }
     inline bool ContactAnalysisHasBeenSet() const { return m_contactAnalysisHasBeenSet; }
-    inline void SetContactAnalysis(const ContactAnalysis& value) { m_contactAnalysisHasBeenSet = true; m_contactAnalysis = value; }
-    inline void SetContactAnalysis(ContactAnalysis&& value) { m_contactAnalysisHasBeenSet = true; m_contactAnalysis = std::move(value); }
-    inline SearchCriteria& WithContactAnalysis(const ContactAnalysis& value) { SetContactAnalysis(value); return *this;}
-    inline SearchCriteria& WithContactAnalysis(ContactAnalysis&& value) { SetContactAnalysis(std::move(value)); return *this;}
+    template<typename ContactAnalysisT = ContactAnalysis>
+    void SetContactAnalysis(ContactAnalysisT&& value) { m_contactAnalysisHasBeenSet = true; m_contactAnalysis = std::forward<ContactAnalysisT>(value); }
+    template<typename ContactAnalysisT = ContactAnalysis>
+    SearchCriteria& WithContactAnalysis(ContactAnalysisT&& value) { SetContactAnalysis(std::forward<ContactAnalysisT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of initiation methods associated with contacts.</p>
      */
-    inline const Aws::Vector<ContactInitiationMethod>& GetInitiationMethods() const{ return m_initiationMethods; }
+    inline const Aws::Vector<ContactInitiationMethod>& GetInitiationMethods() const { return m_initiationMethods; }
     inline bool InitiationMethodsHasBeenSet() const { return m_initiationMethodsHasBeenSet; }
-    inline void SetInitiationMethods(const Aws::Vector<ContactInitiationMethod>& value) { m_initiationMethodsHasBeenSet = true; m_initiationMethods = value; }
-    inline void SetInitiationMethods(Aws::Vector<ContactInitiationMethod>&& value) { m_initiationMethodsHasBeenSet = true; m_initiationMethods = std::move(value); }
-    inline SearchCriteria& WithInitiationMethods(const Aws::Vector<ContactInitiationMethod>& value) { SetInitiationMethods(value); return *this;}
-    inline SearchCriteria& WithInitiationMethods(Aws::Vector<ContactInitiationMethod>&& value) { SetInitiationMethods(std::move(value)); return *this;}
-    inline SearchCriteria& AddInitiationMethods(const ContactInitiationMethod& value) { m_initiationMethodsHasBeenSet = true; m_initiationMethods.push_back(value); return *this; }
-    inline SearchCriteria& AddInitiationMethods(ContactInitiationMethod&& value) { m_initiationMethodsHasBeenSet = true; m_initiationMethods.push_back(std::move(value)); return *this; }
+    template<typename InitiationMethodsT = Aws::Vector<ContactInitiationMethod>>
+    void SetInitiationMethods(InitiationMethodsT&& value) { m_initiationMethodsHasBeenSet = true; m_initiationMethods = std::forward<InitiationMethodsT>(value); }
+    template<typename InitiationMethodsT = Aws::Vector<ContactInitiationMethod>>
+    SearchCriteria& WithInitiationMethods(InitiationMethodsT&& value) { SetInitiationMethods(std::forward<InitiationMethodsT>(value)); return *this;}
+    inline SearchCriteria& AddInitiationMethods(ContactInitiationMethod value) { m_initiationMethodsHasBeenSet = true; m_initiationMethods.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of queue IDs associated with contacts.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetQueueIds() const{ return m_queueIds; }
+    inline const Aws::Vector<Aws::String>& GetQueueIds() const { return m_queueIds; }
     inline bool QueueIdsHasBeenSet() const { return m_queueIdsHasBeenSet; }
-    inline void SetQueueIds(const Aws::Vector<Aws::String>& value) { m_queueIdsHasBeenSet = true; m_queueIds = value; }
-    inline void SetQueueIds(Aws::Vector<Aws::String>&& value) { m_queueIdsHasBeenSet = true; m_queueIds = std::move(value); }
-    inline SearchCriteria& WithQueueIds(const Aws::Vector<Aws::String>& value) { SetQueueIds(value); return *this;}
-    inline SearchCriteria& WithQueueIds(Aws::Vector<Aws::String>&& value) { SetQueueIds(std::move(value)); return *this;}
-    inline SearchCriteria& AddQueueIds(const Aws::String& value) { m_queueIdsHasBeenSet = true; m_queueIds.push_back(value); return *this; }
-    inline SearchCriteria& AddQueueIds(Aws::String&& value) { m_queueIdsHasBeenSet = true; m_queueIds.push_back(std::move(value)); return *this; }
-    inline SearchCriteria& AddQueueIds(const char* value) { m_queueIdsHasBeenSet = true; m_queueIds.push_back(value); return *this; }
+    template<typename QueueIdsT = Aws::Vector<Aws::String>>
+    void SetQueueIds(QueueIdsT&& value) { m_queueIdsHasBeenSet = true; m_queueIds = std::forward<QueueIdsT>(value); }
+    template<typename QueueIdsT = Aws::Vector<Aws::String>>
+    SearchCriteria& WithQueueIds(QueueIdsT&& value) { SetQueueIds(std::forward<QueueIdsT>(value)); return *this;}
+    template<typename QueueIdsT = Aws::String>
+    SearchCriteria& AddQueueIds(QueueIdsT&& value) { m_queueIdsHasBeenSet = true; m_queueIds.emplace_back(std::forward<QueueIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -141,24 +137,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions
      * defined by Amazon Connect.</p> 
      */
-    inline const SearchableContactAttributes& GetSearchableContactAttributes() const{ return m_searchableContactAttributes; }
+    inline const SearchableContactAttributes& GetSearchableContactAttributes() const { return m_searchableContactAttributes; }
     inline bool SearchableContactAttributesHasBeenSet() const { return m_searchableContactAttributesHasBeenSet; }
-    inline void SetSearchableContactAttributes(const SearchableContactAttributes& value) { m_searchableContactAttributesHasBeenSet = true; m_searchableContactAttributes = value; }
-    inline void SetSearchableContactAttributes(SearchableContactAttributes&& value) { m_searchableContactAttributesHasBeenSet = true; m_searchableContactAttributes = std::move(value); }
-    inline SearchCriteria& WithSearchableContactAttributes(const SearchableContactAttributes& value) { SetSearchableContactAttributes(value); return *this;}
-    inline SearchCriteria& WithSearchableContactAttributes(SearchableContactAttributes&& value) { SetSearchableContactAttributes(std::move(value)); return *this;}
+    template<typename SearchableContactAttributesT = SearchableContactAttributes>
+    void SetSearchableContactAttributes(SearchableContactAttributesT&& value) { m_searchableContactAttributesHasBeenSet = true; m_searchableContactAttributes = std::forward<SearchableContactAttributesT>(value); }
+    template<typename SearchableContactAttributesT = SearchableContactAttributes>
+    SearchCriteria& WithSearchableContactAttributes(SearchableContactAttributesT&& value) { SetSearchableContactAttributes(std::forward<SearchableContactAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The search criteria based on searchable segment attributes of a contact.</p>
      */
-    inline const SearchableSegmentAttributes& GetSearchableSegmentAttributes() const{ return m_searchableSegmentAttributes; }
+    inline const SearchableSegmentAttributes& GetSearchableSegmentAttributes() const { return m_searchableSegmentAttributes; }
     inline bool SearchableSegmentAttributesHasBeenSet() const { return m_searchableSegmentAttributesHasBeenSet; }
-    inline void SetSearchableSegmentAttributes(const SearchableSegmentAttributes& value) { m_searchableSegmentAttributesHasBeenSet = true; m_searchableSegmentAttributes = value; }
-    inline void SetSearchableSegmentAttributes(SearchableSegmentAttributes&& value) { m_searchableSegmentAttributesHasBeenSet = true; m_searchableSegmentAttributes = std::move(value); }
-    inline SearchCriteria& WithSearchableSegmentAttributes(const SearchableSegmentAttributes& value) { SetSearchableSegmentAttributes(value); return *this;}
-    inline SearchCriteria& WithSearchableSegmentAttributes(SearchableSegmentAttributes&& value) { SetSearchableSegmentAttributes(std::move(value)); return *this;}
+    template<typename SearchableSegmentAttributesT = SearchableSegmentAttributes>
+    void SetSearchableSegmentAttributes(SearchableSegmentAttributesT&& value) { m_searchableSegmentAttributesHasBeenSet = true; m_searchableSegmentAttributes = std::forward<SearchableSegmentAttributesT>(value); }
+    template<typename SearchableSegmentAttributesT = SearchableSegmentAttributes>
+    SearchCriteria& WithSearchableSegmentAttributes(SearchableSegmentAttributesT&& value) { SetSearchableSegmentAttributes(std::forward<SearchableSegmentAttributesT>(value)); return *this;}
     ///@}
   private:
 

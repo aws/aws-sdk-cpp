@@ -13,22 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUserRequest::UpdateUserRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_givenNameHasBeenSet(false),
-    m_surnameHasBeenSet(false),
-    m_type(UserType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_storageRuleHasBeenSet(false),
-    m_timeZoneIdHasBeenSet(false),
-    m_locale(LocaleType::NOT_SET),
-    m_localeHasBeenSet(false),
-    m_grantPoweruserPrivileges(BooleanEnumType::NOT_SET),
-    m_grantPoweruserPrivilegesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserRequest::SerializePayload() const
 {
   JsonValue payload;

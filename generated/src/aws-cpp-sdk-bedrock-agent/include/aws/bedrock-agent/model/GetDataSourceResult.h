@@ -28,7 +28,7 @@ namespace Model
   class GetDataSourceResult
   {
   public:
-    AWS_BEDROCKAGENT_API GetDataSourceResult();
+    AWS_BEDROCKAGENT_API GetDataSourceResult() = default;
     AWS_BEDROCKAGENT_API GetDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API GetDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains details about the data source.</p>
      */
-    inline const DataSource& GetDataSource() const{ return m_dataSource; }
-    inline void SetDataSource(const DataSource& value) { m_dataSource = value; }
-    inline void SetDataSource(DataSource&& value) { m_dataSource = std::move(value); }
-    inline GetDataSourceResult& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-    inline GetDataSourceResult& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    inline const DataSource& GetDataSource() const { return m_dataSource; }
+    template<typename DataSourceT = DataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = DataSource>
+    GetDataSourceResult& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDataSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDataSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDataSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDataSourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DataSource m_dataSource;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

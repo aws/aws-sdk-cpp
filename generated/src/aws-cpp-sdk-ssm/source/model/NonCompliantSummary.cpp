@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-NonCompliantSummary::NonCompliantSummary() : 
-    m_nonCompliantCount(0),
-    m_nonCompliantCountHasBeenSet(false),
-    m_severitySummaryHasBeenSet(false)
-{
-}
-
 NonCompliantSummary::NonCompliantSummary(JsonView jsonValue)
-  : NonCompliantSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NonCompliantSummary& NonCompliantSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NonCompliantCount"))
   {
     m_nonCompliantCount = jsonValue.GetInteger("NonCompliantCount");
-
     m_nonCompliantCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SeveritySummary"))
   {
     m_severitySummary = jsonValue.GetObject("SeveritySummary");
-
     m_severitySummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

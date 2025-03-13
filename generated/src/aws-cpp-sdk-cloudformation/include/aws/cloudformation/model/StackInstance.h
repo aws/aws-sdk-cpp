@@ -43,7 +43,7 @@ namespace Model
   class StackInstance
   {
   public:
-    AWS_CLOUDFORMATION_API StackInstance();
+    AWS_CLOUDFORMATION_API StackInstance() = default;
     AWS_CLOUDFORMATION_API StackInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API StackInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -56,14 +56,12 @@ namespace Model
      * <p>The name or unique ID of the stack set that the stack instance is associated
      * with.</p>
      */
-    inline const Aws::String& GetStackSetId() const{ return m_stackSetId; }
+    inline const Aws::String& GetStackSetId() const { return m_stackSetId; }
     inline bool StackSetIdHasBeenSet() const { return m_stackSetIdHasBeenSet; }
-    inline void SetStackSetId(const Aws::String& value) { m_stackSetIdHasBeenSet = true; m_stackSetId = value; }
-    inline void SetStackSetId(Aws::String&& value) { m_stackSetIdHasBeenSet = true; m_stackSetId = std::move(value); }
-    inline void SetStackSetId(const char* value) { m_stackSetIdHasBeenSet = true; m_stackSetId.assign(value); }
-    inline StackInstance& WithStackSetId(const Aws::String& value) { SetStackSetId(value); return *this;}
-    inline StackInstance& WithStackSetId(Aws::String&& value) { SetStackSetId(std::move(value)); return *this;}
-    inline StackInstance& WithStackSetId(const char* value) { SetStackSetId(value); return *this;}
+    template<typename StackSetIdT = Aws::String>
+    void SetStackSetId(StackSetIdT&& value) { m_stackSetIdHasBeenSet = true; m_stackSetId = std::forward<StackSetIdT>(value); }
+    template<typename StackSetIdT = Aws::String>
+    StackInstance& WithStackSetId(StackSetIdT&& value) { SetStackSetId(std::forward<StackSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <p>The name of the Amazon Web Services Region that the stack instance is
      * associated with.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline StackInstance& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline StackInstance& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline StackInstance& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    StackInstance& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,28 +82,24 @@ namespace Model
      * <p>[Self-managed permissions] The name of the Amazon Web Services account that
      * the stack instance is associated with.</p>
      */
-    inline const Aws::String& GetAccount() const{ return m_account; }
+    inline const Aws::String& GetAccount() const { return m_account; }
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-    inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
-    inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-    inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
-    inline StackInstance& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-    inline StackInstance& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-    inline StackInstance& WithAccount(const char* value) { SetAccount(value); return *this;}
+    template<typename AccountT = Aws::String>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = Aws::String>
+    StackInstance& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the stack instance.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline StackInstance& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline StackInstance& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline StackInstance& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    StackInstance& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +107,14 @@ namespace Model
      * <p>A list of parameters from the stack set template whose values have been
      * overridden in this stack instance.</p>
      */
-    inline const Aws::Vector<Parameter>& GetParameterOverrides() const{ return m_parameterOverrides; }
+    inline const Aws::Vector<Parameter>& GetParameterOverrides() const { return m_parameterOverrides; }
     inline bool ParameterOverridesHasBeenSet() const { return m_parameterOverridesHasBeenSet; }
-    inline void SetParameterOverrides(const Aws::Vector<Parameter>& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = value; }
-    inline void SetParameterOverrides(Aws::Vector<Parameter>&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = std::move(value); }
-    inline StackInstance& WithParameterOverrides(const Aws::Vector<Parameter>& value) { SetParameterOverrides(value); return *this;}
-    inline StackInstance& WithParameterOverrides(Aws::Vector<Parameter>&& value) { SetParameterOverrides(std::move(value)); return *this;}
-    inline StackInstance& AddParameterOverrides(const Parameter& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.push_back(value); return *this; }
-    inline StackInstance& AddParameterOverrides(Parameter&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.push_back(std::move(value)); return *this; }
+    template<typename ParameterOverridesT = Aws::Vector<Parameter>>
+    void SetParameterOverrides(ParameterOverridesT&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = std::forward<ParameterOverridesT>(value); }
+    template<typename ParameterOverridesT = Aws::Vector<Parameter>>
+    StackInstance& WithParameterOverrides(ParameterOverridesT&& value) { SetParameterOverrides(std::forward<ParameterOverridesT>(value)); return *this;}
+    template<typename ParameterOverridesT = Parameter>
+    StackInstance& AddParameterOverrides(ParameterOverridesT&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.emplace_back(std::forward<ParameterOverridesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -148,24 +140,22 @@ namespace Model
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
-    inline const StackInstanceStatus& GetStatus() const{ return m_status; }
+    inline StackInstanceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StackInstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StackInstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline StackInstance& WithStatus(const StackInstanceStatus& value) { SetStatus(value); return *this;}
-    inline StackInstance& WithStatus(StackInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StackInstanceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StackInstance& WithStatus(StackInstanceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The detailed status of the stack instance.</p>
      */
-    inline const StackInstanceComprehensiveStatus& GetStackInstanceStatus() const{ return m_stackInstanceStatus; }
+    inline const StackInstanceComprehensiveStatus& GetStackInstanceStatus() const { return m_stackInstanceStatus; }
     inline bool StackInstanceStatusHasBeenSet() const { return m_stackInstanceStatusHasBeenSet; }
-    inline void SetStackInstanceStatus(const StackInstanceComprehensiveStatus& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = value; }
-    inline void SetStackInstanceStatus(StackInstanceComprehensiveStatus&& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = std::move(value); }
-    inline StackInstance& WithStackInstanceStatus(const StackInstanceComprehensiveStatus& value) { SetStackInstanceStatus(value); return *this;}
-    inline StackInstance& WithStackInstanceStatus(StackInstanceComprehensiveStatus&& value) { SetStackInstanceStatus(std::move(value)); return *this;}
+    template<typename StackInstanceStatusT = StackInstanceComprehensiveStatus>
+    void SetStackInstanceStatus(StackInstanceStatusT&& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = std::forward<StackInstanceStatusT>(value); }
+    template<typename StackInstanceStatusT = StackInstanceComprehensiveStatus>
+    StackInstance& WithStackInstanceStatus(StackInstanceStatusT&& value) { SetStackInstanceStatus(std::forward<StackInstanceStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,14 +163,12 @@ namespace Model
      * <p>The explanation for the specific status code that's assigned to this stack
      * instance.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline StackInstance& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline StackInstance& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline StackInstance& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    StackInstance& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,14 +177,12 @@ namespace Model
      * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
-    inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
+    inline const Aws::String& GetOrganizationalUnitId() const { return m_organizationalUnitId; }
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
-    inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
-    inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
-    inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
-    inline StackInstance& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
-    inline StackInstance& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
-    inline StackInstance& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
+    template<typename OrganizationalUnitIdT = Aws::String>
+    void SetOrganizationalUnitId(OrganizationalUnitIdT&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::forward<OrganizationalUnitIdT>(value); }
+    template<typename OrganizationalUnitIdT = Aws::String>
+    StackInstance& WithOrganizationalUnitId(OrganizationalUnitIdT&& value) { SetOrganizationalUnitId(std::forward<OrganizationalUnitIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -213,12 +199,10 @@ namespace Model
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
      * for future use.</p> </li> </ul>
      */
-    inline const StackDriftStatus& GetDriftStatus() const{ return m_driftStatus; }
+    inline StackDriftStatus GetDriftStatus() const { return m_driftStatus; }
     inline bool DriftStatusHasBeenSet() const { return m_driftStatusHasBeenSet; }
-    inline void SetDriftStatus(const StackDriftStatus& value) { m_driftStatusHasBeenSet = true; m_driftStatus = value; }
-    inline void SetDriftStatus(StackDriftStatus&& value) { m_driftStatusHasBeenSet = true; m_driftStatus = std::move(value); }
-    inline StackInstance& WithDriftStatus(const StackDriftStatus& value) { SetDriftStatus(value); return *this;}
-    inline StackInstance& WithDriftStatus(StackDriftStatus&& value) { SetDriftStatus(std::move(value)); return *this;}
+    inline void SetDriftStatus(StackDriftStatus value) { m_driftStatusHasBeenSet = true; m_driftStatus = value; }
+    inline StackInstance& WithDriftStatus(StackDriftStatus value) { SetDriftStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -227,26 +211,24 @@ namespace Model
      * the stack instance. This value will be <code>NULL</code> for any stack instance
      * on which drift detection hasn't yet been performed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const{ return m_lastDriftCheckTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const { return m_lastDriftCheckTimestamp; }
     inline bool LastDriftCheckTimestampHasBeenSet() const { return m_lastDriftCheckTimestampHasBeenSet; }
-    inline void SetLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = value; }
-    inline void SetLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = std::move(value); }
-    inline StackInstance& WithLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { SetLastDriftCheckTimestamp(value); return *this;}
-    inline StackInstance& WithLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastDriftCheckTimestamp(std::move(value)); return *this;}
+    template<typename LastDriftCheckTimestampT = Aws::Utils::DateTime>
+    void SetLastDriftCheckTimestamp(LastDriftCheckTimestampT&& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = std::forward<LastDriftCheckTimestampT>(value); }
+    template<typename LastDriftCheckTimestampT = Aws::Utils::DateTime>
+    StackInstance& WithLastDriftCheckTimestamp(LastDriftCheckTimestampT&& value) { SetLastDriftCheckTimestamp(std::forward<LastDriftCheckTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
      */
-    inline const Aws::String& GetLastOperationId() const{ return m_lastOperationId; }
+    inline const Aws::String& GetLastOperationId() const { return m_lastOperationId; }
     inline bool LastOperationIdHasBeenSet() const { return m_lastOperationIdHasBeenSet; }
-    inline void SetLastOperationId(const Aws::String& value) { m_lastOperationIdHasBeenSet = true; m_lastOperationId = value; }
-    inline void SetLastOperationId(Aws::String&& value) { m_lastOperationIdHasBeenSet = true; m_lastOperationId = std::move(value); }
-    inline void SetLastOperationId(const char* value) { m_lastOperationIdHasBeenSet = true; m_lastOperationId.assign(value); }
-    inline StackInstance& WithLastOperationId(const Aws::String& value) { SetLastOperationId(value); return *this;}
-    inline StackInstance& WithLastOperationId(Aws::String&& value) { SetLastOperationId(std::move(value)); return *this;}
-    inline StackInstance& WithLastOperationId(const char* value) { SetLastOperationId(value); return *this;}
+    template<typename LastOperationIdT = Aws::String>
+    void SetLastOperationId(LastOperationIdT&& value) { m_lastOperationIdHasBeenSet = true; m_lastOperationId = std::forward<LastOperationIdT>(value); }
+    template<typename LastOperationIdT = Aws::String>
+    StackInstance& WithLastOperationId(LastOperationIdT&& value) { SetLastOperationId(std::forward<LastOperationIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -265,7 +247,7 @@ namespace Model
     Aws::Vector<Parameter> m_parameterOverrides;
     bool m_parameterOverridesHasBeenSet = false;
 
-    StackInstanceStatus m_status;
+    StackInstanceStatus m_status{StackInstanceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     StackInstanceComprehensiveStatus m_stackInstanceStatus;
@@ -277,10 +259,10 @@ namespace Model
     Aws::String m_organizationalUnitId;
     bool m_organizationalUnitIdHasBeenSet = false;
 
-    StackDriftStatus m_driftStatus;
+    StackDriftStatus m_driftStatus{StackDriftStatus::NOT_SET};
     bool m_driftStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastDriftCheckTimestamp;
+    Aws::Utils::DateTime m_lastDriftCheckTimestamp{};
     bool m_lastDriftCheckTimestampHasBeenSet = false;
 
     Aws::String m_lastOperationId;

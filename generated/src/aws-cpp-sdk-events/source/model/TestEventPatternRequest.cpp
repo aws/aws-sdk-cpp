@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestEventPatternRequest::TestEventPatternRequest() : 
-    m_eventPatternHasBeenSet(false),
-    m_eventHasBeenSet(false)
-{
-}
-
 Aws::String TestEventPatternRequest::SerializePayload() const
 {
   JsonValue payload;

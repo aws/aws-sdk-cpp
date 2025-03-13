@@ -35,7 +35,7 @@ namespace Model
   class UpdateServiceIntegrationConfig
   {
   public:
-    AWS_DEVOPSGURU_API UpdateServiceIntegrationConfig();
+    AWS_DEVOPSGURU_API UpdateServiceIntegrationConfig() = default;
     AWS_DEVOPSGURU_API UpdateServiceIntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API UpdateServiceIntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
 
     ///@{
     
-    inline const OpsCenterIntegrationConfig& GetOpsCenter() const{ return m_opsCenter; }
+    inline const OpsCenterIntegrationConfig& GetOpsCenter() const { return m_opsCenter; }
     inline bool OpsCenterHasBeenSet() const { return m_opsCenterHasBeenSet; }
-    inline void SetOpsCenter(const OpsCenterIntegrationConfig& value) { m_opsCenterHasBeenSet = true; m_opsCenter = value; }
-    inline void SetOpsCenter(OpsCenterIntegrationConfig&& value) { m_opsCenterHasBeenSet = true; m_opsCenter = std::move(value); }
-    inline UpdateServiceIntegrationConfig& WithOpsCenter(const OpsCenterIntegrationConfig& value) { SetOpsCenter(value); return *this;}
-    inline UpdateServiceIntegrationConfig& WithOpsCenter(OpsCenterIntegrationConfig&& value) { SetOpsCenter(std::move(value)); return *this;}
+    template<typename OpsCenterT = OpsCenterIntegrationConfig>
+    void SetOpsCenter(OpsCenterT&& value) { m_opsCenterHasBeenSet = true; m_opsCenter = std::forward<OpsCenterT>(value); }
+    template<typename OpsCenterT = OpsCenterIntegrationConfig>
+    UpdateServiceIntegrationConfig& WithOpsCenter(OpsCenterT&& value) { SetOpsCenter(std::forward<OpsCenterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p> Information about whether DevOps Guru is configured to perform log anomaly
      * detection on Amazon CloudWatch log groups. </p>
      */
-    inline const LogsAnomalyDetectionIntegrationConfig& GetLogsAnomalyDetection() const{ return m_logsAnomalyDetection; }
+    inline const LogsAnomalyDetectionIntegrationConfig& GetLogsAnomalyDetection() const { return m_logsAnomalyDetection; }
     inline bool LogsAnomalyDetectionHasBeenSet() const { return m_logsAnomalyDetectionHasBeenSet; }
-    inline void SetLogsAnomalyDetection(const LogsAnomalyDetectionIntegrationConfig& value) { m_logsAnomalyDetectionHasBeenSet = true; m_logsAnomalyDetection = value; }
-    inline void SetLogsAnomalyDetection(LogsAnomalyDetectionIntegrationConfig&& value) { m_logsAnomalyDetectionHasBeenSet = true; m_logsAnomalyDetection = std::move(value); }
-    inline UpdateServiceIntegrationConfig& WithLogsAnomalyDetection(const LogsAnomalyDetectionIntegrationConfig& value) { SetLogsAnomalyDetection(value); return *this;}
-    inline UpdateServiceIntegrationConfig& WithLogsAnomalyDetection(LogsAnomalyDetectionIntegrationConfig&& value) { SetLogsAnomalyDetection(std::move(value)); return *this;}
+    template<typename LogsAnomalyDetectionT = LogsAnomalyDetectionIntegrationConfig>
+    void SetLogsAnomalyDetection(LogsAnomalyDetectionT&& value) { m_logsAnomalyDetectionHasBeenSet = true; m_logsAnomalyDetection = std::forward<LogsAnomalyDetectionT>(value); }
+    template<typename LogsAnomalyDetectionT = LogsAnomalyDetectionIntegrationConfig>
+    UpdateServiceIntegrationConfig& WithLogsAnomalyDetection(LogsAnomalyDetectionT&& value) { SetLogsAnomalyDetection(std::forward<LogsAnomalyDetectionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +69,12 @@ namespace Model
      * <p> Information about whether DevOps Guru is configured to encrypt server-side
      * data using KMS. </p>
      */
-    inline const KMSServerSideEncryptionIntegrationConfig& GetKMSServerSideEncryption() const{ return m_kMSServerSideEncryption; }
+    inline const KMSServerSideEncryptionIntegrationConfig& GetKMSServerSideEncryption() const { return m_kMSServerSideEncryption; }
     inline bool KMSServerSideEncryptionHasBeenSet() const { return m_kMSServerSideEncryptionHasBeenSet; }
-    inline void SetKMSServerSideEncryption(const KMSServerSideEncryptionIntegrationConfig& value) { m_kMSServerSideEncryptionHasBeenSet = true; m_kMSServerSideEncryption = value; }
-    inline void SetKMSServerSideEncryption(KMSServerSideEncryptionIntegrationConfig&& value) { m_kMSServerSideEncryptionHasBeenSet = true; m_kMSServerSideEncryption = std::move(value); }
-    inline UpdateServiceIntegrationConfig& WithKMSServerSideEncryption(const KMSServerSideEncryptionIntegrationConfig& value) { SetKMSServerSideEncryption(value); return *this;}
-    inline UpdateServiceIntegrationConfig& WithKMSServerSideEncryption(KMSServerSideEncryptionIntegrationConfig&& value) { SetKMSServerSideEncryption(std::move(value)); return *this;}
+    template<typename KMSServerSideEncryptionT = KMSServerSideEncryptionIntegrationConfig>
+    void SetKMSServerSideEncryption(KMSServerSideEncryptionT&& value) { m_kMSServerSideEncryptionHasBeenSet = true; m_kMSServerSideEncryption = std::forward<KMSServerSideEncryptionT>(value); }
+    template<typename KMSServerSideEncryptionT = KMSServerSideEncryptionIntegrationConfig>
+    UpdateServiceIntegrationConfig& WithKMSServerSideEncryption(KMSServerSideEncryptionT&& value) { SetKMSServerSideEncryption(std::forward<KMSServerSideEncryptionT>(value)); return *this;}
     ///@}
   private:
 

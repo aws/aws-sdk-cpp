@@ -36,7 +36,7 @@ namespace Model
   class NotificationFilterConfig
   {
   public:
-    AWS_DEVOPSGURU_API NotificationFilterConfig();
+    AWS_DEVOPSGURU_API NotificationFilterConfig() = default;
     AWS_DEVOPSGURU_API NotificationFilterConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API NotificationFilterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
      * insight severities</a>. </p>
      */
-    inline const Aws::Vector<InsightSeverity>& GetSeverities() const{ return m_severities; }
+    inline const Aws::Vector<InsightSeverity>& GetSeverities() const { return m_severities; }
     inline bool SeveritiesHasBeenSet() const { return m_severitiesHasBeenSet; }
-    inline void SetSeverities(const Aws::Vector<InsightSeverity>& value) { m_severitiesHasBeenSet = true; m_severities = value; }
-    inline void SetSeverities(Aws::Vector<InsightSeverity>&& value) { m_severitiesHasBeenSet = true; m_severities = std::move(value); }
-    inline NotificationFilterConfig& WithSeverities(const Aws::Vector<InsightSeverity>& value) { SetSeverities(value); return *this;}
-    inline NotificationFilterConfig& WithSeverities(Aws::Vector<InsightSeverity>&& value) { SetSeverities(std::move(value)); return *this;}
-    inline NotificationFilterConfig& AddSeverities(const InsightSeverity& value) { m_severitiesHasBeenSet = true; m_severities.push_back(value); return *this; }
-    inline NotificationFilterConfig& AddSeverities(InsightSeverity&& value) { m_severitiesHasBeenSet = true; m_severities.push_back(std::move(value)); return *this; }
+    template<typename SeveritiesT = Aws::Vector<InsightSeverity>>
+    void SetSeverities(SeveritiesT&& value) { m_severitiesHasBeenSet = true; m_severities = std::forward<SeveritiesT>(value); }
+    template<typename SeveritiesT = Aws::Vector<InsightSeverity>>
+    NotificationFilterConfig& WithSeverities(SeveritiesT&& value) { SetSeverities(std::forward<SeveritiesT>(value)); return *this;}
+    inline NotificationFilterConfig& AddSeverities(InsightSeverity value) { m_severitiesHasBeenSet = true; m_severities.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -66,14 +65,13 @@ namespace Model
      * choose to receive notifications only when the severity level is upgraded or a
      * new insight is created. </p>
      */
-    inline const Aws::Vector<NotificationMessageType>& GetMessageTypes() const{ return m_messageTypes; }
+    inline const Aws::Vector<NotificationMessageType>& GetMessageTypes() const { return m_messageTypes; }
     inline bool MessageTypesHasBeenSet() const { return m_messageTypesHasBeenSet; }
-    inline void SetMessageTypes(const Aws::Vector<NotificationMessageType>& value) { m_messageTypesHasBeenSet = true; m_messageTypes = value; }
-    inline void SetMessageTypes(Aws::Vector<NotificationMessageType>&& value) { m_messageTypesHasBeenSet = true; m_messageTypes = std::move(value); }
-    inline NotificationFilterConfig& WithMessageTypes(const Aws::Vector<NotificationMessageType>& value) { SetMessageTypes(value); return *this;}
-    inline NotificationFilterConfig& WithMessageTypes(Aws::Vector<NotificationMessageType>&& value) { SetMessageTypes(std::move(value)); return *this;}
-    inline NotificationFilterConfig& AddMessageTypes(const NotificationMessageType& value) { m_messageTypesHasBeenSet = true; m_messageTypes.push_back(value); return *this; }
-    inline NotificationFilterConfig& AddMessageTypes(NotificationMessageType&& value) { m_messageTypesHasBeenSet = true; m_messageTypes.push_back(std::move(value)); return *this; }
+    template<typename MessageTypesT = Aws::Vector<NotificationMessageType>>
+    void SetMessageTypes(MessageTypesT&& value) { m_messageTypesHasBeenSet = true; m_messageTypes = std::forward<MessageTypesT>(value); }
+    template<typename MessageTypesT = Aws::Vector<NotificationMessageType>>
+    NotificationFilterConfig& WithMessageTypes(MessageTypesT&& value) { SetMessageTypes(std::forward<MessageTypesT>(value)); return *this;}
+    inline NotificationFilterConfig& AddMessageTypes(NotificationMessageType value) { m_messageTypesHasBeenSet = true; m_messageTypes.push_back(value); return *this; }
     ///@}
   private:
 

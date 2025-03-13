@@ -18,18 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-ConnectPeerAssociation::ConnectPeerAssociation() : 
-    m_connectPeerIdHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false),
-    m_state(ConnectPeerAssociationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 ConnectPeerAssociation::ConnectPeerAssociation(JsonView jsonValue)
-  : ConnectPeerAssociation()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ConnectPeerAssociation& ConnectPeerAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectPeerId"))
   {
     m_connectPeerId = jsonValue.GetString("ConnectPeerId");
-
     m_connectPeerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalNetworkId"))
   {
     m_globalNetworkId = jsonValue.GetString("GlobalNetworkId");
-
     m_globalNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
-
     m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkId"))
   {
     m_linkId = jsonValue.GetString("LinkId");
-
     m_linkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ConnectPeerAssociationStateMapper::GetConnectPeerAssociationStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

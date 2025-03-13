@@ -38,7 +38,7 @@ namespace Model
   class MedicalResult
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalResult();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalResult() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,21 +48,19 @@ namespace Model
     /**
      * <p>Provides a unique identifier for the <code>Result</code>.</p>
      */
-    inline const Aws::String& GetResultId() const{ return m_resultId; }
+    inline const Aws::String& GetResultId() const { return m_resultId; }
     inline bool ResultIdHasBeenSet() const { return m_resultIdHasBeenSet; }
-    inline void SetResultId(const Aws::String& value) { m_resultIdHasBeenSet = true; m_resultId = value; }
-    inline void SetResultId(Aws::String&& value) { m_resultIdHasBeenSet = true; m_resultId = std::move(value); }
-    inline void SetResultId(const char* value) { m_resultIdHasBeenSet = true; m_resultId.assign(value); }
-    inline MedicalResult& WithResultId(const Aws::String& value) { SetResultId(value); return *this;}
-    inline MedicalResult& WithResultId(Aws::String&& value) { SetResultId(std::move(value)); return *this;}
-    inline MedicalResult& WithResultId(const char* value) { SetResultId(value); return *this;}
+    template<typename ResultIdT = Aws::String>
+    void SetResultId(ResultIdT&& value) { m_resultIdHasBeenSet = true; m_resultId = std::forward<ResultIdT>(value); }
+    template<typename ResultIdT = Aws::String>
+    MedicalResult& WithResultId(ResultIdT&& value) { SetResultId(std::forward<ResultIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time, in milliseconds, of the <code>Result</code>.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline double GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
     inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
     inline MedicalResult& WithStartTime(double value) { SetStartTime(value); return *this;}
@@ -72,7 +70,7 @@ namespace Model
     /**
      * <p>The end time, in milliseconds, of the <code>Result</code>.</p>
      */
-    inline double GetEndTime() const{ return m_endTime; }
+    inline double GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
     inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
     inline MedicalResult& WithEndTime(double value) { SetEndTime(value); return *this;}
@@ -84,7 +82,7 @@ namespace Model
      * <code>true</code>, the segment is not complete. If <code>IsPartial</code> is
      * <code>false</code>, the segment is complete.</p>
      */
-    inline bool GetIsPartial() const{ return m_isPartial; }
+    inline bool GetIsPartial() const { return m_isPartial; }
     inline bool IsPartialHasBeenSet() const { return m_isPartialHasBeenSet; }
     inline void SetIsPartial(bool value) { m_isPartialHasBeenSet = true; m_isPartial = value; }
     inline MedicalResult& WithIsPartial(bool value) { SetIsPartial(value); return *this;}
@@ -96,41 +94,39 @@ namespace Model
      * alternative may contain one or more of <code>Items</code>,
      * <code>Entities</code>, or <code>Transcript</code>.</p>
      */
-    inline const Aws::Vector<MedicalAlternative>& GetAlternatives() const{ return m_alternatives; }
+    inline const Aws::Vector<MedicalAlternative>& GetAlternatives() const { return m_alternatives; }
     inline bool AlternativesHasBeenSet() const { return m_alternativesHasBeenSet; }
-    inline void SetAlternatives(const Aws::Vector<MedicalAlternative>& value) { m_alternativesHasBeenSet = true; m_alternatives = value; }
-    inline void SetAlternatives(Aws::Vector<MedicalAlternative>&& value) { m_alternativesHasBeenSet = true; m_alternatives = std::move(value); }
-    inline MedicalResult& WithAlternatives(const Aws::Vector<MedicalAlternative>& value) { SetAlternatives(value); return *this;}
-    inline MedicalResult& WithAlternatives(Aws::Vector<MedicalAlternative>&& value) { SetAlternatives(std::move(value)); return *this;}
-    inline MedicalResult& AddAlternatives(const MedicalAlternative& value) { m_alternativesHasBeenSet = true; m_alternatives.push_back(value); return *this; }
-    inline MedicalResult& AddAlternatives(MedicalAlternative&& value) { m_alternativesHasBeenSet = true; m_alternatives.push_back(std::move(value)); return *this; }
+    template<typename AlternativesT = Aws::Vector<MedicalAlternative>>
+    void SetAlternatives(AlternativesT&& value) { m_alternativesHasBeenSet = true; m_alternatives = std::forward<AlternativesT>(value); }
+    template<typename AlternativesT = Aws::Vector<MedicalAlternative>>
+    MedicalResult& WithAlternatives(AlternativesT&& value) { SetAlternatives(std::forward<AlternativesT>(value)); return *this;}
+    template<typename AlternativesT = MedicalAlternative>
+    MedicalResult& AddAlternatives(AlternativesT&& value) { m_alternativesHasBeenSet = true; m_alternatives.emplace_back(std::forward<AlternativesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Indicates the channel identified for the <code>Result</code>.</p>
      */
-    inline const Aws::String& GetChannelId() const{ return m_channelId; }
+    inline const Aws::String& GetChannelId() const { return m_channelId; }
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-    inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
-    inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
-    inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
-    inline MedicalResult& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
-    inline MedicalResult& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
-    inline MedicalResult& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+    template<typename ChannelIdT = Aws::String>
+    void SetChannelId(ChannelIdT&& value) { m_channelIdHasBeenSet = true; m_channelId = std::forward<ChannelIdT>(value); }
+    template<typename ChannelIdT = Aws::String>
+    MedicalResult& WithChannelId(ChannelIdT&& value) { SetChannelId(std::forward<ChannelIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resultId;
     bool m_resultIdHasBeenSet = false;
 
-    double m_startTime;
+    double m_startTime{0.0};
     bool m_startTimeHasBeenSet = false;
 
-    double m_endTime;
+    double m_endTime{0.0};
     bool m_endTimeHasBeenSet = false;
 
-    bool m_isPartial;
+    bool m_isPartial{false};
     bool m_isPartialHasBeenSet = false;
 
     Aws::Vector<MedicalAlternative> m_alternatives;

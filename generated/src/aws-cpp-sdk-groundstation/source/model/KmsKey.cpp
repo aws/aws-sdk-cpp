@@ -18,15 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-KmsKey::KmsKey() : 
-    m_kmsAliasArnHasBeenSet(false),
-    m_kmsAliasNameHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 KmsKey::KmsKey(JsonView jsonValue)
-  : KmsKey()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ KmsKey& KmsKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kmsAliasArn"))
   {
     m_kmsAliasArn = jsonValue.GetString("kmsAliasArn");
-
     m_kmsAliasArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsAliasName"))
   {
     m_kmsAliasName = jsonValue.GetString("kmsAliasName");
-
     m_kmsAliasNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

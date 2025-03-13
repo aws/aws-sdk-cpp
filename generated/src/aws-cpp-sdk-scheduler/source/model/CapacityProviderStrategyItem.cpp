@@ -18,17 +18,7 @@ namespace Scheduler
 namespace Model
 {
 
-CapacityProviderStrategyItem::CapacityProviderStrategyItem() : 
-    m_base(0),
-    m_baseHasBeenSet(false),
-    m_capacityProviderHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false)
-{
-}
-
 CapacityProviderStrategyItem::CapacityProviderStrategyItem(JsonView jsonValue)
-  : CapacityProviderStrategyItem()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CapacityProviderStrategyItem& CapacityProviderStrategyItem::operator =(JsonView 
   if(jsonValue.ValueExists("base"))
   {
     m_base = jsonValue.GetInteger("base");
-
     m_baseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capacityProvider"))
   {
     m_capacityProvider = jsonValue.GetString("capacityProvider");
-
     m_capacityProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("weight"))
   {
     m_weight = jsonValue.GetInteger("weight");
-
     m_weightHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-WebsiteConfiguration::WebsiteConfiguration() : 
-    m_errorDocumentHasBeenSet(false),
-    m_indexDocumentHasBeenSet(false),
-    m_redirectAllRequestsToHasBeenSet(false),
-    m_routingRulesHasBeenSet(false)
-{
-}
-
 WebsiteConfiguration::WebsiteConfiguration(const XmlNode& xmlNode)
-  : WebsiteConfiguration()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ WebsiteConfiguration& WebsiteConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_errorDocument = errorDocumentNode;
       m_errorDocumentHasBeenSet = true;
+       m_errorDocumentHasBeenSet = true;
     }
     XmlNode indexDocumentNode = resultNode.FirstChild("IndexDocument");
     if(!indexDocumentNode.IsNull())
     {
       m_indexDocument = indexDocumentNode;
       m_indexDocumentHasBeenSet = true;
+       m_indexDocumentHasBeenSet = true;
     }
     XmlNode redirectAllRequestsToNode = resultNode.FirstChild("RedirectAllRequestsTo");
     if(!redirectAllRequestsToNode.IsNull())
     {
       m_redirectAllRequestsTo = redirectAllRequestsToNode;
       m_redirectAllRequestsToHasBeenSet = true;
+       m_redirectAllRequestsToHasBeenSet = true;
     }
     XmlNode routingRulesNode = resultNode.FirstChild("RoutingRules");
     if(!routingRulesNode.IsNull())
     {
       XmlNode routingRulesMember = routingRulesNode.FirstChild("RoutingRule");
+      m_routingRulesHasBeenSet = !routingRulesMember.IsNull();
       while(!routingRulesMember.IsNull())
       {
         m_routingRules.push_back(routingRulesMember);
         routingRulesMember = routingRulesMember.NextNode("RoutingRule");
       }
 
-      m_routingRulesHasBeenSet = true;
+       m_routingRulesHasBeenSet = true;
     }
   }
 

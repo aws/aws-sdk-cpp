@@ -35,7 +35,7 @@ namespace Model
   class ServerLaunchConfiguration
   {
   public:
-    AWS_SMS_API ServerLaunchConfiguration();
+    AWS_SMS_API ServerLaunchConfiguration() = default;
     AWS_SMS_API ServerLaunchConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API ServerLaunchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,68 +45,60 @@ namespace Model
     /**
      * <p>The ID of the server with which the launch configuration is associated.</p>
      */
-    inline const Server& GetServer() const{ return m_server; }
+    inline const Server& GetServer() const { return m_server; }
     inline bool ServerHasBeenSet() const { return m_serverHasBeenSet; }
-    inline void SetServer(const Server& value) { m_serverHasBeenSet = true; m_server = value; }
-    inline void SetServer(Server&& value) { m_serverHasBeenSet = true; m_server = std::move(value); }
-    inline ServerLaunchConfiguration& WithServer(const Server& value) { SetServer(value); return *this;}
-    inline ServerLaunchConfiguration& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
+    template<typename ServerT = Server>
+    void SetServer(ServerT&& value) { m_serverHasBeenSet = true; m_server = std::forward<ServerT>(value); }
+    template<typename ServerT = Server>
+    ServerLaunchConfiguration& WithServer(ServerT&& value) { SetServer(std::forward<ServerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The logical ID of the server in the CloudFormation template.</p>
      */
-    inline const Aws::String& GetLogicalId() const{ return m_logicalId; }
+    inline const Aws::String& GetLogicalId() const { return m_logicalId; }
     inline bool LogicalIdHasBeenSet() const { return m_logicalIdHasBeenSet; }
-    inline void SetLogicalId(const Aws::String& value) { m_logicalIdHasBeenSet = true; m_logicalId = value; }
-    inline void SetLogicalId(Aws::String&& value) { m_logicalIdHasBeenSet = true; m_logicalId = std::move(value); }
-    inline void SetLogicalId(const char* value) { m_logicalIdHasBeenSet = true; m_logicalId.assign(value); }
-    inline ServerLaunchConfiguration& WithLogicalId(const Aws::String& value) { SetLogicalId(value); return *this;}
-    inline ServerLaunchConfiguration& WithLogicalId(Aws::String&& value) { SetLogicalId(std::move(value)); return *this;}
-    inline ServerLaunchConfiguration& WithLogicalId(const char* value) { SetLogicalId(value); return *this;}
+    template<typename LogicalIdT = Aws::String>
+    void SetLogicalId(LogicalIdT&& value) { m_logicalIdHasBeenSet = true; m_logicalId = std::forward<LogicalIdT>(value); }
+    template<typename LogicalIdT = Aws::String>
+    ServerLaunchConfiguration& WithLogicalId(LogicalIdT&& value) { SetLogicalId(std::forward<LogicalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC into which the server should be launched.</p>
      */
-    inline const Aws::String& GetVpc() const{ return m_vpc; }
+    inline const Aws::String& GetVpc() const { return m_vpc; }
     inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
-    inline void SetVpc(const Aws::String& value) { m_vpcHasBeenSet = true; m_vpc = value; }
-    inline void SetVpc(Aws::String&& value) { m_vpcHasBeenSet = true; m_vpc = std::move(value); }
-    inline void SetVpc(const char* value) { m_vpcHasBeenSet = true; m_vpc.assign(value); }
-    inline ServerLaunchConfiguration& WithVpc(const Aws::String& value) { SetVpc(value); return *this;}
-    inline ServerLaunchConfiguration& WithVpc(Aws::String&& value) { SetVpc(std::move(value)); return *this;}
-    inline ServerLaunchConfiguration& WithVpc(const char* value) { SetVpc(value); return *this;}
+    template<typename VpcT = Aws::String>
+    void SetVpc(VpcT&& value) { m_vpcHasBeenSet = true; m_vpc = std::forward<VpcT>(value); }
+    template<typename VpcT = Aws::String>
+    ServerLaunchConfiguration& WithVpc(VpcT&& value) { SetVpc(std::forward<VpcT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the subnet the server should be launched into.</p>
      */
-    inline const Aws::String& GetSubnet() const{ return m_subnet; }
+    inline const Aws::String& GetSubnet() const { return m_subnet; }
     inline bool SubnetHasBeenSet() const { return m_subnetHasBeenSet; }
-    inline void SetSubnet(const Aws::String& value) { m_subnetHasBeenSet = true; m_subnet = value; }
-    inline void SetSubnet(Aws::String&& value) { m_subnetHasBeenSet = true; m_subnet = std::move(value); }
-    inline void SetSubnet(const char* value) { m_subnetHasBeenSet = true; m_subnet.assign(value); }
-    inline ServerLaunchConfiguration& WithSubnet(const Aws::String& value) { SetSubnet(value); return *this;}
-    inline ServerLaunchConfiguration& WithSubnet(Aws::String&& value) { SetSubnet(std::move(value)); return *this;}
-    inline ServerLaunchConfiguration& WithSubnet(const char* value) { SetSubnet(value); return *this;}
+    template<typename SubnetT = Aws::String>
+    void SetSubnet(SubnetT&& value) { m_subnetHasBeenSet = true; m_subnet = std::forward<SubnetT>(value); }
+    template<typename SubnetT = Aws::String>
+    ServerLaunchConfiguration& WithSubnet(SubnetT&& value) { SetSubnet(std::forward<SubnetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the security group that applies to the launched server.</p>
      */
-    inline const Aws::String& GetSecurityGroup() const{ return m_securityGroup; }
+    inline const Aws::String& GetSecurityGroup() const { return m_securityGroup; }
     inline bool SecurityGroupHasBeenSet() const { return m_securityGroupHasBeenSet; }
-    inline void SetSecurityGroup(const Aws::String& value) { m_securityGroupHasBeenSet = true; m_securityGroup = value; }
-    inline void SetSecurityGroup(Aws::String&& value) { m_securityGroupHasBeenSet = true; m_securityGroup = std::move(value); }
-    inline void SetSecurityGroup(const char* value) { m_securityGroupHasBeenSet = true; m_securityGroup.assign(value); }
-    inline ServerLaunchConfiguration& WithSecurityGroup(const Aws::String& value) { SetSecurityGroup(value); return *this;}
-    inline ServerLaunchConfiguration& WithSecurityGroup(Aws::String&& value) { SetSecurityGroup(std::move(value)); return *this;}
-    inline ServerLaunchConfiguration& WithSecurityGroup(const char* value) { SetSecurityGroup(value); return *this;}
+    template<typename SecurityGroupT = Aws::String>
+    void SetSecurityGroup(SecurityGroupT&& value) { m_securityGroupHasBeenSet = true; m_securityGroup = std::forward<SecurityGroupT>(value); }
+    template<typename SecurityGroupT = Aws::String>
+    ServerLaunchConfiguration& WithSecurityGroup(SecurityGroupT&& value) { SetSecurityGroup(std::forward<SecurityGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +106,12 @@ namespace Model
      * <p>The name of the Amazon EC2 SSH key to be used for connecting to the launched
      * server.</p>
      */
-    inline const Aws::String& GetEc2KeyName() const{ return m_ec2KeyName; }
+    inline const Aws::String& GetEc2KeyName() const { return m_ec2KeyName; }
     inline bool Ec2KeyNameHasBeenSet() const { return m_ec2KeyNameHasBeenSet; }
-    inline void SetEc2KeyName(const Aws::String& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
-    inline void SetEc2KeyName(Aws::String&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = std::move(value); }
-    inline void SetEc2KeyName(const char* value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName.assign(value); }
-    inline ServerLaunchConfiguration& WithEc2KeyName(const Aws::String& value) { SetEc2KeyName(value); return *this;}
-    inline ServerLaunchConfiguration& WithEc2KeyName(Aws::String&& value) { SetEc2KeyName(std::move(value)); return *this;}
-    inline ServerLaunchConfiguration& WithEc2KeyName(const char* value) { SetEc2KeyName(value); return *this;}
+    template<typename Ec2KeyNameT = Aws::String>
+    void SetEc2KeyName(Ec2KeyNameT&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = std::forward<Ec2KeyNameT>(value); }
+    template<typename Ec2KeyNameT = Aws::String>
+    ServerLaunchConfiguration& WithEc2KeyName(Ec2KeyNameT&& value) { SetEc2KeyName(std::forward<Ec2KeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,26 +119,24 @@ namespace Model
      * <p>Location of the user-data script to be executed when launching the
      * server.</p>
      */
-    inline const UserData& GetUserData() const{ return m_userData; }
+    inline const UserData& GetUserData() const { return m_userData; }
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
-    inline void SetUserData(const UserData& value) { m_userDataHasBeenSet = true; m_userData = value; }
-    inline void SetUserData(UserData&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
-    inline ServerLaunchConfiguration& WithUserData(const UserData& value) { SetUserData(value); return *this;}
-    inline ServerLaunchConfiguration& WithUserData(UserData&& value) { SetUserData(std::move(value)); return *this;}
+    template<typename UserDataT = UserData>
+    void SetUserData(UserDataT&& value) { m_userDataHasBeenSet = true; m_userData = std::forward<UserDataT>(value); }
+    template<typename UserDataT = UserData>
+    ServerLaunchConfiguration& WithUserData(UserDataT&& value) { SetUserData(std::forward<UserDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance type to use when launching the server.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline ServerLaunchConfiguration& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline ServerLaunchConfiguration& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline ServerLaunchConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    ServerLaunchConfiguration& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,7 +144,7 @@ namespace Model
      * <p>Indicates whether a publicly accessible IP address is created when launching
      * the server.</p>
      */
-    inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
+    inline bool GetAssociatePublicIpAddress() const { return m_associatePublicIpAddress; }
     inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
     inline ServerLaunchConfiguration& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
@@ -166,36 +154,32 @@ namespace Model
     /**
      * <p>The name of the IAM instance profile.</p>
      */
-    inline const Aws::String& GetIamInstanceProfileName() const{ return m_iamInstanceProfileName; }
+    inline const Aws::String& GetIamInstanceProfileName() const { return m_iamInstanceProfileName; }
     inline bool IamInstanceProfileNameHasBeenSet() const { return m_iamInstanceProfileNameHasBeenSet; }
-    inline void SetIamInstanceProfileName(const Aws::String& value) { m_iamInstanceProfileNameHasBeenSet = true; m_iamInstanceProfileName = value; }
-    inline void SetIamInstanceProfileName(Aws::String&& value) { m_iamInstanceProfileNameHasBeenSet = true; m_iamInstanceProfileName = std::move(value); }
-    inline void SetIamInstanceProfileName(const char* value) { m_iamInstanceProfileNameHasBeenSet = true; m_iamInstanceProfileName.assign(value); }
-    inline ServerLaunchConfiguration& WithIamInstanceProfileName(const Aws::String& value) { SetIamInstanceProfileName(value); return *this;}
-    inline ServerLaunchConfiguration& WithIamInstanceProfileName(Aws::String&& value) { SetIamInstanceProfileName(std::move(value)); return *this;}
-    inline ServerLaunchConfiguration& WithIamInstanceProfileName(const char* value) { SetIamInstanceProfileName(value); return *this;}
+    template<typename IamInstanceProfileNameT = Aws::String>
+    void SetIamInstanceProfileName(IamInstanceProfileNameT&& value) { m_iamInstanceProfileNameHasBeenSet = true; m_iamInstanceProfileName = std::forward<IamInstanceProfileNameT>(value); }
+    template<typename IamInstanceProfileNameT = Aws::String>
+    ServerLaunchConfiguration& WithIamInstanceProfileName(IamInstanceProfileNameT&& value) { SetIamInstanceProfileName(std::forward<IamInstanceProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3Location& GetConfigureScript() const{ return m_configureScript; }
+    inline const S3Location& GetConfigureScript() const { return m_configureScript; }
     inline bool ConfigureScriptHasBeenSet() const { return m_configureScriptHasBeenSet; }
-    inline void SetConfigureScript(const S3Location& value) { m_configureScriptHasBeenSet = true; m_configureScript = value; }
-    inline void SetConfigureScript(S3Location&& value) { m_configureScriptHasBeenSet = true; m_configureScript = std::move(value); }
-    inline ServerLaunchConfiguration& WithConfigureScript(const S3Location& value) { SetConfigureScript(value); return *this;}
-    inline ServerLaunchConfiguration& WithConfigureScript(S3Location&& value) { SetConfigureScript(std::move(value)); return *this;}
+    template<typename ConfigureScriptT = S3Location>
+    void SetConfigureScript(ConfigureScriptT&& value) { m_configureScriptHasBeenSet = true; m_configureScript = std::forward<ConfigureScriptT>(value); }
+    template<typename ConfigureScriptT = S3Location>
+    ServerLaunchConfiguration& WithConfigureScript(ConfigureScriptT&& value) { SetConfigureScript(std::forward<ConfigureScriptT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of configuration script.</p>
      */
-    inline const ScriptType& GetConfigureScriptType() const{ return m_configureScriptType; }
+    inline ScriptType GetConfigureScriptType() const { return m_configureScriptType; }
     inline bool ConfigureScriptTypeHasBeenSet() const { return m_configureScriptTypeHasBeenSet; }
-    inline void SetConfigureScriptType(const ScriptType& value) { m_configureScriptTypeHasBeenSet = true; m_configureScriptType = value; }
-    inline void SetConfigureScriptType(ScriptType&& value) { m_configureScriptTypeHasBeenSet = true; m_configureScriptType = std::move(value); }
-    inline ServerLaunchConfiguration& WithConfigureScriptType(const ScriptType& value) { SetConfigureScriptType(value); return *this;}
-    inline ServerLaunchConfiguration& WithConfigureScriptType(ScriptType&& value) { SetConfigureScriptType(std::move(value)); return *this;}
+    inline void SetConfigureScriptType(ScriptType value) { m_configureScriptTypeHasBeenSet = true; m_configureScriptType = value; }
+    inline ServerLaunchConfiguration& WithConfigureScriptType(ScriptType value) { SetConfigureScriptType(value); return *this;}
     ///@}
   private:
 
@@ -223,7 +207,7 @@ namespace Model
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
 
-    bool m_associatePublicIpAddress;
+    bool m_associatePublicIpAddress{false};
     bool m_associatePublicIpAddressHasBeenSet = false;
 
     Aws::String m_iamInstanceProfileName;
@@ -232,7 +216,7 @@ namespace Model
     S3Location m_configureScript;
     bool m_configureScriptHasBeenSet = false;
 
-    ScriptType m_configureScriptType;
+    ScriptType m_configureScriptType{ScriptType::NOT_SET};
     bool m_configureScriptTypeHasBeenSet = false;
   };
 

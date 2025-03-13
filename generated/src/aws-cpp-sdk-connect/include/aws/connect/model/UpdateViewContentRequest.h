@@ -23,7 +23,7 @@ namespace Model
   class UpdateViewContentRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API UpdateViewContentRequest();
+    AWS_CONNECT_API UpdateViewContentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
      * the ARN of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline UpdateViewContentRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline UpdateViewContentRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline UpdateViewContentRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    UpdateViewContentRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code>
      * can be used.</p>
      */
-    inline const Aws::String& GetViewId() const{ return m_viewId; }
+    inline const Aws::String& GetViewId() const { return m_viewId; }
     inline bool ViewIdHasBeenSet() const { return m_viewIdHasBeenSet; }
-    inline void SetViewId(const Aws::String& value) { m_viewIdHasBeenSet = true; m_viewId = value; }
-    inline void SetViewId(Aws::String&& value) { m_viewIdHasBeenSet = true; m_viewId = std::move(value); }
-    inline void SetViewId(const char* value) { m_viewIdHasBeenSet = true; m_viewId.assign(value); }
-    inline UpdateViewContentRequest& WithViewId(const Aws::String& value) { SetViewId(value); return *this;}
-    inline UpdateViewContentRequest& WithViewId(Aws::String&& value) { SetViewId(std::move(value)); return *this;}
-    inline UpdateViewContentRequest& WithViewId(const char* value) { SetViewId(value); return *this;}
+    template<typename ViewIdT = Aws::String>
+    void SetViewId(ViewIdT&& value) { m_viewIdHasBeenSet = true; m_viewId = std::forward<ViewIdT>(value); }
+    template<typename ViewIdT = Aws::String>
+    UpdateViewContentRequest& WithViewId(ViewIdT&& value) { SetViewId(std::forward<ViewIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +66,10 @@ namespace Model
      * <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate
      * validation on the content.</p>
      */
-    inline const ViewStatus& GetStatus() const{ return m_status; }
+    inline ViewStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ViewStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ViewStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateViewContentRequest& WithStatus(const ViewStatus& value) { SetStatus(value); return *this;}
-    inline UpdateViewContentRequest& WithStatus(ViewStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ViewStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateViewContentRequest& WithStatus(ViewStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +79,12 @@ namespace Model
      * operation.</p> <p>The total uncompressed content has a maximum file size of
      * 400kB.</p>
      */
-    inline const ViewInputContent& GetContent() const{ return m_content; }
+    inline const ViewInputContent& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const ViewInputContent& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(ViewInputContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline UpdateViewContentRequest& WithContent(const ViewInputContent& value) { SetContent(value); return *this;}
-    inline UpdateViewContentRequest& WithContent(ViewInputContent&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = ViewInputContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = ViewInputContent>
+    UpdateViewContentRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 
@@ -100,7 +94,7 @@ namespace Model
     Aws::String m_viewId;
     bool m_viewIdHasBeenSet = false;
 
-    ViewStatus m_status;
+    ViewStatus m_status{ViewStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     ViewInputContent m_content;

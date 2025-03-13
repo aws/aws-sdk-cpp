@@ -24,7 +24,7 @@ namespace Model
   class GetMilestoneRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API GetMilestoneRequest();
+    AWS_WELLARCHITECTED_API GetMilestoneRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,19 +37,17 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline GetMilestoneRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline GetMilestoneRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline GetMilestoneRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    GetMilestoneRequest& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMilestoneNumber() const{ return m_milestoneNumber; }
+    inline int GetMilestoneNumber() const { return m_milestoneNumber; }
     inline bool MilestoneNumberHasBeenSet() const { return m_milestoneNumberHasBeenSet; }
     inline void SetMilestoneNumber(int value) { m_milestoneNumberHasBeenSet = true; m_milestoneNumber = value; }
     inline GetMilestoneRequest& WithMilestoneNumber(int value) { SetMilestoneNumber(value); return *this;}
@@ -59,7 +57,7 @@ namespace Model
     Aws::String m_workloadId;
     bool m_workloadIdHasBeenSet = false;
 
-    int m_milestoneNumber;
+    int m_milestoneNumber{0};
     bool m_milestoneNumberHasBeenSet = false;
   };
 

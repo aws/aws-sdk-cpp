@@ -24,7 +24,7 @@ namespace Model
   class UpdateWorkerRequest : public DeadlineRequest
   {
   public:
-    AWS_DEADLINE_API UpdateWorkerRequest();
+    AWS_DEADLINE_API UpdateWorkerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,78 +39,70 @@ namespace Model
     /**
      * <p>The farm ID to update.</p>
      */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline const Aws::String& GetFarmId() const { return m_farmId; }
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline UpdateWorkerRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline UpdateWorkerRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline UpdateWorkerRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    template<typename FarmIdT = Aws::String>
+    void SetFarmId(FarmIdT&& value) { m_farmIdHasBeenSet = true; m_farmId = std::forward<FarmIdT>(value); }
+    template<typename FarmIdT = Aws::String>
+    UpdateWorkerRequest& WithFarmId(FarmIdT&& value) { SetFarmId(std::forward<FarmIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The fleet ID to update.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline UpdateWorkerRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline UpdateWorkerRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline UpdateWorkerRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    UpdateWorkerRequest& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The worker ID to update.</p>
      */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+    inline const Aws::String& GetWorkerId() const { return m_workerId; }
     inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-    inline UpdateWorkerRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline UpdateWorkerRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline UpdateWorkerRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+    template<typename WorkerIdT = Aws::String>
+    void SetWorkerId(WorkerIdT&& value) { m_workerIdHasBeenSet = true; m_workerId = std::forward<WorkerIdT>(value); }
+    template<typename WorkerIdT = Aws::String>
+    UpdateWorkerRequest& WithWorkerId(WorkerIdT&& value) { SetWorkerId(std::forward<WorkerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The worker status to update.</p>
      */
-    inline const UpdatedWorkerStatus& GetStatus() const{ return m_status; }
+    inline UpdatedWorkerStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const UpdatedWorkerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(UpdatedWorkerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateWorkerRequest& WithStatus(const UpdatedWorkerStatus& value) { SetStatus(value); return *this;}
-    inline UpdateWorkerRequest& WithStatus(UpdatedWorkerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(UpdatedWorkerStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateWorkerRequest& WithStatus(UpdatedWorkerStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The worker capabilities to update.</p>
      */
-    inline const WorkerCapabilities& GetCapabilities() const{ return m_capabilities; }
+    inline const WorkerCapabilities& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const WorkerCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(WorkerCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline UpdateWorkerRequest& WithCapabilities(const WorkerCapabilities& value) { SetCapabilities(value); return *this;}
-    inline UpdateWorkerRequest& WithCapabilities(WorkerCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+    template<typename CapabilitiesT = WorkerCapabilities>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = WorkerCapabilities>
+    UpdateWorkerRequest& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The host properties to update.</p>
      */
-    inline const HostPropertiesRequest& GetHostProperties() const{ return m_hostProperties; }
+    inline const HostPropertiesRequest& GetHostProperties() const { return m_hostProperties; }
     inline bool HostPropertiesHasBeenSet() const { return m_hostPropertiesHasBeenSet; }
-    inline void SetHostProperties(const HostPropertiesRequest& value) { m_hostPropertiesHasBeenSet = true; m_hostProperties = value; }
-    inline void SetHostProperties(HostPropertiesRequest&& value) { m_hostPropertiesHasBeenSet = true; m_hostProperties = std::move(value); }
-    inline UpdateWorkerRequest& WithHostProperties(const HostPropertiesRequest& value) { SetHostProperties(value); return *this;}
-    inline UpdateWorkerRequest& WithHostProperties(HostPropertiesRequest&& value) { SetHostProperties(std::move(value)); return *this;}
+    template<typename HostPropertiesT = HostPropertiesRequest>
+    void SetHostProperties(HostPropertiesT&& value) { m_hostPropertiesHasBeenSet = true; m_hostProperties = std::forward<HostPropertiesT>(value); }
+    template<typename HostPropertiesT = HostPropertiesRequest>
+    UpdateWorkerRequest& WithHostProperties(HostPropertiesT&& value) { SetHostProperties(std::forward<HostPropertiesT>(value)); return *this;}
     ///@}
   private:
 
@@ -123,7 +115,7 @@ namespace Model
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet = false;
 
-    UpdatedWorkerStatus m_status;
+    UpdatedWorkerStatus m_status{UpdatedWorkerStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     WorkerCapabilities m_capabilities;

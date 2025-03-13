@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteWorkloadShareRequest::DeleteWorkloadShareRequest() : 
-    m_shareIdHasBeenSet(false),
-    m_workloadIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteWorkloadShareRequest::SerializePayload() const
 {
   return {};

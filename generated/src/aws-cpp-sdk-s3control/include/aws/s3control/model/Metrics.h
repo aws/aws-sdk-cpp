@@ -32,7 +32,7 @@ namespace Model
   class Metrics
   {
   public:
-    AWS_S3CONTROL_API Metrics();
+    AWS_S3CONTROL_API Metrics() = default;
     AWS_S3CONTROL_API Metrics(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API Metrics& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>Specifies whether replication metrics are enabled. </p>
      */
-    inline const MetricsStatus& GetStatus() const{ return m_status; }
+    inline MetricsStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MetricsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MetricsStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Metrics& WithStatus(const MetricsStatus& value) { SetStatus(value); return *this;}
-    inline Metrics& WithStatus(MetricsStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MetricsStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Metrics& WithStatus(MetricsStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -57,16 +55,16 @@ namespace Model
      * <code>s3:Replication:OperationMissedThreshold</code> event. </p>  <p>This
      * is not supported by Amazon S3 on Outposts buckets.</p> 
      */
-    inline const ReplicationTimeValue& GetEventThreshold() const{ return m_eventThreshold; }
+    inline const ReplicationTimeValue& GetEventThreshold() const { return m_eventThreshold; }
     inline bool EventThresholdHasBeenSet() const { return m_eventThresholdHasBeenSet; }
-    inline void SetEventThreshold(const ReplicationTimeValue& value) { m_eventThresholdHasBeenSet = true; m_eventThreshold = value; }
-    inline void SetEventThreshold(ReplicationTimeValue&& value) { m_eventThresholdHasBeenSet = true; m_eventThreshold = std::move(value); }
-    inline Metrics& WithEventThreshold(const ReplicationTimeValue& value) { SetEventThreshold(value); return *this;}
-    inline Metrics& WithEventThreshold(ReplicationTimeValue&& value) { SetEventThreshold(std::move(value)); return *this;}
+    template<typename EventThresholdT = ReplicationTimeValue>
+    void SetEventThreshold(EventThresholdT&& value) { m_eventThresholdHasBeenSet = true; m_eventThreshold = std::forward<EventThresholdT>(value); }
+    template<typename EventThresholdT = ReplicationTimeValue>
+    Metrics& WithEventThreshold(EventThresholdT&& value) { SetEventThreshold(std::forward<EventThresholdT>(value)); return *this;}
     ///@}
   private:
 
-    MetricsStatus m_status;
+    MetricsStatus m_status{MetricsStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     ReplicationTimeValue m_eventThreshold;

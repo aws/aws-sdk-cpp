@@ -27,7 +27,7 @@ namespace Model
   class GetCustomEndpointResult
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API GetCustomEndpointResult();
+    AWS_IOTMANAGEDINTEGRATIONS_API GetCustomEndpointResult() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API GetCustomEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTMANAGEDINTEGRATIONS_API GetCustomEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The IoT managed integrations dedicated, custom endpoint for the device to
      * route traffic through.</p>
      */
-    inline const Aws::String& GetEndpointAddress() const{ return m_endpointAddress; }
-    inline void SetEndpointAddress(const Aws::String& value) { m_endpointAddress = value; }
-    inline void SetEndpointAddress(Aws::String&& value) { m_endpointAddress = std::move(value); }
-    inline void SetEndpointAddress(const char* value) { m_endpointAddress.assign(value); }
-    inline GetCustomEndpointResult& WithEndpointAddress(const Aws::String& value) { SetEndpointAddress(value); return *this;}
-    inline GetCustomEndpointResult& WithEndpointAddress(Aws::String&& value) { SetEndpointAddress(std::move(value)); return *this;}
-    inline GetCustomEndpointResult& WithEndpointAddress(const char* value) { SetEndpointAddress(value); return *this;}
+    inline const Aws::String& GetEndpointAddress() const { return m_endpointAddress; }
+    template<typename EndpointAddressT = Aws::String>
+    void SetEndpointAddress(EndpointAddressT&& value) { m_endpointAddressHasBeenSet = true; m_endpointAddress = std::forward<EndpointAddressT>(value); }
+    template<typename EndpointAddressT = Aws::String>
+    GetCustomEndpointResult& WithEndpointAddress(EndpointAddressT&& value) { SetEndpointAddress(std::forward<EndpointAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCustomEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCustomEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCustomEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCustomEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_endpointAddress;
+    bool m_endpointAddressHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

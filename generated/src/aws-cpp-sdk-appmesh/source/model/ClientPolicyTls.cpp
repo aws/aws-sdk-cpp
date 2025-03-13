@@ -18,17 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-ClientPolicyTls::ClientPolicyTls() : 
-    m_certificateHasBeenSet(false),
-    m_enforce(false),
-    m_enforceHasBeenSet(false),
-    m_portsHasBeenSet(false),
-    m_validationHasBeenSet(false)
-{
-}
-
 ClientPolicyTls::ClientPolicyTls(JsonView jsonValue)
-  : ClientPolicyTls()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ClientPolicyTls& ClientPolicyTls::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("certificate"))
   {
     m_certificate = jsonValue.GetObject("certificate");
-
     m_certificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enforce"))
   {
     m_enforce = jsonValue.GetBool("enforce");
-
     m_enforceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ports"))
   {
     Aws::Utils::Array<JsonView> portsJsonList = jsonValue.GetArray("ports");
@@ -58,14 +44,11 @@ ClientPolicyTls& ClientPolicyTls::operator =(JsonView jsonValue)
     }
     m_portsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validation"))
   {
     m_validation = jsonValue.GetObject("validation");
-
     m_validationHasBeenSet = true;
   }
-
   return *this;
 }
 

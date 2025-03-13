@@ -34,7 +34,7 @@ namespace Model
   class StartTranscriptionJobRequest : public TranscribeServiceRequest
   {
   public:
-    AWS_TRANSCRIBESERVICE_API StartTranscriptionJobRequest();
+    AWS_TRANSCRIBESERVICE_API StartTranscriptionJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -57,14 +57,12 @@ namespace Model
      * try to create a new job with the same name as an existing job, you get a
      * <code>ConflictException</code> error.</p>
      */
-    inline const Aws::String& GetTranscriptionJobName() const{ return m_transcriptionJobName; }
+    inline const Aws::String& GetTranscriptionJobName() const { return m_transcriptionJobName; }
     inline bool TranscriptionJobNameHasBeenSet() const { return m_transcriptionJobNameHasBeenSet; }
-    inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
-    inline void SetTranscriptionJobName(Aws::String&& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = std::move(value); }
-    inline void SetTranscriptionJobName(const char* value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName.assign(value); }
-    inline StartTranscriptionJobRequest& WithTranscriptionJobName(const Aws::String& value) { SetTranscriptionJobName(value); return *this;}
-    inline StartTranscriptionJobRequest& WithTranscriptionJobName(Aws::String&& value) { SetTranscriptionJobName(std::move(value)); return *this;}
-    inline StartTranscriptionJobRequest& WithTranscriptionJobName(const char* value) { SetTranscriptionJobName(value); return *this;}
+    template<typename TranscriptionJobNameT = Aws::String>
+    void SetTranscriptionJobName(TranscriptionJobNameT&& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = std::forward<TranscriptionJobNameT>(value); }
+    template<typename TranscriptionJobNameT = Aws::String>
+    StartTranscriptionJobRequest& WithTranscriptionJobName(TranscriptionJobNameT&& value) { SetTranscriptionJobName(std::forward<TranscriptionJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,10 @@ namespace Model
      * Canada (Calgary, ca-west-1) and Africa (Cape Town, af-south-1), your media file
      * must be encoded at a sample rate of 16,000 Hz or higher.</p> 
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline StartTranscriptionJobRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline StartTranscriptionJobRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline StartTranscriptionJobRequest& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -103,7 +99,7 @@ namespace Model
      * <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample
      * rate.</p>
      */
-    inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
+    inline int GetMediaSampleRateHertz() const { return m_mediaSampleRateHertz; }
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
     inline StartTranscriptionJobRequest& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
@@ -113,12 +109,10 @@ namespace Model
     /**
      * <p>Specify the format of your input media file.</p>
      */
-    inline const MediaFormat& GetMediaFormat() const{ return m_mediaFormat; }
+    inline MediaFormat GetMediaFormat() const { return m_mediaFormat; }
     inline bool MediaFormatHasBeenSet() const { return m_mediaFormatHasBeenSet; }
-    inline void SetMediaFormat(const MediaFormat& value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = value; }
-    inline void SetMediaFormat(MediaFormat&& value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = std::move(value); }
-    inline StartTranscriptionJobRequest& WithMediaFormat(const MediaFormat& value) { SetMediaFormat(value); return *this;}
-    inline StartTranscriptionJobRequest& WithMediaFormat(MediaFormat&& value) { SetMediaFormat(std::move(value)); return *this;}
+    inline void SetMediaFormat(MediaFormat value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = value; }
+    inline StartTranscriptionJobRequest& WithMediaFormat(MediaFormat value) { SetMediaFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -126,12 +120,12 @@ namespace Model
      * <p>Describes the Amazon S3 location of the media file you want to use in your
      * request.</p>
      */
-    inline const Media& GetMedia() const{ return m_media; }
+    inline const Media& GetMedia() const { return m_media; }
     inline bool MediaHasBeenSet() const { return m_mediaHasBeenSet; }
-    inline void SetMedia(const Media& value) { m_mediaHasBeenSet = true; m_media = value; }
-    inline void SetMedia(Media&& value) { m_mediaHasBeenSet = true; m_media = std::move(value); }
-    inline StartTranscriptionJobRequest& WithMedia(const Media& value) { SetMedia(value); return *this;}
-    inline StartTranscriptionJobRequest& WithMedia(Media&& value) { SetMedia(std::move(value)); return *this;}
+    template<typename MediaT = Media>
+    void SetMedia(MediaT&& value) { m_mediaHasBeenSet = true; m_media = std::forward<MediaT>(value); }
+    template<typename MediaT = Media>
+    StartTranscriptionJobRequest& WithMedia(MediaT&& value) { SetMedia(std::forward<MediaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,14 +150,12 @@ namespace Model
      * <code>OutputBucketName</code>, your transcript is placed in a service-managed
      * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
      */
-    inline const Aws::String& GetOutputBucketName() const{ return m_outputBucketName; }
+    inline const Aws::String& GetOutputBucketName() const { return m_outputBucketName; }
     inline bool OutputBucketNameHasBeenSet() const { return m_outputBucketNameHasBeenSet; }
-    inline void SetOutputBucketName(const Aws::String& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = value; }
-    inline void SetOutputBucketName(Aws::String&& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = std::move(value); }
-    inline void SetOutputBucketName(const char* value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName.assign(value); }
-    inline StartTranscriptionJobRequest& WithOutputBucketName(const Aws::String& value) { SetOutputBucketName(value); return *this;}
-    inline StartTranscriptionJobRequest& WithOutputBucketName(Aws::String&& value) { SetOutputBucketName(std::move(value)); return *this;}
-    inline StartTranscriptionJobRequest& WithOutputBucketName(const char* value) { SetOutputBucketName(value); return *this;}
+    template<typename OutputBucketNameT = Aws::String>
+    void SetOutputBucketName(OutputBucketNameT&& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = std::forward<OutputBucketNameT>(value); }
+    template<typename OutputBucketNameT = Aws::String>
+    StartTranscriptionJobRequest& WithOutputBucketName(OutputBucketNameT&& value) { SetOutputBucketName(std::forward<OutputBucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,14 +185,12 @@ namespace Model
      * </li> </ul> <p>If you specify the name of an Amazon S3 bucket sub-folder that
      * doesn't exist, one is created for you.</p>
      */
-    inline const Aws::String& GetOutputKey() const{ return m_outputKey; }
+    inline const Aws::String& GetOutputKey() const { return m_outputKey; }
     inline bool OutputKeyHasBeenSet() const { return m_outputKeyHasBeenSet; }
-    inline void SetOutputKey(const Aws::String& value) { m_outputKeyHasBeenSet = true; m_outputKey = value; }
-    inline void SetOutputKey(Aws::String&& value) { m_outputKeyHasBeenSet = true; m_outputKey = std::move(value); }
-    inline void SetOutputKey(const char* value) { m_outputKeyHasBeenSet = true; m_outputKey.assign(value); }
-    inline StartTranscriptionJobRequest& WithOutputKey(const Aws::String& value) { SetOutputKey(value); return *this;}
-    inline StartTranscriptionJobRequest& WithOutputKey(Aws::String&& value) { SetOutputKey(std::move(value)); return *this;}
-    inline StartTranscriptionJobRequest& WithOutputKey(const char* value) { SetOutputKey(value); return *this;}
+    template<typename OutputKeyT = Aws::String>
+    void SetOutputKey(OutputKeyT&& value) { m_outputKeyHasBeenSet = true; m_outputKey = std::forward<OutputKeyT>(value); }
+    template<typename OutputKeyT = Aws::String>
+    StartTranscriptionJobRequest& WithOutputKey(OutputKeyT&& value) { SetOutputKey(std::forward<OutputKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -227,14 +217,12 @@ namespace Model
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
      * request must have permission to use the specified KMS key.</p>
      */
-    inline const Aws::String& GetOutputEncryptionKMSKeyId() const{ return m_outputEncryptionKMSKeyId; }
+    inline const Aws::String& GetOutputEncryptionKMSKeyId() const { return m_outputEncryptionKMSKeyId; }
     inline bool OutputEncryptionKMSKeyIdHasBeenSet() const { return m_outputEncryptionKMSKeyIdHasBeenSet; }
-    inline void SetOutputEncryptionKMSKeyId(const Aws::String& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = value; }
-    inline void SetOutputEncryptionKMSKeyId(Aws::String&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::move(value); }
-    inline void SetOutputEncryptionKMSKeyId(const char* value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId.assign(value); }
-    inline StartTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const Aws::String& value) { SetOutputEncryptionKMSKeyId(value); return *this;}
-    inline StartTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(Aws::String&& value) { SetOutputEncryptionKMSKeyId(std::move(value)); return *this;}
-    inline StartTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const char* value) { SetOutputEncryptionKMSKeyId(value); return *this;}
+    template<typename OutputEncryptionKMSKeyIdT = Aws::String>
+    void SetOutputEncryptionKMSKeyId(OutputEncryptionKMSKeyIdT&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::forward<OutputEncryptionKMSKeyIdT>(value); }
+    template<typename OutputEncryptionKMSKeyIdT = Aws::String>
+    StartTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(OutputEncryptionKMSKeyIdT&& value) { SetOutputEncryptionKMSKeyId(std::forward<OutputEncryptionKMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -247,19 +235,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric
      * keys in KMS</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetKMSEncryptionContext() const{ return m_kMSEncryptionContext; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetKMSEncryptionContext() const { return m_kMSEncryptionContext; }
     inline bool KMSEncryptionContextHasBeenSet() const { return m_kMSEncryptionContextHasBeenSet; }
-    inline void SetKMSEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext = value; }
-    inline void SetKMSEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext = std::move(value); }
-    inline StartTranscriptionJobRequest& WithKMSEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetKMSEncryptionContext(value); return *this;}
-    inline StartTranscriptionJobRequest& WithKMSEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetKMSEncryptionContext(std::move(value)); return *this;}
-    inline StartTranscriptionJobRequest& AddKMSEncryptionContext(const Aws::String& key, const Aws::String& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, value); return *this; }
-    inline StartTranscriptionJobRequest& AddKMSEncryptionContext(Aws::String&& key, const Aws::String& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::move(key), value); return *this; }
-    inline StartTranscriptionJobRequest& AddKMSEncryptionContext(const Aws::String& key, Aws::String&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, std::move(value)); return *this; }
-    inline StartTranscriptionJobRequest& AddKMSEncryptionContext(Aws::String&& key, Aws::String&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartTranscriptionJobRequest& AddKMSEncryptionContext(const char* key, Aws::String&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, std::move(value)); return *this; }
-    inline StartTranscriptionJobRequest& AddKMSEncryptionContext(Aws::String&& key, const char* value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::move(key), value); return *this; }
-    inline StartTranscriptionJobRequest& AddKMSEncryptionContext(const char* key, const char* value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(key, value); return *this; }
+    template<typename KMSEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetKMSEncryptionContext(KMSEncryptionContextT&& value) { m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext = std::forward<KMSEncryptionContextT>(value); }
+    template<typename KMSEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    StartTranscriptionJobRequest& WithKMSEncryptionContext(KMSEncryptionContextT&& value) { SetKMSEncryptionContext(std::forward<KMSEncryptionContextT>(value)); return *this;}
+    template<typename KMSEncryptionContextKeyT = Aws::String, typename KMSEncryptionContextValueT = Aws::String>
+    StartTranscriptionJobRequest& AddKMSEncryptionContext(KMSEncryptionContextKeyT&& key, KMSEncryptionContextValueT&& value) {
+      m_kMSEncryptionContextHasBeenSet = true; m_kMSEncryptionContext.emplace(std::forward<KMSEncryptionContextKeyT>(key), std::forward<KMSEncryptionContextValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -277,12 +262,12 @@ namespace Model
      * <code>VocabularyName</code> or <code>VocabularyFilterName</code>
      * sub-parameters.</p>
      */
-    inline const Settings& GetSettings() const{ return m_settings; }
+    inline const Settings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const Settings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(Settings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline StartTranscriptionJobRequest& WithSettings(const Settings& value) { SetSettings(value); return *this;}
-    inline StartTranscriptionJobRequest& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = Settings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = Settings>
+    StartTranscriptionJobRequest& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -294,12 +279,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
      * language models</a>.</p>
      */
-    inline const ModelSettings& GetModelSettings() const{ return m_modelSettings; }
+    inline const ModelSettings& GetModelSettings() const { return m_modelSettings; }
     inline bool ModelSettingsHasBeenSet() const { return m_modelSettingsHasBeenSet; }
-    inline void SetModelSettings(const ModelSettings& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = value; }
-    inline void SetModelSettings(ModelSettings&& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = std::move(value); }
-    inline StartTranscriptionJobRequest& WithModelSettings(const ModelSettings& value) { SetModelSettings(value); return *this;}
-    inline StartTranscriptionJobRequest& WithModelSettings(ModelSettings&& value) { SetModelSettings(std::move(value)); return *this;}
+    template<typename ModelSettingsT = ModelSettings>
+    void SetModelSettings(ModelSettingsT&& value) { m_modelSettingsHasBeenSet = true; m_modelSettings = std::forward<ModelSettingsT>(value); }
+    template<typename ModelSettingsT = ModelSettings>
+    StartTranscriptionJobRequest& WithModelSettings(ModelSettingsT&& value) { SetModelSettings(std::forward<ModelSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -311,12 +296,12 @@ namespace Model
      * request, you must also include the sub-parameters:
      * <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
      */
-    inline const JobExecutionSettings& GetJobExecutionSettings() const{ return m_jobExecutionSettings; }
+    inline const JobExecutionSettings& GetJobExecutionSettings() const { return m_jobExecutionSettings; }
     inline bool JobExecutionSettingsHasBeenSet() const { return m_jobExecutionSettingsHasBeenSet; }
-    inline void SetJobExecutionSettings(const JobExecutionSettings& value) { m_jobExecutionSettingsHasBeenSet = true; m_jobExecutionSettings = value; }
-    inline void SetJobExecutionSettings(JobExecutionSettings&& value) { m_jobExecutionSettingsHasBeenSet = true; m_jobExecutionSettings = std::move(value); }
-    inline StartTranscriptionJobRequest& WithJobExecutionSettings(const JobExecutionSettings& value) { SetJobExecutionSettings(value); return *this;}
-    inline StartTranscriptionJobRequest& WithJobExecutionSettings(JobExecutionSettings&& value) { SetJobExecutionSettings(std::move(value)); return *this;}
+    template<typename JobExecutionSettingsT = JobExecutionSettings>
+    void SetJobExecutionSettings(JobExecutionSettingsT&& value) { m_jobExecutionSettingsHasBeenSet = true; m_jobExecutionSettings = std::forward<JobExecutionSettingsT>(value); }
+    template<typename JobExecutionSettingsT = JobExecutionSettings>
+    StartTranscriptionJobRequest& WithJobExecutionSettings(JobExecutionSettingsT&& value) { SetJobExecutionSettings(std::forward<JobExecutionSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -329,12 +314,12 @@ namespace Model
      * you do not include <code>PiiEntityTypes</code> in your request, all PII is
      * redacted.</p>
      */
-    inline const ContentRedaction& GetContentRedaction() const{ return m_contentRedaction; }
+    inline const ContentRedaction& GetContentRedaction() const { return m_contentRedaction; }
     inline bool ContentRedactionHasBeenSet() const { return m_contentRedactionHasBeenSet; }
-    inline void SetContentRedaction(const ContentRedaction& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = value; }
-    inline void SetContentRedaction(ContentRedaction&& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = std::move(value); }
-    inline StartTranscriptionJobRequest& WithContentRedaction(const ContentRedaction& value) { SetContentRedaction(value); return *this;}
-    inline StartTranscriptionJobRequest& WithContentRedaction(ContentRedaction&& value) { SetContentRedaction(std::move(value)); return *this;}
+    template<typename ContentRedactionT = ContentRedaction>
+    void SetContentRedaction(ContentRedactionT&& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = std::forward<ContentRedactionT>(value); }
+    template<typename ContentRedactionT = ContentRedaction>
+    StartTranscriptionJobRequest& WithContentRedaction(ContentRedactionT&& value) { SetContentRedaction(std::forward<ContentRedactionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -358,7 +343,7 @@ namespace Model
      * request. If you include more than one of these parameters, your transcription
      * job fails.</p>
      */
-    inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
+    inline bool GetIdentifyLanguage() const { return m_identifyLanguage; }
     inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
     inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
     inline StartTranscriptionJobRequest& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
@@ -384,7 +369,7 @@ namespace Model
      * <code>IdentifyMultipleLanguages</code> in your request. If you include more than
      * one of these parameters, your transcription job fails.</p>
      */
-    inline bool GetIdentifyMultipleLanguages() const{ return m_identifyMultipleLanguages; }
+    inline bool GetIdentifyMultipleLanguages() const { return m_identifyMultipleLanguages; }
     inline bool IdentifyMultipleLanguagesHasBeenSet() const { return m_identifyMultipleLanguagesHasBeenSet; }
     inline void SetIdentifyMultipleLanguages(bool value) { m_identifyMultipleLanguagesHasBeenSet = true; m_identifyMultipleLanguages = value; }
     inline StartTranscriptionJobRequest& WithIdentifyMultipleLanguages(bool value) { SetIdentifyMultipleLanguages(value); return *this;}
@@ -404,14 +389,13 @@ namespace Model
      * Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your media file
      * must be encoded at a sample rate of 16,000 Hz or higher.</p>
      */
-    inline const Aws::Vector<LanguageCode>& GetLanguageOptions() const{ return m_languageOptions; }
+    inline const Aws::Vector<LanguageCode>& GetLanguageOptions() const { return m_languageOptions; }
     inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
-    inline void SetLanguageOptions(const Aws::Vector<LanguageCode>& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
-    inline void SetLanguageOptions(Aws::Vector<LanguageCode>&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
-    inline StartTranscriptionJobRequest& WithLanguageOptions(const Aws::Vector<LanguageCode>& value) { SetLanguageOptions(value); return *this;}
-    inline StartTranscriptionJobRequest& WithLanguageOptions(Aws::Vector<LanguageCode>&& value) { SetLanguageOptions(std::move(value)); return *this;}
-    inline StartTranscriptionJobRequest& AddLanguageOptions(const LanguageCode& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(value); return *this; }
-    inline StartTranscriptionJobRequest& AddLanguageOptions(LanguageCode&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(std::move(value)); return *this; }
+    template<typename LanguageOptionsT = Aws::Vector<LanguageCode>>
+    void SetLanguageOptions(LanguageOptionsT&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::forward<LanguageOptionsT>(value); }
+    template<typename LanguageOptionsT = Aws::Vector<LanguageCode>>
+    StartTranscriptionJobRequest& WithLanguageOptions(LanguageOptionsT&& value) { SetLanguageOptions(std::forward<LanguageOptionsT>(value)); return *this;}
+    inline StartTranscriptionJobRequest& AddLanguageOptions(LanguageCode value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -419,12 +403,12 @@ namespace Model
      * <p>Produces subtitle files for your input media. You can specify WebVTT (*.vtt)
      * and SubRip (*.srt) formats.</p>
      */
-    inline const Subtitles& GetSubtitles() const{ return m_subtitles; }
+    inline const Subtitles& GetSubtitles() const { return m_subtitles; }
     inline bool SubtitlesHasBeenSet() const { return m_subtitlesHasBeenSet; }
-    inline void SetSubtitles(const Subtitles& value) { m_subtitlesHasBeenSet = true; m_subtitles = value; }
-    inline void SetSubtitles(Subtitles&& value) { m_subtitlesHasBeenSet = true; m_subtitles = std::move(value); }
-    inline StartTranscriptionJobRequest& WithSubtitles(const Subtitles& value) { SetSubtitles(value); return *this;}
-    inline StartTranscriptionJobRequest& WithSubtitles(Subtitles&& value) { SetSubtitles(std::move(value)); return *this;}
+    template<typename SubtitlesT = Subtitles>
+    void SetSubtitles(SubtitlesT&& value) { m_subtitlesHasBeenSet = true; m_subtitles = std::forward<SubtitlesT>(value); }
+    template<typename SubtitlesT = Subtitles>
+    StartTranscriptionJobRequest& WithSubtitles(SubtitlesT&& value) { SetSubtitles(std::forward<SubtitlesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -435,14 +419,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StartTranscriptionJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline StartTranscriptionJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartTranscriptionJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline StartTranscriptionJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    StartTranscriptionJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    StartTranscriptionJobRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -474,16 +458,15 @@ namespace Model
      * parameter with the <code>VocabularyName</code> or
      * <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
      */
-    inline const Aws::Map<LanguageCode, LanguageIdSettings>& GetLanguageIdSettings() const{ return m_languageIdSettings; }
+    inline const Aws::Map<LanguageCode, LanguageIdSettings>& GetLanguageIdSettings() const { return m_languageIdSettings; }
     inline bool LanguageIdSettingsHasBeenSet() const { return m_languageIdSettingsHasBeenSet; }
-    inline void SetLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = value; }
-    inline void SetLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = std::move(value); }
-    inline StartTranscriptionJobRequest& WithLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { SetLanguageIdSettings(value); return *this;}
-    inline StartTranscriptionJobRequest& WithLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { SetLanguageIdSettings(std::move(value)); return *this;}
-    inline StartTranscriptionJobRequest& AddLanguageIdSettings(const LanguageCode& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, value); return *this; }
-    inline StartTranscriptionJobRequest& AddLanguageIdSettings(LanguageCode&& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), value); return *this; }
-    inline StartTranscriptionJobRequest& AddLanguageIdSettings(const LanguageCode& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, std::move(value)); return *this; }
-    inline StartTranscriptionJobRequest& AddLanguageIdSettings(LanguageCode&& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename LanguageIdSettingsT = Aws::Map<LanguageCode, LanguageIdSettings>>
+    void SetLanguageIdSettings(LanguageIdSettingsT&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = std::forward<LanguageIdSettingsT>(value); }
+    template<typename LanguageIdSettingsT = Aws::Map<LanguageCode, LanguageIdSettings>>
+    StartTranscriptionJobRequest& WithLanguageIdSettings(LanguageIdSettingsT&& value) { SetLanguageIdSettings(std::forward<LanguageIdSettingsT>(value)); return *this;}
+    inline StartTranscriptionJobRequest& AddLanguageIdSettings(LanguageCode key, LanguageIdSettings value) {
+      m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -495,27 +478,27 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting
      * toxic speech</a>.</p>
      */
-    inline const Aws::Vector<ToxicityDetectionSettings>& GetToxicityDetection() const{ return m_toxicityDetection; }
+    inline const Aws::Vector<ToxicityDetectionSettings>& GetToxicityDetection() const { return m_toxicityDetection; }
     inline bool ToxicityDetectionHasBeenSet() const { return m_toxicityDetectionHasBeenSet; }
-    inline void SetToxicityDetection(const Aws::Vector<ToxicityDetectionSettings>& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection = value; }
-    inline void SetToxicityDetection(Aws::Vector<ToxicityDetectionSettings>&& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection = std::move(value); }
-    inline StartTranscriptionJobRequest& WithToxicityDetection(const Aws::Vector<ToxicityDetectionSettings>& value) { SetToxicityDetection(value); return *this;}
-    inline StartTranscriptionJobRequest& WithToxicityDetection(Aws::Vector<ToxicityDetectionSettings>&& value) { SetToxicityDetection(std::move(value)); return *this;}
-    inline StartTranscriptionJobRequest& AddToxicityDetection(const ToxicityDetectionSettings& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection.push_back(value); return *this; }
-    inline StartTranscriptionJobRequest& AddToxicityDetection(ToxicityDetectionSettings&& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection.push_back(std::move(value)); return *this; }
+    template<typename ToxicityDetectionT = Aws::Vector<ToxicityDetectionSettings>>
+    void SetToxicityDetection(ToxicityDetectionT&& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection = std::forward<ToxicityDetectionT>(value); }
+    template<typename ToxicityDetectionT = Aws::Vector<ToxicityDetectionSettings>>
+    StartTranscriptionJobRequest& WithToxicityDetection(ToxicityDetectionT&& value) { SetToxicityDetection(std::forward<ToxicityDetectionT>(value)); return *this;}
+    template<typename ToxicityDetectionT = ToxicityDetectionSettings>
+    StartTranscriptionJobRequest& AddToxicityDetection(ToxicityDetectionT&& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection.emplace_back(std::forward<ToxicityDetectionT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_transcriptionJobName;
     bool m_transcriptionJobNameHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    int m_mediaSampleRateHertz;
+    int m_mediaSampleRateHertz{0};
     bool m_mediaSampleRateHertzHasBeenSet = false;
 
-    MediaFormat m_mediaFormat;
+    MediaFormat m_mediaFormat{MediaFormat::NOT_SET};
     bool m_mediaFormatHasBeenSet = false;
 
     Media m_media;
@@ -545,10 +528,10 @@ namespace Model
     ContentRedaction m_contentRedaction;
     bool m_contentRedactionHasBeenSet = false;
 
-    bool m_identifyLanguage;
+    bool m_identifyLanguage{false};
     bool m_identifyLanguageHasBeenSet = false;
 
-    bool m_identifyMultipleLanguages;
+    bool m_identifyMultipleLanguages{false};
     bool m_identifyMultipleLanguagesHasBeenSet = false;
 
     Aws::Vector<LanguageCode> m_languageOptions;

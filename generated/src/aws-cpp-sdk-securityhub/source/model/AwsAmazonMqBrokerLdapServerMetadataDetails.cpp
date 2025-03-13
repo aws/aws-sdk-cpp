@@ -18,24 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAmazonMqBrokerLdapServerMetadataDetails::AwsAmazonMqBrokerLdapServerMetadataDetails() : 
-    m_hostsHasBeenSet(false),
-    m_roleBaseHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_roleSearchMatchingHasBeenSet(false),
-    m_roleSearchSubtree(false),
-    m_roleSearchSubtreeHasBeenSet(false),
-    m_serviceAccountUsernameHasBeenSet(false),
-    m_userBaseHasBeenSet(false),
-    m_userRoleNameHasBeenSet(false),
-    m_userSearchMatchingHasBeenSet(false),
-    m_userSearchSubtree(false),
-    m_userSearchSubtreeHasBeenSet(false)
-{
-}
-
 AwsAmazonMqBrokerLdapServerMetadataDetails::AwsAmazonMqBrokerLdapServerMetadataDetails(JsonView jsonValue)
-  : AwsAmazonMqBrokerLdapServerMetadataDetails()
 {
   *this = jsonValue;
 }
@@ -51,70 +34,51 @@ AwsAmazonMqBrokerLdapServerMetadataDetails& AwsAmazonMqBrokerLdapServerMetadataD
     }
     m_hostsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleBase"))
   {
     m_roleBase = jsonValue.GetString("RoleBase");
-
     m_roleBaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleName"))
   {
     m_roleName = jsonValue.GetString("RoleName");
-
     m_roleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleSearchMatching"))
   {
     m_roleSearchMatching = jsonValue.GetString("RoleSearchMatching");
-
     m_roleSearchMatchingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleSearchSubtree"))
   {
     m_roleSearchSubtree = jsonValue.GetBool("RoleSearchSubtree");
-
     m_roleSearchSubtreeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceAccountUsername"))
   {
     m_serviceAccountUsername = jsonValue.GetString("ServiceAccountUsername");
-
     m_serviceAccountUsernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserBase"))
   {
     m_userBase = jsonValue.GetString("UserBase");
-
     m_userBaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserRoleName"))
   {
     m_userRoleName = jsonValue.GetString("UserRoleName");
-
     m_userRoleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserSearchMatching"))
   {
     m_userSearchMatching = jsonValue.GetString("UserSearchMatching");
-
     m_userSearchMatchingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserSearchSubtree"))
   {
     m_userSearchSubtree = jsonValue.GetBool("UserSearchSubtree");
-
     m_userSearchSubtreeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLaunchTemplatesResponse::DescribeLaunchTemplatesResponse()
-{
-}
-
 DescribeLaunchTemplatesResponse::DescribeLaunchTemplatesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeLaunchTemplatesResponse& DescribeLaunchTemplatesResponse::operator =(con
     if(!launchTemplatesNode.IsNull())
     {
       XmlNode launchTemplatesMember = launchTemplatesNode.FirstChild("item");
+      m_launchTemplatesHasBeenSet = !launchTemplatesMember.IsNull();
       while(!launchTemplatesMember.IsNull())
       {
         m_launchTemplates.push_back(launchTemplatesMember);
@@ -53,6 +50,7 @@ DescribeLaunchTemplatesResponse& DescribeLaunchTemplatesResponse::operator =(con
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeLaunchTemplatesResponse& DescribeLaunchTemplatesResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeLaunchTemplatesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

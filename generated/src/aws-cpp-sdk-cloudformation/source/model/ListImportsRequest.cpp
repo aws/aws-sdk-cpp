@@ -10,12 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-ListImportsRequest::ListImportsRequest() : 
-    m_exportNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListImportsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

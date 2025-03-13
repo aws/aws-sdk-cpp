@@ -36,7 +36,7 @@ namespace Model
   class DestinationParameterValueConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API DestinationParameterValueConfiguration();
+    AWS_QUICKSIGHT_API DestinationParameterValueConfiguration() = default;
     AWS_QUICKSIGHT_API DestinationParameterValueConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DestinationParameterValueConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,69 +47,63 @@ namespace Model
      * <p>The configuration of custom values for destination parameter in
      * <code>DestinationParameterValueConfiguration</code>.</p>
      */
-    inline const CustomValuesConfiguration& GetCustomValuesConfiguration() const{ return m_customValuesConfiguration; }
+    inline const CustomValuesConfiguration& GetCustomValuesConfiguration() const { return m_customValuesConfiguration; }
     inline bool CustomValuesConfigurationHasBeenSet() const { return m_customValuesConfigurationHasBeenSet; }
-    inline void SetCustomValuesConfiguration(const CustomValuesConfiguration& value) { m_customValuesConfigurationHasBeenSet = true; m_customValuesConfiguration = value; }
-    inline void SetCustomValuesConfiguration(CustomValuesConfiguration&& value) { m_customValuesConfigurationHasBeenSet = true; m_customValuesConfiguration = std::move(value); }
-    inline DestinationParameterValueConfiguration& WithCustomValuesConfiguration(const CustomValuesConfiguration& value) { SetCustomValuesConfiguration(value); return *this;}
-    inline DestinationParameterValueConfiguration& WithCustomValuesConfiguration(CustomValuesConfiguration&& value) { SetCustomValuesConfiguration(std::move(value)); return *this;}
+    template<typename CustomValuesConfigurationT = CustomValuesConfiguration>
+    void SetCustomValuesConfiguration(CustomValuesConfigurationT&& value) { m_customValuesConfigurationHasBeenSet = true; m_customValuesConfiguration = std::forward<CustomValuesConfigurationT>(value); }
+    template<typename CustomValuesConfigurationT = CustomValuesConfiguration>
+    DestinationParameterValueConfiguration& WithCustomValuesConfiguration(CustomValuesConfigurationT&& value) { SetCustomValuesConfiguration(std::forward<CustomValuesConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration that selects all options.</p>
      */
-    inline const SelectAllValueOptions& GetSelectAllValueOptions() const{ return m_selectAllValueOptions; }
+    inline SelectAllValueOptions GetSelectAllValueOptions() const { return m_selectAllValueOptions; }
     inline bool SelectAllValueOptionsHasBeenSet() const { return m_selectAllValueOptionsHasBeenSet; }
-    inline void SetSelectAllValueOptions(const SelectAllValueOptions& value) { m_selectAllValueOptionsHasBeenSet = true; m_selectAllValueOptions = value; }
-    inline void SetSelectAllValueOptions(SelectAllValueOptions&& value) { m_selectAllValueOptionsHasBeenSet = true; m_selectAllValueOptions = std::move(value); }
-    inline DestinationParameterValueConfiguration& WithSelectAllValueOptions(const SelectAllValueOptions& value) { SetSelectAllValueOptions(value); return *this;}
-    inline DestinationParameterValueConfiguration& WithSelectAllValueOptions(SelectAllValueOptions&& value) { SetSelectAllValueOptions(std::move(value)); return *this;}
+    inline void SetSelectAllValueOptions(SelectAllValueOptions value) { m_selectAllValueOptionsHasBeenSet = true; m_selectAllValueOptions = value; }
+    inline DestinationParameterValueConfiguration& WithSelectAllValueOptions(SelectAllValueOptions value) { SetSelectAllValueOptions(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source parameter name of the destination parameter.</p>
      */
-    inline const Aws::String& GetSourceParameterName() const{ return m_sourceParameterName; }
+    inline const Aws::String& GetSourceParameterName() const { return m_sourceParameterName; }
     inline bool SourceParameterNameHasBeenSet() const { return m_sourceParameterNameHasBeenSet; }
-    inline void SetSourceParameterName(const Aws::String& value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName = value; }
-    inline void SetSourceParameterName(Aws::String&& value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName = std::move(value); }
-    inline void SetSourceParameterName(const char* value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName.assign(value); }
-    inline DestinationParameterValueConfiguration& WithSourceParameterName(const Aws::String& value) { SetSourceParameterName(value); return *this;}
-    inline DestinationParameterValueConfiguration& WithSourceParameterName(Aws::String&& value) { SetSourceParameterName(std::move(value)); return *this;}
-    inline DestinationParameterValueConfiguration& WithSourceParameterName(const char* value) { SetSourceParameterName(value); return *this;}
+    template<typename SourceParameterNameT = Aws::String>
+    void SetSourceParameterName(SourceParameterNameT&& value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName = std::forward<SourceParameterNameT>(value); }
+    template<typename SourceParameterNameT = Aws::String>
+    DestinationParameterValueConfiguration& WithSourceParameterName(SourceParameterNameT&& value) { SetSourceParameterName(std::forward<SourceParameterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source field ID of the destination parameter.</p>
      */
-    inline const Aws::String& GetSourceField() const{ return m_sourceField; }
+    inline const Aws::String& GetSourceField() const { return m_sourceField; }
     inline bool SourceFieldHasBeenSet() const { return m_sourceFieldHasBeenSet; }
-    inline void SetSourceField(const Aws::String& value) { m_sourceFieldHasBeenSet = true; m_sourceField = value; }
-    inline void SetSourceField(Aws::String&& value) { m_sourceFieldHasBeenSet = true; m_sourceField = std::move(value); }
-    inline void SetSourceField(const char* value) { m_sourceFieldHasBeenSet = true; m_sourceField.assign(value); }
-    inline DestinationParameterValueConfiguration& WithSourceField(const Aws::String& value) { SetSourceField(value); return *this;}
-    inline DestinationParameterValueConfiguration& WithSourceField(Aws::String&& value) { SetSourceField(std::move(value)); return *this;}
-    inline DestinationParameterValueConfiguration& WithSourceField(const char* value) { SetSourceField(value); return *this;}
+    template<typename SourceFieldT = Aws::String>
+    void SetSourceField(SourceFieldT&& value) { m_sourceFieldHasBeenSet = true; m_sourceField = std::forward<SourceFieldT>(value); }
+    template<typename SourceFieldT = Aws::String>
+    DestinationParameterValueConfiguration& WithSourceField(SourceFieldT&& value) { SetSourceField(std::forward<SourceFieldT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ColumnIdentifier& GetSourceColumn() const{ return m_sourceColumn; }
+    inline const ColumnIdentifier& GetSourceColumn() const { return m_sourceColumn; }
     inline bool SourceColumnHasBeenSet() const { return m_sourceColumnHasBeenSet; }
-    inline void SetSourceColumn(const ColumnIdentifier& value) { m_sourceColumnHasBeenSet = true; m_sourceColumn = value; }
-    inline void SetSourceColumn(ColumnIdentifier&& value) { m_sourceColumnHasBeenSet = true; m_sourceColumn = std::move(value); }
-    inline DestinationParameterValueConfiguration& WithSourceColumn(const ColumnIdentifier& value) { SetSourceColumn(value); return *this;}
-    inline DestinationParameterValueConfiguration& WithSourceColumn(ColumnIdentifier&& value) { SetSourceColumn(std::move(value)); return *this;}
+    template<typename SourceColumnT = ColumnIdentifier>
+    void SetSourceColumn(SourceColumnT&& value) { m_sourceColumnHasBeenSet = true; m_sourceColumn = std::forward<SourceColumnT>(value); }
+    template<typename SourceColumnT = ColumnIdentifier>
+    DestinationParameterValueConfiguration& WithSourceColumn(SourceColumnT&& value) { SetSourceColumn(std::forward<SourceColumnT>(value)); return *this;}
     ///@}
   private:
 
     CustomValuesConfiguration m_customValuesConfiguration;
     bool m_customValuesConfigurationHasBeenSet = false;
 
-    SelectAllValueOptions m_selectAllValueOptions;
+    SelectAllValueOptions m_selectAllValueOptions{SelectAllValueOptions::NOT_SET};
     bool m_selectAllValueOptionsHasBeenSet = false;
 
     Aws::String m_sourceParameterName;

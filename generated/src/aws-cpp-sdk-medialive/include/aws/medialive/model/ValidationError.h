@@ -31,7 +31,7 @@ namespace Model
   class ValidationError
   {
   public:
-    AWS_MEDIALIVE_API ValidationError();
+    AWS_MEDIALIVE_API ValidationError() = default;
     AWS_MEDIALIVE_API ValidationError(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API ValidationError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * Path to the source of the error.
      */
-    inline const Aws::String& GetElementPath() const{ return m_elementPath; }
+    inline const Aws::String& GetElementPath() const { return m_elementPath; }
     inline bool ElementPathHasBeenSet() const { return m_elementPathHasBeenSet; }
-    inline void SetElementPath(const Aws::String& value) { m_elementPathHasBeenSet = true; m_elementPath = value; }
-    inline void SetElementPath(Aws::String&& value) { m_elementPathHasBeenSet = true; m_elementPath = std::move(value); }
-    inline void SetElementPath(const char* value) { m_elementPathHasBeenSet = true; m_elementPath.assign(value); }
-    inline ValidationError& WithElementPath(const Aws::String& value) { SetElementPath(value); return *this;}
-    inline ValidationError& WithElementPath(Aws::String&& value) { SetElementPath(std::move(value)); return *this;}
-    inline ValidationError& WithElementPath(const char* value) { SetElementPath(value); return *this;}
+    template<typename ElementPathT = Aws::String>
+    void SetElementPath(ElementPathT&& value) { m_elementPathHasBeenSet = true; m_elementPath = std::forward<ElementPathT>(value); }
+    template<typename ElementPathT = Aws::String>
+    ValidationError& WithElementPath(ElementPathT&& value) { SetElementPath(std::forward<ElementPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The error message.
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline ValidationError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline ValidationError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline ValidationError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    ValidationError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 

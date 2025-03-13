@@ -25,7 +25,7 @@ namespace Model
   class DescribeBrokerInstanceOptionsRequest : public MQRequest
   {
   public:
-    AWS_MQ_API DescribeBrokerInstanceOptionsRequest();
+    AWS_MQ_API DescribeBrokerInstanceOptionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>Filter response by engine type.</p>
      */
-    inline const Aws::String& GetEngineType() const{ return m_engineType; }
+    inline const Aws::String& GetEngineType() const { return m_engineType; }
     inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
-    inline void SetEngineType(const Aws::String& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
-    inline void SetEngineType(Aws::String&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::move(value); }
-    inline void SetEngineType(const char* value) { m_engineTypeHasBeenSet = true; m_engineType.assign(value); }
-    inline DescribeBrokerInstanceOptionsRequest& WithEngineType(const Aws::String& value) { SetEngineType(value); return *this;}
-    inline DescribeBrokerInstanceOptionsRequest& WithEngineType(Aws::String&& value) { SetEngineType(std::move(value)); return *this;}
-    inline DescribeBrokerInstanceOptionsRequest& WithEngineType(const char* value) { SetEngineType(value); return *this;}
+    template<typename EngineTypeT = Aws::String>
+    void SetEngineType(EngineTypeT&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::forward<EngineTypeT>(value); }
+    template<typename EngineTypeT = Aws::String>
+    DescribeBrokerInstanceOptionsRequest& WithEngineType(EngineTypeT&& value) { SetEngineType(std::forward<EngineTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter response by host instance type.</p>
      */
-    inline const Aws::String& GetHostInstanceType() const{ return m_hostInstanceType; }
+    inline const Aws::String& GetHostInstanceType() const { return m_hostInstanceType; }
     inline bool HostInstanceTypeHasBeenSet() const { return m_hostInstanceTypeHasBeenSet; }
-    inline void SetHostInstanceType(const Aws::String& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = value; }
-    inline void SetHostInstanceType(Aws::String&& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = std::move(value); }
-    inline void SetHostInstanceType(const char* value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType.assign(value); }
-    inline DescribeBrokerInstanceOptionsRequest& WithHostInstanceType(const Aws::String& value) { SetHostInstanceType(value); return *this;}
-    inline DescribeBrokerInstanceOptionsRequest& WithHostInstanceType(Aws::String&& value) { SetHostInstanceType(std::move(value)); return *this;}
-    inline DescribeBrokerInstanceOptionsRequest& WithHostInstanceType(const char* value) { SetHostInstanceType(value); return *this;}
+    template<typename HostInstanceTypeT = Aws::String>
+    void SetHostInstanceType(HostInstanceTypeT&& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = std::forward<HostInstanceTypeT>(value); }
+    template<typename HostInstanceTypeT = Aws::String>
+    DescribeBrokerInstanceOptionsRequest& WithHostInstanceType(HostInstanceTypeT&& value) { SetHostInstanceType(std::forward<HostInstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * <p>The maximum number of brokers that Amazon MQ can return per page (20 by
      * default). This value must be an integer from 5 to 100.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeBrokerInstanceOptionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -82,28 +78,24 @@ namespace Model
      * <p>The token that specifies the next page of results Amazon MQ should return. To
      * request the first page, leave nextToken empty.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeBrokerInstanceOptionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeBrokerInstanceOptionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeBrokerInstanceOptionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeBrokerInstanceOptionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter response by storage type.</p>
      */
-    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
-    inline DescribeBrokerInstanceOptionsRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
-    inline DescribeBrokerInstanceOptionsRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
-    inline DescribeBrokerInstanceOptionsRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    DescribeBrokerInstanceOptionsRequest& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -113,7 +105,7 @@ namespace Model
     Aws::String m_hostInstanceType;
     bool m_hostInstanceTypeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -37,7 +37,7 @@ namespace Model
   class DescribeAgentResult
   {
   public:
-    AWS_DATASYNC_API DescribeAgentResult();
+    AWS_DATASYNC_API DescribeAgentResult() = default;
     AWS_DATASYNC_API DescribeAgentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATASYNC_API DescribeAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,26 +46,22 @@ namespace Model
     /**
      * <p>The ARN of the agent.</p>
      */
-    inline const Aws::String& GetAgentArn() const{ return m_agentArn; }
-    inline void SetAgentArn(const Aws::String& value) { m_agentArn = value; }
-    inline void SetAgentArn(Aws::String&& value) { m_agentArn = std::move(value); }
-    inline void SetAgentArn(const char* value) { m_agentArn.assign(value); }
-    inline DescribeAgentResult& WithAgentArn(const Aws::String& value) { SetAgentArn(value); return *this;}
-    inline DescribeAgentResult& WithAgentArn(Aws::String&& value) { SetAgentArn(std::move(value)); return *this;}
-    inline DescribeAgentResult& WithAgentArn(const char* value) { SetAgentArn(value); return *this;}
+    inline const Aws::String& GetAgentArn() const { return m_agentArn; }
+    template<typename AgentArnT = Aws::String>
+    void SetAgentArn(AgentArnT&& value) { m_agentArnHasBeenSet = true; m_agentArn = std::forward<AgentArnT>(value); }
+    template<typename AgentArnT = Aws::String>
+    DescribeAgentResult& WithAgentArn(AgentArnT&& value) { SetAgentArn(std::forward<AgentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the agent.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeAgentResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeAgentResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeAgentResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeAgentResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,22 +74,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What
      * do I do if my agent is offline?</a> </p> </li> </ul>
      */
-    inline const AgentStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AgentStatus& value) { m_status = value; }
-    inline void SetStatus(AgentStatus&& value) { m_status = std::move(value); }
-    inline DescribeAgentResult& WithStatus(const AgentStatus& value) { SetStatus(value); return *this;}
-    inline DescribeAgentResult& WithStatus(AgentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline AgentStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AgentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeAgentResult& WithStatus(AgentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time that the agent was communicating with the DataSync service.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastConnectionTime() const{ return m_lastConnectionTime; }
-    inline void SetLastConnectionTime(const Aws::Utils::DateTime& value) { m_lastConnectionTime = value; }
-    inline void SetLastConnectionTime(Aws::Utils::DateTime&& value) { m_lastConnectionTime = std::move(value); }
-    inline DescribeAgentResult& WithLastConnectionTime(const Aws::Utils::DateTime& value) { SetLastConnectionTime(value); return *this;}
-    inline DescribeAgentResult& WithLastConnectionTime(Aws::Utils::DateTime&& value) { SetLastConnectionTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastConnectionTime() const { return m_lastConnectionTime; }
+    template<typename LastConnectionTimeT = Aws::Utils::DateTime>
+    void SetLastConnectionTime(LastConnectionTimeT&& value) { m_lastConnectionTimeHasBeenSet = true; m_lastConnectionTime = std::forward<LastConnectionTimeT>(value); }
+    template<typename LastConnectionTimeT = Aws::Utils::DateTime>
+    DescribeAgentResult& WithLastConnectionTime(LastConnectionTimeT&& value) { SetLastConnectionTime(std::forward<LastConnectionTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,11 +95,11 @@ namespace Model
      * <p>The time that the agent was <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeAgentResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeAgentResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeAgentResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,11 +108,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service
      * endpoint</a> that your agent is connected to.</p>
      */
-    inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
-    inline void SetEndpointType(const EndpointType& value) { m_endpointType = value; }
-    inline void SetEndpointType(EndpointType&& value) { m_endpointType = std::move(value); }
-    inline DescribeAgentResult& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
-    inline DescribeAgentResult& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
+    inline EndpointType GetEndpointType() const { return m_endpointType; }
+    inline void SetEndpointType(EndpointType value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+    inline DescribeAgentResult& WithEndpointType(EndpointType value) { SetEndpointType(value); return *this;}
     ///@}
 
     ///@{
@@ -127,53 +119,60 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">VPC
      * service endpoint</a>.</p>
      */
-    inline const PrivateLinkConfig& GetPrivateLinkConfig() const{ return m_privateLinkConfig; }
-    inline void SetPrivateLinkConfig(const PrivateLinkConfig& value) { m_privateLinkConfig = value; }
-    inline void SetPrivateLinkConfig(PrivateLinkConfig&& value) { m_privateLinkConfig = std::move(value); }
-    inline DescribeAgentResult& WithPrivateLinkConfig(const PrivateLinkConfig& value) { SetPrivateLinkConfig(value); return *this;}
-    inline DescribeAgentResult& WithPrivateLinkConfig(PrivateLinkConfig&& value) { SetPrivateLinkConfig(std::move(value)); return *this;}
+    inline const PrivateLinkConfig& GetPrivateLinkConfig() const { return m_privateLinkConfig; }
+    template<typename PrivateLinkConfigT = PrivateLinkConfig>
+    void SetPrivateLinkConfig(PrivateLinkConfigT&& value) { m_privateLinkConfigHasBeenSet = true; m_privateLinkConfig = std::forward<PrivateLinkConfigT>(value); }
+    template<typename PrivateLinkConfigT = PrivateLinkConfig>
+    DescribeAgentResult& WithPrivateLinkConfig(PrivateLinkConfigT&& value) { SetPrivateLinkConfig(std::forward<PrivateLinkConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The platform-related details about the agent, such as the version number.</p>
      */
-    inline const Platform& GetPlatform() const{ return m_platform; }
-    inline void SetPlatform(const Platform& value) { m_platform = value; }
-    inline void SetPlatform(Platform&& value) { m_platform = std::move(value); }
-    inline DescribeAgentResult& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
-    inline DescribeAgentResult& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
+    inline const Platform& GetPlatform() const { return m_platform; }
+    template<typename PlatformT = Platform>
+    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
+    template<typename PlatformT = Platform>
+    DescribeAgentResult& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAgentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAgentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAgentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAgentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_agentArn;
+    bool m_agentArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    AgentStatus m_status;
+    AgentStatus m_status{AgentStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastConnectionTime;
+    Aws::Utils::DateTime m_lastConnectionTime{};
+    bool m_lastConnectionTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    EndpointType m_endpointType;
+    EndpointType m_endpointType{EndpointType::NOT_SET};
+    bool m_endpointTypeHasBeenSet = false;
 
     PrivateLinkConfig m_privateLinkConfig;
+    bool m_privateLinkConfigHasBeenSet = false;
 
     Platform m_platform;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

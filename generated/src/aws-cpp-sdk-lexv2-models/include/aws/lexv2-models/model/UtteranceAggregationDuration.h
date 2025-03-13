@@ -32,7 +32,7 @@ namespace Model
   class UtteranceAggregationDuration
   {
   public:
-    AWS_LEXMODELSV2_API UtteranceAggregationDuration();
+    AWS_LEXMODELSV2_API UtteranceAggregationDuration() = default;
     AWS_LEXMODELSV2_API UtteranceAggregationDuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API UtteranceAggregationDuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The desired time window for aggregating utterances. </p>
      */
-    inline const RelativeAggregationDuration& GetRelativeAggregationDuration() const{ return m_relativeAggregationDuration; }
+    inline const RelativeAggregationDuration& GetRelativeAggregationDuration() const { return m_relativeAggregationDuration; }
     inline bool RelativeAggregationDurationHasBeenSet() const { return m_relativeAggregationDurationHasBeenSet; }
-    inline void SetRelativeAggregationDuration(const RelativeAggregationDuration& value) { m_relativeAggregationDurationHasBeenSet = true; m_relativeAggregationDuration = value; }
-    inline void SetRelativeAggregationDuration(RelativeAggregationDuration&& value) { m_relativeAggregationDurationHasBeenSet = true; m_relativeAggregationDuration = std::move(value); }
-    inline UtteranceAggregationDuration& WithRelativeAggregationDuration(const RelativeAggregationDuration& value) { SetRelativeAggregationDuration(value); return *this;}
-    inline UtteranceAggregationDuration& WithRelativeAggregationDuration(RelativeAggregationDuration&& value) { SetRelativeAggregationDuration(std::move(value)); return *this;}
+    template<typename RelativeAggregationDurationT = RelativeAggregationDuration>
+    void SetRelativeAggregationDuration(RelativeAggregationDurationT&& value) { m_relativeAggregationDurationHasBeenSet = true; m_relativeAggregationDuration = std::forward<RelativeAggregationDurationT>(value); }
+    template<typename RelativeAggregationDurationT = RelativeAggregationDuration>
+    UtteranceAggregationDuration& WithRelativeAggregationDuration(RelativeAggregationDurationT&& value) { SetRelativeAggregationDuration(std::forward<RelativeAggregationDurationT>(value)); return *this;}
     ///@}
   private:
 

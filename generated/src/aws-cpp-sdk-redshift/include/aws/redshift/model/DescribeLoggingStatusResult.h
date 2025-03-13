@@ -36,7 +36,7 @@ namespace Model
   class DescribeLoggingStatusResult
   {
   public:
-    AWS_REDSHIFT_API DescribeLoggingStatusResult();
+    AWS_REDSHIFT_API DescribeLoggingStatusResult() = default;
     AWS_REDSHIFT_API DescribeLoggingStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DescribeLoggingStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,8 +46,8 @@ namespace Model
      * <p> <code>true</code> if logging is on, <code>false</code> if logging is
      * off.</p>
      */
-    inline bool GetLoggingEnabled() const{ return m_loggingEnabled; }
-    inline void SetLoggingEnabled(bool value) { m_loggingEnabled = value; }
+    inline bool GetLoggingEnabled() const { return m_loggingEnabled; }
+    inline void SetLoggingEnabled(bool value) { m_loggingEnabledHasBeenSet = true; m_loggingEnabled = value; }
     inline DescribeLoggingStatusResult& WithLoggingEnabled(bool value) { SetLoggingEnabled(value); return *this;}
     ///@}
 
@@ -55,61 +55,55 @@ namespace Model
     /**
      * <p>The name of the S3 bucket where the log files are stored.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketName.assign(value); }
-    inline DescribeLoggingStatusResult& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline DescribeLoggingStatusResult& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline DescribeLoggingStatusResult& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    DescribeLoggingStatusResult& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The prefix applied to the log file names.</p>
      */
-    inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
-    inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefix = value; }
-    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefix = std::move(value); }
-    inline void SetS3KeyPrefix(const char* value) { m_s3KeyPrefix.assign(value); }
-    inline DescribeLoggingStatusResult& WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
-    inline DescribeLoggingStatusResult& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
-    inline DescribeLoggingStatusResult& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
+    inline const Aws::String& GetS3KeyPrefix() const { return m_s3KeyPrefix; }
+    template<typename S3KeyPrefixT = Aws::String>
+    void SetS3KeyPrefix(S3KeyPrefixT&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::forward<S3KeyPrefixT>(value); }
+    template<typename S3KeyPrefixT = Aws::String>
+    DescribeLoggingStatusResult& WithS3KeyPrefix(S3KeyPrefixT&& value) { SetS3KeyPrefix(std::forward<S3KeyPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time that logs were delivered.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastSuccessfulDeliveryTime() const{ return m_lastSuccessfulDeliveryTime; }
-    inline void SetLastSuccessfulDeliveryTime(const Aws::Utils::DateTime& value) { m_lastSuccessfulDeliveryTime = value; }
-    inline void SetLastSuccessfulDeliveryTime(Aws::Utils::DateTime&& value) { m_lastSuccessfulDeliveryTime = std::move(value); }
-    inline DescribeLoggingStatusResult& WithLastSuccessfulDeliveryTime(const Aws::Utils::DateTime& value) { SetLastSuccessfulDeliveryTime(value); return *this;}
-    inline DescribeLoggingStatusResult& WithLastSuccessfulDeliveryTime(Aws::Utils::DateTime&& value) { SetLastSuccessfulDeliveryTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastSuccessfulDeliveryTime() const { return m_lastSuccessfulDeliveryTime; }
+    template<typename LastSuccessfulDeliveryTimeT = Aws::Utils::DateTime>
+    void SetLastSuccessfulDeliveryTime(LastSuccessfulDeliveryTimeT&& value) { m_lastSuccessfulDeliveryTimeHasBeenSet = true; m_lastSuccessfulDeliveryTime = std::forward<LastSuccessfulDeliveryTimeT>(value); }
+    template<typename LastSuccessfulDeliveryTimeT = Aws::Utils::DateTime>
+    DescribeLoggingStatusResult& WithLastSuccessfulDeliveryTime(LastSuccessfulDeliveryTimeT&& value) { SetLastSuccessfulDeliveryTime(std::forward<LastSuccessfulDeliveryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time when logs failed to be delivered.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastFailureTime() const{ return m_lastFailureTime; }
-    inline void SetLastFailureTime(const Aws::Utils::DateTime& value) { m_lastFailureTime = value; }
-    inline void SetLastFailureTime(Aws::Utils::DateTime&& value) { m_lastFailureTime = std::move(value); }
-    inline DescribeLoggingStatusResult& WithLastFailureTime(const Aws::Utils::DateTime& value) { SetLastFailureTime(value); return *this;}
-    inline DescribeLoggingStatusResult& WithLastFailureTime(Aws::Utils::DateTime&& value) { SetLastFailureTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastFailureTime() const { return m_lastFailureTime; }
+    template<typename LastFailureTimeT = Aws::Utils::DateTime>
+    void SetLastFailureTime(LastFailureTimeT&& value) { m_lastFailureTimeHasBeenSet = true; m_lastFailureTime = std::forward<LastFailureTimeT>(value); }
+    template<typename LastFailureTimeT = Aws::Utils::DateTime>
+    DescribeLoggingStatusResult& WithLastFailureTime(LastFailureTimeT&& value) { SetLastFailureTime(std::forward<LastFailureTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message indicating that logs failed to be delivered.</p>
      */
-    inline const Aws::String& GetLastFailureMessage() const{ return m_lastFailureMessage; }
-    inline void SetLastFailureMessage(const Aws::String& value) { m_lastFailureMessage = value; }
-    inline void SetLastFailureMessage(Aws::String&& value) { m_lastFailureMessage = std::move(value); }
-    inline void SetLastFailureMessage(const char* value) { m_lastFailureMessage.assign(value); }
-    inline DescribeLoggingStatusResult& WithLastFailureMessage(const Aws::String& value) { SetLastFailureMessage(value); return *this;}
-    inline DescribeLoggingStatusResult& WithLastFailureMessage(Aws::String&& value) { SetLastFailureMessage(std::move(value)); return *this;}
-    inline DescribeLoggingStatusResult& WithLastFailureMessage(const char* value) { SetLastFailureMessage(value); return *this;}
+    inline const Aws::String& GetLastFailureMessage() const { return m_lastFailureMessage; }
+    template<typename LastFailureMessageT = Aws::String>
+    void SetLastFailureMessage(LastFailureMessageT&& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = std::forward<LastFailureMessageT>(value); }
+    template<typename LastFailureMessageT = Aws::String>
+    DescribeLoggingStatusResult& WithLastFailureMessage(LastFailureMessageT&& value) { SetLastFailureMessage(std::forward<LastFailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,11 +111,9 @@ namespace Model
      * <p>The log destination type. An enum with possible values of <code>s3</code> and
      * <code>cloudwatch</code>.</p>
      */
-    inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
-    inline void SetLogDestinationType(const LogDestinationType& value) { m_logDestinationType = value; }
-    inline void SetLogDestinationType(LogDestinationType&& value) { m_logDestinationType = std::move(value); }
-    inline DescribeLoggingStatusResult& WithLogDestinationType(const LogDestinationType& value) { SetLogDestinationType(value); return *this;}
-    inline DescribeLoggingStatusResult& WithLogDestinationType(LogDestinationType&& value) { SetLogDestinationType(std::move(value)); return *this;}
+    inline LogDestinationType GetLogDestinationType() const { return m_logDestinationType; }
+    inline void SetLogDestinationType(LogDestinationType value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
+    inline DescribeLoggingStatusResult& WithLogDestinationType(LogDestinationType value) { SetLogDestinationType(value); return *this;}
     ///@}
 
     ///@{
@@ -130,43 +122,51 @@ namespace Model
      * <code>connectionlog</code>, <code>useractivitylog</code>, and
      * <code>userlog</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogExports() const{ return m_logExports; }
-    inline void SetLogExports(const Aws::Vector<Aws::String>& value) { m_logExports = value; }
-    inline void SetLogExports(Aws::Vector<Aws::String>&& value) { m_logExports = std::move(value); }
-    inline DescribeLoggingStatusResult& WithLogExports(const Aws::Vector<Aws::String>& value) { SetLogExports(value); return *this;}
-    inline DescribeLoggingStatusResult& WithLogExports(Aws::Vector<Aws::String>&& value) { SetLogExports(std::move(value)); return *this;}
-    inline DescribeLoggingStatusResult& AddLogExports(const Aws::String& value) { m_logExports.push_back(value); return *this; }
-    inline DescribeLoggingStatusResult& AddLogExports(Aws::String&& value) { m_logExports.push_back(std::move(value)); return *this; }
-    inline DescribeLoggingStatusResult& AddLogExports(const char* value) { m_logExports.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetLogExports() const { return m_logExports; }
+    template<typename LogExportsT = Aws::Vector<Aws::String>>
+    void SetLogExports(LogExportsT&& value) { m_logExportsHasBeenSet = true; m_logExports = std::forward<LogExportsT>(value); }
+    template<typename LogExportsT = Aws::Vector<Aws::String>>
+    DescribeLoggingStatusResult& WithLogExports(LogExportsT&& value) { SetLogExports(std::forward<LogExportsT>(value)); return *this;}
+    template<typename LogExportsT = Aws::String>
+    DescribeLoggingStatusResult& AddLogExports(LogExportsT&& value) { m_logExportsHasBeenSet = true; m_logExports.emplace_back(std::forward<LogExportsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeLoggingStatusResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeLoggingStatusResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeLoggingStatusResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_loggingEnabled;
+    bool m_loggingEnabled{false};
+    bool m_loggingEnabledHasBeenSet = false;
 
     Aws::String m_bucketName;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastSuccessfulDeliveryTime;
+    Aws::Utils::DateTime m_lastSuccessfulDeliveryTime{};
+    bool m_lastSuccessfulDeliveryTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastFailureTime;
+    Aws::Utils::DateTime m_lastFailureTime{};
+    bool m_lastFailureTimeHasBeenSet = false;
 
     Aws::String m_lastFailureMessage;
+    bool m_lastFailureMessageHasBeenSet = false;
 
-    LogDestinationType m_logDestinationType;
+    LogDestinationType m_logDestinationType{LogDestinationType::NOT_SET};
+    bool m_logDestinationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logExports;
+    bool m_logExportsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

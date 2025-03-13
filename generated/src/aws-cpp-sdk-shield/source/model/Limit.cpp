@@ -18,15 +18,7 @@ namespace Shield
 namespace Model
 {
 
-Limit::Limit() : 
-    m_typeHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 Limit::Limit(JsonView jsonValue)
-  : Limit()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Limit& Limit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetInt64("Max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

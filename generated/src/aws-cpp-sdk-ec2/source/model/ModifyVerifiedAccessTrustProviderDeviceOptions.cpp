@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ModifyVerifiedAccessTrustProviderDeviceOptions::ModifyVerifiedAccessTrustProviderDeviceOptions() : 
-    m_publicSigningKeyUrlHasBeenSet(false)
-{
-}
-
 ModifyVerifiedAccessTrustProviderDeviceOptions::ModifyVerifiedAccessTrustProviderDeviceOptions(const XmlNode& xmlNode)
-  : ModifyVerifiedAccessTrustProviderDeviceOptions()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ModifyVerifiedAccessTrustProviderDeviceOptions& ModifyVerifiedAccessTrustProvide
     {
       m_publicSigningKeyUrl = Aws::Utils::Xml::DecodeEscapedXmlText(publicSigningKeyUrlNode.GetText());
       m_publicSigningKeyUrlHasBeenSet = true;
+       m_publicSigningKeyUrlHasBeenSet = true;
     }
   }
 

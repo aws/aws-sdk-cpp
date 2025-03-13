@@ -32,7 +32,7 @@ namespace Model
   class KxNAS1Configuration
   {
   public:
-    AWS_FINSPACE_API KxNAS1Configuration();
+    AWS_FINSPACE_API KxNAS1Configuration() = default;
     AWS_FINSPACE_API KxNAS1Configuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API KxNAS1Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,10 @@ namespace Model
     /**
      * <p> The type of the network attached storage. </p>
      */
-    inline const KxNAS1Type& GetType() const{ return m_type; }
+    inline KxNAS1Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const KxNAS1Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(KxNAS1Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline KxNAS1Configuration& WithType(const KxNAS1Type& value) { SetType(value); return *this;}
-    inline KxNAS1Configuration& WithType(KxNAS1Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(KxNAS1Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline KxNAS1Configuration& WithType(KxNAS1Type value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,17 +55,17 @@ namespace Model
      * as 1200 GB or increments of 2400 GB. For storage type <code>HDD_12</code> you
      * can select the minimum size as 6000 GB or increments of 6000 GB.</p>
      */
-    inline int GetSize() const{ return m_size; }
+    inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
     inline KxNAS1Configuration& WithSize(int value) { SetSize(value); return *this;}
     ///@}
   private:
 
-    KxNAS1Type m_type;
+    KxNAS1Type m_type{KxNAS1Type::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_size;
+    int m_size{0};
     bool m_sizeHasBeenSet = false;
   };
 

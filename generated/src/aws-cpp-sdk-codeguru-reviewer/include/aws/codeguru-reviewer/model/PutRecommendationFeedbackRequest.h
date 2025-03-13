@@ -23,7 +23,7 @@ namespace Model
   class PutRecommendationFeedbackRequest : public CodeGuruReviewerRequest
   {
   public:
-    AWS_CODEGURUREVIEWER_API PutRecommendationFeedbackRequest();
+    AWS_CODEGURUREVIEWER_API PutRecommendationFeedbackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a>
      * object. </p>
      */
-    inline const Aws::String& GetCodeReviewArn() const{ return m_codeReviewArn; }
+    inline const Aws::String& GetCodeReviewArn() const { return m_codeReviewArn; }
     inline bool CodeReviewArnHasBeenSet() const { return m_codeReviewArnHasBeenSet; }
-    inline void SetCodeReviewArn(const Aws::String& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = value; }
-    inline void SetCodeReviewArn(Aws::String&& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = std::move(value); }
-    inline void SetCodeReviewArn(const char* value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn.assign(value); }
-    inline PutRecommendationFeedbackRequest& WithCodeReviewArn(const Aws::String& value) { SetCodeReviewArn(value); return *this;}
-    inline PutRecommendationFeedbackRequest& WithCodeReviewArn(Aws::String&& value) { SetCodeReviewArn(std::move(value)); return *this;}
-    inline PutRecommendationFeedbackRequest& WithCodeReviewArn(const char* value) { SetCodeReviewArn(value); return *this;}
+    template<typename CodeReviewArnT = Aws::String>
+    void SetCodeReviewArn(CodeReviewArnT&& value) { m_codeReviewArnHasBeenSet = true; m_codeReviewArn = std::forward<CodeReviewArnT>(value); }
+    template<typename CodeReviewArnT = Aws::String>
+    PutRecommendationFeedbackRequest& WithCodeReviewArn(CodeReviewArnT&& value) { SetCodeReviewArn(std::forward<CodeReviewArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The recommendation ID that can be used to track the provided recommendations
      * and then to collect the feedback.</p>
      */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+    inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
     inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
-    inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
-    inline PutRecommendationFeedbackRequest& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-    inline PutRecommendationFeedbackRequest& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-    inline PutRecommendationFeedbackRequest& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    template<typename RecommendationIdT = Aws::String>
+    void SetRecommendationId(RecommendationIdT&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::forward<RecommendationIdT>(value); }
+    template<typename RecommendationIdT = Aws::String>
+    PutRecommendationFeedbackRequest& WithRecommendationId(RecommendationIdT&& value) { SetRecommendationId(std::forward<RecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +66,13 @@ namespace Model
      * <p>List for storing reactions. Reactions are utf-8 text code for emojis. If you
      * send an empty list it clears all your feedback.</p>
      */
-    inline const Aws::Vector<Reaction>& GetReactions() const{ return m_reactions; }
+    inline const Aws::Vector<Reaction>& GetReactions() const { return m_reactions; }
     inline bool ReactionsHasBeenSet() const { return m_reactionsHasBeenSet; }
-    inline void SetReactions(const Aws::Vector<Reaction>& value) { m_reactionsHasBeenSet = true; m_reactions = value; }
-    inline void SetReactions(Aws::Vector<Reaction>&& value) { m_reactionsHasBeenSet = true; m_reactions = std::move(value); }
-    inline PutRecommendationFeedbackRequest& WithReactions(const Aws::Vector<Reaction>& value) { SetReactions(value); return *this;}
-    inline PutRecommendationFeedbackRequest& WithReactions(Aws::Vector<Reaction>&& value) { SetReactions(std::move(value)); return *this;}
-    inline PutRecommendationFeedbackRequest& AddReactions(const Reaction& value) { m_reactionsHasBeenSet = true; m_reactions.push_back(value); return *this; }
-    inline PutRecommendationFeedbackRequest& AddReactions(Reaction&& value) { m_reactionsHasBeenSet = true; m_reactions.push_back(std::move(value)); return *this; }
+    template<typename ReactionsT = Aws::Vector<Reaction>>
+    void SetReactions(ReactionsT&& value) { m_reactionsHasBeenSet = true; m_reactions = std::forward<ReactionsT>(value); }
+    template<typename ReactionsT = Aws::Vector<Reaction>>
+    PutRecommendationFeedbackRequest& WithReactions(ReactionsT&& value) { SetReactions(std::forward<ReactionsT>(value)); return *this;}
+    inline PutRecommendationFeedbackRequest& AddReactions(Reaction value) { m_reactionsHasBeenSet = true; m_reactions.push_back(value); return *this; }
     ///@}
   private:
 

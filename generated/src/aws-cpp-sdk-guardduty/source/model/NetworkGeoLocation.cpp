@@ -18,18 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-NetworkGeoLocation::NetworkGeoLocation() : 
-    m_cityHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_latitude(0.0),
-    m_latitudeHasBeenSet(false),
-    m_longitude(0.0),
-    m_longitudeHasBeenSet(false)
-{
-}
-
 NetworkGeoLocation::NetworkGeoLocation(JsonView jsonValue)
-  : NetworkGeoLocation()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ NetworkGeoLocation& NetworkGeoLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("city"))
   {
     m_city = jsonValue.GetString("city");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("country"))
   {
     m_country = jsonValue.GetString("country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lat"))
   {
     m_latitude = jsonValue.GetDouble("lat");
-
     m_latitudeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lon"))
   {
     m_longitude = jsonValue.GetDouble("lon");
-
     m_longitudeHasBeenSet = true;
   }
-
   return *this;
 }
 

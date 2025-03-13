@@ -18,23 +18,7 @@ namespace Chime
 namespace Model
 {
 
-Bot::Bot() : 
-    m_botIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_botType(BotType::NOT_SET),
-    m_botTypeHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_botEmailHasBeenSet(false),
-    m_securityTokenHasBeenSet(false)
-{
-}
-
 Bot::Bot(JsonView jsonValue)
-  : Bot()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ Bot& Bot::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BotId"))
   {
     m_botId = jsonValue.GetString("BotId");
-
     m_botIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BotType"))
   {
     m_botType = BotTypeMapper::GetBotTypeForName(jsonValue.GetString("BotType"));
-
     m_botTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Disabled"))
   {
     m_disabled = jsonValue.GetBool("Disabled");
-
     m_disabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BotEmail"))
   {
     m_botEmail = jsonValue.GetString("BotEmail");
-
     m_botEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityToken"))
   {
     m_securityToken = jsonValue.GetString("SecurityToken");
-
     m_securityTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

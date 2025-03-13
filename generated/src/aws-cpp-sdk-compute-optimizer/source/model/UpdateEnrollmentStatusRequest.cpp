@@ -12,14 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEnrollmentStatusRequest::UpdateEnrollmentStatusRequest() : 
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_includeMemberAccounts(false),
-    m_includeMemberAccountsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEnrollmentStatusRequest::SerializePayload() const
 {
   JsonValue payload;

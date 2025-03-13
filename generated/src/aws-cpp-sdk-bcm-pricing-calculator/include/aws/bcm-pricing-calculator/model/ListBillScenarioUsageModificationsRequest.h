@@ -23,7 +23,7 @@ namespace Model
   class ListBillScenarioUsageModificationsRequest : public BCMPricingCalculatorRequest
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API ListBillScenarioUsageModificationsRequest();
+    AWS_BCMPRICINGCALCULATOR_API ListBillScenarioUsageModificationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,49 +41,45 @@ namespace Model
      * <p> The unique identifier of the bill scenario to list usage modifications for.
      * </p>
      */
-    inline const Aws::String& GetBillScenarioId() const{ return m_billScenarioId; }
+    inline const Aws::String& GetBillScenarioId() const { return m_billScenarioId; }
     inline bool BillScenarioIdHasBeenSet() const { return m_billScenarioIdHasBeenSet; }
-    inline void SetBillScenarioId(const Aws::String& value) { m_billScenarioIdHasBeenSet = true; m_billScenarioId = value; }
-    inline void SetBillScenarioId(Aws::String&& value) { m_billScenarioIdHasBeenSet = true; m_billScenarioId = std::move(value); }
-    inline void SetBillScenarioId(const char* value) { m_billScenarioIdHasBeenSet = true; m_billScenarioId.assign(value); }
-    inline ListBillScenarioUsageModificationsRequest& WithBillScenarioId(const Aws::String& value) { SetBillScenarioId(value); return *this;}
-    inline ListBillScenarioUsageModificationsRequest& WithBillScenarioId(Aws::String&& value) { SetBillScenarioId(std::move(value)); return *this;}
-    inline ListBillScenarioUsageModificationsRequest& WithBillScenarioId(const char* value) { SetBillScenarioId(value); return *this;}
+    template<typename BillScenarioIdT = Aws::String>
+    void SetBillScenarioId(BillScenarioIdT&& value) { m_billScenarioIdHasBeenSet = true; m_billScenarioId = std::forward<BillScenarioIdT>(value); }
+    template<typename BillScenarioIdT = Aws::String>
+    ListBillScenarioUsageModificationsRequest& WithBillScenarioId(BillScenarioIdT&& value) { SetBillScenarioId(std::forward<BillScenarioIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Filters to apply to the list of usage modifications. </p>
      */
-    inline const Aws::Vector<ListUsageFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<ListUsageFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<ListUsageFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<ListUsageFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListBillScenarioUsageModificationsRequest& WithFilters(const Aws::Vector<ListUsageFilter>& value) { SetFilters(value); return *this;}
-    inline ListBillScenarioUsageModificationsRequest& WithFilters(Aws::Vector<ListUsageFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListBillScenarioUsageModificationsRequest& AddFilters(const ListUsageFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListBillScenarioUsageModificationsRequest& AddFilters(ListUsageFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<ListUsageFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<ListUsageFilter>>
+    ListBillScenarioUsageModificationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = ListUsageFilter>
+    ListBillScenarioUsageModificationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> A token to retrieve the next page of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListBillScenarioUsageModificationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBillScenarioUsageModificationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBillScenarioUsageModificationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBillScenarioUsageModificationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The maximum number of results to return per page. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListBillScenarioUsageModificationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -99,7 +95,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

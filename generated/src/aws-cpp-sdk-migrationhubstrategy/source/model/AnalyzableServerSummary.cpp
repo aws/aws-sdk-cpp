@@ -18,16 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-AnalyzableServerSummary::AnalyzableServerSummary() : 
-    m_hostnameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_vmIdHasBeenSet(false)
-{
-}
-
 AnalyzableServerSummary::AnalyzableServerSummary(JsonView jsonValue)
-  : AnalyzableServerSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AnalyzableServerSummary& AnalyzableServerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("hostname"))
   {
     m_hostname = jsonValue.GetString("hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddress"))
   {
     m_ipAddress = jsonValue.GetString("ipAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vmId"))
   {
     m_vmId = jsonValue.GetString("vmId");
-
     m_vmIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchListOutgoingTypedLinks::BatchListOutgoingTypedLinks() : 
-    m_objectReferenceHasBeenSet(false),
-    m_filterAttributeRangesHasBeenSet(false),
-    m_filterTypedLinkHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 BatchListOutgoingTypedLinks::BatchListOutgoingTypedLinks(JsonView jsonValue)
-  : BatchListOutgoingTypedLinks()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ BatchListOutgoingTypedLinks& BatchListOutgoingTypedLinks::operator =(JsonView js
   if(jsonValue.ValueExists("ObjectReference"))
   {
     m_objectReference = jsonValue.GetObject("ObjectReference");
-
     m_objectReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterAttributeRanges"))
   {
     Aws::Utils::Array<JsonView> filterAttributeRangesJsonList = jsonValue.GetArray("FilterAttributeRanges");
@@ -52,28 +39,21 @@ BatchListOutgoingTypedLinks& BatchListOutgoingTypedLinks::operator =(JsonView js
     }
     m_filterAttributeRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterTypedLink"))
   {
     m_filterTypedLink = jsonValue.GetObject("FilterTypedLink");
-
     m_filterTypedLinkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
-
     m_maxResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteAssessmentFrameworkShareRequest::DeleteAssessmentFrameworkShareRequest() : 
-    m_requestIdHasBeenSet(false),
-    m_requestType(ShareRequestType::NOT_SET),
-    m_requestTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAssessmentFrameworkShareRequest::SerializePayload() const
 {
   return {};

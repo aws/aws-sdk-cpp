@@ -18,20 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AnalyticsIntentNodeSummary::AnalyticsIntentNodeSummary() : 
-    m_intentNameHasBeenSet(false),
-    m_intentPathHasBeenSet(false),
-    m_intentCount(0),
-    m_intentCountHasBeenSet(false),
-    m_intentLevel(0),
-    m_intentLevelHasBeenSet(false),
-    m_nodeType(AnalyticsNodeType::NOT_SET),
-    m_nodeTypeHasBeenSet(false)
-{
-}
-
 AnalyticsIntentNodeSummary::AnalyticsIntentNodeSummary(JsonView jsonValue)
-  : AnalyticsIntentNodeSummary()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ AnalyticsIntentNodeSummary& AnalyticsIntentNodeSummary::operator =(JsonView json
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
-
     m_intentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentPath"))
   {
     m_intentPath = jsonValue.GetString("intentPath");
-
     m_intentPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentCount"))
   {
     m_intentCount = jsonValue.GetInteger("intentCount");
-
     m_intentCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentLevel"))
   {
     m_intentLevel = jsonValue.GetInteger("intentLevel");
-
     m_intentLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeType"))
   {
     m_nodeType = AnalyticsNodeTypeMapper::GetAnalyticsNodeTypeForName(jsonValue.GetString("nodeType"));
-
     m_nodeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

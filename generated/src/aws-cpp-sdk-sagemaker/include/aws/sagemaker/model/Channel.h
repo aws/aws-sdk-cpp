@@ -37,7 +37,7 @@ namespace Model
   class Channel
   {
   public:
-    AWS_SAGEMAKER_API Channel();
+    AWS_SAGEMAKER_API Channel() = default;
     AWS_SAGEMAKER_API Channel(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,40 +47,36 @@ namespace Model
     /**
      * <p>The name of the channel. </p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline Channel& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline Channel& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline Channel& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    Channel& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location of the channel data.</p>
      */
-    inline const DataSource& GetDataSource() const{ return m_dataSource; }
+    inline const DataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline Channel& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-    inline Channel& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = DataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = DataSource>
+    Channel& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The MIME type of the data.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline Channel& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline Channel& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline Channel& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    Channel& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,10 @@ namespace Model
      * <code>None</code>. <code>CompressionType</code> is used only in Pipe input mode.
      * In File mode, leave this field unset or set it to None.</p>
      */
-    inline const CompressionType& GetCompressionType() const{ return m_compressionType; }
+    inline CompressionType GetCompressionType() const { return m_compressionType; }
     inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
-    inline void SetCompressionType(const CompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
-    inline void SetCompressionType(CompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
-    inline Channel& WithCompressionType(const CompressionType& value) { SetCompressionType(value); return *this;}
-    inline Channel& WithCompressionType(CompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
+    inline void SetCompressionType(CompressionType value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
+    inline Channel& WithCompressionType(CompressionType value) { SetCompressionType(value); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +102,10 @@ namespace Model
      * a Dataset Using RecordIO</a>. </p> <p>In File mode, leave this field unset or
      * set it to None.</p>
      */
-    inline const RecordWrapper& GetRecordWrapperType() const{ return m_recordWrapperType; }
+    inline RecordWrapper GetRecordWrapperType() const { return m_recordWrapperType; }
     inline bool RecordWrapperTypeHasBeenSet() const { return m_recordWrapperTypeHasBeenSet; }
-    inline void SetRecordWrapperType(const RecordWrapper& value) { m_recordWrapperTypeHasBeenSet = true; m_recordWrapperType = value; }
-    inline void SetRecordWrapperType(RecordWrapper&& value) { m_recordWrapperTypeHasBeenSet = true; m_recordWrapperType = std::move(value); }
-    inline Channel& WithRecordWrapperType(const RecordWrapper& value) { SetRecordWrapperType(value); return *this;}
-    inline Channel& WithRecordWrapperType(RecordWrapper&& value) { SetRecordWrapperType(std::move(value)); return *this;}
+    inline void SetRecordWrapperType(RecordWrapper value) { m_recordWrapperTypeHasBeenSet = true; m_recordWrapperType = value; }
+    inline Channel& WithRecordWrapperType(RecordWrapper value) { SetRecordWrapperType(value); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +123,10 @@ namespace Model
      * mode.</p> <p>To use a model for incremental training, choose <code>File</code>
      * input model.</p>
      */
-    inline const TrainingInputMode& GetInputMode() const{ return m_inputMode; }
+    inline TrainingInputMode GetInputMode() const { return m_inputMode; }
     inline bool InputModeHasBeenSet() const { return m_inputModeHasBeenSet; }
-    inline void SetInputMode(const TrainingInputMode& value) { m_inputModeHasBeenSet = true; m_inputMode = value; }
-    inline void SetInputMode(TrainingInputMode&& value) { m_inputModeHasBeenSet = true; m_inputMode = std::move(value); }
-    inline Channel& WithInputMode(const TrainingInputMode& value) { SetInputMode(value); return *this;}
-    inline Channel& WithInputMode(TrainingInputMode&& value) { SetInputMode(std::move(value)); return *this;}
+    inline void SetInputMode(TrainingInputMode value) { m_inputModeHasBeenSet = true; m_inputMode = value; }
+    inline Channel& WithInputMode(TrainingInputMode value) { SetInputMode(value); return *this;}
     ///@}
 
     ///@{
@@ -156,12 +146,12 @@ namespace Model
      * content sent to a particular node on the first epoch might be sent to a
      * different node on the second epoch.</p>
      */
-    inline const ShuffleConfig& GetShuffleConfig() const{ return m_shuffleConfig; }
+    inline const ShuffleConfig& GetShuffleConfig() const { return m_shuffleConfig; }
     inline bool ShuffleConfigHasBeenSet() const { return m_shuffleConfigHasBeenSet; }
-    inline void SetShuffleConfig(const ShuffleConfig& value) { m_shuffleConfigHasBeenSet = true; m_shuffleConfig = value; }
-    inline void SetShuffleConfig(ShuffleConfig&& value) { m_shuffleConfigHasBeenSet = true; m_shuffleConfig = std::move(value); }
-    inline Channel& WithShuffleConfig(const ShuffleConfig& value) { SetShuffleConfig(value); return *this;}
-    inline Channel& WithShuffleConfig(ShuffleConfig&& value) { SetShuffleConfig(std::move(value)); return *this;}
+    template<typename ShuffleConfigT = ShuffleConfig>
+    void SetShuffleConfig(ShuffleConfigT&& value) { m_shuffleConfigHasBeenSet = true; m_shuffleConfig = std::forward<ShuffleConfigT>(value); }
+    template<typename ShuffleConfigT = ShuffleConfig>
+    Channel& WithShuffleConfig(ShuffleConfigT&& value) { SetShuffleConfig(std::forward<ShuffleConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -174,13 +164,13 @@ namespace Model
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;
 
-    CompressionType m_compressionType;
+    CompressionType m_compressionType{CompressionType::NOT_SET};
     bool m_compressionTypeHasBeenSet = false;
 
-    RecordWrapper m_recordWrapperType;
+    RecordWrapper m_recordWrapperType{RecordWrapper::NOT_SET};
     bool m_recordWrapperTypeHasBeenSet = false;
 
-    TrainingInputMode m_inputMode;
+    TrainingInputMode m_inputMode{TrainingInputMode::NOT_SET};
     bool m_inputModeHasBeenSet = false;
 
     ShuffleConfig m_shuffleConfig;

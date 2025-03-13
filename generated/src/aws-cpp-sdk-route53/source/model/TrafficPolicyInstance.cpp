@@ -20,24 +20,7 @@ namespace Route53
 namespace Model
 {
 
-TrafficPolicyInstance::TrafficPolicyInstance() : 
-    m_idHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tTL(0),
-    m_tTLHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_trafficPolicyIdHasBeenSet(false),
-    m_trafficPolicyVersion(0),
-    m_trafficPolicyVersionHasBeenSet(false),
-    m_trafficPolicyType(RRType::NOT_SET),
-    m_trafficPolicyTypeHasBeenSet(false)
-{
-}
-
 TrafficPolicyInstance::TrafficPolicyInstance(const XmlNode& xmlNode)
-  : TrafficPolicyInstance()
 {
   *this = xmlNode;
 }
@@ -53,54 +36,63 @@ TrafficPolicyInstance& TrafficPolicyInstance::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
       m_hostedZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneIdNode.GetText());
       m_hostedZoneIdHasBeenSet = true;
+       m_hostedZoneIdHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode tTLNode = resultNode.FirstChild("TTL");
     if(!tTLNode.IsNull())
     {
       m_tTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tTLNode.GetText()).c_str()).c_str());
       m_tTLHasBeenSet = true;
+       m_tTLHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
     XmlNode trafficPolicyIdNode = resultNode.FirstChild("TrafficPolicyId");
     if(!trafficPolicyIdNode.IsNull())
     {
       m_trafficPolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyIdNode.GetText());
       m_trafficPolicyIdHasBeenSet = true;
+       m_trafficPolicyIdHasBeenSet = true;
     }
     XmlNode trafficPolicyVersionNode = resultNode.FirstChild("TrafficPolicyVersion");
     if(!trafficPolicyVersionNode.IsNull())
     {
       m_trafficPolicyVersion = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyVersionNode.GetText()).c_str()).c_str());
       m_trafficPolicyVersionHasBeenSet = true;
+       m_trafficPolicyVersionHasBeenSet = true;
     }
     XmlNode trafficPolicyTypeNode = resultNode.FirstChild("TrafficPolicyType");
     if(!trafficPolicyTypeNode.IsNull())
     {
-      m_trafficPolicyType = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyTypeNode.GetText()).c_str()).c_str());
+      m_trafficPolicyType = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyTypeNode.GetText()).c_str()));
       m_trafficPolicyTypeHasBeenSet = true;
+       m_trafficPolicyTypeHasBeenSet = true;
     }
   }
 

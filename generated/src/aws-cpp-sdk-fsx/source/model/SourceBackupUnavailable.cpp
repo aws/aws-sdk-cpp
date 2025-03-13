@@ -18,14 +18,7 @@ namespace FSx
 namespace Model
 {
 
-SourceBackupUnavailable::SourceBackupUnavailable() : 
-    m_messageHasBeenSet(false),
-    m_backupIdHasBeenSet(false)
-{
-}
-
 SourceBackupUnavailable::SourceBackupUnavailable(JsonView jsonValue)
-  : SourceBackupUnavailable()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SourceBackupUnavailable& SourceBackupUnavailable::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupId"))
   {
     m_backupId = jsonValue.GetString("BackupId");
-
     m_backupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

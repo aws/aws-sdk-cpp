@@ -18,17 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeTargetEventBridgeEventBusParameters::PipeTargetEventBridgeEventBusParameters() : 
-    m_endpointIdHasBeenSet(false),
-    m_detailTypeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_timeHasBeenSet(false)
-{
-}
-
 PipeTargetEventBridgeEventBusParameters::PipeTargetEventBridgeEventBusParameters(JsonView jsonValue)
-  : PipeTargetEventBridgeEventBusParameters()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ PipeTargetEventBridgeEventBusParameters& PipeTargetEventBridgeEventBusParameters
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetailType"))
   {
     m_detailType = jsonValue.GetString("DetailType");
-
     m_detailTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -65,14 +49,11 @@ PipeTargetEventBridgeEventBusParameters& PipeTargetEventBridgeEventBusParameters
     }
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetString("Time");
-
     m_timeHasBeenSet = true;
   }
-
   return *this;
 }
 

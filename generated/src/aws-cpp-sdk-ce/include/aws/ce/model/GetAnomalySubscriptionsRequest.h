@@ -22,7 +22,7 @@ namespace Model
   class GetAnomalySubscriptionsRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API GetAnomalySubscriptionsRequest();
+    AWS_COSTEXPLORER_API GetAnomalySubscriptionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,29 +39,26 @@ namespace Model
     /**
      * <p>A list of cost anomaly subscription ARNs. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubscriptionArnList() const{ return m_subscriptionArnList; }
+    inline const Aws::Vector<Aws::String>& GetSubscriptionArnList() const { return m_subscriptionArnList; }
     inline bool SubscriptionArnListHasBeenSet() const { return m_subscriptionArnListHasBeenSet; }
-    inline void SetSubscriptionArnList(const Aws::Vector<Aws::String>& value) { m_subscriptionArnListHasBeenSet = true; m_subscriptionArnList = value; }
-    inline void SetSubscriptionArnList(Aws::Vector<Aws::String>&& value) { m_subscriptionArnListHasBeenSet = true; m_subscriptionArnList = std::move(value); }
-    inline GetAnomalySubscriptionsRequest& WithSubscriptionArnList(const Aws::Vector<Aws::String>& value) { SetSubscriptionArnList(value); return *this;}
-    inline GetAnomalySubscriptionsRequest& WithSubscriptionArnList(Aws::Vector<Aws::String>&& value) { SetSubscriptionArnList(std::move(value)); return *this;}
-    inline GetAnomalySubscriptionsRequest& AddSubscriptionArnList(const Aws::String& value) { m_subscriptionArnListHasBeenSet = true; m_subscriptionArnList.push_back(value); return *this; }
-    inline GetAnomalySubscriptionsRequest& AddSubscriptionArnList(Aws::String&& value) { m_subscriptionArnListHasBeenSet = true; m_subscriptionArnList.push_back(std::move(value)); return *this; }
-    inline GetAnomalySubscriptionsRequest& AddSubscriptionArnList(const char* value) { m_subscriptionArnListHasBeenSet = true; m_subscriptionArnList.push_back(value); return *this; }
+    template<typename SubscriptionArnListT = Aws::Vector<Aws::String>>
+    void SetSubscriptionArnList(SubscriptionArnListT&& value) { m_subscriptionArnListHasBeenSet = true; m_subscriptionArnList = std::forward<SubscriptionArnListT>(value); }
+    template<typename SubscriptionArnListT = Aws::Vector<Aws::String>>
+    GetAnomalySubscriptionsRequest& WithSubscriptionArnList(SubscriptionArnListT&& value) { SetSubscriptionArnList(std::forward<SubscriptionArnListT>(value)); return *this;}
+    template<typename SubscriptionArnListT = Aws::String>
+    GetAnomalySubscriptionsRequest& AddSubscriptionArnList(SubscriptionArnListT&& value) { m_subscriptionArnListHasBeenSet = true; m_subscriptionArnList.emplace_back(std::forward<SubscriptionArnListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Cost anomaly monitor ARNs. </p>
      */
-    inline const Aws::String& GetMonitorArn() const{ return m_monitorArn; }
+    inline const Aws::String& GetMonitorArn() const { return m_monitorArn; }
     inline bool MonitorArnHasBeenSet() const { return m_monitorArnHasBeenSet; }
-    inline void SetMonitorArn(const Aws::String& value) { m_monitorArnHasBeenSet = true; m_monitorArn = value; }
-    inline void SetMonitorArn(Aws::String&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::move(value); }
-    inline void SetMonitorArn(const char* value) { m_monitorArnHasBeenSet = true; m_monitorArn.assign(value); }
-    inline GetAnomalySubscriptionsRequest& WithMonitorArn(const Aws::String& value) { SetMonitorArn(value); return *this;}
-    inline GetAnomalySubscriptionsRequest& WithMonitorArn(Aws::String&& value) { SetMonitorArn(std::move(value)); return *this;}
-    inline GetAnomalySubscriptionsRequest& WithMonitorArn(const char* value) { SetMonitorArn(value); return *this;}
+    template<typename MonitorArnT = Aws::String>
+    void SetMonitorArn(MonitorArnT&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::forward<MonitorArnT>(value); }
+    template<typename MonitorArnT = Aws::String>
+    GetAnomalySubscriptionsRequest& WithMonitorArn(MonitorArnT&& value) { SetMonitorArn(std::forward<MonitorArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,21 +67,19 @@ namespace Model
      * the token when the response from a previous call has more results than the
      * maximum page size. </p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
-    inline GetAnomalySubscriptionsRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetAnomalySubscriptionsRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetAnomalySubscriptionsRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetAnomalySubscriptionsRequest& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of entries a paginated response contains. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetAnomalySubscriptionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -100,7 +95,7 @@ namespace Model
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

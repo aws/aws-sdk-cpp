@@ -34,7 +34,7 @@ namespace Model
   class UpdateUserPoolClientResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API UpdateUserPoolClientResult();
+    AWS_COGNITOIDENTITYPROVIDER_API UpdateUserPoolClientResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API UpdateUserPoolClientResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API UpdateUserPoolClientResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The updated details of your app client.</p>
      */
-    inline const UserPoolClientType& GetUserPoolClient() const{ return m_userPoolClient; }
-    inline void SetUserPoolClient(const UserPoolClientType& value) { m_userPoolClient = value; }
-    inline void SetUserPoolClient(UserPoolClientType&& value) { m_userPoolClient = std::move(value); }
-    inline UpdateUserPoolClientResult& WithUserPoolClient(const UserPoolClientType& value) { SetUserPoolClient(value); return *this;}
-    inline UpdateUserPoolClientResult& WithUserPoolClient(UserPoolClientType&& value) { SetUserPoolClient(std::move(value)); return *this;}
+    inline const UserPoolClientType& GetUserPoolClient() const { return m_userPoolClient; }
+    template<typename UserPoolClientT = UserPoolClientType>
+    void SetUserPoolClient(UserPoolClientT&& value) { m_userPoolClientHasBeenSet = true; m_userPoolClient = std::forward<UserPoolClientT>(value); }
+    template<typename UserPoolClientT = UserPoolClientType>
+    UpdateUserPoolClientResult& WithUserPoolClient(UserPoolClientT&& value) { SetUserPoolClient(std::forward<UserPoolClientT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateUserPoolClientResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateUserPoolClientResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateUserPoolClientResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateUserPoolClientResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     UserPoolClientType m_userPoolClient;
+    bool m_userPoolClientHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

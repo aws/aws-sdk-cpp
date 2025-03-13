@@ -23,7 +23,7 @@ namespace Model
   class TagResourceRequest : public CostandUsageReportServiceRequest
   {
   public:
-    AWS_COSTANDUSAGEREPORTSERVICE_API TagResourceRequest();
+    AWS_COSTANDUSAGEREPORTSERVICE_API TagResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,26 @@ namespace Model
      * <p>The report name of the report definition that tags are to be associated
      * with.</p>
      */
-    inline const Aws::String& GetReportName() const{ return m_reportName; }
+    inline const Aws::String& GetReportName() const { return m_reportName; }
     inline bool ReportNameHasBeenSet() const { return m_reportNameHasBeenSet; }
-    inline void SetReportName(const Aws::String& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
-    inline void SetReportName(Aws::String&& value) { m_reportNameHasBeenSet = true; m_reportName = std::move(value); }
-    inline void SetReportName(const char* value) { m_reportNameHasBeenSet = true; m_reportName.assign(value); }
-    inline TagResourceRequest& WithReportName(const Aws::String& value) { SetReportName(value); return *this;}
-    inline TagResourceRequest& WithReportName(Aws::String&& value) { SetReportName(std::move(value)); return *this;}
-    inline TagResourceRequest& WithReportName(const char* value) { SetReportName(value); return *this;}
+    template<typename ReportNameT = Aws::String>
+    void SetReportName(ReportNameT&& value) { m_reportNameHasBeenSet = true; m_reportName = std::forward<ReportNameT>(value); }
+    template<typename ReportNameT = Aws::String>
+    TagResourceRequest& WithReportName(ReportNameT&& value) { SetReportName(std::forward<ReportNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to be assigned to the report definition resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    TagResourceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    TagResourceRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

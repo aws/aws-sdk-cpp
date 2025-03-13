@@ -28,7 +28,7 @@ namespace Model
   class CreateNetworkProfileResult
   {
   public:
-    AWS_DEVICEFARM_API CreateNetworkProfileResult();
+    AWS_DEVICEFARM_API CreateNetworkProfileResult() = default;
     AWS_DEVICEFARM_API CreateNetworkProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API CreateNetworkProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The network profile that is returned by the create network profile
      * request.</p>
      */
-    inline const NetworkProfile& GetNetworkProfile() const{ return m_networkProfile; }
-    inline void SetNetworkProfile(const NetworkProfile& value) { m_networkProfile = value; }
-    inline void SetNetworkProfile(NetworkProfile&& value) { m_networkProfile = std::move(value); }
-    inline CreateNetworkProfileResult& WithNetworkProfile(const NetworkProfile& value) { SetNetworkProfile(value); return *this;}
-    inline CreateNetworkProfileResult& WithNetworkProfile(NetworkProfile&& value) { SetNetworkProfile(std::move(value)); return *this;}
+    inline const NetworkProfile& GetNetworkProfile() const { return m_networkProfile; }
+    template<typename NetworkProfileT = NetworkProfile>
+    void SetNetworkProfile(NetworkProfileT&& value) { m_networkProfileHasBeenSet = true; m_networkProfile = std::forward<NetworkProfileT>(value); }
+    template<typename NetworkProfileT = NetworkProfile>
+    CreateNetworkProfileResult& WithNetworkProfile(NetworkProfileT&& value) { SetNetworkProfile(std::forward<NetworkProfileT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateNetworkProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateNetworkProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateNetworkProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateNetworkProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     NetworkProfile m_networkProfile;
+    bool m_networkProfileHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

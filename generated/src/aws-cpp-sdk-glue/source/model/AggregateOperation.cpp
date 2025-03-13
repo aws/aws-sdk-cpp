@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-AggregateOperation::AggregateOperation() : 
-    m_columnHasBeenSet(false),
-    m_aggFunc(AggFunction::NOT_SET),
-    m_aggFuncHasBeenSet(false)
-{
-}
-
 AggregateOperation::AggregateOperation(JsonView jsonValue)
-  : AggregateOperation()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ AggregateOperation& AggregateOperation::operator =(JsonView jsonValue)
     }
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggFunc"))
   {
     m_aggFunc = AggFunctionMapper::GetAggFunctionForName(jsonValue.GetString("AggFunc"));
-
     m_aggFuncHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,10 +18,6 @@ namespace Shield
 namespace Model
 {
 
-BlockAction::BlockAction()
-{
-}
-
 BlockAction::BlockAction(JsonView jsonValue)
 {
   *this = jsonValue;

@@ -10,22 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeScheduledInstanceAvailabilityRequest::DescribeScheduledInstanceAvailabilityRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_firstSlotStartTimeRangeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_maxSlotDurationInHours(0),
-    m_maxSlotDurationInHoursHasBeenSet(false),
-    m_minSlotDurationInHours(0),
-    m_minSlotDurationInHoursHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_recurrenceHasBeenSet(false)
-{
-}
-
 Aws::String DescribeScheduledInstanceAvailabilityRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,23 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ScalingConfigurationInfo::ScalingConfigurationInfo() : 
-    m_minCapacity(0),
-    m_minCapacityHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_autoPause(false),
-    m_autoPauseHasBeenSet(false),
-    m_secondsUntilAutoPause(0),
-    m_secondsUntilAutoPauseHasBeenSet(false),
-    m_timeoutActionHasBeenSet(false),
-    m_secondsBeforeTimeout(0),
-    m_secondsBeforeTimeoutHasBeenSet(false)
-{
-}
-
 ScalingConfigurationInfo::ScalingConfigurationInfo(const XmlNode& xmlNode)
-  : ScalingConfigurationInfo()
 {
   *this = xmlNode;
 }
@@ -52,36 +36,42 @@ ScalingConfigurationInfo& ScalingConfigurationInfo::operator =(const XmlNode& xm
     {
       m_minCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minCapacityNode.GetText()).c_str()).c_str());
       m_minCapacityHasBeenSet = true;
+       m_minCapacityHasBeenSet = true;
     }
     XmlNode maxCapacityNode = resultNode.FirstChild("MaxCapacity");
     if(!maxCapacityNode.IsNull())
     {
       m_maxCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxCapacityNode.GetText()).c_str()).c_str());
       m_maxCapacityHasBeenSet = true;
+       m_maxCapacityHasBeenSet = true;
     }
     XmlNode autoPauseNode = resultNode.FirstChild("AutoPause");
     if(!autoPauseNode.IsNull())
     {
       m_autoPause = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoPauseNode.GetText()).c_str()).c_str());
       m_autoPauseHasBeenSet = true;
+       m_autoPauseHasBeenSet = true;
     }
     XmlNode secondsUntilAutoPauseNode = resultNode.FirstChild("SecondsUntilAutoPause");
     if(!secondsUntilAutoPauseNode.IsNull())
     {
       m_secondsUntilAutoPause = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(secondsUntilAutoPauseNode.GetText()).c_str()).c_str());
       m_secondsUntilAutoPauseHasBeenSet = true;
+       m_secondsUntilAutoPauseHasBeenSet = true;
     }
     XmlNode timeoutActionNode = resultNode.FirstChild("TimeoutAction");
     if(!timeoutActionNode.IsNull())
     {
       m_timeoutAction = Aws::Utils::Xml::DecodeEscapedXmlText(timeoutActionNode.GetText());
       m_timeoutActionHasBeenSet = true;
+       m_timeoutActionHasBeenSet = true;
     }
     XmlNode secondsBeforeTimeoutNode = resultNode.FirstChild("SecondsBeforeTimeout");
     if(!secondsBeforeTimeoutNode.IsNull())
     {
       m_secondsBeforeTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(secondsBeforeTimeoutNode.GetText()).c_str()).c_str());
       m_secondsBeforeTimeoutHasBeenSet = true;
+       m_secondsBeforeTimeoutHasBeenSet = true;
     }
   }
 

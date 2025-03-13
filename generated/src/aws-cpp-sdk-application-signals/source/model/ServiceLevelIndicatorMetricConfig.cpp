@@ -18,20 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-ServiceLevelIndicatorMetricConfig::ServiceLevelIndicatorMetricConfig() : 
-    m_keyAttributesHasBeenSet(false),
-    m_operationNameHasBeenSet(false),
-    m_metricType(ServiceLevelIndicatorMetricType::NOT_SET),
-    m_metricTypeHasBeenSet(false),
-    m_statisticHasBeenSet(false),
-    m_periodSeconds(0),
-    m_periodSecondsHasBeenSet(false),
-    m_metricDataQueriesHasBeenSet(false)
-{
-}
-
 ServiceLevelIndicatorMetricConfig::ServiceLevelIndicatorMetricConfig(JsonView jsonValue)
-  : ServiceLevelIndicatorMetricConfig()
 {
   *this = jsonValue;
 }
@@ -47,35 +34,26 @@ ServiceLevelIndicatorMetricConfig& ServiceLevelIndicatorMetricConfig::operator =
     }
     m_keyAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationName"))
   {
     m_operationName = jsonValue.GetString("OperationName");
-
     m_operationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricType"))
   {
     m_metricType = ServiceLevelIndicatorMetricTypeMapper::GetServiceLevelIndicatorMetricTypeForName(jsonValue.GetString("MetricType"));
-
     m_metricTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Statistic"))
   {
     m_statistic = jsonValue.GetString("Statistic");
-
     m_statisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeriodSeconds"))
   {
     m_periodSeconds = jsonValue.GetInteger("PeriodSeconds");
-
     m_periodSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricDataQueries"))
   {
     Aws::Utils::Array<JsonView> metricDataQueriesJsonList = jsonValue.GetArray("MetricDataQueries");
@@ -85,7 +63,6 @@ ServiceLevelIndicatorMetricConfig& ServiceLevelIndicatorMetricConfig::operator =
     }
     m_metricDataQueriesHasBeenSet = true;
   }
-
   return *this;
 }
 

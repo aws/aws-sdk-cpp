@@ -23,7 +23,7 @@ namespace Model
   class GetSnapshotsRequest : public KendraRequest
   {
   public:
-    AWS_KENDRA_API GetSnapshotsRequest();
+    AWS_KENDRA_API GetSnapshotsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The identifier of the index to get search metrics data.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-    inline GetSnapshotsRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline GetSnapshotsRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline GetSnapshotsRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    GetSnapshotsRequest& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on
      * the first day of the month and ending on last day of the month.</p> </li> </ul>
      */
-    inline const Interval& GetInterval() const{ return m_interval; }
+    inline Interval GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
-    inline void SetInterval(const Interval& value) { m_intervalHasBeenSet = true; m_interval = value; }
-    inline void SetInterval(Interval&& value) { m_intervalHasBeenSet = true; m_interval = std::move(value); }
-    inline GetSnapshotsRequest& WithInterval(const Interval& value) { SetInterval(value); return *this;}
-    inline GetSnapshotsRequest& WithInterval(Interval&& value) { SetInterval(std::move(value)); return *this;}
+    inline void SetInterval(Interval value) { m_intervalHasBeenSet = true; m_interval = value; }
+    inline GetSnapshotsRequest& WithInterval(Interval value) { SetInterval(value); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +78,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining
      * insights with search analytics</a>.</p>
      */
-    inline const MetricType& GetMetricType() const{ return m_metricType; }
+    inline MetricType GetMetricType() const { return m_metricType; }
     inline bool MetricTypeHasBeenSet() const { return m_metricTypeHasBeenSet; }
-    inline void SetMetricType(const MetricType& value) { m_metricTypeHasBeenSet = true; m_metricType = value; }
-    inline void SetMetricType(MetricType&& value) { m_metricTypeHasBeenSet = true; m_metricType = std::move(value); }
-    inline GetSnapshotsRequest& WithMetricType(const MetricType& value) { SetMetricType(value); return *this;}
-    inline GetSnapshotsRequest& WithMetricType(MetricType&& value) { SetMetricType(std::move(value)); return *this;}
+    inline void SetMetricType(MetricType value) { m_metricTypeHasBeenSet = true; m_metricType = value; }
+    inline GetSnapshotsRequest& WithMetricType(MetricType value) { SetMetricType(value); return *this;}
     ///@}
 
     ///@{
@@ -96,21 +90,19 @@ namespace Model
      * retrieve), Amazon Kendra returns a pagination token in the response. You can use
      * this pagination token to retrieve the next set of search metrics data.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetSnapshotsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetSnapshotsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetSnapshotsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetSnapshotsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of returned data for the metric.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetSnapshotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -120,16 +112,16 @@ namespace Model
     Aws::String m_indexId;
     bool m_indexIdHasBeenSet = false;
 
-    Interval m_interval;
+    Interval m_interval{Interval::NOT_SET};
     bool m_intervalHasBeenSet = false;
 
-    MetricType m_metricType;
+    MetricType m_metricType{MetricType::NOT_SET};
     bool m_metricTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

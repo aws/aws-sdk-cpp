@@ -29,7 +29,7 @@ namespace Model
   class ListKeyPhrasesDetectionJobsResult
   {
   public:
-    AWS_COMPREHEND_API ListKeyPhrasesDetectionJobsResult();
+    AWS_COMPREHEND_API ListKeyPhrasesDetectionJobsResult() = default;
     AWS_COMPREHEND_API ListKeyPhrasesDetectionJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API ListKeyPhrasesDetectionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list containing the properties of each job that is returned.</p>
      */
-    inline const Aws::Vector<KeyPhrasesDetectionJobProperties>& GetKeyPhrasesDetectionJobPropertiesList() const{ return m_keyPhrasesDetectionJobPropertiesList; }
-    inline void SetKeyPhrasesDetectionJobPropertiesList(const Aws::Vector<KeyPhrasesDetectionJobProperties>& value) { m_keyPhrasesDetectionJobPropertiesList = value; }
-    inline void SetKeyPhrasesDetectionJobPropertiesList(Aws::Vector<KeyPhrasesDetectionJobProperties>&& value) { m_keyPhrasesDetectionJobPropertiesList = std::move(value); }
-    inline ListKeyPhrasesDetectionJobsResult& WithKeyPhrasesDetectionJobPropertiesList(const Aws::Vector<KeyPhrasesDetectionJobProperties>& value) { SetKeyPhrasesDetectionJobPropertiesList(value); return *this;}
-    inline ListKeyPhrasesDetectionJobsResult& WithKeyPhrasesDetectionJobPropertiesList(Aws::Vector<KeyPhrasesDetectionJobProperties>&& value) { SetKeyPhrasesDetectionJobPropertiesList(std::move(value)); return *this;}
-    inline ListKeyPhrasesDetectionJobsResult& AddKeyPhrasesDetectionJobPropertiesList(const KeyPhrasesDetectionJobProperties& value) { m_keyPhrasesDetectionJobPropertiesList.push_back(value); return *this; }
-    inline ListKeyPhrasesDetectionJobsResult& AddKeyPhrasesDetectionJobPropertiesList(KeyPhrasesDetectionJobProperties&& value) { m_keyPhrasesDetectionJobPropertiesList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<KeyPhrasesDetectionJobProperties>& GetKeyPhrasesDetectionJobPropertiesList() const { return m_keyPhrasesDetectionJobPropertiesList; }
+    template<typename KeyPhrasesDetectionJobPropertiesListT = Aws::Vector<KeyPhrasesDetectionJobProperties>>
+    void SetKeyPhrasesDetectionJobPropertiesList(KeyPhrasesDetectionJobPropertiesListT&& value) { m_keyPhrasesDetectionJobPropertiesListHasBeenSet = true; m_keyPhrasesDetectionJobPropertiesList = std::forward<KeyPhrasesDetectionJobPropertiesListT>(value); }
+    template<typename KeyPhrasesDetectionJobPropertiesListT = Aws::Vector<KeyPhrasesDetectionJobProperties>>
+    ListKeyPhrasesDetectionJobsResult& WithKeyPhrasesDetectionJobPropertiesList(KeyPhrasesDetectionJobPropertiesListT&& value) { SetKeyPhrasesDetectionJobPropertiesList(std::forward<KeyPhrasesDetectionJobPropertiesListT>(value)); return *this;}
+    template<typename KeyPhrasesDetectionJobPropertiesListT = KeyPhrasesDetectionJobProperties>
+    ListKeyPhrasesDetectionJobsResult& AddKeyPhrasesDetectionJobPropertiesList(KeyPhrasesDetectionJobPropertiesListT&& value) { m_keyPhrasesDetectionJobPropertiesListHasBeenSet = true; m_keyPhrasesDetectionJobPropertiesList.emplace_back(std::forward<KeyPhrasesDetectionJobPropertiesListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Identifies the next page of results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListKeyPhrasesDetectionJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListKeyPhrasesDetectionJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListKeyPhrasesDetectionJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListKeyPhrasesDetectionJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListKeyPhrasesDetectionJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListKeyPhrasesDetectionJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListKeyPhrasesDetectionJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListKeyPhrasesDetectionJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<KeyPhrasesDetectionJobProperties> m_keyPhrasesDetectionJobPropertiesList;
+    bool m_keyPhrasesDetectionJobPropertiesListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ namespace Model
   class DescribeElasticLoadBalancersResult
   {
   public:
-    AWS_OPSWORKS_API DescribeElasticLoadBalancersResult();
+    AWS_OPSWORKS_API DescribeElasticLoadBalancersResult() = default;
     AWS_OPSWORKS_API DescribeElasticLoadBalancersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API DescribeElasticLoadBalancersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
      * specified Elastic Load Balancing instances.</p>
      */
-    inline const Aws::Vector<ElasticLoadBalancer>& GetElasticLoadBalancers() const{ return m_elasticLoadBalancers; }
-    inline void SetElasticLoadBalancers(const Aws::Vector<ElasticLoadBalancer>& value) { m_elasticLoadBalancers = value; }
-    inline void SetElasticLoadBalancers(Aws::Vector<ElasticLoadBalancer>&& value) { m_elasticLoadBalancers = std::move(value); }
-    inline DescribeElasticLoadBalancersResult& WithElasticLoadBalancers(const Aws::Vector<ElasticLoadBalancer>& value) { SetElasticLoadBalancers(value); return *this;}
-    inline DescribeElasticLoadBalancersResult& WithElasticLoadBalancers(Aws::Vector<ElasticLoadBalancer>&& value) { SetElasticLoadBalancers(std::move(value)); return *this;}
-    inline DescribeElasticLoadBalancersResult& AddElasticLoadBalancers(const ElasticLoadBalancer& value) { m_elasticLoadBalancers.push_back(value); return *this; }
-    inline DescribeElasticLoadBalancersResult& AddElasticLoadBalancers(ElasticLoadBalancer&& value) { m_elasticLoadBalancers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ElasticLoadBalancer>& GetElasticLoadBalancers() const { return m_elasticLoadBalancers; }
+    template<typename ElasticLoadBalancersT = Aws::Vector<ElasticLoadBalancer>>
+    void SetElasticLoadBalancers(ElasticLoadBalancersT&& value) { m_elasticLoadBalancersHasBeenSet = true; m_elasticLoadBalancers = std::forward<ElasticLoadBalancersT>(value); }
+    template<typename ElasticLoadBalancersT = Aws::Vector<ElasticLoadBalancer>>
+    DescribeElasticLoadBalancersResult& WithElasticLoadBalancers(ElasticLoadBalancersT&& value) { SetElasticLoadBalancers(std::forward<ElasticLoadBalancersT>(value)); return *this;}
+    template<typename ElasticLoadBalancersT = ElasticLoadBalancer>
+    DescribeElasticLoadBalancersResult& AddElasticLoadBalancers(ElasticLoadBalancersT&& value) { m_elasticLoadBalancersHasBeenSet = true; m_elasticLoadBalancers.emplace_back(std::forward<ElasticLoadBalancersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeElasticLoadBalancersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeElasticLoadBalancersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeElasticLoadBalancersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeElasticLoadBalancersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ElasticLoadBalancer> m_elasticLoadBalancers;
+    bool m_elasticLoadBalancersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

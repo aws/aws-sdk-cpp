@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteAgentMemoryRequest::DeleteAgentMemoryRequest() : 
-    m_agentAliasIdHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_memoryIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAgentMemoryRequest::SerializePayload() const
 {
   return {};

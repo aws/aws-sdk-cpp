@@ -20,20 +20,7 @@ namespace Route53
 namespace Model
 {
 
-TrafficPolicySummary::TrafficPolicySummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(RRType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_latestVersion(0),
-    m_latestVersionHasBeenSet(false),
-    m_trafficPolicyCount(0),
-    m_trafficPolicyCountHasBeenSet(false)
-{
-}
-
 TrafficPolicySummary::TrafficPolicySummary(const XmlNode& xmlNode)
-  : TrafficPolicySummary()
 {
   *this = xmlNode;
 }
@@ -49,30 +36,35 @@ TrafficPolicySummary& TrafficPolicySummary::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode latestVersionNode = resultNode.FirstChild("LatestVersion");
     if(!latestVersionNode.IsNull())
     {
       m_latestVersion = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(latestVersionNode.GetText()).c_str()).c_str());
       m_latestVersionHasBeenSet = true;
+       m_latestVersionHasBeenSet = true;
     }
     XmlNode trafficPolicyCountNode = resultNode.FirstChild("TrafficPolicyCount");
     if(!trafficPolicyCountNode.IsNull())
     {
       m_trafficPolicyCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyCountNode.GetText()).c_str()).c_str());
       m_trafficPolicyCountHasBeenSet = true;
+       m_trafficPolicyCountHasBeenSet = true;
     }
   }
 

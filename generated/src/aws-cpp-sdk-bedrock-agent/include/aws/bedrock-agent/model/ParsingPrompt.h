@@ -32,7 +32,7 @@ namespace Model
   class ParsingPrompt
   {
   public:
-    AWS_BEDROCKAGENT_API ParsingPrompt();
+    AWS_BEDROCKAGENT_API ParsingPrompt() = default;
     AWS_BEDROCKAGENT_API ParsingPrompt(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API ParsingPrompt& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Instructions for interpreting the contents of a document.</p>
      */
-    inline const Aws::String& GetParsingPromptText() const{ return m_parsingPromptText; }
+    inline const Aws::String& GetParsingPromptText() const { return m_parsingPromptText; }
     inline bool ParsingPromptTextHasBeenSet() const { return m_parsingPromptTextHasBeenSet; }
-    inline void SetParsingPromptText(const Aws::String& value) { m_parsingPromptTextHasBeenSet = true; m_parsingPromptText = value; }
-    inline void SetParsingPromptText(Aws::String&& value) { m_parsingPromptTextHasBeenSet = true; m_parsingPromptText = std::move(value); }
-    inline void SetParsingPromptText(const char* value) { m_parsingPromptTextHasBeenSet = true; m_parsingPromptText.assign(value); }
-    inline ParsingPrompt& WithParsingPromptText(const Aws::String& value) { SetParsingPromptText(value); return *this;}
-    inline ParsingPrompt& WithParsingPromptText(Aws::String&& value) { SetParsingPromptText(std::move(value)); return *this;}
-    inline ParsingPrompt& WithParsingPromptText(const char* value) { SetParsingPromptText(value); return *this;}
+    template<typename ParsingPromptTextT = Aws::String>
+    void SetParsingPromptText(ParsingPromptTextT&& value) { m_parsingPromptTextHasBeenSet = true; m_parsingPromptText = std::forward<ParsingPromptTextT>(value); }
+    template<typename ParsingPromptTextT = Aws::String>
+    ParsingPrompt& WithParsingPromptText(ParsingPromptTextT&& value) { SetParsingPromptText(std::forward<ParsingPromptTextT>(value)); return *this;}
     ///@}
   private:
 

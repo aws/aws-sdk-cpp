@@ -12,16 +12,6 @@ using namespace Aws::S3Tables::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RenameTableRequest::RenameTableRequest() : 
-    m_tableBucketARNHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_newNamespaceNameHasBeenSet(false),
-    m_newNameHasBeenSet(false),
-    m_versionTokenHasBeenSet(false)
-{
-}
-
 Aws::String RenameTableRequest::SerializePayload() const
 {
   JsonValue payload;

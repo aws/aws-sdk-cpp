@@ -28,7 +28,7 @@ namespace Model
   class PutAccountPolicyResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API PutAccountPolicyResult();
+    AWS_CLOUDWATCHLOGS_API PutAccountPolicyResult() = default;
     AWS_CLOUDWATCHLOGS_API PutAccountPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API PutAccountPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The account policy that you created.</p>
      */
-    inline const AccountPolicy& GetAccountPolicy() const{ return m_accountPolicy; }
-    inline void SetAccountPolicy(const AccountPolicy& value) { m_accountPolicy = value; }
-    inline void SetAccountPolicy(AccountPolicy&& value) { m_accountPolicy = std::move(value); }
-    inline PutAccountPolicyResult& WithAccountPolicy(const AccountPolicy& value) { SetAccountPolicy(value); return *this;}
-    inline PutAccountPolicyResult& WithAccountPolicy(AccountPolicy&& value) { SetAccountPolicy(std::move(value)); return *this;}
+    inline const AccountPolicy& GetAccountPolicy() const { return m_accountPolicy; }
+    template<typename AccountPolicyT = AccountPolicy>
+    void SetAccountPolicy(AccountPolicyT&& value) { m_accountPolicyHasBeenSet = true; m_accountPolicy = std::forward<AccountPolicyT>(value); }
+    template<typename AccountPolicyT = AccountPolicy>
+    PutAccountPolicyResult& WithAccountPolicy(AccountPolicyT&& value) { SetAccountPolicy(std::forward<AccountPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutAccountPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutAccountPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutAccountPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutAccountPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AccountPolicy m_accountPolicy;
+    bool m_accountPolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

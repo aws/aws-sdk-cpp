@@ -28,7 +28,7 @@ namespace Model
   class CreateInternetGatewayResponse
   {
   public:
-    AWS_EC2_API CreateInternetGatewayResponse();
+    AWS_EC2_API CreateInternetGatewayResponse() = default;
     AWS_EC2_API CreateInternetGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateInternetGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the internet gateway.</p>
      */
-    inline const InternetGateway& GetInternetGateway() const{ return m_internetGateway; }
-    inline void SetInternetGateway(const InternetGateway& value) { m_internetGateway = value; }
-    inline void SetInternetGateway(InternetGateway&& value) { m_internetGateway = std::move(value); }
-    inline CreateInternetGatewayResponse& WithInternetGateway(const InternetGateway& value) { SetInternetGateway(value); return *this;}
-    inline CreateInternetGatewayResponse& WithInternetGateway(InternetGateway&& value) { SetInternetGateway(std::move(value)); return *this;}
+    inline const InternetGateway& GetInternetGateway() const { return m_internetGateway; }
+    template<typename InternetGatewayT = InternetGateway>
+    void SetInternetGateway(InternetGatewayT&& value) { m_internetGatewayHasBeenSet = true; m_internetGateway = std::forward<InternetGatewayT>(value); }
+    template<typename InternetGatewayT = InternetGateway>
+    CreateInternetGatewayResponse& WithInternetGateway(InternetGatewayT&& value) { SetInternetGateway(std::forward<InternetGatewayT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateInternetGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateInternetGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateInternetGatewayResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     InternetGateway m_internetGateway;
+    bool m_internetGatewayHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

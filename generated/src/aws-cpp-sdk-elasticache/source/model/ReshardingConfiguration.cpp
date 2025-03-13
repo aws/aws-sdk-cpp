@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ReshardingConfiguration::ReshardingConfiguration() : 
-    m_nodeGroupIdHasBeenSet(false),
-    m_preferredAvailabilityZonesHasBeenSet(false)
-{
-}
-
 ReshardingConfiguration::ReshardingConfiguration(const XmlNode& xmlNode)
-  : ReshardingConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ ReshardingConfiguration& ReshardingConfiguration::operator =(const XmlNode& xmlN
     {
       m_nodeGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(nodeGroupIdNode.GetText());
       m_nodeGroupIdHasBeenSet = true;
+       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode preferredAvailabilityZonesNode = resultNode.FirstChild("PreferredAvailabilityZones");
     if(!preferredAvailabilityZonesNode.IsNull())
     {
       XmlNode preferredAvailabilityZonesMember = preferredAvailabilityZonesNode.FirstChild("AvailabilityZone");
+      m_preferredAvailabilityZonesHasBeenSet = !preferredAvailabilityZonesMember.IsNull();
       while(!preferredAvailabilityZonesMember.IsNull())
       {
         m_preferredAvailabilityZones.push_back(preferredAvailabilityZonesMember.GetText());
         preferredAvailabilityZonesMember = preferredAvailabilityZonesMember.NextNode("AvailabilityZone");
       }
 
-      m_preferredAvailabilityZonesHasBeenSet = true;
+       m_preferredAvailabilityZonesHasBeenSet = true;
     }
   }
 

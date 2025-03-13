@@ -33,7 +33,7 @@ namespace Model
   class CreateOpenZFSOriginSnapshotConfiguration
   {
   public:
-    AWS_FSX_API CreateOpenZFSOriginSnapshotConfiguration();
+    AWS_FSX_API CreateOpenZFSOriginSnapshotConfiguration() = default;
     AWS_FSX_API CreateOpenZFSOriginSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API CreateOpenZFSOriginSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetSnapshotARN() const{ return m_snapshotARN; }
+    inline const Aws::String& GetSnapshotARN() const { return m_snapshotARN; }
     inline bool SnapshotARNHasBeenSet() const { return m_snapshotARNHasBeenSet; }
-    inline void SetSnapshotARN(const Aws::String& value) { m_snapshotARNHasBeenSet = true; m_snapshotARN = value; }
-    inline void SetSnapshotARN(Aws::String&& value) { m_snapshotARNHasBeenSet = true; m_snapshotARN = std::move(value); }
-    inline void SetSnapshotARN(const char* value) { m_snapshotARNHasBeenSet = true; m_snapshotARN.assign(value); }
-    inline CreateOpenZFSOriginSnapshotConfiguration& WithSnapshotARN(const Aws::String& value) { SetSnapshotARN(value); return *this;}
-    inline CreateOpenZFSOriginSnapshotConfiguration& WithSnapshotARN(Aws::String&& value) { SetSnapshotARN(std::move(value)); return *this;}
-    inline CreateOpenZFSOriginSnapshotConfiguration& WithSnapshotARN(const char* value) { SetSnapshotARN(value); return *this;}
+    template<typename SnapshotARNT = Aws::String>
+    void SetSnapshotARN(SnapshotARNT&& value) { m_snapshotARNHasBeenSet = true; m_snapshotARN = std::forward<SnapshotARNT>(value); }
+    template<typename SnapshotARNT = Aws::String>
+    CreateOpenZFSOriginSnapshotConfiguration& WithSnapshotARN(SnapshotARNT&& value) { SetSnapshotARN(std::forward<SnapshotARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,19 +65,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.</p>
      * 
      */
-    inline const OpenZFSCopyStrategy& GetCopyStrategy() const{ return m_copyStrategy; }
+    inline OpenZFSCopyStrategy GetCopyStrategy() const { return m_copyStrategy; }
     inline bool CopyStrategyHasBeenSet() const { return m_copyStrategyHasBeenSet; }
-    inline void SetCopyStrategy(const OpenZFSCopyStrategy& value) { m_copyStrategyHasBeenSet = true; m_copyStrategy = value; }
-    inline void SetCopyStrategy(OpenZFSCopyStrategy&& value) { m_copyStrategyHasBeenSet = true; m_copyStrategy = std::move(value); }
-    inline CreateOpenZFSOriginSnapshotConfiguration& WithCopyStrategy(const OpenZFSCopyStrategy& value) { SetCopyStrategy(value); return *this;}
-    inline CreateOpenZFSOriginSnapshotConfiguration& WithCopyStrategy(OpenZFSCopyStrategy&& value) { SetCopyStrategy(std::move(value)); return *this;}
+    inline void SetCopyStrategy(OpenZFSCopyStrategy value) { m_copyStrategyHasBeenSet = true; m_copyStrategy = value; }
+    inline CreateOpenZFSOriginSnapshotConfiguration& WithCopyStrategy(OpenZFSCopyStrategy value) { SetCopyStrategy(value); return *this;}
     ///@}
   private:
 
     Aws::String m_snapshotARN;
     bool m_snapshotARNHasBeenSet = false;
 
-    OpenZFSCopyStrategy m_copyStrategy;
+    OpenZFSCopyStrategy m_copyStrategy{OpenZFSCopyStrategy::NOT_SET};
     bool m_copyStrategyHasBeenSet = false;
   };
 

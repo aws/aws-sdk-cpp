@@ -33,7 +33,7 @@ namespace Model
   class ImportVolumeTaskDetails
   {
   public:
-    AWS_EC2_API ImportVolumeTaskDetails();
+    AWS_EC2_API ImportVolumeTaskDetails() = default;
     AWS_EC2_API ImportVolumeTaskDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ImportVolumeTaskDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,21 +45,19 @@ namespace Model
     /**
      * <p>The Availability Zone where the resulting volume will reside.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline ImportVolumeTaskDetails& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline ImportVolumeTaskDetails& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline ImportVolumeTaskDetails& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    ImportVolumeTaskDetails& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of bytes converted so far.</p>
      */
-    inline long long GetBytesConverted() const{ return m_bytesConverted; }
+    inline long long GetBytesConverted() const { return m_bytesConverted; }
     inline bool BytesConvertedHasBeenSet() const { return m_bytesConvertedHasBeenSet; }
     inline void SetBytesConverted(long long value) { m_bytesConvertedHasBeenSet = true; m_bytesConverted = value; }
     inline ImportVolumeTaskDetails& WithBytesConverted(long long value) { SetBytesConverted(value); return *this;}
@@ -69,45 +67,43 @@ namespace Model
     /**
      * <p>The description you provided when starting the import volume task.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ImportVolumeTaskDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ImportVolumeTaskDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ImportVolumeTaskDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ImportVolumeTaskDetails& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image.</p>
      */
-    inline const DiskImageDescription& GetImage() const{ return m_image; }
+    inline const DiskImageDescription& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const DiskImageDescription& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(DiskImageDescription&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline ImportVolumeTaskDetails& WithImage(const DiskImageDescription& value) { SetImage(value); return *this;}
-    inline ImportVolumeTaskDetails& WithImage(DiskImageDescription&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = DiskImageDescription>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = DiskImageDescription>
+    ImportVolumeTaskDetails& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The volume.</p>
      */
-    inline const DiskImageVolumeDescription& GetVolume() const{ return m_volume; }
+    inline const DiskImageVolumeDescription& GetVolume() const { return m_volume; }
     inline bool VolumeHasBeenSet() const { return m_volumeHasBeenSet; }
-    inline void SetVolume(const DiskImageVolumeDescription& value) { m_volumeHasBeenSet = true; m_volume = value; }
-    inline void SetVolume(DiskImageVolumeDescription&& value) { m_volumeHasBeenSet = true; m_volume = std::move(value); }
-    inline ImportVolumeTaskDetails& WithVolume(const DiskImageVolumeDescription& value) { SetVolume(value); return *this;}
-    inline ImportVolumeTaskDetails& WithVolume(DiskImageVolumeDescription&& value) { SetVolume(std::move(value)); return *this;}
+    template<typename VolumeT = DiskImageVolumeDescription>
+    void SetVolume(VolumeT&& value) { m_volumeHasBeenSet = true; m_volume = std::forward<VolumeT>(value); }
+    template<typename VolumeT = DiskImageVolumeDescription>
+    ImportVolumeTaskDetails& WithVolume(VolumeT&& value) { SetVolume(std::forward<VolumeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
 
-    long long m_bytesConverted;
+    long long m_bytesConverted{0};
     bool m_bytesConvertedHasBeenSet = false;
 
     Aws::String m_description;

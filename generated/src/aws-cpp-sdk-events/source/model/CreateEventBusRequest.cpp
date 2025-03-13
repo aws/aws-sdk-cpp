@@ -12,13 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEventBusRequest::CreateEventBusRequest() : 
-    m_nameHasBeenSet(false),
-    m_eventSourceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEventBusRequest::SerializePayload() const
 {
   JsonValue payload;

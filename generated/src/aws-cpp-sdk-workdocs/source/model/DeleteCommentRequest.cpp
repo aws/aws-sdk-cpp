@@ -13,14 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCommentRequest::DeleteCommentRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_commentIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCommentRequest::SerializePayload() const
 {
   return {};

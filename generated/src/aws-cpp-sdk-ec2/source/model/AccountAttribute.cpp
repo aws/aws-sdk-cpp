@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AccountAttribute::AccountAttribute() : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValuesHasBeenSet(false)
-{
-}
-
 AccountAttribute::AccountAttribute(const XmlNode& xmlNode)
-  : AccountAttribute()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ AccountAttribute& AccountAttribute::operator =(const XmlNode& xmlNode)
     {
       m_attributeName = Aws::Utils::Xml::DecodeEscapedXmlText(attributeNameNode.GetText());
       m_attributeNameHasBeenSet = true;
+       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeValuesNode = resultNode.FirstChild("attributeValueSet");
     if(!attributeValuesNode.IsNull())
     {
       XmlNode attributeValuesMember = attributeValuesNode.FirstChild("item");
+      m_attributeValuesHasBeenSet = !attributeValuesMember.IsNull();
       while(!attributeValuesMember.IsNull())
       {
         m_attributeValues.push_back(attributeValuesMember);
         attributeValuesMember = attributeValuesMember.NextNode("item");
       }
 
-      m_attributeValuesHasBeenSet = true;
+       m_attributeValuesHasBeenSet = true;
     }
   }
 

@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateCapacityReservationSpecificationRequest::LaunchTemplateCapacityReservationSpecificationRequest() : 
-    m_capacityReservationPreference(CapacityReservationPreference::NOT_SET),
-    m_capacityReservationPreferenceHasBeenSet(false),
-    m_capacityReservationTargetHasBeenSet(false)
-{
-}
-
 LaunchTemplateCapacityReservationSpecificationRequest::LaunchTemplateCapacityReservationSpecificationRequest(const XmlNode& xmlNode)
-  : LaunchTemplateCapacityReservationSpecificationRequest()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ LaunchTemplateCapacityReservationSpecificationRequest& LaunchTemplateCapacityRes
     XmlNode capacityReservationPreferenceNode = resultNode.FirstChild("CapacityReservationPreference");
     if(!capacityReservationPreferenceNode.IsNull())
     {
-      m_capacityReservationPreference = CapacityReservationPreferenceMapper::GetCapacityReservationPreferenceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationPreferenceNode.GetText()).c_str()).c_str());
+      m_capacityReservationPreference = CapacityReservationPreferenceMapper::GetCapacityReservationPreferenceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationPreferenceNode.GetText()).c_str()));
       m_capacityReservationPreferenceHasBeenSet = true;
+       m_capacityReservationPreferenceHasBeenSet = true;
     }
     XmlNode capacityReservationTargetNode = resultNode.FirstChild("CapacityReservationTarget");
     if(!capacityReservationTargetNode.IsNull())
     {
       m_capacityReservationTarget = capacityReservationTargetNode;
       m_capacityReservationTargetHasBeenSet = true;
+       m_capacityReservationTargetHasBeenSet = true;
     }
   }
 

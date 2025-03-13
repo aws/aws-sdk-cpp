@@ -12,10 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRegistryRequest::DescribeRegistryRequest()
-{
-}
-
 Aws::String DescribeRegistryRequest::SerializePayload() const
 {
   return "{}";

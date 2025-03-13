@@ -18,18 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-IsBinaryFile::IsBinaryFile() : 
-    m_source(false),
-    m_sourceHasBeenSet(false),
-    m_destination(false),
-    m_destinationHasBeenSet(false),
-    m_base(false),
-    m_baseHasBeenSet(false)
-{
-}
-
 IsBinaryFile::IsBinaryFile(JsonView jsonValue)
-  : IsBinaryFile()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ IsBinaryFile& IsBinaryFile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetBool("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetBool("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("base"))
   {
     m_base = jsonValue.GetBool("base");
-
     m_baseHasBeenSet = true;
   }
-
   return *this;
 }
 

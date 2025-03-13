@@ -32,7 +32,7 @@ namespace Model
   class TrendmicroSourceProperties
   {
   public:
-    AWS_APPFLOW_API TrendmicroSourceProperties();
+    AWS_APPFLOW_API TrendmicroSourceProperties() = default;
     AWS_APPFLOW_API TrendmicroSourceProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API TrendmicroSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The object specified in the Trend Micro flow source. </p>
      */
-    inline const Aws::String& GetObject() const{ return m_object; }
+    inline const Aws::String& GetObject() const { return m_object; }
     inline bool ObjectHasBeenSet() const { return m_objectHasBeenSet; }
-    inline void SetObject(const Aws::String& value) { m_objectHasBeenSet = true; m_object = value; }
-    inline void SetObject(Aws::String&& value) { m_objectHasBeenSet = true; m_object = std::move(value); }
-    inline void SetObject(const char* value) { m_objectHasBeenSet = true; m_object.assign(value); }
-    inline TrendmicroSourceProperties& WithObject(const Aws::String& value) { SetObject(value); return *this;}
-    inline TrendmicroSourceProperties& WithObject(Aws::String&& value) { SetObject(std::move(value)); return *this;}
-    inline TrendmicroSourceProperties& WithObject(const char* value) { SetObject(value); return *this;}
+    template<typename ObjectT = Aws::String>
+    void SetObject(ObjectT&& value) { m_objectHasBeenSet = true; m_object = std::forward<ObjectT>(value); }
+    template<typename ObjectT = Aws::String>
+    TrendmicroSourceProperties& WithObject(ObjectT&& value) { SetObject(std::forward<ObjectT>(value)); return *this;}
     ///@}
   private:
 

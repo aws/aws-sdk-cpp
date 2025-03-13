@@ -32,7 +32,7 @@ namespace Model
   class MonitorConfig
   {
   public:
-    AWS_FORECASTSERVICE_API MonitorConfig();
+    AWS_FORECASTSERVICE_API MonitorConfig() = default;
     AWS_FORECASTSERVICE_API MonitorConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API MonitorConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the monitor resource.</p>
      */
-    inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
+    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-    inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
-    inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
-    inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
-    inline MonitorConfig& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-    inline MonitorConfig& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-    inline MonitorConfig& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
+    template<typename MonitorNameT = Aws::String>
+    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
+    template<typename MonitorNameT = Aws::String>
+    MonitorConfig& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
     ///@}
   private:
 

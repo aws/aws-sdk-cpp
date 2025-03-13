@@ -12,15 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartImportRequest::StartImportRequest() : 
-    m_destinationsHasBeenSet(false),
-    m_importSourceHasBeenSet(false),
-    m_startEventTimeHasBeenSet(false),
-    m_endEventTimeHasBeenSet(false),
-    m_importIdHasBeenSet(false)
-{
-}
-
 Aws::String StartImportRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class DescribeStreamSummaryResult
   {
   public:
-    AWS_KINESIS_API DescribeStreamSummaryResult();
+    AWS_KINESIS_API DescribeStreamSummaryResult() = default;
     AWS_KINESIS_API DescribeStreamSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESIS_API DescribeStreamSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A <a>StreamDescriptionSummary</a> containing information about the
      * stream.</p>
      */
-    inline const StreamDescriptionSummary& GetStreamDescriptionSummary() const{ return m_streamDescriptionSummary; }
-    inline void SetStreamDescriptionSummary(const StreamDescriptionSummary& value) { m_streamDescriptionSummary = value; }
-    inline void SetStreamDescriptionSummary(StreamDescriptionSummary&& value) { m_streamDescriptionSummary = std::move(value); }
-    inline DescribeStreamSummaryResult& WithStreamDescriptionSummary(const StreamDescriptionSummary& value) { SetStreamDescriptionSummary(value); return *this;}
-    inline DescribeStreamSummaryResult& WithStreamDescriptionSummary(StreamDescriptionSummary&& value) { SetStreamDescriptionSummary(std::move(value)); return *this;}
+    inline const StreamDescriptionSummary& GetStreamDescriptionSummary() const { return m_streamDescriptionSummary; }
+    template<typename StreamDescriptionSummaryT = StreamDescriptionSummary>
+    void SetStreamDescriptionSummary(StreamDescriptionSummaryT&& value) { m_streamDescriptionSummaryHasBeenSet = true; m_streamDescriptionSummary = std::forward<StreamDescriptionSummaryT>(value); }
+    template<typename StreamDescriptionSummaryT = StreamDescriptionSummary>
+    DescribeStreamSummaryResult& WithStreamDescriptionSummary(StreamDescriptionSummaryT&& value) { SetStreamDescriptionSummary(std::forward<StreamDescriptionSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeStreamSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeStreamSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeStreamSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeStreamSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     StreamDescriptionSummary m_streamDescriptionSummary;
+    bool m_streamDescriptionSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

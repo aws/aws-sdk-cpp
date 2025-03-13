@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSubscriptionResult::GetSubscriptionResult()
-{
-}
-
 GetSubscriptionResult::GetSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ GetSubscriptionResult& GetSubscriptionResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("subscriptionType"))
   {
     m_subscriptionType = jsonValue.GetString("subscriptionType");
-
+    m_subscriptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsAccountName"))
   {
     m_awsAccountName = jsonValue.GetString("awsAccountName");
-
+    m_awsAccountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingSubscriptionType"))
   {
     m_pendingSubscriptionType = jsonValue.GetString("pendingSubscriptionType");
-
+    m_pendingSubscriptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingSubscriptionStartTime"))
   {
     m_pendingSubscriptionStartTime = jsonValue.GetString("pendingSubscriptionStartTime");
-
+    m_pendingSubscriptionStartTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

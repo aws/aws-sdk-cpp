@@ -32,7 +32,7 @@ namespace Model
   class AwsDynamoDbTableBillingModeSummary
   {
   public:
-    AWS_SECURITYHUB_API AwsDynamoDbTableBillingModeSummary();
+    AWS_SECURITYHUB_API AwsDynamoDbTableBillingModeSummary() = default;
     AWS_SECURITYHUB_API AwsDynamoDbTableBillingModeSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsDynamoDbTableBillingModeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The method used to charge for read and write throughput and to manage
      * capacity.</p>
      */
-    inline const Aws::String& GetBillingMode() const{ return m_billingMode; }
+    inline const Aws::String& GetBillingMode() const { return m_billingMode; }
     inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }
-    inline void SetBillingMode(const Aws::String& value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
-    inline void SetBillingMode(Aws::String&& value) { m_billingModeHasBeenSet = true; m_billingMode = std::move(value); }
-    inline void SetBillingMode(const char* value) { m_billingModeHasBeenSet = true; m_billingMode.assign(value); }
-    inline AwsDynamoDbTableBillingModeSummary& WithBillingMode(const Aws::String& value) { SetBillingMode(value); return *this;}
-    inline AwsDynamoDbTableBillingModeSummary& WithBillingMode(Aws::String&& value) { SetBillingMode(std::move(value)); return *this;}
-    inline AwsDynamoDbTableBillingModeSummary& WithBillingMode(const char* value) { SetBillingMode(value); return *this;}
+    template<typename BillingModeT = Aws::String>
+    void SetBillingMode(BillingModeT&& value) { m_billingModeHasBeenSet = true; m_billingMode = std::forward<BillingModeT>(value); }
+    template<typename BillingModeT = Aws::String>
+    AwsDynamoDbTableBillingModeSummary& WithBillingMode(BillingModeT&& value) { SetBillingMode(std::forward<BillingModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * validation and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetLastUpdateToPayPerRequestDateTime() const{ return m_lastUpdateToPayPerRequestDateTime; }
+    inline const Aws::String& GetLastUpdateToPayPerRequestDateTime() const { return m_lastUpdateToPayPerRequestDateTime; }
     inline bool LastUpdateToPayPerRequestDateTimeHasBeenSet() const { return m_lastUpdateToPayPerRequestDateTimeHasBeenSet; }
-    inline void SetLastUpdateToPayPerRequestDateTime(const Aws::String& value) { m_lastUpdateToPayPerRequestDateTimeHasBeenSet = true; m_lastUpdateToPayPerRequestDateTime = value; }
-    inline void SetLastUpdateToPayPerRequestDateTime(Aws::String&& value) { m_lastUpdateToPayPerRequestDateTimeHasBeenSet = true; m_lastUpdateToPayPerRequestDateTime = std::move(value); }
-    inline void SetLastUpdateToPayPerRequestDateTime(const char* value) { m_lastUpdateToPayPerRequestDateTimeHasBeenSet = true; m_lastUpdateToPayPerRequestDateTime.assign(value); }
-    inline AwsDynamoDbTableBillingModeSummary& WithLastUpdateToPayPerRequestDateTime(const Aws::String& value) { SetLastUpdateToPayPerRequestDateTime(value); return *this;}
-    inline AwsDynamoDbTableBillingModeSummary& WithLastUpdateToPayPerRequestDateTime(Aws::String&& value) { SetLastUpdateToPayPerRequestDateTime(std::move(value)); return *this;}
-    inline AwsDynamoDbTableBillingModeSummary& WithLastUpdateToPayPerRequestDateTime(const char* value) { SetLastUpdateToPayPerRequestDateTime(value); return *this;}
+    template<typename LastUpdateToPayPerRequestDateTimeT = Aws::String>
+    void SetLastUpdateToPayPerRequestDateTime(LastUpdateToPayPerRequestDateTimeT&& value) { m_lastUpdateToPayPerRequestDateTimeHasBeenSet = true; m_lastUpdateToPayPerRequestDateTime = std::forward<LastUpdateToPayPerRequestDateTimeT>(value); }
+    template<typename LastUpdateToPayPerRequestDateTimeT = Aws::String>
+    AwsDynamoDbTableBillingModeSummary& WithLastUpdateToPayPerRequestDateTime(LastUpdateToPayPerRequestDateTimeT&& value) { SetLastUpdateToPayPerRequestDateTime(std::forward<LastUpdateToPayPerRequestDateTimeT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class StackSetOperationResultSummary
   {
   public:
-    AWS_CLOUDFORMATION_API StackSetOperationResultSummary();
+    AWS_CLOUDFORMATION_API StackSetOperationResultSummary() = default;
     AWS_CLOUDFORMATION_API StackSetOperationResultSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API StackSetOperationResultSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,28 +47,24 @@ namespace Model
      * <p>[Self-managed permissions] The name of the Amazon Web Services account for
      * this operation result.</p>
      */
-    inline const Aws::String& GetAccount() const{ return m_account; }
+    inline const Aws::String& GetAccount() const { return m_account; }
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-    inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
-    inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-    inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
-    inline StackSetOperationResultSummary& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-    inline StackSetOperationResultSummary& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-    inline StackSetOperationResultSummary& WithAccount(const char* value) { SetAccount(value); return *this;}
+    template<typename AccountT = Aws::String>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = Aws::String>
+    StackSetOperationResultSummary& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Amazon Web Services Region for this operation result.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline StackSetOperationResultSummary& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline StackSetOperationResultSummary& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline StackSetOperationResultSummary& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    StackSetOperationResultSummary& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,26 +83,22 @@ namespace Model
      * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
-    inline const StackSetOperationResultStatus& GetStatus() const{ return m_status; }
+    inline StackSetOperationResultStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StackSetOperationResultStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StackSetOperationResultStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline StackSetOperationResultSummary& WithStatus(const StackSetOperationResultStatus& value) { SetStatus(value); return *this;}
-    inline StackSetOperationResultSummary& WithStatus(StackSetOperationResultStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StackSetOperationResultStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StackSetOperationResultSummary& WithStatus(StackSetOperationResultStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the assigned result status.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline StackSetOperationResultSummary& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline StackSetOperationResultSummary& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline StackSetOperationResultSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    StackSetOperationResultSummary& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +106,12 @@ namespace Model
      * <p>The results of the account gate function CloudFormation invokes, if present,
      * before proceeding with stack set operations in an account.</p>
      */
-    inline const AccountGateResult& GetAccountGateResult() const{ return m_accountGateResult; }
+    inline const AccountGateResult& GetAccountGateResult() const { return m_accountGateResult; }
     inline bool AccountGateResultHasBeenSet() const { return m_accountGateResultHasBeenSet; }
-    inline void SetAccountGateResult(const AccountGateResult& value) { m_accountGateResultHasBeenSet = true; m_accountGateResult = value; }
-    inline void SetAccountGateResult(AccountGateResult&& value) { m_accountGateResultHasBeenSet = true; m_accountGateResult = std::move(value); }
-    inline StackSetOperationResultSummary& WithAccountGateResult(const AccountGateResult& value) { SetAccountGateResult(value); return *this;}
-    inline StackSetOperationResultSummary& WithAccountGateResult(AccountGateResult&& value) { SetAccountGateResult(std::move(value)); return *this;}
+    template<typename AccountGateResultT = AccountGateResult>
+    void SetAccountGateResult(AccountGateResultT&& value) { m_accountGateResultHasBeenSet = true; m_accountGateResult = std::forward<AccountGateResultT>(value); }
+    template<typename AccountGateResultT = AccountGateResult>
+    StackSetOperationResultSummary& WithAccountGateResult(AccountGateResultT&& value) { SetAccountGateResult(std::forward<AccountGateResultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,14 +120,12 @@ namespace Model
      * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
-    inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
+    inline const Aws::String& GetOrganizationalUnitId() const { return m_organizationalUnitId; }
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
-    inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
-    inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
-    inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
-    inline StackSetOperationResultSummary& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
-    inline StackSetOperationResultSummary& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
-    inline StackSetOperationResultSummary& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
+    template<typename OrganizationalUnitIdT = Aws::String>
+    void SetOrganizationalUnitId(OrganizationalUnitIdT&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::forward<OrganizationalUnitIdT>(value); }
+    template<typename OrganizationalUnitIdT = Aws::String>
+    StackSetOperationResultSummary& WithOrganizationalUnitId(OrganizationalUnitIdT&& value) { SetOrganizationalUnitId(std::forward<OrganizationalUnitIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -145,7 +135,7 @@ namespace Model
     Aws::String m_region;
     bool m_regionHasBeenSet = false;
 
-    StackSetOperationResultStatus m_status;
+    StackSetOperationResultStatus m_status{StackSetOperationResultStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;

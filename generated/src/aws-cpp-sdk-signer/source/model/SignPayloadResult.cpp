@@ -18,10 +18,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SignPayloadResult::SignPayloadResult()
-{
-}
-
 SignPayloadResult::SignPayloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -33,15 +29,13 @@ SignPayloadResult& SignPayloadResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
+    m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobOwner"))
   {
     m_jobOwner = jsonValue.GetString("jobOwner");
-
+    m_jobOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
@@ -49,19 +43,20 @@ SignPayloadResult& SignPayloadResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_metadata[metadataItem.first] = metadataItem.second.AsString();
     }
+    m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signature"))
   {
     m_signature = HashingUtils::Base64Decode(jsonValue.GetString("signature"));
+    m_signatureHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

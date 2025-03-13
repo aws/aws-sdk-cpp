@@ -22,7 +22,7 @@ namespace Model
   class ModifySelfservicePermissionsRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API ModifySelfservicePermissionsRequest();
+    AWS_WORKSPACES_API ModifySelfservicePermissionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The identifier of the directory.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ModifySelfservicePermissionsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ModifySelfservicePermissionsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ModifySelfservicePermissionsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ModifySelfservicePermissionsRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The permissions to enable or disable self-service capabilities.</p>
      */
-    inline const SelfservicePermissions& GetSelfservicePermissions() const{ return m_selfservicePermissions; }
+    inline const SelfservicePermissions& GetSelfservicePermissions() const { return m_selfservicePermissions; }
     inline bool SelfservicePermissionsHasBeenSet() const { return m_selfservicePermissionsHasBeenSet; }
-    inline void SetSelfservicePermissions(const SelfservicePermissions& value) { m_selfservicePermissionsHasBeenSet = true; m_selfservicePermissions = value; }
-    inline void SetSelfservicePermissions(SelfservicePermissions&& value) { m_selfservicePermissionsHasBeenSet = true; m_selfservicePermissions = std::move(value); }
-    inline ModifySelfservicePermissionsRequest& WithSelfservicePermissions(const SelfservicePermissions& value) { SetSelfservicePermissions(value); return *this;}
-    inline ModifySelfservicePermissionsRequest& WithSelfservicePermissions(SelfservicePermissions&& value) { SetSelfservicePermissions(std::move(value)); return *this;}
+    template<typename SelfservicePermissionsT = SelfservicePermissions>
+    void SetSelfservicePermissions(SelfservicePermissionsT&& value) { m_selfservicePermissionsHasBeenSet = true; m_selfservicePermissions = std::forward<SelfservicePermissionsT>(value); }
+    template<typename SelfservicePermissionsT = SelfservicePermissions>
+    ModifySelfservicePermissionsRequest& WithSelfservicePermissions(SelfservicePermissionsT&& value) { SetSelfservicePermissions(std::forward<SelfservicePermissionsT>(value)); return *this;}
     ///@}
   private:
 

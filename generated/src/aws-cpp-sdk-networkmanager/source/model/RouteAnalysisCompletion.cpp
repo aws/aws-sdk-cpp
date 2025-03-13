@@ -18,17 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-RouteAnalysisCompletion::RouteAnalysisCompletion() : 
-    m_resultCode(RouteAnalysisCompletionResultCode::NOT_SET),
-    m_resultCodeHasBeenSet(false),
-    m_reasonCode(RouteAnalysisCompletionReasonCode::NOT_SET),
-    m_reasonCodeHasBeenSet(false),
-    m_reasonContextHasBeenSet(false)
-{
-}
-
 RouteAnalysisCompletion::RouteAnalysisCompletion(JsonView jsonValue)
-  : RouteAnalysisCompletion()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ RouteAnalysisCompletion& RouteAnalysisCompletion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResultCode"))
   {
     m_resultCode = RouteAnalysisCompletionResultCodeMapper::GetRouteAnalysisCompletionResultCodeForName(jsonValue.GetString("ResultCode"));
-
     m_resultCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReasonCode"))
   {
     m_reasonCode = RouteAnalysisCompletionReasonCodeMapper::GetRouteAnalysisCompletionReasonCodeForName(jsonValue.GetString("ReasonCode"));
-
     m_reasonCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReasonContext"))
   {
     Aws::Map<Aws::String, JsonView> reasonContextJsonMap = jsonValue.GetObject("ReasonContext").GetAllObjects();
@@ -58,7 +44,6 @@ RouteAnalysisCompletion& RouteAnalysisCompletion::operator =(JsonView jsonValue)
     }
     m_reasonContextHasBeenSet = true;
   }
-
   return *this;
 }
 

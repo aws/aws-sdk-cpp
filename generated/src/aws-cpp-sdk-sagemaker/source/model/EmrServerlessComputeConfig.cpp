@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EmrServerlessComputeConfig::EmrServerlessComputeConfig() : 
-    m_executionRoleARNHasBeenSet(false)
-{
-}
-
 EmrServerlessComputeConfig::EmrServerlessComputeConfig(JsonView jsonValue)
-  : EmrServerlessComputeConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EmrServerlessComputeConfig& EmrServerlessComputeConfig::operator =(JsonView json
   if(jsonValue.ValueExists("ExecutionRoleARN"))
   {
     m_executionRoleARN = jsonValue.GetString("ExecutionRoleARN");
-
     m_executionRoleARNHasBeenSet = true;
   }
-
   return *this;
 }
 

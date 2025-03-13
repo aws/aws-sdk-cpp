@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartAssessmentResult::StartAssessmentResult()
-{
-}
-
 StartAssessmentResult::StartAssessmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartAssessmentResult& StartAssessmentResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("assessmentId"))
   {
     m_assessmentId = jsonValue.GetString("assessmentId");
-
+    m_assessmentIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

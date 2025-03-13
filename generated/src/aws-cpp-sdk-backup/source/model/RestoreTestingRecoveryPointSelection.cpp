@@ -18,19 +18,7 @@ namespace Backup
 namespace Model
 {
 
-RestoreTestingRecoveryPointSelection::RestoreTestingRecoveryPointSelection() : 
-    m_algorithm(RestoreTestingRecoveryPointSelectionAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_excludeVaultsHasBeenSet(false),
-    m_includeVaultsHasBeenSet(false),
-    m_recoveryPointTypesHasBeenSet(false),
-    m_selectionWindowDays(0),
-    m_selectionWindowDaysHasBeenSet(false)
-{
-}
-
 RestoreTestingRecoveryPointSelection::RestoreTestingRecoveryPointSelection(JsonView jsonValue)
-  : RestoreTestingRecoveryPointSelection()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ RestoreTestingRecoveryPointSelection& RestoreTestingRecoveryPointSelection::oper
   if(jsonValue.ValueExists("Algorithm"))
   {
     m_algorithm = RestoreTestingRecoveryPointSelectionAlgorithmMapper::GetRestoreTestingRecoveryPointSelectionAlgorithmForName(jsonValue.GetString("Algorithm"));
-
     m_algorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeVaults"))
   {
     Aws::Utils::Array<JsonView> excludeVaultsJsonList = jsonValue.GetArray("ExcludeVaults");
@@ -53,7 +39,6 @@ RestoreTestingRecoveryPointSelection& RestoreTestingRecoveryPointSelection::oper
     }
     m_excludeVaultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeVaults"))
   {
     Aws::Utils::Array<JsonView> includeVaultsJsonList = jsonValue.GetArray("IncludeVaults");
@@ -63,7 +48,6 @@ RestoreTestingRecoveryPointSelection& RestoreTestingRecoveryPointSelection::oper
     }
     m_includeVaultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecoveryPointTypes"))
   {
     Aws::Utils::Array<JsonView> recoveryPointTypesJsonList = jsonValue.GetArray("RecoveryPointTypes");
@@ -73,14 +57,11 @@ RestoreTestingRecoveryPointSelection& RestoreTestingRecoveryPointSelection::oper
     }
     m_recoveryPointTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectionWindowDays"))
   {
     m_selectionWindowDays = jsonValue.GetInteger("SelectionWindowDays");
-
     m_selectionWindowDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

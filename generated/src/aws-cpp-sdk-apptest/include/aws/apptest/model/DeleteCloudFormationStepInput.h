@@ -31,7 +31,7 @@ namespace Model
   class DeleteCloudFormationStepInput
   {
   public:
-    AWS_APPTEST_API DeleteCloudFormationStepInput();
+    AWS_APPTEST_API DeleteCloudFormationStepInput() = default;
     AWS_APPTEST_API DeleteCloudFormationStepInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API DeleteCloudFormationStepInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The stack ID of the deleted CloudFormation step input.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline DeleteCloudFormationStepInput& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline DeleteCloudFormationStepInput& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline DeleteCloudFormationStepInput& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    DeleteCloudFormationStepInput& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,20 +18,7 @@ namespace PrometheusService
 namespace Model
 {
 
-WorkspaceDescription::WorkspaceDescription() : 
-    m_aliasHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_prometheusEndpointHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 WorkspaceDescription::WorkspaceDescription(JsonView jsonValue)
-  : WorkspaceDescription()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("alias"))
   {
     m_alias = jsonValue.GetString("alias");
-
     m_aliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prometheusEndpoint"))
   {
     m_prometheusEndpoint = jsonValue.GetString("prometheusEndpoint");
-
     m_prometheusEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -89,14 +64,11 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workspaceId"))
   {
     m_workspaceId = jsonValue.GetString("workspaceId");
-
     m_workspaceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

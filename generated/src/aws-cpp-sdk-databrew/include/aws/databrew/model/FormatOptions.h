@@ -34,7 +34,7 @@ namespace Model
   class FormatOptions
   {
   public:
-    AWS_GLUEDATABREW_API FormatOptions();
+    AWS_GLUEDATABREW_API FormatOptions() = default;
     AWS_GLUEDATABREW_API FormatOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API FormatOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p>Options that define how JSON input is to be interpreted by DataBrew.</p>
      */
-    inline const JsonOptions& GetJson() const{ return m_json; }
+    inline const JsonOptions& GetJson() const { return m_json; }
     inline bool JsonHasBeenSet() const { return m_jsonHasBeenSet; }
-    inline void SetJson(const JsonOptions& value) { m_jsonHasBeenSet = true; m_json = value; }
-    inline void SetJson(JsonOptions&& value) { m_jsonHasBeenSet = true; m_json = std::move(value); }
-    inline FormatOptions& WithJson(const JsonOptions& value) { SetJson(value); return *this;}
-    inline FormatOptions& WithJson(JsonOptions&& value) { SetJson(std::move(value)); return *this;}
+    template<typename JsonT = JsonOptions>
+    void SetJson(JsonT&& value) { m_jsonHasBeenSet = true; m_json = std::forward<JsonT>(value); }
+    template<typename JsonT = JsonOptions>
+    FormatOptions& WithJson(JsonT&& value) { SetJson(std::forward<JsonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Options that define how Excel input is to be interpreted by DataBrew.</p>
      */
-    inline const ExcelOptions& GetExcel() const{ return m_excel; }
+    inline const ExcelOptions& GetExcel() const { return m_excel; }
     inline bool ExcelHasBeenSet() const { return m_excelHasBeenSet; }
-    inline void SetExcel(const ExcelOptions& value) { m_excelHasBeenSet = true; m_excel = value; }
-    inline void SetExcel(ExcelOptions&& value) { m_excelHasBeenSet = true; m_excel = std::move(value); }
-    inline FormatOptions& WithExcel(const ExcelOptions& value) { SetExcel(value); return *this;}
-    inline FormatOptions& WithExcel(ExcelOptions&& value) { SetExcel(std::move(value)); return *this;}
+    template<typename ExcelT = ExcelOptions>
+    void SetExcel(ExcelT&& value) { m_excelHasBeenSet = true; m_excel = std::forward<ExcelT>(value); }
+    template<typename ExcelT = ExcelOptions>
+    FormatOptions& WithExcel(ExcelT&& value) { SetExcel(std::forward<ExcelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
      */
-    inline const CsvOptions& GetCsv() const{ return m_csv; }
+    inline const CsvOptions& GetCsv() const { return m_csv; }
     inline bool CsvHasBeenSet() const { return m_csvHasBeenSet; }
-    inline void SetCsv(const CsvOptions& value) { m_csvHasBeenSet = true; m_csv = value; }
-    inline void SetCsv(CsvOptions&& value) { m_csvHasBeenSet = true; m_csv = std::move(value); }
-    inline FormatOptions& WithCsv(const CsvOptions& value) { SetCsv(value); return *this;}
-    inline FormatOptions& WithCsv(CsvOptions&& value) { SetCsv(std::move(value)); return *this;}
+    template<typename CsvT = CsvOptions>
+    void SetCsv(CsvT&& value) { m_csvHasBeenSet = true; m_csv = std::forward<CsvT>(value); }
+    template<typename CsvT = CsvOptions>
+    FormatOptions& WithCsv(CsvT&& value) { SetCsv(std::forward<CsvT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class DescribeFileSystemsResult
   {
   public:
-    AWS_FSX_API DescribeFileSystemsResult();
+    AWS_FSX_API DescribeFileSystemsResult() = default;
     AWS_FSX_API DescribeFileSystemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API DescribeFileSystemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
     /**
      * <p>An array of file system descriptions.</p>
      */
-    inline const Aws::Vector<FileSystem>& GetFileSystems() const{ return m_fileSystems; }
-    inline void SetFileSystems(const Aws::Vector<FileSystem>& value) { m_fileSystems = value; }
-    inline void SetFileSystems(Aws::Vector<FileSystem>&& value) { m_fileSystems = std::move(value); }
-    inline DescribeFileSystemsResult& WithFileSystems(const Aws::Vector<FileSystem>& value) { SetFileSystems(value); return *this;}
-    inline DescribeFileSystemsResult& WithFileSystems(Aws::Vector<FileSystem>&& value) { SetFileSystems(std::move(value)); return *this;}
-    inline DescribeFileSystemsResult& AddFileSystems(const FileSystem& value) { m_fileSystems.push_back(value); return *this; }
-    inline DescribeFileSystemsResult& AddFileSystems(FileSystem&& value) { m_fileSystems.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FileSystem>& GetFileSystems() const { return m_fileSystems; }
+    template<typename FileSystemsT = Aws::Vector<FileSystem>>
+    void SetFileSystems(FileSystemsT&& value) { m_fileSystemsHasBeenSet = true; m_fileSystems = std::forward<FileSystemsT>(value); }
+    template<typename FileSystemsT = Aws::Vector<FileSystem>>
+    DescribeFileSystemsResult& WithFileSystems(FileSystemsT&& value) { SetFileSystems(std::forward<FileSystemsT>(value)); return *this;}
+    template<typename FileSystemsT = FileSystem>
+    DescribeFileSystemsResult& AddFileSystems(FileSystemsT&& value) { m_fileSystemsHasBeenSet = true; m_fileSystems.emplace_back(std::forward<FileSystemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,32 +59,31 @@ namespace Model
      * (String). You can use the <code>NextToken</code> value in the later request to
      * fetch the descriptions. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeFileSystemsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeFileSystemsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeFileSystemsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeFileSystemsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFileSystemsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFileSystemsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFileSystemsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFileSystemsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FileSystem> m_fileSystems;
+    bool m_fileSystemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

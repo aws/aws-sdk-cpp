@@ -32,7 +32,7 @@ namespace Model
   class ParallelDataDataLocation
   {
   public:
-    AWS_TRANSLATE_API ParallelDataDataLocation();
+    AWS_TRANSLATE_API ParallelDataDataLocation() = default;
     AWS_TRANSLATE_API ParallelDataDataLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API ParallelDataDataLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Describes the repository that contains the parallel data input file.</p>
      */
-    inline const Aws::String& GetRepositoryType() const{ return m_repositoryType; }
+    inline const Aws::String& GetRepositoryType() const { return m_repositoryType; }
     inline bool RepositoryTypeHasBeenSet() const { return m_repositoryTypeHasBeenSet; }
-    inline void SetRepositoryType(const Aws::String& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = value; }
-    inline void SetRepositoryType(Aws::String&& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = std::move(value); }
-    inline void SetRepositoryType(const char* value) { m_repositoryTypeHasBeenSet = true; m_repositoryType.assign(value); }
-    inline ParallelDataDataLocation& WithRepositoryType(const Aws::String& value) { SetRepositoryType(value); return *this;}
-    inline ParallelDataDataLocation& WithRepositoryType(Aws::String&& value) { SetRepositoryType(std::move(value)); return *this;}
-    inline ParallelDataDataLocation& WithRepositoryType(const char* value) { SetRepositoryType(value); return *this;}
+    template<typename RepositoryTypeT = Aws::String>
+    void SetRepositoryType(RepositoryTypeT&& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = std::forward<RepositoryTypeT>(value); }
+    template<typename RepositoryTypeT = Aws::String>
+    ParallelDataDataLocation& WithRepositoryType(RepositoryTypeT&& value) { SetRepositoryType(std::forward<RepositoryTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * within it.</p> <p>Before you download an input file from Amazon S3, ensure that
      * you recognize the file and trust its creator.</p> 
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline ParallelDataDataLocation& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline ParallelDataDataLocation& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline ParallelDataDataLocation& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    ParallelDataDataLocation& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 

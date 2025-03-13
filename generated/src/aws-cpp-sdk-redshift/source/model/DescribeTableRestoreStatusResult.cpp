@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTableRestoreStatusResult::DescribeTableRestoreStatusResult()
-{
-}
-
 DescribeTableRestoreStatusResult::DescribeTableRestoreStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeTableRestoreStatusResult& DescribeTableRestoreStatusResult::operator =(c
     if(!tableRestoreStatusDetailsNode.IsNull())
     {
       XmlNode tableRestoreStatusDetailsMember = tableRestoreStatusDetailsNode.FirstChild("TableRestoreStatus");
+      m_tableRestoreStatusDetailsHasBeenSet = !tableRestoreStatusDetailsMember.IsNull();
       while(!tableRestoreStatusDetailsMember.IsNull())
       {
         m_tableRestoreStatusDetails.push_back(tableRestoreStatusDetailsMember);
@@ -53,12 +50,14 @@ DescribeTableRestoreStatusResult& DescribeTableRestoreStatusResult::operator =(c
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeTableRestoreStatusResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

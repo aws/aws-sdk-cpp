@@ -15,16 +15,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CopyDistribution2020_05_31Request::CopyDistribution2020_05_31Request() : 
-    m_primaryDistributionIdHasBeenSet(false),
-    m_staging(false),
-    m_stagingHasBeenSet(false),
-    m_ifMatchHasBeenSet(false),
-    m_callerReferenceHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
 
 Aws::String CopyDistribution2020_05_31Request::SerializePayload() const
 {

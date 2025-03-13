@@ -34,7 +34,7 @@ namespace Model
   class ResourcePendingMaintenanceAction
   {
   public:
-    AWS_DOCDBELASTIC_API ResourcePendingMaintenanceAction();
+    AWS_DOCDBELASTIC_API ResourcePendingMaintenanceAction() = default;
     AWS_DOCDBELASTIC_API ResourcePendingMaintenanceAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_DOCDBELASTIC_API ResourcePendingMaintenanceAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DOCDBELASTIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>Provides information about a pending maintenance action for a resource.</p>
      */
-    inline const Aws::Vector<PendingMaintenanceActionDetails>& GetPendingMaintenanceActionDetails() const{ return m_pendingMaintenanceActionDetails; }
+    inline const Aws::Vector<PendingMaintenanceActionDetails>& GetPendingMaintenanceActionDetails() const { return m_pendingMaintenanceActionDetails; }
     inline bool PendingMaintenanceActionDetailsHasBeenSet() const { return m_pendingMaintenanceActionDetailsHasBeenSet; }
-    inline void SetPendingMaintenanceActionDetails(const Aws::Vector<PendingMaintenanceActionDetails>& value) { m_pendingMaintenanceActionDetailsHasBeenSet = true; m_pendingMaintenanceActionDetails = value; }
-    inline void SetPendingMaintenanceActionDetails(Aws::Vector<PendingMaintenanceActionDetails>&& value) { m_pendingMaintenanceActionDetailsHasBeenSet = true; m_pendingMaintenanceActionDetails = std::move(value); }
-    inline ResourcePendingMaintenanceAction& WithPendingMaintenanceActionDetails(const Aws::Vector<PendingMaintenanceActionDetails>& value) { SetPendingMaintenanceActionDetails(value); return *this;}
-    inline ResourcePendingMaintenanceAction& WithPendingMaintenanceActionDetails(Aws::Vector<PendingMaintenanceActionDetails>&& value) { SetPendingMaintenanceActionDetails(std::move(value)); return *this;}
-    inline ResourcePendingMaintenanceAction& AddPendingMaintenanceActionDetails(const PendingMaintenanceActionDetails& value) { m_pendingMaintenanceActionDetailsHasBeenSet = true; m_pendingMaintenanceActionDetails.push_back(value); return *this; }
-    inline ResourcePendingMaintenanceAction& AddPendingMaintenanceActionDetails(PendingMaintenanceActionDetails&& value) { m_pendingMaintenanceActionDetailsHasBeenSet = true; m_pendingMaintenanceActionDetails.push_back(std::move(value)); return *this; }
+    template<typename PendingMaintenanceActionDetailsT = Aws::Vector<PendingMaintenanceActionDetails>>
+    void SetPendingMaintenanceActionDetails(PendingMaintenanceActionDetailsT&& value) { m_pendingMaintenanceActionDetailsHasBeenSet = true; m_pendingMaintenanceActionDetails = std::forward<PendingMaintenanceActionDetailsT>(value); }
+    template<typename PendingMaintenanceActionDetailsT = Aws::Vector<PendingMaintenanceActionDetails>>
+    ResourcePendingMaintenanceAction& WithPendingMaintenanceActionDetails(PendingMaintenanceActionDetailsT&& value) { SetPendingMaintenanceActionDetails(std::forward<PendingMaintenanceActionDetailsT>(value)); return *this;}
+    template<typename PendingMaintenanceActionDetailsT = PendingMaintenanceActionDetails>
+    ResourcePendingMaintenanceAction& AddPendingMaintenanceActionDetails(PendingMaintenanceActionDetailsT&& value) { m_pendingMaintenanceActionDetailsHasBeenSet = true; m_pendingMaintenanceActionDetails.emplace_back(std::forward<PendingMaintenanceActionDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * <p>The Amazon DocumentDB Amazon Resource Name (ARN) of the resource to which the
      * pending maintenance action applies.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline ResourcePendingMaintenanceAction& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline ResourcePendingMaintenanceAction& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline ResourcePendingMaintenanceAction& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    ResourcePendingMaintenanceAction& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
   private:
 

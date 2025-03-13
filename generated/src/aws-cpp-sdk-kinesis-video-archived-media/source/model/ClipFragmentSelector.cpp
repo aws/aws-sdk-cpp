@@ -18,15 +18,7 @@ namespace KinesisVideoArchivedMedia
 namespace Model
 {
 
-ClipFragmentSelector::ClipFragmentSelector() : 
-    m_fragmentSelectorType(ClipFragmentSelectorType::NOT_SET),
-    m_fragmentSelectorTypeHasBeenSet(false),
-    m_timestampRangeHasBeenSet(false)
-{
-}
-
 ClipFragmentSelector::ClipFragmentSelector(JsonView jsonValue)
-  : ClipFragmentSelector()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ClipFragmentSelector& ClipFragmentSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FragmentSelectorType"))
   {
     m_fragmentSelectorType = ClipFragmentSelectorTypeMapper::GetClipFragmentSelectorTypeForName(jsonValue.GetString("FragmentSelectorType"));
-
     m_fragmentSelectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimestampRange"))
   {
     m_timestampRange = jsonValue.GetObject("TimestampRange");
-
     m_timestampRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

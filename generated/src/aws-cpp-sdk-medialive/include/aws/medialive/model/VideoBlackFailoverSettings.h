@@ -30,7 +30,7 @@ namespace Model
   class VideoBlackFailoverSettings
   {
   public:
-    AWS_MEDIALIVE_API VideoBlackFailoverSettings();
+    AWS_MEDIALIVE_API VideoBlackFailoverSettings() = default;
     AWS_MEDIALIVE_API VideoBlackFailoverSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API VideoBlackFailoverSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
      * (255*0.1=25.5), which means a pixel value of 25 or less is 'black'. The range is
      * 0.0 to 1.0, with any number of decimal places.
      */
-    inline double GetBlackDetectThreshold() const{ return m_blackDetectThreshold; }
+    inline double GetBlackDetectThreshold() const { return m_blackDetectThreshold; }
     inline bool BlackDetectThresholdHasBeenSet() const { return m_blackDetectThresholdHasBeenSet; }
     inline void SetBlackDetectThreshold(double value) { m_blackDetectThresholdHasBeenSet = true; m_blackDetectThreshold = value; }
     inline VideoBlackFailoverSettings& WithBlackDetectThreshold(double value) { SetBlackDetectThreshold(value); return *this;}
@@ -59,17 +59,17 @@ namespace Model
      * The amount of time (in milliseconds) that the active input must be black before
      * automatic input failover occurs.
      */
-    inline int GetVideoBlackThresholdMsec() const{ return m_videoBlackThresholdMsec; }
+    inline int GetVideoBlackThresholdMsec() const { return m_videoBlackThresholdMsec; }
     inline bool VideoBlackThresholdMsecHasBeenSet() const { return m_videoBlackThresholdMsecHasBeenSet; }
     inline void SetVideoBlackThresholdMsec(int value) { m_videoBlackThresholdMsecHasBeenSet = true; m_videoBlackThresholdMsec = value; }
     inline VideoBlackFailoverSettings& WithVideoBlackThresholdMsec(int value) { SetVideoBlackThresholdMsec(value); return *this;}
     ///@}
   private:
 
-    double m_blackDetectThreshold;
+    double m_blackDetectThreshold{0.0};
     bool m_blackDetectThresholdHasBeenSet = false;
 
-    int m_videoBlackThresholdMsec;
+    int m_videoBlackThresholdMsec{0};
     bool m_videoBlackThresholdMsecHasBeenSet = false;
   };
 

@@ -36,7 +36,7 @@ namespace Model
   class BatchPutAssetPropertyErrorEntry
   {
   public:
-    AWS_IOTSITEWISE_API BatchPutAssetPropertyErrorEntry();
+    AWS_IOTSITEWISE_API BatchPutAssetPropertyErrorEntry() = default;
     AWS_IOTSITEWISE_API BatchPutAssetPropertyErrorEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API BatchPutAssetPropertyErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,26 @@ namespace Model
     /**
      * <p>The ID of the failed entry.</p>
      */
-    inline const Aws::String& GetEntryId() const{ return m_entryId; }
+    inline const Aws::String& GetEntryId() const { return m_entryId; }
     inline bool EntryIdHasBeenSet() const { return m_entryIdHasBeenSet; }
-    inline void SetEntryId(const Aws::String& value) { m_entryIdHasBeenSet = true; m_entryId = value; }
-    inline void SetEntryId(Aws::String&& value) { m_entryIdHasBeenSet = true; m_entryId = std::move(value); }
-    inline void SetEntryId(const char* value) { m_entryIdHasBeenSet = true; m_entryId.assign(value); }
-    inline BatchPutAssetPropertyErrorEntry& WithEntryId(const Aws::String& value) { SetEntryId(value); return *this;}
-    inline BatchPutAssetPropertyErrorEntry& WithEntryId(Aws::String&& value) { SetEntryId(std::move(value)); return *this;}
-    inline BatchPutAssetPropertyErrorEntry& WithEntryId(const char* value) { SetEntryId(value); return *this;}
+    template<typename EntryIdT = Aws::String>
+    void SetEntryId(EntryIdT&& value) { m_entryIdHasBeenSet = true; m_entryId = std::forward<EntryIdT>(value); }
+    template<typename EntryIdT = Aws::String>
+    BatchPutAssetPropertyErrorEntry& WithEntryId(EntryIdT&& value) { SetEntryId(std::forward<EntryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of update property value errors.</p>
      */
-    inline const Aws::Vector<BatchPutAssetPropertyError>& GetErrors() const{ return m_errors; }
+    inline const Aws::Vector<BatchPutAssetPropertyError>& GetErrors() const { return m_errors; }
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-    inline void SetErrors(const Aws::Vector<BatchPutAssetPropertyError>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchPutAssetPropertyError>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-    inline BatchPutAssetPropertyErrorEntry& WithErrors(const Aws::Vector<BatchPutAssetPropertyError>& value) { SetErrors(value); return *this;}
-    inline BatchPutAssetPropertyErrorEntry& WithErrors(Aws::Vector<BatchPutAssetPropertyError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchPutAssetPropertyErrorEntry& AddErrors(const BatchPutAssetPropertyError& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-    inline BatchPutAssetPropertyErrorEntry& AddErrors(BatchPutAssetPropertyError&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
+    template<typename ErrorsT = Aws::Vector<BatchPutAssetPropertyError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchPutAssetPropertyError>>
+    BatchPutAssetPropertyErrorEntry& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchPutAssetPropertyError>
+    BatchPutAssetPropertyErrorEntry& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
   private:
 

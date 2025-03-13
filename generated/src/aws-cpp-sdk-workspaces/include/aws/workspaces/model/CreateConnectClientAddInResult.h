@@ -27,7 +27,7 @@ namespace Model
   class CreateConnectClientAddInResult
   {
   public:
-    AWS_WORKSPACES_API CreateConnectClientAddInResult();
+    AWS_WORKSPACES_API CreateConnectClientAddInResult() = default;
     AWS_WORKSPACES_API CreateConnectClientAddInResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API CreateConnectClientAddInResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The client add-in identifier.</p>
      */
-    inline const Aws::String& GetAddInId() const{ return m_addInId; }
-    inline void SetAddInId(const Aws::String& value) { m_addInId = value; }
-    inline void SetAddInId(Aws::String&& value) { m_addInId = std::move(value); }
-    inline void SetAddInId(const char* value) { m_addInId.assign(value); }
-    inline CreateConnectClientAddInResult& WithAddInId(const Aws::String& value) { SetAddInId(value); return *this;}
-    inline CreateConnectClientAddInResult& WithAddInId(Aws::String&& value) { SetAddInId(std::move(value)); return *this;}
-    inline CreateConnectClientAddInResult& WithAddInId(const char* value) { SetAddInId(value); return *this;}
+    inline const Aws::String& GetAddInId() const { return m_addInId; }
+    template<typename AddInIdT = Aws::String>
+    void SetAddInId(AddInIdT&& value) { m_addInIdHasBeenSet = true; m_addInId = std::forward<AddInIdT>(value); }
+    template<typename AddInIdT = Aws::String>
+    CreateConnectClientAddInResult& WithAddInId(AddInIdT&& value) { SetAddInId(std::forward<AddInIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateConnectClientAddInResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateConnectClientAddInResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateConnectClientAddInResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateConnectClientAddInResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_addInId;
+    bool m_addInIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

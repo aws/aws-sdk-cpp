@@ -22,7 +22,7 @@ namespace Model
   class DocumentTypeAsPayloadRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API DocumentTypeAsPayloadRequest();
+    AWS_RESTJSONPROTOCOL_API DocumentTypeAsPayloadRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,24 +37,22 @@ namespace Model
 
     ///@{
     
-    inline Aws::Utils::DocumentView GetDocumentValue() const{ return m_documentValue; }
+    inline Aws::Utils::DocumentView GetDocumentValue() const { return m_documentValue; }
     inline bool DocumentValueHasBeenSet() const { return m_documentValueHasBeenSet; }
-    inline void SetDocumentValue(const Aws::Utils::Document& value) { m_documentValueHasBeenSet = true; m_documentValue = value; }
-    inline void SetDocumentValue(Aws::Utils::Document&& value) { m_documentValueHasBeenSet = true; m_documentValue = std::move(value); }
-    inline DocumentTypeAsPayloadRequest& WithDocumentValue(const Aws::Utils::Document& value) { SetDocumentValue(value); return *this;}
-    inline DocumentTypeAsPayloadRequest& WithDocumentValue(Aws::Utils::Document&& value) { SetDocumentValue(std::move(value)); return *this;}
+    template<typename DocumentValueT = Aws::Utils::Document>
+    void SetDocumentValue(DocumentValueT&& value) { m_documentValueHasBeenSet = true; m_documentValue = std::forward<DocumentValueT>(value); }
+    template<typename DocumentValueT = Aws::Utils::Document>
+    DocumentTypeAsPayloadRequest& WithDocumentValue(DocumentValueT&& value) { SetDocumentValue(std::forward<DocumentValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline DocumentTypeAsPayloadRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DocumentTypeAsPayloadRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DocumentTypeAsPayloadRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DocumentTypeAsPayloadRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-ElastiCacheReservedInstances::ElastiCacheReservedInstances() : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
-{
-}
-
 ElastiCacheReservedInstances::ElastiCacheReservedInstances(JsonView jsonValue)
-  : ElastiCacheReservedInstances()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ElastiCacheReservedInstances& ElastiCacheReservedInstances::operator =(JsonView 
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("costCalculation"))
   {
     m_costCalculation = jsonValue.GetObject("costCalculation");
-
     m_costCalculationHasBeenSet = true;
   }
-
   return *this;
 }
 

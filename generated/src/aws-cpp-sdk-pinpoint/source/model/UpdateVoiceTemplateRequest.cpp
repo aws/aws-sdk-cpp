@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateVoiceTemplateRequest::UpdateVoiceTemplateRequest() : 
-    m_createNewVersion(false),
-    m_createNewVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_voiceTemplateRequestHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVoiceTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

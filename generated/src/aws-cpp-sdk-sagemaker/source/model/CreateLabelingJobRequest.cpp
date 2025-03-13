@@ -12,20 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLabelingJobRequest::CreateLabelingJobRequest() : 
-    m_labelingJobNameHasBeenSet(false),
-    m_labelAttributeNameHasBeenSet(false),
-    m_inputConfigHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_labelCategoryConfigS3UriHasBeenSet(false),
-    m_stoppingConditionsHasBeenSet(false),
-    m_labelingJobAlgorithmsConfigHasBeenSet(false),
-    m_humanTaskConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLabelingJobRequest::SerializePayload() const
 {
   JsonValue payload;

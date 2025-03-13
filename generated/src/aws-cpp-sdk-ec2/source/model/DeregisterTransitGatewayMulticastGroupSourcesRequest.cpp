@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeregisterTransitGatewayMulticastGroupSourcesRequest::DeregisterTransitGatewayMulticastGroupSourcesRequest() : 
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_groupIpAddressHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterTransitGatewayMulticastGroupSourcesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

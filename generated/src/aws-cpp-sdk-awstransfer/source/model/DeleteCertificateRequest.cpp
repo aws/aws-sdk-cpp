@@ -12,11 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCertificateRequest::DeleteCertificateRequest() : 
-    m_certificateIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

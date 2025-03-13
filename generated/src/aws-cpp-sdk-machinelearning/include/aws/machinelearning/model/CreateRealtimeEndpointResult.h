@@ -38,7 +38,7 @@ namespace Model
   class CreateRealtimeEndpointResult
   {
   public:
-    AWS_MACHINELEARNING_API CreateRealtimeEndpointResult();
+    AWS_MACHINELEARNING_API CreateRealtimeEndpointResult() = default;
     AWS_MACHINELEARNING_API CreateRealtimeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACHINELEARNING_API CreateRealtimeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -49,43 +49,42 @@ namespace Model
      * value should be identical to the value of the <code>MLModelId</code> in the
      * request.</p>
      */
-    inline const Aws::String& GetMLModelId() const{ return m_mLModelId; }
-    inline void SetMLModelId(const Aws::String& value) { m_mLModelId = value; }
-    inline void SetMLModelId(Aws::String&& value) { m_mLModelId = std::move(value); }
-    inline void SetMLModelId(const char* value) { m_mLModelId.assign(value); }
-    inline CreateRealtimeEndpointResult& WithMLModelId(const Aws::String& value) { SetMLModelId(value); return *this;}
-    inline CreateRealtimeEndpointResult& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
-    inline CreateRealtimeEndpointResult& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+    inline const Aws::String& GetMLModelId() const { return m_mLModelId; }
+    template<typename MLModelIdT = Aws::String>
+    void SetMLModelId(MLModelIdT&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::forward<MLModelIdT>(value); }
+    template<typename MLModelIdT = Aws::String>
+    CreateRealtimeEndpointResult& WithMLModelId(MLModelIdT&& value) { SetMLModelId(std::forward<MLModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint information of the <code>MLModel</code> </p>
      */
-    inline const RealtimeEndpointInfo& GetRealtimeEndpointInfo() const{ return m_realtimeEndpointInfo; }
-    inline void SetRealtimeEndpointInfo(const RealtimeEndpointInfo& value) { m_realtimeEndpointInfo = value; }
-    inline void SetRealtimeEndpointInfo(RealtimeEndpointInfo&& value) { m_realtimeEndpointInfo = std::move(value); }
-    inline CreateRealtimeEndpointResult& WithRealtimeEndpointInfo(const RealtimeEndpointInfo& value) { SetRealtimeEndpointInfo(value); return *this;}
-    inline CreateRealtimeEndpointResult& WithRealtimeEndpointInfo(RealtimeEndpointInfo&& value) { SetRealtimeEndpointInfo(std::move(value)); return *this;}
+    inline const RealtimeEndpointInfo& GetRealtimeEndpointInfo() const { return m_realtimeEndpointInfo; }
+    template<typename RealtimeEndpointInfoT = RealtimeEndpointInfo>
+    void SetRealtimeEndpointInfo(RealtimeEndpointInfoT&& value) { m_realtimeEndpointInfoHasBeenSet = true; m_realtimeEndpointInfo = std::forward<RealtimeEndpointInfoT>(value); }
+    template<typename RealtimeEndpointInfoT = RealtimeEndpointInfo>
+    CreateRealtimeEndpointResult& WithRealtimeEndpointInfo(RealtimeEndpointInfoT&& value) { SetRealtimeEndpointInfo(std::forward<RealtimeEndpointInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateRealtimeEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateRealtimeEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateRealtimeEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateRealtimeEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_mLModelId;
+    bool m_mLModelIdHasBeenSet = false;
 
     RealtimeEndpointInfo m_realtimeEndpointInfo;
+    bool m_realtimeEndpointInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,18 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-ScheduleRunTest::ScheduleRunTest() : 
-    m_type(TestType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_testPackageArnHasBeenSet(false),
-    m_testSpecArnHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 ScheduleRunTest::ScheduleRunTest(JsonView jsonValue)
-  : ScheduleRunTest()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ScheduleRunTest& ScheduleRunTest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = TestTypeMapper::GetTestTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testPackageArn"))
   {
     m_testPackageArn = jsonValue.GetString("testPackageArn");
-
     m_testPackageArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSpecArn"))
   {
     m_testSpecArn = jsonValue.GetString("testSpecArn");
-
     m_testSpecArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filter"))
   {
     m_filter = jsonValue.GetString("filter");
-
     m_filterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -73,7 +54,6 @@ ScheduleRunTest& ScheduleRunTest::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-InvalidationBatch::InvalidationBatch() : 
-    m_pathsHasBeenSet(false),
-    m_callerReferenceHasBeenSet(false)
-{
-}
-
 InvalidationBatch::InvalidationBatch(const XmlNode& xmlNode)
-  : InvalidationBatch()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ InvalidationBatch& InvalidationBatch::operator =(const XmlNode& xmlNode)
     {
       m_paths = pathsNode;
       m_pathsHasBeenSet = true;
+       m_pathsHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
       m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
+       m_callerReferenceHasBeenSet = true;
     }
   }
 

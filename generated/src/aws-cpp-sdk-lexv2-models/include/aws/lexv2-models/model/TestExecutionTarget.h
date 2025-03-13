@@ -32,7 +32,7 @@ namespace Model
   class TestExecutionTarget
   {
   public:
-    AWS_LEXMODELSV2_API TestExecutionTarget();
+    AWS_LEXMODELSV2_API TestExecutionTarget() = default;
     AWS_LEXMODELSV2_API TestExecutionTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TestExecutionTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Contains information about the bot alias used for the test execution.</p>
      */
-    inline const BotAliasTestExecutionTarget& GetBotAliasTarget() const{ return m_botAliasTarget; }
+    inline const BotAliasTestExecutionTarget& GetBotAliasTarget() const { return m_botAliasTarget; }
     inline bool BotAliasTargetHasBeenSet() const { return m_botAliasTargetHasBeenSet; }
-    inline void SetBotAliasTarget(const BotAliasTestExecutionTarget& value) { m_botAliasTargetHasBeenSet = true; m_botAliasTarget = value; }
-    inline void SetBotAliasTarget(BotAliasTestExecutionTarget&& value) { m_botAliasTargetHasBeenSet = true; m_botAliasTarget = std::move(value); }
-    inline TestExecutionTarget& WithBotAliasTarget(const BotAliasTestExecutionTarget& value) { SetBotAliasTarget(value); return *this;}
-    inline TestExecutionTarget& WithBotAliasTarget(BotAliasTestExecutionTarget&& value) { SetBotAliasTarget(std::move(value)); return *this;}
+    template<typename BotAliasTargetT = BotAliasTestExecutionTarget>
+    void SetBotAliasTarget(BotAliasTargetT&& value) { m_botAliasTargetHasBeenSet = true; m_botAliasTarget = std::forward<BotAliasTargetT>(value); }
+    template<typename BotAliasTargetT = BotAliasTestExecutionTarget>
+    TestExecutionTarget& WithBotAliasTarget(BotAliasTargetT&& value) { SetBotAliasTarget(std::forward<BotAliasTargetT>(value)); return *this;}
     ///@}
   private:
 

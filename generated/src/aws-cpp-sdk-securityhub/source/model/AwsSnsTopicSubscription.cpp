@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsSnsTopicSubscription::AwsSnsTopicSubscription() : 
-    m_endpointHasBeenSet(false),
-    m_protocolHasBeenSet(false)
-{
-}
-
 AwsSnsTopicSubscription::AwsSnsTopicSubscription(JsonView jsonValue)
-  : AwsSnsTopicSubscription()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsSnsTopicSubscription& AwsSnsTopicSubscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetString("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetString("Protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   return *this;
 }
 

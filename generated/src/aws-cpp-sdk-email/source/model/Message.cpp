@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-Message::Message() : 
-    m_subjectHasBeenSet(false),
-    m_bodyHasBeenSet(false)
-{
-}
-
 Message::Message(const XmlNode& xmlNode)
-  : Message()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Message& Message::operator =(const XmlNode& xmlNode)
     {
       m_subject = subjectNode;
       m_subjectHasBeenSet = true;
+       m_subjectHasBeenSet = true;
     }
     XmlNode bodyNode = resultNode.FirstChild("Body");
     if(!bodyNode.IsNull())
     {
       m_body = bodyNode;
       m_bodyHasBeenSet = true;
+       m_bodyHasBeenSet = true;
     }
   }
 

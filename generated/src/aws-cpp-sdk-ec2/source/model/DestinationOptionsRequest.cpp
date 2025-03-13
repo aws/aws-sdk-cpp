@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DestinationOptionsRequest::DestinationOptionsRequest() : 
-    m_fileFormat(DestinationFileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_hiveCompatiblePartitions(false),
-    m_hiveCompatiblePartitionsHasBeenSet(false),
-    m_perHourPartition(false),
-    m_perHourPartitionHasBeenSet(false)
-{
-}
-
 DestinationOptionsRequest::DestinationOptionsRequest(const XmlNode& xmlNode)
-  : DestinationOptionsRequest()
 {
   *this = xmlNode;
 }
@@ -45,20 +34,23 @@ DestinationOptionsRequest& DestinationOptionsRequest::operator =(const XmlNode& 
     XmlNode fileFormatNode = resultNode.FirstChild("FileFormat");
     if(!fileFormatNode.IsNull())
     {
-      m_fileFormat = DestinationFileFormatMapper::GetDestinationFileFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fileFormatNode.GetText()).c_str()).c_str());
+      m_fileFormat = DestinationFileFormatMapper::GetDestinationFileFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fileFormatNode.GetText()).c_str()));
       m_fileFormatHasBeenSet = true;
+       m_fileFormatHasBeenSet = true;
     }
     XmlNode hiveCompatiblePartitionsNode = resultNode.FirstChild("HiveCompatiblePartitions");
     if(!hiveCompatiblePartitionsNode.IsNull())
     {
       m_hiveCompatiblePartitions = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hiveCompatiblePartitionsNode.GetText()).c_str()).c_str());
       m_hiveCompatiblePartitionsHasBeenSet = true;
+       m_hiveCompatiblePartitionsHasBeenSet = true;
     }
     XmlNode perHourPartitionNode = resultNode.FirstChild("PerHourPartition");
     if(!perHourPartitionNode.IsNull())
     {
       m_perHourPartition = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(perHourPartitionNode.GetText()).c_str()).c_str());
       m_perHourPartitionHasBeenSet = true;
+       m_perHourPartitionHasBeenSet = true;
     }
   }
 

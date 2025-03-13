@@ -18,15 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ScopeDetails::ScopeDetails() : 
-    m_lakeFormationTagPoliciesHasBeenSet(false),
-    m_redshiftDataSharesHasBeenSet(false),
-    m_s3DataAccessesHasBeenSet(false)
-{
-}
-
 ScopeDetails::ScopeDetails(JsonView jsonValue)
-  : ScopeDetails()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ ScopeDetails& ScopeDetails::operator =(JsonView jsonValue)
     }
     m_lakeFormationTagPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftDataShares"))
   {
     Aws::Utils::Array<JsonView> redshiftDataSharesJsonList = jsonValue.GetArray("RedshiftDataShares");
@@ -52,7 +43,6 @@ ScopeDetails& ScopeDetails::operator =(JsonView jsonValue)
     }
     m_redshiftDataSharesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DataAccesses"))
   {
     Aws::Utils::Array<JsonView> s3DataAccessesJsonList = jsonValue.GetArray("S3DataAccesses");
@@ -62,7 +52,6 @@ ScopeDetails& ScopeDetails::operator =(JsonView jsonValue)
     }
     m_s3DataAccessesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DeletePolicyRequest : public FMSRequest
   {
   public:
-    AWS_FMS_API DeletePolicyRequest();
+    AWS_FMS_API DeletePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The ID of the policy that you want to delete. You can retrieve this ID from
      * <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
      */
-    inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+    inline const Aws::String& GetPolicyId() const { return m_policyId; }
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
-    inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
-    inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
-    inline DeletePolicyRequest& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-    inline DeletePolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-    inline DeletePolicyRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+    template<typename PolicyIdT = Aws::String>
+    void SetPolicyId(PolicyIdT&& value) { m_policyIdHasBeenSet = true; m_policyId = std::forward<PolicyIdT>(value); }
+    template<typename PolicyIdT = Aws::String>
+    DeletePolicyRequest& WithPolicyId(PolicyIdT&& value) { SetPolicyId(std::forward<PolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * handled by the policy. All others are out of scope. If you don't specify tags or
      * accounts, all resources are in scope. </p>
      */
-    inline bool GetDeleteAllPolicyResources() const{ return m_deleteAllPolicyResources; }
+    inline bool GetDeleteAllPolicyResources() const { return m_deleteAllPolicyResources; }
     inline bool DeleteAllPolicyResourcesHasBeenSet() const { return m_deleteAllPolicyResourcesHasBeenSet; }
     inline void SetDeleteAllPolicyResources(bool value) { m_deleteAllPolicyResourcesHasBeenSet = true; m_deleteAllPolicyResources = value; }
     inline DeletePolicyRequest& WithDeleteAllPolicyResources(bool value) { SetDeleteAllPolicyResources(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
     Aws::String m_policyId;
     bool m_policyIdHasBeenSet = false;
 
-    bool m_deleteAllPolicyResources;
+    bool m_deleteAllPolicyResources{false};
     bool m_deleteAllPolicyResourcesHasBeenSet = false;
   };
 

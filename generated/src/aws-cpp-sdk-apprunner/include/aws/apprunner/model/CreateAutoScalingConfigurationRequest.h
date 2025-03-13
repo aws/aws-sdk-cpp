@@ -23,7 +23,7 @@ namespace Model
   class CreateAutoScalingConfigurationRequest : public AppRunnerRequest
   {
   public:
-    AWS_APPRUNNER_API CreateAutoScalingConfigurationRequest();
+    AWS_APPRUNNER_API CreateAutoScalingConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -58,14 +58,12 @@ namespace Model
      * <code>DefaultConfiguration</code> resource provided by App Runner remains in
      * your account unless you make changes to it.</p> </li> </ul> 
      */
-    inline const Aws::String& GetAutoScalingConfigurationName() const{ return m_autoScalingConfigurationName; }
+    inline const Aws::String& GetAutoScalingConfigurationName() const { return m_autoScalingConfigurationName; }
     inline bool AutoScalingConfigurationNameHasBeenSet() const { return m_autoScalingConfigurationNameHasBeenSet; }
-    inline void SetAutoScalingConfigurationName(const Aws::String& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = value; }
-    inline void SetAutoScalingConfigurationName(Aws::String&& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = std::move(value); }
-    inline void SetAutoScalingConfigurationName(const char* value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName.assign(value); }
-    inline CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(const Aws::String& value) { SetAutoScalingConfigurationName(value); return *this;}
-    inline CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(Aws::String&& value) { SetAutoScalingConfigurationName(std::move(value)); return *this;}
-    inline CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(const char* value) { SetAutoScalingConfigurationName(value); return *this;}
+    template<typename AutoScalingConfigurationNameT = Aws::String>
+    void SetAutoScalingConfigurationName(AutoScalingConfigurationNameT&& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = std::forward<AutoScalingConfigurationNameT>(value); }
+    template<typename AutoScalingConfigurationNameT = Aws::String>
+    CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(AutoScalingConfigurationNameT&& value) { SetAutoScalingConfigurationName(std::forward<AutoScalingConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +72,7 @@ namespace Model
      * process. If the number of concurrent requests exceeds this limit, App Runner
      * scales up your service.</p> <p>Default: <code>100</code> </p>
      */
-    inline int GetMaxConcurrency() const{ return m_maxConcurrency; }
+    inline int GetMaxConcurrency() const { return m_maxConcurrency; }
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
     inline void SetMaxConcurrency(int value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
     inline CreateAutoScalingConfigurationRequest& WithMaxConcurrency(int value) { SetMaxConcurrency(value); return *this;}
@@ -91,7 +89,7 @@ namespace Model
      * doubles the number of provisioned instances during deployments, to maintain the
      * same capacity for both old and new code.</p> <p>Default: <code>1</code> </p>
      */
-    inline int GetMinSize() const{ return m_minSize; }
+    inline int GetMinSize() const { return m_minSize; }
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
     inline CreateAutoScalingConfigurationRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
@@ -103,7 +101,7 @@ namespace Model
      * <code>MaxSize</code> instances actively serve traffic for your service.</p>
      * <p>Default: <code>25</code> </p>
      */
-    inline int GetMaxSize() const{ return m_maxSize; }
+    inline int GetMaxSize() const { return m_maxSize; }
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
     inline CreateAutoScalingConfigurationRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
@@ -114,27 +112,27 @@ namespace Model
      * <p>A list of metadata items that you can associate with your auto scaling
      * configuration resource. A tag is a key-value pair.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAutoScalingConfigurationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateAutoScalingConfigurationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAutoScalingConfigurationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateAutoScalingConfigurationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateAutoScalingConfigurationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateAutoScalingConfigurationRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_autoScalingConfigurationName;
     bool m_autoScalingConfigurationNameHasBeenSet = false;
 
-    int m_maxConcurrency;
+    int m_maxConcurrency{0};
     bool m_maxConcurrencyHasBeenSet = false;
 
-    int m_minSize;
+    int m_minSize{0};
     bool m_minSizeHasBeenSet = false;
 
-    int m_maxSize;
+    int m_maxSize{0};
     bool m_maxSizeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

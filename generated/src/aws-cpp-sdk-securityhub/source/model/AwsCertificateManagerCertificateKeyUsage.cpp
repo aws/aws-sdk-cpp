@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCertificateManagerCertificateKeyUsage::AwsCertificateManagerCertificateKeyUsage() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 AwsCertificateManagerCertificateKeyUsage::AwsCertificateManagerCertificateKeyUsage(JsonView jsonValue)
-  : AwsCertificateManagerCertificateKeyUsage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsCertificateManagerCertificateKeyUsage& AwsCertificateManagerCertificateKeyUsa
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

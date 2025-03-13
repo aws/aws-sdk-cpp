@@ -18,18 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ExpectedAttributeValue::ExpectedAttributeValue() : 
-    m_valueHasBeenSet(false),
-    m_exists(false),
-    m_existsHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_attributeValueListHasBeenSet(false)
-{
-}
-
 ExpectedAttributeValue::ExpectedAttributeValue(JsonView jsonValue)
-  : ExpectedAttributeValue()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ExpectedAttributeValue& ExpectedAttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetObject("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exists"))
   {
     m_exists = jsonValue.GetBool("Exists");
-
     m_existsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeValueList"))
   {
     Aws::Utils::Array<JsonView> attributeValueListJsonList = jsonValue.GetArray("AttributeValueList");
@@ -66,7 +49,6 @@ ExpectedAttributeValue& ExpectedAttributeValue::operator =(JsonView jsonValue)
     }
     m_attributeValueListHasBeenSet = true;
   }
-
   return *this;
 }
 

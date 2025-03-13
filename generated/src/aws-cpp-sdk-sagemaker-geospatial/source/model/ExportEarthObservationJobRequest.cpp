@@ -12,17 +12,6 @@ using namespace Aws::SageMakerGeospatial::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportEarthObservationJobRequest::ExportEarthObservationJobRequest() : 
-    m_arnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_executionRoleArnHasBeenSet(false),
-    m_exportSourceImages(false),
-    m_exportSourceImagesHasBeenSet(false),
-    m_outputConfigHasBeenSet(false)
-{
-}
-
 Aws::String ExportEarthObservationJobRequest::SerializePayload() const
 {
   JsonValue payload;

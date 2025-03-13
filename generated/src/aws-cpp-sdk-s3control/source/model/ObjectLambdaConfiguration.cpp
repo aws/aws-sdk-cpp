@@ -20,17 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ObjectLambdaConfiguration::ObjectLambdaConfiguration() : 
-    m_supportingAccessPointHasBeenSet(false),
-    m_cloudWatchMetricsEnabled(false),
-    m_cloudWatchMetricsEnabledHasBeenSet(false),
-    m_allowedFeaturesHasBeenSet(false),
-    m_transformationConfigurationsHasBeenSet(false)
-{
-}
-
 ObjectLambdaConfiguration::ObjectLambdaConfiguration(const XmlNode& xmlNode)
-  : ObjectLambdaConfiguration()
 {
   *this = xmlNode;
 }
@@ -46,36 +36,40 @@ ObjectLambdaConfiguration& ObjectLambdaConfiguration::operator =(const XmlNode& 
     {
       m_supportingAccessPoint = Aws::Utils::Xml::DecodeEscapedXmlText(supportingAccessPointNode.GetText());
       m_supportingAccessPointHasBeenSet = true;
+       m_supportingAccessPointHasBeenSet = true;
     }
     XmlNode cloudWatchMetricsEnabledNode = resultNode.FirstChild("CloudWatchMetricsEnabled");
     if(!cloudWatchMetricsEnabledNode.IsNull())
     {
       m_cloudWatchMetricsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cloudWatchMetricsEnabledNode.GetText()).c_str()).c_str());
       m_cloudWatchMetricsEnabledHasBeenSet = true;
+       m_cloudWatchMetricsEnabledHasBeenSet = true;
     }
     XmlNode allowedFeaturesNode = resultNode.FirstChild("AllowedFeatures");
     if(!allowedFeaturesNode.IsNull())
     {
       XmlNode allowedFeaturesMember = allowedFeaturesNode.FirstChild("AllowedFeature");
+      m_allowedFeaturesHasBeenSet = !allowedFeaturesMember.IsNull();
       while(!allowedFeaturesMember.IsNull())
       {
         m_allowedFeatures.push_back(ObjectLambdaAllowedFeatureMapper::GetObjectLambdaAllowedFeatureForName(StringUtils::Trim(allowedFeaturesMember.GetText().c_str())));
         allowedFeaturesMember = allowedFeaturesMember.NextNode("AllowedFeature");
       }
 
-      m_allowedFeaturesHasBeenSet = true;
+       m_allowedFeaturesHasBeenSet = true;
     }
     XmlNode transformationConfigurationsNode = resultNode.FirstChild("TransformationConfigurations");
     if(!transformationConfigurationsNode.IsNull())
     {
       XmlNode transformationConfigurationsMember = transformationConfigurationsNode.FirstChild("TransformationConfiguration");
+      m_transformationConfigurationsHasBeenSet = !transformationConfigurationsMember.IsNull();
       while(!transformationConfigurationsMember.IsNull())
       {
         m_transformationConfigurations.push_back(transformationConfigurationsMember);
         transformationConfigurationsMember = transformationConfigurationsMember.NextNode("TransformationConfiguration");
       }
 
-      m_transformationConfigurationsHasBeenSet = true;
+       m_transformationConfigurationsHasBeenSet = true;
     }
   }
 

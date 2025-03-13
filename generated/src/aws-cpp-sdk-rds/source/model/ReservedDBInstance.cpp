@@ -20,33 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ReservedDBInstance::ReservedDBInstance() : 
-    m_reservedDBInstanceIdHasBeenSet(false),
-    m_reservedDBInstancesOfferingIdHasBeenSet(false),
-    m_dBInstanceClassHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_dBInstanceCount(0),
-    m_dBInstanceCountHasBeenSet(false),
-    m_productDescriptionHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false),
-    m_reservedDBInstanceArnHasBeenSet(false),
-    m_leaseIdHasBeenSet(false)
-{
-}
-
 ReservedDBInstance::ReservedDBInstance(const XmlNode& xmlNode)
-  : ReservedDBInstance()
 {
   *this = xmlNode;
 }
@@ -62,102 +36,118 @@ ReservedDBInstance& ReservedDBInstance::operator =(const XmlNode& xmlNode)
     {
       m_reservedDBInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedDBInstanceIdNode.GetText());
       m_reservedDBInstanceIdHasBeenSet = true;
+       m_reservedDBInstanceIdHasBeenSet = true;
     }
     XmlNode reservedDBInstancesOfferingIdNode = resultNode.FirstChild("ReservedDBInstancesOfferingId");
     if(!reservedDBInstancesOfferingIdNode.IsNull())
     {
       m_reservedDBInstancesOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedDBInstancesOfferingIdNode.GetText());
       m_reservedDBInstancesOfferingIdHasBeenSet = true;
+       m_reservedDBInstancesOfferingIdHasBeenSet = true;
     }
     XmlNode dBInstanceClassNode = resultNode.FirstChild("DBInstanceClass");
     if(!dBInstanceClassNode.IsNull())
     {
       m_dBInstanceClass = Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceClassNode.GetText());
       m_dBInstanceClassHasBeenSet = true;
+       m_dBInstanceClassHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
       m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
+       m_startTimeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
     if(!durationNode.IsNull())
     {
       m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
       m_durationHasBeenSet = true;
+       m_durationHasBeenSet = true;
     }
     XmlNode fixedPriceNode = resultNode.FirstChild("FixedPrice");
     if(!fixedPriceNode.IsNull())
     {
       m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fixedPriceNode.GetText()).c_str()).c_str());
       m_fixedPriceHasBeenSet = true;
+       m_fixedPriceHasBeenSet = true;
     }
     XmlNode usagePriceNode = resultNode.FirstChild("UsagePrice");
     if(!usagePriceNode.IsNull())
     {
       m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usagePriceNode.GetText()).c_str()).c_str());
       m_usagePriceHasBeenSet = true;
+       m_usagePriceHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("CurrencyCode");
     if(!currencyCodeNode.IsNull())
     {
       m_currencyCode = Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText());
       m_currencyCodeHasBeenSet = true;
+       m_currencyCodeHasBeenSet = true;
     }
     XmlNode dBInstanceCountNode = resultNode.FirstChild("DBInstanceCount");
     if(!dBInstanceCountNode.IsNull())
     {
       m_dBInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceCountNode.GetText()).c_str()).c_str());
       m_dBInstanceCountHasBeenSet = true;
+       m_dBInstanceCountHasBeenSet = true;
     }
     XmlNode productDescriptionNode = resultNode.FirstChild("ProductDescription");
     if(!productDescriptionNode.IsNull())
     {
       m_productDescription = Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText());
       m_productDescriptionHasBeenSet = true;
+       m_productDescriptionHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
     if(!offeringTypeNode.IsNull())
     {
       m_offeringType = Aws::Utils::Xml::DecodeEscapedXmlText(offeringTypeNode.GetText());
       m_offeringTypeHasBeenSet = true;
+       m_offeringTypeHasBeenSet = true;
     }
     XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
     if(!multiAZNode.IsNull())
     {
       m_multiAZ = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAZNode.GetText()).c_str()).c_str());
       m_multiAZHasBeenSet = true;
+       m_multiAZHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode recurringChargesNode = resultNode.FirstChild("RecurringCharges");
     if(!recurringChargesNode.IsNull())
     {
       XmlNode recurringChargesMember = recurringChargesNode.FirstChild("RecurringCharge");
+      m_recurringChargesHasBeenSet = !recurringChargesMember.IsNull();
       while(!recurringChargesMember.IsNull())
       {
         m_recurringCharges.push_back(recurringChargesMember);
         recurringChargesMember = recurringChargesMember.NextNode("RecurringCharge");
       }
 
-      m_recurringChargesHasBeenSet = true;
+       m_recurringChargesHasBeenSet = true;
     }
     XmlNode reservedDBInstanceArnNode = resultNode.FirstChild("ReservedDBInstanceArn");
     if(!reservedDBInstanceArnNode.IsNull())
     {
       m_reservedDBInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(reservedDBInstanceArnNode.GetText());
       m_reservedDBInstanceArnHasBeenSet = true;
+       m_reservedDBInstanceArnHasBeenSet = true;
     }
     XmlNode leaseIdNode = resultNode.FirstChild("LeaseId");
     if(!leaseIdNode.IsNull())
     {
       m_leaseId = Aws::Utils::Xml::DecodeEscapedXmlText(leaseIdNode.GetText());
       m_leaseIdHasBeenSet = true;
+       m_leaseIdHasBeenSet = true;
     }
   }
 

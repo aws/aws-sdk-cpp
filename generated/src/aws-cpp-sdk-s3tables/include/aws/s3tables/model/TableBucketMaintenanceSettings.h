@@ -32,7 +32,7 @@ namespace Model
   class TableBucketMaintenanceSettings
   {
   public:
-    AWS_S3TABLES_API TableBucketMaintenanceSettings();
+    AWS_S3TABLES_API TableBucketMaintenanceSettings() = default;
     AWS_S3TABLES_API TableBucketMaintenanceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API TableBucketMaintenanceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The unreferenced file removal settings for the table bucket.</p>
      */
-    inline const IcebergUnreferencedFileRemovalSettings& GetIcebergUnreferencedFileRemoval() const{ return m_icebergUnreferencedFileRemoval; }
+    inline const IcebergUnreferencedFileRemovalSettings& GetIcebergUnreferencedFileRemoval() const { return m_icebergUnreferencedFileRemoval; }
     inline bool IcebergUnreferencedFileRemovalHasBeenSet() const { return m_icebergUnreferencedFileRemovalHasBeenSet; }
-    inline void SetIcebergUnreferencedFileRemoval(const IcebergUnreferencedFileRemovalSettings& value) { m_icebergUnreferencedFileRemovalHasBeenSet = true; m_icebergUnreferencedFileRemoval = value; }
-    inline void SetIcebergUnreferencedFileRemoval(IcebergUnreferencedFileRemovalSettings&& value) { m_icebergUnreferencedFileRemovalHasBeenSet = true; m_icebergUnreferencedFileRemoval = std::move(value); }
-    inline TableBucketMaintenanceSettings& WithIcebergUnreferencedFileRemoval(const IcebergUnreferencedFileRemovalSettings& value) { SetIcebergUnreferencedFileRemoval(value); return *this;}
-    inline TableBucketMaintenanceSettings& WithIcebergUnreferencedFileRemoval(IcebergUnreferencedFileRemovalSettings&& value) { SetIcebergUnreferencedFileRemoval(std::move(value)); return *this;}
+    template<typename IcebergUnreferencedFileRemovalT = IcebergUnreferencedFileRemovalSettings>
+    void SetIcebergUnreferencedFileRemoval(IcebergUnreferencedFileRemovalT&& value) { m_icebergUnreferencedFileRemovalHasBeenSet = true; m_icebergUnreferencedFileRemoval = std::forward<IcebergUnreferencedFileRemovalT>(value); }
+    template<typename IcebergUnreferencedFileRemovalT = IcebergUnreferencedFileRemovalSettings>
+    TableBucketMaintenanceSettings& WithIcebergUnreferencedFileRemoval(IcebergUnreferencedFileRemovalT&& value) { SetIcebergUnreferencedFileRemoval(std::forward<IcebergUnreferencedFileRemovalT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class Ec2Metadata
   {
   public:
-    AWS_INSPECTOR2_API Ec2Metadata();
+    AWS_INSPECTOR2_API Ec2Metadata() = default;
     AWS_INSPECTOR2_API Ec2Metadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Ec2Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,52 +43,45 @@ namespace Model
     /**
      * <p>The ID of the Amazon Machine Image (AMI) used to launch the instance.</p>
      */
-    inline const Aws::String& GetAmiId() const{ return m_amiId; }
+    inline const Aws::String& GetAmiId() const { return m_amiId; }
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
-    inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
-    inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
-    inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
-    inline Ec2Metadata& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
-    inline Ec2Metadata& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
-    inline Ec2Metadata& WithAmiId(const char* value) { SetAmiId(value); return *this;}
+    template<typename AmiIdT = Aws::String>
+    void SetAmiId(AmiIdT&& value) { m_amiIdHasBeenSet = true; m_amiId = std::forward<AmiIdT>(value); }
+    template<typename AmiIdT = Aws::String>
+    Ec2Metadata& WithAmiId(AmiIdT&& value) { SetAmiId(std::forward<AmiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The platform of the instance.</p>
      */
-    inline const Ec2Platform& GetPlatform() const{ return m_platform; }
+    inline Ec2Platform GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Ec2Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Ec2Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline Ec2Metadata& WithPlatform(const Ec2Platform& value) { SetPlatform(value); return *this;}
-    inline Ec2Metadata& WithPlatform(Ec2Platform&& value) { SetPlatform(std::move(value)); return *this;}
+    inline void SetPlatform(Ec2Platform value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline Ec2Metadata& WithPlatform(Ec2Platform value) { SetPlatform(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags attached to the instance.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Ec2Metadata& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Ec2Metadata& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Ec2Metadata& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Ec2Metadata& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Ec2Metadata& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Ec2Metadata& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Ec2Metadata& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Ec2Metadata& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Ec2Metadata& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Ec2Metadata& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Ec2Metadata& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_amiId;
     bool m_amiIdHasBeenSet = false;
 
-    Ec2Platform m_platform;
+    Ec2Platform m_platform{Ec2Platform::NOT_SET};
     bool m_platformHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

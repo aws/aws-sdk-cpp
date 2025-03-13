@@ -20,18 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-StepAdjustment::StepAdjustment() : 
-    m_metricIntervalLowerBound(0.0),
-    m_metricIntervalLowerBoundHasBeenSet(false),
-    m_metricIntervalUpperBound(0.0),
-    m_metricIntervalUpperBoundHasBeenSet(false),
-    m_scalingAdjustment(0),
-    m_scalingAdjustmentHasBeenSet(false)
-{
-}
-
 StepAdjustment::StepAdjustment(const XmlNode& xmlNode)
-  : StepAdjustment()
 {
   *this = xmlNode;
 }
@@ -47,18 +36,21 @@ StepAdjustment& StepAdjustment::operator =(const XmlNode& xmlNode)
     {
       m_metricIntervalLowerBound = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(metricIntervalLowerBoundNode.GetText()).c_str()).c_str());
       m_metricIntervalLowerBoundHasBeenSet = true;
+       m_metricIntervalLowerBoundHasBeenSet = true;
     }
     XmlNode metricIntervalUpperBoundNode = resultNode.FirstChild("MetricIntervalUpperBound");
     if(!metricIntervalUpperBoundNode.IsNull())
     {
       m_metricIntervalUpperBound = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(metricIntervalUpperBoundNode.GetText()).c_str()).c_str());
       m_metricIntervalUpperBoundHasBeenSet = true;
+       m_metricIntervalUpperBoundHasBeenSet = true;
     }
     XmlNode scalingAdjustmentNode = resultNode.FirstChild("ScalingAdjustment");
     if(!scalingAdjustmentNode.IsNull())
     {
       m_scalingAdjustment = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scalingAdjustmentNode.GetText()).c_str()).c_str());
       m_scalingAdjustmentHasBeenSet = true;
+       m_scalingAdjustmentHasBeenSet = true;
     }
   }
 

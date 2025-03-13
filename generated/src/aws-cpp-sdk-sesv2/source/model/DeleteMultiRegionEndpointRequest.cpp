@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMultiRegionEndpointRequest::DeleteMultiRegionEndpointRequest() : 
-    m_endpointNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMultiRegionEndpointRequest::SerializePayload() const
 {
   return {};

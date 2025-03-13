@@ -18,18 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-CustomConnectorProfileCredentials::CustomConnectorProfileCredentials() : 
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_basicHasBeenSet(false),
-    m_oauth2HasBeenSet(false),
-    m_apiKeyHasBeenSet(false),
-    m_customHasBeenSet(false)
-{
-}
-
 CustomConnectorProfileCredentials::CustomConnectorProfileCredentials(JsonView jsonValue)
-  : CustomConnectorProfileCredentials()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ CustomConnectorProfileCredentials& CustomConnectorProfileCredentials::operator =
   if(jsonValue.ValueExists("authenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("authenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("basic"))
   {
     m_basic = jsonValue.GetObject("basic");
-
     m_basicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oauth2"))
   {
     m_oauth2 = jsonValue.GetObject("oauth2");
-
     m_oauth2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiKey"))
   {
     m_apiKey = jsonValue.GetObject("apiKey");
-
     m_apiKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("custom"))
   {
     m_custom = jsonValue.GetObject("custom");
-
     m_customHasBeenSet = true;
   }
-
   return *this;
 }
 

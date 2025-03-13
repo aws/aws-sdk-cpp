@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateSecurityGroupRequest::CreateSecurityGroupRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

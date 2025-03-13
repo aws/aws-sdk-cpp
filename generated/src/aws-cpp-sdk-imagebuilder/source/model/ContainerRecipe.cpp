@@ -18,32 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ContainerRecipe::ContainerRecipe() : 
-    m_arnHasBeenSet(false),
-    m_containerType(ContainerType::NOT_SET),
-    m_containerTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_componentsHasBeenSet(false),
-    m_instanceConfigurationHasBeenSet(false),
-    m_dockerfileTemplateDataHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_parentImageHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false),
-    m_targetRepositoryHasBeenSet(false)
-{
-}
-
 ContainerRecipe::ContainerRecipe(JsonView jsonValue)
-  : ContainerRecipe()
 {
   *this = jsonValue;
 }
@@ -53,52 +28,38 @@ ContainerRecipe& ContainerRecipe::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerType"))
   {
     m_containerType = ContainerTypeMapper::GetContainerTypeForName(jsonValue.GetString("containerType"));
-
     m_containerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = PlatformMapper::GetPlatformForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetString("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("components"))
   {
     Aws::Utils::Array<JsonView> componentsJsonList = jsonValue.GetArray("components");
@@ -108,49 +69,36 @@ ContainerRecipe& ContainerRecipe::operator =(JsonView jsonValue)
     }
     m_componentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceConfiguration"))
   {
     m_instanceConfiguration = jsonValue.GetObject("instanceConfiguration");
-
     m_instanceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dockerfileTemplateData"))
   {
     m_dockerfileTemplateData = jsonValue.GetString("dockerfileTemplateData");
-
     m_dockerfileTemplateDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encrypted"))
   {
     m_encrypted = jsonValue.GetBool("encrypted");
-
     m_encryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentImage"))
   {
     m_parentImage = jsonValue.GetString("parentImage");
-
     m_parentImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateCreated"))
   {
     m_dateCreated = jsonValue.GetString("dateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -160,21 +108,16 @@ ContainerRecipe& ContainerRecipe::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workingDirectory"))
   {
     m_workingDirectory = jsonValue.GetString("workingDirectory");
-
     m_workingDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetRepository"))
   {
     m_targetRepository = jsonValue.GetObject("targetRepository");
-
     m_targetRepositoryHasBeenSet = true;
   }
-
   return *this;
 }
 

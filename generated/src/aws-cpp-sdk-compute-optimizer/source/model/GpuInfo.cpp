@@ -18,13 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-GpuInfo::GpuInfo() : 
-    m_gpusHasBeenSet(false)
-{
-}
-
 GpuInfo::GpuInfo(JsonView jsonValue)
-  : GpuInfo()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ GpuInfo& GpuInfo::operator =(JsonView jsonValue)
     }
     m_gpusHasBeenSet = true;
   }
-
   return *this;
 }
 

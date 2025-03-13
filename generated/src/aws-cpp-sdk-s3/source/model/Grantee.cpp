@@ -20,18 +20,7 @@ namespace S3
 namespace Model
 {
 
-Grantee::Grantee() : 
-    m_displayNameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_iDHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_uRIHasBeenSet(false)
-{
-}
-
 Grantee::Grantee(const XmlNode& xmlNode)
-  : Grantee()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ Grantee& Grantee::operator =(const XmlNode& xmlNode)
     {
       m_displayName = Aws::Utils::Xml::DecodeEscapedXmlText(displayNameNode.GetText());
       m_displayNameHasBeenSet = true;
+       m_displayNameHasBeenSet = true;
     }
     XmlNode emailAddressNode = resultNode.FirstChild("EmailAddress");
     if(!emailAddressNode.IsNull())
     {
       m_emailAddress = Aws::Utils::Xml::DecodeEscapedXmlText(emailAddressNode.GetText());
       m_emailAddressHasBeenSet = true;
+       m_emailAddressHasBeenSet = true;
     }
     XmlNode iDNode = resultNode.FirstChild("ID");
     if(!iDNode.IsNull())
     {
       m_iD = Aws::Utils::Xml::DecodeEscapedXmlText(iDNode.GetText());
       m_iDHasBeenSet = true;
+       m_iDHasBeenSet = true;
     }
     auto type = resultNode.GetAttributeValue("xsi:type");
     if(!type.empty())
     {
-      m_type = TypeMapper::GetTypeForName(StringUtils::Trim(type.c_str()).c_str());
+      m_type = TypeMapper::GetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(type).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode uRINode = resultNode.FirstChild("URI");
     if(!uRINode.IsNull())
     {
       m_uRI = Aws::Utils::Xml::DecodeEscapedXmlText(uRINode.GetText());
       m_uRIHasBeenSet = true;
+       m_uRIHasBeenSet = true;
     }
   }
 

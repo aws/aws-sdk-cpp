@@ -33,7 +33,7 @@ namespace Model
   class ComputeSavingsPlans
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API ComputeSavingsPlans();
+    AWS_COSTOPTIMIZATIONHUB_API ComputeSavingsPlans() = default;
     AWS_COSTOPTIMIZATIONHUB_API ComputeSavingsPlans(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API ComputeSavingsPlans& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Configuration details of the Compute Savings Plans to purchase.</p>
      */
-    inline const ComputeSavingsPlansConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const ComputeSavingsPlansConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const ComputeSavingsPlansConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(ComputeSavingsPlansConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline ComputeSavingsPlans& WithConfiguration(const ComputeSavingsPlansConfiguration& value) { SetConfiguration(value); return *this;}
-    inline ComputeSavingsPlans& WithConfiguration(ComputeSavingsPlansConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = ComputeSavingsPlansConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = ComputeSavingsPlansConfiguration>
+    ComputeSavingsPlans& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Cost impact of the Savings Plans purchase recommendation.</p>
      */
-    inline const SavingsPlansCostCalculation& GetCostCalculation() const{ return m_costCalculation; }
+    inline const SavingsPlansCostCalculation& GetCostCalculation() const { return m_costCalculation; }
     inline bool CostCalculationHasBeenSet() const { return m_costCalculationHasBeenSet; }
-    inline void SetCostCalculation(const SavingsPlansCostCalculation& value) { m_costCalculationHasBeenSet = true; m_costCalculation = value; }
-    inline void SetCostCalculation(SavingsPlansCostCalculation&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::move(value); }
-    inline ComputeSavingsPlans& WithCostCalculation(const SavingsPlansCostCalculation& value) { SetCostCalculation(value); return *this;}
-    inline ComputeSavingsPlans& WithCostCalculation(SavingsPlansCostCalculation&& value) { SetCostCalculation(std::move(value)); return *this;}
+    template<typename CostCalculationT = SavingsPlansCostCalculation>
+    void SetCostCalculation(CostCalculationT&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::forward<CostCalculationT>(value); }
+    template<typename CostCalculationT = SavingsPlansCostCalculation>
+    ComputeSavingsPlans& WithCostCalculation(CostCalculationT&& value) { SetCostCalculation(std::forward<CostCalculationT>(value)); return *this;}
     ///@}
   private:
 

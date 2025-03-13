@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMediaInsightsPipelineConfigurationRequest::DeleteMediaInsightsPipelineConfigurationRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMediaInsightsPipelineConfigurationRequest::SerializePayload() const
 {
   return {};

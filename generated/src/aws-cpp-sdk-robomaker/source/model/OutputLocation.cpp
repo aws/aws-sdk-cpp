@@ -18,14 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-OutputLocation::OutputLocation() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false)
-{
-}
-
 OutputLocation::OutputLocation(JsonView jsonValue)
-  : OutputLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OutputLocation& OutputLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Prefix"))
   {
     m_s3Prefix = jsonValue.GetString("s3Prefix");
-
     m_s3PrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

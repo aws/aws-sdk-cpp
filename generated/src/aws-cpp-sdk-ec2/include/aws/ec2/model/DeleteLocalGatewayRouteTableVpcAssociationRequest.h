@@ -21,7 +21,7 @@ namespace Model
   class DeleteLocalGatewayRouteTableVpcAssociationRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteLocalGatewayRouteTableVpcAssociationRequest();
+    AWS_EC2_API DeleteLocalGatewayRouteTableVpcAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the association.</p>
      */
-    inline const Aws::String& GetLocalGatewayRouteTableVpcAssociationId() const{ return m_localGatewayRouteTableVpcAssociationId; }
+    inline const Aws::String& GetLocalGatewayRouteTableVpcAssociationId() const { return m_localGatewayRouteTableVpcAssociationId; }
     inline bool LocalGatewayRouteTableVpcAssociationIdHasBeenSet() const { return m_localGatewayRouteTableVpcAssociationIdHasBeenSet; }
-    inline void SetLocalGatewayRouteTableVpcAssociationId(const Aws::String& value) { m_localGatewayRouteTableVpcAssociationIdHasBeenSet = true; m_localGatewayRouteTableVpcAssociationId = value; }
-    inline void SetLocalGatewayRouteTableVpcAssociationId(Aws::String&& value) { m_localGatewayRouteTableVpcAssociationIdHasBeenSet = true; m_localGatewayRouteTableVpcAssociationId = std::move(value); }
-    inline void SetLocalGatewayRouteTableVpcAssociationId(const char* value) { m_localGatewayRouteTableVpcAssociationIdHasBeenSet = true; m_localGatewayRouteTableVpcAssociationId.assign(value); }
-    inline DeleteLocalGatewayRouteTableVpcAssociationRequest& WithLocalGatewayRouteTableVpcAssociationId(const Aws::String& value) { SetLocalGatewayRouteTableVpcAssociationId(value); return *this;}
-    inline DeleteLocalGatewayRouteTableVpcAssociationRequest& WithLocalGatewayRouteTableVpcAssociationId(Aws::String&& value) { SetLocalGatewayRouteTableVpcAssociationId(std::move(value)); return *this;}
-    inline DeleteLocalGatewayRouteTableVpcAssociationRequest& WithLocalGatewayRouteTableVpcAssociationId(const char* value) { SetLocalGatewayRouteTableVpcAssociationId(value); return *this;}
+    template<typename LocalGatewayRouteTableVpcAssociationIdT = Aws::String>
+    void SetLocalGatewayRouteTableVpcAssociationId(LocalGatewayRouteTableVpcAssociationIdT&& value) { m_localGatewayRouteTableVpcAssociationIdHasBeenSet = true; m_localGatewayRouteTableVpcAssociationId = std::forward<LocalGatewayRouteTableVpcAssociationIdT>(value); }
+    template<typename LocalGatewayRouteTableVpcAssociationIdT = Aws::String>
+    DeleteLocalGatewayRouteTableVpcAssociationRequest& WithLocalGatewayRouteTableVpcAssociationId(LocalGatewayRouteTableVpcAssociationIdT&& value) { SetLocalGatewayRouteTableVpcAssociationId(std::forward<LocalGatewayRouteTableVpcAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteLocalGatewayRouteTableVpcAssociationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_localGatewayRouteTableVpcAssociationId;
     bool m_localGatewayRouteTableVpcAssociationIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

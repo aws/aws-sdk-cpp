@@ -18,16 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-MedicalScribeChannelDefinition::MedicalScribeChannelDefinition() : 
-    m_channelId(0),
-    m_channelIdHasBeenSet(false),
-    m_participantRole(MedicalScribeParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false)
-{
-}
-
 MedicalScribeChannelDefinition::MedicalScribeChannelDefinition(JsonView jsonValue)
-  : MedicalScribeChannelDefinition()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MedicalScribeChannelDefinition& MedicalScribeChannelDefinition::operator =(JsonV
   if(jsonValue.ValueExists("ChannelId"))
   {
     m_channelId = jsonValue.GetInteger("ChannelId");
-
     m_channelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = MedicalScribeParticipantRoleMapper::GetMedicalScribeParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
-
     m_participantRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

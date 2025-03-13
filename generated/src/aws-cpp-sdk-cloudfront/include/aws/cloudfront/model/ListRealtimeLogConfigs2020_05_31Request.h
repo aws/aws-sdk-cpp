@@ -25,7 +25,7 @@ namespace Model
   class ListRealtimeLogConfigs2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API ListRealtimeLogConfigs2020_05_31Request();
+    AWS_CLOUDFRONT_API ListRealtimeLogConfigs2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The maximum number of real-time log configurations that you want in the
      * response.</p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
-    inline ListRealtimeLogConfigs2020_05_31Request& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListRealtimeLogConfigs2020_05_31Request& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListRealtimeLogConfigs2020_05_31Request& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListRealtimeLogConfigs2020_05_31Request& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * the list, set this field's value to the value of <code>NextMarker</code> from
      * the current page's response.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListRealtimeLogConfigs2020_05_31Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListRealtimeLogConfigs2020_05_31Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListRealtimeLogConfigs2020_05_31Request& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListRealtimeLogConfigs2020_05_31Request& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 

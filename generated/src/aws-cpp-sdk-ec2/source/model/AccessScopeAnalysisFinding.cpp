@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AccessScopeAnalysisFinding::AccessScopeAnalysisFinding() : 
-    m_networkInsightsAccessScopeAnalysisIdHasBeenSet(false),
-    m_networkInsightsAccessScopeIdHasBeenSet(false),
-    m_findingIdHasBeenSet(false),
-    m_findingComponentsHasBeenSet(false)
-{
-}
-
 AccessScopeAnalysisFinding::AccessScopeAnalysisFinding(const XmlNode& xmlNode)
-  : AccessScopeAnalysisFinding()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ AccessScopeAnalysisFinding& AccessScopeAnalysisFinding::operator =(const XmlNode
     {
       m_networkInsightsAccessScopeAnalysisId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsAccessScopeAnalysisIdNode.GetText());
       m_networkInsightsAccessScopeAnalysisIdHasBeenSet = true;
+       m_networkInsightsAccessScopeAnalysisIdHasBeenSet = true;
     }
     XmlNode networkInsightsAccessScopeIdNode = resultNode.FirstChild("networkInsightsAccessScopeId");
     if(!networkInsightsAccessScopeIdNode.IsNull())
     {
       m_networkInsightsAccessScopeId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsAccessScopeIdNode.GetText());
       m_networkInsightsAccessScopeIdHasBeenSet = true;
+       m_networkInsightsAccessScopeIdHasBeenSet = true;
     }
     XmlNode findingIdNode = resultNode.FirstChild("findingId");
     if(!findingIdNode.IsNull())
     {
       m_findingId = Aws::Utils::Xml::DecodeEscapedXmlText(findingIdNode.GetText());
       m_findingIdHasBeenSet = true;
+       m_findingIdHasBeenSet = true;
     }
     XmlNode findingComponentsNode = resultNode.FirstChild("findingComponentSet");
     if(!findingComponentsNode.IsNull())
     {
       XmlNode findingComponentsMember = findingComponentsNode.FirstChild("item");
+      m_findingComponentsHasBeenSet = !findingComponentsMember.IsNull();
       while(!findingComponentsMember.IsNull())
       {
         m_findingComponents.push_back(findingComponentsMember);
         findingComponentsMember = findingComponentsMember.NextNode("item");
       }
 
-      m_findingComponentsHasBeenSet = true;
+       m_findingComponentsHasBeenSet = true;
     }
   }
 

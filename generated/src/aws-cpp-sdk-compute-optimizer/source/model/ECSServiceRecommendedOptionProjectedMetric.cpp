@@ -18,17 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ECSServiceRecommendedOptionProjectedMetric::ECSServiceRecommendedOptionProjectedMetric() : 
-    m_recommendedCpuUnits(0),
-    m_recommendedCpuUnitsHasBeenSet(false),
-    m_recommendedMemorySize(0),
-    m_recommendedMemorySizeHasBeenSet(false),
-    m_projectedMetricsHasBeenSet(false)
-{
-}
-
 ECSServiceRecommendedOptionProjectedMetric::ECSServiceRecommendedOptionProjectedMetric(JsonView jsonValue)
-  : ECSServiceRecommendedOptionProjectedMetric()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ECSServiceRecommendedOptionProjectedMetric& ECSServiceRecommendedOptionProjected
   if(jsonValue.ValueExists("recommendedCpuUnits"))
   {
     m_recommendedCpuUnits = jsonValue.GetInteger("recommendedCpuUnits");
-
     m_recommendedCpuUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendedMemorySize"))
   {
     m_recommendedMemorySize = jsonValue.GetInteger("recommendedMemorySize");
-
     m_recommendedMemorySizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectedMetrics"))
   {
     Aws::Utils::Array<JsonView> projectedMetricsJsonList = jsonValue.GetArray("projectedMetrics");
@@ -58,7 +44,6 @@ ECSServiceRecommendedOptionProjectedMetric& ECSServiceRecommendedOptionProjected
     }
     m_projectedMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

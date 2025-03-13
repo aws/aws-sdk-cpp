@@ -33,7 +33,7 @@ namespace Model
   class MssPackage
   {
   public:
-    AWS_MEDIAPACKAGE_API MssPackage();
+    AWS_MEDIAPACKAGE_API MssPackage() = default;
     AWS_MEDIAPACKAGE_API MssPackage(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGE_API MssPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,19 +41,19 @@ namespace Model
 
     ///@{
     
-    inline const MssEncryption& GetEncryption() const{ return m_encryption; }
+    inline const MssEncryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const MssEncryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(MssEncryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline MssPackage& WithEncryption(const MssEncryption& value) { SetEncryption(value); return *this;}
-    inline MssPackage& WithEncryption(MssEncryption&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = MssEncryption>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = MssEncryption>
+    MssPackage& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The time window (in seconds) contained in each manifest.
      */
-    inline int GetManifestWindowSeconds() const{ return m_manifestWindowSeconds; }
+    inline int GetManifestWindowSeconds() const { return m_manifestWindowSeconds; }
     inline bool ManifestWindowSecondsHasBeenSet() const { return m_manifestWindowSecondsHasBeenSet; }
     inline void SetManifestWindowSeconds(int value) { m_manifestWindowSecondsHasBeenSet = true; m_manifestWindowSeconds = value; }
     inline MssPackage& WithManifestWindowSeconds(int value) { SetManifestWindowSeconds(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
     /**
      * The duration (in seconds) of each segment.
      */
-    inline int GetSegmentDurationSeconds() const{ return m_segmentDurationSeconds; }
+    inline int GetSegmentDurationSeconds() const { return m_segmentDurationSeconds; }
     inline bool SegmentDurationSecondsHasBeenSet() const { return m_segmentDurationSecondsHasBeenSet; }
     inline void SetSegmentDurationSeconds(int value) { m_segmentDurationSecondsHasBeenSet = true; m_segmentDurationSeconds = value; }
     inline MssPackage& WithSegmentDurationSeconds(int value) { SetSegmentDurationSeconds(value); return *this;}
@@ -71,22 +71,22 @@ namespace Model
 
     ///@{
     
-    inline const StreamSelection& GetStreamSelection() const{ return m_streamSelection; }
+    inline const StreamSelection& GetStreamSelection() const { return m_streamSelection; }
     inline bool StreamSelectionHasBeenSet() const { return m_streamSelectionHasBeenSet; }
-    inline void SetStreamSelection(const StreamSelection& value) { m_streamSelectionHasBeenSet = true; m_streamSelection = value; }
-    inline void SetStreamSelection(StreamSelection&& value) { m_streamSelectionHasBeenSet = true; m_streamSelection = std::move(value); }
-    inline MssPackage& WithStreamSelection(const StreamSelection& value) { SetStreamSelection(value); return *this;}
-    inline MssPackage& WithStreamSelection(StreamSelection&& value) { SetStreamSelection(std::move(value)); return *this;}
+    template<typename StreamSelectionT = StreamSelection>
+    void SetStreamSelection(StreamSelectionT&& value) { m_streamSelectionHasBeenSet = true; m_streamSelection = std::forward<StreamSelectionT>(value); }
+    template<typename StreamSelectionT = StreamSelection>
+    MssPackage& WithStreamSelection(StreamSelectionT&& value) { SetStreamSelection(std::forward<StreamSelectionT>(value)); return *this;}
     ///@}
   private:
 
     MssEncryption m_encryption;
     bool m_encryptionHasBeenSet = false;
 
-    int m_manifestWindowSeconds;
+    int m_manifestWindowSeconds{0};
     bool m_manifestWindowSecondsHasBeenSet = false;
 
-    int m_segmentDurationSeconds;
+    int m_segmentDurationSeconds{0};
     bool m_segmentDurationSecondsHasBeenSet = false;
 
     StreamSelection m_streamSelection;

@@ -34,7 +34,7 @@ namespace Model
   class PreviewOverride
   {
   public:
-    AWS_SSMCONTACTS_API PreviewOverride();
+    AWS_SSMCONTACTS_API PreviewOverride() = default;
     AWS_SSMCONTACTS_API PreviewOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API PreviewOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,49 +44,48 @@ namespace Model
     /**
      * <p>Information about contacts to add to an on-call rotation override.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNewMembers() const{ return m_newMembers; }
+    inline const Aws::Vector<Aws::String>& GetNewMembers() const { return m_newMembers; }
     inline bool NewMembersHasBeenSet() const { return m_newMembersHasBeenSet; }
-    inline void SetNewMembers(const Aws::Vector<Aws::String>& value) { m_newMembersHasBeenSet = true; m_newMembers = value; }
-    inline void SetNewMembers(Aws::Vector<Aws::String>&& value) { m_newMembersHasBeenSet = true; m_newMembers = std::move(value); }
-    inline PreviewOverride& WithNewMembers(const Aws::Vector<Aws::String>& value) { SetNewMembers(value); return *this;}
-    inline PreviewOverride& WithNewMembers(Aws::Vector<Aws::String>&& value) { SetNewMembers(std::move(value)); return *this;}
-    inline PreviewOverride& AddNewMembers(const Aws::String& value) { m_newMembersHasBeenSet = true; m_newMembers.push_back(value); return *this; }
-    inline PreviewOverride& AddNewMembers(Aws::String&& value) { m_newMembersHasBeenSet = true; m_newMembers.push_back(std::move(value)); return *this; }
-    inline PreviewOverride& AddNewMembers(const char* value) { m_newMembersHasBeenSet = true; m_newMembers.push_back(value); return *this; }
+    template<typename NewMembersT = Aws::Vector<Aws::String>>
+    void SetNewMembers(NewMembersT&& value) { m_newMembersHasBeenSet = true; m_newMembers = std::forward<NewMembersT>(value); }
+    template<typename NewMembersT = Aws::Vector<Aws::String>>
+    PreviewOverride& WithNewMembers(NewMembersT&& value) { SetNewMembers(std::forward<NewMembersT>(value)); return *this;}
+    template<typename NewMembersT = Aws::String>
+    PreviewOverride& AddNewMembers(NewMembersT&& value) { m_newMembersHasBeenSet = true; m_newMembers.emplace_back(std::forward<NewMembersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the time a rotation override would begin.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline PreviewOverride& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline PreviewOverride& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    PreviewOverride& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the time a rotation override would end.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline PreviewOverride& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline PreviewOverride& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    PreviewOverride& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_newMembers;
     bool m_newMembersHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
   };
 

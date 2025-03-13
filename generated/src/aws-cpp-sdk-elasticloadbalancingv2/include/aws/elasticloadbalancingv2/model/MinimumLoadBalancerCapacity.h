@@ -29,7 +29,7 @@ namespace Model
   class MinimumLoadBalancerCapacity
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API MinimumLoadBalancerCapacity();
+    AWS_ELASTICLOADBALANCINGV2_API MinimumLoadBalancerCapacity() = default;
     AWS_ELASTICLOADBALANCINGV2_API MinimumLoadBalancerCapacity(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API MinimumLoadBalancerCapacity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>The number of capacity units.</p>
      */
-    inline int GetCapacityUnits() const{ return m_capacityUnits; }
+    inline int GetCapacityUnits() const { return m_capacityUnits; }
     inline bool CapacityUnitsHasBeenSet() const { return m_capacityUnitsHasBeenSet; }
     inline void SetCapacityUnits(int value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = value; }
     inline MinimumLoadBalancerCapacity& WithCapacityUnits(int value) { SetCapacityUnits(value); return *this;}
     ///@}
   private:
 
-    int m_capacityUnits;
+    int m_capacityUnits{0};
     bool m_capacityUnitsHasBeenSet = false;
   };
 

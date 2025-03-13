@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyVpnTunnelCertificateResponse::ModifyVpnTunnelCertificateResponse()
-{
-}
-
 ModifyVpnTunnelCertificateResponse::ModifyVpnTunnelCertificateResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ModifyVpnTunnelCertificateResponse& ModifyVpnTunnelCertificateResponse::operator
     if(!vpnConnectionNode.IsNull())
     {
       m_vpnConnection = vpnConnectionNode;
+      m_vpnConnectionHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ ModifyVpnTunnelCertificateResponse& ModifyVpnTunnelCertificateResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyVpnTunnelCertificateResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

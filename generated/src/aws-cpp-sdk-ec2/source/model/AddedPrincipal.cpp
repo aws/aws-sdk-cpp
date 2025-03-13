@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AddedPrincipal::AddedPrincipal() : 
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_servicePermissionIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
-{
-}
-
 AddedPrincipal::AddedPrincipal(const XmlNode& xmlNode)
-  : AddedPrincipal()
 {
   *this = xmlNode;
 }
@@ -44,26 +34,30 @@ AddedPrincipal& AddedPrincipal::operator =(const XmlNode& xmlNode)
     XmlNode principalTypeNode = resultNode.FirstChild("principalType");
     if(!principalTypeNode.IsNull())
     {
-      m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(principalTypeNode.GetText()).c_str()).c_str());
+      m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(principalTypeNode.GetText()).c_str()));
       m_principalTypeHasBeenSet = true;
+       m_principalTypeHasBeenSet = true;
     }
     XmlNode principalNode = resultNode.FirstChild("principal");
     if(!principalNode.IsNull())
     {
       m_principal = Aws::Utils::Xml::DecodeEscapedXmlText(principalNode.GetText());
       m_principalHasBeenSet = true;
+       m_principalHasBeenSet = true;
     }
     XmlNode servicePermissionIdNode = resultNode.FirstChild("servicePermissionId");
     if(!servicePermissionIdNode.IsNull())
     {
       m_servicePermissionId = Aws::Utils::Xml::DecodeEscapedXmlText(servicePermissionIdNode.GetText());
       m_servicePermissionIdHasBeenSet = true;
+       m_servicePermissionIdHasBeenSet = true;
     }
     XmlNode serviceIdNode = resultNode.FirstChild("serviceId");
     if(!serviceIdNode.IsNull())
     {
       m_serviceId = Aws::Utils::Xml::DecodeEscapedXmlText(serviceIdNode.GetText());
       m_serviceIdHasBeenSet = true;
+       m_serviceIdHasBeenSet = true;
     }
   }
 

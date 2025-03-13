@@ -18,17 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-TagHealth::TagHealth() : 
-    m_appBoundaryKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false),
-    m_insightHasBeenSet(false),
-    m_analyzedResourceCount(0),
-    m_analyzedResourceCountHasBeenSet(false)
-{
-}
-
 TagHealth::TagHealth(JsonView jsonValue)
-  : TagHealth()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TagHealth& TagHealth::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppBoundaryKey"))
   {
     m_appBoundaryKey = jsonValue.GetString("AppBoundaryKey");
-
     m_appBoundaryKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagValue"))
   {
     m_tagValue = jsonValue.GetString("TagValue");
-
     m_tagValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Insight"))
   {
     m_insight = jsonValue.GetObject("Insight");
-
     m_insightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalyzedResourceCount"))
   {
     m_analyzedResourceCount = jsonValue.GetInt64("AnalyzedResourceCount");
-
     m_analyzedResourceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

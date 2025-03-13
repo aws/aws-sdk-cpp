@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRoleMembershipsRequest::ListRoleMembershipsRequest() : 
-    m_role(Role::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String ListRoleMembershipsRequest::SerializePayload() const
 {
   return {};

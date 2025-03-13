@@ -18,13 +18,7 @@ namespace EKS
 namespace Model
 {
 
-ClusterHealth::ClusterHealth() : 
-    m_issuesHasBeenSet(false)
-{
-}
-
 ClusterHealth::ClusterHealth(JsonView jsonValue)
-  : ClusterHealth()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ClusterHealth& ClusterHealth::operator =(JsonView jsonValue)
     }
     m_issuesHasBeenSet = true;
   }
-
   return *this;
 }
 

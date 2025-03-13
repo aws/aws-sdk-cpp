@@ -34,7 +34,7 @@ namespace Model
   class AxisDataOptions
   {
   public:
-    AWS_QUICKSIGHT_API AxisDataOptions();
+    AWS_QUICKSIGHT_API AxisDataOptions() = default;
     AWS_QUICKSIGHT_API AxisDataOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AxisDataOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The options for an axis with a numeric field.</p>
      */
-    inline const NumericAxisOptions& GetNumericAxisOptions() const{ return m_numericAxisOptions; }
+    inline const NumericAxisOptions& GetNumericAxisOptions() const { return m_numericAxisOptions; }
     inline bool NumericAxisOptionsHasBeenSet() const { return m_numericAxisOptionsHasBeenSet; }
-    inline void SetNumericAxisOptions(const NumericAxisOptions& value) { m_numericAxisOptionsHasBeenSet = true; m_numericAxisOptions = value; }
-    inline void SetNumericAxisOptions(NumericAxisOptions&& value) { m_numericAxisOptionsHasBeenSet = true; m_numericAxisOptions = std::move(value); }
-    inline AxisDataOptions& WithNumericAxisOptions(const NumericAxisOptions& value) { SetNumericAxisOptions(value); return *this;}
-    inline AxisDataOptions& WithNumericAxisOptions(NumericAxisOptions&& value) { SetNumericAxisOptions(std::move(value)); return *this;}
+    template<typename NumericAxisOptionsT = NumericAxisOptions>
+    void SetNumericAxisOptions(NumericAxisOptionsT&& value) { m_numericAxisOptionsHasBeenSet = true; m_numericAxisOptions = std::forward<NumericAxisOptionsT>(value); }
+    template<typename NumericAxisOptionsT = NumericAxisOptions>
+    AxisDataOptions& WithNumericAxisOptions(NumericAxisOptionsT&& value) { SetNumericAxisOptions(std::forward<NumericAxisOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options for an axis with a date field.</p>
      */
-    inline const DateAxisOptions& GetDateAxisOptions() const{ return m_dateAxisOptions; }
+    inline const DateAxisOptions& GetDateAxisOptions() const { return m_dateAxisOptions; }
     inline bool DateAxisOptionsHasBeenSet() const { return m_dateAxisOptionsHasBeenSet; }
-    inline void SetDateAxisOptions(const DateAxisOptions& value) { m_dateAxisOptionsHasBeenSet = true; m_dateAxisOptions = value; }
-    inline void SetDateAxisOptions(DateAxisOptions&& value) { m_dateAxisOptionsHasBeenSet = true; m_dateAxisOptions = std::move(value); }
-    inline AxisDataOptions& WithDateAxisOptions(const DateAxisOptions& value) { SetDateAxisOptions(value); return *this;}
-    inline AxisDataOptions& WithDateAxisOptions(DateAxisOptions&& value) { SetDateAxisOptions(std::move(value)); return *this;}
+    template<typename DateAxisOptionsT = DateAxisOptions>
+    void SetDateAxisOptions(DateAxisOptionsT&& value) { m_dateAxisOptionsHasBeenSet = true; m_dateAxisOptions = std::forward<DateAxisOptionsT>(value); }
+    template<typename DateAxisOptionsT = DateAxisOptions>
+    AxisDataOptions& WithDateAxisOptions(DateAxisOptionsT&& value) { SetDateAxisOptions(std::forward<DateAxisOptionsT>(value)); return *this;}
     ///@}
   private:
 

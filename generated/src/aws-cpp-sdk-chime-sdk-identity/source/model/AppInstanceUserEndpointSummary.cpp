@@ -18,20 +18,7 @@ namespace ChimeSDKIdentity
 namespace Model
 {
 
-AppInstanceUserEndpointSummary::AppInstanceUserEndpointSummary() : 
-    m_appInstanceUserArnHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(AppInstanceUserEndpointType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_allowMessages(AllowMessages::NOT_SET),
-    m_allowMessagesHasBeenSet(false),
-    m_endpointStateHasBeenSet(false)
-{
-}
-
 AppInstanceUserEndpointSummary::AppInstanceUserEndpointSummary(JsonView jsonValue)
-  : AppInstanceUserEndpointSummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ AppInstanceUserEndpointSummary& AppInstanceUserEndpointSummary::operator =(JsonV
   if(jsonValue.ValueExists("AppInstanceUserArn"))
   {
     m_appInstanceUserArn = jsonValue.GetString("AppInstanceUserArn");
-
     m_appInstanceUserArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AppInstanceUserEndpointTypeMapper::GetAppInstanceUserEndpointTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowMessages"))
   {
     m_allowMessages = AllowMessagesMapper::GetAllowMessagesForName(jsonValue.GetString("AllowMessages"));
-
     m_allowMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointState"))
   {
     m_endpointState = jsonValue.GetObject("EndpointState");
-
     m_endpointStateHasBeenSet = true;
   }
-
   return *this;
 }
 

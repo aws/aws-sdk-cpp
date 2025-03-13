@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendUsersMessagesRequest::SendUsersMessagesRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_sendUsersMessageRequestHasBeenSet(false)
-{
-}
-
 Aws::String SendUsersMessagesRequest::SerializePayload() const
 {
   JsonValue payload;

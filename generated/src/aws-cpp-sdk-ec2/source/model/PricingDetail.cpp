@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PricingDetail::PricingDetail() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false)
-{
-}
-
 PricingDetail::PricingDetail(const XmlNode& xmlNode)
-  : PricingDetail()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ PricingDetail& PricingDetail::operator =(const XmlNode& xmlNode)
     {
       m_count = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
       m_countHasBeenSet = true;
+       m_countHasBeenSet = true;
     }
     XmlNode priceNode = resultNode.FirstChild("price");
     if(!priceNode.IsNull())
     {
       m_price = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceNode.GetText()).c_str()).c_str());
       m_priceHasBeenSet = true;
+       m_priceHasBeenSet = true;
     }
   }
 

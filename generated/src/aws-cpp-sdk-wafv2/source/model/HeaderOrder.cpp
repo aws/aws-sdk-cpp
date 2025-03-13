@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-HeaderOrder::HeaderOrder() : 
-    m_oversizeHandling(OversizeHandling::NOT_SET),
-    m_oversizeHandlingHasBeenSet(false)
-{
-}
-
 HeaderOrder::HeaderOrder(JsonView jsonValue)
-  : HeaderOrder()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ HeaderOrder& HeaderOrder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OversizeHandling"))
   {
     m_oversizeHandling = OversizeHandlingMapper::GetOversizeHandlingForName(jsonValue.GetString("OversizeHandling"));
-
     m_oversizeHandlingHasBeenSet = true;
   }
-
   return *this;
 }
 

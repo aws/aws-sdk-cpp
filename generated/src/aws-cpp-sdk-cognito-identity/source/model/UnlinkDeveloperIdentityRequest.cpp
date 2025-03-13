@@ -12,14 +12,6 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UnlinkDeveloperIdentityRequest::UnlinkDeveloperIdentityRequest() : 
-    m_identityIdHasBeenSet(false),
-    m_identityPoolIdHasBeenSet(false),
-    m_developerProviderNameHasBeenSet(false),
-    m_developerUserIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String UnlinkDeveloperIdentityRequest::SerializePayload() const
 {
   JsonValue payload;

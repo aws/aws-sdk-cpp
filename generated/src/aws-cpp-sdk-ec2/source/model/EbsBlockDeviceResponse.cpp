@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EbsBlockDeviceResponse::EbsBlockDeviceResponse() : 
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false)
-{
-}
-
 EbsBlockDeviceResponse::EbsBlockDeviceResponse(const XmlNode& xmlNode)
-  : EbsBlockDeviceResponse()
 {
   *this = xmlNode;
 }
@@ -55,48 +36,56 @@ EbsBlockDeviceResponse& EbsBlockDeviceResponse::operator =(const XmlNode& xmlNod
     {
       m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptedNode.GetText()).c_str()).c_str());
       m_encryptedHasBeenSet = true;
+       m_encryptedHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())
     {
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
+       m_deleteOnTerminationHasBeenSet = true;
     }
     XmlNode iopsNode = resultNode.FirstChild("iops");
     if(!iopsNode.IsNull())
     {
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iopsNode.GetText()).c_str()).c_str());
       m_iopsHasBeenSet = true;
+       m_iopsHasBeenSet = true;
     }
     XmlNode throughputNode = resultNode.FirstChild("throughput");
     if(!throughputNode.IsNull())
     {
       m_throughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(throughputNode.GetText()).c_str()).c_str());
       m_throughputHasBeenSet = true;
+       m_throughputHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
+       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
       m_snapshotIdHasBeenSet = true;
+       m_snapshotIdHasBeenSet = true;
     }
     XmlNode volumeSizeNode = resultNode.FirstChild("volumeSize");
     if(!volumeSizeNode.IsNull())
     {
       m_volumeSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeSizeNode.GetText()).c_str()).c_str());
       m_volumeSizeHasBeenSet = true;
+       m_volumeSizeHasBeenSet = true;
     }
     XmlNode volumeTypeNode = resultNode.FirstChild("volumeType");
     if(!volumeTypeNode.IsNull())
     {
-      m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeTypeNode.GetText()).c_str()).c_str());
+      m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeTypeNode.GetText()).c_str()));
       m_volumeTypeHasBeenSet = true;
+       m_volumeTypeHasBeenSet = true;
     }
   }
 

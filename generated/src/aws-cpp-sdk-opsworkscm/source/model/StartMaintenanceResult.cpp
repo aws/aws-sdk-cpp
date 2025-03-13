@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartMaintenanceResult::StartMaintenanceResult()
-{
-}
-
 StartMaintenanceResult::StartMaintenanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartMaintenanceResult& StartMaintenanceResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("Server"))
   {
     m_server = jsonValue.GetObject("Server");
-
+    m_serverHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

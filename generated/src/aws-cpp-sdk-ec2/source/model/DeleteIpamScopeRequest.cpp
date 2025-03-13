@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteIpamScopeRequest::DeleteIpamScopeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipamScopeIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIpamScopeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

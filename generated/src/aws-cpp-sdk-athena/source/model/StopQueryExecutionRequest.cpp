@@ -12,12 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopQueryExecutionRequest::StopQueryExecutionRequest() : 
-    m_queryExecutionId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_queryExecutionIdHasBeenSet(true)
-{
-}
-
 Aws::String StopQueryExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

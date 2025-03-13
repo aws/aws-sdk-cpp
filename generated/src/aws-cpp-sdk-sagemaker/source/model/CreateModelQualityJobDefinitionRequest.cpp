@@ -12,20 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelQualityJobDefinitionRequest::CreateModelQualityJobDefinitionRequest() : 
-    m_jobDefinitionNameHasBeenSet(false),
-    m_modelQualityBaselineConfigHasBeenSet(false),
-    m_modelQualityAppSpecificationHasBeenSet(false),
-    m_modelQualityJobInputHasBeenSet(false),
-    m_modelQualityJobOutputConfigHasBeenSet(false),
-    m_jobResourcesHasBeenSet(false),
-    m_networkConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelQualityJobDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

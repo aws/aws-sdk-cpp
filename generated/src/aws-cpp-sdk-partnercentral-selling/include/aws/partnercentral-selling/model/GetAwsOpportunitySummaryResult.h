@@ -38,7 +38,7 @@ namespace Model
   class GetAwsOpportunitySummaryResult
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API GetAwsOpportunitySummaryResult();
+    AWS_PARTNERCENTRALSELLING_API GetAwsOpportunitySummaryResult() = default;
     AWS_PARTNERCENTRALSELLING_API GetAwsOpportunitySummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PARTNERCENTRALSELLING_API GetAwsOpportunitySummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -49,13 +49,11 @@ namespace Model
      * environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the
      * opportunity is being managed.</p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
-    inline void SetCatalog(const Aws::String& value) { m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalog.assign(value); }
-    inline GetAwsOpportunitySummaryResult& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    GetAwsOpportunitySummaryResult& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,11 +62,11 @@ namespace Model
      * including account information, industry, and other customer data. These details
      * help partners understand the business context of the opportunity.</p>
      */
-    inline const AwsOpportunityCustomer& GetCustomer() const{ return m_customer; }
-    inline void SetCustomer(const AwsOpportunityCustomer& value) { m_customer = value; }
-    inline void SetCustomer(AwsOpportunityCustomer&& value) { m_customer = std::move(value); }
-    inline GetAwsOpportunitySummaryResult& WithCustomer(const AwsOpportunityCustomer& value) { SetCustomer(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithCustomer(AwsOpportunityCustomer&& value) { SetCustomer(std::move(value)); return *this;}
+    inline const AwsOpportunityCustomer& GetCustomer() const { return m_customer; }
+    template<typename CustomerT = AwsOpportunityCustomer>
+    void SetCustomer(CustomerT&& value) { m_customerHasBeenSet = true; m_customer = std::forward<CustomerT>(value); }
+    template<typename CustomerT = AwsOpportunityCustomer>
+    GetAwsOpportunitySummaryResult& WithCustomer(CustomerT&& value) { SetCustomer(std::forward<CustomerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,11 +74,11 @@ namespace Model
      * <p>Provides insights into the AWS Opportunity, including engagement score and
      * recommended actions that AWS suggests for the partner.</p>
      */
-    inline const AwsOpportunityInsights& GetInsights() const{ return m_insights; }
-    inline void SetInsights(const AwsOpportunityInsights& value) { m_insights = value; }
-    inline void SetInsights(AwsOpportunityInsights&& value) { m_insights = std::move(value); }
-    inline GetAwsOpportunitySummaryResult& WithInsights(const AwsOpportunityInsights& value) { SetInsights(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithInsights(AwsOpportunityInsights&& value) { SetInsights(std::move(value)); return *this;}
+    inline const AwsOpportunityInsights& GetInsights() const { return m_insights; }
+    template<typename InsightsT = AwsOpportunityInsights>
+    void SetInsights(InsightsT&& value) { m_insightsHasBeenSet = true; m_insights = std::forward<InsightsT>(value); }
+    template<typename InsightsT = AwsOpportunityInsights>
+    GetAwsOpportunitySummaryResult& WithInsights(InsightsT&& value) { SetInsights(std::forward<InsightsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,11 +87,9 @@ namespace Model
      * cosell or advisory support. This field helps partners understand the role AWS
      * plays in advancing the opportunity.</p>
      */
-    inline const SalesInvolvementType& GetInvolvementType() const{ return m_involvementType; }
-    inline void SetInvolvementType(const SalesInvolvementType& value) { m_involvementType = value; }
-    inline void SetInvolvementType(SalesInvolvementType&& value) { m_involvementType = std::move(value); }
-    inline GetAwsOpportunitySummaryResult& WithInvolvementType(const SalesInvolvementType& value) { SetInvolvementType(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithInvolvementType(SalesInvolvementType&& value) { SetInvolvementType(std::move(value)); return *this;}
+    inline SalesInvolvementType GetInvolvementType() const { return m_involvementType; }
+    inline void SetInvolvementType(SalesInvolvementType value) { m_involvementTypeHasBeenSet = true; m_involvementType = value; }
+    inline GetAwsOpportunitySummaryResult& WithInvolvementType(SalesInvolvementType value) { SetInvolvementType(value); return *this;}
     ///@}
 
     ///@{
@@ -103,11 +99,9 @@ namespace Model
      * changed from <code>For Visibility Only</code> to <code>Co-sell</code> offering
      * transparency into the partnership dynamics.</p>
      */
-    inline const InvolvementTypeChangeReason& GetInvolvementTypeChangeReason() const{ return m_involvementTypeChangeReason; }
-    inline void SetInvolvementTypeChangeReason(const InvolvementTypeChangeReason& value) { m_involvementTypeChangeReason = value; }
-    inline void SetInvolvementTypeChangeReason(InvolvementTypeChangeReason&& value) { m_involvementTypeChangeReason = std::move(value); }
-    inline GetAwsOpportunitySummaryResult& WithInvolvementTypeChangeReason(const InvolvementTypeChangeReason& value) { SetInvolvementTypeChangeReason(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithInvolvementTypeChangeReason(InvolvementTypeChangeReason&& value) { SetInvolvementTypeChangeReason(std::move(value)); return *this;}
+    inline InvolvementTypeChangeReason GetInvolvementTypeChangeReason() const { return m_involvementTypeChangeReason; }
+    inline void SetInvolvementTypeChangeReason(InvolvementTypeChangeReason value) { m_involvementTypeChangeReasonHasBeenSet = true; m_involvementTypeChangeReason = value; }
+    inline GetAwsOpportunitySummaryResult& WithInvolvementTypeChangeReason(InvolvementTypeChangeReason value) { SetInvolvementTypeChangeReason(value); return *this;}
     ///@}
 
     ///@{
@@ -116,11 +110,11 @@ namespace Model
      * status, stage, and target close date. This field is crucial for partners to
      * monitor the progression of the opportunity.</p>
      */
-    inline const AwsOpportunityLifeCycle& GetLifeCycle() const{ return m_lifeCycle; }
-    inline void SetLifeCycle(const AwsOpportunityLifeCycle& value) { m_lifeCycle = value; }
-    inline void SetLifeCycle(AwsOpportunityLifeCycle&& value) { m_lifeCycle = std::move(value); }
-    inline GetAwsOpportunitySummaryResult& WithLifeCycle(const AwsOpportunityLifeCycle& value) { SetLifeCycle(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithLifeCycle(AwsOpportunityLifeCycle&& value) { SetLifeCycle(std::move(value)); return *this;}
+    inline const AwsOpportunityLifeCycle& GetLifeCycle() const { return m_lifeCycle; }
+    template<typename LifeCycleT = AwsOpportunityLifeCycle>
+    void SetLifeCycle(LifeCycleT&& value) { m_lifeCycleHasBeenSet = true; m_lifeCycle = std::forward<LifeCycleT>(value); }
+    template<typename LifeCycleT = AwsOpportunityLifeCycle>
+    GetAwsOpportunitySummaryResult& WithLifeCycle(LifeCycleT&& value) { SetLifeCycle(std::forward<LifeCycleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,13 +123,13 @@ namespace Model
      * information helps partners know who from AWS is engaged and what their role
      * is.</p>
      */
-    inline const Aws::Vector<AwsTeamMember>& GetOpportunityTeam() const{ return m_opportunityTeam; }
-    inline void SetOpportunityTeam(const Aws::Vector<AwsTeamMember>& value) { m_opportunityTeam = value; }
-    inline void SetOpportunityTeam(Aws::Vector<AwsTeamMember>&& value) { m_opportunityTeam = std::move(value); }
-    inline GetAwsOpportunitySummaryResult& WithOpportunityTeam(const Aws::Vector<AwsTeamMember>& value) { SetOpportunityTeam(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithOpportunityTeam(Aws::Vector<AwsTeamMember>&& value) { SetOpportunityTeam(std::move(value)); return *this;}
-    inline GetAwsOpportunitySummaryResult& AddOpportunityTeam(const AwsTeamMember& value) { m_opportunityTeam.push_back(value); return *this; }
-    inline GetAwsOpportunitySummaryResult& AddOpportunityTeam(AwsTeamMember&& value) { m_opportunityTeam.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AwsTeamMember>& GetOpportunityTeam() const { return m_opportunityTeam; }
+    template<typename OpportunityTeamT = Aws::Vector<AwsTeamMember>>
+    void SetOpportunityTeam(OpportunityTeamT&& value) { m_opportunityTeamHasBeenSet = true; m_opportunityTeam = std::forward<OpportunityTeamT>(value); }
+    template<typename OpportunityTeamT = Aws::Vector<AwsTeamMember>>
+    GetAwsOpportunitySummaryResult& WithOpportunityTeam(OpportunityTeamT&& value) { SetOpportunityTeam(std::forward<OpportunityTeamT>(value)); return *this;}
+    template<typename OpportunityTeamT = AwsTeamMember>
+    GetAwsOpportunitySummaryResult& AddOpportunityTeam(OpportunityTeamT&& value) { m_opportunityTeamHasBeenSet = true; m_opportunityTeam.emplace_back(std::forward<OpportunityTeamT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -144,11 +138,9 @@ namespace Model
      * This helps distinguish between opportunities that were sourced by AWS and those
      * referred by the partner.</p>
      */
-    inline const OpportunityOrigin& GetOrigin() const{ return m_origin; }
-    inline void SetOrigin(const OpportunityOrigin& value) { m_origin = value; }
-    inline void SetOrigin(OpportunityOrigin&& value) { m_origin = std::move(value); }
-    inline GetAwsOpportunitySummaryResult& WithOrigin(const OpportunityOrigin& value) { SetOrigin(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithOrigin(OpportunityOrigin&& value) { SetOrigin(std::move(value)); return *this;}
+    inline OpportunityOrigin GetOrigin() const { return m_origin; }
+    inline void SetOrigin(OpportunityOrigin value) { m_originHasBeenSet = true; m_origin = value; }
+    inline GetAwsOpportunitySummaryResult& WithOrigin(OpportunityOrigin value) { SetOrigin(value); return *this;}
     ///@}
 
     ///@{
@@ -158,11 +150,11 @@ namespace Model
      * This information is crucial for understanding the broader context of the
      * opportunity.</p>
      */
-    inline const AwsOpportunityProject& GetProject() const{ return m_project; }
-    inline void SetProject(const AwsOpportunityProject& value) { m_project = value; }
-    inline void SetProject(AwsOpportunityProject&& value) { m_project = std::move(value); }
-    inline GetAwsOpportunitySummaryResult& WithProject(const AwsOpportunityProject& value) { SetProject(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithProject(AwsOpportunityProject&& value) { SetProject(std::move(value)); return *this;}
+    inline const AwsOpportunityProject& GetProject() const { return m_project; }
+    template<typename ProjectT = AwsOpportunityProject>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = AwsOpportunityProject>
+    GetAwsOpportunitySummaryResult& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,11 +163,11 @@ namespace Model
      * associated with the AWS Opportunity. These identifiers provide additional
      * context and help partners understand which AWS services are involved.</p>
      */
-    inline const AwsOpportunityRelatedEntities& GetRelatedEntityIds() const{ return m_relatedEntityIds; }
-    inline void SetRelatedEntityIds(const AwsOpportunityRelatedEntities& value) { m_relatedEntityIds = value; }
-    inline void SetRelatedEntityIds(AwsOpportunityRelatedEntities&& value) { m_relatedEntityIds = std::move(value); }
-    inline GetAwsOpportunitySummaryResult& WithRelatedEntityIds(const AwsOpportunityRelatedEntities& value) { SetRelatedEntityIds(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithRelatedEntityIds(AwsOpportunityRelatedEntities&& value) { SetRelatedEntityIds(std::move(value)); return *this;}
+    inline const AwsOpportunityRelatedEntities& GetRelatedEntityIds() const { return m_relatedEntityIds; }
+    template<typename RelatedEntityIdsT = AwsOpportunityRelatedEntities>
+    void SetRelatedEntityIds(RelatedEntityIdsT&& value) { m_relatedEntityIdsHasBeenSet = true; m_relatedEntityIds = std::forward<RelatedEntityIdsT>(value); }
+    template<typename RelatedEntityIdsT = AwsOpportunityRelatedEntities>
+    GetAwsOpportunitySummaryResult& WithRelatedEntityIds(RelatedEntityIdsT&& value) { SetRelatedEntityIds(std::forward<RelatedEntityIdsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,13 +176,11 @@ namespace Model
      * partners to link the AWS Opportunity to their corresponding opportunity in their
      * CRM system.</p>
      */
-    inline const Aws::String& GetRelatedOpportunityId() const{ return m_relatedOpportunityId; }
-    inline void SetRelatedOpportunityId(const Aws::String& value) { m_relatedOpportunityId = value; }
-    inline void SetRelatedOpportunityId(Aws::String&& value) { m_relatedOpportunityId = std::move(value); }
-    inline void SetRelatedOpportunityId(const char* value) { m_relatedOpportunityId.assign(value); }
-    inline GetAwsOpportunitySummaryResult& WithRelatedOpportunityId(const Aws::String& value) { SetRelatedOpportunityId(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithRelatedOpportunityId(Aws::String&& value) { SetRelatedOpportunityId(std::move(value)); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithRelatedOpportunityId(const char* value) { SetRelatedOpportunityId(value); return *this;}
+    inline const Aws::String& GetRelatedOpportunityId() const { return m_relatedOpportunityId; }
+    template<typename RelatedOpportunityIdT = Aws::String>
+    void SetRelatedOpportunityId(RelatedOpportunityIdT&& value) { m_relatedOpportunityIdHasBeenSet = true; m_relatedOpportunityId = std::forward<RelatedOpportunityIdT>(value); }
+    template<typename RelatedOpportunityIdT = Aws::String>
+    GetAwsOpportunitySummaryResult& WithRelatedOpportunityId(RelatedOpportunityIdT&& value) { SetRelatedOpportunityId(std::forward<RelatedOpportunityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,50 +189,59 @@ namespace Model
      * visibility for most cases, while <code>Limited</code> visibility is reserved for
      * special programs or sensitive opportunities.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
-    inline void SetVisibility(const Visibility& value) { m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibility = std::move(value); }
-    inline GetAwsOpportunitySummaryResult& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline Visibility GetVisibility() const { return m_visibility; }
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline GetAwsOpportunitySummaryResult& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAwsOpportunitySummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAwsOpportunitySummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAwsOpportunitySummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_catalog;
+    bool m_catalogHasBeenSet = false;
 
     AwsOpportunityCustomer m_customer;
+    bool m_customerHasBeenSet = false;
 
     AwsOpportunityInsights m_insights;
+    bool m_insightsHasBeenSet = false;
 
-    SalesInvolvementType m_involvementType;
+    SalesInvolvementType m_involvementType{SalesInvolvementType::NOT_SET};
+    bool m_involvementTypeHasBeenSet = false;
 
-    InvolvementTypeChangeReason m_involvementTypeChangeReason;
+    InvolvementTypeChangeReason m_involvementTypeChangeReason{InvolvementTypeChangeReason::NOT_SET};
+    bool m_involvementTypeChangeReasonHasBeenSet = false;
 
     AwsOpportunityLifeCycle m_lifeCycle;
+    bool m_lifeCycleHasBeenSet = false;
 
     Aws::Vector<AwsTeamMember> m_opportunityTeam;
+    bool m_opportunityTeamHasBeenSet = false;
 
-    OpportunityOrigin m_origin;
+    OpportunityOrigin m_origin{OpportunityOrigin::NOT_SET};
+    bool m_originHasBeenSet = false;
 
     AwsOpportunityProject m_project;
+    bool m_projectHasBeenSet = false;
 
     AwsOpportunityRelatedEntities m_relatedEntityIds;
+    bool m_relatedEntityIdsHasBeenSet = false;
 
     Aws::String m_relatedOpportunityId;
+    bool m_relatedOpportunityIdHasBeenSet = false;
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
+    bool m_visibilityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-MeshStatus::MeshStatus() : 
-    m_status(MeshStatusCode::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 MeshStatus::MeshStatus(JsonView jsonValue)
-  : MeshStatus()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MeshStatus& MeshStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = MeshStatusCodeMapper::GetMeshStatusCodeForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-Message::Message() : 
-    m_contentHasBeenSet(false),
-    m_role(ConversationRole::NOT_SET),
-    m_roleHasBeenSet(false)
-{
-}
-
 Message::Message(JsonView jsonValue)
-  : Message()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ Message& Message::operator =(JsonView jsonValue)
     }
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("role"))
   {
     m_role = ConversationRoleMapper::GetConversationRoleForName(jsonValue.GetString("role"));
-
     m_roleHasBeenSet = true;
   }
-
   return *this;
 }
 

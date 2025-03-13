@@ -18,26 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-Item::Item() : 
-    m_startTime(0.0),
-    m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
-    m_endTimeHasBeenSet(false),
-    m_type(ItemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_vocabularyFilterMatch(false),
-    m_vocabularyFilterMatchHasBeenSet(false),
-    m_speakerHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_stable(false),
-    m_stableHasBeenSet(false)
-{
-}
-
 Item::Item(JsonView jsonValue)
-  : Item()
 {
   *this = jsonValue;
 }
@@ -47,59 +28,43 @@ Item& Item::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ItemTypeMapper::GetItemTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilterMatch"))
   {
     m_vocabularyFilterMatch = jsonValue.GetBool("VocabularyFilterMatch");
-
     m_vocabularyFilterMatchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Speaker"))
   {
     m_speaker = jsonValue.GetString("Speaker");
-
     m_speakerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stable"))
   {
     m_stable = jsonValue.GetBool("Stable");
-
     m_stableHasBeenSet = true;
   }
-
   return *this;
 }
 

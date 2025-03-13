@@ -18,14 +18,7 @@ namespace LexRuntimeService
 namespace Model
 {
 
-Button::Button() : 
-    m_textHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Button::Button(JsonView jsonValue)
-  : Button()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Button& Button::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

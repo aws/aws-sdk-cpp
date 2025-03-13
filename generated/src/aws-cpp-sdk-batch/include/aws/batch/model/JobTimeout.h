@@ -30,7 +30,7 @@ namespace Model
   class JobTimeout
   {
   public:
-    AWS_BATCH_API JobTimeout();
+    AWS_BATCH_API JobTimeout() = default;
     AWS_BATCH_API JobTimeout(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API JobTimeout& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * the parent array job.</p> <p>For multi-node parallel (MNP) jobs, the timeout
      * applies to the whole job, not to the individual nodes.</p>
      */
-    inline int GetAttemptDurationSeconds() const{ return m_attemptDurationSeconds; }
+    inline int GetAttemptDurationSeconds() const { return m_attemptDurationSeconds; }
     inline bool AttemptDurationSecondsHasBeenSet() const { return m_attemptDurationSecondsHasBeenSet; }
     inline void SetAttemptDurationSeconds(int value) { m_attemptDurationSecondsHasBeenSet = true; m_attemptDurationSeconds = value; }
     inline JobTimeout& WithAttemptDurationSeconds(int value) { SetAttemptDurationSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_attemptDurationSeconds;
+    int m_attemptDurationSeconds{0};
     bool m_attemptDurationSecondsHasBeenSet = false;
   };
 

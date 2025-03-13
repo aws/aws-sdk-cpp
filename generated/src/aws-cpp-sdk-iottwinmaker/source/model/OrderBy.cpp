@@ -18,15 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-OrderBy::OrderBy() : 
-    m_order(Order::NOT_SET),
-    m_orderHasBeenSet(false),
-    m_propertyNameHasBeenSet(false)
-{
-}
-
 OrderBy::OrderBy(JsonView jsonValue)
-  : OrderBy()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OrderBy& OrderBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("order"))
   {
     m_order = OrderMapper::GetOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyName"))
   {
     m_propertyName = jsonValue.GetString("propertyName");
-
     m_propertyNameHasBeenSet = true;
   }
-
   return *this;
 }
 

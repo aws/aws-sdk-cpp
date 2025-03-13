@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateClusterV2Result::CreateClusterV2Result() : 
-    m_state(ClusterState::NOT_SET),
-    m_clusterType(ClusterType::NOT_SET)
-{
-}
-
 CreateClusterV2Result::CreateClusterV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateClusterV2Result()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ CreateClusterV2Result& CreateClusterV2Result::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
+    m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
+    m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ClusterStateMapper::GetClusterStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterType"))
   {
     m_clusterType = ClusterTypeMapper::GetClusterTypeForName(jsonValue.GetString("clusterType"));
-
+    m_clusterTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

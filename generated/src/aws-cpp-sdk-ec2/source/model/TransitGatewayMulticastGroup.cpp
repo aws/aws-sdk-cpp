@@ -20,28 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayMulticastGroup::TransitGatewayMulticastGroup() : 
-    m_groupIpAddressHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_groupMember(false),
-    m_groupMemberHasBeenSet(false),
-    m_groupSource(false),
-    m_groupSourceHasBeenSet(false),
-    m_memberType(MembershipType::NOT_SET),
-    m_memberTypeHasBeenSet(false),
-    m_sourceType(MembershipType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
-{
-}
-
 TransitGatewayMulticastGroup::TransitGatewayMulticastGroup(const XmlNode& xmlNode)
-  : TransitGatewayMulticastGroup()
 {
   *this = xmlNode;
 }
@@ -57,66 +36,77 @@ TransitGatewayMulticastGroup& TransitGatewayMulticastGroup::operator =(const Xml
     {
       m_groupIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(groupIpAddressNode.GetText());
       m_groupIpAddressHasBeenSet = true;
+       m_groupIpAddressHasBeenSet = true;
     }
     XmlNode transitGatewayAttachmentIdNode = resultNode.FirstChild("transitGatewayAttachmentId");
     if(!transitGatewayAttachmentIdNode.IsNull())
     {
       m_transitGatewayAttachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayAttachmentIdNode.GetText());
       m_transitGatewayAttachmentIdHasBeenSet = true;
+       m_transitGatewayAttachmentIdHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("resourceId");
     if(!resourceIdNode.IsNull())
     {
       m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
+       m_resourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = TransitGatewayAttachmentResourceTypeMapper::GetTransitGatewayAttachmentResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = TransitGatewayAttachmentResourceTypeMapper::GetTransitGatewayAttachmentResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceOwnerIdNode = resultNode.FirstChild("resourceOwnerId");
     if(!resourceOwnerIdNode.IsNull())
     {
       m_resourceOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceOwnerIdNode.GetText());
       m_resourceOwnerIdHasBeenSet = true;
+       m_resourceOwnerIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
+       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode groupMemberNode = resultNode.FirstChild("groupMember");
     if(!groupMemberNode.IsNull())
     {
       m_groupMember = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupMemberNode.GetText()).c_str()).c_str());
       m_groupMemberHasBeenSet = true;
+       m_groupMemberHasBeenSet = true;
     }
     XmlNode groupSourceNode = resultNode.FirstChild("groupSource");
     if(!groupSourceNode.IsNull())
     {
       m_groupSource = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupSourceNode.GetText()).c_str()).c_str());
       m_groupSourceHasBeenSet = true;
+       m_groupSourceHasBeenSet = true;
     }
     XmlNode memberTypeNode = resultNode.FirstChild("memberType");
     if(!memberTypeNode.IsNull())
     {
-      m_memberType = MembershipTypeMapper::GetMembershipTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(memberTypeNode.GetText()).c_str()).c_str());
+      m_memberType = MembershipTypeMapper::GetMembershipTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(memberTypeNode.GetText()).c_str()));
       m_memberTypeHasBeenSet = true;
+       m_memberTypeHasBeenSet = true;
     }
     XmlNode sourceTypeNode = resultNode.FirstChild("sourceType");
     if(!sourceTypeNode.IsNull())
     {
-      m_sourceType = MembershipTypeMapper::GetMembershipTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()).c_str());
+      m_sourceType = MembershipTypeMapper::GetMembershipTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()));
       m_sourceTypeHasBeenSet = true;
+       m_sourceTypeHasBeenSet = true;
     }
   }
 

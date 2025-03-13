@@ -18,20 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-DataEncryptionMetadata::DataEncryptionMetadata() : 
-    m_allowCleartext(false),
-    m_allowCleartextHasBeenSet(false),
-    m_allowDuplicates(false),
-    m_allowDuplicatesHasBeenSet(false),
-    m_allowJoinsOnColumnsWithDifferentNames(false),
-    m_allowJoinsOnColumnsWithDifferentNamesHasBeenSet(false),
-    m_preserveNulls(false),
-    m_preserveNullsHasBeenSet(false)
-{
-}
-
 DataEncryptionMetadata::DataEncryptionMetadata(JsonView jsonValue)
-  : DataEncryptionMetadata()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ DataEncryptionMetadata& DataEncryptionMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("allowCleartext"))
   {
     m_allowCleartext = jsonValue.GetBool("allowCleartext");
-
     m_allowCleartextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowDuplicates"))
   {
     m_allowDuplicates = jsonValue.GetBool("allowDuplicates");
-
     m_allowDuplicatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowJoinsOnColumnsWithDifferentNames"))
   {
     m_allowJoinsOnColumnsWithDifferentNames = jsonValue.GetBool("allowJoinsOnColumnsWithDifferentNames");
-
     m_allowJoinsOnColumnsWithDifferentNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preserveNulls"))
   {
     m_preserveNulls = jsonValue.GetBool("preserveNulls");
-
     m_preserveNullsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartConfigurationPolicyDisassociationRequest::StartConfigurationPolicyDisassociationRequest() : 
-    m_targetHasBeenSet(false),
-    m_configurationPolicyIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StartConfigurationPolicyDisassociationRequest::SerializePayload() const
 {
   JsonValue payload;

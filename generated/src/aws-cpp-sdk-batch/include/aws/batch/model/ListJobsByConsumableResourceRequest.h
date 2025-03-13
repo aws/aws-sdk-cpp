@@ -23,7 +23,7 @@ namespace Model
   class ListJobsByConsumableResourceRequest : public BatchRequest
   {
   public:
-    AWS_BATCH_API ListJobsByConsumableResourceRequest();
+    AWS_BATCH_API ListJobsByConsumableResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name or ARN of the consumable resource.</p>
      */
-    inline const Aws::String& GetConsumableResource() const{ return m_consumableResource; }
+    inline const Aws::String& GetConsumableResource() const { return m_consumableResource; }
     inline bool ConsumableResourceHasBeenSet() const { return m_consumableResourceHasBeenSet; }
-    inline void SetConsumableResource(const Aws::String& value) { m_consumableResourceHasBeenSet = true; m_consumableResource = value; }
-    inline void SetConsumableResource(Aws::String&& value) { m_consumableResourceHasBeenSet = true; m_consumableResource = std::move(value); }
-    inline void SetConsumableResource(const char* value) { m_consumableResourceHasBeenSet = true; m_consumableResource.assign(value); }
-    inline ListJobsByConsumableResourceRequest& WithConsumableResource(const Aws::String& value) { SetConsumableResource(value); return *this;}
-    inline ListJobsByConsumableResourceRequest& WithConsumableResource(Aws::String&& value) { SetConsumableResource(std::move(value)); return *this;}
-    inline ListJobsByConsumableResourceRequest& WithConsumableResource(const char* value) { SetConsumableResource(value); return *this;}
+    template<typename ConsumableResourceT = Aws::String>
+    void SetConsumableResource(ConsumableResourceT&& value) { m_consumableResourceHasBeenSet = true; m_consumableResource = std::forward<ConsumableResourceT>(value); }
+    template<typename ConsumableResourceT = Aws::String>
+    ListJobsByConsumableResourceRequest& WithConsumableResource(ConsumableResourceT&& value) { SetConsumableResource(std::forward<ConsumableResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,14 @@ namespace Model
      * asterisk (*), it matches any job name that begins with the string before the
      * '*'.</p> </li> </ul>
      */
-    inline const Aws::Vector<KeyValuesPair>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<KeyValuesPair>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<KeyValuesPair>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<KeyValuesPair>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListJobsByConsumableResourceRequest& WithFilters(const Aws::Vector<KeyValuesPair>& value) { SetFilters(value); return *this;}
-    inline ListJobsByConsumableResourceRequest& WithFilters(Aws::Vector<KeyValuesPair>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListJobsByConsumableResourceRequest& AddFilters(const KeyValuesPair& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListJobsByConsumableResourceRequest& AddFilters(KeyValuesPair&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<KeyValuesPair>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<KeyValuesPair>>
+    ListJobsByConsumableResourceRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = KeyValuesPair>
+    ListJobsByConsumableResourceRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,7 +80,7 @@ namespace Model
      * this parameter isn't used, then <code>ListJobsByConsumableResource</code>
      * returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListJobsByConsumableResourceRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -99,14 +97,12 @@ namespace Model
      * that's only used to retrieve the next items in a list and not for other
      * programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListJobsByConsumableResourceRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListJobsByConsumableResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListJobsByConsumableResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListJobsByConsumableResourceRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -116,7 +112,7 @@ namespace Model
     Aws::Vector<KeyValuesPair> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -33,7 +33,7 @@ namespace Model
   class GetHostnameSuggestionResult
   {
   public:
-    AWS_OPSWORKS_API GetHostnameSuggestionResult();
+    AWS_OPSWORKS_API GetHostnameSuggestionResult() = default;
     AWS_OPSWORKS_API GetHostnameSuggestionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API GetHostnameSuggestionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,45 +42,42 @@ namespace Model
     /**
      * <p>The layer ID.</p>
      */
-    inline const Aws::String& GetLayerId() const{ return m_layerId; }
-    inline void SetLayerId(const Aws::String& value) { m_layerId = value; }
-    inline void SetLayerId(Aws::String&& value) { m_layerId = std::move(value); }
-    inline void SetLayerId(const char* value) { m_layerId.assign(value); }
-    inline GetHostnameSuggestionResult& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
-    inline GetHostnameSuggestionResult& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
-    inline GetHostnameSuggestionResult& WithLayerId(const char* value) { SetLayerId(value); return *this;}
+    inline const Aws::String& GetLayerId() const { return m_layerId; }
+    template<typename LayerIdT = Aws::String>
+    void SetLayerId(LayerIdT&& value) { m_layerIdHasBeenSet = true; m_layerId = std::forward<LayerIdT>(value); }
+    template<typename LayerIdT = Aws::String>
+    GetHostnameSuggestionResult& WithLayerId(LayerIdT&& value) { SetLayerId(std::forward<LayerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The generated host name.</p>
      */
-    inline const Aws::String& GetHostname() const{ return m_hostname; }
-    inline void SetHostname(const Aws::String& value) { m_hostname = value; }
-    inline void SetHostname(Aws::String&& value) { m_hostname = std::move(value); }
-    inline void SetHostname(const char* value) { m_hostname.assign(value); }
-    inline GetHostnameSuggestionResult& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-    inline GetHostnameSuggestionResult& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-    inline GetHostnameSuggestionResult& WithHostname(const char* value) { SetHostname(value); return *this;}
+    inline const Aws::String& GetHostname() const { return m_hostname; }
+    template<typename HostnameT = Aws::String>
+    void SetHostname(HostnameT&& value) { m_hostnameHasBeenSet = true; m_hostname = std::forward<HostnameT>(value); }
+    template<typename HostnameT = Aws::String>
+    GetHostnameSuggestionResult& WithHostname(HostnameT&& value) { SetHostname(std::forward<HostnameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetHostnameSuggestionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetHostnameSuggestionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetHostnameSuggestionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetHostnameSuggestionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_layerId;
+    bool m_layerIdHasBeenSet = false;
 
     Aws::String m_hostname;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

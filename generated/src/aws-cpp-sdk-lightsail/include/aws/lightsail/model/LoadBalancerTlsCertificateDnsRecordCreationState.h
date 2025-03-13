@@ -34,7 +34,7 @@ namespace Model
   class LoadBalancerTlsCertificateDnsRecordCreationState
   {
   public:
-    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateDnsRecordCreationState();
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateDnsRecordCreationState() = default;
     AWS_LIGHTSAIL_API LoadBalancerTlsCertificateDnsRecordCreationState(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API LoadBalancerTlsCertificateDnsRecordCreationState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,30 +48,26 @@ namespace Model
      * automatic DNS record creation has started.</p> </li> <li> <p>
      * <code>FAILED</code> - The validation record addition failed.</p> </li> </ul>
      */
-    inline const LoadBalancerTlsCertificateDnsRecordCreationStateCode& GetCode() const{ return m_code; }
+    inline LoadBalancerTlsCertificateDnsRecordCreationStateCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const LoadBalancerTlsCertificateDnsRecordCreationStateCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(LoadBalancerTlsCertificateDnsRecordCreationStateCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline LoadBalancerTlsCertificateDnsRecordCreationState& WithCode(const LoadBalancerTlsCertificateDnsRecordCreationStateCode& value) { SetCode(value); return *this;}
-    inline LoadBalancerTlsCertificateDnsRecordCreationState& WithCode(LoadBalancerTlsCertificateDnsRecordCreationStateCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(LoadBalancerTlsCertificateDnsRecordCreationStateCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline LoadBalancerTlsCertificateDnsRecordCreationState& WithCode(LoadBalancerTlsCertificateDnsRecordCreationStateCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message that describes the reason for the status code.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline LoadBalancerTlsCertificateDnsRecordCreationState& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline LoadBalancerTlsCertificateDnsRecordCreationState& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline LoadBalancerTlsCertificateDnsRecordCreationState& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    LoadBalancerTlsCertificateDnsRecordCreationState& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    LoadBalancerTlsCertificateDnsRecordCreationStateCode m_code;
+    LoadBalancerTlsCertificateDnsRecordCreationStateCode m_code{LoadBalancerTlsCertificateDnsRecordCreationStateCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

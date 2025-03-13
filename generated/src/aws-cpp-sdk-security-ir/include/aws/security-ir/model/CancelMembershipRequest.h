@@ -21,7 +21,7 @@ namespace Model
   class CancelMembershipRequest : public SecurityIRRequest
   {
   public:
-    AWS_SECURITYIR_API CancelMembershipRequest();
+    AWS_SECURITYIR_API CancelMembershipRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>Required element used in combination with CancelMembershipRequest to identify
      * the membership ID to cancel. </p>
      */
-    inline const Aws::String& GetMembershipId() const{ return m_membershipId; }
+    inline const Aws::String& GetMembershipId() const { return m_membershipId; }
     inline bool MembershipIdHasBeenSet() const { return m_membershipIdHasBeenSet; }
-    inline void SetMembershipId(const Aws::String& value) { m_membershipIdHasBeenSet = true; m_membershipId = value; }
-    inline void SetMembershipId(Aws::String&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::move(value); }
-    inline void SetMembershipId(const char* value) { m_membershipIdHasBeenSet = true; m_membershipId.assign(value); }
-    inline CancelMembershipRequest& WithMembershipId(const Aws::String& value) { SetMembershipId(value); return *this;}
-    inline CancelMembershipRequest& WithMembershipId(Aws::String&& value) { SetMembershipId(std::move(value)); return *this;}
-    inline CancelMembershipRequest& WithMembershipId(const char* value) { SetMembershipId(value); return *this;}
+    template<typename MembershipIdT = Aws::String>
+    void SetMembershipId(MembershipIdT&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::forward<MembershipIdT>(value); }
+    template<typename MembershipIdT = Aws::String>
+    CancelMembershipRequest& WithMembershipId(MembershipIdT&& value) { SetMembershipId(std::forward<MembershipIdT>(value)); return *this;}
     ///@}
   private:
 

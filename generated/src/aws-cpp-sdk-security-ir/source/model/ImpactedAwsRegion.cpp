@@ -18,14 +18,7 @@ namespace SecurityIR
 namespace Model
 {
 
-ImpactedAwsRegion::ImpactedAwsRegion() : 
-    m_region(AwsRegion::NOT_SET),
-    m_regionHasBeenSet(false)
-{
-}
-
 ImpactedAwsRegion::ImpactedAwsRegion(JsonView jsonValue)
-  : ImpactedAwsRegion()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ImpactedAwsRegion& ImpactedAwsRegion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("region"))
   {
     m_region = AwsRegionMapper::GetAwsRegionForName(jsonValue.GetString("region"));
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

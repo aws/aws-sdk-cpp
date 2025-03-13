@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-RecipeStep::RecipeStep() : 
-    m_actionHasBeenSet(false),
-    m_conditionExpressionsHasBeenSet(false)
-{
-}
-
 RecipeStep::RecipeStep(JsonView jsonValue)
-  : RecipeStep()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RecipeStep& RecipeStep::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetObject("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConditionExpressions"))
   {
     Aws::Utils::Array<JsonView> conditionExpressionsJsonList = jsonValue.GetArray("ConditionExpressions");
@@ -48,7 +39,6 @@ RecipeStep& RecipeStep::operator =(JsonView jsonValue)
     }
     m_conditionExpressionsHasBeenSet = true;
   }
-
   return *this;
 }
 

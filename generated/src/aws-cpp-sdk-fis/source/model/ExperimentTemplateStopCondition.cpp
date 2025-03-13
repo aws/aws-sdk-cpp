@@ -18,14 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentTemplateStopCondition::ExperimentTemplateStopCondition() : 
-    m_sourceHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ExperimentTemplateStopCondition::ExperimentTemplateStopCondition(JsonView jsonValue)
-  : ExperimentTemplateStopCondition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExperimentTemplateStopCondition& ExperimentTemplateStopCondition::operator =(Jso
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-EdgeOverride::EdgeOverride() : 
-    m_edgeSetsHasBeenSet(false),
-    m_useEdgeHasBeenSet(false)
-{
-}
-
 EdgeOverride::EdgeOverride(JsonView jsonValue)
-  : EdgeOverride()
 {
   *this = jsonValue;
 }
@@ -48,14 +41,11 @@ EdgeOverride& EdgeOverride::operator =(JsonView jsonValue)
     }
     m_edgeSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseEdge"))
   {
     m_useEdge = jsonValue.GetString("UseEdge");
-
     m_useEdgeHasBeenSet = true;
   }
-
   return *this;
 }
 

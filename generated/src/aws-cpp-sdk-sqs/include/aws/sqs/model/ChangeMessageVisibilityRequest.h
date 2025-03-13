@@ -21,7 +21,7 @@ namespace Model
   class ChangeMessageVisibilityRequest : public SQSRequest
   {
   public:
-    AWS_SQS_API ChangeMessageVisibilityRequest();
+    AWS_SQS_API ChangeMessageVisibilityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
      * <p>Queue URLs and names are case-sensitive.</p>
      */
-    inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
+    inline const Aws::String& GetQueueUrl() const { return m_queueUrl; }
     inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
-    inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
-    inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
-    inline ChangeMessageVisibilityRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
-    inline ChangeMessageVisibilityRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
-    inline ChangeMessageVisibilityRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+    template<typename QueueUrlT = Aws::String>
+    void SetQueueUrl(QueueUrlT&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::forward<QueueUrlT>(value); }
+    template<typename QueueUrlT = Aws::String>
+    ChangeMessageVisibilityRequest& WithQueueUrl(QueueUrlT&& value) { SetQueueUrl(std::forward<QueueUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code>
      * action.</p>
      */
-    inline const Aws::String& GetReceiptHandle() const{ return m_receiptHandle; }
+    inline const Aws::String& GetReceiptHandle() const { return m_receiptHandle; }
     inline bool ReceiptHandleHasBeenSet() const { return m_receiptHandleHasBeenSet; }
-    inline void SetReceiptHandle(const Aws::String& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
-    inline void SetReceiptHandle(Aws::String&& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = std::move(value); }
-    inline void SetReceiptHandle(const char* value) { m_receiptHandleHasBeenSet = true; m_receiptHandle.assign(value); }
-    inline ChangeMessageVisibilityRequest& WithReceiptHandle(const Aws::String& value) { SetReceiptHandle(value); return *this;}
-    inline ChangeMessageVisibilityRequest& WithReceiptHandle(Aws::String&& value) { SetReceiptHandle(std::move(value)); return *this;}
-    inline ChangeMessageVisibilityRequest& WithReceiptHandle(const char* value) { SetReceiptHandle(value); return *this;}
+    template<typename ReceiptHandleT = Aws::String>
+    void SetReceiptHandle(ReceiptHandleT&& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = std::forward<ReceiptHandleT>(value); }
+    template<typename ReceiptHandleT = Aws::String>
+    ChangeMessageVisibilityRequest& WithReceiptHandle(ReceiptHandleT&& value) { SetReceiptHandle(std::forward<ReceiptHandleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +66,7 @@ namespace Model
      * <p>The new value for the message's visibility timeout (in seconds). Values
      * range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
      */
-    inline int GetVisibilityTimeout() const{ return m_visibilityTimeout; }
+    inline int GetVisibilityTimeout() const { return m_visibilityTimeout; }
     inline bool VisibilityTimeoutHasBeenSet() const { return m_visibilityTimeoutHasBeenSet; }
     inline void SetVisibilityTimeout(int value) { m_visibilityTimeoutHasBeenSet = true; m_visibilityTimeout = value; }
     inline ChangeMessageVisibilityRequest& WithVisibilityTimeout(int value) { SetVisibilityTimeout(value); return *this;}
@@ -83,7 +79,7 @@ namespace Model
     Aws::String m_receiptHandle;
     bool m_receiptHandleHasBeenSet = false;
 
-    int m_visibilityTimeout;
+    int m_visibilityTimeout{0};
     bool m_visibilityTimeoutHasBeenSet = false;
   };
 

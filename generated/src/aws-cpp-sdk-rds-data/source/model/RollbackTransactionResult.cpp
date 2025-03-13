@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RollbackTransactionResult::RollbackTransactionResult()
-{
-}
-
 RollbackTransactionResult::RollbackTransactionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ RollbackTransactionResult& RollbackTransactionResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("transactionStatus"))
   {
     m_transactionStatus = jsonValue.GetString("transactionStatus");
-
+    m_transactionStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

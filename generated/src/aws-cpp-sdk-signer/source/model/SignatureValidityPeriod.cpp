@@ -18,16 +18,7 @@ namespace signer
 namespace Model
 {
 
-SignatureValidityPeriod::SignatureValidityPeriod() : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_type(ValidityType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 SignatureValidityPeriod::SignatureValidityPeriod(JsonView jsonValue)
-  : SignatureValidityPeriod()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SignatureValidityPeriod& SignatureValidityPeriod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInteger("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ValidityTypeMapper::GetValidityTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

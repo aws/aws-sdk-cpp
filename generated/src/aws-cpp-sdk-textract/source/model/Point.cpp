@@ -18,16 +18,7 @@ namespace Textract
 namespace Model
 {
 
-Point::Point() : 
-    m_x(0.0),
-    m_xHasBeenSet(false),
-    m_y(0.0),
-    m_yHasBeenSet(false)
-{
-}
-
 Point::Point(JsonView jsonValue)
-  : Point()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Point& Point::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("X"))
   {
     m_x = jsonValue.GetDouble("X");
-
     m_xHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Y"))
   {
     m_y = jsonValue.GetDouble("Y");
-
     m_yHasBeenSet = true;
   }
-
   return *this;
 }
 

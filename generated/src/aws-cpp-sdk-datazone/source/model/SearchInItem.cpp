@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SearchInItem::SearchInItem() : 
-    m_attributeHasBeenSet(false)
-{
-}
-
 SearchInItem::SearchInItem(JsonView jsonValue)
-  : SearchInItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SearchInItem& SearchInItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = jsonValue.GetString("attribute");
-
     m_attributeHasBeenSet = true;
   }
-
   return *this;
 }
 

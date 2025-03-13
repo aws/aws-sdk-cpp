@@ -22,7 +22,7 @@ namespace Model
   class UpdateGatewayInformationRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API UpdateGatewayInformationRequest();
+    AWS_STORAGEGATEWAY_API UpdateGatewayInformationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,40 +37,34 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline UpdateGatewayInformationRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline UpdateGatewayInformationRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline UpdateGatewayInformationRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    UpdateGatewayInformationRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetGatewayName() const{ return m_gatewayName; }
+    inline const Aws::String& GetGatewayName() const { return m_gatewayName; }
     inline bool GatewayNameHasBeenSet() const { return m_gatewayNameHasBeenSet; }
-    inline void SetGatewayName(const Aws::String& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = value; }
-    inline void SetGatewayName(Aws::String&& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = std::move(value); }
-    inline void SetGatewayName(const char* value) { m_gatewayNameHasBeenSet = true; m_gatewayName.assign(value); }
-    inline UpdateGatewayInformationRequest& WithGatewayName(const Aws::String& value) { SetGatewayName(value); return *this;}
-    inline UpdateGatewayInformationRequest& WithGatewayName(Aws::String&& value) { SetGatewayName(std::move(value)); return *this;}
-    inline UpdateGatewayInformationRequest& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}
+    template<typename GatewayNameT = Aws::String>
+    void SetGatewayName(GatewayNameT&& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = std::forward<GatewayNameT>(value); }
+    template<typename GatewayNameT = Aws::String>
+    UpdateGatewayInformationRequest& WithGatewayName(GatewayNameT&& value) { SetGatewayName(std::forward<GatewayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A value that indicates the time zone of the gateway.</p>
      */
-    inline const Aws::String& GetGatewayTimezone() const{ return m_gatewayTimezone; }
+    inline const Aws::String& GetGatewayTimezone() const { return m_gatewayTimezone; }
     inline bool GatewayTimezoneHasBeenSet() const { return m_gatewayTimezoneHasBeenSet; }
-    inline void SetGatewayTimezone(const Aws::String& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = value; }
-    inline void SetGatewayTimezone(Aws::String&& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = std::move(value); }
-    inline void SetGatewayTimezone(const char* value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone.assign(value); }
-    inline UpdateGatewayInformationRequest& WithGatewayTimezone(const Aws::String& value) { SetGatewayTimezone(value); return *this;}
-    inline UpdateGatewayInformationRequest& WithGatewayTimezone(Aws::String&& value) { SetGatewayTimezone(std::move(value)); return *this;}
-    inline UpdateGatewayInformationRequest& WithGatewayTimezone(const char* value) { SetGatewayTimezone(value); return *this;}
+    template<typename GatewayTimezoneT = Aws::String>
+    void SetGatewayTimezone(GatewayTimezoneT&& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = std::forward<GatewayTimezoneT>(value); }
+    template<typename GatewayTimezoneT = Aws::String>
+    UpdateGatewayInformationRequest& WithGatewayTimezone(GatewayTimezoneT&& value) { SetGatewayTimezone(std::forward<GatewayTimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +75,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
      * is Amazon CloudWatch Logs?</a> </p>
      */
-    inline const Aws::String& GetCloudWatchLogGroupARN() const{ return m_cloudWatchLogGroupARN; }
+    inline const Aws::String& GetCloudWatchLogGroupARN() const { return m_cloudWatchLogGroupARN; }
     inline bool CloudWatchLogGroupARNHasBeenSet() const { return m_cloudWatchLogGroupARNHasBeenSet; }
-    inline void SetCloudWatchLogGroupARN(const Aws::String& value) { m_cloudWatchLogGroupARNHasBeenSet = true; m_cloudWatchLogGroupARN = value; }
-    inline void SetCloudWatchLogGroupARN(Aws::String&& value) { m_cloudWatchLogGroupARNHasBeenSet = true; m_cloudWatchLogGroupARN = std::move(value); }
-    inline void SetCloudWatchLogGroupARN(const char* value) { m_cloudWatchLogGroupARNHasBeenSet = true; m_cloudWatchLogGroupARN.assign(value); }
-    inline UpdateGatewayInformationRequest& WithCloudWatchLogGroupARN(const Aws::String& value) { SetCloudWatchLogGroupARN(value); return *this;}
-    inline UpdateGatewayInformationRequest& WithCloudWatchLogGroupARN(Aws::String&& value) { SetCloudWatchLogGroupARN(std::move(value)); return *this;}
-    inline UpdateGatewayInformationRequest& WithCloudWatchLogGroupARN(const char* value) { SetCloudWatchLogGroupARN(value); return *this;}
+    template<typename CloudWatchLogGroupARNT = Aws::String>
+    void SetCloudWatchLogGroupARN(CloudWatchLogGroupARNT&& value) { m_cloudWatchLogGroupARNHasBeenSet = true; m_cloudWatchLogGroupARN = std::forward<CloudWatchLogGroupARNT>(value); }
+    template<typename CloudWatchLogGroupARNT = Aws::String>
+    UpdateGatewayInformationRequest& WithCloudWatchLogGroupARN(CloudWatchLogGroupARNT&& value) { SetCloudWatchLogGroupARN(std::forward<CloudWatchLogGroupARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +91,10 @@ namespace Model
      * guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File
      * Gateway User Guide</i>.</p>
      */
-    inline const GatewayCapacity& GetGatewayCapacity() const{ return m_gatewayCapacity; }
+    inline GatewayCapacity GetGatewayCapacity() const { return m_gatewayCapacity; }
     inline bool GatewayCapacityHasBeenSet() const { return m_gatewayCapacityHasBeenSet; }
-    inline void SetGatewayCapacity(const GatewayCapacity& value) { m_gatewayCapacityHasBeenSet = true; m_gatewayCapacity = value; }
-    inline void SetGatewayCapacity(GatewayCapacity&& value) { m_gatewayCapacityHasBeenSet = true; m_gatewayCapacity = std::move(value); }
-    inline UpdateGatewayInformationRequest& WithGatewayCapacity(const GatewayCapacity& value) { SetGatewayCapacity(value); return *this;}
-    inline UpdateGatewayInformationRequest& WithGatewayCapacity(GatewayCapacity&& value) { SetGatewayCapacity(std::move(value)); return *this;}
+    inline void SetGatewayCapacity(GatewayCapacity value) { m_gatewayCapacityHasBeenSet = true; m_gatewayCapacity = value; }
+    inline UpdateGatewayInformationRequest& WithGatewayCapacity(GatewayCapacity value) { SetGatewayCapacity(value); return *this;}
     ///@}
   private:
 
@@ -120,7 +110,7 @@ namespace Model
     Aws::String m_cloudWatchLogGroupARN;
     bool m_cloudWatchLogGroupARNHasBeenSet = false;
 
-    GatewayCapacity m_gatewayCapacity;
+    GatewayCapacity m_gatewayCapacity{GatewayCapacity::NOT_SET};
     bool m_gatewayCapacityHasBeenSet = false;
   };
 

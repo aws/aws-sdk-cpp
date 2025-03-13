@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteTollSummary::RouteTollSummary() : 
-    m_totalHasBeenSet(false)
-{
-}
-
 RouteTollSummary::RouteTollSummary(JsonView jsonValue)
-  : RouteTollSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RouteTollSummary& RouteTollSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetObject("Total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

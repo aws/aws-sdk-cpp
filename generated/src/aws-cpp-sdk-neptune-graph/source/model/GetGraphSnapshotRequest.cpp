@@ -12,11 +12,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetGraphSnapshotRequest::GetGraphSnapshotRequest() : 
-    m_snapshotIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetGraphSnapshotRequest::SerializePayload() const
 {
   return {};

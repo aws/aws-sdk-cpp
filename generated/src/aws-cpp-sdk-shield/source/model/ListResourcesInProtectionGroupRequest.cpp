@@ -12,14 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListResourcesInProtectionGroupRequest::ListResourcesInProtectionGroupRequest() : 
-    m_protectionGroupIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListResourcesInProtectionGroupRequest::SerializePayload() const
 {
   JsonValue payload;

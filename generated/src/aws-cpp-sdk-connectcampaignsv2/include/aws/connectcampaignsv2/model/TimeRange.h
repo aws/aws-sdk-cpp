@@ -31,7 +31,7 @@ namespace Model
   class TimeRange
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API TimeRange();
+    AWS_CONNECTCAMPAIGNSV2_API TimeRange() = default;
     AWS_CONNECTCAMPAIGNSV2_API TimeRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,26 +39,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetStartTime() const{ return m_startTime; }
+    inline const Aws::String& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
-    inline TimeRange& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
-    inline TimeRange& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
-    inline TimeRange& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+    template<typename StartTimeT = Aws::String>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::String>
+    TimeRange& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetEndTime() const{ return m_endTime; }
+    inline const Aws::String& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::String& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::String&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline void SetEndTime(const char* value) { m_endTimeHasBeenSet = true; m_endTime.assign(value); }
-    inline TimeRange& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
-    inline TimeRange& WithEndTime(Aws::String&& value) { SetEndTime(std::move(value)); return *this;}
-    inline TimeRange& WithEndTime(const char* value) { SetEndTime(value); return *this;}
+    template<typename EndTimeT = Aws::String>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::String>
+    TimeRange& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
 

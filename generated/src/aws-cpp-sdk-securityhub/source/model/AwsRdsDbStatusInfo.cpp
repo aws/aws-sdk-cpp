@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbStatusInfo::AwsRdsDbStatusInfo() : 
-    m_statusTypeHasBeenSet(false),
-    m_normal(false),
-    m_normalHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 AwsRdsDbStatusInfo::AwsRdsDbStatusInfo(JsonView jsonValue)
-  : AwsRdsDbStatusInfo()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AwsRdsDbStatusInfo& AwsRdsDbStatusInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StatusType"))
   {
     m_statusType = jsonValue.GetString("StatusType");
-
     m_statusTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Normal"))
   {
     m_normal = jsonValue.GetBool("Normal");
-
     m_normalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

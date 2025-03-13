@@ -20,16 +20,7 @@ namespace Route53
 namespace Model
 {
 
-AliasTarget::AliasTarget() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_dNSNameHasBeenSet(false),
-    m_evaluateTargetHealth(false),
-    m_evaluateTargetHealthHasBeenSet(false)
-{
-}
-
 AliasTarget::AliasTarget(const XmlNode& xmlNode)
-  : AliasTarget()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ AliasTarget& AliasTarget::operator =(const XmlNode& xmlNode)
     {
       m_hostedZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneIdNode.GetText());
       m_hostedZoneIdHasBeenSet = true;
+       m_hostedZoneIdHasBeenSet = true;
     }
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
     if(!dNSNameNode.IsNull())
     {
       m_dNSName = Aws::Utils::Xml::DecodeEscapedXmlText(dNSNameNode.GetText());
       m_dNSNameHasBeenSet = true;
+       m_dNSNameHasBeenSet = true;
     }
     XmlNode evaluateTargetHealthNode = resultNode.FirstChild("EvaluateTargetHealth");
     if(!evaluateTargetHealthNode.IsNull())
     {
       m_evaluateTargetHealth = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluateTargetHealthNode.GetText()).c_str()).c_str());
       m_evaluateTargetHealthHasBeenSet = true;
+       m_evaluateTargetHealthHasBeenSet = true;
     }
   }
 

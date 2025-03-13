@@ -28,7 +28,7 @@ namespace Model
   class PauseServiceResult
   {
   public:
-    AWS_APPRUNNER_API PauseServiceResult();
+    AWS_APPRUNNER_API PauseServiceResult() = default;
     AWS_APPRUNNER_API PauseServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPRUNNER_API PauseServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,11 +37,11 @@ namespace Model
     /**
      * <p>A description of the App Runner service that this request just paused.</p>
      */
-    inline const Service& GetService() const{ return m_service; }
-    inline void SetService(const Service& value) { m_service = value; }
-    inline void SetService(Service&& value) { m_service = std::move(value); }
-    inline PauseServiceResult& WithService(const Service& value) { SetService(value); return *this;}
-    inline PauseServiceResult& WithService(Service&& value) { SetService(std::move(value)); return *this;}
+    inline const Service& GetService() const { return m_service; }
+    template<typename ServiceT = Service>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Service>
+    PauseServiceResult& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,32 +50,31 @@ namespace Model
      * can use it combined with the <a>ListOperations</a> call to track the operation's
      * progress.</p>
      */
-    inline const Aws::String& GetOperationId() const{ return m_operationId; }
-    inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
-    inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
-    inline void SetOperationId(const char* value) { m_operationId.assign(value); }
-    inline PauseServiceResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-    inline PauseServiceResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-    inline PauseServiceResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    inline const Aws::String& GetOperationId() const { return m_operationId; }
+    template<typename OperationIdT = Aws::String>
+    void SetOperationId(OperationIdT&& value) { m_operationIdHasBeenSet = true; m_operationId = std::forward<OperationIdT>(value); }
+    template<typename OperationIdT = Aws::String>
+    PauseServiceResult& WithOperationId(OperationIdT&& value) { SetOperationId(std::forward<OperationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PauseServiceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PauseServiceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PauseServiceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PauseServiceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Service m_service;
+    bool m_serviceHasBeenSet = false;
 
     Aws::String m_operationId;
+    bool m_operationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

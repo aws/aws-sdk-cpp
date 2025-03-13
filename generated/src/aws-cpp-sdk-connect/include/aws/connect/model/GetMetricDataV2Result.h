@@ -29,7 +29,7 @@ namespace Model
   class GetMetricDataV2Result
   {
   public:
-    AWS_CONNECT_API GetMetricDataV2Result();
+    AWS_CONNECT_API GetMetricDataV2Result() = default;
     AWS_CONNECT_API GetMetricDataV2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API GetMetricDataV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetMetricDataV2Result& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetMetricDataV2Result& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetMetricDataV2Result& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetMetricDataV2Result& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,33 @@ namespace Model
      * <p>Information about the metrics requested in the API request If no grouping is
      * specified, a summary of metric data is returned. </p>
      */
-    inline const Aws::Vector<MetricResultV2>& GetMetricResults() const{ return m_metricResults; }
-    inline void SetMetricResults(const Aws::Vector<MetricResultV2>& value) { m_metricResults = value; }
-    inline void SetMetricResults(Aws::Vector<MetricResultV2>&& value) { m_metricResults = std::move(value); }
-    inline GetMetricDataV2Result& WithMetricResults(const Aws::Vector<MetricResultV2>& value) { SetMetricResults(value); return *this;}
-    inline GetMetricDataV2Result& WithMetricResults(Aws::Vector<MetricResultV2>&& value) { SetMetricResults(std::move(value)); return *this;}
-    inline GetMetricDataV2Result& AddMetricResults(const MetricResultV2& value) { m_metricResults.push_back(value); return *this; }
-    inline GetMetricDataV2Result& AddMetricResults(MetricResultV2&& value) { m_metricResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MetricResultV2>& GetMetricResults() const { return m_metricResults; }
+    template<typename MetricResultsT = Aws::Vector<MetricResultV2>>
+    void SetMetricResults(MetricResultsT&& value) { m_metricResultsHasBeenSet = true; m_metricResults = std::forward<MetricResultsT>(value); }
+    template<typename MetricResultsT = Aws::Vector<MetricResultV2>>
+    GetMetricDataV2Result& WithMetricResults(MetricResultsT&& value) { SetMetricResults(std::forward<MetricResultsT>(value)); return *this;}
+    template<typename MetricResultsT = MetricResultV2>
+    GetMetricDataV2Result& AddMetricResults(MetricResultsT&& value) { m_metricResultsHasBeenSet = true; m_metricResults.emplace_back(std::forward<MetricResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMetricDataV2Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMetricDataV2Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMetricDataV2Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMetricDataV2Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<MetricResultV2> m_metricResults;
+    bool m_metricResultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

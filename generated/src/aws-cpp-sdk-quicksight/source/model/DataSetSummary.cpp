@@ -18,24 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataSetSummary::DataSetSummary() : 
-    m_arnHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_importMode(DataSetImportMode::NOT_SET),
-    m_importModeHasBeenSet(false),
-    m_rowLevelPermissionDataSetHasBeenSet(false),
-    m_rowLevelPermissionTagConfigurationApplied(false),
-    m_rowLevelPermissionTagConfigurationAppliedHasBeenSet(false),
-    m_columnLevelPermissionRulesApplied(false),
-    m_columnLevelPermissionRulesAppliedHasBeenSet(false)
-{
-}
-
 DataSetSummary::DataSetSummary(JsonView jsonValue)
-  : DataSetSummary()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ DataSetSummary& DataSetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportMode"))
   {
     m_importMode = DataSetImportModeMapper::GetDataSetImportModeForName(jsonValue.GetString("ImportMode"));
-
     m_importModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowLevelPermissionDataSet"))
   {
     m_rowLevelPermissionDataSet = jsonValue.GetObject("RowLevelPermissionDataSet");
-
     m_rowLevelPermissionDataSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowLevelPermissionTagConfigurationApplied"))
   {
     m_rowLevelPermissionTagConfigurationApplied = jsonValue.GetBool("RowLevelPermissionTagConfigurationApplied");
-
     m_rowLevelPermissionTagConfigurationAppliedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnLevelPermissionRulesApplied"))
   {
     m_columnLevelPermissionRulesApplied = jsonValue.GetBool("ColumnLevelPermissionRulesApplied");
-
     m_columnLevelPermissionRulesAppliedHasBeenSet = true;
   }
-
   return *this;
 }
 

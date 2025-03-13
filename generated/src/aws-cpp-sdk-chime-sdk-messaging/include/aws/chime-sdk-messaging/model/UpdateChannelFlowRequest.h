@@ -23,7 +23,7 @@ namespace Model
   class UpdateChannelFlowRequest : public ChimeSDKMessagingRequest
   {
   public:
-    AWS_CHIMESDKMESSAGING_API UpdateChannelFlowRequest();
+    AWS_CHIMESDKMESSAGING_API UpdateChannelFlowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,38 @@ namespace Model
     /**
      * <p>The ARN of the channel flow.</p>
      */
-    inline const Aws::String& GetChannelFlowArn() const{ return m_channelFlowArn; }
+    inline const Aws::String& GetChannelFlowArn() const { return m_channelFlowArn; }
     inline bool ChannelFlowArnHasBeenSet() const { return m_channelFlowArnHasBeenSet; }
-    inline void SetChannelFlowArn(const Aws::String& value) { m_channelFlowArnHasBeenSet = true; m_channelFlowArn = value; }
-    inline void SetChannelFlowArn(Aws::String&& value) { m_channelFlowArnHasBeenSet = true; m_channelFlowArn = std::move(value); }
-    inline void SetChannelFlowArn(const char* value) { m_channelFlowArnHasBeenSet = true; m_channelFlowArn.assign(value); }
-    inline UpdateChannelFlowRequest& WithChannelFlowArn(const Aws::String& value) { SetChannelFlowArn(value); return *this;}
-    inline UpdateChannelFlowRequest& WithChannelFlowArn(Aws::String&& value) { SetChannelFlowArn(std::move(value)); return *this;}
-    inline UpdateChannelFlowRequest& WithChannelFlowArn(const char* value) { SetChannelFlowArn(value); return *this;}
+    template<typename ChannelFlowArnT = Aws::String>
+    void SetChannelFlowArn(ChannelFlowArnT&& value) { m_channelFlowArnHasBeenSet = true; m_channelFlowArn = std::forward<ChannelFlowArnT>(value); }
+    template<typename ChannelFlowArnT = Aws::String>
+    UpdateChannelFlowRequest& WithChannelFlowArn(ChannelFlowArnT&& value) { SetChannelFlowArn(std::forward<ChannelFlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the processor Lambda functions </p>
      */
-    inline const Aws::Vector<Processor>& GetProcessors() const{ return m_processors; }
+    inline const Aws::Vector<Processor>& GetProcessors() const { return m_processors; }
     inline bool ProcessorsHasBeenSet() const { return m_processorsHasBeenSet; }
-    inline void SetProcessors(const Aws::Vector<Processor>& value) { m_processorsHasBeenSet = true; m_processors = value; }
-    inline void SetProcessors(Aws::Vector<Processor>&& value) { m_processorsHasBeenSet = true; m_processors = std::move(value); }
-    inline UpdateChannelFlowRequest& WithProcessors(const Aws::Vector<Processor>& value) { SetProcessors(value); return *this;}
-    inline UpdateChannelFlowRequest& WithProcessors(Aws::Vector<Processor>&& value) { SetProcessors(std::move(value)); return *this;}
-    inline UpdateChannelFlowRequest& AddProcessors(const Processor& value) { m_processorsHasBeenSet = true; m_processors.push_back(value); return *this; }
-    inline UpdateChannelFlowRequest& AddProcessors(Processor&& value) { m_processorsHasBeenSet = true; m_processors.push_back(std::move(value)); return *this; }
+    template<typename ProcessorsT = Aws::Vector<Processor>>
+    void SetProcessors(ProcessorsT&& value) { m_processorsHasBeenSet = true; m_processors = std::forward<ProcessorsT>(value); }
+    template<typename ProcessorsT = Aws::Vector<Processor>>
+    UpdateChannelFlowRequest& WithProcessors(ProcessorsT&& value) { SetProcessors(std::forward<ProcessorsT>(value)); return *this;}
+    template<typename ProcessorsT = Processor>
+    UpdateChannelFlowRequest& AddProcessors(ProcessorsT&& value) { m_processorsHasBeenSet = true; m_processors.emplace_back(std::forward<ProcessorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the channel flow.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateChannelFlowRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateChannelFlowRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateChannelFlowRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateChannelFlowRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

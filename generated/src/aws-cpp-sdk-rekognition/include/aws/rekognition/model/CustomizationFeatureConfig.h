@@ -34,7 +34,7 @@ namespace Model
   class CustomizationFeatureConfig
   {
   public:
-    AWS_REKOGNITION_API CustomizationFeatureConfig();
+    AWS_REKOGNITION_API CustomizationFeatureConfig() = default;
     AWS_REKOGNITION_API CustomizationFeatureConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API CustomizationFeatureConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>Configuration options for Custom Moderation training.</p>
      */
-    inline const CustomizationFeatureContentModerationConfig& GetContentModeration() const{ return m_contentModeration; }
+    inline const CustomizationFeatureContentModerationConfig& GetContentModeration() const { return m_contentModeration; }
     inline bool ContentModerationHasBeenSet() const { return m_contentModerationHasBeenSet; }
-    inline void SetContentModeration(const CustomizationFeatureContentModerationConfig& value) { m_contentModerationHasBeenSet = true; m_contentModeration = value; }
-    inline void SetContentModeration(CustomizationFeatureContentModerationConfig&& value) { m_contentModerationHasBeenSet = true; m_contentModeration = std::move(value); }
-    inline CustomizationFeatureConfig& WithContentModeration(const CustomizationFeatureContentModerationConfig& value) { SetContentModeration(value); return *this;}
-    inline CustomizationFeatureConfig& WithContentModeration(CustomizationFeatureContentModerationConfig&& value) { SetContentModeration(std::move(value)); return *this;}
+    template<typename ContentModerationT = CustomizationFeatureContentModerationConfig>
+    void SetContentModeration(ContentModerationT&& value) { m_contentModerationHasBeenSet = true; m_contentModeration = std::forward<ContentModerationT>(value); }
+    template<typename ContentModerationT = CustomizationFeatureContentModerationConfig>
+    CustomizationFeatureConfig& WithContentModeration(ContentModerationT&& value) { SetContentModeration(std::forward<ContentModerationT>(value)); return *this;}
     ///@}
   private:
 

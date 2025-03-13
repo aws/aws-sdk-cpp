@@ -20,14 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-ScalingParametersStatus::ScalingParametersStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ScalingParametersStatus::ScalingParametersStatus(const XmlNode& xmlNode)
-  : ScalingParametersStatus()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ScalingParametersStatus& ScalingParametersStatus::operator =(const XmlNode& xmlN
     {
       m_options = optionsNode;
       m_optionsHasBeenSet = true;
+       m_optionsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

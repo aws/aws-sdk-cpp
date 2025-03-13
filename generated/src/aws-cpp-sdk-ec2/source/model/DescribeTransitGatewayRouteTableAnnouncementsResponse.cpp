@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTransitGatewayRouteTableAnnouncementsResponse::DescribeTransitGatewayRouteTableAnnouncementsResponse()
-{
-}
-
 DescribeTransitGatewayRouteTableAnnouncementsResponse::DescribeTransitGatewayRouteTableAnnouncementsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeTransitGatewayRouteTableAnnouncementsResponse& DescribeTransitGatewayRou
     if(!transitGatewayRouteTableAnnouncementsNode.IsNull())
     {
       XmlNode transitGatewayRouteTableAnnouncementsMember = transitGatewayRouteTableAnnouncementsNode.FirstChild("item");
+      m_transitGatewayRouteTableAnnouncementsHasBeenSet = !transitGatewayRouteTableAnnouncementsMember.IsNull();
       while(!transitGatewayRouteTableAnnouncementsMember.IsNull())
       {
         m_transitGatewayRouteTableAnnouncements.push_back(transitGatewayRouteTableAnnouncementsMember);
@@ -53,6 +50,7 @@ DescribeTransitGatewayRouteTableAnnouncementsResponse& DescribeTransitGatewayRou
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeTransitGatewayRouteTableAnnouncementsResponse& DescribeTransitGatewayRou
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeTransitGatewayRouteTableAnnouncementsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

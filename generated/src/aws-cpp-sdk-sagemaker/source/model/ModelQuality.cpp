@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelQuality::ModelQuality() : 
-    m_statisticsHasBeenSet(false),
-    m_constraintsHasBeenSet(false)
-{
-}
-
 ModelQuality::ModelQuality(JsonView jsonValue)
-  : ModelQuality()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ModelQuality& ModelQuality::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Statistics"))
   {
     m_statistics = jsonValue.GetObject("Statistics");
-
     m_statisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Constraints"))
   {
     m_constraints = jsonValue.GetObject("Constraints");
-
     m_constraintsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRuleGroupMetadataRequest::DescribeRuleGroupMetadataRequest() : 
-    m_ruleGroupNameHasBeenSet(false),
-    m_ruleGroupArnHasBeenSet(false),
-    m_type(RuleGroupType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRuleGroupMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

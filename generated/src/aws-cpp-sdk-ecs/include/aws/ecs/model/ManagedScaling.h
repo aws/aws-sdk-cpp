@@ -40,7 +40,7 @@ namespace Model
   class ManagedScaling
   {
   public:
-    AWS_ECS_API ManagedScaling();
+    AWS_ECS_API ManagedScaling() = default;
     AWS_ECS_API ManagedScaling(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ManagedScaling& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
     /**
      * <p>Determines whether to use managed scaling for the capacity provider.</p>
      */
-    inline const ManagedScalingStatus& GetStatus() const{ return m_status; }
+    inline ManagedScalingStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ManagedScalingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ManagedScalingStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ManagedScaling& WithStatus(const ManagedScalingStatus& value) { SetStatus(value); return *this;}
-    inline ManagedScaling& WithStatus(ManagedScalingStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ManagedScalingStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ManagedScaling& WithStatus(ManagedScalingStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +66,7 @@ namespace Model
      * <code>100</code> percent results in the Amazon EC2 instances in your Auto
      * Scaling group being completely used.</p>
      */
-    inline int GetTargetCapacity() const{ return m_targetCapacity; }
+    inline int GetTargetCapacity() const { return m_targetCapacity; }
     inline bool TargetCapacityHasBeenSet() const { return m_targetCapacityHasBeenSet; }
     inline void SetTargetCapacity(int value) { m_targetCapacityHasBeenSet = true; m_targetCapacity = value; }
     inline ManagedScaling& WithTargetCapacity(int value) { SetTargetCapacity(value); return *this;}
@@ -86,7 +84,7 @@ namespace Model
      * Amazon ECS will scale up by the exact minimum scaling step size value and will
      * ignore both the maximum scaling step size as well as the capacity demand.</p>
      */
-    inline int GetMinimumScalingStepSize() const{ return m_minimumScalingStepSize; }
+    inline int GetMinimumScalingStepSize() const { return m_minimumScalingStepSize; }
     inline bool MinimumScalingStepSizeHasBeenSet() const { return m_minimumScalingStepSizeHasBeenSet; }
     inline void SetMinimumScalingStepSize(int value) { m_minimumScalingStepSizeHasBeenSet = true; m_minimumScalingStepSize = value; }
     inline ManagedScaling& WithMinimumScalingStepSize(int value) { SetMinimumScalingStepSize(value); return *this;}
@@ -98,7 +96,7 @@ namespace Model
      * one time. If this parameter is omitted, the default value of <code>10000</code>
      * is used.</p>
      */
-    inline int GetMaximumScalingStepSize() const{ return m_maximumScalingStepSize; }
+    inline int GetMaximumScalingStepSize() const { return m_maximumScalingStepSize; }
     inline bool MaximumScalingStepSizeHasBeenSet() const { return m_maximumScalingStepSizeHasBeenSet; }
     inline void SetMaximumScalingStepSize(int value) { m_maximumScalingStepSizeHasBeenSet = true; m_maximumScalingStepSize = value; }
     inline ManagedScaling& WithMaximumScalingStepSize(int value) { SetMaximumScalingStepSize(value); return *this;}
@@ -110,26 +108,26 @@ namespace Model
      * can contribute to CloudWatch metrics for Auto Scaling group. If this parameter
      * is omitted, the default value of <code>300</code> seconds is used.</p>
      */
-    inline int GetInstanceWarmupPeriod() const{ return m_instanceWarmupPeriod; }
+    inline int GetInstanceWarmupPeriod() const { return m_instanceWarmupPeriod; }
     inline bool InstanceWarmupPeriodHasBeenSet() const { return m_instanceWarmupPeriodHasBeenSet; }
     inline void SetInstanceWarmupPeriod(int value) { m_instanceWarmupPeriodHasBeenSet = true; m_instanceWarmupPeriod = value; }
     inline ManagedScaling& WithInstanceWarmupPeriod(int value) { SetInstanceWarmupPeriod(value); return *this;}
     ///@}
   private:
 
-    ManagedScalingStatus m_status;
+    ManagedScalingStatus m_status{ManagedScalingStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    int m_targetCapacity;
+    int m_targetCapacity{0};
     bool m_targetCapacityHasBeenSet = false;
 
-    int m_minimumScalingStepSize;
+    int m_minimumScalingStepSize{0};
     bool m_minimumScalingStepSizeHasBeenSet = false;
 
-    int m_maximumScalingStepSize;
+    int m_maximumScalingStepSize{0};
     bool m_maximumScalingStepSizeHasBeenSet = false;
 
-    int m_instanceWarmupPeriod;
+    int m_instanceWarmupPeriod{0};
     bool m_instanceWarmupPeriodHasBeenSet = false;
   };
 

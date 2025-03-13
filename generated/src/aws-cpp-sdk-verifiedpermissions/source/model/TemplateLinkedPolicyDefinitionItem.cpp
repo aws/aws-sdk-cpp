@@ -18,15 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-TemplateLinkedPolicyDefinitionItem::TemplateLinkedPolicyDefinitionItem() : 
-    m_policyTemplateIdHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false)
-{
-}
-
 TemplateLinkedPolicyDefinitionItem::TemplateLinkedPolicyDefinitionItem(JsonView jsonValue)
-  : TemplateLinkedPolicyDefinitionItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TemplateLinkedPolicyDefinitionItem& TemplateLinkedPolicyDefinitionItem::operator
   if(jsonValue.ValueExists("policyTemplateId"))
   {
     m_policyTemplateId = jsonValue.GetString("policyTemplateId");
-
     m_policyTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principal"))
   {
     m_principal = jsonValue.GetObject("principal");
-
     m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetObject("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   return *this;
 }
 

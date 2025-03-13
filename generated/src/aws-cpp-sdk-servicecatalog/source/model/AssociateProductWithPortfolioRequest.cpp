@@ -12,14 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateProductWithPortfolioRequest::AssociateProductWithPortfolioRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_portfolioIdHasBeenSet(false),
-    m_sourcePortfolioIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateProductWithPortfolioRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class SecretsManagerConfiguration
   {
   public:
-    AWS_FIREHOSE_API SecretsManagerConfiguration();
+    AWS_FIREHOSE_API SecretsManagerConfiguration() = default;
     AWS_FIREHOSE_API SecretsManagerConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API SecretsManagerConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * cross-account secret access. This parameter is required when <b>Enabled</b> is
      * set to <code>True</code>.</p>
      */
-    inline const Aws::String& GetSecretARN() const{ return m_secretARN; }
+    inline const Aws::String& GetSecretARN() const { return m_secretARN; }
     inline bool SecretARNHasBeenSet() const { return m_secretARNHasBeenSet; }
-    inline void SetSecretARN(const Aws::String& value) { m_secretARNHasBeenSet = true; m_secretARN = value; }
-    inline void SetSecretARN(Aws::String&& value) { m_secretARNHasBeenSet = true; m_secretARN = std::move(value); }
-    inline void SetSecretARN(const char* value) { m_secretARNHasBeenSet = true; m_secretARN.assign(value); }
-    inline SecretsManagerConfiguration& WithSecretARN(const Aws::String& value) { SetSecretARN(value); return *this;}
-    inline SecretsManagerConfiguration& WithSecretARN(Aws::String&& value) { SetSecretARN(std::move(value)); return *this;}
-    inline SecretsManagerConfiguration& WithSecretARN(const char* value) { SetSecretARN(value); return *this;}
+    template<typename SecretARNT = Aws::String>
+    void SetSecretARN(SecretARNT&& value) { m_secretARNHasBeenSet = true; m_secretARN = std::forward<SecretARNT>(value); }
+    template<typename SecretARNT = Aws::String>
+    SecretsManagerConfiguration& WithSecretARN(SecretARNT&& value) { SetSecretARN(std::forward<SecretARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * role defined in the destination configuration. If you do not provide the then we
      * use the destination specific role. This parameter is required for Splunk. </p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline SecretsManagerConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline SecretsManagerConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline SecretsManagerConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    SecretsManagerConfiguration& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +76,7 @@ namespace Model
      * secrets in the destination configuration. When it's set to <code>False</code>
      * Firehose falls back to the credentials in the destination configuration.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline SecretsManagerConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -93,7 +89,7 @@ namespace Model
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

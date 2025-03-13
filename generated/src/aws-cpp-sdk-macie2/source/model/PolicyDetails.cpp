@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-PolicyDetails::PolicyDetails() : 
-    m_actionHasBeenSet(false),
-    m_actorHasBeenSet(false)
-{
-}
-
 PolicyDetails::PolicyDetails(JsonView jsonValue)
-  : PolicyDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetObject("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actor"))
   {
     m_actor = jsonValue.GetObject("actor");
-
     m_actorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,22 +18,7 @@ namespace CodeStarconnections
 namespace Model
 {
 
-SyncBlocker::SyncBlocker() : 
-    m_idHasBeenSet(false),
-    m_type(BlockerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(BlockerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdReasonHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_contextsHasBeenSet(false),
-    m_resolvedReasonHasBeenSet(false),
-    m_resolvedAtHasBeenSet(false)
-{
-}
-
 SyncBlocker::SyncBlocker(JsonView jsonValue)
-  : SyncBlocker()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ SyncBlocker& SyncBlocker::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = BlockerTypeMapper::GetBlockerTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = BlockerStatusMapper::GetBlockerStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedReason"))
   {
     m_createdReason = jsonValue.GetString("CreatedReason");
-
     m_createdReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Contexts"))
   {
     Aws::Utils::Array<JsonView> contextsJsonList = jsonValue.GetArray("Contexts");
@@ -84,21 +59,16 @@ SyncBlocker& SyncBlocker::operator =(JsonView jsonValue)
     }
     m_contextsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolvedReason"))
   {
     m_resolvedReason = jsonValue.GetString("ResolvedReason");
-
     m_resolvedReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolvedAt"))
   {
     m_resolvedAt = jsonValue.GetDouble("ResolvedAt");
-
     m_resolvedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

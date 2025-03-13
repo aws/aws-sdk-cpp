@@ -18,17 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-VTLDevice::VTLDevice() : 
-    m_vTLDeviceARNHasBeenSet(false),
-    m_vTLDeviceTypeHasBeenSet(false),
-    m_vTLDeviceVendorHasBeenSet(false),
-    m_vTLDeviceProductIdentifierHasBeenSet(false),
-    m_deviceiSCSIAttributesHasBeenSet(false)
-{
-}
-
 VTLDevice::VTLDevice(JsonView jsonValue)
-  : VTLDevice()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ VTLDevice& VTLDevice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VTLDeviceARN"))
   {
     m_vTLDeviceARN = jsonValue.GetString("VTLDeviceARN");
-
     m_vTLDeviceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VTLDeviceType"))
   {
     m_vTLDeviceType = jsonValue.GetString("VTLDeviceType");
-
     m_vTLDeviceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VTLDeviceVendor"))
   {
     m_vTLDeviceVendor = jsonValue.GetString("VTLDeviceVendor");
-
     m_vTLDeviceVendorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VTLDeviceProductIdentifier"))
   {
     m_vTLDeviceProductIdentifier = jsonValue.GetString("VTLDeviceProductIdentifier");
-
     m_vTLDeviceProductIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceiSCSIAttributes"))
   {
     m_deviceiSCSIAttributes = jsonValue.GetObject("DeviceiSCSIAttributes");
-
     m_deviceiSCSIAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ActivateContactChannelRequest::ActivateContactChannelRequest() : 
-    m_contactChannelIdHasBeenSet(false),
-    m_activationCodeHasBeenSet(false)
-{
-}
-
 Aws::String ActivateContactChannelRequest::SerializePayload() const
 {
   JsonValue payload;

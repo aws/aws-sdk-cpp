@@ -10,12 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-DefineExpressionRequest::DefineExpressionRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 Aws::String DefineExpressionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

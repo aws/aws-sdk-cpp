@@ -33,7 +33,7 @@ namespace Model
   class LoadBasedAutoScalingConfiguration
   {
   public:
-    AWS_OPSWORKS_API LoadBasedAutoScalingConfiguration();
+    AWS_OPSWORKS_API LoadBasedAutoScalingConfiguration() = default;
     AWS_OPSWORKS_API LoadBasedAutoScalingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API LoadBasedAutoScalingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The layer ID.</p>
      */
-    inline const Aws::String& GetLayerId() const{ return m_layerId; }
+    inline const Aws::String& GetLayerId() const { return m_layerId; }
     inline bool LayerIdHasBeenSet() const { return m_layerIdHasBeenSet; }
-    inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
-    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = std::move(value); }
-    inline void SetLayerId(const char* value) { m_layerIdHasBeenSet = true; m_layerId.assign(value); }
-    inline LoadBasedAutoScalingConfiguration& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
-    inline LoadBasedAutoScalingConfiguration& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
-    inline LoadBasedAutoScalingConfiguration& WithLayerId(const char* value) { SetLayerId(value); return *this;}
+    template<typename LayerIdT = Aws::String>
+    void SetLayerId(LayerIdT&& value) { m_layerIdHasBeenSet = true; m_layerId = std::forward<LayerIdT>(value); }
+    template<typename LayerIdT = Aws::String>
+    LoadBasedAutoScalingConfiguration& WithLayerId(LayerIdT&& value) { SetLayerId(std::forward<LayerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether load-based auto scaling is enabled for the layer.</p>
      */
-    inline bool GetEnable() const{ return m_enable; }
+    inline bool GetEnable() const { return m_enable; }
     inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
     inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
     inline LoadBasedAutoScalingConfiguration& WithEnable(bool value) { SetEnable(value); return *this;}
@@ -69,12 +67,12 @@ namespace Model
      * configuration, which defines how and when OpsWorks Stacks increases the number
      * of instances.</p>
      */
-    inline const AutoScalingThresholds& GetUpScaling() const{ return m_upScaling; }
+    inline const AutoScalingThresholds& GetUpScaling() const { return m_upScaling; }
     inline bool UpScalingHasBeenSet() const { return m_upScalingHasBeenSet; }
-    inline void SetUpScaling(const AutoScalingThresholds& value) { m_upScalingHasBeenSet = true; m_upScaling = value; }
-    inline void SetUpScaling(AutoScalingThresholds&& value) { m_upScalingHasBeenSet = true; m_upScaling = std::move(value); }
-    inline LoadBasedAutoScalingConfiguration& WithUpScaling(const AutoScalingThresholds& value) { SetUpScaling(value); return *this;}
-    inline LoadBasedAutoScalingConfiguration& WithUpScaling(AutoScalingThresholds&& value) { SetUpScaling(std::move(value)); return *this;}
+    template<typename UpScalingT = AutoScalingThresholds>
+    void SetUpScaling(UpScalingT&& value) { m_upScalingHasBeenSet = true; m_upScaling = std::forward<UpScalingT>(value); }
+    template<typename UpScalingT = AutoScalingThresholds>
+    LoadBasedAutoScalingConfiguration& WithUpScaling(UpScalingT&& value) { SetUpScaling(std::forward<UpScalingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,19 +81,19 @@ namespace Model
      * configuration, which defines how and when OpsWorks Stacks reduces the number of
      * instances.</p>
      */
-    inline const AutoScalingThresholds& GetDownScaling() const{ return m_downScaling; }
+    inline const AutoScalingThresholds& GetDownScaling() const { return m_downScaling; }
     inline bool DownScalingHasBeenSet() const { return m_downScalingHasBeenSet; }
-    inline void SetDownScaling(const AutoScalingThresholds& value) { m_downScalingHasBeenSet = true; m_downScaling = value; }
-    inline void SetDownScaling(AutoScalingThresholds&& value) { m_downScalingHasBeenSet = true; m_downScaling = std::move(value); }
-    inline LoadBasedAutoScalingConfiguration& WithDownScaling(const AutoScalingThresholds& value) { SetDownScaling(value); return *this;}
-    inline LoadBasedAutoScalingConfiguration& WithDownScaling(AutoScalingThresholds&& value) { SetDownScaling(std::move(value)); return *this;}
+    template<typename DownScalingT = AutoScalingThresholds>
+    void SetDownScaling(DownScalingT&& value) { m_downScalingHasBeenSet = true; m_downScaling = std::forward<DownScalingT>(value); }
+    template<typename DownScalingT = AutoScalingThresholds>
+    LoadBasedAutoScalingConfiguration& WithDownScaling(DownScalingT&& value) { SetDownScaling(std::forward<DownScalingT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_layerId;
     bool m_layerIdHasBeenSet = false;
 
-    bool m_enable;
+    bool m_enable{false};
     bool m_enableHasBeenSet = false;
 
     AutoScalingThresholds m_upScaling;

@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CisSecurityLevelFilter::CisSecurityLevelFilter() : 
-    m_comparison(CisSecurityLevelComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_value(CisSecurityLevel::NOT_SET),
-    m_valueHasBeenSet(false)
-{
-}
-
 CisSecurityLevelFilter::CisSecurityLevelFilter(JsonView jsonValue)
-  : CisSecurityLevelFilter()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CisSecurityLevelFilter& CisSecurityLevelFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("comparison"))
   {
     m_comparison = CisSecurityLevelComparisonMapper::GetCisSecurityLevelComparisonForName(jsonValue.GetString("comparison"));
-
     m_comparisonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = CisSecurityLevelMapper::GetCisSecurityLevelForName(jsonValue.GetString("value"));
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

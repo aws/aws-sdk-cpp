@@ -32,7 +32,7 @@ namespace Model
   class RawResponse
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RawResponse();
+    AWS_BEDROCKAGENTRUNTIME_API RawResponse() = default;
     AWS_BEDROCKAGENTRUNTIME_API RawResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RawResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The foundation model's raw output content.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline RawResponse& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline RawResponse& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline RawResponse& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    RawResponse& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 

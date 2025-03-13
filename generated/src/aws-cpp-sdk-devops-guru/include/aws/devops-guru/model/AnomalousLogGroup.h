@@ -35,7 +35,7 @@ namespace Model
   class AnomalousLogGroup
   {
   public:
-    AWS_DEVOPSGURU_API AnomalousLogGroup();
+    AWS_DEVOPSGURU_API AnomalousLogGroup() = default;
     AWS_DEVOPSGURU_API AnomalousLogGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API AnomalousLogGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p> The name of the CloudWatch log group. </p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline AnomalousLogGroup& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline AnomalousLogGroup& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline AnomalousLogGroup& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    AnomalousLogGroup& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,31 +58,31 @@ namespace Model
      * <p> The time the anomalous log events began. The impact start time indicates the
      * time of the first log anomaly event that occurs. </p>
      */
-    inline const Aws::Utils::DateTime& GetImpactStartTime() const{ return m_impactStartTime; }
+    inline const Aws::Utils::DateTime& GetImpactStartTime() const { return m_impactStartTime; }
     inline bool ImpactStartTimeHasBeenSet() const { return m_impactStartTimeHasBeenSet; }
-    inline void SetImpactStartTime(const Aws::Utils::DateTime& value) { m_impactStartTimeHasBeenSet = true; m_impactStartTime = value; }
-    inline void SetImpactStartTime(Aws::Utils::DateTime&& value) { m_impactStartTimeHasBeenSet = true; m_impactStartTime = std::move(value); }
-    inline AnomalousLogGroup& WithImpactStartTime(const Aws::Utils::DateTime& value) { SetImpactStartTime(value); return *this;}
-    inline AnomalousLogGroup& WithImpactStartTime(Aws::Utils::DateTime&& value) { SetImpactStartTime(std::move(value)); return *this;}
+    template<typename ImpactStartTimeT = Aws::Utils::DateTime>
+    void SetImpactStartTime(ImpactStartTimeT&& value) { m_impactStartTimeHasBeenSet = true; m_impactStartTime = std::forward<ImpactStartTimeT>(value); }
+    template<typename ImpactStartTimeT = Aws::Utils::DateTime>
+    AnomalousLogGroup& WithImpactStartTime(ImpactStartTimeT&& value) { SetImpactStartTime(std::forward<ImpactStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time the anomalous log events stopped. </p>
      */
-    inline const Aws::Utils::DateTime& GetImpactEndTime() const{ return m_impactEndTime; }
+    inline const Aws::Utils::DateTime& GetImpactEndTime() const { return m_impactEndTime; }
     inline bool ImpactEndTimeHasBeenSet() const { return m_impactEndTimeHasBeenSet; }
-    inline void SetImpactEndTime(const Aws::Utils::DateTime& value) { m_impactEndTimeHasBeenSet = true; m_impactEndTime = value; }
-    inline void SetImpactEndTime(Aws::Utils::DateTime&& value) { m_impactEndTimeHasBeenSet = true; m_impactEndTime = std::move(value); }
-    inline AnomalousLogGroup& WithImpactEndTime(const Aws::Utils::DateTime& value) { SetImpactEndTime(value); return *this;}
-    inline AnomalousLogGroup& WithImpactEndTime(Aws::Utils::DateTime&& value) { SetImpactEndTime(std::move(value)); return *this;}
+    template<typename ImpactEndTimeT = Aws::Utils::DateTime>
+    void SetImpactEndTime(ImpactEndTimeT&& value) { m_impactEndTimeHasBeenSet = true; m_impactEndTime = std::forward<ImpactEndTimeT>(value); }
+    template<typename ImpactEndTimeT = Aws::Utils::DateTime>
+    AnomalousLogGroup& WithImpactEndTime(ImpactEndTimeT&& value) { SetImpactEndTime(std::forward<ImpactEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The number of log lines that were scanned for anomalous log events. </p>
      */
-    inline int GetNumberOfLogLinesScanned() const{ return m_numberOfLogLinesScanned; }
+    inline int GetNumberOfLogLinesScanned() const { return m_numberOfLogLinesScanned; }
     inline bool NumberOfLogLinesScannedHasBeenSet() const { return m_numberOfLogLinesScannedHasBeenSet; }
     inline void SetNumberOfLogLinesScanned(int value) { m_numberOfLogLinesScannedHasBeenSet = true; m_numberOfLogLinesScanned = value; }
     inline AnomalousLogGroup& WithNumberOfLogLinesScanned(int value) { SetNumberOfLogLinesScanned(value); return *this;}
@@ -95,27 +93,27 @@ namespace Model
      * <p> The log anomalies in the log group. Each log anomaly displayed represents a
      * cluster of similar anomalous log events. </p>
      */
-    inline const Aws::Vector<LogAnomalyShowcase>& GetLogAnomalyShowcases() const{ return m_logAnomalyShowcases; }
+    inline const Aws::Vector<LogAnomalyShowcase>& GetLogAnomalyShowcases() const { return m_logAnomalyShowcases; }
     inline bool LogAnomalyShowcasesHasBeenSet() const { return m_logAnomalyShowcasesHasBeenSet; }
-    inline void SetLogAnomalyShowcases(const Aws::Vector<LogAnomalyShowcase>& value) { m_logAnomalyShowcasesHasBeenSet = true; m_logAnomalyShowcases = value; }
-    inline void SetLogAnomalyShowcases(Aws::Vector<LogAnomalyShowcase>&& value) { m_logAnomalyShowcasesHasBeenSet = true; m_logAnomalyShowcases = std::move(value); }
-    inline AnomalousLogGroup& WithLogAnomalyShowcases(const Aws::Vector<LogAnomalyShowcase>& value) { SetLogAnomalyShowcases(value); return *this;}
-    inline AnomalousLogGroup& WithLogAnomalyShowcases(Aws::Vector<LogAnomalyShowcase>&& value) { SetLogAnomalyShowcases(std::move(value)); return *this;}
-    inline AnomalousLogGroup& AddLogAnomalyShowcases(const LogAnomalyShowcase& value) { m_logAnomalyShowcasesHasBeenSet = true; m_logAnomalyShowcases.push_back(value); return *this; }
-    inline AnomalousLogGroup& AddLogAnomalyShowcases(LogAnomalyShowcase&& value) { m_logAnomalyShowcasesHasBeenSet = true; m_logAnomalyShowcases.push_back(std::move(value)); return *this; }
+    template<typename LogAnomalyShowcasesT = Aws::Vector<LogAnomalyShowcase>>
+    void SetLogAnomalyShowcases(LogAnomalyShowcasesT&& value) { m_logAnomalyShowcasesHasBeenSet = true; m_logAnomalyShowcases = std::forward<LogAnomalyShowcasesT>(value); }
+    template<typename LogAnomalyShowcasesT = Aws::Vector<LogAnomalyShowcase>>
+    AnomalousLogGroup& WithLogAnomalyShowcases(LogAnomalyShowcasesT&& value) { SetLogAnomalyShowcases(std::forward<LogAnomalyShowcasesT>(value)); return *this;}
+    template<typename LogAnomalyShowcasesT = LogAnomalyShowcase>
+    AnomalousLogGroup& AddLogAnomalyShowcases(LogAnomalyShowcasesT&& value) { m_logAnomalyShowcasesHasBeenSet = true; m_logAnomalyShowcases.emplace_back(std::forward<LogAnomalyShowcasesT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_impactStartTime;
+    Aws::Utils::DateTime m_impactStartTime{};
     bool m_impactStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_impactEndTime;
+    Aws::Utils::DateTime m_impactEndTime{};
     bool m_impactEndTimeHasBeenSet = false;
 
-    int m_numberOfLogLinesScanned;
+    int m_numberOfLogLinesScanned{0};
     bool m_numberOfLogLinesScannedHasBeenSet = false;
 
     Aws::Vector<LogAnomalyShowcase> m_logAnomalyShowcases;

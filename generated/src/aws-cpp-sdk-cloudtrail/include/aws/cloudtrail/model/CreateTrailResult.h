@@ -33,7 +33,7 @@ namespace Model
   class CreateTrailResult
   {
   public:
-    AWS_CLOUDTRAIL_API CreateTrailResult();
+    AWS_CLOUDTRAIL_API CreateTrailResult() = default;
     AWS_CLOUDTRAIL_API CreateTrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API CreateTrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,11 @@ namespace Model
     /**
      * <p>Specifies the name of the trail.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateTrailResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateTrailResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateTrailResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateTrailResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,13 +54,11 @@ namespace Model
      * <p>Specifies the name of the Amazon S3 bucket designated for publishing log
      * files.</p>
      */
-    inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
-    inline void SetS3BucketName(const Aws::String& value) { m_s3BucketName = value; }
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketName = std::move(value); }
-    inline void SetS3BucketName(const char* value) { m_s3BucketName.assign(value); }
-    inline CreateTrailResult& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-    inline CreateTrailResult& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-    inline CreateTrailResult& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    inline const Aws::String& GetS3BucketName() const { return m_s3BucketName; }
+    template<typename S3BucketNameT = Aws::String>
+    void SetS3BucketName(S3BucketNameT&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::forward<S3BucketNameT>(value); }
+    template<typename S3BucketNameT = Aws::String>
+    CreateTrailResult& WithS3BucketName(S3BucketNameT&& value) { SetS3BucketName(std::forward<S3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,13 +68,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/get-and-view-cloudtrail-log-files.html#cloudtrail-find-log-files">Finding
      * Your CloudTrail Log Files</a>.</p>
      */
-    inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
-    inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefix = value; }
-    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefix = std::move(value); }
-    inline void SetS3KeyPrefix(const char* value) { m_s3KeyPrefix.assign(value); }
-    inline CreateTrailResult& WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
-    inline CreateTrailResult& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
-    inline CreateTrailResult& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
+    inline const Aws::String& GetS3KeyPrefix() const { return m_s3KeyPrefix; }
+    template<typename S3KeyPrefixT = Aws::String>
+    void SetS3KeyPrefix(S3KeyPrefixT&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::forward<S3KeyPrefixT>(value); }
+    template<typename S3KeyPrefixT = Aws::String>
+    CreateTrailResult& WithS3KeyPrefix(S3KeyPrefixT&& value) { SetS3KeyPrefix(std::forward<S3KeyPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,13 +81,11 @@ namespace Model
      * notifications when log files are delivered. The format of a topic ARN is:</p>
      * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
-    inline const Aws::String& GetSnsTopicARN() const{ return m_snsTopicARN; }
-    inline void SetSnsTopicARN(const Aws::String& value) { m_snsTopicARN = value; }
-    inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARN = std::move(value); }
-    inline void SetSnsTopicARN(const char* value) { m_snsTopicARN.assign(value); }
-    inline CreateTrailResult& WithSnsTopicARN(const Aws::String& value) { SetSnsTopicARN(value); return *this;}
-    inline CreateTrailResult& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(std::move(value)); return *this;}
-    inline CreateTrailResult& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
+    inline const Aws::String& GetSnsTopicARN() const { return m_snsTopicARN; }
+    template<typename SnsTopicARNT = Aws::String>
+    void SetSnsTopicARN(SnsTopicARNT&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = std::forward<SnsTopicARNT>(value); }
+    template<typename SnsTopicARNT = Aws::String>
+    CreateTrailResult& WithSnsTopicARN(SnsTopicARNT&& value) { SetSnsTopicARN(std::forward<SnsTopicARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,8 +93,8 @@ namespace Model
      * <p>Specifies whether the trail is publishing events from global services such as
      * IAM to the log files.</p>
      */
-    inline bool GetIncludeGlobalServiceEvents() const{ return m_includeGlobalServiceEvents; }
-    inline void SetIncludeGlobalServiceEvents(bool value) { m_includeGlobalServiceEvents = value; }
+    inline bool GetIncludeGlobalServiceEvents() const { return m_includeGlobalServiceEvents; }
+    inline void SetIncludeGlobalServiceEvents(bool value) { m_includeGlobalServiceEventsHasBeenSet = true; m_includeGlobalServiceEvents = value; }
     inline CreateTrailResult& WithIncludeGlobalServiceEvents(bool value) { SetIncludeGlobalServiceEvents(value); return *this;}
     ///@}
 
@@ -110,8 +102,8 @@ namespace Model
     /**
      * <p>Specifies whether the trail exists in one Region or in all Regions.</p>
      */
-    inline bool GetIsMultiRegionTrail() const{ return m_isMultiRegionTrail; }
-    inline void SetIsMultiRegionTrail(bool value) { m_isMultiRegionTrail = value; }
+    inline bool GetIsMultiRegionTrail() const { return m_isMultiRegionTrail; }
+    inline void SetIsMultiRegionTrail(bool value) { m_isMultiRegionTrailHasBeenSet = true; m_isMultiRegionTrail = value; }
     inline CreateTrailResult& WithIsMultiRegionTrail(bool value) { SetIsMultiRegionTrail(value); return *this;}
     ///@}
 
@@ -121,21 +113,19 @@ namespace Model
      * is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
-    inline const Aws::String& GetTrailARN() const{ return m_trailARN; }
-    inline void SetTrailARN(const Aws::String& value) { m_trailARN = value; }
-    inline void SetTrailARN(Aws::String&& value) { m_trailARN = std::move(value); }
-    inline void SetTrailARN(const char* value) { m_trailARN.assign(value); }
-    inline CreateTrailResult& WithTrailARN(const Aws::String& value) { SetTrailARN(value); return *this;}
-    inline CreateTrailResult& WithTrailARN(Aws::String&& value) { SetTrailARN(std::move(value)); return *this;}
-    inline CreateTrailResult& WithTrailARN(const char* value) { SetTrailARN(value); return *this;}
+    inline const Aws::String& GetTrailARN() const { return m_trailARN; }
+    template<typename TrailARNT = Aws::String>
+    void SetTrailARN(TrailARNT&& value) { m_trailARNHasBeenSet = true; m_trailARN = std::forward<TrailARNT>(value); }
+    template<typename TrailARNT = Aws::String>
+    CreateTrailResult& WithTrailARN(TrailARNT&& value) { SetTrailARN(std::forward<TrailARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether log file integrity validation is enabled.</p>
      */
-    inline bool GetLogFileValidationEnabled() const{ return m_logFileValidationEnabled; }
-    inline void SetLogFileValidationEnabled(bool value) { m_logFileValidationEnabled = value; }
+    inline bool GetLogFileValidationEnabled() const { return m_logFileValidationEnabled; }
+    inline void SetLogFileValidationEnabled(bool value) { m_logFileValidationEnabledHasBeenSet = true; m_logFileValidationEnabled = value; }
     inline CreateTrailResult& WithLogFileValidationEnabled(bool value) { SetLogFileValidationEnabled(value); return *this;}
     ///@}
 
@@ -144,13 +134,11 @@ namespace Model
      * <p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail
      * logs will be delivered.</p>
      */
-    inline const Aws::String& GetCloudWatchLogsLogGroupArn() const{ return m_cloudWatchLogsLogGroupArn; }
-    inline void SetCloudWatchLogsLogGroupArn(const Aws::String& value) { m_cloudWatchLogsLogGroupArn = value; }
-    inline void SetCloudWatchLogsLogGroupArn(Aws::String&& value) { m_cloudWatchLogsLogGroupArn = std::move(value); }
-    inline void SetCloudWatchLogsLogGroupArn(const char* value) { m_cloudWatchLogsLogGroupArn.assign(value); }
-    inline CreateTrailResult& WithCloudWatchLogsLogGroupArn(const Aws::String& value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
-    inline CreateTrailResult& WithCloudWatchLogsLogGroupArn(Aws::String&& value) { SetCloudWatchLogsLogGroupArn(std::move(value)); return *this;}
-    inline CreateTrailResult& WithCloudWatchLogsLogGroupArn(const char* value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
+    inline const Aws::String& GetCloudWatchLogsLogGroupArn() const { return m_cloudWatchLogsLogGroupArn; }
+    template<typename CloudWatchLogsLogGroupArnT = Aws::String>
+    void SetCloudWatchLogsLogGroupArn(CloudWatchLogsLogGroupArnT&& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = std::forward<CloudWatchLogsLogGroupArnT>(value); }
+    template<typename CloudWatchLogsLogGroupArnT = Aws::String>
+    CreateTrailResult& WithCloudWatchLogsLogGroupArn(CloudWatchLogsLogGroupArnT&& value) { SetCloudWatchLogsLogGroupArn(std::forward<CloudWatchLogsLogGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,13 +146,11 @@ namespace Model
      * <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a
      * user's log group.</p>
      */
-    inline const Aws::String& GetCloudWatchLogsRoleArn() const{ return m_cloudWatchLogsRoleArn; }
-    inline void SetCloudWatchLogsRoleArn(const Aws::String& value) { m_cloudWatchLogsRoleArn = value; }
-    inline void SetCloudWatchLogsRoleArn(Aws::String&& value) { m_cloudWatchLogsRoleArn = std::move(value); }
-    inline void SetCloudWatchLogsRoleArn(const char* value) { m_cloudWatchLogsRoleArn.assign(value); }
-    inline CreateTrailResult& WithCloudWatchLogsRoleArn(const Aws::String& value) { SetCloudWatchLogsRoleArn(value); return *this;}
-    inline CreateTrailResult& WithCloudWatchLogsRoleArn(Aws::String&& value) { SetCloudWatchLogsRoleArn(std::move(value)); return *this;}
-    inline CreateTrailResult& WithCloudWatchLogsRoleArn(const char* value) { SetCloudWatchLogsRoleArn(value); return *this;}
+    inline const Aws::String& GetCloudWatchLogsRoleArn() const { return m_cloudWatchLogsRoleArn; }
+    template<typename CloudWatchLogsRoleArnT = Aws::String>
+    void SetCloudWatchLogsRoleArn(CloudWatchLogsRoleArnT&& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = std::forward<CloudWatchLogsRoleArnT>(value); }
+    template<typename CloudWatchLogsRoleArnT = Aws::String>
+    CreateTrailResult& WithCloudWatchLogsRoleArn(CloudWatchLogsRoleArnT&& value) { SetCloudWatchLogsRoleArn(std::forward<CloudWatchLogsRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,61 +160,70 @@ namespace Model
      * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
-    inline CreateTrailResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateTrailResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateTrailResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateTrailResult& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the trail is an organization trail.</p>
      */
-    inline bool GetIsOrganizationTrail() const{ return m_isOrganizationTrail; }
-    inline void SetIsOrganizationTrail(bool value) { m_isOrganizationTrail = value; }
+    inline bool GetIsOrganizationTrail() const { return m_isOrganizationTrail; }
+    inline void SetIsOrganizationTrail(bool value) { m_isOrganizationTrailHasBeenSet = true; m_isOrganizationTrail = value; }
     inline CreateTrailResult& WithIsOrganizationTrail(bool value) { SetIsOrganizationTrail(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateTrailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateTrailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateTrailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateTrailResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_s3BucketName;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
     Aws::String m_snsTopicARN;
+    bool m_snsTopicARNHasBeenSet = false;
 
-    bool m_includeGlobalServiceEvents;
+    bool m_includeGlobalServiceEvents{false};
+    bool m_includeGlobalServiceEventsHasBeenSet = false;
 
-    bool m_isMultiRegionTrail;
+    bool m_isMultiRegionTrail{false};
+    bool m_isMultiRegionTrailHasBeenSet = false;
 
     Aws::String m_trailARN;
+    bool m_trailARNHasBeenSet = false;
 
-    bool m_logFileValidationEnabled;
+    bool m_logFileValidationEnabled{false};
+    bool m_logFileValidationEnabledHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsLogGroupArn;
+    bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsRoleArn;
+    bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
-    bool m_isOrganizationTrail;
+    bool m_isOrganizationTrail{false};
+    bool m_isOrganizationTrailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

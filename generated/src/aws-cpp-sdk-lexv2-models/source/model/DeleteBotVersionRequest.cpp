@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteBotVersionRequest::DeleteBotVersionRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_skipResourceInUseCheck(false),
-    m_skipResourceInUseCheckHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBotVersionRequest::SerializePayload() const
 {
   return {};

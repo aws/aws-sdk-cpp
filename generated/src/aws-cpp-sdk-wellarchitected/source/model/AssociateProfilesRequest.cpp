@@ -12,12 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateProfilesRequest::AssociateProfilesRequest() : 
-    m_workloadIdHasBeenSet(false),
-    m_profileArnsHasBeenSet(false)
-{
-}
-
 Aws::String AssociateProfilesRequest::SerializePayload() const
 {
   JsonValue payload;

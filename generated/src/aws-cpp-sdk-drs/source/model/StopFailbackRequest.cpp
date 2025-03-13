@@ -12,11 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopFailbackRequest::StopFailbackRequest() : 
-    m_recoveryInstanceIDHasBeenSet(false)
-{
-}
-
 Aws::String StopFailbackRequest::SerializePayload() const
 {
   JsonValue payload;

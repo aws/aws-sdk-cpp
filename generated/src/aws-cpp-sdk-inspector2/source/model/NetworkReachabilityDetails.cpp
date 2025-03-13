@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-NetworkReachabilityDetails::NetworkReachabilityDetails() : 
-    m_networkPathHasBeenSet(false),
-    m_openPortRangeHasBeenSet(false),
-    m_protocol(NetworkProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
-{
-}
-
 NetworkReachabilityDetails::NetworkReachabilityDetails(JsonView jsonValue)
-  : NetworkReachabilityDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ NetworkReachabilityDetails& NetworkReachabilityDetails::operator =(JsonView json
   if(jsonValue.ValueExists("networkPath"))
   {
     m_networkPath = jsonValue.GetObject("networkPath");
-
     m_networkPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openPortRange"))
   {
     m_openPortRange = jsonValue.GetObject("openPortRange");
-
     m_openPortRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = NetworkProtocolMapper::GetNetworkProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   return *this;
 }
 

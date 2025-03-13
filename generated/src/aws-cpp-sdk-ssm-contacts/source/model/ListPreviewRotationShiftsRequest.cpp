@@ -12,20 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPreviewRotationShiftsRequest::ListPreviewRotationShiftsRequest() : 
-    m_rotationStartTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_membersHasBeenSet(false),
-    m_timeZoneIdHasBeenSet(false),
-    m_recurrenceHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListPreviewRotationShiftsRequest::SerializePayload() const
 {
   JsonValue payload;

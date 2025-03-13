@@ -33,7 +33,7 @@ namespace Model
   class ModifyEventSubscriptionResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ModifyEventSubscriptionResult();
+    AWS_DATABASEMIGRATIONSERVICE_API ModifyEventSubscriptionResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API ModifyEventSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API ModifyEventSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The modified event subscription.</p>
      */
-    inline const EventSubscription& GetEventSubscription() const{ return m_eventSubscription; }
-    inline void SetEventSubscription(const EventSubscription& value) { m_eventSubscription = value; }
-    inline void SetEventSubscription(EventSubscription&& value) { m_eventSubscription = std::move(value); }
-    inline ModifyEventSubscriptionResult& WithEventSubscription(const EventSubscription& value) { SetEventSubscription(value); return *this;}
-    inline ModifyEventSubscriptionResult& WithEventSubscription(EventSubscription&& value) { SetEventSubscription(std::move(value)); return *this;}
+    inline const EventSubscription& GetEventSubscription() const { return m_eventSubscription; }
+    template<typename EventSubscriptionT = EventSubscription>
+    void SetEventSubscription(EventSubscriptionT&& value) { m_eventSubscriptionHasBeenSet = true; m_eventSubscription = std::forward<EventSubscriptionT>(value); }
+    template<typename EventSubscriptionT = EventSubscription>
+    ModifyEventSubscriptionResult& WithEventSubscription(EventSubscriptionT&& value) { SetEventSubscription(std::forward<EventSubscriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ModifyEventSubscriptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ModifyEventSubscriptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ModifyEventSubscriptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ModifyEventSubscriptionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EventSubscription m_eventSubscription;
+    bool m_eventSubscriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,13 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DeleteStackSetRequest::DeleteStackSetRequest() : 
-    m_stackSetNameHasBeenSet(false),
-    m_callAs(CallAs::NOT_SET),
-    m_callAsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStackSetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

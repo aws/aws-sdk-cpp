@@ -12,13 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConfiguredTableRequest::UpdateConfiguredTableRequest() : 
-    m_configuredTableIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConfiguredTableRequest::SerializePayload() const
 {
   JsonValue payload;

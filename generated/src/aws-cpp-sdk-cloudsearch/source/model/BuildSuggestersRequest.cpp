@@ -10,11 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-BuildSuggestersRequest::BuildSuggestersRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String BuildSuggestersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

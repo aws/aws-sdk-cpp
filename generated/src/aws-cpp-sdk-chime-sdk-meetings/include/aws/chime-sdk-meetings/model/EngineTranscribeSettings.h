@@ -44,7 +44,7 @@ namespace Model
   class EngineTranscribeSettings
   {
   public:
-    AWS_CHIMESDKMEETINGS_API EngineTranscribeSettings();
+    AWS_CHIMESDKMEETINGS_API EngineTranscribeSettings() = default;
     AWS_CHIMESDKMEETINGS_API EngineTranscribeSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API EngineTranscribeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,10 @@ namespace Model
      * you're unsure of the language spoken in your audio, consider using
      * <code>IdentifyLanguage</code> to enable automatic language identification.</p>
      */
-    inline const TranscribeLanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline TranscribeLanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const TranscribeLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(TranscribeLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline EngineTranscribeSettings& WithLanguageCode(const TranscribeLanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline EngineTranscribeSettings& WithLanguageCode(TranscribeLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(TranscribeLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline EngineTranscribeSettings& WithLanguageCode(TranscribeLanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,10 @@ namespace Model
      * delete words, choose <code>remove</code>.</p> <p>To flag words without changing
      * them, choose <code>tag</code>.</p>
      */
-    inline const TranscribeVocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
+    inline TranscribeVocabularyFilterMethod GetVocabularyFilterMethod() const { return m_vocabularyFilterMethod; }
     inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
-    inline void SetVocabularyFilterMethod(const TranscribeVocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
-    inline void SetVocabularyFilterMethod(TranscribeVocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
-    inline EngineTranscribeSettings& WithVocabularyFilterMethod(const TranscribeVocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
-    inline EngineTranscribeSettings& WithVocabularyFilterMethod(TranscribeVocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
+    inline void SetVocabularyFilterMethod(TranscribeVocabularyFilterMethod value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
+    inline EngineTranscribeSettings& WithVocabularyFilterMethod(TranscribeVocabularyFilterMethod value) { SetVocabularyFilterMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * vocabulary filters with your transcription, use the
      * <code>VocabularyFilterNames</code> parameter instead.</p>
      */
-    inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
+    inline const Aws::String& GetVocabularyFilterName() const { return m_vocabularyFilterName; }
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
-    inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
-    inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
-    inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
-    inline EngineTranscribeSettings& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
-    inline EngineTranscribeSettings& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
-    inline EngineTranscribeSettings& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
+    template<typename VocabularyFilterNameT = Aws::String>
+    void SetVocabularyFilterName(VocabularyFilterNameT&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::forward<VocabularyFilterNameT>(value); }
+    template<typename VocabularyFilterNameT = Aws::String>
+    EngineTranscribeSettings& WithVocabularyFilterName(VocabularyFilterNameT&& value) { SetVocabularyFilterName(std::forward<VocabularyFilterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +103,12 @@ namespace Model
      * with your transcription, use the <code>VocabularyNames</code> parameter
      * instead.</p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-    inline EngineTranscribeSettings& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline EngineTranscribeSettings& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline EngineTranscribeSettings& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    EngineTranscribeSettings& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +123,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/transcription-options.html#choose-region">Choosing
      * a transcription Region</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
      */
-    inline const TranscribeRegion& GetRegion() const{ return m_region; }
+    inline TranscribeRegion GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const TranscribeRegion& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(TranscribeRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline EngineTranscribeSettings& WithRegion(const TranscribeRegion& value) { SetRegion(value); return *this;}
-    inline EngineTranscribeSettings& WithRegion(TranscribeRegion&& value) { SetRegion(std::move(value)); return *this;}
+    inline void SetRegion(TranscribeRegion value) { m_regionHasBeenSet = true; m_region = value; }
+    inline EngineTranscribeSettings& WithRegion(TranscribeRegion value) { SetRegion(value); return *this;}
     ///@}
 
     ///@{
@@ -144,7 +134,7 @@ namespace Model
      * <p>Enables partial result stabilization for your transcription. Partial result
      * stabilization can reduce latency in your output, but may impact accuracy.</p>
      */
-    inline bool GetEnablePartialResultsStabilization() const{ return m_enablePartialResultsStabilization; }
+    inline bool GetEnablePartialResultsStabilization() const { return m_enablePartialResultsStabilization; }
     inline bool EnablePartialResultsStabilizationHasBeenSet() const { return m_enablePartialResultsStabilizationHasBeenSet; }
     inline void SetEnablePartialResultsStabilization(bool value) { m_enablePartialResultsStabilizationHasBeenSet = true; m_enablePartialResultsStabilization = value; }
     inline EngineTranscribeSettings& WithEnablePartialResultsStabilization(bool value) { SetEnablePartialResultsStabilization(value); return *this;}
@@ -157,12 +147,10 @@ namespace Model
      * stability provides the highest accuracy. High stability transcribes faster, but
      * with slightly lower accuracy.</p>
      */
-    inline const TranscribePartialResultsStability& GetPartialResultsStability() const{ return m_partialResultsStability; }
+    inline TranscribePartialResultsStability GetPartialResultsStability() const { return m_partialResultsStability; }
     inline bool PartialResultsStabilityHasBeenSet() const { return m_partialResultsStabilityHasBeenSet; }
-    inline void SetPartialResultsStability(const TranscribePartialResultsStability& value) { m_partialResultsStabilityHasBeenSet = true; m_partialResultsStability = value; }
-    inline void SetPartialResultsStability(TranscribePartialResultsStability&& value) { m_partialResultsStabilityHasBeenSet = true; m_partialResultsStability = std::move(value); }
-    inline EngineTranscribeSettings& WithPartialResultsStability(const TranscribePartialResultsStability& value) { SetPartialResultsStability(value); return *this;}
-    inline EngineTranscribeSettings& WithPartialResultsStability(TranscribePartialResultsStability&& value) { SetPartialResultsStability(std::move(value)); return *this;}
+    inline void SetPartialResultsStability(TranscribePartialResultsStability value) { m_partialResultsStabilityHasBeenSet = true; m_partialResultsStability = value; }
+    inline EngineTranscribeSettings& WithPartialResultsStability(TranscribePartialResultsStability value) { SetPartialResultsStability(value); return *this;}
     ///@}
 
     ///@{
@@ -172,12 +160,10 @@ namespace Model
      * identified.</p>  <p>You can’t set <code>ContentIdentificationType</code>
      * and <code>ContentRedactionType</code>.</p> 
      */
-    inline const TranscribeContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+    inline TranscribeContentIdentificationType GetContentIdentificationType() const { return m_contentIdentificationType; }
     inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
-    inline void SetContentIdentificationType(const TranscribeContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
-    inline void SetContentIdentificationType(TranscribeContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
-    inline EngineTranscribeSettings& WithContentIdentificationType(const TranscribeContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
-    inline EngineTranscribeSettings& WithContentIdentificationType(TranscribeContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+    inline void SetContentIdentificationType(TranscribeContentIdentificationType value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+    inline EngineTranscribeSettings& WithContentIdentificationType(TranscribeContentIdentificationType value) { SetContentIdentificationType(value); return *this;}
     ///@}
 
     ///@{
@@ -187,12 +173,10 @@ namespace Model
      * <code>ContentRedactionType</code> and
      * <code>ContentIdentificationType</code>.</p> 
      */
-    inline const TranscribeContentRedactionType& GetContentRedactionType() const{ return m_contentRedactionType; }
+    inline TranscribeContentRedactionType GetContentRedactionType() const { return m_contentRedactionType; }
     inline bool ContentRedactionTypeHasBeenSet() const { return m_contentRedactionTypeHasBeenSet; }
-    inline void SetContentRedactionType(const TranscribeContentRedactionType& value) { m_contentRedactionTypeHasBeenSet = true; m_contentRedactionType = value; }
-    inline void SetContentRedactionType(TranscribeContentRedactionType&& value) { m_contentRedactionTypeHasBeenSet = true; m_contentRedactionType = std::move(value); }
-    inline EngineTranscribeSettings& WithContentRedactionType(const TranscribeContentRedactionType& value) { SetContentRedactionType(value); return *this;}
-    inline EngineTranscribeSettings& WithContentRedactionType(TranscribeContentRedactionType&& value) { SetContentRedactionType(std::move(value)); return *this;}
+    inline void SetContentRedactionType(TranscribeContentRedactionType value) { m_contentRedactionTypeHasBeenSet = true; m_contentRedactionType = value; }
+    inline EngineTranscribeSettings& WithContentRedactionType(TranscribeContentRedactionType value) { SetContentRedactionType(value); return *this;}
     ///@}
 
     ///@{
@@ -211,14 +195,12 @@ namespace Model
      * <code>ContentIdentificationType</code>, but do not include PiiEntityTypes, all
      * PII is redacted or identified.</p>
      */
-    inline const Aws::String& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
+    inline const Aws::String& GetPiiEntityTypes() const { return m_piiEntityTypes; }
     inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }
-    inline void SetPiiEntityTypes(const Aws::String& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = value; }
-    inline void SetPiiEntityTypes(Aws::String&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::move(value); }
-    inline void SetPiiEntityTypes(const char* value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.assign(value); }
-    inline EngineTranscribeSettings& WithPiiEntityTypes(const Aws::String& value) { SetPiiEntityTypes(value); return *this;}
-    inline EngineTranscribeSettings& WithPiiEntityTypes(Aws::String&& value) { SetPiiEntityTypes(std::move(value)); return *this;}
-    inline EngineTranscribeSettings& WithPiiEntityTypes(const char* value) { SetPiiEntityTypes(value); return *this;}
+    template<typename PiiEntityTypesT = Aws::String>
+    void SetPiiEntityTypes(PiiEntityTypesT&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::forward<PiiEntityTypesT>(value); }
+    template<typename PiiEntityTypesT = Aws::String>
+    EngineTranscribeSettings& WithPiiEntityTypes(PiiEntityTypesT&& value) { SetPiiEntityTypes(std::forward<PiiEntityTypesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -231,14 +213,12 @@ namespace Model
      * mismatch.</p> <p>If you use Amazon Transcribe in multiple Regions, the custom
      * language model must be available in Amazon Transcribe in each Region.</p>
      */
-    inline const Aws::String& GetLanguageModelName() const{ return m_languageModelName; }
+    inline const Aws::String& GetLanguageModelName() const { return m_languageModelName; }
     inline bool LanguageModelNameHasBeenSet() const { return m_languageModelNameHasBeenSet; }
-    inline void SetLanguageModelName(const Aws::String& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = value; }
-    inline void SetLanguageModelName(Aws::String&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::move(value); }
-    inline void SetLanguageModelName(const char* value) { m_languageModelNameHasBeenSet = true; m_languageModelName.assign(value); }
-    inline EngineTranscribeSettings& WithLanguageModelName(const Aws::String& value) { SetLanguageModelName(value); return *this;}
-    inline EngineTranscribeSettings& WithLanguageModelName(Aws::String&& value) { SetLanguageModelName(std::move(value)); return *this;}
-    inline EngineTranscribeSettings& WithLanguageModelName(const char* value) { SetLanguageModelName(value); return *this;}
+    template<typename LanguageModelNameT = Aws::String>
+    void SetLanguageModelName(LanguageModelNameT&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::forward<LanguageModelNameT>(value); }
+    template<typename LanguageModelNameT = Aws::String>
+    EngineTranscribeSettings& WithLanguageModelName(LanguageModelNameT&& value) { SetLanguageModelName(std::forward<LanguageModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -253,7 +233,7 @@ namespace Model
      * <code>IdentifyLanguage</code>.</p> <p>Language identification can't be combined
      * with custom language models or redaction.</p>
      */
-    inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
+    inline bool GetIdentifyLanguage() const { return m_identifyLanguage; }
     inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
     inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
     inline EngineTranscribeSettings& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
@@ -270,14 +250,12 @@ namespace Model
      * include one language dialect per language. For example, you cannot include
      * <code>en-US</code> and <code>en-AU</code>.</p> 
      */
-    inline const Aws::String& GetLanguageOptions() const{ return m_languageOptions; }
+    inline const Aws::String& GetLanguageOptions() const { return m_languageOptions; }
     inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
-    inline void SetLanguageOptions(const Aws::String& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
-    inline void SetLanguageOptions(Aws::String&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
-    inline void SetLanguageOptions(const char* value) { m_languageOptionsHasBeenSet = true; m_languageOptions.assign(value); }
-    inline EngineTranscribeSettings& WithLanguageOptions(const Aws::String& value) { SetLanguageOptions(value); return *this;}
-    inline EngineTranscribeSettings& WithLanguageOptions(Aws::String&& value) { SetLanguageOptions(std::move(value)); return *this;}
-    inline EngineTranscribeSettings& WithLanguageOptions(const char* value) { SetLanguageOptions(value); return *this;}
+    template<typename LanguageOptionsT = Aws::String>
+    void SetLanguageOptions(LanguageOptionsT&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::forward<LanguageOptionsT>(value); }
+    template<typename LanguageOptionsT = Aws::String>
+    EngineTranscribeSettings& WithLanguageOptions(LanguageOptionsT&& value) { SetLanguageOptions(std::forward<LanguageOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -286,12 +264,10 @@ namespace Model
      * in <code>LanguageOptions</code>.</p> <p>You can only use this parameter if you
      * include <code>IdentifyLanguage</code> and <code>LanguageOptions</code>.</p>
      */
-    inline const TranscribeLanguageCode& GetPreferredLanguage() const{ return m_preferredLanguage; }
+    inline TranscribeLanguageCode GetPreferredLanguage() const { return m_preferredLanguage; }
     inline bool PreferredLanguageHasBeenSet() const { return m_preferredLanguageHasBeenSet; }
-    inline void SetPreferredLanguage(const TranscribeLanguageCode& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = value; }
-    inline void SetPreferredLanguage(TranscribeLanguageCode&& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = std::move(value); }
-    inline EngineTranscribeSettings& WithPreferredLanguage(const TranscribeLanguageCode& value) { SetPreferredLanguage(value); return *this;}
-    inline EngineTranscribeSettings& WithPreferredLanguage(TranscribeLanguageCode&& value) { SetPreferredLanguage(std::move(value)); return *this;}
+    inline void SetPreferredLanguage(TranscribeLanguageCode value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = value; }
+    inline EngineTranscribeSettings& WithPreferredLanguage(TranscribeLanguageCode value) { SetPreferredLanguage(value); return *this;}
     ///@}
 
     ///@{
@@ -304,14 +280,12 @@ namespace Model
      * with your transcription, use the <code>VocabularyName</code> parameter
      * instead.</p>
      */
-    inline const Aws::String& GetVocabularyNames() const{ return m_vocabularyNames; }
+    inline const Aws::String& GetVocabularyNames() const { return m_vocabularyNames; }
     inline bool VocabularyNamesHasBeenSet() const { return m_vocabularyNamesHasBeenSet; }
-    inline void SetVocabularyNames(const Aws::String& value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames = value; }
-    inline void SetVocabularyNames(Aws::String&& value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames = std::move(value); }
-    inline void SetVocabularyNames(const char* value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames.assign(value); }
-    inline EngineTranscribeSettings& WithVocabularyNames(const Aws::String& value) { SetVocabularyNames(value); return *this;}
-    inline EngineTranscribeSettings& WithVocabularyNames(Aws::String&& value) { SetVocabularyNames(std::move(value)); return *this;}
-    inline EngineTranscribeSettings& WithVocabularyNames(const char* value) { SetVocabularyNames(value); return *this;}
+    template<typename VocabularyNamesT = Aws::String>
+    void SetVocabularyNames(VocabularyNamesT&& value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames = std::forward<VocabularyNamesT>(value); }
+    template<typename VocabularyNamesT = Aws::String>
+    EngineTranscribeSettings& WithVocabularyNames(VocabularyNamesT&& value) { SetVocabularyNames(std::forward<VocabularyNamesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -324,21 +298,19 @@ namespace Model
      * custom vocabulary filter with your transcription, use the
      * <code>VocabularyFilterName</code> parameter instead.</p>
      */
-    inline const Aws::String& GetVocabularyFilterNames() const{ return m_vocabularyFilterNames; }
+    inline const Aws::String& GetVocabularyFilterNames() const { return m_vocabularyFilterNames; }
     inline bool VocabularyFilterNamesHasBeenSet() const { return m_vocabularyFilterNamesHasBeenSet; }
-    inline void SetVocabularyFilterNames(const Aws::String& value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames = value; }
-    inline void SetVocabularyFilterNames(Aws::String&& value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames = std::move(value); }
-    inline void SetVocabularyFilterNames(const char* value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames.assign(value); }
-    inline EngineTranscribeSettings& WithVocabularyFilterNames(const Aws::String& value) { SetVocabularyFilterNames(value); return *this;}
-    inline EngineTranscribeSettings& WithVocabularyFilterNames(Aws::String&& value) { SetVocabularyFilterNames(std::move(value)); return *this;}
-    inline EngineTranscribeSettings& WithVocabularyFilterNames(const char* value) { SetVocabularyFilterNames(value); return *this;}
+    template<typename VocabularyFilterNamesT = Aws::String>
+    void SetVocabularyFilterNames(VocabularyFilterNamesT&& value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames = std::forward<VocabularyFilterNamesT>(value); }
+    template<typename VocabularyFilterNamesT = Aws::String>
+    EngineTranscribeSettings& WithVocabularyFilterNames(VocabularyFilterNamesT&& value) { SetVocabularyFilterNames(std::forward<VocabularyFilterNamesT>(value)); return *this;}
     ///@}
   private:
 
-    TranscribeLanguageCode m_languageCode;
+    TranscribeLanguageCode m_languageCode{TranscribeLanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    TranscribeVocabularyFilterMethod m_vocabularyFilterMethod;
+    TranscribeVocabularyFilterMethod m_vocabularyFilterMethod{TranscribeVocabularyFilterMethod::NOT_SET};
     bool m_vocabularyFilterMethodHasBeenSet = false;
 
     Aws::String m_vocabularyFilterName;
@@ -347,19 +319,19 @@ namespace Model
     Aws::String m_vocabularyName;
     bool m_vocabularyNameHasBeenSet = false;
 
-    TranscribeRegion m_region;
+    TranscribeRegion m_region{TranscribeRegion::NOT_SET};
     bool m_regionHasBeenSet = false;
 
-    bool m_enablePartialResultsStabilization;
+    bool m_enablePartialResultsStabilization{false};
     bool m_enablePartialResultsStabilizationHasBeenSet = false;
 
-    TranscribePartialResultsStability m_partialResultsStability;
+    TranscribePartialResultsStability m_partialResultsStability{TranscribePartialResultsStability::NOT_SET};
     bool m_partialResultsStabilityHasBeenSet = false;
 
-    TranscribeContentIdentificationType m_contentIdentificationType;
+    TranscribeContentIdentificationType m_contentIdentificationType{TranscribeContentIdentificationType::NOT_SET};
     bool m_contentIdentificationTypeHasBeenSet = false;
 
-    TranscribeContentRedactionType m_contentRedactionType;
+    TranscribeContentRedactionType m_contentRedactionType{TranscribeContentRedactionType::NOT_SET};
     bool m_contentRedactionTypeHasBeenSet = false;
 
     Aws::String m_piiEntityTypes;
@@ -368,13 +340,13 @@ namespace Model
     Aws::String m_languageModelName;
     bool m_languageModelNameHasBeenSet = false;
 
-    bool m_identifyLanguage;
+    bool m_identifyLanguage{false};
     bool m_identifyLanguageHasBeenSet = false;
 
     Aws::String m_languageOptions;
     bool m_languageOptionsHasBeenSet = false;
 
-    TranscribeLanguageCode m_preferredLanguage;
+    TranscribeLanguageCode m_preferredLanguage{TranscribeLanguageCode::NOT_SET};
     bool m_preferredLanguageHasBeenSet = false;
 
     Aws::String m_vocabularyNames;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeWhatIfAnalysisResult::DescribeWhatIfAnalysisResult() : 
-    m_estimatedTimeRemainingInMinutes(0)
-{
-}
-
 DescribeWhatIfAnalysisResult::DescribeWhatIfAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeWhatIfAnalysisResult()
 {
   *this = result;
 }
@@ -34,63 +28,55 @@ DescribeWhatIfAnalysisResult& DescribeWhatIfAnalysisResult::operator =(const Aws
   if(jsonValue.ValueExists("WhatIfAnalysisName"))
   {
     m_whatIfAnalysisName = jsonValue.GetString("WhatIfAnalysisName");
-
+    m_whatIfAnalysisNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WhatIfAnalysisArn"))
   {
     m_whatIfAnalysisArn = jsonValue.GetString("WhatIfAnalysisArn");
-
+    m_whatIfAnalysisArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForecastArn"))
   {
     m_forecastArn = jsonValue.GetString("ForecastArn");
-
+    m_forecastArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedTimeRemainingInMinutes"))
   {
     m_estimatedTimeRemainingInMinutes = jsonValue.GetInt64("EstimatedTimeRemainingInMinutes");
-
+    m_estimatedTimeRemainingInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
+    m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
-
+    m_lastModificationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeSeriesSelector"))
   {
     m_timeSeriesSelector = jsonValue.GetObject("TimeSeriesSelector");
-
+    m_timeSeriesSelectorHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

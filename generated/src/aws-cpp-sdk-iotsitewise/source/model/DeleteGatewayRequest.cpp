@@ -12,11 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGatewayRequest::DeleteGatewayRequest() : 
-    m_gatewayIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGatewayRequest::SerializePayload() const
 {
   return {};

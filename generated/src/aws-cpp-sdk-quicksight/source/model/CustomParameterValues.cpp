@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CustomParameterValues::CustomParameterValues() : 
-    m_stringValuesHasBeenSet(false),
-    m_integerValuesHasBeenSet(false),
-    m_decimalValuesHasBeenSet(false),
-    m_dateTimeValuesHasBeenSet(false)
-{
-}
-
 CustomParameterValues::CustomParameterValues(JsonView jsonValue)
-  : CustomParameterValues()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ CustomParameterValues& CustomParameterValues::operator =(JsonView jsonValue)
     }
     m_stringValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegerValues"))
   {
     Aws::Utils::Array<JsonView> integerValuesJsonList = jsonValue.GetArray("IntegerValues");
@@ -53,7 +43,6 @@ CustomParameterValues& CustomParameterValues::operator =(JsonView jsonValue)
     }
     m_integerValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DecimalValues"))
   {
     Aws::Utils::Array<JsonView> decimalValuesJsonList = jsonValue.GetArray("DecimalValues");
@@ -63,7 +52,6 @@ CustomParameterValues& CustomParameterValues::operator =(JsonView jsonValue)
     }
     m_decimalValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateTimeValues"))
   {
     Aws::Utils::Array<JsonView> dateTimeValuesJsonList = jsonValue.GetArray("DateTimeValues");
@@ -73,7 +61,6 @@ CustomParameterValues& CustomParameterValues::operator =(JsonView jsonValue)
     }
     m_dateTimeValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

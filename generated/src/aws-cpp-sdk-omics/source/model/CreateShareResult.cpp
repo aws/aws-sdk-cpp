@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateShareResult::CreateShareResult() : 
-    m_status(ShareStatus::NOT_SET)
-{
-}
-
 CreateShareResult::CreateShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateShareResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateShareResult& CreateShareResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("shareId"))
   {
     m_shareId = jsonValue.GetString("shareId");
-
+    m_shareIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shareName"))
   {
     m_shareName = jsonValue.GetString("shareName");
-
+    m_shareNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

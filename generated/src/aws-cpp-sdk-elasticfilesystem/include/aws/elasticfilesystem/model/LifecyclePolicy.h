@@ -43,7 +43,7 @@ namespace Model
   class LifecyclePolicy
   {
   public:
-    AWS_EFS_API LifecyclePolicy();
+    AWS_EFS_API LifecyclePolicy() = default;
     AWS_EFS_API LifecyclePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API LifecyclePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,10 @@ namespace Model
      * Metadata operations such as listing the contents of a directory don't count as
      * file access events.</p>
      */
-    inline const TransitionToIARules& GetTransitionToIA() const{ return m_transitionToIA; }
+    inline TransitionToIARules GetTransitionToIA() const { return m_transitionToIA; }
     inline bool TransitionToIAHasBeenSet() const { return m_transitionToIAHasBeenSet; }
-    inline void SetTransitionToIA(const TransitionToIARules& value) { m_transitionToIAHasBeenSet = true; m_transitionToIA = value; }
-    inline void SetTransitionToIA(TransitionToIARules&& value) { m_transitionToIAHasBeenSet = true; m_transitionToIA = std::move(value); }
-    inline LifecyclePolicy& WithTransitionToIA(const TransitionToIARules& value) { SetTransitionToIA(value); return *this;}
-    inline LifecyclePolicy& WithTransitionToIA(TransitionToIARules&& value) { SetTransitionToIA(std::move(value)); return *this;}
+    inline void SetTransitionToIA(TransitionToIARules value) { m_transitionToIAHasBeenSet = true; m_transitionToIA = value; }
+    inline LifecyclePolicy& WithTransitionToIA(TransitionToIARules value) { SetTransitionToIA(value); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,10 @@ namespace Model
      * accessed in IA or Archive storage. Metadata operations such as listing the
      * contents of a directory don't count as file access events.</p>
      */
-    inline const TransitionToPrimaryStorageClassRules& GetTransitionToPrimaryStorageClass() const{ return m_transitionToPrimaryStorageClass; }
+    inline TransitionToPrimaryStorageClassRules GetTransitionToPrimaryStorageClass() const { return m_transitionToPrimaryStorageClass; }
     inline bool TransitionToPrimaryStorageClassHasBeenSet() const { return m_transitionToPrimaryStorageClassHasBeenSet; }
-    inline void SetTransitionToPrimaryStorageClass(const TransitionToPrimaryStorageClassRules& value) { m_transitionToPrimaryStorageClassHasBeenSet = true; m_transitionToPrimaryStorageClass = value; }
-    inline void SetTransitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules&& value) { m_transitionToPrimaryStorageClassHasBeenSet = true; m_transitionToPrimaryStorageClass = std::move(value); }
-    inline LifecyclePolicy& WithTransitionToPrimaryStorageClass(const TransitionToPrimaryStorageClassRules& value) { SetTransitionToPrimaryStorageClass(value); return *this;}
-    inline LifecyclePolicy& WithTransitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules&& value) { SetTransitionToPrimaryStorageClass(std::move(value)); return *this;}
+    inline void SetTransitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules value) { m_transitionToPrimaryStorageClassHasBeenSet = true; m_transitionToPrimaryStorageClass = value; }
+    inline LifecyclePolicy& WithTransitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules value) { SetTransitionToPrimaryStorageClass(value); return *this;}
     ///@}
 
     ///@{
@@ -85,22 +81,20 @@ namespace Model
      * operations such as listing the contents of a directory don't count as file
      * access events.</p>
      */
-    inline const TransitionToArchiveRules& GetTransitionToArchive() const{ return m_transitionToArchive; }
+    inline TransitionToArchiveRules GetTransitionToArchive() const { return m_transitionToArchive; }
     inline bool TransitionToArchiveHasBeenSet() const { return m_transitionToArchiveHasBeenSet; }
-    inline void SetTransitionToArchive(const TransitionToArchiveRules& value) { m_transitionToArchiveHasBeenSet = true; m_transitionToArchive = value; }
-    inline void SetTransitionToArchive(TransitionToArchiveRules&& value) { m_transitionToArchiveHasBeenSet = true; m_transitionToArchive = std::move(value); }
-    inline LifecyclePolicy& WithTransitionToArchive(const TransitionToArchiveRules& value) { SetTransitionToArchive(value); return *this;}
-    inline LifecyclePolicy& WithTransitionToArchive(TransitionToArchiveRules&& value) { SetTransitionToArchive(std::move(value)); return *this;}
+    inline void SetTransitionToArchive(TransitionToArchiveRules value) { m_transitionToArchiveHasBeenSet = true; m_transitionToArchive = value; }
+    inline LifecyclePolicy& WithTransitionToArchive(TransitionToArchiveRules value) { SetTransitionToArchive(value); return *this;}
     ///@}
   private:
 
-    TransitionToIARules m_transitionToIA;
+    TransitionToIARules m_transitionToIA{TransitionToIARules::NOT_SET};
     bool m_transitionToIAHasBeenSet = false;
 
-    TransitionToPrimaryStorageClassRules m_transitionToPrimaryStorageClass;
+    TransitionToPrimaryStorageClassRules m_transitionToPrimaryStorageClass{TransitionToPrimaryStorageClassRules::NOT_SET};
     bool m_transitionToPrimaryStorageClassHasBeenSet = false;
 
-    TransitionToArchiveRules m_transitionToArchive;
+    TransitionToArchiveRules m_transitionToArchive{TransitionToArchiveRules::NOT_SET};
     bool m_transitionToArchiveHasBeenSet = false;
   };
 

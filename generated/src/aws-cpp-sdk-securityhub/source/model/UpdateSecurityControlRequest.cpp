@@ -12,13 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSecurityControlRequest::UpdateSecurityControlRequest() : 
-    m_securityControlIdHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_lastUpdateReasonHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSecurityControlRequest::SerializePayload() const
 {
   JsonValue payload;

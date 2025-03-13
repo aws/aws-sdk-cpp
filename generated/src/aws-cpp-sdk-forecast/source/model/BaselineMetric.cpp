@@ -18,15 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-BaselineMetric::BaselineMetric() : 
-    m_nameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 BaselineMetric::BaselineMetric(JsonView jsonValue)
-  : BaselineMetric()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BaselineMetric& BaselineMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-LoadBalancerTlsCertificateRenewalSummary::LoadBalancerTlsCertificateRenewalSummary() : 
-    m_renewalStatus(LoadBalancerTlsCertificateRenewalStatus::NOT_SET),
-    m_renewalStatusHasBeenSet(false),
-    m_domainValidationOptionsHasBeenSet(false)
-{
-}
-
 LoadBalancerTlsCertificateRenewalSummary::LoadBalancerTlsCertificateRenewalSummary(JsonView jsonValue)
-  : LoadBalancerTlsCertificateRenewalSummary()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ LoadBalancerTlsCertificateRenewalSummary& LoadBalancerTlsCertificateRenewalSumma
   if(jsonValue.ValueExists("renewalStatus"))
   {
     m_renewalStatus = LoadBalancerTlsCertificateRenewalStatusMapper::GetLoadBalancerTlsCertificateRenewalStatusForName(jsonValue.GetString("renewalStatus"));
-
     m_renewalStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainValidationOptions"))
   {
     Aws::Utils::Array<JsonView> domainValidationOptionsJsonList = jsonValue.GetArray("domainValidationOptions");
@@ -49,7 +39,6 @@ LoadBalancerTlsCertificateRenewalSummary& LoadBalancerTlsCertificateRenewalSumma
     }
     m_domainValidationOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

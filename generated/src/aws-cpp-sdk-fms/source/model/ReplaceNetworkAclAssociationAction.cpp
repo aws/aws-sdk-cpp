@@ -18,17 +18,7 @@ namespace FMS
 namespace Model
 {
 
-ReplaceNetworkAclAssociationAction::ReplaceNetworkAclAssociationAction() : 
-    m_descriptionHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_fMSCanRemediate(false),
-    m_fMSCanRemediateHasBeenSet(false)
-{
-}
-
 ReplaceNetworkAclAssociationAction::ReplaceNetworkAclAssociationAction(JsonView jsonValue)
-  : ReplaceNetworkAclAssociationAction()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ReplaceNetworkAclAssociationAction& ReplaceNetworkAclAssociationAction::operator
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetObject("AssociationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkAclId"))
   {
     m_networkAclId = jsonValue.GetObject("NetworkAclId");
-
     m_networkAclIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FMSCanRemediate"))
   {
     m_fMSCanRemediate = jsonValue.GetBool("FMSCanRemediate");
-
     m_fMSCanRemediateHasBeenSet = true;
   }
-
   return *this;
 }
 

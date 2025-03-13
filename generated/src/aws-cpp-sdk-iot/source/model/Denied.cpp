@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-Denied::Denied() : 
-    m_implicitDenyHasBeenSet(false),
-    m_explicitDenyHasBeenSet(false)
-{
-}
-
 Denied::Denied(JsonView jsonValue)
-  : Denied()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Denied& Denied::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("implicitDeny"))
   {
     m_implicitDeny = jsonValue.GetObject("implicitDeny");
-
     m_implicitDenyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("explicitDeny"))
   {
     m_explicitDeny = jsonValue.GetObject("explicitDeny");
-
     m_explicitDenyHasBeenSet = true;
   }
-
   return *this;
 }
 

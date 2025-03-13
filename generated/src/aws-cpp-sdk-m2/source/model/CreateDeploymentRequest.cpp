@@ -12,16 +12,6 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeploymentRequest::CreateDeploymentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationVersion(0),
-    m_applicationVersionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_environmentIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

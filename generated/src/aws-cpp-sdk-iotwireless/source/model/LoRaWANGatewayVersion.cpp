@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANGatewayVersion::LoRaWANGatewayVersion() : 
-    m_packageVersionHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_stationHasBeenSet(false)
-{
-}
-
 LoRaWANGatewayVersion::LoRaWANGatewayVersion(JsonView jsonValue)
-  : LoRaWANGatewayVersion()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ LoRaWANGatewayVersion& LoRaWANGatewayVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PackageVersion"))
   {
     m_packageVersion = jsonValue.GetString("PackageVersion");
-
     m_packageVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Model"))
   {
     m_model = jsonValue.GetString("Model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Station"))
   {
     m_station = jsonValue.GetString("Station");
-
     m_stationHasBeenSet = true;
   }
-
   return *this;
 }
 

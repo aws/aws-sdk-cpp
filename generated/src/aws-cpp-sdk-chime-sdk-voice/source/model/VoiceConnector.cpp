@@ -18,24 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-VoiceConnector::VoiceConnector() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_awsRegion(VoiceConnectorAwsRegion::NOT_SET),
-    m_awsRegionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outboundHostNameHasBeenSet(false),
-    m_requireEncryption(false),
-    m_requireEncryptionHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_voiceConnectorArnHasBeenSet(false),
-    m_integrationType(VoiceConnectorIntegrationType::NOT_SET),
-    m_integrationTypeHasBeenSet(false)
-{
-}
-
 VoiceConnector::VoiceConnector(JsonView jsonValue)
-  : VoiceConnector()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ VoiceConnector& VoiceConnector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VoiceConnectorId"))
   {
     m_voiceConnectorId = jsonValue.GetString("VoiceConnectorId");
-
     m_voiceConnectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegion"))
   {
     m_awsRegion = VoiceConnectorAwsRegionMapper::GetVoiceConnectorAwsRegionForName(jsonValue.GetString("AwsRegion"));
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutboundHostName"))
   {
     m_outboundHostName = jsonValue.GetString("OutboundHostName");
-
     m_outboundHostNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequireEncryption"))
   {
     m_requireEncryption = jsonValue.GetBool("RequireEncryption");
-
     m_requireEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VoiceConnectorArn"))
   {
     m_voiceConnectorArn = jsonValue.GetString("VoiceConnectorArn");
-
     m_voiceConnectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegrationType"))
   {
     m_integrationType = VoiceConnectorIntegrationTypeMapper::GetVoiceConnectorIntegrationTypeForName(jsonValue.GetString("IntegrationType"));
-
     m_integrationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,23 +12,6 @@ using namespace Aws::InternetMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMonitorRequest::UpdateMonitorRequest() : 
-    m_monitorNameHasBeenSet(false),
-    m_resourcesToAddHasBeenSet(false),
-    m_resourcesToRemoveHasBeenSet(false),
-    m_status(MonitorConfigState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_maxCityNetworksToMonitor(0),
-    m_maxCityNetworksToMonitorHasBeenSet(false),
-    m_internetMeasurementsLogDeliveryHasBeenSet(false),
-    m_trafficPercentageToMonitor(0),
-    m_trafficPercentageToMonitorHasBeenSet(false),
-    m_healthEventsConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMonitorRequest::SerializePayload() const
 {
   JsonValue payload;

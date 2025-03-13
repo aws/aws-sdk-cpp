@@ -28,7 +28,7 @@ namespace Model
   class CompleteAttachedFileUploadRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API CompleteAttachedFileUploadRequest();
+    AWS_CONNECT_API CompleteAttachedFileUploadRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The unique identifier of the Amazon Connect instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline CompleteAttachedFileUploadRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline CompleteAttachedFileUploadRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline CompleteAttachedFileUploadRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    CompleteAttachedFileUploadRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the attached file resource.</p>
      */
-    inline const Aws::String& GetFileId() const{ return m_fileId; }
+    inline const Aws::String& GetFileId() const { return m_fileId; }
     inline bool FileIdHasBeenSet() const { return m_fileIdHasBeenSet; }
-    inline void SetFileId(const Aws::String& value) { m_fileIdHasBeenSet = true; m_fileId = value; }
-    inline void SetFileId(Aws::String&& value) { m_fileIdHasBeenSet = true; m_fileId = std::move(value); }
-    inline void SetFileId(const char* value) { m_fileIdHasBeenSet = true; m_fileId.assign(value); }
-    inline CompleteAttachedFileUploadRequest& WithFileId(const Aws::String& value) { SetFileId(value); return *this;}
-    inline CompleteAttachedFileUploadRequest& WithFileId(Aws::String&& value) { SetFileId(std::move(value)); return *this;}
-    inline CompleteAttachedFileUploadRequest& WithFileId(const char* value) { SetFileId(value); return *this;}
+    template<typename FileIdT = Aws::String>
+    void SetFileId(FileIdT&& value) { m_fileIdHasBeenSet = true; m_fileId = std::forward<FileIdT>(value); }
+    template<typename FileIdT = Aws::String>
+    CompleteAttachedFileUploadRequest& WithFileId(FileIdT&& value) { SetFileId(std::forward<FileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p>
      *  <p>This value must be a valid ARN.</p> 
      */
-    inline const Aws::String& GetAssociatedResourceArn() const{ return m_associatedResourceArn; }
+    inline const Aws::String& GetAssociatedResourceArn() const { return m_associatedResourceArn; }
     inline bool AssociatedResourceArnHasBeenSet() const { return m_associatedResourceArnHasBeenSet; }
-    inline void SetAssociatedResourceArn(const Aws::String& value) { m_associatedResourceArnHasBeenSet = true; m_associatedResourceArn = value; }
-    inline void SetAssociatedResourceArn(Aws::String&& value) { m_associatedResourceArnHasBeenSet = true; m_associatedResourceArn = std::move(value); }
-    inline void SetAssociatedResourceArn(const char* value) { m_associatedResourceArnHasBeenSet = true; m_associatedResourceArn.assign(value); }
-    inline CompleteAttachedFileUploadRequest& WithAssociatedResourceArn(const Aws::String& value) { SetAssociatedResourceArn(value); return *this;}
-    inline CompleteAttachedFileUploadRequest& WithAssociatedResourceArn(Aws::String&& value) { SetAssociatedResourceArn(std::move(value)); return *this;}
-    inline CompleteAttachedFileUploadRequest& WithAssociatedResourceArn(const char* value) { SetAssociatedResourceArn(value); return *this;}
+    template<typename AssociatedResourceArnT = Aws::String>
+    void SetAssociatedResourceArn(AssociatedResourceArnT&& value) { m_associatedResourceArnHasBeenSet = true; m_associatedResourceArn = std::forward<AssociatedResourceArnT>(value); }
+    template<typename AssociatedResourceArnT = Aws::String>
+    CompleteAttachedFileUploadRequest& WithAssociatedResourceArn(AssociatedResourceArnT&& value) { SetAssociatedResourceArn(std::forward<AssociatedResourceArnT>(value)); return *this;}
     ///@}
   private:
 

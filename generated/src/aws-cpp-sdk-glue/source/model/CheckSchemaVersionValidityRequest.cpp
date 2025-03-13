@@ -12,13 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CheckSchemaVersionValidityRequest::CheckSchemaVersionValidityRequest() : 
-    m_dataFormat(DataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_schemaDefinitionHasBeenSet(false)
-{
-}
-
 Aws::String CheckSchemaVersionValidityRequest::SerializePayload() const
 {
   JsonValue payload;

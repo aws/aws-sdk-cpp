@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachInstancesFromLoadBalancerRequest::DetachInstancesFromLoadBalancerRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_instanceNamesHasBeenSet(false)
-{
-}
-
 Aws::String DetachInstancesFromLoadBalancerRequest::SerializePayload() const
 {
   JsonValue payload;

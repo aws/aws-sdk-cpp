@@ -20,30 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ServerlessCache::ServerlessCache() : 
-    m_serverlessCacheNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false),
-    m_fullEngineVersionHasBeenSet(false),
-    m_cacheUsageLimitsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_readerEndpointHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_userGroupIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_dailySnapshotTimeHasBeenSet(false)
-{
-}
-
 ServerlessCache::ServerlessCache(const XmlNode& xmlNode)
-  : ServerlessCache()
 {
   *this = xmlNode;
 }
@@ -59,114 +36,131 @@ ServerlessCache& ServerlessCache::operator =(const XmlNode& xmlNode)
     {
       m_serverlessCacheName = Aws::Utils::Xml::DecodeEscapedXmlText(serverlessCacheNameNode.GetText());
       m_serverlessCacheNameHasBeenSet = true;
+       m_serverlessCacheNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
     if(!createTimeNode.IsNull())
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
+       m_createTimeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
     XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
     if(!majorEngineVersionNode.IsNull())
     {
       m_majorEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(majorEngineVersionNode.GetText());
       m_majorEngineVersionHasBeenSet = true;
+       m_majorEngineVersionHasBeenSet = true;
     }
     XmlNode fullEngineVersionNode = resultNode.FirstChild("FullEngineVersion");
     if(!fullEngineVersionNode.IsNull())
     {
       m_fullEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(fullEngineVersionNode.GetText());
       m_fullEngineVersionHasBeenSet = true;
+       m_fullEngineVersionHasBeenSet = true;
     }
     XmlNode cacheUsageLimitsNode = resultNode.FirstChild("CacheUsageLimits");
     if(!cacheUsageLimitsNode.IsNull())
     {
       m_cacheUsageLimits = cacheUsageLimitsNode;
       m_cacheUsageLimitsHasBeenSet = true;
+       m_cacheUsageLimitsHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
+       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode securityGroupIdsNode = resultNode.FirstChild("SecurityGroupIds");
     if(!securityGroupIdsNode.IsNull())
     {
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("SecurityGroupId");
+      m_securityGroupIdsHasBeenSet = !securityGroupIdsMember.IsNull();
       while(!securityGroupIdsMember.IsNull())
       {
         m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
         securityGroupIdsMember = securityGroupIdsMember.NextNode("SecurityGroupId");
       }
 
-      m_securityGroupIdsHasBeenSet = true;
+       m_securityGroupIdsHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
       m_endpoint = endpointNode;
       m_endpointHasBeenSet = true;
+       m_endpointHasBeenSet = true;
     }
     XmlNode readerEndpointNode = resultNode.FirstChild("ReaderEndpoint");
     if(!readerEndpointNode.IsNull())
     {
       m_readerEndpoint = readerEndpointNode;
       m_readerEndpointHasBeenSet = true;
+       m_readerEndpointHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
     XmlNode userGroupIdNode = resultNode.FirstChild("UserGroupId");
     if(!userGroupIdNode.IsNull())
     {
       m_userGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(userGroupIdNode.GetText());
       m_userGroupIdHasBeenSet = true;
+       m_userGroupIdHasBeenSet = true;
     }
     XmlNode subnetIdsNode = resultNode.FirstChild("SubnetIds");
     if(!subnetIdsNode.IsNull())
     {
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("SubnetId");
+      m_subnetIdsHasBeenSet = !subnetIdsMember.IsNull();
       while(!subnetIdsMember.IsNull())
       {
         m_subnetIds.push_back(subnetIdsMember.GetText());
         subnetIdsMember = subnetIdsMember.NextNode("SubnetId");
       }
 
-      m_subnetIdsHasBeenSet = true;
+       m_subnetIdsHasBeenSet = true;
     }
     XmlNode snapshotRetentionLimitNode = resultNode.FirstChild("SnapshotRetentionLimit");
     if(!snapshotRetentionLimitNode.IsNull())
     {
       m_snapshotRetentionLimit = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotRetentionLimitNode.GetText()).c_str()).c_str());
       m_snapshotRetentionLimitHasBeenSet = true;
+       m_snapshotRetentionLimitHasBeenSet = true;
     }
     XmlNode dailySnapshotTimeNode = resultNode.FirstChild("DailySnapshotTime");
     if(!dailySnapshotTimeNode.IsNull())
     {
       m_dailySnapshotTime = Aws::Utils::Xml::DecodeEscapedXmlText(dailySnapshotTimeNode.GetText());
       m_dailySnapshotTimeHasBeenSet = true;
+       m_dailySnapshotTimeHasBeenSet = true;
     }
   }
 

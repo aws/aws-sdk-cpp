@@ -12,11 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAppBlockRequest::DeleteAppBlockRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAppBlockRequest::SerializePayload() const
 {
   JsonValue payload;

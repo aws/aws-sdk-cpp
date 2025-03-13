@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SidewalkUpdateImportInfo::SidewalkUpdateImportInfo() : 
-    m_deviceCreationFileHasBeenSet(false)
-{
-}
-
 SidewalkUpdateImportInfo::SidewalkUpdateImportInfo(JsonView jsonValue)
-  : SidewalkUpdateImportInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SidewalkUpdateImportInfo& SidewalkUpdateImportInfo::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("DeviceCreationFile"))
   {
     m_deviceCreationFile = jsonValue.GetString("DeviceCreationFile");
-
     m_deviceCreationFileHasBeenSet = true;
   }
-
   return *this;
 }
 

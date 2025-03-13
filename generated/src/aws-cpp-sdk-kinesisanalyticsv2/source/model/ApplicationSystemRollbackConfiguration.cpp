@@ -18,14 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ApplicationSystemRollbackConfiguration::ApplicationSystemRollbackConfiguration() : 
-    m_rollbackEnabled(false),
-    m_rollbackEnabledHasBeenSet(false)
-{
-}
-
 ApplicationSystemRollbackConfiguration::ApplicationSystemRollbackConfiguration(JsonView jsonValue)
-  : ApplicationSystemRollbackConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ApplicationSystemRollbackConfiguration& ApplicationSystemRollbackConfiguration::
   if(jsonValue.ValueExists("RollbackEnabled"))
   {
     m_rollbackEnabled = jsonValue.GetBool("RollbackEnabled");
-
     m_rollbackEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

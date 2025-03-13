@@ -34,7 +34,7 @@ namespace Model
   class RoutingClassifierTrace
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RoutingClassifierTrace();
+    AWS_BEDROCKAGENTRUNTIME_API RoutingClassifierTrace() = default;
     AWS_BEDROCKAGENTRUNTIME_API RoutingClassifierTrace(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RoutingClassifierTrace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,48 @@ namespace Model
     /**
      * <p>The classifier's invocation input.</p>
      */
-    inline const InvocationInput& GetInvocationInput() const{ return m_invocationInput; }
+    inline const InvocationInput& GetInvocationInput() const { return m_invocationInput; }
     inline bool InvocationInputHasBeenSet() const { return m_invocationInputHasBeenSet; }
-    inline void SetInvocationInput(const InvocationInput& value) { m_invocationInputHasBeenSet = true; m_invocationInput = value; }
-    inline void SetInvocationInput(InvocationInput&& value) { m_invocationInputHasBeenSet = true; m_invocationInput = std::move(value); }
-    inline RoutingClassifierTrace& WithInvocationInput(const InvocationInput& value) { SetInvocationInput(value); return *this;}
-    inline RoutingClassifierTrace& WithInvocationInput(InvocationInput&& value) { SetInvocationInput(std::move(value)); return *this;}
+    template<typename InvocationInputT = InvocationInput>
+    void SetInvocationInput(InvocationInputT&& value) { m_invocationInputHasBeenSet = true; m_invocationInput = std::forward<InvocationInputT>(value); }
+    template<typename InvocationInputT = InvocationInput>
+    RoutingClassifierTrace& WithInvocationInput(InvocationInputT&& value) { SetInvocationInput(std::forward<InvocationInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The classifier's model invocation input.</p>
      */
-    inline const ModelInvocationInput& GetModelInvocationInput() const{ return m_modelInvocationInput; }
+    inline const ModelInvocationInput& GetModelInvocationInput() const { return m_modelInvocationInput; }
     inline bool ModelInvocationInputHasBeenSet() const { return m_modelInvocationInputHasBeenSet; }
-    inline void SetModelInvocationInput(const ModelInvocationInput& value) { m_modelInvocationInputHasBeenSet = true; m_modelInvocationInput = value; }
-    inline void SetModelInvocationInput(ModelInvocationInput&& value) { m_modelInvocationInputHasBeenSet = true; m_modelInvocationInput = std::move(value); }
-    inline RoutingClassifierTrace& WithModelInvocationInput(const ModelInvocationInput& value) { SetModelInvocationInput(value); return *this;}
-    inline RoutingClassifierTrace& WithModelInvocationInput(ModelInvocationInput&& value) { SetModelInvocationInput(std::move(value)); return *this;}
+    template<typename ModelInvocationInputT = ModelInvocationInput>
+    void SetModelInvocationInput(ModelInvocationInputT&& value) { m_modelInvocationInputHasBeenSet = true; m_modelInvocationInput = std::forward<ModelInvocationInputT>(value); }
+    template<typename ModelInvocationInputT = ModelInvocationInput>
+    RoutingClassifierTrace& WithModelInvocationInput(ModelInvocationInputT&& value) { SetModelInvocationInput(std::forward<ModelInvocationInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The classifier's model invocation output.</p>
      */
-    inline const RoutingClassifierModelInvocationOutput& GetModelInvocationOutput() const{ return m_modelInvocationOutput; }
+    inline const RoutingClassifierModelInvocationOutput& GetModelInvocationOutput() const { return m_modelInvocationOutput; }
     inline bool ModelInvocationOutputHasBeenSet() const { return m_modelInvocationOutputHasBeenSet; }
-    inline void SetModelInvocationOutput(const RoutingClassifierModelInvocationOutput& value) { m_modelInvocationOutputHasBeenSet = true; m_modelInvocationOutput = value; }
-    inline void SetModelInvocationOutput(RoutingClassifierModelInvocationOutput&& value) { m_modelInvocationOutputHasBeenSet = true; m_modelInvocationOutput = std::move(value); }
-    inline RoutingClassifierTrace& WithModelInvocationOutput(const RoutingClassifierModelInvocationOutput& value) { SetModelInvocationOutput(value); return *this;}
-    inline RoutingClassifierTrace& WithModelInvocationOutput(RoutingClassifierModelInvocationOutput&& value) { SetModelInvocationOutput(std::move(value)); return *this;}
+    template<typename ModelInvocationOutputT = RoutingClassifierModelInvocationOutput>
+    void SetModelInvocationOutput(ModelInvocationOutputT&& value) { m_modelInvocationOutputHasBeenSet = true; m_modelInvocationOutput = std::forward<ModelInvocationOutputT>(value); }
+    template<typename ModelInvocationOutputT = RoutingClassifierModelInvocationOutput>
+    RoutingClassifierTrace& WithModelInvocationOutput(ModelInvocationOutputT&& value) { SetModelInvocationOutput(std::forward<ModelInvocationOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The classifier's observation.</p>
      */
-    inline const Observation& GetObservation() const{ return m_observation; }
+    inline const Observation& GetObservation() const { return m_observation; }
     inline bool ObservationHasBeenSet() const { return m_observationHasBeenSet; }
-    inline void SetObservation(const Observation& value) { m_observationHasBeenSet = true; m_observation = value; }
-    inline void SetObservation(Observation&& value) { m_observationHasBeenSet = true; m_observation = std::move(value); }
-    inline RoutingClassifierTrace& WithObservation(const Observation& value) { SetObservation(value); return *this;}
-    inline RoutingClassifierTrace& WithObservation(Observation&& value) { SetObservation(std::move(value)); return *this;}
+    template<typename ObservationT = Observation>
+    void SetObservation(ObservationT&& value) { m_observationHasBeenSet = true; m_observation = std::forward<ObservationT>(value); }
+    template<typename ObservationT = Observation>
+    RoutingClassifierTrace& WithObservation(ObservationT&& value) { SetObservation(std::forward<ObservationT>(value)); return *this;}
     ///@}
   private:
 

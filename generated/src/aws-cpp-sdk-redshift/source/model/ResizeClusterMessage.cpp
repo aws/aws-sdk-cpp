@@ -20,21 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ResizeClusterMessage::ResizeClusterMessage() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_classic(false),
-    m_classicHasBeenSet(false),
-    m_reservedNodeIdHasBeenSet(false),
-    m_targetReservedNodeOfferingIdHasBeenSet(false)
-{
-}
-
 ResizeClusterMessage::ResizeClusterMessage(const XmlNode& xmlNode)
-  : ResizeClusterMessage()
 {
   *this = xmlNode;
 }
@@ -50,42 +36,49 @@ ResizeClusterMessage& ResizeClusterMessage::operator =(const XmlNode& xmlNode)
     {
       m_clusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(clusterIdentifierNode.GetText());
       m_clusterIdentifierHasBeenSet = true;
+       m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode clusterTypeNode = resultNode.FirstChild("ClusterType");
     if(!clusterTypeNode.IsNull())
     {
       m_clusterType = Aws::Utils::Xml::DecodeEscapedXmlText(clusterTypeNode.GetText());
       m_clusterTypeHasBeenSet = true;
+       m_clusterTypeHasBeenSet = true;
     }
     XmlNode nodeTypeNode = resultNode.FirstChild("NodeType");
     if(!nodeTypeNode.IsNull())
     {
       m_nodeType = Aws::Utils::Xml::DecodeEscapedXmlText(nodeTypeNode.GetText());
       m_nodeTypeHasBeenSet = true;
+       m_nodeTypeHasBeenSet = true;
     }
     XmlNode numberOfNodesNode = resultNode.FirstChild("NumberOfNodes");
     if(!numberOfNodesNode.IsNull())
     {
       m_numberOfNodes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfNodesNode.GetText()).c_str()).c_str());
       m_numberOfNodesHasBeenSet = true;
+       m_numberOfNodesHasBeenSet = true;
     }
     XmlNode classicNode = resultNode.FirstChild("Classic");
     if(!classicNode.IsNull())
     {
       m_classic = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(classicNode.GetText()).c_str()).c_str());
       m_classicHasBeenSet = true;
+       m_classicHasBeenSet = true;
     }
     XmlNode reservedNodeIdNode = resultNode.FirstChild("ReservedNodeId");
     if(!reservedNodeIdNode.IsNull())
     {
       m_reservedNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeIdNode.GetText());
       m_reservedNodeIdHasBeenSet = true;
+       m_reservedNodeIdHasBeenSet = true;
     }
     XmlNode targetReservedNodeOfferingIdNode = resultNode.FirstChild("TargetReservedNodeOfferingId");
     if(!targetReservedNodeOfferingIdNode.IsNull())
     {
       m_targetReservedNodeOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(targetReservedNodeOfferingIdNode.GetText());
       m_targetReservedNodeOfferingIdHasBeenSet = true;
+       m_targetReservedNodeOfferingIdHasBeenSet = true;
     }
   }
 

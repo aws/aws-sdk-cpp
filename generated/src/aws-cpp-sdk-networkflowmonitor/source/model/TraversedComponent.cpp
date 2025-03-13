@@ -18,16 +18,7 @@ namespace NetworkFlowMonitor
 namespace Model
 {
 
-TraversedComponent::TraversedComponent() : 
-    m_componentIdHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
-    m_componentArnHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 TraversedComponent::TraversedComponent(JsonView jsonValue)
-  : TraversedComponent()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TraversedComponent& TraversedComponent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("componentId"))
   {
     m_componentId = jsonValue.GetString("componentId");
-
     m_componentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentType"))
   {
     m_componentType = jsonValue.GetString("componentType");
-
     m_componentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentArn"))
   {
     m_componentArn = jsonValue.GetString("componentArn");
-
     m_componentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

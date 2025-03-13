@@ -39,7 +39,7 @@ namespace Model
   class MLModel
   {
   public:
-    AWS_MACHINELEARNING_API MLModel();
+    AWS_MACHINELEARNING_API MLModel() = default;
     AWS_MACHINELEARNING_API MLModel(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API MLModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>MLModel</code> at creation.</p>
      */
-    inline const Aws::String& GetMLModelId() const{ return m_mLModelId; }
+    inline const Aws::String& GetMLModelId() const { return m_mLModelId; }
     inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
-    inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
-    inline void SetMLModelId(Aws::String&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::move(value); }
-    inline void SetMLModelId(const char* value) { m_mLModelIdHasBeenSet = true; m_mLModelId.assign(value); }
-    inline MLModel& WithMLModelId(const Aws::String& value) { SetMLModelId(value); return *this;}
-    inline MLModel& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
-    inline MLModel& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+    template<typename MLModelIdT = Aws::String>
+    void SetMLModelId(MLModelIdT&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::forward<MLModelIdT>(value); }
+    template<typename MLModelIdT = Aws::String>
+    MLModel& WithMLModelId(MLModelIdT&& value) { SetMLModelId(std::forward<MLModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <code>CreateMLModel</code> operation uses the
      * <code>TrainingDataSourceId</code>.</p>
      */
-    inline const Aws::String& GetTrainingDataSourceId() const{ return m_trainingDataSourceId; }
+    inline const Aws::String& GetTrainingDataSourceId() const { return m_trainingDataSourceId; }
     inline bool TrainingDataSourceIdHasBeenSet() const { return m_trainingDataSourceIdHasBeenSet; }
-    inline void SetTrainingDataSourceId(const Aws::String& value) { m_trainingDataSourceIdHasBeenSet = true; m_trainingDataSourceId = value; }
-    inline void SetTrainingDataSourceId(Aws::String&& value) { m_trainingDataSourceIdHasBeenSet = true; m_trainingDataSourceId = std::move(value); }
-    inline void SetTrainingDataSourceId(const char* value) { m_trainingDataSourceIdHasBeenSet = true; m_trainingDataSourceId.assign(value); }
-    inline MLModel& WithTrainingDataSourceId(const Aws::String& value) { SetTrainingDataSourceId(value); return *this;}
-    inline MLModel& WithTrainingDataSourceId(Aws::String&& value) { SetTrainingDataSourceId(std::move(value)); return *this;}
-    inline MLModel& WithTrainingDataSourceId(const char* value) { SetTrainingDataSourceId(value); return *this;}
+    template<typename TrainingDataSourceIdT = Aws::String>
+    void SetTrainingDataSourceId(TrainingDataSourceIdT&& value) { m_trainingDataSourceIdHasBeenSet = true; m_trainingDataSourceId = std::forward<TrainingDataSourceIdT>(value); }
+    template<typename TrainingDataSourceIdT = Aws::String>
+    MLModel& WithTrainingDataSourceId(TrainingDataSourceIdT&& value) { SetTrainingDataSourceId(std::forward<TrainingDataSourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * account type can be either an AWS root account or an AWS Identity and Access
      * Management (IAM) user account.</p>
      */
-    inline const Aws::String& GetCreatedByIamUser() const{ return m_createdByIamUser; }
+    inline const Aws::String& GetCreatedByIamUser() const { return m_createdByIamUser; }
     inline bool CreatedByIamUserHasBeenSet() const { return m_createdByIamUserHasBeenSet; }
-    inline void SetCreatedByIamUser(const Aws::String& value) { m_createdByIamUserHasBeenSet = true; m_createdByIamUser = value; }
-    inline void SetCreatedByIamUser(Aws::String&& value) { m_createdByIamUserHasBeenSet = true; m_createdByIamUser = std::move(value); }
-    inline void SetCreatedByIamUser(const char* value) { m_createdByIamUserHasBeenSet = true; m_createdByIamUser.assign(value); }
-    inline MLModel& WithCreatedByIamUser(const Aws::String& value) { SetCreatedByIamUser(value); return *this;}
-    inline MLModel& WithCreatedByIamUser(Aws::String&& value) { SetCreatedByIamUser(std::move(value)); return *this;}
-    inline MLModel& WithCreatedByIamUser(const char* value) { SetCreatedByIamUser(value); return *this;}
+    template<typename CreatedByIamUserT = Aws::String>
+    void SetCreatedByIamUser(CreatedByIamUserT&& value) { m_createdByIamUserHasBeenSet = true; m_createdByIamUser = std::forward<CreatedByIamUserT>(value); }
+    template<typename CreatedByIamUserT = Aws::String>
+    MLModel& WithCreatedByIamUser(CreatedByIamUserT&& value) { SetCreatedByIamUser(std::forward<CreatedByIamUserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +90,12 @@ namespace Model
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
      * epoch time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline MLModel& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline MLModel& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    MLModel& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,26 +103,24 @@ namespace Model
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline MLModel& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline MLModel& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    MLModel& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MLModel& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MLModel& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MLModel& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MLModel& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,17 +135,15 @@ namespace Model
      * successfully.</p> </li> <li> <p> <code>DELETED</code> - The <code>MLModel</code>
      * is marked as deleted. It isn't usable.</p> </li> </ul>
      */
-    inline const EntityStatus& GetStatus() const{ return m_status; }
+    inline EntityStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const EntityStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(EntityStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MLModel& WithStatus(const EntityStatus& value) { SetStatus(value); return *this;}
-    inline MLModel& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(EntityStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MLModel& WithStatus(EntityStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
+    inline long long GetSizeInBytes() const { return m_sizeInBytes; }
     inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
     inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
     inline MLModel& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
@@ -163,12 +153,12 @@ namespace Model
     /**
      * <p>The current endpoint of the <code>MLModel</code>.</p>
      */
-    inline const RealtimeEndpointInfo& GetEndpointInfo() const{ return m_endpointInfo; }
+    inline const RealtimeEndpointInfo& GetEndpointInfo() const { return m_endpointInfo; }
     inline bool EndpointInfoHasBeenSet() const { return m_endpointInfoHasBeenSet; }
-    inline void SetEndpointInfo(const RealtimeEndpointInfo& value) { m_endpointInfoHasBeenSet = true; m_endpointInfo = value; }
-    inline void SetEndpointInfo(RealtimeEndpointInfo&& value) { m_endpointInfoHasBeenSet = true; m_endpointInfo = std::move(value); }
-    inline MLModel& WithEndpointInfo(const RealtimeEndpointInfo& value) { SetEndpointInfo(value); return *this;}
-    inline MLModel& WithEndpointInfo(RealtimeEndpointInfo&& value) { SetEndpointInfo(std::move(value)); return *this;}
+    template<typename EndpointInfoT = RealtimeEndpointInfo>
+    void SetEndpointInfo(EndpointInfoT&& value) { m_endpointInfoHasBeenSet = true; m_endpointInfo = std::forward<EndpointInfoT>(value); }
+    template<typename EndpointInfoT = RealtimeEndpointInfo>
+    MLModel& WithEndpointInfo(EndpointInfoT&& value) { SetEndpointInfo(std::forward<EndpointInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -203,19 +193,16 @@ namespace Model
      * The default is to not use L2 normalization. This parameter can't be used when
      * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTrainingParameters() const{ return m_trainingParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTrainingParameters() const { return m_trainingParameters; }
     inline bool TrainingParametersHasBeenSet() const { return m_trainingParametersHasBeenSet; }
-    inline void SetTrainingParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters = value; }
-    inline void SetTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters = std::move(value); }
-    inline MLModel& WithTrainingParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetTrainingParameters(value); return *this;}
-    inline MLModel& WithTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetTrainingParameters(std::move(value)); return *this;}
-    inline MLModel& AddTrainingParameters(const Aws::String& key, const Aws::String& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, value); return *this; }
-    inline MLModel& AddTrainingParameters(Aws::String&& key, const Aws::String& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(std::move(key), value); return *this; }
-    inline MLModel& AddTrainingParameters(const Aws::String& key, Aws::String&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, std::move(value)); return *this; }
-    inline MLModel& AddTrainingParameters(Aws::String&& key, Aws::String&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline MLModel& AddTrainingParameters(const char* key, Aws::String&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, std::move(value)); return *this; }
-    inline MLModel& AddTrainingParameters(Aws::String&& key, const char* value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(std::move(key), value); return *this; }
-    inline MLModel& AddTrainingParameters(const char* key, const char* value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, value); return *this; }
+    template<typename TrainingParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetTrainingParameters(TrainingParametersT&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters = std::forward<TrainingParametersT>(value); }
+    template<typename TrainingParametersT = Aws::Map<Aws::String, Aws::String>>
+    MLModel& WithTrainingParameters(TrainingParametersT&& value) { SetTrainingParameters(std::forward<TrainingParametersT>(value)); return *this;}
+    template<typename TrainingParametersKeyT = Aws::String, typename TrainingParametersValueT = Aws::String>
+    MLModel& AddTrainingParameters(TrainingParametersKeyT&& key, TrainingParametersValueT&& value) {
+      m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(std::forward<TrainingParametersKeyT>(key), std::forward<TrainingParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -223,14 +210,12 @@ namespace Model
      * <p>The location of the data file or directory in Amazon Simple Storage Service
      * (Amazon S3).</p>
      */
-    inline const Aws::String& GetInputDataLocationS3() const{ return m_inputDataLocationS3; }
+    inline const Aws::String& GetInputDataLocationS3() const { return m_inputDataLocationS3; }
     inline bool InputDataLocationS3HasBeenSet() const { return m_inputDataLocationS3HasBeenSet; }
-    inline void SetInputDataLocationS3(const Aws::String& value) { m_inputDataLocationS3HasBeenSet = true; m_inputDataLocationS3 = value; }
-    inline void SetInputDataLocationS3(Aws::String&& value) { m_inputDataLocationS3HasBeenSet = true; m_inputDataLocationS3 = std::move(value); }
-    inline void SetInputDataLocationS3(const char* value) { m_inputDataLocationS3HasBeenSet = true; m_inputDataLocationS3.assign(value); }
-    inline MLModel& WithInputDataLocationS3(const Aws::String& value) { SetInputDataLocationS3(value); return *this;}
-    inline MLModel& WithInputDataLocationS3(Aws::String&& value) { SetInputDataLocationS3(std::move(value)); return *this;}
-    inline MLModel& WithInputDataLocationS3(const char* value) { SetInputDataLocationS3(value); return *this;}
+    template<typename InputDataLocationS3T = Aws::String>
+    void SetInputDataLocationS3(InputDataLocationS3T&& value) { m_inputDataLocationS3HasBeenSet = true; m_inputDataLocationS3 = std::forward<InputDataLocationS3T>(value); }
+    template<typename InputDataLocationS3T = Aws::String>
+    MLModel& WithInputDataLocationS3(InputDataLocationS3T&& value) { SetInputDataLocationS3(std::forward<InputDataLocationS3T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -240,12 +225,10 @@ namespace Model
      * The goal of <code>SGD</code> is to minimize the gradient of the loss function.
      * </p> </li> </ul>
      */
-    inline const Algorithm& GetAlgorithm() const{ return m_algorithm; }
+    inline Algorithm GetAlgorithm() const { return m_algorithm; }
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
-    inline void SetAlgorithm(const Algorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
-    inline void SetAlgorithm(Algorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
-    inline MLModel& WithAlgorithm(const Algorithm& value) { SetAlgorithm(value); return *this;}
-    inline MLModel& WithAlgorithm(Algorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
+    inline void SetAlgorithm(Algorithm value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
+    inline MLModel& WithAlgorithm(Algorithm value) { SetAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -258,17 +241,15 @@ namespace Model
      * Produces one of several possible results. For example, "Is this a HIGH-, LOW-,
      * or MEDIUM-risk trade?".</p> </li> </ul>
      */
-    inline const MLModelType& GetMLModelType() const{ return m_mLModelType; }
+    inline MLModelType GetMLModelType() const { return m_mLModelType; }
     inline bool MLModelTypeHasBeenSet() const { return m_mLModelTypeHasBeenSet; }
-    inline void SetMLModelType(const MLModelType& value) { m_mLModelTypeHasBeenSet = true; m_mLModelType = value; }
-    inline void SetMLModelType(MLModelType&& value) { m_mLModelTypeHasBeenSet = true; m_mLModelType = std::move(value); }
-    inline MLModel& WithMLModelType(const MLModelType& value) { SetMLModelType(value); return *this;}
-    inline MLModel& WithMLModelType(MLModelType&& value) { SetMLModelType(std::move(value)); return *this;}
+    inline void SetMLModelType(MLModelType value) { m_mLModelTypeHasBeenSet = true; m_mLModelType = value; }
+    inline MLModel& WithMLModelType(MLModelType value) { SetMLModelType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline double GetScoreThreshold() const{ return m_scoreThreshold; }
+    inline double GetScoreThreshold() const { return m_scoreThreshold; }
     inline bool ScoreThresholdHasBeenSet() const { return m_scoreThresholdHasBeenSet; }
     inline void SetScoreThreshold(double value) { m_scoreThresholdHasBeenSet = true; m_scoreThreshold = value; }
     inline MLModel& WithScoreThreshold(double value) { SetScoreThreshold(value); return *this;}
@@ -279,12 +260,12 @@ namespace Model
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
      * is expressed in epoch time.</p>
      */
-    inline const Aws::Utils::DateTime& GetScoreThresholdLastUpdatedAt() const{ return m_scoreThresholdLastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetScoreThresholdLastUpdatedAt() const { return m_scoreThresholdLastUpdatedAt; }
     inline bool ScoreThresholdLastUpdatedAtHasBeenSet() const { return m_scoreThresholdLastUpdatedAtHasBeenSet; }
-    inline void SetScoreThresholdLastUpdatedAt(const Aws::Utils::DateTime& value) { m_scoreThresholdLastUpdatedAtHasBeenSet = true; m_scoreThresholdLastUpdatedAt = value; }
-    inline void SetScoreThresholdLastUpdatedAt(Aws::Utils::DateTime&& value) { m_scoreThresholdLastUpdatedAtHasBeenSet = true; m_scoreThresholdLastUpdatedAt = std::move(value); }
-    inline MLModel& WithScoreThresholdLastUpdatedAt(const Aws::Utils::DateTime& value) { SetScoreThresholdLastUpdatedAt(value); return *this;}
-    inline MLModel& WithScoreThresholdLastUpdatedAt(Aws::Utils::DateTime&& value) { SetScoreThresholdLastUpdatedAt(std::move(value)); return *this;}
+    template<typename ScoreThresholdLastUpdatedAtT = Aws::Utils::DateTime>
+    void SetScoreThresholdLastUpdatedAt(ScoreThresholdLastUpdatedAtT&& value) { m_scoreThresholdLastUpdatedAtHasBeenSet = true; m_scoreThresholdLastUpdatedAt = std::forward<ScoreThresholdLastUpdatedAtT>(value); }
+    template<typename ScoreThresholdLastUpdatedAtT = Aws::Utils::DateTime>
+    MLModel& WithScoreThresholdLastUpdatedAt(ScoreThresholdLastUpdatedAtT&& value) { SetScoreThresholdLastUpdatedAt(std::forward<ScoreThresholdLastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -292,19 +273,17 @@ namespace Model
      * <p>A description of the most recent details about accessing the
      * <code>MLModel</code>.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline MLModel& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline MLModel& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline MLModel& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    MLModel& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline long long GetComputeTime() const{ return m_computeTime; }
+    inline long long GetComputeTime() const { return m_computeTime; }
     inline bool ComputeTimeHasBeenSet() const { return m_computeTimeHasBeenSet; }
     inline void SetComputeTime(long long value) { m_computeTimeHasBeenSet = true; m_computeTime = value; }
     inline MLModel& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
@@ -312,22 +291,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
+    inline const Aws::Utils::DateTime& GetFinishedAt() const { return m_finishedAt; }
     inline bool FinishedAtHasBeenSet() const { return m_finishedAtHasBeenSet; }
-    inline void SetFinishedAt(const Aws::Utils::DateTime& value) { m_finishedAtHasBeenSet = true; m_finishedAt = value; }
-    inline void SetFinishedAt(Aws::Utils::DateTime&& value) { m_finishedAtHasBeenSet = true; m_finishedAt = std::move(value); }
-    inline MLModel& WithFinishedAt(const Aws::Utils::DateTime& value) { SetFinishedAt(value); return *this;}
-    inline MLModel& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(std::move(value)); return *this;}
+    template<typename FinishedAtT = Aws::Utils::DateTime>
+    void SetFinishedAt(FinishedAtT&& value) { m_finishedAtHasBeenSet = true; m_finishedAt = std::forward<FinishedAtT>(value); }
+    template<typename FinishedAtT = Aws::Utils::DateTime>
+    MLModel& WithFinishedAt(FinishedAtT&& value) { SetFinishedAt(std::forward<FinishedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+    inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
-    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
-    inline MLModel& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-    inline MLModel& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    MLModel& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -340,19 +319,19 @@ namespace Model
     Aws::String m_createdByIamUser;
     bool m_createdByIamUserHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    EntityStatus m_status;
+    EntityStatus m_status{EntityStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    long long m_sizeInBytes;
+    long long m_sizeInBytes{0};
     bool m_sizeInBytesHasBeenSet = false;
 
     RealtimeEndpointInfo m_endpointInfo;
@@ -364,28 +343,28 @@ namespace Model
     Aws::String m_inputDataLocationS3;
     bool m_inputDataLocationS3HasBeenSet = false;
 
-    Algorithm m_algorithm;
+    Algorithm m_algorithm{Algorithm::NOT_SET};
     bool m_algorithmHasBeenSet = false;
 
-    MLModelType m_mLModelType;
+    MLModelType m_mLModelType{MLModelType::NOT_SET};
     bool m_mLModelTypeHasBeenSet = false;
 
-    double m_scoreThreshold;
+    double m_scoreThreshold{0.0};
     bool m_scoreThresholdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_scoreThresholdLastUpdatedAt;
+    Aws::Utils::DateTime m_scoreThresholdLastUpdatedAt{};
     bool m_scoreThresholdLastUpdatedAtHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    long long m_computeTime;
+    long long m_computeTime{0};
     bool m_computeTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_finishedAt;
+    Aws::Utils::DateTime m_finishedAt{};
     bool m_finishedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedAt;
+    Aws::Utils::DateTime m_startedAt{};
     bool m_startedAtHasBeenSet = false;
   };
 

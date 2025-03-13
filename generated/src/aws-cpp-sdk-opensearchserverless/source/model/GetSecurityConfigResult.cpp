@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSecurityConfigResult::GetSecurityConfigResult()
-{
-}
-
 GetSecurityConfigResult::GetSecurityConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetSecurityConfigResult& GetSecurityConfigResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("securityConfigDetail"))
   {
     m_securityConfigDetail = jsonValue.GetObject("securityConfigDetail");
-
+    m_securityConfigDetailHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

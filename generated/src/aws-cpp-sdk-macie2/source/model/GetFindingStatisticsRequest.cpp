@@ -12,16 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFindingStatisticsRequest::GetFindingStatisticsRequest() : 
-    m_findingCriteriaHasBeenSet(false),
-    m_groupBy(GroupBy::NOT_SET),
-    m_groupByHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_sortCriteriaHasBeenSet(false)
-{
-}
-
 Aws::String GetFindingStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

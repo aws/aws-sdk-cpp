@@ -34,7 +34,7 @@ namespace Model
   class OtaTaskSummary
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskSummary();
+    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskSummary() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,36 @@ namespace Model
     /**
      * <p>The id of the over-the-air (OTA) task.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline OtaTaskSummary& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline OtaTaskSummary& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline OtaTaskSummary& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    OtaTaskSummary& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the over-the-air (OTA) task.</p>
      */
-    inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
+    inline const Aws::String& GetTaskArn() const { return m_taskArn; }
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
-    inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
-    inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
-    inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
-    inline OtaTaskSummary& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-    inline OtaTaskSummary& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-    inline OtaTaskSummary& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+    template<typename TaskArnT = Aws::String>
+    void SetTaskArn(TaskArnT&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::forward<TaskArnT>(value); }
+    template<typename TaskArnT = Aws::String>
+    OtaTaskSummary& WithTaskArn(TaskArnT&& value) { SetTaskArn(std::forward<TaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp value of when the over-the-air (OTA) task was created at.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline OtaTaskSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline OtaTaskSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    OtaTaskSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,38 +81,34 @@ namespace Model
      * <p>The timestamp value of when the over-the-air (OTA) task was last updated
      * at.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline OtaTaskSummary& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline OtaTaskSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    OtaTaskSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the over-the-air (OTA) task configuration.</p>
      */
-    inline const Aws::String& GetTaskConfigurationId() const{ return m_taskConfigurationId; }
+    inline const Aws::String& GetTaskConfigurationId() const { return m_taskConfigurationId; }
     inline bool TaskConfigurationIdHasBeenSet() const { return m_taskConfigurationIdHasBeenSet; }
-    inline void SetTaskConfigurationId(const Aws::String& value) { m_taskConfigurationIdHasBeenSet = true; m_taskConfigurationId = value; }
-    inline void SetTaskConfigurationId(Aws::String&& value) { m_taskConfigurationIdHasBeenSet = true; m_taskConfigurationId = std::move(value); }
-    inline void SetTaskConfigurationId(const char* value) { m_taskConfigurationIdHasBeenSet = true; m_taskConfigurationId.assign(value); }
-    inline OtaTaskSummary& WithTaskConfigurationId(const Aws::String& value) { SetTaskConfigurationId(value); return *this;}
-    inline OtaTaskSummary& WithTaskConfigurationId(Aws::String&& value) { SetTaskConfigurationId(std::move(value)); return *this;}
-    inline OtaTaskSummary& WithTaskConfigurationId(const char* value) { SetTaskConfigurationId(value); return *this;}
+    template<typename TaskConfigurationIdT = Aws::String>
+    void SetTaskConfigurationId(TaskConfigurationIdT&& value) { m_taskConfigurationIdHasBeenSet = true; m_taskConfigurationId = std::forward<TaskConfigurationIdT>(value); }
+    template<typename TaskConfigurationIdT = Aws::String>
+    OtaTaskSummary& WithTaskConfigurationId(TaskConfigurationIdT&& value) { SetTaskConfigurationId(std::forward<TaskConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the over-the-air (OTA) task summary.</p>
      */
-    inline const OtaStatus& GetStatus() const{ return m_status; }
+    inline OtaStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OtaStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OtaStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OtaTaskSummary& WithStatus(const OtaStatus& value) { SetStatus(value); return *this;}
-    inline OtaTaskSummary& WithStatus(OtaStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(OtaStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline OtaTaskSummary& WithStatus(OtaStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -126,16 +118,16 @@ namespace Model
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_taskConfigurationId;
     bool m_taskConfigurationIdHasBeenSet = false;
 
-    OtaStatus m_status;
+    OtaStatus m_status{OtaStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

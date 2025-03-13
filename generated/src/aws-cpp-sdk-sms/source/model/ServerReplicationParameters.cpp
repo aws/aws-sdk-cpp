@@ -18,24 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ServerReplicationParameters::ServerReplicationParameters() : 
-    m_seedTimeHasBeenSet(false),
-    m_frequency(0),
-    m_frequencyHasBeenSet(false),
-    m_runOnce(false),
-    m_runOnceHasBeenSet(false),
-    m_licenseType(LicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_numberOfRecentAmisToKeep(0),
-    m_numberOfRecentAmisToKeepHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 ServerReplicationParameters::ServerReplicationParameters(JsonView jsonValue)
-  : ServerReplicationParameters()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ ServerReplicationParameters& ServerReplicationParameters::operator =(JsonView js
   if(jsonValue.ValueExists("seedTime"))
   {
     m_seedTime = jsonValue.GetDouble("seedTime");
-
     m_seedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frequency"))
   {
     m_frequency = jsonValue.GetInteger("frequency");
-
     m_frequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runOnce"))
   {
     m_runOnce = jsonValue.GetBool("runOnce");
-
     m_runOnceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseType"))
   {
     m_licenseType = LicenseTypeMapper::GetLicenseTypeForName(jsonValue.GetString("licenseType"));
-
     m_licenseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfRecentAmisToKeep"))
   {
     m_numberOfRecentAmisToKeep = jsonValue.GetInteger("numberOfRecentAmisToKeep");
-
     m_numberOfRecentAmisToKeepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encrypted"))
   {
     m_encrypted = jsonValue.GetBool("encrypted");
-
     m_encryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class MultiplexProgramPipelineDetail
   {
   public:
-    AWS_MEDIALIVE_API MultiplexProgramPipelineDetail();
+    AWS_MEDIALIVE_API MultiplexProgramPipelineDetail() = default;
     AWS_MEDIALIVE_API MultiplexProgramPipelineDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MultiplexProgramPipelineDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * Identifies the channel pipeline that is currently active for the pipeline
      * (identified by PipelineId) in the multiplex.
      */
-    inline const Aws::String& GetActiveChannelPipeline() const{ return m_activeChannelPipeline; }
+    inline const Aws::String& GetActiveChannelPipeline() const { return m_activeChannelPipeline; }
     inline bool ActiveChannelPipelineHasBeenSet() const { return m_activeChannelPipelineHasBeenSet; }
-    inline void SetActiveChannelPipeline(const Aws::String& value) { m_activeChannelPipelineHasBeenSet = true; m_activeChannelPipeline = value; }
-    inline void SetActiveChannelPipeline(Aws::String&& value) { m_activeChannelPipelineHasBeenSet = true; m_activeChannelPipeline = std::move(value); }
-    inline void SetActiveChannelPipeline(const char* value) { m_activeChannelPipelineHasBeenSet = true; m_activeChannelPipeline.assign(value); }
-    inline MultiplexProgramPipelineDetail& WithActiveChannelPipeline(const Aws::String& value) { SetActiveChannelPipeline(value); return *this;}
-    inline MultiplexProgramPipelineDetail& WithActiveChannelPipeline(Aws::String&& value) { SetActiveChannelPipeline(std::move(value)); return *this;}
-    inline MultiplexProgramPipelineDetail& WithActiveChannelPipeline(const char* value) { SetActiveChannelPipeline(value); return *this;}
+    template<typename ActiveChannelPipelineT = Aws::String>
+    void SetActiveChannelPipeline(ActiveChannelPipelineT&& value) { m_activeChannelPipelineHasBeenSet = true; m_activeChannelPipeline = std::forward<ActiveChannelPipelineT>(value); }
+    template<typename ActiveChannelPipelineT = Aws::String>
+    MultiplexProgramPipelineDetail& WithActiveChannelPipeline(ActiveChannelPipelineT&& value) { SetActiveChannelPipeline(std::forward<ActiveChannelPipelineT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Identifies a specific pipeline in the multiplex.
      */
-    inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+    inline const Aws::String& GetPipelineId() const { return m_pipelineId; }
     inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
-    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
-    inline MultiplexProgramPipelineDetail& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
-    inline MultiplexProgramPipelineDetail& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
-    inline MultiplexProgramPipelineDetail& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+    template<typename PipelineIdT = Aws::String>
+    void SetPipelineId(PipelineIdT&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::forward<PipelineIdT>(value); }
+    template<typename PipelineIdT = Aws::String>
+    MultiplexProgramPipelineDetail& WithPipelineId(PipelineIdT&& value) { SetPipelineId(std::forward<PipelineIdT>(value)); return *this;}
     ///@}
   private:
 

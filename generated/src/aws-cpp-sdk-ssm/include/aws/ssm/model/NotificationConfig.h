@@ -34,7 +34,7 @@ namespace Model
   class NotificationConfig
   {
   public:
-    AWS_SSM_API NotificationConfig();
+    AWS_SSM_API NotificationConfig() = default;
     AWS_SSM_API NotificationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API NotificationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * (Amazon SNS) topic. Run Command pushes notifications about command status
      * changes to this topic.</p>
      */
-    inline const Aws::String& GetNotificationArn() const{ return m_notificationArn; }
+    inline const Aws::String& GetNotificationArn() const { return m_notificationArn; }
     inline bool NotificationArnHasBeenSet() const { return m_notificationArnHasBeenSet; }
-    inline void SetNotificationArn(const Aws::String& value) { m_notificationArnHasBeenSet = true; m_notificationArn = value; }
-    inline void SetNotificationArn(Aws::String&& value) { m_notificationArnHasBeenSet = true; m_notificationArn = std::move(value); }
-    inline void SetNotificationArn(const char* value) { m_notificationArnHasBeenSet = true; m_notificationArn.assign(value); }
-    inline NotificationConfig& WithNotificationArn(const Aws::String& value) { SetNotificationArn(value); return *this;}
-    inline NotificationConfig& WithNotificationArn(Aws::String&& value) { SetNotificationArn(std::move(value)); return *this;}
-    inline NotificationConfig& WithNotificationArn(const char* value) { SetNotificationArn(value); return *this;}
+    template<typename NotificationArnT = Aws::String>
+    void SetNotificationArn(NotificationArnT&& value) { m_notificationArnHasBeenSet = true; m_notificationArn = std::forward<NotificationArnT>(value); }
+    template<typename NotificationArnT = Aws::String>
+    NotificationConfig& WithNotificationArn(NotificationArnT&& value) { SetNotificationArn(std::forward<NotificationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,13 @@ namespace Model
      * Systems Manager status changes using Amazon SNS notifications</a> in the
      * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
-    inline const Aws::Vector<NotificationEvent>& GetNotificationEvents() const{ return m_notificationEvents; }
+    inline const Aws::Vector<NotificationEvent>& GetNotificationEvents() const { return m_notificationEvents; }
     inline bool NotificationEventsHasBeenSet() const { return m_notificationEventsHasBeenSet; }
-    inline void SetNotificationEvents(const Aws::Vector<NotificationEvent>& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents = value; }
-    inline void SetNotificationEvents(Aws::Vector<NotificationEvent>&& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents = std::move(value); }
-    inline NotificationConfig& WithNotificationEvents(const Aws::Vector<NotificationEvent>& value) { SetNotificationEvents(value); return *this;}
-    inline NotificationConfig& WithNotificationEvents(Aws::Vector<NotificationEvent>&& value) { SetNotificationEvents(std::move(value)); return *this;}
-    inline NotificationConfig& AddNotificationEvents(const NotificationEvent& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents.push_back(value); return *this; }
-    inline NotificationConfig& AddNotificationEvents(NotificationEvent&& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents.push_back(std::move(value)); return *this; }
+    template<typename NotificationEventsT = Aws::Vector<NotificationEvent>>
+    void SetNotificationEvents(NotificationEventsT&& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents = std::forward<NotificationEventsT>(value); }
+    template<typename NotificationEventsT = Aws::Vector<NotificationEvent>>
+    NotificationConfig& WithNotificationEvents(NotificationEventsT&& value) { SetNotificationEvents(std::forward<NotificationEventsT>(value)); return *this;}
+    inline NotificationConfig& AddNotificationEvents(NotificationEvent value) { m_notificationEventsHasBeenSet = true; m_notificationEvents.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -82,12 +79,10 @@ namespace Model
      * notification on a per-node basis when the status of a command changes. </p>
      * </li> </ul>
      */
-    inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
+    inline NotificationType GetNotificationType() const { return m_notificationType; }
     inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
-    inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
-    inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
-    inline NotificationConfig& WithNotificationType(const NotificationType& value) { SetNotificationType(value); return *this;}
-    inline NotificationConfig& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
+    inline void SetNotificationType(NotificationType value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
+    inline NotificationConfig& WithNotificationType(NotificationType value) { SetNotificationType(value); return *this;}
     ///@}
   private:
 
@@ -97,7 +92,7 @@ namespace Model
     Aws::Vector<NotificationEvent> m_notificationEvents;
     bool m_notificationEventsHasBeenSet = false;
 
-    NotificationType m_notificationType;
+    NotificationType m_notificationType{NotificationType::NOT_SET};
     bool m_notificationTypeHasBeenSet = false;
   };
 

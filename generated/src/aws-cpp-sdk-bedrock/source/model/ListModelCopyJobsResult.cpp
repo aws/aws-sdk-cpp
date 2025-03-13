@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListModelCopyJobsResult::ListModelCopyJobsResult()
-{
-}
-
 ListModelCopyJobsResult::ListModelCopyJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListModelCopyJobsResult& ListModelCopyJobsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelCopyJobSummaries"))
   {
     Aws::Utils::Array<JsonView> modelCopyJobSummariesJsonList = jsonValue.GetArray("modelCopyJobSummaries");
@@ -42,14 +37,15 @@ ListModelCopyJobsResult& ListModelCopyJobsResult::operator =(const Aws::AmazonWe
     {
       m_modelCopyJobSummaries.push_back(modelCopyJobSummariesJsonList[modelCopyJobSummariesIndex].AsObject());
     }
+    m_modelCopyJobSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

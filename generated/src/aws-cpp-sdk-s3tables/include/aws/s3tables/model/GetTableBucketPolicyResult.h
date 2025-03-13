@@ -27,7 +27,7 @@ namespace Model
   class GetTableBucketPolicyResult
   {
   public:
-    AWS_S3TABLES_API GetTableBucketPolicyResult();
+    AWS_S3TABLES_API GetTableBucketPolicyResult() = default;
     AWS_S3TABLES_API GetTableBucketPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_S3TABLES_API GetTableBucketPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The <code>JSON</code> that defines the policy.</p>
      */
-    inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
-    inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicy = value; }
-    inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicy = std::move(value); }
-    inline void SetResourcePolicy(const char* value) { m_resourcePolicy.assign(value); }
-    inline GetTableBucketPolicyResult& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
-    inline GetTableBucketPolicyResult& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
-    inline GetTableBucketPolicyResult& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
+    inline const Aws::String& GetResourcePolicy() const { return m_resourcePolicy; }
+    template<typename ResourcePolicyT = Aws::String>
+    void SetResourcePolicy(ResourcePolicyT&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::forward<ResourcePolicyT>(value); }
+    template<typename ResourcePolicyT = Aws::String>
+    GetTableBucketPolicyResult& WithResourcePolicy(ResourcePolicyT&& value) { SetResourcePolicy(std::forward<ResourcePolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTableBucketPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTableBucketPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTableBucketPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTableBucketPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourcePolicy;
+    bool m_resourcePolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

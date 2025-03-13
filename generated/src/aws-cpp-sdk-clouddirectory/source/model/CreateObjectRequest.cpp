@@ -13,15 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateObjectRequest::CreateObjectRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_schemaFacetsHasBeenSet(false),
-    m_objectAttributeListHasBeenSet(false),
-    m_parentReferenceHasBeenSet(false),
-    m_linkNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateObjectRequest::SerializePayload() const
 {
   JsonValue payload;

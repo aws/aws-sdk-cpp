@@ -18,18 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AuditSuppression::AuditSuppression() : 
-    m_checkNameHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_suppressIndefinitely(false),
-    m_suppressIndefinitelyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 AuditSuppression::AuditSuppression(JsonView jsonValue)
-  : AuditSuppression()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AuditSuppression& AuditSuppression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("checkName"))
   {
     m_checkName = jsonValue.GetString("checkName");
-
     m_checkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetObject("resourceIdentifier");
-
     m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expirationDate"))
   {
     m_expirationDate = jsonValue.GetDouble("expirationDate");
-
     m_expirationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suppressIndefinitely"))
   {
     m_suppressIndefinitely = jsonValue.GetBool("suppressIndefinitely");
-
     m_suppressIndefinitelyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

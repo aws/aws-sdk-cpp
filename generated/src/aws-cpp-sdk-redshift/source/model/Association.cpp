@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-Association::Association() : 
-    m_customDomainCertificateArnHasBeenSet(false),
-    m_customDomainCertificateExpiryDateHasBeenSet(false),
-    m_certificateAssociationsHasBeenSet(false)
-{
-}
-
 Association::Association(const XmlNode& xmlNode)
-  : Association()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ Association& Association::operator =(const XmlNode& xmlNode)
     {
       m_customDomainCertificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(customDomainCertificateArnNode.GetText());
       m_customDomainCertificateArnHasBeenSet = true;
+       m_customDomainCertificateArnHasBeenSet = true;
     }
     XmlNode customDomainCertificateExpiryDateNode = resultNode.FirstChild("CustomDomainCertificateExpiryDate");
     if(!customDomainCertificateExpiryDateNode.IsNull())
     {
       m_customDomainCertificateExpiryDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(customDomainCertificateExpiryDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_customDomainCertificateExpiryDateHasBeenSet = true;
+       m_customDomainCertificateExpiryDateHasBeenSet = true;
     }
     XmlNode certificateAssociationsNode = resultNode.FirstChild("CertificateAssociations");
     if(!certificateAssociationsNode.IsNull())
     {
       XmlNode certificateAssociationsMember = certificateAssociationsNode.FirstChild("CertificateAssociation");
+      m_certificateAssociationsHasBeenSet = !certificateAssociationsMember.IsNull();
       while(!certificateAssociationsMember.IsNull())
       {
         m_certificateAssociations.push_back(certificateAssociationsMember);
         certificateAssociationsMember = certificateAssociationsMember.NextNode("CertificateAssociation");
       }
 
-      m_certificateAssociationsHasBeenSet = true;
+       m_certificateAssociationsHasBeenSet = true;
     }
   }
 

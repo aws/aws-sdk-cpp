@@ -31,7 +31,7 @@ namespace Model
   class TimeZone
   {
   public:
-    AWS_GEOPLACES_API TimeZone();
+    AWS_GEOPLACES_API TimeZone() = default;
     AWS_GEOPLACES_API TimeZone(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API TimeZone& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,35 +41,31 @@ namespace Model
     /**
      * <p>The time zone name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TimeZone& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TimeZone& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TimeZone& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TimeZone& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Time zone offset of the timezone from UTC.</p>
      */
-    inline const Aws::String& GetOffset() const{ return m_offset; }
+    inline const Aws::String& GetOffset() const { return m_offset; }
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
-    inline void SetOffset(const Aws::String& value) { m_offsetHasBeenSet = true; m_offset = value; }
-    inline void SetOffset(Aws::String&& value) { m_offsetHasBeenSet = true; m_offset = std::move(value); }
-    inline void SetOffset(const char* value) { m_offsetHasBeenSet = true; m_offset.assign(value); }
-    inline TimeZone& WithOffset(const Aws::String& value) { SetOffset(value); return *this;}
-    inline TimeZone& WithOffset(Aws::String&& value) { SetOffset(std::move(value)); return *this;}
-    inline TimeZone& WithOffset(const char* value) { SetOffset(value); return *this;}
+    template<typename OffsetT = Aws::String>
+    void SetOffset(OffsetT&& value) { m_offsetHasBeenSet = true; m_offset = std::forward<OffsetT>(value); }
+    template<typename OffsetT = Aws::String>
+    TimeZone& WithOffset(OffsetT&& value) { SetOffset(std::forward<OffsetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The offset of the time zone from UTC, in seconds.</p>
      */
-    inline long long GetOffsetSeconds() const{ return m_offsetSeconds; }
+    inline long long GetOffsetSeconds() const { return m_offsetSeconds; }
     inline bool OffsetSecondsHasBeenSet() const { return m_offsetSecondsHasBeenSet; }
     inline void SetOffsetSeconds(long long value) { m_offsetSecondsHasBeenSet = true; m_offsetSeconds = value; }
     inline TimeZone& WithOffsetSeconds(long long value) { SetOffsetSeconds(value); return *this;}
@@ -82,7 +78,7 @@ namespace Model
     Aws::String m_offset;
     bool m_offsetHasBeenSet = false;
 
-    long long m_offsetSeconds;
+    long long m_offsetSeconds{0};
     bool m_offsetSecondsHasBeenSet = false;
   };
 

@@ -20,15 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-ClusterMasterUserSecret::ClusterMasterUserSecret() : 
-    m_secretArnHasBeenSet(false),
-    m_secretStatusHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 ClusterMasterUserSecret::ClusterMasterUserSecret(const XmlNode& xmlNode)
-  : ClusterMasterUserSecret()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ClusterMasterUserSecret& ClusterMasterUserSecret::operator =(const XmlNode& xmlN
     {
       m_secretArn = Aws::Utils::Xml::DecodeEscapedXmlText(secretArnNode.GetText());
       m_secretArnHasBeenSet = true;
+       m_secretArnHasBeenSet = true;
     }
     XmlNode secretStatusNode = resultNode.FirstChild("SecretStatus");
     if(!secretStatusNode.IsNull())
     {
       m_secretStatus = Aws::Utils::Xml::DecodeEscapedXmlText(secretStatusNode.GetText());
       m_secretStatusHasBeenSet = true;
+       m_secretStatusHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
+       m_kmsKeyIdHasBeenSet = true;
     }
   }
 

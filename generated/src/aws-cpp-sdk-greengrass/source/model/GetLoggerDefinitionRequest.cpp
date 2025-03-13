@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLoggerDefinitionRequest::GetLoggerDefinitionRequest() : 
-    m_loggerDefinitionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetLoggerDefinitionRequest::SerializePayload() const
 {
   return {};

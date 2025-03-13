@@ -18,29 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-ModelDescription::ModelDescription() : 
-    m_modelVersionHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_performanceHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_evaluationManifestHasBeenSet(false),
-    m_evaluationResultHasBeenSet(false),
-    m_evaluationEndTimestampHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_minInferenceUnits(0),
-    m_minInferenceUnitsHasBeenSet(false),
-    m_maxInferenceUnits(0),
-    m_maxInferenceUnitsHasBeenSet(false)
-{
-}
-
 ModelDescription::ModelDescription(JsonView jsonValue)
-  : ModelDescription()
 {
   *this = jsonValue;
 }
@@ -50,101 +28,73 @@ ModelDescription& ModelDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelVersion"))
   {
     m_modelVersion = jsonValue.GetString("ModelVersion");
-
     m_modelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelArn"))
   {
     m_modelArn = jsonValue.GetString("ModelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Performance"))
   {
     m_performance = jsonValue.GetObject("Performance");
-
     m_performanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputConfig"))
   {
     m_outputConfig = jsonValue.GetObject("OutputConfig");
-
     m_outputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationManifest"))
   {
     m_evaluationManifest = jsonValue.GetObject("EvaluationManifest");
-
     m_evaluationManifestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationResult"))
   {
     m_evaluationResult = jsonValue.GetObject("EvaluationResult");
-
     m_evaluationResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationEndTimestamp"))
   {
     m_evaluationEndTimestamp = jsonValue.GetDouble("EvaluationEndTimestamp");
-
     m_evaluationEndTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinInferenceUnits"))
   {
     m_minInferenceUnits = jsonValue.GetInteger("MinInferenceUnits");
-
     m_minInferenceUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxInferenceUnits"))
   {
     m_maxInferenceUnits = jsonValue.GetInteger("MaxInferenceUnits");
-
     m_maxInferenceUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace RolesAnywhere
 namespace Model
 {
 
-Source::Source() : 
-    m_sourceDataHasBeenSet(false),
-    m_sourceType(TrustAnchorType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
-{
-}
-
 Source::Source(JsonView jsonValue)
-  : Source()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Source& Source::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceData"))
   {
     m_sourceData = jsonValue.GetObject("sourceData");
-
     m_sourceDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceType"))
   {
     m_sourceType = TrustAnchorTypeMapper::GetTrustAnchorTypeForName(jsonValue.GetString("sourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

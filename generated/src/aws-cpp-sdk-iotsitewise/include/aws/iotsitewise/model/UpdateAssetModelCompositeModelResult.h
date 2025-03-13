@@ -30,7 +30,7 @@ namespace Model
   class UpdateAssetModelCompositeModelResult
   {
   public:
-    AWS_IOTSITEWISE_API UpdateAssetModelCompositeModelResult();
+    AWS_IOTSITEWISE_API UpdateAssetModelCompositeModelResult() = default;
     AWS_IOTSITEWISE_API UpdateAssetModelCompositeModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API UpdateAssetModelCompositeModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,41 +39,42 @@ namespace Model
     /**
      * <p>The path to the composite model listing the parent composite models.</p>
      */
-    inline const Aws::Vector<AssetModelCompositeModelPathSegment>& GetAssetModelCompositeModelPath() const{ return m_assetModelCompositeModelPath; }
-    inline void SetAssetModelCompositeModelPath(const Aws::Vector<AssetModelCompositeModelPathSegment>& value) { m_assetModelCompositeModelPath = value; }
-    inline void SetAssetModelCompositeModelPath(Aws::Vector<AssetModelCompositeModelPathSegment>&& value) { m_assetModelCompositeModelPath = std::move(value); }
-    inline UpdateAssetModelCompositeModelResult& WithAssetModelCompositeModelPath(const Aws::Vector<AssetModelCompositeModelPathSegment>& value) { SetAssetModelCompositeModelPath(value); return *this;}
-    inline UpdateAssetModelCompositeModelResult& WithAssetModelCompositeModelPath(Aws::Vector<AssetModelCompositeModelPathSegment>&& value) { SetAssetModelCompositeModelPath(std::move(value)); return *this;}
-    inline UpdateAssetModelCompositeModelResult& AddAssetModelCompositeModelPath(const AssetModelCompositeModelPathSegment& value) { m_assetModelCompositeModelPath.push_back(value); return *this; }
-    inline UpdateAssetModelCompositeModelResult& AddAssetModelCompositeModelPath(AssetModelCompositeModelPathSegment&& value) { m_assetModelCompositeModelPath.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssetModelCompositeModelPathSegment>& GetAssetModelCompositeModelPath() const { return m_assetModelCompositeModelPath; }
+    template<typename AssetModelCompositeModelPathT = Aws::Vector<AssetModelCompositeModelPathSegment>>
+    void SetAssetModelCompositeModelPath(AssetModelCompositeModelPathT&& value) { m_assetModelCompositeModelPathHasBeenSet = true; m_assetModelCompositeModelPath = std::forward<AssetModelCompositeModelPathT>(value); }
+    template<typename AssetModelCompositeModelPathT = Aws::Vector<AssetModelCompositeModelPathSegment>>
+    UpdateAssetModelCompositeModelResult& WithAssetModelCompositeModelPath(AssetModelCompositeModelPathT&& value) { SetAssetModelCompositeModelPath(std::forward<AssetModelCompositeModelPathT>(value)); return *this;}
+    template<typename AssetModelCompositeModelPathT = AssetModelCompositeModelPathSegment>
+    UpdateAssetModelCompositeModelResult& AddAssetModelCompositeModelPath(AssetModelCompositeModelPathT&& value) { m_assetModelCompositeModelPathHasBeenSet = true; m_assetModelCompositeModelPath.emplace_back(std::forward<AssetModelCompositeModelPathT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const AssetModelStatus& GetAssetModelStatus() const{ return m_assetModelStatus; }
-    inline void SetAssetModelStatus(const AssetModelStatus& value) { m_assetModelStatus = value; }
-    inline void SetAssetModelStatus(AssetModelStatus&& value) { m_assetModelStatus = std::move(value); }
-    inline UpdateAssetModelCompositeModelResult& WithAssetModelStatus(const AssetModelStatus& value) { SetAssetModelStatus(value); return *this;}
-    inline UpdateAssetModelCompositeModelResult& WithAssetModelStatus(AssetModelStatus&& value) { SetAssetModelStatus(std::move(value)); return *this;}
+    inline const AssetModelStatus& GetAssetModelStatus() const { return m_assetModelStatus; }
+    template<typename AssetModelStatusT = AssetModelStatus>
+    void SetAssetModelStatus(AssetModelStatusT&& value) { m_assetModelStatusHasBeenSet = true; m_assetModelStatus = std::forward<AssetModelStatusT>(value); }
+    template<typename AssetModelStatusT = AssetModelStatus>
+    UpdateAssetModelCompositeModelResult& WithAssetModelStatus(AssetModelStatusT&& value) { SetAssetModelStatus(std::forward<AssetModelStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAssetModelCompositeModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAssetModelCompositeModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAssetModelCompositeModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAssetModelCompositeModelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AssetModelCompositeModelPathSegment> m_assetModelCompositeModelPath;
+    bool m_assetModelCompositeModelPathHasBeenSet = false;
 
     AssetModelStatus m_assetModelStatus;
+    bool m_assetModelStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

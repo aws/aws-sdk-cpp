@@ -32,7 +32,7 @@ namespace Model
   class RecommendationData
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API RecommendationData();
+    AWS_DATABASEMIGRATIONSERVICE_API RecommendationData() = default;
     AWS_DATABASEMIGRATIONSERVICE_API RecommendationData(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API RecommendationData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The recommendation of a target Amazon RDS database engine.</p>
      */
-    inline const RdsRecommendation& GetRdsEngine() const{ return m_rdsEngine; }
+    inline const RdsRecommendation& GetRdsEngine() const { return m_rdsEngine; }
     inline bool RdsEngineHasBeenSet() const { return m_rdsEngineHasBeenSet; }
-    inline void SetRdsEngine(const RdsRecommendation& value) { m_rdsEngineHasBeenSet = true; m_rdsEngine = value; }
-    inline void SetRdsEngine(RdsRecommendation&& value) { m_rdsEngineHasBeenSet = true; m_rdsEngine = std::move(value); }
-    inline RecommendationData& WithRdsEngine(const RdsRecommendation& value) { SetRdsEngine(value); return *this;}
-    inline RecommendationData& WithRdsEngine(RdsRecommendation&& value) { SetRdsEngine(std::move(value)); return *this;}
+    template<typename RdsEngineT = RdsRecommendation>
+    void SetRdsEngine(RdsEngineT&& value) { m_rdsEngineHasBeenSet = true; m_rdsEngine = std::forward<RdsEngineT>(value); }
+    template<typename RdsEngineT = RdsRecommendation>
+    RecommendationData& WithRdsEngine(RdsEngineT&& value) { SetRdsEngine(std::forward<RdsEngineT>(value)); return *this;}
     ///@}
   private:
 

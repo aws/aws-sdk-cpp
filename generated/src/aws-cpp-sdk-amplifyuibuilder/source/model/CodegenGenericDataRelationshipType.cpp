@@ -18,24 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-CodegenGenericDataRelationshipType::CodegenGenericDataRelationshipType() : 
-    m_type(GenericDataRelationshipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_relatedModelNameHasBeenSet(false),
-    m_relatedModelFieldsHasBeenSet(false),
-    m_canUnlinkAssociatedModel(false),
-    m_canUnlinkAssociatedModelHasBeenSet(false),
-    m_relatedJoinFieldNameHasBeenSet(false),
-    m_relatedJoinTableNameHasBeenSet(false),
-    m_belongsToFieldOnRelatedModelHasBeenSet(false),
-    m_associatedFieldsHasBeenSet(false),
-    m_isHasManyIndex(false),
-    m_isHasManyIndexHasBeenSet(false)
-{
-}
-
 CodegenGenericDataRelationshipType::CodegenGenericDataRelationshipType(JsonView jsonValue)
-  : CodegenGenericDataRelationshipType()
 {
   *this = jsonValue;
 }
@@ -45,17 +28,13 @@ CodegenGenericDataRelationshipType& CodegenGenericDataRelationshipType::operator
   if(jsonValue.ValueExists("type"))
   {
     m_type = GenericDataRelationshipTypeMapper::GetGenericDataRelationshipTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedModelName"))
   {
     m_relatedModelName = jsonValue.GetString("relatedModelName");
-
     m_relatedModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedModelFields"))
   {
     Aws::Utils::Array<JsonView> relatedModelFieldsJsonList = jsonValue.GetArray("relatedModelFields");
@@ -65,35 +44,26 @@ CodegenGenericDataRelationshipType& CodegenGenericDataRelationshipType::operator
     }
     m_relatedModelFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canUnlinkAssociatedModel"))
   {
     m_canUnlinkAssociatedModel = jsonValue.GetBool("canUnlinkAssociatedModel");
-
     m_canUnlinkAssociatedModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedJoinFieldName"))
   {
     m_relatedJoinFieldName = jsonValue.GetString("relatedJoinFieldName");
-
     m_relatedJoinFieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedJoinTableName"))
   {
     m_relatedJoinTableName = jsonValue.GetString("relatedJoinTableName");
-
     m_relatedJoinTableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("belongsToFieldOnRelatedModel"))
   {
     m_belongsToFieldOnRelatedModel = jsonValue.GetString("belongsToFieldOnRelatedModel");
-
     m_belongsToFieldOnRelatedModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedFields"))
   {
     Aws::Utils::Array<JsonView> associatedFieldsJsonList = jsonValue.GetArray("associatedFields");
@@ -103,14 +73,11 @@ CodegenGenericDataRelationshipType& CodegenGenericDataRelationshipType::operator
     }
     m_associatedFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isHasManyIndex"))
   {
     m_isHasManyIndex = jsonValue.GetBool("isHasManyIndex");
-
     m_isHasManyIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

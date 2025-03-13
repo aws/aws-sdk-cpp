@@ -29,7 +29,7 @@ namespace Model
   class ListCollaborationPrivacyBudgetsResult
   {
   public:
-    AWS_CLEANROOMS_API ListCollaborationPrivacyBudgetsResult();
+    AWS_CLEANROOMS_API ListCollaborationPrivacyBudgetsResult() = default;
     AWS_CLEANROOMS_API ListCollaborationPrivacyBudgetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMS_API ListCollaborationPrivacyBudgetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Summaries of the collaboration privacy budgets.</p>
      */
-    inline const Aws::Vector<CollaborationPrivacyBudgetSummary>& GetCollaborationPrivacyBudgetSummaries() const{ return m_collaborationPrivacyBudgetSummaries; }
-    inline void SetCollaborationPrivacyBudgetSummaries(const Aws::Vector<CollaborationPrivacyBudgetSummary>& value) { m_collaborationPrivacyBudgetSummaries = value; }
-    inline void SetCollaborationPrivacyBudgetSummaries(Aws::Vector<CollaborationPrivacyBudgetSummary>&& value) { m_collaborationPrivacyBudgetSummaries = std::move(value); }
-    inline ListCollaborationPrivacyBudgetsResult& WithCollaborationPrivacyBudgetSummaries(const Aws::Vector<CollaborationPrivacyBudgetSummary>& value) { SetCollaborationPrivacyBudgetSummaries(value); return *this;}
-    inline ListCollaborationPrivacyBudgetsResult& WithCollaborationPrivacyBudgetSummaries(Aws::Vector<CollaborationPrivacyBudgetSummary>&& value) { SetCollaborationPrivacyBudgetSummaries(std::move(value)); return *this;}
-    inline ListCollaborationPrivacyBudgetsResult& AddCollaborationPrivacyBudgetSummaries(const CollaborationPrivacyBudgetSummary& value) { m_collaborationPrivacyBudgetSummaries.push_back(value); return *this; }
-    inline ListCollaborationPrivacyBudgetsResult& AddCollaborationPrivacyBudgetSummaries(CollaborationPrivacyBudgetSummary&& value) { m_collaborationPrivacyBudgetSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CollaborationPrivacyBudgetSummary>& GetCollaborationPrivacyBudgetSummaries() const { return m_collaborationPrivacyBudgetSummaries; }
+    template<typename CollaborationPrivacyBudgetSummariesT = Aws::Vector<CollaborationPrivacyBudgetSummary>>
+    void SetCollaborationPrivacyBudgetSummaries(CollaborationPrivacyBudgetSummariesT&& value) { m_collaborationPrivacyBudgetSummariesHasBeenSet = true; m_collaborationPrivacyBudgetSummaries = std::forward<CollaborationPrivacyBudgetSummariesT>(value); }
+    template<typename CollaborationPrivacyBudgetSummariesT = Aws::Vector<CollaborationPrivacyBudgetSummary>>
+    ListCollaborationPrivacyBudgetsResult& WithCollaborationPrivacyBudgetSummaries(CollaborationPrivacyBudgetSummariesT&& value) { SetCollaborationPrivacyBudgetSummaries(std::forward<CollaborationPrivacyBudgetSummariesT>(value)); return *this;}
+    template<typename CollaborationPrivacyBudgetSummariesT = CollaborationPrivacyBudgetSummary>
+    ListCollaborationPrivacyBudgetsResult& AddCollaborationPrivacyBudgetSummaries(CollaborationPrivacyBudgetSummariesT&& value) { m_collaborationPrivacyBudgetSummariesHasBeenSet = true; m_collaborationPrivacyBudgetSummaries.emplace_back(std::forward<CollaborationPrivacyBudgetSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's used to fetch the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCollaborationPrivacyBudgetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCollaborationPrivacyBudgetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCollaborationPrivacyBudgetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCollaborationPrivacyBudgetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCollaborationPrivacyBudgetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCollaborationPrivacyBudgetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCollaborationPrivacyBudgetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCollaborationPrivacyBudgetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CollaborationPrivacyBudgetSummary> m_collaborationPrivacyBudgetSummaries;
+    bool m_collaborationPrivacyBudgetSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

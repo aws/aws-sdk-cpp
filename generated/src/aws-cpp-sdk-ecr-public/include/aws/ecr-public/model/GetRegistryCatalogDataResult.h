@@ -28,7 +28,7 @@ namespace Model
   class GetRegistryCatalogDataResult
   {
   public:
-    AWS_ECRPUBLIC_API GetRegistryCatalogDataResult();
+    AWS_ECRPUBLIC_API GetRegistryCatalogDataResult() = default;
     AWS_ECRPUBLIC_API GetRegistryCatalogDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECRPUBLIC_API GetRegistryCatalogDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The catalog metadata for the public registry.</p>
      */
-    inline const RegistryCatalogData& GetRegistryCatalogData() const{ return m_registryCatalogData; }
-    inline void SetRegistryCatalogData(const RegistryCatalogData& value) { m_registryCatalogData = value; }
-    inline void SetRegistryCatalogData(RegistryCatalogData&& value) { m_registryCatalogData = std::move(value); }
-    inline GetRegistryCatalogDataResult& WithRegistryCatalogData(const RegistryCatalogData& value) { SetRegistryCatalogData(value); return *this;}
-    inline GetRegistryCatalogDataResult& WithRegistryCatalogData(RegistryCatalogData&& value) { SetRegistryCatalogData(std::move(value)); return *this;}
+    inline const RegistryCatalogData& GetRegistryCatalogData() const { return m_registryCatalogData; }
+    template<typename RegistryCatalogDataT = RegistryCatalogData>
+    void SetRegistryCatalogData(RegistryCatalogDataT&& value) { m_registryCatalogDataHasBeenSet = true; m_registryCatalogData = std::forward<RegistryCatalogDataT>(value); }
+    template<typename RegistryCatalogDataT = RegistryCatalogData>
+    GetRegistryCatalogDataResult& WithRegistryCatalogData(RegistryCatalogDataT&& value) { SetRegistryCatalogData(std::forward<RegistryCatalogDataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRegistryCatalogDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRegistryCatalogDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRegistryCatalogDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRegistryCatalogDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RegistryCatalogData m_registryCatalogData;
+    bool m_registryCatalogDataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

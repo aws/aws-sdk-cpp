@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-SaaSConfiguration::SaaSConfiguration() : 
-    m_organizationNameHasBeenSet(false),
-    m_hostUrlHasBeenSet(false)
-{
-}
-
 SaaSConfiguration::SaaSConfiguration(JsonView jsonValue)
-  : SaaSConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SaaSConfiguration& SaaSConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OrganizationName"))
   {
     m_organizationName = jsonValue.GetString("OrganizationName");
-
     m_organizationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostUrl"))
   {
     m_hostUrl = jsonValue.GetString("HostUrl");
-
     m_hostUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

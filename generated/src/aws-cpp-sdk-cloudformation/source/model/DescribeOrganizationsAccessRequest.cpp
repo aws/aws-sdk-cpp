@@ -10,12 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DescribeOrganizationsAccessRequest::DescribeOrganizationsAccessRequest() : 
-    m_callAs(CallAs::NOT_SET),
-    m_callAsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOrganizationsAccessRequest::SerializePayload() const
 {
   Aws::StringStream ss;

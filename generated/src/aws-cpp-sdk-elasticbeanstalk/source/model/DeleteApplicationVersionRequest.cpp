@@ -10,14 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DeleteApplicationVersionRequest::DeleteApplicationVersionRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_deleteSourceBundle(false),
-    m_deleteSourceBundleHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApplicationVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

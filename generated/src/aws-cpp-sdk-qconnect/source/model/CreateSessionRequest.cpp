@@ -12,18 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSessionRequest::CreateSessionRequest() : 
-    m_aiAgentConfigurationHasBeenSet(false),
-    m_assistantIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagFilterHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSessionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-SoftwarePackage::SoftwarePackage() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_epochHasBeenSet(false),
-    m_releaseHasBeenSet(false),
-    m_architectureHasBeenSet(false),
-    m_packageManagerHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_fixedInVersionHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_sourceLayerHashHasBeenSet(false),
-    m_sourceLayerArnHasBeenSet(false)
-{
-}
-
 SoftwarePackage::SoftwarePackage(JsonView jsonValue)
-  : SoftwarePackage()
 {
   *this = jsonValue;
 }
@@ -44,80 +28,58 @@ SoftwarePackage& SoftwarePackage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Epoch"))
   {
     m_epoch = jsonValue.GetString("Epoch");
-
     m_epochHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Release"))
   {
     m_release = jsonValue.GetString("Release");
-
     m_releaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Architecture"))
   {
     m_architecture = jsonValue.GetString("Architecture");
-
     m_architectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageManager"))
   {
     m_packageManager = jsonValue.GetString("PackageManager");
-
     m_packageManagerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilePath"))
   {
     m_filePath = jsonValue.GetString("FilePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FixedInVersion"))
   {
     m_fixedInVersion = jsonValue.GetString("FixedInVersion");
-
     m_fixedInVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Remediation"))
   {
     m_remediation = jsonValue.GetString("Remediation");
-
     m_remediationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceLayerHash"))
   {
     m_sourceLayerHash = jsonValue.GetString("SourceLayerHash");
-
     m_sourceLayerHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceLayerArn"))
   {
     m_sourceLayerArn = jsonValue.GetString("SourceLayerArn");
-
     m_sourceLayerArnHasBeenSet = true;
   }
-
   return *this;
 }
 

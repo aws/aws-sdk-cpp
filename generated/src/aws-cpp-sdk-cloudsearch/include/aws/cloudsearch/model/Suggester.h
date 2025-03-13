@@ -35,7 +35,7 @@ namespace Model
   class Suggester
   {
   public:
-    AWS_CLOUDSEARCH_API Suggester();
+    AWS_CLOUDSEARCH_API Suggester() = default;
     AWS_CLOUDSEARCH_API Suggester(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDSEARCH_API Suggester& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,24 +45,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetSuggesterName() const{ return m_suggesterName; }
+    inline const Aws::String& GetSuggesterName() const { return m_suggesterName; }
     inline bool SuggesterNameHasBeenSet() const { return m_suggesterNameHasBeenSet; }
-    inline void SetSuggesterName(const Aws::String& value) { m_suggesterNameHasBeenSet = true; m_suggesterName = value; }
-    inline void SetSuggesterName(Aws::String&& value) { m_suggesterNameHasBeenSet = true; m_suggesterName = std::move(value); }
-    inline void SetSuggesterName(const char* value) { m_suggesterNameHasBeenSet = true; m_suggesterName.assign(value); }
-    inline Suggester& WithSuggesterName(const Aws::String& value) { SetSuggesterName(value); return *this;}
-    inline Suggester& WithSuggesterName(Aws::String&& value) { SetSuggesterName(std::move(value)); return *this;}
-    inline Suggester& WithSuggesterName(const char* value) { SetSuggesterName(value); return *this;}
+    template<typename SuggesterNameT = Aws::String>
+    void SetSuggesterName(SuggesterNameT&& value) { m_suggesterNameHasBeenSet = true; m_suggesterName = std::forward<SuggesterNameT>(value); }
+    template<typename SuggesterNameT = Aws::String>
+    Suggester& WithSuggesterName(SuggesterNameT&& value) { SetSuggesterName(std::forward<SuggesterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DocumentSuggesterOptions& GetDocumentSuggesterOptions() const{ return m_documentSuggesterOptions; }
+    inline const DocumentSuggesterOptions& GetDocumentSuggesterOptions() const { return m_documentSuggesterOptions; }
     inline bool DocumentSuggesterOptionsHasBeenSet() const { return m_documentSuggesterOptionsHasBeenSet; }
-    inline void SetDocumentSuggesterOptions(const DocumentSuggesterOptions& value) { m_documentSuggesterOptionsHasBeenSet = true; m_documentSuggesterOptions = value; }
-    inline void SetDocumentSuggesterOptions(DocumentSuggesterOptions&& value) { m_documentSuggesterOptionsHasBeenSet = true; m_documentSuggesterOptions = std::move(value); }
-    inline Suggester& WithDocumentSuggesterOptions(const DocumentSuggesterOptions& value) { SetDocumentSuggesterOptions(value); return *this;}
-    inline Suggester& WithDocumentSuggesterOptions(DocumentSuggesterOptions&& value) { SetDocumentSuggesterOptions(std::move(value)); return *this;}
+    template<typename DocumentSuggesterOptionsT = DocumentSuggesterOptions>
+    void SetDocumentSuggesterOptions(DocumentSuggesterOptionsT&& value) { m_documentSuggesterOptionsHasBeenSet = true; m_documentSuggesterOptions = std::forward<DocumentSuggesterOptionsT>(value); }
+    template<typename DocumentSuggesterOptionsT = DocumentSuggesterOptions>
+    Suggester& WithDocumentSuggesterOptions(DocumentSuggesterOptionsT&& value) { SetDocumentSuggesterOptions(std::forward<DocumentSuggesterOptionsT>(value)); return *this;}
     ///@}
   private:
 

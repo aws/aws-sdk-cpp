@@ -22,7 +22,7 @@ namespace Model
   class UpdateLocationEfsRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API UpdateLocationEfsRequest();
+    AWS_DATASYNC_API UpdateLocationEfsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>Specifies the Amazon Resource Name (ARN) of the Amazon EFS transfer location
      * that you're updating.</p>
      */
-    inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
+    inline const Aws::String& GetLocationArn() const { return m_locationArn; }
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
-    inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
-    inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
-    inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
-    inline UpdateLocationEfsRequest& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
-    inline UpdateLocationEfsRequest& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
-    inline UpdateLocationEfsRequest& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
+    template<typename LocationArnT = Aws::String>
+    void SetLocationArn(LocationArnT&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::forward<LocationArnT>(value); }
+    template<typename LocationArnT = Aws::String>
+    UpdateLocationEfsRequest& WithLocationArn(LocationArnT&& value) { SetLocationArn(std::forward<LocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * include subdirectories using forward slashes (for example,
      * <code>/path/to/folder</code>).</p>
      */
-    inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
+    inline const Aws::String& GetSubdirectory() const { return m_subdirectory; }
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
-    inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
-    inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
-    inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
-    inline UpdateLocationEfsRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
-    inline UpdateLocationEfsRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
-    inline UpdateLocationEfsRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
+    template<typename SubdirectoryT = Aws::String>
+    void SetSubdirectory(SubdirectoryT&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::forward<SubdirectoryT>(value); }
+    template<typename SubdirectoryT = Aws::String>
+    UpdateLocationEfsRequest& WithSubdirectory(SubdirectoryT&& value) { SetSubdirectory(std::forward<SubdirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing
      * restricted Amazon EFS file systems</a>.</p>
      */
-    inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
+    inline const Aws::String& GetAccessPointArn() const { return m_accessPointArn; }
     inline bool AccessPointArnHasBeenSet() const { return m_accessPointArnHasBeenSet; }
-    inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = value; }
-    inline void SetAccessPointArn(Aws::String&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::move(value); }
-    inline void SetAccessPointArn(const char* value) { m_accessPointArnHasBeenSet = true; m_accessPointArn.assign(value); }
-    inline UpdateLocationEfsRequest& WithAccessPointArn(const Aws::String& value) { SetAccessPointArn(value); return *this;}
-    inline UpdateLocationEfsRequest& WithAccessPointArn(Aws::String&& value) { SetAccessPointArn(std::move(value)); return *this;}
-    inline UpdateLocationEfsRequest& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
+    template<typename AccessPointArnT = Aws::String>
+    void SetAccessPointArn(AccessPointArnT&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::forward<AccessPointArnT>(value); }
+    template<typename AccessPointArnT = Aws::String>
+    UpdateLocationEfsRequest& WithAccessPointArn(AccessPointArnT&& value) { SetAccessPointArn(std::forward<AccessPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating
      * a DataSync IAM role for Amazon EFS file system access</a>.</p>
      */
-    inline const Aws::String& GetFileSystemAccessRoleArn() const{ return m_fileSystemAccessRoleArn; }
+    inline const Aws::String& GetFileSystemAccessRoleArn() const { return m_fileSystemAccessRoleArn; }
     inline bool FileSystemAccessRoleArnHasBeenSet() const { return m_fileSystemAccessRoleArnHasBeenSet; }
-    inline void SetFileSystemAccessRoleArn(const Aws::String& value) { m_fileSystemAccessRoleArnHasBeenSet = true; m_fileSystemAccessRoleArn = value; }
-    inline void SetFileSystemAccessRoleArn(Aws::String&& value) { m_fileSystemAccessRoleArnHasBeenSet = true; m_fileSystemAccessRoleArn = std::move(value); }
-    inline void SetFileSystemAccessRoleArn(const char* value) { m_fileSystemAccessRoleArnHasBeenSet = true; m_fileSystemAccessRoleArn.assign(value); }
-    inline UpdateLocationEfsRequest& WithFileSystemAccessRoleArn(const Aws::String& value) { SetFileSystemAccessRoleArn(value); return *this;}
-    inline UpdateLocationEfsRequest& WithFileSystemAccessRoleArn(Aws::String&& value) { SetFileSystemAccessRoleArn(std::move(value)); return *this;}
-    inline UpdateLocationEfsRequest& WithFileSystemAccessRoleArn(const char* value) { SetFileSystemAccessRoleArn(value); return *this;}
+    template<typename FileSystemAccessRoleArnT = Aws::String>
+    void SetFileSystemAccessRoleArn(FileSystemAccessRoleArnT&& value) { m_fileSystemAccessRoleArnHasBeenSet = true; m_fileSystemAccessRoleArn = std::forward<FileSystemAccessRoleArnT>(value); }
+    template<typename FileSystemAccessRoleArnT = Aws::String>
+    UpdateLocationEfsRequest& WithFileSystemAccessRoleArn(FileSystemAccessRoleArnT&& value) { SetFileSystemAccessRoleArn(std::forward<FileSystemAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +106,10 @@ namespace Model
      * role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to
      * <code>TLS1_2</code>.</p>
      */
-    inline const EfsInTransitEncryption& GetInTransitEncryption() const{ return m_inTransitEncryption; }
+    inline EfsInTransitEncryption GetInTransitEncryption() const { return m_inTransitEncryption; }
     inline bool InTransitEncryptionHasBeenSet() const { return m_inTransitEncryptionHasBeenSet; }
-    inline void SetInTransitEncryption(const EfsInTransitEncryption& value) { m_inTransitEncryptionHasBeenSet = true; m_inTransitEncryption = value; }
-    inline void SetInTransitEncryption(EfsInTransitEncryption&& value) { m_inTransitEncryptionHasBeenSet = true; m_inTransitEncryption = std::move(value); }
-    inline UpdateLocationEfsRequest& WithInTransitEncryption(const EfsInTransitEncryption& value) { SetInTransitEncryption(value); return *this;}
-    inline UpdateLocationEfsRequest& WithInTransitEncryption(EfsInTransitEncryption&& value) { SetInTransitEncryption(std::move(value)); return *this;}
+    inline void SetInTransitEncryption(EfsInTransitEncryption value) { m_inTransitEncryptionHasBeenSet = true; m_inTransitEncryption = value; }
+    inline UpdateLocationEfsRequest& WithInTransitEncryption(EfsInTransitEncryption value) { SetInTransitEncryption(value); return *this;}
     ///@}
   private:
 
@@ -135,7 +125,7 @@ namespace Model
     Aws::String m_fileSystemAccessRoleArn;
     bool m_fileSystemAccessRoleArnHasBeenSet = false;
 
-    EfsInTransitEncryption m_inTransitEncryption;
+    EfsInTransitEncryption m_inTransitEncryption{EfsInTransitEncryption::NOT_SET};
     bool m_inTransitEncryptionHasBeenSet = false;
   };
 

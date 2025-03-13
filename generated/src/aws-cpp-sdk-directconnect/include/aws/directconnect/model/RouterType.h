@@ -31,7 +31,7 @@ namespace Model
   class RouterType
   {
   public:
-    AWS_DIRECTCONNECT_API RouterType();
+    AWS_DIRECTCONNECT_API RouterType() = default;
     AWS_DIRECTCONNECT_API RouterType(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API RouterType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,70 +41,60 @@ namespace Model
     /**
      * <p>The vendor for the virtual interface's router.</p>
      */
-    inline const Aws::String& GetVendor() const{ return m_vendor; }
+    inline const Aws::String& GetVendor() const { return m_vendor; }
     inline bool VendorHasBeenSet() const { return m_vendorHasBeenSet; }
-    inline void SetVendor(const Aws::String& value) { m_vendorHasBeenSet = true; m_vendor = value; }
-    inline void SetVendor(Aws::String&& value) { m_vendorHasBeenSet = true; m_vendor = std::move(value); }
-    inline void SetVendor(const char* value) { m_vendorHasBeenSet = true; m_vendor.assign(value); }
-    inline RouterType& WithVendor(const Aws::String& value) { SetVendor(value); return *this;}
-    inline RouterType& WithVendor(Aws::String&& value) { SetVendor(std::move(value)); return *this;}
-    inline RouterType& WithVendor(const char* value) { SetVendor(value); return *this;}
+    template<typename VendorT = Aws::String>
+    void SetVendor(VendorT&& value) { m_vendorHasBeenSet = true; m_vendor = std::forward<VendorT>(value); }
+    template<typename VendorT = Aws::String>
+    RouterType& WithVendor(VendorT&& value) { SetVendor(std::forward<VendorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The virtual interface router platform.</p>
      */
-    inline const Aws::String& GetPlatform() const{ return m_platform; }
+    inline const Aws::String& GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
-    inline RouterType& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
-    inline RouterType& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
-    inline RouterType& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+    template<typename PlatformT = Aws::String>
+    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
+    template<typename PlatformT = Aws::String>
+    RouterType& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The router software. </p>
      */
-    inline const Aws::String& GetSoftware() const{ return m_software; }
+    inline const Aws::String& GetSoftware() const { return m_software; }
     inline bool SoftwareHasBeenSet() const { return m_softwareHasBeenSet; }
-    inline void SetSoftware(const Aws::String& value) { m_softwareHasBeenSet = true; m_software = value; }
-    inline void SetSoftware(Aws::String&& value) { m_softwareHasBeenSet = true; m_software = std::move(value); }
-    inline void SetSoftware(const char* value) { m_softwareHasBeenSet = true; m_software.assign(value); }
-    inline RouterType& WithSoftware(const Aws::String& value) { SetSoftware(value); return *this;}
-    inline RouterType& WithSoftware(Aws::String&& value) { SetSoftware(std::move(value)); return *this;}
-    inline RouterType& WithSoftware(const char* value) { SetSoftware(value); return *this;}
+    template<typename SoftwareT = Aws::String>
+    void SetSoftware(SoftwareT&& value) { m_softwareHasBeenSet = true; m_software = std::forward<SoftwareT>(value); }
+    template<typename SoftwareT = Aws::String>
+    RouterType& WithSoftware(SoftwareT&& value) { SetSoftware(std::forward<SoftwareT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The template for the virtual interface's router.</p>
      */
-    inline const Aws::String& GetXsltTemplateName() const{ return m_xsltTemplateName; }
+    inline const Aws::String& GetXsltTemplateName() const { return m_xsltTemplateName; }
     inline bool XsltTemplateNameHasBeenSet() const { return m_xsltTemplateNameHasBeenSet; }
-    inline void SetXsltTemplateName(const Aws::String& value) { m_xsltTemplateNameHasBeenSet = true; m_xsltTemplateName = value; }
-    inline void SetXsltTemplateName(Aws::String&& value) { m_xsltTemplateNameHasBeenSet = true; m_xsltTemplateName = std::move(value); }
-    inline void SetXsltTemplateName(const char* value) { m_xsltTemplateNameHasBeenSet = true; m_xsltTemplateName.assign(value); }
-    inline RouterType& WithXsltTemplateName(const Aws::String& value) { SetXsltTemplateName(value); return *this;}
-    inline RouterType& WithXsltTemplateName(Aws::String&& value) { SetXsltTemplateName(std::move(value)); return *this;}
-    inline RouterType& WithXsltTemplateName(const char* value) { SetXsltTemplateName(value); return *this;}
+    template<typename XsltTemplateNameT = Aws::String>
+    void SetXsltTemplateName(XsltTemplateNameT&& value) { m_xsltTemplateNameHasBeenSet = true; m_xsltTemplateName = std::forward<XsltTemplateNameT>(value); }
+    template<typename XsltTemplateNameT = Aws::String>
+    RouterType& WithXsltTemplateName(XsltTemplateNameT&& value) { SetXsltTemplateName(std::forward<XsltTemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The MAC Security (MACsec) template for the virtual interface's router.</p>
      */
-    inline const Aws::String& GetXsltTemplateNameForMacSec() const{ return m_xsltTemplateNameForMacSec; }
+    inline const Aws::String& GetXsltTemplateNameForMacSec() const { return m_xsltTemplateNameForMacSec; }
     inline bool XsltTemplateNameForMacSecHasBeenSet() const { return m_xsltTemplateNameForMacSecHasBeenSet; }
-    inline void SetXsltTemplateNameForMacSec(const Aws::String& value) { m_xsltTemplateNameForMacSecHasBeenSet = true; m_xsltTemplateNameForMacSec = value; }
-    inline void SetXsltTemplateNameForMacSec(Aws::String&& value) { m_xsltTemplateNameForMacSecHasBeenSet = true; m_xsltTemplateNameForMacSec = std::move(value); }
-    inline void SetXsltTemplateNameForMacSec(const char* value) { m_xsltTemplateNameForMacSecHasBeenSet = true; m_xsltTemplateNameForMacSec.assign(value); }
-    inline RouterType& WithXsltTemplateNameForMacSec(const Aws::String& value) { SetXsltTemplateNameForMacSec(value); return *this;}
-    inline RouterType& WithXsltTemplateNameForMacSec(Aws::String&& value) { SetXsltTemplateNameForMacSec(std::move(value)); return *this;}
-    inline RouterType& WithXsltTemplateNameForMacSec(const char* value) { SetXsltTemplateNameForMacSec(value); return *this;}
+    template<typename XsltTemplateNameForMacSecT = Aws::String>
+    void SetXsltTemplateNameForMacSec(XsltTemplateNameForMacSecT&& value) { m_xsltTemplateNameForMacSecHasBeenSet = true; m_xsltTemplateNameForMacSec = std::forward<XsltTemplateNameForMacSecT>(value); }
+    template<typename XsltTemplateNameForMacSecT = Aws::String>
+    RouterType& WithXsltTemplateNameForMacSec(XsltTemplateNameForMacSecT&& value) { SetXsltTemplateNameForMacSec(std::forward<XsltTemplateNameForMacSecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +102,12 @@ namespace Model
      * <p>Identifies the router by a combination of vendor, platform, and software
      * version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
      */
-    inline const Aws::String& GetRouterTypeIdentifier() const{ return m_routerTypeIdentifier; }
+    inline const Aws::String& GetRouterTypeIdentifier() const { return m_routerTypeIdentifier; }
     inline bool RouterTypeIdentifierHasBeenSet() const { return m_routerTypeIdentifierHasBeenSet; }
-    inline void SetRouterTypeIdentifier(const Aws::String& value) { m_routerTypeIdentifierHasBeenSet = true; m_routerTypeIdentifier = value; }
-    inline void SetRouterTypeIdentifier(Aws::String&& value) { m_routerTypeIdentifierHasBeenSet = true; m_routerTypeIdentifier = std::move(value); }
-    inline void SetRouterTypeIdentifier(const char* value) { m_routerTypeIdentifierHasBeenSet = true; m_routerTypeIdentifier.assign(value); }
-    inline RouterType& WithRouterTypeIdentifier(const Aws::String& value) { SetRouterTypeIdentifier(value); return *this;}
-    inline RouterType& WithRouterTypeIdentifier(Aws::String&& value) { SetRouterTypeIdentifier(std::move(value)); return *this;}
-    inline RouterType& WithRouterTypeIdentifier(const char* value) { SetRouterTypeIdentifier(value); return *this;}
+    template<typename RouterTypeIdentifierT = Aws::String>
+    void SetRouterTypeIdentifier(RouterTypeIdentifierT&& value) { m_routerTypeIdentifierHasBeenSet = true; m_routerTypeIdentifier = std::forward<RouterTypeIdentifierT>(value); }
+    template<typename RouterTypeIdentifierT = Aws::String>
+    RouterType& WithRouterTypeIdentifier(RouterTypeIdentifierT&& value) { SetRouterTypeIdentifier(std::forward<RouterTypeIdentifierT>(value)); return *this;}
     ///@}
   private:
 

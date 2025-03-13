@@ -30,7 +30,7 @@ namespace Model
   class DescribeIdentityProviderConfigurationResult
   {
   public:
-    AWS_WORKMAIL_API DescribeIdentityProviderConfigurationResult();
+    AWS_WORKMAIL_API DescribeIdentityProviderConfigurationResult() = default;
     AWS_WORKMAIL_API DescribeIdentityProviderConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKMAIL_API DescribeIdentityProviderConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,54 +39,54 @@ namespace Model
     /**
      * <p> The authentication mode used in WorkMail.</p>
      */
-    inline const IdentityProviderAuthenticationMode& GetAuthenticationMode() const{ return m_authenticationMode; }
-    inline void SetAuthenticationMode(const IdentityProviderAuthenticationMode& value) { m_authenticationMode = value; }
-    inline void SetAuthenticationMode(IdentityProviderAuthenticationMode&& value) { m_authenticationMode = std::move(value); }
-    inline DescribeIdentityProviderConfigurationResult& WithAuthenticationMode(const IdentityProviderAuthenticationMode& value) { SetAuthenticationMode(value); return *this;}
-    inline DescribeIdentityProviderConfigurationResult& WithAuthenticationMode(IdentityProviderAuthenticationMode&& value) { SetAuthenticationMode(std::move(value)); return *this;}
+    inline IdentityProviderAuthenticationMode GetAuthenticationMode() const { return m_authenticationMode; }
+    inline void SetAuthenticationMode(IdentityProviderAuthenticationMode value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = value; }
+    inline DescribeIdentityProviderConfigurationResult& WithAuthenticationMode(IdentityProviderAuthenticationMode value) { SetAuthenticationMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The details of the IAM Identity Center configuration. </p>
      */
-    inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const{ return m_identityCenterConfiguration; }
-    inline void SetIdentityCenterConfiguration(const IdentityCenterConfiguration& value) { m_identityCenterConfiguration = value; }
-    inline void SetIdentityCenterConfiguration(IdentityCenterConfiguration&& value) { m_identityCenterConfiguration = std::move(value); }
-    inline DescribeIdentityProviderConfigurationResult& WithIdentityCenterConfiguration(const IdentityCenterConfiguration& value) { SetIdentityCenterConfiguration(value); return *this;}
-    inline DescribeIdentityProviderConfigurationResult& WithIdentityCenterConfiguration(IdentityCenterConfiguration&& value) { SetIdentityCenterConfiguration(std::move(value)); return *this;}
+    inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const { return m_identityCenterConfiguration; }
+    template<typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+    void SetIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = std::forward<IdentityCenterConfigurationT>(value); }
+    template<typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+    DescribeIdentityProviderConfigurationResult& WithIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) { SetIdentityCenterConfiguration(std::forward<IdentityCenterConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The details of the Personal Access Token configuration. </p>
      */
-    inline const PersonalAccessTokenConfiguration& GetPersonalAccessTokenConfiguration() const{ return m_personalAccessTokenConfiguration; }
-    inline void SetPersonalAccessTokenConfiguration(const PersonalAccessTokenConfiguration& value) { m_personalAccessTokenConfiguration = value; }
-    inline void SetPersonalAccessTokenConfiguration(PersonalAccessTokenConfiguration&& value) { m_personalAccessTokenConfiguration = std::move(value); }
-    inline DescribeIdentityProviderConfigurationResult& WithPersonalAccessTokenConfiguration(const PersonalAccessTokenConfiguration& value) { SetPersonalAccessTokenConfiguration(value); return *this;}
-    inline DescribeIdentityProviderConfigurationResult& WithPersonalAccessTokenConfiguration(PersonalAccessTokenConfiguration&& value) { SetPersonalAccessTokenConfiguration(std::move(value)); return *this;}
+    inline const PersonalAccessTokenConfiguration& GetPersonalAccessTokenConfiguration() const { return m_personalAccessTokenConfiguration; }
+    template<typename PersonalAccessTokenConfigurationT = PersonalAccessTokenConfiguration>
+    void SetPersonalAccessTokenConfiguration(PersonalAccessTokenConfigurationT&& value) { m_personalAccessTokenConfigurationHasBeenSet = true; m_personalAccessTokenConfiguration = std::forward<PersonalAccessTokenConfigurationT>(value); }
+    template<typename PersonalAccessTokenConfigurationT = PersonalAccessTokenConfiguration>
+    DescribeIdentityProviderConfigurationResult& WithPersonalAccessTokenConfiguration(PersonalAccessTokenConfigurationT&& value) { SetPersonalAccessTokenConfiguration(std::forward<PersonalAccessTokenConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeIdentityProviderConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeIdentityProviderConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeIdentityProviderConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeIdentityProviderConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    IdentityProviderAuthenticationMode m_authenticationMode;
+    IdentityProviderAuthenticationMode m_authenticationMode{IdentityProviderAuthenticationMode::NOT_SET};
+    bool m_authenticationModeHasBeenSet = false;
 
     IdentityCenterConfiguration m_identityCenterConfiguration;
+    bool m_identityCenterConfigurationHasBeenSet = false;
 
     PersonalAccessTokenConfiguration m_personalAccessTokenConfiguration;
+    bool m_personalAccessTokenConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

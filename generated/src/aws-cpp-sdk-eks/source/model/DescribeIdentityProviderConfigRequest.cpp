@@ -12,12 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeIdentityProviderConfigRequest::DescribeIdentityProviderConfigRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_identityProviderConfigHasBeenSet(false)
-{
-}
-
 Aws::String DescribeIdentityProviderConfigRequest::SerializePayload() const
 {
   JsonValue payload;

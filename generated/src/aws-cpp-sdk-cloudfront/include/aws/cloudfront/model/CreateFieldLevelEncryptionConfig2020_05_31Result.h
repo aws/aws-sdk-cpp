@@ -28,7 +28,7 @@ namespace Model
   class CreateFieldLevelEncryptionConfig2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API CreateFieldLevelEncryptionConfig2020_05_31Result();
+    AWS_CLOUDFRONT_API CreateFieldLevelEncryptionConfig2020_05_31Result() = default;
     AWS_CLOUDFRONT_API CreateFieldLevelEncryptionConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API CreateFieldLevelEncryptionConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,24 +37,22 @@ namespace Model
     /**
      * <p>Returned when you create a new field-level encryption configuration.</p>
      */
-    inline const FieldLevelEncryption& GetFieldLevelEncryption() const{ return m_fieldLevelEncryption; }
-    inline void SetFieldLevelEncryption(const FieldLevelEncryption& value) { m_fieldLevelEncryption = value; }
-    inline void SetFieldLevelEncryption(FieldLevelEncryption&& value) { m_fieldLevelEncryption = std::move(value); }
-    inline CreateFieldLevelEncryptionConfig2020_05_31Result& WithFieldLevelEncryption(const FieldLevelEncryption& value) { SetFieldLevelEncryption(value); return *this;}
-    inline CreateFieldLevelEncryptionConfig2020_05_31Result& WithFieldLevelEncryption(FieldLevelEncryption&& value) { SetFieldLevelEncryption(std::move(value)); return *this;}
+    inline const FieldLevelEncryption& GetFieldLevelEncryption() const { return m_fieldLevelEncryption; }
+    template<typename FieldLevelEncryptionT = FieldLevelEncryption>
+    void SetFieldLevelEncryption(FieldLevelEncryptionT&& value) { m_fieldLevelEncryptionHasBeenSet = true; m_fieldLevelEncryption = std::forward<FieldLevelEncryptionT>(value); }
+    template<typename FieldLevelEncryptionT = FieldLevelEncryption>
+    CreateFieldLevelEncryptionConfig2020_05_31Result& WithFieldLevelEncryption(FieldLevelEncryptionT&& value) { SetFieldLevelEncryption(std::forward<FieldLevelEncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The fully qualified URI of the new configuration resource just created.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
-    inline void SetLocation(const Aws::String& value) { m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_location.assign(value); }
-    inline CreateFieldLevelEncryptionConfig2020_05_31Result& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline CreateFieldLevelEncryptionConfig2020_05_31Result& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline CreateFieldLevelEncryptionConfig2020_05_31Result& WithLocation(const char* value) { SetLocation(value); return *this;}
+    inline const Aws::String& GetLocation() const { return m_location; }
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    CreateFieldLevelEncryptionConfig2020_05_31Result& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,34 +60,34 @@ namespace Model
      * <p>The current version of the field level encryption configuration. For example:
      * <code>E2QWRUHAPOMQZL</code>.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline CreateFieldLevelEncryptionConfig2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline CreateFieldLevelEncryptionConfig2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline CreateFieldLevelEncryptionConfig2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    CreateFieldLevelEncryptionConfig2020_05_31Result& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFieldLevelEncryptionConfig2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFieldLevelEncryptionConfig2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFieldLevelEncryptionConfig2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFieldLevelEncryptionConfig2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FieldLevelEncryption m_fieldLevelEncryption;
+    bool m_fieldLevelEncryptionHasBeenSet = false;
 
     Aws::String m_location;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

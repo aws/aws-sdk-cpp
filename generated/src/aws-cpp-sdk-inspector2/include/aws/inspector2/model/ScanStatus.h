@@ -32,7 +32,7 @@ namespace Model
   class ScanStatus
   {
   public:
-    AWS_INSPECTOR2_API ScanStatus();
+    AWS_INSPECTOR2_API ScanStatus() = default;
     AWS_INSPECTOR2_API ScanStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API ScanStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -106,31 +106,27 @@ namespace Model
      * use SSM to ensure that the required Amazon Inspector associations exist and are
      * running for the instance.</p> <p/>
      */
-    inline const ScanStatusReason& GetReason() const{ return m_reason; }
+    inline ScanStatusReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const ScanStatusReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(ScanStatusReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline ScanStatus& WithReason(const ScanStatusReason& value) { SetReason(value); return *this;}
-    inline ScanStatus& WithReason(ScanStatusReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(ScanStatusReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline ScanStatus& WithReason(ScanStatusReason value) { SetReason(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status code of the scan.</p>
      */
-    inline const ScanStatusCode& GetStatusCode() const{ return m_statusCode; }
+    inline ScanStatusCode GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const ScanStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(ScanStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline ScanStatus& WithStatusCode(const ScanStatusCode& value) { SetStatusCode(value); return *this;}
-    inline ScanStatus& WithStatusCode(ScanStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+    inline void SetStatusCode(ScanStatusCode value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline ScanStatus& WithStatusCode(ScanStatusCode value) { SetStatusCode(value); return *this;}
     ///@}
   private:
 
-    ScanStatusReason m_reason;
+    ScanStatusReason m_reason{ScanStatusReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
 
-    ScanStatusCode m_statusCode;
+    ScanStatusCode m_statusCode{ScanStatusCode::NOT_SET};
     bool m_statusCodeHasBeenSet = false;
   };
 

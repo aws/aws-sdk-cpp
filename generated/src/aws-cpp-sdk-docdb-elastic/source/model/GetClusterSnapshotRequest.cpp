@@ -12,11 +12,6 @@ using namespace Aws::DocDBElastic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetClusterSnapshotRequest::GetClusterSnapshotRequest() : 
-    m_snapshotArnHasBeenSet(false)
-{
-}
-
 Aws::String GetClusterSnapshotRequest::SerializePayload() const
 {
   return {};

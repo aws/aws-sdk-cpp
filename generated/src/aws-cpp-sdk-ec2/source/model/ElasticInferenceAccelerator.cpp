@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ElasticInferenceAccelerator::ElasticInferenceAccelerator() : 
-    m_typeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 ElasticInferenceAccelerator::ElasticInferenceAccelerator(const XmlNode& xmlNode)
-  : ElasticInferenceAccelerator()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ ElasticInferenceAccelerator& ElasticInferenceAccelerator::operator =(const XmlNo
     {
       m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode countNode = resultNode.FirstChild("Count");
     if(!countNode.IsNull())
     {
       m_count = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
       m_countHasBeenSet = true;
+       m_countHasBeenSet = true;
     }
   }
 

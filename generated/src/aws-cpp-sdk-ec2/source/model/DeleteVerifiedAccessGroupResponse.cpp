@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteVerifiedAccessGroupResponse::DeleteVerifiedAccessGroupResponse()
-{
-}
-
 DeleteVerifiedAccessGroupResponse::DeleteVerifiedAccessGroupResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteVerifiedAccessGroupResponse& DeleteVerifiedAccessGroupResponse::operator =
     if(!verifiedAccessGroupNode.IsNull())
     {
       m_verifiedAccessGroup = verifiedAccessGroupNode;
+      m_verifiedAccessGroupHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteVerifiedAccessGroupResponse& DeleteVerifiedAccessGroupResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteVerifiedAccessGroupResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

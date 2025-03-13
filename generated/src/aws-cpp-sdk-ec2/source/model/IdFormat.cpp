@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IdFormat::IdFormat() : 
-    m_deadlineHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_useLongIds(false),
-    m_useLongIdsHasBeenSet(false)
-{
-}
-
 IdFormat::IdFormat(const XmlNode& xmlNode)
-  : IdFormat()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ IdFormat& IdFormat::operator =(const XmlNode& xmlNode)
     {
       m_deadline = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deadlineNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_deadlineHasBeenSet = true;
+       m_deadlineHasBeenSet = true;
     }
     XmlNode resourceNode = resultNode.FirstChild("resource");
     if(!resourceNode.IsNull())
     {
       m_resource = Aws::Utils::Xml::DecodeEscapedXmlText(resourceNode.GetText());
       m_resourceHasBeenSet = true;
+       m_resourceHasBeenSet = true;
     }
     XmlNode useLongIdsNode = resultNode.FirstChild("useLongIds");
     if(!useLongIdsNode.IsNull())
     {
       m_useLongIds = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(useLongIdsNode.GetText()).c_str()).c_str());
       m_useLongIdsHasBeenSet = true;
+       m_useLongIdsHasBeenSet = true;
     }
   }
 

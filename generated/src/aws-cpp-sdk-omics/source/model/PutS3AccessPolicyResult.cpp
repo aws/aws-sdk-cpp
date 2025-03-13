@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutS3AccessPolicyResult::PutS3AccessPolicyResult() : 
-    m_storeType(StoreType::NOT_SET)
-{
-}
-
 PutS3AccessPolicyResult::PutS3AccessPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutS3AccessPolicyResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ PutS3AccessPolicyResult& PutS3AccessPolicyResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("s3AccessPointArn"))
   {
     m_s3AccessPointArn = jsonValue.GetString("s3AccessPointArn");
-
+    m_s3AccessPointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storeId"))
   {
     m_storeId = jsonValue.GetString("storeId");
-
+    m_storeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storeType"))
   {
     m_storeType = StoreTypeMapper::GetStoreTypeForName(jsonValue.GetString("storeType"));
-
+    m_storeTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,14 +12,6 @@ using namespace Aws::CodeArtifact::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutDomainPermissionsPolicyRequest::PutDomainPermissionsPolicyRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_policyRevisionHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false)
-{
-}
-
 Aws::String PutDomainPermissionsPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

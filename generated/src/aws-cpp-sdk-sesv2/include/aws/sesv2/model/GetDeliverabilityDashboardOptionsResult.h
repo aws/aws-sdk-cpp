@@ -37,7 +37,7 @@ namespace Model
   class GetDeliverabilityDashboardOptionsResult
   {
   public:
-    AWS_SESV2_API GetDeliverabilityDashboardOptionsResult();
+    AWS_SESV2_API GetDeliverabilityDashboardOptionsResult() = default;
     AWS_SESV2_API GetDeliverabilityDashboardOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API GetDeliverabilityDashboardOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,8 +47,8 @@ namespace Model
      * <p>Specifies whether the Deliverability dashboard is enabled. If this value is
      * <code>true</code>, the dashboard is enabled.</p>
      */
-    inline bool GetDashboardEnabled() const{ return m_dashboardEnabled; }
-    inline void SetDashboardEnabled(bool value) { m_dashboardEnabled = value; }
+    inline bool GetDashboardEnabled() const { return m_dashboardEnabled; }
+    inline void SetDashboardEnabled(bool value) { m_dashboardEnabledHasBeenSet = true; m_dashboardEnabled = value; }
     inline GetDeliverabilityDashboardOptionsResult& WithDashboardEnabled(bool value) { SetDashboardEnabled(value); return *this;}
     ///@}
 
@@ -59,11 +59,11 @@ namespace Model
      * the current calendar month. This value is null if you have an active
      * subscription that isn’t due to expire at the end of the month.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubscriptionExpiryDate() const{ return m_subscriptionExpiryDate; }
-    inline void SetSubscriptionExpiryDate(const Aws::Utils::DateTime& value) { m_subscriptionExpiryDate = value; }
-    inline void SetSubscriptionExpiryDate(Aws::Utils::DateTime&& value) { m_subscriptionExpiryDate = std::move(value); }
-    inline GetDeliverabilityDashboardOptionsResult& WithSubscriptionExpiryDate(const Aws::Utils::DateTime& value) { SetSubscriptionExpiryDate(value); return *this;}
-    inline GetDeliverabilityDashboardOptionsResult& WithSubscriptionExpiryDate(Aws::Utils::DateTime&& value) { SetSubscriptionExpiryDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetSubscriptionExpiryDate() const { return m_subscriptionExpiryDate; }
+    template<typename SubscriptionExpiryDateT = Aws::Utils::DateTime>
+    void SetSubscriptionExpiryDate(SubscriptionExpiryDateT&& value) { m_subscriptionExpiryDateHasBeenSet = true; m_subscriptionExpiryDate = std::forward<SubscriptionExpiryDateT>(value); }
+    template<typename SubscriptionExpiryDateT = Aws::Utils::DateTime>
+    GetDeliverabilityDashboardOptionsResult& WithSubscriptionExpiryDate(SubscriptionExpiryDateT&& value) { SetSubscriptionExpiryDate(std::forward<SubscriptionExpiryDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,11 +72,9 @@ namespace Model
      * value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to
      * expire at the end of the current calendar month.</p>
      */
-    inline const DeliverabilityDashboardAccountStatus& GetAccountStatus() const{ return m_accountStatus; }
-    inline void SetAccountStatus(const DeliverabilityDashboardAccountStatus& value) { m_accountStatus = value; }
-    inline void SetAccountStatus(DeliverabilityDashboardAccountStatus&& value) { m_accountStatus = std::move(value); }
-    inline GetDeliverabilityDashboardOptionsResult& WithAccountStatus(const DeliverabilityDashboardAccountStatus& value) { SetAccountStatus(value); return *this;}
-    inline GetDeliverabilityDashboardOptionsResult& WithAccountStatus(DeliverabilityDashboardAccountStatus&& value) { SetAccountStatus(std::move(value)); return *this;}
+    inline DeliverabilityDashboardAccountStatus GetAccountStatus() const { return m_accountStatus; }
+    inline void SetAccountStatus(DeliverabilityDashboardAccountStatus value) { m_accountStatusHasBeenSet = true; m_accountStatus = value; }
+    inline GetDeliverabilityDashboardOptionsResult& WithAccountStatus(DeliverabilityDashboardAccountStatus value) { SetAccountStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -85,13 +83,13 @@ namespace Model
      * and currently has an active Deliverability dashboard subscription that isn’t
      * scheduled to expire at the end of the current calendar month.</p>
      */
-    inline const Aws::Vector<DomainDeliverabilityTrackingOption>& GetActiveSubscribedDomains() const{ return m_activeSubscribedDomains; }
-    inline void SetActiveSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { m_activeSubscribedDomains = value; }
-    inline void SetActiveSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { m_activeSubscribedDomains = std::move(value); }
-    inline GetDeliverabilityDashboardOptionsResult& WithActiveSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { SetActiveSubscribedDomains(value); return *this;}
-    inline GetDeliverabilityDashboardOptionsResult& WithActiveSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { SetActiveSubscribedDomains(std::move(value)); return *this;}
-    inline GetDeliverabilityDashboardOptionsResult& AddActiveSubscribedDomains(const DomainDeliverabilityTrackingOption& value) { m_activeSubscribedDomains.push_back(value); return *this; }
-    inline GetDeliverabilityDashboardOptionsResult& AddActiveSubscribedDomains(DomainDeliverabilityTrackingOption&& value) { m_activeSubscribedDomains.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainDeliverabilityTrackingOption>& GetActiveSubscribedDomains() const { return m_activeSubscribedDomains; }
+    template<typename ActiveSubscribedDomainsT = Aws::Vector<DomainDeliverabilityTrackingOption>>
+    void SetActiveSubscribedDomains(ActiveSubscribedDomainsT&& value) { m_activeSubscribedDomainsHasBeenSet = true; m_activeSubscribedDomains = std::forward<ActiveSubscribedDomainsT>(value); }
+    template<typename ActiveSubscribedDomainsT = Aws::Vector<DomainDeliverabilityTrackingOption>>
+    GetDeliverabilityDashboardOptionsResult& WithActiveSubscribedDomains(ActiveSubscribedDomainsT&& value) { SetActiveSubscribedDomains(std::forward<ActiveSubscribedDomainsT>(value)); return *this;}
+    template<typename ActiveSubscribedDomainsT = DomainDeliverabilityTrackingOption>
+    GetDeliverabilityDashboardOptionsResult& AddActiveSubscribedDomains(ActiveSubscribedDomainsT&& value) { m_activeSubscribedDomainsHasBeenSet = true; m_activeSubscribedDomains.emplace_back(std::forward<ActiveSubscribedDomainsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -100,38 +98,42 @@ namespace Model
      * and currently has an active Deliverability dashboard subscription that's
      * scheduled to expire at the end of the current calendar month.</p>
      */
-    inline const Aws::Vector<DomainDeliverabilityTrackingOption>& GetPendingExpirationSubscribedDomains() const{ return m_pendingExpirationSubscribedDomains; }
-    inline void SetPendingExpirationSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { m_pendingExpirationSubscribedDomains = value; }
-    inline void SetPendingExpirationSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { m_pendingExpirationSubscribedDomains = std::move(value); }
-    inline GetDeliverabilityDashboardOptionsResult& WithPendingExpirationSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { SetPendingExpirationSubscribedDomains(value); return *this;}
-    inline GetDeliverabilityDashboardOptionsResult& WithPendingExpirationSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { SetPendingExpirationSubscribedDomains(std::move(value)); return *this;}
-    inline GetDeliverabilityDashboardOptionsResult& AddPendingExpirationSubscribedDomains(const DomainDeliverabilityTrackingOption& value) { m_pendingExpirationSubscribedDomains.push_back(value); return *this; }
-    inline GetDeliverabilityDashboardOptionsResult& AddPendingExpirationSubscribedDomains(DomainDeliverabilityTrackingOption&& value) { m_pendingExpirationSubscribedDomains.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainDeliverabilityTrackingOption>& GetPendingExpirationSubscribedDomains() const { return m_pendingExpirationSubscribedDomains; }
+    template<typename PendingExpirationSubscribedDomainsT = Aws::Vector<DomainDeliverabilityTrackingOption>>
+    void SetPendingExpirationSubscribedDomains(PendingExpirationSubscribedDomainsT&& value) { m_pendingExpirationSubscribedDomainsHasBeenSet = true; m_pendingExpirationSubscribedDomains = std::forward<PendingExpirationSubscribedDomainsT>(value); }
+    template<typename PendingExpirationSubscribedDomainsT = Aws::Vector<DomainDeliverabilityTrackingOption>>
+    GetDeliverabilityDashboardOptionsResult& WithPendingExpirationSubscribedDomains(PendingExpirationSubscribedDomainsT&& value) { SetPendingExpirationSubscribedDomains(std::forward<PendingExpirationSubscribedDomainsT>(value)); return *this;}
+    template<typename PendingExpirationSubscribedDomainsT = DomainDeliverabilityTrackingOption>
+    GetDeliverabilityDashboardOptionsResult& AddPendingExpirationSubscribedDomains(PendingExpirationSubscribedDomainsT&& value) { m_pendingExpirationSubscribedDomainsHasBeenSet = true; m_pendingExpirationSubscribedDomains.emplace_back(std::forward<PendingExpirationSubscribedDomainsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDeliverabilityDashboardOptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDeliverabilityDashboardOptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDeliverabilityDashboardOptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDeliverabilityDashboardOptionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dashboardEnabled;
+    bool m_dashboardEnabled{false};
+    bool m_dashboardEnabledHasBeenSet = false;
 
-    Aws::Utils::DateTime m_subscriptionExpiryDate;
+    Aws::Utils::DateTime m_subscriptionExpiryDate{};
+    bool m_subscriptionExpiryDateHasBeenSet = false;
 
-    DeliverabilityDashboardAccountStatus m_accountStatus;
+    DeliverabilityDashboardAccountStatus m_accountStatus{DeliverabilityDashboardAccountStatus::NOT_SET};
+    bool m_accountStatusHasBeenSet = false;
 
     Aws::Vector<DomainDeliverabilityTrackingOption> m_activeSubscribedDomains;
+    bool m_activeSubscribedDomainsHasBeenSet = false;
 
     Aws::Vector<DomainDeliverabilityTrackingOption> m_pendingExpirationSubscribedDomains;
+    bool m_pendingExpirationSubscribedDomainsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

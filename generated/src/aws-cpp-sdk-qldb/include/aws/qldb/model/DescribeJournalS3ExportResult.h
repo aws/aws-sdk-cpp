@@ -28,7 +28,7 @@ namespace Model
   class DescribeJournalS3ExportResult
   {
   public:
-    AWS_QLDB_API DescribeJournalS3ExportResult();
+    AWS_QLDB_API DescribeJournalS3ExportResult() = default;
     AWS_QLDB_API DescribeJournalS3ExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QLDB_API DescribeJournalS3ExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Information about the journal export job returned by a
      * <code>DescribeJournalS3Export</code> request.</p>
      */
-    inline const JournalS3ExportDescription& GetExportDescription() const{ return m_exportDescription; }
-    inline void SetExportDescription(const JournalS3ExportDescription& value) { m_exportDescription = value; }
-    inline void SetExportDescription(JournalS3ExportDescription&& value) { m_exportDescription = std::move(value); }
-    inline DescribeJournalS3ExportResult& WithExportDescription(const JournalS3ExportDescription& value) { SetExportDescription(value); return *this;}
-    inline DescribeJournalS3ExportResult& WithExportDescription(JournalS3ExportDescription&& value) { SetExportDescription(std::move(value)); return *this;}
+    inline const JournalS3ExportDescription& GetExportDescription() const { return m_exportDescription; }
+    template<typename ExportDescriptionT = JournalS3ExportDescription>
+    void SetExportDescription(ExportDescriptionT&& value) { m_exportDescriptionHasBeenSet = true; m_exportDescription = std::forward<ExportDescriptionT>(value); }
+    template<typename ExportDescriptionT = JournalS3ExportDescription>
+    DescribeJournalS3ExportResult& WithExportDescription(ExportDescriptionT&& value) { SetExportDescription(std::forward<ExportDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeJournalS3ExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeJournalS3ExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeJournalS3ExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeJournalS3ExportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     JournalS3ExportDescription m_exportDescription;
+    bool m_exportDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

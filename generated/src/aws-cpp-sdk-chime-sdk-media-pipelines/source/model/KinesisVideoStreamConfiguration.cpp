@@ -18,15 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-KinesisVideoStreamConfiguration::KinesisVideoStreamConfiguration() : 
-    m_regionHasBeenSet(false),
-    m_dataRetentionInHours(0),
-    m_dataRetentionInHoursHasBeenSet(false)
-{
-}
-
 KinesisVideoStreamConfiguration::KinesisVideoStreamConfiguration(JsonView jsonValue)
-  : KinesisVideoStreamConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ KinesisVideoStreamConfiguration& KinesisVideoStreamConfiguration::operator =(Jso
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataRetentionInHours"))
   {
     m_dataRetentionInHours = jsonValue.GetInteger("DataRetentionInHours");
-
     m_dataRetentionInHoursHasBeenSet = true;
   }
-
   return *this;
 }
 

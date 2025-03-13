@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3Retention::S3Retention() : 
-    m_retainUntilDateHasBeenSet(false),
-    m_mode(S3ObjectLockRetentionMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 S3Retention::S3Retention(const XmlNode& xmlNode)
-  : S3Retention()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ S3Retention& S3Retention::operator =(const XmlNode& xmlNode)
     {
       m_retainUntilDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(retainUntilDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_retainUntilDateHasBeenSet = true;
+       m_retainUntilDateHasBeenSet = true;
     }
     XmlNode modeNode = resultNode.FirstChild("Mode");
     if(!modeNode.IsNull())
     {
-      m_mode = S3ObjectLockRetentionModeMapper::GetS3ObjectLockRetentionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()).c_str());
+      m_mode = S3ObjectLockRetentionModeMapper::GetS3ObjectLockRetentionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()));
       m_modeHasBeenSet = true;
+       m_modeHasBeenSet = true;
     }
   }
 

@@ -12,10 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteOrganizationRequest::DeleteOrganizationRequest()
-{
-}
-
 Aws::String DeleteOrganizationRequest::SerializePayload() const
 {
   return "{}";

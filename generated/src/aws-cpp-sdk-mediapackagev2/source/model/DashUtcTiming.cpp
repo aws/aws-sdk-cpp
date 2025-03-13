@@ -18,15 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-DashUtcTiming::DashUtcTiming() : 
-    m_timingMode(DashUtcTimingMode::NOT_SET),
-    m_timingModeHasBeenSet(false),
-    m_timingSourceHasBeenSet(false)
-{
-}
-
 DashUtcTiming::DashUtcTiming(JsonView jsonValue)
-  : DashUtcTiming()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DashUtcTiming& DashUtcTiming::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimingMode"))
   {
     m_timingMode = DashUtcTimingModeMapper::GetDashUtcTimingModeForName(jsonValue.GetString("TimingMode"));
-
     m_timingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimingSource"))
   {
     m_timingSource = jsonValue.GetString("TimingSource");
-
     m_timingSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

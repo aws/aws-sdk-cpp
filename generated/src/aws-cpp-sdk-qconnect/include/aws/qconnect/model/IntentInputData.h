@@ -31,7 +31,7 @@ namespace Model
   class IntentInputData
   {
   public:
-    AWS_QCONNECT_API IntentInputData();
+    AWS_QCONNECT_API IntentInputData() = default;
     AWS_QCONNECT_API IntentInputData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API IntentInputData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Q intent.</p>
      */
-    inline const Aws::String& GetIntentId() const{ return m_intentId; }
+    inline const Aws::String& GetIntentId() const { return m_intentId; }
     inline bool IntentIdHasBeenSet() const { return m_intentIdHasBeenSet; }
-    inline void SetIntentId(const Aws::String& value) { m_intentIdHasBeenSet = true; m_intentId = value; }
-    inline void SetIntentId(Aws::String&& value) { m_intentIdHasBeenSet = true; m_intentId = std::move(value); }
-    inline void SetIntentId(const char* value) { m_intentIdHasBeenSet = true; m_intentId.assign(value); }
-    inline IntentInputData& WithIntentId(const Aws::String& value) { SetIntentId(value); return *this;}
-    inline IntentInputData& WithIntentId(Aws::String&& value) { SetIntentId(std::move(value)); return *this;}
-    inline IntentInputData& WithIntentId(const char* value) { SetIntentId(value); return *this;}
+    template<typename IntentIdT = Aws::String>
+    void SetIntentId(IntentIdT&& value) { m_intentIdHasBeenSet = true; m_intentId = std::forward<IntentIdT>(value); }
+    template<typename IntentIdT = Aws::String>
+    IntentInputData& WithIntentId(IntentIdT&& value) { SetIntentId(std::forward<IntentIdT>(value)); return *this;}
     ///@}
   private:
 

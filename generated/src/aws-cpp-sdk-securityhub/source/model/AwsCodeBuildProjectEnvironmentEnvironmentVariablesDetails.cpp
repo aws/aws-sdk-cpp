@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails(JsonView jsonValue)
-  : AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails& AwsCodeBuildProjectEn
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

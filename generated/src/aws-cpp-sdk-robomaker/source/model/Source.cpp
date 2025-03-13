@@ -18,17 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-Source::Source() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_etagHasBeenSet(false),
-    m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false)
-{
-}
-
 Source::Source(JsonView jsonValue)
-  : Source()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Source& Source::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Key"))
   {
     m_s3Key = jsonValue.GetString("s3Key");
-
     m_s3KeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("etag"))
   {
     m_etag = jsonValue.GetString("etag");
-
     m_etagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("architecture"))
   {
     m_architecture = ArchitectureMapper::GetArchitectureForName(jsonValue.GetString("architecture"));
-
     m_architectureHasBeenSet = true;
   }
-
   return *this;
 }
 

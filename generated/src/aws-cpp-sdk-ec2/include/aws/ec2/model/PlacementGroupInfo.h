@@ -33,7 +33,7 @@ namespace Model
   class PlacementGroupInfo
   {
   public:
-    AWS_EC2_API PlacementGroupInfo();
+    AWS_EC2_API PlacementGroupInfo() = default;
     AWS_EC2_API PlacementGroupInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PlacementGroupInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,13 @@ namespace Model
     /**
      * <p>The supported placement group types.</p>
      */
-    inline const Aws::Vector<PlacementGroupStrategy>& GetSupportedStrategies() const{ return m_supportedStrategies; }
+    inline const Aws::Vector<PlacementGroupStrategy>& GetSupportedStrategies() const { return m_supportedStrategies; }
     inline bool SupportedStrategiesHasBeenSet() const { return m_supportedStrategiesHasBeenSet; }
-    inline void SetSupportedStrategies(const Aws::Vector<PlacementGroupStrategy>& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies = value; }
-    inline void SetSupportedStrategies(Aws::Vector<PlacementGroupStrategy>&& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies = std::move(value); }
-    inline PlacementGroupInfo& WithSupportedStrategies(const Aws::Vector<PlacementGroupStrategy>& value) { SetSupportedStrategies(value); return *this;}
-    inline PlacementGroupInfo& WithSupportedStrategies(Aws::Vector<PlacementGroupStrategy>&& value) { SetSupportedStrategies(std::move(value)); return *this;}
-    inline PlacementGroupInfo& AddSupportedStrategies(const PlacementGroupStrategy& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies.push_back(value); return *this; }
-    inline PlacementGroupInfo& AddSupportedStrategies(PlacementGroupStrategy&& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies.push_back(std::move(value)); return *this; }
+    template<typename SupportedStrategiesT = Aws::Vector<PlacementGroupStrategy>>
+    void SetSupportedStrategies(SupportedStrategiesT&& value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies = std::forward<SupportedStrategiesT>(value); }
+    template<typename SupportedStrategiesT = Aws::Vector<PlacementGroupStrategy>>
+    PlacementGroupInfo& WithSupportedStrategies(SupportedStrategiesT&& value) { SetSupportedStrategies(std::forward<SupportedStrategiesT>(value)); return *this;}
+    inline PlacementGroupInfo& AddSupportedStrategies(PlacementGroupStrategy value) { m_supportedStrategiesHasBeenSet = true; m_supportedStrategies.push_back(value); return *this; }
     ///@}
   private:
 

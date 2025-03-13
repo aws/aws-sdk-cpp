@@ -32,7 +32,7 @@ namespace Model
   class AnalyticsS3BucketDestination
   {
   public:
-    AWS_S3CRT_API AnalyticsS3BucketDestination();
+    AWS_S3CRT_API AnalyticsS3BucketDestination() = default;
     AWS_S3CRT_API AnalyticsS3BucketDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API AnalyticsS3BucketDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>Specifies the file format used when exporting data to Amazon S3.</p>
      */
-    inline const AnalyticsS3ExportFileFormat& GetFormat() const{ return m_format; }
+    inline AnalyticsS3ExportFileFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const AnalyticsS3ExportFileFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(AnalyticsS3ExportFileFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline AnalyticsS3BucketDestination& WithFormat(const AnalyticsS3ExportFileFormat& value) { SetFormat(value); return *this;}
-    inline AnalyticsS3BucketDestination& WithFormat(AnalyticsS3ExportFileFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(AnalyticsS3ExportFileFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline AnalyticsS3BucketDestination& WithFormat(AnalyticsS3ExportFileFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,24 @@ namespace Model
      * Although this value is optional, we strongly recommend that you set it to help
      * prevent problems if the destination bucket ownership changes. </p> 
      */
-    inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
+    inline const Aws::String& GetBucketAccountId() const { return m_bucketAccountId; }
     inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }
-    inline void SetBucketAccountId(const Aws::String& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = value; }
-    inline void SetBucketAccountId(Aws::String&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::move(value); }
-    inline void SetBucketAccountId(const char* value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId.assign(value); }
-    inline AnalyticsS3BucketDestination& WithBucketAccountId(const Aws::String& value) { SetBucketAccountId(value); return *this;}
-    inline AnalyticsS3BucketDestination& WithBucketAccountId(Aws::String&& value) { SetBucketAccountId(std::move(value)); return *this;}
-    inline AnalyticsS3BucketDestination& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
+    template<typename BucketAccountIdT = Aws::String>
+    void SetBucketAccountId(BucketAccountIdT&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::forward<BucketAccountIdT>(value); }
+    template<typename BucketAccountIdT = Aws::String>
+    AnalyticsS3BucketDestination& WithBucketAccountId(BucketAccountIdT&& value) { SetBucketAccountId(std::forward<BucketAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline AnalyticsS3BucketDestination& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline AnalyticsS3BucketDestination& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline AnalyticsS3BucketDestination& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    AnalyticsS3BucketDestination& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,18 +81,16 @@ namespace Model
      * <p>The prefix to use when exporting data. The prefix is prepended to all
      * results.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline AnalyticsS3BucketDestination& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline AnalyticsS3BucketDestination& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline AnalyticsS3BucketDestination& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    AnalyticsS3BucketDestination& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 
-    AnalyticsS3ExportFileFormat m_format;
+    AnalyticsS3ExportFileFormat m_format{AnalyticsS3ExportFileFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::String m_bucketAccountId;

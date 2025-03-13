@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAssessmentResult::GetAssessmentResult()
-{
-}
-
 GetAssessmentResult::GetAssessmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,25 @@ GetAssessmentResult& GetAssessmentResult::operator =(const Aws::AmazonWebService
     {
       m_assessmentTargets.push_back(assessmentTargetsJsonList[assessmentTargetsIndex].AsObject());
     }
+    m_assessmentTargetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataCollectionDetails"))
   {
     m_dataCollectionDetails = jsonValue.GetObject("dataCollectionDetails");
-
+    m_dataCollectionDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

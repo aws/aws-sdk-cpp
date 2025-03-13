@@ -20,18 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-VpcOrigin::VpcOrigin() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_vpcOriginEndpointConfigHasBeenSet(false)
-{
-}
-
 VpcOrigin::VpcOrigin(const XmlNode& xmlNode)
-  : VpcOrigin()
 {
   *this = xmlNode;
 }
@@ -47,36 +36,42 @@ VpcOrigin& VpcOrigin::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
       m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
+       m_createdTimeHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
+       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode vpcOriginEndpointConfigNode = resultNode.FirstChild("VpcOriginEndpointConfig");
     if(!vpcOriginEndpointConfigNode.IsNull())
     {
       m_vpcOriginEndpointConfig = vpcOriginEndpointConfigNode;
       m_vpcOriginEndpointConfigHasBeenSet = true;
+       m_vpcOriginEndpointConfigHasBeenSet = true;
     }
   }
 

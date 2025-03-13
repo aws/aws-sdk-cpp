@@ -18,14 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-CurrentPinAttributes::CurrentPinAttributes() : 
-    m_currentPinPekIdentifierHasBeenSet(false),
-    m_currentEncryptedPinBlockHasBeenSet(false)
-{
-}
-
 CurrentPinAttributes::CurrentPinAttributes(JsonView jsonValue)
-  : CurrentPinAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CurrentPinAttributes& CurrentPinAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CurrentPinPekIdentifier"))
   {
     m_currentPinPekIdentifier = jsonValue.GetString("CurrentPinPekIdentifier");
-
     m_currentPinPekIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentEncryptedPinBlock"))
   {
     m_currentEncryptedPinBlock = jsonValue.GetString("CurrentEncryptedPinBlock");
-
     m_currentEncryptedPinBlockHasBeenSet = true;
   }
-
   return *this;
 }
 

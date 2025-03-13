@@ -37,7 +37,7 @@ namespace Model
   class GetMultiRegionEndpointResult
   {
   public:
-    AWS_SESV2_API GetMultiRegionEndpointResult();
+    AWS_SESV2_API GetMultiRegionEndpointResult() = default;
     AWS_SESV2_API GetMultiRegionEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API GetMultiRegionEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,26 +46,22 @@ namespace Model
     /**
      * <p>The name of the multi-region endpoint (global-endpoint).</p>
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointName.assign(value); }
-    inline GetMultiRegionEndpointResult& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline GetMultiRegionEndpointResult& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline GetMultiRegionEndpointResult& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    GetMultiRegionEndpointResult& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the multi-region endpoint (global-endpoint).</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointId.assign(value); }
-    inline GetMultiRegionEndpointResult& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline GetMultiRegionEndpointResult& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline GetMultiRegionEndpointResult& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    GetMultiRegionEndpointResult& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,13 +69,13 @@ namespace Model
      * <p>Contains routes information for the multi-region endpoint
      * (global-endpoint).</p>
      */
-    inline const Aws::Vector<Route>& GetRoutes() const{ return m_routes; }
-    inline void SetRoutes(const Aws::Vector<Route>& value) { m_routes = value; }
-    inline void SetRoutes(Aws::Vector<Route>&& value) { m_routes = std::move(value); }
-    inline GetMultiRegionEndpointResult& WithRoutes(const Aws::Vector<Route>& value) { SetRoutes(value); return *this;}
-    inline GetMultiRegionEndpointResult& WithRoutes(Aws::Vector<Route>&& value) { SetRoutes(std::move(value)); return *this;}
-    inline GetMultiRegionEndpointResult& AddRoutes(const Route& value) { m_routes.push_back(value); return *this; }
-    inline GetMultiRegionEndpointResult& AddRoutes(Route&& value) { m_routes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Route>& GetRoutes() const { return m_routes; }
+    template<typename RoutesT = Aws::Vector<Route>>
+    void SetRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes = std::forward<RoutesT>(value); }
+    template<typename RoutesT = Aws::Vector<Route>>
+    GetMultiRegionEndpointResult& WithRoutes(RoutesT&& value) { SetRoutes(std::forward<RoutesT>(value)); return *this;}
+    template<typename RoutesT = Route>
+    GetMultiRegionEndpointResult& AddRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes.emplace_back(std::forward<RoutesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,11 +87,9 @@ namespace Model
      * <code>DELETING</code> – The resource is being deleted as requested.</p> </li>
      * </ul>
      */
-    inline const Status& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Status& value) { m_status = value; }
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-    inline GetMultiRegionEndpointResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline GetMultiRegionEndpointResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline Status GetStatus() const { return m_status; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetMultiRegionEndpointResult& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -103,11 +97,11 @@ namespace Model
      * <p>The time stamp of when the multi-region endpoint (global-endpoint) was
      * created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline GetMultiRegionEndpointResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline GetMultiRegionEndpointResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    GetMultiRegionEndpointResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,38 +109,43 @@ namespace Model
      * <p>The time stamp of when the multi-region endpoint (global-endpoint) was last
      * updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
-    inline void SetLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimestamp = value; }
-    inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestamp = std::move(value); }
-    inline GetMultiRegionEndpointResult& WithLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimestamp(value); return *this;}
-    inline GetMultiRegionEndpointResult& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::forward<LastUpdatedTimestampT>(value); }
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    GetMultiRegionEndpointResult& WithLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { SetLastUpdatedTimestamp(std::forward<LastUpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMultiRegionEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMultiRegionEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMultiRegionEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMultiRegionEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_endpointName;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_endpointId;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::Vector<Route> m_routes;
+    bool m_routesHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTimestamp;
+    Aws::Utils::DateTime m_lastUpdatedTimestamp{};
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,12 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CheckInLicenseRequest::CheckInLicenseRequest() : 
-    m_licenseConsumptionTokenHasBeenSet(false),
-    m_beneficiaryHasBeenSet(false)
-{
-}
-
 Aws::String CheckInLicenseRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCisScanConfigurationRequest::DeleteCisScanConfigurationRequest() : 
-    m_scanConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCisScanConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

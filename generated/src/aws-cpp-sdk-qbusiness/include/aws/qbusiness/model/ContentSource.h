@@ -31,7 +31,7 @@ namespace Model
   class ContentSource
   {
   public:
-    AWS_QBUSINESS_API ContentSource();
+    AWS_QBUSINESS_API ContentSource() = default;
     AWS_QBUSINESS_API ContentSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ContentSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The retriever to use as the content source.</p>
      */
-    inline const RetrieverContentSource& GetRetriever() const{ return m_retriever; }
+    inline const RetrieverContentSource& GetRetriever() const { return m_retriever; }
     inline bool RetrieverHasBeenSet() const { return m_retrieverHasBeenSet; }
-    inline void SetRetriever(const RetrieverContentSource& value) { m_retrieverHasBeenSet = true; m_retriever = value; }
-    inline void SetRetriever(RetrieverContentSource&& value) { m_retrieverHasBeenSet = true; m_retriever = std::move(value); }
-    inline ContentSource& WithRetriever(const RetrieverContentSource& value) { SetRetriever(value); return *this;}
-    inline ContentSource& WithRetriever(RetrieverContentSource&& value) { SetRetriever(std::move(value)); return *this;}
+    template<typename RetrieverT = RetrieverContentSource>
+    void SetRetriever(RetrieverT&& value) { m_retrieverHasBeenSet = true; m_retriever = std::forward<RetrieverT>(value); }
+    template<typename RetrieverT = RetrieverContentSource>
+    ContentSource& WithRetriever(RetrieverT&& value) { SetRetriever(std::forward<RetrieverT>(value)); return *this;}
     ///@}
   private:
 

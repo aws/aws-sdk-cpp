@@ -12,11 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOrganizationConfigurationRequest::DescribeOrganizationConfigurationRequest() : 
-    m_graphArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOrganizationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

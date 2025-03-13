@@ -12,16 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAliasesRequest::ListAliasesRequest() : 
-    m_routingStrategyType(RoutingStrategyType::NOT_SET),
-    m_routingStrategyTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAliasesRequest::SerializePayload() const
 {
   JsonValue payload;

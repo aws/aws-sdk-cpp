@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCapacityBlockExtensionOfferingsResponse::DescribeCapacityBlockExtensionOfferingsResponse()
-{
-}
-
 DescribeCapacityBlockExtensionOfferingsResponse::DescribeCapacityBlockExtensionOfferingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeCapacityBlockExtensionOfferingsResponse& DescribeCapacityBlockExtensionO
     if(!capacityBlockExtensionOfferingsNode.IsNull())
     {
       XmlNode capacityBlockExtensionOfferingsMember = capacityBlockExtensionOfferingsNode.FirstChild("item");
+      m_capacityBlockExtensionOfferingsHasBeenSet = !capacityBlockExtensionOfferingsMember.IsNull();
       while(!capacityBlockExtensionOfferingsMember.IsNull())
       {
         m_capacityBlockExtensionOfferings.push_back(capacityBlockExtensionOfferingsMember);
@@ -53,6 +50,7 @@ DescribeCapacityBlockExtensionOfferingsResponse& DescribeCapacityBlockExtensionO
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeCapacityBlockExtensionOfferingsResponse& DescribeCapacityBlockExtensionO
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeCapacityBlockExtensionOfferingsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

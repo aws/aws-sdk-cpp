@@ -10,16 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-BacktrackDBClusterRequest::BacktrackDBClusterRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_backtrackToHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false),
-    m_useEarliestTimeOnPointInTimeUnavailable(false),
-    m_useEarliestTimeOnPointInTimeUnavailableHasBeenSet(false)
-{
-}
-
 Aws::String BacktrackDBClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

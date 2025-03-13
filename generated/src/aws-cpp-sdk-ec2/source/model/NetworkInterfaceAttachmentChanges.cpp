@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInterfaceAttachmentChanges::NetworkInterfaceAttachmentChanges() : 
-    m_attachmentIdHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
-{
-}
-
 NetworkInterfaceAttachmentChanges::NetworkInterfaceAttachmentChanges(const XmlNode& xmlNode)
-  : NetworkInterfaceAttachmentChanges()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ NetworkInterfaceAttachmentChanges& NetworkInterfaceAttachmentChanges::operator =
     {
       m_attachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(attachmentIdNode.GetText());
       m_attachmentIdHasBeenSet = true;
+       m_attachmentIdHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())
     {
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
+       m_deleteOnTerminationHasBeenSet = true;
     }
   }
 

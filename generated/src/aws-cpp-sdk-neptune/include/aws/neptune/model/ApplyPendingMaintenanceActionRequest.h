@@ -21,7 +21,7 @@ namespace Model
   class ApplyPendingMaintenanceActionRequest : public NeptuneRequest
   {
   public:
-    AWS_NEPTUNE_API ApplyPendingMaintenanceActionRequest();
+    AWS_NEPTUNE_API ApplyPendingMaintenanceActionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.</p>
      */
-    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
-    inline ApplyPendingMaintenanceActionRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-    inline ApplyPendingMaintenanceActionRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-    inline ApplyPendingMaintenanceActionRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    ApplyPendingMaintenanceActionRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
      * values: <code>system-update</code>, <code>db-upgrade</code> </p>
      */
-    inline const Aws::String& GetApplyAction() const{ return m_applyAction; }
+    inline const Aws::String& GetApplyAction() const { return m_applyAction; }
     inline bool ApplyActionHasBeenSet() const { return m_applyActionHasBeenSet; }
-    inline void SetApplyAction(const Aws::String& value) { m_applyActionHasBeenSet = true; m_applyAction = value; }
-    inline void SetApplyAction(Aws::String&& value) { m_applyActionHasBeenSet = true; m_applyAction = std::move(value); }
-    inline void SetApplyAction(const char* value) { m_applyActionHasBeenSet = true; m_applyAction.assign(value); }
-    inline ApplyPendingMaintenanceActionRequest& WithApplyAction(const Aws::String& value) { SetApplyAction(value); return *this;}
-    inline ApplyPendingMaintenanceActionRequest& WithApplyAction(Aws::String&& value) { SetApplyAction(std::move(value)); return *this;}
-    inline ApplyPendingMaintenanceActionRequest& WithApplyAction(const char* value) { SetApplyAction(value); return *this;}
+    template<typename ApplyActionT = Aws::String>
+    void SetApplyAction(ApplyActionT&& value) { m_applyActionHasBeenSet = true; m_applyAction = std::forward<ApplyActionT>(value); }
+    template<typename ApplyActionT = Aws::String>
+    ApplyPendingMaintenanceActionRequest& WithApplyAction(ApplyActionT&& value) { SetApplyAction(std::forward<ApplyActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
      * <code>next-maintenance</code> opt-in requests.</p> </li> </ul>
      */
-    inline const Aws::String& GetOptInType() const{ return m_optInType; }
+    inline const Aws::String& GetOptInType() const { return m_optInType; }
     inline bool OptInTypeHasBeenSet() const { return m_optInTypeHasBeenSet; }
-    inline void SetOptInType(const Aws::String& value) { m_optInTypeHasBeenSet = true; m_optInType = value; }
-    inline void SetOptInType(Aws::String&& value) { m_optInTypeHasBeenSet = true; m_optInType = std::move(value); }
-    inline void SetOptInType(const char* value) { m_optInTypeHasBeenSet = true; m_optInType.assign(value); }
-    inline ApplyPendingMaintenanceActionRequest& WithOptInType(const Aws::String& value) { SetOptInType(value); return *this;}
-    inline ApplyPendingMaintenanceActionRequest& WithOptInType(Aws::String&& value) { SetOptInType(std::move(value)); return *this;}
-    inline ApplyPendingMaintenanceActionRequest& WithOptInType(const char* value) { SetOptInType(value); return *this;}
+    template<typename OptInTypeT = Aws::String>
+    void SetOptInType(OptInTypeT&& value) { m_optInTypeHasBeenSet = true; m_optInType = std::forward<OptInTypeT>(value); }
+    template<typename OptInTypeT = Aws::String>
+    ApplyPendingMaintenanceActionRequest& WithOptInType(OptInTypeT&& value) { SetOptInType(std::forward<OptInTypeT>(value)); return *this;}
     ///@}
   private:
 

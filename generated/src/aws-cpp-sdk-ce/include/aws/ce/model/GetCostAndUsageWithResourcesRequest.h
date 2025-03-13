@@ -26,7 +26,7 @@ namespace Model
   class GetCostAndUsageWithResourcesRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API GetCostAndUsageWithResourcesRequest();
+    AWS_COSTEXPLORER_API GetCostAndUsageWithResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,12 +49,12 @@ namespace Model
      * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
      * including <code>2017-05-01</code>.</p>
      */
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline GetCostAndUsageWithResourcesRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline GetCostAndUsageWithResourcesRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    GetCostAndUsageWithResourcesRequest& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +64,10 @@ namespace Model
      * set, the response object doesn't include the <code>Granularity</code>,
      * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
-    inline const Granularity& GetGranularity() const{ return m_granularity; }
+    inline Granularity GetGranularity() const { return m_granularity; }
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
-    inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
-    inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
-    inline GetCostAndUsageWithResourcesRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
-    inline GetCostAndUsageWithResourcesRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
+    inline void SetGranularity(Granularity value) { m_granularityHasBeenSet = true; m_granularity = value; }
+    inline GetCostAndUsageWithResourcesRequest& WithGranularity(Granularity value) { SetGranularity(value); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +89,12 @@ namespace Model
      * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are
      * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
      */
-    inline const Expression& GetFilter() const{ return m_filter; }
+    inline const Expression& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetCostAndUsageWithResourcesRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
-    inline GetCostAndUsageWithResourcesRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = Expression>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Expression>
+    GetCostAndUsageWithResourcesRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,15 +116,14 @@ namespace Model
      * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsageWithResources</code> requests.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
+    inline const Aws::Vector<Aws::String>& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline GetCostAndUsageWithResourcesRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
-    inline GetCostAndUsageWithResourcesRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
-    inline GetCostAndUsageWithResourcesRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
-    inline GetCostAndUsageWithResourcesRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
-    inline GetCostAndUsageWithResourcesRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
+    template<typename MetricsT = Aws::Vector<Aws::String>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Vector<Aws::String>>
+    GetCostAndUsageWithResourcesRequest& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    template<typename MetricsT = Aws::String>
+    GetCostAndUsageWithResourcesRequest& AddMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics.emplace_back(std::forward<MetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -134,14 +131,14 @@ namespace Model
      * <p>You can group Amazon Web Services costs using up to two different groups:
      * <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
      */
-    inline const Aws::Vector<GroupDefinition>& GetGroupBy() const{ return m_groupBy; }
+    inline const Aws::Vector<GroupDefinition>& GetGroupBy() const { return m_groupBy; }
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
-    inline void SetGroupBy(const Aws::Vector<GroupDefinition>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
-    inline void SetGroupBy(Aws::Vector<GroupDefinition>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
-    inline GetCostAndUsageWithResourcesRequest& WithGroupBy(const Aws::Vector<GroupDefinition>& value) { SetGroupBy(value); return *this;}
-    inline GetCostAndUsageWithResourcesRequest& WithGroupBy(Aws::Vector<GroupDefinition>&& value) { SetGroupBy(std::move(value)); return *this;}
-    inline GetCostAndUsageWithResourcesRequest& AddGroupBy(const GroupDefinition& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
-    inline GetCostAndUsageWithResourcesRequest& AddGroupBy(GroupDefinition&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
+    template<typename GroupByT = Aws::Vector<GroupDefinition>>
+    void SetGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy = std::forward<GroupByT>(value); }
+    template<typename GroupByT = Aws::Vector<GroupDefinition>>
+    GetCostAndUsageWithResourcesRequest& WithGroupBy(GroupByT&& value) { SetGroupBy(std::forward<GroupByT>(value)); return *this;}
+    template<typename GroupByT = GroupDefinition>
+    GetCostAndUsageWithResourcesRequest& AddGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy.emplace_back(std::forward<GroupByT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -152,14 +149,12 @@ namespace Model
      * Amazon Web Services Billing and Cost Management features. The BillingViewArn can
      * be retrieved by calling the ListBillingViews API.</p>
      */
-    inline const Aws::String& GetBillingViewArn() const{ return m_billingViewArn; }
+    inline const Aws::String& GetBillingViewArn() const { return m_billingViewArn; }
     inline bool BillingViewArnHasBeenSet() const { return m_billingViewArnHasBeenSet; }
-    inline void SetBillingViewArn(const Aws::String& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = value; }
-    inline void SetBillingViewArn(Aws::String&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::move(value); }
-    inline void SetBillingViewArn(const char* value) { m_billingViewArnHasBeenSet = true; m_billingViewArn.assign(value); }
-    inline GetCostAndUsageWithResourcesRequest& WithBillingViewArn(const Aws::String& value) { SetBillingViewArn(value); return *this;}
-    inline GetCostAndUsageWithResourcesRequest& WithBillingViewArn(Aws::String&& value) { SetBillingViewArn(std::move(value)); return *this;}
-    inline GetCostAndUsageWithResourcesRequest& WithBillingViewArn(const char* value) { SetBillingViewArn(value); return *this;}
+    template<typename BillingViewArnT = Aws::String>
+    void SetBillingViewArn(BillingViewArnT&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::forward<BillingViewArnT>(value); }
+    template<typename BillingViewArnT = Aws::String>
+    GetCostAndUsageWithResourcesRequest& WithBillingViewArn(BillingViewArnT&& value) { SetBillingViewArn(std::forward<BillingViewArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,21 +163,19 @@ namespace Model
      * the token when the response from a previous call has more results than the
      * maximum page size.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
-    inline GetCostAndUsageWithResourcesRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetCostAndUsageWithResourcesRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetCostAndUsageWithResourcesRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetCostAndUsageWithResourcesRequest& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
   private:
 
     DateInterval m_timePeriod;
     bool m_timePeriodHasBeenSet = false;
 
-    Granularity m_granularity;
+    Granularity m_granularity{Granularity::NOT_SET};
     bool m_granularityHasBeenSet = false;
 
     Expression m_filter;

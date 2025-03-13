@@ -12,12 +12,6 @@ using namespace Aws::ResourceGroups::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UntagRequest::UntagRequest() : 
-    m_arnHasBeenSet(false),
-    m_keysHasBeenSet(false)
-{
-}
-
 Aws::String UntagRequest::SerializePayload() const
 {
   JsonValue payload;

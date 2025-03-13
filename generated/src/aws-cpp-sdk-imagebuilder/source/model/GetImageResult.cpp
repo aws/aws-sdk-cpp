@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetImageResult::GetImageResult()
-{
-}
-
 GetImageResult::GetImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ GetImageResult& GetImageResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetObject("image");
-
+    m_imageHasBeenSet = true;
   }
-
 
 
   return *this;

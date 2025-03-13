@@ -33,7 +33,7 @@ namespace Model
   class BatchPutPropertyErrorEntry
   {
   public:
-    AWS_IOTTWINMAKER_API BatchPutPropertyErrorEntry();
+    AWS_IOTTWINMAKER_API BatchPutPropertyErrorEntry() = default;
     AWS_IOTTWINMAKER_API BatchPutPropertyErrorEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API BatchPutPropertyErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>A list of objects that contain information about errors returned by the
      * <code>BatchPutProperty</code> action.</p>
      */
-    inline const Aws::Vector<BatchPutPropertyError>& GetErrors() const{ return m_errors; }
+    inline const Aws::Vector<BatchPutPropertyError>& GetErrors() const { return m_errors; }
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-    inline void SetErrors(const Aws::Vector<BatchPutPropertyError>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchPutPropertyError>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-    inline BatchPutPropertyErrorEntry& WithErrors(const Aws::Vector<BatchPutPropertyError>& value) { SetErrors(value); return *this;}
-    inline BatchPutPropertyErrorEntry& WithErrors(Aws::Vector<BatchPutPropertyError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchPutPropertyErrorEntry& AddErrors(const BatchPutPropertyError& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-    inline BatchPutPropertyErrorEntry& AddErrors(BatchPutPropertyError&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
+    template<typename ErrorsT = Aws::Vector<BatchPutPropertyError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchPutPropertyError>>
+    BatchPutPropertyErrorEntry& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchPutPropertyError>
+    BatchPutPropertyErrorEntry& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
   private:
 

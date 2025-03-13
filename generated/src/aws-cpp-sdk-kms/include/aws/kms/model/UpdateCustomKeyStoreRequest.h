@@ -23,7 +23,7 @@ namespace Model
   class UpdateCustomKeyStoreRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API UpdateCustomKeyStoreRequest();
+    AWS_KMS_API UpdateCustomKeyStoreRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * custom key store. To find the ID of a custom key store, use the
      * <a>DescribeCustomKeyStores</a> operation.</p>
      */
-    inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
+    inline const Aws::String& GetCustomKeyStoreId() const { return m_customKeyStoreId; }
     inline bool CustomKeyStoreIdHasBeenSet() const { return m_customKeyStoreIdHasBeenSet; }
-    inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = value; }
-    inline void SetCustomKeyStoreId(Aws::String&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::move(value); }
-    inline void SetCustomKeyStoreId(const char* value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId.assign(value); }
-    inline UpdateCustomKeyStoreRequest& WithCustomKeyStoreId(const Aws::String& value) { SetCustomKeyStoreId(value); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithCustomKeyStoreId(Aws::String&& value) { SetCustomKeyStoreId(std::move(value)); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithCustomKeyStoreId(const char* value) { SetCustomKeyStoreId(value); return *this;}
+    template<typename CustomKeyStoreIdT = Aws::String>
+    void SetCustomKeyStoreId(CustomKeyStoreIdT&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::forward<CustomKeyStoreIdT>(value); }
+    template<typename CustomKeyStoreIdT = Aws::String>
+    UpdateCustomKeyStoreRequest& WithCustomKeyStoreId(CustomKeyStoreIdT&& value) { SetCustomKeyStoreId(std::forward<CustomKeyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * must be disconnected. An external key store can be connected or
      * disconnected.</p>
      */
-    inline const Aws::String& GetNewCustomKeyStoreName() const{ return m_newCustomKeyStoreName; }
+    inline const Aws::String& GetNewCustomKeyStoreName() const { return m_newCustomKeyStoreName; }
     inline bool NewCustomKeyStoreNameHasBeenSet() const { return m_newCustomKeyStoreNameHasBeenSet; }
-    inline void SetNewCustomKeyStoreName(const Aws::String& value) { m_newCustomKeyStoreNameHasBeenSet = true; m_newCustomKeyStoreName = value; }
-    inline void SetNewCustomKeyStoreName(Aws::String&& value) { m_newCustomKeyStoreNameHasBeenSet = true; m_newCustomKeyStoreName = std::move(value); }
-    inline void SetNewCustomKeyStoreName(const char* value) { m_newCustomKeyStoreNameHasBeenSet = true; m_newCustomKeyStoreName.assign(value); }
-    inline UpdateCustomKeyStoreRequest& WithNewCustomKeyStoreName(const Aws::String& value) { SetNewCustomKeyStoreName(value); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithNewCustomKeyStoreName(Aws::String&& value) { SetNewCustomKeyStoreName(std::move(value)); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithNewCustomKeyStoreName(const char* value) { SetNewCustomKeyStoreName(value); return *this;}
+    template<typename NewCustomKeyStoreNameT = Aws::String>
+    void SetNewCustomKeyStoreName(NewCustomKeyStoreNameT&& value) { m_newCustomKeyStoreNameHasBeenSet = true; m_newCustomKeyStoreName = std::forward<NewCustomKeyStoreNameT>(value); }
+    template<typename NewCustomKeyStoreNameT = Aws::String>
+    UpdateCustomKeyStoreRequest& WithNewCustomKeyStoreName(NewCustomKeyStoreNameT&& value) { SetNewCustomKeyStoreName(std::forward<NewCustomKeyStoreNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * cluster.</p> <p>To change this value, the CloudHSM key store must be
      * disconnected.</p>
      */
-    inline const Aws::String& GetKeyStorePassword() const{ return m_keyStorePassword; }
+    inline const Aws::String& GetKeyStorePassword() const { return m_keyStorePassword; }
     inline bool KeyStorePasswordHasBeenSet() const { return m_keyStorePasswordHasBeenSet; }
-    inline void SetKeyStorePassword(const Aws::String& value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword = value; }
-    inline void SetKeyStorePassword(Aws::String&& value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword = std::move(value); }
-    inline void SetKeyStorePassword(const char* value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword.assign(value); }
-    inline UpdateCustomKeyStoreRequest& WithKeyStorePassword(const Aws::String& value) { SetKeyStorePassword(value); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithKeyStorePassword(Aws::String&& value) { SetKeyStorePassword(std::move(value)); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithKeyStorePassword(const char* value) { SetKeyStorePassword(value); return *this;}
+    template<typename KeyStorePasswordT = Aws::String>
+    void SetKeyStorePassword(KeyStorePasswordT&& value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword = std::forward<KeyStorePasswordT>(value); }
+    template<typename KeyStorePasswordT = Aws::String>
+    UpdateCustomKeyStoreRequest& WithKeyStorePassword(KeyStorePasswordT&& value) { SetKeyStorePassword(std::forward<KeyStorePasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +103,12 @@ namespace Model
      * operation.</p> <p>To change this value, the CloudHSM key store must be
      * disconnected.</p>
      */
-    inline const Aws::String& GetCloudHsmClusterId() const{ return m_cloudHsmClusterId; }
+    inline const Aws::String& GetCloudHsmClusterId() const { return m_cloudHsmClusterId; }
     inline bool CloudHsmClusterIdHasBeenSet() const { return m_cloudHsmClusterIdHasBeenSet; }
-    inline void SetCloudHsmClusterId(const Aws::String& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = value; }
-    inline void SetCloudHsmClusterId(Aws::String&& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = std::move(value); }
-    inline void SetCloudHsmClusterId(const char* value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId.assign(value); }
-    inline UpdateCustomKeyStoreRequest& WithCloudHsmClusterId(const Aws::String& value) { SetCloudHsmClusterId(value); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithCloudHsmClusterId(Aws::String&& value) { SetCloudHsmClusterId(std::move(value)); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithCloudHsmClusterId(const char* value) { SetCloudHsmClusterId(value); return *this;}
+    template<typename CloudHsmClusterIdT = Aws::String>
+    void SetCloudHsmClusterId(CloudHsmClusterIdT&& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = std::forward<CloudHsmClusterIdT>(value); }
+    template<typename CloudHsmClusterIdT = Aws::String>
+    UpdateCustomKeyStoreRequest& WithCloudHsmClusterId(CloudHsmClusterIdT&& value) { SetCloudHsmClusterId(std::forward<CloudHsmClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +126,12 @@ namespace Model
      * unique in the Amazon Web Services account and Region.</p> <p>To change this
      * value, the external key store must be disconnected.</p>
      */
-    inline const Aws::String& GetXksProxyUriEndpoint() const{ return m_xksProxyUriEndpoint; }
+    inline const Aws::String& GetXksProxyUriEndpoint() const { return m_xksProxyUriEndpoint; }
     inline bool XksProxyUriEndpointHasBeenSet() const { return m_xksProxyUriEndpointHasBeenSet; }
-    inline void SetXksProxyUriEndpoint(const Aws::String& value) { m_xksProxyUriEndpointHasBeenSet = true; m_xksProxyUriEndpoint = value; }
-    inline void SetXksProxyUriEndpoint(Aws::String&& value) { m_xksProxyUriEndpointHasBeenSet = true; m_xksProxyUriEndpoint = std::move(value); }
-    inline void SetXksProxyUriEndpoint(const char* value) { m_xksProxyUriEndpointHasBeenSet = true; m_xksProxyUriEndpoint.assign(value); }
-    inline UpdateCustomKeyStoreRequest& WithXksProxyUriEndpoint(const Aws::String& value) { SetXksProxyUriEndpoint(value); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithXksProxyUriEndpoint(Aws::String&& value) { SetXksProxyUriEndpoint(std::move(value)); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithXksProxyUriEndpoint(const char* value) { SetXksProxyUriEndpoint(value); return *this;}
+    template<typename XksProxyUriEndpointT = Aws::String>
+    void SetXksProxyUriEndpoint(XksProxyUriEndpointT&& value) { m_xksProxyUriEndpointHasBeenSet = true; m_xksProxyUriEndpoint = std::forward<XksProxyUriEndpointT>(value); }
+    template<typename XksProxyUriEndpointT = Aws::String>
+    UpdateCustomKeyStoreRequest& WithXksProxyUriEndpoint(XksProxyUriEndpointT&& value) { SetXksProxyUriEndpoint(std::forward<XksProxyUriEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,14 +148,12 @@ namespace Model
      * unique in the Amazon Web Services account and Region.</p> <p>You can change this
      * value when the external key store is connected or disconnected.</p>
      */
-    inline const Aws::String& GetXksProxyUriPath() const{ return m_xksProxyUriPath; }
+    inline const Aws::String& GetXksProxyUriPath() const { return m_xksProxyUriPath; }
     inline bool XksProxyUriPathHasBeenSet() const { return m_xksProxyUriPathHasBeenSet; }
-    inline void SetXksProxyUriPath(const Aws::String& value) { m_xksProxyUriPathHasBeenSet = true; m_xksProxyUriPath = value; }
-    inline void SetXksProxyUriPath(Aws::String&& value) { m_xksProxyUriPathHasBeenSet = true; m_xksProxyUriPath = std::move(value); }
-    inline void SetXksProxyUriPath(const char* value) { m_xksProxyUriPathHasBeenSet = true; m_xksProxyUriPath.assign(value); }
-    inline UpdateCustomKeyStoreRequest& WithXksProxyUriPath(const Aws::String& value) { SetXksProxyUriPath(value); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithXksProxyUriPath(Aws::String&& value) { SetXksProxyUriPath(std::move(value)); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithXksProxyUriPath(const char* value) { SetXksProxyUriPath(value); return *this;}
+    template<typename XksProxyUriPathT = Aws::String>
+    void SetXksProxyUriPath(XksProxyUriPathT&& value) { m_xksProxyUriPathHasBeenSet = true; m_xksProxyUriPath = std::forward<XksProxyUriPathT>(value); }
+    template<typename XksProxyUriPathT = Aws::String>
+    UpdateCustomKeyStoreRequest& WithXksProxyUriPath(XksProxyUriPathT&& value) { SetXksProxyUriPath(std::forward<XksProxyUriPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,14 +164,12 @@ namespace Model
      * <code>XksProxyConnectivity</code> is <code>VPC_ENDPOINT_SERVICE</code>.</p>
      * <p>To change this value, the external key store must be disconnected.</p>
      */
-    inline const Aws::String& GetXksProxyVpcEndpointServiceName() const{ return m_xksProxyVpcEndpointServiceName; }
+    inline const Aws::String& GetXksProxyVpcEndpointServiceName() const { return m_xksProxyVpcEndpointServiceName; }
     inline bool XksProxyVpcEndpointServiceNameHasBeenSet() const { return m_xksProxyVpcEndpointServiceNameHasBeenSet; }
-    inline void SetXksProxyVpcEndpointServiceName(const Aws::String& value) { m_xksProxyVpcEndpointServiceNameHasBeenSet = true; m_xksProxyVpcEndpointServiceName = value; }
-    inline void SetXksProxyVpcEndpointServiceName(Aws::String&& value) { m_xksProxyVpcEndpointServiceNameHasBeenSet = true; m_xksProxyVpcEndpointServiceName = std::move(value); }
-    inline void SetXksProxyVpcEndpointServiceName(const char* value) { m_xksProxyVpcEndpointServiceNameHasBeenSet = true; m_xksProxyVpcEndpointServiceName.assign(value); }
-    inline UpdateCustomKeyStoreRequest& WithXksProxyVpcEndpointServiceName(const Aws::String& value) { SetXksProxyVpcEndpointServiceName(value); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithXksProxyVpcEndpointServiceName(Aws::String&& value) { SetXksProxyVpcEndpointServiceName(std::move(value)); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithXksProxyVpcEndpointServiceName(const char* value) { SetXksProxyVpcEndpointServiceName(value); return *this;}
+    template<typename XksProxyVpcEndpointServiceNameT = Aws::String>
+    void SetXksProxyVpcEndpointServiceName(XksProxyVpcEndpointServiceNameT&& value) { m_xksProxyVpcEndpointServiceNameHasBeenSet = true; m_xksProxyVpcEndpointServiceName = std::forward<XksProxyVpcEndpointServiceNameT>(value); }
+    template<typename XksProxyVpcEndpointServiceNameT = Aws::String>
+    UpdateCustomKeyStoreRequest& WithXksProxyVpcEndpointServiceName(XksProxyVpcEndpointServiceNameT&& value) { SetXksProxyVpcEndpointServiceName(std::forward<XksProxyVpcEndpointServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,12 +186,12 @@ namespace Model
      * credential in KMS.</p> <p>You can change this value when the external key store
      * is connected or disconnected.</p>
      */
-    inline const XksProxyAuthenticationCredentialType& GetXksProxyAuthenticationCredential() const{ return m_xksProxyAuthenticationCredential; }
+    inline const XksProxyAuthenticationCredentialType& GetXksProxyAuthenticationCredential() const { return m_xksProxyAuthenticationCredential; }
     inline bool XksProxyAuthenticationCredentialHasBeenSet() const { return m_xksProxyAuthenticationCredentialHasBeenSet; }
-    inline void SetXksProxyAuthenticationCredential(const XksProxyAuthenticationCredentialType& value) { m_xksProxyAuthenticationCredentialHasBeenSet = true; m_xksProxyAuthenticationCredential = value; }
-    inline void SetXksProxyAuthenticationCredential(XksProxyAuthenticationCredentialType&& value) { m_xksProxyAuthenticationCredentialHasBeenSet = true; m_xksProxyAuthenticationCredential = std::move(value); }
-    inline UpdateCustomKeyStoreRequest& WithXksProxyAuthenticationCredential(const XksProxyAuthenticationCredentialType& value) { SetXksProxyAuthenticationCredential(value); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithXksProxyAuthenticationCredential(XksProxyAuthenticationCredentialType&& value) { SetXksProxyAuthenticationCredential(std::move(value)); return *this;}
+    template<typename XksProxyAuthenticationCredentialT = XksProxyAuthenticationCredentialType>
+    void SetXksProxyAuthenticationCredential(XksProxyAuthenticationCredentialT&& value) { m_xksProxyAuthenticationCredentialHasBeenSet = true; m_xksProxyAuthenticationCredential = std::forward<XksProxyAuthenticationCredentialT>(value); }
+    template<typename XksProxyAuthenticationCredentialT = XksProxyAuthenticationCredentialType>
+    UpdateCustomKeyStoreRequest& WithXksProxyAuthenticationCredential(XksProxyAuthenticationCredentialT&& value) { SetXksProxyAuthenticationCredential(std::forward<XksProxyAuthenticationCredentialT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,12 +208,10 @@ namespace Model
      * for the <code>XksProxyVpcEndpointServiceName</code> value.</p> <p>To change this
      * value, the external key store must be disconnected.</p>
      */
-    inline const XksProxyConnectivityType& GetXksProxyConnectivity() const{ return m_xksProxyConnectivity; }
+    inline XksProxyConnectivityType GetXksProxyConnectivity() const { return m_xksProxyConnectivity; }
     inline bool XksProxyConnectivityHasBeenSet() const { return m_xksProxyConnectivityHasBeenSet; }
-    inline void SetXksProxyConnectivity(const XksProxyConnectivityType& value) { m_xksProxyConnectivityHasBeenSet = true; m_xksProxyConnectivity = value; }
-    inline void SetXksProxyConnectivity(XksProxyConnectivityType&& value) { m_xksProxyConnectivityHasBeenSet = true; m_xksProxyConnectivity = std::move(value); }
-    inline UpdateCustomKeyStoreRequest& WithXksProxyConnectivity(const XksProxyConnectivityType& value) { SetXksProxyConnectivity(value); return *this;}
-    inline UpdateCustomKeyStoreRequest& WithXksProxyConnectivity(XksProxyConnectivityType&& value) { SetXksProxyConnectivity(std::move(value)); return *this;}
+    inline void SetXksProxyConnectivity(XksProxyConnectivityType value) { m_xksProxyConnectivityHasBeenSet = true; m_xksProxyConnectivity = value; }
+    inline UpdateCustomKeyStoreRequest& WithXksProxyConnectivity(XksProxyConnectivityType value) { SetXksProxyConnectivity(value); return *this;}
     ///@}
   private:
 
@@ -255,7 +239,7 @@ namespace Model
     XksProxyAuthenticationCredentialType m_xksProxyAuthenticationCredential;
     bool m_xksProxyAuthenticationCredentialHasBeenSet = false;
 
-    XksProxyConnectivityType m_xksProxyConnectivity;
+    XksProxyConnectivityType m_xksProxyConnectivity{XksProxyConnectivityType::NOT_SET};
     bool m_xksProxyConnectivityHasBeenSet = false;
   };
 

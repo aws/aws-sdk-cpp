@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DeployedImage::DeployedImage() : 
-    m_specifiedImageHasBeenSet(false),
-    m_resolvedImageHasBeenSet(false),
-    m_resolutionTimeHasBeenSet(false)
-{
-}
-
 DeployedImage::DeployedImage(JsonView jsonValue)
-  : DeployedImage()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DeployedImage& DeployedImage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SpecifiedImage"))
   {
     m_specifiedImage = jsonValue.GetString("SpecifiedImage");
-
     m_specifiedImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolvedImage"))
   {
     m_resolvedImage = jsonValue.GetString("ResolvedImage");
-
     m_resolvedImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolutionTime"))
   {
     m_resolutionTime = jsonValue.GetDouble("ResolutionTime");
-
     m_resolutionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

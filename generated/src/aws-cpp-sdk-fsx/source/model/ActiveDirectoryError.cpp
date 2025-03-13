@@ -18,16 +18,7 @@ namespace FSx
 namespace Model
 {
 
-ActiveDirectoryError::ActiveDirectoryError() : 
-    m_activeDirectoryIdHasBeenSet(false),
-    m_type(ActiveDirectoryErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ActiveDirectoryError::ActiveDirectoryError(JsonView jsonValue)
-  : ActiveDirectoryError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ActiveDirectoryError& ActiveDirectoryError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActiveDirectoryId"))
   {
     m_activeDirectoryId = jsonValue.GetString("ActiveDirectoryId");
-
     m_activeDirectoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ActiveDirectoryErrorTypeMapper::GetActiveDirectoryErrorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

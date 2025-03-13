@@ -18,20 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-NodeInstance::NodeInstance() : 
-    m_currentStatus(NodeInstanceStatus::NOT_SET),
-    m_currentStatusHasBeenSet(false),
-    m_nodeIdHasBeenSet(false),
-    m_nodeInstanceIdHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packagePatchVersionHasBeenSet(false),
-    m_packageVersionHasBeenSet(false)
-{
-}
-
 NodeInstance::NodeInstance(JsonView jsonValue)
-  : NodeInstance()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ NodeInstance& NodeInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CurrentStatus"))
   {
     m_currentStatus = NodeInstanceStatusMapper::GetNodeInstanceStatusForName(jsonValue.GetString("CurrentStatus"));
-
     m_currentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeId"))
   {
     m_nodeId = jsonValue.GetString("NodeId");
-
     m_nodeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeInstanceId"))
   {
     m_nodeInstanceId = jsonValue.GetString("NodeInstanceId");
-
     m_nodeInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeName"))
   {
     m_nodeName = jsonValue.GetString("NodeName");
-
     m_nodeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageName"))
   {
     m_packageName = jsonValue.GetString("PackageName");
-
     m_packageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackagePatchVersion"))
   {
     m_packagePatchVersion = jsonValue.GetString("PackagePatchVersion");
-
     m_packagePatchVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageVersion"))
   {
     m_packageVersion = jsonValue.GetString("PackageVersion");
-
     m_packageVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

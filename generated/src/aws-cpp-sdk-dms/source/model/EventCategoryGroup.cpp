@@ -18,14 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-EventCategoryGroup::EventCategoryGroup() : 
-    m_sourceTypeHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false)
-{
-}
-
 EventCategoryGroup::EventCategoryGroup(JsonView jsonValue)
-  : EventCategoryGroup()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EventCategoryGroup& EventCategoryGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = jsonValue.GetString("SourceType");
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventCategories"))
   {
     Aws::Utils::Array<JsonView> eventCategoriesJsonList = jsonValue.GetArray("EventCategories");
@@ -48,7 +39,6 @@ EventCategoryGroup& EventCategoryGroup::operator =(JsonView jsonValue)
     }
     m_eventCategoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

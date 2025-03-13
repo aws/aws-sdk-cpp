@@ -18,16 +18,7 @@ namespace TimestreamInfluxDB
 namespace Model
 {
 
-Duration::Duration() : 
-    m_durationType(DurationType::NOT_SET),
-    m_durationTypeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 Duration::Duration(JsonView jsonValue)
-  : Duration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Duration& Duration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("durationType"))
   {
     m_durationType = DurationTypeMapper::GetDurationTypeForName(jsonValue.GetString("durationType"));
-
     m_durationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInt64("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

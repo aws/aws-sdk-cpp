@@ -21,13 +21,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RetrieveAndGenerateStreamInitialResponse::RetrieveAndGenerateStreamInitialResponse() : 
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 RetrieveAndGenerateStreamInitialResponse::RetrieveAndGenerateStreamInitialResponse(JsonView jsonValue)
-  : RetrieveAndGenerateStreamInitialResponse()
 {
   *this = jsonValue;
 }
@@ -44,6 +38,7 @@ RetrieveAndGenerateStreamInitialResponse::RetrieveAndGenerateStreamInitialRespon
   if(sessionIdIter != headers.end())
   {
     m_sessionId = sessionIdIter->second;
+    m_sessionIdHasBeenSet = true;
   }
 
 }

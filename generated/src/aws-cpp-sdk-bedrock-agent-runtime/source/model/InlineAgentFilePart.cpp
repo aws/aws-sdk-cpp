@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InlineAgentFilePart::InlineAgentFilePart() : 
-    m_filesHasBeenSet(false)
-{
-}
-
 InlineAgentFilePart::InlineAgentFilePart(JsonView jsonValue)
-  : InlineAgentFilePart()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ InlineAgentFilePart& InlineAgentFilePart::operator =(JsonView jsonValue)
     }
     m_filesHasBeenSet = true;
   }
-
   return *this;
 }
 

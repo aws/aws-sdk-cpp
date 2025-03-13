@@ -12,13 +12,6 @@ using namespace Aws::SocialMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PostWhatsAppMessageMediaRequest::PostWhatsAppMessageMediaRequest() : 
-    m_originationPhoneNumberIdHasBeenSet(false),
-    m_sourceS3PresignedUrlHasBeenSet(false),
-    m_sourceS3FileHasBeenSet(false)
-{
-}
-
 Aws::String PostWhatsAppMessageMediaRequest::SerializePayload() const
 {
   JsonValue payload;

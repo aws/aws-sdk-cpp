@@ -12,21 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateComponentRequest::CreateComponentRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_manifestHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serviceInstanceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceSpecHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateFileHasBeenSet(false)
-{
-}
-
 Aws::String CreateComponentRequest::SerializePayload() const
 {
   JsonValue payload;

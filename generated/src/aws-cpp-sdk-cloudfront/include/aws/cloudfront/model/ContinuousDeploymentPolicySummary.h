@@ -31,7 +31,7 @@ namespace Model
   class ContinuousDeploymentPolicySummary
   {
   public:
-    AWS_CLOUDFRONT_API ContinuousDeploymentPolicySummary();
+    AWS_CLOUDFRONT_API ContinuousDeploymentPolicySummary() = default;
     AWS_CLOUDFRONT_API ContinuousDeploymentPolicySummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ContinuousDeploymentPolicySummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The continuous deployment policy.</p>
      */
-    inline const ContinuousDeploymentPolicy& GetContinuousDeploymentPolicy() const{ return m_continuousDeploymentPolicy; }
+    inline const ContinuousDeploymentPolicy& GetContinuousDeploymentPolicy() const { return m_continuousDeploymentPolicy; }
     inline bool ContinuousDeploymentPolicyHasBeenSet() const { return m_continuousDeploymentPolicyHasBeenSet; }
-    inline void SetContinuousDeploymentPolicy(const ContinuousDeploymentPolicy& value) { m_continuousDeploymentPolicyHasBeenSet = true; m_continuousDeploymentPolicy = value; }
-    inline void SetContinuousDeploymentPolicy(ContinuousDeploymentPolicy&& value) { m_continuousDeploymentPolicyHasBeenSet = true; m_continuousDeploymentPolicy = std::move(value); }
-    inline ContinuousDeploymentPolicySummary& WithContinuousDeploymentPolicy(const ContinuousDeploymentPolicy& value) { SetContinuousDeploymentPolicy(value); return *this;}
-    inline ContinuousDeploymentPolicySummary& WithContinuousDeploymentPolicy(ContinuousDeploymentPolicy&& value) { SetContinuousDeploymentPolicy(std::move(value)); return *this;}
+    template<typename ContinuousDeploymentPolicyT = ContinuousDeploymentPolicy>
+    void SetContinuousDeploymentPolicy(ContinuousDeploymentPolicyT&& value) { m_continuousDeploymentPolicyHasBeenSet = true; m_continuousDeploymentPolicy = std::forward<ContinuousDeploymentPolicyT>(value); }
+    template<typename ContinuousDeploymentPolicyT = ContinuousDeploymentPolicy>
+    ContinuousDeploymentPolicySummary& WithContinuousDeploymentPolicy(ContinuousDeploymentPolicyT&& value) { SetContinuousDeploymentPolicy(std::forward<ContinuousDeploymentPolicyT>(value)); return *this;}
     ///@}
   private:
 

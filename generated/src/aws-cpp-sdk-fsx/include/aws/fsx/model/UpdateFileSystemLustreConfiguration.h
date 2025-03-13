@@ -37,7 +37,7 @@ namespace Model
   class UpdateFileSystemLustreConfiguration
   {
   public:
-    AWS_FSX_API UpdateFileSystemLustreConfiguration();
+    AWS_FSX_API UpdateFileSystemLustreConfiguration() = default;
     AWS_FSX_API UpdateFileSystemLustreConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API UpdateFileSystemLustreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,26 +49,22 @@ namespace Model
      * d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7,
      * beginning with Monday and ending with Sunday.</p>
      */
-    inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
+    inline const Aws::String& GetWeeklyMaintenanceStartTime() const { return m_weeklyMaintenanceStartTime; }
     inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
-    inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
-    inline void SetWeeklyMaintenanceStartTime(Aws::String&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::move(value); }
-    inline void SetWeeklyMaintenanceStartTime(const char* value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime.assign(value); }
-    inline UpdateFileSystemLustreConfiguration& WithWeeklyMaintenanceStartTime(const Aws::String& value) { SetWeeklyMaintenanceStartTime(value); return *this;}
-    inline UpdateFileSystemLustreConfiguration& WithWeeklyMaintenanceStartTime(Aws::String&& value) { SetWeeklyMaintenanceStartTime(std::move(value)); return *this;}
-    inline UpdateFileSystemLustreConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    void SetWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::forward<WeeklyMaintenanceStartTimeT>(value); }
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    UpdateFileSystemLustreConfiguration& WithWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { SetWeeklyMaintenanceStartTime(std::forward<WeeklyMaintenanceStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetDailyAutomaticBackupStartTime() const{ return m_dailyAutomaticBackupStartTime; }
+    inline const Aws::String& GetDailyAutomaticBackupStartTime() const { return m_dailyAutomaticBackupStartTime; }
     inline bool DailyAutomaticBackupStartTimeHasBeenSet() const { return m_dailyAutomaticBackupStartTimeHasBeenSet; }
-    inline void SetDailyAutomaticBackupStartTime(const Aws::String& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = value; }
-    inline void SetDailyAutomaticBackupStartTime(Aws::String&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::move(value); }
-    inline void SetDailyAutomaticBackupStartTime(const char* value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime.assign(value); }
-    inline UpdateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(const Aws::String& value) { SetDailyAutomaticBackupStartTime(value); return *this;}
-    inline UpdateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(Aws::String&& value) { SetDailyAutomaticBackupStartTime(std::move(value)); return *this;}
-    inline UpdateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(const char* value) { SetDailyAutomaticBackupStartTime(value); return *this;}
+    template<typename DailyAutomaticBackupStartTimeT = Aws::String>
+    void SetDailyAutomaticBackupStartTime(DailyAutomaticBackupStartTimeT&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::forward<DailyAutomaticBackupStartTimeT>(value); }
+    template<typename DailyAutomaticBackupStartTimeT = Aws::String>
+    UpdateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(DailyAutomaticBackupStartTimeT&& value) { SetDailyAutomaticBackupStartTime(std::forward<DailyAutomaticBackupStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +73,7 @@ namespace Model
      * <code>0</code> disables automatic backups. You can retain automatic backups for
      * a maximum of 90 days. The default is <code>0</code>.</p>
      */
-    inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
+    inline int GetAutomaticBackupRetentionDays() const { return m_automaticBackupRetentionDays; }
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
     inline UpdateFileSystemLustreConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
@@ -106,12 +102,10 @@ namespace Model
      * parameter is not supported for file systems with a data repository
      * association.</p>
      */
-    inline const AutoImportPolicyType& GetAutoImportPolicy() const{ return m_autoImportPolicy; }
+    inline AutoImportPolicyType GetAutoImportPolicy() const { return m_autoImportPolicy; }
     inline bool AutoImportPolicyHasBeenSet() const { return m_autoImportPolicyHasBeenSet; }
-    inline void SetAutoImportPolicy(const AutoImportPolicyType& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
-    inline void SetAutoImportPolicy(AutoImportPolicyType&& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = std::move(value); }
-    inline UpdateFileSystemLustreConfiguration& WithAutoImportPolicy(const AutoImportPolicyType& value) { SetAutoImportPolicy(value); return *this;}
-    inline UpdateFileSystemLustreConfiguration& WithAutoImportPolicy(AutoImportPolicyType&& value) { SetAutoImportPolicy(std::move(value)); return *this;}
+    inline void SetAutoImportPolicy(AutoImportPolicyType value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
+    inline UpdateFileSystemLustreConfiguration& WithAutoImportPolicy(AutoImportPolicyType value) { SetAutoImportPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -126,12 +120,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre
      * data compression</a>.</p>
      */
-    inline const DataCompressionType& GetDataCompressionType() const{ return m_dataCompressionType; }
+    inline DataCompressionType GetDataCompressionType() const { return m_dataCompressionType; }
     inline bool DataCompressionTypeHasBeenSet() const { return m_dataCompressionTypeHasBeenSet; }
-    inline void SetDataCompressionType(const DataCompressionType& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = value; }
-    inline void SetDataCompressionType(DataCompressionType&& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = std::move(value); }
-    inline UpdateFileSystemLustreConfiguration& WithDataCompressionType(const DataCompressionType& value) { SetDataCompressionType(value); return *this;}
-    inline UpdateFileSystemLustreConfiguration& WithDataCompressionType(DataCompressionType&& value) { SetDataCompressionType(std::move(value)); return *this;}
+    inline void SetDataCompressionType(DataCompressionType value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = value; }
+    inline UpdateFileSystemLustreConfiguration& WithDataCompressionType(DataCompressionType value) { SetDataCompressionType(value); return *this;}
     ///@}
 
     ///@{
@@ -141,12 +133,12 @@ namespace Model
      * data repositories associated with your file system to Amazon CloudWatch
      * Logs.</p>
      */
-    inline const LustreLogCreateConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+    inline const LustreLogCreateConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-    inline void SetLogConfiguration(const LustreLogCreateConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-    inline void SetLogConfiguration(LustreLogCreateConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-    inline UpdateFileSystemLustreConfiguration& WithLogConfiguration(const LustreLogCreateConfiguration& value) { SetLogConfiguration(value); return *this;}
-    inline UpdateFileSystemLustreConfiguration& WithLogConfiguration(LustreLogCreateConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+    template<typename LogConfigurationT = LustreLogCreateConfiguration>
+    void SetLogConfiguration(LogConfigurationT&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::forward<LogConfigurationT>(value); }
+    template<typename LogConfigurationT = LustreLogCreateConfiguration>
+    UpdateFileSystemLustreConfiguration& WithLogConfiguration(LogConfigurationT&& value) { SetLogConfiguration(std::forward<LogConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,12 +147,12 @@ namespace Model
      * Lustre file system. When enabled, root squash restricts root-level access from
      * clients that try to access your file system as a root user.</p>
      */
-    inline const LustreRootSquashConfiguration& GetRootSquashConfiguration() const{ return m_rootSquashConfiguration; }
+    inline const LustreRootSquashConfiguration& GetRootSquashConfiguration() const { return m_rootSquashConfiguration; }
     inline bool RootSquashConfigurationHasBeenSet() const { return m_rootSquashConfigurationHasBeenSet; }
-    inline void SetRootSquashConfiguration(const LustreRootSquashConfiguration& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = value; }
-    inline void SetRootSquashConfiguration(LustreRootSquashConfiguration&& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = std::move(value); }
-    inline UpdateFileSystemLustreConfiguration& WithRootSquashConfiguration(const LustreRootSquashConfiguration& value) { SetRootSquashConfiguration(value); return *this;}
-    inline UpdateFileSystemLustreConfiguration& WithRootSquashConfiguration(LustreRootSquashConfiguration&& value) { SetRootSquashConfiguration(std::move(value)); return *this;}
+    template<typename RootSquashConfigurationT = LustreRootSquashConfiguration>
+    void SetRootSquashConfiguration(RootSquashConfigurationT&& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = std::forward<RootSquashConfigurationT>(value); }
+    template<typename RootSquashConfigurationT = LustreRootSquashConfiguration>
+    UpdateFileSystemLustreConfiguration& WithRootSquashConfiguration(RootSquashConfigurationT&& value) { SetRootSquashConfiguration(std::forward<RootSquashConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,7 +168,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html">
      * Managing throughput capacity</a>.</p>
      */
-    inline int GetPerUnitStorageThroughput() const{ return m_perUnitStorageThroughput; }
+    inline int GetPerUnitStorageThroughput() const { return m_perUnitStorageThroughput; }
     inline bool PerUnitStorageThroughputHasBeenSet() const { return m_perUnitStorageThroughputHasBeenSet; }
     inline void SetPerUnitStorageThroughput(int value) { m_perUnitStorageThroughputHasBeenSet = true; m_perUnitStorageThroughput = value; }
     inline UpdateFileSystemLustreConfiguration& WithPerUnitStorageThroughput(int value) { SetPerUnitStorageThroughput(value); return *this;}
@@ -189,12 +181,12 @@ namespace Model
      * configuration is enabled, the file system supports increasing metadata
      * performance.</p>
      */
-    inline const UpdateFileSystemLustreMetadataConfiguration& GetMetadataConfiguration() const{ return m_metadataConfiguration; }
+    inline const UpdateFileSystemLustreMetadataConfiguration& GetMetadataConfiguration() const { return m_metadataConfiguration; }
     inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
-    inline void SetMetadataConfiguration(const UpdateFileSystemLustreMetadataConfiguration& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = value; }
-    inline void SetMetadataConfiguration(UpdateFileSystemLustreMetadataConfiguration&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::move(value); }
-    inline UpdateFileSystemLustreConfiguration& WithMetadataConfiguration(const UpdateFileSystemLustreMetadataConfiguration& value) { SetMetadataConfiguration(value); return *this;}
-    inline UpdateFileSystemLustreConfiguration& WithMetadataConfiguration(UpdateFileSystemLustreMetadataConfiguration&& value) { SetMetadataConfiguration(std::move(value)); return *this;}
+    template<typename MetadataConfigurationT = UpdateFileSystemLustreMetadataConfiguration>
+    void SetMetadataConfiguration(MetadataConfigurationT&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::forward<MetadataConfigurationT>(value); }
+    template<typename MetadataConfigurationT = UpdateFileSystemLustreMetadataConfiguration>
+    UpdateFileSystemLustreConfiguration& WithMetadataConfiguration(MetadataConfigurationT&& value) { SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -204,13 +196,13 @@ namespace Model
     Aws::String m_dailyAutomaticBackupStartTime;
     bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
-    int m_automaticBackupRetentionDays;
+    int m_automaticBackupRetentionDays{0};
     bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
-    AutoImportPolicyType m_autoImportPolicy;
+    AutoImportPolicyType m_autoImportPolicy{AutoImportPolicyType::NOT_SET};
     bool m_autoImportPolicyHasBeenSet = false;
 
-    DataCompressionType m_dataCompressionType;
+    DataCompressionType m_dataCompressionType{DataCompressionType::NOT_SET};
     bool m_dataCompressionTypeHasBeenSet = false;
 
     LustreLogCreateConfiguration m_logConfiguration;
@@ -219,7 +211,7 @@ namespace Model
     LustreRootSquashConfiguration m_rootSquashConfiguration;
     bool m_rootSquashConfigurationHasBeenSet = false;
 
-    int m_perUnitStorageThroughput;
+    int m_perUnitStorageThroughput{0};
     bool m_perUnitStorageThroughputHasBeenSet = false;
 
     UpdateFileSystemLustreMetadataConfiguration m_metadataConfiguration;

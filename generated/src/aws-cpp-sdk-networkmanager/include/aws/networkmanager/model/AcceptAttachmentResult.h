@@ -28,7 +28,7 @@ namespace Model
   class AcceptAttachmentResult
   {
   public:
-    AWS_NETWORKMANAGER_API AcceptAttachmentResult();
+    AWS_NETWORKMANAGER_API AcceptAttachmentResult() = default;
     AWS_NETWORKMANAGER_API AcceptAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API AcceptAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The response to the attachment request. </p>
      */
-    inline const Attachment& GetAttachment() const{ return m_attachment; }
-    inline void SetAttachment(const Attachment& value) { m_attachment = value; }
-    inline void SetAttachment(Attachment&& value) { m_attachment = std::move(value); }
-    inline AcceptAttachmentResult& WithAttachment(const Attachment& value) { SetAttachment(value); return *this;}
-    inline AcceptAttachmentResult& WithAttachment(Attachment&& value) { SetAttachment(std::move(value)); return *this;}
+    inline const Attachment& GetAttachment() const { return m_attachment; }
+    template<typename AttachmentT = Attachment>
+    void SetAttachment(AttachmentT&& value) { m_attachmentHasBeenSet = true; m_attachment = std::forward<AttachmentT>(value); }
+    template<typename AttachmentT = Attachment>
+    AcceptAttachmentResult& WithAttachment(AttachmentT&& value) { SetAttachment(std::forward<AttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AcceptAttachmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AcceptAttachmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AcceptAttachmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AcceptAttachmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Attachment m_attachment;
+    bool m_attachmentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

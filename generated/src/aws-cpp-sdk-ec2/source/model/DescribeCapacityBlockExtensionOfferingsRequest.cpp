@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeCapacityBlockExtensionOfferingsRequest::DescribeCapacityBlockExtensionOfferingsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_capacityBlockExtensionDurationHours(0),
-    m_capacityBlockExtensionDurationHoursHasBeenSet(false),
-    m_capacityReservationIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCapacityBlockExtensionOfferingsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

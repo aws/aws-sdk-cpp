@@ -18,14 +18,7 @@ namespace Chime
 namespace Model
 {
 
-RetentionSettings::RetentionSettings() : 
-    m_roomRetentionSettingsHasBeenSet(false),
-    m_conversationRetentionSettingsHasBeenSet(false)
-{
-}
-
 RetentionSettings::RetentionSettings(JsonView jsonValue)
-  : RetentionSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RetentionSettings& RetentionSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoomRetentionSettings"))
   {
     m_roomRetentionSettings = jsonValue.GetObject("RoomRetentionSettings");
-
     m_roomRetentionSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConversationRetentionSettings"))
   {
     m_conversationRetentionSettings = jsonValue.GetObject("ConversationRetentionSettings");
-
     m_conversationRetentionSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

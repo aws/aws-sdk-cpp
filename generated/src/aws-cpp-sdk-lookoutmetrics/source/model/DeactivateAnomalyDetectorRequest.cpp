@@ -12,11 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeactivateAnomalyDetectorRequest::DeactivateAnomalyDetectorRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false)
-{
-}
-
 Aws::String DeactivateAnomalyDetectorRequest::SerializePayload() const
 {
   JsonValue payload;

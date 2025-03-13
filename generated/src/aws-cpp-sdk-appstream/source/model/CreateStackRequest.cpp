@@ -12,22 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStackRequest::CreateStackRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_storageConnectorsHasBeenSet(false),
-    m_redirectURLHasBeenSet(false),
-    m_feedbackURLHasBeenSet(false),
-    m_userSettingsHasBeenSet(false),
-    m_applicationSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false),
-    m_embedHostDomainsHasBeenSet(false),
-    m_streamingExperienceSettingsHasBeenSet(false)
-{
-}
-
 Aws::String CreateStackRequest::SerializePayload() const
 {
   JsonValue payload;

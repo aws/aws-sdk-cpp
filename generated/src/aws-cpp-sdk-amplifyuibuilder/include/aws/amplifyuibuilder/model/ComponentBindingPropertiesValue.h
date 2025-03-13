@@ -35,7 +35,7 @@ namespace Model
   class ComponentBindingPropertiesValue
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValue();
+    AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValue() = default;
     AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,40 +45,36 @@ namespace Model
     /**
      * <p>The property type.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline ComponentBindingPropertiesValue& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline ComponentBindingPropertiesValue& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline ComponentBindingPropertiesValue& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    ComponentBindingPropertiesValue& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the properties to customize with data at runtime.</p>
      */
-    inline const ComponentBindingPropertiesValueProperties& GetBindingProperties() const{ return m_bindingProperties; }
+    inline const ComponentBindingPropertiesValueProperties& GetBindingProperties() const { return m_bindingProperties; }
     inline bool BindingPropertiesHasBeenSet() const { return m_bindingPropertiesHasBeenSet; }
-    inline void SetBindingProperties(const ComponentBindingPropertiesValueProperties& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = value; }
-    inline void SetBindingProperties(ComponentBindingPropertiesValueProperties&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::move(value); }
-    inline ComponentBindingPropertiesValue& WithBindingProperties(const ComponentBindingPropertiesValueProperties& value) { SetBindingProperties(value); return *this;}
-    inline ComponentBindingPropertiesValue& WithBindingProperties(ComponentBindingPropertiesValueProperties&& value) { SetBindingProperties(std::move(value)); return *this;}
+    template<typename BindingPropertiesT = ComponentBindingPropertiesValueProperties>
+    void SetBindingProperties(BindingPropertiesT&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::forward<BindingPropertiesT>(value); }
+    template<typename BindingPropertiesT = ComponentBindingPropertiesValueProperties>
+    ComponentBindingPropertiesValue& WithBindingProperties(BindingPropertiesT&& value) { SetBindingProperties(std::forward<BindingPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default value of the property.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline ComponentBindingPropertiesValue& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline ComponentBindingPropertiesValue& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline ComponentBindingPropertiesValue& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    ComponentBindingPropertiesValue& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
   private:
 

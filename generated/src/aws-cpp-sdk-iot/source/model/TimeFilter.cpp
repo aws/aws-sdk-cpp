@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-TimeFilter::TimeFilter() : 
-    m_afterHasBeenSet(false),
-    m_beforeHasBeenSet(false)
-{
-}
-
 TimeFilter::TimeFilter(JsonView jsonValue)
-  : TimeFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimeFilter& TimeFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("after"))
   {
     m_after = jsonValue.GetString("after");
-
     m_afterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("before"))
   {
     m_before = jsonValue.GetString("before");
-
     m_beforeHasBeenSet = true;
   }
-
   return *this;
 }
 

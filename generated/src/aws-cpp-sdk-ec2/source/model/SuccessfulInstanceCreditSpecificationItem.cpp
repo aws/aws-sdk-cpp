@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SuccessfulInstanceCreditSpecificationItem::SuccessfulInstanceCreditSpecificationItem() : 
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 SuccessfulInstanceCreditSpecificationItem::SuccessfulInstanceCreditSpecificationItem(const XmlNode& xmlNode)
-  : SuccessfulInstanceCreditSpecificationItem()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ SuccessfulInstanceCreditSpecificationItem& SuccessfulInstanceCreditSpecification
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
   }
 

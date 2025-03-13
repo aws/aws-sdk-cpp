@@ -32,7 +32,7 @@ namespace Model
   class AddBridgeNetworkOutputRequest
   {
   public:
-    AWS_MEDIACONNECT_API AddBridgeNetworkOutputRequest();
+    AWS_MEDIACONNECT_API AddBridgeNetworkOutputRequest() = default;
     AWS_MEDIACONNECT_API AddBridgeNetworkOutputRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API AddBridgeNetworkOutputRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * The network output IP Address.
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline AddBridgeNetworkOutputRequest& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline AddBridgeNetworkOutputRequest& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline AddBridgeNetworkOutputRequest& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    AddBridgeNetworkOutputRequest& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,35 +55,31 @@ namespace Model
      * The network output name. This name is used to reference the output and must be
      * unique among outputs in this bridge.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AddBridgeNetworkOutputRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AddBridgeNetworkOutputRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AddBridgeNetworkOutputRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AddBridgeNetworkOutputRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The network output's gateway network name.
      */
-    inline const Aws::String& GetNetworkName() const{ return m_networkName; }
+    inline const Aws::String& GetNetworkName() const { return m_networkName; }
     inline bool NetworkNameHasBeenSet() const { return m_networkNameHasBeenSet; }
-    inline void SetNetworkName(const Aws::String& value) { m_networkNameHasBeenSet = true; m_networkName = value; }
-    inline void SetNetworkName(Aws::String&& value) { m_networkNameHasBeenSet = true; m_networkName = std::move(value); }
-    inline void SetNetworkName(const char* value) { m_networkNameHasBeenSet = true; m_networkName.assign(value); }
-    inline AddBridgeNetworkOutputRequest& WithNetworkName(const Aws::String& value) { SetNetworkName(value); return *this;}
-    inline AddBridgeNetworkOutputRequest& WithNetworkName(Aws::String&& value) { SetNetworkName(std::move(value)); return *this;}
-    inline AddBridgeNetworkOutputRequest& WithNetworkName(const char* value) { SetNetworkName(value); return *this;}
+    template<typename NetworkNameT = Aws::String>
+    void SetNetworkName(NetworkNameT&& value) { m_networkNameHasBeenSet = true; m_networkName = std::forward<NetworkNameT>(value); }
+    template<typename NetworkNameT = Aws::String>
+    AddBridgeNetworkOutputRequest& WithNetworkName(NetworkNameT&& value) { SetNetworkName(std::forward<NetworkNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The network output port.
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline AddBridgeNetworkOutputRequest& WithPort(int value) { SetPort(value); return *this;}
@@ -95,19 +89,17 @@ namespace Model
     /**
      * The network output protocol.
      */
-    inline const Protocol& GetProtocol() const{ return m_protocol; }
+    inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline AddBridgeNetworkOutputRequest& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
-    inline AddBridgeNetworkOutputRequest& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(Protocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline AddBridgeNetworkOutputRequest& WithProtocol(Protocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The network output TTL.
      */
-    inline int GetTtl() const{ return m_ttl; }
+    inline int GetTtl() const { return m_ttl; }
     inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
     inline void SetTtl(int value) { m_ttlHasBeenSet = true; m_ttl = value; }
     inline AddBridgeNetworkOutputRequest& WithTtl(int value) { SetTtl(value); return *this;}
@@ -123,13 +115,13 @@ namespace Model
     Aws::String m_networkName;
     bool m_networkNameHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
-    Protocol m_protocol;
+    Protocol m_protocol{Protocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
-    int m_ttl;
+    int m_ttl{0};
     bool m_ttlHasBeenSet = false;
   };
 

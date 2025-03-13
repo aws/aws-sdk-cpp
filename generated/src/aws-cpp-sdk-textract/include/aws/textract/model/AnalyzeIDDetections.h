@@ -33,7 +33,7 @@ namespace Model
   class AnalyzeIDDetections
   {
   public:
-    AWS_TEXTRACT_API AnalyzeIDDetections();
+    AWS_TEXTRACT_API AnalyzeIDDetections() = default;
     AWS_TEXTRACT_API AnalyzeIDDetections(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API AnalyzeIDDetections& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>Text of either the normalized field or value associated with it.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline AnalyzeIDDetections& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline AnalyzeIDDetections& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline AnalyzeIDDetections& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    AnalyzeIDDetections& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,19 @@ namespace Model
      * <p>Only returned for dates, returns the type of value detected and the date
      * written in a more machine readable way.</p>
      */
-    inline const NormalizedValue& GetNormalizedValue() const{ return m_normalizedValue; }
+    inline const NormalizedValue& GetNormalizedValue() const { return m_normalizedValue; }
     inline bool NormalizedValueHasBeenSet() const { return m_normalizedValueHasBeenSet; }
-    inline void SetNormalizedValue(const NormalizedValue& value) { m_normalizedValueHasBeenSet = true; m_normalizedValue = value; }
-    inline void SetNormalizedValue(NormalizedValue&& value) { m_normalizedValueHasBeenSet = true; m_normalizedValue = std::move(value); }
-    inline AnalyzeIDDetections& WithNormalizedValue(const NormalizedValue& value) { SetNormalizedValue(value); return *this;}
-    inline AnalyzeIDDetections& WithNormalizedValue(NormalizedValue&& value) { SetNormalizedValue(std::move(value)); return *this;}
+    template<typename NormalizedValueT = NormalizedValue>
+    void SetNormalizedValue(NormalizedValueT&& value) { m_normalizedValueHasBeenSet = true; m_normalizedValue = std::forward<NormalizedValueT>(value); }
+    template<typename NormalizedValueT = NormalizedValue>
+    AnalyzeIDDetections& WithNormalizedValue(NormalizedValueT&& value) { SetNormalizedValue(std::forward<NormalizedValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The confidence score of the detected text.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline AnalyzeIDDetections& WithConfidence(double value) { SetConfidence(value); return *this;}
@@ -83,7 +81,7 @@ namespace Model
     NormalizedValue m_normalizedValue;
     bool m_normalizedValueHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
   };
 

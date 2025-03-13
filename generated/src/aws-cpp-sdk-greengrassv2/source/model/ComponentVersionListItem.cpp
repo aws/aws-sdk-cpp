@@ -18,15 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-ComponentVersionListItem::ComponentVersionListItem() : 
-    m_componentNameHasBeenSet(false),
-    m_componentVersionHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 ComponentVersionListItem::ComponentVersionListItem(JsonView jsonValue)
-  : ComponentVersionListItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ComponentVersionListItem& ComponentVersionListItem::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("componentName"))
   {
     m_componentName = jsonValue.GetString("componentName");
-
     m_componentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentVersion"))
   {
     m_componentVersion = jsonValue.GetString("componentVersion");
-
     m_componentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

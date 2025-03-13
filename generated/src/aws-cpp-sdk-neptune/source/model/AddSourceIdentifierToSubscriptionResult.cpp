@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddSourceIdentifierToSubscriptionResult::AddSourceIdentifierToSubscriptionResult()
-{
-}
-
 AddSourceIdentifierToSubscriptionResult::AddSourceIdentifierToSubscriptionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ AddSourceIdentifierToSubscriptionResult& AddSourceIdentifierToSubscriptionResult
     if(!eventSubscriptionNode.IsNull())
     {
       m_eventSubscription = eventSubscriptionNode;
+      m_eventSubscriptionHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Neptune::Model::AddSourceIdentifierToSubscriptionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

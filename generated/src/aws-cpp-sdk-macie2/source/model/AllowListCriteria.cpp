@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-AllowListCriteria::AllowListCriteria() : 
-    m_regexHasBeenSet(false),
-    m_s3WordsListHasBeenSet(false)
-{
-}
-
 AllowListCriteria::AllowListCriteria(JsonView jsonValue)
-  : AllowListCriteria()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AllowListCriteria& AllowListCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("regex"))
   {
     m_regex = jsonValue.GetString("regex");
-
     m_regexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3WordsList"))
   {
     m_s3WordsList = jsonValue.GetObject("s3WordsList");
-
     m_s3WordsListHasBeenSet = true;
   }
-
   return *this;
 }
 

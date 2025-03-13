@@ -20,20 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-AccessPoint::AccessPoint() : 
-    m_nameHasBeenSet(false),
-    m_networkOrigin(NetworkOrigin::NOT_SET),
-    m_networkOriginHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_accessPointArnHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_bucketAccountIdHasBeenSet(false)
-{
-}
-
 AccessPoint::AccessPoint(const XmlNode& xmlNode)
-  : AccessPoint()
 {
   *this = xmlNode;
 }
@@ -49,42 +36,49 @@ AccessPoint& AccessPoint::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode networkOriginNode = resultNode.FirstChild("NetworkOrigin");
     if(!networkOriginNode.IsNull())
     {
-      m_networkOrigin = NetworkOriginMapper::GetNetworkOriginForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkOriginNode.GetText()).c_str()).c_str());
+      m_networkOrigin = NetworkOriginMapper::GetNetworkOriginForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkOriginNode.GetText()).c_str()));
       m_networkOriginHasBeenSet = true;
+       m_networkOriginHasBeenSet = true;
     }
     XmlNode vpcConfigurationNode = resultNode.FirstChild("VpcConfiguration");
     if(!vpcConfigurationNode.IsNull())
     {
       m_vpcConfiguration = vpcConfigurationNode;
       m_vpcConfigurationHasBeenSet = true;
+       m_vpcConfigurationHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode accessPointArnNode = resultNode.FirstChild("AccessPointArn");
     if(!accessPointArnNode.IsNull())
     {
       m_accessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessPointArnNode.GetText());
       m_accessPointArnHasBeenSet = true;
+       m_accessPointArnHasBeenSet = true;
     }
     XmlNode aliasNode = resultNode.FirstChild("Alias");
     if(!aliasNode.IsNull())
     {
       m_alias = Aws::Utils::Xml::DecodeEscapedXmlText(aliasNode.GetText());
       m_aliasHasBeenSet = true;
+       m_aliasHasBeenSet = true;
     }
     XmlNode bucketAccountIdNode = resultNode.FirstChild("BucketAccountId");
     if(!bucketAccountIdNode.IsNull())
     {
       m_bucketAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(bucketAccountIdNode.GetText());
       m_bucketAccountIdHasBeenSet = true;
+       m_bucketAccountIdHasBeenSet = true;
     }
   }
 

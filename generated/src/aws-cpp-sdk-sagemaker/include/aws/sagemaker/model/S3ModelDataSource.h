@@ -36,7 +36,7 @@ namespace Model
   class S3ModelDataSource
   {
   public:
-    AWS_SAGEMAKER_API S3ModelDataSource();
+    AWS_SAGEMAKER_API S3ModelDataSource() = default;
     AWS_SAGEMAKER_API S3ModelDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API S3ModelDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>Specifies the S3 path of ML model data to deploy.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline S3ModelDataSource& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline S3ModelDataSource& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline S3ModelDataSource& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    S3ModelDataSource& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,10 @@ namespace Model
      * <code>S3Object</code>, <code>S3Uri</code> identifies an object that is the ML
      * model data to deploy.</p>
      */
-    inline const S3ModelDataType& GetS3DataType() const{ return m_s3DataType; }
+    inline S3ModelDataType GetS3DataType() const { return m_s3DataType; }
     inline bool S3DataTypeHasBeenSet() const { return m_s3DataTypeHasBeenSet; }
-    inline void SetS3DataType(const S3ModelDataType& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
-    inline void SetS3DataType(S3ModelDataType&& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = std::move(value); }
-    inline S3ModelDataSource& WithS3DataType(const S3ModelDataType& value) { SetS3DataType(value); return *this;}
-    inline S3ModelDataSource& WithS3DataType(S3ModelDataType&& value) { SetS3DataType(std::move(value)); return *this;}
+    inline void SetS3DataType(S3ModelDataType value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
+    inline S3ModelDataSource& WithS3DataType(S3ModelDataType value) { SetS3DataType(value); return *this;}
     ///@}
 
     ///@{
@@ -118,12 +114,10 @@ namespace Model
      * 0-byte object ends with a slash (/) which violates SageMaker restrictions on
      * model artifact file names, leading to model deployment failure. </p> </li> </ul>
      */
-    inline const ModelCompressionType& GetCompressionType() const{ return m_compressionType; }
+    inline ModelCompressionType GetCompressionType() const { return m_compressionType; }
     inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
-    inline void SetCompressionType(const ModelCompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
-    inline void SetCompressionType(ModelCompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
-    inline S3ModelDataSource& WithCompressionType(const ModelCompressionType& value) { SetCompressionType(value); return *this;}
-    inline S3ModelDataSource& WithCompressionType(ModelCompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
+    inline void SetCompressionType(ModelCompressionType value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
+    inline S3ModelDataSource& WithCompressionType(ModelCompressionType value) { SetCompressionType(value); return *this;}
     ///@}
 
     ///@{
@@ -134,24 +128,24 @@ namespace Model
      * with any applicable license terms and making sure they are acceptable for your
      * use case before downloading or using a model.</p>
      */
-    inline const ModelAccessConfig& GetModelAccessConfig() const{ return m_modelAccessConfig; }
+    inline const ModelAccessConfig& GetModelAccessConfig() const { return m_modelAccessConfig; }
     inline bool ModelAccessConfigHasBeenSet() const { return m_modelAccessConfigHasBeenSet; }
-    inline void SetModelAccessConfig(const ModelAccessConfig& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = value; }
-    inline void SetModelAccessConfig(ModelAccessConfig&& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = std::move(value); }
-    inline S3ModelDataSource& WithModelAccessConfig(const ModelAccessConfig& value) { SetModelAccessConfig(value); return *this;}
-    inline S3ModelDataSource& WithModelAccessConfig(ModelAccessConfig&& value) { SetModelAccessConfig(std::move(value)); return *this;}
+    template<typename ModelAccessConfigT = ModelAccessConfig>
+    void SetModelAccessConfig(ModelAccessConfigT&& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = std::forward<ModelAccessConfigT>(value); }
+    template<typename ModelAccessConfigT = ModelAccessConfig>
+    S3ModelDataSource& WithModelAccessConfig(ModelAccessConfigT&& value) { SetModelAccessConfig(std::forward<ModelAccessConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration information for hub access.</p>
      */
-    inline const InferenceHubAccessConfig& GetHubAccessConfig() const{ return m_hubAccessConfig; }
+    inline const InferenceHubAccessConfig& GetHubAccessConfig() const { return m_hubAccessConfig; }
     inline bool HubAccessConfigHasBeenSet() const { return m_hubAccessConfigHasBeenSet; }
-    inline void SetHubAccessConfig(const InferenceHubAccessConfig& value) { m_hubAccessConfigHasBeenSet = true; m_hubAccessConfig = value; }
-    inline void SetHubAccessConfig(InferenceHubAccessConfig&& value) { m_hubAccessConfigHasBeenSet = true; m_hubAccessConfig = std::move(value); }
-    inline S3ModelDataSource& WithHubAccessConfig(const InferenceHubAccessConfig& value) { SetHubAccessConfig(value); return *this;}
-    inline S3ModelDataSource& WithHubAccessConfig(InferenceHubAccessConfig&& value) { SetHubAccessConfig(std::move(value)); return *this;}
+    template<typename HubAccessConfigT = InferenceHubAccessConfig>
+    void SetHubAccessConfig(HubAccessConfigT&& value) { m_hubAccessConfigHasBeenSet = true; m_hubAccessConfig = std::forward<HubAccessConfigT>(value); }
+    template<typename HubAccessConfigT = InferenceHubAccessConfig>
+    S3ModelDataSource& WithHubAccessConfig(HubAccessConfigT&& value) { SetHubAccessConfig(std::forward<HubAccessConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,52 +153,46 @@ namespace Model
      * <p>The Amazon S3 URI of the manifest file. The manifest file is a CSV file that
      * stores the artifact locations.</p>
      */
-    inline const Aws::String& GetManifestS3Uri() const{ return m_manifestS3Uri; }
+    inline const Aws::String& GetManifestS3Uri() const { return m_manifestS3Uri; }
     inline bool ManifestS3UriHasBeenSet() const { return m_manifestS3UriHasBeenSet; }
-    inline void SetManifestS3Uri(const Aws::String& value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri = value; }
-    inline void SetManifestS3Uri(Aws::String&& value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri = std::move(value); }
-    inline void SetManifestS3Uri(const char* value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri.assign(value); }
-    inline S3ModelDataSource& WithManifestS3Uri(const Aws::String& value) { SetManifestS3Uri(value); return *this;}
-    inline S3ModelDataSource& WithManifestS3Uri(Aws::String&& value) { SetManifestS3Uri(std::move(value)); return *this;}
-    inline S3ModelDataSource& WithManifestS3Uri(const char* value) { SetManifestS3Uri(value); return *this;}
+    template<typename ManifestS3UriT = Aws::String>
+    void SetManifestS3Uri(ManifestS3UriT&& value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri = std::forward<ManifestS3UriT>(value); }
+    template<typename ManifestS3UriT = Aws::String>
+    S3ModelDataSource& WithManifestS3Uri(ManifestS3UriT&& value) { SetManifestS3Uri(std::forward<ManifestS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ETag associated with S3 URI.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-    inline S3ModelDataSource& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline S3ModelDataSource& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline S3ModelDataSource& WithETag(const char* value) { SetETag(value); return *this;}
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    S3ModelDataSource& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ETag associated with Manifest S3 URI.</p>
      */
-    inline const Aws::String& GetManifestEtag() const{ return m_manifestEtag; }
+    inline const Aws::String& GetManifestEtag() const { return m_manifestEtag; }
     inline bool ManifestEtagHasBeenSet() const { return m_manifestEtagHasBeenSet; }
-    inline void SetManifestEtag(const Aws::String& value) { m_manifestEtagHasBeenSet = true; m_manifestEtag = value; }
-    inline void SetManifestEtag(Aws::String&& value) { m_manifestEtagHasBeenSet = true; m_manifestEtag = std::move(value); }
-    inline void SetManifestEtag(const char* value) { m_manifestEtagHasBeenSet = true; m_manifestEtag.assign(value); }
-    inline S3ModelDataSource& WithManifestEtag(const Aws::String& value) { SetManifestEtag(value); return *this;}
-    inline S3ModelDataSource& WithManifestEtag(Aws::String&& value) { SetManifestEtag(std::move(value)); return *this;}
-    inline S3ModelDataSource& WithManifestEtag(const char* value) { SetManifestEtag(value); return *this;}
+    template<typename ManifestEtagT = Aws::String>
+    void SetManifestEtag(ManifestEtagT&& value) { m_manifestEtagHasBeenSet = true; m_manifestEtag = std::forward<ManifestEtagT>(value); }
+    template<typename ManifestEtagT = Aws::String>
+    S3ModelDataSource& WithManifestEtag(ManifestEtagT&& value) { SetManifestEtag(std::forward<ManifestEtagT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet = false;
 
-    S3ModelDataType m_s3DataType;
+    S3ModelDataType m_s3DataType{S3ModelDataType::NOT_SET};
     bool m_s3DataTypeHasBeenSet = false;
 
-    ModelCompressionType m_compressionType;
+    ModelCompressionType m_compressionType{ModelCompressionType::NOT_SET};
     bool m_compressionTypeHasBeenSet = false;
 
     ModelAccessConfig m_modelAccessConfig;

@@ -21,7 +21,7 @@ namespace Model
   class GetDefaultPatchBaselineRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetDefaultPatchBaselineRequest();
+    AWS_SSM_API GetDefaultPatchBaselineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,16 +38,14 @@ namespace Model
     /**
      * <p>Returns the default patch baseline for the specified operating system.</p>
      */
-    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+    inline OperatingSystem GetOperatingSystem() const { return m_operatingSystem; }
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
-    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
-    inline GetDefaultPatchBaselineRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
-    inline GetDefaultPatchBaselineRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+    inline void SetOperatingSystem(OperatingSystem value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+    inline GetDefaultPatchBaselineRequest& WithOperatingSystem(OperatingSystem value) { SetOperatingSystem(value); return *this;}
     ///@}
   private:
 
-    OperatingSystem m_operatingSystem;
+    OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
     bool m_operatingSystemHasBeenSet = false;
   };
 

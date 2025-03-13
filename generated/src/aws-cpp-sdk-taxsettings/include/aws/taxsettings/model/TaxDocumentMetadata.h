@@ -31,7 +31,7 @@ namespace Model
   class TaxDocumentMetadata
   {
   public:
-    AWS_TAXSETTINGS_API TaxDocumentMetadata();
+    AWS_TAXSETTINGS_API TaxDocumentMetadata() = default;
     AWS_TAXSETTINGS_API TaxDocumentMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API TaxDocumentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
      * <code>ListTaxRegistrations</code> API operation. This token is valid for 24
      * hours.</p> 
      */
-    inline const Aws::String& GetTaxDocumentAccessToken() const{ return m_taxDocumentAccessToken; }
+    inline const Aws::String& GetTaxDocumentAccessToken() const { return m_taxDocumentAccessToken; }
     inline bool TaxDocumentAccessTokenHasBeenSet() const { return m_taxDocumentAccessTokenHasBeenSet; }
-    inline void SetTaxDocumentAccessToken(const Aws::String& value) { m_taxDocumentAccessTokenHasBeenSet = true; m_taxDocumentAccessToken = value; }
-    inline void SetTaxDocumentAccessToken(Aws::String&& value) { m_taxDocumentAccessTokenHasBeenSet = true; m_taxDocumentAccessToken = std::move(value); }
-    inline void SetTaxDocumentAccessToken(const char* value) { m_taxDocumentAccessTokenHasBeenSet = true; m_taxDocumentAccessToken.assign(value); }
-    inline TaxDocumentMetadata& WithTaxDocumentAccessToken(const Aws::String& value) { SetTaxDocumentAccessToken(value); return *this;}
-    inline TaxDocumentMetadata& WithTaxDocumentAccessToken(Aws::String&& value) { SetTaxDocumentAccessToken(std::move(value)); return *this;}
-    inline TaxDocumentMetadata& WithTaxDocumentAccessToken(const char* value) { SetTaxDocumentAccessToken(value); return *this;}
+    template<typename TaxDocumentAccessTokenT = Aws::String>
+    void SetTaxDocumentAccessToken(TaxDocumentAccessTokenT&& value) { m_taxDocumentAccessTokenHasBeenSet = true; m_taxDocumentAccessToken = std::forward<TaxDocumentAccessTokenT>(value); }
+    template<typename TaxDocumentAccessTokenT = Aws::String>
+    TaxDocumentMetadata& WithTaxDocumentAccessToken(TaxDocumentAccessTokenT&& value) { SetTaxDocumentAccessToken(std::forward<TaxDocumentAccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of your tax document.</p>
      */
-    inline const Aws::String& GetTaxDocumentName() const{ return m_taxDocumentName; }
+    inline const Aws::String& GetTaxDocumentName() const { return m_taxDocumentName; }
     inline bool TaxDocumentNameHasBeenSet() const { return m_taxDocumentNameHasBeenSet; }
-    inline void SetTaxDocumentName(const Aws::String& value) { m_taxDocumentNameHasBeenSet = true; m_taxDocumentName = value; }
-    inline void SetTaxDocumentName(Aws::String&& value) { m_taxDocumentNameHasBeenSet = true; m_taxDocumentName = std::move(value); }
-    inline void SetTaxDocumentName(const char* value) { m_taxDocumentNameHasBeenSet = true; m_taxDocumentName.assign(value); }
-    inline TaxDocumentMetadata& WithTaxDocumentName(const Aws::String& value) { SetTaxDocumentName(value); return *this;}
-    inline TaxDocumentMetadata& WithTaxDocumentName(Aws::String&& value) { SetTaxDocumentName(std::move(value)); return *this;}
-    inline TaxDocumentMetadata& WithTaxDocumentName(const char* value) { SetTaxDocumentName(value); return *this;}
+    template<typename TaxDocumentNameT = Aws::String>
+    void SetTaxDocumentName(TaxDocumentNameT&& value) { m_taxDocumentNameHasBeenSet = true; m_taxDocumentName = std::forward<TaxDocumentNameT>(value); }
+    template<typename TaxDocumentNameT = Aws::String>
+    TaxDocumentMetadata& WithTaxDocumentName(TaxDocumentNameT&& value) { SetTaxDocumentName(std::forward<TaxDocumentNameT>(value)); return *this;}
     ///@}
   private:
 

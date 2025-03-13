@@ -28,7 +28,7 @@ namespace Model
   class GetAddonInstanceResult
   {
   public:
-    AWS_MAILMANAGER_API GetAddonInstanceResult();
+    AWS_MAILMANAGER_API GetAddonInstanceResult() = default;
     AWS_MAILMANAGER_API GetAddonInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API GetAddonInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Add On instance.</p>
      */
-    inline const Aws::String& GetAddonInstanceArn() const{ return m_addonInstanceArn; }
-    inline void SetAddonInstanceArn(const Aws::String& value) { m_addonInstanceArn = value; }
-    inline void SetAddonInstanceArn(Aws::String&& value) { m_addonInstanceArn = std::move(value); }
-    inline void SetAddonInstanceArn(const char* value) { m_addonInstanceArn.assign(value); }
-    inline GetAddonInstanceResult& WithAddonInstanceArn(const Aws::String& value) { SetAddonInstanceArn(value); return *this;}
-    inline GetAddonInstanceResult& WithAddonInstanceArn(Aws::String&& value) { SetAddonInstanceArn(std::move(value)); return *this;}
-    inline GetAddonInstanceResult& WithAddonInstanceArn(const char* value) { SetAddonInstanceArn(value); return *this;}
+    inline const Aws::String& GetAddonInstanceArn() const { return m_addonInstanceArn; }
+    template<typename AddonInstanceArnT = Aws::String>
+    void SetAddonInstanceArn(AddonInstanceArnT&& value) { m_addonInstanceArnHasBeenSet = true; m_addonInstanceArn = std::forward<AddonInstanceArnT>(value); }
+    template<typename AddonInstanceArnT = Aws::String>
+    GetAddonInstanceResult& WithAddonInstanceArn(AddonInstanceArnT&& value) { SetAddonInstanceArn(std::forward<AddonInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,60 +49,59 @@ namespace Model
      * <p>The name of the Add On provider associated to the subscription of the
      * instance.</p>
      */
-    inline const Aws::String& GetAddonName() const{ return m_addonName; }
-    inline void SetAddonName(const Aws::String& value) { m_addonName = value; }
-    inline void SetAddonName(Aws::String&& value) { m_addonName = std::move(value); }
-    inline void SetAddonName(const char* value) { m_addonName.assign(value); }
-    inline GetAddonInstanceResult& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
-    inline GetAddonInstanceResult& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
-    inline GetAddonInstanceResult& WithAddonName(const char* value) { SetAddonName(value); return *this;}
+    inline const Aws::String& GetAddonName() const { return m_addonName; }
+    template<typename AddonNameT = Aws::String>
+    void SetAddonName(AddonNameT&& value) { m_addonNameHasBeenSet = true; m_addonName = std::forward<AddonNameT>(value); }
+    template<typename AddonNameT = Aws::String>
+    GetAddonInstanceResult& WithAddonName(AddonNameT&& value) { SetAddonName(std::forward<AddonNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subscription ID associated to the instance.</p>
      */
-    inline const Aws::String& GetAddonSubscriptionId() const{ return m_addonSubscriptionId; }
-    inline void SetAddonSubscriptionId(const Aws::String& value) { m_addonSubscriptionId = value; }
-    inline void SetAddonSubscriptionId(Aws::String&& value) { m_addonSubscriptionId = std::move(value); }
-    inline void SetAddonSubscriptionId(const char* value) { m_addonSubscriptionId.assign(value); }
-    inline GetAddonInstanceResult& WithAddonSubscriptionId(const Aws::String& value) { SetAddonSubscriptionId(value); return *this;}
-    inline GetAddonInstanceResult& WithAddonSubscriptionId(Aws::String&& value) { SetAddonSubscriptionId(std::move(value)); return *this;}
-    inline GetAddonInstanceResult& WithAddonSubscriptionId(const char* value) { SetAddonSubscriptionId(value); return *this;}
+    inline const Aws::String& GetAddonSubscriptionId() const { return m_addonSubscriptionId; }
+    template<typename AddonSubscriptionIdT = Aws::String>
+    void SetAddonSubscriptionId(AddonSubscriptionIdT&& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = std::forward<AddonSubscriptionIdT>(value); }
+    template<typename AddonSubscriptionIdT = Aws::String>
+    GetAddonInstanceResult& WithAddonSubscriptionId(AddonSubscriptionIdT&& value) { SetAddonSubscriptionId(std::forward<AddonSubscriptionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the Add On instance was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline GetAddonInstanceResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline GetAddonInstanceResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    GetAddonInstanceResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAddonInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAddonInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAddonInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAddonInstanceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_addonInstanceArn;
+    bool m_addonInstanceArnHasBeenSet = false;
 
     Aws::String m_addonName;
+    bool m_addonNameHasBeenSet = false;
 
     Aws::String m_addonSubscriptionId;
+    bool m_addonSubscriptionIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

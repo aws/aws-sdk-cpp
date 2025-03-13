@@ -21,7 +21,7 @@ namespace Model
   class GetTargetGroupRequest : public VPCLatticeRequest
   {
   public:
-    AWS_VPCLATTICE_API GetTargetGroupRequest();
+    AWS_VPCLATTICE_API GetTargetGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID or ARN of the target group.</p>
      */
-    inline const Aws::String& GetTargetGroupIdentifier() const{ return m_targetGroupIdentifier; }
+    inline const Aws::String& GetTargetGroupIdentifier() const { return m_targetGroupIdentifier; }
     inline bool TargetGroupIdentifierHasBeenSet() const { return m_targetGroupIdentifierHasBeenSet; }
-    inline void SetTargetGroupIdentifier(const Aws::String& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = value; }
-    inline void SetTargetGroupIdentifier(Aws::String&& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = std::move(value); }
-    inline void SetTargetGroupIdentifier(const char* value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier.assign(value); }
-    inline GetTargetGroupRequest& WithTargetGroupIdentifier(const Aws::String& value) { SetTargetGroupIdentifier(value); return *this;}
-    inline GetTargetGroupRequest& WithTargetGroupIdentifier(Aws::String&& value) { SetTargetGroupIdentifier(std::move(value)); return *this;}
-    inline GetTargetGroupRequest& WithTargetGroupIdentifier(const char* value) { SetTargetGroupIdentifier(value); return *this;}
+    template<typename TargetGroupIdentifierT = Aws::String>
+    void SetTargetGroupIdentifier(TargetGroupIdentifierT&& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = std::forward<TargetGroupIdentifierT>(value); }
+    template<typename TargetGroupIdentifierT = Aws::String>
+    GetTargetGroupRequest& WithTargetGroupIdentifier(TargetGroupIdentifierT&& value) { SetTargetGroupIdentifier(std::forward<TargetGroupIdentifierT>(value)); return *this;}
     ///@}
   private:
 

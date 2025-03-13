@@ -12,17 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ValidateE911AddressRequest::ValidateE911AddressRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_streetNumberHasBeenSet(false),
-    m_streetInfoHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_postalCodeHasBeenSet(false)
-{
-}
-
 Aws::String ValidateE911AddressRequest::SerializePayload() const
 {
   JsonValue payload;

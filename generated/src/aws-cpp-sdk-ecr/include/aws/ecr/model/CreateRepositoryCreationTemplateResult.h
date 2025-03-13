@@ -28,7 +28,7 @@ namespace Model
   class CreateRepositoryCreationTemplateResult
   {
   public:
-    AWS_ECR_API CreateRepositoryCreationTemplateResult();
+    AWS_ECR_API CreateRepositoryCreationTemplateResult() = default;
     AWS_ECR_API CreateRepositoryCreationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECR_API CreateRepositoryCreationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The registry ID associated with the request.</p>
      */
-    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-    inline void SetRegistryId(const Aws::String& value) { m_registryId = value; }
-    inline void SetRegistryId(Aws::String&& value) { m_registryId = std::move(value); }
-    inline void SetRegistryId(const char* value) { m_registryId.assign(value); }
-    inline CreateRepositoryCreationTemplateResult& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-    inline CreateRepositoryCreationTemplateResult& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-    inline CreateRepositoryCreationTemplateResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    inline const Aws::String& GetRegistryId() const { return m_registryId; }
+    template<typename RegistryIdT = Aws::String>
+    void SetRegistryId(RegistryIdT&& value) { m_registryIdHasBeenSet = true; m_registryId = std::forward<RegistryIdT>(value); }
+    template<typename RegistryIdT = Aws::String>
+    CreateRepositoryCreationTemplateResult& WithRegistryId(RegistryIdT&& value) { SetRegistryId(std::forward<RegistryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +49,31 @@ namespace Model
      * <p>The details of the repository creation template associated with the
      * request.</p>
      */
-    inline const RepositoryCreationTemplate& GetRepositoryCreationTemplate() const{ return m_repositoryCreationTemplate; }
-    inline void SetRepositoryCreationTemplate(const RepositoryCreationTemplate& value) { m_repositoryCreationTemplate = value; }
-    inline void SetRepositoryCreationTemplate(RepositoryCreationTemplate&& value) { m_repositoryCreationTemplate = std::move(value); }
-    inline CreateRepositoryCreationTemplateResult& WithRepositoryCreationTemplate(const RepositoryCreationTemplate& value) { SetRepositoryCreationTemplate(value); return *this;}
-    inline CreateRepositoryCreationTemplateResult& WithRepositoryCreationTemplate(RepositoryCreationTemplate&& value) { SetRepositoryCreationTemplate(std::move(value)); return *this;}
+    inline const RepositoryCreationTemplate& GetRepositoryCreationTemplate() const { return m_repositoryCreationTemplate; }
+    template<typename RepositoryCreationTemplateT = RepositoryCreationTemplate>
+    void SetRepositoryCreationTemplate(RepositoryCreationTemplateT&& value) { m_repositoryCreationTemplateHasBeenSet = true; m_repositoryCreationTemplate = std::forward<RepositoryCreationTemplateT>(value); }
+    template<typename RepositoryCreationTemplateT = RepositoryCreationTemplate>
+    CreateRepositoryCreationTemplateResult& WithRepositoryCreationTemplate(RepositoryCreationTemplateT&& value) { SetRepositoryCreationTemplate(std::forward<RepositoryCreationTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateRepositoryCreationTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateRepositoryCreationTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateRepositoryCreationTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateRepositoryCreationTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registryId;
+    bool m_registryIdHasBeenSet = false;
 
     RepositoryCreationTemplate m_repositoryCreationTemplate;
+    bool m_repositoryCreationTemplateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

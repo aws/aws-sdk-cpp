@@ -13,12 +13,6 @@ using namespace Aws::JsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAndGetInlineDocumentsRequest::PutAndGetInlineDocumentsRequest() : 
-    m_inlineDocumentHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String PutAndGetInlineDocumentsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class AuthMode
   {
   public:
-    AWS_APPSYNC_API AuthMode();
+    AWS_APPSYNC_API AuthMode() = default;
     AWS_APPSYNC_API AuthMode(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API AuthMode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
     /**
      * <p>The authorization type.</p>
      */
-    inline const AuthenticationType& GetAuthType() const{ return m_authType; }
+    inline AuthenticationType GetAuthType() const { return m_authType; }
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-    inline void SetAuthType(const AuthenticationType& value) { m_authTypeHasBeenSet = true; m_authType = value; }
-    inline void SetAuthType(AuthenticationType&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
-    inline AuthMode& WithAuthType(const AuthenticationType& value) { SetAuthType(value); return *this;}
-    inline AuthMode& WithAuthType(AuthenticationType&& value) { SetAuthType(std::move(value)); return *this;}
+    inline void SetAuthType(AuthenticationType value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline AuthMode& WithAuthType(AuthenticationType value) { SetAuthType(value); return *this;}
     ///@}
   private:
 
-    AuthenticationType m_authType;
+    AuthenticationType m_authType{AuthenticationType::NOT_SET};
     bool m_authTypeHasBeenSet = false;
   };
 

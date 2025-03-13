@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetAuthorizersRequest::GetAuthorizersRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String GetAuthorizersRequest::SerializePayload() const
 {
   return {};

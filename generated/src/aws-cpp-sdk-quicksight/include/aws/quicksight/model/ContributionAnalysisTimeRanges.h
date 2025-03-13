@@ -32,7 +32,7 @@ namespace Model
   class ContributionAnalysisTimeRanges
   {
   public:
-    AWS_QUICKSIGHT_API ContributionAnalysisTimeRanges();
+    AWS_QUICKSIGHT_API ContributionAnalysisTimeRanges() = default;
     AWS_QUICKSIGHT_API ContributionAnalysisTimeRanges(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ContributionAnalysisTimeRanges& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The start range for the <code>ContributionAnalysisTimeRanges</code>.</p>
      */
-    inline const TopicIRFilterOption& GetStartRange() const{ return m_startRange; }
+    inline const TopicIRFilterOption& GetStartRange() const { return m_startRange; }
     inline bool StartRangeHasBeenSet() const { return m_startRangeHasBeenSet; }
-    inline void SetStartRange(const TopicIRFilterOption& value) { m_startRangeHasBeenSet = true; m_startRange = value; }
-    inline void SetStartRange(TopicIRFilterOption&& value) { m_startRangeHasBeenSet = true; m_startRange = std::move(value); }
-    inline ContributionAnalysisTimeRanges& WithStartRange(const TopicIRFilterOption& value) { SetStartRange(value); return *this;}
-    inline ContributionAnalysisTimeRanges& WithStartRange(TopicIRFilterOption&& value) { SetStartRange(std::move(value)); return *this;}
+    template<typename StartRangeT = TopicIRFilterOption>
+    void SetStartRange(StartRangeT&& value) { m_startRangeHasBeenSet = true; m_startRange = std::forward<StartRangeT>(value); }
+    template<typename StartRangeT = TopicIRFilterOption>
+    ContributionAnalysisTimeRanges& WithStartRange(StartRangeT&& value) { SetStartRange(std::forward<StartRangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end range for the <code>ContributionAnalysisTimeRanges</code>.</p>
      */
-    inline const TopicIRFilterOption& GetEndRange() const{ return m_endRange; }
+    inline const TopicIRFilterOption& GetEndRange() const { return m_endRange; }
     inline bool EndRangeHasBeenSet() const { return m_endRangeHasBeenSet; }
-    inline void SetEndRange(const TopicIRFilterOption& value) { m_endRangeHasBeenSet = true; m_endRange = value; }
-    inline void SetEndRange(TopicIRFilterOption&& value) { m_endRangeHasBeenSet = true; m_endRange = std::move(value); }
-    inline ContributionAnalysisTimeRanges& WithEndRange(const TopicIRFilterOption& value) { SetEndRange(value); return *this;}
-    inline ContributionAnalysisTimeRanges& WithEndRange(TopicIRFilterOption&& value) { SetEndRange(std::move(value)); return *this;}
+    template<typename EndRangeT = TopicIRFilterOption>
+    void SetEndRange(EndRangeT&& value) { m_endRangeHasBeenSet = true; m_endRange = std::forward<EndRangeT>(value); }
+    template<typename EndRangeT = TopicIRFilterOption>
+    ContributionAnalysisTimeRanges& WithEndRange(EndRangeT&& value) { SetEndRange(std::forward<EndRangeT>(value)); return *this;}
     ///@}
   private:
 

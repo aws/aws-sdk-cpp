@@ -18,20 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-Cors::Cors() : 
-    m_allowCredentials(false),
-    m_allowCredentialsHasBeenSet(false),
-    m_allowHeadersHasBeenSet(false),
-    m_allowMethodsHasBeenSet(false),
-    m_allowOriginsHasBeenSet(false),
-    m_exposeHeadersHasBeenSet(false),
-    m_maxAge(0),
-    m_maxAgeHasBeenSet(false)
-{
-}
-
 Cors::Cors(JsonView jsonValue)
-  : Cors()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ Cors& Cors::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AllowCredentials"))
   {
     m_allowCredentials = jsonValue.GetBool("AllowCredentials");
-
     m_allowCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowHeaders"))
   {
     Aws::Utils::Array<JsonView> allowHeadersJsonList = jsonValue.GetArray("AllowHeaders");
@@ -54,7 +39,6 @@ Cors& Cors::operator =(JsonView jsonValue)
     }
     m_allowHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowMethods"))
   {
     Aws::Utils::Array<JsonView> allowMethodsJsonList = jsonValue.GetArray("AllowMethods");
@@ -64,7 +48,6 @@ Cors& Cors::operator =(JsonView jsonValue)
     }
     m_allowMethodsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowOrigins"))
   {
     Aws::Utils::Array<JsonView> allowOriginsJsonList = jsonValue.GetArray("AllowOrigins");
@@ -74,7 +57,6 @@ Cors& Cors::operator =(JsonView jsonValue)
     }
     m_allowOriginsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExposeHeaders"))
   {
     Aws::Utils::Array<JsonView> exposeHeadersJsonList = jsonValue.GetArray("ExposeHeaders");
@@ -84,14 +66,11 @@ Cors& Cors::operator =(JsonView jsonValue)
     }
     m_exposeHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxAge"))
   {
     m_maxAge = jsonValue.GetInteger("MaxAge");
-
     m_maxAgeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWorkloadResult::GetWorkloadResult()
-{
-}
-
 GetWorkloadResult::GetWorkloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetWorkloadResult& GetWorkloadResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("workload"))
   {
     m_workload = jsonValue.GetObject("workload");
-
+    m_workloadHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

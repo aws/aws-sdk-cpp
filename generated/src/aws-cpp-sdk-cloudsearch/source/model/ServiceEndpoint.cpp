@@ -20,13 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-ServiceEndpoint::ServiceEndpoint() : 
-    m_endpointHasBeenSet(false)
-{
-}
-
 ServiceEndpoint::ServiceEndpoint(const XmlNode& xmlNode)
-  : ServiceEndpoint()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ServiceEndpoint& ServiceEndpoint::operator =(const XmlNode& xmlNode)
     {
       m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
       m_endpointHasBeenSet = true;
+       m_endpointHasBeenSet = true;
     }
   }
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AlternatePathHint::AlternatePathHint() : 
-    m_componentIdHasBeenSet(false),
-    m_componentArnHasBeenSet(false)
-{
-}
-
 AlternatePathHint::AlternatePathHint(const XmlNode& xmlNode)
-  : AlternatePathHint()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ AlternatePathHint& AlternatePathHint::operator =(const XmlNode& xmlNode)
     {
       m_componentId = Aws::Utils::Xml::DecodeEscapedXmlText(componentIdNode.GetText());
       m_componentIdHasBeenSet = true;
+       m_componentIdHasBeenSet = true;
     }
     XmlNode componentArnNode = resultNode.FirstChild("componentArn");
     if(!componentArnNode.IsNull())
     {
       m_componentArn = Aws::Utils::Xml::DecodeEscapedXmlText(componentArnNode.GetText());
       m_componentArnHasBeenSet = true;
+       m_componentArnHasBeenSet = true;
     }
   }
 

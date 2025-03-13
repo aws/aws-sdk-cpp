@@ -33,7 +33,7 @@ namespace Model
   class VectorEnrichmentJobExportErrorDetails
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobExportErrorDetails();
+    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobExportErrorDetails() = default;
     AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobExportErrorDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobExportErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The message providing details about the errors generated during the Vector
      * Enrichment job.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline VectorEnrichmentJobExportErrorDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline VectorEnrichmentJobExportErrorDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline VectorEnrichmentJobExportErrorDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    VectorEnrichmentJobExportErrorDetails& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,17 @@ namespace Model
      * <p>The output error details for an Export operation on a Vector Enrichment
      * job.</p>
      */
-    inline const VectorEnrichmentJobExportErrorType& GetType() const{ return m_type; }
+    inline VectorEnrichmentJobExportErrorType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const VectorEnrichmentJobExportErrorType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(VectorEnrichmentJobExportErrorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline VectorEnrichmentJobExportErrorDetails& WithType(const VectorEnrichmentJobExportErrorType& value) { SetType(value); return *this;}
-    inline VectorEnrichmentJobExportErrorDetails& WithType(VectorEnrichmentJobExportErrorType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(VectorEnrichmentJobExportErrorType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline VectorEnrichmentJobExportErrorDetails& WithType(VectorEnrichmentJobExportErrorType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    VectorEnrichmentJobExportErrorType m_type;
+    VectorEnrichmentJobExportErrorType m_type{VectorEnrichmentJobExportErrorType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

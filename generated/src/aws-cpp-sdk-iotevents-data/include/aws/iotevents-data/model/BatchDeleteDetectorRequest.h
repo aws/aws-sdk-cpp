@@ -22,7 +22,7 @@ namespace Model
   class BatchDeleteDetectorRequest : public IoTEventsDataRequest
   {
   public:
-    AWS_IOTEVENTSDATA_API BatchDeleteDetectorRequest();
+    AWS_IOTEVENTSDATA_API BatchDeleteDetectorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,14 @@ namespace Model
     /**
      * <p>The list of one or more detectors to be deleted.</p>
      */
-    inline const Aws::Vector<DeleteDetectorRequest>& GetDetectors() const{ return m_detectors; }
+    inline const Aws::Vector<DeleteDetectorRequest>& GetDetectors() const { return m_detectors; }
     inline bool DetectorsHasBeenSet() const { return m_detectorsHasBeenSet; }
-    inline void SetDetectors(const Aws::Vector<DeleteDetectorRequest>& value) { m_detectorsHasBeenSet = true; m_detectors = value; }
-    inline void SetDetectors(Aws::Vector<DeleteDetectorRequest>&& value) { m_detectorsHasBeenSet = true; m_detectors = std::move(value); }
-    inline BatchDeleteDetectorRequest& WithDetectors(const Aws::Vector<DeleteDetectorRequest>& value) { SetDetectors(value); return *this;}
-    inline BatchDeleteDetectorRequest& WithDetectors(Aws::Vector<DeleteDetectorRequest>&& value) { SetDetectors(std::move(value)); return *this;}
-    inline BatchDeleteDetectorRequest& AddDetectors(const DeleteDetectorRequest& value) { m_detectorsHasBeenSet = true; m_detectors.push_back(value); return *this; }
-    inline BatchDeleteDetectorRequest& AddDetectors(DeleteDetectorRequest&& value) { m_detectorsHasBeenSet = true; m_detectors.push_back(std::move(value)); return *this; }
+    template<typename DetectorsT = Aws::Vector<DeleteDetectorRequest>>
+    void SetDetectors(DetectorsT&& value) { m_detectorsHasBeenSet = true; m_detectors = std::forward<DetectorsT>(value); }
+    template<typename DetectorsT = Aws::Vector<DeleteDetectorRequest>>
+    BatchDeleteDetectorRequest& WithDetectors(DetectorsT&& value) { SetDetectors(std::forward<DetectorsT>(value)); return *this;}
+    template<typename DetectorsT = DeleteDetectorRequest>
+    BatchDeleteDetectorRequest& AddDetectors(DetectorsT&& value) { m_detectorsHasBeenSet = true; m_detectors.emplace_back(std::forward<DetectorsT>(value)); return *this; }
     ///@}
   private:
 

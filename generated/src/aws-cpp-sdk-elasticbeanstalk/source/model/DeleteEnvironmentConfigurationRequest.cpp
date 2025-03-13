@@ -10,12 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DeleteEnvironmentConfigurationRequest::DeleteEnvironmentConfigurationRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEnvironmentConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

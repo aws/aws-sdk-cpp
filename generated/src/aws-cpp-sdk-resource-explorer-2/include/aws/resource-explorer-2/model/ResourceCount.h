@@ -33,7 +33,7 @@ namespace Model
   class ResourceCount
   {
   public:
-    AWS_RESOURCEEXPLORER2_API ResourceCount();
+    AWS_RESOURCEEXPLORER2_API ResourceCount() = default;
     AWS_RESOURCEEXPLORER2_API ResourceCount(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEEXPLORER2_API ResourceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * was counted.</p> </li> <li> <p>If <code>False</code>, then the search reached
      * the limit of 1,000 matching results, and stopped counting.</p> </li> </ul>
      */
-    inline bool GetComplete() const{ return m_complete; }
+    inline bool GetComplete() const { return m_complete; }
     inline bool CompleteHasBeenSet() const { return m_completeHasBeenSet; }
     inline void SetComplete(bool value) { m_completeHasBeenSet = true; m_complete = value; }
     inline ResourceCount& WithComplete(bool value) { SetComplete(value); return *this;}
@@ -60,17 +60,17 @@ namespace Model
      * 1,000 are counted and the <code>Complete</code> field is set to false. We
      * recommend that you refine your query to return a smaller number of results.</p>
      */
-    inline long long GetTotalResources() const{ return m_totalResources; }
+    inline long long GetTotalResources() const { return m_totalResources; }
     inline bool TotalResourcesHasBeenSet() const { return m_totalResourcesHasBeenSet; }
     inline void SetTotalResources(long long value) { m_totalResourcesHasBeenSet = true; m_totalResources = value; }
     inline ResourceCount& WithTotalResources(long long value) { SetTotalResources(value); return *this;}
     ///@}
   private:
 
-    bool m_complete;
+    bool m_complete{false};
     bool m_completeHasBeenSet = false;
 
-    long long m_totalResources;
+    long long m_totalResources{0};
     bool m_totalResourcesHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace MedicalImaging
 namespace Model
 {
 
-Overrides::Overrides() : 
-    m_forced(false),
-    m_forcedHasBeenSet(false)
-{
-}
-
 Overrides::Overrides(JsonView jsonValue)
-  : Overrides()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Overrides& Overrides::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("forced"))
   {
     m_forced = jsonValue.GetBool("forced");
-
     m_forcedHasBeenSet = true;
   }
-
   return *this;
 }
 

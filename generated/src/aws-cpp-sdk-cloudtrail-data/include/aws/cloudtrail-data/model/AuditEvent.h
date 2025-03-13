@@ -32,7 +32,7 @@ namespace Model
   class AuditEvent
   {
   public:
-    AWS_CLOUDTRAILDATA_API AuditEvent();
+    AWS_CLOUDTRAILDATA_API AuditEvent() = default;
     AWS_CLOUDTRAILDATA_API AuditEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAILDATA_API AuditEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAILDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <code>userIdentity</code>, <code>userAgent</code>, and
      * <code>eventSource</code>.</p>
      */
-    inline const Aws::String& GetEventData() const{ return m_eventData; }
+    inline const Aws::String& GetEventData() const { return m_eventData; }
     inline bool EventDataHasBeenSet() const { return m_eventDataHasBeenSet; }
-    inline void SetEventData(const Aws::String& value) { m_eventDataHasBeenSet = true; m_eventData = value; }
-    inline void SetEventData(Aws::String&& value) { m_eventDataHasBeenSet = true; m_eventData = std::move(value); }
-    inline void SetEventData(const char* value) { m_eventDataHasBeenSet = true; m_eventData.assign(value); }
-    inline AuditEvent& WithEventData(const Aws::String& value) { SetEventData(value); return *this;}
-    inline AuditEvent& WithEventData(Aws::String&& value) { SetEventData(std::move(value)); return *this;}
-    inline AuditEvent& WithEventData(const char* value) { SetEventData(value); return *this;}
+    template<typename EventDataT = Aws::String>
+    void SetEventData(EventDataT&& value) { m_eventDataHasBeenSet = true; m_eventData = std::forward<EventDataT>(value); }
+    template<typename EventDataT = Aws::String>
+    AuditEvent& WithEventData(EventDataT&& value) { SetEventData(std::forward<EventDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,28 +59,24 @@ namespace Model
      * running a command like the following:</p> <p> <code>printf %s <i>$eventdata</i>
      * | openssl dgst -binary -sha256 | base64</code> </p>
      */
-    inline const Aws::String& GetEventDataChecksum() const{ return m_eventDataChecksum; }
+    inline const Aws::String& GetEventDataChecksum() const { return m_eventDataChecksum; }
     inline bool EventDataChecksumHasBeenSet() const { return m_eventDataChecksumHasBeenSet; }
-    inline void SetEventDataChecksum(const Aws::String& value) { m_eventDataChecksumHasBeenSet = true; m_eventDataChecksum = value; }
-    inline void SetEventDataChecksum(Aws::String&& value) { m_eventDataChecksumHasBeenSet = true; m_eventDataChecksum = std::move(value); }
-    inline void SetEventDataChecksum(const char* value) { m_eventDataChecksumHasBeenSet = true; m_eventDataChecksum.assign(value); }
-    inline AuditEvent& WithEventDataChecksum(const Aws::String& value) { SetEventDataChecksum(value); return *this;}
-    inline AuditEvent& WithEventDataChecksum(Aws::String&& value) { SetEventDataChecksum(std::move(value)); return *this;}
-    inline AuditEvent& WithEventDataChecksum(const char* value) { SetEventDataChecksum(value); return *this;}
+    template<typename EventDataChecksumT = Aws::String>
+    void SetEventDataChecksum(EventDataChecksumT&& value) { m_eventDataChecksumHasBeenSet = true; m_eventDataChecksum = std::forward<EventDataChecksumT>(value); }
+    template<typename EventDataChecksumT = Aws::String>
+    AuditEvent& WithEventDataChecksum(EventDataChecksumT&& value) { SetEventDataChecksum(std::forward<EventDataChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The original event ID from the source event.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AuditEvent& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AuditEvent& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AuditEvent& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AuditEvent& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

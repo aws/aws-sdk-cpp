@@ -18,17 +18,7 @@ namespace MigrationHubOrchestrator
 namespace Model
 {
 
-TemplateInput::TemplateInput() : 
-    m_inputNameHasBeenSet(false),
-    m_dataType(DataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false)
-{
-}
-
 TemplateInput::TemplateInput(JsonView jsonValue)
-  : TemplateInput()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TemplateInput& TemplateInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputName"))
   {
     m_inputName = jsonValue.GetString("inputName");
-
     m_inputNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataType"))
   {
     m_dataType = DataTypeMapper::GetDataTypeForName(jsonValue.GetString("dataType"));
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetBool("required");
-
     m_requiredHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateVirtualInterfaceAttributesRequest::UpdateVirtualInterfaceAttributesRequest() : 
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_mtu(0),
-    m_mtuHasBeenSet(false),
-    m_enableSiteLink(false),
-    m_enableSiteLinkHasBeenSet(false),
-    m_virtualInterfaceNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVirtualInterfaceAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

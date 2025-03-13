@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ResourceDataSyncDestinationDataSharing::ResourceDataSyncDestinationDataSharing() : 
-    m_destinationDataSharingTypeHasBeenSet(false)
-{
-}
-
 ResourceDataSyncDestinationDataSharing::ResourceDataSyncDestinationDataSharing(JsonView jsonValue)
-  : ResourceDataSyncDestinationDataSharing()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceDataSyncDestinationDataSharing& ResourceDataSyncDestinationDataSharing::
   if(jsonValue.ValueExists("DestinationDataSharingType"))
   {
     m_destinationDataSharingType = jsonValue.GetString("DestinationDataSharingType");
-
     m_destinationDataSharingTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

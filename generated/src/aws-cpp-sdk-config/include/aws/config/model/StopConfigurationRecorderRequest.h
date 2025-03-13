@@ -25,7 +25,7 @@ namespace Model
   class StopConfigurationRecorderRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API StopConfigurationRecorderRequest();
+    AWS_CONFIGSERVICE_API StopConfigurationRecorderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the customer managed configuration recorder that you want to
      * stop.</p>
      */
-    inline const Aws::String& GetConfigurationRecorderName() const{ return m_configurationRecorderName; }
+    inline const Aws::String& GetConfigurationRecorderName() const { return m_configurationRecorderName; }
     inline bool ConfigurationRecorderNameHasBeenSet() const { return m_configurationRecorderNameHasBeenSet; }
-    inline void SetConfigurationRecorderName(const Aws::String& value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName = value; }
-    inline void SetConfigurationRecorderName(Aws::String&& value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName = std::move(value); }
-    inline void SetConfigurationRecorderName(const char* value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName.assign(value); }
-    inline StopConfigurationRecorderRequest& WithConfigurationRecorderName(const Aws::String& value) { SetConfigurationRecorderName(value); return *this;}
-    inline StopConfigurationRecorderRequest& WithConfigurationRecorderName(Aws::String&& value) { SetConfigurationRecorderName(std::move(value)); return *this;}
-    inline StopConfigurationRecorderRequest& WithConfigurationRecorderName(const char* value) { SetConfigurationRecorderName(value); return *this;}
+    template<typename ConfigurationRecorderNameT = Aws::String>
+    void SetConfigurationRecorderName(ConfigurationRecorderNameT&& value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName = std::forward<ConfigurationRecorderNameT>(value); }
+    template<typename ConfigurationRecorderNameT = Aws::String>
+    StopConfigurationRecorderRequest& WithConfigurationRecorderName(ConfigurationRecorderNameT&& value) { SetConfigurationRecorderName(std::forward<ConfigurationRecorderNameT>(value)); return *this;}
     ///@}
   private:
 

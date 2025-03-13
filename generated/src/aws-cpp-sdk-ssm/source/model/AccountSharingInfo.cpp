@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-AccountSharingInfo::AccountSharingInfo() : 
-    m_accountIdHasBeenSet(false),
-    m_sharedDocumentVersionHasBeenSet(false)
-{
-}
-
 AccountSharingInfo::AccountSharingInfo(JsonView jsonValue)
-  : AccountSharingInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AccountSharingInfo& AccountSharingInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharedDocumentVersion"))
   {
     m_sharedDocumentVersion = jsonValue.GetString("SharedDocumentVersion");
-
     m_sharedDocumentVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

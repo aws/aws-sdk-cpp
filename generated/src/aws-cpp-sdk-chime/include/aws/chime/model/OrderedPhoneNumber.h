@@ -33,7 +33,7 @@ namespace Model
   class OrderedPhoneNumber
   {
   public:
-    AWS_CHIME_API OrderedPhoneNumber();
+    AWS_CHIME_API OrderedPhoneNumber() = default;
     AWS_CHIME_API OrderedPhoneNumber(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIME_API OrderedPhoneNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The phone number, in E.164 format.</p>
      */
-    inline const Aws::String& GetE164PhoneNumber() const{ return m_e164PhoneNumber; }
+    inline const Aws::String& GetE164PhoneNumber() const { return m_e164PhoneNumber; }
     inline bool E164PhoneNumberHasBeenSet() const { return m_e164PhoneNumberHasBeenSet; }
-    inline void SetE164PhoneNumber(const Aws::String& value) { m_e164PhoneNumberHasBeenSet = true; m_e164PhoneNumber = value; }
-    inline void SetE164PhoneNumber(Aws::String&& value) { m_e164PhoneNumberHasBeenSet = true; m_e164PhoneNumber = std::move(value); }
-    inline void SetE164PhoneNumber(const char* value) { m_e164PhoneNumberHasBeenSet = true; m_e164PhoneNumber.assign(value); }
-    inline OrderedPhoneNumber& WithE164PhoneNumber(const Aws::String& value) { SetE164PhoneNumber(value); return *this;}
-    inline OrderedPhoneNumber& WithE164PhoneNumber(Aws::String&& value) { SetE164PhoneNumber(std::move(value)); return *this;}
-    inline OrderedPhoneNumber& WithE164PhoneNumber(const char* value) { SetE164PhoneNumber(value); return *this;}
+    template<typename E164PhoneNumberT = Aws::String>
+    void SetE164PhoneNumber(E164PhoneNumberT&& value) { m_e164PhoneNumberHasBeenSet = true; m_e164PhoneNumber = std::forward<E164PhoneNumberT>(value); }
+    template<typename E164PhoneNumberT = Aws::String>
+    OrderedPhoneNumber& WithE164PhoneNumber(E164PhoneNumberT&& value) { SetE164PhoneNumber(std::forward<E164PhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The phone number status.</p>
      */
-    inline const OrderedPhoneNumberStatus& GetStatus() const{ return m_status; }
+    inline OrderedPhoneNumberStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OrderedPhoneNumberStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OrderedPhoneNumberStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OrderedPhoneNumber& WithStatus(const OrderedPhoneNumberStatus& value) { SetStatus(value); return *this;}
-    inline OrderedPhoneNumber& WithStatus(OrderedPhoneNumberStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(OrderedPhoneNumberStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline OrderedPhoneNumber& WithStatus(OrderedPhoneNumberStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_e164PhoneNumber;
     bool m_e164PhoneNumberHasBeenSet = false;
 
-    OrderedPhoneNumberStatus m_status;
+    OrderedPhoneNumberStatus m_status{OrderedPhoneNumberStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

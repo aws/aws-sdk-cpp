@@ -12,12 +12,6 @@ using namespace Aws::PersonalizeEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutUsersRequest::PutUsersRequest() : 
-    m_datasetArnHasBeenSet(false),
-    m_usersHasBeenSet(false)
-{
-}
-
 Aws::String PutUsersRequest::SerializePayload() const
 {
   JsonValue payload;

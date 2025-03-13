@@ -18,22 +18,7 @@ namespace AutoScalingPlans
 namespace Model
 {
 
-ScalingPlan::ScalingPlan() : 
-    m_scalingPlanNameHasBeenSet(false),
-    m_scalingPlanVersion(0),
-    m_scalingPlanVersionHasBeenSet(false),
-    m_applicationSourceHasBeenSet(false),
-    m_scalingInstructionsHasBeenSet(false),
-    m_statusCode(ScalingPlanStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_statusStartTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 ScalingPlan::ScalingPlan(JsonView jsonValue)
-  : ScalingPlan()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ ScalingPlan& ScalingPlan::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ScalingPlanName"))
   {
     m_scalingPlanName = jsonValue.GetString("ScalingPlanName");
-
     m_scalingPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingPlanVersion"))
   {
     m_scalingPlanVersion = jsonValue.GetInt64("ScalingPlanVersion");
-
     m_scalingPlanVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationSource"))
   {
     m_applicationSource = jsonValue.GetObject("ApplicationSource");
-
     m_applicationSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingInstructions"))
   {
     Aws::Utils::Array<JsonView> scalingInstructionsJsonList = jsonValue.GetArray("ScalingInstructions");
@@ -70,35 +49,26 @@ ScalingPlan& ScalingPlan::operator =(JsonView jsonValue)
     }
     m_scalingInstructionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = ScalingPlanStatusCodeMapper::GetScalingPlanStatusCodeForName(jsonValue.GetString("StatusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusStartTime"))
   {
     m_statusStartTime = jsonValue.GetDouble("StatusStartTime");
-
     m_statusStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

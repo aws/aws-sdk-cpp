@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListServerNeighborsResult::ListServerNeighborsResult() : 
-    m_knownDependencyCount(0)
-{
-}
-
 ListServerNeighborsResult::ListServerNeighborsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListServerNeighborsResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ ListServerNeighborsResult& ListServerNeighborsResult::operator =(const Aws::Amaz
     {
       m_neighbors.push_back(neighborsJsonList[neighborsIndex].AsObject());
     }
+    m_neighborsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knownDependencyCount"))
   {
     m_knownDependencyCount = jsonValue.GetInt64("knownDependencyCount");
-
+    m_knownDependencyCountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -31,7 +31,7 @@ namespace Model
   class OtaTaskExecutionRolloutConfig
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskExecutionRolloutConfig();
+    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskExecutionRolloutConfig() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskExecutionRolloutConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskExecutionRolloutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>Structure representing exponential rate of rollout for an over-the-air (OTA)
      * task.</p>
      */
-    inline const ExponentialRolloutRate& GetExponentialRolloutRate() const{ return m_exponentialRolloutRate; }
+    inline const ExponentialRolloutRate& GetExponentialRolloutRate() const { return m_exponentialRolloutRate; }
     inline bool ExponentialRolloutRateHasBeenSet() const { return m_exponentialRolloutRateHasBeenSet; }
-    inline void SetExponentialRolloutRate(const ExponentialRolloutRate& value) { m_exponentialRolloutRateHasBeenSet = true; m_exponentialRolloutRate = value; }
-    inline void SetExponentialRolloutRate(ExponentialRolloutRate&& value) { m_exponentialRolloutRateHasBeenSet = true; m_exponentialRolloutRate = std::move(value); }
-    inline OtaTaskExecutionRolloutConfig& WithExponentialRolloutRate(const ExponentialRolloutRate& value) { SetExponentialRolloutRate(value); return *this;}
-    inline OtaTaskExecutionRolloutConfig& WithExponentialRolloutRate(ExponentialRolloutRate&& value) { SetExponentialRolloutRate(std::move(value)); return *this;}
+    template<typename ExponentialRolloutRateT = ExponentialRolloutRate>
+    void SetExponentialRolloutRate(ExponentialRolloutRateT&& value) { m_exponentialRolloutRateHasBeenSet = true; m_exponentialRolloutRate = std::forward<ExponentialRolloutRateT>(value); }
+    template<typename ExponentialRolloutRateT = ExponentialRolloutRate>
+    OtaTaskExecutionRolloutConfig& WithExponentialRolloutRate(ExponentialRolloutRateT&& value) { SetExponentialRolloutRate(std::forward<ExponentialRolloutRateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +55,7 @@ namespace Model
      * <p>The maximum number of things that will be notified of a pending task, per
      * minute.</p>
      */
-    inline int GetMaximumPerMinute() const{ return m_maximumPerMinute; }
+    inline int GetMaximumPerMinute() const { return m_maximumPerMinute; }
     inline bool MaximumPerMinuteHasBeenSet() const { return m_maximumPerMinuteHasBeenSet; }
     inline void SetMaximumPerMinute(int value) { m_maximumPerMinuteHasBeenSet = true; m_maximumPerMinute = value; }
     inline OtaTaskExecutionRolloutConfig& WithMaximumPerMinute(int value) { SetMaximumPerMinute(value); return *this;}
@@ -65,7 +65,7 @@ namespace Model
     ExponentialRolloutRate m_exponentialRolloutRate;
     bool m_exponentialRolloutRateHasBeenSet = false;
 
-    int m_maximumPerMinute;
+    int m_maximumPerMinute{0};
     bool m_maximumPerMinuteHasBeenSet = false;
   };
 

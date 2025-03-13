@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClassicLinkDnsSupport::ClassicLinkDnsSupport() : 
-    m_classicLinkDnsSupported(false),
-    m_classicLinkDnsSupportedHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 ClassicLinkDnsSupport::ClassicLinkDnsSupport(const XmlNode& xmlNode)
-  : ClassicLinkDnsSupport()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ ClassicLinkDnsSupport& ClassicLinkDnsSupport::operator =(const XmlNode& xmlNode)
     {
       m_classicLinkDnsSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(classicLinkDnsSupportedNode.GetText()).c_str()).c_str());
       m_classicLinkDnsSupportedHasBeenSet = true;
+       m_classicLinkDnsSupportedHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
   }
 

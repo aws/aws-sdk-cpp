@@ -21,7 +21,7 @@ namespace Model
   class DeleteDeliveryStreamRequest : public FirehoseRequest
   {
   public:
-    AWS_FIREHOSE_API DeleteDeliveryStreamRequest();
+    AWS_FIREHOSE_API DeleteDeliveryStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the Firehose stream.</p>
      */
-    inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
+    inline const Aws::String& GetDeliveryStreamName() const { return m_deliveryStreamName; }
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
-    inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
-    inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
-    inline void SetDeliveryStreamName(const char* value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName.assign(value); }
-    inline DeleteDeliveryStreamRequest& WithDeliveryStreamName(const Aws::String& value) { SetDeliveryStreamName(value); return *this;}
-    inline DeleteDeliveryStreamRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
-    inline DeleteDeliveryStreamRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
+    template<typename DeliveryStreamNameT = Aws::String>
+    void SetDeliveryStreamName(DeliveryStreamNameT&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::forward<DeliveryStreamNameT>(value); }
+    template<typename DeliveryStreamNameT = Aws::String>
+    DeleteDeliveryStreamRequest& WithDeliveryStreamName(DeliveryStreamNameT&& value) { SetDeliveryStreamName(std::forward<DeliveryStreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * grant happens due to an Amazon Web Services KMS issue, Firehose keeps retrying
      * the delete operation.</p> <p>The default value is false.</p>
      */
-    inline bool GetAllowForceDelete() const{ return m_allowForceDelete; }
+    inline bool GetAllowForceDelete() const { return m_allowForceDelete; }
     inline bool AllowForceDeleteHasBeenSet() const { return m_allowForceDeleteHasBeenSet; }
     inline void SetAllowForceDelete(bool value) { m_allowForceDeleteHasBeenSet = true; m_allowForceDelete = value; }
     inline DeleteDeliveryStreamRequest& WithAllowForceDelete(bool value) { SetAllowForceDelete(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_deliveryStreamName;
     bool m_deliveryStreamNameHasBeenSet = false;
 
-    bool m_allowForceDelete;
+    bool m_allowForceDelete{false};
     bool m_allowForceDeleteHasBeenSet = false;
   };
 

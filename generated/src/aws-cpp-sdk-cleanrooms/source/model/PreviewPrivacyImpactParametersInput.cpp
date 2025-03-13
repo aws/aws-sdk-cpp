@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-PreviewPrivacyImpactParametersInput::PreviewPrivacyImpactParametersInput() : 
-    m_differentialPrivacyHasBeenSet(false)
-{
-}
-
 PreviewPrivacyImpactParametersInput::PreviewPrivacyImpactParametersInput(JsonView jsonValue)
-  : PreviewPrivacyImpactParametersInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PreviewPrivacyImpactParametersInput& PreviewPrivacyImpactParametersInput::operat
   if(jsonValue.ValueExists("differentialPrivacy"))
   {
     m_differentialPrivacy = jsonValue.GetObject("differentialPrivacy");
-
     m_differentialPrivacyHasBeenSet = true;
   }
-
   return *this;
 }
 

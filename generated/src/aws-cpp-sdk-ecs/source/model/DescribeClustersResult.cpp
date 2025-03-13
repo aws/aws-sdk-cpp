@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeClustersResult::DescribeClustersResult()
-{
-}
-
 DescribeClustersResult::DescribeClustersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebS
     {
       m_clusters.push_back(clustersJsonList[clustersIndex].AsObject());
     }
+    m_clustersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failures"))
   {
     Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
@@ -45,14 +41,15 @@ DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebS
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());
     }
+    m_failuresHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

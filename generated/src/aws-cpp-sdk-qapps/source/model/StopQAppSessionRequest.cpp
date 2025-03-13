@@ -13,12 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopQAppSessionRequest::StopQAppSessionRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String StopQAppSessionRequest::SerializePayload() const
 {
   JsonValue payload;

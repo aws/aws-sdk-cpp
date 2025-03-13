@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-OutputLocationRef::OutputLocationRef() : 
-    m_destinationRefIdHasBeenSet(false)
-{
-}
-
 OutputLocationRef::OutputLocationRef(JsonView jsonValue)
-  : OutputLocationRef()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutputLocationRef& OutputLocationRef::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("destinationRefId"))
   {
     m_destinationRefId = jsonValue.GetString("destinationRefId");
-
     m_destinationRefIdHasBeenSet = true;
   }
-
   return *this;
 }
 

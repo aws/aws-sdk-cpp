@@ -12,15 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SignalWorkflowExecutionRequest::SignalWorkflowExecutionRequest() : 
-    m_domainHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_signalNameHasBeenSet(false),
-    m_inputHasBeenSet(false)
-{
-}
-
 Aws::String SignalWorkflowExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

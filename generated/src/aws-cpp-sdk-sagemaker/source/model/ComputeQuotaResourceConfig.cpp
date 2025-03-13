@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ComputeQuotaResourceConfig::ComputeQuotaResourceConfig() : 
-    m_instanceType(ClusterInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 ComputeQuotaResourceConfig::ComputeQuotaResourceConfig(JsonView jsonValue)
-  : ComputeQuotaResourceConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ComputeQuotaResourceConfig& ComputeQuotaResourceConfig::operator =(JsonView json
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = ClusterInstanceTypeMapper::GetClusterInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

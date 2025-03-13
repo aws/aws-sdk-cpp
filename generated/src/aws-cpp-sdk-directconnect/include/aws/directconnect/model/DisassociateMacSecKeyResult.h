@@ -29,7 +29,7 @@ namespace Model
   class DisassociateMacSecKeyResult
   {
   public:
-    AWS_DIRECTCONNECT_API DisassociateMacSecKeyResult();
+    AWS_DIRECTCONNECT_API DisassociateMacSecKeyResult() = default;
     AWS_DIRECTCONNECT_API DisassociateMacSecKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTCONNECT_API DisassociateMacSecKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG
      * (dxlag-xxxx).</p>
      */
-    inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
-    inline void SetConnectionId(const Aws::String& value) { m_connectionId = value; }
-    inline void SetConnectionId(Aws::String&& value) { m_connectionId = std::move(value); }
-    inline void SetConnectionId(const char* value) { m_connectionId.assign(value); }
-    inline DisassociateMacSecKeyResult& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-    inline DisassociateMacSecKeyResult& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-    inline DisassociateMacSecKeyResult& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+    inline const Aws::String& GetConnectionId() const { return m_connectionId; }
+    template<typename ConnectionIdT = Aws::String>
+    void SetConnectionId(ConnectionIdT&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::forward<ConnectionIdT>(value); }
+    template<typename ConnectionIdT = Aws::String>
+    DisassociateMacSecKeyResult& WithConnectionId(ConnectionIdT&& value) { SetConnectionId(std::forward<ConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,33 @@ namespace Model
      * <p>The MAC Security (MACsec) security keys no longer associated with the
      * dedicated connection.</p>
      */
-    inline const Aws::Vector<MacSecKey>& GetMacSecKeys() const{ return m_macSecKeys; }
-    inline void SetMacSecKeys(const Aws::Vector<MacSecKey>& value) { m_macSecKeys = value; }
-    inline void SetMacSecKeys(Aws::Vector<MacSecKey>&& value) { m_macSecKeys = std::move(value); }
-    inline DisassociateMacSecKeyResult& WithMacSecKeys(const Aws::Vector<MacSecKey>& value) { SetMacSecKeys(value); return *this;}
-    inline DisassociateMacSecKeyResult& WithMacSecKeys(Aws::Vector<MacSecKey>&& value) { SetMacSecKeys(std::move(value)); return *this;}
-    inline DisassociateMacSecKeyResult& AddMacSecKeys(const MacSecKey& value) { m_macSecKeys.push_back(value); return *this; }
-    inline DisassociateMacSecKeyResult& AddMacSecKeys(MacSecKey&& value) { m_macSecKeys.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MacSecKey>& GetMacSecKeys() const { return m_macSecKeys; }
+    template<typename MacSecKeysT = Aws::Vector<MacSecKey>>
+    void SetMacSecKeys(MacSecKeysT&& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys = std::forward<MacSecKeysT>(value); }
+    template<typename MacSecKeysT = Aws::Vector<MacSecKey>>
+    DisassociateMacSecKeyResult& WithMacSecKeys(MacSecKeysT&& value) { SetMacSecKeys(std::forward<MacSecKeysT>(value)); return *this;}
+    template<typename MacSecKeysT = MacSecKey>
+    DisassociateMacSecKeyResult& AddMacSecKeys(MacSecKeysT&& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys.emplace_back(std::forward<MacSecKeysT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateMacSecKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateMacSecKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateMacSecKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateMacSecKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_connectionId;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::Vector<MacSecKey> m_macSecKeys;
+    bool m_macSecKeysHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

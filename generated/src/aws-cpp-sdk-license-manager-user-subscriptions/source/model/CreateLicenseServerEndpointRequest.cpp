@@ -12,13 +12,6 @@ using namespace Aws::LicenseManagerUserSubscriptions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLicenseServerEndpointRequest::CreateLicenseServerEndpointRequest() : 
-    m_identityProviderArnHasBeenSet(false),
-    m_licenseServerSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLicenseServerEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

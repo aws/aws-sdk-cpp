@@ -22,7 +22,7 @@ namespace Model
   class UpdateApplicationSettingsRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API UpdateApplicationSettingsRequest();
+    AWS_PINPOINT_API UpdateApplicationSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,24 +38,22 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline UpdateApplicationSettingsRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline UpdateApplicationSettingsRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline UpdateApplicationSettingsRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    UpdateApplicationSettingsRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const WriteApplicationSettingsRequest& GetWriteApplicationSettingsRequest() const{ return m_writeApplicationSettingsRequest; }
+    inline const WriteApplicationSettingsRequest& GetWriteApplicationSettingsRequest() const { return m_writeApplicationSettingsRequest; }
     inline bool WriteApplicationSettingsRequestHasBeenSet() const { return m_writeApplicationSettingsRequestHasBeenSet; }
-    inline void SetWriteApplicationSettingsRequest(const WriteApplicationSettingsRequest& value) { m_writeApplicationSettingsRequestHasBeenSet = true; m_writeApplicationSettingsRequest = value; }
-    inline void SetWriteApplicationSettingsRequest(WriteApplicationSettingsRequest&& value) { m_writeApplicationSettingsRequestHasBeenSet = true; m_writeApplicationSettingsRequest = std::move(value); }
-    inline UpdateApplicationSettingsRequest& WithWriteApplicationSettingsRequest(const WriteApplicationSettingsRequest& value) { SetWriteApplicationSettingsRequest(value); return *this;}
-    inline UpdateApplicationSettingsRequest& WithWriteApplicationSettingsRequest(WriteApplicationSettingsRequest&& value) { SetWriteApplicationSettingsRequest(std::move(value)); return *this;}
+    template<typename WriteApplicationSettingsRequestT = WriteApplicationSettingsRequest>
+    void SetWriteApplicationSettingsRequest(WriteApplicationSettingsRequestT&& value) { m_writeApplicationSettingsRequestHasBeenSet = true; m_writeApplicationSettingsRequest = std::forward<WriteApplicationSettingsRequestT>(value); }
+    template<typename WriteApplicationSettingsRequestT = WriteApplicationSettingsRequest>
+    UpdateApplicationSettingsRequest& WithWriteApplicationSettingsRequest(WriteApplicationSettingsRequestT&& value) { SetWriteApplicationSettingsRequest(std::forward<WriteApplicationSettingsRequestT>(value)); return *this;}
     ///@}
   private:
 

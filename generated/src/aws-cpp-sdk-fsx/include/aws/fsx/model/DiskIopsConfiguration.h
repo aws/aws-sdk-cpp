@@ -37,7 +37,7 @@ namespace Model
   class DiskIopsConfiguration
   {
   public:
-    AWS_FSX_API DiskIopsConfiguration();
+    AWS_FSX_API DiskIopsConfiguration() = default;
     AWS_FSX_API DiskIopsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API DiskIopsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a
      * <code>USER_PROVISIONED</code> value.</p>
      */
-    inline const DiskIopsConfigurationMode& GetMode() const{ return m_mode; }
+    inline DiskIopsConfigurationMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const DiskIopsConfigurationMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(DiskIopsConfigurationMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline DiskIopsConfiguration& WithMode(const DiskIopsConfigurationMode& value) { SetMode(value); return *this;}
-    inline DiskIopsConfiguration& WithMode(DiskIopsConfigurationMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(DiskIopsConfigurationMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline DiskIopsConfiguration& WithMode(DiskIopsConfigurationMode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
@@ -68,17 +66,17 @@ namespace Model
      * code 400 (Bad Request) if the value of <code>Iops</code> is outside of the
      * minimum or maximum values.</p>
      */
-    inline long long GetIops() const{ return m_iops; }
+    inline long long GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(long long value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline DiskIopsConfiguration& WithIops(long long value) { SetIops(value); return *this;}
     ///@}
   private:
 
-    DiskIopsConfigurationMode m_mode;
+    DiskIopsConfigurationMode m_mode{DiskIopsConfigurationMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
-    long long m_iops;
+    long long m_iops{0};
     bool m_iopsHasBeenSet = false;
   };
 

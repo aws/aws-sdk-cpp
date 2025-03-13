@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MulticastSource::MulticastSource() : 
-    m_sourceIpHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 MulticastSource::MulticastSource(JsonView jsonValue)
-  : MulticastSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MulticastSource& MulticastSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceIp"))
   {
     m_sourceIp = jsonValue.GetString("sourceIp");
-
     m_sourceIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

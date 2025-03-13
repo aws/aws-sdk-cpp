@@ -33,7 +33,7 @@ namespace Model
   class AggregateConfiguration
   {
   public:
-    AWS_FSX_API AggregateConfiguration();
+    AWS_FSX_API AggregateConfiguration() = default;
     AWS_FSX_API AggregateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API AggregateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,15 +53,14 @@ namespace Model
      * <p>One or more of the aggregates supplied are too close to the volume limit to
      * support adding more volumes.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetAggregates() const{ return m_aggregates; }
+    inline const Aws::Vector<Aws::String>& GetAggregates() const { return m_aggregates; }
     inline bool AggregatesHasBeenSet() const { return m_aggregatesHasBeenSet; }
-    inline void SetAggregates(const Aws::Vector<Aws::String>& value) { m_aggregatesHasBeenSet = true; m_aggregates = value; }
-    inline void SetAggregates(Aws::Vector<Aws::String>&& value) { m_aggregatesHasBeenSet = true; m_aggregates = std::move(value); }
-    inline AggregateConfiguration& WithAggregates(const Aws::Vector<Aws::String>& value) { SetAggregates(value); return *this;}
-    inline AggregateConfiguration& WithAggregates(Aws::Vector<Aws::String>&& value) { SetAggregates(std::move(value)); return *this;}
-    inline AggregateConfiguration& AddAggregates(const Aws::String& value) { m_aggregatesHasBeenSet = true; m_aggregates.push_back(value); return *this; }
-    inline AggregateConfiguration& AddAggregates(Aws::String&& value) { m_aggregatesHasBeenSet = true; m_aggregates.push_back(std::move(value)); return *this; }
-    inline AggregateConfiguration& AddAggregates(const char* value) { m_aggregatesHasBeenSet = true; m_aggregates.push_back(value); return *this; }
+    template<typename AggregatesT = Aws::Vector<Aws::String>>
+    void SetAggregates(AggregatesT&& value) { m_aggregatesHasBeenSet = true; m_aggregates = std::forward<AggregatesT>(value); }
+    template<typename AggregatesT = Aws::Vector<Aws::String>>
+    AggregateConfiguration& WithAggregates(AggregatesT&& value) { SetAggregates(std::forward<AggregatesT>(value)); return *this;}
+    template<typename AggregatesT = Aws::String>
+    AggregateConfiguration& AddAggregates(AggregatesT&& value) { m_aggregatesHasBeenSet = true; m_aggregates.emplace_back(std::forward<AggregatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,7 +68,7 @@ namespace Model
      * <p>The total number of constituents this FlexGroup volume has. Not applicable
      * for FlexVols.</p>
      */
-    inline int GetTotalConstituents() const{ return m_totalConstituents; }
+    inline int GetTotalConstituents() const { return m_totalConstituents; }
     inline bool TotalConstituentsHasBeenSet() const { return m_totalConstituentsHasBeenSet; }
     inline void SetTotalConstituents(int value) { m_totalConstituentsHasBeenSet = true; m_totalConstituents = value; }
     inline AggregateConfiguration& WithTotalConstituents(int value) { SetTotalConstituents(value); return *this;}
@@ -79,7 +78,7 @@ namespace Model
     Aws::Vector<Aws::String> m_aggregates;
     bool m_aggregatesHasBeenSet = false;
 
-    int m_totalConstituents;
+    int m_totalConstituents{0};
     bool m_totalConstituentsHasBeenSet = false;
   };
 

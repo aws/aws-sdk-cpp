@@ -18,15 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-CommitDiffSourceCodeType::CommitDiffSourceCodeType() : 
-    m_sourceCommitHasBeenSet(false),
-    m_destinationCommitHasBeenSet(false),
-    m_mergeBaseCommitHasBeenSet(false)
-{
-}
-
 CommitDiffSourceCodeType::CommitDiffSourceCodeType(JsonView jsonValue)
-  : CommitDiffSourceCodeType()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CommitDiffSourceCodeType& CommitDiffSourceCodeType::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("SourceCommit"))
   {
     m_sourceCommit = jsonValue.GetString("SourceCommit");
-
     m_sourceCommitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationCommit"))
   {
     m_destinationCommit = jsonValue.GetString("DestinationCommit");
-
     m_destinationCommitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MergeBaseCommit"))
   {
     m_mergeBaseCommit = jsonValue.GetString("MergeBaseCommit");
-
     m_mergeBaseCommitHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,13 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-TerminateInstanceInAutoScalingGroupRequest::TerminateInstanceInAutoScalingGroupRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_shouldDecrementDesiredCapacity(false),
-    m_shouldDecrementDesiredCapacityHasBeenSet(false)
-{
-}
-
 Aws::String TerminateInstanceInAutoScalingGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

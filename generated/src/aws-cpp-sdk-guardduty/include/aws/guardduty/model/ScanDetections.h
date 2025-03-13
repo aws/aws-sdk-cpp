@@ -35,7 +35,7 @@ namespace Model
   class ScanDetections
   {
   public:
-    AWS_GUARDDUTY_API ScanDetections();
+    AWS_GUARDDUTY_API ScanDetections() = default;
     AWS_GUARDDUTY_API ScanDetections(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API ScanDetections& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
     /**
      * <p>Total number of scanned files.</p>
      */
-    inline const ScannedItemCount& GetScannedItemCount() const{ return m_scannedItemCount; }
+    inline const ScannedItemCount& GetScannedItemCount() const { return m_scannedItemCount; }
     inline bool ScannedItemCountHasBeenSet() const { return m_scannedItemCountHasBeenSet; }
-    inline void SetScannedItemCount(const ScannedItemCount& value) { m_scannedItemCountHasBeenSet = true; m_scannedItemCount = value; }
-    inline void SetScannedItemCount(ScannedItemCount&& value) { m_scannedItemCountHasBeenSet = true; m_scannedItemCount = std::move(value); }
-    inline ScanDetections& WithScannedItemCount(const ScannedItemCount& value) { SetScannedItemCount(value); return *this;}
-    inline ScanDetections& WithScannedItemCount(ScannedItemCount&& value) { SetScannedItemCount(std::move(value)); return *this;}
+    template<typename ScannedItemCountT = ScannedItemCount>
+    void SetScannedItemCount(ScannedItemCountT&& value) { m_scannedItemCountHasBeenSet = true; m_scannedItemCount = std::forward<ScannedItemCountT>(value); }
+    template<typename ScannedItemCountT = ScannedItemCount>
+    ScanDetections& WithScannedItemCount(ScannedItemCountT&& value) { SetScannedItemCount(std::forward<ScannedItemCountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Total number of infected files.</p>
      */
-    inline const ThreatsDetectedItemCount& GetThreatsDetectedItemCount() const{ return m_threatsDetectedItemCount; }
+    inline const ThreatsDetectedItemCount& GetThreatsDetectedItemCount() const { return m_threatsDetectedItemCount; }
     inline bool ThreatsDetectedItemCountHasBeenSet() const { return m_threatsDetectedItemCountHasBeenSet; }
-    inline void SetThreatsDetectedItemCount(const ThreatsDetectedItemCount& value) { m_threatsDetectedItemCountHasBeenSet = true; m_threatsDetectedItemCount = value; }
-    inline void SetThreatsDetectedItemCount(ThreatsDetectedItemCount&& value) { m_threatsDetectedItemCountHasBeenSet = true; m_threatsDetectedItemCount = std::move(value); }
-    inline ScanDetections& WithThreatsDetectedItemCount(const ThreatsDetectedItemCount& value) { SetThreatsDetectedItemCount(value); return *this;}
-    inline ScanDetections& WithThreatsDetectedItemCount(ThreatsDetectedItemCount&& value) { SetThreatsDetectedItemCount(std::move(value)); return *this;}
+    template<typename ThreatsDetectedItemCountT = ThreatsDetectedItemCount>
+    void SetThreatsDetectedItemCount(ThreatsDetectedItemCountT&& value) { m_threatsDetectedItemCountHasBeenSet = true; m_threatsDetectedItemCount = std::forward<ThreatsDetectedItemCountT>(value); }
+    template<typename ThreatsDetectedItemCountT = ThreatsDetectedItemCount>
+    ScanDetections& WithThreatsDetectedItemCount(ThreatsDetectedItemCountT&& value) { SetThreatsDetectedItemCount(std::forward<ThreatsDetectedItemCountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,24 +70,24 @@ namespace Model
      * <p>Details of the highest severity threat detected during malware scan and
      * number of infected files.</p>
      */
-    inline const HighestSeverityThreatDetails& GetHighestSeverityThreatDetails() const{ return m_highestSeverityThreatDetails; }
+    inline const HighestSeverityThreatDetails& GetHighestSeverityThreatDetails() const { return m_highestSeverityThreatDetails; }
     inline bool HighestSeverityThreatDetailsHasBeenSet() const { return m_highestSeverityThreatDetailsHasBeenSet; }
-    inline void SetHighestSeverityThreatDetails(const HighestSeverityThreatDetails& value) { m_highestSeverityThreatDetailsHasBeenSet = true; m_highestSeverityThreatDetails = value; }
-    inline void SetHighestSeverityThreatDetails(HighestSeverityThreatDetails&& value) { m_highestSeverityThreatDetailsHasBeenSet = true; m_highestSeverityThreatDetails = std::move(value); }
-    inline ScanDetections& WithHighestSeverityThreatDetails(const HighestSeverityThreatDetails& value) { SetHighestSeverityThreatDetails(value); return *this;}
-    inline ScanDetections& WithHighestSeverityThreatDetails(HighestSeverityThreatDetails&& value) { SetHighestSeverityThreatDetails(std::move(value)); return *this;}
+    template<typename HighestSeverityThreatDetailsT = HighestSeverityThreatDetails>
+    void SetHighestSeverityThreatDetails(HighestSeverityThreatDetailsT&& value) { m_highestSeverityThreatDetailsHasBeenSet = true; m_highestSeverityThreatDetails = std::forward<HighestSeverityThreatDetailsT>(value); }
+    template<typename HighestSeverityThreatDetailsT = HighestSeverityThreatDetails>
+    ScanDetections& WithHighestSeverityThreatDetails(HighestSeverityThreatDetailsT&& value) { SetHighestSeverityThreatDetails(std::forward<HighestSeverityThreatDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about identified threats organized by threat name.</p>
      */
-    inline const ThreatDetectedByName& GetThreatDetectedByName() const{ return m_threatDetectedByName; }
+    inline const ThreatDetectedByName& GetThreatDetectedByName() const { return m_threatDetectedByName; }
     inline bool ThreatDetectedByNameHasBeenSet() const { return m_threatDetectedByNameHasBeenSet; }
-    inline void SetThreatDetectedByName(const ThreatDetectedByName& value) { m_threatDetectedByNameHasBeenSet = true; m_threatDetectedByName = value; }
-    inline void SetThreatDetectedByName(ThreatDetectedByName&& value) { m_threatDetectedByNameHasBeenSet = true; m_threatDetectedByName = std::move(value); }
-    inline ScanDetections& WithThreatDetectedByName(const ThreatDetectedByName& value) { SetThreatDetectedByName(value); return *this;}
-    inline ScanDetections& WithThreatDetectedByName(ThreatDetectedByName&& value) { SetThreatDetectedByName(std::move(value)); return *this;}
+    template<typename ThreatDetectedByNameT = ThreatDetectedByName>
+    void SetThreatDetectedByName(ThreatDetectedByNameT&& value) { m_threatDetectedByNameHasBeenSet = true; m_threatDetectedByName = std::forward<ThreatDetectedByNameT>(value); }
+    template<typename ThreatDetectedByNameT = ThreatDetectedByName>
+    ScanDetections& WithThreatDetectedByName(ThreatDetectedByNameT&& value) { SetThreatDetectedByName(std::forward<ThreatDetectedByNameT>(value)); return *this;}
     ///@}
   private:
 

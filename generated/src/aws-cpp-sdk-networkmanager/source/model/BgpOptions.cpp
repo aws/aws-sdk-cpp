@@ -18,14 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-BgpOptions::BgpOptions() : 
-    m_peerAsn(0),
-    m_peerAsnHasBeenSet(false)
-{
-}
-
 BgpOptions::BgpOptions(JsonView jsonValue)
-  : BgpOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BgpOptions& BgpOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PeerAsn"))
   {
     m_peerAsn = jsonValue.GetInt64("PeerAsn");
-
     m_peerAsnHasBeenSet = true;
   }
-
   return *this;
 }
 

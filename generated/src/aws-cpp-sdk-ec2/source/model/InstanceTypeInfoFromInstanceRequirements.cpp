@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceTypeInfoFromInstanceRequirements::InstanceTypeInfoFromInstanceRequirements() : 
-    m_instanceTypeHasBeenSet(false)
-{
-}
-
 InstanceTypeInfoFromInstanceRequirements::InstanceTypeInfoFromInstanceRequirements(const XmlNode& xmlNode)
-  : InstanceTypeInfoFromInstanceRequirements()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ InstanceTypeInfoFromInstanceRequirements& InstanceTypeInfoFromInstanceRequiremen
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
   }
 

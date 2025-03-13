@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ParameterNameValue::ParameterNameValue() : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
-{
-}
-
 ParameterNameValue::ParameterNameValue(const XmlNode& xmlNode)
-  : ParameterNameValue()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ParameterNameValue& ParameterNameValue::operator =(const XmlNode& xmlNode)
     {
       m_parameterName = Aws::Utils::Xml::DecodeEscapedXmlText(parameterNameNode.GetText());
       m_parameterNameHasBeenSet = true;
+       m_parameterNameHasBeenSet = true;
     }
     XmlNode parameterValueNode = resultNode.FirstChild("ParameterValue");
     if(!parameterValueNode.IsNull())
     {
       m_parameterValue = Aws::Utils::Xml::DecodeEscapedXmlText(parameterValueNode.GetText());
       m_parameterValueHasBeenSet = true;
+       m_parameterValueHasBeenSet = true;
     }
   }
 

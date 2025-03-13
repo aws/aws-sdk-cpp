@@ -24,7 +24,7 @@ namespace Model
   class CancelJobRequest : public ImportExportRequest
   {
   public:
-    AWS_IMPORTEXPORT_API CancelJobRequest();
+    AWS_IMPORTEXPORT_API CancelJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,26 +41,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline CancelJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline CancelJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline CancelJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    CancelJobRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetAPIVersion() const{ return m_aPIVersion; }
+    inline const Aws::String& GetAPIVersion() const { return m_aPIVersion; }
     inline bool APIVersionHasBeenSet() const { return m_aPIVersionHasBeenSet; }
-    inline void SetAPIVersion(const Aws::String& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = value; }
-    inline void SetAPIVersion(Aws::String&& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = std::move(value); }
-    inline void SetAPIVersion(const char* value) { m_aPIVersionHasBeenSet = true; m_aPIVersion.assign(value); }
-    inline CancelJobRequest& WithAPIVersion(const Aws::String& value) { SetAPIVersion(value); return *this;}
-    inline CancelJobRequest& WithAPIVersion(Aws::String&& value) { SetAPIVersion(std::move(value)); return *this;}
-    inline CancelJobRequest& WithAPIVersion(const char* value) { SetAPIVersion(value); return *this;}
+    template<typename APIVersionT = Aws::String>
+    void SetAPIVersion(APIVersionT&& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = std::forward<APIVersionT>(value); }
+    template<typename APIVersionT = Aws::String>
+    CancelJobRequest& WithAPIVersion(APIVersionT&& value) { SetAPIVersion(std::forward<APIVersionT>(value)); return *this;}
     ///@}
   private:
 

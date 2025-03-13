@@ -33,7 +33,7 @@ namespace Model
   class WriteEventStream
   {
   public:
-    AWS_PINPOINT_API WriteEventStream();
+    AWS_PINPOINT_API WriteEventStream() = default;
     AWS_PINPOINT_API WriteEventStream(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API WriteEventStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
 
      *               </p>
      */
-    inline const Aws::String& GetDestinationStreamArn() const{ return m_destinationStreamArn; }
+    inline const Aws::String& GetDestinationStreamArn() const { return m_destinationStreamArn; }
     inline bool DestinationStreamArnHasBeenSet() const { return m_destinationStreamArnHasBeenSet; }
-    inline void SetDestinationStreamArn(const Aws::String& value) { m_destinationStreamArnHasBeenSet = true; m_destinationStreamArn = value; }
-    inline void SetDestinationStreamArn(Aws::String&& value) { m_destinationStreamArnHasBeenSet = true; m_destinationStreamArn = std::move(value); }
-    inline void SetDestinationStreamArn(const char* value) { m_destinationStreamArnHasBeenSet = true; m_destinationStreamArn.assign(value); }
-    inline WriteEventStream& WithDestinationStreamArn(const Aws::String& value) { SetDestinationStreamArn(value); return *this;}
-    inline WriteEventStream& WithDestinationStreamArn(Aws::String&& value) { SetDestinationStreamArn(std::move(value)); return *this;}
-    inline WriteEventStream& WithDestinationStreamArn(const char* value) { SetDestinationStreamArn(value); return *this;}
+    template<typename DestinationStreamArnT = Aws::String>
+    void SetDestinationStreamArn(DestinationStreamArnT&& value) { m_destinationStreamArnHasBeenSet = true; m_destinationStreamArn = std::forward<DestinationStreamArnT>(value); }
+    template<typename DestinationStreamArnT = Aws::String>
+    WriteEventStream& WithDestinationStreamArn(DestinationStreamArnT&& value) { SetDestinationStreamArn(std::forward<DestinationStreamArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon
      * Pinpoint to publish event data to the stream in your AWS account.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline WriteEventStream& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline WriteEventStream& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline WriteEventStream& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    WriteEventStream& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

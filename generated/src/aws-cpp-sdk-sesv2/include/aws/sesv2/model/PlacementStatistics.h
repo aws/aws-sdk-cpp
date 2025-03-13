@@ -30,7 +30,7 @@ namespace Model
   class PlacementStatistics
   {
   public:
-    AWS_SESV2_API PlacementStatistics();
+    AWS_SESV2_API PlacementStatistics() = default;
     AWS_SESV2_API PlacementStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API PlacementStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The percentage of emails that arrived in recipients' inboxes during the
      * predictive inbox placement test.</p>
      */
-    inline double GetInboxPercentage() const{ return m_inboxPercentage; }
+    inline double GetInboxPercentage() const { return m_inboxPercentage; }
     inline bool InboxPercentageHasBeenSet() const { return m_inboxPercentageHasBeenSet; }
     inline void SetInboxPercentage(double value) { m_inboxPercentageHasBeenSet = true; m_inboxPercentage = value; }
     inline PlacementStatistics& WithInboxPercentage(double value) { SetInboxPercentage(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
      * <p>The percentage of emails that arrived in recipients' spam or junk mail
      * folders during the predictive inbox placement test.</p>
      */
-    inline double GetSpamPercentage() const{ return m_spamPercentage; }
+    inline double GetSpamPercentage() const { return m_spamPercentage; }
     inline bool SpamPercentageHasBeenSet() const { return m_spamPercentageHasBeenSet; }
     inline void SetSpamPercentage(double value) { m_spamPercentageHasBeenSet = true; m_spamPercentage = value; }
     inline PlacementStatistics& WithSpamPercentage(double value) { SetSpamPercentage(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
      * <p>The percentage of emails that didn't arrive in recipients' inboxes at all
      * during the predictive inbox placement test.</p>
      */
-    inline double GetMissingPercentage() const{ return m_missingPercentage; }
+    inline double GetMissingPercentage() const { return m_missingPercentage; }
     inline bool MissingPercentageHasBeenSet() const { return m_missingPercentageHasBeenSet; }
     inline void SetMissingPercentage(double value) { m_missingPercentageHasBeenSet = true; m_missingPercentage = value; }
     inline PlacementStatistics& WithMissingPercentage(double value) { SetMissingPercentage(value); return *this;}
@@ -74,7 +74,7 @@ namespace Model
      * <p>The percentage of emails that were authenticated by using Sender Policy
      * Framework (SPF) during the predictive inbox placement test.</p>
      */
-    inline double GetSpfPercentage() const{ return m_spfPercentage; }
+    inline double GetSpfPercentage() const { return m_spfPercentage; }
     inline bool SpfPercentageHasBeenSet() const { return m_spfPercentageHasBeenSet; }
     inline void SetSpfPercentage(double value) { m_spfPercentageHasBeenSet = true; m_spfPercentage = value; }
     inline PlacementStatistics& WithSpfPercentage(double value) { SetSpfPercentage(value); return *this;}
@@ -85,26 +85,26 @@ namespace Model
      * <p>The percentage of emails that were authenticated by using DomainKeys
      * Identified Mail (DKIM) during the predictive inbox placement test.</p>
      */
-    inline double GetDkimPercentage() const{ return m_dkimPercentage; }
+    inline double GetDkimPercentage() const { return m_dkimPercentage; }
     inline bool DkimPercentageHasBeenSet() const { return m_dkimPercentageHasBeenSet; }
     inline void SetDkimPercentage(double value) { m_dkimPercentageHasBeenSet = true; m_dkimPercentage = value; }
     inline PlacementStatistics& WithDkimPercentage(double value) { SetDkimPercentage(value); return *this;}
     ///@}
   private:
 
-    double m_inboxPercentage;
+    double m_inboxPercentage{0.0};
     bool m_inboxPercentageHasBeenSet = false;
 
-    double m_spamPercentage;
+    double m_spamPercentage{0.0};
     bool m_spamPercentageHasBeenSet = false;
 
-    double m_missingPercentage;
+    double m_missingPercentage{0.0};
     bool m_missingPercentageHasBeenSet = false;
 
-    double m_spfPercentage;
+    double m_spfPercentage{0.0};
     bool m_spfPercentageHasBeenSet = false;
 
-    double m_dkimPercentage;
+    double m_dkimPercentage{0.0};
     bool m_dkimPercentageHasBeenSet = false;
   };
 

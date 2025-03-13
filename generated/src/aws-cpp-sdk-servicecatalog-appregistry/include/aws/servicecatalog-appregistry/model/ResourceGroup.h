@@ -33,7 +33,7 @@ namespace Model
   class ResourceGroup
   {
   public:
-    AWS_APPREGISTRY_API ResourceGroup();
+    AWS_APPREGISTRY_API ResourceGroup() = default;
     AWS_APPREGISTRY_API ResourceGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPREGISTRY_API ResourceGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,26 +50,22 @@ namespace Model
      * resource group updated successfully.</p> <p> <code>UPDATE_FAILED</code> if the
      * resource group could not update successfully.</p>
      */
-    inline const ResourceGroupState& GetState() const{ return m_state; }
+    inline ResourceGroupState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ResourceGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ResourceGroupState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ResourceGroup& WithState(const ResourceGroupState& value) { SetState(value); return *this;}
-    inline ResourceGroup& WithState(ResourceGroupState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ResourceGroupState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ResourceGroup& WithState(ResourceGroupState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon resource name (ARN) of the resource group.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ResourceGroup& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ResourceGroup& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ResourceGroup& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ResourceGroup& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,18 +73,16 @@ namespace Model
      * <p>The error message that generates when the propagation process for the
      * resource group fails.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline ResourceGroup& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline ResourceGroup& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline ResourceGroup& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    ResourceGroup& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 
-    ResourceGroupState m_state;
+    ResourceGroupState m_state{ResourceGroupState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_arn;

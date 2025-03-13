@@ -32,7 +32,7 @@ namespace Model
   class QueryExecutionOptions
   {
   public:
-    AWS_QUICKSIGHT_API QueryExecutionOptions();
+    AWS_QUICKSIGHT_API QueryExecutionOptions() = default;
     AWS_QUICKSIGHT_API QueryExecutionOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API QueryExecutionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>A structure that describes the query execution mode.</p>
      */
-    inline const QueryExecutionMode& GetQueryExecutionMode() const{ return m_queryExecutionMode; }
+    inline QueryExecutionMode GetQueryExecutionMode() const { return m_queryExecutionMode; }
     inline bool QueryExecutionModeHasBeenSet() const { return m_queryExecutionModeHasBeenSet; }
-    inline void SetQueryExecutionMode(const QueryExecutionMode& value) { m_queryExecutionModeHasBeenSet = true; m_queryExecutionMode = value; }
-    inline void SetQueryExecutionMode(QueryExecutionMode&& value) { m_queryExecutionModeHasBeenSet = true; m_queryExecutionMode = std::move(value); }
-    inline QueryExecutionOptions& WithQueryExecutionMode(const QueryExecutionMode& value) { SetQueryExecutionMode(value); return *this;}
-    inline QueryExecutionOptions& WithQueryExecutionMode(QueryExecutionMode&& value) { SetQueryExecutionMode(std::move(value)); return *this;}
+    inline void SetQueryExecutionMode(QueryExecutionMode value) { m_queryExecutionModeHasBeenSet = true; m_queryExecutionMode = value; }
+    inline QueryExecutionOptions& WithQueryExecutionMode(QueryExecutionMode value) { SetQueryExecutionMode(value); return *this;}
     ///@}
   private:
 
-    QueryExecutionMode m_queryExecutionMode;
+    QueryExecutionMode m_queryExecutionMode{QueryExecutionMode::NOT_SET};
     bool m_queryExecutionModeHasBeenSet = false;
   };
 

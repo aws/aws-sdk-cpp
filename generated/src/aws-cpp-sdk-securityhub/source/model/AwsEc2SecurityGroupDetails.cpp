@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2SecurityGroupDetails::AwsEc2SecurityGroupDetails() : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ipPermissionsHasBeenSet(false),
-    m_ipPermissionsEgressHasBeenSet(false)
-{
-}
-
 AwsEc2SecurityGroupDetails::AwsEc2SecurityGroupDetails(JsonView jsonValue)
-  : AwsEc2SecurityGroupDetails()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AwsEc2SecurityGroupDetails& AwsEc2SecurityGroupDetails::operator =(JsonView json
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpPermissions"))
   {
     Aws::Utils::Array<JsonView> ipPermissionsJsonList = jsonValue.GetArray("IpPermissions");
@@ -73,7 +54,6 @@ AwsEc2SecurityGroupDetails& AwsEc2SecurityGroupDetails::operator =(JsonView json
     }
     m_ipPermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpPermissionsEgress"))
   {
     Aws::Utils::Array<JsonView> ipPermissionsEgressJsonList = jsonValue.GetArray("IpPermissionsEgress");
@@ -83,7 +63,6 @@ AwsEc2SecurityGroupDetails& AwsEc2SecurityGroupDetails::operator =(JsonView json
     }
     m_ipPermissionsEgressHasBeenSet = true;
   }
-
   return *this;
 }
 

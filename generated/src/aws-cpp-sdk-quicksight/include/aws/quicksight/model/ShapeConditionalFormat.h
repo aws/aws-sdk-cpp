@@ -32,7 +32,7 @@ namespace Model
   class ShapeConditionalFormat
   {
   public:
-    AWS_QUICKSIGHT_API ShapeConditionalFormat();
+    AWS_QUICKSIGHT_API ShapeConditionalFormat() = default;
     AWS_QUICKSIGHT_API ShapeConditionalFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ShapeConditionalFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The conditional formatting for the shape background color of a filled map
      * visual.</p>
      */
-    inline const ConditionalFormattingColor& GetBackgroundColor() const{ return m_backgroundColor; }
+    inline const ConditionalFormattingColor& GetBackgroundColor() const { return m_backgroundColor; }
     inline bool BackgroundColorHasBeenSet() const { return m_backgroundColorHasBeenSet; }
-    inline void SetBackgroundColor(const ConditionalFormattingColor& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = value; }
-    inline void SetBackgroundColor(ConditionalFormattingColor&& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = std::move(value); }
-    inline ShapeConditionalFormat& WithBackgroundColor(const ConditionalFormattingColor& value) { SetBackgroundColor(value); return *this;}
-    inline ShapeConditionalFormat& WithBackgroundColor(ConditionalFormattingColor&& value) { SetBackgroundColor(std::move(value)); return *this;}
+    template<typename BackgroundColorT = ConditionalFormattingColor>
+    void SetBackgroundColor(BackgroundColorT&& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = std::forward<BackgroundColorT>(value); }
+    template<typename BackgroundColorT = ConditionalFormattingColor>
+    ShapeConditionalFormat& WithBackgroundColor(BackgroundColorT&& value) { SetBackgroundColor(std::forward<BackgroundColorT>(value)); return *this;}
     ///@}
   private:
 

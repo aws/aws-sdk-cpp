@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-M2NonManagedApplicationStepSummary::M2NonManagedApplicationStepSummary() : 
-    m_stepInputHasBeenSet(false),
-    m_stepOutputHasBeenSet(false)
-{
-}
-
 M2NonManagedApplicationStepSummary::M2NonManagedApplicationStepSummary(JsonView jsonValue)
-  : M2NonManagedApplicationStepSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ M2NonManagedApplicationStepSummary& M2NonManagedApplicationStepSummary::operator
   if(jsonValue.ValueExists("stepInput"))
   {
     m_stepInput = jsonValue.GetObject("stepInput");
-
     m_stepInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepOutput"))
   {
     m_stepOutput = jsonValue.GetObject("stepOutput");
-
     m_stepOutputHasBeenSet = true;
   }
-
   return *this;
 }
 

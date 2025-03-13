@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeMigrationProjectsResult::DescribeMigrationProjectsResult()
-{
-}
-
 DescribeMigrationProjectsResult::DescribeMigrationProjectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeMigrationProjectsResult& DescribeMigrationProjectsResult::operator =(con
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MigrationProjects"))
   {
     Aws::Utils::Array<JsonView> migrationProjectsJsonList = jsonValue.GetArray("MigrationProjects");
@@ -42,14 +37,15 @@ DescribeMigrationProjectsResult& DescribeMigrationProjectsResult::operator =(con
     {
       m_migrationProjects.push_back(migrationProjectsJsonList[migrationProjectsIndex].AsObject());
     }
+    m_migrationProjectsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

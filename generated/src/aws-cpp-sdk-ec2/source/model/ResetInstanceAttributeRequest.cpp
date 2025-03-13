@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ResetInstanceAttributeRequest::ResetInstanceAttributeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_attribute(InstanceAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false)
-{
-}
-
 Aws::String ResetInstanceAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

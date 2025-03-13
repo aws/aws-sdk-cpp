@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEntitiesDetectionJobResult::DescribeEntitiesDetectionJobResult()
-{
-}
-
 DescribeEntitiesDetectionJobResult::DescribeEntitiesDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeEntitiesDetectionJobResult& DescribeEntitiesDetectionJobResult::operator
   if(jsonValue.ValueExists("EntitiesDetectionJobProperties"))
   {
     m_entitiesDetectionJobProperties = jsonValue.GetObject("EntitiesDetectionJobProperties");
-
+    m_entitiesDetectionJobPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDashboardRequest::GetDashboardRequest() : 
-    m_dashboardIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDashboardRequest::SerializePayload() const
 {
   JsonValue payload;

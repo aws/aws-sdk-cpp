@@ -31,7 +31,7 @@ namespace Model
   class ResourceSharingConfig
   {
   public:
-    AWS_SAGEMAKER_API ResourceSharingConfig();
+    AWS_SAGEMAKER_API ResourceSharingConfig() = default;
     AWS_SAGEMAKER_API ResourceSharingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ResourceSharingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * compute from other entities.</p> </li> </ul> <p>Default is
      * <code>LendandBorrow</code>.</p>
      */
-    inline const ResourceSharingStrategy& GetStrategy() const{ return m_strategy; }
+    inline ResourceSharingStrategy GetStrategy() const { return m_strategy; }
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
-    inline void SetStrategy(const ResourceSharingStrategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
-    inline void SetStrategy(ResourceSharingStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
-    inline ResourceSharingConfig& WithStrategy(const ResourceSharingStrategy& value) { SetStrategy(value); return *this;}
-    inline ResourceSharingConfig& WithStrategy(ResourceSharingStrategy&& value) { SetStrategy(std::move(value)); return *this;}
+    inline void SetStrategy(ResourceSharingStrategy value) { m_strategyHasBeenSet = true; m_strategy = value; }
+    inline ResourceSharingConfig& WithStrategy(ResourceSharingStrategy value) { SetStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -61,17 +59,17 @@ namespace Model
      * percent of idle compute that the team is allowed to borrow.</p> <p>Default is
      * <code>50</code>.</p>
      */
-    inline int GetBorrowLimit() const{ return m_borrowLimit; }
+    inline int GetBorrowLimit() const { return m_borrowLimit; }
     inline bool BorrowLimitHasBeenSet() const { return m_borrowLimitHasBeenSet; }
     inline void SetBorrowLimit(int value) { m_borrowLimitHasBeenSet = true; m_borrowLimit = value; }
     inline ResourceSharingConfig& WithBorrowLimit(int value) { SetBorrowLimit(value); return *this;}
     ///@}
   private:
 
-    ResourceSharingStrategy m_strategy;
+    ResourceSharingStrategy m_strategy{ResourceSharingStrategy::NOT_SET};
     bool m_strategyHasBeenSet = false;
 
-    int m_borrowLimit;
+    int m_borrowLimit{0};
     bool m_borrowLimitHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails() : 
-    m_healthCheckHasBeenSet(false)
-{
-}
-
 AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails(JsonView jsonValue)
-  : AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails& AwsEventsEndpointRou
   if(jsonValue.ValueExists("HealthCheck"))
   {
     m_healthCheck = jsonValue.GetString("HealthCheck");
-
     m_healthCheckHasBeenSet = true;
   }
-
   return *this;
 }
 

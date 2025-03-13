@@ -18,33 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Signal::Signal() : 
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_productArnHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_signalIndicatorsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdAt(0),
-    m_createdAtHasBeenSet(false),
-    m_updatedAt(0),
-    m_updatedAtHasBeenSet(false),
-    m_firstSeenAt(0),
-    m_firstSeenAtHasBeenSet(false),
-    m_lastSeenAt(0),
-    m_lastSeenAtHasBeenSet(false),
-    m_severity(0.0),
-    m_severityHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_actorIdsHasBeenSet(false),
-    m_endpointIdsHasBeenSet(false)
-{
-}
-
 Signal::Signal(JsonView jsonValue)
-  : Signal()
 {
   *this = jsonValue;
 }
@@ -54,31 +28,23 @@ Signal& Signal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductArn"))
   {
     m_productArn = jsonValue.GetString("ProductArn");
-
     m_productArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceIds"))
   {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("ResourceIds");
@@ -88,7 +54,6 @@ Signal& Signal::operator =(JsonView jsonValue)
     }
     m_resourceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SignalIndicators"))
   {
     Aws::Utils::Array<JsonView> signalIndicatorsJsonList = jsonValue.GetArray("SignalIndicators");
@@ -98,56 +63,41 @@ Signal& Signal::operator =(JsonView jsonValue)
     }
     m_signalIndicatorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetInt64("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetInt64("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstSeenAt"))
   {
     m_firstSeenAt = jsonValue.GetInt64("FirstSeenAt");
-
     m_firstSeenAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSeenAt"))
   {
     m_lastSeenAt = jsonValue.GetInt64("LastSeenAt");
-
     m_lastSeenAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = jsonValue.GetDouble("Severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActorIds"))
   {
     Aws::Utils::Array<JsonView> actorIdsJsonList = jsonValue.GetArray("ActorIds");
@@ -157,7 +107,6 @@ Signal& Signal::operator =(JsonView jsonValue)
     }
     m_actorIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointIds"))
   {
     Aws::Utils::Array<JsonView> endpointIdsJsonList = jsonValue.GetArray("EndpointIds");
@@ -167,7 +116,6 @@ Signal& Signal::operator =(JsonView jsonValue)
     }
     m_endpointIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

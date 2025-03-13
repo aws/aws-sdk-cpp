@@ -18,17 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-EndpointDetails::EndpointDetails() : 
-    m_addressAllocationIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
-{
-}
-
 EndpointDetails::EndpointDetails(JsonView jsonValue)
-  : EndpointDetails()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ EndpointDetails& EndpointDetails::operator =(JsonView jsonValue)
     }
     m_addressAllocationIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -54,21 +43,16 @@ EndpointDetails& EndpointDetails::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
-
     m_vpcEndpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -78,7 +62,6 @@ EndpointDetails& EndpointDetails::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

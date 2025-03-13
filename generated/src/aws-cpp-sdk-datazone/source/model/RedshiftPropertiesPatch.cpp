@@ -18,19 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RedshiftPropertiesPatch::RedshiftPropertiesPatch() : 
-    m_credentialsHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_hostHasBeenSet(false),
-    m_lineageSyncHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_storageHasBeenSet(false)
-{
-}
-
 RedshiftPropertiesPatch::RedshiftPropertiesPatch(JsonView jsonValue)
-  : RedshiftPropertiesPatch()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ RedshiftPropertiesPatch& RedshiftPropertiesPatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("credentials"))
   {
     m_credentials = jsonValue.GetObject("credentials");
-
     m_credentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("host"))
   {
     m_host = jsonValue.GetString("host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lineageSync"))
   {
     m_lineageSync = jsonValue.GetObject("lineageSync");
-
     m_lineageSyncHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storage"))
   {
     m_storage = jsonValue.GetObject("storage");
-
     m_storageHasBeenSet = true;
   }
-
   return *this;
 }
 

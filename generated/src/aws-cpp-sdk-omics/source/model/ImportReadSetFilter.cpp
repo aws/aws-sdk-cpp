@@ -18,16 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ImportReadSetFilter::ImportReadSetFilter() : 
-    m_status(ReadSetImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
-{
-}
-
 ImportReadSetFilter::ImportReadSetFilter(JsonView jsonValue)
-  : ImportReadSetFilter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ImportReadSetFilter& ImportReadSetFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReadSetImportJobStatusMapper::GetReadSetImportJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAfter"))
   {
     m_createdAfter = jsonValue.GetString("createdAfter");
-
     m_createdAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBefore"))
   {
     m_createdBefore = jsonValue.GetString("createdBefore");
-
     m_createdBeforeHasBeenSet = true;
   }
-
   return *this;
 }
 

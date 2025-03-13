@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-QueueSearchCriteria::QueueSearchCriteria() : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false),
-    m_queueTypeCondition(SearchableQueueType::NOT_SET),
-    m_queueTypeConditionHasBeenSet(false)
-{
-}
-
 QueueSearchCriteria::QueueSearchCriteria(JsonView jsonValue)
-  : QueueSearchCriteria()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ QueueSearchCriteria& QueueSearchCriteria::operator =(JsonView jsonValue)
     }
     m_orConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AndConditions"))
   {
     Aws::Utils::Array<JsonView> andConditionsJsonList = jsonValue.GetArray("AndConditions");
@@ -54,21 +43,16 @@ QueueSearchCriteria& QueueSearchCriteria::operator =(JsonView jsonValue)
     }
     m_andConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringCondition"))
   {
     m_stringCondition = jsonValue.GetObject("StringCondition");
-
     m_stringConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueueTypeCondition"))
   {
     m_queueTypeCondition = SearchableQueueTypeMapper::GetSearchableQueueTypeForName(jsonValue.GetString("QueueTypeCondition"));
-
     m_queueTypeConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace PI
 namespace Model
 {
 
-ResponsePartitionKey::ResponsePartitionKey() : 
-    m_dimensionsHasBeenSet(false)
-{
-}
-
 ResponsePartitionKey::ResponsePartitionKey(JsonView jsonValue)
-  : ResponsePartitionKey()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ResponsePartitionKey& ResponsePartitionKey::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   return *this;
 }
 

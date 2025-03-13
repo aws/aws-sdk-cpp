@@ -12,15 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorldTemplateRequest::CreateWorldTemplateRequest() : 
-    m_clientRequestTokenHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_templateLocationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorldTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetApiMappingsRequest::GetApiMappingsRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetApiMappingsRequest::SerializePayload() const
 {
   return {};

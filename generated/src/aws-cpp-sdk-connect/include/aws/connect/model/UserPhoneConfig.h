@@ -33,7 +33,7 @@ namespace Model
   class UserPhoneConfig
   {
   public:
-    AWS_CONNECT_API UserPhoneConfig();
+    AWS_CONNECT_API UserPhoneConfig() = default;
     AWS_CONNECT_API UserPhoneConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API UserPhoneConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,19 +43,17 @@ namespace Model
     /**
      * <p>The phone type.</p>
      */
-    inline const PhoneType& GetPhoneType() const{ return m_phoneType; }
+    inline PhoneType GetPhoneType() const { return m_phoneType; }
     inline bool PhoneTypeHasBeenSet() const { return m_phoneTypeHasBeenSet; }
-    inline void SetPhoneType(const PhoneType& value) { m_phoneTypeHasBeenSet = true; m_phoneType = value; }
-    inline void SetPhoneType(PhoneType&& value) { m_phoneTypeHasBeenSet = true; m_phoneType = std::move(value); }
-    inline UserPhoneConfig& WithPhoneType(const PhoneType& value) { SetPhoneType(value); return *this;}
-    inline UserPhoneConfig& WithPhoneType(PhoneType&& value) { SetPhoneType(std::move(value)); return *this;}
+    inline void SetPhoneType(PhoneType value) { m_phoneTypeHasBeenSet = true; m_phoneType = value; }
+    inline UserPhoneConfig& WithPhoneType(PhoneType value) { SetPhoneType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Auto accept setting.</p>
      */
-    inline bool GetAutoAccept() const{ return m_autoAccept; }
+    inline bool GetAutoAccept() const { return m_autoAccept; }
     inline bool AutoAcceptHasBeenSet() const { return m_autoAcceptHasBeenSet; }
     inline void SetAutoAccept(bool value) { m_autoAcceptHasBeenSet = true; m_autoAccept = value; }
     inline UserPhoneConfig& WithAutoAccept(bool value) { SetAutoAccept(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
      * <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is
      * returned in milliseconds. </p> 
      */
-    inline int GetAfterContactWorkTimeLimit() const{ return m_afterContactWorkTimeLimit; }
+    inline int GetAfterContactWorkTimeLimit() const { return m_afterContactWorkTimeLimit; }
     inline bool AfterContactWorkTimeLimitHasBeenSet() const { return m_afterContactWorkTimeLimitHasBeenSet; }
     inline void SetAfterContactWorkTimeLimit(int value) { m_afterContactWorkTimeLimitHasBeenSet = true; m_afterContactWorkTimeLimit = value; }
     inline UserPhoneConfig& WithAfterContactWorkTimeLimit(int value) { SetAfterContactWorkTimeLimit(value); return *this;}
@@ -81,24 +79,22 @@ namespace Model
     /**
      * <p>The phone number for the user's desk phone.</p>
      */
-    inline const Aws::String& GetDeskPhoneNumber() const{ return m_deskPhoneNumber; }
+    inline const Aws::String& GetDeskPhoneNumber() const { return m_deskPhoneNumber; }
     inline bool DeskPhoneNumberHasBeenSet() const { return m_deskPhoneNumberHasBeenSet; }
-    inline void SetDeskPhoneNumber(const Aws::String& value) { m_deskPhoneNumberHasBeenSet = true; m_deskPhoneNumber = value; }
-    inline void SetDeskPhoneNumber(Aws::String&& value) { m_deskPhoneNumberHasBeenSet = true; m_deskPhoneNumber = std::move(value); }
-    inline void SetDeskPhoneNumber(const char* value) { m_deskPhoneNumberHasBeenSet = true; m_deskPhoneNumber.assign(value); }
-    inline UserPhoneConfig& WithDeskPhoneNumber(const Aws::String& value) { SetDeskPhoneNumber(value); return *this;}
-    inline UserPhoneConfig& WithDeskPhoneNumber(Aws::String&& value) { SetDeskPhoneNumber(std::move(value)); return *this;}
-    inline UserPhoneConfig& WithDeskPhoneNumber(const char* value) { SetDeskPhoneNumber(value); return *this;}
+    template<typename DeskPhoneNumberT = Aws::String>
+    void SetDeskPhoneNumber(DeskPhoneNumberT&& value) { m_deskPhoneNumberHasBeenSet = true; m_deskPhoneNumber = std::forward<DeskPhoneNumberT>(value); }
+    template<typename DeskPhoneNumberT = Aws::String>
+    UserPhoneConfig& WithDeskPhoneNumber(DeskPhoneNumberT&& value) { SetDeskPhoneNumber(std::forward<DeskPhoneNumberT>(value)); return *this;}
     ///@}
   private:
 
-    PhoneType m_phoneType;
+    PhoneType m_phoneType{PhoneType::NOT_SET};
     bool m_phoneTypeHasBeenSet = false;
 
-    bool m_autoAccept;
+    bool m_autoAccept{false};
     bool m_autoAcceptHasBeenSet = false;
 
-    int m_afterContactWorkTimeLimit;
+    int m_afterContactWorkTimeLimit{0};
     bool m_afterContactWorkTimeLimitHasBeenSet = false;
 
     Aws::String m_deskPhoneNumber;

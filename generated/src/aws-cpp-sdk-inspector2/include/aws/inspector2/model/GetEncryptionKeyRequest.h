@@ -26,7 +26,7 @@ namespace Model
   class GetEncryptionKeyRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API GetEncryptionKeyRequest();
+    AWS_INSPECTOR2_API GetEncryptionKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The resource type the key encrypts.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline GetEncryptionKeyRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline GetEncryptionKeyRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GetEncryptionKeyRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scan type the key encrypts.</p>
      */
-    inline const ScanType& GetScanType() const{ return m_scanType; }
+    inline ScanType GetScanType() const { return m_scanType; }
     inline bool ScanTypeHasBeenSet() const { return m_scanTypeHasBeenSet; }
-    inline void SetScanType(const ScanType& value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
-    inline void SetScanType(ScanType&& value) { m_scanTypeHasBeenSet = true; m_scanType = std::move(value); }
-    inline GetEncryptionKeyRequest& WithScanType(const ScanType& value) { SetScanType(value); return *this;}
-    inline GetEncryptionKeyRequest& WithScanType(ScanType&& value) { SetScanType(std::move(value)); return *this;}
+    inline void SetScanType(ScanType value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
+    inline GetEncryptionKeyRequest& WithScanType(ScanType value) { SetScanType(value); return *this;}
     ///@}
   private:
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
-    ScanType m_scanType;
+    ScanType m_scanType{ScanType::NOT_SET};
     bool m_scanTypeHasBeenSet = false;
   };
 

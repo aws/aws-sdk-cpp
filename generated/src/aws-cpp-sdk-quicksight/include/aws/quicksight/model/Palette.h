@@ -31,7 +31,7 @@ namespace Model
   class Palette
   {
   public:
-    AWS_QUICKSIGHT_API Palette();
+    AWS_QUICKSIGHT_API Palette() = default;
     AWS_QUICKSIGHT_API Palette(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Palette& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The foreground color.</p>
      */
-    inline const Aws::String& GetForeground() const{ return m_foreground; }
+    inline const Aws::String& GetForeground() const { return m_foreground; }
     inline bool ForegroundHasBeenSet() const { return m_foregroundHasBeenSet; }
-    inline void SetForeground(const Aws::String& value) { m_foregroundHasBeenSet = true; m_foreground = value; }
-    inline void SetForeground(Aws::String&& value) { m_foregroundHasBeenSet = true; m_foreground = std::move(value); }
-    inline void SetForeground(const char* value) { m_foregroundHasBeenSet = true; m_foreground.assign(value); }
-    inline Palette& WithForeground(const Aws::String& value) { SetForeground(value); return *this;}
-    inline Palette& WithForeground(Aws::String&& value) { SetForeground(std::move(value)); return *this;}
-    inline Palette& WithForeground(const char* value) { SetForeground(value); return *this;}
+    template<typename ForegroundT = Aws::String>
+    void SetForeground(ForegroundT&& value) { m_foregroundHasBeenSet = true; m_foreground = std::forward<ForegroundT>(value); }
+    template<typename ForegroundT = Aws::String>
+    Palette& WithForeground(ForegroundT&& value) { SetForeground(std::forward<ForegroundT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The background color.</p>
      */
-    inline const Aws::String& GetBackground() const{ return m_background; }
+    inline const Aws::String& GetBackground() const { return m_background; }
     inline bool BackgroundHasBeenSet() const { return m_backgroundHasBeenSet; }
-    inline void SetBackground(const Aws::String& value) { m_backgroundHasBeenSet = true; m_background = value; }
-    inline void SetBackground(Aws::String&& value) { m_backgroundHasBeenSet = true; m_background = std::move(value); }
-    inline void SetBackground(const char* value) { m_backgroundHasBeenSet = true; m_background.assign(value); }
-    inline Palette& WithBackground(const Aws::String& value) { SetBackground(value); return *this;}
-    inline Palette& WithBackground(Aws::String&& value) { SetBackground(std::move(value)); return *this;}
-    inline Palette& WithBackground(const char* value) { SetBackground(value); return *this;}
+    template<typename BackgroundT = Aws::String>
+    void SetBackground(BackgroundT&& value) { m_backgroundHasBeenSet = true; m_background = std::forward<BackgroundT>(value); }
+    template<typename BackgroundT = Aws::String>
+    Palette& WithBackground(BackgroundT&& value) { SetBackground(std::forward<BackgroundT>(value)); return *this;}
     ///@}
   private:
 

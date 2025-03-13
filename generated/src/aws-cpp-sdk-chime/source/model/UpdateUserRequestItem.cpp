@@ -18,18 +18,7 @@ namespace Chime
 namespace Model
 {
 
-UpdateUserRequestItem::UpdateUserRequestItem() : 
-    m_userIdHasBeenSet(false),
-    m_licenseType(License::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_userType(UserType::NOT_SET),
-    m_userTypeHasBeenSet(false),
-    m_alexaForBusinessMetadataHasBeenSet(false)
-{
-}
-
 UpdateUserRequestItem::UpdateUserRequestItem(JsonView jsonValue)
-  : UpdateUserRequestItem()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ UpdateUserRequestItem& UpdateUserRequestItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseType"))
   {
     m_licenseType = LicenseMapper::GetLicenseForName(jsonValue.GetString("LicenseType"));
-
     m_licenseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserType"))
   {
     m_userType = UserTypeMapper::GetUserTypeForName(jsonValue.GetString("UserType"));
-
     m_userTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlexaForBusinessMetadata"))
   {
     m_alexaForBusinessMetadata = jsonValue.GetObject("AlexaForBusinessMetadata");
-
     m_alexaForBusinessMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

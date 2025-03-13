@@ -18,24 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ReplicaDescription::ReplicaDescription() : 
-    m_regionNameHasBeenSet(false),
-    m_replicaStatus(ReplicaStatus::NOT_SET),
-    m_replicaStatusHasBeenSet(false),
-    m_replicaStatusDescriptionHasBeenSet(false),
-    m_replicaStatusPercentProgressHasBeenSet(false),
-    m_kMSMasterKeyIdHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false),
-    m_onDemandThroughputOverrideHasBeenSet(false),
-    m_warmThroughputHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false),
-    m_replicaInaccessibleDateTimeHasBeenSet(false),
-    m_replicaTableClassSummaryHasBeenSet(false)
-{
-}
-
 ReplicaDescription::ReplicaDescription(JsonView jsonValue)
-  : ReplicaDescription()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ ReplicaDescription& ReplicaDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegionName"))
   {
     m_regionName = jsonValue.GetString("RegionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaStatus"))
   {
     m_replicaStatus = ReplicaStatusMapper::GetReplicaStatusForName(jsonValue.GetString("ReplicaStatus"));
-
     m_replicaStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaStatusDescription"))
   {
     m_replicaStatusDescription = jsonValue.GetString("ReplicaStatusDescription");
-
     m_replicaStatusDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaStatusPercentProgress"))
   {
     m_replicaStatusPercentProgress = jsonValue.GetString("ReplicaStatusPercentProgress");
-
     m_replicaStatusPercentProgressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSMasterKeyId"))
   {
     m_kMSMasterKeyId = jsonValue.GetString("KMSMasterKeyId");
-
     m_kMSMasterKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedThroughputOverride"))
   {
     m_provisionedThroughputOverride = jsonValue.GetObject("ProvisionedThroughputOverride");
-
     m_provisionedThroughputOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandThroughputOverride"))
   {
     m_onDemandThroughputOverride = jsonValue.GetObject("OnDemandThroughputOverride");
-
     m_onDemandThroughputOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarmThroughput"))
   {
     m_warmThroughput = jsonValue.GetObject("WarmThroughput");
-
     m_warmThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
     Aws::Utils::Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
@@ -107,21 +74,16 @@ ReplicaDescription& ReplicaDescription::operator =(JsonView jsonValue)
     }
     m_globalSecondaryIndexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaInaccessibleDateTime"))
   {
     m_replicaInaccessibleDateTime = jsonValue.GetDouble("ReplicaInaccessibleDateTime");
-
     m_replicaInaccessibleDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaTableClassSummary"))
   {
     m_replicaTableClassSummary = jsonValue.GetObject("ReplicaTableClassSummary");
-
     m_replicaTableClassSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

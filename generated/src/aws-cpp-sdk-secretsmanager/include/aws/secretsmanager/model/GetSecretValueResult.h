@@ -30,7 +30,7 @@ namespace Model
   class GetSecretValueResult
   {
   public:
-    AWS_SECRETSMANAGER_API GetSecretValueResult();
+    AWS_SECRETSMANAGER_API GetSecretValueResult() = default;
     AWS_SECRETSMANAGER_API GetSecretValueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECRETSMANAGER_API GetSecretValueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,39 +39,33 @@ namespace Model
     /**
      * <p>The ARN of the secret.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
-    inline void SetARN(const Aws::String& value) { m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRN.assign(value); }
-    inline GetSecretValueResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline GetSecretValueResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline GetSecretValueResult& WithARN(const char* value) { SetARN(value); return *this;}
+    inline const Aws::String& GetARN() const { return m_aRN; }
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    GetSecretValueResult& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The friendly name of the secret.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetSecretValueResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetSecretValueResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetSecretValueResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetSecretValueResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of this version of the secret.</p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
-    inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionId.assign(value); }
-    inline GetSecretValueResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline GetSecretValueResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline GetSecretValueResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    GetSecretValueResult& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,11 +81,11 @@ namespace Model
      * CloudTrail log entries. If you create your own log entries, you must also avoid
      * logging the information in this field.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const{ return m_secretBinary; }
-    inline void SetSecretBinary(const Aws::Utils::CryptoBuffer& value) { m_secretBinary = value; }
-    inline void SetSecretBinary(Aws::Utils::CryptoBuffer&& value) { m_secretBinary = std::move(value); }
-    inline GetSecretValueResult& WithSecretBinary(const Aws::Utils::CryptoBuffer& value) { SetSecretBinary(value); return *this;}
-    inline GetSecretValueResult& WithSecretBinary(Aws::Utils::CryptoBuffer&& value) { SetSecretBinary(std::move(value)); return *this;}
+    inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const { return m_secretBinary; }
+    template<typename SecretBinaryT = Aws::Utils::CryptoBuffer>
+    void SetSecretBinary(SecretBinaryT&& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = std::forward<SecretBinaryT>(value); }
+    template<typename SecretBinaryT = Aws::Utils::CryptoBuffer>
+    GetSecretValueResult& WithSecretBinary(SecretBinaryT&& value) { SetSecretBinary(std::forward<SecretBinaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,13 +98,11 @@ namespace Model
      * you create your own log entries, you must also avoid logging the information in
      * this field.</p>
      */
-    inline const Aws::String& GetSecretString() const{ return m_secretString; }
-    inline void SetSecretString(const Aws::String& value) { m_secretString = value; }
-    inline void SetSecretString(Aws::String&& value) { m_secretString = std::move(value); }
-    inline void SetSecretString(const char* value) { m_secretString.assign(value); }
-    inline GetSecretValueResult& WithSecretString(const Aws::String& value) { SetSecretString(value); return *this;}
-    inline GetSecretValueResult& WithSecretString(Aws::String&& value) { SetSecretString(std::move(value)); return *this;}
-    inline GetSecretValueResult& WithSecretString(const char* value) { SetSecretString(value); return *this;}
+    inline const Aws::String& GetSecretString() const { return m_secretString; }
+    template<typename SecretStringT = Aws::String>
+    void SetSecretString(SecretStringT&& value) { m_secretStringHasBeenSet = true; m_secretString = std::forward<SecretStringT>(value); }
+    template<typename SecretStringT = Aws::String>
+    GetSecretValueResult& WithSecretString(SecretStringT&& value) { SetSecretString(std::forward<SecretStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +110,13 @@ namespace Model
      * <p>A list of all of the staging labels currently attached to this version of the
      * secret.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVersionStages() const{ return m_versionStages; }
-    inline void SetVersionStages(const Aws::Vector<Aws::String>& value) { m_versionStages = value; }
-    inline void SetVersionStages(Aws::Vector<Aws::String>&& value) { m_versionStages = std::move(value); }
-    inline GetSecretValueResult& WithVersionStages(const Aws::Vector<Aws::String>& value) { SetVersionStages(value); return *this;}
-    inline GetSecretValueResult& WithVersionStages(Aws::Vector<Aws::String>&& value) { SetVersionStages(std::move(value)); return *this;}
-    inline GetSecretValueResult& AddVersionStages(const Aws::String& value) { m_versionStages.push_back(value); return *this; }
-    inline GetSecretValueResult& AddVersionStages(Aws::String&& value) { m_versionStages.push_back(std::move(value)); return *this; }
-    inline GetSecretValueResult& AddVersionStages(const char* value) { m_versionStages.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetVersionStages() const { return m_versionStages; }
+    template<typename VersionStagesT = Aws::Vector<Aws::String>>
+    void SetVersionStages(VersionStagesT&& value) { m_versionStagesHasBeenSet = true; m_versionStages = std::forward<VersionStagesT>(value); }
+    template<typename VersionStagesT = Aws::Vector<Aws::String>>
+    GetSecretValueResult& WithVersionStages(VersionStagesT&& value) { SetVersionStages(std::forward<VersionStagesT>(value)); return *this;}
+    template<typename VersionStagesT = Aws::String>
+    GetSecretValueResult& AddVersionStages(VersionStagesT&& value) { m_versionStagesHasBeenSet = true; m_versionStages.emplace_back(std::forward<VersionStagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -134,40 +125,46 @@ namespace Model
      * specify which version in <code>VersionId</code> or <code>VersionStage</code>,
      * then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-    inline GetSecretValueResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline GetSecretValueResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    GetSecretValueResult& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSecretValueResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSecretValueResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSecretValueResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSecretValueResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_aRN;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_versionId;
+    bool m_versionIdHasBeenSet = false;
 
-    Aws::Utils::CryptoBuffer m_secretBinary;
+    Aws::Utils::CryptoBuffer m_secretBinary{};
+    bool m_secretBinaryHasBeenSet = false;
 
     Aws::String m_secretString;
+    bool m_secretStringHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versionStages;
+    bool m_versionStagesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

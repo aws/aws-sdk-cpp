@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTemplatesRequest::ListTemplatesRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListTemplatesRequest::SerializePayload() const
 {
   return {};

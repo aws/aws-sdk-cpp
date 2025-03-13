@@ -20,13 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-AdjustmentType::AdjustmentType() : 
-    m_adjustmentTypeHasBeenSet(false)
-{
-}
-
 AdjustmentType::AdjustmentType(const XmlNode& xmlNode)
-  : AdjustmentType()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ AdjustmentType& AdjustmentType::operator =(const XmlNode& xmlNode)
     {
       m_adjustmentType = Aws::Utils::Xml::DecodeEscapedXmlText(adjustmentTypeNode.GetText());
       m_adjustmentTypeHasBeenSet = true;
+       m_adjustmentTypeHasBeenSet = true;
     }
   }
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteHomeRegionControlRequest : public MigrationHubConfigRequest
   {
   public:
-    AWS_MIGRATIONHUBCONFIG_API DeleteHomeRegionControlRequest();
+    AWS_MIGRATIONHUBCONFIG_API DeleteHomeRegionControlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * always a string that begins with "hrc-" followed by 12 lowercase letters and
      * numbers.</p>
      */
-    inline const Aws::String& GetControlId() const{ return m_controlId; }
+    inline const Aws::String& GetControlId() const { return m_controlId; }
     inline bool ControlIdHasBeenSet() const { return m_controlIdHasBeenSet; }
-    inline void SetControlId(const Aws::String& value) { m_controlIdHasBeenSet = true; m_controlId = value; }
-    inline void SetControlId(Aws::String&& value) { m_controlIdHasBeenSet = true; m_controlId = std::move(value); }
-    inline void SetControlId(const char* value) { m_controlIdHasBeenSet = true; m_controlId.assign(value); }
-    inline DeleteHomeRegionControlRequest& WithControlId(const Aws::String& value) { SetControlId(value); return *this;}
-    inline DeleteHomeRegionControlRequest& WithControlId(Aws::String&& value) { SetControlId(std::move(value)); return *this;}
-    inline DeleteHomeRegionControlRequest& WithControlId(const char* value) { SetControlId(value); return *this;}
+    template<typename ControlIdT = Aws::String>
+    void SetControlId(ControlIdT&& value) { m_controlIdHasBeenSet = true; m_controlId = std::forward<ControlIdT>(value); }
+    template<typename ControlIdT = Aws::String>
+    DeleteHomeRegionControlRequest& WithControlId(ControlIdT&& value) { SetControlId(std::forward<ControlIdT>(value)); return *this;}
     ///@}
   private:
 

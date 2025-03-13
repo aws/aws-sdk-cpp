@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CustomNarrativeOptions::CustomNarrativeOptions() : 
-    m_narrativeHasBeenSet(false)
-{
-}
-
 CustomNarrativeOptions::CustomNarrativeOptions(JsonView jsonValue)
-  : CustomNarrativeOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomNarrativeOptions& CustomNarrativeOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Narrative"))
   {
     m_narrative = jsonValue.GetString("Narrative");
-
     m_narrativeHasBeenSet = true;
   }
-
   return *this;
 }
 

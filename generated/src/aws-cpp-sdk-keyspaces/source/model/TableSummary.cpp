@@ -18,15 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-TableSummary::TableSummary() : 
-    m_keyspaceNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 TableSummary::TableSummary(JsonView jsonValue)
-  : TableSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TableSummary& TableSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("keyspaceName"))
   {
     m_keyspaceName = jsonValue.GetString("keyspaceName");
-
     m_keyspaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

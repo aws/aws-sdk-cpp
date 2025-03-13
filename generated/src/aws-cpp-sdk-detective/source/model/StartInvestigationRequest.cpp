@@ -12,14 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartInvestigationRequest::StartInvestigationRequest() : 
-    m_graphArnHasBeenSet(false),
-    m_entityArnHasBeenSet(false),
-    m_scopeStartTimeHasBeenSet(false),
-    m_scopeEndTimeHasBeenSet(false)
-{
-}
-
 Aws::String StartInvestigationRequest::SerializePayload() const
 {
   JsonValue payload;

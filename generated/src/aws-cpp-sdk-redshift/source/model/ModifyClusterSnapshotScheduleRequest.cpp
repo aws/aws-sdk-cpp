@@ -10,14 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyClusterSnapshotScheduleRequest::ModifyClusterSnapshotScheduleRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_scheduleIdentifierHasBeenSet(false),
-    m_disassociateSchedule(false),
-    m_disassociateScheduleHasBeenSet(false)
-{
-}
-
 Aws::String ModifyClusterSnapshotScheduleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

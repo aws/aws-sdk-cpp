@@ -18,18 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-CommunicationLimit::CommunicationLimit() : 
-    m_maxCountPerRecipient(0),
-    m_maxCountPerRecipientHasBeenSet(false),
-    m_frequency(0),
-    m_frequencyHasBeenSet(false),
-    m_unit(CommunicationLimitTimeUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 CommunicationLimit::CommunicationLimit(JsonView jsonValue)
-  : CommunicationLimit()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ CommunicationLimit& CommunicationLimit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxCountPerRecipient"))
   {
     m_maxCountPerRecipient = jsonValue.GetInteger("maxCountPerRecipient");
-
     m_maxCountPerRecipientHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frequency"))
   {
     m_frequency = jsonValue.GetInteger("frequency");
-
     m_frequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = CommunicationLimitTimeUnitMapper::GetCommunicationLimitTimeUnitForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class KmsGrantConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API KmsGrantConfiguration();
+    AWS_ACCESSANALYZER_API KmsGrantConfiguration() = default;
     AWS_ACCESSANALYZER_API KmsGrantConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API KmsGrantConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,13 @@ namespace Model
     /**
      * <p>A list of operations that the grant permits.</p>
      */
-    inline const Aws::Vector<KmsGrantOperation>& GetOperations() const{ return m_operations; }
+    inline const Aws::Vector<KmsGrantOperation>& GetOperations() const { return m_operations; }
     inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
-    inline void SetOperations(const Aws::Vector<KmsGrantOperation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
-    inline void SetOperations(Aws::Vector<KmsGrantOperation>&& value) { m_operationsHasBeenSet = true; m_operations = std::move(value); }
-    inline KmsGrantConfiguration& WithOperations(const Aws::Vector<KmsGrantOperation>& value) { SetOperations(value); return *this;}
-    inline KmsGrantConfiguration& WithOperations(Aws::Vector<KmsGrantOperation>&& value) { SetOperations(std::move(value)); return *this;}
-    inline KmsGrantConfiguration& AddOperations(const KmsGrantOperation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
-    inline KmsGrantConfiguration& AddOperations(KmsGrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
+    template<typename OperationsT = Aws::Vector<KmsGrantOperation>>
+    void SetOperations(OperationsT&& value) { m_operationsHasBeenSet = true; m_operations = std::forward<OperationsT>(value); }
+    template<typename OperationsT = Aws::Vector<KmsGrantOperation>>
+    KmsGrantConfiguration& WithOperations(OperationsT&& value) { SetOperations(std::forward<OperationsT>(value)); return *this;}
+    inline KmsGrantConfiguration& AddOperations(KmsGrantOperation value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +60,12 @@ namespace Model
      * <p>The principal that is given permission to perform the operations that the
      * grant permits.</p>
      */
-    inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
+    inline const Aws::String& GetGranteePrincipal() const { return m_granteePrincipal; }
     inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
-    inline void SetGranteePrincipal(const Aws::String& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
-    inline void SetGranteePrincipal(Aws::String&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = std::move(value); }
-    inline void SetGranteePrincipal(const char* value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal.assign(value); }
-    inline KmsGrantConfiguration& WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
-    inline KmsGrantConfiguration& WithGranteePrincipal(Aws::String&& value) { SetGranteePrincipal(std::move(value)); return *this;}
-    inline KmsGrantConfiguration& WithGranteePrincipal(const char* value) { SetGranteePrincipal(value); return *this;}
+    template<typename GranteePrincipalT = Aws::String>
+    void SetGranteePrincipal(GranteePrincipalT&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = std::forward<GranteePrincipalT>(value); }
+    template<typename GranteePrincipalT = Aws::String>
+    KmsGrantConfiguration& WithGranteePrincipal(GranteePrincipalT&& value) { SetGranteePrincipal(std::forward<GranteePrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +74,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
      * operation.</p>
      */
-    inline const Aws::String& GetRetiringPrincipal() const{ return m_retiringPrincipal; }
+    inline const Aws::String& GetRetiringPrincipal() const { return m_retiringPrincipal; }
     inline bool RetiringPrincipalHasBeenSet() const { return m_retiringPrincipalHasBeenSet; }
-    inline void SetRetiringPrincipal(const Aws::String& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
-    inline void SetRetiringPrincipal(Aws::String&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = std::move(value); }
-    inline void SetRetiringPrincipal(const char* value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal.assign(value); }
-    inline KmsGrantConfiguration& WithRetiringPrincipal(const Aws::String& value) { SetRetiringPrincipal(value); return *this;}
-    inline KmsGrantConfiguration& WithRetiringPrincipal(Aws::String&& value) { SetRetiringPrincipal(std::move(value)); return *this;}
-    inline KmsGrantConfiguration& WithRetiringPrincipal(const char* value) { SetRetiringPrincipal(value); return *this;}
+    template<typename RetiringPrincipalT = Aws::String>
+    void SetRetiringPrincipal(RetiringPrincipalT&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = std::forward<RetiringPrincipalT>(value); }
+    template<typename RetiringPrincipalT = Aws::String>
+    KmsGrantConfiguration& WithRetiringPrincipal(RetiringPrincipalT&& value) { SetRetiringPrincipal(std::forward<RetiringPrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +91,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
      * context</a>.</p>
      */
-    inline const KmsGrantConstraints& GetConstraints() const{ return m_constraints; }
+    inline const KmsGrantConstraints& GetConstraints() const { return m_constraints; }
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
-    inline void SetConstraints(const KmsGrantConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
-    inline void SetConstraints(KmsGrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
-    inline KmsGrantConfiguration& WithConstraints(const KmsGrantConstraints& value) { SetConstraints(value); return *this;}
-    inline KmsGrantConfiguration& WithConstraints(KmsGrantConstraints&& value) { SetConstraints(std::move(value)); return *this;}
+    template<typename ConstraintsT = KmsGrantConstraints>
+    void SetConstraints(ConstraintsT&& value) { m_constraintsHasBeenSet = true; m_constraints = std::forward<ConstraintsT>(value); }
+    template<typename ConstraintsT = KmsGrantConstraints>
+    KmsGrantConfiguration& WithConstraints(ConstraintsT&& value) { SetConstraints(std::forward<ConstraintsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +105,12 @@ namespace Model
      * account is used to propose KMS grants issued by accounts other than the owner of
      * the key.</p>
      */
-    inline const Aws::String& GetIssuingAccount() const{ return m_issuingAccount; }
+    inline const Aws::String& GetIssuingAccount() const { return m_issuingAccount; }
     inline bool IssuingAccountHasBeenSet() const { return m_issuingAccountHasBeenSet; }
-    inline void SetIssuingAccount(const Aws::String& value) { m_issuingAccountHasBeenSet = true; m_issuingAccount = value; }
-    inline void SetIssuingAccount(Aws::String&& value) { m_issuingAccountHasBeenSet = true; m_issuingAccount = std::move(value); }
-    inline void SetIssuingAccount(const char* value) { m_issuingAccountHasBeenSet = true; m_issuingAccount.assign(value); }
-    inline KmsGrantConfiguration& WithIssuingAccount(const Aws::String& value) { SetIssuingAccount(value); return *this;}
-    inline KmsGrantConfiguration& WithIssuingAccount(Aws::String&& value) { SetIssuingAccount(std::move(value)); return *this;}
-    inline KmsGrantConfiguration& WithIssuingAccount(const char* value) { SetIssuingAccount(value); return *this;}
+    template<typename IssuingAccountT = Aws::String>
+    void SetIssuingAccount(IssuingAccountT&& value) { m_issuingAccountHasBeenSet = true; m_issuingAccount = std::forward<IssuingAccountT>(value); }
+    template<typename IssuingAccountT = Aws::String>
+    KmsGrantConfiguration& WithIssuingAccount(IssuingAccountT&& value) { SetIssuingAccount(std::forward<IssuingAccountT>(value)); return *this;}
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class DataSourceFreeTrial
   {
   public:
-    AWS_GUARDDUTY_API DataSourceFreeTrial();
+    AWS_GUARDDUTY_API DataSourceFreeTrial() = default;
     AWS_GUARDDUTY_API DataSourceFreeTrial(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API DataSourceFreeTrial& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>A value that specifies the number of days left to use each enabled data
      * source.</p>
      */
-    inline int GetFreeTrialDaysRemaining() const{ return m_freeTrialDaysRemaining; }
+    inline int GetFreeTrialDaysRemaining() const { return m_freeTrialDaysRemaining; }
     inline bool FreeTrialDaysRemainingHasBeenSet() const { return m_freeTrialDaysRemainingHasBeenSet; }
     inline void SetFreeTrialDaysRemaining(int value) { m_freeTrialDaysRemainingHasBeenSet = true; m_freeTrialDaysRemaining = value; }
     inline DataSourceFreeTrial& WithFreeTrialDaysRemaining(int value) { SetFreeTrialDaysRemaining(value); return *this;}
     ///@}
   private:
 
-    int m_freeTrialDaysRemaining;
+    int m_freeTrialDaysRemaining{0};
     bool m_freeTrialDaysRemainingHasBeenSet = false;
   };
 

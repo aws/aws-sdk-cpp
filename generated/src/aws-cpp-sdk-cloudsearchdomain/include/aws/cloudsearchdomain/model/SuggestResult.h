@@ -35,7 +35,7 @@ namespace Model
   class SuggestResult
   {
   public:
-    AWS_CLOUDSEARCHDOMAIN_API SuggestResult();
+    AWS_CLOUDSEARCHDOMAIN_API SuggestResult() = default;
     AWS_CLOUDSEARCHDOMAIN_API SuggestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDSEARCHDOMAIN_API SuggestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,41 +46,42 @@ namespace Model
      * (<code>rid</code>) and how long it took to process the request
      * (<code>timems</code>).</p>
      */
-    inline const SuggestStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SuggestStatus& value) { m_status = value; }
-    inline void SetStatus(SuggestStatus&& value) { m_status = std::move(value); }
-    inline SuggestResult& WithStatus(const SuggestStatus& value) { SetStatus(value); return *this;}
-    inline SuggestResult& WithStatus(SuggestStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const SuggestStatus& GetStatus() const { return m_status; }
+    template<typename StatusT = SuggestStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = SuggestStatus>
+    SuggestResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Container for the matching search suggestion information.</p>
      */
-    inline const SuggestModel& GetSuggest() const{ return m_suggest; }
-    inline void SetSuggest(const SuggestModel& value) { m_suggest = value; }
-    inline void SetSuggest(SuggestModel&& value) { m_suggest = std::move(value); }
-    inline SuggestResult& WithSuggest(const SuggestModel& value) { SetSuggest(value); return *this;}
-    inline SuggestResult& WithSuggest(SuggestModel&& value) { SetSuggest(std::move(value)); return *this;}
+    inline const SuggestModel& GetSuggest() const { return m_suggest; }
+    template<typename SuggestT = SuggestModel>
+    void SetSuggest(SuggestT&& value) { m_suggestHasBeenSet = true; m_suggest = std::forward<SuggestT>(value); }
+    template<typename SuggestT = SuggestModel>
+    SuggestResult& WithSuggest(SuggestT&& value) { SetSuggest(std::forward<SuggestT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SuggestResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SuggestResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SuggestResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SuggestResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SuggestStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     SuggestModel m_suggest;
+    bool m_suggestHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

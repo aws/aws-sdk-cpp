@@ -33,7 +33,7 @@ namespace Model
   class CommandPlugin
   {
   public:
-    AWS_SSM_API CommandPlugin();
+    AWS_SSM_API CommandPlugin() = default;
     AWS_SSM_API CommandPlugin(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API CommandPlugin& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,22 @@ namespace Model
      * <code>aws:psmodule</code>, <code>aws:cloudWatch</code>,
      * <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CommandPlugin& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CommandPlugin& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CommandPlugin& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CommandPlugin& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of this plugin. You can run a document with multiple plugins.</p>
      */
-    inline const CommandPluginStatus& GetStatus() const{ return m_status; }
+    inline CommandPluginStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CommandPluginStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CommandPluginStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CommandPlugin& WithStatus(const CommandPluginStatus& value) { SetStatus(value); return *this;}
-    inline CommandPlugin& WithStatus(CommandPluginStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CommandPluginStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CommandPlugin& WithStatus(CommandPluginStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -104,21 +100,19 @@ namespace Model
      * command invocations were canceled by the system. This is a terminal state.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
+    inline const Aws::String& GetStatusDetails() const { return m_statusDetails; }
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
-    inline void SetStatusDetails(const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
-    inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
-    inline void SetStatusDetails(const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.assign(value); }
-    inline CommandPlugin& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
-    inline CommandPlugin& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
-    inline CommandPlugin& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
+    template<typename StatusDetailsT = Aws::String>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = Aws::String>
+    CommandPlugin& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A numeric response code generated after running the plugin. </p>
      */
-    inline int GetResponseCode() const{ return m_responseCode; }
+    inline int GetResponseCode() const { return m_responseCode; }
     inline bool ResponseCodeHasBeenSet() const { return m_responseCodeHasBeenSet; }
     inline void SetResponseCode(int value) { m_responseCodeHasBeenSet = true; m_responseCode = value; }
     inline CommandPlugin& WithResponseCode(int value) { SetResponseCode(value); return *this;}
@@ -128,12 +122,12 @@ namespace Model
     /**
      * <p>The time the plugin started running. </p>
      */
-    inline const Aws::Utils::DateTime& GetResponseStartDateTime() const{ return m_responseStartDateTime; }
+    inline const Aws::Utils::DateTime& GetResponseStartDateTime() const { return m_responseStartDateTime; }
     inline bool ResponseStartDateTimeHasBeenSet() const { return m_responseStartDateTimeHasBeenSet; }
-    inline void SetResponseStartDateTime(const Aws::Utils::DateTime& value) { m_responseStartDateTimeHasBeenSet = true; m_responseStartDateTime = value; }
-    inline void SetResponseStartDateTime(Aws::Utils::DateTime&& value) { m_responseStartDateTimeHasBeenSet = true; m_responseStartDateTime = std::move(value); }
-    inline CommandPlugin& WithResponseStartDateTime(const Aws::Utils::DateTime& value) { SetResponseStartDateTime(value); return *this;}
-    inline CommandPlugin& WithResponseStartDateTime(Aws::Utils::DateTime&& value) { SetResponseStartDateTime(std::move(value)); return *this;}
+    template<typename ResponseStartDateTimeT = Aws::Utils::DateTime>
+    void SetResponseStartDateTime(ResponseStartDateTimeT&& value) { m_responseStartDateTimeHasBeenSet = true; m_responseStartDateTime = std::forward<ResponseStartDateTimeT>(value); }
+    template<typename ResponseStartDateTimeT = Aws::Utils::DateTime>
+    CommandPlugin& WithResponseStartDateTime(ResponseStartDateTimeT&& value) { SetResponseStartDateTime(std::forward<ResponseStartDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,26 +135,24 @@ namespace Model
      * <p>The time the plugin stopped running. Could stop prematurely if, for example,
      * a cancel command was sent. </p>
      */
-    inline const Aws::Utils::DateTime& GetResponseFinishDateTime() const{ return m_responseFinishDateTime; }
+    inline const Aws::Utils::DateTime& GetResponseFinishDateTime() const { return m_responseFinishDateTime; }
     inline bool ResponseFinishDateTimeHasBeenSet() const { return m_responseFinishDateTimeHasBeenSet; }
-    inline void SetResponseFinishDateTime(const Aws::Utils::DateTime& value) { m_responseFinishDateTimeHasBeenSet = true; m_responseFinishDateTime = value; }
-    inline void SetResponseFinishDateTime(Aws::Utils::DateTime&& value) { m_responseFinishDateTimeHasBeenSet = true; m_responseFinishDateTime = std::move(value); }
-    inline CommandPlugin& WithResponseFinishDateTime(const Aws::Utils::DateTime& value) { SetResponseFinishDateTime(value); return *this;}
-    inline CommandPlugin& WithResponseFinishDateTime(Aws::Utils::DateTime&& value) { SetResponseFinishDateTime(std::move(value)); return *this;}
+    template<typename ResponseFinishDateTimeT = Aws::Utils::DateTime>
+    void SetResponseFinishDateTime(ResponseFinishDateTimeT&& value) { m_responseFinishDateTimeHasBeenSet = true; m_responseFinishDateTime = std::forward<ResponseFinishDateTimeT>(value); }
+    template<typename ResponseFinishDateTimeT = Aws::Utils::DateTime>
+    CommandPlugin& WithResponseFinishDateTime(ResponseFinishDateTimeT&& value) { SetResponseFinishDateTime(std::forward<ResponseFinishDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Output of the plugin execution.</p>
      */
-    inline const Aws::String& GetOutput() const{ return m_output; }
+    inline const Aws::String& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const Aws::String& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline void SetOutput(const char* value) { m_outputHasBeenSet = true; m_output.assign(value); }
-    inline CommandPlugin& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
-    inline CommandPlugin& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
-    inline CommandPlugin& WithOutput(const char* value) { SetOutput(value); return *this;}
+    template<typename OutputT = Aws::String>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = Aws::String>
+    CommandPlugin& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,14 +161,12 @@ namespace Model
      * If the S3 bucket for the command wasn't specified, then this string is
      * empty.</p>
      */
-    inline const Aws::String& GetStandardOutputUrl() const{ return m_standardOutputUrl; }
+    inline const Aws::String& GetStandardOutputUrl() const { return m_standardOutputUrl; }
     inline bool StandardOutputUrlHasBeenSet() const { return m_standardOutputUrlHasBeenSet; }
-    inline void SetStandardOutputUrl(const Aws::String& value) { m_standardOutputUrlHasBeenSet = true; m_standardOutputUrl = value; }
-    inline void SetStandardOutputUrl(Aws::String&& value) { m_standardOutputUrlHasBeenSet = true; m_standardOutputUrl = std::move(value); }
-    inline void SetStandardOutputUrl(const char* value) { m_standardOutputUrlHasBeenSet = true; m_standardOutputUrl.assign(value); }
-    inline CommandPlugin& WithStandardOutputUrl(const Aws::String& value) { SetStandardOutputUrl(value); return *this;}
-    inline CommandPlugin& WithStandardOutputUrl(Aws::String&& value) { SetStandardOutputUrl(std::move(value)); return *this;}
-    inline CommandPlugin& WithStandardOutputUrl(const char* value) { SetStandardOutputUrl(value); return *this;}
+    template<typename StandardOutputUrlT = Aws::String>
+    void SetStandardOutputUrl(StandardOutputUrlT&& value) { m_standardOutputUrlHasBeenSet = true; m_standardOutputUrl = std::forward<StandardOutputUrlT>(value); }
+    template<typename StandardOutputUrlT = Aws::String>
+    CommandPlugin& WithStandardOutputUrl(StandardOutputUrlT&& value) { SetStandardOutputUrl(std::forward<StandardOutputUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,14 +174,12 @@ namespace Model
      * <p>The URL for the complete text written by the plugin to stderr. If execution
      * isn't yet complete, then this string is empty.</p>
      */
-    inline const Aws::String& GetStandardErrorUrl() const{ return m_standardErrorUrl; }
+    inline const Aws::String& GetStandardErrorUrl() const { return m_standardErrorUrl; }
     inline bool StandardErrorUrlHasBeenSet() const { return m_standardErrorUrlHasBeenSet; }
-    inline void SetStandardErrorUrl(const Aws::String& value) { m_standardErrorUrlHasBeenSet = true; m_standardErrorUrl = value; }
-    inline void SetStandardErrorUrl(Aws::String&& value) { m_standardErrorUrlHasBeenSet = true; m_standardErrorUrl = std::move(value); }
-    inline void SetStandardErrorUrl(const char* value) { m_standardErrorUrlHasBeenSet = true; m_standardErrorUrl.assign(value); }
-    inline CommandPlugin& WithStandardErrorUrl(const Aws::String& value) { SetStandardErrorUrl(value); return *this;}
-    inline CommandPlugin& WithStandardErrorUrl(Aws::String&& value) { SetStandardErrorUrl(std::move(value)); return *this;}
-    inline CommandPlugin& WithStandardErrorUrl(const char* value) { SetStandardErrorUrl(value); return *this;}
+    template<typename StandardErrorUrlT = Aws::String>
+    void SetStandardErrorUrl(StandardErrorUrlT&& value) { m_standardErrorUrlHasBeenSet = true; m_standardErrorUrl = std::forward<StandardErrorUrlT>(value); }
+    template<typename StandardErrorUrlT = Aws::String>
+    CommandPlugin& WithStandardErrorUrl(StandardErrorUrlT&& value) { SetStandardErrorUrl(std::forward<StandardErrorUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,14 +188,12 @@ namespace Model
      * Instead, Amazon Web Services Systems Manager automatically determines the S3
      * bucket region.</p>
      */
-    inline const Aws::String& GetOutputS3Region() const{ return m_outputS3Region; }
+    inline const Aws::String& GetOutputS3Region() const { return m_outputS3Region; }
     inline bool OutputS3RegionHasBeenSet() const { return m_outputS3RegionHasBeenSet; }
-    inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
-    inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
-    inline void SetOutputS3Region(const char* value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region.assign(value); }
-    inline CommandPlugin& WithOutputS3Region(const Aws::String& value) { SetOutputS3Region(value); return *this;}
-    inline CommandPlugin& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
-    inline CommandPlugin& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
+    template<typename OutputS3RegionT = Aws::String>
+    void SetOutputS3Region(OutputS3RegionT&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::forward<OutputS3RegionT>(value); }
+    template<typename OutputS3RegionT = Aws::String>
+    CommandPlugin& WithOutputS3Region(OutputS3RegionT&& value) { SetOutputS3Region(std::forward<OutputS3RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -221,14 +207,12 @@ namespace Model
      * <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p> <p>
      * <code>awsrunShellScript</code> is the name of the plugin.</p>
      */
-    inline const Aws::String& GetOutputS3BucketName() const{ return m_outputS3BucketName; }
+    inline const Aws::String& GetOutputS3BucketName() const { return m_outputS3BucketName; }
     inline bool OutputS3BucketNameHasBeenSet() const { return m_outputS3BucketNameHasBeenSet; }
-    inline void SetOutputS3BucketName(const Aws::String& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
-    inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = std::move(value); }
-    inline void SetOutputS3BucketName(const char* value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName.assign(value); }
-    inline CommandPlugin& WithOutputS3BucketName(const Aws::String& value) { SetOutputS3BucketName(value); return *this;}
-    inline CommandPlugin& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(std::move(value)); return *this;}
-    inline CommandPlugin& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
+    template<typename OutputS3BucketNameT = Aws::String>
+    void SetOutputS3BucketName(OutputS3BucketNameT&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = std::forward<OutputS3BucketNameT>(value); }
+    template<typename OutputS3BucketNameT = Aws::String>
+    CommandPlugin& WithOutputS3BucketName(OutputS3BucketNameT&& value) { SetOutputS3BucketName(std::forward<OutputS3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -242,33 +226,31 @@ namespace Model
      * <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p> <p>
      * <code>awsrunShellScript</code> is the name of the plugin.</p>
      */
-    inline const Aws::String& GetOutputS3KeyPrefix() const{ return m_outputS3KeyPrefix; }
+    inline const Aws::String& GetOutputS3KeyPrefix() const { return m_outputS3KeyPrefix; }
     inline bool OutputS3KeyPrefixHasBeenSet() const { return m_outputS3KeyPrefixHasBeenSet; }
-    inline void SetOutputS3KeyPrefix(const Aws::String& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
-    inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = std::move(value); }
-    inline void SetOutputS3KeyPrefix(const char* value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix.assign(value); }
-    inline CommandPlugin& WithOutputS3KeyPrefix(const Aws::String& value) { SetOutputS3KeyPrefix(value); return *this;}
-    inline CommandPlugin& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(std::move(value)); return *this;}
-    inline CommandPlugin& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
+    template<typename OutputS3KeyPrefixT = Aws::String>
+    void SetOutputS3KeyPrefix(OutputS3KeyPrefixT&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = std::forward<OutputS3KeyPrefixT>(value); }
+    template<typename OutputS3KeyPrefixT = Aws::String>
+    CommandPlugin& WithOutputS3KeyPrefix(OutputS3KeyPrefixT&& value) { SetOutputS3KeyPrefix(std::forward<OutputS3KeyPrefixT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    CommandPluginStatus m_status;
+    CommandPluginStatus m_status{CommandPluginStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetails;
     bool m_statusDetailsHasBeenSet = false;
 
-    int m_responseCode;
+    int m_responseCode{0};
     bool m_responseCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_responseStartDateTime;
+    Aws::Utils::DateTime m_responseStartDateTime{};
     bool m_responseStartDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_responseFinishDateTime;
+    Aws::Utils::DateTime m_responseFinishDateTime{};
     bool m_responseFinishDateTimeHasBeenSet = false;
 
     Aws::String m_output;

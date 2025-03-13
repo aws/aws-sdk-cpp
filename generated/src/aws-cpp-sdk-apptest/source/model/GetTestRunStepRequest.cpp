@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTestRunStepRequest::GetTestRunStepRequest() : 
-    m_testRunIdHasBeenSet(false),
-    m_stepNameHasBeenSet(false),
-    m_testCaseIdHasBeenSet(false),
-    m_testSuiteIdHasBeenSet(false)
-{
-}
-
 Aws::String GetTestRunStepRequest::SerializePayload() const
 {
   return {};

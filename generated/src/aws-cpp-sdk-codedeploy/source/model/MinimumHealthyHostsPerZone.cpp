@@ -18,16 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-MinimumHealthyHostsPerZone::MinimumHealthyHostsPerZone() : 
-    m_type(MinimumHealthyHostsPerZoneType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 MinimumHealthyHostsPerZone::MinimumHealthyHostsPerZone(JsonView jsonValue)
-  : MinimumHealthyHostsPerZone()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MinimumHealthyHostsPerZone& MinimumHealthyHostsPerZone::operator =(JsonView json
   if(jsonValue.ValueExists("type"))
   {
     m_type = MinimumHealthyHostsPerZoneTypeMapper::GetMinimumHealthyHostsPerZoneTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInteger("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

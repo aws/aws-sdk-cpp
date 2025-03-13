@@ -32,7 +32,7 @@ namespace Model
   class ReplicationConfig
   {
   public:
-    AWS_EVENTBRIDGE_API ReplicationConfig();
+    AWS_EVENTBRIDGE_API ReplicationConfig() = default;
     AWS_EVENTBRIDGE_API ReplicationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API ReplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The state of event replication.</p>
      */
-    inline const ReplicationState& GetState() const{ return m_state; }
+    inline ReplicationState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ReplicationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ReplicationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ReplicationConfig& WithState(const ReplicationState& value) { SetState(value); return *this;}
-    inline ReplicationConfig& WithState(ReplicationState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ReplicationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ReplicationConfig& WithState(ReplicationState value) { SetState(value); return *this;}
     ///@}
   private:
 
-    ReplicationState m_state;
+    ReplicationState m_state{ReplicationState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

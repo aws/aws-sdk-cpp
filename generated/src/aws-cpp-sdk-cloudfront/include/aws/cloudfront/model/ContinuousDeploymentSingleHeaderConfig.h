@@ -33,7 +33,7 @@ namespace Model
   class ContinuousDeploymentSingleHeaderConfig
   {
   public:
-    AWS_CLOUDFRONT_API ContinuousDeploymentSingleHeaderConfig();
+    AWS_CLOUDFRONT_API ContinuousDeploymentSingleHeaderConfig() = default;
     AWS_CLOUDFRONT_API ContinuousDeploymentSingleHeaderConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ContinuousDeploymentSingleHeaderConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,24 @@ namespace Model
      * <p>The request header name that you want CloudFront to send to your staging
      * distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
      */
-    inline const Aws::String& GetHeader() const{ return m_header; }
+    inline const Aws::String& GetHeader() const { return m_header; }
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-    inline void SetHeader(const Aws::String& value) { m_headerHasBeenSet = true; m_header = value; }
-    inline void SetHeader(Aws::String&& value) { m_headerHasBeenSet = true; m_header = std::move(value); }
-    inline void SetHeader(const char* value) { m_headerHasBeenSet = true; m_header.assign(value); }
-    inline ContinuousDeploymentSingleHeaderConfig& WithHeader(const Aws::String& value) { SetHeader(value); return *this;}
-    inline ContinuousDeploymentSingleHeaderConfig& WithHeader(Aws::String&& value) { SetHeader(std::move(value)); return *this;}
-    inline ContinuousDeploymentSingleHeaderConfig& WithHeader(const char* value) { SetHeader(value); return *this;}
+    template<typename HeaderT = Aws::String>
+    void SetHeader(HeaderT&& value) { m_headerHasBeenSet = true; m_header = std::forward<HeaderT>(value); }
+    template<typename HeaderT = Aws::String>
+    ContinuousDeploymentSingleHeaderConfig& WithHeader(HeaderT&& value) { SetHeader(std::forward<HeaderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The request header value.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ContinuousDeploymentSingleHeaderConfig& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ContinuousDeploymentSingleHeaderConfig& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ContinuousDeploymentSingleHeaderConfig& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ContinuousDeploymentSingleHeaderConfig& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

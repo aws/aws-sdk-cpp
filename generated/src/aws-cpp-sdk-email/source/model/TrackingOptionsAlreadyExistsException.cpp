@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-TrackingOptionsAlreadyExistsException::TrackingOptionsAlreadyExistsException() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 TrackingOptionsAlreadyExistsException::TrackingOptionsAlreadyExistsException(const XmlNode& xmlNode)
-  : TrackingOptionsAlreadyExistsException()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ TrackingOptionsAlreadyExistsException& TrackingOptionsAlreadyExistsException::op
     {
       m_configurationSetName = Aws::Utils::Xml::DecodeEscapedXmlText(configurationSetNameNode.GetText());
       m_configurationSetNameHasBeenSet = true;
+       m_configurationSetNameHasBeenSet = true;
     }
   }
 

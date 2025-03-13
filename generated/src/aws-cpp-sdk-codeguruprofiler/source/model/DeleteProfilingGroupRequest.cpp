@@ -12,11 +12,6 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProfilingGroupRequest::DeleteProfilingGroupRequest() : 
-    m_profilingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProfilingGroupRequest::SerializePayload() const
 {
   return {};

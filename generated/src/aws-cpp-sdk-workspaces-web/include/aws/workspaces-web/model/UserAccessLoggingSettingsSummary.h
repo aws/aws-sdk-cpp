@@ -31,7 +31,7 @@ namespace Model
   class UserAccessLoggingSettingsSummary
   {
   public:
-    AWS_WORKSPACESWEB_API UserAccessLoggingSettingsSummary();
+    AWS_WORKSPACESWEB_API UserAccessLoggingSettingsSummary() = default;
     AWS_WORKSPACESWEB_API UserAccessLoggingSettingsSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API UserAccessLoggingSettingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The ARN of the Kinesis stream.</p>
      */
-    inline const Aws::String& GetKinesisStreamArn() const{ return m_kinesisStreamArn; }
+    inline const Aws::String& GetKinesisStreamArn() const { return m_kinesisStreamArn; }
     inline bool KinesisStreamArnHasBeenSet() const { return m_kinesisStreamArnHasBeenSet; }
-    inline void SetKinesisStreamArn(const Aws::String& value) { m_kinesisStreamArnHasBeenSet = true; m_kinesisStreamArn = value; }
-    inline void SetKinesisStreamArn(Aws::String&& value) { m_kinesisStreamArnHasBeenSet = true; m_kinesisStreamArn = std::move(value); }
-    inline void SetKinesisStreamArn(const char* value) { m_kinesisStreamArnHasBeenSet = true; m_kinesisStreamArn.assign(value); }
-    inline UserAccessLoggingSettingsSummary& WithKinesisStreamArn(const Aws::String& value) { SetKinesisStreamArn(value); return *this;}
-    inline UserAccessLoggingSettingsSummary& WithKinesisStreamArn(Aws::String&& value) { SetKinesisStreamArn(std::move(value)); return *this;}
-    inline UserAccessLoggingSettingsSummary& WithKinesisStreamArn(const char* value) { SetKinesisStreamArn(value); return *this;}
+    template<typename KinesisStreamArnT = Aws::String>
+    void SetKinesisStreamArn(KinesisStreamArnT&& value) { m_kinesisStreamArnHasBeenSet = true; m_kinesisStreamArn = std::forward<KinesisStreamArnT>(value); }
+    template<typename KinesisStreamArnT = Aws::String>
+    UserAccessLoggingSettingsSummary& WithKinesisStreamArn(KinesisStreamArnT&& value) { SetKinesisStreamArn(std::forward<KinesisStreamArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the user access logging settings.</p>
      */
-    inline const Aws::String& GetUserAccessLoggingSettingsArn() const{ return m_userAccessLoggingSettingsArn; }
+    inline const Aws::String& GetUserAccessLoggingSettingsArn() const { return m_userAccessLoggingSettingsArn; }
     inline bool UserAccessLoggingSettingsArnHasBeenSet() const { return m_userAccessLoggingSettingsArnHasBeenSet; }
-    inline void SetUserAccessLoggingSettingsArn(const Aws::String& value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn = value; }
-    inline void SetUserAccessLoggingSettingsArn(Aws::String&& value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn = std::move(value); }
-    inline void SetUserAccessLoggingSettingsArn(const char* value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn.assign(value); }
-    inline UserAccessLoggingSettingsSummary& WithUserAccessLoggingSettingsArn(const Aws::String& value) { SetUserAccessLoggingSettingsArn(value); return *this;}
-    inline UserAccessLoggingSettingsSummary& WithUserAccessLoggingSettingsArn(Aws::String&& value) { SetUserAccessLoggingSettingsArn(std::move(value)); return *this;}
-    inline UserAccessLoggingSettingsSummary& WithUserAccessLoggingSettingsArn(const char* value) { SetUserAccessLoggingSettingsArn(value); return *this;}
+    template<typename UserAccessLoggingSettingsArnT = Aws::String>
+    void SetUserAccessLoggingSettingsArn(UserAccessLoggingSettingsArnT&& value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn = std::forward<UserAccessLoggingSettingsArnT>(value); }
+    template<typename UserAccessLoggingSettingsArnT = Aws::String>
+    UserAccessLoggingSettingsSummary& WithUserAccessLoggingSettingsArn(UserAccessLoggingSettingsArnT&& value) { SetUserAccessLoggingSettingsArn(std::forward<UserAccessLoggingSettingsArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,22 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-AppflowIntegrationWorkflowStep::AppflowIntegrationWorkflowStep() : 
-    m_flowNameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_executionMessageHasBeenSet(false),
-    m_recordsProcessed(0),
-    m_recordsProcessedHasBeenSet(false),
-    m_batchRecordsStartTimeHasBeenSet(false),
-    m_batchRecordsEndTimeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
-{
-}
-
 AppflowIntegrationWorkflowStep::AppflowIntegrationWorkflowStep(JsonView jsonValue)
-  : AppflowIntegrationWorkflowStep()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ AppflowIntegrationWorkflowStep& AppflowIntegrationWorkflowStep::operator =(JsonV
   if(jsonValue.ValueExists("FlowName"))
   {
     m_flowName = jsonValue.GetString("FlowName");
-
     m_flowNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionMessage"))
   {
     m_executionMessage = jsonValue.GetString("ExecutionMessage");
-
     m_executionMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordsProcessed"))
   {
     m_recordsProcessed = jsonValue.GetInt64("RecordsProcessed");
-
     m_recordsProcessedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchRecordsStartTime"))
   {
     m_batchRecordsStartTime = jsonValue.GetString("BatchRecordsStartTime");
-
     m_batchRecordsStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchRecordsEndTime"))
   {
     m_batchRecordsEndTime = jsonValue.GetString("BatchRecordsEndTime");
-
     m_batchRecordsEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

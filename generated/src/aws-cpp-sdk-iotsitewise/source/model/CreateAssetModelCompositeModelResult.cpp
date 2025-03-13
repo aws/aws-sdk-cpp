@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAssetModelCompositeModelResult::CreateAssetModelCompositeModelResult()
-{
-}
-
 CreateAssetModelCompositeModelResult::CreateAssetModelCompositeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ CreateAssetModelCompositeModelResult& CreateAssetModelCompositeModelResult::oper
   if(jsonValue.ValueExists("assetModelCompositeModelId"))
   {
     m_assetModelCompositeModelId = jsonValue.GetString("assetModelCompositeModelId");
-
+    m_assetModelCompositeModelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelPath"))
   {
     Aws::Utils::Array<JsonView> assetModelCompositeModelPathJsonList = jsonValue.GetArray("assetModelCompositeModelPath");
@@ -42,20 +37,20 @@ CreateAssetModelCompositeModelResult& CreateAssetModelCompositeModelResult::oper
     {
       m_assetModelCompositeModelPath.push_back(assetModelCompositeModelPathJsonList[assetModelCompositeModelPathIndex].AsObject());
     }
+    m_assetModelCompositeModelPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelStatus"))
   {
     m_assetModelStatus = jsonValue.GetObject("assetModelStatus");
-
+    m_assetModelStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

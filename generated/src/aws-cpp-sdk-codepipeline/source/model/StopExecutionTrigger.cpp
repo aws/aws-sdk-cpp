@@ -18,13 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-StopExecutionTrigger::StopExecutionTrigger() : 
-    m_reasonHasBeenSet(false)
-{
-}
-
 StopExecutionTrigger::StopExecutionTrigger(JsonView jsonValue)
-  : StopExecutionTrigger()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StopExecutionTrigger& StopExecutionTrigger::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

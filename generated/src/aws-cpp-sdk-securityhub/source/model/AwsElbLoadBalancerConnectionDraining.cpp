@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElbLoadBalancerConnectionDraining::AwsElbLoadBalancerConnectionDraining() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false)
-{
-}
-
 AwsElbLoadBalancerConnectionDraining::AwsElbLoadBalancerConnectionDraining(JsonView jsonValue)
-  : AwsElbLoadBalancerConnectionDraining()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AwsElbLoadBalancerConnectionDraining& AwsElbLoadBalancerConnectionDraining::oper
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeout"))
   {
     m_timeout = jsonValue.GetInteger("Timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

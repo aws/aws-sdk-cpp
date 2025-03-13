@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ConfluenceBlogToIndexFieldMapping::ConfluenceBlogToIndexFieldMapping() : 
-    m_dataSourceFieldName(ConfluenceBlogFieldName::NOT_SET),
-    m_dataSourceFieldNameHasBeenSet(false),
-    m_dateFieldFormatHasBeenSet(false),
-    m_indexFieldNameHasBeenSet(false)
-{
-}
-
 ConfluenceBlogToIndexFieldMapping::ConfluenceBlogToIndexFieldMapping(JsonView jsonValue)
-  : ConfluenceBlogToIndexFieldMapping()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ConfluenceBlogToIndexFieldMapping& ConfluenceBlogToIndexFieldMapping::operator =
   if(jsonValue.ValueExists("DataSourceFieldName"))
   {
     m_dataSourceFieldName = ConfluenceBlogFieldNameMapper::GetConfluenceBlogFieldNameForName(jsonValue.GetString("DataSourceFieldName"));
-
     m_dataSourceFieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateFieldFormat"))
   {
     m_dateFieldFormat = jsonValue.GetString("DateFieldFormat");
-
     m_dateFieldFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexFieldName"))
   {
     m_indexFieldName = jsonValue.GetString("IndexFieldName");
-
     m_indexFieldNameHasBeenSet = true;
   }
-
   return *this;
 }
 

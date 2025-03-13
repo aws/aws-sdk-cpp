@@ -12,11 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCustomActionRequest::GetCustomActionRequest() : 
-    m_customActionArnHasBeenSet(false)
-{
-}
-
 Aws::String GetCustomActionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -19,7 +19,7 @@ namespace Model
   class GetPackageConfigurationRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API GetPackageConfigurationRequest();
+    AWS_IOT_API GetPackageConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

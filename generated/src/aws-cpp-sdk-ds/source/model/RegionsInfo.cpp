@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-RegionsInfo::RegionsInfo() : 
-    m_primaryRegionHasBeenSet(false),
-    m_additionalRegionsHasBeenSet(false)
-{
-}
-
 RegionsInfo::RegionsInfo(JsonView jsonValue)
-  : RegionsInfo()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RegionsInfo& RegionsInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PrimaryRegion"))
   {
     m_primaryRegion = jsonValue.GetString("PrimaryRegion");
-
     m_primaryRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalRegions"))
   {
     Aws::Utils::Array<JsonView> additionalRegionsJsonList = jsonValue.GetArray("AdditionalRegions");
@@ -48,7 +39,6 @@ RegionsInfo& RegionsInfo::operator =(JsonView jsonValue)
     }
     m_additionalRegionsHasBeenSet = true;
   }
-
   return *this;
 }
 

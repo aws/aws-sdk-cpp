@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-VerifyResult::VerifyResult() : 
-    m_signatureValid(false),
-    m_signingAlgorithm(SigningAlgorithmSpec::NOT_SET)
-{
-}
-
 VerifyResult::VerifyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : VerifyResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ VerifyResult& VerifyResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
+    m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SignatureValid"))
   {
     m_signatureValid = jsonValue.GetBool("SignatureValid");
-
+    m_signatureValidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SigningAlgorithm"))
   {
     m_signingAlgorithm = SigningAlgorithmSpecMapper::GetSigningAlgorithmSpecForName(jsonValue.GetString("SigningAlgorithm"));
-
+    m_signingAlgorithmHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-EventTriggerDimension::EventTriggerDimension() : 
-    m_objectAttributesHasBeenSet(false)
-{
-}
-
 EventTriggerDimension::EventTriggerDimension(JsonView jsonValue)
-  : EventTriggerDimension()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EventTriggerDimension& EventTriggerDimension::operator =(JsonView jsonValue)
     }
     m_objectAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-CloudFunctionConfiguration::CloudFunctionConfiguration() : 
-    m_idHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_cloudFunctionHasBeenSet(false),
-    m_invocationRoleHasBeenSet(false)
-{
-}
-
 CloudFunctionConfiguration::CloudFunctionConfiguration(const XmlNode& xmlNode)
-  : CloudFunctionConfiguration()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ CloudFunctionConfiguration& CloudFunctionConfiguration::operator =(const XmlNode
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("Event");
     if(!eventsNode.IsNull())
     {
       XmlNode eventMember = eventsNode;
+      m_eventsHasBeenSet = !eventMember.IsNull();
       while(!eventMember.IsNull())
       {
         m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));
         eventMember = eventMember.NextNode("Event");
       }
 
-      m_eventsHasBeenSet = true;
+       m_eventsHasBeenSet = true;
     }
     XmlNode cloudFunctionNode = resultNode.FirstChild("CloudFunction");
     if(!cloudFunctionNode.IsNull())
     {
       m_cloudFunction = Aws::Utils::Xml::DecodeEscapedXmlText(cloudFunctionNode.GetText());
       m_cloudFunctionHasBeenSet = true;
+       m_cloudFunctionHasBeenSet = true;
     }
     XmlNode invocationRoleNode = resultNode.FirstChild("InvocationRole");
     if(!invocationRoleNode.IsNull())
     {
       m_invocationRole = Aws::Utils::Xml::DecodeEscapedXmlText(invocationRoleNode.GetText());
       m_invocationRoleHasBeenSet = true;
+       m_invocationRoleHasBeenSet = true;
     }
   }
 

@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ActionSummary::ActionSummary() : 
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false)
-{
-}
-
 ActionSummary::ActionSummary(JsonView jsonValue)
-  : ActionSummary()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ActionSummary& ActionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionType"))
   {
     m_actionType = ActionTypeMapper::GetActionTypeForName(jsonValue.GetString("ActionType"));
-
     m_actionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

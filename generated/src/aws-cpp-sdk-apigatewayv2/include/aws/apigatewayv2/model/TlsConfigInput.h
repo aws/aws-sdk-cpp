@@ -33,7 +33,7 @@ namespace Model
   class TlsConfigInput
   {
   public:
-    AWS_APIGATEWAYV2_API TlsConfigInput();
+    AWS_APIGATEWAYV2_API TlsConfigInput() = default;
     AWS_APIGATEWAYV2_API TlsConfigInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAYV2_API TlsConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * the integration's certificate. The server name is also included in the TLS
      * handshake to support Server Name Indication (SNI) or virtual hosting.</p>
      */
-    inline const Aws::String& GetServerNameToVerify() const{ return m_serverNameToVerify; }
+    inline const Aws::String& GetServerNameToVerify() const { return m_serverNameToVerify; }
     inline bool ServerNameToVerifyHasBeenSet() const { return m_serverNameToVerifyHasBeenSet; }
-    inline void SetServerNameToVerify(const Aws::String& value) { m_serverNameToVerifyHasBeenSet = true; m_serverNameToVerify = value; }
-    inline void SetServerNameToVerify(Aws::String&& value) { m_serverNameToVerifyHasBeenSet = true; m_serverNameToVerify = std::move(value); }
-    inline void SetServerNameToVerify(const char* value) { m_serverNameToVerifyHasBeenSet = true; m_serverNameToVerify.assign(value); }
-    inline TlsConfigInput& WithServerNameToVerify(const Aws::String& value) { SetServerNameToVerify(value); return *this;}
-    inline TlsConfigInput& WithServerNameToVerify(Aws::String&& value) { SetServerNameToVerify(std::move(value)); return *this;}
-    inline TlsConfigInput& WithServerNameToVerify(const char* value) { SetServerNameToVerify(value); return *this;}
+    template<typename ServerNameToVerifyT = Aws::String>
+    void SetServerNameToVerify(ServerNameToVerifyT&& value) { m_serverNameToVerifyHasBeenSet = true; m_serverNameToVerify = std::forward<ServerNameToVerifyT>(value); }
+    template<typename ServerNameToVerifyT = Aws::String>
+    TlsConfigInput& WithServerNameToVerify(ServerNameToVerifyT&& value) { SetServerNameToVerify(std::forward<ServerNameToVerifyT>(value)); return *this;}
     ///@}
   private:
 

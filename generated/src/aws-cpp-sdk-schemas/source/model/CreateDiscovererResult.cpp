@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDiscovererResult::CreateDiscovererResult() : 
-    m_state(DiscovererState::NOT_SET),
-    m_crossAccount(false)
-{
-}
-
 CreateDiscovererResult::CreateDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateDiscovererResult()
 {
   *this = result;
 }
@@ -35,39 +28,33 @@ CreateDiscovererResult& CreateDiscovererResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiscovererArn"))
   {
     m_discovererArn = jsonValue.GetString("DiscovererArn");
-
+    m_discovererArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiscovererId"))
   {
     m_discovererId = jsonValue.GetString("DiscovererId");
-
+    m_discovererIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
+    m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = DiscovererStateMapper::GetDiscovererStateForName(jsonValue.GetString("State"));
-
+    m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossAccount"))
   {
     m_crossAccount = jsonValue.GetBool("CrossAccount");
-
+    m_crossAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -75,14 +62,15 @@ CreateDiscovererResult& CreateDiscovererResult::operator =(const Aws::AmazonWebS
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

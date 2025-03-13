@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails() : 
-    m_samlProviderArnHasBeenSet(false),
-    m_selfServiceSamlProviderArnHasBeenSet(false)
-{
-}
-
 AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails(JsonView jsonValue)
-  : AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& AwsE
   if(jsonValue.ValueExists("SamlProviderArn"))
   {
     m_samlProviderArn = jsonValue.GetString("SamlProviderArn");
-
     m_samlProviderArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelfServiceSamlProviderArn"))
   {
     m_selfServiceSamlProviderArn = jsonValue.GetString("SelfServiceSamlProviderArn");
-
     m_selfServiceSamlProviderArnHasBeenSet = true;
   }
-
   return *this;
 }
 

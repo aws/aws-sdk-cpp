@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VgwTelemetry::VgwTelemetry() : 
-    m_acceptedRouteCount(0),
-    m_acceptedRouteCountHasBeenSet(false),
-    m_lastStatusChangeHasBeenSet(false),
-    m_outsideIpAddressHasBeenSet(false),
-    m_status(TelemetryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_certificateArnHasBeenSet(false)
-{
-}
-
 VgwTelemetry::VgwTelemetry(const XmlNode& xmlNode)
-  : VgwTelemetry()
 {
   *this = xmlNode;
 }
@@ -49,36 +36,42 @@ VgwTelemetry& VgwTelemetry::operator =(const XmlNode& xmlNode)
     {
       m_acceptedRouteCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(acceptedRouteCountNode.GetText()).c_str()).c_str());
       m_acceptedRouteCountHasBeenSet = true;
+       m_acceptedRouteCountHasBeenSet = true;
     }
     XmlNode lastStatusChangeNode = resultNode.FirstChild("lastStatusChange");
     if(!lastStatusChangeNode.IsNull())
     {
       m_lastStatusChange = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastStatusChangeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastStatusChangeHasBeenSet = true;
+       m_lastStatusChangeHasBeenSet = true;
     }
     XmlNode outsideIpAddressNode = resultNode.FirstChild("outsideIpAddress");
     if(!outsideIpAddressNode.IsNull())
     {
       m_outsideIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(outsideIpAddressNode.GetText());
       m_outsideIpAddressHasBeenSet = true;
+       m_outsideIpAddressHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = TelemetryStatusMapper::GetTelemetryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = TelemetryStatusMapper::GetTelemetryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode certificateArnNode = resultNode.FirstChild("certificateArn");
     if(!certificateArnNode.IsNull())
     {
       m_certificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(certificateArnNode.GetText());
       m_certificateArnHasBeenSet = true;
+       m_certificateArnHasBeenSet = true;
     }
   }
 

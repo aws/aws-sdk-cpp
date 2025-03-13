@@ -18,15 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-AccountTakeoverActionsType::AccountTakeoverActionsType() : 
-    m_lowActionHasBeenSet(false),
-    m_mediumActionHasBeenSet(false),
-    m_highActionHasBeenSet(false)
-{
-}
-
 AccountTakeoverActionsType::AccountTakeoverActionsType(JsonView jsonValue)
-  : AccountTakeoverActionsType()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AccountTakeoverActionsType& AccountTakeoverActionsType::operator =(JsonView json
   if(jsonValue.ValueExists("LowAction"))
   {
     m_lowAction = jsonValue.GetObject("LowAction");
-
     m_lowActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediumAction"))
   {
     m_mediumAction = jsonValue.GetObject("MediumAction");
-
     m_mediumActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HighAction"))
   {
     m_highAction = jsonValue.GetObject("HighAction");
-
     m_highActionHasBeenSet = true;
   }
-
   return *this;
 }
 

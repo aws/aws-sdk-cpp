@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePartnerEventSourceRequest::CreatePartnerEventSourceRequest() : 
-    m_nameHasBeenSet(false),
-    m_accountHasBeenSet(false)
-{
-}
-
 Aws::String CreatePartnerEventSourceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,23 +18,7 @@ namespace MedicalImaging
 namespace Model
 {
 
-DICOMImportJobProperties::DICOMImportJobProperties() : 
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_datastoreIdHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_submittedAtHasBeenSet(false),
-    m_inputS3UriHasBeenSet(false),
-    m_outputS3UriHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DICOMImportJobProperties::DICOMImportJobProperties(JsonView jsonValue)
-  : DICOMImportJobProperties()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ DICOMImportJobProperties& DICOMImportJobProperties::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("jobStatus"));
-
     m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datastoreId"))
   {
     m_datastoreId = jsonValue.GetString("datastoreId");
-
     m_datastoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataAccessRoleArn"))
   {
     m_dataAccessRoleArn = jsonValue.GetString("dataAccessRoleArn");
-
     m_dataAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetDouble("endedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("submittedAt"))
   {
     m_submittedAt = jsonValue.GetDouble("submittedAt");
-
     m_submittedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputS3Uri"))
   {
     m_inputS3Uri = jsonValue.GetString("inputS3Uri");
-
     m_inputS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputS3Uri"))
   {
     m_outputS3Uri = jsonValue.GetString("outputS3Uri");
-
     m_outputS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

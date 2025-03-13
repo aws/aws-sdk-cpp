@@ -30,7 +30,7 @@ namespace Model
   class ListPackageVersionAssetsResult
   {
   public:
-    AWS_CODEARTIFACT_API ListPackageVersionAssetsResult();
+    AWS_CODEARTIFACT_API ListPackageVersionAssetsResult() = default;
     AWS_CODEARTIFACT_API ListPackageVersionAssetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEARTIFACT_API ListPackageVersionAssetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,11 +40,9 @@ namespace Model
      * <p> The format of the package that contains the requested package version
      * assets. </p>
      */
-    inline const PackageFormat& GetFormat() const{ return m_format; }
-    inline void SetFormat(const PackageFormat& value) { m_format = value; }
-    inline void SetFormat(PackageFormat&& value) { m_format = std::move(value); }
-    inline ListPackageVersionAssetsResult& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
-    inline ListPackageVersionAssetsResult& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline PackageFormat GetFormat() const { return m_format; }
+    inline void SetFormat(PackageFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline ListPackageVersionAssetsResult& WithFormat(PackageFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -59,13 +57,11 @@ namespace Model
      * component, package versions of those formats do not have a namespace. </p> </li>
      * </ul>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
-    inline void SetNamespace(const Aws::String& value) { m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespace.assign(value); }
-    inline ListPackageVersionAssetsResult& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline ListPackageVersionAssetsResult& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline ListPackageVersionAssetsResult& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    ListPackageVersionAssetsResult& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,39 +69,33 @@ namespace Model
      * <p> The name of the package that contains the requested package version assets.
      * </p>
      */
-    inline const Aws::String& GetPackage() const{ return m_package; }
-    inline void SetPackage(const Aws::String& value) { m_package = value; }
-    inline void SetPackage(Aws::String&& value) { m_package = std::move(value); }
-    inline void SetPackage(const char* value) { m_package.assign(value); }
-    inline ListPackageVersionAssetsResult& WithPackage(const Aws::String& value) { SetPackage(value); return *this;}
-    inline ListPackageVersionAssetsResult& WithPackage(Aws::String&& value) { SetPackage(std::move(value)); return *this;}
-    inline ListPackageVersionAssetsResult& WithPackage(const char* value) { SetPackage(value); return *this;}
+    inline const Aws::String& GetPackage() const { return m_package; }
+    template<typename PackageT = Aws::String>
+    void SetPackage(PackageT&& value) { m_packageHasBeenSet = true; m_package = std::forward<PackageT>(value); }
+    template<typename PackageT = Aws::String>
+    ListPackageVersionAssetsResult& WithPackage(PackageT&& value) { SetPackage(std::forward<PackageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The version of the package associated with the requested assets. </p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    inline void SetVersion(const Aws::String& value) { m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_version.assign(value); }
-    inline ListPackageVersionAssetsResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline ListPackageVersionAssetsResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline ListPackageVersionAssetsResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    inline const Aws::String& GetVersion() const { return m_version; }
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    ListPackageVersionAssetsResult& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current revision associated with the package version. </p>
      */
-    inline const Aws::String& GetVersionRevision() const{ return m_versionRevision; }
-    inline void SetVersionRevision(const Aws::String& value) { m_versionRevision = value; }
-    inline void SetVersionRevision(Aws::String&& value) { m_versionRevision = std::move(value); }
-    inline void SetVersionRevision(const char* value) { m_versionRevision.assign(value); }
-    inline ListPackageVersionAssetsResult& WithVersionRevision(const Aws::String& value) { SetVersionRevision(value); return *this;}
-    inline ListPackageVersionAssetsResult& WithVersionRevision(Aws::String&& value) { SetVersionRevision(std::move(value)); return *this;}
-    inline ListPackageVersionAssetsResult& WithVersionRevision(const char* value) { SetVersionRevision(value); return *this;}
+    inline const Aws::String& GetVersionRevision() const { return m_versionRevision; }
+    template<typename VersionRevisionT = Aws::String>
+    void SetVersionRevision(VersionRevisionT&& value) { m_versionRevisionHasBeenSet = true; m_versionRevision = std::forward<VersionRevisionT>(value); }
+    template<typename VersionRevisionT = Aws::String>
+    ListPackageVersionAssetsResult& WithVersionRevision(VersionRevisionT&& value) { SetVersionRevision(std::forward<VersionRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,13 +103,11 @@ namespace Model
      * <p> If there are additional results, this is the token for the next set of
      * results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPackageVersionAssetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPackageVersionAssetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPackageVersionAssetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPackageVersionAssetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,42 +116,48 @@ namespace Model
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
      * objects. </p>
      */
-    inline const Aws::Vector<AssetSummary>& GetAssets() const{ return m_assets; }
-    inline void SetAssets(const Aws::Vector<AssetSummary>& value) { m_assets = value; }
-    inline void SetAssets(Aws::Vector<AssetSummary>&& value) { m_assets = std::move(value); }
-    inline ListPackageVersionAssetsResult& WithAssets(const Aws::Vector<AssetSummary>& value) { SetAssets(value); return *this;}
-    inline ListPackageVersionAssetsResult& WithAssets(Aws::Vector<AssetSummary>&& value) { SetAssets(std::move(value)); return *this;}
-    inline ListPackageVersionAssetsResult& AddAssets(const AssetSummary& value) { m_assets.push_back(value); return *this; }
-    inline ListPackageVersionAssetsResult& AddAssets(AssetSummary&& value) { m_assets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssetSummary>& GetAssets() const { return m_assets; }
+    template<typename AssetsT = Aws::Vector<AssetSummary>>
+    void SetAssets(AssetsT&& value) { m_assetsHasBeenSet = true; m_assets = std::forward<AssetsT>(value); }
+    template<typename AssetsT = Aws::Vector<AssetSummary>>
+    ListPackageVersionAssetsResult& WithAssets(AssetsT&& value) { SetAssets(std::forward<AssetsT>(value)); return *this;}
+    template<typename AssetsT = AssetSummary>
+    ListPackageVersionAssetsResult& AddAssets(AssetsT&& value) { m_assetsHasBeenSet = true; m_assets.emplace_back(std::forward<AssetsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPackageVersionAssetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPackageVersionAssetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPackageVersionAssetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPackageVersionAssetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    PackageFormat m_format;
+    PackageFormat m_format{PackageFormat::NOT_SET};
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_package;
+    bool m_packageHasBeenSet = false;
 
     Aws::String m_version;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_versionRevision;
+    bool m_versionRevisionHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<AssetSummary> m_assets;
+    bool m_assetsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

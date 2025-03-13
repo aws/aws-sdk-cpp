@@ -39,7 +39,7 @@ namespace Model
   class Source
   {
   public:
-    AWS_CONFIGSERVICE_API Source();
+    AWS_CONFIGSERVICE_API Source() = default;
     AWS_CONFIGSERVICE_API Source(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,12 +58,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
      * Custom Rules </a> in the <i>Config developer guide</i>.</p>
      */
-    inline const Owner& GetOwner() const{ return m_owner; }
+    inline Owner GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline Source& WithOwner(const Owner& value) { SetOwner(value); return *this;}
-    inline Source& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+    inline void SetOwner(Owner value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline Source& WithOwner(Owner value) { SetOwner(value); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +76,12 @@ namespace Model
      * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
      * <p>For Config Custom Policy rules, this field will be ignored.</p>
      */
-    inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
+    inline const Aws::String& GetSourceIdentifier() const { return m_sourceIdentifier; }
     inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
-    inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
-    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
-    inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
-    inline Source& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
-    inline Source& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
-    inline Source& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
+    template<typename SourceIdentifierT = Aws::String>
+    void SetSourceIdentifier(SourceIdentifierT&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::forward<SourceIdentifierT>(value); }
+    template<typename SourceIdentifierT = Aws::String>
+    Source& WithSourceIdentifier(SourceIdentifierT&& value) { SetSourceIdentifier(std::forward<SourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +94,14 @@ namespace Model
      * <code>ConfigurationItemChangeNotification</code> and
      * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
-    inline const Aws::Vector<SourceDetail>& GetSourceDetails() const{ return m_sourceDetails; }
+    inline const Aws::Vector<SourceDetail>& GetSourceDetails() const { return m_sourceDetails; }
     inline bool SourceDetailsHasBeenSet() const { return m_sourceDetailsHasBeenSet; }
-    inline void SetSourceDetails(const Aws::Vector<SourceDetail>& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails = value; }
-    inline void SetSourceDetails(Aws::Vector<SourceDetail>&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails = std::move(value); }
-    inline Source& WithSourceDetails(const Aws::Vector<SourceDetail>& value) { SetSourceDetails(value); return *this;}
-    inline Source& WithSourceDetails(Aws::Vector<SourceDetail>&& value) { SetSourceDetails(std::move(value)); return *this;}
-    inline Source& AddSourceDetails(const SourceDetail& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails.push_back(value); return *this; }
-    inline Source& AddSourceDetails(SourceDetail&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails.push_back(std::move(value)); return *this; }
+    template<typename SourceDetailsT = Aws::Vector<SourceDetail>>
+    void SetSourceDetails(SourceDetailsT&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails = std::forward<SourceDetailsT>(value); }
+    template<typename SourceDetailsT = Aws::Vector<SourceDetail>>
+    Source& WithSourceDetails(SourceDetailsT&& value) { SetSourceDetails(std::forward<SourceDetailsT>(value)); return *this;}
+    template<typename SourceDetailsT = SourceDetail>
+    Source& AddSourceDetails(SourceDetailsT&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails.emplace_back(std::forward<SourceDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,16 +109,16 @@ namespace Model
      * <p>Provides the runtime system, policy definition, and whether debug logging is
      * enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
      */
-    inline const CustomPolicyDetails& GetCustomPolicyDetails() const{ return m_customPolicyDetails; }
+    inline const CustomPolicyDetails& GetCustomPolicyDetails() const { return m_customPolicyDetails; }
     inline bool CustomPolicyDetailsHasBeenSet() const { return m_customPolicyDetailsHasBeenSet; }
-    inline void SetCustomPolicyDetails(const CustomPolicyDetails& value) { m_customPolicyDetailsHasBeenSet = true; m_customPolicyDetails = value; }
-    inline void SetCustomPolicyDetails(CustomPolicyDetails&& value) { m_customPolicyDetailsHasBeenSet = true; m_customPolicyDetails = std::move(value); }
-    inline Source& WithCustomPolicyDetails(const CustomPolicyDetails& value) { SetCustomPolicyDetails(value); return *this;}
-    inline Source& WithCustomPolicyDetails(CustomPolicyDetails&& value) { SetCustomPolicyDetails(std::move(value)); return *this;}
+    template<typename CustomPolicyDetailsT = CustomPolicyDetails>
+    void SetCustomPolicyDetails(CustomPolicyDetailsT&& value) { m_customPolicyDetailsHasBeenSet = true; m_customPolicyDetails = std::forward<CustomPolicyDetailsT>(value); }
+    template<typename CustomPolicyDetailsT = CustomPolicyDetails>
+    Source& WithCustomPolicyDetails(CustomPolicyDetailsT&& value) { SetCustomPolicyDetails(std::forward<CustomPolicyDetailsT>(value)); return *this;}
     ///@}
   private:
 
-    Owner m_owner;
+    Owner m_owner{Owner::NOT_SET};
     bool m_ownerHasBeenSet = false;
 
     Aws::String m_sourceIdentifier;

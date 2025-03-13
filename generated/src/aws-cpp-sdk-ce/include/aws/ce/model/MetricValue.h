@@ -31,7 +31,7 @@ namespace Model
   class MetricValue
   {
   public:
-    AWS_COSTEXPLORER_API MetricValue();
+    AWS_COSTEXPLORER_API MetricValue() = default;
     AWS_COSTEXPLORER_API MetricValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API MetricValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The actual number that represents the metric.</p>
      */
-    inline const Aws::String& GetAmount() const{ return m_amount; }
+    inline const Aws::String& GetAmount() const { return m_amount; }
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
-    inline void SetAmount(const Aws::String& value) { m_amountHasBeenSet = true; m_amount = value; }
-    inline void SetAmount(Aws::String&& value) { m_amountHasBeenSet = true; m_amount = std::move(value); }
-    inline void SetAmount(const char* value) { m_amountHasBeenSet = true; m_amount.assign(value); }
-    inline MetricValue& WithAmount(const Aws::String& value) { SetAmount(value); return *this;}
-    inline MetricValue& WithAmount(Aws::String&& value) { SetAmount(std::move(value)); return *this;}
-    inline MetricValue& WithAmount(const char* value) { SetAmount(value); return *this;}
+    template<typename AmountT = Aws::String>
+    void SetAmount(AmountT&& value) { m_amountHasBeenSet = true; m_amount = std::forward<AmountT>(value); }
+    template<typename AmountT = Aws::String>
+    MetricValue& WithAmount(AmountT&& value) { SetAmount(std::forward<AmountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unit that the metric is given in.</p>
      */
-    inline const Aws::String& GetUnit() const{ return m_unit; }
+    inline const Aws::String& GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-    inline MetricValue& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-    inline MetricValue& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-    inline MetricValue& WithUnit(const char* value) { SetUnit(value); return *this;}
+    template<typename UnitT = Aws::String>
+    void SetUnit(UnitT&& value) { m_unitHasBeenSet = true; m_unit = std::forward<UnitT>(value); }
+    template<typename UnitT = Aws::String>
+    MetricValue& WithUnit(UnitT&& value) { SetUnit(std::forward<UnitT>(value)); return *this;}
     ///@}
   private:
 

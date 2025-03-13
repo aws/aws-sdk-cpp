@@ -12,14 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RevokeVpcEndpointAccessRequest::RevokeVpcEndpointAccessRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_accountHasBeenSet(false),
-    m_service(AWSServicePrincipal::NOT_SET),
-    m_serviceHasBeenSet(false)
-{
-}
-
 Aws::String RevokeVpcEndpointAccessRequest::SerializePayload() const
 {
   JsonValue payload;

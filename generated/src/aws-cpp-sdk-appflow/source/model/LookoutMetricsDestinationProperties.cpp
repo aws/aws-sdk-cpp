@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-LookoutMetricsDestinationProperties::LookoutMetricsDestinationProperties()
-{
-}
-
 LookoutMetricsDestinationProperties::LookoutMetricsDestinationProperties(JsonView jsonValue)
 {
   *this = jsonValue;

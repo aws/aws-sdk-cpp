@@ -18,17 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-CreateJobPlaylist::CreateJobPlaylist() : 
-    m_nameHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_outputKeysHasBeenSet(false),
-    m_hlsContentProtectionHasBeenSet(false),
-    m_playReadyDrmHasBeenSet(false)
-{
-}
-
 CreateJobPlaylist::CreateJobPlaylist(JsonView jsonValue)
-  : CreateJobPlaylist()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ CreateJobPlaylist& CreateJobPlaylist::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = jsonValue.GetString("Format");
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputKeys"))
   {
     Aws::Utils::Array<JsonView> outputKeysJsonList = jsonValue.GetArray("OutputKeys");
@@ -58,21 +44,16 @@ CreateJobPlaylist& CreateJobPlaylist::operator =(JsonView jsonValue)
     }
     m_outputKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HlsContentProtection"))
   {
     m_hlsContentProtection = jsonValue.GetObject("HlsContentProtection");
-
     m_hlsContentProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlayReadyDrm"))
   {
     m_playReadyDrm = jsonValue.GetObject("PlayReadyDrm");
-
     m_playReadyDrmHasBeenSet = true;
   }
-
   return *this;
 }
 

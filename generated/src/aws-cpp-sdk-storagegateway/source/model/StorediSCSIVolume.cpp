@@ -18,31 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-StorediSCSIVolume::StorediSCSIVolume() : 
-    m_volumeARNHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_volumeStatusHasBeenSet(false),
-    m_volumeAttachmentStatusHasBeenSet(false),
-    m_volumeSizeInBytes(0),
-    m_volumeSizeInBytesHasBeenSet(false),
-    m_volumeProgress(0.0),
-    m_volumeProgressHasBeenSet(false),
-    m_volumeDiskIdHasBeenSet(false),
-    m_sourceSnapshotIdHasBeenSet(false),
-    m_preservedExistingData(false),
-    m_preservedExistingDataHasBeenSet(false),
-    m_volumeiSCSIAttributesHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_volumeUsedInBytes(0),
-    m_volumeUsedInBytesHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false),
-    m_targetNameHasBeenSet(false)
-{
-}
-
 StorediSCSIVolume::StorediSCSIVolume(JsonView jsonValue)
-  : StorediSCSIVolume()
 {
   *this = jsonValue;
 }
@@ -52,108 +28,78 @@ StorediSCSIVolume& StorediSCSIVolume::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VolumeARN"))
   {
     m_volumeARN = jsonValue.GetString("VolumeARN");
-
     m_volumeARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeId"))
   {
     m_volumeId = jsonValue.GetString("VolumeId");
-
     m_volumeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeType"))
   {
     m_volumeType = jsonValue.GetString("VolumeType");
-
     m_volumeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeStatus"))
   {
     m_volumeStatus = jsonValue.GetString("VolumeStatus");
-
     m_volumeStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeAttachmentStatus"))
   {
     m_volumeAttachmentStatus = jsonValue.GetString("VolumeAttachmentStatus");
-
     m_volumeAttachmentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSizeInBytes"))
   {
     m_volumeSizeInBytes = jsonValue.GetInt64("VolumeSizeInBytes");
-
     m_volumeSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeProgress"))
   {
     m_volumeProgress = jsonValue.GetDouble("VolumeProgress");
-
     m_volumeProgressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeDiskId"))
   {
     m_volumeDiskId = jsonValue.GetString("VolumeDiskId");
-
     m_volumeDiskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceSnapshotId"))
   {
     m_sourceSnapshotId = jsonValue.GetString("SourceSnapshotId");
-
     m_sourceSnapshotIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreservedExistingData"))
   {
     m_preservedExistingData = jsonValue.GetBool("PreservedExistingData");
-
     m_preservedExistingDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeiSCSIAttributes"))
   {
     m_volumeiSCSIAttributes = jsonValue.GetObject("VolumeiSCSIAttributes");
-
     m_volumeiSCSIAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeUsedInBytes"))
   {
     m_volumeUsedInBytes = jsonValue.GetInt64("VolumeUsedInBytes");
-
     m_volumeUsedInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSKey"))
   {
     m_kMSKey = jsonValue.GetString("KMSKey");
-
     m_kMSKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetName"))
   {
     m_targetName = jsonValue.GetString("TargetName");
-
     m_targetNameHasBeenSet = true;
   }
-
   return *this;
 }
 

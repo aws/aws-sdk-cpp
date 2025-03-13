@@ -34,7 +34,7 @@ namespace Model
   class ResourceEvaluationFilters
   {
   public:
-    AWS_CONFIGSERVICE_API ResourceEvaluationFilters();
+    AWS_CONFIGSERVICE_API ResourceEvaluationFilters() = default;
     AWS_CONFIGSERVICE_API ResourceEvaluationFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ResourceEvaluationFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,24 +46,22 @@ namespace Model
      *  <p>Currently, <code>DECTECTIVE</code> is not supported as a valid
      * value. Ignore other documentation stating otherwise.</p> 
      */
-    inline const EvaluationMode& GetEvaluationMode() const{ return m_evaluationMode; }
+    inline EvaluationMode GetEvaluationMode() const { return m_evaluationMode; }
     inline bool EvaluationModeHasBeenSet() const { return m_evaluationModeHasBeenSet; }
-    inline void SetEvaluationMode(const EvaluationMode& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = value; }
-    inline void SetEvaluationMode(EvaluationMode&& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = std::move(value); }
-    inline ResourceEvaluationFilters& WithEvaluationMode(const EvaluationMode& value) { SetEvaluationMode(value); return *this;}
-    inline ResourceEvaluationFilters& WithEvaluationMode(EvaluationMode&& value) { SetEvaluationMode(std::move(value)); return *this;}
+    inline void SetEvaluationMode(EvaluationMode value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = value; }
+    inline ResourceEvaluationFilters& WithEvaluationMode(EvaluationMode value) { SetEvaluationMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a <code>TimeWindow</code> object.</p>
      */
-    inline const TimeWindow& GetTimeWindow() const{ return m_timeWindow; }
+    inline const TimeWindow& GetTimeWindow() const { return m_timeWindow; }
     inline bool TimeWindowHasBeenSet() const { return m_timeWindowHasBeenSet; }
-    inline void SetTimeWindow(const TimeWindow& value) { m_timeWindowHasBeenSet = true; m_timeWindow = value; }
-    inline void SetTimeWindow(TimeWindow&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = std::move(value); }
-    inline ResourceEvaluationFilters& WithTimeWindow(const TimeWindow& value) { SetTimeWindow(value); return *this;}
-    inline ResourceEvaluationFilters& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
+    template<typename TimeWindowT = TimeWindow>
+    void SetTimeWindow(TimeWindowT&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = std::forward<TimeWindowT>(value); }
+    template<typename TimeWindowT = TimeWindow>
+    ResourceEvaluationFilters& WithTimeWindow(TimeWindowT&& value) { SetTimeWindow(std::forward<TimeWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,18 +69,16 @@ namespace Model
      * <p>Filters evaluations for a given infrastructure deployment. For example: CFN
      * Stack.</p>
      */
-    inline const Aws::String& GetEvaluationContextIdentifier() const{ return m_evaluationContextIdentifier; }
+    inline const Aws::String& GetEvaluationContextIdentifier() const { return m_evaluationContextIdentifier; }
     inline bool EvaluationContextIdentifierHasBeenSet() const { return m_evaluationContextIdentifierHasBeenSet; }
-    inline void SetEvaluationContextIdentifier(const Aws::String& value) { m_evaluationContextIdentifierHasBeenSet = true; m_evaluationContextIdentifier = value; }
-    inline void SetEvaluationContextIdentifier(Aws::String&& value) { m_evaluationContextIdentifierHasBeenSet = true; m_evaluationContextIdentifier = std::move(value); }
-    inline void SetEvaluationContextIdentifier(const char* value) { m_evaluationContextIdentifierHasBeenSet = true; m_evaluationContextIdentifier.assign(value); }
-    inline ResourceEvaluationFilters& WithEvaluationContextIdentifier(const Aws::String& value) { SetEvaluationContextIdentifier(value); return *this;}
-    inline ResourceEvaluationFilters& WithEvaluationContextIdentifier(Aws::String&& value) { SetEvaluationContextIdentifier(std::move(value)); return *this;}
-    inline ResourceEvaluationFilters& WithEvaluationContextIdentifier(const char* value) { SetEvaluationContextIdentifier(value); return *this;}
+    template<typename EvaluationContextIdentifierT = Aws::String>
+    void SetEvaluationContextIdentifier(EvaluationContextIdentifierT&& value) { m_evaluationContextIdentifierHasBeenSet = true; m_evaluationContextIdentifier = std::forward<EvaluationContextIdentifierT>(value); }
+    template<typename EvaluationContextIdentifierT = Aws::String>
+    ResourceEvaluationFilters& WithEvaluationContextIdentifier(EvaluationContextIdentifierT&& value) { SetEvaluationContextIdentifier(std::forward<EvaluationContextIdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    EvaluationMode m_evaluationMode;
+    EvaluationMode m_evaluationMode{EvaluationMode::NOT_SET};
     bool m_evaluationModeHasBeenSet = false;
 
     TimeWindow m_timeWindow;

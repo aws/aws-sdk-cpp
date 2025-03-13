@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NamedEntityDefinition::NamedEntityDefinition() : 
-    m_fieldNameHasBeenSet(false),
-    m_propertyNameHasBeenSet(false),
-    m_propertyRole(PropertyRole::NOT_SET),
-    m_propertyRoleHasBeenSet(false),
-    m_propertyUsage(PropertyUsage::NOT_SET),
-    m_propertyUsageHasBeenSet(false),
-    m_metricHasBeenSet(false)
-{
-}
-
 NamedEntityDefinition::NamedEntityDefinition(JsonView jsonValue)
-  : NamedEntityDefinition()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ NamedEntityDefinition& NamedEntityDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = jsonValue.GetString("FieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PropertyName"))
   {
     m_propertyName = jsonValue.GetString("PropertyName");
-
     m_propertyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PropertyRole"))
   {
     m_propertyRole = PropertyRoleMapper::GetPropertyRoleForName(jsonValue.GetString("PropertyRole"));
-
     m_propertyRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PropertyUsage"))
   {
     m_propertyUsage = PropertyUsageMapper::GetPropertyUsageForName(jsonValue.GetString("PropertyUsage"));
-
     m_propertyUsageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metric"))
   {
     m_metric = jsonValue.GetObject("Metric");
-
     m_metricHasBeenSet = true;
   }
-
   return *this;
 }
 

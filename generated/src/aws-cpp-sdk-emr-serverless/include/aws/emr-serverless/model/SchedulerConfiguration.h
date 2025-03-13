@@ -31,7 +31,7 @@ namespace Model
   class SchedulerConfiguration
   {
   public:
-    AWS_EMRSERVERLESS_API SchedulerConfiguration();
+    AWS_EMRSERVERLESS_API SchedulerConfiguration() = default;
     AWS_EMRSERVERLESS_API SchedulerConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API SchedulerConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * configuration is enabled on your application, the default value is 360 minutes
      * (6 hours). The valid range is from 15 to 720.</p>
      */
-    inline int GetQueueTimeoutMinutes() const{ return m_queueTimeoutMinutes; }
+    inline int GetQueueTimeoutMinutes() const { return m_queueTimeoutMinutes; }
     inline bool QueueTimeoutMinutesHasBeenSet() const { return m_queueTimeoutMinutesHasBeenSet; }
     inline void SetQueueTimeoutMinutes(int value) { m_queueTimeoutMinutesHasBeenSet = true; m_queueTimeoutMinutes = value; }
     inline SchedulerConfiguration& WithQueueTimeoutMinutes(int value) { SetQueueTimeoutMinutes(value); return *this;}
@@ -55,17 +55,17 @@ namespace Model
      * configuration is enabled on your application, the default value is 15. The valid
      * range is 1 to 1000.</p>
      */
-    inline int GetMaxConcurrentRuns() const{ return m_maxConcurrentRuns; }
+    inline int GetMaxConcurrentRuns() const { return m_maxConcurrentRuns; }
     inline bool MaxConcurrentRunsHasBeenSet() const { return m_maxConcurrentRunsHasBeenSet; }
     inline void SetMaxConcurrentRuns(int value) { m_maxConcurrentRunsHasBeenSet = true; m_maxConcurrentRuns = value; }
     inline SchedulerConfiguration& WithMaxConcurrentRuns(int value) { SetMaxConcurrentRuns(value); return *this;}
     ///@}
   private:
 
-    int m_queueTimeoutMinutes;
+    int m_queueTimeoutMinutes{0};
     bool m_queueTimeoutMinutesHasBeenSet = false;
 
-    int m_maxConcurrentRuns;
+    int m_maxConcurrentRuns{0};
     bool m_maxConcurrentRunsHasBeenSet = false;
   };
 

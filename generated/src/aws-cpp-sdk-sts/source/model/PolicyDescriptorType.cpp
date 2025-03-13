@@ -20,13 +20,7 @@ namespace STS
 namespace Model
 {
 
-PolicyDescriptorType::PolicyDescriptorType() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 PolicyDescriptorType::PolicyDescriptorType(const XmlNode& xmlNode)
-  : PolicyDescriptorType()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ PolicyDescriptorType& PolicyDescriptorType::operator =(const XmlNode& xmlNode)
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
   }
 

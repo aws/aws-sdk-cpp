@@ -27,7 +27,7 @@ namespace Model
   class GetRevocationStatusRequest : public SignerRequest
   {
   public:
-    AWS_SIGNER_API GetRevocationStatusRequest();
+    AWS_SIGNER_API GetRevocationStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,54 +44,48 @@ namespace Model
     /**
      * <p>The timestamp of the signature that validates the profile or job.</p>
      */
-    inline const Aws::Utils::DateTime& GetSignatureTimestamp() const{ return m_signatureTimestamp; }
+    inline const Aws::Utils::DateTime& GetSignatureTimestamp() const { return m_signatureTimestamp; }
     inline bool SignatureTimestampHasBeenSet() const { return m_signatureTimestampHasBeenSet; }
-    inline void SetSignatureTimestamp(const Aws::Utils::DateTime& value) { m_signatureTimestampHasBeenSet = true; m_signatureTimestamp = value; }
-    inline void SetSignatureTimestamp(Aws::Utils::DateTime&& value) { m_signatureTimestampHasBeenSet = true; m_signatureTimestamp = std::move(value); }
-    inline GetRevocationStatusRequest& WithSignatureTimestamp(const Aws::Utils::DateTime& value) { SetSignatureTimestamp(value); return *this;}
-    inline GetRevocationStatusRequest& WithSignatureTimestamp(Aws::Utils::DateTime&& value) { SetSignatureTimestamp(std::move(value)); return *this;}
+    template<typename SignatureTimestampT = Aws::Utils::DateTime>
+    void SetSignatureTimestamp(SignatureTimestampT&& value) { m_signatureTimestampHasBeenSet = true; m_signatureTimestamp = std::forward<SignatureTimestampT>(value); }
+    template<typename SignatureTimestampT = Aws::Utils::DateTime>
+    GetRevocationStatusRequest& WithSignatureTimestamp(SignatureTimestampT&& value) { SetSignatureTimestamp(std::forward<SignatureTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of a signing platform. </p>
      */
-    inline const Aws::String& GetPlatformId() const{ return m_platformId; }
+    inline const Aws::String& GetPlatformId() const { return m_platformId; }
     inline bool PlatformIdHasBeenSet() const { return m_platformIdHasBeenSet; }
-    inline void SetPlatformId(const Aws::String& value) { m_platformIdHasBeenSet = true; m_platformId = value; }
-    inline void SetPlatformId(Aws::String&& value) { m_platformIdHasBeenSet = true; m_platformId = std::move(value); }
-    inline void SetPlatformId(const char* value) { m_platformIdHasBeenSet = true; m_platformId.assign(value); }
-    inline GetRevocationStatusRequest& WithPlatformId(const Aws::String& value) { SetPlatformId(value); return *this;}
-    inline GetRevocationStatusRequest& WithPlatformId(Aws::String&& value) { SetPlatformId(std::move(value)); return *this;}
-    inline GetRevocationStatusRequest& WithPlatformId(const char* value) { SetPlatformId(value); return *this;}
+    template<typename PlatformIdT = Aws::String>
+    void SetPlatformId(PlatformIdT&& value) { m_platformIdHasBeenSet = true; m_platformId = std::forward<PlatformIdT>(value); }
+    template<typename PlatformIdT = Aws::String>
+    GetRevocationStatusRequest& WithPlatformId(PlatformIdT&& value) { SetPlatformId(std::forward<PlatformIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of a signing profile.</p>
      */
-    inline const Aws::String& GetProfileVersionArn() const{ return m_profileVersionArn; }
+    inline const Aws::String& GetProfileVersionArn() const { return m_profileVersionArn; }
     inline bool ProfileVersionArnHasBeenSet() const { return m_profileVersionArnHasBeenSet; }
-    inline void SetProfileVersionArn(const Aws::String& value) { m_profileVersionArnHasBeenSet = true; m_profileVersionArn = value; }
-    inline void SetProfileVersionArn(Aws::String&& value) { m_profileVersionArnHasBeenSet = true; m_profileVersionArn = std::move(value); }
-    inline void SetProfileVersionArn(const char* value) { m_profileVersionArnHasBeenSet = true; m_profileVersionArn.assign(value); }
-    inline GetRevocationStatusRequest& WithProfileVersionArn(const Aws::String& value) { SetProfileVersionArn(value); return *this;}
-    inline GetRevocationStatusRequest& WithProfileVersionArn(Aws::String&& value) { SetProfileVersionArn(std::move(value)); return *this;}
-    inline GetRevocationStatusRequest& WithProfileVersionArn(const char* value) { SetProfileVersionArn(value); return *this;}
+    template<typename ProfileVersionArnT = Aws::String>
+    void SetProfileVersionArn(ProfileVersionArnT&& value) { m_profileVersionArnHasBeenSet = true; m_profileVersionArn = std::forward<ProfileVersionArnT>(value); }
+    template<typename ProfileVersionArnT = Aws::String>
+    GetRevocationStatusRequest& WithProfileVersionArn(ProfileVersionArnT&& value) { SetProfileVersionArn(std::forward<ProfileVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of a signing job.</p>
      */
-    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+    inline const Aws::String& GetJobArn() const { return m_jobArn; }
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
-    inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
-    inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
-    inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
-    inline GetRevocationStatusRequest& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-    inline GetRevocationStatusRequest& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-    inline GetRevocationStatusRequest& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    template<typename JobArnT = Aws::String>
+    void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
+    template<typename JobArnT = Aws::String>
+    GetRevocationStatusRequest& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,19 +103,18 @@ namespace Model
      * certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code>
      * </p> <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetCertificateHashes() const{ return m_certificateHashes; }
+    inline const Aws::Vector<Aws::String>& GetCertificateHashes() const { return m_certificateHashes; }
     inline bool CertificateHashesHasBeenSet() const { return m_certificateHashesHasBeenSet; }
-    inline void SetCertificateHashes(const Aws::Vector<Aws::String>& value) { m_certificateHashesHasBeenSet = true; m_certificateHashes = value; }
-    inline void SetCertificateHashes(Aws::Vector<Aws::String>&& value) { m_certificateHashesHasBeenSet = true; m_certificateHashes = std::move(value); }
-    inline GetRevocationStatusRequest& WithCertificateHashes(const Aws::Vector<Aws::String>& value) { SetCertificateHashes(value); return *this;}
-    inline GetRevocationStatusRequest& WithCertificateHashes(Aws::Vector<Aws::String>&& value) { SetCertificateHashes(std::move(value)); return *this;}
-    inline GetRevocationStatusRequest& AddCertificateHashes(const Aws::String& value) { m_certificateHashesHasBeenSet = true; m_certificateHashes.push_back(value); return *this; }
-    inline GetRevocationStatusRequest& AddCertificateHashes(Aws::String&& value) { m_certificateHashesHasBeenSet = true; m_certificateHashes.push_back(std::move(value)); return *this; }
-    inline GetRevocationStatusRequest& AddCertificateHashes(const char* value) { m_certificateHashesHasBeenSet = true; m_certificateHashes.push_back(value); return *this; }
+    template<typename CertificateHashesT = Aws::Vector<Aws::String>>
+    void SetCertificateHashes(CertificateHashesT&& value) { m_certificateHashesHasBeenSet = true; m_certificateHashes = std::forward<CertificateHashesT>(value); }
+    template<typename CertificateHashesT = Aws::Vector<Aws::String>>
+    GetRevocationStatusRequest& WithCertificateHashes(CertificateHashesT&& value) { SetCertificateHashes(std::forward<CertificateHashesT>(value)); return *this;}
+    template<typename CertificateHashesT = Aws::String>
+    GetRevocationStatusRequest& AddCertificateHashes(CertificateHashesT&& value) { m_certificateHashesHasBeenSet = true; m_certificateHashes.emplace_back(std::forward<CertificateHashesT>(value)); return *this; }
     ///@}
   private:
 
-    Aws::Utils::DateTime m_signatureTimestamp;
+    Aws::Utils::DateTime m_signatureTimestamp{};
     bool m_signatureTimestampHasBeenSet = false;
 
     Aws::String m_platformId;

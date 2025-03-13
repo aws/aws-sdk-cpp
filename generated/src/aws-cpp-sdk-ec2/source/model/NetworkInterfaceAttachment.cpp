@@ -20,25 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInterfaceAttachment::NetworkInterfaceAttachment() : 
-    m_attachTimeHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_deviceIndex(0),
-    m_deviceIndexHasBeenSet(false),
-    m_networkCardIndex(0),
-    m_networkCardIndexHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceOwnerIdHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_enaSrdSpecificationHasBeenSet(false)
-{
-}
-
 NetworkInterfaceAttachment::NetworkInterfaceAttachment(const XmlNode& xmlNode)
-  : NetworkInterfaceAttachment()
 {
   *this = xmlNode;
 }
@@ -54,54 +36,63 @@ NetworkInterfaceAttachment& NetworkInterfaceAttachment::operator =(const XmlNode
     {
       m_attachTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_attachTimeHasBeenSet = true;
+       m_attachTimeHasBeenSet = true;
     }
     XmlNode attachmentIdNode = resultNode.FirstChild("attachmentId");
     if(!attachmentIdNode.IsNull())
     {
       m_attachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(attachmentIdNode.GetText());
       m_attachmentIdHasBeenSet = true;
+       m_attachmentIdHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())
     {
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
+       m_deleteOnTerminationHasBeenSet = true;
     }
     XmlNode deviceIndexNode = resultNode.FirstChild("deviceIndex");
     if(!deviceIndexNode.IsNull())
     {
       m_deviceIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deviceIndexNode.GetText()).c_str()).c_str());
       m_deviceIndexHasBeenSet = true;
+       m_deviceIndexHasBeenSet = true;
     }
     XmlNode networkCardIndexNode = resultNode.FirstChild("networkCardIndex");
     if(!networkCardIndexNode.IsNull())
     {
       m_networkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
       m_networkCardIndexHasBeenSet = true;
+       m_networkCardIndexHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceOwnerIdNode = resultNode.FirstChild("instanceOwnerId");
     if(!instanceOwnerIdNode.IsNull())
     {
       m_instanceOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceOwnerIdNode.GetText());
       m_instanceOwnerIdHasBeenSet = true;
+       m_instanceOwnerIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode enaSrdSpecificationNode = resultNode.FirstChild("enaSrdSpecification");
     if(!enaSrdSpecificationNode.IsNull())
     {
       m_enaSrdSpecification = enaSrdSpecificationNode;
       m_enaSrdSpecificationHasBeenSet = true;
+       m_enaSrdSpecificationHasBeenSet = true;
     }
   }
 

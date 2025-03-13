@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetLoginProfileRequest::GetLoginProfileRequest() : 
-    m_userNameHasBeenSet(false)
-{
-}
-
 Aws::String GetLoginProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;

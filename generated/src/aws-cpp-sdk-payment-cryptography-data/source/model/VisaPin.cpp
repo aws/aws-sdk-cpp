@@ -18,14 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-VisaPin::VisaPin() : 
-    m_pinVerificationKeyIndex(0),
-    m_pinVerificationKeyIndexHasBeenSet(false)
-{
-}
-
 VisaPin::VisaPin(JsonView jsonValue)
-  : VisaPin()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VisaPin& VisaPin::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PinVerificationKeyIndex"))
   {
     m_pinVerificationKeyIndex = jsonValue.GetInteger("PinVerificationKeyIndex");
-
     m_pinVerificationKeyIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

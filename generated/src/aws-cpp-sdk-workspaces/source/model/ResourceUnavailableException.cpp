@@ -18,14 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ResourceUnavailableException::ResourceUnavailableException() : 
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 ResourceUnavailableException::ResourceUnavailableException(JsonView jsonValue)
-  : ResourceUnavailableException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceUnavailableException& ResourceUnavailableException::operator =(JsonView 
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

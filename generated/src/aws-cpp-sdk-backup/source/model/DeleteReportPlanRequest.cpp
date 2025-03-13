@@ -12,11 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteReportPlanRequest::DeleteReportPlanRequest() : 
-    m_reportPlanNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReportPlanRequest::SerializePayload() const
 {
   return {};

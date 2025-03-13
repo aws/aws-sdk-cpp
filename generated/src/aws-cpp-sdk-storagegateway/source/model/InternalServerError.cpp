@@ -18,14 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-InternalServerError::InternalServerError() : 
-    m_messageHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 InternalServerError::InternalServerError(JsonView jsonValue)
-  : InternalServerError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InternalServerError& InternalServerError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

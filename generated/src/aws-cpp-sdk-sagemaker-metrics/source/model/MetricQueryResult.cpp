@@ -18,17 +18,7 @@ namespace SageMakerMetrics
 namespace Model
 {
 
-MetricQueryResult::MetricQueryResult() : 
-    m_status(MetricQueryResultStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_xAxisValuesHasBeenSet(false),
-    m_metricValuesHasBeenSet(false)
-{
-}
-
 MetricQueryResult::MetricQueryResult(JsonView jsonValue)
-  : MetricQueryResult()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ MetricQueryResult& MetricQueryResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MetricQueryResultStatusMapper::GetMetricQueryResultStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XAxisValues"))
   {
     Aws::Utils::Array<JsonView> xAxisValuesJsonList = jsonValue.GetArray("XAxisValues");
@@ -58,7 +44,6 @@ MetricQueryResult& MetricQueryResult::operator =(JsonView jsonValue)
     }
     m_xAxisValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricValues"))
   {
     Aws::Utils::Array<JsonView> metricValuesJsonList = jsonValue.GetArray("MetricValues");
@@ -68,7 +53,6 @@ MetricQueryResult& MetricQueryResult::operator =(JsonView jsonValue)
     }
     m_metricValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

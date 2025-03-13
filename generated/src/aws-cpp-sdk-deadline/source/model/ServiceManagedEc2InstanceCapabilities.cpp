@@ -18,24 +18,7 @@ namespace deadline
 namespace Model
 {
 
-ServiceManagedEc2InstanceCapabilities::ServiceManagedEc2InstanceCapabilities() : 
-    m_vCpuCountHasBeenSet(false),
-    m_memoryMiBHasBeenSet(false),
-    m_osFamily(ServiceManagedFleetOperatingSystemFamily::NOT_SET),
-    m_osFamilyHasBeenSet(false),
-    m_cpuArchitectureType(CpuArchitectureType::NOT_SET),
-    m_cpuArchitectureTypeHasBeenSet(false),
-    m_rootEbsVolumeHasBeenSet(false),
-    m_acceleratorCapabilitiesHasBeenSet(false),
-    m_allowedInstanceTypesHasBeenSet(false),
-    m_excludedInstanceTypesHasBeenSet(false),
-    m_customAmountsHasBeenSet(false),
-    m_customAttributesHasBeenSet(false)
-{
-}
-
 ServiceManagedEc2InstanceCapabilities::ServiceManagedEc2InstanceCapabilities(JsonView jsonValue)
-  : ServiceManagedEc2InstanceCapabilities()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ ServiceManagedEc2InstanceCapabilities& ServiceManagedEc2InstanceCapabilities::op
   if(jsonValue.ValueExists("vCpuCount"))
   {
     m_vCpuCount = jsonValue.GetObject("vCpuCount");
-
     m_vCpuCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memoryMiB"))
   {
     m_memoryMiB = jsonValue.GetObject("memoryMiB");
-
     m_memoryMiBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("osFamily"))
   {
     m_osFamily = ServiceManagedFleetOperatingSystemFamilyMapper::GetServiceManagedFleetOperatingSystemFamilyForName(jsonValue.GetString("osFamily"));
-
     m_osFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpuArchitectureType"))
   {
     m_cpuArchitectureType = CpuArchitectureTypeMapper::GetCpuArchitectureTypeForName(jsonValue.GetString("cpuArchitectureType"));
-
     m_cpuArchitectureTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rootEbsVolume"))
   {
     m_rootEbsVolume = jsonValue.GetObject("rootEbsVolume");
-
     m_rootEbsVolumeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("acceleratorCapabilities"))
   {
     m_acceleratorCapabilities = jsonValue.GetObject("acceleratorCapabilities");
-
     m_acceleratorCapabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedInstanceTypes"))
   {
     Aws::Utils::Array<JsonView> allowedInstanceTypesJsonList = jsonValue.GetArray("allowedInstanceTypes");
@@ -93,7 +64,6 @@ ServiceManagedEc2InstanceCapabilities& ServiceManagedEc2InstanceCapabilities::op
     }
     m_allowedInstanceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excludedInstanceTypes"))
   {
     Aws::Utils::Array<JsonView> excludedInstanceTypesJsonList = jsonValue.GetArray("excludedInstanceTypes");
@@ -103,7 +73,6 @@ ServiceManagedEc2InstanceCapabilities& ServiceManagedEc2InstanceCapabilities::op
     }
     m_excludedInstanceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customAmounts"))
   {
     Aws::Utils::Array<JsonView> customAmountsJsonList = jsonValue.GetArray("customAmounts");
@@ -113,7 +82,6 @@ ServiceManagedEc2InstanceCapabilities& ServiceManagedEc2InstanceCapabilities::op
     }
     m_customAmountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customAttributes"))
   {
     Aws::Utils::Array<JsonView> customAttributesJsonList = jsonValue.GetArray("customAttributes");
@@ -123,7 +91,6 @@ ServiceManagedEc2InstanceCapabilities& ServiceManagedEc2InstanceCapabilities::op
     }
     m_customAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

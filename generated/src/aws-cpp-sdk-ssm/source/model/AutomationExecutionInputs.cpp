@@ -18,18 +18,7 @@ namespace SSM
 namespace Model
 {
 
-AutomationExecutionInputs::AutomationExecutionInputs() : 
-    m_parametersHasBeenSet(false),
-    m_targetParameterNameHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_targetMapsHasBeenSet(false),
-    m_targetLocationsHasBeenSet(false),
-    m_targetLocationsURLHasBeenSet(false)
-{
-}
-
 AutomationExecutionInputs::AutomationExecutionInputs(JsonView jsonValue)
-  : AutomationExecutionInputs()
 {
   *this = jsonValue;
 }
@@ -52,14 +41,11 @@ AutomationExecutionInputs& AutomationExecutionInputs::operator =(JsonView jsonVa
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetParameterName"))
   {
     m_targetParameterName = jsonValue.GetString("TargetParameterName");
-
     m_targetParameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Targets"))
   {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
@@ -69,7 +55,6 @@ AutomationExecutionInputs& AutomationExecutionInputs::operator =(JsonView jsonVa
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetMaps"))
   {
     Aws::Utils::Array<JsonView> targetMapsJsonList = jsonValue.GetArray("TargetMaps");
@@ -92,7 +77,6 @@ AutomationExecutionInputs& AutomationExecutionInputs::operator =(JsonView jsonVa
     }
     m_targetMapsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetLocations"))
   {
     Aws::Utils::Array<JsonView> targetLocationsJsonList = jsonValue.GetArray("TargetLocations");
@@ -102,14 +86,11 @@ AutomationExecutionInputs& AutomationExecutionInputs::operator =(JsonView jsonVa
     }
     m_targetLocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetLocationsURL"))
   {
     m_targetLocationsURL = jsonValue.GetString("TargetLocationsURL");
-
     m_targetLocationsURLHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-ListIdentityPoliciesRequest::ListIdentityPoliciesRequest() : 
-    m_identityHasBeenSet(false)
-{
-}
-
 Aws::String ListIdentityPoliciesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

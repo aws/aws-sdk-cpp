@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateCpuOptions::LaunchTemplateCpuOptions() : 
-    m_coreCount(0),
-    m_coreCountHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false),
-    m_amdSevSnp(AmdSevSnpSpecification::NOT_SET),
-    m_amdSevSnpHasBeenSet(false)
-{
-}
-
 LaunchTemplateCpuOptions::LaunchTemplateCpuOptions(const XmlNode& xmlNode)
-  : LaunchTemplateCpuOptions()
 {
   *this = xmlNode;
 }
@@ -47,18 +36,21 @@ LaunchTemplateCpuOptions& LaunchTemplateCpuOptions::operator =(const XmlNode& xm
     {
       m_coreCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(coreCountNode.GetText()).c_str()).c_str());
       m_coreCountHasBeenSet = true;
+       m_coreCountHasBeenSet = true;
     }
     XmlNode threadsPerCoreNode = resultNode.FirstChild("threadsPerCore");
     if(!threadsPerCoreNode.IsNull())
     {
       m_threadsPerCore = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(threadsPerCoreNode.GetText()).c_str()).c_str());
       m_threadsPerCoreHasBeenSet = true;
+       m_threadsPerCoreHasBeenSet = true;
     }
     XmlNode amdSevSnpNode = resultNode.FirstChild("amdSevSnp");
     if(!amdSevSnpNode.IsNull())
     {
-      m_amdSevSnp = AmdSevSnpSpecificationMapper::GetAmdSevSnpSpecificationForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amdSevSnpNode.GetText()).c_str()).c_str());
+      m_amdSevSnp = AmdSevSnpSpecificationMapper::GetAmdSevSnpSpecificationForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amdSevSnpNode.GetText()).c_str()));
       m_amdSevSnpHasBeenSet = true;
+       m_amdSevSnpHasBeenSet = true;
     }
   }
 

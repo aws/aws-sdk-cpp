@@ -31,7 +31,7 @@ namespace Model
   class MaintenanceStartTime
   {
   public:
-    AWS_BACKUPGATEWAY_API MaintenanceStartTime();
+    AWS_BACKUPGATEWAY_API MaintenanceStartTime() = default;
     AWS_BACKUPGATEWAY_API MaintenanceStartTime(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPGATEWAY_API MaintenanceStartTime& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * an ordinal number from 1 to 28, where 1 represents the first day of the month
      * and 28 represents the last day of the month.</p>
      */
-    inline int GetDayOfMonth() const{ return m_dayOfMonth; }
+    inline int GetDayOfMonth() const { return m_dayOfMonth; }
     inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
     inline void SetDayOfMonth(int value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = value; }
     inline MaintenanceStartTime& WithDayOfMonth(int value) { SetDayOfMonth(value); return *this;}
@@ -55,7 +55,7 @@ namespace Model
      * 0 represents Sunday and 6 represents Saturday. The day of week is in the time
      * zone of the gateway.</p>
      */
-    inline int GetDayOfWeek() const{ return m_dayOfWeek; }
+    inline int GetDayOfWeek() const { return m_dayOfWeek; }
     inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
     inline void SetDayOfWeek(int value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
     inline MaintenanceStartTime& WithDayOfWeek(int value) { SetDayOfWeek(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
      * where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone
      * of the gateway.</p>
      */
-    inline int GetHourOfDay() const{ return m_hourOfDay; }
+    inline int GetHourOfDay() const { return m_hourOfDay; }
     inline bool HourOfDayHasBeenSet() const { return m_hourOfDayHasBeenSet; }
     inline void SetHourOfDay(int value) { m_hourOfDayHasBeenSet = true; m_hourOfDay = value; }
     inline MaintenanceStartTime& WithHourOfDay(int value) { SetHourOfDay(value); return *this;}
@@ -79,23 +79,23 @@ namespace Model
      * where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time
      * zone of the gateway.</p>
      */
-    inline int GetMinuteOfHour() const{ return m_minuteOfHour; }
+    inline int GetMinuteOfHour() const { return m_minuteOfHour; }
     inline bool MinuteOfHourHasBeenSet() const { return m_minuteOfHourHasBeenSet; }
     inline void SetMinuteOfHour(int value) { m_minuteOfHourHasBeenSet = true; m_minuteOfHour = value; }
     inline MaintenanceStartTime& WithMinuteOfHour(int value) { SetMinuteOfHour(value); return *this;}
     ///@}
   private:
 
-    int m_dayOfMonth;
+    int m_dayOfMonth{0};
     bool m_dayOfMonthHasBeenSet = false;
 
-    int m_dayOfWeek;
+    int m_dayOfWeek{0};
     bool m_dayOfWeekHasBeenSet = false;
 
-    int m_hourOfDay;
+    int m_hourOfDay{0};
     bool m_hourOfDayHasBeenSet = false;
 
-    int m_minuteOfHour;
+    int m_minuteOfHour{0};
     bool m_minuteOfHourHasBeenSet = false;
   };
 

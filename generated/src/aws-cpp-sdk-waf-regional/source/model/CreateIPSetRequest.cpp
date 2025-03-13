@@ -12,12 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIPSetRequest::CreateIPSetRequest() : 
-    m_nameHasBeenSet(false),
-    m_changeTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateIPSetRequest::SerializePayload() const
 {
   JsonValue payload;

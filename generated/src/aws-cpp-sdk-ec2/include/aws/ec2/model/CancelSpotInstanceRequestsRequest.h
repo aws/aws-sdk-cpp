@@ -26,7 +26,7 @@ namespace Model
   class CancelSpotInstanceRequestsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CancelSpotInstanceRequestsRequest();
+    AWS_EC2_API CancelSpotInstanceRequestsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,7 +48,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CancelSpotInstanceRequestsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -58,19 +58,18 @@ namespace Model
     /**
      * <p>The IDs of the Spot Instance requests.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSpotInstanceRequestIds() const{ return m_spotInstanceRequestIds; }
+    inline const Aws::Vector<Aws::String>& GetSpotInstanceRequestIds() const { return m_spotInstanceRequestIds; }
     inline bool SpotInstanceRequestIdsHasBeenSet() const { return m_spotInstanceRequestIdsHasBeenSet; }
-    inline void SetSpotInstanceRequestIds(const Aws::Vector<Aws::String>& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds = value; }
-    inline void SetSpotInstanceRequestIds(Aws::Vector<Aws::String>&& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds = std::move(value); }
-    inline CancelSpotInstanceRequestsRequest& WithSpotInstanceRequestIds(const Aws::Vector<Aws::String>& value) { SetSpotInstanceRequestIds(value); return *this;}
-    inline CancelSpotInstanceRequestsRequest& WithSpotInstanceRequestIds(Aws::Vector<Aws::String>&& value) { SetSpotInstanceRequestIds(std::move(value)); return *this;}
-    inline CancelSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(const Aws::String& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.push_back(value); return *this; }
-    inline CancelSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(Aws::String&& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.push_back(std::move(value)); return *this; }
-    inline CancelSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(const char* value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.push_back(value); return *this; }
+    template<typename SpotInstanceRequestIdsT = Aws::Vector<Aws::String>>
+    void SetSpotInstanceRequestIds(SpotInstanceRequestIdsT&& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds = std::forward<SpotInstanceRequestIdsT>(value); }
+    template<typename SpotInstanceRequestIdsT = Aws::Vector<Aws::String>>
+    CancelSpotInstanceRequestsRequest& WithSpotInstanceRequestIds(SpotInstanceRequestIdsT&& value) { SetSpotInstanceRequestIds(std::forward<SpotInstanceRequestIdsT>(value)); return *this;}
+    template<typename SpotInstanceRequestIdsT = Aws::String>
+    CancelSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(SpotInstanceRequestIdsT&& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.emplace_back(std::forward<SpotInstanceRequestIdsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_spotInstanceRequestIds;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateMethodResponseResult::UpdateMethodResponseResult()
-{
-}
-
 UpdateMethodResponseResult::UpdateMethodResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ UpdateMethodResponseResult& UpdateMethodResponseResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
-
+    m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseParameters"))
   {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
@@ -42,8 +37,8 @@ UpdateMethodResponseResult& UpdateMethodResponseResult::operator =(const Aws::Am
     {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsBool();
     }
+    m_responseParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseModels"))
   {
     Aws::Map<Aws::String, JsonView> responseModelsJsonMap = jsonValue.GetObject("responseModels").GetAllObjects();
@@ -51,14 +46,15 @@ UpdateMethodResponseResult& UpdateMethodResponseResult::operator =(const Aws::Am
     {
       m_responseModels[responseModelsItem.first] = responseModelsItem.second.AsString();
     }
+    m_responseModelsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

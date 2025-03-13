@@ -12,17 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateControlRequest::CreateControlRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_testingInformationHasBeenSet(false),
-    m_actionPlanTitleHasBeenSet(false),
-    m_actionPlanInstructionsHasBeenSet(false),
-    m_controlMappingSourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateControlRequest::SerializePayload() const
 {
   JsonValue payload;

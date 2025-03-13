@@ -18,25 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-LanguageModel::LanguageModel() : 
-    m_modelNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_languageCode(CLMLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_baseModelName(BaseModelName::NOT_SET),
-    m_baseModelNameHasBeenSet(false),
-    m_modelStatus(ModelStatus::NOT_SET),
-    m_modelStatusHasBeenSet(false),
-    m_upgradeAvailability(false),
-    m_upgradeAvailabilityHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false)
-{
-}
-
 LanguageModel::LanguageModel(JsonView jsonValue)
-  : LanguageModel()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ LanguageModel& LanguageModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = CLMLanguageCodeMapper::GetCLMLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseModelName"))
   {
     m_baseModelName = BaseModelNameMapper::GetBaseModelNameForName(jsonValue.GetString("BaseModelName"));
-
     m_baseModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelStatus"))
   {
     m_modelStatus = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("ModelStatus"));
-
     m_modelStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpgradeAvailability"))
   {
     m_upgradeAvailability = jsonValue.GetBool("UpgradeAvailability");
-
     m_upgradeAvailabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputDataConfig"))
   {
     m_inputDataConfig = jsonValue.GetObject("InputDataConfig");
-
     m_inputDataConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,32 +20,7 @@ namespace RDS
 namespace Model
 {
 
-UpgradeTarget::UpgradeTarget() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_autoUpgrade(false),
-    m_autoUpgradeHasBeenSet(false),
-    m_isMajorVersionUpgrade(false),
-    m_isMajorVersionUpgradeHasBeenSet(false),
-    m_supportedEngineModesHasBeenSet(false),
-    m_supportsParallelQuery(false),
-    m_supportsParallelQueryHasBeenSet(false),
-    m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false),
-    m_supportsBabelfish(false),
-    m_supportsBabelfishHasBeenSet(false),
-    m_supportsLimitlessDatabase(false),
-    m_supportsLimitlessDatabaseHasBeenSet(false),
-    m_supportsLocalWriteForwarding(false),
-    m_supportsLocalWriteForwardingHasBeenSet(false),
-    m_supportsIntegrations(false),
-    m_supportsIntegrationsHasBeenSet(false)
-{
-}
-
 UpgradeTarget::UpgradeTarget(const XmlNode& xmlNode)
-  : UpgradeTarget()
 {
   *this = xmlNode;
 }
@@ -61,78 +36,90 @@ UpgradeTarget& UpgradeTarget::operator =(const XmlNode& xmlNode)
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+       m_engineVersionHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode autoUpgradeNode = resultNode.FirstChild("AutoUpgrade");
     if(!autoUpgradeNode.IsNull())
     {
       m_autoUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoUpgradeNode.GetText()).c_str()).c_str());
       m_autoUpgradeHasBeenSet = true;
+       m_autoUpgradeHasBeenSet = true;
     }
     XmlNode isMajorVersionUpgradeNode = resultNode.FirstChild("IsMajorVersionUpgrade");
     if(!isMajorVersionUpgradeNode.IsNull())
     {
       m_isMajorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isMajorVersionUpgradeNode.GetText()).c_str()).c_str());
       m_isMajorVersionUpgradeHasBeenSet = true;
+       m_isMajorVersionUpgradeHasBeenSet = true;
     }
     XmlNode supportedEngineModesNode = resultNode.FirstChild("SupportedEngineModes");
     if(!supportedEngineModesNode.IsNull())
     {
       XmlNode supportedEngineModesMember = supportedEngineModesNode.FirstChild("member");
+      m_supportedEngineModesHasBeenSet = !supportedEngineModesMember.IsNull();
       while(!supportedEngineModesMember.IsNull())
       {
         m_supportedEngineModes.push_back(supportedEngineModesMember.GetText());
         supportedEngineModesMember = supportedEngineModesMember.NextNode("member");
       }
 
-      m_supportedEngineModesHasBeenSet = true;
+       m_supportedEngineModesHasBeenSet = true;
     }
     XmlNode supportsParallelQueryNode = resultNode.FirstChild("SupportsParallelQuery");
     if(!supportsParallelQueryNode.IsNull())
     {
       m_supportsParallelQuery = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsParallelQueryNode.GetText()).c_str()).c_str());
       m_supportsParallelQueryHasBeenSet = true;
+       m_supportsParallelQueryHasBeenSet = true;
     }
     XmlNode supportsGlobalDatabasesNode = resultNode.FirstChild("SupportsGlobalDatabases");
     if(!supportsGlobalDatabasesNode.IsNull())
     {
       m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
       m_supportsGlobalDatabasesHasBeenSet = true;
+       m_supportsGlobalDatabasesHasBeenSet = true;
     }
     XmlNode supportsBabelfishNode = resultNode.FirstChild("SupportsBabelfish");
     if(!supportsBabelfishNode.IsNull())
     {
       m_supportsBabelfish = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsBabelfishNode.GetText()).c_str()).c_str());
       m_supportsBabelfishHasBeenSet = true;
+       m_supportsBabelfishHasBeenSet = true;
     }
     XmlNode supportsLimitlessDatabaseNode = resultNode.FirstChild("SupportsLimitlessDatabase");
     if(!supportsLimitlessDatabaseNode.IsNull())
     {
       m_supportsLimitlessDatabase = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLimitlessDatabaseNode.GetText()).c_str()).c_str());
       m_supportsLimitlessDatabaseHasBeenSet = true;
+       m_supportsLimitlessDatabaseHasBeenSet = true;
     }
     XmlNode supportsLocalWriteForwardingNode = resultNode.FirstChild("SupportsLocalWriteForwarding");
     if(!supportsLocalWriteForwardingNode.IsNull())
     {
       m_supportsLocalWriteForwarding = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLocalWriteForwardingNode.GetText()).c_str()).c_str());
       m_supportsLocalWriteForwardingHasBeenSet = true;
+       m_supportsLocalWriteForwardingHasBeenSet = true;
     }
     XmlNode supportsIntegrationsNode = resultNode.FirstChild("SupportsIntegrations");
     if(!supportsIntegrationsNode.IsNull())
     {
       m_supportsIntegrations = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsIntegrationsNode.GetText()).c_str()).c_str());
       m_supportsIntegrationsHasBeenSet = true;
+       m_supportsIntegrationsHasBeenSet = true;
     }
   }
 

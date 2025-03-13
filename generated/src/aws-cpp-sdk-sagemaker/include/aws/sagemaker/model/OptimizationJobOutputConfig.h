@@ -32,7 +32,7 @@ namespace Model
   class OptimizationJobOutputConfig
   {
   public:
-    AWS_SAGEMAKER_API OptimizationJobOutputConfig();
+    AWS_SAGEMAKER_API OptimizationJobOutputConfig() = default;
     AWS_SAGEMAKER_API OptimizationJobOutputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API OptimizationJobOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * uses they key to encrypt the artifacts of the optimized model when SageMaker
      * uploads the model to Amazon S3.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline OptimizationJobOutputConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline OptimizationJobOutputConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline OptimizationJobOutputConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    OptimizationJobOutputConfig& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The Amazon S3 URI for where to store the optimized model that you create with
      * an optimization job.</p>
      */
-    inline const Aws::String& GetS3OutputLocation() const{ return m_s3OutputLocation; }
+    inline const Aws::String& GetS3OutputLocation() const { return m_s3OutputLocation; }
     inline bool S3OutputLocationHasBeenSet() const { return m_s3OutputLocationHasBeenSet; }
-    inline void SetS3OutputLocation(const Aws::String& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = value; }
-    inline void SetS3OutputLocation(Aws::String&& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = std::move(value); }
-    inline void SetS3OutputLocation(const char* value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation.assign(value); }
-    inline OptimizationJobOutputConfig& WithS3OutputLocation(const Aws::String& value) { SetS3OutputLocation(value); return *this;}
-    inline OptimizationJobOutputConfig& WithS3OutputLocation(Aws::String&& value) { SetS3OutputLocation(std::move(value)); return *this;}
-    inline OptimizationJobOutputConfig& WithS3OutputLocation(const char* value) { SetS3OutputLocation(value); return *this;}
+    template<typename S3OutputLocationT = Aws::String>
+    void SetS3OutputLocation(S3OutputLocationT&& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = std::forward<S3OutputLocationT>(value); }
+    template<typename S3OutputLocationT = Aws::String>
+    OptimizationJobOutputConfig& WithS3OutputLocation(S3OutputLocationT&& value) { SetS3OutputLocation(std::forward<S3OutputLocationT>(value)); return *this;}
     ///@}
   private:
 

@@ -40,7 +40,7 @@ namespace Model
   class MobileSdkRelease
   {
   public:
-    AWS_WAFV2_API MobileSdkRelease();
+    AWS_WAFV2_API MobileSdkRelease() = default;
     AWS_WAFV2_API MobileSdkRelease(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API MobileSdkRelease& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,61 +50,57 @@ namespace Model
     /**
      * <p>The release version. </p>
      */
-    inline const Aws::String& GetReleaseVersion() const{ return m_releaseVersion; }
+    inline const Aws::String& GetReleaseVersion() const { return m_releaseVersion; }
     inline bool ReleaseVersionHasBeenSet() const { return m_releaseVersionHasBeenSet; }
-    inline void SetReleaseVersion(const Aws::String& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = value; }
-    inline void SetReleaseVersion(Aws::String&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::move(value); }
-    inline void SetReleaseVersion(const char* value) { m_releaseVersionHasBeenSet = true; m_releaseVersion.assign(value); }
-    inline MobileSdkRelease& WithReleaseVersion(const Aws::String& value) { SetReleaseVersion(value); return *this;}
-    inline MobileSdkRelease& WithReleaseVersion(Aws::String&& value) { SetReleaseVersion(std::move(value)); return *this;}
-    inline MobileSdkRelease& WithReleaseVersion(const char* value) { SetReleaseVersion(value); return *this;}
+    template<typename ReleaseVersionT = Aws::String>
+    void SetReleaseVersion(ReleaseVersionT&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::forward<ReleaseVersionT>(value); }
+    template<typename ReleaseVersionT = Aws::String>
+    MobileSdkRelease& WithReleaseVersion(ReleaseVersionT&& value) { SetReleaseVersion(std::forward<ReleaseVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the release. </p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline MobileSdkRelease& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline MobileSdkRelease& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    MobileSdkRelease& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Notes describing the release.</p>
      */
-    inline const Aws::String& GetReleaseNotes() const{ return m_releaseNotes; }
+    inline const Aws::String& GetReleaseNotes() const { return m_releaseNotes; }
     inline bool ReleaseNotesHasBeenSet() const { return m_releaseNotesHasBeenSet; }
-    inline void SetReleaseNotes(const Aws::String& value) { m_releaseNotesHasBeenSet = true; m_releaseNotes = value; }
-    inline void SetReleaseNotes(Aws::String&& value) { m_releaseNotesHasBeenSet = true; m_releaseNotes = std::move(value); }
-    inline void SetReleaseNotes(const char* value) { m_releaseNotesHasBeenSet = true; m_releaseNotes.assign(value); }
-    inline MobileSdkRelease& WithReleaseNotes(const Aws::String& value) { SetReleaseNotes(value); return *this;}
-    inline MobileSdkRelease& WithReleaseNotes(Aws::String&& value) { SetReleaseNotes(std::move(value)); return *this;}
-    inline MobileSdkRelease& WithReleaseNotes(const char* value) { SetReleaseNotes(value); return *this;}
+    template<typename ReleaseNotesT = Aws::String>
+    void SetReleaseNotes(ReleaseNotesT&& value) { m_releaseNotesHasBeenSet = true; m_releaseNotes = std::forward<ReleaseNotesT>(value); }
+    template<typename ReleaseNotesT = Aws::String>
+    MobileSdkRelease& WithReleaseNotes(ReleaseNotesT&& value) { SetReleaseNotes(std::forward<ReleaseNotesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags that are associated with the release. </p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline MobileSdkRelease& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline MobileSdkRelease& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline MobileSdkRelease& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline MobileSdkRelease& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    MobileSdkRelease& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    MobileSdkRelease& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_releaseVersion;
     bool m_releaseVersionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
     Aws::String m_releaseNotes;

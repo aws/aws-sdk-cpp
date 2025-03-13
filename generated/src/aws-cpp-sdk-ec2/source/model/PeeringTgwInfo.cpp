@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PeeringTgwInfo::PeeringTgwInfo() : 
-    m_transitGatewayIdHasBeenSet(false),
-    m_coreNetworkIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 PeeringTgwInfo::PeeringTgwInfo(const XmlNode& xmlNode)
-  : PeeringTgwInfo()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ PeeringTgwInfo& PeeringTgwInfo::operator =(const XmlNode& xmlNode)
     {
       m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
+       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode coreNetworkIdNode = resultNode.FirstChild("coreNetworkId");
     if(!coreNetworkIdNode.IsNull())
     {
       m_coreNetworkId = Aws::Utils::Xml::DecodeEscapedXmlText(coreNetworkIdNode.GetText());
       m_coreNetworkIdHasBeenSet = true;
+       m_coreNetworkIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("region");
     if(!regionNode.IsNull())
     {
       m_region = Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText());
       m_regionHasBeenSet = true;
+       m_regionHasBeenSet = true;
     }
   }
 

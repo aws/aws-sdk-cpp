@@ -12,14 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMembershipRequest::UpdateMembershipRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_queryLogStatus(MembershipQueryLogStatus::NOT_SET),
-    m_queryLogStatusHasBeenSet(false),
-    m_defaultResultConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ManagedAgentStateChange::ManagedAgentStateChange() : 
-    m_containerNameHasBeenSet(false),
-    m_managedAgentName(ManagedAgentName::NOT_SET),
-    m_managedAgentNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ManagedAgentStateChange::ManagedAgentStateChange(JsonView jsonValue)
-  : ManagedAgentStateChange()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ManagedAgentStateChange& ManagedAgentStateChange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerName"))
   {
     m_containerName = jsonValue.GetString("containerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedAgentName"))
   {
     m_managedAgentName = ManagedAgentNameMapper::GetManagedAgentNameForName(jsonValue.GetString("managedAgentName"));
-
     m_managedAgentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

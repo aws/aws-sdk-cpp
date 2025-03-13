@@ -18,14 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-Options::Options() : 
-    m_activationOverrideBehavior(ActivationOverrideBehavior::NOT_SET),
-    m_activationOverrideBehaviorHasBeenSet(false)
-{
-}
-
 Options::Options(JsonView jsonValue)
-  : Options()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Options& Options::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActivationOverrideBehavior"))
   {
     m_activationOverrideBehavior = ActivationOverrideBehaviorMapper::GetActivationOverrideBehaviorForName(jsonValue.GetString("ActivationOverrideBehavior"));
-
     m_activationOverrideBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

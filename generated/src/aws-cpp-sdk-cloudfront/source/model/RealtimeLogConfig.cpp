@@ -20,18 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-RealtimeLogConfig::RealtimeLogConfig() : 
-    m_aRNHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_samplingRate(0),
-    m_samplingRateHasBeenSet(false),
-    m_endPointsHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
-{
-}
-
 RealtimeLogConfig::RealtimeLogConfig(const XmlNode& xmlNode)
-  : RealtimeLogConfig()
 {
   *this = xmlNode;
 }
@@ -47,42 +36,47 @@ RealtimeLogConfig& RealtimeLogConfig::operator =(const XmlNode& xmlNode)
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode samplingRateNode = resultNode.FirstChild("SamplingRate");
     if(!samplingRateNode.IsNull())
     {
       m_samplingRate = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(samplingRateNode.GetText()).c_str()).c_str());
       m_samplingRateHasBeenSet = true;
+       m_samplingRateHasBeenSet = true;
     }
     XmlNode endPointsNode = resultNode.FirstChild("EndPoints");
     if(!endPointsNode.IsNull())
     {
       XmlNode endPointsMember = endPointsNode.FirstChild("member");
+      m_endPointsHasBeenSet = !endPointsMember.IsNull();
       while(!endPointsMember.IsNull())
       {
         m_endPoints.push_back(endPointsMember);
         endPointsMember = endPointsMember.NextNode("member");
       }
 
-      m_endPointsHasBeenSet = true;
+       m_endPointsHasBeenSet = true;
     }
     XmlNode fieldsNode = resultNode.FirstChild("Fields");
     if(!fieldsNode.IsNull())
     {
       XmlNode fieldsMember = fieldsNode.FirstChild("Field");
+      m_fieldsHasBeenSet = !fieldsMember.IsNull();
       while(!fieldsMember.IsNull())
       {
         m_fields.push_back(fieldsMember.GetText());
         fieldsMember = fieldsMember.NextNode("Field");
       }
 
-      m_fieldsHasBeenSet = true;
+       m_fieldsHasBeenSet = true;
     }
   }
 

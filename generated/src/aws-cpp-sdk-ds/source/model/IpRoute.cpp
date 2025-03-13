@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-IpRoute::IpRoute() : 
-    m_cidrIpHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 IpRoute::IpRoute(JsonView jsonValue)
-  : IpRoute()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IpRoute& IpRoute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CidrIp"))
   {
     m_cidrIp = jsonValue.GetString("CidrIp");
-
     m_cidrIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

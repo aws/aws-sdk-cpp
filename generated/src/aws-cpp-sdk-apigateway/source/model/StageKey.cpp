@@ -18,14 +18,7 @@ namespace APIGateway
 namespace Model
 {
 
-StageKey::StageKey() : 
-    m_restApiIdHasBeenSet(false),
-    m_stageNameHasBeenSet(false)
-{
-}
-
 StageKey::StageKey(JsonView jsonValue)
-  : StageKey()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StageKey& StageKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("restApiId"))
   {
     m_restApiId = jsonValue.GetString("restApiId");
-
     m_restApiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stageName"))
   {
     m_stageName = jsonValue.GetString("stageName");
-
     m_stageNameHasBeenSet = true;
   }
-
   return *this;
 }
 

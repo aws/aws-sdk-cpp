@@ -12,10 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInsightsRequest::GetInsightsRequest()
-{
-}
-
 Aws::String GetInsightsRequest::SerializePayload() const
 {
   return {};

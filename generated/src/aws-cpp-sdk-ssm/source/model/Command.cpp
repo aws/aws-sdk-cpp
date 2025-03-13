@@ -18,44 +18,7 @@ namespace SSM
 namespace Model
 {
 
-Command::Command() : 
-    m_commandIdHasBeenSet(false),
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_expiresAfterHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_requestedDateTimeHasBeenSet(false),
-    m_status(CommandStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_outputS3RegionHasBeenSet(false),
-    m_outputS3BucketNameHasBeenSet(false),
-    m_outputS3KeyPrefixHasBeenSet(false),
-    m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false),
-    m_targetCount(0),
-    m_targetCountHasBeenSet(false),
-    m_completedCount(0),
-    m_completedCountHasBeenSet(false),
-    m_errorCount(0),
-    m_errorCountHasBeenSet(false),
-    m_deliveryTimedOutCount(0),
-    m_deliveryTimedOutCountHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false),
-    m_cloudWatchOutputConfigHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false),
-    m_triggeredAlarmsHasBeenSet(false)
-{
-}
-
 Command::Command(JsonView jsonValue)
-  : Command()
 {
   *this = jsonValue;
 }
@@ -65,38 +28,28 @@ Command& Command::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CommandId"))
   {
     m_commandId = jsonValue.GetString("CommandId");
-
     m_commandIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentName"))
   {
     m_documentName = jsonValue.GetString("DocumentName");
-
     m_documentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentVersion"))
   {
     m_documentVersion = jsonValue.GetString("DocumentVersion");
-
     m_documentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Comment"))
   {
     m_comment = jsonValue.GetString("Comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiresAfter"))
   {
     m_expiresAfter = jsonValue.GetDouble("ExpiresAfter");
-
     m_expiresAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -113,7 +66,6 @@ Command& Command::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceIds"))
   {
     Aws::Utils::Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
@@ -123,7 +75,6 @@ Command& Command::operator =(JsonView jsonValue)
     }
     m_instanceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Targets"))
   {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
@@ -133,126 +84,91 @@ Command& Command::operator =(JsonView jsonValue)
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestedDateTime"))
   {
     m_requestedDateTime = jsonValue.GetDouble("RequestedDateTime");
-
     m_requestedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CommandStatusMapper::GetCommandStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetails"))
   {
     m_statusDetails = jsonValue.GetString("StatusDetails");
-
     m_statusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputS3Region"))
   {
     m_outputS3Region = jsonValue.GetString("OutputS3Region");
-
     m_outputS3RegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputS3BucketName"))
   {
     m_outputS3BucketName = jsonValue.GetString("OutputS3BucketName");
-
     m_outputS3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputS3KeyPrefix"))
   {
     m_outputS3KeyPrefix = jsonValue.GetString("OutputS3KeyPrefix");
-
     m_outputS3KeyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxConcurrency"))
   {
     m_maxConcurrency = jsonValue.GetString("MaxConcurrency");
-
     m_maxConcurrencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxErrors"))
   {
     m_maxErrors = jsonValue.GetString("MaxErrors");
-
     m_maxErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetCount"))
   {
     m_targetCount = jsonValue.GetInteger("TargetCount");
-
     m_targetCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedCount"))
   {
     m_completedCount = jsonValue.GetInteger("CompletedCount");
-
     m_completedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCount"))
   {
     m_errorCount = jsonValue.GetInteger("ErrorCount");
-
     m_errorCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryTimedOutCount"))
   {
     m_deliveryTimedOutCount = jsonValue.GetInteger("DeliveryTimedOutCount");
-
     m_deliveryTimedOutCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRole"))
   {
     m_serviceRole = jsonValue.GetString("ServiceRole");
-
     m_serviceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationConfig"))
   {
     m_notificationConfig = jsonValue.GetObject("NotificationConfig");
-
     m_notificationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchOutputConfig"))
   {
     m_cloudWatchOutputConfig = jsonValue.GetObject("CloudWatchOutputConfig");
-
     m_cloudWatchOutputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeoutSeconds"))
   {
     m_timeoutSeconds = jsonValue.GetInteger("TimeoutSeconds");
-
     m_timeoutSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlarmConfiguration"))
   {
     m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
-
     m_alarmConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggeredAlarms"))
   {
     Aws::Utils::Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
@@ -262,7 +178,6 @@ Command& Command::operator =(JsonView jsonValue)
     }
     m_triggeredAlarmsHasBeenSet = true;
   }
-
   return *this;
 }
 

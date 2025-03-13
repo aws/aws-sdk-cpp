@@ -18,13 +18,7 @@ namespace ECR
 namespace Model
 {
 
-ScoreDetails::ScoreDetails() : 
-    m_cvssHasBeenSet(false)
-{
-}
-
 ScoreDetails::ScoreDetails(JsonView jsonValue)
-  : ScoreDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ScoreDetails& ScoreDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cvss"))
   {
     m_cvss = jsonValue.GetObject("cvss");
-
     m_cvssHasBeenSet = true;
   }
-
   return *this;
 }
 

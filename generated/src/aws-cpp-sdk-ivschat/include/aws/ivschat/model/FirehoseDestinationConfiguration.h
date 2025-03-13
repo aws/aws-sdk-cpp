@@ -32,7 +32,7 @@ namespace Model
   class FirehoseDestinationConfiguration
   {
   public:
-    AWS_IVSCHAT_API FirehoseDestinationConfiguration();
+    AWS_IVSCHAT_API FirehoseDestinationConfiguration() = default;
     AWS_IVSCHAT_API FirehoseDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSCHAT_API FirehoseDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Name of the Amazon Kinesis Firehose delivery stream where chat activity will
      * be logged.</p>
      */
-    inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
+    inline const Aws::String& GetDeliveryStreamName() const { return m_deliveryStreamName; }
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
-    inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
-    inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
-    inline void SetDeliveryStreamName(const char* value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName.assign(value); }
-    inline FirehoseDestinationConfiguration& WithDeliveryStreamName(const Aws::String& value) { SetDeliveryStreamName(value); return *this;}
-    inline FirehoseDestinationConfiguration& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
-    inline FirehoseDestinationConfiguration& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
+    template<typename DeliveryStreamNameT = Aws::String>
+    void SetDeliveryStreamName(DeliveryStreamNameT&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::forward<DeliveryStreamNameT>(value); }
+    template<typename DeliveryStreamNameT = Aws::String>
+    FirehoseDestinationConfiguration& WithDeliveryStreamName(DeliveryStreamNameT&& value) { SetDeliveryStreamName(std::forward<DeliveryStreamNameT>(value)); return *this;}
     ///@}
   private:
 

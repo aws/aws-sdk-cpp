@@ -20,14 +20,7 @@ namespace SNS
 namespace Model
 {
 
-VerificationException::VerificationException() : 
-    m_messageHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 VerificationException::VerificationException(const XmlNode& xmlNode)
-  : VerificationException()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ VerificationException& VerificationException::operator =(const XmlNode& xmlNode)
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

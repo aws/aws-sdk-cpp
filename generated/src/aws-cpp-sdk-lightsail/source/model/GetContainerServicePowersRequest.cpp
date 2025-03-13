@@ -12,10 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetContainerServicePowersRequest::GetContainerServicePowersRequest()
-{
-}
-
 Aws::String GetContainerServicePowersRequest::SerializePayload() const
 {
   return "{}";

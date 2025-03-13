@@ -21,7 +21,7 @@ namespace Model
   class DeleteLaunchRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API DeleteLaunchRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API DeleteLaunchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The name of the launch to delete.</p>
      */
-    inline const Aws::String& GetLaunch() const{ return m_launch; }
+    inline const Aws::String& GetLaunch() const { return m_launch; }
     inline bool LaunchHasBeenSet() const { return m_launchHasBeenSet; }
-    inline void SetLaunch(const Aws::String& value) { m_launchHasBeenSet = true; m_launch = value; }
-    inline void SetLaunch(Aws::String&& value) { m_launchHasBeenSet = true; m_launch = std::move(value); }
-    inline void SetLaunch(const char* value) { m_launchHasBeenSet = true; m_launch.assign(value); }
-    inline DeleteLaunchRequest& WithLaunch(const Aws::String& value) { SetLaunch(value); return *this;}
-    inline DeleteLaunchRequest& WithLaunch(Aws::String&& value) { SetLaunch(std::move(value)); return *this;}
-    inline DeleteLaunchRequest& WithLaunch(const char* value) { SetLaunch(value); return *this;}
+    template<typename LaunchT = Aws::String>
+    void SetLaunch(LaunchT&& value) { m_launchHasBeenSet = true; m_launch = std::forward<LaunchT>(value); }
+    template<typename LaunchT = Aws::String>
+    DeleteLaunchRequest& WithLaunch(LaunchT&& value) { SetLaunch(std::forward<LaunchT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name or ARN of the project that contains the launch to delete.</p>
      */
-    inline const Aws::String& GetProject() const{ return m_project; }
+    inline const Aws::String& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const Aws::String& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(Aws::String&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline void SetProject(const char* value) { m_projectHasBeenSet = true; m_project.assign(value); }
-    inline DeleteLaunchRequest& WithProject(const Aws::String& value) { SetProject(value); return *this;}
-    inline DeleteLaunchRequest& WithProject(Aws::String&& value) { SetProject(std::move(value)); return *this;}
-    inline DeleteLaunchRequest& WithProject(const char* value) { SetProject(value); return *this;}
+    template<typename ProjectT = Aws::String>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = Aws::String>
+    DeleteLaunchRequest& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,19 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ListWebhookItem::ListWebhookItem() : 
-    m_definitionHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_lastTriggeredHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ListWebhookItem::ListWebhookItem(JsonView jsonValue)
-  : ListWebhookItem()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ListWebhookItem& ListWebhookItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetObject("definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastTriggered"))
   {
     m_lastTriggered = jsonValue.GetDouble("lastTriggered");
-
     m_lastTriggeredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -88,7 +64,6 @@ ListWebhookItem& ListWebhookItem::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

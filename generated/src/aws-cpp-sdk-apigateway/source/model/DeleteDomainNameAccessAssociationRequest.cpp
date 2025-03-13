@@ -12,11 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDomainNameAccessAssociationRequest::DeleteDomainNameAccessAssociationRequest() : 
-    m_domainNameAccessAssociationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDomainNameAccessAssociationRequest::SerializePayload() const
 {
   return {};

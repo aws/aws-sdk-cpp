@@ -20,13 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginGroupMember::OriginGroupMember() : 
-    m_originIdHasBeenSet(false)
-{
-}
-
 OriginGroupMember::OriginGroupMember(const XmlNode& xmlNode)
-  : OriginGroupMember()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ OriginGroupMember& OriginGroupMember::operator =(const XmlNode& xmlNode)
     {
       m_originId = Aws::Utils::Xml::DecodeEscapedXmlText(originIdNode.GetText());
       m_originIdHasBeenSet = true;
+       m_originIdHasBeenSet = true;
     }
   }
 

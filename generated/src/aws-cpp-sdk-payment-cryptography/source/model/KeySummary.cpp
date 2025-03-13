@@ -18,21 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-KeySummary::KeySummary() : 
-    m_keyArnHasBeenSet(false),
-    m_keyState(KeyState::NOT_SET),
-    m_keyStateHasBeenSet(false),
-    m_keyAttributesHasBeenSet(false),
-    m_keyCheckValueHasBeenSet(false),
-    m_exportable(false),
-    m_exportableHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 KeySummary::KeySummary(JsonView jsonValue)
-  : KeySummary()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ KeySummary& KeySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
-
     m_keyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyState"))
   {
     m_keyState = KeyStateMapper::GetKeyStateForName(jsonValue.GetString("KeyState"));
-
     m_keyStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyAttributes"))
   {
     m_keyAttributes = jsonValue.GetObject("KeyAttributes");
-
     m_keyAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyCheckValue"))
   {
     m_keyCheckValue = jsonValue.GetString("KeyCheckValue");
-
     m_keyCheckValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exportable"))
   {
     m_exportable = jsonValue.GetBool("Exportable");
-
     m_exportableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

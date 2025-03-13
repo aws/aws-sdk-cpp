@@ -18,13 +18,7 @@ namespace EKS
 namespace Model
 {
 
-RemoteNodeNetwork::RemoteNodeNetwork() : 
-    m_cidrsHasBeenSet(false)
-{
-}
-
 RemoteNodeNetwork::RemoteNodeNetwork(JsonView jsonValue)
-  : RemoteNodeNetwork()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RemoteNodeNetwork& RemoteNodeNetwork::operator =(JsonView jsonValue)
     }
     m_cidrsHasBeenSet = true;
   }
-
   return *this;
 }
 

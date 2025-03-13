@@ -24,7 +24,7 @@ namespace Model
   class CreateSubscriptionRequest : public QBusinessRequest
   {
   public:
-    AWS_QBUSINESS_API CreateSubscriptionRequest();
+    AWS_QBUSINESS_API CreateSubscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The identifier of the Amazon Q Business application the subscription should
      * be added to.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline CreateSubscriptionRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline CreateSubscriptionRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline CreateSubscriptionRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    CreateSubscriptionRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,24 +54,22 @@ namespace Model
      * or group in the IAM Identity Center instance connected to the Amazon Q Business
      * application.</p>
      */
-    inline const SubscriptionPrincipal& GetPrincipal() const{ return m_principal; }
+    inline const SubscriptionPrincipal& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const SubscriptionPrincipal& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(SubscriptionPrincipal&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline CreateSubscriptionRequest& WithPrincipal(const SubscriptionPrincipal& value) { SetPrincipal(value); return *this;}
-    inline CreateSubscriptionRequest& WithPrincipal(SubscriptionPrincipal&& value) { SetPrincipal(std::move(value)); return *this;}
+    template<typename PrincipalT = SubscriptionPrincipal>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = SubscriptionPrincipal>
+    CreateSubscriptionRequest& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of Amazon Q Business subscription you want to create.</p>
      */
-    inline const SubscriptionType& GetType() const{ return m_type; }
+    inline SubscriptionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SubscriptionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SubscriptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateSubscriptionRequest& WithType(const SubscriptionType& value) { SetType(value); return *this;}
-    inline CreateSubscriptionRequest& WithType(SubscriptionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SubscriptionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateSubscriptionRequest& WithType(SubscriptionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * <p>A token that you provide to identify the request to create a subscription for
      * your Amazon Q Business application.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateSubscriptionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateSubscriptionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateSubscriptionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateSubscriptionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,7 +92,7 @@ namespace Model
     SubscriptionPrincipal m_principal;
     bool m_principalHasBeenSet = false;
 
-    SubscriptionType m_type;
+    SubscriptionType m_type{SubscriptionType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_clientToken;

@@ -28,7 +28,7 @@ namespace Model
   class CreateSegmentResult
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API CreateSegmentResult();
+    AWS_CLOUDWATCHEVIDENTLY_API CreateSegmentResult() = default;
     AWS_CLOUDWATCHEVIDENTLY_API CreateSegmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVIDENTLY_API CreateSegmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A structure that contains the complete information about the segment that was
      * just created.</p>
      */
-    inline const Segment& GetSegment() const{ return m_segment; }
-    inline void SetSegment(const Segment& value) { m_segment = value; }
-    inline void SetSegment(Segment&& value) { m_segment = std::move(value); }
-    inline CreateSegmentResult& WithSegment(const Segment& value) { SetSegment(value); return *this;}
-    inline CreateSegmentResult& WithSegment(Segment&& value) { SetSegment(std::move(value)); return *this;}
+    inline const Segment& GetSegment() const { return m_segment; }
+    template<typename SegmentT = Segment>
+    void SetSegment(SegmentT&& value) { m_segmentHasBeenSet = true; m_segment = std::forward<SegmentT>(value); }
+    template<typename SegmentT = Segment>
+    CreateSegmentResult& WithSegment(SegmentT&& value) { SetSegment(std::forward<SegmentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateSegmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateSegmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateSegmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateSegmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Segment m_segment;
+    bool m_segmentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

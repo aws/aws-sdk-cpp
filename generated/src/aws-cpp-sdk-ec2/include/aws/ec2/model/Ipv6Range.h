@@ -31,7 +31,7 @@ namespace Model
   class Ipv6Range
   {
   public:
-    AWS_EC2_API Ipv6Range();
+    AWS_EC2_API Ipv6Range() = default;
     AWS_EC2_API Ipv6Range(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API Ipv6Range& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * range.</p> <p>Constraints: Up to 255 characters in length. Allowed characters
      * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Ipv6Range& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Ipv6Range& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Ipv6Range& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Ipv6Range& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * CIDR block (such as 100.68.0.0/18), the API throws an duplicate rule error.</p>
      * 
      */
-    inline const Aws::String& GetCidrIpv6() const{ return m_cidrIpv6; }
+    inline const Aws::String& GetCidrIpv6() const { return m_cidrIpv6; }
     inline bool CidrIpv6HasBeenSet() const { return m_cidrIpv6HasBeenSet; }
-    inline void SetCidrIpv6(const Aws::String& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = value; }
-    inline void SetCidrIpv6(Aws::String&& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = std::move(value); }
-    inline void SetCidrIpv6(const char* value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6.assign(value); }
-    inline Ipv6Range& WithCidrIpv6(const Aws::String& value) { SetCidrIpv6(value); return *this;}
-    inline Ipv6Range& WithCidrIpv6(Aws::String&& value) { SetCidrIpv6(std::move(value)); return *this;}
-    inline Ipv6Range& WithCidrIpv6(const char* value) { SetCidrIpv6(value); return *this;}
+    template<typename CidrIpv6T = Aws::String>
+    void SetCidrIpv6(CidrIpv6T&& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = std::forward<CidrIpv6T>(value); }
+    template<typename CidrIpv6T = Aws::String>
+    Ipv6Range& WithCidrIpv6(CidrIpv6T&& value) { SetCidrIpv6(std::forward<CidrIpv6T>(value)); return *this;}
     ///@}
   private:
 

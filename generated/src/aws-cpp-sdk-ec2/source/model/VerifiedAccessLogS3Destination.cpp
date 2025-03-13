@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessLogS3Destination::VerifiedAccessLogS3Destination() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_deliveryStatusHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_bucketOwnerHasBeenSet(false)
-{
-}
-
 VerifiedAccessLogS3Destination::VerifiedAccessLogS3Destination(const XmlNode& xmlNode)
-  : VerifiedAccessLogS3Destination()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ VerifiedAccessLogS3Destination& VerifiedAccessLogS3Destination::operator =(const
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode deliveryStatusNode = resultNode.FirstChild("deliveryStatus");
     if(!deliveryStatusNode.IsNull())
     {
       m_deliveryStatus = deliveryStatusNode;
       m_deliveryStatusHasBeenSet = true;
+       m_deliveryStatusHasBeenSet = true;
     }
     XmlNode bucketNameNode = resultNode.FirstChild("bucketName");
     if(!bucketNameNode.IsNull())
     {
       m_bucketName = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNameNode.GetText());
       m_bucketNameHasBeenSet = true;
+       m_bucketNameHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("prefix");
     if(!prefixNode.IsNull())
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
     XmlNode bucketOwnerNode = resultNode.FirstChild("bucketOwner");
     if(!bucketOwnerNode.IsNull())
     {
       m_bucketOwner = Aws::Utils::Xml::DecodeEscapedXmlText(bucketOwnerNode.GetText());
       m_bucketOwnerHasBeenSet = true;
+       m_bucketOwnerHasBeenSet = true;
     }
   }
 

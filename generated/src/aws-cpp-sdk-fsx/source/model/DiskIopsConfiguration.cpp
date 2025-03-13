@@ -18,16 +18,7 @@ namespace FSx
 namespace Model
 {
 
-DiskIopsConfiguration::DiskIopsConfiguration() : 
-    m_mode(DiskIopsConfigurationMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false)
-{
-}
-
 DiskIopsConfiguration::DiskIopsConfiguration(JsonView jsonValue)
-  : DiskIopsConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DiskIopsConfiguration& DiskIopsConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = DiskIopsConfigurationModeMapper::GetDiskIopsConfigurationModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Iops"))
   {
     m_iops = jsonValue.GetInt64("Iops");
-
     m_iopsHasBeenSet = true;
   }
-
   return *this;
 }
 

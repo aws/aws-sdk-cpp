@@ -12,19 +12,6 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutMaintenanceStartTimeRequest::PutMaintenanceStartTimeRequest() : 
-    m_dayOfMonth(0),
-    m_dayOfMonthHasBeenSet(false),
-    m_dayOfWeek(0),
-    m_dayOfWeekHasBeenSet(false),
-    m_gatewayArnHasBeenSet(false),
-    m_hourOfDay(0),
-    m_hourOfDayHasBeenSet(false),
-    m_minuteOfHour(0),
-    m_minuteOfHourHasBeenSet(false)
-{
-}
-
 Aws::String PutMaintenanceStartTimeRequest::SerializePayload() const
 {
   JsonValue payload;

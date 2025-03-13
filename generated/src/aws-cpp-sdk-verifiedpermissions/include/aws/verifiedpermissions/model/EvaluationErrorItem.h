@@ -38,7 +38,7 @@ namespace Model
   class EvaluationErrorItem
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API EvaluationErrorItem();
+    AWS_VERIFIEDPERMISSIONS_API EvaluationErrorItem() = default;
     AWS_VERIFIEDPERMISSIONS_API EvaluationErrorItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API EvaluationErrorItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The error description.</p>
      */
-    inline const Aws::String& GetErrorDescription() const{ return m_errorDescription; }
+    inline const Aws::String& GetErrorDescription() const { return m_errorDescription; }
     inline bool ErrorDescriptionHasBeenSet() const { return m_errorDescriptionHasBeenSet; }
-    inline void SetErrorDescription(const Aws::String& value) { m_errorDescriptionHasBeenSet = true; m_errorDescription = value; }
-    inline void SetErrorDescription(Aws::String&& value) { m_errorDescriptionHasBeenSet = true; m_errorDescription = std::move(value); }
-    inline void SetErrorDescription(const char* value) { m_errorDescriptionHasBeenSet = true; m_errorDescription.assign(value); }
-    inline EvaluationErrorItem& WithErrorDescription(const Aws::String& value) { SetErrorDescription(value); return *this;}
-    inline EvaluationErrorItem& WithErrorDescription(Aws::String&& value) { SetErrorDescription(std::move(value)); return *this;}
-    inline EvaluationErrorItem& WithErrorDescription(const char* value) { SetErrorDescription(value); return *this;}
+    template<typename ErrorDescriptionT = Aws::String>
+    void SetErrorDescription(ErrorDescriptionT&& value) { m_errorDescriptionHasBeenSet = true; m_errorDescription = std::forward<ErrorDescriptionT>(value); }
+    template<typename ErrorDescriptionT = Aws::String>
+    EvaluationErrorItem& WithErrorDescription(ErrorDescriptionT&& value) { SetErrorDescription(std::forward<ErrorDescriptionT>(value)); return *this;}
     ///@}
   private:
 

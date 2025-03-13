@@ -12,14 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUserRequest::UpdateUserRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_userAliasesToUpdateHasBeenSet(false),
-    m_userAliasesToDeleteHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserRequest::SerializePayload() const
 {
   JsonValue payload;

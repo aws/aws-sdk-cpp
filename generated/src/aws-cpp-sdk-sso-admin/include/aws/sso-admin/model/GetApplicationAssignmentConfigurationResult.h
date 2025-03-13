@@ -27,7 +27,7 @@ namespace Model
   class GetApplicationAssignmentConfigurationResult
   {
   public:
-    AWS_SSOADMIN_API GetApplicationAssignmentConfigurationResult();
+    AWS_SSOADMIN_API GetApplicationAssignmentConfigurationResult() = default;
     AWS_SSOADMIN_API GetApplicationAssignmentConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API GetApplicationAssignmentConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment
      * API</a>. If <code>false</code>, all users have access to the application. </p>
      */
-    inline bool GetAssignmentRequired() const{ return m_assignmentRequired; }
-    inline void SetAssignmentRequired(bool value) { m_assignmentRequired = value; }
+    inline bool GetAssignmentRequired() const { return m_assignmentRequired; }
+    inline void SetAssignmentRequired(bool value) { m_assignmentRequiredHasBeenSet = true; m_assignmentRequired = value; }
     inline GetApplicationAssignmentConfigurationResult& WithAssignmentRequired(bool value) { SetAssignmentRequired(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApplicationAssignmentConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApplicationAssignmentConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApplicationAssignmentConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApplicationAssignmentConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_assignmentRequired;
+    bool m_assignmentRequired{false};
+    bool m_assignmentRequiredHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

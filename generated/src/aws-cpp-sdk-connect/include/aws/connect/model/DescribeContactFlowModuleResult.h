@@ -28,7 +28,7 @@ namespace Model
   class DescribeContactFlowModuleResult
   {
   public:
-    AWS_CONNECT_API DescribeContactFlowModuleResult();
+    AWS_CONNECT_API DescribeContactFlowModuleResult() = default;
     AWS_CONNECT_API DescribeContactFlowModuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribeContactFlowModuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the flow module.</p>
      */
-    inline const ContactFlowModule& GetContactFlowModule() const{ return m_contactFlowModule; }
-    inline void SetContactFlowModule(const ContactFlowModule& value) { m_contactFlowModule = value; }
-    inline void SetContactFlowModule(ContactFlowModule&& value) { m_contactFlowModule = std::move(value); }
-    inline DescribeContactFlowModuleResult& WithContactFlowModule(const ContactFlowModule& value) { SetContactFlowModule(value); return *this;}
-    inline DescribeContactFlowModuleResult& WithContactFlowModule(ContactFlowModule&& value) { SetContactFlowModule(std::move(value)); return *this;}
+    inline const ContactFlowModule& GetContactFlowModule() const { return m_contactFlowModule; }
+    template<typename ContactFlowModuleT = ContactFlowModule>
+    void SetContactFlowModule(ContactFlowModuleT&& value) { m_contactFlowModuleHasBeenSet = true; m_contactFlowModule = std::forward<ContactFlowModuleT>(value); }
+    template<typename ContactFlowModuleT = ContactFlowModule>
+    DescribeContactFlowModuleResult& WithContactFlowModule(ContactFlowModuleT&& value) { SetContactFlowModule(std::forward<ContactFlowModuleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeContactFlowModuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeContactFlowModuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeContactFlowModuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeContactFlowModuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ContactFlowModule m_contactFlowModule;
+    bool m_contactFlowModuleHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

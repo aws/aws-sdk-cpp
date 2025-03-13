@@ -12,13 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConnectClientAddInRequest::CreateConnectClientAddInRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_uRLHasBeenSet(false)
-{
-}
-
 Aws::String CreateConnectClientAddInRequest::SerializePayload() const
 {
   JsonValue payload;

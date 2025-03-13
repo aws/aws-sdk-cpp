@@ -12,10 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRegistrationCodeRequest::DeleteRegistrationCodeRequest()
-{
-}
-
 Aws::String DeleteRegistrationCodeRequest::SerializePayload() const
 {
   return {};

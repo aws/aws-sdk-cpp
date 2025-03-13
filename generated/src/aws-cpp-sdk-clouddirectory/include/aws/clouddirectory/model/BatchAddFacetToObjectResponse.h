@@ -30,7 +30,7 @@ namespace Model
   class BatchAddFacetToObjectResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchAddFacetToObjectResponse();
+    AWS_CLOUDDIRECTORY_API BatchAddFacetToObjectResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchAddFacetToObjectResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchAddFacetToObjectResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;

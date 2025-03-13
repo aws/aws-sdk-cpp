@@ -12,13 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEventLogConfigurationRequest::UpdateEventLogConfigurationRequest() : 
-    m_idHasBeenSet(false),
-    m_eventLogLevel(LogLevel::NOT_SET),
-    m_eventLogLevelHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEventLogConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

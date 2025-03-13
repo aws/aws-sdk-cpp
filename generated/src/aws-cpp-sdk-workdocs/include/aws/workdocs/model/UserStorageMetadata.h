@@ -31,7 +31,7 @@ namespace Model
   class UserStorageMetadata
   {
   public:
-    AWS_WORKDOCS_API UserStorageMetadata();
+    AWS_WORKDOCS_API UserStorageMetadata() = default;
     AWS_WORKDOCS_API UserStorageMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API UserStorageMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The amount of storage used, in bytes.</p>
      */
-    inline long long GetStorageUtilizedInBytes() const{ return m_storageUtilizedInBytes; }
+    inline long long GetStorageUtilizedInBytes() const { return m_storageUtilizedInBytes; }
     inline bool StorageUtilizedInBytesHasBeenSet() const { return m_storageUtilizedInBytesHasBeenSet; }
     inline void SetStorageUtilizedInBytes(long long value) { m_storageUtilizedInBytesHasBeenSet = true; m_storageUtilizedInBytes = value; }
     inline UserStorageMetadata& WithStorageUtilizedInBytes(long long value) { SetStorageUtilizedInBytes(value); return *this;}
@@ -51,16 +51,16 @@ namespace Model
     /**
      * <p>The storage for a user.</p>
      */
-    inline const StorageRuleType& GetStorageRule() const{ return m_storageRule; }
+    inline const StorageRuleType& GetStorageRule() const { return m_storageRule; }
     inline bool StorageRuleHasBeenSet() const { return m_storageRuleHasBeenSet; }
-    inline void SetStorageRule(const StorageRuleType& value) { m_storageRuleHasBeenSet = true; m_storageRule = value; }
-    inline void SetStorageRule(StorageRuleType&& value) { m_storageRuleHasBeenSet = true; m_storageRule = std::move(value); }
-    inline UserStorageMetadata& WithStorageRule(const StorageRuleType& value) { SetStorageRule(value); return *this;}
-    inline UserStorageMetadata& WithStorageRule(StorageRuleType&& value) { SetStorageRule(std::move(value)); return *this;}
+    template<typename StorageRuleT = StorageRuleType>
+    void SetStorageRule(StorageRuleT&& value) { m_storageRuleHasBeenSet = true; m_storageRule = std::forward<StorageRuleT>(value); }
+    template<typename StorageRuleT = StorageRuleType>
+    UserStorageMetadata& WithStorageRule(StorageRuleT&& value) { SetStorageRule(std::forward<StorageRuleT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_storageUtilizedInBytes;
+    long long m_storageUtilizedInBytes{0};
     bool m_storageUtilizedInBytesHasBeenSet = false;
 
     StorageRuleType m_storageRule;

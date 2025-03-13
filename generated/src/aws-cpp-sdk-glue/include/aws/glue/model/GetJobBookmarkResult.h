@@ -28,7 +28,7 @@ namespace Model
   class GetJobBookmarkResult
   {
   public:
-    AWS_GLUE_API GetJobBookmarkResult();
+    AWS_GLUE_API GetJobBookmarkResult() = default;
     AWS_GLUE_API GetJobBookmarkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetJobBookmarkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A structure that defines a point that a job can resume processing.</p>
      */
-    inline const JobBookmarkEntry& GetJobBookmarkEntry() const{ return m_jobBookmarkEntry; }
-    inline void SetJobBookmarkEntry(const JobBookmarkEntry& value) { m_jobBookmarkEntry = value; }
-    inline void SetJobBookmarkEntry(JobBookmarkEntry&& value) { m_jobBookmarkEntry = std::move(value); }
-    inline GetJobBookmarkResult& WithJobBookmarkEntry(const JobBookmarkEntry& value) { SetJobBookmarkEntry(value); return *this;}
-    inline GetJobBookmarkResult& WithJobBookmarkEntry(JobBookmarkEntry&& value) { SetJobBookmarkEntry(std::move(value)); return *this;}
+    inline const JobBookmarkEntry& GetJobBookmarkEntry() const { return m_jobBookmarkEntry; }
+    template<typename JobBookmarkEntryT = JobBookmarkEntry>
+    void SetJobBookmarkEntry(JobBookmarkEntryT&& value) { m_jobBookmarkEntryHasBeenSet = true; m_jobBookmarkEntry = std::forward<JobBookmarkEntryT>(value); }
+    template<typename JobBookmarkEntryT = JobBookmarkEntry>
+    GetJobBookmarkResult& WithJobBookmarkEntry(JobBookmarkEntryT&& value) { SetJobBookmarkEntry(std::forward<JobBookmarkEntryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetJobBookmarkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetJobBookmarkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetJobBookmarkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetJobBookmarkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     JobBookmarkEntry m_jobBookmarkEntry;
+    bool m_jobBookmarkEntryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-AudienceSize::AudienceSize() : 
-    m_type(AudienceSizeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 AudienceSize::AudienceSize(JsonView jsonValue)
-  : AudienceSize()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AudienceSize& AudienceSize::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = AudienceSizeTypeMapper::GetAudienceSizeTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInteger("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

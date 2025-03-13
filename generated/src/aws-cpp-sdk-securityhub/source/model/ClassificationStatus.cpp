@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ClassificationStatus::ClassificationStatus() : 
-    m_codeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ClassificationStatus::ClassificationStatus(JsonView jsonValue)
-  : ClassificationStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ClassificationStatus& ClassificationStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

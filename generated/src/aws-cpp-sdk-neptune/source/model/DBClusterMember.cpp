@@ -20,18 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-DBClusterMember::DBClusterMember() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_isClusterWriter(false),
-    m_isClusterWriterHasBeenSet(false),
-    m_dBClusterParameterGroupStatusHasBeenSet(false),
-    m_promotionTier(0),
-    m_promotionTierHasBeenSet(false)
-{
-}
-
 DBClusterMember::DBClusterMember(const XmlNode& xmlNode)
-  : DBClusterMember()
 {
   *this = xmlNode;
 }
@@ -47,24 +36,28 @@ DBClusterMember& DBClusterMember::operator =(const XmlNode& xmlNode)
     {
       m_dBInstanceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceIdentifierNode.GetText());
       m_dBInstanceIdentifierHasBeenSet = true;
+       m_dBInstanceIdentifierHasBeenSet = true;
     }
     XmlNode isClusterWriterNode = resultNode.FirstChild("IsClusterWriter");
     if(!isClusterWriterNode.IsNull())
     {
       m_isClusterWriter = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isClusterWriterNode.GetText()).c_str()).c_str());
       m_isClusterWriterHasBeenSet = true;
+       m_isClusterWriterHasBeenSet = true;
     }
     XmlNode dBClusterParameterGroupStatusNode = resultNode.FirstChild("DBClusterParameterGroupStatus");
     if(!dBClusterParameterGroupStatusNode.IsNull())
     {
       m_dBClusterParameterGroupStatus = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterParameterGroupStatusNode.GetText());
       m_dBClusterParameterGroupStatusHasBeenSet = true;
+       m_dBClusterParameterGroupStatusHasBeenSet = true;
     }
     XmlNode promotionTierNode = resultNode.FirstChild("PromotionTier");
     if(!promotionTierNode.IsNull())
     {
       m_promotionTier = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(promotionTierNode.GetText()).c_str()).c_str());
       m_promotionTierHasBeenSet = true;
+       m_promotionTierHasBeenSet = true;
     }
   }
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EnableFastSnapshotRestoreStateErrorItem::EnableFastSnapshotRestoreStateErrorItem() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 EnableFastSnapshotRestoreStateErrorItem::EnableFastSnapshotRestoreStateErrorItem(const XmlNode& xmlNode)
-  : EnableFastSnapshotRestoreStateErrorItem()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ EnableFastSnapshotRestoreStateErrorItem& EnableFastSnapshotRestoreStateErrorItem
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode errorNode = resultNode.FirstChild("error");
     if(!errorNode.IsNull())
     {
       m_error = errorNode;
       m_errorHasBeenSet = true;
+       m_errorHasBeenSet = true;
     }
   }
 

@@ -20,15 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-EnvironmentTier::EnvironmentTier() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 EnvironmentTier::EnvironmentTier(const XmlNode& xmlNode)
-  : EnvironmentTier()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ EnvironmentTier& EnvironmentTier::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
       m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode versionNode = resultNode.FirstChild("Version");
     if(!versionNode.IsNull())
     {
       m_version = Aws::Utils::Xml::DecodeEscapedXmlText(versionNode.GetText());
       m_versionHasBeenSet = true;
+       m_versionHasBeenSet = true;
     }
   }
 

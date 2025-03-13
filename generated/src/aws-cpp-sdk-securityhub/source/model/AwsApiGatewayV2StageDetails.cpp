@@ -18,27 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsApiGatewayV2StageDetails::AwsApiGatewayV2StageDetails() : 
-    m_clientCertificateIdHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultRouteSettingsHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_routeSettingsHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_stageVariablesHasBeenSet(false),
-    m_accessLogSettingsHasBeenSet(false),
-    m_autoDeploy(false),
-    m_autoDeployHasBeenSet(false),
-    m_lastDeploymentStatusMessageHasBeenSet(false),
-    m_apiGatewayManaged(false),
-    m_apiGatewayManagedHasBeenSet(false)
-{
-}
-
 AwsApiGatewayV2StageDetails::AwsApiGatewayV2StageDetails(JsonView jsonValue)
-  : AwsApiGatewayV2StageDetails()
 {
   *this = jsonValue;
 }
@@ -48,59 +28,43 @@ AwsApiGatewayV2StageDetails& AwsApiGatewayV2StageDetails::operator =(JsonView js
   if(jsonValue.ValueExists("ClientCertificateId"))
   {
     m_clientCertificateId = jsonValue.GetString("ClientCertificateId");
-
     m_clientCertificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetString("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultRouteSettings"))
   {
     m_defaultRouteSettings = jsonValue.GetObject("DefaultRouteSettings");
-
     m_defaultRouteSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentId"))
   {
     m_deploymentId = jsonValue.GetString("DeploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetString("LastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteSettings"))
   {
     m_routeSettings = jsonValue.GetObject("RouteSettings");
-
     m_routeSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StageName"))
   {
     m_stageName = jsonValue.GetString("StageName");
-
     m_stageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StageVariables"))
   {
     Aws::Map<Aws::String, JsonView> stageVariablesJsonMap = jsonValue.GetObject("StageVariables").GetAllObjects();
@@ -110,35 +74,26 @@ AwsApiGatewayV2StageDetails& AwsApiGatewayV2StageDetails::operator =(JsonView js
     }
     m_stageVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessLogSettings"))
   {
     m_accessLogSettings = jsonValue.GetObject("AccessLogSettings");
-
     m_accessLogSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoDeploy"))
   {
     m_autoDeploy = jsonValue.GetBool("AutoDeploy");
-
     m_autoDeployHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastDeploymentStatusMessage"))
   {
     m_lastDeploymentStatusMessage = jsonValue.GetString("LastDeploymentStatusMessage");
-
     m_lastDeploymentStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApiGatewayManaged"))
   {
     m_apiGatewayManaged = jsonValue.GetBool("ApiGatewayManaged");
-
     m_apiGatewayManagedHasBeenSet = true;
   }
-
   return *this;
 }
 

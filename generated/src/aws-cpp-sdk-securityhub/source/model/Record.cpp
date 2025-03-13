@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Record::Record() : 
-    m_jsonPathHasBeenSet(false),
-    m_recordIndex(0),
-    m_recordIndexHasBeenSet(false)
-{
-}
-
 Record::Record(JsonView jsonValue)
-  : Record()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Record& Record::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JsonPath"))
   {
     m_jsonPath = jsonValue.GetString("JsonPath");
-
     m_jsonPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordIndex"))
   {
     m_recordIndex = jsonValue.GetInt64("RecordIndex");
-
     m_recordIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

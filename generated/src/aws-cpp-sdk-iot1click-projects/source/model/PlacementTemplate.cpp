@@ -18,14 +18,7 @@ namespace IoT1ClickProjects
 namespace Model
 {
 
-PlacementTemplate::PlacementTemplate() : 
-    m_defaultAttributesHasBeenSet(false),
-    m_deviceTemplatesHasBeenSet(false)
-{
-}
-
 PlacementTemplate::PlacementTemplate(JsonView jsonValue)
-  : PlacementTemplate()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ PlacementTemplate& PlacementTemplate::operator =(JsonView jsonValue)
     }
     m_defaultAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceTemplates"))
   {
     Aws::Map<Aws::String, JsonView> deviceTemplatesJsonMap = jsonValue.GetObject("deviceTemplates").GetAllObjects();
@@ -51,7 +43,6 @@ PlacementTemplate& PlacementTemplate::operator =(JsonView jsonValue)
     }
     m_deviceTemplatesHasBeenSet = true;
   }
-
   return *this;
 }
 

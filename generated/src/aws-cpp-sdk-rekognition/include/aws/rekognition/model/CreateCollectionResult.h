@@ -27,7 +27,7 @@ namespace Model
   class CreateCollectionResult
   {
   public:
-    AWS_REKOGNITION_API CreateCollectionResult();
+    AWS_REKOGNITION_API CreateCollectionResult() = default;
     AWS_REKOGNITION_API CreateCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API CreateCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,8 +36,8 @@ namespace Model
     /**
      * <p>HTTP status code indicating the result of the operation.</p>
      */
-    inline int GetStatusCode() const{ return m_statusCode; }
-    inline void SetStatusCode(int value) { m_statusCode = value; }
+    inline int GetStatusCode() const { return m_statusCode; }
+    inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
     inline CreateCollectionResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
     ///@}
 
@@ -46,13 +46,11 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the collection. You can use this to manage
      * permissions on your resources. </p>
      */
-    inline const Aws::String& GetCollectionArn() const{ return m_collectionArn; }
-    inline void SetCollectionArn(const Aws::String& value) { m_collectionArn = value; }
-    inline void SetCollectionArn(Aws::String&& value) { m_collectionArn = std::move(value); }
-    inline void SetCollectionArn(const char* value) { m_collectionArn.assign(value); }
-    inline CreateCollectionResult& WithCollectionArn(const Aws::String& value) { SetCollectionArn(value); return *this;}
-    inline CreateCollectionResult& WithCollectionArn(Aws::String&& value) { SetCollectionArn(std::move(value)); return *this;}
-    inline CreateCollectionResult& WithCollectionArn(const char* value) { SetCollectionArn(value); return *this;}
+    inline const Aws::String& GetCollectionArn() const { return m_collectionArn; }
+    template<typename CollectionArnT = Aws::String>
+    void SetCollectionArn(CollectionArnT&& value) { m_collectionArnHasBeenSet = true; m_collectionArn = std::forward<CollectionArnT>(value); }
+    template<typename CollectionArnT = Aws::String>
+    CreateCollectionResult& WithCollectionArn(CollectionArnT&& value) { SetCollectionArn(std::forward<CollectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,34 +58,34 @@ namespace Model
      * <p>Version number of the face detection model associated with the collection you
      * are creating.</p>
      */
-    inline const Aws::String& GetFaceModelVersion() const{ return m_faceModelVersion; }
-    inline void SetFaceModelVersion(const Aws::String& value) { m_faceModelVersion = value; }
-    inline void SetFaceModelVersion(Aws::String&& value) { m_faceModelVersion = std::move(value); }
-    inline void SetFaceModelVersion(const char* value) { m_faceModelVersion.assign(value); }
-    inline CreateCollectionResult& WithFaceModelVersion(const Aws::String& value) { SetFaceModelVersion(value); return *this;}
-    inline CreateCollectionResult& WithFaceModelVersion(Aws::String&& value) { SetFaceModelVersion(std::move(value)); return *this;}
-    inline CreateCollectionResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}
+    inline const Aws::String& GetFaceModelVersion() const { return m_faceModelVersion; }
+    template<typename FaceModelVersionT = Aws::String>
+    void SetFaceModelVersion(FaceModelVersionT&& value) { m_faceModelVersionHasBeenSet = true; m_faceModelVersion = std::forward<FaceModelVersionT>(value); }
+    template<typename FaceModelVersionT = Aws::String>
+    CreateCollectionResult& WithFaceModelVersion(FaceModelVersionT&& value) { SetFaceModelVersion(std::forward<FaceModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCollectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCollectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCollectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCollectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_statusCode;
+    int m_statusCode{0};
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_collectionArn;
+    bool m_collectionArnHasBeenSet = false;
 
     Aws::String m_faceModelVersion;
+    bool m_faceModelVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

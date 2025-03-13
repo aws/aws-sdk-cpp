@@ -20,19 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackSetOperationResultSummary::StackSetOperationResultSummary() : 
-    m_accountHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_status(StackSetOperationResultStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_accountGateResultHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false)
-{
-}
-
 StackSetOperationResultSummary::StackSetOperationResultSummary(const XmlNode& xmlNode)
-  : StackSetOperationResultSummary()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,42 @@ StackSetOperationResultSummary& StackSetOperationResultSummary::operator =(const
     {
       m_account = Aws::Utils::Xml::DecodeEscapedXmlText(accountNode.GetText());
       m_accountHasBeenSet = true;
+       m_accountHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
       m_region = Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText());
       m_regionHasBeenSet = true;
+       m_regionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StackSetOperationResultStatusMapper::GetStackSetOperationResultStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StackSetOperationResultStatusMapper::GetStackSetOperationResultStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
+       m_statusReasonHasBeenSet = true;
     }
     XmlNode accountGateResultNode = resultNode.FirstChild("AccountGateResult");
     if(!accountGateResultNode.IsNull())
     {
       m_accountGateResult = accountGateResultNode;
       m_accountGateResultHasBeenSet = true;
+       m_accountGateResultHasBeenSet = true;
     }
     XmlNode organizationalUnitIdNode = resultNode.FirstChild("OrganizationalUnitId");
     if(!organizationalUnitIdNode.IsNull())
     {
       m_organizationalUnitId = Aws::Utils::Xml::DecodeEscapedXmlText(organizationalUnitIdNode.GetText());
       m_organizationalUnitIdHasBeenSet = true;
+       m_organizationalUnitIdHasBeenSet = true;
     }
   }
 

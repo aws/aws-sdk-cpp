@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteDBShardGroupRequest::DeleteDBShardGroupRequest() : 
-    m_dBShardGroupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBShardGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

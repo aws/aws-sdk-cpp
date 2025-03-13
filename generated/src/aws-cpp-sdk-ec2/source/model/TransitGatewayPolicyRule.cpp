@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayPolicyRule::TransitGatewayPolicyRule() : 
-    m_sourceCidrBlockHasBeenSet(false),
-    m_sourcePortRangeHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_destinationPortRangeHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_metaDataHasBeenSet(false)
-{
-}
-
 TransitGatewayPolicyRule::TransitGatewayPolicyRule(const XmlNode& xmlNode)
-  : TransitGatewayPolicyRule()
 {
   *this = xmlNode;
 }
@@ -47,36 +36,42 @@ TransitGatewayPolicyRule& TransitGatewayPolicyRule::operator =(const XmlNode& xm
     {
       m_sourceCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(sourceCidrBlockNode.GetText());
       m_sourceCidrBlockHasBeenSet = true;
+       m_sourceCidrBlockHasBeenSet = true;
     }
     XmlNode sourcePortRangeNode = resultNode.FirstChild("sourcePortRange");
     if(!sourcePortRangeNode.IsNull())
     {
       m_sourcePortRange = Aws::Utils::Xml::DecodeEscapedXmlText(sourcePortRangeNode.GetText());
       m_sourcePortRangeHasBeenSet = true;
+       m_sourcePortRangeHasBeenSet = true;
     }
     XmlNode destinationCidrBlockNode = resultNode.FirstChild("destinationCidrBlock");
     if(!destinationCidrBlockNode.IsNull())
     {
       m_destinationCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrBlockNode.GetText());
       m_destinationCidrBlockHasBeenSet = true;
+       m_destinationCidrBlockHasBeenSet = true;
     }
     XmlNode destinationPortRangeNode = resultNode.FirstChild("destinationPortRange");
     if(!destinationPortRangeNode.IsNull())
     {
       m_destinationPortRange = Aws::Utils::Xml::DecodeEscapedXmlText(destinationPortRangeNode.GetText());
       m_destinationPortRangeHasBeenSet = true;
+       m_destinationPortRangeHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
       m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode metaDataNode = resultNode.FirstChild("metaData");
     if(!metaDataNode.IsNull())
     {
       m_metaData = metaDataNode;
       m_metaDataHasBeenSet = true;
+       m_metaDataHasBeenSet = true;
     }
   }
 

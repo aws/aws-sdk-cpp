@@ -28,7 +28,7 @@ namespace Model
   class CreateInputResult
   {
   public:
-    AWS_IOTEVENTS_API CreateInputResult();
+    AWS_IOTEVENTS_API CreateInputResult() = default;
     AWS_IOTEVENTS_API CreateInputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTS_API CreateInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the configuration of the input.</p>
      */
-    inline const InputConfiguration& GetInputConfiguration() const{ return m_inputConfiguration; }
-    inline void SetInputConfiguration(const InputConfiguration& value) { m_inputConfiguration = value; }
-    inline void SetInputConfiguration(InputConfiguration&& value) { m_inputConfiguration = std::move(value); }
-    inline CreateInputResult& WithInputConfiguration(const InputConfiguration& value) { SetInputConfiguration(value); return *this;}
-    inline CreateInputResult& WithInputConfiguration(InputConfiguration&& value) { SetInputConfiguration(std::move(value)); return *this;}
+    inline const InputConfiguration& GetInputConfiguration() const { return m_inputConfiguration; }
+    template<typename InputConfigurationT = InputConfiguration>
+    void SetInputConfiguration(InputConfigurationT&& value) { m_inputConfigurationHasBeenSet = true; m_inputConfiguration = std::forward<InputConfigurationT>(value); }
+    template<typename InputConfigurationT = InputConfiguration>
+    CreateInputResult& WithInputConfiguration(InputConfigurationT&& value) { SetInputConfiguration(std::forward<InputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateInputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateInputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateInputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateInputResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     InputConfiguration m_inputConfiguration;
+    bool m_inputConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

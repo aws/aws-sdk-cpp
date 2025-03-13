@@ -20,16 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ChangeSetHookResourceTargetDetails::ChangeSetHookResourceTargetDetails() : 
-    m_logicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceAction(ChangeAction::NOT_SET),
-    m_resourceActionHasBeenSet(false)
-{
-}
-
 ChangeSetHookResourceTargetDetails::ChangeSetHookResourceTargetDetails(const XmlNode& xmlNode)
-  : ChangeSetHookResourceTargetDetails()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ ChangeSetHookResourceTargetDetails& ChangeSetHookResourceTargetDetails::operator
     {
       m_logicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(logicalResourceIdNode.GetText());
       m_logicalResourceIdHasBeenSet = true;
+       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceActionNode = resultNode.FirstChild("ResourceAction");
     if(!resourceActionNode.IsNull())
     {
-      m_resourceAction = ChangeActionMapper::GetChangeActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceActionNode.GetText()).c_str()).c_str());
+      m_resourceAction = ChangeActionMapper::GetChangeActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceActionNode.GetText()).c_str()));
       m_resourceActionHasBeenSet = true;
+       m_resourceActionHasBeenSet = true;
     }
   }
 

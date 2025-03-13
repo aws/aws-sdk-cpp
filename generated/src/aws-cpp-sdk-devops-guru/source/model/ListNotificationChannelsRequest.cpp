@@ -12,11 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListNotificationChannelsRequest::ListNotificationChannelsRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListNotificationChannelsRequest::SerializePayload() const
 {
   JsonValue payload;

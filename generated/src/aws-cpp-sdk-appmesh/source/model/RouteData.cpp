@@ -18,18 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-RouteData::RouteData() : 
-    m_meshNameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_routeNameHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_virtualRouterNameHasBeenSet(false)
-{
-}
-
 RouteData::RouteData(JsonView jsonValue)
-  : RouteData()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ RouteData& RouteData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("meshName"))
   {
     m_meshName = jsonValue.GetString("meshName");
-
     m_meshNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeName"))
   {
     m_routeName = jsonValue.GetString("routeName");
-
     m_routeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spec"))
   {
     m_spec = jsonValue.GetObject("spec");
-
     m_specHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualRouterName"))
   {
     m_virtualRouterName = jsonValue.GetString("virtualRouterName");
-
     m_virtualRouterNameHasBeenSet = true;
   }
-
   return *this;
 }
 

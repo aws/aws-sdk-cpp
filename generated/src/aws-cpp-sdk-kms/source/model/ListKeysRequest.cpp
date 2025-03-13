@@ -12,13 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListKeysRequest::ListKeysRequest() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String ListKeysRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelKeyDeletionRequest::CancelKeyDeletionRequest() : 
-    m_keyIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelKeyDeletionRequest::SerializePayload() const
 {
   JsonValue payload;

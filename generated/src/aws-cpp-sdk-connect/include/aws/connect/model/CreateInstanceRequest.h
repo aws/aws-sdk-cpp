@@ -24,7 +24,7 @@ namespace Model
   class CreateInstanceRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API CreateInstanceRequest();
+    AWS_CONNECT_API CreateInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,61 +39,53 @@ namespace Model
     /**
      * <p>The idempotency token.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateInstanceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateInstanceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateInstanceRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of identity management for your Amazon Connect users.</p>
      */
-    inline const DirectoryType& GetIdentityManagementType() const{ return m_identityManagementType; }
+    inline DirectoryType GetIdentityManagementType() const { return m_identityManagementType; }
     inline bool IdentityManagementTypeHasBeenSet() const { return m_identityManagementTypeHasBeenSet; }
-    inline void SetIdentityManagementType(const DirectoryType& value) { m_identityManagementTypeHasBeenSet = true; m_identityManagementType = value; }
-    inline void SetIdentityManagementType(DirectoryType&& value) { m_identityManagementTypeHasBeenSet = true; m_identityManagementType = std::move(value); }
-    inline CreateInstanceRequest& WithIdentityManagementType(const DirectoryType& value) { SetIdentityManagementType(value); return *this;}
-    inline CreateInstanceRequest& WithIdentityManagementType(DirectoryType&& value) { SetIdentityManagementType(std::move(value)); return *this;}
+    inline void SetIdentityManagementType(DirectoryType value) { m_identityManagementTypeHasBeenSet = true; m_identityManagementType = value; }
+    inline CreateInstanceRequest& WithIdentityManagementType(DirectoryType value) { SetIdentityManagementType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for your instance.</p>
      */
-    inline const Aws::String& GetInstanceAlias() const{ return m_instanceAlias; }
+    inline const Aws::String& GetInstanceAlias() const { return m_instanceAlias; }
     inline bool InstanceAliasHasBeenSet() const { return m_instanceAliasHasBeenSet; }
-    inline void SetInstanceAlias(const Aws::String& value) { m_instanceAliasHasBeenSet = true; m_instanceAlias = value; }
-    inline void SetInstanceAlias(Aws::String&& value) { m_instanceAliasHasBeenSet = true; m_instanceAlias = std::move(value); }
-    inline void SetInstanceAlias(const char* value) { m_instanceAliasHasBeenSet = true; m_instanceAlias.assign(value); }
-    inline CreateInstanceRequest& WithInstanceAlias(const Aws::String& value) { SetInstanceAlias(value); return *this;}
-    inline CreateInstanceRequest& WithInstanceAlias(Aws::String&& value) { SetInstanceAlias(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithInstanceAlias(const char* value) { SetInstanceAlias(value); return *this;}
+    template<typename InstanceAliasT = Aws::String>
+    void SetInstanceAlias(InstanceAliasT&& value) { m_instanceAliasHasBeenSet = true; m_instanceAlias = std::forward<InstanceAliasT>(value); }
+    template<typename InstanceAliasT = Aws::String>
+    CreateInstanceRequest& WithInstanceAlias(InstanceAliasT&& value) { SetInstanceAlias(std::forward<InstanceAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the directory.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline CreateInstanceRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline CreateInstanceRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline CreateInstanceRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    CreateInstanceRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Your contact center handles incoming contacts.</p>
      */
-    inline bool GetInboundCallsEnabled() const{ return m_inboundCallsEnabled; }
+    inline bool GetInboundCallsEnabled() const { return m_inboundCallsEnabled; }
     inline bool InboundCallsEnabledHasBeenSet() const { return m_inboundCallsEnabledHasBeenSet; }
     inline void SetInboundCallsEnabled(bool value) { m_inboundCallsEnabledHasBeenSet = true; m_inboundCallsEnabled = value; }
     inline CreateInstanceRequest& WithInboundCallsEnabled(bool value) { SetInboundCallsEnabled(value); return *this;}
@@ -103,7 +95,7 @@ namespace Model
     /**
      * <p>Your contact center allows outbound calls.</p>
      */
-    inline bool GetOutboundCallsEnabled() const{ return m_outboundCallsEnabled; }
+    inline bool GetOutboundCallsEnabled() const { return m_outboundCallsEnabled; }
     inline bool OutboundCallsEnabledHasBeenSet() const { return m_outboundCallsEnabledHasBeenSet; }
     inline void SetOutboundCallsEnabled(bool value) { m_outboundCallsEnabledHasBeenSet = true; m_outboundCallsEnabled = value; }
     inline CreateInstanceRequest& WithOutboundCallsEnabled(bool value) { SetOutboundCallsEnabled(value); return *this;}
@@ -114,26 +106,23 @@ namespace Model
      * <p>The tags used to organize, track, or control access for this resource. For
      * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateInstanceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateInstanceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateInstanceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateInstanceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateInstanceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateInstanceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateInstanceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateInstanceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateInstanceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateInstanceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateInstanceRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    DirectoryType m_identityManagementType;
+    DirectoryType m_identityManagementType{DirectoryType::NOT_SET};
     bool m_identityManagementTypeHasBeenSet = false;
 
     Aws::String m_instanceAlias;
@@ -142,10 +131,10 @@ namespace Model
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet = false;
 
-    bool m_inboundCallsEnabled;
+    bool m_inboundCallsEnabled{false};
     bool m_inboundCallsEnabledHasBeenSet = false;
 
-    bool m_outboundCallsEnabled;
+    bool m_outboundCallsEnabled{false};
     bool m_outboundCallsEnabledHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

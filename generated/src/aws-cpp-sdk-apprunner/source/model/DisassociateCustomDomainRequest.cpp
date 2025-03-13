@@ -12,12 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateCustomDomainRequest::DisassociateCustomDomainRequest() : 
-    m_serviceArnHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateCustomDomainRequest::SerializePayload() const
 {
   JsonValue payload;

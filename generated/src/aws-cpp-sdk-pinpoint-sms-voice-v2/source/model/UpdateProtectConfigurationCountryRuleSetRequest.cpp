@@ -12,14 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProtectConfigurationCountryRuleSetRequest::UpdateProtectConfigurationCountryRuleSetRequest() : 
-    m_protectConfigurationIdHasBeenSet(false),
-    m_numberCapability(NumberCapability::NOT_SET),
-    m_numberCapabilityHasBeenSet(false),
-    m_countryRuleSetUpdatesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProtectConfigurationCountryRuleSetRequest::SerializePayload() const
 {
   JsonValue payload;

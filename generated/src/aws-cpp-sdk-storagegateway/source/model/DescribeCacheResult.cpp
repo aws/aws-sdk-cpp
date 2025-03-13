@@ -17,17 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCacheResult::DescribeCacheResult() : 
-    m_cacheAllocatedInBytes(0),
-    m_cacheUsedPercentage(0.0),
-    m_cacheDirtyPercentage(0.0),
-    m_cacheHitPercentage(0.0),
-    m_cacheMissPercentage(0.0)
-{
-}
-
 DescribeCacheResult::DescribeCacheResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeCacheResult()
 {
   *this = result;
 }
@@ -38,9 +28,8 @@ DescribeCacheResult& DescribeCacheResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
+    m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskIds"))
   {
     Aws::Utils::Array<JsonView> diskIdsJsonList = jsonValue.GetArray("DiskIds");
@@ -48,44 +37,40 @@ DescribeCacheResult& DescribeCacheResult::operator =(const Aws::AmazonWebService
     {
       m_diskIds.push_back(diskIdsJsonList[diskIdsIndex].AsString());
     }
+    m_diskIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CacheAllocatedInBytes"))
   {
     m_cacheAllocatedInBytes = jsonValue.GetInt64("CacheAllocatedInBytes");
-
+    m_cacheAllocatedInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CacheUsedPercentage"))
   {
     m_cacheUsedPercentage = jsonValue.GetDouble("CacheUsedPercentage");
-
+    m_cacheUsedPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CacheDirtyPercentage"))
   {
     m_cacheDirtyPercentage = jsonValue.GetDouble("CacheDirtyPercentage");
-
+    m_cacheDirtyPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CacheHitPercentage"))
   {
     m_cacheHitPercentage = jsonValue.GetDouble("CacheHitPercentage");
-
+    m_cacheHitPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CacheMissPercentage"))
   {
     m_cacheMissPercentage = jsonValue.GetDouble("CacheMissPercentage");
-
+    m_cacheMissPercentageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

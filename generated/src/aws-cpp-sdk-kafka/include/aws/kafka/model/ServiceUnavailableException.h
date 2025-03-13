@@ -34,7 +34,7 @@ namespace Model
   class ServiceUnavailableException
   {
   public:
-    AWS_KAFKA_API ServiceUnavailableException();
+    AWS_KAFKA_API ServiceUnavailableException() = default;
     AWS_KAFKA_API ServiceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API ServiceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
             <p>The parameter that caused the error.</p>
          
      */
-    inline const Aws::String& GetInvalidParameter() const{ return m_invalidParameter; }
+    inline const Aws::String& GetInvalidParameter() const { return m_invalidParameter; }
     inline bool InvalidParameterHasBeenSet() const { return m_invalidParameterHasBeenSet; }
-    inline void SetInvalidParameter(const Aws::String& value) { m_invalidParameterHasBeenSet = true; m_invalidParameter = value; }
-    inline void SetInvalidParameter(Aws::String&& value) { m_invalidParameterHasBeenSet = true; m_invalidParameter = std::move(value); }
-    inline void SetInvalidParameter(const char* value) { m_invalidParameterHasBeenSet = true; m_invalidParameter.assign(value); }
-    inline ServiceUnavailableException& WithInvalidParameter(const Aws::String& value) { SetInvalidParameter(value); return *this;}
-    inline ServiceUnavailableException& WithInvalidParameter(Aws::String&& value) { SetInvalidParameter(std::move(value)); return *this;}
-    inline ServiceUnavailableException& WithInvalidParameter(const char* value) { SetInvalidParameter(value); return *this;}
+    template<typename InvalidParameterT = Aws::String>
+    void SetInvalidParameter(InvalidParameterT&& value) { m_invalidParameterHasBeenSet = true; m_invalidParameter = std::forward<InvalidParameterT>(value); }
+    template<typename InvalidParameterT = Aws::String>
+    ServiceUnavailableException& WithInvalidParameter(InvalidParameterT&& value) { SetInvalidParameter(std::forward<InvalidParameterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
             <p>The description of the error.</p>
          
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ServiceUnavailableException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ServiceUnavailableException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ServiceUnavailableException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ServiceUnavailableException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

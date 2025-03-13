@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-AnomalyDetectorConfiguration::AnomalyDetectorConfiguration() : 
-    m_excludedTimeRangesHasBeenSet(false),
-    m_metricTimezoneHasBeenSet(false)
-{
-}
-
 AnomalyDetectorConfiguration::AnomalyDetectorConfiguration(const XmlNode& xmlNode)
-  : AnomalyDetectorConfiguration()
 {
   *this = xmlNode;
 }
@@ -42,19 +35,21 @@ AnomalyDetectorConfiguration& AnomalyDetectorConfiguration::operator =(const Xml
     if(!excludedTimeRangesNode.IsNull())
     {
       XmlNode excludedTimeRangesMember = excludedTimeRangesNode.FirstChild("member");
+      m_excludedTimeRangesHasBeenSet = !excludedTimeRangesMember.IsNull();
       while(!excludedTimeRangesMember.IsNull())
       {
         m_excludedTimeRanges.push_back(excludedTimeRangesMember);
         excludedTimeRangesMember = excludedTimeRangesMember.NextNode("member");
       }
 
-      m_excludedTimeRangesHasBeenSet = true;
+       m_excludedTimeRangesHasBeenSet = true;
     }
     XmlNode metricTimezoneNode = resultNode.FirstChild("MetricTimezone");
     if(!metricTimezoneNode.IsNull())
     {
       m_metricTimezone = Aws::Utils::Xml::DecodeEscapedXmlText(metricTimezoneNode.GetText());
       m_metricTimezoneHasBeenSet = true;
+       m_metricTimezoneHasBeenSet = true;
     }
   }
 

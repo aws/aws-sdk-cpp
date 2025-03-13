@@ -12,14 +12,6 @@ using namespace Aws::QLDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRevisionRequest::GetRevisionRequest() : 
-    m_nameHasBeenSet(false),
-    m_blockAddressHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_digestTipAddressHasBeenSet(false)
-{
-}
-
 Aws::String GetRevisionRequest::SerializePayload() const
 {
   JsonValue payload;

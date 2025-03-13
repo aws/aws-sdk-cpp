@@ -18,23 +18,7 @@ namespace Braket
 namespace Model
 {
 
-QuantumTaskSummary::QuantumTaskSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_deviceArnHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_outputS3BucketHasBeenSet(false),
-    m_outputS3DirectoryHasBeenSet(false),
-    m_quantumTaskArnHasBeenSet(false),
-    m_shots(0),
-    m_shotsHasBeenSet(false),
-    m_status(QuantumTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 QuantumTaskSummary::QuantumTaskSummary(JsonView jsonValue)
-  : QuantumTaskSummary()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ QuantumTaskSummary& QuantumTaskSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceArn"))
   {
     m_deviceArn = jsonValue.GetString("deviceArn");
-
     m_deviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetString("endedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputS3Bucket"))
   {
     m_outputS3Bucket = jsonValue.GetString("outputS3Bucket");
-
     m_outputS3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputS3Directory"))
   {
     m_outputS3Directory = jsonValue.GetString("outputS3Directory");
-
     m_outputS3DirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quantumTaskArn"))
   {
     m_quantumTaskArn = jsonValue.GetString("quantumTaskArn");
-
     m_quantumTaskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shots"))
   {
     m_shots = jsonValue.GetInt64("shots");
-
     m_shotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = QuantumTaskStatusMapper::GetQuantumTaskStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -106,7 +74,6 @@ QuantumTaskSummary& QuantumTaskSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

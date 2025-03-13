@@ -21,7 +21,7 @@ namespace Model
   class SetDefaultMessageFeedbackEnabledRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API SetDefaultMessageFeedbackEnabledRequest();
+    AWS_PINPOINTSMSVOICEV2_API SetDefaultMessageFeedbackEnabledRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,21 +39,19 @@ namespace Model
      * <p>The name of the configuration set to use. This can be either the
      * ConfigurationSetName or ConfigurationSetArn.</p>
      */
-    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-    inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-    inline SetDefaultMessageFeedbackEnabledRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-    inline SetDefaultMessageFeedbackEnabledRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-    inline SetDefaultMessageFeedbackEnabledRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    template<typename ConfigurationSetNameT = Aws::String>
+    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
+    template<typename ConfigurationSetNameT = Aws::String>
+    SetDefaultMessageFeedbackEnabledRequest& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Set to true to enable message feedback.</p>
      */
-    inline bool GetMessageFeedbackEnabled() const{ return m_messageFeedbackEnabled; }
+    inline bool GetMessageFeedbackEnabled() const { return m_messageFeedbackEnabled; }
     inline bool MessageFeedbackEnabledHasBeenSet() const { return m_messageFeedbackEnabledHasBeenSet; }
     inline void SetMessageFeedbackEnabled(bool value) { m_messageFeedbackEnabledHasBeenSet = true; m_messageFeedbackEnabled = value; }
     inline SetDefaultMessageFeedbackEnabledRequest& WithMessageFeedbackEnabled(bool value) { SetMessageFeedbackEnabled(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet = false;
 
-    bool m_messageFeedbackEnabled;
+    bool m_messageFeedbackEnabled{false};
     bool m_messageFeedbackEnabledHasBeenSet = false;
   };
 

@@ -12,12 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RejectCertificateTransferRequest::RejectCertificateTransferRequest() : 
-    m_certificateIdHasBeenSet(false),
-    m_rejectReasonHasBeenSet(false)
-{
-}
-
 Aws::String RejectCertificateTransferRequest::SerializePayload() const
 {
   JsonValue payload;

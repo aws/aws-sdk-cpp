@@ -18,18 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-EC2ResourceUtilization::EC2ResourceUtilization() : 
-    m_maxCpuUtilizationPercentageHasBeenSet(false),
-    m_maxMemoryUtilizationPercentageHasBeenSet(false),
-    m_maxStorageUtilizationPercentageHasBeenSet(false),
-    m_eBSResourceUtilizationHasBeenSet(false),
-    m_diskResourceUtilizationHasBeenSet(false),
-    m_networkResourceUtilizationHasBeenSet(false)
-{
-}
-
 EC2ResourceUtilization::EC2ResourceUtilization(JsonView jsonValue)
-  : EC2ResourceUtilization()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ EC2ResourceUtilization& EC2ResourceUtilization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaxCpuUtilizationPercentage"))
   {
     m_maxCpuUtilizationPercentage = jsonValue.GetString("MaxCpuUtilizationPercentage");
-
     m_maxCpuUtilizationPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxMemoryUtilizationPercentage"))
   {
     m_maxMemoryUtilizationPercentage = jsonValue.GetString("MaxMemoryUtilizationPercentage");
-
     m_maxMemoryUtilizationPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxStorageUtilizationPercentage"))
   {
     m_maxStorageUtilizationPercentage = jsonValue.GetString("MaxStorageUtilizationPercentage");
-
     m_maxStorageUtilizationPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EBSResourceUtilization"))
   {
     m_eBSResourceUtilization = jsonValue.GetObject("EBSResourceUtilization");
-
     m_eBSResourceUtilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskResourceUtilization"))
   {
     m_diskResourceUtilization = jsonValue.GetObject("DiskResourceUtilization");
-
     m_diskResourceUtilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkResourceUtilization"))
   {
     m_networkResourceUtilization = jsonValue.GetObject("NetworkResourceUtilization");
-
     m_networkResourceUtilizationHasBeenSet = true;
   }
-
   return *this;
 }
 

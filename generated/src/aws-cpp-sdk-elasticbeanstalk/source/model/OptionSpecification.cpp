@@ -20,15 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-OptionSpecification::OptionSpecification() : 
-    m_resourceNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_optionNameHasBeenSet(false)
-{
-}
-
 OptionSpecification::OptionSpecification(const XmlNode& xmlNode)
-  : OptionSpecification()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ OptionSpecification& OptionSpecification::operator =(const XmlNode& xmlNode)
     {
       m_resourceName = Aws::Utils::Xml::DecodeEscapedXmlText(resourceNameNode.GetText());
       m_resourceNameHasBeenSet = true;
+       m_resourceNameHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
       m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
+       m_namespaceHasBeenSet = true;
     }
     XmlNode optionNameNode = resultNode.FirstChild("OptionName");
     if(!optionNameNode.IsNull())
     {
       m_optionName = Aws::Utils::Xml::DecodeEscapedXmlText(optionNameNode.GetText());
       m_optionNameHasBeenSet = true;
+       m_optionNameHasBeenSet = true;
     }
   }
 

@@ -35,7 +35,7 @@ namespace Model
   class ProcessingInput
   {
   public:
-    AWS_SAGEMAKER_API ProcessingInput();
+    AWS_SAGEMAKER_API ProcessingInput() = default;
     AWS_SAGEMAKER_API ProcessingInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ProcessingInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name for the processing job input.</p>
      */
-    inline const Aws::String& GetInputName() const{ return m_inputName; }
+    inline const Aws::String& GetInputName() const { return m_inputName; }
     inline bool InputNameHasBeenSet() const { return m_inputNameHasBeenSet; }
-    inline void SetInputName(const Aws::String& value) { m_inputNameHasBeenSet = true; m_inputName = value; }
-    inline void SetInputName(Aws::String&& value) { m_inputNameHasBeenSet = true; m_inputName = std::move(value); }
-    inline void SetInputName(const char* value) { m_inputNameHasBeenSet = true; m_inputName.assign(value); }
-    inline ProcessingInput& WithInputName(const Aws::String& value) { SetInputName(value); return *this;}
-    inline ProcessingInput& WithInputName(Aws::String&& value) { SetInputName(std::move(value)); return *this;}
-    inline ProcessingInput& WithInputName(const char* value) { SetInputName(value); return *this;}
+    template<typename InputNameT = Aws::String>
+    void SetInputName(InputNameT&& value) { m_inputNameHasBeenSet = true; m_inputName = std::forward<InputNameT>(value); }
+    template<typename InputNameT = Aws::String>
+    ProcessingInput& WithInputName(InputNameT&& value) { SetInputName(std::forward<InputNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * natively by the processing job application. When <code>False</code> (default),
      * input operations are managed by Amazon SageMaker.</p>
      */
-    inline bool GetAppManaged() const{ return m_appManaged; }
+    inline bool GetAppManaged() const { return m_appManaged; }
     inline bool AppManagedHasBeenSet() const { return m_appManagedHasBeenSet; }
     inline void SetAppManaged(bool value) { m_appManagedHasBeenSet = true; m_appManaged = value; }
     inline ProcessingInput& WithAppManaged(bool value) { SetAppManaged(value); return *this;}
@@ -72,31 +70,31 @@ namespace Model
      * <p>Configuration for downloading input data from Amazon S3 into the processing
      * container.</p>
      */
-    inline const ProcessingS3Input& GetS3Input() const{ return m_s3Input; }
+    inline const ProcessingS3Input& GetS3Input() const { return m_s3Input; }
     inline bool S3InputHasBeenSet() const { return m_s3InputHasBeenSet; }
-    inline void SetS3Input(const ProcessingS3Input& value) { m_s3InputHasBeenSet = true; m_s3Input = value; }
-    inline void SetS3Input(ProcessingS3Input&& value) { m_s3InputHasBeenSet = true; m_s3Input = std::move(value); }
-    inline ProcessingInput& WithS3Input(const ProcessingS3Input& value) { SetS3Input(value); return *this;}
-    inline ProcessingInput& WithS3Input(ProcessingS3Input&& value) { SetS3Input(std::move(value)); return *this;}
+    template<typename S3InputT = ProcessingS3Input>
+    void SetS3Input(S3InputT&& value) { m_s3InputHasBeenSet = true; m_s3Input = std::forward<S3InputT>(value); }
+    template<typename S3InputT = ProcessingS3Input>
+    ProcessingInput& WithS3Input(S3InputT&& value) { SetS3Input(std::forward<S3InputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration for a Dataset Definition input. </p>
      */
-    inline const DatasetDefinition& GetDatasetDefinition() const{ return m_datasetDefinition; }
+    inline const DatasetDefinition& GetDatasetDefinition() const { return m_datasetDefinition; }
     inline bool DatasetDefinitionHasBeenSet() const { return m_datasetDefinitionHasBeenSet; }
-    inline void SetDatasetDefinition(const DatasetDefinition& value) { m_datasetDefinitionHasBeenSet = true; m_datasetDefinition = value; }
-    inline void SetDatasetDefinition(DatasetDefinition&& value) { m_datasetDefinitionHasBeenSet = true; m_datasetDefinition = std::move(value); }
-    inline ProcessingInput& WithDatasetDefinition(const DatasetDefinition& value) { SetDatasetDefinition(value); return *this;}
-    inline ProcessingInput& WithDatasetDefinition(DatasetDefinition&& value) { SetDatasetDefinition(std::move(value)); return *this;}
+    template<typename DatasetDefinitionT = DatasetDefinition>
+    void SetDatasetDefinition(DatasetDefinitionT&& value) { m_datasetDefinitionHasBeenSet = true; m_datasetDefinition = std::forward<DatasetDefinitionT>(value); }
+    template<typename DatasetDefinitionT = DatasetDefinition>
+    ProcessingInput& WithDatasetDefinition(DatasetDefinitionT&& value) { SetDatasetDefinition(std::forward<DatasetDefinitionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_inputName;
     bool m_inputNameHasBeenSet = false;
 
-    bool m_appManaged;
+    bool m_appManaged{false};
     bool m_appManagedHasBeenSet = false;
 
     ProcessingS3Input m_s3Input;

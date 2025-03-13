@@ -44,7 +44,7 @@ namespace Model
   class DimensionGroup
   {
   public:
-    AWS_PI_API DimensionGroup();
+    AWS_PI_API DimensionGroup() = default;
     AWS_PI_API DimensionGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API DimensionGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -84,14 +84,12 @@ namespace Model
      * <code>db.wait_state</code> - The event for which the database backend is waiting
      * (only Amazon DocumentDB).</p> </li> </ul>
      */
-    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline const Aws::String& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-    inline DimensionGroup& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-    inline DimensionGroup& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-    inline DimensionGroup& WithGroup(const char* value) { SetGroup(value); return *this;}
+    template<typename GroupT = Aws::String>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = Aws::String>
+    DimensionGroup& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,22 +169,21 @@ namespace Model
      * <code>db.wait_state.name</code> - The event for which the backend is waiting
      * (only Amazon DocumentDB).</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<Aws::String>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<Aws::String>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<Aws::String>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline DimensionGroup& WithDimensions(const Aws::Vector<Aws::String>& value) { SetDimensions(value); return *this;}
-    inline DimensionGroup& WithDimensions(Aws::Vector<Aws::String>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline DimensionGroup& AddDimensions(const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline DimensionGroup& AddDimensions(Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
-    inline DimensionGroup& AddDimensions(const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
+    template<typename DimensionsT = Aws::Vector<Aws::String>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<Aws::String>>
+    DimensionGroup& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = Aws::String>
+    DimensionGroup& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items to fetch for this dimension group.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DimensionGroup& WithLimit(int value) { SetLimit(value); return *this;}
@@ -199,7 +196,7 @@ namespace Model
     Aws::Vector<Aws::String> m_dimensions;
     bool m_dimensionsHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

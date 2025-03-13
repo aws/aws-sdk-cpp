@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLContainerDefinition::AutoMLContainerDefinition() : 
-    m_imageHasBeenSet(false),
-    m_modelDataUrlHasBeenSet(false),
-    m_environmentHasBeenSet(false)
-{
-}
-
 AutoMLContainerDefinition::AutoMLContainerDefinition(JsonView jsonValue)
-  : AutoMLContainerDefinition()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AutoMLContainerDefinition& AutoMLContainerDefinition::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Image"))
   {
     m_image = jsonValue.GetString("Image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelDataUrl"))
   {
     m_modelDataUrl = jsonValue.GetString("ModelDataUrl");
-
     m_modelDataUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -56,7 +44,6 @@ AutoMLContainerDefinition& AutoMLContainerDefinition::operator =(JsonView jsonVa
     }
     m_environmentHasBeenSet = true;
   }
-
   return *this;
 }
 

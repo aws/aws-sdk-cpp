@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-LabelingJobSnsDataSource::LabelingJobSnsDataSource() : 
-    m_snsTopicArnHasBeenSet(false)
-{
-}
-
 LabelingJobSnsDataSource::LabelingJobSnsDataSource(JsonView jsonValue)
-  : LabelingJobSnsDataSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LabelingJobSnsDataSource& LabelingJobSnsDataSource::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("SnsTopicArn"))
   {
     m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
-
     m_snsTopicArnHasBeenSet = true;
   }
-
   return *this;
 }
 

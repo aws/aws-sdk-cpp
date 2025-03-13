@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-NotifyWorkersResult::NotifyWorkersResult()
-{
-}
-
 NotifyWorkersResult::NotifyWorkersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ NotifyWorkersResult& NotifyWorkersResult::operator =(const Aws::AmazonWebService
     {
       m_notifyWorkersFailureStatuses.push_back(notifyWorkersFailureStatusesJsonList[notifyWorkersFailureStatusesIndex].AsObject());
     }
+    m_notifyWorkersFailureStatusesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

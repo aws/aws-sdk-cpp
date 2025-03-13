@@ -27,7 +27,7 @@ namespace Model
   class GetSchemaVersionRequest : public IoTManagedIntegrationsRequest
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API GetSchemaVersionRequest();
+    AWS_IOTMANAGEDINTEGRATIONS_API GetSchemaVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The type of schema version.</p>
      */
-    inline const SchemaVersionType& GetType() const{ return m_type; }
+    inline SchemaVersionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SchemaVersionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SchemaVersionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GetSchemaVersionRequest& WithType(const SchemaVersionType& value) { SetType(value); return *this;}
-    inline GetSchemaVersionRequest& WithType(SchemaVersionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SchemaVersionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetSchemaVersionRequest& WithType(SchemaVersionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,36 +55,32 @@ namespace Model
      * <p>Schema id with a version specified. If the version is missing, it defaults to
      * latest version.</p>
      */
-    inline const Aws::String& GetSchemaVersionedId() const{ return m_schemaVersionedId; }
+    inline const Aws::String& GetSchemaVersionedId() const { return m_schemaVersionedId; }
     inline bool SchemaVersionedIdHasBeenSet() const { return m_schemaVersionedIdHasBeenSet; }
-    inline void SetSchemaVersionedId(const Aws::String& value) { m_schemaVersionedIdHasBeenSet = true; m_schemaVersionedId = value; }
-    inline void SetSchemaVersionedId(Aws::String&& value) { m_schemaVersionedIdHasBeenSet = true; m_schemaVersionedId = std::move(value); }
-    inline void SetSchemaVersionedId(const char* value) { m_schemaVersionedIdHasBeenSet = true; m_schemaVersionedId.assign(value); }
-    inline GetSchemaVersionRequest& WithSchemaVersionedId(const Aws::String& value) { SetSchemaVersionedId(value); return *this;}
-    inline GetSchemaVersionRequest& WithSchemaVersionedId(Aws::String&& value) { SetSchemaVersionedId(std::move(value)); return *this;}
-    inline GetSchemaVersionRequest& WithSchemaVersionedId(const char* value) { SetSchemaVersionedId(value); return *this;}
+    template<typename SchemaVersionedIdT = Aws::String>
+    void SetSchemaVersionedId(SchemaVersionedIdT&& value) { m_schemaVersionedIdHasBeenSet = true; m_schemaVersionedId = std::forward<SchemaVersionedIdT>(value); }
+    template<typename SchemaVersionedIdT = Aws::String>
+    GetSchemaVersionRequest& WithSchemaVersionedId(SchemaVersionedIdT&& value) { SetSchemaVersionedId(std::forward<SchemaVersionedIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the schema version.</p>
      */
-    inline const SchemaVersionFormat& GetFormat() const{ return m_format; }
+    inline SchemaVersionFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const SchemaVersionFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(SchemaVersionFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline GetSchemaVersionRequest& WithFormat(const SchemaVersionFormat& value) { SetFormat(value); return *this;}
-    inline GetSchemaVersionRequest& WithFormat(SchemaVersionFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(SchemaVersionFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline GetSchemaVersionRequest& WithFormat(SchemaVersionFormat value) { SetFormat(value); return *this;}
     ///@}
   private:
 
-    SchemaVersionType m_type;
+    SchemaVersionType m_type{SchemaVersionType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_schemaVersionedId;
     bool m_schemaVersionedIdHasBeenSet = false;
 
-    SchemaVersionFormat m_format;
+    SchemaVersionFormat m_format{SchemaVersionFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
   };
 

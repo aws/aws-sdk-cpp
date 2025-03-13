@@ -12,12 +12,6 @@ using namespace Aws::PCS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQueueRequest::GetQueueRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_queueIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetQueueRequest::SerializePayload() const
 {
   JsonValue payload;

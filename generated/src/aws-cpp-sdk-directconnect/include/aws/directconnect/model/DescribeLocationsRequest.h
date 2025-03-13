@@ -19,7 +19,7 @@ namespace Model
   class DescribeLocationsRequest : public DirectConnectRequest
   {
   public:
-    AWS_DIRECTCONNECT_API DescribeLocationsRequest();
+    AWS_DIRECTCONNECT_API DescribeLocationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

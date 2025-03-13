@@ -28,7 +28,7 @@ namespace Model
   class CreateHsmResult
   {
   public:
-    AWS_CLOUDHSMV2_API CreateHsmResult();
+    AWS_CLOUDHSMV2_API CreateHsmResult() = default;
     AWS_CLOUDHSMV2_API CreateHsmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDHSMV2_API CreateHsmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the HSM that was created.</p>
      */
-    inline const Hsm& GetHsm() const{ return m_hsm; }
-    inline void SetHsm(const Hsm& value) { m_hsm = value; }
-    inline void SetHsm(Hsm&& value) { m_hsm = std::move(value); }
-    inline CreateHsmResult& WithHsm(const Hsm& value) { SetHsm(value); return *this;}
-    inline CreateHsmResult& WithHsm(Hsm&& value) { SetHsm(std::move(value)); return *this;}
+    inline const Hsm& GetHsm() const { return m_hsm; }
+    template<typename HsmT = Hsm>
+    void SetHsm(HsmT&& value) { m_hsmHasBeenSet = true; m_hsm = std::forward<HsmT>(value); }
+    template<typename HsmT = Hsm>
+    CreateHsmResult& WithHsm(HsmT&& value) { SetHsm(std::forward<HsmT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateHsmResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateHsmResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateHsmResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateHsmResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Hsm m_hsm;
+    bool m_hsmHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

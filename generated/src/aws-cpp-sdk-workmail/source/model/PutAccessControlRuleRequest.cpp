@@ -12,23 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAccessControlRuleRequest::PutAccessControlRuleRequest() : 
-    m_nameHasBeenSet(false),
-    m_effect(AccessControlRuleEffect::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ipRangesHasBeenSet(false),
-    m_notIpRangesHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_notActionsHasBeenSet(false),
-    m_userIdsHasBeenSet(false),
-    m_notUserIdsHasBeenSet(false),
-    m_organizationIdHasBeenSet(false),
-    m_impersonationRoleIdsHasBeenSet(false),
-    m_notImpersonationRoleIdsHasBeenSet(false)
-{
-}
-
 Aws::String PutAccessControlRuleRequest::SerializePayload() const
 {
   JsonValue payload;

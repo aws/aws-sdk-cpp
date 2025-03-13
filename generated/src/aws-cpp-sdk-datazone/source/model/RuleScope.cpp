@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RuleScope::RuleScope() : 
-    m_assetTypeHasBeenSet(false),
-    m_dataProduct(false),
-    m_dataProductHasBeenSet(false),
-    m_projectHasBeenSet(false)
-{
-}
-
 RuleScope::RuleScope(JsonView jsonValue)
-  : RuleScope()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RuleScope& RuleScope::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetType"))
   {
     m_assetType = jsonValue.GetObject("assetType");
-
     m_assetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataProduct"))
   {
     m_dataProduct = jsonValue.GetBool("dataProduct");
-
     m_dataProductHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("project"))
   {
     m_project = jsonValue.GetObject("project");
-
     m_projectHasBeenSet = true;
   }
-
   return *this;
 }
 

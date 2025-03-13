@@ -19,7 +19,7 @@ namespace Model
   class GetDefaultViewRequest : public ResourceExplorer2Request
   {
   public:
-    AWS_RESOURCEEXPLORER2_API GetDefaultViewRequest();
+    AWS_RESOURCEEXPLORER2_API GetDefaultViewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

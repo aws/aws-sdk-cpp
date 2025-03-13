@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeStackResourceResult::DescribeStackResourceResult()
-{
-}
-
 DescribeStackResourceResult::DescribeStackResourceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DescribeStackResourceResult& DescribeStackResourceResult::operator =(const Aws::
     if(!stackResourceDetailNode.IsNull())
     {
       m_stackResourceDetail = stackResourceDetailNode;
+      m_stackResourceDetailHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::DescribeStackResourceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

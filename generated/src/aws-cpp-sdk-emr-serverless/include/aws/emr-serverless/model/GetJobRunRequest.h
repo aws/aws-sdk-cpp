@@ -25,7 +25,7 @@ namespace Model
   class GetJobRunRequest : public EMRServerlessRequest
   {
   public:
-    AWS_EMRSERVERLESS_API GetJobRunRequest();
+    AWS_EMRSERVERLESS_API GetJobRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the application on which the job run is submitted.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline GetJobRunRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline GetJobRunRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline GetJobRunRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    GetJobRunRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the job run.</p>
      */
-    inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
+    inline const Aws::String& GetJobRunId() const { return m_jobRunId; }
     inline bool JobRunIdHasBeenSet() const { return m_jobRunIdHasBeenSet; }
-    inline void SetJobRunId(const Aws::String& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = value; }
-    inline void SetJobRunId(Aws::String&& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = std::move(value); }
-    inline void SetJobRunId(const char* value) { m_jobRunIdHasBeenSet = true; m_jobRunId.assign(value); }
-    inline GetJobRunRequest& WithJobRunId(const Aws::String& value) { SetJobRunId(value); return *this;}
-    inline GetJobRunRequest& WithJobRunId(Aws::String&& value) { SetJobRunId(std::move(value)); return *this;}
-    inline GetJobRunRequest& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
+    template<typename JobRunIdT = Aws::String>
+    void SetJobRunId(JobRunIdT&& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = std::forward<JobRunIdT>(value); }
+    template<typename JobRunIdT = Aws::String>
+    GetJobRunRequest& WithJobRunId(JobRunIdT&& value) { SetJobRunId(std::forward<JobRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * <p>An optimal parameter that indicates the amount of attempts for the job. If
      * not specified, this value defaults to the attempt of the latest job.</p>
      */
-    inline int GetAttempt() const{ return m_attempt; }
+    inline int GetAttempt() const { return m_attempt; }
     inline bool AttemptHasBeenSet() const { return m_attemptHasBeenSet; }
     inline void SetAttempt(int value) { m_attemptHasBeenSet = true; m_attempt = value; }
     inline GetJobRunRequest& WithAttempt(int value) { SetAttempt(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_jobRunId;
     bool m_jobRunIdHasBeenSet = false;
 
-    int m_attempt;
+    int m_attempt{0};
     bool m_attemptHasBeenSet = false;
   };
 

@@ -29,7 +29,7 @@ namespace Model
   class BatchUpdateAutomatedDiscoveryAccountsResult
   {
   public:
-    AWS_MACIE2_API BatchUpdateAutomatedDiscoveryAccountsResult();
+    AWS_MACIE2_API BatchUpdateAutomatedDiscoveryAccountsResult() = default;
     AWS_MACIE2_API BatchUpdateAutomatedDiscoveryAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACIE2_API BatchUpdateAutomatedDiscoveryAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,30 +41,30 @@ namespace Model
      * data discovery wasn’t changed for the account. This value is null if the request
      * succeeded for all specified accounts.</p>
      */
-    inline const Aws::Vector<AutomatedDiscoveryAccountUpdateError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<AutomatedDiscoveryAccountUpdateError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<AutomatedDiscoveryAccountUpdateError>&& value) { m_errors = std::move(value); }
-    inline BatchUpdateAutomatedDiscoveryAccountsResult& WithErrors(const Aws::Vector<AutomatedDiscoveryAccountUpdateError>& value) { SetErrors(value); return *this;}
-    inline BatchUpdateAutomatedDiscoveryAccountsResult& WithErrors(Aws::Vector<AutomatedDiscoveryAccountUpdateError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchUpdateAutomatedDiscoveryAccountsResult& AddErrors(const AutomatedDiscoveryAccountUpdateError& value) { m_errors.push_back(value); return *this; }
-    inline BatchUpdateAutomatedDiscoveryAccountsResult& AddErrors(AutomatedDiscoveryAccountUpdateError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AutomatedDiscoveryAccountUpdateError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<AutomatedDiscoveryAccountUpdateError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<AutomatedDiscoveryAccountUpdateError>>
+    BatchUpdateAutomatedDiscoveryAccountsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = AutomatedDiscoveryAccountUpdateError>
+    BatchUpdateAutomatedDiscoveryAccountsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchUpdateAutomatedDiscoveryAccountsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchUpdateAutomatedDiscoveryAccountsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchUpdateAutomatedDiscoveryAccountsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchUpdateAutomatedDiscoveryAccountsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AutomatedDiscoveryAccountUpdateError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

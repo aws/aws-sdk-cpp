@@ -31,7 +31,7 @@ namespace Model
   class ExportErrorData
   {
   public:
-    AWS_MGN_API ExportErrorData();
+    AWS_MGN_API ExportErrorData() = default;
     AWS_MGN_API ExportErrorData(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API ExportErrorData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Export errors data raw error.</p>
      */
-    inline const Aws::String& GetRawError() const{ return m_rawError; }
+    inline const Aws::String& GetRawError() const { return m_rawError; }
     inline bool RawErrorHasBeenSet() const { return m_rawErrorHasBeenSet; }
-    inline void SetRawError(const Aws::String& value) { m_rawErrorHasBeenSet = true; m_rawError = value; }
-    inline void SetRawError(Aws::String&& value) { m_rawErrorHasBeenSet = true; m_rawError = std::move(value); }
-    inline void SetRawError(const char* value) { m_rawErrorHasBeenSet = true; m_rawError.assign(value); }
-    inline ExportErrorData& WithRawError(const Aws::String& value) { SetRawError(value); return *this;}
-    inline ExportErrorData& WithRawError(Aws::String&& value) { SetRawError(std::move(value)); return *this;}
-    inline ExportErrorData& WithRawError(const char* value) { SetRawError(value); return *this;}
+    template<typename RawErrorT = Aws::String>
+    void SetRawError(RawErrorT&& value) { m_rawErrorHasBeenSet = true; m_rawError = std::forward<RawErrorT>(value); }
+    template<typename RawErrorT = Aws::String>
+    ExportErrorData& WithRawError(RawErrorT&& value) { SetRawError(std::forward<RawErrorT>(value)); return *this;}
     ///@}
   private:
 

@@ -44,7 +44,7 @@ namespace Model
   class RateBasedStatementCustomKey
   {
   public:
-    AWS_WAFV2_API RateBasedStatementCustomKey();
+    AWS_WAFV2_API RateBasedStatementCustomKey() = default;
     AWS_WAFV2_API RateBasedStatementCustomKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RateBasedStatementCustomKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,12 +57,12 @@ namespace Model
      * header as your custom key, then each value fully defines an aggregation
      * instance. </p>
      */
-    inline const RateLimitHeader& GetHeader() const{ return m_header; }
+    inline const RateLimitHeader& GetHeader() const { return m_header; }
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-    inline void SetHeader(const RateLimitHeader& value) { m_headerHasBeenSet = true; m_header = value; }
-    inline void SetHeader(RateLimitHeader&& value) { m_headerHasBeenSet = true; m_header = std::move(value); }
-    inline RateBasedStatementCustomKey& WithHeader(const RateLimitHeader& value) { SetHeader(value); return *this;}
-    inline RateBasedStatementCustomKey& WithHeader(RateLimitHeader&& value) { SetHeader(std::move(value)); return *this;}
+    template<typename HeaderT = RateLimitHeader>
+    void SetHeader(HeaderT&& value) { m_headerHasBeenSet = true; m_header = std::forward<HeaderT>(value); }
+    template<typename HeaderT = RateLimitHeader>
+    RateBasedStatementCustomKey& WithHeader(HeaderT&& value) { SetHeader(std::forward<HeaderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * cookie as your custom key, then each value fully defines an aggregation
      * instance. </p>
      */
-    inline const RateLimitCookie& GetCookie() const{ return m_cookie; }
+    inline const RateLimitCookie& GetCookie() const { return m_cookie; }
     inline bool CookieHasBeenSet() const { return m_cookieHasBeenSet; }
-    inline void SetCookie(const RateLimitCookie& value) { m_cookieHasBeenSet = true; m_cookie = value; }
-    inline void SetCookie(RateLimitCookie&& value) { m_cookieHasBeenSet = true; m_cookie = std::move(value); }
-    inline RateBasedStatementCustomKey& WithCookie(const RateLimitCookie& value) { SetCookie(value); return *this;}
-    inline RateBasedStatementCustomKey& WithCookie(RateLimitCookie&& value) { SetCookie(std::move(value)); return *this;}
+    template<typename CookieT = RateLimitCookie>
+    void SetCookie(CookieT&& value) { m_cookieHasBeenSet = true; m_cookie = std::forward<CookieT>(value); }
+    template<typename CookieT = RateLimitCookie>
+    RateBasedStatementCustomKey& WithCookie(CookieT&& value) { SetCookie(std::forward<CookieT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +87,12 @@ namespace Model
      * single query argument as your custom key, then each value fully defines an
      * aggregation instance. </p>
      */
-    inline const RateLimitQueryArgument& GetQueryArgument() const{ return m_queryArgument; }
+    inline const RateLimitQueryArgument& GetQueryArgument() const { return m_queryArgument; }
     inline bool QueryArgumentHasBeenSet() const { return m_queryArgumentHasBeenSet; }
-    inline void SetQueryArgument(const RateLimitQueryArgument& value) { m_queryArgumentHasBeenSet = true; m_queryArgument = value; }
-    inline void SetQueryArgument(RateLimitQueryArgument&& value) { m_queryArgumentHasBeenSet = true; m_queryArgument = std::move(value); }
-    inline RateBasedStatementCustomKey& WithQueryArgument(const RateLimitQueryArgument& value) { SetQueryArgument(value); return *this;}
-    inline RateBasedStatementCustomKey& WithQueryArgument(RateLimitQueryArgument&& value) { SetQueryArgument(std::move(value)); return *this;}
+    template<typename QueryArgumentT = RateLimitQueryArgument>
+    void SetQueryArgument(QueryArgumentT&& value) { m_queryArgumentHasBeenSet = true; m_queryArgument = std::forward<QueryArgumentT>(value); }
+    template<typename QueryArgumentT = RateLimitQueryArgument>
+    RateBasedStatementCustomKey& WithQueryArgument(QueryArgumentT&& value) { SetQueryArgument(std::forward<QueryArgumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +101,12 @@ namespace Model
      * contributes to the aggregation instance. If you use just the query string as
      * your custom key, then each string fully defines an aggregation instance. </p>
      */
-    inline const RateLimitQueryString& GetQueryString() const{ return m_queryString; }
+    inline const RateLimitQueryString& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const RateLimitQueryString& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(RateLimitQueryString&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline RateBasedStatementCustomKey& WithQueryString(const RateLimitQueryString& value) { SetQueryString(value); return *this;}
-    inline RateBasedStatementCustomKey& WithQueryString(RateLimitQueryString&& value) { SetQueryString(std::move(value)); return *this;}
+    template<typename QueryStringT = RateLimitQueryString>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = RateLimitQueryString>
+    RateBasedStatementCustomKey& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +115,12 @@ namespace Model
      * contributes to the aggregation instance. If you use just the HTTP method as your
      * custom key, then each method fully defines an aggregation instance. </p>
      */
-    inline const RateLimitHTTPMethod& GetHTTPMethod() const{ return m_hTTPMethod; }
+    inline const RateLimitHTTPMethod& GetHTTPMethod() const { return m_hTTPMethod; }
     inline bool HTTPMethodHasBeenSet() const { return m_hTTPMethodHasBeenSet; }
-    inline void SetHTTPMethod(const RateLimitHTTPMethod& value) { m_hTTPMethodHasBeenSet = true; m_hTTPMethod = value; }
-    inline void SetHTTPMethod(RateLimitHTTPMethod&& value) { m_hTTPMethodHasBeenSet = true; m_hTTPMethod = std::move(value); }
-    inline RateBasedStatementCustomKey& WithHTTPMethod(const RateLimitHTTPMethod& value) { SetHTTPMethod(value); return *this;}
-    inline RateBasedStatementCustomKey& WithHTTPMethod(RateLimitHTTPMethod&& value) { SetHTTPMethod(std::move(value)); return *this;}
+    template<typename HTTPMethodT = RateLimitHTTPMethod>
+    void SetHTTPMethod(HTTPMethodT&& value) { m_hTTPMethodHasBeenSet = true; m_hTTPMethod = std::forward<HTTPMethodT>(value); }
+    template<typename HTTPMethodT = RateLimitHTTPMethod>
+    RateBasedStatementCustomKey& WithHTTPMethod(HTTPMethodT&& value) { SetHTTPMethod(std::forward<HTTPMethodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +134,12 @@ namespace Model
      * header to use in the rate-based rule's <code>ForwardedIPConfig</code> property.
      * </p>
      */
-    inline const RateLimitForwardedIP& GetForwardedIP() const{ return m_forwardedIP; }
+    inline const RateLimitForwardedIP& GetForwardedIP() const { return m_forwardedIP; }
     inline bool ForwardedIPHasBeenSet() const { return m_forwardedIPHasBeenSet; }
-    inline void SetForwardedIP(const RateLimitForwardedIP& value) { m_forwardedIPHasBeenSet = true; m_forwardedIP = value; }
-    inline void SetForwardedIP(RateLimitForwardedIP&& value) { m_forwardedIPHasBeenSet = true; m_forwardedIP = std::move(value); }
-    inline RateBasedStatementCustomKey& WithForwardedIP(const RateLimitForwardedIP& value) { SetForwardedIP(value); return *this;}
-    inline RateBasedStatementCustomKey& WithForwardedIP(RateLimitForwardedIP&& value) { SetForwardedIP(std::move(value)); return *this;}
+    template<typename ForwardedIPT = RateLimitForwardedIP>
+    void SetForwardedIP(ForwardedIPT&& value) { m_forwardedIPHasBeenSet = true; m_forwardedIP = std::forward<ForwardedIPT>(value); }
+    template<typename ForwardedIPT = RateLimitForwardedIP>
+    RateBasedStatementCustomKey& WithForwardedIP(ForwardedIPT&& value) { SetForwardedIP(std::forward<ForwardedIPT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,12 +151,12 @@ namespace Model
      * <code>IP</code> in your rate-based statement's <code>AggregateKeyType</code>.
      * </p>
      */
-    inline const RateLimitIP& GetIP() const{ return m_iP; }
+    inline const RateLimitIP& GetIP() const { return m_iP; }
     inline bool IPHasBeenSet() const { return m_iPHasBeenSet; }
-    inline void SetIP(const RateLimitIP& value) { m_iPHasBeenSet = true; m_iP = value; }
-    inline void SetIP(RateLimitIP&& value) { m_iPHasBeenSet = true; m_iP = std::move(value); }
-    inline RateBasedStatementCustomKey& WithIP(const RateLimitIP& value) { SetIP(value); return *this;}
-    inline RateBasedStatementCustomKey& WithIP(RateLimitIP&& value) { SetIP(std::move(value)); return *this;}
+    template<typename IPT = RateLimitIP>
+    void SetIP(IPT&& value) { m_iPHasBeenSet = true; m_iP = std::forward<IPT>(value); }
+    template<typename IPT = RateLimitIP>
+    RateBasedStatementCustomKey& WithIP(IPT&& value) { SetIP(std::forward<IPT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,12 +171,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-label-requirements.html">Label
      * syntax and naming requirements</a> in the <i>WAF Developer Guide</i>.</p>
      */
-    inline const RateLimitLabelNamespace& GetLabelNamespace() const{ return m_labelNamespace; }
+    inline const RateLimitLabelNamespace& GetLabelNamespace() const { return m_labelNamespace; }
     inline bool LabelNamespaceHasBeenSet() const { return m_labelNamespaceHasBeenSet; }
-    inline void SetLabelNamespace(const RateLimitLabelNamespace& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = value; }
-    inline void SetLabelNamespace(RateLimitLabelNamespace&& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = std::move(value); }
-    inline RateBasedStatementCustomKey& WithLabelNamespace(const RateLimitLabelNamespace& value) { SetLabelNamespace(value); return *this;}
-    inline RateBasedStatementCustomKey& WithLabelNamespace(RateLimitLabelNamespace&& value) { SetLabelNamespace(std::move(value)); return *this;}
+    template<typename LabelNamespaceT = RateLimitLabelNamespace>
+    void SetLabelNamespace(LabelNamespaceT&& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = std::forward<LabelNamespaceT>(value); }
+    template<typename LabelNamespaceT = RateLimitLabelNamespace>
+    RateBasedStatementCustomKey& WithLabelNamespace(LabelNamespaceT&& value) { SetLabelNamespace(std::forward<LabelNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -185,12 +185,12 @@ namespace Model
      * contributes to the aggregation instance. If you use just the URI path as your
      * custom key, then each URI path fully defines an aggregation instance. </p>
      */
-    inline const RateLimitUriPath& GetUriPath() const{ return m_uriPath; }
+    inline const RateLimitUriPath& GetUriPath() const { return m_uriPath; }
     inline bool UriPathHasBeenSet() const { return m_uriPathHasBeenSet; }
-    inline void SetUriPath(const RateLimitUriPath& value) { m_uriPathHasBeenSet = true; m_uriPath = value; }
-    inline void SetUriPath(RateLimitUriPath&& value) { m_uriPathHasBeenSet = true; m_uriPath = std::move(value); }
-    inline RateBasedStatementCustomKey& WithUriPath(const RateLimitUriPath& value) { SetUriPath(value); return *this;}
-    inline RateBasedStatementCustomKey& WithUriPath(RateLimitUriPath&& value) { SetUriPath(std::move(value)); return *this;}
+    template<typename UriPathT = RateLimitUriPath>
+    void SetUriPath(UriPathT&& value) { m_uriPathHasBeenSet = true; m_uriPath = std::forward<UriPathT>(value); }
+    template<typename UriPathT = RateLimitUriPath>
+    RateBasedStatementCustomKey& WithUriPath(UriPathT&& value) { SetUriPath(std::forward<UriPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,12 +199,12 @@ namespace Model
      * JA3 fingerprint as your custom key, then each value fully defines an aggregation
      * instance. </p>
      */
-    inline const RateLimitJA3Fingerprint& GetJA3Fingerprint() const{ return m_jA3Fingerprint; }
+    inline const RateLimitJA3Fingerprint& GetJA3Fingerprint() const { return m_jA3Fingerprint; }
     inline bool JA3FingerprintHasBeenSet() const { return m_jA3FingerprintHasBeenSet; }
-    inline void SetJA3Fingerprint(const RateLimitJA3Fingerprint& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = value; }
-    inline void SetJA3Fingerprint(RateLimitJA3Fingerprint&& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = std::move(value); }
-    inline RateBasedStatementCustomKey& WithJA3Fingerprint(const RateLimitJA3Fingerprint& value) { SetJA3Fingerprint(value); return *this;}
-    inline RateBasedStatementCustomKey& WithJA3Fingerprint(RateLimitJA3Fingerprint&& value) { SetJA3Fingerprint(std::move(value)); return *this;}
+    template<typename JA3FingerprintT = RateLimitJA3Fingerprint>
+    void SetJA3Fingerprint(JA3FingerprintT&& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = std::forward<JA3FingerprintT>(value); }
+    template<typename JA3FingerprintT = RateLimitJA3Fingerprint>
+    RateBasedStatementCustomKey& WithJA3Fingerprint(JA3FingerprintT&& value) { SetJA3Fingerprint(std::forward<JA3FingerprintT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -213,12 +213,12 @@ namespace Model
      * JA4 fingerprint as your custom key, then each value fully defines an aggregation
      * instance. </p>
      */
-    inline const RateLimitJA4Fingerprint& GetJA4Fingerprint() const{ return m_jA4Fingerprint; }
+    inline const RateLimitJA4Fingerprint& GetJA4Fingerprint() const { return m_jA4Fingerprint; }
     inline bool JA4FingerprintHasBeenSet() const { return m_jA4FingerprintHasBeenSet; }
-    inline void SetJA4Fingerprint(const RateLimitJA4Fingerprint& value) { m_jA4FingerprintHasBeenSet = true; m_jA4Fingerprint = value; }
-    inline void SetJA4Fingerprint(RateLimitJA4Fingerprint&& value) { m_jA4FingerprintHasBeenSet = true; m_jA4Fingerprint = std::move(value); }
-    inline RateBasedStatementCustomKey& WithJA4Fingerprint(const RateLimitJA4Fingerprint& value) { SetJA4Fingerprint(value); return *this;}
-    inline RateBasedStatementCustomKey& WithJA4Fingerprint(RateLimitJA4Fingerprint&& value) { SetJA4Fingerprint(std::move(value)); return *this;}
+    template<typename JA4FingerprintT = RateLimitJA4Fingerprint>
+    void SetJA4Fingerprint(JA4FingerprintT&& value) { m_jA4FingerprintHasBeenSet = true; m_jA4Fingerprint = std::forward<JA4FingerprintT>(value); }
+    template<typename JA4FingerprintT = RateLimitJA4Fingerprint>
+    RateBasedStatementCustomKey& WithJA4Fingerprint(JA4FingerprintT&& value) { SetJA4Fingerprint(std::forward<JA4FingerprintT>(value)); return *this;}
     ///@}
   private:
 

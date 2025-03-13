@@ -32,7 +32,7 @@ namespace Model
   class ReleaseLabelFilter
   {
   public:
-    AWS_EMR_API ReleaseLabelFilter();
+    AWS_EMR_API ReleaseLabelFilter() = default;
     AWS_EMR_API ReleaseLabelFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API ReleaseLabelFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Optional release label version prefix filter. For example,
      * <code>emr-5</code>.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline ReleaseLabelFilter& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline ReleaseLabelFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline ReleaseLabelFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    ReleaseLabelFilter& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>Optional release label application filter. For example,
      * <code>spark@2.1.0</code>.</p>
      */
-    inline const Aws::String& GetApplication() const{ return m_application; }
+    inline const Aws::String& GetApplication() const { return m_application; }
     inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
-    inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
-    inline void SetApplication(Aws::String&& value) { m_applicationHasBeenSet = true; m_application = std::move(value); }
-    inline void SetApplication(const char* value) { m_applicationHasBeenSet = true; m_application.assign(value); }
-    inline ReleaseLabelFilter& WithApplication(const Aws::String& value) { SetApplication(value); return *this;}
-    inline ReleaseLabelFilter& WithApplication(Aws::String&& value) { SetApplication(std::move(value)); return *this;}
-    inline ReleaseLabelFilter& WithApplication(const char* value) { SetApplication(value); return *this;}
+    template<typename ApplicationT = Aws::String>
+    void SetApplication(ApplicationT&& value) { m_applicationHasBeenSet = true; m_application = std::forward<ApplicationT>(value); }
+    template<typename ApplicationT = Aws::String>
+    ReleaseLabelFilter& WithApplication(ApplicationT&& value) { SetApplication(std::forward<ApplicationT>(value)); return *this;}
     ///@}
   private:
 

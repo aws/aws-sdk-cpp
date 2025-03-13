@@ -29,7 +29,7 @@ namespace Model
   class RegisterSubscriptionProviderResult
   {
   public:
-    AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API RegisterSubscriptionProviderResult();
+    AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API RegisterSubscriptionProviderResult() = default;
     AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API RegisterSubscriptionProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API RegisterSubscriptionProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,24 +39,20 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Linux subscription provider resource
      * that you registered.</p>
      */
-    inline const Aws::String& GetSubscriptionProviderArn() const{ return m_subscriptionProviderArn; }
-    inline void SetSubscriptionProviderArn(const Aws::String& value) { m_subscriptionProviderArn = value; }
-    inline void SetSubscriptionProviderArn(Aws::String&& value) { m_subscriptionProviderArn = std::move(value); }
-    inline void SetSubscriptionProviderArn(const char* value) { m_subscriptionProviderArn.assign(value); }
-    inline RegisterSubscriptionProviderResult& WithSubscriptionProviderArn(const Aws::String& value) { SetSubscriptionProviderArn(value); return *this;}
-    inline RegisterSubscriptionProviderResult& WithSubscriptionProviderArn(Aws::String&& value) { SetSubscriptionProviderArn(std::move(value)); return *this;}
-    inline RegisterSubscriptionProviderResult& WithSubscriptionProviderArn(const char* value) { SetSubscriptionProviderArn(value); return *this;}
+    inline const Aws::String& GetSubscriptionProviderArn() const { return m_subscriptionProviderArn; }
+    template<typename SubscriptionProviderArnT = Aws::String>
+    void SetSubscriptionProviderArn(SubscriptionProviderArnT&& value) { m_subscriptionProviderArnHasBeenSet = true; m_subscriptionProviderArn = std::forward<SubscriptionProviderArnT>(value); }
+    template<typename SubscriptionProviderArnT = Aws::String>
+    RegisterSubscriptionProviderResult& WithSubscriptionProviderArn(SubscriptionProviderArnT&& value) { SetSubscriptionProviderArn(std::forward<SubscriptionProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Linux subscription provider that you registered.</p>
      */
-    inline const SubscriptionProviderSource& GetSubscriptionProviderSource() const{ return m_subscriptionProviderSource; }
-    inline void SetSubscriptionProviderSource(const SubscriptionProviderSource& value) { m_subscriptionProviderSource = value; }
-    inline void SetSubscriptionProviderSource(SubscriptionProviderSource&& value) { m_subscriptionProviderSource = std::move(value); }
-    inline RegisterSubscriptionProviderResult& WithSubscriptionProviderSource(const SubscriptionProviderSource& value) { SetSubscriptionProviderSource(value); return *this;}
-    inline RegisterSubscriptionProviderResult& WithSubscriptionProviderSource(SubscriptionProviderSource&& value) { SetSubscriptionProviderSource(std::move(value)); return *this;}
+    inline SubscriptionProviderSource GetSubscriptionProviderSource() const { return m_subscriptionProviderSource; }
+    inline void SetSubscriptionProviderSource(SubscriptionProviderSource value) { m_subscriptionProviderSourceHasBeenSet = true; m_subscriptionProviderSource = value; }
+    inline RegisterSubscriptionProviderResult& WithSubscriptionProviderSource(SubscriptionProviderSource value) { SetSubscriptionProviderSource(value); return *this;}
     ///@}
 
     ///@{
@@ -64,32 +60,32 @@ namespace Model
      * <p>Indicates the status of the registration action for the Linux subscription
      * provider that you requested.</p>
      */
-    inline const SubscriptionProviderStatus& GetSubscriptionProviderStatus() const{ return m_subscriptionProviderStatus; }
-    inline void SetSubscriptionProviderStatus(const SubscriptionProviderStatus& value) { m_subscriptionProviderStatus = value; }
-    inline void SetSubscriptionProviderStatus(SubscriptionProviderStatus&& value) { m_subscriptionProviderStatus = std::move(value); }
-    inline RegisterSubscriptionProviderResult& WithSubscriptionProviderStatus(const SubscriptionProviderStatus& value) { SetSubscriptionProviderStatus(value); return *this;}
-    inline RegisterSubscriptionProviderResult& WithSubscriptionProviderStatus(SubscriptionProviderStatus&& value) { SetSubscriptionProviderStatus(std::move(value)); return *this;}
+    inline SubscriptionProviderStatus GetSubscriptionProviderStatus() const { return m_subscriptionProviderStatus; }
+    inline void SetSubscriptionProviderStatus(SubscriptionProviderStatus value) { m_subscriptionProviderStatusHasBeenSet = true; m_subscriptionProviderStatus = value; }
+    inline RegisterSubscriptionProviderResult& WithSubscriptionProviderStatus(SubscriptionProviderStatus value) { SetSubscriptionProviderStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterSubscriptionProviderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterSubscriptionProviderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterSubscriptionProviderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterSubscriptionProviderResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_subscriptionProviderArn;
+    bool m_subscriptionProviderArnHasBeenSet = false;
 
-    SubscriptionProviderSource m_subscriptionProviderSource;
+    SubscriptionProviderSource m_subscriptionProviderSource{SubscriptionProviderSource::NOT_SET};
+    bool m_subscriptionProviderSourceHasBeenSet = false;
 
-    SubscriptionProviderStatus m_subscriptionProviderStatus;
+    SubscriptionProviderStatus m_subscriptionProviderStatus{SubscriptionProviderStatus::NOT_SET};
+    bool m_subscriptionProviderStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace Detective
 namespace Model
 {
 
-RelatedFindingGroupDetail::RelatedFindingGroupDetail() : 
-    m_idHasBeenSet(false)
-{
-}
-
 RelatedFindingGroupDetail::RelatedFindingGroupDetail(JsonView jsonValue)
-  : RelatedFindingGroupDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RelatedFindingGroupDetail& RelatedFindingGroupDetail::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

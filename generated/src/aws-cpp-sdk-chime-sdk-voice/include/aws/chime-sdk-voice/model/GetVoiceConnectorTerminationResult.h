@@ -28,7 +28,7 @@ namespace Model
   class GetVoiceConnectorTerminationResult
   {
   public:
-    AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationResult();
+    AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationResult() = default;
     AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The termination setting details.</p>
      */
-    inline const Termination& GetTermination() const{ return m_termination; }
-    inline void SetTermination(const Termination& value) { m_termination = value; }
-    inline void SetTermination(Termination&& value) { m_termination = std::move(value); }
-    inline GetVoiceConnectorTerminationResult& WithTermination(const Termination& value) { SetTermination(value); return *this;}
-    inline GetVoiceConnectorTerminationResult& WithTermination(Termination&& value) { SetTermination(std::move(value)); return *this;}
+    inline const Termination& GetTermination() const { return m_termination; }
+    template<typename TerminationT = Termination>
+    void SetTermination(TerminationT&& value) { m_terminationHasBeenSet = true; m_termination = std::forward<TerminationT>(value); }
+    template<typename TerminationT = Termination>
+    GetVoiceConnectorTerminationResult& WithTermination(TerminationT&& value) { SetTermination(std::forward<TerminationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetVoiceConnectorTerminationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetVoiceConnectorTerminationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetVoiceConnectorTerminationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetVoiceConnectorTerminationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Termination m_termination;
+    bool m_terminationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

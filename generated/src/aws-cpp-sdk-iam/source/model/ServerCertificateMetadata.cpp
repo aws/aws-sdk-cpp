@@ -20,18 +20,7 @@ namespace IAM
 namespace Model
 {
 
-ServerCertificateMetadata::ServerCertificateMetadata() : 
-    m_pathHasBeenSet(false),
-    m_serverCertificateNameHasBeenSet(false),
-    m_serverCertificateIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_uploadDateHasBeenSet(false),
-    m_expirationHasBeenSet(false)
-{
-}
-
 ServerCertificateMetadata::ServerCertificateMetadata(const XmlNode& xmlNode)
-  : ServerCertificateMetadata()
 {
   *this = xmlNode;
 }
@@ -47,36 +36,42 @@ ServerCertificateMetadata& ServerCertificateMetadata::operator =(const XmlNode& 
     {
       m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
+       m_pathHasBeenSet = true;
     }
     XmlNode serverCertificateNameNode = resultNode.FirstChild("ServerCertificateName");
     if(!serverCertificateNameNode.IsNull())
     {
       m_serverCertificateName = Aws::Utils::Xml::DecodeEscapedXmlText(serverCertificateNameNode.GetText());
       m_serverCertificateNameHasBeenSet = true;
+       m_serverCertificateNameHasBeenSet = true;
     }
     XmlNode serverCertificateIdNode = resultNode.FirstChild("ServerCertificateId");
     if(!serverCertificateIdNode.IsNull())
     {
       m_serverCertificateId = Aws::Utils::Xml::DecodeEscapedXmlText(serverCertificateIdNode.GetText());
       m_serverCertificateIdHasBeenSet = true;
+       m_serverCertificateIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
     if(!uploadDateNode.IsNull())
     {
       m_uploadDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_uploadDateHasBeenSet = true;
+       m_uploadDateHasBeenSet = true;
     }
     XmlNode expirationNode = resultNode.FirstChild("Expiration");
     if(!expirationNode.IsNull())
     {
       m_expiration = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_expirationHasBeenSet = true;
+       m_expirationHasBeenSet = true;
     }
   }
 

@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClientVpnRoute::ClientVpnRoute() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_destinationCidrHasBeenSet(false),
-    m_targetSubnetHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ClientVpnRoute::ClientVpnRoute(const XmlNode& xmlNode)
-  : ClientVpnRoute()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,49 @@ ClientVpnRoute& ClientVpnRoute::operator =(const XmlNode& xmlNode)
     {
       m_clientVpnEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(clientVpnEndpointIdNode.GetText());
       m_clientVpnEndpointIdHasBeenSet = true;
+       m_clientVpnEndpointIdHasBeenSet = true;
     }
     XmlNode destinationCidrNode = resultNode.FirstChild("destinationCidr");
     if(!destinationCidrNode.IsNull())
     {
       m_destinationCidr = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrNode.GetText());
       m_destinationCidrHasBeenSet = true;
+       m_destinationCidrHasBeenSet = true;
     }
     XmlNode targetSubnetNode = resultNode.FirstChild("targetSubnet");
     if(!targetSubnetNode.IsNull())
     {
       m_targetSubnet = Aws::Utils::Xml::DecodeEscapedXmlText(targetSubnetNode.GetText());
       m_targetSubnetHasBeenSet = true;
+       m_targetSubnetHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
       m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode originNode = resultNode.FirstChild("origin");
     if(!originNode.IsNull())
     {
       m_origin = Aws::Utils::Xml::DecodeEscapedXmlText(originNode.GetText());
       m_originHasBeenSet = true;
+       m_originHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
   }
 

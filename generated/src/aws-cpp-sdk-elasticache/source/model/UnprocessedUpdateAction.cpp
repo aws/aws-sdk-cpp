@@ -20,17 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-UnprocessedUpdateAction::UnprocessedUpdateAction() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_cacheClusterIdHasBeenSet(false),
-    m_serviceUpdateNameHasBeenSet(false),
-    m_errorTypeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 UnprocessedUpdateAction::UnprocessedUpdateAction(const XmlNode& xmlNode)
-  : UnprocessedUpdateAction()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ UnprocessedUpdateAction& UnprocessedUpdateAction::operator =(const XmlNode& xmlN
     {
       m_replicationGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupIdNode.GetText());
       m_replicationGroupIdHasBeenSet = true;
+       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
     if(!cacheClusterIdNode.IsNull())
     {
       m_cacheClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterIdNode.GetText());
       m_cacheClusterIdHasBeenSet = true;
+       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode serviceUpdateNameNode = resultNode.FirstChild("ServiceUpdateName");
     if(!serviceUpdateNameNode.IsNull())
     {
       m_serviceUpdateName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateNameNode.GetText());
       m_serviceUpdateNameHasBeenSet = true;
+       m_serviceUpdateNameHasBeenSet = true;
     }
     XmlNode errorTypeNode = resultNode.FirstChild("ErrorType");
     if(!errorTypeNode.IsNull())
     {
       m_errorType = Aws::Utils::Xml::DecodeEscapedXmlText(errorTypeNode.GetText());
       m_errorTypeHasBeenSet = true;
+       m_errorTypeHasBeenSet = true;
     }
     XmlNode errorMessageNode = resultNode.FirstChild("ErrorMessage");
     if(!errorMessageNode.IsNull())
     {
       m_errorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(errorMessageNode.GetText());
       m_errorMessageHasBeenSet = true;
+       m_errorMessageHasBeenSet = true;
     }
   }
 

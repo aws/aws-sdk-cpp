@@ -35,7 +35,7 @@ namespace Model
   class ImageConfig
   {
   public:
-    AWS_LAMBDA_API ImageConfig();
+    AWS_LAMBDA_API ImageConfig() = default;
     AWS_LAMBDA_API ImageConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API ImageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,44 +46,40 @@ namespace Model
      * <p>Specifies the entry point to their application, which is typically the
      * location of the runtime executable.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEntryPoint() const{ return m_entryPoint; }
+    inline const Aws::Vector<Aws::String>& GetEntryPoint() const { return m_entryPoint; }
     inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }
-    inline void SetEntryPoint(const Aws::Vector<Aws::String>& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
-    inline void SetEntryPoint(Aws::Vector<Aws::String>&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
-    inline ImageConfig& WithEntryPoint(const Aws::Vector<Aws::String>& value) { SetEntryPoint(value); return *this;}
-    inline ImageConfig& WithEntryPoint(Aws::Vector<Aws::String>&& value) { SetEntryPoint(std::move(value)); return *this;}
-    inline ImageConfig& AddEntryPoint(const Aws::String& value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(value); return *this; }
-    inline ImageConfig& AddEntryPoint(Aws::String&& value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(std::move(value)); return *this; }
-    inline ImageConfig& AddEntryPoint(const char* value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(value); return *this; }
+    template<typename EntryPointT = Aws::Vector<Aws::String>>
+    void SetEntryPoint(EntryPointT&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::forward<EntryPointT>(value); }
+    template<typename EntryPointT = Aws::Vector<Aws::String>>
+    ImageConfig& WithEntryPoint(EntryPointT&& value) { SetEntryPoint(std::forward<EntryPointT>(value)); return *this;}
+    template<typename EntryPointT = Aws::String>
+    ImageConfig& AddEntryPoint(EntryPointT&& value) { m_entryPointHasBeenSet = true; m_entryPoint.emplace_back(std::forward<EntryPointT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
+    inline const Aws::Vector<Aws::String>& GetCommand() const { return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-    inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-    inline ImageConfig& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
-    inline ImageConfig& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
-    inline ImageConfig& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
-    inline ImageConfig& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
-    inline ImageConfig& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    void SetCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command = std::forward<CommandT>(value); }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    ImageConfig& WithCommand(CommandT&& value) { SetCommand(std::forward<CommandT>(value)); return *this;}
+    template<typename CommandT = Aws::String>
+    ImageConfig& AddCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command.emplace_back(std::forward<CommandT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the working directory.</p>
      */
-    inline const Aws::String& GetWorkingDirectory() const{ return m_workingDirectory; }
+    inline const Aws::String& GetWorkingDirectory() const { return m_workingDirectory; }
     inline bool WorkingDirectoryHasBeenSet() const { return m_workingDirectoryHasBeenSet; }
-    inline void SetWorkingDirectory(const Aws::String& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = value; }
-    inline void SetWorkingDirectory(Aws::String&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::move(value); }
-    inline void SetWorkingDirectory(const char* value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory.assign(value); }
-    inline ImageConfig& WithWorkingDirectory(const Aws::String& value) { SetWorkingDirectory(value); return *this;}
-    inline ImageConfig& WithWorkingDirectory(Aws::String&& value) { SetWorkingDirectory(std::move(value)); return *this;}
-    inline ImageConfig& WithWorkingDirectory(const char* value) { SetWorkingDirectory(value); return *this;}
+    template<typename WorkingDirectoryT = Aws::String>
+    void SetWorkingDirectory(WorkingDirectoryT&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::forward<WorkingDirectoryT>(value); }
+    template<typename WorkingDirectoryT = Aws::String>
+    ImageConfig& WithWorkingDirectory(WorkingDirectoryT&& value) { SetWorkingDirectory(std::forward<WorkingDirectoryT>(value)); return *this;}
     ///@}
   private:
 

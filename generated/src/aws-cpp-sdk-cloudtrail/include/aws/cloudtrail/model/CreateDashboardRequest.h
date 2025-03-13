@@ -25,7 +25,7 @@ namespace Model
   class CreateDashboardRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API CreateDashboardRequest();
+    AWS_CLOUDTRAIL_API CreateDashboardRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>To create the Highlights dashboard, the name must be
      * <code>AWSCloudTrail-Highlights</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateDashboardRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateDashboardRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateDashboardRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateDashboardRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,24 +60,24 @@ namespace Model
      * refresh schedule must be <code>HOURS</code> and the <code>Value</code> must be
      * <code>6</code>.</p>
      */
-    inline const RefreshSchedule& GetRefreshSchedule() const{ return m_refreshSchedule; }
+    inline const RefreshSchedule& GetRefreshSchedule() const { return m_refreshSchedule; }
     inline bool RefreshScheduleHasBeenSet() const { return m_refreshScheduleHasBeenSet; }
-    inline void SetRefreshSchedule(const RefreshSchedule& value) { m_refreshScheduleHasBeenSet = true; m_refreshSchedule = value; }
-    inline void SetRefreshSchedule(RefreshSchedule&& value) { m_refreshScheduleHasBeenSet = true; m_refreshSchedule = std::move(value); }
-    inline CreateDashboardRequest& WithRefreshSchedule(const RefreshSchedule& value) { SetRefreshSchedule(value); return *this;}
-    inline CreateDashboardRequest& WithRefreshSchedule(RefreshSchedule&& value) { SetRefreshSchedule(std::move(value)); return *this;}
+    template<typename RefreshScheduleT = RefreshSchedule>
+    void SetRefreshSchedule(RefreshScheduleT&& value) { m_refreshScheduleHasBeenSet = true; m_refreshSchedule = std::forward<RefreshScheduleT>(value); }
+    template<typename RefreshScheduleT = RefreshSchedule>
+    CreateDashboardRequest& WithRefreshSchedule(RefreshScheduleT&& value) { SetRefreshSchedule(std::forward<RefreshScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTagsList() const{ return m_tagsList; }
+    inline const Aws::Vector<Tag>& GetTagsList() const { return m_tagsList; }
     inline bool TagsListHasBeenSet() const { return m_tagsListHasBeenSet; }
-    inline void SetTagsList(const Aws::Vector<Tag>& value) { m_tagsListHasBeenSet = true; m_tagsList = value; }
-    inline void SetTagsList(Aws::Vector<Tag>&& value) { m_tagsListHasBeenSet = true; m_tagsList = std::move(value); }
-    inline CreateDashboardRequest& WithTagsList(const Aws::Vector<Tag>& value) { SetTagsList(value); return *this;}
-    inline CreateDashboardRequest& WithTagsList(Aws::Vector<Tag>&& value) { SetTagsList(std::move(value)); return *this;}
-    inline CreateDashboardRequest& AddTagsList(const Tag& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(value); return *this; }
-    inline CreateDashboardRequest& AddTagsList(Tag&& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(std::move(value)); return *this; }
+    template<typename TagsListT = Aws::Vector<Tag>>
+    void SetTagsList(TagsListT&& value) { m_tagsListHasBeenSet = true; m_tagsList = std::forward<TagsListT>(value); }
+    template<typename TagsListT = Aws::Vector<Tag>>
+    CreateDashboardRequest& WithTagsList(TagsListT&& value) { SetTagsList(std::forward<TagsListT>(value)); return *this;}
+    template<typename TagsListT = Tag>
+    CreateDashboardRequest& AddTagsList(TagsListT&& value) { m_tagsListHasBeenSet = true; m_tagsList.emplace_back(std::forward<TagsListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,7 +86,7 @@ namespace Model
      * termination protection is enabled, you cannot delete the dashboard until
      * termination protection is disabled. </p>
      */
-    inline bool GetTerminationProtectionEnabled() const{ return m_terminationProtectionEnabled; }
+    inline bool GetTerminationProtectionEnabled() const { return m_terminationProtectionEnabled; }
     inline bool TerminationProtectionEnabledHasBeenSet() const { return m_terminationProtectionEnabledHasBeenSet; }
     inline void SetTerminationProtectionEnabled(bool value) { m_terminationProtectionEnabledHasBeenSet = true; m_terminationProtectionEnabled = value; }
     inline CreateDashboardRequest& WithTerminationProtectionEnabled(bool value) { SetTerminationProtectionEnabled(value); return *this;}
@@ -100,14 +98,14 @@ namespace Model
      * maximum of ten widgets. </p> <p>You do not need to specify widgets for the
      * Highlights dashboard.</p>
      */
-    inline const Aws::Vector<RequestWidget>& GetWidgets() const{ return m_widgets; }
+    inline const Aws::Vector<RequestWidget>& GetWidgets() const { return m_widgets; }
     inline bool WidgetsHasBeenSet() const { return m_widgetsHasBeenSet; }
-    inline void SetWidgets(const Aws::Vector<RequestWidget>& value) { m_widgetsHasBeenSet = true; m_widgets = value; }
-    inline void SetWidgets(Aws::Vector<RequestWidget>&& value) { m_widgetsHasBeenSet = true; m_widgets = std::move(value); }
-    inline CreateDashboardRequest& WithWidgets(const Aws::Vector<RequestWidget>& value) { SetWidgets(value); return *this;}
-    inline CreateDashboardRequest& WithWidgets(Aws::Vector<RequestWidget>&& value) { SetWidgets(std::move(value)); return *this;}
-    inline CreateDashboardRequest& AddWidgets(const RequestWidget& value) { m_widgetsHasBeenSet = true; m_widgets.push_back(value); return *this; }
-    inline CreateDashboardRequest& AddWidgets(RequestWidget&& value) { m_widgetsHasBeenSet = true; m_widgets.push_back(std::move(value)); return *this; }
+    template<typename WidgetsT = Aws::Vector<RequestWidget>>
+    void SetWidgets(WidgetsT&& value) { m_widgetsHasBeenSet = true; m_widgets = std::forward<WidgetsT>(value); }
+    template<typename WidgetsT = Aws::Vector<RequestWidget>>
+    CreateDashboardRequest& WithWidgets(WidgetsT&& value) { SetWidgets(std::forward<WidgetsT>(value)); return *this;}
+    template<typename WidgetsT = RequestWidget>
+    CreateDashboardRequest& AddWidgets(WidgetsT&& value) { m_widgetsHasBeenSet = true; m_widgets.emplace_back(std::forward<WidgetsT>(value)); return *this; }
     ///@}
   private:
 
@@ -120,7 +118,7 @@ namespace Model
     Aws::Vector<Tag> m_tagsList;
     bool m_tagsListHasBeenSet = false;
 
-    bool m_terminationProtectionEnabled;
+    bool m_terminationProtectionEnabled{false};
     bool m_terminationProtectionEnabledHasBeenSet = false;
 
     Aws::Vector<RequestWidget> m_widgets;

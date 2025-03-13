@@ -12,13 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIngestConfigurationRequest::DeleteIngestConfigurationRequest() : 
-    m_arnHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIngestConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

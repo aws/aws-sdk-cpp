@@ -18,16 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-AssetContract::AssetContract() : 
-    m_contractIdentifierHasBeenSet(false),
-    m_tokenStandard(QueryTokenStandard::NOT_SET),
-    m_tokenStandardHasBeenSet(false),
-    m_deployerAddressHasBeenSet(false)
-{
-}
-
 AssetContract::AssetContract(JsonView jsonValue)
-  : AssetContract()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AssetContract& AssetContract::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contractIdentifier"))
   {
     m_contractIdentifier = jsonValue.GetObject("contractIdentifier");
-
     m_contractIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenStandard"))
   {
     m_tokenStandard = QueryTokenStandardMapper::GetQueryTokenStandardForName(jsonValue.GetString("tokenStandard"));
-
     m_tokenStandardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deployerAddress"))
   {
     m_deployerAddress = jsonValue.GetString("deployerAddress");
-
     m_deployerAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

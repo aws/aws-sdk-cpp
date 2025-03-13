@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAssetModelPropertiesResult::ListAssetModelPropertiesResult()
-{
-}
-
 ListAssetModelPropertiesResult::ListAssetModelPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListAssetModelPropertiesResult& ListAssetModelPropertiesResult::operator =(const
     {
       m_assetModelPropertySummaries.push_back(assetModelPropertySummariesJsonList[assetModelPropertySummariesIndex].AsObject());
     }
+    m_assetModelPropertySummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

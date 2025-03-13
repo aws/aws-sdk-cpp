@@ -20,18 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-PlatformBranchSummary::PlatformBranchSummary() : 
-    m_platformNameHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_lifecycleStateHasBeenSet(false),
-    m_branchOrder(0),
-    m_branchOrderHasBeenSet(false),
-    m_supportedTierListHasBeenSet(false)
-{
-}
-
 PlatformBranchSummary::PlatformBranchSummary(const XmlNode& xmlNode)
-  : PlatformBranchSummary()
 {
   *this = xmlNode;
 }
@@ -47,36 +36,41 @@ PlatformBranchSummary& PlatformBranchSummary::operator =(const XmlNode& xmlNode)
     {
       m_platformName = Aws::Utils::Xml::DecodeEscapedXmlText(platformNameNode.GetText());
       m_platformNameHasBeenSet = true;
+       m_platformNameHasBeenSet = true;
     }
     XmlNode branchNameNode = resultNode.FirstChild("BranchName");
     if(!branchNameNode.IsNull())
     {
       m_branchName = Aws::Utils::Xml::DecodeEscapedXmlText(branchNameNode.GetText());
       m_branchNameHasBeenSet = true;
+       m_branchNameHasBeenSet = true;
     }
     XmlNode lifecycleStateNode = resultNode.FirstChild("LifecycleState");
     if(!lifecycleStateNode.IsNull())
     {
       m_lifecycleState = Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleStateNode.GetText());
       m_lifecycleStateHasBeenSet = true;
+       m_lifecycleStateHasBeenSet = true;
     }
     XmlNode branchOrderNode = resultNode.FirstChild("BranchOrder");
     if(!branchOrderNode.IsNull())
     {
       m_branchOrder = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(branchOrderNode.GetText()).c_str()).c_str());
       m_branchOrderHasBeenSet = true;
+       m_branchOrderHasBeenSet = true;
     }
     XmlNode supportedTierListNode = resultNode.FirstChild("SupportedTierList");
     if(!supportedTierListNode.IsNull())
     {
       XmlNode supportedTierListMember = supportedTierListNode.FirstChild("member");
+      m_supportedTierListHasBeenSet = !supportedTierListMember.IsNull();
       while(!supportedTierListMember.IsNull())
       {
         m_supportedTierList.push_back(supportedTierListMember.GetText());
         supportedTierListMember = supportedTierListMember.NextNode("member");
       }
 
-      m_supportedTierListHasBeenSet = true;
+       m_supportedTierListHasBeenSet = true;
     }
   }
 

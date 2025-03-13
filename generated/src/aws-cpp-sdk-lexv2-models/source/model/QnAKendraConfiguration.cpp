@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-QnAKendraConfiguration::QnAKendraConfiguration() : 
-    m_kendraIndexHasBeenSet(false),
-    m_queryFilterStringEnabled(false),
-    m_queryFilterStringEnabledHasBeenSet(false),
-    m_queryFilterStringHasBeenSet(false),
-    m_exactResponse(false),
-    m_exactResponseHasBeenSet(false)
-{
-}
-
 QnAKendraConfiguration::QnAKendraConfiguration(JsonView jsonValue)
-  : QnAKendraConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ QnAKendraConfiguration& QnAKendraConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kendraIndex"))
   {
     m_kendraIndex = jsonValue.GetString("kendraIndex");
-
     m_kendraIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryFilterStringEnabled"))
   {
     m_queryFilterStringEnabled = jsonValue.GetBool("queryFilterStringEnabled");
-
     m_queryFilterStringEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryFilterString"))
   {
     m_queryFilterString = jsonValue.GetString("queryFilterString");
-
     m_queryFilterStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exactResponse"))
   {
     m_exactResponse = jsonValue.GetBool("exactResponse");
-
     m_exactResponseHasBeenSet = true;
   }
-
   return *this;
 }
 

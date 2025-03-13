@@ -19,7 +19,7 @@ namespace Model
   class PutHubConfigurationRequest : public IoTManagedIntegrationsRequest
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API PutHubConfigurationRequest();
+    AWS_IOTMANAGEDINTEGRATIONS_API PutHubConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,14 +35,14 @@ namespace Model
      * <p>A user-defined integer value that represents the hub token timer expiry
      * setting in seconds.</p>
      */
-    inline long long GetHubTokenTimerExpirySettingInSeconds() const{ return m_hubTokenTimerExpirySettingInSeconds; }
+    inline long long GetHubTokenTimerExpirySettingInSeconds() const { return m_hubTokenTimerExpirySettingInSeconds; }
     inline bool HubTokenTimerExpirySettingInSecondsHasBeenSet() const { return m_hubTokenTimerExpirySettingInSecondsHasBeenSet; }
     inline void SetHubTokenTimerExpirySettingInSeconds(long long value) { m_hubTokenTimerExpirySettingInSecondsHasBeenSet = true; m_hubTokenTimerExpirySettingInSeconds = value; }
     inline PutHubConfigurationRequest& WithHubTokenTimerExpirySettingInSeconds(long long value) { SetHubTokenTimerExpirySettingInSeconds(value); return *this;}
     ///@}
   private:
 
-    long long m_hubTokenTimerExpirySettingInSeconds;
+    long long m_hubTokenTimerExpirySettingInSeconds{0};
     bool m_hubTokenTimerExpirySettingInSecondsHasBeenSet = false;
   };
 

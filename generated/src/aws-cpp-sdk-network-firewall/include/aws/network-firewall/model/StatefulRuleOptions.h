@@ -32,7 +32,7 @@ namespace Model
   class StatefulRuleOptions
   {
   public:
-    AWS_NETWORKFIREWALL_API StatefulRuleOptions();
+    AWS_NETWORKFIREWALL_API StatefulRuleOptions() = default;
     AWS_NETWORKFIREWALL_API StatefulRuleOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API StatefulRuleOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,16 +48,14 @@ namespace Model
      * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
      */
-    inline const RuleOrder& GetRuleOrder() const{ return m_ruleOrder; }
+    inline RuleOrder GetRuleOrder() const { return m_ruleOrder; }
     inline bool RuleOrderHasBeenSet() const { return m_ruleOrderHasBeenSet; }
-    inline void SetRuleOrder(const RuleOrder& value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = value; }
-    inline void SetRuleOrder(RuleOrder&& value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = std::move(value); }
-    inline StatefulRuleOptions& WithRuleOrder(const RuleOrder& value) { SetRuleOrder(value); return *this;}
-    inline StatefulRuleOptions& WithRuleOrder(RuleOrder&& value) { SetRuleOrder(std::move(value)); return *this;}
+    inline void SetRuleOrder(RuleOrder value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = value; }
+    inline StatefulRuleOptions& WithRuleOrder(RuleOrder value) { SetRuleOrder(value); return *this;}
     ///@}
   private:
 
-    RuleOrder m_ruleOrder;
+    RuleOrder m_ruleOrder{RuleOrder::NOT_SET};
     bool m_ruleOrderHasBeenSet = false;
   };
 

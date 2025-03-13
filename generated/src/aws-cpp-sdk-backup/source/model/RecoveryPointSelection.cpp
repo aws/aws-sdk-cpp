@@ -18,15 +18,7 @@ namespace Backup
 namespace Model
 {
 
-RecoveryPointSelection::RecoveryPointSelection() : 
-    m_vaultNamesHasBeenSet(false),
-    m_resourceIdentifiersHasBeenSet(false),
-    m_dateRangeHasBeenSet(false)
-{
-}
-
 RecoveryPointSelection::RecoveryPointSelection(JsonView jsonValue)
-  : RecoveryPointSelection()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ RecoveryPointSelection& RecoveryPointSelection::operator =(JsonView jsonValue)
     }
     m_vaultNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceIdentifiers"))
   {
     Aws::Utils::Array<JsonView> resourceIdentifiersJsonList = jsonValue.GetArray("ResourceIdentifiers");
@@ -52,14 +43,11 @@ RecoveryPointSelection& RecoveryPointSelection::operator =(JsonView jsonValue)
     }
     m_resourceIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateRange"))
   {
     m_dateRange = jsonValue.GetObject("DateRange");
-
     m_dateRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

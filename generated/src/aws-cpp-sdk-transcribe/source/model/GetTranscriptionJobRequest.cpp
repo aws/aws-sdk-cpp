@@ -12,11 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTranscriptionJobRequest::GetTranscriptionJobRequest() : 
-    m_transcriptionJobNameHasBeenSet(false)
-{
-}
-
 Aws::String GetTranscriptionJobRequest::SerializePayload() const
 {
   JsonValue payload;

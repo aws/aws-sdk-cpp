@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketPolicyStatusResult::GetBucketPolicyStatusResult()
-{
-}
-
 GetBucketPolicyStatusResult::GetBucketPolicyStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetBucketPolicyStatusResult& GetBucketPolicyStatusResult::operator =(const Aws::
   if(!resultNode.IsNull())
   {
     m_policyStatus = resultNode;
+    m_policyStatusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ GetBucketPolicyStatusResult& GetBucketPolicyStatusResult::operator =(const Aws::
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

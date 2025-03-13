@@ -18,17 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ProfileShareSummary::ProfileShareSummary() : 
-    m_shareIdHasBeenSet(false),
-    m_sharedWithHasBeenSet(false),
-    m_status(ShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 ProfileShareSummary::ProfileShareSummary(JsonView jsonValue)
-  : ProfileShareSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ProfileShareSummary& ProfileShareSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ShareId"))
   {
     m_shareId = jsonValue.GetString("ShareId");
-
     m_shareIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharedWith"))
   {
     m_sharedWith = jsonValue.GetString("SharedWith");
-
     m_sharedWithHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

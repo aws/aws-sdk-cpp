@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCatalogRequest::UpdateCatalogRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_catalogInputHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCatalogRequest::SerializePayload() const
 {
   JsonValue payload;

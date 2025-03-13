@@ -32,7 +32,7 @@ namespace Model
   class PrivateDnsPropertiesMutableChange
   {
   public:
-    AWS_SERVICEDISCOVERY_API PrivateDnsPropertiesMutableChange();
+    AWS_SERVICEDISCOVERY_API PrivateDnsPropertiesMutableChange() = default;
     AWS_SERVICEDISCOVERY_API PrivateDnsPropertiesMutableChange(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API PrivateDnsPropertiesMutableChange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Updated fields for the Start of Authority (SOA) record for the hosted zone
      * for the private DNS namespace.</p>
      */
-    inline const SOAChange& GetSOA() const{ return m_sOA; }
+    inline const SOAChange& GetSOA() const { return m_sOA; }
     inline bool SOAHasBeenSet() const { return m_sOAHasBeenSet; }
-    inline void SetSOA(const SOAChange& value) { m_sOAHasBeenSet = true; m_sOA = value; }
-    inline void SetSOA(SOAChange&& value) { m_sOAHasBeenSet = true; m_sOA = std::move(value); }
-    inline PrivateDnsPropertiesMutableChange& WithSOA(const SOAChange& value) { SetSOA(value); return *this;}
-    inline PrivateDnsPropertiesMutableChange& WithSOA(SOAChange&& value) { SetSOA(std::move(value)); return *this;}
+    template<typename SOAT = SOAChange>
+    void SetSOA(SOAT&& value) { m_sOAHasBeenSet = true; m_sOA = std::forward<SOAT>(value); }
+    template<typename SOAT = SOAChange>
+    PrivateDnsPropertiesMutableChange& WithSOA(SOAT&& value) { SetSOA(std::forward<SOAT>(value)); return *this;}
     ///@}
   private:
 

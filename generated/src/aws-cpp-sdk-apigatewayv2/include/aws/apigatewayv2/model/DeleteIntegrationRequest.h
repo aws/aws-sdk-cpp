@@ -21,7 +21,7 @@ namespace Model
   class DeleteIntegrationRequest : public ApiGatewayV2Request
   {
   public:
-    AWS_APIGATEWAYV2_API DeleteIntegrationRequest();
+    AWS_APIGATEWAYV2_API DeleteIntegrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline DeleteIntegrationRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline DeleteIntegrationRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline DeleteIntegrationRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    DeleteIntegrationRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The integration ID.</p>
      */
-    inline const Aws::String& GetIntegrationId() const{ return m_integrationId; }
+    inline const Aws::String& GetIntegrationId() const { return m_integrationId; }
     inline bool IntegrationIdHasBeenSet() const { return m_integrationIdHasBeenSet; }
-    inline void SetIntegrationId(const Aws::String& value) { m_integrationIdHasBeenSet = true; m_integrationId = value; }
-    inline void SetIntegrationId(Aws::String&& value) { m_integrationIdHasBeenSet = true; m_integrationId = std::move(value); }
-    inline void SetIntegrationId(const char* value) { m_integrationIdHasBeenSet = true; m_integrationId.assign(value); }
-    inline DeleteIntegrationRequest& WithIntegrationId(const Aws::String& value) { SetIntegrationId(value); return *this;}
-    inline DeleteIntegrationRequest& WithIntegrationId(Aws::String&& value) { SetIntegrationId(std::move(value)); return *this;}
-    inline DeleteIntegrationRequest& WithIntegrationId(const char* value) { SetIntegrationId(value); return *this;}
+    template<typename IntegrationIdT = Aws::String>
+    void SetIntegrationId(IntegrationIdT&& value) { m_integrationIdHasBeenSet = true; m_integrationId = std::forward<IntegrationIdT>(value); }
+    template<typename IntegrationIdT = Aws::String>
+    DeleteIntegrationRequest& WithIntegrationId(IntegrationIdT&& value) { SetIntegrationId(std::forward<IntegrationIdT>(value)); return *this;}
     ///@}
   private:
 

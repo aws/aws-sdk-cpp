@@ -22,7 +22,7 @@ namespace Model
   class PredictQAppRequest : public QAppsRequest
   {
   public:
-    AWS_QAPPS_API PredictQAppRequest();
+    AWS_QAPPS_API PredictQAppRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The unique identifier of the Amazon Q Business application environment
      * instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline PredictQAppRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline PredictQAppRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline PredictQAppRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    PredictQAppRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>The input to generate the Q App definition from, either a conversation or
      * problem statement.</p>
      */
-    inline const PredictQAppInputOptions& GetOptions() const{ return m_options; }
+    inline const PredictQAppInputOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const PredictQAppInputOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(PredictQAppInputOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline PredictQAppRequest& WithOptions(const PredictQAppInputOptions& value) { SetOptions(value); return *this;}
-    inline PredictQAppRequest& WithOptions(PredictQAppInputOptions&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = PredictQAppInputOptions>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = PredictQAppInputOptions>
+    PredictQAppRequest& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
   private:
 

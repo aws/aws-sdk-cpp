@@ -36,7 +36,7 @@ namespace Model
   class AwsWafv2RulesActionDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsWafv2RulesActionDetails();
+    AWS_SECURITYHUB_API AwsWafv2RulesActionDetails() = default;
     AWS_SECURITYHUB_API AwsWafv2RulesActionDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsWafv2RulesActionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,36 +46,36 @@ namespace Model
     /**
      * <p> Instructs WAF to allow the web request. </p>
      */
-    inline const AwsWafv2ActionAllowDetails& GetAllow() const{ return m_allow; }
+    inline const AwsWafv2ActionAllowDetails& GetAllow() const { return m_allow; }
     inline bool AllowHasBeenSet() const { return m_allowHasBeenSet; }
-    inline void SetAllow(const AwsWafv2ActionAllowDetails& value) { m_allowHasBeenSet = true; m_allow = value; }
-    inline void SetAllow(AwsWafv2ActionAllowDetails&& value) { m_allowHasBeenSet = true; m_allow = std::move(value); }
-    inline AwsWafv2RulesActionDetails& WithAllow(const AwsWafv2ActionAllowDetails& value) { SetAllow(value); return *this;}
-    inline AwsWafv2RulesActionDetails& WithAllow(AwsWafv2ActionAllowDetails&& value) { SetAllow(std::move(value)); return *this;}
+    template<typename AllowT = AwsWafv2ActionAllowDetails>
+    void SetAllow(AllowT&& value) { m_allowHasBeenSet = true; m_allow = std::forward<AllowT>(value); }
+    template<typename AllowT = AwsWafv2ActionAllowDetails>
+    AwsWafv2RulesActionDetails& WithAllow(AllowT&& value) { SetAllow(std::forward<AllowT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Instructs WAF to block the web request. </p>
      */
-    inline const AwsWafv2ActionBlockDetails& GetBlock() const{ return m_block; }
+    inline const AwsWafv2ActionBlockDetails& GetBlock() const { return m_block; }
     inline bool BlockHasBeenSet() const { return m_blockHasBeenSet; }
-    inline void SetBlock(const AwsWafv2ActionBlockDetails& value) { m_blockHasBeenSet = true; m_block = value; }
-    inline void SetBlock(AwsWafv2ActionBlockDetails&& value) { m_blockHasBeenSet = true; m_block = std::move(value); }
-    inline AwsWafv2RulesActionDetails& WithBlock(const AwsWafv2ActionBlockDetails& value) { SetBlock(value); return *this;}
-    inline AwsWafv2RulesActionDetails& WithBlock(AwsWafv2ActionBlockDetails&& value) { SetBlock(std::move(value)); return *this;}
+    template<typename BlockT = AwsWafv2ActionBlockDetails>
+    void SetBlock(BlockT&& value) { m_blockHasBeenSet = true; m_block = std::forward<BlockT>(value); }
+    template<typename BlockT = AwsWafv2ActionBlockDetails>
+    AwsWafv2RulesActionDetails& WithBlock(BlockT&& value) { SetBlock(std::forward<BlockT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Instructs WAF to run a CAPTCHA check against the web request. </p>
      */
-    inline const AwsWafv2RulesActionCaptchaDetails& GetCaptcha() const{ return m_captcha; }
+    inline const AwsWafv2RulesActionCaptchaDetails& GetCaptcha() const { return m_captcha; }
     inline bool CaptchaHasBeenSet() const { return m_captchaHasBeenSet; }
-    inline void SetCaptcha(const AwsWafv2RulesActionCaptchaDetails& value) { m_captchaHasBeenSet = true; m_captcha = value; }
-    inline void SetCaptcha(AwsWafv2RulesActionCaptchaDetails&& value) { m_captchaHasBeenSet = true; m_captcha = std::move(value); }
-    inline AwsWafv2RulesActionDetails& WithCaptcha(const AwsWafv2RulesActionCaptchaDetails& value) { SetCaptcha(value); return *this;}
-    inline AwsWafv2RulesActionDetails& WithCaptcha(AwsWafv2RulesActionCaptchaDetails&& value) { SetCaptcha(std::move(value)); return *this;}
+    template<typename CaptchaT = AwsWafv2RulesActionCaptchaDetails>
+    void SetCaptcha(CaptchaT&& value) { m_captchaHasBeenSet = true; m_captcha = std::forward<CaptchaT>(value); }
+    template<typename CaptchaT = AwsWafv2RulesActionCaptchaDetails>
+    AwsWafv2RulesActionDetails& WithCaptcha(CaptchaT&& value) { SetCaptcha(std::forward<CaptchaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +83,12 @@ namespace Model
      * <p> Instructs WAF to count the web request and then continue evaluating the
      * request using the remaining rules in the web ACL. </p>
      */
-    inline const AwsWafv2RulesActionCountDetails& GetCount() const{ return m_count; }
+    inline const AwsWafv2RulesActionCountDetails& GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-    inline void SetCount(const AwsWafv2RulesActionCountDetails& value) { m_countHasBeenSet = true; m_count = value; }
-    inline void SetCount(AwsWafv2RulesActionCountDetails&& value) { m_countHasBeenSet = true; m_count = std::move(value); }
-    inline AwsWafv2RulesActionDetails& WithCount(const AwsWafv2RulesActionCountDetails& value) { SetCount(value); return *this;}
-    inline AwsWafv2RulesActionDetails& WithCount(AwsWafv2RulesActionCountDetails&& value) { SetCount(std::move(value)); return *this;}
+    template<typename CountT = AwsWafv2RulesActionCountDetails>
+    void SetCount(CountT&& value) { m_countHasBeenSet = true; m_count = std::forward<CountT>(value); }
+    template<typename CountT = AwsWafv2RulesActionCountDetails>
+    AwsWafv2RulesActionDetails& WithCount(CountT&& value) { SetCount(std::forward<CountT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class RequestBody
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RequestBody();
+    AWS_BEDROCKAGENTRUNTIME_API RequestBody() = default;
     AWS_BEDROCKAGENTRUNTIME_API RequestBody(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RequestBody& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,18 +44,16 @@ namespace Model
     /**
      * <p>The content in the request body.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Parameter>>& GetContent() const{ return m_content; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Parameter>>& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::Map<Aws::String, Aws::Vector<Parameter>>& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::Map<Aws::String, Aws::Vector<Parameter>>&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline RequestBody& WithContent(const Aws::Map<Aws::String, Aws::Vector<Parameter>>& value) { SetContent(value); return *this;}
-    inline RequestBody& WithContent(Aws::Map<Aws::String, Aws::Vector<Parameter>>&& value) { SetContent(std::move(value)); return *this;}
-    inline RequestBody& AddContent(const Aws::String& key, const Aws::Vector<Parameter>& value) { m_contentHasBeenSet = true; m_content.emplace(key, value); return *this; }
-    inline RequestBody& AddContent(Aws::String&& key, const Aws::Vector<Parameter>& value) { m_contentHasBeenSet = true; m_content.emplace(std::move(key), value); return *this; }
-    inline RequestBody& AddContent(const Aws::String& key, Aws::Vector<Parameter>&& value) { m_contentHasBeenSet = true; m_content.emplace(key, std::move(value)); return *this; }
-    inline RequestBody& AddContent(Aws::String&& key, Aws::Vector<Parameter>&& value) { m_contentHasBeenSet = true; m_content.emplace(std::move(key), std::move(value)); return *this; }
-    inline RequestBody& AddContent(const char* key, Aws::Vector<Parameter>&& value) { m_contentHasBeenSet = true; m_content.emplace(key, std::move(value)); return *this; }
-    inline RequestBody& AddContent(const char* key, const Aws::Vector<Parameter>& value) { m_contentHasBeenSet = true; m_content.emplace(key, value); return *this; }
+    template<typename ContentT = Aws::Map<Aws::String, Aws::Vector<Parameter>>>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::Map<Aws::String, Aws::Vector<Parameter>>>
+    RequestBody& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
+    template<typename ContentKeyT = Aws::String, typename ContentValueT = Aws::Vector<Parameter>>
+    RequestBody& AddContent(ContentKeyT&& key, ContentValueT&& value) {
+      m_contentHasBeenSet = true; m_content.emplace(std::forward<ContentKeyT>(key), std::forward<ContentValueT>(value)); return *this;
+    }
     ///@}
   private:
 

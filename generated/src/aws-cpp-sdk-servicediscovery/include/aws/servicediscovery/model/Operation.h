@@ -37,7 +37,7 @@ namespace Model
   class Operation
   {
   public:
-    AWS_SERVICEDISCOVERY_API Operation();
+    AWS_SERVICEDISCOVERY_API Operation() = default;
     AWS_SERVICEDISCOVERY_API Operation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Operation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,22 @@ namespace Model
     /**
      * <p>The ID of the operation that you want to get information about.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Operation& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Operation& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Operation& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Operation& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the operation that's associated with the specified ID.</p>
      */
-    inline const OperationType& GetType() const{ return m_type; }
+    inline OperationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const OperationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(OperationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Operation& WithType(const OperationType& value) { SetType(value); return *this;}
-    inline Operation& WithType(OperationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(OperationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Operation& WithType(OperationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +74,10 @@ namespace Model
      * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
      * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>
      */
-    inline const OperationStatus& GetStatus() const{ return m_status; }
+    inline OperationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Operation& WithStatus(const OperationStatus& value) { SetStatus(value); return *this;}
-    inline Operation& WithStatus(OperationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(OperationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Operation& WithStatus(OperationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the
      * operation failed.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline Operation& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline Operation& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline Operation& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    Operation& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +105,12 @@ namespace Model
      * <code>INVALID_CHANGE_BATCH</code> </p> </li> <li> <p>
      * <code>THROTTLED_REQUEST</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline Operation& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline Operation& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline Operation& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    Operation& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,12 +120,12 @@ namespace Model
      * accurate to milliseconds. For example, the value <code>1516925490.087</code>
      * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const { return m_createDate; }
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-    inline Operation& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-    inline Operation& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    Operation& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,12 +136,12 @@ namespace Model
      * the value <code>1516925490.087</code> represents Friday, January 26, 2018
      * 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
+    inline const Aws::Utils::DateTime& GetUpdateDate() const { return m_updateDate; }
     inline bool UpdateDateHasBeenSet() const { return m_updateDateHasBeenSet; }
-    inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
-    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = std::move(value); }
-    inline Operation& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
-    inline Operation& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
+    template<typename UpdateDateT = Aws::Utils::DateTime>
+    void SetUpdateDate(UpdateDateT&& value) { m_updateDateHasBeenSet = true; m_updateDate = std::forward<UpdateDateT>(value); }
+    template<typename UpdateDateT = Aws::Utils::DateTime>
+    Operation& WithUpdateDate(UpdateDateT&& value) { SetUpdateDate(std::forward<UpdateDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,28 +153,25 @@ namespace Model
      * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
      * <code>ResourceId</code> property.</p> </dd> </dl>
      */
-    inline const Aws::Map<OperationTargetType, Aws::String>& GetTargets() const{ return m_targets; }
+    inline const Aws::Map<OperationTargetType, Aws::String>& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    inline void SetTargets(const Aws::Map<OperationTargetType, Aws::String>& value) { m_targetsHasBeenSet = true; m_targets = value; }
-    inline void SetTargets(Aws::Map<OperationTargetType, Aws::String>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-    inline Operation& WithTargets(const Aws::Map<OperationTargetType, Aws::String>& value) { SetTargets(value); return *this;}
-    inline Operation& WithTargets(Aws::Map<OperationTargetType, Aws::String>&& value) { SetTargets(std::move(value)); return *this;}
-    inline Operation& AddTargets(const OperationTargetType& key, const Aws::String& value) { m_targetsHasBeenSet = true; m_targets.emplace(key, value); return *this; }
-    inline Operation& AddTargets(OperationTargetType&& key, const Aws::String& value) { m_targetsHasBeenSet = true; m_targets.emplace(std::move(key), value); return *this; }
-    inline Operation& AddTargets(const OperationTargetType& key, Aws::String&& value) { m_targetsHasBeenSet = true; m_targets.emplace(key, std::move(value)); return *this; }
-    inline Operation& AddTargets(OperationTargetType&& key, Aws::String&& value) { m_targetsHasBeenSet = true; m_targets.emplace(std::move(key), std::move(value)); return *this; }
-    inline Operation& AddTargets(OperationTargetType&& key, const char* value) { m_targetsHasBeenSet = true; m_targets.emplace(std::move(key), value); return *this; }
-    inline Operation& AddTargets(const OperationTargetType& key, const char* value) { m_targetsHasBeenSet = true; m_targets.emplace(key, value); return *this; }
+    template<typename TargetsT = Aws::Map<OperationTargetType, Aws::String>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Map<OperationTargetType, Aws::String>>
+    Operation& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    inline Operation& AddTargets(OperationTargetType key, Aws::String value) {
+      m_targetsHasBeenSet = true; m_targets.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    OperationType m_type;
+    OperationType m_type{OperationType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    OperationStatus m_status;
+    OperationStatus m_status{OperationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_errorMessage;
@@ -193,10 +180,10 @@ namespace Model
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createDate;
+    Aws::Utils::DateTime m_createDate{};
     bool m_createDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateDate;
+    Aws::Utils::DateTime m_updateDate{};
     bool m_updateDateHasBeenSet = false;
 
     Aws::Map<OperationTargetType, Aws::String> m_targets;

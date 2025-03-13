@@ -19,7 +19,7 @@ namespace Model
   class GetDelegatedAdminAccountRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API GetDelegatedAdminAccountRequest();
+    AWS_INSPECTOR2_API GetDelegatedAdminAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

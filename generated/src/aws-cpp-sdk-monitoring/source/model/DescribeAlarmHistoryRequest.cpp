@@ -10,21 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-DescribeAlarmHistoryRequest::DescribeAlarmHistoryRequest() : 
-    m_alarmNameHasBeenSet(false),
-    m_alarmTypesHasBeenSet(false),
-    m_historyItemType(HistoryItemType::NOT_SET),
-    m_historyItemTypeHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_scanBy(ScanBy::NOT_SET),
-    m_scanByHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAlarmHistoryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

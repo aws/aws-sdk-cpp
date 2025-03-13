@@ -12,16 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PublishLayerVersionRequest::PublishLayerVersionRequest() : 
-    m_layerNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_compatibleRuntimesHasBeenSet(false),
-    m_licenseInfoHasBeenSet(false),
-    m_compatibleArchitecturesHasBeenSet(false)
-{
-}
-
 Aws::String PublishLayerVersionRequest::SerializePayload() const
 {
   JsonValue payload;

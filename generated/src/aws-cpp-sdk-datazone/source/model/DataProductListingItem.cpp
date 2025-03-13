@@ -18,25 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DataProductListingItem::DataProductListingItem() : 
-    m_additionalAttributesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_entityRevisionHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_listingCreatedByHasBeenSet(false),
-    m_listingIdHasBeenSet(false),
-    m_listingRevisionHasBeenSet(false),
-    m_listingUpdatedByHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false)
-{
-}
-
 DataProductListingItem::DataProductListingItem(JsonView jsonValue)
-  : DataProductListingItem()
 {
   *this = jsonValue;
 }
@@ -46,38 +28,28 @@ DataProductListingItem& DataProductListingItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("additionalAttributes"))
   {
     m_additionalAttributes = jsonValue.GetObject("additionalAttributes");
-
     m_additionalAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityRevision"))
   {
     m_entityRevision = jsonValue.GetString("entityRevision");
-
     m_entityRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glossaryTerms"))
   {
     Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("glossaryTerms");
@@ -87,7 +59,6 @@ DataProductListingItem& DataProductListingItem::operator =(JsonView jsonValue)
     }
     m_glossaryTermsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
@@ -97,49 +68,36 @@ DataProductListingItem& DataProductListingItem::operator =(JsonView jsonValue)
     }
     m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listingCreatedBy"))
   {
     m_listingCreatedBy = jsonValue.GetString("listingCreatedBy");
-
     m_listingCreatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listingId"))
   {
     m_listingId = jsonValue.GetString("listingId");
-
     m_listingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listingRevision"))
   {
     m_listingRevision = jsonValue.GetString("listingRevision");
-
     m_listingRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listingUpdatedBy"))
   {
     m_listingUpdatedBy = jsonValue.GetString("listingUpdatedBy");
-
     m_listingUpdatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owningProjectId"))
   {
     m_owningProjectId = jsonValue.GetString("owningProjectId");
-
     m_owningProjectIdHasBeenSet = true;
   }
-
   return *this;
 }
 

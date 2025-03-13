@@ -12,13 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateKinesisStreamingDestinationRequest::UpdateKinesisStreamingDestinationRequest() : 
-    m_tableNameHasBeenSet(false),
-    m_streamArnHasBeenSet(false),
-    m_updateKinesisStreamingConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateKinesisStreamingDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

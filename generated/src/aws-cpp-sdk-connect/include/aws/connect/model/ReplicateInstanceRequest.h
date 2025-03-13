@@ -22,7 +22,7 @@ namespace Model
   class ReplicateInstanceRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API ReplicateInstanceRequest();
+    AWS_CONNECT_API ReplicateInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can
      * provide the <code>InstanceId</code>, or the entire ARN.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline ReplicateInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ReplicateInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ReplicateInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    ReplicateInstanceRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The Amazon Web Services Region where to replicate the Amazon Connect
      * instance.</p>
      */
-    inline const Aws::String& GetReplicaRegion() const{ return m_replicaRegion; }
+    inline const Aws::String& GetReplicaRegion() const { return m_replicaRegion; }
     inline bool ReplicaRegionHasBeenSet() const { return m_replicaRegionHasBeenSet; }
-    inline void SetReplicaRegion(const Aws::String& value) { m_replicaRegionHasBeenSet = true; m_replicaRegion = value; }
-    inline void SetReplicaRegion(Aws::String&& value) { m_replicaRegionHasBeenSet = true; m_replicaRegion = std::move(value); }
-    inline void SetReplicaRegion(const char* value) { m_replicaRegionHasBeenSet = true; m_replicaRegion.assign(value); }
-    inline ReplicateInstanceRequest& WithReplicaRegion(const Aws::String& value) { SetReplicaRegion(value); return *this;}
-    inline ReplicateInstanceRequest& WithReplicaRegion(Aws::String&& value) { SetReplicaRegion(std::move(value)); return *this;}
-    inline ReplicateInstanceRequest& WithReplicaRegion(const char* value) { SetReplicaRegion(value); return *this;}
+    template<typename ReplicaRegionT = Aws::String>
+    void SetReplicaRegion(ReplicaRegionT&& value) { m_replicaRegionHasBeenSet = true; m_replicaRegion = std::forward<ReplicaRegionT>(value); }
+    template<typename ReplicaRegionT = Aws::String>
+    ReplicateInstanceRequest& WithReplicaRegion(ReplicaRegionT&& value) { SetReplicaRegion(std::forward<ReplicaRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ReplicateInstanceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ReplicateInstanceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ReplicateInstanceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ReplicateInstanceRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be
      * unique.</p>
      */
-    inline const Aws::String& GetReplicaAlias() const{ return m_replicaAlias; }
+    inline const Aws::String& GetReplicaAlias() const { return m_replicaAlias; }
     inline bool ReplicaAliasHasBeenSet() const { return m_replicaAliasHasBeenSet; }
-    inline void SetReplicaAlias(const Aws::String& value) { m_replicaAliasHasBeenSet = true; m_replicaAlias = value; }
-    inline void SetReplicaAlias(Aws::String&& value) { m_replicaAliasHasBeenSet = true; m_replicaAlias = std::move(value); }
-    inline void SetReplicaAlias(const char* value) { m_replicaAliasHasBeenSet = true; m_replicaAlias.assign(value); }
-    inline ReplicateInstanceRequest& WithReplicaAlias(const Aws::String& value) { SetReplicaAlias(value); return *this;}
-    inline ReplicateInstanceRequest& WithReplicaAlias(Aws::String&& value) { SetReplicaAlias(std::move(value)); return *this;}
-    inline ReplicateInstanceRequest& WithReplicaAlias(const char* value) { SetReplicaAlias(value); return *this;}
+    template<typename ReplicaAliasT = Aws::String>
+    void SetReplicaAlias(ReplicaAliasT&& value) { m_replicaAliasHasBeenSet = true; m_replicaAlias = std::forward<ReplicaAliasT>(value); }
+    template<typename ReplicaAliasT = Aws::String>
+    ReplicateInstanceRequest& WithReplicaAlias(ReplicaAliasT&& value) { SetReplicaAlias(std::forward<ReplicaAliasT>(value)); return *this;}
     ///@}
   private:
 

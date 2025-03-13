@@ -12,21 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBotRequest::CreateBotRequest() : 
-    m_botNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_dataPrivacyHasBeenSet(false),
-    m_idleSessionTTLInSeconds(0),
-    m_idleSessionTTLInSecondsHasBeenSet(false),
-    m_botTagsHasBeenSet(false),
-    m_testBotAliasTagsHasBeenSet(false),
-    m_botType(BotType::NOT_SET),
-    m_botTypeHasBeenSet(false),
-    m_botMembersHasBeenSet(false)
-{
-}
-
 Aws::String CreateBotRequest::SerializePayload() const
 {
   JsonValue payload;

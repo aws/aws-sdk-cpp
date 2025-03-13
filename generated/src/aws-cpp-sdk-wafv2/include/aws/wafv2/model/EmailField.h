@@ -33,7 +33,7 @@ namespace Model
   class EmailField
   {
   public:
-    AWS_WAFV2_API EmailField();
+    AWS_WAFV2_API EmailField() = default;
     AWS_WAFV2_API EmailField(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API EmailField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * named <code>email1</code>, the email field specification is
      * <code>email1</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline EmailField& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline EmailField& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline EmailField& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    EmailField& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
   private:
 

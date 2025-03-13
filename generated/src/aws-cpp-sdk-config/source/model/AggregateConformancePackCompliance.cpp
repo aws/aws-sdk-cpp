@@ -18,20 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-AggregateConformancePackCompliance::AggregateConformancePackCompliance() : 
-    m_complianceType(ConformancePackComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_compliantRuleCount(0),
-    m_compliantRuleCountHasBeenSet(false),
-    m_nonCompliantRuleCount(0),
-    m_nonCompliantRuleCountHasBeenSet(false),
-    m_totalRuleCount(0),
-    m_totalRuleCountHasBeenSet(false)
-{
-}
-
 AggregateConformancePackCompliance::AggregateConformancePackCompliance(JsonView jsonValue)
-  : AggregateConformancePackCompliance()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ AggregateConformancePackCompliance& AggregateConformancePackCompliance::operator
   if(jsonValue.ValueExists("ComplianceType"))
   {
     m_complianceType = ConformancePackComplianceTypeMapper::GetConformancePackComplianceTypeForName(jsonValue.GetString("ComplianceType"));
-
     m_complianceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompliantRuleCount"))
   {
     m_compliantRuleCount = jsonValue.GetInteger("CompliantRuleCount");
-
     m_compliantRuleCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NonCompliantRuleCount"))
   {
     m_nonCompliantRuleCount = jsonValue.GetInteger("NonCompliantRuleCount");
-
     m_nonCompliantRuleCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalRuleCount"))
   {
     m_totalRuleCount = jsonValue.GetInteger("TotalRuleCount");
-
     m_totalRuleCountHasBeenSet = true;
   }
-
   return *this;
 }
 

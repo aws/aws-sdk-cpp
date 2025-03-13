@@ -18,18 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-ScheduledAutoTuneDetails::ScheduledAutoTuneDetails() : 
-    m_dateHasBeenSet(false),
-    m_actionType(ScheduledAutoTuneActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_severity(ScheduledAutoTuneSeverityType::NOT_SET),
-    m_severityHasBeenSet(false)
-{
-}
-
 ScheduledAutoTuneDetails::ScheduledAutoTuneDetails(JsonView jsonValue)
-  : ScheduledAutoTuneDetails()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ScheduledAutoTuneDetails& ScheduledAutoTuneDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Date"))
   {
     m_date = jsonValue.GetDouble("Date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionType"))
   {
     m_actionType = ScheduledAutoTuneActionTypeMapper::GetScheduledAutoTuneActionTypeForName(jsonValue.GetString("ActionType"));
-
     m_actionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetString("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = ScheduledAutoTuneSeverityTypeMapper::GetScheduledAutoTuneSeverityTypeForName(jsonValue.GetString("Severity"));
-
     m_severityHasBeenSet = true;
   }
-
   return *this;
 }
 

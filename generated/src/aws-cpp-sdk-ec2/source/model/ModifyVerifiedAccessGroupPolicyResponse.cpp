@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyVerifiedAccessGroupPolicyResponse::ModifyVerifiedAccessGroupPolicyResponse() : 
-    m_policyEnabled(false)
-{
-}
-
 ModifyVerifiedAccessGroupPolicyResponse::ModifyVerifiedAccessGroupPolicyResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ModifyVerifiedAccessGroupPolicyResponse()
 {
   *this = result;
 }
@@ -44,16 +38,19 @@ ModifyVerifiedAccessGroupPolicyResponse& ModifyVerifiedAccessGroupPolicyResponse
     if(!policyEnabledNode.IsNull())
     {
       m_policyEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyEnabledNode.GetText()).c_str()).c_str());
+      m_policyEnabledHasBeenSet = true;
     }
     XmlNode policyDocumentNode = resultNode.FirstChild("policyDocument");
     if(!policyDocumentNode.IsNull())
     {
       m_policyDocument = Aws::Utils::Xml::DecodeEscapedXmlText(policyDocumentNode.GetText());
+      m_policyDocumentHasBeenSet = true;
     }
     XmlNode sseSpecificationNode = resultNode.FirstChild("sseSpecification");
     if(!sseSpecificationNode.IsNull())
     {
       m_sseSpecification = sseSpecificationNode;
+      m_sseSpecificationHasBeenSet = true;
     }
   }
 
@@ -62,6 +59,7 @@ ModifyVerifiedAccessGroupPolicyResponse& ModifyVerifiedAccessGroupPolicyResponse
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyVerifiedAccessGroupPolicyResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

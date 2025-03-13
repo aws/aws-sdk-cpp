@@ -18,16 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-AccountPreferences::AccountPreferences() : 
-    m_userAuthorizationRequired(false),
-    m_userAuthorizationRequiredHasBeenSet(false),
-    m_trainingDataCollectionEnabled(false),
-    m_trainingDataCollectionEnabledHasBeenSet(false)
-{
-}
-
 AccountPreferences::AccountPreferences(JsonView jsonValue)
-  : AccountPreferences()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AccountPreferences& AccountPreferences::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserAuthorizationRequired"))
   {
     m_userAuthorizationRequired = jsonValue.GetBool("UserAuthorizationRequired");
-
     m_userAuthorizationRequiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingDataCollectionEnabled"))
   {
     m_trainingDataCollectionEnabled = jsonValue.GetBool("TrainingDataCollectionEnabled");
-
     m_trainingDataCollectionEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

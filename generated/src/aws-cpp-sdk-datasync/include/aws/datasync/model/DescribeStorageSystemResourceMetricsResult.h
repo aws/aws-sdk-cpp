@@ -29,7 +29,7 @@ namespace Model
   class DescribeStorageSystemResourceMetricsResult
   {
   public:
-    AWS_DATASYNC_API DescribeStorageSystemResourceMetricsResult();
+    AWS_DATASYNC_API DescribeStorageSystemResourceMetricsResult() = default;
     AWS_DATASYNC_API DescribeStorageSystemResourceMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATASYNC_API DescribeStorageSystemResourceMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>The details that your discovery job collected about your storage system
      * resource.</p>
      */
-    inline const Aws::Vector<ResourceMetrics>& GetMetrics() const{ return m_metrics; }
-    inline void SetMetrics(const Aws::Vector<ResourceMetrics>& value) { m_metrics = value; }
-    inline void SetMetrics(Aws::Vector<ResourceMetrics>&& value) { m_metrics = std::move(value); }
-    inline DescribeStorageSystemResourceMetricsResult& WithMetrics(const Aws::Vector<ResourceMetrics>& value) { SetMetrics(value); return *this;}
-    inline DescribeStorageSystemResourceMetricsResult& WithMetrics(Aws::Vector<ResourceMetrics>&& value) { SetMetrics(std::move(value)); return *this;}
-    inline DescribeStorageSystemResourceMetricsResult& AddMetrics(const ResourceMetrics& value) { m_metrics.push_back(value); return *this; }
-    inline DescribeStorageSystemResourceMetricsResult& AddMetrics(ResourceMetrics&& value) { m_metrics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceMetrics>& GetMetrics() const { return m_metrics; }
+    template<typename MetricsT = Aws::Vector<ResourceMetrics>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Vector<ResourceMetrics>>
+    DescribeStorageSystemResourceMetricsResult& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    template<typename MetricsT = ResourceMetrics>
+    DescribeStorageSystemResourceMetricsResult& AddMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics.emplace_back(std::forward<MetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The opaque string that indicates the position to begin the next list of
      * results in the response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeStorageSystemResourceMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeStorageSystemResourceMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeStorageSystemResourceMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeStorageSystemResourceMetricsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeStorageSystemResourceMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeStorageSystemResourceMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeStorageSystemResourceMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeStorageSystemResourceMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResourceMetrics> m_metrics;
+    bool m_metricsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

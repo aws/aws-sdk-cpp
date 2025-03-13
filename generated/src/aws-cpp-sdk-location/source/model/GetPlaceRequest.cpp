@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetPlaceRequest::GetPlaceRequest() : 
-    m_indexNameHasBeenSet(false),
-    m_placeIdHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String GetPlaceRequest::SerializePayload() const
 {
   return {};

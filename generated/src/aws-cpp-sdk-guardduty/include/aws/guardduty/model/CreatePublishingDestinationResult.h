@@ -27,7 +27,7 @@ namespace Model
   class CreatePublishingDestinationResult
   {
   public:
-    AWS_GUARDDUTY_API CreatePublishingDestinationResult();
+    AWS_GUARDDUTY_API CreatePublishingDestinationResult() = default;
     AWS_GUARDDUTY_API CreatePublishingDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API CreatePublishingDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ID of the publishing destination that is created.</p>
      */
-    inline const Aws::String& GetDestinationId() const{ return m_destinationId; }
-    inline void SetDestinationId(const Aws::String& value) { m_destinationId = value; }
-    inline void SetDestinationId(Aws::String&& value) { m_destinationId = std::move(value); }
-    inline void SetDestinationId(const char* value) { m_destinationId.assign(value); }
-    inline CreatePublishingDestinationResult& WithDestinationId(const Aws::String& value) { SetDestinationId(value); return *this;}
-    inline CreatePublishingDestinationResult& WithDestinationId(Aws::String&& value) { SetDestinationId(std::move(value)); return *this;}
-    inline CreatePublishingDestinationResult& WithDestinationId(const char* value) { SetDestinationId(value); return *this;}
+    inline const Aws::String& GetDestinationId() const { return m_destinationId; }
+    template<typename DestinationIdT = Aws::String>
+    void SetDestinationId(DestinationIdT&& value) { m_destinationIdHasBeenSet = true; m_destinationId = std::forward<DestinationIdT>(value); }
+    template<typename DestinationIdT = Aws::String>
+    CreatePublishingDestinationResult& WithDestinationId(DestinationIdT&& value) { SetDestinationId(std::forward<DestinationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePublishingDestinationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePublishingDestinationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePublishingDestinationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePublishingDestinationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_destinationId;
+    bool m_destinationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-PublicAccess::PublicAccess() : 
-    m_typeHasBeenSet(false)
-{
-}
-
 PublicAccess::PublicAccess(JsonView jsonValue)
-  : PublicAccess()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PublicAccess& PublicAccess::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

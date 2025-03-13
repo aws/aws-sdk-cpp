@@ -18,18 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-RuleCondition::RuleCondition() : 
-    m_booleanExpressionHasBeenSet(false),
-    m_dmarcExpressionHasBeenSet(false),
-    m_ipExpressionHasBeenSet(false),
-    m_numberExpressionHasBeenSet(false),
-    m_stringExpressionHasBeenSet(false),
-    m_verdictExpressionHasBeenSet(false)
-{
-}
-
 RuleCondition::RuleCondition(JsonView jsonValue)
-  : RuleCondition()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ RuleCondition& RuleCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BooleanExpression"))
   {
     m_booleanExpression = jsonValue.GetObject("BooleanExpression");
-
     m_booleanExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DmarcExpression"))
   {
     m_dmarcExpression = jsonValue.GetObject("DmarcExpression");
-
     m_dmarcExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpExpression"))
   {
     m_ipExpression = jsonValue.GetObject("IpExpression");
-
     m_ipExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberExpression"))
   {
     m_numberExpression = jsonValue.GetObject("NumberExpression");
-
     m_numberExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringExpression"))
   {
     m_stringExpression = jsonValue.GetObject("StringExpression");
-
     m_stringExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerdictExpression"))
   {
     m_verdictExpression = jsonValue.GetObject("VerdictExpression");
-
     m_verdictExpressionHasBeenSet = true;
   }
-
   return *this;
 }
 

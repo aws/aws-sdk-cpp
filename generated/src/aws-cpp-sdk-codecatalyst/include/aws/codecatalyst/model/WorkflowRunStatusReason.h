@@ -29,7 +29,7 @@ namespace Model
   class WorkflowRunStatusReason
   {
   public:
-    AWS_CODECATALYST_API WorkflowRunStatusReason();
+    AWS_CODECATALYST_API WorkflowRunStatusReason() = default;
     AWS_CODECATALYST_API WorkflowRunStatusReason(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API WorkflowRunStatusReason& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;

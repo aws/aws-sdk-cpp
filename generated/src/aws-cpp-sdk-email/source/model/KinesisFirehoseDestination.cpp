@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-KinesisFirehoseDestination::KinesisFirehoseDestination() : 
-    m_iAMRoleARNHasBeenSet(false),
-    m_deliveryStreamARNHasBeenSet(false)
-{
-}
-
 KinesisFirehoseDestination::KinesisFirehoseDestination(const XmlNode& xmlNode)
-  : KinesisFirehoseDestination()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ KinesisFirehoseDestination& KinesisFirehoseDestination::operator =(const XmlNode
     {
       m_iAMRoleARN = Aws::Utils::Xml::DecodeEscapedXmlText(iAMRoleARNNode.GetText());
       m_iAMRoleARNHasBeenSet = true;
+       m_iAMRoleARNHasBeenSet = true;
     }
     XmlNode deliveryStreamARNNode = resultNode.FirstChild("DeliveryStreamARN");
     if(!deliveryStreamARNNode.IsNull())
     {
       m_deliveryStreamARN = Aws::Utils::Xml::DecodeEscapedXmlText(deliveryStreamARNNode.GetText());
       m_deliveryStreamARNHasBeenSet = true;
+       m_deliveryStreamARNHasBeenSet = true;
     }
   }
 

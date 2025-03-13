@@ -33,7 +33,7 @@ namespace Model
   class CreateLayerResult
   {
   public:
-    AWS_OPSWORKS_API CreateLayerResult();
+    AWS_OPSWORKS_API CreateLayerResult() = default;
     AWS_OPSWORKS_API CreateLayerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API CreateLayerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The layer ID.</p>
      */
-    inline const Aws::String& GetLayerId() const{ return m_layerId; }
-    inline void SetLayerId(const Aws::String& value) { m_layerId = value; }
-    inline void SetLayerId(Aws::String&& value) { m_layerId = std::move(value); }
-    inline void SetLayerId(const char* value) { m_layerId.assign(value); }
-    inline CreateLayerResult& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
-    inline CreateLayerResult& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
-    inline CreateLayerResult& WithLayerId(const char* value) { SetLayerId(value); return *this;}
+    inline const Aws::String& GetLayerId() const { return m_layerId; }
+    template<typename LayerIdT = Aws::String>
+    void SetLayerId(LayerIdT&& value) { m_layerIdHasBeenSet = true; m_layerId = std::forward<LayerIdT>(value); }
+    template<typename LayerIdT = Aws::String>
+    CreateLayerResult& WithLayerId(LayerIdT&& value) { SetLayerId(std::forward<LayerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLayerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLayerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLayerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLayerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_layerId;
+    bool m_layerIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

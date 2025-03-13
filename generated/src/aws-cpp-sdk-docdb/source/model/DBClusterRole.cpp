@@ -20,14 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-DBClusterRole::DBClusterRole() : 
-    m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 DBClusterRole::DBClusterRole(const XmlNode& xmlNode)
-  : DBClusterRole()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DBClusterRole& DBClusterRole::operator =(const XmlNode& xmlNode)
     {
       m_roleArn = Aws::Utils::Xml::DecodeEscapedXmlText(roleArnNode.GetText());
       m_roleArnHasBeenSet = true;
+       m_roleArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

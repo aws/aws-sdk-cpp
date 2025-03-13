@@ -27,7 +27,7 @@ namespace Model
   class DisassociateTrialComponentResult
   {
   public:
-    AWS_SAGEMAKER_API DisassociateTrialComponentResult();
+    AWS_SAGEMAKER_API DisassociateTrialComponentResult() = default;
     AWS_SAGEMAKER_API DisassociateTrialComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DisassociateTrialComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
-    inline const Aws::String& GetTrialComponentArn() const{ return m_trialComponentArn; }
-    inline void SetTrialComponentArn(const Aws::String& value) { m_trialComponentArn = value; }
-    inline void SetTrialComponentArn(Aws::String&& value) { m_trialComponentArn = std::move(value); }
-    inline void SetTrialComponentArn(const char* value) { m_trialComponentArn.assign(value); }
-    inline DisassociateTrialComponentResult& WithTrialComponentArn(const Aws::String& value) { SetTrialComponentArn(value); return *this;}
-    inline DisassociateTrialComponentResult& WithTrialComponentArn(Aws::String&& value) { SetTrialComponentArn(std::move(value)); return *this;}
-    inline DisassociateTrialComponentResult& WithTrialComponentArn(const char* value) { SetTrialComponentArn(value); return *this;}
+    inline const Aws::String& GetTrialComponentArn() const { return m_trialComponentArn; }
+    template<typename TrialComponentArnT = Aws::String>
+    void SetTrialComponentArn(TrialComponentArnT&& value) { m_trialComponentArnHasBeenSet = true; m_trialComponentArn = std::forward<TrialComponentArnT>(value); }
+    template<typename TrialComponentArnT = Aws::String>
+    DisassociateTrialComponentResult& WithTrialComponentArn(TrialComponentArnT&& value) { SetTrialComponentArn(std::forward<TrialComponentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the trial.</p>
      */
-    inline const Aws::String& GetTrialArn() const{ return m_trialArn; }
-    inline void SetTrialArn(const Aws::String& value) { m_trialArn = value; }
-    inline void SetTrialArn(Aws::String&& value) { m_trialArn = std::move(value); }
-    inline void SetTrialArn(const char* value) { m_trialArn.assign(value); }
-    inline DisassociateTrialComponentResult& WithTrialArn(const Aws::String& value) { SetTrialArn(value); return *this;}
-    inline DisassociateTrialComponentResult& WithTrialArn(Aws::String&& value) { SetTrialArn(std::move(value)); return *this;}
-    inline DisassociateTrialComponentResult& WithTrialArn(const char* value) { SetTrialArn(value); return *this;}
+    inline const Aws::String& GetTrialArn() const { return m_trialArn; }
+    template<typename TrialArnT = Aws::String>
+    void SetTrialArn(TrialArnT&& value) { m_trialArnHasBeenSet = true; m_trialArn = std::forward<TrialArnT>(value); }
+    template<typename TrialArnT = Aws::String>
+    DisassociateTrialComponentResult& WithTrialArn(TrialArnT&& value) { SetTrialArn(std::forward<TrialArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateTrialComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateTrialComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateTrialComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateTrialComponentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trialComponentArn;
+    bool m_trialComponentArnHasBeenSet = false;
 
     Aws::String m_trialArn;
+    bool m_trialArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

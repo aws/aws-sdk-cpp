@@ -18,18 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-JobDetails::JobDetails() : 
-    m_isDefinedInJob(IsDefinedInJob::NOT_SET),
-    m_isDefinedInJobHasBeenSet(false),
-    m_isMonitoredByJob(IsMonitoredByJob::NOT_SET),
-    m_isMonitoredByJobHasBeenSet(false),
-    m_lastJobIdHasBeenSet(false),
-    m_lastJobRunTimeHasBeenSet(false)
-{
-}
-
 JobDetails::JobDetails(JsonView jsonValue)
-  : JobDetails()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ JobDetails& JobDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("isDefinedInJob"))
   {
     m_isDefinedInJob = IsDefinedInJobMapper::GetIsDefinedInJobForName(jsonValue.GetString("isDefinedInJob"));
-
     m_isDefinedInJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isMonitoredByJob"))
   {
     m_isMonitoredByJob = IsMonitoredByJobMapper::GetIsMonitoredByJobForName(jsonValue.GetString("isMonitoredByJob"));
-
     m_isMonitoredByJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastJobId"))
   {
     m_lastJobId = jsonValue.GetString("lastJobId");
-
     m_lastJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastJobRunTime"))
   {
     m_lastJobRunTime = jsonValue.GetString("lastJobRunTime");
-
     m_lastJobRunTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class S3DestinationAccessControl
   {
   public:
-    AWS_MEDIACONVERT_API S3DestinationAccessControl();
+    AWS_MEDIACONVERT_API S3DestinationAccessControl() = default;
     AWS_MEDIACONVERT_API S3DestinationAccessControl(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API S3DestinationAccessControl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
     /**
      * Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
      */
-    inline const S3ObjectCannedAcl& GetCannedAcl() const{ return m_cannedAcl; }
+    inline S3ObjectCannedAcl GetCannedAcl() const { return m_cannedAcl; }
     inline bool CannedAclHasBeenSet() const { return m_cannedAclHasBeenSet; }
-    inline void SetCannedAcl(const S3ObjectCannedAcl& value) { m_cannedAclHasBeenSet = true; m_cannedAcl = value; }
-    inline void SetCannedAcl(S3ObjectCannedAcl&& value) { m_cannedAclHasBeenSet = true; m_cannedAcl = std::move(value); }
-    inline S3DestinationAccessControl& WithCannedAcl(const S3ObjectCannedAcl& value) { SetCannedAcl(value); return *this;}
-    inline S3DestinationAccessControl& WithCannedAcl(S3ObjectCannedAcl&& value) { SetCannedAcl(std::move(value)); return *this;}
+    inline void SetCannedAcl(S3ObjectCannedAcl value) { m_cannedAclHasBeenSet = true; m_cannedAcl = value; }
+    inline S3DestinationAccessControl& WithCannedAcl(S3ObjectCannedAcl value) { SetCannedAcl(value); return *this;}
     ///@}
   private:
 
-    S3ObjectCannedAcl m_cannedAcl;
+    S3ObjectCannedAcl m_cannedAcl{S3ObjectCannedAcl::NOT_SET};
     bool m_cannedAclHasBeenSet = false;
   };
 

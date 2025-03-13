@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-AnalyticsConfiguration::AnalyticsConfiguration() : 
-    m_idHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_storageClassAnalysisHasBeenSet(false)
-{
-}
-
 AnalyticsConfiguration::AnalyticsConfiguration(const XmlNode& xmlNode)
-  : AnalyticsConfiguration()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ AnalyticsConfiguration& AnalyticsConfiguration::operator =(const XmlNode& xmlNod
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode filterNode = resultNode.FirstChild("Filter");
     if(!filterNode.IsNull())
     {
       m_filter = filterNode;
       m_filterHasBeenSet = true;
+       m_filterHasBeenSet = true;
     }
     XmlNode storageClassAnalysisNode = resultNode.FirstChild("StorageClassAnalysis");
     if(!storageClassAnalysisNode.IsNull())
     {
       m_storageClassAnalysis = storageClassAnalysisNode;
       m_storageClassAnalysisHasBeenSet = true;
+       m_storageClassAnalysisHasBeenSet = true;
     }
   }
 

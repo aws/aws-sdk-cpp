@@ -12,12 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListJobsRequest::ListJobsRequest() : 
-    m_arnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListJobsRequest::SerializePayload() const
 {
   JsonValue payload;

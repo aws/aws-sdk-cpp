@@ -33,7 +33,7 @@ namespace Model
   class AppSpecification
   {
   public:
-    AWS_SAGEMAKER_API AppSpecification();
+    AWS_SAGEMAKER_API AppSpecification() = default;
     AWS_SAGEMAKER_API AppSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AppSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,44 +43,40 @@ namespace Model
     /**
      * <p>The container image to be run by the processing job.</p>
      */
-    inline const Aws::String& GetImageUri() const{ return m_imageUri; }
+    inline const Aws::String& GetImageUri() const { return m_imageUri; }
     inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
-    inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
-    inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
-    inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
-    inline AppSpecification& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
-    inline AppSpecification& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
-    inline AppSpecification& WithImageUri(const char* value) { SetImageUri(value); return *this;}
+    template<typename ImageUriT = Aws::String>
+    void SetImageUri(ImageUriT&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::forward<ImageUriT>(value); }
+    template<typename ImageUriT = Aws::String>
+    AppSpecification& WithImageUri(ImageUriT&& value) { SetImageUri(std::forward<ImageUriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The entrypoint for a container used to run a processing job.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetContainerEntrypoint() const{ return m_containerEntrypoint; }
+    inline const Aws::Vector<Aws::String>& GetContainerEntrypoint() const { return m_containerEntrypoint; }
     inline bool ContainerEntrypointHasBeenSet() const { return m_containerEntrypointHasBeenSet; }
-    inline void SetContainerEntrypoint(const Aws::Vector<Aws::String>& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint = value; }
-    inline void SetContainerEntrypoint(Aws::Vector<Aws::String>&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint = std::move(value); }
-    inline AppSpecification& WithContainerEntrypoint(const Aws::Vector<Aws::String>& value) { SetContainerEntrypoint(value); return *this;}
-    inline AppSpecification& WithContainerEntrypoint(Aws::Vector<Aws::String>&& value) { SetContainerEntrypoint(std::move(value)); return *this;}
-    inline AppSpecification& AddContainerEntrypoint(const Aws::String& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.push_back(value); return *this; }
-    inline AppSpecification& AddContainerEntrypoint(Aws::String&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.push_back(std::move(value)); return *this; }
-    inline AppSpecification& AddContainerEntrypoint(const char* value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.push_back(value); return *this; }
+    template<typename ContainerEntrypointT = Aws::Vector<Aws::String>>
+    void SetContainerEntrypoint(ContainerEntrypointT&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint = std::forward<ContainerEntrypointT>(value); }
+    template<typename ContainerEntrypointT = Aws::Vector<Aws::String>>
+    AppSpecification& WithContainerEntrypoint(ContainerEntrypointT&& value) { SetContainerEntrypoint(std::forward<ContainerEntrypointT>(value)); return *this;}
+    template<typename ContainerEntrypointT = Aws::String>
+    AppSpecification& AddContainerEntrypoint(ContainerEntrypointT&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.emplace_back(std::forward<ContainerEntrypointT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The arguments for a container used to run a processing job.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetContainerArguments() const{ return m_containerArguments; }
+    inline const Aws::Vector<Aws::String>& GetContainerArguments() const { return m_containerArguments; }
     inline bool ContainerArgumentsHasBeenSet() const { return m_containerArgumentsHasBeenSet; }
-    inline void SetContainerArguments(const Aws::Vector<Aws::String>& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments = value; }
-    inline void SetContainerArguments(Aws::Vector<Aws::String>&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments = std::move(value); }
-    inline AppSpecification& WithContainerArguments(const Aws::Vector<Aws::String>& value) { SetContainerArguments(value); return *this;}
-    inline AppSpecification& WithContainerArguments(Aws::Vector<Aws::String>&& value) { SetContainerArguments(std::move(value)); return *this;}
-    inline AppSpecification& AddContainerArguments(const Aws::String& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(value); return *this; }
-    inline AppSpecification& AddContainerArguments(Aws::String&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(std::move(value)); return *this; }
-    inline AppSpecification& AddContainerArguments(const char* value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(value); return *this; }
+    template<typename ContainerArgumentsT = Aws::Vector<Aws::String>>
+    void SetContainerArguments(ContainerArgumentsT&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments = std::forward<ContainerArgumentsT>(value); }
+    template<typename ContainerArgumentsT = Aws::Vector<Aws::String>>
+    AppSpecification& WithContainerArguments(ContainerArgumentsT&& value) { SetContainerArguments(std::forward<ContainerArgumentsT>(value)); return *this;}
+    template<typename ContainerArgumentsT = Aws::String>
+    AppSpecification& AddContainerArguments(ContainerArgumentsT&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.emplace_back(std::forward<ContainerArgumentsT>(value)); return *this; }
     ///@}
   private:
 

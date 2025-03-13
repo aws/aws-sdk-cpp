@@ -18,14 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-CryptogramAuthResponse::CryptogramAuthResponse() : 
-    m_arpcMethod1HasBeenSet(false),
-    m_arpcMethod2HasBeenSet(false)
-{
-}
-
 CryptogramAuthResponse::CryptogramAuthResponse(JsonView jsonValue)
-  : CryptogramAuthResponse()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CryptogramAuthResponse& CryptogramAuthResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ArpcMethod1"))
   {
     m_arpcMethod1 = jsonValue.GetObject("ArpcMethod1");
-
     m_arpcMethod1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArpcMethod2"))
   {
     m_arpcMethod2 = jsonValue.GetObject("ArpcMethod2");
-
     m_arpcMethod2HasBeenSet = true;
   }
-
   return *this;
 }
 

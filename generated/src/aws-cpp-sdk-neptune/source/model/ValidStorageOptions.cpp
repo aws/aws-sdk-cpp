@@ -20,16 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-ValidStorageOptions::ValidStorageOptions() : 
-    m_storageTypeHasBeenSet(false),
-    m_storageSizeHasBeenSet(false),
-    m_provisionedIopsHasBeenSet(false),
-    m_iopsToStorageRatioHasBeenSet(false)
-{
-}
-
 ValidStorageOptions::ValidStorageOptions(const XmlNode& xmlNode)
-  : ValidStorageOptions()
 {
   *this = xmlNode;
 }
@@ -45,42 +36,46 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
     {
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
+       m_storageTypeHasBeenSet = true;
     }
     XmlNode storageSizeNode = resultNode.FirstChild("StorageSize");
     if(!storageSizeNode.IsNull())
     {
       XmlNode storageSizeMember = storageSizeNode.FirstChild("Range");
+      m_storageSizeHasBeenSet = !storageSizeMember.IsNull();
       while(!storageSizeMember.IsNull())
       {
         m_storageSize.push_back(storageSizeMember);
         storageSizeMember = storageSizeMember.NextNode("Range");
       }
 
-      m_storageSizeHasBeenSet = true;
+       m_storageSizeHasBeenSet = true;
     }
     XmlNode provisionedIopsNode = resultNode.FirstChild("ProvisionedIops");
     if(!provisionedIopsNode.IsNull())
     {
       XmlNode provisionedIopsMember = provisionedIopsNode.FirstChild("Range");
+      m_provisionedIopsHasBeenSet = !provisionedIopsMember.IsNull();
       while(!provisionedIopsMember.IsNull())
       {
         m_provisionedIops.push_back(provisionedIopsMember);
         provisionedIopsMember = provisionedIopsMember.NextNode("Range");
       }
 
-      m_provisionedIopsHasBeenSet = true;
+       m_provisionedIopsHasBeenSet = true;
     }
     XmlNode iopsToStorageRatioNode = resultNode.FirstChild("IopsToStorageRatio");
     if(!iopsToStorageRatioNode.IsNull())
     {
       XmlNode iopsToStorageRatioMember = iopsToStorageRatioNode.FirstChild("DoubleRange");
+      m_iopsToStorageRatioHasBeenSet = !iopsToStorageRatioMember.IsNull();
       while(!iopsToStorageRatioMember.IsNull())
       {
         m_iopsToStorageRatio.push_back(iopsToStorageRatioMember);
         iopsToStorageRatioMember = iopsToStorageRatioMember.NextNode("DoubleRange");
       }
 
-      m_iopsToStorageRatioHasBeenSet = true;
+       m_iopsToStorageRatioHasBeenSet = true;
     }
   }
 

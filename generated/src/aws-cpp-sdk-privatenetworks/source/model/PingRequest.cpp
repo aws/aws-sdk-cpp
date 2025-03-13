@@ -12,10 +12,6 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PingRequest::PingRequest()
-{
-}
-
 Aws::String PingRequest::SerializePayload() const
 {
   return {};

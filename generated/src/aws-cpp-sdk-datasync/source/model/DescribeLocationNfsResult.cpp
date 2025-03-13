@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocationNfsResult::DescribeLocationNfsResult()
-{
-}
-
 DescribeLocationNfsResult::DescribeLocationNfsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,35 @@ DescribeLocationNfsResult& DescribeLocationNfsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("LocationArn"))
   {
     m_locationArn = jsonValue.GetString("LocationArn");
-
+    m_locationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationUri"))
   {
     m_locationUri = jsonValue.GetString("LocationUri");
-
+    m_locationUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnPremConfig"))
   {
     m_onPremConfig = jsonValue.GetObject("OnPremConfig");
-
+    m_onPremConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MountOptions"))
   {
     m_mountOptions = jsonValue.GetObject("MountOptions");
-
+    m_mountOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

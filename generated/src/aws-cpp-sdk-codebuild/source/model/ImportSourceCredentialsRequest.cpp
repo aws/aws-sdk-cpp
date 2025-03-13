@@ -12,18 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportSourceCredentialsRequest::ImportSourceCredentialsRequest() : 
-    m_usernameHasBeenSet(false),
-    m_tokenHasBeenSet(false),
-    m_serverType(ServerType::NOT_SET),
-    m_serverTypeHasBeenSet(false),
-    m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_shouldOverwrite(false),
-    m_shouldOverwriteHasBeenSet(false)
-{
-}
-
 Aws::String ImportSourceCredentialsRequest::SerializePayload() const
 {
   JsonValue payload;

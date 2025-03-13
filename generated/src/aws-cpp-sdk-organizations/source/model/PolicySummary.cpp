@@ -18,20 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-PolicySummary::PolicySummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(PolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_awsManaged(false),
-    m_awsManagedHasBeenSet(false)
-{
-}
-
 PolicySummary::PolicySummary(JsonView jsonValue)
-  : PolicySummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ PolicySummary& PolicySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PolicyTypeMapper::GetPolicyTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsManaged"))
   {
     m_awsManaged = jsonValue.GetBool("AwsManaged");
-
     m_awsManagedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAuditMitigationActionsTaskRequest::DescribeAuditMitigationActionsTaskRequest() : 
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAuditMitigationActionsTaskRequest::SerializePayload() const
 {
   return {};

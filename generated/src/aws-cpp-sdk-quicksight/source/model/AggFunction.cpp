@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AggFunction::AggFunction() : 
-    m_aggregation(AggType::NOT_SET),
-    m_aggregationHasBeenSet(false),
-    m_aggregationFunctionParametersHasBeenSet(false),
-    m_period(TopicTimeGranularity::NOT_SET),
-    m_periodHasBeenSet(false),
-    m_periodFieldHasBeenSet(false)
-{
-}
-
 AggFunction::AggFunction(JsonView jsonValue)
-  : AggFunction()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ AggFunction& AggFunction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Aggregation"))
   {
     m_aggregation = AggTypeMapper::GetAggTypeForName(jsonValue.GetString("Aggregation"));
-
     m_aggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregationFunctionParameters"))
   {
     Aws::Map<Aws::String, JsonView> aggregationFunctionParametersJsonMap = jsonValue.GetObject("AggregationFunctionParameters").GetAllObjects();
@@ -52,21 +39,16 @@ AggFunction& AggFunction::operator =(JsonView jsonValue)
     }
     m_aggregationFunctionParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Period"))
   {
     m_period = TopicTimeGranularityMapper::GetTopicTimeGranularityForName(jsonValue.GetString("Period"));
-
     m_periodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeriodField"))
   {
     m_periodField = jsonValue.GetString("PeriodField");
-
     m_periodFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

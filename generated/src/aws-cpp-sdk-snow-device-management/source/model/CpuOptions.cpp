@@ -18,16 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-CpuOptions::CpuOptions() : 
-    m_coreCount(0),
-    m_coreCountHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false)
-{
-}
-
 CpuOptions::CpuOptions(JsonView jsonValue)
-  : CpuOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CpuOptions& CpuOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("coreCount"))
   {
     m_coreCount = jsonValue.GetInteger("coreCount");
-
     m_coreCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threadsPerCore"))
   {
     m_threadsPerCore = jsonValue.GetInteger("threadsPerCore");
-
     m_threadsPerCoreHasBeenSet = true;
   }
-
   return *this;
 }
 

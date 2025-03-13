@@ -18,18 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-RetryStageMetadata::RetryStageMetadata() : 
-    m_autoStageRetryAttempt(0),
-    m_autoStageRetryAttemptHasBeenSet(false),
-    m_manualStageRetryAttempt(0),
-    m_manualStageRetryAttemptHasBeenSet(false),
-    m_latestRetryTrigger(RetryTrigger::NOT_SET),
-    m_latestRetryTriggerHasBeenSet(false)
-{
-}
-
 RetryStageMetadata::RetryStageMetadata(JsonView jsonValue)
-  : RetryStageMetadata()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RetryStageMetadata& RetryStageMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("autoStageRetryAttempt"))
   {
     m_autoStageRetryAttempt = jsonValue.GetInteger("autoStageRetryAttempt");
-
     m_autoStageRetryAttemptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manualStageRetryAttempt"))
   {
     m_manualStageRetryAttempt = jsonValue.GetInteger("manualStageRetryAttempt");
-
     m_manualStageRetryAttemptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestRetryTrigger"))
   {
     m_latestRetryTrigger = RetryTriggerMapper::GetRetryTriggerForName(jsonValue.GetString("latestRetryTrigger"));
-
     m_latestRetryTriggerHasBeenSet = true;
   }
-
   return *this;
 }
 

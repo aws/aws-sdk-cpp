@@ -18,20 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-SpendLimit::SpendLimit() : 
-    m_name(SpendLimitName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_enforcedLimit(0),
-    m_enforcedLimitHasBeenSet(false),
-    m_maxLimit(0),
-    m_maxLimitHasBeenSet(false),
-    m_overridden(false),
-    m_overriddenHasBeenSet(false)
-{
-}
-
 SpendLimit::SpendLimit(JsonView jsonValue)
-  : SpendLimit()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ SpendLimit& SpendLimit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = SpendLimitNameMapper::GetSpendLimitNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnforcedLimit"))
   {
     m_enforcedLimit = jsonValue.GetInt64("EnforcedLimit");
-
     m_enforcedLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxLimit"))
   {
     m_maxLimit = jsonValue.GetInt64("MaxLimit");
-
     m_maxLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Overridden"))
   {
     m_overridden = jsonValue.GetBool("Overridden");
-
     m_overriddenHasBeenSet = true;
   }
-
   return *this;
 }
 

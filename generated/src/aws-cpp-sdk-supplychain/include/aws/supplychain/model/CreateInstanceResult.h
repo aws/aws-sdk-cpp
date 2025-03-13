@@ -33,7 +33,7 @@ namespace Model
   class CreateInstanceResult
   {
   public:
-    AWS_SUPPLYCHAIN_API CreateInstanceResult();
+    AWS_SUPPLYCHAIN_API CreateInstanceResult() = default;
     AWS_SUPPLYCHAIN_API CreateInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPLYCHAIN_API CreateInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The AWS Supply Chain instance resource data details.</p>
      */
-    inline const Instance& GetInstance() const{ return m_instance; }
-    inline void SetInstance(const Instance& value) { m_instance = value; }
-    inline void SetInstance(Instance&& value) { m_instance = std::move(value); }
-    inline CreateInstanceResult& WithInstance(const Instance& value) { SetInstance(value); return *this;}
-    inline CreateInstanceResult& WithInstance(Instance&& value) { SetInstance(std::move(value)); return *this;}
+    inline const Instance& GetInstance() const { return m_instance; }
+    template<typename InstanceT = Instance>
+    void SetInstance(InstanceT&& value) { m_instanceHasBeenSet = true; m_instance = std::forward<InstanceT>(value); }
+    template<typename InstanceT = Instance>
+    CreateInstanceResult& WithInstance(InstanceT&& value) { SetInstance(std::forward<InstanceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateInstanceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Instance m_instance;
+    bool m_instanceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

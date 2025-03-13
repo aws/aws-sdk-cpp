@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEmailAddressResult::DescribeEmailAddressResult()
-{
-}
-
 DescribeEmailAddressResult::DescribeEmailAddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,45 +28,38 @@ DescribeEmailAddressResult& DescribeEmailAddressResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("EmailAddressId"))
   {
     m_emailAddressId = jsonValue.GetString("EmailAddressId");
-
+    m_emailAddressIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddressArn"))
   {
     m_emailAddressArn = jsonValue.GetString("EmailAddressArn");
-
+    m_emailAddressArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddress"))
   {
     m_emailAddress = jsonValue.GetString("EmailAddress");
-
+    m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
+    m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTimestamp"))
   {
     m_createTimestamp = jsonValue.GetString("CreateTimestamp");
-
+    m_createTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifiedTimestamp"))
   {
     m_modifiedTimestamp = jsonValue.GetString("ModifiedTimestamp");
-
+    m_modifiedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -78,14 +67,15 @@ DescribeEmailAddressResult& DescribeEmailAddressResult::operator =(const Aws::Am
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

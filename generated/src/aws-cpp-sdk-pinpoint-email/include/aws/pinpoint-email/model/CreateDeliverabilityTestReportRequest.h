@@ -35,7 +35,7 @@ namespace Model
   class CreateDeliverabilityTestReportRequest : public PinpointEmailRequest
   {
   public:
-    AWS_PINPOINTEMAIL_API CreateDeliverabilityTestReportRequest();
+    AWS_PINPOINTEMAIL_API CreateDeliverabilityTestReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,14 +51,12 @@ namespace Model
      * <p>A unique name that helps you to identify the predictive inbox placement test
      * when you retrieve the results.</p>
      */
-    inline const Aws::String& GetReportName() const{ return m_reportName; }
+    inline const Aws::String& GetReportName() const { return m_reportName; }
     inline bool ReportNameHasBeenSet() const { return m_reportNameHasBeenSet; }
-    inline void SetReportName(const Aws::String& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
-    inline void SetReportName(Aws::String&& value) { m_reportNameHasBeenSet = true; m_reportName = std::move(value); }
-    inline void SetReportName(const char* value) { m_reportNameHasBeenSet = true; m_reportName.assign(value); }
-    inline CreateDeliverabilityTestReportRequest& WithReportName(const Aws::String& value) { SetReportName(value); return *this;}
-    inline CreateDeliverabilityTestReportRequest& WithReportName(Aws::String&& value) { SetReportName(std::move(value)); return *this;}
-    inline CreateDeliverabilityTestReportRequest& WithReportName(const char* value) { SetReportName(value); return *this;}
+    template<typename ReportNameT = Aws::String>
+    void SetReportName(ReportNameT&& value) { m_reportNameHasBeenSet = true; m_reportName = std::forward<ReportNameT>(value); }
+    template<typename ReportNameT = Aws::String>
+    CreateDeliverabilityTestReportRequest& WithReportName(ReportNameT&& value) { SetReportName(std::forward<ReportNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <p>The email address that the predictive inbox placement test email was sent
      * from.</p>
      */
-    inline const Aws::String& GetFromEmailAddress() const{ return m_fromEmailAddress; }
+    inline const Aws::String& GetFromEmailAddress() const { return m_fromEmailAddress; }
     inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
-    inline void SetFromEmailAddress(const Aws::String& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = value; }
-    inline void SetFromEmailAddress(Aws::String&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::move(value); }
-    inline void SetFromEmailAddress(const char* value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress.assign(value); }
-    inline CreateDeliverabilityTestReportRequest& WithFromEmailAddress(const Aws::String& value) { SetFromEmailAddress(value); return *this;}
-    inline CreateDeliverabilityTestReportRequest& WithFromEmailAddress(Aws::String&& value) { SetFromEmailAddress(std::move(value)); return *this;}
-    inline CreateDeliverabilityTestReportRequest& WithFromEmailAddress(const char* value) { SetFromEmailAddress(value); return *this;}
+    template<typename FromEmailAddressT = Aws::String>
+    void SetFromEmailAddress(FromEmailAddressT&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::forward<FromEmailAddressT>(value); }
+    template<typename FromEmailAddressT = Aws::String>
+    CreateDeliverabilityTestReportRequest& WithFromEmailAddress(FromEmailAddressT&& value) { SetFromEmailAddress(std::forward<FromEmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +77,12 @@ namespace Model
      * <p>The HTML body of the message that you sent when you performed the predictive
      * inbox placement test.</p>
      */
-    inline const EmailContent& GetContent() const{ return m_content; }
+    inline const EmailContent& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const EmailContent& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(EmailContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline CreateDeliverabilityTestReportRequest& WithContent(const EmailContent& value) { SetContent(value); return *this;}
-    inline CreateDeliverabilityTestReportRequest& WithContent(EmailContent&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = EmailContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = EmailContent>
+    CreateDeliverabilityTestReportRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +90,14 @@ namespace Model
      * <p>An array of objects that define the tags (keys and values) that you want to
      * associate with the predictive inbox placement test.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDeliverabilityTestReportRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateDeliverabilityTestReportRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDeliverabilityTestReportRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateDeliverabilityTestReportRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDeliverabilityTestReportRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDeliverabilityTestReportRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

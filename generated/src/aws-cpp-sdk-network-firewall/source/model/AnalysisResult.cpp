@@ -18,16 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-AnalysisResult::AnalysisResult() : 
-    m_identifiedRuleIdsHasBeenSet(false),
-    m_identifiedType(IdentifiedType::NOT_SET),
-    m_identifiedTypeHasBeenSet(false),
-    m_analysisDetailHasBeenSet(false)
-{
-}
-
 AnalysisResult::AnalysisResult(JsonView jsonValue)
-  : AnalysisResult()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ AnalysisResult& AnalysisResult::operator =(JsonView jsonValue)
     }
     m_identifiedRuleIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentifiedType"))
   {
     m_identifiedType = IdentifiedTypeMapper::GetIdentifiedTypeForName(jsonValue.GetString("IdentifiedType"));
-
     m_identifiedTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalysisDetail"))
   {
     m_analysisDetail = jsonValue.GetString("AnalysisDetail");
-
     m_analysisDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

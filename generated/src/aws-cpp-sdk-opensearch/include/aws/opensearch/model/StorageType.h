@@ -34,7 +34,7 @@ namespace Model
   class StorageType
   {
   public:
-    AWS_OPENSEARCHSERVICE_API StorageType();
+    AWS_OPENSEARCHSERVICE_API StorageType() = default;
     AWS_OPENSEARCHSERVICE_API StorageType(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API StorageType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,38 @@ namespace Model
     /**
      * <p>The name of the storage type.</p>
      */
-    inline const Aws::String& GetStorageTypeName() const{ return m_storageTypeName; }
+    inline const Aws::String& GetStorageTypeName() const { return m_storageTypeName; }
     inline bool StorageTypeNameHasBeenSet() const { return m_storageTypeNameHasBeenSet; }
-    inline void SetStorageTypeName(const Aws::String& value) { m_storageTypeNameHasBeenSet = true; m_storageTypeName = value; }
-    inline void SetStorageTypeName(Aws::String&& value) { m_storageTypeNameHasBeenSet = true; m_storageTypeName = std::move(value); }
-    inline void SetStorageTypeName(const char* value) { m_storageTypeNameHasBeenSet = true; m_storageTypeName.assign(value); }
-    inline StorageType& WithStorageTypeName(const Aws::String& value) { SetStorageTypeName(value); return *this;}
-    inline StorageType& WithStorageTypeName(Aws::String&& value) { SetStorageTypeName(std::move(value)); return *this;}
-    inline StorageType& WithStorageTypeName(const char* value) { SetStorageTypeName(value); return *this;}
+    template<typename StorageTypeNameT = Aws::String>
+    void SetStorageTypeName(StorageTypeNameT&& value) { m_storageTypeNameHasBeenSet = true; m_storageTypeName = std::forward<StorageTypeNameT>(value); }
+    template<typename StorageTypeNameT = Aws::String>
+    StorageType& WithStorageTypeName(StorageTypeNameT&& value) { SetStorageTypeName(std::forward<StorageTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The storage sub-type, such as <code>gp3</code> or <code>io1</code>.</p>
      */
-    inline const Aws::String& GetStorageSubTypeName() const{ return m_storageSubTypeName; }
+    inline const Aws::String& GetStorageSubTypeName() const { return m_storageSubTypeName; }
     inline bool StorageSubTypeNameHasBeenSet() const { return m_storageSubTypeNameHasBeenSet; }
-    inline void SetStorageSubTypeName(const Aws::String& value) { m_storageSubTypeNameHasBeenSet = true; m_storageSubTypeName = value; }
-    inline void SetStorageSubTypeName(Aws::String&& value) { m_storageSubTypeNameHasBeenSet = true; m_storageSubTypeName = std::move(value); }
-    inline void SetStorageSubTypeName(const char* value) { m_storageSubTypeNameHasBeenSet = true; m_storageSubTypeName.assign(value); }
-    inline StorageType& WithStorageSubTypeName(const Aws::String& value) { SetStorageSubTypeName(value); return *this;}
-    inline StorageType& WithStorageSubTypeName(Aws::String&& value) { SetStorageSubTypeName(std::move(value)); return *this;}
-    inline StorageType& WithStorageSubTypeName(const char* value) { SetStorageSubTypeName(value); return *this;}
+    template<typename StorageSubTypeNameT = Aws::String>
+    void SetStorageSubTypeName(StorageSubTypeNameT&& value) { m_storageSubTypeNameHasBeenSet = true; m_storageSubTypeName = std::forward<StorageSubTypeNameT>(value); }
+    template<typename StorageSubTypeNameT = Aws::String>
+    StorageType& WithStorageSubTypeName(StorageSubTypeNameT&& value) { SetStorageSubTypeName(std::forward<StorageSubTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Limits that are applicable for the given storage type.</p>
      */
-    inline const Aws::Vector<StorageTypeLimit>& GetStorageTypeLimits() const{ return m_storageTypeLimits; }
+    inline const Aws::Vector<StorageTypeLimit>& GetStorageTypeLimits() const { return m_storageTypeLimits; }
     inline bool StorageTypeLimitsHasBeenSet() const { return m_storageTypeLimitsHasBeenSet; }
-    inline void SetStorageTypeLimits(const Aws::Vector<StorageTypeLimit>& value) { m_storageTypeLimitsHasBeenSet = true; m_storageTypeLimits = value; }
-    inline void SetStorageTypeLimits(Aws::Vector<StorageTypeLimit>&& value) { m_storageTypeLimitsHasBeenSet = true; m_storageTypeLimits = std::move(value); }
-    inline StorageType& WithStorageTypeLimits(const Aws::Vector<StorageTypeLimit>& value) { SetStorageTypeLimits(value); return *this;}
-    inline StorageType& WithStorageTypeLimits(Aws::Vector<StorageTypeLimit>&& value) { SetStorageTypeLimits(std::move(value)); return *this;}
-    inline StorageType& AddStorageTypeLimits(const StorageTypeLimit& value) { m_storageTypeLimitsHasBeenSet = true; m_storageTypeLimits.push_back(value); return *this; }
-    inline StorageType& AddStorageTypeLimits(StorageTypeLimit&& value) { m_storageTypeLimitsHasBeenSet = true; m_storageTypeLimits.push_back(std::move(value)); return *this; }
+    template<typename StorageTypeLimitsT = Aws::Vector<StorageTypeLimit>>
+    void SetStorageTypeLimits(StorageTypeLimitsT&& value) { m_storageTypeLimitsHasBeenSet = true; m_storageTypeLimits = std::forward<StorageTypeLimitsT>(value); }
+    template<typename StorageTypeLimitsT = Aws::Vector<StorageTypeLimit>>
+    StorageType& WithStorageTypeLimits(StorageTypeLimitsT&& value) { SetStorageTypeLimits(std::forward<StorageTypeLimitsT>(value)); return *this;}
+    template<typename StorageTypeLimitsT = StorageTypeLimit>
+    StorageType& AddStorageTypeLimits(StorageTypeLimitsT&& value) { m_storageTypeLimitsHasBeenSet = true; m_storageTypeLimits.emplace_back(std::forward<StorageTypeLimitsT>(value)); return *this; }
     ///@}
   private:
 

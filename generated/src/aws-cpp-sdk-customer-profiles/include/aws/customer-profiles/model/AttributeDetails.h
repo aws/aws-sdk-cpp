@@ -34,7 +34,7 @@ namespace Model
   class AttributeDetails
   {
   public:
-    AWS_CUSTOMERPROFILES_API AttributeDetails();
+    AWS_CUSTOMERPROFILES_API AttributeDetails() = default;
     AWS_CUSTOMERPROFILES_API AttributeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API AttributeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>A list of attribute items specified in the mathematical expression.</p>
      */
-    inline const Aws::Vector<AttributeItem>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<AttributeItem>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<AttributeItem>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<AttributeItem>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline AttributeDetails& WithAttributes(const Aws::Vector<AttributeItem>& value) { SetAttributes(value); return *this;}
-    inline AttributeDetails& WithAttributes(Aws::Vector<AttributeItem>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline AttributeDetails& AddAttributes(const AttributeItem& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline AttributeDetails& AddAttributes(AttributeItem&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<AttributeItem>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<AttributeItem>>
+    AttributeDetails& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = AttributeItem>
+    AttributeDetails& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,12 @@ namespace Model
      * attribute list. Each element in the expression should follow the structure of
      * \"{ObjectTypeName.AttributeName}\".</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline AttributeDetails& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline AttributeDetails& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline AttributeDetails& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    AttributeDetails& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
   private:
 

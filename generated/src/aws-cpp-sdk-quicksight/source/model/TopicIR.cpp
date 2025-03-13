@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicIR::TopicIR() : 
-    m_metricsHasBeenSet(false),
-    m_groupByListHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_sortHasBeenSet(false),
-    m_contributionAnalysisHasBeenSet(false),
-    m_visualHasBeenSet(false)
-{
-}
-
 TopicIR::TopicIR(JsonView jsonValue)
-  : TopicIR()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ TopicIR& TopicIR::operator =(JsonView jsonValue)
     }
     m_metricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupByList"))
   {
     Aws::Utils::Array<JsonView> groupByListJsonList = jsonValue.GetArray("GroupByList");
@@ -55,7 +43,6 @@ TopicIR& TopicIR::operator =(JsonView jsonValue)
     }
     m_groupByListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filters"))
   {
     Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("Filters");
@@ -72,28 +59,21 @@ TopicIR& TopicIR::operator =(JsonView jsonValue)
     }
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sort"))
   {
     m_sort = jsonValue.GetObject("Sort");
-
     m_sortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContributionAnalysis"))
   {
     m_contributionAnalysis = jsonValue.GetObject("ContributionAnalysis");
-
     m_contributionAnalysisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visual"))
   {
     m_visual = jsonValue.GetObject("Visual");
-
     m_visualHasBeenSet = true;
   }
-
   return *this;
 }
 

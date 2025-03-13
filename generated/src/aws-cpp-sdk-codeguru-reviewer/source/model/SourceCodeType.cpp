@@ -18,17 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-SourceCodeType::SourceCodeType() : 
-    m_commitDiffHasBeenSet(false),
-    m_repositoryHeadHasBeenSet(false),
-    m_branchDiffHasBeenSet(false),
-    m_s3BucketRepositoryHasBeenSet(false),
-    m_requestMetadataHasBeenSet(false)
-{
-}
-
 SourceCodeType::SourceCodeType(JsonView jsonValue)
-  : SourceCodeType()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ SourceCodeType& SourceCodeType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CommitDiff"))
   {
     m_commitDiff = jsonValue.GetObject("CommitDiff");
-
     m_commitDiffHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepositoryHead"))
   {
     m_repositoryHead = jsonValue.GetObject("RepositoryHead");
-
     m_repositoryHeadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BranchDiff"))
   {
     m_branchDiff = jsonValue.GetObject("BranchDiff");
-
     m_branchDiffHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BucketRepository"))
   {
     m_s3BucketRepository = jsonValue.GetObject("S3BucketRepository");
-
     m_s3BucketRepositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestMetadata"))
   {
     m_requestMetadata = jsonValue.GetObject("RequestMetadata");
-
     m_requestMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

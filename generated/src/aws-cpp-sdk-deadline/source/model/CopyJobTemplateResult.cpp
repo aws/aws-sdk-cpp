@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopyJobTemplateResult::CopyJobTemplateResult() : 
-    m_templateType(JobTemplateType::NOT_SET)
-{
-}
-
 CopyJobTemplateResult::CopyJobTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CopyJobTemplateResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ CopyJobTemplateResult& CopyJobTemplateResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("templateType"))
   {
     m_templateType = JobTemplateTypeMapper::GetJobTemplateTypeForName(jsonValue.GetString("templateType"));
-
+    m_templateTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

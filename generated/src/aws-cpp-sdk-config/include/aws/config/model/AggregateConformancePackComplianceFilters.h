@@ -33,7 +33,7 @@ namespace Model
   class AggregateConformancePackComplianceFilters
   {
   public:
-    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceFilters();
+    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceFilters() = default;
     AWS_CONFIGSERVICE_API AggregateConformancePackComplianceFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API AggregateConformancePackComplianceFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,61 +43,53 @@ namespace Model
     /**
      * <p>The name of the conformance pack.</p>
      */
-    inline const Aws::String& GetConformancePackName() const{ return m_conformancePackName; }
+    inline const Aws::String& GetConformancePackName() const { return m_conformancePackName; }
     inline bool ConformancePackNameHasBeenSet() const { return m_conformancePackNameHasBeenSet; }
-    inline void SetConformancePackName(const Aws::String& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = value; }
-    inline void SetConformancePackName(Aws::String&& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = std::move(value); }
-    inline void SetConformancePackName(const char* value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName.assign(value); }
-    inline AggregateConformancePackComplianceFilters& WithConformancePackName(const Aws::String& value) { SetConformancePackName(value); return *this;}
-    inline AggregateConformancePackComplianceFilters& WithConformancePackName(Aws::String&& value) { SetConformancePackName(std::move(value)); return *this;}
-    inline AggregateConformancePackComplianceFilters& WithConformancePackName(const char* value) { SetConformancePackName(value); return *this;}
+    template<typename ConformancePackNameT = Aws::String>
+    void SetConformancePackName(ConformancePackNameT&& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = std::forward<ConformancePackNameT>(value); }
+    template<typename ConformancePackNameT = Aws::String>
+    AggregateConformancePackComplianceFilters& WithConformancePackName(ConformancePackNameT&& value) { SetConformancePackName(std::forward<ConformancePackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The compliance status of the conformance pack.</p>
      */
-    inline const ConformancePackComplianceType& GetComplianceType() const{ return m_complianceType; }
+    inline ConformancePackComplianceType GetComplianceType() const { return m_complianceType; }
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
-    inline void SetComplianceType(const ConformancePackComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
-    inline void SetComplianceType(ConformancePackComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
-    inline AggregateConformancePackComplianceFilters& WithComplianceType(const ConformancePackComplianceType& value) { SetComplianceType(value); return *this;}
-    inline AggregateConformancePackComplianceFilters& WithComplianceType(ConformancePackComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
+    inline void SetComplianceType(ConformancePackComplianceType value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
+    inline AggregateConformancePackComplianceFilters& WithComplianceType(ConformancePackComplianceType value) { SetComplianceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 12-digit Amazon Web Services account ID of the source account.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AggregateConformancePackComplianceFilters& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AggregateConformancePackComplianceFilters& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AggregateConformancePackComplianceFilters& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AggregateConformancePackComplianceFilters& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source Amazon Web Services Region from where the data is aggregated.</p>
      */
-    inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+    inline const Aws::String& GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-    inline AggregateConformancePackComplianceFilters& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-    inline AggregateConformancePackComplianceFilters& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-    inline AggregateConformancePackComplianceFilters& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    template<typename AwsRegionT = Aws::String>
+    void SetAwsRegion(AwsRegionT&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::forward<AwsRegionT>(value); }
+    template<typename AwsRegionT = Aws::String>
+    AggregateConformancePackComplianceFilters& WithAwsRegion(AwsRegionT&& value) { SetAwsRegion(std::forward<AwsRegionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_conformancePackName;
     bool m_conformancePackNameHasBeenSet = false;
 
-    ConformancePackComplianceType m_complianceType;
+    ConformancePackComplianceType m_complianceType{ConformancePackComplianceType::NOT_SET};
     bool m_complianceTypeHasBeenSet = false;
 
     Aws::String m_accountId;

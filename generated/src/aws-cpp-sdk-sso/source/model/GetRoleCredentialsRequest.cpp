@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRoleCredentialsRequest::GetRoleCredentialsRequest() : 
-    m_roleNameHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_accessTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetRoleCredentialsRequest::SerializePayload() const
 {
   return {};

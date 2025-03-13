@@ -29,7 +29,7 @@ namespace Model
   class ListProjectsResult
   {
   public:
-    AWS_IOTSITEWISE_API ListProjectsResult();
+    AWS_IOTSITEWISE_API ListProjectsResult() = default;
     AWS_IOTSITEWISE_API ListProjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API ListProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list that summarizes each project in the portal.</p>
      */
-    inline const Aws::Vector<ProjectSummary>& GetProjectSummaries() const{ return m_projectSummaries; }
-    inline void SetProjectSummaries(const Aws::Vector<ProjectSummary>& value) { m_projectSummaries = value; }
-    inline void SetProjectSummaries(Aws::Vector<ProjectSummary>&& value) { m_projectSummaries = std::move(value); }
-    inline ListProjectsResult& WithProjectSummaries(const Aws::Vector<ProjectSummary>& value) { SetProjectSummaries(value); return *this;}
-    inline ListProjectsResult& WithProjectSummaries(Aws::Vector<ProjectSummary>&& value) { SetProjectSummaries(std::move(value)); return *this;}
-    inline ListProjectsResult& AddProjectSummaries(const ProjectSummary& value) { m_projectSummaries.push_back(value); return *this; }
-    inline ListProjectsResult& AddProjectSummaries(ProjectSummary&& value) { m_projectSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProjectSummary>& GetProjectSummaries() const { return m_projectSummaries; }
+    template<typename ProjectSummariesT = Aws::Vector<ProjectSummary>>
+    void SetProjectSummaries(ProjectSummariesT&& value) { m_projectSummariesHasBeenSet = true; m_projectSummaries = std::forward<ProjectSummariesT>(value); }
+    template<typename ProjectSummariesT = Aws::Vector<ProjectSummary>>
+    ListProjectsResult& WithProjectSummaries(ProjectSummariesT&& value) { SetProjectSummaries(std::forward<ProjectSummariesT>(value)); return *this;}
+    template<typename ProjectSummariesT = ProjectSummary>
+    ListProjectsResult& AddProjectSummaries(ProjectSummariesT&& value) { m_projectSummariesHasBeenSet = true; m_projectSummaries.emplace_back(std::forward<ProjectSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of results, or null if there are no additional
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListProjectsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProjectsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProjectsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProjectsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListProjectsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListProjectsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListProjectsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListProjectsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ProjectSummary> m_projectSummaries;
+    bool m_projectSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

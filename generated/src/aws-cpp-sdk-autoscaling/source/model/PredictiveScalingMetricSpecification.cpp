@@ -20,20 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-PredictiveScalingMetricSpecification::PredictiveScalingMetricSpecification() : 
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false),
-    m_predefinedMetricPairSpecificationHasBeenSet(false),
-    m_predefinedScalingMetricSpecificationHasBeenSet(false),
-    m_predefinedLoadMetricSpecificationHasBeenSet(false),
-    m_customizedScalingMetricSpecificationHasBeenSet(false),
-    m_customizedLoadMetricSpecificationHasBeenSet(false),
-    m_customizedCapacityMetricSpecificationHasBeenSet(false)
-{
-}
-
 PredictiveScalingMetricSpecification::PredictiveScalingMetricSpecification(const XmlNode& xmlNode)
-  : PredictiveScalingMetricSpecification()
 {
   *this = xmlNode;
 }
@@ -49,42 +36,49 @@ PredictiveScalingMetricSpecification& PredictiveScalingMetricSpecification::oper
     {
       m_targetValue = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetValueNode.GetText()).c_str()).c_str());
       m_targetValueHasBeenSet = true;
+       m_targetValueHasBeenSet = true;
     }
     XmlNode predefinedMetricPairSpecificationNode = resultNode.FirstChild("PredefinedMetricPairSpecification");
     if(!predefinedMetricPairSpecificationNode.IsNull())
     {
       m_predefinedMetricPairSpecification = predefinedMetricPairSpecificationNode;
       m_predefinedMetricPairSpecificationHasBeenSet = true;
+       m_predefinedMetricPairSpecificationHasBeenSet = true;
     }
     XmlNode predefinedScalingMetricSpecificationNode = resultNode.FirstChild("PredefinedScalingMetricSpecification");
     if(!predefinedScalingMetricSpecificationNode.IsNull())
     {
       m_predefinedScalingMetricSpecification = predefinedScalingMetricSpecificationNode;
       m_predefinedScalingMetricSpecificationHasBeenSet = true;
+       m_predefinedScalingMetricSpecificationHasBeenSet = true;
     }
     XmlNode predefinedLoadMetricSpecificationNode = resultNode.FirstChild("PredefinedLoadMetricSpecification");
     if(!predefinedLoadMetricSpecificationNode.IsNull())
     {
       m_predefinedLoadMetricSpecification = predefinedLoadMetricSpecificationNode;
       m_predefinedLoadMetricSpecificationHasBeenSet = true;
+       m_predefinedLoadMetricSpecificationHasBeenSet = true;
     }
     XmlNode customizedScalingMetricSpecificationNode = resultNode.FirstChild("CustomizedScalingMetricSpecification");
     if(!customizedScalingMetricSpecificationNode.IsNull())
     {
       m_customizedScalingMetricSpecification = customizedScalingMetricSpecificationNode;
       m_customizedScalingMetricSpecificationHasBeenSet = true;
+       m_customizedScalingMetricSpecificationHasBeenSet = true;
     }
     XmlNode customizedLoadMetricSpecificationNode = resultNode.FirstChild("CustomizedLoadMetricSpecification");
     if(!customizedLoadMetricSpecificationNode.IsNull())
     {
       m_customizedLoadMetricSpecification = customizedLoadMetricSpecificationNode;
       m_customizedLoadMetricSpecificationHasBeenSet = true;
+       m_customizedLoadMetricSpecificationHasBeenSet = true;
     }
     XmlNode customizedCapacityMetricSpecificationNode = resultNode.FirstChild("CustomizedCapacityMetricSpecification");
     if(!customizedCapacityMetricSpecificationNode.IsNull())
     {
       m_customizedCapacityMetricSpecification = customizedCapacityMetricSpecificationNode;
       m_customizedCapacityMetricSpecificationHasBeenSet = true;
+       m_customizedCapacityMetricSpecificationHasBeenSet = true;
     }
   }
 

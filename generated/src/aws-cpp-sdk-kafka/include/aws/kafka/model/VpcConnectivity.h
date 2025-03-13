@@ -31,7 +31,7 @@ namespace Model
   class VpcConnectivity
   {
   public:
-    AWS_KAFKA_API VpcConnectivity();
+    AWS_KAFKA_API VpcConnectivity() = default;
     AWS_KAFKA_API VpcConnectivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API VpcConnectivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * connectivity.</p>
          
      */
-    inline const VpcConnectivityClientAuthentication& GetClientAuthentication() const{ return m_clientAuthentication; }
+    inline const VpcConnectivityClientAuthentication& GetClientAuthentication() const { return m_clientAuthentication; }
     inline bool ClientAuthenticationHasBeenSet() const { return m_clientAuthenticationHasBeenSet; }
-    inline void SetClientAuthentication(const VpcConnectivityClientAuthentication& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = value; }
-    inline void SetClientAuthentication(VpcConnectivityClientAuthentication&& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = std::move(value); }
-    inline VpcConnectivity& WithClientAuthentication(const VpcConnectivityClientAuthentication& value) { SetClientAuthentication(value); return *this;}
-    inline VpcConnectivity& WithClientAuthentication(VpcConnectivityClientAuthentication&& value) { SetClientAuthentication(std::move(value)); return *this;}
+    template<typename ClientAuthenticationT = VpcConnectivityClientAuthentication>
+    void SetClientAuthentication(ClientAuthenticationT&& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = std::forward<ClientAuthenticationT>(value); }
+    template<typename ClientAuthenticationT = VpcConnectivityClientAuthentication>
+    VpcConnectivity& WithClientAuthentication(ClientAuthenticationT&& value) { SetClientAuthentication(std::forward<ClientAuthenticationT>(value)); return *this;}
     ///@}
   private:
 

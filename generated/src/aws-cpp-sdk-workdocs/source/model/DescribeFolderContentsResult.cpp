@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFolderContentsResult::DescribeFolderContentsResult()
-{
-}
-
 DescribeFolderContentsResult::DescribeFolderContentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DescribeFolderContentsResult& DescribeFolderContentsResult::operator =(const Aws
     {
       m_folders.push_back(foldersJsonList[foldersIndex].AsObject());
     }
+    m_foldersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Documents"))
   {
     Aws::Utils::Array<JsonView> documentsJsonList = jsonValue.GetArray("Documents");
@@ -45,20 +41,20 @@ DescribeFolderContentsResult& DescribeFolderContentsResult::operator =(const Aws
     {
       m_documents.push_back(documentsJsonList[documentsIndex].AsObject());
     }
+    m_documentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyLoadBalancerAttributesResult::ModifyLoadBalancerAttributesResult()
-{
-}
-
 ModifyLoadBalancerAttributesResult::ModifyLoadBalancerAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ ModifyLoadBalancerAttributesResult& ModifyLoadBalancerAttributesResult::operator
     if(!loadBalancerNameNode.IsNull())
     {
       m_loadBalancerName = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerNameNode.GetText());
+      m_loadBalancerNameHasBeenSet = true;
     }
     XmlNode loadBalancerAttributesNode = resultNode.FirstChild("LoadBalancerAttributes");
     if(!loadBalancerAttributesNode.IsNull())
     {
       m_loadBalancerAttributes = loadBalancerAttributesNode;
+      m_loadBalancerAttributesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::ModifyLoadBalancerAttributesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

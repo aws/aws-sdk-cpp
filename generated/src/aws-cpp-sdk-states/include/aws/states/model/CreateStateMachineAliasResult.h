@@ -28,7 +28,7 @@ namespace Model
   class CreateStateMachineAliasResult
   {
   public:
-    AWS_SFN_API CreateStateMachineAliasResult();
+    AWS_SFN_API CreateStateMachineAliasResult() = default;
     AWS_SFN_API CreateStateMachineAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SFN_API CreateStateMachineAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,43 +38,42 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the created state machine
      * alias.</p>
      */
-    inline const Aws::String& GetStateMachineAliasArn() const{ return m_stateMachineAliasArn; }
-    inline void SetStateMachineAliasArn(const Aws::String& value) { m_stateMachineAliasArn = value; }
-    inline void SetStateMachineAliasArn(Aws::String&& value) { m_stateMachineAliasArn = std::move(value); }
-    inline void SetStateMachineAliasArn(const char* value) { m_stateMachineAliasArn.assign(value); }
-    inline CreateStateMachineAliasResult& WithStateMachineAliasArn(const Aws::String& value) { SetStateMachineAliasArn(value); return *this;}
-    inline CreateStateMachineAliasResult& WithStateMachineAliasArn(Aws::String&& value) { SetStateMachineAliasArn(std::move(value)); return *this;}
-    inline CreateStateMachineAliasResult& WithStateMachineAliasArn(const char* value) { SetStateMachineAliasArn(value); return *this;}
+    inline const Aws::String& GetStateMachineAliasArn() const { return m_stateMachineAliasArn; }
+    template<typename StateMachineAliasArnT = Aws::String>
+    void SetStateMachineAliasArn(StateMachineAliasArnT&& value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn = std::forward<StateMachineAliasArnT>(value); }
+    template<typename StateMachineAliasArnT = Aws::String>
+    CreateStateMachineAliasResult& WithStateMachineAliasArn(StateMachineAliasArnT&& value) { SetStateMachineAliasArn(std::forward<StateMachineAliasArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date the state machine alias was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
-    inline CreateStateMachineAliasResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline CreateStateMachineAliasResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    CreateStateMachineAliasResult& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateStateMachineAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateStateMachineAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateStateMachineAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateStateMachineAliasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_stateMachineAliasArn;
+    bool m_stateMachineAliasArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

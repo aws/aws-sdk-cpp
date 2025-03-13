@@ -37,7 +37,7 @@ namespace Model
   class IpamResourceCidr
   {
   public:
-    AWS_EC2_API IpamResourceCidr();
+    AWS_EC2_API IpamResourceCidr() = default;
     AWS_EC2_API IpamResourceCidr(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API IpamResourceCidr& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,138 +49,120 @@ namespace Model
     /**
      * <p>The IPAM ID for an IPAM resource.</p>
      */
-    inline const Aws::String& GetIpamId() const{ return m_ipamId; }
+    inline const Aws::String& GetIpamId() const { return m_ipamId; }
     inline bool IpamIdHasBeenSet() const { return m_ipamIdHasBeenSet; }
-    inline void SetIpamId(const Aws::String& value) { m_ipamIdHasBeenSet = true; m_ipamId = value; }
-    inline void SetIpamId(Aws::String&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::move(value); }
-    inline void SetIpamId(const char* value) { m_ipamIdHasBeenSet = true; m_ipamId.assign(value); }
-    inline IpamResourceCidr& WithIpamId(const Aws::String& value) { SetIpamId(value); return *this;}
-    inline IpamResourceCidr& WithIpamId(Aws::String&& value) { SetIpamId(std::move(value)); return *this;}
-    inline IpamResourceCidr& WithIpamId(const char* value) { SetIpamId(value); return *this;}
+    template<typename IpamIdT = Aws::String>
+    void SetIpamId(IpamIdT&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::forward<IpamIdT>(value); }
+    template<typename IpamIdT = Aws::String>
+    IpamResourceCidr& WithIpamId(IpamIdT&& value) { SetIpamId(std::forward<IpamIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scope ID for an IPAM resource.</p>
      */
-    inline const Aws::String& GetIpamScopeId() const{ return m_ipamScopeId; }
+    inline const Aws::String& GetIpamScopeId() const { return m_ipamScopeId; }
     inline bool IpamScopeIdHasBeenSet() const { return m_ipamScopeIdHasBeenSet; }
-    inline void SetIpamScopeId(const Aws::String& value) { m_ipamScopeIdHasBeenSet = true; m_ipamScopeId = value; }
-    inline void SetIpamScopeId(Aws::String&& value) { m_ipamScopeIdHasBeenSet = true; m_ipamScopeId = std::move(value); }
-    inline void SetIpamScopeId(const char* value) { m_ipamScopeIdHasBeenSet = true; m_ipamScopeId.assign(value); }
-    inline IpamResourceCidr& WithIpamScopeId(const Aws::String& value) { SetIpamScopeId(value); return *this;}
-    inline IpamResourceCidr& WithIpamScopeId(Aws::String&& value) { SetIpamScopeId(std::move(value)); return *this;}
-    inline IpamResourceCidr& WithIpamScopeId(const char* value) { SetIpamScopeId(value); return *this;}
+    template<typename IpamScopeIdT = Aws::String>
+    void SetIpamScopeId(IpamScopeIdT&& value) { m_ipamScopeIdHasBeenSet = true; m_ipamScopeId = std::forward<IpamScopeIdT>(value); }
+    template<typename IpamScopeIdT = Aws::String>
+    IpamResourceCidr& WithIpamScopeId(IpamScopeIdT&& value) { SetIpamScopeId(std::forward<IpamScopeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pool ID for an IPAM resource.</p>
      */
-    inline const Aws::String& GetIpamPoolId() const{ return m_ipamPoolId; }
+    inline const Aws::String& GetIpamPoolId() const { return m_ipamPoolId; }
     inline bool IpamPoolIdHasBeenSet() const { return m_ipamPoolIdHasBeenSet; }
-    inline void SetIpamPoolId(const Aws::String& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = value; }
-    inline void SetIpamPoolId(Aws::String&& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = std::move(value); }
-    inline void SetIpamPoolId(const char* value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId.assign(value); }
-    inline IpamResourceCidr& WithIpamPoolId(const Aws::String& value) { SetIpamPoolId(value); return *this;}
-    inline IpamResourceCidr& WithIpamPoolId(Aws::String&& value) { SetIpamPoolId(std::move(value)); return *this;}
-    inline IpamResourceCidr& WithIpamPoolId(const char* value) { SetIpamPoolId(value); return *this;}
+    template<typename IpamPoolIdT = Aws::String>
+    void SetIpamPoolId(IpamPoolIdT&& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = std::forward<IpamPoolIdT>(value); }
+    template<typename IpamPoolIdT = Aws::String>
+    IpamResourceCidr& WithIpamPoolId(IpamPoolIdT&& value) { SetIpamPoolId(std::forward<IpamPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region for an IPAM resource.</p>
      */
-    inline const Aws::String& GetResourceRegion() const{ return m_resourceRegion; }
+    inline const Aws::String& GetResourceRegion() const { return m_resourceRegion; }
     inline bool ResourceRegionHasBeenSet() const { return m_resourceRegionHasBeenSet; }
-    inline void SetResourceRegion(const Aws::String& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = value; }
-    inline void SetResourceRegion(Aws::String&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::move(value); }
-    inline void SetResourceRegion(const char* value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.assign(value); }
-    inline IpamResourceCidr& WithResourceRegion(const Aws::String& value) { SetResourceRegion(value); return *this;}
-    inline IpamResourceCidr& WithResourceRegion(Aws::String&& value) { SetResourceRegion(std::move(value)); return *this;}
-    inline IpamResourceCidr& WithResourceRegion(const char* value) { SetResourceRegion(value); return *this;}
+    template<typename ResourceRegionT = Aws::String>
+    void SetResourceRegion(ResourceRegionT&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::forward<ResourceRegionT>(value); }
+    template<typename ResourceRegionT = Aws::String>
+    IpamResourceCidr& WithResourceRegion(ResourceRegionT&& value) { SetResourceRegion(std::forward<ResourceRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account number of the owner of an IPAM resource.</p>
      */
-    inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
+    inline const Aws::String& GetResourceOwnerId() const { return m_resourceOwnerId; }
     inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
-    inline void SetResourceOwnerId(const Aws::String& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = value; }
-    inline void SetResourceOwnerId(Aws::String&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::move(value); }
-    inline void SetResourceOwnerId(const char* value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId.assign(value); }
-    inline IpamResourceCidr& WithResourceOwnerId(const Aws::String& value) { SetResourceOwnerId(value); return *this;}
-    inline IpamResourceCidr& WithResourceOwnerId(Aws::String&& value) { SetResourceOwnerId(std::move(value)); return *this;}
-    inline IpamResourceCidr& WithResourceOwnerId(const char* value) { SetResourceOwnerId(value); return *this;}
+    template<typename ResourceOwnerIdT = Aws::String>
+    void SetResourceOwnerId(ResourceOwnerIdT&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::forward<ResourceOwnerIdT>(value); }
+    template<typename ResourceOwnerIdT = Aws::String>
+    IpamResourceCidr& WithResourceOwnerId(ResourceOwnerIdT&& value) { SetResourceOwnerId(std::forward<ResourceOwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of an IPAM resource.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline IpamResourceCidr& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline IpamResourceCidr& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline IpamResourceCidr& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    IpamResourceCidr& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of an IPAM resource.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline IpamResourceCidr& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline IpamResourceCidr& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline IpamResourceCidr& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    IpamResourceCidr& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CIDR for an IPAM resource.</p>
      */
-    inline const Aws::String& GetResourceCidr() const{ return m_resourceCidr; }
+    inline const Aws::String& GetResourceCidr() const { return m_resourceCidr; }
     inline bool ResourceCidrHasBeenSet() const { return m_resourceCidrHasBeenSet; }
-    inline void SetResourceCidr(const Aws::String& value) { m_resourceCidrHasBeenSet = true; m_resourceCidr = value; }
-    inline void SetResourceCidr(Aws::String&& value) { m_resourceCidrHasBeenSet = true; m_resourceCidr = std::move(value); }
-    inline void SetResourceCidr(const char* value) { m_resourceCidrHasBeenSet = true; m_resourceCidr.assign(value); }
-    inline IpamResourceCidr& WithResourceCidr(const Aws::String& value) { SetResourceCidr(value); return *this;}
-    inline IpamResourceCidr& WithResourceCidr(Aws::String&& value) { SetResourceCidr(std::move(value)); return *this;}
-    inline IpamResourceCidr& WithResourceCidr(const char* value) { SetResourceCidr(value); return *this;}
+    template<typename ResourceCidrT = Aws::String>
+    void SetResourceCidr(ResourceCidrT&& value) { m_resourceCidrHasBeenSet = true; m_resourceCidr = std::forward<ResourceCidrT>(value); }
+    template<typename ResourceCidrT = Aws::String>
+    IpamResourceCidr& WithResourceCidr(ResourceCidrT&& value) { SetResourceCidr(std::forward<ResourceCidrT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of IPAM resource.</p>
      */
-    inline const IpamResourceType& GetResourceType() const{ return m_resourceType; }
+    inline IpamResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const IpamResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(IpamResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline IpamResourceCidr& WithResourceType(const IpamResourceType& value) { SetResourceType(value); return *this;}
-    inline IpamResourceCidr& WithResourceType(IpamResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(IpamResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline IpamResourceCidr& WithResourceType(IpamResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags for an IPAM resource.</p>
      */
-    inline const Aws::Vector<IpamResourceTag>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Vector<IpamResourceTag>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Vector<IpamResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Vector<IpamResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline IpamResourceCidr& WithResourceTags(const Aws::Vector<IpamResourceTag>& value) { SetResourceTags(value); return *this;}
-    inline IpamResourceCidr& WithResourceTags(Aws::Vector<IpamResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline IpamResourceCidr& AddResourceTags(const IpamResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-    inline IpamResourceCidr& AddResourceTags(IpamResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    template<typename ResourceTagsT = Aws::Vector<IpamResourceTag>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Vector<IpamResourceTag>>
+    IpamResourceCidr& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsT = IpamResourceTag>
+    IpamResourceCidr& AddResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -197,7 +179,7 @@ namespace Model
      * the percentage of IP address space in the pool that's been allocated to Elastic
      * IP addresses (EIPs). </p> </li> </ul>
      */
-    inline double GetIpUsage() const{ return m_ipUsage; }
+    inline double GetIpUsage() const { return m_ipUsage; }
     inline bool IpUsageHasBeenSet() const { return m_ipUsageHasBeenSet; }
     inline void SetIpUsage(double value) { m_ipUsageHasBeenSet = true; m_ipUsage = value; }
     inline IpamResourceCidr& WithIpUsage(double value) { SetIpUsage(value); return *this;}
@@ -210,12 +192,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
      * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
-    inline const IpamComplianceStatus& GetComplianceStatus() const{ return m_complianceStatus; }
+    inline IpamComplianceStatus GetComplianceStatus() const { return m_complianceStatus; }
     inline bool ComplianceStatusHasBeenSet() const { return m_complianceStatusHasBeenSet; }
-    inline void SetComplianceStatus(const IpamComplianceStatus& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = value; }
-    inline void SetComplianceStatus(IpamComplianceStatus&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = std::move(value); }
-    inline IpamResourceCidr& WithComplianceStatus(const IpamComplianceStatus& value) { SetComplianceStatus(value); return *this;}
-    inline IpamResourceCidr& WithComplianceStatus(IpamComplianceStatus&& value) { SetComplianceStatus(std::move(value)); return *this;}
+    inline void SetComplianceStatus(IpamComplianceStatus value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = value; }
+    inline IpamResourceCidr& WithComplianceStatus(IpamComplianceStatus value) { SetComplianceStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -225,12 +205,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
      * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
-    inline const IpamManagementState& GetManagementState() const{ return m_managementState; }
+    inline IpamManagementState GetManagementState() const { return m_managementState; }
     inline bool ManagementStateHasBeenSet() const { return m_managementStateHasBeenSet; }
-    inline void SetManagementState(const IpamManagementState& value) { m_managementStateHasBeenSet = true; m_managementState = value; }
-    inline void SetManagementState(IpamManagementState&& value) { m_managementStateHasBeenSet = true; m_managementState = std::move(value); }
-    inline IpamResourceCidr& WithManagementState(const IpamManagementState& value) { SetManagementState(value); return *this;}
-    inline IpamResourceCidr& WithManagementState(IpamManagementState&& value) { SetManagementState(std::move(value)); return *this;}
+    inline void SetManagementState(IpamManagementState value) { m_managementStateHasBeenSet = true; m_managementState = value; }
+    inline IpamResourceCidr& WithManagementState(IpamManagementState value) { SetManagementState(value); return *this;}
     ///@}
 
     ///@{
@@ -241,40 +219,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
      * CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
-    inline const IpamOverlapStatus& GetOverlapStatus() const{ return m_overlapStatus; }
+    inline IpamOverlapStatus GetOverlapStatus() const { return m_overlapStatus; }
     inline bool OverlapStatusHasBeenSet() const { return m_overlapStatusHasBeenSet; }
-    inline void SetOverlapStatus(const IpamOverlapStatus& value) { m_overlapStatusHasBeenSet = true; m_overlapStatus = value; }
-    inline void SetOverlapStatus(IpamOverlapStatus&& value) { m_overlapStatusHasBeenSet = true; m_overlapStatus = std::move(value); }
-    inline IpamResourceCidr& WithOverlapStatus(const IpamOverlapStatus& value) { SetOverlapStatus(value); return *this;}
-    inline IpamResourceCidr& WithOverlapStatus(IpamOverlapStatus&& value) { SetOverlapStatus(std::move(value)); return *this;}
+    inline void SetOverlapStatus(IpamOverlapStatus value) { m_overlapStatusHasBeenSet = true; m_overlapStatus = value; }
+    inline IpamResourceCidr& WithOverlapStatus(IpamOverlapStatus value) { SetOverlapStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of a VPC.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline IpamResourceCidr& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline IpamResourceCidr& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline IpamResourceCidr& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    IpamResourceCidr& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Availability Zone ID.</p>
      */
-    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
     inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
-    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
-    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
-    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
-    inline IpamResourceCidr& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
-    inline IpamResourceCidr& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
-    inline IpamResourceCidr& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    IpamResourceCidr& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -302,22 +274,22 @@ namespace Model
     Aws::String m_resourceCidr;
     bool m_resourceCidrHasBeenSet = false;
 
-    IpamResourceType m_resourceType;
+    IpamResourceType m_resourceType{IpamResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<IpamResourceTag> m_resourceTags;
     bool m_resourceTagsHasBeenSet = false;
 
-    double m_ipUsage;
+    double m_ipUsage{0.0};
     bool m_ipUsageHasBeenSet = false;
 
-    IpamComplianceStatus m_complianceStatus;
+    IpamComplianceStatus m_complianceStatus{IpamComplianceStatus::NOT_SET};
     bool m_complianceStatusHasBeenSet = false;
 
-    IpamManagementState m_managementState;
+    IpamManagementState m_managementState{IpamManagementState::NOT_SET};
     bool m_managementStateHasBeenSet = false;
 
-    IpamOverlapStatus m_overlapStatus;
+    IpamOverlapStatus m_overlapStatus{IpamOverlapStatus::NOT_SET};
     bool m_overlapStatusHasBeenSet = false;
 
     Aws::String m_vpcId;

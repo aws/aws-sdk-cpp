@@ -35,7 +35,7 @@ namespace Model
   class Stream
   {
   public:
-    AWS_IVS_API Stream();
+    AWS_IVS_API Stream() = default;
     AWS_IVS_API Stream(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API Stream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,22 @@ namespace Model
     /**
      * <p>Channel ARN for the stream.</p>
      */
-    inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
+    inline const Aws::String& GetChannelArn() const { return m_channelArn; }
     inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
-    inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
-    inline void SetChannelArn(Aws::String&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::move(value); }
-    inline void SetChannelArn(const char* value) { m_channelArnHasBeenSet = true; m_channelArn.assign(value); }
-    inline Stream& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-    inline Stream& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-    inline Stream& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    template<typename ChannelArnT = Aws::String>
+    void SetChannelArn(ChannelArnT&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::forward<ChannelArnT>(value); }
+    template<typename ChannelArnT = Aws::String>
+    Stream& WithChannelArn(ChannelArnT&& value) { SetChannelArn(std::forward<ChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stream’s health.</p>
      */
-    inline const StreamHealth& GetHealth() const{ return m_health; }
+    inline StreamHealth GetHealth() const { return m_health; }
     inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
-    inline void SetHealth(const StreamHealth& value) { m_healthHasBeenSet = true; m_health = value; }
-    inline void SetHealth(StreamHealth&& value) { m_healthHasBeenSet = true; m_health = std::move(value); }
-    inline Stream& WithHealth(const StreamHealth& value) { SetHealth(value); return *this;}
-    inline Stream& WithHealth(StreamHealth&& value) { SetHealth(std::move(value)); return *this;}
+    inline void SetHealth(StreamHealth value) { m_healthHasBeenSet = true; m_health = value; }
+    inline Stream& WithHealth(StreamHealth value) { SetHealth(value); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>URL of the master playlist, required by the video player to play the HLS
      * stream.</p>
      */
-    inline const Aws::String& GetPlaybackUrl() const{ return m_playbackUrl; }
+    inline const Aws::String& GetPlaybackUrl() const { return m_playbackUrl; }
     inline bool PlaybackUrlHasBeenSet() const { return m_playbackUrlHasBeenSet; }
-    inline void SetPlaybackUrl(const Aws::String& value) { m_playbackUrlHasBeenSet = true; m_playbackUrl = value; }
-    inline void SetPlaybackUrl(Aws::String&& value) { m_playbackUrlHasBeenSet = true; m_playbackUrl = std::move(value); }
-    inline void SetPlaybackUrl(const char* value) { m_playbackUrlHasBeenSet = true; m_playbackUrl.assign(value); }
-    inline Stream& WithPlaybackUrl(const Aws::String& value) { SetPlaybackUrl(value); return *this;}
-    inline Stream& WithPlaybackUrl(Aws::String&& value) { SetPlaybackUrl(std::move(value)); return *this;}
-    inline Stream& WithPlaybackUrl(const char* value) { SetPlaybackUrl(value); return *this;}
+    template<typename PlaybackUrlT = Aws::String>
+    void SetPlaybackUrl(PlaybackUrlT&& value) { m_playbackUrlHasBeenSet = true; m_playbackUrl = std::forward<PlaybackUrlT>(value); }
+    template<typename PlaybackUrlT = Aws::String>
+    Stream& WithPlaybackUrl(PlaybackUrlT&& value) { SetPlaybackUrl(std::forward<PlaybackUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +81,12 @@ namespace Model
      * <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this
      * is returned as a string</i>.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline Stream& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline Stream& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    Stream& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +95,10 @@ namespace Model
      * may not return it; instead, a "NotBroadcasting" error will indicate that the
      * stream is not live.</p>
      */
-    inline const StreamState& GetState() const{ return m_state; }
+    inline StreamState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const StreamState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(StreamState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Stream& WithState(const StreamState& value) { SetState(value); return *this;}
-    inline Stream& WithState(StreamState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(StreamState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Stream& WithState(StreamState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +106,12 @@ namespace Model
      * <p>Unique identifier for a live or previously live stream in the specified
      * channel.</p>
      */
-    inline const Aws::String& GetStreamId() const{ return m_streamId; }
+    inline const Aws::String& GetStreamId() const { return m_streamId; }
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
-    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
-    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
-    inline Stream& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-    inline Stream& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-    inline Stream& WithStreamId(const char* value) { SetStreamId(value); return *this;}
+    template<typename StreamIdT = Aws::String>
+    void SetStreamId(StreamIdT&& value) { m_streamIdHasBeenSet = true; m_streamId = std::forward<StreamIdT>(value); }
+    template<typename StreamIdT = Aws::String>
+    Stream& WithStreamId(StreamIdT&& value) { SetStreamId(std::forward<StreamIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,7 +122,7 @@ namespace Model
      * playback ends. A value of -1 indicates that the request timed out; in this case,
      * retry.</p>
      */
-    inline long long GetViewerCount() const{ return m_viewerCount; }
+    inline long long GetViewerCount() const { return m_viewerCount; }
     inline bool ViewerCountHasBeenSet() const { return m_viewerCountHasBeenSet; }
     inline void SetViewerCount(long long value) { m_viewerCountHasBeenSet = true; m_viewerCount = value; }
     inline Stream& WithViewerCount(long long value) { SetViewerCount(value); return *this;}
@@ -142,22 +132,22 @@ namespace Model
     Aws::String m_channelArn;
     bool m_channelArnHasBeenSet = false;
 
-    StreamHealth m_health;
+    StreamHealth m_health{StreamHealth::NOT_SET};
     bool m_healthHasBeenSet = false;
 
     Aws::String m_playbackUrl;
     bool m_playbackUrlHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    StreamState m_state;
+    StreamState m_state{StreamState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_streamId;
     bool m_streamIdHasBeenSet = false;
 
-    long long m_viewerCount;
+    long long m_viewerCount{0};
     bool m_viewerCountHasBeenSet = false;
   };
 

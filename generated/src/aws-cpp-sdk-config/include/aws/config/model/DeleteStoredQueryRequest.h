@@ -21,7 +21,7 @@ namespace Model
   class DeleteStoredQueryRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API DeleteStoredQueryRequest();
+    AWS_CONFIGSERVICE_API DeleteStoredQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the query that you want to delete.</p>
      */
-    inline const Aws::String& GetQueryName() const{ return m_queryName; }
+    inline const Aws::String& GetQueryName() const { return m_queryName; }
     inline bool QueryNameHasBeenSet() const { return m_queryNameHasBeenSet; }
-    inline void SetQueryName(const Aws::String& value) { m_queryNameHasBeenSet = true; m_queryName = value; }
-    inline void SetQueryName(Aws::String&& value) { m_queryNameHasBeenSet = true; m_queryName = std::move(value); }
-    inline void SetQueryName(const char* value) { m_queryNameHasBeenSet = true; m_queryName.assign(value); }
-    inline DeleteStoredQueryRequest& WithQueryName(const Aws::String& value) { SetQueryName(value); return *this;}
-    inline DeleteStoredQueryRequest& WithQueryName(Aws::String&& value) { SetQueryName(std::move(value)); return *this;}
-    inline DeleteStoredQueryRequest& WithQueryName(const char* value) { SetQueryName(value); return *this;}
+    template<typename QueryNameT = Aws::String>
+    void SetQueryName(QueryNameT&& value) { m_queryNameHasBeenSet = true; m_queryName = std::forward<QueryNameT>(value); }
+    template<typename QueryNameT = Aws::String>
+    DeleteStoredQueryRequest& WithQueryName(QueryNameT&& value) { SetQueryName(std::forward<QueryNameT>(value)); return *this;}
     ///@}
   private:
 

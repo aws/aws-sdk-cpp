@@ -33,7 +33,7 @@ namespace Model
   class Logging
   {
   public:
-    AWS_EKS_API Logging();
+    AWS_EKS_API Logging() = default;
     AWS_EKS_API Logging(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Logging& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The cluster control plane logging configuration for your cluster.</p>
      */
-    inline const Aws::Vector<LogSetup>& GetClusterLogging() const{ return m_clusterLogging; }
+    inline const Aws::Vector<LogSetup>& GetClusterLogging() const { return m_clusterLogging; }
     inline bool ClusterLoggingHasBeenSet() const { return m_clusterLoggingHasBeenSet; }
-    inline void SetClusterLogging(const Aws::Vector<LogSetup>& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging = value; }
-    inline void SetClusterLogging(Aws::Vector<LogSetup>&& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging = std::move(value); }
-    inline Logging& WithClusterLogging(const Aws::Vector<LogSetup>& value) { SetClusterLogging(value); return *this;}
-    inline Logging& WithClusterLogging(Aws::Vector<LogSetup>&& value) { SetClusterLogging(std::move(value)); return *this;}
-    inline Logging& AddClusterLogging(const LogSetup& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging.push_back(value); return *this; }
-    inline Logging& AddClusterLogging(LogSetup&& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging.push_back(std::move(value)); return *this; }
+    template<typename ClusterLoggingT = Aws::Vector<LogSetup>>
+    void SetClusterLogging(ClusterLoggingT&& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging = std::forward<ClusterLoggingT>(value); }
+    template<typename ClusterLoggingT = Aws::Vector<LogSetup>>
+    Logging& WithClusterLogging(ClusterLoggingT&& value) { SetClusterLogging(std::forward<ClusterLoggingT>(value)); return *this;}
+    template<typename ClusterLoggingT = LogSetup>
+    Logging& AddClusterLogging(ClusterLoggingT&& value) { m_clusterLoggingHasBeenSet = true; m_clusterLogging.emplace_back(std::forward<ClusterLoggingT>(value)); return *this; }
     ///@}
   private:
 

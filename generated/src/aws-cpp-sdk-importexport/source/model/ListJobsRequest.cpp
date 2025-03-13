@@ -10,14 +10,6 @@
 using namespace Aws::ImportExport::Model;
 using namespace Aws::Utils;
 
-ListJobsRequest::ListJobsRequest() : 
-    m_maxJobs(0),
-    m_maxJobsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_aPIVersionHasBeenSet(false)
-{
-}
-
 Aws::String ListJobsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

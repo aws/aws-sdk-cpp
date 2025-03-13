@@ -12,13 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTrustRequest::DeleteTrustRequest() : 
-    m_trustIdHasBeenSet(false),
-    m_deleteAssociatedConditionalForwarder(false),
-    m_deleteAssociatedConditionalForwarderHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTrustRequest::SerializePayload() const
 {
   JsonValue payload;

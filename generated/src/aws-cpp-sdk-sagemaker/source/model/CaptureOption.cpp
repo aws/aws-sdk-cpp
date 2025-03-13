@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CaptureOption::CaptureOption() : 
-    m_captureMode(CaptureMode::NOT_SET),
-    m_captureModeHasBeenSet(false)
-{
-}
-
 CaptureOption::CaptureOption(JsonView jsonValue)
-  : CaptureOption()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CaptureOption& CaptureOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CaptureMode"))
   {
     m_captureMode = CaptureModeMapper::GetCaptureModeForName(jsonValue.GetString("CaptureMode"));
-
     m_captureModeHasBeenSet = true;
   }
-
   return *this;
 }
 

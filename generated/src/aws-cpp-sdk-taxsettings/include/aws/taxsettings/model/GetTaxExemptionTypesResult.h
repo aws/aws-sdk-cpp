@@ -29,7 +29,7 @@ namespace Model
   class GetTaxExemptionTypesResult
   {
   public:
-    AWS_TAXSETTINGS_API GetTaxExemptionTypesResult();
+    AWS_TAXSETTINGS_API GetTaxExemptionTypesResult() = default;
     AWS_TAXSETTINGS_API GetTaxExemptionTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TAXSETTINGS_API GetTaxExemptionTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The supported types of tax exemptions. </p>
      */
-    inline const Aws::Vector<TaxExemptionType>& GetTaxExemptionTypes() const{ return m_taxExemptionTypes; }
-    inline void SetTaxExemptionTypes(const Aws::Vector<TaxExemptionType>& value) { m_taxExemptionTypes = value; }
-    inline void SetTaxExemptionTypes(Aws::Vector<TaxExemptionType>&& value) { m_taxExemptionTypes = std::move(value); }
-    inline GetTaxExemptionTypesResult& WithTaxExemptionTypes(const Aws::Vector<TaxExemptionType>& value) { SetTaxExemptionTypes(value); return *this;}
-    inline GetTaxExemptionTypesResult& WithTaxExemptionTypes(Aws::Vector<TaxExemptionType>&& value) { SetTaxExemptionTypes(std::move(value)); return *this;}
-    inline GetTaxExemptionTypesResult& AddTaxExemptionTypes(const TaxExemptionType& value) { m_taxExemptionTypes.push_back(value); return *this; }
-    inline GetTaxExemptionTypesResult& AddTaxExemptionTypes(TaxExemptionType&& value) { m_taxExemptionTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TaxExemptionType>& GetTaxExemptionTypes() const { return m_taxExemptionTypes; }
+    template<typename TaxExemptionTypesT = Aws::Vector<TaxExemptionType>>
+    void SetTaxExemptionTypes(TaxExemptionTypesT&& value) { m_taxExemptionTypesHasBeenSet = true; m_taxExemptionTypes = std::forward<TaxExemptionTypesT>(value); }
+    template<typename TaxExemptionTypesT = Aws::Vector<TaxExemptionType>>
+    GetTaxExemptionTypesResult& WithTaxExemptionTypes(TaxExemptionTypesT&& value) { SetTaxExemptionTypes(std::forward<TaxExemptionTypesT>(value)); return *this;}
+    template<typename TaxExemptionTypesT = TaxExemptionType>
+    GetTaxExemptionTypesResult& AddTaxExemptionTypes(TaxExemptionTypesT&& value) { m_taxExemptionTypesHasBeenSet = true; m_taxExemptionTypes.emplace_back(std::forward<TaxExemptionTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTaxExemptionTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTaxExemptionTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTaxExemptionTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTaxExemptionTypesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TaxExemptionType> m_taxExemptionTypes;
+    bool m_taxExemptionTypesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

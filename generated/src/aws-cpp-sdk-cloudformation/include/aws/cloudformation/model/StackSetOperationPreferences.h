@@ -38,7 +38,7 @@ namespace Model
   class StackSetOperationPreferences
   {
   public:
-    AWS_CLOUDFORMATION_API StackSetOperationPreferences();
+    AWS_CLOUDFORMATION_API StackSetOperationPreferences() = default;
     AWS_CLOUDFORMATION_API StackSetOperationPreferences(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API StackSetOperationPreferences& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,12 +51,10 @@ namespace Model
      * <p>The concurrency type of deploying StackSets operations in Regions, could be
      * in parallel or one Region at a time.</p>
      */
-    inline const RegionConcurrencyType& GetRegionConcurrencyType() const{ return m_regionConcurrencyType; }
+    inline RegionConcurrencyType GetRegionConcurrencyType() const { return m_regionConcurrencyType; }
     inline bool RegionConcurrencyTypeHasBeenSet() const { return m_regionConcurrencyTypeHasBeenSet; }
-    inline void SetRegionConcurrencyType(const RegionConcurrencyType& value) { m_regionConcurrencyTypeHasBeenSet = true; m_regionConcurrencyType = value; }
-    inline void SetRegionConcurrencyType(RegionConcurrencyType&& value) { m_regionConcurrencyTypeHasBeenSet = true; m_regionConcurrencyType = std::move(value); }
-    inline StackSetOperationPreferences& WithRegionConcurrencyType(const RegionConcurrencyType& value) { SetRegionConcurrencyType(value); return *this;}
-    inline StackSetOperationPreferences& WithRegionConcurrencyType(RegionConcurrencyType&& value) { SetRegionConcurrencyType(std::move(value)); return *this;}
+    inline void SetRegionConcurrencyType(RegionConcurrencyType value) { m_regionConcurrencyTypeHasBeenSet = true; m_regionConcurrencyType = value; }
+    inline StackSetOperationPreferences& WithRegionConcurrencyType(RegionConcurrencyType value) { SetRegionConcurrencyType(value); return *this;}
     ///@}
 
     ///@{
@@ -65,15 +63,14 @@ namespace Model
      *  <p> <code>RegionOrder</code> isn't followed if
      * <code>AutoDeployment</code> is enabled.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetRegionOrder() const{ return m_regionOrder; }
+    inline const Aws::Vector<Aws::String>& GetRegionOrder() const { return m_regionOrder; }
     inline bool RegionOrderHasBeenSet() const { return m_regionOrderHasBeenSet; }
-    inline void SetRegionOrder(const Aws::Vector<Aws::String>& value) { m_regionOrderHasBeenSet = true; m_regionOrder = value; }
-    inline void SetRegionOrder(Aws::Vector<Aws::String>&& value) { m_regionOrderHasBeenSet = true; m_regionOrder = std::move(value); }
-    inline StackSetOperationPreferences& WithRegionOrder(const Aws::Vector<Aws::String>& value) { SetRegionOrder(value); return *this;}
-    inline StackSetOperationPreferences& WithRegionOrder(Aws::Vector<Aws::String>&& value) { SetRegionOrder(std::move(value)); return *this;}
-    inline StackSetOperationPreferences& AddRegionOrder(const Aws::String& value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(value); return *this; }
-    inline StackSetOperationPreferences& AddRegionOrder(Aws::String&& value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(std::move(value)); return *this; }
-    inline StackSetOperationPreferences& AddRegionOrder(const char* value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(value); return *this; }
+    template<typename RegionOrderT = Aws::Vector<Aws::String>>
+    void SetRegionOrder(RegionOrderT&& value) { m_regionOrderHasBeenSet = true; m_regionOrder = std::forward<RegionOrderT>(value); }
+    template<typename RegionOrderT = Aws::Vector<Aws::String>>
+    StackSetOperationPreferences& WithRegionOrder(RegionOrderT&& value) { SetRegionOrder(std::forward<RegionOrderT>(value)); return *this;}
+    template<typename RegionOrderT = Aws::String>
+    StackSetOperationPreferences& AddRegionOrder(RegionOrderT&& value) { m_regionOrderHasBeenSet = true; m_regionOrder.emplace_back(std::forward<RegionOrderT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,7 +82,7 @@ namespace Model
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
      * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
      */
-    inline int GetFailureToleranceCount() const{ return m_failureToleranceCount; }
+    inline int GetFailureToleranceCount() const { return m_failureToleranceCount; }
     inline bool FailureToleranceCountHasBeenSet() const { return m_failureToleranceCountHasBeenSet; }
     inline void SetFailureToleranceCount(int value) { m_failureToleranceCountHasBeenSet = true; m_failureToleranceCount = value; }
     inline StackSetOperationPreferences& WithFailureToleranceCount(int value) { SetFailureToleranceCount(value); return *this;}
@@ -102,7 +99,7 @@ namespace Model
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>,
      * but not both.</p> <p>By default, <code>0</code> is specified.</p>
      */
-    inline int GetFailureTolerancePercentage() const{ return m_failureTolerancePercentage; }
+    inline int GetFailureTolerancePercentage() const { return m_failureTolerancePercentage; }
     inline bool FailureTolerancePercentageHasBeenSet() const { return m_failureTolerancePercentageHasBeenSet; }
     inline void SetFailureTolerancePercentage(int value) { m_failureTolerancePercentageHasBeenSet = true; m_failureTolerancePercentage = value; }
     inline StackSetOperationPreferences& WithFailureTolerancePercentage(int value) { SetFailureTolerancePercentage(value); return *this;}
@@ -121,7 +118,7 @@ namespace Model
      * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
      * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
-    inline int GetMaxConcurrentCount() const{ return m_maxConcurrentCount; }
+    inline int GetMaxConcurrentCount() const { return m_maxConcurrentCount; }
     inline bool MaxConcurrentCountHasBeenSet() const { return m_maxConcurrentCountHasBeenSet; }
     inline void SetMaxConcurrentCount(int value) { m_maxConcurrentCountHasBeenSet = true; m_maxConcurrentCount = value; }
     inline StackSetOperationPreferences& WithMaxConcurrentCount(int value) { SetMaxConcurrentCount(value); return *this;}
@@ -140,7 +137,7 @@ namespace Model
      * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
      * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
-    inline int GetMaxConcurrentPercentage() const{ return m_maxConcurrentPercentage; }
+    inline int GetMaxConcurrentPercentage() const { return m_maxConcurrentPercentage; }
     inline bool MaxConcurrentPercentageHasBeenSet() const { return m_maxConcurrentPercentageHasBeenSet; }
     inline void SetMaxConcurrentPercentage(int value) { m_maxConcurrentPercentageHasBeenSet = true; m_maxConcurrentPercentage = value; }
     inline StackSetOperationPreferences& WithMaxConcurrentPercentage(int value) { SetMaxConcurrentPercentage(value); return *this;}
@@ -164,34 +161,32 @@ namespace Model
      * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
      * </li> </ul>
      */
-    inline const ConcurrencyMode& GetConcurrencyMode() const{ return m_concurrencyMode; }
+    inline ConcurrencyMode GetConcurrencyMode() const { return m_concurrencyMode; }
     inline bool ConcurrencyModeHasBeenSet() const { return m_concurrencyModeHasBeenSet; }
-    inline void SetConcurrencyMode(const ConcurrencyMode& value) { m_concurrencyModeHasBeenSet = true; m_concurrencyMode = value; }
-    inline void SetConcurrencyMode(ConcurrencyMode&& value) { m_concurrencyModeHasBeenSet = true; m_concurrencyMode = std::move(value); }
-    inline StackSetOperationPreferences& WithConcurrencyMode(const ConcurrencyMode& value) { SetConcurrencyMode(value); return *this;}
-    inline StackSetOperationPreferences& WithConcurrencyMode(ConcurrencyMode&& value) { SetConcurrencyMode(std::move(value)); return *this;}
+    inline void SetConcurrencyMode(ConcurrencyMode value) { m_concurrencyModeHasBeenSet = true; m_concurrencyMode = value; }
+    inline StackSetOperationPreferences& WithConcurrencyMode(ConcurrencyMode value) { SetConcurrencyMode(value); return *this;}
     ///@}
   private:
 
-    RegionConcurrencyType m_regionConcurrencyType;
+    RegionConcurrencyType m_regionConcurrencyType{RegionConcurrencyType::NOT_SET};
     bool m_regionConcurrencyTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regionOrder;
     bool m_regionOrderHasBeenSet = false;
 
-    int m_failureToleranceCount;
+    int m_failureToleranceCount{0};
     bool m_failureToleranceCountHasBeenSet = false;
 
-    int m_failureTolerancePercentage;
+    int m_failureTolerancePercentage{0};
     bool m_failureTolerancePercentageHasBeenSet = false;
 
-    int m_maxConcurrentCount;
+    int m_maxConcurrentCount{0};
     bool m_maxConcurrentCountHasBeenSet = false;
 
-    int m_maxConcurrentPercentage;
+    int m_maxConcurrentPercentage{0};
     bool m_maxConcurrentPercentageHasBeenSet = false;
 
-    ConcurrencyMode m_concurrencyMode;
+    ConcurrencyMode m_concurrencyMode{ConcurrencyMode::NOT_SET};
     bool m_concurrencyModeHasBeenSet = false;
   };
 

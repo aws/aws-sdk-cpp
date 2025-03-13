@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsWafv2ActionAllowDetails::AwsWafv2ActionAllowDetails() : 
-    m_customRequestHandlingHasBeenSet(false)
-{
-}
-
 AwsWafv2ActionAllowDetails::AwsWafv2ActionAllowDetails(JsonView jsonValue)
-  : AwsWafv2ActionAllowDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsWafv2ActionAllowDetails& AwsWafv2ActionAllowDetails::operator =(JsonView json
   if(jsonValue.ValueExists("CustomRequestHandling"))
   {
     m_customRequestHandling = jsonValue.GetObject("CustomRequestHandling");
-
     m_customRequestHandlingHasBeenSet = true;
   }
-
   return *this;
 }
 

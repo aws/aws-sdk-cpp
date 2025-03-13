@@ -18,14 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-NetworkOriginConfiguration::NetworkOriginConfiguration() : 
-    m_vpcConfigurationHasBeenSet(false),
-    m_internetConfigurationHasBeenSet(false)
-{
-}
-
 NetworkOriginConfiguration::NetworkOriginConfiguration(JsonView jsonValue)
-  : NetworkOriginConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NetworkOriginConfiguration& NetworkOriginConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("vpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("internetConfiguration"))
   {
     m_internetConfiguration = jsonValue.GetObject("internetConfiguration");
-
     m_internetConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class ElasticGpuHealth
   {
   public:
-    AWS_EC2_API ElasticGpuHealth();
+    AWS_EC2_API ElasticGpuHealth() = default;
     AWS_EC2_API ElasticGpuHealth(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ElasticGpuHealth& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,16 +45,14 @@ namespace Model
     /**
      * <p>The health status.</p>
      */
-    inline const ElasticGpuStatus& GetStatus() const{ return m_status; }
+    inline ElasticGpuStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ElasticGpuStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ElasticGpuStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ElasticGpuHealth& WithStatus(const ElasticGpuStatus& value) { SetStatus(value); return *this;}
-    inline ElasticGpuHealth& WithStatus(ElasticGpuStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ElasticGpuStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ElasticGpuHealth& WithStatus(ElasticGpuStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    ElasticGpuStatus m_status;
+    ElasticGpuStatus m_status{ElasticGpuStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

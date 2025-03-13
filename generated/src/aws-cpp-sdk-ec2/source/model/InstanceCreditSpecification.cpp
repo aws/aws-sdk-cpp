@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceCreditSpecification::InstanceCreditSpecification() : 
-    m_instanceIdHasBeenSet(false),
-    m_cpuCreditsHasBeenSet(false)
-{
-}
-
 InstanceCreditSpecification::InstanceCreditSpecification(const XmlNode& xmlNode)
-  : InstanceCreditSpecification()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ InstanceCreditSpecification& InstanceCreditSpecification::operator =(const XmlNo
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode cpuCreditsNode = resultNode.FirstChild("cpuCredits");
     if(!cpuCreditsNode.IsNull())
     {
       m_cpuCredits = Aws::Utils::Xml::DecodeEscapedXmlText(cpuCreditsNode.GetText());
       m_cpuCreditsHasBeenSet = true;
+       m_cpuCreditsHasBeenSet = true;
     }
   }
 

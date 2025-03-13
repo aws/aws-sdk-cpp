@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-TimestampColumn::TimestampColumn() : 
-    m_columnNameHasBeenSet(false),
-    m_columnFormatHasBeenSet(false)
-{
-}
-
 TimestampColumn::TimestampColumn(JsonView jsonValue)
-  : TimestampColumn()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimestampColumn& TimestampColumn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ColumnName"))
   {
     m_columnName = jsonValue.GetString("ColumnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnFormat"))
   {
     m_columnFormat = jsonValue.GetString("ColumnFormat");
-
     m_columnFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

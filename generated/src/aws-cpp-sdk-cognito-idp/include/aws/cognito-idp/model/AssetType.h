@@ -36,7 +36,7 @@ namespace Model
   class AssetType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AssetType();
+    AWS_COGNITOIDENTITYPROVIDER_API AssetType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AssetType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API AssetType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * configuration. Managed login has asset categories for different types of logos,
      * backgrounds, and icons.</p>
      */
-    inline const AssetCategoryType& GetCategory() const{ return m_category; }
+    inline AssetCategoryType GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const AssetCategoryType& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(AssetCategoryType&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline AssetType& WithCategory(const AssetCategoryType& value) { SetCategory(value); return *this;}
-    inline AssetType& WithCategory(AssetCategoryType&& value) { SetCategory(std::move(value)); return *this;}
+    inline void SetCategory(AssetCategoryType value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline AssetType& WithCategory(AssetCategoryType value) { SetCategory(value); return *this;}
     ///@}
 
     ///@{
@@ -63,63 +61,57 @@ namespace Model
      * application is in dark mode, but displays a browser-adaptive file in all
      * contexts.</p>
      */
-    inline const ColorSchemeModeType& GetColorMode() const{ return m_colorMode; }
+    inline ColorSchemeModeType GetColorMode() const { return m_colorMode; }
     inline bool ColorModeHasBeenSet() const { return m_colorModeHasBeenSet; }
-    inline void SetColorMode(const ColorSchemeModeType& value) { m_colorModeHasBeenSet = true; m_colorMode = value; }
-    inline void SetColorMode(ColorSchemeModeType&& value) { m_colorModeHasBeenSet = true; m_colorMode = std::move(value); }
-    inline AssetType& WithColorMode(const ColorSchemeModeType& value) { SetColorMode(value); return *this;}
-    inline AssetType& WithColorMode(ColorSchemeModeType&& value) { SetColorMode(std::move(value)); return *this;}
+    inline void SetColorMode(ColorSchemeModeType value) { m_colorModeHasBeenSet = true; m_colorMode = value; }
+    inline AssetType& WithColorMode(ColorSchemeModeType value) { SetColorMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The file type of the image file.</p>
      */
-    inline const AssetExtensionType& GetExtension() const{ return m_extension; }
+    inline AssetExtensionType GetExtension() const { return m_extension; }
     inline bool ExtensionHasBeenSet() const { return m_extensionHasBeenSet; }
-    inline void SetExtension(const AssetExtensionType& value) { m_extensionHasBeenSet = true; m_extension = value; }
-    inline void SetExtension(AssetExtensionType&& value) { m_extensionHasBeenSet = true; m_extension = std::move(value); }
-    inline AssetType& WithExtension(const AssetExtensionType& value) { SetExtension(value); return *this;}
-    inline AssetType& WithExtension(AssetExtensionType&& value) { SetExtension(std::move(value)); return *this;}
+    inline void SetExtension(AssetExtensionType value) { m_extensionHasBeenSet = true; m_extension = value; }
+    inline AssetType& WithExtension(AssetExtensionType value) { SetExtension(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image file, in Base64-encoded binary.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetBytes() const{ return m_bytes; }
+    inline const Aws::Utils::ByteBuffer& GetBytes() const { return m_bytes; }
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-    inline void SetBytes(const Aws::Utils::ByteBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
-    inline void SetBytes(Aws::Utils::ByteBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
-    inline AssetType& WithBytes(const Aws::Utils::ByteBuffer& value) { SetBytes(value); return *this;}
-    inline AssetType& WithBytes(Aws::Utils::ByteBuffer&& value) { SetBytes(std::move(value)); return *this;}
+    template<typename BytesT = Aws::Utils::ByteBuffer>
+    void SetBytes(BytesT&& value) { m_bytesHasBeenSet = true; m_bytes = std::forward<BytesT>(value); }
+    template<typename BytesT = Aws::Utils::ByteBuffer>
+    AssetType& WithBytes(BytesT&& value) { SetBytes(std::forward<BytesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the asset.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline AssetType& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline AssetType& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline AssetType& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    AssetType& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
   private:
 
-    AssetCategoryType m_category;
+    AssetCategoryType m_category{AssetCategoryType::NOT_SET};
     bool m_categoryHasBeenSet = false;
 
-    ColorSchemeModeType m_colorMode;
+    ColorSchemeModeType m_colorMode{ColorSchemeModeType::NOT_SET};
     bool m_colorModeHasBeenSet = false;
 
-    AssetExtensionType m_extension;
+    AssetExtensionType m_extension{AssetExtensionType::NOT_SET};
     bool m_extensionHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_bytes;
+    Aws::Utils::ByteBuffer m_bytes{};
     bool m_bytesHasBeenSet = false;
 
     Aws::String m_resourceId;

@@ -46,7 +46,7 @@ namespace Model
   class HyperParameterTuningResourceConfig
   {
   public:
-    AWS_SAGEMAKER_API HyperParameterTuningResourceConfig();
+    AWS_SAGEMAKER_API HyperParameterTuningResourceConfig() = default;
     AWS_SAGEMAKER_API HyperParameterTuningResourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HyperParameterTuningResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,12 +58,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">
      * descriptions of instance types</a> for more information.</p>
      */
-    inline const TrainingInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline TrainingInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const TrainingInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(TrainingInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline HyperParameterTuningResourceConfig& WithInstanceType(const TrainingInstanceType& value) { SetInstanceType(value); return *this;}
-    inline HyperParameterTuningResourceConfig& WithInstanceType(TrainingInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(TrainingInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline HyperParameterTuningResourceConfig& WithInstanceType(TrainingInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +71,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed
      * training</a>, select a value greater than 1.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline HyperParameterTuningResourceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -94,7 +92,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General
      * Purpose SSD (gp2)</a> storage volume type.</p> 
      */
-    inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
+    inline int GetVolumeSizeInGB() const { return m_volumeSizeInGB; }
     inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
     inline HyperParameterTuningResourceConfig& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
@@ -119,14 +117,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS
      * encryption</a> for more information.</p>
      */
-    inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+    inline const Aws::String& GetVolumeKmsKeyId() const { return m_volumeKmsKeyId; }
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
-    inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
-    inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
-    inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
-    inline HyperParameterTuningResourceConfig& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
-    inline HyperParameterTuningResourceConfig& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
-    inline HyperParameterTuningResourceConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    void SetVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::forward<VolumeKmsKeyIdT>(value); }
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    HyperParameterTuningResourceConfig& WithVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { SetVolumeKmsKeyId(std::forward<VolumeKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +130,10 @@ namespace Model
      * <p>The strategy that determines the order of preference for resources specified
      * in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
      */
-    inline const HyperParameterTuningAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline HyperParameterTuningAllocationStrategy GetAllocationStrategy() const { return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
-    inline void SetAllocationStrategy(const HyperParameterTuningAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
-    inline void SetAllocationStrategy(HyperParameterTuningAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
-    inline HyperParameterTuningResourceConfig& WithAllocationStrategy(const HyperParameterTuningAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
-    inline HyperParameterTuningResourceConfig& WithAllocationStrategy(HyperParameterTuningAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    inline void SetAllocationStrategy(HyperParameterTuningAllocationStrategy value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline HyperParameterTuningResourceConfig& WithAllocationStrategy(HyperParameterTuningAllocationStrategy value) { SetAllocationStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -157,30 +151,30 @@ namespace Model
      * <code>InstanceType</code>, <code>VolumeSizeInGB</code> or
      * <code>InstanceCount</code>.</p> 
      */
-    inline const Aws::Vector<HyperParameterTuningInstanceConfig>& GetInstanceConfigs() const{ return m_instanceConfigs; }
+    inline const Aws::Vector<HyperParameterTuningInstanceConfig>& GetInstanceConfigs() const { return m_instanceConfigs; }
     inline bool InstanceConfigsHasBeenSet() const { return m_instanceConfigsHasBeenSet; }
-    inline void SetInstanceConfigs(const Aws::Vector<HyperParameterTuningInstanceConfig>& value) { m_instanceConfigsHasBeenSet = true; m_instanceConfigs = value; }
-    inline void SetInstanceConfigs(Aws::Vector<HyperParameterTuningInstanceConfig>&& value) { m_instanceConfigsHasBeenSet = true; m_instanceConfigs = std::move(value); }
-    inline HyperParameterTuningResourceConfig& WithInstanceConfigs(const Aws::Vector<HyperParameterTuningInstanceConfig>& value) { SetInstanceConfigs(value); return *this;}
-    inline HyperParameterTuningResourceConfig& WithInstanceConfigs(Aws::Vector<HyperParameterTuningInstanceConfig>&& value) { SetInstanceConfigs(std::move(value)); return *this;}
-    inline HyperParameterTuningResourceConfig& AddInstanceConfigs(const HyperParameterTuningInstanceConfig& value) { m_instanceConfigsHasBeenSet = true; m_instanceConfigs.push_back(value); return *this; }
-    inline HyperParameterTuningResourceConfig& AddInstanceConfigs(HyperParameterTuningInstanceConfig&& value) { m_instanceConfigsHasBeenSet = true; m_instanceConfigs.push_back(std::move(value)); return *this; }
+    template<typename InstanceConfigsT = Aws::Vector<HyperParameterTuningInstanceConfig>>
+    void SetInstanceConfigs(InstanceConfigsT&& value) { m_instanceConfigsHasBeenSet = true; m_instanceConfigs = std::forward<InstanceConfigsT>(value); }
+    template<typename InstanceConfigsT = Aws::Vector<HyperParameterTuningInstanceConfig>>
+    HyperParameterTuningResourceConfig& WithInstanceConfigs(InstanceConfigsT&& value) { SetInstanceConfigs(std::forward<InstanceConfigsT>(value)); return *this;}
+    template<typename InstanceConfigsT = HyperParameterTuningInstanceConfig>
+    HyperParameterTuningResourceConfig& AddInstanceConfigs(InstanceConfigsT&& value) { m_instanceConfigsHasBeenSet = true; m_instanceConfigs.emplace_back(std::forward<InstanceConfigsT>(value)); return *this; }
     ///@}
   private:
 
-    TrainingInstanceType m_instanceType;
+    TrainingInstanceType m_instanceType{TrainingInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
-    int m_volumeSizeInGB;
+    int m_volumeSizeInGB{0};
     bool m_volumeSizeInGBHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;
     bool m_volumeKmsKeyIdHasBeenSet = false;
 
-    HyperParameterTuningAllocationStrategy m_allocationStrategy;
+    HyperParameterTuningAllocationStrategy m_allocationStrategy{HyperParameterTuningAllocationStrategy::NOT_SET};
     bool m_allocationStrategyHasBeenSet = false;
 
     Aws::Vector<HyperParameterTuningInstanceConfig> m_instanceConfigs;

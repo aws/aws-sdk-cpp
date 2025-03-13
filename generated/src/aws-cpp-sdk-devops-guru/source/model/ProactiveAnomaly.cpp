@@ -18,29 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-ProactiveAnomaly::ProactiveAnomaly() : 
-    m_idHasBeenSet(false),
-    m_severity(AnomalySeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(AnomalyStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_anomalyTimeRangeHasBeenSet(false),
-    m_anomalyReportedTimeRangeHasBeenSet(false),
-    m_predictionTimeRangeHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false),
-    m_associatedInsightIdHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
-    m_limit(0.0),
-    m_limitHasBeenSet(false),
-    m_sourceMetadataHasBeenSet(false),
-    m_anomalyResourcesHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ProactiveAnomaly::ProactiveAnomaly(JsonView jsonValue)
-  : ProactiveAnomaly()
 {
   *this = jsonValue;
 }
@@ -50,87 +28,63 @@ ProactiveAnomaly& ProactiveAnomaly::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = AnomalySeverityMapper::GetAnomalySeverityForName(jsonValue.GetString("Severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AnomalyStatusMapper::GetAnomalyStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetDouble("UpdateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyTimeRange"))
   {
     m_anomalyTimeRange = jsonValue.GetObject("AnomalyTimeRange");
-
     m_anomalyTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyReportedTimeRange"))
   {
     m_anomalyReportedTimeRange = jsonValue.GetObject("AnomalyReportedTimeRange");
-
     m_anomalyReportedTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictionTimeRange"))
   {
     m_predictionTimeRange = jsonValue.GetObject("PredictionTimeRange");
-
     m_predictionTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceDetails"))
   {
     m_sourceDetails = jsonValue.GetObject("SourceDetails");
-
     m_sourceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedInsightId"))
   {
     m_associatedInsightId = jsonValue.GetString("AssociatedInsightId");
-
     m_associatedInsightIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceCollection"))
   {
     m_resourceCollection = jsonValue.GetObject("ResourceCollection");
-
     m_resourceCollectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Limit"))
   {
     m_limit = jsonValue.GetDouble("Limit");
-
     m_limitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceMetadata"))
   {
     m_sourceMetadata = jsonValue.GetObject("SourceMetadata");
-
     m_sourceMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyResources"))
   {
     Aws::Utils::Array<JsonView> anomalyResourcesJsonList = jsonValue.GetArray("AnomalyResources");
@@ -140,14 +94,11 @@ ProactiveAnomaly& ProactiveAnomaly::operator =(JsonView jsonValue)
     }
     m_anomalyResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

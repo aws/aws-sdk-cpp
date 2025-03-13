@@ -23,7 +23,7 @@ namespace Model
   class CreateBotVersionRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API CreateBotVersionRequest();
+    AWS_LEXMODELSV2_API CreateBotVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The identifier of the bot to create the version for.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline CreateBotVersionRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline CreateBotVersionRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline CreateBotVersionRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    CreateBotVersionRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>A description of the version. Use the description to help identify the
      * version in lists.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateBotVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateBotVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateBotVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateBotVersionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,18 +66,16 @@ namespace Model
      * each locale. When you specify a source version, the locale data is copied from
      * the source version to the new version.</p>
      */
-    inline const Aws::Map<Aws::String, BotVersionLocaleDetails>& GetBotVersionLocaleSpecification() const{ return m_botVersionLocaleSpecification; }
+    inline const Aws::Map<Aws::String, BotVersionLocaleDetails>& GetBotVersionLocaleSpecification() const { return m_botVersionLocaleSpecification; }
     inline bool BotVersionLocaleSpecificationHasBeenSet() const { return m_botVersionLocaleSpecificationHasBeenSet; }
-    inline void SetBotVersionLocaleSpecification(const Aws::Map<Aws::String, BotVersionLocaleDetails>& value) { m_botVersionLocaleSpecificationHasBeenSet = true; m_botVersionLocaleSpecification = value; }
-    inline void SetBotVersionLocaleSpecification(Aws::Map<Aws::String, BotVersionLocaleDetails>&& value) { m_botVersionLocaleSpecificationHasBeenSet = true; m_botVersionLocaleSpecification = std::move(value); }
-    inline CreateBotVersionRequest& WithBotVersionLocaleSpecification(const Aws::Map<Aws::String, BotVersionLocaleDetails>& value) { SetBotVersionLocaleSpecification(value); return *this;}
-    inline CreateBotVersionRequest& WithBotVersionLocaleSpecification(Aws::Map<Aws::String, BotVersionLocaleDetails>&& value) { SetBotVersionLocaleSpecification(std::move(value)); return *this;}
-    inline CreateBotVersionRequest& AddBotVersionLocaleSpecification(const Aws::String& key, const BotVersionLocaleDetails& value) { m_botVersionLocaleSpecificationHasBeenSet = true; m_botVersionLocaleSpecification.emplace(key, value); return *this; }
-    inline CreateBotVersionRequest& AddBotVersionLocaleSpecification(Aws::String&& key, const BotVersionLocaleDetails& value) { m_botVersionLocaleSpecificationHasBeenSet = true; m_botVersionLocaleSpecification.emplace(std::move(key), value); return *this; }
-    inline CreateBotVersionRequest& AddBotVersionLocaleSpecification(const Aws::String& key, BotVersionLocaleDetails&& value) { m_botVersionLocaleSpecificationHasBeenSet = true; m_botVersionLocaleSpecification.emplace(key, std::move(value)); return *this; }
-    inline CreateBotVersionRequest& AddBotVersionLocaleSpecification(Aws::String&& key, BotVersionLocaleDetails&& value) { m_botVersionLocaleSpecificationHasBeenSet = true; m_botVersionLocaleSpecification.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateBotVersionRequest& AddBotVersionLocaleSpecification(const char* key, BotVersionLocaleDetails&& value) { m_botVersionLocaleSpecificationHasBeenSet = true; m_botVersionLocaleSpecification.emplace(key, std::move(value)); return *this; }
-    inline CreateBotVersionRequest& AddBotVersionLocaleSpecification(const char* key, const BotVersionLocaleDetails& value) { m_botVersionLocaleSpecificationHasBeenSet = true; m_botVersionLocaleSpecification.emplace(key, value); return *this; }
+    template<typename BotVersionLocaleSpecificationT = Aws::Map<Aws::String, BotVersionLocaleDetails>>
+    void SetBotVersionLocaleSpecification(BotVersionLocaleSpecificationT&& value) { m_botVersionLocaleSpecificationHasBeenSet = true; m_botVersionLocaleSpecification = std::forward<BotVersionLocaleSpecificationT>(value); }
+    template<typename BotVersionLocaleSpecificationT = Aws::Map<Aws::String, BotVersionLocaleDetails>>
+    CreateBotVersionRequest& WithBotVersionLocaleSpecification(BotVersionLocaleSpecificationT&& value) { SetBotVersionLocaleSpecification(std::forward<BotVersionLocaleSpecificationT>(value)); return *this;}
+    template<typename BotVersionLocaleSpecificationKeyT = Aws::String, typename BotVersionLocaleSpecificationValueT = BotVersionLocaleDetails>
+    CreateBotVersionRequest& AddBotVersionLocaleSpecification(BotVersionLocaleSpecificationKeyT&& key, BotVersionLocaleSpecificationValueT&& value) {
+      m_botVersionLocaleSpecificationHasBeenSet = true; m_botVersionLocaleSpecification.emplace(std::forward<BotVersionLocaleSpecificationKeyT>(key), std::forward<BotVersionLocaleSpecificationValueT>(value)); return *this;
+    }
     ///@}
   private:
 

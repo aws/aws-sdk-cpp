@@ -36,7 +36,7 @@ namespace Model
   class WaypointOptimizationTruckOptions
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationTruckOptions();
+    AWS_GEOROUTES_API WaypointOptimizationTruckOptions() = default;
     AWS_GEOROUTES_API WaypointOptimizationTruckOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationTruckOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * <p>Gross weight of the vehicle including trailers, and goods at capacity.</p>
      * <p> <b>Unit</b>: <code>Kilograms</code> </p>
      */
-    inline long long GetGrossWeight() const{ return m_grossWeight; }
+    inline long long GetGrossWeight() const { return m_grossWeight; }
     inline bool GrossWeightHasBeenSet() const { return m_grossWeightHasBeenSet; }
     inline void SetGrossWeight(long long value) { m_grossWeightHasBeenSet = true; m_grossWeight = value; }
     inline WaypointOptimizationTruckOptions& WithGrossWeight(long long value) { SetGrossWeight(value); return *this;}
@@ -57,21 +57,20 @@ namespace Model
     /**
      * <p>List of Hazardous cargo contained in the vehicle.</p>
      */
-    inline const Aws::Vector<WaypointOptimizationHazardousCargoType>& GetHazardousCargos() const{ return m_hazardousCargos; }
+    inline const Aws::Vector<WaypointOptimizationHazardousCargoType>& GetHazardousCargos() const { return m_hazardousCargos; }
     inline bool HazardousCargosHasBeenSet() const { return m_hazardousCargosHasBeenSet; }
-    inline void SetHazardousCargos(const Aws::Vector<WaypointOptimizationHazardousCargoType>& value) { m_hazardousCargosHasBeenSet = true; m_hazardousCargos = value; }
-    inline void SetHazardousCargos(Aws::Vector<WaypointOptimizationHazardousCargoType>&& value) { m_hazardousCargosHasBeenSet = true; m_hazardousCargos = std::move(value); }
-    inline WaypointOptimizationTruckOptions& WithHazardousCargos(const Aws::Vector<WaypointOptimizationHazardousCargoType>& value) { SetHazardousCargos(value); return *this;}
-    inline WaypointOptimizationTruckOptions& WithHazardousCargos(Aws::Vector<WaypointOptimizationHazardousCargoType>&& value) { SetHazardousCargos(std::move(value)); return *this;}
-    inline WaypointOptimizationTruckOptions& AddHazardousCargos(const WaypointOptimizationHazardousCargoType& value) { m_hazardousCargosHasBeenSet = true; m_hazardousCargos.push_back(value); return *this; }
-    inline WaypointOptimizationTruckOptions& AddHazardousCargos(WaypointOptimizationHazardousCargoType&& value) { m_hazardousCargosHasBeenSet = true; m_hazardousCargos.push_back(std::move(value)); return *this; }
+    template<typename HazardousCargosT = Aws::Vector<WaypointOptimizationHazardousCargoType>>
+    void SetHazardousCargos(HazardousCargosT&& value) { m_hazardousCargosHasBeenSet = true; m_hazardousCargos = std::forward<HazardousCargosT>(value); }
+    template<typename HazardousCargosT = Aws::Vector<WaypointOptimizationHazardousCargoType>>
+    WaypointOptimizationTruckOptions& WithHazardousCargos(HazardousCargosT&& value) { SetHazardousCargos(std::forward<HazardousCargosT>(value)); return *this;}
+    inline WaypointOptimizationTruckOptions& AddHazardousCargos(WaypointOptimizationHazardousCargoType value) { m_hazardousCargosHasBeenSet = true; m_hazardousCargos.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Height of the vehicle.</p> <p> <b>Unit</b>: <code>centimeters</code> </p>
      */
-    inline long long GetHeight() const{ return m_height; }
+    inline long long GetHeight() const { return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
     inline void SetHeight(long long value) { m_heightHasBeenSet = true; m_height = value; }
     inline WaypointOptimizationTruckOptions& WithHeight(long long value) { SetHeight(value); return *this;}
@@ -81,7 +80,7 @@ namespace Model
     /**
      * <p>Length of the vehicle.</p> <p> <b>Unit</b>: <code>centimeters</code> </p>
      */
-    inline long long GetLength() const{ return m_length; }
+    inline long long GetLength() const { return m_length; }
     inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
     inline void SetLength(long long value) { m_lengthHasBeenSet = true; m_length = value; }
     inline WaypointOptimizationTruckOptions& WithLength(long long value) { SetLength(value); return *this;}
@@ -91,24 +90,22 @@ namespace Model
     /**
      * <p>Trailer options corresponding to the vehicle.</p>
      */
-    inline const WaypointOptimizationTrailerOptions& GetTrailer() const{ return m_trailer; }
+    inline const WaypointOptimizationTrailerOptions& GetTrailer() const { return m_trailer; }
     inline bool TrailerHasBeenSet() const { return m_trailerHasBeenSet; }
-    inline void SetTrailer(const WaypointOptimizationTrailerOptions& value) { m_trailerHasBeenSet = true; m_trailer = value; }
-    inline void SetTrailer(WaypointOptimizationTrailerOptions&& value) { m_trailerHasBeenSet = true; m_trailer = std::move(value); }
-    inline WaypointOptimizationTruckOptions& WithTrailer(const WaypointOptimizationTrailerOptions& value) { SetTrailer(value); return *this;}
-    inline WaypointOptimizationTruckOptions& WithTrailer(WaypointOptimizationTrailerOptions&& value) { SetTrailer(std::move(value)); return *this;}
+    template<typename TrailerT = WaypointOptimizationTrailerOptions>
+    void SetTrailer(TrailerT&& value) { m_trailerHasBeenSet = true; m_trailer = std::forward<TrailerT>(value); }
+    template<typename TrailerT = WaypointOptimizationTrailerOptions>
+    WaypointOptimizationTruckOptions& WithTrailer(TrailerT&& value) { SetTrailer(std::forward<TrailerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of the truck.</p>
      */
-    inline const WaypointOptimizationTruckType& GetTruckType() const{ return m_truckType; }
+    inline WaypointOptimizationTruckType GetTruckType() const { return m_truckType; }
     inline bool TruckTypeHasBeenSet() const { return m_truckTypeHasBeenSet; }
-    inline void SetTruckType(const WaypointOptimizationTruckType& value) { m_truckTypeHasBeenSet = true; m_truckType = value; }
-    inline void SetTruckType(WaypointOptimizationTruckType&& value) { m_truckTypeHasBeenSet = true; m_truckType = std::move(value); }
-    inline WaypointOptimizationTruckOptions& WithTruckType(const WaypointOptimizationTruckType& value) { SetTruckType(value); return *this;}
-    inline WaypointOptimizationTruckOptions& WithTruckType(WaypointOptimizationTruckType&& value) { SetTruckType(std::move(value)); return *this;}
+    inline void SetTruckType(WaypointOptimizationTruckType value) { m_truckTypeHasBeenSet = true; m_truckType = value; }
+    inline WaypointOptimizationTruckOptions& WithTruckType(WaypointOptimizationTruckType value) { SetTruckType(value); return *this;}
     ///@}
 
     ///@{
@@ -126,14 +123,12 @@ namespace Model
      * <i>Risk Level</i>: Very high risk</p> </li> <li> <p> <i>Restrictions</i>:
      * Restricted tunnel</p> </li> </ul> </li> </ul>
      */
-    inline const Aws::String& GetTunnelRestrictionCode() const{ return m_tunnelRestrictionCode; }
+    inline const Aws::String& GetTunnelRestrictionCode() const { return m_tunnelRestrictionCode; }
     inline bool TunnelRestrictionCodeHasBeenSet() const { return m_tunnelRestrictionCodeHasBeenSet; }
-    inline void SetTunnelRestrictionCode(const Aws::String& value) { m_tunnelRestrictionCodeHasBeenSet = true; m_tunnelRestrictionCode = value; }
-    inline void SetTunnelRestrictionCode(Aws::String&& value) { m_tunnelRestrictionCodeHasBeenSet = true; m_tunnelRestrictionCode = std::move(value); }
-    inline void SetTunnelRestrictionCode(const char* value) { m_tunnelRestrictionCodeHasBeenSet = true; m_tunnelRestrictionCode.assign(value); }
-    inline WaypointOptimizationTruckOptions& WithTunnelRestrictionCode(const Aws::String& value) { SetTunnelRestrictionCode(value); return *this;}
-    inline WaypointOptimizationTruckOptions& WithTunnelRestrictionCode(Aws::String&& value) { SetTunnelRestrictionCode(std::move(value)); return *this;}
-    inline WaypointOptimizationTruckOptions& WithTunnelRestrictionCode(const char* value) { SetTunnelRestrictionCode(value); return *this;}
+    template<typename TunnelRestrictionCodeT = Aws::String>
+    void SetTunnelRestrictionCode(TunnelRestrictionCodeT&& value) { m_tunnelRestrictionCodeHasBeenSet = true; m_tunnelRestrictionCode = std::forward<TunnelRestrictionCodeT>(value); }
+    template<typename TunnelRestrictionCodeT = Aws::String>
+    WaypointOptimizationTruckOptions& WithTunnelRestrictionCode(TunnelRestrictionCodeT&& value) { SetTunnelRestrictionCode(std::forward<TunnelRestrictionCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,7 +137,7 @@ namespace Model
      * Meant for usage in countries where the differences in axle types or axle groups
      * are not distinguished.</p> <p> <b>Unit</b>: <code>Kilograms</code> </p>
      */
-    inline long long GetWeightPerAxle() const{ return m_weightPerAxle; }
+    inline long long GetWeightPerAxle() const { return m_weightPerAxle; }
     inline bool WeightPerAxleHasBeenSet() const { return m_weightPerAxleHasBeenSet; }
     inline void SetWeightPerAxle(long long value) { m_weightPerAxleHasBeenSet = true; m_weightPerAxle = value; }
     inline WaypointOptimizationTruckOptions& WithWeightPerAxle(long long value) { SetWeightPerAxle(value); return *this;}
@@ -152,38 +147,38 @@ namespace Model
     /**
      * <p>Width of the vehicle.</p> <p> <b>Unit</b>: <code>centimeters</code> </p>
      */
-    inline long long GetWidth() const{ return m_width; }
+    inline long long GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
     inline void SetWidth(long long value) { m_widthHasBeenSet = true; m_width = value; }
     inline WaypointOptimizationTruckOptions& WithWidth(long long value) { SetWidth(value); return *this;}
     ///@}
   private:
 
-    long long m_grossWeight;
+    long long m_grossWeight{0};
     bool m_grossWeightHasBeenSet = false;
 
     Aws::Vector<WaypointOptimizationHazardousCargoType> m_hazardousCargos;
     bool m_hazardousCargosHasBeenSet = false;
 
-    long long m_height;
+    long long m_height{0};
     bool m_heightHasBeenSet = false;
 
-    long long m_length;
+    long long m_length{0};
     bool m_lengthHasBeenSet = false;
 
     WaypointOptimizationTrailerOptions m_trailer;
     bool m_trailerHasBeenSet = false;
 
-    WaypointOptimizationTruckType m_truckType;
+    WaypointOptimizationTruckType m_truckType{WaypointOptimizationTruckType::NOT_SET};
     bool m_truckTypeHasBeenSet = false;
 
     Aws::String m_tunnelRestrictionCode;
     bool m_tunnelRestrictionCodeHasBeenSet = false;
 
-    long long m_weightPerAxle;
+    long long m_weightPerAxle{0};
     bool m_weightPerAxleHasBeenSet = false;
 
-    long long m_width;
+    long long m_width{0};
     bool m_widthHasBeenSet = false;
   };
 

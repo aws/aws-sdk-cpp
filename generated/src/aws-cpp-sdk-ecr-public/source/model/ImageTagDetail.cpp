@@ -18,15 +18,7 @@ namespace ECRPublic
 namespace Model
 {
 
-ImageTagDetail::ImageTagDetail() : 
-    m_imageTagHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_imageDetailHasBeenSet(false)
-{
-}
-
 ImageTagDetail::ImageTagDetail(JsonView jsonValue)
-  : ImageTagDetail()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ImageTagDetail& ImageTagDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("imageTag"))
   {
     m_imageTag = jsonValue.GetString("imageTag");
-
     m_imageTagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageDetail"))
   {
     m_imageDetail = jsonValue.GetObject("imageDetail");
-
     m_imageDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

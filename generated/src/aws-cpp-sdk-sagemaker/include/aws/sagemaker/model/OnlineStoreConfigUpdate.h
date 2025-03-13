@@ -32,7 +32,7 @@ namespace Model
   class OnlineStoreConfigUpdate
   {
   public:
-    AWS_SAGEMAKER_API OnlineStoreConfigUpdate();
+    AWS_SAGEMAKER_API OnlineStoreConfigUpdate() = default;
     AWS_SAGEMAKER_API OnlineStoreConfigUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API OnlineStoreConfigUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a>
      * API in the Amazon SageMaker API Reference guide.</p>
      */
-    inline const TtlDuration& GetTtlDuration() const{ return m_ttlDuration; }
+    inline const TtlDuration& GetTtlDuration() const { return m_ttlDuration; }
     inline bool TtlDurationHasBeenSet() const { return m_ttlDurationHasBeenSet; }
-    inline void SetTtlDuration(const TtlDuration& value) { m_ttlDurationHasBeenSet = true; m_ttlDuration = value; }
-    inline void SetTtlDuration(TtlDuration&& value) { m_ttlDurationHasBeenSet = true; m_ttlDuration = std::move(value); }
-    inline OnlineStoreConfigUpdate& WithTtlDuration(const TtlDuration& value) { SetTtlDuration(value); return *this;}
-    inline OnlineStoreConfigUpdate& WithTtlDuration(TtlDuration&& value) { SetTtlDuration(std::move(value)); return *this;}
+    template<typename TtlDurationT = TtlDuration>
+    void SetTtlDuration(TtlDurationT&& value) { m_ttlDurationHasBeenSet = true; m_ttlDuration = std::forward<TtlDurationT>(value); }
+    template<typename TtlDurationT = TtlDuration>
+    OnlineStoreConfigUpdate& WithTtlDuration(TtlDurationT&& value) { SetTtlDuration(std::forward<TtlDurationT>(value)); return *this;}
     ///@}
   private:
 

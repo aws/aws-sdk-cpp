@@ -40,7 +40,7 @@ namespace Model
   class DeviceFilter
   {
   public:
-    AWS_DEVICEFARM_API DeviceFilter();
+    AWS_DEVICEFARM_API DeviceFilter() = default;
     AWS_DEVICEFARM_API DeviceFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API DeviceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -85,12 +85,10 @@ namespace Model
      * <dd> <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p> <p>Supported
      * operators: <code>EQUALS</code> </p> </dd> </dl>
      */
-    inline const DeviceFilterAttribute& GetAttribute() const{ return m_attribute; }
+    inline DeviceFilterAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const DeviceFilterAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(DeviceFilterAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline DeviceFilter& WithAttribute(const DeviceFilterAttribute& value) { SetAttribute(value); return *this;}
-    inline DeviceFilter& WithAttribute(DeviceFilterAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(DeviceFilterAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline DeviceFilter& WithAttribute(DeviceFilterAttribute value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +96,10 @@ namespace Model
      * <p>Specifies how Device Farm compares the filter's attribute to the value. See
      * the attribute descriptions.</p>
      */
-    inline const RuleOperator& GetOperator() const{ return m_operator; }
+    inline RuleOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const RuleOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(RuleOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline DeviceFilter& WithOperator(const RuleOperator& value) { SetOperator(value); return *this;}
-    inline DeviceFilter& WithOperator(RuleOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(RuleOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline DeviceFilter& WithOperator(RuleOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -119,22 +115,21 @@ namespace Model
      * to PHONE or TABLET.</p> </li> <li> <p>The FLEET_TYPE attribute can be set to
      * PUBLIC or PRIVATE.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline DeviceFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline DeviceFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline DeviceFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline DeviceFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline DeviceFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    DeviceFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    DeviceFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    DeviceFilterAttribute m_attribute;
+    DeviceFilterAttribute m_attribute{DeviceFilterAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
-    RuleOperator m_operator;
+    RuleOperator m_operator{RuleOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

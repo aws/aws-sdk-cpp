@@ -36,7 +36,7 @@ namespace Model
   class QQueryCard
   {
   public:
-    AWS_QAPPS_API QQueryCard();
+    AWS_QAPPS_API QQueryCard() = default;
     AWS_QAPPS_API QQueryCard(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API QQueryCard& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,81 +46,70 @@ namespace Model
     /**
      * <p>The unique identifier of the query card. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline QQueryCard& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline QQueryCard& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline QQueryCard& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    QQueryCard& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title or label of the query card.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline QQueryCard& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline QQueryCard& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline QQueryCard& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    QQueryCard& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any dependencies or requirements for the query card.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDependencies() const{ return m_dependencies; }
+    inline const Aws::Vector<Aws::String>& GetDependencies() const { return m_dependencies; }
     inline bool DependenciesHasBeenSet() const { return m_dependenciesHasBeenSet; }
-    inline void SetDependencies(const Aws::Vector<Aws::String>& value) { m_dependenciesHasBeenSet = true; m_dependencies = value; }
-    inline void SetDependencies(Aws::Vector<Aws::String>&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::move(value); }
-    inline QQueryCard& WithDependencies(const Aws::Vector<Aws::String>& value) { SetDependencies(value); return *this;}
-    inline QQueryCard& WithDependencies(Aws::Vector<Aws::String>&& value) { SetDependencies(std::move(value)); return *this;}
-    inline QQueryCard& AddDependencies(const Aws::String& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
-    inline QQueryCard& AddDependencies(Aws::String&& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(std::move(value)); return *this; }
-    inline QQueryCard& AddDependencies(const char* value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
+    template<typename DependenciesT = Aws::Vector<Aws::String>>
+    void SetDependencies(DependenciesT&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::forward<DependenciesT>(value); }
+    template<typename DependenciesT = Aws::Vector<Aws::String>>
+    QQueryCard& WithDependencies(DependenciesT&& value) { SetDependencies(std::forward<DependenciesT>(value)); return *this;}
+    template<typename DependenciesT = Aws::String>
+    QQueryCard& AddDependencies(DependenciesT&& value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace_back(std::forward<DependenciesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of the card.</p>
      */
-    inline const CardType& GetType() const{ return m_type; }
+    inline CardType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CardType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CardType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline QQueryCard& WithType(const CardType& value) { SetType(value); return *this;}
-    inline QQueryCard& WithType(CardType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CardType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline QQueryCard& WithType(CardType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The prompt or instructions displayed for the query card.</p>
      */
-    inline const Aws::String& GetPrompt() const{ return m_prompt; }
+    inline const Aws::String& GetPrompt() const { return m_prompt; }
     inline bool PromptHasBeenSet() const { return m_promptHasBeenSet; }
-    inline void SetPrompt(const Aws::String& value) { m_promptHasBeenSet = true; m_prompt = value; }
-    inline void SetPrompt(Aws::String&& value) { m_promptHasBeenSet = true; m_prompt = std::move(value); }
-    inline void SetPrompt(const char* value) { m_promptHasBeenSet = true; m_prompt.assign(value); }
-    inline QQueryCard& WithPrompt(const Aws::String& value) { SetPrompt(value); return *this;}
-    inline QQueryCard& WithPrompt(Aws::String&& value) { SetPrompt(std::move(value)); return *this;}
-    inline QQueryCard& WithPrompt(const char* value) { SetPrompt(value); return *this;}
+    template<typename PromptT = Aws::String>
+    void SetPrompt(PromptT&& value) { m_promptHasBeenSet = true; m_prompt = std::forward<PromptT>(value); }
+    template<typename PromptT = Aws::String>
+    QQueryCard& WithPrompt(PromptT&& value) { SetPrompt(std::forward<PromptT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source or type of output generated by the query card.</p>
      */
-    inline const CardOutputSource& GetOutputSource() const{ return m_outputSource; }
+    inline CardOutputSource GetOutputSource() const { return m_outputSource; }
     inline bool OutputSourceHasBeenSet() const { return m_outputSourceHasBeenSet; }
-    inline void SetOutputSource(const CardOutputSource& value) { m_outputSourceHasBeenSet = true; m_outputSource = value; }
-    inline void SetOutputSource(CardOutputSource&& value) { m_outputSourceHasBeenSet = true; m_outputSource = std::move(value); }
-    inline QQueryCard& WithOutputSource(const CardOutputSource& value) { SetOutputSource(value); return *this;}
-    inline QQueryCard& WithOutputSource(CardOutputSource&& value) { SetOutputSource(std::move(value)); return *this;}
+    inline void SetOutputSource(CardOutputSource value) { m_outputSourceHasBeenSet = true; m_outputSource = value; }
+    inline QQueryCard& WithOutputSource(CardOutputSource value) { SetOutputSource(value); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +117,12 @@ namespace Model
      * <p>The Amazon Q Business filters applied in this query card when resolving data
      * sources</p>
      */
-    inline const AttributeFilter& GetAttributeFilter() const{ return m_attributeFilter; }
+    inline const AttributeFilter& GetAttributeFilter() const { return m_attributeFilter; }
     inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }
-    inline void SetAttributeFilter(const AttributeFilter& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = value; }
-    inline void SetAttributeFilter(AttributeFilter&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::move(value); }
-    inline QQueryCard& WithAttributeFilter(const AttributeFilter& value) { SetAttributeFilter(value); return *this;}
-    inline QQueryCard& WithAttributeFilter(AttributeFilter&& value) { SetAttributeFilter(std::move(value)); return *this;}
+    template<typename AttributeFilterT = AttributeFilter>
+    void SetAttributeFilter(AttributeFilterT&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::forward<AttributeFilterT>(value); }
+    template<typename AttributeFilterT = AttributeFilter>
+    QQueryCard& WithAttributeFilter(AttributeFilterT&& value) { SetAttributeFilter(std::forward<AttributeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,15 +130,14 @@ namespace Model
      * <p>Any dependencies for the query card, where the dependencies are references to
      * the collected responses.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMemoryReferences() const{ return m_memoryReferences; }
+    inline const Aws::Vector<Aws::String>& GetMemoryReferences() const { return m_memoryReferences; }
     inline bool MemoryReferencesHasBeenSet() const { return m_memoryReferencesHasBeenSet; }
-    inline void SetMemoryReferences(const Aws::Vector<Aws::String>& value) { m_memoryReferencesHasBeenSet = true; m_memoryReferences = value; }
-    inline void SetMemoryReferences(Aws::Vector<Aws::String>&& value) { m_memoryReferencesHasBeenSet = true; m_memoryReferences = std::move(value); }
-    inline QQueryCard& WithMemoryReferences(const Aws::Vector<Aws::String>& value) { SetMemoryReferences(value); return *this;}
-    inline QQueryCard& WithMemoryReferences(Aws::Vector<Aws::String>&& value) { SetMemoryReferences(std::move(value)); return *this;}
-    inline QQueryCard& AddMemoryReferences(const Aws::String& value) { m_memoryReferencesHasBeenSet = true; m_memoryReferences.push_back(value); return *this; }
-    inline QQueryCard& AddMemoryReferences(Aws::String&& value) { m_memoryReferencesHasBeenSet = true; m_memoryReferences.push_back(std::move(value)); return *this; }
-    inline QQueryCard& AddMemoryReferences(const char* value) { m_memoryReferencesHasBeenSet = true; m_memoryReferences.push_back(value); return *this; }
+    template<typename MemoryReferencesT = Aws::Vector<Aws::String>>
+    void SetMemoryReferences(MemoryReferencesT&& value) { m_memoryReferencesHasBeenSet = true; m_memoryReferences = std::forward<MemoryReferencesT>(value); }
+    template<typename MemoryReferencesT = Aws::Vector<Aws::String>>
+    QQueryCard& WithMemoryReferences(MemoryReferencesT&& value) { SetMemoryReferences(std::forward<MemoryReferencesT>(value)); return *this;}
+    template<typename MemoryReferencesT = Aws::String>
+    QQueryCard& AddMemoryReferences(MemoryReferencesT&& value) { m_memoryReferencesHasBeenSet = true; m_memoryReferences.emplace_back(std::forward<MemoryReferencesT>(value)); return *this; }
     ///@}
   private:
 
@@ -162,13 +150,13 @@ namespace Model
     Aws::Vector<Aws::String> m_dependencies;
     bool m_dependenciesHasBeenSet = false;
 
-    CardType m_type;
+    CardType m_type{CardType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_prompt;
     bool m_promptHasBeenSet = false;
 
-    CardOutputSource m_outputSource;
+    CardOutputSource m_outputSource{CardOutputSource::NOT_SET};
     bool m_outputSourceHasBeenSet = false;
 
     AttributeFilter m_attributeFilter;

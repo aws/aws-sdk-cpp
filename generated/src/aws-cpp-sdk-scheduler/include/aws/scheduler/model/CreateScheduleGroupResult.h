@@ -27,7 +27,7 @@ namespace Model
   class CreateScheduleGroupResult
   {
   public:
-    AWS_SCHEDULER_API CreateScheduleGroupResult();
+    AWS_SCHEDULER_API CreateScheduleGroupResult() = default;
     AWS_SCHEDULER_API CreateScheduleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SCHEDULER_API CreateScheduleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the schedule group.</p>
      */
-    inline const Aws::String& GetScheduleGroupArn() const{ return m_scheduleGroupArn; }
-    inline void SetScheduleGroupArn(const Aws::String& value) { m_scheduleGroupArn = value; }
-    inline void SetScheduleGroupArn(Aws::String&& value) { m_scheduleGroupArn = std::move(value); }
-    inline void SetScheduleGroupArn(const char* value) { m_scheduleGroupArn.assign(value); }
-    inline CreateScheduleGroupResult& WithScheduleGroupArn(const Aws::String& value) { SetScheduleGroupArn(value); return *this;}
-    inline CreateScheduleGroupResult& WithScheduleGroupArn(Aws::String&& value) { SetScheduleGroupArn(std::move(value)); return *this;}
-    inline CreateScheduleGroupResult& WithScheduleGroupArn(const char* value) { SetScheduleGroupArn(value); return *this;}
+    inline const Aws::String& GetScheduleGroupArn() const { return m_scheduleGroupArn; }
+    template<typename ScheduleGroupArnT = Aws::String>
+    void SetScheduleGroupArn(ScheduleGroupArnT&& value) { m_scheduleGroupArnHasBeenSet = true; m_scheduleGroupArn = std::forward<ScheduleGroupArnT>(value); }
+    template<typename ScheduleGroupArnT = Aws::String>
+    CreateScheduleGroupResult& WithScheduleGroupArn(ScheduleGroupArnT&& value) { SetScheduleGroupArn(std::forward<ScheduleGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateScheduleGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateScheduleGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateScheduleGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateScheduleGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scheduleGroupArn;
+    bool m_scheduleGroupArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

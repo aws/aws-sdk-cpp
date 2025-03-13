@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePipelineResult::CreatePipelineResult()
-{
-}
-
 CreatePipelineResult::CreatePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ CreatePipelineResult& CreatePipelineResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("pipeline"))
   {
     m_pipeline = jsonValue.GetObject("pipeline");
-
+    m_pipelineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -42,14 +37,15 @@ CreatePipelineResult& CreatePipelineResult::operator =(const Aws::AmazonWebServi
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

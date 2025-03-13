@@ -30,7 +30,7 @@ namespace Model
   class GetFindingsStatisticsResult
   {
   public:
-    AWS_ACCESSANALYZER_API GetFindingsStatisticsResult();
+    AWS_ACCESSANALYZER_API GetFindingsStatisticsResult() = default;
     AWS_ACCESSANALYZER_API GetFindingsStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACCESSANALYZER_API GetFindingsStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>A group of external access or unused access findings statistics.</p>
      */
-    inline const Aws::Vector<FindingsStatistics>& GetFindingsStatistics() const{ return m_findingsStatistics; }
-    inline void SetFindingsStatistics(const Aws::Vector<FindingsStatistics>& value) { m_findingsStatistics = value; }
-    inline void SetFindingsStatistics(Aws::Vector<FindingsStatistics>&& value) { m_findingsStatistics = std::move(value); }
-    inline GetFindingsStatisticsResult& WithFindingsStatistics(const Aws::Vector<FindingsStatistics>& value) { SetFindingsStatistics(value); return *this;}
-    inline GetFindingsStatisticsResult& WithFindingsStatistics(Aws::Vector<FindingsStatistics>&& value) { SetFindingsStatistics(std::move(value)); return *this;}
-    inline GetFindingsStatisticsResult& AddFindingsStatistics(const FindingsStatistics& value) { m_findingsStatistics.push_back(value); return *this; }
-    inline GetFindingsStatisticsResult& AddFindingsStatistics(FindingsStatistics&& value) { m_findingsStatistics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FindingsStatistics>& GetFindingsStatistics() const { return m_findingsStatistics; }
+    template<typename FindingsStatisticsT = Aws::Vector<FindingsStatistics>>
+    void SetFindingsStatistics(FindingsStatisticsT&& value) { m_findingsStatisticsHasBeenSet = true; m_findingsStatistics = std::forward<FindingsStatisticsT>(value); }
+    template<typename FindingsStatisticsT = Aws::Vector<FindingsStatistics>>
+    GetFindingsStatisticsResult& WithFindingsStatistics(FindingsStatisticsT&& value) { SetFindingsStatistics(std::forward<FindingsStatisticsT>(value)); return *this;}
+    template<typename FindingsStatisticsT = FindingsStatistics>
+    GetFindingsStatisticsResult& AddFindingsStatistics(FindingsStatisticsT&& value) { m_findingsStatisticsHasBeenSet = true; m_findingsStatistics.emplace_back(std::forward<FindingsStatisticsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,30 +54,31 @@ namespace Model
      * If the findings statistics have not been previously retrieved for the specified
      * analyzer, this field will not be populated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline GetFindingsStatisticsResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline GetFindingsStatisticsResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetFindingsStatisticsResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFindingsStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFindingsStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFindingsStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFindingsStatisticsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FindingsStatistics> m_findingsStatistics;
+    bool m_findingsStatisticsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

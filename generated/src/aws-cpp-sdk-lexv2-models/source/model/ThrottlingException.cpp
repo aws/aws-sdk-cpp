@@ -19,15 +19,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ThrottlingException::ThrottlingException() : 
-    m_retryAfterSeconds(0),
-    m_retryAfterSecondsHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ThrottlingException::ThrottlingException(JsonView jsonValue)
-  : ThrottlingException()
 {
   *this = jsonValue;
 }
@@ -37,10 +29,8 @@ ThrottlingException& ThrottlingException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class UsageStatisticsFilter
   {
   public:
-    AWS_MACIE2_API UsageStatisticsFilter();
+    AWS_MACIE2_API UsageStatisticsFilter() = default;
     AWS_MACIE2_API UsageStatisticsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API UsageStatisticsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,24 +47,20 @@ namespace Model
      * accountId, this value must be CONTAINS. If the value for the key property is any
      * other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
      */
-    inline const UsageStatisticsFilterComparator& GetComparator() const{ return m_comparator; }
+    inline UsageStatisticsFilterComparator GetComparator() const { return m_comparator; }
     inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
-    inline void SetComparator(const UsageStatisticsFilterComparator& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
-    inline void SetComparator(UsageStatisticsFilterComparator&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
-    inline UsageStatisticsFilter& WithComparator(const UsageStatisticsFilterComparator& value) { SetComparator(value); return *this;}
-    inline UsageStatisticsFilter& WithComparator(UsageStatisticsFilterComparator&& value) { SetComparator(std::move(value)); return *this;}
+    inline void SetComparator(UsageStatisticsFilterComparator value) { m_comparatorHasBeenSet = true; m_comparator = value; }
+    inline UsageStatisticsFilter& WithComparator(UsageStatisticsFilterComparator value) { SetComparator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The field to use in the condition.</p>
      */
-    inline const UsageStatisticsFilterKey& GetKey() const{ return m_key; }
+    inline UsageStatisticsFilterKey GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const UsageStatisticsFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(UsageStatisticsFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline UsageStatisticsFilter& WithKey(const UsageStatisticsFilterKey& value) { SetKey(value); return *this;}
-    inline UsageStatisticsFilter& WithKey(UsageStatisticsFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(UsageStatisticsFilterKey value) { m_keyHasBeenSet = true; m_key = value; }
+    inline UsageStatisticsFilter& WithKey(UsageStatisticsFilterKey value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
@@ -81,22 +77,21 @@ namespace Model
      * <li><p>total - A string that represents the current estimated cost for an
      * account.</p></li></ul>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline UsageStatisticsFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline UsageStatisticsFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline UsageStatisticsFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline UsageStatisticsFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline UsageStatisticsFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    UsageStatisticsFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    UsageStatisticsFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    UsageStatisticsFilterComparator m_comparator;
+    UsageStatisticsFilterComparator m_comparator{UsageStatisticsFilterComparator::NOT_SET};
     bool m_comparatorHasBeenSet = false;
 
-    UsageStatisticsFilterKey m_key;
+    UsageStatisticsFilterKey m_key{UsageStatisticsFilterKey::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

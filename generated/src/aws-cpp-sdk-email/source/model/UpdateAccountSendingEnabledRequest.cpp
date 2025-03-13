@@ -10,12 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-UpdateAccountSendingEnabledRequest::UpdateAccountSendingEnabledRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccountSendingEnabledRequest::SerializePayload() const
 {
   Aws::StringStream ss;

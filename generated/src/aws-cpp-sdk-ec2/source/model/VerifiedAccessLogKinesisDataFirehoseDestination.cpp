@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessLogKinesisDataFirehoseDestination::VerifiedAccessLogKinesisDataFirehoseDestination() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_deliveryStatusHasBeenSet(false),
-    m_deliveryStreamHasBeenSet(false)
-{
-}
-
 VerifiedAccessLogKinesisDataFirehoseDestination::VerifiedAccessLogKinesisDataFirehoseDestination(const XmlNode& xmlNode)
-  : VerifiedAccessLogKinesisDataFirehoseDestination()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ VerifiedAccessLogKinesisDataFirehoseDestination& VerifiedAccessLogKinesisDataFir
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode deliveryStatusNode = resultNode.FirstChild("deliveryStatus");
     if(!deliveryStatusNode.IsNull())
     {
       m_deliveryStatus = deliveryStatusNode;
       m_deliveryStatusHasBeenSet = true;
+       m_deliveryStatusHasBeenSet = true;
     }
     XmlNode deliveryStreamNode = resultNode.FirstChild("deliveryStream");
     if(!deliveryStreamNode.IsNull())
     {
       m_deliveryStream = Aws::Utils::Xml::DecodeEscapedXmlText(deliveryStreamNode.GetText());
       m_deliveryStreamHasBeenSet = true;
+       m_deliveryStreamHasBeenSet = true;
     }
   }
 

@@ -12,13 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResourceCollectionRequest::UpdateResourceCollectionRequest() : 
-    m_action(UpdateResourceCollectionAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResourceCollectionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -35,7 +35,7 @@ namespace Model
   class ListJobsByPipelineResult
   {
   public:
-    AWS_ELASTICTRANSCODER_API ListJobsByPipelineResult();
+    AWS_ELASTICTRANSCODER_API ListJobsByPipelineResult() = default;
     AWS_ELASTICTRANSCODER_API ListJobsByPipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ELASTICTRANSCODER_API ListJobsByPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
     /**
      * <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
      */
-    inline const Aws::Vector<Job>& GetJobs() const{ return m_jobs; }
-    inline void SetJobs(const Aws::Vector<Job>& value) { m_jobs = value; }
-    inline void SetJobs(Aws::Vector<Job>&& value) { m_jobs = std::move(value); }
-    inline ListJobsByPipelineResult& WithJobs(const Aws::Vector<Job>& value) { SetJobs(value); return *this;}
-    inline ListJobsByPipelineResult& WithJobs(Aws::Vector<Job>&& value) { SetJobs(std::move(value)); return *this;}
-    inline ListJobsByPipelineResult& AddJobs(const Job& value) { m_jobs.push_back(value); return *this; }
-    inline ListJobsByPipelineResult& AddJobs(Job&& value) { m_jobs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Job>& GetJobs() const { return m_jobs; }
+    template<typename JobsT = Aws::Vector<Job>>
+    void SetJobs(JobsT&& value) { m_jobsHasBeenSet = true; m_jobs = std::forward<JobsT>(value); }
+    template<typename JobsT = Aws::Vector<Job>>
+    ListJobsByPipelineResult& WithJobs(JobsT&& value) { SetJobs(std::forward<JobsT>(value)); return *this;}
+    template<typename JobsT = Job>
+    ListJobsByPipelineResult& AddJobs(JobsT&& value) { m_jobsHasBeenSet = true; m_jobs.emplace_back(std::forward<JobsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,32 +60,31 @@ namespace Model
      * reached the last page of results, the value of <code>NextPageToken</code> is
      * <code>null</code>. </p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline ListJobsByPipelineResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline ListJobsByPipelineResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline ListJobsByPipelineResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    ListJobsByPipelineResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListJobsByPipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListJobsByPipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListJobsByPipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListJobsByPipelineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Job> m_jobs;
+    bool m_jobsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

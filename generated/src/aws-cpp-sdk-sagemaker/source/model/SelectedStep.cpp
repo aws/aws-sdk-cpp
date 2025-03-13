@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SelectedStep::SelectedStep() : 
-    m_stepNameHasBeenSet(false)
-{
-}
-
 SelectedStep::SelectedStep(JsonView jsonValue)
-  : SelectedStep()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SelectedStep& SelectedStep::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StepName"))
   {
     m_stepName = jsonValue.GetString("StepName");
-
     m_stepNameHasBeenSet = true;
   }
-
   return *this;
 }
 

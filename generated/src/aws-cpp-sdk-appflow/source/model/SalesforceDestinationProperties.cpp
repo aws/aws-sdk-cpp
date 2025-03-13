@@ -18,19 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SalesforceDestinationProperties::SalesforceDestinationProperties() : 
-    m_objectHasBeenSet(false),
-    m_idFieldNamesHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false),
-    m_writeOperationType(WriteOperationType::NOT_SET),
-    m_writeOperationTypeHasBeenSet(false),
-    m_dataTransferApi(SalesforceDataTransferApi::NOT_SET),
-    m_dataTransferApiHasBeenSet(false)
-{
-}
-
 SalesforceDestinationProperties::SalesforceDestinationProperties(JsonView jsonValue)
-  : SalesforceDestinationProperties()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ SalesforceDestinationProperties& SalesforceDestinationProperties::operator =(Jso
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idFieldNames"))
   {
     Aws::Utils::Array<JsonView> idFieldNamesJsonList = jsonValue.GetArray("idFieldNames");
@@ -53,28 +39,21 @@ SalesforceDestinationProperties& SalesforceDestinationProperties::operator =(Jso
     }
     m_idFieldNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorHandlingConfig"))
   {
     m_errorHandlingConfig = jsonValue.GetObject("errorHandlingConfig");
-
     m_errorHandlingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("writeOperationType"))
   {
     m_writeOperationType = WriteOperationTypeMapper::GetWriteOperationTypeForName(jsonValue.GetString("writeOperationType"));
-
     m_writeOperationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataTransferApi"))
   {
     m_dataTransferApi = SalesforceDataTransferApiMapper::GetSalesforceDataTransferApiForName(jsonValue.GetString("dataTransferApi"));
-
     m_dataTransferApiHasBeenSet = true;
   }
-
   return *this;
 }
 

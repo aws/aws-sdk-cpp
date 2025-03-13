@@ -18,26 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchReadSuccessfulResponse::BatchReadSuccessfulResponse() : 
-    m_listObjectAttributesHasBeenSet(false),
-    m_listObjectChildrenHasBeenSet(false),
-    m_getObjectInformationHasBeenSet(false),
-    m_getObjectAttributesHasBeenSet(false),
-    m_listAttachedIndicesHasBeenSet(false),
-    m_listObjectParentPathsHasBeenSet(false),
-    m_listObjectPoliciesHasBeenSet(false),
-    m_listPolicyAttachmentsHasBeenSet(false),
-    m_lookupPolicyHasBeenSet(false),
-    m_listIndexHasBeenSet(false),
-    m_listOutgoingTypedLinksHasBeenSet(false),
-    m_listIncomingTypedLinksHasBeenSet(false),
-    m_getLinkAttributesHasBeenSet(false),
-    m_listObjectParentsHasBeenSet(false)
-{
-}
-
 BatchReadSuccessfulResponse::BatchReadSuccessfulResponse(JsonView jsonValue)
-  : BatchReadSuccessfulResponse()
 {
   *this = jsonValue;
 }
@@ -47,101 +28,73 @@ BatchReadSuccessfulResponse& BatchReadSuccessfulResponse::operator =(JsonView js
   if(jsonValue.ValueExists("ListObjectAttributes"))
   {
     m_listObjectAttributes = jsonValue.GetObject("ListObjectAttributes");
-
     m_listObjectAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListObjectChildren"))
   {
     m_listObjectChildren = jsonValue.GetObject("ListObjectChildren");
-
     m_listObjectChildrenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GetObjectInformation"))
   {
     m_getObjectInformation = jsonValue.GetObject("GetObjectInformation");
-
     m_getObjectInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GetObjectAttributes"))
   {
     m_getObjectAttributes = jsonValue.GetObject("GetObjectAttributes");
-
     m_getObjectAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListAttachedIndices"))
   {
     m_listAttachedIndices = jsonValue.GetObject("ListAttachedIndices");
-
     m_listAttachedIndicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListObjectParentPaths"))
   {
     m_listObjectParentPaths = jsonValue.GetObject("ListObjectParentPaths");
-
     m_listObjectParentPathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListObjectPolicies"))
   {
     m_listObjectPolicies = jsonValue.GetObject("ListObjectPolicies");
-
     m_listObjectPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListPolicyAttachments"))
   {
     m_listPolicyAttachments = jsonValue.GetObject("ListPolicyAttachments");
-
     m_listPolicyAttachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LookupPolicy"))
   {
     m_lookupPolicy = jsonValue.GetObject("LookupPolicy");
-
     m_lookupPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListIndex"))
   {
     m_listIndex = jsonValue.GetObject("ListIndex");
-
     m_listIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListOutgoingTypedLinks"))
   {
     m_listOutgoingTypedLinks = jsonValue.GetObject("ListOutgoingTypedLinks");
-
     m_listOutgoingTypedLinksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListIncomingTypedLinks"))
   {
     m_listIncomingTypedLinks = jsonValue.GetObject("ListIncomingTypedLinks");
-
     m_listIncomingTypedLinksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GetLinkAttributes"))
   {
     m_getLinkAttributes = jsonValue.GetObject("GetLinkAttributes");
-
     m_getLinkAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListObjectParents"))
   {
     m_listObjectParents = jsonValue.GetObject("ListObjectParents");
-
     m_listObjectParentsHasBeenSet = true;
   }
-
   return *this;
 }
 

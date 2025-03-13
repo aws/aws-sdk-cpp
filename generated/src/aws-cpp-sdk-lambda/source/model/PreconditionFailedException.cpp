@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-PreconditionFailedException::PreconditionFailedException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 PreconditionFailedException::PreconditionFailedException(JsonView jsonValue)
-  : PreconditionFailedException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PreconditionFailedException& PreconditionFailedException::operator =(JsonView js
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

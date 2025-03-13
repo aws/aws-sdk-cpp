@@ -12,13 +12,6 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEventRuleRequest::UpdateEventRuleRequest() : 
-    m_arnHasBeenSet(false),
-    m_eventPatternHasBeenSet(false),
-    m_regionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEventRuleRequest::SerializePayload() const
 {
   JsonValue payload;

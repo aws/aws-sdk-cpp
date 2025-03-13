@@ -22,7 +22,7 @@ namespace Model
   class StartFlowRequest : public AppflowRequest
   {
   public:
-    AWS_APPFLOW_API StartFlowRequest();
+    AWS_APPFLOW_API StartFlowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
      * or hyphens (-) only. </p>
      */
-    inline const Aws::String& GetFlowName() const{ return m_flowName; }
+    inline const Aws::String& GetFlowName() const { return m_flowName; }
     inline bool FlowNameHasBeenSet() const { return m_flowNameHasBeenSet; }
-    inline void SetFlowName(const Aws::String& value) { m_flowNameHasBeenSet = true; m_flowName = value; }
-    inline void SetFlowName(Aws::String&& value) { m_flowNameHasBeenSet = true; m_flowName = std::move(value); }
-    inline void SetFlowName(const char* value) { m_flowNameHasBeenSet = true; m_flowName.assign(value); }
-    inline StartFlowRequest& WithFlowName(const Aws::String& value) { SetFlowName(value); return *this;}
-    inline StartFlowRequest& WithFlowName(Aws::String&& value) { SetFlowName(std::move(value)); return *this;}
-    inline StartFlowRequest& WithFlowName(const char* value) { SetFlowName(value); return *this;}
+    template<typename FlowNameT = Aws::String>
+    void SetFlowName(FlowNameT&& value) { m_flowNameHasBeenSet = true; m_flowName = std::forward<FlowNameT>(value); }
+    template<typename FlowNameT = Aws::String>
+    StartFlowRequest& WithFlowName(FlowNameT&& value) { SetFlowName(std::forward<FlowNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <code>clientToken</code>, Amazon AppFlow considers it a new call to
      * <code>StartFlow</code>. The token is active for 8 hours.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartFlowRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartFlowRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartFlowRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartFlowRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class TokenValidityUnitsType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API TokenValidityUnitsType();
+    AWS_COGNITOIDENTITYPROVIDER_API TokenValidityUnitsType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API TokenValidityUnitsType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API TokenValidityUnitsType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * <code>AccessTokenValidity</code> duration can range from five minutes to one
      * day.</p>
      */
-    inline const TimeUnitsType& GetAccessToken() const{ return m_accessToken; }
+    inline TimeUnitsType GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const TimeUnitsType& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(TimeUnitsType&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline TokenValidityUnitsType& WithAccessToken(const TimeUnitsType& value) { SetAccessToken(value); return *this;}
-    inline TokenValidityUnitsType& WithAccessToken(TimeUnitsType&& value) { SetAccessToken(std::move(value)); return *this;}
+    inline void SetAccessToken(TimeUnitsType value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
+    inline TokenValidityUnitsType& WithAccessToken(TimeUnitsType value) { SetAccessToken(value); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,10 @@ namespace Model
      * <code>hours</code>. <code>IdTokenValidity</code> duration can range from five
      * minutes to one day.</p>
      */
-    inline const TimeUnitsType& GetIdToken() const{ return m_idToken; }
+    inline TimeUnitsType GetIdToken() const { return m_idToken; }
     inline bool IdTokenHasBeenSet() const { return m_idTokenHasBeenSet; }
-    inline void SetIdToken(const TimeUnitsType& value) { m_idTokenHasBeenSet = true; m_idToken = value; }
-    inline void SetIdToken(TimeUnitsType&& value) { m_idTokenHasBeenSet = true; m_idToken = std::move(value); }
-    inline TokenValidityUnitsType& WithIdToken(const TimeUnitsType& value) { SetIdToken(value); return *this;}
-    inline TokenValidityUnitsType& WithIdToken(TimeUnitsType&& value) { SetIdToken(std::move(value)); return *this;}
+    inline void SetIdToken(TimeUnitsType value) { m_idTokenHasBeenSet = true; m_idToken = value; }
+    inline TokenValidityUnitsType& WithIdToken(TimeUnitsType value) { SetIdToken(value); return *this;}
     ///@}
 
     ///@{
@@ -80,22 +76,20 @@ namespace Model
      * <code>RefreshTokenValidity</code> duration can range from 60 minutes to 10
      * years.</p>
      */
-    inline const TimeUnitsType& GetRefreshToken() const{ return m_refreshToken; }
+    inline TimeUnitsType GetRefreshToken() const { return m_refreshToken; }
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
-    inline void SetRefreshToken(const TimeUnitsType& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
-    inline void SetRefreshToken(TimeUnitsType&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::move(value); }
-    inline TokenValidityUnitsType& WithRefreshToken(const TimeUnitsType& value) { SetRefreshToken(value); return *this;}
-    inline TokenValidityUnitsType& WithRefreshToken(TimeUnitsType&& value) { SetRefreshToken(std::move(value)); return *this;}
+    inline void SetRefreshToken(TimeUnitsType value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
+    inline TokenValidityUnitsType& WithRefreshToken(TimeUnitsType value) { SetRefreshToken(value); return *this;}
     ///@}
   private:
 
-    TimeUnitsType m_accessToken;
+    TimeUnitsType m_accessToken{TimeUnitsType::NOT_SET};
     bool m_accessTokenHasBeenSet = false;
 
-    TimeUnitsType m_idToken;
+    TimeUnitsType m_idToken{TimeUnitsType::NOT_SET};
     bool m_idTokenHasBeenSet = false;
 
-    TimeUnitsType m_refreshToken;
+    TimeUnitsType m_refreshToken{TimeUnitsType::NOT_SET};
     bool m_refreshTokenHasBeenSet = false;
   };
 

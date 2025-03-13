@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetLocalConsolePasswordRequest::SetLocalConsolePasswordRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_localConsolePasswordHasBeenSet(false)
-{
-}
-
 Aws::String SetLocalConsolePasswordRequest::SerializePayload() const
 {
   JsonValue payload;

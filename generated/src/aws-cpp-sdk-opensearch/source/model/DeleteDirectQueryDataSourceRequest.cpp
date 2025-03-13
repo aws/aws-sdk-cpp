@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDirectQueryDataSourceRequest::DeleteDirectQueryDataSourceRequest() : 
-    m_dataSourceNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDirectQueryDataSourceRequest::SerializePayload() const
 {
   return {};

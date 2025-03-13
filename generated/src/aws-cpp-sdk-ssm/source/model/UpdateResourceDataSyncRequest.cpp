@@ -12,13 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResourceDataSyncRequest::UpdateResourceDataSyncRequest() : 
-    m_syncNameHasBeenSet(false),
-    m_syncTypeHasBeenSet(false),
-    m_syncSourceHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResourceDataSyncRequest::SerializePayload() const
 {
   JsonValue payload;

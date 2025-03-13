@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetAnswerRequest::GetAnswerRequest() : 
-    m_workloadIdHasBeenSet(false),
-    m_lensAliasHasBeenSet(false),
-    m_questionIdHasBeenSet(false),
-    m_milestoneNumber(0),
-    m_milestoneNumberHasBeenSet(false)
-{
-}
-
 Aws::String GetAnswerRequest::SerializePayload() const
 {
   return {};

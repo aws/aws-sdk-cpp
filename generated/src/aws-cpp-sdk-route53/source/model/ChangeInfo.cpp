@@ -20,17 +20,7 @@ namespace Route53
 namespace Model
 {
 
-ChangeInfo::ChangeInfo() : 
-    m_idHasBeenSet(false),
-    m_status(ChangeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_submittedAtHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 ChangeInfo::ChangeInfo(const XmlNode& xmlNode)
-  : ChangeInfo()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ ChangeInfo& ChangeInfo::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ChangeStatusMapper::GetChangeStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ChangeStatusMapper::GetChangeStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode submittedAtNode = resultNode.FirstChild("SubmittedAt");
     if(!submittedAtNode.IsNull())
     {
       m_submittedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(submittedAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_submittedAtHasBeenSet = true;
+       m_submittedAtHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
   }
 

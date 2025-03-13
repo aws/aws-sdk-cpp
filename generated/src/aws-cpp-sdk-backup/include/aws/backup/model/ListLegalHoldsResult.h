@@ -29,7 +29,7 @@ namespace Model
   class ListLegalHoldsResult
   {
   public:
-    AWS_BACKUP_API ListLegalHoldsResult();
+    AWS_BACKUP_API ListLegalHoldsResult() = default;
     AWS_BACKUP_API ListLegalHoldsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API ListLegalHoldsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,44 @@ namespace Model
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLegalHoldsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLegalHoldsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLegalHoldsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLegalHoldsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This is an array of returned legal holds, both active and previous.</p>
      */
-    inline const Aws::Vector<LegalHold>& GetLegalHolds() const{ return m_legalHolds; }
-    inline void SetLegalHolds(const Aws::Vector<LegalHold>& value) { m_legalHolds = value; }
-    inline void SetLegalHolds(Aws::Vector<LegalHold>&& value) { m_legalHolds = std::move(value); }
-    inline ListLegalHoldsResult& WithLegalHolds(const Aws::Vector<LegalHold>& value) { SetLegalHolds(value); return *this;}
-    inline ListLegalHoldsResult& WithLegalHolds(Aws::Vector<LegalHold>&& value) { SetLegalHolds(std::move(value)); return *this;}
-    inline ListLegalHoldsResult& AddLegalHolds(const LegalHold& value) { m_legalHolds.push_back(value); return *this; }
-    inline ListLegalHoldsResult& AddLegalHolds(LegalHold&& value) { m_legalHolds.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LegalHold>& GetLegalHolds() const { return m_legalHolds; }
+    template<typename LegalHoldsT = Aws::Vector<LegalHold>>
+    void SetLegalHolds(LegalHoldsT&& value) { m_legalHoldsHasBeenSet = true; m_legalHolds = std::forward<LegalHoldsT>(value); }
+    template<typename LegalHoldsT = Aws::Vector<LegalHold>>
+    ListLegalHoldsResult& WithLegalHolds(LegalHoldsT&& value) { SetLegalHolds(std::forward<LegalHoldsT>(value)); return *this;}
+    template<typename LegalHoldsT = LegalHold>
+    ListLegalHoldsResult& AddLegalHolds(LegalHoldsT&& value) { m_legalHoldsHasBeenSet = true; m_legalHolds.emplace_back(std::forward<LegalHoldsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLegalHoldsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLegalHoldsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLegalHoldsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLegalHoldsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<LegalHold> m_legalHolds;
+    bool m_legalHoldsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

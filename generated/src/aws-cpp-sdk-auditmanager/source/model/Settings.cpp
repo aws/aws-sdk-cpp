@@ -18,21 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-Settings::Settings() : 
-    m_isAwsOrgEnabled(false),
-    m_isAwsOrgEnabledHasBeenSet(false),
-    m_snsTopicHasBeenSet(false),
-    m_defaultAssessmentReportsDestinationHasBeenSet(false),
-    m_defaultProcessOwnersHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_evidenceFinderEnablementHasBeenSet(false),
-    m_deregistrationPolicyHasBeenSet(false),
-    m_defaultExportDestinationHasBeenSet(false)
-{
-}
-
 Settings::Settings(JsonView jsonValue)
-  : Settings()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ Settings& Settings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("isAwsOrgEnabled"))
   {
     m_isAwsOrgEnabled = jsonValue.GetBool("isAwsOrgEnabled");
-
     m_isAwsOrgEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snsTopic"))
   {
     m_snsTopic = jsonValue.GetString("snsTopic");
-
     m_snsTopicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultAssessmentReportsDestination"))
   {
     m_defaultAssessmentReportsDestination = jsonValue.GetObject("defaultAssessmentReportsDestination");
-
     m_defaultAssessmentReportsDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultProcessOwners"))
   {
     Aws::Utils::Array<JsonView> defaultProcessOwnersJsonList = jsonValue.GetArray("defaultProcessOwners");
@@ -69,35 +49,26 @@ Settings& Settings::operator =(JsonView jsonValue)
     }
     m_defaultProcessOwnersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKey"))
   {
     m_kmsKey = jsonValue.GetString("kmsKey");
-
     m_kmsKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evidenceFinderEnablement"))
   {
     m_evidenceFinderEnablement = jsonValue.GetObject("evidenceFinderEnablement");
-
     m_evidenceFinderEnablementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deregistrationPolicy"))
   {
     m_deregistrationPolicy = jsonValue.GetObject("deregistrationPolicy");
-
     m_deregistrationPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultExportDestination"))
   {
     m_defaultExportDestination = jsonValue.GetObject("defaultExportDestination");
-
     m_defaultExportDestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

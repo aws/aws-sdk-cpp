@@ -24,7 +24,7 @@ namespace Model
   class TestInvokeAuthorizerRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API TestInvokeAuthorizerRequest();
+    AWS_IOT_API TestInvokeAuthorizerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The custom authorizer name.</p>
      */
-    inline const Aws::String& GetAuthorizerName() const{ return m_authorizerName; }
+    inline const Aws::String& GetAuthorizerName() const { return m_authorizerName; }
     inline bool AuthorizerNameHasBeenSet() const { return m_authorizerNameHasBeenSet; }
-    inline void SetAuthorizerName(const Aws::String& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = value; }
-    inline void SetAuthorizerName(Aws::String&& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = std::move(value); }
-    inline void SetAuthorizerName(const char* value) { m_authorizerNameHasBeenSet = true; m_authorizerName.assign(value); }
-    inline TestInvokeAuthorizerRequest& WithAuthorizerName(const Aws::String& value) { SetAuthorizerName(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithAuthorizerName(Aws::String&& value) { SetAuthorizerName(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerRequest& WithAuthorizerName(const char* value) { SetAuthorizerName(value); return *this;}
+    template<typename AuthorizerNameT = Aws::String>
+    void SetAuthorizerName(AuthorizerNameT&& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = std::forward<AuthorizerNameT>(value); }
+    template<typename AuthorizerNameT = Aws::String>
+    TestInvokeAuthorizerRequest& WithAuthorizerName(AuthorizerNameT&& value) { SetAuthorizerName(std::forward<AuthorizerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The token returned by your custom authentication service.</p>
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
+    inline const Aws::String& GetToken() const { return m_token; }
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-    inline TestInvokeAuthorizerRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerRequest& WithToken(const char* value) { SetToken(value); return *this;}
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    TestInvokeAuthorizerRequest& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,50 +64,48 @@ namespace Model
      * <p>The signature made with the token and your custom authentication service's
      * private key. This value must be Base-64-encoded.</p>
      */
-    inline const Aws::String& GetTokenSignature() const{ return m_tokenSignature; }
+    inline const Aws::String& GetTokenSignature() const { return m_tokenSignature; }
     inline bool TokenSignatureHasBeenSet() const { return m_tokenSignatureHasBeenSet; }
-    inline void SetTokenSignature(const Aws::String& value) { m_tokenSignatureHasBeenSet = true; m_tokenSignature = value; }
-    inline void SetTokenSignature(Aws::String&& value) { m_tokenSignatureHasBeenSet = true; m_tokenSignature = std::move(value); }
-    inline void SetTokenSignature(const char* value) { m_tokenSignatureHasBeenSet = true; m_tokenSignature.assign(value); }
-    inline TestInvokeAuthorizerRequest& WithTokenSignature(const Aws::String& value) { SetTokenSignature(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithTokenSignature(Aws::String&& value) { SetTokenSignature(std::move(value)); return *this;}
-    inline TestInvokeAuthorizerRequest& WithTokenSignature(const char* value) { SetTokenSignature(value); return *this;}
+    template<typename TokenSignatureT = Aws::String>
+    void SetTokenSignature(TokenSignatureT&& value) { m_tokenSignatureHasBeenSet = true; m_tokenSignature = std::forward<TokenSignatureT>(value); }
+    template<typename TokenSignatureT = Aws::String>
+    TestInvokeAuthorizerRequest& WithTokenSignature(TokenSignatureT&& value) { SetTokenSignature(std::forward<TokenSignatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a test HTTP authorization request.</p>
      */
-    inline const HttpContext& GetHttpContext() const{ return m_httpContext; }
+    inline const HttpContext& GetHttpContext() const { return m_httpContext; }
     inline bool HttpContextHasBeenSet() const { return m_httpContextHasBeenSet; }
-    inline void SetHttpContext(const HttpContext& value) { m_httpContextHasBeenSet = true; m_httpContext = value; }
-    inline void SetHttpContext(HttpContext&& value) { m_httpContextHasBeenSet = true; m_httpContext = std::move(value); }
-    inline TestInvokeAuthorizerRequest& WithHttpContext(const HttpContext& value) { SetHttpContext(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithHttpContext(HttpContext&& value) { SetHttpContext(std::move(value)); return *this;}
+    template<typename HttpContextT = HttpContext>
+    void SetHttpContext(HttpContextT&& value) { m_httpContextHasBeenSet = true; m_httpContext = std::forward<HttpContextT>(value); }
+    template<typename HttpContextT = HttpContext>
+    TestInvokeAuthorizerRequest& WithHttpContext(HttpContextT&& value) { SetHttpContext(std::forward<HttpContextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a test MQTT authorization request.</p>
      */
-    inline const MqttContext& GetMqttContext() const{ return m_mqttContext; }
+    inline const MqttContext& GetMqttContext() const { return m_mqttContext; }
     inline bool MqttContextHasBeenSet() const { return m_mqttContextHasBeenSet; }
-    inline void SetMqttContext(const MqttContext& value) { m_mqttContextHasBeenSet = true; m_mqttContext = value; }
-    inline void SetMqttContext(MqttContext&& value) { m_mqttContextHasBeenSet = true; m_mqttContext = std::move(value); }
-    inline TestInvokeAuthorizerRequest& WithMqttContext(const MqttContext& value) { SetMqttContext(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithMqttContext(MqttContext&& value) { SetMqttContext(std::move(value)); return *this;}
+    template<typename MqttContextT = MqttContext>
+    void SetMqttContext(MqttContextT&& value) { m_mqttContextHasBeenSet = true; m_mqttContext = std::forward<MqttContextT>(value); }
+    template<typename MqttContextT = MqttContext>
+    TestInvokeAuthorizerRequest& WithMqttContext(MqttContextT&& value) { SetMqttContext(std::forward<MqttContextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a test TLS authorization request.</p>
      */
-    inline const TlsContext& GetTlsContext() const{ return m_tlsContext; }
+    inline const TlsContext& GetTlsContext() const { return m_tlsContext; }
     inline bool TlsContextHasBeenSet() const { return m_tlsContextHasBeenSet; }
-    inline void SetTlsContext(const TlsContext& value) { m_tlsContextHasBeenSet = true; m_tlsContext = value; }
-    inline void SetTlsContext(TlsContext&& value) { m_tlsContextHasBeenSet = true; m_tlsContext = std::move(value); }
-    inline TestInvokeAuthorizerRequest& WithTlsContext(const TlsContext& value) { SetTlsContext(value); return *this;}
-    inline TestInvokeAuthorizerRequest& WithTlsContext(TlsContext&& value) { SetTlsContext(std::move(value)); return *this;}
+    template<typename TlsContextT = TlsContext>
+    void SetTlsContext(TlsContextT&& value) { m_tlsContextHasBeenSet = true; m_tlsContext = std::forward<TlsContextT>(value); }
+    template<typename TlsContextT = TlsContext>
+    TestInvokeAuthorizerRequest& WithTlsContext(TlsContextT&& value) { SetTlsContext(std::forward<TlsContextT>(value)); return *this;}
     ///@}
   private:
 

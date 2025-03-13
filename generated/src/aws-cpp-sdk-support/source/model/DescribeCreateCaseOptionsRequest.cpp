@@ -12,14 +12,6 @@ using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCreateCaseOptionsRequest::DescribeCreateCaseOptionsRequest() : 
-    m_issueTypeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_categoryCodeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCreateCaseOptionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteDriverOptions::RouteDriverOptions() : 
-    m_scheduleHasBeenSet(false)
-{
-}
-
 RouteDriverOptions::RouteDriverOptions(JsonView jsonValue)
-  : RouteDriverOptions()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RouteDriverOptions& RouteDriverOptions::operator =(JsonView jsonValue)
     }
     m_scheduleHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePodIdentityAssociationRequest::DeletePodIdentityAssociationRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_associationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePodIdentityAssociationRequest::SerializePayload() const
 {
   return {};

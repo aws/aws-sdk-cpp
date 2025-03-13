@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RoutingCriteriaInput::RoutingCriteriaInput() : 
-    m_stepsHasBeenSet(false)
-{
-}
-
 RoutingCriteriaInput::RoutingCriteriaInput(JsonView jsonValue)
-  : RoutingCriteriaInput()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RoutingCriteriaInput& RoutingCriteriaInput::operator =(JsonView jsonValue)
     }
     m_stepsHasBeenSet = true;
   }
-
   return *this;
 }
 

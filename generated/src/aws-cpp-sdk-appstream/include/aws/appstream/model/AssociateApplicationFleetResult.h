@@ -28,7 +28,7 @@ namespace Model
   class AssociateApplicationFleetResult
   {
   public:
-    AWS_APPSTREAM_API AssociateApplicationFleetResult();
+    AWS_APPSTREAM_API AssociateApplicationFleetResult() = default;
     AWS_APPSTREAM_API AssociateApplicationFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API AssociateApplicationFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * associated to it. If application ARN is specified, this returns the list of
      * fleets to which it is associated.</p>
      */
-    inline const ApplicationFleetAssociation& GetApplicationFleetAssociation() const{ return m_applicationFleetAssociation; }
-    inline void SetApplicationFleetAssociation(const ApplicationFleetAssociation& value) { m_applicationFleetAssociation = value; }
-    inline void SetApplicationFleetAssociation(ApplicationFleetAssociation&& value) { m_applicationFleetAssociation = std::move(value); }
-    inline AssociateApplicationFleetResult& WithApplicationFleetAssociation(const ApplicationFleetAssociation& value) { SetApplicationFleetAssociation(value); return *this;}
-    inline AssociateApplicationFleetResult& WithApplicationFleetAssociation(ApplicationFleetAssociation&& value) { SetApplicationFleetAssociation(std::move(value)); return *this;}
+    inline const ApplicationFleetAssociation& GetApplicationFleetAssociation() const { return m_applicationFleetAssociation; }
+    template<typename ApplicationFleetAssociationT = ApplicationFleetAssociation>
+    void SetApplicationFleetAssociation(ApplicationFleetAssociationT&& value) { m_applicationFleetAssociationHasBeenSet = true; m_applicationFleetAssociation = std::forward<ApplicationFleetAssociationT>(value); }
+    template<typename ApplicationFleetAssociationT = ApplicationFleetAssociation>
+    AssociateApplicationFleetResult& WithApplicationFleetAssociation(ApplicationFleetAssociationT&& value) { SetApplicationFleetAssociation(std::forward<ApplicationFleetAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateApplicationFleetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateApplicationFleetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateApplicationFleetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateApplicationFleetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApplicationFleetAssociation m_applicationFleetAssociation;
+    bool m_applicationFleetAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

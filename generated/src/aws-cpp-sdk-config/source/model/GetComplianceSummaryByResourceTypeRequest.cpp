@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetComplianceSummaryByResourceTypeRequest::GetComplianceSummaryByResourceTypeRequest() : 
-    m_resourceTypesHasBeenSet(false)
-{
-}
-
 Aws::String GetComplianceSummaryByResourceTypeRequest::SerializePayload() const
 {
   JsonValue payload;

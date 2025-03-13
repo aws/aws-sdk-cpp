@@ -21,7 +21,7 @@ namespace Model
   class GetDashboardRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API GetDashboardRequest();
+    AWS_CLOUDTRAIL_API GetDashboardRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p> The name or ARN for the dashboard. </p>
      */
-    inline const Aws::String& GetDashboardId() const{ return m_dashboardId; }
+    inline const Aws::String& GetDashboardId() const { return m_dashboardId; }
     inline bool DashboardIdHasBeenSet() const { return m_dashboardIdHasBeenSet; }
-    inline void SetDashboardId(const Aws::String& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = value; }
-    inline void SetDashboardId(Aws::String&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::move(value); }
-    inline void SetDashboardId(const char* value) { m_dashboardIdHasBeenSet = true; m_dashboardId.assign(value); }
-    inline GetDashboardRequest& WithDashboardId(const Aws::String& value) { SetDashboardId(value); return *this;}
-    inline GetDashboardRequest& WithDashboardId(Aws::String&& value) { SetDashboardId(std::move(value)); return *this;}
-    inline GetDashboardRequest& WithDashboardId(const char* value) { SetDashboardId(value); return *this;}
+    template<typename DashboardIdT = Aws::String>
+    void SetDashboardId(DashboardIdT&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::forward<DashboardIdT>(value); }
+    template<typename DashboardIdT = Aws::String>
+    GetDashboardRequest& WithDashboardId(DashboardIdT&& value) { SetDashboardId(std::forward<DashboardIdT>(value)); return *this;}
     ///@}
   private:
 

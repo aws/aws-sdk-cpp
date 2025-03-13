@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CloudFrontOriginAccessIdentity::CloudFrontOriginAccessIdentity() : 
-    m_idHasBeenSet(false),
-    m_s3CanonicalUserIdHasBeenSet(false),
-    m_cloudFrontOriginAccessIdentityConfigHasBeenSet(false)
-{
-}
-
 CloudFrontOriginAccessIdentity::CloudFrontOriginAccessIdentity(const XmlNode& xmlNode)
-  : CloudFrontOriginAccessIdentity()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ CloudFrontOriginAccessIdentity& CloudFrontOriginAccessIdentity::operator =(const
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode s3CanonicalUserIdNode = resultNode.FirstChild("S3CanonicalUserId");
     if(!s3CanonicalUserIdNode.IsNull())
     {
       m_s3CanonicalUserId = Aws::Utils::Xml::DecodeEscapedXmlText(s3CanonicalUserIdNode.GetText());
       m_s3CanonicalUserIdHasBeenSet = true;
+       m_s3CanonicalUserIdHasBeenSet = true;
     }
     XmlNode cloudFrontOriginAccessIdentityConfigNode = resultNode.FirstChild("CloudFrontOriginAccessIdentityConfig");
     if(!cloudFrontOriginAccessIdentityConfigNode.IsNull())
     {
       m_cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfigNode;
       m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true;
+       m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true;
     }
   }
 

@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DescribeFleetError::DescribeFleetError() : 
-    m_launchTemplateAndOverridesHasBeenSet(false),
-    m_lifecycle(InstanceLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 DescribeFleetError::DescribeFleetError(const XmlNode& xmlNode)
-  : DescribeFleetError()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ DescribeFleetError& DescribeFleetError::operator =(const XmlNode& xmlNode)
     {
       m_launchTemplateAndOverrides = launchTemplateAndOverridesNode;
       m_launchTemplateAndOverridesHasBeenSet = true;
+       m_launchTemplateAndOverridesHasBeenSet = true;
     }
     XmlNode lifecycleNode = resultNode.FirstChild("lifecycle");
     if(!lifecycleNode.IsNull())
     {
-      m_lifecycle = InstanceLifecycleMapper::GetInstanceLifecycleForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleNode.GetText()).c_str()).c_str());
+      m_lifecycle = InstanceLifecycleMapper::GetInstanceLifecycleForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleNode.GetText()).c_str()));
       m_lifecycleHasBeenSet = true;
+       m_lifecycleHasBeenSet = true;
     }
     XmlNode errorCodeNode = resultNode.FirstChild("errorCode");
     if(!errorCodeNode.IsNull())
     {
       m_errorCode = Aws::Utils::Xml::DecodeEscapedXmlText(errorCodeNode.GetText());
       m_errorCodeHasBeenSet = true;
+       m_errorCodeHasBeenSet = true;
     }
     XmlNode errorMessageNode = resultNode.FirstChild("errorMessage");
     if(!errorMessageNode.IsNull())
     {
       m_errorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(errorMessageNode.GetText());
       m_errorMessageHasBeenSet = true;
+       m_errorMessageHasBeenSet = true;
     }
   }
 

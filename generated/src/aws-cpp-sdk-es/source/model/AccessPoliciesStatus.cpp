@@ -18,14 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-AccessPoliciesStatus::AccessPoliciesStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AccessPoliciesStatus::AccessPoliciesStatus(JsonView jsonValue)
-  : AccessPoliciesStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AccessPoliciesStatus& AccessPoliciesStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetString("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

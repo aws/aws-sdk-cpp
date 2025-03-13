@@ -34,7 +34,7 @@ namespace Model
   class FlowMultiTurnInputRequestEvent
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FlowMultiTurnInputRequestEvent();
+    AWS_BEDROCKAGENTRUNTIME_API FlowMultiTurnInputRequestEvent() = default;
     AWS_BEDROCKAGENTRUNTIME_API FlowMultiTurnInputRequestEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FlowMultiTurnInputRequestEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,38 +45,34 @@ namespace Model
      * <p>The content payload containing the input request details for the multi-turn
      * interaction.</p>
      */
-    inline const FlowMultiTurnInputContent& GetContent() const{ return m_content; }
+    inline const FlowMultiTurnInputContent& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const FlowMultiTurnInputContent& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(FlowMultiTurnInputContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline FlowMultiTurnInputRequestEvent& WithContent(const FlowMultiTurnInputContent& value) { SetContent(value); return *this;}
-    inline FlowMultiTurnInputRequestEvent& WithContent(FlowMultiTurnInputContent&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = FlowMultiTurnInputContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = FlowMultiTurnInputContent>
+    FlowMultiTurnInputRequestEvent& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the node in the flow that is requesting the input.</p>
      */
-    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
+    inline const Aws::String& GetNodeName() const { return m_nodeName; }
     inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
-    inline void SetNodeName(const Aws::String& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
-    inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::move(value); }
-    inline void SetNodeName(const char* value) { m_nodeNameHasBeenSet = true; m_nodeName.assign(value); }
-    inline FlowMultiTurnInputRequestEvent& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
-    inline FlowMultiTurnInputRequestEvent& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
-    inline FlowMultiTurnInputRequestEvent& WithNodeName(const char* value) { SetNodeName(value); return *this;}
+    template<typename NodeNameT = Aws::String>
+    void SetNodeName(NodeNameT&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::forward<NodeNameT>(value); }
+    template<typename NodeNameT = Aws::String>
+    FlowMultiTurnInputRequestEvent& WithNodeName(NodeNameT&& value) { SetNodeName(std::forward<NodeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the node in the flow that is requesting the input.</p>
      */
-    inline const NodeType& GetNodeType() const{ return m_nodeType; }
+    inline NodeType GetNodeType() const { return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
-    inline void SetNodeType(const NodeType& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
-    inline void SetNodeType(NodeType&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
-    inline FlowMultiTurnInputRequestEvent& WithNodeType(const NodeType& value) { SetNodeType(value); return *this;}
-    inline FlowMultiTurnInputRequestEvent& WithNodeType(NodeType&& value) { SetNodeType(std::move(value)); return *this;}
+    inline void SetNodeType(NodeType value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+    inline FlowMultiTurnInputRequestEvent& WithNodeType(NodeType value) { SetNodeType(value); return *this;}
     ///@}
   private:
 
@@ -86,7 +82,7 @@ namespace Model
     Aws::String m_nodeName;
     bool m_nodeNameHasBeenSet = false;
 
-    NodeType m_nodeType;
+    NodeType m_nodeType{NodeType::NOT_SET};
     bool m_nodeTypeHasBeenSet = false;
   };
 

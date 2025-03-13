@@ -12,12 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AbortMultipartReadSetUploadRequest::AbortMultipartReadSetUploadRequest() : 
-    m_sequenceStoreIdHasBeenSet(false),
-    m_uploadIdHasBeenSet(false)
-{
-}
-
 Aws::String AbortMultipartReadSetUploadRequest::SerializePayload() const
 {
   return {};

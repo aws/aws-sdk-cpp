@@ -12,17 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVpcAttachmentRequest::CreateVpcAttachmentRequest() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_vpcArnHasBeenSet(false),
-    m_subnetArnsHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateVpcAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class DescribeDeliveryDestinationsResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API DescribeDeliveryDestinationsResult();
+    AWS_CLOUDWATCHLOGS_API DescribeDeliveryDestinationsResult() = default;
     AWS_CLOUDWATCHLOGS_API DescribeDeliveryDestinationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API DescribeDeliveryDestinationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,43 +39,42 @@ namespace Model
      * <p>An array of structures. Each structure contains information about one
      * delivery destination in the account.</p>
      */
-    inline const Aws::Vector<DeliveryDestination>& GetDeliveryDestinations() const{ return m_deliveryDestinations; }
-    inline void SetDeliveryDestinations(const Aws::Vector<DeliveryDestination>& value) { m_deliveryDestinations = value; }
-    inline void SetDeliveryDestinations(Aws::Vector<DeliveryDestination>&& value) { m_deliveryDestinations = std::move(value); }
-    inline DescribeDeliveryDestinationsResult& WithDeliveryDestinations(const Aws::Vector<DeliveryDestination>& value) { SetDeliveryDestinations(value); return *this;}
-    inline DescribeDeliveryDestinationsResult& WithDeliveryDestinations(Aws::Vector<DeliveryDestination>&& value) { SetDeliveryDestinations(std::move(value)); return *this;}
-    inline DescribeDeliveryDestinationsResult& AddDeliveryDestinations(const DeliveryDestination& value) { m_deliveryDestinations.push_back(value); return *this; }
-    inline DescribeDeliveryDestinationsResult& AddDeliveryDestinations(DeliveryDestination&& value) { m_deliveryDestinations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DeliveryDestination>& GetDeliveryDestinations() const { return m_deliveryDestinations; }
+    template<typename DeliveryDestinationsT = Aws::Vector<DeliveryDestination>>
+    void SetDeliveryDestinations(DeliveryDestinationsT&& value) { m_deliveryDestinationsHasBeenSet = true; m_deliveryDestinations = std::forward<DeliveryDestinationsT>(value); }
+    template<typename DeliveryDestinationsT = Aws::Vector<DeliveryDestination>>
+    DescribeDeliveryDestinationsResult& WithDeliveryDestinations(DeliveryDestinationsT&& value) { SetDeliveryDestinations(std::forward<DeliveryDestinationsT>(value)); return *this;}
+    template<typename DeliveryDestinationsT = DeliveryDestination>
+    DescribeDeliveryDestinationsResult& AddDeliveryDestinations(DeliveryDestinationsT&& value) { m_deliveryDestinationsHasBeenSet = true; m_deliveryDestinations.emplace_back(std::forward<DeliveryDestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeDeliveryDestinationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeDeliveryDestinationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeDeliveryDestinationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeDeliveryDestinationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDeliveryDestinationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDeliveryDestinationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDeliveryDestinationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDeliveryDestinationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DeliveryDestination> m_deliveryDestinations;
+    bool m_deliveryDestinationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

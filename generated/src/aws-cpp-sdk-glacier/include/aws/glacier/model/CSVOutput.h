@@ -33,7 +33,7 @@ namespace Model
   class CSVOutput
   {
   public:
-    AWS_GLACIER_API CSVOutput();
+    AWS_GLACIER_API CSVOutput() = default;
     AWS_GLACIER_API CSVOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLACIER_API CSVOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>A value that indicates whether all output fields should be contained within
      * quotation marks.</p>
      */
-    inline const QuoteFields& GetQuoteFields() const{ return m_quoteFields; }
+    inline QuoteFields GetQuoteFields() const { return m_quoteFields; }
     inline bool QuoteFieldsHasBeenSet() const { return m_quoteFieldsHasBeenSet; }
-    inline void SetQuoteFields(const QuoteFields& value) { m_quoteFieldsHasBeenSet = true; m_quoteFields = value; }
-    inline void SetQuoteFields(QuoteFields&& value) { m_quoteFieldsHasBeenSet = true; m_quoteFields = std::move(value); }
-    inline CSVOutput& WithQuoteFields(const QuoteFields& value) { SetQuoteFields(value); return *this;}
-    inline CSVOutput& WithQuoteFields(QuoteFields&& value) { SetQuoteFields(std::move(value)); return *this;}
+    inline void SetQuoteFields(QuoteFields value) { m_quoteFieldsHasBeenSet = true; m_quoteFields = value; }
+    inline CSVOutput& WithQuoteFields(QuoteFields value) { SetQuoteFields(value); return *this;}
     ///@}
 
     ///@{
@@ -57,28 +55,24 @@ namespace Model
      * <p>A single character used for escaping the quotation-mark character inside an
      * already escaped value.</p>
      */
-    inline const Aws::String& GetQuoteEscapeCharacter() const{ return m_quoteEscapeCharacter; }
+    inline const Aws::String& GetQuoteEscapeCharacter() const { return m_quoteEscapeCharacter; }
     inline bool QuoteEscapeCharacterHasBeenSet() const { return m_quoteEscapeCharacterHasBeenSet; }
-    inline void SetQuoteEscapeCharacter(const Aws::String& value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter = value; }
-    inline void SetQuoteEscapeCharacter(Aws::String&& value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter = std::move(value); }
-    inline void SetQuoteEscapeCharacter(const char* value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter.assign(value); }
-    inline CSVOutput& WithQuoteEscapeCharacter(const Aws::String& value) { SetQuoteEscapeCharacter(value); return *this;}
-    inline CSVOutput& WithQuoteEscapeCharacter(Aws::String&& value) { SetQuoteEscapeCharacter(std::move(value)); return *this;}
-    inline CSVOutput& WithQuoteEscapeCharacter(const char* value) { SetQuoteEscapeCharacter(value); return *this;}
+    template<typename QuoteEscapeCharacterT = Aws::String>
+    void SetQuoteEscapeCharacter(QuoteEscapeCharacterT&& value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter = std::forward<QuoteEscapeCharacterT>(value); }
+    template<typename QuoteEscapeCharacterT = Aws::String>
+    CSVOutput& WithQuoteEscapeCharacter(QuoteEscapeCharacterT&& value) { SetQuoteEscapeCharacter(std::forward<QuoteEscapeCharacterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A value used to separate individual records from each other.</p>
      */
-    inline const Aws::String& GetRecordDelimiter() const{ return m_recordDelimiter; }
+    inline const Aws::String& GetRecordDelimiter() const { return m_recordDelimiter; }
     inline bool RecordDelimiterHasBeenSet() const { return m_recordDelimiterHasBeenSet; }
-    inline void SetRecordDelimiter(const Aws::String& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = value; }
-    inline void SetRecordDelimiter(Aws::String&& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = std::move(value); }
-    inline void SetRecordDelimiter(const char* value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter.assign(value); }
-    inline CSVOutput& WithRecordDelimiter(const Aws::String& value) { SetRecordDelimiter(value); return *this;}
-    inline CSVOutput& WithRecordDelimiter(Aws::String&& value) { SetRecordDelimiter(std::move(value)); return *this;}
-    inline CSVOutput& WithRecordDelimiter(const char* value) { SetRecordDelimiter(value); return *this;}
+    template<typename RecordDelimiterT = Aws::String>
+    void SetRecordDelimiter(RecordDelimiterT&& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = std::forward<RecordDelimiterT>(value); }
+    template<typename RecordDelimiterT = Aws::String>
+    CSVOutput& WithRecordDelimiter(RecordDelimiterT&& value) { SetRecordDelimiter(std::forward<RecordDelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +80,12 @@ namespace Model
      * <p>A value used to separate individual fields from each other within a
      * record.</p>
      */
-    inline const Aws::String& GetFieldDelimiter() const{ return m_fieldDelimiter; }
+    inline const Aws::String& GetFieldDelimiter() const { return m_fieldDelimiter; }
     inline bool FieldDelimiterHasBeenSet() const { return m_fieldDelimiterHasBeenSet; }
-    inline void SetFieldDelimiter(const Aws::String& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = value; }
-    inline void SetFieldDelimiter(Aws::String&& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = std::move(value); }
-    inline void SetFieldDelimiter(const char* value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter.assign(value); }
-    inline CSVOutput& WithFieldDelimiter(const Aws::String& value) { SetFieldDelimiter(value); return *this;}
-    inline CSVOutput& WithFieldDelimiter(Aws::String&& value) { SetFieldDelimiter(std::move(value)); return *this;}
-    inline CSVOutput& WithFieldDelimiter(const char* value) { SetFieldDelimiter(value); return *this;}
+    template<typename FieldDelimiterT = Aws::String>
+    void SetFieldDelimiter(FieldDelimiterT&& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = std::forward<FieldDelimiterT>(value); }
+    template<typename FieldDelimiterT = Aws::String>
+    CSVOutput& WithFieldDelimiter(FieldDelimiterT&& value) { SetFieldDelimiter(std::forward<FieldDelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,18 +93,16 @@ namespace Model
      * <p>A value used as an escape character where the field delimiter is part of the
      * value.</p>
      */
-    inline const Aws::String& GetQuoteCharacter() const{ return m_quoteCharacter; }
+    inline const Aws::String& GetQuoteCharacter() const { return m_quoteCharacter; }
     inline bool QuoteCharacterHasBeenSet() const { return m_quoteCharacterHasBeenSet; }
-    inline void SetQuoteCharacter(const Aws::String& value) { m_quoteCharacterHasBeenSet = true; m_quoteCharacter = value; }
-    inline void SetQuoteCharacter(Aws::String&& value) { m_quoteCharacterHasBeenSet = true; m_quoteCharacter = std::move(value); }
-    inline void SetQuoteCharacter(const char* value) { m_quoteCharacterHasBeenSet = true; m_quoteCharacter.assign(value); }
-    inline CSVOutput& WithQuoteCharacter(const Aws::String& value) { SetQuoteCharacter(value); return *this;}
-    inline CSVOutput& WithQuoteCharacter(Aws::String&& value) { SetQuoteCharacter(std::move(value)); return *this;}
-    inline CSVOutput& WithQuoteCharacter(const char* value) { SetQuoteCharacter(value); return *this;}
+    template<typename QuoteCharacterT = Aws::String>
+    void SetQuoteCharacter(QuoteCharacterT&& value) { m_quoteCharacterHasBeenSet = true; m_quoteCharacter = std::forward<QuoteCharacterT>(value); }
+    template<typename QuoteCharacterT = Aws::String>
+    CSVOutput& WithQuoteCharacter(QuoteCharacterT&& value) { SetQuoteCharacter(std::forward<QuoteCharacterT>(value)); return *this;}
     ///@}
   private:
 
-    QuoteFields m_quoteFields;
+    QuoteFields m_quoteFields{QuoteFields::NOT_SET};
     bool m_quoteFieldsHasBeenSet = false;
 
     Aws::String m_quoteEscapeCharacter;

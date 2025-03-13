@@ -31,7 +31,7 @@ namespace Model
   class AsyncInvokeOutputDataConfig
   {
   public:
-    AWS_BEDROCKRUNTIME_API AsyncInvokeOutputDataConfig();
+    AWS_BEDROCKRUNTIME_API AsyncInvokeOutputDataConfig() = default;
     AWS_BEDROCKRUNTIME_API AsyncInvokeOutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API AsyncInvokeOutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>A storage location for the output data in an S3 bucket</p>
      */
-    inline const AsyncInvokeS3OutputDataConfig& GetS3OutputDataConfig() const{ return m_s3OutputDataConfig; }
+    inline const AsyncInvokeS3OutputDataConfig& GetS3OutputDataConfig() const { return m_s3OutputDataConfig; }
     inline bool S3OutputDataConfigHasBeenSet() const { return m_s3OutputDataConfigHasBeenSet; }
-    inline void SetS3OutputDataConfig(const AsyncInvokeS3OutputDataConfig& value) { m_s3OutputDataConfigHasBeenSet = true; m_s3OutputDataConfig = value; }
-    inline void SetS3OutputDataConfig(AsyncInvokeS3OutputDataConfig&& value) { m_s3OutputDataConfigHasBeenSet = true; m_s3OutputDataConfig = std::move(value); }
-    inline AsyncInvokeOutputDataConfig& WithS3OutputDataConfig(const AsyncInvokeS3OutputDataConfig& value) { SetS3OutputDataConfig(value); return *this;}
-    inline AsyncInvokeOutputDataConfig& WithS3OutputDataConfig(AsyncInvokeS3OutputDataConfig&& value) { SetS3OutputDataConfig(std::move(value)); return *this;}
+    template<typename S3OutputDataConfigT = AsyncInvokeS3OutputDataConfig>
+    void SetS3OutputDataConfig(S3OutputDataConfigT&& value) { m_s3OutputDataConfigHasBeenSet = true; m_s3OutputDataConfig = std::forward<S3OutputDataConfigT>(value); }
+    template<typename S3OutputDataConfigT = AsyncInvokeS3OutputDataConfig>
+    AsyncInvokeOutputDataConfig& WithS3OutputDataConfig(S3OutputDataConfigT&& value) { SetS3OutputDataConfig(std::forward<S3OutputDataConfigT>(value)); return *this;}
     ///@}
   private:
 

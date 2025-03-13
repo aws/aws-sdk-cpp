@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeChapCredentialsRequest::DescribeChapCredentialsRequest() : 
-    m_targetARNHasBeenSet(false)
-{
-}
-
 Aws::String DescribeChapCredentialsRequest::SerializePayload() const
 {
   JsonValue payload;

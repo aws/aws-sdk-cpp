@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceLocation::ResourceLocation() : 
-    m_stackNameHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false)
-{
-}
-
 ResourceLocation::ResourceLocation(const XmlNode& xmlNode)
-  : ResourceLocation()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ResourceLocation& ResourceLocation::operator =(const XmlNode& xmlNode)
     {
       m_stackName = Aws::Utils::Xml::DecodeEscapedXmlText(stackNameNode.GetText());
       m_stackNameHasBeenSet = true;
+       m_stackNameHasBeenSet = true;
     }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
     if(!logicalResourceIdNode.IsNull())
     {
       m_logicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(logicalResourceIdNode.GetText());
       m_logicalResourceIdHasBeenSet = true;
+       m_logicalResourceIdHasBeenSet = true;
     }
   }
 

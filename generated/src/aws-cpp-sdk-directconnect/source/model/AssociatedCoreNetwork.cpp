@@ -18,15 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-AssociatedCoreNetwork::AssociatedCoreNetwork() : 
-    m_idHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false)
-{
-}
-
 AssociatedCoreNetwork::AssociatedCoreNetwork(JsonView jsonValue)
-  : AssociatedCoreNetwork()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AssociatedCoreNetwork& AssociatedCoreNetwork::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("ownerAccount");
-
     m_ownerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachmentId"))
   {
     m_attachmentId = jsonValue.GetString("attachmentId");
-
     m_attachmentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

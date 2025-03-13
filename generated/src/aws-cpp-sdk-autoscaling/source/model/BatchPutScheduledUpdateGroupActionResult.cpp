@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchPutScheduledUpdateGroupActionResult::BatchPutScheduledUpdateGroupActionResult()
-{
-}
-
 BatchPutScheduledUpdateGroupActionResult::BatchPutScheduledUpdateGroupActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ BatchPutScheduledUpdateGroupActionResult& BatchPutScheduledUpdateGroupActionResu
     if(!failedScheduledUpdateGroupActionsNode.IsNull())
     {
       XmlNode failedScheduledUpdateGroupActionsMember = failedScheduledUpdateGroupActionsNode.FirstChild("member");
+      m_failedScheduledUpdateGroupActionsHasBeenSet = !failedScheduledUpdateGroupActionsMember.IsNull();
       while(!failedScheduledUpdateGroupActionsMember.IsNull())
       {
         m_failedScheduledUpdateGroupActions.push_back(failedScheduledUpdateGroupActionsMember);
@@ -54,6 +51,7 @@ BatchPutScheduledUpdateGroupActionResult& BatchPutScheduledUpdateGroupActionResu
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::BatchPutScheduledUpdateGroupActionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

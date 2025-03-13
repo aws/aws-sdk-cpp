@@ -18,18 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-EquipmentDetection::EquipmentDetection() : 
-    m_boundingBoxHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_type(ProtectiveEquipmentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_coversBodyPartHasBeenSet(false)
-{
-}
-
 EquipmentDetection::EquipmentDetection(JsonView jsonValue)
-  : EquipmentDetection()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ EquipmentDetection& EquipmentDetection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BoundingBox"))
   {
     m_boundingBox = jsonValue.GetObject("BoundingBox");
-
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ProtectiveEquipmentTypeMapper::GetProtectiveEquipmentTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoversBodyPart"))
   {
     m_coversBodyPart = jsonValue.GetObject("CoversBodyPart");
-
     m_coversBodyPartHasBeenSet = true;
   }
-
   return *this;
 }
 

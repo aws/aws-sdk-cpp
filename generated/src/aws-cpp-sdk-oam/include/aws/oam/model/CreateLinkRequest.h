@@ -25,7 +25,7 @@ namespace Model
   class CreateLinkRequest : public OAMRequest
   {
   public:
-    AWS_OAM_API CreateLinkRequest();
+    AWS_OAM_API CreateLinkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * account</p> </li> <li> <p> <code>$AccountEmailNoDomain</code> is the email
      * address of the account without the domain name</p> </li> </ul>
      */
-    inline const Aws::String& GetLabelTemplate() const{ return m_labelTemplate; }
+    inline const Aws::String& GetLabelTemplate() const { return m_labelTemplate; }
     inline bool LabelTemplateHasBeenSet() const { return m_labelTemplateHasBeenSet; }
-    inline void SetLabelTemplate(const Aws::String& value) { m_labelTemplateHasBeenSet = true; m_labelTemplate = value; }
-    inline void SetLabelTemplate(Aws::String&& value) { m_labelTemplateHasBeenSet = true; m_labelTemplate = std::move(value); }
-    inline void SetLabelTemplate(const char* value) { m_labelTemplateHasBeenSet = true; m_labelTemplate.assign(value); }
-    inline CreateLinkRequest& WithLabelTemplate(const Aws::String& value) { SetLabelTemplate(value); return *this;}
-    inline CreateLinkRequest& WithLabelTemplate(Aws::String&& value) { SetLabelTemplate(std::move(value)); return *this;}
-    inline CreateLinkRequest& WithLabelTemplate(const char* value) { SetLabelTemplate(value); return *this;}
+    template<typename LabelTemplateT = Aws::String>
+    void SetLabelTemplate(LabelTemplateT&& value) { m_labelTemplateHasBeenSet = true; m_labelTemplate = std::forward<LabelTemplateT>(value); }
+    template<typename LabelTemplateT = Aws::String>
+    CreateLinkRequest& WithLabelTemplate(LabelTemplateT&& value) { SetLabelTemplate(std::forward<LabelTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * metric namespaces or log groups are to be shared from the source account to the
      * monitoring account.</p>
      */
-    inline const LinkConfiguration& GetLinkConfiguration() const{ return m_linkConfiguration; }
+    inline const LinkConfiguration& GetLinkConfiguration() const { return m_linkConfiguration; }
     inline bool LinkConfigurationHasBeenSet() const { return m_linkConfigurationHasBeenSet; }
-    inline void SetLinkConfiguration(const LinkConfiguration& value) { m_linkConfigurationHasBeenSet = true; m_linkConfiguration = value; }
-    inline void SetLinkConfiguration(LinkConfiguration&& value) { m_linkConfigurationHasBeenSet = true; m_linkConfiguration = std::move(value); }
-    inline CreateLinkRequest& WithLinkConfiguration(const LinkConfiguration& value) { SetLinkConfiguration(value); return *this;}
-    inline CreateLinkRequest& WithLinkConfiguration(LinkConfiguration&& value) { SetLinkConfiguration(std::move(value)); return *this;}
+    template<typename LinkConfigurationT = LinkConfiguration>
+    void SetLinkConfiguration(LinkConfigurationT&& value) { m_linkConfigurationHasBeenSet = true; m_linkConfiguration = std::forward<LinkConfigurationT>(value); }
+    template<typename LinkConfigurationT = LinkConfiguration>
+    CreateLinkRequest& WithLinkConfiguration(LinkConfigurationT&& value) { SetLinkConfiguration(std::forward<LinkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,13 @@ namespace Model
      * <p>An array of strings that define which types of data that the source account
      * shares with the monitoring account.</p>
      */
-    inline const Aws::Vector<ResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<ResourceType>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<ResourceType>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<ResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline CreateLinkRequest& WithResourceTypes(const Aws::Vector<ResourceType>& value) { SetResourceTypes(value); return *this;}
-    inline CreateLinkRequest& WithResourceTypes(Aws::Vector<ResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline CreateLinkRequest& AddResourceTypes(const ResourceType& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline CreateLinkRequest& AddResourceTypes(ResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<ResourceType>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<ResourceType>>
+    CreateLinkRequest& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    inline CreateLinkRequest& AddResourceTypes(ResourceType value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -92,14 +89,12 @@ namespace Model
      * to find the ARNs of sinks.</p> <p>For more information about sinks, see <a
      * href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateSink.html">CreateSink</a>.</p>
      */
-    inline const Aws::String& GetSinkIdentifier() const{ return m_sinkIdentifier; }
+    inline const Aws::String& GetSinkIdentifier() const { return m_sinkIdentifier; }
     inline bool SinkIdentifierHasBeenSet() const { return m_sinkIdentifierHasBeenSet; }
-    inline void SetSinkIdentifier(const Aws::String& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = value; }
-    inline void SetSinkIdentifier(Aws::String&& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = std::move(value); }
-    inline void SetSinkIdentifier(const char* value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier.assign(value); }
-    inline CreateLinkRequest& WithSinkIdentifier(const Aws::String& value) { SetSinkIdentifier(value); return *this;}
-    inline CreateLinkRequest& WithSinkIdentifier(Aws::String&& value) { SetSinkIdentifier(std::move(value)); return *this;}
-    inline CreateLinkRequest& WithSinkIdentifier(const char* value) { SetSinkIdentifier(value); return *this;}
+    template<typename SinkIdentifierT = Aws::String>
+    void SetSinkIdentifier(SinkIdentifierT&& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = std::forward<SinkIdentifierT>(value); }
+    template<typename SinkIdentifierT = Aws::String>
+    CreateLinkRequest& WithSinkIdentifier(SinkIdentifierT&& value) { SetSinkIdentifier(std::forward<SinkIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,19 +107,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
      * access to Amazon Web Services resources using tags</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateLinkRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateLinkRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateLinkRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateLinkRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateLinkRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateLinkRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateLinkRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateLinkRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateLinkRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateLinkRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateLinkRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

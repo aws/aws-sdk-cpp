@@ -12,15 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserPoolDomainRequest::CreateUserPoolDomainRequest() : 
-    m_domainHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_managedLoginVersion(0),
-    m_managedLoginVersionHasBeenSet(false),
-    m_customDomainConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserPoolDomainRequest::SerializePayload() const
 {
   JsonValue payload;

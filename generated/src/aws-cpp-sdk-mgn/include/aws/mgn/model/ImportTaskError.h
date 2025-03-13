@@ -33,7 +33,7 @@ namespace Model
   class ImportTaskError
   {
   public:
-    AWS_MGN_API ImportTaskError();
+    AWS_MGN_API ImportTaskError() = default;
     AWS_MGN_API ImportTaskError(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API ImportTaskError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,38 +43,34 @@ namespace Model
     /**
      * <p>Import task error data.</p>
      */
-    inline const ImportErrorData& GetErrorData() const{ return m_errorData; }
+    inline const ImportErrorData& GetErrorData() const { return m_errorData; }
     inline bool ErrorDataHasBeenSet() const { return m_errorDataHasBeenSet; }
-    inline void SetErrorData(const ImportErrorData& value) { m_errorDataHasBeenSet = true; m_errorData = value; }
-    inline void SetErrorData(ImportErrorData&& value) { m_errorDataHasBeenSet = true; m_errorData = std::move(value); }
-    inline ImportTaskError& WithErrorData(const ImportErrorData& value) { SetErrorData(value); return *this;}
-    inline ImportTaskError& WithErrorData(ImportErrorData&& value) { SetErrorData(std::move(value)); return *this;}
+    template<typename ErrorDataT = ImportErrorData>
+    void SetErrorData(ErrorDataT&& value) { m_errorDataHasBeenSet = true; m_errorData = std::forward<ErrorDataT>(value); }
+    template<typename ErrorDataT = ImportErrorData>
+    ImportTaskError& WithErrorData(ErrorDataT&& value) { SetErrorData(std::forward<ErrorDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Import task error datetime.</p>
      */
-    inline const Aws::String& GetErrorDateTime() const{ return m_errorDateTime; }
+    inline const Aws::String& GetErrorDateTime() const { return m_errorDateTime; }
     inline bool ErrorDateTimeHasBeenSet() const { return m_errorDateTimeHasBeenSet; }
-    inline void SetErrorDateTime(const Aws::String& value) { m_errorDateTimeHasBeenSet = true; m_errorDateTime = value; }
-    inline void SetErrorDateTime(Aws::String&& value) { m_errorDateTimeHasBeenSet = true; m_errorDateTime = std::move(value); }
-    inline void SetErrorDateTime(const char* value) { m_errorDateTimeHasBeenSet = true; m_errorDateTime.assign(value); }
-    inline ImportTaskError& WithErrorDateTime(const Aws::String& value) { SetErrorDateTime(value); return *this;}
-    inline ImportTaskError& WithErrorDateTime(Aws::String&& value) { SetErrorDateTime(std::move(value)); return *this;}
-    inline ImportTaskError& WithErrorDateTime(const char* value) { SetErrorDateTime(value); return *this;}
+    template<typename ErrorDateTimeT = Aws::String>
+    void SetErrorDateTime(ErrorDateTimeT&& value) { m_errorDateTimeHasBeenSet = true; m_errorDateTime = std::forward<ErrorDateTimeT>(value); }
+    template<typename ErrorDateTimeT = Aws::String>
+    ImportTaskError& WithErrorDateTime(ErrorDateTimeT&& value) { SetErrorDateTime(std::forward<ErrorDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Import task error type.</p>
      */
-    inline const ImportErrorType& GetErrorType() const{ return m_errorType; }
+    inline ImportErrorType GetErrorType() const { return m_errorType; }
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
-    inline void SetErrorType(const ImportErrorType& value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
-    inline void SetErrorType(ImportErrorType&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::move(value); }
-    inline ImportTaskError& WithErrorType(const ImportErrorType& value) { SetErrorType(value); return *this;}
-    inline ImportTaskError& WithErrorType(ImportErrorType&& value) { SetErrorType(std::move(value)); return *this;}
+    inline void SetErrorType(ImportErrorType value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
+    inline ImportTaskError& WithErrorType(ImportErrorType value) { SetErrorType(value); return *this;}
     ///@}
   private:
 
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_errorDateTime;
     bool m_errorDateTimeHasBeenSet = false;
 
-    ImportErrorType m_errorType;
+    ImportErrorType m_errorType{ImportErrorType::NOT_SET};
     bool m_errorTypeHasBeenSet = false;
   };
 

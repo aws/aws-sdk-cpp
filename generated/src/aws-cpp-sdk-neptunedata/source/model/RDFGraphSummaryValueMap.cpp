@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-RDFGraphSummaryValueMap::RDFGraphSummaryValueMap() : 
-    m_versionHasBeenSet(false),
-    m_lastStatisticsComputationTimeHasBeenSet(false),
-    m_graphSummaryHasBeenSet(false)
-{
-}
-
 RDFGraphSummaryValueMap::RDFGraphSummaryValueMap(JsonView jsonValue)
-  : RDFGraphSummaryValueMap()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RDFGraphSummaryValueMap& RDFGraphSummaryValueMap::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastStatisticsComputationTime"))
   {
     m_lastStatisticsComputationTime = jsonValue.GetString("lastStatisticsComputationTime");
-
     m_lastStatisticsComputationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("graphSummary"))
   {
     m_graphSummary = jsonValue.GetObject("graphSummary");
-
     m_graphSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

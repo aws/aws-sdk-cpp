@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-VoiceSettings::VoiceSettings() : 
-    m_voiceIdHasBeenSet(false),
-    m_engine(VoiceEngine::NOT_SET),
-    m_engineHasBeenSet(false)
-{
-}
-
 VoiceSettings::VoiceSettings(JsonView jsonValue)
-  : VoiceSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VoiceSettings& VoiceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("voiceId"))
   {
     m_voiceId = jsonValue.GetString("voiceId");
-
     m_voiceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engine"))
   {
     m_engine = VoiceEngineMapper::GetVoiceEngineForName(jsonValue.GetString("engine"));
-
     m_engineHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class StartVoiceToneAnalysisTaskRequest : public ChimeSDKMediaPipelinesRequest
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API StartVoiceToneAnalysisTaskRequest();
+    AWS_CHIMESDKMEDIAPIPELINES_API StartVoiceToneAnalysisTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,22 @@ namespace Model
      * <p>The unique identifier of the resource to be updated. Valid values include the
      * ID and ARN of the media insights pipeline.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline StartVoiceToneAnalysisTaskRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline StartVoiceToneAnalysisTaskRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline StartVoiceToneAnalysisTaskRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    StartVoiceToneAnalysisTaskRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The language code.</p>
      */
-    inline const VoiceAnalyticsLanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline VoiceAnalyticsLanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const VoiceAnalyticsLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(VoiceAnalyticsLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline StartVoiceToneAnalysisTaskRequest& WithLanguageCode(const VoiceAnalyticsLanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline StartVoiceToneAnalysisTaskRequest& WithLanguageCode(VoiceAnalyticsLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(VoiceAnalyticsLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline StartVoiceToneAnalysisTaskRequest& WithLanguageCode(VoiceAnalyticsLanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +63,12 @@ namespace Model
      * <p>The task configuration for the Kinesis video stream source of the media
      * insights pipeline.</p>
      */
-    inline const KinesisVideoStreamSourceTaskConfiguration& GetKinesisVideoStreamSourceTaskConfiguration() const{ return m_kinesisVideoStreamSourceTaskConfiguration; }
+    inline const KinesisVideoStreamSourceTaskConfiguration& GetKinesisVideoStreamSourceTaskConfiguration() const { return m_kinesisVideoStreamSourceTaskConfiguration; }
     inline bool KinesisVideoStreamSourceTaskConfigurationHasBeenSet() const { return m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet; }
-    inline void SetKinesisVideoStreamSourceTaskConfiguration(const KinesisVideoStreamSourceTaskConfiguration& value) { m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet = true; m_kinesisVideoStreamSourceTaskConfiguration = value; }
-    inline void SetKinesisVideoStreamSourceTaskConfiguration(KinesisVideoStreamSourceTaskConfiguration&& value) { m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet = true; m_kinesisVideoStreamSourceTaskConfiguration = std::move(value); }
-    inline StartVoiceToneAnalysisTaskRequest& WithKinesisVideoStreamSourceTaskConfiguration(const KinesisVideoStreamSourceTaskConfiguration& value) { SetKinesisVideoStreamSourceTaskConfiguration(value); return *this;}
-    inline StartVoiceToneAnalysisTaskRequest& WithKinesisVideoStreamSourceTaskConfiguration(KinesisVideoStreamSourceTaskConfiguration&& value) { SetKinesisVideoStreamSourceTaskConfiguration(std::move(value)); return *this;}
+    template<typename KinesisVideoStreamSourceTaskConfigurationT = KinesisVideoStreamSourceTaskConfiguration>
+    void SetKinesisVideoStreamSourceTaskConfiguration(KinesisVideoStreamSourceTaskConfigurationT&& value) { m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet = true; m_kinesisVideoStreamSourceTaskConfiguration = std::forward<KinesisVideoStreamSourceTaskConfigurationT>(value); }
+    template<typename KinesisVideoStreamSourceTaskConfigurationT = KinesisVideoStreamSourceTaskConfiguration>
+    StartVoiceToneAnalysisTaskRequest& WithKinesisVideoStreamSourceTaskConfiguration(KinesisVideoStreamSourceTaskConfigurationT&& value) { SetKinesisVideoStreamSourceTaskConfiguration(std::forward<KinesisVideoStreamSourceTaskConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,21 +76,19 @@ namespace Model
      * <p>The unique identifier for the client request. Use a different token for
      * different voice tone analysis tasks.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline StartVoiceToneAnalysisTaskRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline StartVoiceToneAnalysisTaskRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline StartVoiceToneAnalysisTaskRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    StartVoiceToneAnalysisTaskRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
 
-    VoiceAnalyticsLanguageCode m_languageCode;
+    VoiceAnalyticsLanguageCode m_languageCode{VoiceAnalyticsLanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
     KinesisVideoStreamSourceTaskConfiguration m_kinesisVideoStreamSourceTaskConfiguration;

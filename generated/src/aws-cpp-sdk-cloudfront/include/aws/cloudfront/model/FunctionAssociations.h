@@ -34,7 +34,7 @@ namespace Model
   class FunctionAssociations
   {
   public:
-    AWS_CLOUDFRONT_API FunctionAssociations();
+    AWS_CLOUDFRONT_API FunctionAssociations() = default;
     AWS_CLOUDFRONT_API FunctionAssociations(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API FunctionAssociations& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>The number of CloudFront functions in the list.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline FunctionAssociations& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -57,18 +57,18 @@ namespace Model
      * CloudFront distribution. Your functions must be published to the
      * <code>LIVE</code> stage to associate them with a cache behavior.</p>
      */
-    inline const Aws::Vector<FunctionAssociation>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<FunctionAssociation>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<FunctionAssociation>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<FunctionAssociation>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline FunctionAssociations& WithItems(const Aws::Vector<FunctionAssociation>& value) { SetItems(value); return *this;}
-    inline FunctionAssociations& WithItems(Aws::Vector<FunctionAssociation>&& value) { SetItems(std::move(value)); return *this;}
-    inline FunctionAssociations& AddItems(const FunctionAssociation& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline FunctionAssociations& AddItems(FunctionAssociation&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<FunctionAssociation>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<FunctionAssociation>>
+    FunctionAssociations& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = FunctionAssociation>
+    FunctionAssociations& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<FunctionAssociation> m_items;

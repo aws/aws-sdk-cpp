@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InferenceConfig::InferenceConfig() : 
-    m_textInferenceConfigHasBeenSet(false)
-{
-}
-
 InferenceConfig::InferenceConfig(JsonView jsonValue)
-  : InferenceConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InferenceConfig& InferenceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("textInferenceConfig"))
   {
     m_textInferenceConfig = jsonValue.GetObject("textInferenceConfig");
-
     m_textInferenceConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

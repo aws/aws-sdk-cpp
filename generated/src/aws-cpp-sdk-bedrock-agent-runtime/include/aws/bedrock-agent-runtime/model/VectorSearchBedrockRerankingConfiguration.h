@@ -33,7 +33,7 @@ namespace Model
   class VectorSearchBedrockRerankingConfiguration
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API VectorSearchBedrockRerankingConfiguration();
+    AWS_BEDROCKAGENTRUNTIME_API VectorSearchBedrockRerankingConfiguration() = default;
     AWS_BEDROCKAGENTRUNTIME_API VectorSearchBedrockRerankingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API VectorSearchBedrockRerankingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,31 @@ namespace Model
     /**
      * <p>Contains configurations for the metadata to use in reranking.</p>
      */
-    inline const MetadataConfigurationForReranking& GetMetadataConfiguration() const{ return m_metadataConfiguration; }
+    inline const MetadataConfigurationForReranking& GetMetadataConfiguration() const { return m_metadataConfiguration; }
     inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
-    inline void SetMetadataConfiguration(const MetadataConfigurationForReranking& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = value; }
-    inline void SetMetadataConfiguration(MetadataConfigurationForReranking&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::move(value); }
-    inline VectorSearchBedrockRerankingConfiguration& WithMetadataConfiguration(const MetadataConfigurationForReranking& value) { SetMetadataConfiguration(value); return *this;}
-    inline VectorSearchBedrockRerankingConfiguration& WithMetadataConfiguration(MetadataConfigurationForReranking&& value) { SetMetadataConfiguration(std::move(value)); return *this;}
+    template<typename MetadataConfigurationT = MetadataConfigurationForReranking>
+    void SetMetadataConfiguration(MetadataConfigurationT&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::forward<MetadataConfigurationT>(value); }
+    template<typename MetadataConfigurationT = MetadataConfigurationForReranking>
+    VectorSearchBedrockRerankingConfiguration& WithMetadataConfiguration(MetadataConfigurationT&& value) { SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains configurations for the reranker model.</p>
      */
-    inline const VectorSearchBedrockRerankingModelConfiguration& GetModelConfiguration() const{ return m_modelConfiguration; }
+    inline const VectorSearchBedrockRerankingModelConfiguration& GetModelConfiguration() const { return m_modelConfiguration; }
     inline bool ModelConfigurationHasBeenSet() const { return m_modelConfigurationHasBeenSet; }
-    inline void SetModelConfiguration(const VectorSearchBedrockRerankingModelConfiguration& value) { m_modelConfigurationHasBeenSet = true; m_modelConfiguration = value; }
-    inline void SetModelConfiguration(VectorSearchBedrockRerankingModelConfiguration&& value) { m_modelConfigurationHasBeenSet = true; m_modelConfiguration = std::move(value); }
-    inline VectorSearchBedrockRerankingConfiguration& WithModelConfiguration(const VectorSearchBedrockRerankingModelConfiguration& value) { SetModelConfiguration(value); return *this;}
-    inline VectorSearchBedrockRerankingConfiguration& WithModelConfiguration(VectorSearchBedrockRerankingModelConfiguration&& value) { SetModelConfiguration(std::move(value)); return *this;}
+    template<typename ModelConfigurationT = VectorSearchBedrockRerankingModelConfiguration>
+    void SetModelConfiguration(ModelConfigurationT&& value) { m_modelConfigurationHasBeenSet = true; m_modelConfiguration = std::forward<ModelConfigurationT>(value); }
+    template<typename ModelConfigurationT = VectorSearchBedrockRerankingModelConfiguration>
+    VectorSearchBedrockRerankingConfiguration& WithModelConfiguration(ModelConfigurationT&& value) { SetModelConfiguration(std::forward<ModelConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of results to return after reranking.</p>
      */
-    inline int GetNumberOfRerankedResults() const{ return m_numberOfRerankedResults; }
+    inline int GetNumberOfRerankedResults() const { return m_numberOfRerankedResults; }
     inline bool NumberOfRerankedResultsHasBeenSet() const { return m_numberOfRerankedResultsHasBeenSet; }
     inline void SetNumberOfRerankedResults(int value) { m_numberOfRerankedResultsHasBeenSet = true; m_numberOfRerankedResults = value; }
     inline VectorSearchBedrockRerankingConfiguration& WithNumberOfRerankedResults(int value) { SetNumberOfRerankedResults(value); return *this;}
@@ -80,7 +80,7 @@ namespace Model
     VectorSearchBedrockRerankingModelConfiguration m_modelConfiguration;
     bool m_modelConfigurationHasBeenSet = false;
 
-    int m_numberOfRerankedResults;
+    int m_numberOfRerankedResults{0};
     bool m_numberOfRerankedResultsHasBeenSet = false;
   };
 

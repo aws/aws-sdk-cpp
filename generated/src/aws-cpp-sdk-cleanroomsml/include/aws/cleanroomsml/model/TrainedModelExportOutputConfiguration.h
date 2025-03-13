@@ -33,7 +33,7 @@ namespace Model
   class TrainedModelExportOutputConfiguration
   {
   public:
-    AWS_CLEANROOMSML_API TrainedModelExportOutputConfiguration();
+    AWS_CLEANROOMSML_API TrainedModelExportOutputConfiguration() = default;
     AWS_CLEANROOMSML_API TrainedModelExportOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API TrainedModelExportOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The members that will received the exported trained model output.</p>
      */
-    inline const Aws::Vector<TrainedModelExportReceiverMember>& GetMembers() const{ return m_members; }
+    inline const Aws::Vector<TrainedModelExportReceiverMember>& GetMembers() const { return m_members; }
     inline bool MembersHasBeenSet() const { return m_membersHasBeenSet; }
-    inline void SetMembers(const Aws::Vector<TrainedModelExportReceiverMember>& value) { m_membersHasBeenSet = true; m_members = value; }
-    inline void SetMembers(Aws::Vector<TrainedModelExportReceiverMember>&& value) { m_membersHasBeenSet = true; m_members = std::move(value); }
-    inline TrainedModelExportOutputConfiguration& WithMembers(const Aws::Vector<TrainedModelExportReceiverMember>& value) { SetMembers(value); return *this;}
-    inline TrainedModelExportOutputConfiguration& WithMembers(Aws::Vector<TrainedModelExportReceiverMember>&& value) { SetMembers(std::move(value)); return *this;}
-    inline TrainedModelExportOutputConfiguration& AddMembers(const TrainedModelExportReceiverMember& value) { m_membersHasBeenSet = true; m_members.push_back(value); return *this; }
-    inline TrainedModelExportOutputConfiguration& AddMembers(TrainedModelExportReceiverMember&& value) { m_membersHasBeenSet = true; m_members.push_back(std::move(value)); return *this; }
+    template<typename MembersT = Aws::Vector<TrainedModelExportReceiverMember>>
+    void SetMembers(MembersT&& value) { m_membersHasBeenSet = true; m_members = std::forward<MembersT>(value); }
+    template<typename MembersT = Aws::Vector<TrainedModelExportReceiverMember>>
+    TrainedModelExportOutputConfiguration& WithMembers(MembersT&& value) { SetMembers(std::forward<MembersT>(value)); return *this;}
+    template<typename MembersT = TrainedModelExportReceiverMember>
+    TrainedModelExportOutputConfiguration& AddMembers(MembersT&& value) { m_membersHasBeenSet = true; m_members.emplace_back(std::forward<MembersT>(value)); return *this; }
     ///@}
   private:
 

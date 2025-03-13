@@ -33,7 +33,7 @@ namespace Model
   class OutboundAdditionalRecipients
   {
   public:
-    AWS_CONNECT_API OutboundAdditionalRecipients();
+    AWS_CONNECT_API OutboundAdditionalRecipients() = default;
     AWS_CONNECT_API OutboundAdditionalRecipients(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API OutboundAdditionalRecipients& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The additional CC email address recipients information.</p>
      */
-    inline const Aws::Vector<EmailAddressInfo>& GetCcEmailAddresses() const{ return m_ccEmailAddresses; }
+    inline const Aws::Vector<EmailAddressInfo>& GetCcEmailAddresses() const { return m_ccEmailAddresses; }
     inline bool CcEmailAddressesHasBeenSet() const { return m_ccEmailAddressesHasBeenSet; }
-    inline void SetCcEmailAddresses(const Aws::Vector<EmailAddressInfo>& value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses = value; }
-    inline void SetCcEmailAddresses(Aws::Vector<EmailAddressInfo>&& value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses = std::move(value); }
-    inline OutboundAdditionalRecipients& WithCcEmailAddresses(const Aws::Vector<EmailAddressInfo>& value) { SetCcEmailAddresses(value); return *this;}
-    inline OutboundAdditionalRecipients& WithCcEmailAddresses(Aws::Vector<EmailAddressInfo>&& value) { SetCcEmailAddresses(std::move(value)); return *this;}
-    inline OutboundAdditionalRecipients& AddCcEmailAddresses(const EmailAddressInfo& value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses.push_back(value); return *this; }
-    inline OutboundAdditionalRecipients& AddCcEmailAddresses(EmailAddressInfo&& value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses.push_back(std::move(value)); return *this; }
+    template<typename CcEmailAddressesT = Aws::Vector<EmailAddressInfo>>
+    void SetCcEmailAddresses(CcEmailAddressesT&& value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses = std::forward<CcEmailAddressesT>(value); }
+    template<typename CcEmailAddressesT = Aws::Vector<EmailAddressInfo>>
+    OutboundAdditionalRecipients& WithCcEmailAddresses(CcEmailAddressesT&& value) { SetCcEmailAddresses(std::forward<CcEmailAddressesT>(value)); return *this;}
+    template<typename CcEmailAddressesT = EmailAddressInfo>
+    OutboundAdditionalRecipients& AddCcEmailAddresses(CcEmailAddressesT&& value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses.emplace_back(std::forward<CcEmailAddressesT>(value)); return *this; }
     ///@}
   private:
 

@@ -38,7 +38,7 @@ namespace Model
   class DataRepositoryConfiguration
   {
   public:
-    AWS_FSX_API DataRepositoryConfiguration();
+    AWS_FSX_API DataRepositoryConfiguration() = default;
     AWS_FSX_API DataRepositoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API DataRepositoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,12 +61,10 @@ namespace Model
      * may be impacted.</p> </li> <li> <p> <code>FAILED</code> - The data repository is
      * in a terminal state that cannot be recovered.</p> </li> </ul>
      */
-    inline const DataRepositoryLifecycle& GetLifecycle() const{ return m_lifecycle; }
+    inline DataRepositoryLifecycle GetLifecycle() const { return m_lifecycle; }
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
-    inline void SetLifecycle(const DataRepositoryLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
-    inline void SetLifecycle(DataRepositoryLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
-    inline DataRepositoryConfiguration& WithLifecycle(const DataRepositoryLifecycle& value) { SetLifecycle(value); return *this;}
-    inline DataRepositoryConfiguration& WithLifecycle(DataRepositoryLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    inline void SetLifecycle(DataRepositoryLifecycle value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
+    inline DataRepositoryConfiguration& WithLifecycle(DataRepositoryLifecycle value) { SetLifecycle(value); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>
      */
-    inline const Aws::String& GetImportPath() const{ return m_importPath; }
+    inline const Aws::String& GetImportPath() const { return m_importPath; }
     inline bool ImportPathHasBeenSet() const { return m_importPathHasBeenSet; }
-    inline void SetImportPath(const Aws::String& value) { m_importPathHasBeenSet = true; m_importPath = value; }
-    inline void SetImportPath(Aws::String&& value) { m_importPathHasBeenSet = true; m_importPath = std::move(value); }
-    inline void SetImportPath(const char* value) { m_importPathHasBeenSet = true; m_importPath.assign(value); }
-    inline DataRepositoryConfiguration& WithImportPath(const Aws::String& value) { SetImportPath(value); return *this;}
-    inline DataRepositoryConfiguration& WithImportPath(Aws::String&& value) { SetImportPath(std::move(value)); return *this;}
-    inline DataRepositoryConfiguration& WithImportPath(const char* value) { SetImportPath(value); return *this;}
+    template<typename ImportPathT = Aws::String>
+    void SetImportPath(ImportPathT&& value) { m_importPathHasBeenSet = true; m_importPath = std::forward<ImportPathT>(value); }
+    template<typename ImportPathT = Aws::String>
+    DataRepositoryConfiguration& WithImportPath(ImportPathT&& value) { SetImportPath(std::forward<ImportPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +88,12 @@ namespace Model
      * <p>The export path to the Amazon S3 bucket (and prefix) that you are using to
      * store new and changed Lustre file system files in S3.</p>
      */
-    inline const Aws::String& GetExportPath() const{ return m_exportPath; }
+    inline const Aws::String& GetExportPath() const { return m_exportPath; }
     inline bool ExportPathHasBeenSet() const { return m_exportPathHasBeenSet; }
-    inline void SetExportPath(const Aws::String& value) { m_exportPathHasBeenSet = true; m_exportPath = value; }
-    inline void SetExportPath(Aws::String&& value) { m_exportPathHasBeenSet = true; m_exportPath = std::move(value); }
-    inline void SetExportPath(const char* value) { m_exportPathHasBeenSet = true; m_exportPath.assign(value); }
-    inline DataRepositoryConfiguration& WithExportPath(const Aws::String& value) { SetExportPath(value); return *this;}
-    inline DataRepositoryConfiguration& WithExportPath(Aws::String&& value) { SetExportPath(std::move(value)); return *this;}
-    inline DataRepositoryConfiguration& WithExportPath(const char* value) { SetExportPath(value); return *this;}
+    template<typename ExportPathT = Aws::String>
+    void SetExportPath(ExportPathT&& value) { m_exportPathHasBeenSet = true; m_exportPath = std::forward<ExportPathT>(value); }
+    template<typename ExportPathT = Aws::String>
+    DataRepositoryConfiguration& WithExportPath(ExportPathT&& value) { SetExportPath(std::forward<ExportPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,7 +105,7 @@ namespace Model
      * default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
      * GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
      */
-    inline int GetImportedFileChunkSize() const{ return m_importedFileChunkSize; }
+    inline int GetImportedFileChunkSize() const { return m_importedFileChunkSize; }
     inline bool ImportedFileChunkSizeHasBeenSet() const { return m_importedFileChunkSizeHasBeenSet; }
     inline void SetImportedFileChunkSize(int value) { m_importedFileChunkSizeHasBeenSet = true; m_importedFileChunkSize = value; }
     inline DataRepositoryConfiguration& WithImportedFileChunkSize(int value) { SetImportedFileChunkSize(value); return *this;}
@@ -138,26 +132,24 @@ namespace Model
      * any existing objects that are changed in the S3 bucket, and any objects that
      * were deleted in the S3 bucket.</p> </li> </ul>
      */
-    inline const AutoImportPolicyType& GetAutoImportPolicy() const{ return m_autoImportPolicy; }
+    inline AutoImportPolicyType GetAutoImportPolicy() const { return m_autoImportPolicy; }
     inline bool AutoImportPolicyHasBeenSet() const { return m_autoImportPolicyHasBeenSet; }
-    inline void SetAutoImportPolicy(const AutoImportPolicyType& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
-    inline void SetAutoImportPolicy(AutoImportPolicyType&& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = std::move(value); }
-    inline DataRepositoryConfiguration& WithAutoImportPolicy(const AutoImportPolicyType& value) { SetAutoImportPolicy(value); return *this;}
-    inline DataRepositoryConfiguration& WithAutoImportPolicy(AutoImportPolicyType&& value) { SetAutoImportPolicy(std::move(value)); return *this;}
+    inline void SetAutoImportPolicy(AutoImportPolicyType value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
+    inline DataRepositoryConfiguration& WithAutoImportPolicy(AutoImportPolicyType value) { SetAutoImportPolicy(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const DataRepositoryFailureDetails& GetFailureDetails() const{ return m_failureDetails; }
+    inline const DataRepositoryFailureDetails& GetFailureDetails() const { return m_failureDetails; }
     inline bool FailureDetailsHasBeenSet() const { return m_failureDetailsHasBeenSet; }
-    inline void SetFailureDetails(const DataRepositoryFailureDetails& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
-    inline void SetFailureDetails(DataRepositoryFailureDetails&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = std::move(value); }
-    inline DataRepositoryConfiguration& WithFailureDetails(const DataRepositoryFailureDetails& value) { SetFailureDetails(value); return *this;}
-    inline DataRepositoryConfiguration& WithFailureDetails(DataRepositoryFailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
+    template<typename FailureDetailsT = DataRepositoryFailureDetails>
+    void SetFailureDetails(FailureDetailsT&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = std::forward<FailureDetailsT>(value); }
+    template<typename FailureDetailsT = DataRepositoryFailureDetails>
+    DataRepositoryConfiguration& WithFailureDetails(FailureDetailsT&& value) { SetFailureDetails(std::forward<FailureDetailsT>(value)); return *this;}
     ///@}
   private:
 
-    DataRepositoryLifecycle m_lifecycle;
+    DataRepositoryLifecycle m_lifecycle{DataRepositoryLifecycle::NOT_SET};
     bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_importPath;
@@ -166,10 +158,10 @@ namespace Model
     Aws::String m_exportPath;
     bool m_exportPathHasBeenSet = false;
 
-    int m_importedFileChunkSize;
+    int m_importedFileChunkSize{0};
     bool m_importedFileChunkSizeHasBeenSet = false;
 
-    AutoImportPolicyType m_autoImportPolicy;
+    AutoImportPolicyType m_autoImportPolicy{AutoImportPolicyType::NOT_SET};
     bool m_autoImportPolicyHasBeenSet = false;
 
     DataRepositoryFailureDetails m_failureDetails;

@@ -43,7 +43,7 @@ namespace Model
   class ContentBlock
   {
   public:
-    AWS_BEDROCKRUNTIME_API ContentBlock();
+    AWS_BEDROCKRUNTIME_API ContentBlock() = default;
     AWS_BEDROCKRUNTIME_API ContentBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ContentBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
     /**
      * <p>Text to include in the message.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline ContentBlock& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline ContentBlock& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline ContentBlock& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    ContentBlock& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,60 +66,60 @@ namespace Model
      * <p>Image to include in the message. </p>  <p>This field is only supported
      * by Anthropic Claude 3 models.</p> 
      */
-    inline const ImageBlock& GetImage() const{ return m_image; }
+    inline const ImageBlock& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const ImageBlock& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(ImageBlock&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline ContentBlock& WithImage(const ImageBlock& value) { SetImage(value); return *this;}
-    inline ContentBlock& WithImage(ImageBlock&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = ImageBlock>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = ImageBlock>
+    ContentBlock& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A document to include in the message.</p>
      */
-    inline const DocumentBlock& GetDocument() const{ return m_document; }
+    inline const DocumentBlock& GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-    inline void SetDocument(const DocumentBlock& value) { m_documentHasBeenSet = true; m_document = value; }
-    inline void SetDocument(DocumentBlock&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
-    inline ContentBlock& WithDocument(const DocumentBlock& value) { SetDocument(value); return *this;}
-    inline ContentBlock& WithDocument(DocumentBlock&& value) { SetDocument(std::move(value)); return *this;}
+    template<typename DocumentT = DocumentBlock>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = DocumentBlock>
+    ContentBlock& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Video to include in the message. </p>
      */
-    inline const VideoBlock& GetVideo() const{ return m_video; }
+    inline const VideoBlock& GetVideo() const { return m_video; }
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-    inline void SetVideo(const VideoBlock& value) { m_videoHasBeenSet = true; m_video = value; }
-    inline void SetVideo(VideoBlock&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
-    inline ContentBlock& WithVideo(const VideoBlock& value) { SetVideo(value); return *this;}
-    inline ContentBlock& WithVideo(VideoBlock&& value) { SetVideo(std::move(value)); return *this;}
+    template<typename VideoT = VideoBlock>
+    void SetVideo(VideoT&& value) { m_videoHasBeenSet = true; m_video = std::forward<VideoT>(value); }
+    template<typename VideoT = VideoBlock>
+    ContentBlock& WithVideo(VideoT&& value) { SetVideo(std::forward<VideoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about a tool use request from a model.</p>
      */
-    inline const ToolUseBlock& GetToolUse() const{ return m_toolUse; }
+    inline const ToolUseBlock& GetToolUse() const { return m_toolUse; }
     inline bool ToolUseHasBeenSet() const { return m_toolUseHasBeenSet; }
-    inline void SetToolUse(const ToolUseBlock& value) { m_toolUseHasBeenSet = true; m_toolUse = value; }
-    inline void SetToolUse(ToolUseBlock&& value) { m_toolUseHasBeenSet = true; m_toolUse = std::move(value); }
-    inline ContentBlock& WithToolUse(const ToolUseBlock& value) { SetToolUse(value); return *this;}
-    inline ContentBlock& WithToolUse(ToolUseBlock&& value) { SetToolUse(std::move(value)); return *this;}
+    template<typename ToolUseT = ToolUseBlock>
+    void SetToolUse(ToolUseT&& value) { m_toolUseHasBeenSet = true; m_toolUse = std::forward<ToolUseT>(value); }
+    template<typename ToolUseT = ToolUseBlock>
+    ContentBlock& WithToolUse(ToolUseT&& value) { SetToolUse(std::forward<ToolUseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The result for a tool request that a model makes.</p>
      */
-    inline const ToolResultBlock& GetToolResult() const{ return m_toolResult; }
+    inline const ToolResultBlock& GetToolResult() const { return m_toolResult; }
     inline bool ToolResultHasBeenSet() const { return m_toolResultHasBeenSet; }
-    inline void SetToolResult(const ToolResultBlock& value) { m_toolResultHasBeenSet = true; m_toolResult = value; }
-    inline void SetToolResult(ToolResultBlock&& value) { m_toolResultHasBeenSet = true; m_toolResult = std::move(value); }
-    inline ContentBlock& WithToolResult(const ToolResultBlock& value) { SetToolResult(value); return *this;}
-    inline ContentBlock& WithToolResult(ToolResultBlock&& value) { SetToolResult(std::move(value)); return *this;}
+    template<typename ToolResultT = ToolResultBlock>
+    void SetToolResult(ToolResultT&& value) { m_toolResultHasBeenSet = true; m_toolResult = std::forward<ToolResultT>(value); }
+    template<typename ToolResultT = ToolResultBlock>
+    ContentBlock& WithToolResult(ToolResultT&& value) { SetToolResult(std::forward<ToolResultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,12 +130,12 @@ namespace Model
      * information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon
      * Bedrock User Guide</i>. <pre><code> &lt;/p&gt; </code></pre>
      */
-    inline const GuardrailConverseContentBlock& GetGuardContent() const{ return m_guardContent; }
+    inline const GuardrailConverseContentBlock& GetGuardContent() const { return m_guardContent; }
     inline bool GuardContentHasBeenSet() const { return m_guardContentHasBeenSet; }
-    inline void SetGuardContent(const GuardrailConverseContentBlock& value) { m_guardContentHasBeenSet = true; m_guardContent = value; }
-    inline void SetGuardContent(GuardrailConverseContentBlock&& value) { m_guardContentHasBeenSet = true; m_guardContent = std::move(value); }
-    inline ContentBlock& WithGuardContent(const GuardrailConverseContentBlock& value) { SetGuardContent(value); return *this;}
-    inline ContentBlock& WithGuardContent(GuardrailConverseContentBlock&& value) { SetGuardContent(std::move(value)); return *this;}
+    template<typename GuardContentT = GuardrailConverseContentBlock>
+    void SetGuardContent(GuardContentT&& value) { m_guardContentHasBeenSet = true; m_guardContent = std::forward<GuardContentT>(value); }
+    template<typename GuardContentT = GuardrailConverseContentBlock>
+    ContentBlock& WithGuardContent(GuardContentT&& value) { SetGuardContent(std::forward<GuardContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,12 +144,12 @@ namespace Model
      * Reasoning refers to a Chain of Thought (CoT) that the model generates to enhance
      * the accuracy of its final response.</p>
      */
-    inline const ReasoningContentBlock& GetReasoningContent() const{ return m_reasoningContent; }
+    inline const ReasoningContentBlock& GetReasoningContent() const { return m_reasoningContent; }
     inline bool ReasoningContentHasBeenSet() const { return m_reasoningContentHasBeenSet; }
-    inline void SetReasoningContent(const ReasoningContentBlock& value) { m_reasoningContentHasBeenSet = true; m_reasoningContent = value; }
-    inline void SetReasoningContent(ReasoningContentBlock&& value) { m_reasoningContentHasBeenSet = true; m_reasoningContent = std::move(value); }
-    inline ContentBlock& WithReasoningContent(const ReasoningContentBlock& value) { SetReasoningContent(value); return *this;}
-    inline ContentBlock& WithReasoningContent(ReasoningContentBlock&& value) { SetReasoningContent(std::move(value)); return *this;}
+    template<typename ReasoningContentT = ReasoningContentBlock>
+    void SetReasoningContent(ReasoningContentT&& value) { m_reasoningContentHasBeenSet = true; m_reasoningContent = std::forward<ReasoningContentT>(value); }
+    template<typename ReasoningContentT = ReasoningContentBlock>
+    ContentBlock& WithReasoningContent(ReasoningContentT&& value) { SetReasoningContent(std::forward<ReasoningContentT>(value)); return *this;}
     ///@}
   private:
 

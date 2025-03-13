@@ -25,7 +25,7 @@ namespace Model
   class ListCidrBlocksRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API ListCidrBlocksRequest();
+    AWS_ROUTE53_API ListCidrBlocksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The UUID of the CIDR collection.</p>
      */
-    inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
+    inline const Aws::String& GetCollectionId() const { return m_collectionId; }
     inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
-    inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
-    inline void SetCollectionId(const char* value) { m_collectionIdHasBeenSet = true; m_collectionId.assign(value); }
-    inline ListCidrBlocksRequest& WithCollectionId(const Aws::String& value) { SetCollectionId(value); return *this;}
-    inline ListCidrBlocksRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
-    inline ListCidrBlocksRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
+    template<typename CollectionIdT = Aws::String>
+    void SetCollectionId(CollectionIdT&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::forward<CollectionIdT>(value); }
+    template<typename CollectionIdT = Aws::String>
+    ListCidrBlocksRequest& WithCollectionId(CollectionIdT&& value) { SetCollectionId(std::forward<CollectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the CIDR collection location.</p>
      */
-    inline const Aws::String& GetLocationName() const{ return m_locationName; }
+    inline const Aws::String& GetLocationName() const { return m_locationName; }
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
-    inline void SetLocationName(const Aws::String& value) { m_locationNameHasBeenSet = true; m_locationName = value; }
-    inline void SetLocationName(Aws::String&& value) { m_locationNameHasBeenSet = true; m_locationName = std::move(value); }
-    inline void SetLocationName(const char* value) { m_locationNameHasBeenSet = true; m_locationName.assign(value); }
-    inline ListCidrBlocksRequest& WithLocationName(const Aws::String& value) { SetLocationName(value); return *this;}
-    inline ListCidrBlocksRequest& WithLocationName(Aws::String&& value) { SetLocationName(std::move(value)); return *this;}
-    inline ListCidrBlocksRequest& WithLocationName(const char* value) { SetLocationName(value); return *this;}
+    template<typename LocationNameT = Aws::String>
+    void SetLocationName(LocationNameT&& value) { m_locationNameHasBeenSet = true; m_locationName = std::forward<LocationNameT>(value); }
+    template<typename LocationNameT = Aws::String>
+    ListCidrBlocksRequest& WithLocationName(LocationNameT&& value) { SetLocationName(std::forward<LocationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,28 +67,24 @@ namespace Model
      * <p>An opaque pagination token to indicate where the service is to begin
      * enumerating results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCidrBlocksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCidrBlocksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCidrBlocksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCidrBlocksRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Maximum number of results you want returned.</p>
      */
-    inline const Aws::String& GetMaxResults() const{ return m_maxResults; }
+    inline const Aws::String& GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(const Aws::String& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline void SetMaxResults(Aws::String&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::move(value); }
-    inline void SetMaxResults(const char* value) { m_maxResultsHasBeenSet = true; m_maxResults.assign(value); }
-    inline ListCidrBlocksRequest& WithMaxResults(const Aws::String& value) { SetMaxResults(value); return *this;}
-    inline ListCidrBlocksRequest& WithMaxResults(Aws::String&& value) { SetMaxResults(std::move(value)); return *this;}
-    inline ListCidrBlocksRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
+    template<typename MaxResultsT = Aws::String>
+    void SetMaxResults(MaxResultsT&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::forward<MaxResultsT>(value); }
+    template<typename MaxResultsT = Aws::String>
+    ListCidrBlocksRequest& WithMaxResults(MaxResultsT&& value) { SetMaxResults(std::forward<MaxResultsT>(value)); return *this;}
     ///@}
   private:
 

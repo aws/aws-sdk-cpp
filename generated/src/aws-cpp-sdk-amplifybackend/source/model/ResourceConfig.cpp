@@ -18,10 +18,6 @@ namespace AmplifyBackend
 namespace Model
 {
 
-ResourceConfig::ResourceConfig()
-{
-}
-
 ResourceConfig::ResourceConfig(JsonView jsonValue)
 {
   *this = jsonValue;

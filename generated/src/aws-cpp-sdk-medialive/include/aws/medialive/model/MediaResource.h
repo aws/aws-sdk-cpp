@@ -33,7 +33,7 @@ namespace Model
   class MediaResource
   {
   public:
-    AWS_MEDIALIVE_API MediaResource();
+    AWS_MEDIALIVE_API MediaResource() = default;
     AWS_MEDIALIVE_API MediaResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MediaResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,40 +41,38 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<MediaResourceNeighbor>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<MediaResourceNeighbor>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<MediaResourceNeighbor>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<MediaResourceNeighbor>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline MediaResource& WithDestinations(const Aws::Vector<MediaResourceNeighbor>& value) { SetDestinations(value); return *this;}
-    inline MediaResource& WithDestinations(Aws::Vector<MediaResourceNeighbor>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline MediaResource& AddDestinations(const MediaResourceNeighbor& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline MediaResource& AddDestinations(MediaResourceNeighbor&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+    template<typename DestinationsT = Aws::Vector<MediaResourceNeighbor>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<MediaResourceNeighbor>>
+    MediaResource& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = MediaResourceNeighbor>
+    MediaResource& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The logical name of an AWS media resource.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MediaResource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MediaResource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MediaResource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MediaResource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<MediaResourceNeighbor>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<MediaResourceNeighbor>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<MediaResourceNeighbor>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<MediaResourceNeighbor>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline MediaResource& WithSources(const Aws::Vector<MediaResourceNeighbor>& value) { SetSources(value); return *this;}
-    inline MediaResource& WithSources(Aws::Vector<MediaResourceNeighbor>&& value) { SetSources(std::move(value)); return *this;}
-    inline MediaResource& AddSources(const MediaResourceNeighbor& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline MediaResource& AddSources(MediaResourceNeighbor&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<MediaResourceNeighbor>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<MediaResourceNeighbor>>
+    MediaResource& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = MediaResourceNeighbor>
+    MediaResource& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
   private:
 

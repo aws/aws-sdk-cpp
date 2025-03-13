@@ -34,7 +34,7 @@ namespace Model
   class ToolUseBlock
   {
   public:
-    AWS_BEDROCKRUNTIME_API ToolUseBlock();
+    AWS_BEDROCKRUNTIME_API ToolUseBlock() = default;
     AWS_BEDROCKRUNTIME_API ToolUseBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ToolUseBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,36 @@ namespace Model
     /**
      * <p>The ID for the tool request.</p>
      */
-    inline const Aws::String& GetToolUseId() const{ return m_toolUseId; }
+    inline const Aws::String& GetToolUseId() const { return m_toolUseId; }
     inline bool ToolUseIdHasBeenSet() const { return m_toolUseIdHasBeenSet; }
-    inline void SetToolUseId(const Aws::String& value) { m_toolUseIdHasBeenSet = true; m_toolUseId = value; }
-    inline void SetToolUseId(Aws::String&& value) { m_toolUseIdHasBeenSet = true; m_toolUseId = std::move(value); }
-    inline void SetToolUseId(const char* value) { m_toolUseIdHasBeenSet = true; m_toolUseId.assign(value); }
-    inline ToolUseBlock& WithToolUseId(const Aws::String& value) { SetToolUseId(value); return *this;}
-    inline ToolUseBlock& WithToolUseId(Aws::String&& value) { SetToolUseId(std::move(value)); return *this;}
-    inline ToolUseBlock& WithToolUseId(const char* value) { SetToolUseId(value); return *this;}
+    template<typename ToolUseIdT = Aws::String>
+    void SetToolUseId(ToolUseIdT&& value) { m_toolUseIdHasBeenSet = true; m_toolUseId = std::forward<ToolUseIdT>(value); }
+    template<typename ToolUseIdT = Aws::String>
+    ToolUseBlock& WithToolUseId(ToolUseIdT&& value) { SetToolUseId(std::forward<ToolUseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the tool that the model wants to use.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ToolUseBlock& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ToolUseBlock& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ToolUseBlock& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ToolUseBlock& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The input to pass to the tool. </p>
      */
-    inline Aws::Utils::DocumentView GetInput() const{ return m_input; }
+    inline Aws::Utils::DocumentView GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const Aws::Utils::Document& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(Aws::Utils::Document&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline ToolUseBlock& WithInput(const Aws::Utils::Document& value) { SetInput(value); return *this;}
-    inline ToolUseBlock& WithInput(Aws::Utils::Document&& value) { SetInput(std::move(value)); return *this;}
+    template<typename InputT = Aws::Utils::Document>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Aws::Utils::Document>
+    ToolUseBlock& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
   private:
 

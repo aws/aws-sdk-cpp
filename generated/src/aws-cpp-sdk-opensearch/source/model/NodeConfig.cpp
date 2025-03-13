@@ -18,18 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-NodeConfig::NodeConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_type(OpenSearchPartitionInstanceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 NodeConfig::NodeConfig(JsonView jsonValue)
-  : NodeConfig()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ NodeConfig& NodeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = OpenSearchPartitionInstanceTypeMapper::GetOpenSearchPartitionInstanceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

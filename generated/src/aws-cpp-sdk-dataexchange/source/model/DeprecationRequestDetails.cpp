@@ -18,13 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-DeprecationRequestDetails::DeprecationRequestDetails() : 
-    m_deprecationAtHasBeenSet(false)
-{
-}
-
 DeprecationRequestDetails::DeprecationRequestDetails(JsonView jsonValue)
-  : DeprecationRequestDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeprecationRequestDetails& DeprecationRequestDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("DeprecationAt"))
   {
     m_deprecationAt = jsonValue.GetString("DeprecationAt");
-
     m_deprecationAtHasBeenSet = true;
   }
-
   return *this;
 }
 

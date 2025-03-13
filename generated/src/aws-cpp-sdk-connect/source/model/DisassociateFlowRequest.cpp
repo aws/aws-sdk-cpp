@@ -12,14 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateFlowRequest::DisassociateFlowRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(FlowAssociationResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateFlowRequest::SerializePayload() const
 {
   return {};

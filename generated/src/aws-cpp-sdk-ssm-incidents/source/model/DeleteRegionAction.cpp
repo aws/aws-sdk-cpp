@@ -18,13 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-DeleteRegionAction::DeleteRegionAction() : 
-    m_regionNameHasBeenSet(false)
-{
-}
-
 DeleteRegionAction::DeleteRegionAction(JsonView jsonValue)
-  : DeleteRegionAction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeleteRegionAction& DeleteRegionAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("regionName"))
   {
     m_regionName = jsonValue.GetString("regionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

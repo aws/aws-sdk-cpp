@@ -43,7 +43,7 @@ namespace Model
   class SchemaAttributeType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API SchemaAttributeType();
+    AWS_COGNITOIDENTITYPROVIDER_API SchemaAttributeType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API SchemaAttributeType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API SchemaAttributeType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,14 +61,12 @@ namespace Model
      * for standard attributes, <code>custom:value</code> for custom attributes, and
      * <code>dev:value</code> for developer-only attributes..</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SchemaAttributeType& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SchemaAttributeType& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SchemaAttributeType& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SchemaAttributeType& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +77,10 @@ namespace Model
      * for example <code>"custom:isMember" : "true"</code> or
      * <code>"custom:YearsAsMember" : "12"</code>. </p>
      */
-    inline const AttributeDataType& GetAttributeDataType() const{ return m_attributeDataType; }
+    inline AttributeDataType GetAttributeDataType() const { return m_attributeDataType; }
     inline bool AttributeDataTypeHasBeenSet() const { return m_attributeDataTypeHasBeenSet; }
-    inline void SetAttributeDataType(const AttributeDataType& value) { m_attributeDataTypeHasBeenSet = true; m_attributeDataType = value; }
-    inline void SetAttributeDataType(AttributeDataType&& value) { m_attributeDataTypeHasBeenSet = true; m_attributeDataType = std::move(value); }
-    inline SchemaAttributeType& WithAttributeDataType(const AttributeDataType& value) { SetAttributeDataType(value); return *this;}
-    inline SchemaAttributeType& WithAttributeDataType(AttributeDataType&& value) { SetAttributeDataType(std::move(value)); return *this;}
+    inline void SetAttributeDataType(AttributeDataType value) { m_attributeDataTypeHasBeenSet = true; m_attributeDataType = value; }
+    inline SchemaAttributeType& WithAttributeDataType(AttributeDataType value) { SetAttributeDataType(value); return *this;}
     ///@}
 
     ///@{
@@ -99,7 +95,7 @@ namespace Model
      * <code>DeveloperOnlyAttribute</code> can be modified using
      * AdminUpdateUserAttributes but can't be updated using UpdateUserAttributes.</p>
      */
-    inline bool GetDeveloperOnlyAttribute() const{ return m_developerOnlyAttribute; }
+    inline bool GetDeveloperOnlyAttribute() const { return m_developerOnlyAttribute; }
     inline bool DeveloperOnlyAttributeHasBeenSet() const { return m_developerOnlyAttributeHasBeenSet; }
     inline void SetDeveloperOnlyAttribute(bool value) { m_developerOnlyAttributeHasBeenSet = true; m_developerOnlyAttribute = value; }
     inline SchemaAttributeType& WithDeveloperOnlyAttribute(bool value) { SetDeveloperOnlyAttribute(value); return *this;}
@@ -116,7 +112,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
-    inline bool GetMutable() const{ return m_mutable; }
+    inline bool GetMutable() const { return m_mutable; }
     inline bool MutableHasBeenSet() const { return m_mutableHasBeenSet; }
     inline void SetMutable(bool value) { m_mutableHasBeenSet = true; m_mutable = value; }
     inline SchemaAttributeType& WithMutable(bool value) { SetMutable(value); return *this;}
@@ -128,7 +124,7 @@ namespace Model
      * required and the user doesn't provide a value, registration or sign-in will
      * fail.</p>
      */
-    inline bool GetRequired() const{ return m_required; }
+    inline bool GetRequired() const { return m_required; }
     inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
     inline SchemaAttributeType& WithRequired(bool value) { SetRequired(value); return *this;}
@@ -138,40 +134,40 @@ namespace Model
     /**
      * <p>Specifies the constraints for an attribute of the number type.</p>
      */
-    inline const NumberAttributeConstraintsType& GetNumberAttributeConstraints() const{ return m_numberAttributeConstraints; }
+    inline const NumberAttributeConstraintsType& GetNumberAttributeConstraints() const { return m_numberAttributeConstraints; }
     inline bool NumberAttributeConstraintsHasBeenSet() const { return m_numberAttributeConstraintsHasBeenSet; }
-    inline void SetNumberAttributeConstraints(const NumberAttributeConstraintsType& value) { m_numberAttributeConstraintsHasBeenSet = true; m_numberAttributeConstraints = value; }
-    inline void SetNumberAttributeConstraints(NumberAttributeConstraintsType&& value) { m_numberAttributeConstraintsHasBeenSet = true; m_numberAttributeConstraints = std::move(value); }
-    inline SchemaAttributeType& WithNumberAttributeConstraints(const NumberAttributeConstraintsType& value) { SetNumberAttributeConstraints(value); return *this;}
-    inline SchemaAttributeType& WithNumberAttributeConstraints(NumberAttributeConstraintsType&& value) { SetNumberAttributeConstraints(std::move(value)); return *this;}
+    template<typename NumberAttributeConstraintsT = NumberAttributeConstraintsType>
+    void SetNumberAttributeConstraints(NumberAttributeConstraintsT&& value) { m_numberAttributeConstraintsHasBeenSet = true; m_numberAttributeConstraints = std::forward<NumberAttributeConstraintsT>(value); }
+    template<typename NumberAttributeConstraintsT = NumberAttributeConstraintsType>
+    SchemaAttributeType& WithNumberAttributeConstraints(NumberAttributeConstraintsT&& value) { SetNumberAttributeConstraints(std::forward<NumberAttributeConstraintsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the constraints for an attribute of the string type.</p>
      */
-    inline const StringAttributeConstraintsType& GetStringAttributeConstraints() const{ return m_stringAttributeConstraints; }
+    inline const StringAttributeConstraintsType& GetStringAttributeConstraints() const { return m_stringAttributeConstraints; }
     inline bool StringAttributeConstraintsHasBeenSet() const { return m_stringAttributeConstraintsHasBeenSet; }
-    inline void SetStringAttributeConstraints(const StringAttributeConstraintsType& value) { m_stringAttributeConstraintsHasBeenSet = true; m_stringAttributeConstraints = value; }
-    inline void SetStringAttributeConstraints(StringAttributeConstraintsType&& value) { m_stringAttributeConstraintsHasBeenSet = true; m_stringAttributeConstraints = std::move(value); }
-    inline SchemaAttributeType& WithStringAttributeConstraints(const StringAttributeConstraintsType& value) { SetStringAttributeConstraints(value); return *this;}
-    inline SchemaAttributeType& WithStringAttributeConstraints(StringAttributeConstraintsType&& value) { SetStringAttributeConstraints(std::move(value)); return *this;}
+    template<typename StringAttributeConstraintsT = StringAttributeConstraintsType>
+    void SetStringAttributeConstraints(StringAttributeConstraintsT&& value) { m_stringAttributeConstraintsHasBeenSet = true; m_stringAttributeConstraints = std::forward<StringAttributeConstraintsT>(value); }
+    template<typename StringAttributeConstraintsT = StringAttributeConstraintsType>
+    SchemaAttributeType& WithStringAttributeConstraints(StringAttributeConstraintsT&& value) { SetStringAttributeConstraints(std::forward<StringAttributeConstraintsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    AttributeDataType m_attributeDataType;
+    AttributeDataType m_attributeDataType{AttributeDataType::NOT_SET};
     bool m_attributeDataTypeHasBeenSet = false;
 
-    bool m_developerOnlyAttribute;
+    bool m_developerOnlyAttribute{false};
     bool m_developerOnlyAttributeHasBeenSet = false;
 
-    bool m_mutable;
+    bool m_mutable{false};
     bool m_mutableHasBeenSet = false;
 
-    bool m_required;
+    bool m_required{false};
     bool m_requiredHasBeenSet = false;
 
     NumberAttributeConstraintsType m_numberAttributeConstraints;

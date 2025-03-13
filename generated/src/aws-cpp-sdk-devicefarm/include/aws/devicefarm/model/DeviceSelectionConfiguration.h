@@ -35,7 +35,7 @@ namespace Model
   class DeviceSelectionConfiguration
   {
   public:
-    AWS_DEVICEFARM_API DeviceSelectionConfiguration();
+    AWS_DEVICEFARM_API DeviceSelectionConfiguration() = default;
     AWS_DEVICEFARM_API DeviceSelectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API DeviceSelectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -84,21 +84,21 @@ namespace Model
      * FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li> </ul> </li>
      * </ul>
      */
-    inline const Aws::Vector<DeviceFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<DeviceFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<DeviceFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<DeviceFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DeviceSelectionConfiguration& WithFilters(const Aws::Vector<DeviceFilter>& value) { SetFilters(value); return *this;}
-    inline DeviceSelectionConfiguration& WithFilters(Aws::Vector<DeviceFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DeviceSelectionConfiguration& AddFilters(const DeviceFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DeviceSelectionConfiguration& AddFilters(DeviceFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<DeviceFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<DeviceFilter>>
+    DeviceSelectionConfiguration& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = DeviceFilter>
+    DeviceSelectionConfiguration& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of devices to be included in a test run.</p>
      */
-    inline int GetMaxDevices() const{ return m_maxDevices; }
+    inline int GetMaxDevices() const { return m_maxDevices; }
     inline bool MaxDevicesHasBeenSet() const { return m_maxDevicesHasBeenSet; }
     inline void SetMaxDevices(int value) { m_maxDevicesHasBeenSet = true; m_maxDevices = value; }
     inline DeviceSelectionConfiguration& WithMaxDevices(int value) { SetMaxDevices(value); return *this;}
@@ -108,7 +108,7 @@ namespace Model
     Aws::Vector<DeviceFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxDevices;
+    int m_maxDevices{0};
     bool m_maxDevicesHasBeenSet = false;
   };
 

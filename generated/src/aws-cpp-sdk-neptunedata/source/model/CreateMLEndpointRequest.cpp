@@ -12,21 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMLEndpointRequest::CreateMLEndpointRequest() : 
-    m_idHasBeenSet(false),
-    m_mlModelTrainingJobIdHasBeenSet(false),
-    m_mlModelTransformJobIdHasBeenSet(false),
-    m_update(false),
-    m_updateHasBeenSet(false),
-    m_neptuneIamRoleArnHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_volumeEncryptionKMSKeyHasBeenSet(false)
-{
-}
-
 Aws::String CreateMLEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

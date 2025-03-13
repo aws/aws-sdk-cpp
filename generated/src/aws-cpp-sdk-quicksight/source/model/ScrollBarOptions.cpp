@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ScrollBarOptions::ScrollBarOptions() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_visibleRangeHasBeenSet(false)
-{
-}
-
 ScrollBarOptions::ScrollBarOptions(JsonView jsonValue)
-  : ScrollBarOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ScrollBarOptions& ScrollBarOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisibleRange"))
   {
     m_visibleRange = jsonValue.GetObject("VisibleRange");
-
     m_visibleRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -37,7 +37,7 @@ namespace Model
   class FirewallRule
   {
   public:
-    AWS_ROUTE53RESOLVER_API FirewallRule();
+    AWS_ROUTE53RESOLVER_API FirewallRule() = default;
     AWS_ROUTE53RESOLVER_API FirewallRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API FirewallRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,56 +47,48 @@ namespace Model
     /**
      * <p>The unique identifier of the Firewall rule group of the rule. </p>
      */
-    inline const Aws::String& GetFirewallRuleGroupId() const{ return m_firewallRuleGroupId; }
+    inline const Aws::String& GetFirewallRuleGroupId() const { return m_firewallRuleGroupId; }
     inline bool FirewallRuleGroupIdHasBeenSet() const { return m_firewallRuleGroupIdHasBeenSet; }
-    inline void SetFirewallRuleGroupId(const Aws::String& value) { m_firewallRuleGroupIdHasBeenSet = true; m_firewallRuleGroupId = value; }
-    inline void SetFirewallRuleGroupId(Aws::String&& value) { m_firewallRuleGroupIdHasBeenSet = true; m_firewallRuleGroupId = std::move(value); }
-    inline void SetFirewallRuleGroupId(const char* value) { m_firewallRuleGroupIdHasBeenSet = true; m_firewallRuleGroupId.assign(value); }
-    inline FirewallRule& WithFirewallRuleGroupId(const Aws::String& value) { SetFirewallRuleGroupId(value); return *this;}
-    inline FirewallRule& WithFirewallRuleGroupId(Aws::String&& value) { SetFirewallRuleGroupId(std::move(value)); return *this;}
-    inline FirewallRule& WithFirewallRuleGroupId(const char* value) { SetFirewallRuleGroupId(value); return *this;}
+    template<typename FirewallRuleGroupIdT = Aws::String>
+    void SetFirewallRuleGroupId(FirewallRuleGroupIdT&& value) { m_firewallRuleGroupIdHasBeenSet = true; m_firewallRuleGroupId = std::forward<FirewallRuleGroupIdT>(value); }
+    template<typename FirewallRuleGroupIdT = Aws::String>
+    FirewallRule& WithFirewallRuleGroupId(FirewallRuleGroupIdT&& value) { SetFirewallRuleGroupId(std::forward<FirewallRuleGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the domain list that's used in the rule. </p>
      */
-    inline const Aws::String& GetFirewallDomainListId() const{ return m_firewallDomainListId; }
+    inline const Aws::String& GetFirewallDomainListId() const { return m_firewallDomainListId; }
     inline bool FirewallDomainListIdHasBeenSet() const { return m_firewallDomainListIdHasBeenSet; }
-    inline void SetFirewallDomainListId(const Aws::String& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = value; }
-    inline void SetFirewallDomainListId(Aws::String&& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = std::move(value); }
-    inline void SetFirewallDomainListId(const char* value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId.assign(value); }
-    inline FirewallRule& WithFirewallDomainListId(const Aws::String& value) { SetFirewallDomainListId(value); return *this;}
-    inline FirewallRule& WithFirewallDomainListId(Aws::String&& value) { SetFirewallDomainListId(std::move(value)); return *this;}
-    inline FirewallRule& WithFirewallDomainListId(const char* value) { SetFirewallDomainListId(value); return *this;}
+    template<typename FirewallDomainListIdT = Aws::String>
+    void SetFirewallDomainListId(FirewallDomainListIdT&& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = std::forward<FirewallDomainListIdT>(value); }
+    template<typename FirewallDomainListIdT = Aws::String>
+    FirewallRule& WithFirewallDomainListId(FirewallDomainListIdT&& value) { SetFirewallDomainListId(std::forward<FirewallDomainListIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> ID of the DNS Firewall Advanced rule. </p>
      */
-    inline const Aws::String& GetFirewallThreatProtectionId() const{ return m_firewallThreatProtectionId; }
+    inline const Aws::String& GetFirewallThreatProtectionId() const { return m_firewallThreatProtectionId; }
     inline bool FirewallThreatProtectionIdHasBeenSet() const { return m_firewallThreatProtectionIdHasBeenSet; }
-    inline void SetFirewallThreatProtectionId(const Aws::String& value) { m_firewallThreatProtectionIdHasBeenSet = true; m_firewallThreatProtectionId = value; }
-    inline void SetFirewallThreatProtectionId(Aws::String&& value) { m_firewallThreatProtectionIdHasBeenSet = true; m_firewallThreatProtectionId = std::move(value); }
-    inline void SetFirewallThreatProtectionId(const char* value) { m_firewallThreatProtectionIdHasBeenSet = true; m_firewallThreatProtectionId.assign(value); }
-    inline FirewallRule& WithFirewallThreatProtectionId(const Aws::String& value) { SetFirewallThreatProtectionId(value); return *this;}
-    inline FirewallRule& WithFirewallThreatProtectionId(Aws::String&& value) { SetFirewallThreatProtectionId(std::move(value)); return *this;}
-    inline FirewallRule& WithFirewallThreatProtectionId(const char* value) { SetFirewallThreatProtectionId(value); return *this;}
+    template<typename FirewallThreatProtectionIdT = Aws::String>
+    void SetFirewallThreatProtectionId(FirewallThreatProtectionIdT&& value) { m_firewallThreatProtectionIdHasBeenSet = true; m_firewallThreatProtectionId = std::forward<FirewallThreatProtectionIdT>(value); }
+    template<typename FirewallThreatProtectionIdT = Aws::String>
+    FirewallRule& WithFirewallThreatProtectionId(FirewallThreatProtectionIdT&& value) { SetFirewallThreatProtectionId(std::forward<FirewallThreatProtectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the rule. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FirewallRule& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FirewallRule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FirewallRule& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FirewallRule& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,7 +97,7 @@ namespace Model
      * the rule group. DNS Firewall processes the rules in a rule group by order of
      * priority, starting from the lowest setting.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline FirewallRule& WithPriority(int value) { SetPriority(value); return *this;}
@@ -122,12 +114,10 @@ namespace Model
      * specified, additional handling details are provided in the rule's
      * <code>BlockResponse</code> setting. </p> </li> </ul>
      */
-    inline const Action& GetAction() const{ return m_action; }
+    inline Action GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline FirewallRule& WithAction(const Action& value) { SetAction(value); return *this;}
-    inline FirewallRule& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(Action value) { m_actionHasBeenSet = true; m_action = value; }
+    inline FirewallRule& WithAction(Action value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -141,12 +131,10 @@ namespace Model
      * requires custom handling details in the rule's <code>BlockOverride*</code>
      * settings. </p> </li> </ul>
      */
-    inline const BlockResponse& GetBlockResponse() const{ return m_blockResponse; }
+    inline BlockResponse GetBlockResponse() const { return m_blockResponse; }
     inline bool BlockResponseHasBeenSet() const { return m_blockResponseHasBeenSet; }
-    inline void SetBlockResponse(const BlockResponse& value) { m_blockResponseHasBeenSet = true; m_blockResponse = value; }
-    inline void SetBlockResponse(BlockResponse&& value) { m_blockResponseHasBeenSet = true; m_blockResponse = std::move(value); }
-    inline FirewallRule& WithBlockResponse(const BlockResponse& value) { SetBlockResponse(value); return *this;}
-    inline FirewallRule& WithBlockResponse(BlockResponse&& value) { SetBlockResponse(std::move(value)); return *this;}
+    inline void SetBlockResponse(BlockResponse value) { m_blockResponseHasBeenSet = true; m_blockResponse = value; }
+    inline FirewallRule& WithBlockResponse(BlockResponse value) { SetBlockResponse(value); return *this;}
     ///@}
 
     ///@{
@@ -155,14 +143,12 @@ namespace Model
      * rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of
      * <code>OVERRIDE</code>.</p>
      */
-    inline const Aws::String& GetBlockOverrideDomain() const{ return m_blockOverrideDomain; }
+    inline const Aws::String& GetBlockOverrideDomain() const { return m_blockOverrideDomain; }
     inline bool BlockOverrideDomainHasBeenSet() const { return m_blockOverrideDomainHasBeenSet; }
-    inline void SetBlockOverrideDomain(const Aws::String& value) { m_blockOverrideDomainHasBeenSet = true; m_blockOverrideDomain = value; }
-    inline void SetBlockOverrideDomain(Aws::String&& value) { m_blockOverrideDomainHasBeenSet = true; m_blockOverrideDomain = std::move(value); }
-    inline void SetBlockOverrideDomain(const char* value) { m_blockOverrideDomainHasBeenSet = true; m_blockOverrideDomain.assign(value); }
-    inline FirewallRule& WithBlockOverrideDomain(const Aws::String& value) { SetBlockOverrideDomain(value); return *this;}
-    inline FirewallRule& WithBlockOverrideDomain(Aws::String&& value) { SetBlockOverrideDomain(std::move(value)); return *this;}
-    inline FirewallRule& WithBlockOverrideDomain(const char* value) { SetBlockOverrideDomain(value); return *this;}
+    template<typename BlockOverrideDomainT = Aws::String>
+    void SetBlockOverrideDomain(BlockOverrideDomainT&& value) { m_blockOverrideDomainHasBeenSet = true; m_blockOverrideDomain = std::forward<BlockOverrideDomainT>(value); }
+    template<typename BlockOverrideDomainT = Aws::String>
+    FirewallRule& WithBlockOverrideDomain(BlockOverrideDomainT&& value) { SetBlockOverrideDomain(std::forward<BlockOverrideDomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,12 +158,10 @@ namespace Model
      * <code>BLOCK</code> with a <code>BlockResponse</code> setting of
      * <code>OVERRIDE</code>.</p>
      */
-    inline const BlockOverrideDnsType& GetBlockOverrideDnsType() const{ return m_blockOverrideDnsType; }
+    inline BlockOverrideDnsType GetBlockOverrideDnsType() const { return m_blockOverrideDnsType; }
     inline bool BlockOverrideDnsTypeHasBeenSet() const { return m_blockOverrideDnsTypeHasBeenSet; }
-    inline void SetBlockOverrideDnsType(const BlockOverrideDnsType& value) { m_blockOverrideDnsTypeHasBeenSet = true; m_blockOverrideDnsType = value; }
-    inline void SetBlockOverrideDnsType(BlockOverrideDnsType&& value) { m_blockOverrideDnsTypeHasBeenSet = true; m_blockOverrideDnsType = std::move(value); }
-    inline FirewallRule& WithBlockOverrideDnsType(const BlockOverrideDnsType& value) { SetBlockOverrideDnsType(value); return *this;}
-    inline FirewallRule& WithBlockOverrideDnsType(BlockOverrideDnsType&& value) { SetBlockOverrideDnsType(std::move(value)); return *this;}
+    inline void SetBlockOverrideDnsType(BlockOverrideDnsType value) { m_blockOverrideDnsTypeHasBeenSet = true; m_blockOverrideDnsType = value; }
+    inline FirewallRule& WithBlockOverrideDnsType(BlockOverrideDnsType value) { SetBlockOverrideDnsType(value); return *this;}
     ///@}
 
     ///@{
@@ -187,7 +171,7 @@ namespace Model
      * <code>BLOCK</code> with a <code>BlockResponse</code> setting of
      * <code>OVERRIDE</code>.</p>
      */
-    inline int GetBlockOverrideTtl() const{ return m_blockOverrideTtl; }
+    inline int GetBlockOverrideTtl() const { return m_blockOverrideTtl; }
     inline bool BlockOverrideTtlHasBeenSet() const { return m_blockOverrideTtlHasBeenSet; }
     inline void SetBlockOverrideTtl(int value) { m_blockOverrideTtlHasBeenSet = true; m_blockOverrideTtl = value; }
     inline FirewallRule& WithBlockOverrideTtl(int value) { SetBlockOverrideTtl(value); return *this;}
@@ -199,14 +183,12 @@ namespace Model
      * retry failed requests without the risk of executing the operation twice. This
      * can be any unique string, for example, a timestamp. </p>
      */
-    inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+    inline const Aws::String& GetCreatorRequestId() const { return m_creatorRequestId; }
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
-    inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
-    inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
-    inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
-    inline FirewallRule& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
-    inline FirewallRule& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
-    inline FirewallRule& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
+    template<typename CreatorRequestIdT = Aws::String>
+    void SetCreatorRequestId(CreatorRequestIdT&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::forward<CreatorRequestIdT>(value); }
+    template<typename CreatorRequestIdT = Aws::String>
+    FirewallRule& WithCreatorRequestId(CreatorRequestIdT&& value) { SetCreatorRequestId(std::forward<CreatorRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -214,14 +196,12 @@ namespace Model
      * <p>The date and time that the rule was created, in Unix time format and
      * Coordinated Universal Time (UTC). </p>
      */
-    inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::String&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline void SetCreationTime(const char* value) { m_creationTimeHasBeenSet = true; m_creationTime.assign(value); }
-    inline FirewallRule& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
-    inline FirewallRule& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
-    inline FirewallRule& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
+    template<typename CreationTimeT = Aws::String>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::String>
+    FirewallRule& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,14 +209,12 @@ namespace Model
      * <p>The date and time that the rule was last modified, in Unix time format and
      * Coordinated Universal Time (UTC).</p>
      */
-    inline const Aws::String& GetModificationTime() const{ return m_modificationTime; }
+    inline const Aws::String& GetModificationTime() const { return m_modificationTime; }
     inline bool ModificationTimeHasBeenSet() const { return m_modificationTimeHasBeenSet; }
-    inline void SetModificationTime(const Aws::String& value) { m_modificationTimeHasBeenSet = true; m_modificationTime = value; }
-    inline void SetModificationTime(Aws::String&& value) { m_modificationTimeHasBeenSet = true; m_modificationTime = std::move(value); }
-    inline void SetModificationTime(const char* value) { m_modificationTimeHasBeenSet = true; m_modificationTime.assign(value); }
-    inline FirewallRule& WithModificationTime(const Aws::String& value) { SetModificationTime(value); return *this;}
-    inline FirewallRule& WithModificationTime(Aws::String&& value) { SetModificationTime(std::move(value)); return *this;}
-    inline FirewallRule& WithModificationTime(const char* value) { SetModificationTime(value); return *this;}
+    template<typename ModificationTimeT = Aws::String>
+    void SetModificationTime(ModificationTimeT&& value) { m_modificationTimeHasBeenSet = true; m_modificationTime = std::forward<ModificationTimeT>(value); }
+    template<typename ModificationTimeT = Aws::String>
+    FirewallRule& WithModificationTime(ModificationTimeT&& value) { SetModificationTime(std::forward<ModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -249,12 +227,10 @@ namespace Model
      * redirection chain. You don't need to add the subsequent domains in the domain in
      * the redirection list to the domain list.</p>
      */
-    inline const FirewallDomainRedirectionAction& GetFirewallDomainRedirectionAction() const{ return m_firewallDomainRedirectionAction; }
+    inline FirewallDomainRedirectionAction GetFirewallDomainRedirectionAction() const { return m_firewallDomainRedirectionAction; }
     inline bool FirewallDomainRedirectionActionHasBeenSet() const { return m_firewallDomainRedirectionActionHasBeenSet; }
-    inline void SetFirewallDomainRedirectionAction(const FirewallDomainRedirectionAction& value) { m_firewallDomainRedirectionActionHasBeenSet = true; m_firewallDomainRedirectionAction = value; }
-    inline void SetFirewallDomainRedirectionAction(FirewallDomainRedirectionAction&& value) { m_firewallDomainRedirectionActionHasBeenSet = true; m_firewallDomainRedirectionAction = std::move(value); }
-    inline FirewallRule& WithFirewallDomainRedirectionAction(const FirewallDomainRedirectionAction& value) { SetFirewallDomainRedirectionAction(value); return *this;}
-    inline FirewallRule& WithFirewallDomainRedirectionAction(FirewallDomainRedirectionAction&& value) { SetFirewallDomainRedirectionAction(std::move(value)); return *this;}
+    inline void SetFirewallDomainRedirectionAction(FirewallDomainRedirectionAction value) { m_firewallDomainRedirectionActionHasBeenSet = true; m_firewallDomainRedirectionAction = value; }
+    inline FirewallRule& WithFirewallDomainRedirectionAction(FirewallDomainRedirectionAction value) { SetFirewallDomainRedirectionAction(value); return *this;}
     ///@}
 
     ///@{
@@ -277,14 +253,12 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
      * types</a>.</p> </li> </ul>
      */
-    inline const Aws::String& GetQtype() const{ return m_qtype; }
+    inline const Aws::String& GetQtype() const { return m_qtype; }
     inline bool QtypeHasBeenSet() const { return m_qtypeHasBeenSet; }
-    inline void SetQtype(const Aws::String& value) { m_qtypeHasBeenSet = true; m_qtype = value; }
-    inline void SetQtype(Aws::String&& value) { m_qtypeHasBeenSet = true; m_qtype = std::move(value); }
-    inline void SetQtype(const char* value) { m_qtypeHasBeenSet = true; m_qtype.assign(value); }
-    inline FirewallRule& WithQtype(const Aws::String& value) { SetQtype(value); return *this;}
-    inline FirewallRule& WithQtype(Aws::String&& value) { SetQtype(std::move(value)); return *this;}
-    inline FirewallRule& WithQtype(const char* value) { SetQtype(value); return *this;}
+    template<typename QtypeT = Aws::String>
+    void SetQtype(QtypeT&& value) { m_qtypeHasBeenSet = true; m_qtype = std::forward<QtypeT>(value); }
+    template<typename QtypeT = Aws::String>
+    FirewallRule& WithQtype(QtypeT&& value) { SetQtype(std::forward<QtypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -297,12 +271,10 @@ namespace Model
      * the DNS tunnel without making a network connection to the client.</p> </li>
      * </ul>
      */
-    inline const DnsThreatProtection& GetDnsThreatProtection() const{ return m_dnsThreatProtection; }
+    inline DnsThreatProtection GetDnsThreatProtection() const { return m_dnsThreatProtection; }
     inline bool DnsThreatProtectionHasBeenSet() const { return m_dnsThreatProtectionHasBeenSet; }
-    inline void SetDnsThreatProtection(const DnsThreatProtection& value) { m_dnsThreatProtectionHasBeenSet = true; m_dnsThreatProtection = value; }
-    inline void SetDnsThreatProtection(DnsThreatProtection&& value) { m_dnsThreatProtectionHasBeenSet = true; m_dnsThreatProtection = std::move(value); }
-    inline FirewallRule& WithDnsThreatProtection(const DnsThreatProtection& value) { SetDnsThreatProtection(value); return *this;}
-    inline FirewallRule& WithDnsThreatProtection(DnsThreatProtection&& value) { SetDnsThreatProtection(std::move(value)); return *this;}
+    inline void SetDnsThreatProtection(DnsThreatProtection value) { m_dnsThreatProtectionHasBeenSet = true; m_dnsThreatProtection = value; }
+    inline FirewallRule& WithDnsThreatProtection(DnsThreatProtection value) { SetDnsThreatProtection(value); return *this;}
     ///@}
 
     ///@{
@@ -315,12 +287,10 @@ namespace Model
      * positives.</p> </li> <li> <p> <code>HIGH</code>: Detects only the most well
      * corroborated threats with a low rate of false positives. </p> </li> </ul>
      */
-    inline const ConfidenceThreshold& GetConfidenceThreshold() const{ return m_confidenceThreshold; }
+    inline ConfidenceThreshold GetConfidenceThreshold() const { return m_confidenceThreshold; }
     inline bool ConfidenceThresholdHasBeenSet() const { return m_confidenceThresholdHasBeenSet; }
-    inline void SetConfidenceThreshold(const ConfidenceThreshold& value) { m_confidenceThresholdHasBeenSet = true; m_confidenceThreshold = value; }
-    inline void SetConfidenceThreshold(ConfidenceThreshold&& value) { m_confidenceThresholdHasBeenSet = true; m_confidenceThreshold = std::move(value); }
-    inline FirewallRule& WithConfidenceThreshold(const ConfidenceThreshold& value) { SetConfidenceThreshold(value); return *this;}
-    inline FirewallRule& WithConfidenceThreshold(ConfidenceThreshold&& value) { SetConfidenceThreshold(std::move(value)); return *this;}
+    inline void SetConfidenceThreshold(ConfidenceThreshold value) { m_confidenceThresholdHasBeenSet = true; m_confidenceThreshold = value; }
+    inline FirewallRule& WithConfidenceThreshold(ConfidenceThreshold value) { SetConfidenceThreshold(value); return *this;}
     ///@}
   private:
 
@@ -336,22 +306,22 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
-    Action m_action;
+    Action m_action{Action::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    BlockResponse m_blockResponse;
+    BlockResponse m_blockResponse{BlockResponse::NOT_SET};
     bool m_blockResponseHasBeenSet = false;
 
     Aws::String m_blockOverrideDomain;
     bool m_blockOverrideDomainHasBeenSet = false;
 
-    BlockOverrideDnsType m_blockOverrideDnsType;
+    BlockOverrideDnsType m_blockOverrideDnsType{BlockOverrideDnsType::NOT_SET};
     bool m_blockOverrideDnsTypeHasBeenSet = false;
 
-    int m_blockOverrideTtl;
+    int m_blockOverrideTtl{0};
     bool m_blockOverrideTtlHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
@@ -363,16 +333,16 @@ namespace Model
     Aws::String m_modificationTime;
     bool m_modificationTimeHasBeenSet = false;
 
-    FirewallDomainRedirectionAction m_firewallDomainRedirectionAction;
+    FirewallDomainRedirectionAction m_firewallDomainRedirectionAction{FirewallDomainRedirectionAction::NOT_SET};
     bool m_firewallDomainRedirectionActionHasBeenSet = false;
 
     Aws::String m_qtype;
     bool m_qtypeHasBeenSet = false;
 
-    DnsThreatProtection m_dnsThreatProtection;
+    DnsThreatProtection m_dnsThreatProtection{DnsThreatProtection::NOT_SET};
     bool m_dnsThreatProtectionHasBeenSet = false;
 
-    ConfidenceThreshold m_confidenceThreshold;
+    ConfidenceThreshold m_confidenceThreshold{ConfidenceThreshold::NOT_SET};
     bool m_confidenceThresholdHasBeenSet = false;
   };
 

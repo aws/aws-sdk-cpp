@@ -33,7 +33,7 @@ namespace Model
   class AcceleratorSelection
   {
   public:
-    AWS_DEADLINE_API AcceleratorSelection();
+    AWS_DEADLINE_API AcceleratorSelection() = default;
     AWS_DEADLINE_API AcceleratorSelection(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API AcceleratorSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * GPU</p> </li> <li> <p> <code>l4</code> - NVIDIA L4 Tensor Core GPU</p> </li>
      * <li> <p> <code>l40s</code> - NVIDIA L40S Tensor Core GPU</p> </li> </ul>
      */
-    inline const AcceleratorName& GetName() const{ return m_name; }
+    inline AcceleratorName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AcceleratorName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AcceleratorName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AcceleratorSelection& WithName(const AcceleratorName& value) { SetName(value); return *this;}
-    inline AcceleratorSelection& WithName(AcceleratorName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AcceleratorName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AcceleratorSelection& WithName(AcceleratorName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -73,18 +71,16 @@ namespace Model
      * and specify <code>latest</code> for some and leave others blank, Deadline Cloud
      * raises an exception.</p>
      */
-    inline const Aws::String& GetRuntime() const{ return m_runtime; }
+    inline const Aws::String& GetRuntime() const { return m_runtime; }
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
-    inline void SetRuntime(const Aws::String& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
-    inline void SetRuntime(Aws::String&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
-    inline void SetRuntime(const char* value) { m_runtimeHasBeenSet = true; m_runtime.assign(value); }
-    inline AcceleratorSelection& WithRuntime(const Aws::String& value) { SetRuntime(value); return *this;}
-    inline AcceleratorSelection& WithRuntime(Aws::String&& value) { SetRuntime(std::move(value)); return *this;}
-    inline AcceleratorSelection& WithRuntime(const char* value) { SetRuntime(value); return *this;}
+    template<typename RuntimeT = Aws::String>
+    void SetRuntime(RuntimeT&& value) { m_runtimeHasBeenSet = true; m_runtime = std::forward<RuntimeT>(value); }
+    template<typename RuntimeT = Aws::String>
+    AcceleratorSelection& WithRuntime(RuntimeT&& value) { SetRuntime(std::forward<RuntimeT>(value)); return *this;}
     ///@}
   private:
 
-    AcceleratorName m_name;
+    AcceleratorName m_name{AcceleratorName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_runtime;

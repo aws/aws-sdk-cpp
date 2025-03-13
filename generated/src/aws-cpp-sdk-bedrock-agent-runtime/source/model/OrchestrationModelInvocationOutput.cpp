@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-OrchestrationModelInvocationOutput::OrchestrationModelInvocationOutput() : 
-    m_metadataHasBeenSet(false),
-    m_rawResponseHasBeenSet(false),
-    m_reasoningContentHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
-{
-}
-
 OrchestrationModelInvocationOutput::OrchestrationModelInvocationOutput(JsonView jsonValue)
-  : OrchestrationModelInvocationOutput()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ OrchestrationModelInvocationOutput& OrchestrationModelInvocationOutput::operator
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rawResponse"))
   {
     m_rawResponse = jsonValue.GetObject("rawResponse");
-
     m_rawResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasoningContent"))
   {
     m_reasoningContent = jsonValue.GetObject("reasoningContent");
-
     m_reasoningContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("traceId"))
   {
     m_traceId = jsonValue.GetString("traceId");
-
     m_traceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

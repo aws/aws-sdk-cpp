@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-OrganizationsDecisionDetail::OrganizationsDecisionDetail() : 
-    m_allowedByOrganizations(false),
-    m_allowedByOrganizationsHasBeenSet(false)
-{
-}
-
 OrganizationsDecisionDetail::OrganizationsDecisionDetail(const XmlNode& xmlNode)
-  : OrganizationsDecisionDetail()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ OrganizationsDecisionDetail& OrganizationsDecisionDetail::operator =(const XmlNo
     {
       m_allowedByOrganizations = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowedByOrganizationsNode.GetText()).c_str()).c_str());
       m_allowedByOrganizationsHasBeenSet = true;
+       m_allowedByOrganizationsHasBeenSet = true;
     }
   }
 

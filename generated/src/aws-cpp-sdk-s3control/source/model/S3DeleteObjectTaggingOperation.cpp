@@ -20,10 +20,6 @@ namespace S3Control
 namespace Model
 {
 
-S3DeleteObjectTaggingOperation::S3DeleteObjectTaggingOperation()
-{
-}
-
 S3DeleteObjectTaggingOperation::S3DeleteObjectTaggingOperation(const XmlNode& xmlNode)
 {
   *this = xmlNode;

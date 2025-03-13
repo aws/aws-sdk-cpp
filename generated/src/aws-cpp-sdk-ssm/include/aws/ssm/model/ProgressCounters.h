@@ -31,7 +31,7 @@ namespace Model
   class ProgressCounters
   {
   public:
-    AWS_SSM_API ProgressCounters();
+    AWS_SSM_API ProgressCounters() = default;
     AWS_SSM_API ProgressCounters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ProgressCounters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The total number of steps run in all specified Amazon Web Services Regions
      * and Amazon Web Services accounts for the current Automation execution.</p>
      */
-    inline int GetTotalSteps() const{ return m_totalSteps; }
+    inline int GetTotalSteps() const { return m_totalSteps; }
     inline bool TotalStepsHasBeenSet() const { return m_totalStepsHasBeenSet; }
     inline void SetTotalSteps(int value) { m_totalStepsHasBeenSet = true; m_totalSteps = value; }
     inline ProgressCounters& WithTotalSteps(int value) { SetTotalSteps(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * Web Services Regions and Amazon Web Services accounts for the current Automation
      * execution.</p>
      */
-    inline int GetSuccessSteps() const{ return m_successSteps; }
+    inline int GetSuccessSteps() const { return m_successSteps; }
     inline bool SuccessStepsHasBeenSet() const { return m_successStepsHasBeenSet; }
     inline void SetSuccessSteps(int value) { m_successStepsHasBeenSet = true; m_successSteps = value; }
     inline ProgressCounters& WithSuccessSteps(int value) { SetSuccessSteps(value); return *this;}
@@ -66,7 +66,7 @@ namespace Model
      * Services Regions and Amazon Web Services accounts for the current Automation
      * execution.</p>
      */
-    inline int GetFailedSteps() const{ return m_failedSteps; }
+    inline int GetFailedSteps() const { return m_failedSteps; }
     inline bool FailedStepsHasBeenSet() const { return m_failedStepsHasBeenSet; }
     inline void SetFailedSteps(int value) { m_failedStepsHasBeenSet = true; m_failedSteps = value; }
     inline ProgressCounters& WithFailedSteps(int value) { SetFailedSteps(value); return *this;}
@@ -78,7 +78,7 @@ namespace Model
      * Web Services Regions and Amazon Web Services accounts for the current Automation
      * execution.</p>
      */
-    inline int GetCancelledSteps() const{ return m_cancelledSteps; }
+    inline int GetCancelledSteps() const { return m_cancelledSteps; }
     inline bool CancelledStepsHasBeenSet() const { return m_cancelledStepsHasBeenSet; }
     inline void SetCancelledSteps(int value) { m_cancelledStepsHasBeenSet = true; m_cancelledSteps = value; }
     inline ProgressCounters& WithCancelledSteps(int value) { SetCancelledSteps(value); return *this;}
@@ -90,26 +90,26 @@ namespace Model
      * Regions and Amazon Web Services accounts for the current Automation
      * execution.</p>
      */
-    inline int GetTimedOutSteps() const{ return m_timedOutSteps; }
+    inline int GetTimedOutSteps() const { return m_timedOutSteps; }
     inline bool TimedOutStepsHasBeenSet() const { return m_timedOutStepsHasBeenSet; }
     inline void SetTimedOutSteps(int value) { m_timedOutStepsHasBeenSet = true; m_timedOutSteps = value; }
     inline ProgressCounters& WithTimedOutSteps(int value) { SetTimedOutSteps(value); return *this;}
     ///@}
   private:
 
-    int m_totalSteps;
+    int m_totalSteps{0};
     bool m_totalStepsHasBeenSet = false;
 
-    int m_successSteps;
+    int m_successSteps{0};
     bool m_successStepsHasBeenSet = false;
 
-    int m_failedSteps;
+    int m_failedSteps{0};
     bool m_failedStepsHasBeenSet = false;
 
-    int m_cancelledSteps;
+    int m_cancelledSteps{0};
     bool m_cancelledStepsHasBeenSet = false;
 
-    int m_timedOutSteps;
+    int m_timedOutSteps{0};
     bool m_timedOutStepsHasBeenSet = false;
   };
 

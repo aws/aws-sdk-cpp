@@ -29,7 +29,7 @@ namespace Model
   class ListSupportedPhoneNumberCountriesResult
   {
   public:
-    AWS_CHIME_API ListSupportedPhoneNumberCountriesResult();
+    AWS_CHIME_API ListSupportedPhoneNumberCountriesResult() = default;
     AWS_CHIME_API ListSupportedPhoneNumberCountriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIME_API ListSupportedPhoneNumberCountriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The supported phone number countries.</p>
      */
-    inline const Aws::Vector<PhoneNumberCountry>& GetPhoneNumberCountries() const{ return m_phoneNumberCountries; }
-    inline void SetPhoneNumberCountries(const Aws::Vector<PhoneNumberCountry>& value) { m_phoneNumberCountries = value; }
-    inline void SetPhoneNumberCountries(Aws::Vector<PhoneNumberCountry>&& value) { m_phoneNumberCountries = std::move(value); }
-    inline ListSupportedPhoneNumberCountriesResult& WithPhoneNumberCountries(const Aws::Vector<PhoneNumberCountry>& value) { SetPhoneNumberCountries(value); return *this;}
-    inline ListSupportedPhoneNumberCountriesResult& WithPhoneNumberCountries(Aws::Vector<PhoneNumberCountry>&& value) { SetPhoneNumberCountries(std::move(value)); return *this;}
-    inline ListSupportedPhoneNumberCountriesResult& AddPhoneNumberCountries(const PhoneNumberCountry& value) { m_phoneNumberCountries.push_back(value); return *this; }
-    inline ListSupportedPhoneNumberCountriesResult& AddPhoneNumberCountries(PhoneNumberCountry&& value) { m_phoneNumberCountries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PhoneNumberCountry>& GetPhoneNumberCountries() const { return m_phoneNumberCountries; }
+    template<typename PhoneNumberCountriesT = Aws::Vector<PhoneNumberCountry>>
+    void SetPhoneNumberCountries(PhoneNumberCountriesT&& value) { m_phoneNumberCountriesHasBeenSet = true; m_phoneNumberCountries = std::forward<PhoneNumberCountriesT>(value); }
+    template<typename PhoneNumberCountriesT = Aws::Vector<PhoneNumberCountry>>
+    ListSupportedPhoneNumberCountriesResult& WithPhoneNumberCountries(PhoneNumberCountriesT&& value) { SetPhoneNumberCountries(std::forward<PhoneNumberCountriesT>(value)); return *this;}
+    template<typename PhoneNumberCountriesT = PhoneNumberCountry>
+    ListSupportedPhoneNumberCountriesResult& AddPhoneNumberCountries(PhoneNumberCountriesT&& value) { m_phoneNumberCountriesHasBeenSet = true; m_phoneNumberCountries.emplace_back(std::forward<PhoneNumberCountriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSupportedPhoneNumberCountriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSupportedPhoneNumberCountriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSupportedPhoneNumberCountriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSupportedPhoneNumberCountriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PhoneNumberCountry> m_phoneNumberCountries;
+    bool m_phoneNumberCountriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

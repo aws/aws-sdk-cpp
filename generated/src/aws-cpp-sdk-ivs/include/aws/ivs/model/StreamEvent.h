@@ -34,7 +34,7 @@ namespace Model
   class StreamEvent
   {
   public:
-    AWS_IVS_API StreamEvent();
+    AWS_IVS_API StreamEvent() = default;
     AWS_IVS_API StreamEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API StreamEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -75,14 +75,12 @@ namespace Model
      * client reached the maximum allowed takeover attempts for this stream.</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline StreamEvent& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline StreamEvent& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline StreamEvent& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    StreamEvent& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,47 +88,43 @@ namespace Model
      * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
      * this is returned as a string</i>.</p>
      */
-    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
+    inline const Aws::Utils::DateTime& GetEventTime() const { return m_eventTime; }
     inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
-    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
-    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
-    inline StreamEvent& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
-    inline StreamEvent& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    void SetEventTime(EventTimeT&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::forward<EventTimeT>(value); }
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    StreamEvent& WithEventTime(EventTimeT&& value) { SetEventTime(std::forward<EventTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name that identifies the stream event within a <code>type</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StreamEvent& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StreamEvent& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StreamEvent& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StreamEvent& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Logical group for certain events.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline StreamEvent& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline StreamEvent& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline StreamEvent& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    StreamEvent& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_code;
     bool m_codeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_eventTime;
+    Aws::Utils::DateTime m_eventTime{};
     bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_name;

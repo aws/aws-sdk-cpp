@@ -12,16 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorkspaceImagesRequest::DescribeWorkspaceImagesRequest() : 
-    m_imageIdsHasBeenSet(false),
-    m_imageType(ImageType::NOT_SET),
-    m_imageTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorkspaceImagesRequest::SerializePayload() const
 {
   JsonValue payload;

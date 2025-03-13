@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CategoryDrillDownFilter::CategoryDrillDownFilter() : 
-    m_columnHasBeenSet(false),
-    m_categoryValuesHasBeenSet(false)
-{
-}
-
 CategoryDrillDownFilter::CategoryDrillDownFilter(JsonView jsonValue)
-  : CategoryDrillDownFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CategoryDrillDownFilter& CategoryDrillDownFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetObject("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryValues"))
   {
     Aws::Utils::Array<JsonView> categoryValuesJsonList = jsonValue.GetArray("CategoryValues");
@@ -48,7 +39,6 @@ CategoryDrillDownFilter& CategoryDrillDownFilter::operator =(JsonView jsonValue)
     }
     m_categoryValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

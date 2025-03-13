@@ -18,19 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-QueryEvalStats::QueryEvalStats() : 
-    m_waited(0),
-    m_waitedHasBeenSet(false),
-    m_elapsed(0),
-    m_elapsedHasBeenSet(false),
-    m_cancelled(false),
-    m_cancelledHasBeenSet(false),
-    m_subqueriesHasBeenSet(false)
-{
-}
-
 QueryEvalStats::QueryEvalStats(JsonView jsonValue)
-  : QueryEvalStats()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ QueryEvalStats& QueryEvalStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("waited"))
   {
     m_waited = jsonValue.GetInteger("waited");
-
     m_waitedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elapsed"))
   {
     m_elapsed = jsonValue.GetInteger("elapsed");
-
     m_elapsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cancelled"))
   {
     m_cancelled = jsonValue.GetBool("cancelled");
-
     m_cancelledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subqueries"))
   {
     m_subqueries = jsonValue.GetObject("subqueries");
-
     m_subqueriesHasBeenSet = true;
   }
-
   return *this;
 }
 

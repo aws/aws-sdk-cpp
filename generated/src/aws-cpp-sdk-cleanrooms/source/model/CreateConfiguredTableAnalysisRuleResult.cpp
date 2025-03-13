@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateConfiguredTableAnalysisRuleResult::CreateConfiguredTableAnalysisRuleResult()
-{
-}
-
 CreateConfiguredTableAnalysisRuleResult::CreateConfiguredTableAnalysisRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateConfiguredTableAnalysisRuleResult& CreateConfiguredTableAnalysisRuleResult
   if(jsonValue.ValueExists("analysisRule"))
   {
     m_analysisRule = jsonValue.GetObject("analysisRule");
-
+    m_analysisRuleHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,24 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-DataLakeSettings::DataLakeSettings() : 
-    m_dataLakeAdminsHasBeenSet(false),
-    m_readOnlyAdminsHasBeenSet(false),
-    m_createDatabaseDefaultPermissionsHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_trustedResourceOwnersHasBeenSet(false),
-    m_allowExternalDataFiltering(false),
-    m_allowExternalDataFilteringHasBeenSet(false),
-    m_allowFullTableExternalDataAccess(false),
-    m_allowFullTableExternalDataAccessHasBeenSet(false),
-    m_externalDataFilteringAllowListHasBeenSet(false),
-    m_authorizedSessionTagValueListHasBeenSet(false)
-{
-}
-
 DataLakeSettings::DataLakeSettings(JsonView jsonValue)
-  : DataLakeSettings()
 {
   *this = jsonValue;
 }
@@ -51,7 +34,6 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
     }
     m_dataLakeAdminsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadOnlyAdmins"))
   {
     Aws::Utils::Array<JsonView> readOnlyAdminsJsonList = jsonValue.GetArray("ReadOnlyAdmins");
@@ -61,7 +43,6 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
     }
     m_readOnlyAdminsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDatabaseDefaultPermissions"))
   {
     Aws::Utils::Array<JsonView> createDatabaseDefaultPermissionsJsonList = jsonValue.GetArray("CreateDatabaseDefaultPermissions");
@@ -71,7 +52,6 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
     }
     m_createDatabaseDefaultPermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTableDefaultPermissions"))
   {
     Aws::Utils::Array<JsonView> createTableDefaultPermissionsJsonList = jsonValue.GetArray("CreateTableDefaultPermissions");
@@ -81,7 +61,6 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
     }
     m_createTableDefaultPermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -91,7 +70,6 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustedResourceOwners"))
   {
     Aws::Utils::Array<JsonView> trustedResourceOwnersJsonList = jsonValue.GetArray("TrustedResourceOwners");
@@ -101,21 +79,16 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
     }
     m_trustedResourceOwnersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowExternalDataFiltering"))
   {
     m_allowExternalDataFiltering = jsonValue.GetBool("AllowExternalDataFiltering");
-
     m_allowExternalDataFilteringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowFullTableExternalDataAccess"))
   {
     m_allowFullTableExternalDataAccess = jsonValue.GetBool("AllowFullTableExternalDataAccess");
-
     m_allowFullTableExternalDataAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExternalDataFilteringAllowList"))
   {
     Aws::Utils::Array<JsonView> externalDataFilteringAllowListJsonList = jsonValue.GetArray("ExternalDataFilteringAllowList");
@@ -125,7 +98,6 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
     }
     m_externalDataFilteringAllowListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizedSessionTagValueList"))
   {
     Aws::Utils::Array<JsonView> authorizedSessionTagValueListJsonList = jsonValue.GetArray("AuthorizedSessionTagValueList");
@@ -135,7 +107,6 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
     }
     m_authorizedSessionTagValueListHasBeenSet = true;
   }
-
   return *this;
 }
 

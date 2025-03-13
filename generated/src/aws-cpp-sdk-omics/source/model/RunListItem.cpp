@@ -18,27 +18,7 @@ namespace Omics
 namespace Model
 {
 
-RunListItem::RunListItem() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_status(RunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_stopTimeHasBeenSet(false),
-    m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false)
-{
-}
-
 RunListItem::RunListItem(JsonView jsonValue)
-  : RunListItem()
 {
   *this = jsonValue;
 }
@@ -48,80 +28,58 @@ RunListItem& RunListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RunStatusMapper::GetRunStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowId"))
   {
     m_workflowId = jsonValue.GetString("workflowId");
-
     m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageCapacity"))
   {
     m_storageCapacity = jsonValue.GetInteger("storageCapacity");
-
     m_storageCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopTime"))
   {
     m_stopTime = jsonValue.GetString("stopTime");
-
     m_stopTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageType"))
   {
     m_storageType = StorageTypeMapper::GetStorageTypeForName(jsonValue.GetString("storageType"));
-
     m_storageTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

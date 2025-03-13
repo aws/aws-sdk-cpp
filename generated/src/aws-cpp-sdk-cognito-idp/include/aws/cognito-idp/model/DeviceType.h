@@ -37,7 +37,7 @@ namespace Model
   class DeviceType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API DeviceType();
+    AWS_COGNITOIDENTITYPROVIDER_API DeviceType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API DeviceType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API DeviceType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,26 @@ namespace Model
      * <p>The device key, for example
      * <code>us-west-2_EXAMPLE-a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
      */
-    inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
+    inline const Aws::String& GetDeviceKey() const { return m_deviceKey; }
     inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
-    inline void SetDeviceKey(const Aws::String& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
-    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::move(value); }
-    inline void SetDeviceKey(const char* value) { m_deviceKeyHasBeenSet = true; m_deviceKey.assign(value); }
-    inline DeviceType& WithDeviceKey(const Aws::String& value) { SetDeviceKey(value); return *this;}
-    inline DeviceType& WithDeviceKey(Aws::String&& value) { SetDeviceKey(std::move(value)); return *this;}
-    inline DeviceType& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
+    template<typename DeviceKeyT = Aws::String>
+    void SetDeviceKey(DeviceKeyT&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::forward<DeviceKeyT>(value); }
+    template<typename DeviceKeyT = Aws::String>
+    DeviceType& WithDeviceKey(DeviceKeyT&& value) { SetDeviceKey(std::forward<DeviceKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metadata about a user's device, like name and last-access source IP.</p>
      */
-    inline const Aws::Vector<AttributeType>& GetDeviceAttributes() const{ return m_deviceAttributes; }
+    inline const Aws::Vector<AttributeType>& GetDeviceAttributes() const { return m_deviceAttributes; }
     inline bool DeviceAttributesHasBeenSet() const { return m_deviceAttributesHasBeenSet; }
-    inline void SetDeviceAttributes(const Aws::Vector<AttributeType>& value) { m_deviceAttributesHasBeenSet = true; m_deviceAttributes = value; }
-    inline void SetDeviceAttributes(Aws::Vector<AttributeType>&& value) { m_deviceAttributesHasBeenSet = true; m_deviceAttributes = std::move(value); }
-    inline DeviceType& WithDeviceAttributes(const Aws::Vector<AttributeType>& value) { SetDeviceAttributes(value); return *this;}
-    inline DeviceType& WithDeviceAttributes(Aws::Vector<AttributeType>&& value) { SetDeviceAttributes(std::move(value)); return *this;}
-    inline DeviceType& AddDeviceAttributes(const AttributeType& value) { m_deviceAttributesHasBeenSet = true; m_deviceAttributes.push_back(value); return *this; }
-    inline DeviceType& AddDeviceAttributes(AttributeType&& value) { m_deviceAttributesHasBeenSet = true; m_deviceAttributes.push_back(std::move(value)); return *this; }
+    template<typename DeviceAttributesT = Aws::Vector<AttributeType>>
+    void SetDeviceAttributes(DeviceAttributesT&& value) { m_deviceAttributesHasBeenSet = true; m_deviceAttributes = std::forward<DeviceAttributesT>(value); }
+    template<typename DeviceAttributesT = Aws::Vector<AttributeType>>
+    DeviceType& WithDeviceAttributes(DeviceAttributesT&& value) { SetDeviceAttributes(std::forward<DeviceAttributesT>(value)); return *this;}
+    template<typename DeviceAttributesT = AttributeType>
+    DeviceType& AddDeviceAttributes(DeviceAttributesT&& value) { m_deviceAttributesHasBeenSet = true; m_deviceAttributes.emplace_back(std::forward<DeviceAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,12 +76,12 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeviceCreateDate() const{ return m_deviceCreateDate; }
+    inline const Aws::Utils::DateTime& GetDeviceCreateDate() const { return m_deviceCreateDate; }
     inline bool DeviceCreateDateHasBeenSet() const { return m_deviceCreateDateHasBeenSet; }
-    inline void SetDeviceCreateDate(const Aws::Utils::DateTime& value) { m_deviceCreateDateHasBeenSet = true; m_deviceCreateDate = value; }
-    inline void SetDeviceCreateDate(Aws::Utils::DateTime&& value) { m_deviceCreateDateHasBeenSet = true; m_deviceCreateDate = std::move(value); }
-    inline DeviceType& WithDeviceCreateDate(const Aws::Utils::DateTime& value) { SetDeviceCreateDate(value); return *this;}
-    inline DeviceType& WithDeviceCreateDate(Aws::Utils::DateTime&& value) { SetDeviceCreateDate(std::move(value)); return *this;}
+    template<typename DeviceCreateDateT = Aws::Utils::DateTime>
+    void SetDeviceCreateDate(DeviceCreateDateT&& value) { m_deviceCreateDateHasBeenSet = true; m_deviceCreateDate = std::forward<DeviceCreateDateT>(value); }
+    template<typename DeviceCreateDateT = Aws::Utils::DateTime>
+    DeviceType& WithDeviceCreateDate(DeviceCreateDateT&& value) { SetDeviceCreateDate(std::forward<DeviceCreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,24 +90,24 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeviceLastModifiedDate() const{ return m_deviceLastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetDeviceLastModifiedDate() const { return m_deviceLastModifiedDate; }
     inline bool DeviceLastModifiedDateHasBeenSet() const { return m_deviceLastModifiedDateHasBeenSet; }
-    inline void SetDeviceLastModifiedDate(const Aws::Utils::DateTime& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = value; }
-    inline void SetDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = std::move(value); }
-    inline DeviceType& WithDeviceLastModifiedDate(const Aws::Utils::DateTime& value) { SetDeviceLastModifiedDate(value); return *this;}
-    inline DeviceType& WithDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { SetDeviceLastModifiedDate(std::move(value)); return *this;}
+    template<typename DeviceLastModifiedDateT = Aws::Utils::DateTime>
+    void SetDeviceLastModifiedDate(DeviceLastModifiedDateT&& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = std::forward<DeviceLastModifiedDateT>(value); }
+    template<typename DeviceLastModifiedDateT = Aws::Utils::DateTime>
+    DeviceType& WithDeviceLastModifiedDate(DeviceLastModifiedDateT&& value) { SetDeviceLastModifiedDate(std::forward<DeviceLastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the user last signed in with the device.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeviceLastAuthenticatedDate() const{ return m_deviceLastAuthenticatedDate; }
+    inline const Aws::Utils::DateTime& GetDeviceLastAuthenticatedDate() const { return m_deviceLastAuthenticatedDate; }
     inline bool DeviceLastAuthenticatedDateHasBeenSet() const { return m_deviceLastAuthenticatedDateHasBeenSet; }
-    inline void SetDeviceLastAuthenticatedDate(const Aws::Utils::DateTime& value) { m_deviceLastAuthenticatedDateHasBeenSet = true; m_deviceLastAuthenticatedDate = value; }
-    inline void SetDeviceLastAuthenticatedDate(Aws::Utils::DateTime&& value) { m_deviceLastAuthenticatedDateHasBeenSet = true; m_deviceLastAuthenticatedDate = std::move(value); }
-    inline DeviceType& WithDeviceLastAuthenticatedDate(const Aws::Utils::DateTime& value) { SetDeviceLastAuthenticatedDate(value); return *this;}
-    inline DeviceType& WithDeviceLastAuthenticatedDate(Aws::Utils::DateTime&& value) { SetDeviceLastAuthenticatedDate(std::move(value)); return *this;}
+    template<typename DeviceLastAuthenticatedDateT = Aws::Utils::DateTime>
+    void SetDeviceLastAuthenticatedDate(DeviceLastAuthenticatedDateT&& value) { m_deviceLastAuthenticatedDateHasBeenSet = true; m_deviceLastAuthenticatedDate = std::forward<DeviceLastAuthenticatedDateT>(value); }
+    template<typename DeviceLastAuthenticatedDateT = Aws::Utils::DateTime>
+    DeviceType& WithDeviceLastAuthenticatedDate(DeviceLastAuthenticatedDateT&& value) { SetDeviceLastAuthenticatedDate(std::forward<DeviceLastAuthenticatedDateT>(value)); return *this;}
     ///@}
   private:
 
@@ -119,13 +117,13 @@ namespace Model
     Aws::Vector<AttributeType> m_deviceAttributes;
     bool m_deviceAttributesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deviceCreateDate;
+    Aws::Utils::DateTime m_deviceCreateDate{};
     bool m_deviceCreateDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deviceLastModifiedDate;
+    Aws::Utils::DateTime m_deviceLastModifiedDate{};
     bool m_deviceLastModifiedDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deviceLastAuthenticatedDate;
+    Aws::Utils::DateTime m_deviceLastAuthenticatedDate{};
     bool m_deviceLastAuthenticatedDateHasBeenSet = false;
   };
 

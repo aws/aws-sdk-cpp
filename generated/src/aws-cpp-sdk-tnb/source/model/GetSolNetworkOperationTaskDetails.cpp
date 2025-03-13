@@ -18,19 +18,7 @@ namespace tnb
 namespace Model
 {
 
-GetSolNetworkOperationTaskDetails::GetSolNetworkOperationTaskDetails() : 
-    m_taskContextHasBeenSet(false),
-    m_taskEndTimeHasBeenSet(false),
-    m_taskErrorDetailsHasBeenSet(false),
-    m_taskNameHasBeenSet(false),
-    m_taskStartTimeHasBeenSet(false),
-    m_taskStatus(TaskStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false)
-{
-}
-
 GetSolNetworkOperationTaskDetails::GetSolNetworkOperationTaskDetails(JsonView jsonValue)
-  : GetSolNetworkOperationTaskDetails()
 {
   *this = jsonValue;
 }
@@ -46,42 +34,31 @@ GetSolNetworkOperationTaskDetails& GetSolNetworkOperationTaskDetails::operator =
     }
     m_taskContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskEndTime"))
   {
     m_taskEndTime = jsonValue.GetString("taskEndTime");
-
     m_taskEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskErrorDetails"))
   {
     m_taskErrorDetails = jsonValue.GetObject("taskErrorDetails");
-
     m_taskErrorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskName"))
   {
     m_taskName = jsonValue.GetString("taskName");
-
     m_taskNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskStartTime"))
   {
     m_taskStartTime = jsonValue.GetString("taskStartTime");
-
     m_taskStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskStatus"))
   {
     m_taskStatus = TaskStatusMapper::GetTaskStatusForName(jsonValue.GetString("taskStatus"));
-
     m_taskStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

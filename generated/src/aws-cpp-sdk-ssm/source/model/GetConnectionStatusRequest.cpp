@@ -12,11 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConnectionStatusRequest::GetConnectionStatusRequest() : 
-    m_targetHasBeenSet(false)
-{
-}
-
 Aws::String GetConnectionStatusRequest::SerializePayload() const
 {
   JsonValue payload;

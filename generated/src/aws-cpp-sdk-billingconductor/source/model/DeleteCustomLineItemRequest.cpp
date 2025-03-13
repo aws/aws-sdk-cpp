@@ -12,12 +12,6 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCustomLineItemRequest::DeleteCustomLineItemRequest() : 
-    m_arnHasBeenSet(false),
-    m_billingPeriodRangeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomLineItemRequest::SerializePayload() const
 {
   JsonValue payload;

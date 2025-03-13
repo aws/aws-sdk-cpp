@@ -27,7 +27,7 @@ namespace Model
   class TagResourceResult
   {
   public:
-    AWS_BACKUPGATEWAY_API TagResourceResult();
+    AWS_BACKUPGATEWAY_API TagResourceResult() = default;
     AWS_BACKUPGATEWAY_API TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUPGATEWAY_API TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource you tagged.</p>
      */
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARN.assign(value); }
-    inline TagResourceResult& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline TagResourceResult& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline TagResourceResult& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    TagResourceResult& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TagResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TagResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TagResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TagResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceARN;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

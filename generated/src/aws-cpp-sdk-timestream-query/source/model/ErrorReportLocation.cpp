@@ -18,13 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-ErrorReportLocation::ErrorReportLocation() : 
-    m_s3ReportLocationHasBeenSet(false)
-{
-}
-
 ErrorReportLocation::ErrorReportLocation(JsonView jsonValue)
-  : ErrorReportLocation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ErrorReportLocation& ErrorReportLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3ReportLocation"))
   {
     m_s3ReportLocation = jsonValue.GetObject("S3ReportLocation");
-
     m_s3ReportLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

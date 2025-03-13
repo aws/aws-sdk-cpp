@@ -32,7 +32,7 @@ namespace Model
   class HlsId3SegmentTaggingScheduleActionSettings
   {
   public:
-    AWS_MEDIALIVE_API HlsId3SegmentTaggingScheduleActionSettings();
+    AWS_MEDIALIVE_API HlsId3SegmentTaggingScheduleActionSettings() = default;
     AWS_MEDIALIVE_API HlsId3SegmentTaggingScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API HlsId3SegmentTaggingScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * plain text. You can include standard MediaLive variable data such as the current
      * segment number.
      */
-    inline const Aws::String& GetTag() const{ return m_tag; }
+    inline const Aws::String& GetTag() const { return m_tag; }
     inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
-    inline void SetTag(const Aws::String& value) { m_tagHasBeenSet = true; m_tag = value; }
-    inline void SetTag(Aws::String&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
-    inline void SetTag(const char* value) { m_tagHasBeenSet = true; m_tag.assign(value); }
-    inline HlsId3SegmentTaggingScheduleActionSettings& WithTag(const Aws::String& value) { SetTag(value); return *this;}
-    inline HlsId3SegmentTaggingScheduleActionSettings& WithTag(Aws::String&& value) { SetTag(std::move(value)); return *this;}
-    inline HlsId3SegmentTaggingScheduleActionSettings& WithTag(const char* value) { SetTag(value); return *this;}
+    template<typename TagT = Aws::String>
+    void SetTag(TagT&& value) { m_tagHasBeenSet = true; m_tag = std::forward<TagT>(value); }
+    template<typename TagT = Aws::String>
+    HlsId3SegmentTaggingScheduleActionSettings& WithTag(TagT&& value) { SetTag(std::forward<TagT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * base64 string that contains one or more fully formed ID3 tags, according to the
      * ID3 specification: http://id3.org/id3v2.4.0-structure
      */
-    inline const Aws::String& GetId3() const{ return m_id3; }
+    inline const Aws::String& GetId3() const { return m_id3; }
     inline bool Id3HasBeenSet() const { return m_id3HasBeenSet; }
-    inline void SetId3(const Aws::String& value) { m_id3HasBeenSet = true; m_id3 = value; }
-    inline void SetId3(Aws::String&& value) { m_id3HasBeenSet = true; m_id3 = std::move(value); }
-    inline void SetId3(const char* value) { m_id3HasBeenSet = true; m_id3.assign(value); }
-    inline HlsId3SegmentTaggingScheduleActionSettings& WithId3(const Aws::String& value) { SetId3(value); return *this;}
-    inline HlsId3SegmentTaggingScheduleActionSettings& WithId3(Aws::String&& value) { SetId3(std::move(value)); return *this;}
-    inline HlsId3SegmentTaggingScheduleActionSettings& WithId3(const char* value) { SetId3(value); return *this;}
+    template<typename Id3T = Aws::String>
+    void SetId3(Id3T&& value) { m_id3HasBeenSet = true; m_id3 = std::forward<Id3T>(value); }
+    template<typename Id3T = Aws::String>
+    HlsId3SegmentTaggingScheduleActionSettings& WithId3(Id3T&& value) { SetId3(std::forward<Id3T>(value)); return *this;}
     ///@}
   private:
 

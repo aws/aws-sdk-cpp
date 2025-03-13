@@ -21,7 +21,7 @@ namespace Model
   class CreateMeetingDialOutRequest : public ChimeRequest
   {
   public:
-    AWS_CHIME_API CreateMeetingDialOutRequest();
+    AWS_CHIME_API CreateMeetingDialOutRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>The Amazon Chime SDK meeting ID.</p>
      */
-    inline const Aws::String& GetMeetingId() const{ return m_meetingId; }
+    inline const Aws::String& GetMeetingId() const { return m_meetingId; }
     inline bool MeetingIdHasBeenSet() const { return m_meetingIdHasBeenSet; }
-    inline void SetMeetingId(const Aws::String& value) { m_meetingIdHasBeenSet = true; m_meetingId = value; }
-    inline void SetMeetingId(Aws::String&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::move(value); }
-    inline void SetMeetingId(const char* value) { m_meetingIdHasBeenSet = true; m_meetingId.assign(value); }
-    inline CreateMeetingDialOutRequest& WithMeetingId(const Aws::String& value) { SetMeetingId(value); return *this;}
-    inline CreateMeetingDialOutRequest& WithMeetingId(Aws::String&& value) { SetMeetingId(std::move(value)); return *this;}
-    inline CreateMeetingDialOutRequest& WithMeetingId(const char* value) { SetMeetingId(value); return *this;}
+    template<typename MeetingIdT = Aws::String>
+    void SetMeetingId(MeetingIdT&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::forward<MeetingIdT>(value); }
+    template<typename MeetingIdT = Aws::String>
+    CreateMeetingDialOutRequest& WithMeetingId(MeetingIdT&& value) { SetMeetingId(std::forward<MeetingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Phone number used as the caller ID when the remote party receives a call.</p>
      */
-    inline const Aws::String& GetFromPhoneNumber() const{ return m_fromPhoneNumber; }
+    inline const Aws::String& GetFromPhoneNumber() const { return m_fromPhoneNumber; }
     inline bool FromPhoneNumberHasBeenSet() const { return m_fromPhoneNumberHasBeenSet; }
-    inline void SetFromPhoneNumber(const Aws::String& value) { m_fromPhoneNumberHasBeenSet = true; m_fromPhoneNumber = value; }
-    inline void SetFromPhoneNumber(Aws::String&& value) { m_fromPhoneNumberHasBeenSet = true; m_fromPhoneNumber = std::move(value); }
-    inline void SetFromPhoneNumber(const char* value) { m_fromPhoneNumberHasBeenSet = true; m_fromPhoneNumber.assign(value); }
-    inline CreateMeetingDialOutRequest& WithFromPhoneNumber(const Aws::String& value) { SetFromPhoneNumber(value); return *this;}
-    inline CreateMeetingDialOutRequest& WithFromPhoneNumber(Aws::String&& value) { SetFromPhoneNumber(std::move(value)); return *this;}
-    inline CreateMeetingDialOutRequest& WithFromPhoneNumber(const char* value) { SetFromPhoneNumber(value); return *this;}
+    template<typename FromPhoneNumberT = Aws::String>
+    void SetFromPhoneNumber(FromPhoneNumberT&& value) { m_fromPhoneNumberHasBeenSet = true; m_fromPhoneNumber = std::forward<FromPhoneNumberT>(value); }
+    template<typename FromPhoneNumberT = Aws::String>
+    CreateMeetingDialOutRequest& WithFromPhoneNumber(FromPhoneNumberT&& value) { SetFromPhoneNumber(std::forward<FromPhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Phone number called when inviting someone to a meeting.</p>
      */
-    inline const Aws::String& GetToPhoneNumber() const{ return m_toPhoneNumber; }
+    inline const Aws::String& GetToPhoneNumber() const { return m_toPhoneNumber; }
     inline bool ToPhoneNumberHasBeenSet() const { return m_toPhoneNumberHasBeenSet; }
-    inline void SetToPhoneNumber(const Aws::String& value) { m_toPhoneNumberHasBeenSet = true; m_toPhoneNumber = value; }
-    inline void SetToPhoneNumber(Aws::String&& value) { m_toPhoneNumberHasBeenSet = true; m_toPhoneNumber = std::move(value); }
-    inline void SetToPhoneNumber(const char* value) { m_toPhoneNumberHasBeenSet = true; m_toPhoneNumber.assign(value); }
-    inline CreateMeetingDialOutRequest& WithToPhoneNumber(const Aws::String& value) { SetToPhoneNumber(value); return *this;}
-    inline CreateMeetingDialOutRequest& WithToPhoneNumber(Aws::String&& value) { SetToPhoneNumber(std::move(value)); return *this;}
-    inline CreateMeetingDialOutRequest& WithToPhoneNumber(const char* value) { SetToPhoneNumber(value); return *this;}
+    template<typename ToPhoneNumberT = Aws::String>
+    void SetToPhoneNumber(ToPhoneNumberT&& value) { m_toPhoneNumberHasBeenSet = true; m_toPhoneNumber = std::forward<ToPhoneNumberT>(value); }
+    template<typename ToPhoneNumberT = Aws::String>
+    CreateMeetingDialOutRequest& WithToPhoneNumber(ToPhoneNumberT&& value) { SetToPhoneNumber(std::forward<ToPhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +74,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
      * action to get a join token.</p>
      */
-    inline const Aws::String& GetJoinToken() const{ return m_joinToken; }
+    inline const Aws::String& GetJoinToken() const { return m_joinToken; }
     inline bool JoinTokenHasBeenSet() const { return m_joinTokenHasBeenSet; }
-    inline void SetJoinToken(const Aws::String& value) { m_joinTokenHasBeenSet = true; m_joinToken = value; }
-    inline void SetJoinToken(Aws::String&& value) { m_joinTokenHasBeenSet = true; m_joinToken = std::move(value); }
-    inline void SetJoinToken(const char* value) { m_joinTokenHasBeenSet = true; m_joinToken.assign(value); }
-    inline CreateMeetingDialOutRequest& WithJoinToken(const Aws::String& value) { SetJoinToken(value); return *this;}
-    inline CreateMeetingDialOutRequest& WithJoinToken(Aws::String&& value) { SetJoinToken(std::move(value)); return *this;}
-    inline CreateMeetingDialOutRequest& WithJoinToken(const char* value) { SetJoinToken(value); return *this;}
+    template<typename JoinTokenT = Aws::String>
+    void SetJoinToken(JoinTokenT&& value) { m_joinTokenHasBeenSet = true; m_joinToken = std::forward<JoinTokenT>(value); }
+    template<typename JoinTokenT = Aws::String>
+    CreateMeetingDialOutRequest& WithJoinToken(JoinTokenT&& value) { SetJoinToken(std::forward<JoinTokenT>(value)); return *this;}
     ///@}
   private:
 

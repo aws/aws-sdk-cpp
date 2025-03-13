@@ -18,13 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-TunedHPOParams::TunedHPOParams() : 
-    m_algorithmHyperParametersHasBeenSet(false)
-{
-}
-
 TunedHPOParams::TunedHPOParams(JsonView jsonValue)
-  : TunedHPOParams()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TunedHPOParams& TunedHPOParams::operator =(JsonView jsonValue)
     }
     m_algorithmHyperParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

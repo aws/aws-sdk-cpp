@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-IdleSummary::IdleSummary() : 
-    m_name(IdleFinding::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 IdleSummary::IdleSummary(JsonView jsonValue)
-  : IdleSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IdleSummary& IdleSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = IdleFindingMapper::GetIdleFindingForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

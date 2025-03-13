@@ -18,14 +18,7 @@ namespace CodeGuruSecurity
 namespace Model
 {
 
-FindingIdentifier::FindingIdentifier() : 
-    m_findingIdHasBeenSet(false),
-    m_scanNameHasBeenSet(false)
-{
-}
-
 FindingIdentifier::FindingIdentifier(JsonView jsonValue)
-  : FindingIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FindingIdentifier& FindingIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("findingId"))
   {
     m_findingId = jsonValue.GetString("findingId");
-
     m_findingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanName"))
   {
     m_scanName = jsonValue.GetString("scanName");
-
     m_scanNameHasBeenSet = true;
   }
-
   return *this;
 }
 

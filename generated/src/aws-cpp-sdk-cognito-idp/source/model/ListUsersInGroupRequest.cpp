@@ -12,15 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListUsersInGroupRequest::ListUsersInGroupRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListUsersInGroupRequest::SerializePayload() const
 {
   JsonValue payload;

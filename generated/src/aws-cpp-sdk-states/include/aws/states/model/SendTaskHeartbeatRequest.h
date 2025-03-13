@@ -21,7 +21,7 @@ namespace Model
   class SendTaskHeartbeatRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API SendTaskHeartbeatRequest();
+    AWS_SFN_API SendTaskHeartbeatRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * object</a> when a workflow enters a task state. See
      * <a>GetActivityTaskOutput$taskToken</a>.</p>
      */
-    inline const Aws::String& GetTaskToken() const{ return m_taskToken; }
+    inline const Aws::String& GetTaskToken() const { return m_taskToken; }
     inline bool TaskTokenHasBeenSet() const { return m_taskTokenHasBeenSet; }
-    inline void SetTaskToken(const Aws::String& value) { m_taskTokenHasBeenSet = true; m_taskToken = value; }
-    inline void SetTaskToken(Aws::String&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::move(value); }
-    inline void SetTaskToken(const char* value) { m_taskTokenHasBeenSet = true; m_taskToken.assign(value); }
-    inline SendTaskHeartbeatRequest& WithTaskToken(const Aws::String& value) { SetTaskToken(value); return *this;}
-    inline SendTaskHeartbeatRequest& WithTaskToken(Aws::String&& value) { SetTaskToken(std::move(value)); return *this;}
-    inline SendTaskHeartbeatRequest& WithTaskToken(const char* value) { SetTaskToken(value); return *this;}
+    template<typename TaskTokenT = Aws::String>
+    void SetTaskToken(TaskTokenT&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::forward<TaskTokenT>(value); }
+    template<typename TaskTokenT = Aws::String>
+    SendTaskHeartbeatRequest& WithTaskToken(TaskTokenT&& value) { SetTaskToken(std::forward<TaskTokenT>(value)); return *this;}
     ///@}
   private:
 

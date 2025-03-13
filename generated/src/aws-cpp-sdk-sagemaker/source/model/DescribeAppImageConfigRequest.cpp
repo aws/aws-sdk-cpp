@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAppImageConfigRequest::DescribeAppImageConfigRequest() : 
-    m_appImageConfigNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAppImageConfigRequest::SerializePayload() const
 {
   JsonValue payload;

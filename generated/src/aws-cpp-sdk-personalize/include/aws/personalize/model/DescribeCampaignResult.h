@@ -28,7 +28,7 @@ namespace Model
   class DescribeCampaignResult
   {
   public:
-    AWS_PERSONALIZE_API DescribeCampaignResult();
+    AWS_PERSONALIZE_API DescribeCampaignResult() = default;
     AWS_PERSONALIZE_API DescribeCampaignResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API DescribeCampaignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The properties of the campaign.</p>
      */
-    inline const Campaign& GetCampaign() const{ return m_campaign; }
-    inline void SetCampaign(const Campaign& value) { m_campaign = value; }
-    inline void SetCampaign(Campaign&& value) { m_campaign = std::move(value); }
-    inline DescribeCampaignResult& WithCampaign(const Campaign& value) { SetCampaign(value); return *this;}
-    inline DescribeCampaignResult& WithCampaign(Campaign&& value) { SetCampaign(std::move(value)); return *this;}
+    inline const Campaign& GetCampaign() const { return m_campaign; }
+    template<typename CampaignT = Campaign>
+    void SetCampaign(CampaignT&& value) { m_campaignHasBeenSet = true; m_campaign = std::forward<CampaignT>(value); }
+    template<typename CampaignT = Campaign>
+    DescribeCampaignResult& WithCampaign(CampaignT&& value) { SetCampaign(std::forward<CampaignT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCampaignResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCampaignResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCampaignResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCampaignResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Campaign m_campaign;
+    bool m_campaignHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

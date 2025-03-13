@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricCharacteristics::MetricCharacteristics() : 
-    m_periodicSpikes(false),
-    m_periodicSpikesHasBeenSet(false)
-{
-}
-
 MetricCharacteristics::MetricCharacteristics(const XmlNode& xmlNode)
-  : MetricCharacteristics()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ MetricCharacteristics& MetricCharacteristics::operator =(const XmlNode& xmlNode)
     {
       m_periodicSpikes = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodicSpikesNode.GetText()).c_str()).c_str());
       m_periodicSpikesHasBeenSet = true;
+       m_periodicSpikesHasBeenSet = true;
     }
   }
 

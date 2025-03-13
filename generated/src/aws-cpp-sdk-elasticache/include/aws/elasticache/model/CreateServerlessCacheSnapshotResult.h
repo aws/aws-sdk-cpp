@@ -28,7 +28,7 @@ namespace Model
   class CreateServerlessCacheSnapshotResult
   {
   public:
-    AWS_ELASTICACHE_API CreateServerlessCacheSnapshotResult();
+    AWS_ELASTICACHE_API CreateServerlessCacheSnapshotResult() = default;
     AWS_ELASTICACHE_API CreateServerlessCacheSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API CreateServerlessCacheSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,26 +38,28 @@ namespace Model
      * <p>The state of a serverless cache snapshot at a specific point in time, to the
      * millisecond. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
      */
-    inline const ServerlessCacheSnapshot& GetServerlessCacheSnapshot() const{ return m_serverlessCacheSnapshot; }
-    inline void SetServerlessCacheSnapshot(const ServerlessCacheSnapshot& value) { m_serverlessCacheSnapshot = value; }
-    inline void SetServerlessCacheSnapshot(ServerlessCacheSnapshot&& value) { m_serverlessCacheSnapshot = std::move(value); }
-    inline CreateServerlessCacheSnapshotResult& WithServerlessCacheSnapshot(const ServerlessCacheSnapshot& value) { SetServerlessCacheSnapshot(value); return *this;}
-    inline CreateServerlessCacheSnapshotResult& WithServerlessCacheSnapshot(ServerlessCacheSnapshot&& value) { SetServerlessCacheSnapshot(std::move(value)); return *this;}
+    inline const ServerlessCacheSnapshot& GetServerlessCacheSnapshot() const { return m_serverlessCacheSnapshot; }
+    template<typename ServerlessCacheSnapshotT = ServerlessCacheSnapshot>
+    void SetServerlessCacheSnapshot(ServerlessCacheSnapshotT&& value) { m_serverlessCacheSnapshotHasBeenSet = true; m_serverlessCacheSnapshot = std::forward<ServerlessCacheSnapshotT>(value); }
+    template<typename ServerlessCacheSnapshotT = ServerlessCacheSnapshot>
+    CreateServerlessCacheSnapshotResult& WithServerlessCacheSnapshot(ServerlessCacheSnapshotT&& value) { SetServerlessCacheSnapshot(std::forward<ServerlessCacheSnapshotT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateServerlessCacheSnapshotResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateServerlessCacheSnapshotResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateServerlessCacheSnapshotResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ServerlessCacheSnapshot m_serverlessCacheSnapshot;
+    bool m_serverlessCacheSnapshotHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

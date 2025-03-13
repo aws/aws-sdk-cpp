@@ -34,7 +34,7 @@ namespace Model
   class DnsRuleGroupLimitExceededViolation
   {
   public:
-    AWS_FMS_API DnsRuleGroupLimitExceededViolation();
+    AWS_FMS_API DnsRuleGroupLimitExceededViolation() = default;
     AWS_FMS_API DnsRuleGroupLimitExceededViolation(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API DnsRuleGroupLimitExceededViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,35 +44,31 @@ namespace Model
     /**
      * <p>Information about the VPC ID. </p>
      */
-    inline const Aws::String& GetViolationTarget() const{ return m_violationTarget; }
+    inline const Aws::String& GetViolationTarget() const { return m_violationTarget; }
     inline bool ViolationTargetHasBeenSet() const { return m_violationTargetHasBeenSet; }
-    inline void SetViolationTarget(const Aws::String& value) { m_violationTargetHasBeenSet = true; m_violationTarget = value; }
-    inline void SetViolationTarget(Aws::String&& value) { m_violationTargetHasBeenSet = true; m_violationTarget = std::move(value); }
-    inline void SetViolationTarget(const char* value) { m_violationTargetHasBeenSet = true; m_violationTarget.assign(value); }
-    inline DnsRuleGroupLimitExceededViolation& WithViolationTarget(const Aws::String& value) { SetViolationTarget(value); return *this;}
-    inline DnsRuleGroupLimitExceededViolation& WithViolationTarget(Aws::String&& value) { SetViolationTarget(std::move(value)); return *this;}
-    inline DnsRuleGroupLimitExceededViolation& WithViolationTarget(const char* value) { SetViolationTarget(value); return *this;}
+    template<typename ViolationTargetT = Aws::String>
+    void SetViolationTarget(ViolationTargetT&& value) { m_violationTargetHasBeenSet = true; m_violationTarget = std::forward<ViolationTargetT>(value); }
+    template<typename ViolationTargetT = Aws::String>
+    DnsRuleGroupLimitExceededViolation& WithViolationTarget(ViolationTargetT&& value) { SetViolationTarget(std::forward<ViolationTargetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the violation that specifies the rule group and VPC.</p>
      */
-    inline const Aws::String& GetViolationTargetDescription() const{ return m_violationTargetDescription; }
+    inline const Aws::String& GetViolationTargetDescription() const { return m_violationTargetDescription; }
     inline bool ViolationTargetDescriptionHasBeenSet() const { return m_violationTargetDescriptionHasBeenSet; }
-    inline void SetViolationTargetDescription(const Aws::String& value) { m_violationTargetDescriptionHasBeenSet = true; m_violationTargetDescription = value; }
-    inline void SetViolationTargetDescription(Aws::String&& value) { m_violationTargetDescriptionHasBeenSet = true; m_violationTargetDescription = std::move(value); }
-    inline void SetViolationTargetDescription(const char* value) { m_violationTargetDescriptionHasBeenSet = true; m_violationTargetDescription.assign(value); }
-    inline DnsRuleGroupLimitExceededViolation& WithViolationTargetDescription(const Aws::String& value) { SetViolationTargetDescription(value); return *this;}
-    inline DnsRuleGroupLimitExceededViolation& WithViolationTargetDescription(Aws::String&& value) { SetViolationTargetDescription(std::move(value)); return *this;}
-    inline DnsRuleGroupLimitExceededViolation& WithViolationTargetDescription(const char* value) { SetViolationTargetDescription(value); return *this;}
+    template<typename ViolationTargetDescriptionT = Aws::String>
+    void SetViolationTargetDescription(ViolationTargetDescriptionT&& value) { m_violationTargetDescriptionHasBeenSet = true; m_violationTargetDescription = std::forward<ViolationTargetDescriptionT>(value); }
+    template<typename ViolationTargetDescriptionT = Aws::String>
+    DnsRuleGroupLimitExceededViolation& WithViolationTargetDescription(ViolationTargetDescriptionT&& value) { SetViolationTargetDescription(std::forward<ViolationTargetDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of rule groups currently associated with the VPC. </p>
      */
-    inline int GetNumberOfRuleGroupsAlreadyAssociated() const{ return m_numberOfRuleGroupsAlreadyAssociated; }
+    inline int GetNumberOfRuleGroupsAlreadyAssociated() const { return m_numberOfRuleGroupsAlreadyAssociated; }
     inline bool NumberOfRuleGroupsAlreadyAssociatedHasBeenSet() const { return m_numberOfRuleGroupsAlreadyAssociatedHasBeenSet; }
     inline void SetNumberOfRuleGroupsAlreadyAssociated(int value) { m_numberOfRuleGroupsAlreadyAssociatedHasBeenSet = true; m_numberOfRuleGroupsAlreadyAssociated = value; }
     inline DnsRuleGroupLimitExceededViolation& WithNumberOfRuleGroupsAlreadyAssociated(int value) { SetNumberOfRuleGroupsAlreadyAssociated(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_violationTargetDescription;
     bool m_violationTargetDescriptionHasBeenSet = false;
 
-    int m_numberOfRuleGroupsAlreadyAssociated;
+    int m_numberOfRuleGroupsAlreadyAssociated{0};
     bool m_numberOfRuleGroupsAlreadyAssociatedHasBeenSet = false;
   };
 

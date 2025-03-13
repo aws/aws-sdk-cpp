@@ -23,7 +23,7 @@ namespace Model
   class GetFindingStatisticsRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API GetFindingStatisticsRequest();
+    AWS_MACIE2_API GetFindingStatisticsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,12 @@ namespace Model
     /**
      * <p>The criteria to use to filter the query results.</p>
      */
-    inline const FindingCriteria& GetFindingCriteria() const{ return m_findingCriteria; }
+    inline const FindingCriteria& GetFindingCriteria() const { return m_findingCriteria; }
     inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }
-    inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = value; }
-    inline void SetFindingCriteria(FindingCriteria&& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = std::move(value); }
-    inline GetFindingStatisticsRequest& WithFindingCriteria(const FindingCriteria& value) { SetFindingCriteria(value); return *this;}
-    inline GetFindingStatisticsRequest& WithFindingCriteria(FindingCriteria&& value) { SetFindingCriteria(std::move(value)); return *this;}
+    template<typename FindingCriteriaT = FindingCriteria>
+    void SetFindingCriteria(FindingCriteriaT&& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = std::forward<FindingCriteriaT>(value); }
+    template<typename FindingCriteriaT = FindingCriteria>
+    GetFindingStatisticsRequest& WithFindingCriteria(FindingCriteriaT&& value) { SetFindingCriteria(std::forward<FindingCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +57,17 @@ namespace Model
      * such as Policy:IAMUser/S3BucketPublic and
      * SensitiveData:S3Object/Personal.</p></li></ul>
      */
-    inline const GroupBy& GetGroupBy() const{ return m_groupBy; }
+    inline GroupBy GetGroupBy() const { return m_groupBy; }
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
-    inline void SetGroupBy(const GroupBy& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
-    inline void SetGroupBy(GroupBy&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
-    inline GetFindingStatisticsRequest& WithGroupBy(const GroupBy& value) { SetGroupBy(value); return *this;}
-    inline GetFindingStatisticsRequest& WithGroupBy(GroupBy&& value) { SetGroupBy(std::move(value)); return *this;}
+    inline void SetGroupBy(GroupBy value) { m_groupByHasBeenSet = true; m_groupBy = value; }
+    inline GetFindingStatisticsRequest& WithGroupBy(GroupBy value) { SetGroupBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items to include in each page of the response.</p>
      */
-    inline int GetSize() const{ return m_size; }
+    inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
     inline GetFindingStatisticsRequest& WithSize(int value) { SetSize(value); return *this;}
@@ -79,22 +77,22 @@ namespace Model
     /**
      * <p>The criteria to use to sort the query results.</p>
      */
-    inline const FindingStatisticsSortCriteria& GetSortCriteria() const{ return m_sortCriteria; }
+    inline const FindingStatisticsSortCriteria& GetSortCriteria() const { return m_sortCriteria; }
     inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
-    inline void SetSortCriteria(const FindingStatisticsSortCriteria& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = value; }
-    inline void SetSortCriteria(FindingStatisticsSortCriteria&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::move(value); }
-    inline GetFindingStatisticsRequest& WithSortCriteria(const FindingStatisticsSortCriteria& value) { SetSortCriteria(value); return *this;}
-    inline GetFindingStatisticsRequest& WithSortCriteria(FindingStatisticsSortCriteria&& value) { SetSortCriteria(std::move(value)); return *this;}
+    template<typename SortCriteriaT = FindingStatisticsSortCriteria>
+    void SetSortCriteria(SortCriteriaT&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::forward<SortCriteriaT>(value); }
+    template<typename SortCriteriaT = FindingStatisticsSortCriteria>
+    GetFindingStatisticsRequest& WithSortCriteria(SortCriteriaT&& value) { SetSortCriteria(std::forward<SortCriteriaT>(value)); return *this;}
     ///@}
   private:
 
     FindingCriteria m_findingCriteria;
     bool m_findingCriteriaHasBeenSet = false;
 
-    GroupBy m_groupBy;
+    GroupBy m_groupBy{GroupBy::NOT_SET};
     bool m_groupByHasBeenSet = false;
 
-    int m_size;
+    int m_size{0};
     bool m_sizeHasBeenSet = false;
 
     FindingStatisticsSortCriteria m_sortCriteria;

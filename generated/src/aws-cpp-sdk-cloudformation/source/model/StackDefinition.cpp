@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackDefinition::StackDefinition() : 
-    m_stackNameHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_templateURLHasBeenSet(false)
-{
-}
-
 StackDefinition::StackDefinition(const XmlNode& xmlNode)
-  : StackDefinition()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ StackDefinition& StackDefinition::operator =(const XmlNode& xmlNode)
     {
       m_stackName = Aws::Utils::Xml::DecodeEscapedXmlText(stackNameNode.GetText());
       m_stackNameHasBeenSet = true;
+       m_stackNameHasBeenSet = true;
     }
     XmlNode templateBodyNode = resultNode.FirstChild("TemplateBody");
     if(!templateBodyNode.IsNull())
     {
       m_templateBody = Aws::Utils::Xml::DecodeEscapedXmlText(templateBodyNode.GetText());
       m_templateBodyHasBeenSet = true;
+       m_templateBodyHasBeenSet = true;
     }
     XmlNode templateURLNode = resultNode.FirstChild("TemplateURL");
     if(!templateURLNode.IsNull())
     {
       m_templateURL = Aws::Utils::Xml::DecodeEscapedXmlText(templateURLNode.GetText());
       m_templateURLHasBeenSet = true;
+       m_templateURLHasBeenSet = true;
     }
   }
 

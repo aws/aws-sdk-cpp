@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-VerifyDomainDkimResult::VerifyDomainDkimResult()
-{
-}
-
 VerifyDomainDkimResult::VerifyDomainDkimResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ VerifyDomainDkimResult& VerifyDomainDkimResult::operator =(const Aws::AmazonWebS
     if(!dkimTokensNode.IsNull())
     {
       XmlNode dkimTokensMember = dkimTokensNode.FirstChild("member");
+      m_dkimTokensHasBeenSet = !dkimTokensMember.IsNull();
       while(!dkimTokensMember.IsNull())
       {
         m_dkimTokens.push_back(dkimTokensMember.GetText());
@@ -54,6 +51,7 @@ VerifyDomainDkimResult& VerifyDomainDkimResult::operator =(const Aws::AmazonWebS
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::VerifyDomainDkimResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

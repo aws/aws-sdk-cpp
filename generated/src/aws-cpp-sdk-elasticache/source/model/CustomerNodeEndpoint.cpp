@@ -20,15 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CustomerNodeEndpoint::CustomerNodeEndpoint() : 
-    m_addressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 CustomerNodeEndpoint::CustomerNodeEndpoint(const XmlNode& xmlNode)
-  : CustomerNodeEndpoint()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ CustomerNodeEndpoint& CustomerNodeEndpoint::operator =(const XmlNode& xmlNode)
     {
       m_address = Aws::Utils::Xml::DecodeEscapedXmlText(addressNode.GetText());
       m_addressHasBeenSet = true;
+       m_addressHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
   }
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDomainNamesRequest::ListDomainNamesRequest() : 
-    m_engineType(EngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListDomainNamesRequest::SerializePayload() const
 {
   return {};

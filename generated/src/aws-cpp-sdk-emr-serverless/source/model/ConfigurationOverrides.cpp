@@ -18,14 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-ConfigurationOverrides::ConfigurationOverrides() : 
-    m_applicationConfigurationHasBeenSet(false),
-    m_monitoringConfigurationHasBeenSet(false)
-{
-}
-
 ConfigurationOverrides::ConfigurationOverrides(JsonView jsonValue)
-  : ConfigurationOverrides()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ConfigurationOverrides& ConfigurationOverrides::operator =(JsonView jsonValue)
     }
     m_applicationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monitoringConfiguration"))
   {
     m_monitoringConfiguration = jsonValue.GetObject("monitoringConfiguration");
-
     m_monitoringConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteWhatsAppMessageMediaRequest::DeleteWhatsAppMessageMediaRequest() : 
-    m_mediaIdHasBeenSet(false),
-    m_originationPhoneNumberIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWhatsAppMessageMediaRequest::SerializePayload() const
 {
   return {};

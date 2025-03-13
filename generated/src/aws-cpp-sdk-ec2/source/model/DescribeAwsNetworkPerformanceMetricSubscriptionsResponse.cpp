@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAwsNetworkPerformanceMetricSubscriptionsResponse::DescribeAwsNetworkPerformanceMetricSubscriptionsResponse()
-{
-}
-
 DescribeAwsNetworkPerformanceMetricSubscriptionsResponse::DescribeAwsNetworkPerformanceMetricSubscriptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DescribeAwsNetworkPerformanceMetricSubscriptionsResponse& DescribeAwsNetworkPerf
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode subscriptionsNode = resultNode.FirstChild("subscriptionSet");
     if(!subscriptionsNode.IsNull())
     {
       XmlNode subscriptionsMember = subscriptionsNode.FirstChild("item");
+      m_subscriptionsHasBeenSet = !subscriptionsMember.IsNull();
       while(!subscriptionsMember.IsNull())
       {
         m_subscriptions.push_back(subscriptionsMember);
@@ -61,6 +59,7 @@ DescribeAwsNetworkPerformanceMetricSubscriptionsResponse& DescribeAwsNetworkPerf
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeAwsNetworkPerformanceMetricSubscriptionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

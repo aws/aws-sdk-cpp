@@ -28,35 +28,35 @@ namespace Model
   class DisassociateIdentityProviderConfigResult
   {
   public:
-    AWS_EKS_API DisassociateIdentityProviderConfigResult();
+    AWS_EKS_API DisassociateIdentityProviderConfigResult() = default;
     AWS_EKS_API DisassociateIdentityProviderConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API DisassociateIdentityProviderConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Update& GetUpdate() const{ return m_update; }
-    inline void SetUpdate(const Update& value) { m_update = value; }
-    inline void SetUpdate(Update&& value) { m_update = std::move(value); }
-    inline DisassociateIdentityProviderConfigResult& WithUpdate(const Update& value) { SetUpdate(value); return *this;}
-    inline DisassociateIdentityProviderConfigResult& WithUpdate(Update&& value) { SetUpdate(std::move(value)); return *this;}
+    inline const Update& GetUpdate() const { return m_update; }
+    template<typename UpdateT = Update>
+    void SetUpdate(UpdateT&& value) { m_updateHasBeenSet = true; m_update = std::forward<UpdateT>(value); }
+    template<typename UpdateT = Update>
+    DisassociateIdentityProviderConfigResult& WithUpdate(UpdateT&& value) { SetUpdate(std::forward<UpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateIdentityProviderConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateIdentityProviderConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateIdentityProviderConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateIdentityProviderConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Update m_update;
+    bool m_updateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

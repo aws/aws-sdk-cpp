@@ -33,7 +33,7 @@ namespace Model
   class DeviceTemplate
   {
   public:
-    AWS_IOT1CLICKPROJECTS_API DeviceTemplate();
+    AWS_IOT1CLICKPROJECTS_API DeviceTemplate() = default;
     AWS_IOT1CLICKPROJECTS_API DeviceTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKPROJECTS_API DeviceTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKPROJECTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The device type, which currently must be <code>"button"</code>.</p>
      */
-    inline const Aws::String& GetDeviceType() const{ return m_deviceType; }
+    inline const Aws::String& GetDeviceType() const { return m_deviceType; }
     inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
-    inline void SetDeviceType(const Aws::String& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
-    inline void SetDeviceType(Aws::String&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::move(value); }
-    inline void SetDeviceType(const char* value) { m_deviceTypeHasBeenSet = true; m_deviceType.assign(value); }
-    inline DeviceTemplate& WithDeviceType(const Aws::String& value) { SetDeviceType(value); return *this;}
-    inline DeviceTemplate& WithDeviceType(Aws::String&& value) { SetDeviceType(std::move(value)); return *this;}
-    inline DeviceTemplate& WithDeviceType(const char* value) { SetDeviceType(value); return *this;}
+    template<typename DeviceTypeT = Aws::String>
+    void SetDeviceType(DeviceTypeT&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::forward<DeviceTypeT>(value); }
+    template<typename DeviceTypeT = Aws::String>
+    DeviceTemplate& WithDeviceType(DeviceTypeT&& value) { SetDeviceType(std::forward<DeviceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,16 @@ namespace Model
      * <p>An optional Lambda function to invoke instead of the default Lambda function
      * provided by the placement template.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCallbackOverrides() const{ return m_callbackOverrides; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCallbackOverrides() const { return m_callbackOverrides; }
     inline bool CallbackOverridesHasBeenSet() const { return m_callbackOverridesHasBeenSet; }
-    inline void SetCallbackOverrides(const Aws::Map<Aws::String, Aws::String>& value) { m_callbackOverridesHasBeenSet = true; m_callbackOverrides = value; }
-    inline void SetCallbackOverrides(Aws::Map<Aws::String, Aws::String>&& value) { m_callbackOverridesHasBeenSet = true; m_callbackOverrides = std::move(value); }
-    inline DeviceTemplate& WithCallbackOverrides(const Aws::Map<Aws::String, Aws::String>& value) { SetCallbackOverrides(value); return *this;}
-    inline DeviceTemplate& WithCallbackOverrides(Aws::Map<Aws::String, Aws::String>&& value) { SetCallbackOverrides(std::move(value)); return *this;}
-    inline DeviceTemplate& AddCallbackOverrides(const Aws::String& key, const Aws::String& value) { m_callbackOverridesHasBeenSet = true; m_callbackOverrides.emplace(key, value); return *this; }
-    inline DeviceTemplate& AddCallbackOverrides(Aws::String&& key, const Aws::String& value) { m_callbackOverridesHasBeenSet = true; m_callbackOverrides.emplace(std::move(key), value); return *this; }
-    inline DeviceTemplate& AddCallbackOverrides(const Aws::String& key, Aws::String&& value) { m_callbackOverridesHasBeenSet = true; m_callbackOverrides.emplace(key, std::move(value)); return *this; }
-    inline DeviceTemplate& AddCallbackOverrides(Aws::String&& key, Aws::String&& value) { m_callbackOverridesHasBeenSet = true; m_callbackOverrides.emplace(std::move(key), std::move(value)); return *this; }
-    inline DeviceTemplate& AddCallbackOverrides(const char* key, Aws::String&& value) { m_callbackOverridesHasBeenSet = true; m_callbackOverrides.emplace(key, std::move(value)); return *this; }
-    inline DeviceTemplate& AddCallbackOverrides(Aws::String&& key, const char* value) { m_callbackOverridesHasBeenSet = true; m_callbackOverrides.emplace(std::move(key), value); return *this; }
-    inline DeviceTemplate& AddCallbackOverrides(const char* key, const char* value) { m_callbackOverridesHasBeenSet = true; m_callbackOverrides.emplace(key, value); return *this; }
+    template<typename CallbackOverridesT = Aws::Map<Aws::String, Aws::String>>
+    void SetCallbackOverrides(CallbackOverridesT&& value) { m_callbackOverridesHasBeenSet = true; m_callbackOverrides = std::forward<CallbackOverridesT>(value); }
+    template<typename CallbackOverridesT = Aws::Map<Aws::String, Aws::String>>
+    DeviceTemplate& WithCallbackOverrides(CallbackOverridesT&& value) { SetCallbackOverrides(std::forward<CallbackOverridesT>(value)); return *this;}
+    template<typename CallbackOverridesKeyT = Aws::String, typename CallbackOverridesValueT = Aws::String>
+    DeviceTemplate& AddCallbackOverrides(CallbackOverridesKeyT&& key, CallbackOverridesValueT&& value) {
+      m_callbackOverridesHasBeenSet = true; m_callbackOverrides.emplace(std::forward<CallbackOverridesKeyT>(key), std::forward<CallbackOverridesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

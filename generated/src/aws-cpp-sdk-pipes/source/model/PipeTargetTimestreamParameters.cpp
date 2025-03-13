@@ -18,22 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeTargetTimestreamParameters::PipeTargetTimestreamParameters() : 
-    m_timeValueHasBeenSet(false),
-    m_epochTimeUnit(EpochTimeUnit::NOT_SET),
-    m_epochTimeUnitHasBeenSet(false),
-    m_timeFieldType(TimeFieldType::NOT_SET),
-    m_timeFieldTypeHasBeenSet(false),
-    m_timestampFormatHasBeenSet(false),
-    m_versionValueHasBeenSet(false),
-    m_dimensionMappingsHasBeenSet(false),
-    m_singleMeasureMappingsHasBeenSet(false),
-    m_multiMeasureMappingsHasBeenSet(false)
-{
-}
-
 PipeTargetTimestreamParameters::PipeTargetTimestreamParameters(JsonView jsonValue)
-  : PipeTargetTimestreamParameters()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ PipeTargetTimestreamParameters& PipeTargetTimestreamParameters::operator =(JsonV
   if(jsonValue.ValueExists("TimeValue"))
   {
     m_timeValue = jsonValue.GetString("TimeValue");
-
     m_timeValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EpochTimeUnit"))
   {
     m_epochTimeUnit = EpochTimeUnitMapper::GetEpochTimeUnitForName(jsonValue.GetString("EpochTimeUnit"));
-
     m_epochTimeUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeFieldType"))
   {
     m_timeFieldType = TimeFieldTypeMapper::GetTimeFieldTypeForName(jsonValue.GetString("TimeFieldType"));
-
     m_timeFieldTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimestampFormat"))
   {
     m_timestampFormat = jsonValue.GetString("TimestampFormat");
-
     m_timestampFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionValue"))
   {
     m_versionValue = jsonValue.GetString("VersionValue");
-
     m_versionValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionMappings"))
   {
     Aws::Utils::Array<JsonView> dimensionMappingsJsonList = jsonValue.GetArray("DimensionMappings");
@@ -84,7 +59,6 @@ PipeTargetTimestreamParameters& PipeTargetTimestreamParameters::operator =(JsonV
     }
     m_dimensionMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SingleMeasureMappings"))
   {
     Aws::Utils::Array<JsonView> singleMeasureMappingsJsonList = jsonValue.GetArray("SingleMeasureMappings");
@@ -94,7 +68,6 @@ PipeTargetTimestreamParameters& PipeTargetTimestreamParameters::operator =(JsonV
     }
     m_singleMeasureMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiMeasureMappings"))
   {
     Aws::Utils::Array<JsonView> multiMeasureMappingsJsonList = jsonValue.GetArray("MultiMeasureMappings");
@@ -104,7 +77,6 @@ PipeTargetTimestreamParameters& PipeTargetTimestreamParameters::operator =(JsonV
     }
     m_multiMeasureMappingsHasBeenSet = true;
   }
-
   return *this;
 }
 

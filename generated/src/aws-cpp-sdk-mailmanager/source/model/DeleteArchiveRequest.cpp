@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteArchiveRequest::DeleteArchiveRequest() : 
-    m_archiveIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteArchiveRequest::SerializePayload() const
 {
   JsonValue payload;

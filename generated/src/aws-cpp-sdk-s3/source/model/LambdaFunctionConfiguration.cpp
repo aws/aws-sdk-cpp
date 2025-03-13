@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-LambdaFunctionConfiguration::LambdaFunctionConfiguration() : 
-    m_idHasBeenSet(false),
-    m_lambdaFunctionArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 LambdaFunctionConfiguration::LambdaFunctionConfiguration(const XmlNode& xmlNode)
-  : LambdaFunctionConfiguration()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ LambdaFunctionConfiguration& LambdaFunctionConfiguration::operator =(const XmlNo
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode lambdaFunctionArnNode = resultNode.FirstChild("CloudFunction");
     if(!lambdaFunctionArnNode.IsNull())
     {
       m_lambdaFunctionArn = Aws::Utils::Xml::DecodeEscapedXmlText(lambdaFunctionArnNode.GetText());
       m_lambdaFunctionArnHasBeenSet = true;
+       m_lambdaFunctionArnHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("Event");
     if(!eventsNode.IsNull())
     {
       XmlNode eventMember = eventsNode;
+      m_eventsHasBeenSet = !eventMember.IsNull();
       while(!eventMember.IsNull())
       {
         m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));
         eventMember = eventMember.NextNode("Event");
       }
 
-      m_eventsHasBeenSet = true;
+       m_eventsHasBeenSet = true;
     }
     XmlNode filterNode = resultNode.FirstChild("Filter");
     if(!filterNode.IsNull())
     {
       m_filter = filterNode;
       m_filterHasBeenSet = true;
+       m_filterHasBeenSet = true;
     }
   }
 

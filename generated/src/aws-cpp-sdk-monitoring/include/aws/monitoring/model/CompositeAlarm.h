@@ -35,7 +35,7 @@ namespace Model
   class CompositeAlarm
   {
   public:
-    AWS_CLOUDWATCH_API CompositeAlarm();
+    AWS_CLOUDWATCH_API CompositeAlarm() = default;
     AWS_CLOUDWATCH_API CompositeAlarm(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API CompositeAlarm& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,7 +48,7 @@ namespace Model
      * <p>Indicates whether actions should be executed during any changes to the alarm
      * state.</p>
      */
-    inline bool GetActionsEnabled() const{ return m_actionsEnabled; }
+    inline bool GetActionsEnabled() const { return m_actionsEnabled; }
     inline bool ActionsEnabledHasBeenSet() const { return m_actionsEnabledHasBeenSet; }
     inline void SetActionsEnabled(bool value) { m_actionsEnabledHasBeenSet = true; m_actionsEnabled = value; }
     inline CompositeAlarm& WithActionsEnabled(bool value) { SetActionsEnabled(value); return *this;}
@@ -59,83 +59,74 @@ namespace Model
      * <p>The actions to execute when this alarm transitions to the ALARM state from
      * any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAlarmActions() const{ return m_alarmActions; }
+    inline const Aws::Vector<Aws::String>& GetAlarmActions() const { return m_alarmActions; }
     inline bool AlarmActionsHasBeenSet() const { return m_alarmActionsHasBeenSet; }
-    inline void SetAlarmActions(const Aws::Vector<Aws::String>& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
-    inline void SetAlarmActions(Aws::Vector<Aws::String>&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = std::move(value); }
-    inline CompositeAlarm& WithAlarmActions(const Aws::Vector<Aws::String>& value) { SetAlarmActions(value); return *this;}
-    inline CompositeAlarm& WithAlarmActions(Aws::Vector<Aws::String>&& value) { SetAlarmActions(std::move(value)); return *this;}
-    inline CompositeAlarm& AddAlarmActions(const Aws::String& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
-    inline CompositeAlarm& AddAlarmActions(Aws::String&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(std::move(value)); return *this; }
-    inline CompositeAlarm& AddAlarmActions(const char* value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
+    template<typename AlarmActionsT = Aws::Vector<Aws::String>>
+    void SetAlarmActions(AlarmActionsT&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = std::forward<AlarmActionsT>(value); }
+    template<typename AlarmActionsT = Aws::Vector<Aws::String>>
+    CompositeAlarm& WithAlarmActions(AlarmActionsT&& value) { SetAlarmActions(std::forward<AlarmActionsT>(value)); return *this;}
+    template<typename AlarmActionsT = Aws::String>
+    CompositeAlarm& AddAlarmActions(AlarmActionsT&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.emplace_back(std::forward<AlarmActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>
      */
-    inline const Aws::String& GetAlarmArn() const{ return m_alarmArn; }
+    inline const Aws::String& GetAlarmArn() const { return m_alarmArn; }
     inline bool AlarmArnHasBeenSet() const { return m_alarmArnHasBeenSet; }
-    inline void SetAlarmArn(const Aws::String& value) { m_alarmArnHasBeenSet = true; m_alarmArn = value; }
-    inline void SetAlarmArn(Aws::String&& value) { m_alarmArnHasBeenSet = true; m_alarmArn = std::move(value); }
-    inline void SetAlarmArn(const char* value) { m_alarmArnHasBeenSet = true; m_alarmArn.assign(value); }
-    inline CompositeAlarm& WithAlarmArn(const Aws::String& value) { SetAlarmArn(value); return *this;}
-    inline CompositeAlarm& WithAlarmArn(Aws::String&& value) { SetAlarmArn(std::move(value)); return *this;}
-    inline CompositeAlarm& WithAlarmArn(const char* value) { SetAlarmArn(value); return *this;}
+    template<typename AlarmArnT = Aws::String>
+    void SetAlarmArn(AlarmArnT&& value) { m_alarmArnHasBeenSet = true; m_alarmArn = std::forward<AlarmArnT>(value); }
+    template<typename AlarmArnT = Aws::String>
+    CompositeAlarm& WithAlarmArn(AlarmArnT&& value) { SetAlarmArn(std::forward<AlarmArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time stamp of the last update to the alarm configuration.</p>
      */
-    inline const Aws::Utils::DateTime& GetAlarmConfigurationUpdatedTimestamp() const{ return m_alarmConfigurationUpdatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetAlarmConfigurationUpdatedTimestamp() const { return m_alarmConfigurationUpdatedTimestamp; }
     inline bool AlarmConfigurationUpdatedTimestampHasBeenSet() const { return m_alarmConfigurationUpdatedTimestampHasBeenSet; }
-    inline void SetAlarmConfigurationUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = value; }
-    inline void SetAlarmConfigurationUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = std::move(value); }
-    inline CompositeAlarm& WithAlarmConfigurationUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
-    inline CompositeAlarm& WithAlarmConfigurationUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetAlarmConfigurationUpdatedTimestamp(std::move(value)); return *this;}
+    template<typename AlarmConfigurationUpdatedTimestampT = Aws::Utils::DateTime>
+    void SetAlarmConfigurationUpdatedTimestamp(AlarmConfigurationUpdatedTimestampT&& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = std::forward<AlarmConfigurationUpdatedTimestampT>(value); }
+    template<typename AlarmConfigurationUpdatedTimestampT = Aws::Utils::DateTime>
+    CompositeAlarm& WithAlarmConfigurationUpdatedTimestamp(AlarmConfigurationUpdatedTimestampT&& value) { SetAlarmConfigurationUpdatedTimestamp(std::forward<AlarmConfigurationUpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the alarm.</p>
      */
-    inline const Aws::String& GetAlarmDescription() const{ return m_alarmDescription; }
+    inline const Aws::String& GetAlarmDescription() const { return m_alarmDescription; }
     inline bool AlarmDescriptionHasBeenSet() const { return m_alarmDescriptionHasBeenSet; }
-    inline void SetAlarmDescription(const Aws::String& value) { m_alarmDescriptionHasBeenSet = true; m_alarmDescription = value; }
-    inline void SetAlarmDescription(Aws::String&& value) { m_alarmDescriptionHasBeenSet = true; m_alarmDescription = std::move(value); }
-    inline void SetAlarmDescription(const char* value) { m_alarmDescriptionHasBeenSet = true; m_alarmDescription.assign(value); }
-    inline CompositeAlarm& WithAlarmDescription(const Aws::String& value) { SetAlarmDescription(value); return *this;}
-    inline CompositeAlarm& WithAlarmDescription(Aws::String&& value) { SetAlarmDescription(std::move(value)); return *this;}
-    inline CompositeAlarm& WithAlarmDescription(const char* value) { SetAlarmDescription(value); return *this;}
+    template<typename AlarmDescriptionT = Aws::String>
+    void SetAlarmDescription(AlarmDescriptionT&& value) { m_alarmDescriptionHasBeenSet = true; m_alarmDescription = std::forward<AlarmDescriptionT>(value); }
+    template<typename AlarmDescriptionT = Aws::String>
+    CompositeAlarm& WithAlarmDescription(AlarmDescriptionT&& value) { SetAlarmDescription(std::forward<AlarmDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the alarm.</p>
      */
-    inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+    inline const Aws::String& GetAlarmName() const { return m_alarmName; }
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
-    inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
-    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
-    inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
-    inline CompositeAlarm& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
-    inline CompositeAlarm& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
-    inline CompositeAlarm& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+    template<typename AlarmNameT = Aws::String>
+    void SetAlarmName(AlarmNameT&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::forward<AlarmNameT>(value); }
+    template<typename AlarmNameT = Aws::String>
+    CompositeAlarm& WithAlarmName(AlarmNameT&& value) { SetAlarmName(std::forward<AlarmNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule that this alarm uses to evaluate its alarm state.</p>
      */
-    inline const Aws::String& GetAlarmRule() const{ return m_alarmRule; }
+    inline const Aws::String& GetAlarmRule() const { return m_alarmRule; }
     inline bool AlarmRuleHasBeenSet() const { return m_alarmRuleHasBeenSet; }
-    inline void SetAlarmRule(const Aws::String& value) { m_alarmRuleHasBeenSet = true; m_alarmRule = value; }
-    inline void SetAlarmRule(Aws::String&& value) { m_alarmRuleHasBeenSet = true; m_alarmRule = std::move(value); }
-    inline void SetAlarmRule(const char* value) { m_alarmRuleHasBeenSet = true; m_alarmRule.assign(value); }
-    inline CompositeAlarm& WithAlarmRule(const Aws::String& value) { SetAlarmRule(value); return *this;}
-    inline CompositeAlarm& WithAlarmRule(Aws::String&& value) { SetAlarmRule(std::move(value)); return *this;}
-    inline CompositeAlarm& WithAlarmRule(const char* value) { SetAlarmRule(value); return *this;}
+    template<typename AlarmRuleT = Aws::String>
+    void SetAlarmRule(AlarmRuleT&& value) { m_alarmRuleHasBeenSet = true; m_alarmRule = std::forward<AlarmRuleT>(value); }
+    template<typename AlarmRuleT = Aws::String>
+    CompositeAlarm& WithAlarmRule(AlarmRuleT&& value) { SetAlarmRule(std::forward<AlarmRuleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,15 +135,14 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInsufficientDataActions() const{ return m_insufficientDataActions; }
+    inline const Aws::Vector<Aws::String>& GetInsufficientDataActions() const { return m_insufficientDataActions; }
     inline bool InsufficientDataActionsHasBeenSet() const { return m_insufficientDataActionsHasBeenSet; }
-    inline void SetInsufficientDataActions(const Aws::Vector<Aws::String>& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = value; }
-    inline void SetInsufficientDataActions(Aws::Vector<Aws::String>&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = std::move(value); }
-    inline CompositeAlarm& WithInsufficientDataActions(const Aws::Vector<Aws::String>& value) { SetInsufficientDataActions(value); return *this;}
-    inline CompositeAlarm& WithInsufficientDataActions(Aws::Vector<Aws::String>&& value) { SetInsufficientDataActions(std::move(value)); return *this;}
-    inline CompositeAlarm& AddInsufficientDataActions(const Aws::String& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
-    inline CompositeAlarm& AddInsufficientDataActions(Aws::String&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(std::move(value)); return *this; }
-    inline CompositeAlarm& AddInsufficientDataActions(const char* value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
+    template<typename InsufficientDataActionsT = Aws::Vector<Aws::String>>
+    void SetInsufficientDataActions(InsufficientDataActionsT&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = std::forward<InsufficientDataActionsT>(value); }
+    template<typename InsufficientDataActionsT = Aws::Vector<Aws::String>>
+    CompositeAlarm& WithInsufficientDataActions(InsufficientDataActionsT&& value) { SetInsufficientDataActions(std::forward<InsufficientDataActionsT>(value)); return *this;}
+    template<typename InsufficientDataActionsT = Aws::String>
+    CompositeAlarm& AddInsufficientDataActions(InsufficientDataActionsT&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.emplace_back(std::forward<InsufficientDataActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -160,43 +150,38 @@ namespace Model
      * <p>The actions to execute when this alarm transitions to the OK state from any
      * other state. Each action is specified as an Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOKActions() const{ return m_oKActions; }
+    inline const Aws::Vector<Aws::String>& GetOKActions() const { return m_oKActions; }
     inline bool OKActionsHasBeenSet() const { return m_oKActionsHasBeenSet; }
-    inline void SetOKActions(const Aws::Vector<Aws::String>& value) { m_oKActionsHasBeenSet = true; m_oKActions = value; }
-    inline void SetOKActions(Aws::Vector<Aws::String>&& value) { m_oKActionsHasBeenSet = true; m_oKActions = std::move(value); }
-    inline CompositeAlarm& WithOKActions(const Aws::Vector<Aws::String>& value) { SetOKActions(value); return *this;}
-    inline CompositeAlarm& WithOKActions(Aws::Vector<Aws::String>&& value) { SetOKActions(std::move(value)); return *this;}
-    inline CompositeAlarm& AddOKActions(const Aws::String& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
-    inline CompositeAlarm& AddOKActions(Aws::String&& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(std::move(value)); return *this; }
-    inline CompositeAlarm& AddOKActions(const char* value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
+    template<typename OKActionsT = Aws::Vector<Aws::String>>
+    void SetOKActions(OKActionsT&& value) { m_oKActionsHasBeenSet = true; m_oKActions = std::forward<OKActionsT>(value); }
+    template<typename OKActionsT = Aws::Vector<Aws::String>>
+    CompositeAlarm& WithOKActions(OKActionsT&& value) { SetOKActions(std::forward<OKActionsT>(value)); return *this;}
+    template<typename OKActionsT = Aws::String>
+    CompositeAlarm& AddOKActions(OKActionsT&& value) { m_oKActionsHasBeenSet = true; m_oKActions.emplace_back(std::forward<OKActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An explanation for the alarm state, in text format.</p>
      */
-    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
+    inline const Aws::String& GetStateReason() const { return m_stateReason; }
     inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
-    inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
-    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
-    inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
-    inline CompositeAlarm& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
-    inline CompositeAlarm& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
-    inline CompositeAlarm& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+    template<typename StateReasonT = Aws::String>
+    void SetStateReason(StateReasonT&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::forward<StateReasonT>(value); }
+    template<typename StateReasonT = Aws::String>
+    CompositeAlarm& WithStateReason(StateReasonT&& value) { SetStateReason(std::forward<StateReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An explanation for the alarm state, in JSON format.</p>
      */
-    inline const Aws::String& GetStateReasonData() const{ return m_stateReasonData; }
+    inline const Aws::String& GetStateReasonData() const { return m_stateReasonData; }
     inline bool StateReasonDataHasBeenSet() const { return m_stateReasonDataHasBeenSet; }
-    inline void SetStateReasonData(const Aws::String& value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData = value; }
-    inline void SetStateReasonData(Aws::String&& value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData = std::move(value); }
-    inline void SetStateReasonData(const char* value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData.assign(value); }
-    inline CompositeAlarm& WithStateReasonData(const Aws::String& value) { SetStateReasonData(value); return *this;}
-    inline CompositeAlarm& WithStateReasonData(Aws::String&& value) { SetStateReasonData(std::move(value)); return *this;}
-    inline CompositeAlarm& WithStateReasonData(const char* value) { SetStateReasonData(value); return *this;}
+    template<typename StateReasonDataT = Aws::String>
+    void SetStateReasonData(StateReasonDataT&& value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData = std::forward<StateReasonDataT>(value); }
+    template<typename StateReasonDataT = Aws::String>
+    CompositeAlarm& WithStateReasonData(StateReasonDataT&& value) { SetStateReasonData(std::forward<StateReasonDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -204,24 +189,22 @@ namespace Model
      * <p>Tracks the timestamp of any state update, even if <code>StateValue</code>
      * doesn't change.</p>
      */
-    inline const Aws::Utils::DateTime& GetStateUpdatedTimestamp() const{ return m_stateUpdatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetStateUpdatedTimestamp() const { return m_stateUpdatedTimestamp; }
     inline bool StateUpdatedTimestampHasBeenSet() const { return m_stateUpdatedTimestampHasBeenSet; }
-    inline void SetStateUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
-    inline void SetStateUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = std::move(value); }
-    inline CompositeAlarm& WithStateUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetStateUpdatedTimestamp(value); return *this;}
-    inline CompositeAlarm& WithStateUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetStateUpdatedTimestamp(std::move(value)); return *this;}
+    template<typename StateUpdatedTimestampT = Aws::Utils::DateTime>
+    void SetStateUpdatedTimestamp(StateUpdatedTimestampT&& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = std::forward<StateUpdatedTimestampT>(value); }
+    template<typename StateUpdatedTimestampT = Aws::Utils::DateTime>
+    CompositeAlarm& WithStateUpdatedTimestamp(StateUpdatedTimestampT&& value) { SetStateUpdatedTimestamp(std::forward<StateUpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state value for the alarm.</p>
      */
-    inline const StateValue& GetStateValue() const{ return m_stateValue; }
+    inline StateValue GetStateValue() const { return m_stateValue; }
     inline bool StateValueHasBeenSet() const { return m_stateValueHasBeenSet; }
-    inline void SetStateValue(const StateValue& value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
-    inline void SetStateValue(StateValue&& value) { m_stateValueHasBeenSet = true; m_stateValue = std::move(value); }
-    inline CompositeAlarm& WithStateValue(const StateValue& value) { SetStateValue(value); return *this;}
-    inline CompositeAlarm& WithStateValue(StateValue&& value) { SetStateValue(std::move(value)); return *this;}
+    inline void SetStateValue(StateValue value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
+    inline CompositeAlarm& WithStateValue(StateValue value) { SetStateValue(value); return *this;}
     ///@}
 
     ///@{
@@ -229,12 +212,12 @@ namespace Model
      * <p> The timestamp of the last change to the alarm's <code>StateValue</code>.
      * </p>
      */
-    inline const Aws::Utils::DateTime& GetStateTransitionedTimestamp() const{ return m_stateTransitionedTimestamp; }
+    inline const Aws::Utils::DateTime& GetStateTransitionedTimestamp() const { return m_stateTransitionedTimestamp; }
     inline bool StateTransitionedTimestampHasBeenSet() const { return m_stateTransitionedTimestampHasBeenSet; }
-    inline void SetStateTransitionedTimestamp(const Aws::Utils::DateTime& value) { m_stateTransitionedTimestampHasBeenSet = true; m_stateTransitionedTimestamp = value; }
-    inline void SetStateTransitionedTimestamp(Aws::Utils::DateTime&& value) { m_stateTransitionedTimestampHasBeenSet = true; m_stateTransitionedTimestamp = std::move(value); }
-    inline CompositeAlarm& WithStateTransitionedTimestamp(const Aws::Utils::DateTime& value) { SetStateTransitionedTimestamp(value); return *this;}
-    inline CompositeAlarm& WithStateTransitionedTimestamp(Aws::Utils::DateTime&& value) { SetStateTransitionedTimestamp(std::move(value)); return *this;}
+    template<typename StateTransitionedTimestampT = Aws::Utils::DateTime>
+    void SetStateTransitionedTimestamp(StateTransitionedTimestampT&& value) { m_stateTransitionedTimestampHasBeenSet = true; m_stateTransitionedTimestamp = std::forward<StateTransitionedTimestampT>(value); }
+    template<typename StateTransitionedTimestampT = Aws::Utils::DateTime>
+    CompositeAlarm& WithStateTransitionedTimestamp(StateTransitionedTimestampT&& value) { SetStateTransitionedTimestamp(std::forward<StateTransitionedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -251,26 +234,22 @@ namespace Model
      * time is as specified in <code>ActionsSuppressorExtensionPeriod</code>. After
      * this time, the composite alarm performs its actions. </p>
      */
-    inline const ActionsSuppressedBy& GetActionsSuppressedBy() const{ return m_actionsSuppressedBy; }
+    inline ActionsSuppressedBy GetActionsSuppressedBy() const { return m_actionsSuppressedBy; }
     inline bool ActionsSuppressedByHasBeenSet() const { return m_actionsSuppressedByHasBeenSet; }
-    inline void SetActionsSuppressedBy(const ActionsSuppressedBy& value) { m_actionsSuppressedByHasBeenSet = true; m_actionsSuppressedBy = value; }
-    inline void SetActionsSuppressedBy(ActionsSuppressedBy&& value) { m_actionsSuppressedByHasBeenSet = true; m_actionsSuppressedBy = std::move(value); }
-    inline CompositeAlarm& WithActionsSuppressedBy(const ActionsSuppressedBy& value) { SetActionsSuppressedBy(value); return *this;}
-    inline CompositeAlarm& WithActionsSuppressedBy(ActionsSuppressedBy&& value) { SetActionsSuppressedBy(std::move(value)); return *this;}
+    inline void SetActionsSuppressedBy(ActionsSuppressedBy value) { m_actionsSuppressedByHasBeenSet = true; m_actionsSuppressedBy = value; }
+    inline CompositeAlarm& WithActionsSuppressedBy(ActionsSuppressedBy value) { SetActionsSuppressedBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Captures the reason for action suppression. </p>
      */
-    inline const Aws::String& GetActionsSuppressedReason() const{ return m_actionsSuppressedReason; }
+    inline const Aws::String& GetActionsSuppressedReason() const { return m_actionsSuppressedReason; }
     inline bool ActionsSuppressedReasonHasBeenSet() const { return m_actionsSuppressedReasonHasBeenSet; }
-    inline void SetActionsSuppressedReason(const Aws::String& value) { m_actionsSuppressedReasonHasBeenSet = true; m_actionsSuppressedReason = value; }
-    inline void SetActionsSuppressedReason(Aws::String&& value) { m_actionsSuppressedReasonHasBeenSet = true; m_actionsSuppressedReason = std::move(value); }
-    inline void SetActionsSuppressedReason(const char* value) { m_actionsSuppressedReasonHasBeenSet = true; m_actionsSuppressedReason.assign(value); }
-    inline CompositeAlarm& WithActionsSuppressedReason(const Aws::String& value) { SetActionsSuppressedReason(value); return *this;}
-    inline CompositeAlarm& WithActionsSuppressedReason(Aws::String&& value) { SetActionsSuppressedReason(std::move(value)); return *this;}
-    inline CompositeAlarm& WithActionsSuppressedReason(const char* value) { SetActionsSuppressedReason(value); return *this;}
+    template<typename ActionsSuppressedReasonT = Aws::String>
+    void SetActionsSuppressedReason(ActionsSuppressedReasonT&& value) { m_actionsSuppressedReasonHasBeenSet = true; m_actionsSuppressedReason = std::forward<ActionsSuppressedReasonT>(value); }
+    template<typename ActionsSuppressedReasonT = Aws::String>
+    CompositeAlarm& WithActionsSuppressedReason(ActionsSuppressedReasonT&& value) { SetActionsSuppressedReason(std::forward<ActionsSuppressedReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -279,14 +258,12 @@ namespace Model
      * <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or
      * an Amazon Resource Name (ARN) from an existing alarm. </p>
      */
-    inline const Aws::String& GetActionsSuppressor() const{ return m_actionsSuppressor; }
+    inline const Aws::String& GetActionsSuppressor() const { return m_actionsSuppressor; }
     inline bool ActionsSuppressorHasBeenSet() const { return m_actionsSuppressorHasBeenSet; }
-    inline void SetActionsSuppressor(const Aws::String& value) { m_actionsSuppressorHasBeenSet = true; m_actionsSuppressor = value; }
-    inline void SetActionsSuppressor(Aws::String&& value) { m_actionsSuppressorHasBeenSet = true; m_actionsSuppressor = std::move(value); }
-    inline void SetActionsSuppressor(const char* value) { m_actionsSuppressorHasBeenSet = true; m_actionsSuppressor.assign(value); }
-    inline CompositeAlarm& WithActionsSuppressor(const Aws::String& value) { SetActionsSuppressor(value); return *this;}
-    inline CompositeAlarm& WithActionsSuppressor(Aws::String&& value) { SetActionsSuppressor(std::move(value)); return *this;}
-    inline CompositeAlarm& WithActionsSuppressor(const char* value) { SetActionsSuppressor(value); return *this;}
+    template<typename ActionsSuppressorT = Aws::String>
+    void SetActionsSuppressor(ActionsSuppressorT&& value) { m_actionsSuppressorHasBeenSet = true; m_actionsSuppressor = std::forward<ActionsSuppressorT>(value); }
+    template<typename ActionsSuppressorT = Aws::String>
+    CompositeAlarm& WithActionsSuppressor(ActionsSuppressorT&& value) { SetActionsSuppressor(std::forward<ActionsSuppressorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -297,7 +274,7 @@ namespace Model
      * <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is
      * specified. </p> 
      */
-    inline int GetActionsSuppressorWaitPeriod() const{ return m_actionsSuppressorWaitPeriod; }
+    inline int GetActionsSuppressorWaitPeriod() const { return m_actionsSuppressorWaitPeriod; }
     inline bool ActionsSuppressorWaitPeriodHasBeenSet() const { return m_actionsSuppressorWaitPeriodHasBeenSet; }
     inline void SetActionsSuppressorWaitPeriod(int value) { m_actionsSuppressorWaitPeriodHasBeenSet = true; m_actionsSuppressorWaitPeriod = value; }
     inline CompositeAlarm& WithActionsSuppressorWaitPeriod(int value) { SetActionsSuppressorWaitPeriod(value); return *this;}
@@ -311,14 +288,14 @@ namespace Model
      * required only when <code>ActionsSuppressor</code> is specified. </p>
      * 
      */
-    inline int GetActionsSuppressorExtensionPeriod() const{ return m_actionsSuppressorExtensionPeriod; }
+    inline int GetActionsSuppressorExtensionPeriod() const { return m_actionsSuppressorExtensionPeriod; }
     inline bool ActionsSuppressorExtensionPeriodHasBeenSet() const { return m_actionsSuppressorExtensionPeriodHasBeenSet; }
     inline void SetActionsSuppressorExtensionPeriod(int value) { m_actionsSuppressorExtensionPeriodHasBeenSet = true; m_actionsSuppressorExtensionPeriod = value; }
     inline CompositeAlarm& WithActionsSuppressorExtensionPeriod(int value) { SetActionsSuppressorExtensionPeriod(value); return *this;}
     ///@}
   private:
 
-    bool m_actionsEnabled;
+    bool m_actionsEnabled{false};
     bool m_actionsEnabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_alarmActions;
@@ -327,7 +304,7 @@ namespace Model
     Aws::String m_alarmArn;
     bool m_alarmArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_alarmConfigurationUpdatedTimestamp;
+    Aws::Utils::DateTime m_alarmConfigurationUpdatedTimestamp{};
     bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
 
     Aws::String m_alarmDescription;
@@ -351,16 +328,16 @@ namespace Model
     Aws::String m_stateReasonData;
     bool m_stateReasonDataHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stateUpdatedTimestamp;
+    Aws::Utils::DateTime m_stateUpdatedTimestamp{};
     bool m_stateUpdatedTimestampHasBeenSet = false;
 
-    StateValue m_stateValue;
+    StateValue m_stateValue{StateValue::NOT_SET};
     bool m_stateValueHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stateTransitionedTimestamp;
+    Aws::Utils::DateTime m_stateTransitionedTimestamp{};
     bool m_stateTransitionedTimestampHasBeenSet = false;
 
-    ActionsSuppressedBy m_actionsSuppressedBy;
+    ActionsSuppressedBy m_actionsSuppressedBy{ActionsSuppressedBy::NOT_SET};
     bool m_actionsSuppressedByHasBeenSet = false;
 
     Aws::String m_actionsSuppressedReason;
@@ -369,10 +346,10 @@ namespace Model
     Aws::String m_actionsSuppressor;
     bool m_actionsSuppressorHasBeenSet = false;
 
-    int m_actionsSuppressorWaitPeriod;
+    int m_actionsSuppressorWaitPeriod{0};
     bool m_actionsSuppressorWaitPeriodHasBeenSet = false;
 
-    int m_actionsSuppressorExtensionPeriod;
+    int m_actionsSuppressorExtensionPeriod{0};
     bool m_actionsSuppressorExtensionPeriodHasBeenSet = false;
   };
 

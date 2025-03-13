@@ -28,33 +28,35 @@ namespace Model
   class IncreaseNodeGroupsInGlobalReplicationGroupResult
   {
   public:
-    AWS_ELASTICACHE_API IncreaseNodeGroupsInGlobalReplicationGroupResult();
+    AWS_ELASTICACHE_API IncreaseNodeGroupsInGlobalReplicationGroupResult() = default;
     AWS_ELASTICACHE_API IncreaseNodeGroupsInGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API IncreaseNodeGroupsInGlobalReplicationGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const GlobalReplicationGroup& GetGlobalReplicationGroup() const{ return m_globalReplicationGroup; }
-    inline void SetGlobalReplicationGroup(const GlobalReplicationGroup& value) { m_globalReplicationGroup = value; }
-    inline void SetGlobalReplicationGroup(GlobalReplicationGroup&& value) { m_globalReplicationGroup = std::move(value); }
-    inline IncreaseNodeGroupsInGlobalReplicationGroupResult& WithGlobalReplicationGroup(const GlobalReplicationGroup& value) { SetGlobalReplicationGroup(value); return *this;}
-    inline IncreaseNodeGroupsInGlobalReplicationGroupResult& WithGlobalReplicationGroup(GlobalReplicationGroup&& value) { SetGlobalReplicationGroup(std::move(value)); return *this;}
+    inline const GlobalReplicationGroup& GetGlobalReplicationGroup() const { return m_globalReplicationGroup; }
+    template<typename GlobalReplicationGroupT = GlobalReplicationGroup>
+    void SetGlobalReplicationGroup(GlobalReplicationGroupT&& value) { m_globalReplicationGroupHasBeenSet = true; m_globalReplicationGroup = std::forward<GlobalReplicationGroupT>(value); }
+    template<typename GlobalReplicationGroupT = GlobalReplicationGroup>
+    IncreaseNodeGroupsInGlobalReplicationGroupResult& WithGlobalReplicationGroup(GlobalReplicationGroupT&& value) { SetGlobalReplicationGroup(std::forward<GlobalReplicationGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline IncreaseNodeGroupsInGlobalReplicationGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline IncreaseNodeGroupsInGlobalReplicationGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    IncreaseNodeGroupsInGlobalReplicationGroupResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     GlobalReplicationGroup m_globalReplicationGroup;
+    bool m_globalReplicationGroupHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

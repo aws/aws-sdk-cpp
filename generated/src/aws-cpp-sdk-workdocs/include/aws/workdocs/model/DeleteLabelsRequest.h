@@ -26,7 +26,7 @@ namespace Model
   class DeleteLabelsRequest : public WorkDocsRequest
   {
   public:
-    AWS_WORKDOCS_API DeleteLabelsRequest();
+    AWS_WORKDOCS_API DeleteLabelsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The ID of the resource.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline DeleteLabelsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline DeleteLabelsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline DeleteLabelsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    DeleteLabelsRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,36 +58,33 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Not required when using Amazon Web
      * Services administrator credentials to access the API.</p>
      */
-    inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
+    inline const Aws::String& GetAuthenticationToken() const { return m_authenticationToken; }
     inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
-    inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
-    inline void SetAuthenticationToken(Aws::String&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::move(value); }
-    inline void SetAuthenticationToken(const char* value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken.assign(value); }
-    inline DeleteLabelsRequest& WithAuthenticationToken(const Aws::String& value) { SetAuthenticationToken(value); return *this;}
-    inline DeleteLabelsRequest& WithAuthenticationToken(Aws::String&& value) { SetAuthenticationToken(std::move(value)); return *this;}
-    inline DeleteLabelsRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
+    template<typename AuthenticationTokenT = Aws::String>
+    void SetAuthenticationToken(AuthenticationTokenT&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::forward<AuthenticationTokenT>(value); }
+    template<typename AuthenticationTokenT = Aws::String>
+    DeleteLabelsRequest& WithAuthenticationToken(AuthenticationTokenT&& value) { SetAuthenticationToken(std::forward<AuthenticationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of labels to delete from the resource.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+    inline const Aws::Vector<Aws::String>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline DeleteLabelsRequest& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
-    inline DeleteLabelsRequest& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-    inline DeleteLabelsRequest& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-    inline DeleteLabelsRequest& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
-    inline DeleteLabelsRequest& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    DeleteLabelsRequest& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsT = Aws::String>
+    DeleteLabelsRequest& AddLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels.emplace_back(std::forward<LabelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Flag to request removal of all labels from the specified resource.</p>
      */
-    inline bool GetDeleteAll() const{ return m_deleteAll; }
+    inline bool GetDeleteAll() const { return m_deleteAll; }
     inline bool DeleteAllHasBeenSet() const { return m_deleteAllHasBeenSet; }
     inline void SetDeleteAll(bool value) { m_deleteAllHasBeenSet = true; m_deleteAll = value; }
     inline DeleteLabelsRequest& WithDeleteAll(bool value) { SetDeleteAll(value); return *this;}
@@ -105,7 +100,7 @@ namespace Model
     Aws::Vector<Aws::String> m_labels;
     bool m_labelsHasBeenSet = false;
 
-    bool m_deleteAll;
+    bool m_deleteAll{false};
     bool m_deleteAllHasBeenSet = false;
   };
 

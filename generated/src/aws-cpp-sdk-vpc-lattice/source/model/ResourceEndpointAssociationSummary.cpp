@@ -18,21 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-ResourceEndpointAssociationSummary::ResourceEndpointAssociationSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_resourceConfigurationArnHasBeenSet(false),
-    m_resourceConfigurationIdHasBeenSet(false),
-    m_resourceConfigurationNameHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcEndpointOwnerHasBeenSet(false)
-{
-}
-
 ResourceEndpointAssociationSummary::ResourceEndpointAssociationSummary(JsonView jsonValue)
-  : ResourceEndpointAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ ResourceEndpointAssociationSummary& ResourceEndpointAssociationSummary::operator
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceConfigurationArn"))
   {
     m_resourceConfigurationArn = jsonValue.GetString("resourceConfigurationArn");
-
     m_resourceConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceConfigurationId"))
   {
     m_resourceConfigurationId = jsonValue.GetString("resourceConfigurationId");
-
     m_resourceConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceConfigurationName"))
   {
     m_resourceConfigurationName = jsonValue.GetString("resourceConfigurationName");
-
     m_resourceConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("vpcEndpointId");
-
     m_vpcEndpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcEndpointOwner"))
   {
     m_vpcEndpointOwner = jsonValue.GetString("vpcEndpointOwner");
-
     m_vpcEndpointOwnerHasBeenSet = true;
   }
-
   return *this;
 }
 

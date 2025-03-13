@@ -18,15 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-DeploymentApplicationConfig::DeploymentApplicationConfig() : 
-    m_applicationHasBeenSet(false),
-    m_applicationVersionHasBeenSet(false),
-    m_launchConfigHasBeenSet(false)
-{
-}
-
 DeploymentApplicationConfig::DeploymentApplicationConfig(JsonView jsonValue)
-  : DeploymentApplicationConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DeploymentApplicationConfig& DeploymentApplicationConfig::operator =(JsonView js
   if(jsonValue.ValueExists("application"))
   {
     m_application = jsonValue.GetString("application");
-
     m_applicationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationVersion"))
   {
     m_applicationVersion = jsonValue.GetString("applicationVersion");
-
     m_applicationVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchConfig"))
   {
     m_launchConfig = jsonValue.GetObject("launchConfig");
-
     m_launchConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

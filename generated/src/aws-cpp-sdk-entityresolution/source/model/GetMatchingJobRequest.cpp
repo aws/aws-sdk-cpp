@@ -12,12 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMatchingJobRequest::GetMatchingJobRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_workflowNameHasBeenSet(false)
-{
-}
-
 Aws::String GetMatchingJobRequest::SerializePayload() const
 {
   return {};

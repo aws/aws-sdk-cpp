@@ -24,7 +24,7 @@ namespace Model
   class ModifySnapshotCopyRetentionPeriodRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API ModifySnapshotCopyRetentionPeriodRequest();
+    AWS_REDSHIFT_API ModifySnapshotCopyRetentionPeriodRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * destination Amazon Web Services Region.</p> <p>Constraints: Must be the valid
      * name of an existing cluster that has cross-region snapshot copy enabled.</p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline ModifySnapshotCopyRetentionPeriodRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline ModifySnapshotCopyRetentionPeriodRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline ModifySnapshotCopyRetentionPeriodRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    ModifySnapshotCopyRetentionPeriodRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * indefinitely.</p> <p>Constraints: The number of days must be either -1 or an
      * integer between 1 and 3,653 for manual snapshots.</p>
      */
-    inline int GetRetentionPeriod() const{ return m_retentionPeriod; }
+    inline int GetRetentionPeriod() const { return m_retentionPeriod; }
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
     inline void SetRetentionPeriod(int value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
     inline ModifySnapshotCopyRetentionPeriodRequest& WithRetentionPeriod(int value) { SetRetentionPeriod(value); return *this;}
@@ -83,7 +81,7 @@ namespace Model
      * <p>Indicates whether to apply the snapshot retention period to newly copied
      * manual snapshots instead of automated snapshots.</p>
      */
-    inline bool GetManual() const{ return m_manual; }
+    inline bool GetManual() const { return m_manual; }
     inline bool ManualHasBeenSet() const { return m_manualHasBeenSet; }
     inline void SetManual(bool value) { m_manualHasBeenSet = true; m_manual = value; }
     inline ModifySnapshotCopyRetentionPeriodRequest& WithManual(bool value) { SetManual(value); return *this;}
@@ -93,10 +91,10 @@ namespace Model
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet = false;
 
-    int m_retentionPeriod;
+    int m_retentionPeriod{0};
     bool m_retentionPeriodHasBeenSet = false;
 
-    bool m_manual;
+    bool m_manual{false};
     bool m_manualHasBeenSet = false;
   };
 

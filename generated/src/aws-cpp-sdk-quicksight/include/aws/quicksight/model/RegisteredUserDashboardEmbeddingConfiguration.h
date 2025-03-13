@@ -33,7 +33,7 @@ namespace Model
   class RegisteredUserDashboardEmbeddingConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API RegisteredUserDashboardEmbeddingConfiguration();
+    AWS_QUICKSIGHT_API RegisteredUserDashboardEmbeddingConfiguration() = default;
     AWS_QUICKSIGHT_API RegisteredUserDashboardEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RegisteredUserDashboardEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,24 @@ namespace Model
      * <p>If the user does not have permission to view this dashboard, they see a
      * permissions error message.</p>
      */
-    inline const Aws::String& GetInitialDashboardId() const{ return m_initialDashboardId; }
+    inline const Aws::String& GetInitialDashboardId() const { return m_initialDashboardId; }
     inline bool InitialDashboardIdHasBeenSet() const { return m_initialDashboardIdHasBeenSet; }
-    inline void SetInitialDashboardId(const Aws::String& value) { m_initialDashboardIdHasBeenSet = true; m_initialDashboardId = value; }
-    inline void SetInitialDashboardId(Aws::String&& value) { m_initialDashboardIdHasBeenSet = true; m_initialDashboardId = std::move(value); }
-    inline void SetInitialDashboardId(const char* value) { m_initialDashboardIdHasBeenSet = true; m_initialDashboardId.assign(value); }
-    inline RegisteredUserDashboardEmbeddingConfiguration& WithInitialDashboardId(const Aws::String& value) { SetInitialDashboardId(value); return *this;}
-    inline RegisteredUserDashboardEmbeddingConfiguration& WithInitialDashboardId(Aws::String&& value) { SetInitialDashboardId(std::move(value)); return *this;}
-    inline RegisteredUserDashboardEmbeddingConfiguration& WithInitialDashboardId(const char* value) { SetInitialDashboardId(value); return *this;}
+    template<typename InitialDashboardIdT = Aws::String>
+    void SetInitialDashboardId(InitialDashboardIdT&& value) { m_initialDashboardIdHasBeenSet = true; m_initialDashboardId = std::forward<InitialDashboardIdT>(value); }
+    template<typename InitialDashboardIdT = Aws::String>
+    RegisteredUserDashboardEmbeddingConfiguration& WithInitialDashboardId(InitialDashboardIdT&& value) { SetInitialDashboardId(std::forward<InitialDashboardIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
      */
-    inline const RegisteredUserDashboardFeatureConfigurations& GetFeatureConfigurations() const{ return m_featureConfigurations; }
+    inline const RegisteredUserDashboardFeatureConfigurations& GetFeatureConfigurations() const { return m_featureConfigurations; }
     inline bool FeatureConfigurationsHasBeenSet() const { return m_featureConfigurationsHasBeenSet; }
-    inline void SetFeatureConfigurations(const RegisteredUserDashboardFeatureConfigurations& value) { m_featureConfigurationsHasBeenSet = true; m_featureConfigurations = value; }
-    inline void SetFeatureConfigurations(RegisteredUserDashboardFeatureConfigurations&& value) { m_featureConfigurationsHasBeenSet = true; m_featureConfigurations = std::move(value); }
-    inline RegisteredUserDashboardEmbeddingConfiguration& WithFeatureConfigurations(const RegisteredUserDashboardFeatureConfigurations& value) { SetFeatureConfigurations(value); return *this;}
-    inline RegisteredUserDashboardEmbeddingConfiguration& WithFeatureConfigurations(RegisteredUserDashboardFeatureConfigurations&& value) { SetFeatureConfigurations(std::move(value)); return *this;}
+    template<typename FeatureConfigurationsT = RegisteredUserDashboardFeatureConfigurations>
+    void SetFeatureConfigurations(FeatureConfigurationsT&& value) { m_featureConfigurationsHasBeenSet = true; m_featureConfigurations = std::forward<FeatureConfigurationsT>(value); }
+    template<typename FeatureConfigurationsT = RegisteredUserDashboardFeatureConfigurations>
+    RegisteredUserDashboardEmbeddingConfiguration& WithFeatureConfigurations(FeatureConfigurationsT&& value) { SetFeatureConfigurations(std::forward<FeatureConfigurationsT>(value)); return *this;}
     ///@}
   private:
 

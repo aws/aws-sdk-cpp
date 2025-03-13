@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-QueryArgProfile::QueryArgProfile() : 
-    m_queryArgHasBeenSet(false),
-    m_profileIdHasBeenSet(false)
-{
-}
-
 QueryArgProfile::QueryArgProfile(const XmlNode& xmlNode)
-  : QueryArgProfile()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ QueryArgProfile& QueryArgProfile::operator =(const XmlNode& xmlNode)
     {
       m_queryArg = Aws::Utils::Xml::DecodeEscapedXmlText(queryArgNode.GetText());
       m_queryArgHasBeenSet = true;
+       m_queryArgHasBeenSet = true;
     }
     XmlNode profileIdNode = resultNode.FirstChild("ProfileId");
     if(!profileIdNode.IsNull())
     {
       m_profileId = Aws::Utils::Xml::DecodeEscapedXmlText(profileIdNode.GetText());
       m_profileIdHasBeenSet = true;
+       m_profileIdHasBeenSet = true;
     }
   }
 

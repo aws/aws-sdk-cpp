@@ -32,7 +32,7 @@ namespace Model
   class CatalogSchemaChangePolicy
   {
   public:
-    AWS_GLUE_API CatalogSchemaChangePolicy();
+    AWS_GLUE_API CatalogSchemaChangePolicy() = default;
     AWS_GLUE_API CatalogSchemaChangePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API CatalogSchemaChangePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Whether to use the specified update behavior when the crawler finds a changed
      * schema.</p>
      */
-    inline bool GetEnableUpdateCatalog() const{ return m_enableUpdateCatalog; }
+    inline bool GetEnableUpdateCatalog() const { return m_enableUpdateCatalog; }
     inline bool EnableUpdateCatalogHasBeenSet() const { return m_enableUpdateCatalogHasBeenSet; }
     inline void SetEnableUpdateCatalog(bool value) { m_enableUpdateCatalogHasBeenSet = true; m_enableUpdateCatalog = value; }
     inline CatalogSchemaChangePolicy& WithEnableUpdateCatalog(bool value) { SetEnableUpdateCatalog(value); return *this;}
@@ -53,19 +53,17 @@ namespace Model
     /**
      * <p>The update behavior when the crawler finds a changed schema.</p>
      */
-    inline const UpdateCatalogBehavior& GetUpdateBehavior() const{ return m_updateBehavior; }
+    inline UpdateCatalogBehavior GetUpdateBehavior() const { return m_updateBehavior; }
     inline bool UpdateBehaviorHasBeenSet() const { return m_updateBehaviorHasBeenSet; }
-    inline void SetUpdateBehavior(const UpdateCatalogBehavior& value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = value; }
-    inline void SetUpdateBehavior(UpdateCatalogBehavior&& value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = std::move(value); }
-    inline CatalogSchemaChangePolicy& WithUpdateBehavior(const UpdateCatalogBehavior& value) { SetUpdateBehavior(value); return *this;}
-    inline CatalogSchemaChangePolicy& WithUpdateBehavior(UpdateCatalogBehavior&& value) { SetUpdateBehavior(std::move(value)); return *this;}
+    inline void SetUpdateBehavior(UpdateCatalogBehavior value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = value; }
+    inline CatalogSchemaChangePolicy& WithUpdateBehavior(UpdateCatalogBehavior value) { SetUpdateBehavior(value); return *this;}
     ///@}
   private:
 
-    bool m_enableUpdateCatalog;
+    bool m_enableUpdateCatalog{false};
     bool m_enableUpdateCatalogHasBeenSet = false;
 
-    UpdateCatalogBehavior m_updateBehavior;
+    UpdateCatalogBehavior m_updateBehavior{UpdateCatalogBehavior::NOT_SET};
     bool m_updateBehaviorHasBeenSet = false;
   };
 

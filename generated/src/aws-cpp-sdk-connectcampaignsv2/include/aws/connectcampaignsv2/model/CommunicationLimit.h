@@ -31,7 +31,7 @@ namespace Model
   class CommunicationLimit
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API CommunicationLimit();
+    AWS_CONNECTCAMPAIGNSV2_API CommunicationLimit() = default;
     AWS_CONNECTCAMPAIGNSV2_API CommunicationLimit(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API CommunicationLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>Maximum number of contacts allowed for a given target within the given
      * frequency.</p>
      */
-    inline int GetMaxCountPerRecipient() const{ return m_maxCountPerRecipient; }
+    inline int GetMaxCountPerRecipient() const { return m_maxCountPerRecipient; }
     inline bool MaxCountPerRecipientHasBeenSet() const { return m_maxCountPerRecipientHasBeenSet; }
     inline void SetMaxCountPerRecipient(int value) { m_maxCountPerRecipientHasBeenSet = true; m_maxCountPerRecipient = value; }
     inline CommunicationLimit& WithMaxCountPerRecipient(int value) { SetMaxCountPerRecipient(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>The number of days to consider with regards to this limit.</p>
      */
-    inline int GetFrequency() const{ return m_frequency; }
+    inline int GetFrequency() const { return m_frequency; }
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
     inline void SetFrequency(int value) { m_frequencyHasBeenSet = true; m_frequency = value; }
     inline CommunicationLimit& WithFrequency(int value) { SetFrequency(value); return *this;}
@@ -60,22 +60,20 @@ namespace Model
 
     ///@{
     
-    inline const CommunicationLimitTimeUnit& GetUnit() const{ return m_unit; }
+    inline CommunicationLimitTimeUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const CommunicationLimitTimeUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(CommunicationLimitTimeUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline CommunicationLimit& WithUnit(const CommunicationLimitTimeUnit& value) { SetUnit(value); return *this;}
-    inline CommunicationLimit& WithUnit(CommunicationLimitTimeUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(CommunicationLimitTimeUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline CommunicationLimit& WithUnit(CommunicationLimitTimeUnit value) { SetUnit(value); return *this;}
     ///@}
   private:
 
-    int m_maxCountPerRecipient;
+    int m_maxCountPerRecipient{0};
     bool m_maxCountPerRecipientHasBeenSet = false;
 
-    int m_frequency;
+    int m_frequency{0};
     bool m_frequencyHasBeenSet = false;
 
-    CommunicationLimitTimeUnit m_unit;
+    CommunicationLimitTimeUnit m_unit{CommunicationLimitTimeUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
   };
 

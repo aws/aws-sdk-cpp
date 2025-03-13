@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RoutingCriteria::RoutingCriteria() : 
-    m_stepsHasBeenSet(false),
-    m_activationTimestampHasBeenSet(false),
-    m_index(0),
-    m_indexHasBeenSet(false)
-{
-}
-
 RoutingCriteria::RoutingCriteria(JsonView jsonValue)
-  : RoutingCriteria()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ RoutingCriteria& RoutingCriteria::operator =(JsonView jsonValue)
     }
     m_stepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActivationTimestamp"))
   {
     m_activationTimestamp = jsonValue.GetDouble("ActivationTimestamp");
-
     m_activationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Index"))
   {
     m_index = jsonValue.GetInteger("Index");
-
     m_indexHasBeenSet = true;
   }
-
   return *this;
 }
 

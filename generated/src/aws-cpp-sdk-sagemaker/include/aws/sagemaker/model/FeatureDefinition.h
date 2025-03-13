@@ -37,7 +37,7 @@ namespace Model
   class FeatureDefinition
   {
   public:
-    AWS_SAGEMAKER_API FeatureDefinition();
+    AWS_SAGEMAKER_API FeatureDefinition() = default;
     AWS_SAGEMAKER_API FeatureDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API FeatureDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * only include alphanumeric characters, underscores, and hyphens. Spaces are not
      * allowed.</p> </li> </ul>
      */
-    inline const Aws::String& GetFeatureName() const{ return m_featureName; }
+    inline const Aws::String& GetFeatureName() const { return m_featureName; }
     inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
-    inline void SetFeatureName(const Aws::String& value) { m_featureNameHasBeenSet = true; m_featureName = value; }
-    inline void SetFeatureName(Aws::String&& value) { m_featureNameHasBeenSet = true; m_featureName = std::move(value); }
-    inline void SetFeatureName(const char* value) { m_featureNameHasBeenSet = true; m_featureName.assign(value); }
-    inline FeatureDefinition& WithFeatureName(const Aws::String& value) { SetFeatureName(value); return *this;}
-    inline FeatureDefinition& WithFeatureName(Aws::String&& value) { SetFeatureName(std::move(value)); return *this;}
-    inline FeatureDefinition& WithFeatureName(const char* value) { SetFeatureName(value); return *this;}
+    template<typename FeatureNameT = Aws::String>
+    void SetFeatureName(FeatureNameT&& value) { m_featureNameHasBeenSet = true; m_featureName = std::forward<FeatureNameT>(value); }
+    template<typename FeatureNameT = Aws::String>
+    FeatureDefinition& WithFeatureName(FeatureNameT&& value) { SetFeatureName(std::forward<FeatureNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * <p>The value type of a feature. Valid values are Integral, Fractional, or
      * String.</p>
      */
-    inline const FeatureType& GetFeatureType() const{ return m_featureType; }
+    inline FeatureType GetFeatureType() const { return m_featureType; }
     inline bool FeatureTypeHasBeenSet() const { return m_featureTypeHasBeenSet; }
-    inline void SetFeatureType(const FeatureType& value) { m_featureTypeHasBeenSet = true; m_featureType = value; }
-    inline void SetFeatureType(FeatureType&& value) { m_featureTypeHasBeenSet = true; m_featureType = std::move(value); }
-    inline FeatureDefinition& WithFeatureType(const FeatureType& value) { SetFeatureType(value); return *this;}
-    inline FeatureDefinition& WithFeatureType(FeatureType&& value) { SetFeatureType(std::move(value)); return *this;}
+    inline void SetFeatureType(FeatureType value) { m_featureTypeHasBeenSet = true; m_featureType = value; }
+    inline FeatureDefinition& WithFeatureType(FeatureType value) { SetFeatureType(value); return *this;}
     ///@}
 
     ///@{
@@ -86,34 +82,32 @@ namespace Model
      * dimension is determined by you. Must have elements with fractional feature
      * types. </p> </li> </ul>
      */
-    inline const CollectionType& GetCollectionType() const{ return m_collectionType; }
+    inline CollectionType GetCollectionType() const { return m_collectionType; }
     inline bool CollectionTypeHasBeenSet() const { return m_collectionTypeHasBeenSet; }
-    inline void SetCollectionType(const CollectionType& value) { m_collectionTypeHasBeenSet = true; m_collectionType = value; }
-    inline void SetCollectionType(CollectionType&& value) { m_collectionTypeHasBeenSet = true; m_collectionType = std::move(value); }
-    inline FeatureDefinition& WithCollectionType(const CollectionType& value) { SetCollectionType(value); return *this;}
-    inline FeatureDefinition& WithCollectionType(CollectionType&& value) { SetCollectionType(std::move(value)); return *this;}
+    inline void SetCollectionType(CollectionType value) { m_collectionTypeHasBeenSet = true; m_collectionType = value; }
+    inline FeatureDefinition& WithCollectionType(CollectionType value) { SetCollectionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration for your collection.</p>
      */
-    inline const CollectionConfig& GetCollectionConfig() const{ return m_collectionConfig; }
+    inline const CollectionConfig& GetCollectionConfig() const { return m_collectionConfig; }
     inline bool CollectionConfigHasBeenSet() const { return m_collectionConfigHasBeenSet; }
-    inline void SetCollectionConfig(const CollectionConfig& value) { m_collectionConfigHasBeenSet = true; m_collectionConfig = value; }
-    inline void SetCollectionConfig(CollectionConfig&& value) { m_collectionConfigHasBeenSet = true; m_collectionConfig = std::move(value); }
-    inline FeatureDefinition& WithCollectionConfig(const CollectionConfig& value) { SetCollectionConfig(value); return *this;}
-    inline FeatureDefinition& WithCollectionConfig(CollectionConfig&& value) { SetCollectionConfig(std::move(value)); return *this;}
+    template<typename CollectionConfigT = CollectionConfig>
+    void SetCollectionConfig(CollectionConfigT&& value) { m_collectionConfigHasBeenSet = true; m_collectionConfig = std::forward<CollectionConfigT>(value); }
+    template<typename CollectionConfigT = CollectionConfig>
+    FeatureDefinition& WithCollectionConfig(CollectionConfigT&& value) { SetCollectionConfig(std::forward<CollectionConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_featureName;
     bool m_featureNameHasBeenSet = false;
 
-    FeatureType m_featureType;
+    FeatureType m_featureType{FeatureType::NOT_SET};
     bool m_featureTypeHasBeenSet = false;
 
-    CollectionType m_collectionType;
+    CollectionType m_collectionType{CollectionType::NOT_SET};
     bool m_collectionTypeHasBeenSet = false;
 
     CollectionConfig m_collectionConfig;

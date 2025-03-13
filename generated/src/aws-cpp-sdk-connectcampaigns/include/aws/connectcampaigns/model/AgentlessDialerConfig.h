@@ -29,7 +29,7 @@ namespace Model
   class AgentlessDialerConfig
   {
   public:
-    AWS_CONNECTCAMPAIGNS_API AgentlessDialerConfig();
+    AWS_CONNECTCAMPAIGNS_API AgentlessDialerConfig() = default;
     AWS_CONNECTCAMPAIGNS_API AgentlessDialerConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNS_API AgentlessDialerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -37,14 +37,14 @@ namespace Model
 
     ///@{
     
-    inline double GetDialingCapacity() const{ return m_dialingCapacity; }
+    inline double GetDialingCapacity() const { return m_dialingCapacity; }
     inline bool DialingCapacityHasBeenSet() const { return m_dialingCapacityHasBeenSet; }
     inline void SetDialingCapacity(double value) { m_dialingCapacityHasBeenSet = true; m_dialingCapacity = value; }
     inline AgentlessDialerConfig& WithDialingCapacity(double value) { SetDialingCapacity(value); return *this;}
     ///@}
   private:
 
-    double m_dialingCapacity;
+    double m_dialingCapacity{0.0};
     bool m_dialingCapacityHasBeenSet = false;
   };
 

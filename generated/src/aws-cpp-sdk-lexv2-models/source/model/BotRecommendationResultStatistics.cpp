@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotRecommendationResultStatistics::BotRecommendationResultStatistics() : 
-    m_intentsHasBeenSet(false),
-    m_slotTypesHasBeenSet(false)
-{
-}
-
 BotRecommendationResultStatistics::BotRecommendationResultStatistics(JsonView jsonValue)
-  : BotRecommendationResultStatistics()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BotRecommendationResultStatistics& BotRecommendationResultStatistics::operator =
   if(jsonValue.ValueExists("intents"))
   {
     m_intents = jsonValue.GetObject("intents");
-
     m_intentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotTypes"))
   {
     m_slotTypes = jsonValue.GetObject("slotTypes");
-
     m_slotTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

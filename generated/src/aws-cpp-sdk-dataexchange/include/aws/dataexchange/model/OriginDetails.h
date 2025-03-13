@@ -31,7 +31,7 @@ namespace Model
   class OriginDetails
   {
   public:
-    AWS_DATAEXCHANGE_API OriginDetails();
+    AWS_DATAEXCHANGE_API OriginDetails() = default;
     AWS_DATAEXCHANGE_API OriginDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API OriginDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The product ID of the origin of the data set.</p>
      */
-    inline const Aws::String& GetProductId() const{ return m_productId; }
+    inline const Aws::String& GetProductId() const { return m_productId; }
     inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-    inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
-    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
-    inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
-    inline OriginDetails& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
-    inline OriginDetails& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
-    inline OriginDetails& WithProductId(const char* value) { SetProductId(value); return *this;}
+    template<typename ProductIdT = Aws::String>
+    void SetProductId(ProductIdT&& value) { m_productIdHasBeenSet = true; m_productId = std::forward<ProductIdT>(value); }
+    template<typename ProductIdT = Aws::String>
+    OriginDetails& WithProductId(ProductIdT&& value) { SetProductId(std::forward<ProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the data grant.</p>
      */
-    inline const Aws::String& GetDataGrantId() const{ return m_dataGrantId; }
+    inline const Aws::String& GetDataGrantId() const { return m_dataGrantId; }
     inline bool DataGrantIdHasBeenSet() const { return m_dataGrantIdHasBeenSet; }
-    inline void SetDataGrantId(const Aws::String& value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId = value; }
-    inline void SetDataGrantId(Aws::String&& value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId = std::move(value); }
-    inline void SetDataGrantId(const char* value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId.assign(value); }
-    inline OriginDetails& WithDataGrantId(const Aws::String& value) { SetDataGrantId(value); return *this;}
-    inline OriginDetails& WithDataGrantId(Aws::String&& value) { SetDataGrantId(std::move(value)); return *this;}
-    inline OriginDetails& WithDataGrantId(const char* value) { SetDataGrantId(value); return *this;}
+    template<typename DataGrantIdT = Aws::String>
+    void SetDataGrantId(DataGrantIdT&& value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId = std::forward<DataGrantIdT>(value); }
+    template<typename DataGrantIdT = Aws::String>
+    OriginDetails& WithDataGrantId(DataGrantIdT&& value) { SetDataGrantId(std::forward<DataGrantIdT>(value)); return *this;}
     ///@}
   private:
 

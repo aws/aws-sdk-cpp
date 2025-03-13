@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkCardInfo::NetworkCardInfo() : 
-    m_networkCardIndex(0),
-    m_networkCardIndexHasBeenSet(false),
-    m_networkPerformanceHasBeenSet(false),
-    m_maximumNetworkInterfaces(0),
-    m_maximumNetworkInterfacesHasBeenSet(false),
-    m_baselineBandwidthInGbps(0.0),
-    m_baselineBandwidthInGbpsHasBeenSet(false),
-    m_peakBandwidthInGbps(0.0),
-    m_peakBandwidthInGbpsHasBeenSet(false)
-{
-}
-
 NetworkCardInfo::NetworkCardInfo(const XmlNode& xmlNode)
-  : NetworkCardInfo()
 {
   *this = xmlNode;
 }
@@ -50,30 +36,35 @@ NetworkCardInfo& NetworkCardInfo::operator =(const XmlNode& xmlNode)
     {
       m_networkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
       m_networkCardIndexHasBeenSet = true;
+       m_networkCardIndexHasBeenSet = true;
     }
     XmlNode networkPerformanceNode = resultNode.FirstChild("networkPerformance");
     if(!networkPerformanceNode.IsNull())
     {
       m_networkPerformance = Aws::Utils::Xml::DecodeEscapedXmlText(networkPerformanceNode.GetText());
       m_networkPerformanceHasBeenSet = true;
+       m_networkPerformanceHasBeenSet = true;
     }
     XmlNode maximumNetworkInterfacesNode = resultNode.FirstChild("maximumNetworkInterfaces");
     if(!maximumNetworkInterfacesNode.IsNull())
     {
       m_maximumNetworkInterfaces = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNetworkInterfacesNode.GetText()).c_str()).c_str());
       m_maximumNetworkInterfacesHasBeenSet = true;
+       m_maximumNetworkInterfacesHasBeenSet = true;
     }
     XmlNode baselineBandwidthInGbpsNode = resultNode.FirstChild("baselineBandwidthInGbps");
     if(!baselineBandwidthInGbpsNode.IsNull())
     {
       m_baselineBandwidthInGbps = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(baselineBandwidthInGbpsNode.GetText()).c_str()).c_str());
       m_baselineBandwidthInGbpsHasBeenSet = true;
+       m_baselineBandwidthInGbpsHasBeenSet = true;
     }
     XmlNode peakBandwidthInGbpsNode = resultNode.FirstChild("peakBandwidthInGbps");
     if(!peakBandwidthInGbpsNode.IsNull())
     {
       m_peakBandwidthInGbps = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(peakBandwidthInGbpsNode.GetText()).c_str()).c_str());
       m_peakBandwidthInGbpsHasBeenSet = true;
+       m_peakBandwidthInGbpsHasBeenSet = true;
     }
   }
 

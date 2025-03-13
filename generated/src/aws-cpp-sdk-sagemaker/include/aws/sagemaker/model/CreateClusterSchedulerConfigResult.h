@@ -27,7 +27,7 @@ namespace Model
   class CreateClusterSchedulerConfigResult
   {
   public:
-    AWS_SAGEMAKER_API CreateClusterSchedulerConfigResult();
+    AWS_SAGEMAKER_API CreateClusterSchedulerConfigResult() = default;
     AWS_SAGEMAKER_API CreateClusterSchedulerConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateClusterSchedulerConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>ARN of the cluster policy.</p>
      */
-    inline const Aws::String& GetClusterSchedulerConfigArn() const{ return m_clusterSchedulerConfigArn; }
-    inline void SetClusterSchedulerConfigArn(const Aws::String& value) { m_clusterSchedulerConfigArn = value; }
-    inline void SetClusterSchedulerConfigArn(Aws::String&& value) { m_clusterSchedulerConfigArn = std::move(value); }
-    inline void SetClusterSchedulerConfigArn(const char* value) { m_clusterSchedulerConfigArn.assign(value); }
-    inline CreateClusterSchedulerConfigResult& WithClusterSchedulerConfigArn(const Aws::String& value) { SetClusterSchedulerConfigArn(value); return *this;}
-    inline CreateClusterSchedulerConfigResult& WithClusterSchedulerConfigArn(Aws::String&& value) { SetClusterSchedulerConfigArn(std::move(value)); return *this;}
-    inline CreateClusterSchedulerConfigResult& WithClusterSchedulerConfigArn(const char* value) { SetClusterSchedulerConfigArn(value); return *this;}
+    inline const Aws::String& GetClusterSchedulerConfigArn() const { return m_clusterSchedulerConfigArn; }
+    template<typename ClusterSchedulerConfigArnT = Aws::String>
+    void SetClusterSchedulerConfigArn(ClusterSchedulerConfigArnT&& value) { m_clusterSchedulerConfigArnHasBeenSet = true; m_clusterSchedulerConfigArn = std::forward<ClusterSchedulerConfigArnT>(value); }
+    template<typename ClusterSchedulerConfigArnT = Aws::String>
+    CreateClusterSchedulerConfigResult& WithClusterSchedulerConfigArn(ClusterSchedulerConfigArnT&& value) { SetClusterSchedulerConfigArn(std::forward<ClusterSchedulerConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of the cluster policy.</p>
      */
-    inline const Aws::String& GetClusterSchedulerConfigId() const{ return m_clusterSchedulerConfigId; }
-    inline void SetClusterSchedulerConfigId(const Aws::String& value) { m_clusterSchedulerConfigId = value; }
-    inline void SetClusterSchedulerConfigId(Aws::String&& value) { m_clusterSchedulerConfigId = std::move(value); }
-    inline void SetClusterSchedulerConfigId(const char* value) { m_clusterSchedulerConfigId.assign(value); }
-    inline CreateClusterSchedulerConfigResult& WithClusterSchedulerConfigId(const Aws::String& value) { SetClusterSchedulerConfigId(value); return *this;}
-    inline CreateClusterSchedulerConfigResult& WithClusterSchedulerConfigId(Aws::String&& value) { SetClusterSchedulerConfigId(std::move(value)); return *this;}
-    inline CreateClusterSchedulerConfigResult& WithClusterSchedulerConfigId(const char* value) { SetClusterSchedulerConfigId(value); return *this;}
+    inline const Aws::String& GetClusterSchedulerConfigId() const { return m_clusterSchedulerConfigId; }
+    template<typename ClusterSchedulerConfigIdT = Aws::String>
+    void SetClusterSchedulerConfigId(ClusterSchedulerConfigIdT&& value) { m_clusterSchedulerConfigIdHasBeenSet = true; m_clusterSchedulerConfigId = std::forward<ClusterSchedulerConfigIdT>(value); }
+    template<typename ClusterSchedulerConfigIdT = Aws::String>
+    CreateClusterSchedulerConfigResult& WithClusterSchedulerConfigId(ClusterSchedulerConfigIdT&& value) { SetClusterSchedulerConfigId(std::forward<ClusterSchedulerConfigIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateClusterSchedulerConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateClusterSchedulerConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateClusterSchedulerConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateClusterSchedulerConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterSchedulerConfigArn;
+    bool m_clusterSchedulerConfigArnHasBeenSet = false;
 
     Aws::String m_clusterSchedulerConfigId;
+    bool m_clusterSchedulerConfigIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteParametersRequest::DeleteParametersRequest() : 
-    m_namesHasBeenSet(false)
-{
-}
-
 Aws::String DeleteParametersRequest::SerializePayload() const
 {
   JsonValue payload;

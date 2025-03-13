@@ -12,12 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSpeakerEnrollmentJobRequest::DescribeSpeakerEnrollmentJobRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSpeakerEnrollmentJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class FrameworkMetadata
   {
   public:
-    AWS_AUDITMANAGER_API FrameworkMetadata();
+    AWS_AUDITMANAGER_API FrameworkMetadata() = default;
     AWS_AUDITMANAGER_API FrameworkMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API FrameworkMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p> The name of the framework. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FrameworkMetadata& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FrameworkMetadata& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FrameworkMetadata& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FrameworkMetadata& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The description of the framework. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline FrameworkMetadata& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline FrameworkMetadata& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline FrameworkMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    FrameworkMetadata& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The logo that's associated with the framework. </p>
      */
-    inline const Aws::String& GetLogo() const{ return m_logo; }
+    inline const Aws::String& GetLogo() const { return m_logo; }
     inline bool LogoHasBeenSet() const { return m_logoHasBeenSet; }
-    inline void SetLogo(const Aws::String& value) { m_logoHasBeenSet = true; m_logo = value; }
-    inline void SetLogo(Aws::String&& value) { m_logoHasBeenSet = true; m_logo = std::move(value); }
-    inline void SetLogo(const char* value) { m_logoHasBeenSet = true; m_logo.assign(value); }
-    inline FrameworkMetadata& WithLogo(const Aws::String& value) { SetLogo(value); return *this;}
-    inline FrameworkMetadata& WithLogo(Aws::String&& value) { SetLogo(std::move(value)); return *this;}
-    inline FrameworkMetadata& WithLogo(const char* value) { SetLogo(value); return *this;}
+    template<typename LogoT = Aws::String>
+    void SetLogo(LogoT&& value) { m_logoHasBeenSet = true; m_logo = std::forward<LogoT>(value); }
+    template<typename LogoT = Aws::String>
+    FrameworkMetadata& WithLogo(LogoT&& value) { SetLogo(std::forward<LogoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +79,12 @@ namespace Model
      * <p> The compliance standard that's associated with the framework. For example,
      * this could be PCI DSS or HIPAA. </p>
      */
-    inline const Aws::String& GetComplianceType() const{ return m_complianceType; }
+    inline const Aws::String& GetComplianceType() const { return m_complianceType; }
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
-    inline void SetComplianceType(const Aws::String& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
-    inline void SetComplianceType(Aws::String&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
-    inline void SetComplianceType(const char* value) { m_complianceTypeHasBeenSet = true; m_complianceType.assign(value); }
-    inline FrameworkMetadata& WithComplianceType(const Aws::String& value) { SetComplianceType(value); return *this;}
-    inline FrameworkMetadata& WithComplianceType(Aws::String&& value) { SetComplianceType(std::move(value)); return *this;}
-    inline FrameworkMetadata& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
+    template<typename ComplianceTypeT = Aws::String>
+    void SetComplianceType(ComplianceTypeT&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::forward<ComplianceTypeT>(value); }
+    template<typename ComplianceTypeT = Aws::String>
+    FrameworkMetadata& WithComplianceType(ComplianceTypeT&& value) { SetComplianceType(std::forward<ComplianceTypeT>(value)); return *this;}
     ///@}
   private:
 

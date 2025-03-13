@@ -18,18 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-SamlConfigOptions::SamlConfigOptions() : 
-    m_metadataHasBeenSet(false),
-    m_userAttributeHasBeenSet(false),
-    m_groupAttributeHasBeenSet(false),
-    m_openSearchServerlessEntityIdHasBeenSet(false),
-    m_sessionTimeout(0),
-    m_sessionTimeoutHasBeenSet(false)
-{
-}
-
 SamlConfigOptions::SamlConfigOptions(JsonView jsonValue)
-  : SamlConfigOptions()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SamlConfigOptions& SamlConfigOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetString("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAttribute"))
   {
     m_userAttribute = jsonValue.GetString("userAttribute");
-
     m_userAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupAttribute"))
   {
     m_groupAttribute = jsonValue.GetString("groupAttribute");
-
     m_groupAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openSearchServerlessEntityId"))
   {
     m_openSearchServerlessEntityId = jsonValue.GetString("openSearchServerlessEntityId");
-
     m_openSearchServerlessEntityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionTimeout"))
   {
     m_sessionTimeout = jsonValue.GetInteger("sessionTimeout");
-
     m_sessionTimeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

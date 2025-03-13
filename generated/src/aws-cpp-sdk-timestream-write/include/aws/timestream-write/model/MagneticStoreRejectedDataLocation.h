@@ -32,7 +32,7 @@ namespace Model
   class MagneticStoreRejectedDataLocation
   {
   public:
-    AWS_TIMESTREAMWRITE_API MagneticStoreRejectedDataLocation();
+    AWS_TIMESTREAMWRITE_API MagneticStoreRejectedDataLocation() = default;
     AWS_TIMESTREAMWRITE_API MagneticStoreRejectedDataLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API MagneticStoreRejectedDataLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Configuration of an S3 location to write error reports for records rejected,
      * asynchronously, during magnetic store writes.</p>
      */
-    inline const S3Configuration& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const S3Configuration& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const S3Configuration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(S3Configuration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline MagneticStoreRejectedDataLocation& WithS3Configuration(const S3Configuration& value) { SetS3Configuration(value); return *this;}
-    inline MagneticStoreRejectedDataLocation& WithS3Configuration(S3Configuration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = S3Configuration>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = S3Configuration>
+    MagneticStoreRejectedDataLocation& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

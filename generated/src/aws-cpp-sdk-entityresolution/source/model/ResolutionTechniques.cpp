@@ -18,16 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-ResolutionTechniques::ResolutionTechniques() : 
-    m_providerPropertiesHasBeenSet(false),
-    m_resolutionType(ResolutionType::NOT_SET),
-    m_resolutionTypeHasBeenSet(false),
-    m_ruleBasedPropertiesHasBeenSet(false)
-{
-}
-
 ResolutionTechniques::ResolutionTechniques(JsonView jsonValue)
-  : ResolutionTechniques()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResolutionTechniques& ResolutionTechniques::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("providerProperties"))
   {
     m_providerProperties = jsonValue.GetObject("providerProperties");
-
     m_providerPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolutionType"))
   {
     m_resolutionType = ResolutionTypeMapper::GetResolutionTypeForName(jsonValue.GetString("resolutionType"));
-
     m_resolutionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleBasedProperties"))
   {
     m_ruleBasedProperties = jsonValue.GetObject("ruleBasedProperties");
-
     m_ruleBasedPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

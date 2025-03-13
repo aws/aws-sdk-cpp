@@ -18,15 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-EgressConfiguration::EgressConfiguration() : 
-    m_egressType(EgressType::NOT_SET),
-    m_egressTypeHasBeenSet(false),
-    m_vpcConnectorArnHasBeenSet(false)
-{
-}
-
 EgressConfiguration::EgressConfiguration(JsonView jsonValue)
-  : EgressConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EgressConfiguration& EgressConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EgressType"))
   {
     m_egressType = EgressTypeMapper::GetEgressTypeForName(jsonValue.GetString("EgressType"));
-
     m_egressTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConnectorArn"))
   {
     m_vpcConnectorArn = jsonValue.GetString("VpcConnectorArn");
-
     m_vpcConnectorArnHasBeenSet = true;
   }
-
   return *this;
 }
 

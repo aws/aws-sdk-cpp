@@ -12,13 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TagStreamRequest::TagStreamRequest() : 
-    m_streamARNHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TagStreamRequest::SerializePayload() const
 {
   JsonValue payload;

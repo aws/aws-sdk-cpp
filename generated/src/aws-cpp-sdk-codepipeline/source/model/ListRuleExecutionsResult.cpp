@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRuleExecutionsResult::ListRuleExecutionsResult()
-{
-}
-
 ListRuleExecutionsResult::ListRuleExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListRuleExecutionsResult& ListRuleExecutionsResult::operator =(const Aws::Amazon
     {
       m_ruleExecutionDetails.push_back(ruleExecutionDetailsJsonList[ruleExecutionDetailsIndex].AsObject());
     }
+    m_ruleExecutionDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

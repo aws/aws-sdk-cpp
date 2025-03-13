@@ -29,7 +29,7 @@ namespace Model
   class GetModelRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetModelRequest();
+    AWS_APIGATEWAY_API GetModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The RestApi identifier under which the Model exists.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline GetModelRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline GetModelRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline GetModelRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    GetModelRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the model as an identifier.</p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
+    inline const Aws::String& GetModelName() const { return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-    inline GetModelRequest& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline GetModelRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline GetModelRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    GetModelRequest& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * external model references and returns a flattened model schema or not
      * (<code>false</code>) The default is <code>false</code>.</p>
      */
-    inline bool GetFlatten() const{ return m_flatten; }
+    inline bool GetFlatten() const { return m_flatten; }
     inline bool FlattenHasBeenSet() const { return m_flattenHasBeenSet; }
     inline void SetFlatten(bool value) { m_flattenHasBeenSet = true; m_flatten = value; }
     inline GetModelRequest& WithFlatten(bool value) { SetFlatten(value); return *this;}
@@ -89,7 +85,7 @@ namespace Model
     Aws::String m_modelName;
     bool m_modelNameHasBeenSet = false;
 
-    bool m_flatten;
+    bool m_flatten{false};
     bool m_flattenHasBeenSet = false;
   };
 

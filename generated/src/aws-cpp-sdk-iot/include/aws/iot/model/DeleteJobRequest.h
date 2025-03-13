@@ -25,7 +25,7 @@ namespace Model
   class DeleteJobRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DeleteJobRequest();
+    AWS_IOT_API DeleteJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * recommended, and you must ensure that your devices are not using the jobId to
      * refer to the deleted job.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline DeleteJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline DeleteJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline DeleteJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    DeleteJobRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +63,7 @@ namespace Model
      * status. Use caution and ensure that each device executing a job which is deleted
      * is able to recover to a valid state.</p> 
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline DeleteJobRequest& WithForce(bool value) { SetForce(value); return *this;}
@@ -83,21 +81,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
      * up IoT Greengrass core devices.</a> </p> 
      */
-    inline const Aws::String& GetNamespaceId() const{ return m_namespaceId; }
+    inline const Aws::String& GetNamespaceId() const { return m_namespaceId; }
     inline bool NamespaceIdHasBeenSet() const { return m_namespaceIdHasBeenSet; }
-    inline void SetNamespaceId(const Aws::String& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = value; }
-    inline void SetNamespaceId(Aws::String&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::move(value); }
-    inline void SetNamespaceId(const char* value) { m_namespaceIdHasBeenSet = true; m_namespaceId.assign(value); }
-    inline DeleteJobRequest& WithNamespaceId(const Aws::String& value) { SetNamespaceId(value); return *this;}
-    inline DeleteJobRequest& WithNamespaceId(Aws::String&& value) { SetNamespaceId(std::move(value)); return *this;}
-    inline DeleteJobRequest& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
+    template<typename NamespaceIdT = Aws::String>
+    void SetNamespaceId(NamespaceIdT&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::forward<NamespaceIdT>(value); }
+    template<typename NamespaceIdT = Aws::String>
+    DeleteJobRequest& WithNamespaceId(NamespaceIdT&& value) { SetNamespaceId(std::forward<NamespaceIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
 
     Aws::String m_namespaceId;

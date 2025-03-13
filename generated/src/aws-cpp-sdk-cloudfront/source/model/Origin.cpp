@@ -20,25 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-Origin::Origin() : 
-    m_idHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_originPathHasBeenSet(false),
-    m_customHeadersHasBeenSet(false),
-    m_s3OriginConfigHasBeenSet(false),
-    m_customOriginConfigHasBeenSet(false),
-    m_vpcOriginConfigHasBeenSet(false),
-    m_connectionAttempts(0),
-    m_connectionAttemptsHasBeenSet(false),
-    m_connectionTimeout(0),
-    m_connectionTimeoutHasBeenSet(false),
-    m_originShieldHasBeenSet(false),
-    m_originAccessControlIdHasBeenSet(false)
-{
-}
-
 Origin::Origin(const XmlNode& xmlNode)
-  : Origin()
 {
   *this = xmlNode;
 }
@@ -54,66 +36,77 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
     if(!domainNameNode.IsNull())
     {
       m_domainName = Aws::Utils::Xml::DecodeEscapedXmlText(domainNameNode.GetText());
       m_domainNameHasBeenSet = true;
+       m_domainNameHasBeenSet = true;
     }
     XmlNode originPathNode = resultNode.FirstChild("OriginPath");
     if(!originPathNode.IsNull())
     {
       m_originPath = Aws::Utils::Xml::DecodeEscapedXmlText(originPathNode.GetText());
       m_originPathHasBeenSet = true;
+       m_originPathHasBeenSet = true;
     }
     XmlNode customHeadersNode = resultNode.FirstChild("CustomHeaders");
     if(!customHeadersNode.IsNull())
     {
       m_customHeaders = customHeadersNode;
       m_customHeadersHasBeenSet = true;
+       m_customHeadersHasBeenSet = true;
     }
     XmlNode s3OriginConfigNode = resultNode.FirstChild("S3OriginConfig");
     if(!s3OriginConfigNode.IsNull())
     {
       m_s3OriginConfig = s3OriginConfigNode;
       m_s3OriginConfigHasBeenSet = true;
+       m_s3OriginConfigHasBeenSet = true;
     }
     XmlNode customOriginConfigNode = resultNode.FirstChild("CustomOriginConfig");
     if(!customOriginConfigNode.IsNull())
     {
       m_customOriginConfig = customOriginConfigNode;
       m_customOriginConfigHasBeenSet = true;
+       m_customOriginConfigHasBeenSet = true;
     }
     XmlNode vpcOriginConfigNode = resultNode.FirstChild("VpcOriginConfig");
     if(!vpcOriginConfigNode.IsNull())
     {
       m_vpcOriginConfig = vpcOriginConfigNode;
       m_vpcOriginConfigHasBeenSet = true;
+       m_vpcOriginConfigHasBeenSet = true;
     }
     XmlNode connectionAttemptsNode = resultNode.FirstChild("ConnectionAttempts");
     if(!connectionAttemptsNode.IsNull())
     {
       m_connectionAttempts = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionAttemptsNode.GetText()).c_str()).c_str());
       m_connectionAttemptsHasBeenSet = true;
+       m_connectionAttemptsHasBeenSet = true;
     }
     XmlNode connectionTimeoutNode = resultNode.FirstChild("ConnectionTimeout");
     if(!connectionTimeoutNode.IsNull())
     {
       m_connectionTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionTimeoutNode.GetText()).c_str()).c_str());
       m_connectionTimeoutHasBeenSet = true;
+       m_connectionTimeoutHasBeenSet = true;
     }
     XmlNode originShieldNode = resultNode.FirstChild("OriginShield");
     if(!originShieldNode.IsNull())
     {
       m_originShield = originShieldNode;
       m_originShieldHasBeenSet = true;
+       m_originShieldHasBeenSet = true;
     }
     XmlNode originAccessControlIdNode = resultNode.FirstChild("OriginAccessControlId");
     if(!originAccessControlIdNode.IsNull())
     {
       m_originAccessControlId = Aws::Utils::Xml::DecodeEscapedXmlText(originAccessControlIdNode.GetText());
       m_originAccessControlIdHasBeenSet = true;
+       m_originAccessControlIdHasBeenSet = true;
     }
   }
 

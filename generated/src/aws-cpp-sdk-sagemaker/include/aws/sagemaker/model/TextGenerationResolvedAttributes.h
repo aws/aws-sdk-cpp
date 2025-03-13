@@ -32,7 +32,7 @@ namespace Model
   class TextGenerationResolvedAttributes
   {
   public:
-    AWS_SAGEMAKER_API TextGenerationResolvedAttributes();
+    AWS_SAGEMAKER_API TextGenerationResolvedAttributes() = default;
     AWS_SAGEMAKER_API TextGenerationResolvedAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TextGenerationResolvedAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the base model to fine-tune.</p>
      */
-    inline const Aws::String& GetBaseModelName() const{ return m_baseModelName; }
+    inline const Aws::String& GetBaseModelName() const { return m_baseModelName; }
     inline bool BaseModelNameHasBeenSet() const { return m_baseModelNameHasBeenSet; }
-    inline void SetBaseModelName(const Aws::String& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = value; }
-    inline void SetBaseModelName(Aws::String&& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = std::move(value); }
-    inline void SetBaseModelName(const char* value) { m_baseModelNameHasBeenSet = true; m_baseModelName.assign(value); }
-    inline TextGenerationResolvedAttributes& WithBaseModelName(const Aws::String& value) { SetBaseModelName(value); return *this;}
-    inline TextGenerationResolvedAttributes& WithBaseModelName(Aws::String&& value) { SetBaseModelName(std::move(value)); return *this;}
-    inline TextGenerationResolvedAttributes& WithBaseModelName(const char* value) { SetBaseModelName(value); return *this;}
+    template<typename BaseModelNameT = Aws::String>
+    void SetBaseModelName(BaseModelNameT&& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = std::forward<BaseModelNameT>(value); }
+    template<typename BaseModelNameT = Aws::String>
+    TextGenerationResolvedAttributes& WithBaseModelName(BaseModelNameT&& value) { SetBaseModelName(std::forward<BaseModelNameT>(value)); return *this;}
     ///@}
   private:
 

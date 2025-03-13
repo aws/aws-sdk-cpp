@@ -29,7 +29,7 @@ namespace Model
   class ListOutgoingCertificatesRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ListOutgoingCertificatesRequest();
+    AWS_IOT_API ListOutgoingCertificatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>The result page size.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline ListOutgoingCertificatesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -56,14 +56,12 @@ namespace Model
     /**
      * <p>The marker for the next set of results.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListOutgoingCertificatesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListOutgoingCertificatesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListOutgoingCertificatesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListOutgoingCertificatesRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,20 +69,20 @@ namespace Model
      * <p>Specifies the order for results. If True, the results are returned in
      * ascending order, based on the creation date.</p>
      */
-    inline bool GetAscendingOrder() const{ return m_ascendingOrder; }
+    inline bool GetAscendingOrder() const { return m_ascendingOrder; }
     inline bool AscendingOrderHasBeenSet() const { return m_ascendingOrderHasBeenSet; }
     inline void SetAscendingOrder(bool value) { m_ascendingOrderHasBeenSet = true; m_ascendingOrder = value; }
     inline ListOutgoingCertificatesRequest& WithAscendingOrder(bool value) { SetAscendingOrder(value); return *this;}
     ///@}
   private:
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    bool m_ascendingOrder;
+    bool m_ascendingOrder{false};
     bool m_ascendingOrderHasBeenSet = false;
   };
 

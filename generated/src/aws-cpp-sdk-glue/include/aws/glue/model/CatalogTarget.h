@@ -32,7 +32,7 @@ namespace Model
   class CatalogTarget
   {
   public:
-    AWS_GLUE_API CatalogTarget();
+    AWS_GLUE_API CatalogTarget() = default;
     AWS_GLUE_API CatalogTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API CatalogTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,26 @@ namespace Model
     /**
      * <p>The name of the database to be synchronized.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline CatalogTarget& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline CatalogTarget& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline CatalogTarget& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    CatalogTarget& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the tables to be synchronized.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTables() const{ return m_tables; }
+    inline const Aws::Vector<Aws::String>& GetTables() const { return m_tables; }
     inline bool TablesHasBeenSet() const { return m_tablesHasBeenSet; }
-    inline void SetTables(const Aws::Vector<Aws::String>& value) { m_tablesHasBeenSet = true; m_tables = value; }
-    inline void SetTables(Aws::Vector<Aws::String>&& value) { m_tablesHasBeenSet = true; m_tables = std::move(value); }
-    inline CatalogTarget& WithTables(const Aws::Vector<Aws::String>& value) { SetTables(value); return *this;}
-    inline CatalogTarget& WithTables(Aws::Vector<Aws::String>&& value) { SetTables(std::move(value)); return *this;}
-    inline CatalogTarget& AddTables(const Aws::String& value) { m_tablesHasBeenSet = true; m_tables.push_back(value); return *this; }
-    inline CatalogTarget& AddTables(Aws::String&& value) { m_tablesHasBeenSet = true; m_tables.push_back(std::move(value)); return *this; }
-    inline CatalogTarget& AddTables(const char* value) { m_tablesHasBeenSet = true; m_tables.push_back(value); return *this; }
+    template<typename TablesT = Aws::Vector<Aws::String>>
+    void SetTables(TablesT&& value) { m_tablesHasBeenSet = true; m_tables = std::forward<TablesT>(value); }
+    template<typename TablesT = Aws::Vector<Aws::String>>
+    CatalogTarget& WithTables(TablesT&& value) { SetTables(std::forward<TablesT>(value)); return *this;}
+    template<typename TablesT = Aws::String>
+    CatalogTarget& AddTables(TablesT&& value) { m_tablesHasBeenSet = true; m_tables.emplace_back(std::forward<TablesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,14 +70,12 @@ namespace Model
      * target of the crawl when using a <code>Catalog</code> connection type paired
      * with a <code>NETWORK</code> Connection type.</p>
      */
-    inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
+    inline const Aws::String& GetConnectionName() const { return m_connectionName; }
     inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
-    inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
-    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
-    inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
-    inline CatalogTarget& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
-    inline CatalogTarget& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
-    inline CatalogTarget& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
+    template<typename ConnectionNameT = Aws::String>
+    void SetConnectionName(ConnectionNameT&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::forward<ConnectionNameT>(value); }
+    template<typename ConnectionNameT = Aws::String>
+    CatalogTarget& WithConnectionName(ConnectionNameT&& value) { SetConnectionName(std::forward<ConnectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +83,12 @@ namespace Model
      * <p>A valid Amazon SQS ARN. For example,
      * <code>arn:aws:sqs:region:account:sqs</code>.</p>
      */
-    inline const Aws::String& GetEventQueueArn() const{ return m_eventQueueArn; }
+    inline const Aws::String& GetEventQueueArn() const { return m_eventQueueArn; }
     inline bool EventQueueArnHasBeenSet() const { return m_eventQueueArnHasBeenSet; }
-    inline void SetEventQueueArn(const Aws::String& value) { m_eventQueueArnHasBeenSet = true; m_eventQueueArn = value; }
-    inline void SetEventQueueArn(Aws::String&& value) { m_eventQueueArnHasBeenSet = true; m_eventQueueArn = std::move(value); }
-    inline void SetEventQueueArn(const char* value) { m_eventQueueArnHasBeenSet = true; m_eventQueueArn.assign(value); }
-    inline CatalogTarget& WithEventQueueArn(const Aws::String& value) { SetEventQueueArn(value); return *this;}
-    inline CatalogTarget& WithEventQueueArn(Aws::String&& value) { SetEventQueueArn(std::move(value)); return *this;}
-    inline CatalogTarget& WithEventQueueArn(const char* value) { SetEventQueueArn(value); return *this;}
+    template<typename EventQueueArnT = Aws::String>
+    void SetEventQueueArn(EventQueueArnT&& value) { m_eventQueueArnHasBeenSet = true; m_eventQueueArn = std::forward<EventQueueArnT>(value); }
+    template<typename EventQueueArnT = Aws::String>
+    CatalogTarget& WithEventQueueArn(EventQueueArnT&& value) { SetEventQueueArn(std::forward<EventQueueArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +96,12 @@ namespace Model
      * <p>A valid Amazon dead-letter SQS ARN. For example,
      * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
      */
-    inline const Aws::String& GetDlqEventQueueArn() const{ return m_dlqEventQueueArn; }
+    inline const Aws::String& GetDlqEventQueueArn() const { return m_dlqEventQueueArn; }
     inline bool DlqEventQueueArnHasBeenSet() const { return m_dlqEventQueueArnHasBeenSet; }
-    inline void SetDlqEventQueueArn(const Aws::String& value) { m_dlqEventQueueArnHasBeenSet = true; m_dlqEventQueueArn = value; }
-    inline void SetDlqEventQueueArn(Aws::String&& value) { m_dlqEventQueueArnHasBeenSet = true; m_dlqEventQueueArn = std::move(value); }
-    inline void SetDlqEventQueueArn(const char* value) { m_dlqEventQueueArnHasBeenSet = true; m_dlqEventQueueArn.assign(value); }
-    inline CatalogTarget& WithDlqEventQueueArn(const Aws::String& value) { SetDlqEventQueueArn(value); return *this;}
-    inline CatalogTarget& WithDlqEventQueueArn(Aws::String&& value) { SetDlqEventQueueArn(std::move(value)); return *this;}
-    inline CatalogTarget& WithDlqEventQueueArn(const char* value) { SetDlqEventQueueArn(value); return *this;}
+    template<typename DlqEventQueueArnT = Aws::String>
+    void SetDlqEventQueueArn(DlqEventQueueArnT&& value) { m_dlqEventQueueArnHasBeenSet = true; m_dlqEventQueueArn = std::forward<DlqEventQueueArnT>(value); }
+    template<typename DlqEventQueueArnT = Aws::String>
+    CatalogTarget& WithDlqEventQueueArn(DlqEventQueueArnT&& value) { SetDlqEventQueueArn(std::forward<DlqEventQueueArnT>(value)); return *this;}
     ///@}
   private:
 

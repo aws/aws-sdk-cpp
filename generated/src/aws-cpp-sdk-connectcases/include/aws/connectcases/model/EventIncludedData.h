@@ -33,7 +33,7 @@ namespace Model
   class EventIncludedData
   {
   public:
-    AWS_CONNECTCASES_API EventIncludedData();
+    AWS_CONNECTCASES_API EventIncludedData() = default;
     AWS_CONNECTCASES_API EventIncludedData(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API EventIncludedData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Details of what case data is published through the case event stream.</p>
      */
-    inline const CaseEventIncludedData& GetCaseData() const{ return m_caseData; }
+    inline const CaseEventIncludedData& GetCaseData() const { return m_caseData; }
     inline bool CaseDataHasBeenSet() const { return m_caseDataHasBeenSet; }
-    inline void SetCaseData(const CaseEventIncludedData& value) { m_caseDataHasBeenSet = true; m_caseData = value; }
-    inline void SetCaseData(CaseEventIncludedData&& value) { m_caseDataHasBeenSet = true; m_caseData = std::move(value); }
-    inline EventIncludedData& WithCaseData(const CaseEventIncludedData& value) { SetCaseData(value); return *this;}
-    inline EventIncludedData& WithCaseData(CaseEventIncludedData&& value) { SetCaseData(std::move(value)); return *this;}
+    template<typename CaseDataT = CaseEventIncludedData>
+    void SetCaseData(CaseDataT&& value) { m_caseDataHasBeenSet = true; m_caseData = std::forward<CaseDataT>(value); }
+    template<typename CaseDataT = CaseEventIncludedData>
+    EventIncludedData& WithCaseData(CaseDataT&& value) { SetCaseData(std::forward<CaseDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>Details of what related item data is published through the case event
      * stream.</p>
      */
-    inline const RelatedItemEventIncludedData& GetRelatedItemData() const{ return m_relatedItemData; }
+    inline const RelatedItemEventIncludedData& GetRelatedItemData() const { return m_relatedItemData; }
     inline bool RelatedItemDataHasBeenSet() const { return m_relatedItemDataHasBeenSet; }
-    inline void SetRelatedItemData(const RelatedItemEventIncludedData& value) { m_relatedItemDataHasBeenSet = true; m_relatedItemData = value; }
-    inline void SetRelatedItemData(RelatedItemEventIncludedData&& value) { m_relatedItemDataHasBeenSet = true; m_relatedItemData = std::move(value); }
-    inline EventIncludedData& WithRelatedItemData(const RelatedItemEventIncludedData& value) { SetRelatedItemData(value); return *this;}
-    inline EventIncludedData& WithRelatedItemData(RelatedItemEventIncludedData&& value) { SetRelatedItemData(std::move(value)); return *this;}
+    template<typename RelatedItemDataT = RelatedItemEventIncludedData>
+    void SetRelatedItemData(RelatedItemDataT&& value) { m_relatedItemDataHasBeenSet = true; m_relatedItemData = std::forward<RelatedItemDataT>(value); }
+    template<typename RelatedItemDataT = RelatedItemEventIncludedData>
+    EventIncludedData& WithRelatedItemData(RelatedItemDataT&& value) { SetRelatedItemData(std::forward<RelatedItemDataT>(value)); return *this;}
     ///@}
   private:
 

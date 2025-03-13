@@ -18,25 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeTargetParameters::PipeTargetParameters() : 
-    m_inputTemplateHasBeenSet(false),
-    m_lambdaFunctionParametersHasBeenSet(false),
-    m_stepFunctionStateMachineParametersHasBeenSet(false),
-    m_kinesisStreamParametersHasBeenSet(false),
-    m_ecsTaskParametersHasBeenSet(false),
-    m_batchJobParametersHasBeenSet(false),
-    m_sqsQueueParametersHasBeenSet(false),
-    m_httpParametersHasBeenSet(false),
-    m_redshiftDataParametersHasBeenSet(false),
-    m_sageMakerPipelineParametersHasBeenSet(false),
-    m_eventBridgeEventBusParametersHasBeenSet(false),
-    m_cloudWatchLogsParametersHasBeenSet(false),
-    m_timestreamParametersHasBeenSet(false)
-{
-}
-
 PipeTargetParameters::PipeTargetParameters(JsonView jsonValue)
-  : PipeTargetParameters()
 {
   *this = jsonValue;
 }
@@ -46,94 +28,68 @@ PipeTargetParameters& PipeTargetParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InputTemplate"))
   {
     m_inputTemplate = jsonValue.GetString("InputTemplate");
-
     m_inputTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaFunctionParameters"))
   {
     m_lambdaFunctionParameters = jsonValue.GetObject("LambdaFunctionParameters");
-
     m_lambdaFunctionParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepFunctionStateMachineParameters"))
   {
     m_stepFunctionStateMachineParameters = jsonValue.GetObject("StepFunctionStateMachineParameters");
-
     m_stepFunctionStateMachineParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisStreamParameters"))
   {
     m_kinesisStreamParameters = jsonValue.GetObject("KinesisStreamParameters");
-
     m_kinesisStreamParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EcsTaskParameters"))
   {
     m_ecsTaskParameters = jsonValue.GetObject("EcsTaskParameters");
-
     m_ecsTaskParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchJobParameters"))
   {
     m_batchJobParameters = jsonValue.GetObject("BatchJobParameters");
-
     m_batchJobParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SqsQueueParameters"))
   {
     m_sqsQueueParameters = jsonValue.GetObject("SqsQueueParameters");
-
     m_sqsQueueParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpParameters"))
   {
     m_httpParameters = jsonValue.GetObject("HttpParameters");
-
     m_httpParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftDataParameters"))
   {
     m_redshiftDataParameters = jsonValue.GetObject("RedshiftDataParameters");
-
     m_redshiftDataParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SageMakerPipelineParameters"))
   {
     m_sageMakerPipelineParameters = jsonValue.GetObject("SageMakerPipelineParameters");
-
     m_sageMakerPipelineParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBridgeEventBusParameters"))
   {
     m_eventBridgeEventBusParameters = jsonValue.GetObject("EventBridgeEventBusParameters");
-
     m_eventBridgeEventBusParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLogsParameters"))
   {
     m_cloudWatchLogsParameters = jsonValue.GetObject("CloudWatchLogsParameters");
-
     m_cloudWatchLogsParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimestreamParameters"))
   {
     m_timestreamParameters = jsonValue.GetObject("TimestreamParameters");
-
     m_timestreamParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

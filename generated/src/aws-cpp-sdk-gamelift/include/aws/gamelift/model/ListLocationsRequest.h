@@ -23,7 +23,7 @@ namespace Model
   class ListLocationsRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API ListLocationsRequest();
+    AWS_GAMELIFT_API ListLocationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,13 @@ namespace Model
     /**
      * <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
      */
-    inline const Aws::Vector<LocationFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<LocationFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<LocationFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<LocationFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListLocationsRequest& WithFilters(const Aws::Vector<LocationFilter>& value) { SetFilters(value); return *this;}
-    inline ListLocationsRequest& WithFilters(Aws::Vector<LocationFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListLocationsRequest& AddFilters(const LocationFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListLocationsRequest& AddFilters(LocationFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<LocationFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<LocationFilter>>
+    ListLocationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    inline ListLocationsRequest& AddFilters(LocationFilter value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -55,7 +54,7 @@ namespace Model
      * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListLocationsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -67,21 +66,19 @@ namespace Model
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListLocationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLocationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLocationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLocationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LocationFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

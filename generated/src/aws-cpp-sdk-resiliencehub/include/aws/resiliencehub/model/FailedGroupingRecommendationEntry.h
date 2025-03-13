@@ -32,7 +32,7 @@ namespace Model
   class FailedGroupingRecommendationEntry
   {
   public:
-    AWS_RESILIENCEHUB_API FailedGroupingRecommendationEntry();
+    AWS_RESILIENCEHUB_API FailedGroupingRecommendationEntry() = default;
     AWS_RESILIENCEHUB_API FailedGroupingRecommendationEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API FailedGroupingRecommendationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>Indicates the error that occurred while implementing a grouping
      * recommendation.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline FailedGroupingRecommendationEntry& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline FailedGroupingRecommendationEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline FailedGroupingRecommendationEntry& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    FailedGroupingRecommendationEntry& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the identifier of the grouping recommendation.</p>
      */
-    inline const Aws::String& GetGroupingRecommendationId() const{ return m_groupingRecommendationId; }
+    inline const Aws::String& GetGroupingRecommendationId() const { return m_groupingRecommendationId; }
     inline bool GroupingRecommendationIdHasBeenSet() const { return m_groupingRecommendationIdHasBeenSet; }
-    inline void SetGroupingRecommendationId(const Aws::String& value) { m_groupingRecommendationIdHasBeenSet = true; m_groupingRecommendationId = value; }
-    inline void SetGroupingRecommendationId(Aws::String&& value) { m_groupingRecommendationIdHasBeenSet = true; m_groupingRecommendationId = std::move(value); }
-    inline void SetGroupingRecommendationId(const char* value) { m_groupingRecommendationIdHasBeenSet = true; m_groupingRecommendationId.assign(value); }
-    inline FailedGroupingRecommendationEntry& WithGroupingRecommendationId(const Aws::String& value) { SetGroupingRecommendationId(value); return *this;}
-    inline FailedGroupingRecommendationEntry& WithGroupingRecommendationId(Aws::String&& value) { SetGroupingRecommendationId(std::move(value)); return *this;}
-    inline FailedGroupingRecommendationEntry& WithGroupingRecommendationId(const char* value) { SetGroupingRecommendationId(value); return *this;}
+    template<typename GroupingRecommendationIdT = Aws::String>
+    void SetGroupingRecommendationId(GroupingRecommendationIdT&& value) { m_groupingRecommendationIdHasBeenSet = true; m_groupingRecommendationId = std::forward<GroupingRecommendationIdT>(value); }
+    template<typename GroupingRecommendationIdT = Aws::String>
+    FailedGroupingRecommendationEntry& WithGroupingRecommendationId(GroupingRecommendationIdT&& value) { SetGroupingRecommendationId(std::forward<GroupingRecommendationIdT>(value)); return *this;}
     ///@}
   private:
 

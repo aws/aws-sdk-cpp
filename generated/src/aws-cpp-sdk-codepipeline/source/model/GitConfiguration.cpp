@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-GitConfiguration::GitConfiguration() : 
-    m_sourceActionNameHasBeenSet(false),
-    m_pushHasBeenSet(false),
-    m_pullRequestHasBeenSet(false)
-{
-}
-
 GitConfiguration::GitConfiguration(JsonView jsonValue)
-  : GitConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ GitConfiguration& GitConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceActionName"))
   {
     m_sourceActionName = jsonValue.GetString("sourceActionName");
-
     m_sourceActionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("push"))
   {
     Aws::Utils::Array<JsonView> pushJsonList = jsonValue.GetArray("push");
@@ -49,7 +39,6 @@ GitConfiguration& GitConfiguration::operator =(JsonView jsonValue)
     }
     m_pushHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pullRequest"))
   {
     Aws::Utils::Array<JsonView> pullRequestJsonList = jsonValue.GetArray("pullRequest");
@@ -59,7 +48,6 @@ GitConfiguration& GitConfiguration::operator =(JsonView jsonValue)
     }
     m_pullRequestHasBeenSet = true;
   }
-
   return *this;
 }
 

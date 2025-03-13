@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDisassociateResourcesFromCustomLineItemResult::BatchDisassociateResourcesFromCustomLineItemResult()
-{
-}
-
 BatchDisassociateResourcesFromCustomLineItemResult::BatchDisassociateResourcesFromCustomLineItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchDisassociateResourcesFromCustomLineItemResult& BatchDisassociateResourcesFr
     {
       m_successfullyDisassociatedResources.push_back(successfullyDisassociatedResourcesJsonList[successfullyDisassociatedResourcesIndex].AsObject());
     }
+    m_successfullyDisassociatedResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedDisassociatedResources"))
   {
     Aws::Utils::Array<JsonView> failedDisassociatedResourcesJsonList = jsonValue.GetArray("FailedDisassociatedResources");
@@ -45,14 +41,15 @@ BatchDisassociateResourcesFromCustomLineItemResult& BatchDisassociateResourcesFr
     {
       m_failedDisassociatedResources.push_back(failedDisassociatedResourcesJsonList[failedDisassociatedResourcesIndex].AsObject());
     }
+    m_failedDisassociatedResourcesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

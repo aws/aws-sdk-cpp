@@ -34,7 +34,7 @@ namespace Model
   class DimensionValues
   {
   public:
-    AWS_BILLING_API DimensionValues();
+    AWS_BILLING_API DimensionValues() = default;
     AWS_BILLING_API DimensionValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLING_API DimensionValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,31 +45,28 @@ namespace Model
      * <p> The names of the metadata types that you can use to filter and group your
      * results. </p>
      */
-    inline const Dimension& GetKey() const{ return m_key; }
+    inline Dimension GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Dimension& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Dimension&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline DimensionValues& WithKey(const Dimension& value) { SetKey(value); return *this;}
-    inline DimensionValues& WithKey(Dimension&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(Dimension value) { m_keyHasBeenSet = true; m_key = value; }
+    inline DimensionValues& WithKey(Dimension value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The metadata values that you can use to filter and group your results. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline DimensionValues& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline DimensionValues& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline DimensionValues& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline DimensionValues& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline DimensionValues& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    DimensionValues& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    DimensionValues& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    Dimension m_key;
+    Dimension m_key{Dimension::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

@@ -33,7 +33,7 @@ namespace Model
   class Administrator
   {
   public:
-    AWS_DETECTIVE_API Administrator();
+    AWS_DETECTIVE_API Administrator() = default;
     AWS_DETECTIVE_API Administrator(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Administrator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>The Amazon Web Services account identifier of the Detective administrator
      * account for the organization.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline Administrator& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline Administrator& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline Administrator& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    Administrator& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the organization behavior graph.</p>
      */
-    inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
+    inline const Aws::String& GetGraphArn() const { return m_graphArn; }
     inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
-    inline void SetGraphArn(const Aws::String& value) { m_graphArnHasBeenSet = true; m_graphArn = value; }
-    inline void SetGraphArn(Aws::String&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::move(value); }
-    inline void SetGraphArn(const char* value) { m_graphArnHasBeenSet = true; m_graphArn.assign(value); }
-    inline Administrator& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
-    inline Administrator& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
-    inline Administrator& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
+    template<typename GraphArnT = Aws::String>
+    void SetGraphArn(GraphArnT&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::forward<GraphArnT>(value); }
+    template<typename GraphArnT = Aws::String>
+    Administrator& WithGraphArn(GraphArnT&& value) { SetGraphArn(std::forward<GraphArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,12 @@ namespace Model
      * value is an ISO8601 formatted string. For example,
      * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetDelegationTime() const{ return m_delegationTime; }
+    inline const Aws::Utils::DateTime& GetDelegationTime() const { return m_delegationTime; }
     inline bool DelegationTimeHasBeenSet() const { return m_delegationTimeHasBeenSet; }
-    inline void SetDelegationTime(const Aws::Utils::DateTime& value) { m_delegationTimeHasBeenSet = true; m_delegationTime = value; }
-    inline void SetDelegationTime(Aws::Utils::DateTime&& value) { m_delegationTimeHasBeenSet = true; m_delegationTime = std::move(value); }
-    inline Administrator& WithDelegationTime(const Aws::Utils::DateTime& value) { SetDelegationTime(value); return *this;}
-    inline Administrator& WithDelegationTime(Aws::Utils::DateTime&& value) { SetDelegationTime(std::move(value)); return *this;}
+    template<typename DelegationTimeT = Aws::Utils::DateTime>
+    void SetDelegationTime(DelegationTimeT&& value) { m_delegationTimeHasBeenSet = true; m_delegationTime = std::forward<DelegationTimeT>(value); }
+    template<typename DelegationTimeT = Aws::Utils::DateTime>
+    Administrator& WithDelegationTime(DelegationTimeT&& value) { SetDelegationTime(std::forward<DelegationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -89,7 +85,7 @@ namespace Model
     Aws::String m_graphArn;
     bool m_graphArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_delegationTime;
+    Aws::Utils::DateTime m_delegationTime{};
     bool m_delegationTimeHasBeenSet = false;
   };
 

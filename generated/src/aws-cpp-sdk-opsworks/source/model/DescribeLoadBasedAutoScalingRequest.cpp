@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLoadBasedAutoScalingRequest::DescribeLoadBasedAutoScalingRequest() : 
-    m_layerIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLoadBasedAutoScalingRequest::SerializePayload() const
 {
   JsonValue payload;

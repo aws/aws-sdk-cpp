@@ -31,7 +31,7 @@ namespace Model
   class Time
   {
   public:
-    AWS_INSPECTOR2_API Time();
+    AWS_INSPECTOR2_API Time() = default;
     AWS_INSPECTOR2_API Time(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Time& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The time of day in 24-hour format (00:00).</p>
      */
-    inline const Aws::String& GetTimeOfDay() const{ return m_timeOfDay; }
+    inline const Aws::String& GetTimeOfDay() const { return m_timeOfDay; }
     inline bool TimeOfDayHasBeenSet() const { return m_timeOfDayHasBeenSet; }
-    inline void SetTimeOfDay(const Aws::String& value) { m_timeOfDayHasBeenSet = true; m_timeOfDay = value; }
-    inline void SetTimeOfDay(Aws::String&& value) { m_timeOfDayHasBeenSet = true; m_timeOfDay = std::move(value); }
-    inline void SetTimeOfDay(const char* value) { m_timeOfDayHasBeenSet = true; m_timeOfDay.assign(value); }
-    inline Time& WithTimeOfDay(const Aws::String& value) { SetTimeOfDay(value); return *this;}
-    inline Time& WithTimeOfDay(Aws::String&& value) { SetTimeOfDay(std::move(value)); return *this;}
-    inline Time& WithTimeOfDay(const char* value) { SetTimeOfDay(value); return *this;}
+    template<typename TimeOfDayT = Aws::String>
+    void SetTimeOfDay(TimeOfDayT&& value) { m_timeOfDayHasBeenSet = true; m_timeOfDay = std::forward<TimeOfDayT>(value); }
+    template<typename TimeOfDayT = Aws::String>
+    Time& WithTimeOfDay(TimeOfDayT&& value) { SetTimeOfDay(std::forward<TimeOfDayT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timezone.</p>
      */
-    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+    inline const Aws::String& GetTimezone() const { return m_timezone; }
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
-    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
-    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
-    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
-    inline Time& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
-    inline Time& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
-    inline Time& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+    template<typename TimezoneT = Aws::String>
+    void SetTimezone(TimezoneT&& value) { m_timezoneHasBeenSet = true; m_timezone = std::forward<TimezoneT>(value); }
+    template<typename TimezoneT = Aws::String>
+    Time& WithTimezone(TimezoneT&& value) { SetTimezone(std::forward<TimezoneT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class ListCommentsItem
   {
   public:
-    AWS_SECURITYIR_API ListCommentsItem();
+    AWS_SECURITYIR_API ListCommentsItem() = default;
     AWS_SECURITYIR_API ListCommentsItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API ListCommentsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,90 +42,82 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetCommentId() const{ return m_commentId; }
+    inline const Aws::String& GetCommentId() const { return m_commentId; }
     inline bool CommentIdHasBeenSet() const { return m_commentIdHasBeenSet; }
-    inline void SetCommentId(const Aws::String& value) { m_commentIdHasBeenSet = true; m_commentId = value; }
-    inline void SetCommentId(Aws::String&& value) { m_commentIdHasBeenSet = true; m_commentId = std::move(value); }
-    inline void SetCommentId(const char* value) { m_commentIdHasBeenSet = true; m_commentId.assign(value); }
-    inline ListCommentsItem& WithCommentId(const Aws::String& value) { SetCommentId(value); return *this;}
-    inline ListCommentsItem& WithCommentId(Aws::String&& value) { SetCommentId(std::move(value)); return *this;}
-    inline ListCommentsItem& WithCommentId(const char* value) { SetCommentId(value); return *this;}
+    template<typename CommentIdT = Aws::String>
+    void SetCommentId(CommentIdT&& value) { m_commentIdHasBeenSet = true; m_commentId = std::forward<CommentIdT>(value); }
+    template<typename CommentIdT = Aws::String>
+    ListCommentsItem& WithCommentId(CommentIdT&& value) { SetCommentId(std::forward<CommentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-    inline ListCommentsItem& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline ListCommentsItem& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    ListCommentsItem& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const { return m_lastUpdatedDate; }
     inline bool LastUpdatedDateHasBeenSet() const { return m_lastUpdatedDateHasBeenSet; }
-    inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = value; }
-    inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::move(value); }
-    inline ListCommentsItem& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
-    inline ListCommentsItem& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
+    template<typename LastUpdatedDateT = Aws::Utils::DateTime>
+    void SetLastUpdatedDate(LastUpdatedDateT&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::forward<LastUpdatedDateT>(value); }
+    template<typename LastUpdatedDateT = Aws::Utils::DateTime>
+    ListCommentsItem& WithLastUpdatedDate(LastUpdatedDateT&& value) { SetLastUpdatedDate(std::forward<LastUpdatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetCreator() const{ return m_creator; }
+    inline const Aws::String& GetCreator() const { return m_creator; }
     inline bool CreatorHasBeenSet() const { return m_creatorHasBeenSet; }
-    inline void SetCreator(const Aws::String& value) { m_creatorHasBeenSet = true; m_creator = value; }
-    inline void SetCreator(Aws::String&& value) { m_creatorHasBeenSet = true; m_creator = std::move(value); }
-    inline void SetCreator(const char* value) { m_creatorHasBeenSet = true; m_creator.assign(value); }
-    inline ListCommentsItem& WithCreator(const Aws::String& value) { SetCreator(value); return *this;}
-    inline ListCommentsItem& WithCreator(Aws::String&& value) { SetCreator(std::move(value)); return *this;}
-    inline ListCommentsItem& WithCreator(const char* value) { SetCreator(value); return *this;}
+    template<typename CreatorT = Aws::String>
+    void SetCreator(CreatorT&& value) { m_creatorHasBeenSet = true; m_creator = std::forward<CreatorT>(value); }
+    template<typename CreatorT = Aws::String>
+    ListCommentsItem& WithCreator(CreatorT&& value) { SetCreator(std::forward<CreatorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetLastUpdatedBy() const{ return m_lastUpdatedBy; }
+    inline const Aws::String& GetLastUpdatedBy() const { return m_lastUpdatedBy; }
     inline bool LastUpdatedByHasBeenSet() const { return m_lastUpdatedByHasBeenSet; }
-    inline void SetLastUpdatedBy(const Aws::String& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = value; }
-    inline void SetLastUpdatedBy(Aws::String&& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = std::move(value); }
-    inline void SetLastUpdatedBy(const char* value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy.assign(value); }
-    inline ListCommentsItem& WithLastUpdatedBy(const Aws::String& value) { SetLastUpdatedBy(value); return *this;}
-    inline ListCommentsItem& WithLastUpdatedBy(Aws::String&& value) { SetLastUpdatedBy(std::move(value)); return *this;}
-    inline ListCommentsItem& WithLastUpdatedBy(const char* value) { SetLastUpdatedBy(value); return *this;}
+    template<typename LastUpdatedByT = Aws::String>
+    void SetLastUpdatedBy(LastUpdatedByT&& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = std::forward<LastUpdatedByT>(value); }
+    template<typename LastUpdatedByT = Aws::String>
+    ListCommentsItem& WithLastUpdatedBy(LastUpdatedByT&& value) { SetLastUpdatedBy(std::forward<LastUpdatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline ListCommentsItem& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline ListCommentsItem& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline ListCommentsItem& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    ListCommentsItem& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_commentId;
     bool m_commentIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
     bool m_createdDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDate;
+    Aws::Utils::DateTime m_lastUpdatedDate{};
     bool m_lastUpdatedDateHasBeenSet = false;
 
     Aws::String m_creator;

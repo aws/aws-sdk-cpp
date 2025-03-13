@@ -28,7 +28,7 @@ namespace Model
   class ListAnycastIpLists2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API ListAnycastIpLists2020_05_31Result();
+    AWS_CLOUDFRONT_API ListAnycastIpLists2020_05_31Result() = default;
     AWS_CLOUDFRONT_API ListAnycastIpLists2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API ListAnycastIpLists2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Root level tag for the <code>AnycastIpLists</code> parameters.</p>
      */
-    inline const AnycastIpListCollection& GetAnycastIpLists() const{ return m_anycastIpLists; }
-    inline void SetAnycastIpLists(const AnycastIpListCollection& value) { m_anycastIpLists = value; }
-    inline void SetAnycastIpLists(AnycastIpListCollection&& value) { m_anycastIpLists = std::move(value); }
-    inline ListAnycastIpLists2020_05_31Result& WithAnycastIpLists(const AnycastIpListCollection& value) { SetAnycastIpLists(value); return *this;}
-    inline ListAnycastIpLists2020_05_31Result& WithAnycastIpLists(AnycastIpListCollection&& value) { SetAnycastIpLists(std::move(value)); return *this;}
+    inline const AnycastIpListCollection& GetAnycastIpLists() const { return m_anycastIpLists; }
+    template<typename AnycastIpListsT = AnycastIpListCollection>
+    void SetAnycastIpLists(AnycastIpListsT&& value) { m_anycastIpListsHasBeenSet = true; m_anycastIpLists = std::forward<AnycastIpListsT>(value); }
+    template<typename AnycastIpListsT = AnycastIpListCollection>
+    ListAnycastIpLists2020_05_31Result& WithAnycastIpLists(AnycastIpListsT&& value) { SetAnycastIpLists(std::forward<AnycastIpListsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAnycastIpLists2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAnycastIpLists2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAnycastIpLists2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAnycastIpLists2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AnycastIpListCollection m_anycastIpLists;
+    bool m_anycastIpListsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

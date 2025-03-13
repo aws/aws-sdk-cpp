@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAssociatedAccessPoliciesRequest::ListAssociatedAccessPoliciesRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAssociatedAccessPoliciesRequest::SerializePayload() const
 {
   return {};

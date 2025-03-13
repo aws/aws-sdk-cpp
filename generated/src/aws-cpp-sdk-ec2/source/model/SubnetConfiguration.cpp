@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SubnetConfiguration::SubnetConfiguration() : 
-    m_subnetIdHasBeenSet(false),
-    m_ipv4HasBeenSet(false),
-    m_ipv6HasBeenSet(false)
-{
-}
-
 SubnetConfiguration::SubnetConfiguration(const XmlNode& xmlNode)
-  : SubnetConfiguration()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ SubnetConfiguration& SubnetConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode ipv4Node = resultNode.FirstChild("Ipv4");
     if(!ipv4Node.IsNull())
     {
       m_ipv4 = Aws::Utils::Xml::DecodeEscapedXmlText(ipv4Node.GetText());
       m_ipv4HasBeenSet = true;
+       m_ipv4HasBeenSet = true;
     }
     XmlNode ipv6Node = resultNode.FirstChild("Ipv6");
     if(!ipv6Node.IsNull())
     {
       m_ipv6 = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6Node.GetText());
       m_ipv6HasBeenSet = true;
+       m_ipv6HasBeenSet = true;
     }
   }
 

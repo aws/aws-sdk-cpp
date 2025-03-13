@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeServiceUpdatesResult::DescribeServiceUpdatesResult()
-{
-}
-
 DescribeServiceUpdatesResult::DescribeServiceUpdatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeServiceUpdatesResult& DescribeServiceUpdatesResult::operator =(const Aws
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceUpdates"))
   {
     Aws::Utils::Array<JsonView> serviceUpdatesJsonList = jsonValue.GetArray("ServiceUpdates");
@@ -42,14 +37,15 @@ DescribeServiceUpdatesResult& DescribeServiceUpdatesResult::operator =(const Aws
     {
       m_serviceUpdates.push_back(serviceUpdatesJsonList[serviceUpdatesIndex].AsObject());
     }
+    m_serviceUpdatesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

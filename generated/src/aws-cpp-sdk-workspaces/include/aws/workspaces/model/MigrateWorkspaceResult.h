@@ -27,7 +27,7 @@ namespace Model
   class MigrateWorkspaceResult
   {
   public:
-    AWS_WORKSPACES_API MigrateWorkspaceResult();
+    AWS_WORKSPACES_API MigrateWorkspaceResult() = default;
     AWS_WORKSPACES_API MigrateWorkspaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API MigrateWorkspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The original identifier of the WorkSpace that is being migrated.</p>
      */
-    inline const Aws::String& GetSourceWorkspaceId() const{ return m_sourceWorkspaceId; }
-    inline void SetSourceWorkspaceId(const Aws::String& value) { m_sourceWorkspaceId = value; }
-    inline void SetSourceWorkspaceId(Aws::String&& value) { m_sourceWorkspaceId = std::move(value); }
-    inline void SetSourceWorkspaceId(const char* value) { m_sourceWorkspaceId.assign(value); }
-    inline MigrateWorkspaceResult& WithSourceWorkspaceId(const Aws::String& value) { SetSourceWorkspaceId(value); return *this;}
-    inline MigrateWorkspaceResult& WithSourceWorkspaceId(Aws::String&& value) { SetSourceWorkspaceId(std::move(value)); return *this;}
-    inline MigrateWorkspaceResult& WithSourceWorkspaceId(const char* value) { SetSourceWorkspaceId(value); return *this;}
+    inline const Aws::String& GetSourceWorkspaceId() const { return m_sourceWorkspaceId; }
+    template<typename SourceWorkspaceIdT = Aws::String>
+    void SetSourceWorkspaceId(SourceWorkspaceIdT&& value) { m_sourceWorkspaceIdHasBeenSet = true; m_sourceWorkspaceId = std::forward<SourceWorkspaceIdT>(value); }
+    template<typename SourceWorkspaceIdT = Aws::String>
+    MigrateWorkspaceResult& WithSourceWorkspaceId(SourceWorkspaceIdT&& value) { SetSourceWorkspaceId(std::forward<SourceWorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,32 +49,31 @@ namespace Model
      * does not succeed, the target WorkSpace ID will not be used, and the WorkSpace
      * will still have the original WorkSpace ID.</p>
      */
-    inline const Aws::String& GetTargetWorkspaceId() const{ return m_targetWorkspaceId; }
-    inline void SetTargetWorkspaceId(const Aws::String& value) { m_targetWorkspaceId = value; }
-    inline void SetTargetWorkspaceId(Aws::String&& value) { m_targetWorkspaceId = std::move(value); }
-    inline void SetTargetWorkspaceId(const char* value) { m_targetWorkspaceId.assign(value); }
-    inline MigrateWorkspaceResult& WithTargetWorkspaceId(const Aws::String& value) { SetTargetWorkspaceId(value); return *this;}
-    inline MigrateWorkspaceResult& WithTargetWorkspaceId(Aws::String&& value) { SetTargetWorkspaceId(std::move(value)); return *this;}
-    inline MigrateWorkspaceResult& WithTargetWorkspaceId(const char* value) { SetTargetWorkspaceId(value); return *this;}
+    inline const Aws::String& GetTargetWorkspaceId() const { return m_targetWorkspaceId; }
+    template<typename TargetWorkspaceIdT = Aws::String>
+    void SetTargetWorkspaceId(TargetWorkspaceIdT&& value) { m_targetWorkspaceIdHasBeenSet = true; m_targetWorkspaceId = std::forward<TargetWorkspaceIdT>(value); }
+    template<typename TargetWorkspaceIdT = Aws::String>
+    MigrateWorkspaceResult& WithTargetWorkspaceId(TargetWorkspaceIdT&& value) { SetTargetWorkspaceId(std::forward<TargetWorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline MigrateWorkspaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline MigrateWorkspaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline MigrateWorkspaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    MigrateWorkspaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sourceWorkspaceId;
+    bool m_sourceWorkspaceIdHasBeenSet = false;
 
     Aws::String m_targetWorkspaceId;
+    bool m_targetWorkspaceIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

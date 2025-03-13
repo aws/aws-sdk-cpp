@@ -18,13 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ReportConfigurationCloudWatchDashboardInput::ReportConfigurationCloudWatchDashboardInput() : 
-    m_dashboardIdentifierHasBeenSet(false)
-{
-}
-
 ReportConfigurationCloudWatchDashboardInput::ReportConfigurationCloudWatchDashboardInput(JsonView jsonValue)
-  : ReportConfigurationCloudWatchDashboardInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReportConfigurationCloudWatchDashboardInput& ReportConfigurationCloudWatchDashbo
   if(jsonValue.ValueExists("dashboardIdentifier"))
   {
     m_dashboardIdentifier = jsonValue.GetString("dashboardIdentifier");
-
     m_dashboardIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

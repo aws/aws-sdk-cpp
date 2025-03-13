@@ -33,7 +33,7 @@ namespace Model
   class SourceTableConfig
   {
   public:
-    AWS_GLUE_API SourceTableConfig();
+    AWS_GLUE_API SourceTableConfig() = default;
     AWS_GLUE_API SourceTableConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API SourceTableConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,58 +43,52 @@ namespace Model
     /**
      * <p>A list of fields used for column-level filtering.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFields() const{ return m_fields; }
+    inline const Aws::Vector<Aws::String>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    inline void SetFields(const Aws::Vector<Aws::String>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-    inline void SetFields(Aws::Vector<Aws::String>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-    inline SourceTableConfig& WithFields(const Aws::Vector<Aws::String>& value) { SetFields(value); return *this;}
-    inline SourceTableConfig& WithFields(Aws::Vector<Aws::String>&& value) { SetFields(std::move(value)); return *this;}
-    inline SourceTableConfig& AddFields(const Aws::String& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-    inline SourceTableConfig& AddFields(Aws::String&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
-    inline SourceTableConfig& AddFields(const char* value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
+    template<typename FieldsT = Aws::Vector<Aws::String>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<Aws::String>>
+    SourceTableConfig& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = Aws::String>
+    SourceTableConfig& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A condition clause used for row-level filtering.</p>
      */
-    inline const Aws::String& GetFilterPredicate() const{ return m_filterPredicate; }
+    inline const Aws::String& GetFilterPredicate() const { return m_filterPredicate; }
     inline bool FilterPredicateHasBeenSet() const { return m_filterPredicateHasBeenSet; }
-    inline void SetFilterPredicate(const Aws::String& value) { m_filterPredicateHasBeenSet = true; m_filterPredicate = value; }
-    inline void SetFilterPredicate(Aws::String&& value) { m_filterPredicateHasBeenSet = true; m_filterPredicate = std::move(value); }
-    inline void SetFilterPredicate(const char* value) { m_filterPredicateHasBeenSet = true; m_filterPredicate.assign(value); }
-    inline SourceTableConfig& WithFilterPredicate(const Aws::String& value) { SetFilterPredicate(value); return *this;}
-    inline SourceTableConfig& WithFilterPredicate(Aws::String&& value) { SetFilterPredicate(std::move(value)); return *this;}
-    inline SourceTableConfig& WithFilterPredicate(const char* value) { SetFilterPredicate(value); return *this;}
+    template<typename FilterPredicateT = Aws::String>
+    void SetFilterPredicate(FilterPredicateT&& value) { m_filterPredicateHasBeenSet = true; m_filterPredicate = std::forward<FilterPredicateT>(value); }
+    template<typename FilterPredicateT = Aws::String>
+    SourceTableConfig& WithFilterPredicate(FilterPredicateT&& value) { SetFilterPredicate(std::forward<FilterPredicateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique identifier of a record.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrimaryKey() const{ return m_primaryKey; }
+    inline const Aws::Vector<Aws::String>& GetPrimaryKey() const { return m_primaryKey; }
     inline bool PrimaryKeyHasBeenSet() const { return m_primaryKeyHasBeenSet; }
-    inline void SetPrimaryKey(const Aws::Vector<Aws::String>& value) { m_primaryKeyHasBeenSet = true; m_primaryKey = value; }
-    inline void SetPrimaryKey(Aws::Vector<Aws::String>&& value) { m_primaryKeyHasBeenSet = true; m_primaryKey = std::move(value); }
-    inline SourceTableConfig& WithPrimaryKey(const Aws::Vector<Aws::String>& value) { SetPrimaryKey(value); return *this;}
-    inline SourceTableConfig& WithPrimaryKey(Aws::Vector<Aws::String>&& value) { SetPrimaryKey(std::move(value)); return *this;}
-    inline SourceTableConfig& AddPrimaryKey(const Aws::String& value) { m_primaryKeyHasBeenSet = true; m_primaryKey.push_back(value); return *this; }
-    inline SourceTableConfig& AddPrimaryKey(Aws::String&& value) { m_primaryKeyHasBeenSet = true; m_primaryKey.push_back(std::move(value)); return *this; }
-    inline SourceTableConfig& AddPrimaryKey(const char* value) { m_primaryKeyHasBeenSet = true; m_primaryKey.push_back(value); return *this; }
+    template<typename PrimaryKeyT = Aws::Vector<Aws::String>>
+    void SetPrimaryKey(PrimaryKeyT&& value) { m_primaryKeyHasBeenSet = true; m_primaryKey = std::forward<PrimaryKeyT>(value); }
+    template<typename PrimaryKeyT = Aws::Vector<Aws::String>>
+    SourceTableConfig& WithPrimaryKey(PrimaryKeyT&& value) { SetPrimaryKey(std::forward<PrimaryKeyT>(value)); return *this;}
+    template<typename PrimaryKeyT = Aws::String>
+    SourceTableConfig& AddPrimaryKey(PrimaryKeyT&& value) { m_primaryKeyHasBeenSet = true; m_primaryKey.emplace_back(std::forward<PrimaryKeyT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Incremental pull timestamp-based field.</p>
      */
-    inline const Aws::String& GetRecordUpdateField() const{ return m_recordUpdateField; }
+    inline const Aws::String& GetRecordUpdateField() const { return m_recordUpdateField; }
     inline bool RecordUpdateFieldHasBeenSet() const { return m_recordUpdateFieldHasBeenSet; }
-    inline void SetRecordUpdateField(const Aws::String& value) { m_recordUpdateFieldHasBeenSet = true; m_recordUpdateField = value; }
-    inline void SetRecordUpdateField(Aws::String&& value) { m_recordUpdateFieldHasBeenSet = true; m_recordUpdateField = std::move(value); }
-    inline void SetRecordUpdateField(const char* value) { m_recordUpdateFieldHasBeenSet = true; m_recordUpdateField.assign(value); }
-    inline SourceTableConfig& WithRecordUpdateField(const Aws::String& value) { SetRecordUpdateField(value); return *this;}
-    inline SourceTableConfig& WithRecordUpdateField(Aws::String&& value) { SetRecordUpdateField(std::move(value)); return *this;}
-    inline SourceTableConfig& WithRecordUpdateField(const char* value) { SetRecordUpdateField(value); return *this;}
+    template<typename RecordUpdateFieldT = Aws::String>
+    void SetRecordUpdateField(RecordUpdateFieldT&& value) { m_recordUpdateFieldHasBeenSet = true; m_recordUpdateField = std::forward<RecordUpdateFieldT>(value); }
+    template<typename RecordUpdateFieldT = Aws::String>
+    SourceTableConfig& WithRecordUpdateField(RecordUpdateFieldT&& value) { SetRecordUpdateField(std::forward<RecordUpdateFieldT>(value)); return *this;}
     ///@}
   private:
 

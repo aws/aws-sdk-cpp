@@ -22,7 +22,7 @@ namespace Model
   class UpdateMacieSessionRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API UpdateMacieSessionRequest();
+    AWS_MACIE2_API UpdateMacieSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,10 @@ namespace Model
      * This includes publishing updates to Security Hub and Amazon EventBridge
      * (formerly Amazon CloudWatch Events).</p>
      */
-    inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
+    inline FindingPublishingFrequency GetFindingPublishingFrequency() const { return m_findingPublishingFrequency; }
     inline bool FindingPublishingFrequencyHasBeenSet() const { return m_findingPublishingFrequencyHasBeenSet; }
-    inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
-    inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = std::move(value); }
-    inline UpdateMacieSessionRequest& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
-    inline UpdateMacieSessionRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
+    inline void SetFindingPublishingFrequency(FindingPublishingFrequency value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
+    inline UpdateMacieSessionRequest& WithFindingPublishingFrequency(FindingPublishingFrequency value) { SetFindingPublishingFrequency(value); return *this;}
     ///@}
 
     ///@{
@@ -53,19 +51,17 @@ namespace Model
      * Amazon Macie activities for the account; and, PAUSED, suspend all Macie
      * activities for the account.</p>
      */
-    inline const MacieStatus& GetStatus() const{ return m_status; }
+    inline MacieStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MacieStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MacieStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateMacieSessionRequest& WithStatus(const MacieStatus& value) { SetStatus(value); return *this;}
-    inline UpdateMacieSessionRequest& WithStatus(MacieStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MacieStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateMacieSessionRequest& WithStatus(MacieStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    FindingPublishingFrequency m_findingPublishingFrequency;
+    FindingPublishingFrequency m_findingPublishingFrequency{FindingPublishingFrequency::NOT_SET};
     bool m_findingPublishingFrequencyHasBeenSet = false;
 
-    MacieStatus m_status;
+    MacieStatus m_status{MacieStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

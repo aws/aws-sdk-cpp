@@ -18,14 +18,7 @@ namespace Support
 namespace Model
 {
 
-RecentCaseCommunications::RecentCaseCommunications() : 
-    m_communicationsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 RecentCaseCommunications::RecentCaseCommunications(JsonView jsonValue)
-  : RecentCaseCommunications()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ RecentCaseCommunications& RecentCaseCommunications::operator =(JsonView jsonValu
     }
     m_communicationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

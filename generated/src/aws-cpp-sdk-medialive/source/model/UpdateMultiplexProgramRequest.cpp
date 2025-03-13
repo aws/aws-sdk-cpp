@@ -12,13 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMultiplexProgramRequest::UpdateMultiplexProgramRequest() : 
-    m_multiplexIdHasBeenSet(false),
-    m_multiplexProgramSettingsHasBeenSet(false),
-    m_programNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMultiplexProgramRequest::SerializePayload() const
 {
   JsonValue payload;

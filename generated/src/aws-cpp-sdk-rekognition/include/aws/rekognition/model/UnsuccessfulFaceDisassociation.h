@@ -34,7 +34,7 @@ namespace Model
   class UnsuccessfulFaceDisassociation
   {
   public:
-    AWS_REKOGNITION_API UnsuccessfulFaceDisassociation();
+    AWS_REKOGNITION_API UnsuccessfulFaceDisassociation() = default;
     AWS_REKOGNITION_API UnsuccessfulFaceDisassociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API UnsuccessfulFaceDisassociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,37 @@ namespace Model
     /**
      * <p>A unique identifier assigned to the face. </p>
      */
-    inline const Aws::String& GetFaceId() const{ return m_faceId; }
+    inline const Aws::String& GetFaceId() const { return m_faceId; }
     inline bool FaceIdHasBeenSet() const { return m_faceIdHasBeenSet; }
-    inline void SetFaceId(const Aws::String& value) { m_faceIdHasBeenSet = true; m_faceId = value; }
-    inline void SetFaceId(Aws::String&& value) { m_faceIdHasBeenSet = true; m_faceId = std::move(value); }
-    inline void SetFaceId(const char* value) { m_faceIdHasBeenSet = true; m_faceId.assign(value); }
-    inline UnsuccessfulFaceDisassociation& WithFaceId(const Aws::String& value) { SetFaceId(value); return *this;}
-    inline UnsuccessfulFaceDisassociation& WithFaceId(Aws::String&& value) { SetFaceId(std::move(value)); return *this;}
-    inline UnsuccessfulFaceDisassociation& WithFaceId(const char* value) { SetFaceId(value); return *this;}
+    template<typename FaceIdT = Aws::String>
+    void SetFaceId(FaceIdT&& value) { m_faceIdHasBeenSet = true; m_faceId = std::forward<FaceIdT>(value); }
+    template<typename FaceIdT = Aws::String>
+    UnsuccessfulFaceDisassociation& WithFaceId(FaceIdT&& value) { SetFaceId(std::forward<FaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A provided ID for the UserID. Unique within the collection. </p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline UnsuccessfulFaceDisassociation& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline UnsuccessfulFaceDisassociation& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline UnsuccessfulFaceDisassociation& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    UnsuccessfulFaceDisassociation& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason why the deletion was unsuccessful. </p>
      */
-    inline const Aws::Vector<UnsuccessfulFaceDisassociationReason>& GetReasons() const{ return m_reasons; }
+    inline const Aws::Vector<UnsuccessfulFaceDisassociationReason>& GetReasons() const { return m_reasons; }
     inline bool ReasonsHasBeenSet() const { return m_reasonsHasBeenSet; }
-    inline void SetReasons(const Aws::Vector<UnsuccessfulFaceDisassociationReason>& value) { m_reasonsHasBeenSet = true; m_reasons = value; }
-    inline void SetReasons(Aws::Vector<UnsuccessfulFaceDisassociationReason>&& value) { m_reasonsHasBeenSet = true; m_reasons = std::move(value); }
-    inline UnsuccessfulFaceDisassociation& WithReasons(const Aws::Vector<UnsuccessfulFaceDisassociationReason>& value) { SetReasons(value); return *this;}
-    inline UnsuccessfulFaceDisassociation& WithReasons(Aws::Vector<UnsuccessfulFaceDisassociationReason>&& value) { SetReasons(std::move(value)); return *this;}
-    inline UnsuccessfulFaceDisassociation& AddReasons(const UnsuccessfulFaceDisassociationReason& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
-    inline UnsuccessfulFaceDisassociation& AddReasons(UnsuccessfulFaceDisassociationReason&& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(std::move(value)); return *this; }
+    template<typename ReasonsT = Aws::Vector<UnsuccessfulFaceDisassociationReason>>
+    void SetReasons(ReasonsT&& value) { m_reasonsHasBeenSet = true; m_reasons = std::forward<ReasonsT>(value); }
+    template<typename ReasonsT = Aws::Vector<UnsuccessfulFaceDisassociationReason>>
+    UnsuccessfulFaceDisassociation& WithReasons(ReasonsT&& value) { SetReasons(std::forward<ReasonsT>(value)); return *this;}
+    inline UnsuccessfulFaceDisassociation& AddReasons(UnsuccessfulFaceDisassociationReason value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
     ///@}
   private:
 

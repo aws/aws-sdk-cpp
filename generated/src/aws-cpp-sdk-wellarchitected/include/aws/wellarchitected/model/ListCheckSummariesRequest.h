@@ -21,7 +21,7 @@ namespace Model
   class ListCheckSummariesRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API ListCheckSummariesRequest();
+    AWS_WELLARCHITECTED_API ListCheckSummariesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,31 +34,27 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline ListCheckSummariesRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline ListCheckSummariesRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline ListCheckSummariesRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    ListCheckSummariesRequest& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCheckSummariesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCheckSummariesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCheckSummariesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCheckSummariesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCheckSummariesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -68,50 +64,42 @@ namespace Model
     /**
      * <p>Well-Architected Lens ARN.</p>
      */
-    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
+    inline const Aws::String& GetLensArn() const { return m_lensArn; }
     inline bool LensArnHasBeenSet() const { return m_lensArnHasBeenSet; }
-    inline void SetLensArn(const Aws::String& value) { m_lensArnHasBeenSet = true; m_lensArn = value; }
-    inline void SetLensArn(Aws::String&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::move(value); }
-    inline void SetLensArn(const char* value) { m_lensArnHasBeenSet = true; m_lensArn.assign(value); }
-    inline ListCheckSummariesRequest& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
-    inline ListCheckSummariesRequest& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
-    inline ListCheckSummariesRequest& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+    template<typename LensArnT = Aws::String>
+    void SetLensArn(LensArnT&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::forward<LensArnT>(value); }
+    template<typename LensArnT = Aws::String>
+    ListCheckSummariesRequest& WithLensArn(LensArnT&& value) { SetLensArn(std::forward<LensArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetPillarId() const{ return m_pillarId; }
+    inline const Aws::String& GetPillarId() const { return m_pillarId; }
     inline bool PillarIdHasBeenSet() const { return m_pillarIdHasBeenSet; }
-    inline void SetPillarId(const Aws::String& value) { m_pillarIdHasBeenSet = true; m_pillarId = value; }
-    inline void SetPillarId(Aws::String&& value) { m_pillarIdHasBeenSet = true; m_pillarId = std::move(value); }
-    inline void SetPillarId(const char* value) { m_pillarIdHasBeenSet = true; m_pillarId.assign(value); }
-    inline ListCheckSummariesRequest& WithPillarId(const Aws::String& value) { SetPillarId(value); return *this;}
-    inline ListCheckSummariesRequest& WithPillarId(Aws::String&& value) { SetPillarId(std::move(value)); return *this;}
-    inline ListCheckSummariesRequest& WithPillarId(const char* value) { SetPillarId(value); return *this;}
+    template<typename PillarIdT = Aws::String>
+    void SetPillarId(PillarIdT&& value) { m_pillarIdHasBeenSet = true; m_pillarId = std::forward<PillarIdT>(value); }
+    template<typename PillarIdT = Aws::String>
+    ListCheckSummariesRequest& WithPillarId(PillarIdT&& value) { SetPillarId(std::forward<PillarIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetQuestionId() const{ return m_questionId; }
+    inline const Aws::String& GetQuestionId() const { return m_questionId; }
     inline bool QuestionIdHasBeenSet() const { return m_questionIdHasBeenSet; }
-    inline void SetQuestionId(const Aws::String& value) { m_questionIdHasBeenSet = true; m_questionId = value; }
-    inline void SetQuestionId(Aws::String&& value) { m_questionIdHasBeenSet = true; m_questionId = std::move(value); }
-    inline void SetQuestionId(const char* value) { m_questionIdHasBeenSet = true; m_questionId.assign(value); }
-    inline ListCheckSummariesRequest& WithQuestionId(const Aws::String& value) { SetQuestionId(value); return *this;}
-    inline ListCheckSummariesRequest& WithQuestionId(Aws::String&& value) { SetQuestionId(std::move(value)); return *this;}
-    inline ListCheckSummariesRequest& WithQuestionId(const char* value) { SetQuestionId(value); return *this;}
+    template<typename QuestionIdT = Aws::String>
+    void SetQuestionId(QuestionIdT&& value) { m_questionIdHasBeenSet = true; m_questionId = std::forward<QuestionIdT>(value); }
+    template<typename QuestionIdT = Aws::String>
+    ListCheckSummariesRequest& WithQuestionId(QuestionIdT&& value) { SetQuestionId(std::forward<QuestionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetChoiceId() const{ return m_choiceId; }
+    inline const Aws::String& GetChoiceId() const { return m_choiceId; }
     inline bool ChoiceIdHasBeenSet() const { return m_choiceIdHasBeenSet; }
-    inline void SetChoiceId(const Aws::String& value) { m_choiceIdHasBeenSet = true; m_choiceId = value; }
-    inline void SetChoiceId(Aws::String&& value) { m_choiceIdHasBeenSet = true; m_choiceId = std::move(value); }
-    inline void SetChoiceId(const char* value) { m_choiceIdHasBeenSet = true; m_choiceId.assign(value); }
-    inline ListCheckSummariesRequest& WithChoiceId(const Aws::String& value) { SetChoiceId(value); return *this;}
-    inline ListCheckSummariesRequest& WithChoiceId(Aws::String&& value) { SetChoiceId(std::move(value)); return *this;}
-    inline ListCheckSummariesRequest& WithChoiceId(const char* value) { SetChoiceId(value); return *this;}
+    template<typename ChoiceIdT = Aws::String>
+    void SetChoiceId(ChoiceIdT&& value) { m_choiceIdHasBeenSet = true; m_choiceId = std::forward<ChoiceIdT>(value); }
+    template<typename ChoiceIdT = Aws::String>
+    ListCheckSummariesRequest& WithChoiceId(ChoiceIdT&& value) { SetChoiceId(std::forward<ChoiceIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -121,7 +109,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_lensArn;

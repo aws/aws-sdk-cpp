@@ -19,15 +19,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-CanDbcDefinition::CanDbcDefinition() : 
-    m_networkInterfaceHasBeenSet(false),
-    m_canDbcFilesHasBeenSet(false),
-    m_signalsMapHasBeenSet(false)
-{
-}
-
 CanDbcDefinition::CanDbcDefinition(JsonView jsonValue)
-  : CanDbcDefinition()
 {
   *this = jsonValue;
 }
@@ -37,10 +29,8 @@ CanDbcDefinition& CanDbcDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("networkInterface"))
   {
     m_networkInterface = jsonValue.GetString("networkInterface");
-
     m_networkInterfaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canDbcFiles"))
   {
     Aws::Utils::Array<JsonView> canDbcFilesJsonList = jsonValue.GetArray("canDbcFiles");
@@ -50,7 +40,6 @@ CanDbcDefinition& CanDbcDefinition::operator =(JsonView jsonValue)
     }
     m_canDbcFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signalsMap"))
   {
     Aws::Map<Aws::String, JsonView> signalsMapJsonMap = jsonValue.GetObject("signalsMap").GetAllObjects();
@@ -60,7 +49,6 @@ CanDbcDefinition& CanDbcDefinition::operator =(JsonView jsonValue)
     }
     m_signalsMapHasBeenSet = true;
   }
-
   return *this;
 }
 

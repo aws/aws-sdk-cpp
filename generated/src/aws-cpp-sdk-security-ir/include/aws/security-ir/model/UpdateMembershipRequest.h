@@ -24,7 +24,7 @@ namespace Model
   class UpdateMembershipRequest : public SecurityIRRequest
   {
   public:
-    AWS_SECURITYIR_API UpdateMembershipRequest();
+    AWS_SECURITYIR_API UpdateMembershipRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,38 @@ namespace Model
      * <p>Required element for UpdateMembership to identify the membership to
      * update.</p>
      */
-    inline const Aws::String& GetMembershipId() const{ return m_membershipId; }
+    inline const Aws::String& GetMembershipId() const { return m_membershipId; }
     inline bool MembershipIdHasBeenSet() const { return m_membershipIdHasBeenSet; }
-    inline void SetMembershipId(const Aws::String& value) { m_membershipIdHasBeenSet = true; m_membershipId = value; }
-    inline void SetMembershipId(Aws::String&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::move(value); }
-    inline void SetMembershipId(const char* value) { m_membershipIdHasBeenSet = true; m_membershipId.assign(value); }
-    inline UpdateMembershipRequest& WithMembershipId(const Aws::String& value) { SetMembershipId(value); return *this;}
-    inline UpdateMembershipRequest& WithMembershipId(Aws::String&& value) { SetMembershipId(std::move(value)); return *this;}
-    inline UpdateMembershipRequest& WithMembershipId(const char* value) { SetMembershipId(value); return *this;}
+    template<typename MembershipIdT = Aws::String>
+    void SetMembershipId(MembershipIdT&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::forward<MembershipIdT>(value); }
+    template<typename MembershipIdT = Aws::String>
+    UpdateMembershipRequest& WithMembershipId(MembershipIdT&& value) { SetMembershipId(std::forward<MembershipIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Optional element for UpdateMembership to update the membership name.</p>
      */
-    inline const Aws::String& GetMembershipName() const{ return m_membershipName; }
+    inline const Aws::String& GetMembershipName() const { return m_membershipName; }
     inline bool MembershipNameHasBeenSet() const { return m_membershipNameHasBeenSet; }
-    inline void SetMembershipName(const Aws::String& value) { m_membershipNameHasBeenSet = true; m_membershipName = value; }
-    inline void SetMembershipName(Aws::String&& value) { m_membershipNameHasBeenSet = true; m_membershipName = std::move(value); }
-    inline void SetMembershipName(const char* value) { m_membershipNameHasBeenSet = true; m_membershipName.assign(value); }
-    inline UpdateMembershipRequest& WithMembershipName(const Aws::String& value) { SetMembershipName(value); return *this;}
-    inline UpdateMembershipRequest& WithMembershipName(Aws::String&& value) { SetMembershipName(std::move(value)); return *this;}
-    inline UpdateMembershipRequest& WithMembershipName(const char* value) { SetMembershipName(value); return *this;}
+    template<typename MembershipNameT = Aws::String>
+    void SetMembershipName(MembershipNameT&& value) { m_membershipNameHasBeenSet = true; m_membershipName = std::forward<MembershipNameT>(value); }
+    template<typename MembershipNameT = Aws::String>
+    UpdateMembershipRequest& WithMembershipName(MembershipNameT&& value) { SetMembershipName(std::forward<MembershipNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Optional element for UpdateMembership to update the membership name.</p>
      */
-    inline const Aws::Vector<IncidentResponder>& GetIncidentResponseTeam() const{ return m_incidentResponseTeam; }
+    inline const Aws::Vector<IncidentResponder>& GetIncidentResponseTeam() const { return m_incidentResponseTeam; }
     inline bool IncidentResponseTeamHasBeenSet() const { return m_incidentResponseTeamHasBeenSet; }
-    inline void SetIncidentResponseTeam(const Aws::Vector<IncidentResponder>& value) { m_incidentResponseTeamHasBeenSet = true; m_incidentResponseTeam = value; }
-    inline void SetIncidentResponseTeam(Aws::Vector<IncidentResponder>&& value) { m_incidentResponseTeamHasBeenSet = true; m_incidentResponseTeam = std::move(value); }
-    inline UpdateMembershipRequest& WithIncidentResponseTeam(const Aws::Vector<IncidentResponder>& value) { SetIncidentResponseTeam(value); return *this;}
-    inline UpdateMembershipRequest& WithIncidentResponseTeam(Aws::Vector<IncidentResponder>&& value) { SetIncidentResponseTeam(std::move(value)); return *this;}
-    inline UpdateMembershipRequest& AddIncidentResponseTeam(const IncidentResponder& value) { m_incidentResponseTeamHasBeenSet = true; m_incidentResponseTeam.push_back(value); return *this; }
-    inline UpdateMembershipRequest& AddIncidentResponseTeam(IncidentResponder&& value) { m_incidentResponseTeamHasBeenSet = true; m_incidentResponseTeam.push_back(std::move(value)); return *this; }
+    template<typename IncidentResponseTeamT = Aws::Vector<IncidentResponder>>
+    void SetIncidentResponseTeam(IncidentResponseTeamT&& value) { m_incidentResponseTeamHasBeenSet = true; m_incidentResponseTeam = std::forward<IncidentResponseTeamT>(value); }
+    template<typename IncidentResponseTeamT = Aws::Vector<IncidentResponder>>
+    UpdateMembershipRequest& WithIncidentResponseTeam(IncidentResponseTeamT&& value) { SetIncidentResponseTeam(std::forward<IncidentResponseTeamT>(value)); return *this;}
+    template<typename IncidentResponseTeamT = IncidentResponder>
+    UpdateMembershipRequest& AddIncidentResponseTeam(IncidentResponseTeamT&& value) { m_incidentResponseTeamHasBeenSet = true; m_incidentResponseTeam.emplace_back(std::forward<IncidentResponseTeamT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -83,14 +79,14 @@ namespace Model
      * <p>Optional element for UpdateMembership to enable or disable opt-in features
      * for the service.</p>
      */
-    inline const Aws::Vector<OptInFeature>& GetOptInFeatures() const{ return m_optInFeatures; }
+    inline const Aws::Vector<OptInFeature>& GetOptInFeatures() const { return m_optInFeatures; }
     inline bool OptInFeaturesHasBeenSet() const { return m_optInFeaturesHasBeenSet; }
-    inline void SetOptInFeatures(const Aws::Vector<OptInFeature>& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures = value; }
-    inline void SetOptInFeatures(Aws::Vector<OptInFeature>&& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures = std::move(value); }
-    inline UpdateMembershipRequest& WithOptInFeatures(const Aws::Vector<OptInFeature>& value) { SetOptInFeatures(value); return *this;}
-    inline UpdateMembershipRequest& WithOptInFeatures(Aws::Vector<OptInFeature>&& value) { SetOptInFeatures(std::move(value)); return *this;}
-    inline UpdateMembershipRequest& AddOptInFeatures(const OptInFeature& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures.push_back(value); return *this; }
-    inline UpdateMembershipRequest& AddOptInFeatures(OptInFeature&& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures.push_back(std::move(value)); return *this; }
+    template<typename OptInFeaturesT = Aws::Vector<OptInFeature>>
+    void SetOptInFeatures(OptInFeaturesT&& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures = std::forward<OptInFeaturesT>(value); }
+    template<typename OptInFeaturesT = Aws::Vector<OptInFeature>>
+    UpdateMembershipRequest& WithOptInFeatures(OptInFeaturesT&& value) { SetOptInFeatures(std::forward<OptInFeaturesT>(value)); return *this;}
+    template<typename OptInFeaturesT = OptInFeature>
+    UpdateMembershipRequest& AddOptInFeatures(OptInFeaturesT&& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures.emplace_back(std::forward<OptInFeaturesT>(value)); return *this; }
     ///@}
   private:
 

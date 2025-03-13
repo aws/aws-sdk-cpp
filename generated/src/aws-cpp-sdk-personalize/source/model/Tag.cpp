@@ -18,14 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-Tag::Tag() : 
-    m_tagKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false)
-{
-}
-
 Tag::Tag(JsonView jsonValue)
-  : Tag()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Tag& Tag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tagKey"))
   {
     m_tagKey = jsonValue.GetString("tagKey");
-
     m_tagKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tagValue"))
   {
     m_tagValue = jsonValue.GetString("tagValue");
-
     m_tagValueHasBeenSet = true;
   }
-
   return *this;
 }
 

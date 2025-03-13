@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-ParticipatingGatewaysMulticast::ParticipatingGatewaysMulticast() : 
-    m_gatewayListHasBeenSet(false),
-    m_transmissionInterval(0),
-    m_transmissionIntervalHasBeenSet(false)
-{
-}
-
 ParticipatingGatewaysMulticast::ParticipatingGatewaysMulticast(JsonView jsonValue)
-  : ParticipatingGatewaysMulticast()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ ParticipatingGatewaysMulticast& ParticipatingGatewaysMulticast::operator =(JsonV
     }
     m_gatewayListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransmissionInterval"))
   {
     m_transmissionInterval = jsonValue.GetInteger("TransmissionInterval");
-
     m_transmissionIntervalHasBeenSet = true;
   }
-
   return *this;
 }
 

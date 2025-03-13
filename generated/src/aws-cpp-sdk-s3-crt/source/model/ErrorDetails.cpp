@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-ErrorDetails::ErrorDetails() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ErrorDetails::ErrorDetails(const XmlNode& xmlNode)
-  : ErrorDetails()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ErrorDetails& ErrorDetails::operator =(const XmlNode& xmlNode)
     {
       m_errorCode = Aws::Utils::Xml::DecodeEscapedXmlText(errorCodeNode.GetText());
       m_errorCodeHasBeenSet = true;
+       m_errorCodeHasBeenSet = true;
     }
     XmlNode errorMessageNode = resultNode.FirstChild("ErrorMessage");
     if(!errorMessageNode.IsNull())
     {
       m_errorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(errorMessageNode.GetText());
       m_errorMessageHasBeenSet = true;
+       m_errorMessageHasBeenSet = true;
     }
   }
 

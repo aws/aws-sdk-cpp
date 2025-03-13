@@ -12,13 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateReservationRequest::UpdateReservationRequest() : 
-    m_nameHasBeenSet(false),
-    m_renewalSettingsHasBeenSet(false),
-    m_reservationIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateReservationRequest::SerializePayload() const
 {
   JsonValue payload;

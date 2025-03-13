@@ -35,7 +35,7 @@ namespace Model
   class InAppTemplateRequest
   {
   public:
-    AWS_PINPOINT_API InAppTemplateRequest();
+    AWS_PINPOINT_API InAppTemplateRequest() = default;
     AWS_PINPOINT_API InAppTemplateRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API InAppTemplateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,45 +47,40 @@ namespace Model
      * contain a message, a header, and background color. ImageUrl and buttons are
      * optional.</p>
      */
-    inline const Aws::Vector<InAppMessageContent>& GetContent() const{ return m_content; }
+    inline const Aws::Vector<InAppMessageContent>& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::Vector<InAppMessageContent>& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::Vector<InAppMessageContent>&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline InAppTemplateRequest& WithContent(const Aws::Vector<InAppMessageContent>& value) { SetContent(value); return *this;}
-    inline InAppTemplateRequest& WithContent(Aws::Vector<InAppMessageContent>&& value) { SetContent(std::move(value)); return *this;}
-    inline InAppTemplateRequest& AddContent(const InAppMessageContent& value) { m_contentHasBeenSet = true; m_content.push_back(value); return *this; }
-    inline InAppTemplateRequest& AddContent(InAppMessageContent&& value) { m_contentHasBeenSet = true; m_content.push_back(std::move(value)); return *this; }
+    template<typename ContentT = Aws::Vector<InAppMessageContent>>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::Vector<InAppMessageContent>>
+    InAppTemplateRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
+    template<typename ContentT = InAppMessageContent>
+    InAppTemplateRequest& AddContent(ContentT&& value) { m_contentHasBeenSet = true; m_content.emplace_back(std::forward<ContentT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Custom config to be sent to client.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomConfig() const{ return m_customConfig; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomConfig() const { return m_customConfig; }
     inline bool CustomConfigHasBeenSet() const { return m_customConfigHasBeenSet; }
-    inline void SetCustomConfig(const Aws::Map<Aws::String, Aws::String>& value) { m_customConfigHasBeenSet = true; m_customConfig = value; }
-    inline void SetCustomConfig(Aws::Map<Aws::String, Aws::String>&& value) { m_customConfigHasBeenSet = true; m_customConfig = std::move(value); }
-    inline InAppTemplateRequest& WithCustomConfig(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomConfig(value); return *this;}
-    inline InAppTemplateRequest& WithCustomConfig(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomConfig(std::move(value)); return *this;}
-    inline InAppTemplateRequest& AddCustomConfig(const Aws::String& key, const Aws::String& value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(key, value); return *this; }
-    inline InAppTemplateRequest& AddCustomConfig(Aws::String&& key, const Aws::String& value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(std::move(key), value); return *this; }
-    inline InAppTemplateRequest& AddCustomConfig(const Aws::String& key, Aws::String&& value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(key, std::move(value)); return *this; }
-    inline InAppTemplateRequest& AddCustomConfig(Aws::String&& key, Aws::String&& value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(std::move(key), std::move(value)); return *this; }
-    inline InAppTemplateRequest& AddCustomConfig(const char* key, Aws::String&& value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(key, std::move(value)); return *this; }
-    inline InAppTemplateRequest& AddCustomConfig(Aws::String&& key, const char* value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(std::move(key), value); return *this; }
-    inline InAppTemplateRequest& AddCustomConfig(const char* key, const char* value) { m_customConfigHasBeenSet = true; m_customConfig.emplace(key, value); return *this; }
+    template<typename CustomConfigT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomConfig(CustomConfigT&& value) { m_customConfigHasBeenSet = true; m_customConfig = std::forward<CustomConfigT>(value); }
+    template<typename CustomConfigT = Aws::Map<Aws::String, Aws::String>>
+    InAppTemplateRequest& WithCustomConfig(CustomConfigT&& value) { SetCustomConfig(std::forward<CustomConfigT>(value)); return *this;}
+    template<typename CustomConfigKeyT = Aws::String, typename CustomConfigValueT = Aws::String>
+    InAppTemplateRequest& AddCustomConfig(CustomConfigKeyT&& key, CustomConfigValueT&& value) {
+      m_customConfigHasBeenSet = true; m_customConfig.emplace(std::forward<CustomConfigKeyT>(key), std::forward<CustomConfigValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The layout of the message.</p>
      */
-    inline const Layout& GetLayout() const{ return m_layout; }
+    inline Layout GetLayout() const { return m_layout; }
     inline bool LayoutHasBeenSet() const { return m_layoutHasBeenSet; }
-    inline void SetLayout(const Layout& value) { m_layoutHasBeenSet = true; m_layout = value; }
-    inline void SetLayout(Layout&& value) { m_layoutHasBeenSet = true; m_layout = std::move(value); }
-    inline InAppTemplateRequest& WithLayout(const Layout& value) { SetLayout(value); return *this;}
-    inline InAppTemplateRequest& WithLayout(Layout&& value) { SetLayout(std::move(value)); return *this;}
+    inline void SetLayout(Layout value) { m_layoutHasBeenSet = true; m_layout = value; }
+    inline InAppTemplateRequest& WithLayout(Layout value) { SetLayout(value); return *this;}
     ///@}
 
     ///@{
@@ -102,33 +97,28 @@ namespace Model
      * key-value pairs that defines the tags to associate with the message template.
      * Each tag consists of a required tag key and an associated tag value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline InAppTemplateRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline InAppTemplateRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline InAppTemplateRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline InAppTemplateRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline InAppTemplateRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline InAppTemplateRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline InAppTemplateRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline InAppTemplateRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline InAppTemplateRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    InAppTemplateRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    InAppTemplateRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The description of the template.</p>
      */
-    inline const Aws::String& GetTemplateDescription() const{ return m_templateDescription; }
+    inline const Aws::String& GetTemplateDescription() const { return m_templateDescription; }
     inline bool TemplateDescriptionHasBeenSet() const { return m_templateDescriptionHasBeenSet; }
-    inline void SetTemplateDescription(const Aws::String& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = value; }
-    inline void SetTemplateDescription(Aws::String&& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = std::move(value); }
-    inline void SetTemplateDescription(const char* value) { m_templateDescriptionHasBeenSet = true; m_templateDescription.assign(value); }
-    inline InAppTemplateRequest& WithTemplateDescription(const Aws::String& value) { SetTemplateDescription(value); return *this;}
-    inline InAppTemplateRequest& WithTemplateDescription(Aws::String&& value) { SetTemplateDescription(std::move(value)); return *this;}
-    inline InAppTemplateRequest& WithTemplateDescription(const char* value) { SetTemplateDescription(value); return *this;}
+    template<typename TemplateDescriptionT = Aws::String>
+    void SetTemplateDescription(TemplateDescriptionT&& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = std::forward<TemplateDescriptionT>(value); }
+    template<typename TemplateDescriptionT = Aws::String>
+    InAppTemplateRequest& WithTemplateDescription(TemplateDescriptionT&& value) { SetTemplateDescription(std::forward<TemplateDescriptionT>(value)); return *this;}
     ///@}
   private:
 
@@ -138,7 +128,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_customConfig;
     bool m_customConfigHasBeenSet = false;
 
-    Layout m_layout;
+    Layout m_layout{Layout::NOT_SET};
     bool m_layoutHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

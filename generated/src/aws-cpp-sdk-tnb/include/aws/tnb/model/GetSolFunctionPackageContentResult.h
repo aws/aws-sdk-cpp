@@ -23,10 +23,9 @@ namespace Model
   class GetSolFunctionPackageContentResult
   {
   public:
-    AWS_TNB_API GetSolFunctionPackageContentResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_TNB_API GetSolFunctionPackageContentResult(GetSolFunctionPackageContentResult&&);
-    AWS_TNB_API GetSolFunctionPackageContentResult& operator=(GetSolFunctionPackageContentResult&&);
+    AWS_TNB_API GetSolFunctionPackageContentResult() = default;
+    AWS_TNB_API GetSolFunctionPackageContentResult(GetSolFunctionPackageContentResult&&) = default;
+    AWS_TNB_API GetSolFunctionPackageContentResult& operator=(GetSolFunctionPackageContentResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetSolFunctionPackageContentResult(const GetSolFunctionPackageContentResult&) = delete;
@@ -42,11 +41,9 @@ namespace Model
     /**
      * <p>Indicates the media type of the resource.</p>
      */
-    inline const PackageContentType& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const PackageContentType& value) { m_contentType = value; }
-    inline void SetContentType(PackageContentType&& value) { m_contentType = std::move(value); }
-    inline GetSolFunctionPackageContentResult& WithContentType(const PackageContentType& value) { SetContentType(value); return *this;}
-    inline GetSolFunctionPackageContentResult& WithContentType(PackageContentType&& value) { SetContentType(std::move(value)); return *this;}
+    inline PackageContentType GetContentType() const { return m_contentType; }
+    inline void SetContentType(PackageContentType value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline GetSolFunctionPackageContentResult& WithContentType(PackageContentType value) { SetContentType(value); return *this;}
     ///@}
 
     ///@{
@@ -60,21 +57,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSolFunctionPackageContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSolFunctionPackageContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSolFunctionPackageContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSolFunctionPackageContentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    PackageContentType m_contentType;
+    PackageContentType m_contentType{PackageContentType::NOT_SET};
+    bool m_contentTypeHasBeenSet = false;
 
-    Aws::Utils::Stream::ResponseStream m_packageContent;
+    Aws::Utils::Stream::ResponseStream m_packageContent{};
+    bool m_packageContentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

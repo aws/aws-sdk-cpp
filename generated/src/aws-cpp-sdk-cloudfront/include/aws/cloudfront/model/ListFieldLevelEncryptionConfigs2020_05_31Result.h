@@ -28,7 +28,7 @@ namespace Model
   class ListFieldLevelEncryptionConfigs2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API ListFieldLevelEncryptionConfigs2020_05_31Result();
+    AWS_CLOUDFRONT_API ListFieldLevelEncryptionConfigs2020_05_31Result() = default;
     AWS_CLOUDFRONT_API ListFieldLevelEncryptionConfigs2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API ListFieldLevelEncryptionConfigs2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Returns a list of all field-level encryption configurations that have been
      * created in CloudFront for this account.</p>
      */
-    inline const FieldLevelEncryptionList& GetFieldLevelEncryptionList() const{ return m_fieldLevelEncryptionList; }
-    inline void SetFieldLevelEncryptionList(const FieldLevelEncryptionList& value) { m_fieldLevelEncryptionList = value; }
-    inline void SetFieldLevelEncryptionList(FieldLevelEncryptionList&& value) { m_fieldLevelEncryptionList = std::move(value); }
-    inline ListFieldLevelEncryptionConfigs2020_05_31Result& WithFieldLevelEncryptionList(const FieldLevelEncryptionList& value) { SetFieldLevelEncryptionList(value); return *this;}
-    inline ListFieldLevelEncryptionConfigs2020_05_31Result& WithFieldLevelEncryptionList(FieldLevelEncryptionList&& value) { SetFieldLevelEncryptionList(std::move(value)); return *this;}
+    inline const FieldLevelEncryptionList& GetFieldLevelEncryptionList() const { return m_fieldLevelEncryptionList; }
+    template<typename FieldLevelEncryptionListT = FieldLevelEncryptionList>
+    void SetFieldLevelEncryptionList(FieldLevelEncryptionListT&& value) { m_fieldLevelEncryptionListHasBeenSet = true; m_fieldLevelEncryptionList = std::forward<FieldLevelEncryptionListT>(value); }
+    template<typename FieldLevelEncryptionListT = FieldLevelEncryptionList>
+    ListFieldLevelEncryptionConfigs2020_05_31Result& WithFieldLevelEncryptionList(FieldLevelEncryptionListT&& value) { SetFieldLevelEncryptionList(std::forward<FieldLevelEncryptionListT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFieldLevelEncryptionConfigs2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFieldLevelEncryptionConfigs2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFieldLevelEncryptionConfigs2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFieldLevelEncryptionConfigs2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FieldLevelEncryptionList m_fieldLevelEncryptionList;
+    bool m_fieldLevelEncryptionListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeletePlacementGroupRequest::DeletePlacementGroupRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeletePlacementGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,15 +20,7 @@ namespace SES
 namespace Model
 {
 
-ReceiptIpFilter::ReceiptIpFilter() : 
-    m_policy(ReceiptFilterPolicy::NOT_SET),
-    m_policyHasBeenSet(false),
-    m_cidrHasBeenSet(false)
-{
-}
-
 ReceiptIpFilter::ReceiptIpFilter(const XmlNode& xmlNode)
-  : ReceiptIpFilter()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ ReceiptIpFilter& ReceiptIpFilter::operator =(const XmlNode& xmlNode)
     XmlNode policyNode = resultNode.FirstChild("Policy");
     if(!policyNode.IsNull())
     {
-      m_policy = ReceiptFilterPolicyMapper::GetReceiptFilterPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyNode.GetText()).c_str()).c_str());
+      m_policy = ReceiptFilterPolicyMapper::GetReceiptFilterPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyNode.GetText()).c_str()));
       m_policyHasBeenSet = true;
+       m_policyHasBeenSet = true;
     }
     XmlNode cidrNode = resultNode.FirstChild("Cidr");
     if(!cidrNode.IsNull())
     {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
+       m_cidrHasBeenSet = true;
     }
   }
 

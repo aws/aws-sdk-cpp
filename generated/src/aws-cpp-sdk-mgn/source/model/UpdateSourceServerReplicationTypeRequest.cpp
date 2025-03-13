@@ -12,14 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSourceServerReplicationTypeRequest::UpdateSourceServerReplicationTypeRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_replicationType(ReplicationType::NOT_SET),
-    m_replicationTypeHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSourceServerReplicationTypeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace ControlCatalog
 namespace Model
 {
 
-ControlParameter::ControlParameter() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 ControlParameter::ControlParameter(JsonView jsonValue)
-  : ControlParameter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ControlParameter& ControlParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

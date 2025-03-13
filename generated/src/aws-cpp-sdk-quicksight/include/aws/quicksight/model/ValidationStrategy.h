@@ -34,7 +34,7 @@ namespace Model
   class ValidationStrategy
   {
   public:
-    AWS_QUICKSIGHT_API ValidationStrategy();
+    AWS_QUICKSIGHT_API ValidationStrategy() = default;
     AWS_QUICKSIGHT_API ValidationStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ValidationStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,16 +47,14 @@ namespace Model
      * enforced. When you set this value to <code>LENIENT</code>, validation is skipped
      * for specific UI errors.</p>
      */
-    inline const ValidationStrategyMode& GetMode() const{ return m_mode; }
+    inline ValidationStrategyMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const ValidationStrategyMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(ValidationStrategyMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline ValidationStrategy& WithMode(const ValidationStrategyMode& value) { SetMode(value); return *this;}
-    inline ValidationStrategy& WithMode(ValidationStrategyMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(ValidationStrategyMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline ValidationStrategy& WithMode(ValidationStrategyMode value) { SetMode(value); return *this;}
     ///@}
   private:
 
-    ValidationStrategyMode m_mode;
+    ValidationStrategyMode m_mode{ValidationStrategyMode::NOT_SET};
     bool m_modeHasBeenSet = false;
   };
 

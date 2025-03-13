@@ -32,7 +32,7 @@ namespace Model
   class EventPredictionSummary
   {
   public:
-    AWS_FRAUDDETECTOR_API EventPredictionSummary();
+    AWS_FRAUDDETECTOR_API EventPredictionSummary() = default;
     AWS_FRAUDDETECTOR_API EventPredictionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API EventPredictionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,84 +42,72 @@ namespace Model
     /**
      * <p> The event ID. </p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline EventPredictionSummary& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline EventPredictionSummary& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline EventPredictionSummary& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    EventPredictionSummary& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The event type. </p>
      */
-    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+    inline const Aws::String& GetEventTypeName() const { return m_eventTypeName; }
     inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
-    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
-    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
-    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
-    inline EventPredictionSummary& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
-    inline EventPredictionSummary& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
-    inline EventPredictionSummary& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
+    template<typename EventTypeNameT = Aws::String>
+    void SetEventTypeName(EventTypeNameT&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::forward<EventTypeNameT>(value); }
+    template<typename EventTypeNameT = Aws::String>
+    EventPredictionSummary& WithEventTypeName(EventTypeNameT&& value) { SetEventTypeName(std::forward<EventTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The timestamp of the event. </p>
      */
-    inline const Aws::String& GetEventTimestamp() const{ return m_eventTimestamp; }
+    inline const Aws::String& GetEventTimestamp() const { return m_eventTimestamp; }
     inline bool EventTimestampHasBeenSet() const { return m_eventTimestampHasBeenSet; }
-    inline void SetEventTimestamp(const Aws::String& value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp = value; }
-    inline void SetEventTimestamp(Aws::String&& value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp = std::move(value); }
-    inline void SetEventTimestamp(const char* value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp.assign(value); }
-    inline EventPredictionSummary& WithEventTimestamp(const Aws::String& value) { SetEventTimestamp(value); return *this;}
-    inline EventPredictionSummary& WithEventTimestamp(Aws::String&& value) { SetEventTimestamp(std::move(value)); return *this;}
-    inline EventPredictionSummary& WithEventTimestamp(const char* value) { SetEventTimestamp(value); return *this;}
+    template<typename EventTimestampT = Aws::String>
+    void SetEventTimestamp(EventTimestampT&& value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp = std::forward<EventTimestampT>(value); }
+    template<typename EventTimestampT = Aws::String>
+    EventPredictionSummary& WithEventTimestamp(EventTimestampT&& value) { SetEventTimestamp(std::forward<EventTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The timestamp when the prediction was generated. </p>
      */
-    inline const Aws::String& GetPredictionTimestamp() const{ return m_predictionTimestamp; }
+    inline const Aws::String& GetPredictionTimestamp() const { return m_predictionTimestamp; }
     inline bool PredictionTimestampHasBeenSet() const { return m_predictionTimestampHasBeenSet; }
-    inline void SetPredictionTimestamp(const Aws::String& value) { m_predictionTimestampHasBeenSet = true; m_predictionTimestamp = value; }
-    inline void SetPredictionTimestamp(Aws::String&& value) { m_predictionTimestampHasBeenSet = true; m_predictionTimestamp = std::move(value); }
-    inline void SetPredictionTimestamp(const char* value) { m_predictionTimestampHasBeenSet = true; m_predictionTimestamp.assign(value); }
-    inline EventPredictionSummary& WithPredictionTimestamp(const Aws::String& value) { SetPredictionTimestamp(value); return *this;}
-    inline EventPredictionSummary& WithPredictionTimestamp(Aws::String&& value) { SetPredictionTimestamp(std::move(value)); return *this;}
-    inline EventPredictionSummary& WithPredictionTimestamp(const char* value) { SetPredictionTimestamp(value); return *this;}
+    template<typename PredictionTimestampT = Aws::String>
+    void SetPredictionTimestamp(PredictionTimestampT&& value) { m_predictionTimestampHasBeenSet = true; m_predictionTimestamp = std::forward<PredictionTimestampT>(value); }
+    template<typename PredictionTimestampT = Aws::String>
+    EventPredictionSummary& WithPredictionTimestamp(PredictionTimestampT&& value) { SetPredictionTimestamp(std::forward<PredictionTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The detector ID. </p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-    inline EventPredictionSummary& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline EventPredictionSummary& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline EventPredictionSummary& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    EventPredictionSummary& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The detector version ID. </p>
      */
-    inline const Aws::String& GetDetectorVersionId() const{ return m_detectorVersionId; }
+    inline const Aws::String& GetDetectorVersionId() const { return m_detectorVersionId; }
     inline bool DetectorVersionIdHasBeenSet() const { return m_detectorVersionIdHasBeenSet; }
-    inline void SetDetectorVersionId(const Aws::String& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = value; }
-    inline void SetDetectorVersionId(Aws::String&& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = std::move(value); }
-    inline void SetDetectorVersionId(const char* value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId.assign(value); }
-    inline EventPredictionSummary& WithDetectorVersionId(const Aws::String& value) { SetDetectorVersionId(value); return *this;}
-    inline EventPredictionSummary& WithDetectorVersionId(Aws::String&& value) { SetDetectorVersionId(std::move(value)); return *this;}
-    inline EventPredictionSummary& WithDetectorVersionId(const char* value) { SetDetectorVersionId(value); return *this;}
+    template<typename DetectorVersionIdT = Aws::String>
+    void SetDetectorVersionId(DetectorVersionIdT&& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = std::forward<DetectorVersionIdT>(value); }
+    template<typename DetectorVersionIdT = Aws::String>
+    EventPredictionSummary& WithDetectorVersionId(DetectorVersionIdT&& value) { SetDetectorVersionId(std::forward<DetectorVersionIdT>(value)); return *this;}
     ///@}
   private:
 

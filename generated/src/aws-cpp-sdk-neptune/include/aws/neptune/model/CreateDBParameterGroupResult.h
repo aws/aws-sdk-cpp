@@ -28,33 +28,35 @@ namespace Model
   class CreateDBParameterGroupResult
   {
   public:
-    AWS_NEPTUNE_API CreateDBParameterGroupResult();
+    AWS_NEPTUNE_API CreateDBParameterGroupResult() = default;
     AWS_NEPTUNE_API CreateDBParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_NEPTUNE_API CreateDBParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const DBParameterGroup& GetDBParameterGroup() const{ return m_dBParameterGroup; }
-    inline void SetDBParameterGroup(const DBParameterGroup& value) { m_dBParameterGroup = value; }
-    inline void SetDBParameterGroup(DBParameterGroup&& value) { m_dBParameterGroup = std::move(value); }
-    inline CreateDBParameterGroupResult& WithDBParameterGroup(const DBParameterGroup& value) { SetDBParameterGroup(value); return *this;}
-    inline CreateDBParameterGroupResult& WithDBParameterGroup(DBParameterGroup&& value) { SetDBParameterGroup(std::move(value)); return *this;}
+    inline const DBParameterGroup& GetDBParameterGroup() const { return m_dBParameterGroup; }
+    template<typename DBParameterGroupT = DBParameterGroup>
+    void SetDBParameterGroup(DBParameterGroupT&& value) { m_dBParameterGroupHasBeenSet = true; m_dBParameterGroup = std::forward<DBParameterGroupT>(value); }
+    template<typename DBParameterGroupT = DBParameterGroup>
+    CreateDBParameterGroupResult& WithDBParameterGroup(DBParameterGroupT&& value) { SetDBParameterGroup(std::forward<DBParameterGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateDBParameterGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateDBParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateDBParameterGroupResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBParameterGroup m_dBParameterGroup;
+    bool m_dBParameterGroupHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

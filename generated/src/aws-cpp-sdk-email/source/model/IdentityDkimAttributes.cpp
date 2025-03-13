@@ -20,17 +20,7 @@ namespace SES
 namespace Model
 {
 
-IdentityDkimAttributes::IdentityDkimAttributes() : 
-    m_dkimEnabled(false),
-    m_dkimEnabledHasBeenSet(false),
-    m_dkimVerificationStatus(VerificationStatus::NOT_SET),
-    m_dkimVerificationStatusHasBeenSet(false),
-    m_dkimTokensHasBeenSet(false)
-{
-}
-
 IdentityDkimAttributes::IdentityDkimAttributes(const XmlNode& xmlNode)
-  : IdentityDkimAttributes()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,27 @@ IdentityDkimAttributes& IdentityDkimAttributes::operator =(const XmlNode& xmlNod
     {
       m_dkimEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dkimEnabledNode.GetText()).c_str()).c_str());
       m_dkimEnabledHasBeenSet = true;
+       m_dkimEnabledHasBeenSet = true;
     }
     XmlNode dkimVerificationStatusNode = resultNode.FirstChild("DkimVerificationStatus");
     if(!dkimVerificationStatusNode.IsNull())
     {
-      m_dkimVerificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dkimVerificationStatusNode.GetText()).c_str()).c_str());
+      m_dkimVerificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dkimVerificationStatusNode.GetText()).c_str()));
       m_dkimVerificationStatusHasBeenSet = true;
+       m_dkimVerificationStatusHasBeenSet = true;
     }
     XmlNode dkimTokensNode = resultNode.FirstChild("DkimTokens");
     if(!dkimTokensNode.IsNull())
     {
       XmlNode dkimTokensMember = dkimTokensNode.FirstChild("member");
+      m_dkimTokensHasBeenSet = !dkimTokensMember.IsNull();
       while(!dkimTokensMember.IsNull())
       {
         m_dkimTokens.push_back(dkimTokensMember.GetText());
         dkimTokensMember = dkimTokensMember.NextNode("member");
       }
 
-      m_dkimTokensHasBeenSet = true;
+       m_dkimTokensHasBeenSet = true;
     }
   }
 

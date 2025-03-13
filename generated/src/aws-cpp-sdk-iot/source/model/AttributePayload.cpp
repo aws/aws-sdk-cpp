@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AttributePayload::AttributePayload() : 
-    m_attributesHasBeenSet(false),
-    m_merge(false),
-    m_mergeHasBeenSet(false)
-{
-}
-
 AttributePayload::AttributePayload(JsonView jsonValue)
-  : AttributePayload()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ AttributePayload& AttributePayload::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("merge"))
   {
     m_merge = jsonValue.GetBool("merge");
-
     m_mergeHasBeenSet = true;
   }
-
   return *this;
 }
 

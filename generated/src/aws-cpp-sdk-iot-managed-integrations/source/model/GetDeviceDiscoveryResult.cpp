@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeviceDiscoveryResult::GetDeviceDiscoveryResult() : 
-    m_discoveryType(DiscoveryType::NOT_SET),
-    m_status(DeviceDiscoveryStatus::NOT_SET)
-{
-}
-
 GetDeviceDiscoveryResult::GetDeviceDiscoveryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDeviceDiscoveryResult()
 {
   *this = result;
 }
@@ -35,51 +28,43 @@ GetDeviceDiscoveryResult& GetDeviceDiscoveryResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiscoveryType"))
   {
     m_discoveryType = DiscoveryTypeMapper::GetDiscoveryTypeForName(jsonValue.GetString("DiscoveryType"));
-
+    m_discoveryTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DeviceDiscoveryStatusMapper::GetDeviceDiscoveryStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAt"))
   {
     m_startedAt = jsonValue.GetDouble("StartedAt");
-
+    m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControllerId"))
   {
     m_controllerId = jsonValue.GetString("ControllerId");
-
+    m_controllerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectorAssociationId"))
   {
     m_connectorAssociationId = jsonValue.GetString("ConnectorAssociationId");
-
+    m_connectorAssociationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FinishedAt"))
   {
     m_finishedAt = jsonValue.GetDouble("FinishedAt");
-
+    m_finishedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -87,14 +72,15 @@ GetDeviceDiscoveryResult& GetDeviceDiscoveryResult::operator =(const Aws::Amazon
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -10,12 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-GetMetricWidgetImageRequest::GetMetricWidgetImageRequest() : 
-    m_metricWidgetHasBeenSet(false),
-    m_outputFormatHasBeenSet(false)
-{
-}
-
 Aws::String GetMetricWidgetImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;

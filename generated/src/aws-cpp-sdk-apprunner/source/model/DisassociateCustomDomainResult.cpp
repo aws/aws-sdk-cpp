@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateCustomDomainResult::DisassociateCustomDomainResult()
-{
-}
-
 DisassociateCustomDomainResult::DisassociateCustomDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ DisassociateCustomDomainResult& DisassociateCustomDomainResult::operator =(const
   if(jsonValue.ValueExists("DNSTarget"))
   {
     m_dNSTarget = jsonValue.GetString("DNSTarget");
-
+    m_dNSTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceArn"))
   {
     m_serviceArn = jsonValue.GetString("ServiceArn");
-
+    m_serviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomDomain"))
   {
     m_customDomain = jsonValue.GetObject("CustomDomain");
-
+    m_customDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcDNSTargets"))
   {
     Aws::Utils::Array<JsonView> vpcDNSTargetsJsonList = jsonValue.GetArray("VpcDNSTargets");
@@ -54,14 +47,15 @@ DisassociateCustomDomainResult& DisassociateCustomDomainResult::operator =(const
     {
       m_vpcDNSTargets.push_back(vpcDNSTargetsJsonList[vpcDNSTargetsIndex].AsObject());
     }
+    m_vpcDNSTargetsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

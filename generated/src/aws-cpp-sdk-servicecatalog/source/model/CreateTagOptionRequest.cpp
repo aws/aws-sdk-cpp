@@ -12,12 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTagOptionRequest::CreateTagOptionRequest() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Aws::String CreateTagOptionRequest::SerializePayload() const
 {
   JsonValue payload;

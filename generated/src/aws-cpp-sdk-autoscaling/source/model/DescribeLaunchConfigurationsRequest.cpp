@@ -10,14 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeLaunchConfigurationsRequest::DescribeLaunchConfigurationsRequest() : 
-    m_launchConfigurationNamesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLaunchConfigurationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

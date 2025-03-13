@@ -29,7 +29,7 @@ namespace Model
   class StartTransactionRequest
   {
   public:
-    AWS_QLDBSESSION_API StartTransactionRequest();
+    AWS_QLDBSESSION_API StartTransactionRequest() = default;
     AWS_QLDBSESSION_API StartTransactionRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API StartTransactionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;

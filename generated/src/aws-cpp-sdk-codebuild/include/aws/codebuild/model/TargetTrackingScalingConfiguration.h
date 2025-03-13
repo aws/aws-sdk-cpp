@@ -32,7 +32,7 @@ namespace Model
   class TargetTrackingScalingConfiguration
   {
   public:
-    AWS_CODEBUILD_API TargetTrackingScalingConfiguration();
+    AWS_CODEBUILD_API TargetTrackingScalingConfiguration() = default;
     AWS_CODEBUILD_API TargetTrackingScalingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API TargetTrackingScalingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>The metric type to determine auto-scaling.</p>
      */
-    inline const FleetScalingMetricType& GetMetricType() const{ return m_metricType; }
+    inline FleetScalingMetricType GetMetricType() const { return m_metricType; }
     inline bool MetricTypeHasBeenSet() const { return m_metricTypeHasBeenSet; }
-    inline void SetMetricType(const FleetScalingMetricType& value) { m_metricTypeHasBeenSet = true; m_metricType = value; }
-    inline void SetMetricType(FleetScalingMetricType&& value) { m_metricTypeHasBeenSet = true; m_metricType = std::move(value); }
-    inline TargetTrackingScalingConfiguration& WithMetricType(const FleetScalingMetricType& value) { SetMetricType(value); return *this;}
-    inline TargetTrackingScalingConfiguration& WithMetricType(FleetScalingMetricType&& value) { SetMetricType(std::move(value)); return *this;}
+    inline void SetMetricType(FleetScalingMetricType value) { m_metricTypeHasBeenSet = true; m_metricType = value; }
+    inline TargetTrackingScalingConfiguration& WithMetricType(FleetScalingMetricType value) { SetMetricType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of <code>metricType</code> when to start scaling.</p>
      */
-    inline double GetTargetValue() const{ return m_targetValue; }
+    inline double GetTargetValue() const { return m_targetValue; }
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
     inline TargetTrackingScalingConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
     ///@}
   private:
 
-    FleetScalingMetricType m_metricType;
+    FleetScalingMetricType m_metricType{FleetScalingMetricType::NOT_SET};
     bool m_metricTypeHasBeenSet = false;
 
-    double m_targetValue;
+    double m_targetValue{0.0};
     bool m_targetValueHasBeenSet = false;
   };
 

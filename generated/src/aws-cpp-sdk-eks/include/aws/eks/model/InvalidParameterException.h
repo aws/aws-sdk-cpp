@@ -32,7 +32,7 @@ namespace Model
   class InvalidParameterException
   {
   public:
-    AWS_EKS_API InvalidParameterException();
+    AWS_EKS_API InvalidParameterException() = default;
     AWS_EKS_API InvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API InvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The Amazon EKS cluster associated with the exception.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline InvalidParameterException& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline InvalidParameterException& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline InvalidParameterException& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    InvalidParameterException& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon EKS managed node group associated with the exception.</p>
      */
-    inline const Aws::String& GetNodegroupName() const{ return m_nodegroupName; }
+    inline const Aws::String& GetNodegroupName() const { return m_nodegroupName; }
     inline bool NodegroupNameHasBeenSet() const { return m_nodegroupNameHasBeenSet; }
-    inline void SetNodegroupName(const Aws::String& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = value; }
-    inline void SetNodegroupName(Aws::String&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::move(value); }
-    inline void SetNodegroupName(const char* value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName.assign(value); }
-    inline InvalidParameterException& WithNodegroupName(const Aws::String& value) { SetNodegroupName(value); return *this;}
-    inline InvalidParameterException& WithNodegroupName(Aws::String&& value) { SetNodegroupName(std::move(value)); return *this;}
-    inline InvalidParameterException& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
+    template<typename NodegroupNameT = Aws::String>
+    void SetNodegroupName(NodegroupNameT&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::forward<NodegroupNameT>(value); }
+    template<typename NodegroupNameT = Aws::String>
+    InvalidParameterException& WithNodegroupName(NodegroupNameT&& value) { SetNodegroupName(std::forward<NodegroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Fargate profile associated with the exception.</p>
      */
-    inline const Aws::String& GetFargateProfileName() const{ return m_fargateProfileName; }
+    inline const Aws::String& GetFargateProfileName() const { return m_fargateProfileName; }
     inline bool FargateProfileNameHasBeenSet() const { return m_fargateProfileNameHasBeenSet; }
-    inline void SetFargateProfileName(const Aws::String& value) { m_fargateProfileNameHasBeenSet = true; m_fargateProfileName = value; }
-    inline void SetFargateProfileName(Aws::String&& value) { m_fargateProfileNameHasBeenSet = true; m_fargateProfileName = std::move(value); }
-    inline void SetFargateProfileName(const char* value) { m_fargateProfileNameHasBeenSet = true; m_fargateProfileName.assign(value); }
-    inline InvalidParameterException& WithFargateProfileName(const Aws::String& value) { SetFargateProfileName(value); return *this;}
-    inline InvalidParameterException& WithFargateProfileName(Aws::String&& value) { SetFargateProfileName(std::move(value)); return *this;}
-    inline InvalidParameterException& WithFargateProfileName(const char* value) { SetFargateProfileName(value); return *this;}
+    template<typename FargateProfileNameT = Aws::String>
+    void SetFargateProfileName(FargateProfileNameT&& value) { m_fargateProfileNameHasBeenSet = true; m_fargateProfileName = std::forward<FargateProfileNameT>(value); }
+    template<typename FargateProfileNameT = Aws::String>
+    InvalidParameterException& WithFargateProfileName(FargateProfileNameT&& value) { SetFargateProfileName(std::forward<FargateProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,28 +79,24 @@ namespace Model
      * <p>The specified parameter for the add-on name is invalid. Review the available
      * parameters for the API request</p>
      */
-    inline const Aws::String& GetAddonName() const{ return m_addonName; }
+    inline const Aws::String& GetAddonName() const { return m_addonName; }
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
-    inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
-    inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
-    inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
-    inline InvalidParameterException& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
-    inline InvalidParameterException& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
-    inline InvalidParameterException& WithAddonName(const char* value) { SetAddonName(value); return *this;}
+    template<typename AddonNameT = Aws::String>
+    void SetAddonName(AddonNameT&& value) { m_addonNameHasBeenSet = true; m_addonName = std::forward<AddonNameT>(value); }
+    template<typename AddonNameT = Aws::String>
+    InvalidParameterException& WithAddonName(AddonNameT&& value) { SetAddonName(std::forward<AddonNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon EKS subscription ID with the exception.</p>
      */
-    inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
+    inline const Aws::String& GetSubscriptionId() const { return m_subscriptionId; }
     inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
-    inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
-    inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::move(value); }
-    inline void SetSubscriptionId(const char* value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId.assign(value); }
-    inline InvalidParameterException& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
-    inline InvalidParameterException& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
-    inline InvalidParameterException& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
+    template<typename SubscriptionIdT = Aws::String>
+    void SetSubscriptionId(SubscriptionIdT&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::forward<SubscriptionIdT>(value); }
+    template<typename SubscriptionIdT = Aws::String>
+    InvalidParameterException& WithSubscriptionId(SubscriptionIdT&& value) { SetSubscriptionId(std::forward<SubscriptionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +104,12 @@ namespace Model
      * <p>The specified parameter is invalid. Review the available parameters for the
      * API request.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InvalidParameterException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InvalidParameterException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InvalidParameterException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InvalidParameterException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

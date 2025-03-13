@@ -32,7 +32,7 @@ namespace Model
   class ArcAxisConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API ArcAxisConfiguration();
+    AWS_QUICKSIGHT_API ArcAxisConfiguration() = default;
     AWS_QUICKSIGHT_API ArcAxisConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ArcAxisConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,19 +42,19 @@ namespace Model
     /**
      * <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
      */
-    inline const ArcAxisDisplayRange& GetRange() const{ return m_range; }
+    inline const ArcAxisDisplayRange& GetRange() const { return m_range; }
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-    inline void SetRange(const ArcAxisDisplayRange& value) { m_rangeHasBeenSet = true; m_range = value; }
-    inline void SetRange(ArcAxisDisplayRange&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
-    inline ArcAxisConfiguration& WithRange(const ArcAxisDisplayRange& value) { SetRange(value); return *this;}
-    inline ArcAxisConfiguration& WithRange(ArcAxisDisplayRange&& value) { SetRange(std::move(value)); return *this;}
+    template<typename RangeT = ArcAxisDisplayRange>
+    void SetRange(RangeT&& value) { m_rangeHasBeenSet = true; m_range = std::forward<RangeT>(value); }
+    template<typename RangeT = ArcAxisDisplayRange>
+    ArcAxisConfiguration& WithRange(RangeT&& value) { SetRange(std::forward<RangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reserved range of the arc axis.</p>
      */
-    inline int GetReserveRange() const{ return m_reserveRange; }
+    inline int GetReserveRange() const { return m_reserveRange; }
     inline bool ReserveRangeHasBeenSet() const { return m_reserveRangeHasBeenSet; }
     inline void SetReserveRange(int value) { m_reserveRangeHasBeenSet = true; m_reserveRange = value; }
     inline ArcAxisConfiguration& WithReserveRange(int value) { SetReserveRange(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
     ArcAxisDisplayRange m_range;
     bool m_rangeHasBeenSet = false;
 
-    int m_reserveRange;
+    int m_reserveRange{0};
     bool m_reserveRangeHasBeenSet = false;
   };
 

@@ -12,19 +12,6 @@ using namespace Aws::BedrockDataAutomation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBlueprintsRequest::ListBlueprintsRequest() : 
-    m_blueprintArnHasBeenSet(false),
-    m_resourceOwner(ResourceOwner::NOT_SET),
-    m_resourceOwnerHasBeenSet(false),
-    m_blueprintStageFilter(BlueprintStageFilter::NOT_SET),
-    m_blueprintStageFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_projectFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListBlueprintsRequest::SerializePayload() const
 {
   JsonValue payload;

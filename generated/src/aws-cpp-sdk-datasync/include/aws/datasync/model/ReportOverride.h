@@ -33,7 +33,7 @@ namespace Model
   class ReportOverride
   {
   public:
-    AWS_DATASYNC_API ReportOverride();
+    AWS_DATASYNC_API ReportOverride() = default;
     AWS_DATASYNC_API ReportOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API ReportOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,16 +50,14 @@ namespace Model
      * files DataSync successfully skipped and if something transferred that you didn't
      * to transfer (<code>SUCCESSES_AND_ERRORS</code>).</p>
      */
-    inline const ReportLevel& GetReportLevel() const{ return m_reportLevel; }
+    inline ReportLevel GetReportLevel() const { return m_reportLevel; }
     inline bool ReportLevelHasBeenSet() const { return m_reportLevelHasBeenSet; }
-    inline void SetReportLevel(const ReportLevel& value) { m_reportLevelHasBeenSet = true; m_reportLevel = value; }
-    inline void SetReportLevel(ReportLevel&& value) { m_reportLevelHasBeenSet = true; m_reportLevel = std::move(value); }
-    inline ReportOverride& WithReportLevel(const ReportLevel& value) { SetReportLevel(value); return *this;}
-    inline ReportOverride& WithReportLevel(ReportLevel&& value) { SetReportLevel(std::move(value)); return *this;}
+    inline void SetReportLevel(ReportLevel value) { m_reportLevelHasBeenSet = true; m_reportLevel = value; }
+    inline ReportOverride& WithReportLevel(ReportLevel value) { SetReportLevel(value); return *this;}
     ///@}
   private:
 
-    ReportLevel m_reportLevel;
+    ReportLevel m_reportLevel{ReportLevel::NOT_SET};
     bool m_reportLevelHasBeenSet = false;
   };
 

@@ -22,7 +22,7 @@ namespace Model
   class GetReportGroupTrendRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API GetReportGroupTrendRequest();
+    AWS_CODEBUILD_API GetReportGroupTrendRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The ARN of the report group that contains the reports to analyze.</p>
      */
-    inline const Aws::String& GetReportGroupArn() const{ return m_reportGroupArn; }
+    inline const Aws::String& GetReportGroupArn() const { return m_reportGroupArn; }
     inline bool ReportGroupArnHasBeenSet() const { return m_reportGroupArnHasBeenSet; }
-    inline void SetReportGroupArn(const Aws::String& value) { m_reportGroupArnHasBeenSet = true; m_reportGroupArn = value; }
-    inline void SetReportGroupArn(Aws::String&& value) { m_reportGroupArnHasBeenSet = true; m_reportGroupArn = std::move(value); }
-    inline void SetReportGroupArn(const char* value) { m_reportGroupArnHasBeenSet = true; m_reportGroupArn.assign(value); }
-    inline GetReportGroupTrendRequest& WithReportGroupArn(const Aws::String& value) { SetReportGroupArn(value); return *this;}
-    inline GetReportGroupTrendRequest& WithReportGroupArn(Aws::String&& value) { SetReportGroupArn(std::move(value)); return *this;}
-    inline GetReportGroupTrendRequest& WithReportGroupArn(const char* value) { SetReportGroupArn(value); return *this;}
+    template<typename ReportGroupArnT = Aws::String>
+    void SetReportGroupArn(ReportGroupArnT&& value) { m_reportGroupArnHasBeenSet = true; m_reportGroupArn = std::forward<ReportGroupArnT>(value); }
+    template<typename ReportGroupArnT = Aws::String>
+    GetReportGroupTrendRequest& WithReportGroupArn(ReportGroupArnT&& value) { SetReportGroupArn(std::forward<ReportGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * recent reports.</p> <p>If this parameter is omitted, the most recent 100 reports
      * are analyzed.</p>
      */
-    inline int GetNumOfReports() const{ return m_numOfReports; }
+    inline int GetNumOfReports() const { return m_numOfReports; }
     inline bool NumOfReportsHasBeenSet() const { return m_numOfReportsHasBeenSet; }
     inline void SetNumOfReports(int value) { m_numOfReportsHasBeenSet = true; m_numOfReports = value; }
     inline GetReportGroupTrendRequest& WithNumOfReports(int value) { SetNumOfReports(value); return *this;}
@@ -81,22 +79,20 @@ namespace Model
      * lines not covered values for the specified test reports.</p> </dd> </dl> </dd>
      * </dl>
      */
-    inline const ReportGroupTrendFieldType& GetTrendField() const{ return m_trendField; }
+    inline ReportGroupTrendFieldType GetTrendField() const { return m_trendField; }
     inline bool TrendFieldHasBeenSet() const { return m_trendFieldHasBeenSet; }
-    inline void SetTrendField(const ReportGroupTrendFieldType& value) { m_trendFieldHasBeenSet = true; m_trendField = value; }
-    inline void SetTrendField(ReportGroupTrendFieldType&& value) { m_trendFieldHasBeenSet = true; m_trendField = std::move(value); }
-    inline GetReportGroupTrendRequest& WithTrendField(const ReportGroupTrendFieldType& value) { SetTrendField(value); return *this;}
-    inline GetReportGroupTrendRequest& WithTrendField(ReportGroupTrendFieldType&& value) { SetTrendField(std::move(value)); return *this;}
+    inline void SetTrendField(ReportGroupTrendFieldType value) { m_trendFieldHasBeenSet = true; m_trendField = value; }
+    inline GetReportGroupTrendRequest& WithTrendField(ReportGroupTrendFieldType value) { SetTrendField(value); return *this;}
     ///@}
   private:
 
     Aws::String m_reportGroupArn;
     bool m_reportGroupArnHasBeenSet = false;
 
-    int m_numOfReports;
+    int m_numOfReports{0};
     bool m_numOfReportsHasBeenSet = false;
 
-    ReportGroupTrendFieldType m_trendField;
+    ReportGroupTrendFieldType m_trendField{ReportGroupTrendFieldType::NOT_SET};
     bool m_trendFieldHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Row::Row() : 
-    m_dataHasBeenSet(false)
-{
-}
-
 Row::Row(JsonView jsonValue)
-  : Row()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Row& Row::operator =(JsonView jsonValue)
     }
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

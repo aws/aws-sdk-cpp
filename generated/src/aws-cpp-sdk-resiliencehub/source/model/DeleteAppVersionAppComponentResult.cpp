@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteAppVersionAppComponentResult::DeleteAppVersionAppComponentResult()
-{
-}
-
 DeleteAppVersionAppComponentResult::DeleteAppVersionAppComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ DeleteAppVersionAppComponentResult& DeleteAppVersionAppComponentResult::operator
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
+    m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appComponent"))
   {
     m_appComponent = jsonValue.GetObject("appComponent");
-
+    m_appComponentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appVersion"))
   {
     m_appVersion = jsonValue.GetString("appVersion");
-
+    m_appVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

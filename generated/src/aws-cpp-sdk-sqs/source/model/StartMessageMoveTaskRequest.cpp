@@ -12,14 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMessageMoveTaskRequest::StartMessageMoveTaskRequest() : 
-    m_sourceArnHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_maxNumberOfMessagesPerSecond(0),
-    m_maxNumberOfMessagesPerSecondHasBeenSet(false)
-{
-}
-
 Aws::String StartMessageMoveTaskRequest::SerializePayload() const
 {
   JsonValue payload;

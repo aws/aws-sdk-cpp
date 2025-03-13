@@ -35,7 +35,7 @@ namespace Model
   class PlayReadyDrm
   {
   public:
-    AWS_ELASTICTRANSCODER_API PlayReadyDrm();
+    AWS_ELASTICTRANSCODER_API PlayReadyDrm() = default;
     AWS_ELASTICTRANSCODER_API PlayReadyDrm(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API PlayReadyDrm& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The type of DRM, if any, that you want Elastic Transcoder to apply to the
      * output files associated with this playlist.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-    inline PlayReadyDrm& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline PlayReadyDrm& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline PlayReadyDrm& WithFormat(const char* value) { SetFormat(value); return *this;}
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    PlayReadyDrm& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * being base64-encoded:</p> <p> <code>128</code>, <code>192</code>, or
      * <code>256</code>. </p> <p>The key must also be encrypted by using AWS KMS.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline PlayReadyDrm& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline PlayReadyDrm& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline PlayReadyDrm& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    PlayReadyDrm& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * in transit. The key MD5 must be base64-encoded, and it must be exactly 16 bytes
      * before being base64-encoded.</p>
      */
-    inline const Aws::String& GetKeyMd5() const{ return m_keyMd5; }
+    inline const Aws::String& GetKeyMd5() const { return m_keyMd5; }
     inline bool KeyMd5HasBeenSet() const { return m_keyMd5HasBeenSet; }
-    inline void SetKeyMd5(const Aws::String& value) { m_keyMd5HasBeenSet = true; m_keyMd5 = value; }
-    inline void SetKeyMd5(Aws::String&& value) { m_keyMd5HasBeenSet = true; m_keyMd5 = std::move(value); }
-    inline void SetKeyMd5(const char* value) { m_keyMd5HasBeenSet = true; m_keyMd5.assign(value); }
-    inline PlayReadyDrm& WithKeyMd5(const Aws::String& value) { SetKeyMd5(value); return *this;}
-    inline PlayReadyDrm& WithKeyMd5(Aws::String&& value) { SetKeyMd5(std::move(value)); return *this;}
-    inline PlayReadyDrm& WithKeyMd5(const char* value) { SetKeyMd5(value); return *this;}
+    template<typename KeyMd5T = Aws::String>
+    void SetKeyMd5(KeyMd5T&& value) { m_keyMd5HasBeenSet = true; m_keyMd5 = std::forward<KeyMd5T>(value); }
+    template<typename KeyMd5T = Aws::String>
+    PlayReadyDrm& WithKeyMd5(KeyMd5T&& value) { SetKeyMd5(std::forward<KeyMd5T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +92,12 @@ namespace Model
      * DRM headers. If you are unsure whether your license server provides your key ID
      * in big or little endian, check with your DRM provider.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline PlayReadyDrm& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline PlayReadyDrm& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline PlayReadyDrm& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    PlayReadyDrm& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +108,12 @@ namespace Model
      * 8 bytes long before being base64-encoded. If no initialization vector is
      * provided, Elastic Transcoder generates one for you.</p>
      */
-    inline const Aws::String& GetInitializationVector() const{ return m_initializationVector; }
+    inline const Aws::String& GetInitializationVector() const { return m_initializationVector; }
     inline bool InitializationVectorHasBeenSet() const { return m_initializationVectorHasBeenSet; }
-    inline void SetInitializationVector(const Aws::String& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = value; }
-    inline void SetInitializationVector(Aws::String&& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = std::move(value); }
-    inline void SetInitializationVector(const char* value) { m_initializationVectorHasBeenSet = true; m_initializationVector.assign(value); }
-    inline PlayReadyDrm& WithInitializationVector(const Aws::String& value) { SetInitializationVector(value); return *this;}
-    inline PlayReadyDrm& WithInitializationVector(Aws::String&& value) { SetInitializationVector(std::move(value)); return *this;}
-    inline PlayReadyDrm& WithInitializationVector(const char* value) { SetInitializationVector(value); return *this;}
+    template<typename InitializationVectorT = Aws::String>
+    void SetInitializationVector(InitializationVectorT&& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = std::forward<InitializationVectorT>(value); }
+    template<typename InitializationVectorT = Aws::String>
+    PlayReadyDrm& WithInitializationVector(InitializationVectorT&& value) { SetInitializationVector(std::forward<InitializationVectorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +125,12 @@ namespace Model
      * HLS playlist outputs. An example URL looks like this:
      * <code>https://www.example.com/exampleKey/</code> </p>
      */
-    inline const Aws::String& GetLicenseAcquisitionUrl() const{ return m_licenseAcquisitionUrl; }
+    inline const Aws::String& GetLicenseAcquisitionUrl() const { return m_licenseAcquisitionUrl; }
     inline bool LicenseAcquisitionUrlHasBeenSet() const { return m_licenseAcquisitionUrlHasBeenSet; }
-    inline void SetLicenseAcquisitionUrl(const Aws::String& value) { m_licenseAcquisitionUrlHasBeenSet = true; m_licenseAcquisitionUrl = value; }
-    inline void SetLicenseAcquisitionUrl(Aws::String&& value) { m_licenseAcquisitionUrlHasBeenSet = true; m_licenseAcquisitionUrl = std::move(value); }
-    inline void SetLicenseAcquisitionUrl(const char* value) { m_licenseAcquisitionUrlHasBeenSet = true; m_licenseAcquisitionUrl.assign(value); }
-    inline PlayReadyDrm& WithLicenseAcquisitionUrl(const Aws::String& value) { SetLicenseAcquisitionUrl(value); return *this;}
-    inline PlayReadyDrm& WithLicenseAcquisitionUrl(Aws::String&& value) { SetLicenseAcquisitionUrl(std::move(value)); return *this;}
-    inline PlayReadyDrm& WithLicenseAcquisitionUrl(const char* value) { SetLicenseAcquisitionUrl(value); return *this;}
+    template<typename LicenseAcquisitionUrlT = Aws::String>
+    void SetLicenseAcquisitionUrl(LicenseAcquisitionUrlT&& value) { m_licenseAcquisitionUrlHasBeenSet = true; m_licenseAcquisitionUrl = std::forward<LicenseAcquisitionUrlT>(value); }
+    template<typename LicenseAcquisitionUrlT = Aws::String>
+    PlayReadyDrm& WithLicenseAcquisitionUrl(LicenseAcquisitionUrlT&& value) { SetLicenseAcquisitionUrl(std::forward<LicenseAcquisitionUrlT>(value)); return *this;}
     ///@}
   private:
 

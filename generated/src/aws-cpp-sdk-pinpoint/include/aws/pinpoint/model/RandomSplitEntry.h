@@ -32,7 +32,7 @@ namespace Model
   class RandomSplitEntry
   {
   public:
-    AWS_PINPOINT_API RandomSplitEntry();
+    AWS_PINPOINT_API RandomSplitEntry() = default;
     AWS_PINPOINT_API RandomSplitEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API RandomSplitEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The unique identifier for the next activity to perform, after completing the
      * activity for the path.</p>
      */
-    inline const Aws::String& GetNextActivity() const{ return m_nextActivity; }
+    inline const Aws::String& GetNextActivity() const { return m_nextActivity; }
     inline bool NextActivityHasBeenSet() const { return m_nextActivityHasBeenSet; }
-    inline void SetNextActivity(const Aws::String& value) { m_nextActivityHasBeenSet = true; m_nextActivity = value; }
-    inline void SetNextActivity(Aws::String&& value) { m_nextActivityHasBeenSet = true; m_nextActivity = std::move(value); }
-    inline void SetNextActivity(const char* value) { m_nextActivityHasBeenSet = true; m_nextActivity.assign(value); }
-    inline RandomSplitEntry& WithNextActivity(const Aws::String& value) { SetNextActivity(value); return *this;}
-    inline RandomSplitEntry& WithNextActivity(Aws::String&& value) { SetNextActivity(std::move(value)); return *this;}
-    inline RandomSplitEntry& WithNextActivity(const char* value) { SetNextActivity(value); return *this;}
+    template<typename NextActivityT = Aws::String>
+    void SetNextActivity(NextActivityT&& value) { m_nextActivityHasBeenSet = true; m_nextActivity = std::forward<NextActivityT>(value); }
+    template<typename NextActivityT = Aws::String>
+    RandomSplitEntry& WithNextActivity(NextActivityT&& value) { SetNextActivity(std::forward<NextActivityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * Therefore, the actual percentage of participants who are sent down a path may
      * not be equal to the percentage that you specify.</p>
      */
-    inline int GetPercentage() const{ return m_percentage; }
+    inline int GetPercentage() const { return m_percentage; }
     inline bool PercentageHasBeenSet() const { return m_percentageHasBeenSet; }
     inline void SetPercentage(int value) { m_percentageHasBeenSet = true; m_percentage = value; }
     inline RandomSplitEntry& WithPercentage(int value) { SetPercentage(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_nextActivity;
     bool m_nextActivityHasBeenSet = false;
 
-    int m_percentage;
+    int m_percentage{0};
     bool m_percentageHasBeenSet = false;
   };
 

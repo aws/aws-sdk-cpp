@@ -10,13 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-PutIdentityPolicyRequest::PutIdentityPolicyRequest() : 
-    m_identityHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 Aws::String PutIdentityPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

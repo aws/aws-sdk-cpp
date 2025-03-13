@@ -34,7 +34,7 @@ namespace Model
   class ServerlessClientAuthentication
   {
   public:
-    AWS_KAFKA_API ServerlessClientAuthentication();
+    AWS_KAFKA_API ServerlessClientAuthentication() = default;
     AWS_KAFKA_API ServerlessClientAuthentication(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API ServerlessClientAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
             <p>Details for ClientAuthentication using SASL.</p>
          
      */
-    inline const ServerlessSasl& GetSasl() const{ return m_sasl; }
+    inline const ServerlessSasl& GetSasl() const { return m_sasl; }
     inline bool SaslHasBeenSet() const { return m_saslHasBeenSet; }
-    inline void SetSasl(const ServerlessSasl& value) { m_saslHasBeenSet = true; m_sasl = value; }
-    inline void SetSasl(ServerlessSasl&& value) { m_saslHasBeenSet = true; m_sasl = std::move(value); }
-    inline ServerlessClientAuthentication& WithSasl(const ServerlessSasl& value) { SetSasl(value); return *this;}
-    inline ServerlessClientAuthentication& WithSasl(ServerlessSasl&& value) { SetSasl(std::move(value)); return *this;}
+    template<typename SaslT = ServerlessSasl>
+    void SetSasl(SaslT&& value) { m_saslHasBeenSet = true; m_sasl = std::forward<SaslT>(value); }
+    template<typename SaslT = ServerlessSasl>
+    ServerlessClientAuthentication& WithSasl(SaslT&& value) { SetSasl(std::forward<SaslT>(value)); return *this;}
     ///@}
   private:
 

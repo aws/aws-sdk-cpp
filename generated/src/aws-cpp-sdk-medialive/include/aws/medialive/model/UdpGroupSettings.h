@@ -32,7 +32,7 @@ namespace Model
   class UdpGroupSettings
   {
   public:
-    AWS_MEDIALIVE_API UdpGroupSettings();
+    AWS_MEDIALIVE_API UdpGroupSettings() = default;
     AWS_MEDIALIVE_API UdpGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API UdpGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,44 +48,40 @@ namespace Model
      * to be produced normally with repeat frames, black frames, or slate frames
      * substituted for the absent input video.
      */
-    inline const InputLossActionForUdpOut& GetInputLossAction() const{ return m_inputLossAction; }
+    inline InputLossActionForUdpOut GetInputLossAction() const { return m_inputLossAction; }
     inline bool InputLossActionHasBeenSet() const { return m_inputLossActionHasBeenSet; }
-    inline void SetInputLossAction(const InputLossActionForUdpOut& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = value; }
-    inline void SetInputLossAction(InputLossActionForUdpOut&& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = std::move(value); }
-    inline UdpGroupSettings& WithInputLossAction(const InputLossActionForUdpOut& value) { SetInputLossAction(value); return *this;}
-    inline UdpGroupSettings& WithInputLossAction(InputLossActionForUdpOut&& value) { SetInputLossAction(std::move(value)); return *this;}
+    inline void SetInputLossAction(InputLossActionForUdpOut value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = value; }
+    inline UdpGroupSettings& WithInputLossAction(InputLossActionForUdpOut value) { SetInputLossAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Indicates ID3 frame that has the timecode.
      */
-    inline const UdpTimedMetadataId3Frame& GetTimedMetadataId3Frame() const{ return m_timedMetadataId3Frame; }
+    inline UdpTimedMetadataId3Frame GetTimedMetadataId3Frame() const { return m_timedMetadataId3Frame; }
     inline bool TimedMetadataId3FrameHasBeenSet() const { return m_timedMetadataId3FrameHasBeenSet; }
-    inline void SetTimedMetadataId3Frame(const UdpTimedMetadataId3Frame& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = value; }
-    inline void SetTimedMetadataId3Frame(UdpTimedMetadataId3Frame&& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = std::move(value); }
-    inline UdpGroupSettings& WithTimedMetadataId3Frame(const UdpTimedMetadataId3Frame& value) { SetTimedMetadataId3Frame(value); return *this;}
-    inline UdpGroupSettings& WithTimedMetadataId3Frame(UdpTimedMetadataId3Frame&& value) { SetTimedMetadataId3Frame(std::move(value)); return *this;}
+    inline void SetTimedMetadataId3Frame(UdpTimedMetadataId3Frame value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = value; }
+    inline UdpGroupSettings& WithTimedMetadataId3Frame(UdpTimedMetadataId3Frame value) { SetTimedMetadataId3Frame(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Timed Metadata interval in seconds.
      */
-    inline int GetTimedMetadataId3Period() const{ return m_timedMetadataId3Period; }
+    inline int GetTimedMetadataId3Period() const { return m_timedMetadataId3Period; }
     inline bool TimedMetadataId3PeriodHasBeenSet() const { return m_timedMetadataId3PeriodHasBeenSet; }
     inline void SetTimedMetadataId3Period(int value) { m_timedMetadataId3PeriodHasBeenSet = true; m_timedMetadataId3Period = value; }
     inline UdpGroupSettings& WithTimedMetadataId3Period(int value) { SetTimedMetadataId3Period(value); return *this;}
     ///@}
   private:
 
-    InputLossActionForUdpOut m_inputLossAction;
+    InputLossActionForUdpOut m_inputLossAction{InputLossActionForUdpOut::NOT_SET};
     bool m_inputLossActionHasBeenSet = false;
 
-    UdpTimedMetadataId3Frame m_timedMetadataId3Frame;
+    UdpTimedMetadataId3Frame m_timedMetadataId3Frame{UdpTimedMetadataId3Frame::NOT_SET};
     bool m_timedMetadataId3FrameHasBeenSet = false;
 
-    int m_timedMetadataId3Period;
+    int m_timedMetadataId3Period{0};
     bool m_timedMetadataId3PeriodHasBeenSet = false;
   };
 

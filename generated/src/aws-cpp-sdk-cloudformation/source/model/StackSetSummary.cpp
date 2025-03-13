@@ -20,24 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackSetSummary::StackSetSummary() : 
-    m_stackSetNameHasBeenSet(false),
-    m_stackSetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(StackSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_autoDeploymentHasBeenSet(false),
-    m_permissionModel(PermissionModels::NOT_SET),
-    m_permissionModelHasBeenSet(false),
-    m_driftStatus(StackDriftStatus::NOT_SET),
-    m_driftStatusHasBeenSet(false),
-    m_lastDriftCheckTimestampHasBeenSet(false),
-    m_managedExecutionHasBeenSet(false)
-{
-}
-
 StackSetSummary::StackSetSummary(const XmlNode& xmlNode)
-  : StackSetSummary()
 {
   *this = xmlNode;
 }
@@ -53,54 +36,63 @@ StackSetSummary& StackSetSummary::operator =(const XmlNode& xmlNode)
     {
       m_stackSetName = Aws::Utils::Xml::DecodeEscapedXmlText(stackSetNameNode.GetText());
       m_stackSetNameHasBeenSet = true;
+       m_stackSetNameHasBeenSet = true;
     }
     XmlNode stackSetIdNode = resultNode.FirstChild("StackSetId");
     if(!stackSetIdNode.IsNull())
     {
       m_stackSetId = Aws::Utils::Xml::DecodeEscapedXmlText(stackSetIdNode.GetText());
       m_stackSetIdHasBeenSet = true;
+       m_stackSetIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StackSetStatusMapper::GetStackSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StackSetStatusMapper::GetStackSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode autoDeploymentNode = resultNode.FirstChild("AutoDeployment");
     if(!autoDeploymentNode.IsNull())
     {
       m_autoDeployment = autoDeploymentNode;
       m_autoDeploymentHasBeenSet = true;
+       m_autoDeploymentHasBeenSet = true;
     }
     XmlNode permissionModelNode = resultNode.FirstChild("PermissionModel");
     if(!permissionModelNode.IsNull())
     {
-      m_permissionModel = PermissionModelsMapper::GetPermissionModelsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionModelNode.GetText()).c_str()).c_str());
+      m_permissionModel = PermissionModelsMapper::GetPermissionModelsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionModelNode.GetText()).c_str()));
       m_permissionModelHasBeenSet = true;
+       m_permissionModelHasBeenSet = true;
     }
     XmlNode driftStatusNode = resultNode.FirstChild("DriftStatus");
     if(!driftStatusNode.IsNull())
     {
-      m_driftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftStatusNode.GetText()).c_str()).c_str());
+      m_driftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftStatusNode.GetText()).c_str()));
       m_driftStatusHasBeenSet = true;
+       m_driftStatusHasBeenSet = true;
     }
     XmlNode lastDriftCheckTimestampNode = resultNode.FirstChild("LastDriftCheckTimestamp");
     if(!lastDriftCheckTimestampNode.IsNull())
     {
       m_lastDriftCheckTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastDriftCheckTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastDriftCheckTimestampHasBeenSet = true;
+       m_lastDriftCheckTimestampHasBeenSet = true;
     }
     XmlNode managedExecutionNode = resultNode.FirstChild("ManagedExecution");
     if(!managedExecutionNode.IsNull())
     {
       m_managedExecution = managedExecutionNode;
       m_managedExecutionHasBeenSet = true;
+       m_managedExecutionHasBeenSet = true;
     }
   }
 

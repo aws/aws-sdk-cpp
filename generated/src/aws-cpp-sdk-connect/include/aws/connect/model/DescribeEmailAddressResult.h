@@ -28,7 +28,7 @@ namespace Model
   class DescribeEmailAddressResult
   {
   public:
-    AWS_CONNECT_API DescribeEmailAddressResult();
+    AWS_CONNECT_API DescribeEmailAddressResult() = default;
     AWS_CONNECT_API DescribeEmailAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribeEmailAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,91 +37,77 @@ namespace Model
     /**
      * <p>The identifier of the email address.</p>
      */
-    inline const Aws::String& GetEmailAddressId() const{ return m_emailAddressId; }
-    inline void SetEmailAddressId(const Aws::String& value) { m_emailAddressId = value; }
-    inline void SetEmailAddressId(Aws::String&& value) { m_emailAddressId = std::move(value); }
-    inline void SetEmailAddressId(const char* value) { m_emailAddressId.assign(value); }
-    inline DescribeEmailAddressResult& WithEmailAddressId(const Aws::String& value) { SetEmailAddressId(value); return *this;}
-    inline DescribeEmailAddressResult& WithEmailAddressId(Aws::String&& value) { SetEmailAddressId(std::move(value)); return *this;}
-    inline DescribeEmailAddressResult& WithEmailAddressId(const char* value) { SetEmailAddressId(value); return *this;}
+    inline const Aws::String& GetEmailAddressId() const { return m_emailAddressId; }
+    template<typename EmailAddressIdT = Aws::String>
+    void SetEmailAddressId(EmailAddressIdT&& value) { m_emailAddressIdHasBeenSet = true; m_emailAddressId = std::forward<EmailAddressIdT>(value); }
+    template<typename EmailAddressIdT = Aws::String>
+    DescribeEmailAddressResult& WithEmailAddressId(EmailAddressIdT&& value) { SetEmailAddressId(std::forward<EmailAddressIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the email address.</p>
      */
-    inline const Aws::String& GetEmailAddressArn() const{ return m_emailAddressArn; }
-    inline void SetEmailAddressArn(const Aws::String& value) { m_emailAddressArn = value; }
-    inline void SetEmailAddressArn(Aws::String&& value) { m_emailAddressArn = std::move(value); }
-    inline void SetEmailAddressArn(const char* value) { m_emailAddressArn.assign(value); }
-    inline DescribeEmailAddressResult& WithEmailAddressArn(const Aws::String& value) { SetEmailAddressArn(value); return *this;}
-    inline DescribeEmailAddressResult& WithEmailAddressArn(Aws::String&& value) { SetEmailAddressArn(std::move(value)); return *this;}
-    inline DescribeEmailAddressResult& WithEmailAddressArn(const char* value) { SetEmailAddressArn(value); return *this;}
+    inline const Aws::String& GetEmailAddressArn() const { return m_emailAddressArn; }
+    template<typename EmailAddressArnT = Aws::String>
+    void SetEmailAddressArn(EmailAddressArnT&& value) { m_emailAddressArnHasBeenSet = true; m_emailAddressArn = std::forward<EmailAddressArnT>(value); }
+    template<typename EmailAddressArnT = Aws::String>
+    DescribeEmailAddressResult& WithEmailAddressArn(EmailAddressArnT&& value) { SetEmailAddressArn(std::forward<EmailAddressArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The email address with the instance, in [^\s@]+@[^\s@]+\.[^\s@]+ format.</p>
      */
-    inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
-    inline void SetEmailAddress(const Aws::String& value) { m_emailAddress = value; }
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddress = std::move(value); }
-    inline void SetEmailAddress(const char* value) { m_emailAddress.assign(value); }
-    inline DescribeEmailAddressResult& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-    inline DescribeEmailAddressResult& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-    inline DescribeEmailAddressResult& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+    inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
+    template<typename EmailAddressT = Aws::String>
+    void SetEmailAddress(EmailAddressT&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::forward<EmailAddressT>(value); }
+    template<typename EmailAddressT = Aws::String>
+    DescribeEmailAddressResult& WithEmailAddress(EmailAddressT&& value) { SetEmailAddress(std::forward<EmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of email address</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
-    inline DescribeEmailAddressResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline DescribeEmailAddressResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline DescribeEmailAddressResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    DescribeEmailAddressResult& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the email address.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeEmailAddressResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeEmailAddressResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeEmailAddressResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeEmailAddressResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The email address creation timestamp in ISO 8601 Datetime.</p>
      */
-    inline const Aws::String& GetCreateTimestamp() const{ return m_createTimestamp; }
-    inline void SetCreateTimestamp(const Aws::String& value) { m_createTimestamp = value; }
-    inline void SetCreateTimestamp(Aws::String&& value) { m_createTimestamp = std::move(value); }
-    inline void SetCreateTimestamp(const char* value) { m_createTimestamp.assign(value); }
-    inline DescribeEmailAddressResult& WithCreateTimestamp(const Aws::String& value) { SetCreateTimestamp(value); return *this;}
-    inline DescribeEmailAddressResult& WithCreateTimestamp(Aws::String&& value) { SetCreateTimestamp(std::move(value)); return *this;}
-    inline DescribeEmailAddressResult& WithCreateTimestamp(const char* value) { SetCreateTimestamp(value); return *this;}
+    inline const Aws::String& GetCreateTimestamp() const { return m_createTimestamp; }
+    template<typename CreateTimestampT = Aws::String>
+    void SetCreateTimestamp(CreateTimestampT&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::forward<CreateTimestampT>(value); }
+    template<typename CreateTimestampT = Aws::String>
+    DescribeEmailAddressResult& WithCreateTimestamp(CreateTimestampT&& value) { SetCreateTimestamp(std::forward<CreateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The email address last modification timestamp in ISO 8601 Datetime.</p>
      */
-    inline const Aws::String& GetModifiedTimestamp() const{ return m_modifiedTimestamp; }
-    inline void SetModifiedTimestamp(const Aws::String& value) { m_modifiedTimestamp = value; }
-    inline void SetModifiedTimestamp(Aws::String&& value) { m_modifiedTimestamp = std::move(value); }
-    inline void SetModifiedTimestamp(const char* value) { m_modifiedTimestamp.assign(value); }
-    inline DescribeEmailAddressResult& WithModifiedTimestamp(const Aws::String& value) { SetModifiedTimestamp(value); return *this;}
-    inline DescribeEmailAddressResult& WithModifiedTimestamp(Aws::String&& value) { SetModifiedTimestamp(std::move(value)); return *this;}
-    inline DescribeEmailAddressResult& WithModifiedTimestamp(const char* value) { SetModifiedTimestamp(value); return *this;}
+    inline const Aws::String& GetModifiedTimestamp() const { return m_modifiedTimestamp; }
+    template<typename ModifiedTimestampT = Aws::String>
+    void SetModifiedTimestamp(ModifiedTimestampT&& value) { m_modifiedTimestampHasBeenSet = true; m_modifiedTimestamp = std::forward<ModifiedTimestampT>(value); }
+    template<typename ModifiedTimestampT = Aws::String>
+    DescribeEmailAddressResult& WithModifiedTimestamp(ModifiedTimestampT&& value) { SetModifiedTimestamp(std::forward<ModifiedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,49 +115,53 @@ namespace Model
      * <p>The tags used to organize, track, or control access for this resource. For
      * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline DescribeEmailAddressResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DescribeEmailAddressResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeEmailAddressResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline DescribeEmailAddressResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeEmailAddressResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeEmailAddressResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeEmailAddressResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeEmailAddressResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeEmailAddressResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DescribeEmailAddressResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DescribeEmailAddressResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEmailAddressResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEmailAddressResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEmailAddressResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEmailAddressResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_emailAddressId;
+    bool m_emailAddressIdHasBeenSet = false;
 
     Aws::String m_emailAddressArn;
+    bool m_emailAddressArnHasBeenSet = false;
 
     Aws::String m_emailAddress;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_createTimestamp;
+    bool m_createTimestampHasBeenSet = false;
 
     Aws::String m_modifiedTimestamp;
+    bool m_modifiedTimestampHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

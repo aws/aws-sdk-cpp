@@ -12,19 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEndpointRequest::CreateEndpointRequest() : 
-    m_endpointNameHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_desiredInferenceUnits(0),
-    m_desiredInferenceUnitsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_flywheelArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

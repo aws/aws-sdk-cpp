@@ -22,7 +22,7 @@ namespace Model
   class UpdateRegionSettingsRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API UpdateRegionSettingsRequest();
+    AWS_BACKUP_API UpdateRegionSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,15 +44,15 @@ namespace Model
      * resource type specified in the backup plan takes priority over the tag
      * condition. Service opt-in settings are disregarded in this situation.</p>
      */
-    inline const Aws::Map<Aws::String, bool>& GetResourceTypeOptInPreference() const{ return m_resourceTypeOptInPreference; }
+    inline const Aws::Map<Aws::String, bool>& GetResourceTypeOptInPreference() const { return m_resourceTypeOptInPreference; }
     inline bool ResourceTypeOptInPreferenceHasBeenSet() const { return m_resourceTypeOptInPreferenceHasBeenSet; }
-    inline void SetResourceTypeOptInPreference(const Aws::Map<Aws::String, bool>& value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference = value; }
-    inline void SetResourceTypeOptInPreference(Aws::Map<Aws::String, bool>&& value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference = std::move(value); }
-    inline UpdateRegionSettingsRequest& WithResourceTypeOptInPreference(const Aws::Map<Aws::String, bool>& value) { SetResourceTypeOptInPreference(value); return *this;}
-    inline UpdateRegionSettingsRequest& WithResourceTypeOptInPreference(Aws::Map<Aws::String, bool>&& value) { SetResourceTypeOptInPreference(std::move(value)); return *this;}
-    inline UpdateRegionSettingsRequest& AddResourceTypeOptInPreference(const Aws::String& key, bool value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference.emplace(key, value); return *this; }
-    inline UpdateRegionSettingsRequest& AddResourceTypeOptInPreference(Aws::String&& key, bool value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference.emplace(std::move(key), value); return *this; }
-    inline UpdateRegionSettingsRequest& AddResourceTypeOptInPreference(const char* key, bool value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference.emplace(key, value); return *this; }
+    template<typename ResourceTypeOptInPreferenceT = Aws::Map<Aws::String, bool>>
+    void SetResourceTypeOptInPreference(ResourceTypeOptInPreferenceT&& value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference = std::forward<ResourceTypeOptInPreferenceT>(value); }
+    template<typename ResourceTypeOptInPreferenceT = Aws::Map<Aws::String, bool>>
+    UpdateRegionSettingsRequest& WithResourceTypeOptInPreference(ResourceTypeOptInPreferenceT&& value) { SetResourceTypeOptInPreference(std::forward<ResourceTypeOptInPreferenceT>(value)); return *this;}
+    inline UpdateRegionSettingsRequest& AddResourceTypeOptInPreference(Aws::String key, bool value) {
+      m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -64,15 +64,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
      * enable advanced DynamoDB backup programmatically</a>.</p>
      */
-    inline const Aws::Map<Aws::String, bool>& GetResourceTypeManagementPreference() const{ return m_resourceTypeManagementPreference; }
+    inline const Aws::Map<Aws::String, bool>& GetResourceTypeManagementPreference() const { return m_resourceTypeManagementPreference; }
     inline bool ResourceTypeManagementPreferenceHasBeenSet() const { return m_resourceTypeManagementPreferenceHasBeenSet; }
-    inline void SetResourceTypeManagementPreference(const Aws::Map<Aws::String, bool>& value) { m_resourceTypeManagementPreferenceHasBeenSet = true; m_resourceTypeManagementPreference = value; }
-    inline void SetResourceTypeManagementPreference(Aws::Map<Aws::String, bool>&& value) { m_resourceTypeManagementPreferenceHasBeenSet = true; m_resourceTypeManagementPreference = std::move(value); }
-    inline UpdateRegionSettingsRequest& WithResourceTypeManagementPreference(const Aws::Map<Aws::String, bool>& value) { SetResourceTypeManagementPreference(value); return *this;}
-    inline UpdateRegionSettingsRequest& WithResourceTypeManagementPreference(Aws::Map<Aws::String, bool>&& value) { SetResourceTypeManagementPreference(std::move(value)); return *this;}
-    inline UpdateRegionSettingsRequest& AddResourceTypeManagementPreference(const Aws::String& key, bool value) { m_resourceTypeManagementPreferenceHasBeenSet = true; m_resourceTypeManagementPreference.emplace(key, value); return *this; }
-    inline UpdateRegionSettingsRequest& AddResourceTypeManagementPreference(Aws::String&& key, bool value) { m_resourceTypeManagementPreferenceHasBeenSet = true; m_resourceTypeManagementPreference.emplace(std::move(key), value); return *this; }
-    inline UpdateRegionSettingsRequest& AddResourceTypeManagementPreference(const char* key, bool value) { m_resourceTypeManagementPreferenceHasBeenSet = true; m_resourceTypeManagementPreference.emplace(key, value); return *this; }
+    template<typename ResourceTypeManagementPreferenceT = Aws::Map<Aws::String, bool>>
+    void SetResourceTypeManagementPreference(ResourceTypeManagementPreferenceT&& value) { m_resourceTypeManagementPreferenceHasBeenSet = true; m_resourceTypeManagementPreference = std::forward<ResourceTypeManagementPreferenceT>(value); }
+    template<typename ResourceTypeManagementPreferenceT = Aws::Map<Aws::String, bool>>
+    UpdateRegionSettingsRequest& WithResourceTypeManagementPreference(ResourceTypeManagementPreferenceT&& value) { SetResourceTypeManagementPreference(std::forward<ResourceTypeManagementPreferenceT>(value)); return *this;}
+    inline UpdateRegionSettingsRequest& AddResourceTypeManagementPreference(Aws::String key, bool value) {
+      m_resourceTypeManagementPreferenceHasBeenSet = true; m_resourceTypeManagementPreference.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

@@ -23,7 +23,7 @@ namespace Model
   class UpdateFilterRequest : public GuardDutyRequest
   {
   public:
-    AWS_GUARDDUTY_API UpdateFilterRequest();
+    AWS_GUARDDUTY_API UpdateFilterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
      * API.</p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-    inline UpdateFilterRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline UpdateFilterRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline UpdateFilterRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    UpdateFilterRequest& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the filter.</p>
      */
-    inline const Aws::String& GetFilterName() const{ return m_filterName; }
+    inline const Aws::String& GetFilterName() const { return m_filterName; }
     inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
-    inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
-    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
-    inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
-    inline UpdateFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
-    inline UpdateFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
-    inline UpdateFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
+    template<typename FilterNameT = Aws::String>
+    void SetFilterName(FilterNameT&& value) { m_filterNameHasBeenSet = true; m_filterName = std::forward<FilterNameT>(value); }
+    template<typename FilterNameT = Aws::String>
+    UpdateFilterRequest& WithFilterName(FilterNameT&& value) { SetFilterName(std::forward<FilterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * slash, horizontal tab, vertical tab, newline, form feed, return, and
      * whitespace.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateFilterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateFilterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateFilterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateFilterRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +83,10 @@ namespace Model
      * <p>Specifies the action that is to be applied to the findings that match the
      * filter.</p>
      */
-    inline const FilterAction& GetAction() const{ return m_action; }
+    inline FilterAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const FilterAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(FilterAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline UpdateFilterRequest& WithAction(const FilterAction& value) { SetAction(value); return *this;}
-    inline UpdateFilterRequest& WithAction(FilterAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(FilterAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline UpdateFilterRequest& WithAction(FilterAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -102,7 +94,7 @@ namespace Model
      * <p>Specifies the position of the filter in the list of current filters. Also
      * specifies the order in which this filter is applied to the findings.</p>
      */
-    inline int GetRank() const{ return m_rank; }
+    inline int GetRank() const { return m_rank; }
     inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
     inline void SetRank(int value) { m_rankHasBeenSet = true; m_rank = value; }
     inline UpdateFilterRequest& WithRank(int value) { SetRank(value); return *this;}
@@ -112,12 +104,12 @@ namespace Model
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
      */
-    inline const FindingCriteria& GetFindingCriteria() const{ return m_findingCriteria; }
+    inline const FindingCriteria& GetFindingCriteria() const { return m_findingCriteria; }
     inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }
-    inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = value; }
-    inline void SetFindingCriteria(FindingCriteria&& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = std::move(value); }
-    inline UpdateFilterRequest& WithFindingCriteria(const FindingCriteria& value) { SetFindingCriteria(value); return *this;}
-    inline UpdateFilterRequest& WithFindingCriteria(FindingCriteria&& value) { SetFindingCriteria(std::move(value)); return *this;}
+    template<typename FindingCriteriaT = FindingCriteria>
+    void SetFindingCriteria(FindingCriteriaT&& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = std::forward<FindingCriteriaT>(value); }
+    template<typename FindingCriteriaT = FindingCriteria>
+    UpdateFilterRequest& WithFindingCriteria(FindingCriteriaT&& value) { SetFindingCriteria(std::forward<FindingCriteriaT>(value)); return *this;}
     ///@}
   private:
 
@@ -130,10 +122,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    FilterAction m_action;
+    FilterAction m_action{FilterAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    int m_rank;
+    int m_rank{0};
     bool m_rankHasBeenSet = false;
 
     FindingCriteria m_findingCriteria;

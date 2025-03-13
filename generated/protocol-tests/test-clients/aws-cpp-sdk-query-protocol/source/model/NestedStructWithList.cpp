@@ -20,13 +20,7 @@ namespace QueryProtocol
 namespace Model
 {
 
-NestedStructWithList::NestedStructWithList() : 
-    m_listArgHasBeenSet(false)
-{
-}
-
 NestedStructWithList::NestedStructWithList(const XmlNode& xmlNode)
-  : NestedStructWithList()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ NestedStructWithList& NestedStructWithList::operator =(const XmlNode& xmlNode)
     if(!listArgNode.IsNull())
     {
       XmlNode listArgMember = listArgNode.FirstChild("member");
+      m_listArgHasBeenSet = !listArgMember.IsNull();
       while(!listArgMember.IsNull())
       {
         m_listArg.push_back(listArgMember.GetText());
         listArgMember = listArgMember.NextNode("member");
       }
 
-      m_listArgHasBeenSet = true;
+       m_listArgHasBeenSet = true;
     }
   }
 

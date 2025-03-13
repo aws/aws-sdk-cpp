@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-DocumentReviewCommentSource::DocumentReviewCommentSource() : 
-    m_type(DocumentReviewCommentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 DocumentReviewCommentSource::DocumentReviewCommentSource(JsonView jsonValue)
-  : DocumentReviewCommentSource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DocumentReviewCommentSource& DocumentReviewCommentSource::operator =(JsonView js
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DocumentReviewCommentTypeMapper::GetDocumentReviewCommentTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

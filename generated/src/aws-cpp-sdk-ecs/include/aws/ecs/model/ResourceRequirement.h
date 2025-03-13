@@ -39,7 +39,7 @@ namespace Model
   class ResourceRequirement
   {
   public:
-    AWS_ECS_API ResourceRequirement();
+    AWS_ECS_API ResourceRequirement() = default;
     AWS_ECS_API ResourceRequirement(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ResourceRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,33 +57,29 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
      * specified in a task definition.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ResourceRequirement& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ResourceRequirement& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ResourceRequirement& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ResourceRequirement& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of resource to assign to a container. </p>
      */
-    inline const ResourceType& GetType() const{ return m_type; }
+    inline ResourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ResourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ResourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ResourceRequirement& WithType(const ResourceType& value) { SetType(value); return *this;}
-    inline ResourceRequirement& WithType(ResourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ResourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ResourceRequirement& WithType(ResourceType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    ResourceType m_type;
+    ResourceType m_type{ResourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

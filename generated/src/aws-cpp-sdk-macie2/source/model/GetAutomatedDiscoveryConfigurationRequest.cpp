@@ -12,10 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAutomatedDiscoveryConfigurationRequest::GetAutomatedDiscoveryConfigurationRequest()
-{
-}
-
 Aws::String GetAutomatedDiscoveryConfigurationRequest::SerializePayload() const
 {
   return {};

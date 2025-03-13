@@ -20,19 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-DescribeTrustStoreRevocation::DescribeTrustStoreRevocation() : 
-    m_trustStoreArnHasBeenSet(false),
-    m_revocationId(0),
-    m_revocationIdHasBeenSet(false),
-    m_revocationType(RevocationType::NOT_SET),
-    m_revocationTypeHasBeenSet(false),
-    m_numberOfRevokedEntries(0),
-    m_numberOfRevokedEntriesHasBeenSet(false)
-{
-}
-
 DescribeTrustStoreRevocation::DescribeTrustStoreRevocation(const XmlNode& xmlNode)
-  : DescribeTrustStoreRevocation()
 {
   *this = xmlNode;
 }
@@ -48,24 +36,28 @@ DescribeTrustStoreRevocation& DescribeTrustStoreRevocation::operator =(const Xml
     {
       m_trustStoreArn = Aws::Utils::Xml::DecodeEscapedXmlText(trustStoreArnNode.GetText());
       m_trustStoreArnHasBeenSet = true;
+       m_trustStoreArnHasBeenSet = true;
     }
     XmlNode revocationIdNode = resultNode.FirstChild("RevocationId");
     if(!revocationIdNode.IsNull())
     {
       m_revocationId = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(revocationIdNode.GetText()).c_str()).c_str());
       m_revocationIdHasBeenSet = true;
+       m_revocationIdHasBeenSet = true;
     }
     XmlNode revocationTypeNode = resultNode.FirstChild("RevocationType");
     if(!revocationTypeNode.IsNull())
     {
-      m_revocationType = RevocationTypeMapper::GetRevocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(revocationTypeNode.GetText()).c_str()).c_str());
+      m_revocationType = RevocationTypeMapper::GetRevocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(revocationTypeNode.GetText()).c_str()));
       m_revocationTypeHasBeenSet = true;
+       m_revocationTypeHasBeenSet = true;
     }
     XmlNode numberOfRevokedEntriesNode = resultNode.FirstChild("NumberOfRevokedEntries");
     if(!numberOfRevokedEntriesNode.IsNull())
     {
       m_numberOfRevokedEntries = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfRevokedEntriesNode.GetText()).c_str()).c_str());
       m_numberOfRevokedEntriesHasBeenSet = true;
+       m_numberOfRevokedEntriesHasBeenSet = true;
     }
   }
 

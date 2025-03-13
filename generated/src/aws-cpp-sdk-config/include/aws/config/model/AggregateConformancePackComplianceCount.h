@@ -30,7 +30,7 @@ namespace Model
   class AggregateConformancePackComplianceCount
   {
   public:
-    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceCount();
+    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceCount() = default;
     AWS_CONFIGSERVICE_API AggregateConformancePackComplianceCount(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API AggregateConformancePackComplianceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>Number of compliant conformance packs.</p>
      */
-    inline int GetCompliantConformancePackCount() const{ return m_compliantConformancePackCount; }
+    inline int GetCompliantConformancePackCount() const { return m_compliantConformancePackCount; }
     inline bool CompliantConformancePackCountHasBeenSet() const { return m_compliantConformancePackCountHasBeenSet; }
     inline void SetCompliantConformancePackCount(int value) { m_compliantConformancePackCountHasBeenSet = true; m_compliantConformancePackCount = value; }
     inline AggregateConformancePackComplianceCount& WithCompliantConformancePackCount(int value) { SetCompliantConformancePackCount(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>Number of noncompliant conformance packs.</p>
      */
-    inline int GetNonCompliantConformancePackCount() const{ return m_nonCompliantConformancePackCount; }
+    inline int GetNonCompliantConformancePackCount() const { return m_nonCompliantConformancePackCount; }
     inline bool NonCompliantConformancePackCountHasBeenSet() const { return m_nonCompliantConformancePackCountHasBeenSet; }
     inline void SetNonCompliantConformancePackCount(int value) { m_nonCompliantConformancePackCountHasBeenSet = true; m_nonCompliantConformancePackCount = value; }
     inline AggregateConformancePackComplianceCount& WithNonCompliantConformancePackCount(int value) { SetNonCompliantConformancePackCount(value); return *this;}
     ///@}
   private:
 
-    int m_compliantConformancePackCount;
+    int m_compliantConformancePackCount{0};
     bool m_compliantConformancePackCountHasBeenSet = false;
 
-    int m_nonCompliantConformancePackCount;
+    int m_nonCompliantConformancePackCount{0};
     bool m_nonCompliantConformancePackCountHasBeenSet = false;
   };
 

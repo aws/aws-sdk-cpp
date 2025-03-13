@@ -37,7 +37,7 @@ namespace Model
   class FlowTrace
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FlowTrace();
+    AWS_BEDROCKAGENTRUNTIME_API FlowTrace() = default;
     AWS_BEDROCKAGENTRUNTIME_API FlowTrace(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FlowTrace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,36 +47,36 @@ namespace Model
     /**
      * <p>Contains information about an output from a condition node.</p>
      */
-    inline const FlowTraceConditionNodeResultEvent& GetConditionNodeResultTrace() const{ return m_conditionNodeResultTrace; }
+    inline const FlowTraceConditionNodeResultEvent& GetConditionNodeResultTrace() const { return m_conditionNodeResultTrace; }
     inline bool ConditionNodeResultTraceHasBeenSet() const { return m_conditionNodeResultTraceHasBeenSet; }
-    inline void SetConditionNodeResultTrace(const FlowTraceConditionNodeResultEvent& value) { m_conditionNodeResultTraceHasBeenSet = true; m_conditionNodeResultTrace = value; }
-    inline void SetConditionNodeResultTrace(FlowTraceConditionNodeResultEvent&& value) { m_conditionNodeResultTraceHasBeenSet = true; m_conditionNodeResultTrace = std::move(value); }
-    inline FlowTrace& WithConditionNodeResultTrace(const FlowTraceConditionNodeResultEvent& value) { SetConditionNodeResultTrace(value); return *this;}
-    inline FlowTrace& WithConditionNodeResultTrace(FlowTraceConditionNodeResultEvent&& value) { SetConditionNodeResultTrace(std::move(value)); return *this;}
+    template<typename ConditionNodeResultTraceT = FlowTraceConditionNodeResultEvent>
+    void SetConditionNodeResultTrace(ConditionNodeResultTraceT&& value) { m_conditionNodeResultTraceHasBeenSet = true; m_conditionNodeResultTrace = std::forward<ConditionNodeResultTraceT>(value); }
+    template<typename ConditionNodeResultTraceT = FlowTraceConditionNodeResultEvent>
+    FlowTrace& WithConditionNodeResultTrace(ConditionNodeResultTraceT&& value) { SetConditionNodeResultTrace(std::forward<ConditionNodeResultTraceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the input into a node.</p>
      */
-    inline const FlowTraceNodeInputEvent& GetNodeInputTrace() const{ return m_nodeInputTrace; }
+    inline const FlowTraceNodeInputEvent& GetNodeInputTrace() const { return m_nodeInputTrace; }
     inline bool NodeInputTraceHasBeenSet() const { return m_nodeInputTraceHasBeenSet; }
-    inline void SetNodeInputTrace(const FlowTraceNodeInputEvent& value) { m_nodeInputTraceHasBeenSet = true; m_nodeInputTrace = value; }
-    inline void SetNodeInputTrace(FlowTraceNodeInputEvent&& value) { m_nodeInputTraceHasBeenSet = true; m_nodeInputTrace = std::move(value); }
-    inline FlowTrace& WithNodeInputTrace(const FlowTraceNodeInputEvent& value) { SetNodeInputTrace(value); return *this;}
-    inline FlowTrace& WithNodeInputTrace(FlowTraceNodeInputEvent&& value) { SetNodeInputTrace(std::move(value)); return *this;}
+    template<typename NodeInputTraceT = FlowTraceNodeInputEvent>
+    void SetNodeInputTrace(NodeInputTraceT&& value) { m_nodeInputTraceHasBeenSet = true; m_nodeInputTrace = std::forward<NodeInputTraceT>(value); }
+    template<typename NodeInputTraceT = FlowTraceNodeInputEvent>
+    FlowTrace& WithNodeInputTrace(NodeInputTraceT&& value) { SetNodeInputTrace(std::forward<NodeInputTraceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the output from a node.</p>
      */
-    inline const FlowTraceNodeOutputEvent& GetNodeOutputTrace() const{ return m_nodeOutputTrace; }
+    inline const FlowTraceNodeOutputEvent& GetNodeOutputTrace() const { return m_nodeOutputTrace; }
     inline bool NodeOutputTraceHasBeenSet() const { return m_nodeOutputTraceHasBeenSet; }
-    inline void SetNodeOutputTrace(const FlowTraceNodeOutputEvent& value) { m_nodeOutputTraceHasBeenSet = true; m_nodeOutputTrace = value; }
-    inline void SetNodeOutputTrace(FlowTraceNodeOutputEvent&& value) { m_nodeOutputTraceHasBeenSet = true; m_nodeOutputTrace = std::move(value); }
-    inline FlowTrace& WithNodeOutputTrace(const FlowTraceNodeOutputEvent& value) { SetNodeOutputTrace(value); return *this;}
-    inline FlowTrace& WithNodeOutputTrace(FlowTraceNodeOutputEvent&& value) { SetNodeOutputTrace(std::move(value)); return *this;}
+    template<typename NodeOutputTraceT = FlowTraceNodeOutputEvent>
+    void SetNodeOutputTrace(NodeOutputTraceT&& value) { m_nodeOutputTraceHasBeenSet = true; m_nodeOutputTrace = std::forward<NodeOutputTraceT>(value); }
+    template<typename NodeOutputTraceT = FlowTraceNodeOutputEvent>
+    FlowTrace& WithNodeOutputTrace(NodeOutputTraceT&& value) { SetNodeOutputTrace(std::forward<NodeOutputTraceT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class GeospatialNullSymbolStyle
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialNullSymbolStyle();
+    AWS_QUICKSIGHT_API GeospatialNullSymbolStyle() = default;
     AWS_QUICKSIGHT_API GeospatialNullSymbolStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialNullSymbolStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,35 +41,31 @@ namespace Model
     /**
      * <p>The color and opacity values for the fill color.</p>
      */
-    inline const Aws::String& GetFillColor() const{ return m_fillColor; }
+    inline const Aws::String& GetFillColor() const { return m_fillColor; }
     inline bool FillColorHasBeenSet() const { return m_fillColorHasBeenSet; }
-    inline void SetFillColor(const Aws::String& value) { m_fillColorHasBeenSet = true; m_fillColor = value; }
-    inline void SetFillColor(Aws::String&& value) { m_fillColorHasBeenSet = true; m_fillColor = std::move(value); }
-    inline void SetFillColor(const char* value) { m_fillColorHasBeenSet = true; m_fillColor.assign(value); }
-    inline GeospatialNullSymbolStyle& WithFillColor(const Aws::String& value) { SetFillColor(value); return *this;}
-    inline GeospatialNullSymbolStyle& WithFillColor(Aws::String&& value) { SetFillColor(std::move(value)); return *this;}
-    inline GeospatialNullSymbolStyle& WithFillColor(const char* value) { SetFillColor(value); return *this;}
+    template<typename FillColorT = Aws::String>
+    void SetFillColor(FillColorT&& value) { m_fillColorHasBeenSet = true; m_fillColor = std::forward<FillColorT>(value); }
+    template<typename FillColorT = Aws::String>
+    GeospatialNullSymbolStyle& WithFillColor(FillColorT&& value) { SetFillColor(std::forward<FillColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The color and opacity values for the stroke color.</p>
      */
-    inline const Aws::String& GetStrokeColor() const{ return m_strokeColor; }
+    inline const Aws::String& GetStrokeColor() const { return m_strokeColor; }
     inline bool StrokeColorHasBeenSet() const { return m_strokeColorHasBeenSet; }
-    inline void SetStrokeColor(const Aws::String& value) { m_strokeColorHasBeenSet = true; m_strokeColor = value; }
-    inline void SetStrokeColor(Aws::String&& value) { m_strokeColorHasBeenSet = true; m_strokeColor = std::move(value); }
-    inline void SetStrokeColor(const char* value) { m_strokeColorHasBeenSet = true; m_strokeColor.assign(value); }
-    inline GeospatialNullSymbolStyle& WithStrokeColor(const Aws::String& value) { SetStrokeColor(value); return *this;}
-    inline GeospatialNullSymbolStyle& WithStrokeColor(Aws::String&& value) { SetStrokeColor(std::move(value)); return *this;}
-    inline GeospatialNullSymbolStyle& WithStrokeColor(const char* value) { SetStrokeColor(value); return *this;}
+    template<typename StrokeColorT = Aws::String>
+    void SetStrokeColor(StrokeColorT&& value) { m_strokeColorHasBeenSet = true; m_strokeColor = std::forward<StrokeColorT>(value); }
+    template<typename StrokeColorT = Aws::String>
+    GeospatialNullSymbolStyle& WithStrokeColor(StrokeColorT&& value) { SetStrokeColor(std::forward<StrokeColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The width of the border stroke.</p>
      */
-    inline double GetStrokeWidth() const{ return m_strokeWidth; }
+    inline double GetStrokeWidth() const { return m_strokeWidth; }
     inline bool StrokeWidthHasBeenSet() const { return m_strokeWidthHasBeenSet; }
     inline void SetStrokeWidth(double value) { m_strokeWidthHasBeenSet = true; m_strokeWidth = value; }
     inline GeospatialNullSymbolStyle& WithStrokeWidth(double value) { SetStrokeWidth(value); return *this;}
@@ -82,7 +78,7 @@ namespace Model
     Aws::String m_strokeColor;
     bool m_strokeColorHasBeenSet = false;
 
-    double m_strokeWidth;
+    double m_strokeWidth{0.0};
     bool m_strokeWidthHasBeenSet = false;
   };
 

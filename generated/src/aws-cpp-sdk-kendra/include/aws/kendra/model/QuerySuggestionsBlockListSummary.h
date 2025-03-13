@@ -39,7 +39,7 @@ namespace Model
   class QuerySuggestionsBlockListSummary
   {
   public:
-    AWS_KENDRA_API QuerySuggestionsBlockListSummary();
+    AWS_KENDRA_API QuerySuggestionsBlockListSummary() = default;
     AWS_KENDRA_API QuerySuggestionsBlockListSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API QuerySuggestionsBlockListSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,71 +49,65 @@ namespace Model
     /**
      * <p>The identifier of a block list.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline QuerySuggestionsBlockListSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline QuerySuggestionsBlockListSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline QuerySuggestionsBlockListSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    QuerySuggestionsBlockListSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the block list.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline QuerySuggestionsBlockListSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline QuerySuggestionsBlockListSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline QuerySuggestionsBlockListSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    QuerySuggestionsBlockListSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the block list.</p>
      */
-    inline const QuerySuggestionsBlockListStatus& GetStatus() const{ return m_status; }
+    inline QuerySuggestionsBlockListStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const QuerySuggestionsBlockListStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(QuerySuggestionsBlockListStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline QuerySuggestionsBlockListSummary& WithStatus(const QuerySuggestionsBlockListStatus& value) { SetStatus(value); return *this;}
-    inline QuerySuggestionsBlockListSummary& WithStatus(QuerySuggestionsBlockListStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(QuerySuggestionsBlockListStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline QuerySuggestionsBlockListSummary& WithStatus(QuerySuggestionsBlockListStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp when the block list was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline QuerySuggestionsBlockListSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline QuerySuggestionsBlockListSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    QuerySuggestionsBlockListSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp when the block list was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline QuerySuggestionsBlockListSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline QuerySuggestionsBlockListSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    QuerySuggestionsBlockListSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of items in the block list file.</p>
      */
-    inline int GetItemCount() const{ return m_itemCount; }
+    inline int GetItemCount() const { return m_itemCount; }
     inline bool ItemCountHasBeenSet() const { return m_itemCountHasBeenSet; }
     inline void SetItemCount(int value) { m_itemCountHasBeenSet = true; m_itemCount = value; }
     inline QuerySuggestionsBlockListSummary& WithItemCount(int value) { SetItemCount(value); return *this;}
@@ -126,16 +120,16 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    QuerySuggestionsBlockListStatus m_status;
+    QuerySuggestionsBlockListStatus m_status{QuerySuggestionsBlockListStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
-    int m_itemCount;
+    int m_itemCount{0};
     bool m_itemCountHasBeenSet = false;
   };
 

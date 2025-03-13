@@ -31,7 +31,7 @@ namespace Model
   class RevisionPublished
   {
   public:
-    AWS_DATAEXCHANGE_API RevisionPublished();
+    AWS_DATAEXCHANGE_API RevisionPublished() = default;
     AWS_DATAEXCHANGE_API RevisionPublished(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API RevisionPublished& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The data set ID of the published revision.</p>
      */
-    inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
+    inline const Aws::String& GetDataSetId() const { return m_dataSetId; }
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
-    inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
-    inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
-    inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
-    inline RevisionPublished& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
-    inline RevisionPublished& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
-    inline RevisionPublished& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
+    template<typename DataSetIdT = Aws::String>
+    void SetDataSetId(DataSetIdT&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::forward<DataSetIdT>(value); }
+    template<typename DataSetIdT = Aws::String>
+    RevisionPublished& WithDataSetId(DataSetIdT&& value) { SetDataSetId(std::forward<DataSetIdT>(value)); return *this;}
     ///@}
   private:
 

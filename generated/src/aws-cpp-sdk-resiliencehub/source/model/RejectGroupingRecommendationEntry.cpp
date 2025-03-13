@@ -18,15 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-RejectGroupingRecommendationEntry::RejectGroupingRecommendationEntry() : 
-    m_groupingRecommendationIdHasBeenSet(false),
-    m_rejectionReason(GroupingRecommendationRejectionReason::NOT_SET),
-    m_rejectionReasonHasBeenSet(false)
-{
-}
-
 RejectGroupingRecommendationEntry::RejectGroupingRecommendationEntry(JsonView jsonValue)
-  : RejectGroupingRecommendationEntry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RejectGroupingRecommendationEntry& RejectGroupingRecommendationEntry::operator =
   if(jsonValue.ValueExists("groupingRecommendationId"))
   {
     m_groupingRecommendationId = jsonValue.GetString("groupingRecommendationId");
-
     m_groupingRecommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rejectionReason"))
   {
     m_rejectionReason = GroupingRecommendationRejectionReasonMapper::GetGroupingRecommendationRejectionReasonForName(jsonValue.GetString("rejectionReason"));
-
     m_rejectionReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateSnapshotRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API CreateSnapshotRequest();
+    AWS_STORAGEGATEWAY_API CreateSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
      * operation to return a list of gateway volumes.</p>
      */
-    inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
+    inline const Aws::String& GetVolumeARN() const { return m_volumeARN; }
     inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
-    inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
-    inline void SetVolumeARN(const char* value) { m_volumeARNHasBeenSet = true; m_volumeARN.assign(value); }
-    inline CreateSnapshotRequest& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
-    inline CreateSnapshotRequest& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
-    inline CreateSnapshotRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+    template<typename VolumeARNT = Aws::String>
+    void SetVolumeARN(VolumeARNT&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::forward<VolumeARNT>(value); }
+    template<typename VolumeARNT = Aws::String>
+    CreateSnapshotRequest& WithVolumeARN(VolumeARNT&& value) { SetVolumeARN(std::forward<VolumeARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * Elastic Block Store snapshots panel in the <b>Description</b> field, and in the
      * Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field.</p>
      */
-    inline const Aws::String& GetSnapshotDescription() const{ return m_snapshotDescription; }
+    inline const Aws::String& GetSnapshotDescription() const { return m_snapshotDescription; }
     inline bool SnapshotDescriptionHasBeenSet() const { return m_snapshotDescriptionHasBeenSet; }
-    inline void SetSnapshotDescription(const Aws::String& value) { m_snapshotDescriptionHasBeenSet = true; m_snapshotDescription = value; }
-    inline void SetSnapshotDescription(Aws::String&& value) { m_snapshotDescriptionHasBeenSet = true; m_snapshotDescription = std::move(value); }
-    inline void SetSnapshotDescription(const char* value) { m_snapshotDescriptionHasBeenSet = true; m_snapshotDescription.assign(value); }
-    inline CreateSnapshotRequest& WithSnapshotDescription(const Aws::String& value) { SetSnapshotDescription(value); return *this;}
-    inline CreateSnapshotRequest& WithSnapshotDescription(Aws::String&& value) { SetSnapshotDescription(std::move(value)); return *this;}
-    inline CreateSnapshotRequest& WithSnapshotDescription(const char* value) { SetSnapshotDescription(value); return *this;}
+    template<typename SnapshotDescriptionT = Aws::String>
+    void SetSnapshotDescription(SnapshotDescriptionT&& value) { m_snapshotDescriptionHasBeenSet = true; m_snapshotDescription = std::forward<SnapshotDescriptionT>(value); }
+    template<typename SnapshotDescriptionT = Aws::String>
+    CreateSnapshotRequest& WithSnapshotDescription(SnapshotDescriptionT&& value) { SetSnapshotDescription(std::forward<SnapshotDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,14 @@ namespace Model
      * characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSnapshotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSnapshotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateSnapshotRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateSnapshotRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

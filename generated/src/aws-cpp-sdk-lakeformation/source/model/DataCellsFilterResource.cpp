@@ -18,16 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-DataCellsFilterResource::DataCellsFilterResource() : 
-    m_tableCatalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 DataCellsFilterResource::DataCellsFilterResource(JsonView jsonValue)
-  : DataCellsFilterResource()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DataCellsFilterResource& DataCellsFilterResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TableCatalogId"))
   {
     m_tableCatalogId = jsonValue.GetString("TableCatalogId");
-
     m_tableCatalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

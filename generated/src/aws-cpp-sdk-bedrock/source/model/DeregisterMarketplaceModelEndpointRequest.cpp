@@ -12,11 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterMarketplaceModelEndpointRequest::DeregisterMarketplaceModelEndpointRequest() : 
-    m_endpointArnHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterMarketplaceModelEndpointRequest::SerializePayload() const
 {
   return {};

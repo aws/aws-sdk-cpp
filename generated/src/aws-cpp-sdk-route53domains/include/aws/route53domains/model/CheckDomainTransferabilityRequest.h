@@ -25,7 +25,7 @@ namespace Model
   class CheckDomainTransferabilityRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API CheckDomainTransferabilityRequest();
+    AWS_ROUTE53DOMAINS_API CheckDomainTransferabilityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,14 +52,12 @@ namespace Model
      * <p>Period (.) to separate the labels in the name, such as the <code>.</code> in
      * <code>example.com</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline CheckDomainTransferabilityRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline CheckDomainTransferabilityRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline CheckDomainTransferabilityRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    CheckDomainTransferabilityRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * code to transfer the domain, the code that you got from the current registrar
      * for the domain.</p>
      */
-    inline const Aws::String& GetAuthCode() const{ return m_authCode; }
+    inline const Aws::String& GetAuthCode() const { return m_authCode; }
     inline bool AuthCodeHasBeenSet() const { return m_authCodeHasBeenSet; }
-    inline void SetAuthCode(const Aws::String& value) { m_authCodeHasBeenSet = true; m_authCode = value; }
-    inline void SetAuthCode(Aws::String&& value) { m_authCodeHasBeenSet = true; m_authCode = std::move(value); }
-    inline void SetAuthCode(const char* value) { m_authCodeHasBeenSet = true; m_authCode.assign(value); }
-    inline CheckDomainTransferabilityRequest& WithAuthCode(const Aws::String& value) { SetAuthCode(value); return *this;}
-    inline CheckDomainTransferabilityRequest& WithAuthCode(Aws::String&& value) { SetAuthCode(std::move(value)); return *this;}
-    inline CheckDomainTransferabilityRequest& WithAuthCode(const char* value) { SetAuthCode(value); return *this;}
+    template<typename AuthCodeT = Aws::String>
+    void SetAuthCode(AuthCodeT&& value) { m_authCodeHasBeenSet = true; m_authCode = std::forward<AuthCodeT>(value); }
+    template<typename AuthCodeT = Aws::String>
+    CheckDomainTransferabilityRequest& WithAuthCode(AuthCodeT&& value) { SetAuthCode(std::forward<AuthCodeT>(value)); return *this;}
     ///@}
   private:
 

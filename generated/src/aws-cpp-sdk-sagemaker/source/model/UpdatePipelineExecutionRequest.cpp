@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePipelineExecutionRequest::UpdatePipelineExecutionRequest() : 
-    m_pipelineExecutionArnHasBeenSet(false),
-    m_pipelineExecutionDescriptionHasBeenSet(false),
-    m_pipelineExecutionDisplayNameHasBeenSet(false),
-    m_parallelismConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePipelineExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

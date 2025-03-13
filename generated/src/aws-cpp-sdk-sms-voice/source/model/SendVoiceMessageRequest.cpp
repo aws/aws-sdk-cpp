@@ -12,15 +12,6 @@ using namespace Aws::PinpointSMSVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendVoiceMessageRequest::SendVoiceMessageRequest() : 
-    m_callerIdHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_destinationPhoneNumberHasBeenSet(false),
-    m_originationPhoneNumberHasBeenSet(false)
-{
-}
-
 Aws::String SendVoiceMessageRequest::SerializePayload() const
 {
   JsonValue payload;

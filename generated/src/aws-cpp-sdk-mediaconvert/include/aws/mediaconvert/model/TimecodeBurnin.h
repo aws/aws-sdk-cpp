@@ -33,7 +33,7 @@ namespace Model
   class TimecodeBurnin
   {
   public:
-    AWS_MEDIACONVERT_API TimecodeBurnin();
+    AWS_MEDIACONVERT_API TimecodeBurnin() = default;
     AWS_MEDIACONVERT_API TimecodeBurnin(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API TimecodeBurnin& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * Use Font size to set the font size of any burned-in timecode. Valid values are
      * 10, 16, 32, 48.
      */
-    inline int GetFontSize() const{ return m_fontSize; }
+    inline int GetFontSize() const { return m_fontSize; }
     inline bool FontSizeHasBeenSet() const { return m_fontSizeHasBeenSet; }
     inline void SetFontSize(int value) { m_fontSizeHasBeenSet = true; m_fontSize = value; }
     inline TimecodeBurnin& WithFontSize(int value) { SetFontSize(value); return *this;}
@@ -55,12 +55,10 @@ namespace Model
      * Use Position under Timecode burn-in to specify the location the burned-in
      * timecode on output video.
      */
-    inline const TimecodeBurninPosition& GetPosition() const{ return m_position; }
+    inline TimecodeBurninPosition GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const TimecodeBurninPosition& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(TimecodeBurninPosition&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline TimecodeBurnin& WithPosition(const TimecodeBurninPosition& value) { SetPosition(value); return *this;}
-    inline TimecodeBurnin& WithPosition(TimecodeBurninPosition&& value) { SetPosition(std::move(value)); return *this;}
+    inline void SetPosition(TimecodeBurninPosition value) { m_positionHasBeenSet = true; m_position = value; }
+    inline TimecodeBurnin& WithPosition(TimecodeBurninPosition value) { SetPosition(value); return *this;}
     ///@}
 
     ///@{
@@ -71,21 +69,19 @@ namespace Model
      * characters is 0x20 through 0x7e. This includes letters, numbers, and all special
      * characters represented on a standard English keyboard.
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline TimecodeBurnin& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline TimecodeBurnin& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline TimecodeBurnin& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    TimecodeBurnin& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 
-    int m_fontSize;
+    int m_fontSize{0};
     bool m_fontSizeHasBeenSet = false;
 
-    TimecodeBurninPosition m_position;
+    TimecodeBurninPosition m_position{TimecodeBurninPosition::NOT_SET};
     bool m_positionHasBeenSet = false;
 
     Aws::String m_prefix;

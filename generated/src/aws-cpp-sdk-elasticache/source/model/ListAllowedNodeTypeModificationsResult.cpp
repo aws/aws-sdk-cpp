@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAllowedNodeTypeModificationsResult::ListAllowedNodeTypeModificationsResult()
-{
-}
-
 ListAllowedNodeTypeModificationsResult::ListAllowedNodeTypeModificationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ListAllowedNodeTypeModificationsResult& ListAllowedNodeTypeModificationsResult::
     if(!scaleUpModificationsNode.IsNull())
     {
       XmlNode scaleUpModificationsMember = scaleUpModificationsNode.FirstChild("member");
+      m_scaleUpModificationsHasBeenSet = !scaleUpModificationsMember.IsNull();
       while(!scaleUpModificationsMember.IsNull())
       {
         m_scaleUpModifications.push_back(scaleUpModificationsMember.GetText());
@@ -53,6 +50,7 @@ ListAllowedNodeTypeModificationsResult& ListAllowedNodeTypeModificationsResult::
     if(!scaleDownModificationsNode.IsNull())
     {
       XmlNode scaleDownModificationsMember = scaleDownModificationsNode.FirstChild("member");
+      m_scaleDownModificationsHasBeenSet = !scaleDownModificationsMember.IsNull();
       while(!scaleDownModificationsMember.IsNull())
       {
         m_scaleDownModifications.push_back(scaleDownModificationsMember.GetText());
@@ -65,6 +63,7 @@ ListAllowedNodeTypeModificationsResult& ListAllowedNodeTypeModificationsResult::
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::ListAllowedNodeTypeModificationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

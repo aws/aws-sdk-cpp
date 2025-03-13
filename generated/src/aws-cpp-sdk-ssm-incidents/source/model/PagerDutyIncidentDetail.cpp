@@ -18,16 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-PagerDutyIncidentDetail::PagerDutyIncidentDetail() : 
-    m_autoResolve(false),
-    m_autoResolveHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_secretIdHasBeenSet(false)
-{
-}
-
 PagerDutyIncidentDetail::PagerDutyIncidentDetail(JsonView jsonValue)
-  : PagerDutyIncidentDetail()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PagerDutyIncidentDetail& PagerDutyIncidentDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("autoResolve"))
   {
     m_autoResolve = jsonValue.GetBool("autoResolve");
-
     m_autoResolveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretId"))
   {
     m_secretId = jsonValue.GetString("secretId");
-
     m_secretIdHasBeenSet = true;
   }
-
   return *this;
 }
 

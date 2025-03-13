@@ -33,7 +33,7 @@ namespace Model
   class LaunchActionsStatus
   {
   public:
-    AWS_DRS_API LaunchActionsStatus();
+    AWS_DRS_API LaunchActionsStatus() = default;
     AWS_DRS_API LaunchActionsStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API LaunchActionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>List of post launch action status.</p>
      */
-    inline const Aws::Vector<LaunchActionRun>& GetRuns() const{ return m_runs; }
+    inline const Aws::Vector<LaunchActionRun>& GetRuns() const { return m_runs; }
     inline bool RunsHasBeenSet() const { return m_runsHasBeenSet; }
-    inline void SetRuns(const Aws::Vector<LaunchActionRun>& value) { m_runsHasBeenSet = true; m_runs = value; }
-    inline void SetRuns(Aws::Vector<LaunchActionRun>&& value) { m_runsHasBeenSet = true; m_runs = std::move(value); }
-    inline LaunchActionsStatus& WithRuns(const Aws::Vector<LaunchActionRun>& value) { SetRuns(value); return *this;}
-    inline LaunchActionsStatus& WithRuns(Aws::Vector<LaunchActionRun>&& value) { SetRuns(std::move(value)); return *this;}
-    inline LaunchActionsStatus& AddRuns(const LaunchActionRun& value) { m_runsHasBeenSet = true; m_runs.push_back(value); return *this; }
-    inline LaunchActionsStatus& AddRuns(LaunchActionRun&& value) { m_runsHasBeenSet = true; m_runs.push_back(std::move(value)); return *this; }
+    template<typename RunsT = Aws::Vector<LaunchActionRun>>
+    void SetRuns(RunsT&& value) { m_runsHasBeenSet = true; m_runs = std::forward<RunsT>(value); }
+    template<typename RunsT = Aws::Vector<LaunchActionRun>>
+    LaunchActionsStatus& WithRuns(RunsT&& value) { SetRuns(std::forward<RunsT>(value)); return *this;}
+    template<typename RunsT = LaunchActionRun>
+    LaunchActionsStatus& AddRuns(RunsT&& value) { m_runsHasBeenSet = true; m_runs.emplace_back(std::forward<RunsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,14 +58,12 @@ namespace Model
      * <p>Time where the AWS Systems Manager was detected as running on the launched
      * instance.</p>
      */
-    inline const Aws::String& GetSsmAgentDiscoveryDatetime() const{ return m_ssmAgentDiscoveryDatetime; }
+    inline const Aws::String& GetSsmAgentDiscoveryDatetime() const { return m_ssmAgentDiscoveryDatetime; }
     inline bool SsmAgentDiscoveryDatetimeHasBeenSet() const { return m_ssmAgentDiscoveryDatetimeHasBeenSet; }
-    inline void SetSsmAgentDiscoveryDatetime(const Aws::String& value) { m_ssmAgentDiscoveryDatetimeHasBeenSet = true; m_ssmAgentDiscoveryDatetime = value; }
-    inline void SetSsmAgentDiscoveryDatetime(Aws::String&& value) { m_ssmAgentDiscoveryDatetimeHasBeenSet = true; m_ssmAgentDiscoveryDatetime = std::move(value); }
-    inline void SetSsmAgentDiscoveryDatetime(const char* value) { m_ssmAgentDiscoveryDatetimeHasBeenSet = true; m_ssmAgentDiscoveryDatetime.assign(value); }
-    inline LaunchActionsStatus& WithSsmAgentDiscoveryDatetime(const Aws::String& value) { SetSsmAgentDiscoveryDatetime(value); return *this;}
-    inline LaunchActionsStatus& WithSsmAgentDiscoveryDatetime(Aws::String&& value) { SetSsmAgentDiscoveryDatetime(std::move(value)); return *this;}
-    inline LaunchActionsStatus& WithSsmAgentDiscoveryDatetime(const char* value) { SetSsmAgentDiscoveryDatetime(value); return *this;}
+    template<typename SsmAgentDiscoveryDatetimeT = Aws::String>
+    void SetSsmAgentDiscoveryDatetime(SsmAgentDiscoveryDatetimeT&& value) { m_ssmAgentDiscoveryDatetimeHasBeenSet = true; m_ssmAgentDiscoveryDatetime = std::forward<SsmAgentDiscoveryDatetimeT>(value); }
+    template<typename SsmAgentDiscoveryDatetimeT = Aws::String>
+    LaunchActionsStatus& WithSsmAgentDiscoveryDatetime(SsmAgentDiscoveryDatetimeT&& value) { SetSsmAgentDiscoveryDatetime(std::forward<SsmAgentDiscoveryDatetimeT>(value)); return *this;}
     ///@}
   private:
 

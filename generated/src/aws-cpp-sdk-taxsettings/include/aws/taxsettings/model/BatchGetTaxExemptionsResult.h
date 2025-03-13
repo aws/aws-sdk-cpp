@@ -30,7 +30,7 @@ namespace Model
   class BatchGetTaxExemptionsResult
   {
   public:
-    AWS_TAXSETTINGS_API BatchGetTaxExemptionsResult();
+    AWS_TAXSETTINGS_API BatchGetTaxExemptionsResult() = default;
     AWS_TAXSETTINGS_API BatchGetTaxExemptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TAXSETTINGS_API BatchGetTaxExemptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,50 +39,48 @@ namespace Model
     /**
      * <p>The list of accounts that failed to get tax exemptions. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetFailedAccounts() const{ return m_failedAccounts; }
-    inline void SetFailedAccounts(const Aws::Vector<Aws::String>& value) { m_failedAccounts = value; }
-    inline void SetFailedAccounts(Aws::Vector<Aws::String>&& value) { m_failedAccounts = std::move(value); }
-    inline BatchGetTaxExemptionsResult& WithFailedAccounts(const Aws::Vector<Aws::String>& value) { SetFailedAccounts(value); return *this;}
-    inline BatchGetTaxExemptionsResult& WithFailedAccounts(Aws::Vector<Aws::String>&& value) { SetFailedAccounts(std::move(value)); return *this;}
-    inline BatchGetTaxExemptionsResult& AddFailedAccounts(const Aws::String& value) { m_failedAccounts.push_back(value); return *this; }
-    inline BatchGetTaxExemptionsResult& AddFailedAccounts(Aws::String&& value) { m_failedAccounts.push_back(std::move(value)); return *this; }
-    inline BatchGetTaxExemptionsResult& AddFailedAccounts(const char* value) { m_failedAccounts.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetFailedAccounts() const { return m_failedAccounts; }
+    template<typename FailedAccountsT = Aws::Vector<Aws::String>>
+    void SetFailedAccounts(FailedAccountsT&& value) { m_failedAccountsHasBeenSet = true; m_failedAccounts = std::forward<FailedAccountsT>(value); }
+    template<typename FailedAccountsT = Aws::Vector<Aws::String>>
+    BatchGetTaxExemptionsResult& WithFailedAccounts(FailedAccountsT&& value) { SetFailedAccounts(std::forward<FailedAccountsT>(value)); return *this;}
+    template<typename FailedAccountsT = Aws::String>
+    BatchGetTaxExemptionsResult& AddFailedAccounts(FailedAccountsT&& value) { m_failedAccountsHasBeenSet = true; m_failedAccounts.emplace_back(std::forward<FailedAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tax exemption details map of accountId and tax exemption details. </p>
      */
-    inline const Aws::Map<Aws::String, TaxExemptionDetails>& GetTaxExemptionDetailsMap() const{ return m_taxExemptionDetailsMap; }
-    inline void SetTaxExemptionDetailsMap(const Aws::Map<Aws::String, TaxExemptionDetails>& value) { m_taxExemptionDetailsMap = value; }
-    inline void SetTaxExemptionDetailsMap(Aws::Map<Aws::String, TaxExemptionDetails>&& value) { m_taxExemptionDetailsMap = std::move(value); }
-    inline BatchGetTaxExemptionsResult& WithTaxExemptionDetailsMap(const Aws::Map<Aws::String, TaxExemptionDetails>& value) { SetTaxExemptionDetailsMap(value); return *this;}
-    inline BatchGetTaxExemptionsResult& WithTaxExemptionDetailsMap(Aws::Map<Aws::String, TaxExemptionDetails>&& value) { SetTaxExemptionDetailsMap(std::move(value)); return *this;}
-    inline BatchGetTaxExemptionsResult& AddTaxExemptionDetailsMap(const Aws::String& key, const TaxExemptionDetails& value) { m_taxExemptionDetailsMap.emplace(key, value); return *this; }
-    inline BatchGetTaxExemptionsResult& AddTaxExemptionDetailsMap(Aws::String&& key, const TaxExemptionDetails& value) { m_taxExemptionDetailsMap.emplace(std::move(key), value); return *this; }
-    inline BatchGetTaxExemptionsResult& AddTaxExemptionDetailsMap(const Aws::String& key, TaxExemptionDetails&& value) { m_taxExemptionDetailsMap.emplace(key, std::move(value)); return *this; }
-    inline BatchGetTaxExemptionsResult& AddTaxExemptionDetailsMap(Aws::String&& key, TaxExemptionDetails&& value) { m_taxExemptionDetailsMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchGetTaxExemptionsResult& AddTaxExemptionDetailsMap(const char* key, TaxExemptionDetails&& value) { m_taxExemptionDetailsMap.emplace(key, std::move(value)); return *this; }
-    inline BatchGetTaxExemptionsResult& AddTaxExemptionDetailsMap(const char* key, const TaxExemptionDetails& value) { m_taxExemptionDetailsMap.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, TaxExemptionDetails>& GetTaxExemptionDetailsMap() const { return m_taxExemptionDetailsMap; }
+    template<typename TaxExemptionDetailsMapT = Aws::Map<Aws::String, TaxExemptionDetails>>
+    void SetTaxExemptionDetailsMap(TaxExemptionDetailsMapT&& value) { m_taxExemptionDetailsMapHasBeenSet = true; m_taxExemptionDetailsMap = std::forward<TaxExemptionDetailsMapT>(value); }
+    template<typename TaxExemptionDetailsMapT = Aws::Map<Aws::String, TaxExemptionDetails>>
+    BatchGetTaxExemptionsResult& WithTaxExemptionDetailsMap(TaxExemptionDetailsMapT&& value) { SetTaxExemptionDetailsMap(std::forward<TaxExemptionDetailsMapT>(value)); return *this;}
+    template<typename TaxExemptionDetailsMapKeyT = Aws::String, typename TaxExemptionDetailsMapValueT = TaxExemptionDetails>
+    BatchGetTaxExemptionsResult& AddTaxExemptionDetailsMap(TaxExemptionDetailsMapKeyT&& key, TaxExemptionDetailsMapValueT&& value) {
+      m_taxExemptionDetailsMapHasBeenSet = true; m_taxExemptionDetailsMap.emplace(std::forward<TaxExemptionDetailsMapKeyT>(key), std::forward<TaxExemptionDetailsMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetTaxExemptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetTaxExemptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetTaxExemptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetTaxExemptionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_failedAccounts;
+    bool m_failedAccountsHasBeenSet = false;
 
     Aws::Map<Aws::String, TaxExemptionDetails> m_taxExemptionDetailsMap;
+    bool m_taxExemptionDetailsMapHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTrustStoreAssociationsResult::DescribeTrustStoreAssociationsResult()
-{
-}
-
 DescribeTrustStoreAssociationsResult::DescribeTrustStoreAssociationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeTrustStoreAssociationsResult& DescribeTrustStoreAssociationsResult::oper
     if(!trustStoreAssociationsNode.IsNull())
     {
       XmlNode trustStoreAssociationsMember = trustStoreAssociationsNode.FirstChild("member");
+      m_trustStoreAssociationsHasBeenSet = !trustStoreAssociationsMember.IsNull();
       while(!trustStoreAssociationsMember.IsNull())
       {
         m_trustStoreAssociations.push_back(trustStoreAssociationsMember);
@@ -53,12 +50,14 @@ DescribeTrustStoreAssociationsResult& DescribeTrustStoreAssociationsResult::oper
     if(!nextMarkerNode.IsNull())
     {
       m_nextMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextMarkerNode.GetText());
+      m_nextMarkerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::DescribeTrustStoreAssociationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

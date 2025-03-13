@@ -33,7 +33,7 @@ namespace Model
   class DocumentReviews
   {
   public:
-    AWS_SSM_API DocumentReviews();
+    AWS_SSM_API DocumentReviews() = default;
     AWS_SSM_API DocumentReviews(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API DocumentReviews& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The action to take on a document approval review request.</p>
      */
-    inline const DocumentReviewAction& GetAction() const{ return m_action; }
+    inline DocumentReviewAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const DocumentReviewAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(DocumentReviewAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline DocumentReviews& WithAction(const DocumentReviewAction& value) { SetAction(value); return *this;}
-    inline DocumentReviews& WithAction(DocumentReviewAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(DocumentReviewAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline DocumentReviews& WithAction(DocumentReviewAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -56,18 +54,18 @@ namespace Model
      * <p>A comment entered by a user in your organization about the document review
      * request.</p>
      */
-    inline const Aws::Vector<DocumentReviewCommentSource>& GetComment() const{ return m_comment; }
+    inline const Aws::Vector<DocumentReviewCommentSource>& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::Vector<DocumentReviewCommentSource>& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::Vector<DocumentReviewCommentSource>&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline DocumentReviews& WithComment(const Aws::Vector<DocumentReviewCommentSource>& value) { SetComment(value); return *this;}
-    inline DocumentReviews& WithComment(Aws::Vector<DocumentReviewCommentSource>&& value) { SetComment(std::move(value)); return *this;}
-    inline DocumentReviews& AddComment(const DocumentReviewCommentSource& value) { m_commentHasBeenSet = true; m_comment.push_back(value); return *this; }
-    inline DocumentReviews& AddComment(DocumentReviewCommentSource&& value) { m_commentHasBeenSet = true; m_comment.push_back(std::move(value)); return *this; }
+    template<typename CommentT = Aws::Vector<DocumentReviewCommentSource>>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::Vector<DocumentReviewCommentSource>>
+    DocumentReviews& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
+    template<typename CommentT = DocumentReviewCommentSource>
+    DocumentReviews& AddComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment.emplace_back(std::forward<CommentT>(value)); return *this; }
     ///@}
   private:
 
-    DocumentReviewAction m_action;
+    DocumentReviewAction m_action{DocumentReviewAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::Vector<DocumentReviewCommentSource> m_comment;

@@ -30,7 +30,7 @@ namespace Model
   class FaqStatistics
   {
   public:
-    AWS_KENDRA_API FaqStatistics();
+    AWS_KENDRA_API FaqStatistics() = default;
     AWS_KENDRA_API FaqStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API FaqStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The total number of FAQ questions and answers for an index.</p>
      */
-    inline int GetIndexedQuestionAnswersCount() const{ return m_indexedQuestionAnswersCount; }
+    inline int GetIndexedQuestionAnswersCount() const { return m_indexedQuestionAnswersCount; }
     inline bool IndexedQuestionAnswersCountHasBeenSet() const { return m_indexedQuestionAnswersCountHasBeenSet; }
     inline void SetIndexedQuestionAnswersCount(int value) { m_indexedQuestionAnswersCountHasBeenSet = true; m_indexedQuestionAnswersCount = value; }
     inline FaqStatistics& WithIndexedQuestionAnswersCount(int value) { SetIndexedQuestionAnswersCount(value); return *this;}
     ///@}
   private:
 
-    int m_indexedQuestionAnswersCount;
+    int m_indexedQuestionAnswersCount{0};
     bool m_indexedQuestionAnswersCountHasBeenSet = false;
   };
 

@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConnectionTypeRequest::DescribeConnectionTypeRequest() : 
-    m_connectionTypeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConnectionTypeRequest::SerializePayload() const
 {
   JsonValue payload;

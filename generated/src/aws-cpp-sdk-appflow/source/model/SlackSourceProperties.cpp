@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SlackSourceProperties::SlackSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 SlackSourceProperties::SlackSourceProperties(JsonView jsonValue)
-  : SlackSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SlackSourceProperties& SlackSourceProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

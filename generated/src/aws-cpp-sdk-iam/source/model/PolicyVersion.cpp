@@ -20,17 +20,7 @@ namespace IAM
 namespace Model
 {
 
-PolicyVersion::PolicyVersion() : 
-    m_documentHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false),
-    m_createDateHasBeenSet(false)
-{
-}
-
 PolicyVersion::PolicyVersion(const XmlNode& xmlNode)
-  : PolicyVersion()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ PolicyVersion& PolicyVersion::operator =(const XmlNode& xmlNode)
     {
       m_document = Aws::Utils::Xml::DecodeEscapedXmlText(documentNode.GetText());
       m_documentHasBeenSet = true;
+       m_documentHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
     if(!versionIdNode.IsNull())
     {
       m_versionId = Aws::Utils::Xml::DecodeEscapedXmlText(versionIdNode.GetText());
       m_versionIdHasBeenSet = true;
+       m_versionIdHasBeenSet = true;
     }
     XmlNode isDefaultVersionNode = resultNode.FirstChild("IsDefaultVersion");
     if(!isDefaultVersionNode.IsNull())
     {
       m_isDefaultVersion = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultVersionNode.GetText()).c_str()).c_str());
       m_isDefaultVersionHasBeenSet = true;
+       m_isDefaultVersionHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
   }
 

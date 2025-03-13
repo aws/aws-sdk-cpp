@@ -12,14 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendAutomationSignalRequest::SendAutomationSignalRequest() : 
-    m_automationExecutionIdHasBeenSet(false),
-    m_signalType(SignalType::NOT_SET),
-    m_signalTypeHasBeenSet(false),
-    m_payloadHasBeenSet(false)
-{
-}
-
 Aws::String SendAutomationSignalRequest::SerializePayload() const
 {
   JsonValue payload;

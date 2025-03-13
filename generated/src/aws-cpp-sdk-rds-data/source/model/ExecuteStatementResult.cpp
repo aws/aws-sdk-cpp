@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExecuteStatementResult::ExecuteStatementResult() : 
-    m_numberOfRecordsUpdated(0)
-{
-}
-
 ExecuteStatementResult::ExecuteStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ExecuteStatementResult()
 {
   *this = result;
 }
@@ -45,8 +39,8 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
       }
       m_records.push_back(std::move(fieldListList));
     }
+    m_recordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("columnMetadata"))
   {
     Aws::Utils::Array<JsonView> columnMetadataJsonList = jsonValue.GetArray("columnMetadata");
@@ -54,14 +48,13 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
     {
       m_columnMetadata.push_back(columnMetadataJsonList[columnMetadataIndex].AsObject());
     }
+    m_columnMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfRecordsUpdated"))
   {
     m_numberOfRecordsUpdated = jsonValue.GetInt64("numberOfRecordsUpdated");
-
+    m_numberOfRecordsUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generatedFields"))
   {
     Aws::Utils::Array<JsonView> generatedFieldsJsonList = jsonValue.GetArray("generatedFields");
@@ -69,20 +62,20 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
     {
       m_generatedFields.push_back(generatedFieldsJsonList[generatedFieldsIndex].AsObject());
     }
+    m_generatedFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("formattedRecords"))
   {
     m_formattedRecords = jsonValue.GetString("formattedRecords");
-
+    m_formattedRecordsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

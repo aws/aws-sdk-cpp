@@ -12,13 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDocumentationPartRequest::UpdateDocumentationPartRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_documentationPartIdHasBeenSet(false),
-    m_patchOperationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDocumentationPartRequest::SerializePayload() const
 {
   JsonValue payload;

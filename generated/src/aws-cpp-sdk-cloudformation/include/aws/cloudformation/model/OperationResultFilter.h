@@ -33,7 +33,7 @@ namespace Model
   class OperationResultFilter
   {
   public:
-    AWS_CLOUDFORMATION_API OperationResultFilter();
+    AWS_CLOUDFORMATION_API OperationResultFilter() = default;
     AWS_CLOUDFORMATION_API OperationResultFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API OperationResultFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,30 +45,26 @@ namespace Model
     /**
      * <p>The type of filter to apply.</p>
      */
-    inline const OperationResultFilterName& GetName() const{ return m_name; }
+    inline OperationResultFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const OperationResultFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(OperationResultFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline OperationResultFilter& WithName(const OperationResultFilterName& value) { SetName(value); return *this;}
-    inline OperationResultFilter& WithName(OperationResultFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(OperationResultFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline OperationResultFilter& WithName(OperationResultFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value to filter by.</p>
      */
-    inline const Aws::String& GetValues() const{ return m_values; }
+    inline const Aws::String& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline void SetValues(const char* value) { m_valuesHasBeenSet = true; m_values.assign(value); }
-    inline OperationResultFilter& WithValues(const Aws::String& value) { SetValues(value); return *this;}
-    inline OperationResultFilter& WithValues(Aws::String&& value) { SetValues(std::move(value)); return *this;}
-    inline OperationResultFilter& WithValues(const char* value) { SetValues(value); return *this;}
+    template<typename ValuesT = Aws::String>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::String>
+    OperationResultFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
     ///@}
   private:
 
-    OperationResultFilterName m_name;
+    OperationResultFilterName m_name{OperationResultFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_values;

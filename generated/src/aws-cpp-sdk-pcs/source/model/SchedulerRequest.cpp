@@ -18,15 +18,7 @@ namespace PCS
 namespace Model
 {
 
-SchedulerRequest::SchedulerRequest() : 
-    m_type(SchedulerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 SchedulerRequest::SchedulerRequest(JsonView jsonValue)
-  : SchedulerRequest()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SchedulerRequest& SchedulerRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = SchedulerTypeMapper::GetSchedulerTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

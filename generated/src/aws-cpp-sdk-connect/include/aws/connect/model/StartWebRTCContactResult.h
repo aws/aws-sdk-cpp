@@ -28,7 +28,7 @@ namespace Model
   class StartWebRTCContactResult
   {
   public:
-    AWS_CONNECT_API StartWebRTCContactResult();
+    AWS_CONNECT_API StartWebRTCContactResult() = default;
     AWS_CONNECT_API StartWebRTCContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API StartWebRTCContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,24 +38,22 @@ namespace Model
      * <p>Information required for the client application (mobile application or
      * website) to connect to the call.</p>
      */
-    inline const ConnectionData& GetConnectionData() const{ return m_connectionData; }
-    inline void SetConnectionData(const ConnectionData& value) { m_connectionData = value; }
-    inline void SetConnectionData(ConnectionData&& value) { m_connectionData = std::move(value); }
-    inline StartWebRTCContactResult& WithConnectionData(const ConnectionData& value) { SetConnectionData(value); return *this;}
-    inline StartWebRTCContactResult& WithConnectionData(ConnectionData&& value) { SetConnectionData(std::move(value)); return *this;}
+    inline const ConnectionData& GetConnectionData() const { return m_connectionData; }
+    template<typename ConnectionDataT = ConnectionData>
+    void SetConnectionData(ConnectionDataT&& value) { m_connectionDataHasBeenSet = true; m_connectionData = std::forward<ConnectionDataT>(value); }
+    template<typename ConnectionDataT = ConnectionData>
+    StartWebRTCContactResult& WithConnectionData(ConnectionDataT&& value) { SetConnectionData(std::forward<ConnectionDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
-    inline void SetContactId(const Aws::String& value) { m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactId.assign(value); }
-    inline StartWebRTCContactResult& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline StartWebRTCContactResult& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline StartWebRTCContactResult& WithContactId(const char* value) { SetContactId(value); return *this;}
+    inline const Aws::String& GetContactId() const { return m_contactId; }
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    StartWebRTCContactResult& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,13 +61,11 @@ namespace Model
      * <p>The identifier for a contact participant. The <code>ParticipantId</code> for
      * a contact participant is the same throughout the contact lifecycle.</p>
      */
-    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
-    inline void SetParticipantId(const Aws::String& value) { m_participantId = value; }
-    inline void SetParticipantId(Aws::String&& value) { m_participantId = std::move(value); }
-    inline void SetParticipantId(const char* value) { m_participantId.assign(value); }
-    inline StartWebRTCContactResult& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
-    inline StartWebRTCContactResult& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
-    inline StartWebRTCContactResult& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
+    inline const Aws::String& GetParticipantId() const { return m_participantId; }
+    template<typename ParticipantIdT = Aws::String>
+    void SetParticipantId(ParticipantIdT&& value) { m_participantIdHasBeenSet = true; m_participantId = std::forward<ParticipantIdT>(value); }
+    template<typename ParticipantIdT = Aws::String>
+    StartWebRTCContactResult& WithParticipantId(ParticipantIdT&& value) { SetParticipantId(std::forward<ParticipantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,36 +75,37 @@ namespace Model
      * API. The participant token is valid for the lifetime of a contact
      * participant.</p>
      */
-    inline const Aws::String& GetParticipantToken() const{ return m_participantToken; }
-    inline void SetParticipantToken(const Aws::String& value) { m_participantToken = value; }
-    inline void SetParticipantToken(Aws::String&& value) { m_participantToken = std::move(value); }
-    inline void SetParticipantToken(const char* value) { m_participantToken.assign(value); }
-    inline StartWebRTCContactResult& WithParticipantToken(const Aws::String& value) { SetParticipantToken(value); return *this;}
-    inline StartWebRTCContactResult& WithParticipantToken(Aws::String&& value) { SetParticipantToken(std::move(value)); return *this;}
-    inline StartWebRTCContactResult& WithParticipantToken(const char* value) { SetParticipantToken(value); return *this;}
+    inline const Aws::String& GetParticipantToken() const { return m_participantToken; }
+    template<typename ParticipantTokenT = Aws::String>
+    void SetParticipantToken(ParticipantTokenT&& value) { m_participantTokenHasBeenSet = true; m_participantToken = std::forward<ParticipantTokenT>(value); }
+    template<typename ParticipantTokenT = Aws::String>
+    StartWebRTCContactResult& WithParticipantToken(ParticipantTokenT&& value) { SetParticipantToken(std::forward<ParticipantTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartWebRTCContactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartWebRTCContactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartWebRTCContactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartWebRTCContactResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ConnectionData m_connectionData;
+    bool m_connectionDataHasBeenSet = false;
 
     Aws::String m_contactId;
+    bool m_contactIdHasBeenSet = false;
 
     Aws::String m_participantId;
+    bool m_participantIdHasBeenSet = false;
 
     Aws::String m_participantToken;
+    bool m_participantTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ApiCallDetails::ApiCallDetails() : 
-    m_apiHasBeenSet(false),
-    m_apiServiceNameHasBeenSet(false),
-    m_firstSeenHasBeenSet(false),
-    m_lastSeenHasBeenSet(false)
-{
-}
-
 ApiCallDetails::ApiCallDetails(JsonView jsonValue)
-  : ApiCallDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ApiCallDetails& ApiCallDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("api"))
   {
     m_api = jsonValue.GetString("api");
-
     m_apiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiServiceName"))
   {
     m_apiServiceName = jsonValue.GetString("apiServiceName");
-
     m_apiServiceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstSeen"))
   {
     m_firstSeen = jsonValue.GetString("firstSeen");
-
     m_firstSeenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSeen"))
   {
     m_lastSeen = jsonValue.GetString("lastSeen");
-
     m_lastSeenHasBeenSet = true;
   }
-
   return *this;
 }
 

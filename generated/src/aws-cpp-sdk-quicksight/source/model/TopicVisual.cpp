@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicVisual::TopicVisual() : 
-    m_visualIdHasBeenSet(false),
-    m_role(VisualRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_irHasBeenSet(false),
-    m_supportingVisualsHasBeenSet(false)
-{
-}
-
 TopicVisual::TopicVisual(JsonView jsonValue)
-  : TopicVisual()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TopicVisual& TopicVisual::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VisualId"))
   {
     m_visualId = jsonValue.GetString("VisualId");
-
     m_visualIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = VisualRoleMapper::GetVisualRoleForName(jsonValue.GetString("Role"));
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ir"))
   {
     m_ir = jsonValue.GetObject("Ir");
-
     m_irHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportingVisuals"))
   {
     Aws::Utils::Array<JsonView> supportingVisualsJsonList = jsonValue.GetArray("SupportingVisuals");
@@ -65,7 +49,6 @@ TopicVisual& TopicVisual::operator =(JsonView jsonValue)
     }
     m_supportingVisualsHasBeenSet = true;
   }
-
   return *this;
 }
 

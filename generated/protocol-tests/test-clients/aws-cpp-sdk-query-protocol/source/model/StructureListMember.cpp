@@ -20,14 +20,7 @@ namespace QueryProtocol
 namespace Model
 {
 
-StructureListMember::StructureListMember() : 
-    m_aHasBeenSet(false),
-    m_bHasBeenSet(false)
-{
-}
-
 StructureListMember::StructureListMember(const XmlNode& xmlNode)
-  : StructureListMember()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ StructureListMember& StructureListMember::operator =(const XmlNode& xmlNode)
     {
       m_a = Aws::Utils::Xml::DecodeEscapedXmlText(aNode.GetText());
       m_aHasBeenSet = true;
+       m_aHasBeenSet = true;
     }
     XmlNode bNode = resultNode.FirstChild("other");
     if(!bNode.IsNull())
     {
       m_b = Aws::Utils::Xml::DecodeEscapedXmlText(bNode.GetText());
       m_bHasBeenSet = true;
+       m_bHasBeenSet = true;
     }
   }
 

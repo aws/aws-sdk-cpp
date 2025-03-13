@@ -35,7 +35,7 @@ namespace Model
   class ResourceCollectionFilter
   {
   public:
-    AWS_DEVOPSGURU_API ResourceCollectionFilter();
+    AWS_DEVOPSGURU_API ResourceCollectionFilter() = default;
     AWS_DEVOPSGURU_API ResourceCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API ResourceCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a>
      * in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
      */
-    inline const CloudFormationCollectionFilter& GetCloudFormation() const{ return m_cloudFormation; }
+    inline const CloudFormationCollectionFilter& GetCloudFormation() const { return m_cloudFormation; }
     inline bool CloudFormationHasBeenSet() const { return m_cloudFormationHasBeenSet; }
-    inline void SetCloudFormation(const CloudFormationCollectionFilter& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = value; }
-    inline void SetCloudFormation(CloudFormationCollectionFilter&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::move(value); }
-    inline ResourceCollectionFilter& WithCloudFormation(const CloudFormationCollectionFilter& value) { SetCloudFormation(value); return *this;}
-    inline ResourceCollectionFilter& WithCloudFormation(CloudFormationCollectionFilter&& value) { SetCloudFormation(std::move(value)); return *this;}
+    template<typename CloudFormationT = CloudFormationCollectionFilter>
+    void SetCloudFormation(CloudFormationT&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::forward<CloudFormationT>(value); }
+    template<typename CloudFormationT = CloudFormationCollectionFilter>
+    ResourceCollectionFilter& WithCloudFormation(CloudFormationT&& value) { SetCloudFormation(std::forward<CloudFormationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +88,14 @@ namespace Model
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
-    inline const Aws::Vector<TagCollectionFilter>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<TagCollectionFilter>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<TagCollectionFilter>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<TagCollectionFilter>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ResourceCollectionFilter& WithTags(const Aws::Vector<TagCollectionFilter>& value) { SetTags(value); return *this;}
-    inline ResourceCollectionFilter& WithTags(Aws::Vector<TagCollectionFilter>&& value) { SetTags(std::move(value)); return *this;}
-    inline ResourceCollectionFilter& AddTags(const TagCollectionFilter& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ResourceCollectionFilter& AddTags(TagCollectionFilter&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<TagCollectionFilter>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<TagCollectionFilter>>
+    ResourceCollectionFilter& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = TagCollectionFilter>
+    ResourceCollectionFilter& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

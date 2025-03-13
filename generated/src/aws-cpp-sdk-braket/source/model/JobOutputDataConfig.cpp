@@ -18,14 +18,7 @@ namespace Braket
 namespace Model
 {
 
-JobOutputDataConfig::JobOutputDataConfig() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3PathHasBeenSet(false)
-{
-}
-
 JobOutputDataConfig::JobOutputDataConfig(JsonView jsonValue)
-  : JobOutputDataConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ JobOutputDataConfig& JobOutputDataConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Path"))
   {
     m_s3Path = jsonValue.GetString("s3Path");
-
     m_s3PathHasBeenSet = true;
   }
-
   return *this;
 }
 

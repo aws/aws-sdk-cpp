@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDimensionRequest::DeleteDimensionRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDimensionRequest::SerializePayload() const
 {
   return {};

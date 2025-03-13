@@ -23,7 +23,7 @@ namespace Model
   class DescribeIpamExternalResourceVerificationTokensRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeIpamExternalResourceVerificationTokensRequest();
+    AWS_EC2_API DescribeIpamExternalResourceVerificationTokensRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeIpamExternalResourceVerificationTokensRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -65,35 +65,33 @@ namespace Model
      * <li> <p> <code>token-name</code> </p> </li> <li> <p> <code>token-value</code>
      * </p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeIpamExternalResourceVerificationTokensRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeIpamExternalResourceVerificationTokensRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeIpamExternalResourceVerificationTokensRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeIpamExternalResourceVerificationTokensRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeIpamExternalResourceVerificationTokensRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeIpamExternalResourceVerificationTokensRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeIpamExternalResourceVerificationTokensRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeIpamExternalResourceVerificationTokensRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeIpamExternalResourceVerificationTokensRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeIpamExternalResourceVerificationTokensRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of tokens to return in one page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeIpamExternalResourceVerificationTokensRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -103,19 +101,18 @@ namespace Model
     /**
      * <p>Verification token IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIpamExternalResourceVerificationTokenIds() const{ return m_ipamExternalResourceVerificationTokenIds; }
+    inline const Aws::Vector<Aws::String>& GetIpamExternalResourceVerificationTokenIds() const { return m_ipamExternalResourceVerificationTokenIds; }
     inline bool IpamExternalResourceVerificationTokenIdsHasBeenSet() const { return m_ipamExternalResourceVerificationTokenIdsHasBeenSet; }
-    inline void SetIpamExternalResourceVerificationTokenIds(const Aws::Vector<Aws::String>& value) { m_ipamExternalResourceVerificationTokenIdsHasBeenSet = true; m_ipamExternalResourceVerificationTokenIds = value; }
-    inline void SetIpamExternalResourceVerificationTokenIds(Aws::Vector<Aws::String>&& value) { m_ipamExternalResourceVerificationTokenIdsHasBeenSet = true; m_ipamExternalResourceVerificationTokenIds = std::move(value); }
-    inline DescribeIpamExternalResourceVerificationTokensRequest& WithIpamExternalResourceVerificationTokenIds(const Aws::Vector<Aws::String>& value) { SetIpamExternalResourceVerificationTokenIds(value); return *this;}
-    inline DescribeIpamExternalResourceVerificationTokensRequest& WithIpamExternalResourceVerificationTokenIds(Aws::Vector<Aws::String>&& value) { SetIpamExternalResourceVerificationTokenIds(std::move(value)); return *this;}
-    inline DescribeIpamExternalResourceVerificationTokensRequest& AddIpamExternalResourceVerificationTokenIds(const Aws::String& value) { m_ipamExternalResourceVerificationTokenIdsHasBeenSet = true; m_ipamExternalResourceVerificationTokenIds.push_back(value); return *this; }
-    inline DescribeIpamExternalResourceVerificationTokensRequest& AddIpamExternalResourceVerificationTokenIds(Aws::String&& value) { m_ipamExternalResourceVerificationTokenIdsHasBeenSet = true; m_ipamExternalResourceVerificationTokenIds.push_back(std::move(value)); return *this; }
-    inline DescribeIpamExternalResourceVerificationTokensRequest& AddIpamExternalResourceVerificationTokenIds(const char* value) { m_ipamExternalResourceVerificationTokenIdsHasBeenSet = true; m_ipamExternalResourceVerificationTokenIds.push_back(value); return *this; }
+    template<typename IpamExternalResourceVerificationTokenIdsT = Aws::Vector<Aws::String>>
+    void SetIpamExternalResourceVerificationTokenIds(IpamExternalResourceVerificationTokenIdsT&& value) { m_ipamExternalResourceVerificationTokenIdsHasBeenSet = true; m_ipamExternalResourceVerificationTokenIds = std::forward<IpamExternalResourceVerificationTokenIdsT>(value); }
+    template<typename IpamExternalResourceVerificationTokenIdsT = Aws::Vector<Aws::String>>
+    DescribeIpamExternalResourceVerificationTokensRequest& WithIpamExternalResourceVerificationTokenIds(IpamExternalResourceVerificationTokenIdsT&& value) { SetIpamExternalResourceVerificationTokenIds(std::forward<IpamExternalResourceVerificationTokenIdsT>(value)); return *this;}
+    template<typename IpamExternalResourceVerificationTokenIdsT = Aws::String>
+    DescribeIpamExternalResourceVerificationTokensRequest& AddIpamExternalResourceVerificationTokenIds(IpamExternalResourceVerificationTokenIdsT&& value) { m_ipamExternalResourceVerificationTokenIdsHasBeenSet = true; m_ipamExternalResourceVerificationTokenIds.emplace_back(std::forward<IpamExternalResourceVerificationTokenIdsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
@@ -124,7 +121,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipamExternalResourceVerificationTokenIds;

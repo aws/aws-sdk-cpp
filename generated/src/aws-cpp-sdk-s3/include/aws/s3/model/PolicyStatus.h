@@ -28,7 +28,7 @@ namespace Model
   class PolicyStatus
   {
   public:
-    AWS_S3_API PolicyStatus();
+    AWS_S3_API PolicyStatus() = default;
     AWS_S3_API PolicyStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API PolicyStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,14 @@ namespace Model
      * bucket is public. <code>FALSE</code> indicates that the bucket is not
      * public.</p>
      */
-    inline bool GetIsPublic() const{ return m_isPublic; }
+    inline bool GetIsPublic() const { return m_isPublic; }
     inline bool IsPublicHasBeenSet() const { return m_isPublicHasBeenSet; }
     inline void SetIsPublic(bool value) { m_isPublicHasBeenSet = true; m_isPublic = value; }
     inline PolicyStatus& WithIsPublic(bool value) { SetIsPublic(value); return *this;}
     ///@}
   private:
 
-    bool m_isPublic;
+    bool m_isPublic{false};
     bool m_isPublicHasBeenSet = false;
   };
 

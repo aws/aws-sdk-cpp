@@ -20,25 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification() : 
-    m_enableAcceleration(false),
-    m_enableAccelerationHasBeenSet(false),
-    m_tunnelInsideIpVersion(TunnelInsideIpVersion::NOT_SET),
-    m_tunnelInsideIpVersionHasBeenSet(false),
-    m_tunnelOptionsHasBeenSet(false),
-    m_localIpv4NetworkCidrHasBeenSet(false),
-    m_remoteIpv4NetworkCidrHasBeenSet(false),
-    m_localIpv6NetworkCidrHasBeenSet(false),
-    m_remoteIpv6NetworkCidrHasBeenSet(false),
-    m_outsideIpAddressTypeHasBeenSet(false),
-    m_transportTransitGatewayAttachmentIdHasBeenSet(false),
-    m_staticRoutesOnly(false),
-    m_staticRoutesOnlyHasBeenSet(false)
-{
-}
-
 VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification(const XmlNode& xmlNode)
-  : VpnConnectionOptionsSpecification()
 {
   *this = xmlNode;
 }
@@ -54,66 +36,76 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator =
     {
       m_enableAcceleration = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableAccelerationNode.GetText()).c_str()).c_str());
       m_enableAccelerationHasBeenSet = true;
+       m_enableAccelerationHasBeenSet = true;
     }
     XmlNode tunnelInsideIpVersionNode = resultNode.FirstChild("TunnelInsideIpVersion");
     if(!tunnelInsideIpVersionNode.IsNull())
     {
-      m_tunnelInsideIpVersion = TunnelInsideIpVersionMapper::GetTunnelInsideIpVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideIpVersionNode.GetText()).c_str()).c_str());
+      m_tunnelInsideIpVersion = TunnelInsideIpVersionMapper::GetTunnelInsideIpVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideIpVersionNode.GetText()).c_str()));
       m_tunnelInsideIpVersionHasBeenSet = true;
+       m_tunnelInsideIpVersionHasBeenSet = true;
     }
     XmlNode tunnelOptionsNode = resultNode.FirstChild("TunnelOptions");
     if(!tunnelOptionsNode.IsNull())
     {
       XmlNode tunnelOptionsMember = tunnelOptionsNode.FirstChild("member");
+      m_tunnelOptionsHasBeenSet = !tunnelOptionsMember.IsNull();
       while(!tunnelOptionsMember.IsNull())
       {
         m_tunnelOptions.push_back(tunnelOptionsMember);
         tunnelOptionsMember = tunnelOptionsMember.NextNode("member");
       }
 
-      m_tunnelOptionsHasBeenSet = true;
+       m_tunnelOptionsHasBeenSet = true;
     }
     XmlNode localIpv4NetworkCidrNode = resultNode.FirstChild("LocalIpv4NetworkCidr");
     if(!localIpv4NetworkCidrNode.IsNull())
     {
       m_localIpv4NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(localIpv4NetworkCidrNode.GetText());
       m_localIpv4NetworkCidrHasBeenSet = true;
+       m_localIpv4NetworkCidrHasBeenSet = true;
     }
     XmlNode remoteIpv4NetworkCidrNode = resultNode.FirstChild("RemoteIpv4NetworkCidr");
     if(!remoteIpv4NetworkCidrNode.IsNull())
     {
       m_remoteIpv4NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(remoteIpv4NetworkCidrNode.GetText());
       m_remoteIpv4NetworkCidrHasBeenSet = true;
+       m_remoteIpv4NetworkCidrHasBeenSet = true;
     }
     XmlNode localIpv6NetworkCidrNode = resultNode.FirstChild("LocalIpv6NetworkCidr");
     if(!localIpv6NetworkCidrNode.IsNull())
     {
       m_localIpv6NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(localIpv6NetworkCidrNode.GetText());
       m_localIpv6NetworkCidrHasBeenSet = true;
+       m_localIpv6NetworkCidrHasBeenSet = true;
     }
     XmlNode remoteIpv6NetworkCidrNode = resultNode.FirstChild("RemoteIpv6NetworkCidr");
     if(!remoteIpv6NetworkCidrNode.IsNull())
     {
       m_remoteIpv6NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(remoteIpv6NetworkCidrNode.GetText());
       m_remoteIpv6NetworkCidrHasBeenSet = true;
+       m_remoteIpv6NetworkCidrHasBeenSet = true;
     }
     XmlNode outsideIpAddressTypeNode = resultNode.FirstChild("OutsideIpAddressType");
     if(!outsideIpAddressTypeNode.IsNull())
     {
       m_outsideIpAddressType = Aws::Utils::Xml::DecodeEscapedXmlText(outsideIpAddressTypeNode.GetText());
       m_outsideIpAddressTypeHasBeenSet = true;
+       m_outsideIpAddressTypeHasBeenSet = true;
     }
     XmlNode transportTransitGatewayAttachmentIdNode = resultNode.FirstChild("TransportTransitGatewayAttachmentId");
     if(!transportTransitGatewayAttachmentIdNode.IsNull())
     {
       m_transportTransitGatewayAttachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(transportTransitGatewayAttachmentIdNode.GetText());
       m_transportTransitGatewayAttachmentIdHasBeenSet = true;
+       m_transportTransitGatewayAttachmentIdHasBeenSet = true;
     }
     XmlNode staticRoutesOnlyNode = resultNode.FirstChild("staticRoutesOnly");
     if(!staticRoutesOnlyNode.IsNull())
     {
       m_staticRoutesOnly = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(staticRoutesOnlyNode.GetText()).c_str()).c_str());
       m_staticRoutesOnlyHasBeenSet = true;
+       m_staticRoutesOnlyHasBeenSet = true;
     }
   }
 

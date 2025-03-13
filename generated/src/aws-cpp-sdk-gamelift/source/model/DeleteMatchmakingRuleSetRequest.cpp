@@ -12,11 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMatchmakingRuleSetRequest::DeleteMatchmakingRuleSetRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMatchmakingRuleSetRequest::SerializePayload() const
 {
   JsonValue payload;

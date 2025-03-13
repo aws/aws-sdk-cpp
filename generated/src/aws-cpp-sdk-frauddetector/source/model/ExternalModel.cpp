@@ -18,23 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-ExternalModel::ExternalModel() : 
-    m_modelEndpointHasBeenSet(false),
-    m_modelSource(ModelSource::NOT_SET),
-    m_modelSourceHasBeenSet(false),
-    m_invokeModelEndpointRoleArnHasBeenSet(false),
-    m_inputConfigurationHasBeenSet(false),
-    m_outputConfigurationHasBeenSet(false),
-    m_modelEndpointStatus(ModelEndpointStatus::NOT_SET),
-    m_modelEndpointStatusHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 ExternalModel::ExternalModel(JsonView jsonValue)
-  : ExternalModel()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ ExternalModel& ExternalModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modelEndpoint"))
   {
     m_modelEndpoint = jsonValue.GetString("modelEndpoint");
-
     m_modelEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelSource"))
   {
     m_modelSource = ModelSourceMapper::GetModelSourceForName(jsonValue.GetString("modelSource"));
-
     m_modelSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invokeModelEndpointRoleArn"))
   {
     m_invokeModelEndpointRoleArn = jsonValue.GetString("invokeModelEndpointRoleArn");
-
     m_invokeModelEndpointRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputConfiguration"))
   {
     m_inputConfiguration = jsonValue.GetObject("inputConfiguration");
-
     m_inputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputConfiguration"))
   {
     m_outputConfiguration = jsonValue.GetObject("outputConfiguration");
-
     m_outputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelEndpointStatus"))
   {
     m_modelEndpointStatus = ModelEndpointStatusMapper::GetModelEndpointStatusForName(jsonValue.GetString("modelEndpointStatus"));
-
     m_modelEndpointStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetString("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

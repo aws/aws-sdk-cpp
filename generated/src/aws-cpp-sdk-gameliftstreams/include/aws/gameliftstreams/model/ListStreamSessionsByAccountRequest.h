@@ -27,7 +27,7 @@ namespace Model
   class ListStreamSessionsByAccountRequest : public GameLiftStreamsRequest
   {
   public:
-    AWS_GAMELIFTSTREAMS_API ListStreamSessionsByAccountRequest();
+    AWS_GAMELIFTSTREAMS_API ListStreamSessionsByAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,12 +46,10 @@ namespace Model
      * request to retrieve only sessions that currently have that exported files
      * status.</p>
      */
-    inline const ExportFilesStatus& GetExportFilesStatus() const{ return m_exportFilesStatus; }
+    inline ExportFilesStatus GetExportFilesStatus() const { return m_exportFilesStatus; }
     inline bool ExportFilesStatusHasBeenSet() const { return m_exportFilesStatusHasBeenSet; }
-    inline void SetExportFilesStatus(const ExportFilesStatus& value) { m_exportFilesStatusHasBeenSet = true; m_exportFilesStatus = value; }
-    inline void SetExportFilesStatus(ExportFilesStatus&& value) { m_exportFilesStatusHasBeenSet = true; m_exportFilesStatus = std::move(value); }
-    inline ListStreamSessionsByAccountRequest& WithExportFilesStatus(const ExportFilesStatus& value) { SetExportFilesStatus(value); return *this;}
-    inline ListStreamSessionsByAccountRequest& WithExportFilesStatus(ExportFilesStatus&& value) { SetExportFilesStatus(std::move(value)); return *this;}
+    inline void SetExportFilesStatus(ExportFilesStatus value) { m_exportFilesStatusHasBeenSet = true; m_exportFilesStatus = value; }
+    inline ListStreamSessionsByAccountRequest& WithExportFilesStatus(ExportFilesStatus value) { SetExportFilesStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <code>NextToken</code> to return results in sequential pages. Default value is
      * <code>25</code>. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListStreamSessionsByAccountRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -73,14 +71,12 @@ namespace Model
      * omit a token value. To get the remaining pages, provide the token returned with
      * the previous result set. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListStreamSessionsByAccountRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStreamSessionsByAccountRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStreamSessionsByAccountRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStreamSessionsByAccountRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,25 +84,23 @@ namespace Model
      * <p>Filter by the stream session status. You can specify one status in each
      * request to retrieve only sessions that are currently in that status.</p>
      */
-    inline const StreamSessionStatus& GetStatus() const{ return m_status; }
+    inline StreamSessionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StreamSessionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StreamSessionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListStreamSessionsByAccountRequest& WithStatus(const StreamSessionStatus& value) { SetStatus(value); return *this;}
-    inline ListStreamSessionsByAccountRequest& WithStatus(StreamSessionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StreamSessionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListStreamSessionsByAccountRequest& WithStatus(StreamSessionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    ExportFilesStatus m_exportFilesStatus;
+    ExportFilesStatus m_exportFilesStatus{ExportFilesStatus::NOT_SET};
     bool m_exportFilesStatusHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    StreamSessionStatus m_status;
+    StreamSessionStatus m_status{StreamSessionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -21,7 +21,7 @@ namespace Model
   class UpgradePublishedSchemaRequest : public CloudDirectoryRequest
   {
   public:
-    AWS_CLOUDDIRECTORY_API UpgradePublishedSchemaRequest();
+    AWS_CLOUDDIRECTORY_API UpgradePublishedSchemaRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The ARN of the development schema with the changes used for the upgrade.</p>
      */
-    inline const Aws::String& GetDevelopmentSchemaArn() const{ return m_developmentSchemaArn; }
+    inline const Aws::String& GetDevelopmentSchemaArn() const { return m_developmentSchemaArn; }
     inline bool DevelopmentSchemaArnHasBeenSet() const { return m_developmentSchemaArnHasBeenSet; }
-    inline void SetDevelopmentSchemaArn(const Aws::String& value) { m_developmentSchemaArnHasBeenSet = true; m_developmentSchemaArn = value; }
-    inline void SetDevelopmentSchemaArn(Aws::String&& value) { m_developmentSchemaArnHasBeenSet = true; m_developmentSchemaArn = std::move(value); }
-    inline void SetDevelopmentSchemaArn(const char* value) { m_developmentSchemaArnHasBeenSet = true; m_developmentSchemaArn.assign(value); }
-    inline UpgradePublishedSchemaRequest& WithDevelopmentSchemaArn(const Aws::String& value) { SetDevelopmentSchemaArn(value); return *this;}
-    inline UpgradePublishedSchemaRequest& WithDevelopmentSchemaArn(Aws::String&& value) { SetDevelopmentSchemaArn(std::move(value)); return *this;}
-    inline UpgradePublishedSchemaRequest& WithDevelopmentSchemaArn(const char* value) { SetDevelopmentSchemaArn(value); return *this;}
+    template<typename DevelopmentSchemaArnT = Aws::String>
+    void SetDevelopmentSchemaArn(DevelopmentSchemaArnT&& value) { m_developmentSchemaArnHasBeenSet = true; m_developmentSchemaArn = std::forward<DevelopmentSchemaArnT>(value); }
+    template<typename DevelopmentSchemaArnT = Aws::String>
+    UpgradePublishedSchemaRequest& WithDevelopmentSchemaArn(DevelopmentSchemaArnT&& value) { SetDevelopmentSchemaArn(std::forward<DevelopmentSchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the published schema to be upgraded.</p>
      */
-    inline const Aws::String& GetPublishedSchemaArn() const{ return m_publishedSchemaArn; }
+    inline const Aws::String& GetPublishedSchemaArn() const { return m_publishedSchemaArn; }
     inline bool PublishedSchemaArnHasBeenSet() const { return m_publishedSchemaArnHasBeenSet; }
-    inline void SetPublishedSchemaArn(const Aws::String& value) { m_publishedSchemaArnHasBeenSet = true; m_publishedSchemaArn = value; }
-    inline void SetPublishedSchemaArn(Aws::String&& value) { m_publishedSchemaArnHasBeenSet = true; m_publishedSchemaArn = std::move(value); }
-    inline void SetPublishedSchemaArn(const char* value) { m_publishedSchemaArnHasBeenSet = true; m_publishedSchemaArn.assign(value); }
-    inline UpgradePublishedSchemaRequest& WithPublishedSchemaArn(const Aws::String& value) { SetPublishedSchemaArn(value); return *this;}
-    inline UpgradePublishedSchemaRequest& WithPublishedSchemaArn(Aws::String&& value) { SetPublishedSchemaArn(std::move(value)); return *this;}
-    inline UpgradePublishedSchemaRequest& WithPublishedSchemaArn(const char* value) { SetPublishedSchemaArn(value); return *this;}
+    template<typename PublishedSchemaArnT = Aws::String>
+    void SetPublishedSchemaArn(PublishedSchemaArnT&& value) { m_publishedSchemaArnHasBeenSet = true; m_publishedSchemaArn = std::forward<PublishedSchemaArnT>(value); }
+    template<typename PublishedSchemaArnT = Aws::String>
+    UpgradePublishedSchemaRequest& WithPublishedSchemaArn(PublishedSchemaArnT&& value) { SetPublishedSchemaArn(std::forward<PublishedSchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +61,12 @@ namespace Model
      * <p>Identifies the minor version of the published schema that will be created.
      * This parameter is NOT optional.</p>
      */
-    inline const Aws::String& GetMinorVersion() const{ return m_minorVersion; }
+    inline const Aws::String& GetMinorVersion() const { return m_minorVersion; }
     inline bool MinorVersionHasBeenSet() const { return m_minorVersionHasBeenSet; }
-    inline void SetMinorVersion(const Aws::String& value) { m_minorVersionHasBeenSet = true; m_minorVersion = value; }
-    inline void SetMinorVersion(Aws::String&& value) { m_minorVersionHasBeenSet = true; m_minorVersion = std::move(value); }
-    inline void SetMinorVersion(const char* value) { m_minorVersionHasBeenSet = true; m_minorVersion.assign(value); }
-    inline UpgradePublishedSchemaRequest& WithMinorVersion(const Aws::String& value) { SetMinorVersion(value); return *this;}
-    inline UpgradePublishedSchemaRequest& WithMinorVersion(Aws::String&& value) { SetMinorVersion(std::move(value)); return *this;}
-    inline UpgradePublishedSchemaRequest& WithMinorVersion(const char* value) { SetMinorVersion(value); return *this;}
+    template<typename MinorVersionT = Aws::String>
+    void SetMinorVersion(MinorVersionT&& value) { m_minorVersionHasBeenSet = true; m_minorVersion = std::forward<MinorVersionT>(value); }
+    template<typename MinorVersionT = Aws::String>
+    UpgradePublishedSchemaRequest& WithMinorVersion(MinorVersionT&& value) { SetMinorVersion(std::forward<MinorVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,7 +76,7 @@ namespace Model
      * If schema compatibility fails, an exception would be thrown else the call would
      * succeed. This parameter is optional and defaults to false.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline UpgradePublishedSchemaRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -98,7 +92,7 @@ namespace Model
     Aws::String m_minorVersion;
     bool m_minorVersionHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

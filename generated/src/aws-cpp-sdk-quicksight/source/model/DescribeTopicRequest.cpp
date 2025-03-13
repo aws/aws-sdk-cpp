@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTopicRequest::DescribeTopicRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_topicIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTopicRequest::SerializePayload() const
 {
   return {};

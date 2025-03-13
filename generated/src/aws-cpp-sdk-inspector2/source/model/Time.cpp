@@ -18,14 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-Time::Time() : 
-    m_timeOfDayHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
-{
-}
-
 Time::Time(JsonView jsonValue)
-  : Time()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Time& Time::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timeOfDay"))
   {
     m_timeOfDay = jsonValue.GetString("timeOfDay");
-
     m_timeOfDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timezone"))
   {
     m_timezone = jsonValue.GetString("timezone");
-
     m_timezoneHasBeenSet = true;
   }
-
   return *this;
 }
 

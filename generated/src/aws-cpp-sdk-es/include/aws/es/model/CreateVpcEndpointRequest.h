@@ -27,7 +27,7 @@ namespace Model
   class CreateVpcEndpointRequest : public ElasticsearchServiceRequest
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API CreateVpcEndpointRequest();
+    AWS_ELASTICSEARCHSERVICE_API CreateVpcEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,40 +42,36 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
      */
-    inline const Aws::String& GetDomainArn() const{ return m_domainArn; }
+    inline const Aws::String& GetDomainArn() const { return m_domainArn; }
     inline bool DomainArnHasBeenSet() const { return m_domainArnHasBeenSet; }
-    inline void SetDomainArn(const Aws::String& value) { m_domainArnHasBeenSet = true; m_domainArn = value; }
-    inline void SetDomainArn(Aws::String&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::move(value); }
-    inline void SetDomainArn(const char* value) { m_domainArnHasBeenSet = true; m_domainArn.assign(value); }
-    inline CreateVpcEndpointRequest& WithDomainArn(const Aws::String& value) { SetDomainArn(value); return *this;}
-    inline CreateVpcEndpointRequest& WithDomainArn(Aws::String&& value) { SetDomainArn(std::move(value)); return *this;}
-    inline CreateVpcEndpointRequest& WithDomainArn(const char* value) { SetDomainArn(value); return *this;}
+    template<typename DomainArnT = Aws::String>
+    void SetDomainArn(DomainArnT&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::forward<DomainArnT>(value); }
+    template<typename DomainArnT = Aws::String>
+    CreateVpcEndpointRequest& WithDomainArn(DomainArnT&& value) { SetDomainArn(std::forward<DomainArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Options to specify the subnets and security groups for the endpoint.</p>
      */
-    inline const VPCOptions& GetVpcOptions() const{ return m_vpcOptions; }
+    inline const VPCOptions& GetVpcOptions() const { return m_vpcOptions; }
     inline bool VpcOptionsHasBeenSet() const { return m_vpcOptionsHasBeenSet; }
-    inline void SetVpcOptions(const VPCOptions& value) { m_vpcOptionsHasBeenSet = true; m_vpcOptions = value; }
-    inline void SetVpcOptions(VPCOptions&& value) { m_vpcOptionsHasBeenSet = true; m_vpcOptions = std::move(value); }
-    inline CreateVpcEndpointRequest& WithVpcOptions(const VPCOptions& value) { SetVpcOptions(value); return *this;}
-    inline CreateVpcEndpointRequest& WithVpcOptions(VPCOptions&& value) { SetVpcOptions(std::move(value)); return *this;}
+    template<typename VpcOptionsT = VPCOptions>
+    void SetVpcOptions(VpcOptionsT&& value) { m_vpcOptionsHasBeenSet = true; m_vpcOptions = std::forward<VpcOptionsT>(value); }
+    template<typename VpcOptionsT = VPCOptions>
+    CreateVpcEndpointRequest& WithVpcOptions(VpcOptionsT&& value) { SetVpcOptions(std::forward<VpcOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateVpcEndpointRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateVpcEndpointRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateVpcEndpointRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateVpcEndpointRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

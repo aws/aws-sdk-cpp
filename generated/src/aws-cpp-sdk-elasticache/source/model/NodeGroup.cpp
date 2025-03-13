@@ -20,18 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-NodeGroup::NodeGroup() : 
-    m_nodeGroupIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_primaryEndpointHasBeenSet(false),
-    m_readerEndpointHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_nodeGroupMembersHasBeenSet(false)
-{
-}
-
 NodeGroup::NodeGroup(const XmlNode& xmlNode)
-  : NodeGroup()
 {
   *this = xmlNode;
 }
@@ -47,42 +36,48 @@ NodeGroup& NodeGroup::operator =(const XmlNode& xmlNode)
     {
       m_nodeGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(nodeGroupIdNode.GetText());
       m_nodeGroupIdHasBeenSet = true;
+       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode primaryEndpointNode = resultNode.FirstChild("PrimaryEndpoint");
     if(!primaryEndpointNode.IsNull())
     {
       m_primaryEndpoint = primaryEndpointNode;
       m_primaryEndpointHasBeenSet = true;
+       m_primaryEndpointHasBeenSet = true;
     }
     XmlNode readerEndpointNode = resultNode.FirstChild("ReaderEndpoint");
     if(!readerEndpointNode.IsNull())
     {
       m_readerEndpoint = readerEndpointNode;
       m_readerEndpointHasBeenSet = true;
+       m_readerEndpointHasBeenSet = true;
     }
     XmlNode slotsNode = resultNode.FirstChild("Slots");
     if(!slotsNode.IsNull())
     {
       m_slots = Aws::Utils::Xml::DecodeEscapedXmlText(slotsNode.GetText());
       m_slotsHasBeenSet = true;
+       m_slotsHasBeenSet = true;
     }
     XmlNode nodeGroupMembersNode = resultNode.FirstChild("NodeGroupMembers");
     if(!nodeGroupMembersNode.IsNull())
     {
       XmlNode nodeGroupMembersMember = nodeGroupMembersNode.FirstChild("NodeGroupMember");
+      m_nodeGroupMembersHasBeenSet = !nodeGroupMembersMember.IsNull();
       while(!nodeGroupMembersMember.IsNull())
       {
         m_nodeGroupMembers.push_back(nodeGroupMembersMember);
         nodeGroupMembersMember = nodeGroupMembersMember.NextNode("NodeGroupMember");
       }
 
-      m_nodeGroupMembersHasBeenSet = true;
+       m_nodeGroupMembersHasBeenSet = true;
     }
   }
 

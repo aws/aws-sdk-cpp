@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RedshiftSelfGrantStatusOutput::RedshiftSelfGrantStatusOutput() : 
-    m_selfGrantStatusDetailsHasBeenSet(false)
-{
-}
-
 RedshiftSelfGrantStatusOutput::RedshiftSelfGrantStatusOutput(JsonView jsonValue)
-  : RedshiftSelfGrantStatusOutput()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RedshiftSelfGrantStatusOutput& RedshiftSelfGrantStatusOutput::operator =(JsonVie
     }
     m_selfGrantStatusDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

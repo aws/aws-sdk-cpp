@@ -24,7 +24,7 @@ namespace Model
   class DescribeThingTypeRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DescribeThingTypeRequest();
+    AWS_IOT_API DescribeThingTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the thing type.</p>
      */
-    inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
+    inline const Aws::String& GetThingTypeName() const { return m_thingTypeName; }
     inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
-    inline void SetThingTypeName(const Aws::String& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
-    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::move(value); }
-    inline void SetThingTypeName(const char* value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName.assign(value); }
-    inline DescribeThingTypeRequest& WithThingTypeName(const Aws::String& value) { SetThingTypeName(value); return *this;}
-    inline DescribeThingTypeRequest& WithThingTypeName(Aws::String&& value) { SetThingTypeName(std::move(value)); return *this;}
-    inline DescribeThingTypeRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+    template<typename ThingTypeNameT = Aws::String>
+    void SetThingTypeName(ThingTypeNameT&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::forward<ThingTypeNameT>(value); }
+    template<typename ThingTypeNameT = Aws::String>
+    DescribeThingTypeRequest& WithThingTypeName(ThingTypeNameT&& value) { SetThingTypeName(std::forward<ThingTypeNameT>(value)); return *this;}
     ///@}
   private:
 

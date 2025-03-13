@@ -18,22 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ServiceTemplate::ServiceTemplate() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pipelineProvisioning(Provisioning::NOT_SET),
-    m_pipelineProvisioningHasBeenSet(false),
-    m_recommendedVersionHasBeenSet(false)
-{
-}
-
 ServiceTemplate::ServiceTemplate(JsonView jsonValue)
-  : ServiceTemplate()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ ServiceTemplate& ServiceTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionKey"))
   {
     m_encryptionKey = jsonValue.GetString("encryptionKey");
-
     m_encryptionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedAt"))
   {
     m_lastModifiedAt = jsonValue.GetDouble("lastModifiedAt");
-
     m_lastModifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineProvisioning"))
   {
     m_pipelineProvisioning = ProvisioningMapper::GetProvisioningForName(jsonValue.GetString("pipelineProvisioning"));
-
     m_pipelineProvisioningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendedVersion"))
   {
     m_recommendedVersion = jsonValue.GetString("recommendedVersion");
-
     m_recommendedVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class MediaAnalysisDetectModerationLabelsConfig
   {
   public:
-    AWS_REKOGNITION_API MediaAnalysisDetectModerationLabelsConfig();
+    AWS_REKOGNITION_API MediaAnalysisDetectModerationLabelsConfig() = default;
     AWS_REKOGNITION_API MediaAnalysisDetectModerationLabelsConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API MediaAnalysisDetectModerationLabelsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * Amazon Rekognition doesn't return any labels with a confidence level lower than
      * this specified value. </p>
      */
-    inline double GetMinConfidence() const{ return m_minConfidence; }
+    inline double GetMinConfidence() const { return m_minConfidence; }
     inline bool MinConfidenceHasBeenSet() const { return m_minConfidenceHasBeenSet; }
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
     inline MediaAnalysisDetectModerationLabelsConfig& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
      * <p>Specifies the custom moderation model to be used during the label detection
      * job. If not provided the pre-trained model is used.</p>
      */
-    inline const Aws::String& GetProjectVersion() const{ return m_projectVersion; }
+    inline const Aws::String& GetProjectVersion() const { return m_projectVersion; }
     inline bool ProjectVersionHasBeenSet() const { return m_projectVersionHasBeenSet; }
-    inline void SetProjectVersion(const Aws::String& value) { m_projectVersionHasBeenSet = true; m_projectVersion = value; }
-    inline void SetProjectVersion(Aws::String&& value) { m_projectVersionHasBeenSet = true; m_projectVersion = std::move(value); }
-    inline void SetProjectVersion(const char* value) { m_projectVersionHasBeenSet = true; m_projectVersion.assign(value); }
-    inline MediaAnalysisDetectModerationLabelsConfig& WithProjectVersion(const Aws::String& value) { SetProjectVersion(value); return *this;}
-    inline MediaAnalysisDetectModerationLabelsConfig& WithProjectVersion(Aws::String&& value) { SetProjectVersion(std::move(value)); return *this;}
-    inline MediaAnalysisDetectModerationLabelsConfig& WithProjectVersion(const char* value) { SetProjectVersion(value); return *this;}
+    template<typename ProjectVersionT = Aws::String>
+    void SetProjectVersion(ProjectVersionT&& value) { m_projectVersionHasBeenSet = true; m_projectVersion = std::forward<ProjectVersionT>(value); }
+    template<typename ProjectVersionT = Aws::String>
+    MediaAnalysisDetectModerationLabelsConfig& WithProjectVersion(ProjectVersionT&& value) { SetProjectVersion(std::forward<ProjectVersionT>(value)); return *this;}
     ///@}
   private:
 
-    double m_minConfidence;
+    double m_minConfidence{0.0};
     bool m_minConfidenceHasBeenSet = false;
 
     Aws::String m_projectVersion;

@@ -30,7 +30,7 @@ namespace Model
   class KubernetesAuditLogsConfiguration
   {
   public:
-    AWS_GUARDDUTY_API KubernetesAuditLogsConfiguration();
+    AWS_GUARDDUTY_API KubernetesAuditLogsConfiguration() = default;
     AWS_GUARDDUTY_API KubernetesAuditLogsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API KubernetesAuditLogsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The status of Kubernetes audit logs as a data source.</p>
      */
-    inline bool GetEnable() const{ return m_enable; }
+    inline bool GetEnable() const { return m_enable; }
     inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
     inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
     inline KubernetesAuditLogsConfiguration& WithEnable(bool value) { SetEnable(value); return *this;}
     ///@}
   private:
 
-    bool m_enable;
+    bool m_enable{false};
     bool m_enableHasBeenSet = false;
   };
 

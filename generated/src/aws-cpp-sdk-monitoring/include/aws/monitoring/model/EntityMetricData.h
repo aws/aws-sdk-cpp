@@ -35,7 +35,7 @@ namespace Model
   class EntityMetricData
   {
   public:
-    AWS_CLOUDWATCH_API EntityMetricData();
+    AWS_CLOUDWATCH_API EntityMetricData() = default;
     AWS_CLOUDWATCH_API EntityMetricData(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API EntityMetricData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,26 +47,26 @@ namespace Model
     /**
      * <p>The entity associated with the metrics.</p>
      */
-    inline const Entity& GetEntity() const{ return m_entity; }
+    inline const Entity& GetEntity() const { return m_entity; }
     inline bool EntityHasBeenSet() const { return m_entityHasBeenSet; }
-    inline void SetEntity(const Entity& value) { m_entityHasBeenSet = true; m_entity = value; }
-    inline void SetEntity(Entity&& value) { m_entityHasBeenSet = true; m_entity = std::move(value); }
-    inline EntityMetricData& WithEntity(const Entity& value) { SetEntity(value); return *this;}
-    inline EntityMetricData& WithEntity(Entity&& value) { SetEntity(std::move(value)); return *this;}
+    template<typename EntityT = Entity>
+    void SetEntity(EntityT&& value) { m_entityHasBeenSet = true; m_entity = std::forward<EntityT>(value); }
+    template<typename EntityT = Entity>
+    EntityMetricData& WithEntity(EntityT&& value) { SetEntity(std::forward<EntityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metric data.</p>
      */
-    inline const Aws::Vector<MetricDatum>& GetMetricData() const{ return m_metricData; }
+    inline const Aws::Vector<MetricDatum>& GetMetricData() const { return m_metricData; }
     inline bool MetricDataHasBeenSet() const { return m_metricDataHasBeenSet; }
-    inline void SetMetricData(const Aws::Vector<MetricDatum>& value) { m_metricDataHasBeenSet = true; m_metricData = value; }
-    inline void SetMetricData(Aws::Vector<MetricDatum>&& value) { m_metricDataHasBeenSet = true; m_metricData = std::move(value); }
-    inline EntityMetricData& WithMetricData(const Aws::Vector<MetricDatum>& value) { SetMetricData(value); return *this;}
-    inline EntityMetricData& WithMetricData(Aws::Vector<MetricDatum>&& value) { SetMetricData(std::move(value)); return *this;}
-    inline EntityMetricData& AddMetricData(const MetricDatum& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
-    inline EntityMetricData& AddMetricData(MetricDatum&& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(std::move(value)); return *this; }
+    template<typename MetricDataT = Aws::Vector<MetricDatum>>
+    void SetMetricData(MetricDataT&& value) { m_metricDataHasBeenSet = true; m_metricData = std::forward<MetricDataT>(value); }
+    template<typename MetricDataT = Aws::Vector<MetricDatum>>
+    EntityMetricData& WithMetricData(MetricDataT&& value) { SetMetricData(std::forward<MetricDataT>(value)); return *this;}
+    template<typename MetricDataT = MetricDatum>
+    EntityMetricData& AddMetricData(MetricDataT&& value) { m_metricDataHasBeenSet = true; m_metricData.emplace_back(std::forward<MetricDataT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AnalyticsDataSetsResult::AnalyticsDataSetsResult() : 
-    m_dataSetIdHasBeenSet(false),
-    m_dataSetNameHasBeenSet(false)
-{
-}
-
 AnalyticsDataSetsResult::AnalyticsDataSetsResult(JsonView jsonValue)
-  : AnalyticsDataSetsResult()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AnalyticsDataSetsResult& AnalyticsDataSetsResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetName"))
   {
     m_dataSetName = jsonValue.GetString("DataSetName");
-
     m_dataSetNameHasBeenSet = true;
   }
-
   return *this;
 }
 

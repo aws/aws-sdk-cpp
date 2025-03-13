@@ -20,37 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-EnvironmentDescription::EnvironmentDescription() : 
-    m_environmentNameHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_solutionStackNameHasBeenSet(false),
-    m_platformArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointURLHasBeenSet(false),
-    m_cNAMEHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_status(EnvironmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_abortableOperationInProgress(false),
-    m_abortableOperationInProgressHasBeenSet(false),
-    m_health(EnvironmentHealth::NOT_SET),
-    m_healthHasBeenSet(false),
-    m_healthStatus(EnvironmentHealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_tierHasBeenSet(false),
-    m_environmentLinksHasBeenSet(false),
-    m_environmentArnHasBeenSet(false),
-    m_operationsRoleHasBeenSet(false)
-{
-}
-
 EnvironmentDescription::EnvironmentDescription(const XmlNode& xmlNode)
-  : EnvironmentDescription()
 {
   *this = xmlNode;
 }
@@ -66,132 +36,153 @@ EnvironmentDescription& EnvironmentDescription::operator =(const XmlNode& xmlNod
     {
       m_environmentName = Aws::Utils::Xml::DecodeEscapedXmlText(environmentNameNode.GetText());
       m_environmentNameHasBeenSet = true;
+       m_environmentNameHasBeenSet = true;
     }
     XmlNode environmentIdNode = resultNode.FirstChild("EnvironmentId");
     if(!environmentIdNode.IsNull())
     {
       m_environmentId = Aws::Utils::Xml::DecodeEscapedXmlText(environmentIdNode.GetText());
       m_environmentIdHasBeenSet = true;
+       m_environmentIdHasBeenSet = true;
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
       m_applicationName = Aws::Utils::Xml::DecodeEscapedXmlText(applicationNameNode.GetText());
       m_applicationNameHasBeenSet = true;
+       m_applicationNameHasBeenSet = true;
     }
     XmlNode versionLabelNode = resultNode.FirstChild("VersionLabel");
     if(!versionLabelNode.IsNull())
     {
       m_versionLabel = Aws::Utils::Xml::DecodeEscapedXmlText(versionLabelNode.GetText());
       m_versionLabelHasBeenSet = true;
+       m_versionLabelHasBeenSet = true;
     }
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
     if(!solutionStackNameNode.IsNull())
     {
       m_solutionStackName = Aws::Utils::Xml::DecodeEscapedXmlText(solutionStackNameNode.GetText());
       m_solutionStackNameHasBeenSet = true;
+       m_solutionStackNameHasBeenSet = true;
     }
     XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
     if(!platformArnNode.IsNull())
     {
       m_platformArn = Aws::Utils::Xml::DecodeEscapedXmlText(platformArnNode.GetText());
       m_platformArnHasBeenSet = true;
+       m_platformArnHasBeenSet = true;
     }
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
     if(!templateNameNode.IsNull())
     {
       m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
+       m_templateNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode endpointURLNode = resultNode.FirstChild("EndpointURL");
     if(!endpointURLNode.IsNull())
     {
       m_endpointURL = Aws::Utils::Xml::DecodeEscapedXmlText(endpointURLNode.GetText());
       m_endpointURLHasBeenSet = true;
+       m_endpointURLHasBeenSet = true;
     }
     XmlNode cNAMENode = resultNode.FirstChild("CNAME");
     if(!cNAMENode.IsNull())
     {
       m_cNAME = Aws::Utils::Xml::DecodeEscapedXmlText(cNAMENode.GetText());
       m_cNAMEHasBeenSet = true;
+       m_cNAMEHasBeenSet = true;
     }
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
     if(!dateCreatedNode.IsNull())
     {
       m_dateCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateCreatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_dateCreatedHasBeenSet = true;
+       m_dateCreatedHasBeenSet = true;
     }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
     if(!dateUpdatedNode.IsNull())
     {
       m_dateUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateUpdatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_dateUpdatedHasBeenSet = true;
+       m_dateUpdatedHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = EnvironmentStatusMapper::GetEnvironmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = EnvironmentStatusMapper::GetEnvironmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode abortableOperationInProgressNode = resultNode.FirstChild("AbortableOperationInProgress");
     if(!abortableOperationInProgressNode.IsNull())
     {
       m_abortableOperationInProgress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(abortableOperationInProgressNode.GetText()).c_str()).c_str());
       m_abortableOperationInProgressHasBeenSet = true;
+       m_abortableOperationInProgressHasBeenSet = true;
     }
     XmlNode healthNode = resultNode.FirstChild("Health");
     if(!healthNode.IsNull())
     {
-      m_health = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthNode.GetText()).c_str()).c_str());
+      m_health = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthNode.GetText()).c_str()));
       m_healthHasBeenSet = true;
+       m_healthHasBeenSet = true;
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
     if(!healthStatusNode.IsNull())
     {
-      m_healthStatus = EnvironmentHealthStatusMapper::GetEnvironmentHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthStatusNode.GetText()).c_str()).c_str());
+      m_healthStatus = EnvironmentHealthStatusMapper::GetEnvironmentHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthStatusNode.GetText()).c_str()));
       m_healthStatusHasBeenSet = true;
+       m_healthStatusHasBeenSet = true;
     }
     XmlNode resourcesNode = resultNode.FirstChild("Resources");
     if(!resourcesNode.IsNull())
     {
       m_resources = resourcesNode;
       m_resourcesHasBeenSet = true;
+       m_resourcesHasBeenSet = true;
     }
     XmlNode tierNode = resultNode.FirstChild("Tier");
     if(!tierNode.IsNull())
     {
       m_tier = tierNode;
       m_tierHasBeenSet = true;
+       m_tierHasBeenSet = true;
     }
     XmlNode environmentLinksNode = resultNode.FirstChild("EnvironmentLinks");
     if(!environmentLinksNode.IsNull())
     {
       XmlNode environmentLinksMember = environmentLinksNode.FirstChild("member");
+      m_environmentLinksHasBeenSet = !environmentLinksMember.IsNull();
       while(!environmentLinksMember.IsNull())
       {
         m_environmentLinks.push_back(environmentLinksMember);
         environmentLinksMember = environmentLinksMember.NextNode("member");
       }
 
-      m_environmentLinksHasBeenSet = true;
+       m_environmentLinksHasBeenSet = true;
     }
     XmlNode environmentArnNode = resultNode.FirstChild("EnvironmentArn");
     if(!environmentArnNode.IsNull())
     {
       m_environmentArn = Aws::Utils::Xml::DecodeEscapedXmlText(environmentArnNode.GetText());
       m_environmentArnHasBeenSet = true;
+       m_environmentArnHasBeenSet = true;
     }
     XmlNode operationsRoleNode = resultNode.FirstChild("OperationsRole");
     if(!operationsRoleNode.IsNull())
     {
       m_operationsRole = Aws::Utils::Xml::DecodeEscapedXmlText(operationsRoleNode.GetText());
       m_operationsRoleHasBeenSet = true;
+       m_operationsRoleHasBeenSet = true;
     }
   }
 

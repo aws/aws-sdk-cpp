@@ -18,16 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ListTagOptionsFilters::ListTagOptionsFilters() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false)
-{
-}
-
 ListTagOptionsFilters::ListTagOptionsFilters(JsonView jsonValue)
-  : ListTagOptionsFilters()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ListTagOptionsFilters& ListTagOptionsFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Active"))
   {
     m_active = jsonValue.GetBool("Active");
-
     m_activeHasBeenSet = true;
   }
-
   return *this;
 }
 

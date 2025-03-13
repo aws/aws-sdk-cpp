@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-CustomAmi::CustomAmi() : 
-    m_virtualizationTypeHasBeenSet(false),
-    m_imageIdHasBeenSet(false)
-{
-}
-
 CustomAmi::CustomAmi(const XmlNode& xmlNode)
-  : CustomAmi()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CustomAmi& CustomAmi::operator =(const XmlNode& xmlNode)
     {
       m_virtualizationType = Aws::Utils::Xml::DecodeEscapedXmlText(virtualizationTypeNode.GetText());
       m_virtualizationTypeHasBeenSet = true;
+       m_virtualizationTypeHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("ImageId");
     if(!imageIdNode.IsNull())
     {
       m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
       m_imageIdHasBeenSet = true;
+       m_imageIdHasBeenSet = true;
     }
   }
 

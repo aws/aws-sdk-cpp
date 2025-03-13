@@ -16,33 +16,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMapSpritesResult::GetMapSpritesResult()
-{
-}
-
-GetMapSpritesResult::GetMapSpritesResult(GetMapSpritesResult&& toMove) : 
-    m_blob(std::move(toMove.m_blob)),
-    m_contentType(std::move(toMove.m_contentType)),
-    m_cacheControl(std::move(toMove.m_cacheControl)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetMapSpritesResult& GetMapSpritesResult::operator=(GetMapSpritesResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_blob = std::move(toMove.m_blob);
-   m_contentType = std::move(toMove.m_contentType);
-   m_cacheControl = std::move(toMove.m_cacheControl);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetMapSpritesResult::GetMapSpritesResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
@@ -51,24 +24,28 @@ GetMapSpritesResult::GetMapSpritesResult(Aws::AmazonWebServiceResult<ResponseStr
 GetMapSpritesResult& GetMapSpritesResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_blob = result.TakeOwnershipOfPayload();
+  m_blobHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& contentTypeIter = headers.find("content-type");
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& cacheControlIter = headers.find("cache-control");
   if(cacheControlIter != headers.end())
   {
     m_cacheControl = cacheControlIter->second;
+    m_cacheControlHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

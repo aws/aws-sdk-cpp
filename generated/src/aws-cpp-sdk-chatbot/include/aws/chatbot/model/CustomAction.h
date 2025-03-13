@@ -35,7 +35,7 @@ namespace Model
   class CustomAction
   {
   public:
-    AWS_CHATBOT_API CustomAction();
+    AWS_CHATBOT_API CustomAction() = default;
     AWS_CHATBOT_API CustomAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API CustomAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The fully defined Amazon Resource Name (ARN) of the custom action.</p>
      */
-    inline const Aws::String& GetCustomActionArn() const{ return m_customActionArn; }
+    inline const Aws::String& GetCustomActionArn() const { return m_customActionArn; }
     inline bool CustomActionArnHasBeenSet() const { return m_customActionArnHasBeenSet; }
-    inline void SetCustomActionArn(const Aws::String& value) { m_customActionArnHasBeenSet = true; m_customActionArn = value; }
-    inline void SetCustomActionArn(Aws::String&& value) { m_customActionArnHasBeenSet = true; m_customActionArn = std::move(value); }
-    inline void SetCustomActionArn(const char* value) { m_customActionArnHasBeenSet = true; m_customActionArn.assign(value); }
-    inline CustomAction& WithCustomActionArn(const Aws::String& value) { SetCustomActionArn(value); return *this;}
-    inline CustomAction& WithCustomActionArn(Aws::String&& value) { SetCustomActionArn(std::move(value)); return *this;}
-    inline CustomAction& WithCustomActionArn(const char* value) { SetCustomActionArn(value); return *this;}
+    template<typename CustomActionArnT = Aws::String>
+    void SetCustomActionArn(CustomActionArnT&& value) { m_customActionArnHasBeenSet = true; m_customActionArn = std::forward<CustomActionArnT>(value); }
+    template<typename CustomActionArnT = Aws::String>
+    CustomAction& WithCustomActionArn(CustomActionArnT&& value) { SetCustomActionArn(std::forward<CustomActionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * <p>The definition of the command to run when invoked an alias or as an action
      * button.</p>
      */
-    inline const CustomActionDefinition& GetDefinition() const{ return m_definition; }
+    inline const CustomActionDefinition& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const CustomActionDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(CustomActionDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline CustomAction& WithDefinition(const CustomActionDefinition& value) { SetDefinition(value); return *this;}
-    inline CustomAction& WithDefinition(CustomActionDefinition&& value) { SetDefinition(std::move(value)); return *this;}
+    template<typename DefinitionT = CustomActionDefinition>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = CustomActionDefinition>
+    CustomAction& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * <p>The name used to invoke this action in the chat channel. For example,
      * <code>@aws run my-alias</code>.</p>
      */
-    inline const Aws::String& GetAliasName() const{ return m_aliasName; }
+    inline const Aws::String& GetAliasName() const { return m_aliasName; }
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
-    inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
-    inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
-    inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
-    inline CustomAction& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
-    inline CustomAction& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
-    inline CustomAction& WithAliasName(const char* value) { SetAliasName(value); return *this;}
+    template<typename AliasNameT = Aws::String>
+    void SetAliasName(AliasNameT&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::forward<AliasNameT>(value); }
+    template<typename AliasNameT = Aws::String>
+    CustomAction& WithAliasName(AliasNameT&& value) { SetAliasName(std::forward<AliasNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,28 +84,26 @@ namespace Model
      * <p>Defines when this custom action button should be attached to a
      * notification.</p>
      */
-    inline const Aws::Vector<CustomActionAttachment>& GetAttachments() const{ return m_attachments; }
+    inline const Aws::Vector<CustomActionAttachment>& GetAttachments() const { return m_attachments; }
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
-    inline void SetAttachments(const Aws::Vector<CustomActionAttachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
-    inline void SetAttachments(Aws::Vector<CustomActionAttachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
-    inline CustomAction& WithAttachments(const Aws::Vector<CustomActionAttachment>& value) { SetAttachments(value); return *this;}
-    inline CustomAction& WithAttachments(Aws::Vector<CustomActionAttachment>&& value) { SetAttachments(std::move(value)); return *this;}
-    inline CustomAction& AddAttachments(const CustomActionAttachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
-    inline CustomAction& AddAttachments(CustomActionAttachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+    template<typename AttachmentsT = Aws::Vector<CustomActionAttachment>>
+    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
+    template<typename AttachmentsT = Aws::Vector<CustomActionAttachment>>
+    CustomAction& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
+    template<typename AttachmentsT = CustomActionAttachment>
+    CustomAction& AddAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments.emplace_back(std::forward<AttachmentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the custom action that is included in the ARN.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline CustomAction& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline CustomAction& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline CustomAction& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    CustomAction& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
   private:
 

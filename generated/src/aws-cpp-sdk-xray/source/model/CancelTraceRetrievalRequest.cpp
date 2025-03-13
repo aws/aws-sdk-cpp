@@ -12,11 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelTraceRetrievalRequest::CancelTraceRetrievalRequest() : 
-    m_retrievalTokenHasBeenSet(false)
-{
-}
-
 Aws::String CancelTraceRetrievalRequest::SerializePayload() const
 {
   JsonValue payload;

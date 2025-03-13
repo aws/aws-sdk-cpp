@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SpotDatafeedSubscription::SpotDatafeedSubscription() : 
-    m_bucketHasBeenSet(false),
-    m_faultHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_state(DatafeedSubscriptionState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 SpotDatafeedSubscription::SpotDatafeedSubscription(const XmlNode& xmlNode)
-  : SpotDatafeedSubscription()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ SpotDatafeedSubscription& SpotDatafeedSubscription::operator =(const XmlNode& xm
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode faultNode = resultNode.FirstChild("fault");
     if(!faultNode.IsNull())
     {
       m_fault = faultNode;
       m_faultHasBeenSet = true;
+       m_faultHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("prefix");
     if(!prefixNode.IsNull())
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = DatafeedSubscriptionStateMapper::GetDatafeedSubscriptionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = DatafeedSubscriptionStateMapper::GetDatafeedSubscriptionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
   }
 

@@ -18,17 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-IPSetForwardedIPConfig::IPSetForwardedIPConfig() : 
-    m_headerNameHasBeenSet(false),
-    m_fallbackBehavior(FallbackBehavior::NOT_SET),
-    m_fallbackBehaviorHasBeenSet(false),
-    m_position(ForwardedIPPosition::NOT_SET),
-    m_positionHasBeenSet(false)
-{
-}
-
 IPSetForwardedIPConfig::IPSetForwardedIPConfig(JsonView jsonValue)
-  : IPSetForwardedIPConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ IPSetForwardedIPConfig& IPSetForwardedIPConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HeaderName"))
   {
     m_headerName = jsonValue.GetString("HeaderName");
-
     m_headerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FallbackBehavior"))
   {
     m_fallbackBehavior = FallbackBehaviorMapper::GetFallbackBehaviorForName(jsonValue.GetString("FallbackBehavior"));
-
     m_fallbackBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     m_position = ForwardedIPPositionMapper::GetForwardedIPPositionForName(jsonValue.GetString("Position"));
-
     m_positionHasBeenSet = true;
   }
-
   return *this;
 }
 

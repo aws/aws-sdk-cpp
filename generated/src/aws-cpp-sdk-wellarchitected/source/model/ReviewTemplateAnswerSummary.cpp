@@ -18,26 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ReviewTemplateAnswerSummary::ReviewTemplateAnswerSummary() : 
-    m_questionIdHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_choicesHasBeenSet(false),
-    m_selectedChoicesHasBeenSet(false),
-    m_choiceAnswerSummariesHasBeenSet(false),
-    m_isApplicable(false),
-    m_isApplicableHasBeenSet(false),
-    m_answerStatus(ReviewTemplateAnswerStatus::NOT_SET),
-    m_answerStatusHasBeenSet(false),
-    m_reason(AnswerReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_questionType(QuestionType::NOT_SET),
-    m_questionTypeHasBeenSet(false)
-{
-}
-
 ReviewTemplateAnswerSummary::ReviewTemplateAnswerSummary(JsonView jsonValue)
-  : ReviewTemplateAnswerSummary()
 {
   *this = jsonValue;
 }
@@ -47,24 +28,18 @@ ReviewTemplateAnswerSummary& ReviewTemplateAnswerSummary::operator =(JsonView js
   if(jsonValue.ValueExists("QuestionId"))
   {
     m_questionId = jsonValue.GetString("QuestionId");
-
     m_questionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PillarId"))
   {
     m_pillarId = jsonValue.GetString("PillarId");
-
     m_pillarIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionTitle"))
   {
     m_questionTitle = jsonValue.GetString("QuestionTitle");
-
     m_questionTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Choices"))
   {
     Aws::Utils::Array<JsonView> choicesJsonList = jsonValue.GetArray("Choices");
@@ -74,7 +49,6 @@ ReviewTemplateAnswerSummary& ReviewTemplateAnswerSummary::operator =(JsonView js
     }
     m_choicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectedChoices"))
   {
     Aws::Utils::Array<JsonView> selectedChoicesJsonList = jsonValue.GetArray("SelectedChoices");
@@ -84,7 +58,6 @@ ReviewTemplateAnswerSummary& ReviewTemplateAnswerSummary::operator =(JsonView js
     }
     m_selectedChoicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChoiceAnswerSummaries"))
   {
     Aws::Utils::Array<JsonView> choiceAnswerSummariesJsonList = jsonValue.GetArray("ChoiceAnswerSummaries");
@@ -94,35 +67,26 @@ ReviewTemplateAnswerSummary& ReviewTemplateAnswerSummary::operator =(JsonView js
     }
     m_choiceAnswerSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsApplicable"))
   {
     m_isApplicable = jsonValue.GetBool("IsApplicable");
-
     m_isApplicableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnswerStatus"))
   {
     m_answerStatus = ReviewTemplateAnswerStatusMapper::GetReviewTemplateAnswerStatusForName(jsonValue.GetString("AnswerStatus"));
-
     m_answerStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = AnswerReasonMapper::GetAnswerReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionType"))
   {
     m_questionType = QuestionTypeMapper::GetQuestionTypeForName(jsonValue.GetString("QuestionType"));
-
     m_questionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

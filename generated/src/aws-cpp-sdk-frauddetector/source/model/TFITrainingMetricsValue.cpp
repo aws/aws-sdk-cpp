@@ -18,14 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-TFITrainingMetricsValue::TFITrainingMetricsValue() : 
-    m_metricDataPointsHasBeenSet(false),
-    m_modelPerformanceHasBeenSet(false)
-{
-}
-
 TFITrainingMetricsValue::TFITrainingMetricsValue(JsonView jsonValue)
-  : TFITrainingMetricsValue()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ TFITrainingMetricsValue& TFITrainingMetricsValue::operator =(JsonView jsonValue)
     }
     m_metricDataPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelPerformance"))
   {
     m_modelPerformance = jsonValue.GetObject("modelPerformance");
-
     m_modelPerformanceHasBeenSet = true;
   }
-
   return *this;
 }
 

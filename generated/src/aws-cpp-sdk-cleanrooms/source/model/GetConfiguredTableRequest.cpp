@@ -12,11 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConfiguredTableRequest::GetConfiguredTableRequest() : 
-    m_configuredTableIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetConfiguredTableRequest::SerializePayload() const
 {
   return {};

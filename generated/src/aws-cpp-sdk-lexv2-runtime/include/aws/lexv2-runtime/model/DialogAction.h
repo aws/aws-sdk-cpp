@@ -34,7 +34,7 @@ namespace Model
   class DialogAction
   {
   public:
-    AWS_LEXRUNTIMEV2_API DialogAction();
+    AWS_LEXRUNTIMEV2_API DialogAction() = default;
     AWS_LEXRUNTIMEV2_API DialogAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API DialogAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,26 +54,22 @@ namespace Model
      * <code>ElicitSlot</code> – The next action is to elicit a slot value from the
      * user.</p> </li> </ul>
      */
-    inline const DialogActionType& GetType() const{ return m_type; }
+    inline DialogActionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DialogActionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DialogActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DialogAction& WithType(const DialogActionType& value) { SetType(value); return *this;}
-    inline DialogAction& WithType(DialogActionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DialogActionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DialogAction& WithType(DialogActionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the slot that should be elicited from the user.</p>
      */
-    inline const Aws::String& GetSlotToElicit() const{ return m_slotToElicit; }
+    inline const Aws::String& GetSlotToElicit() const { return m_slotToElicit; }
     inline bool SlotToElicitHasBeenSet() const { return m_slotToElicitHasBeenSet; }
-    inline void SetSlotToElicit(const Aws::String& value) { m_slotToElicitHasBeenSet = true; m_slotToElicit = value; }
-    inline void SetSlotToElicit(Aws::String&& value) { m_slotToElicitHasBeenSet = true; m_slotToElicit = std::move(value); }
-    inline void SetSlotToElicit(const char* value) { m_slotToElicitHasBeenSet = true; m_slotToElicit.assign(value); }
-    inline DialogAction& WithSlotToElicit(const Aws::String& value) { SetSlotToElicit(value); return *this;}
-    inline DialogAction& WithSlotToElicit(Aws::String&& value) { SetSlotToElicit(std::move(value)); return *this;}
-    inline DialogAction& WithSlotToElicit(const char* value) { SetSlotToElicit(value); return *this;}
+    template<typename SlotToElicitT = Aws::String>
+    void SetSlotToElicit(SlotToElicitT&& value) { m_slotToElicitHasBeenSet = true; m_slotToElicit = std::forward<SlotToElicitT>(value); }
+    template<typename SlotToElicitT = Aws::String>
+    DialogAction& WithSlotToElicit(SlotToElicitT&& value) { SetSlotToElicit(std::forward<SlotToElicitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using
      * spelling to enter slot values </a>.</p>
      */
-    inline const StyleType& GetSlotElicitationStyle() const{ return m_slotElicitationStyle; }
+    inline StyleType GetSlotElicitationStyle() const { return m_slotElicitationStyle; }
     inline bool SlotElicitationStyleHasBeenSet() const { return m_slotElicitationStyleHasBeenSet; }
-    inline void SetSlotElicitationStyle(const StyleType& value) { m_slotElicitationStyleHasBeenSet = true; m_slotElicitationStyle = value; }
-    inline void SetSlotElicitationStyle(StyleType&& value) { m_slotElicitationStyleHasBeenSet = true; m_slotElicitationStyle = std::move(value); }
-    inline DialogAction& WithSlotElicitationStyle(const StyleType& value) { SetSlotElicitationStyle(value); return *this;}
-    inline DialogAction& WithSlotElicitationStyle(StyleType&& value) { SetSlotElicitationStyle(std::move(value)); return *this;}
+    inline void SetSlotElicitationStyle(StyleType value) { m_slotElicitationStyleHasBeenSet = true; m_slotElicitationStyle = value; }
+    inline DialogAction& WithSlotElicitationStyle(StyleType value) { SetSlotElicitationStyle(value); return *this;}
     ///@}
 
     ///@{
@@ -99,22 +93,22 @@ namespace Model
      * <p>The name of the constituent sub slot of the composite slot specified in
      * slotToElicit that should be elicited from the user.</p>
      */
-    inline const ElicitSubSlot& GetSubSlotToElicit() const{ return m_subSlotToElicit; }
+    inline const ElicitSubSlot& GetSubSlotToElicit() const { return m_subSlotToElicit; }
     inline bool SubSlotToElicitHasBeenSet() const { return m_subSlotToElicitHasBeenSet; }
-    inline void SetSubSlotToElicit(const ElicitSubSlot& value) { m_subSlotToElicitHasBeenSet = true; m_subSlotToElicit = value; }
-    inline void SetSubSlotToElicit(ElicitSubSlot&& value) { m_subSlotToElicitHasBeenSet = true; m_subSlotToElicit = std::move(value); }
-    inline DialogAction& WithSubSlotToElicit(const ElicitSubSlot& value) { SetSubSlotToElicit(value); return *this;}
-    inline DialogAction& WithSubSlotToElicit(ElicitSubSlot&& value) { SetSubSlotToElicit(std::move(value)); return *this;}
+    template<typename SubSlotToElicitT = ElicitSubSlot>
+    void SetSubSlotToElicit(SubSlotToElicitT&& value) { m_subSlotToElicitHasBeenSet = true; m_subSlotToElicit = std::forward<SubSlotToElicitT>(value); }
+    template<typename SubSlotToElicitT = ElicitSubSlot>
+    DialogAction& WithSubSlotToElicit(SubSlotToElicitT&& value) { SetSubSlotToElicit(std::forward<SubSlotToElicitT>(value)); return *this;}
     ///@}
   private:
 
-    DialogActionType m_type;
+    DialogActionType m_type{DialogActionType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_slotToElicit;
     bool m_slotToElicitHasBeenSet = false;
 
-    StyleType m_slotElicitationStyle;
+    StyleType m_slotElicitationStyle{StyleType::NOT_SET};
     bool m_slotElicitationStyleHasBeenSet = false;
 
     ElicitSubSlot m_subSlotToElicit;

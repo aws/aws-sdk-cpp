@@ -18,19 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-QualificationRequirement::QualificationRequirement() : 
-    m_qualificationTypeIdHasBeenSet(false),
-    m_comparator(Comparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_integerValuesHasBeenSet(false),
-    m_localeValuesHasBeenSet(false),
-    m_actionsGuarded(HITAccessActions::NOT_SET),
-    m_actionsGuardedHasBeenSet(false)
-{
-}
-
 QualificationRequirement::QualificationRequirement(JsonView jsonValue)
-  : QualificationRequirement()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ QualificationRequirement& QualificationRequirement::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("QualificationTypeId"))
   {
     m_qualificationTypeId = jsonValue.GetString("QualificationTypeId");
-
     m_qualificationTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Comparator"))
   {
     m_comparator = ComparatorMapper::GetComparatorForName(jsonValue.GetString("Comparator"));
-
     m_comparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegerValues"))
   {
     Aws::Utils::Array<JsonView> integerValuesJsonList = jsonValue.GetArray("IntegerValues");
@@ -60,7 +44,6 @@ QualificationRequirement& QualificationRequirement::operator =(JsonView jsonValu
     }
     m_integerValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocaleValues"))
   {
     Aws::Utils::Array<JsonView> localeValuesJsonList = jsonValue.GetArray("LocaleValues");
@@ -70,14 +53,11 @@ QualificationRequirement& QualificationRequirement::operator =(JsonView jsonValu
     }
     m_localeValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionsGuarded"))
   {
     m_actionsGuarded = HITAccessActionsMapper::GetHITAccessActionsForName(jsonValue.GetString("ActionsGuarded"));
-
     m_actionsGuardedHasBeenSet = true;
   }
-
   return *this;
 }
 

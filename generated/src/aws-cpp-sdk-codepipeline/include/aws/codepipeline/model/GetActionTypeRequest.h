@@ -22,7 +22,7 @@ namespace Model
   class GetActionTypeRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API GetActionTypeRequest();
+    AWS_CODEPIPELINE_API GetActionTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,10 @@ namespace Model
      * <p> <code>Invoke</code> </p> </li> <li> <p> <code>Compute</code> </p> </li>
      * </ul>
      */
-    inline const ActionCategory& GetCategory() const{ return m_category; }
+    inline ActionCategory GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(ActionCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline GetActionTypeRequest& WithCategory(const ActionCategory& value) { SetCategory(value); return *this;}
-    inline GetActionTypeRequest& WithCategory(ActionCategory&& value) { SetCategory(std::move(value)); return *this;}
+    inline void SetCategory(ActionCategory value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline GetActionTypeRequest& WithCategory(ActionCategory value) { SetCategory(value); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * model. There are two valid values: <code>AWS</code> and
      * <code>ThirdParty</code>.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline GetActionTypeRequest& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline GetActionTypeRequest& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline GetActionTypeRequest& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    GetActionTypeRequest& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,32 +69,28 @@ namespace Model
      * <p>The provider of the action type being called. The provider name is specified
      * when the action type is created.</p>
      */
-    inline const Aws::String& GetProvider() const{ return m_provider; }
+    inline const Aws::String& GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const Aws::String& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline void SetProvider(const char* value) { m_providerHasBeenSet = true; m_provider.assign(value); }
-    inline GetActionTypeRequest& WithProvider(const Aws::String& value) { SetProvider(value); return *this;}
-    inline GetActionTypeRequest& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
-    inline GetActionTypeRequest& WithProvider(const char* value) { SetProvider(value); return *this;}
+    template<typename ProviderT = Aws::String>
+    void SetProvider(ProviderT&& value) { m_providerHasBeenSet = true; m_provider = std::forward<ProviderT>(value); }
+    template<typename ProviderT = Aws::String>
+    GetActionTypeRequest& WithProvider(ProviderT&& value) { SetProvider(std::forward<ProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string that describes the action type version.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline GetActionTypeRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline GetActionTypeRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline GetActionTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    GetActionTypeRequest& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 
-    ActionCategory m_category;
+    ActionCategory m_category{ActionCategory::NOT_SET};
     bool m_categoryHasBeenSet = false;
 
     Aws::String m_owner;

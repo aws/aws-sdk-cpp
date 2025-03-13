@@ -18,16 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Indicator::Indicator() : 
-    m_key(IndicatorType::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 Indicator::Indicator(JsonView jsonValue)
-  : Indicator()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Indicator& Indicator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = IndicatorTypeMapper::GetIndicatorTypeForName(jsonValue.GetString("key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -50,14 +39,11 @@ Indicator& Indicator::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ConverseStreamMetrics::ConverseStreamMetrics() : 
-    m_latencyMs(0),
-    m_latencyMsHasBeenSet(false)
-{
-}
-
 ConverseStreamMetrics::ConverseStreamMetrics(JsonView jsonValue)
-  : ConverseStreamMetrics()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ConverseStreamMetrics& ConverseStreamMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("latencyMs"))
   {
     m_latencyMs = jsonValue.GetInt64("latencyMs");
-
     m_latencyMsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,21 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-HealthCheck::HealthCheck() : 
-    m_targetHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_unhealthyThreshold(0),
-    m_unhealthyThresholdHasBeenSet(false),
-    m_healthyThreshold(0),
-    m_healthyThresholdHasBeenSet(false)
-{
-}
-
 HealthCheck::HealthCheck(const XmlNode& xmlNode)
-  : HealthCheck()
 {
   *this = xmlNode;
 }
@@ -50,30 +36,35 @@ HealthCheck& HealthCheck::operator =(const XmlNode& xmlNode)
     {
       m_target = Aws::Utils::Xml::DecodeEscapedXmlText(targetNode.GetText());
       m_targetHasBeenSet = true;
+       m_targetHasBeenSet = true;
     }
     XmlNode intervalNode = resultNode.FirstChild("Interval");
     if(!intervalNode.IsNull())
     {
       m_interval = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(intervalNode.GetText()).c_str()).c_str());
       m_intervalHasBeenSet = true;
+       m_intervalHasBeenSet = true;
     }
     XmlNode timeoutNode = resultNode.FirstChild("Timeout");
     if(!timeoutNode.IsNull())
     {
       m_timeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeoutNode.GetText()).c_str()).c_str());
       m_timeoutHasBeenSet = true;
+       m_timeoutHasBeenSet = true;
     }
     XmlNode unhealthyThresholdNode = resultNode.FirstChild("UnhealthyThreshold");
     if(!unhealthyThresholdNode.IsNull())
     {
       m_unhealthyThreshold = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unhealthyThresholdNode.GetText()).c_str()).c_str());
       m_unhealthyThresholdHasBeenSet = true;
+       m_unhealthyThresholdHasBeenSet = true;
     }
     XmlNode healthyThresholdNode = resultNode.FirstChild("HealthyThreshold");
     if(!healthyThresholdNode.IsNull())
     {
       m_healthyThreshold = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthyThresholdNode.GetText()).c_str()).c_str());
       m_healthyThresholdHasBeenSet = true;
+       m_healthyThresholdHasBeenSet = true;
     }
   }
 

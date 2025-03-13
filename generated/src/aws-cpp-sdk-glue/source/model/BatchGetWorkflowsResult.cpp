@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetWorkflowsResult::BatchGetWorkflowsResult()
-{
-}
-
 BatchGetWorkflowsResult::BatchGetWorkflowsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetWorkflowsResult& BatchGetWorkflowsResult::operator =(const Aws::AmazonWe
     {
       m_workflows.push_back(workflowsJsonList[workflowsIndex].AsObject());
     }
+    m_workflowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MissingWorkflows"))
   {
     Aws::Utils::Array<JsonView> missingWorkflowsJsonList = jsonValue.GetArray("MissingWorkflows");
@@ -45,14 +41,15 @@ BatchGetWorkflowsResult& BatchGetWorkflowsResult::operator =(const Aws::AmazonWe
     {
       m_missingWorkflows.push_back(missingWorkflowsJsonList[missingWorkflowsIndex].AsString());
     }
+    m_missingWorkflowsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

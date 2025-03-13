@@ -32,7 +32,7 @@ namespace Model
   class MultiplexProgramServiceDescriptor
   {
   public:
-    AWS_MEDIALIVE_API MultiplexProgramServiceDescriptor();
+    AWS_MEDIALIVE_API MultiplexProgramServiceDescriptor() = default;
     AWS_MEDIALIVE_API MultiplexProgramServiceDescriptor(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MultiplexProgramServiceDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * Name of the provider.
      */
-    inline const Aws::String& GetProviderName() const{ return m_providerName; }
+    inline const Aws::String& GetProviderName() const { return m_providerName; }
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
-    inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
-    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
-    inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
-    inline MultiplexProgramServiceDescriptor& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
-    inline MultiplexProgramServiceDescriptor& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
-    inline MultiplexProgramServiceDescriptor& WithProviderName(const char* value) { SetProviderName(value); return *this;}
+    template<typename ProviderNameT = Aws::String>
+    void SetProviderName(ProviderNameT&& value) { m_providerNameHasBeenSet = true; m_providerName = std::forward<ProviderNameT>(value); }
+    template<typename ProviderNameT = Aws::String>
+    MultiplexProgramServiceDescriptor& WithProviderName(ProviderNameT&& value) { SetProviderName(std::forward<ProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Name of the service.
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline MultiplexProgramServiceDescriptor& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline MultiplexProgramServiceDescriptor& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline MultiplexProgramServiceDescriptor& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    MultiplexProgramServiceDescriptor& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
   private:
 

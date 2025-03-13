@@ -28,7 +28,7 @@ namespace Model
   class StartChatContactRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API StartChatContactRequest();
+    AWS_CONNECT_API StartChatContactRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline StartChatContactRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline StartChatContactRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline StartChatContactRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    StartChatContactRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
-    inline const Aws::String& GetContactFlowId() const{ return m_contactFlowId; }
+    inline const Aws::String& GetContactFlowId() const { return m_contactFlowId; }
     inline bool ContactFlowIdHasBeenSet() const { return m_contactFlowIdHasBeenSet; }
-    inline void SetContactFlowId(const Aws::String& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = value; }
-    inline void SetContactFlowId(Aws::String&& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = std::move(value); }
-    inline void SetContactFlowId(const char* value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId.assign(value); }
-    inline StartChatContactRequest& WithContactFlowId(const Aws::String& value) { SetContactFlowId(value); return *this;}
-    inline StartChatContactRequest& WithContactFlowId(Aws::String&& value) { SetContactFlowId(std::move(value)); return *this;}
-    inline StartChatContactRequest& WithContactFlowId(const char* value) { SetContactFlowId(value); return *this;}
+    template<typename ContactFlowIdT = Aws::String>
+    void SetContactFlowId(ContactFlowIdT&& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = std::forward<ContactFlowIdT>(value); }
+    template<typename ContactFlowIdT = Aws::String>
+    StartChatContactRequest& WithContactFlowId(ContactFlowIdT&& value) { SetContactFlowId(std::forward<ContactFlowIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,31 +79,28 @@ namespace Model
      * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
      * and underscore characters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline StartChatContactRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline StartChatContactRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline StartChatContactRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline StartChatContactRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline StartChatContactRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline StartChatContactRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartChatContactRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline StartChatContactRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline StartChatContactRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    StartChatContactRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    StartChatContactRequest& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Information identifying the participant.</p>
      */
-    inline const ParticipantDetails& GetParticipantDetails() const{ return m_participantDetails; }
+    inline const ParticipantDetails& GetParticipantDetails() const { return m_participantDetails; }
     inline bool ParticipantDetailsHasBeenSet() const { return m_participantDetailsHasBeenSet; }
-    inline void SetParticipantDetails(const ParticipantDetails& value) { m_participantDetailsHasBeenSet = true; m_participantDetails = value; }
-    inline void SetParticipantDetails(ParticipantDetails&& value) { m_participantDetailsHasBeenSet = true; m_participantDetails = std::move(value); }
-    inline StartChatContactRequest& WithParticipantDetails(const ParticipantDetails& value) { SetParticipantDetails(value); return *this;}
-    inline StartChatContactRequest& WithParticipantDetails(ParticipantDetails&& value) { SetParticipantDetails(std::move(value)); return *this;}
+    template<typename ParticipantDetailsT = ParticipantDetails>
+    void SetParticipantDetails(ParticipantDetailsT&& value) { m_participantDetailsHasBeenSet = true; m_participantDetails = std::forward<ParticipantDetailsT>(value); }
+    template<typename ParticipantDetailsT = ParticipantDetails>
+    StartChatContactRequest& WithParticipantDetails(ParticipantDetailsT&& value) { SetParticipantDetails(std::forward<ParticipantDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +108,12 @@ namespace Model
      * <p>The initial message to be sent to the newly created chat. If you have a Lex
      * bot in your flow, the initial message is not delivered to the Lex bot.</p>
      */
-    inline const ChatMessage& GetInitialMessage() const{ return m_initialMessage; }
+    inline const ChatMessage& GetInitialMessage() const { return m_initialMessage; }
     inline bool InitialMessageHasBeenSet() const { return m_initialMessageHasBeenSet; }
-    inline void SetInitialMessage(const ChatMessage& value) { m_initialMessageHasBeenSet = true; m_initialMessage = value; }
-    inline void SetInitialMessage(ChatMessage&& value) { m_initialMessageHasBeenSet = true; m_initialMessage = std::move(value); }
-    inline StartChatContactRequest& WithInitialMessage(const ChatMessage& value) { SetInitialMessage(value); return *this;}
-    inline StartChatContactRequest& WithInitialMessage(ChatMessage&& value) { SetInitialMessage(std::move(value)); return *this;}
+    template<typename InitialMessageT = ChatMessage>
+    void SetInitialMessage(InitialMessageT&& value) { m_initialMessageHasBeenSet = true; m_initialMessage = std::forward<InitialMessageT>(value); }
+    template<typename InitialMessageT = ChatMessage>
+    StartChatContactRequest& WithInitialMessage(InitialMessageT&& value) { SetInitialMessage(std::forward<InitialMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,14 +124,12 @@ namespace Model
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartChatContactRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartChatContactRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartChatContactRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartChatContactRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,7 +138,7 @@ namespace Model
      * chat session duration defaults to 25 hour. The minimum configurable time is 60
      * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
      */
-    inline int GetChatDurationInMinutes() const{ return m_chatDurationInMinutes; }
+    inline int GetChatDurationInMinutes() const { return m_chatDurationInMinutes; }
     inline bool ChatDurationInMinutesHasBeenSet() const { return m_chatDurationInMinutesHasBeenSet; }
     inline void SetChatDurationInMinutes(int value) { m_chatDurationInMinutesHasBeenSet = true; m_chatDurationInMinutes = value; }
     inline StartChatContactRequest& WithChatDurationInMinutes(int value) { SetChatDurationInMinutes(value); return *this;}
@@ -172,15 +163,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show
      * view</a> flow block.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedMessagingContentTypes() const{ return m_supportedMessagingContentTypes; }
+    inline const Aws::Vector<Aws::String>& GetSupportedMessagingContentTypes() const { return m_supportedMessagingContentTypes; }
     inline bool SupportedMessagingContentTypesHasBeenSet() const { return m_supportedMessagingContentTypesHasBeenSet; }
-    inline void SetSupportedMessagingContentTypes(const Aws::Vector<Aws::String>& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes = value; }
-    inline void SetSupportedMessagingContentTypes(Aws::Vector<Aws::String>&& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes = std::move(value); }
-    inline StartChatContactRequest& WithSupportedMessagingContentTypes(const Aws::Vector<Aws::String>& value) { SetSupportedMessagingContentTypes(value); return *this;}
-    inline StartChatContactRequest& WithSupportedMessagingContentTypes(Aws::Vector<Aws::String>&& value) { SetSupportedMessagingContentTypes(std::move(value)); return *this;}
-    inline StartChatContactRequest& AddSupportedMessagingContentTypes(const Aws::String& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(value); return *this; }
-    inline StartChatContactRequest& AddSupportedMessagingContentTypes(Aws::String&& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(std::move(value)); return *this; }
-    inline StartChatContactRequest& AddSupportedMessagingContentTypes(const char* value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(value); return *this; }
+    template<typename SupportedMessagingContentTypesT = Aws::Vector<Aws::String>>
+    void SetSupportedMessagingContentTypes(SupportedMessagingContentTypesT&& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes = std::forward<SupportedMessagingContentTypesT>(value); }
+    template<typename SupportedMessagingContentTypesT = Aws::Vector<Aws::String>>
+    StartChatContactRequest& WithSupportedMessagingContentTypes(SupportedMessagingContentTypesT&& value) { SetSupportedMessagingContentTypes(std::forward<SupportedMessagingContentTypesT>(value)); return *this;}
+    template<typename SupportedMessagingContentTypesT = Aws::String>
+    StartChatContactRequest& AddSupportedMessagingContentTypes(SupportedMessagingContentTypesT&& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.emplace_back(std::forward<SupportedMessagingContentTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -190,12 +180,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
      * persistent chat</a>.</p>
      */
-    inline const PersistentChat& GetPersistentChat() const{ return m_persistentChat; }
+    inline const PersistentChat& GetPersistentChat() const { return m_persistentChat; }
     inline bool PersistentChatHasBeenSet() const { return m_persistentChatHasBeenSet; }
-    inline void SetPersistentChat(const PersistentChat& value) { m_persistentChatHasBeenSet = true; m_persistentChat = value; }
-    inline void SetPersistentChat(PersistentChat&& value) { m_persistentChatHasBeenSet = true; m_persistentChat = std::move(value); }
-    inline StartChatContactRequest& WithPersistentChat(const PersistentChat& value) { SetPersistentChat(value); return *this;}
-    inline StartChatContactRequest& WithPersistentChat(PersistentChat&& value) { SetPersistentChat(std::move(value)); return *this;}
+    template<typename PersistentChatT = PersistentChat>
+    void SetPersistentChat(PersistentChatT&& value) { m_persistentChatHasBeenSet = true; m_persistentChat = std::forward<PersistentChatT>(value); }
+    template<typename PersistentChatT = PersistentChat>
+    StartChatContactRequest& WithPersistentChat(PersistentChatT&& value) { SetPersistentChat(std::forward<PersistentChatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -204,14 +194,12 @@ namespace Model
      * related to the chat starting.</p>  <p>You cannot provide data for both
      * RelatedContactId and PersistentChat. </p> 
      */
-    inline const Aws::String& GetRelatedContactId() const{ return m_relatedContactId; }
+    inline const Aws::String& GetRelatedContactId() const { return m_relatedContactId; }
     inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
-    inline void SetRelatedContactId(const Aws::String& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = value; }
-    inline void SetRelatedContactId(Aws::String&& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = std::move(value); }
-    inline void SetRelatedContactId(const char* value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId.assign(value); }
-    inline StartChatContactRequest& WithRelatedContactId(const Aws::String& value) { SetRelatedContactId(value); return *this;}
-    inline StartChatContactRequest& WithRelatedContactId(Aws::String&& value) { SetRelatedContactId(std::move(value)); return *this;}
-    inline StartChatContactRequest& WithRelatedContactId(const char* value) { SetRelatedContactId(value); return *this;}
+    template<typename RelatedContactIdT = Aws::String>
+    void SetRelatedContactId(RelatedContactIdT&& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = std::forward<RelatedContactIdT>(value); }
+    template<typename RelatedContactIdT = Aws::String>
+    StartChatContactRequest& WithRelatedContactId(RelatedContactIdT&& value) { SetRelatedContactId(std::forward<RelatedContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -227,18 +215,16 @@ namespace Model
      * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
      * : "connect:Guide" }}</code>.</p> 
      */
-    inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const{ return m_segmentAttributes; }
+    inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const { return m_segmentAttributes; }
     inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }
-    inline void SetSegmentAttributes(const Aws::Map<Aws::String, SegmentAttributeValue>& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = value; }
-    inline void SetSegmentAttributes(Aws::Map<Aws::String, SegmentAttributeValue>&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = std::move(value); }
-    inline StartChatContactRequest& WithSegmentAttributes(const Aws::Map<Aws::String, SegmentAttributeValue>& value) { SetSegmentAttributes(value); return *this;}
-    inline StartChatContactRequest& WithSegmentAttributes(Aws::Map<Aws::String, SegmentAttributeValue>&& value) { SetSegmentAttributes(std::move(value)); return *this;}
-    inline StartChatContactRequest& AddSegmentAttributes(const Aws::String& key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
-    inline StartChatContactRequest& AddSegmentAttributes(Aws::String&& key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), value); return *this; }
-    inline StartChatContactRequest& AddSegmentAttributes(const Aws::String& key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
-    inline StartChatContactRequest& AddSegmentAttributes(Aws::String&& key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartChatContactRequest& AddSegmentAttributes(const char* key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
-    inline StartChatContactRequest& AddSegmentAttributes(const char* key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
+    template<typename SegmentAttributesT = Aws::Map<Aws::String, SegmentAttributeValue>>
+    void SetSegmentAttributes(SegmentAttributesT&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = std::forward<SegmentAttributesT>(value); }
+    template<typename SegmentAttributesT = Aws::Map<Aws::String, SegmentAttributeValue>>
+    StartChatContactRequest& WithSegmentAttributes(SegmentAttributesT&& value) { SetSegmentAttributes(std::forward<SegmentAttributesT>(value)); return *this;}
+    template<typename SegmentAttributesKeyT = Aws::String, typename SegmentAttributesValueT = SegmentAttributeValue>
+    StartChatContactRequest& AddSegmentAttributes(SegmentAttributesKeyT&& key, SegmentAttributesValueT&& value) {
+      m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::forward<SegmentAttributesKeyT>(key), std::forward<SegmentAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -246,14 +232,12 @@ namespace Model
      * <p>The customer's identification number. For example, the
      * <code>CustomerId</code> may be a customer number from your CRM.</p>
      */
-    inline const Aws::String& GetCustomerId() const{ return m_customerId; }
+    inline const Aws::String& GetCustomerId() const { return m_customerId; }
     inline bool CustomerIdHasBeenSet() const { return m_customerIdHasBeenSet; }
-    inline void SetCustomerId(const Aws::String& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
-    inline void SetCustomerId(Aws::String&& value) { m_customerIdHasBeenSet = true; m_customerId = std::move(value); }
-    inline void SetCustomerId(const char* value) { m_customerIdHasBeenSet = true; m_customerId.assign(value); }
-    inline StartChatContactRequest& WithCustomerId(const Aws::String& value) { SetCustomerId(value); return *this;}
-    inline StartChatContactRequest& WithCustomerId(Aws::String&& value) { SetCustomerId(std::move(value)); return *this;}
-    inline StartChatContactRequest& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
+    template<typename CustomerIdT = Aws::String>
+    void SetCustomerId(CustomerIdT&& value) { m_customerIdHasBeenSet = true; m_customerId = std::forward<CustomerIdT>(value); }
+    template<typename CustomerIdT = Aws::String>
+    StartChatContactRequest& WithCustomerId(CustomerIdT&& value) { SetCustomerId(std::forward<CustomerIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -275,7 +259,7 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    int m_chatDurationInMinutes;
+    int m_chatDurationInMinutes{0};
     bool m_chatDurationInMinutesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedMessagingContentTypes;

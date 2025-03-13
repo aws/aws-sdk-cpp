@@ -18,15 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-SignInOptions::SignInOptions() : 
-    m_applicationUrlHasBeenSet(false),
-    m_origin(SignInOrigin::NOT_SET),
-    m_originHasBeenSet(false)
-{
-}
-
 SignInOptions::SignInOptions(JsonView jsonValue)
-  : SignInOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SignInOptions& SignInOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationUrl"))
   {
     m_applicationUrl = jsonValue.GetString("ApplicationUrl");
-
     m_applicationUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Origin"))
   {
     m_origin = SignInOriginMapper::GetSignInOriginForName(jsonValue.GetString("Origin"));
-
     m_originHasBeenSet = true;
   }
-
   return *this;
 }
 

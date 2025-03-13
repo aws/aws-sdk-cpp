@@ -26,7 +26,7 @@ namespace Model
   class UpdateCloudFrontOriginAccessIdentity2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API UpdateCloudFrontOriginAccessIdentity2020_05_31Request();
+    AWS_CLOUDFRONT_API UpdateCloudFrontOriginAccessIdentity2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The identity's configuration information.</p>
      */
-    inline const CloudFrontOriginAccessIdentityConfig& GetCloudFrontOriginAccessIdentityConfig() const{ return m_cloudFrontOriginAccessIdentityConfig; }
+    inline const CloudFrontOriginAccessIdentityConfig& GetCloudFrontOriginAccessIdentityConfig() const { return m_cloudFrontOriginAccessIdentityConfig; }
     inline bool CloudFrontOriginAccessIdentityConfigHasBeenSet() const { return m_cloudFrontOriginAccessIdentityConfigHasBeenSet; }
-    inline void SetCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = value; }
-    inline void SetCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = std::move(value); }
-    inline UpdateCloudFrontOriginAccessIdentity2020_05_31Request& WithCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { SetCloudFrontOriginAccessIdentityConfig(value); return *this;}
-    inline UpdateCloudFrontOriginAccessIdentity2020_05_31Request& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(std::move(value)); return *this;}
+    template<typename CloudFrontOriginAccessIdentityConfigT = CloudFrontOriginAccessIdentityConfig>
+    void SetCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfigT&& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = std::forward<CloudFrontOriginAccessIdentityConfigT>(value); }
+    template<typename CloudFrontOriginAccessIdentityConfigT = CloudFrontOriginAccessIdentityConfig>
+    UpdateCloudFrontOriginAccessIdentity2020_05_31Request& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfigT&& value) { SetCloudFrontOriginAccessIdentityConfig(std::forward<CloudFrontOriginAccessIdentityConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identity's id.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateCloudFrontOriginAccessIdentity2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateCloudFrontOriginAccessIdentity2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateCloudFrontOriginAccessIdentity2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateCloudFrontOriginAccessIdentity2020_05_31Request& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * <p>The value of the <code>ETag</code> header that you received when retrieving
      * the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
-    inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+    inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
-    inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
-    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
-    inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
-    inline UpdateCloudFrontOriginAccessIdentity2020_05_31Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
-    inline UpdateCloudFrontOriginAccessIdentity2020_05_31Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
-    inline UpdateCloudFrontOriginAccessIdentity2020_05_31Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
+    template<typename IfMatchT = Aws::String>
+    void SetIfMatch(IfMatchT&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::forward<IfMatchT>(value); }
+    template<typename IfMatchT = Aws::String>
+    UpdateCloudFrontOriginAccessIdentity2020_05_31Request& WithIfMatch(IfMatchT&& value) { SetIfMatch(std::forward<IfMatchT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,25 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-Order::Order() : 
-    m_outpostIdHasBeenSet(false),
-    m_orderIdHasBeenSet(false),
-    m_status(OrderStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lineItemsHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_orderSubmissionDateHasBeenSet(false),
-    m_orderFulfilledDateHasBeenSet(false),
-    m_paymentTerm(PaymentTerm::NOT_SET),
-    m_paymentTermHasBeenSet(false),
-    m_orderType(OrderType::NOT_SET),
-    m_orderTypeHasBeenSet(false)
-{
-}
-
 Order::Order(JsonView jsonValue)
-  : Order()
 {
   *this = jsonValue;
 }
@@ -46,24 +28,18 @@ Order& Order::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OutpostId"))
   {
     m_outpostId = jsonValue.GetString("OutpostId");
-
     m_outpostIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderId"))
   {
     m_orderId = jsonValue.GetString("OrderId");
-
     m_orderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OrderStatusMapper::GetOrderStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineItems"))
   {
     Aws::Utils::Array<JsonView> lineItemsJsonList = jsonValue.GetArray("LineItems");
@@ -73,42 +49,31 @@ Order& Order::operator =(JsonView jsonValue)
     }
     m_lineItemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaymentOption"))
   {
     m_paymentOption = PaymentOptionMapper::GetPaymentOptionForName(jsonValue.GetString("PaymentOption"));
-
     m_paymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderSubmissionDate"))
   {
     m_orderSubmissionDate = jsonValue.GetDouble("OrderSubmissionDate");
-
     m_orderSubmissionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderFulfilledDate"))
   {
     m_orderFulfilledDate = jsonValue.GetDouble("OrderFulfilledDate");
-
     m_orderFulfilledDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaymentTerm"))
   {
     m_paymentTerm = PaymentTermMapper::GetPaymentTermForName(jsonValue.GetString("PaymentTerm"));
-
     m_paymentTermHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderType"))
   {
     m_orderType = OrderTypeMapper::GetOrderTypeForName(jsonValue.GetString("OrderType"));
-
     m_orderTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,10 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSnowballUsageRequest::GetSnowballUsageRequest()
-{
-}
-
 Aws::String GetSnowballUsageRequest::SerializePayload() const
 {
   return "{}";

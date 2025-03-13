@@ -25,7 +25,7 @@ namespace Model
   class UpdateDatasetRequest : public GlueDataBrewRequest
   {
   public:
-    AWS_GLUEDATABREW_API UpdateDatasetRequest();
+    AWS_GLUEDATABREW_API UpdateDatasetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the dataset to be updated.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateDatasetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateDatasetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateDatasetRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateDatasetRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +53,30 @@ namespace Model
      * <p>The file format of a dataset that is created from an Amazon S3 file or
      * folder.</p>
      */
-    inline const InputFormat& GetFormat() const{ return m_format; }
+    inline InputFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const InputFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(InputFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline UpdateDatasetRequest& WithFormat(const InputFormat& value) { SetFormat(value); return *this;}
-    inline UpdateDatasetRequest& WithFormat(InputFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(InputFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline UpdateDatasetRequest& WithFormat(InputFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const FormatOptions& GetFormatOptions() const{ return m_formatOptions; }
+    inline const FormatOptions& GetFormatOptions() const { return m_formatOptions; }
     inline bool FormatOptionsHasBeenSet() const { return m_formatOptionsHasBeenSet; }
-    inline void SetFormatOptions(const FormatOptions& value) { m_formatOptionsHasBeenSet = true; m_formatOptions = value; }
-    inline void SetFormatOptions(FormatOptions&& value) { m_formatOptionsHasBeenSet = true; m_formatOptions = std::move(value); }
-    inline UpdateDatasetRequest& WithFormatOptions(const FormatOptions& value) { SetFormatOptions(value); return *this;}
-    inline UpdateDatasetRequest& WithFormatOptions(FormatOptions&& value) { SetFormatOptions(std::move(value)); return *this;}
+    template<typename FormatOptionsT = FormatOptions>
+    void SetFormatOptions(FormatOptionsT&& value) { m_formatOptionsHasBeenSet = true; m_formatOptions = std::forward<FormatOptionsT>(value); }
+    template<typename FormatOptionsT = FormatOptions>
+    UpdateDatasetRequest& WithFormatOptions(FormatOptionsT&& value) { SetFormatOptions(std::forward<FormatOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Input& GetInput() const{ return m_input; }
+    inline const Input& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const Input& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(Input&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline UpdateDatasetRequest& WithInput(const Input& value) { SetInput(value); return *this;}
-    inline UpdateDatasetRequest& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
+    template<typename InputT = Input>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Input>
+    UpdateDatasetRequest& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,19 +84,19 @@ namespace Model
      * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
      * the dataset.</p>
      */
-    inline const PathOptions& GetPathOptions() const{ return m_pathOptions; }
+    inline const PathOptions& GetPathOptions() const { return m_pathOptions; }
     inline bool PathOptionsHasBeenSet() const { return m_pathOptionsHasBeenSet; }
-    inline void SetPathOptions(const PathOptions& value) { m_pathOptionsHasBeenSet = true; m_pathOptions = value; }
-    inline void SetPathOptions(PathOptions&& value) { m_pathOptionsHasBeenSet = true; m_pathOptions = std::move(value); }
-    inline UpdateDatasetRequest& WithPathOptions(const PathOptions& value) { SetPathOptions(value); return *this;}
-    inline UpdateDatasetRequest& WithPathOptions(PathOptions&& value) { SetPathOptions(std::move(value)); return *this;}
+    template<typename PathOptionsT = PathOptions>
+    void SetPathOptions(PathOptionsT&& value) { m_pathOptionsHasBeenSet = true; m_pathOptions = std::forward<PathOptionsT>(value); }
+    template<typename PathOptionsT = PathOptions>
+    UpdateDatasetRequest& WithPathOptions(PathOptionsT&& value) { SetPathOptions(std::forward<PathOptionsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    InputFormat m_format;
+    InputFormat m_format{InputFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     FormatOptions m_formatOptions;

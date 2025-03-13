@@ -47,7 +47,7 @@ namespace Model
   class JA3Fingerprint
   {
   public:
-    AWS_WAFV2_API JA3Fingerprint();
+    AWS_WAFV2_API JA3Fingerprint() = default;
     AWS_WAFV2_API JA3Fingerprint(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API JA3Fingerprint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,16 +62,14 @@ namespace Model
      * <code>NO_MATCH</code> - Treat the web request as not matching the rule
      * statement.</p> </li> </ul>
      */
-    inline const FallbackBehavior& GetFallbackBehavior() const{ return m_fallbackBehavior; }
+    inline FallbackBehavior GetFallbackBehavior() const { return m_fallbackBehavior; }
     inline bool FallbackBehaviorHasBeenSet() const { return m_fallbackBehaviorHasBeenSet; }
-    inline void SetFallbackBehavior(const FallbackBehavior& value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = value; }
-    inline void SetFallbackBehavior(FallbackBehavior&& value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = std::move(value); }
-    inline JA3Fingerprint& WithFallbackBehavior(const FallbackBehavior& value) { SetFallbackBehavior(value); return *this;}
-    inline JA3Fingerprint& WithFallbackBehavior(FallbackBehavior&& value) { SetFallbackBehavior(std::move(value)); return *this;}
+    inline void SetFallbackBehavior(FallbackBehavior value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = value; }
+    inline JA3Fingerprint& WithFallbackBehavior(FallbackBehavior value) { SetFallbackBehavior(value); return *this;}
     ///@}
   private:
 
-    FallbackBehavior m_fallbackBehavior;
+    FallbackBehavior m_fallbackBehavior{FallbackBehavior::NOT_SET};
     bool m_fallbackBehaviorHasBeenSet = false;
   };
 

@@ -30,7 +30,7 @@ namespace Model
   class GetSecurityGroupsForVpcResponse
   {
   public:
-    AWS_EC2_API GetSecurityGroupsForVpcResponse();
+    AWS_EC2_API GetSecurityGroupsForVpcResponse() = default;
     AWS_EC2_API GetSecurityGroupsForVpcResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetSecurityGroupsForVpcResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,43 +40,44 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetSecurityGroupsForVpcResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetSecurityGroupsForVpcResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetSecurityGroupsForVpcResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetSecurityGroupsForVpcResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The security group that can be used by interfaces in the VPC.</p>
      */
-    inline const Aws::Vector<SecurityGroupForVpc>& GetSecurityGroupForVpcs() const{ return m_securityGroupForVpcs; }
-    inline void SetSecurityGroupForVpcs(const Aws::Vector<SecurityGroupForVpc>& value) { m_securityGroupForVpcs = value; }
-    inline void SetSecurityGroupForVpcs(Aws::Vector<SecurityGroupForVpc>&& value) { m_securityGroupForVpcs = std::move(value); }
-    inline GetSecurityGroupsForVpcResponse& WithSecurityGroupForVpcs(const Aws::Vector<SecurityGroupForVpc>& value) { SetSecurityGroupForVpcs(value); return *this;}
-    inline GetSecurityGroupsForVpcResponse& WithSecurityGroupForVpcs(Aws::Vector<SecurityGroupForVpc>&& value) { SetSecurityGroupForVpcs(std::move(value)); return *this;}
-    inline GetSecurityGroupsForVpcResponse& AddSecurityGroupForVpcs(const SecurityGroupForVpc& value) { m_securityGroupForVpcs.push_back(value); return *this; }
-    inline GetSecurityGroupsForVpcResponse& AddSecurityGroupForVpcs(SecurityGroupForVpc&& value) { m_securityGroupForVpcs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SecurityGroupForVpc>& GetSecurityGroupForVpcs() const { return m_securityGroupForVpcs; }
+    template<typename SecurityGroupForVpcsT = Aws::Vector<SecurityGroupForVpc>>
+    void SetSecurityGroupForVpcs(SecurityGroupForVpcsT&& value) { m_securityGroupForVpcsHasBeenSet = true; m_securityGroupForVpcs = std::forward<SecurityGroupForVpcsT>(value); }
+    template<typename SecurityGroupForVpcsT = Aws::Vector<SecurityGroupForVpc>>
+    GetSecurityGroupsForVpcResponse& WithSecurityGroupForVpcs(SecurityGroupForVpcsT&& value) { SetSecurityGroupForVpcs(std::forward<SecurityGroupForVpcsT>(value)); return *this;}
+    template<typename SecurityGroupForVpcsT = SecurityGroupForVpc>
+    GetSecurityGroupsForVpcResponse& AddSecurityGroupForVpcs(SecurityGroupForVpcsT&& value) { m_securityGroupForVpcsHasBeenSet = true; m_securityGroupForVpcs.emplace_back(std::forward<SecurityGroupForVpcsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetSecurityGroupsForVpcResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetSecurityGroupsForVpcResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetSecurityGroupsForVpcResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<SecurityGroupForVpc> m_securityGroupForVpcs;
+    bool m_securityGroupForVpcsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

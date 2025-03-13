@@ -34,7 +34,7 @@ namespace Model
   class TestingData
   {
   public:
-    AWS_REKOGNITION_API TestingData();
+    AWS_REKOGNITION_API TestingData() = default;
     AWS_REKOGNITION_API TestingData(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API TestingData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>The assets used for testing.</p>
      */
-    inline const Aws::Vector<Asset>& GetAssets() const{ return m_assets; }
+    inline const Aws::Vector<Asset>& GetAssets() const { return m_assets; }
     inline bool AssetsHasBeenSet() const { return m_assetsHasBeenSet; }
-    inline void SetAssets(const Aws::Vector<Asset>& value) { m_assetsHasBeenSet = true; m_assets = value; }
-    inline void SetAssets(Aws::Vector<Asset>&& value) { m_assetsHasBeenSet = true; m_assets = std::move(value); }
-    inline TestingData& WithAssets(const Aws::Vector<Asset>& value) { SetAssets(value); return *this;}
-    inline TestingData& WithAssets(Aws::Vector<Asset>&& value) { SetAssets(std::move(value)); return *this;}
-    inline TestingData& AddAssets(const Asset& value) { m_assetsHasBeenSet = true; m_assets.push_back(value); return *this; }
-    inline TestingData& AddAssets(Asset&& value) { m_assetsHasBeenSet = true; m_assets.push_back(std::move(value)); return *this; }
+    template<typename AssetsT = Aws::Vector<Asset>>
+    void SetAssets(AssetsT&& value) { m_assetsHasBeenSet = true; m_assets = std::forward<AssetsT>(value); }
+    template<typename AssetsT = Aws::Vector<Asset>>
+    TestingData& WithAssets(AssetsT&& value) { SetAssets(std::forward<AssetsT>(value)); return *this;}
+    template<typename AssetsT = Asset>
+    TestingData& AddAssets(AssetsT&& value) { m_assetsHasBeenSet = true; m_assets.emplace_back(std::forward<AssetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,7 +59,7 @@ namespace Model
      * <p>If specified, Rekognition splits training dataset to create a test dataset
      * for the training job.</p>
      */
-    inline bool GetAutoCreate() const{ return m_autoCreate; }
+    inline bool GetAutoCreate() const { return m_autoCreate; }
     inline bool AutoCreateHasBeenSet() const { return m_autoCreateHasBeenSet; }
     inline void SetAutoCreate(bool value) { m_autoCreateHasBeenSet = true; m_autoCreate = value; }
     inline TestingData& WithAutoCreate(bool value) { SetAutoCreate(value); return *this;}
@@ -69,7 +69,7 @@ namespace Model
     Aws::Vector<Asset> m_assets;
     bool m_assetsHasBeenSet = false;
 
-    bool m_autoCreate;
+    bool m_autoCreate{false};
     bool m_autoCreateHasBeenSet = false;
   };
 

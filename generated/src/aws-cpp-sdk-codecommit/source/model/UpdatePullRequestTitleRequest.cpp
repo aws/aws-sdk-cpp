@@ -12,12 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePullRequestTitleRequest::UpdatePullRequestTitleRequest() : 
-    m_pullRequestIdHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePullRequestTitleRequest::SerializePayload() const
 {
   JsonValue payload;

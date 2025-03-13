@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-TemplateVersionsResponse::TemplateVersionsResponse() : 
-    m_itemHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_requestIDHasBeenSet(false)
-{
-}
-
 TemplateVersionsResponse::TemplateVersionsResponse(JsonView jsonValue)
-  : TemplateVersionsResponse()
 {
   *this = jsonValue;
 }
@@ -43,28 +34,21 @@ TemplateVersionsResponse& TemplateVersionsResponse::operator =(JsonView jsonValu
     }
     m_itemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestID"))
   {
     m_requestID = jsonValue.GetString("RequestID");
-
     m_requestIDHasBeenSet = true;
   }
-
   return *this;
 }
 

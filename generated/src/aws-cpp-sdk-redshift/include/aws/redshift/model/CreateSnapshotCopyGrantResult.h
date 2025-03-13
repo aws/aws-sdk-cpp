@@ -28,33 +28,35 @@ namespace Model
   class CreateSnapshotCopyGrantResult
   {
   public:
-    AWS_REDSHIFT_API CreateSnapshotCopyGrantResult();
+    AWS_REDSHIFT_API CreateSnapshotCopyGrantResult() = default;
     AWS_REDSHIFT_API CreateSnapshotCopyGrantResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API CreateSnapshotCopyGrantResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const SnapshotCopyGrant& GetSnapshotCopyGrant() const{ return m_snapshotCopyGrant; }
-    inline void SetSnapshotCopyGrant(const SnapshotCopyGrant& value) { m_snapshotCopyGrant = value; }
-    inline void SetSnapshotCopyGrant(SnapshotCopyGrant&& value) { m_snapshotCopyGrant = std::move(value); }
-    inline CreateSnapshotCopyGrantResult& WithSnapshotCopyGrant(const SnapshotCopyGrant& value) { SetSnapshotCopyGrant(value); return *this;}
-    inline CreateSnapshotCopyGrantResult& WithSnapshotCopyGrant(SnapshotCopyGrant&& value) { SetSnapshotCopyGrant(std::move(value)); return *this;}
+    inline const SnapshotCopyGrant& GetSnapshotCopyGrant() const { return m_snapshotCopyGrant; }
+    template<typename SnapshotCopyGrantT = SnapshotCopyGrant>
+    void SetSnapshotCopyGrant(SnapshotCopyGrantT&& value) { m_snapshotCopyGrantHasBeenSet = true; m_snapshotCopyGrant = std::forward<SnapshotCopyGrantT>(value); }
+    template<typename SnapshotCopyGrantT = SnapshotCopyGrant>
+    CreateSnapshotCopyGrantResult& WithSnapshotCopyGrant(SnapshotCopyGrantT&& value) { SetSnapshotCopyGrant(std::forward<SnapshotCopyGrantT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateSnapshotCopyGrantResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateSnapshotCopyGrantResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateSnapshotCopyGrantResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     SnapshotCopyGrant m_snapshotCopyGrant;
+    bool m_snapshotCopyGrantHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

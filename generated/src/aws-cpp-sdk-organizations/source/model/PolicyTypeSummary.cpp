@@ -18,16 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-PolicyTypeSummary::PolicyTypeSummary() : 
-    m_type(PolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(PolicyTypeStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 PolicyTypeSummary::PolicyTypeSummary(JsonView jsonValue)
-  : PolicyTypeSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PolicyTypeSummary& PolicyTypeSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PolicyTypeMapper::GetPolicyTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PolicyTypeStatusMapper::GetPolicyTypeStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

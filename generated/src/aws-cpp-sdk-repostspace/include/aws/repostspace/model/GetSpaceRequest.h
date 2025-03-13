@@ -21,7 +21,7 @@ namespace Model
   class GetSpaceRequest : public RepostspaceRequest
   {
   public:
-    AWS_REPOSTSPACE_API GetSpaceRequest();
+    AWS_REPOSTSPACE_API GetSpaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the private re:Post.</p>
      */
-    inline const Aws::String& GetSpaceId() const{ return m_spaceId; }
+    inline const Aws::String& GetSpaceId() const { return m_spaceId; }
     inline bool SpaceIdHasBeenSet() const { return m_spaceIdHasBeenSet; }
-    inline void SetSpaceId(const Aws::String& value) { m_spaceIdHasBeenSet = true; m_spaceId = value; }
-    inline void SetSpaceId(Aws::String&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::move(value); }
-    inline void SetSpaceId(const char* value) { m_spaceIdHasBeenSet = true; m_spaceId.assign(value); }
-    inline GetSpaceRequest& WithSpaceId(const Aws::String& value) { SetSpaceId(value); return *this;}
-    inline GetSpaceRequest& WithSpaceId(Aws::String&& value) { SetSpaceId(std::move(value)); return *this;}
-    inline GetSpaceRequest& WithSpaceId(const char* value) { SetSpaceId(value); return *this;}
+    template<typename SpaceIdT = Aws::String>
+    void SetSpaceId(SpaceIdT&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::forward<SpaceIdT>(value); }
+    template<typename SpaceIdT = Aws::String>
+    GetSpaceRequest& WithSpaceId(SpaceIdT&& value) { SetSpaceId(std::forward<SpaceIdT>(value)); return *this;}
     ///@}
   private:
 

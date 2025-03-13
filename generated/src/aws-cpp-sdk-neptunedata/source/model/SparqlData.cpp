@@ -18,13 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-SparqlData::SparqlData() : 
-    m_stmtHasBeenSet(false)
-{
-}
-
 SparqlData::SparqlData(JsonView jsonValue)
-  : SparqlData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SparqlData& SparqlData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stmt"))
   {
     m_stmt = jsonValue.GetString("stmt");
-
     m_stmtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ProvisioningHook::ProvisioningHook() : 
-    m_payloadVersionHasBeenSet(false),
-    m_targetArnHasBeenSet(false)
-{
-}
-
 ProvisioningHook::ProvisioningHook(JsonView jsonValue)
-  : ProvisioningHook()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ProvisioningHook& ProvisioningHook::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("payloadVersion"))
   {
     m_payloadVersion = jsonValue.GetString("payloadVersion");
-
     m_payloadVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetArn"))
   {
     m_targetArn = jsonValue.GetString("targetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   return *this;
 }
 

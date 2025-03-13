@@ -12,15 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePullRequestRequest::CreatePullRequestRequest() : 
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreatePullRequestRequest::SerializePayload() const
 {
   JsonValue payload;

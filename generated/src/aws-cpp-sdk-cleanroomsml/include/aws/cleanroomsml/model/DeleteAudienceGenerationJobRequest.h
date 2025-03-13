@@ -21,7 +21,7 @@ namespace Model
   class DeleteAudienceGenerationJobRequest : public CleanRoomsMLRequest
   {
   public:
-    AWS_CLEANROOMSML_API DeleteAudienceGenerationJobRequest();
+    AWS_CLEANROOMSML_API DeleteAudienceGenerationJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the audience generation job that you want
      * to delete.</p>
      */
-    inline const Aws::String& GetAudienceGenerationJobArn() const{ return m_audienceGenerationJobArn; }
+    inline const Aws::String& GetAudienceGenerationJobArn() const { return m_audienceGenerationJobArn; }
     inline bool AudienceGenerationJobArnHasBeenSet() const { return m_audienceGenerationJobArnHasBeenSet; }
-    inline void SetAudienceGenerationJobArn(const Aws::String& value) { m_audienceGenerationJobArnHasBeenSet = true; m_audienceGenerationJobArn = value; }
-    inline void SetAudienceGenerationJobArn(Aws::String&& value) { m_audienceGenerationJobArnHasBeenSet = true; m_audienceGenerationJobArn = std::move(value); }
-    inline void SetAudienceGenerationJobArn(const char* value) { m_audienceGenerationJobArnHasBeenSet = true; m_audienceGenerationJobArn.assign(value); }
-    inline DeleteAudienceGenerationJobRequest& WithAudienceGenerationJobArn(const Aws::String& value) { SetAudienceGenerationJobArn(value); return *this;}
-    inline DeleteAudienceGenerationJobRequest& WithAudienceGenerationJobArn(Aws::String&& value) { SetAudienceGenerationJobArn(std::move(value)); return *this;}
-    inline DeleteAudienceGenerationJobRequest& WithAudienceGenerationJobArn(const char* value) { SetAudienceGenerationJobArn(value); return *this;}
+    template<typename AudienceGenerationJobArnT = Aws::String>
+    void SetAudienceGenerationJobArn(AudienceGenerationJobArnT&& value) { m_audienceGenerationJobArnHasBeenSet = true; m_audienceGenerationJobArn = std::forward<AudienceGenerationJobArnT>(value); }
+    template<typename AudienceGenerationJobArnT = Aws::String>
+    DeleteAudienceGenerationJobRequest& WithAudienceGenerationJobArn(AudienceGenerationJobArnT&& value) { SetAudienceGenerationJobArn(std::forward<AudienceGenerationJobArnT>(value)); return *this;}
     ///@}
   private:
 

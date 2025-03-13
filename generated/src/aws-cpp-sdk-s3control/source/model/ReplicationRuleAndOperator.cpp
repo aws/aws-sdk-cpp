@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ReplicationRuleAndOperator::ReplicationRuleAndOperator() : 
-    m_prefixHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ReplicationRuleAndOperator::ReplicationRuleAndOperator(const XmlNode& xmlNode)
-  : ReplicationRuleAndOperator()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ ReplicationRuleAndOperator& ReplicationRuleAndOperator::operator =(const XmlNode
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

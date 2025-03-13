@@ -30,7 +30,7 @@ namespace Model
   class FpgaDeviceMemoryInfo
   {
   public:
-    AWS_EC2_API FpgaDeviceMemoryInfo();
+    AWS_EC2_API FpgaDeviceMemoryInfo() = default;
     AWS_EC2_API FpgaDeviceMemoryInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FpgaDeviceMemoryInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The size of the memory available to the FPGA accelerator, in MiB.</p>
      */
-    inline int GetSizeInMiB() const{ return m_sizeInMiB; }
+    inline int GetSizeInMiB() const { return m_sizeInMiB; }
     inline bool SizeInMiBHasBeenSet() const { return m_sizeInMiBHasBeenSet; }
     inline void SetSizeInMiB(int value) { m_sizeInMiBHasBeenSet = true; m_sizeInMiB = value; }
     inline FpgaDeviceMemoryInfo& WithSizeInMiB(int value) { SetSizeInMiB(value); return *this;}
     ///@}
   private:
 
-    int m_sizeInMiB;
+    int m_sizeInMiB{0};
     bool m_sizeInMiBHasBeenSet = false;
   };
 

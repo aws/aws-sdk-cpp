@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-CustomerManagedS3Storage::CustomerManagedS3Storage() : 
-    m_s3ResourceArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 CustomerManagedS3Storage::CustomerManagedS3Storage(JsonView jsonValue)
-  : CustomerManagedS3Storage()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomerManagedS3Storage& CustomerManagedS3Storage::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("s3ResourceArn"))
   {
     m_s3ResourceArn = jsonValue.GetString("s3ResourceArn");
-
     m_s3ResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

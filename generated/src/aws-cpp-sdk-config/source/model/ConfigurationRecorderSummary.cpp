@@ -18,17 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConfigurationRecorderSummary::ConfigurationRecorderSummary() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_servicePrincipalHasBeenSet(false),
-    m_recordingScope(RecordingScope::NOT_SET),
-    m_recordingScopeHasBeenSet(false)
-{
-}
-
 ConfigurationRecorderSummary::ConfigurationRecorderSummary(JsonView jsonValue)
-  : ConfigurationRecorderSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ConfigurationRecorderSummary& ConfigurationRecorderSummary::operator =(JsonView 
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("servicePrincipal"))
   {
     m_servicePrincipal = jsonValue.GetString("servicePrincipal");
-
     m_servicePrincipalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingScope"))
   {
     m_recordingScope = RecordingScopeMapper::GetRecordingScopeForName(jsonValue.GetString("recordingScope"));
-
     m_recordingScopeHasBeenSet = true;
   }
-
   return *this;
 }
 

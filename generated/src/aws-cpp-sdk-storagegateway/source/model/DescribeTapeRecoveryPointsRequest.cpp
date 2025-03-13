@@ -12,14 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTapeRecoveryPointsRequest::DescribeTapeRecoveryPointsRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTapeRecoveryPointsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeKeyPairsResponse::DescribeKeyPairsResponse()
-{
-}
-
 DescribeKeyPairsResponse::DescribeKeyPairsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeKeyPairsResponse& DescribeKeyPairsResponse::operator =(const Aws::Amazon
     if(!keyPairsNode.IsNull())
     {
       XmlNode keyPairsMember = keyPairsNode.FirstChild("item");
+      m_keyPairsHasBeenSet = !keyPairsMember.IsNull();
       while(!keyPairsMember.IsNull())
       {
         m_keyPairs.push_back(keyPairsMember);
@@ -56,6 +53,7 @@ DescribeKeyPairsResponse& DescribeKeyPairsResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeKeyPairsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

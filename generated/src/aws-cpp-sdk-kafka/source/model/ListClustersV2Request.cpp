@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListClustersV2Request::ListClustersV2Request() : 
-    m_clusterNameFilterHasBeenSet(false),
-    m_clusterTypeFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListClustersV2Request::SerializePayload() const
 {
   return {};

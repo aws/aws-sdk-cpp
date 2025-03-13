@@ -22,7 +22,7 @@ namespace Model
   class ListIndexesForMembersRequest : public ResourceExplorer2Request
   {
   public:
-    AWS_RESOURCEEXPLORER2_API ListIndexesForMembersRequest();
+    AWS_RESOURCEEXPLORER2_API ListIndexesForMembersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,15 +38,14 @@ namespace Model
      * <p>The account IDs will limit the output to only indexes from these
      * accounts.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIdList() const{ return m_accountIdList; }
+    inline const Aws::Vector<Aws::String>& GetAccountIdList() const { return m_accountIdList; }
     inline bool AccountIdListHasBeenSet() const { return m_accountIdListHasBeenSet; }
-    inline void SetAccountIdList(const Aws::Vector<Aws::String>& value) { m_accountIdListHasBeenSet = true; m_accountIdList = value; }
-    inline void SetAccountIdList(Aws::Vector<Aws::String>&& value) { m_accountIdListHasBeenSet = true; m_accountIdList = std::move(value); }
-    inline ListIndexesForMembersRequest& WithAccountIdList(const Aws::Vector<Aws::String>& value) { SetAccountIdList(value); return *this;}
-    inline ListIndexesForMembersRequest& WithAccountIdList(Aws::Vector<Aws::String>&& value) { SetAccountIdList(std::move(value)); return *this;}
-    inline ListIndexesForMembersRequest& AddAccountIdList(const Aws::String& value) { m_accountIdListHasBeenSet = true; m_accountIdList.push_back(value); return *this; }
-    inline ListIndexesForMembersRequest& AddAccountIdList(Aws::String&& value) { m_accountIdListHasBeenSet = true; m_accountIdList.push_back(std::move(value)); return *this; }
-    inline ListIndexesForMembersRequest& AddAccountIdList(const char* value) { m_accountIdListHasBeenSet = true; m_accountIdList.push_back(value); return *this; }
+    template<typename AccountIdListT = Aws::Vector<Aws::String>>
+    void SetAccountIdList(AccountIdListT&& value) { m_accountIdListHasBeenSet = true; m_accountIdList = std::forward<AccountIdListT>(value); }
+    template<typename AccountIdListT = Aws::Vector<Aws::String>>
+    ListIndexesForMembersRequest& WithAccountIdList(AccountIdListT&& value) { SetAccountIdList(std::forward<AccountIdListT>(value)); return *this;}
+    template<typename AccountIdListT = Aws::String>
+    ListIndexesForMembersRequest& AddAccountIdList(AccountIdListT&& value) { m_accountIdListHasBeenSet = true; m_accountIdList.emplace_back(std::forward<AccountIdListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,7 +61,7 @@ namespace Model
      * <code>NextToken</code> after every operation to ensure that you receive all of
      * the results.</p> 
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListIndexesForMembersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -77,21 +76,19 @@ namespace Model
      * the output should continue from. The pagination tokens expire after 24
      * hours.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListIndexesForMembersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIndexesForMembersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIndexesForMembersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIndexesForMembersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_accountIdList;
     bool m_accountIdListHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

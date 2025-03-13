@@ -25,7 +25,7 @@ namespace Model
   class UpdateScraperRequest : public PrometheusServiceRequest
   {
   public:
-    AWS_PROMETHEUSSERVICE_API UpdateScraperRequest();
+    AWS_PROMETHEUSSERVICE_API UpdateScraperRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The new alias of the scraper.</p>
      */
-    inline const Aws::String& GetAlias() const{ return m_alias; }
+    inline const Aws::String& GetAlias() const { return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-    inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-    inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-    inline UpdateScraperRequest& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-    inline UpdateScraperRequest& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-    inline UpdateScraperRequest& WithAlias(const char* value) { SetAlias(value); return *this;}
+    template<typename AliasT = Aws::String>
+    void SetAlias(AliasT&& value) { m_aliasHasBeenSet = true; m_alias = std::forward<AliasT>(value); }
+    template<typename AliasT = Aws::String>
+    UpdateScraperRequest& WithAlias(AliasT&& value) { SetAlias(std::forward<AliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>A unique identifier that you can provide to ensure the idempotency of the
      * request. Case-sensitive.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateScraperRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateScraperRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateScraperRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateScraperRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,24 +66,24 @@ namespace Model
      * <p>The new Amazon Managed Service for Prometheus workspace to send metrics
      * to.</p>
      */
-    inline const Destination& GetDestination() const{ return m_destination; }
+    inline const Destination& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Destination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline UpdateScraperRequest& WithDestination(const Destination& value) { SetDestination(value); return *this;}
-    inline UpdateScraperRequest& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = Destination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Destination>
+    UpdateScraperRequest& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scraper role configuration for the workspace.</p>
      */
-    inline const RoleConfiguration& GetRoleConfiguration() const{ return m_roleConfiguration; }
+    inline const RoleConfiguration& GetRoleConfiguration() const { return m_roleConfiguration; }
     inline bool RoleConfigurationHasBeenSet() const { return m_roleConfigurationHasBeenSet; }
-    inline void SetRoleConfiguration(const RoleConfiguration& value) { m_roleConfigurationHasBeenSet = true; m_roleConfiguration = value; }
-    inline void SetRoleConfiguration(RoleConfiguration&& value) { m_roleConfigurationHasBeenSet = true; m_roleConfiguration = std::move(value); }
-    inline UpdateScraperRequest& WithRoleConfiguration(const RoleConfiguration& value) { SetRoleConfiguration(value); return *this;}
-    inline UpdateScraperRequest& WithRoleConfiguration(RoleConfiguration&& value) { SetRoleConfiguration(std::move(value)); return *this;}
+    template<typename RoleConfigurationT = RoleConfiguration>
+    void SetRoleConfiguration(RoleConfigurationT&& value) { m_roleConfigurationHasBeenSet = true; m_roleConfiguration = std::forward<RoleConfigurationT>(value); }
+    template<typename RoleConfigurationT = RoleConfiguration>
+    UpdateScraperRequest& WithRoleConfiguration(RoleConfigurationT&& value) { SetRoleConfiguration(std::forward<RoleConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,26 +94,24 @@ namespace Model
      * an Amazon Web Services managed collector</a> in the <i>Amazon Managed Service
      * for Prometheus User Guide</i>.</p> 
      */
-    inline const ScrapeConfiguration& GetScrapeConfiguration() const{ return m_scrapeConfiguration; }
+    inline const ScrapeConfiguration& GetScrapeConfiguration() const { return m_scrapeConfiguration; }
     inline bool ScrapeConfigurationHasBeenSet() const { return m_scrapeConfigurationHasBeenSet; }
-    inline void SetScrapeConfiguration(const ScrapeConfiguration& value) { m_scrapeConfigurationHasBeenSet = true; m_scrapeConfiguration = value; }
-    inline void SetScrapeConfiguration(ScrapeConfiguration&& value) { m_scrapeConfigurationHasBeenSet = true; m_scrapeConfiguration = std::move(value); }
-    inline UpdateScraperRequest& WithScrapeConfiguration(const ScrapeConfiguration& value) { SetScrapeConfiguration(value); return *this;}
-    inline UpdateScraperRequest& WithScrapeConfiguration(ScrapeConfiguration&& value) { SetScrapeConfiguration(std::move(value)); return *this;}
+    template<typename ScrapeConfigurationT = ScrapeConfiguration>
+    void SetScrapeConfiguration(ScrapeConfigurationT&& value) { m_scrapeConfigurationHasBeenSet = true; m_scrapeConfiguration = std::forward<ScrapeConfigurationT>(value); }
+    template<typename ScrapeConfigurationT = ScrapeConfiguration>
+    UpdateScraperRequest& WithScrapeConfiguration(ScrapeConfigurationT&& value) { SetScrapeConfiguration(std::forward<ScrapeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the scraper to update.</p>
      */
-    inline const Aws::String& GetScraperId() const{ return m_scraperId; }
+    inline const Aws::String& GetScraperId() const { return m_scraperId; }
     inline bool ScraperIdHasBeenSet() const { return m_scraperIdHasBeenSet; }
-    inline void SetScraperId(const Aws::String& value) { m_scraperIdHasBeenSet = true; m_scraperId = value; }
-    inline void SetScraperId(Aws::String&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::move(value); }
-    inline void SetScraperId(const char* value) { m_scraperIdHasBeenSet = true; m_scraperId.assign(value); }
-    inline UpdateScraperRequest& WithScraperId(const Aws::String& value) { SetScraperId(value); return *this;}
-    inline UpdateScraperRequest& WithScraperId(Aws::String&& value) { SetScraperId(std::move(value)); return *this;}
-    inline UpdateScraperRequest& WithScraperId(const char* value) { SetScraperId(value); return *this;}
+    template<typename ScraperIdT = Aws::String>
+    void SetScraperId(ScraperIdT&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::forward<ScraperIdT>(value); }
+    template<typename ScraperIdT = Aws::String>
+    UpdateScraperRequest& WithScraperId(ScraperIdT&& value) { SetScraperId(std::forward<ScraperIdT>(value)); return *this;}
     ///@}
   private:
 

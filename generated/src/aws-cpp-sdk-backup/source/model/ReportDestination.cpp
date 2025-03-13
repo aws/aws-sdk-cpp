@@ -18,14 +18,7 @@ namespace Backup
 namespace Model
 {
 
-ReportDestination::ReportDestination() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeysHasBeenSet(false)
-{
-}
-
 ReportDestination::ReportDestination(JsonView jsonValue)
-  : ReportDestination()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ReportDestination& ReportDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Keys"))
   {
     Aws::Utils::Array<JsonView> s3KeysJsonList = jsonValue.GetArray("S3Keys");
@@ -48,7 +39,6 @@ ReportDestination& ReportDestination::operator =(JsonView jsonValue)
     }
     m_s3KeysHasBeenSet = true;
   }
-
   return *this;
 }
 

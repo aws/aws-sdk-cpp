@@ -18,32 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-ManagedThingSummary::ManagedThingSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_advertisedProductIdHasBeenSet(false),
-    m_brandHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_connectorDeviceIdHasBeenSet(false),
-    m_connectorPolicyIdHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_credentialLockerIdHasBeenSet(false),
-    m_parentControllerIdHasBeenSet(false),
-    m_provisioningStatus(ProvisioningStatus::NOT_SET),
-    m_provisioningStatusHasBeenSet(false),
-    m_role(Role::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_activatedAtHasBeenSet(false)
-{
-}
-
 ManagedThingSummary::ManagedThingSummary(JsonView jsonValue)
-  : ManagedThingSummary()
 {
   *this = jsonValue;
 }
@@ -53,129 +28,93 @@ ManagedThingSummary& ManagedThingSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdvertisedProductId"))
   {
     m_advertisedProductId = jsonValue.GetString("AdvertisedProductId");
-
     m_advertisedProductIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Brand"))
   {
     m_brand = jsonValue.GetString("Brand");
-
     m_brandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Classification"))
   {
     m_classification = jsonValue.GetString("Classification");
-
     m_classificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectorDeviceId"))
   {
     m_connectorDeviceId = jsonValue.GetString("ConnectorDeviceId");
-
     m_connectorDeviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectorPolicyId"))
   {
     m_connectorPolicyId = jsonValue.GetString("ConnectorPolicyId");
-
     m_connectorPolicyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Model"))
   {
     m_model = jsonValue.GetString("Model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CredentialLockerId"))
   {
     m_credentialLockerId = jsonValue.GetString("CredentialLockerId");
-
     m_credentialLockerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentControllerId"))
   {
     m_parentControllerId = jsonValue.GetString("ParentControllerId");
-
     m_parentControllerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisioningStatus"))
   {
     m_provisioningStatus = ProvisioningStatusMapper::GetProvisioningStatusForName(jsonValue.GetString("ProvisioningStatus"));
-
     m_provisioningStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = RoleMapper::GetRoleForName(jsonValue.GetString("Role"));
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SerialNumber"))
   {
     m_serialNumber = jsonValue.GetString("SerialNumber");
-
     m_serialNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActivatedAt"))
   {
     m_activatedAt = jsonValue.GetDouble("ActivatedAt");
-
     m_activatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

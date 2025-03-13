@@ -36,7 +36,7 @@ namespace Model
   class Statement
   {
   public:
-    AWS_IAM_API Statement();
+    AWS_IAM_API Statement() = default;
     AWS_IAM_API Statement(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API Statement& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,26 +48,22 @@ namespace Model
     /**
      * <p>The identifier of the policy that was provided as an input.</p>
      */
-    inline const Aws::String& GetSourcePolicyId() const{ return m_sourcePolicyId; }
+    inline const Aws::String& GetSourcePolicyId() const { return m_sourcePolicyId; }
     inline bool SourcePolicyIdHasBeenSet() const { return m_sourcePolicyIdHasBeenSet; }
-    inline void SetSourcePolicyId(const Aws::String& value) { m_sourcePolicyIdHasBeenSet = true; m_sourcePolicyId = value; }
-    inline void SetSourcePolicyId(Aws::String&& value) { m_sourcePolicyIdHasBeenSet = true; m_sourcePolicyId = std::move(value); }
-    inline void SetSourcePolicyId(const char* value) { m_sourcePolicyIdHasBeenSet = true; m_sourcePolicyId.assign(value); }
-    inline Statement& WithSourcePolicyId(const Aws::String& value) { SetSourcePolicyId(value); return *this;}
-    inline Statement& WithSourcePolicyId(Aws::String&& value) { SetSourcePolicyId(std::move(value)); return *this;}
-    inline Statement& WithSourcePolicyId(const char* value) { SetSourcePolicyId(value); return *this;}
+    template<typename SourcePolicyIdT = Aws::String>
+    void SetSourcePolicyId(SourcePolicyIdT&& value) { m_sourcePolicyIdHasBeenSet = true; m_sourcePolicyId = std::forward<SourcePolicyIdT>(value); }
+    template<typename SourcePolicyIdT = Aws::String>
+    Statement& WithSourcePolicyId(SourcePolicyIdT&& value) { SetSourcePolicyId(std::forward<SourcePolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the policy.</p>
      */
-    inline const PolicySourceType& GetSourcePolicyType() const{ return m_sourcePolicyType; }
+    inline PolicySourceType GetSourcePolicyType() const { return m_sourcePolicyType; }
     inline bool SourcePolicyTypeHasBeenSet() const { return m_sourcePolicyTypeHasBeenSet; }
-    inline void SetSourcePolicyType(const PolicySourceType& value) { m_sourcePolicyTypeHasBeenSet = true; m_sourcePolicyType = value; }
-    inline void SetSourcePolicyType(PolicySourceType&& value) { m_sourcePolicyTypeHasBeenSet = true; m_sourcePolicyType = std::move(value); }
-    inline Statement& WithSourcePolicyType(const PolicySourceType& value) { SetSourcePolicyType(value); return *this;}
-    inline Statement& WithSourcePolicyType(PolicySourceType&& value) { SetSourcePolicyType(std::move(value)); return *this;}
+    inline void SetSourcePolicyType(PolicySourceType value) { m_sourcePolicyTypeHasBeenSet = true; m_sourcePolicyType = value; }
+    inline Statement& WithSourcePolicyType(PolicySourceType value) { SetSourcePolicyType(value); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,12 @@ namespace Model
      * <p>The row and column of the beginning of the <code>Statement</code> in an IAM
      * policy.</p>
      */
-    inline const Position& GetStartPosition() const{ return m_startPosition; }
+    inline const Position& GetStartPosition() const { return m_startPosition; }
     inline bool StartPositionHasBeenSet() const { return m_startPositionHasBeenSet; }
-    inline void SetStartPosition(const Position& value) { m_startPositionHasBeenSet = true; m_startPosition = value; }
-    inline void SetStartPosition(Position&& value) { m_startPositionHasBeenSet = true; m_startPosition = std::move(value); }
-    inline Statement& WithStartPosition(const Position& value) { SetStartPosition(value); return *this;}
-    inline Statement& WithStartPosition(Position&& value) { SetStartPosition(std::move(value)); return *this;}
+    template<typename StartPositionT = Position>
+    void SetStartPosition(StartPositionT&& value) { m_startPositionHasBeenSet = true; m_startPosition = std::forward<StartPositionT>(value); }
+    template<typename StartPositionT = Position>
+    Statement& WithStartPosition(StartPositionT&& value) { SetStartPosition(std::forward<StartPositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,19 +84,19 @@ namespace Model
      * <p>The row and column of the end of a <code>Statement</code> in an IAM
      * policy.</p>
      */
-    inline const Position& GetEndPosition() const{ return m_endPosition; }
+    inline const Position& GetEndPosition() const { return m_endPosition; }
     inline bool EndPositionHasBeenSet() const { return m_endPositionHasBeenSet; }
-    inline void SetEndPosition(const Position& value) { m_endPositionHasBeenSet = true; m_endPosition = value; }
-    inline void SetEndPosition(Position&& value) { m_endPositionHasBeenSet = true; m_endPosition = std::move(value); }
-    inline Statement& WithEndPosition(const Position& value) { SetEndPosition(value); return *this;}
-    inline Statement& WithEndPosition(Position&& value) { SetEndPosition(std::move(value)); return *this;}
+    template<typename EndPositionT = Position>
+    void SetEndPosition(EndPositionT&& value) { m_endPositionHasBeenSet = true; m_endPosition = std::forward<EndPositionT>(value); }
+    template<typename EndPositionT = Position>
+    Statement& WithEndPosition(EndPositionT&& value) { SetEndPosition(std::forward<EndPositionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sourcePolicyId;
     bool m_sourcePolicyIdHasBeenSet = false;
 
-    PolicySourceType m_sourcePolicyType;
+    PolicySourceType m_sourcePolicyType{PolicySourceType::NOT_SET};
     bool m_sourcePolicyTypeHasBeenSet = false;
 
     Position m_startPosition;

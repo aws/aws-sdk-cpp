@@ -20,22 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-SingleInstanceHealth::SingleInstanceHealth() : 
-    m_instanceIdHasBeenSet(false),
-    m_healthStatusHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_causesHasBeenSet(false),
-    m_launchedAtHasBeenSet(false),
-    m_applicationMetricsHasBeenSet(false),
-    m_systemHasBeenSet(false),
-    m_deploymentHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
-{
-}
-
 SingleInstanceHealth::SingleInstanceHealth(const XmlNode& xmlNode)
-  : SingleInstanceHealth()
 {
   *this = xmlNode;
 }
@@ -51,66 +36,76 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
     if(!healthStatusNode.IsNull())
     {
       m_healthStatus = Aws::Utils::Xml::DecodeEscapedXmlText(healthStatusNode.GetText());
       m_healthStatusHasBeenSet = true;
+       m_healthStatusHasBeenSet = true;
     }
     XmlNode colorNode = resultNode.FirstChild("Color");
     if(!colorNode.IsNull())
     {
       m_color = Aws::Utils::Xml::DecodeEscapedXmlText(colorNode.GetText());
       m_colorHasBeenSet = true;
+       m_colorHasBeenSet = true;
     }
     XmlNode causesNode = resultNode.FirstChild("Causes");
     if(!causesNode.IsNull())
     {
       XmlNode causesMember = causesNode.FirstChild("member");
+      m_causesHasBeenSet = !causesMember.IsNull();
       while(!causesMember.IsNull())
       {
         m_causes.push_back(causesMember.GetText());
         causesMember = causesMember.NextNode("member");
       }
 
-      m_causesHasBeenSet = true;
+       m_causesHasBeenSet = true;
     }
     XmlNode launchedAtNode = resultNode.FirstChild("LaunchedAt");
     if(!launchedAtNode.IsNull())
     {
       m_launchedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(launchedAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_launchedAtHasBeenSet = true;
+       m_launchedAtHasBeenSet = true;
     }
     XmlNode applicationMetricsNode = resultNode.FirstChild("ApplicationMetrics");
     if(!applicationMetricsNode.IsNull())
     {
       m_applicationMetrics = applicationMetricsNode;
       m_applicationMetricsHasBeenSet = true;
+       m_applicationMetricsHasBeenSet = true;
     }
     XmlNode systemNode = resultNode.FirstChild("System");
     if(!systemNode.IsNull())
     {
       m_system = systemNode;
       m_systemHasBeenSet = true;
+       m_systemHasBeenSet = true;
     }
     XmlNode deploymentNode = resultNode.FirstChild("Deployment");
     if(!deploymentNode.IsNull())
     {
       m_deployment = deploymentNode;
       m_deploymentHasBeenSet = true;
+       m_deploymentHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("InstanceType");
     if(!instanceTypeNode.IsNull())
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
   }
 

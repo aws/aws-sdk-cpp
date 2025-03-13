@@ -30,7 +30,7 @@ namespace Model
   class PublishBatchResult
   {
   public:
-    AWS_SNS_API PublishBatchResult();
+    AWS_SNS_API PublishBatchResult() = default;
     AWS_SNS_API PublishBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SNS_API PublishBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,43 +39,46 @@ namespace Model
     /**
      * <p>A list of successful <code>PublishBatch</code> responses.</p>
      */
-    inline const Aws::Vector<PublishBatchResultEntry>& GetSuccessful() const{ return m_successful; }
-    inline void SetSuccessful(const Aws::Vector<PublishBatchResultEntry>& value) { m_successful = value; }
-    inline void SetSuccessful(Aws::Vector<PublishBatchResultEntry>&& value) { m_successful = std::move(value); }
-    inline PublishBatchResult& WithSuccessful(const Aws::Vector<PublishBatchResultEntry>& value) { SetSuccessful(value); return *this;}
-    inline PublishBatchResult& WithSuccessful(Aws::Vector<PublishBatchResultEntry>&& value) { SetSuccessful(std::move(value)); return *this;}
-    inline PublishBatchResult& AddSuccessful(const PublishBatchResultEntry& value) { m_successful.push_back(value); return *this; }
-    inline PublishBatchResult& AddSuccessful(PublishBatchResultEntry&& value) { m_successful.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PublishBatchResultEntry>& GetSuccessful() const { return m_successful; }
+    template<typename SuccessfulT = Aws::Vector<PublishBatchResultEntry>>
+    void SetSuccessful(SuccessfulT&& value) { m_successfulHasBeenSet = true; m_successful = std::forward<SuccessfulT>(value); }
+    template<typename SuccessfulT = Aws::Vector<PublishBatchResultEntry>>
+    PublishBatchResult& WithSuccessful(SuccessfulT&& value) { SetSuccessful(std::forward<SuccessfulT>(value)); return *this;}
+    template<typename SuccessfulT = PublishBatchResultEntry>
+    PublishBatchResult& AddSuccessful(SuccessfulT&& value) { m_successfulHasBeenSet = true; m_successful.emplace_back(std::forward<SuccessfulT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of failed <code>PublishBatch</code> responses. </p>
      */
-    inline const Aws::Vector<BatchResultErrorEntry>& GetFailed() const{ return m_failed; }
-    inline void SetFailed(const Aws::Vector<BatchResultErrorEntry>& value) { m_failed = value; }
-    inline void SetFailed(Aws::Vector<BatchResultErrorEntry>&& value) { m_failed = std::move(value); }
-    inline PublishBatchResult& WithFailed(const Aws::Vector<BatchResultErrorEntry>& value) { SetFailed(value); return *this;}
-    inline PublishBatchResult& WithFailed(Aws::Vector<BatchResultErrorEntry>&& value) { SetFailed(std::move(value)); return *this;}
-    inline PublishBatchResult& AddFailed(const BatchResultErrorEntry& value) { m_failed.push_back(value); return *this; }
-    inline PublishBatchResult& AddFailed(BatchResultErrorEntry&& value) { m_failed.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchResultErrorEntry>& GetFailed() const { return m_failed; }
+    template<typename FailedT = Aws::Vector<BatchResultErrorEntry>>
+    void SetFailed(FailedT&& value) { m_failedHasBeenSet = true; m_failed = std::forward<FailedT>(value); }
+    template<typename FailedT = Aws::Vector<BatchResultErrorEntry>>
+    PublishBatchResult& WithFailed(FailedT&& value) { SetFailed(std::forward<FailedT>(value)); return *this;}
+    template<typename FailedT = BatchResultErrorEntry>
+    PublishBatchResult& AddFailed(FailedT&& value) { m_failedHasBeenSet = true; m_failed.emplace_back(std::forward<FailedT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline PublishBatchResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline PublishBatchResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    PublishBatchResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PublishBatchResultEntry> m_successful;
+    bool m_successfulHasBeenSet = false;
 
     Aws::Vector<BatchResultErrorEntry> m_failed;
+    bool m_failedHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

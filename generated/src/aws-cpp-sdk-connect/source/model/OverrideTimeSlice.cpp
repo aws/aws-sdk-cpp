@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-OverrideTimeSlice::OverrideTimeSlice() : 
-    m_hours(0),
-    m_hoursHasBeenSet(false),
-    m_minutes(0),
-    m_minutesHasBeenSet(false)
-{
-}
-
 OverrideTimeSlice::OverrideTimeSlice(JsonView jsonValue)
-  : OverrideTimeSlice()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ OverrideTimeSlice& OverrideTimeSlice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Hours"))
   {
     m_hours = jsonValue.GetInteger("Hours");
-
     m_hoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Minutes"))
   {
     m_minutes = jsonValue.GetInteger("Minutes");
-
     m_minutesHasBeenSet = true;
   }
-
   return *this;
 }
 

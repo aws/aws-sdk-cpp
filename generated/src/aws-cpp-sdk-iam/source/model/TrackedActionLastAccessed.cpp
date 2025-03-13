@@ -20,16 +20,7 @@ namespace IAM
 namespace Model
 {
 
-TrackedActionLastAccessed::TrackedActionLastAccessed() : 
-    m_actionNameHasBeenSet(false),
-    m_lastAccessedEntityHasBeenSet(false),
-    m_lastAccessedTimeHasBeenSet(false),
-    m_lastAccessedRegionHasBeenSet(false)
-{
-}
-
 TrackedActionLastAccessed::TrackedActionLastAccessed(const XmlNode& xmlNode)
-  : TrackedActionLastAccessed()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ TrackedActionLastAccessed& TrackedActionLastAccessed::operator =(const XmlNode& 
     {
       m_actionName = Aws::Utils::Xml::DecodeEscapedXmlText(actionNameNode.GetText());
       m_actionNameHasBeenSet = true;
+       m_actionNameHasBeenSet = true;
     }
     XmlNode lastAccessedEntityNode = resultNode.FirstChild("LastAccessedEntity");
     if(!lastAccessedEntityNode.IsNull())
     {
       m_lastAccessedEntity = Aws::Utils::Xml::DecodeEscapedXmlText(lastAccessedEntityNode.GetText());
       m_lastAccessedEntityHasBeenSet = true;
+       m_lastAccessedEntityHasBeenSet = true;
     }
     XmlNode lastAccessedTimeNode = resultNode.FirstChild("LastAccessedTime");
     if(!lastAccessedTimeNode.IsNull())
     {
       m_lastAccessedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAccessedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastAccessedTimeHasBeenSet = true;
+       m_lastAccessedTimeHasBeenSet = true;
     }
     XmlNode lastAccessedRegionNode = resultNode.FirstChild("LastAccessedRegion");
     if(!lastAccessedRegionNode.IsNull())
     {
       m_lastAccessedRegion = Aws::Utils::Xml::DecodeEscapedXmlText(lastAccessedRegionNode.GetText());
       m_lastAccessedRegionHasBeenSet = true;
+       m_lastAccessedRegionHasBeenSet = true;
     }
   }
 

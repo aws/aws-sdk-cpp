@@ -12,12 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQueueRequest::GetQueueRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false)
-{
-}
-
 Aws::String GetQueueRequest::SerializePayload() const
 {
   return {};

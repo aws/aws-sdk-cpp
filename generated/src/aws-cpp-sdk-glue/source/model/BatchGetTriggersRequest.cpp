@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetTriggersRequest::BatchGetTriggersRequest() : 
-    m_triggerNamesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetTriggersRequest::SerializePayload() const
 {
   JsonValue payload;

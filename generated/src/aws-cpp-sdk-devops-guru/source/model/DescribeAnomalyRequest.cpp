@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeAnomalyRequest::DescribeAnomalyRequest() : 
-    m_idHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAnomalyRequest::SerializePayload() const
 {
   return {};

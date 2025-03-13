@@ -12,14 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSourceNetworkRequest::CreateSourceNetworkRequest() : 
-    m_originAccountIDHasBeenSet(false),
-    m_originRegionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcIDHasBeenSet(false)
-{
-}
-
 Aws::String CreateSourceNetworkRequest::SerializePayload() const
 {
   JsonValue payload;

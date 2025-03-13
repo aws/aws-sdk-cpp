@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListJourneysRequest::ListJourneysRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_pageSizeHasBeenSet(false),
-    m_tokenHasBeenSet(false)
-{
-}
-
 Aws::String ListJourneysRequest::SerializePayload() const
 {
   return {};

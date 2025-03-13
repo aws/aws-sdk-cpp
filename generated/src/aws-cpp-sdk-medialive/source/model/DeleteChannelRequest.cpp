@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteChannelRequest::DeleteChannelRequest() : 
-    m_channelIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChannelRequest::SerializePayload() const
 {
   return {};

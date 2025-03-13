@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-PathMappingRule::PathMappingRule() : 
-    m_sourcePathFormat(PathFormat::NOT_SET),
-    m_sourcePathFormatHasBeenSet(false),
-    m_sourcePathHasBeenSet(false),
-    m_destinationPathHasBeenSet(false)
-{
-}
-
 PathMappingRule::PathMappingRule(JsonView jsonValue)
-  : PathMappingRule()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PathMappingRule& PathMappingRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourcePathFormat"))
   {
     m_sourcePathFormat = PathFormatMapper::GetPathFormatForName(jsonValue.GetString("sourcePathFormat"));
-
     m_sourcePathFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourcePath"))
   {
     m_sourcePath = jsonValue.GetString("sourcePath");
-
     m_sourcePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationPath"))
   {
     m_destinationPath = jsonValue.GetString("destinationPath");
-
     m_destinationPathHasBeenSet = true;
   }
-
   return *this;
 }
 

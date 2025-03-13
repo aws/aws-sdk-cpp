@@ -32,7 +32,7 @@ namespace Model
   class LambdaInvokeOperation
   {
   public:
-    AWS_S3CONTROL_API LambdaInvokeOperation();
+    AWS_S3CONTROL_API LambdaInvokeOperation() = default;
     AWS_S3CONTROL_API LambdaInvokeOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API LambdaInvokeOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job
      * will invoke on every object in the manifest.</p>
      */
-    inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+    inline const Aws::String& GetFunctionArn() const { return m_functionArn; }
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
-    inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
-    inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
-    inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
-    inline LambdaInvokeOperation& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
-    inline LambdaInvokeOperation& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
-    inline LambdaInvokeOperation& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
+    template<typename FunctionArnT = Aws::String>
+    void SetFunctionArn(FunctionArnT&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::forward<FunctionArnT>(value); }
+    template<typename FunctionArnT = Aws::String>
+    LambdaInvokeOperation& WithFunctionArn(FunctionArnT&& value) { SetFunctionArn(std::forward<FunctionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * Services Lambda function to perform custom actions on objects in directory
      * buckets, you must specify <code>2.0</code>.</p> 
      */
-    inline const Aws::String& GetInvocationSchemaVersion() const{ return m_invocationSchemaVersion; }
+    inline const Aws::String& GetInvocationSchemaVersion() const { return m_invocationSchemaVersion; }
     inline bool InvocationSchemaVersionHasBeenSet() const { return m_invocationSchemaVersionHasBeenSet; }
-    inline void SetInvocationSchemaVersion(const Aws::String& value) { m_invocationSchemaVersionHasBeenSet = true; m_invocationSchemaVersion = value; }
-    inline void SetInvocationSchemaVersion(Aws::String&& value) { m_invocationSchemaVersionHasBeenSet = true; m_invocationSchemaVersion = std::move(value); }
-    inline void SetInvocationSchemaVersion(const char* value) { m_invocationSchemaVersionHasBeenSet = true; m_invocationSchemaVersion.assign(value); }
-    inline LambdaInvokeOperation& WithInvocationSchemaVersion(const Aws::String& value) { SetInvocationSchemaVersion(value); return *this;}
-    inline LambdaInvokeOperation& WithInvocationSchemaVersion(Aws::String&& value) { SetInvocationSchemaVersion(std::move(value)); return *this;}
-    inline LambdaInvokeOperation& WithInvocationSchemaVersion(const char* value) { SetInvocationSchemaVersion(value); return *this;}
+    template<typename InvocationSchemaVersionT = Aws::String>
+    void SetInvocationSchemaVersion(InvocationSchemaVersionT&& value) { m_invocationSchemaVersionHasBeenSet = true; m_invocationSchemaVersion = std::forward<InvocationSchemaVersionT>(value); }
+    template<typename InvocationSchemaVersionT = Aws::String>
+    LambdaInvokeOperation& WithInvocationSchemaVersion(InvocationSchemaVersionT&& value) { SetInvocationSchemaVersion(std::forward<InvocationSchemaVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,19 +88,16 @@ namespace Model
      * object processing in Amazon S3 directory buckets with S3 Batch Operations and
      * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetUserArguments() const{ return m_userArguments; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetUserArguments() const { return m_userArguments; }
     inline bool UserArgumentsHasBeenSet() const { return m_userArgumentsHasBeenSet; }
-    inline void SetUserArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_userArgumentsHasBeenSet = true; m_userArguments = value; }
-    inline void SetUserArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_userArgumentsHasBeenSet = true; m_userArguments = std::move(value); }
-    inline LambdaInvokeOperation& WithUserArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetUserArguments(value); return *this;}
-    inline LambdaInvokeOperation& WithUserArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetUserArguments(std::move(value)); return *this;}
-    inline LambdaInvokeOperation& AddUserArguments(const Aws::String& key, const Aws::String& value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(key, value); return *this; }
-    inline LambdaInvokeOperation& AddUserArguments(Aws::String&& key, const Aws::String& value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(std::move(key), value); return *this; }
-    inline LambdaInvokeOperation& AddUserArguments(const Aws::String& key, Aws::String&& value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(key, std::move(value)); return *this; }
-    inline LambdaInvokeOperation& AddUserArguments(Aws::String&& key, Aws::String&& value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(std::move(key), std::move(value)); return *this; }
-    inline LambdaInvokeOperation& AddUserArguments(const char* key, Aws::String&& value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(key, std::move(value)); return *this; }
-    inline LambdaInvokeOperation& AddUserArguments(Aws::String&& key, const char* value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(std::move(key), value); return *this; }
-    inline LambdaInvokeOperation& AddUserArguments(const char* key, const char* value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(key, value); return *this; }
+    template<typename UserArgumentsT = Aws::Map<Aws::String, Aws::String>>
+    void SetUserArguments(UserArgumentsT&& value) { m_userArgumentsHasBeenSet = true; m_userArguments = std::forward<UserArgumentsT>(value); }
+    template<typename UserArgumentsT = Aws::Map<Aws::String, Aws::String>>
+    LambdaInvokeOperation& WithUserArguments(UserArgumentsT&& value) { SetUserArguments(std::forward<UserArgumentsT>(value)); return *this;}
+    template<typename UserArgumentsKeyT = Aws::String, typename UserArgumentsValueT = Aws::String>
+    LambdaInvokeOperation& AddUserArguments(UserArgumentsKeyT&& key, UserArgumentsValueT&& value) {
+      m_userArgumentsHasBeenSet = true; m_userArguments.emplace(std::forward<UserArgumentsKeyT>(key), std::forward<UserArgumentsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

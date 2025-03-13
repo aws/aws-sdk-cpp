@@ -37,7 +37,7 @@ namespace Model
   class ParameterDropDownControl
   {
   public:
-    AWS_QUICKSIGHT_API ParameterDropDownControl();
+    AWS_QUICKSIGHT_API ParameterDropDownControl() = default;
     AWS_QUICKSIGHT_API ParameterDropDownControl(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ParameterDropDownControl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,78 +47,70 @@ namespace Model
     /**
      * <p>The ID of the <code>ParameterDropDownControl</code>.</p>
      */
-    inline const Aws::String& GetParameterControlId() const{ return m_parameterControlId; }
+    inline const Aws::String& GetParameterControlId() const { return m_parameterControlId; }
     inline bool ParameterControlIdHasBeenSet() const { return m_parameterControlIdHasBeenSet; }
-    inline void SetParameterControlId(const Aws::String& value) { m_parameterControlIdHasBeenSet = true; m_parameterControlId = value; }
-    inline void SetParameterControlId(Aws::String&& value) { m_parameterControlIdHasBeenSet = true; m_parameterControlId = std::move(value); }
-    inline void SetParameterControlId(const char* value) { m_parameterControlIdHasBeenSet = true; m_parameterControlId.assign(value); }
-    inline ParameterDropDownControl& WithParameterControlId(const Aws::String& value) { SetParameterControlId(value); return *this;}
-    inline ParameterDropDownControl& WithParameterControlId(Aws::String&& value) { SetParameterControlId(std::move(value)); return *this;}
-    inline ParameterDropDownControl& WithParameterControlId(const char* value) { SetParameterControlId(value); return *this;}
+    template<typename ParameterControlIdT = Aws::String>
+    void SetParameterControlId(ParameterControlIdT&& value) { m_parameterControlIdHasBeenSet = true; m_parameterControlId = std::forward<ParameterControlIdT>(value); }
+    template<typename ParameterControlIdT = Aws::String>
+    ParameterDropDownControl& WithParameterControlId(ParameterControlIdT&& value) { SetParameterControlId(std::forward<ParameterControlIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the <code>ParameterDropDownControl</code>.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline ParameterDropDownControl& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline ParameterDropDownControl& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline ParameterDropDownControl& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    ParameterDropDownControl& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source parameter name of the <code>ParameterDropDownControl</code>.</p>
      */
-    inline const Aws::String& GetSourceParameterName() const{ return m_sourceParameterName; }
+    inline const Aws::String& GetSourceParameterName() const { return m_sourceParameterName; }
     inline bool SourceParameterNameHasBeenSet() const { return m_sourceParameterNameHasBeenSet; }
-    inline void SetSourceParameterName(const Aws::String& value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName = value; }
-    inline void SetSourceParameterName(Aws::String&& value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName = std::move(value); }
-    inline void SetSourceParameterName(const char* value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName.assign(value); }
-    inline ParameterDropDownControl& WithSourceParameterName(const Aws::String& value) { SetSourceParameterName(value); return *this;}
-    inline ParameterDropDownControl& WithSourceParameterName(Aws::String&& value) { SetSourceParameterName(std::move(value)); return *this;}
-    inline ParameterDropDownControl& WithSourceParameterName(const char* value) { SetSourceParameterName(value); return *this;}
+    template<typename SourceParameterNameT = Aws::String>
+    void SetSourceParameterName(SourceParameterNameT&& value) { m_sourceParameterNameHasBeenSet = true; m_sourceParameterName = std::forward<SourceParameterNameT>(value); }
+    template<typename SourceParameterNameT = Aws::String>
+    ParameterDropDownControl& WithSourceParameterName(SourceParameterNameT&& value) { SetSourceParameterName(std::forward<SourceParameterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display options of a control.</p>
      */
-    inline const DropDownControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
+    inline const DropDownControlDisplayOptions& GetDisplayOptions() const { return m_displayOptions; }
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-    inline void SetDisplayOptions(const DropDownControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-    inline void SetDisplayOptions(DropDownControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-    inline ParameterDropDownControl& WithDisplayOptions(const DropDownControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-    inline ParameterDropDownControl& WithDisplayOptions(DropDownControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
+    template<typename DisplayOptionsT = DropDownControlDisplayOptions>
+    void SetDisplayOptions(DisplayOptionsT&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::forward<DisplayOptionsT>(value); }
+    template<typename DisplayOptionsT = DropDownControlDisplayOptions>
+    ParameterDropDownControl& WithDisplayOptions(DisplayOptionsT&& value) { SetDisplayOptions(std::forward<DisplayOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type parameter name of the <code>ParameterDropDownControl</code>.</p>
      */
-    inline const SheetControlListType& GetType() const{ return m_type; }
+    inline SheetControlListType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SheetControlListType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SheetControlListType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ParameterDropDownControl& WithType(const SheetControlListType& value) { SetType(value); return *this;}
-    inline ParameterDropDownControl& WithType(SheetControlListType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SheetControlListType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ParameterDropDownControl& WithType(SheetControlListType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of selectable values that are used in a control.</p>
      */
-    inline const ParameterSelectableValues& GetSelectableValues() const{ return m_selectableValues; }
+    inline const ParameterSelectableValues& GetSelectableValues() const { return m_selectableValues; }
     inline bool SelectableValuesHasBeenSet() const { return m_selectableValuesHasBeenSet; }
-    inline void SetSelectableValues(const ParameterSelectableValues& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = value; }
-    inline void SetSelectableValues(ParameterSelectableValues&& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = std::move(value); }
-    inline ParameterDropDownControl& WithSelectableValues(const ParameterSelectableValues& value) { SetSelectableValues(value); return *this;}
-    inline ParameterDropDownControl& WithSelectableValues(ParameterSelectableValues&& value) { SetSelectableValues(std::move(value)); return *this;}
+    template<typename SelectableValuesT = ParameterSelectableValues>
+    void SetSelectableValues(SelectableValuesT&& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = std::forward<SelectableValuesT>(value); }
+    template<typename SelectableValuesT = ParameterSelectableValues>
+    ParameterDropDownControl& WithSelectableValues(SelectableValuesT&& value) { SetSelectableValues(std::forward<SelectableValuesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,12 +118,12 @@ namespace Model
      * <p>The values that are displayed in a control can be configured to only show
      * values that are valid based on what's selected in other controls.</p>
      */
-    inline const CascadingControlConfiguration& GetCascadingControlConfiguration() const{ return m_cascadingControlConfiguration; }
+    inline const CascadingControlConfiguration& GetCascadingControlConfiguration() const { return m_cascadingControlConfiguration; }
     inline bool CascadingControlConfigurationHasBeenSet() const { return m_cascadingControlConfigurationHasBeenSet; }
-    inline void SetCascadingControlConfiguration(const CascadingControlConfiguration& value) { m_cascadingControlConfigurationHasBeenSet = true; m_cascadingControlConfiguration = value; }
-    inline void SetCascadingControlConfiguration(CascadingControlConfiguration&& value) { m_cascadingControlConfigurationHasBeenSet = true; m_cascadingControlConfiguration = std::move(value); }
-    inline ParameterDropDownControl& WithCascadingControlConfiguration(const CascadingControlConfiguration& value) { SetCascadingControlConfiguration(value); return *this;}
-    inline ParameterDropDownControl& WithCascadingControlConfiguration(CascadingControlConfiguration&& value) { SetCascadingControlConfiguration(std::move(value)); return *this;}
+    template<typename CascadingControlConfigurationT = CascadingControlConfiguration>
+    void SetCascadingControlConfiguration(CascadingControlConfigurationT&& value) { m_cascadingControlConfigurationHasBeenSet = true; m_cascadingControlConfiguration = std::forward<CascadingControlConfigurationT>(value); }
+    template<typename CascadingControlConfigurationT = CascadingControlConfiguration>
+    ParameterDropDownControl& WithCascadingControlConfiguration(CascadingControlConfigurationT&& value) { SetCascadingControlConfiguration(std::forward<CascadingControlConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,12 +131,10 @@ namespace Model
      * <p>The visibility configuration of the Apply button on a
      * <code>ParameterDropDownControl</code>.</p>
      */
-    inline const CommitMode& GetCommitMode() const{ return m_commitMode; }
+    inline CommitMode GetCommitMode() const { return m_commitMode; }
     inline bool CommitModeHasBeenSet() const { return m_commitModeHasBeenSet; }
-    inline void SetCommitMode(const CommitMode& value) { m_commitModeHasBeenSet = true; m_commitMode = value; }
-    inline void SetCommitMode(CommitMode&& value) { m_commitModeHasBeenSet = true; m_commitMode = std::move(value); }
-    inline ParameterDropDownControl& WithCommitMode(const CommitMode& value) { SetCommitMode(value); return *this;}
-    inline ParameterDropDownControl& WithCommitMode(CommitMode&& value) { SetCommitMode(std::move(value)); return *this;}
+    inline void SetCommitMode(CommitMode value) { m_commitModeHasBeenSet = true; m_commitMode = value; }
+    inline ParameterDropDownControl& WithCommitMode(CommitMode value) { SetCommitMode(value); return *this;}
     ///@}
   private:
 
@@ -160,7 +150,7 @@ namespace Model
     DropDownControlDisplayOptions m_displayOptions;
     bool m_displayOptionsHasBeenSet = false;
 
-    SheetControlListType m_type;
+    SheetControlListType m_type{SheetControlListType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     ParameterSelectableValues m_selectableValues;
@@ -169,7 +159,7 @@ namespace Model
     CascadingControlConfiguration m_cascadingControlConfiguration;
     bool m_cascadingControlConfigurationHasBeenSet = false;
 
-    CommitMode m_commitMode;
+    CommitMode m_commitMode{CommitMode::NOT_SET};
     bool m_commitModeHasBeenSet = false;
   };
 

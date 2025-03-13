@@ -27,7 +27,7 @@ namespace Model
   class CreateLifecyclePolicyResult
   {
   public:
-    AWS_DLM_API CreateLifecyclePolicyResult();
+    AWS_DLM_API CreateLifecyclePolicyResult() = default;
     AWS_DLM_API CreateLifecyclePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DLM_API CreateLifecyclePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The identifier of the lifecycle policy.</p>
      */
-    inline const Aws::String& GetPolicyId() const{ return m_policyId; }
-    inline void SetPolicyId(const Aws::String& value) { m_policyId = value; }
-    inline void SetPolicyId(Aws::String&& value) { m_policyId = std::move(value); }
-    inline void SetPolicyId(const char* value) { m_policyId.assign(value); }
-    inline CreateLifecyclePolicyResult& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-    inline CreateLifecyclePolicyResult& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-    inline CreateLifecyclePolicyResult& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+    inline const Aws::String& GetPolicyId() const { return m_policyId; }
+    template<typename PolicyIdT = Aws::String>
+    void SetPolicyId(PolicyIdT&& value) { m_policyIdHasBeenSet = true; m_policyId = std::forward<PolicyIdT>(value); }
+    template<typename PolicyIdT = Aws::String>
+    CreateLifecyclePolicyResult& WithPolicyId(PolicyIdT&& value) { SetPolicyId(std::forward<PolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLifecyclePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLifecyclePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLifecyclePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLifecyclePolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_policyId;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

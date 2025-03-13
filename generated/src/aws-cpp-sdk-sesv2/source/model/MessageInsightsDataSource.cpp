@@ -18,18 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-MessageInsightsDataSource::MessageInsightsDataSource() : 
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_includeHasBeenSet(false),
-    m_excludeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 MessageInsightsDataSource::MessageInsightsDataSource(JsonView jsonValue)
-  : MessageInsightsDataSource()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ MessageInsightsDataSource& MessageInsightsDataSource::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("StartDate"))
   {
     m_startDate = jsonValue.GetDouble("StartDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDate"))
   {
     m_endDate = jsonValue.GetDouble("EndDate");
-
     m_endDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Include"))
   {
     m_include = jsonValue.GetObject("Include");
-
     m_includeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exclude"))
   {
     m_exclude = jsonValue.GetObject("Exclude");
-
     m_excludeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
-
     m_maxResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

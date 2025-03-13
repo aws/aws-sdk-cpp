@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualGatewayListenerTlsSdsCertificate::VirtualGatewayListenerTlsSdsCertificate() : 
-    m_secretNameHasBeenSet(false)
-{
-}
-
 VirtualGatewayListenerTlsSdsCertificate::VirtualGatewayListenerTlsSdsCertificate(JsonView jsonValue)
-  : VirtualGatewayListenerTlsSdsCertificate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VirtualGatewayListenerTlsSdsCertificate& VirtualGatewayListenerTlsSdsCertificate
   if(jsonValue.ValueExists("secretName"))
   {
     m_secretName = jsonValue.GetString("secretName");
-
     m_secretNameHasBeenSet = true;
   }
-
   return *this;
 }
 

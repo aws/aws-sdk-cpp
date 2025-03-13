@@ -12,15 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProjectRequest::UpdateProjectRequest() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_defaultJobTimeoutMinutes(0),
-    m_defaultJobTimeoutMinutesHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProjectRequest::SerializePayload() const
 {
   JsonValue payload;

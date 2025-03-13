@@ -19,7 +19,7 @@ namespace Model
   class GetServiceRoleForAccountRequest : public GreengrassRequest
   {
   public:
-    AWS_GREENGRASS_API GetServiceRoleForAccountRequest();
+    AWS_GREENGRASS_API GetServiceRoleForAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

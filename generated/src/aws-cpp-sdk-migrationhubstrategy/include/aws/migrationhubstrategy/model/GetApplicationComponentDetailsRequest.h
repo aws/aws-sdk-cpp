@@ -21,7 +21,7 @@ namespace Model
   class GetApplicationComponentDetailsRequest : public MigrationHubStrategyRecommendationsRequest
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetApplicationComponentDetailsRequest();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetApplicationComponentDetailsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p> The ID of the application component. The ID is unique within an AWS
      * account.</p>
      */
-    inline const Aws::String& GetApplicationComponentId() const{ return m_applicationComponentId; }
+    inline const Aws::String& GetApplicationComponentId() const { return m_applicationComponentId; }
     inline bool ApplicationComponentIdHasBeenSet() const { return m_applicationComponentIdHasBeenSet; }
-    inline void SetApplicationComponentId(const Aws::String& value) { m_applicationComponentIdHasBeenSet = true; m_applicationComponentId = value; }
-    inline void SetApplicationComponentId(Aws::String&& value) { m_applicationComponentIdHasBeenSet = true; m_applicationComponentId = std::move(value); }
-    inline void SetApplicationComponentId(const char* value) { m_applicationComponentIdHasBeenSet = true; m_applicationComponentId.assign(value); }
-    inline GetApplicationComponentDetailsRequest& WithApplicationComponentId(const Aws::String& value) { SetApplicationComponentId(value); return *this;}
-    inline GetApplicationComponentDetailsRequest& WithApplicationComponentId(Aws::String&& value) { SetApplicationComponentId(std::move(value)); return *this;}
-    inline GetApplicationComponentDetailsRequest& WithApplicationComponentId(const char* value) { SetApplicationComponentId(value); return *this;}
+    template<typename ApplicationComponentIdT = Aws::String>
+    void SetApplicationComponentId(ApplicationComponentIdT&& value) { m_applicationComponentIdHasBeenSet = true; m_applicationComponentId = std::forward<ApplicationComponentIdT>(value); }
+    template<typename ApplicationComponentIdT = Aws::String>
+    GetApplicationComponentDetailsRequest& WithApplicationComponentId(ApplicationComponentIdT&& value) { SetApplicationComponentId(std::forward<ApplicationComponentIdT>(value)); return *this;}
     ///@}
   private:
 

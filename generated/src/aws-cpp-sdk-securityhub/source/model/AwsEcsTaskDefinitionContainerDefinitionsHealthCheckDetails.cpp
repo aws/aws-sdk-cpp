@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails() : 
-    m_commandHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_retries(0),
-    m_retriesHasBeenSet(false),
-    m_startPeriod(0),
-    m_startPeriodHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails()
 {
   *this = jsonValue;
 }
@@ -48,35 +34,26 @@ AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails& AwsEcsTaskDefinition
     }
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interval"))
   {
     m_interval = jsonValue.GetInteger("Interval");
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Retries"))
   {
     m_retries = jsonValue.GetInteger("Retries");
-
     m_retriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartPeriod"))
   {
     m_startPeriod = jsonValue.GetInteger("StartPeriod");
-
     m_startPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeout"))
   {
     m_timeout = jsonValue.GetInteger("Timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ExportJobSummary::ExportJobSummary() : 
-    m_jobIdHasBeenSet(false),
-    m_exportSourceType(ExportSourceType::NOT_SET),
-    m_exportSourceTypeHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_completedTimestampHasBeenSet(false)
-{
-}
-
 ExportJobSummary::ExportJobSummary(JsonView jsonValue)
-  : ExportJobSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ExportJobSummary& ExportJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportSourceType"))
   {
     m_exportSourceType = ExportSourceTypeMapper::GetExportSourceTypeForName(jsonValue.GetString("ExportSourceType"));
-
     m_exportSourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-
     m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedTimestamp"))
   {
     m_completedTimestamp = jsonValue.GetDouble("CompletedTimestamp");
-
     m_completedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

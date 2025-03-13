@@ -18,13 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-IntermediateSourceConfiguration::IntermediateSourceConfiguration() : 
-    m_intermediateS3PathHasBeenSet(false)
-{
-}
-
 IntermediateSourceConfiguration::IntermediateSourceConfiguration(JsonView jsonValue)
-  : IntermediateSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IntermediateSourceConfiguration& IntermediateSourceConfiguration::operator =(Jso
   if(jsonValue.ValueExists("intermediateS3Path"))
   {
     m_intermediateS3Path = jsonValue.GetString("intermediateS3Path");
-
     m_intermediateS3PathHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PurchaseReservedInstanceOfferingResult::PurchaseReservedInstanceOfferingResult()
-{
-}
-
 PurchaseReservedInstanceOfferingResult::PurchaseReservedInstanceOfferingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ PurchaseReservedInstanceOfferingResult& PurchaseReservedInstanceOfferingResult::
   if(jsonValue.ValueExists("ReservedInstanceId"))
   {
     m_reservedInstanceId = jsonValue.GetString("ReservedInstanceId");
-
+    m_reservedInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservationName"))
   {
     m_reservationName = jsonValue.GetString("ReservationName");
-
+    m_reservationNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-SnapshotCopyGrant::SnapshotCopyGrant() : 
-    m_snapshotCopyGrantNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 SnapshotCopyGrant::SnapshotCopyGrant(const XmlNode& xmlNode)
-  : SnapshotCopyGrant()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ SnapshotCopyGrant& SnapshotCopyGrant::operator =(const XmlNode& xmlNode)
     {
       m_snapshotCopyGrantName = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotCopyGrantNameNode.GetText());
       m_snapshotCopyGrantNameHasBeenSet = true;
+       m_snapshotCopyGrantNameHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
+       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("Tag");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

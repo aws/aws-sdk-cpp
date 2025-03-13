@@ -18,16 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-RelationalDatabaseEvent::RelationalDatabaseEvent() : 
-    m_resourceHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false)
-{
-}
-
 RelationalDatabaseEvent::RelationalDatabaseEvent(JsonView jsonValue)
-  : RelationalDatabaseEvent()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RelationalDatabaseEvent& RelationalDatabaseEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventCategories"))
   {
     Aws::Utils::Array<JsonView> eventCategoriesJsonList = jsonValue.GetArray("eventCategories");
@@ -64,7 +49,6 @@ RelationalDatabaseEvent& RelationalDatabaseEvent::operator =(JsonView jsonValue)
     }
     m_eventCategoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,32 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ColorCorrector::ColorCorrector() : 
-    m_brightness(0),
-    m_brightnessHasBeenSet(false),
-    m_clipLimitsHasBeenSet(false),
-    m_colorSpaceConversion(ColorSpaceConversion::NOT_SET),
-    m_colorSpaceConversionHasBeenSet(false),
-    m_contrast(0),
-    m_contrastHasBeenSet(false),
-    m_hdr10MetadataHasBeenSet(false),
-    m_hdrToSdrToneMapper(HDRToSDRToneMapper::NOT_SET),
-    m_hdrToSdrToneMapperHasBeenSet(false),
-    m_hue(0),
-    m_hueHasBeenSet(false),
-    m_maxLuminance(0),
-    m_maxLuminanceHasBeenSet(false),
-    m_sampleRangeConversion(SampleRangeConversion::NOT_SET),
-    m_sampleRangeConversionHasBeenSet(false),
-    m_saturation(0),
-    m_saturationHasBeenSet(false),
-    m_sdrReferenceWhiteLevel(0),
-    m_sdrReferenceWhiteLevelHasBeenSet(false)
-{
-}
-
 ColorCorrector::ColorCorrector(JsonView jsonValue)
-  : ColorCorrector()
 {
   *this = jsonValue;
 }
@@ -53,80 +28,58 @@ ColorCorrector& ColorCorrector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("brightness"))
   {
     m_brightness = jsonValue.GetInteger("brightness");
-
     m_brightnessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clipLimits"))
   {
     m_clipLimits = jsonValue.GetObject("clipLimits");
-
     m_clipLimitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("colorSpaceConversion"))
   {
     m_colorSpaceConversion = ColorSpaceConversionMapper::GetColorSpaceConversionForName(jsonValue.GetString("colorSpaceConversion"));
-
     m_colorSpaceConversionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contrast"))
   {
     m_contrast = jsonValue.GetInteger("contrast");
-
     m_contrastHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hdr10Metadata"))
   {
     m_hdr10Metadata = jsonValue.GetObject("hdr10Metadata");
-
     m_hdr10MetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hdrToSdrToneMapper"))
   {
     m_hdrToSdrToneMapper = HDRToSDRToneMapperMapper::GetHDRToSDRToneMapperForName(jsonValue.GetString("hdrToSdrToneMapper"));
-
     m_hdrToSdrToneMapperHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hue"))
   {
     m_hue = jsonValue.GetInteger("hue");
-
     m_hueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxLuminance"))
   {
     m_maxLuminance = jsonValue.GetInteger("maxLuminance");
-
     m_maxLuminanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleRangeConversion"))
   {
     m_sampleRangeConversion = SampleRangeConversionMapper::GetSampleRangeConversionForName(jsonValue.GetString("sampleRangeConversion"));
-
     m_sampleRangeConversionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("saturation"))
   {
     m_saturation = jsonValue.GetInteger("saturation");
-
     m_saturationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sdrReferenceWhiteLevel"))
   {
     m_sdrReferenceWhiteLevel = jsonValue.GetInteger("sdrReferenceWhiteLevel");
-
     m_sdrReferenceWhiteLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

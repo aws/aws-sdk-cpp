@@ -29,7 +29,7 @@ namespace Model
   class VpcOptions
   {
   public:
-    AWS_NETWORKMANAGER_API VpcOptions();
+    AWS_NETWORKMANAGER_API VpcOptions() = default;
     AWS_NETWORKMANAGER_API VpcOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API VpcOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Indicates whether IPv6 is supported.</p>
      */
-    inline bool GetIpv6Support() const{ return m_ipv6Support; }
+    inline bool GetIpv6Support() const { return m_ipv6Support; }
     inline bool Ipv6SupportHasBeenSet() const { return m_ipv6SupportHasBeenSet; }
     inline void SetIpv6Support(bool value) { m_ipv6SupportHasBeenSet = true; m_ipv6Support = value; }
     inline VpcOptions& WithIpv6Support(bool value) { SetIpv6Support(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * attachment for the lifetime of that flow. The default value is
      * <code>false</code>.</p>
      */
-    inline bool GetApplianceModeSupport() const{ return m_applianceModeSupport; }
+    inline bool GetApplianceModeSupport() const { return m_applianceModeSupport; }
     inline bool ApplianceModeSupportHasBeenSet() const { return m_applianceModeSupportHasBeenSet; }
     inline void SetApplianceModeSupport(bool value) { m_applianceModeSupportHasBeenSet = true; m_applianceModeSupport = value; }
     inline VpcOptions& WithApplianceModeSupport(bool value) { SetApplianceModeSupport(value); return *this;}
     ///@}
   private:
 
-    bool m_ipv6Support;
+    bool m_ipv6Support{false};
     bool m_ipv6SupportHasBeenSet = false;
 
-    bool m_applianceModeSupport;
+    bool m_applianceModeSupport{false};
     bool m_applianceModeSupportHasBeenSet = false;
   };
 

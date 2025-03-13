@@ -18,15 +18,7 @@ namespace WAF
 namespace Model
 {
 
-SizeConstraintSet::SizeConstraintSet() : 
-    m_sizeConstraintSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sizeConstraintsHasBeenSet(false)
-{
-}
-
 SizeConstraintSet::SizeConstraintSet(JsonView jsonValue)
-  : SizeConstraintSet()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SizeConstraintSet& SizeConstraintSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SizeConstraintSetId"))
   {
     m_sizeConstraintSetId = jsonValue.GetString("SizeConstraintSetId");
-
     m_sizeConstraintSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeConstraints"))
   {
     Aws::Utils::Array<JsonView> sizeConstraintsJsonList = jsonValue.GetArray("SizeConstraints");
@@ -56,7 +44,6 @@ SizeConstraintSet& SizeConstraintSet::operator =(JsonView jsonValue)
     }
     m_sizeConstraintsHasBeenSet = true;
   }
-
   return *this;
 }
 

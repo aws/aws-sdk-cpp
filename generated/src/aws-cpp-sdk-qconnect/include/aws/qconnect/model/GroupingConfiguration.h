@@ -33,7 +33,7 @@ namespace Model
   class GroupingConfiguration
   {
   public:
-    AWS_QCONNECT_API GroupingConfiguration();
+    AWS_QCONNECT_API GroupingConfiguration() = default;
     AWS_QCONNECT_API GroupingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API GroupingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html">DescribeRoutingProfile</a>
      * permissions when setting criteria to this value.</p> </li> </ul>
      */
-    inline const Aws::String& GetCriteria() const{ return m_criteria; }
+    inline const Aws::String& GetCriteria() const { return m_criteria; }
     inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
-    inline void SetCriteria(const Aws::String& value) { m_criteriaHasBeenSet = true; m_criteria = value; }
-    inline void SetCriteria(Aws::String&& value) { m_criteriaHasBeenSet = true; m_criteria = std::move(value); }
-    inline void SetCriteria(const char* value) { m_criteriaHasBeenSet = true; m_criteria.assign(value); }
-    inline GroupingConfiguration& WithCriteria(const Aws::String& value) { SetCriteria(value); return *this;}
-    inline GroupingConfiguration& WithCriteria(Aws::String&& value) { SetCriteria(std::move(value)); return *this;}
-    inline GroupingConfiguration& WithCriteria(const char* value) { SetCriteria(value); return *this;}
+    template<typename CriteriaT = Aws::String>
+    void SetCriteria(CriteriaT&& value) { m_criteriaHasBeenSet = true; m_criteria = std::forward<CriteriaT>(value); }
+    template<typename CriteriaT = Aws::String>
+    GroupingConfiguration& WithCriteria(CriteriaT&& value) { SetCriteria(std::forward<CriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,15 +67,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon
      * Connect routing profiles</a> as values of this parameter.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline GroupingConfiguration& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline GroupingConfiguration& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline GroupingConfiguration& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline GroupingConfiguration& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline GroupingConfiguration& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    GroupingConfiguration& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    GroupingConfiguration& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

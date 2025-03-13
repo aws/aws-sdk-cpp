@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAuthorizerResult::DescribeAuthorizerResult()
-{
-}
-
 DescribeAuthorizerResult::DescribeAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeAuthorizerResult& DescribeAuthorizerResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("authorizerDescription"))
   {
     m_authorizerDescription = jsonValue.GetObject("authorizerDescription");
-
+    m_authorizerDescriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

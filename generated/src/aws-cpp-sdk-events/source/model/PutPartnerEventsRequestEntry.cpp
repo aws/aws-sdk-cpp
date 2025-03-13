@@ -18,17 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-PutPartnerEventsRequestEntry::PutPartnerEventsRequestEntry() : 
-    m_timeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_detailTypeHasBeenSet(false),
-    m_detailHasBeenSet(false)
-{
-}
-
 PutPartnerEventsRequestEntry::PutPartnerEventsRequestEntry(JsonView jsonValue)
-  : PutPartnerEventsRequestEntry()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ PutPartnerEventsRequestEntry& PutPartnerEventsRequestEntry::operator =(JsonView 
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetDouble("Time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -58,21 +44,16 @@ PutPartnerEventsRequestEntry& PutPartnerEventsRequestEntry::operator =(JsonView 
     }
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetailType"))
   {
     m_detailType = jsonValue.GetString("DetailType");
-
     m_detailTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Detail"))
   {
     m_detail = jsonValue.GetString("Detail");
-
     m_detailHasBeenSet = true;
   }
-
   return *this;
 }
 

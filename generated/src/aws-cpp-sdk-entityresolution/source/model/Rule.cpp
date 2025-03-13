@@ -18,14 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-Rule::Rule() : 
-    m_matchingKeysHasBeenSet(false),
-    m_ruleNameHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_matchingKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleName"))
   {
     m_ruleName = jsonValue.GetString("ruleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   return *this;
 }
 

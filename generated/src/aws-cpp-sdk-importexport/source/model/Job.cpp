@@ -20,18 +20,7 @@ namespace ImportExport
 namespace Model
 {
 
-Job::Job() : 
-    m_jobIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_isCanceled(false),
-    m_isCanceledHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false)
-{
-}
-
 Job::Job(const XmlNode& xmlNode)
-  : Job()
 {
   *this = xmlNode;
 }
@@ -47,24 +36,28 @@ Job& Job::operator =(const XmlNode& xmlNode)
     {
       m_jobId = Aws::Utils::Xml::DecodeEscapedXmlText(jobIdNode.GetText());
       m_jobIdHasBeenSet = true;
+       m_jobIdHasBeenSet = true;
     }
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
       m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationDateHasBeenSet = true;
+       m_creationDateHasBeenSet = true;
     }
     XmlNode isCanceledNode = resultNode.FirstChild("IsCanceled");
     if(!isCanceledNode.IsNull())
     {
       m_isCanceled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isCanceledNode.GetText()).c_str()).c_str());
       m_isCanceledHasBeenSet = true;
+       m_isCanceledHasBeenSet = true;
     }
     XmlNode jobTypeNode = resultNode.FirstChild("JobType");
     if(!jobTypeNode.IsNull())
     {
-      m_jobType = JobTypeMapper::GetJobTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobTypeNode.GetText()).c_str()).c_str());
+      m_jobType = JobTypeMapper::GetJobTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobTypeNode.GetText()).c_str()));
       m_jobTypeHasBeenSet = true;
+       m_jobTypeHasBeenSet = true;
     }
   }
 

@@ -18,15 +18,7 @@ namespace AppIntegrationsService
 namespace Model
 {
 
-LastExecutionStatus::LastExecutionStatus() : 
-    m_executionStatus(ExecutionStatus::NOT_SET),
-    m_executionStatusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 LastExecutionStatus::LastExecutionStatus(JsonView jsonValue)
-  : LastExecutionStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LastExecutionStatus& LastExecutionStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExecutionStatus"))
   {
     m_executionStatus = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("ExecutionStatus"));
-
     m_executionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

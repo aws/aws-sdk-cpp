@@ -20,16 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-WarningProperty::WarningProperty() : 
-    m_propertyPathHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 WarningProperty::WarningProperty(const XmlNode& xmlNode)
-  : WarningProperty()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ WarningProperty& WarningProperty::operator =(const XmlNode& xmlNode)
     {
       m_propertyPath = Aws::Utils::Xml::DecodeEscapedXmlText(propertyPathNode.GetText());
       m_propertyPathHasBeenSet = true;
+       m_propertyPathHasBeenSet = true;
     }
     XmlNode requiredNode = resultNode.FirstChild("Required");
     if(!requiredNode.IsNull())
     {
       m_required = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requiredNode.GetText()).c_str()).c_str());
       m_requiredHasBeenSet = true;
+       m_requiredHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
   }
 

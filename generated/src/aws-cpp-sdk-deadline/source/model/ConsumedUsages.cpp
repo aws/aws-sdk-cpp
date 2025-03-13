@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-ConsumedUsages::ConsumedUsages() : 
-    m_approximateDollarUsage(0.0),
-    m_approximateDollarUsageHasBeenSet(false)
-{
-}
-
 ConsumedUsages::ConsumedUsages(JsonView jsonValue)
-  : ConsumedUsages()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ConsumedUsages& ConsumedUsages::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("approximateDollarUsage"))
   {
     m_approximateDollarUsage = jsonValue.GetDouble("approximateDollarUsage");
-
     m_approximateDollarUsageHasBeenSet = true;
   }
-
   return *this;
 }
 

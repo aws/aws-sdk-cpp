@@ -33,7 +33,7 @@ namespace Model
   class ResultSetMetadata
   {
   public:
-    AWS_RDSDATASERVICE_API ResultSetMetadata();
+    AWS_RDSDATASERVICE_API ResultSetMetadata() = default;
     AWS_RDSDATASERVICE_API ResultSetMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_RDSDATASERVICE_API ResultSetMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The number of columns in the result set.</p>
      */
-    inline long long GetColumnCount() const{ return m_columnCount; }
+    inline long long GetColumnCount() const { return m_columnCount; }
     inline bool ColumnCountHasBeenSet() const { return m_columnCountHasBeenSet; }
     inline void SetColumnCount(long long value) { m_columnCountHasBeenSet = true; m_columnCount = value; }
     inline ResultSetMetadata& WithColumnCount(long long value) { SetColumnCount(value); return *this;}
@@ -53,18 +53,18 @@ namespace Model
     /**
      * <p>The metadata of the columns in the result set.</p>
      */
-    inline const Aws::Vector<ColumnMetadata>& GetColumnMetadata() const{ return m_columnMetadata; }
+    inline const Aws::Vector<ColumnMetadata>& GetColumnMetadata() const { return m_columnMetadata; }
     inline bool ColumnMetadataHasBeenSet() const { return m_columnMetadataHasBeenSet; }
-    inline void SetColumnMetadata(const Aws::Vector<ColumnMetadata>& value) { m_columnMetadataHasBeenSet = true; m_columnMetadata = value; }
-    inline void SetColumnMetadata(Aws::Vector<ColumnMetadata>&& value) { m_columnMetadataHasBeenSet = true; m_columnMetadata = std::move(value); }
-    inline ResultSetMetadata& WithColumnMetadata(const Aws::Vector<ColumnMetadata>& value) { SetColumnMetadata(value); return *this;}
-    inline ResultSetMetadata& WithColumnMetadata(Aws::Vector<ColumnMetadata>&& value) { SetColumnMetadata(std::move(value)); return *this;}
-    inline ResultSetMetadata& AddColumnMetadata(const ColumnMetadata& value) { m_columnMetadataHasBeenSet = true; m_columnMetadata.push_back(value); return *this; }
-    inline ResultSetMetadata& AddColumnMetadata(ColumnMetadata&& value) { m_columnMetadataHasBeenSet = true; m_columnMetadata.push_back(std::move(value)); return *this; }
+    template<typename ColumnMetadataT = Aws::Vector<ColumnMetadata>>
+    void SetColumnMetadata(ColumnMetadataT&& value) { m_columnMetadataHasBeenSet = true; m_columnMetadata = std::forward<ColumnMetadataT>(value); }
+    template<typename ColumnMetadataT = Aws::Vector<ColumnMetadata>>
+    ResultSetMetadata& WithColumnMetadata(ColumnMetadataT&& value) { SetColumnMetadata(std::forward<ColumnMetadataT>(value)); return *this;}
+    template<typename ColumnMetadataT = ColumnMetadata>
+    ResultSetMetadata& AddColumnMetadata(ColumnMetadataT&& value) { m_columnMetadataHasBeenSet = true; m_columnMetadata.emplace_back(std::forward<ColumnMetadataT>(value)); return *this; }
     ///@}
   private:
 
-    long long m_columnCount;
+    long long m_columnCount{0};
     bool m_columnCountHasBeenSet = false;
 
     Aws::Vector<ColumnMetadata> m_columnMetadata;

@@ -32,7 +32,7 @@ namespace Model
   class StorageLensDataExport
   {
   public:
-    AWS_S3CONTROL_API StorageLensDataExport();
+    AWS_S3CONTROL_API StorageLensDataExport() = default;
     AWS_S3CONTROL_API StorageLensDataExport(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API StorageLensDataExport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,12 +45,12 @@ namespace Model
      * located.</p>  <p>This bucket must be located in the same Region as the
      * storage lens configuration. </p> 
      */
-    inline const S3BucketDestination& GetS3BucketDestination() const{ return m_s3BucketDestination; }
+    inline const S3BucketDestination& GetS3BucketDestination() const { return m_s3BucketDestination; }
     inline bool S3BucketDestinationHasBeenSet() const { return m_s3BucketDestinationHasBeenSet; }
-    inline void SetS3BucketDestination(const S3BucketDestination& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = value; }
-    inline void SetS3BucketDestination(S3BucketDestination&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = std::move(value); }
-    inline StorageLensDataExport& WithS3BucketDestination(const S3BucketDestination& value) { SetS3BucketDestination(value); return *this;}
-    inline StorageLensDataExport& WithS3BucketDestination(S3BucketDestination&& value) { SetS3BucketDestination(std::move(value)); return *this;}
+    template<typename S3BucketDestinationT = S3BucketDestination>
+    void SetS3BucketDestination(S3BucketDestinationT&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = std::forward<S3BucketDestinationT>(value); }
+    template<typename S3BucketDestinationT = S3BucketDestination>
+    StorageLensDataExport& WithS3BucketDestination(S3BucketDestinationT&& value) { SetS3BucketDestination(std::forward<S3BucketDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens
      * metrics.</p>
      */
-    inline const CloudWatchMetrics& GetCloudWatchMetrics() const{ return m_cloudWatchMetrics; }
+    inline const CloudWatchMetrics& GetCloudWatchMetrics() const { return m_cloudWatchMetrics; }
     inline bool CloudWatchMetricsHasBeenSet() const { return m_cloudWatchMetricsHasBeenSet; }
-    inline void SetCloudWatchMetrics(const CloudWatchMetrics& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics = value; }
-    inline void SetCloudWatchMetrics(CloudWatchMetrics&& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics = std::move(value); }
-    inline StorageLensDataExport& WithCloudWatchMetrics(const CloudWatchMetrics& value) { SetCloudWatchMetrics(value); return *this;}
-    inline StorageLensDataExport& WithCloudWatchMetrics(CloudWatchMetrics&& value) { SetCloudWatchMetrics(std::move(value)); return *this;}
+    template<typename CloudWatchMetricsT = CloudWatchMetrics>
+    void SetCloudWatchMetrics(CloudWatchMetricsT&& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics = std::forward<CloudWatchMetricsT>(value); }
+    template<typename CloudWatchMetricsT = CloudWatchMetrics>
+    StorageLensDataExport& WithCloudWatchMetrics(CloudWatchMetricsT&& value) { SetCloudWatchMetrics(std::forward<CloudWatchMetricsT>(value)); return *this;}
     ///@}
   private:
 

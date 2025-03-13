@@ -12,13 +12,6 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddTagsToVaultRequest::AddTagsToVaultRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_vaultNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String AddTagsToVaultRequest::SerializePayload() const
 {
   JsonValue payload;

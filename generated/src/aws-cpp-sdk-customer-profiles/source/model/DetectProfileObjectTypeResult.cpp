@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectProfileObjectTypeResult::DetectProfileObjectTypeResult()
-{
-}
-
 DetectProfileObjectTypeResult::DetectProfileObjectTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DetectProfileObjectTypeResult& DetectProfileObjectTypeResult::operator =(const A
     {
       m_detectedProfileObjectTypes.push_back(detectedProfileObjectTypesJsonList[detectedProfileObjectTypesIndex].AsObject());
     }
+    m_detectedProfileObjectTypesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-TestGridVpcConfig::TestGridVpcConfig() : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 TestGridVpcConfig::TestGridVpcConfig(JsonView jsonValue)
-  : TestGridVpcConfig()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ TestGridVpcConfig& TestGridVpcConfig::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -52,14 +43,11 @@ TestGridVpcConfig& TestGridVpcConfig::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

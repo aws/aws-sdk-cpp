@@ -35,7 +35,7 @@ namespace Model
   class SpendLimit
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API SpendLimit();
+    AWS_PINPOINTSMSVOICEV2_API SpendLimit() = default;
     AWS_PINPOINTSMSVOICEV2_API SpendLimit(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API SpendLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>The name for the SpendLimit.</p>
      */
-    inline const SpendLimitName& GetName() const{ return m_name; }
+    inline SpendLimitName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const SpendLimitName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(SpendLimitName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline SpendLimit& WithName(const SpendLimitName& value) { SetName(value); return *this;}
-    inline SpendLimit& WithName(SpendLimitName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(SpendLimitName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline SpendLimit& WithName(SpendLimitName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * amount in <code>MaxLimit</code>. To use this custom limit,
      * <code>Overridden</code> must be set to true.</p>
      */
-    inline long long GetEnforcedLimit() const{ return m_enforcedLimit; }
+    inline long long GetEnforcedLimit() const { return m_enforcedLimit; }
     inline bool EnforcedLimitHasBeenSet() const { return m_enforcedLimitHasBeenSet; }
     inline void SetEnforcedLimit(long long value) { m_enforcedLimitHasBeenSet = true; m_enforcedLimit = value; }
     inline SpendLimit& WithEnforcedLimit(long long value) { SetEnforcedLimit(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
      * <p> The maximum amount of money that you are able to spend to send messages each
      * month, in US dollars.</p>
      */
-    inline long long GetMaxLimit() const{ return m_maxLimit; }
+    inline long long GetMaxLimit() const { return m_maxLimit; }
     inline bool MaxLimitHasBeenSet() const { return m_maxLimitHasBeenSet; }
     inline void SetMaxLimit(long long value) { m_maxLimitHasBeenSet = true; m_maxLimit = value; }
     inline SpendLimit& WithMaxLimit(long long value) { SetMaxLimit(value); return *this;}
@@ -83,23 +81,23 @@ namespace Model
      * <code>EnforcedLimit</code> is used to determine the maximum amount in US dollars
      * that can be spent to send messages each month, in US dollars.</p>
      */
-    inline bool GetOverridden() const{ return m_overridden; }
+    inline bool GetOverridden() const { return m_overridden; }
     inline bool OverriddenHasBeenSet() const { return m_overriddenHasBeenSet; }
     inline void SetOverridden(bool value) { m_overriddenHasBeenSet = true; m_overridden = value; }
     inline SpendLimit& WithOverridden(bool value) { SetOverridden(value); return *this;}
     ///@}
   private:
 
-    SpendLimitName m_name;
+    SpendLimitName m_name{SpendLimitName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    long long m_enforcedLimit;
+    long long m_enforcedLimit{0};
     bool m_enforcedLimitHasBeenSet = false;
 
-    long long m_maxLimit;
+    long long m_maxLimit{0};
     bool m_maxLimitHasBeenSet = false;
 
-    bool m_overridden;
+    bool m_overridden{false};
     bool m_overriddenHasBeenSet = false;
   };
 

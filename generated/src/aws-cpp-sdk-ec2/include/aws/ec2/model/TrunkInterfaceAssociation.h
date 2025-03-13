@@ -35,7 +35,7 @@ namespace Model
   class TrunkInterfaceAssociation
   {
   public:
-    AWS_EC2_API TrunkInterfaceAssociation();
+    AWS_EC2_API TrunkInterfaceAssociation() = default;
     AWS_EC2_API TrunkInterfaceAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TrunkInterfaceAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,42 +47,36 @@ namespace Model
     /**
      * <p>The ID of the association.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+    inline const Aws::String& GetAssociationId() const { return m_associationId; }
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-    inline TrunkInterfaceAssociation& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-    inline TrunkInterfaceAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-    inline TrunkInterfaceAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    template<typename AssociationIdT = Aws::String>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = Aws::String>
+    TrunkInterfaceAssociation& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the branch network interface.</p>
      */
-    inline const Aws::String& GetBranchInterfaceId() const{ return m_branchInterfaceId; }
+    inline const Aws::String& GetBranchInterfaceId() const { return m_branchInterfaceId; }
     inline bool BranchInterfaceIdHasBeenSet() const { return m_branchInterfaceIdHasBeenSet; }
-    inline void SetBranchInterfaceId(const Aws::String& value) { m_branchInterfaceIdHasBeenSet = true; m_branchInterfaceId = value; }
-    inline void SetBranchInterfaceId(Aws::String&& value) { m_branchInterfaceIdHasBeenSet = true; m_branchInterfaceId = std::move(value); }
-    inline void SetBranchInterfaceId(const char* value) { m_branchInterfaceIdHasBeenSet = true; m_branchInterfaceId.assign(value); }
-    inline TrunkInterfaceAssociation& WithBranchInterfaceId(const Aws::String& value) { SetBranchInterfaceId(value); return *this;}
-    inline TrunkInterfaceAssociation& WithBranchInterfaceId(Aws::String&& value) { SetBranchInterfaceId(std::move(value)); return *this;}
-    inline TrunkInterfaceAssociation& WithBranchInterfaceId(const char* value) { SetBranchInterfaceId(value); return *this;}
+    template<typename BranchInterfaceIdT = Aws::String>
+    void SetBranchInterfaceId(BranchInterfaceIdT&& value) { m_branchInterfaceIdHasBeenSet = true; m_branchInterfaceId = std::forward<BranchInterfaceIdT>(value); }
+    template<typename BranchInterfaceIdT = Aws::String>
+    TrunkInterfaceAssociation& WithBranchInterfaceId(BranchInterfaceIdT&& value) { SetBranchInterfaceId(std::forward<BranchInterfaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the trunk network interface.</p>
      */
-    inline const Aws::String& GetTrunkInterfaceId() const{ return m_trunkInterfaceId; }
+    inline const Aws::String& GetTrunkInterfaceId() const { return m_trunkInterfaceId; }
     inline bool TrunkInterfaceIdHasBeenSet() const { return m_trunkInterfaceIdHasBeenSet; }
-    inline void SetTrunkInterfaceId(const Aws::String& value) { m_trunkInterfaceIdHasBeenSet = true; m_trunkInterfaceId = value; }
-    inline void SetTrunkInterfaceId(Aws::String&& value) { m_trunkInterfaceIdHasBeenSet = true; m_trunkInterfaceId = std::move(value); }
-    inline void SetTrunkInterfaceId(const char* value) { m_trunkInterfaceIdHasBeenSet = true; m_trunkInterfaceId.assign(value); }
-    inline TrunkInterfaceAssociation& WithTrunkInterfaceId(const Aws::String& value) { SetTrunkInterfaceId(value); return *this;}
-    inline TrunkInterfaceAssociation& WithTrunkInterfaceId(Aws::String&& value) { SetTrunkInterfaceId(std::move(value)); return *this;}
-    inline TrunkInterfaceAssociation& WithTrunkInterfaceId(const char* value) { SetTrunkInterfaceId(value); return *this;}
+    template<typename TrunkInterfaceIdT = Aws::String>
+    void SetTrunkInterfaceId(TrunkInterfaceIdT&& value) { m_trunkInterfaceIdHasBeenSet = true; m_trunkInterfaceId = std::forward<TrunkInterfaceIdT>(value); }
+    template<typename TrunkInterfaceIdT = Aws::String>
+    TrunkInterfaceAssociation& WithTrunkInterfaceId(TrunkInterfaceIdT&& value) { SetTrunkInterfaceId(std::forward<TrunkInterfaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,19 +84,17 @@ namespace Model
      * <p>The interface protocol. Valid values are <code>VLAN</code> and
      * <code>GRE</code>.</p>
      */
-    inline const InterfaceProtocolType& GetInterfaceProtocol() const{ return m_interfaceProtocol; }
+    inline InterfaceProtocolType GetInterfaceProtocol() const { return m_interfaceProtocol; }
     inline bool InterfaceProtocolHasBeenSet() const { return m_interfaceProtocolHasBeenSet; }
-    inline void SetInterfaceProtocol(const InterfaceProtocolType& value) { m_interfaceProtocolHasBeenSet = true; m_interfaceProtocol = value; }
-    inline void SetInterfaceProtocol(InterfaceProtocolType&& value) { m_interfaceProtocolHasBeenSet = true; m_interfaceProtocol = std::move(value); }
-    inline TrunkInterfaceAssociation& WithInterfaceProtocol(const InterfaceProtocolType& value) { SetInterfaceProtocol(value); return *this;}
-    inline TrunkInterfaceAssociation& WithInterfaceProtocol(InterfaceProtocolType&& value) { SetInterfaceProtocol(std::move(value)); return *this;}
+    inline void SetInterfaceProtocol(InterfaceProtocolType value) { m_interfaceProtocolHasBeenSet = true; m_interfaceProtocol = value; }
+    inline TrunkInterfaceAssociation& WithInterfaceProtocol(InterfaceProtocolType value) { SetInterfaceProtocol(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VLAN when you use the VLAN protocol.</p>
      */
-    inline int GetVlanId() const{ return m_vlanId; }
+    inline int GetVlanId() const { return m_vlanId; }
     inline bool VlanIdHasBeenSet() const { return m_vlanIdHasBeenSet; }
     inline void SetVlanId(int value) { m_vlanIdHasBeenSet = true; m_vlanId = value; }
     inline TrunkInterfaceAssociation& WithVlanId(int value) { SetVlanId(value); return *this;}
@@ -112,7 +104,7 @@ namespace Model
     /**
      * <p>The application key when you use the GRE protocol.</p>
      */
-    inline int GetGreKey() const{ return m_greKey; }
+    inline int GetGreKey() const { return m_greKey; }
     inline bool GreKeyHasBeenSet() const { return m_greKeyHasBeenSet; }
     inline void SetGreKey(int value) { m_greKeyHasBeenSet = true; m_greKey = value; }
     inline TrunkInterfaceAssociation& WithGreKey(int value) { SetGreKey(value); return *this;}
@@ -122,14 +114,14 @@ namespace Model
     /**
      * <p>The tags for the trunk interface association.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline TrunkInterfaceAssociation& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline TrunkInterfaceAssociation& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline TrunkInterfaceAssociation& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline TrunkInterfaceAssociation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    TrunkInterfaceAssociation& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    TrunkInterfaceAssociation& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -142,13 +134,13 @@ namespace Model
     Aws::String m_trunkInterfaceId;
     bool m_trunkInterfaceIdHasBeenSet = false;
 
-    InterfaceProtocolType m_interfaceProtocol;
+    InterfaceProtocolType m_interfaceProtocol{InterfaceProtocolType::NOT_SET};
     bool m_interfaceProtocolHasBeenSet = false;
 
-    int m_vlanId;
+    int m_vlanId{0};
     bool m_vlanIdHasBeenSet = false;
 
-    int m_greKey;
+    int m_greKey{0};
     bool m_greKeyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

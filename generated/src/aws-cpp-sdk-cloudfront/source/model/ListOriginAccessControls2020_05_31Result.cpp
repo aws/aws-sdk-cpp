@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListOriginAccessControls2020_05_31Result::ListOriginAccessControls2020_05_31Result()
-{
-}
-
 ListOriginAccessControls2020_05_31Result::ListOriginAccessControls2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ ListOriginAccessControls2020_05_31Result& ListOriginAccessControls2020_05_31Resu
   if(!resultNode.IsNull())
   {
     m_originAccessControlList = resultNode;
+    m_originAccessControlListHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ ListOriginAccessControls2020_05_31Result& ListOriginAccessControls2020_05_31Resu
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

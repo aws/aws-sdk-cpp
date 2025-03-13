@@ -12,15 +12,6 @@ using namespace Aws::LicenseManagerLinuxSubscriptions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceSettingsRequest::UpdateServiceSettingsRequest() : 
-    m_allowUpdate(false),
-    m_allowUpdateHasBeenSet(false),
-    m_linuxSubscriptionsDiscovery(LinuxSubscriptionsDiscovery::NOT_SET),
-    m_linuxSubscriptionsDiscoveryHasBeenSet(false),
-    m_linuxSubscriptionsDiscoverySettingsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

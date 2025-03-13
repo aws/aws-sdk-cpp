@@ -12,13 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartImageScanRequest::StartImageScanRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_imageIdHasBeenSet(false)
-{
-}
-
 Aws::String StartImageScanRequest::SerializePayload() const
 {
   JsonValue payload;

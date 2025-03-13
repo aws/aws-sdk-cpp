@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-HttpAction::HttpAction() : 
-    m_urlHasBeenSet(false),
-    m_confirmationUrlHasBeenSet(false),
-    m_headersHasBeenSet(false),
-    m_authHasBeenSet(false)
-{
-}
-
 HttpAction::HttpAction(JsonView jsonValue)
-  : HttpAction()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ HttpAction& HttpAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("confirmationUrl"))
   {
     m_confirmationUrl = jsonValue.GetString("confirmationUrl");
-
     m_confirmationUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("headers"))
   {
     Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("headers");
@@ -57,14 +44,11 @@ HttpAction& HttpAction::operator =(JsonView jsonValue)
     }
     m_headersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("auth"))
   {
     m_auth = jsonValue.GetObject("auth");
-
     m_authHasBeenSet = true;
   }
-
   return *this;
 }
 

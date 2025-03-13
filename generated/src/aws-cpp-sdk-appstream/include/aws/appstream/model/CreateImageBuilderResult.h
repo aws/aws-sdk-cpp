@@ -28,7 +28,7 @@ namespace Model
   class CreateImageBuilderResult
   {
   public:
-    AWS_APPSTREAM_API CreateImageBuilderResult();
+    AWS_APPSTREAM_API CreateImageBuilderResult() = default;
     AWS_APPSTREAM_API CreateImageBuilderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API CreateImageBuilderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the image builder.</p>
      */
-    inline const ImageBuilder& GetImageBuilder() const{ return m_imageBuilder; }
-    inline void SetImageBuilder(const ImageBuilder& value) { m_imageBuilder = value; }
-    inline void SetImageBuilder(ImageBuilder&& value) { m_imageBuilder = std::move(value); }
-    inline CreateImageBuilderResult& WithImageBuilder(const ImageBuilder& value) { SetImageBuilder(value); return *this;}
-    inline CreateImageBuilderResult& WithImageBuilder(ImageBuilder&& value) { SetImageBuilder(std::move(value)); return *this;}
+    inline const ImageBuilder& GetImageBuilder() const { return m_imageBuilder; }
+    template<typename ImageBuilderT = ImageBuilder>
+    void SetImageBuilder(ImageBuilderT&& value) { m_imageBuilderHasBeenSet = true; m_imageBuilder = std::forward<ImageBuilderT>(value); }
+    template<typename ImageBuilderT = ImageBuilder>
+    CreateImageBuilderResult& WithImageBuilder(ImageBuilderT&& value) { SetImageBuilder(std::forward<ImageBuilderT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateImageBuilderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateImageBuilderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateImageBuilderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateImageBuilderResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ImageBuilder m_imageBuilder;
+    bool m_imageBuilderHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-WaitTime::WaitTime() : 
-    m_waitForHasBeenSet(false),
-    m_waitUntilHasBeenSet(false)
-{
-}
-
 WaitTime::WaitTime(JsonView jsonValue)
-  : WaitTime()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WaitTime& WaitTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WaitFor"))
   {
     m_waitFor = jsonValue.GetString("WaitFor");
-
     m_waitForHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaitUntil"))
   {
     m_waitUntil = jsonValue.GetString("WaitUntil");
-
     m_waitUntilHasBeenSet = true;
   }
-
   return *this;
 }
 

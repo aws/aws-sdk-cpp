@@ -20,36 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInfo::NetworkInfo() : 
-    m_networkPerformanceHasBeenSet(false),
-    m_maximumNetworkInterfaces(0),
-    m_maximumNetworkInterfacesHasBeenSet(false),
-    m_maximumNetworkCards(0),
-    m_maximumNetworkCardsHasBeenSet(false),
-    m_defaultNetworkCardIndex(0),
-    m_defaultNetworkCardIndexHasBeenSet(false),
-    m_networkCardsHasBeenSet(false),
-    m_ipv4AddressesPerInterface(0),
-    m_ipv4AddressesPerInterfaceHasBeenSet(false),
-    m_ipv6AddressesPerInterface(0),
-    m_ipv6AddressesPerInterfaceHasBeenSet(false),
-    m_ipv6Supported(false),
-    m_ipv6SupportedHasBeenSet(false),
-    m_enaSupport(EnaSupport::NOT_SET),
-    m_enaSupportHasBeenSet(false),
-    m_efaSupported(false),
-    m_efaSupportedHasBeenSet(false),
-    m_efaInfoHasBeenSet(false),
-    m_encryptionInTransitSupported(false),
-    m_encryptionInTransitSupportedHasBeenSet(false),
-    m_enaSrdSupported(false),
-    m_enaSrdSupportedHasBeenSet(false),
-    m_bandwidthWeightingsHasBeenSet(false)
-{
-}
-
 NetworkInfo::NetworkInfo(const XmlNode& xmlNode)
-  : NetworkInfo()
 {
   *this = xmlNode;
 }
@@ -65,96 +36,110 @@ NetworkInfo& NetworkInfo::operator =(const XmlNode& xmlNode)
     {
       m_networkPerformance = Aws::Utils::Xml::DecodeEscapedXmlText(networkPerformanceNode.GetText());
       m_networkPerformanceHasBeenSet = true;
+       m_networkPerformanceHasBeenSet = true;
     }
     XmlNode maximumNetworkInterfacesNode = resultNode.FirstChild("maximumNetworkInterfaces");
     if(!maximumNetworkInterfacesNode.IsNull())
     {
       m_maximumNetworkInterfaces = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNetworkInterfacesNode.GetText()).c_str()).c_str());
       m_maximumNetworkInterfacesHasBeenSet = true;
+       m_maximumNetworkInterfacesHasBeenSet = true;
     }
     XmlNode maximumNetworkCardsNode = resultNode.FirstChild("maximumNetworkCards");
     if(!maximumNetworkCardsNode.IsNull())
     {
       m_maximumNetworkCards = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNetworkCardsNode.GetText()).c_str()).c_str());
       m_maximumNetworkCardsHasBeenSet = true;
+       m_maximumNetworkCardsHasBeenSet = true;
     }
     XmlNode defaultNetworkCardIndexNode = resultNode.FirstChild("defaultNetworkCardIndex");
     if(!defaultNetworkCardIndexNode.IsNull())
     {
       m_defaultNetworkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultNetworkCardIndexNode.GetText()).c_str()).c_str());
       m_defaultNetworkCardIndexHasBeenSet = true;
+       m_defaultNetworkCardIndexHasBeenSet = true;
     }
     XmlNode networkCardsNode = resultNode.FirstChild("networkCards");
     if(!networkCardsNode.IsNull())
     {
       XmlNode networkCardsMember = networkCardsNode.FirstChild("item");
+      m_networkCardsHasBeenSet = !networkCardsMember.IsNull();
       while(!networkCardsMember.IsNull())
       {
         m_networkCards.push_back(networkCardsMember);
         networkCardsMember = networkCardsMember.NextNode("item");
       }
 
-      m_networkCardsHasBeenSet = true;
+       m_networkCardsHasBeenSet = true;
     }
     XmlNode ipv4AddressesPerInterfaceNode = resultNode.FirstChild("ipv4AddressesPerInterface");
     if(!ipv4AddressesPerInterfaceNode.IsNull())
     {
       m_ipv4AddressesPerInterface = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv4AddressesPerInterfaceNode.GetText()).c_str()).c_str());
       m_ipv4AddressesPerInterfaceHasBeenSet = true;
+       m_ipv4AddressesPerInterfaceHasBeenSet = true;
     }
     XmlNode ipv6AddressesPerInterfaceNode = resultNode.FirstChild("ipv6AddressesPerInterface");
     if(!ipv6AddressesPerInterfaceNode.IsNull())
     {
       m_ipv6AddressesPerInterface = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressesPerInterfaceNode.GetText()).c_str()).c_str());
       m_ipv6AddressesPerInterfaceHasBeenSet = true;
+       m_ipv6AddressesPerInterfaceHasBeenSet = true;
     }
     XmlNode ipv6SupportedNode = resultNode.FirstChild("ipv6Supported");
     if(!ipv6SupportedNode.IsNull())
     {
       m_ipv6Supported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6SupportedNode.GetText()).c_str()).c_str());
       m_ipv6SupportedHasBeenSet = true;
+       m_ipv6SupportedHasBeenSet = true;
     }
     XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
     if(!enaSupportNode.IsNull())
     {
-      m_enaSupport = EnaSupportMapper::GetEnaSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSupportNode.GetText()).c_str()).c_str());
+      m_enaSupport = EnaSupportMapper::GetEnaSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSupportNode.GetText()).c_str()));
       m_enaSupportHasBeenSet = true;
+       m_enaSupportHasBeenSet = true;
     }
     XmlNode efaSupportedNode = resultNode.FirstChild("efaSupported");
     if(!efaSupportedNode.IsNull())
     {
       m_efaSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(efaSupportedNode.GetText()).c_str()).c_str());
       m_efaSupportedHasBeenSet = true;
+       m_efaSupportedHasBeenSet = true;
     }
     XmlNode efaInfoNode = resultNode.FirstChild("efaInfo");
     if(!efaInfoNode.IsNull())
     {
       m_efaInfo = efaInfoNode;
       m_efaInfoHasBeenSet = true;
+       m_efaInfoHasBeenSet = true;
     }
     XmlNode encryptionInTransitSupportedNode = resultNode.FirstChild("encryptionInTransitSupported");
     if(!encryptionInTransitSupportedNode.IsNull())
     {
       m_encryptionInTransitSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionInTransitSupportedNode.GetText()).c_str()).c_str());
       m_encryptionInTransitSupportedHasBeenSet = true;
+       m_encryptionInTransitSupportedHasBeenSet = true;
     }
     XmlNode enaSrdSupportedNode = resultNode.FirstChild("enaSrdSupported");
     if(!enaSrdSupportedNode.IsNull())
     {
       m_enaSrdSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSrdSupportedNode.GetText()).c_str()).c_str());
       m_enaSrdSupportedHasBeenSet = true;
+       m_enaSrdSupportedHasBeenSet = true;
     }
     XmlNode bandwidthWeightingsNode = resultNode.FirstChild("bandwidthWeightings");
     if(!bandwidthWeightingsNode.IsNull())
     {
       XmlNode bandwidthWeightingsMember = bandwidthWeightingsNode.FirstChild("item");
+      m_bandwidthWeightingsHasBeenSet = !bandwidthWeightingsMember.IsNull();
       while(!bandwidthWeightingsMember.IsNull())
       {
         m_bandwidthWeightings.push_back(BandwidthWeightingTypeMapper::GetBandwidthWeightingTypeForName(StringUtils::Trim(bandwidthWeightingsMember.GetText().c_str())));
         bandwidthWeightingsMember = bandwidthWeightingsMember.NextNode("item");
       }
 
-      m_bandwidthWeightingsHasBeenSet = true;
+       m_bandwidthWeightingsHasBeenSet = true;
     }
   }
 

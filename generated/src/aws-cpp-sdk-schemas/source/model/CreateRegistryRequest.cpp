@@ -12,13 +12,6 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRegistryRequest::CreateRegistryRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_registryNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRegistryRequest::SerializePayload() const
 {
   JsonValue payload;

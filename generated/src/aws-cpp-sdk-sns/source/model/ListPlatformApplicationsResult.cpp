@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPlatformApplicationsResult::ListPlatformApplicationsResult()
-{
-}
-
 ListPlatformApplicationsResult::ListPlatformApplicationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ListPlatformApplicationsResult& ListPlatformApplicationsResult::operator =(const
     if(!platformApplicationsNode.IsNull())
     {
       XmlNode platformApplicationsMember = platformApplicationsNode.FirstChild("member");
+      m_platformApplicationsHasBeenSet = !platformApplicationsMember.IsNull();
       while(!platformApplicationsMember.IsNull())
       {
         m_platformApplications.push_back(platformApplicationsMember);
@@ -53,12 +50,14 @@ ListPlatformApplicationsResult& ListPlatformApplicationsResult::operator =(const
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::ListPlatformApplicationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSubscriptionsByTopicResult::ListSubscriptionsByTopicResult()
-{
-}
-
 ListSubscriptionsByTopicResult::ListSubscriptionsByTopicResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ListSubscriptionsByTopicResult& ListSubscriptionsByTopicResult::operator =(const
     if(!subscriptionsNode.IsNull())
     {
       XmlNode subscriptionsMember = subscriptionsNode.FirstChild("member");
+      m_subscriptionsHasBeenSet = !subscriptionsMember.IsNull();
       while(!subscriptionsMember.IsNull())
       {
         m_subscriptions.push_back(subscriptionsMember);
@@ -53,12 +50,14 @@ ListSubscriptionsByTopicResult& ListSubscriptionsByTopicResult::operator =(const
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::ListSubscriptionsByTopicResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

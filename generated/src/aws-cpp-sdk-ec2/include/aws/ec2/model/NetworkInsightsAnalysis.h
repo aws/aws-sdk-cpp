@@ -38,7 +38,7 @@ namespace Model
   class NetworkInsightsAnalysis
   {
   public:
-    AWS_EC2_API NetworkInsightsAnalysis();
+    AWS_EC2_API NetworkInsightsAnalysis() = default;
     AWS_EC2_API NetworkInsightsAnalysis(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API NetworkInsightsAnalysis& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,57 +50,50 @@ namespace Model
     /**
      * <p>The ID of the network insights analysis.</p>
      */
-    inline const Aws::String& GetNetworkInsightsAnalysisId() const{ return m_networkInsightsAnalysisId; }
+    inline const Aws::String& GetNetworkInsightsAnalysisId() const { return m_networkInsightsAnalysisId; }
     inline bool NetworkInsightsAnalysisIdHasBeenSet() const { return m_networkInsightsAnalysisIdHasBeenSet; }
-    inline void SetNetworkInsightsAnalysisId(const Aws::String& value) { m_networkInsightsAnalysisIdHasBeenSet = true; m_networkInsightsAnalysisId = value; }
-    inline void SetNetworkInsightsAnalysisId(Aws::String&& value) { m_networkInsightsAnalysisIdHasBeenSet = true; m_networkInsightsAnalysisId = std::move(value); }
-    inline void SetNetworkInsightsAnalysisId(const char* value) { m_networkInsightsAnalysisIdHasBeenSet = true; m_networkInsightsAnalysisId.assign(value); }
-    inline NetworkInsightsAnalysis& WithNetworkInsightsAnalysisId(const Aws::String& value) { SetNetworkInsightsAnalysisId(value); return *this;}
-    inline NetworkInsightsAnalysis& WithNetworkInsightsAnalysisId(Aws::String&& value) { SetNetworkInsightsAnalysisId(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& WithNetworkInsightsAnalysisId(const char* value) { SetNetworkInsightsAnalysisId(value); return *this;}
+    template<typename NetworkInsightsAnalysisIdT = Aws::String>
+    void SetNetworkInsightsAnalysisId(NetworkInsightsAnalysisIdT&& value) { m_networkInsightsAnalysisIdHasBeenSet = true; m_networkInsightsAnalysisId = std::forward<NetworkInsightsAnalysisIdT>(value); }
+    template<typename NetworkInsightsAnalysisIdT = Aws::String>
+    NetworkInsightsAnalysis& WithNetworkInsightsAnalysisId(NetworkInsightsAnalysisIdT&& value) { SetNetworkInsightsAnalysisId(std::forward<NetworkInsightsAnalysisIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the network insights analysis.</p>
      */
-    inline const Aws::String& GetNetworkInsightsAnalysisArn() const{ return m_networkInsightsAnalysisArn; }
+    inline const Aws::String& GetNetworkInsightsAnalysisArn() const { return m_networkInsightsAnalysisArn; }
     inline bool NetworkInsightsAnalysisArnHasBeenSet() const { return m_networkInsightsAnalysisArnHasBeenSet; }
-    inline void SetNetworkInsightsAnalysisArn(const Aws::String& value) { m_networkInsightsAnalysisArnHasBeenSet = true; m_networkInsightsAnalysisArn = value; }
-    inline void SetNetworkInsightsAnalysisArn(Aws::String&& value) { m_networkInsightsAnalysisArnHasBeenSet = true; m_networkInsightsAnalysisArn = std::move(value); }
-    inline void SetNetworkInsightsAnalysisArn(const char* value) { m_networkInsightsAnalysisArnHasBeenSet = true; m_networkInsightsAnalysisArn.assign(value); }
-    inline NetworkInsightsAnalysis& WithNetworkInsightsAnalysisArn(const Aws::String& value) { SetNetworkInsightsAnalysisArn(value); return *this;}
-    inline NetworkInsightsAnalysis& WithNetworkInsightsAnalysisArn(Aws::String&& value) { SetNetworkInsightsAnalysisArn(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& WithNetworkInsightsAnalysisArn(const char* value) { SetNetworkInsightsAnalysisArn(value); return *this;}
+    template<typename NetworkInsightsAnalysisArnT = Aws::String>
+    void SetNetworkInsightsAnalysisArn(NetworkInsightsAnalysisArnT&& value) { m_networkInsightsAnalysisArnHasBeenSet = true; m_networkInsightsAnalysisArn = std::forward<NetworkInsightsAnalysisArnT>(value); }
+    template<typename NetworkInsightsAnalysisArnT = Aws::String>
+    NetworkInsightsAnalysis& WithNetworkInsightsAnalysisArn(NetworkInsightsAnalysisArnT&& value) { SetNetworkInsightsAnalysisArn(std::forward<NetworkInsightsAnalysisArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the path.</p>
      */
-    inline const Aws::String& GetNetworkInsightsPathId() const{ return m_networkInsightsPathId; }
+    inline const Aws::String& GetNetworkInsightsPathId() const { return m_networkInsightsPathId; }
     inline bool NetworkInsightsPathIdHasBeenSet() const { return m_networkInsightsPathIdHasBeenSet; }
-    inline void SetNetworkInsightsPathId(const Aws::String& value) { m_networkInsightsPathIdHasBeenSet = true; m_networkInsightsPathId = value; }
-    inline void SetNetworkInsightsPathId(Aws::String&& value) { m_networkInsightsPathIdHasBeenSet = true; m_networkInsightsPathId = std::move(value); }
-    inline void SetNetworkInsightsPathId(const char* value) { m_networkInsightsPathIdHasBeenSet = true; m_networkInsightsPathId.assign(value); }
-    inline NetworkInsightsAnalysis& WithNetworkInsightsPathId(const Aws::String& value) { SetNetworkInsightsPathId(value); return *this;}
-    inline NetworkInsightsAnalysis& WithNetworkInsightsPathId(Aws::String&& value) { SetNetworkInsightsPathId(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& WithNetworkInsightsPathId(const char* value) { SetNetworkInsightsPathId(value); return *this;}
+    template<typename NetworkInsightsPathIdT = Aws::String>
+    void SetNetworkInsightsPathId(NetworkInsightsPathIdT&& value) { m_networkInsightsPathIdHasBeenSet = true; m_networkInsightsPathId = std::forward<NetworkInsightsPathIdT>(value); }
+    template<typename NetworkInsightsPathIdT = Aws::String>
+    NetworkInsightsAnalysis& WithNetworkInsightsPathId(NetworkInsightsPathIdT&& value) { SetNetworkInsightsPathId(std::forward<NetworkInsightsPathIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The member accounts that contain resources that the path can traverse.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdditionalAccounts() const{ return m_additionalAccounts; }
+    inline const Aws::Vector<Aws::String>& GetAdditionalAccounts() const { return m_additionalAccounts; }
     inline bool AdditionalAccountsHasBeenSet() const { return m_additionalAccountsHasBeenSet; }
-    inline void SetAdditionalAccounts(const Aws::Vector<Aws::String>& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts = value; }
-    inline void SetAdditionalAccounts(Aws::Vector<Aws::String>&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts = std::move(value); }
-    inline NetworkInsightsAnalysis& WithAdditionalAccounts(const Aws::Vector<Aws::String>& value) { SetAdditionalAccounts(value); return *this;}
-    inline NetworkInsightsAnalysis& WithAdditionalAccounts(Aws::Vector<Aws::String>&& value) { SetAdditionalAccounts(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& AddAdditionalAccounts(const Aws::String& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(value); return *this; }
-    inline NetworkInsightsAnalysis& AddAdditionalAccounts(Aws::String&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(std::move(value)); return *this; }
-    inline NetworkInsightsAnalysis& AddAdditionalAccounts(const char* value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(value); return *this; }
+    template<typename AdditionalAccountsT = Aws::Vector<Aws::String>>
+    void SetAdditionalAccounts(AdditionalAccountsT&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts = std::forward<AdditionalAccountsT>(value); }
+    template<typename AdditionalAccountsT = Aws::Vector<Aws::String>>
+    NetworkInsightsAnalysis& WithAdditionalAccounts(AdditionalAccountsT&& value) { SetAdditionalAccounts(std::forward<AdditionalAccountsT>(value)); return *this;}
+    template<typename AdditionalAccountsT = Aws::String>
+    NetworkInsightsAnalysis& AddAdditionalAccounts(AdditionalAccountsT&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.emplace_back(std::forward<AdditionalAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -108,74 +101,67 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the resources that the path must
      * traverse.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFilterInArns() const{ return m_filterInArns; }
+    inline const Aws::Vector<Aws::String>& GetFilterInArns() const { return m_filterInArns; }
     inline bool FilterInArnsHasBeenSet() const { return m_filterInArnsHasBeenSet; }
-    inline void SetFilterInArns(const Aws::Vector<Aws::String>& value) { m_filterInArnsHasBeenSet = true; m_filterInArns = value; }
-    inline void SetFilterInArns(Aws::Vector<Aws::String>&& value) { m_filterInArnsHasBeenSet = true; m_filterInArns = std::move(value); }
-    inline NetworkInsightsAnalysis& WithFilterInArns(const Aws::Vector<Aws::String>& value) { SetFilterInArns(value); return *this;}
-    inline NetworkInsightsAnalysis& WithFilterInArns(Aws::Vector<Aws::String>&& value) { SetFilterInArns(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& AddFilterInArns(const Aws::String& value) { m_filterInArnsHasBeenSet = true; m_filterInArns.push_back(value); return *this; }
-    inline NetworkInsightsAnalysis& AddFilterInArns(Aws::String&& value) { m_filterInArnsHasBeenSet = true; m_filterInArns.push_back(std::move(value)); return *this; }
-    inline NetworkInsightsAnalysis& AddFilterInArns(const char* value) { m_filterInArnsHasBeenSet = true; m_filterInArns.push_back(value); return *this; }
+    template<typename FilterInArnsT = Aws::Vector<Aws::String>>
+    void SetFilterInArns(FilterInArnsT&& value) { m_filterInArnsHasBeenSet = true; m_filterInArns = std::forward<FilterInArnsT>(value); }
+    template<typename FilterInArnsT = Aws::Vector<Aws::String>>
+    NetworkInsightsAnalysis& WithFilterInArns(FilterInArnsT&& value) { SetFilterInArns(std::forward<FilterInArnsT>(value)); return *this;}
+    template<typename FilterInArnsT = Aws::String>
+    NetworkInsightsAnalysis& AddFilterInArns(FilterInArnsT&& value) { m_filterInArnsHasBeenSet = true; m_filterInArns.emplace_back(std::forward<FilterInArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time the analysis started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
+    inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-    inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-    inline NetworkInsightsAnalysis& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
-    inline NetworkInsightsAnalysis& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+    template<typename StartDateT = Aws::Utils::DateTime>
+    void SetStartDate(StartDateT&& value) { m_startDateHasBeenSet = true; m_startDate = std::forward<StartDateT>(value); }
+    template<typename StartDateT = Aws::Utils::DateTime>
+    NetworkInsightsAnalysis& WithStartDate(StartDateT&& value) { SetStartDate(std::forward<StartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the network insights analysis.</p>
      */
-    inline const AnalysisStatus& GetStatus() const{ return m_status; }
+    inline AnalysisStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AnalysisStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AnalysisStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline NetworkInsightsAnalysis& WithStatus(const AnalysisStatus& value) { SetStatus(value); return *this;}
-    inline NetworkInsightsAnalysis& WithStatus(AnalysisStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AnalysisStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline NetworkInsightsAnalysis& WithStatus(AnalysisStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message, if the status is <code>failed</code>.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline NetworkInsightsAnalysis& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline NetworkInsightsAnalysis& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    NetworkInsightsAnalysis& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The warning message.</p>
      */
-    inline const Aws::String& GetWarningMessage() const{ return m_warningMessage; }
+    inline const Aws::String& GetWarningMessage() const { return m_warningMessage; }
     inline bool WarningMessageHasBeenSet() const { return m_warningMessageHasBeenSet; }
-    inline void SetWarningMessage(const Aws::String& value) { m_warningMessageHasBeenSet = true; m_warningMessage = value; }
-    inline void SetWarningMessage(Aws::String&& value) { m_warningMessageHasBeenSet = true; m_warningMessage = std::move(value); }
-    inline void SetWarningMessage(const char* value) { m_warningMessageHasBeenSet = true; m_warningMessage.assign(value); }
-    inline NetworkInsightsAnalysis& WithWarningMessage(const Aws::String& value) { SetWarningMessage(value); return *this;}
-    inline NetworkInsightsAnalysis& WithWarningMessage(Aws::String&& value) { SetWarningMessage(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& WithWarningMessage(const char* value) { SetWarningMessage(value); return *this;}
+    template<typename WarningMessageT = Aws::String>
+    void SetWarningMessage(WarningMessageT&& value) { m_warningMessageHasBeenSet = true; m_warningMessage = std::forward<WarningMessageT>(value); }
+    template<typename WarningMessageT = Aws::String>
+    NetworkInsightsAnalysis& WithWarningMessage(WarningMessageT&& value) { SetWarningMessage(std::forward<WarningMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the destination is reachable from the source.</p>
      */
-    inline bool GetNetworkPathFound() const{ return m_networkPathFound; }
+    inline bool GetNetworkPathFound() const { return m_networkPathFound; }
     inline bool NetworkPathFoundHasBeenSet() const { return m_networkPathFoundHasBeenSet; }
     inline void SetNetworkPathFound(bool value) { m_networkPathFoundHasBeenSet = true; m_networkPathFound = value; }
     inline NetworkInsightsAnalysis& WithNetworkPathFound(bool value) { SetNetworkPathFound(value); return *this;}
@@ -185,28 +171,28 @@ namespace Model
     /**
      * <p>The components in the path from source to destination.</p>
      */
-    inline const Aws::Vector<PathComponent>& GetForwardPathComponents() const{ return m_forwardPathComponents; }
+    inline const Aws::Vector<PathComponent>& GetForwardPathComponents() const { return m_forwardPathComponents; }
     inline bool ForwardPathComponentsHasBeenSet() const { return m_forwardPathComponentsHasBeenSet; }
-    inline void SetForwardPathComponents(const Aws::Vector<PathComponent>& value) { m_forwardPathComponentsHasBeenSet = true; m_forwardPathComponents = value; }
-    inline void SetForwardPathComponents(Aws::Vector<PathComponent>&& value) { m_forwardPathComponentsHasBeenSet = true; m_forwardPathComponents = std::move(value); }
-    inline NetworkInsightsAnalysis& WithForwardPathComponents(const Aws::Vector<PathComponent>& value) { SetForwardPathComponents(value); return *this;}
-    inline NetworkInsightsAnalysis& WithForwardPathComponents(Aws::Vector<PathComponent>&& value) { SetForwardPathComponents(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& AddForwardPathComponents(const PathComponent& value) { m_forwardPathComponentsHasBeenSet = true; m_forwardPathComponents.push_back(value); return *this; }
-    inline NetworkInsightsAnalysis& AddForwardPathComponents(PathComponent&& value) { m_forwardPathComponentsHasBeenSet = true; m_forwardPathComponents.push_back(std::move(value)); return *this; }
+    template<typename ForwardPathComponentsT = Aws::Vector<PathComponent>>
+    void SetForwardPathComponents(ForwardPathComponentsT&& value) { m_forwardPathComponentsHasBeenSet = true; m_forwardPathComponents = std::forward<ForwardPathComponentsT>(value); }
+    template<typename ForwardPathComponentsT = Aws::Vector<PathComponent>>
+    NetworkInsightsAnalysis& WithForwardPathComponents(ForwardPathComponentsT&& value) { SetForwardPathComponents(std::forward<ForwardPathComponentsT>(value)); return *this;}
+    template<typename ForwardPathComponentsT = PathComponent>
+    NetworkInsightsAnalysis& AddForwardPathComponents(ForwardPathComponentsT&& value) { m_forwardPathComponentsHasBeenSet = true; m_forwardPathComponents.emplace_back(std::forward<ForwardPathComponentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The components in the path from destination to source.</p>
      */
-    inline const Aws::Vector<PathComponent>& GetReturnPathComponents() const{ return m_returnPathComponents; }
+    inline const Aws::Vector<PathComponent>& GetReturnPathComponents() const { return m_returnPathComponents; }
     inline bool ReturnPathComponentsHasBeenSet() const { return m_returnPathComponentsHasBeenSet; }
-    inline void SetReturnPathComponents(const Aws::Vector<PathComponent>& value) { m_returnPathComponentsHasBeenSet = true; m_returnPathComponents = value; }
-    inline void SetReturnPathComponents(Aws::Vector<PathComponent>&& value) { m_returnPathComponentsHasBeenSet = true; m_returnPathComponents = std::move(value); }
-    inline NetworkInsightsAnalysis& WithReturnPathComponents(const Aws::Vector<PathComponent>& value) { SetReturnPathComponents(value); return *this;}
-    inline NetworkInsightsAnalysis& WithReturnPathComponents(Aws::Vector<PathComponent>&& value) { SetReturnPathComponents(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& AddReturnPathComponents(const PathComponent& value) { m_returnPathComponentsHasBeenSet = true; m_returnPathComponents.push_back(value); return *this; }
-    inline NetworkInsightsAnalysis& AddReturnPathComponents(PathComponent&& value) { m_returnPathComponentsHasBeenSet = true; m_returnPathComponents.push_back(std::move(value)); return *this; }
+    template<typename ReturnPathComponentsT = Aws::Vector<PathComponent>>
+    void SetReturnPathComponents(ReturnPathComponentsT&& value) { m_returnPathComponentsHasBeenSet = true; m_returnPathComponents = std::forward<ReturnPathComponentsT>(value); }
+    template<typename ReturnPathComponentsT = Aws::Vector<PathComponent>>
+    NetworkInsightsAnalysis& WithReturnPathComponents(ReturnPathComponentsT&& value) { SetReturnPathComponents(std::forward<ReturnPathComponentsT>(value)); return *this;}
+    template<typename ReturnPathComponentsT = PathComponent>
+    NetworkInsightsAnalysis& AddReturnPathComponents(ReturnPathComponentsT&& value) { m_returnPathComponentsHasBeenSet = true; m_returnPathComponents.emplace_back(std::forward<ReturnPathComponentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -215,57 +201,56 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/reachability/explanation-codes.html">Reachability
      * Analyzer explanation codes</a>.</p>
      */
-    inline const Aws::Vector<Explanation>& GetExplanations() const{ return m_explanations; }
+    inline const Aws::Vector<Explanation>& GetExplanations() const { return m_explanations; }
     inline bool ExplanationsHasBeenSet() const { return m_explanationsHasBeenSet; }
-    inline void SetExplanations(const Aws::Vector<Explanation>& value) { m_explanationsHasBeenSet = true; m_explanations = value; }
-    inline void SetExplanations(Aws::Vector<Explanation>&& value) { m_explanationsHasBeenSet = true; m_explanations = std::move(value); }
-    inline NetworkInsightsAnalysis& WithExplanations(const Aws::Vector<Explanation>& value) { SetExplanations(value); return *this;}
-    inline NetworkInsightsAnalysis& WithExplanations(Aws::Vector<Explanation>&& value) { SetExplanations(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& AddExplanations(const Explanation& value) { m_explanationsHasBeenSet = true; m_explanations.push_back(value); return *this; }
-    inline NetworkInsightsAnalysis& AddExplanations(Explanation&& value) { m_explanationsHasBeenSet = true; m_explanations.push_back(std::move(value)); return *this; }
+    template<typename ExplanationsT = Aws::Vector<Explanation>>
+    void SetExplanations(ExplanationsT&& value) { m_explanationsHasBeenSet = true; m_explanations = std::forward<ExplanationsT>(value); }
+    template<typename ExplanationsT = Aws::Vector<Explanation>>
+    NetworkInsightsAnalysis& WithExplanations(ExplanationsT&& value) { SetExplanations(std::forward<ExplanationsT>(value)); return *this;}
+    template<typename ExplanationsT = Explanation>
+    NetworkInsightsAnalysis& AddExplanations(ExplanationsT&& value) { m_explanationsHasBeenSet = true; m_explanations.emplace_back(std::forward<ExplanationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Potential intermediate components.</p>
      */
-    inline const Aws::Vector<AlternatePathHint>& GetAlternatePathHints() const{ return m_alternatePathHints; }
+    inline const Aws::Vector<AlternatePathHint>& GetAlternatePathHints() const { return m_alternatePathHints; }
     inline bool AlternatePathHintsHasBeenSet() const { return m_alternatePathHintsHasBeenSet; }
-    inline void SetAlternatePathHints(const Aws::Vector<AlternatePathHint>& value) { m_alternatePathHintsHasBeenSet = true; m_alternatePathHints = value; }
-    inline void SetAlternatePathHints(Aws::Vector<AlternatePathHint>&& value) { m_alternatePathHintsHasBeenSet = true; m_alternatePathHints = std::move(value); }
-    inline NetworkInsightsAnalysis& WithAlternatePathHints(const Aws::Vector<AlternatePathHint>& value) { SetAlternatePathHints(value); return *this;}
-    inline NetworkInsightsAnalysis& WithAlternatePathHints(Aws::Vector<AlternatePathHint>&& value) { SetAlternatePathHints(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& AddAlternatePathHints(const AlternatePathHint& value) { m_alternatePathHintsHasBeenSet = true; m_alternatePathHints.push_back(value); return *this; }
-    inline NetworkInsightsAnalysis& AddAlternatePathHints(AlternatePathHint&& value) { m_alternatePathHintsHasBeenSet = true; m_alternatePathHints.push_back(std::move(value)); return *this; }
+    template<typename AlternatePathHintsT = Aws::Vector<AlternatePathHint>>
+    void SetAlternatePathHints(AlternatePathHintsT&& value) { m_alternatePathHintsHasBeenSet = true; m_alternatePathHints = std::forward<AlternatePathHintsT>(value); }
+    template<typename AlternatePathHintsT = Aws::Vector<AlternatePathHint>>
+    NetworkInsightsAnalysis& WithAlternatePathHints(AlternatePathHintsT&& value) { SetAlternatePathHints(std::forward<AlternatePathHintsT>(value)); return *this;}
+    template<typename AlternatePathHintsT = AlternatePathHint>
+    NetworkInsightsAnalysis& AddAlternatePathHints(AlternatePathHintsT&& value) { m_alternatePathHintsHasBeenSet = true; m_alternatePathHints.emplace_back(std::forward<AlternatePathHintsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Potential intermediate accounts.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSuggestedAccounts() const{ return m_suggestedAccounts; }
+    inline const Aws::Vector<Aws::String>& GetSuggestedAccounts() const { return m_suggestedAccounts; }
     inline bool SuggestedAccountsHasBeenSet() const { return m_suggestedAccountsHasBeenSet; }
-    inline void SetSuggestedAccounts(const Aws::Vector<Aws::String>& value) { m_suggestedAccountsHasBeenSet = true; m_suggestedAccounts = value; }
-    inline void SetSuggestedAccounts(Aws::Vector<Aws::String>&& value) { m_suggestedAccountsHasBeenSet = true; m_suggestedAccounts = std::move(value); }
-    inline NetworkInsightsAnalysis& WithSuggestedAccounts(const Aws::Vector<Aws::String>& value) { SetSuggestedAccounts(value); return *this;}
-    inline NetworkInsightsAnalysis& WithSuggestedAccounts(Aws::Vector<Aws::String>&& value) { SetSuggestedAccounts(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& AddSuggestedAccounts(const Aws::String& value) { m_suggestedAccountsHasBeenSet = true; m_suggestedAccounts.push_back(value); return *this; }
-    inline NetworkInsightsAnalysis& AddSuggestedAccounts(Aws::String&& value) { m_suggestedAccountsHasBeenSet = true; m_suggestedAccounts.push_back(std::move(value)); return *this; }
-    inline NetworkInsightsAnalysis& AddSuggestedAccounts(const char* value) { m_suggestedAccountsHasBeenSet = true; m_suggestedAccounts.push_back(value); return *this; }
+    template<typename SuggestedAccountsT = Aws::Vector<Aws::String>>
+    void SetSuggestedAccounts(SuggestedAccountsT&& value) { m_suggestedAccountsHasBeenSet = true; m_suggestedAccounts = std::forward<SuggestedAccountsT>(value); }
+    template<typename SuggestedAccountsT = Aws::Vector<Aws::String>>
+    NetworkInsightsAnalysis& WithSuggestedAccounts(SuggestedAccountsT&& value) { SetSuggestedAccounts(std::forward<SuggestedAccountsT>(value)); return *this;}
+    template<typename SuggestedAccountsT = Aws::String>
+    NetworkInsightsAnalysis& AddSuggestedAccounts(SuggestedAccountsT&& value) { m_suggestedAccountsHasBeenSet = true; m_suggestedAccounts.emplace_back(std::forward<SuggestedAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline NetworkInsightsAnalysis& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline NetworkInsightsAnalysis& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline NetworkInsightsAnalysis& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline NetworkInsightsAnalysis& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    NetworkInsightsAnalysis& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    NetworkInsightsAnalysis& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -284,10 +269,10 @@ namespace Model
     Aws::Vector<Aws::String> m_filterInArns;
     bool m_filterInArnsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startDate;
+    Aws::Utils::DateTime m_startDate{};
     bool m_startDateHasBeenSet = false;
 
-    AnalysisStatus m_status;
+    AnalysisStatus m_status{AnalysisStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
@@ -296,7 +281,7 @@ namespace Model
     Aws::String m_warningMessage;
     bool m_warningMessageHasBeenSet = false;
 
-    bool m_networkPathFound;
+    bool m_networkPathFound{false};
     bool m_networkPathFoundHasBeenSet = false;
 
     Aws::Vector<PathComponent> m_forwardPathComponents;

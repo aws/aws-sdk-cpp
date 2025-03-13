@@ -31,7 +31,7 @@ namespace Model
   class RouteTrafficOptions
   {
   public:
-    AWS_GEOROUTES_API RouteTrafficOptions();
+    AWS_GEOROUTES_API RouteTrafficOptions() = default;
     AWS_GEOROUTES_API RouteTrafficOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteTrafficOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * traffic event would be considered valid. While flow traffic event is valid it
      * will be used over the historical traffic data. </p>
      */
-    inline long long GetFlowEventThresholdOverride() const{ return m_flowEventThresholdOverride; }
+    inline long long GetFlowEventThresholdOverride() const { return m_flowEventThresholdOverride; }
     inline bool FlowEventThresholdOverrideHasBeenSet() const { return m_flowEventThresholdOverrideHasBeenSet; }
     inline void SetFlowEventThresholdOverride(long long value) { m_flowEventThresholdOverrideHasBeenSet = true; m_flowEventThresholdOverride = value; }
     inline RouteTrafficOptions& WithFlowEventThresholdOverride(long long value) { SetFlowEventThresholdOverride(value); return *this;}
@@ -56,19 +56,17 @@ namespace Model
      * <p>Determines if traffic should be used or ignored while calculating the
      * route.</p> <p>Default Value: <code>UseTrafficData</code> </p>
      */
-    inline const TrafficUsage& GetUsage() const{ return m_usage; }
+    inline TrafficUsage GetUsage() const { return m_usage; }
     inline bool UsageHasBeenSet() const { return m_usageHasBeenSet; }
-    inline void SetUsage(const TrafficUsage& value) { m_usageHasBeenSet = true; m_usage = value; }
-    inline void SetUsage(TrafficUsage&& value) { m_usageHasBeenSet = true; m_usage = std::move(value); }
-    inline RouteTrafficOptions& WithUsage(const TrafficUsage& value) { SetUsage(value); return *this;}
-    inline RouteTrafficOptions& WithUsage(TrafficUsage&& value) { SetUsage(std::move(value)); return *this;}
+    inline void SetUsage(TrafficUsage value) { m_usageHasBeenSet = true; m_usage = value; }
+    inline RouteTrafficOptions& WithUsage(TrafficUsage value) { SetUsage(value); return *this;}
     ///@}
   private:
 
-    long long m_flowEventThresholdOverride;
+    long long m_flowEventThresholdOverride{0};
     bool m_flowEventThresholdOverrideHasBeenSet = false;
 
-    TrafficUsage m_usage;
+    TrafficUsage m_usage{TrafficUsage::NOT_SET};
     bool m_usageHasBeenSet = false;
   };
 

@@ -42,7 +42,7 @@ namespace Model
   class $typeInfo.className
   {
   public:
-    ${exportMacro} ${typeInfo.className}();
+    ${exportMacro} ${typeInfo.className}() = default;
     ${exportMacro} ${typeInfo.className}(${typeInfo.jsonViewType} jsonValue);
     ${exportMacro} ${classNameRef} operator=(${typeInfo.jsonViewType} jsonValue);
 #if ($typeInfo.shape.isEvent() && $typeInfo.className.endsWith("InitialResponse"))

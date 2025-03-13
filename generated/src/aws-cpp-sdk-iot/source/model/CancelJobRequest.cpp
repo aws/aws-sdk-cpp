@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CancelJobRequest::CancelJobRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_reasonCodeHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String CancelJobRequest::SerializePayload() const
 {
   JsonValue payload;

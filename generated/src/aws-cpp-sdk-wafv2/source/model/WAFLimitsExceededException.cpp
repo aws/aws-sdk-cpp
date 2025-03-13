@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-WAFLimitsExceededException::WAFLimitsExceededException() : 
-    m_messageHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false)
-{
-}
-
 WAFLimitsExceededException::WAFLimitsExceededException(JsonView jsonValue)
-  : WAFLimitsExceededException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WAFLimitsExceededException& WAFLimitsExceededException::operator =(JsonView json
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = jsonValue.GetString("SourceType");
-
     m_sourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

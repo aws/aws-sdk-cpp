@@ -29,7 +29,7 @@ namespace Model
   class ListExperimentsResult
   {
   public:
-    AWS_SAGEMAKER_API ListExperimentsResult();
+    AWS_SAGEMAKER_API ListExperimentsResult() = default;
     AWS_SAGEMAKER_API ListExperimentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListExperimentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of the summaries of your experiments.</p>
      */
-    inline const Aws::Vector<ExperimentSummary>& GetExperimentSummaries() const{ return m_experimentSummaries; }
-    inline void SetExperimentSummaries(const Aws::Vector<ExperimentSummary>& value) { m_experimentSummaries = value; }
-    inline void SetExperimentSummaries(Aws::Vector<ExperimentSummary>&& value) { m_experimentSummaries = std::move(value); }
-    inline ListExperimentsResult& WithExperimentSummaries(const Aws::Vector<ExperimentSummary>& value) { SetExperimentSummaries(value); return *this;}
-    inline ListExperimentsResult& WithExperimentSummaries(Aws::Vector<ExperimentSummary>&& value) { SetExperimentSummaries(std::move(value)); return *this;}
-    inline ListExperimentsResult& AddExperimentSummaries(const ExperimentSummary& value) { m_experimentSummaries.push_back(value); return *this; }
-    inline ListExperimentsResult& AddExperimentSummaries(ExperimentSummary&& value) { m_experimentSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ExperimentSummary>& GetExperimentSummaries() const { return m_experimentSummaries; }
+    template<typename ExperimentSummariesT = Aws::Vector<ExperimentSummary>>
+    void SetExperimentSummaries(ExperimentSummariesT&& value) { m_experimentSummariesHasBeenSet = true; m_experimentSummaries = std::forward<ExperimentSummariesT>(value); }
+    template<typename ExperimentSummariesT = Aws::Vector<ExperimentSummary>>
+    ListExperimentsResult& WithExperimentSummaries(ExperimentSummariesT&& value) { SetExperimentSummaries(std::forward<ExperimentSummariesT>(value)); return *this;}
+    template<typename ExperimentSummariesT = ExperimentSummary>
+    ListExperimentsResult& AddExperimentSummaries(ExperimentSummariesT&& value) { m_experimentSummariesHasBeenSet = true; m_experimentSummaries.emplace_back(std::forward<ExperimentSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token for getting the next set of experiments, if there are any.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListExperimentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListExperimentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListExperimentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListExperimentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListExperimentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListExperimentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListExperimentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListExperimentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ExperimentSummary> m_experimentSummaries;
+    bool m_experimentSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

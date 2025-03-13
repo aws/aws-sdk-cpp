@@ -18,18 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-Artifact::Artifact() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ArtifactType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_extensionHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 Artifact::Artifact(JsonView jsonValue)
-  : Artifact()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Artifact& Artifact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ArtifactTypeMapper::GetArtifactTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("extension"))
   {
     m_extension = jsonValue.GetString("extension");
-
     m_extensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

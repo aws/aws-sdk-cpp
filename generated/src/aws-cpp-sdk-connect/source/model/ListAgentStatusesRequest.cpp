@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAgentStatusesRequest::ListAgentStatusesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_agentStatusTypesHasBeenSet(false)
-{
-}
-
 Aws::String ListAgentStatusesRequest::SerializePayload() const
 {
   return {};

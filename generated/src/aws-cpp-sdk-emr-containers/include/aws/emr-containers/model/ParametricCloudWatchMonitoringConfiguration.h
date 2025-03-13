@@ -33,7 +33,7 @@ namespace Model
   class ParametricCloudWatchMonitoringConfiguration
   {
   public:
-    AWS_EMRCONTAINERS_API ParametricCloudWatchMonitoringConfiguration();
+    AWS_EMRCONTAINERS_API ParametricCloudWatchMonitoringConfiguration() = default;
     AWS_EMRCONTAINERS_API ParametricCloudWatchMonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API ParametricCloudWatchMonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p> The name of the log group for log publishing.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline ParametricCloudWatchMonitoringConfiguration& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline ParametricCloudWatchMonitoringConfiguration& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline ParametricCloudWatchMonitoringConfiguration& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    ParametricCloudWatchMonitoringConfiguration& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The specified name prefix for log streams.</p>
      */
-    inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
+    inline const Aws::String& GetLogStreamNamePrefix() const { return m_logStreamNamePrefix; }
     inline bool LogStreamNamePrefixHasBeenSet() const { return m_logStreamNamePrefixHasBeenSet; }
-    inline void SetLogStreamNamePrefix(const Aws::String& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
-    inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = std::move(value); }
-    inline void SetLogStreamNamePrefix(const char* value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix.assign(value); }
-    inline ParametricCloudWatchMonitoringConfiguration& WithLogStreamNamePrefix(const Aws::String& value) { SetLogStreamNamePrefix(value); return *this;}
-    inline ParametricCloudWatchMonitoringConfiguration& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(std::move(value)); return *this;}
-    inline ParametricCloudWatchMonitoringConfiguration& WithLogStreamNamePrefix(const char* value) { SetLogStreamNamePrefix(value); return *this;}
+    template<typename LogStreamNamePrefixT = Aws::String>
+    void SetLogStreamNamePrefix(LogStreamNamePrefixT&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = std::forward<LogStreamNamePrefixT>(value); }
+    template<typename LogStreamNamePrefixT = Aws::String>
+    ParametricCloudWatchMonitoringConfiguration& WithLogStreamNamePrefix(LogStreamNamePrefixT&& value) { SetLogStreamNamePrefix(std::forward<LogStreamNamePrefixT>(value)); return *this;}
     ///@}
   private:
 

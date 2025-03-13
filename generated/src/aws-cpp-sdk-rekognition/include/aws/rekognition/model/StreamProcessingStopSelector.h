@@ -30,7 +30,7 @@ namespace Model
   class StreamProcessingStopSelector
   {
   public:
-    AWS_REKOGNITION_API StreamProcessingStopSelector();
+    AWS_REKOGNITION_API StreamProcessingStopSelector() = default;
     AWS_REKOGNITION_API StreamProcessingStopSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API StreamProcessingStopSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * be processed. The largest amount of time is 2 minutes. The default is 10
      * seconds. </p>
      */
-    inline long long GetMaxDurationInSeconds() const{ return m_maxDurationInSeconds; }
+    inline long long GetMaxDurationInSeconds() const { return m_maxDurationInSeconds; }
     inline bool MaxDurationInSecondsHasBeenSet() const { return m_maxDurationInSecondsHasBeenSet; }
     inline void SetMaxDurationInSeconds(long long value) { m_maxDurationInSecondsHasBeenSet = true; m_maxDurationInSeconds = value; }
     inline StreamProcessingStopSelector& WithMaxDurationInSeconds(long long value) { SetMaxDurationInSeconds(value); return *this;}
     ///@}
   private:
 
-    long long m_maxDurationInSeconds;
+    long long m_maxDurationInSeconds{0};
     bool m_maxDurationInSecondsHasBeenSet = false;
   };
 

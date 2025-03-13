@@ -20,18 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TypeConfigurationIdentifier::TypeConfigurationIdentifier() : 
-    m_typeArnHasBeenSet(false),
-    m_typeConfigurationAliasHasBeenSet(false),
-    m_typeConfigurationArnHasBeenSet(false),
-    m_type(ThirdPartyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_typeNameHasBeenSet(false)
-{
-}
-
 TypeConfigurationIdentifier::TypeConfigurationIdentifier(const XmlNode& xmlNode)
-  : TypeConfigurationIdentifier()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ TypeConfigurationIdentifier& TypeConfigurationIdentifier::operator =(const XmlNo
     {
       m_typeArn = Aws::Utils::Xml::DecodeEscapedXmlText(typeArnNode.GetText());
       m_typeArnHasBeenSet = true;
+       m_typeArnHasBeenSet = true;
     }
     XmlNode typeConfigurationAliasNode = resultNode.FirstChild("TypeConfigurationAlias");
     if(!typeConfigurationAliasNode.IsNull())
     {
       m_typeConfigurationAlias = Aws::Utils::Xml::DecodeEscapedXmlText(typeConfigurationAliasNode.GetText());
       m_typeConfigurationAliasHasBeenSet = true;
+       m_typeConfigurationAliasHasBeenSet = true;
     }
     XmlNode typeConfigurationArnNode = resultNode.FirstChild("TypeConfigurationArn");
     if(!typeConfigurationArnNode.IsNull())
     {
       m_typeConfigurationArn = Aws::Utils::Xml::DecodeEscapedXmlText(typeConfigurationArnNode.GetText());
       m_typeConfigurationArnHasBeenSet = true;
+       m_typeConfigurationArnHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = ThirdPartyTypeMapper::GetThirdPartyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = ThirdPartyTypeMapper::GetThirdPartyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode typeNameNode = resultNode.FirstChild("TypeName");
     if(!typeNameNode.IsNull())
     {
       m_typeName = Aws::Utils::Xml::DecodeEscapedXmlText(typeNameNode.GetText());
       m_typeNameHasBeenSet = true;
+       m_typeNameHasBeenSet = true;
     }
   }
 

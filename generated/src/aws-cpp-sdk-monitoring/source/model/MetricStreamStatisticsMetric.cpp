@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricStreamStatisticsMetric::MetricStreamStatisticsMetric() : 
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
-{
-}
-
 MetricStreamStatisticsMetric::MetricStreamStatisticsMetric(const XmlNode& xmlNode)
-  : MetricStreamStatisticsMetric()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ MetricStreamStatisticsMetric& MetricStreamStatisticsMetric::operator =(const Xml
     {
       m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
+       m_namespaceHasBeenSet = true;
     }
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
     if(!metricNameNode.IsNull())
     {
       m_metricName = Aws::Utils::Xml::DecodeEscapedXmlText(metricNameNode.GetText());
       m_metricNameHasBeenSet = true;
+       m_metricNameHasBeenSet = true;
     }
   }
 

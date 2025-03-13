@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-QuerySchemaVersionMetadataResult::QuerySchemaVersionMetadataResult()
-{
-}
-
 QuerySchemaVersionMetadataResult::QuerySchemaVersionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,25 @@ QuerySchemaVersionMetadataResult& QuerySchemaVersionMetadataResult::operator =(c
     {
       m_metadataInfoMap[metadataInfoMapItem.first] = metadataInfoMapItem.second.AsObject();
     }
+    m_metadataInfoMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaVersionId"))
   {
     m_schemaVersionId = jsonValue.GetString("SchemaVersionId");
-
+    m_schemaVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -29,7 +29,7 @@ namespace Model
   class ListComputeNodeGroupsResult
   {
   public:
-    AWS_PCS_API ListComputeNodeGroupsResult();
+    AWS_PCS_API ListComputeNodeGroupsResult() = default;
     AWS_PCS_API ListComputeNodeGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PCS_API ListComputeNodeGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of compute node groups for the cluster.</p>
      */
-    inline const Aws::Vector<ComputeNodeGroupSummary>& GetComputeNodeGroups() const{ return m_computeNodeGroups; }
-    inline void SetComputeNodeGroups(const Aws::Vector<ComputeNodeGroupSummary>& value) { m_computeNodeGroups = value; }
-    inline void SetComputeNodeGroups(Aws::Vector<ComputeNodeGroupSummary>&& value) { m_computeNodeGroups = std::move(value); }
-    inline ListComputeNodeGroupsResult& WithComputeNodeGroups(const Aws::Vector<ComputeNodeGroupSummary>& value) { SetComputeNodeGroups(value); return *this;}
-    inline ListComputeNodeGroupsResult& WithComputeNodeGroups(Aws::Vector<ComputeNodeGroupSummary>&& value) { SetComputeNodeGroups(std::move(value)); return *this;}
-    inline ListComputeNodeGroupsResult& AddComputeNodeGroups(const ComputeNodeGroupSummary& value) { m_computeNodeGroups.push_back(value); return *this; }
-    inline ListComputeNodeGroupsResult& AddComputeNodeGroups(ComputeNodeGroupSummary&& value) { m_computeNodeGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ComputeNodeGroupSummary>& GetComputeNodeGroups() const { return m_computeNodeGroups; }
+    template<typename ComputeNodeGroupsT = Aws::Vector<ComputeNodeGroupSummary>>
+    void SetComputeNodeGroups(ComputeNodeGroupsT&& value) { m_computeNodeGroupsHasBeenSet = true; m_computeNodeGroups = std::forward<ComputeNodeGroupsT>(value); }
+    template<typename ComputeNodeGroupsT = Aws::Vector<ComputeNodeGroupSummary>>
+    ListComputeNodeGroupsResult& WithComputeNodeGroups(ComputeNodeGroupsT&& value) { SetComputeNodeGroups(std::forward<ComputeNodeGroupsT>(value)); return *this;}
+    template<typename ComputeNodeGroupsT = ComputeNodeGroupSummary>
+    ListComputeNodeGroupsResult& AddComputeNodeGroups(ComputeNodeGroupsT&& value) { m_computeNodeGroupsHasBeenSet = true; m_computeNodeGroups.emplace_back(std::forward<ComputeNodeGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * after 24 hours. Using an expired pagination token returns an <code>HTTP 400
      * InvalidToken</code> error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListComputeNodeGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListComputeNodeGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListComputeNodeGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListComputeNodeGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListComputeNodeGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListComputeNodeGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListComputeNodeGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListComputeNodeGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ComputeNodeGroupSummary> m_computeNodeGroups;
+    bool m_computeNodeGroupsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,13 +12,6 @@ using namespace Aws::IoT1ClickProjects::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePlacementRequest::CreatePlacementRequest() : 
-    m_placementNameHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String CreatePlacementRequest::SerializePayload() const
 {
   JsonValue payload;

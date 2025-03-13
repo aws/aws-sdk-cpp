@@ -21,7 +21,7 @@ namespace Model
   class RemoveFlowOutputRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API RemoveFlowOutputRequest();
+    AWS_MEDIACONNECT_API RemoveFlowOutputRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * The flow that you want to remove an output from.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-    inline RemoveFlowOutputRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline RemoveFlowOutputRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline RemoveFlowOutputRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    RemoveFlowOutputRequest& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ARN of the output that you want to remove.
      */
-    inline const Aws::String& GetOutputArn() const{ return m_outputArn; }
+    inline const Aws::String& GetOutputArn() const { return m_outputArn; }
     inline bool OutputArnHasBeenSet() const { return m_outputArnHasBeenSet; }
-    inline void SetOutputArn(const Aws::String& value) { m_outputArnHasBeenSet = true; m_outputArn = value; }
-    inline void SetOutputArn(Aws::String&& value) { m_outputArnHasBeenSet = true; m_outputArn = std::move(value); }
-    inline void SetOutputArn(const char* value) { m_outputArnHasBeenSet = true; m_outputArn.assign(value); }
-    inline RemoveFlowOutputRequest& WithOutputArn(const Aws::String& value) { SetOutputArn(value); return *this;}
-    inline RemoveFlowOutputRequest& WithOutputArn(Aws::String&& value) { SetOutputArn(std::move(value)); return *this;}
-    inline RemoveFlowOutputRequest& WithOutputArn(const char* value) { SetOutputArn(value); return *this;}
+    template<typename OutputArnT = Aws::String>
+    void SetOutputArn(OutputArnT&& value) { m_outputArnHasBeenSet = true; m_outputArn = std::forward<OutputArnT>(value); }
+    template<typename OutputArnT = Aws::String>
+    RemoveFlowOutputRequest& WithOutputArn(OutputArnT&& value) { SetOutputArn(std::forward<OutputArnT>(value)); return *this;}
     ///@}
   private:
 

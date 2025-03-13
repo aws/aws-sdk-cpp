@@ -28,7 +28,7 @@ namespace Model
   class CreateIPSetResult
   {
   public:
-    AWS_WAFV2_API CreateIPSetResult();
+    AWS_WAFV2_API CreateIPSetResult() = default;
     AWS_WAFV2_API CreateIPSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFV2_API CreateIPSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,28 +40,28 @@ namespace Model
      * retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the
      * <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
      */
-    inline const IPSetSummary& GetSummary() const{ return m_summary; }
-    inline void SetSummary(const IPSetSummary& value) { m_summary = value; }
-    inline void SetSummary(IPSetSummary&& value) { m_summary = std::move(value); }
-    inline CreateIPSetResult& WithSummary(const IPSetSummary& value) { SetSummary(value); return *this;}
-    inline CreateIPSetResult& WithSummary(IPSetSummary&& value) { SetSummary(std::move(value)); return *this;}
+    inline const IPSetSummary& GetSummary() const { return m_summary; }
+    template<typename SummaryT = IPSetSummary>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = IPSetSummary>
+    CreateIPSetResult& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateIPSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateIPSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateIPSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateIPSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     IPSetSummary m_summary;
+    bool m_summaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

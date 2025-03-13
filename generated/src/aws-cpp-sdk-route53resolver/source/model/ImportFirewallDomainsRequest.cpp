@@ -12,14 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportFirewallDomainsRequest::ImportFirewallDomainsRequest() : 
-    m_firewallDomainListIdHasBeenSet(false),
-    m_operation(FirewallDomainImportOperation::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_domainFileUrlHasBeenSet(false)
-{
-}
-
 Aws::String ImportFirewallDomainsRequest::SerializePayload() const
 {
   JsonValue payload;

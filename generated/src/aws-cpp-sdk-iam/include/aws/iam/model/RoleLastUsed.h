@@ -40,7 +40,7 @@ namespace Model
   class RoleLastUsed
   {
   public:
-    AWS_IAM_API RoleLastUsed();
+    AWS_IAM_API RoleLastUsed() = default;
     AWS_IAM_API RoleLastUsed(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API RoleLastUsed& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -57,12 +57,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
      * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastUsedDate() const{ return m_lastUsedDate; }
+    inline const Aws::Utils::DateTime& GetLastUsedDate() const { return m_lastUsedDate; }
     inline bool LastUsedDateHasBeenSet() const { return m_lastUsedDateHasBeenSet; }
-    inline void SetLastUsedDate(const Aws::Utils::DateTime& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = value; }
-    inline void SetLastUsedDate(Aws::Utils::DateTime&& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = std::move(value); }
-    inline RoleLastUsed& WithLastUsedDate(const Aws::Utils::DateTime& value) { SetLastUsedDate(value); return *this;}
-    inline RoleLastUsed& WithLastUsedDate(Aws::Utils::DateTime&& value) { SetLastUsedDate(std::move(value)); return *this;}
+    template<typename LastUsedDateT = Aws::Utils::DateTime>
+    void SetLastUsedDate(LastUsedDateT&& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = std::forward<LastUsedDateT>(value); }
+    template<typename LastUsedDateT = Aws::Utils::DateTime>
+    RoleLastUsed& WithLastUsedDate(LastUsedDateT&& value) { SetLastUsedDate(std::forward<LastUsedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,18 +70,16 @@ namespace Model
      * <p>The name of the Amazon Web Services Region in which the role was last
      * used.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline RoleLastUsed& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline RoleLastUsed& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline RoleLastUsed& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    RoleLastUsed& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_lastUsedDate;
+    Aws::Utils::DateTime m_lastUsedDate{};
     bool m_lastUsedDateHasBeenSet = false;
 
     Aws::String m_region;

@@ -32,7 +32,7 @@ namespace Model
   class AssetBundleImportJobFolderOverrideParameters
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobFolderOverrideParameters();
+    AWS_QUICKSIGHT_API AssetBundleImportJobFolderOverrideParameters() = default;
     AWS_QUICKSIGHT_API AssetBundleImportJobFolderOverrideParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportJobFolderOverrideParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the folder that you want to apply overrides to.</p>
      */
-    inline const Aws::String& GetFolderId() const{ return m_folderId; }
+    inline const Aws::String& GetFolderId() const { return m_folderId; }
     inline bool FolderIdHasBeenSet() const { return m_folderIdHasBeenSet; }
-    inline void SetFolderId(const Aws::String& value) { m_folderIdHasBeenSet = true; m_folderId = value; }
-    inline void SetFolderId(Aws::String&& value) { m_folderIdHasBeenSet = true; m_folderId = std::move(value); }
-    inline void SetFolderId(const char* value) { m_folderIdHasBeenSet = true; m_folderId.assign(value); }
-    inline AssetBundleImportJobFolderOverrideParameters& WithFolderId(const Aws::String& value) { SetFolderId(value); return *this;}
-    inline AssetBundleImportJobFolderOverrideParameters& WithFolderId(Aws::String&& value) { SetFolderId(std::move(value)); return *this;}
-    inline AssetBundleImportJobFolderOverrideParameters& WithFolderId(const char* value) { SetFolderId(value); return *this;}
+    template<typename FolderIdT = Aws::String>
+    void SetFolderId(FolderIdT&& value) { m_folderIdHasBeenSet = true; m_folderId = std::forward<FolderIdT>(value); }
+    template<typename FolderIdT = Aws::String>
+    AssetBundleImportJobFolderOverrideParameters& WithFolderId(FolderIdT&& value) { SetFolderId(std::forward<FolderIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new name for the folder.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AssetBundleImportJobFolderOverrideParameters& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AssetBundleImportJobFolderOverrideParameters& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AssetBundleImportJobFolderOverrideParameters& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AssetBundleImportJobFolderOverrideParameters& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * <p>A new parent folder arn. This change can only be applied if the import
      * creates a brand new folder. Existing folders cannot be moved.</p>
      */
-    inline const Aws::String& GetParentFolderArn() const{ return m_parentFolderArn; }
+    inline const Aws::String& GetParentFolderArn() const { return m_parentFolderArn; }
     inline bool ParentFolderArnHasBeenSet() const { return m_parentFolderArnHasBeenSet; }
-    inline void SetParentFolderArn(const Aws::String& value) { m_parentFolderArnHasBeenSet = true; m_parentFolderArn = value; }
-    inline void SetParentFolderArn(Aws::String&& value) { m_parentFolderArnHasBeenSet = true; m_parentFolderArn = std::move(value); }
-    inline void SetParentFolderArn(const char* value) { m_parentFolderArnHasBeenSet = true; m_parentFolderArn.assign(value); }
-    inline AssetBundleImportJobFolderOverrideParameters& WithParentFolderArn(const Aws::String& value) { SetParentFolderArn(value); return *this;}
-    inline AssetBundleImportJobFolderOverrideParameters& WithParentFolderArn(Aws::String&& value) { SetParentFolderArn(std::move(value)); return *this;}
-    inline AssetBundleImportJobFolderOverrideParameters& WithParentFolderArn(const char* value) { SetParentFolderArn(value); return *this;}
+    template<typename ParentFolderArnT = Aws::String>
+    void SetParentFolderArn(ParentFolderArnT&& value) { m_parentFolderArnHasBeenSet = true; m_parentFolderArn = std::forward<ParentFolderArnT>(value); }
+    template<typename ParentFolderArnT = Aws::String>
+    AssetBundleImportJobFolderOverrideParameters& WithParentFolderArn(ParentFolderArnT&& value) { SetParentFolderArn(std::forward<ParentFolderArnT>(value)); return *this;}
     ///@}
   private:
 

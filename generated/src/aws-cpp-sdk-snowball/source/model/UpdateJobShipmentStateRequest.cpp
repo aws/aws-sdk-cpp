@@ -12,13 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateJobShipmentStateRequest::UpdateJobShipmentStateRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_shipmentState(ShipmentState::NOT_SET),
-    m_shipmentStateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateJobShipmentStateRequest::SerializePayload() const
 {
   JsonValue payload;

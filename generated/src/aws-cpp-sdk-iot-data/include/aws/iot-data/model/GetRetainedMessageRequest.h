@@ -24,7 +24,7 @@ namespace Model
   class GetRetainedMessageRequest : public IoTDataPlaneRequest
   {
   public:
-    AWS_IOTDATAPLANE_API GetRetainedMessageRequest();
+    AWS_IOTDATAPLANE_API GetRetainedMessageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The topic name of the retained message to retrieve.</p>
      */
-    inline const Aws::String& GetTopic() const{ return m_topic; }
+    inline const Aws::String& GetTopic() const { return m_topic; }
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-    inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
-    inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
-    inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
-    inline GetRetainedMessageRequest& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-    inline GetRetainedMessageRequest& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-    inline GetRetainedMessageRequest& WithTopic(const char* value) { SetTopic(value); return *this;}
+    template<typename TopicT = Aws::String>
+    void SetTopic(TopicT&& value) { m_topicHasBeenSet = true; m_topic = std::forward<TopicT>(value); }
+    template<typename TopicT = Aws::String>
+    GetRetainedMessageRequest& WithTopic(TopicT&& value) { SetTopic(std::forward<TopicT>(value)); return *this;}
     ///@}
   private:
 

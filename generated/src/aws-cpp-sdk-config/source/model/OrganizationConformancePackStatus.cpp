@@ -18,18 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-OrganizationConformancePackStatus::OrganizationConformancePackStatus() : 
-    m_organizationConformancePackNameHasBeenSet(false),
-    m_status(OrganizationResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
-{
-}
-
 OrganizationConformancePackStatus::OrganizationConformancePackStatus(JsonView jsonValue)
-  : OrganizationConformancePackStatus()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ OrganizationConformancePackStatus& OrganizationConformancePackStatus::operator =
   if(jsonValue.ValueExists("OrganizationConformancePackName"))
   {
     m_organizationConformancePackName = jsonValue.GetString("OrganizationConformancePackName");
-
     m_organizationConformancePackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OrganizationResourceStatusMapper::GetOrganizationResourceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

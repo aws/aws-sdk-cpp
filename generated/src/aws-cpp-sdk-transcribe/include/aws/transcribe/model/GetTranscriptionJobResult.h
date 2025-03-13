@@ -28,7 +28,7 @@ namespace Model
   class GetTranscriptionJobResult
   {
   public:
-    AWS_TRANSCRIBESERVICE_API GetTranscriptionJobResult();
+    AWS_TRANSCRIBESERVICE_API GetTranscriptionJobResult() = default;
     AWS_TRANSCRIBESERVICE_API GetTranscriptionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSCRIBESERVICE_API GetTranscriptionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Provides detailed information about the specified transcription job,
      * including job status and, if applicable, failure reason.</p>
      */
-    inline const TranscriptionJob& GetTranscriptionJob() const{ return m_transcriptionJob; }
-    inline void SetTranscriptionJob(const TranscriptionJob& value) { m_transcriptionJob = value; }
-    inline void SetTranscriptionJob(TranscriptionJob&& value) { m_transcriptionJob = std::move(value); }
-    inline GetTranscriptionJobResult& WithTranscriptionJob(const TranscriptionJob& value) { SetTranscriptionJob(value); return *this;}
-    inline GetTranscriptionJobResult& WithTranscriptionJob(TranscriptionJob&& value) { SetTranscriptionJob(std::move(value)); return *this;}
+    inline const TranscriptionJob& GetTranscriptionJob() const { return m_transcriptionJob; }
+    template<typename TranscriptionJobT = TranscriptionJob>
+    void SetTranscriptionJob(TranscriptionJobT&& value) { m_transcriptionJobHasBeenSet = true; m_transcriptionJob = std::forward<TranscriptionJobT>(value); }
+    template<typename TranscriptionJobT = TranscriptionJob>
+    GetTranscriptionJobResult& WithTranscriptionJob(TranscriptionJobT&& value) { SetTranscriptionJob(std::forward<TranscriptionJobT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTranscriptionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTranscriptionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTranscriptionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTranscriptionJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TranscriptionJob m_transcriptionJob;
+    bool m_transcriptionJobHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

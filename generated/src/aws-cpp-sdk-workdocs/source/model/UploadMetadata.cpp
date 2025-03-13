@@ -18,14 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-UploadMetadata::UploadMetadata() : 
-    m_uploadUrlHasBeenSet(false),
-    m_signedHeadersHasBeenSet(false)
-{
-}
-
 UploadMetadata::UploadMetadata(JsonView jsonValue)
-  : UploadMetadata()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UploadMetadata& UploadMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UploadUrl"))
   {
     m_uploadUrl = jsonValue.GetString("UploadUrl");
-
     m_uploadUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SignedHeaders"))
   {
     Aws::Map<Aws::String, JsonView> signedHeadersJsonMap = jsonValue.GetObject("SignedHeaders").GetAllObjects();
@@ -48,7 +39,6 @@ UploadMetadata& UploadMetadata::operator =(JsonView jsonValue)
     }
     m_signedHeadersHasBeenSet = true;
   }
-
   return *this;
 }
 

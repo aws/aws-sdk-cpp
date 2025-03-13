@@ -22,7 +22,7 @@ namespace Model
   class UpdateThingTypeRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API UpdateThingTypeRequest();
+    AWS_IOT_API UpdateThingTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,24 +37,22 @@ namespace Model
     /**
      * <p>The name of a thing type.</p>
      */
-    inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
+    inline const Aws::String& GetThingTypeName() const { return m_thingTypeName; }
     inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
-    inline void SetThingTypeName(const Aws::String& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
-    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::move(value); }
-    inline void SetThingTypeName(const char* value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName.assign(value); }
-    inline UpdateThingTypeRequest& WithThingTypeName(const Aws::String& value) { SetThingTypeName(value); return *this;}
-    inline UpdateThingTypeRequest& WithThingTypeName(Aws::String&& value) { SetThingTypeName(std::move(value)); return *this;}
-    inline UpdateThingTypeRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+    template<typename ThingTypeNameT = Aws::String>
+    void SetThingTypeName(ThingTypeNameT&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::forward<ThingTypeNameT>(value); }
+    template<typename ThingTypeNameT = Aws::String>
+    UpdateThingTypeRequest& WithThingTypeName(ThingTypeNameT&& value) { SetThingTypeName(std::forward<ThingTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ThingTypeProperties& GetThingTypeProperties() const{ return m_thingTypeProperties; }
+    inline const ThingTypeProperties& GetThingTypeProperties() const { return m_thingTypeProperties; }
     inline bool ThingTypePropertiesHasBeenSet() const { return m_thingTypePropertiesHasBeenSet; }
-    inline void SetThingTypeProperties(const ThingTypeProperties& value) { m_thingTypePropertiesHasBeenSet = true; m_thingTypeProperties = value; }
-    inline void SetThingTypeProperties(ThingTypeProperties&& value) { m_thingTypePropertiesHasBeenSet = true; m_thingTypeProperties = std::move(value); }
-    inline UpdateThingTypeRequest& WithThingTypeProperties(const ThingTypeProperties& value) { SetThingTypeProperties(value); return *this;}
-    inline UpdateThingTypeRequest& WithThingTypeProperties(ThingTypeProperties&& value) { SetThingTypeProperties(std::move(value)); return *this;}
+    template<typename ThingTypePropertiesT = ThingTypeProperties>
+    void SetThingTypeProperties(ThingTypePropertiesT&& value) { m_thingTypePropertiesHasBeenSet = true; m_thingTypeProperties = std::forward<ThingTypePropertiesT>(value); }
+    template<typename ThingTypePropertiesT = ThingTypeProperties>
+    UpdateThingTypeRequest& WithThingTypeProperties(ThingTypePropertiesT&& value) { SetThingTypeProperties(std::forward<ThingTypePropertiesT>(value)); return *this;}
     ///@}
   private:
 

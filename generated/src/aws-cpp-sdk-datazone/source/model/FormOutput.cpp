@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-FormOutput::FormOutput() : 
-    m_contentHasBeenSet(false),
-    m_formNameHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
-{
-}
-
 FormOutput::FormOutput(JsonView jsonValue)
-  : FormOutput()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ FormOutput& FormOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetString("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("formName"))
   {
     m_formName = jsonValue.GetString("formName");
-
     m_formNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeName"))
   {
     m_typeName = jsonValue.GetString("typeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeRevision"))
   {
     m_typeRevision = jsonValue.GetString("typeRevision");
-
     m_typeRevisionHasBeenSet = true;
   }
-
   return *this;
 }
 

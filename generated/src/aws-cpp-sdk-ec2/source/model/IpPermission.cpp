@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpPermission::IpPermission() : 
-    m_ipProtocolHasBeenSet(false),
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_userIdGroupPairsHasBeenSet(false),
-    m_ipRangesHasBeenSet(false),
-    m_ipv6RangesHasBeenSet(false),
-    m_prefixListIdsHasBeenSet(false)
-{
-}
-
 IpPermission::IpPermission(const XmlNode& xmlNode)
-  : IpPermission()
 {
   *this = xmlNode;
 }
@@ -50,66 +36,73 @@ IpPermission& IpPermission::operator =(const XmlNode& xmlNode)
     {
       m_ipProtocol = Aws::Utils::Xml::DecodeEscapedXmlText(ipProtocolNode.GetText());
       m_ipProtocolHasBeenSet = true;
+       m_ipProtocolHasBeenSet = true;
     }
     XmlNode fromPortNode = resultNode.FirstChild("fromPort");
     if(!fromPortNode.IsNull())
     {
       m_fromPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fromPortNode.GetText()).c_str()).c_str());
       m_fromPortHasBeenSet = true;
+       m_fromPortHasBeenSet = true;
     }
     XmlNode toPortNode = resultNode.FirstChild("toPort");
     if(!toPortNode.IsNull())
     {
       m_toPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(toPortNode.GetText()).c_str()).c_str());
       m_toPortHasBeenSet = true;
+       m_toPortHasBeenSet = true;
     }
     XmlNode userIdGroupPairsNode = resultNode.FirstChild("groups");
     if(!userIdGroupPairsNode.IsNull())
     {
       XmlNode userIdGroupPairsMember = userIdGroupPairsNode.FirstChild("item");
+      m_userIdGroupPairsHasBeenSet = !userIdGroupPairsMember.IsNull();
       while(!userIdGroupPairsMember.IsNull())
       {
         m_userIdGroupPairs.push_back(userIdGroupPairsMember);
         userIdGroupPairsMember = userIdGroupPairsMember.NextNode("item");
       }
 
-      m_userIdGroupPairsHasBeenSet = true;
+       m_userIdGroupPairsHasBeenSet = true;
     }
     XmlNode ipRangesNode = resultNode.FirstChild("ipRanges");
     if(!ipRangesNode.IsNull())
     {
       XmlNode ipRangesMember = ipRangesNode.FirstChild("item");
+      m_ipRangesHasBeenSet = !ipRangesMember.IsNull();
       while(!ipRangesMember.IsNull())
       {
         m_ipRanges.push_back(ipRangesMember);
         ipRangesMember = ipRangesMember.NextNode("item");
       }
 
-      m_ipRangesHasBeenSet = true;
+       m_ipRangesHasBeenSet = true;
     }
     XmlNode ipv6RangesNode = resultNode.FirstChild("ipv6Ranges");
     if(!ipv6RangesNode.IsNull())
     {
       XmlNode ipv6RangesMember = ipv6RangesNode.FirstChild("item");
+      m_ipv6RangesHasBeenSet = !ipv6RangesMember.IsNull();
       while(!ipv6RangesMember.IsNull())
       {
         m_ipv6Ranges.push_back(ipv6RangesMember);
         ipv6RangesMember = ipv6RangesMember.NextNode("item");
       }
 
-      m_ipv6RangesHasBeenSet = true;
+       m_ipv6RangesHasBeenSet = true;
     }
     XmlNode prefixListIdsNode = resultNode.FirstChild("prefixListIds");
     if(!prefixListIdsNode.IsNull())
     {
       XmlNode prefixListIdsMember = prefixListIdsNode.FirstChild("item");
+      m_prefixListIdsHasBeenSet = !prefixListIdsMember.IsNull();
       while(!prefixListIdsMember.IsNull())
       {
         m_prefixListIds.push_back(prefixListIdsMember);
         prefixListIdsMember = prefixListIdsMember.NextNode("item");
       }
 
-      m_prefixListIdsHasBeenSet = true;
+       m_prefixListIdsHasBeenSet = true;
     }
   }
 

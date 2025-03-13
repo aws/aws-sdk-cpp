@@ -18,15 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-ResourceDownloadOwnerSetting::ResourceDownloadOwnerSetting() : 
-    m_groupOwnerHasBeenSet(false),
-    m_groupPermission(Permission::NOT_SET),
-    m_groupPermissionHasBeenSet(false)
-{
-}
-
 ResourceDownloadOwnerSetting::ResourceDownloadOwnerSetting(JsonView jsonValue)
-  : ResourceDownloadOwnerSetting()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ResourceDownloadOwnerSetting& ResourceDownloadOwnerSetting::operator =(JsonView 
   if(jsonValue.ValueExists("GroupOwner"))
   {
     m_groupOwner = jsonValue.GetString("GroupOwner");
-
     m_groupOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupPermission"))
   {
     m_groupPermission = PermissionMapper::GetPermissionForName(jsonValue.GetString("GroupPermission"));
-
     m_groupPermissionHasBeenSet = true;
   }
-
   return *this;
 }
 

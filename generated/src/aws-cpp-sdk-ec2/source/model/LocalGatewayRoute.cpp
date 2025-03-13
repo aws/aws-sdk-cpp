@@ -20,25 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LocalGatewayRoute::LocalGatewayRoute() : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
-    m_type(LocalGatewayRouteType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_state(LocalGatewayRouteState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_localGatewayRouteTableArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_coipPoolIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_destinationPrefixListIdHasBeenSet(false)
-{
-}
-
 LocalGatewayRoute::LocalGatewayRoute(const XmlNode& xmlNode)
-  : LocalGatewayRoute()
 {
   *this = xmlNode;
 }
@@ -54,66 +36,77 @@ LocalGatewayRoute& LocalGatewayRoute::operator =(const XmlNode& xmlNode)
     {
       m_destinationCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrBlockNode.GetText());
       m_destinationCidrBlockHasBeenSet = true;
+       m_destinationCidrBlockHasBeenSet = true;
     }
     XmlNode localGatewayVirtualInterfaceGroupIdNode = resultNode.FirstChild("localGatewayVirtualInterfaceGroupId");
     if(!localGatewayVirtualInterfaceGroupIdNode.IsNull())
     {
       m_localGatewayVirtualInterfaceGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayVirtualInterfaceGroupIdNode.GetText());
       m_localGatewayVirtualInterfaceGroupIdHasBeenSet = true;
+       m_localGatewayVirtualInterfaceGroupIdHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = LocalGatewayRouteTypeMapper::GetLocalGatewayRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = LocalGatewayRouteTypeMapper::GetLocalGatewayRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = LocalGatewayRouteStateMapper::GetLocalGatewayRouteStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = LocalGatewayRouteStateMapper::GetLocalGatewayRouteStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode localGatewayRouteTableIdNode = resultNode.FirstChild("localGatewayRouteTableId");
     if(!localGatewayRouteTableIdNode.IsNull())
     {
       m_localGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableIdNode.GetText());
       m_localGatewayRouteTableIdHasBeenSet = true;
+       m_localGatewayRouteTableIdHasBeenSet = true;
     }
     XmlNode localGatewayRouteTableArnNode = resultNode.FirstChild("localGatewayRouteTableArn");
     if(!localGatewayRouteTableArnNode.IsNull())
     {
       m_localGatewayRouteTableArn = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableArnNode.GetText());
       m_localGatewayRouteTableArnHasBeenSet = true;
+       m_localGatewayRouteTableArnHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode coipPoolIdNode = resultNode.FirstChild("coipPoolId");
     if(!coipPoolIdNode.IsNull())
     {
       m_coipPoolId = Aws::Utils::Xml::DecodeEscapedXmlText(coipPoolIdNode.GetText());
       m_coipPoolIdHasBeenSet = true;
+       m_coipPoolIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
+       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode destinationPrefixListIdNode = resultNode.FirstChild("destinationPrefixListId");
     if(!destinationPrefixListIdNode.IsNull())
     {
       m_destinationPrefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(destinationPrefixListIdNode.GetText());
       m_destinationPrefixListIdHasBeenSet = true;
+       m_destinationPrefixListIdHasBeenSet = true;
     }
   }
 

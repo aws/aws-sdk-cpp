@@ -46,7 +46,7 @@ namespace Model
   class Budget
   {
   public:
-    AWS_BUDGETS_API Budget();
+    AWS_BUDGETS_API Budget() = default;
     AWS_BUDGETS_API Budget(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API Budget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,14 +58,12 @@ namespace Model
      * <code>:</code> and <code>\</code> characters, and the "/action/" substring,
      * aren't allowed in <code>BudgetName</code>.</p>
      */
-    inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
+    inline const Aws::String& GetBudgetName() const { return m_budgetName; }
     inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
-    inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
-    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
-    inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
-    inline Budget& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
-    inline Budget& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
-    inline Budget& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
+    template<typename BudgetNameT = Aws::String>
+    void SetBudgetName(BudgetNameT&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::forward<BudgetNameT>(value); }
+    template<typename BudgetNameT = Aws::String>
+    Budget& WithBudgetName(BudgetNameT&& value) { SetBudgetName(std::forward<BudgetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +77,12 @@ namespace Model
      * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
-    inline const Spend& GetBudgetLimit() const{ return m_budgetLimit; }
+    inline const Spend& GetBudgetLimit() const { return m_budgetLimit; }
     inline bool BudgetLimitHasBeenSet() const { return m_budgetLimitHasBeenSet; }
-    inline void SetBudgetLimit(const Spend& value) { m_budgetLimitHasBeenSet = true; m_budgetLimit = value; }
-    inline void SetBudgetLimit(Spend&& value) { m_budgetLimitHasBeenSet = true; m_budgetLimit = std::move(value); }
-    inline Budget& WithBudgetLimit(const Spend& value) { SetBudgetLimit(value); return *this;}
-    inline Budget& WithBudgetLimit(Spend&& value) { SetBudgetLimit(std::move(value)); return *this;}
+    template<typename BudgetLimitT = Spend>
+    void SetBudgetLimit(BudgetLimitT&& value) { m_budgetLimitHasBeenSet = true; m_budgetLimit = std::forward<BudgetLimitT>(value); }
+    template<typename BudgetLimitT = Spend>
+    Budget& WithBudgetLimit(BudgetLimitT&& value) { SetBudgetLimit(std::forward<BudgetLimitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,18 +114,16 @@ namespace Model
      * <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They
      * don't contain <code>PlannedBudgetLimits</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Spend>& GetPlannedBudgetLimits() const{ return m_plannedBudgetLimits; }
+    inline const Aws::Map<Aws::String, Spend>& GetPlannedBudgetLimits() const { return m_plannedBudgetLimits; }
     inline bool PlannedBudgetLimitsHasBeenSet() const { return m_plannedBudgetLimitsHasBeenSet; }
-    inline void SetPlannedBudgetLimits(const Aws::Map<Aws::String, Spend>& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits = value; }
-    inline void SetPlannedBudgetLimits(Aws::Map<Aws::String, Spend>&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits = std::move(value); }
-    inline Budget& WithPlannedBudgetLimits(const Aws::Map<Aws::String, Spend>& value) { SetPlannedBudgetLimits(value); return *this;}
-    inline Budget& WithPlannedBudgetLimits(Aws::Map<Aws::String, Spend>&& value) { SetPlannedBudgetLimits(std::move(value)); return *this;}
-    inline Budget& AddPlannedBudgetLimits(const Aws::String& key, const Spend& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(key, value); return *this; }
-    inline Budget& AddPlannedBudgetLimits(Aws::String&& key, const Spend& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(std::move(key), value); return *this; }
-    inline Budget& AddPlannedBudgetLimits(const Aws::String& key, Spend&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(key, std::move(value)); return *this; }
-    inline Budget& AddPlannedBudgetLimits(Aws::String&& key, Spend&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(std::move(key), std::move(value)); return *this; }
-    inline Budget& AddPlannedBudgetLimits(const char* key, Spend&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(key, std::move(value)); return *this; }
-    inline Budget& AddPlannedBudgetLimits(const char* key, const Spend& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(key, value); return *this; }
+    template<typename PlannedBudgetLimitsT = Aws::Map<Aws::String, Spend>>
+    void SetPlannedBudgetLimits(PlannedBudgetLimitsT&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits = std::forward<PlannedBudgetLimitsT>(value); }
+    template<typename PlannedBudgetLimitsT = Aws::Map<Aws::String, Spend>>
+    Budget& WithPlannedBudgetLimits(PlannedBudgetLimitsT&& value) { SetPlannedBudgetLimits(std::forward<PlannedBudgetLimitsT>(value)); return *this;}
+    template<typename PlannedBudgetLimitsKeyT = Aws::String, typename PlannedBudgetLimitsValueT = Spend>
+    Budget& AddPlannedBudgetLimits(PlannedBudgetLimitsKeyT&& key, PlannedBudgetLimitsValueT&& value) {
+      m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(std::forward<PlannedBudgetLimitsKeyT>(key), std::forward<PlannedBudgetLimitsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -140,18 +136,16 @@ namespace Model
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
      * <p>Amazon OpenSearch Service</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetCostFilters() const{ return m_costFilters; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetCostFilters() const { return m_costFilters; }
     inline bool CostFiltersHasBeenSet() const { return m_costFiltersHasBeenSet; }
-    inline void SetCostFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_costFiltersHasBeenSet = true; m_costFilters = value; }
-    inline void SetCostFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_costFiltersHasBeenSet = true; m_costFilters = std::move(value); }
-    inline Budget& WithCostFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetCostFilters(value); return *this;}
-    inline Budget& WithCostFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetCostFilters(std::move(value)); return *this;}
-    inline Budget& AddCostFilters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
-    inline Budget& AddCostFilters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::move(key), value); return *this; }
-    inline Budget& AddCostFilters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, std::move(value)); return *this; }
-    inline Budget& AddCostFilters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::move(key), std::move(value)); return *this; }
-    inline Budget& AddCostFilters(const char* key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, std::move(value)); return *this; }
-    inline Budget& AddCostFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
+    template<typename CostFiltersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetCostFilters(CostFiltersT&& value) { m_costFiltersHasBeenSet = true; m_costFilters = std::forward<CostFiltersT>(value); }
+    template<typename CostFiltersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    Budget& WithCostFilters(CostFiltersT&& value) { SetCostFilters(std::forward<CostFiltersT>(value)); return *this;}
+    template<typename CostFiltersKeyT = Aws::String, typename CostFiltersValueT = Aws::Vector<Aws::String>>
+    Budget& AddCostFilters(CostFiltersKeyT&& key, CostFiltersValueT&& value) {
+      m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::forward<CostFiltersKeyT>(key), std::forward<CostFiltersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -161,24 +155,22 @@ namespace Model
      * <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code>
      * budgets do not have <code>CostTypes</code>.</p>
      */
-    inline const CostTypes& GetCostTypes() const{ return m_costTypes; }
+    inline const CostTypes& GetCostTypes() const { return m_costTypes; }
     inline bool CostTypesHasBeenSet() const { return m_costTypesHasBeenSet; }
-    inline void SetCostTypes(const CostTypes& value) { m_costTypesHasBeenSet = true; m_costTypes = value; }
-    inline void SetCostTypes(CostTypes&& value) { m_costTypesHasBeenSet = true; m_costTypes = std::move(value); }
-    inline Budget& WithCostTypes(const CostTypes& value) { SetCostTypes(value); return *this;}
-    inline Budget& WithCostTypes(CostTypes&& value) { SetCostTypes(std::move(value)); return *this;}
+    template<typename CostTypesT = CostTypes>
+    void SetCostTypes(CostTypesT&& value) { m_costTypesHasBeenSet = true; m_costTypes = std::forward<CostTypesT>(value); }
+    template<typename CostTypesT = CostTypes>
+    Budget& WithCostTypes(CostTypesT&& value) { SetCostTypes(std::forward<CostTypesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The length of time until a budget resets the actual and forecasted spend.</p>
      */
-    inline const TimeUnit& GetTimeUnit() const{ return m_timeUnit; }
+    inline TimeUnit GetTimeUnit() const { return m_timeUnit; }
     inline bool TimeUnitHasBeenSet() const { return m_timeUnitHasBeenSet; }
-    inline void SetTimeUnit(const TimeUnit& value) { m_timeUnitHasBeenSet = true; m_timeUnit = value; }
-    inline void SetTimeUnit(TimeUnit&& value) { m_timeUnitHasBeenSet = true; m_timeUnit = std::move(value); }
-    inline Budget& WithTimeUnit(const TimeUnit& value) { SetTimeUnit(value); return *this;}
-    inline Budget& WithTimeUnit(TimeUnit&& value) { SetTimeUnit(std::move(value)); return *this;}
+    inline void SetTimeUnit(TimeUnit value) { m_timeUnitHasBeenSet = true; m_timeUnit = value; }
+    inline Budget& WithTimeUnit(TimeUnit value) { SetTimeUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -198,24 +190,24 @@ namespace Model
      * operation.</p> <p>After the end date, Amazon Web Services deletes the budget and
      * all the associated notifications and subscribers.</p>
      */
-    inline const TimePeriod& GetTimePeriod() const{ return m_timePeriod; }
+    inline const TimePeriod& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const TimePeriod& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(TimePeriod&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline Budget& WithTimePeriod(const TimePeriod& value) { SetTimePeriod(value); return *this;}
-    inline Budget& WithTimePeriod(TimePeriod&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = TimePeriod>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = TimePeriod>
+    Budget& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The actual and forecasted cost or usage that the budget tracks.</p>
      */
-    inline const CalculatedSpend& GetCalculatedSpend() const{ return m_calculatedSpend; }
+    inline const CalculatedSpend& GetCalculatedSpend() const { return m_calculatedSpend; }
     inline bool CalculatedSpendHasBeenSet() const { return m_calculatedSpendHasBeenSet; }
-    inline void SetCalculatedSpend(const CalculatedSpend& value) { m_calculatedSpendHasBeenSet = true; m_calculatedSpend = value; }
-    inline void SetCalculatedSpend(CalculatedSpend&& value) { m_calculatedSpendHasBeenSet = true; m_calculatedSpend = std::move(value); }
-    inline Budget& WithCalculatedSpend(const CalculatedSpend& value) { SetCalculatedSpend(value); return *this;}
-    inline Budget& WithCalculatedSpend(CalculatedSpend&& value) { SetCalculatedSpend(std::move(value)); return *this;}
+    template<typename CalculatedSpendT = CalculatedSpend>
+    void SetCalculatedSpend(CalculatedSpendT&& value) { m_calculatedSpendHasBeenSet = true; m_calculatedSpend = std::forward<CalculatedSpendT>(value); }
+    template<typename CalculatedSpendT = CalculatedSpend>
+    Budget& WithCalculatedSpend(CalculatedSpendT&& value) { SetCalculatedSpend(std::forward<CalculatedSpendT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -223,24 +215,22 @@ namespace Model
      * <p>Specifies whether this budget tracks costs, usage, RI utilization, RI
      * coverage, Savings Plans utilization, or Savings Plans coverage.</p>
      */
-    inline const BudgetType& GetBudgetType() const{ return m_budgetType; }
+    inline BudgetType GetBudgetType() const { return m_budgetType; }
     inline bool BudgetTypeHasBeenSet() const { return m_budgetTypeHasBeenSet; }
-    inline void SetBudgetType(const BudgetType& value) { m_budgetTypeHasBeenSet = true; m_budgetType = value; }
-    inline void SetBudgetType(BudgetType&& value) { m_budgetTypeHasBeenSet = true; m_budgetType = std::move(value); }
-    inline Budget& WithBudgetType(const BudgetType& value) { SetBudgetType(value); return *this;}
-    inline Budget& WithBudgetType(BudgetType&& value) { SetBudgetType(std::move(value)); return *this;}
+    inline void SetBudgetType(BudgetType value) { m_budgetTypeHasBeenSet = true; m_budgetType = value; }
+    inline Budget& WithBudgetType(BudgetType value) { SetBudgetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time that you updated this budget.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline Budget& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline Budget& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    Budget& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -248,12 +238,12 @@ namespace Model
      * <p>The parameters that determine the budget amount for an auto-adjusting
      * budget.</p>
      */
-    inline const AutoAdjustData& GetAutoAdjustData() const{ return m_autoAdjustData; }
+    inline const AutoAdjustData& GetAutoAdjustData() const { return m_autoAdjustData; }
     inline bool AutoAdjustDataHasBeenSet() const { return m_autoAdjustDataHasBeenSet; }
-    inline void SetAutoAdjustData(const AutoAdjustData& value) { m_autoAdjustDataHasBeenSet = true; m_autoAdjustData = value; }
-    inline void SetAutoAdjustData(AutoAdjustData&& value) { m_autoAdjustDataHasBeenSet = true; m_autoAdjustData = std::move(value); }
-    inline Budget& WithAutoAdjustData(const AutoAdjustData& value) { SetAutoAdjustData(value); return *this;}
-    inline Budget& WithAutoAdjustData(AutoAdjustData&& value) { SetAutoAdjustData(std::move(value)); return *this;}
+    template<typename AutoAdjustDataT = AutoAdjustData>
+    void SetAutoAdjustData(AutoAdjustDataT&& value) { m_autoAdjustDataHasBeenSet = true; m_autoAdjustData = std::forward<AutoAdjustDataT>(value); }
+    template<typename AutoAdjustDataT = AutoAdjustData>
+    Budget& WithAutoAdjustData(AutoAdjustDataT&& value) { SetAutoAdjustData(std::forward<AutoAdjustDataT>(value)); return *this;}
     ///@}
   private:
 
@@ -272,7 +262,7 @@ namespace Model
     CostTypes m_costTypes;
     bool m_costTypesHasBeenSet = false;
 
-    TimeUnit m_timeUnit;
+    TimeUnit m_timeUnit{TimeUnit::NOT_SET};
     bool m_timeUnitHasBeenSet = false;
 
     TimePeriod m_timePeriod;
@@ -281,10 +271,10 @@ namespace Model
     CalculatedSpend m_calculatedSpend;
     bool m_calculatedSpendHasBeenSet = false;
 
-    BudgetType m_budgetType;
+    BudgetType m_budgetType{BudgetType::NOT_SET};
     bool m_budgetTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
 
     AutoAdjustData m_autoAdjustData;

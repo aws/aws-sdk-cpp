@@ -18,15 +18,7 @@ namespace FIS
 namespace Model
 {
 
-TargetAccountConfigurationSummary::TargetAccountConfigurationSummary() : 
-    m_roleArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 TargetAccountConfigurationSummary::TargetAccountConfigurationSummary(JsonView jsonValue)
-  : TargetAccountConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TargetAccountConfigurationSummary& TargetAccountConfigurationSummary::operator =
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

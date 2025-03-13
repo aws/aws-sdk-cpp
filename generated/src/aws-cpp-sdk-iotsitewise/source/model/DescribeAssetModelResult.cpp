@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAssetModelResult::DescribeAssetModelResult() : 
-    m_assetModelType(AssetModelType::NOT_SET)
-{
-}
-
 DescribeAssetModelResult::DescribeAssetModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeAssetModelResult()
 {
   *this = result;
 }
@@ -34,39 +28,33 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("assetModelId"))
   {
     m_assetModelId = jsonValue.GetString("assetModelId");
-
+    m_assetModelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelExternalId"))
   {
     m_assetModelExternalId = jsonValue.GetString("assetModelExternalId");
-
+    m_assetModelExternalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelArn"))
   {
     m_assetModelArn = jsonValue.GetString("assetModelArn");
-
+    m_assetModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelName"))
   {
     m_assetModelName = jsonValue.GetString("assetModelName");
-
+    m_assetModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelType"))
   {
     m_assetModelType = AssetModelTypeMapper::GetAssetModelTypeForName(jsonValue.GetString("assetModelType"));
-
+    m_assetModelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelDescription"))
   {
     m_assetModelDescription = jsonValue.GetString("assetModelDescription");
-
+    m_assetModelDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelProperties"))
   {
     Aws::Utils::Array<JsonView> assetModelPropertiesJsonList = jsonValue.GetArray("assetModelProperties");
@@ -74,8 +62,8 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
     {
       m_assetModelProperties.push_back(assetModelPropertiesJsonList[assetModelPropertiesIndex].AsObject());
     }
+    m_assetModelPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelHierarchies"))
   {
     Aws::Utils::Array<JsonView> assetModelHierarchiesJsonList = jsonValue.GetArray("assetModelHierarchies");
@@ -83,8 +71,8 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
     {
       m_assetModelHierarchies.push_back(assetModelHierarchiesJsonList[assetModelHierarchiesIndex].AsObject());
     }
+    m_assetModelHierarchiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModels"))
   {
     Aws::Utils::Array<JsonView> assetModelCompositeModelsJsonList = jsonValue.GetArray("assetModelCompositeModels");
@@ -92,8 +80,8 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
     {
       m_assetModelCompositeModels.push_back(assetModelCompositeModelsJsonList[assetModelCompositeModelsIndex].AsObject());
     }
+    m_assetModelCompositeModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelSummaries"))
   {
     Aws::Utils::Array<JsonView> assetModelCompositeModelSummariesJsonList = jsonValue.GetArray("assetModelCompositeModelSummaries");
@@ -101,44 +89,42 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
     {
       m_assetModelCompositeModelSummaries.push_back(assetModelCompositeModelSummariesJsonList[assetModelCompositeModelSummariesIndex].AsObject());
     }
+    m_assetModelCompositeModelSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCreationDate"))
   {
     m_assetModelCreationDate = jsonValue.GetDouble("assetModelCreationDate");
-
+    m_assetModelCreationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelLastUpdateDate"))
   {
     m_assetModelLastUpdateDate = jsonValue.GetDouble("assetModelLastUpdateDate");
-
+    m_assetModelLastUpdateDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelStatus"))
   {
     m_assetModelStatus = jsonValue.GetObject("assetModelStatus");
-
+    m_assetModelStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelVersion"))
   {
     m_assetModelVersion = jsonValue.GetString("assetModelVersion");
-
+    m_assetModelVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& eTagIter = headers.find("etag");
   if(eTagIter != headers.end())
   {
     m_eTag = eTagIter->second;
+    m_eTagHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -28,33 +28,35 @@ namespace Model
   class ModifyDBRecommendationResult
   {
   public:
-    AWS_RDS_API ModifyDBRecommendationResult();
+    AWS_RDS_API ModifyDBRecommendationResult() = default;
     AWS_RDS_API ModifyDBRecommendationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API ModifyDBRecommendationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const DBRecommendation& GetDBRecommendation() const{ return m_dBRecommendation; }
-    inline void SetDBRecommendation(const DBRecommendation& value) { m_dBRecommendation = value; }
-    inline void SetDBRecommendation(DBRecommendation&& value) { m_dBRecommendation = std::move(value); }
-    inline ModifyDBRecommendationResult& WithDBRecommendation(const DBRecommendation& value) { SetDBRecommendation(value); return *this;}
-    inline ModifyDBRecommendationResult& WithDBRecommendation(DBRecommendation&& value) { SetDBRecommendation(std::move(value)); return *this;}
+    inline const DBRecommendation& GetDBRecommendation() const { return m_dBRecommendation; }
+    template<typename DBRecommendationT = DBRecommendation>
+    void SetDBRecommendation(DBRecommendationT&& value) { m_dBRecommendationHasBeenSet = true; m_dBRecommendation = std::forward<DBRecommendationT>(value); }
+    template<typename DBRecommendationT = DBRecommendation>
+    ModifyDBRecommendationResult& WithDBRecommendation(DBRecommendationT&& value) { SetDBRecommendation(std::forward<DBRecommendationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyDBRecommendationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyDBRecommendationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyDBRecommendationResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBRecommendation m_dBRecommendation;
+    bool m_dBRecommendationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

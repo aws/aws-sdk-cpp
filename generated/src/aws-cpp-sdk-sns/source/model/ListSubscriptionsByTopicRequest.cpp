@@ -10,12 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-ListSubscriptionsByTopicRequest::ListSubscriptionsByTopicRequest() : 
-    m_topicArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSubscriptionsByTopicRequest::SerializePayload() const
 {
   Aws::StringStream ss;

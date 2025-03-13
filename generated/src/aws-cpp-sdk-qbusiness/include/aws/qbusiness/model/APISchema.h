@@ -37,7 +37,7 @@ namespace Model
   class APISchema
   {
   public:
-    AWS_QBUSINESS_API APISchema();
+    AWS_QBUSINESS_API APISchema() = default;
     AWS_QBUSINESS_API APISchema(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API APISchema& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <p>The JSON or YAML-formatted payload defining the OpenAPI schema for a custom
      * plugin. </p>
      */
-    inline const Aws::String& GetPayload() const{ return m_payload; }
+    inline const Aws::String& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Aws::String& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Aws::String&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline void SetPayload(const char* value) { m_payloadHasBeenSet = true; m_payload.assign(value); }
-    inline APISchema& WithPayload(const Aws::String& value) { SetPayload(value); return *this;}
-    inline APISchema& WithPayload(Aws::String&& value) { SetPayload(std::move(value)); return *this;}
-    inline APISchema& WithPayload(const char* value) { SetPayload(value); return *this;}
+    template<typename PayloadT = Aws::String>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Aws::String>
+    APISchema& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,12 @@ namespace Model
      * <p>Contains details about the S3 object containing the OpenAPI schema for a
      * custom plugin. The schema could be in either JSON or YAML format.</p>
      */
-    inline const S3& GetS3() const{ return m_s3; }
+    inline const S3& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline APISchema& WithS3(const S3& value) { SetS3(value); return *this;}
-    inline APISchema& WithS3(S3&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = S3>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = S3>
+    APISchema& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 

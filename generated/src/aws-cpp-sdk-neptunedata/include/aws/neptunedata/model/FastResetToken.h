@@ -32,7 +32,7 @@ namespace Model
   class FastResetToken
   {
   public:
-    AWS_NEPTUNEDATA_API FastResetToken();
+    AWS_NEPTUNEDATA_API FastResetToken() = default;
     AWS_NEPTUNEDATA_API FastResetToken(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API FastResetToken& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * action, and then consumed by the <code>performDatabaseReset</code> to reset the
      * database.</p>
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
+    inline const Aws::String& GetToken() const { return m_token; }
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-    inline FastResetToken& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline FastResetToken& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline FastResetToken& WithToken(const char* value) { SetToken(value); return *this;}
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    FastResetToken& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
   private:
 

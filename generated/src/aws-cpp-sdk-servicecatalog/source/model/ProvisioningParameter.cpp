@@ -18,14 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ProvisioningParameter::ProvisioningParameter() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ProvisioningParameter::ProvisioningParameter(JsonView jsonValue)
-  : ProvisioningParameter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ProvisioningParameter& ProvisioningParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

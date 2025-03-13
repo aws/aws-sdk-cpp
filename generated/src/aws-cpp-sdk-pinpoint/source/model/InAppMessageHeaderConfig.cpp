@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-InAppMessageHeaderConfig::InAppMessageHeaderConfig() : 
-    m_alignment(Alignment::NOT_SET),
-    m_alignmentHasBeenSet(false),
-    m_headerHasBeenSet(false),
-    m_textColorHasBeenSet(false)
-{
-}
-
 InAppMessageHeaderConfig::InAppMessageHeaderConfig(JsonView jsonValue)
-  : InAppMessageHeaderConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InAppMessageHeaderConfig& InAppMessageHeaderConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Alignment"))
   {
     m_alignment = AlignmentMapper::GetAlignmentForName(jsonValue.GetString("Alignment"));
-
     m_alignmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Header"))
   {
     m_header = jsonValue.GetString("Header");
-
     m_headerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextColor"))
   {
     m_textColor = jsonValue.GetString("TextColor");
-
     m_textColorHasBeenSet = true;
   }
-
   return *this;
 }
 

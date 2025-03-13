@@ -12,17 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateThingRequest::UpdateThingRequest() : 
-    m_thingNameHasBeenSet(false),
-    m_thingTypeNameHasBeenSet(false),
-    m_attributePayloadHasBeenSet(false),
-    m_expectedVersion(0),
-    m_expectedVersionHasBeenSet(false),
-    m_removeThingType(false),
-    m_removeThingTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateThingRequest::SerializePayload() const
 {
   JsonValue payload;

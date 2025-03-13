@@ -12,25 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCaseRequest::CreateCaseRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_resolverType(ResolverType::NOT_SET),
-    m_resolverTypeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_engagementType(EngagementType::NOT_SET),
-    m_engagementTypeHasBeenSet(false),
-    m_reportedIncidentStartDateHasBeenSet(false),
-    m_impactedAccountsHasBeenSet(false),
-    m_watchersHasBeenSet(false),
-    m_threatActorIpAddressesHasBeenSet(false),
-    m_impactedServicesHasBeenSet(false),
-    m_impactedAwsRegionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCaseRequest::SerializePayload() const
 {
   JsonValue payload;

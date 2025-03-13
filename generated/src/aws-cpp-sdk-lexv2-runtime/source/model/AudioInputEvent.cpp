@@ -19,17 +19,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-AudioInputEvent::AudioInputEvent() : 
-    m_audioChunkHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_clientTimestampMillis(0),
-    m_clientTimestampMillisHasBeenSet(false)
-{
-}
-
 AudioInputEvent::AudioInputEvent(JsonView jsonValue)
-  : AudioInputEvent()
 {
   *this = jsonValue;
 }
@@ -41,28 +31,21 @@ AudioInputEvent& AudioInputEvent::operator =(JsonView jsonValue)
     m_audioChunk = HashingUtils::Base64Decode(jsonValue.GetString("audioChunk"));
     m_audioChunkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentType"))
   {
     m_contentType = jsonValue.GetString("contentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientTimestampMillis"))
   {
     m_clientTimestampMillis = jsonValue.GetInt64("clientTimestampMillis");
-
     m_clientTimestampMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CodeEditorAppSettings::CodeEditorAppSettings() : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_customImagesHasBeenSet(false),
-    m_lifecycleConfigArnsHasBeenSet(false),
-    m_appLifecycleManagementHasBeenSet(false),
-    m_builtInLifecycleConfigArnHasBeenSet(false)
-{
-}
-
 CodeEditorAppSettings::CodeEditorAppSettings(JsonView jsonValue)
-  : CodeEditorAppSettings()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ CodeEditorAppSettings& CodeEditorAppSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DefaultResourceSpec"))
   {
     m_defaultResourceSpec = jsonValue.GetObject("DefaultResourceSpec");
-
     m_defaultResourceSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomImages"))
   {
     Aws::Utils::Array<JsonView> customImagesJsonList = jsonValue.GetArray("CustomImages");
@@ -51,7 +39,6 @@ CodeEditorAppSettings& CodeEditorAppSettings::operator =(JsonView jsonValue)
     }
     m_customImagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifecycleConfigArns"))
   {
     Aws::Utils::Array<JsonView> lifecycleConfigArnsJsonList = jsonValue.GetArray("LifecycleConfigArns");
@@ -61,21 +48,16 @@ CodeEditorAppSettings& CodeEditorAppSettings::operator =(JsonView jsonValue)
     }
     m_lifecycleConfigArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppLifecycleManagement"))
   {
     m_appLifecycleManagement = jsonValue.GetObject("AppLifecycleManagement");
-
     m_appLifecycleManagementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BuiltInLifecycleConfigArn"))
   {
     m_builtInLifecycleConfigArn = jsonValue.GetString("BuiltInLifecycleConfigArn");
-
     m_builtInLifecycleConfigArnHasBeenSet = true;
   }
-
   return *this;
 }
 

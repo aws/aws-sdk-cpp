@@ -22,7 +22,7 @@ namespace Model
   class CheckNoNewAccessRequest : public AccessAnalyzerRequest
   {
   public:
-    AWS_ACCESSANALYZER_API CheckNoNewAccessRequest();
+    AWS_ACCESSANALYZER_API CheckNoNewAccessRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
     /**
      * <p>The JSON policy document to use as the content for the updated policy.</p>
      */
-    inline const Aws::String& GetNewPolicyDocument() const{ return m_newPolicyDocument; }
+    inline const Aws::String& GetNewPolicyDocument() const { return m_newPolicyDocument; }
     inline bool NewPolicyDocumentHasBeenSet() const { return m_newPolicyDocumentHasBeenSet; }
-    inline void SetNewPolicyDocument(const Aws::String& value) { m_newPolicyDocumentHasBeenSet = true; m_newPolicyDocument = value; }
-    inline void SetNewPolicyDocument(Aws::String&& value) { m_newPolicyDocumentHasBeenSet = true; m_newPolicyDocument = std::move(value); }
-    inline void SetNewPolicyDocument(const char* value) { m_newPolicyDocumentHasBeenSet = true; m_newPolicyDocument.assign(value); }
-    inline CheckNoNewAccessRequest& WithNewPolicyDocument(const Aws::String& value) { SetNewPolicyDocument(value); return *this;}
-    inline CheckNoNewAccessRequest& WithNewPolicyDocument(Aws::String&& value) { SetNewPolicyDocument(std::move(value)); return *this;}
-    inline CheckNoNewAccessRequest& WithNewPolicyDocument(const char* value) { SetNewPolicyDocument(value); return *this;}
+    template<typename NewPolicyDocumentT = Aws::String>
+    void SetNewPolicyDocument(NewPolicyDocumentT&& value) { m_newPolicyDocumentHasBeenSet = true; m_newPolicyDocument = std::forward<NewPolicyDocumentT>(value); }
+    template<typename NewPolicyDocumentT = Aws::String>
+    CheckNoNewAccessRequest& WithNewPolicyDocument(NewPolicyDocumentT&& value) { SetNewPolicyDocument(std::forward<NewPolicyDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The JSON policy document to use as the content for the existing policy.</p>
      */
-    inline const Aws::String& GetExistingPolicyDocument() const{ return m_existingPolicyDocument; }
+    inline const Aws::String& GetExistingPolicyDocument() const { return m_existingPolicyDocument; }
     inline bool ExistingPolicyDocumentHasBeenSet() const { return m_existingPolicyDocumentHasBeenSet; }
-    inline void SetExistingPolicyDocument(const Aws::String& value) { m_existingPolicyDocumentHasBeenSet = true; m_existingPolicyDocument = value; }
-    inline void SetExistingPolicyDocument(Aws::String&& value) { m_existingPolicyDocumentHasBeenSet = true; m_existingPolicyDocument = std::move(value); }
-    inline void SetExistingPolicyDocument(const char* value) { m_existingPolicyDocumentHasBeenSet = true; m_existingPolicyDocument.assign(value); }
-    inline CheckNoNewAccessRequest& WithExistingPolicyDocument(const Aws::String& value) { SetExistingPolicyDocument(value); return *this;}
-    inline CheckNoNewAccessRequest& WithExistingPolicyDocument(Aws::String&& value) { SetExistingPolicyDocument(std::move(value)); return *this;}
-    inline CheckNoNewAccessRequest& WithExistingPolicyDocument(const char* value) { SetExistingPolicyDocument(value); return *this;}
+    template<typename ExistingPolicyDocumentT = Aws::String>
+    void SetExistingPolicyDocument(ExistingPolicyDocumentT&& value) { m_existingPolicyDocumentHasBeenSet = true; m_existingPolicyDocument = std::forward<ExistingPolicyDocumentT>(value); }
+    template<typename ExistingPolicyDocumentT = Aws::String>
+    CheckNoNewAccessRequest& WithExistingPolicyDocument(ExistingPolicyDocumentT&& value) { SetExistingPolicyDocument(std::forward<ExistingPolicyDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +67,10 @@ namespace Model
      * identity policy or resource policy or a specific input such as managed policy or
      * Amazon S3 bucket policy.</p>
      */
-    inline const AccessCheckPolicyType& GetPolicyType() const{ return m_policyType; }
+    inline AccessCheckPolicyType GetPolicyType() const { return m_policyType; }
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
-    inline void SetPolicyType(const AccessCheckPolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
-    inline void SetPolicyType(AccessCheckPolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
-    inline CheckNoNewAccessRequest& WithPolicyType(const AccessCheckPolicyType& value) { SetPolicyType(value); return *this;}
-    inline CheckNoNewAccessRequest& WithPolicyType(AccessCheckPolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
+    inline void SetPolicyType(AccessCheckPolicyType value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
+    inline CheckNoNewAccessRequest& WithPolicyType(AccessCheckPolicyType value) { SetPolicyType(value); return *this;}
     ///@}
   private:
 
@@ -86,7 +80,7 @@ namespace Model
     Aws::String m_existingPolicyDocument;
     bool m_existingPolicyDocumentHasBeenSet = false;
 
-    AccessCheckPolicyType m_policyType;
+    AccessCheckPolicyType m_policyType{AccessCheckPolicyType::NOT_SET};
     bool m_policyTypeHasBeenSet = false;
   };
 

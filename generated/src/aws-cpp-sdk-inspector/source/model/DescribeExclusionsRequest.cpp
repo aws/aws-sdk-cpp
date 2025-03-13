@@ -12,13 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeExclusionsRequest::DescribeExclusionsRequest() : 
-    m_exclusionArnsHasBeenSet(false),
-    m_locale(Locale::NOT_SET),
-    m_localeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeExclusionsRequest::SerializePayload() const
 {
   JsonValue payload;

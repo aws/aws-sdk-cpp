@@ -18,30 +18,7 @@ namespace CodeGuruSecurity
 namespace Model
 {
 
-Finding::Finding() : 
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_detectorNameHasBeenSet(false),
-    m_detectorTagsHasBeenSet(false),
-    m_generatorIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_severity(Severity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_vulnerabilityHasBeenSet(false)
-{
-}
-
 Finding::Finding(JsonView jsonValue)
-  : Finding()
 {
   *this = jsonValue;
 }
@@ -51,31 +28,23 @@ Finding& Finding::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
     m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorName"))
   {
     m_detectorName = jsonValue.GetString("detectorName");
-
     m_detectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorTags"))
   {
     Aws::Utils::Array<JsonView> detectorTagsJsonList = jsonValue.GetArray("detectorTags");
@@ -85,84 +54,61 @@ Finding& Finding::operator =(JsonView jsonValue)
     }
     m_detectorTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generatorId"))
   {
     m_generatorId = jsonValue.GetString("generatorId");
-
     m_generatorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remediation"))
   {
     m_remediation = jsonValue.GetObject("remediation");
-
     m_remediationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetObject("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleId"))
   {
     m_ruleId = jsonValue.GetString("ruleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = SeverityMapper::GetSeverityForName(jsonValue.GetString("severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vulnerability"))
   {
     m_vulnerability = jsonValue.GetObject("vulnerability");
-
     m_vulnerabilityHasBeenSet = true;
   }
-
   return *this;
 }
 

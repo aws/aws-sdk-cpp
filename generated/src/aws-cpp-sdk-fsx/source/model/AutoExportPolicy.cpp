@@ -18,13 +18,7 @@ namespace FSx
 namespace Model
 {
 
-AutoExportPolicy::AutoExportPolicy() : 
-    m_eventsHasBeenSet(false)
-{
-}
-
 AutoExportPolicy::AutoExportPolicy(JsonView jsonValue)
-  : AutoExportPolicy()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AutoExportPolicy& AutoExportPolicy::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   return *this;
 }
 

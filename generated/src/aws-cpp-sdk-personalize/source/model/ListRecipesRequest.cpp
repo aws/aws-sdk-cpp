@@ -12,17 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRecipesRequest::ListRecipesRequest() : 
-    m_recipeProvider(RecipeProvider::NOT_SET),
-    m_recipeProviderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_domain(Domain::NOT_SET),
-    m_domainHasBeenSet(false)
-{
-}
-
 Aws::String ListRecipesRequest::SerializePayload() const
 {
   JsonValue payload;

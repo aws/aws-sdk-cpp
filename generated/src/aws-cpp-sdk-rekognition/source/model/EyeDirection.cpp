@@ -18,18 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-EyeDirection::EyeDirection() : 
-    m_yaw(0.0),
-    m_yawHasBeenSet(false),
-    m_pitch(0.0),
-    m_pitchHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
-{
-}
-
 EyeDirection::EyeDirection(JsonView jsonValue)
-  : EyeDirection()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ EyeDirection& EyeDirection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Yaw"))
   {
     m_yaw = jsonValue.GetDouble("Yaw");
-
     m_yawHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pitch"))
   {
     m_pitch = jsonValue.GetDouble("Pitch");
-
     m_pitchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

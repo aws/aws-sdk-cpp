@@ -35,7 +35,7 @@ namespace Model
   class BatchIsAuthorizedWithTokenInputItem
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenInputItem();
+    AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenInputItem() = default;
     AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenInputItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenInputItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>Specifies the requested action to be authorized. For example,
      * <code>PhotoFlash::ReadPhoto</code>.</p>
      */
-    inline const ActionIdentifier& GetAction() const{ return m_action; }
+    inline const ActionIdentifier& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ActionIdentifier& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ActionIdentifier&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline BatchIsAuthorizedWithTokenInputItem& WithAction(const ActionIdentifier& value) { SetAction(value); return *this;}
-    inline BatchIsAuthorizedWithTokenInputItem& WithAction(ActionIdentifier&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = ActionIdentifier>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = ActionIdentifier>
+    BatchIsAuthorizedWithTokenInputItem& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>Specifies the resource that you want an authorization decision for. For
      * example, <code>PhotoFlash::Photo</code>.</p>
      */
-    inline const EntityIdentifier& GetResource() const{ return m_resource; }
+    inline const EntityIdentifier& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const EntityIdentifier& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(EntityIdentifier&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline BatchIsAuthorizedWithTokenInputItem& WithResource(const EntityIdentifier& value) { SetResource(value); return *this;}
-    inline BatchIsAuthorizedWithTokenInputItem& WithResource(EntityIdentifier&& value) { SetResource(std::move(value)); return *this;}
+    template<typename ResourceT = EntityIdentifier>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = EntityIdentifier>
+    BatchIsAuthorizedWithTokenInputItem& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * <p>Specifies additional context that can be used to make more granular
      * authorization decisions.</p>
      */
-    inline const ContextDefinition& GetContext() const{ return m_context; }
+    inline const ContextDefinition& GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const ContextDefinition& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(ContextDefinition&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline BatchIsAuthorizedWithTokenInputItem& WithContext(const ContextDefinition& value) { SetContext(value); return *this;}
-    inline BatchIsAuthorizedWithTokenInputItem& WithContext(ContextDefinition&& value) { SetContext(std::move(value)); return *this;}
+    template<typename ContextT = ContextDefinition>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = ContextDefinition>
+    BatchIsAuthorizedWithTokenInputItem& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
     ///@}
   private:
 

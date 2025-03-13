@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-IntentClassificationTestResults::IntentClassificationTestResults() : 
-    m_itemsHasBeenSet(false)
-{
-}
-
 IntentClassificationTestResults::IntentClassificationTestResults(JsonView jsonValue)
-  : IntentClassificationTestResults()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ IntentClassificationTestResults& IntentClassificationTestResults::operator =(Jso
     }
     m_itemsHasBeenSet = true;
   }
-
   return *this;
 }
 

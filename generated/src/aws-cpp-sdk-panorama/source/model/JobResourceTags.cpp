@@ -18,15 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-JobResourceTags::JobResourceTags() : 
-    m_resourceType(JobResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 JobResourceTags::JobResourceTags(JsonView jsonValue)
-  : JobResourceTags()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ JobResourceTags& JobResourceTags::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = JobResourceTypeMapper::GetJobResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -49,7 +39,6 @@ JobResourceTags& JobResourceTags::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

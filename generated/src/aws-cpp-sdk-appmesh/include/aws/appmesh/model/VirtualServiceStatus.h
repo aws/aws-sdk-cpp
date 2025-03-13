@@ -32,7 +32,7 @@ namespace Model
   class VirtualServiceStatus
   {
   public:
-    AWS_APPMESH_API VirtualServiceStatus();
+    AWS_APPMESH_API VirtualServiceStatus() = default;
     AWS_APPMESH_API VirtualServiceStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualServiceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The current status of the virtual service.</p>
      */
-    inline const VirtualServiceStatusCode& GetStatus() const{ return m_status; }
+    inline VirtualServiceStatusCode GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const VirtualServiceStatusCode& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(VirtualServiceStatusCode&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline VirtualServiceStatus& WithStatus(const VirtualServiceStatusCode& value) { SetStatus(value); return *this;}
-    inline VirtualServiceStatus& WithStatus(VirtualServiceStatusCode&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(VirtualServiceStatusCode value) { m_statusHasBeenSet = true; m_status = value; }
+    inline VirtualServiceStatus& WithStatus(VirtualServiceStatusCode value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    VirtualServiceStatusCode m_status;
+    VirtualServiceStatusCode m_status{VirtualServiceStatusCode::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

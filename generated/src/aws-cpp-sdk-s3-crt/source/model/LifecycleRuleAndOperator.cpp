@@ -20,18 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-LifecycleRuleAndOperator::LifecycleRuleAndOperator() : 
-    m_prefixHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_objectSizeGreaterThan(0),
-    m_objectSizeGreaterThanHasBeenSet(false),
-    m_objectSizeLessThan(0),
-    m_objectSizeLessThanHasBeenSet(false)
-{
-}
-
 LifecycleRuleAndOperator::LifecycleRuleAndOperator(const XmlNode& xmlNode)
-  : LifecycleRuleAndOperator()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,34 @@ LifecycleRuleAndOperator& LifecycleRuleAndOperator::operator =(const XmlNode& xm
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tag");
     if(!tagsNode.IsNull())
     {
       XmlNode tagMember = tagsNode;
+      m_tagsHasBeenSet = !tagMember.IsNull();
       while(!tagMember.IsNull())
       {
         m_tags.push_back(tagMember);
         tagMember = tagMember.NextNode("Tag");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode objectSizeGreaterThanNode = resultNode.FirstChild("ObjectSizeGreaterThan");
     if(!objectSizeGreaterThanNode.IsNull())
     {
       m_objectSizeGreaterThan = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectSizeGreaterThanNode.GetText()).c_str()).c_str());
       m_objectSizeGreaterThanHasBeenSet = true;
+       m_objectSizeGreaterThanHasBeenSet = true;
     }
     XmlNode objectSizeLessThanNode = resultNode.FirstChild("ObjectSizeLessThan");
     if(!objectSizeLessThanNode.IsNull())
     {
       m_objectSizeLessThan = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectSizeLessThanNode.GetText()).c_str()).c_str());
       m_objectSizeLessThanHasBeenSet = true;
+       m_objectSizeLessThanHasBeenSet = true;
     }
   }
 

@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AttachCertificateToDistributionRequest::AttachCertificateToDistributionRequest() : 
-    m_distributionNameHasBeenSet(false),
-    m_certificateNameHasBeenSet(false)
-{
-}
-
 Aws::String AttachCertificateToDistributionRequest::SerializePayload() const
 {
   JsonValue payload;

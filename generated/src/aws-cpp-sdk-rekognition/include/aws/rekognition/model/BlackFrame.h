@@ -34,7 +34,7 @@ namespace Model
   class BlackFrame
   {
   public:
-    AWS_REKOGNITION_API BlackFrame();
+    AWS_REKOGNITION_API BlackFrame() = default;
     AWS_REKOGNITION_API BlackFrame(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API BlackFrame& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,7 +52,7 @@ namespace Model
      * which maps to a max_black_pixel_value of 51 for a full range video. You can
      * lower this threshold to be more strict on black levels.</p>
      */
-    inline double GetMaxPixelThreshold() const{ return m_maxPixelThreshold; }
+    inline double GetMaxPixelThreshold() const { return m_maxPixelThreshold; }
     inline bool MaxPixelThresholdHasBeenSet() const { return m_maxPixelThresholdHasBeenSet; }
     inline void SetMaxPixelThreshold(double value) { m_maxPixelThresholdHasBeenSet = true; m_maxPixelThreshold = value; }
     inline BlackFrame& WithMaxPixelThreshold(double value) { SetMaxPixelThreshold(value); return *this;}
@@ -67,17 +67,17 @@ namespace Model
      * the <code>MaxPixelThreshold</code> set. You can reduce this value to allow more
      * noise on the black frame.</p>
      */
-    inline double GetMinCoveragePercentage() const{ return m_minCoveragePercentage; }
+    inline double GetMinCoveragePercentage() const { return m_minCoveragePercentage; }
     inline bool MinCoveragePercentageHasBeenSet() const { return m_minCoveragePercentageHasBeenSet; }
     inline void SetMinCoveragePercentage(double value) { m_minCoveragePercentageHasBeenSet = true; m_minCoveragePercentage = value; }
     inline BlackFrame& WithMinCoveragePercentage(double value) { SetMinCoveragePercentage(value); return *this;}
     ///@}
   private:
 
-    double m_maxPixelThreshold;
+    double m_maxPixelThreshold{0.0};
     bool m_maxPixelThresholdHasBeenSet = false;
 
-    double m_minCoveragePercentage;
+    double m_minCoveragePercentage{0.0};
     bool m_minCoveragePercentageHasBeenSet = false;
   };
 

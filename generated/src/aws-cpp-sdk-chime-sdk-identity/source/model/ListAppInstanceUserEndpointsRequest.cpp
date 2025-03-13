@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAppInstanceUserEndpointsRequest::ListAppInstanceUserEndpointsRequest() : 
-    m_appInstanceUserArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAppInstanceUserEndpointsRequest::SerializePayload() const
 {
   return {};

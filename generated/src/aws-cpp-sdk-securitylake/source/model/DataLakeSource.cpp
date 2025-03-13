@@ -18,16 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-DataLakeSource::DataLakeSource() : 
-    m_accountHasBeenSet(false),
-    m_eventClassesHasBeenSet(false),
-    m_sourceNameHasBeenSet(false),
-    m_sourceStatusesHasBeenSet(false)
-{
-}
-
 DataLakeSource::DataLakeSource(JsonView jsonValue)
-  : DataLakeSource()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ DataLakeSource& DataLakeSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("account"))
   {
     m_account = jsonValue.GetString("account");
-
     m_accountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventClasses"))
   {
     Aws::Utils::Array<JsonView> eventClassesJsonList = jsonValue.GetArray("eventClasses");
@@ -50,14 +39,11 @@ DataLakeSource& DataLakeSource::operator =(JsonView jsonValue)
     }
     m_eventClassesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceName"))
   {
     m_sourceName = jsonValue.GetString("sourceName");
-
     m_sourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceStatuses"))
   {
     Aws::Utils::Array<JsonView> sourceStatusesJsonList = jsonValue.GetArray("sourceStatuses");
@@ -67,7 +53,6 @@ DataLakeSource& DataLakeSource::operator =(JsonView jsonValue)
     }
     m_sourceStatusesHasBeenSet = true;
   }
-
   return *this;
 }
 

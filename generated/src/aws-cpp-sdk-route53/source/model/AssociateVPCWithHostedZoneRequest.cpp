@@ -14,12 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-AssociateVPCWithHostedZoneRequest::AssociateVPCWithHostedZoneRequest() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_vPCHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
 
 Aws::String AssociateVPCWithHostedZoneRequest::SerializePayload() const
 {

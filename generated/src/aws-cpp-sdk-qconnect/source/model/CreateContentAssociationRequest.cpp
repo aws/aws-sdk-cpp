@@ -12,18 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContentAssociationRequest::CreateContentAssociationRequest() : 
-    m_associationHasBeenSet(false),
-    m_associationType(ContentAssociationType::NOT_SET),
-    m_associationTypeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_contentIdHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateContentAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

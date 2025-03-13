@@ -26,7 +26,7 @@ namespace Model
   class ListDeviceEventsRequest : public IoT1ClickDevicesServiceRequest
   {
   public:
-    AWS_IOT1CLICKDEVICESSERVICE_API ListDeviceEventsRequest();
+    AWS_IOT1CLICKDEVICESSERVICE_API ListDeviceEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The unique identifier of the device.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline ListDeviceEventsRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline ListDeviceEventsRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline ListDeviceEventsRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    ListDeviceEventsRequest& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * 2018-03-28T15:45:12.880Z
  </p>
      */
-    inline const Aws::Utils::DateTime& GetFromTimeStamp() const{ return m_fromTimeStamp; }
+    inline const Aws::Utils::DateTime& GetFromTimeStamp() const { return m_fromTimeStamp; }
     inline bool FromTimeStampHasBeenSet() const { return m_fromTimeStampHasBeenSet; }
-    inline void SetFromTimeStamp(const Aws::Utils::DateTime& value) { m_fromTimeStampHasBeenSet = true; m_fromTimeStamp = value; }
-    inline void SetFromTimeStamp(Aws::Utils::DateTime&& value) { m_fromTimeStampHasBeenSet = true; m_fromTimeStamp = std::move(value); }
-    inline ListDeviceEventsRequest& WithFromTimeStamp(const Aws::Utils::DateTime& value) { SetFromTimeStamp(value); return *this;}
-    inline ListDeviceEventsRequest& WithFromTimeStamp(Aws::Utils::DateTime&& value) { SetFromTimeStamp(std::move(value)); return *this;}
+    template<typename FromTimeStampT = Aws::Utils::DateTime>
+    void SetFromTimeStamp(FromTimeStampT&& value) { m_fromTimeStampHasBeenSet = true; m_fromTimeStamp = std::forward<FromTimeStampT>(value); }
+    template<typename FromTimeStampT = Aws::Utils::DateTime>
+    ListDeviceEventsRequest& WithFromTimeStamp(FromTimeStampT&& value) { SetFromTimeStamp(std::forward<FromTimeStampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +72,7 @@ namespace Model
      * value of
  100 is used.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListDeviceEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -84,14 +82,12 @@ namespace Model
     /**
      * <p>The token to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDeviceEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDeviceEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDeviceEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDeviceEventsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,28 +97,28 @@ namespace Model
      * 2018-03-28T15:45:12.880Z
  </p>
      */
-    inline const Aws::Utils::DateTime& GetToTimeStamp() const{ return m_toTimeStamp; }
+    inline const Aws::Utils::DateTime& GetToTimeStamp() const { return m_toTimeStamp; }
     inline bool ToTimeStampHasBeenSet() const { return m_toTimeStampHasBeenSet; }
-    inline void SetToTimeStamp(const Aws::Utils::DateTime& value) { m_toTimeStampHasBeenSet = true; m_toTimeStamp = value; }
-    inline void SetToTimeStamp(Aws::Utils::DateTime&& value) { m_toTimeStampHasBeenSet = true; m_toTimeStamp = std::move(value); }
-    inline ListDeviceEventsRequest& WithToTimeStamp(const Aws::Utils::DateTime& value) { SetToTimeStamp(value); return *this;}
-    inline ListDeviceEventsRequest& WithToTimeStamp(Aws::Utils::DateTime&& value) { SetToTimeStamp(std::move(value)); return *this;}
+    template<typename ToTimeStampT = Aws::Utils::DateTime>
+    void SetToTimeStamp(ToTimeStampT&& value) { m_toTimeStampHasBeenSet = true; m_toTimeStamp = std::forward<ToTimeStampT>(value); }
+    template<typename ToTimeStampT = Aws::Utils::DateTime>
+    ListDeviceEventsRequest& WithToTimeStamp(ToTimeStampT&& value) { SetToTimeStamp(std::forward<ToTimeStampT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_fromTimeStamp;
+    Aws::Utils::DateTime m_fromTimeStamp{};
     bool m_fromTimeStampHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::Utils::DateTime m_toTimeStamp;
+    Aws::Utils::DateTime m_toTimeStamp{};
     bool m_toTimeStampHasBeenSet = false;
   };
 

@@ -20,15 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-Item::Item() : 
-    m_nameHasBeenSet(false),
-    m_alternateNameEncodingHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Item::Item(const XmlNode& xmlNode)
-  : Item()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ Item& Item::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode alternateNameEncodingNode = resultNode.FirstChild("AlternateNameEncoding");
     if(!alternateNameEncodingNode.IsNull())
     {
       m_alternateNameEncoding = Aws::Utils::Xml::DecodeEscapedXmlText(alternateNameEncodingNode.GetText());
       m_alternateNameEncodingHasBeenSet = true;
+       m_alternateNameEncodingHasBeenSet = true;
     }
     XmlNode attributesNode = resultNode.FirstChild("Attribute");
     if(!attributesNode.IsNull())
     {
       XmlNode attributeMember = attributesNode;
+      m_attributesHasBeenSet = !attributeMember.IsNull();
       while(!attributeMember.IsNull())
       {
         m_attributes.push_back(attributeMember);
         attributeMember = attributeMember.NextNode("Attribute");
       }
 
-      m_attributesHasBeenSet = true;
+       m_attributesHasBeenSet = true;
     }
   }
 

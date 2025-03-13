@@ -34,7 +34,7 @@ namespace Model
   class Account
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API Account();
+    AWS_PARTNERCENTRALSELLING_API Account() = default;
     AWS_PARTNERCENTRALSELLING_API Account(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Account& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>Specifies the end <code>Customer</code>'s address details associated with the
      * <code>Opportunity</code>.</p>
      */
-    inline const Address& GetAddress() const{ return m_address; }
+    inline const Address& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Address& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Address&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline Account& WithAddress(const Address& value) { SetAddress(value); return *this;}
-    inline Account& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
+    template<typename AddressT = Address>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Address>
+    Account& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +58,12 @@ namespace Model
      * <p>Specifies the <code>Customer</code> Amazon Web Services account ID associated
      * with the <code>Opportunity</code>.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline Account& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline Account& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline Account& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    Account& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,28 +71,24 @@ namespace Model
      * <p>Specifies the end <code>Customer</code>'s company name associated with the
      * <code>Opportunity</code>.</p>
      */
-    inline const Aws::String& GetCompanyName() const{ return m_companyName; }
+    inline const Aws::String& GetCompanyName() const { return m_companyName; }
     inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
-    inline void SetCompanyName(const Aws::String& value) { m_companyNameHasBeenSet = true; m_companyName = value; }
-    inline void SetCompanyName(Aws::String&& value) { m_companyNameHasBeenSet = true; m_companyName = std::move(value); }
-    inline void SetCompanyName(const char* value) { m_companyNameHasBeenSet = true; m_companyName.assign(value); }
-    inline Account& WithCompanyName(const Aws::String& value) { SetCompanyName(value); return *this;}
-    inline Account& WithCompanyName(Aws::String&& value) { SetCompanyName(std::move(value)); return *this;}
-    inline Account& WithCompanyName(const char* value) { SetCompanyName(value); return *this;}
+    template<typename CompanyNameT = Aws::String>
+    void SetCompanyName(CompanyNameT&& value) { m_companyNameHasBeenSet = true; m_companyName = std::forward<CompanyNameT>(value); }
+    template<typename CompanyNameT = Aws::String>
+    Account& WithCompanyName(CompanyNameT&& value) { SetCompanyName(std::forward<CompanyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the <code>Customer</code> DUNS number, if available.</p>
      */
-    inline const Aws::String& GetDuns() const{ return m_duns; }
+    inline const Aws::String& GetDuns() const { return m_duns; }
     inline bool DunsHasBeenSet() const { return m_dunsHasBeenSet; }
-    inline void SetDuns(const Aws::String& value) { m_dunsHasBeenSet = true; m_duns = value; }
-    inline void SetDuns(Aws::String&& value) { m_dunsHasBeenSet = true; m_duns = std::move(value); }
-    inline void SetDuns(const char* value) { m_dunsHasBeenSet = true; m_duns.assign(value); }
-    inline Account& WithDuns(const Aws::String& value) { SetDuns(value); return *this;}
-    inline Account& WithDuns(Aws::String&& value) { SetDuns(std::move(value)); return *this;}
-    inline Account& WithDuns(const char* value) { SetDuns(value); return *this;}
+    template<typename DunsT = Aws::String>
+    void SetDuns(DunsT&& value) { m_dunsHasBeenSet = true; m_duns = std::forward<DunsT>(value); }
+    template<typename DunsT = Aws::String>
+    Account& WithDuns(DunsT&& value) { SetDuns(std::forward<DunsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +97,10 @@ namespace Model
      * associated with the <code>Opportunity</code>. It refers to the category or
      * sector where the customer's business operates. This is a required field.</p>
      */
-    inline const Industry& GetIndustry() const{ return m_industry; }
+    inline Industry GetIndustry() const { return m_industry; }
     inline bool IndustryHasBeenSet() const { return m_industryHasBeenSet; }
-    inline void SetIndustry(const Industry& value) { m_industryHasBeenSet = true; m_industry = value; }
-    inline void SetIndustry(Industry&& value) { m_industryHasBeenSet = true; m_industry = std::move(value); }
-    inline Account& WithIndustry(const Industry& value) { SetIndustry(value); return *this;}
-    inline Account& WithIndustry(Industry&& value) { SetIndustry(std::move(value)); return *this;}
+    inline void SetIndustry(Industry value) { m_industryHasBeenSet = true; m_industry = value; }
+    inline Account& WithIndustry(Industry value) { SetIndustry(value); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +109,12 @@ namespace Model
      * <code>Opportunity</code>, when the selected value in the <code>Industry</code>
      * field is <code>Other</code>.</p>
      */
-    inline const Aws::String& GetOtherIndustry() const{ return m_otherIndustry; }
+    inline const Aws::String& GetOtherIndustry() const { return m_otherIndustry; }
     inline bool OtherIndustryHasBeenSet() const { return m_otherIndustryHasBeenSet; }
-    inline void SetOtherIndustry(const Aws::String& value) { m_otherIndustryHasBeenSet = true; m_otherIndustry = value; }
-    inline void SetOtherIndustry(Aws::String&& value) { m_otherIndustryHasBeenSet = true; m_otherIndustry = std::move(value); }
-    inline void SetOtherIndustry(const char* value) { m_otherIndustryHasBeenSet = true; m_otherIndustry.assign(value); }
-    inline Account& WithOtherIndustry(const Aws::String& value) { SetOtherIndustry(value); return *this;}
-    inline Account& WithOtherIndustry(Aws::String&& value) { SetOtherIndustry(std::move(value)); return *this;}
-    inline Account& WithOtherIndustry(const char* value) { SetOtherIndustry(value); return *this;}
+    template<typename OtherIndustryT = Aws::String>
+    void SetOtherIndustry(OtherIndustryT&& value) { m_otherIndustryHasBeenSet = true; m_otherIndustry = std::forward<OtherIndustryT>(value); }
+    template<typename OtherIndustryT = Aws::String>
+    Account& WithOtherIndustry(OtherIndustryT&& value) { SetOtherIndustry(std::forward<OtherIndustryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +124,12 @@ namespace Model
      * Amazon Web Services CRM system. This field is required in all cases except when
      * the opportunity is related to national security.</p>
      */
-    inline const Aws::String& GetWebsiteUrl() const{ return m_websiteUrl; }
+    inline const Aws::String& GetWebsiteUrl() const { return m_websiteUrl; }
     inline bool WebsiteUrlHasBeenSet() const { return m_websiteUrlHasBeenSet; }
-    inline void SetWebsiteUrl(const Aws::String& value) { m_websiteUrlHasBeenSet = true; m_websiteUrl = value; }
-    inline void SetWebsiteUrl(Aws::String&& value) { m_websiteUrlHasBeenSet = true; m_websiteUrl = std::move(value); }
-    inline void SetWebsiteUrl(const char* value) { m_websiteUrlHasBeenSet = true; m_websiteUrl.assign(value); }
-    inline Account& WithWebsiteUrl(const Aws::String& value) { SetWebsiteUrl(value); return *this;}
-    inline Account& WithWebsiteUrl(Aws::String&& value) { SetWebsiteUrl(std::move(value)); return *this;}
-    inline Account& WithWebsiteUrl(const char* value) { SetWebsiteUrl(value); return *this;}
+    template<typename WebsiteUrlT = Aws::String>
+    void SetWebsiteUrl(WebsiteUrlT&& value) { m_websiteUrlHasBeenSet = true; m_websiteUrl = std::forward<WebsiteUrlT>(value); }
+    template<typename WebsiteUrlT = Aws::String>
+    Account& WithWebsiteUrl(WebsiteUrlT&& value) { SetWebsiteUrl(std::forward<WebsiteUrlT>(value)); return *this;}
     ///@}
   private:
 
@@ -157,7 +145,7 @@ namespace Model
     Aws::String m_duns;
     bool m_dunsHasBeenSet = false;
 
-    Industry m_industry;
+    Industry m_industry{Industry::NOT_SET};
     bool m_industryHasBeenSet = false;
 
     Aws::String m_otherIndustry;

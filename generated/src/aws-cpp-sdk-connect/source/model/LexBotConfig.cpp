@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-LexBotConfig::LexBotConfig() : 
-    m_lexBotHasBeenSet(false),
-    m_lexV2BotHasBeenSet(false)
-{
-}
-
 LexBotConfig::LexBotConfig(JsonView jsonValue)
-  : LexBotConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LexBotConfig& LexBotConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LexBot"))
   {
     m_lexBot = jsonValue.GetObject("LexBot");
-
     m_lexBotHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LexV2Bot"))
   {
     m_lexV2Bot = jsonValue.GetObject("LexV2Bot");
-
     m_lexV2BotHasBeenSet = true;
   }
-
   return *this;
 }
 

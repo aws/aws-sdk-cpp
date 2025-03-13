@@ -20,22 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyCorsConfig::ResponseHeadersPolicyCorsConfig() : 
-    m_accessControlAllowOriginsHasBeenSet(false),
-    m_accessControlAllowHeadersHasBeenSet(false),
-    m_accessControlAllowMethodsHasBeenSet(false),
-    m_accessControlAllowCredentials(false),
-    m_accessControlAllowCredentialsHasBeenSet(false),
-    m_accessControlExposeHeadersHasBeenSet(false),
-    m_accessControlMaxAgeSec(0),
-    m_accessControlMaxAgeSecHasBeenSet(false),
-    m_originOverride(false),
-    m_originOverrideHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyCorsConfig::ResponseHeadersPolicyCorsConfig(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyCorsConfig()
 {
   *this = xmlNode;
 }
@@ -51,42 +36,49 @@ ResponseHeadersPolicyCorsConfig& ResponseHeadersPolicyCorsConfig::operator =(con
     {
       m_accessControlAllowOrigins = accessControlAllowOriginsNode;
       m_accessControlAllowOriginsHasBeenSet = true;
+       m_accessControlAllowOriginsHasBeenSet = true;
     }
     XmlNode accessControlAllowHeadersNode = resultNode.FirstChild("AccessControlAllowHeaders");
     if(!accessControlAllowHeadersNode.IsNull())
     {
       m_accessControlAllowHeaders = accessControlAllowHeadersNode;
       m_accessControlAllowHeadersHasBeenSet = true;
+       m_accessControlAllowHeadersHasBeenSet = true;
     }
     XmlNode accessControlAllowMethodsNode = resultNode.FirstChild("AccessControlAllowMethods");
     if(!accessControlAllowMethodsNode.IsNull())
     {
       m_accessControlAllowMethods = accessControlAllowMethodsNode;
       m_accessControlAllowMethodsHasBeenSet = true;
+       m_accessControlAllowMethodsHasBeenSet = true;
     }
     XmlNode accessControlAllowCredentialsNode = resultNode.FirstChild("AccessControlAllowCredentials");
     if(!accessControlAllowCredentialsNode.IsNull())
     {
       m_accessControlAllowCredentials = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(accessControlAllowCredentialsNode.GetText()).c_str()).c_str());
       m_accessControlAllowCredentialsHasBeenSet = true;
+       m_accessControlAllowCredentialsHasBeenSet = true;
     }
     XmlNode accessControlExposeHeadersNode = resultNode.FirstChild("AccessControlExposeHeaders");
     if(!accessControlExposeHeadersNode.IsNull())
     {
       m_accessControlExposeHeaders = accessControlExposeHeadersNode;
       m_accessControlExposeHeadersHasBeenSet = true;
+       m_accessControlExposeHeadersHasBeenSet = true;
     }
     XmlNode accessControlMaxAgeSecNode = resultNode.FirstChild("AccessControlMaxAgeSec");
     if(!accessControlMaxAgeSecNode.IsNull())
     {
       m_accessControlMaxAgeSec = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(accessControlMaxAgeSecNode.GetText()).c_str()).c_str());
       m_accessControlMaxAgeSecHasBeenSet = true;
+       m_accessControlMaxAgeSecHasBeenSet = true;
     }
     XmlNode originOverrideNode = resultNode.FirstChild("OriginOverride");
     if(!originOverrideNode.IsNull())
     {
       m_originOverride = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originOverrideNode.GetText()).c_str()).c_str());
       m_originOverrideHasBeenSet = true;
+       m_originOverrideHasBeenSet = true;
     }
   }
 

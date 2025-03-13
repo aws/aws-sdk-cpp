@@ -13,13 +13,6 @@ using namespace Aws::SocialMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendWhatsAppMessageRequest::SendWhatsAppMessageRequest() : 
-    m_originationPhoneNumberIdHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_metaApiVersionHasBeenSet(false)
-{
-}
-
 Aws::String SendWhatsAppMessageRequest::SerializePayload() const
 {
   JsonValue payload;

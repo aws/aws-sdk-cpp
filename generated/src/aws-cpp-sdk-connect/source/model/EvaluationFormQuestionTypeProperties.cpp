@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationFormQuestionTypeProperties::EvaluationFormQuestionTypeProperties() : 
-    m_numericHasBeenSet(false),
-    m_singleSelectHasBeenSet(false)
-{
-}
-
 EvaluationFormQuestionTypeProperties::EvaluationFormQuestionTypeProperties(JsonView jsonValue)
-  : EvaluationFormQuestionTypeProperties()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EvaluationFormQuestionTypeProperties& EvaluationFormQuestionTypeProperties::oper
   if(jsonValue.ValueExists("Numeric"))
   {
     m_numeric = jsonValue.GetObject("Numeric");
-
     m_numericHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SingleSelect"))
   {
     m_singleSelect = jsonValue.GetObject("SingleSelect");
-
     m_singleSelectHasBeenSet = true;
   }
-
   return *this;
 }
 

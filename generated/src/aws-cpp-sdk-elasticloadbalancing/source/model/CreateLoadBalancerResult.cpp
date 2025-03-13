@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLoadBalancerResult::CreateLoadBalancerResult()
-{
-}
-
 CreateLoadBalancerResult::CreateLoadBalancerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreateLoadBalancerResult& CreateLoadBalancerResult::operator =(const Aws::Amazon
     if(!dNSNameNode.IsNull())
     {
       m_dNSName = Aws::Utils::Xml::DecodeEscapedXmlText(dNSNameNode.GetText());
+      m_dNSNameHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::CreateLoadBalancerResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

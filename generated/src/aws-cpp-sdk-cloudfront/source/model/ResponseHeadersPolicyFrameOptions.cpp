@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyFrameOptions::ResponseHeadersPolicyFrameOptions() : 
-    m_override(false),
-    m_overrideHasBeenSet(false),
-    m_frameOption(FrameOptionsList::NOT_SET),
-    m_frameOptionHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyFrameOptions::ResponseHeadersPolicyFrameOptions(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyFrameOptions()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ ResponseHeadersPolicyFrameOptions& ResponseHeadersPolicyFrameOptions::operator =
     {
       m_override = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overrideNode.GetText()).c_str()).c_str());
       m_overrideHasBeenSet = true;
+       m_overrideHasBeenSet = true;
     }
     XmlNode frameOptionNode = resultNode.FirstChild("FrameOption");
     if(!frameOptionNode.IsNull())
     {
-      m_frameOption = FrameOptionsListMapper::GetFrameOptionsListForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(frameOptionNode.GetText()).c_str()).c_str());
+      m_frameOption = FrameOptionsListMapper::GetFrameOptionsListForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(frameOptionNode.GetText()).c_str()));
       m_frameOptionHasBeenSet = true;
+       m_frameOptionHasBeenSet = true;
     }
   }
 

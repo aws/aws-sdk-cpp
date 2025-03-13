@@ -18,15 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-InstancesToExclude::InstancesToExclude() : 
-    m_instancesHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_servicesHasBeenSet(false)
-{
-}
-
 InstancesToExclude::InstancesToExclude(JsonView jsonValue)
-  : InstancesToExclude()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ InstancesToExclude& InstancesToExclude::operator =(JsonView jsonValue)
     }
     m_instancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountIds"))
   {
     Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
@@ -52,7 +43,6 @@ InstancesToExclude& InstancesToExclude::operator =(JsonView jsonValue)
     }
     m_accountIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Services"))
   {
     Aws::Utils::Array<JsonView> servicesJsonList = jsonValue.GetArray("Services");
@@ -62,7 +52,6 @@ InstancesToExclude& InstancesToExclude::operator =(JsonView jsonValue)
     }
     m_servicesHasBeenSet = true;
   }
-
   return *this;
 }
 

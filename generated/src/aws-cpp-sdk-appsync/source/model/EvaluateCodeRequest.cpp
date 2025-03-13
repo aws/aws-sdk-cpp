@@ -12,14 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EvaluateCodeRequest::EvaluateCodeRequest() : 
-    m_runtimeHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_functionHasBeenSet(false)
-{
-}
-
 Aws::String EvaluateCodeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class PivotTableConditionalFormattingOption
   {
   public:
-    AWS_QUICKSIGHT_API PivotTableConditionalFormattingOption();
+    AWS_QUICKSIGHT_API PivotTableConditionalFormattingOption() = default;
     AWS_QUICKSIGHT_API PivotTableConditionalFormattingOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PivotTableConditionalFormattingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The cell conditional formatting option for a pivot table.</p>
      */
-    inline const PivotTableCellConditionalFormatting& GetCell() const{ return m_cell; }
+    inline const PivotTableCellConditionalFormatting& GetCell() const { return m_cell; }
     inline bool CellHasBeenSet() const { return m_cellHasBeenSet; }
-    inline void SetCell(const PivotTableCellConditionalFormatting& value) { m_cellHasBeenSet = true; m_cell = value; }
-    inline void SetCell(PivotTableCellConditionalFormatting&& value) { m_cellHasBeenSet = true; m_cell = std::move(value); }
-    inline PivotTableConditionalFormattingOption& WithCell(const PivotTableCellConditionalFormatting& value) { SetCell(value); return *this;}
-    inline PivotTableConditionalFormattingOption& WithCell(PivotTableCellConditionalFormatting&& value) { SetCell(std::move(value)); return *this;}
+    template<typename CellT = PivotTableCellConditionalFormatting>
+    void SetCell(CellT&& value) { m_cellHasBeenSet = true; m_cell = std::forward<CellT>(value); }
+    template<typename CellT = PivotTableCellConditionalFormatting>
+    PivotTableConditionalFormattingOption& WithCell(CellT&& value) { SetCell(std::forward<CellT>(value)); return *this;}
     ///@}
   private:
 

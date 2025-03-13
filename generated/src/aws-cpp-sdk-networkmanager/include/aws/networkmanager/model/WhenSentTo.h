@@ -33,7 +33,7 @@ namespace Model
   class WhenSentTo
   {
   public:
-    AWS_NETWORKMANAGER_API WhenSentTo();
+    AWS_NETWORKMANAGER_API WhenSentTo() = default;
     AWS_NETWORKMANAGER_API WhenSentTo(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API WhenSentTo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>The list of destination segments when the service insertion action is
      * <code>send-to</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetWhenSentToSegmentsList() const{ return m_whenSentToSegmentsList; }
+    inline const Aws::Vector<Aws::String>& GetWhenSentToSegmentsList() const { return m_whenSentToSegmentsList; }
     inline bool WhenSentToSegmentsListHasBeenSet() const { return m_whenSentToSegmentsListHasBeenSet; }
-    inline void SetWhenSentToSegmentsList(const Aws::Vector<Aws::String>& value) { m_whenSentToSegmentsListHasBeenSet = true; m_whenSentToSegmentsList = value; }
-    inline void SetWhenSentToSegmentsList(Aws::Vector<Aws::String>&& value) { m_whenSentToSegmentsListHasBeenSet = true; m_whenSentToSegmentsList = std::move(value); }
-    inline WhenSentTo& WithWhenSentToSegmentsList(const Aws::Vector<Aws::String>& value) { SetWhenSentToSegmentsList(value); return *this;}
-    inline WhenSentTo& WithWhenSentToSegmentsList(Aws::Vector<Aws::String>&& value) { SetWhenSentToSegmentsList(std::move(value)); return *this;}
-    inline WhenSentTo& AddWhenSentToSegmentsList(const Aws::String& value) { m_whenSentToSegmentsListHasBeenSet = true; m_whenSentToSegmentsList.push_back(value); return *this; }
-    inline WhenSentTo& AddWhenSentToSegmentsList(Aws::String&& value) { m_whenSentToSegmentsListHasBeenSet = true; m_whenSentToSegmentsList.push_back(std::move(value)); return *this; }
-    inline WhenSentTo& AddWhenSentToSegmentsList(const char* value) { m_whenSentToSegmentsListHasBeenSet = true; m_whenSentToSegmentsList.push_back(value); return *this; }
+    template<typename WhenSentToSegmentsListT = Aws::Vector<Aws::String>>
+    void SetWhenSentToSegmentsList(WhenSentToSegmentsListT&& value) { m_whenSentToSegmentsListHasBeenSet = true; m_whenSentToSegmentsList = std::forward<WhenSentToSegmentsListT>(value); }
+    template<typename WhenSentToSegmentsListT = Aws::Vector<Aws::String>>
+    WhenSentTo& WithWhenSentToSegmentsList(WhenSentToSegmentsListT&& value) { SetWhenSentToSegmentsList(std::forward<WhenSentToSegmentsListT>(value)); return *this;}
+    template<typename WhenSentToSegmentsListT = Aws::String>
+    WhenSentTo& AddWhenSentToSegmentsList(WhenSentToSegmentsListT&& value) { m_whenSentToSegmentsListHasBeenSet = true; m_whenSentToSegmentsList.emplace_back(std::forward<WhenSentToSegmentsListT>(value)); return *this; }
     ///@}
   private:
 

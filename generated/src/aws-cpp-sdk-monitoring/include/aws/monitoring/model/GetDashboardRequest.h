@@ -21,7 +21,7 @@ namespace Model
   class GetDashboardRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API GetDashboardRequest();
+    AWS_CLOUDWATCH_API GetDashboardRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the dashboard to be described.</p>
      */
-    inline const Aws::String& GetDashboardName() const{ return m_dashboardName; }
+    inline const Aws::String& GetDashboardName() const { return m_dashboardName; }
     inline bool DashboardNameHasBeenSet() const { return m_dashboardNameHasBeenSet; }
-    inline void SetDashboardName(const Aws::String& value) { m_dashboardNameHasBeenSet = true; m_dashboardName = value; }
-    inline void SetDashboardName(Aws::String&& value) { m_dashboardNameHasBeenSet = true; m_dashboardName = std::move(value); }
-    inline void SetDashboardName(const char* value) { m_dashboardNameHasBeenSet = true; m_dashboardName.assign(value); }
-    inline GetDashboardRequest& WithDashboardName(const Aws::String& value) { SetDashboardName(value); return *this;}
-    inline GetDashboardRequest& WithDashboardName(Aws::String&& value) { SetDashboardName(std::move(value)); return *this;}
-    inline GetDashboardRequest& WithDashboardName(const char* value) { SetDashboardName(value); return *this;}
+    template<typename DashboardNameT = Aws::String>
+    void SetDashboardName(DashboardNameT&& value) { m_dashboardNameHasBeenSet = true; m_dashboardName = std::forward<DashboardNameT>(value); }
+    template<typename DashboardNameT = Aws::String>
+    GetDashboardRequest& WithDashboardName(DashboardNameT&& value) { SetDashboardName(std::forward<DashboardNameT>(value)); return *this;}
     ///@}
   private:
 

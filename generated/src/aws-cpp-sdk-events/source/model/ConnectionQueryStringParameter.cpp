@@ -18,16 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-ConnectionQueryStringParameter::ConnectionQueryStringParameter() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_isValueSecret(false),
-    m_isValueSecretHasBeenSet(false)
-{
-}
-
 ConnectionQueryStringParameter::ConnectionQueryStringParameter(JsonView jsonValue)
-  : ConnectionQueryStringParameter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ConnectionQueryStringParameter& ConnectionQueryStringParameter::operator =(JsonV
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsValueSecret"))
   {
     m_isValueSecret = jsonValue.GetBool("IsValueSecret");
-
     m_isValueSecretHasBeenSet = true;
   }
-
   return *this;
 }
 

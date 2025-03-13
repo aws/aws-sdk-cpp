@@ -20,18 +20,7 @@ namespace IAM
 namespace Model
 {
 
-SigningCertificate::SigningCertificate() : 
-    m_userNameHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_certificateBodyHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_uploadDateHasBeenSet(false)
-{
-}
-
 SigningCertificate::SigningCertificate(const XmlNode& xmlNode)
-  : SigningCertificate()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ SigningCertificate& SigningCertificate::operator =(const XmlNode& xmlNode)
     {
       m_userName = Aws::Utils::Xml::DecodeEscapedXmlText(userNameNode.GetText());
       m_userNameHasBeenSet = true;
+       m_userNameHasBeenSet = true;
     }
     XmlNode certificateIdNode = resultNode.FirstChild("CertificateId");
     if(!certificateIdNode.IsNull())
     {
       m_certificateId = Aws::Utils::Xml::DecodeEscapedXmlText(certificateIdNode.GetText());
       m_certificateIdHasBeenSet = true;
+       m_certificateIdHasBeenSet = true;
     }
     XmlNode certificateBodyNode = resultNode.FirstChild("CertificateBody");
     if(!certificateBodyNode.IsNull())
     {
       m_certificateBody = Aws::Utils::Xml::DecodeEscapedXmlText(certificateBodyNode.GetText());
       m_certificateBodyHasBeenSet = true;
+       m_certificateBodyHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
     if(!uploadDateNode.IsNull())
     {
       m_uploadDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_uploadDateHasBeenSet = true;
+       m_uploadDateHasBeenSet = true;
     }
   }
 

@@ -37,7 +37,7 @@ namespace Model
   class PipelineContext
   {
   public:
-    AWS_CODEPIPELINE_API PipelineContext();
+    AWS_CODEPIPELINE_API PipelineContext() = default;
     AWS_CODEPIPELINE_API PipelineContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API PipelineContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,66 +48,60 @@ namespace Model
      * <p>The name of the pipeline. This is a user-specified value. Pipeline names must
      * be unique across all pipeline names under an Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
+    inline const Aws::String& GetPipelineName() const { return m_pipelineName; }
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
-    inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-    inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-    inline PipelineContext& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-    inline PipelineContext& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-    inline PipelineContext& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+    template<typename PipelineNameT = Aws::String>
+    void SetPipelineName(PipelineNameT&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::forward<PipelineNameT>(value); }
+    template<typename PipelineNameT = Aws::String>
+    PipelineContext& WithPipelineName(PipelineNameT&& value) { SetPipelineName(std::forward<PipelineNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stage of the pipeline.</p>
      */
-    inline const StageContext& GetStage() const{ return m_stage; }
+    inline const StageContext& GetStage() const { return m_stage; }
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
-    inline void SetStage(const StageContext& value) { m_stageHasBeenSet = true; m_stage = value; }
-    inline void SetStage(StageContext&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
-    inline PipelineContext& WithStage(const StageContext& value) { SetStage(value); return *this;}
-    inline PipelineContext& WithStage(StageContext&& value) { SetStage(std::move(value)); return *this;}
+    template<typename StageT = StageContext>
+    void SetStage(StageT&& value) { m_stageHasBeenSet = true; m_stage = std::forward<StageT>(value); }
+    template<typename StageT = StageContext>
+    PipelineContext& WithStage(StageT&& value) { SetStage(std::forward<StageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The context of an action to a job worker in the stage of a pipeline.</p>
      */
-    inline const ActionContext& GetAction() const{ return m_action; }
+    inline const ActionContext& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ActionContext& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ActionContext&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline PipelineContext& WithAction(const ActionContext& value) { SetAction(value); return *this;}
-    inline PipelineContext& WithAction(ActionContext&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = ActionContext>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = ActionContext>
+    PipelineContext& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
      */
-    inline const Aws::String& GetPipelineArn() const{ return m_pipelineArn; }
+    inline const Aws::String& GetPipelineArn() const { return m_pipelineArn; }
     inline bool PipelineArnHasBeenSet() const { return m_pipelineArnHasBeenSet; }
-    inline void SetPipelineArn(const Aws::String& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = value; }
-    inline void SetPipelineArn(Aws::String&& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = std::move(value); }
-    inline void SetPipelineArn(const char* value) { m_pipelineArnHasBeenSet = true; m_pipelineArn.assign(value); }
-    inline PipelineContext& WithPipelineArn(const Aws::String& value) { SetPipelineArn(value); return *this;}
-    inline PipelineContext& WithPipelineArn(Aws::String&& value) { SetPipelineArn(std::move(value)); return *this;}
-    inline PipelineContext& WithPipelineArn(const char* value) { SetPipelineArn(value); return *this;}
+    template<typename PipelineArnT = Aws::String>
+    void SetPipelineArn(PipelineArnT&& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = std::forward<PipelineArnT>(value); }
+    template<typename PipelineArnT = Aws::String>
+    PipelineContext& WithPipelineArn(PipelineArnT&& value) { SetPipelineArn(std::forward<PipelineArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The execution ID of the pipeline.</p>
      */
-    inline const Aws::String& GetPipelineExecutionId() const{ return m_pipelineExecutionId; }
+    inline const Aws::String& GetPipelineExecutionId() const { return m_pipelineExecutionId; }
     inline bool PipelineExecutionIdHasBeenSet() const { return m_pipelineExecutionIdHasBeenSet; }
-    inline void SetPipelineExecutionId(const Aws::String& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = value; }
-    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = std::move(value); }
-    inline void SetPipelineExecutionId(const char* value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId.assign(value); }
-    inline PipelineContext& WithPipelineExecutionId(const Aws::String& value) { SetPipelineExecutionId(value); return *this;}
-    inline PipelineContext& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
-    inline PipelineContext& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
+    template<typename PipelineExecutionIdT = Aws::String>
+    void SetPipelineExecutionId(PipelineExecutionIdT&& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = std::forward<PipelineExecutionIdT>(value); }
+    template<typename PipelineExecutionIdT = Aws::String>
+    PipelineContext& WithPipelineExecutionId(PipelineExecutionIdT&& value) { SetPipelineExecutionId(std::forward<PipelineExecutionIdT>(value)); return *this;}
     ///@}
   private:
 

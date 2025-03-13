@@ -28,7 +28,7 @@ namespace Model
   class DescribeEventsDetectionJobResult
   {
   public:
-    AWS_COMPREHEND_API DescribeEventsDetectionJobResult();
+    AWS_COMPREHEND_API DescribeEventsDetectionJobResult() = default;
     AWS_COMPREHEND_API DescribeEventsDetectionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API DescribeEventsDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An object that contains the properties associated with an event detection
      * job.</p>
      */
-    inline const EventsDetectionJobProperties& GetEventsDetectionJobProperties() const{ return m_eventsDetectionJobProperties; }
-    inline void SetEventsDetectionJobProperties(const EventsDetectionJobProperties& value) { m_eventsDetectionJobProperties = value; }
-    inline void SetEventsDetectionJobProperties(EventsDetectionJobProperties&& value) { m_eventsDetectionJobProperties = std::move(value); }
-    inline DescribeEventsDetectionJobResult& WithEventsDetectionJobProperties(const EventsDetectionJobProperties& value) { SetEventsDetectionJobProperties(value); return *this;}
-    inline DescribeEventsDetectionJobResult& WithEventsDetectionJobProperties(EventsDetectionJobProperties&& value) { SetEventsDetectionJobProperties(std::move(value)); return *this;}
+    inline const EventsDetectionJobProperties& GetEventsDetectionJobProperties() const { return m_eventsDetectionJobProperties; }
+    template<typename EventsDetectionJobPropertiesT = EventsDetectionJobProperties>
+    void SetEventsDetectionJobProperties(EventsDetectionJobPropertiesT&& value) { m_eventsDetectionJobPropertiesHasBeenSet = true; m_eventsDetectionJobProperties = std::forward<EventsDetectionJobPropertiesT>(value); }
+    template<typename EventsDetectionJobPropertiesT = EventsDetectionJobProperties>
+    DescribeEventsDetectionJobResult& WithEventsDetectionJobProperties(EventsDetectionJobPropertiesT&& value) { SetEventsDetectionJobProperties(std::forward<EventsDetectionJobPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEventsDetectionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEventsDetectionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEventsDetectionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEventsDetectionJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EventsDetectionJobProperties m_eventsDetectionJobProperties;
+    bool m_eventsDetectionJobPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

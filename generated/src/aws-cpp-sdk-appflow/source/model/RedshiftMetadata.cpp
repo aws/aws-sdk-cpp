@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-RedshiftMetadata::RedshiftMetadata()
-{
-}
-
 RedshiftMetadata::RedshiftMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteClusterParameterGroupRequest::DeleteClusterParameterGroupRequest() : 
-    m_parameterGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClusterParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,17 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-GroupingResource::GroupingResource() : 
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_sourceAppComponentIdsHasBeenSet(false)
-{
-}
-
 GroupingResource::GroupingResource(JsonView jsonValue)
-  : GroupingResource()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ GroupingResource& GroupingResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logicalResourceId"))
   {
     m_logicalResourceId = jsonValue.GetObject("logicalResourceId");
-
     m_logicalResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("physicalResourceId"))
   {
     m_physicalResourceId = jsonValue.GetObject("physicalResourceId");
-
     m_physicalResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceName"))
   {
     m_resourceName = jsonValue.GetString("resourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceAppComponentIds"))
   {
     Aws::Utils::Array<JsonView> sourceAppComponentIdsJsonList = jsonValue.GetArray("sourceAppComponentIds");
@@ -72,7 +54,6 @@ GroupingResource& GroupingResource::operator =(JsonView jsonValue)
     }
     m_sourceAppComponentIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

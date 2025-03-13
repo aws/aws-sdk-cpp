@@ -31,7 +31,7 @@ namespace Model
   class ExportSpecification
   {
   public:
-    AWS_BACKUPSEARCH_API ExportSpecification();
+    AWS_BACKUPSEARCH_API ExportSpecification() = default;
     AWS_BACKUPSEARCH_API ExportSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API ExportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>This specifies the destination Amazon S3 bucket for the export job. And, if
      * included, it also specifies the destination prefix.</p>
      */
-    inline const S3ExportSpecification& GetS3ExportSpecification() const{ return m_s3ExportSpecification; }
+    inline const S3ExportSpecification& GetS3ExportSpecification() const { return m_s3ExportSpecification; }
     inline bool S3ExportSpecificationHasBeenSet() const { return m_s3ExportSpecificationHasBeenSet; }
-    inline void SetS3ExportSpecification(const S3ExportSpecification& value) { m_s3ExportSpecificationHasBeenSet = true; m_s3ExportSpecification = value; }
-    inline void SetS3ExportSpecification(S3ExportSpecification&& value) { m_s3ExportSpecificationHasBeenSet = true; m_s3ExportSpecification = std::move(value); }
-    inline ExportSpecification& WithS3ExportSpecification(const S3ExportSpecification& value) { SetS3ExportSpecification(value); return *this;}
-    inline ExportSpecification& WithS3ExportSpecification(S3ExportSpecification&& value) { SetS3ExportSpecification(std::move(value)); return *this;}
+    template<typename S3ExportSpecificationT = S3ExportSpecification>
+    void SetS3ExportSpecification(S3ExportSpecificationT&& value) { m_s3ExportSpecificationHasBeenSet = true; m_s3ExportSpecification = std::forward<S3ExportSpecificationT>(value); }
+    template<typename S3ExportSpecificationT = S3ExportSpecification>
+    ExportSpecification& WithS3ExportSpecification(S3ExportSpecificationT&& value) { SetS3ExportSpecification(std::forward<S3ExportSpecificationT>(value)); return *this;}
     ///@}
   private:
 

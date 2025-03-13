@@ -21,15 +21,7 @@ namespace SNS
 namespace Model
 {
 
-MessageAttributeValue::MessageAttributeValue() : 
-    m_dataTypeHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_binaryValueHasBeenSet(false)
-{
-}
-
 MessageAttributeValue::MessageAttributeValue(const XmlNode& xmlNode)
-  : MessageAttributeValue()
 {
   *this = xmlNode;
 }
@@ -45,18 +37,21 @@ MessageAttributeValue& MessageAttributeValue::operator =(const XmlNode& xmlNode)
     {
       m_dataType = Aws::Utils::Xml::DecodeEscapedXmlText(dataTypeNode.GetText());
       m_dataTypeHasBeenSet = true;
+       m_dataTypeHasBeenSet = true;
     }
     XmlNode stringValueNode = resultNode.FirstChild("StringValue");
     if(!stringValueNode.IsNull())
     {
       m_stringValue = Aws::Utils::Xml::DecodeEscapedXmlText(stringValueNode.GetText());
       m_stringValueHasBeenSet = true;
+       m_stringValueHasBeenSet = true;
     }
     XmlNode binaryValueNode = resultNode.FirstChild("BinaryValue");
     if(!binaryValueNode.IsNull())
     {
       m_binaryValue = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(binaryValueNode.GetText()));
       m_binaryValueHasBeenSet = true;
+       m_binaryValueHasBeenSet = true;
     }
   }
 

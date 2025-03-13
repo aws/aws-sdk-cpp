@@ -20,30 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FleetCapacityReservation::FleetCapacityReservation() : 
-    m_capacityReservationIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instancePlatform(CapacityReservationInstancePlatform::NOT_SET),
-    m_instancePlatformHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_totalInstanceCount(0),
-    m_totalInstanceCountHasBeenSet(false),
-    m_fulfilledCapacity(0.0),
-    m_fulfilledCapacityHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_weight(0.0),
-    m_weightHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
-{
-}
-
 FleetCapacityReservation::FleetCapacityReservation(const XmlNode& xmlNode)
-  : FleetCapacityReservation()
 {
   *this = xmlNode;
 }
@@ -59,66 +36,77 @@ FleetCapacityReservation& FleetCapacityReservation::operator =(const XmlNode& xm
     {
       m_capacityReservationId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationIdNode.GetText());
       m_capacityReservationIdHasBeenSet = true;
+       m_capacityReservationIdHasBeenSet = true;
     }
     XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
     if(!availabilityZoneIdNode.IsNull())
     {
       m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
       m_availabilityZoneIdHasBeenSet = true;
+       m_availabilityZoneIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode instancePlatformNode = resultNode.FirstChild("instancePlatform");
     if(!instancePlatformNode.IsNull())
     {
-      m_instancePlatform = CapacityReservationInstancePlatformMapper::GetCapacityReservationInstancePlatformForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePlatformNode.GetText()).c_str()).c_str());
+      m_instancePlatform = CapacityReservationInstancePlatformMapper::GetCapacityReservationInstancePlatformForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePlatformNode.GetText()).c_str()));
       m_instancePlatformHasBeenSet = true;
+       m_instancePlatformHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode totalInstanceCountNode = resultNode.FirstChild("totalInstanceCount");
     if(!totalInstanceCountNode.IsNull())
     {
       m_totalInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalInstanceCountNode.GetText()).c_str()).c_str());
       m_totalInstanceCountHasBeenSet = true;
+       m_totalInstanceCountHasBeenSet = true;
     }
     XmlNode fulfilledCapacityNode = resultNode.FirstChild("fulfilledCapacity");
     if(!fulfilledCapacityNode.IsNull())
     {
       m_fulfilledCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fulfilledCapacityNode.GetText()).c_str()).c_str());
       m_fulfilledCapacityHasBeenSet = true;
+       m_fulfilledCapacityHasBeenSet = true;
     }
     XmlNode ebsOptimizedNode = resultNode.FirstChild("ebsOptimized");
     if(!ebsOptimizedNode.IsNull())
     {
       m_ebsOptimized = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsOptimizedNode.GetText()).c_str()).c_str());
       m_ebsOptimizedHasBeenSet = true;
+       m_ebsOptimizedHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("createDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
     XmlNode weightNode = resultNode.FirstChild("weight");
     if(!weightNode.IsNull())
     {
       m_weight = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(weightNode.GetText()).c_str()).c_str());
       m_weightHasBeenSet = true;
+       m_weightHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("priority");
     if(!priorityNode.IsNull())
     {
       m_priority = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText()).c_str()).c_str());
       m_priorityHasBeenSet = true;
+       m_priorityHasBeenSet = true;
     }
   }
 

@@ -12,20 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendOutboundEmailRequest::SendOutboundEmailRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_fromEmailAddressHasBeenSet(false),
-    m_destinationEmailAddressHasBeenSet(false),
-    m_additionalRecipientsHasBeenSet(false),
-    m_emailMessageHasBeenSet(false),
-    m_trafficType(TrafficType::NOT_SET),
-    m_trafficTypeHasBeenSet(false),
-    m_sourceCampaignHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String SendOutboundEmailRequest::SerializePayload() const
 {
   JsonValue payload;

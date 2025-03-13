@@ -32,7 +32,7 @@ namespace Model
   class ArchiveRetention
   {
   public:
-    AWS_MAILMANAGER_API ArchiveRetention();
+    AWS_MAILMANAGER_API ArchiveRetention() = default;
     AWS_MAILMANAGER_API ArchiveRetention(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API ArchiveRetention& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The enum value sets the period for retaining emails in an archive.</p>
      */
-    inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+    inline RetentionPeriod GetRetentionPeriod() const { return m_retentionPeriod; }
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
-    inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
-    inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
-    inline ArchiveRetention& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
-    inline ArchiveRetention& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
+    inline void SetRetentionPeriod(RetentionPeriod value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
+    inline ArchiveRetention& WithRetentionPeriod(RetentionPeriod value) { SetRetentionPeriod(value); return *this;}
     ///@}
   private:
 
-    RetentionPeriod m_retentionPeriod;
+    RetentionPeriod m_retentionPeriod{RetentionPeriod::NOT_SET};
     bool m_retentionPeriodHasBeenSet = false;
   };
 

@@ -18,23 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-EffectiveRecommendationPreferences::EffectiveRecommendationPreferences() : 
-    m_cpuVendorArchitecturesHasBeenSet(false),
-    m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_enhancedInfrastructureMetricsHasBeenSet(false),
-    m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
-    m_inferredWorkloadTypesHasBeenSet(false),
-    m_externalMetricsPreferenceHasBeenSet(false),
-    m_lookBackPeriod(LookBackPeriodPreference::NOT_SET),
-    m_lookBackPeriodHasBeenSet(false),
-    m_utilizationPreferencesHasBeenSet(false),
-    m_preferredResourcesHasBeenSet(false),
-    m_savingsEstimationModeHasBeenSet(false)
-{
-}
-
 EffectiveRecommendationPreferences::EffectiveRecommendationPreferences(JsonView jsonValue)
-  : EffectiveRecommendationPreferences()
 {
   *this = jsonValue;
 }
@@ -50,35 +34,26 @@ EffectiveRecommendationPreferences& EffectiveRecommendationPreferences::operator
     }
     m_cpuVendorArchitecturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enhancedInfrastructureMetrics"))
   {
     m_enhancedInfrastructureMetrics = EnhancedInfrastructureMetricsMapper::GetEnhancedInfrastructureMetricsForName(jsonValue.GetString("enhancedInfrastructureMetrics"));
-
     m_enhancedInfrastructureMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferredWorkloadTypes"))
   {
     m_inferredWorkloadTypes = InferredWorkloadTypesPreferenceMapper::GetInferredWorkloadTypesPreferenceForName(jsonValue.GetString("inferredWorkloadTypes"));
-
     m_inferredWorkloadTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalMetricsPreference"))
   {
     m_externalMetricsPreference = jsonValue.GetObject("externalMetricsPreference");
-
     m_externalMetricsPreferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lookBackPeriod"))
   {
     m_lookBackPeriod = LookBackPeriodPreferenceMapper::GetLookBackPeriodPreferenceForName(jsonValue.GetString("lookBackPeriod"));
-
     m_lookBackPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utilizationPreferences"))
   {
     Aws::Utils::Array<JsonView> utilizationPreferencesJsonList = jsonValue.GetArray("utilizationPreferences");
@@ -88,7 +63,6 @@ EffectiveRecommendationPreferences& EffectiveRecommendationPreferences::operator
     }
     m_utilizationPreferencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preferredResources"))
   {
     Aws::Utils::Array<JsonView> preferredResourcesJsonList = jsonValue.GetArray("preferredResources");
@@ -98,14 +72,11 @@ EffectiveRecommendationPreferences& EffectiveRecommendationPreferences::operator
     }
     m_preferredResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsEstimationMode"))
   {
     m_savingsEstimationMode = jsonValue.GetObject("savingsEstimationMode");
-
     m_savingsEstimationModeHasBeenSet = true;
   }
-
   return *this;
 }
 

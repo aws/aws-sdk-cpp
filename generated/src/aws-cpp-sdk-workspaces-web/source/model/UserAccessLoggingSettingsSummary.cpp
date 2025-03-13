@@ -18,14 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-UserAccessLoggingSettingsSummary::UserAccessLoggingSettingsSummary() : 
-    m_kinesisStreamArnHasBeenSet(false),
-    m_userAccessLoggingSettingsArnHasBeenSet(false)
-{
-}
-
 UserAccessLoggingSettingsSummary::UserAccessLoggingSettingsSummary(JsonView jsonValue)
-  : UserAccessLoggingSettingsSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserAccessLoggingSettingsSummary& UserAccessLoggingSettingsSummary::operator =(J
   if(jsonValue.ValueExists("kinesisStreamArn"))
   {
     m_kinesisStreamArn = jsonValue.GetString("kinesisStreamArn");
-
     m_kinesisStreamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAccessLoggingSettingsArn"))
   {
     m_userAccessLoggingSettingsArn = jsonValue.GetString("userAccessLoggingSettingsArn");
-
     m_userAccessLoggingSettingsArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class AggregationPartitionBy
   {
   public:
-    AWS_QUICKSIGHT_API AggregationPartitionBy();
+    AWS_QUICKSIGHT_API AggregationPartitionBy() = default;
     AWS_QUICKSIGHT_API AggregationPartitionBy(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AggregationPartitionBy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The field Name for an <code>AggregationPartitionBy</code>.</p>
      */
-    inline const Aws::String& GetFieldName() const{ return m_fieldName; }
+    inline const Aws::String& GetFieldName() const { return m_fieldName; }
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-    inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-    inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-    inline AggregationPartitionBy& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-    inline AggregationPartitionBy& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-    inline AggregationPartitionBy& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    template<typename FieldNameT = Aws::String>
+    void SetFieldName(FieldNameT&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::forward<FieldNameT>(value); }
+    template<typename FieldNameT = Aws::String>
+    AggregationPartitionBy& WithFieldName(FieldNameT&& value) { SetFieldName(std::forward<FieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>The <code>TimeGranularity</code> for an
      * <code>AggregationPartitionBy</code>.</p>
      */
-    inline const TimeGranularity& GetTimeGranularity() const{ return m_timeGranularity; }
+    inline TimeGranularity GetTimeGranularity() const { return m_timeGranularity; }
     inline bool TimeGranularityHasBeenSet() const { return m_timeGranularityHasBeenSet; }
-    inline void SetTimeGranularity(const TimeGranularity& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
-    inline void SetTimeGranularity(TimeGranularity&& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = std::move(value); }
-    inline AggregationPartitionBy& WithTimeGranularity(const TimeGranularity& value) { SetTimeGranularity(value); return *this;}
-    inline AggregationPartitionBy& WithTimeGranularity(TimeGranularity&& value) { SetTimeGranularity(std::move(value)); return *this;}
+    inline void SetTimeGranularity(TimeGranularity value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
+    inline AggregationPartitionBy& WithTimeGranularity(TimeGranularity value) { SetTimeGranularity(value); return *this;}
     ///@}
   private:
 
     Aws::String m_fieldName;
     bool m_fieldNameHasBeenSet = false;
 
-    TimeGranularity m_timeGranularity;
+    TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
     bool m_timeGranularityHasBeenSet = false;
   };
 

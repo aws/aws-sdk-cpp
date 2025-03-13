@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ServiceTypeDetail::ServiceTypeDetail() : 
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false)
-{
-}
-
 ServiceTypeDetail::ServiceTypeDetail(const XmlNode& xmlNode)
-  : ServiceTypeDetail()
 {
   *this = xmlNode;
 }
@@ -41,8 +34,9 @@ ServiceTypeDetail& ServiceTypeDetail::operator =(const XmlNode& xmlNode)
     XmlNode serviceTypeNode = resultNode.FirstChild("serviceType");
     if(!serviceTypeNode.IsNull())
     {
-      m_serviceType = ServiceTypeMapper::GetServiceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceTypeNode.GetText()).c_str()).c_str());
+      m_serviceType = ServiceTypeMapper::GetServiceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceTypeNode.GetText()).c_str()));
       m_serviceTypeHasBeenSet = true;
+       m_serviceTypeHasBeenSet = true;
     }
   }
 

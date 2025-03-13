@@ -32,7 +32,7 @@ namespace Model
   class CanaryScheduleInput
   {
   public:
-    AWS_SYNTHETICS_API CanaryScheduleInput();
+    AWS_SYNTHETICS_API CanaryScheduleInput() = default;
     AWS_SYNTHETICS_API CanaryScheduleInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API CanaryScheduleInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
      * Scheduling canary runs using cron</a>.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline CanaryScheduleInput& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline CanaryScheduleInput& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline CanaryScheduleInput& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    CanaryScheduleInput& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * 0, the canary continues making runs until you stop it. If you omit this field,
      * the default of 0 is used.</p>
      */
-    inline long long GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline long long GetDurationInSeconds() const { return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
     inline void SetDurationInSeconds(long long value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline CanaryScheduleInput& WithDurationInSeconds(long long value) { SetDurationInSeconds(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
     Aws::String m_expression;
     bool m_expressionHasBeenSet = false;
 
-    long long m_durationInSeconds;
+    long long m_durationInSeconds{0};
     bool m_durationInSecondsHasBeenSet = false;
   };
 

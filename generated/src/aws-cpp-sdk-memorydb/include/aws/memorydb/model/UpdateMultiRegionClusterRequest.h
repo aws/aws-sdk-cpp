@@ -23,7 +23,7 @@ namespace Model
   class UpdateMultiRegionClusterRequest : public MemoryDBRequest
   {
   public:
-    AWS_MEMORYDB_API UpdateMultiRegionClusterRequest();
+    AWS_MEMORYDB_API UpdateMultiRegionClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,92 +40,80 @@ namespace Model
     /**
      * <p>The name of the multi-Region cluster to be updated.</p>
      */
-    inline const Aws::String& GetMultiRegionClusterName() const{ return m_multiRegionClusterName; }
+    inline const Aws::String& GetMultiRegionClusterName() const { return m_multiRegionClusterName; }
     inline bool MultiRegionClusterNameHasBeenSet() const { return m_multiRegionClusterNameHasBeenSet; }
-    inline void SetMultiRegionClusterName(const Aws::String& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = value; }
-    inline void SetMultiRegionClusterName(Aws::String&& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = std::move(value); }
-    inline void SetMultiRegionClusterName(const char* value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName.assign(value); }
-    inline UpdateMultiRegionClusterRequest& WithMultiRegionClusterName(const Aws::String& value) { SetMultiRegionClusterName(value); return *this;}
-    inline UpdateMultiRegionClusterRequest& WithMultiRegionClusterName(Aws::String&& value) { SetMultiRegionClusterName(std::move(value)); return *this;}
-    inline UpdateMultiRegionClusterRequest& WithMultiRegionClusterName(const char* value) { SetMultiRegionClusterName(value); return *this;}
+    template<typename MultiRegionClusterNameT = Aws::String>
+    void SetMultiRegionClusterName(MultiRegionClusterNameT&& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = std::forward<MultiRegionClusterNameT>(value); }
+    template<typename MultiRegionClusterNameT = Aws::String>
+    UpdateMultiRegionClusterRequest& WithMultiRegionClusterName(MultiRegionClusterNameT&& value) { SetMultiRegionClusterName(std::forward<MultiRegionClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new node type to be used for the multi-Region cluster.</p>
      */
-    inline const Aws::String& GetNodeType() const{ return m_nodeType; }
+    inline const Aws::String& GetNodeType() const { return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
-    inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
-    inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
-    inline UpdateMultiRegionClusterRequest& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
-    inline UpdateMultiRegionClusterRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
-    inline UpdateMultiRegionClusterRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
+    template<typename NodeTypeT = Aws::String>
+    void SetNodeType(NodeTypeT&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::forward<NodeTypeT>(value); }
+    template<typename NodeTypeT = Aws::String>
+    UpdateMultiRegionClusterRequest& WithNodeType(NodeTypeT&& value) { SetNodeType(std::forward<NodeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new description for the multi-Region cluster.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateMultiRegionClusterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateMultiRegionClusterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateMultiRegionClusterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateMultiRegionClusterRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new engine version to be used for the multi-Region cluster.</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline UpdateMultiRegionClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline UpdateMultiRegionClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline UpdateMultiRegionClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    UpdateMultiRegionClusterRequest& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ShardConfigurationRequest& GetShardConfiguration() const{ return m_shardConfiguration; }
+    inline const ShardConfigurationRequest& GetShardConfiguration() const { return m_shardConfiguration; }
     inline bool ShardConfigurationHasBeenSet() const { return m_shardConfigurationHasBeenSet; }
-    inline void SetShardConfiguration(const ShardConfigurationRequest& value) { m_shardConfigurationHasBeenSet = true; m_shardConfiguration = value; }
-    inline void SetShardConfiguration(ShardConfigurationRequest&& value) { m_shardConfigurationHasBeenSet = true; m_shardConfiguration = std::move(value); }
-    inline UpdateMultiRegionClusterRequest& WithShardConfiguration(const ShardConfigurationRequest& value) { SetShardConfiguration(value); return *this;}
-    inline UpdateMultiRegionClusterRequest& WithShardConfiguration(ShardConfigurationRequest&& value) { SetShardConfiguration(std::move(value)); return *this;}
+    template<typename ShardConfigurationT = ShardConfigurationRequest>
+    void SetShardConfiguration(ShardConfigurationT&& value) { m_shardConfigurationHasBeenSet = true; m_shardConfiguration = std::forward<ShardConfigurationT>(value); }
+    template<typename ShardConfigurationT = ShardConfigurationRequest>
+    UpdateMultiRegionClusterRequest& WithShardConfiguration(ShardConfigurationT&& value) { SetShardConfiguration(std::forward<ShardConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new multi-Region parameter group to be associated with the cluster.</p>
      */
-    inline const Aws::String& GetMultiRegionParameterGroupName() const{ return m_multiRegionParameterGroupName; }
+    inline const Aws::String& GetMultiRegionParameterGroupName() const { return m_multiRegionParameterGroupName; }
     inline bool MultiRegionParameterGroupNameHasBeenSet() const { return m_multiRegionParameterGroupNameHasBeenSet; }
-    inline void SetMultiRegionParameterGroupName(const Aws::String& value) { m_multiRegionParameterGroupNameHasBeenSet = true; m_multiRegionParameterGroupName = value; }
-    inline void SetMultiRegionParameterGroupName(Aws::String&& value) { m_multiRegionParameterGroupNameHasBeenSet = true; m_multiRegionParameterGroupName = std::move(value); }
-    inline void SetMultiRegionParameterGroupName(const char* value) { m_multiRegionParameterGroupNameHasBeenSet = true; m_multiRegionParameterGroupName.assign(value); }
-    inline UpdateMultiRegionClusterRequest& WithMultiRegionParameterGroupName(const Aws::String& value) { SetMultiRegionParameterGroupName(value); return *this;}
-    inline UpdateMultiRegionClusterRequest& WithMultiRegionParameterGroupName(Aws::String&& value) { SetMultiRegionParameterGroupName(std::move(value)); return *this;}
-    inline UpdateMultiRegionClusterRequest& WithMultiRegionParameterGroupName(const char* value) { SetMultiRegionParameterGroupName(value); return *this;}
+    template<typename MultiRegionParameterGroupNameT = Aws::String>
+    void SetMultiRegionParameterGroupName(MultiRegionParameterGroupNameT&& value) { m_multiRegionParameterGroupNameHasBeenSet = true; m_multiRegionParameterGroupName = std::forward<MultiRegionParameterGroupNameT>(value); }
+    template<typename MultiRegionParameterGroupNameT = Aws::String>
+    UpdateMultiRegionClusterRequest& WithMultiRegionParameterGroupName(MultiRegionParameterGroupNameT&& value) { SetMultiRegionParameterGroupName(std::forward<MultiRegionParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether to force the update even if it may cause data loss.</p>
      */
-    inline const UpdateStrategy& GetUpdateStrategy() const{ return m_updateStrategy; }
+    inline UpdateStrategy GetUpdateStrategy() const { return m_updateStrategy; }
     inline bool UpdateStrategyHasBeenSet() const { return m_updateStrategyHasBeenSet; }
-    inline void SetUpdateStrategy(const UpdateStrategy& value) { m_updateStrategyHasBeenSet = true; m_updateStrategy = value; }
-    inline void SetUpdateStrategy(UpdateStrategy&& value) { m_updateStrategyHasBeenSet = true; m_updateStrategy = std::move(value); }
-    inline UpdateMultiRegionClusterRequest& WithUpdateStrategy(const UpdateStrategy& value) { SetUpdateStrategy(value); return *this;}
-    inline UpdateMultiRegionClusterRequest& WithUpdateStrategy(UpdateStrategy&& value) { SetUpdateStrategy(std::move(value)); return *this;}
+    inline void SetUpdateStrategy(UpdateStrategy value) { m_updateStrategyHasBeenSet = true; m_updateStrategy = value; }
+    inline UpdateMultiRegionClusterRequest& WithUpdateStrategy(UpdateStrategy value) { SetUpdateStrategy(value); return *this;}
     ///@}
   private:
 
@@ -147,7 +135,7 @@ namespace Model
     Aws::String m_multiRegionParameterGroupName;
     bool m_multiRegionParameterGroupNameHasBeenSet = false;
 
-    UpdateStrategy m_updateStrategy;
+    UpdateStrategy m_updateStrategy{UpdateStrategy::NOT_SET};
     bool m_updateStrategyHasBeenSet = false;
   };
 

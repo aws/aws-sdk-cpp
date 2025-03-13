@@ -18,19 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-ResourceInventory::ResourceInventory() : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_resourceOwningAccountIdHasBeenSet(false)
-{
-}
-
 ResourceInventory::ResourceInventory(JsonView jsonValue)
-  : ResourceInventory()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ResourceInventory& ResourceInventory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = jsonValue.GetString("Platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlatformVersion"))
   {
     m_platformVersion = jsonValue.GetString("PlatformVersion");
-
     m_platformVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceOwningAccountId"))
   {
     m_resourceOwningAccountId = jsonValue.GetString("ResourceOwningAccountId");
-
     m_resourceOwningAccountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

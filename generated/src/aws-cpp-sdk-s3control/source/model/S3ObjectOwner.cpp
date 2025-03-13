@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3ObjectOwner::S3ObjectOwner() : 
-    m_iDHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 S3ObjectOwner::S3ObjectOwner(const XmlNode& xmlNode)
-  : S3ObjectOwner()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ S3ObjectOwner& S3ObjectOwner::operator =(const XmlNode& xmlNode)
     {
       m_iD = Aws::Utils::Xml::DecodeEscapedXmlText(iDNode.GetText());
       m_iDHasBeenSet = true;
+       m_iDHasBeenSet = true;
     }
     XmlNode displayNameNode = resultNode.FirstChild("DisplayName");
     if(!displayNameNode.IsNull())
     {
       m_displayName = Aws::Utils::Xml::DecodeEscapedXmlText(displayNameNode.GetText());
       m_displayNameHasBeenSet = true;
+       m_displayNameHasBeenSet = true;
     }
   }
 

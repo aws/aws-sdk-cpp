@@ -32,7 +32,7 @@ namespace Model
   class UploadListElement
   {
   public:
-    AWS_GLACIER_API UploadListElement();
+    AWS_GLACIER_API UploadListElement() = default;
     AWS_GLACIER_API UploadListElement(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLACIER_API UploadListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of a multipart upload.</p>
      */
-    inline const Aws::String& GetMultipartUploadId() const{ return m_multipartUploadId; }
+    inline const Aws::String& GetMultipartUploadId() const { return m_multipartUploadId; }
     inline bool MultipartUploadIdHasBeenSet() const { return m_multipartUploadIdHasBeenSet; }
-    inline void SetMultipartUploadId(const Aws::String& value) { m_multipartUploadIdHasBeenSet = true; m_multipartUploadId = value; }
-    inline void SetMultipartUploadId(Aws::String&& value) { m_multipartUploadIdHasBeenSet = true; m_multipartUploadId = std::move(value); }
-    inline void SetMultipartUploadId(const char* value) { m_multipartUploadIdHasBeenSet = true; m_multipartUploadId.assign(value); }
-    inline UploadListElement& WithMultipartUploadId(const Aws::String& value) { SetMultipartUploadId(value); return *this;}
-    inline UploadListElement& WithMultipartUploadId(Aws::String&& value) { SetMultipartUploadId(std::move(value)); return *this;}
-    inline UploadListElement& WithMultipartUploadId(const char* value) { SetMultipartUploadId(value); return *this;}
+    template<typename MultipartUploadIdT = Aws::String>
+    void SetMultipartUploadId(MultipartUploadIdT&& value) { m_multipartUploadIdHasBeenSet = true; m_multipartUploadId = std::forward<MultipartUploadIdT>(value); }
+    template<typename MultipartUploadIdT = Aws::String>
+    UploadListElement& WithMultipartUploadId(MultipartUploadIdT&& value) { SetMultipartUploadId(std::forward<MultipartUploadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
      */
-    inline const Aws::String& GetVaultARN() const{ return m_vaultARN; }
+    inline const Aws::String& GetVaultARN() const { return m_vaultARN; }
     inline bool VaultARNHasBeenSet() const { return m_vaultARNHasBeenSet; }
-    inline void SetVaultARN(const Aws::String& value) { m_vaultARNHasBeenSet = true; m_vaultARN = value; }
-    inline void SetVaultARN(Aws::String&& value) { m_vaultARNHasBeenSet = true; m_vaultARN = std::move(value); }
-    inline void SetVaultARN(const char* value) { m_vaultARNHasBeenSet = true; m_vaultARN.assign(value); }
-    inline UploadListElement& WithVaultARN(const Aws::String& value) { SetVaultARN(value); return *this;}
-    inline UploadListElement& WithVaultARN(Aws::String&& value) { SetVaultARN(std::move(value)); return *this;}
-    inline UploadListElement& WithVaultARN(const char* value) { SetVaultARN(value); return *this;}
+    template<typename VaultARNT = Aws::String>
+    void SetVaultARN(VaultARNT&& value) { m_vaultARNHasBeenSet = true; m_vaultARN = std::forward<VaultARNT>(value); }
+    template<typename VaultARNT = Aws::String>
+    UploadListElement& WithVaultARN(VaultARNT&& value) { SetVaultARN(std::forward<VaultARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * <p>The description of the archive that was specified in the Initiate Multipart
      * Upload request.</p>
      */
-    inline const Aws::String& GetArchiveDescription() const{ return m_archiveDescription; }
+    inline const Aws::String& GetArchiveDescription() const { return m_archiveDescription; }
     inline bool ArchiveDescriptionHasBeenSet() const { return m_archiveDescriptionHasBeenSet; }
-    inline void SetArchiveDescription(const Aws::String& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = value; }
-    inline void SetArchiveDescription(Aws::String&& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = std::move(value); }
-    inline void SetArchiveDescription(const char* value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription.assign(value); }
-    inline UploadListElement& WithArchiveDescription(const Aws::String& value) { SetArchiveDescription(value); return *this;}
-    inline UploadListElement& WithArchiveDescription(Aws::String&& value) { SetArchiveDescription(std::move(value)); return *this;}
-    inline UploadListElement& WithArchiveDescription(const char* value) { SetArchiveDescription(value); return *this;}
+    template<typename ArchiveDescriptionT = Aws::String>
+    void SetArchiveDescription(ArchiveDescriptionT&& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = std::forward<ArchiveDescriptionT>(value); }
+    template<typename ArchiveDescriptionT = Aws::String>
+    UploadListElement& WithArchiveDescription(ArchiveDescriptionT&& value) { SetArchiveDescription(std::forward<ArchiveDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +81,7 @@ namespace Model
      * This is the size of all the parts in the upload except the last part, which may
      * be smaller than this size.</p>
      */
-    inline long long GetPartSizeInBytes() const{ return m_partSizeInBytes; }
+    inline long long GetPartSizeInBytes() const { return m_partSizeInBytes; }
     inline bool PartSizeInBytesHasBeenSet() const { return m_partSizeInBytesHasBeenSet; }
     inline void SetPartSizeInBytes(long long value) { m_partSizeInBytesHasBeenSet = true; m_partSizeInBytes = value; }
     inline UploadListElement& WithPartSizeInBytes(long long value) { SetPartSizeInBytes(value); return *this;}
@@ -97,14 +91,12 @@ namespace Model
     /**
      * <p>The UTC time at which the multipart upload was initiated.</p>
      */
-    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::String& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
-    inline UploadListElement& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
-    inline UploadListElement& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
-    inline UploadListElement& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+    template<typename CreationDateT = Aws::String>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::String>
+    UploadListElement& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
   private:
 
@@ -117,7 +109,7 @@ namespace Model
     Aws::String m_archiveDescription;
     bool m_archiveDescriptionHasBeenSet = false;
 
-    long long m_partSizeInBytes;
+    long long m_partSizeInBytes{0};
     bool m_partSizeInBytesHasBeenSet = false;
 
     Aws::String m_creationDate;

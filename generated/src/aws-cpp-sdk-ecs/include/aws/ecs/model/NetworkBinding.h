@@ -37,7 +37,7 @@ namespace Model
   class NetworkBinding
   {
   public:
-    AWS_ECS_API NetworkBinding();
+    AWS_ECS_API NetworkBinding() = default;
     AWS_ECS_API NetworkBinding(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API NetworkBinding& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,21 +47,19 @@ namespace Model
     /**
      * <p>The IP address that the container is bound to on the container instance.</p>
      */
-    inline const Aws::String& GetBindIP() const{ return m_bindIP; }
+    inline const Aws::String& GetBindIP() const { return m_bindIP; }
     inline bool BindIPHasBeenSet() const { return m_bindIPHasBeenSet; }
-    inline void SetBindIP(const Aws::String& value) { m_bindIPHasBeenSet = true; m_bindIP = value; }
-    inline void SetBindIP(Aws::String&& value) { m_bindIPHasBeenSet = true; m_bindIP = std::move(value); }
-    inline void SetBindIP(const char* value) { m_bindIPHasBeenSet = true; m_bindIP.assign(value); }
-    inline NetworkBinding& WithBindIP(const Aws::String& value) { SetBindIP(value); return *this;}
-    inline NetworkBinding& WithBindIP(Aws::String&& value) { SetBindIP(std::move(value)); return *this;}
-    inline NetworkBinding& WithBindIP(const char* value) { SetBindIP(value); return *this;}
+    template<typename BindIPT = Aws::String>
+    void SetBindIP(BindIPT&& value) { m_bindIPHasBeenSet = true; m_bindIP = std::forward<BindIPT>(value); }
+    template<typename BindIPT = Aws::String>
+    NetworkBinding& WithBindIP(BindIPT&& value) { SetBindIP(std::forward<BindIPT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port number on the container that's used with the network binding.</p>
      */
-    inline int GetContainerPort() const{ return m_containerPort; }
+    inline int GetContainerPort() const { return m_containerPort; }
     inline bool ContainerPortHasBeenSet() const { return m_containerPortHasBeenSet; }
     inline void SetContainerPort(int value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
     inline NetworkBinding& WithContainerPort(int value) { SetContainerPort(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     /**
      * <p>The port number on the host that's used with the network binding.</p>
      */
-    inline int GetHostPort() const{ return m_hostPort; }
+    inline int GetHostPort() const { return m_hostPort; }
     inline bool HostPortHasBeenSet() const { return m_hostPortHasBeenSet; }
     inline void SetHostPort(int value) { m_hostPortHasBeenSet = true; m_hostPort = value; }
     inline NetworkBinding& WithHostPort(int value) { SetHostPort(value); return *this;}
@@ -81,12 +79,10 @@ namespace Model
     /**
      * <p>The protocol used for the network binding.</p>
      */
-    inline const TransportProtocol& GetProtocol() const{ return m_protocol; }
+    inline TransportProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const TransportProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(TransportProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline NetworkBinding& WithProtocol(const TransportProtocol& value) { SetProtocol(value); return *this;}
-    inline NetworkBinding& WithProtocol(TransportProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(TransportProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline NetworkBinding& WithProtocol(TransportProtocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -125,14 +121,12 @@ namespace Model
      * <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are
      * the host ports that are bound to the container ports.</p>
      */
-    inline const Aws::String& GetContainerPortRange() const{ return m_containerPortRange; }
+    inline const Aws::String& GetContainerPortRange() const { return m_containerPortRange; }
     inline bool ContainerPortRangeHasBeenSet() const { return m_containerPortRangeHasBeenSet; }
-    inline void SetContainerPortRange(const Aws::String& value) { m_containerPortRangeHasBeenSet = true; m_containerPortRange = value; }
-    inline void SetContainerPortRange(Aws::String&& value) { m_containerPortRangeHasBeenSet = true; m_containerPortRange = std::move(value); }
-    inline void SetContainerPortRange(const char* value) { m_containerPortRangeHasBeenSet = true; m_containerPortRange.assign(value); }
-    inline NetworkBinding& WithContainerPortRange(const Aws::String& value) { SetContainerPortRange(value); return *this;}
-    inline NetworkBinding& WithContainerPortRange(Aws::String&& value) { SetContainerPortRange(std::move(value)); return *this;}
-    inline NetworkBinding& WithContainerPortRange(const char* value) { SetContainerPortRange(value); return *this;}
+    template<typename ContainerPortRangeT = Aws::String>
+    void SetContainerPortRange(ContainerPortRangeT&& value) { m_containerPortRangeHasBeenSet = true; m_containerPortRange = std::forward<ContainerPortRangeT>(value); }
+    template<typename ContainerPortRangeT = Aws::String>
+    NetworkBinding& WithContainerPortRange(ContainerPortRangeT&& value) { SetContainerPortRange(std::forward<ContainerPortRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,27 +134,25 @@ namespace Model
      * <p>The port number range on the host that's used with the network binding. This
      * is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
      */
-    inline const Aws::String& GetHostPortRange() const{ return m_hostPortRange; }
+    inline const Aws::String& GetHostPortRange() const { return m_hostPortRange; }
     inline bool HostPortRangeHasBeenSet() const { return m_hostPortRangeHasBeenSet; }
-    inline void SetHostPortRange(const Aws::String& value) { m_hostPortRangeHasBeenSet = true; m_hostPortRange = value; }
-    inline void SetHostPortRange(Aws::String&& value) { m_hostPortRangeHasBeenSet = true; m_hostPortRange = std::move(value); }
-    inline void SetHostPortRange(const char* value) { m_hostPortRangeHasBeenSet = true; m_hostPortRange.assign(value); }
-    inline NetworkBinding& WithHostPortRange(const Aws::String& value) { SetHostPortRange(value); return *this;}
-    inline NetworkBinding& WithHostPortRange(Aws::String&& value) { SetHostPortRange(std::move(value)); return *this;}
-    inline NetworkBinding& WithHostPortRange(const char* value) { SetHostPortRange(value); return *this;}
+    template<typename HostPortRangeT = Aws::String>
+    void SetHostPortRange(HostPortRangeT&& value) { m_hostPortRangeHasBeenSet = true; m_hostPortRange = std::forward<HostPortRangeT>(value); }
+    template<typename HostPortRangeT = Aws::String>
+    NetworkBinding& WithHostPortRange(HostPortRangeT&& value) { SetHostPortRange(std::forward<HostPortRangeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_bindIP;
     bool m_bindIPHasBeenSet = false;
 
-    int m_containerPort;
+    int m_containerPort{0};
     bool m_containerPortHasBeenSet = false;
 
-    int m_hostPort;
+    int m_hostPort{0};
     bool m_hostPortHasBeenSet = false;
 
-    TransportProtocol m_protocol;
+    TransportProtocol m_protocol{TransportProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
     Aws::String m_containerPortRange;

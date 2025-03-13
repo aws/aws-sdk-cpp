@@ -12,13 +12,6 @@ using namespace Aws::ResourceExplorer2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSupportedResourceTypesRequest::ListSupportedResourceTypesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSupportedResourceTypesRequest::SerializePayload() const
 {
   JsonValue payload;

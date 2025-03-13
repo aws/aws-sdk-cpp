@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Ipv6CidrBlockAssociation::Ipv6CidrBlockAssociation() : 
-    m_associationIdHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_cidrBlockStateHasBeenSet(false)
-{
-}
-
 Ipv6CidrBlockAssociation::Ipv6CidrBlockAssociation(JsonView jsonValue)
-  : Ipv6CidrBlockAssociation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Ipv6CidrBlockAssociation& Ipv6CidrBlockAssociation::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetString("AssociationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv6CidrBlock"))
   {
     m_ipv6CidrBlock = jsonValue.GetString("Ipv6CidrBlock");
-
     m_ipv6CidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CidrBlockState"))
   {
     m_cidrBlockState = jsonValue.GetString("CidrBlockState");
-
     m_cidrBlockStateHasBeenSet = true;
   }
-
   return *this;
 }
 

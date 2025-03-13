@@ -32,7 +32,7 @@ namespace Model
   class TagQueryConfiguration
   {
   public:
-    AWS_APPREGISTRY_API TagQueryConfiguration();
+    AWS_APPREGISTRY_API TagQueryConfiguration() = default;
     AWS_APPREGISTRY_API TagQueryConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPREGISTRY_API TagQueryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> Condition in the IAM policy that associates resources to an application.
      * </p>
      */
-    inline const Aws::String& GetTagKey() const{ return m_tagKey; }
+    inline const Aws::String& GetTagKey() const { return m_tagKey; }
     inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
-    inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
-    inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
-    inline void SetTagKey(const char* value) { m_tagKeyHasBeenSet = true; m_tagKey.assign(value); }
-    inline TagQueryConfiguration& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
-    inline TagQueryConfiguration& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
-    inline TagQueryConfiguration& WithTagKey(const char* value) { SetTagKey(value); return *this;}
+    template<typename TagKeyT = Aws::String>
+    void SetTagKey(TagKeyT&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::forward<TagKeyT>(value); }
+    template<typename TagKeyT = Aws::String>
+    TagQueryConfiguration& WithTagKey(TagKeyT&& value) { SetTagKey(std::forward<TagKeyT>(value)); return *this;}
     ///@}
   private:
 

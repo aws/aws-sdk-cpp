@@ -34,7 +34,7 @@ namespace Model
   class ResponseHeadersPolicyReferrerPolicy
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyReferrerPolicy();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyReferrerPolicy() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicyReferrerPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicyReferrerPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,7 +47,7 @@ namespace Model
      * <code>Referrer-Policy</code> HTTP response header received from the origin with
      * the one specified in this response headers policy.</p>
      */
-    inline bool GetOverride() const{ return m_override; }
+    inline bool GetOverride() const { return m_override; }
     inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
     inline void SetOverride(bool value) { m_overrideHasBeenSet = true; m_override = value; }
     inline ResponseHeadersPolicyReferrerPolicy& WithOverride(bool value) { SetOverride(value); return *this;}
@@ -66,19 +66,17 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
      * in the MDN Web Docs.</p>
      */
-    inline const ReferrerPolicyList& GetReferrerPolicy() const{ return m_referrerPolicy; }
+    inline ReferrerPolicyList GetReferrerPolicy() const { return m_referrerPolicy; }
     inline bool ReferrerPolicyHasBeenSet() const { return m_referrerPolicyHasBeenSet; }
-    inline void SetReferrerPolicy(const ReferrerPolicyList& value) { m_referrerPolicyHasBeenSet = true; m_referrerPolicy = value; }
-    inline void SetReferrerPolicy(ReferrerPolicyList&& value) { m_referrerPolicyHasBeenSet = true; m_referrerPolicy = std::move(value); }
-    inline ResponseHeadersPolicyReferrerPolicy& WithReferrerPolicy(const ReferrerPolicyList& value) { SetReferrerPolicy(value); return *this;}
-    inline ResponseHeadersPolicyReferrerPolicy& WithReferrerPolicy(ReferrerPolicyList&& value) { SetReferrerPolicy(std::move(value)); return *this;}
+    inline void SetReferrerPolicy(ReferrerPolicyList value) { m_referrerPolicyHasBeenSet = true; m_referrerPolicy = value; }
+    inline ResponseHeadersPolicyReferrerPolicy& WithReferrerPolicy(ReferrerPolicyList value) { SetReferrerPolicy(value); return *this;}
     ///@}
   private:
 
-    bool m_override;
+    bool m_override{false};
     bool m_overrideHasBeenSet = false;
 
-    ReferrerPolicyList m_referrerPolicy;
+    ReferrerPolicyList m_referrerPolicy{ReferrerPolicyList::NOT_SET};
     bool m_referrerPolicyHasBeenSet = false;
   };
 

@@ -18,17 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SessionIssuer::SessionIssuer() : 
-    m_accountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_userNameHasBeenSet(false)
-{
-}
-
 SessionIssuer::SessionIssuer(JsonView jsonValue)
-  : SessionIssuer()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ SessionIssuer& SessionIssuer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalId"))
   {
     m_principalId = jsonValue.GetString("principalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userName"))
   {
     m_userName = jsonValue.GetString("userName");
-
     m_userNameHasBeenSet = true;
   }
-
   return *this;
 }
 

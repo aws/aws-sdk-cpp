@@ -35,7 +35,7 @@ namespace Model
   class CaptionDescription
   {
   public:
-    AWS_MEDIACONVERT_API CaptionDescription();
+    AWS_MEDIACONVERT_API CaptionDescription() = default;
     AWS_MEDIACONVERT_API CaptionDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API CaptionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * Selector <N>", which denotes that the Nth Caption Selector will be used from
      * each input.
      */
-    inline const Aws::String& GetCaptionSelectorName() const{ return m_captionSelectorName; }
+    inline const Aws::String& GetCaptionSelectorName() const { return m_captionSelectorName; }
     inline bool CaptionSelectorNameHasBeenSet() const { return m_captionSelectorNameHasBeenSet; }
-    inline void SetCaptionSelectorName(const Aws::String& value) { m_captionSelectorNameHasBeenSet = true; m_captionSelectorName = value; }
-    inline void SetCaptionSelectorName(Aws::String&& value) { m_captionSelectorNameHasBeenSet = true; m_captionSelectorName = std::move(value); }
-    inline void SetCaptionSelectorName(const char* value) { m_captionSelectorNameHasBeenSet = true; m_captionSelectorName.assign(value); }
-    inline CaptionDescription& WithCaptionSelectorName(const Aws::String& value) { SetCaptionSelectorName(value); return *this;}
-    inline CaptionDescription& WithCaptionSelectorName(Aws::String&& value) { SetCaptionSelectorName(std::move(value)); return *this;}
-    inline CaptionDescription& WithCaptionSelectorName(const char* value) { SetCaptionSelectorName(value); return *this;}
+    template<typename CaptionSelectorNameT = Aws::String>
+    void SetCaptionSelectorName(CaptionSelectorNameT&& value) { m_captionSelectorNameHasBeenSet = true; m_captionSelectorName = std::forward<CaptionSelectorNameT>(value); }
+    template<typename CaptionSelectorNameT = Aws::String>
+    CaptionDescription& WithCaptionSelectorName(CaptionSelectorNameT&& value) { SetCaptionSelectorName(std::forward<CaptionSelectorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
      * Streaming.
      */
-    inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
+    inline const Aws::String& GetCustomLanguageCode() const { return m_customLanguageCode; }
     inline bool CustomLanguageCodeHasBeenSet() const { return m_customLanguageCodeHasBeenSet; }
-    inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
-    inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
-    inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
-    inline CaptionDescription& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
-    inline CaptionDescription& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
-    inline CaptionDescription& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
+    template<typename CustomLanguageCodeT = Aws::String>
+    void SetCustomLanguageCode(CustomLanguageCodeT&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::forward<CustomLanguageCodeT>(value); }
+    template<typename CustomLanguageCodeT = Aws::String>
+    CaptionDescription& WithCustomLanguageCode(CustomLanguageCodeT&& value) { SetCustomLanguageCode(std::forward<CustomLanguageCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +84,12 @@ namespace Model
      * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
-    inline const CaptionDestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
+    inline const CaptionDestinationSettings& GetDestinationSettings() const { return m_destinationSettings; }
     inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
-    inline void SetDestinationSettings(const CaptionDestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
-    inline void SetDestinationSettings(CaptionDestinationSettings&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::move(value); }
-    inline CaptionDescription& WithDestinationSettings(const CaptionDestinationSettings& value) { SetDestinationSettings(value); return *this;}
-    inline CaptionDescription& WithDestinationSettings(CaptionDestinationSettings&& value) { SetDestinationSettings(std::move(value)); return *this;}
+    template<typename DestinationSettingsT = CaptionDestinationSettings>
+    void SetDestinationSettings(DestinationSettingsT&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::forward<DestinationSettingsT>(value); }
+    template<typename DestinationSettingsT = CaptionDestinationSettings>
+    CaptionDescription& WithDestinationSettings(DestinationSettingsT&& value) { SetDestinationSettings(std::forward<DestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,12 +100,10 @@ namespace Model
      * this language information to choose the font language for rendering the captions
      * text.
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline CaptionDescription& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline CaptionDescription& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline CaptionDescription& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +114,12 @@ namespace Model
      * player device. For outputs in other output groups, the service ignores this
      * setting.
      */
-    inline const Aws::String& GetLanguageDescription() const{ return m_languageDescription; }
+    inline const Aws::String& GetLanguageDescription() const { return m_languageDescription; }
     inline bool LanguageDescriptionHasBeenSet() const { return m_languageDescriptionHasBeenSet; }
-    inline void SetLanguageDescription(const Aws::String& value) { m_languageDescriptionHasBeenSet = true; m_languageDescription = value; }
-    inline void SetLanguageDescription(Aws::String&& value) { m_languageDescriptionHasBeenSet = true; m_languageDescription = std::move(value); }
-    inline void SetLanguageDescription(const char* value) { m_languageDescriptionHasBeenSet = true; m_languageDescription.assign(value); }
-    inline CaptionDescription& WithLanguageDescription(const Aws::String& value) { SetLanguageDescription(value); return *this;}
-    inline CaptionDescription& WithLanguageDescription(Aws::String&& value) { SetLanguageDescription(std::move(value)); return *this;}
-    inline CaptionDescription& WithLanguageDescription(const char* value) { SetLanguageDescription(value); return *this;}
+    template<typename LanguageDescriptionT = Aws::String>
+    void SetLanguageDescription(LanguageDescriptionT&& value) { m_languageDescriptionHasBeenSet = true; m_languageDescription = std::forward<LanguageDescriptionT>(value); }
+    template<typename LanguageDescriptionT = Aws::String>
+    CaptionDescription& WithLanguageDescription(LanguageDescriptionT&& value) { SetLanguageDescription(std::forward<LanguageDescriptionT>(value)); return *this;}
     ///@}
   private:
 
@@ -140,7 +132,7 @@ namespace Model
     CaptionDestinationSettings m_destinationSettings;
     bool m_destinationSettingsHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_languageDescription;

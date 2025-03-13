@@ -18,16 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-DataIntegrationFlowTarget::DataIntegrationFlowTarget() : 
-    m_targetType(DataIntegrationFlowTargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_s3TargetHasBeenSet(false),
-    m_datasetTargetHasBeenSet(false)
-{
-}
-
 DataIntegrationFlowTarget::DataIntegrationFlowTarget(JsonView jsonValue)
-  : DataIntegrationFlowTarget()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DataIntegrationFlowTarget& DataIntegrationFlowTarget::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("targetType"))
   {
     m_targetType = DataIntegrationFlowTargetTypeMapper::GetDataIntegrationFlowTargetTypeForName(jsonValue.GetString("targetType"));
-
     m_targetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Target"))
   {
     m_s3Target = jsonValue.GetObject("s3Target");
-
     m_s3TargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetTarget"))
   {
     m_datasetTarget = jsonValue.GetObject("datasetTarget");
-
     m_datasetTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

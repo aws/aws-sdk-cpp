@@ -20,23 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-RestoreStatus::RestoreStatus() : 
-    m_statusHasBeenSet(false),
-    m_currentRestoreRateInMegaBytesPerSecond(0.0),
-    m_currentRestoreRateInMegaBytesPerSecondHasBeenSet(false),
-    m_snapshotSizeInMegaBytes(0),
-    m_snapshotSizeInMegaBytesHasBeenSet(false),
-    m_progressInMegaBytes(0),
-    m_progressInMegaBytesHasBeenSet(false),
-    m_elapsedTimeInSeconds(0),
-    m_elapsedTimeInSecondsHasBeenSet(false),
-    m_estimatedTimeToCompletionInSeconds(0),
-    m_estimatedTimeToCompletionInSecondsHasBeenSet(false)
-{
-}
-
 RestoreStatus::RestoreStatus(const XmlNode& xmlNode)
-  : RestoreStatus()
 {
   *this = xmlNode;
 }
@@ -52,36 +36,42 @@ RestoreStatus& RestoreStatus::operator =(const XmlNode& xmlNode)
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode currentRestoreRateInMegaBytesPerSecondNode = resultNode.FirstChild("CurrentRestoreRateInMegaBytesPerSecond");
     if(!currentRestoreRateInMegaBytesPerSecondNode.IsNull())
     {
       m_currentRestoreRateInMegaBytesPerSecond = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentRestoreRateInMegaBytesPerSecondNode.GetText()).c_str()).c_str());
       m_currentRestoreRateInMegaBytesPerSecondHasBeenSet = true;
+       m_currentRestoreRateInMegaBytesPerSecondHasBeenSet = true;
     }
     XmlNode snapshotSizeInMegaBytesNode = resultNode.FirstChild("SnapshotSizeInMegaBytes");
     if(!snapshotSizeInMegaBytesNode.IsNull())
     {
       m_snapshotSizeInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotSizeInMegaBytesNode.GetText()).c_str()).c_str());
       m_snapshotSizeInMegaBytesHasBeenSet = true;
+       m_snapshotSizeInMegaBytesHasBeenSet = true;
     }
     XmlNode progressInMegaBytesNode = resultNode.FirstChild("ProgressInMegaBytes");
     if(!progressInMegaBytesNode.IsNull())
     {
       m_progressInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(progressInMegaBytesNode.GetText()).c_str()).c_str());
       m_progressInMegaBytesHasBeenSet = true;
+       m_progressInMegaBytesHasBeenSet = true;
     }
     XmlNode elapsedTimeInSecondsNode = resultNode.FirstChild("ElapsedTimeInSeconds");
     if(!elapsedTimeInSecondsNode.IsNull())
     {
       m_elapsedTimeInSeconds = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(elapsedTimeInSecondsNode.GetText()).c_str()).c_str());
       m_elapsedTimeInSecondsHasBeenSet = true;
+       m_elapsedTimeInSecondsHasBeenSet = true;
     }
     XmlNode estimatedTimeToCompletionInSecondsNode = resultNode.FirstChild("EstimatedTimeToCompletionInSeconds");
     if(!estimatedTimeToCompletionInSecondsNode.IsNull())
     {
       m_estimatedTimeToCompletionInSeconds = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(estimatedTimeToCompletionInSecondsNode.GetText()).c_str()).c_str());
       m_estimatedTimeToCompletionInSecondsHasBeenSet = true;
+       m_estimatedTimeToCompletionInSecondsHasBeenSet = true;
     }
   }
 

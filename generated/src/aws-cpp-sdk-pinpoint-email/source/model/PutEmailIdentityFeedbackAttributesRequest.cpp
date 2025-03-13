@@ -12,13 +12,6 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutEmailIdentityFeedbackAttributesRequest::PutEmailIdentityFeedbackAttributesRequest() : 
-    m_emailIdentityHasBeenSet(false),
-    m_emailForwardingEnabled(false),
-    m_emailForwardingEnabledHasBeenSet(false)
-{
-}
-
 Aws::String PutEmailIdentityFeedbackAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

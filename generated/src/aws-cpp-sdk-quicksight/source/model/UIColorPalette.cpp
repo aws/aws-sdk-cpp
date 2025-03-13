@@ -18,28 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-UIColorPalette::UIColorPalette() : 
-    m_primaryForegroundHasBeenSet(false),
-    m_primaryBackgroundHasBeenSet(false),
-    m_secondaryForegroundHasBeenSet(false),
-    m_secondaryBackgroundHasBeenSet(false),
-    m_accentHasBeenSet(false),
-    m_accentForegroundHasBeenSet(false),
-    m_dangerHasBeenSet(false),
-    m_dangerForegroundHasBeenSet(false),
-    m_warningHasBeenSet(false),
-    m_warningForegroundHasBeenSet(false),
-    m_successHasBeenSet(false),
-    m_successForegroundHasBeenSet(false),
-    m_dimensionHasBeenSet(false),
-    m_dimensionForegroundHasBeenSet(false),
-    m_measureHasBeenSet(false),
-    m_measureForegroundHasBeenSet(false)
-{
-}
-
 UIColorPalette::UIColorPalette(JsonView jsonValue)
-  : UIColorPalette()
 {
   *this = jsonValue;
 }
@@ -49,115 +28,83 @@ UIColorPalette& UIColorPalette::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PrimaryForeground"))
   {
     m_primaryForeground = jsonValue.GetString("PrimaryForeground");
-
     m_primaryForegroundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryBackground"))
   {
     m_primaryBackground = jsonValue.GetString("PrimaryBackground");
-
     m_primaryBackgroundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryForeground"))
   {
     m_secondaryForeground = jsonValue.GetString("SecondaryForeground");
-
     m_secondaryForegroundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryBackground"))
   {
     m_secondaryBackground = jsonValue.GetString("SecondaryBackground");
-
     m_secondaryBackgroundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Accent"))
   {
     m_accent = jsonValue.GetString("Accent");
-
     m_accentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccentForeground"))
   {
     m_accentForeground = jsonValue.GetString("AccentForeground");
-
     m_accentForegroundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Danger"))
   {
     m_danger = jsonValue.GetString("Danger");
-
     m_dangerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DangerForeground"))
   {
     m_dangerForeground = jsonValue.GetString("DangerForeground");
-
     m_dangerForegroundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Warning"))
   {
     m_warning = jsonValue.GetString("Warning");
-
     m_warningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarningForeground"))
   {
     m_warningForeground = jsonValue.GetString("WarningForeground");
-
     m_warningForegroundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Success"))
   {
     m_success = jsonValue.GetString("Success");
-
     m_successHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuccessForeground"))
   {
     m_successForeground = jsonValue.GetString("SuccessForeground");
-
     m_successForegroundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimension"))
   {
     m_dimension = jsonValue.GetString("Dimension");
-
     m_dimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionForeground"))
   {
     m_dimensionForeground = jsonValue.GetString("DimensionForeground");
-
     m_dimensionForegroundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Measure"))
   {
     m_measure = jsonValue.GetString("Measure");
-
     m_measureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureForeground"))
   {
     m_measureForeground = jsonValue.GetString("MeasureForeground");
-
     m_measureForegroundHasBeenSet = true;
   }
-
   return *this;
 }
 

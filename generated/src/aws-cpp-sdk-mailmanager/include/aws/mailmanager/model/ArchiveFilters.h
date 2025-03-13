@@ -33,7 +33,7 @@ namespace Model
   class ArchiveFilters
   {
   public:
-    AWS_MAILMANAGER_API ArchiveFilters();
+    AWS_MAILMANAGER_API ArchiveFilters() = default;
     AWS_MAILMANAGER_API ArchiveFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API ArchiveFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The filter conditions for emails to include.</p>
      */
-    inline const Aws::Vector<ArchiveFilterCondition>& GetInclude() const{ return m_include; }
+    inline const Aws::Vector<ArchiveFilterCondition>& GetInclude() const { return m_include; }
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
-    inline void SetInclude(const Aws::Vector<ArchiveFilterCondition>& value) { m_includeHasBeenSet = true; m_include = value; }
-    inline void SetInclude(Aws::Vector<ArchiveFilterCondition>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
-    inline ArchiveFilters& WithInclude(const Aws::Vector<ArchiveFilterCondition>& value) { SetInclude(value); return *this;}
-    inline ArchiveFilters& WithInclude(Aws::Vector<ArchiveFilterCondition>&& value) { SetInclude(std::move(value)); return *this;}
-    inline ArchiveFilters& AddInclude(const ArchiveFilterCondition& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
-    inline ArchiveFilters& AddInclude(ArchiveFilterCondition&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
+    template<typename IncludeT = Aws::Vector<ArchiveFilterCondition>>
+    void SetInclude(IncludeT&& value) { m_includeHasBeenSet = true; m_include = std::forward<IncludeT>(value); }
+    template<typename IncludeT = Aws::Vector<ArchiveFilterCondition>>
+    ArchiveFilters& WithInclude(IncludeT&& value) { SetInclude(std::forward<IncludeT>(value)); return *this;}
+    template<typename IncludeT = ArchiveFilterCondition>
+    ArchiveFilters& AddInclude(IncludeT&& value) { m_includeHasBeenSet = true; m_include.emplace_back(std::forward<IncludeT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The filter conditions for emails to exclude.</p>
      */
-    inline const Aws::Vector<ArchiveFilterCondition>& GetUnless() const{ return m_unless; }
+    inline const Aws::Vector<ArchiveFilterCondition>& GetUnless() const { return m_unless; }
     inline bool UnlessHasBeenSet() const { return m_unlessHasBeenSet; }
-    inline void SetUnless(const Aws::Vector<ArchiveFilterCondition>& value) { m_unlessHasBeenSet = true; m_unless = value; }
-    inline void SetUnless(Aws::Vector<ArchiveFilterCondition>&& value) { m_unlessHasBeenSet = true; m_unless = std::move(value); }
-    inline ArchiveFilters& WithUnless(const Aws::Vector<ArchiveFilterCondition>& value) { SetUnless(value); return *this;}
-    inline ArchiveFilters& WithUnless(Aws::Vector<ArchiveFilterCondition>&& value) { SetUnless(std::move(value)); return *this;}
-    inline ArchiveFilters& AddUnless(const ArchiveFilterCondition& value) { m_unlessHasBeenSet = true; m_unless.push_back(value); return *this; }
-    inline ArchiveFilters& AddUnless(ArchiveFilterCondition&& value) { m_unlessHasBeenSet = true; m_unless.push_back(std::move(value)); return *this; }
+    template<typename UnlessT = Aws::Vector<ArchiveFilterCondition>>
+    void SetUnless(UnlessT&& value) { m_unlessHasBeenSet = true; m_unless = std::forward<UnlessT>(value); }
+    template<typename UnlessT = Aws::Vector<ArchiveFilterCondition>>
+    ArchiveFilters& WithUnless(UnlessT&& value) { SetUnless(std::forward<UnlessT>(value)); return *this;}
+    template<typename UnlessT = ArchiveFilterCondition>
+    ArchiveFilters& AddUnless(UnlessT&& value) { m_unlessHasBeenSet = true; m_unless.emplace_back(std::forward<UnlessT>(value)); return *this; }
     ///@}
   private:
 

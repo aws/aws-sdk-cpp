@@ -36,7 +36,7 @@ namespace Model
   class ScheduledQuery
   {
   public:
-    AWS_TIMESTREAMQUERY_API ScheduledQuery();
+    AWS_TIMESTREAMQUERY_API ScheduledQuery() = default;
     AWS_TIMESTREAMQUERY_API ScheduledQuery(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API ScheduledQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,112 +46,104 @@ namespace Model
     /**
      * <p>The Amazon Resource Name.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ScheduledQuery& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ScheduledQuery& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ScheduledQuery& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ScheduledQuery& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the scheduled query.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ScheduledQuery& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ScheduledQuery& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ScheduledQuery& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ScheduledQuery& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation time of the scheduled query.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ScheduledQuery& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ScheduledQuery& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ScheduledQuery& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>State of scheduled query. </p>
      */
-    inline const ScheduledQueryState& GetState() const{ return m_state; }
+    inline ScheduledQueryState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ScheduledQueryState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ScheduledQueryState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ScheduledQuery& WithState(const ScheduledQueryState& value) { SetState(value); return *this;}
-    inline ScheduledQuery& WithState(ScheduledQueryState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ScheduledQueryState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ScheduledQuery& WithState(ScheduledQueryState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the scheduled query was run.</p>
      */
-    inline const Aws::Utils::DateTime& GetPreviousInvocationTime() const{ return m_previousInvocationTime; }
+    inline const Aws::Utils::DateTime& GetPreviousInvocationTime() const { return m_previousInvocationTime; }
     inline bool PreviousInvocationTimeHasBeenSet() const { return m_previousInvocationTimeHasBeenSet; }
-    inline void SetPreviousInvocationTime(const Aws::Utils::DateTime& value) { m_previousInvocationTimeHasBeenSet = true; m_previousInvocationTime = value; }
-    inline void SetPreviousInvocationTime(Aws::Utils::DateTime&& value) { m_previousInvocationTimeHasBeenSet = true; m_previousInvocationTime = std::move(value); }
-    inline ScheduledQuery& WithPreviousInvocationTime(const Aws::Utils::DateTime& value) { SetPreviousInvocationTime(value); return *this;}
-    inline ScheduledQuery& WithPreviousInvocationTime(Aws::Utils::DateTime&& value) { SetPreviousInvocationTime(std::move(value)); return *this;}
+    template<typename PreviousInvocationTimeT = Aws::Utils::DateTime>
+    void SetPreviousInvocationTime(PreviousInvocationTimeT&& value) { m_previousInvocationTimeHasBeenSet = true; m_previousInvocationTime = std::forward<PreviousInvocationTimeT>(value); }
+    template<typename PreviousInvocationTimeT = Aws::Utils::DateTime>
+    ScheduledQuery& WithPreviousInvocationTime(PreviousInvocationTimeT&& value) { SetPreviousInvocationTime(std::forward<PreviousInvocationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The next time the scheduled query is to be run.</p>
      */
-    inline const Aws::Utils::DateTime& GetNextInvocationTime() const{ return m_nextInvocationTime; }
+    inline const Aws::Utils::DateTime& GetNextInvocationTime() const { return m_nextInvocationTime; }
     inline bool NextInvocationTimeHasBeenSet() const { return m_nextInvocationTimeHasBeenSet; }
-    inline void SetNextInvocationTime(const Aws::Utils::DateTime& value) { m_nextInvocationTimeHasBeenSet = true; m_nextInvocationTime = value; }
-    inline void SetNextInvocationTime(Aws::Utils::DateTime&& value) { m_nextInvocationTimeHasBeenSet = true; m_nextInvocationTime = std::move(value); }
-    inline ScheduledQuery& WithNextInvocationTime(const Aws::Utils::DateTime& value) { SetNextInvocationTime(value); return *this;}
-    inline ScheduledQuery& WithNextInvocationTime(Aws::Utils::DateTime&& value) { SetNextInvocationTime(std::move(value)); return *this;}
+    template<typename NextInvocationTimeT = Aws::Utils::DateTime>
+    void SetNextInvocationTime(NextInvocationTimeT&& value) { m_nextInvocationTimeHasBeenSet = true; m_nextInvocationTime = std::forward<NextInvocationTimeT>(value); }
+    template<typename NextInvocationTimeT = Aws::Utils::DateTime>
+    ScheduledQuery& WithNextInvocationTime(NextInvocationTimeT&& value) { SetNextInvocationTime(std::forward<NextInvocationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration for scheduled query error reporting.</p>
      */
-    inline const ErrorReportConfiguration& GetErrorReportConfiguration() const{ return m_errorReportConfiguration; }
+    inline const ErrorReportConfiguration& GetErrorReportConfiguration() const { return m_errorReportConfiguration; }
     inline bool ErrorReportConfigurationHasBeenSet() const { return m_errorReportConfigurationHasBeenSet; }
-    inline void SetErrorReportConfiguration(const ErrorReportConfiguration& value) { m_errorReportConfigurationHasBeenSet = true; m_errorReportConfiguration = value; }
-    inline void SetErrorReportConfiguration(ErrorReportConfiguration&& value) { m_errorReportConfigurationHasBeenSet = true; m_errorReportConfiguration = std::move(value); }
-    inline ScheduledQuery& WithErrorReportConfiguration(const ErrorReportConfiguration& value) { SetErrorReportConfiguration(value); return *this;}
-    inline ScheduledQuery& WithErrorReportConfiguration(ErrorReportConfiguration&& value) { SetErrorReportConfiguration(std::move(value)); return *this;}
+    template<typename ErrorReportConfigurationT = ErrorReportConfiguration>
+    void SetErrorReportConfiguration(ErrorReportConfigurationT&& value) { m_errorReportConfigurationHasBeenSet = true; m_errorReportConfiguration = std::forward<ErrorReportConfigurationT>(value); }
+    template<typename ErrorReportConfigurationT = ErrorReportConfiguration>
+    ScheduledQuery& WithErrorReportConfiguration(ErrorReportConfigurationT&& value) { SetErrorReportConfiguration(std::forward<ErrorReportConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Target data source where final scheduled query result will be written.</p>
      */
-    inline const TargetDestination& GetTargetDestination() const{ return m_targetDestination; }
+    inline const TargetDestination& GetTargetDestination() const { return m_targetDestination; }
     inline bool TargetDestinationHasBeenSet() const { return m_targetDestinationHasBeenSet; }
-    inline void SetTargetDestination(const TargetDestination& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = value; }
-    inline void SetTargetDestination(TargetDestination&& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = std::move(value); }
-    inline ScheduledQuery& WithTargetDestination(const TargetDestination& value) { SetTargetDestination(value); return *this;}
-    inline ScheduledQuery& WithTargetDestination(TargetDestination&& value) { SetTargetDestination(std::move(value)); return *this;}
+    template<typename TargetDestinationT = TargetDestination>
+    void SetTargetDestination(TargetDestinationT&& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = std::forward<TargetDestinationT>(value); }
+    template<typename TargetDestinationT = TargetDestination>
+    ScheduledQuery& WithTargetDestination(TargetDestinationT&& value) { SetTargetDestination(std::forward<TargetDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of the last scheduled query run.</p>
      */
-    inline const ScheduledQueryRunStatus& GetLastRunStatus() const{ return m_lastRunStatus; }
+    inline ScheduledQueryRunStatus GetLastRunStatus() const { return m_lastRunStatus; }
     inline bool LastRunStatusHasBeenSet() const { return m_lastRunStatusHasBeenSet; }
-    inline void SetLastRunStatus(const ScheduledQueryRunStatus& value) { m_lastRunStatusHasBeenSet = true; m_lastRunStatus = value; }
-    inline void SetLastRunStatus(ScheduledQueryRunStatus&& value) { m_lastRunStatusHasBeenSet = true; m_lastRunStatus = std::move(value); }
-    inline ScheduledQuery& WithLastRunStatus(const ScheduledQueryRunStatus& value) { SetLastRunStatus(value); return *this;}
-    inline ScheduledQuery& WithLastRunStatus(ScheduledQueryRunStatus&& value) { SetLastRunStatus(std::move(value)); return *this;}
+    inline void SetLastRunStatus(ScheduledQueryRunStatus value) { m_lastRunStatusHasBeenSet = true; m_lastRunStatus = value; }
+    inline ScheduledQuery& WithLastRunStatus(ScheduledQueryRunStatus value) { SetLastRunStatus(value); return *this;}
     ///@}
   private:
 
@@ -161,16 +153,16 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    ScheduledQueryState m_state;
+    ScheduledQueryState m_state{ScheduledQueryState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_previousInvocationTime;
+    Aws::Utils::DateTime m_previousInvocationTime{};
     bool m_previousInvocationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_nextInvocationTime;
+    Aws::Utils::DateTime m_nextInvocationTime{};
     bool m_nextInvocationTimeHasBeenSet = false;
 
     ErrorReportConfiguration m_errorReportConfiguration;
@@ -179,7 +171,7 @@ namespace Model
     TargetDestination m_targetDestination;
     bool m_targetDestinationHasBeenSet = false;
 
-    ScheduledQueryRunStatus m_lastRunStatus;
+    ScheduledQueryRunStatus m_lastRunStatus{ScheduledQueryRunStatus::NOT_SET};
     bool m_lastRunStatusHasBeenSet = false;
   };
 

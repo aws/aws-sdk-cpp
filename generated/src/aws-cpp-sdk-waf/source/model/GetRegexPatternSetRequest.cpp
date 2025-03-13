@@ -12,11 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRegexPatternSetRequest::GetRegexPatternSetRequest() : 
-    m_regexPatternSetIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRegexPatternSetRequest::SerializePayload() const
 {
   JsonValue payload;

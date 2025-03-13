@@ -33,7 +33,7 @@ namespace Model
   class CreateMultiplexResult
   {
   public:
-    AWS_MEDIALIVE_API CreateMultiplexResult();
+    AWS_MEDIALIVE_API CreateMultiplexResult() = default;
     AWS_MEDIALIVE_API CreateMultiplexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API CreateMultiplexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * The newly created multiplex.
      */
-    inline const Multiplex& GetMultiplex() const{ return m_multiplex; }
-    inline void SetMultiplex(const Multiplex& value) { m_multiplex = value; }
-    inline void SetMultiplex(Multiplex&& value) { m_multiplex = std::move(value); }
-    inline CreateMultiplexResult& WithMultiplex(const Multiplex& value) { SetMultiplex(value); return *this;}
-    inline CreateMultiplexResult& WithMultiplex(Multiplex&& value) { SetMultiplex(std::move(value)); return *this;}
+    inline const Multiplex& GetMultiplex() const { return m_multiplex; }
+    template<typename MultiplexT = Multiplex>
+    void SetMultiplex(MultiplexT&& value) { m_multiplexHasBeenSet = true; m_multiplex = std::forward<MultiplexT>(value); }
+    template<typename MultiplexT = Multiplex>
+    CreateMultiplexResult& WithMultiplex(MultiplexT&& value) { SetMultiplex(std::forward<MultiplexT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMultiplexResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMultiplexResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMultiplexResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMultiplexResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Multiplex m_multiplex;
+    bool m_multiplexHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

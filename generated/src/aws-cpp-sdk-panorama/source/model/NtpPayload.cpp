@@ -18,13 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-NtpPayload::NtpPayload() : 
-    m_ntpServersHasBeenSet(false)
-{
-}
-
 NtpPayload::NtpPayload(JsonView jsonValue)
-  : NtpPayload()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ NtpPayload& NtpPayload::operator =(JsonView jsonValue)
     }
     m_ntpServersHasBeenSet = true;
   }
-
   return *this;
 }
 

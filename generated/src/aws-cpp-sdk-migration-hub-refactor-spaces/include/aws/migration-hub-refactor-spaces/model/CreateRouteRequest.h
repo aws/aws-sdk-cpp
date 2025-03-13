@@ -26,7 +26,7 @@ namespace Model
   class CreateRouteRequest : public MigrationHubRefactorSpacesRequest
   {
   public:
-    AWS_MIGRATIONHUBREFACTORSPACES_API CreateRouteRequest();
+    AWS_MIGRATIONHUBREFACTORSPACES_API CreateRouteRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the application within which the route is being created.</p>
      */
-    inline const Aws::String& GetApplicationIdentifier() const{ return m_applicationIdentifier; }
+    inline const Aws::String& GetApplicationIdentifier() const { return m_applicationIdentifier; }
     inline bool ApplicationIdentifierHasBeenSet() const { return m_applicationIdentifierHasBeenSet; }
-    inline void SetApplicationIdentifier(const Aws::String& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = value; }
-    inline void SetApplicationIdentifier(Aws::String&& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = std::move(value); }
-    inline void SetApplicationIdentifier(const char* value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier.assign(value); }
-    inline CreateRouteRequest& WithApplicationIdentifier(const Aws::String& value) { SetApplicationIdentifier(value); return *this;}
-    inline CreateRouteRequest& WithApplicationIdentifier(Aws::String&& value) { SetApplicationIdentifier(std::move(value)); return *this;}
-    inline CreateRouteRequest& WithApplicationIdentifier(const char* value) { SetApplicationIdentifier(value); return *this;}
+    template<typename ApplicationIdentifierT = Aws::String>
+    void SetApplicationIdentifier(ApplicationIdentifierT&& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = std::forward<ApplicationIdentifierT>(value); }
+    template<typename ApplicationIdentifierT = Aws::String>
+    CreateRouteRequest& WithApplicationIdentifier(ApplicationIdentifierT&& value) { SetApplicationIdentifier(std::forward<ApplicationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,40 +54,36 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateRouteRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateRouteRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateRouteRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateRouteRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Configuration for the default route type. </p>
      */
-    inline const DefaultRouteInput& GetDefaultRoute() const{ return m_defaultRoute; }
+    inline const DefaultRouteInput& GetDefaultRoute() const { return m_defaultRoute; }
     inline bool DefaultRouteHasBeenSet() const { return m_defaultRouteHasBeenSet; }
-    inline void SetDefaultRoute(const DefaultRouteInput& value) { m_defaultRouteHasBeenSet = true; m_defaultRoute = value; }
-    inline void SetDefaultRoute(DefaultRouteInput&& value) { m_defaultRouteHasBeenSet = true; m_defaultRoute = std::move(value); }
-    inline CreateRouteRequest& WithDefaultRoute(const DefaultRouteInput& value) { SetDefaultRoute(value); return *this;}
-    inline CreateRouteRequest& WithDefaultRoute(DefaultRouteInput&& value) { SetDefaultRoute(std::move(value)); return *this;}
+    template<typename DefaultRouteT = DefaultRouteInput>
+    void SetDefaultRoute(DefaultRouteT&& value) { m_defaultRouteHasBeenSet = true; m_defaultRoute = std::forward<DefaultRouteT>(value); }
+    template<typename DefaultRouteT = DefaultRouteInput>
+    CreateRouteRequest& WithDefaultRoute(DefaultRouteT&& value) { SetDefaultRoute(std::forward<DefaultRouteT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the environment in which the route is created.</p>
      */
-    inline const Aws::String& GetEnvironmentIdentifier() const{ return m_environmentIdentifier; }
+    inline const Aws::String& GetEnvironmentIdentifier() const { return m_environmentIdentifier; }
     inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
-    inline void SetEnvironmentIdentifier(const Aws::String& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = value; }
-    inline void SetEnvironmentIdentifier(Aws::String&& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = std::move(value); }
-    inline void SetEnvironmentIdentifier(const char* value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier.assign(value); }
-    inline CreateRouteRequest& WithEnvironmentIdentifier(const Aws::String& value) { SetEnvironmentIdentifier(value); return *this;}
-    inline CreateRouteRequest& WithEnvironmentIdentifier(Aws::String&& value) { SetEnvironmentIdentifier(std::move(value)); return *this;}
-    inline CreateRouteRequest& WithEnvironmentIdentifier(const char* value) { SetEnvironmentIdentifier(value); return *this;}
+    template<typename EnvironmentIdentifierT = Aws::String>
+    void SetEnvironmentIdentifier(EnvironmentIdentifierT&& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = std::forward<EnvironmentIdentifierT>(value); }
+    template<typename EnvironmentIdentifierT = Aws::String>
+    CreateRouteRequest& WithEnvironmentIdentifier(EnvironmentIdentifierT&& value) { SetEnvironmentIdentifier(std::forward<EnvironmentIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +93,10 @@ namespace Model
      * Applications must have a default route before any other routes can be created.
      * <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
      */
-    inline const RouteType& GetRouteType() const{ return m_routeType; }
+    inline RouteType GetRouteType() const { return m_routeType; }
     inline bool RouteTypeHasBeenSet() const { return m_routeTypeHasBeenSet; }
-    inline void SetRouteType(const RouteType& value) { m_routeTypeHasBeenSet = true; m_routeType = value; }
-    inline void SetRouteType(RouteType&& value) { m_routeTypeHasBeenSet = true; m_routeType = std::move(value); }
-    inline CreateRouteRequest& WithRouteType(const RouteType& value) { SetRouteType(value); return *this;}
-    inline CreateRouteRequest& WithRouteType(RouteType&& value) { SetRouteType(std::move(value)); return *this;}
+    inline void SetRouteType(RouteType value) { m_routeTypeHasBeenSet = true; m_routeType = value; }
+    inline CreateRouteRequest& WithRouteType(RouteType value) { SetRouteType(value); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +104,12 @@ namespace Model
      * <p>The ID of the service in which the route is created. Traffic that matches
      * this route is forwarded to this service.</p>
      */
-    inline const Aws::String& GetServiceIdentifier() const{ return m_serviceIdentifier; }
+    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
     inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-    inline void SetServiceIdentifier(const Aws::String& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = value; }
-    inline void SetServiceIdentifier(Aws::String&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::move(value); }
-    inline void SetServiceIdentifier(const char* value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier.assign(value); }
-    inline CreateRouteRequest& WithServiceIdentifier(const Aws::String& value) { SetServiceIdentifier(value); return *this;}
-    inline CreateRouteRequest& WithServiceIdentifier(Aws::String&& value) { SetServiceIdentifier(std::move(value)); return *this;}
-    inline CreateRouteRequest& WithServiceIdentifier(const char* value) { SetServiceIdentifier(value); return *this;}
+    template<typename ServiceIdentifierT = Aws::String>
+    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
+    template<typename ServiceIdentifierT = Aws::String>
+    CreateRouteRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,31 +117,28 @@ namespace Model
      * <p>The tags to assign to the route. A tag is a label that you assign to an
      * Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateRouteRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateRouteRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateRouteRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateRouteRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateRouteRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateRouteRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateRouteRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateRouteRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateRouteRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateRouteRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateRouteRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the URI path route type. </p>
      */
-    inline const UriPathRouteInput& GetUriPathRoute() const{ return m_uriPathRoute; }
+    inline const UriPathRouteInput& GetUriPathRoute() const { return m_uriPathRoute; }
     inline bool UriPathRouteHasBeenSet() const { return m_uriPathRouteHasBeenSet; }
-    inline void SetUriPathRoute(const UriPathRouteInput& value) { m_uriPathRouteHasBeenSet = true; m_uriPathRoute = value; }
-    inline void SetUriPathRoute(UriPathRouteInput&& value) { m_uriPathRouteHasBeenSet = true; m_uriPathRoute = std::move(value); }
-    inline CreateRouteRequest& WithUriPathRoute(const UriPathRouteInput& value) { SetUriPathRoute(value); return *this;}
-    inline CreateRouteRequest& WithUriPathRoute(UriPathRouteInput&& value) { SetUriPathRoute(std::move(value)); return *this;}
+    template<typename UriPathRouteT = UriPathRouteInput>
+    void SetUriPathRoute(UriPathRouteT&& value) { m_uriPathRouteHasBeenSet = true; m_uriPathRoute = std::forward<UriPathRouteT>(value); }
+    template<typename UriPathRouteT = UriPathRouteInput>
+    CreateRouteRequest& WithUriPathRoute(UriPathRouteT&& value) { SetUriPathRoute(std::forward<UriPathRouteT>(value)); return *this;}
     ///@}
   private:
 
@@ -167,7 +154,7 @@ namespace Model
     Aws::String m_environmentIdentifier;
     bool m_environmentIdentifierHasBeenSet = false;
 
-    RouteType m_routeType;
+    RouteType m_routeType{RouteType::NOT_SET};
     bool m_routeTypeHasBeenSet = false;
 
     Aws::String m_serviceIdentifier;

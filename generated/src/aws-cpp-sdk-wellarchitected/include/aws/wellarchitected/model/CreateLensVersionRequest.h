@@ -22,7 +22,7 @@ namespace Model
   class CreateLensVersionRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API CreateLensVersionRequest();
+    AWS_WELLARCHITECTED_API CreateLensVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,35 +35,31 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetLensAlias() const{ return m_lensAlias; }
+    inline const Aws::String& GetLensAlias() const { return m_lensAlias; }
     inline bool LensAliasHasBeenSet() const { return m_lensAliasHasBeenSet; }
-    inline void SetLensAlias(const Aws::String& value) { m_lensAliasHasBeenSet = true; m_lensAlias = value; }
-    inline void SetLensAlias(Aws::String&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::move(value); }
-    inline void SetLensAlias(const char* value) { m_lensAliasHasBeenSet = true; m_lensAlias.assign(value); }
-    inline CreateLensVersionRequest& WithLensAlias(const Aws::String& value) { SetLensAlias(value); return *this;}
-    inline CreateLensVersionRequest& WithLensAlias(Aws::String&& value) { SetLensAlias(std::move(value)); return *this;}
-    inline CreateLensVersionRequest& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
+    template<typename LensAliasT = Aws::String>
+    void SetLensAlias(LensAliasT&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::forward<LensAliasT>(value); }
+    template<typename LensAliasT = Aws::String>
+    CreateLensVersionRequest& WithLensAlias(LensAliasT&& value) { SetLensAlias(std::forward<LensAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the lens being created.</p>
      */
-    inline const Aws::String& GetLensVersion() const{ return m_lensVersion; }
+    inline const Aws::String& GetLensVersion() const { return m_lensVersion; }
     inline bool LensVersionHasBeenSet() const { return m_lensVersionHasBeenSet; }
-    inline void SetLensVersion(const Aws::String& value) { m_lensVersionHasBeenSet = true; m_lensVersion = value; }
-    inline void SetLensVersion(Aws::String&& value) { m_lensVersionHasBeenSet = true; m_lensVersion = std::move(value); }
-    inline void SetLensVersion(const char* value) { m_lensVersionHasBeenSet = true; m_lensVersion.assign(value); }
-    inline CreateLensVersionRequest& WithLensVersion(const Aws::String& value) { SetLensVersion(value); return *this;}
-    inline CreateLensVersionRequest& WithLensVersion(Aws::String&& value) { SetLensVersion(std::move(value)); return *this;}
-    inline CreateLensVersionRequest& WithLensVersion(const char* value) { SetLensVersion(value); return *this;}
+    template<typename LensVersionT = Aws::String>
+    void SetLensVersion(LensVersionT&& value) { m_lensVersionHasBeenSet = true; m_lensVersion = std::forward<LensVersionT>(value); }
+    template<typename LensVersionT = Aws::String>
+    CreateLensVersionRequest& WithLensVersion(LensVersionT&& value) { SetLensVersion(std::forward<LensVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Set to true if this new major lens version.</p>
      */
-    inline bool GetIsMajorVersion() const{ return m_isMajorVersion; }
+    inline bool GetIsMajorVersion() const { return m_isMajorVersion; }
     inline bool IsMajorVersionHasBeenSet() const { return m_isMajorVersionHasBeenSet; }
     inline void SetIsMajorVersion(bool value) { m_isMajorVersionHasBeenSet = true; m_isMajorVersion = value; }
     inline CreateLensVersionRequest& WithIsMajorVersion(bool value) { SetIsMajorVersion(value); return *this;}
@@ -71,14 +67,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateLensVersionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateLensVersionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateLensVersionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateLensVersionRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -88,7 +82,7 @@ namespace Model
     Aws::String m_lensVersion;
     bool m_lensVersionHasBeenSet = false;
 
-    bool m_isMajorVersion;
+    bool m_isMajorVersion{false};
     bool m_isMajorVersionHasBeenSet = false;
 
     Aws::String m_clientRequestToken;

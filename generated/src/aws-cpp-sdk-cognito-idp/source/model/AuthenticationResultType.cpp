@@ -18,19 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-AuthenticationResultType::AuthenticationResultType() : 
-    m_accessTokenHasBeenSet(false),
-    m_expiresIn(0),
-    m_expiresInHasBeenSet(false),
-    m_tokenTypeHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_idTokenHasBeenSet(false),
-    m_newDeviceMetadataHasBeenSet(false)
-{
-}
-
 AuthenticationResultType::AuthenticationResultType(JsonView jsonValue)
-  : AuthenticationResultType()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ AuthenticationResultType& AuthenticationResultType::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AccessToken"))
   {
     m_accessToken = jsonValue.GetString("AccessToken");
-
     m_accessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiresIn"))
   {
     m_expiresIn = jsonValue.GetInteger("ExpiresIn");
-
     m_expiresInHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenType"))
   {
     m_tokenType = jsonValue.GetString("TokenType");
-
     m_tokenTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshToken"))
   {
     m_refreshToken = jsonValue.GetString("RefreshToken");
-
     m_refreshTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdToken"))
   {
     m_idToken = jsonValue.GetString("IdToken");
-
     m_idTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewDeviceMetadata"))
   {
     m_newDeviceMetadata = jsonValue.GetObject("NewDeviceMetadata");
-
     m_newDeviceMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

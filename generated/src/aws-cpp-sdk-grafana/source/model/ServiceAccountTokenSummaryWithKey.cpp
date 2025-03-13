@@ -18,15 +18,7 @@ namespace ManagedGrafana
 namespace Model
 {
 
-ServiceAccountTokenSummaryWithKey::ServiceAccountTokenSummaryWithKey() : 
-    m_idHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ServiceAccountTokenSummaryWithKey::ServiceAccountTokenSummaryWithKey(JsonView jsonValue)
-  : ServiceAccountTokenSummaryWithKey()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ServiceAccountTokenSummaryWithKey& ServiceAccountTokenSummaryWithKey::operator =
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

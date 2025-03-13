@@ -18,16 +18,7 @@ namespace Textract
 namespace Model
 {
 
-AdapterOverview::AdapterOverview() : 
-    m_adapterIdHasBeenSet(false),
-    m_adapterNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_featureTypesHasBeenSet(false)
-{
-}
-
 AdapterOverview::AdapterOverview(JsonView jsonValue)
-  : AdapterOverview()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AdapterOverview& AdapterOverview::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AdapterId"))
   {
     m_adapterId = jsonValue.GetString("AdapterId");
-
     m_adapterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdapterName"))
   {
     m_adapterName = jsonValue.GetString("AdapterName");
-
     m_adapterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureTypes"))
   {
     Aws::Utils::Array<JsonView> featureTypesJsonList = jsonValue.GetArray("FeatureTypes");
@@ -64,7 +49,6 @@ AdapterOverview& AdapterOverview::operator =(JsonView jsonValue)
     }
     m_featureTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

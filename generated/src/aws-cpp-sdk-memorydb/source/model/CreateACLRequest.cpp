@@ -12,13 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateACLRequest::CreateACLRequest() : 
-    m_aCLNameHasBeenSet(false),
-    m_userNamesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateACLRequest::SerializePayload() const
 {
   JsonValue payload;

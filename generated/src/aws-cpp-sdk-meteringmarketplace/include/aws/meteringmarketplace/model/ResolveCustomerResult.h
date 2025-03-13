@@ -34,7 +34,7 @@ namespace Model
   class ResolveCustomerResult
   {
   public:
-    AWS_MARKETPLACEMETERING_API ResolveCustomerResult();
+    AWS_MARKETPLACEMETERING_API ResolveCustomerResult() = default;
     AWS_MARKETPLACEMETERING_API ResolveCustomerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MARKETPLACEMETERING_API ResolveCustomerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,13 +45,11 @@ namespace Model
      * customer in your application. Calls to <code>BatchMeterUsage</code> require
      * <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
      */
-    inline const Aws::String& GetCustomerIdentifier() const{ return m_customerIdentifier; }
-    inline void SetCustomerIdentifier(const Aws::String& value) { m_customerIdentifier = value; }
-    inline void SetCustomerIdentifier(Aws::String&& value) { m_customerIdentifier = std::move(value); }
-    inline void SetCustomerIdentifier(const char* value) { m_customerIdentifier.assign(value); }
-    inline ResolveCustomerResult& WithCustomerIdentifier(const Aws::String& value) { SetCustomerIdentifier(value); return *this;}
-    inline ResolveCustomerResult& WithCustomerIdentifier(Aws::String&& value) { SetCustomerIdentifier(std::move(value)); return *this;}
-    inline ResolveCustomerResult& WithCustomerIdentifier(const char* value) { SetCustomerIdentifier(value); return *this;}
+    inline const Aws::String& GetCustomerIdentifier() const { return m_customerIdentifier; }
+    template<typename CustomerIdentifierT = Aws::String>
+    void SetCustomerIdentifier(CustomerIdentifierT&& value) { m_customerIdentifierHasBeenSet = true; m_customerIdentifier = std::forward<CustomerIdentifierT>(value); }
+    template<typename CustomerIdentifierT = Aws::String>
+    ResolveCustomerResult& WithCustomerIdentifier(CustomerIdentifierT&& value) { SetCustomerIdentifier(std::forward<CustomerIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,13 +58,11 @@ namespace Model
      * your product. Subsequent <code>BatchMeterUsage</code> calls should be made using
      * this product code.</p>
      */
-    inline const Aws::String& GetProductCode() const{ return m_productCode; }
-    inline void SetProductCode(const Aws::String& value) { m_productCode = value; }
-    inline void SetProductCode(Aws::String&& value) { m_productCode = std::move(value); }
-    inline void SetProductCode(const char* value) { m_productCode.assign(value); }
-    inline ResolveCustomerResult& WithProductCode(const Aws::String& value) { SetProductCode(value); return *this;}
-    inline ResolveCustomerResult& WithProductCode(Aws::String&& value) { SetProductCode(std::move(value)); return *this;}
-    inline ResolveCustomerResult& WithProductCode(const char* value) { SetProductCode(value); return *this;}
+    inline const Aws::String& GetProductCode() const { return m_productCode; }
+    template<typename ProductCodeT = Aws::String>
+    void SetProductCode(ProductCodeT&& value) { m_productCodeHasBeenSet = true; m_productCode = std::forward<ProductCodeT>(value); }
+    template<typename ProductCodeT = Aws::String>
+    ResolveCustomerResult& WithProductCode(ProductCodeT&& value) { SetProductCode(std::forward<ProductCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,34 +70,34 @@ namespace Model
      * <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated
      * with the <code>CustomerIdentifier</code> for the individual customer.</p>
      */
-    inline const Aws::String& GetCustomerAWSAccountId() const{ return m_customerAWSAccountId; }
-    inline void SetCustomerAWSAccountId(const Aws::String& value) { m_customerAWSAccountId = value; }
-    inline void SetCustomerAWSAccountId(Aws::String&& value) { m_customerAWSAccountId = std::move(value); }
-    inline void SetCustomerAWSAccountId(const char* value) { m_customerAWSAccountId.assign(value); }
-    inline ResolveCustomerResult& WithCustomerAWSAccountId(const Aws::String& value) { SetCustomerAWSAccountId(value); return *this;}
-    inline ResolveCustomerResult& WithCustomerAWSAccountId(Aws::String&& value) { SetCustomerAWSAccountId(std::move(value)); return *this;}
-    inline ResolveCustomerResult& WithCustomerAWSAccountId(const char* value) { SetCustomerAWSAccountId(value); return *this;}
+    inline const Aws::String& GetCustomerAWSAccountId() const { return m_customerAWSAccountId; }
+    template<typename CustomerAWSAccountIdT = Aws::String>
+    void SetCustomerAWSAccountId(CustomerAWSAccountIdT&& value) { m_customerAWSAccountIdHasBeenSet = true; m_customerAWSAccountId = std::forward<CustomerAWSAccountIdT>(value); }
+    template<typename CustomerAWSAccountIdT = Aws::String>
+    ResolveCustomerResult& WithCustomerAWSAccountId(CustomerAWSAccountIdT&& value) { SetCustomerAWSAccountId(std::forward<CustomerAWSAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ResolveCustomerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ResolveCustomerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ResolveCustomerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ResolveCustomerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_customerIdentifier;
+    bool m_customerIdentifierHasBeenSet = false;
 
     Aws::String m_productCode;
+    bool m_productCodeHasBeenSet = false;
 
     Aws::String m_customerAWSAccountId;
+    bool m_customerAWSAccountIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

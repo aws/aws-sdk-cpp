@@ -28,7 +28,7 @@ namespace Model
   class ExportMetadataModelAssessmentResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ExportMetadataModelAssessmentResult();
+    AWS_DATABASEMIGRATIONSERVICE_API ExportMetadataModelAssessmentResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API ExportMetadataModelAssessmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API ExportMetadataModelAssessmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,41 +37,42 @@ namespace Model
     /**
      * <p>The Amazon S3 details for an assessment exported in PDF format.</p>
      */
-    inline const ExportMetadataModelAssessmentResultEntry& GetPdfReport() const{ return m_pdfReport; }
-    inline void SetPdfReport(const ExportMetadataModelAssessmentResultEntry& value) { m_pdfReport = value; }
-    inline void SetPdfReport(ExportMetadataModelAssessmentResultEntry&& value) { m_pdfReport = std::move(value); }
-    inline ExportMetadataModelAssessmentResult& WithPdfReport(const ExportMetadataModelAssessmentResultEntry& value) { SetPdfReport(value); return *this;}
-    inline ExportMetadataModelAssessmentResult& WithPdfReport(ExportMetadataModelAssessmentResultEntry&& value) { SetPdfReport(std::move(value)); return *this;}
+    inline const ExportMetadataModelAssessmentResultEntry& GetPdfReport() const { return m_pdfReport; }
+    template<typename PdfReportT = ExportMetadataModelAssessmentResultEntry>
+    void SetPdfReport(PdfReportT&& value) { m_pdfReportHasBeenSet = true; m_pdfReport = std::forward<PdfReportT>(value); }
+    template<typename PdfReportT = ExportMetadataModelAssessmentResultEntry>
+    ExportMetadataModelAssessmentResult& WithPdfReport(PdfReportT&& value) { SetPdfReport(std::forward<PdfReportT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 details for an assessment exported in CSV format.</p>
      */
-    inline const ExportMetadataModelAssessmentResultEntry& GetCsvReport() const{ return m_csvReport; }
-    inline void SetCsvReport(const ExportMetadataModelAssessmentResultEntry& value) { m_csvReport = value; }
-    inline void SetCsvReport(ExportMetadataModelAssessmentResultEntry&& value) { m_csvReport = std::move(value); }
-    inline ExportMetadataModelAssessmentResult& WithCsvReport(const ExportMetadataModelAssessmentResultEntry& value) { SetCsvReport(value); return *this;}
-    inline ExportMetadataModelAssessmentResult& WithCsvReport(ExportMetadataModelAssessmentResultEntry&& value) { SetCsvReport(std::move(value)); return *this;}
+    inline const ExportMetadataModelAssessmentResultEntry& GetCsvReport() const { return m_csvReport; }
+    template<typename CsvReportT = ExportMetadataModelAssessmentResultEntry>
+    void SetCsvReport(CsvReportT&& value) { m_csvReportHasBeenSet = true; m_csvReport = std::forward<CsvReportT>(value); }
+    template<typename CsvReportT = ExportMetadataModelAssessmentResultEntry>
+    ExportMetadataModelAssessmentResult& WithCsvReport(CsvReportT&& value) { SetCsvReport(std::forward<CsvReportT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ExportMetadataModelAssessmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ExportMetadataModelAssessmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ExportMetadataModelAssessmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ExportMetadataModelAssessmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ExportMetadataModelAssessmentResultEntry m_pdfReport;
+    bool m_pdfReportHasBeenSet = false;
 
     ExportMetadataModelAssessmentResultEntry m_csvReport;
+    bool m_csvReportHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

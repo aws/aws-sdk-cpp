@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-BlockedPhrasesConfiguration::BlockedPhrasesConfiguration() : 
-    m_blockedPhrasesHasBeenSet(false),
-    m_systemMessageOverrideHasBeenSet(false)
-{
-}
-
 BlockedPhrasesConfiguration::BlockedPhrasesConfiguration(JsonView jsonValue)
-  : BlockedPhrasesConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ BlockedPhrasesConfiguration& BlockedPhrasesConfiguration::operator =(JsonView js
     }
     m_blockedPhrasesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("systemMessageOverride"))
   {
     m_systemMessageOverride = jsonValue.GetString("systemMessageOverride");
-
     m_systemMessageOverrideHasBeenSet = true;
   }
-
   return *this;
 }
 

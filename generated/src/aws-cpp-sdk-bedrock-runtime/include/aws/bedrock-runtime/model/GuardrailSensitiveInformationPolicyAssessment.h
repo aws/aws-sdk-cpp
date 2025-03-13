@@ -34,7 +34,7 @@ namespace Model
   class GuardrailSensitiveInformationPolicyAssessment
   {
   public:
-    AWS_BEDROCKRUNTIME_API GuardrailSensitiveInformationPolicyAssessment();
+    AWS_BEDROCKRUNTIME_API GuardrailSensitiveInformationPolicyAssessment() = default;
     AWS_BEDROCKRUNTIME_API GuardrailSensitiveInformationPolicyAssessment(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API GuardrailSensitiveInformationPolicyAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,28 @@ namespace Model
     /**
      * <p>The PII entities in the assessment.</p>
      */
-    inline const Aws::Vector<GuardrailPiiEntityFilter>& GetPiiEntities() const{ return m_piiEntities; }
+    inline const Aws::Vector<GuardrailPiiEntityFilter>& GetPiiEntities() const { return m_piiEntities; }
     inline bool PiiEntitiesHasBeenSet() const { return m_piiEntitiesHasBeenSet; }
-    inline void SetPiiEntities(const Aws::Vector<GuardrailPiiEntityFilter>& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities = value; }
-    inline void SetPiiEntities(Aws::Vector<GuardrailPiiEntityFilter>&& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities = std::move(value); }
-    inline GuardrailSensitiveInformationPolicyAssessment& WithPiiEntities(const Aws::Vector<GuardrailPiiEntityFilter>& value) { SetPiiEntities(value); return *this;}
-    inline GuardrailSensitiveInformationPolicyAssessment& WithPiiEntities(Aws::Vector<GuardrailPiiEntityFilter>&& value) { SetPiiEntities(std::move(value)); return *this;}
-    inline GuardrailSensitiveInformationPolicyAssessment& AddPiiEntities(const GuardrailPiiEntityFilter& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities.push_back(value); return *this; }
-    inline GuardrailSensitiveInformationPolicyAssessment& AddPiiEntities(GuardrailPiiEntityFilter&& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities.push_back(std::move(value)); return *this; }
+    template<typename PiiEntitiesT = Aws::Vector<GuardrailPiiEntityFilter>>
+    void SetPiiEntities(PiiEntitiesT&& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities = std::forward<PiiEntitiesT>(value); }
+    template<typename PiiEntitiesT = Aws::Vector<GuardrailPiiEntityFilter>>
+    GuardrailSensitiveInformationPolicyAssessment& WithPiiEntities(PiiEntitiesT&& value) { SetPiiEntities(std::forward<PiiEntitiesT>(value)); return *this;}
+    template<typename PiiEntitiesT = GuardrailPiiEntityFilter>
+    GuardrailSensitiveInformationPolicyAssessment& AddPiiEntities(PiiEntitiesT&& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities.emplace_back(std::forward<PiiEntitiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The regex queries in the assessment.</p>
      */
-    inline const Aws::Vector<GuardrailRegexFilter>& GetRegexes() const{ return m_regexes; }
+    inline const Aws::Vector<GuardrailRegexFilter>& GetRegexes() const { return m_regexes; }
     inline bool RegexesHasBeenSet() const { return m_regexesHasBeenSet; }
-    inline void SetRegexes(const Aws::Vector<GuardrailRegexFilter>& value) { m_regexesHasBeenSet = true; m_regexes = value; }
-    inline void SetRegexes(Aws::Vector<GuardrailRegexFilter>&& value) { m_regexesHasBeenSet = true; m_regexes = std::move(value); }
-    inline GuardrailSensitiveInformationPolicyAssessment& WithRegexes(const Aws::Vector<GuardrailRegexFilter>& value) { SetRegexes(value); return *this;}
-    inline GuardrailSensitiveInformationPolicyAssessment& WithRegexes(Aws::Vector<GuardrailRegexFilter>&& value) { SetRegexes(std::move(value)); return *this;}
-    inline GuardrailSensitiveInformationPolicyAssessment& AddRegexes(const GuardrailRegexFilter& value) { m_regexesHasBeenSet = true; m_regexes.push_back(value); return *this; }
-    inline GuardrailSensitiveInformationPolicyAssessment& AddRegexes(GuardrailRegexFilter&& value) { m_regexesHasBeenSet = true; m_regexes.push_back(std::move(value)); return *this; }
+    template<typename RegexesT = Aws::Vector<GuardrailRegexFilter>>
+    void SetRegexes(RegexesT&& value) { m_regexesHasBeenSet = true; m_regexes = std::forward<RegexesT>(value); }
+    template<typename RegexesT = Aws::Vector<GuardrailRegexFilter>>
+    GuardrailSensitiveInformationPolicyAssessment& WithRegexes(RegexesT&& value) { SetRegexes(std::forward<RegexesT>(value)); return *this;}
+    template<typename RegexesT = GuardrailRegexFilter>
+    GuardrailSensitiveInformationPolicyAssessment& AddRegexes(RegexesT&& value) { m_regexesHasBeenSet = true; m_regexes.emplace_back(std::forward<RegexesT>(value)); return *this; }
     ///@}
   private:
 

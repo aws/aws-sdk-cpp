@@ -20,19 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ParameterDeclaration::ParameterDeclaration() : 
-    m_parameterKeyHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_parameterTypeHasBeenSet(false),
-    m_noEcho(false),
-    m_noEchoHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parameterConstraintsHasBeenSet(false)
-{
-}
-
 ParameterDeclaration::ParameterDeclaration(const XmlNode& xmlNode)
-  : ParameterDeclaration()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,42 @@ ParameterDeclaration& ParameterDeclaration::operator =(const XmlNode& xmlNode)
     {
       m_parameterKey = Aws::Utils::Xml::DecodeEscapedXmlText(parameterKeyNode.GetText());
       m_parameterKeyHasBeenSet = true;
+       m_parameterKeyHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
       m_defaultValue = Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText());
       m_defaultValueHasBeenSet = true;
+       m_defaultValueHasBeenSet = true;
     }
     XmlNode parameterTypeNode = resultNode.FirstChild("ParameterType");
     if(!parameterTypeNode.IsNull())
     {
       m_parameterType = Aws::Utils::Xml::DecodeEscapedXmlText(parameterTypeNode.GetText());
       m_parameterTypeHasBeenSet = true;
+       m_parameterTypeHasBeenSet = true;
     }
     XmlNode noEchoNode = resultNode.FirstChild("NoEcho");
     if(!noEchoNode.IsNull())
     {
       m_noEcho = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(noEchoNode.GetText()).c_str()).c_str());
       m_noEchoHasBeenSet = true;
+       m_noEchoHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode parameterConstraintsNode = resultNode.FirstChild("ParameterConstraints");
     if(!parameterConstraintsNode.IsNull())
     {
       m_parameterConstraints = parameterConstraintsNode;
       m_parameterConstraintsHasBeenSet = true;
+       m_parameterConstraintsHasBeenSet = true;
     }
   }
 

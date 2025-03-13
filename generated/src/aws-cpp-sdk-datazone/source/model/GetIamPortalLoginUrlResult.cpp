@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIamPortalLoginUrlResult::GetIamPortalLoginUrlResult()
-{
-}
-
 GetIamPortalLoginUrlResult::GetIamPortalLoginUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetIamPortalLoginUrlResult& GetIamPortalLoginUrlResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("authCodeUrl"))
   {
     m_authCodeUrl = jsonValue.GetString("authCodeUrl");
-
+    m_authCodeUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userProfileId"))
   {
     m_userProfileId = jsonValue.GetString("userProfileId");
-
+    m_userProfileIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

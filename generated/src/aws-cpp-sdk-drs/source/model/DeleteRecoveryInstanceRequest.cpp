@@ -12,11 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRecoveryInstanceRequest::DeleteRecoveryInstanceRequest() : 
-    m_recoveryInstanceIDHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRecoveryInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

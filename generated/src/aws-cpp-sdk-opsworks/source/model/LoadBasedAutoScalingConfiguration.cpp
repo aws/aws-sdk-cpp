@@ -18,17 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-LoadBasedAutoScalingConfiguration::LoadBasedAutoScalingConfiguration() : 
-    m_layerIdHasBeenSet(false),
-    m_enable(false),
-    m_enableHasBeenSet(false),
-    m_upScalingHasBeenSet(false),
-    m_downScalingHasBeenSet(false)
-{
-}
-
 LoadBasedAutoScalingConfiguration::LoadBasedAutoScalingConfiguration(JsonView jsonValue)
-  : LoadBasedAutoScalingConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ LoadBasedAutoScalingConfiguration& LoadBasedAutoScalingConfiguration::operator =
   if(jsonValue.ValueExists("LayerId"))
   {
     m_layerId = jsonValue.GetString("LayerId");
-
     m_layerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enable"))
   {
     m_enable = jsonValue.GetBool("Enable");
-
     m_enableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpScaling"))
   {
     m_upScaling = jsonValue.GetObject("UpScaling");
-
     m_upScalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DownScaling"))
   {
     m_downScaling = jsonValue.GetObject("DownScaling");
-
     m_downScalingHasBeenSet = true;
   }
-
   return *this;
 }
 

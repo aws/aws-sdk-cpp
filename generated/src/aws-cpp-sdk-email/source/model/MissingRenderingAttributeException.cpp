@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-MissingRenderingAttributeException::MissingRenderingAttributeException() : 
-    m_templateNameHasBeenSet(false)
-{
-}
-
 MissingRenderingAttributeException::MissingRenderingAttributeException(const XmlNode& xmlNode)
-  : MissingRenderingAttributeException()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ MissingRenderingAttributeException& MissingRenderingAttributeException::operator
     {
       m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
+       m_templateNameHasBeenSet = true;
     }
   }
 

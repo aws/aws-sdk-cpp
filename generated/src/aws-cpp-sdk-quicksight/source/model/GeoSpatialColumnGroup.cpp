@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeoSpatialColumnGroup::GeoSpatialColumnGroup() : 
-    m_nameHasBeenSet(false),
-    m_countryCode(GeoSpatialCountryCode::NOT_SET),
-    m_countryCodeHasBeenSet(false),
-    m_columnsHasBeenSet(false)
-{
-}
-
 GeoSpatialColumnGroup::GeoSpatialColumnGroup(JsonView jsonValue)
-  : GeoSpatialColumnGroup()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GeoSpatialColumnGroup& GeoSpatialColumnGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CountryCode"))
   {
     m_countryCode = GeoSpatialCountryCodeMapper::GetGeoSpatialCountryCodeForName(jsonValue.GetString("CountryCode"));
-
     m_countryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Columns"))
   {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
@@ -57,7 +44,6 @@ GeoSpatialColumnGroup& GeoSpatialColumnGroup::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   return *this;
 }
 

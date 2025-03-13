@@ -66,7 +66,7 @@ namespace Model
   class AutoScalingSettings
   {
   public:
-    AWS_KEYSPACES_API AutoScalingSettings();
+    AWS_KEYSPACES_API AutoScalingSettings() = default;
     AWS_KEYSPACES_API AutoScalingSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API AutoScalingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -77,7 +77,7 @@ namespace Model
      * <p>This optional parameter enables auto scaling for the table if set to
      * <code>false</code>.</p>
      */
-    inline bool GetAutoScalingDisabled() const{ return m_autoScalingDisabled; }
+    inline bool GetAutoScalingDisabled() const { return m_autoScalingDisabled; }
     inline bool AutoScalingDisabledHasBeenSet() const { return m_autoScalingDisabledHasBeenSet; }
     inline void SetAutoScalingDisabled(bool value) { m_autoScalingDisabledHasBeenSet = true; m_autoScalingDisabled = value; }
     inline AutoScalingSettings& WithAutoScalingDisabled(bool value) { SetAutoScalingDisabled(value); return *this;}
@@ -89,7 +89,7 @@ namespace Model
      * The value must be between 1 and the max throughput per second quota for your
      * account (40,000 by default).</p>
      */
-    inline long long GetMinimumUnits() const{ return m_minimumUnits; }
+    inline long long GetMinimumUnits() const { return m_minimumUnits; }
     inline bool MinimumUnitsHasBeenSet() const { return m_minimumUnitsHasBeenSet; }
     inline void SetMinimumUnits(long long value) { m_minimumUnitsHasBeenSet = true; m_minimumUnits = value; }
     inline AutoScalingSettings& WithMinimumUnits(long long value) { SetMinimumUnits(value); return *this;}
@@ -101,7 +101,7 @@ namespace Model
      * value must be between 1 and the max throughput per second quota for your account
      * (40,000 by default).</p>
      */
-    inline long long GetMaximumUnits() const{ return m_maximumUnits; }
+    inline long long GetMaximumUnits() const { return m_maximumUnits; }
     inline bool MaximumUnitsHasBeenSet() const { return m_maximumUnitsHasBeenSet; }
     inline void SetMaximumUnits(long long value) { m_maximumUnitsHasBeenSet = true; m_maximumUnits = value; }
     inline AutoScalingSettings& WithMaximumUnits(long long value) { SetMaximumUnits(value); return *this;}
@@ -114,22 +114,22 @@ namespace Model
      * ratio of consumed to provisioned capacity stays at or near the target value that
      * you specify. You define the target value as a percentage between 20 and 90.</p>
      */
-    inline const AutoScalingPolicy& GetScalingPolicy() const{ return m_scalingPolicy; }
+    inline const AutoScalingPolicy& GetScalingPolicy() const { return m_scalingPolicy; }
     inline bool ScalingPolicyHasBeenSet() const { return m_scalingPolicyHasBeenSet; }
-    inline void SetScalingPolicy(const AutoScalingPolicy& value) { m_scalingPolicyHasBeenSet = true; m_scalingPolicy = value; }
-    inline void SetScalingPolicy(AutoScalingPolicy&& value) { m_scalingPolicyHasBeenSet = true; m_scalingPolicy = std::move(value); }
-    inline AutoScalingSettings& WithScalingPolicy(const AutoScalingPolicy& value) { SetScalingPolicy(value); return *this;}
-    inline AutoScalingSettings& WithScalingPolicy(AutoScalingPolicy&& value) { SetScalingPolicy(std::move(value)); return *this;}
+    template<typename ScalingPolicyT = AutoScalingPolicy>
+    void SetScalingPolicy(ScalingPolicyT&& value) { m_scalingPolicyHasBeenSet = true; m_scalingPolicy = std::forward<ScalingPolicyT>(value); }
+    template<typename ScalingPolicyT = AutoScalingPolicy>
+    AutoScalingSettings& WithScalingPolicy(ScalingPolicyT&& value) { SetScalingPolicy(std::forward<ScalingPolicyT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_autoScalingDisabled;
+    bool m_autoScalingDisabled{false};
     bool m_autoScalingDisabledHasBeenSet = false;
 
-    long long m_minimumUnits;
+    long long m_minimumUnits{0};
     bool m_minimumUnitsHasBeenSet = false;
 
-    long long m_maximumUnits;
+    long long m_maximumUnits{0};
     bool m_maximumUnitsHasBeenSet = false;
 
     AutoScalingPolicy m_scalingPolicy;

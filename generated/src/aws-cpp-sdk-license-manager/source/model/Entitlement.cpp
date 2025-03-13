@@ -18,22 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-Entitlement::Entitlement() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_maxCount(0),
-    m_maxCountHasBeenSet(false),
-    m_overage(false),
-    m_overageHasBeenSet(false),
-    m_unit(EntitlementUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_allowCheckIn(false),
-    m_allowCheckInHasBeenSet(false)
-{
-}
-
 Entitlement::Entitlement(JsonView jsonValue)
-  : Entitlement()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ Entitlement& Entitlement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCount"))
   {
     m_maxCount = jsonValue.GetInt64("MaxCount");
-
     m_maxCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Overage"))
   {
     m_overage = jsonValue.GetBool("Overage");
-
     m_overageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = EntitlementUnitMapper::GetEntitlementUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowCheckIn"))
   {
     m_allowCheckIn = jsonValue.GetBool("AllowCheckIn");
-
     m_allowCheckInHasBeenSet = true;
   }
-
   return *this;
 }
 

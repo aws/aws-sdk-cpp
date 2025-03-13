@@ -18,21 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-WorkflowRunSummary::WorkflowRunSummary() : 
-    m_idHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_workflowNameHasBeenSet(false),
-    m_status(WorkflowRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 WorkflowRunSummary::WorkflowRunSummary(JsonView jsonValue)
-  : WorkflowRunSummary()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ WorkflowRunSummary& WorkflowRunSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowId"))
   {
     m_workflowId = jsonValue.GetString("workflowId");
-
     m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowName"))
   {
     m_workflowName = jsonValue.GetString("workflowName");
-
     m_workflowNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkflowRunStatusMapper::GetWorkflowRunStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReasons"))
   {
     Aws::Utils::Array<JsonView> statusReasonsJsonList = jsonValue.GetArray("statusReasons");
@@ -76,28 +54,21 @@ WorkflowRunSummary& WorkflowRunSummary::operator =(JsonView jsonValue)
     }
     m_statusReasonsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

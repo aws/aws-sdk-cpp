@@ -18,14 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-SqlRunConfiguration::SqlRunConfiguration() : 
-    m_inputIdHasBeenSet(false),
-    m_inputStartingPositionConfigurationHasBeenSet(false)
-{
-}
-
 SqlRunConfiguration::SqlRunConfiguration(JsonView jsonValue)
-  : SqlRunConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SqlRunConfiguration& SqlRunConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InputId"))
   {
     m_inputId = jsonValue.GetString("InputId");
-
     m_inputIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputStartingPositionConfiguration"))
   {
     m_inputStartingPositionConfiguration = jsonValue.GetObject("InputStartingPositionConfiguration");
-
     m_inputStartingPositionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

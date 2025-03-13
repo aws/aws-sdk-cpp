@@ -34,7 +34,7 @@ namespace Model
   class DescribeComplianceByConfigRuleResult
   {
   public:
-    AWS_CONFIGSERVICE_API DescribeComplianceByConfigRuleResult();
+    AWS_CONFIGSERVICE_API DescribeComplianceByConfigRuleResult() = default;
     AWS_CONFIGSERVICE_API DescribeComplianceByConfigRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API DescribeComplianceByConfigRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,13 @@ namespace Model
     /**
      * <p>Indicates whether each of the specified Config rules is compliant.</p>
      */
-    inline const Aws::Vector<ComplianceByConfigRule>& GetComplianceByConfigRules() const{ return m_complianceByConfigRules; }
-    inline void SetComplianceByConfigRules(const Aws::Vector<ComplianceByConfigRule>& value) { m_complianceByConfigRules = value; }
-    inline void SetComplianceByConfigRules(Aws::Vector<ComplianceByConfigRule>&& value) { m_complianceByConfigRules = std::move(value); }
-    inline DescribeComplianceByConfigRuleResult& WithComplianceByConfigRules(const Aws::Vector<ComplianceByConfigRule>& value) { SetComplianceByConfigRules(value); return *this;}
-    inline DescribeComplianceByConfigRuleResult& WithComplianceByConfigRules(Aws::Vector<ComplianceByConfigRule>&& value) { SetComplianceByConfigRules(std::move(value)); return *this;}
-    inline DescribeComplianceByConfigRuleResult& AddComplianceByConfigRules(const ComplianceByConfigRule& value) { m_complianceByConfigRules.push_back(value); return *this; }
-    inline DescribeComplianceByConfigRuleResult& AddComplianceByConfigRules(ComplianceByConfigRule&& value) { m_complianceByConfigRules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ComplianceByConfigRule>& GetComplianceByConfigRules() const { return m_complianceByConfigRules; }
+    template<typename ComplianceByConfigRulesT = Aws::Vector<ComplianceByConfigRule>>
+    void SetComplianceByConfigRules(ComplianceByConfigRulesT&& value) { m_complianceByConfigRulesHasBeenSet = true; m_complianceByConfigRules = std::forward<ComplianceByConfigRulesT>(value); }
+    template<typename ComplianceByConfigRulesT = Aws::Vector<ComplianceByConfigRule>>
+    DescribeComplianceByConfigRuleResult& WithComplianceByConfigRules(ComplianceByConfigRulesT&& value) { SetComplianceByConfigRules(std::forward<ComplianceByConfigRulesT>(value)); return *this;}
+    template<typename ComplianceByConfigRulesT = ComplianceByConfigRule>
+    DescribeComplianceByConfigRuleResult& AddComplianceByConfigRules(ComplianceByConfigRulesT&& value) { m_complianceByConfigRulesHasBeenSet = true; m_complianceByConfigRules.emplace_back(std::forward<ComplianceByConfigRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeComplianceByConfigRuleResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeComplianceByConfigRuleResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeComplianceByConfigRuleResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeComplianceByConfigRuleResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeComplianceByConfigRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeComplianceByConfigRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeComplianceByConfigRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeComplianceByConfigRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ComplianceByConfigRule> m_complianceByConfigRules;
+    bool m_complianceByConfigRulesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

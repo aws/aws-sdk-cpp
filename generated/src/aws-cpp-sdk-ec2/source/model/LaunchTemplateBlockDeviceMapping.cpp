@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateBlockDeviceMapping::LaunchTemplateBlockDeviceMapping() : 
-    m_deviceNameHasBeenSet(false),
-    m_virtualNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_noDeviceHasBeenSet(false)
-{
-}
-
 LaunchTemplateBlockDeviceMapping::LaunchTemplateBlockDeviceMapping(const XmlNode& xmlNode)
-  : LaunchTemplateBlockDeviceMapping()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ LaunchTemplateBlockDeviceMapping& LaunchTemplateBlockDeviceMapping::operator =(c
     {
       m_deviceName = Aws::Utils::Xml::DecodeEscapedXmlText(deviceNameNode.GetText());
       m_deviceNameHasBeenSet = true;
+       m_deviceNameHasBeenSet = true;
     }
     XmlNode virtualNameNode = resultNode.FirstChild("virtualName");
     if(!virtualNameNode.IsNull())
     {
       m_virtualName = Aws::Utils::Xml::DecodeEscapedXmlText(virtualNameNode.GetText());
       m_virtualNameHasBeenSet = true;
+       m_virtualNameHasBeenSet = true;
     }
     XmlNode ebsNode = resultNode.FirstChild("ebs");
     if(!ebsNode.IsNull())
     {
       m_ebs = ebsNode;
       m_ebsHasBeenSet = true;
+       m_ebsHasBeenSet = true;
     }
     XmlNode noDeviceNode = resultNode.FirstChild("noDevice");
     if(!noDeviceNode.IsNull())
     {
       m_noDevice = Aws::Utils::Xml::DecodeEscapedXmlText(noDeviceNode.GetText());
       m_noDeviceHasBeenSet = true;
+       m_noDeviceHasBeenSet = true;
     }
   }
 

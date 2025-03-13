@@ -33,7 +33,7 @@ namespace Model
   class EndpointNetworkConfiguration
   {
   public:
-    AWS_STORAGEGATEWAY_API EndpointNetworkConfiguration();
+    AWS_STORAGEGATEWAY_API EndpointNetworkConfiguration() = default;
     AWS_STORAGEGATEWAY_API EndpointNetworkConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API EndpointNetworkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * is available.</p>  <p>If multiple file systems are associated with this
      * gateway, this field is required.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetIpAddresses() const{ return m_ipAddresses; }
+    inline const Aws::Vector<Aws::String>& GetIpAddresses() const { return m_ipAddresses; }
     inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
-    inline void SetIpAddresses(const Aws::Vector<Aws::String>& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
-    inline void SetIpAddresses(Aws::Vector<Aws::String>&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
-    inline EndpointNetworkConfiguration& WithIpAddresses(const Aws::Vector<Aws::String>& value) { SetIpAddresses(value); return *this;}
-    inline EndpointNetworkConfiguration& WithIpAddresses(Aws::Vector<Aws::String>&& value) { SetIpAddresses(std::move(value)); return *this;}
-    inline EndpointNetworkConfiguration& AddIpAddresses(const Aws::String& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
-    inline EndpointNetworkConfiguration& AddIpAddresses(Aws::String&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(std::move(value)); return *this; }
-    inline EndpointNetworkConfiguration& AddIpAddresses(const char* value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
+    template<typename IpAddressesT = Aws::Vector<Aws::String>>
+    void SetIpAddresses(IpAddressesT&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::forward<IpAddressesT>(value); }
+    template<typename IpAddressesT = Aws::Vector<Aws::String>>
+    EndpointNetworkConfiguration& WithIpAddresses(IpAddressesT&& value) { SetIpAddresses(std::forward<IpAddressesT>(value)); return *this;}
+    template<typename IpAddressesT = Aws::String>
+    EndpointNetworkConfiguration& AddIpAddresses(IpAddressesT&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.emplace_back(std::forward<IpAddressesT>(value)); return *this; }
     ///@}
   private:
 

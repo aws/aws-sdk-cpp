@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DiskImage::DiskImage() : 
-    m_descriptionHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_volumeHasBeenSet(false)
-{
-}
-
 DiskImage::DiskImage(const XmlNode& xmlNode)
-  : DiskImage()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ DiskImage& DiskImage::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode imageNode = resultNode.FirstChild("Image");
     if(!imageNode.IsNull())
     {
       m_image = imageNode;
       m_imageHasBeenSet = true;
+       m_imageHasBeenSet = true;
     }
     XmlNode volumeNode = resultNode.FirstChild("Volume");
     if(!volumeNode.IsNull())
     {
       m_volume = volumeNode;
       m_volumeHasBeenSet = true;
+       m_volumeHasBeenSet = true;
     }
   }
 

@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PerformanceFactorReference::PerformanceFactorReference() : 
-    m_instanceFamilyHasBeenSet(false)
-{
-}
-
 PerformanceFactorReference::PerformanceFactorReference(const XmlNode& xmlNode)
-  : PerformanceFactorReference()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ PerformanceFactorReference& PerformanceFactorReference::operator =(const XmlNode
     {
       m_instanceFamily = Aws::Utils::Xml::DecodeEscapedXmlText(instanceFamilyNode.GetText());
       m_instanceFamilyHasBeenSet = true;
+       m_instanceFamilyHasBeenSet = true;
     }
   }
 

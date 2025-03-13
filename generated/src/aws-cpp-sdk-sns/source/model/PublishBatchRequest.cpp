@@ -10,12 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-PublishBatchRequest::PublishBatchRequest() : 
-    m_topicArnHasBeenSet(false),
-    m_publishBatchRequestEntriesHasBeenSet(false)
-{
-}
-
 Aws::String PublishBatchRequest::SerializePayload() const
 {
   Aws::StringStream ss;

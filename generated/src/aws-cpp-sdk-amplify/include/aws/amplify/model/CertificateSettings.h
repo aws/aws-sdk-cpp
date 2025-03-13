@@ -34,7 +34,7 @@ namespace Model
   class CertificateSettings
   {
   public:
-    AWS_AMPLIFY_API CertificateSettings();
+    AWS_AMPLIFY_API CertificateSettings() = default;
     AWS_AMPLIFY_API CertificateSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFY_API CertificateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * certificates into Certificate Manager</a> in the <i>ACM User guide</i>.</p>
      */
-    inline const CertificateType& GetType() const{ return m_type; }
+    inline CertificateType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CertificateSettings& WithType(const CertificateType& value) { SetType(value); return *this;}
-    inline CertificateSettings& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CertificateType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CertificateSettings& WithType(CertificateType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -66,18 +64,16 @@ namespace Model
      * <p>This field is required only when the certificate type is
      * <code>CUSTOM</code>.</p>
      */
-    inline const Aws::String& GetCustomCertificateArn() const{ return m_customCertificateArn; }
+    inline const Aws::String& GetCustomCertificateArn() const { return m_customCertificateArn; }
     inline bool CustomCertificateArnHasBeenSet() const { return m_customCertificateArnHasBeenSet; }
-    inline void SetCustomCertificateArn(const Aws::String& value) { m_customCertificateArnHasBeenSet = true; m_customCertificateArn = value; }
-    inline void SetCustomCertificateArn(Aws::String&& value) { m_customCertificateArnHasBeenSet = true; m_customCertificateArn = std::move(value); }
-    inline void SetCustomCertificateArn(const char* value) { m_customCertificateArnHasBeenSet = true; m_customCertificateArn.assign(value); }
-    inline CertificateSettings& WithCustomCertificateArn(const Aws::String& value) { SetCustomCertificateArn(value); return *this;}
-    inline CertificateSettings& WithCustomCertificateArn(Aws::String&& value) { SetCustomCertificateArn(std::move(value)); return *this;}
-    inline CertificateSettings& WithCustomCertificateArn(const char* value) { SetCustomCertificateArn(value); return *this;}
+    template<typename CustomCertificateArnT = Aws::String>
+    void SetCustomCertificateArn(CustomCertificateArnT&& value) { m_customCertificateArnHasBeenSet = true; m_customCertificateArn = std::forward<CustomCertificateArnT>(value); }
+    template<typename CustomCertificateArnT = Aws::String>
+    CertificateSettings& WithCustomCertificateArn(CustomCertificateArnT&& value) { SetCustomCertificateArn(std::forward<CustomCertificateArnT>(value)); return *this;}
     ///@}
   private:
 
-    CertificateType m_type;
+    CertificateType m_type{CertificateType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_customCertificateArn;

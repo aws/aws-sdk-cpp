@@ -29,7 +29,7 @@ namespace Model
   class SearchAgreementsResult
   {
   public:
-    AWS_AGREEMENTSERVICE_API SearchAgreementsResult();
+    AWS_AGREEMENTSERVICE_API SearchAgreementsResult() = default;
     AWS_AGREEMENTSERVICE_API SearchAgreementsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AGREEMENTSERVICE_API SearchAgreementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A summary of the agreement, including top-level attributes (for example, the
      * agreement ID, version, proposer, and acceptor).</p>
      */
-    inline const Aws::Vector<AgreementViewSummary>& GetAgreementViewSummaries() const{ return m_agreementViewSummaries; }
-    inline void SetAgreementViewSummaries(const Aws::Vector<AgreementViewSummary>& value) { m_agreementViewSummaries = value; }
-    inline void SetAgreementViewSummaries(Aws::Vector<AgreementViewSummary>&& value) { m_agreementViewSummaries = std::move(value); }
-    inline SearchAgreementsResult& WithAgreementViewSummaries(const Aws::Vector<AgreementViewSummary>& value) { SetAgreementViewSummaries(value); return *this;}
-    inline SearchAgreementsResult& WithAgreementViewSummaries(Aws::Vector<AgreementViewSummary>&& value) { SetAgreementViewSummaries(std::move(value)); return *this;}
-    inline SearchAgreementsResult& AddAgreementViewSummaries(const AgreementViewSummary& value) { m_agreementViewSummaries.push_back(value); return *this; }
-    inline SearchAgreementsResult& AddAgreementViewSummaries(AgreementViewSummary&& value) { m_agreementViewSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AgreementViewSummary>& GetAgreementViewSummaries() const { return m_agreementViewSummaries; }
+    template<typename AgreementViewSummariesT = Aws::Vector<AgreementViewSummary>>
+    void SetAgreementViewSummaries(AgreementViewSummariesT&& value) { m_agreementViewSummariesHasBeenSet = true; m_agreementViewSummaries = std::forward<AgreementViewSummariesT>(value); }
+    template<typename AgreementViewSummariesT = Aws::Vector<AgreementViewSummary>>
+    SearchAgreementsResult& WithAgreementViewSummaries(AgreementViewSummariesT&& value) { SetAgreementViewSummaries(std::forward<AgreementViewSummariesT>(value)); return *this;}
+    template<typename AgreementViewSummariesT = AgreementViewSummary>
+    SearchAgreementsResult& AddAgreementViewSummaries(AgreementViewSummariesT&& value) { m_agreementViewSummariesHasBeenSet = true; m_agreementViewSummaries.emplace_back(std::forward<AgreementViewSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The token used for pagination. The field is <code>null</code> if there are no
      * more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchAgreementsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchAgreementsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchAgreementsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchAgreementsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchAgreementsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchAgreementsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchAgreementsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchAgreementsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AgreementViewSummary> m_agreementViewSummaries;
+    bool m_agreementViewSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

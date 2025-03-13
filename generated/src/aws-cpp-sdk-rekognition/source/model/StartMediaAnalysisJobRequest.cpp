@@ -12,17 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMediaAnalysisJobRequest::StartMediaAnalysisJobRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_jobNameHasBeenSet(false),
-    m_operationsConfigHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String StartMediaAnalysisJobRequest::SerializePayload() const
 {
   JsonValue payload;

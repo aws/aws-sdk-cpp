@@ -34,7 +34,7 @@ namespace Model
   class ServiceCatalogProvisionedProductDetails
   {
   public:
-    AWS_SAGEMAKER_API ServiceCatalogProvisionedProductDetails();
+    AWS_SAGEMAKER_API ServiceCatalogProvisionedProductDetails() = default;
     AWS_SAGEMAKER_API ServiceCatalogProvisionedProductDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ServiceCatalogProvisionedProductDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID of the provisioned product.</p>
      */
-    inline const Aws::String& GetProvisionedProductId() const{ return m_provisionedProductId; }
+    inline const Aws::String& GetProvisionedProductId() const { return m_provisionedProductId; }
     inline bool ProvisionedProductIdHasBeenSet() const { return m_provisionedProductIdHasBeenSet; }
-    inline void SetProvisionedProductId(const Aws::String& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = value; }
-    inline void SetProvisionedProductId(Aws::String&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = std::move(value); }
-    inline void SetProvisionedProductId(const char* value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId.assign(value); }
-    inline ServiceCatalogProvisionedProductDetails& WithProvisionedProductId(const Aws::String& value) { SetProvisionedProductId(value); return *this;}
-    inline ServiceCatalogProvisionedProductDetails& WithProvisionedProductId(Aws::String&& value) { SetProvisionedProductId(std::move(value)); return *this;}
-    inline ServiceCatalogProvisionedProductDetails& WithProvisionedProductId(const char* value) { SetProvisionedProductId(value); return *this;}
+    template<typename ProvisionedProductIdT = Aws::String>
+    void SetProvisionedProductId(ProvisionedProductIdT&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = std::forward<ProvisionedProductIdT>(value); }
+    template<typename ProvisionedProductIdT = Aws::String>
+    ServiceCatalogProvisionedProductDetails& WithProvisionedProductId(ProvisionedProductIdT&& value) { SetProvisionedProductId(std::forward<ProvisionedProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * to be created, execute the plan. Wait for an AVAILABLE status before performing
      * operations.</p> </li> </ul>
      */
-    inline const Aws::String& GetProvisionedProductStatusMessage() const{ return m_provisionedProductStatusMessage; }
+    inline const Aws::String& GetProvisionedProductStatusMessage() const { return m_provisionedProductStatusMessage; }
     inline bool ProvisionedProductStatusMessageHasBeenSet() const { return m_provisionedProductStatusMessageHasBeenSet; }
-    inline void SetProvisionedProductStatusMessage(const Aws::String& value) { m_provisionedProductStatusMessageHasBeenSet = true; m_provisionedProductStatusMessage = value; }
-    inline void SetProvisionedProductStatusMessage(Aws::String&& value) { m_provisionedProductStatusMessageHasBeenSet = true; m_provisionedProductStatusMessage = std::move(value); }
-    inline void SetProvisionedProductStatusMessage(const char* value) { m_provisionedProductStatusMessageHasBeenSet = true; m_provisionedProductStatusMessage.assign(value); }
-    inline ServiceCatalogProvisionedProductDetails& WithProvisionedProductStatusMessage(const Aws::String& value) { SetProvisionedProductStatusMessage(value); return *this;}
-    inline ServiceCatalogProvisionedProductDetails& WithProvisionedProductStatusMessage(Aws::String&& value) { SetProvisionedProductStatusMessage(std::move(value)); return *this;}
-    inline ServiceCatalogProvisionedProductDetails& WithProvisionedProductStatusMessage(const char* value) { SetProvisionedProductStatusMessage(value); return *this;}
+    template<typename ProvisionedProductStatusMessageT = Aws::String>
+    void SetProvisionedProductStatusMessage(ProvisionedProductStatusMessageT&& value) { m_provisionedProductStatusMessageHasBeenSet = true; m_provisionedProductStatusMessage = std::forward<ProvisionedProductStatusMessageT>(value); }
+    template<typename ProvisionedProductStatusMessageT = Aws::String>
+    ServiceCatalogProvisionedProductDetails& WithProvisionedProductStatusMessage(ProvisionedProductStatusMessageT&& value) { SetProvisionedProductStatusMessage(std::forward<ProvisionedProductStatusMessageT>(value)); return *this;}
     ///@}
   private:
 

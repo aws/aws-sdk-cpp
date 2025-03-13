@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetInvoiceProfileResult::BatchGetInvoiceProfileResult()
-{
-}
-
 BatchGetInvoiceProfileResult::BatchGetInvoiceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchGetInvoiceProfileResult& BatchGetInvoiceProfileResult::operator =(const Aws
     {
       m_profiles.push_back(profilesJsonList[profilesIndex].AsObject());
     }
+    m_profilesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

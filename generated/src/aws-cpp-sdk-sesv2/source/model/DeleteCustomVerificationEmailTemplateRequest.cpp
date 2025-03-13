@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCustomVerificationEmailTemplateRequest::DeleteCustomVerificationEmailTemplateRequest() : 
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomVerificationEmailTemplateRequest::SerializePayload() const
 {
   return {};

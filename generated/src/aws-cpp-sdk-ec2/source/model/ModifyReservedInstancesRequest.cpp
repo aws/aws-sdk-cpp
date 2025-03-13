@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyReservedInstancesRequest::ModifyReservedInstancesRequest() : 
-    m_reservedInstancesIdsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_targetConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyReservedInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

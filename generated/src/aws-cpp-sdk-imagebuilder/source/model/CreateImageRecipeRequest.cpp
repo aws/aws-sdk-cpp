@@ -12,21 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateImageRecipeRequest::CreateImageRecipeRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_componentsHasBeenSet(false),
-    m_parentImageHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false),
-    m_additionalInstanceConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateImageRecipeRequest::SerializePayload() const
 {
   JsonValue payload;

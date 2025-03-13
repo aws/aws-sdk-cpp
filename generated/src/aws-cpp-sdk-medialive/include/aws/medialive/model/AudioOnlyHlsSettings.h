@@ -34,7 +34,7 @@ namespace Model
   class AudioOnlyHlsSettings
   {
   public:
-    AWS_MEDIALIVE_API AudioOnlyHlsSettings();
+    AWS_MEDIALIVE_API AudioOnlyHlsSettings() = default;
     AWS_MEDIALIVE_API AudioOnlyHlsSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AudioOnlyHlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * Specifies the group to which the audio Rendition belongs.
      */
-    inline const Aws::String& GetAudioGroupId() const{ return m_audioGroupId; }
+    inline const Aws::String& GetAudioGroupId() const { return m_audioGroupId; }
     inline bool AudioGroupIdHasBeenSet() const { return m_audioGroupIdHasBeenSet; }
-    inline void SetAudioGroupId(const Aws::String& value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId = value; }
-    inline void SetAudioGroupId(Aws::String&& value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId = std::move(value); }
-    inline void SetAudioGroupId(const char* value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId.assign(value); }
-    inline AudioOnlyHlsSettings& WithAudioGroupId(const Aws::String& value) { SetAudioGroupId(value); return *this;}
-    inline AudioOnlyHlsSettings& WithAudioGroupId(Aws::String&& value) { SetAudioGroupId(std::move(value)); return *this;}
-    inline AudioOnlyHlsSettings& WithAudioGroupId(const char* value) { SetAudioGroupId(value); return *this;}
+    template<typename AudioGroupIdT = Aws::String>
+    void SetAudioGroupId(AudioGroupIdT&& value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId = std::forward<AudioGroupIdT>(value); }
+    template<typename AudioGroupIdT = Aws::String>
+    AudioOnlyHlsSettings& WithAudioGroupId(AudioGroupIdT&& value) { SetAudioGroupId(std::forward<AudioGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,12 @@ The image is attached to the audio as an ID3 tag,
      * frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native
      * Frames" standard.
      */
-    inline const InputLocation& GetAudioOnlyImage() const{ return m_audioOnlyImage; }
+    inline const InputLocation& GetAudioOnlyImage() const { return m_audioOnlyImage; }
     inline bool AudioOnlyImageHasBeenSet() const { return m_audioOnlyImageHasBeenSet; }
-    inline void SetAudioOnlyImage(const InputLocation& value) { m_audioOnlyImageHasBeenSet = true; m_audioOnlyImage = value; }
-    inline void SetAudioOnlyImage(InputLocation&& value) { m_audioOnlyImageHasBeenSet = true; m_audioOnlyImage = std::move(value); }
-    inline AudioOnlyHlsSettings& WithAudioOnlyImage(const InputLocation& value) { SetAudioOnlyImage(value); return *this;}
-    inline AudioOnlyHlsSettings& WithAudioOnlyImage(InputLocation&& value) { SetAudioOnlyImage(std::move(value)); return *this;}
+    template<typename AudioOnlyImageT = InputLocation>
+    void SetAudioOnlyImage(AudioOnlyImageT&& value) { m_audioOnlyImageHasBeenSet = true; m_audioOnlyImage = std::forward<AudioOnlyImageT>(value); }
+    template<typename AudioOnlyImageT = InputLocation>
+    AudioOnlyHlsSettings& WithAudioOnlyImage(AudioOnlyImageT&& value) { SetAudioOnlyImage(std::forward<AudioOnlyImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,24 +96,20 @@ Alternate rendition that the client will not try to play
      * back by default. Represented as an EXT-X-MEDIA in the HLS manifest with
      * DEFAULT=NO, AUTOSELECT=NO
      */
-    inline const AudioOnlyHlsTrackType& GetAudioTrackType() const{ return m_audioTrackType; }
+    inline AudioOnlyHlsTrackType GetAudioTrackType() const { return m_audioTrackType; }
     inline bool AudioTrackTypeHasBeenSet() const { return m_audioTrackTypeHasBeenSet; }
-    inline void SetAudioTrackType(const AudioOnlyHlsTrackType& value) { m_audioTrackTypeHasBeenSet = true; m_audioTrackType = value; }
-    inline void SetAudioTrackType(AudioOnlyHlsTrackType&& value) { m_audioTrackTypeHasBeenSet = true; m_audioTrackType = std::move(value); }
-    inline AudioOnlyHlsSettings& WithAudioTrackType(const AudioOnlyHlsTrackType& value) { SetAudioTrackType(value); return *this;}
-    inline AudioOnlyHlsSettings& WithAudioTrackType(AudioOnlyHlsTrackType&& value) { SetAudioTrackType(std::move(value)); return *this;}
+    inline void SetAudioTrackType(AudioOnlyHlsTrackType value) { m_audioTrackTypeHasBeenSet = true; m_audioTrackType = value; }
+    inline AudioOnlyHlsSettings& WithAudioTrackType(AudioOnlyHlsTrackType value) { SetAudioTrackType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Specifies the segment type.
      */
-    inline const AudioOnlyHlsSegmentType& GetSegmentType() const{ return m_segmentType; }
+    inline AudioOnlyHlsSegmentType GetSegmentType() const { return m_segmentType; }
     inline bool SegmentTypeHasBeenSet() const { return m_segmentTypeHasBeenSet; }
-    inline void SetSegmentType(const AudioOnlyHlsSegmentType& value) { m_segmentTypeHasBeenSet = true; m_segmentType = value; }
-    inline void SetSegmentType(AudioOnlyHlsSegmentType&& value) { m_segmentTypeHasBeenSet = true; m_segmentType = std::move(value); }
-    inline AudioOnlyHlsSettings& WithSegmentType(const AudioOnlyHlsSegmentType& value) { SetSegmentType(value); return *this;}
-    inline AudioOnlyHlsSettings& WithSegmentType(AudioOnlyHlsSegmentType&& value) { SetSegmentType(std::move(value)); return *this;}
+    inline void SetSegmentType(AudioOnlyHlsSegmentType value) { m_segmentTypeHasBeenSet = true; m_segmentType = value; }
+    inline AudioOnlyHlsSettings& WithSegmentType(AudioOnlyHlsSegmentType value) { SetSegmentType(value); return *this;}
     ///@}
   private:
 
@@ -125,10 +119,10 @@ Alternate rendition that the client will not try to play
     InputLocation m_audioOnlyImage;
     bool m_audioOnlyImageHasBeenSet = false;
 
-    AudioOnlyHlsTrackType m_audioTrackType;
+    AudioOnlyHlsTrackType m_audioTrackType{AudioOnlyHlsTrackType::NOT_SET};
     bool m_audioTrackTypeHasBeenSet = false;
 
-    AudioOnlyHlsSegmentType m_segmentType;
+    AudioOnlyHlsSegmentType m_segmentType{AudioOnlyHlsSegmentType::NOT_SET};
     bool m_segmentTypeHasBeenSet = false;
   };
 

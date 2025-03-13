@@ -18,15 +18,7 @@ namespace ResourceExplorer2
 namespace Model
 {
 
-ResourceProperty::ResourceProperty() : 
-    m_dataHasBeenSet(false),
-    m_lastReportedAtHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ResourceProperty::ResourceProperty(JsonView jsonValue)
-  : ResourceProperty()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ResourceProperty& ResourceProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Data"))
   {
     m_data = jsonValue.GetObject("Data");
-
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastReportedAt"))
   {
     m_lastReportedAt = jsonValue.GetString("LastReportedAt");
-
     m_lastReportedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

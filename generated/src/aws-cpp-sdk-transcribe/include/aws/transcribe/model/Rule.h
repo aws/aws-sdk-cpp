@@ -44,7 +44,7 @@ namespace Model
   class Rule
   {
   public:
-    AWS_TRANSCRIBESERVICE_API Rule();
+    AWS_TRANSCRIBESERVICE_API Rule() = default;
     AWS_TRANSCRIBESERVICE_API Rule(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,12 @@ namespace Model
      * <p>Flag the presence or absence of periods of silence in your Call Analytics
      * transcription output. Refer to for more detail.</p>
      */
-    inline const NonTalkTimeFilter& GetNonTalkTimeFilter() const{ return m_nonTalkTimeFilter; }
+    inline const NonTalkTimeFilter& GetNonTalkTimeFilter() const { return m_nonTalkTimeFilter; }
     inline bool NonTalkTimeFilterHasBeenSet() const { return m_nonTalkTimeFilterHasBeenSet; }
-    inline void SetNonTalkTimeFilter(const NonTalkTimeFilter& value) { m_nonTalkTimeFilterHasBeenSet = true; m_nonTalkTimeFilter = value; }
-    inline void SetNonTalkTimeFilter(NonTalkTimeFilter&& value) { m_nonTalkTimeFilterHasBeenSet = true; m_nonTalkTimeFilter = std::move(value); }
-    inline Rule& WithNonTalkTimeFilter(const NonTalkTimeFilter& value) { SetNonTalkTimeFilter(value); return *this;}
-    inline Rule& WithNonTalkTimeFilter(NonTalkTimeFilter&& value) { SetNonTalkTimeFilter(std::move(value)); return *this;}
+    template<typename NonTalkTimeFilterT = NonTalkTimeFilter>
+    void SetNonTalkTimeFilter(NonTalkTimeFilterT&& value) { m_nonTalkTimeFilterHasBeenSet = true; m_nonTalkTimeFilter = std::forward<NonTalkTimeFilterT>(value); }
+    template<typename NonTalkTimeFilterT = NonTalkTimeFilter>
+    Rule& WithNonTalkTimeFilter(NonTalkTimeFilterT&& value) { SetNonTalkTimeFilter(std::forward<NonTalkTimeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +68,12 @@ namespace Model
      * <p>Flag the presence or absence of interruptions in your Call Analytics
      * transcription output. Refer to for more detail.</p>
      */
-    inline const InterruptionFilter& GetInterruptionFilter() const{ return m_interruptionFilter; }
+    inline const InterruptionFilter& GetInterruptionFilter() const { return m_interruptionFilter; }
     inline bool InterruptionFilterHasBeenSet() const { return m_interruptionFilterHasBeenSet; }
-    inline void SetInterruptionFilter(const InterruptionFilter& value) { m_interruptionFilterHasBeenSet = true; m_interruptionFilter = value; }
-    inline void SetInterruptionFilter(InterruptionFilter&& value) { m_interruptionFilterHasBeenSet = true; m_interruptionFilter = std::move(value); }
-    inline Rule& WithInterruptionFilter(const InterruptionFilter& value) { SetInterruptionFilter(value); return *this;}
-    inline Rule& WithInterruptionFilter(InterruptionFilter&& value) { SetInterruptionFilter(std::move(value)); return *this;}
+    template<typename InterruptionFilterT = InterruptionFilter>
+    void SetInterruptionFilter(InterruptionFilterT&& value) { m_interruptionFilterHasBeenSet = true; m_interruptionFilter = std::forward<InterruptionFilterT>(value); }
+    template<typename InterruptionFilterT = InterruptionFilter>
+    Rule& WithInterruptionFilter(InterruptionFilterT&& value) { SetInterruptionFilter(std::forward<InterruptionFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +81,12 @@ namespace Model
      * <p>Flag the presence or absence of specific words or phrases in your Call
      * Analytics transcription output. Refer to for more detail.</p>
      */
-    inline const TranscriptFilter& GetTranscriptFilter() const{ return m_transcriptFilter; }
+    inline const TranscriptFilter& GetTranscriptFilter() const { return m_transcriptFilter; }
     inline bool TranscriptFilterHasBeenSet() const { return m_transcriptFilterHasBeenSet; }
-    inline void SetTranscriptFilter(const TranscriptFilter& value) { m_transcriptFilterHasBeenSet = true; m_transcriptFilter = value; }
-    inline void SetTranscriptFilter(TranscriptFilter&& value) { m_transcriptFilterHasBeenSet = true; m_transcriptFilter = std::move(value); }
-    inline Rule& WithTranscriptFilter(const TranscriptFilter& value) { SetTranscriptFilter(value); return *this;}
-    inline Rule& WithTranscriptFilter(TranscriptFilter&& value) { SetTranscriptFilter(std::move(value)); return *this;}
+    template<typename TranscriptFilterT = TranscriptFilter>
+    void SetTranscriptFilter(TranscriptFilterT&& value) { m_transcriptFilterHasBeenSet = true; m_transcriptFilter = std::forward<TranscriptFilterT>(value); }
+    template<typename TranscriptFilterT = TranscriptFilter>
+    Rule& WithTranscriptFilter(TranscriptFilterT&& value) { SetTranscriptFilter(std::forward<TranscriptFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +94,12 @@ namespace Model
      * <p>Flag the presence or absence of specific sentiments in your Call Analytics
      * transcription output. Refer to for more detail.</p>
      */
-    inline const SentimentFilter& GetSentimentFilter() const{ return m_sentimentFilter; }
+    inline const SentimentFilter& GetSentimentFilter() const { return m_sentimentFilter; }
     inline bool SentimentFilterHasBeenSet() const { return m_sentimentFilterHasBeenSet; }
-    inline void SetSentimentFilter(const SentimentFilter& value) { m_sentimentFilterHasBeenSet = true; m_sentimentFilter = value; }
-    inline void SetSentimentFilter(SentimentFilter&& value) { m_sentimentFilterHasBeenSet = true; m_sentimentFilter = std::move(value); }
-    inline Rule& WithSentimentFilter(const SentimentFilter& value) { SetSentimentFilter(value); return *this;}
-    inline Rule& WithSentimentFilter(SentimentFilter&& value) { SetSentimentFilter(std::move(value)); return *this;}
+    template<typename SentimentFilterT = SentimentFilter>
+    void SetSentimentFilter(SentimentFilterT&& value) { m_sentimentFilterHasBeenSet = true; m_sentimentFilter = std::forward<SentimentFilterT>(value); }
+    template<typename SentimentFilterT = SentimentFilter>
+    Rule& WithSentimentFilter(SentimentFilterT&& value) { SetSentimentFilter(std::forward<SentimentFilterT>(value)); return *this;}
     ///@}
   private:
 

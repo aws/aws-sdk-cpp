@@ -20,23 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-AutoScalingInstanceDetails::AutoScalingInstanceDetails() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_lifecycleStateHasBeenSet(false),
-    m_healthStatusHasBeenSet(false),
-    m_launchConfigurationNameHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_protectedFromScaleIn(false),
-    m_protectedFromScaleInHasBeenSet(false),
-    m_weightedCapacityHasBeenSet(false)
-{
-}
-
 AutoScalingInstanceDetails::AutoScalingInstanceDetails(const XmlNode& xmlNode)
-  : AutoScalingInstanceDetails()
 {
   *this = xmlNode;
 }
@@ -52,60 +36,70 @@ AutoScalingInstanceDetails& AutoScalingInstanceDetails::operator =(const XmlNode
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("InstanceType");
     if(!instanceTypeNode.IsNull())
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
     if(!autoScalingGroupNameNode.IsNull())
     {
       m_autoScalingGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupNameNode.GetText());
       m_autoScalingGroupNameHasBeenSet = true;
+       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode lifecycleStateNode = resultNode.FirstChild("LifecycleState");
     if(!lifecycleStateNode.IsNull())
     {
       m_lifecycleState = Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleStateNode.GetText());
       m_lifecycleStateHasBeenSet = true;
+       m_lifecycleStateHasBeenSet = true;
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
     if(!healthStatusNode.IsNull())
     {
       m_healthStatus = Aws::Utils::Xml::DecodeEscapedXmlText(healthStatusNode.GetText());
       m_healthStatusHasBeenSet = true;
+       m_healthStatusHasBeenSet = true;
     }
     XmlNode launchConfigurationNameNode = resultNode.FirstChild("LaunchConfigurationName");
     if(!launchConfigurationNameNode.IsNull())
     {
       m_launchConfigurationName = Aws::Utils::Xml::DecodeEscapedXmlText(launchConfigurationNameNode.GetText());
       m_launchConfigurationNameHasBeenSet = true;
+       m_launchConfigurationNameHasBeenSet = true;
     }
     XmlNode launchTemplateNode = resultNode.FirstChild("LaunchTemplate");
     if(!launchTemplateNode.IsNull())
     {
       m_launchTemplate = launchTemplateNode;
       m_launchTemplateHasBeenSet = true;
+       m_launchTemplateHasBeenSet = true;
     }
     XmlNode protectedFromScaleInNode = resultNode.FirstChild("ProtectedFromScaleIn");
     if(!protectedFromScaleInNode.IsNull())
     {
       m_protectedFromScaleIn = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protectedFromScaleInNode.GetText()).c_str()).c_str());
       m_protectedFromScaleInHasBeenSet = true;
+       m_protectedFromScaleInHasBeenSet = true;
     }
     XmlNode weightedCapacityNode = resultNode.FirstChild("WeightedCapacity");
     if(!weightedCapacityNode.IsNull())
     {
       m_weightedCapacity = Aws::Utils::Xml::DecodeEscapedXmlText(weightedCapacityNode.GetText());
       m_weightedCapacityHasBeenSet = true;
+       m_weightedCapacityHasBeenSet = true;
     }
   }
 

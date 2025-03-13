@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayPolicyTableEntry::TransitGatewayPolicyTableEntry() : 
-    m_policyRuleNumberHasBeenSet(false),
-    m_policyRuleHasBeenSet(false),
-    m_targetRouteTableIdHasBeenSet(false)
-{
-}
-
 TransitGatewayPolicyTableEntry::TransitGatewayPolicyTableEntry(const XmlNode& xmlNode)
-  : TransitGatewayPolicyTableEntry()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ TransitGatewayPolicyTableEntry& TransitGatewayPolicyTableEntry::operator =(const
     {
       m_policyRuleNumber = Aws::Utils::Xml::DecodeEscapedXmlText(policyRuleNumberNode.GetText());
       m_policyRuleNumberHasBeenSet = true;
+       m_policyRuleNumberHasBeenSet = true;
     }
     XmlNode policyRuleNode = resultNode.FirstChild("policyRule");
     if(!policyRuleNode.IsNull())
     {
       m_policyRule = policyRuleNode;
       m_policyRuleHasBeenSet = true;
+       m_policyRuleHasBeenSet = true;
     }
     XmlNode targetRouteTableIdNode = resultNode.FirstChild("targetRouteTableId");
     if(!targetRouteTableIdNode.IsNull())
     {
       m_targetRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(targetRouteTableIdNode.GetText());
       m_targetRouteTableIdHasBeenSet = true;
+       m_targetRouteTableIdHasBeenSet = true;
     }
   }
 

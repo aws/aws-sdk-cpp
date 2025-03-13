@@ -18,22 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-CodegenGenericDataField::CodegenGenericDataField() : 
-    m_dataType(CodegenGenericDataFieldDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_dataTypeValueHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_isArray(false),
-    m_isArrayHasBeenSet(false),
-    m_relationshipHasBeenSet(false)
-{
-}
-
 CodegenGenericDataField::CodegenGenericDataField(JsonView jsonValue)
-  : CodegenGenericDataField()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ CodegenGenericDataField& CodegenGenericDataField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataType"))
   {
     m_dataType = CodegenGenericDataFieldDataTypeMapper::GetCodegenGenericDataFieldDataTypeForName(jsonValue.GetString("dataType"));
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataTypeValue"))
   {
     m_dataTypeValue = jsonValue.GetString("dataTypeValue");
-
     m_dataTypeValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetBool("required");
-
     m_requiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readOnly"))
   {
     m_readOnly = jsonValue.GetBool("readOnly");
-
     m_readOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isArray"))
   {
     m_isArray = jsonValue.GetBool("isArray");
-
     m_isArrayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationship"))
   {
     m_relationship = jsonValue.GetObject("relationship");
-
     m_relationshipHasBeenSet = true;
   }
-
   return *this;
 }
 

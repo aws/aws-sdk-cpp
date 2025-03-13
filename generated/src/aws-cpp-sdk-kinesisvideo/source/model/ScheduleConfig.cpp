@@ -18,15 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-ScheduleConfig::ScheduleConfig() : 
-    m_scheduleExpressionHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
-{
-}
-
 ScheduleConfig::ScheduleConfig(JsonView jsonValue)
-  : ScheduleConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ScheduleConfig& ScheduleConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ScheduleExpression"))
   {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
-
     m_scheduleExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInteger("DurationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

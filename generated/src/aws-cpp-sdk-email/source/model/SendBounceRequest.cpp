@@ -10,16 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-SendBounceRequest::SendBounceRequest() : 
-    m_originalMessageIdHasBeenSet(false),
-    m_bounceSenderHasBeenSet(false),
-    m_explanationHasBeenSet(false),
-    m_messageDsnHasBeenSet(false),
-    m_bouncedRecipientInfoListHasBeenSet(false),
-    m_bounceSenderArnHasBeenSet(false)
-{
-}
-
 Aws::String SendBounceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

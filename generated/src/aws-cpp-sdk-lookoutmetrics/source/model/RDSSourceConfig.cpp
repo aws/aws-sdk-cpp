@@ -18,21 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-RDSSourceConfig::RDSSourceConfig() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_databaseHostHasBeenSet(false),
-    m_databasePort(0),
-    m_databasePortHasBeenSet(false),
-    m_secretManagerArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
-{
-}
-
 RDSSourceConfig::RDSSourceConfig(JsonView jsonValue)
-  : RDSSourceConfig()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ RDSSourceConfig& RDSSourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DBInstanceIdentifier"))
   {
     m_dBInstanceIdentifier = jsonValue.GetString("DBInstanceIdentifier");
-
     m_dBInstanceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseHost"))
   {
     m_databaseHost = jsonValue.GetString("DatabaseHost");
-
     m_databaseHostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabasePort"))
   {
     m_databasePort = jsonValue.GetInteger("DatabasePort");
-
     m_databasePortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretManagerArn"))
   {
     m_secretManagerArn = jsonValue.GetString("SecretManagerArn");
-
     m_secretManagerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("VpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

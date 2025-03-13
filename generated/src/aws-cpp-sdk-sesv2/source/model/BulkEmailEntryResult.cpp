@@ -18,16 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-BulkEmailEntryResult::BulkEmailEntryResult() : 
-    m_status(BulkEmailStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_messageIdHasBeenSet(false)
-{
-}
-
 BulkEmailEntryResult::BulkEmailEntryResult(JsonView jsonValue)
-  : BulkEmailEntryResult()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BulkEmailEntryResult& BulkEmailEntryResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = BulkEmailStatusMapper::GetBulkEmailStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetString("Error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageId"))
   {
     m_messageId = jsonValue.GetString("MessageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   return *this;
 }
 

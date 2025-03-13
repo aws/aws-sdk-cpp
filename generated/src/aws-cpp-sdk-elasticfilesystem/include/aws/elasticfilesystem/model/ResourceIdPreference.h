@@ -35,7 +35,7 @@ namespace Model
   class ResourceIdPreference
   {
   public:
-    AWS_EFS_API ResourceIdPreference();
+    AWS_EFS_API ResourceIdPreference() = default;
     AWS_EFS_API ResourceIdPreference(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API ResourceIdPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17
      * characters) or <code>SHORT_ID</code> (8 characters).</p>
      */
-    inline const ResourceIdType& GetResourceIdType() const{ return m_resourceIdType; }
+    inline ResourceIdType GetResourceIdType() const { return m_resourceIdType; }
     inline bool ResourceIdTypeHasBeenSet() const { return m_resourceIdTypeHasBeenSet; }
-    inline void SetResourceIdType(const ResourceIdType& value) { m_resourceIdTypeHasBeenSet = true; m_resourceIdType = value; }
-    inline void SetResourceIdType(ResourceIdType&& value) { m_resourceIdTypeHasBeenSet = true; m_resourceIdType = std::move(value); }
-    inline ResourceIdPreference& WithResourceIdType(const ResourceIdType& value) { SetResourceIdType(value); return *this;}
-    inline ResourceIdPreference& WithResourceIdType(ResourceIdType&& value) { SetResourceIdType(std::move(value)); return *this;}
+    inline void SetResourceIdType(ResourceIdType value) { m_resourceIdTypeHasBeenSet = true; m_resourceIdType = value; }
+    inline ResourceIdPreference& WithResourceIdType(ResourceIdType value) { SetResourceIdType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,17 @@ namespace Model
      * <p>Identifies the Amazon EFS resources to which the ID preference setting
      * applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
      */
-    inline const Aws::Vector<Resource>& GetResources() const{ return m_resources; }
+    inline const Aws::Vector<Resource>& GetResources() const { return m_resources; }
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-    inline void SetResources(const Aws::Vector<Resource>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-    inline void SetResources(Aws::Vector<Resource>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-    inline ResourceIdPreference& WithResources(const Aws::Vector<Resource>& value) { SetResources(value); return *this;}
-    inline ResourceIdPreference& WithResources(Aws::Vector<Resource>&& value) { SetResources(std::move(value)); return *this;}
-    inline ResourceIdPreference& AddResources(const Resource& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-    inline ResourceIdPreference& AddResources(Resource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
+    template<typename ResourcesT = Aws::Vector<Resource>>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = Aws::Vector<Resource>>
+    ResourceIdPreference& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
+    inline ResourceIdPreference& AddResources(Resource value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
     ///@}
   private:
 
-    ResourceIdType m_resourceIdType;
+    ResourceIdType m_resourceIdType{ResourceIdType::NOT_SET};
     bool m_resourceIdTypeHasBeenSet = false;
 
     Aws::Vector<Resource> m_resources;

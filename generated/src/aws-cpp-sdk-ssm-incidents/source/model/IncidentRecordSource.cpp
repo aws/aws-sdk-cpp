@@ -18,16 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-IncidentRecordSource::IncidentRecordSource() : 
-    m_createdByHasBeenSet(false),
-    m_invokedByHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 IncidentRecordSource::IncidentRecordSource(JsonView jsonValue)
-  : IncidentRecordSource()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ IncidentRecordSource& IncidentRecordSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invokedBy"))
   {
     m_invokedBy = jsonValue.GetString("invokedBy");
-
     m_invokedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

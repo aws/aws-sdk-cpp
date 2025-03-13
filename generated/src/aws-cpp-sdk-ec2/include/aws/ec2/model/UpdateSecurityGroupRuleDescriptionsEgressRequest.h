@@ -24,7 +24,7 @@ namespace Model
   class UpdateSecurityGroupRuleDescriptionsEgressRequest : public EC2Request
   {
   public:
-    AWS_EC2_API UpdateSecurityGroupRuleDescriptionsEgressRequest();
+    AWS_EC2_API UpdateSecurityGroupRuleDescriptionsEgressRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,7 +46,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -58,14 +58,12 @@ namespace Model
      * or the security group name in the request. For security groups in a nondefault
      * VPC, you must specify the security group ID.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    UpdateSecurityGroupRuleDescriptionsEgressRequest& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * <p>[Default VPC] The name of the security group. You must specify either the
      * security group ID or the security group name.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    UpdateSecurityGroupRuleDescriptionsEgressRequest& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +84,14 @@ namespace Model
      * <p>The IP permissions for the security group rule. You must specify either the
      * IP permissions or the description.</p>
      */
-    inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
+    inline const Aws::Vector<IpPermission>& GetIpPermissions() const { return m_ipPermissions; }
     inline bool IpPermissionsHasBeenSet() const { return m_ipPermissionsHasBeenSet; }
-    inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
-    inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
+    template<typename IpPermissionsT = Aws::Vector<IpPermission>>
+    void SetIpPermissions(IpPermissionsT&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::forward<IpPermissionsT>(value); }
+    template<typename IpPermissionsT = Aws::Vector<IpPermission>>
+    UpdateSecurityGroupRuleDescriptionsEgressRequest& WithIpPermissions(IpPermissionsT&& value) { SetIpPermissions(std::forward<IpPermissionsT>(value)); return *this;}
+    template<typename IpPermissionsT = IpPermission>
+    UpdateSecurityGroupRuleDescriptionsEgressRequest& AddIpPermissions(IpPermissionsT&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.emplace_back(std::forward<IpPermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -103,18 +99,18 @@ namespace Model
      * <p>The description for the egress security group rules. You must specify either
      * the description or the IP permissions.</p>
      */
-    inline const Aws::Vector<SecurityGroupRuleDescription>& GetSecurityGroupRuleDescriptions() const{ return m_securityGroupRuleDescriptions; }
+    inline const Aws::Vector<SecurityGroupRuleDescription>& GetSecurityGroupRuleDescriptions() const { return m_securityGroupRuleDescriptions; }
     inline bool SecurityGroupRuleDescriptionsHasBeenSet() const { return m_securityGroupRuleDescriptionsHasBeenSet; }
-    inline void SetSecurityGroupRuleDescriptions(const Aws::Vector<SecurityGroupRuleDescription>& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions = value; }
-    inline void SetSecurityGroupRuleDescriptions(Aws::Vector<SecurityGroupRuleDescription>&& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions = std::move(value); }
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithSecurityGroupRuleDescriptions(const Aws::Vector<SecurityGroupRuleDescription>& value) { SetSecurityGroupRuleDescriptions(value); return *this;}
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithSecurityGroupRuleDescriptions(Aws::Vector<SecurityGroupRuleDescription>&& value) { SetSecurityGroupRuleDescriptions(std::move(value)); return *this;}
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& AddSecurityGroupRuleDescriptions(const SecurityGroupRuleDescription& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions.push_back(value); return *this; }
-    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& AddSecurityGroupRuleDescriptions(SecurityGroupRuleDescription&& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions.push_back(std::move(value)); return *this; }
+    template<typename SecurityGroupRuleDescriptionsT = Aws::Vector<SecurityGroupRuleDescription>>
+    void SetSecurityGroupRuleDescriptions(SecurityGroupRuleDescriptionsT&& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions = std::forward<SecurityGroupRuleDescriptionsT>(value); }
+    template<typename SecurityGroupRuleDescriptionsT = Aws::Vector<SecurityGroupRuleDescription>>
+    UpdateSecurityGroupRuleDescriptionsEgressRequest& WithSecurityGroupRuleDescriptions(SecurityGroupRuleDescriptionsT&& value) { SetSecurityGroupRuleDescriptions(std::forward<SecurityGroupRuleDescriptionsT>(value)); return *this;}
+    template<typename SecurityGroupRuleDescriptionsT = SecurityGroupRuleDescription>
+    UpdateSecurityGroupRuleDescriptionsEgressRequest& AddSecurityGroupRuleDescriptions(SecurityGroupRuleDescriptionsT&& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions.emplace_back(std::forward<SecurityGroupRuleDescriptionsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_groupId;

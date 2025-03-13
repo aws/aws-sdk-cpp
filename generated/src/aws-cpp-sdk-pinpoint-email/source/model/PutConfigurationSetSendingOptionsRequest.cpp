@@ -12,13 +12,6 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutConfigurationSetSendingOptionsRequest::PutConfigurationSetSendingOptionsRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_sendingEnabled(false),
-    m_sendingEnabledHasBeenSet(false)
-{
-}
-
 Aws::String PutConfigurationSetSendingOptionsRequest::SerializePayload() const
 {
   JsonValue payload;

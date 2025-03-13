@@ -21,17 +21,7 @@ namespace S3
 namespace Model
 {
 
-NotificationConfiguration::NotificationConfiguration() : 
-    m_topicConfigurationsHasBeenSet(false),
-    m_queueConfigurationsHasBeenSet(false),
-    m_lambdaFunctionConfigurationsHasBeenSet(false),
-    m_eventBridgeConfigurationHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 NotificationConfiguration::NotificationConfiguration(const XmlNode& xmlNode)
-  : NotificationConfiguration()
 {
   *this = xmlNode;
 }
@@ -46,43 +36,47 @@ NotificationConfiguration& NotificationConfiguration::operator =(const XmlNode& 
     if(!topicConfigurationsNode.IsNull())
     {
       XmlNode topicConfigurationMember = topicConfigurationsNode;
+      m_topicConfigurationsHasBeenSet = !topicConfigurationMember.IsNull();
       while(!topicConfigurationMember.IsNull())
       {
         m_topicConfigurations.push_back(topicConfigurationMember);
         topicConfigurationMember = topicConfigurationMember.NextNode("TopicConfiguration");
       }
 
-      m_topicConfigurationsHasBeenSet = true;
+       m_topicConfigurationsHasBeenSet = true;
     }
     XmlNode queueConfigurationsNode = resultNode.FirstChild("QueueConfiguration");
     if(!queueConfigurationsNode.IsNull())
     {
       XmlNode queueConfigurationMember = queueConfigurationsNode;
+      m_queueConfigurationsHasBeenSet = !queueConfigurationMember.IsNull();
       while(!queueConfigurationMember.IsNull())
       {
         m_queueConfigurations.push_back(queueConfigurationMember);
         queueConfigurationMember = queueConfigurationMember.NextNode("QueueConfiguration");
       }
 
-      m_queueConfigurationsHasBeenSet = true;
+       m_queueConfigurationsHasBeenSet = true;
     }
     XmlNode lambdaFunctionConfigurationsNode = resultNode.FirstChild("CloudFunctionConfiguration");
     if(!lambdaFunctionConfigurationsNode.IsNull())
     {
       XmlNode cloudFunctionConfigurationMember = lambdaFunctionConfigurationsNode;
+      m_lambdaFunctionConfigurationsHasBeenSet = !cloudFunctionConfigurationMember.IsNull();
       while(!cloudFunctionConfigurationMember.IsNull())
       {
         m_lambdaFunctionConfigurations.push_back(cloudFunctionConfigurationMember);
         cloudFunctionConfigurationMember = cloudFunctionConfigurationMember.NextNode("CloudFunctionConfiguration");
       }
 
-      m_lambdaFunctionConfigurationsHasBeenSet = true;
+       m_lambdaFunctionConfigurationsHasBeenSet = true;
     }
     XmlNode eventBridgeConfigurationNode = resultNode.FirstChild("EventBridgeConfiguration");
     if(!eventBridgeConfigurationNode.IsNull())
     {
       m_eventBridgeConfiguration = eventBridgeConfigurationNode;
       m_eventBridgeConfigurationHasBeenSet = true;
+       m_eventBridgeConfigurationHasBeenSet = true;
     }
   }
 

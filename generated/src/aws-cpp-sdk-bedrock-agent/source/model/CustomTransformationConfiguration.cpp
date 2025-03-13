@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-CustomTransformationConfiguration::CustomTransformationConfiguration() : 
-    m_intermediateStorageHasBeenSet(false),
-    m_transformationsHasBeenSet(false)
-{
-}
-
 CustomTransformationConfiguration::CustomTransformationConfiguration(JsonView jsonValue)
-  : CustomTransformationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CustomTransformationConfiguration& CustomTransformationConfiguration::operator =
   if(jsonValue.ValueExists("intermediateStorage"))
   {
     m_intermediateStorage = jsonValue.GetObject("intermediateStorage");
-
     m_intermediateStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transformations"))
   {
     Aws::Utils::Array<JsonView> transformationsJsonList = jsonValue.GetArray("transformations");
@@ -48,7 +39,6 @@ CustomTransformationConfiguration& CustomTransformationConfiguration::operator =
     }
     m_transformationsHasBeenSet = true;
   }
-
   return *this;
 }
 

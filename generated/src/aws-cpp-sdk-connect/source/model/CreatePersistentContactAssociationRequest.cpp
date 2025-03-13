@@ -12,16 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePersistentContactAssociationRequest::CreatePersistentContactAssociationRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_initialContactIdHasBeenSet(false),
-    m_rehydrationType(RehydrationType::NOT_SET),
-    m_rehydrationTypeHasBeenSet(false),
-    m_sourceContactIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreatePersistentContactAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

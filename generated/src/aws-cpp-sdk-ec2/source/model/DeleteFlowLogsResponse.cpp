@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteFlowLogsResponse::DeleteFlowLogsResponse()
-{
-}
-
 DeleteFlowLogsResponse::DeleteFlowLogsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteFlowLogsResponse& DeleteFlowLogsResponse::operator =(const Aws::AmazonWebS
     if(!unsuccessfulNode.IsNull())
     {
       XmlNode unsuccessfulMember = unsuccessfulNode.FirstChild("item");
+      m_unsuccessfulHasBeenSet = !unsuccessfulMember.IsNull();
       while(!unsuccessfulMember.IsNull())
       {
         m_unsuccessful.push_back(unsuccessfulMember);
@@ -56,6 +53,7 @@ DeleteFlowLogsResponse& DeleteFlowLogsResponse::operator =(const Aws::AmazonWebS
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteFlowLogsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

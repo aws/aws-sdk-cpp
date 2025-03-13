@@ -18,10 +18,6 @@ namespace JsonProtocol
 namespace Model
 {
 
-EmptyStruct::EmptyStruct()
-{
-}
-
 EmptyStruct::EmptyStruct(JsonView jsonValue)
 {
   *this = jsonValue;

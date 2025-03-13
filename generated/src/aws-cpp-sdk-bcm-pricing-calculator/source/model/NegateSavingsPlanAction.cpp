@@ -18,13 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-NegateSavingsPlanAction::NegateSavingsPlanAction() : 
-    m_savingsPlanIdHasBeenSet(false)
-{
-}
-
 NegateSavingsPlanAction::NegateSavingsPlanAction(JsonView jsonValue)
-  : NegateSavingsPlanAction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NegateSavingsPlanAction& NegateSavingsPlanAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("savingsPlanId"))
   {
     m_savingsPlanId = jsonValue.GetString("savingsPlanId");
-
     m_savingsPlanIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class WaterfallChartOptions
   {
   public:
-    AWS_QUICKSIGHT_API WaterfallChartOptions();
+    AWS_QUICKSIGHT_API WaterfallChartOptions() = default;
     AWS_QUICKSIGHT_API WaterfallChartOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API WaterfallChartOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>This option determines the total bar label of a waterfall visual.</p>
      */
-    inline const Aws::String& GetTotalBarLabel() const{ return m_totalBarLabel; }
+    inline const Aws::String& GetTotalBarLabel() const { return m_totalBarLabel; }
     inline bool TotalBarLabelHasBeenSet() const { return m_totalBarLabelHasBeenSet; }
-    inline void SetTotalBarLabel(const Aws::String& value) { m_totalBarLabelHasBeenSet = true; m_totalBarLabel = value; }
-    inline void SetTotalBarLabel(Aws::String&& value) { m_totalBarLabelHasBeenSet = true; m_totalBarLabel = std::move(value); }
-    inline void SetTotalBarLabel(const char* value) { m_totalBarLabelHasBeenSet = true; m_totalBarLabel.assign(value); }
-    inline WaterfallChartOptions& WithTotalBarLabel(const Aws::String& value) { SetTotalBarLabel(value); return *this;}
-    inline WaterfallChartOptions& WithTotalBarLabel(Aws::String&& value) { SetTotalBarLabel(std::move(value)); return *this;}
-    inline WaterfallChartOptions& WithTotalBarLabel(const char* value) { SetTotalBarLabel(value); return *this;}
+    template<typename TotalBarLabelT = Aws::String>
+    void SetTotalBarLabel(TotalBarLabelT&& value) { m_totalBarLabelHasBeenSet = true; m_totalBarLabel = std::forward<TotalBarLabelT>(value); }
+    template<typename TotalBarLabelT = Aws::String>
+    WaterfallChartOptions& WithTotalBarLabel(TotalBarLabelT&& value) { SetTotalBarLabel(std::forward<TotalBarLabelT>(value)); return *this;}
     ///@}
   private:
 

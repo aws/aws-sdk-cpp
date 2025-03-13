@@ -33,7 +33,7 @@ namespace Model
   class CommandPayload
   {
   public:
-    AWS_IOT_API CommandPayload();
+    AWS_IOT_API CommandPayload() = default;
     AWS_IOT_API CommandPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API CommandPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The static payload file for the command.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetContent() const{ return m_content; }
+    inline const Aws::Utils::ByteBuffer& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::Utils::ByteBuffer& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::Utils::ByteBuffer&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline CommandPayload& WithContent(const Aws::Utils::ByteBuffer& value) { SetContent(value); return *this;}
-    inline CommandPayload& WithContent(Aws::Utils::ByteBuffer&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = Aws::Utils::ByteBuffer>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::Utils::ByteBuffer>
+    CommandPayload& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +59,16 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/MIME_types/Common_types">Common
      * MIME types</a>.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline CommandPayload& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline CommandPayload& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline CommandPayload& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    CommandPayload& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_content;
+    Aws::Utils::ByteBuffer m_content{};
     bool m_contentHasBeenSet = false;
 
     Aws::String m_contentType;

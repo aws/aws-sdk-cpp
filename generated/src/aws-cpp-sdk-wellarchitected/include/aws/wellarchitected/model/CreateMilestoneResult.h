@@ -32,46 +32,45 @@ namespace Model
   class CreateMilestoneResult
   {
   public:
-    AWS_WELLARCHITECTED_API CreateMilestoneResult();
+    AWS_WELLARCHITECTED_API CreateMilestoneResult() = default;
     AWS_WELLARCHITECTED_API CreateMilestoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API CreateMilestoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadId.assign(value); }
-    inline CreateMilestoneResult& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline CreateMilestoneResult& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline CreateMilestoneResult& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    CreateMilestoneResult& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMilestoneNumber() const{ return m_milestoneNumber; }
-    inline void SetMilestoneNumber(int value) { m_milestoneNumber = value; }
+    inline int GetMilestoneNumber() const { return m_milestoneNumber; }
+    inline void SetMilestoneNumber(int value) { m_milestoneNumberHasBeenSet = true; m_milestoneNumber = value; }
     inline CreateMilestoneResult& WithMilestoneNumber(int value) { SetMilestoneNumber(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMilestoneResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMilestoneResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMilestoneResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMilestoneResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workloadId;
+    bool m_workloadIdHasBeenSet = false;
 
-    int m_milestoneNumber;
+    int m_milestoneNumber{0};
+    bool m_milestoneNumberHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

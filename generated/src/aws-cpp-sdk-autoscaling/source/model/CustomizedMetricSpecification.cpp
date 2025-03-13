@@ -20,21 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-CustomizedMetricSpecification::CustomizedMetricSpecification() : 
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_statistic(MetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_metricsHasBeenSet(false)
-{
-}
-
 CustomizedMetricSpecification::CustomizedMetricSpecification(const XmlNode& xmlNode)
-  : CustomizedMetricSpecification()
 {
   *this = xmlNode;
 }
@@ -50,54 +36,61 @@ CustomizedMetricSpecification& CustomizedMetricSpecification::operator =(const X
     {
       m_metricName = Aws::Utils::Xml::DecodeEscapedXmlText(metricNameNode.GetText());
       m_metricNameHasBeenSet = true;
+       m_metricNameHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
       m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
+       m_namespaceHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
     if(!dimensionsNode.IsNull())
     {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
+      m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
       while(!dimensionsMember.IsNull())
       {
         m_dimensions.push_back(dimensionsMember);
         dimensionsMember = dimensionsMember.NextNode("member");
       }
 
-      m_dimensionsHasBeenSet = true;
+       m_dimensionsHasBeenSet = true;
     }
     XmlNode statisticNode = resultNode.FirstChild("Statistic");
     if(!statisticNode.IsNull())
     {
-      m_statistic = MetricStatisticMapper::GetMetricStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()).c_str());
+      m_statistic = MetricStatisticMapper::GetMetricStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()));
       m_statisticHasBeenSet = true;
+       m_statisticHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
     {
       m_unit = Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText());
       m_unitHasBeenSet = true;
+       m_unitHasBeenSet = true;
     }
     XmlNode periodNode = resultNode.FirstChild("Period");
     if(!periodNode.IsNull())
     {
       m_period = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
       m_periodHasBeenSet = true;
+       m_periodHasBeenSet = true;
     }
     XmlNode metricsNode = resultNode.FirstChild("Metrics");
     if(!metricsNode.IsNull())
     {
       XmlNode metricsMember = metricsNode.FirstChild("member");
+      m_metricsHasBeenSet = !metricsMember.IsNull();
       while(!metricsMember.IsNull())
       {
         m_metrics.push_back(metricsMember);
         metricsMember = metricsMember.NextNode("member");
       }
 
-      m_metricsHasBeenSet = true;
+       m_metricsHasBeenSet = true;
     }
   }
 

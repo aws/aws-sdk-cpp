@@ -35,7 +35,7 @@ namespace Model
   class UsageByAccount
   {
   public:
-    AWS_MACIE2_API UsageByAccount();
+    AWS_MACIE2_API UsageByAccount() = default;
     AWS_MACIE2_API UsageByAccount(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API UsageByAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,22 @@ namespace Model
      * <p>The type of currency that the value for the metric (estimatedCost) is
      * reported in.</p>
      */
-    inline const Currency& GetCurrency() const{ return m_currency; }
+    inline Currency GetCurrency() const { return m_currency; }
     inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }
-    inline void SetCurrency(const Currency& value) { m_currencyHasBeenSet = true; m_currency = value; }
-    inline void SetCurrency(Currency&& value) { m_currencyHasBeenSet = true; m_currency = std::move(value); }
-    inline UsageByAccount& WithCurrency(const Currency& value) { SetCurrency(value); return *this;}
-    inline UsageByAccount& WithCurrency(Currency&& value) { SetCurrency(std::move(value)); return *this;}
+    inline void SetCurrency(Currency value) { m_currencyHasBeenSet = true; m_currency = value; }
+    inline UsageByAccount& WithCurrency(Currency value) { SetCurrency(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The estimated value for the metric.</p>
      */
-    inline const Aws::String& GetEstimatedCost() const{ return m_estimatedCost; }
+    inline const Aws::String& GetEstimatedCost() const { return m_estimatedCost; }
     inline bool EstimatedCostHasBeenSet() const { return m_estimatedCostHasBeenSet; }
-    inline void SetEstimatedCost(const Aws::String& value) { m_estimatedCostHasBeenSet = true; m_estimatedCost = value; }
-    inline void SetEstimatedCost(Aws::String&& value) { m_estimatedCostHasBeenSet = true; m_estimatedCost = std::move(value); }
-    inline void SetEstimatedCost(const char* value) { m_estimatedCostHasBeenSet = true; m_estimatedCost.assign(value); }
-    inline UsageByAccount& WithEstimatedCost(const Aws::String& value) { SetEstimatedCost(value); return *this;}
-    inline UsageByAccount& WithEstimatedCost(Aws::String&& value) { SetEstimatedCost(std::move(value)); return *this;}
-    inline UsageByAccount& WithEstimatedCost(const char* value) { SetEstimatedCost(value); return *this;}
+    template<typename EstimatedCostT = Aws::String>
+    void SetEstimatedCost(EstimatedCostT&& value) { m_estimatedCostHasBeenSet = true; m_estimatedCost = std::forward<EstimatedCostT>(value); }
+    template<typename EstimatedCostT = Aws::String>
+    UsageByAccount& WithEstimatedCost(EstimatedCostT&& value) { SetEstimatedCost(std::forward<EstimatedCostT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,12 @@ namespace Model
      * <p>The current value for the quota that corresponds to the metric specified by
      * the type field.</p>
      */
-    inline const ServiceLimit& GetServiceLimit() const{ return m_serviceLimit; }
+    inline const ServiceLimit& GetServiceLimit() const { return m_serviceLimit; }
     inline bool ServiceLimitHasBeenSet() const { return m_serviceLimitHasBeenSet; }
-    inline void SetServiceLimit(const ServiceLimit& value) { m_serviceLimitHasBeenSet = true; m_serviceLimit = value; }
-    inline void SetServiceLimit(ServiceLimit&& value) { m_serviceLimitHasBeenSet = true; m_serviceLimit = std::move(value); }
-    inline UsageByAccount& WithServiceLimit(const ServiceLimit& value) { SetServiceLimit(value); return *this;}
-    inline UsageByAccount& WithServiceLimit(ServiceLimit&& value) { SetServiceLimit(std::move(value)); return *this;}
+    template<typename ServiceLimitT = ServiceLimit>
+    void SetServiceLimit(ServiceLimitT&& value) { m_serviceLimitHasBeenSet = true; m_serviceLimit = std::forward<ServiceLimitT>(value); }
+    template<typename ServiceLimitT = ServiceLimit>
+    UsageByAccount& WithServiceLimit(ServiceLimitT&& value) { SetServiceLimit(std::forward<ServiceLimitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,16 +85,14 @@ namespace Model
      * sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and,
      * SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
      */
-    inline const UsageType& GetType() const{ return m_type; }
+    inline UsageType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const UsageType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(UsageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline UsageByAccount& WithType(const UsageType& value) { SetType(value); return *this;}
-    inline UsageByAccount& WithType(UsageType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(UsageType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline UsageByAccount& WithType(UsageType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    Currency m_currency;
+    Currency m_currency{Currency::NOT_SET};
     bool m_currencyHasBeenSet = false;
 
     Aws::String m_estimatedCost;
@@ -107,7 +101,7 @@ namespace Model
     ServiceLimit m_serviceLimit;
     bool m_serviceLimitHasBeenSet = false;
 
-    UsageType m_type;
+    UsageType m_type{UsageType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

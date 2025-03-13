@@ -37,7 +37,7 @@ namespace Model
   class DatasetDefinition
   {
   public:
-    AWS_SAGEMAKER_API DatasetDefinition();
+    AWS_SAGEMAKER_API DatasetDefinition() = default;
     AWS_SAGEMAKER_API DatasetDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DatasetDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,22 +45,22 @@ namespace Model
 
     ///@{
     
-    inline const AthenaDatasetDefinition& GetAthenaDatasetDefinition() const{ return m_athenaDatasetDefinition; }
+    inline const AthenaDatasetDefinition& GetAthenaDatasetDefinition() const { return m_athenaDatasetDefinition; }
     inline bool AthenaDatasetDefinitionHasBeenSet() const { return m_athenaDatasetDefinitionHasBeenSet; }
-    inline void SetAthenaDatasetDefinition(const AthenaDatasetDefinition& value) { m_athenaDatasetDefinitionHasBeenSet = true; m_athenaDatasetDefinition = value; }
-    inline void SetAthenaDatasetDefinition(AthenaDatasetDefinition&& value) { m_athenaDatasetDefinitionHasBeenSet = true; m_athenaDatasetDefinition = std::move(value); }
-    inline DatasetDefinition& WithAthenaDatasetDefinition(const AthenaDatasetDefinition& value) { SetAthenaDatasetDefinition(value); return *this;}
-    inline DatasetDefinition& WithAthenaDatasetDefinition(AthenaDatasetDefinition&& value) { SetAthenaDatasetDefinition(std::move(value)); return *this;}
+    template<typename AthenaDatasetDefinitionT = AthenaDatasetDefinition>
+    void SetAthenaDatasetDefinition(AthenaDatasetDefinitionT&& value) { m_athenaDatasetDefinitionHasBeenSet = true; m_athenaDatasetDefinition = std::forward<AthenaDatasetDefinitionT>(value); }
+    template<typename AthenaDatasetDefinitionT = AthenaDatasetDefinition>
+    DatasetDefinition& WithAthenaDatasetDefinition(AthenaDatasetDefinitionT&& value) { SetAthenaDatasetDefinition(std::forward<AthenaDatasetDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const RedshiftDatasetDefinition& GetRedshiftDatasetDefinition() const{ return m_redshiftDatasetDefinition; }
+    inline const RedshiftDatasetDefinition& GetRedshiftDatasetDefinition() const { return m_redshiftDatasetDefinition; }
     inline bool RedshiftDatasetDefinitionHasBeenSet() const { return m_redshiftDatasetDefinitionHasBeenSet; }
-    inline void SetRedshiftDatasetDefinition(const RedshiftDatasetDefinition& value) { m_redshiftDatasetDefinitionHasBeenSet = true; m_redshiftDatasetDefinition = value; }
-    inline void SetRedshiftDatasetDefinition(RedshiftDatasetDefinition&& value) { m_redshiftDatasetDefinitionHasBeenSet = true; m_redshiftDatasetDefinition = std::move(value); }
-    inline DatasetDefinition& WithRedshiftDatasetDefinition(const RedshiftDatasetDefinition& value) { SetRedshiftDatasetDefinition(value); return *this;}
-    inline DatasetDefinition& WithRedshiftDatasetDefinition(RedshiftDatasetDefinition&& value) { SetRedshiftDatasetDefinition(std::move(value)); return *this;}
+    template<typename RedshiftDatasetDefinitionT = RedshiftDatasetDefinition>
+    void SetRedshiftDatasetDefinition(RedshiftDatasetDefinitionT&& value) { m_redshiftDatasetDefinitionHasBeenSet = true; m_redshiftDatasetDefinition = std::forward<RedshiftDatasetDefinitionT>(value); }
+    template<typename RedshiftDatasetDefinitionT = RedshiftDatasetDefinition>
+    DatasetDefinition& WithRedshiftDatasetDefinition(RedshiftDatasetDefinitionT&& value) { SetRedshiftDatasetDefinition(std::forward<RedshiftDatasetDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +70,12 @@ namespace Model
      * path to the input data. This is a required parameter when
      * <code>AppManaged</code> is <code>False</code> (default).</p>
      */
-    inline const Aws::String& GetLocalPath() const{ return m_localPath; }
+    inline const Aws::String& GetLocalPath() const { return m_localPath; }
     inline bool LocalPathHasBeenSet() const { return m_localPathHasBeenSet; }
-    inline void SetLocalPath(const Aws::String& value) { m_localPathHasBeenSet = true; m_localPath = value; }
-    inline void SetLocalPath(Aws::String&& value) { m_localPathHasBeenSet = true; m_localPath = std::move(value); }
-    inline void SetLocalPath(const char* value) { m_localPathHasBeenSet = true; m_localPath.assign(value); }
-    inline DatasetDefinition& WithLocalPath(const Aws::String& value) { SetLocalPath(value); return *this;}
-    inline DatasetDefinition& WithLocalPath(Aws::String&& value) { SetLocalPath(std::move(value)); return *this;}
-    inline DatasetDefinition& WithLocalPath(const char* value) { SetLocalPath(value); return *this;}
+    template<typename LocalPathT = Aws::String>
+    void SetLocalPath(LocalPathT&& value) { m_localPathHasBeenSet = true; m_localPath = std::forward<LocalPathT>(value); }
+    template<typename LocalPathT = Aws::String>
+    DatasetDefinition& WithLocalPath(LocalPathT&& value) { SetLocalPath(std::forward<LocalPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,10 @@ namespace Model
      * <p>Whether the generated dataset is <code>FullyReplicated</code> or
      * <code>ShardedByS3Key</code> (default).</p>
      */
-    inline const DataDistributionType& GetDataDistributionType() const{ return m_dataDistributionType; }
+    inline DataDistributionType GetDataDistributionType() const { return m_dataDistributionType; }
     inline bool DataDistributionTypeHasBeenSet() const { return m_dataDistributionTypeHasBeenSet; }
-    inline void SetDataDistributionType(const DataDistributionType& value) { m_dataDistributionTypeHasBeenSet = true; m_dataDistributionType = value; }
-    inline void SetDataDistributionType(DataDistributionType&& value) { m_dataDistributionTypeHasBeenSet = true; m_dataDistributionType = std::move(value); }
-    inline DatasetDefinition& WithDataDistributionType(const DataDistributionType& value) { SetDataDistributionType(value); return *this;}
-    inline DatasetDefinition& WithDataDistributionType(DataDistributionType&& value) { SetDataDistributionType(std::move(value)); return *this;}
+    inline void SetDataDistributionType(DataDistributionType value) { m_dataDistributionTypeHasBeenSet = true; m_dataDistributionType = value; }
+    inline DatasetDefinition& WithDataDistributionType(DataDistributionType value) { SetDataDistributionType(value); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +98,10 @@ namespace Model
      * mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the
      * source directly to your algorithm without using the EBS volume.</p>
      */
-    inline const InputMode& GetInputMode() const{ return m_inputMode; }
+    inline InputMode GetInputMode() const { return m_inputMode; }
     inline bool InputModeHasBeenSet() const { return m_inputModeHasBeenSet; }
-    inline void SetInputMode(const InputMode& value) { m_inputModeHasBeenSet = true; m_inputMode = value; }
-    inline void SetInputMode(InputMode&& value) { m_inputModeHasBeenSet = true; m_inputMode = std::move(value); }
-    inline DatasetDefinition& WithInputMode(const InputMode& value) { SetInputMode(value); return *this;}
-    inline DatasetDefinition& WithInputMode(InputMode&& value) { SetInputMode(std::move(value)); return *this;}
+    inline void SetInputMode(InputMode value) { m_inputModeHasBeenSet = true; m_inputMode = value; }
+    inline DatasetDefinition& WithInputMode(InputMode value) { SetInputMode(value); return *this;}
     ///@}
   private:
 
@@ -120,10 +114,10 @@ namespace Model
     Aws::String m_localPath;
     bool m_localPathHasBeenSet = false;
 
-    DataDistributionType m_dataDistributionType;
+    DataDistributionType m_dataDistributionType{DataDistributionType::NOT_SET};
     bool m_dataDistributionTypeHasBeenSet = false;
 
-    InputMode m_inputMode;
+    InputMode m_inputMode{InputMode::NOT_SET};
     bool m_inputModeHasBeenSet = false;
   };
 

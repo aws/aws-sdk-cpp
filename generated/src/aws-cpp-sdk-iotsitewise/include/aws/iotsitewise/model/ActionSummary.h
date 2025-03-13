@@ -32,7 +32,7 @@ namespace Model
   class ActionSummary
   {
   public:
-    AWS_IOTSITEWISE_API ActionSummary();
+    AWS_IOTSITEWISE_API ActionSummary() = default;
     AWS_IOTSITEWISE_API ActionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API ActionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,36 @@ namespace Model
     /**
      * <p>The ID of the action.</p>
      */
-    inline const Aws::String& GetActionId() const{ return m_actionId; }
+    inline const Aws::String& GetActionId() const { return m_actionId; }
     inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
-    inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
-    inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = std::move(value); }
-    inline void SetActionId(const char* value) { m_actionIdHasBeenSet = true; m_actionId.assign(value); }
-    inline ActionSummary& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
-    inline ActionSummary& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
-    inline ActionSummary& WithActionId(const char* value) { SetActionId(value); return *this;}
+    template<typename ActionIdT = Aws::String>
+    void SetActionId(ActionIdT&& value) { m_actionIdHasBeenSet = true; m_actionId = std::forward<ActionIdT>(value); }
+    template<typename ActionIdT = Aws::String>
+    ActionSummary& WithActionId(ActionIdT&& value) { SetActionId(std::forward<ActionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the action definition.</p>
      */
-    inline const Aws::String& GetActionDefinitionId() const{ return m_actionDefinitionId; }
+    inline const Aws::String& GetActionDefinitionId() const { return m_actionDefinitionId; }
     inline bool ActionDefinitionIdHasBeenSet() const { return m_actionDefinitionIdHasBeenSet; }
-    inline void SetActionDefinitionId(const Aws::String& value) { m_actionDefinitionIdHasBeenSet = true; m_actionDefinitionId = value; }
-    inline void SetActionDefinitionId(Aws::String&& value) { m_actionDefinitionIdHasBeenSet = true; m_actionDefinitionId = std::move(value); }
-    inline void SetActionDefinitionId(const char* value) { m_actionDefinitionIdHasBeenSet = true; m_actionDefinitionId.assign(value); }
-    inline ActionSummary& WithActionDefinitionId(const Aws::String& value) { SetActionDefinitionId(value); return *this;}
-    inline ActionSummary& WithActionDefinitionId(Aws::String&& value) { SetActionDefinitionId(std::move(value)); return *this;}
-    inline ActionSummary& WithActionDefinitionId(const char* value) { SetActionDefinitionId(value); return *this;}
+    template<typename ActionDefinitionIdT = Aws::String>
+    void SetActionDefinitionId(ActionDefinitionIdT&& value) { m_actionDefinitionIdHasBeenSet = true; m_actionDefinitionId = std::forward<ActionDefinitionIdT>(value); }
+    template<typename ActionDefinitionIdT = Aws::String>
+    ActionSummary& WithActionDefinitionId(ActionDefinitionIdT&& value) { SetActionDefinitionId(std::forward<ActionDefinitionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource the action will be taken on.</p>
      */
-    inline const TargetResource& GetTargetResource() const{ return m_targetResource; }
+    inline const TargetResource& GetTargetResource() const { return m_targetResource; }
     inline bool TargetResourceHasBeenSet() const { return m_targetResourceHasBeenSet; }
-    inline void SetTargetResource(const TargetResource& value) { m_targetResourceHasBeenSet = true; m_targetResource = value; }
-    inline void SetTargetResource(TargetResource&& value) { m_targetResourceHasBeenSet = true; m_targetResource = std::move(value); }
-    inline ActionSummary& WithTargetResource(const TargetResource& value) { SetTargetResource(value); return *this;}
-    inline ActionSummary& WithTargetResource(TargetResource&& value) { SetTargetResource(std::move(value)); return *this;}
+    template<typename TargetResourceT = TargetResource>
+    void SetTargetResource(TargetResourceT&& value) { m_targetResourceHasBeenSet = true; m_targetResource = std::forward<TargetResourceT>(value); }
+    template<typename TargetResourceT = TargetResource>
+    ActionSummary& WithTargetResource(TargetResourceT&& value) { SetTargetResource(std::forward<TargetResourceT>(value)); return *this;}
     ///@}
   private:
 

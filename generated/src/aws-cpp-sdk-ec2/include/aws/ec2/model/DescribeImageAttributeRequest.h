@@ -26,7 +26,7 @@ namespace Model
   class DescribeImageAttributeRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeImageAttributeRequest();
+    AWS_EC2_API DescribeImageAttributeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,26 +48,22 @@ namespace Model
      * <code>Client.AuthFailure</code> error. To get information about the block device
      * mappings for an AMI, use the <a>DescribeImages</a> action.</p>
      */
-    inline const ImageAttributeName& GetAttribute() const{ return m_attribute; }
+    inline ImageAttributeName GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const ImageAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(ImageAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline DescribeImageAttributeRequest& WithAttribute(const ImageAttributeName& value) { SetAttribute(value); return *this;}
-    inline DescribeImageAttributeRequest& WithAttribute(ImageAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(ImageAttributeName value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline DescribeImageAttributeRequest& WithAttribute(ImageAttributeName value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline DescribeImageAttributeRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline DescribeImageAttributeRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline DescribeImageAttributeRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    DescribeImageAttributeRequest& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,20 +73,20 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeImageAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
   private:
 
-    ImageAttributeName m_attribute;
+    ImageAttributeName m_attribute{ImageAttributeName::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

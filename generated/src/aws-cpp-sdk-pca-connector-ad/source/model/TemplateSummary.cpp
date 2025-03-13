@@ -18,24 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-TemplateSummary::TemplateSummary() : 
-    m_arnHasBeenSet(false),
-    m_connectorArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_objectIdentifierHasBeenSet(false),
-    m_policySchema(0),
-    m_policySchemaHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_status(TemplateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 TemplateSummary::TemplateSummary(JsonView jsonValue)
-  : TemplateSummary()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ TemplateSummary& TemplateSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectorArn"))
   {
     m_connectorArn = jsonValue.GetString("ConnectorArn");
-
     m_connectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Definition"))
   {
     m_definition = jsonValue.GetObject("Definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectIdentifier"))
   {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");
-
     m_objectIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicySchema"))
   {
     m_policySchema = jsonValue.GetInteger("PolicySchema");
-
     m_policySchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Revision"))
   {
     m_revision = jsonValue.GetObject("Revision");
-
     m_revisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TemplateStatusMapper::GetTemplateStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

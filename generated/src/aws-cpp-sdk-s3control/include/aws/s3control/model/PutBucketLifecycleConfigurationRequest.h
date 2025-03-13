@@ -22,7 +22,7 @@ namespace Model
   class PutBucketLifecycleConfigurationRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API PutBucketLifecycleConfigurationRequest();
+    AWS_S3CONTROL_API PutBucketLifecycleConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,40 +45,36 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the Outposts bucket.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline PutBucketLifecycleConfigurationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline PutBucketLifecycleConfigurationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline PutBucketLifecycleConfigurationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    PutBucketLifecycleConfigurationRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the bucket for which to set the configuration.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline PutBucketLifecycleConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline PutBucketLifecycleConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline PutBucketLifecycleConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    PutBucketLifecycleConfigurationRequest& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
      */
-    inline const LifecycleConfiguration& GetLifecycleConfiguration() const{ return m_lifecycleConfiguration; }
+    inline const LifecycleConfiguration& GetLifecycleConfiguration() const { return m_lifecycleConfiguration; }
     inline bool LifecycleConfigurationHasBeenSet() const { return m_lifecycleConfigurationHasBeenSet; }
-    inline void SetLifecycleConfiguration(const LifecycleConfiguration& value) { m_lifecycleConfigurationHasBeenSet = true; m_lifecycleConfiguration = value; }
-    inline void SetLifecycleConfiguration(LifecycleConfiguration&& value) { m_lifecycleConfigurationHasBeenSet = true; m_lifecycleConfiguration = std::move(value); }
-    inline PutBucketLifecycleConfigurationRequest& WithLifecycleConfiguration(const LifecycleConfiguration& value) { SetLifecycleConfiguration(value); return *this;}
-    inline PutBucketLifecycleConfigurationRequest& WithLifecycleConfiguration(LifecycleConfiguration&& value) { SetLifecycleConfiguration(std::move(value)); return *this;}
+    template<typename LifecycleConfigurationT = LifecycleConfiguration>
+    void SetLifecycleConfiguration(LifecycleConfigurationT&& value) { m_lifecycleConfigurationHasBeenSet = true; m_lifecycleConfiguration = std::forward<LifecycleConfigurationT>(value); }
+    template<typename LifecycleConfigurationT = LifecycleConfiguration>
+    PutBucketLifecycleConfigurationRequest& WithLifecycleConfiguration(LifecycleConfigurationT&& value) { SetLifecycleConfiguration(std::forward<LifecycleConfigurationT>(value)); return *this;}
     ///@}
   private:
 

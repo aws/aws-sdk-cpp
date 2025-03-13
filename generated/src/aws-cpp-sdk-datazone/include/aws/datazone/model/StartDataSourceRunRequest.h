@@ -22,7 +22,7 @@ namespace Model
   class StartDataSourceRunRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API StartDataSourceRunRequest();
+    AWS_DATAZONE_API StartDataSourceRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
      * <p>A unique, case-sensitive identifier that is provided to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartDataSourceRunRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartDataSourceRunRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartDataSourceRunRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartDataSourceRunRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the data source.</p>
      */
-    inline const Aws::String& GetDataSourceIdentifier() const{ return m_dataSourceIdentifier; }
+    inline const Aws::String& GetDataSourceIdentifier() const { return m_dataSourceIdentifier; }
     inline bool DataSourceIdentifierHasBeenSet() const { return m_dataSourceIdentifierHasBeenSet; }
-    inline void SetDataSourceIdentifier(const Aws::String& value) { m_dataSourceIdentifierHasBeenSet = true; m_dataSourceIdentifier = value; }
-    inline void SetDataSourceIdentifier(Aws::String&& value) { m_dataSourceIdentifierHasBeenSet = true; m_dataSourceIdentifier = std::move(value); }
-    inline void SetDataSourceIdentifier(const char* value) { m_dataSourceIdentifierHasBeenSet = true; m_dataSourceIdentifier.assign(value); }
-    inline StartDataSourceRunRequest& WithDataSourceIdentifier(const Aws::String& value) { SetDataSourceIdentifier(value); return *this;}
-    inline StartDataSourceRunRequest& WithDataSourceIdentifier(Aws::String&& value) { SetDataSourceIdentifier(std::move(value)); return *this;}
-    inline StartDataSourceRunRequest& WithDataSourceIdentifier(const char* value) { SetDataSourceIdentifier(value); return *this;}
+    template<typename DataSourceIdentifierT = Aws::String>
+    void SetDataSourceIdentifier(DataSourceIdentifierT&& value) { m_dataSourceIdentifierHasBeenSet = true; m_dataSourceIdentifier = std::forward<DataSourceIdentifierT>(value); }
+    template<typename DataSourceIdentifierT = Aws::String>
+    StartDataSourceRunRequest& WithDataSourceIdentifier(DataSourceIdentifierT&& value) { SetDataSourceIdentifier(std::forward<DataSourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +63,12 @@ namespace Model
      * <p>The identifier of the Amazon DataZone domain in which to start a data source
      * run.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline StartDataSourceRunRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline StartDataSourceRunRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline StartDataSourceRunRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    StartDataSourceRunRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
   private:
 

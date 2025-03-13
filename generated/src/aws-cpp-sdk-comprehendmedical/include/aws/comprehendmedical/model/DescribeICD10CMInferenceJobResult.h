@@ -28,7 +28,7 @@ namespace Model
   class DescribeICD10CMInferenceJobResult
   {
   public:
-    AWS_COMPREHENDMEDICAL_API DescribeICD10CMInferenceJobResult();
+    AWS_COMPREHENDMEDICAL_API DescribeICD10CMInferenceJobResult() = default;
     AWS_COMPREHENDMEDICAL_API DescribeICD10CMInferenceJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHENDMEDICAL_API DescribeICD10CMInferenceJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object that contains the properties associated with a detection job.</p>
      */
-    inline const ComprehendMedicalAsyncJobProperties& GetComprehendMedicalAsyncJobProperties() const{ return m_comprehendMedicalAsyncJobProperties; }
-    inline void SetComprehendMedicalAsyncJobProperties(const ComprehendMedicalAsyncJobProperties& value) { m_comprehendMedicalAsyncJobProperties = value; }
-    inline void SetComprehendMedicalAsyncJobProperties(ComprehendMedicalAsyncJobProperties&& value) { m_comprehendMedicalAsyncJobProperties = std::move(value); }
-    inline DescribeICD10CMInferenceJobResult& WithComprehendMedicalAsyncJobProperties(const ComprehendMedicalAsyncJobProperties& value) { SetComprehendMedicalAsyncJobProperties(value); return *this;}
-    inline DescribeICD10CMInferenceJobResult& WithComprehendMedicalAsyncJobProperties(ComprehendMedicalAsyncJobProperties&& value) { SetComprehendMedicalAsyncJobProperties(std::move(value)); return *this;}
+    inline const ComprehendMedicalAsyncJobProperties& GetComprehendMedicalAsyncJobProperties() const { return m_comprehendMedicalAsyncJobProperties; }
+    template<typename ComprehendMedicalAsyncJobPropertiesT = ComprehendMedicalAsyncJobProperties>
+    void SetComprehendMedicalAsyncJobProperties(ComprehendMedicalAsyncJobPropertiesT&& value) { m_comprehendMedicalAsyncJobPropertiesHasBeenSet = true; m_comprehendMedicalAsyncJobProperties = std::forward<ComprehendMedicalAsyncJobPropertiesT>(value); }
+    template<typename ComprehendMedicalAsyncJobPropertiesT = ComprehendMedicalAsyncJobProperties>
+    DescribeICD10CMInferenceJobResult& WithComprehendMedicalAsyncJobProperties(ComprehendMedicalAsyncJobPropertiesT&& value) { SetComprehendMedicalAsyncJobProperties(std::forward<ComprehendMedicalAsyncJobPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeICD10CMInferenceJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeICD10CMInferenceJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeICD10CMInferenceJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeICD10CMInferenceJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ComprehendMedicalAsyncJobProperties m_comprehendMedicalAsyncJobProperties;
+    bool m_comprehendMedicalAsyncJobPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

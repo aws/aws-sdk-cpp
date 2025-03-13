@@ -36,7 +36,7 @@ namespace Model
   class DashPackage
   {
   public:
-    AWS_MEDIAPACKAGEVOD_API DashPackage();
+    AWS_MEDIAPACKAGEVOD_API DashPackage() = default;
     AWS_MEDIAPACKAGEVOD_API DashPackage(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API DashPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,24 +46,24 @@ namespace Model
     /**
      * A list of DASH manifest configurations.
      */
-    inline const Aws::Vector<DashManifest>& GetDashManifests() const{ return m_dashManifests; }
+    inline const Aws::Vector<DashManifest>& GetDashManifests() const { return m_dashManifests; }
     inline bool DashManifestsHasBeenSet() const { return m_dashManifestsHasBeenSet; }
-    inline void SetDashManifests(const Aws::Vector<DashManifest>& value) { m_dashManifestsHasBeenSet = true; m_dashManifests = value; }
-    inline void SetDashManifests(Aws::Vector<DashManifest>&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests = std::move(value); }
-    inline DashPackage& WithDashManifests(const Aws::Vector<DashManifest>& value) { SetDashManifests(value); return *this;}
-    inline DashPackage& WithDashManifests(Aws::Vector<DashManifest>&& value) { SetDashManifests(std::move(value)); return *this;}
-    inline DashPackage& AddDashManifests(const DashManifest& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.push_back(value); return *this; }
-    inline DashPackage& AddDashManifests(DashManifest&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.push_back(std::move(value)); return *this; }
+    template<typename DashManifestsT = Aws::Vector<DashManifest>>
+    void SetDashManifests(DashManifestsT&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests = std::forward<DashManifestsT>(value); }
+    template<typename DashManifestsT = Aws::Vector<DashManifest>>
+    DashPackage& WithDashManifests(DashManifestsT&& value) { SetDashManifests(std::forward<DashManifestsT>(value)); return *this;}
+    template<typename DashManifestsT = DashManifest>
+    DashPackage& AddDashManifests(DashManifestsT&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.emplace_back(std::forward<DashManifestsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const DashEncryption& GetEncryption() const{ return m_encryption; }
+    inline const DashEncryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const DashEncryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(DashEncryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline DashPackage& WithEncryption(const DashEncryption& value) { SetEncryption(value); return *this;}
-    inline DashPackage& WithEncryption(DashEncryption&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = DashEncryption>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = DashEncryption>
+    DashPackage& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +75,7 @@ namespace Model
      * during content playback.
 
      */
-    inline bool GetIncludeEncoderConfigurationInSegments() const{ return m_includeEncoderConfigurationInSegments; }
+    inline bool GetIncludeEncoderConfigurationInSegments() const { return m_includeEncoderConfigurationInSegments; }
     inline bool IncludeEncoderConfigurationInSegmentsHasBeenSet() const { return m_includeEncoderConfigurationInSegmentsHasBeenSet; }
     inline void SetIncludeEncoderConfigurationInSegments(bool value) { m_includeEncoderConfigurationInSegmentsHasBeenSet = true; m_includeEncoderConfigurationInSegments = value; }
     inline DashPackage& WithIncludeEncoderConfigurationInSegments(bool value) { SetIncludeEncoderConfigurationInSegments(value); return *this;}
@@ -85,7 +85,7 @@ namespace Model
     /**
      * When enabled, an I-Frame only stream will be included in the output.
      */
-    inline bool GetIncludeIframeOnlyStream() const{ return m_includeIframeOnlyStream; }
+    inline bool GetIncludeIframeOnlyStream() const { return m_includeIframeOnlyStream; }
     inline bool IncludeIframeOnlyStreamHasBeenSet() const { return m_includeIframeOnlyStreamHasBeenSet; }
     inline void SetIncludeIframeOnlyStream(bool value) { m_includeIframeOnlyStreamHasBeenSet = true; m_includeIframeOnlyStream = value; }
     inline DashPackage& WithIncludeIframeOnlyStream(bool value) { SetIncludeIframeOnlyStream(value); return *this;}
@@ -103,14 +103,13 @@ the
      * Asset contains SCTE-35 ad markers.
 
      */
-    inline const Aws::Vector<__PeriodTriggersElement>& GetPeriodTriggers() const{ return m_periodTriggers; }
+    inline const Aws::Vector<__PeriodTriggersElement>& GetPeriodTriggers() const { return m_periodTriggers; }
     inline bool PeriodTriggersHasBeenSet() const { return m_periodTriggersHasBeenSet; }
-    inline void SetPeriodTriggers(const Aws::Vector<__PeriodTriggersElement>& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers = value; }
-    inline void SetPeriodTriggers(Aws::Vector<__PeriodTriggersElement>&& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers = std::move(value); }
-    inline DashPackage& WithPeriodTriggers(const Aws::Vector<__PeriodTriggersElement>& value) { SetPeriodTriggers(value); return *this;}
-    inline DashPackage& WithPeriodTriggers(Aws::Vector<__PeriodTriggersElement>&& value) { SetPeriodTriggers(std::move(value)); return *this;}
-    inline DashPackage& AddPeriodTriggers(const __PeriodTriggersElement& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers.push_back(value); return *this; }
-    inline DashPackage& AddPeriodTriggers(__PeriodTriggersElement&& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers.push_back(std::move(value)); return *this; }
+    template<typename PeriodTriggersT = Aws::Vector<__PeriodTriggersElement>>
+    void SetPeriodTriggers(PeriodTriggersT&& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers = std::forward<PeriodTriggersT>(value); }
+    template<typename PeriodTriggersT = Aws::Vector<__PeriodTriggersElement>>
+    DashPackage& WithPeriodTriggers(PeriodTriggersT&& value) { SetPeriodTriggers(std::forward<PeriodTriggersT>(value)); return *this;}
+    inline DashPackage& AddPeriodTriggers(__PeriodTriggersElement value) { m_periodTriggersHasBeenSet = true; m_periodTriggers.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -120,7 +119,7 @@ rounded to the
      * nearest multiple of the source segment duration.
 
      */
-    inline int GetSegmentDurationSeconds() const{ return m_segmentDurationSeconds; }
+    inline int GetSegmentDurationSeconds() const { return m_segmentDurationSeconds; }
     inline bool SegmentDurationSecondsHasBeenSet() const { return m_segmentDurationSecondsHasBeenSet; }
     inline void SetSegmentDurationSeconds(int value) { m_segmentDurationSecondsHasBeenSet = true; m_segmentDurationSeconds = value; }
     inline DashPackage& WithSegmentDurationSeconds(int value) { SetSegmentDurationSeconds(value); return *this;}
@@ -135,12 +134,10 @@ rounded to the
      * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
      * in each SegmentTemplate, with $Number$ media URLs.
      */
-    inline const SegmentTemplateFormat& GetSegmentTemplateFormat() const{ return m_segmentTemplateFormat; }
+    inline SegmentTemplateFormat GetSegmentTemplateFormat() const { return m_segmentTemplateFormat; }
     inline bool SegmentTemplateFormatHasBeenSet() const { return m_segmentTemplateFormatHasBeenSet; }
-    inline void SetSegmentTemplateFormat(const SegmentTemplateFormat& value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = value; }
-    inline void SetSegmentTemplateFormat(SegmentTemplateFormat&& value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = std::move(value); }
-    inline DashPackage& WithSegmentTemplateFormat(const SegmentTemplateFormat& value) { SetSegmentTemplateFormat(value); return *this;}
-    inline DashPackage& WithSegmentTemplateFormat(SegmentTemplateFormat&& value) { SetSegmentTemplateFormat(std::move(value)); return *this;}
+    inline void SetSegmentTemplateFormat(SegmentTemplateFormat value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = value; }
+    inline DashPackage& WithSegmentTemplateFormat(SegmentTemplateFormat value) { SetSegmentTemplateFormat(value); return *this;}
     ///@}
   private:
 
@@ -150,19 +147,19 @@ rounded to the
     DashEncryption m_encryption;
     bool m_encryptionHasBeenSet = false;
 
-    bool m_includeEncoderConfigurationInSegments;
+    bool m_includeEncoderConfigurationInSegments{false};
     bool m_includeEncoderConfigurationInSegmentsHasBeenSet = false;
 
-    bool m_includeIframeOnlyStream;
+    bool m_includeIframeOnlyStream{false};
     bool m_includeIframeOnlyStreamHasBeenSet = false;
 
     Aws::Vector<__PeriodTriggersElement> m_periodTriggers;
     bool m_periodTriggersHasBeenSet = false;
 
-    int m_segmentDurationSeconds;
+    int m_segmentDurationSeconds{0};
     bool m_segmentDurationSecondsHasBeenSet = false;
 
-    SegmentTemplateFormat m_segmentTemplateFormat;
+    SegmentTemplateFormat m_segmentTemplateFormat{SegmentTemplateFormat::NOT_SET};
     bool m_segmentTemplateFormatHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSubnetsResponse::DescribeSubnetsResponse()
-{
-}
-
 DescribeSubnetsResponse::DescribeSubnetsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DescribeSubnetsResponse& DescribeSubnetsResponse::operator =(const Aws::AmazonWe
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode subnetsNode = resultNode.FirstChild("subnetSet");
     if(!subnetsNode.IsNull())
     {
       XmlNode subnetsMember = subnetsNode.FirstChild("item");
+      m_subnetsHasBeenSet = !subnetsMember.IsNull();
       while(!subnetsMember.IsNull())
       {
         m_subnets.push_back(subnetsMember);
@@ -61,6 +59,7 @@ DescribeSubnetsResponse& DescribeSubnetsResponse::operator =(const Aws::AmazonWe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeSubnetsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

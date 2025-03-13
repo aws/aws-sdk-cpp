@@ -12,13 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConnectionRequest::CreateConnectionRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_connectionInputHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

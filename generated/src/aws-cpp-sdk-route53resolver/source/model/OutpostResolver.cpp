@@ -18,25 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-OutpostResolver::OutpostResolver() : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_preferredInstanceTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(OutpostResolverStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
-{
-}
-
 OutpostResolver::OutpostResolver(JsonView jsonValue)
-  : OutpostResolver()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ OutpostResolver& OutpostResolver::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetString("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModificationTime"))
   {
     m_modificationTime = jsonValue.GetString("ModificationTime");
-
     m_modificationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorRequestId"))
   {
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
-
     m_creatorRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredInstanceType"))
   {
     m_preferredInstanceType = jsonValue.GetString("PreferredInstanceType");
-
     m_preferredInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OutpostResolverStatusMapper::GetOutpostResolverStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutpostArn"))
   {
     m_outpostArn = jsonValue.GetString("OutpostArn");
-
     m_outpostArnHasBeenSet = true;
   }
-
   return *this;
 }
 

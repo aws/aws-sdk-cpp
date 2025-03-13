@@ -18,18 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-RegistrationVersionInformation::RegistrationVersionInformation() : 
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_registrationVersionStatus(RegistrationVersionStatus::NOT_SET),
-    m_registrationVersionStatusHasBeenSet(false),
-    m_registrationVersionStatusHistoryHasBeenSet(false),
-    m_deniedReasonsHasBeenSet(false)
-{
-}
-
 RegistrationVersionInformation::RegistrationVersionInformation(JsonView jsonValue)
-  : RegistrationVersionInformation()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RegistrationVersionInformation& RegistrationVersionInformation::operator =(JsonV
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("VersionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationVersionStatus"))
   {
     m_registrationVersionStatus = RegistrationVersionStatusMapper::GetRegistrationVersionStatusForName(jsonValue.GetString("RegistrationVersionStatus"));
-
     m_registrationVersionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationVersionStatusHistory"))
   {
     m_registrationVersionStatusHistory = jsonValue.GetObject("RegistrationVersionStatusHistory");
-
     m_registrationVersionStatusHistoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeniedReasons"))
   {
     Aws::Utils::Array<JsonView> deniedReasonsJsonList = jsonValue.GetArray("DeniedReasons");
@@ -66,7 +49,6 @@ RegistrationVersionInformation& RegistrationVersionInformation::operator =(JsonV
     }
     m_deniedReasonsHasBeenSet = true;
   }
-
   return *this;
 }
 

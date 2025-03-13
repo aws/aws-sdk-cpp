@@ -32,7 +32,7 @@ namespace Model
   class DetectedDataDetails
   {
   public:
-    AWS_MACIE2_API DetectedDataDetails();
+    AWS_MACIE2_API DetectedDataDetails() = default;
     AWS_MACIE2_API DetectedDataDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API DetectedDataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>An occurrence of the specified type of sensitive data. Each occurrence
      * contains 1-128 characters.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline DetectedDataDetails& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline DetectedDataDetails& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline DetectedDataDetails& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    DetectedDataDetails& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

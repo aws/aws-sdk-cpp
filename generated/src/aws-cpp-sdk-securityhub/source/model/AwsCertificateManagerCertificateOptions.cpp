@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCertificateManagerCertificateOptions::AwsCertificateManagerCertificateOptions() : 
-    m_certificateTransparencyLoggingPreferenceHasBeenSet(false)
-{
-}
-
 AwsCertificateManagerCertificateOptions::AwsCertificateManagerCertificateOptions(JsonView jsonValue)
-  : AwsCertificateManagerCertificateOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsCertificateManagerCertificateOptions& AwsCertificateManagerCertificateOptions
   if(jsonValue.ValueExists("CertificateTransparencyLoggingPreference"))
   {
     m_certificateTransparencyLoggingPreference = jsonValue.GetString("CertificateTransparencyLoggingPreference");
-
     m_certificateTransparencyLoggingPreferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

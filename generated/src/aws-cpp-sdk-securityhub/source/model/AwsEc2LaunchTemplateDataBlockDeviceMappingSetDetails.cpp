@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails() : 
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_noDeviceHasBeenSet(false),
-    m_virtualNameHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails& AwsEc2LaunchTemplateDataBl
   if(jsonValue.ValueExists("DeviceName"))
   {
     m_deviceName = jsonValue.GetString("DeviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ebs"))
   {
     m_ebs = jsonValue.GetObject("Ebs");
-
     m_ebsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoDevice"))
   {
     m_noDevice = jsonValue.GetString("NoDevice");
-
     m_noDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VirtualName"))
   {
     m_virtualName = jsonValue.GetString("VirtualName");
-
     m_virtualNameHasBeenSet = true;
   }
-
   return *this;
 }
 

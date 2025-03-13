@@ -18,13 +18,7 @@ namespace Braket
 namespace Model
 {
 
-DeviceConfig::DeviceConfig() : 
-    m_deviceHasBeenSet(false)
-{
-}
-
 DeviceConfig::DeviceConfig(JsonView jsonValue)
-  : DeviceConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeviceConfig& DeviceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("device"))
   {
     m_device = jsonValue.GetString("device");
-
     m_deviceHasBeenSet = true;
   }
-
   return *this;
 }
 

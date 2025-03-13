@@ -12,14 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRelationalDatabaseRequest::DeleteRelationalDatabaseRequest() : 
-    m_relationalDatabaseNameHasBeenSet(false),
-    m_skipFinalSnapshot(false),
-    m_skipFinalSnapshotHasBeenSet(false),
-    m_finalRelationalDatabaseSnapshotNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRelationalDatabaseRequest::SerializePayload() const
 {
   JsonValue payload;

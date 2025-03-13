@@ -18,14 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-S3Object::S3Object() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 S3Object::S3Object(JsonView jsonValue)
-  : S3Object()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Object& S3Object::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

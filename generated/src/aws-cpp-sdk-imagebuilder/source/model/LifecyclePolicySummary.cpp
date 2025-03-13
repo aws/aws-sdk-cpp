@@ -18,24 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-LifecyclePolicySummary::LifecyclePolicySummary() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(LifecyclePolicyStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_resourceType(LifecyclePolicyResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_dateLastRunHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 LifecyclePolicySummary::LifecyclePolicySummary(JsonView jsonValue)
-  : LifecyclePolicySummary()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ LifecyclePolicySummary& LifecyclePolicySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = LifecyclePolicyStatusMapper::GetLifecyclePolicyStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRole"))
   {
     m_executionRole = jsonValue.GetString("executionRole");
-
     m_executionRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = LifecyclePolicyResourceTypeMapper::GetLifecyclePolicyResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateCreated"))
   {
     m_dateCreated = jsonValue.GetDouble("dateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateUpdated"))
   {
     m_dateUpdated = jsonValue.GetDouble("dateUpdated");
-
     m_dateUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateLastRun"))
   {
     m_dateLastRun = jsonValue.GetDouble("dateLastRun");
-
     m_dateLastRunHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -114,7 +79,6 @@ LifecyclePolicySummary& LifecyclePolicySummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

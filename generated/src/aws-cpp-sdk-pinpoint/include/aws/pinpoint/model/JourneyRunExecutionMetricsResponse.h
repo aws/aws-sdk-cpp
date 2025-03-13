@@ -34,7 +34,7 @@ namespace Model
   class JourneyRunExecutionMetricsResponse
   {
   public:
-    AWS_PINPOINT_API JourneyRunExecutionMetricsResponse();
+    AWS_PINPOINT_API JourneyRunExecutionMetricsResponse() = default;
     AWS_PINPOINT_API JourneyRunExecutionMetricsResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API JourneyRunExecutionMetricsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The unique identifier for the application that the metric applies to.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline JourneyRunExecutionMetricsResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline JourneyRunExecutionMetricsResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline JourneyRunExecutionMetricsResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    JourneyRunExecutionMetricsResponse& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the journey that the metric applies to.</p>
      */
-    inline const Aws::String& GetJourneyId() const{ return m_journeyId; }
+    inline const Aws::String& GetJourneyId() const { return m_journeyId; }
     inline bool JourneyIdHasBeenSet() const { return m_journeyIdHasBeenSet; }
-    inline void SetJourneyId(const Aws::String& value) { m_journeyIdHasBeenSet = true; m_journeyId = value; }
-    inline void SetJourneyId(Aws::String&& value) { m_journeyIdHasBeenSet = true; m_journeyId = std::move(value); }
-    inline void SetJourneyId(const char* value) { m_journeyIdHasBeenSet = true; m_journeyId.assign(value); }
-    inline JourneyRunExecutionMetricsResponse& WithJourneyId(const Aws::String& value) { SetJourneyId(value); return *this;}
-    inline JourneyRunExecutionMetricsResponse& WithJourneyId(Aws::String&& value) { SetJourneyId(std::move(value)); return *this;}
-    inline JourneyRunExecutionMetricsResponse& WithJourneyId(const char* value) { SetJourneyId(value); return *this;}
+    template<typename JourneyIdT = Aws::String>
+    void SetJourneyId(JourneyIdT&& value) { m_journeyIdHasBeenSet = true; m_journeyId = std::forward<JourneyIdT>(value); }
+    template<typename JourneyIdT = Aws::String>
+    JourneyRunExecutionMetricsResponse& WithJourneyId(JourneyIdT&& value) { SetJourneyId(std::forward<JourneyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated
      * the journey run and updated the data for the metric.</p>
      */
-    inline const Aws::String& GetLastEvaluatedTime() const{ return m_lastEvaluatedTime; }
+    inline const Aws::String& GetLastEvaluatedTime() const { return m_lastEvaluatedTime; }
     inline bool LastEvaluatedTimeHasBeenSet() const { return m_lastEvaluatedTimeHasBeenSet; }
-    inline void SetLastEvaluatedTime(const Aws::String& value) { m_lastEvaluatedTimeHasBeenSet = true; m_lastEvaluatedTime = value; }
-    inline void SetLastEvaluatedTime(Aws::String&& value) { m_lastEvaluatedTimeHasBeenSet = true; m_lastEvaluatedTime = std::move(value); }
-    inline void SetLastEvaluatedTime(const char* value) { m_lastEvaluatedTimeHasBeenSet = true; m_lastEvaluatedTime.assign(value); }
-    inline JourneyRunExecutionMetricsResponse& WithLastEvaluatedTime(const Aws::String& value) { SetLastEvaluatedTime(value); return *this;}
-    inline JourneyRunExecutionMetricsResponse& WithLastEvaluatedTime(Aws::String&& value) { SetLastEvaluatedTime(std::move(value)); return *this;}
-    inline JourneyRunExecutionMetricsResponse& WithLastEvaluatedTime(const char* value) { SetLastEvaluatedTime(value); return *this;}
+    template<typename LastEvaluatedTimeT = Aws::String>
+    void SetLastEvaluatedTime(LastEvaluatedTimeT&& value) { m_lastEvaluatedTimeHasBeenSet = true; m_lastEvaluatedTime = std::forward<LastEvaluatedTimeT>(value); }
+    template<typename LastEvaluatedTimeT = Aws::String>
+    JourneyRunExecutionMetricsResponse& WithLastEvaluatedTime(LastEvaluatedTimeT&& value) { SetLastEvaluatedTime(std::forward<LastEvaluatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,33 +85,28 @@ namespace Model
      * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer
      * Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetrics() const{ return m_metrics; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const Aws::Map<Aws::String, Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(Aws::Map<Aws::String, Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline JourneyRunExecutionMetricsResponse& WithMetrics(const Aws::Map<Aws::String, Aws::String>& value) { SetMetrics(value); return *this;}
-    inline JourneyRunExecutionMetricsResponse& WithMetrics(Aws::Map<Aws::String, Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
-    inline JourneyRunExecutionMetricsResponse& AddMetrics(const Aws::String& key, const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
-    inline JourneyRunExecutionMetricsResponse& AddMetrics(Aws::String&& key, const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), value); return *this; }
-    inline JourneyRunExecutionMetricsResponse& AddMetrics(const Aws::String& key, Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, std::move(value)); return *this; }
-    inline JourneyRunExecutionMetricsResponse& AddMetrics(Aws::String&& key, Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), std::move(value)); return *this; }
-    inline JourneyRunExecutionMetricsResponse& AddMetrics(const char* key, Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, std::move(value)); return *this; }
-    inline JourneyRunExecutionMetricsResponse& AddMetrics(Aws::String&& key, const char* value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), value); return *this; }
-    inline JourneyRunExecutionMetricsResponse& AddMetrics(const char* key, const char* value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
+    template<typename MetricsT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Map<Aws::String, Aws::String>>
+    JourneyRunExecutionMetricsResponse& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    template<typename MetricsKeyT = Aws::String, typename MetricsValueT = Aws::String>
+    JourneyRunExecutionMetricsResponse& AddMetrics(MetricsKeyT&& key, MetricsValueT&& value) {
+      m_metricsHasBeenSet = true; m_metrics.emplace(std::forward<MetricsKeyT>(key), std::forward<MetricsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the journey run that the metric applies to.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline const Aws::String& GetRunId() const { return m_runId; }
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-    inline JourneyRunExecutionMetricsResponse& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline JourneyRunExecutionMetricsResponse& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline JourneyRunExecutionMetricsResponse& WithRunId(const char* value) { SetRunId(value); return *this;}
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    JourneyRunExecutionMetricsResponse& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
   private:
 

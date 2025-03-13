@@ -21,7 +21,7 @@ namespace Model
   class DeleteFunctionRequest : public AppSyncRequest
   {
   public:
-    AWS_APPSYNC_API DeleteFunctionRequest();
+    AWS_APPSYNC_API DeleteFunctionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The GraphQL API ID.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline DeleteFunctionRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline DeleteFunctionRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline DeleteFunctionRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    DeleteFunctionRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>Function</code> ID.</p>
      */
-    inline const Aws::String& GetFunctionId() const{ return m_functionId; }
+    inline const Aws::String& GetFunctionId() const { return m_functionId; }
     inline bool FunctionIdHasBeenSet() const { return m_functionIdHasBeenSet; }
-    inline void SetFunctionId(const Aws::String& value) { m_functionIdHasBeenSet = true; m_functionId = value; }
-    inline void SetFunctionId(Aws::String&& value) { m_functionIdHasBeenSet = true; m_functionId = std::move(value); }
-    inline void SetFunctionId(const char* value) { m_functionIdHasBeenSet = true; m_functionId.assign(value); }
-    inline DeleteFunctionRequest& WithFunctionId(const Aws::String& value) { SetFunctionId(value); return *this;}
-    inline DeleteFunctionRequest& WithFunctionId(Aws::String&& value) { SetFunctionId(std::move(value)); return *this;}
-    inline DeleteFunctionRequest& WithFunctionId(const char* value) { SetFunctionId(value); return *this;}
+    template<typename FunctionIdT = Aws::String>
+    void SetFunctionId(FunctionIdT&& value) { m_functionIdHasBeenSet = true; m_functionId = std::forward<FunctionIdT>(value); }
+    template<typename FunctionIdT = Aws::String>
+    DeleteFunctionRequest& WithFunctionId(FunctionIdT&& value) { SetFunctionId(std::forward<FunctionIdT>(value)); return *this;}
     ///@}
   private:
 

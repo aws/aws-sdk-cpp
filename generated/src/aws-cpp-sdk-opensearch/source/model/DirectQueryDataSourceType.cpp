@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-DirectQueryDataSourceType::DirectQueryDataSourceType() : 
-    m_cloudWatchLogHasBeenSet(false),
-    m_securityLakeHasBeenSet(false)
-{
-}
-
 DirectQueryDataSourceType::DirectQueryDataSourceType(JsonView jsonValue)
-  : DirectQueryDataSourceType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DirectQueryDataSourceType& DirectQueryDataSourceType::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("CloudWatchLog"))
   {
     m_cloudWatchLog = jsonValue.GetObject("CloudWatchLog");
-
     m_cloudWatchLogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityLake"))
   {
     m_securityLake = jsonValue.GetObject("SecurityLake");
-
     m_securityLakeHasBeenSet = true;
   }
-
   return *this;
 }
 

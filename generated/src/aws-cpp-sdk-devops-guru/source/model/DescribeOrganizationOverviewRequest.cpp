@@ -12,14 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOrganizationOverviewRequest::DescribeOrganizationOverviewRequest() : 
-    m_fromTimeHasBeenSet(false),
-    m_toTimeHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOrganizationOverviewRequest::SerializePayload() const
 {
   JsonValue payload;

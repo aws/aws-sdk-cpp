@@ -23,7 +23,7 @@ namespace Model
   class DetectFacesRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API DetectFacesRequest();
+    AWS_REKOGNITION_API DetectFacesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,12 +45,12 @@ namespace Model
      * <code>Bytes</code> field. For more information, see Images in the Amazon
      * Rekognition developer guide.</p>
      */
-    inline const Image& GetImage() const{ return m_image; }
+    inline const Image& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline DetectFacesRequest& WithImage(const Image& value) { SetImage(value); return *this;}
-    inline DetectFacesRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = Image>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Image>
+    DetectFacesRequest& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +69,13 @@ namespace Model
      * supported when analyzing videos with <code>StartFaceDetection</code> and
      * <code>GetFaceDetection</code>.</p>
      */
-    inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<Attribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline DetectFacesRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
-    inline DetectFacesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline DetectFacesRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline DetectFacesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    DetectFacesRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    inline DetectFacesRequest& AddAttributes(Attribute value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
     ///@}
   private:
 

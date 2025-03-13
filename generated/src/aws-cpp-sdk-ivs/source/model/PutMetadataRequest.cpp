@@ -12,12 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutMetadataRequest::PutMetadataRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 Aws::String PutMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,18 +18,7 @@ namespace MediaPackage
 namespace Model
 {
 
-MssPackage::MssPackage() : 
-    m_encryptionHasBeenSet(false),
-    m_manifestWindowSeconds(0),
-    m_manifestWindowSecondsHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false),
-    m_streamSelectionHasBeenSet(false)
-{
-}
-
 MssPackage::MssPackage(JsonView jsonValue)
-  : MssPackage()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ MssPackage& MssPackage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("encryption"))
   {
     m_encryption = jsonValue.GetObject("encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifestWindowSeconds"))
   {
     m_manifestWindowSeconds = jsonValue.GetInteger("manifestWindowSeconds");
-
     m_manifestWindowSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentDurationSeconds"))
   {
     m_segmentDurationSeconds = jsonValue.GetInteger("segmentDurationSeconds");
-
     m_segmentDurationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamSelection"))
   {
     m_streamSelection = jsonValue.GetObject("streamSelection");
-
     m_streamSelectionHasBeenSet = true;
   }
-
   return *this;
 }
 

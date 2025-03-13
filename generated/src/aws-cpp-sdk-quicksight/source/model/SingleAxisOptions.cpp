@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SingleAxisOptions::SingleAxisOptions() : 
-    m_yAxisOptionsHasBeenSet(false)
-{
-}
-
 SingleAxisOptions::SingleAxisOptions(JsonView jsonValue)
-  : SingleAxisOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SingleAxisOptions& SingleAxisOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("YAxisOptions"))
   {
     m_yAxisOptions = jsonValue.GetObject("YAxisOptions");
-
     m_yAxisOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

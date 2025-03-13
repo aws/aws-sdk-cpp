@@ -12,11 +12,6 @@ using namespace Aws::ManagedBlockchain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetNetworkRequest::GetNetworkRequest() : 
-    m_networkIdHasBeenSet(false)
-{
-}
-
 Aws::String GetNetworkRequest::SerializePayload() const
 {
   return {};

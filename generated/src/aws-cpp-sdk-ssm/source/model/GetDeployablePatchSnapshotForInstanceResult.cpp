@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeployablePatchSnapshotForInstanceResult::GetDeployablePatchSnapshotForInstanceResult()
-{
-}
-
 GetDeployablePatchSnapshotForInstanceResult::GetDeployablePatchSnapshotForInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ GetDeployablePatchSnapshotForInstanceResult& GetDeployablePatchSnapshotForInstan
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
+    m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotId"))
   {
     m_snapshotId = jsonValue.GetString("SnapshotId");
-
+    m_snapshotIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotDownloadUrl"))
   {
     m_snapshotDownloadUrl = jsonValue.GetString("SnapshotDownloadUrl");
-
+    m_snapshotDownloadUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Product"))
   {
     m_product = jsonValue.GetString("Product");
-
+    m_productHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

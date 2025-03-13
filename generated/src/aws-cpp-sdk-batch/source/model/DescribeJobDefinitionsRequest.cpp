@@ -12,16 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeJobDefinitionsRequest::DescribeJobDefinitionsRequest() : 
-    m_jobDefinitionsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_jobDefinitionNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeJobDefinitionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -31,7 +31,7 @@ namespace Model
   class S3BucketSinkConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API S3BucketSinkConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API S3BucketSinkConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API S3BucketSinkConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API S3BucketSinkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The destination URL of the S3 bucket.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline S3BucketSinkConfiguration& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline S3BucketSinkConfiguration& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline S3BucketSinkConfiguration& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    S3BucketSinkConfiguration& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
   private:
 

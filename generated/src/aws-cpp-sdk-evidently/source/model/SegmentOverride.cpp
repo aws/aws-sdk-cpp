@@ -18,16 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-SegmentOverride::SegmentOverride() : 
-    m_evaluationOrder(0),
-    m_evaluationOrderHasBeenSet(false),
-    m_segmentHasBeenSet(false),
-    m_weightsHasBeenSet(false)
-{
-}
-
 SegmentOverride::SegmentOverride(JsonView jsonValue)
-  : SegmentOverride()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SegmentOverride& SegmentOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("evaluationOrder"))
   {
     m_evaluationOrder = jsonValue.GetInt64("evaluationOrder");
-
     m_evaluationOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segment"))
   {
     m_segment = jsonValue.GetString("segment");
-
     m_segmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("weights"))
   {
     Aws::Map<Aws::String, JsonView> weightsJsonMap = jsonValue.GetObject("weights").GetAllObjects();
@@ -57,7 +44,6 @@ SegmentOverride& SegmentOverride::operator =(JsonView jsonValue)
     }
     m_weightsHasBeenSet = true;
   }
-
   return *this;
 }
 

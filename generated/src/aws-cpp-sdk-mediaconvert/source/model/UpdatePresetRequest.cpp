@@ -12,14 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePresetRequest::UpdatePresetRequest() : 
-    m_categoryHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_settingsHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePresetRequest::SerializePayload() const
 {
   JsonValue payload;

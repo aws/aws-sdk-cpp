@@ -31,7 +31,7 @@ namespace Model
   class Font
   {
   public:
-    AWS_QUICKSIGHT_API Font();
+    AWS_QUICKSIGHT_API Font() = default;
     AWS_QUICKSIGHT_API Font(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Font& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Determines the font family settings.</p>
      */
-    inline const Aws::String& GetFontFamily() const{ return m_fontFamily; }
+    inline const Aws::String& GetFontFamily() const { return m_fontFamily; }
     inline bool FontFamilyHasBeenSet() const { return m_fontFamilyHasBeenSet; }
-    inline void SetFontFamily(const Aws::String& value) { m_fontFamilyHasBeenSet = true; m_fontFamily = value; }
-    inline void SetFontFamily(Aws::String&& value) { m_fontFamilyHasBeenSet = true; m_fontFamily = std::move(value); }
-    inline void SetFontFamily(const char* value) { m_fontFamilyHasBeenSet = true; m_fontFamily.assign(value); }
-    inline Font& WithFontFamily(const Aws::String& value) { SetFontFamily(value); return *this;}
-    inline Font& WithFontFamily(Aws::String&& value) { SetFontFamily(std::move(value)); return *this;}
-    inline Font& WithFontFamily(const char* value) { SetFontFamily(value); return *this;}
+    template<typename FontFamilyT = Aws::String>
+    void SetFontFamily(FontFamilyT&& value) { m_fontFamilyHasBeenSet = true; m_fontFamily = std::forward<FontFamilyT>(value); }
+    template<typename FontFamilyT = Aws::String>
+    Font& WithFontFamily(FontFamilyT&& value) { SetFontFamily(std::forward<FontFamilyT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,21 +12,6 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAlarmModelRequest::CreateAlarmModelRequest() : 
-    m_alarmModelNameHasBeenSet(false),
-    m_alarmModelDescriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_severity(0),
-    m_severityHasBeenSet(false),
-    m_alarmRuleHasBeenSet(false),
-    m_alarmNotificationHasBeenSet(false),
-    m_alarmEventActionsHasBeenSet(false),
-    m_alarmCapabilitiesHasBeenSet(false)
-{
-}
-
 Aws::String CreateAlarmModelRequest::SerializePayload() const
 {
   JsonValue payload;

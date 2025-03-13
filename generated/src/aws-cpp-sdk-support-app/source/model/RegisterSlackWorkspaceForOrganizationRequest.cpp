@@ -12,11 +12,6 @@ using namespace Aws::SupportApp::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterSlackWorkspaceForOrganizationRequest::RegisterSlackWorkspaceForOrganizationRequest() : 
-    m_teamIdHasBeenSet(false)
-{
-}
-
 Aws::String RegisterSlackWorkspaceForOrganizationRequest::SerializePayload() const
 {
   JsonValue payload;

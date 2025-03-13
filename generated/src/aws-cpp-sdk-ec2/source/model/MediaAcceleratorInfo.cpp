@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MediaAcceleratorInfo::MediaAcceleratorInfo() : 
-    m_acceleratorsHasBeenSet(false),
-    m_totalMediaMemoryInMiB(0),
-    m_totalMediaMemoryInMiBHasBeenSet(false)
-{
-}
-
 MediaAcceleratorInfo::MediaAcceleratorInfo(const XmlNode& xmlNode)
-  : MediaAcceleratorInfo()
 {
   *this = xmlNode;
 }
@@ -43,19 +35,21 @@ MediaAcceleratorInfo& MediaAcceleratorInfo::operator =(const XmlNode& xmlNode)
     if(!acceleratorsNode.IsNull())
     {
       XmlNode acceleratorsMember = acceleratorsNode.FirstChild("item");
+      m_acceleratorsHasBeenSet = !acceleratorsMember.IsNull();
       while(!acceleratorsMember.IsNull())
       {
         m_accelerators.push_back(acceleratorsMember);
         acceleratorsMember = acceleratorsMember.NextNode("item");
       }
 
-      m_acceleratorsHasBeenSet = true;
+       m_acceleratorsHasBeenSet = true;
     }
     XmlNode totalMediaMemoryInMiBNode = resultNode.FirstChild("totalMediaMemoryInMiB");
     if(!totalMediaMemoryInMiBNode.IsNull())
     {
       m_totalMediaMemoryInMiB = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalMediaMemoryInMiBNode.GetText()).c_str()).c_str());
       m_totalMediaMemoryInMiBHasBeenSet = true;
+       m_totalMediaMemoryInMiBHasBeenSet = true;
     }
   }
 

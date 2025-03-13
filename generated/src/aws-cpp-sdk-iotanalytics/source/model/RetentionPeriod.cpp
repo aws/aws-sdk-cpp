@@ -18,16 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-RetentionPeriod::RetentionPeriod() : 
-    m_unlimited(false),
-    m_unlimitedHasBeenSet(false),
-    m_numberOfDays(0),
-    m_numberOfDaysHasBeenSet(false)
-{
-}
-
 RetentionPeriod::RetentionPeriod(JsonView jsonValue)
-  : RetentionPeriod()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RetentionPeriod& RetentionPeriod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("unlimited"))
   {
     m_unlimited = jsonValue.GetBool("unlimited");
-
     m_unlimitedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfDays"))
   {
     m_numberOfDays = jsonValue.GetInteger("numberOfDays");
-
     m_numberOfDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

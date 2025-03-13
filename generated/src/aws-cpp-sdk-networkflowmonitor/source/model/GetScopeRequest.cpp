@@ -12,11 +12,6 @@ using namespace Aws::NetworkFlowMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetScopeRequest::GetScopeRequest() : 
-    m_scopeIdHasBeenSet(false)
-{
-}
-
 Aws::String GetScopeRequest::SerializePayload() const
 {
   return {};

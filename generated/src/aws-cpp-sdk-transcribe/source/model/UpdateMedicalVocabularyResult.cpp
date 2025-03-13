@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateMedicalVocabularyResult::UpdateMedicalVocabularyResult() : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_vocabularyState(VocabularyState::NOT_SET)
-{
-}
-
 UpdateMedicalVocabularyResult::UpdateMedicalVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateMedicalVocabularyResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ UpdateMedicalVocabularyResult& UpdateMedicalVocabularyResult::operator =(const A
   if(jsonValue.ValueExists("VocabularyName"))
   {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
-
+    m_vocabularyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
+    m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyState"))
   {
     m_vocabularyState = VocabularyStateMapper::GetVocabularyStateForName(jsonValue.GetString("VocabularyState"));
-
+    m_vocabularyStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

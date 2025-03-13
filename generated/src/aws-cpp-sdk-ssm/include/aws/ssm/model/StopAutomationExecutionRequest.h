@@ -22,7 +22,7 @@ namespace Model
   class StopAutomationExecutionRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API StopAutomationExecutionRequest();
+    AWS_SSM_API StopAutomationExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The execution ID of the Automation to stop.</p>
      */
-    inline const Aws::String& GetAutomationExecutionId() const{ return m_automationExecutionId; }
+    inline const Aws::String& GetAutomationExecutionId() const { return m_automationExecutionId; }
     inline bool AutomationExecutionIdHasBeenSet() const { return m_automationExecutionIdHasBeenSet; }
-    inline void SetAutomationExecutionId(const Aws::String& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = value; }
-    inline void SetAutomationExecutionId(Aws::String&& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = std::move(value); }
-    inline void SetAutomationExecutionId(const char* value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId.assign(value); }
-    inline StopAutomationExecutionRequest& WithAutomationExecutionId(const Aws::String& value) { SetAutomationExecutionId(value); return *this;}
-    inline StopAutomationExecutionRequest& WithAutomationExecutionId(Aws::String&& value) { SetAutomationExecutionId(std::move(value)); return *this;}
-    inline StopAutomationExecutionRequest& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
+    template<typename AutomationExecutionIdT = Aws::String>
+    void SetAutomationExecutionId(AutomationExecutionIdT&& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = std::forward<AutomationExecutionIdT>(value); }
+    template<typename AutomationExecutionIdT = Aws::String>
+    StopAutomationExecutionRequest& WithAutomationExecutionId(AutomationExecutionIdT&& value) { SetAutomationExecutionId(std::forward<AutomationExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,19 +52,17 @@ namespace Model
      * <p>The stop request type. Valid types include the following: Cancel and
      * Complete. The default type is Cancel.</p>
      */
-    inline const StopType& GetType() const{ return m_type; }
+    inline StopType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const StopType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(StopType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline StopAutomationExecutionRequest& WithType(const StopType& value) { SetType(value); return *this;}
-    inline StopAutomationExecutionRequest& WithType(StopType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(StopType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline StopAutomationExecutionRequest& WithType(StopType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_automationExecutionId;
     bool m_automationExecutionIdHasBeenSet = false;
 
-    StopType m_type;
+    StopType m_type{StopType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

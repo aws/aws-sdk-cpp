@@ -20,20 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-StatusCodes::StatusCodes() : 
-    m_status2xx(0),
-    m_status2xxHasBeenSet(false),
-    m_status3xx(0),
-    m_status3xxHasBeenSet(false),
-    m_status4xx(0),
-    m_status4xxHasBeenSet(false),
-    m_status5xx(0),
-    m_status5xxHasBeenSet(false)
-{
-}
-
 StatusCodes::StatusCodes(const XmlNode& xmlNode)
-  : StatusCodes()
 {
   *this = xmlNode;
 }
@@ -49,24 +36,28 @@ StatusCodes& StatusCodes::operator =(const XmlNode& xmlNode)
     {
       m_status2xx = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(status2xxNode.GetText()).c_str()).c_str());
       m_status2xxHasBeenSet = true;
+       m_status2xxHasBeenSet = true;
     }
     XmlNode status3xxNode = resultNode.FirstChild("Status3xx");
     if(!status3xxNode.IsNull())
     {
       m_status3xx = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(status3xxNode.GetText()).c_str()).c_str());
       m_status3xxHasBeenSet = true;
+       m_status3xxHasBeenSet = true;
     }
     XmlNode status4xxNode = resultNode.FirstChild("Status4xx");
     if(!status4xxNode.IsNull())
     {
       m_status4xx = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(status4xxNode.GetText()).c_str()).c_str());
       m_status4xxHasBeenSet = true;
+       m_status4xxHasBeenSet = true;
     }
     XmlNode status5xxNode = resultNode.FirstChild("Status5xx");
     if(!status5xxNode.IsNull())
     {
       m_status5xx = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(status5xxNode.GetText()).c_str()).c_str());
       m_status5xxHasBeenSet = true;
+       m_status5xxHasBeenSet = true;
     }
   }
 

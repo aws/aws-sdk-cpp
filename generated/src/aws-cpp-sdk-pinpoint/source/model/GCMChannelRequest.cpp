@@ -18,17 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-GCMChannelRequest::GCMChannelRequest() : 
-    m_apiKeyHasBeenSet(false),
-    m_defaultAuthenticationMethodHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_serviceJsonHasBeenSet(false)
-{
-}
-
 GCMChannelRequest::GCMChannelRequest(JsonView jsonValue)
-  : GCMChannelRequest()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ GCMChannelRequest& GCMChannelRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApiKey"))
   {
     m_apiKey = jsonValue.GetString("ApiKey");
-
     m_apiKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultAuthenticationMethod"))
   {
     m_defaultAuthenticationMethod = jsonValue.GetString("DefaultAuthenticationMethod");
-
     m_defaultAuthenticationMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceJson"))
   {
     m_serviceJson = jsonValue.GetString("ServiceJson");
-
     m_serviceJsonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-TlsContext::TlsContext() : 
-    m_serverNameHasBeenSet(false)
-{
-}
-
 TlsContext::TlsContext(JsonView jsonValue)
-  : TlsContext()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TlsContext& TlsContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("serverName"))
   {
     m_serverName = jsonValue.GetString("serverName");
-
     m_serverNameHasBeenSet = true;
   }
-
   return *this;
 }
 

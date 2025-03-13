@@ -12,11 +12,6 @@ using namespace Aws::Pipes::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePipeRequest::DeletePipeRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeletePipeRequest::SerializePayload() const
 {
   return {};

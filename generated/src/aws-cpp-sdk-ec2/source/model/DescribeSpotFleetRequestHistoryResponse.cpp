@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSpotFleetRequestHistoryResponse::DescribeSpotFleetRequestHistoryResponse()
-{
-}
-
 DescribeSpotFleetRequestHistoryResponse::DescribeSpotFleetRequestHistoryResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeSpotFleetRequestHistoryResponse& DescribeSpotFleetRequestHistoryResponse
     if(!historyRecordsNode.IsNull())
     {
       XmlNode historyRecordsMember = historyRecordsNode.FirstChild("item");
+      m_historyRecordsHasBeenSet = !historyRecordsMember.IsNull();
       while(!historyRecordsMember.IsNull())
       {
         m_historyRecords.push_back(historyRecordsMember);
@@ -53,21 +50,25 @@ DescribeSpotFleetRequestHistoryResponse& DescribeSpotFleetRequestHistoryResponse
     if(!lastEvaluatedTimeNode.IsNull())
     {
       m_lastEvaluatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastEvaluatedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_lastEvaluatedTimeHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
     if(!spotFleetRequestIdNode.IsNull())
     {
       m_spotFleetRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotFleetRequestIdNode.GetText());
+      m_spotFleetRequestIdHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
     if(!startTimeNode.IsNull())
     {
       m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_startTimeHasBeenSet = true;
     }
   }
 
@@ -76,6 +77,7 @@ DescribeSpotFleetRequestHistoryResponse& DescribeSpotFleetRequestHistoryResponse
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeSpotFleetRequestHistoryResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

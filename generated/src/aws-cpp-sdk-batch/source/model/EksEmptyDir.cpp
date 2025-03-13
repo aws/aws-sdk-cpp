@@ -18,14 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EksEmptyDir::EksEmptyDir() : 
-    m_mediumHasBeenSet(false),
-    m_sizeLimitHasBeenSet(false)
-{
-}
-
 EksEmptyDir::EksEmptyDir(JsonView jsonValue)
-  : EksEmptyDir()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EksEmptyDir& EksEmptyDir::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("medium"))
   {
     m_medium = jsonValue.GetString("medium");
-
     m_mediumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sizeLimit"))
   {
     m_sizeLimit = jsonValue.GetString("sizeLimit");
-
     m_sizeLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

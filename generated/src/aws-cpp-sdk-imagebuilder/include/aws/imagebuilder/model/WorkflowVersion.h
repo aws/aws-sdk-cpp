@@ -33,7 +33,7 @@ namespace Model
   class WorkflowVersion
   {
   public:
-    AWS_IMAGEBUILDER_API WorkflowVersion();
+    AWS_IMAGEBUILDER_API WorkflowVersion() = default;
     AWS_IMAGEBUILDER_API WorkflowVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API WorkflowVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline WorkflowVersion& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline WorkflowVersion& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline WorkflowVersion& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    WorkflowVersion& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workflow.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline WorkflowVersion& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline WorkflowVersion& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline WorkflowVersion& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    WorkflowVersion& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,28 +68,24 @@ namespace Model
      * <p>The semantic version of the workflow resource. The format includes three
      * nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline WorkflowVersion& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline WorkflowVersion& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline WorkflowVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    WorkflowVersion& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the workflow.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline WorkflowVersion& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline WorkflowVersion& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline WorkflowVersion& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    WorkflowVersion& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,40 +93,34 @@ namespace Model
      * <p>The image creation stage that this workflow applies to. Image Builder
      * currently supports build and test stage workflows.</p>
      */
-    inline const WorkflowType& GetType() const{ return m_type; }
+    inline WorkflowType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const WorkflowType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(WorkflowType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline WorkflowVersion& WithType(const WorkflowType& value) { SetType(value); return *this;}
-    inline WorkflowVersion& WithType(WorkflowType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(WorkflowType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline WorkflowVersion& WithType(WorkflowType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owner of the workflow resource.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline WorkflowVersion& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline WorkflowVersion& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline WorkflowVersion& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    WorkflowVersion& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when Image Builder created the workflow version.</p>
      */
-    inline const Aws::String& GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::String& GetDateCreated() const { return m_dateCreated; }
     inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
-    inline void SetDateCreated(const Aws::String& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
-    inline void SetDateCreated(Aws::String&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
-    inline void SetDateCreated(const char* value) { m_dateCreatedHasBeenSet = true; m_dateCreated.assign(value); }
-    inline WorkflowVersion& WithDateCreated(const Aws::String& value) { SetDateCreated(value); return *this;}
-    inline WorkflowVersion& WithDateCreated(Aws::String&& value) { SetDateCreated(std::move(value)); return *this;}
-    inline WorkflowVersion& WithDateCreated(const char* value) { SetDateCreated(value); return *this;}
+    template<typename DateCreatedT = Aws::String>
+    void SetDateCreated(DateCreatedT&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::forward<DateCreatedT>(value); }
+    template<typename DateCreatedT = Aws::String>
+    WorkflowVersion& WithDateCreated(DateCreatedT&& value) { SetDateCreated(std::forward<DateCreatedT>(value)); return *this;}
     ///@}
   private:
 
@@ -150,7 +136,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    WorkflowType m_type;
+    WorkflowType m_type{WorkflowType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_owner;

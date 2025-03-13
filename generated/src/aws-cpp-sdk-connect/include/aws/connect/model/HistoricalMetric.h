@@ -38,7 +38,7 @@ namespace Model
   class HistoricalMetric
   {
   public:
-    AWS_CONNECT_API HistoricalMetric();
+    AWS_CONNECT_API HistoricalMetric() = default;
     AWS_CONNECT_API HistoricalMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API HistoricalMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,61 +48,55 @@ namespace Model
     /**
      * <p>The name of the metric.</p>
      */
-    inline const HistoricalMetricName& GetName() const{ return m_name; }
+    inline HistoricalMetricName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const HistoricalMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(HistoricalMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline HistoricalMetric& WithName(const HistoricalMetricName& value) { SetName(value); return *this;}
-    inline HistoricalMetric& WithName(HistoricalMetricName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(HistoricalMetricName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline HistoricalMetric& WithName(HistoricalMetricName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The threshold for the metric, used with service level metrics.</p>
      */
-    inline const Threshold& GetThreshold() const{ return m_threshold; }
+    inline const Threshold& GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
-    inline void SetThreshold(const Threshold& value) { m_thresholdHasBeenSet = true; m_threshold = value; }
-    inline void SetThreshold(Threshold&& value) { m_thresholdHasBeenSet = true; m_threshold = std::move(value); }
-    inline HistoricalMetric& WithThreshold(const Threshold& value) { SetThreshold(value); return *this;}
-    inline HistoricalMetric& WithThreshold(Threshold&& value) { SetThreshold(std::move(value)); return *this;}
+    template<typename ThresholdT = Threshold>
+    void SetThreshold(ThresholdT&& value) { m_thresholdHasBeenSet = true; m_threshold = std::forward<ThresholdT>(value); }
+    template<typename ThresholdT = Threshold>
+    HistoricalMetric& WithThreshold(ThresholdT&& value) { SetThreshold(std::forward<ThresholdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The statistic for the metric.</p>
      */
-    inline const Statistic& GetStatistic() const{ return m_statistic; }
+    inline Statistic GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(Statistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline HistoricalMetric& WithStatistic(const Statistic& value) { SetStatistic(value); return *this;}
-    inline HistoricalMetric& WithStatistic(Statistic&& value) { SetStatistic(std::move(value)); return *this;}
+    inline void SetStatistic(Statistic value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline HistoricalMetric& WithStatistic(Statistic value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unit for the metric.</p>
      */
-    inline const Unit& GetUnit() const{ return m_unit; }
+    inline Unit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Unit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Unit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline HistoricalMetric& WithUnit(const Unit& value) { SetUnit(value); return *this;}
-    inline HistoricalMetric& WithUnit(Unit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(Unit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline HistoricalMetric& WithUnit(Unit value) { SetUnit(value); return *this;}
     ///@}
   private:
 
-    HistoricalMetricName m_name;
+    HistoricalMetricName m_name{HistoricalMetricName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Threshold m_threshold;
     bool m_thresholdHasBeenSet = false;
 
-    Statistic m_statistic;
+    Statistic m_statistic{Statistic::NOT_SET};
     bool m_statisticHasBeenSet = false;
 
-    Unit m_unit;
+    Unit m_unit{Unit::NOT_SET};
     bool m_unitHasBeenSet = false;
   };
 

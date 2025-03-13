@@ -32,7 +32,7 @@ namespace Model
   class ReportTaskProgressResult
   {
   public:
-    AWS_DATAPIPELINE_API ReportTaskProgressResult();
+    AWS_DATAPIPELINE_API ReportTaskProgressResult() = default;
     AWS_DATAPIPELINE_API ReportTaskProgressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAPIPELINE_API ReportTaskProgressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,26 +42,26 @@ namespace Model
      * <p>If true, the calling task runner should cancel processing of the task. The
      * task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
      */
-    inline bool GetCanceled() const{ return m_canceled; }
-    inline void SetCanceled(bool value) { m_canceled = value; }
+    inline bool GetCanceled() const { return m_canceled; }
+    inline void SetCanceled(bool value) { m_canceledHasBeenSet = true; m_canceled = value; }
     inline ReportTaskProgressResult& WithCanceled(bool value) { SetCanceled(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ReportTaskProgressResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ReportTaskProgressResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ReportTaskProgressResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ReportTaskProgressResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_canceled;
+    bool m_canceled{false};
+    bool m_canceledHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

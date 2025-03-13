@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPrivateGraphEndpointResult::GetPrivateGraphEndpointResult() : 
-    m_status(PrivateGraphEndpointStatus::NOT_SET)
-{
-}
-
 GetPrivateGraphEndpointResult::GetPrivateGraphEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetPrivateGraphEndpointResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetPrivateGraphEndpointResult& GetPrivateGraphEndpointResult::operator =(const A
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
+    m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -44,26 +37,25 @@ GetPrivateGraphEndpointResult& GetPrivateGraphEndpointResult::operator =(const A
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
+    m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = PrivateGraphEndpointStatusMapper::GetPrivateGraphEndpointStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("vpcEndpointId");
-
+    m_vpcEndpointIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

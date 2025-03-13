@@ -33,7 +33,7 @@ namespace Model
   class EngagementSort
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API EngagementSort();
+    AWS_PARTNERCENTRALSELLING_API EngagementSort() = default;
     AWS_PARTNERCENTRALSELLING_API EngagementSort(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API EngagementSort& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The field by which to sort the results.</p>
      */
-    inline const EngagementSortName& GetSortBy() const{ return m_sortBy; }
+    inline EngagementSortName GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const EngagementSortName& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(EngagementSortName&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline EngagementSort& WithSortBy(const EngagementSortName& value) { SetSortBy(value); return *this;}
-    inline EngagementSort& WithSortBy(EngagementSortName&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(EngagementSortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline EngagementSort& WithSortBy(EngagementSortName value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order in which to sort the results.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline EngagementSort& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline EngagementSort& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline EngagementSort& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    EngagementSortName m_sortBy;
+    EngagementSortName m_sortBy{EngagementSortName::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

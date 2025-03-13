@@ -33,7 +33,7 @@ namespace Model
   class PackageVersionOrigin
   {
   public:
-    AWS_CODEARTIFACT_API PackageVersionOrigin();
+    AWS_CODEARTIFACT_API PackageVersionOrigin() = default;
     AWS_CODEARTIFACT_API PackageVersionOrigin(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API PackageVersionOrigin& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * object that contains information about from which repository or external
      * connection the package version was added to the domain.</p>
      */
-    inline const DomainEntryPoint& GetDomainEntryPoint() const{ return m_domainEntryPoint; }
+    inline const DomainEntryPoint& GetDomainEntryPoint() const { return m_domainEntryPoint; }
     inline bool DomainEntryPointHasBeenSet() const { return m_domainEntryPointHasBeenSet; }
-    inline void SetDomainEntryPoint(const DomainEntryPoint& value) { m_domainEntryPointHasBeenSet = true; m_domainEntryPoint = value; }
-    inline void SetDomainEntryPoint(DomainEntryPoint&& value) { m_domainEntryPointHasBeenSet = true; m_domainEntryPoint = std::move(value); }
-    inline PackageVersionOrigin& WithDomainEntryPoint(const DomainEntryPoint& value) { SetDomainEntryPoint(value); return *this;}
-    inline PackageVersionOrigin& WithDomainEntryPoint(DomainEntryPoint&& value) { SetDomainEntryPoint(std::move(value)); return *this;}
+    template<typename DomainEntryPointT = DomainEntryPoint>
+    void SetDomainEntryPoint(DomainEntryPointT&& value) { m_domainEntryPointHasBeenSet = true; m_domainEntryPoint = std::forward<DomainEntryPointT>(value); }
+    template<typename DomainEntryPointT = DomainEntryPoint>
+    PackageVersionOrigin& WithDomainEntryPoint(DomainEntryPointT&& value) { SetDomainEntryPoint(std::forward<DomainEntryPointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +61,17 @@ namespace Model
      * directly to a repository in the domain. An <code>EXTERNAL</code> origin type
      * means the package version was ingested from an external connection.</p>
      */
-    inline const PackageVersionOriginType& GetOriginType() const{ return m_originType; }
+    inline PackageVersionOriginType GetOriginType() const { return m_originType; }
     inline bool OriginTypeHasBeenSet() const { return m_originTypeHasBeenSet; }
-    inline void SetOriginType(const PackageVersionOriginType& value) { m_originTypeHasBeenSet = true; m_originType = value; }
-    inline void SetOriginType(PackageVersionOriginType&& value) { m_originTypeHasBeenSet = true; m_originType = std::move(value); }
-    inline PackageVersionOrigin& WithOriginType(const PackageVersionOriginType& value) { SetOriginType(value); return *this;}
-    inline PackageVersionOrigin& WithOriginType(PackageVersionOriginType&& value) { SetOriginType(std::move(value)); return *this;}
+    inline void SetOriginType(PackageVersionOriginType value) { m_originTypeHasBeenSet = true; m_originType = value; }
+    inline PackageVersionOrigin& WithOriginType(PackageVersionOriginType value) { SetOriginType(value); return *this;}
     ///@}
   private:
 
     DomainEntryPoint m_domainEntryPoint;
     bool m_domainEntryPointHasBeenSet = false;
 
-    PackageVersionOriginType m_originType;
+    PackageVersionOriginType m_originType{PackageVersionOriginType::NOT_SET};
     bool m_originTypeHasBeenSet = false;
   };
 

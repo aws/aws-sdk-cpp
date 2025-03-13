@@ -23,7 +23,7 @@ namespace Model
   class CreateVpcPeeringConnectionRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateVpcPeeringConnectionRequest();
+    AWS_EC2_API CreateVpcPeeringConnectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,26 @@ namespace Model
      * Region other than the Region in which you make the request.</p> <p>Default: The
      * Region in which you make the request.</p>
      */
-    inline const Aws::String& GetPeerRegion() const{ return m_peerRegion; }
+    inline const Aws::String& GetPeerRegion() const { return m_peerRegion; }
     inline bool PeerRegionHasBeenSet() const { return m_peerRegionHasBeenSet; }
-    inline void SetPeerRegion(const Aws::String& value) { m_peerRegionHasBeenSet = true; m_peerRegion = value; }
-    inline void SetPeerRegion(Aws::String&& value) { m_peerRegionHasBeenSet = true; m_peerRegion = std::move(value); }
-    inline void SetPeerRegion(const char* value) { m_peerRegionHasBeenSet = true; m_peerRegion.assign(value); }
-    inline CreateVpcPeeringConnectionRequest& WithPeerRegion(const Aws::String& value) { SetPeerRegion(value); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerRegion(Aws::String&& value) { SetPeerRegion(std::move(value)); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerRegion(const char* value) { SetPeerRegion(value); return *this;}
+    template<typename PeerRegionT = Aws::String>
+    void SetPeerRegion(PeerRegionT&& value) { m_peerRegionHasBeenSet = true; m_peerRegion = std::forward<PeerRegionT>(value); }
+    template<typename PeerRegionT = Aws::String>
+    CreateVpcPeeringConnectionRequest& WithPeerRegion(PeerRegionT&& value) { SetPeerRegion(std::forward<PeerRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to assign to the peering connection.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateVpcPeeringConnectionRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateVpcPeeringConnectionRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateVpcPeeringConnectionRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateVpcPeeringConnectionRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateVpcPeeringConnectionRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,7 +73,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateVpcPeeringConnectionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -86,14 +84,12 @@ namespace Model
      * <p>The ID of the requester VPC. You must specify this parameter in the
      * request.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline CreateVpcPeeringConnectionRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    CreateVpcPeeringConnectionRequest& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +97,12 @@ namespace Model
      * <p>The ID of the VPC with which you are creating the VPC peering connection. You
      * must specify this parameter in the request.</p>
      */
-    inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
+    inline const Aws::String& GetPeerVpcId() const { return m_peerVpcId; }
     inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }
-    inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
-    inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
-    inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
+    template<typename PeerVpcIdT = Aws::String>
+    void SetPeerVpcId(PeerVpcIdT&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::forward<PeerVpcIdT>(value); }
+    template<typename PeerVpcIdT = Aws::String>
+    CreateVpcPeeringConnectionRequest& WithPeerVpcId(PeerVpcIdT&& value) { SetPeerVpcId(std::forward<PeerVpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +110,12 @@ namespace Model
      * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
      * <p>Default: Your Amazon Web Services account ID</p>
      */
-    inline const Aws::String& GetPeerOwnerId() const{ return m_peerOwnerId; }
+    inline const Aws::String& GetPeerOwnerId() const { return m_peerOwnerId; }
     inline bool PeerOwnerIdHasBeenSet() const { return m_peerOwnerIdHasBeenSet; }
-    inline void SetPeerOwnerId(const Aws::String& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = value; }
-    inline void SetPeerOwnerId(Aws::String&& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = std::move(value); }
-    inline void SetPeerOwnerId(const char* value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId.assign(value); }
-    inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const Aws::String& value) { SetPeerOwnerId(value); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(Aws::String&& value) { SetPeerOwnerId(std::move(value)); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const char* value) { SetPeerOwnerId(value); return *this;}
+    template<typename PeerOwnerIdT = Aws::String>
+    void SetPeerOwnerId(PeerOwnerIdT&& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = std::forward<PeerOwnerIdT>(value); }
+    template<typename PeerOwnerIdT = Aws::String>
+    CreateVpcPeeringConnectionRequest& WithPeerOwnerId(PeerOwnerIdT&& value) { SetPeerOwnerId(std::forward<PeerOwnerIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -133,7 +125,7 @@ namespace Model
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_vpcId;

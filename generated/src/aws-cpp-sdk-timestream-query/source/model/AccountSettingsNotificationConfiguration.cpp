@@ -18,14 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-AccountSettingsNotificationConfiguration::AccountSettingsNotificationConfiguration() : 
-    m_snsConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 AccountSettingsNotificationConfiguration::AccountSettingsNotificationConfiguration(JsonView jsonValue)
-  : AccountSettingsNotificationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AccountSettingsNotificationConfiguration& AccountSettingsNotificationConfigurati
   if(jsonValue.ValueExists("SnsConfiguration"))
   {
     m_snsConfiguration = jsonValue.GetObject("SnsConfiguration");
-
     m_snsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-UnassignPrivateIpAddressesRequest::UnassignPrivateIpAddressesRequest() : 
-    m_ipv4PrefixesHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
-{
-}
-
 Aws::String UnassignPrivateIpAddressesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

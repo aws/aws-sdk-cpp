@@ -12,14 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartBgpFailoverTestRequest::StartBgpFailoverTestRequest() : 
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_bgpPeersHasBeenSet(false),
-    m_testDurationInMinutes(0),
-    m_testDurationInMinutesHasBeenSet(false)
-{
-}
-
 Aws::String StartBgpFailoverTestRequest::SerializePayload() const
 {
   JsonValue payload;

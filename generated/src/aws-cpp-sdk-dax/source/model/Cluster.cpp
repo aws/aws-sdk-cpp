@@ -18,33 +18,7 @@ namespace DAX
 namespace Model
 {
 
-Cluster::Cluster() : 
-    m_clusterNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_totalNodes(0),
-    m_totalNodesHasBeenSet(false),
-    m_activeNodes(0),
-    m_activeNodesHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_clusterDiscoveryEndpointHasBeenSet(false),
-    m_nodeIdsToRemoveHasBeenSet(false),
-    m_nodesHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false),
-    m_subnetGroupHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_parameterGroupHasBeenSet(false),
-    m_sSEDescriptionHasBeenSet(false),
-    m_clusterEndpointEncryptionType(ClusterEndpointEncryptionType::NOT_SET),
-    m_clusterEndpointEncryptionTypeHasBeenSet(false)
-{
-}
-
 Cluster::Cluster(JsonView jsonValue)
-  : Cluster()
 {
   *this = jsonValue;
 }
@@ -54,59 +28,43 @@ Cluster& Cluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterName"))
   {
     m_clusterName = jsonValue.GetString("ClusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalNodes"))
   {
     m_totalNodes = jsonValue.GetInteger("TotalNodes");
-
     m_totalNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveNodes"))
   {
     m_activeNodes = jsonValue.GetInteger("ActiveNodes");
-
     m_activeNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeType"))
   {
     m_nodeType = jsonValue.GetString("NodeType");
-
     m_nodeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterDiscoveryEndpoint"))
   {
     m_clusterDiscoveryEndpoint = jsonValue.GetObject("ClusterDiscoveryEndpoint");
-
     m_clusterDiscoveryEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeIdsToRemove"))
   {
     Aws::Utils::Array<JsonView> nodeIdsToRemoveJsonList = jsonValue.GetArray("NodeIdsToRemove");
@@ -116,7 +74,6 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_nodeIdsToRemoveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Nodes"))
   {
     Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("Nodes");
@@ -126,28 +83,21 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_nodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredMaintenanceWindow"))
   {
     m_preferredMaintenanceWindow = jsonValue.GetString("PreferredMaintenanceWindow");
-
     m_preferredMaintenanceWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationConfiguration"))
   {
     m_notificationConfiguration = jsonValue.GetObject("NotificationConfiguration");
-
     m_notificationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetGroup"))
   {
     m_subnetGroup = jsonValue.GetString("SubnetGroup");
-
     m_subnetGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
@@ -157,35 +107,26 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterGroup"))
   {
     m_parameterGroup = jsonValue.GetObject("ParameterGroup");
-
     m_parameterGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SSEDescription"))
   {
     m_sSEDescription = jsonValue.GetObject("SSEDescription");
-
     m_sSEDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterEndpointEncryptionType"))
   {
     m_clusterEndpointEncryptionType = ClusterEndpointEncryptionTypeMapper::GetClusterEndpointEncryptionTypeForName(jsonValue.GetString("ClusterEndpointEncryptionType"));
-
     m_clusterEndpointEncryptionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

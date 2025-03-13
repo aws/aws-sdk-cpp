@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsClusterConfigurationExecuteCommandConfigurationDetails::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_loggingHasBeenSet(false)
-{
-}
-
 AwsEcsClusterConfigurationExecuteCommandConfigurationDetails::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails(JsonView jsonValue)
-  : AwsEcsClusterConfigurationExecuteCommandConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsEcsClusterConfigurationExecuteCommandConfigurationDetails& AwsEcsClusterConfi
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("LogConfiguration");
-
     m_logConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Logging"))
   {
     m_logging = jsonValue.GetString("Logging");
-
     m_loggingHasBeenSet = true;
   }
-
   return *this;
 }
 

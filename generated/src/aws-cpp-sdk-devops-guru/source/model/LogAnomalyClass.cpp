@@ -18,21 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-LogAnomalyClass::LogAnomalyClass() : 
-    m_logStreamNameHasBeenSet(false),
-    m_logAnomalyType(LogAnomalyType::NOT_SET),
-    m_logAnomalyTypeHasBeenSet(false),
-    m_logAnomalyTokenHasBeenSet(false),
-    m_logEventIdHasBeenSet(false),
-    m_explanationHasBeenSet(false),
-    m_numberOfLogLinesOccurrences(0),
-    m_numberOfLogLinesOccurrencesHasBeenSet(false),
-    m_logEventTimestampHasBeenSet(false)
-{
-}
-
 LogAnomalyClass::LogAnomalyClass(JsonView jsonValue)
-  : LogAnomalyClass()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ LogAnomalyClass& LogAnomalyClass::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LogStreamName"))
   {
     m_logStreamName = jsonValue.GetString("LogStreamName");
-
     m_logStreamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogAnomalyType"))
   {
     m_logAnomalyType = LogAnomalyTypeMapper::GetLogAnomalyTypeForName(jsonValue.GetString("LogAnomalyType"));
-
     m_logAnomalyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogAnomalyToken"))
   {
     m_logAnomalyToken = jsonValue.GetString("LogAnomalyToken");
-
     m_logAnomalyTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogEventId"))
   {
     m_logEventId = jsonValue.GetString("LogEventId");
-
     m_logEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Explanation"))
   {
     m_explanation = jsonValue.GetString("Explanation");
-
     m_explanationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfLogLinesOccurrences"))
   {
     m_numberOfLogLinesOccurrences = jsonValue.GetInteger("NumberOfLogLinesOccurrences");
-
     m_numberOfLogLinesOccurrencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogEventTimestamp"))
   {
     m_logEventTimestamp = jsonValue.GetDouble("LogEventTimestamp");
-
     m_logEventTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

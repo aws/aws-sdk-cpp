@@ -18,18 +18,7 @@ namespace MarketplaceMetering
 namespace Model
 {
 
-UsageRecord::UsageRecord() : 
-    m_timestampHasBeenSet(false),
-    m_customerIdentifierHasBeenSet(false),
-    m_dimensionHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_usageAllocationsHasBeenSet(false)
-{
-}
-
 UsageRecord::UsageRecord(JsonView jsonValue)
-  : UsageRecord()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ UsageRecord& UsageRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerIdentifier"))
   {
     m_customerIdentifier = jsonValue.GetString("CustomerIdentifier");
-
     m_customerIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimension"))
   {
     m_dimension = jsonValue.GetString("Dimension");
-
     m_dimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Quantity"))
   {
     m_quantity = jsonValue.GetInteger("Quantity");
-
     m_quantityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsageAllocations"))
   {
     Aws::Utils::Array<JsonView> usageAllocationsJsonList = jsonValue.GetArray("UsageAllocations");
@@ -73,7 +54,6 @@ UsageRecord& UsageRecord::operator =(JsonView jsonValue)
     }
     m_usageAllocationsHasBeenSet = true;
   }
-
   return *this;
 }
 

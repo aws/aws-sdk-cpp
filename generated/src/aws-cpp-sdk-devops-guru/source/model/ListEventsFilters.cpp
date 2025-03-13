@@ -18,20 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-ListEventsFilters::ListEventsFilters() : 
-    m_insightIdHasBeenSet(false),
-    m_eventTimeRangeHasBeenSet(false),
-    m_eventClass(EventClass::NOT_SET),
-    m_eventClassHasBeenSet(false),
-    m_eventSourceHasBeenSet(false),
-    m_dataSource(EventDataSource::NOT_SET),
-    m_dataSourceHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
-{
-}
-
 ListEventsFilters::ListEventsFilters(JsonView jsonValue)
-  : ListEventsFilters()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ListEventsFilters& ListEventsFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InsightId"))
   {
     m_insightId = jsonValue.GetString("InsightId");
-
     m_insightIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventTimeRange"))
   {
     m_eventTimeRange = jsonValue.GetObject("EventTimeRange");
-
     m_eventTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventClass"))
   {
     m_eventClass = EventClassMapper::GetEventClassForName(jsonValue.GetString("EventClass"));
-
     m_eventClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventSource"))
   {
     m_eventSource = jsonValue.GetString("EventSource");
-
     m_eventSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = EventDataSourceMapper::GetEventDataSourceForName(jsonValue.GetString("DataSource"));
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceCollection"))
   {
     m_resourceCollection = jsonValue.GetObject("ResourceCollection");
-
     m_resourceCollectionHasBeenSet = true;
   }
-
   return *this;
 }
 

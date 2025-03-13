@@ -28,7 +28,7 @@ namespace Model
   class GetLoadBalancerResult
   {
   public:
-    AWS_LIGHTSAIL_API GetLoadBalancerResult();
+    AWS_LIGHTSAIL_API GetLoadBalancerResult() = default;
     AWS_LIGHTSAIL_API GetLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object containing information about your load balancer.</p>
      */
-    inline const LoadBalancer& GetLoadBalancer() const{ return m_loadBalancer; }
-    inline void SetLoadBalancer(const LoadBalancer& value) { m_loadBalancer = value; }
-    inline void SetLoadBalancer(LoadBalancer&& value) { m_loadBalancer = std::move(value); }
-    inline GetLoadBalancerResult& WithLoadBalancer(const LoadBalancer& value) { SetLoadBalancer(value); return *this;}
-    inline GetLoadBalancerResult& WithLoadBalancer(LoadBalancer&& value) { SetLoadBalancer(std::move(value)); return *this;}
+    inline const LoadBalancer& GetLoadBalancer() const { return m_loadBalancer; }
+    template<typename LoadBalancerT = LoadBalancer>
+    void SetLoadBalancer(LoadBalancerT&& value) { m_loadBalancerHasBeenSet = true; m_loadBalancer = std::forward<LoadBalancerT>(value); }
+    template<typename LoadBalancerT = LoadBalancer>
+    GetLoadBalancerResult& WithLoadBalancer(LoadBalancerT&& value) { SetLoadBalancer(std::forward<LoadBalancerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetLoadBalancerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetLoadBalancerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetLoadBalancerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetLoadBalancerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     LoadBalancer m_loadBalancer;
+    bool m_loadBalancerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

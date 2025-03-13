@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-Grantee::Grantee() : 
-    m_granteeType(GranteeType::NOT_SET),
-    m_granteeTypeHasBeenSet(false),
-    m_granteeIdentifierHasBeenSet(false)
-{
-}
-
 Grantee::Grantee(const XmlNode& xmlNode)
-  : Grantee()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ Grantee& Grantee::operator =(const XmlNode& xmlNode)
     XmlNode granteeTypeNode = resultNode.FirstChild("GranteeType");
     if(!granteeTypeNode.IsNull())
     {
-      m_granteeType = GranteeTypeMapper::GetGranteeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(granteeTypeNode.GetText()).c_str()).c_str());
+      m_granteeType = GranteeTypeMapper::GetGranteeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(granteeTypeNode.GetText()).c_str()));
       m_granteeTypeHasBeenSet = true;
+       m_granteeTypeHasBeenSet = true;
     }
     XmlNode granteeIdentifierNode = resultNode.FirstChild("GranteeIdentifier");
     if(!granteeIdentifierNode.IsNull())
     {
       m_granteeIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(granteeIdentifierNode.GetText());
       m_granteeIdentifierHasBeenSet = true;
+       m_granteeIdentifierHasBeenSet = true;
     }
   }
 

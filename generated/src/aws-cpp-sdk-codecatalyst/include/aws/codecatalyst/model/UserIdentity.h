@@ -33,7 +33,7 @@ namespace Model
   class UserIdentity
   {
   public:
-    AWS_CODECATALYST_API UserIdentity();
+    AWS_CODECATALYST_API UserIdentity() = default;
     AWS_CODECATALYST_API UserIdentity(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API UserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,34 @@ namespace Model
      * <p>The role assigned to the user in a Amazon CodeCatalyst space or project when
      * the event occurred.</p>
      */
-    inline const UserType& GetUserType() const{ return m_userType; }
+    inline UserType GetUserType() const { return m_userType; }
     inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
-    inline void SetUserType(const UserType& value) { m_userTypeHasBeenSet = true; m_userType = value; }
-    inline void SetUserType(UserType&& value) { m_userTypeHasBeenSet = true; m_userType = std::move(value); }
-    inline UserIdentity& WithUserType(const UserType& value) { SetUserType(value); return *this;}
-    inline UserIdentity& WithUserType(UserType&& value) { SetUserType(std::move(value)); return *this;}
+    inline void SetUserType(UserType value) { m_userTypeHasBeenSet = true; m_userType = value; }
+    inline UserIdentity& WithUserType(UserType value) { SetUserType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon CodeCatalyst service principal.</p>
      */
-    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-    inline UserIdentity& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-    inline UserIdentity& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-    inline UserIdentity& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    template<typename PrincipalIdT = Aws::String>
+    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
+    template<typename PrincipalIdT = Aws::String>
+    UserIdentity& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the user in Amazon CodeCatalyst.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline UserIdentity& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline UserIdentity& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline UserIdentity& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    UserIdentity& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,18 +79,16 @@ namespace Model
      * <p>The Amazon Web Services account number of the user in Amazon Web Services, if
      * any.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline UserIdentity& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline UserIdentity& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline UserIdentity& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    UserIdentity& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
   private:
 
-    UserType m_userType;
+    UserType m_userType{UserType::NOT_SET};
     bool m_userTypeHasBeenSet = false;
 
     Aws::String m_principalId;

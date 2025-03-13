@@ -18,17 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-EffectivePolicy::EffectivePolicy() : 
-    m_policyContentHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_policyType(EffectivePolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false)
-{
-}
-
 EffectivePolicy::EffectivePolicy(JsonView jsonValue)
-  : EffectivePolicy()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ EffectivePolicy& EffectivePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyContent"))
   {
     m_policyContent = jsonValue.GetString("PolicyContent");
-
     m_policyContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
-
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetId"))
   {
     m_targetId = jsonValue.GetString("TargetId");
-
     m_targetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyType"))
   {
     m_policyType = EffectivePolicyTypeMapper::GetEffectivePolicyTypeForName(jsonValue.GetString("PolicyType"));
-
     m_policyTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

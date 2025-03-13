@@ -29,7 +29,7 @@ namespace Model
   class ListProvisionedModelThroughputsResult
   {
   public:
-    AWS_BEDROCK_API ListProvisionedModelThroughputsResult();
+    AWS_BEDROCK_API ListProvisionedModelThroughputsResult() = default;
     AWS_BEDROCK_API ListProvisionedModelThroughputsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API ListProvisionedModelThroughputsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,44 @@ namespace Model
      * results, include this value in the <code>nextToken</code> field in another list
      * request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListProvisionedModelThroughputsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProvisionedModelThroughputsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProvisionedModelThroughputsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProvisionedModelThroughputsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of summaries, one for each Provisioned Throughput in the response.</p>
      */
-    inline const Aws::Vector<ProvisionedModelSummary>& GetProvisionedModelSummaries() const{ return m_provisionedModelSummaries; }
-    inline void SetProvisionedModelSummaries(const Aws::Vector<ProvisionedModelSummary>& value) { m_provisionedModelSummaries = value; }
-    inline void SetProvisionedModelSummaries(Aws::Vector<ProvisionedModelSummary>&& value) { m_provisionedModelSummaries = std::move(value); }
-    inline ListProvisionedModelThroughputsResult& WithProvisionedModelSummaries(const Aws::Vector<ProvisionedModelSummary>& value) { SetProvisionedModelSummaries(value); return *this;}
-    inline ListProvisionedModelThroughputsResult& WithProvisionedModelSummaries(Aws::Vector<ProvisionedModelSummary>&& value) { SetProvisionedModelSummaries(std::move(value)); return *this;}
-    inline ListProvisionedModelThroughputsResult& AddProvisionedModelSummaries(const ProvisionedModelSummary& value) { m_provisionedModelSummaries.push_back(value); return *this; }
-    inline ListProvisionedModelThroughputsResult& AddProvisionedModelSummaries(ProvisionedModelSummary&& value) { m_provisionedModelSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProvisionedModelSummary>& GetProvisionedModelSummaries() const { return m_provisionedModelSummaries; }
+    template<typename ProvisionedModelSummariesT = Aws::Vector<ProvisionedModelSummary>>
+    void SetProvisionedModelSummaries(ProvisionedModelSummariesT&& value) { m_provisionedModelSummariesHasBeenSet = true; m_provisionedModelSummaries = std::forward<ProvisionedModelSummariesT>(value); }
+    template<typename ProvisionedModelSummariesT = Aws::Vector<ProvisionedModelSummary>>
+    ListProvisionedModelThroughputsResult& WithProvisionedModelSummaries(ProvisionedModelSummariesT&& value) { SetProvisionedModelSummaries(std::forward<ProvisionedModelSummariesT>(value)); return *this;}
+    template<typename ProvisionedModelSummariesT = ProvisionedModelSummary>
+    ListProvisionedModelThroughputsResult& AddProvisionedModelSummaries(ProvisionedModelSummariesT&& value) { m_provisionedModelSummariesHasBeenSet = true; m_provisionedModelSummaries.emplace_back(std::forward<ProvisionedModelSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListProvisionedModelThroughputsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListProvisionedModelThroughputsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListProvisionedModelThroughputsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListProvisionedModelThroughputsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ProvisionedModelSummary> m_provisionedModelSummaries;
+    bool m_provisionedModelSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

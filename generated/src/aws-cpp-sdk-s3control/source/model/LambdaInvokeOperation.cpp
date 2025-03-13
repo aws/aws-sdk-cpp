@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-LambdaInvokeOperation::LambdaInvokeOperation() : 
-    m_functionArnHasBeenSet(false),
-    m_invocationSchemaVersionHasBeenSet(false),
-    m_userArgumentsHasBeenSet(false)
-{
-}
-
 LambdaInvokeOperation::LambdaInvokeOperation(const XmlNode& xmlNode)
-  : LambdaInvokeOperation()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ LambdaInvokeOperation& LambdaInvokeOperation::operator =(const XmlNode& xmlNode)
     {
       m_functionArn = Aws::Utils::Xml::DecodeEscapedXmlText(functionArnNode.GetText());
       m_functionArnHasBeenSet = true;
+       m_functionArnHasBeenSet = true;
     }
     XmlNode invocationSchemaVersionNode = resultNode.FirstChild("InvocationSchemaVersion");
     if(!invocationSchemaVersionNode.IsNull())
     {
       m_invocationSchemaVersion = Aws::Utils::Xml::DecodeEscapedXmlText(invocationSchemaVersionNode.GetText());
       m_invocationSchemaVersionHasBeenSet = true;
+       m_invocationSchemaVersionHasBeenSet = true;
     }
     XmlNode userArgumentsNode = resultNode.FirstChild("UserArguments");
 
     if(!userArgumentsNode.IsNull())
     {
       XmlNode userArgumentsEntry = userArgumentsNode.FirstChild("entry");
+      m_userArgumentsHasBeenSet = !userArgumentsEntry.IsNull();
       while(!userArgumentsEntry.IsNull())
       {
         XmlNode keyNode = userArgumentsEntry.FirstChild("key");
@@ -65,7 +60,7 @@ LambdaInvokeOperation& LambdaInvokeOperation::operator =(const XmlNode& xmlNode)
         userArgumentsEntry = userArgumentsEntry.NextNode("entry");
       }
 
-      m_userArgumentsHasBeenSet = true;
+       m_userArgumentsHasBeenSet = true;
     }
   }
 

@@ -34,7 +34,7 @@ namespace Model
   class DkimAttributes
   {
   public:
-    AWS_PINPOINTEMAIL_API DkimAttributes();
+    AWS_PINPOINTEMAIL_API DkimAttributes() = default;
     AWS_PINPOINTEMAIL_API DkimAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTEMAIL_API DkimAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * then the messages that Amazon Pinpoint sends from the identity aren't
      * DKIM-signed.</p>
      */
-    inline bool GetSigningEnabled() const{ return m_signingEnabled; }
+    inline bool GetSigningEnabled() const { return m_signingEnabled; }
     inline bool SigningEnabledHasBeenSet() const { return m_signingEnabledHasBeenSet; }
     inline void SetSigningEnabled(bool value) { m_signingEnabledHasBeenSet = true; m_signingEnabled = value; }
     inline DkimAttributes& WithSigningEnabled(bool value) { SetSigningEnabled(value); return *this;}
@@ -70,12 +70,10 @@ namespace Model
      * <p> <code>NOT_STARTED</code> – Amazon Pinpoint hasn't yet started searching for
      * the DKIM records in the DKIM records for the domain.</p> </li> </ul>
      */
-    inline const DkimStatus& GetStatus() const{ return m_status; }
+    inline DkimStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DkimStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DkimStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DkimAttributes& WithStatus(const DkimStatus& value) { SetStatus(value); return *this;}
-    inline DkimAttributes& WithStatus(DkimStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DkimStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DkimAttributes& WithStatus(DkimStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -86,22 +84,21 @@ namespace Model
      * process is complete. Amazon Pinpoint usually detects these records within about
      * 72 hours of adding them to the DNS configuration for your domain.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTokens() const{ return m_tokens; }
+    inline const Aws::Vector<Aws::String>& GetTokens() const { return m_tokens; }
     inline bool TokensHasBeenSet() const { return m_tokensHasBeenSet; }
-    inline void SetTokens(const Aws::Vector<Aws::String>& value) { m_tokensHasBeenSet = true; m_tokens = value; }
-    inline void SetTokens(Aws::Vector<Aws::String>&& value) { m_tokensHasBeenSet = true; m_tokens = std::move(value); }
-    inline DkimAttributes& WithTokens(const Aws::Vector<Aws::String>& value) { SetTokens(value); return *this;}
-    inline DkimAttributes& WithTokens(Aws::Vector<Aws::String>&& value) { SetTokens(std::move(value)); return *this;}
-    inline DkimAttributes& AddTokens(const Aws::String& value) { m_tokensHasBeenSet = true; m_tokens.push_back(value); return *this; }
-    inline DkimAttributes& AddTokens(Aws::String&& value) { m_tokensHasBeenSet = true; m_tokens.push_back(std::move(value)); return *this; }
-    inline DkimAttributes& AddTokens(const char* value) { m_tokensHasBeenSet = true; m_tokens.push_back(value); return *this; }
+    template<typename TokensT = Aws::Vector<Aws::String>>
+    void SetTokens(TokensT&& value) { m_tokensHasBeenSet = true; m_tokens = std::forward<TokensT>(value); }
+    template<typename TokensT = Aws::Vector<Aws::String>>
+    DkimAttributes& WithTokens(TokensT&& value) { SetTokens(std::forward<TokensT>(value)); return *this;}
+    template<typename TokensT = Aws::String>
+    DkimAttributes& AddTokens(TokensT&& value) { m_tokensHasBeenSet = true; m_tokens.emplace_back(std::forward<TokensT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_signingEnabled;
+    bool m_signingEnabled{false};
     bool m_signingEnabledHasBeenSet = false;
 
-    DkimStatus m_status;
+    DkimStatus m_status{DkimStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tokens;

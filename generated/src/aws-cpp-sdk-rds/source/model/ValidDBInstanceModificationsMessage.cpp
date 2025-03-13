@@ -20,16 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage() : 
-    m_storageHasBeenSet(false),
-    m_validProcessorFeaturesHasBeenSet(false),
-    m_supportsDedicatedLogVolume(false),
-    m_supportsDedicatedLogVolumeHasBeenSet(false)
-{
-}
-
 ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage(const XmlNode& xmlNode)
-  : ValidDBInstanceModificationsMessage()
 {
   *this = xmlNode;
 }
@@ -44,31 +35,34 @@ ValidDBInstanceModificationsMessage& ValidDBInstanceModificationsMessage::operat
     if(!storageNode.IsNull())
     {
       XmlNode storageMember = storageNode.FirstChild("ValidStorageOptions");
+      m_storageHasBeenSet = !storageMember.IsNull();
       while(!storageMember.IsNull())
       {
         m_storage.push_back(storageMember);
         storageMember = storageMember.NextNode("ValidStorageOptions");
       }
 
-      m_storageHasBeenSet = true;
+       m_storageHasBeenSet = true;
     }
     XmlNode validProcessorFeaturesNode = resultNode.FirstChild("ValidProcessorFeatures");
     if(!validProcessorFeaturesNode.IsNull())
     {
       XmlNode validProcessorFeaturesMember = validProcessorFeaturesNode.FirstChild("AvailableProcessorFeature");
+      m_validProcessorFeaturesHasBeenSet = !validProcessorFeaturesMember.IsNull();
       while(!validProcessorFeaturesMember.IsNull())
       {
         m_validProcessorFeatures.push_back(validProcessorFeaturesMember);
         validProcessorFeaturesMember = validProcessorFeaturesMember.NextNode("AvailableProcessorFeature");
       }
 
-      m_validProcessorFeaturesHasBeenSet = true;
+       m_validProcessorFeaturesHasBeenSet = true;
     }
     XmlNode supportsDedicatedLogVolumeNode = resultNode.FirstChild("SupportsDedicatedLogVolume");
     if(!supportsDedicatedLogVolumeNode.IsNull())
     {
       m_supportsDedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsDedicatedLogVolumeNode.GetText()).c_str()).c_str());
       m_supportsDedicatedLogVolumeHasBeenSet = true;
+       m_supportsDedicatedLogVolumeHasBeenSet = true;
     }
   }
 

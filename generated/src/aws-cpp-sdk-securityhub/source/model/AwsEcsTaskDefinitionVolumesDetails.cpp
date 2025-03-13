@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionVolumesDetails::AwsEcsTaskDefinitionVolumesDetails() : 
-    m_dockerVolumeConfigurationHasBeenSet(false),
-    m_efsVolumeConfigurationHasBeenSet(false),
-    m_hostHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionVolumesDetails::AwsEcsTaskDefinitionVolumesDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionVolumesDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AwsEcsTaskDefinitionVolumesDetails& AwsEcsTaskDefinitionVolumesDetails::operator
   if(jsonValue.ValueExists("DockerVolumeConfiguration"))
   {
     m_dockerVolumeConfiguration = jsonValue.GetObject("DockerVolumeConfiguration");
-
     m_dockerVolumeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EfsVolumeConfiguration"))
   {
     m_efsVolumeConfiguration = jsonValue.GetObject("EfsVolumeConfiguration");
-
     m_efsVolumeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Host"))
   {
     m_host = jsonValue.GetObject("Host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

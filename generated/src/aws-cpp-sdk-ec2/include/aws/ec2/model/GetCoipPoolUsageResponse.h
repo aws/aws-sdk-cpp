@@ -30,7 +30,7 @@ namespace Model
   class GetCoipPoolUsageResponse
   {
   public:
-    AWS_EC2_API GetCoipPoolUsageResponse();
+    AWS_EC2_API GetCoipPoolUsageResponse() = default;
     AWS_EC2_API GetCoipPoolUsageResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetCoipPoolUsageResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,39 +39,35 @@ namespace Model
     /**
      * <p>The ID of the customer-owned address pool.</p>
      */
-    inline const Aws::String& GetCoipPoolId() const{ return m_coipPoolId; }
-    inline void SetCoipPoolId(const Aws::String& value) { m_coipPoolId = value; }
-    inline void SetCoipPoolId(Aws::String&& value) { m_coipPoolId = std::move(value); }
-    inline void SetCoipPoolId(const char* value) { m_coipPoolId.assign(value); }
-    inline GetCoipPoolUsageResponse& WithCoipPoolId(const Aws::String& value) { SetCoipPoolId(value); return *this;}
-    inline GetCoipPoolUsageResponse& WithCoipPoolId(Aws::String&& value) { SetCoipPoolId(std::move(value)); return *this;}
-    inline GetCoipPoolUsageResponse& WithCoipPoolId(const char* value) { SetCoipPoolId(value); return *this;}
+    inline const Aws::String& GetCoipPoolId() const { return m_coipPoolId; }
+    template<typename CoipPoolIdT = Aws::String>
+    void SetCoipPoolId(CoipPoolIdT&& value) { m_coipPoolIdHasBeenSet = true; m_coipPoolId = std::forward<CoipPoolIdT>(value); }
+    template<typename CoipPoolIdT = Aws::String>
+    GetCoipPoolUsageResponse& WithCoipPoolId(CoipPoolIdT&& value) { SetCoipPoolId(std::forward<CoipPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the address usage.</p>
      */
-    inline const Aws::Vector<CoipAddressUsage>& GetCoipAddressUsages() const{ return m_coipAddressUsages; }
-    inline void SetCoipAddressUsages(const Aws::Vector<CoipAddressUsage>& value) { m_coipAddressUsages = value; }
-    inline void SetCoipAddressUsages(Aws::Vector<CoipAddressUsage>&& value) { m_coipAddressUsages = std::move(value); }
-    inline GetCoipPoolUsageResponse& WithCoipAddressUsages(const Aws::Vector<CoipAddressUsage>& value) { SetCoipAddressUsages(value); return *this;}
-    inline GetCoipPoolUsageResponse& WithCoipAddressUsages(Aws::Vector<CoipAddressUsage>&& value) { SetCoipAddressUsages(std::move(value)); return *this;}
-    inline GetCoipPoolUsageResponse& AddCoipAddressUsages(const CoipAddressUsage& value) { m_coipAddressUsages.push_back(value); return *this; }
-    inline GetCoipPoolUsageResponse& AddCoipAddressUsages(CoipAddressUsage&& value) { m_coipAddressUsages.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CoipAddressUsage>& GetCoipAddressUsages() const { return m_coipAddressUsages; }
+    template<typename CoipAddressUsagesT = Aws::Vector<CoipAddressUsage>>
+    void SetCoipAddressUsages(CoipAddressUsagesT&& value) { m_coipAddressUsagesHasBeenSet = true; m_coipAddressUsages = std::forward<CoipAddressUsagesT>(value); }
+    template<typename CoipAddressUsagesT = Aws::Vector<CoipAddressUsage>>
+    GetCoipPoolUsageResponse& WithCoipAddressUsages(CoipAddressUsagesT&& value) { SetCoipAddressUsages(std::forward<CoipAddressUsagesT>(value)); return *this;}
+    template<typename CoipAddressUsagesT = CoipAddressUsage>
+    GetCoipPoolUsageResponse& AddCoipAddressUsages(CoipAddressUsagesT&& value) { m_coipAddressUsagesHasBeenSet = true; m_coipAddressUsages.emplace_back(std::forward<CoipAddressUsagesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the local gateway route table.</p>
      */
-    inline const Aws::String& GetLocalGatewayRouteTableId() const{ return m_localGatewayRouteTableId; }
-    inline void SetLocalGatewayRouteTableId(const Aws::String& value) { m_localGatewayRouteTableId = value; }
-    inline void SetLocalGatewayRouteTableId(Aws::String&& value) { m_localGatewayRouteTableId = std::move(value); }
-    inline void SetLocalGatewayRouteTableId(const char* value) { m_localGatewayRouteTableId.assign(value); }
-    inline GetCoipPoolUsageResponse& WithLocalGatewayRouteTableId(const Aws::String& value) { SetLocalGatewayRouteTableId(value); return *this;}
-    inline GetCoipPoolUsageResponse& WithLocalGatewayRouteTableId(Aws::String&& value) { SetLocalGatewayRouteTableId(std::move(value)); return *this;}
-    inline GetCoipPoolUsageResponse& WithLocalGatewayRouteTableId(const char* value) { SetLocalGatewayRouteTableId(value); return *this;}
+    inline const Aws::String& GetLocalGatewayRouteTableId() const { return m_localGatewayRouteTableId; }
+    template<typename LocalGatewayRouteTableIdT = Aws::String>
+    void SetLocalGatewayRouteTableId(LocalGatewayRouteTableIdT&& value) { m_localGatewayRouteTableIdHasBeenSet = true; m_localGatewayRouteTableId = std::forward<LocalGatewayRouteTableIdT>(value); }
+    template<typename LocalGatewayRouteTableIdT = Aws::String>
+    GetCoipPoolUsageResponse& WithLocalGatewayRouteTableId(LocalGatewayRouteTableIdT&& value) { SetLocalGatewayRouteTableId(std::forward<LocalGatewayRouteTableIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,34 +75,37 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetCoipPoolUsageResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetCoipPoolUsageResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetCoipPoolUsageResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetCoipPoolUsageResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetCoipPoolUsageResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetCoipPoolUsageResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetCoipPoolUsageResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_coipPoolId;
+    bool m_coipPoolIdHasBeenSet = false;
 
     Aws::Vector<CoipAddressUsage> m_coipAddressUsages;
+    bool m_coipAddressUsagesHasBeenSet = false;
 
     Aws::String m_localGatewayRouteTableId;
+    bool m_localGatewayRouteTableIdHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

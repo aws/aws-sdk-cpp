@@ -37,7 +37,7 @@ namespace Model
   class OidcMemberDefinition
   {
   public:
-    AWS_SAGEMAKER_API OidcMemberDefinition();
+    AWS_SAGEMAKER_API OidcMemberDefinition() = default;
     AWS_SAGEMAKER_API OidcMemberDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API OidcMemberDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ namespace Model
      * <p>A list of comma seperated strings that identifies user groups in your OIDC
      * IdP. Each user group is made up of a group of private workers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+    inline const Aws::Vector<Aws::String>& GetGroups() const { return m_groups; }
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-    inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-    inline OidcMemberDefinition& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
-    inline OidcMemberDefinition& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
-    inline OidcMemberDefinition& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-    inline OidcMemberDefinition& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
-    inline OidcMemberDefinition& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    template<typename GroupsT = Aws::Vector<Aws::String>>
+    void SetGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups = std::forward<GroupsT>(value); }
+    template<typename GroupsT = Aws::Vector<Aws::String>>
+    OidcMemberDefinition& WithGroups(GroupsT&& value) { SetGroups(std::forward<GroupsT>(value)); return *this;}
+    template<typename GroupsT = Aws::String>
+    OidcMemberDefinition& AddGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups.emplace_back(std::forward<GroupsT>(value)); return *this; }
     ///@}
   private:
 

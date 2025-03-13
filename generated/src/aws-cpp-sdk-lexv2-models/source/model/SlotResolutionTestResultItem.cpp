@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SlotResolutionTestResultItem::SlotResolutionTestResultItem() : 
-    m_slotNameHasBeenSet(false),
-    m_resultCountsHasBeenSet(false)
-{
-}
-
 SlotResolutionTestResultItem::SlotResolutionTestResultItem(JsonView jsonValue)
-  : SlotResolutionTestResultItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SlotResolutionTestResultItem& SlotResolutionTestResultItem::operator =(JsonView 
   if(jsonValue.ValueExists("slotName"))
   {
     m_slotName = jsonValue.GetString("slotName");
-
     m_slotNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resultCounts"))
   {
     m_resultCounts = jsonValue.GetObject("resultCounts");
-
     m_resultCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

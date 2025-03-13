@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAssociationBatchResult::CreateAssociationBatchResult()
-{
-}
-
 CreateAssociationBatchResult::CreateAssociationBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ CreateAssociationBatchResult& CreateAssociationBatchResult::operator =(const Aws
     {
       m_successful.push_back(successfulJsonList[successfulIndex].AsObject());
     }
+    m_successfulHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Failed"))
   {
     Aws::Utils::Array<JsonView> failedJsonList = jsonValue.GetArray("Failed");
@@ -45,14 +41,15 @@ CreateAssociationBatchResult& CreateAssociationBatchResult::operator =(const Aws
     {
       m_failed.push_back(failedJsonList[failedIndex].AsObject());
     }
+    m_failedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

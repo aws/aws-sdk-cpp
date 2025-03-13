@@ -29,7 +29,7 @@ namespace Model
   class ExecutionRedrivenEventDetails
   {
   public:
-    AWS_SFN_API ExecutionRedrivenEventDetails();
+    AWS_SFN_API ExecutionRedrivenEventDetails() = default;
     AWS_SFN_API ExecutionRedrivenEventDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API ExecutionRedrivenEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * redriven an execution, the <code>redriveCount</code> is 0. This count is not
      * updated for redrives that failed to start or are pending to be redriven.</p>
      */
-    inline int GetRedriveCount() const{ return m_redriveCount; }
+    inline int GetRedriveCount() const { return m_redriveCount; }
     inline bool RedriveCountHasBeenSet() const { return m_redriveCountHasBeenSet; }
     inline void SetRedriveCount(int value) { m_redriveCountHasBeenSet = true; m_redriveCount = value; }
     inline ExecutionRedrivenEventDetails& WithRedriveCount(int value) { SetRedriveCount(value); return *this;}
     ///@}
   private:
 
-    int m_redriveCount;
+    int m_redriveCount{0};
     bool m_redriveCountHasBeenSet = false;
   };
 

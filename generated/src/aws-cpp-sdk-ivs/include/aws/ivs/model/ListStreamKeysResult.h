@@ -29,7 +29,7 @@ namespace Model
   class ListStreamKeysResult
   {
   public:
-    AWS_IVS_API ListStreamKeysResult();
+    AWS_IVS_API ListStreamKeysResult() = default;
     AWS_IVS_API ListStreamKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVS_API ListStreamKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>If there are more stream keys than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStreamKeysResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStreamKeysResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStreamKeysResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStreamKeysResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of stream keys.</p>
      */
-    inline const Aws::Vector<StreamKeySummary>& GetStreamKeys() const{ return m_streamKeys; }
-    inline void SetStreamKeys(const Aws::Vector<StreamKeySummary>& value) { m_streamKeys = value; }
-    inline void SetStreamKeys(Aws::Vector<StreamKeySummary>&& value) { m_streamKeys = std::move(value); }
-    inline ListStreamKeysResult& WithStreamKeys(const Aws::Vector<StreamKeySummary>& value) { SetStreamKeys(value); return *this;}
-    inline ListStreamKeysResult& WithStreamKeys(Aws::Vector<StreamKeySummary>&& value) { SetStreamKeys(std::move(value)); return *this;}
-    inline ListStreamKeysResult& AddStreamKeys(const StreamKeySummary& value) { m_streamKeys.push_back(value); return *this; }
-    inline ListStreamKeysResult& AddStreamKeys(StreamKeySummary&& value) { m_streamKeys.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StreamKeySummary>& GetStreamKeys() const { return m_streamKeys; }
+    template<typename StreamKeysT = Aws::Vector<StreamKeySummary>>
+    void SetStreamKeys(StreamKeysT&& value) { m_streamKeysHasBeenSet = true; m_streamKeys = std::forward<StreamKeysT>(value); }
+    template<typename StreamKeysT = Aws::Vector<StreamKeySummary>>
+    ListStreamKeysResult& WithStreamKeys(StreamKeysT&& value) { SetStreamKeys(std::forward<StreamKeysT>(value)); return *this;}
+    template<typename StreamKeysT = StreamKeySummary>
+    ListStreamKeysResult& AddStreamKeys(StreamKeysT&& value) { m_streamKeysHasBeenSet = true; m_streamKeys.emplace_back(std::forward<StreamKeysT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStreamKeysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStreamKeysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStreamKeysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStreamKeysResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<StreamKeySummary> m_streamKeys;
+    bool m_streamKeysHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

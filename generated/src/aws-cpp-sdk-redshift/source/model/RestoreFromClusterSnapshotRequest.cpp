@@ -10,59 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-RestoreFromClusterSnapshotRequest::RestoreFromClusterSnapshotRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_snapshotIdentifierHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_snapshotClusterIdentifierHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_allowVersionUpgrade(false),
-    m_allowVersionUpgradeHasBeenSet(false),
-    m_clusterSubnetGroupNameHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_hsmClientCertificateIdentifierHasBeenSet(false),
-    m_hsmConfigurationIdentifierHasBeenSet(false),
-    m_elasticIpHasBeenSet(false),
-    m_clusterParameterGroupNameHasBeenSet(false),
-    m_clusterSecurityGroupsHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_automatedSnapshotRetentionPeriod(0),
-    m_automatedSnapshotRetentionPeriodHasBeenSet(false),
-    m_manualSnapshotRetentionPeriod(0),
-    m_manualSnapshotRetentionPeriodHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_enhancedVpcRouting(false),
-    m_enhancedVpcRoutingHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_iamRolesHasBeenSet(false),
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_snapshotScheduleIdentifierHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_availabilityZoneRelocation(false),
-    m_availabilityZoneRelocationHasBeenSet(false),
-    m_aquaConfigurationStatus(AquaConfigurationStatus::NOT_SET),
-    m_aquaConfigurationStatusHasBeenSet(false),
-    m_defaultIamRoleArnHasBeenSet(false),
-    m_reservedNodeIdHasBeenSet(false),
-    m_targetReservedNodeOfferingIdHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_manageMasterPassword(false),
-    m_manageMasterPasswordHasBeenSet(false),
-    m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
-    m_ipAddressTypeHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false)
-{
-}
-
 Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

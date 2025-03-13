@@ -18,14 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentTemplateTargetFilter::ExperimentTemplateTargetFilter() : 
-    m_pathHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ExperimentTemplateTargetFilter::ExperimentTemplateTargetFilter(JsonView jsonValue)
-  : ExperimentTemplateTargetFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ExperimentTemplateTargetFilter& ExperimentTemplateTargetFilter::operator =(JsonV
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -48,7 +39,6 @@ ExperimentTemplateTargetFilter& ExperimentTemplateTargetFilter::operator =(JsonV
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

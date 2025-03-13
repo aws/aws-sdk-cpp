@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RealTimeContactAnalysisSegmentPostContactSummary::RealTimeContactAnalysisSegmentPostContactSummary() : 
-    m_contentHasBeenSet(false),
-    m_status(RealTimeContactAnalysisPostContactSummaryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureCode(RealTimeContactAnalysisPostContactSummaryFailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false)
-{
-}
-
 RealTimeContactAnalysisSegmentPostContactSummary::RealTimeContactAnalysisSegmentPostContactSummary(JsonView jsonValue)
-  : RealTimeContactAnalysisSegmentPostContactSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RealTimeContactAnalysisSegmentPostContactSummary& RealTimeContactAnalysisSegment
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RealTimeContactAnalysisPostContactSummaryStatusMapper::GetRealTimeContactAnalysisPostContactSummaryStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureCode"))
   {
     m_failureCode = RealTimeContactAnalysisPostContactSummaryFailureCodeMapper::GetRealTimeContactAnalysisPostContactSummaryFailureCodeForName(jsonValue.GetString("FailureCode"));
-
     m_failureCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

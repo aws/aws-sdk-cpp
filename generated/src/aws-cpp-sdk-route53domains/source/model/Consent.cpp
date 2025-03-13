@@ -18,15 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-Consent::Consent() : 
-    m_maxPrice(0.0),
-    m_maxPriceHasBeenSet(false),
-    m_currencyHasBeenSet(false)
-{
-}
-
 Consent::Consent(JsonView jsonValue)
-  : Consent()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Consent& Consent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaxPrice"))
   {
     m_maxPrice = jsonValue.GetDouble("MaxPrice");
-
     m_maxPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Currency"))
   {
     m_currency = jsonValue.GetString("Currency");
-
     m_currencyHasBeenSet = true;
   }
-
   return *this;
 }
 

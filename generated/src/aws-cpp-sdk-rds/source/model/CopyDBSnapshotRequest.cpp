@@ -10,22 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CopyDBSnapshotRequest::CopyDBSnapshotRequest() : 
-    m_sourceDBSnapshotIdentifierHasBeenSet(false),
-    m_targetDBSnapshotIdentifierHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false),
-    m_preSignedUrlHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false),
-    m_targetCustomAvailabilityZoneHasBeenSet(false),
-    m_copyOptionGroup(false),
-    m_copyOptionGroupHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false)
-{
-}
-
 Aws::String CopyDBSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

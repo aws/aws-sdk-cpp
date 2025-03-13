@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateOutboundConnectionResult::CreateOutboundConnectionResult() : 
-    m_connectionMode(ConnectionMode::NOT_SET)
-{
-}
-
 CreateOutboundConnectionResult::CreateOutboundConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateOutboundConnectionResult()
 {
   *this = result;
 }
@@ -34,51 +28,45 @@ CreateOutboundConnectionResult& CreateOutboundConnectionResult::operator =(const
   if(jsonValue.ValueExists("LocalDomainInfo"))
   {
     m_localDomainInfo = jsonValue.GetObject("LocalDomainInfo");
-
+    m_localDomainInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoteDomainInfo"))
   {
     m_remoteDomainInfo = jsonValue.GetObject("RemoteDomainInfo");
-
+    m_remoteDomainInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionAlias"))
   {
     m_connectionAlias = jsonValue.GetString("ConnectionAlias");
-
+    m_connectionAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionStatus"))
   {
     m_connectionStatus = jsonValue.GetObject("ConnectionStatus");
-
+    m_connectionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionId"))
   {
     m_connectionId = jsonValue.GetString("ConnectionId");
-
+    m_connectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionMode"))
   {
     m_connectionMode = ConnectionModeMapper::GetConnectionModeForName(jsonValue.GetString("ConnectionMode"));
-
+    m_connectionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionProperties"))
   {
     m_connectionProperties = jsonValue.GetObject("ConnectionProperties");
-
+    m_connectionPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

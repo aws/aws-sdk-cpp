@@ -13,23 +13,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAssetModelRequest::UpdateAssetModelRequest() : 
-    m_assetModelIdHasBeenSet(false),
-    m_assetModelExternalIdHasBeenSet(false),
-    m_assetModelNameHasBeenSet(false),
-    m_assetModelDescriptionHasBeenSet(false),
-    m_assetModelPropertiesHasBeenSet(false),
-    m_assetModelHierarchiesHasBeenSet(false),
-    m_assetModelCompositeModelsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_ifMatchHasBeenSet(false),
-    m_ifNoneMatchHasBeenSet(false),
-    m_matchForVersionType(AssetModelVersionType::NOT_SET),
-    m_matchForVersionTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAssetModelRequest::SerializePayload() const
 {
   JsonValue payload;

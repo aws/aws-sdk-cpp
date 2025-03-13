@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-DataAlreadyAcceptedException::DataAlreadyAcceptedException() : 
-    m_expectedSequenceTokenHasBeenSet(false)
-{
-}
-
 DataAlreadyAcceptedException::DataAlreadyAcceptedException(JsonView jsonValue)
-  : DataAlreadyAcceptedException()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataAlreadyAcceptedException& DataAlreadyAcceptedException::operator =(JsonView 
   if(jsonValue.ValueExists("expectedSequenceToken"))
   {
     m_expectedSequenceToken = jsonValue.GetString("expectedSequenceToken");
-
     m_expectedSequenceTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class CreateInsightRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API CreateInsightRequest();
+    AWS_SECURITYHUB_API CreateInsightRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The name of the custom insight to create.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateInsightRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateInsightRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateInsightRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateInsightRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,12 +51,12 @@ namespace Model
      * The insight only includes findings that match the criteria defined in the
      * filters.</p>
      */
-    inline const AwsSecurityFindingFilters& GetFilters() const{ return m_filters; }
+    inline const AwsSecurityFindingFilters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const AwsSecurityFindingFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(AwsSecurityFindingFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline CreateInsightRequest& WithFilters(const AwsSecurityFindingFilters& value) { SetFilters(value); return *this;}
-    inline CreateInsightRequest& WithFilters(AwsSecurityFindingFilters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = AwsSecurityFindingFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = AwsSecurityFindingFilters>
+    CreateInsightRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * if an insight is grouped by resource identifier, then the insight produces a
      * list of resource identifiers.</p>
      */
-    inline const Aws::String& GetGroupByAttribute() const{ return m_groupByAttribute; }
+    inline const Aws::String& GetGroupByAttribute() const { return m_groupByAttribute; }
     inline bool GroupByAttributeHasBeenSet() const { return m_groupByAttributeHasBeenSet; }
-    inline void SetGroupByAttribute(const Aws::String& value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute = value; }
-    inline void SetGroupByAttribute(Aws::String&& value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute = std::move(value); }
-    inline void SetGroupByAttribute(const char* value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute.assign(value); }
-    inline CreateInsightRequest& WithGroupByAttribute(const Aws::String& value) { SetGroupByAttribute(value); return *this;}
-    inline CreateInsightRequest& WithGroupByAttribute(Aws::String&& value) { SetGroupByAttribute(std::move(value)); return *this;}
-    inline CreateInsightRequest& WithGroupByAttribute(const char* value) { SetGroupByAttribute(value); return *this;}
+    template<typename GroupByAttributeT = Aws::String>
+    void SetGroupByAttribute(GroupByAttributeT&& value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute = std::forward<GroupByAttributeT>(value); }
+    template<typename GroupByAttributeT = Aws::String>
+    CreateInsightRequest& WithGroupByAttribute(GroupByAttributeT&& value) { SetGroupByAttribute(std::forward<GroupByAttributeT>(value)); return *this;}
     ///@}
   private:
 

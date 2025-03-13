@@ -33,7 +33,7 @@ namespace Model
   class TestSetTurnRecord
   {
   public:
-    AWS_LEXMODELSV2_API TestSetTurnRecord();
+    AWS_LEXMODELSV2_API TestSetTurnRecord() = default;
     AWS_LEXMODELSV2_API TestSetTurnRecord(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TestSetTurnRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The record number associated with the turn.</p>
      */
-    inline long long GetRecordNumber() const{ return m_recordNumber; }
+    inline long long GetRecordNumber() const { return m_recordNumber; }
     inline bool RecordNumberHasBeenSet() const { return m_recordNumberHasBeenSet; }
     inline void SetRecordNumber(long long value) { m_recordNumberHasBeenSet = true; m_recordNumber = value; }
     inline TestSetTurnRecord& WithRecordNumber(long long value) { SetRecordNumber(value); return *this;}
@@ -53,21 +53,19 @@ namespace Model
     /**
      * <p>The unique identifier for the conversation associated with the turn.</p>
      */
-    inline const Aws::String& GetConversationId() const{ return m_conversationId; }
+    inline const Aws::String& GetConversationId() const { return m_conversationId; }
     inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
-    inline void SetConversationId(const Aws::String& value) { m_conversationIdHasBeenSet = true; m_conversationId = value; }
-    inline void SetConversationId(Aws::String&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::move(value); }
-    inline void SetConversationId(const char* value) { m_conversationIdHasBeenSet = true; m_conversationId.assign(value); }
-    inline TestSetTurnRecord& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
-    inline TestSetTurnRecord& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
-    inline TestSetTurnRecord& WithConversationId(const char* value) { SetConversationId(value); return *this;}
+    template<typename ConversationIdT = Aws::String>
+    void SetConversationId(ConversationIdT&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::forward<ConversationIdT>(value); }
+    template<typename ConversationIdT = Aws::String>
+    TestSetTurnRecord& WithConversationId(ConversationIdT&& value) { SetConversationId(std::forward<ConversationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of turns that has elapsed up to that turn.</p>
      */
-    inline int GetTurnNumber() const{ return m_turnNumber; }
+    inline int GetTurnNumber() const { return m_turnNumber; }
     inline bool TurnNumberHasBeenSet() const { return m_turnNumberHasBeenSet; }
     inline void SetTurnNumber(int value) { m_turnNumberHasBeenSet = true; m_turnNumber = value; }
     inline TestSetTurnRecord& WithTurnNumber(int value) { SetTurnNumber(value); return *this;}
@@ -78,22 +76,22 @@ namespace Model
      * <p>Contains information about the agent or user turn depending upon type of
      * turn.</p>
      */
-    inline const TurnSpecification& GetTurnSpecification() const{ return m_turnSpecification; }
+    inline const TurnSpecification& GetTurnSpecification() const { return m_turnSpecification; }
     inline bool TurnSpecificationHasBeenSet() const { return m_turnSpecificationHasBeenSet; }
-    inline void SetTurnSpecification(const TurnSpecification& value) { m_turnSpecificationHasBeenSet = true; m_turnSpecification = value; }
-    inline void SetTurnSpecification(TurnSpecification&& value) { m_turnSpecificationHasBeenSet = true; m_turnSpecification = std::move(value); }
-    inline TestSetTurnRecord& WithTurnSpecification(const TurnSpecification& value) { SetTurnSpecification(value); return *this;}
-    inline TestSetTurnRecord& WithTurnSpecification(TurnSpecification&& value) { SetTurnSpecification(std::move(value)); return *this;}
+    template<typename TurnSpecificationT = TurnSpecification>
+    void SetTurnSpecification(TurnSpecificationT&& value) { m_turnSpecificationHasBeenSet = true; m_turnSpecification = std::forward<TurnSpecificationT>(value); }
+    template<typename TurnSpecificationT = TurnSpecification>
+    TestSetTurnRecord& WithTurnSpecification(TurnSpecificationT&& value) { SetTurnSpecification(std::forward<TurnSpecificationT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_recordNumber;
+    long long m_recordNumber{0};
     bool m_recordNumberHasBeenSet = false;
 
     Aws::String m_conversationId;
     bool m_conversationIdHasBeenSet = false;
 
-    int m_turnNumber;
+    int m_turnNumber{0};
     bool m_turnNumberHasBeenSet = false;
 
     TurnSpecification m_turnSpecification;

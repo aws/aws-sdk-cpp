@@ -18,22 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-EnvironmentBlueprintConfigurationItem::EnvironmentBlueprintConfigurationItem() : 
-    m_createdAtHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_enabledRegionsHasBeenSet(false),
-    m_environmentBlueprintIdHasBeenSet(false),
-    m_environmentRolePermissionBoundaryHasBeenSet(false),
-    m_manageAccessRoleArnHasBeenSet(false),
-    m_provisioningConfigurationsHasBeenSet(false),
-    m_provisioningRoleArnHasBeenSet(false),
-    m_regionalParametersHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 EnvironmentBlueprintConfigurationItem::EnvironmentBlueprintConfigurationItem(JsonView jsonValue)
-  : EnvironmentBlueprintConfigurationItem()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ EnvironmentBlueprintConfigurationItem& EnvironmentBlueprintConfigurationItem::op
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabledRegions"))
   {
     Aws::Utils::Array<JsonView> enabledRegionsJsonList = jsonValue.GetArray("enabledRegions");
@@ -63,28 +44,21 @@ EnvironmentBlueprintConfigurationItem& EnvironmentBlueprintConfigurationItem::op
     }
     m_enabledRegionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentBlueprintId"))
   {
     m_environmentBlueprintId = jsonValue.GetString("environmentBlueprintId");
-
     m_environmentBlueprintIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentRolePermissionBoundary"))
   {
     m_environmentRolePermissionBoundary = jsonValue.GetString("environmentRolePermissionBoundary");
-
     m_environmentRolePermissionBoundaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manageAccessRoleArn"))
   {
     m_manageAccessRoleArn = jsonValue.GetString("manageAccessRoleArn");
-
     m_manageAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provisioningConfigurations"))
   {
     Aws::Utils::Array<JsonView> provisioningConfigurationsJsonList = jsonValue.GetArray("provisioningConfigurations");
@@ -94,14 +68,11 @@ EnvironmentBlueprintConfigurationItem& EnvironmentBlueprintConfigurationItem::op
     }
     m_provisioningConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provisioningRoleArn"))
   {
     m_provisioningRoleArn = jsonValue.GetString("provisioningRoleArn");
-
     m_provisioningRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regionalParameters"))
   {
     Aws::Map<Aws::String, JsonView> regionalParametersJsonMap = jsonValue.GetObject("regionalParameters").GetAllObjects();
@@ -117,14 +88,11 @@ EnvironmentBlueprintConfigurationItem& EnvironmentBlueprintConfigurationItem::op
     }
     m_regionalParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

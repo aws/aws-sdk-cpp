@@ -32,7 +32,7 @@ namespace Model
   class LabelingJobOutput
   {
   public:
-    AWS_SAGEMAKER_API LabelingJobOutput();
+    AWS_SAGEMAKER_API LabelingJobOutput() = default;
     AWS_SAGEMAKER_API LabelingJobOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API LabelingJobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket location of the manifest file for labeled data. </p>
      */
-    inline const Aws::String& GetOutputDatasetS3Uri() const{ return m_outputDatasetS3Uri; }
+    inline const Aws::String& GetOutputDatasetS3Uri() const { return m_outputDatasetS3Uri; }
     inline bool OutputDatasetS3UriHasBeenSet() const { return m_outputDatasetS3UriHasBeenSet; }
-    inline void SetOutputDatasetS3Uri(const Aws::String& value) { m_outputDatasetS3UriHasBeenSet = true; m_outputDatasetS3Uri = value; }
-    inline void SetOutputDatasetS3Uri(Aws::String&& value) { m_outputDatasetS3UriHasBeenSet = true; m_outputDatasetS3Uri = std::move(value); }
-    inline void SetOutputDatasetS3Uri(const char* value) { m_outputDatasetS3UriHasBeenSet = true; m_outputDatasetS3Uri.assign(value); }
-    inline LabelingJobOutput& WithOutputDatasetS3Uri(const Aws::String& value) { SetOutputDatasetS3Uri(value); return *this;}
-    inline LabelingJobOutput& WithOutputDatasetS3Uri(Aws::String&& value) { SetOutputDatasetS3Uri(std::move(value)); return *this;}
-    inline LabelingJobOutput& WithOutputDatasetS3Uri(const char* value) { SetOutputDatasetS3Uri(value); return *this;}
+    template<typename OutputDatasetS3UriT = Aws::String>
+    void SetOutputDatasetS3Uri(OutputDatasetS3UriT&& value) { m_outputDatasetS3UriHasBeenSet = true; m_outputDatasetS3Uri = std::forward<OutputDatasetS3UriT>(value); }
+    template<typename OutputDatasetS3UriT = Aws::String>
+    LabelingJobOutput& WithOutputDatasetS3Uri(OutputDatasetS3UriT&& value) { SetOutputDatasetS3Uri(std::forward<OutputDatasetS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as
      * part of automated data labeling. </p>
      */
-    inline const Aws::String& GetFinalActiveLearningModelArn() const{ return m_finalActiveLearningModelArn; }
+    inline const Aws::String& GetFinalActiveLearningModelArn() const { return m_finalActiveLearningModelArn; }
     inline bool FinalActiveLearningModelArnHasBeenSet() const { return m_finalActiveLearningModelArnHasBeenSet; }
-    inline void SetFinalActiveLearningModelArn(const Aws::String& value) { m_finalActiveLearningModelArnHasBeenSet = true; m_finalActiveLearningModelArn = value; }
-    inline void SetFinalActiveLearningModelArn(Aws::String&& value) { m_finalActiveLearningModelArnHasBeenSet = true; m_finalActiveLearningModelArn = std::move(value); }
-    inline void SetFinalActiveLearningModelArn(const char* value) { m_finalActiveLearningModelArnHasBeenSet = true; m_finalActiveLearningModelArn.assign(value); }
-    inline LabelingJobOutput& WithFinalActiveLearningModelArn(const Aws::String& value) { SetFinalActiveLearningModelArn(value); return *this;}
-    inline LabelingJobOutput& WithFinalActiveLearningModelArn(Aws::String&& value) { SetFinalActiveLearningModelArn(std::move(value)); return *this;}
-    inline LabelingJobOutput& WithFinalActiveLearningModelArn(const char* value) { SetFinalActiveLearningModelArn(value); return *this;}
+    template<typename FinalActiveLearningModelArnT = Aws::String>
+    void SetFinalActiveLearningModelArn(FinalActiveLearningModelArnT&& value) { m_finalActiveLearningModelArnHasBeenSet = true; m_finalActiveLearningModelArn = std::forward<FinalActiveLearningModelArnT>(value); }
+    template<typename FinalActiveLearningModelArnT = Aws::String>
+    LabelingJobOutput& WithFinalActiveLearningModelArn(FinalActiveLearningModelArnT&& value) { SetFinalActiveLearningModelArn(std::forward<FinalActiveLearningModelArnT>(value)); return *this;}
     ///@}
   private:
 

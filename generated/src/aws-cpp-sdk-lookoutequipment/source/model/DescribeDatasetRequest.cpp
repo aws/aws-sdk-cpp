@@ -12,11 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDatasetRequest::DescribeDatasetRequest() : 
-    m_datasetNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDatasetRequest::SerializePayload() const
 {
   JsonValue payload;

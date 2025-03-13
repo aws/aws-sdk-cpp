@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBucketStatisticsRequest::GetBucketStatisticsRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String GetBucketStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

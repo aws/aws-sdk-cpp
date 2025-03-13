@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-FileSource::FileSource() : 
-    m_contentTypeHasBeenSet(false),
-    m_contentDigestHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
-{
-}
-
 FileSource::FileSource(JsonView jsonValue)
-  : FileSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FileSource& FileSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentDigest"))
   {
     m_contentDigest = jsonValue.GetString("ContentDigest");
-
     m_contentDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

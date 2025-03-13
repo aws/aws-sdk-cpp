@@ -21,7 +21,7 @@ namespace Model
   class ListAppsListsRequest : public FMSRequest
   {
   public:
-    AWS_FMS_API ListAppsListsRequest();
+    AWS_FMS_API ListAppsListsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,7 +39,7 @@ namespace Model
      * <p>Specifies whether the lists to retrieve are default lists owned by Firewall
      * Manager.</p>
      */
-    inline bool GetDefaultLists() const{ return m_defaultLists; }
+    inline bool GetDefaultLists() const { return m_defaultLists; }
     inline bool DefaultListsHasBeenSet() const { return m_defaultListsHasBeenSet; }
     inline void SetDefaultLists(bool value) { m_defaultListsHasBeenSet = true; m_defaultLists = value; }
     inline ListAppsListsRequest& WithDefaultLists(bool value) { SetDefaultLists(value); return *this;}
@@ -53,14 +53,12 @@ namespace Model
      * the prior request in the request parameters, to retrieve the next batch of
      * objects.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAppsListsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAppsListsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAppsListsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAppsListsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,20 +69,20 @@ namespace Model
      * get the next batch of objects.</p> <p>If you don't specify this, Firewall
      * Manager returns all available objects.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAppsListsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    bool m_defaultLists;
+    bool m_defaultLists{false};
     bool m_defaultListsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

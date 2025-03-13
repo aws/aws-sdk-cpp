@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeAccessPointsRequest::DescribeAccessPointsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_accessPointIdHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccessPointsRequest::SerializePayload() const
 {
   return {};

@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-UtteranceLevelTestResultItem::UtteranceLevelTestResultItem() : 
-    m_recordNumber(0),
-    m_recordNumberHasBeenSet(false),
-    m_conversationIdHasBeenSet(false),
-    m_turnResultHasBeenSet(false)
-{
-}
-
 UtteranceLevelTestResultItem::UtteranceLevelTestResultItem(JsonView jsonValue)
-  : UtteranceLevelTestResultItem()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UtteranceLevelTestResultItem& UtteranceLevelTestResultItem::operator =(JsonView 
   if(jsonValue.ValueExists("recordNumber"))
   {
     m_recordNumber = jsonValue.GetInt64("recordNumber");
-
     m_recordNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationId"))
   {
     m_conversationId = jsonValue.GetString("conversationId");
-
     m_conversationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("turnResult"))
   {
     m_turnResult = jsonValue.GetObject("turnResult");
-
     m_turnResultHasBeenSet = true;
   }
-
   return *this;
 }
 

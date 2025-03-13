@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopBulkDeploymentRequest::StopBulkDeploymentRequest() : 
-    m_bulkDeploymentIdHasBeenSet(false)
-{
-}
-
 Aws::String StopBulkDeploymentRequest::SerializePayload() const
 {
   return {};

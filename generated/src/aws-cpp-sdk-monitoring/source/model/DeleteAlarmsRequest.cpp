@@ -10,11 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-DeleteAlarmsRequest::DeleteAlarmsRequest() : 
-    m_alarmNamesHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAlarmsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

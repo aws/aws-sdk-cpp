@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-MaintenanceWindowAutomationParameters::MaintenanceWindowAutomationParameters() : 
-    m_documentVersionHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 MaintenanceWindowAutomationParameters::MaintenanceWindowAutomationParameters(JsonView jsonValue)
-  : MaintenanceWindowAutomationParameters()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MaintenanceWindowAutomationParameters& MaintenanceWindowAutomationParameters::op
   if(jsonValue.ValueExists("DocumentVersion"))
   {
     m_documentVersion = jsonValue.GetString("DocumentVersion");
-
     m_documentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -55,7 +46,6 @@ MaintenanceWindowAutomationParameters& MaintenanceWindowAutomationParameters::op
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

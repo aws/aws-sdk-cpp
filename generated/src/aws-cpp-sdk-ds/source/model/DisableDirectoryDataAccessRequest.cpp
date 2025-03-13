@@ -12,11 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableDirectoryDataAccessRequest::DisableDirectoryDataAccessRequest() : 
-    m_directoryIdHasBeenSet(false)
-{
-}
-
 Aws::String DisableDirectoryDataAccessRequest::SerializePayload() const
 {
   JsonValue payload;

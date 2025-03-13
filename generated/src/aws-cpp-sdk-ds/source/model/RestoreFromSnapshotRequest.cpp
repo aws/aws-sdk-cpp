@@ -12,11 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreFromSnapshotRequest::RestoreFromSnapshotRequest() : 
-    m_snapshotIdHasBeenSet(false)
-{
-}
-
 Aws::String RestoreFromSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

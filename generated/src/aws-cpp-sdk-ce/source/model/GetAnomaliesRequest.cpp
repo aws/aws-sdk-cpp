@@ -12,18 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAnomaliesRequest::GetAnomaliesRequest() : 
-    m_monitorArnHasBeenSet(false),
-    m_dateIntervalHasBeenSet(false),
-    m_feedback(AnomalyFeedbackType::NOT_SET),
-    m_feedbackHasBeenSet(false),
-    m_totalImpactHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetAnomaliesRequest::SerializePayload() const
 {
   JsonValue payload;

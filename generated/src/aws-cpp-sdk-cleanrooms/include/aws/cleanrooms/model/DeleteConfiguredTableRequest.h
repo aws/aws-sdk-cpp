@@ -21,7 +21,7 @@ namespace Model
   class DeleteConfiguredTableRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API DeleteConfiguredTableRequest();
+    AWS_CLEANROOMS_API DeleteConfiguredTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique ID for the configured table to delete.</p>
      */
-    inline const Aws::String& GetConfiguredTableIdentifier() const{ return m_configuredTableIdentifier; }
+    inline const Aws::String& GetConfiguredTableIdentifier() const { return m_configuredTableIdentifier; }
     inline bool ConfiguredTableIdentifierHasBeenSet() const { return m_configuredTableIdentifierHasBeenSet; }
-    inline void SetConfiguredTableIdentifier(const Aws::String& value) { m_configuredTableIdentifierHasBeenSet = true; m_configuredTableIdentifier = value; }
-    inline void SetConfiguredTableIdentifier(Aws::String&& value) { m_configuredTableIdentifierHasBeenSet = true; m_configuredTableIdentifier = std::move(value); }
-    inline void SetConfiguredTableIdentifier(const char* value) { m_configuredTableIdentifierHasBeenSet = true; m_configuredTableIdentifier.assign(value); }
-    inline DeleteConfiguredTableRequest& WithConfiguredTableIdentifier(const Aws::String& value) { SetConfiguredTableIdentifier(value); return *this;}
-    inline DeleteConfiguredTableRequest& WithConfiguredTableIdentifier(Aws::String&& value) { SetConfiguredTableIdentifier(std::move(value)); return *this;}
-    inline DeleteConfiguredTableRequest& WithConfiguredTableIdentifier(const char* value) { SetConfiguredTableIdentifier(value); return *this;}
+    template<typename ConfiguredTableIdentifierT = Aws::String>
+    void SetConfiguredTableIdentifier(ConfiguredTableIdentifierT&& value) { m_configuredTableIdentifierHasBeenSet = true; m_configuredTableIdentifier = std::forward<ConfiguredTableIdentifierT>(value); }
+    template<typename ConfiguredTableIdentifierT = Aws::String>
+    DeleteConfiguredTableRequest& WithConfiguredTableIdentifier(ConfiguredTableIdentifierT&& value) { SetConfiguredTableIdentifier(std::forward<ConfiguredTableIdentifierT>(value)); return *this;}
     ///@}
   private:
 

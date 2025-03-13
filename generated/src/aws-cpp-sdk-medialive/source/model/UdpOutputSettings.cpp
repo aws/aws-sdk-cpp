@@ -18,17 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-UdpOutputSettings::UdpOutputSettings() : 
-    m_bufferMsec(0),
-    m_bufferMsecHasBeenSet(false),
-    m_containerSettingsHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_fecOutputSettingsHasBeenSet(false)
-{
-}
-
 UdpOutputSettings::UdpOutputSettings(JsonView jsonValue)
-  : UdpOutputSettings()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ UdpOutputSettings& UdpOutputSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bufferMsec"))
   {
     m_bufferMsec = jsonValue.GetInteger("bufferMsec");
-
     m_bufferMsecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerSettings"))
   {
     m_containerSettings = jsonValue.GetObject("containerSettings");
-
     m_containerSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetObject("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fecOutputSettings"))
   {
     m_fecOutputSettings = jsonValue.GetObject("fecOutputSettings");
-
     m_fecOutputSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

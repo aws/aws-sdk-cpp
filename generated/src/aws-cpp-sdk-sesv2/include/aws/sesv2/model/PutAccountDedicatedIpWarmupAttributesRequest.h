@@ -23,7 +23,7 @@ namespace Model
   class PutAccountDedicatedIpWarmupAttributesRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API PutAccountDedicatedIpWarmupAttributesRequest();
+    AWS_SESV2_API PutAccountDedicatedIpWarmupAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,14 @@ namespace Model
      * Services Region. Set to <code>true</code> to enable the automatic warm-up
      * feature, or set to <code>false</code> to disable it.</p>
      */
-    inline bool GetAutoWarmupEnabled() const{ return m_autoWarmupEnabled; }
+    inline bool GetAutoWarmupEnabled() const { return m_autoWarmupEnabled; }
     inline bool AutoWarmupEnabledHasBeenSet() const { return m_autoWarmupEnabledHasBeenSet; }
     inline void SetAutoWarmupEnabled(bool value) { m_autoWarmupEnabledHasBeenSet = true; m_autoWarmupEnabled = value; }
     inline PutAccountDedicatedIpWarmupAttributesRequest& WithAutoWarmupEnabled(bool value) { SetAutoWarmupEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_autoWarmupEnabled;
+    bool m_autoWarmupEnabled{false};
     bool m_autoWarmupEnabledHasBeenSet = false;
   };
 

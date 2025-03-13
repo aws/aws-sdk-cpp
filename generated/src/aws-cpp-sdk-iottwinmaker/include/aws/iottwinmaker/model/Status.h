@@ -33,7 +33,7 @@ namespace Model
   class Status
   {
   public:
-    AWS_IOTTWINMAKER_API Status();
+    AWS_IOTTWINMAKER_API Status() = default;
     AWS_IOTTWINMAKER_API Status(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Status& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The current state of the entity, component, component type, or workspace.</p>
      */
-    inline const State& GetState() const{ return m_state; }
+    inline State GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Status& WithState(const State& value) { SetState(value); return *this;}
-    inline Status& WithState(State&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(State value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Status& WithState(State value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message.</p>
      */
-    inline const ErrorDetails& GetError() const{ return m_error; }
+    inline const ErrorDetails& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ErrorDetails& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ErrorDetails&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline Status& WithError(const ErrorDetails& value) { SetError(value); return *this;}
-    inline Status& WithError(ErrorDetails&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ErrorDetails>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ErrorDetails>
+    Status& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 
-    State m_state;
+    State m_state{State::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     ErrorDetails m_error;

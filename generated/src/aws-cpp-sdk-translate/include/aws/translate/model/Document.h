@@ -32,7 +32,7 @@ namespace Model
   class Document
   {
   public:
-    AWS_TRANSLATE_API Document();
+    AWS_TRANSLATE_API Document() = default;
     AWS_TRANSLATE_API Document(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API Document& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * use one of the AWS SDKs, the SDK performs the Base64-encoding on this field
      * before sending the request. </p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetContent() const{ return m_content; }
+    inline const Aws::Utils::CryptoBuffer& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::Utils::CryptoBuffer& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::Utils::CryptoBuffer&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline Document& WithContent(const Aws::Utils::CryptoBuffer& value) { SetContent(value); return *this;}
-    inline Document& WithContent(Aws::Utils::CryptoBuffer&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = Aws::Utils::CryptoBuffer>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::Utils::CryptoBuffer>
+    Document& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,18 +64,16 @@ namespace Model
      * <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>
      * - The input data consists of a Word document (.docx).</p> </li> </ul>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline Document& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline Document& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline Document& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    Document& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::CryptoBuffer m_content;
+    Aws::Utils::CryptoBuffer m_content{};
     bool m_contentHasBeenSet = false;
 
     Aws::String m_contentType;

@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ClassificationResultStatus::ClassificationResultStatus() : 
-    m_codeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ClassificationResultStatus::ClassificationResultStatus(JsonView jsonValue)
-  : ClassificationResultStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ClassificationResultStatus& ClassificationResultStatus::operator =(JsonView json
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

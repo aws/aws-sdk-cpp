@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-StorageProfileSummary::StorageProfileSummary() : 
-    m_storageProfileIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_osFamily(StorageProfileOperatingSystemFamily::NOT_SET),
-    m_osFamilyHasBeenSet(false)
-{
-}
-
 StorageProfileSummary::StorageProfileSummary(JsonView jsonValue)
-  : StorageProfileSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ StorageProfileSummary& StorageProfileSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("storageProfileId"))
   {
     m_storageProfileId = jsonValue.GetString("storageProfileId");
-
     m_storageProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("osFamily"))
   {
     m_osFamily = StorageProfileOperatingSystemFamilyMapper::GetStorageProfileOperatingSystemFamilyForName(jsonValue.GetString("osFamily"));
-
     m_osFamilyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInputRequest::CreateInputRequest() : 
-    m_inputNameHasBeenSet(false),
-    m_inputDescriptionHasBeenSet(false),
-    m_inputDefinitionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateInputRequest::SerializePayload() const
 {
   JsonValue payload;

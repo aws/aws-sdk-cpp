@@ -18,26 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NumericRangeFilter::NumericRangeFilter() : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_includeMinimum(false),
-    m_includeMinimumHasBeenSet(false),
-    m_includeMaximum(false),
-    m_includeMaximumHasBeenSet(false),
-    m_rangeMinimumHasBeenSet(false),
-    m_rangeMaximumHasBeenSet(false),
-    m_selectAllOptions(NumericFilterSelectAllOptions::NOT_SET),
-    m_selectAllOptionsHasBeenSet(false),
-    m_aggregationFunctionHasBeenSet(false),
-    m_nullOption(FilterNullOption::NOT_SET),
-    m_nullOptionHasBeenSet(false),
-    m_defaultFilterControlConfigurationHasBeenSet(false)
-{
-}
-
 NumericRangeFilter::NumericRangeFilter(JsonView jsonValue)
-  : NumericRangeFilter()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ NumericRangeFilter& NumericRangeFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterId"))
   {
     m_filterId = jsonValue.GetString("FilterId");
-
     m_filterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetObject("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeMinimum"))
   {
     m_includeMinimum = jsonValue.GetBool("IncludeMinimum");
-
     m_includeMinimumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeMaximum"))
   {
     m_includeMaximum = jsonValue.GetBool("IncludeMaximum");
-
     m_includeMaximumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RangeMinimum"))
   {
     m_rangeMinimum = jsonValue.GetObject("RangeMinimum");
-
     m_rangeMinimumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RangeMaximum"))
   {
     m_rangeMaximum = jsonValue.GetObject("RangeMaximum");
-
     m_rangeMaximumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectAllOptions"))
   {
     m_selectAllOptions = NumericFilterSelectAllOptionsMapper::GetNumericFilterSelectAllOptionsForName(jsonValue.GetString("SelectAllOptions"));
-
     m_selectAllOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregationFunction"))
   {
     m_aggregationFunction = jsonValue.GetObject("AggregationFunction");
-
     m_aggregationFunctionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullOption"))
   {
     m_nullOption = FilterNullOptionMapper::GetFilterNullOptionForName(jsonValue.GetString("NullOption"));
-
     m_nullOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultFilterControlConfiguration"))
   {
     m_defaultFilterControlConfiguration = jsonValue.GetObject("DefaultFilterControlConfiguration");
-
     m_defaultFilterControlConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

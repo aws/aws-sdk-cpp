@@ -28,7 +28,7 @@ namespace Model
   class DeleteCertificateResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DeleteCertificateResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DeleteCertificateResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DeleteCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DeleteCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The Secure Sockets Layer (SSL) certificate.</p>
      */
-    inline const Certificate& GetCertificate() const{ return m_certificate; }
-    inline void SetCertificate(const Certificate& value) { m_certificate = value; }
-    inline void SetCertificate(Certificate&& value) { m_certificate = std::move(value); }
-    inline DeleteCertificateResult& WithCertificate(const Certificate& value) { SetCertificate(value); return *this;}
-    inline DeleteCertificateResult& WithCertificate(Certificate&& value) { SetCertificate(std::move(value)); return *this;}
+    inline const Certificate& GetCertificate() const { return m_certificate; }
+    template<typename CertificateT = Certificate>
+    void SetCertificate(CertificateT&& value) { m_certificateHasBeenSet = true; m_certificate = std::forward<CertificateT>(value); }
+    template<typename CertificateT = Certificate>
+    DeleteCertificateResult& WithCertificate(CertificateT&& value) { SetCertificate(std::forward<CertificateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteCertificateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Certificate m_certificate;
+    bool m_certificateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

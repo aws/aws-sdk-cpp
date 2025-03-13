@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDataSourceResult::UpdateDataSourceResult() : 
-    m_updateStatus(ResourceStatus::NOT_SET),
-    m_status(0)
-{
-}
-
 UpdateDataSourceResult::UpdateDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateDataSourceResult()
 {
   *this = result;
 }
@@ -35,31 +28,29 @@ UpdateDataSourceResult& UpdateDataSourceResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("DataSourceId");
-
+    m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateStatus"))
   {
     m_updateStatus = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("UpdateStatus"));
-
+    m_updateStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Predecessor::Predecessor() : 
-    m_jobNameHasBeenSet(false),
-    m_runIdHasBeenSet(false)
-{
-}
-
 Predecessor::Predecessor(JsonView jsonValue)
-  : Predecessor()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Predecessor& Predecessor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunId"))
   {
     m_runId = jsonValue.GetString("RunId");
-
     m_runIdHasBeenSet = true;
   }
-
   return *this;
 }
 

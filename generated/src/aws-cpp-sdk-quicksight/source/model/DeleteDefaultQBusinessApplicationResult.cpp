@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDefaultQBusinessApplicationResult::DeleteDefaultQBusinessApplicationResult() : 
-    m_status(0)
-{
-}
-
 DeleteDefaultQBusinessApplicationResult::DeleteDefaultQBusinessApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteDefaultQBusinessApplicationResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ DeleteDefaultQBusinessApplicationResult& DeleteDefaultQBusinessApplicationResult
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

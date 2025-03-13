@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-Message::Message() : 
-    m_subjectHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_headersHasBeenSet(false)
-{
-}
-
 Message::Message(JsonView jsonValue)
-  : Message()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Message& Message::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetObject("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetObject("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Headers"))
   {
     Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
@@ -56,7 +44,6 @@ Message& Message::operator =(JsonView jsonValue)
     }
     m_headersHasBeenSet = true;
   }
-
   return *this;
 }
 

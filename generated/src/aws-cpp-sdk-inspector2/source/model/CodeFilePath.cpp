@@ -18,18 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CodeFilePath::CodeFilePath() : 
-    m_endLine(0),
-    m_endLineHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_startLine(0),
-    m_startLineHasBeenSet(false)
-{
-}
-
 CodeFilePath::CodeFilePath(JsonView jsonValue)
-  : CodeFilePath()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ CodeFilePath& CodeFilePath::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endLine"))
   {
     m_endLine = jsonValue.GetInteger("endLine");
-
     m_endLineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileName"))
   {
     m_fileName = jsonValue.GetString("fileName");
-
     m_fileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startLine"))
   {
     m_startLine = jsonValue.GetInteger("startLine");
-
     m_startLineHasBeenSet = true;
   }
-
   return *this;
 }
 

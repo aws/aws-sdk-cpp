@@ -32,7 +32,7 @@ namespace Model
   class PasswordData
   {
   public:
-    AWS_LIGHTSAIL_API PasswordData();
+    AWS_LIGHTSAIL_API PasswordData() = default;
     AWS_LIGHTSAIL_API PasswordData(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API PasswordData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * ciphertext value. When accessing the instance using RDP, you need to manually
      * enter the Administrator password after changing it from the default.</p> 
      */
-    inline const Aws::String& GetCiphertext() const{ return m_ciphertext; }
+    inline const Aws::String& GetCiphertext() const { return m_ciphertext; }
     inline bool CiphertextHasBeenSet() const { return m_ciphertextHasBeenSet; }
-    inline void SetCiphertext(const Aws::String& value) { m_ciphertextHasBeenSet = true; m_ciphertext = value; }
-    inline void SetCiphertext(Aws::String&& value) { m_ciphertextHasBeenSet = true; m_ciphertext = std::move(value); }
-    inline void SetCiphertext(const char* value) { m_ciphertextHasBeenSet = true; m_ciphertext.assign(value); }
-    inline PasswordData& WithCiphertext(const Aws::String& value) { SetCiphertext(value); return *this;}
-    inline PasswordData& WithCiphertext(Aws::String&& value) { SetCiphertext(std::move(value)); return *this;}
-    inline PasswordData& WithCiphertext(const char* value) { SetCiphertext(value); return *this;}
+    template<typename CiphertextT = Aws::String>
+    void SetCiphertext(CiphertextT&& value) { m_ciphertextHasBeenSet = true; m_ciphertext = std::forward<CiphertextT>(value); }
+    template<typename CiphertextT = Aws::String>
+    PasswordData& WithCiphertext(CiphertextT&& value) { SetCiphertext(std::forward<CiphertextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * using the <code>ciphertext</code>. Lightsail creates the ciphertext by
      * encrypting your password with the public key part of this key pair.</p>
      */
-    inline const Aws::String& GetKeyPairName() const{ return m_keyPairName; }
+    inline const Aws::String& GetKeyPairName() const { return m_keyPairName; }
     inline bool KeyPairNameHasBeenSet() const { return m_keyPairNameHasBeenSet; }
-    inline void SetKeyPairName(const Aws::String& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = value; }
-    inline void SetKeyPairName(Aws::String&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = std::move(value); }
-    inline void SetKeyPairName(const char* value) { m_keyPairNameHasBeenSet = true; m_keyPairName.assign(value); }
-    inline PasswordData& WithKeyPairName(const Aws::String& value) { SetKeyPairName(value); return *this;}
-    inline PasswordData& WithKeyPairName(Aws::String&& value) { SetKeyPairName(std::move(value)); return *this;}
-    inline PasswordData& WithKeyPairName(const char* value) { SetKeyPairName(value); return *this;}
+    template<typename KeyPairNameT = Aws::String>
+    void SetKeyPairName(KeyPairNameT&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = std::forward<KeyPairNameT>(value); }
+    template<typename KeyPairNameT = Aws::String>
+    PasswordData& WithKeyPairName(KeyPairNameT&& value) { SetKeyPairName(std::forward<KeyPairNameT>(value)); return *this;}
     ///@}
   private:
 

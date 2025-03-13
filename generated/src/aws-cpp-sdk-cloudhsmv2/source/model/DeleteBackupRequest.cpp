@@ -12,11 +12,6 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBackupRequest::DeleteBackupRequest() : 
-    m_backupIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBackupRequest::SerializePayload() const
 {
   JsonValue payload;

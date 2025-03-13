@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryControlConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteControlPanelRequest::DeleteControlPanelRequest() : 
-    m_controlPanelArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteControlPanelRequest::SerializePayload() const
 {
   return {};

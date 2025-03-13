@@ -12,15 +12,6 @@ using namespace Aws::ForecastQueryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-QueryForecastRequest::QueryForecastRequest() : 
-    m_forecastArnHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String QueryForecastRequest::SerializePayload() const
 {
   JsonValue payload;

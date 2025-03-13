@@ -33,7 +33,7 @@ namespace Model
   class FindingAction
   {
   public:
-    AWS_MACIE2_API FindingAction();
+    AWS_MACIE2_API FindingAction() = default;
     AWS_MACIE2_API FindingAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API FindingAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * typically AWS_API_CALL, which indicates that an entity invoked an API operation
      * for the resource.</p>
      */
-    inline const FindingActionType& GetActionType() const{ return m_actionType; }
+    inline FindingActionType GetActionType() const { return m_actionType; }
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-    inline void SetActionType(const FindingActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-    inline void SetActionType(FindingActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-    inline FindingAction& WithActionType(const FindingActionType& value) { SetActionType(value); return *this;}
-    inline FindingAction& WithActionType(FindingActionType&& value) { SetActionType(std::move(value)); return *this;}
+    inline void SetActionType(FindingActionType value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
+    inline FindingAction& WithActionType(FindingActionType value) { SetActionType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,16 +56,16 @@ namespace Model
      * <p>The invocation details of the API operation that an entity invoked for the
      * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
      */
-    inline const ApiCallDetails& GetApiCallDetails() const{ return m_apiCallDetails; }
+    inline const ApiCallDetails& GetApiCallDetails() const { return m_apiCallDetails; }
     inline bool ApiCallDetailsHasBeenSet() const { return m_apiCallDetailsHasBeenSet; }
-    inline void SetApiCallDetails(const ApiCallDetails& value) { m_apiCallDetailsHasBeenSet = true; m_apiCallDetails = value; }
-    inline void SetApiCallDetails(ApiCallDetails&& value) { m_apiCallDetailsHasBeenSet = true; m_apiCallDetails = std::move(value); }
-    inline FindingAction& WithApiCallDetails(const ApiCallDetails& value) { SetApiCallDetails(value); return *this;}
-    inline FindingAction& WithApiCallDetails(ApiCallDetails&& value) { SetApiCallDetails(std::move(value)); return *this;}
+    template<typename ApiCallDetailsT = ApiCallDetails>
+    void SetApiCallDetails(ApiCallDetailsT&& value) { m_apiCallDetailsHasBeenSet = true; m_apiCallDetails = std::forward<ApiCallDetailsT>(value); }
+    template<typename ApiCallDetailsT = ApiCallDetails>
+    FindingAction& WithApiCallDetails(ApiCallDetailsT&& value) { SetApiCallDetails(std::forward<ApiCallDetailsT>(value)); return *this;}
     ///@}
   private:
 
-    FindingActionType m_actionType;
+    FindingActionType m_actionType{FindingActionType::NOT_SET};
     bool m_actionTypeHasBeenSet = false;
 
     ApiCallDetails m_apiCallDetails;

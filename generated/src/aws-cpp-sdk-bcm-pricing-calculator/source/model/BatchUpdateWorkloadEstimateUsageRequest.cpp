@@ -12,12 +12,6 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateWorkloadEstimateUsageRequest::BatchUpdateWorkloadEstimateUsageRequest() : 
-    m_workloadEstimateIdHasBeenSet(false),
-    m_usageHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateWorkloadEstimateUsageRequest::SerializePayload() const
 {
   JsonValue payload;

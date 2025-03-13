@@ -10,13 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-SetIpAddressTypeRequest::SetIpAddressTypeRequest() : 
-    m_loadBalancerArnHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
-{
-}
-
 Aws::String SetIpAddressTypeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

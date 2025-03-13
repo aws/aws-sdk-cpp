@@ -12,23 +12,6 @@ using namespace Aws::PI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceMetricsRequest::GetResourceMetricsRequest() : 
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_metricQueriesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_periodInSeconds(0),
-    m_periodInSecondsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_periodAlignment(PeriodAlignment::NOT_SET),
-    m_periodAlignmentHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceMetricsRequest::SerializePayload() const
 {
   JsonValue payload;

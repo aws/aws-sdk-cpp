@@ -18,13 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-EcrConfigurationState::EcrConfigurationState() : 
-    m_rescanDurationStateHasBeenSet(false)
-{
-}
-
 EcrConfigurationState::EcrConfigurationState(JsonView jsonValue)
-  : EcrConfigurationState()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EcrConfigurationState& EcrConfigurationState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("rescanDurationState"))
   {
     m_rescanDurationState = jsonValue.GetObject("rescanDurationState");
-
     m_rescanDurationStateHasBeenSet = true;
   }
-
   return *this;
 }
 

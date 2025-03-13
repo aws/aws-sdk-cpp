@@ -32,7 +32,7 @@ namespace Model
   class SuggestionValue
   {
   public:
-    AWS_KENDRA_API SuggestionValue();
+    AWS_KENDRA_API SuggestionValue() = default;
     AWS_KENDRA_API SuggestionValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API SuggestionValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The <code>SuggestionTextWithHighlights</code> structure that contains the
      * query suggestion text and highlights.</p>
      */
-    inline const SuggestionTextWithHighlights& GetText() const{ return m_text; }
+    inline const SuggestionTextWithHighlights& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const SuggestionTextWithHighlights& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(SuggestionTextWithHighlights&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline SuggestionValue& WithText(const SuggestionTextWithHighlights& value) { SetText(value); return *this;}
-    inline SuggestionValue& WithText(SuggestionTextWithHighlights&& value) { SetText(std::move(value)); return *this;}
+    template<typename TextT = SuggestionTextWithHighlights>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = SuggestionTextWithHighlights>
+    SuggestionValue& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

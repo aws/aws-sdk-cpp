@@ -12,11 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RejectAttachmentRequest::RejectAttachmentRequest() : 
-    m_attachmentIdHasBeenSet(false)
-{
-}
-
 Aws::String RejectAttachmentRequest::SerializePayload() const
 {
   return {};

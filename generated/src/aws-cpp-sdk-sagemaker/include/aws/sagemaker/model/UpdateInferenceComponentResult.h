@@ -27,7 +27,7 @@ namespace Model
   class UpdateInferenceComponentResult
   {
   public:
-    AWS_SAGEMAKER_API UpdateInferenceComponentResult();
+    AWS_SAGEMAKER_API UpdateInferenceComponentResult() = default;
     AWS_SAGEMAKER_API UpdateInferenceComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API UpdateInferenceComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the inference component.</p>
      */
-    inline const Aws::String& GetInferenceComponentArn() const{ return m_inferenceComponentArn; }
-    inline void SetInferenceComponentArn(const Aws::String& value) { m_inferenceComponentArn = value; }
-    inline void SetInferenceComponentArn(Aws::String&& value) { m_inferenceComponentArn = std::move(value); }
-    inline void SetInferenceComponentArn(const char* value) { m_inferenceComponentArn.assign(value); }
-    inline UpdateInferenceComponentResult& WithInferenceComponentArn(const Aws::String& value) { SetInferenceComponentArn(value); return *this;}
-    inline UpdateInferenceComponentResult& WithInferenceComponentArn(Aws::String&& value) { SetInferenceComponentArn(std::move(value)); return *this;}
-    inline UpdateInferenceComponentResult& WithInferenceComponentArn(const char* value) { SetInferenceComponentArn(value); return *this;}
+    inline const Aws::String& GetInferenceComponentArn() const { return m_inferenceComponentArn; }
+    template<typename InferenceComponentArnT = Aws::String>
+    void SetInferenceComponentArn(InferenceComponentArnT&& value) { m_inferenceComponentArnHasBeenSet = true; m_inferenceComponentArn = std::forward<InferenceComponentArnT>(value); }
+    template<typename InferenceComponentArnT = Aws::String>
+    UpdateInferenceComponentResult& WithInferenceComponentArn(InferenceComponentArnT&& value) { SetInferenceComponentArn(std::forward<InferenceComponentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateInferenceComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateInferenceComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateInferenceComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateInferenceComponentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_inferenceComponentArn;
+    bool m_inferenceComponentArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

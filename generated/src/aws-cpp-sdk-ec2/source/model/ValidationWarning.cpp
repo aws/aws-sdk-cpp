@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ValidationWarning::ValidationWarning() : 
-    m_errorsHasBeenSet(false)
-{
-}
-
 ValidationWarning::ValidationWarning(const XmlNode& xmlNode)
-  : ValidationWarning()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ ValidationWarning& ValidationWarning::operator =(const XmlNode& xmlNode)
     if(!errorsNode.IsNull())
     {
       XmlNode errorsMember = errorsNode.FirstChild("item");
+      m_errorsHasBeenSet = !errorsMember.IsNull();
       while(!errorsMember.IsNull())
       {
         m_errors.push_back(errorsMember);
         errorsMember = errorsMember.NextNode("item");
       }
 
-      m_errorsHasBeenSet = true;
+       m_errorsHasBeenSet = true;
     }
   }
 

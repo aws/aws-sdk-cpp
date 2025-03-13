@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssignPrivateIpAddressesRequest::AssignPrivateIpAddressesRequest() : 
-    m_ipv4PrefixesHasBeenSet(false),
-    m_ipv4PrefixCount(0),
-    m_ipv4PrefixCountHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false),
-    m_secondaryPrivateIpAddressCount(0),
-    m_secondaryPrivateIpAddressCountHasBeenSet(false),
-    m_allowReassignment(false),
-    m_allowReassignmentHasBeenSet(false)
-{
-}
-
 Aws::String AssignPrivateIpAddressesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-FederatedDatabase::FederatedDatabase() : 
-    m_identifierHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
-{
-}
-
 FederatedDatabase::FederatedDatabase(JsonView jsonValue)
-  : FederatedDatabase()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FederatedDatabase& FederatedDatabase::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

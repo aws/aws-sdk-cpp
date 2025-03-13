@@ -29,7 +29,7 @@ namespace Model
   class GetDifferencesResult
   {
   public:
-    AWS_CODECOMMIT_API GetDifferencesResult();
+    AWS_CODECOMMIT_API GetDifferencesResult() = default;
     AWS_CODECOMMIT_API GetDifferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API GetDifferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A data type object that contains information about the differences, including
      * whether the difference is added, modified, or deleted (A, D, M).</p>
      */
-    inline const Aws::Vector<Difference>& GetDifferences() const{ return m_differences; }
-    inline void SetDifferences(const Aws::Vector<Difference>& value) { m_differences = value; }
-    inline void SetDifferences(Aws::Vector<Difference>&& value) { m_differences = std::move(value); }
-    inline GetDifferencesResult& WithDifferences(const Aws::Vector<Difference>& value) { SetDifferences(value); return *this;}
-    inline GetDifferencesResult& WithDifferences(Aws::Vector<Difference>&& value) { SetDifferences(std::move(value)); return *this;}
-    inline GetDifferencesResult& AddDifferences(const Difference& value) { m_differences.push_back(value); return *this; }
-    inline GetDifferencesResult& AddDifferences(Difference&& value) { m_differences.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Difference>& GetDifferences() const { return m_differences; }
+    template<typename DifferencesT = Aws::Vector<Difference>>
+    void SetDifferences(DifferencesT&& value) { m_differencesHasBeenSet = true; m_differences = std::forward<DifferencesT>(value); }
+    template<typename DifferencesT = Aws::Vector<Difference>>
+    GetDifferencesResult& WithDifferences(DifferencesT&& value) { SetDifferences(std::forward<DifferencesT>(value)); return *this;}
+    template<typename DifferencesT = Difference>
+    GetDifferencesResult& AddDifferences(DifferencesT&& value) { m_differencesHasBeenSet = true; m_differences.emplace_back(std::forward<DifferencesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>An enumeration token that can be used in a request to return the next batch
      * of the results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetDifferencesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetDifferencesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetDifferencesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetDifferencesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDifferencesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDifferencesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDifferencesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDifferencesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Difference> m_differences;
+    bool m_differencesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

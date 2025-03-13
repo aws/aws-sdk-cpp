@@ -29,7 +29,7 @@ namespace Model
   class ListApplicationInstancesResult
   {
   public:
-    AWS_PANORAMA_API ListApplicationInstancesResult();
+    AWS_PANORAMA_API ListApplicationInstancesResult() = default;
     AWS_PANORAMA_API ListApplicationInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PANORAMA_API ListApplicationInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of application instances.</p>
      */
-    inline const Aws::Vector<ApplicationInstance>& GetApplicationInstances() const{ return m_applicationInstances; }
-    inline void SetApplicationInstances(const Aws::Vector<ApplicationInstance>& value) { m_applicationInstances = value; }
-    inline void SetApplicationInstances(Aws::Vector<ApplicationInstance>&& value) { m_applicationInstances = std::move(value); }
-    inline ListApplicationInstancesResult& WithApplicationInstances(const Aws::Vector<ApplicationInstance>& value) { SetApplicationInstances(value); return *this;}
-    inline ListApplicationInstancesResult& WithApplicationInstances(Aws::Vector<ApplicationInstance>&& value) { SetApplicationInstances(std::move(value)); return *this;}
-    inline ListApplicationInstancesResult& AddApplicationInstances(const ApplicationInstance& value) { m_applicationInstances.push_back(value); return *this; }
-    inline ListApplicationInstancesResult& AddApplicationInstances(ApplicationInstance&& value) { m_applicationInstances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ApplicationInstance>& GetApplicationInstances() const { return m_applicationInstances; }
+    template<typename ApplicationInstancesT = Aws::Vector<ApplicationInstance>>
+    void SetApplicationInstances(ApplicationInstancesT&& value) { m_applicationInstancesHasBeenSet = true; m_applicationInstances = std::forward<ApplicationInstancesT>(value); }
+    template<typename ApplicationInstancesT = Aws::Vector<ApplicationInstance>>
+    ListApplicationInstancesResult& WithApplicationInstances(ApplicationInstancesT&& value) { SetApplicationInstances(std::forward<ApplicationInstancesT>(value)); return *this;}
+    template<typename ApplicationInstancesT = ApplicationInstance>
+    ListApplicationInstancesResult& AddApplicationInstances(ApplicationInstancesT&& value) { m_applicationInstancesHasBeenSet = true; m_applicationInstances.emplace_back(std::forward<ApplicationInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A pagination token that's included if more results are available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListApplicationInstancesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListApplicationInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListApplicationInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListApplicationInstancesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListApplicationInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListApplicationInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListApplicationInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListApplicationInstancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ApplicationInstance> m_applicationInstances;
+    bool m_applicationInstancesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class RouteSpec
   {
   public:
-    AWS_APPMESH_API RouteSpec();
+    AWS_APPMESH_API RouteSpec() = default;
     AWS_APPMESH_API RouteSpec(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API RouteSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p>An object that represents the specification of a gRPC route.</p>
      */
-    inline const GrpcRoute& GetGrpcRoute() const{ return m_grpcRoute; }
+    inline const GrpcRoute& GetGrpcRoute() const { return m_grpcRoute; }
     inline bool GrpcRouteHasBeenSet() const { return m_grpcRouteHasBeenSet; }
-    inline void SetGrpcRoute(const GrpcRoute& value) { m_grpcRouteHasBeenSet = true; m_grpcRoute = value; }
-    inline void SetGrpcRoute(GrpcRoute&& value) { m_grpcRouteHasBeenSet = true; m_grpcRoute = std::move(value); }
-    inline RouteSpec& WithGrpcRoute(const GrpcRoute& value) { SetGrpcRoute(value); return *this;}
-    inline RouteSpec& WithGrpcRoute(GrpcRoute&& value) { SetGrpcRoute(std::move(value)); return *this;}
+    template<typename GrpcRouteT = GrpcRoute>
+    void SetGrpcRoute(GrpcRouteT&& value) { m_grpcRouteHasBeenSet = true; m_grpcRoute = std::forward<GrpcRouteT>(value); }
+    template<typename GrpcRouteT = GrpcRoute>
+    RouteSpec& WithGrpcRoute(GrpcRouteT&& value) { SetGrpcRoute(std::forward<GrpcRouteT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents the specification of an HTTP/2 route.</p>
      */
-    inline const HttpRoute& GetHttp2Route() const{ return m_http2Route; }
+    inline const HttpRoute& GetHttp2Route() const { return m_http2Route; }
     inline bool Http2RouteHasBeenSet() const { return m_http2RouteHasBeenSet; }
-    inline void SetHttp2Route(const HttpRoute& value) { m_http2RouteHasBeenSet = true; m_http2Route = value; }
-    inline void SetHttp2Route(HttpRoute&& value) { m_http2RouteHasBeenSet = true; m_http2Route = std::move(value); }
-    inline RouteSpec& WithHttp2Route(const HttpRoute& value) { SetHttp2Route(value); return *this;}
-    inline RouteSpec& WithHttp2Route(HttpRoute&& value) { SetHttp2Route(std::move(value)); return *this;}
+    template<typename Http2RouteT = HttpRoute>
+    void SetHttp2Route(Http2RouteT&& value) { m_http2RouteHasBeenSet = true; m_http2Route = std::forward<Http2RouteT>(value); }
+    template<typename Http2RouteT = HttpRoute>
+    RouteSpec& WithHttp2Route(Http2RouteT&& value) { SetHttp2Route(std::forward<Http2RouteT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents the specification of an HTTP route.</p>
      */
-    inline const HttpRoute& GetHttpRoute() const{ return m_httpRoute; }
+    inline const HttpRoute& GetHttpRoute() const { return m_httpRoute; }
     inline bool HttpRouteHasBeenSet() const { return m_httpRouteHasBeenSet; }
-    inline void SetHttpRoute(const HttpRoute& value) { m_httpRouteHasBeenSet = true; m_httpRoute = value; }
-    inline void SetHttpRoute(HttpRoute&& value) { m_httpRouteHasBeenSet = true; m_httpRoute = std::move(value); }
-    inline RouteSpec& WithHttpRoute(const HttpRoute& value) { SetHttpRoute(value); return *this;}
-    inline RouteSpec& WithHttpRoute(HttpRoute&& value) { SetHttpRoute(std::move(value)); return *this;}
+    template<typename HttpRouteT = HttpRoute>
+    void SetHttpRoute(HttpRouteT&& value) { m_httpRouteHasBeenSet = true; m_httpRoute = std::forward<HttpRouteT>(value); }
+    template<typename HttpRouteT = HttpRoute>
+    RouteSpec& WithHttpRoute(HttpRouteT&& value) { SetHttpRoute(std::forward<HttpRouteT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +81,7 @@ namespace Model
      * <p>The priority for the route. Routes are matched based on the specified value,
      * where 0 is the highest priority.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline RouteSpec& WithPriority(int value) { SetPriority(value); return *this;}
@@ -91,12 +91,12 @@ namespace Model
     /**
      * <p>An object that represents the specification of a TCP route.</p>
      */
-    inline const TcpRoute& GetTcpRoute() const{ return m_tcpRoute; }
+    inline const TcpRoute& GetTcpRoute() const { return m_tcpRoute; }
     inline bool TcpRouteHasBeenSet() const { return m_tcpRouteHasBeenSet; }
-    inline void SetTcpRoute(const TcpRoute& value) { m_tcpRouteHasBeenSet = true; m_tcpRoute = value; }
-    inline void SetTcpRoute(TcpRoute&& value) { m_tcpRouteHasBeenSet = true; m_tcpRoute = std::move(value); }
-    inline RouteSpec& WithTcpRoute(const TcpRoute& value) { SetTcpRoute(value); return *this;}
-    inline RouteSpec& WithTcpRoute(TcpRoute&& value) { SetTcpRoute(std::move(value)); return *this;}
+    template<typename TcpRouteT = TcpRoute>
+    void SetTcpRoute(TcpRouteT&& value) { m_tcpRouteHasBeenSet = true; m_tcpRoute = std::forward<TcpRouteT>(value); }
+    template<typename TcpRouteT = TcpRoute>
+    RouteSpec& WithTcpRoute(TcpRouteT&& value) { SetTcpRoute(std::forward<TcpRouteT>(value)); return *this;}
     ///@}
   private:
 
@@ -109,7 +109,7 @@ namespace Model
     HttpRoute m_httpRoute;
     bool m_httpRouteHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     TcpRoute m_tcpRoute;

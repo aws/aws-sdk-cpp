@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEnvironmentTemplateResult::GetEnvironmentTemplateResult()
-{
-}
-
 GetEnvironmentTemplateResult::GetEnvironmentTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetEnvironmentTemplateResult& GetEnvironmentTemplateResult::operator =(const Aws
   if(jsonValue.ValueExists("environmentTemplate"))
   {
     m_environmentTemplate = jsonValue.GetObject("environmentTemplate");
-
+    m_environmentTemplateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

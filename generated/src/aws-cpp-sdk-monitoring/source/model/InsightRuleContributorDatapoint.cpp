@@ -20,15 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-InsightRuleContributorDatapoint::InsightRuleContributorDatapoint() : 
-    m_timestampHasBeenSet(false),
-    m_approximateValue(0.0),
-    m_approximateValueHasBeenSet(false)
-{
-}
-
 InsightRuleContributorDatapoint::InsightRuleContributorDatapoint(const XmlNode& xmlNode)
-  : InsightRuleContributorDatapoint()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ InsightRuleContributorDatapoint& InsightRuleContributorDatapoint::operator =(con
     {
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
+       m_timestampHasBeenSet = true;
     }
     XmlNode approximateValueNode = resultNode.FirstChild("ApproximateValue");
     if(!approximateValueNode.IsNull())
     {
       m_approximateValue = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(approximateValueNode.GetText()).c_str()).c_str());
       m_approximateValueHasBeenSet = true;
+       m_approximateValueHasBeenSet = true;
     }
   }
 

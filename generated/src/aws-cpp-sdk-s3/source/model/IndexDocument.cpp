@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-IndexDocument::IndexDocument() : 
-    m_suffixHasBeenSet(false)
-{
-}
-
 IndexDocument::IndexDocument(const XmlNode& xmlNode)
-  : IndexDocument()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ IndexDocument& IndexDocument::operator =(const XmlNode& xmlNode)
     {
       m_suffix = Aws::Utils::Xml::DecodeEscapedXmlText(suffixNode.GetText());
       m_suffixHasBeenSet = true;
+       m_suffixHasBeenSet = true;
     }
   }
 

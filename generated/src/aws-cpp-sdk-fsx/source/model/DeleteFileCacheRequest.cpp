@@ -12,13 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFileCacheRequest::DeleteFileCacheRequest() : 
-    m_fileCacheIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteFileCacheRequest::SerializePayload() const
 {
   JsonValue payload;

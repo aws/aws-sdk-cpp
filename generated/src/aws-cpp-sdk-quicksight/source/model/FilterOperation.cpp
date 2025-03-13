@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilterOperation::FilterOperation() : 
-    m_conditionExpressionHasBeenSet(false)
-{
-}
-
 FilterOperation::FilterOperation(JsonView jsonValue)
-  : FilterOperation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FilterOperation& FilterOperation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConditionExpression"))
   {
     m_conditionExpression = jsonValue.GetString("ConditionExpression");
-
     m_conditionExpressionHasBeenSet = true;
   }
-
   return *this;
 }
 

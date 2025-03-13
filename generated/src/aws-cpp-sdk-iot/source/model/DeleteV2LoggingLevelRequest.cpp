@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteV2LoggingLevelRequest::DeleteV2LoggingLevelRequest() : 
-    m_targetType(LogTargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_targetNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteV2LoggingLevelRequest::SerializePayload() const
 {
   return {};

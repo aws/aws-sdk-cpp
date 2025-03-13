@@ -32,7 +32,7 @@ namespace Model
   class InspectorScoreDetails
   {
   public:
-    AWS_INSPECTOR2_API InspectorScoreDetails();
+    AWS_INSPECTOR2_API InspectorScoreDetails() = default;
     AWS_INSPECTOR2_API InspectorScoreDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API InspectorScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>An object that contains details about the CVSS score given to a finding.</p>
      */
-    inline const CvssScoreDetails& GetAdjustedCvss() const{ return m_adjustedCvss; }
+    inline const CvssScoreDetails& GetAdjustedCvss() const { return m_adjustedCvss; }
     inline bool AdjustedCvssHasBeenSet() const { return m_adjustedCvssHasBeenSet; }
-    inline void SetAdjustedCvss(const CvssScoreDetails& value) { m_adjustedCvssHasBeenSet = true; m_adjustedCvss = value; }
-    inline void SetAdjustedCvss(CvssScoreDetails&& value) { m_adjustedCvssHasBeenSet = true; m_adjustedCvss = std::move(value); }
-    inline InspectorScoreDetails& WithAdjustedCvss(const CvssScoreDetails& value) { SetAdjustedCvss(value); return *this;}
-    inline InspectorScoreDetails& WithAdjustedCvss(CvssScoreDetails&& value) { SetAdjustedCvss(std::move(value)); return *this;}
+    template<typename AdjustedCvssT = CvssScoreDetails>
+    void SetAdjustedCvss(AdjustedCvssT&& value) { m_adjustedCvssHasBeenSet = true; m_adjustedCvss = std::forward<AdjustedCvssT>(value); }
+    template<typename AdjustedCvssT = CvssScoreDetails>
+    InspectorScoreDetails& WithAdjustedCvss(AdjustedCvssT&& value) { SetAdjustedCvss(std::forward<AdjustedCvssT>(value)); return *this;}
     ///@}
   private:
 

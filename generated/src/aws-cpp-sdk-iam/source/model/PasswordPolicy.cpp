@@ -20,32 +20,7 @@ namespace IAM
 namespace Model
 {
 
-PasswordPolicy::PasswordPolicy() : 
-    m_minimumPasswordLength(0),
-    m_minimumPasswordLengthHasBeenSet(false),
-    m_requireSymbols(false),
-    m_requireSymbolsHasBeenSet(false),
-    m_requireNumbers(false),
-    m_requireNumbersHasBeenSet(false),
-    m_requireUppercaseCharacters(false),
-    m_requireUppercaseCharactersHasBeenSet(false),
-    m_requireLowercaseCharacters(false),
-    m_requireLowercaseCharactersHasBeenSet(false),
-    m_allowUsersToChangePassword(false),
-    m_allowUsersToChangePasswordHasBeenSet(false),
-    m_expirePasswords(false),
-    m_expirePasswordsHasBeenSet(false),
-    m_maxPasswordAge(0),
-    m_maxPasswordAgeHasBeenSet(false),
-    m_passwordReusePrevention(0),
-    m_passwordReusePreventionHasBeenSet(false),
-    m_hardExpiry(false),
-    m_hardExpiryHasBeenSet(false)
-{
-}
-
 PasswordPolicy::PasswordPolicy(const XmlNode& xmlNode)
-  : PasswordPolicy()
 {
   *this = xmlNode;
 }
@@ -61,60 +36,70 @@ PasswordPolicy& PasswordPolicy::operator =(const XmlNode& xmlNode)
     {
       m_minimumPasswordLength = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minimumPasswordLengthNode.GetText()).c_str()).c_str());
       m_minimumPasswordLengthHasBeenSet = true;
+       m_minimumPasswordLengthHasBeenSet = true;
     }
     XmlNode requireSymbolsNode = resultNode.FirstChild("RequireSymbols");
     if(!requireSymbolsNode.IsNull())
     {
       m_requireSymbols = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requireSymbolsNode.GetText()).c_str()).c_str());
       m_requireSymbolsHasBeenSet = true;
+       m_requireSymbolsHasBeenSet = true;
     }
     XmlNode requireNumbersNode = resultNode.FirstChild("RequireNumbers");
     if(!requireNumbersNode.IsNull())
     {
       m_requireNumbers = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requireNumbersNode.GetText()).c_str()).c_str());
       m_requireNumbersHasBeenSet = true;
+       m_requireNumbersHasBeenSet = true;
     }
     XmlNode requireUppercaseCharactersNode = resultNode.FirstChild("RequireUppercaseCharacters");
     if(!requireUppercaseCharactersNode.IsNull())
     {
       m_requireUppercaseCharacters = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requireUppercaseCharactersNode.GetText()).c_str()).c_str());
       m_requireUppercaseCharactersHasBeenSet = true;
+       m_requireUppercaseCharactersHasBeenSet = true;
     }
     XmlNode requireLowercaseCharactersNode = resultNode.FirstChild("RequireLowercaseCharacters");
     if(!requireLowercaseCharactersNode.IsNull())
     {
       m_requireLowercaseCharacters = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requireLowercaseCharactersNode.GetText()).c_str()).c_str());
       m_requireLowercaseCharactersHasBeenSet = true;
+       m_requireLowercaseCharactersHasBeenSet = true;
     }
     XmlNode allowUsersToChangePasswordNode = resultNode.FirstChild("AllowUsersToChangePassword");
     if(!allowUsersToChangePasswordNode.IsNull())
     {
       m_allowUsersToChangePassword = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowUsersToChangePasswordNode.GetText()).c_str()).c_str());
       m_allowUsersToChangePasswordHasBeenSet = true;
+       m_allowUsersToChangePasswordHasBeenSet = true;
     }
     XmlNode expirePasswordsNode = resultNode.FirstChild("ExpirePasswords");
     if(!expirePasswordsNode.IsNull())
     {
       m_expirePasswords = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirePasswordsNode.GetText()).c_str()).c_str());
       m_expirePasswordsHasBeenSet = true;
+       m_expirePasswordsHasBeenSet = true;
     }
     XmlNode maxPasswordAgeNode = resultNode.FirstChild("MaxPasswordAge");
     if(!maxPasswordAgeNode.IsNull())
     {
       m_maxPasswordAge = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxPasswordAgeNode.GetText()).c_str()).c_str());
       m_maxPasswordAgeHasBeenSet = true;
+       m_maxPasswordAgeHasBeenSet = true;
     }
     XmlNode passwordReusePreventionNode = resultNode.FirstChild("PasswordReusePrevention");
     if(!passwordReusePreventionNode.IsNull())
     {
       m_passwordReusePrevention = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(passwordReusePreventionNode.GetText()).c_str()).c_str());
       m_passwordReusePreventionHasBeenSet = true;
+       m_passwordReusePreventionHasBeenSet = true;
     }
     XmlNode hardExpiryNode = resultNode.FirstChild("HardExpiry");
     if(!hardExpiryNode.IsNull())
     {
       m_hardExpiry = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hardExpiryNode.GetText()).c_str()).c_str());
       m_hardExpiryHasBeenSet = true;
+       m_hardExpiryHasBeenSet = true;
     }
   }
 

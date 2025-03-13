@@ -22,7 +22,7 @@ namespace Model
   class CreateSessionRequest : public BedrockAgentRuntimeRequest
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API CreateSessionRequest();
+    AWS_BEDROCKAGENTRUNTIME_API CreateSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/session-encryption.html">Amazon
      * Bedrock session encryption</a>. </p>
      */
-    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
-    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
-    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
-    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
-    inline CreateSessionRequest& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-    inline CreateSessionRequest& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-    inline CreateSessionRequest& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    CreateSessionRequest& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,16 @@ namespace Model
      * session. For example, the user's ID, their language preference, and the type of
      * device they are using.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSessionMetadata() const{ return m_sessionMetadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSessionMetadata() const { return m_sessionMetadata; }
     inline bool SessionMetadataHasBeenSet() const { return m_sessionMetadataHasBeenSet; }
-    inline void SetSessionMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata = value; }
-    inline void SetSessionMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata = std::move(value); }
-    inline CreateSessionRequest& WithSessionMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetSessionMetadata(value); return *this;}
-    inline CreateSessionRequest& WithSessionMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetSessionMetadata(std::move(value)); return *this;}
-    inline CreateSessionRequest& AddSessionMetadata(const Aws::String& key, const Aws::String& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(key, value); return *this; }
-    inline CreateSessionRequest& AddSessionMetadata(Aws::String&& key, const Aws::String& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(std::move(key), value); return *this; }
-    inline CreateSessionRequest& AddSessionMetadata(const Aws::String& key, Aws::String&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(key, std::move(value)); return *this; }
-    inline CreateSessionRequest& AddSessionMetadata(Aws::String&& key, Aws::String&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateSessionRequest& AddSessionMetadata(const char* key, Aws::String&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(key, std::move(value)); return *this; }
-    inline CreateSessionRequest& AddSessionMetadata(Aws::String&& key, const char* value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(std::move(key), value); return *this; }
-    inline CreateSessionRequest& AddSessionMetadata(const char* key, const char* value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(key, value); return *this; }
+    template<typename SessionMetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetSessionMetadata(SessionMetadataT&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata = std::forward<SessionMetadataT>(value); }
+    template<typename SessionMetadataT = Aws::Map<Aws::String, Aws::String>>
+    CreateSessionRequest& WithSessionMetadata(SessionMetadataT&& value) { SetSessionMetadata(std::forward<SessionMetadataT>(value)); return *this;}
+    template<typename SessionMetadataKeyT = Aws::String, typename SessionMetadataValueT = Aws::String>
+    CreateSessionRequest& AddSessionMetadata(SessionMetadataKeyT&& key, SessionMetadataValueT&& value) {
+      m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(std::forward<SessionMetadataKeyT>(key), std::forward<SessionMetadataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -77,19 +72,16 @@ namespace Model
      * <p>Specify the key-value pairs for the tags that you want to attach to the
      * session.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSessionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateSessionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSessionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateSessionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSessionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSessionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateSessionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSessionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSessionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateSessionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateSessionRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

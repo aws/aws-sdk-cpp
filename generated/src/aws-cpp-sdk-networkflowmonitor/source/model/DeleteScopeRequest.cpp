@@ -12,11 +12,6 @@ using namespace Aws::NetworkFlowMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteScopeRequest::DeleteScopeRequest() : 
-    m_scopeIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScopeRequest::SerializePayload() const
 {
   return {};

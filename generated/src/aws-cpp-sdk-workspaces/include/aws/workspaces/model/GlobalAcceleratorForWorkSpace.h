@@ -33,7 +33,7 @@ namespace Model
   class GlobalAcceleratorForWorkSpace
   {
   public:
-    AWS_WORKSPACES_API GlobalAcceleratorForWorkSpace();
+    AWS_WORKSPACES_API GlobalAcceleratorForWorkSpace() = default;
     AWS_WORKSPACES_API GlobalAcceleratorForWorkSpace(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API GlobalAcceleratorForWorkSpace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,27 @@ namespace Model
      * <p>Indicates if Global Accelerator for WorkSpaces is enabled, disabled, or the
      * same mode as the associated directory.</p>
      */
-    inline const AGAModeForWorkSpaceEnum& GetMode() const{ return m_mode; }
+    inline AGAModeForWorkSpaceEnum GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const AGAModeForWorkSpaceEnum& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(AGAModeForWorkSpaceEnum&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline GlobalAcceleratorForWorkSpace& WithMode(const AGAModeForWorkSpaceEnum& value) { SetMode(value); return *this;}
-    inline GlobalAcceleratorForWorkSpace& WithMode(AGAModeForWorkSpaceEnum&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(AGAModeForWorkSpaceEnum value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline GlobalAcceleratorForWorkSpace& WithMode(AGAModeForWorkSpaceEnum value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the preferred protocol for Global Accelerator.</p>
      */
-    inline const AGAPreferredProtocolForWorkSpace& GetPreferredProtocol() const{ return m_preferredProtocol; }
+    inline AGAPreferredProtocolForWorkSpace GetPreferredProtocol() const { return m_preferredProtocol; }
     inline bool PreferredProtocolHasBeenSet() const { return m_preferredProtocolHasBeenSet; }
-    inline void SetPreferredProtocol(const AGAPreferredProtocolForWorkSpace& value) { m_preferredProtocolHasBeenSet = true; m_preferredProtocol = value; }
-    inline void SetPreferredProtocol(AGAPreferredProtocolForWorkSpace&& value) { m_preferredProtocolHasBeenSet = true; m_preferredProtocol = std::move(value); }
-    inline GlobalAcceleratorForWorkSpace& WithPreferredProtocol(const AGAPreferredProtocolForWorkSpace& value) { SetPreferredProtocol(value); return *this;}
-    inline GlobalAcceleratorForWorkSpace& WithPreferredProtocol(AGAPreferredProtocolForWorkSpace&& value) { SetPreferredProtocol(std::move(value)); return *this;}
+    inline void SetPreferredProtocol(AGAPreferredProtocolForWorkSpace value) { m_preferredProtocolHasBeenSet = true; m_preferredProtocol = value; }
+    inline GlobalAcceleratorForWorkSpace& WithPreferredProtocol(AGAPreferredProtocolForWorkSpace value) { SetPreferredProtocol(value); return *this;}
     ///@}
   private:
 
-    AGAModeForWorkSpaceEnum m_mode;
+    AGAModeForWorkSpaceEnum m_mode{AGAModeForWorkSpaceEnum::NOT_SET};
     bool m_modeHasBeenSet = false;
 
-    AGAPreferredProtocolForWorkSpace m_preferredProtocol;
+    AGAPreferredProtocolForWorkSpace m_preferredProtocol{AGAPreferredProtocolForWorkSpace::NOT_SET};
     bool m_preferredProtocolHasBeenSet = false;
   };
 

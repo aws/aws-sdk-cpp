@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTopicRuleRequest::GetTopicRuleRequest() : 
-    m_ruleNameHasBeenSet(false)
-{
-}
-
 Aws::String GetTopicRuleRequest::SerializePayload() const
 {
   return {};

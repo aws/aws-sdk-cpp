@@ -12,11 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApiCacheRequest::GetApiCacheRequest() : 
-    m_apiIdHasBeenSet(false)
-{
-}
-
 Aws::String GetApiCacheRequest::SerializePayload() const
 {
   return {};

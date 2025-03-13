@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-GameSessionCreationLimitPolicy::GameSessionCreationLimitPolicy() : 
-    m_newGameSessionsPerCreator(0),
-    m_newGameSessionsPerCreatorHasBeenSet(false),
-    m_policyPeriodInMinutes(0),
-    m_policyPeriodInMinutesHasBeenSet(false)
-{
-}
-
 GameSessionCreationLimitPolicy::GameSessionCreationLimitPolicy(JsonView jsonValue)
-  : GameSessionCreationLimitPolicy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GameSessionCreationLimitPolicy& GameSessionCreationLimitPolicy::operator =(JsonV
   if(jsonValue.ValueExists("NewGameSessionsPerCreator"))
   {
     m_newGameSessionsPerCreator = jsonValue.GetInteger("NewGameSessionsPerCreator");
-
     m_newGameSessionsPerCreatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyPeriodInMinutes"))
   {
     m_policyPeriodInMinutes = jsonValue.GetInteger("PolicyPeriodInMinutes");
-
     m_policyPeriodInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

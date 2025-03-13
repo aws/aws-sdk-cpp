@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DatabaseInput::DatabaseInput() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_locationUriHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false),
-    m_targetDatabaseHasBeenSet(false),
-    m_federatedDatabaseHasBeenSet(false)
-{
-}
-
 DatabaseInput::DatabaseInput(JsonView jsonValue)
-  : DatabaseInput()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ DatabaseInput& DatabaseInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationUri"))
   {
     m_locationUri = jsonValue.GetString("LocationUri");
-
     m_locationUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -67,7 +49,6 @@ DatabaseInput& DatabaseInput::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTableDefaultPermissions"))
   {
     Aws::Utils::Array<JsonView> createTableDefaultPermissionsJsonList = jsonValue.GetArray("CreateTableDefaultPermissions");
@@ -77,21 +58,16 @@ DatabaseInput& DatabaseInput::operator =(JsonView jsonValue)
     }
     m_createTableDefaultPermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetDatabase"))
   {
     m_targetDatabase = jsonValue.GetObject("TargetDatabase");
-
     m_targetDatabaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FederatedDatabase"))
   {
     m_federatedDatabase = jsonValue.GetObject("FederatedDatabase");
-
     m_federatedDatabaseHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class EvidenceInsights
   {
   public:
-    AWS_AUDITMANAGER_API EvidenceInsights();
+    AWS_AUDITMANAGER_API EvidenceInsights() = default;
     AWS_AUDITMANAGER_API EvidenceInsights(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API EvidenceInsights& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i>
      * ruling. </p>
      */
-    inline int GetNoncompliantEvidenceCount() const{ return m_noncompliantEvidenceCount; }
+    inline int GetNoncompliantEvidenceCount() const { return m_noncompliantEvidenceCount; }
     inline bool NoncompliantEvidenceCountHasBeenSet() const { return m_noncompliantEvidenceCountHasBeenSet; }
     inline void SetNoncompliantEvidenceCount(int value) { m_noncompliantEvidenceCountHasBeenSet = true; m_noncompliantEvidenceCount = value; }
     inline EvidenceInsights& WithNoncompliantEvidenceCount(int value) { SetNoncompliantEvidenceCount(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.
      * </p>
      */
-    inline int GetCompliantEvidenceCount() const{ return m_compliantEvidenceCount; }
+    inline int GetCompliantEvidenceCount() const { return m_compliantEvidenceCount; }
     inline bool CompliantEvidenceCountHasBeenSet() const { return m_compliantEvidenceCountHasBeenSet; }
     inline void SetCompliantEvidenceCount(int value) { m_compliantEvidenceCountHasBeenSet = true; m_compliantEvidenceCount = value; }
     inline EvidenceInsights& WithCompliantEvidenceCount(int value) { SetCompliantEvidenceCount(value); return *this;}
@@ -73,20 +73,20 @@ namespace Model
      * classified as <i>inconclusive</i> in <code>EvidenceInsights</code> data.</p>
      * 
      */
-    inline int GetInconclusiveEvidenceCount() const{ return m_inconclusiveEvidenceCount; }
+    inline int GetInconclusiveEvidenceCount() const { return m_inconclusiveEvidenceCount; }
     inline bool InconclusiveEvidenceCountHasBeenSet() const { return m_inconclusiveEvidenceCountHasBeenSet; }
     inline void SetInconclusiveEvidenceCount(int value) { m_inconclusiveEvidenceCountHasBeenSet = true; m_inconclusiveEvidenceCount = value; }
     inline EvidenceInsights& WithInconclusiveEvidenceCount(int value) { SetInconclusiveEvidenceCount(value); return *this;}
     ///@}
   private:
 
-    int m_noncompliantEvidenceCount;
+    int m_noncompliantEvidenceCount{0};
     bool m_noncompliantEvidenceCountHasBeenSet = false;
 
-    int m_compliantEvidenceCount;
+    int m_compliantEvidenceCount{0};
     bool m_compliantEvidenceCountHasBeenSet = false;
 
-    int m_inconclusiveEvidenceCount;
+    int m_inconclusiveEvidenceCount{0};
     bool m_inconclusiveEvidenceCountHasBeenSet = false;
   };
 

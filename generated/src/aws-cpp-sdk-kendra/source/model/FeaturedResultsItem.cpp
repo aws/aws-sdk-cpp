@@ -18,22 +18,7 @@ namespace kendra
 namespace Model
 {
 
-FeaturedResultsItem::FeaturedResultsItem() : 
-    m_idHasBeenSet(false),
-    m_type(QueryResultType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_additionalAttributesHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_documentTitleHasBeenSet(false),
-    m_documentExcerptHasBeenSet(false),
-    m_documentURIHasBeenSet(false),
-    m_documentAttributesHasBeenSet(false),
-    m_feedbackTokenHasBeenSet(false)
-{
-}
-
 FeaturedResultsItem::FeaturedResultsItem(JsonView jsonValue)
-  : FeaturedResultsItem()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ FeaturedResultsItem& FeaturedResultsItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = QueryResultTypeMapper::GetQueryResultTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalAttributes"))
   {
     Aws::Utils::Array<JsonView> additionalAttributesJsonList = jsonValue.GetArray("AdditionalAttributes");
@@ -63,35 +44,26 @@ FeaturedResultsItem& FeaturedResultsItem::operator =(JsonView jsonValue)
     }
     m_additionalAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentId"))
   {
     m_documentId = jsonValue.GetString("DocumentId");
-
     m_documentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentTitle"))
   {
     m_documentTitle = jsonValue.GetObject("DocumentTitle");
-
     m_documentTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentExcerpt"))
   {
     m_documentExcerpt = jsonValue.GetObject("DocumentExcerpt");
-
     m_documentExcerptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentURI"))
   {
     m_documentURI = jsonValue.GetString("DocumentURI");
-
     m_documentURIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentAttributes"))
   {
     Aws::Utils::Array<JsonView> documentAttributesJsonList = jsonValue.GetArray("DocumentAttributes");
@@ -101,14 +73,11 @@ FeaturedResultsItem& FeaturedResultsItem::operator =(JsonView jsonValue)
     }
     m_documentAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeedbackToken"))
   {
     m_feedbackToken = jsonValue.GetString("FeedbackToken");
-
     m_feedbackTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

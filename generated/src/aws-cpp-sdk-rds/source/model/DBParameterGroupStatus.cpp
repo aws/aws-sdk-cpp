@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBParameterGroupStatus::DBParameterGroupStatus() : 
-    m_dBParameterGroupNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false)
-{
-}
-
 DBParameterGroupStatus::DBParameterGroupStatus(const XmlNode& xmlNode)
-  : DBParameterGroupStatus()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DBParameterGroupStatus& DBParameterGroupStatus::operator =(const XmlNode& xmlNod
     {
       m_dBParameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupNameNode.GetText());
       m_dBParameterGroupNameHasBeenSet = true;
+       m_dBParameterGroupNameHasBeenSet = true;
     }
     XmlNode parameterApplyStatusNode = resultNode.FirstChild("ParameterApplyStatus");
     if(!parameterApplyStatusNode.IsNull())
     {
       m_parameterApplyStatus = Aws::Utils::Xml::DecodeEscapedXmlText(parameterApplyStatusNode.GetText());
       m_parameterApplyStatusHasBeenSet = true;
+       m_parameterApplyStatusHasBeenSet = true;
     }
   }
 

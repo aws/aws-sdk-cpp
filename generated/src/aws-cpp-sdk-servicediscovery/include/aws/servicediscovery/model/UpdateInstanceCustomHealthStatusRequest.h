@@ -22,7 +22,7 @@ namespace Model
   class UpdateInstanceCustomHealthStatusRequest : public ServiceDiscoveryRequest
   {
   public:
-    AWS_SERVICEDISCOVERY_API UpdateInstanceCustomHealthStatusRequest();
+    AWS_SERVICEDISCOVERY_API UpdateInstanceCustomHealthStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * <p>The ID of the service that includes the configuration for the custom health
      * check that you want to change the status for.</p>
      */
-    inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+    inline const Aws::String& GetServiceId() const { return m_serviceId; }
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-    inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-    inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-    inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
-    inline UpdateInstanceCustomHealthStatusRequest& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-    inline UpdateInstanceCustomHealthStatusRequest& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
-    inline UpdateInstanceCustomHealthStatusRequest& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+    template<typename ServiceIdT = Aws::String>
+    void SetServiceId(ServiceIdT&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::forward<ServiceIdT>(value); }
+    template<typename ServiceIdT = Aws::String>
+    UpdateInstanceCustomHealthStatusRequest& WithServiceId(ServiceIdT&& value) { SetServiceId(std::forward<ServiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the instance that you want to change the health status for.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline UpdateInstanceCustomHealthStatusRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline UpdateInstanceCustomHealthStatusRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline UpdateInstanceCustomHealthStatusRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    UpdateInstanceCustomHealthStatusRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +65,10 @@ namespace Model
      * <p>The new status of the instance, <code>HEALTHY</code> or
      * <code>UNHEALTHY</code>.</p>
      */
-    inline const CustomHealthStatus& GetStatus() const{ return m_status; }
+    inline CustomHealthStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CustomHealthStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CustomHealthStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateInstanceCustomHealthStatusRequest& WithStatus(const CustomHealthStatus& value) { SetStatus(value); return *this;}
-    inline UpdateInstanceCustomHealthStatusRequest& WithStatus(CustomHealthStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CustomHealthStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateInstanceCustomHealthStatusRequest& WithStatus(CustomHealthStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -84,7 +78,7 @@ namespace Model
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    CustomHealthStatus m_status;
+    CustomHealthStatus m_status{CustomHealthStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

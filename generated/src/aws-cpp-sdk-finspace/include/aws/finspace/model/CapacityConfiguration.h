@@ -33,7 +33,7 @@ namespace Model
   class CapacityConfiguration
   {
   public:
-    AWS_FINSPACE_API CapacityConfiguration();
+    AWS_FINSPACE_API CapacityConfiguration() = default;
     AWS_FINSPACE_API CapacityConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API CapacityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,21 +57,19 @@ namespace Model
      * memory and 64 vCPUs.</p> </li> <li> <p> <code>kx.s.32xlarge</code> – The node
      * type with a configuration of 864 GiB memory and 128 vCPUs.</p> </li> </ul>
      */
-    inline const Aws::String& GetNodeType() const{ return m_nodeType; }
+    inline const Aws::String& GetNodeType() const { return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
-    inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
-    inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
-    inline CapacityConfiguration& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
-    inline CapacityConfiguration& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
-    inline CapacityConfiguration& WithNodeType(const char* value) { SetNodeType(value); return *this;}
+    template<typename NodeTypeT = Aws::String>
+    void SetNodeType(NodeTypeT&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::forward<NodeTypeT>(value); }
+    template<typename NodeTypeT = Aws::String>
+    CapacityConfiguration& WithNodeType(NodeTypeT&& value) { SetNodeType(std::forward<NodeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of instances running in a cluster.</p>
      */
-    inline int GetNodeCount() const{ return m_nodeCount; }
+    inline int GetNodeCount() const { return m_nodeCount; }
     inline bool NodeCountHasBeenSet() const { return m_nodeCountHasBeenSet; }
     inline void SetNodeCount(int value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
     inline CapacityConfiguration& WithNodeCount(int value) { SetNodeCount(value); return *this;}
@@ -81,7 +79,7 @@ namespace Model
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet = false;
 
-    int m_nodeCount;
+    int m_nodeCount{0};
     bool m_nodeCountHasBeenSet = false;
   };
 

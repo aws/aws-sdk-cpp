@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeKeyValueStoreResult::DescribeKeyValueStoreResult() : 
-    m_itemCount(0),
-    m_totalSizeInBytes(0)
-{
-}
-
 DescribeKeyValueStoreResult::DescribeKeyValueStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeKeyValueStoreResult()
 {
   *this = result;
 }
@@ -35,57 +28,52 @@ DescribeKeyValueStoreResult& DescribeKeyValueStoreResult::operator =(const Aws::
   if(jsonValue.ValueExists("ItemCount"))
   {
     m_itemCount = jsonValue.GetInteger("ItemCount");
-
+    m_itemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalSizeInBytes"))
   {
     m_totalSizeInBytes = jsonValue.GetInt64("TotalSizeInBytes");
-
+    m_totalSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KvsARN"))
   {
     m_kvsARN = jsonValue.GetString("KvsARN");
-
+    m_kvsARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Created"))
   {
     m_created = jsonValue.GetDouble("Created");
-
+    m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModified"))
   {
     m_lastModified = jsonValue.GetDouble("LastModified");
-
+    m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& eTagIter = headers.find("etag");
   if(eTagIter != headers.end())
   {
     m_eTag = eTagIter->second;
+    m_eTagHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

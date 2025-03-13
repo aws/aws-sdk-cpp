@@ -20,15 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-BackendServerDescription::BackendServerDescription() : 
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false),
-    m_policyNamesHasBeenSet(false)
-{
-}
-
 BackendServerDescription::BackendServerDescription(const XmlNode& xmlNode)
-  : BackendServerDescription()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,20 @@ BackendServerDescription& BackendServerDescription::operator =(const XmlNode& xm
     {
       m_instancePort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePortNode.GetText()).c_str()).c_str());
       m_instancePortHasBeenSet = true;
+       m_instancePortHasBeenSet = true;
     }
     XmlNode policyNamesNode = resultNode.FirstChild("PolicyNames");
     if(!policyNamesNode.IsNull())
     {
       XmlNode policyNamesMember = policyNamesNode.FirstChild("member");
+      m_policyNamesHasBeenSet = !policyNamesMember.IsNull();
       while(!policyNamesMember.IsNull())
       {
         m_policyNames.push_back(policyNamesMember.GetText());
         policyNamesMember = policyNamesMember.NextNode("member");
       }
 
-      m_policyNamesHasBeenSet = true;
+       m_policyNamesHasBeenSet = true;
     }
   }
 

@@ -12,17 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ValidateStateMachineDefinitionRequest::ValidateStateMachineDefinitionRequest() : 
-    m_definitionHasBeenSet(false),
-    m_type(StateMachineType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_severity(ValidateStateMachineDefinitionSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ValidateStateMachineDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

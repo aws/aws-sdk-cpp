@@ -33,7 +33,7 @@ namespace Model
   class BrandDefinition
   {
   public:
-    AWS_QUICKSIGHT_API BrandDefinition();
+    AWS_QUICKSIGHT_API BrandDefinition() = default;
     AWS_QUICKSIGHT_API BrandDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BrandDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,52 +43,48 @@ namespace Model
     /**
      * <p>The name of the brand.</p>
      */
-    inline const Aws::String& GetBrandName() const{ return m_brandName; }
+    inline const Aws::String& GetBrandName() const { return m_brandName; }
     inline bool BrandNameHasBeenSet() const { return m_brandNameHasBeenSet; }
-    inline void SetBrandName(const Aws::String& value) { m_brandNameHasBeenSet = true; m_brandName = value; }
-    inline void SetBrandName(Aws::String&& value) { m_brandNameHasBeenSet = true; m_brandName = std::move(value); }
-    inline void SetBrandName(const char* value) { m_brandNameHasBeenSet = true; m_brandName.assign(value); }
-    inline BrandDefinition& WithBrandName(const Aws::String& value) { SetBrandName(value); return *this;}
-    inline BrandDefinition& WithBrandName(Aws::String&& value) { SetBrandName(std::move(value)); return *this;}
-    inline BrandDefinition& WithBrandName(const char* value) { SetBrandName(value); return *this;}
+    template<typename BrandNameT = Aws::String>
+    void SetBrandName(BrandNameT&& value) { m_brandNameHasBeenSet = true; m_brandName = std::forward<BrandNameT>(value); }
+    template<typename BrandNameT = Aws::String>
+    BrandDefinition& WithBrandName(BrandNameT&& value) { SetBrandName(std::forward<BrandNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the brand.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline BrandDefinition& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline BrandDefinition& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline BrandDefinition& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    BrandDefinition& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application theme of the brand.</p>
      */
-    inline const ApplicationTheme& GetApplicationTheme() const{ return m_applicationTheme; }
+    inline const ApplicationTheme& GetApplicationTheme() const { return m_applicationTheme; }
     inline bool ApplicationThemeHasBeenSet() const { return m_applicationThemeHasBeenSet; }
-    inline void SetApplicationTheme(const ApplicationTheme& value) { m_applicationThemeHasBeenSet = true; m_applicationTheme = value; }
-    inline void SetApplicationTheme(ApplicationTheme&& value) { m_applicationThemeHasBeenSet = true; m_applicationTheme = std::move(value); }
-    inline BrandDefinition& WithApplicationTheme(const ApplicationTheme& value) { SetApplicationTheme(value); return *this;}
-    inline BrandDefinition& WithApplicationTheme(ApplicationTheme&& value) { SetApplicationTheme(std::move(value)); return *this;}
+    template<typename ApplicationThemeT = ApplicationTheme>
+    void SetApplicationTheme(ApplicationThemeT&& value) { m_applicationThemeHasBeenSet = true; m_applicationTheme = std::forward<ApplicationThemeT>(value); }
+    template<typename ApplicationThemeT = ApplicationTheme>
+    BrandDefinition& WithApplicationTheme(ApplicationThemeT&& value) { SetApplicationTheme(std::forward<ApplicationThemeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The logo configuration of the brand.</p>
      */
-    inline const LogoConfiguration& GetLogoConfiguration() const{ return m_logoConfiguration; }
+    inline const LogoConfiguration& GetLogoConfiguration() const { return m_logoConfiguration; }
     inline bool LogoConfigurationHasBeenSet() const { return m_logoConfigurationHasBeenSet; }
-    inline void SetLogoConfiguration(const LogoConfiguration& value) { m_logoConfigurationHasBeenSet = true; m_logoConfiguration = value; }
-    inline void SetLogoConfiguration(LogoConfiguration&& value) { m_logoConfigurationHasBeenSet = true; m_logoConfiguration = std::move(value); }
-    inline BrandDefinition& WithLogoConfiguration(const LogoConfiguration& value) { SetLogoConfiguration(value); return *this;}
-    inline BrandDefinition& WithLogoConfiguration(LogoConfiguration&& value) { SetLogoConfiguration(std::move(value)); return *this;}
+    template<typename LogoConfigurationT = LogoConfiguration>
+    void SetLogoConfiguration(LogoConfigurationT&& value) { m_logoConfigurationHasBeenSet = true; m_logoConfiguration = std::forward<LogoConfigurationT>(value); }
+    template<typename LogoConfigurationT = LogoConfiguration>
+    BrandDefinition& WithLogoConfiguration(LogoConfigurationT&& value) { SetLogoConfiguration(std::forward<LogoConfigurationT>(value)); return *this;}
     ///@}
   private:
 

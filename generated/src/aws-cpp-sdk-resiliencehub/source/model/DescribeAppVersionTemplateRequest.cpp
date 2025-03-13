@@ -12,12 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAppVersionTemplateRequest::DescribeAppVersionTemplateRequest() : 
-    m_appArnHasBeenSet(false),
-    m_appVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAppVersionTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

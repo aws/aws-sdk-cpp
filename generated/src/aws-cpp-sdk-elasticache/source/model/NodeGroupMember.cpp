@@ -20,18 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-NodeGroupMember::NodeGroupMember() : 
-    m_cacheClusterIdHasBeenSet(false),
-    m_cacheNodeIdHasBeenSet(false),
-    m_readEndpointHasBeenSet(false),
-    m_preferredAvailabilityZoneHasBeenSet(false),
-    m_preferredOutpostArnHasBeenSet(false),
-    m_currentRoleHasBeenSet(false)
-{
-}
-
 NodeGroupMember::NodeGroupMember(const XmlNode& xmlNode)
-  : NodeGroupMember()
 {
   *this = xmlNode;
 }
@@ -47,36 +36,42 @@ NodeGroupMember& NodeGroupMember::operator =(const XmlNode& xmlNode)
     {
       m_cacheClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterIdNode.GetText());
       m_cacheClusterIdHasBeenSet = true;
+       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode cacheNodeIdNode = resultNode.FirstChild("CacheNodeId");
     if(!cacheNodeIdNode.IsNull())
     {
       m_cacheNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeIdNode.GetText());
       m_cacheNodeIdHasBeenSet = true;
+       m_cacheNodeIdHasBeenSet = true;
     }
     XmlNode readEndpointNode = resultNode.FirstChild("ReadEndpoint");
     if(!readEndpointNode.IsNull())
     {
       m_readEndpoint = readEndpointNode;
       m_readEndpointHasBeenSet = true;
+       m_readEndpointHasBeenSet = true;
     }
     XmlNode preferredAvailabilityZoneNode = resultNode.FirstChild("PreferredAvailabilityZone");
     if(!preferredAvailabilityZoneNode.IsNull())
     {
       m_preferredAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(preferredAvailabilityZoneNode.GetText());
       m_preferredAvailabilityZoneHasBeenSet = true;
+       m_preferredAvailabilityZoneHasBeenSet = true;
     }
     XmlNode preferredOutpostArnNode = resultNode.FirstChild("PreferredOutpostArn");
     if(!preferredOutpostArnNode.IsNull())
     {
       m_preferredOutpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(preferredOutpostArnNode.GetText());
       m_preferredOutpostArnHasBeenSet = true;
+       m_preferredOutpostArnHasBeenSet = true;
     }
     XmlNode currentRoleNode = resultNode.FirstChild("CurrentRole");
     if(!currentRoleNode.IsNull())
     {
       m_currentRole = Aws::Utils::Xml::DecodeEscapedXmlText(currentRoleNode.GetText());
       m_currentRoleHasBeenSet = true;
+       m_currentRoleHasBeenSet = true;
     }
   }
 

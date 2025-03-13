@@ -24,7 +24,7 @@ namespace Model
   class CreateTrialRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreateTrialRequest();
+    AWS_SAGEMAKER_API CreateTrialRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The name of the trial. The name must be unique in your Amazon Web Services
      * account and is not case-sensitive.</p>
      */
-    inline const Aws::String& GetTrialName() const{ return m_trialName; }
+    inline const Aws::String& GetTrialName() const { return m_trialName; }
     inline bool TrialNameHasBeenSet() const { return m_trialNameHasBeenSet; }
-    inline void SetTrialName(const Aws::String& value) { m_trialNameHasBeenSet = true; m_trialName = value; }
-    inline void SetTrialName(Aws::String&& value) { m_trialNameHasBeenSet = true; m_trialName = std::move(value); }
-    inline void SetTrialName(const char* value) { m_trialNameHasBeenSet = true; m_trialName.assign(value); }
-    inline CreateTrialRequest& WithTrialName(const Aws::String& value) { SetTrialName(value); return *this;}
-    inline CreateTrialRequest& WithTrialName(Aws::String&& value) { SetTrialName(std::move(value)); return *this;}
-    inline CreateTrialRequest& WithTrialName(const char* value) { SetTrialName(value); return *this;}
+    template<typename TrialNameT = Aws::String>
+    void SetTrialName(TrialNameT&& value) { m_trialNameHasBeenSet = true; m_trialName = std::forward<TrialNameT>(value); }
+    template<typename TrialNameT = Aws::String>
+    CreateTrialRequest& WithTrialName(TrialNameT&& value) { SetTrialName(std::forward<TrialNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,38 +56,34 @@ namespace Model
      * <code>DisplayName</code> isn't specified, <code>TrialName</code> is
      * displayed.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline CreateTrialRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline CreateTrialRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline CreateTrialRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    CreateTrialRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the experiment to associate the trial with.</p>
      */
-    inline const Aws::String& GetExperimentName() const{ return m_experimentName; }
+    inline const Aws::String& GetExperimentName() const { return m_experimentName; }
     inline bool ExperimentNameHasBeenSet() const { return m_experimentNameHasBeenSet; }
-    inline void SetExperimentName(const Aws::String& value) { m_experimentNameHasBeenSet = true; m_experimentName = value; }
-    inline void SetExperimentName(Aws::String&& value) { m_experimentNameHasBeenSet = true; m_experimentName = std::move(value); }
-    inline void SetExperimentName(const char* value) { m_experimentNameHasBeenSet = true; m_experimentName.assign(value); }
-    inline CreateTrialRequest& WithExperimentName(const Aws::String& value) { SetExperimentName(value); return *this;}
-    inline CreateTrialRequest& WithExperimentName(Aws::String&& value) { SetExperimentName(std::move(value)); return *this;}
-    inline CreateTrialRequest& WithExperimentName(const char* value) { SetExperimentName(value); return *this;}
+    template<typename ExperimentNameT = Aws::String>
+    void SetExperimentName(ExperimentNameT&& value) { m_experimentNameHasBeenSet = true; m_experimentName = std::forward<ExperimentNameT>(value); }
+    template<typename ExperimentNameT = Aws::String>
+    CreateTrialRequest& WithExperimentName(ExperimentNameT&& value) { SetExperimentName(std::forward<ExperimentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MetadataProperties& GetMetadataProperties() const{ return m_metadataProperties; }
+    inline const MetadataProperties& GetMetadataProperties() const { return m_metadataProperties; }
     inline bool MetadataPropertiesHasBeenSet() const { return m_metadataPropertiesHasBeenSet; }
-    inline void SetMetadataProperties(const MetadataProperties& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = value; }
-    inline void SetMetadataProperties(MetadataProperties&& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = std::move(value); }
-    inline CreateTrialRequest& WithMetadataProperties(const MetadataProperties& value) { SetMetadataProperties(value); return *this;}
-    inline CreateTrialRequest& WithMetadataProperties(MetadataProperties&& value) { SetMetadataProperties(std::move(value)); return *this;}
+    template<typename MetadataPropertiesT = MetadataProperties>
+    void SetMetadataProperties(MetadataPropertiesT&& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = std::forward<MetadataPropertiesT>(value); }
+    template<typename MetadataPropertiesT = MetadataProperties>
+    CreateTrialRequest& WithMetadataProperties(MetadataPropertiesT&& value) { SetMetadataProperties(std::forward<MetadataPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +92,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
      * API to search on the tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateTrialRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateTrialRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateTrialRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateTrialRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateTrialRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateTrialRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteVirtualInterfaceRequest : public DirectConnectRequest
   {
   public:
-    AWS_DIRECTCONNECT_API DeleteVirtualInterfaceRequest();
+    AWS_DIRECTCONNECT_API DeleteVirtualInterfaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the virtual interface.</p>
      */
-    inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
+    inline const Aws::String& GetVirtualInterfaceId() const { return m_virtualInterfaceId; }
     inline bool VirtualInterfaceIdHasBeenSet() const { return m_virtualInterfaceIdHasBeenSet; }
-    inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
-    inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::move(value); }
-    inline void SetVirtualInterfaceId(const char* value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId.assign(value); }
-    inline DeleteVirtualInterfaceRequest& WithVirtualInterfaceId(const Aws::String& value) { SetVirtualInterfaceId(value); return *this;}
-    inline DeleteVirtualInterfaceRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
-    inline DeleteVirtualInterfaceRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
+    template<typename VirtualInterfaceIdT = Aws::String>
+    void SetVirtualInterfaceId(VirtualInterfaceIdT&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::forward<VirtualInterfaceIdT>(value); }
+    template<typename VirtualInterfaceIdT = Aws::String>
+    DeleteVirtualInterfaceRequest& WithVirtualInterfaceId(VirtualInterfaceIdT&& value) { SetVirtualInterfaceId(std::forward<VirtualInterfaceIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -36,7 +36,7 @@ namespace Model
   class AmiProductFilters
   {
   public:
-    AWS_MARKETPLACECATALOG_API AmiProductFilters();
+    AWS_MARKETPLACECATALOG_API AmiProductFilters() = default;
     AWS_MARKETPLACECATALOG_API AmiProductFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API AmiProductFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,48 +46,48 @@ namespace Model
     /**
      * <p>Unique identifier for the AMI product.</p>
      */
-    inline const AmiProductEntityIdFilter& GetEntityId() const{ return m_entityId; }
+    inline const AmiProductEntityIdFilter& GetEntityId() const { return m_entityId; }
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-    inline void SetEntityId(const AmiProductEntityIdFilter& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-    inline void SetEntityId(AmiProductEntityIdFilter&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-    inline AmiProductFilters& WithEntityId(const AmiProductEntityIdFilter& value) { SetEntityId(value); return *this;}
-    inline AmiProductFilters& WithEntityId(AmiProductEntityIdFilter&& value) { SetEntityId(std::move(value)); return *this;}
+    template<typename EntityIdT = AmiProductEntityIdFilter>
+    void SetEntityId(EntityIdT&& value) { m_entityIdHasBeenSet = true; m_entityId = std::forward<EntityIdT>(value); }
+    template<typename EntityIdT = AmiProductEntityIdFilter>
+    AmiProductFilters& WithEntityId(EntityIdT&& value) { SetEntityId(std::forward<EntityIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last date on which the AMI product was modified.</p>
      */
-    inline const AmiProductLastModifiedDateFilter& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const AmiProductLastModifiedDateFilter& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const AmiProductLastModifiedDateFilter& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(AmiProductLastModifiedDateFilter&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline AmiProductFilters& WithLastModifiedDate(const AmiProductLastModifiedDateFilter& value) { SetLastModifiedDate(value); return *this;}
-    inline AmiProductFilters& WithLastModifiedDate(AmiProductLastModifiedDateFilter&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = AmiProductLastModifiedDateFilter>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = AmiProductLastModifiedDateFilter>
+    AmiProductFilters& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the AMI product.</p>
      */
-    inline const AmiProductTitleFilter& GetProductTitle() const{ return m_productTitle; }
+    inline const AmiProductTitleFilter& GetProductTitle() const { return m_productTitle; }
     inline bool ProductTitleHasBeenSet() const { return m_productTitleHasBeenSet; }
-    inline void SetProductTitle(const AmiProductTitleFilter& value) { m_productTitleHasBeenSet = true; m_productTitle = value; }
-    inline void SetProductTitle(AmiProductTitleFilter&& value) { m_productTitleHasBeenSet = true; m_productTitle = std::move(value); }
-    inline AmiProductFilters& WithProductTitle(const AmiProductTitleFilter& value) { SetProductTitle(value); return *this;}
-    inline AmiProductFilters& WithProductTitle(AmiProductTitleFilter&& value) { SetProductTitle(std::move(value)); return *this;}
+    template<typename ProductTitleT = AmiProductTitleFilter>
+    void SetProductTitle(ProductTitleT&& value) { m_productTitleHasBeenSet = true; m_productTitle = std::forward<ProductTitleT>(value); }
+    template<typename ProductTitleT = AmiProductTitleFilter>
+    AmiProductFilters& WithProductTitle(ProductTitleT&& value) { SetProductTitle(std::forward<ProductTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visibility of the AMI product.</p>
      */
-    inline const AmiProductVisibilityFilter& GetVisibility() const{ return m_visibility; }
+    inline const AmiProductVisibilityFilter& GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const AmiProductVisibilityFilter& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(AmiProductVisibilityFilter&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline AmiProductFilters& WithVisibility(const AmiProductVisibilityFilter& value) { SetVisibility(value); return *this;}
-    inline AmiProductFilters& WithVisibility(AmiProductVisibilityFilter&& value) { SetVisibility(std::move(value)); return *this;}
+    template<typename VisibilityT = AmiProductVisibilityFilter>
+    void SetVisibility(VisibilityT&& value) { m_visibilityHasBeenSet = true; m_visibility = std::forward<VisibilityT>(value); }
+    template<typename VisibilityT = AmiProductVisibilityFilter>
+    AmiProductFilters& WithVisibility(VisibilityT&& value) { SetVisibility(std::forward<VisibilityT>(value)); return *this;}
     ///@}
   private:
 

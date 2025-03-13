@@ -12,21 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateKnowledgeBaseRequest::CreateKnowledgeBaseRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_knowledgeBaseType(KnowledgeBaseType::NOT_SET),
-    m_knowledgeBaseTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_renderingConfigurationHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_sourceConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vectorIngestionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateKnowledgeBaseRequest::SerializePayload() const
 {
   JsonValue payload;

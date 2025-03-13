@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-SnowflakeTableSchema::SnowflakeTableSchema() : 
-    m_v1HasBeenSet(false)
-{
-}
-
 SnowflakeTableSchema::SnowflakeTableSchema(JsonView jsonValue)
-  : SnowflakeTableSchema()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SnowflakeTableSchema& SnowflakeTableSchema::operator =(JsonView jsonValue)
     }
     m_v1HasBeenSet = true;
   }
-
   return *this;
 }
 

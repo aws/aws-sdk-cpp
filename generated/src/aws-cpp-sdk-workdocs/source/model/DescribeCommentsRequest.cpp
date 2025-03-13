@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeCommentsRequest::DescribeCommentsRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCommentsRequest::SerializePayload() const
 {
   return {};

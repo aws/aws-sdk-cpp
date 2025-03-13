@@ -12,19 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCollectionRequest::CreateCollectionRequest() : 
-    m_nameHasBeenSet(false),
-    m_type(CollectionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_standbyReplicas(StandbyReplicas::NOT_SET),
-    m_standbyReplicasHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateCollectionRequest::SerializePayload() const
 {
   JsonValue payload;

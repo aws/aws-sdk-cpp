@@ -36,7 +36,7 @@ namespace Model
   class OnSuccess
   {
   public:
-    AWS_LAMBDA_API OnSuccess();
+    AWS_LAMBDA_API OnSuccess() = default;
     AWS_LAMBDA_API OnSuccess(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API OnSuccess& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the destination resource.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline OnSuccess& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline OnSuccess& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline OnSuccess& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    OnSuccess& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
   private:
 

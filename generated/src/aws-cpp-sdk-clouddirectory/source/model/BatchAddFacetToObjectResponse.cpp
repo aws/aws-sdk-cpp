@@ -18,10 +18,6 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchAddFacetToObjectResponse::BatchAddFacetToObjectResponse()
-{
-}
-
 BatchAddFacetToObjectResponse::BatchAddFacetToObjectResponse(JsonView jsonValue)
 {
   *this = jsonValue;

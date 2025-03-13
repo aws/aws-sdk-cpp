@@ -28,7 +28,7 @@ namespace Model
   class EvaluatePullRequestApprovalRulesResult
   {
   public:
-    AWS_CODECOMMIT_API EvaluatePullRequestApprovalRulesResult();
+    AWS_CODECOMMIT_API EvaluatePullRequestApprovalRulesResult() = default;
     AWS_CODECOMMIT_API EvaluatePullRequestApprovalRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API EvaluatePullRequestApprovalRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,28 +40,28 @@ namespace Model
      * not been met (if any), whether the pull request is in the approved state, and
      * whether the pull request approval rule has been set aside by an override. </p>
      */
-    inline const Evaluation& GetEvaluation() const{ return m_evaluation; }
-    inline void SetEvaluation(const Evaluation& value) { m_evaluation = value; }
-    inline void SetEvaluation(Evaluation&& value) { m_evaluation = std::move(value); }
-    inline EvaluatePullRequestApprovalRulesResult& WithEvaluation(const Evaluation& value) { SetEvaluation(value); return *this;}
-    inline EvaluatePullRequestApprovalRulesResult& WithEvaluation(Evaluation&& value) { SetEvaluation(std::move(value)); return *this;}
+    inline const Evaluation& GetEvaluation() const { return m_evaluation; }
+    template<typename EvaluationT = Evaluation>
+    void SetEvaluation(EvaluationT&& value) { m_evaluationHasBeenSet = true; m_evaluation = std::forward<EvaluationT>(value); }
+    template<typename EvaluationT = Evaluation>
+    EvaluatePullRequestApprovalRulesResult& WithEvaluation(EvaluationT&& value) { SetEvaluation(std::forward<EvaluationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline EvaluatePullRequestApprovalRulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline EvaluatePullRequestApprovalRulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline EvaluatePullRequestApprovalRulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    EvaluatePullRequestApprovalRulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Evaluation m_evaluation;
+    bool m_evaluationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

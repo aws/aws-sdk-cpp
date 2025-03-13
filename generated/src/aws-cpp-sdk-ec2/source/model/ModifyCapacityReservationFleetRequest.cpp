@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyCapacityReservationFleetRequest::ModifyCapacityReservationFleetRequest() : 
-    m_capacityReservationFleetIdHasBeenSet(false),
-    m_totalTargetCapacity(0),
-    m_totalTargetCapacityHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_removeEndDate(false),
-    m_removeEndDateHasBeenSet(false)
-{
-}
-
 Aws::String ModifyCapacityReservationFleetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

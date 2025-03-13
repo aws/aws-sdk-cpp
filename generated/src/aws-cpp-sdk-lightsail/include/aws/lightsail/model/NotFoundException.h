@@ -32,7 +32,7 @@ namespace Model
   class NotFoundException
   {
   public:
-    AWS_LIGHTSAIL_API NotFoundException();
+    AWS_LIGHTSAIL_API NotFoundException() = default;
     AWS_LIGHTSAIL_API NotFoundException(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API NotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,50 +40,42 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline NotFoundException& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline NotFoundException& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline NotFoundException& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    NotFoundException& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetDocs() const{ return m_docs; }
+    inline const Aws::String& GetDocs() const { return m_docs; }
     inline bool DocsHasBeenSet() const { return m_docsHasBeenSet; }
-    inline void SetDocs(const Aws::String& value) { m_docsHasBeenSet = true; m_docs = value; }
-    inline void SetDocs(Aws::String&& value) { m_docsHasBeenSet = true; m_docs = std::move(value); }
-    inline void SetDocs(const char* value) { m_docsHasBeenSet = true; m_docs.assign(value); }
-    inline NotFoundException& WithDocs(const Aws::String& value) { SetDocs(value); return *this;}
-    inline NotFoundException& WithDocs(Aws::String&& value) { SetDocs(std::move(value)); return *this;}
-    inline NotFoundException& WithDocs(const char* value) { SetDocs(value); return *this;}
+    template<typename DocsT = Aws::String>
+    void SetDocs(DocsT&& value) { m_docsHasBeenSet = true; m_docs = std::forward<DocsT>(value); }
+    template<typename DocsT = Aws::String>
+    NotFoundException& WithDocs(DocsT&& value) { SetDocs(std::forward<DocsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline NotFoundException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline NotFoundException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline NotFoundException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    NotFoundException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetTip() const{ return m_tip; }
+    inline const Aws::String& GetTip() const { return m_tip; }
     inline bool TipHasBeenSet() const { return m_tipHasBeenSet; }
-    inline void SetTip(const Aws::String& value) { m_tipHasBeenSet = true; m_tip = value; }
-    inline void SetTip(Aws::String&& value) { m_tipHasBeenSet = true; m_tip = std::move(value); }
-    inline void SetTip(const char* value) { m_tipHasBeenSet = true; m_tip.assign(value); }
-    inline NotFoundException& WithTip(const Aws::String& value) { SetTip(value); return *this;}
-    inline NotFoundException& WithTip(Aws::String&& value) { SetTip(std::move(value)); return *this;}
-    inline NotFoundException& WithTip(const char* value) { SetTip(value); return *this;}
+    template<typename TipT = Aws::String>
+    void SetTip(TipT&& value) { m_tipHasBeenSet = true; m_tip = std::forward<TipT>(value); }
+    template<typename TipT = Aws::String>
+    NotFoundException& WithTip(TipT&& value) { SetTip(std::forward<TipT>(value)); return *this;}
     ///@}
   private:
 

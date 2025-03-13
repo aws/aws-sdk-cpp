@@ -37,7 +37,7 @@ namespace Model
   class BeforeEntryConditions
   {
   public:
-    AWS_CODEPIPELINE_API BeforeEntryConditions();
+    AWS_CODEPIPELINE_API BeforeEntryConditions() = default;
     AWS_CODEPIPELINE_API BeforeEntryConditions(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API BeforeEntryConditions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
     /**
      * <p>The conditions that are configured as entry conditions.</p>
      */
-    inline const Aws::Vector<Condition>& GetConditions() const{ return m_conditions; }
+    inline const Aws::Vector<Condition>& GetConditions() const { return m_conditions; }
     inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
-    inline void SetConditions(const Aws::Vector<Condition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
-    inline void SetConditions(Aws::Vector<Condition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
-    inline BeforeEntryConditions& WithConditions(const Aws::Vector<Condition>& value) { SetConditions(value); return *this;}
-    inline BeforeEntryConditions& WithConditions(Aws::Vector<Condition>&& value) { SetConditions(std::move(value)); return *this;}
-    inline BeforeEntryConditions& AddConditions(const Condition& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
-    inline BeforeEntryConditions& AddConditions(Condition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
+    template<typename ConditionsT = Aws::Vector<Condition>>
+    void SetConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions = std::forward<ConditionsT>(value); }
+    template<typename ConditionsT = Aws::Vector<Condition>>
+    BeforeEntryConditions& WithConditions(ConditionsT&& value) { SetConditions(std::forward<ConditionsT>(value)); return *this;}
+    template<typename ConditionsT = Condition>
+    BeforeEntryConditions& AddConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions.emplace_back(std::forward<ConditionsT>(value)); return *this; }
     ///@}
   private:
 

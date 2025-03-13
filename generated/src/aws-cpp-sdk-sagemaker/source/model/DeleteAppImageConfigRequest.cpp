@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAppImageConfigRequest::DeleteAppImageConfigRequest() : 
-    m_appImageConfigNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAppImageConfigRequest::SerializePayload() const
 {
   JsonValue payload;

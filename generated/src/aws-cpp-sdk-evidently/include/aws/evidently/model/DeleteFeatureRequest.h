@@ -21,7 +21,7 @@ namespace Model
   class DeleteFeatureRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API DeleteFeatureRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API DeleteFeatureRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The name of the feature to delete.</p>
      */
-    inline const Aws::String& GetFeature() const{ return m_feature; }
+    inline const Aws::String& GetFeature() const { return m_feature; }
     inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }
-    inline void SetFeature(const Aws::String& value) { m_featureHasBeenSet = true; m_feature = value; }
-    inline void SetFeature(Aws::String&& value) { m_featureHasBeenSet = true; m_feature = std::move(value); }
-    inline void SetFeature(const char* value) { m_featureHasBeenSet = true; m_feature.assign(value); }
-    inline DeleteFeatureRequest& WithFeature(const Aws::String& value) { SetFeature(value); return *this;}
-    inline DeleteFeatureRequest& WithFeature(Aws::String&& value) { SetFeature(std::move(value)); return *this;}
-    inline DeleteFeatureRequest& WithFeature(const char* value) { SetFeature(value); return *this;}
+    template<typename FeatureT = Aws::String>
+    void SetFeature(FeatureT&& value) { m_featureHasBeenSet = true; m_feature = std::forward<FeatureT>(value); }
+    template<typename FeatureT = Aws::String>
+    DeleteFeatureRequest& WithFeature(FeatureT&& value) { SetFeature(std::forward<FeatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name or ARN of the project that contains the feature to delete.</p>
      */
-    inline const Aws::String& GetProject() const{ return m_project; }
+    inline const Aws::String& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const Aws::String& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(Aws::String&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline void SetProject(const char* value) { m_projectHasBeenSet = true; m_project.assign(value); }
-    inline DeleteFeatureRequest& WithProject(const Aws::String& value) { SetProject(value); return *this;}
-    inline DeleteFeatureRequest& WithProject(Aws::String&& value) { SetProject(std::move(value)); return *this;}
-    inline DeleteFeatureRequest& WithProject(const char* value) { SetProject(value); return *this;}
+    template<typename ProjectT = Aws::String>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = Aws::String>
+    DeleteFeatureRequest& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
   private:
 

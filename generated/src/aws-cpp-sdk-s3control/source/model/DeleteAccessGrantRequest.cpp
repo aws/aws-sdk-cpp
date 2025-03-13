@@ -15,11 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeleteAccessGrantRequest::DeleteAccessGrantRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_accessGrantIdHasBeenSet(false)
-{
-}
 
 Aws::String DeleteAccessGrantRequest::SerializePayload() const
 {

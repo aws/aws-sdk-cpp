@@ -12,16 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartCompositionRequest::StartCompositionRequest() : 
-    m_stageArnHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true),
-    m_layoutHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartCompositionRequest::SerializePayload() const
 {
   JsonValue payload;

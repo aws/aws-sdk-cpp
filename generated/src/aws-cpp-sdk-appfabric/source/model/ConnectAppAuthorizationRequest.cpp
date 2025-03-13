@@ -12,13 +12,6 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConnectAppAuthorizationRequest::ConnectAppAuthorizationRequest() : 
-    m_appBundleIdentifierHasBeenSet(false),
-    m_appAuthorizationIdentifierHasBeenSet(false),
-    m_authRequestHasBeenSet(false)
-{
-}
-
 Aws::String ConnectAppAuthorizationRequest::SerializePayload() const
 {
   JsonValue payload;

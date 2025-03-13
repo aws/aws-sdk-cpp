@@ -20,13 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-AutoScalingGroup::AutoScalingGroup() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode)
-  : AutoScalingGroup()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
   }
 

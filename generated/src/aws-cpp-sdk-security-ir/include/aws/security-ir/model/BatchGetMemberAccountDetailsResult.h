@@ -30,7 +30,7 @@ namespace Model
   class BatchGetMemberAccountDetailsResult
   {
   public:
-    AWS_SECURITYIR_API BatchGetMemberAccountDetailsResult();
+    AWS_SECURITYIR_API BatchGetMemberAccountDetailsResult() = default;
     AWS_SECURITYIR_API BatchGetMemberAccountDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYIR_API BatchGetMemberAccountDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>The response element providing responses for requests to
      * GetMembershipAccountDetails.</p>
      */
-    inline const Aws::Vector<GetMembershipAccountDetailItem>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<GetMembershipAccountDetailItem>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<GetMembershipAccountDetailItem>&& value) { m_items = std::move(value); }
-    inline BatchGetMemberAccountDetailsResult& WithItems(const Aws::Vector<GetMembershipAccountDetailItem>& value) { SetItems(value); return *this;}
-    inline BatchGetMemberAccountDetailsResult& WithItems(Aws::Vector<GetMembershipAccountDetailItem>&& value) { SetItems(std::move(value)); return *this;}
-    inline BatchGetMemberAccountDetailsResult& AddItems(const GetMembershipAccountDetailItem& value) { m_items.push_back(value); return *this; }
-    inline BatchGetMemberAccountDetailsResult& AddItems(GetMembershipAccountDetailItem&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GetMembershipAccountDetailItem>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<GetMembershipAccountDetailItem>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<GetMembershipAccountDetailItem>>
+    BatchGetMemberAccountDetailsResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = GetMembershipAccountDetailItem>
+    BatchGetMemberAccountDetailsResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,33 @@ namespace Model
      * <p>The response element providing errors messages for requests to
      * GetMembershipAccountDetails.</p>
      */
-    inline const Aws::Vector<GetMembershipAccountDetailError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<GetMembershipAccountDetailError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<GetMembershipAccountDetailError>&& value) { m_errors = std::move(value); }
-    inline BatchGetMemberAccountDetailsResult& WithErrors(const Aws::Vector<GetMembershipAccountDetailError>& value) { SetErrors(value); return *this;}
-    inline BatchGetMemberAccountDetailsResult& WithErrors(Aws::Vector<GetMembershipAccountDetailError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetMemberAccountDetailsResult& AddErrors(const GetMembershipAccountDetailError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetMemberAccountDetailsResult& AddErrors(GetMembershipAccountDetailError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GetMembershipAccountDetailError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<GetMembershipAccountDetailError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<GetMembershipAccountDetailError>>
+    BatchGetMemberAccountDetailsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = GetMembershipAccountDetailError>
+    BatchGetMemberAccountDetailsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetMemberAccountDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetMemberAccountDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetMemberAccountDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetMemberAccountDetailsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GetMembershipAccountDetailItem> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::Vector<GetMembershipAccountDetailError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

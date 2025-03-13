@@ -12,18 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePullThroughCacheRuleRequest::CreatePullThroughCacheRuleRequest() : 
-    m_ecrRepositoryPrefixHasBeenSet(false),
-    m_upstreamRegistryUrlHasBeenSet(false),
-    m_registryIdHasBeenSet(false),
-    m_upstreamRegistry(UpstreamRegistry::NOT_SET),
-    m_upstreamRegistryHasBeenSet(false),
-    m_credentialArnHasBeenSet(false),
-    m_customRoleArnHasBeenSet(false),
-    m_upstreamRepositoryPrefixHasBeenSet(false)
-{
-}
-
 Aws::String CreatePullThroughCacheRuleRequest::SerializePayload() const
 {
   JsonValue payload;

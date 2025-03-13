@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RateLimitUriPath::RateLimitUriPath() : 
-    m_textTransformationsHasBeenSet(false)
-{
-}
-
 RateLimitUriPath::RateLimitUriPath(JsonView jsonValue)
-  : RateLimitUriPath()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RateLimitUriPath& RateLimitUriPath::operator =(JsonView jsonValue)
     }
     m_textTransformationsHasBeenSet = true;
   }
-
   return *this;
 }
 

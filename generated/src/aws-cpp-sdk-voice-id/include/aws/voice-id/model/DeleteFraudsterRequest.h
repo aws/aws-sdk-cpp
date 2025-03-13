@@ -21,7 +21,7 @@ namespace Model
   class DeleteFraudsterRequest : public VoiceIDRequest
   {
   public:
-    AWS_VOICEID_API DeleteFraudsterRequest();
+    AWS_VOICEID_API DeleteFraudsterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The identifier of the domain that contains the fraudster.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline DeleteFraudsterRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline DeleteFraudsterRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline DeleteFraudsterRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    DeleteFraudsterRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the fraudster you want to delete.</p>
      */
-    inline const Aws::String& GetFraudsterId() const{ return m_fraudsterId; }
+    inline const Aws::String& GetFraudsterId() const { return m_fraudsterId; }
     inline bool FraudsterIdHasBeenSet() const { return m_fraudsterIdHasBeenSet; }
-    inline void SetFraudsterId(const Aws::String& value) { m_fraudsterIdHasBeenSet = true; m_fraudsterId = value; }
-    inline void SetFraudsterId(Aws::String&& value) { m_fraudsterIdHasBeenSet = true; m_fraudsterId = std::move(value); }
-    inline void SetFraudsterId(const char* value) { m_fraudsterIdHasBeenSet = true; m_fraudsterId.assign(value); }
-    inline DeleteFraudsterRequest& WithFraudsterId(const Aws::String& value) { SetFraudsterId(value); return *this;}
-    inline DeleteFraudsterRequest& WithFraudsterId(Aws::String&& value) { SetFraudsterId(std::move(value)); return *this;}
-    inline DeleteFraudsterRequest& WithFraudsterId(const char* value) { SetFraudsterId(value); return *this;}
+    template<typename FraudsterIdT = Aws::String>
+    void SetFraudsterId(FraudsterIdT&& value) { m_fraudsterIdHasBeenSet = true; m_fraudsterId = std::forward<FraudsterIdT>(value); }
+    template<typename FraudsterIdT = Aws::String>
+    DeleteFraudsterRequest& WithFraudsterId(FraudsterIdT&& value) { SetFraudsterId(std::forward<FraudsterIdT>(value)); return *this;}
     ///@}
   private:
 

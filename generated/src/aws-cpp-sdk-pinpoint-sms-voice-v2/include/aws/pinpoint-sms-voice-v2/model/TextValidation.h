@@ -31,7 +31,7 @@ namespace Model
   class TextValidation
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API TextValidation();
+    AWS_PINPOINTSMSVOICEV2_API TextValidation() = default;
     AWS_PINPOINTSMSVOICEV2_API TextValidation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API TextValidation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The minimum number of characters for the text field.</p>
      */
-    inline int GetMinLength() const{ return m_minLength; }
+    inline int GetMinLength() const { return m_minLength; }
     inline bool MinLengthHasBeenSet() const { return m_minLengthHasBeenSet; }
     inline void SetMinLength(int value) { m_minLengthHasBeenSet = true; m_minLength = value; }
     inline TextValidation& WithMinLength(int value) { SetMinLength(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>The maximum number of characters for the text field.</p>
      */
-    inline int GetMaxLength() const{ return m_maxLength; }
+    inline int GetMaxLength() const { return m_maxLength; }
     inline bool MaxLengthHasBeenSet() const { return m_maxLengthHasBeenSet; }
     inline void SetMaxLength(int value) { m_maxLengthHasBeenSet = true; m_maxLength = value; }
     inline TextValidation& WithMaxLength(int value) { SetMaxLength(value); return *this;}
@@ -61,21 +61,19 @@ namespace Model
     /**
      * <p>The regular expression used to validate the text field.</p>
      */
-    inline const Aws::String& GetPattern() const{ return m_pattern; }
+    inline const Aws::String& GetPattern() const { return m_pattern; }
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
-    inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
-    inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
-    inline void SetPattern(const char* value) { m_patternHasBeenSet = true; m_pattern.assign(value); }
-    inline TextValidation& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
-    inline TextValidation& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
-    inline TextValidation& WithPattern(const char* value) { SetPattern(value); return *this;}
+    template<typename PatternT = Aws::String>
+    void SetPattern(PatternT&& value) { m_patternHasBeenSet = true; m_pattern = std::forward<PatternT>(value); }
+    template<typename PatternT = Aws::String>
+    TextValidation& WithPattern(PatternT&& value) { SetPattern(std::forward<PatternT>(value)); return *this;}
     ///@}
   private:
 
-    int m_minLength;
+    int m_minLength{0};
     bool m_minLengthHasBeenSet = false;
 
-    int m_maxLength;
+    int m_maxLength{0};
     bool m_maxLengthHasBeenSet = false;
 
     Aws::String m_pattern;

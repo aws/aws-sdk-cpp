@@ -18,17 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-LogicalResourceId::LogicalResourceId() : 
-    m_eksSourceNameHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_logicalStackNameHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false),
-    m_terraformSourceNameHasBeenSet(false)
-{
-}
-
 LogicalResourceId::LogicalResourceId(JsonView jsonValue)
-  : LogicalResourceId()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ LogicalResourceId& LogicalResourceId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eksSourceName"))
   {
     m_eksSourceName = jsonValue.GetString("eksSourceName");
-
     m_eksSourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logicalStackName"))
   {
     m_logicalStackName = jsonValue.GetString("logicalStackName");
-
     m_logicalStackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceGroupName"))
   {
     m_resourceGroupName = jsonValue.GetString("resourceGroupName");
-
     m_resourceGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("terraformSourceName"))
   {
     m_terraformSourceName = jsonValue.GetString("terraformSourceName");
-
     m_terraformSourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

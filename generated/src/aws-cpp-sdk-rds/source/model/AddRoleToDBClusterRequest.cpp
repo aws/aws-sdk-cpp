@@ -10,13 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-AddRoleToDBClusterRequest::AddRoleToDBClusterRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_featureNameHasBeenSet(false)
-{
-}
-
 Aws::String AddRoleToDBClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

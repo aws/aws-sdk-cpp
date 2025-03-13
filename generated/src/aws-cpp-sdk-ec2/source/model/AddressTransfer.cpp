@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AddressTransfer::AddressTransfer() : 
-    m_publicIpHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_transferAccountIdHasBeenSet(false),
-    m_transferOfferExpirationTimestampHasBeenSet(false),
-    m_transferOfferAcceptedTimestampHasBeenSet(false),
-    m_addressTransferStatus(AddressTransferStatus::NOT_SET),
-    m_addressTransferStatusHasBeenSet(false)
-{
-}
-
 AddressTransfer::AddressTransfer(const XmlNode& xmlNode)
-  : AddressTransfer()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,42 @@ AddressTransfer& AddressTransfer::operator =(const XmlNode& xmlNode)
     {
       m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
       m_publicIpHasBeenSet = true;
+       m_publicIpHasBeenSet = true;
     }
     XmlNode allocationIdNode = resultNode.FirstChild("allocationId");
     if(!allocationIdNode.IsNull())
     {
       m_allocationId = Aws::Utils::Xml::DecodeEscapedXmlText(allocationIdNode.GetText());
       m_allocationIdHasBeenSet = true;
+       m_allocationIdHasBeenSet = true;
     }
     XmlNode transferAccountIdNode = resultNode.FirstChild("transferAccountId");
     if(!transferAccountIdNode.IsNull())
     {
       m_transferAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(transferAccountIdNode.GetText());
       m_transferAccountIdHasBeenSet = true;
+       m_transferAccountIdHasBeenSet = true;
     }
     XmlNode transferOfferExpirationTimestampNode = resultNode.FirstChild("transferOfferExpirationTimestamp");
     if(!transferOfferExpirationTimestampNode.IsNull())
     {
       m_transferOfferExpirationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transferOfferExpirationTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_transferOfferExpirationTimestampHasBeenSet = true;
+       m_transferOfferExpirationTimestampHasBeenSet = true;
     }
     XmlNode transferOfferAcceptedTimestampNode = resultNode.FirstChild("transferOfferAcceptedTimestamp");
     if(!transferOfferAcceptedTimestampNode.IsNull())
     {
       m_transferOfferAcceptedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transferOfferAcceptedTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_transferOfferAcceptedTimestampHasBeenSet = true;
+       m_transferOfferAcceptedTimestampHasBeenSet = true;
     }
     XmlNode addressTransferStatusNode = resultNode.FirstChild("addressTransferStatus");
     if(!addressTransferStatusNode.IsNull())
     {
-      m_addressTransferStatus = AddressTransferStatusMapper::GetAddressTransferStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(addressTransferStatusNode.GetText()).c_str()).c_str());
+      m_addressTransferStatus = AddressTransferStatusMapper::GetAddressTransferStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(addressTransferStatusNode.GetText()).c_str()));
       m_addressTransferStatusHasBeenSet = true;
+       m_addressTransferStatusHasBeenSet = true;
     }
   }
 

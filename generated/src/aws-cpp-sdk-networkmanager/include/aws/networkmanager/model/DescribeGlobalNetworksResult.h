@@ -29,7 +29,7 @@ namespace Model
   class DescribeGlobalNetworksResult
   {
   public:
-    AWS_NETWORKMANAGER_API DescribeGlobalNetworksResult();
+    AWS_NETWORKMANAGER_API DescribeGlobalNetworksResult() = default;
     AWS_NETWORKMANAGER_API DescribeGlobalNetworksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API DescribeGlobalNetworksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Information about the global networks.</p>
      */
-    inline const Aws::Vector<GlobalNetwork>& GetGlobalNetworks() const{ return m_globalNetworks; }
-    inline void SetGlobalNetworks(const Aws::Vector<GlobalNetwork>& value) { m_globalNetworks = value; }
-    inline void SetGlobalNetworks(Aws::Vector<GlobalNetwork>&& value) { m_globalNetworks = std::move(value); }
-    inline DescribeGlobalNetworksResult& WithGlobalNetworks(const Aws::Vector<GlobalNetwork>& value) { SetGlobalNetworks(value); return *this;}
-    inline DescribeGlobalNetworksResult& WithGlobalNetworks(Aws::Vector<GlobalNetwork>&& value) { SetGlobalNetworks(std::move(value)); return *this;}
-    inline DescribeGlobalNetworksResult& AddGlobalNetworks(const GlobalNetwork& value) { m_globalNetworks.push_back(value); return *this; }
-    inline DescribeGlobalNetworksResult& AddGlobalNetworks(GlobalNetwork&& value) { m_globalNetworks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GlobalNetwork>& GetGlobalNetworks() const { return m_globalNetworks; }
+    template<typename GlobalNetworksT = Aws::Vector<GlobalNetwork>>
+    void SetGlobalNetworks(GlobalNetworksT&& value) { m_globalNetworksHasBeenSet = true; m_globalNetworks = std::forward<GlobalNetworksT>(value); }
+    template<typename GlobalNetworksT = Aws::Vector<GlobalNetwork>>
+    DescribeGlobalNetworksResult& WithGlobalNetworks(GlobalNetworksT&& value) { SetGlobalNetworks(std::forward<GlobalNetworksT>(value)); return *this;}
+    template<typename GlobalNetworksT = GlobalNetwork>
+    DescribeGlobalNetworksResult& AddGlobalNetworks(GlobalNetworksT&& value) { m_globalNetworksHasBeenSet = true; m_globalNetworks.emplace_back(std::forward<GlobalNetworksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeGlobalNetworksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeGlobalNetworksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeGlobalNetworksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeGlobalNetworksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeGlobalNetworksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeGlobalNetworksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeGlobalNetworksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeGlobalNetworksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GlobalNetwork> m_globalNetworks;
+    bool m_globalNetworksHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

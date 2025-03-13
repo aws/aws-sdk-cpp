@@ -35,7 +35,7 @@ namespace Model
   class AwsEc2ClientVpnEndpointAuthenticationOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointAuthenticationOptionsDetails();
+    AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointAuthenticationOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointAuthenticationOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p> The authentication type used. </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,36 +59,36 @@ namespace Model
      * authentication, clients are authenticated against existing Active Directory
      * groups. </p>
      */
-    inline const AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails& GetActiveDirectory() const{ return m_activeDirectory; }
+    inline const AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails& GetActiveDirectory() const { return m_activeDirectory; }
     inline bool ActiveDirectoryHasBeenSet() const { return m_activeDirectoryHasBeenSet; }
-    inline void SetActiveDirectory(const AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails& value) { m_activeDirectoryHasBeenSet = true; m_activeDirectory = value; }
-    inline void SetActiveDirectory(AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails&& value) { m_activeDirectoryHasBeenSet = true; m_activeDirectory = std::move(value); }
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithActiveDirectory(const AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails& value) { SetActiveDirectory(value); return *this;}
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithActiveDirectory(AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails&& value) { SetActiveDirectory(std::move(value)); return *this;}
+    template<typename ActiveDirectoryT = AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails>
+    void SetActiveDirectory(ActiveDirectoryT&& value) { m_activeDirectoryHasBeenSet = true; m_activeDirectory = std::forward<ActiveDirectoryT>(value); }
+    template<typename ActiveDirectoryT = AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails>
+    AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithActiveDirectory(ActiveDirectoryT&& value) { SetActiveDirectory(std::forward<ActiveDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Information about the authentication certificates, if applicable.</p>
      */
-    inline const AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails& GetMutualAuthentication() const{ return m_mutualAuthentication; }
+    inline const AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails& GetMutualAuthentication() const { return m_mutualAuthentication; }
     inline bool MutualAuthenticationHasBeenSet() const { return m_mutualAuthenticationHasBeenSet; }
-    inline void SetMutualAuthentication(const AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails& value) { m_mutualAuthenticationHasBeenSet = true; m_mutualAuthentication = value; }
-    inline void SetMutualAuthentication(AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails&& value) { m_mutualAuthenticationHasBeenSet = true; m_mutualAuthentication = std::move(value); }
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithMutualAuthentication(const AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails& value) { SetMutualAuthentication(value); return *this;}
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithMutualAuthentication(AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails&& value) { SetMutualAuthentication(std::move(value)); return *this;}
+    template<typename MutualAuthenticationT = AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails>
+    void SetMutualAuthentication(MutualAuthenticationT&& value) { m_mutualAuthenticationHasBeenSet = true; m_mutualAuthentication = std::forward<MutualAuthenticationT>(value); }
+    template<typename MutualAuthenticationT = AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails>
+    AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithMutualAuthentication(MutualAuthenticationT&& value) { SetMutualAuthentication(std::forward<MutualAuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Information about the IAM SAML identity provider, if applicable.</p>
      */
-    inline const AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& GetFederatedAuthentication() const{ return m_federatedAuthentication; }
+    inline const AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& GetFederatedAuthentication() const { return m_federatedAuthentication; }
     inline bool FederatedAuthenticationHasBeenSet() const { return m_federatedAuthenticationHasBeenSet; }
-    inline void SetFederatedAuthentication(const AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& value) { m_federatedAuthenticationHasBeenSet = true; m_federatedAuthentication = value; }
-    inline void SetFederatedAuthentication(AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails&& value) { m_federatedAuthenticationHasBeenSet = true; m_federatedAuthentication = std::move(value); }
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithFederatedAuthentication(const AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& value) { SetFederatedAuthentication(value); return *this;}
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithFederatedAuthentication(AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails&& value) { SetFederatedAuthentication(std::move(value)); return *this;}
+    template<typename FederatedAuthenticationT = AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails>
+    void SetFederatedAuthentication(FederatedAuthenticationT&& value) { m_federatedAuthenticationHasBeenSet = true; m_federatedAuthentication = std::forward<FederatedAuthenticationT>(value); }
+    template<typename FederatedAuthenticationT = AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails>
+    AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& WithFederatedAuthentication(FederatedAuthenticationT&& value) { SetFederatedAuthentication(std::forward<FederatedAuthenticationT>(value)); return *this;}
     ///@}
   private:
 

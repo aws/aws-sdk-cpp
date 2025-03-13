@@ -28,7 +28,7 @@ namespace Model
   class CreateTransitGatewayConnectResponse
   {
   public:
-    AWS_EC2_API CreateTransitGatewayConnectResponse();
+    AWS_EC2_API CreateTransitGatewayConnectResponse() = default;
     AWS_EC2_API CreateTransitGatewayConnectResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateTransitGatewayConnectResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the Connect attachment.</p>
      */
-    inline const TransitGatewayConnect& GetTransitGatewayConnect() const{ return m_transitGatewayConnect; }
-    inline void SetTransitGatewayConnect(const TransitGatewayConnect& value) { m_transitGatewayConnect = value; }
-    inline void SetTransitGatewayConnect(TransitGatewayConnect&& value) { m_transitGatewayConnect = std::move(value); }
-    inline CreateTransitGatewayConnectResponse& WithTransitGatewayConnect(const TransitGatewayConnect& value) { SetTransitGatewayConnect(value); return *this;}
-    inline CreateTransitGatewayConnectResponse& WithTransitGatewayConnect(TransitGatewayConnect&& value) { SetTransitGatewayConnect(std::move(value)); return *this;}
+    inline const TransitGatewayConnect& GetTransitGatewayConnect() const { return m_transitGatewayConnect; }
+    template<typename TransitGatewayConnectT = TransitGatewayConnect>
+    void SetTransitGatewayConnect(TransitGatewayConnectT&& value) { m_transitGatewayConnectHasBeenSet = true; m_transitGatewayConnect = std::forward<TransitGatewayConnectT>(value); }
+    template<typename TransitGatewayConnectT = TransitGatewayConnect>
+    CreateTransitGatewayConnectResponse& WithTransitGatewayConnect(TransitGatewayConnectT&& value) { SetTransitGatewayConnect(std::forward<TransitGatewayConnectT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateTransitGatewayConnectResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateTransitGatewayConnectResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateTransitGatewayConnectResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayConnect m_transitGatewayConnect;
+    bool m_transitGatewayConnectHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

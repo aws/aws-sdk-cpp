@@ -18,14 +18,7 @@ namespace finspace
 namespace Model
 {
 
-CustomDNSServer::CustomDNSServer() : 
-    m_customDNSServerNameHasBeenSet(false),
-    m_customDNSServerIPHasBeenSet(false)
-{
-}
-
 CustomDNSServer::CustomDNSServer(JsonView jsonValue)
-  : CustomDNSServer()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomDNSServer& CustomDNSServer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customDNSServerName"))
   {
     m_customDNSServerName = jsonValue.GetString("customDNSServerName");
-
     m_customDNSServerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDNSServerIP"))
   {
     m_customDNSServerIP = jsonValue.GetString("customDNSServerIP");
-
     m_customDNSServerIPHasBeenSet = true;
   }
-
   return *this;
 }
 

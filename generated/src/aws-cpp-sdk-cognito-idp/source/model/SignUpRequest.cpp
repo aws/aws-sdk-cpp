@@ -12,19 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SignUpRequest::SignUpRequest() : 
-    m_clientIdHasBeenSet(false),
-    m_secretHashHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_userAttributesHasBeenSet(false),
-    m_validationDataHasBeenSet(false),
-    m_analyticsMetadataHasBeenSet(false),
-    m_userContextDataHasBeenSet(false),
-    m_clientMetadataHasBeenSet(false)
-{
-}
-
 Aws::String SignUpRequest::SerializePayload() const
 {
   JsonValue payload;

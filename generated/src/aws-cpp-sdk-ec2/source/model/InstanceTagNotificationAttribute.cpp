@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceTagNotificationAttribute::InstanceTagNotificationAttribute() : 
-    m_instanceTagKeysHasBeenSet(false),
-    m_includeAllTagsOfInstance(false),
-    m_includeAllTagsOfInstanceHasBeenSet(false)
-{
-}
-
 InstanceTagNotificationAttribute::InstanceTagNotificationAttribute(const XmlNode& xmlNode)
-  : InstanceTagNotificationAttribute()
 {
   *this = xmlNode;
 }
@@ -43,19 +35,21 @@ InstanceTagNotificationAttribute& InstanceTagNotificationAttribute::operator =(c
     if(!instanceTagKeysNode.IsNull())
     {
       XmlNode instanceTagKeysMember = instanceTagKeysNode.FirstChild("item");
+      m_instanceTagKeysHasBeenSet = !instanceTagKeysMember.IsNull();
       while(!instanceTagKeysMember.IsNull())
       {
         m_instanceTagKeys.push_back(instanceTagKeysMember.GetText());
         instanceTagKeysMember = instanceTagKeysMember.NextNode("item");
       }
 
-      m_instanceTagKeysHasBeenSet = true;
+       m_instanceTagKeysHasBeenSet = true;
     }
     XmlNode includeAllTagsOfInstanceNode = resultNode.FirstChild("includeAllTagsOfInstance");
     if(!includeAllTagsOfInstanceNode.IsNull())
     {
       m_includeAllTagsOfInstance = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeAllTagsOfInstanceNode.GetText()).c_str()).c_str());
       m_includeAllTagsOfInstanceHasBeenSet = true;
+       m_includeAllTagsOfInstanceHasBeenSet = true;
     }
   }
 

@@ -18,16 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-QuerySpatialCoverageMax::QuerySpatialCoverageMax() : 
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_partitionKeyHasBeenSet(false)
-{
-}
-
 QuerySpatialCoverageMax::QuerySpatialCoverageMax(JsonView jsonValue)
-  : QuerySpatialCoverageMax()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ QuerySpatialCoverageMax& QuerySpatialCoverageMax::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableArn"))
   {
     m_tableArn = jsonValue.GetString("TableArn");
-
     m_tableArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionKey"))
   {
     Aws::Utils::Array<JsonView> partitionKeyJsonList = jsonValue.GetArray("PartitionKey");
@@ -57,7 +44,6 @@ QuerySpatialCoverageMax& QuerySpatialCoverageMax::operator =(JsonView jsonValue)
     }
     m_partitionKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class TrainedModelInferenceJobsConfigurationPolicy
   {
   public:
-    AWS_CLEANROOMSML_API TrainedModelInferenceJobsConfigurationPolicy();
+    AWS_CLEANROOMSML_API TrainedModelInferenceJobsConfigurationPolicy() = default;
     AWS_CLEANROOMSML_API TrainedModelInferenceJobsConfigurationPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API TrainedModelInferenceJobsConfigurationPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>The logs container for the trained model inference job.</p>
      */
-    inline const Aws::Vector<LogsConfigurationPolicy>& GetContainerLogs() const{ return m_containerLogs; }
+    inline const Aws::Vector<LogsConfigurationPolicy>& GetContainerLogs() const { return m_containerLogs; }
     inline bool ContainerLogsHasBeenSet() const { return m_containerLogsHasBeenSet; }
-    inline void SetContainerLogs(const Aws::Vector<LogsConfigurationPolicy>& value) { m_containerLogsHasBeenSet = true; m_containerLogs = value; }
-    inline void SetContainerLogs(Aws::Vector<LogsConfigurationPolicy>&& value) { m_containerLogsHasBeenSet = true; m_containerLogs = std::move(value); }
-    inline TrainedModelInferenceJobsConfigurationPolicy& WithContainerLogs(const Aws::Vector<LogsConfigurationPolicy>& value) { SetContainerLogs(value); return *this;}
-    inline TrainedModelInferenceJobsConfigurationPolicy& WithContainerLogs(Aws::Vector<LogsConfigurationPolicy>&& value) { SetContainerLogs(std::move(value)); return *this;}
-    inline TrainedModelInferenceJobsConfigurationPolicy& AddContainerLogs(const LogsConfigurationPolicy& value) { m_containerLogsHasBeenSet = true; m_containerLogs.push_back(value); return *this; }
-    inline TrainedModelInferenceJobsConfigurationPolicy& AddContainerLogs(LogsConfigurationPolicy&& value) { m_containerLogsHasBeenSet = true; m_containerLogs.push_back(std::move(value)); return *this; }
+    template<typename ContainerLogsT = Aws::Vector<LogsConfigurationPolicy>>
+    void SetContainerLogs(ContainerLogsT&& value) { m_containerLogsHasBeenSet = true; m_containerLogs = std::forward<ContainerLogsT>(value); }
+    template<typename ContainerLogsT = Aws::Vector<LogsConfigurationPolicy>>
+    TrainedModelInferenceJobsConfigurationPolicy& WithContainerLogs(ContainerLogsT&& value) { SetContainerLogs(std::forward<ContainerLogsT>(value)); return *this;}
+    template<typename ContainerLogsT = LogsConfigurationPolicy>
+    TrainedModelInferenceJobsConfigurationPolicy& AddContainerLogs(ContainerLogsT&& value) { m_containerLogsHasBeenSet = true; m_containerLogs.emplace_back(std::forward<ContainerLogsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>The maximum allowed size of the output of the trained model inference
      * job.</p>
      */
-    inline const TrainedModelInferenceMaxOutputSize& GetMaxOutputSize() const{ return m_maxOutputSize; }
+    inline const TrainedModelInferenceMaxOutputSize& GetMaxOutputSize() const { return m_maxOutputSize; }
     inline bool MaxOutputSizeHasBeenSet() const { return m_maxOutputSizeHasBeenSet; }
-    inline void SetMaxOutputSize(const TrainedModelInferenceMaxOutputSize& value) { m_maxOutputSizeHasBeenSet = true; m_maxOutputSize = value; }
-    inline void SetMaxOutputSize(TrainedModelInferenceMaxOutputSize&& value) { m_maxOutputSizeHasBeenSet = true; m_maxOutputSize = std::move(value); }
-    inline TrainedModelInferenceJobsConfigurationPolicy& WithMaxOutputSize(const TrainedModelInferenceMaxOutputSize& value) { SetMaxOutputSize(value); return *this;}
-    inline TrainedModelInferenceJobsConfigurationPolicy& WithMaxOutputSize(TrainedModelInferenceMaxOutputSize&& value) { SetMaxOutputSize(std::move(value)); return *this;}
+    template<typename MaxOutputSizeT = TrainedModelInferenceMaxOutputSize>
+    void SetMaxOutputSize(MaxOutputSizeT&& value) { m_maxOutputSizeHasBeenSet = true; m_maxOutputSize = std::forward<MaxOutputSizeT>(value); }
+    template<typename MaxOutputSizeT = TrainedModelInferenceMaxOutputSize>
+    TrainedModelInferenceJobsConfigurationPolicy& WithMaxOutputSize(MaxOutputSizeT&& value) { SetMaxOutputSize(std::forward<MaxOutputSizeT>(value)); return *this;}
     ///@}
   private:
 

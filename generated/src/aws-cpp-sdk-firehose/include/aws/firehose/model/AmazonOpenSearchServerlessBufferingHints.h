@@ -31,7 +31,7 @@ namespace Model
   class AmazonOpenSearchServerlessBufferingHints
   {
   public:
-    AWS_FIREHOSE_API AmazonOpenSearchServerlessBufferingHints();
+    AWS_FIREHOSE_API AmazonOpenSearchServerlessBufferingHints() = default;
     AWS_FIREHOSE_API AmazonOpenSearchServerlessBufferingHints(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API AmazonOpenSearchServerlessBufferingHints& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>Buffer incoming data for the specified period of time, in seconds, before
      * delivering it to the destination. The default value is 300 (5 minutes).</p>
      */
-    inline int GetIntervalInSeconds() const{ return m_intervalInSeconds; }
+    inline int GetIntervalInSeconds() const { return m_intervalInSeconds; }
     inline bool IntervalInSecondsHasBeenSet() const { return m_intervalInSecondsHasBeenSet; }
     inline void SetIntervalInSeconds(int value) { m_intervalInSecondsHasBeenSet = true; m_intervalInSeconds = value; }
     inline AmazonOpenSearchServerlessBufferingHints& WithIntervalInSeconds(int value) { SetIntervalInSeconds(value); return *this;}
@@ -56,17 +56,17 @@ namespace Model
      * the Firehose stream in 10 seconds. For example, if you typically ingest data at
      * 1 MB/sec, the value should be 10 MB or higher.</p>
      */
-    inline int GetSizeInMBs() const{ return m_sizeInMBs; }
+    inline int GetSizeInMBs() const { return m_sizeInMBs; }
     inline bool SizeInMBsHasBeenSet() const { return m_sizeInMBsHasBeenSet; }
     inline void SetSizeInMBs(int value) { m_sizeInMBsHasBeenSet = true; m_sizeInMBs = value; }
     inline AmazonOpenSearchServerlessBufferingHints& WithSizeInMBs(int value) { SetSizeInMBs(value); return *this;}
     ///@}
   private:
 
-    int m_intervalInSeconds;
+    int m_intervalInSeconds{0};
     bool m_intervalInSecondsHasBeenSet = false;
 
-    int m_sizeInMBs;
+    int m_sizeInMBs{0};
     bool m_sizeInMBsHasBeenSet = false;
   };
 

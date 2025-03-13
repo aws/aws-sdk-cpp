@@ -21,14 +21,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InvokeInlineAgentInitialResponse::InvokeInlineAgentInitialResponse() : 
-    m_contentTypeHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 InvokeInlineAgentInitialResponse::InvokeInlineAgentInitialResponse(JsonView jsonValue)
-  : InvokeInlineAgentInitialResponse()
 {
   *this = jsonValue;
 }
@@ -45,12 +38,14 @@ InvokeInlineAgentInitialResponse::InvokeInlineAgentInitialResponse(const Http::H
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& sessionIdIter = headers.find("x-amz-bedrock-agent-session-id");
   if(sessionIdIter != headers.end())
   {
     m_sessionId = sessionIdIter->second;
+    m_sessionIdHasBeenSet = true;
   }
 
 }

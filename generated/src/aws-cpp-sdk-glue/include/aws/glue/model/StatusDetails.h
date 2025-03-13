@@ -7,8 +7,8 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/ViewValidation.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -35,7 +35,7 @@ namespace Model
   class StatusDetails
   {
   public:
-    AWS_GLUE_API StatusDetails();
+    AWS_GLUE_API StatusDetails() = default;
     AWS_GLUE_API StatusDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API StatusDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,17 @@ namespace Model
     /**
      * <p>A <code>Table</code> object representing the requested changes.</p>
      */
-    AWS_GLUE_API const Table& GetRequestedChange() const;
-    AWS_GLUE_API bool RequestedChangeHasBeenSet() const;
-    AWS_GLUE_API void SetRequestedChange(const Table& value);
-    AWS_GLUE_API void SetRequestedChange(Table&& value);
-    AWS_GLUE_API StatusDetails& WithRequestedChange(const Table& value);
-    AWS_GLUE_API StatusDetails& WithRequestedChange(Table&& value);
+    inline const Table& GetRequestedChange() const{
+      return *m_requestedChange;
+    }
+    inline bool RequestedChangeHasBeenSet() const { return m_requestedChangeHasBeenSet; }
+    template<typename RequestedChangeT = Table>
+    void SetRequestedChange(RequestedChangeT&& value) {
+      m_requestedChangeHasBeenSet = true; 
+      m_requestedChange = Aws::MakeShared<Table>("StatusDetails", std::forward<RequestedChangeT>(value));
+    }
+    template<typename RequestedChangeT = Table>
+    StatusDetails& WithRequestedChange(RequestedChangeT&& value) { SetRequestedChange(std::forward<RequestedChangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +63,14 @@ namespace Model
      * <p>A list of <code>ViewValidation</code> objects that contain information for an
      * analytical engine to validate a view.</p>
      */
-    inline const Aws::Vector<ViewValidation>& GetViewValidations() const{ return m_viewValidations; }
+    inline const Aws::Vector<ViewValidation>& GetViewValidations() const { return m_viewValidations; }
     inline bool ViewValidationsHasBeenSet() const { return m_viewValidationsHasBeenSet; }
-    inline void SetViewValidations(const Aws::Vector<ViewValidation>& value) { m_viewValidationsHasBeenSet = true; m_viewValidations = value; }
-    inline void SetViewValidations(Aws::Vector<ViewValidation>&& value) { m_viewValidationsHasBeenSet = true; m_viewValidations = std::move(value); }
-    inline StatusDetails& WithViewValidations(const Aws::Vector<ViewValidation>& value) { SetViewValidations(value); return *this;}
-    inline StatusDetails& WithViewValidations(Aws::Vector<ViewValidation>&& value) { SetViewValidations(std::move(value)); return *this;}
-    inline StatusDetails& AddViewValidations(const ViewValidation& value) { m_viewValidationsHasBeenSet = true; m_viewValidations.push_back(value); return *this; }
-    inline StatusDetails& AddViewValidations(ViewValidation&& value) { m_viewValidationsHasBeenSet = true; m_viewValidations.push_back(std::move(value)); return *this; }
+    template<typename ViewValidationsT = Aws::Vector<ViewValidation>>
+    void SetViewValidations(ViewValidationsT&& value) { m_viewValidationsHasBeenSet = true; m_viewValidations = std::forward<ViewValidationsT>(value); }
+    template<typename ViewValidationsT = Aws::Vector<ViewValidation>>
+    StatusDetails& WithViewValidations(ViewValidationsT&& value) { SetViewValidations(std::forward<ViewValidationsT>(value)); return *this;}
+    template<typename ViewValidationsT = ViewValidation>
+    StatusDetails& AddViewValidations(ViewValidationsT&& value) { m_viewValidationsHasBeenSet = true; m_viewValidations.emplace_back(std::forward<ViewValidationsT>(value)); return *this; }
     ///@}
   private:
 

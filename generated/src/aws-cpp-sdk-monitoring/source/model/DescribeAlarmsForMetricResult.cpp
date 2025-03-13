@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAlarmsForMetricResult::DescribeAlarmsForMetricResult()
-{
-}
-
 DescribeAlarmsForMetricResult::DescribeAlarmsForMetricResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeAlarmsForMetricResult& DescribeAlarmsForMetricResult::operator =(const A
     if(!metricAlarmsNode.IsNull())
     {
       XmlNode metricAlarmsMember = metricAlarmsNode.FirstChild("member");
+      m_metricAlarmsHasBeenSet = !metricAlarmsMember.IsNull();
       while(!metricAlarmsMember.IsNull())
       {
         m_metricAlarms.push_back(metricAlarmsMember);
@@ -54,6 +51,7 @@ DescribeAlarmsForMetricResult& DescribeAlarmsForMetricResult::operator =(const A
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::DescribeAlarmsForMetricResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

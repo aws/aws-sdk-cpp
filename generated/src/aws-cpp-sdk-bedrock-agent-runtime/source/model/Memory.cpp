@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-Memory::Memory() : 
-    m_sessionSummaryHasBeenSet(false)
-{
-}
-
 Memory::Memory(JsonView jsonValue)
-  : Memory()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Memory& Memory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sessionSummary"))
   {
     m_sessionSummary = jsonValue.GetObject("sessionSummary");
-
     m_sessionSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

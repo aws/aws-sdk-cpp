@@ -18,20 +18,7 @@ namespace EMR
 namespace Model
 {
 
-InstanceGroupModifyConfig::InstanceGroupModifyConfig() : 
-    m_instanceGroupIdHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_eC2InstanceIdsToTerminateHasBeenSet(false),
-    m_shrinkPolicyHasBeenSet(false),
-    m_reconfigurationType(ReconfigurationType::NOT_SET),
-    m_reconfigurationTypeHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
-{
-}
-
 InstanceGroupModifyConfig::InstanceGroupModifyConfig(JsonView jsonValue)
-  : InstanceGroupModifyConfig()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ InstanceGroupModifyConfig& InstanceGroupModifyConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("InstanceGroupId"))
   {
     m_instanceGroupId = jsonValue.GetString("InstanceGroupId");
-
     m_instanceGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EC2InstanceIdsToTerminate"))
   {
     Aws::Utils::Array<JsonView> eC2InstanceIdsToTerminateJsonList = jsonValue.GetArray("EC2InstanceIdsToTerminate");
@@ -61,21 +44,16 @@ InstanceGroupModifyConfig& InstanceGroupModifyConfig::operator =(JsonView jsonVa
     }
     m_eC2InstanceIdsToTerminateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShrinkPolicy"))
   {
     m_shrinkPolicy = jsonValue.GetObject("ShrinkPolicy");
-
     m_shrinkPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReconfigurationType"))
   {
     m_reconfigurationType = ReconfigurationTypeMapper::GetReconfigurationTypeForName(jsonValue.GetString("ReconfigurationType"));
-
     m_reconfigurationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Configurations"))
   {
     Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
@@ -85,7 +63,6 @@ InstanceGroupModifyConfig& InstanceGroupModifyConfig::operator =(JsonView jsonVa
     }
     m_configurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

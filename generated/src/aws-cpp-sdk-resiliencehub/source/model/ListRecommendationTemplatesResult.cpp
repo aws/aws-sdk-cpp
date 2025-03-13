@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRecommendationTemplatesResult::ListRecommendationTemplatesResult()
-{
-}
-
 ListRecommendationTemplatesResult::ListRecommendationTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListRecommendationTemplatesResult& ListRecommendationTemplatesResult::operator =
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationTemplates"))
   {
     Aws::Utils::Array<JsonView> recommendationTemplatesJsonList = jsonValue.GetArray("recommendationTemplates");
@@ -42,14 +37,15 @@ ListRecommendationTemplatesResult& ListRecommendationTemplatesResult::operator =
     {
       m_recommendationTemplates.push_back(recommendationTemplatesJsonList[recommendationTemplatesIndex].AsObject());
     }
+    m_recommendationTemplatesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

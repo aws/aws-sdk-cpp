@@ -10,14 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-AuthorizeSnapshotAccessRequest::AuthorizeSnapshotAccessRequest() : 
-    m_snapshotIdentifierHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_snapshotClusterIdentifierHasBeenSet(false),
-    m_accountWithRestoreAccessHasBeenSet(false)
-{
-}
-
 Aws::String AuthorizeSnapshotAccessRequest::SerializePayload() const
 {
   Aws::StringStream ss;

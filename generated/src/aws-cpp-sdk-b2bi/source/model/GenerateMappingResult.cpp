@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GenerateMappingResult::GenerateMappingResult() : 
-    m_mappingAccuracy(0.0)
-{
-}
-
 GenerateMappingResult::GenerateMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GenerateMappingResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GenerateMappingResult& GenerateMappingResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("mappingTemplate"))
   {
     m_mappingTemplate = jsonValue.GetString("mappingTemplate");
-
+    m_mappingTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mappingAccuracy"))
   {
     m_mappingAccuracy = jsonValue.GetDouble("mappingAccuracy");
-
+    m_mappingAccuracyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

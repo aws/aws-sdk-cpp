@@ -12,13 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListColumnStatisticsTaskRunsRequest::ListColumnStatisticsTaskRunsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListColumnStatisticsTaskRunsRequest::SerializePayload() const
 {
   JsonValue payload;

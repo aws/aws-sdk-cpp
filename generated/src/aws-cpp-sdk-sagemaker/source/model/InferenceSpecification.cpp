@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceSpecification::InferenceSpecification() : 
-    m_containersHasBeenSet(false),
-    m_supportedTransformInstanceTypesHasBeenSet(false),
-    m_supportedRealtimeInferenceInstanceTypesHasBeenSet(false),
-    m_supportedContentTypesHasBeenSet(false),
-    m_supportedResponseMIMETypesHasBeenSet(false)
-{
-}
-
 InferenceSpecification::InferenceSpecification(JsonView jsonValue)
-  : InferenceSpecification()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ InferenceSpecification& InferenceSpecification::operator =(JsonView jsonValue)
     }
     m_containersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedTransformInstanceTypes"))
   {
     Aws::Utils::Array<JsonView> supportedTransformInstanceTypesJsonList = jsonValue.GetArray("SupportedTransformInstanceTypes");
@@ -54,7 +43,6 @@ InferenceSpecification& InferenceSpecification::operator =(JsonView jsonValue)
     }
     m_supportedTransformInstanceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedRealtimeInferenceInstanceTypes"))
   {
     Aws::Utils::Array<JsonView> supportedRealtimeInferenceInstanceTypesJsonList = jsonValue.GetArray("SupportedRealtimeInferenceInstanceTypes");
@@ -64,7 +52,6 @@ InferenceSpecification& InferenceSpecification::operator =(JsonView jsonValue)
     }
     m_supportedRealtimeInferenceInstanceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedContentTypes"))
   {
     Aws::Utils::Array<JsonView> supportedContentTypesJsonList = jsonValue.GetArray("SupportedContentTypes");
@@ -74,7 +61,6 @@ InferenceSpecification& InferenceSpecification::operator =(JsonView jsonValue)
     }
     m_supportedContentTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedResponseMIMETypes"))
   {
     Aws::Utils::Array<JsonView> supportedResponseMIMETypesJsonList = jsonValue.GetArray("SupportedResponseMIMETypes");
@@ -84,7 +70,6 @@ InferenceSpecification& InferenceSpecification::operator =(JsonView jsonValue)
     }
     m_supportedResponseMIMETypesHasBeenSet = true;
   }
-
   return *this;
 }
 

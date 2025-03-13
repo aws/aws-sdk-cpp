@@ -33,7 +33,7 @@ namespace Model
   class AdditionalEmailRecipients
   {
   public:
-    AWS_CONNECT_API AdditionalEmailRecipients();
+    AWS_CONNECT_API AdditionalEmailRecipients() = default;
     AWS_CONNECT_API AdditionalEmailRecipients(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AdditionalEmailRecipients& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>List of additional TO email recipients for an email contact.</p>
      */
-    inline const Aws::Vector<EmailRecipient>& GetToList() const{ return m_toList; }
+    inline const Aws::Vector<EmailRecipient>& GetToList() const { return m_toList; }
     inline bool ToListHasBeenSet() const { return m_toListHasBeenSet; }
-    inline void SetToList(const Aws::Vector<EmailRecipient>& value) { m_toListHasBeenSet = true; m_toList = value; }
-    inline void SetToList(Aws::Vector<EmailRecipient>&& value) { m_toListHasBeenSet = true; m_toList = std::move(value); }
-    inline AdditionalEmailRecipients& WithToList(const Aws::Vector<EmailRecipient>& value) { SetToList(value); return *this;}
-    inline AdditionalEmailRecipients& WithToList(Aws::Vector<EmailRecipient>&& value) { SetToList(std::move(value)); return *this;}
-    inline AdditionalEmailRecipients& AddToList(const EmailRecipient& value) { m_toListHasBeenSet = true; m_toList.push_back(value); return *this; }
-    inline AdditionalEmailRecipients& AddToList(EmailRecipient&& value) { m_toListHasBeenSet = true; m_toList.push_back(std::move(value)); return *this; }
+    template<typename ToListT = Aws::Vector<EmailRecipient>>
+    void SetToList(ToListT&& value) { m_toListHasBeenSet = true; m_toList = std::forward<ToListT>(value); }
+    template<typename ToListT = Aws::Vector<EmailRecipient>>
+    AdditionalEmailRecipients& WithToList(ToListT&& value) { SetToList(std::forward<ToListT>(value)); return *this;}
+    template<typename ToListT = EmailRecipient>
+    AdditionalEmailRecipients& AddToList(ToListT&& value) { m_toListHasBeenSet = true; m_toList.emplace_back(std::forward<ToListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of additional CC email recipients for an email contact.</p>
      */
-    inline const Aws::Vector<EmailRecipient>& GetCcList() const{ return m_ccList; }
+    inline const Aws::Vector<EmailRecipient>& GetCcList() const { return m_ccList; }
     inline bool CcListHasBeenSet() const { return m_ccListHasBeenSet; }
-    inline void SetCcList(const Aws::Vector<EmailRecipient>& value) { m_ccListHasBeenSet = true; m_ccList = value; }
-    inline void SetCcList(Aws::Vector<EmailRecipient>&& value) { m_ccListHasBeenSet = true; m_ccList = std::move(value); }
-    inline AdditionalEmailRecipients& WithCcList(const Aws::Vector<EmailRecipient>& value) { SetCcList(value); return *this;}
-    inline AdditionalEmailRecipients& WithCcList(Aws::Vector<EmailRecipient>&& value) { SetCcList(std::move(value)); return *this;}
-    inline AdditionalEmailRecipients& AddCcList(const EmailRecipient& value) { m_ccListHasBeenSet = true; m_ccList.push_back(value); return *this; }
-    inline AdditionalEmailRecipients& AddCcList(EmailRecipient&& value) { m_ccListHasBeenSet = true; m_ccList.push_back(std::move(value)); return *this; }
+    template<typename CcListT = Aws::Vector<EmailRecipient>>
+    void SetCcList(CcListT&& value) { m_ccListHasBeenSet = true; m_ccList = std::forward<CcListT>(value); }
+    template<typename CcListT = Aws::Vector<EmailRecipient>>
+    AdditionalEmailRecipients& WithCcList(CcListT&& value) { SetCcList(std::forward<CcListT>(value)); return *this;}
+    template<typename CcListT = EmailRecipient>
+    AdditionalEmailRecipients& AddCcList(CcListT&& value) { m_ccListHasBeenSet = true; m_ccList.emplace_back(std::forward<CcListT>(value)); return *this; }
     ///@}
   private:
 

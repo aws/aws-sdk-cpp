@@ -12,17 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchGroupProfilesRequest::SearchGroupProfilesRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_groupType(GroupSearchType::NOT_SET),
-    m_groupTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_searchTextHasBeenSet(false)
-{
-}
-
 Aws::String SearchGroupProfilesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDiskSnapshotsResult::GetDiskSnapshotsResult()
-{
-}
-
 GetDiskSnapshotsResult::GetDiskSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ GetDiskSnapshotsResult& GetDiskSnapshotsResult::operator =(const Aws::AmazonWebS
     {
       m_diskSnapshots.push_back(diskSnapshotsJsonList[diskSnapshotsIndex].AsObject());
     }
+    m_diskSnapshotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("nextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

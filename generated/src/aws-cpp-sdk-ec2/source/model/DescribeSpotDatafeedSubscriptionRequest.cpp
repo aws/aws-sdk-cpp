@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeSpotDatafeedSubscriptionRequest::DescribeSpotDatafeedSubscriptionRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSpotDatafeedSubscriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

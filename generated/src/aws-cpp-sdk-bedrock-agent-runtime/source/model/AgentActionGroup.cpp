@@ -18,20 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-AgentActionGroup::AgentActionGroup() : 
-    m_actionGroupExecutorHasBeenSet(false),
-    m_actionGroupNameHasBeenSet(false),
-    m_apiSchemaHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_functionSchemaHasBeenSet(false),
-    m_parentActionGroupSignature(ActionGroupSignature::NOT_SET),
-    m_parentActionGroupSignatureHasBeenSet(false),
-    m_parentActionGroupSignatureParamsHasBeenSet(false)
-{
-}
-
 AgentActionGroup::AgentActionGroup(JsonView jsonValue)
-  : AgentActionGroup()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ AgentActionGroup& AgentActionGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionGroupExecutor"))
   {
     m_actionGroupExecutor = jsonValue.GetObject("actionGroupExecutor");
-
     m_actionGroupExecutorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionGroupName"))
   {
     m_actionGroupName = jsonValue.GetString("actionGroupName");
-
     m_actionGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiSchema"))
   {
     m_apiSchema = jsonValue.GetObject("apiSchema");
-
     m_apiSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("functionSchema"))
   {
     m_functionSchema = jsonValue.GetObject("functionSchema");
-
     m_functionSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentActionGroupSignature"))
   {
     m_parentActionGroupSignature = ActionGroupSignatureMapper::GetActionGroupSignatureForName(jsonValue.GetString("parentActionGroupSignature"));
-
     m_parentActionGroupSignatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentActionGroupSignatureParams"))
   {
     Aws::Map<Aws::String, JsonView> parentActionGroupSignatureParamsJsonMap = jsonValue.GetObject("parentActionGroupSignatureParams").GetAllObjects();
@@ -89,7 +64,6 @@ AgentActionGroup& AgentActionGroup::operator =(JsonView jsonValue)
     }
     m_parentActionGroupSignatureParamsHasBeenSet = true;
   }
-
   return *this;
 }
 

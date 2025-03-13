@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SessionCommand::SessionCommand() : 
-    m_nameHasBeenSet(false),
-    m_pythonVersionHasBeenSet(false)
-{
-}
-
 SessionCommand::SessionCommand(JsonView jsonValue)
-  : SessionCommand()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SessionCommand& SessionCommand::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PythonVersion"))
   {
     m_pythonVersion = jsonValue.GetString("PythonVersion");
-
     m_pythonVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

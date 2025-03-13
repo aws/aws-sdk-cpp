@@ -18,15 +18,7 @@ namespace Textract
 namespace Model
 {
 
-SignatureDetection::SignatureDetection() : 
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_geometryHasBeenSet(false)
-{
-}
-
 SignatureDetection::SignatureDetection(JsonView jsonValue)
-  : SignatureDetection()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SignatureDetection& SignatureDetection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   return *this;
 }
 

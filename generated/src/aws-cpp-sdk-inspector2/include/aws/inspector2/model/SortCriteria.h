@@ -33,7 +33,7 @@ namespace Model
   class SortCriteria
   {
   public:
-    AWS_INSPECTOR2_API SortCriteria();
+    AWS_INSPECTOR2_API SortCriteria() = default;
     AWS_INSPECTOR2_API SortCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API SortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The finding detail field by which results are sorted.</p>
      */
-    inline const SortField& GetField() const{ return m_field; }
+    inline SortField GetField() const { return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-    inline void SetField(const SortField& value) { m_fieldHasBeenSet = true; m_field = value; }
-    inline void SetField(SortField&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-    inline SortCriteria& WithField(const SortField& value) { SetField(value); return *this;}
-    inline SortCriteria& WithField(SortField&& value) { SetField(std::move(value)); return *this;}
+    inline void SetField(SortField value) { m_fieldHasBeenSet = true; m_field = value; }
+    inline SortCriteria& WithField(SortField value) { SetField(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order by which findings are sorted.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline SortCriteria& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline SortCriteria& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline SortCriteria& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    SortField m_field;
+    SortField m_field{SortField::NOT_SET};
     bool m_fieldHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

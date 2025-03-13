@@ -12,22 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDocumentRequest::CreateDocumentRequest() : 
-    m_contentHasBeenSet(false),
-    m_requiresHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_documentType(DocumentType::NOT_SET),
-    m_documentTypeHasBeenSet(false),
-    m_documentFormat(DocumentFormat::NOT_SET),
-    m_documentFormatHasBeenSet(false),
-    m_targetTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDocumentRequest::SerializePayload() const
 {
   JsonValue payload;

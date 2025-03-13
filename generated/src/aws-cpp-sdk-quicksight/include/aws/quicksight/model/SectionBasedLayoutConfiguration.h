@@ -34,7 +34,7 @@ namespace Model
   class SectionBasedLayoutConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API SectionBasedLayoutConfiguration();
+    AWS_QUICKSIGHT_API SectionBasedLayoutConfiguration() = default;
     AWS_QUICKSIGHT_API SectionBasedLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SectionBasedLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,54 +44,54 @@ namespace Model
     /**
      * <p>A list of header section configurations.</p>
      */
-    inline const Aws::Vector<HeaderFooterSectionConfiguration>& GetHeaderSections() const{ return m_headerSections; }
+    inline const Aws::Vector<HeaderFooterSectionConfiguration>& GetHeaderSections() const { return m_headerSections; }
     inline bool HeaderSectionsHasBeenSet() const { return m_headerSectionsHasBeenSet; }
-    inline void SetHeaderSections(const Aws::Vector<HeaderFooterSectionConfiguration>& value) { m_headerSectionsHasBeenSet = true; m_headerSections = value; }
-    inline void SetHeaderSections(Aws::Vector<HeaderFooterSectionConfiguration>&& value) { m_headerSectionsHasBeenSet = true; m_headerSections = std::move(value); }
-    inline SectionBasedLayoutConfiguration& WithHeaderSections(const Aws::Vector<HeaderFooterSectionConfiguration>& value) { SetHeaderSections(value); return *this;}
-    inline SectionBasedLayoutConfiguration& WithHeaderSections(Aws::Vector<HeaderFooterSectionConfiguration>&& value) { SetHeaderSections(std::move(value)); return *this;}
-    inline SectionBasedLayoutConfiguration& AddHeaderSections(const HeaderFooterSectionConfiguration& value) { m_headerSectionsHasBeenSet = true; m_headerSections.push_back(value); return *this; }
-    inline SectionBasedLayoutConfiguration& AddHeaderSections(HeaderFooterSectionConfiguration&& value) { m_headerSectionsHasBeenSet = true; m_headerSections.push_back(std::move(value)); return *this; }
+    template<typename HeaderSectionsT = Aws::Vector<HeaderFooterSectionConfiguration>>
+    void SetHeaderSections(HeaderSectionsT&& value) { m_headerSectionsHasBeenSet = true; m_headerSections = std::forward<HeaderSectionsT>(value); }
+    template<typename HeaderSectionsT = Aws::Vector<HeaderFooterSectionConfiguration>>
+    SectionBasedLayoutConfiguration& WithHeaderSections(HeaderSectionsT&& value) { SetHeaderSections(std::forward<HeaderSectionsT>(value)); return *this;}
+    template<typename HeaderSectionsT = HeaderFooterSectionConfiguration>
+    SectionBasedLayoutConfiguration& AddHeaderSections(HeaderSectionsT&& value) { m_headerSectionsHasBeenSet = true; m_headerSections.emplace_back(std::forward<HeaderSectionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of body section configurations.</p>
      */
-    inline const Aws::Vector<BodySectionConfiguration>& GetBodySections() const{ return m_bodySections; }
+    inline const Aws::Vector<BodySectionConfiguration>& GetBodySections() const { return m_bodySections; }
     inline bool BodySectionsHasBeenSet() const { return m_bodySectionsHasBeenSet; }
-    inline void SetBodySections(const Aws::Vector<BodySectionConfiguration>& value) { m_bodySectionsHasBeenSet = true; m_bodySections = value; }
-    inline void SetBodySections(Aws::Vector<BodySectionConfiguration>&& value) { m_bodySectionsHasBeenSet = true; m_bodySections = std::move(value); }
-    inline SectionBasedLayoutConfiguration& WithBodySections(const Aws::Vector<BodySectionConfiguration>& value) { SetBodySections(value); return *this;}
-    inline SectionBasedLayoutConfiguration& WithBodySections(Aws::Vector<BodySectionConfiguration>&& value) { SetBodySections(std::move(value)); return *this;}
-    inline SectionBasedLayoutConfiguration& AddBodySections(const BodySectionConfiguration& value) { m_bodySectionsHasBeenSet = true; m_bodySections.push_back(value); return *this; }
-    inline SectionBasedLayoutConfiguration& AddBodySections(BodySectionConfiguration&& value) { m_bodySectionsHasBeenSet = true; m_bodySections.push_back(std::move(value)); return *this; }
+    template<typename BodySectionsT = Aws::Vector<BodySectionConfiguration>>
+    void SetBodySections(BodySectionsT&& value) { m_bodySectionsHasBeenSet = true; m_bodySections = std::forward<BodySectionsT>(value); }
+    template<typename BodySectionsT = Aws::Vector<BodySectionConfiguration>>
+    SectionBasedLayoutConfiguration& WithBodySections(BodySectionsT&& value) { SetBodySections(std::forward<BodySectionsT>(value)); return *this;}
+    template<typename BodySectionsT = BodySectionConfiguration>
+    SectionBasedLayoutConfiguration& AddBodySections(BodySectionsT&& value) { m_bodySectionsHasBeenSet = true; m_bodySections.emplace_back(std::forward<BodySectionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of footer section configurations.</p>
      */
-    inline const Aws::Vector<HeaderFooterSectionConfiguration>& GetFooterSections() const{ return m_footerSections; }
+    inline const Aws::Vector<HeaderFooterSectionConfiguration>& GetFooterSections() const { return m_footerSections; }
     inline bool FooterSectionsHasBeenSet() const { return m_footerSectionsHasBeenSet; }
-    inline void SetFooterSections(const Aws::Vector<HeaderFooterSectionConfiguration>& value) { m_footerSectionsHasBeenSet = true; m_footerSections = value; }
-    inline void SetFooterSections(Aws::Vector<HeaderFooterSectionConfiguration>&& value) { m_footerSectionsHasBeenSet = true; m_footerSections = std::move(value); }
-    inline SectionBasedLayoutConfiguration& WithFooterSections(const Aws::Vector<HeaderFooterSectionConfiguration>& value) { SetFooterSections(value); return *this;}
-    inline SectionBasedLayoutConfiguration& WithFooterSections(Aws::Vector<HeaderFooterSectionConfiguration>&& value) { SetFooterSections(std::move(value)); return *this;}
-    inline SectionBasedLayoutConfiguration& AddFooterSections(const HeaderFooterSectionConfiguration& value) { m_footerSectionsHasBeenSet = true; m_footerSections.push_back(value); return *this; }
-    inline SectionBasedLayoutConfiguration& AddFooterSections(HeaderFooterSectionConfiguration&& value) { m_footerSectionsHasBeenSet = true; m_footerSections.push_back(std::move(value)); return *this; }
+    template<typename FooterSectionsT = Aws::Vector<HeaderFooterSectionConfiguration>>
+    void SetFooterSections(FooterSectionsT&& value) { m_footerSectionsHasBeenSet = true; m_footerSections = std::forward<FooterSectionsT>(value); }
+    template<typename FooterSectionsT = Aws::Vector<HeaderFooterSectionConfiguration>>
+    SectionBasedLayoutConfiguration& WithFooterSections(FooterSectionsT&& value) { SetFooterSections(std::forward<FooterSectionsT>(value)); return *this;}
+    template<typename FooterSectionsT = HeaderFooterSectionConfiguration>
+    SectionBasedLayoutConfiguration& AddFooterSections(FooterSectionsT&& value) { m_footerSectionsHasBeenSet = true; m_footerSections.emplace_back(std::forward<FooterSectionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The options for the canvas of a section-based layout.</p>
      */
-    inline const SectionBasedLayoutCanvasSizeOptions& GetCanvasSizeOptions() const{ return m_canvasSizeOptions; }
+    inline const SectionBasedLayoutCanvasSizeOptions& GetCanvasSizeOptions() const { return m_canvasSizeOptions; }
     inline bool CanvasSizeOptionsHasBeenSet() const { return m_canvasSizeOptionsHasBeenSet; }
-    inline void SetCanvasSizeOptions(const SectionBasedLayoutCanvasSizeOptions& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = value; }
-    inline void SetCanvasSizeOptions(SectionBasedLayoutCanvasSizeOptions&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::move(value); }
-    inline SectionBasedLayoutConfiguration& WithCanvasSizeOptions(const SectionBasedLayoutCanvasSizeOptions& value) { SetCanvasSizeOptions(value); return *this;}
-    inline SectionBasedLayoutConfiguration& WithCanvasSizeOptions(SectionBasedLayoutCanvasSizeOptions&& value) { SetCanvasSizeOptions(std::move(value)); return *this;}
+    template<typename CanvasSizeOptionsT = SectionBasedLayoutCanvasSizeOptions>
+    void SetCanvasSizeOptions(CanvasSizeOptionsT&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::forward<CanvasSizeOptionsT>(value); }
+    template<typename CanvasSizeOptionsT = SectionBasedLayoutCanvasSizeOptions>
+    SectionBasedLayoutConfiguration& WithCanvasSizeOptions(CanvasSizeOptionsT&& value) { SetCanvasSizeOptions(std::forward<CanvasSizeOptionsT>(value)); return *this;}
     ///@}
   private:
 

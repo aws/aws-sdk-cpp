@@ -12,12 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AdminDisableUserRequest::AdminDisableUserRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 Aws::String AdminDisableUserRequest::SerializePayload() const
 {
   JsonValue payload;

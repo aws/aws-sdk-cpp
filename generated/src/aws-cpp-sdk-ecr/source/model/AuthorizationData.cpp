@@ -18,15 +18,7 @@ namespace ECR
 namespace Model
 {
 
-AuthorizationData::AuthorizationData() : 
-    m_authorizationTokenHasBeenSet(false),
-    m_expiresAtHasBeenSet(false),
-    m_proxyEndpointHasBeenSet(false)
-{
-}
-
 AuthorizationData::AuthorizationData(JsonView jsonValue)
-  : AuthorizationData()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AuthorizationData& AuthorizationData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("authorizationToken"))
   {
     m_authorizationToken = jsonValue.GetString("authorizationToken");
-
     m_authorizationTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresAt"))
   {
     m_expiresAt = jsonValue.GetDouble("expiresAt");
-
     m_expiresAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("proxyEndpoint"))
   {
     m_proxyEndpoint = jsonValue.GetString("proxyEndpoint");
-
     m_proxyEndpointHasBeenSet = true;
   }
-
   return *this;
 }
 

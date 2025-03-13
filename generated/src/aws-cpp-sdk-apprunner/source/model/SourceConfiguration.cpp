@@ -18,17 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-SourceConfiguration::SourceConfiguration() : 
-    m_codeRepositoryHasBeenSet(false),
-    m_imageRepositoryHasBeenSet(false),
-    m_autoDeploymentsEnabled(false),
-    m_autoDeploymentsEnabledHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false)
-{
-}
-
 SourceConfiguration::SourceConfiguration(JsonView jsonValue)
-  : SourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ SourceConfiguration& SourceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CodeRepository"))
   {
     m_codeRepository = jsonValue.GetObject("CodeRepository");
-
     m_codeRepositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageRepository"))
   {
     m_imageRepository = jsonValue.GetObject("ImageRepository");
-
     m_imageRepositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoDeploymentsEnabled"))
   {
     m_autoDeploymentsEnabled = jsonValue.GetBool("AutoDeploymentsEnabled");
-
     m_autoDeploymentsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationConfiguration"))
   {
     m_authenticationConfiguration = jsonValue.GetObject("AuthenticationConfiguration");
-
     m_authenticationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

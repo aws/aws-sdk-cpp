@@ -32,7 +32,7 @@ namespace Model
   class DomainTransferability
   {
   public:
-    AWS_ROUTE53DOMAINS_API DomainTransferability();
+    AWS_ROUTE53DOMAINS_API DomainTransferability() = default;
     AWS_ROUTE53DOMAINS_API DomainTransferability(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API DomainTransferability& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,16 +40,14 @@ namespace Model
 
     ///@{
     
-    inline const Transferable& GetTransferable() const{ return m_transferable; }
+    inline Transferable GetTransferable() const { return m_transferable; }
     inline bool TransferableHasBeenSet() const { return m_transferableHasBeenSet; }
-    inline void SetTransferable(const Transferable& value) { m_transferableHasBeenSet = true; m_transferable = value; }
-    inline void SetTransferable(Transferable&& value) { m_transferableHasBeenSet = true; m_transferable = std::move(value); }
-    inline DomainTransferability& WithTransferable(const Transferable& value) { SetTransferable(value); return *this;}
-    inline DomainTransferability& WithTransferable(Transferable&& value) { SetTransferable(std::move(value)); return *this;}
+    inline void SetTransferable(Transferable value) { m_transferableHasBeenSet = true; m_transferable = value; }
+    inline DomainTransferability& WithTransferable(Transferable value) { SetTransferable(value); return *this;}
     ///@}
   private:
 
-    Transferable m_transferable;
+    Transferable m_transferable{Transferable::NOT_SET};
     bool m_transferableHasBeenSet = false;
   };
 

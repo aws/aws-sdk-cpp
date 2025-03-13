@@ -38,7 +38,7 @@ namespace Model
   class EngagementResourceAssociationSummary
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API EngagementResourceAssociationSummary();
+    AWS_PARTNERCENTRALSELLING_API EngagementResourceAssociationSummary() = default;
     AWS_PARTNERCENTRALSELLING_API EngagementResourceAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API EngagementResourceAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p> Indicates the environment in which the resource and engagement exist. </p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-    inline EngagementResourceAssociationSummary& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline EngagementResourceAssociationSummary& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline EngagementResourceAssociationSummary& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    EngagementResourceAssociationSummary& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,28 +61,24 @@ namespace Model
      * <p>The AWS account ID of the entity that owns the resource. Identifies the
      * account responsible for or having primary control over the resource. </p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
-    inline EngagementResourceAssociationSummary& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline EngagementResourceAssociationSummary& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline EngagementResourceAssociationSummary& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    EngagementResourceAssociationSummary& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A unique identifier for the engagement associated with the resource. </p>
      */
-    inline const Aws::String& GetEngagementId() const{ return m_engagementId; }
+    inline const Aws::String& GetEngagementId() const { return m_engagementId; }
     inline bool EngagementIdHasBeenSet() const { return m_engagementIdHasBeenSet; }
-    inline void SetEngagementId(const Aws::String& value) { m_engagementIdHasBeenSet = true; m_engagementId = value; }
-    inline void SetEngagementId(Aws::String&& value) { m_engagementIdHasBeenSet = true; m_engagementId = std::move(value); }
-    inline void SetEngagementId(const char* value) { m_engagementIdHasBeenSet = true; m_engagementId.assign(value); }
-    inline EngagementResourceAssociationSummary& WithEngagementId(const Aws::String& value) { SetEngagementId(value); return *this;}
-    inline EngagementResourceAssociationSummary& WithEngagementId(Aws::String&& value) { SetEngagementId(std::move(value)); return *this;}
-    inline EngagementResourceAssociationSummary& WithEngagementId(const char* value) { SetEngagementId(value); return *this;}
+    template<typename EngagementIdT = Aws::String>
+    void SetEngagementId(EngagementIdT&& value) { m_engagementIdHasBeenSet = true; m_engagementId = std::forward<EngagementIdT>(value); }
+    template<typename EngagementIdT = Aws::String>
+    EngagementResourceAssociationSummary& WithEngagementId(EngagementIdT&& value) { SetEngagementId(std::forward<EngagementIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,26 +86,22 @@ namespace Model
      * <p> A unique identifier for the specific resource. Varies depending on the
      * resource type. </p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline EngagementResourceAssociationSummary& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline EngagementResourceAssociationSummary& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline EngagementResourceAssociationSummary& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    EngagementResourceAssociationSummary& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Categorizes the type of resource associated with the engagement. </p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline EngagementResourceAssociationSummary& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline EngagementResourceAssociationSummary& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline EngagementResourceAssociationSummary& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
   private:
 
@@ -127,7 +117,7 @@ namespace Model
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
   };
 

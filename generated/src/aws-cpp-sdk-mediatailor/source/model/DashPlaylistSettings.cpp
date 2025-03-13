@@ -18,20 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-DashPlaylistSettings::DashPlaylistSettings() : 
-    m_manifestWindowSeconds(0),
-    m_manifestWindowSecondsHasBeenSet(false),
-    m_minBufferTimeSeconds(0),
-    m_minBufferTimeSecondsHasBeenSet(false),
-    m_minUpdatePeriodSeconds(0),
-    m_minUpdatePeriodSecondsHasBeenSet(false),
-    m_suggestedPresentationDelaySeconds(0),
-    m_suggestedPresentationDelaySecondsHasBeenSet(false)
-{
-}
-
 DashPlaylistSettings::DashPlaylistSettings(JsonView jsonValue)
-  : DashPlaylistSettings()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ DashPlaylistSettings& DashPlaylistSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ManifestWindowSeconds"))
   {
     m_manifestWindowSeconds = jsonValue.GetInteger("ManifestWindowSeconds");
-
     m_manifestWindowSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinBufferTimeSeconds"))
   {
     m_minBufferTimeSeconds = jsonValue.GetInteger("MinBufferTimeSeconds");
-
     m_minBufferTimeSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinUpdatePeriodSeconds"))
   {
     m_minUpdatePeriodSeconds = jsonValue.GetInteger("MinUpdatePeriodSeconds");
-
     m_minUpdatePeriodSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuggestedPresentationDelaySeconds"))
   {
     m_suggestedPresentationDelaySeconds = jsonValue.GetInteger("SuggestedPresentationDelaySeconds");
-
     m_suggestedPresentationDelaySecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

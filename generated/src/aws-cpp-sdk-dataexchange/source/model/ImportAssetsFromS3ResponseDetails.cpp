@@ -18,15 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ImportAssetsFromS3ResponseDetails::ImportAssetsFromS3ResponseDetails() : 
-    m_assetSourcesHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 ImportAssetsFromS3ResponseDetails::ImportAssetsFromS3ResponseDetails(JsonView jsonValue)
-  : ImportAssetsFromS3ResponseDetails()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ ImportAssetsFromS3ResponseDetails& ImportAssetsFromS3ResponseDetails::operator =
     }
     m_assetSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

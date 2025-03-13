@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HoursOfOperationSearchFilter::HoursOfOperationSearchFilter() : 
-    m_tagFilterHasBeenSet(false)
-{
-}
-
 HoursOfOperationSearchFilter::HoursOfOperationSearchFilter(JsonView jsonValue)
-  : HoursOfOperationSearchFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HoursOfOperationSearchFilter& HoursOfOperationSearchFilter::operator =(JsonView 
   if(jsonValue.ValueExists("TagFilter"))
   {
     m_tagFilter = jsonValue.GetObject("TagFilter");
-
     m_tagFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

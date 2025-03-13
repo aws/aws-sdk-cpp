@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsStepFunctionStateMachineLoggingConfigurationDetails::AwsStepFunctionStateMachineLoggingConfigurationDetails() : 
-    m_destinationsHasBeenSet(false),
-    m_includeExecutionData(false),
-    m_includeExecutionDataHasBeenSet(false),
-    m_levelHasBeenSet(false)
-{
-}
-
 AwsStepFunctionStateMachineLoggingConfigurationDetails::AwsStepFunctionStateMachineLoggingConfigurationDetails(JsonView jsonValue)
-  : AwsStepFunctionStateMachineLoggingConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ AwsStepFunctionStateMachineLoggingConfigurationDetails& AwsStepFunctionStateMach
     }
     m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeExecutionData"))
   {
     m_includeExecutionData = jsonValue.GetBool("IncludeExecutionData");
-
     m_includeExecutionDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Level"))
   {
     m_level = jsonValue.GetString("Level");
-
     m_levelHasBeenSet = true;
   }
-
   return *this;
 }
 

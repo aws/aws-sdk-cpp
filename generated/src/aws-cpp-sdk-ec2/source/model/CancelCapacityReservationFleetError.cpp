@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CancelCapacityReservationFleetError::CancelCapacityReservationFleetError() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 CancelCapacityReservationFleetError::CancelCapacityReservationFleetError(const XmlNode& xmlNode)
-  : CancelCapacityReservationFleetError()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CancelCapacityReservationFleetError& CancelCapacityReservationFleetError::operat
     {
       m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");
     if(!messageNode.IsNull())
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
   }
 

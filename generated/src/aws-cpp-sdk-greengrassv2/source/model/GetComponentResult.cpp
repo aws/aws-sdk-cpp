@@ -18,13 +18,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetComponentResult::GetComponentResult() : 
-    m_recipeOutputFormat(RecipeOutputFormat::NOT_SET)
-{
-}
-
 GetComponentResult::GetComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetComponentResult()
 {
   *this = result;
 }
@@ -35,14 +29,13 @@ GetComponentResult& GetComponentResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("recipeOutputFormat"))
   {
     m_recipeOutputFormat = RecipeOutputFormatMapper::GetRecipeOutputFormatForName(jsonValue.GetString("recipeOutputFormat"));
-
+    m_recipeOutputFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recipe"))
   {
     m_recipe = HashingUtils::Base64Decode(jsonValue.GetString("recipe"));
+    m_recipeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -50,14 +43,15 @@ GetComponentResult& GetComponentResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

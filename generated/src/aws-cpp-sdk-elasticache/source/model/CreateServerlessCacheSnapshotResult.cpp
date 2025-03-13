@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateServerlessCacheSnapshotResult::CreateServerlessCacheSnapshotResult()
-{
-}
-
 CreateServerlessCacheSnapshotResult::CreateServerlessCacheSnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreateServerlessCacheSnapshotResult& CreateServerlessCacheSnapshotResult::operat
     if(!serverlessCacheSnapshotNode.IsNull())
     {
       m_serverlessCacheSnapshot = serverlessCacheSnapshotNode;
+      m_serverlessCacheSnapshotHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::CreateServerlessCacheSnapshotResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

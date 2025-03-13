@@ -31,7 +31,7 @@ namespace Model
   class KeyPair
   {
   public:
-    AWS_IOT_API KeyPair();
+    AWS_IOT_API KeyPair() = default;
     AWS_IOT_API KeyPair(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API KeyPair& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The public key.</p>
      */
-    inline const Aws::String& GetPublicKey() const{ return m_publicKey; }
+    inline const Aws::String& GetPublicKey() const { return m_publicKey; }
     inline bool PublicKeyHasBeenSet() const { return m_publicKeyHasBeenSet; }
-    inline void SetPublicKey(const Aws::String& value) { m_publicKeyHasBeenSet = true; m_publicKey = value; }
-    inline void SetPublicKey(Aws::String&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::move(value); }
-    inline void SetPublicKey(const char* value) { m_publicKeyHasBeenSet = true; m_publicKey.assign(value); }
-    inline KeyPair& WithPublicKey(const Aws::String& value) { SetPublicKey(value); return *this;}
-    inline KeyPair& WithPublicKey(Aws::String&& value) { SetPublicKey(std::move(value)); return *this;}
-    inline KeyPair& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
+    template<typename PublicKeyT = Aws::String>
+    void SetPublicKey(PublicKeyT&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::forward<PublicKeyT>(value); }
+    template<typename PublicKeyT = Aws::String>
+    KeyPair& WithPublicKey(PublicKeyT&& value) { SetPublicKey(std::forward<PublicKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The private key.</p>
      */
-    inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
+    inline const Aws::String& GetPrivateKey() const { return m_privateKey; }
     inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
-    inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
-    inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
-    inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
-    inline KeyPair& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
-    inline KeyPair& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
-    inline KeyPair& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
+    template<typename PrivateKeyT = Aws::String>
+    void SetPrivateKey(PrivateKeyT&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::forward<PrivateKeyT>(value); }
+    template<typename PrivateKeyT = Aws::String>
+    KeyPair& WithPrivateKey(PrivateKeyT&& value) { SetPrivateKey(std::forward<PrivateKeyT>(value)); return *this;}
     ///@}
   private:
 

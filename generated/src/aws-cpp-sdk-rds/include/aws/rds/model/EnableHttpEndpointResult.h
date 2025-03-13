@@ -28,7 +28,7 @@ namespace Model
   class EnableHttpEndpointResult
   {
   public:
-    AWS_RDS_API EnableHttpEndpointResult();
+    AWS_RDS_API EnableHttpEndpointResult() = default;
     AWS_RDS_API EnableHttpEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API EnableHttpEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The ARN of the DB cluster.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
-    inline EnableHttpEndpointResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline EnableHttpEndpointResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline EnableHttpEndpointResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    EnableHttpEndpointResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,26 +49,29 @@ namespace Model
      * <p>Indicates whether the HTTP endpoint is enabled or disabled for the DB
      * cluster.</p>
      */
-    inline bool GetHttpEndpointEnabled() const{ return m_httpEndpointEnabled; }
-    inline void SetHttpEndpointEnabled(bool value) { m_httpEndpointEnabled = value; }
+    inline bool GetHttpEndpointEnabled() const { return m_httpEndpointEnabled; }
+    inline void SetHttpEndpointEnabled(bool value) { m_httpEndpointEnabledHasBeenSet = true; m_httpEndpointEnabled = value; }
     inline EnableHttpEndpointResult& WithHttpEndpointEnabled(bool value) { SetHttpEndpointEnabled(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline EnableHttpEndpointResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline EnableHttpEndpointResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    EnableHttpEndpointResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
-    bool m_httpEndpointEnabled;
+    bool m_httpEndpointEnabled{false};
+    bool m_httpEndpointEnabledHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

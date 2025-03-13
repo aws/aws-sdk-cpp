@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationAccessHoursEntry::WaypointOptimizationAccessHoursEntry() : 
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false),
-    m_timeOfDayHasBeenSet(false)
-{
-}
-
 WaypointOptimizationAccessHoursEntry::WaypointOptimizationAccessHoursEntry(JsonView jsonValue)
-  : WaypointOptimizationAccessHoursEntry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WaypointOptimizationAccessHoursEntry& WaypointOptimizationAccessHoursEntry::oper
   if(jsonValue.ValueExists("DayOfWeek"))
   {
     m_dayOfWeek = DayOfWeekMapper::GetDayOfWeekForName(jsonValue.GetString("DayOfWeek"));
-
     m_dayOfWeekHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeOfDay"))
   {
     m_timeOfDay = jsonValue.GetString("TimeOfDay");
-
     m_timeOfDayHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class DataflowEndpointConfig
   {
   public:
-    AWS_GROUNDSTATION_API DataflowEndpointConfig();
+    AWS_GROUNDSTATION_API DataflowEndpointConfig() = default;
     AWS_GROUNDSTATION_API DataflowEndpointConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API DataflowEndpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>Name of a dataflow endpoint.</p>
      */
-    inline const Aws::String& GetDataflowEndpointName() const{ return m_dataflowEndpointName; }
+    inline const Aws::String& GetDataflowEndpointName() const { return m_dataflowEndpointName; }
     inline bool DataflowEndpointNameHasBeenSet() const { return m_dataflowEndpointNameHasBeenSet; }
-    inline void SetDataflowEndpointName(const Aws::String& value) { m_dataflowEndpointNameHasBeenSet = true; m_dataflowEndpointName = value; }
-    inline void SetDataflowEndpointName(Aws::String&& value) { m_dataflowEndpointNameHasBeenSet = true; m_dataflowEndpointName = std::move(value); }
-    inline void SetDataflowEndpointName(const char* value) { m_dataflowEndpointNameHasBeenSet = true; m_dataflowEndpointName.assign(value); }
-    inline DataflowEndpointConfig& WithDataflowEndpointName(const Aws::String& value) { SetDataflowEndpointName(value); return *this;}
-    inline DataflowEndpointConfig& WithDataflowEndpointName(Aws::String&& value) { SetDataflowEndpointName(std::move(value)); return *this;}
-    inline DataflowEndpointConfig& WithDataflowEndpointName(const char* value) { SetDataflowEndpointName(value); return *this;}
+    template<typename DataflowEndpointNameT = Aws::String>
+    void SetDataflowEndpointName(DataflowEndpointNameT&& value) { m_dataflowEndpointNameHasBeenSet = true; m_dataflowEndpointName = std::forward<DataflowEndpointNameT>(value); }
+    template<typename DataflowEndpointNameT = Aws::String>
+    DataflowEndpointConfig& WithDataflowEndpointName(DataflowEndpointNameT&& value) { SetDataflowEndpointName(std::forward<DataflowEndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Region of a dataflow endpoint.</p>
      */
-    inline const Aws::String& GetDataflowEndpointRegion() const{ return m_dataflowEndpointRegion; }
+    inline const Aws::String& GetDataflowEndpointRegion() const { return m_dataflowEndpointRegion; }
     inline bool DataflowEndpointRegionHasBeenSet() const { return m_dataflowEndpointRegionHasBeenSet; }
-    inline void SetDataflowEndpointRegion(const Aws::String& value) { m_dataflowEndpointRegionHasBeenSet = true; m_dataflowEndpointRegion = value; }
-    inline void SetDataflowEndpointRegion(Aws::String&& value) { m_dataflowEndpointRegionHasBeenSet = true; m_dataflowEndpointRegion = std::move(value); }
-    inline void SetDataflowEndpointRegion(const char* value) { m_dataflowEndpointRegionHasBeenSet = true; m_dataflowEndpointRegion.assign(value); }
-    inline DataflowEndpointConfig& WithDataflowEndpointRegion(const Aws::String& value) { SetDataflowEndpointRegion(value); return *this;}
-    inline DataflowEndpointConfig& WithDataflowEndpointRegion(Aws::String&& value) { SetDataflowEndpointRegion(std::move(value)); return *this;}
-    inline DataflowEndpointConfig& WithDataflowEndpointRegion(const char* value) { SetDataflowEndpointRegion(value); return *this;}
+    template<typename DataflowEndpointRegionT = Aws::String>
+    void SetDataflowEndpointRegion(DataflowEndpointRegionT&& value) { m_dataflowEndpointRegionHasBeenSet = true; m_dataflowEndpointRegion = std::forward<DataflowEndpointRegionT>(value); }
+    template<typename DataflowEndpointRegionT = Aws::String>
+    DataflowEndpointConfig& WithDataflowEndpointRegion(DataflowEndpointRegionT&& value) { SetDataflowEndpointRegion(std::forward<DataflowEndpointRegionT>(value)); return *this;}
     ///@}
   private:
 

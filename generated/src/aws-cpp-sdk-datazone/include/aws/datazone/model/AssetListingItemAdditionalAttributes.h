@@ -33,7 +33,7 @@ namespace Model
   class AssetListingItemAdditionalAttributes
   {
   public:
-    AWS_DATAZONE_API AssetListingItemAdditionalAttributes();
+    AWS_DATAZONE_API AssetListingItemAdditionalAttributes() = default;
     AWS_DATAZONE_API AssetListingItemAdditionalAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API AssetListingItemAdditionalAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The metadata forms that form additional attributes of the metadata asset.</p>
      */
-    inline const Aws::String& GetForms() const{ return m_forms; }
+    inline const Aws::String& GetForms() const { return m_forms; }
     inline bool FormsHasBeenSet() const { return m_formsHasBeenSet; }
-    inline void SetForms(const Aws::String& value) { m_formsHasBeenSet = true; m_forms = value; }
-    inline void SetForms(Aws::String&& value) { m_formsHasBeenSet = true; m_forms = std::move(value); }
-    inline void SetForms(const char* value) { m_formsHasBeenSet = true; m_forms.assign(value); }
-    inline AssetListingItemAdditionalAttributes& WithForms(const Aws::String& value) { SetForms(value); return *this;}
-    inline AssetListingItemAdditionalAttributes& WithForms(Aws::String&& value) { SetForms(std::move(value)); return *this;}
-    inline AssetListingItemAdditionalAttributes& WithForms(const char* value) { SetForms(value); return *this;}
+    template<typename FormsT = Aws::String>
+    void SetForms(FormsT&& value) { m_formsHasBeenSet = true; m_forms = std::forward<FormsT>(value); }
+    template<typename FormsT = Aws::String>
+    AssetListingItemAdditionalAttributes& WithForms(FormsT&& value) { SetForms(std::forward<FormsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,14 @@ namespace Model
      * <p>The latest time series data points forms included in the additional
      * attributes of an asset.</p>
      */
-    inline const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& GetLatestTimeSeriesDataPointForms() const{ return m_latestTimeSeriesDataPointForms; }
+    inline const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& GetLatestTimeSeriesDataPointForms() const { return m_latestTimeSeriesDataPointForms; }
     inline bool LatestTimeSeriesDataPointFormsHasBeenSet() const { return m_latestTimeSeriesDataPointFormsHasBeenSet; }
-    inline void SetLatestTimeSeriesDataPointForms(const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& value) { m_latestTimeSeriesDataPointFormsHasBeenSet = true; m_latestTimeSeriesDataPointForms = value; }
-    inline void SetLatestTimeSeriesDataPointForms(Aws::Vector<TimeSeriesDataPointSummaryFormOutput>&& value) { m_latestTimeSeriesDataPointFormsHasBeenSet = true; m_latestTimeSeriesDataPointForms = std::move(value); }
-    inline AssetListingItemAdditionalAttributes& WithLatestTimeSeriesDataPointForms(const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& value) { SetLatestTimeSeriesDataPointForms(value); return *this;}
-    inline AssetListingItemAdditionalAttributes& WithLatestTimeSeriesDataPointForms(Aws::Vector<TimeSeriesDataPointSummaryFormOutput>&& value) { SetLatestTimeSeriesDataPointForms(std::move(value)); return *this;}
-    inline AssetListingItemAdditionalAttributes& AddLatestTimeSeriesDataPointForms(const TimeSeriesDataPointSummaryFormOutput& value) { m_latestTimeSeriesDataPointFormsHasBeenSet = true; m_latestTimeSeriesDataPointForms.push_back(value); return *this; }
-    inline AssetListingItemAdditionalAttributes& AddLatestTimeSeriesDataPointForms(TimeSeriesDataPointSummaryFormOutput&& value) { m_latestTimeSeriesDataPointFormsHasBeenSet = true; m_latestTimeSeriesDataPointForms.push_back(std::move(value)); return *this; }
+    template<typename LatestTimeSeriesDataPointFormsT = Aws::Vector<TimeSeriesDataPointSummaryFormOutput>>
+    void SetLatestTimeSeriesDataPointForms(LatestTimeSeriesDataPointFormsT&& value) { m_latestTimeSeriesDataPointFormsHasBeenSet = true; m_latestTimeSeriesDataPointForms = std::forward<LatestTimeSeriesDataPointFormsT>(value); }
+    template<typename LatestTimeSeriesDataPointFormsT = Aws::Vector<TimeSeriesDataPointSummaryFormOutput>>
+    AssetListingItemAdditionalAttributes& WithLatestTimeSeriesDataPointForms(LatestTimeSeriesDataPointFormsT&& value) { SetLatestTimeSeriesDataPointForms(std::forward<LatestTimeSeriesDataPointFormsT>(value)); return *this;}
+    template<typename LatestTimeSeriesDataPointFormsT = TimeSeriesDataPointSummaryFormOutput>
+    AssetListingItemAdditionalAttributes& AddLatestTimeSeriesDataPointForms(LatestTimeSeriesDataPointFormsT&& value) { m_latestTimeSeriesDataPointFormsHasBeenSet = true; m_latestTimeSeriesDataPointForms.emplace_back(std::forward<LatestTimeSeriesDataPointFormsT>(value)); return *this; }
     ///@}
   private:
 

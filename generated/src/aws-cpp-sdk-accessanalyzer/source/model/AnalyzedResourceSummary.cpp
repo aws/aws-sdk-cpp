@@ -18,16 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-AnalyzedResourceSummary::AnalyzedResourceSummary() : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceOwnerAccountHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 AnalyzedResourceSummary::AnalyzedResourceSummary(JsonView jsonValue)
-  : AnalyzedResourceSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AnalyzedResourceSummary& AnalyzedResourceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceOwnerAccount"))
   {
     m_resourceOwnerAccount = jsonValue.GetString("resourceOwnerAccount");
-
     m_resourceOwnerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

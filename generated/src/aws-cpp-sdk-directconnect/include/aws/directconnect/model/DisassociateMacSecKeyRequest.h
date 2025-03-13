@@ -21,7 +21,7 @@ namespace Model
   class DisassociateMacSecKeyRequest : public DirectConnectRequest
   {
   public:
-    AWS_DIRECTCONNECT_API DisassociateMacSecKeyRequest();
+    AWS_DIRECTCONNECT_API DisassociateMacSecKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * (dxlag-xxxx).</p> <p>You can use <a>DescribeConnections</a> or
      * <a>DescribeLags</a> to retrieve connection ID.</p>
      */
-    inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+    inline const Aws::String& GetConnectionId() const { return m_connectionId; }
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-    inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-    inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-    inline DisassociateMacSecKeyRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-    inline DisassociateMacSecKeyRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-    inline DisassociateMacSecKeyRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+    template<typename ConnectionIdT = Aws::String>
+    void SetConnectionId(ConnectionIdT&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::forward<ConnectionIdT>(value); }
+    template<typename ConnectionIdT = Aws::String>
+    DisassociateMacSecKeyRequest& WithConnectionId(ConnectionIdT&& value) { SetConnectionId(std::forward<ConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>You can use <a>DescribeConnections</a> to retrieve the ARN of the MAC
      * Security (MACsec) secret key.</p>
      */
-    inline const Aws::String& GetSecretARN() const{ return m_secretARN; }
+    inline const Aws::String& GetSecretARN() const { return m_secretARN; }
     inline bool SecretARNHasBeenSet() const { return m_secretARNHasBeenSet; }
-    inline void SetSecretARN(const Aws::String& value) { m_secretARNHasBeenSet = true; m_secretARN = value; }
-    inline void SetSecretARN(Aws::String&& value) { m_secretARNHasBeenSet = true; m_secretARN = std::move(value); }
-    inline void SetSecretARN(const char* value) { m_secretARNHasBeenSet = true; m_secretARN.assign(value); }
-    inline DisassociateMacSecKeyRequest& WithSecretARN(const Aws::String& value) { SetSecretARN(value); return *this;}
-    inline DisassociateMacSecKeyRequest& WithSecretARN(Aws::String&& value) { SetSecretARN(std::move(value)); return *this;}
-    inline DisassociateMacSecKeyRequest& WithSecretARN(const char* value) { SetSecretARN(value); return *this;}
+    template<typename SecretARNT = Aws::String>
+    void SetSecretARN(SecretARNT&& value) { m_secretARNHasBeenSet = true; m_secretARN = std::forward<SecretARNT>(value); }
+    template<typename SecretARNT = Aws::String>
+    DisassociateMacSecKeyRequest& WithSecretARN(SecretARNT&& value) { SetSecretARN(std::forward<SecretARNT>(value)); return *this;}
     ///@}
   private:
 

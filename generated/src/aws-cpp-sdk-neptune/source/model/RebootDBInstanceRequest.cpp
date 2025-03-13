@@ -10,13 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-RebootDBInstanceRequest::RebootDBInstanceRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_forceFailover(false),
-    m_forceFailoverHasBeenSet(false)
-{
-}
-
 Aws::String RebootDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ConnectionLogResponseOptions::ConnectionLogResponseOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_cloudwatchLogGroupHasBeenSet(false),
-    m_cloudwatchLogStreamHasBeenSet(false)
-{
-}
-
 ConnectionLogResponseOptions::ConnectionLogResponseOptions(const XmlNode& xmlNode)
-  : ConnectionLogResponseOptions()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ ConnectionLogResponseOptions& ConnectionLogResponseOptions::operator =(const Xml
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode cloudwatchLogGroupNode = resultNode.FirstChild("CloudwatchLogGroup");
     if(!cloudwatchLogGroupNode.IsNull())
     {
       m_cloudwatchLogGroup = Aws::Utils::Xml::DecodeEscapedXmlText(cloudwatchLogGroupNode.GetText());
       m_cloudwatchLogGroupHasBeenSet = true;
+       m_cloudwatchLogGroupHasBeenSet = true;
     }
     XmlNode cloudwatchLogStreamNode = resultNode.FirstChild("CloudwatchLogStream");
     if(!cloudwatchLogStreamNode.IsNull())
     {
       m_cloudwatchLogStream = Aws::Utils::Xml::DecodeEscapedXmlText(cloudwatchLogStreamNode.GetText());
       m_cloudwatchLogStreamHasBeenSet = true;
+       m_cloudwatchLogStreamHasBeenSet = true;
     }
   }
 

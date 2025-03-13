@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-NodeRepairConfig::NodeRepairConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 NodeRepairConfig::NodeRepairConfig(JsonView jsonValue)
-  : NodeRepairConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ NodeRepairConfig& NodeRepairConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

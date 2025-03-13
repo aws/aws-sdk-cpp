@@ -19,24 +19,7 @@ namespace EFS
 namespace Model
 {
 
-MountTargetDescription::MountTargetDescription() : 
-    m_ownerIdHasBeenSet(false),
-    m_mountTargetIdHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_lifeCycleState(LifeCycleState::NOT_SET),
-    m_lifeCycleStateHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_availabilityZoneNameHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 MountTargetDescription::MountTargetDescription(JsonView jsonValue)
-  : MountTargetDescription()
 {
   *this = jsonValue;
 }
@@ -46,73 +29,53 @@ MountTargetDescription& MountTargetDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MountTargetId"))
   {
     m_mountTargetId = jsonValue.GetString("MountTargetId");
-
     m_mountTargetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifeCycleState"))
   {
     m_lifeCycleState = LifeCycleStateMapper::GetLifeCycleStateForName(jsonValue.GetString("LifeCycleState"));
-
     m_lifeCycleStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("NetworkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZoneId"))
   {
     m_availabilityZoneId = jsonValue.GetString("AvailabilityZoneId");
-
     m_availabilityZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZoneName"))
   {
     m_availabilityZoneName = jsonValue.GetString("AvailabilityZoneName");
-
     m_availabilityZoneNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

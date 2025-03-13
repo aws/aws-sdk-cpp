@@ -35,7 +35,7 @@ namespace Model
   class NodeAggregator
   {
   public:
-    AWS_SSM_API NodeAggregator();
+    AWS_SSM_API NodeAggregator() = default;
     AWS_SSM_API NodeAggregator(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API NodeAggregator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p>The aggregator type for limiting a node summary. Currently, only
      * <code>Count</code> is supported.</p>
      */
-    inline const NodeAggregatorType& GetAggregatorType() const{ return m_aggregatorType; }
+    inline NodeAggregatorType GetAggregatorType() const { return m_aggregatorType; }
     inline bool AggregatorTypeHasBeenSet() const { return m_aggregatorTypeHasBeenSet; }
-    inline void SetAggregatorType(const NodeAggregatorType& value) { m_aggregatorTypeHasBeenSet = true; m_aggregatorType = value; }
-    inline void SetAggregatorType(NodeAggregatorType&& value) { m_aggregatorTypeHasBeenSet = true; m_aggregatorType = std::move(value); }
-    inline NodeAggregator& WithAggregatorType(const NodeAggregatorType& value) { SetAggregatorType(value); return *this;}
-    inline NodeAggregator& WithAggregatorType(NodeAggregatorType&& value) { SetAggregatorType(std::move(value)); return *this;}
+    inline void SetAggregatorType(NodeAggregatorType value) { m_aggregatorTypeHasBeenSet = true; m_aggregatorType = value; }
+    inline NodeAggregator& WithAggregatorType(NodeAggregatorType value) { SetAggregatorType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,48 +57,44 @@ namespace Model
      * <p>The data type name to use for viewing counts of nodes. Currently, only
      * <code>Instance</code> is supported.</p>
      */
-    inline const NodeTypeName& GetTypeName() const{ return m_typeName; }
+    inline NodeTypeName GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const NodeTypeName& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(NodeTypeName&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline NodeAggregator& WithTypeName(const NodeTypeName& value) { SetTypeName(value); return *this;}
-    inline NodeAggregator& WithTypeName(NodeTypeName&& value) { SetTypeName(std::move(value)); return *this;}
+    inline void SetTypeName(NodeTypeName value) { m_typeNameHasBeenSet = true; m_typeName = value; }
+    inline NodeAggregator& WithTypeName(NodeTypeName value) { SetTypeName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a node attribute on which to limit the count of nodes.</p>
      */
-    inline const NodeAttributeName& GetAttributeName() const{ return m_attributeName; }
+    inline NodeAttributeName GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const NodeAttributeName& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(NodeAttributeName&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline NodeAggregator& WithAttributeName(const NodeAttributeName& value) { SetAttributeName(value); return *this;}
-    inline NodeAggregator& WithAttributeName(NodeAttributeName&& value) { SetAttributeName(std::move(value)); return *this;}
+    inline void SetAttributeName(NodeAttributeName value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline NodeAggregator& WithAttributeName(NodeAttributeName value) { SetAttributeName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about aggregators used to refine a node summary.</p>
      */
-    inline const Aws::Vector<NodeAggregator>& GetAggregators() const{ return m_aggregators; }
+    inline const Aws::Vector<NodeAggregator>& GetAggregators() const { return m_aggregators; }
     inline bool AggregatorsHasBeenSet() const { return m_aggregatorsHasBeenSet; }
-    inline void SetAggregators(const Aws::Vector<NodeAggregator>& value) { m_aggregatorsHasBeenSet = true; m_aggregators = value; }
-    inline void SetAggregators(Aws::Vector<NodeAggregator>&& value) { m_aggregatorsHasBeenSet = true; m_aggregators = std::move(value); }
-    inline NodeAggregator& WithAggregators(const Aws::Vector<NodeAggregator>& value) { SetAggregators(value); return *this;}
-    inline NodeAggregator& WithAggregators(Aws::Vector<NodeAggregator>&& value) { SetAggregators(std::move(value)); return *this;}
-    inline NodeAggregator& AddAggregators(const NodeAggregator& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(value); return *this; }
-    inline NodeAggregator& AddAggregators(NodeAggregator&& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(std::move(value)); return *this; }
+    template<typename AggregatorsT = Aws::Vector<NodeAggregator>>
+    void SetAggregators(AggregatorsT&& value) { m_aggregatorsHasBeenSet = true; m_aggregators = std::forward<AggregatorsT>(value); }
+    template<typename AggregatorsT = Aws::Vector<NodeAggregator>>
+    NodeAggregator& WithAggregators(AggregatorsT&& value) { SetAggregators(std::forward<AggregatorsT>(value)); return *this;}
+    template<typename AggregatorsT = NodeAggregator>
+    NodeAggregator& AddAggregators(AggregatorsT&& value) { m_aggregatorsHasBeenSet = true; m_aggregators.emplace_back(std::forward<AggregatorsT>(value)); return *this; }
     ///@}
   private:
 
-    NodeAggregatorType m_aggregatorType;
+    NodeAggregatorType m_aggregatorType{NodeAggregatorType::NOT_SET};
     bool m_aggregatorTypeHasBeenSet = false;
 
-    NodeTypeName m_typeName;
+    NodeTypeName m_typeName{NodeTypeName::NOT_SET};
     bool m_typeNameHasBeenSet = false;
 
-    NodeAttributeName m_attributeName;
+    NodeAttributeName m_attributeName{NodeAttributeName::NOT_SET};
     bool m_attributeNameHasBeenSet = false;
 
     Aws::Vector<NodeAggregator> m_aggregators;

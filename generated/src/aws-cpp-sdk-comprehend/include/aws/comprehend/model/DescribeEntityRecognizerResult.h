@@ -28,7 +28,7 @@ namespace Model
   class DescribeEntityRecognizerResult
   {
   public:
-    AWS_COMPREHEND_API DescribeEntityRecognizerResult();
+    AWS_COMPREHEND_API DescribeEntityRecognizerResult() = default;
     AWS_COMPREHEND_API DescribeEntityRecognizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API DescribeEntityRecognizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Describes information associated with an entity recognizer.</p>
      */
-    inline const EntityRecognizerProperties& GetEntityRecognizerProperties() const{ return m_entityRecognizerProperties; }
-    inline void SetEntityRecognizerProperties(const EntityRecognizerProperties& value) { m_entityRecognizerProperties = value; }
-    inline void SetEntityRecognizerProperties(EntityRecognizerProperties&& value) { m_entityRecognizerProperties = std::move(value); }
-    inline DescribeEntityRecognizerResult& WithEntityRecognizerProperties(const EntityRecognizerProperties& value) { SetEntityRecognizerProperties(value); return *this;}
-    inline DescribeEntityRecognizerResult& WithEntityRecognizerProperties(EntityRecognizerProperties&& value) { SetEntityRecognizerProperties(std::move(value)); return *this;}
+    inline const EntityRecognizerProperties& GetEntityRecognizerProperties() const { return m_entityRecognizerProperties; }
+    template<typename EntityRecognizerPropertiesT = EntityRecognizerProperties>
+    void SetEntityRecognizerProperties(EntityRecognizerPropertiesT&& value) { m_entityRecognizerPropertiesHasBeenSet = true; m_entityRecognizerProperties = std::forward<EntityRecognizerPropertiesT>(value); }
+    template<typename EntityRecognizerPropertiesT = EntityRecognizerProperties>
+    DescribeEntityRecognizerResult& WithEntityRecognizerProperties(EntityRecognizerPropertiesT&& value) { SetEntityRecognizerProperties(std::forward<EntityRecognizerPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEntityRecognizerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEntityRecognizerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEntityRecognizerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEntityRecognizerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EntityRecognizerProperties m_entityRecognizerProperties;
+    bool m_entityRecognizerPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

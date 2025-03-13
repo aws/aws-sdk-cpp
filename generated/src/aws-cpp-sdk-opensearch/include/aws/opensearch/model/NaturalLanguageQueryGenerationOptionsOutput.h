@@ -33,7 +33,7 @@ namespace Model
   class NaturalLanguageQueryGenerationOptionsOutput
   {
   public:
-    AWS_OPENSEARCHSERVICE_API NaturalLanguageQueryGenerationOptionsOutput();
+    AWS_OPENSEARCHSERVICE_API NaturalLanguageQueryGenerationOptionsOutput() = default;
     AWS_OPENSEARCHSERVICE_API NaturalLanguageQueryGenerationOptionsOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API NaturalLanguageQueryGenerationOptionsOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>The desired state of the natural language query generation feature. Valid
      * values are ENABLED and DISABLED.</p>
      */
-    inline const NaturalLanguageQueryGenerationDesiredState& GetDesiredState() const{ return m_desiredState; }
+    inline NaturalLanguageQueryGenerationDesiredState GetDesiredState() const { return m_desiredState; }
     inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
-    inline void SetDesiredState(const NaturalLanguageQueryGenerationDesiredState& value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
-    inline void SetDesiredState(NaturalLanguageQueryGenerationDesiredState&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::move(value); }
-    inline NaturalLanguageQueryGenerationOptionsOutput& WithDesiredState(const NaturalLanguageQueryGenerationDesiredState& value) { SetDesiredState(value); return *this;}
-    inline NaturalLanguageQueryGenerationOptionsOutput& WithDesiredState(NaturalLanguageQueryGenerationDesiredState&& value) { SetDesiredState(std::move(value)); return *this;}
+    inline void SetDesiredState(NaturalLanguageQueryGenerationDesiredState value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
+    inline NaturalLanguageQueryGenerationOptionsOutput& WithDesiredState(NaturalLanguageQueryGenerationDesiredState value) { SetDesiredState(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,17 @@ namespace Model
      * <p>The current state of the natural language query generation feature,
      * indicating completion, in progress, or failure.</p>
      */
-    inline const NaturalLanguageQueryGenerationCurrentState& GetCurrentState() const{ return m_currentState; }
+    inline NaturalLanguageQueryGenerationCurrentState GetCurrentState() const { return m_currentState; }
     inline bool CurrentStateHasBeenSet() const { return m_currentStateHasBeenSet; }
-    inline void SetCurrentState(const NaturalLanguageQueryGenerationCurrentState& value) { m_currentStateHasBeenSet = true; m_currentState = value; }
-    inline void SetCurrentState(NaturalLanguageQueryGenerationCurrentState&& value) { m_currentStateHasBeenSet = true; m_currentState = std::move(value); }
-    inline NaturalLanguageQueryGenerationOptionsOutput& WithCurrentState(const NaturalLanguageQueryGenerationCurrentState& value) { SetCurrentState(value); return *this;}
-    inline NaturalLanguageQueryGenerationOptionsOutput& WithCurrentState(NaturalLanguageQueryGenerationCurrentState&& value) { SetCurrentState(std::move(value)); return *this;}
+    inline void SetCurrentState(NaturalLanguageQueryGenerationCurrentState value) { m_currentStateHasBeenSet = true; m_currentState = value; }
+    inline NaturalLanguageQueryGenerationOptionsOutput& WithCurrentState(NaturalLanguageQueryGenerationCurrentState value) { SetCurrentState(value); return *this;}
     ///@}
   private:
 
-    NaturalLanguageQueryGenerationDesiredState m_desiredState;
+    NaturalLanguageQueryGenerationDesiredState m_desiredState{NaturalLanguageQueryGenerationDesiredState::NOT_SET};
     bool m_desiredStateHasBeenSet = false;
 
-    NaturalLanguageQueryGenerationCurrentState m_currentState;
+    NaturalLanguageQueryGenerationCurrentState m_currentState{NaturalLanguageQueryGenerationCurrentState::NOT_SET};
     bool m_currentStateHasBeenSet = false;
   };
 

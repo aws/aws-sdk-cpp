@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchIsAuthorizedWithTokenResult::BatchIsAuthorizedWithTokenResult()
-{
-}
-
 BatchIsAuthorizedWithTokenResult::BatchIsAuthorizedWithTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ BatchIsAuthorizedWithTokenResult& BatchIsAuthorizedWithTokenResult::operator =(c
   if(jsonValue.ValueExists("principal"))
   {
     m_principal = jsonValue.GetObject("principal");
-
+    m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("results"))
   {
     Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("results");
@@ -42,14 +37,15 @@ BatchIsAuthorizedWithTokenResult& BatchIsAuthorizedWithTokenResult::operator =(c
     {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());
     }
+    m_resultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

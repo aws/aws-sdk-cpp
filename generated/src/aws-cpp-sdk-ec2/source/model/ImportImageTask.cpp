@@ -20,31 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImportImageTask::ImportImageTask() : 
-    m_architectureHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_hypervisorHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_importTaskIdHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_snapshotDetailsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_licenseSpecificationsHasBeenSet(false),
-    m_usageOperationHasBeenSet(false),
-    m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false)
-{
-}
-
 ImportImageTask::ImportImageTask(const XmlNode& xmlNode)
-  : ImportImageTask()
 {
   *this = xmlNode;
 }
@@ -60,120 +36,137 @@ ImportImageTask& ImportImageTask::operator =(const XmlNode& xmlNode)
     {
       m_architecture = Aws::Utils::Xml::DecodeEscapedXmlText(architectureNode.GetText());
       m_architectureHasBeenSet = true;
+       m_architectureHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode encryptedNode = resultNode.FirstChild("encrypted");
     if(!encryptedNode.IsNull())
     {
       m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptedNode.GetText()).c_str()).c_str());
       m_encryptedHasBeenSet = true;
+       m_encryptedHasBeenSet = true;
     }
     XmlNode hypervisorNode = resultNode.FirstChild("hypervisor");
     if(!hypervisorNode.IsNull())
     {
       m_hypervisor = Aws::Utils::Xml::DecodeEscapedXmlText(hypervisorNode.GetText());
       m_hypervisorHasBeenSet = true;
+       m_hypervisorHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
       m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
       m_imageIdHasBeenSet = true;
+       m_imageIdHasBeenSet = true;
     }
     XmlNode importTaskIdNode = resultNode.FirstChild("importTaskId");
     if(!importTaskIdNode.IsNull())
     {
       m_importTaskId = Aws::Utils::Xml::DecodeEscapedXmlText(importTaskIdNode.GetText());
       m_importTaskIdHasBeenSet = true;
+       m_importTaskIdHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
+       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode licenseTypeNode = resultNode.FirstChild("licenseType");
     if(!licenseTypeNode.IsNull())
     {
       m_licenseType = Aws::Utils::Xml::DecodeEscapedXmlText(licenseTypeNode.GetText());
       m_licenseTypeHasBeenSet = true;
+       m_licenseTypeHasBeenSet = true;
     }
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
       m_platform = Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText());
       m_platformHasBeenSet = true;
+       m_platformHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())
     {
       m_progress = Aws::Utils::Xml::DecodeEscapedXmlText(progressNode.GetText());
       m_progressHasBeenSet = true;
+       m_progressHasBeenSet = true;
     }
     XmlNode snapshotDetailsNode = resultNode.FirstChild("snapshotDetailSet");
     if(!snapshotDetailsNode.IsNull())
     {
       XmlNode snapshotDetailsMember = snapshotDetailsNode.FirstChild("item");
+      m_snapshotDetailsHasBeenSet = !snapshotDetailsMember.IsNull();
       while(!snapshotDetailsMember.IsNull())
       {
         m_snapshotDetails.push_back(snapshotDetailsMember);
         snapshotDetailsMember = snapshotDetailsMember.NextNode("item");
       }
 
-      m_snapshotDetailsHasBeenSet = true;
+       m_snapshotDetailsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode licenseSpecificationsNode = resultNode.FirstChild("licenseSpecifications");
     if(!licenseSpecificationsNode.IsNull())
     {
       XmlNode licenseSpecificationsMember = licenseSpecificationsNode.FirstChild("item");
+      m_licenseSpecificationsHasBeenSet = !licenseSpecificationsMember.IsNull();
       while(!licenseSpecificationsMember.IsNull())
       {
         m_licenseSpecifications.push_back(licenseSpecificationsMember);
         licenseSpecificationsMember = licenseSpecificationsMember.NextNode("item");
       }
 
-      m_licenseSpecificationsHasBeenSet = true;
+       m_licenseSpecificationsHasBeenSet = true;
     }
     XmlNode usageOperationNode = resultNode.FirstChild("usageOperation");
     if(!usageOperationNode.IsNull())
     {
       m_usageOperation = Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationNode.GetText());
       m_usageOperationHasBeenSet = true;
+       m_usageOperationHasBeenSet = true;
     }
     XmlNode bootModeNode = resultNode.FirstChild("bootMode");
     if(!bootModeNode.IsNull())
     {
-      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()).c_str());
+      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()));
       m_bootModeHasBeenSet = true;
+       m_bootModeHasBeenSet = true;
     }
   }
 

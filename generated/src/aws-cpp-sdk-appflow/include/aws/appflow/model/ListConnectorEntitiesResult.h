@@ -30,7 +30,7 @@ namespace Model
   class ListConnectorEntitiesResult
   {
   public:
-    AWS_APPFLOW_API ListConnectorEntitiesResult();
+    AWS_APPFLOW_API ListConnectorEntitiesResult() = default;
     AWS_APPFLOW_API ListConnectorEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPFLOW_API ListConnectorEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,17 +41,15 @@ namespace Model
      * category. This map's key represents the group name, and its value contains the
      * list of entities belonging to that group. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<ConnectorEntity>>& GetConnectorEntityMap() const{ return m_connectorEntityMap; }
-    inline void SetConnectorEntityMap(const Aws::Map<Aws::String, Aws::Vector<ConnectorEntity>>& value) { m_connectorEntityMap = value; }
-    inline void SetConnectorEntityMap(Aws::Map<Aws::String, Aws::Vector<ConnectorEntity>>&& value) { m_connectorEntityMap = std::move(value); }
-    inline ListConnectorEntitiesResult& WithConnectorEntityMap(const Aws::Map<Aws::String, Aws::Vector<ConnectorEntity>>& value) { SetConnectorEntityMap(value); return *this;}
-    inline ListConnectorEntitiesResult& WithConnectorEntityMap(Aws::Map<Aws::String, Aws::Vector<ConnectorEntity>>&& value) { SetConnectorEntityMap(std::move(value)); return *this;}
-    inline ListConnectorEntitiesResult& AddConnectorEntityMap(const Aws::String& key, const Aws::Vector<ConnectorEntity>& value) { m_connectorEntityMap.emplace(key, value); return *this; }
-    inline ListConnectorEntitiesResult& AddConnectorEntityMap(Aws::String&& key, const Aws::Vector<ConnectorEntity>& value) { m_connectorEntityMap.emplace(std::move(key), value); return *this; }
-    inline ListConnectorEntitiesResult& AddConnectorEntityMap(const Aws::String& key, Aws::Vector<ConnectorEntity>&& value) { m_connectorEntityMap.emplace(key, std::move(value)); return *this; }
-    inline ListConnectorEntitiesResult& AddConnectorEntityMap(Aws::String&& key, Aws::Vector<ConnectorEntity>&& value) { m_connectorEntityMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline ListConnectorEntitiesResult& AddConnectorEntityMap(const char* key, Aws::Vector<ConnectorEntity>&& value) { m_connectorEntityMap.emplace(key, std::move(value)); return *this; }
-    inline ListConnectorEntitiesResult& AddConnectorEntityMap(const char* key, const Aws::Vector<ConnectorEntity>& value) { m_connectorEntityMap.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::Vector<ConnectorEntity>>& GetConnectorEntityMap() const { return m_connectorEntityMap; }
+    template<typename ConnectorEntityMapT = Aws::Map<Aws::String, Aws::Vector<ConnectorEntity>>>
+    void SetConnectorEntityMap(ConnectorEntityMapT&& value) { m_connectorEntityMapHasBeenSet = true; m_connectorEntityMap = std::forward<ConnectorEntityMapT>(value); }
+    template<typename ConnectorEntityMapT = Aws::Map<Aws::String, Aws::Vector<ConnectorEntity>>>
+    ListConnectorEntitiesResult& WithConnectorEntityMap(ConnectorEntityMapT&& value) { SetConnectorEntityMap(std::forward<ConnectorEntityMapT>(value)); return *this;}
+    template<typename ConnectorEntityMapKeyT = Aws::String, typename ConnectorEntityMapValueT = Aws::Vector<ConnectorEntity>>
+    ListConnectorEntitiesResult& AddConnectorEntityMap(ConnectorEntityMapKeyT&& key, ConnectorEntityMapValueT&& value) {
+      m_connectorEntityMapHasBeenSet = true; m_connectorEntityMap.emplace(std::forward<ConnectorEntityMapKeyT>(key), std::forward<ConnectorEntityMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -61,32 +59,31 @@ namespace Model
      * <code>ListConnectorEntities</code> operation provides this token if the response
      * is too big for the page size.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListConnectorEntitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConnectorEntitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConnectorEntitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConnectorEntitiesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConnectorEntitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConnectorEntitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConnectorEntitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConnectorEntitiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::Vector<ConnectorEntity>> m_connectorEntityMap;
+    bool m_connectorEntityMapHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

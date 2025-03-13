@@ -37,7 +37,7 @@ namespace Model
   class DBSnapshotAttributesResult
   {
   public:
-    AWS_RDS_API DBSnapshotAttributesResult();
+    AWS_RDS_API DBSnapshotAttributesResult() = default;
     AWS_RDS_API DBSnapshotAttributesResult(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API DBSnapshotAttributesResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,28 +49,26 @@ namespace Model
     /**
      * <p>The identifier of the manual DB snapshot that the attributes apply to.</p>
      */
-    inline const Aws::String& GetDBSnapshotIdentifier() const{ return m_dBSnapshotIdentifier; }
+    inline const Aws::String& GetDBSnapshotIdentifier() const { return m_dBSnapshotIdentifier; }
     inline bool DBSnapshotIdentifierHasBeenSet() const { return m_dBSnapshotIdentifierHasBeenSet; }
-    inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
-    inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = std::move(value); }
-    inline void SetDBSnapshotIdentifier(const char* value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier.assign(value); }
-    inline DBSnapshotAttributesResult& WithDBSnapshotIdentifier(const Aws::String& value) { SetDBSnapshotIdentifier(value); return *this;}
-    inline DBSnapshotAttributesResult& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(std::move(value)); return *this;}
-    inline DBSnapshotAttributesResult& WithDBSnapshotIdentifier(const char* value) { SetDBSnapshotIdentifier(value); return *this;}
+    template<typename DBSnapshotIdentifierT = Aws::String>
+    void SetDBSnapshotIdentifier(DBSnapshotIdentifierT&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = std::forward<DBSnapshotIdentifierT>(value); }
+    template<typename DBSnapshotIdentifierT = Aws::String>
+    DBSnapshotAttributesResult& WithDBSnapshotIdentifier(DBSnapshotIdentifierT&& value) { SetDBSnapshotIdentifier(std::forward<DBSnapshotIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of attributes and values for the manual DB snapshot.</p>
      */
-    inline const Aws::Vector<DBSnapshotAttribute>& GetDBSnapshotAttributes() const{ return m_dBSnapshotAttributes; }
+    inline const Aws::Vector<DBSnapshotAttribute>& GetDBSnapshotAttributes() const { return m_dBSnapshotAttributes; }
     inline bool DBSnapshotAttributesHasBeenSet() const { return m_dBSnapshotAttributesHasBeenSet; }
-    inline void SetDBSnapshotAttributes(const Aws::Vector<DBSnapshotAttribute>& value) { m_dBSnapshotAttributesHasBeenSet = true; m_dBSnapshotAttributes = value; }
-    inline void SetDBSnapshotAttributes(Aws::Vector<DBSnapshotAttribute>&& value) { m_dBSnapshotAttributesHasBeenSet = true; m_dBSnapshotAttributes = std::move(value); }
-    inline DBSnapshotAttributesResult& WithDBSnapshotAttributes(const Aws::Vector<DBSnapshotAttribute>& value) { SetDBSnapshotAttributes(value); return *this;}
-    inline DBSnapshotAttributesResult& WithDBSnapshotAttributes(Aws::Vector<DBSnapshotAttribute>&& value) { SetDBSnapshotAttributes(std::move(value)); return *this;}
-    inline DBSnapshotAttributesResult& AddDBSnapshotAttributes(const DBSnapshotAttribute& value) { m_dBSnapshotAttributesHasBeenSet = true; m_dBSnapshotAttributes.push_back(value); return *this; }
-    inline DBSnapshotAttributesResult& AddDBSnapshotAttributes(DBSnapshotAttribute&& value) { m_dBSnapshotAttributesHasBeenSet = true; m_dBSnapshotAttributes.push_back(std::move(value)); return *this; }
+    template<typename DBSnapshotAttributesT = Aws::Vector<DBSnapshotAttribute>>
+    void SetDBSnapshotAttributes(DBSnapshotAttributesT&& value) { m_dBSnapshotAttributesHasBeenSet = true; m_dBSnapshotAttributes = std::forward<DBSnapshotAttributesT>(value); }
+    template<typename DBSnapshotAttributesT = Aws::Vector<DBSnapshotAttribute>>
+    DBSnapshotAttributesResult& WithDBSnapshotAttributes(DBSnapshotAttributesT&& value) { SetDBSnapshotAttributes(std::forward<DBSnapshotAttributesT>(value)); return *this;}
+    template<typename DBSnapshotAttributesT = DBSnapshotAttribute>
+    DBSnapshotAttributesResult& AddDBSnapshotAttributes(DBSnapshotAttributesT&& value) { m_dBSnapshotAttributesHasBeenSet = true; m_dBSnapshotAttributes.emplace_back(std::forward<DBSnapshotAttributesT>(value)); return *this; }
     ///@}
   private:
 

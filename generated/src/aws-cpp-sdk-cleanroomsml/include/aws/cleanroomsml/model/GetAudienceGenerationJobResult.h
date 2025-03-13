@@ -33,7 +33,7 @@ namespace Model
   class GetAudienceGenerationJobResult
   {
   public:
-    AWS_CLEANROOMSML_API GetAudienceGenerationJobResult();
+    AWS_CLEANROOMSML_API GetAudienceGenerationJobResult() = default;
     AWS_CLEANROOMSML_API GetAudienceGenerationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMSML_API GetAudienceGenerationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,83 +42,75 @@ namespace Model
     /**
      * <p>The time at which the audience generation job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-    inline GetAudienceGenerationJobResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    GetAudienceGenerationJobResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The most recent time at which the audience generation job was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-    inline GetAudienceGenerationJobResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    GetAudienceGenerationJobResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
      */
-    inline const Aws::String& GetAudienceGenerationJobArn() const{ return m_audienceGenerationJobArn; }
-    inline void SetAudienceGenerationJobArn(const Aws::String& value) { m_audienceGenerationJobArn = value; }
-    inline void SetAudienceGenerationJobArn(Aws::String&& value) { m_audienceGenerationJobArn = std::move(value); }
-    inline void SetAudienceGenerationJobArn(const char* value) { m_audienceGenerationJobArn.assign(value); }
-    inline GetAudienceGenerationJobResult& WithAudienceGenerationJobArn(const Aws::String& value) { SetAudienceGenerationJobArn(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithAudienceGenerationJobArn(Aws::String&& value) { SetAudienceGenerationJobArn(std::move(value)); return *this;}
-    inline GetAudienceGenerationJobResult& WithAudienceGenerationJobArn(const char* value) { SetAudienceGenerationJobArn(value); return *this;}
+    inline const Aws::String& GetAudienceGenerationJobArn() const { return m_audienceGenerationJobArn; }
+    template<typename AudienceGenerationJobArnT = Aws::String>
+    void SetAudienceGenerationJobArn(AudienceGenerationJobArnT&& value) { m_audienceGenerationJobArnHasBeenSet = true; m_audienceGenerationJobArn = std::forward<AudienceGenerationJobArnT>(value); }
+    template<typename AudienceGenerationJobArnT = Aws::String>
+    GetAudienceGenerationJobResult& WithAudienceGenerationJobArn(AudienceGenerationJobArnT&& value) { SetAudienceGenerationJobArn(std::forward<AudienceGenerationJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the audience generation job.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetAudienceGenerationJobResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetAudienceGenerationJobResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetAudienceGenerationJobResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the audience generation job.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetAudienceGenerationJobResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetAudienceGenerationJobResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetAudienceGenerationJobResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the audience generation job.</p>
      */
-    inline const AudienceGenerationJobStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AudienceGenerationJobStatus& value) { m_status = value; }
-    inline void SetStatus(AudienceGenerationJobStatus&& value) { m_status = std::move(value); }
-    inline GetAudienceGenerationJobResult& WithStatus(const AudienceGenerationJobStatus& value) { SetStatus(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithStatus(AudienceGenerationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline AudienceGenerationJobStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AudienceGenerationJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetAudienceGenerationJobResult& WithStatus(AudienceGenerationJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the status of the audience generation job.</p>
      */
-    inline const StatusDetails& GetStatusDetails() const{ return m_statusDetails; }
-    inline void SetStatusDetails(const StatusDetails& value) { m_statusDetails = value; }
-    inline void SetStatusDetails(StatusDetails&& value) { m_statusDetails = std::move(value); }
-    inline GetAudienceGenerationJobResult& WithStatusDetails(const StatusDetails& value) { SetStatusDetails(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithStatusDetails(StatusDetails&& value) { SetStatusDetails(std::move(value)); return *this;}
+    inline const StatusDetails& GetStatusDetails() const { return m_statusDetails; }
+    template<typename StatusDetailsT = StatusDetails>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = StatusDetails>
+    GetAudienceGenerationJobResult& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,13 +118,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the configured audience model used for this
      * audience generation job.</p>
      */
-    inline const Aws::String& GetConfiguredAudienceModelArn() const{ return m_configuredAudienceModelArn; }
-    inline void SetConfiguredAudienceModelArn(const Aws::String& value) { m_configuredAudienceModelArn = value; }
-    inline void SetConfiguredAudienceModelArn(Aws::String&& value) { m_configuredAudienceModelArn = std::move(value); }
-    inline void SetConfiguredAudienceModelArn(const char* value) { m_configuredAudienceModelArn.assign(value); }
-    inline GetAudienceGenerationJobResult& WithConfiguredAudienceModelArn(const Aws::String& value) { SetConfiguredAudienceModelArn(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithConfiguredAudienceModelArn(Aws::String&& value) { SetConfiguredAudienceModelArn(std::move(value)); return *this;}
-    inline GetAudienceGenerationJobResult& WithConfiguredAudienceModelArn(const char* value) { SetConfiguredAudienceModelArn(value); return *this;}
+    inline const Aws::String& GetConfiguredAudienceModelArn() const { return m_configuredAudienceModelArn; }
+    template<typename ConfiguredAudienceModelArnT = Aws::String>
+    void SetConfiguredAudienceModelArn(ConfiguredAudienceModelArnT&& value) { m_configuredAudienceModelArnHasBeenSet = true; m_configuredAudienceModelArn = std::forward<ConfiguredAudienceModelArnT>(value); }
+    template<typename ConfiguredAudienceModelArnT = Aws::String>
+    GetAudienceGenerationJobResult& WithConfiguredAudienceModelArn(ConfiguredAudienceModelArnT&& value) { SetConfiguredAudienceModelArn(std::forward<ConfiguredAudienceModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,11 +131,11 @@ namespace Model
      * will be null if the account calling the API is the account that started this
      * audience generation job. </p>
      */
-    inline const AudienceGenerationJobDataSource& GetSeedAudience() const{ return m_seedAudience; }
-    inline void SetSeedAudience(const AudienceGenerationJobDataSource& value) { m_seedAudience = value; }
-    inline void SetSeedAudience(AudienceGenerationJobDataSource&& value) { m_seedAudience = std::move(value); }
-    inline GetAudienceGenerationJobResult& WithSeedAudience(const AudienceGenerationJobDataSource& value) { SetSeedAudience(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithSeedAudience(AudienceGenerationJobDataSource&& value) { SetSeedAudience(std::move(value)); return *this;}
+    inline const AudienceGenerationJobDataSource& GetSeedAudience() const { return m_seedAudience; }
+    template<typename SeedAudienceT = AudienceGenerationJobDataSource>
+    void SetSeedAudience(SeedAudienceT&& value) { m_seedAudienceHasBeenSet = true; m_seedAudience = std::forward<SeedAudienceT>(value); }
+    template<typename SeedAudienceT = AudienceGenerationJobDataSource>
+    GetAudienceGenerationJobResult& WithSeedAudience(SeedAudienceT&& value) { SetSeedAudience(std::forward<SeedAudienceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,8 +147,8 @@ namespace Model
      * recipient of the audience will know that the first <code>minimumSeedSize</code>
      * count of users are from the seed.</p>
      */
-    inline bool GetIncludeSeedInOutput() const{ return m_includeSeedInOutput; }
-    inline void SetIncludeSeedInOutput(bool value) { m_includeSeedInOutput = value; }
+    inline bool GetIncludeSeedInOutput() const { return m_includeSeedInOutput; }
+    inline void SetIncludeSeedInOutput(bool value) { m_includeSeedInOutputHasBeenSet = true; m_includeSeedInOutput = value; }
     inline GetAudienceGenerationJobResult& WithIncludeSeedInOutput(bool value) { SetIncludeSeedInOutput(value); return *this;}
     ///@}
 
@@ -167,13 +157,11 @@ namespace Model
      * <p>The identifier of the collaboration that this audience generation job is
      * associated with.</p>
      */
-    inline const Aws::String& GetCollaborationId() const{ return m_collaborationId; }
-    inline void SetCollaborationId(const Aws::String& value) { m_collaborationId = value; }
-    inline void SetCollaborationId(Aws::String&& value) { m_collaborationId = std::move(value); }
-    inline void SetCollaborationId(const char* value) { m_collaborationId.assign(value); }
-    inline GetAudienceGenerationJobResult& WithCollaborationId(const Aws::String& value) { SetCollaborationId(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithCollaborationId(Aws::String&& value) { SetCollaborationId(std::move(value)); return *this;}
-    inline GetAudienceGenerationJobResult& WithCollaborationId(const char* value) { SetCollaborationId(value); return *this;}
+    inline const Aws::String& GetCollaborationId() const { return m_collaborationId; }
+    template<typename CollaborationIdT = Aws::String>
+    void SetCollaborationId(CollaborationIdT&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::forward<CollaborationIdT>(value); }
+    template<typename CollaborationIdT = Aws::String>
+    GetAudienceGenerationJobResult& WithCollaborationId(CollaborationIdT&& value) { SetCollaborationId(std::forward<CollaborationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,42 +169,37 @@ namespace Model
      * <p>The relevance scores for different audience sizes and the recall score of the
      * generated audience. </p>
      */
-    inline const AudienceQualityMetrics& GetMetrics() const{ return m_metrics; }
-    inline void SetMetrics(const AudienceQualityMetrics& value) { m_metrics = value; }
-    inline void SetMetrics(AudienceQualityMetrics&& value) { m_metrics = std::move(value); }
-    inline GetAudienceGenerationJobResult& WithMetrics(const AudienceQualityMetrics& value) { SetMetrics(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithMetrics(AudienceQualityMetrics&& value) { SetMetrics(std::move(value)); return *this;}
+    inline const AudienceQualityMetrics& GetMetrics() const { return m_metrics; }
+    template<typename MetricsT = AudienceQualityMetrics>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = AudienceQualityMetrics>
+    GetAudienceGenerationJobResult& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS account that started this audience generation job.</p>
      */
-    inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
-    inline void SetStartedBy(const Aws::String& value) { m_startedBy = value; }
-    inline void SetStartedBy(Aws::String&& value) { m_startedBy = std::move(value); }
-    inline void SetStartedBy(const char* value) { m_startedBy.assign(value); }
-    inline GetAudienceGenerationJobResult& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
-    inline GetAudienceGenerationJobResult& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
+    inline const Aws::String& GetStartedBy() const { return m_startedBy; }
+    template<typename StartedByT = Aws::String>
+    void SetStartedBy(StartedByT&& value) { m_startedByHasBeenSet = true; m_startedBy = std::forward<StartedByT>(value); }
+    template<typename StartedByT = Aws::String>
+    GetAudienceGenerationJobResult& WithStartedBy(StartedByT&& value) { SetStartedBy(std::forward<StartedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags that are associated to this audience generation job.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetAudienceGenerationJobResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetAudienceGenerationJobResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetAudienceGenerationJobResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetAudienceGenerationJobResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetAudienceGenerationJobResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetAudienceGenerationJobResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetAudienceGenerationJobResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetAudienceGenerationJobResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetAudienceGenerationJobResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetAudienceGenerationJobResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -224,58 +207,70 @@ namespace Model
      * <p>The unique identifier of the protected query for this audience generation
      * job.</p>
      */
-    inline const Aws::String& GetProtectedQueryIdentifier() const{ return m_protectedQueryIdentifier; }
-    inline void SetProtectedQueryIdentifier(const Aws::String& value) { m_protectedQueryIdentifier = value; }
-    inline void SetProtectedQueryIdentifier(Aws::String&& value) { m_protectedQueryIdentifier = std::move(value); }
-    inline void SetProtectedQueryIdentifier(const char* value) { m_protectedQueryIdentifier.assign(value); }
-    inline GetAudienceGenerationJobResult& WithProtectedQueryIdentifier(const Aws::String& value) { SetProtectedQueryIdentifier(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithProtectedQueryIdentifier(Aws::String&& value) { SetProtectedQueryIdentifier(std::move(value)); return *this;}
-    inline GetAudienceGenerationJobResult& WithProtectedQueryIdentifier(const char* value) { SetProtectedQueryIdentifier(value); return *this;}
+    inline const Aws::String& GetProtectedQueryIdentifier() const { return m_protectedQueryIdentifier; }
+    template<typename ProtectedQueryIdentifierT = Aws::String>
+    void SetProtectedQueryIdentifier(ProtectedQueryIdentifierT&& value) { m_protectedQueryIdentifierHasBeenSet = true; m_protectedQueryIdentifier = std::forward<ProtectedQueryIdentifierT>(value); }
+    template<typename ProtectedQueryIdentifierT = Aws::String>
+    GetAudienceGenerationJobResult& WithProtectedQueryIdentifier(ProtectedQueryIdentifierT&& value) { SetProtectedQueryIdentifier(std::forward<ProtectedQueryIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAudienceGenerationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAudienceGenerationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAudienceGenerationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAudienceGenerationJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::String m_audienceGenerationJobArn;
+    bool m_audienceGenerationJobArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    AudienceGenerationJobStatus m_status;
+    AudienceGenerationJobStatus m_status{AudienceGenerationJobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     StatusDetails m_statusDetails;
+    bool m_statusDetailsHasBeenSet = false;
 
     Aws::String m_configuredAudienceModelArn;
+    bool m_configuredAudienceModelArnHasBeenSet = false;
 
     AudienceGenerationJobDataSource m_seedAudience;
+    bool m_seedAudienceHasBeenSet = false;
 
-    bool m_includeSeedInOutput;
+    bool m_includeSeedInOutput{false};
+    bool m_includeSeedInOutputHasBeenSet = false;
 
     Aws::String m_collaborationId;
+    bool m_collaborationIdHasBeenSet = false;
 
     AudienceQualityMetrics m_metrics;
+    bool m_metricsHasBeenSet = false;
 
     Aws::String m_startedBy;
+    bool m_startedByHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_protectedQueryIdentifier;
+    bool m_protectedQueryIdentifierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

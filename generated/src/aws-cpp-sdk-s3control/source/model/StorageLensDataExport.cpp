@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-StorageLensDataExport::StorageLensDataExport() : 
-    m_s3BucketDestinationHasBeenSet(false),
-    m_cloudWatchMetricsHasBeenSet(false)
-{
-}
-
 StorageLensDataExport::StorageLensDataExport(const XmlNode& xmlNode)
-  : StorageLensDataExport()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ StorageLensDataExport& StorageLensDataExport::operator =(const XmlNode& xmlNode)
     {
       m_s3BucketDestination = s3BucketDestinationNode;
       m_s3BucketDestinationHasBeenSet = true;
+       m_s3BucketDestinationHasBeenSet = true;
     }
     XmlNode cloudWatchMetricsNode = resultNode.FirstChild("CloudWatchMetrics");
     if(!cloudWatchMetricsNode.IsNull())
     {
       m_cloudWatchMetrics = cloudWatchMetricsNode;
       m_cloudWatchMetricsHasBeenSet = true;
+       m_cloudWatchMetricsHasBeenSet = true;
     }
   }
 

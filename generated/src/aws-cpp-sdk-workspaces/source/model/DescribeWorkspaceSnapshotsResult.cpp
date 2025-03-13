@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeWorkspaceSnapshotsResult::DescribeWorkspaceSnapshotsResult()
-{
-}
-
 DescribeWorkspaceSnapshotsResult::DescribeWorkspaceSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DescribeWorkspaceSnapshotsResult& DescribeWorkspaceSnapshotsResult::operator =(c
     {
       m_rebuildSnapshots.push_back(rebuildSnapshotsJsonList[rebuildSnapshotsIndex].AsObject());
     }
+    m_rebuildSnapshotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreSnapshots"))
   {
     Aws::Utils::Array<JsonView> restoreSnapshotsJsonList = jsonValue.GetArray("RestoreSnapshots");
@@ -45,14 +41,15 @@ DescribeWorkspaceSnapshotsResult& DescribeWorkspaceSnapshotsResult::operator =(c
     {
       m_restoreSnapshots.push_back(restoreSnapshotsJsonList[restoreSnapshotsIndex].AsObject());
     }
+    m_restoreSnapshotsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

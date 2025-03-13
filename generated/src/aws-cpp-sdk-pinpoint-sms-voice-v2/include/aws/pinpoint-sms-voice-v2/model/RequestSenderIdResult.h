@@ -30,7 +30,7 @@ namespace Model
   class RequestSenderIdResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API RequestSenderIdResult();
+    AWS_PINPOINTSMSVOICEV2_API RequestSenderIdResult() = default;
     AWS_PINPOINTSMSVOICEV2_API RequestSenderIdResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API RequestSenderIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,26 +39,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
      */
-    inline const Aws::String& GetSenderIdArn() const{ return m_senderIdArn; }
-    inline void SetSenderIdArn(const Aws::String& value) { m_senderIdArn = value; }
-    inline void SetSenderIdArn(Aws::String&& value) { m_senderIdArn = std::move(value); }
-    inline void SetSenderIdArn(const char* value) { m_senderIdArn.assign(value); }
-    inline RequestSenderIdResult& WithSenderIdArn(const Aws::String& value) { SetSenderIdArn(value); return *this;}
-    inline RequestSenderIdResult& WithSenderIdArn(Aws::String&& value) { SetSenderIdArn(std::move(value)); return *this;}
-    inline RequestSenderIdResult& WithSenderIdArn(const char* value) { SetSenderIdArn(value); return *this;}
+    inline const Aws::String& GetSenderIdArn() const { return m_senderIdArn; }
+    template<typename SenderIdArnT = Aws::String>
+    void SetSenderIdArn(SenderIdArnT&& value) { m_senderIdArnHasBeenSet = true; m_senderIdArn = std::forward<SenderIdArnT>(value); }
+    template<typename SenderIdArnT = Aws::String>
+    RequestSenderIdResult& WithSenderIdArn(SenderIdArnT&& value) { SetSenderIdArn(std::forward<SenderIdArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sender ID that was requested.</p>
      */
-    inline const Aws::String& GetSenderId() const{ return m_senderId; }
-    inline void SetSenderId(const Aws::String& value) { m_senderId = value; }
-    inline void SetSenderId(Aws::String&& value) { m_senderId = std::move(value); }
-    inline void SetSenderId(const char* value) { m_senderId.assign(value); }
-    inline RequestSenderIdResult& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
-    inline RequestSenderIdResult& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
-    inline RequestSenderIdResult& WithSenderId(const char* value) { SetSenderId(value); return *this;}
+    inline const Aws::String& GetSenderId() const { return m_senderId; }
+    template<typename SenderIdT = Aws::String>
+    void SetSenderId(SenderIdT&& value) { m_senderIdHasBeenSet = true; m_senderId = std::forward<SenderIdT>(value); }
+    template<typename SenderIdT = Aws::String>
+    RequestSenderIdResult& WithSenderId(SenderIdT&& value) { SetSenderId(std::forward<SenderIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,13 +62,11 @@ namespace Model
      * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
      * region.</p>
      */
-    inline const Aws::String& GetIsoCountryCode() const{ return m_isoCountryCode; }
-    inline void SetIsoCountryCode(const Aws::String& value) { m_isoCountryCode = value; }
-    inline void SetIsoCountryCode(Aws::String&& value) { m_isoCountryCode = std::move(value); }
-    inline void SetIsoCountryCode(const char* value) { m_isoCountryCode.assign(value); }
-    inline RequestSenderIdResult& WithIsoCountryCode(const Aws::String& value) { SetIsoCountryCode(value); return *this;}
-    inline RequestSenderIdResult& WithIsoCountryCode(Aws::String&& value) { SetIsoCountryCode(std::move(value)); return *this;}
-    inline RequestSenderIdResult& WithIsoCountryCode(const char* value) { SetIsoCountryCode(value); return *this;}
+    inline const Aws::String& GetIsoCountryCode() const { return m_isoCountryCode; }
+    template<typename IsoCountryCodeT = Aws::String>
+    void SetIsoCountryCode(IsoCountryCodeT&& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = std::forward<IsoCountryCodeT>(value); }
+    template<typename IsoCountryCodeT = Aws::String>
+    RequestSenderIdResult& WithIsoCountryCode(IsoCountryCodeT&& value) { SetIsoCountryCode(std::forward<IsoCountryCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,26 +75,23 @@ namespace Model
      * critical or time-sensitive and PROMOTIONAL for messages that aren't critical or
      * time-sensitive.</p>
      */
-    inline const Aws::Vector<MessageType>& GetMessageTypes() const{ return m_messageTypes; }
-    inline void SetMessageTypes(const Aws::Vector<MessageType>& value) { m_messageTypes = value; }
-    inline void SetMessageTypes(Aws::Vector<MessageType>&& value) { m_messageTypes = std::move(value); }
-    inline RequestSenderIdResult& WithMessageTypes(const Aws::Vector<MessageType>& value) { SetMessageTypes(value); return *this;}
-    inline RequestSenderIdResult& WithMessageTypes(Aws::Vector<MessageType>&& value) { SetMessageTypes(std::move(value)); return *this;}
-    inline RequestSenderIdResult& AddMessageTypes(const MessageType& value) { m_messageTypes.push_back(value); return *this; }
-    inline RequestSenderIdResult& AddMessageTypes(MessageType&& value) { m_messageTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MessageType>& GetMessageTypes() const { return m_messageTypes; }
+    template<typename MessageTypesT = Aws::Vector<MessageType>>
+    void SetMessageTypes(MessageTypesT&& value) { m_messageTypesHasBeenSet = true; m_messageTypes = std::forward<MessageTypesT>(value); }
+    template<typename MessageTypesT = Aws::Vector<MessageType>>
+    RequestSenderIdResult& WithMessageTypes(MessageTypesT&& value) { SetMessageTypes(std::forward<MessageTypesT>(value)); return *this;}
+    inline RequestSenderIdResult& AddMessageTypes(MessageType value) { m_messageTypesHasBeenSet = true; m_messageTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The monthly price, in US dollars, to lease the sender ID.</p>
      */
-    inline const Aws::String& GetMonthlyLeasingPrice() const{ return m_monthlyLeasingPrice; }
-    inline void SetMonthlyLeasingPrice(const Aws::String& value) { m_monthlyLeasingPrice = value; }
-    inline void SetMonthlyLeasingPrice(Aws::String&& value) { m_monthlyLeasingPrice = std::move(value); }
-    inline void SetMonthlyLeasingPrice(const char* value) { m_monthlyLeasingPrice.assign(value); }
-    inline RequestSenderIdResult& WithMonthlyLeasingPrice(const Aws::String& value) { SetMonthlyLeasingPrice(value); return *this;}
-    inline RequestSenderIdResult& WithMonthlyLeasingPrice(Aws::String&& value) { SetMonthlyLeasingPrice(std::move(value)); return *this;}
-    inline RequestSenderIdResult& WithMonthlyLeasingPrice(const char* value) { SetMonthlyLeasingPrice(value); return *this;}
+    inline const Aws::String& GetMonthlyLeasingPrice() const { return m_monthlyLeasingPrice; }
+    template<typename MonthlyLeasingPriceT = Aws::String>
+    void SetMonthlyLeasingPrice(MonthlyLeasingPriceT&& value) { m_monthlyLeasingPriceHasBeenSet = true; m_monthlyLeasingPrice = std::forward<MonthlyLeasingPriceT>(value); }
+    template<typename MonthlyLeasingPriceT = Aws::String>
+    RequestSenderIdResult& WithMonthlyLeasingPrice(MonthlyLeasingPriceT&& value) { SetMonthlyLeasingPrice(std::forward<MonthlyLeasingPriceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,8 +99,8 @@ namespace Model
      * <p>By default this is set to false. When set to true the sender ID can't be
      * deleted.</p>
      */
-    inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
-    inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabled = value; }
+    inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
+    inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
     inline RequestSenderIdResult& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
     ///@}
 
@@ -117,8 +108,8 @@ namespace Model
     /**
      * <p>True if the sender ID is registered.</p>
      */
-    inline bool GetRegistered() const{ return m_registered; }
-    inline void SetRegistered(bool value) { m_registered = value; }
+    inline bool GetRegistered() const { return m_registered; }
+    inline void SetRegistered(bool value) { m_registeredHasBeenSet = true; m_registered = value; }
     inline RequestSenderIdResult& WithRegistered(bool value) { SetRegistered(value); return *this;}
     ///@}
 
@@ -126,44 +117,51 @@ namespace Model
     /**
      * <p>An array of tags (key and value pairs) to associate with the sender ID.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline RequestSenderIdResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline RequestSenderIdResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline RequestSenderIdResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline RequestSenderIdResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    RequestSenderIdResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    RequestSenderIdResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RequestSenderIdResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RequestSenderIdResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RequestSenderIdResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RequestSenderIdResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_senderIdArn;
+    bool m_senderIdArnHasBeenSet = false;
 
     Aws::String m_senderId;
+    bool m_senderIdHasBeenSet = false;
 
     Aws::String m_isoCountryCode;
+    bool m_isoCountryCodeHasBeenSet = false;
 
     Aws::Vector<MessageType> m_messageTypes;
+    bool m_messageTypesHasBeenSet = false;
 
     Aws::String m_monthlyLeasingPrice;
+    bool m_monthlyLeasingPriceHasBeenSet = false;
 
-    bool m_deletionProtectionEnabled;
+    bool m_deletionProtectionEnabled{false};
+    bool m_deletionProtectionEnabledHasBeenSet = false;
 
-    bool m_registered;
+    bool m_registered{false};
+    bool m_registeredHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class AuthorizerDescription
   {
   public:
-    AWS_IOT_API AuthorizerDescription();
+    AWS_IOT_API AuthorizerDescription() = default;
     AWS_IOT_API AuthorizerDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AuthorizerDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,56 +44,48 @@ namespace Model
     /**
      * <p>The authorizer name.</p>
      */
-    inline const Aws::String& GetAuthorizerName() const{ return m_authorizerName; }
+    inline const Aws::String& GetAuthorizerName() const { return m_authorizerName; }
     inline bool AuthorizerNameHasBeenSet() const { return m_authorizerNameHasBeenSet; }
-    inline void SetAuthorizerName(const Aws::String& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = value; }
-    inline void SetAuthorizerName(Aws::String&& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = std::move(value); }
-    inline void SetAuthorizerName(const char* value) { m_authorizerNameHasBeenSet = true; m_authorizerName.assign(value); }
-    inline AuthorizerDescription& WithAuthorizerName(const Aws::String& value) { SetAuthorizerName(value); return *this;}
-    inline AuthorizerDescription& WithAuthorizerName(Aws::String&& value) { SetAuthorizerName(std::move(value)); return *this;}
-    inline AuthorizerDescription& WithAuthorizerName(const char* value) { SetAuthorizerName(value); return *this;}
+    template<typename AuthorizerNameT = Aws::String>
+    void SetAuthorizerName(AuthorizerNameT&& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = std::forward<AuthorizerNameT>(value); }
+    template<typename AuthorizerNameT = Aws::String>
+    AuthorizerDescription& WithAuthorizerName(AuthorizerNameT&& value) { SetAuthorizerName(std::forward<AuthorizerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authorizer ARN.</p>
      */
-    inline const Aws::String& GetAuthorizerArn() const{ return m_authorizerArn; }
+    inline const Aws::String& GetAuthorizerArn() const { return m_authorizerArn; }
     inline bool AuthorizerArnHasBeenSet() const { return m_authorizerArnHasBeenSet; }
-    inline void SetAuthorizerArn(const Aws::String& value) { m_authorizerArnHasBeenSet = true; m_authorizerArn = value; }
-    inline void SetAuthorizerArn(Aws::String&& value) { m_authorizerArnHasBeenSet = true; m_authorizerArn = std::move(value); }
-    inline void SetAuthorizerArn(const char* value) { m_authorizerArnHasBeenSet = true; m_authorizerArn.assign(value); }
-    inline AuthorizerDescription& WithAuthorizerArn(const Aws::String& value) { SetAuthorizerArn(value); return *this;}
-    inline AuthorizerDescription& WithAuthorizerArn(Aws::String&& value) { SetAuthorizerArn(std::move(value)); return *this;}
-    inline AuthorizerDescription& WithAuthorizerArn(const char* value) { SetAuthorizerArn(value); return *this;}
+    template<typename AuthorizerArnT = Aws::String>
+    void SetAuthorizerArn(AuthorizerArnT&& value) { m_authorizerArnHasBeenSet = true; m_authorizerArn = std::forward<AuthorizerArnT>(value); }
+    template<typename AuthorizerArnT = Aws::String>
+    AuthorizerDescription& WithAuthorizerArn(AuthorizerArnT&& value) { SetAuthorizerArn(std::forward<AuthorizerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authorizer's Lambda function ARN.</p>
      */
-    inline const Aws::String& GetAuthorizerFunctionArn() const{ return m_authorizerFunctionArn; }
+    inline const Aws::String& GetAuthorizerFunctionArn() const { return m_authorizerFunctionArn; }
     inline bool AuthorizerFunctionArnHasBeenSet() const { return m_authorizerFunctionArnHasBeenSet; }
-    inline void SetAuthorizerFunctionArn(const Aws::String& value) { m_authorizerFunctionArnHasBeenSet = true; m_authorizerFunctionArn = value; }
-    inline void SetAuthorizerFunctionArn(Aws::String&& value) { m_authorizerFunctionArnHasBeenSet = true; m_authorizerFunctionArn = std::move(value); }
-    inline void SetAuthorizerFunctionArn(const char* value) { m_authorizerFunctionArnHasBeenSet = true; m_authorizerFunctionArn.assign(value); }
-    inline AuthorizerDescription& WithAuthorizerFunctionArn(const Aws::String& value) { SetAuthorizerFunctionArn(value); return *this;}
-    inline AuthorizerDescription& WithAuthorizerFunctionArn(Aws::String&& value) { SetAuthorizerFunctionArn(std::move(value)); return *this;}
-    inline AuthorizerDescription& WithAuthorizerFunctionArn(const char* value) { SetAuthorizerFunctionArn(value); return *this;}
+    template<typename AuthorizerFunctionArnT = Aws::String>
+    void SetAuthorizerFunctionArn(AuthorizerFunctionArnT&& value) { m_authorizerFunctionArnHasBeenSet = true; m_authorizerFunctionArn = std::forward<AuthorizerFunctionArnT>(value); }
+    template<typename AuthorizerFunctionArnT = Aws::String>
+    AuthorizerDescription& WithAuthorizerFunctionArn(AuthorizerFunctionArnT&& value) { SetAuthorizerFunctionArn(std::forward<AuthorizerFunctionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key used to extract the token from the HTTP headers.</p>
      */
-    inline const Aws::String& GetTokenKeyName() const{ return m_tokenKeyName; }
+    inline const Aws::String& GetTokenKeyName() const { return m_tokenKeyName; }
     inline bool TokenKeyNameHasBeenSet() const { return m_tokenKeyNameHasBeenSet; }
-    inline void SetTokenKeyName(const Aws::String& value) { m_tokenKeyNameHasBeenSet = true; m_tokenKeyName = value; }
-    inline void SetTokenKeyName(Aws::String&& value) { m_tokenKeyNameHasBeenSet = true; m_tokenKeyName = std::move(value); }
-    inline void SetTokenKeyName(const char* value) { m_tokenKeyNameHasBeenSet = true; m_tokenKeyName.assign(value); }
-    inline AuthorizerDescription& WithTokenKeyName(const Aws::String& value) { SetTokenKeyName(value); return *this;}
-    inline AuthorizerDescription& WithTokenKeyName(Aws::String&& value) { SetTokenKeyName(std::move(value)); return *this;}
-    inline AuthorizerDescription& WithTokenKeyName(const char* value) { SetTokenKeyName(value); return *this;}
+    template<typename TokenKeyNameT = Aws::String>
+    void SetTokenKeyName(TokenKeyNameT&& value) { m_tokenKeyNameHasBeenSet = true; m_tokenKeyName = std::forward<TokenKeyNameT>(value); }
+    template<typename TokenKeyNameT = Aws::String>
+    AuthorizerDescription& WithTokenKeyName(TokenKeyNameT&& value) { SetTokenKeyName(std::forward<TokenKeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,55 +93,50 @@ namespace Model
      * <p>The public keys used to validate the token signature returned by your custom
      * authentication service.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTokenSigningPublicKeys() const{ return m_tokenSigningPublicKeys; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTokenSigningPublicKeys() const { return m_tokenSigningPublicKeys; }
     inline bool TokenSigningPublicKeysHasBeenSet() const { return m_tokenSigningPublicKeysHasBeenSet; }
-    inline void SetTokenSigningPublicKeys(const Aws::Map<Aws::String, Aws::String>& value) { m_tokenSigningPublicKeysHasBeenSet = true; m_tokenSigningPublicKeys = value; }
-    inline void SetTokenSigningPublicKeys(Aws::Map<Aws::String, Aws::String>&& value) { m_tokenSigningPublicKeysHasBeenSet = true; m_tokenSigningPublicKeys = std::move(value); }
-    inline AuthorizerDescription& WithTokenSigningPublicKeys(const Aws::Map<Aws::String, Aws::String>& value) { SetTokenSigningPublicKeys(value); return *this;}
-    inline AuthorizerDescription& WithTokenSigningPublicKeys(Aws::Map<Aws::String, Aws::String>&& value) { SetTokenSigningPublicKeys(std::move(value)); return *this;}
-    inline AuthorizerDescription& AddTokenSigningPublicKeys(const Aws::String& key, const Aws::String& value) { m_tokenSigningPublicKeysHasBeenSet = true; m_tokenSigningPublicKeys.emplace(key, value); return *this; }
-    inline AuthorizerDescription& AddTokenSigningPublicKeys(Aws::String&& key, const Aws::String& value) { m_tokenSigningPublicKeysHasBeenSet = true; m_tokenSigningPublicKeys.emplace(std::move(key), value); return *this; }
-    inline AuthorizerDescription& AddTokenSigningPublicKeys(const Aws::String& key, Aws::String&& value) { m_tokenSigningPublicKeysHasBeenSet = true; m_tokenSigningPublicKeys.emplace(key, std::move(value)); return *this; }
-    inline AuthorizerDescription& AddTokenSigningPublicKeys(Aws::String&& key, Aws::String&& value) { m_tokenSigningPublicKeysHasBeenSet = true; m_tokenSigningPublicKeys.emplace(std::move(key), std::move(value)); return *this; }
-    inline AuthorizerDescription& AddTokenSigningPublicKeys(const char* key, Aws::String&& value) { m_tokenSigningPublicKeysHasBeenSet = true; m_tokenSigningPublicKeys.emplace(key, std::move(value)); return *this; }
-    inline AuthorizerDescription& AddTokenSigningPublicKeys(Aws::String&& key, const char* value) { m_tokenSigningPublicKeysHasBeenSet = true; m_tokenSigningPublicKeys.emplace(std::move(key), value); return *this; }
-    inline AuthorizerDescription& AddTokenSigningPublicKeys(const char* key, const char* value) { m_tokenSigningPublicKeysHasBeenSet = true; m_tokenSigningPublicKeys.emplace(key, value); return *this; }
+    template<typename TokenSigningPublicKeysT = Aws::Map<Aws::String, Aws::String>>
+    void SetTokenSigningPublicKeys(TokenSigningPublicKeysT&& value) { m_tokenSigningPublicKeysHasBeenSet = true; m_tokenSigningPublicKeys = std::forward<TokenSigningPublicKeysT>(value); }
+    template<typename TokenSigningPublicKeysT = Aws::Map<Aws::String, Aws::String>>
+    AuthorizerDescription& WithTokenSigningPublicKeys(TokenSigningPublicKeysT&& value) { SetTokenSigningPublicKeys(std::forward<TokenSigningPublicKeysT>(value)); return *this;}
+    template<typename TokenSigningPublicKeysKeyT = Aws::String, typename TokenSigningPublicKeysValueT = Aws::String>
+    AuthorizerDescription& AddTokenSigningPublicKeys(TokenSigningPublicKeysKeyT&& key, TokenSigningPublicKeysValueT&& value) {
+      m_tokenSigningPublicKeysHasBeenSet = true; m_tokenSigningPublicKeys.emplace(std::forward<TokenSigningPublicKeysKeyT>(key), std::forward<TokenSigningPublicKeysValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The status of the authorizer.</p>
      */
-    inline const AuthorizerStatus& GetStatus() const{ return m_status; }
+    inline AuthorizerStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AuthorizerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AuthorizerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AuthorizerDescription& WithStatus(const AuthorizerStatus& value) { SetStatus(value); return *this;}
-    inline AuthorizerDescription& WithStatus(AuthorizerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AuthorizerStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AuthorizerDescription& WithStatus(AuthorizerStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The UNIX timestamp of when the authorizer was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline AuthorizerDescription& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline AuthorizerDescription& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    AuthorizerDescription& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The UNIX timestamp of when the authorizer was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline AuthorizerDescription& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline AuthorizerDescription& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    AuthorizerDescription& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,7 +144,7 @@ namespace Model
      * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
-    inline bool GetSigningDisabled() const{ return m_signingDisabled; }
+    inline bool GetSigningDisabled() const { return m_signingDisabled; }
     inline bool SigningDisabledHasBeenSet() const { return m_signingDisabledHasBeenSet; }
     inline void SetSigningDisabled(bool value) { m_signingDisabledHasBeenSet = true; m_signingDisabled = value; }
     inline AuthorizerDescription& WithSigningDisabled(bool value) { SetSigningDisabled(value); return *this;}
@@ -169,7 +156,7 @@ namespace Model
      * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
      * result is used while the device reuses the same HTTP connection.</p>
      */
-    inline bool GetEnableCachingForHttp() const{ return m_enableCachingForHttp; }
+    inline bool GetEnableCachingForHttp() const { return m_enableCachingForHttp; }
     inline bool EnableCachingForHttpHasBeenSet() const { return m_enableCachingForHttpHasBeenSet; }
     inline void SetEnableCachingForHttp(bool value) { m_enableCachingForHttpHasBeenSet = true; m_enableCachingForHttp = value; }
     inline AuthorizerDescription& WithEnableCachingForHttp(bool value) { SetEnableCachingForHttp(value); return *this;}
@@ -191,19 +178,19 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tokenSigningPublicKeys;
     bool m_tokenSigningPublicKeysHasBeenSet = false;
 
-    AuthorizerStatus m_status;
+    AuthorizerStatus m_status{AuthorizerStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
     bool m_lastModifiedDateHasBeenSet = false;
 
-    bool m_signingDisabled;
+    bool m_signingDisabled{false};
     bool m_signingDisabledHasBeenSet = false;
 
-    bool m_enableCachingForHttp;
+    bool m_enableCachingForHttp{false};
     bool m_enableCachingForHttpHasBeenSet = false;
   };
 

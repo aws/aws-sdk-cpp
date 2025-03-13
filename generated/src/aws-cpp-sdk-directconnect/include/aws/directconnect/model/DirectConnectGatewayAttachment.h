@@ -34,7 +34,7 @@ namespace Model
   class DirectConnectGatewayAttachment
   {
   public:
-    AWS_DIRECTCONNECT_API DirectConnectGatewayAttachment();
+    AWS_DIRECTCONNECT_API DirectConnectGatewayAttachment() = default;
     AWS_DIRECTCONNECT_API DirectConnectGatewayAttachment(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API DirectConnectGatewayAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The ID of the Direct Connect gateway.</p>
      */
-    inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
+    inline const Aws::String& GetDirectConnectGatewayId() const { return m_directConnectGatewayId; }
     inline bool DirectConnectGatewayIdHasBeenSet() const { return m_directConnectGatewayIdHasBeenSet; }
-    inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
-    inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
-    inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
-    inline DirectConnectGatewayAttachment& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
-    inline DirectConnectGatewayAttachment& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
-    inline DirectConnectGatewayAttachment& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
+    template<typename DirectConnectGatewayIdT = Aws::String>
+    void SetDirectConnectGatewayId(DirectConnectGatewayIdT&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::forward<DirectConnectGatewayIdT>(value); }
+    template<typename DirectConnectGatewayIdT = Aws::String>
+    DirectConnectGatewayAttachment& WithDirectConnectGatewayId(DirectConnectGatewayIdT&& value) { SetDirectConnectGatewayId(std::forward<DirectConnectGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the virtual interface.</p>
      */
-    inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
+    inline const Aws::String& GetVirtualInterfaceId() const { return m_virtualInterfaceId; }
     inline bool VirtualInterfaceIdHasBeenSet() const { return m_virtualInterfaceIdHasBeenSet; }
-    inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
-    inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::move(value); }
-    inline void SetVirtualInterfaceId(const char* value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId.assign(value); }
-    inline DirectConnectGatewayAttachment& WithVirtualInterfaceId(const Aws::String& value) { SetVirtualInterfaceId(value); return *this;}
-    inline DirectConnectGatewayAttachment& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
-    inline DirectConnectGatewayAttachment& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
+    template<typename VirtualInterfaceIdT = Aws::String>
+    void SetVirtualInterfaceId(VirtualInterfaceIdT&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::forward<VirtualInterfaceIdT>(value); }
+    template<typename VirtualInterfaceIdT = Aws::String>
+    DirectConnectGatewayAttachment& WithVirtualInterfaceId(VirtualInterfaceIdT&& value) { SetVirtualInterfaceId(std::forward<VirtualInterfaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
-    inline const Aws::String& GetVirtualInterfaceRegion() const{ return m_virtualInterfaceRegion; }
+    inline const Aws::String& GetVirtualInterfaceRegion() const { return m_virtualInterfaceRegion; }
     inline bool VirtualInterfaceRegionHasBeenSet() const { return m_virtualInterfaceRegionHasBeenSet; }
-    inline void SetVirtualInterfaceRegion(const Aws::String& value) { m_virtualInterfaceRegionHasBeenSet = true; m_virtualInterfaceRegion = value; }
-    inline void SetVirtualInterfaceRegion(Aws::String&& value) { m_virtualInterfaceRegionHasBeenSet = true; m_virtualInterfaceRegion = std::move(value); }
-    inline void SetVirtualInterfaceRegion(const char* value) { m_virtualInterfaceRegionHasBeenSet = true; m_virtualInterfaceRegion.assign(value); }
-    inline DirectConnectGatewayAttachment& WithVirtualInterfaceRegion(const Aws::String& value) { SetVirtualInterfaceRegion(value); return *this;}
-    inline DirectConnectGatewayAttachment& WithVirtualInterfaceRegion(Aws::String&& value) { SetVirtualInterfaceRegion(std::move(value)); return *this;}
-    inline DirectConnectGatewayAttachment& WithVirtualInterfaceRegion(const char* value) { SetVirtualInterfaceRegion(value); return *this;}
+    template<typename VirtualInterfaceRegionT = Aws::String>
+    void SetVirtualInterfaceRegion(VirtualInterfaceRegionT&& value) { m_virtualInterfaceRegionHasBeenSet = true; m_virtualInterfaceRegion = std::forward<VirtualInterfaceRegionT>(value); }
+    template<typename VirtualInterfaceRegionT = Aws::String>
+    DirectConnectGatewayAttachment& WithVirtualInterfaceRegion(VirtualInterfaceRegionT&& value) { SetVirtualInterfaceRegion(std::forward<VirtualInterfaceRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +81,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that owns the virtual
      * interface.</p>
      */
-    inline const Aws::String& GetVirtualInterfaceOwnerAccount() const{ return m_virtualInterfaceOwnerAccount; }
+    inline const Aws::String& GetVirtualInterfaceOwnerAccount() const { return m_virtualInterfaceOwnerAccount; }
     inline bool VirtualInterfaceOwnerAccountHasBeenSet() const { return m_virtualInterfaceOwnerAccountHasBeenSet; }
-    inline void SetVirtualInterfaceOwnerAccount(const Aws::String& value) { m_virtualInterfaceOwnerAccountHasBeenSet = true; m_virtualInterfaceOwnerAccount = value; }
-    inline void SetVirtualInterfaceOwnerAccount(Aws::String&& value) { m_virtualInterfaceOwnerAccountHasBeenSet = true; m_virtualInterfaceOwnerAccount = std::move(value); }
-    inline void SetVirtualInterfaceOwnerAccount(const char* value) { m_virtualInterfaceOwnerAccountHasBeenSet = true; m_virtualInterfaceOwnerAccount.assign(value); }
-    inline DirectConnectGatewayAttachment& WithVirtualInterfaceOwnerAccount(const Aws::String& value) { SetVirtualInterfaceOwnerAccount(value); return *this;}
-    inline DirectConnectGatewayAttachment& WithVirtualInterfaceOwnerAccount(Aws::String&& value) { SetVirtualInterfaceOwnerAccount(std::move(value)); return *this;}
-    inline DirectConnectGatewayAttachment& WithVirtualInterfaceOwnerAccount(const char* value) { SetVirtualInterfaceOwnerAccount(value); return *this;}
+    template<typename VirtualInterfaceOwnerAccountT = Aws::String>
+    void SetVirtualInterfaceOwnerAccount(VirtualInterfaceOwnerAccountT&& value) { m_virtualInterfaceOwnerAccountHasBeenSet = true; m_virtualInterfaceOwnerAccount = std::forward<VirtualInterfaceOwnerAccountT>(value); }
+    template<typename VirtualInterfaceOwnerAccountT = Aws::String>
+    DirectConnectGatewayAttachment& WithVirtualInterfaceOwnerAccount(VirtualInterfaceOwnerAccountT&& value) { SetVirtualInterfaceOwnerAccount(std::forward<VirtualInterfaceOwnerAccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,38 +101,32 @@ namespace Model
      * Connect gateway. Traffic flow between the Direct Connect gateway and virtual
      * interface is stopped.</p> </li> </ul>
      */
-    inline const DirectConnectGatewayAttachmentState& GetAttachmentState() const{ return m_attachmentState; }
+    inline DirectConnectGatewayAttachmentState GetAttachmentState() const { return m_attachmentState; }
     inline bool AttachmentStateHasBeenSet() const { return m_attachmentStateHasBeenSet; }
-    inline void SetAttachmentState(const DirectConnectGatewayAttachmentState& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = value; }
-    inline void SetAttachmentState(DirectConnectGatewayAttachmentState&& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = std::move(value); }
-    inline DirectConnectGatewayAttachment& WithAttachmentState(const DirectConnectGatewayAttachmentState& value) { SetAttachmentState(value); return *this;}
-    inline DirectConnectGatewayAttachment& WithAttachmentState(DirectConnectGatewayAttachmentState&& value) { SetAttachmentState(std::move(value)); return *this;}
+    inline void SetAttachmentState(DirectConnectGatewayAttachmentState value) { m_attachmentStateHasBeenSet = true; m_attachmentState = value; }
+    inline DirectConnectGatewayAttachment& WithAttachmentState(DirectConnectGatewayAttachmentState value) { SetAttachmentState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of attachment.</p>
      */
-    inline const DirectConnectGatewayAttachmentType& GetAttachmentType() const{ return m_attachmentType; }
+    inline DirectConnectGatewayAttachmentType GetAttachmentType() const { return m_attachmentType; }
     inline bool AttachmentTypeHasBeenSet() const { return m_attachmentTypeHasBeenSet; }
-    inline void SetAttachmentType(const DirectConnectGatewayAttachmentType& value) { m_attachmentTypeHasBeenSet = true; m_attachmentType = value; }
-    inline void SetAttachmentType(DirectConnectGatewayAttachmentType&& value) { m_attachmentTypeHasBeenSet = true; m_attachmentType = std::move(value); }
-    inline DirectConnectGatewayAttachment& WithAttachmentType(const DirectConnectGatewayAttachmentType& value) { SetAttachmentType(value); return *this;}
-    inline DirectConnectGatewayAttachment& WithAttachmentType(DirectConnectGatewayAttachmentType&& value) { SetAttachmentType(std::move(value)); return *this;}
+    inline void SetAttachmentType(DirectConnectGatewayAttachmentType value) { m_attachmentTypeHasBeenSet = true; m_attachmentType = value; }
+    inline DirectConnectGatewayAttachment& WithAttachmentType(DirectConnectGatewayAttachmentType value) { SetAttachmentType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message if the state of an object failed to advance.</p>
      */
-    inline const Aws::String& GetStateChangeError() const{ return m_stateChangeError; }
+    inline const Aws::String& GetStateChangeError() const { return m_stateChangeError; }
     inline bool StateChangeErrorHasBeenSet() const { return m_stateChangeErrorHasBeenSet; }
-    inline void SetStateChangeError(const Aws::String& value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError = value; }
-    inline void SetStateChangeError(Aws::String&& value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError = std::move(value); }
-    inline void SetStateChangeError(const char* value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError.assign(value); }
-    inline DirectConnectGatewayAttachment& WithStateChangeError(const Aws::String& value) { SetStateChangeError(value); return *this;}
-    inline DirectConnectGatewayAttachment& WithStateChangeError(Aws::String&& value) { SetStateChangeError(std::move(value)); return *this;}
-    inline DirectConnectGatewayAttachment& WithStateChangeError(const char* value) { SetStateChangeError(value); return *this;}
+    template<typename StateChangeErrorT = Aws::String>
+    void SetStateChangeError(StateChangeErrorT&& value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError = std::forward<StateChangeErrorT>(value); }
+    template<typename StateChangeErrorT = Aws::String>
+    DirectConnectGatewayAttachment& WithStateChangeError(StateChangeErrorT&& value) { SetStateChangeError(std::forward<StateChangeErrorT>(value)); return *this;}
     ///@}
   private:
 
@@ -156,10 +142,10 @@ namespace Model
     Aws::String m_virtualInterfaceOwnerAccount;
     bool m_virtualInterfaceOwnerAccountHasBeenSet = false;
 
-    DirectConnectGatewayAttachmentState m_attachmentState;
+    DirectConnectGatewayAttachmentState m_attachmentState{DirectConnectGatewayAttachmentState::NOT_SET};
     bool m_attachmentStateHasBeenSet = false;
 
-    DirectConnectGatewayAttachmentType m_attachmentType;
+    DirectConnectGatewayAttachmentType m_attachmentType{DirectConnectGatewayAttachmentType::NOT_SET};
     bool m_attachmentTypeHasBeenSet = false;
 
     Aws::String m_stateChangeError;

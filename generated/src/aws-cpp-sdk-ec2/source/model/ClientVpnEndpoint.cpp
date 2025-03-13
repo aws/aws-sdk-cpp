@@ -20,41 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClientVpnEndpoint::ClientVpnEndpoint() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_deletionTimeHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_clientCidrBlockHasBeenSet(false),
-    m_dnsServersHasBeenSet(false),
-    m_splitTunnel(false),
-    m_splitTunnelHasBeenSet(false),
-    m_vpnProtocol(VpnProtocol::NOT_SET),
-    m_vpnProtocolHasBeenSet(false),
-    m_transportProtocol(TransportProtocol::NOT_SET),
-    m_transportProtocolHasBeenSet(false),
-    m_vpnPort(0),
-    m_vpnPortHasBeenSet(false),
-    m_serverCertificateArnHasBeenSet(false),
-    m_authenticationOptionsHasBeenSet(false),
-    m_connectionLogOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_selfServicePortalUrlHasBeenSet(false),
-    m_clientConnectOptionsHasBeenSet(false),
-    m_sessionTimeoutHours(0),
-    m_sessionTimeoutHoursHasBeenSet(false),
-    m_clientLoginBannerOptionsHasBeenSet(false),
-    m_disconnectOnSessionTimeout(false),
-    m_disconnectOnSessionTimeoutHasBeenSet(false)
-{
-}
-
 ClientVpnEndpoint::ClientVpnEndpoint(const XmlNode& xmlNode)
-  : ClientVpnEndpoint()
 {
   *this = xmlNode;
 }
@@ -70,162 +36,185 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     {
       m_clientVpnEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(clientVpnEndpointIdNode.GetText());
       m_clientVpnEndpointIdHasBeenSet = true;
+       m_clientVpnEndpointIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText());
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode deletionTimeNode = resultNode.FirstChild("deletionTime");
     if(!deletionTimeNode.IsNull())
     {
       m_deletionTime = Aws::Utils::Xml::DecodeEscapedXmlText(deletionTimeNode.GetText());
       m_deletionTimeHasBeenSet = true;
+       m_deletionTimeHasBeenSet = true;
     }
     XmlNode dnsNameNode = resultNode.FirstChild("dnsName");
     if(!dnsNameNode.IsNull())
     {
       m_dnsName = Aws::Utils::Xml::DecodeEscapedXmlText(dnsNameNode.GetText());
       m_dnsNameHasBeenSet = true;
+       m_dnsNameHasBeenSet = true;
     }
     XmlNode clientCidrBlockNode = resultNode.FirstChild("clientCidrBlock");
     if(!clientCidrBlockNode.IsNull())
     {
       m_clientCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(clientCidrBlockNode.GetText());
       m_clientCidrBlockHasBeenSet = true;
+       m_clientCidrBlockHasBeenSet = true;
     }
     XmlNode dnsServersNode = resultNode.FirstChild("dnsServer");
     if(!dnsServersNode.IsNull())
     {
       XmlNode dnsServersMember = dnsServersNode.FirstChild("item");
+      m_dnsServersHasBeenSet = !dnsServersMember.IsNull();
       while(!dnsServersMember.IsNull())
       {
         m_dnsServers.push_back(dnsServersMember.GetText());
         dnsServersMember = dnsServersMember.NextNode("item");
       }
 
-      m_dnsServersHasBeenSet = true;
+       m_dnsServersHasBeenSet = true;
     }
     XmlNode splitTunnelNode = resultNode.FirstChild("splitTunnel");
     if(!splitTunnelNode.IsNull())
     {
       m_splitTunnel = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(splitTunnelNode.GetText()).c_str()).c_str());
       m_splitTunnelHasBeenSet = true;
+       m_splitTunnelHasBeenSet = true;
     }
     XmlNode vpnProtocolNode = resultNode.FirstChild("vpnProtocol");
     if(!vpnProtocolNode.IsNull())
     {
-      m_vpnProtocol = VpnProtocolMapper::GetVpnProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpnProtocolNode.GetText()).c_str()).c_str());
+      m_vpnProtocol = VpnProtocolMapper::GetVpnProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpnProtocolNode.GetText()).c_str()));
       m_vpnProtocolHasBeenSet = true;
+       m_vpnProtocolHasBeenSet = true;
     }
     XmlNode transportProtocolNode = resultNode.FirstChild("transportProtocol");
     if(!transportProtocolNode.IsNull())
     {
-      m_transportProtocol = TransportProtocolMapper::GetTransportProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transportProtocolNode.GetText()).c_str()).c_str());
+      m_transportProtocol = TransportProtocolMapper::GetTransportProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transportProtocolNode.GetText()).c_str()));
       m_transportProtocolHasBeenSet = true;
+       m_transportProtocolHasBeenSet = true;
     }
     XmlNode vpnPortNode = resultNode.FirstChild("vpnPort");
     if(!vpnPortNode.IsNull())
     {
       m_vpnPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpnPortNode.GetText()).c_str()).c_str());
       m_vpnPortHasBeenSet = true;
+       m_vpnPortHasBeenSet = true;
     }
     XmlNode serverCertificateArnNode = resultNode.FirstChild("serverCertificateArn");
     if(!serverCertificateArnNode.IsNull())
     {
       m_serverCertificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(serverCertificateArnNode.GetText());
       m_serverCertificateArnHasBeenSet = true;
+       m_serverCertificateArnHasBeenSet = true;
     }
     XmlNode authenticationOptionsNode = resultNode.FirstChild("authenticationOptions");
     if(!authenticationOptionsNode.IsNull())
     {
       XmlNode authenticationOptionsMember = authenticationOptionsNode.FirstChild("item");
+      m_authenticationOptionsHasBeenSet = !authenticationOptionsMember.IsNull();
       while(!authenticationOptionsMember.IsNull())
       {
         m_authenticationOptions.push_back(authenticationOptionsMember);
         authenticationOptionsMember = authenticationOptionsMember.NextNode("item");
       }
 
-      m_authenticationOptionsHasBeenSet = true;
+       m_authenticationOptionsHasBeenSet = true;
     }
     XmlNode connectionLogOptionsNode = resultNode.FirstChild("connectionLogOptions");
     if(!connectionLogOptionsNode.IsNull())
     {
       m_connectionLogOptions = connectionLogOptionsNode;
       m_connectionLogOptionsHasBeenSet = true;
+       m_connectionLogOptionsHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode securityGroupIdsNode = resultNode.FirstChild("securityGroupIdSet");
     if(!securityGroupIdsNode.IsNull())
     {
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("item");
+      m_securityGroupIdsHasBeenSet = !securityGroupIdsMember.IsNull();
       while(!securityGroupIdsMember.IsNull())
       {
         m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
         securityGroupIdsMember = securityGroupIdsMember.NextNode("item");
       }
 
-      m_securityGroupIdsHasBeenSet = true;
+       m_securityGroupIdsHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode selfServicePortalUrlNode = resultNode.FirstChild("selfServicePortalUrl");
     if(!selfServicePortalUrlNode.IsNull())
     {
       m_selfServicePortalUrl = Aws::Utils::Xml::DecodeEscapedXmlText(selfServicePortalUrlNode.GetText());
       m_selfServicePortalUrlHasBeenSet = true;
+       m_selfServicePortalUrlHasBeenSet = true;
     }
     XmlNode clientConnectOptionsNode = resultNode.FirstChild("clientConnectOptions");
     if(!clientConnectOptionsNode.IsNull())
     {
       m_clientConnectOptions = clientConnectOptionsNode;
       m_clientConnectOptionsHasBeenSet = true;
+       m_clientConnectOptionsHasBeenSet = true;
     }
     XmlNode sessionTimeoutHoursNode = resultNode.FirstChild("sessionTimeoutHours");
     if(!sessionTimeoutHoursNode.IsNull())
     {
       m_sessionTimeoutHours = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sessionTimeoutHoursNode.GetText()).c_str()).c_str());
       m_sessionTimeoutHoursHasBeenSet = true;
+       m_sessionTimeoutHoursHasBeenSet = true;
     }
     XmlNode clientLoginBannerOptionsNode = resultNode.FirstChild("clientLoginBannerOptions");
     if(!clientLoginBannerOptionsNode.IsNull())
     {
       m_clientLoginBannerOptions = clientLoginBannerOptionsNode;
       m_clientLoginBannerOptionsHasBeenSet = true;
+       m_clientLoginBannerOptionsHasBeenSet = true;
     }
     XmlNode disconnectOnSessionTimeoutNode = resultNode.FirstChild("disconnectOnSessionTimeout");
     if(!disconnectOnSessionTimeoutNode.IsNull())
     {
       m_disconnectOnSessionTimeout = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disconnectOnSessionTimeoutNode.GetText()).c_str()).c_str());
       m_disconnectOnSessionTimeoutHasBeenSet = true;
+       m_disconnectOnSessionTimeoutHasBeenSet = true;
     }
   }
 

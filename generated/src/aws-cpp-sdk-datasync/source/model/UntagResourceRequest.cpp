@@ -12,12 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UntagResourceRequest::UntagResourceRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_keysHasBeenSet(false)
-{
-}
-
 Aws::String UntagResourceRequest::SerializePayload() const
 {
   JsonValue payload;

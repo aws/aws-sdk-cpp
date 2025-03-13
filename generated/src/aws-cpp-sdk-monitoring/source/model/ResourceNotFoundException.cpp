@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-ResourceNotFoundException::ResourceNotFoundException() : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 ResourceNotFoundException::ResourceNotFoundException(const XmlNode& xmlNode)
-  : ResourceNotFoundException()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(const XmlNode& 
     {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("ResourceId");
     if(!resourceIdNode.IsNull())
     {
       m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
+       m_resourceIdHasBeenSet = true;
     }
   }
 

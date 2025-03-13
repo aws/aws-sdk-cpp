@@ -18,24 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DomainSummary::DomainSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainVersion(DomainVersion::NOT_SET),
-    m_domainVersionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_managedAccountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_portalUrlHasBeenSet(false),
-    m_status(DomainStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DomainSummary::DomainSummary(JsonView jsonValue)
-  : DomainSummary()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ DomainSummary& DomainSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainVersion"))
   {
     m_domainVersion = DomainVersionMapper::GetDomainVersionForName(jsonValue.GetString("domainVersion"));
-
     m_domainVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedAccountId"))
   {
     m_managedAccountId = jsonValue.GetString("managedAccountId");
-
     m_managedAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portalUrl"))
   {
     m_portalUrl = jsonValue.GetString("portalUrl");
-
     m_portalUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

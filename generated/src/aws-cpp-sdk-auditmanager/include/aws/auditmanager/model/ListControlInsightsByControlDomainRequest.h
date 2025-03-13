@@ -25,7 +25,7 @@ namespace Model
   class ListControlInsightsByControlDomainRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API ListControlInsightsByControlDomainRequest();
+    AWS_AUDITMANAGER_API ListControlInsightsByControlDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,28 +47,24 @@ namespace Model
      * <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API
      * Reference.</p>
      */
-    inline const Aws::String& GetControlDomainId() const{ return m_controlDomainId; }
+    inline const Aws::String& GetControlDomainId() const { return m_controlDomainId; }
     inline bool ControlDomainIdHasBeenSet() const { return m_controlDomainIdHasBeenSet; }
-    inline void SetControlDomainId(const Aws::String& value) { m_controlDomainIdHasBeenSet = true; m_controlDomainId = value; }
-    inline void SetControlDomainId(Aws::String&& value) { m_controlDomainIdHasBeenSet = true; m_controlDomainId = std::move(value); }
-    inline void SetControlDomainId(const char* value) { m_controlDomainIdHasBeenSet = true; m_controlDomainId.assign(value); }
-    inline ListControlInsightsByControlDomainRequest& WithControlDomainId(const Aws::String& value) { SetControlDomainId(value); return *this;}
-    inline ListControlInsightsByControlDomainRequest& WithControlDomainId(Aws::String&& value) { SetControlDomainId(std::move(value)); return *this;}
-    inline ListControlInsightsByControlDomainRequest& WithControlDomainId(const char* value) { SetControlDomainId(value); return *this;}
+    template<typename ControlDomainIdT = Aws::String>
+    void SetControlDomainId(ControlDomainIdT&& value) { m_controlDomainIdHasBeenSet = true; m_controlDomainId = std::forward<ControlDomainIdT>(value); }
+    template<typename ControlDomainIdT = Aws::String>
+    ListControlInsightsByControlDomainRequest& WithControlDomainId(ControlDomainIdT&& value) { SetControlDomainId(std::forward<ControlDomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's used to fetch the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListControlInsightsByControlDomainRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListControlInsightsByControlDomainRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListControlInsightsByControlDomainRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListControlInsightsByControlDomainRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * <p>Represents the maximum number of results on a page or for an API request
      * call. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListControlInsightsByControlDomainRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -89,7 +85,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

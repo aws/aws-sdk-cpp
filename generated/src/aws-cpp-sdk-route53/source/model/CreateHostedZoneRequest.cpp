@@ -14,14 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateHostedZoneRequest::CreateHostedZoneRequest() : 
-    m_nameHasBeenSet(false),
-    m_vPCHasBeenSet(false),
-    m_callerReferenceHasBeenSet(false),
-    m_hostedZoneConfigHasBeenSet(false),
-    m_delegationSetIdHasBeenSet(false)
-{
-}
 
 Aws::String CreateHostedZoneRequest::SerializePayload() const
 {

@@ -32,7 +32,7 @@ namespace Model
   class RejectRule
   {
   public:
-    AWS_DATAZONE_API RejectRule();
+    AWS_DATAZONE_API RejectRule() = default;
     AWS_DATAZONE_API RejectRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API RejectRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
      * <p>Specifies whether you want to reject the top prediction for all targets or
      * none.</p>
      */
-    inline const RejectRuleBehavior& GetRule() const{ return m_rule; }
+    inline RejectRuleBehavior GetRule() const { return m_rule; }
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
-    inline void SetRule(const RejectRuleBehavior& value) { m_ruleHasBeenSet = true; m_rule = value; }
-    inline void SetRule(RejectRuleBehavior&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
-    inline RejectRule& WithRule(const RejectRuleBehavior& value) { SetRule(value); return *this;}
-    inline RejectRule& WithRule(RejectRuleBehavior&& value) { SetRule(std::move(value)); return *this;}
+    inline void SetRule(RejectRuleBehavior value) { m_ruleHasBeenSet = true; m_rule = value; }
+    inline RejectRule& WithRule(RejectRuleBehavior value) { SetRule(value); return *this;}
     ///@}
 
     ///@{
@@ -56,17 +54,17 @@ namespace Model
      * <p>The confidence score that specifies the condition at which a prediction can
      * be rejected.</p>
      */
-    inline double GetThreshold() const{ return m_threshold; }
+    inline double GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline RejectRule& WithThreshold(double value) { SetThreshold(value); return *this;}
     ///@}
   private:
 
-    RejectRuleBehavior m_rule;
+    RejectRuleBehavior m_rule{RejectRuleBehavior::NOT_SET};
     bool m_ruleHasBeenSet = false;
 
-    double m_threshold;
+    double m_threshold{0.0};
     bool m_thresholdHasBeenSet = false;
   };
 

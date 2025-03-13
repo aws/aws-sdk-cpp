@@ -29,7 +29,7 @@ namespace Model
   class MapStateStartedEventDetails
   {
   public:
-    AWS_SFN_API MapStateStartedEventDetails();
+    AWS_SFN_API MapStateStartedEventDetails() = default;
     AWS_SFN_API MapStateStartedEventDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API MapStateStartedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The size of the array for Map state iterations.</p>
      */
-    inline int GetLength() const{ return m_length; }
+    inline int GetLength() const { return m_length; }
     inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
     inline void SetLength(int value) { m_lengthHasBeenSet = true; m_length = value; }
     inline MapStateStartedEventDetails& WithLength(int value) { SetLength(value); return *this;}
     ///@}
   private:
 
-    int m_length;
+    int m_length{0};
     bool m_lengthHasBeenSet = false;
   };
 

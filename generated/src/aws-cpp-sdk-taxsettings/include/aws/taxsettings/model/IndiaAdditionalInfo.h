@@ -31,7 +31,7 @@ namespace Model
   class IndiaAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API IndiaAdditionalInfo();
+    AWS_TAXSETTINGS_API IndiaAdditionalInfo() = default;
     AWS_TAXSETTINGS_API IndiaAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API IndiaAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p> India pan information associated with the account. </p>
      */
-    inline const Aws::String& GetPan() const{ return m_pan; }
+    inline const Aws::String& GetPan() const { return m_pan; }
     inline bool PanHasBeenSet() const { return m_panHasBeenSet; }
-    inline void SetPan(const Aws::String& value) { m_panHasBeenSet = true; m_pan = value; }
-    inline void SetPan(Aws::String&& value) { m_panHasBeenSet = true; m_pan = std::move(value); }
-    inline void SetPan(const char* value) { m_panHasBeenSet = true; m_pan.assign(value); }
-    inline IndiaAdditionalInfo& WithPan(const Aws::String& value) { SetPan(value); return *this;}
-    inline IndiaAdditionalInfo& WithPan(Aws::String&& value) { SetPan(std::move(value)); return *this;}
-    inline IndiaAdditionalInfo& WithPan(const char* value) { SetPan(value); return *this;}
+    template<typename PanT = Aws::String>
+    void SetPan(PanT&& value) { m_panHasBeenSet = true; m_pan = std::forward<PanT>(value); }
+    template<typename PanT = Aws::String>
+    IndiaAdditionalInfo& WithPan(PanT&& value) { SetPan(std::forward<PanT>(value)); return *this;}
     ///@}
   private:
 

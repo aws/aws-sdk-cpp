@@ -18,18 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EventStream::EventStream() : 
-    m_applicationIdHasBeenSet(false),
-    m_destinationStreamArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 EventStream::EventStream(JsonView jsonValue)
-  : EventStream()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ EventStream& EventStream::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationStreamArn"))
   {
     m_destinationStreamArn = jsonValue.GetString("DestinationStreamArn");
-
     m_destinationStreamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExternalId"))
   {
     m_externalId = jsonValue.GetString("ExternalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedBy"))
   {
     m_lastUpdatedBy = jsonValue.GetString("LastUpdatedBy");
-
     m_lastUpdatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class MemberFrameworkAttributes
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API MemberFrameworkAttributes();
+    AWS_MANAGEDBLOCKCHAIN_API MemberFrameworkAttributes() = default;
     AWS_MANAGEDBLOCKCHAIN_API MemberFrameworkAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API MemberFrameworkAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Attributes of Hyperledger Fabric relevant to a member on a Managed Blockchain
      * network that uses Hyperledger Fabric.</p>
      */
-    inline const MemberFabricAttributes& GetFabric() const{ return m_fabric; }
+    inline const MemberFabricAttributes& GetFabric() const { return m_fabric; }
     inline bool FabricHasBeenSet() const { return m_fabricHasBeenSet; }
-    inline void SetFabric(const MemberFabricAttributes& value) { m_fabricHasBeenSet = true; m_fabric = value; }
-    inline void SetFabric(MemberFabricAttributes&& value) { m_fabricHasBeenSet = true; m_fabric = std::move(value); }
-    inline MemberFrameworkAttributes& WithFabric(const MemberFabricAttributes& value) { SetFabric(value); return *this;}
-    inline MemberFrameworkAttributes& WithFabric(MemberFabricAttributes&& value) { SetFabric(std::move(value)); return *this;}
+    template<typename FabricT = MemberFabricAttributes>
+    void SetFabric(FabricT&& value) { m_fabricHasBeenSet = true; m_fabric = std::forward<FabricT>(value); }
+    template<typename FabricT = MemberFabricAttributes>
+    MemberFrameworkAttributes& WithFabric(FabricT&& value) { SetFabric(std::forward<FabricT>(value)); return *this;}
     ///@}
   private:
 

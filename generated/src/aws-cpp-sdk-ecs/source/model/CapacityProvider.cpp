@@ -18,21 +18,7 @@ namespace ECS
 namespace Model
 {
 
-CapacityProvider::CapacityProvider() : 
-    m_capacityProviderArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(CapacityProviderStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_autoScalingGroupProviderHasBeenSet(false),
-    m_updateStatus(CapacityProviderUpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false),
-    m_updateStatusReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 CapacityProvider::CapacityProvider(JsonView jsonValue)
-  : CapacityProvider()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ CapacityProvider& CapacityProvider::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("capacityProviderArn"))
   {
     m_capacityProviderArn = jsonValue.GetString("capacityProviderArn");
-
     m_capacityProviderArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CapacityProviderStatusMapper::GetCapacityProviderStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoScalingGroupProvider"))
   {
     m_autoScalingGroupProvider = jsonValue.GetObject("autoScalingGroupProvider");
-
     m_autoScalingGroupProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateStatus"))
   {
     m_updateStatus = CapacityProviderUpdateStatusMapper::GetCapacityProviderUpdateStatusForName(jsonValue.GetString("updateStatus"));
-
     m_updateStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateStatusReason"))
   {
     m_updateStatusReason = jsonValue.GetString("updateStatusReason");
-
     m_updateStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -90,7 +64,6 @@ CapacityProvider& CapacityProvider::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

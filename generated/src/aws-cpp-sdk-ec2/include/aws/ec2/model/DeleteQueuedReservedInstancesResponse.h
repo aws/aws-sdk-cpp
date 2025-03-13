@@ -30,7 +30,7 @@ namespace Model
   class DeleteQueuedReservedInstancesResponse
   {
   public:
-    AWS_EC2_API DeleteQueuedReservedInstancesResponse();
+    AWS_EC2_API DeleteQueuedReservedInstancesResponse() = default;
     AWS_EC2_API DeleteQueuedReservedInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteQueuedReservedInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,43 +39,46 @@ namespace Model
     /**
      * <p>Information about the queued purchases that were successfully deleted.</p>
      */
-    inline const Aws::Vector<SuccessfulQueuedPurchaseDeletion>& GetSuccessfulQueuedPurchaseDeletions() const{ return m_successfulQueuedPurchaseDeletions; }
-    inline void SetSuccessfulQueuedPurchaseDeletions(const Aws::Vector<SuccessfulQueuedPurchaseDeletion>& value) { m_successfulQueuedPurchaseDeletions = value; }
-    inline void SetSuccessfulQueuedPurchaseDeletions(Aws::Vector<SuccessfulQueuedPurchaseDeletion>&& value) { m_successfulQueuedPurchaseDeletions = std::move(value); }
-    inline DeleteQueuedReservedInstancesResponse& WithSuccessfulQueuedPurchaseDeletions(const Aws::Vector<SuccessfulQueuedPurchaseDeletion>& value) { SetSuccessfulQueuedPurchaseDeletions(value); return *this;}
-    inline DeleteQueuedReservedInstancesResponse& WithSuccessfulQueuedPurchaseDeletions(Aws::Vector<SuccessfulQueuedPurchaseDeletion>&& value) { SetSuccessfulQueuedPurchaseDeletions(std::move(value)); return *this;}
-    inline DeleteQueuedReservedInstancesResponse& AddSuccessfulQueuedPurchaseDeletions(const SuccessfulQueuedPurchaseDeletion& value) { m_successfulQueuedPurchaseDeletions.push_back(value); return *this; }
-    inline DeleteQueuedReservedInstancesResponse& AddSuccessfulQueuedPurchaseDeletions(SuccessfulQueuedPurchaseDeletion&& value) { m_successfulQueuedPurchaseDeletions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SuccessfulQueuedPurchaseDeletion>& GetSuccessfulQueuedPurchaseDeletions() const { return m_successfulQueuedPurchaseDeletions; }
+    template<typename SuccessfulQueuedPurchaseDeletionsT = Aws::Vector<SuccessfulQueuedPurchaseDeletion>>
+    void SetSuccessfulQueuedPurchaseDeletions(SuccessfulQueuedPurchaseDeletionsT&& value) { m_successfulQueuedPurchaseDeletionsHasBeenSet = true; m_successfulQueuedPurchaseDeletions = std::forward<SuccessfulQueuedPurchaseDeletionsT>(value); }
+    template<typename SuccessfulQueuedPurchaseDeletionsT = Aws::Vector<SuccessfulQueuedPurchaseDeletion>>
+    DeleteQueuedReservedInstancesResponse& WithSuccessfulQueuedPurchaseDeletions(SuccessfulQueuedPurchaseDeletionsT&& value) { SetSuccessfulQueuedPurchaseDeletions(std::forward<SuccessfulQueuedPurchaseDeletionsT>(value)); return *this;}
+    template<typename SuccessfulQueuedPurchaseDeletionsT = SuccessfulQueuedPurchaseDeletion>
+    DeleteQueuedReservedInstancesResponse& AddSuccessfulQueuedPurchaseDeletions(SuccessfulQueuedPurchaseDeletionsT&& value) { m_successfulQueuedPurchaseDeletionsHasBeenSet = true; m_successfulQueuedPurchaseDeletions.emplace_back(std::forward<SuccessfulQueuedPurchaseDeletionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the queued purchases that could not be deleted.</p>
      */
-    inline const Aws::Vector<FailedQueuedPurchaseDeletion>& GetFailedQueuedPurchaseDeletions() const{ return m_failedQueuedPurchaseDeletions; }
-    inline void SetFailedQueuedPurchaseDeletions(const Aws::Vector<FailedQueuedPurchaseDeletion>& value) { m_failedQueuedPurchaseDeletions = value; }
-    inline void SetFailedQueuedPurchaseDeletions(Aws::Vector<FailedQueuedPurchaseDeletion>&& value) { m_failedQueuedPurchaseDeletions = std::move(value); }
-    inline DeleteQueuedReservedInstancesResponse& WithFailedQueuedPurchaseDeletions(const Aws::Vector<FailedQueuedPurchaseDeletion>& value) { SetFailedQueuedPurchaseDeletions(value); return *this;}
-    inline DeleteQueuedReservedInstancesResponse& WithFailedQueuedPurchaseDeletions(Aws::Vector<FailedQueuedPurchaseDeletion>&& value) { SetFailedQueuedPurchaseDeletions(std::move(value)); return *this;}
-    inline DeleteQueuedReservedInstancesResponse& AddFailedQueuedPurchaseDeletions(const FailedQueuedPurchaseDeletion& value) { m_failedQueuedPurchaseDeletions.push_back(value); return *this; }
-    inline DeleteQueuedReservedInstancesResponse& AddFailedQueuedPurchaseDeletions(FailedQueuedPurchaseDeletion&& value) { m_failedQueuedPurchaseDeletions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedQueuedPurchaseDeletion>& GetFailedQueuedPurchaseDeletions() const { return m_failedQueuedPurchaseDeletions; }
+    template<typename FailedQueuedPurchaseDeletionsT = Aws::Vector<FailedQueuedPurchaseDeletion>>
+    void SetFailedQueuedPurchaseDeletions(FailedQueuedPurchaseDeletionsT&& value) { m_failedQueuedPurchaseDeletionsHasBeenSet = true; m_failedQueuedPurchaseDeletions = std::forward<FailedQueuedPurchaseDeletionsT>(value); }
+    template<typename FailedQueuedPurchaseDeletionsT = Aws::Vector<FailedQueuedPurchaseDeletion>>
+    DeleteQueuedReservedInstancesResponse& WithFailedQueuedPurchaseDeletions(FailedQueuedPurchaseDeletionsT&& value) { SetFailedQueuedPurchaseDeletions(std::forward<FailedQueuedPurchaseDeletionsT>(value)); return *this;}
+    template<typename FailedQueuedPurchaseDeletionsT = FailedQueuedPurchaseDeletion>
+    DeleteQueuedReservedInstancesResponse& AddFailedQueuedPurchaseDeletions(FailedQueuedPurchaseDeletionsT&& value) { m_failedQueuedPurchaseDeletionsHasBeenSet = true; m_failedQueuedPurchaseDeletions.emplace_back(std::forward<FailedQueuedPurchaseDeletionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteQueuedReservedInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteQueuedReservedInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteQueuedReservedInstancesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SuccessfulQueuedPurchaseDeletion> m_successfulQueuedPurchaseDeletions;
+    bool m_successfulQueuedPurchaseDeletionsHasBeenSet = false;
 
     Aws::Vector<FailedQueuedPurchaseDeletion> m_failedQueuedPurchaseDeletions;
+    bool m_failedQueuedPurchaseDeletionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

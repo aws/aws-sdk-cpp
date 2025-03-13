@@ -20,44 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-InstanceRequirements::InstanceRequirements() : 
-    m_vCpuCountHasBeenSet(false),
-    m_memoryMiBHasBeenSet(false),
-    m_cpuManufacturersHasBeenSet(false),
-    m_memoryGiBPerVCpuHasBeenSet(false),
-    m_excludedInstanceTypesHasBeenSet(false),
-    m_instanceGenerationsHasBeenSet(false),
-    m_spotMaxPricePercentageOverLowestPrice(0),
-    m_spotMaxPricePercentageOverLowestPriceHasBeenSet(false),
-    m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice(0),
-    m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet(false),
-    m_onDemandMaxPricePercentageOverLowestPrice(0),
-    m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet(false),
-    m_bareMetal(BareMetal::NOT_SET),
-    m_bareMetalHasBeenSet(false),
-    m_burstablePerformance(BurstablePerformance::NOT_SET),
-    m_burstablePerformanceHasBeenSet(false),
-    m_requireHibernateSupport(false),
-    m_requireHibernateSupportHasBeenSet(false),
-    m_networkInterfaceCountHasBeenSet(false),
-    m_localStorage(LocalStorage::NOT_SET),
-    m_localStorageHasBeenSet(false),
-    m_localStorageTypesHasBeenSet(false),
-    m_totalLocalStorageGBHasBeenSet(false),
-    m_baselineEbsBandwidthMbpsHasBeenSet(false),
-    m_acceleratorTypesHasBeenSet(false),
-    m_acceleratorCountHasBeenSet(false),
-    m_acceleratorManufacturersHasBeenSet(false),
-    m_acceleratorNamesHasBeenSet(false),
-    m_acceleratorTotalMemoryMiBHasBeenSet(false),
-    m_networkBandwidthGbpsHasBeenSet(false),
-    m_allowedInstanceTypesHasBeenSet(false),
-    m_baselinePerformanceFactorsHasBeenSet(false)
-{
-}
-
 InstanceRequirements::InstanceRequirements(const XmlNode& xmlNode)
-  : InstanceRequirements()
 {
   *this = xmlNode;
 }
@@ -73,198 +36,223 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
     {
       m_vCpuCount = vCpuCountNode;
       m_vCpuCountHasBeenSet = true;
+       m_vCpuCountHasBeenSet = true;
     }
     XmlNode memoryMiBNode = resultNode.FirstChild("MemoryMiB");
     if(!memoryMiBNode.IsNull())
     {
       m_memoryMiB = memoryMiBNode;
       m_memoryMiBHasBeenSet = true;
+       m_memoryMiBHasBeenSet = true;
     }
     XmlNode cpuManufacturersNode = resultNode.FirstChild("CpuManufacturers");
     if(!cpuManufacturersNode.IsNull())
     {
       XmlNode cpuManufacturersMember = cpuManufacturersNode.FirstChild("member");
+      m_cpuManufacturersHasBeenSet = !cpuManufacturersMember.IsNull();
       while(!cpuManufacturersMember.IsNull())
       {
         m_cpuManufacturers.push_back(CpuManufacturerMapper::GetCpuManufacturerForName(StringUtils::Trim(cpuManufacturersMember.GetText().c_str())));
         cpuManufacturersMember = cpuManufacturersMember.NextNode("member");
       }
 
-      m_cpuManufacturersHasBeenSet = true;
+       m_cpuManufacturersHasBeenSet = true;
     }
     XmlNode memoryGiBPerVCpuNode = resultNode.FirstChild("MemoryGiBPerVCpu");
     if(!memoryGiBPerVCpuNode.IsNull())
     {
       m_memoryGiBPerVCpu = memoryGiBPerVCpuNode;
       m_memoryGiBPerVCpuHasBeenSet = true;
+       m_memoryGiBPerVCpuHasBeenSet = true;
     }
     XmlNode excludedInstanceTypesNode = resultNode.FirstChild("ExcludedInstanceTypes");
     if(!excludedInstanceTypesNode.IsNull())
     {
       XmlNode excludedInstanceTypesMember = excludedInstanceTypesNode.FirstChild("member");
+      m_excludedInstanceTypesHasBeenSet = !excludedInstanceTypesMember.IsNull();
       while(!excludedInstanceTypesMember.IsNull())
       {
         m_excludedInstanceTypes.push_back(excludedInstanceTypesMember.GetText());
         excludedInstanceTypesMember = excludedInstanceTypesMember.NextNode("member");
       }
 
-      m_excludedInstanceTypesHasBeenSet = true;
+       m_excludedInstanceTypesHasBeenSet = true;
     }
     XmlNode instanceGenerationsNode = resultNode.FirstChild("InstanceGenerations");
     if(!instanceGenerationsNode.IsNull())
     {
       XmlNode instanceGenerationsMember = instanceGenerationsNode.FirstChild("member");
+      m_instanceGenerationsHasBeenSet = !instanceGenerationsMember.IsNull();
       while(!instanceGenerationsMember.IsNull())
       {
         m_instanceGenerations.push_back(InstanceGenerationMapper::GetInstanceGenerationForName(StringUtils::Trim(instanceGenerationsMember.GetText().c_str())));
         instanceGenerationsMember = instanceGenerationsMember.NextNode("member");
       }
 
-      m_instanceGenerationsHasBeenSet = true;
+       m_instanceGenerationsHasBeenSet = true;
     }
     XmlNode spotMaxPricePercentageOverLowestPriceNode = resultNode.FirstChild("SpotMaxPricePercentageOverLowestPrice");
     if(!spotMaxPricePercentageOverLowestPriceNode.IsNull())
     {
       m_spotMaxPricePercentageOverLowestPrice = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotMaxPricePercentageOverLowestPriceNode.GetText()).c_str()).c_str());
       m_spotMaxPricePercentageOverLowestPriceHasBeenSet = true;
+       m_spotMaxPricePercentageOverLowestPriceHasBeenSet = true;
     }
     XmlNode maxSpotPriceAsPercentageOfOptimalOnDemandPriceNode = resultNode.FirstChild("MaxSpotPriceAsPercentageOfOptimalOnDemandPrice");
     if(!maxSpotPriceAsPercentageOfOptimalOnDemandPriceNode.IsNull())
     {
       m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxSpotPriceAsPercentageOfOptimalOnDemandPriceNode.GetText()).c_str()).c_str());
       m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = true;
+       m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = true;
     }
     XmlNode onDemandMaxPricePercentageOverLowestPriceNode = resultNode.FirstChild("OnDemandMaxPricePercentageOverLowestPrice");
     if(!onDemandMaxPricePercentageOverLowestPriceNode.IsNull())
     {
       m_onDemandMaxPricePercentageOverLowestPrice = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onDemandMaxPricePercentageOverLowestPriceNode.GetText()).c_str()).c_str());
       m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = true;
+       m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = true;
     }
     XmlNode bareMetalNode = resultNode.FirstChild("BareMetal");
     if(!bareMetalNode.IsNull())
     {
-      m_bareMetal = BareMetalMapper::GetBareMetalForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bareMetalNode.GetText()).c_str()).c_str());
+      m_bareMetal = BareMetalMapper::GetBareMetalForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bareMetalNode.GetText()).c_str()));
       m_bareMetalHasBeenSet = true;
+       m_bareMetalHasBeenSet = true;
     }
     XmlNode burstablePerformanceNode = resultNode.FirstChild("BurstablePerformance");
     if(!burstablePerformanceNode.IsNull())
     {
-      m_burstablePerformance = BurstablePerformanceMapper::GetBurstablePerformanceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(burstablePerformanceNode.GetText()).c_str()).c_str());
+      m_burstablePerformance = BurstablePerformanceMapper::GetBurstablePerformanceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(burstablePerformanceNode.GetText()).c_str()));
       m_burstablePerformanceHasBeenSet = true;
+       m_burstablePerformanceHasBeenSet = true;
     }
     XmlNode requireHibernateSupportNode = resultNode.FirstChild("RequireHibernateSupport");
     if(!requireHibernateSupportNode.IsNull())
     {
       m_requireHibernateSupport = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requireHibernateSupportNode.GetText()).c_str()).c_str());
       m_requireHibernateSupportHasBeenSet = true;
+       m_requireHibernateSupportHasBeenSet = true;
     }
     XmlNode networkInterfaceCountNode = resultNode.FirstChild("NetworkInterfaceCount");
     if(!networkInterfaceCountNode.IsNull())
     {
       m_networkInterfaceCount = networkInterfaceCountNode;
       m_networkInterfaceCountHasBeenSet = true;
+       m_networkInterfaceCountHasBeenSet = true;
     }
     XmlNode localStorageNode = resultNode.FirstChild("LocalStorage");
     if(!localStorageNode.IsNull())
     {
-      m_localStorage = LocalStorageMapper::GetLocalStorageForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(localStorageNode.GetText()).c_str()).c_str());
+      m_localStorage = LocalStorageMapper::GetLocalStorageForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(localStorageNode.GetText()).c_str()));
       m_localStorageHasBeenSet = true;
+       m_localStorageHasBeenSet = true;
     }
     XmlNode localStorageTypesNode = resultNode.FirstChild("LocalStorageTypes");
     if(!localStorageTypesNode.IsNull())
     {
       XmlNode localStorageTypesMember = localStorageTypesNode.FirstChild("member");
+      m_localStorageTypesHasBeenSet = !localStorageTypesMember.IsNull();
       while(!localStorageTypesMember.IsNull())
       {
         m_localStorageTypes.push_back(LocalStorageTypeMapper::GetLocalStorageTypeForName(StringUtils::Trim(localStorageTypesMember.GetText().c_str())));
         localStorageTypesMember = localStorageTypesMember.NextNode("member");
       }
 
-      m_localStorageTypesHasBeenSet = true;
+       m_localStorageTypesHasBeenSet = true;
     }
     XmlNode totalLocalStorageGBNode = resultNode.FirstChild("TotalLocalStorageGB");
     if(!totalLocalStorageGBNode.IsNull())
     {
       m_totalLocalStorageGB = totalLocalStorageGBNode;
       m_totalLocalStorageGBHasBeenSet = true;
+       m_totalLocalStorageGBHasBeenSet = true;
     }
     XmlNode baselineEbsBandwidthMbpsNode = resultNode.FirstChild("BaselineEbsBandwidthMbps");
     if(!baselineEbsBandwidthMbpsNode.IsNull())
     {
       m_baselineEbsBandwidthMbps = baselineEbsBandwidthMbpsNode;
       m_baselineEbsBandwidthMbpsHasBeenSet = true;
+       m_baselineEbsBandwidthMbpsHasBeenSet = true;
     }
     XmlNode acceleratorTypesNode = resultNode.FirstChild("AcceleratorTypes");
     if(!acceleratorTypesNode.IsNull())
     {
       XmlNode acceleratorTypesMember = acceleratorTypesNode.FirstChild("member");
+      m_acceleratorTypesHasBeenSet = !acceleratorTypesMember.IsNull();
       while(!acceleratorTypesMember.IsNull())
       {
         m_acceleratorTypes.push_back(AcceleratorTypeMapper::GetAcceleratorTypeForName(StringUtils::Trim(acceleratorTypesMember.GetText().c_str())));
         acceleratorTypesMember = acceleratorTypesMember.NextNode("member");
       }
 
-      m_acceleratorTypesHasBeenSet = true;
+       m_acceleratorTypesHasBeenSet = true;
     }
     XmlNode acceleratorCountNode = resultNode.FirstChild("AcceleratorCount");
     if(!acceleratorCountNode.IsNull())
     {
       m_acceleratorCount = acceleratorCountNode;
       m_acceleratorCountHasBeenSet = true;
+       m_acceleratorCountHasBeenSet = true;
     }
     XmlNode acceleratorManufacturersNode = resultNode.FirstChild("AcceleratorManufacturers");
     if(!acceleratorManufacturersNode.IsNull())
     {
       XmlNode acceleratorManufacturersMember = acceleratorManufacturersNode.FirstChild("member");
+      m_acceleratorManufacturersHasBeenSet = !acceleratorManufacturersMember.IsNull();
       while(!acceleratorManufacturersMember.IsNull())
       {
         m_acceleratorManufacturers.push_back(AcceleratorManufacturerMapper::GetAcceleratorManufacturerForName(StringUtils::Trim(acceleratorManufacturersMember.GetText().c_str())));
         acceleratorManufacturersMember = acceleratorManufacturersMember.NextNode("member");
       }
 
-      m_acceleratorManufacturersHasBeenSet = true;
+       m_acceleratorManufacturersHasBeenSet = true;
     }
     XmlNode acceleratorNamesNode = resultNode.FirstChild("AcceleratorNames");
     if(!acceleratorNamesNode.IsNull())
     {
       XmlNode acceleratorNamesMember = acceleratorNamesNode.FirstChild("member");
+      m_acceleratorNamesHasBeenSet = !acceleratorNamesMember.IsNull();
       while(!acceleratorNamesMember.IsNull())
       {
         m_acceleratorNames.push_back(AcceleratorNameMapper::GetAcceleratorNameForName(StringUtils::Trim(acceleratorNamesMember.GetText().c_str())));
         acceleratorNamesMember = acceleratorNamesMember.NextNode("member");
       }
 
-      m_acceleratorNamesHasBeenSet = true;
+       m_acceleratorNamesHasBeenSet = true;
     }
     XmlNode acceleratorTotalMemoryMiBNode = resultNode.FirstChild("AcceleratorTotalMemoryMiB");
     if(!acceleratorTotalMemoryMiBNode.IsNull())
     {
       m_acceleratorTotalMemoryMiB = acceleratorTotalMemoryMiBNode;
       m_acceleratorTotalMemoryMiBHasBeenSet = true;
+       m_acceleratorTotalMemoryMiBHasBeenSet = true;
     }
     XmlNode networkBandwidthGbpsNode = resultNode.FirstChild("NetworkBandwidthGbps");
     if(!networkBandwidthGbpsNode.IsNull())
     {
       m_networkBandwidthGbps = networkBandwidthGbpsNode;
       m_networkBandwidthGbpsHasBeenSet = true;
+       m_networkBandwidthGbpsHasBeenSet = true;
     }
     XmlNode allowedInstanceTypesNode = resultNode.FirstChild("AllowedInstanceTypes");
     if(!allowedInstanceTypesNode.IsNull())
     {
       XmlNode allowedInstanceTypesMember = allowedInstanceTypesNode.FirstChild("member");
+      m_allowedInstanceTypesHasBeenSet = !allowedInstanceTypesMember.IsNull();
       while(!allowedInstanceTypesMember.IsNull())
       {
         m_allowedInstanceTypes.push_back(allowedInstanceTypesMember.GetText());
         allowedInstanceTypesMember = allowedInstanceTypesMember.NextNode("member");
       }
 
-      m_allowedInstanceTypesHasBeenSet = true;
+       m_allowedInstanceTypesHasBeenSet = true;
     }
     XmlNode baselinePerformanceFactorsNode = resultNode.FirstChild("BaselinePerformanceFactors");
     if(!baselinePerformanceFactorsNode.IsNull())
     {
       m_baselinePerformanceFactors = baselinePerformanceFactorsNode;
       m_baselinePerformanceFactorsHasBeenSet = true;
+       m_baselinePerformanceFactorsHasBeenSet = true;
     }
   }
 

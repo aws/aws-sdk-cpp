@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-InvalidationSummary::InvalidationSummary() : 
-    m_idHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 InvalidationSummary::InvalidationSummary(const XmlNode& xmlNode)
-  : InvalidationSummary()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ InvalidationSummary& InvalidationSummary::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
     if(!createTimeNode.IsNull())
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
+       m_createTimeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

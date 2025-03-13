@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestTypeResult::TestTypeResult()
-{
-}
-
 TestTypeResult::TestTypeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ TestTypeResult& TestTypeResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!typeVersionArnNode.IsNull())
     {
       m_typeVersionArn = Aws::Utils::Xml::DecodeEscapedXmlText(typeVersionArnNode.GetText());
+      m_typeVersionArnHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::TestTypeResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ValidatePipelineResult::ValidatePipelineResult() : 
-    m_isValid(false)
-{
-}
-
 ValidatePipelineResult::ValidatePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ValidatePipelineResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ ValidatePipelineResult& ValidatePipelineResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("isValid"))
   {
     m_isValid = jsonValue.GetBool("isValid");
-
+    m_isValidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -44,14 +37,15 @@ ValidatePipelineResult& ValidatePipelineResult::operator =(const Aws::AmazonWebS
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

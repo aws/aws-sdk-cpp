@@ -18,13 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-Configuration::Configuration() : 
-    m_connectConfigurationHasBeenSet(false)
-{
-}
-
 Configuration::Configuration(JsonView jsonValue)
-  : Configuration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Configuration& Configuration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectConfiguration"))
   {
     m_connectConfiguration = jsonValue.GetObject("connectConfiguration");
-
     m_connectConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

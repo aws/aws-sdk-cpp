@@ -31,7 +31,7 @@ namespace Model
   class InferenceProfileModel
   {
   public:
-    AWS_BEDROCK_API InferenceProfileModel();
+    AWS_BEDROCK_API InferenceProfileModel() = default;
     AWS_BEDROCK_API InferenceProfileModel(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API InferenceProfileModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the model.</p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline InferenceProfileModel& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline InferenceProfileModel& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline InferenceProfileModel& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    InferenceProfileModel& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
   private:
 

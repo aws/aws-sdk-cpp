@@ -12,13 +12,6 @@ using namespace Aws::AmplifyUIBuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RefreshTokenRequest::RefreshTokenRequest() : 
-    m_provider(TokenProviders::NOT_SET),
-    m_providerHasBeenSet(false),
-    m_refreshTokenBodyHasBeenSet(false)
-{
-}
-
 Aws::String RefreshTokenRequest::SerializePayload() const
 {
   JsonValue payload;

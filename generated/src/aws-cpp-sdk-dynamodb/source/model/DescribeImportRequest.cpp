@@ -12,11 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeImportRequest::DescribeImportRequest() : 
-    m_importArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeImportRequest::SerializePayload() const
 {
   JsonValue payload;

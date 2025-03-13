@@ -12,18 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateInferenceSchedulerRequest::UpdateInferenceSchedulerRequest() : 
-    m_inferenceSchedulerNameHasBeenSet(false),
-    m_dataDelayOffsetInMinutes(0),
-    m_dataDelayOffsetInMinutesHasBeenSet(false),
-    m_dataUploadFrequency(DataUploadFrequency::NOT_SET),
-    m_dataUploadFrequencyHasBeenSet(false),
-    m_dataInputConfigurationHasBeenSet(false),
-    m_dataOutputConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateInferenceSchedulerRequest::SerializePayload() const
 {
   JsonValue payload;

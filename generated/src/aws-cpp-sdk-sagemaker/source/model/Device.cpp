@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Device::Device() : 
-    m_deviceNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_iotThingNameHasBeenSet(false)
-{
-}
-
 Device::Device(JsonView jsonValue)
-  : Device()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Device& Device::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceName"))
   {
     m_deviceName = jsonValue.GetString("DeviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IotThingName"))
   {
     m_iotThingName = jsonValue.GetString("IotThingName");
-
     m_iotThingNameHasBeenSet = true;
   }
-
   return *this;
 }
 

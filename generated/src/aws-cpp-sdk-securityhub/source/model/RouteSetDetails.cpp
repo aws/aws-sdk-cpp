@@ -18,28 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RouteSetDetails::RouteSetDetails() : 
-    m_carrierGatewayIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_destinationIpv6CidrBlockHasBeenSet(false),
-    m_destinationPrefixListIdHasBeenSet(false),
-    m_egressOnlyInternetGatewayIdHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceOwnerIdHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_natGatewayIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
-{
-}
-
 RouteSetDetails::RouteSetDetails(JsonView jsonValue)
-  : RouteSetDetails()
 {
   *this = jsonValue;
 }
@@ -49,115 +28,83 @@ RouteSetDetails& RouteSetDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CarrierGatewayId"))
   {
     m_carrierGatewayId = jsonValue.GetString("CarrierGatewayId");
-
     m_carrierGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoreNetworkArn"))
   {
     m_coreNetworkArn = jsonValue.GetString("CoreNetworkArn");
-
     m_coreNetworkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationCidrBlock"))
   {
     m_destinationCidrBlock = jsonValue.GetString("DestinationCidrBlock");
-
     m_destinationCidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationIpv6CidrBlock"))
   {
     m_destinationIpv6CidrBlock = jsonValue.GetString("DestinationIpv6CidrBlock");
-
     m_destinationIpv6CidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationPrefixListId"))
   {
     m_destinationPrefixListId = jsonValue.GetString("DestinationPrefixListId");
-
     m_destinationPrefixListIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EgressOnlyInternetGatewayId"))
   {
     m_egressOnlyInternetGatewayId = jsonValue.GetString("EgressOnlyInternetGatewayId");
-
     m_egressOnlyInternetGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayId"))
   {
     m_gatewayId = jsonValue.GetString("GatewayId");
-
     m_gatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceOwnerId"))
   {
     m_instanceOwnerId = jsonValue.GetString("InstanceOwnerId");
-
     m_instanceOwnerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalGatewayId"))
   {
     m_localGatewayId = jsonValue.GetString("LocalGatewayId");
-
     m_localGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NatGatewayId"))
   {
     m_natGatewayId = jsonValue.GetString("NatGatewayId");
-
     m_natGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("NetworkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Origin"))
   {
     m_origin = jsonValue.GetString("Origin");
-
     m_originHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransitGatewayId"))
   {
     m_transitGatewayId = jsonValue.GetString("TransitGatewayId");
-
     m_transitGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcPeeringConnectionId"))
   {
     m_vpcPeeringConnectionId = jsonValue.GetString("VpcPeeringConnectionId");
-
     m_vpcPeeringConnectionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

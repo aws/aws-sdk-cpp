@@ -18,13 +18,7 @@ namespace Textract
 namespace Model
 {
 
-AdaptersConfig::AdaptersConfig() : 
-    m_adaptersHasBeenSet(false)
-{
-}
-
 AdaptersConfig::AdaptersConfig(JsonView jsonValue)
-  : AdaptersConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AdaptersConfig& AdaptersConfig::operator =(JsonView jsonValue)
     }
     m_adaptersHasBeenSet = true;
   }
-
   return *this;
 }
 

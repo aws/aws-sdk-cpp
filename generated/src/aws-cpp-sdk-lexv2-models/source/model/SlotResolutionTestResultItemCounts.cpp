@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SlotResolutionTestResultItemCounts::SlotResolutionTestResultItemCounts() : 
-    m_totalResultCount(0),
-    m_totalResultCountHasBeenSet(false),
-    m_speechTranscriptionResultCountsHasBeenSet(false),
-    m_slotMatchResultCountsHasBeenSet(false)
-{
-}
-
 SlotResolutionTestResultItemCounts::SlotResolutionTestResultItemCounts(JsonView jsonValue)
-  : SlotResolutionTestResultItemCounts()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ SlotResolutionTestResultItemCounts& SlotResolutionTestResultItemCounts::operator
   if(jsonValue.ValueExists("totalResultCount"))
   {
     m_totalResultCount = jsonValue.GetInteger("totalResultCount");
-
     m_totalResultCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("speechTranscriptionResultCounts"))
   {
     Aws::Map<Aws::String, JsonView> speechTranscriptionResultCountsJsonMap = jsonValue.GetObject("speechTranscriptionResultCounts").GetAllObjects();
@@ -50,7 +39,6 @@ SlotResolutionTestResultItemCounts& SlotResolutionTestResultItemCounts::operator
     }
     m_speechTranscriptionResultCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotMatchResultCounts"))
   {
     Aws::Map<Aws::String, JsonView> slotMatchResultCountsJsonMap = jsonValue.GetObject("slotMatchResultCounts").GetAllObjects();
@@ -60,7 +48,6 @@ SlotResolutionTestResultItemCounts& SlotResolutionTestResultItemCounts::operator
     }
     m_slotMatchResultCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

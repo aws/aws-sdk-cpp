@@ -18,15 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-FragmentSelector::FragmentSelector() : 
-    m_fragmentSelectorType(FragmentSelectorType::NOT_SET),
-    m_fragmentSelectorTypeHasBeenSet(false),
-    m_timestampRangeHasBeenSet(false)
-{
-}
-
 FragmentSelector::FragmentSelector(JsonView jsonValue)
-  : FragmentSelector()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FragmentSelector& FragmentSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FragmentSelectorType"))
   {
     m_fragmentSelectorType = FragmentSelectorTypeMapper::GetFragmentSelectorTypeForName(jsonValue.GetString("FragmentSelectorType"));
-
     m_fragmentSelectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimestampRange"))
   {
     m_timestampRange = jsonValue.GetObject("TimestampRange");
-
     m_timestampRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

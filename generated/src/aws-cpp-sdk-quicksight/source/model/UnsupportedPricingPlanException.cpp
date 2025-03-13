@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-UnsupportedPricingPlanException::UnsupportedPricingPlanException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 UnsupportedPricingPlanException::UnsupportedPricingPlanException(JsonView jsonValue)
-  : UnsupportedPricingPlanException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnsupportedPricingPlanException& UnsupportedPricingPlanException::operator =(Jso
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

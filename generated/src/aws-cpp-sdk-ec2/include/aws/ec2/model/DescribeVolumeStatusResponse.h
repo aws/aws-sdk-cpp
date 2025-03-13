@@ -30,7 +30,7 @@ namespace Model
   class DescribeVolumeStatusResponse
   {
   public:
-    AWS_EC2_API DescribeVolumeStatusResponse();
+    AWS_EC2_API DescribeVolumeStatusResponse() = default;
     AWS_EC2_API DescribeVolumeStatusResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeVolumeStatusResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,43 +40,44 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeVolumeStatusResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeVolumeStatusResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeVolumeStatusResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeVolumeStatusResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the status of the volumes.</p>
      */
-    inline const Aws::Vector<VolumeStatusItem>& GetVolumeStatuses() const{ return m_volumeStatuses; }
-    inline void SetVolumeStatuses(const Aws::Vector<VolumeStatusItem>& value) { m_volumeStatuses = value; }
-    inline void SetVolumeStatuses(Aws::Vector<VolumeStatusItem>&& value) { m_volumeStatuses = std::move(value); }
-    inline DescribeVolumeStatusResponse& WithVolumeStatuses(const Aws::Vector<VolumeStatusItem>& value) { SetVolumeStatuses(value); return *this;}
-    inline DescribeVolumeStatusResponse& WithVolumeStatuses(Aws::Vector<VolumeStatusItem>&& value) { SetVolumeStatuses(std::move(value)); return *this;}
-    inline DescribeVolumeStatusResponse& AddVolumeStatuses(const VolumeStatusItem& value) { m_volumeStatuses.push_back(value); return *this; }
-    inline DescribeVolumeStatusResponse& AddVolumeStatuses(VolumeStatusItem&& value) { m_volumeStatuses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VolumeStatusItem>& GetVolumeStatuses() const { return m_volumeStatuses; }
+    template<typename VolumeStatusesT = Aws::Vector<VolumeStatusItem>>
+    void SetVolumeStatuses(VolumeStatusesT&& value) { m_volumeStatusesHasBeenSet = true; m_volumeStatuses = std::forward<VolumeStatusesT>(value); }
+    template<typename VolumeStatusesT = Aws::Vector<VolumeStatusItem>>
+    DescribeVolumeStatusResponse& WithVolumeStatuses(VolumeStatusesT&& value) { SetVolumeStatuses(std::forward<VolumeStatusesT>(value)); return *this;}
+    template<typename VolumeStatusesT = VolumeStatusItem>
+    DescribeVolumeStatusResponse& AddVolumeStatuses(VolumeStatusesT&& value) { m_volumeStatusesHasBeenSet = true; m_volumeStatuses.emplace_back(std::forward<VolumeStatusesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeVolumeStatusResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeVolumeStatusResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeVolumeStatusResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<VolumeStatusItem> m_volumeStatuses;
+    bool m_volumeStatusesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,7 +23,7 @@ namespace Model
   class UpdatePipelineRequest : public IoTAnalyticsRequest
   {
   public:
-    AWS_IOTANALYTICS_API UpdatePipelineRequest();
+    AWS_IOTANALYTICS_API UpdatePipelineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the pipeline to update.</p>
      */
-    inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
+    inline const Aws::String& GetPipelineName() const { return m_pipelineName; }
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
-    inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-    inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-    inline UpdatePipelineRequest& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-    inline UpdatePipelineRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-    inline UpdatePipelineRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+    template<typename PipelineNameT = Aws::String>
+    void SetPipelineName(PipelineNameT&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::forward<PipelineNameT>(value); }
+    template<typename PipelineNameT = Aws::String>
+    UpdatePipelineRequest& WithPipelineName(PipelineNameT&& value) { SetPipelineName(std::forward<PipelineNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,14 @@ namespace Model
      * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
      * ]</code> </p>
      */
-    inline const Aws::Vector<PipelineActivity>& GetPipelineActivities() const{ return m_pipelineActivities; }
+    inline const Aws::Vector<PipelineActivity>& GetPipelineActivities() const { return m_pipelineActivities; }
     inline bool PipelineActivitiesHasBeenSet() const { return m_pipelineActivitiesHasBeenSet; }
-    inline void SetPipelineActivities(const Aws::Vector<PipelineActivity>& value) { m_pipelineActivitiesHasBeenSet = true; m_pipelineActivities = value; }
-    inline void SetPipelineActivities(Aws::Vector<PipelineActivity>&& value) { m_pipelineActivitiesHasBeenSet = true; m_pipelineActivities = std::move(value); }
-    inline UpdatePipelineRequest& WithPipelineActivities(const Aws::Vector<PipelineActivity>& value) { SetPipelineActivities(value); return *this;}
-    inline UpdatePipelineRequest& WithPipelineActivities(Aws::Vector<PipelineActivity>&& value) { SetPipelineActivities(std::move(value)); return *this;}
-    inline UpdatePipelineRequest& AddPipelineActivities(const PipelineActivity& value) { m_pipelineActivitiesHasBeenSet = true; m_pipelineActivities.push_back(value); return *this; }
-    inline UpdatePipelineRequest& AddPipelineActivities(PipelineActivity&& value) { m_pipelineActivitiesHasBeenSet = true; m_pipelineActivities.push_back(std::move(value)); return *this; }
+    template<typename PipelineActivitiesT = Aws::Vector<PipelineActivity>>
+    void SetPipelineActivities(PipelineActivitiesT&& value) { m_pipelineActivitiesHasBeenSet = true; m_pipelineActivities = std::forward<PipelineActivitiesT>(value); }
+    template<typename PipelineActivitiesT = Aws::Vector<PipelineActivity>>
+    UpdatePipelineRequest& WithPipelineActivities(PipelineActivitiesT&& value) { SetPipelineActivities(std::forward<PipelineActivitiesT>(value)); return *this;}
+    template<typename PipelineActivitiesT = PipelineActivity>
+    UpdatePipelineRequest& AddPipelineActivities(PipelineActivitiesT&& value) { m_pipelineActivitiesHasBeenSet = true; m_pipelineActivities.emplace_back(std::forward<PipelineActivitiesT>(value)); return *this; }
     ///@}
   private:
 

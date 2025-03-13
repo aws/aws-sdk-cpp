@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteDBParameterGroupRequest::DeleteDBParameterGroupRequest() : 
-    m_dBParameterGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

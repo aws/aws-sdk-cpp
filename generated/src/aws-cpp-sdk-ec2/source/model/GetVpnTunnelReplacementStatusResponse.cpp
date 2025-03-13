@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVpnTunnelReplacementStatusResponse::GetVpnTunnelReplacementStatusResponse()
-{
-}
-
 GetVpnTunnelReplacementStatusResponse::GetVpnTunnelReplacementStatusResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,31 +38,37 @@ GetVpnTunnelReplacementStatusResponse& GetVpnTunnelReplacementStatusResponse::op
     if(!vpnConnectionIdNode.IsNull())
     {
       m_vpnConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpnConnectionIdNode.GetText());
+      m_vpnConnectionIdHasBeenSet = true;
     }
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
       m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
+      m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode customerGatewayIdNode = resultNode.FirstChild("customerGatewayId");
     if(!customerGatewayIdNode.IsNull())
     {
       m_customerGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(customerGatewayIdNode.GetText());
+      m_customerGatewayIdHasBeenSet = true;
     }
     XmlNode vpnGatewayIdNode = resultNode.FirstChild("vpnGatewayId");
     if(!vpnGatewayIdNode.IsNull())
     {
       m_vpnGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(vpnGatewayIdNode.GetText());
+      m_vpnGatewayIdHasBeenSet = true;
     }
     XmlNode vpnTunnelOutsideIpAddressNode = resultNode.FirstChild("vpnTunnelOutsideIpAddress");
     if(!vpnTunnelOutsideIpAddressNode.IsNull())
     {
       m_vpnTunnelOutsideIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(vpnTunnelOutsideIpAddressNode.GetText());
+      m_vpnTunnelOutsideIpAddressHasBeenSet = true;
     }
     XmlNode maintenanceDetailsNode = resultNode.FirstChild("maintenanceDetails");
     if(!maintenanceDetailsNode.IsNull())
     {
       m_maintenanceDetails = maintenanceDetailsNode;
+      m_maintenanceDetailsHasBeenSet = true;
     }
   }
 
@@ -75,6 +77,7 @@ GetVpnTunnelReplacementStatusResponse& GetVpnTunnelReplacementStatusResponse::op
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetVpnTunnelReplacementStatusResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

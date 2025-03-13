@@ -12,15 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConfigurationPolicyRequest::UpdateConfigurationPolicyRequest() : 
-    m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_updatedReasonHasBeenSet(false),
-    m_configurationPolicyHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConfigurationPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class GetUserResult
   {
   public:
-    AWS_QBUSINESS_API GetUserResult();
+    AWS_QBUSINESS_API GetUserResult() = default;
     AWS_QBUSINESS_API GetUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API GetUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>A list of user aliases attached to a user.</p>
      */
-    inline const Aws::Vector<UserAlias>& GetUserAliases() const{ return m_userAliases; }
-    inline void SetUserAliases(const Aws::Vector<UserAlias>& value) { m_userAliases = value; }
-    inline void SetUserAliases(Aws::Vector<UserAlias>&& value) { m_userAliases = std::move(value); }
-    inline GetUserResult& WithUserAliases(const Aws::Vector<UserAlias>& value) { SetUserAliases(value); return *this;}
-    inline GetUserResult& WithUserAliases(Aws::Vector<UserAlias>&& value) { SetUserAliases(std::move(value)); return *this;}
-    inline GetUserResult& AddUserAliases(const UserAlias& value) { m_userAliases.push_back(value); return *this; }
-    inline GetUserResult& AddUserAliases(UserAlias&& value) { m_userAliases.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UserAlias>& GetUserAliases() const { return m_userAliases; }
+    template<typename UserAliasesT = Aws::Vector<UserAlias>>
+    void SetUserAliases(UserAliasesT&& value) { m_userAliasesHasBeenSet = true; m_userAliases = std::forward<UserAliasesT>(value); }
+    template<typename UserAliasesT = Aws::Vector<UserAlias>>
+    GetUserResult& WithUserAliases(UserAliasesT&& value) { SetUserAliases(std::forward<UserAliasesT>(value)); return *this;}
+    template<typename UserAliasesT = UserAlias>
+    GetUserResult& AddUserAliases(UserAliasesT&& value) { m_userAliasesHasBeenSet = true; m_userAliases.emplace_back(std::forward<UserAliasesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetUserResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<UserAlias> m_userAliases;
+    bool m_userAliasesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

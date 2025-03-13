@@ -27,7 +27,7 @@ namespace Model
   class GetJobManifestResult
   {
   public:
-    AWS_SNOWBALL_API GetJobManifestResult();
+    AWS_SNOWBALL_API GetJobManifestResult() = default;
     AWS_SNOWBALL_API GetJobManifestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SNOWBALL_API GetJobManifestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The Amazon S3 presigned URL for the manifest file associated with the
      * specified <code>JobId</code> value.</p>
      */
-    inline const Aws::String& GetManifestURI() const{ return m_manifestURI; }
-    inline void SetManifestURI(const Aws::String& value) { m_manifestURI = value; }
-    inline void SetManifestURI(Aws::String&& value) { m_manifestURI = std::move(value); }
-    inline void SetManifestURI(const char* value) { m_manifestURI.assign(value); }
-    inline GetJobManifestResult& WithManifestURI(const Aws::String& value) { SetManifestURI(value); return *this;}
-    inline GetJobManifestResult& WithManifestURI(Aws::String&& value) { SetManifestURI(std::move(value)); return *this;}
-    inline GetJobManifestResult& WithManifestURI(const char* value) { SetManifestURI(value); return *this;}
+    inline const Aws::String& GetManifestURI() const { return m_manifestURI; }
+    template<typename ManifestURIT = Aws::String>
+    void SetManifestURI(ManifestURIT&& value) { m_manifestURIHasBeenSet = true; m_manifestURI = std::forward<ManifestURIT>(value); }
+    template<typename ManifestURIT = Aws::String>
+    GetJobManifestResult& WithManifestURI(ManifestURIT&& value) { SetManifestURI(std::forward<ManifestURIT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetJobManifestResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetJobManifestResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetJobManifestResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetJobManifestResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_manifestURI;
+    bool m_manifestURIHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

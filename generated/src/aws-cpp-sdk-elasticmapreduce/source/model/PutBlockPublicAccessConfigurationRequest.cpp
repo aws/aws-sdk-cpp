@@ -12,11 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutBlockPublicAccessConfigurationRequest::PutBlockPublicAccessConfigurationRequest() : 
-    m_blockPublicAccessConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String PutBlockPublicAccessConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

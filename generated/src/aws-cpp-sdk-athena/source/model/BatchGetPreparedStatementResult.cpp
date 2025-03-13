@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetPreparedStatementResult::BatchGetPreparedStatementResult()
-{
-}
-
 BatchGetPreparedStatementResult::BatchGetPreparedStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetPreparedStatementResult& BatchGetPreparedStatementResult::operator =(con
     {
       m_preparedStatements.push_back(preparedStatementsJsonList[preparedStatementsIndex].AsObject());
     }
+    m_preparedStatementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedPreparedStatementNames"))
   {
     Aws::Utils::Array<JsonView> unprocessedPreparedStatementNamesJsonList = jsonValue.GetArray("UnprocessedPreparedStatementNames");
@@ -45,14 +41,15 @@ BatchGetPreparedStatementResult& BatchGetPreparedStatementResult::operator =(con
     {
       m_unprocessedPreparedStatementNames.push_back(unprocessedPreparedStatementNamesJsonList[unprocessedPreparedStatementNamesIndex].AsObject());
     }
+    m_unprocessedPreparedStatementNamesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

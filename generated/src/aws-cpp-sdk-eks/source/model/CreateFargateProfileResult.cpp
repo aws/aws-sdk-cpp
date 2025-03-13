@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFargateProfileResult::CreateFargateProfileResult()
-{
-}
-
 CreateFargateProfileResult::CreateFargateProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateFargateProfileResult& CreateFargateProfileResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("fargateProfile"))
   {
     m_fargateProfile = jsonValue.GetObject("fargateProfile");
-
+    m_fargateProfileHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

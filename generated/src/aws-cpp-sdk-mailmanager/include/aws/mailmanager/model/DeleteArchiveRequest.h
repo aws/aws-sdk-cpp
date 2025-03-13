@@ -25,7 +25,7 @@ namespace Model
   class DeleteArchiveRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API DeleteArchiveRequest();
+    AWS_MAILMANAGER_API DeleteArchiveRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the archive to delete.</p>
      */
-    inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
+    inline const Aws::String& GetArchiveId() const { return m_archiveId; }
     inline bool ArchiveIdHasBeenSet() const { return m_archiveIdHasBeenSet; }
-    inline void SetArchiveId(const Aws::String& value) { m_archiveIdHasBeenSet = true; m_archiveId = value; }
-    inline void SetArchiveId(Aws::String&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::move(value); }
-    inline void SetArchiveId(const char* value) { m_archiveIdHasBeenSet = true; m_archiveId.assign(value); }
-    inline DeleteArchiveRequest& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-    inline DeleteArchiveRequest& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-    inline DeleteArchiveRequest& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
+    template<typename ArchiveIdT = Aws::String>
+    void SetArchiveId(ArchiveIdT&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::forward<ArchiveIdT>(value); }
+    template<typename ArchiveIdT = Aws::String>
+    DeleteArchiveRequest& WithArchiveId(ArchiveIdT&& value) { SetArchiveId(std::forward<ArchiveIdT>(value)); return *this;}
     ///@}
   private:
 

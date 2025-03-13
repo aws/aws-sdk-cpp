@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-KMSNotFoundException::KMSNotFoundException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 KMSNotFoundException::KMSNotFoundException(JsonView jsonValue)
-  : KMSNotFoundException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KMSNotFoundException& KMSNotFoundException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

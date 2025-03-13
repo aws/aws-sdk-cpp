@@ -12,14 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRegionsRequest::GetRegionsRequest() : 
-    m_includeAvailabilityZones(false),
-    m_includeAvailabilityZonesHasBeenSet(false),
-    m_includeRelationalDatabaseAvailabilityZones(false),
-    m_includeRelationalDatabaseAvailabilityZonesHasBeenSet(false)
-{
-}
-
 Aws::String GetRegionsRequest::SerializePayload() const
 {
   JsonValue payload;

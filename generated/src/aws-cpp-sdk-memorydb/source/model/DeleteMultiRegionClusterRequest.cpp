@@ -12,11 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMultiRegionClusterRequest::DeleteMultiRegionClusterRequest() : 
-    m_multiRegionClusterNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMultiRegionClusterRequest::SerializePayload() const
 {
   JsonValue payload;

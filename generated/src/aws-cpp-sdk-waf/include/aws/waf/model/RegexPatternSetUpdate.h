@@ -43,7 +43,7 @@ namespace Model
   class RegexPatternSetUpdate
   {
   public:
-    AWS_WAF_API RegexPatternSetUpdate();
+    AWS_WAF_API RegexPatternSetUpdate() = default;
     AWS_WAF_API RegexPatternSetUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API RegexPatternSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,10 @@ namespace Model
     /**
      * <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
      */
-    inline const ChangeAction& GetAction() const{ return m_action; }
+    inline ChangeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline RegexPatternSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-    inline RegexPatternSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ChangeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline RegexPatternSetUpdate& WithAction(ChangeAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -66,18 +64,16 @@ namespace Model
      * <p>Specifies the regular expression (regex) pattern that you want AWS WAF to
      * search for, such as <code>B[a@]dB[o0]t</code>.</p>
      */
-    inline const Aws::String& GetRegexPatternString() const{ return m_regexPatternString; }
+    inline const Aws::String& GetRegexPatternString() const { return m_regexPatternString; }
     inline bool RegexPatternStringHasBeenSet() const { return m_regexPatternStringHasBeenSet; }
-    inline void SetRegexPatternString(const Aws::String& value) { m_regexPatternStringHasBeenSet = true; m_regexPatternString = value; }
-    inline void SetRegexPatternString(Aws::String&& value) { m_regexPatternStringHasBeenSet = true; m_regexPatternString = std::move(value); }
-    inline void SetRegexPatternString(const char* value) { m_regexPatternStringHasBeenSet = true; m_regexPatternString.assign(value); }
-    inline RegexPatternSetUpdate& WithRegexPatternString(const Aws::String& value) { SetRegexPatternString(value); return *this;}
-    inline RegexPatternSetUpdate& WithRegexPatternString(Aws::String&& value) { SetRegexPatternString(std::move(value)); return *this;}
-    inline RegexPatternSetUpdate& WithRegexPatternString(const char* value) { SetRegexPatternString(value); return *this;}
+    template<typename RegexPatternStringT = Aws::String>
+    void SetRegexPatternString(RegexPatternStringT&& value) { m_regexPatternStringHasBeenSet = true; m_regexPatternString = std::forward<RegexPatternStringT>(value); }
+    template<typename RegexPatternStringT = Aws::String>
+    RegexPatternSetUpdate& WithRegexPatternString(RegexPatternStringT&& value) { SetRegexPatternString(std::forward<RegexPatternStringT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeAction m_action;
+    ChangeAction m_action{ChangeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::String m_regexPatternString;

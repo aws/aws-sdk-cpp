@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexProgramChannelDestinationSettings::MultiplexProgramChannelDestinationSettings() : 
-    m_multiplexIdHasBeenSet(false),
-    m_programNameHasBeenSet(false)
-{
-}
-
 MultiplexProgramChannelDestinationSettings::MultiplexProgramChannelDestinationSettings(JsonView jsonValue)
-  : MultiplexProgramChannelDestinationSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MultiplexProgramChannelDestinationSettings& MultiplexProgramChannelDestinationSe
   if(jsonValue.ValueExists("multiplexId"))
   {
     m_multiplexId = jsonValue.GetString("multiplexId");
-
     m_multiplexIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programName"))
   {
     m_programName = jsonValue.GetString("programName");
-
     m_programNameHasBeenSet = true;
   }
-
   return *this;
 }
 

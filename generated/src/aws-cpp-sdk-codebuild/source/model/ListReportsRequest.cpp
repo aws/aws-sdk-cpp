@@ -12,16 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListReportsRequest::ListReportsRequest() : 
-    m_sortOrder(SortOrderType::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 Aws::String ListReportsRequest::SerializePayload() const
 {
   JsonValue payload;

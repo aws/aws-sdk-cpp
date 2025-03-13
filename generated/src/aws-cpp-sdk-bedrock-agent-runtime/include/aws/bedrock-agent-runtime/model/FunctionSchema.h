@@ -33,7 +33,7 @@ namespace Model
   class FunctionSchema
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FunctionSchema();
+    AWS_BEDROCKAGENTRUNTIME_API FunctionSchema() = default;
     AWS_BEDROCKAGENTRUNTIME_API FunctionSchema(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FunctionSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p> A list of functions that each define an action in the action group. </p>
      */
-    inline const Aws::Vector<FunctionDefinition>& GetFunctions() const{ return m_functions; }
+    inline const Aws::Vector<FunctionDefinition>& GetFunctions() const { return m_functions; }
     inline bool FunctionsHasBeenSet() const { return m_functionsHasBeenSet; }
-    inline void SetFunctions(const Aws::Vector<FunctionDefinition>& value) { m_functionsHasBeenSet = true; m_functions = value; }
-    inline void SetFunctions(Aws::Vector<FunctionDefinition>&& value) { m_functionsHasBeenSet = true; m_functions = std::move(value); }
-    inline FunctionSchema& WithFunctions(const Aws::Vector<FunctionDefinition>& value) { SetFunctions(value); return *this;}
-    inline FunctionSchema& WithFunctions(Aws::Vector<FunctionDefinition>&& value) { SetFunctions(std::move(value)); return *this;}
-    inline FunctionSchema& AddFunctions(const FunctionDefinition& value) { m_functionsHasBeenSet = true; m_functions.push_back(value); return *this; }
-    inline FunctionSchema& AddFunctions(FunctionDefinition&& value) { m_functionsHasBeenSet = true; m_functions.push_back(std::move(value)); return *this; }
+    template<typename FunctionsT = Aws::Vector<FunctionDefinition>>
+    void SetFunctions(FunctionsT&& value) { m_functionsHasBeenSet = true; m_functions = std::forward<FunctionsT>(value); }
+    template<typename FunctionsT = Aws::Vector<FunctionDefinition>>
+    FunctionSchema& WithFunctions(FunctionsT&& value) { SetFunctions(std::forward<FunctionsT>(value)); return *this;}
+    template<typename FunctionsT = FunctionDefinition>
+    FunctionSchema& AddFunctions(FunctionsT&& value) { m_functionsHasBeenSet = true; m_functions.emplace_back(std::forward<FunctionsT>(value)); return *this; }
     ///@}
   private:
 

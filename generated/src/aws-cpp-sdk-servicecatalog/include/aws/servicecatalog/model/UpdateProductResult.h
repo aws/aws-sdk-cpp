@@ -30,7 +30,7 @@ namespace Model
   class UpdateProductResult
   {
   public:
-    AWS_SERVICECATALOG_API UpdateProductResult();
+    AWS_SERVICECATALOG_API UpdateProductResult() = default;
     AWS_SERVICECATALOG_API UpdateProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API UpdateProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,43 +39,44 @@ namespace Model
     /**
      * <p>Information about the product view.</p>
      */
-    inline const ProductViewDetail& GetProductViewDetail() const{ return m_productViewDetail; }
-    inline void SetProductViewDetail(const ProductViewDetail& value) { m_productViewDetail = value; }
-    inline void SetProductViewDetail(ProductViewDetail&& value) { m_productViewDetail = std::move(value); }
-    inline UpdateProductResult& WithProductViewDetail(const ProductViewDetail& value) { SetProductViewDetail(value); return *this;}
-    inline UpdateProductResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(std::move(value)); return *this;}
+    inline const ProductViewDetail& GetProductViewDetail() const { return m_productViewDetail; }
+    template<typename ProductViewDetailT = ProductViewDetail>
+    void SetProductViewDetail(ProductViewDetailT&& value) { m_productViewDetailHasBeenSet = true; m_productViewDetail = std::forward<ProductViewDetailT>(value); }
+    template<typename ProductViewDetailT = ProductViewDetail>
+    UpdateProductResult& WithProductViewDetail(ProductViewDetailT&& value) { SetProductViewDetail(std::forward<ProductViewDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the tags associated with the product.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline UpdateProductResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline UpdateProductResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline UpdateProductResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline UpdateProductResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    UpdateProductResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    UpdateProductResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateProductResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateProductResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateProductResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateProductResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProductViewDetail m_productViewDetail;
+    bool m_productViewDetailHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

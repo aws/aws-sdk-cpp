@@ -12,16 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateListenerRequest::UpdateListenerRequest() : 
-    m_listenerArnHasBeenSet(false),
-    m_portRangesHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_clientAffinity(ClientAffinity::NOT_SET),
-    m_clientAffinityHasBeenSet(false)
-{
-}
-
 Aws::String UpdateListenerRequest::SerializePayload() const
 {
   JsonValue payload;

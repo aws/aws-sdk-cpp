@@ -18,16 +18,7 @@ namespace BackupGateway
 namespace Model
 {
 
-VmwareToAwsTagMapping::VmwareToAwsTagMapping() : 
-    m_awsTagKeyHasBeenSet(false),
-    m_awsTagValueHasBeenSet(false),
-    m_vmwareCategoryHasBeenSet(false),
-    m_vmwareTagNameHasBeenSet(false)
-{
-}
-
 VmwareToAwsTagMapping::VmwareToAwsTagMapping(JsonView jsonValue)
-  : VmwareToAwsTagMapping()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ VmwareToAwsTagMapping& VmwareToAwsTagMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AwsTagKey"))
   {
     m_awsTagKey = jsonValue.GetString("AwsTagKey");
-
     m_awsTagKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsTagValue"))
   {
     m_awsTagValue = jsonValue.GetString("AwsTagValue");
-
     m_awsTagValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VmwareCategory"))
   {
     m_vmwareCategory = jsonValue.GetString("VmwareCategory");
-
     m_vmwareCategoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VmwareTagName"))
   {
     m_vmwareTagName = jsonValue.GetString("VmwareTagName");
-
     m_vmwareTagNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PrivateDnsNameOptionsOnLaunch::PrivateDnsNameOptionsOnLaunch() : 
-    m_hostnameType(HostnameType::NOT_SET),
-    m_hostnameTypeHasBeenSet(false),
-    m_enableResourceNameDnsARecord(false),
-    m_enableResourceNameDnsARecordHasBeenSet(false),
-    m_enableResourceNameDnsAAAARecord(false),
-    m_enableResourceNameDnsAAAARecordHasBeenSet(false)
-{
-}
-
 PrivateDnsNameOptionsOnLaunch::PrivateDnsNameOptionsOnLaunch(const XmlNode& xmlNode)
-  : PrivateDnsNameOptionsOnLaunch()
 {
   *this = xmlNode;
 }
@@ -45,20 +34,23 @@ PrivateDnsNameOptionsOnLaunch& PrivateDnsNameOptionsOnLaunch::operator =(const X
     XmlNode hostnameTypeNode = resultNode.FirstChild("hostnameType");
     if(!hostnameTypeNode.IsNull())
     {
-      m_hostnameType = HostnameTypeMapper::GetHostnameTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostnameTypeNode.GetText()).c_str()).c_str());
+      m_hostnameType = HostnameTypeMapper::GetHostnameTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostnameTypeNode.GetText()).c_str()));
       m_hostnameTypeHasBeenSet = true;
+       m_hostnameTypeHasBeenSet = true;
     }
     XmlNode enableResourceNameDnsARecordNode = resultNode.FirstChild("enableResourceNameDnsARecord");
     if(!enableResourceNameDnsARecordNode.IsNull())
     {
       m_enableResourceNameDnsARecord = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableResourceNameDnsARecordNode.GetText()).c_str()).c_str());
       m_enableResourceNameDnsARecordHasBeenSet = true;
+       m_enableResourceNameDnsARecordHasBeenSet = true;
     }
     XmlNode enableResourceNameDnsAAAARecordNode = resultNode.FirstChild("enableResourceNameDnsAAAARecord");
     if(!enableResourceNameDnsAAAARecordNode.IsNull())
     {
       m_enableResourceNameDnsAAAARecord = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableResourceNameDnsAAAARecordNode.GetText()).c_str()).c_str());
       m_enableResourceNameDnsAAAARecordHasBeenSet = true;
+       m_enableResourceNameDnsAAAARecordHasBeenSet = true;
     }
   }
 

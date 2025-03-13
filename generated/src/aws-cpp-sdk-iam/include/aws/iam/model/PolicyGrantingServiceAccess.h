@@ -36,7 +36,7 @@ namespace Model
   class PolicyGrantingServiceAccess
   {
   public:
-    AWS_IAM_API PolicyGrantingServiceAccess();
+    AWS_IAM_API PolicyGrantingServiceAccess() = default;
     AWS_IAM_API PolicyGrantingServiceAccess(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API PolicyGrantingServiceAccess& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline PolicyGrantingServiceAccess& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline PolicyGrantingServiceAccess& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline PolicyGrantingServiceAccess& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    PolicyGrantingServiceAccess& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,24 +62,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      * policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const PolicyType& GetPolicyType() const{ return m_policyType; }
+    inline PolicyType GetPolicyType() const { return m_policyType; }
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
-    inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
-    inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
-    inline PolicyGrantingServiceAccess& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
-    inline PolicyGrantingServiceAccess& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
+    inline void SetPolicyType(PolicyType value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
+    inline PolicyGrantingServiceAccess& WithPolicyType(PolicyType value) { SetPolicyType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+    inline const Aws::String& GetPolicyArn() const { return m_policyArn; }
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
-    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
-    inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
-    inline PolicyGrantingServiceAccess& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-    inline PolicyGrantingServiceAccess& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-    inline PolicyGrantingServiceAccess& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+    template<typename PolicyArnT = Aws::String>
+    void SetPolicyArn(PolicyArnT&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::forward<PolicyArnT>(value); }
+    template<typename PolicyArnT = Aws::String>
+    PolicyGrantingServiceAccess& WithPolicyArn(PolicyArnT&& value) { SetPolicyArn(std::forward<PolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +86,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      * policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const PolicyOwnerEntityType& GetEntityType() const{ return m_entityType; }
+    inline PolicyOwnerEntityType GetEntityType() const { return m_entityType; }
     inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
-    inline void SetEntityType(const PolicyOwnerEntityType& value) { m_entityTypeHasBeenSet = true; m_entityType = value; }
-    inline void SetEntityType(PolicyOwnerEntityType&& value) { m_entityTypeHasBeenSet = true; m_entityType = std::move(value); }
-    inline PolicyGrantingServiceAccess& WithEntityType(const PolicyOwnerEntityType& value) { SetEntityType(value); return *this;}
-    inline PolicyGrantingServiceAccess& WithEntityType(PolicyOwnerEntityType&& value) { SetEntityType(std::move(value)); return *this;}
+    inline void SetEntityType(PolicyOwnerEntityType value) { m_entityTypeHasBeenSet = true; m_entityType = value; }
+    inline PolicyGrantingServiceAccess& WithEntityType(PolicyOwnerEntityType value) { SetEntityType(value); return *this;}
     ///@}
 
     ///@{
@@ -108,27 +100,25 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      * policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const Aws::String& GetEntityName() const{ return m_entityName; }
+    inline const Aws::String& GetEntityName() const { return m_entityName; }
     inline bool EntityNameHasBeenSet() const { return m_entityNameHasBeenSet; }
-    inline void SetEntityName(const Aws::String& value) { m_entityNameHasBeenSet = true; m_entityName = value; }
-    inline void SetEntityName(Aws::String&& value) { m_entityNameHasBeenSet = true; m_entityName = std::move(value); }
-    inline void SetEntityName(const char* value) { m_entityNameHasBeenSet = true; m_entityName.assign(value); }
-    inline PolicyGrantingServiceAccess& WithEntityName(const Aws::String& value) { SetEntityName(value); return *this;}
-    inline PolicyGrantingServiceAccess& WithEntityName(Aws::String&& value) { SetEntityName(std::move(value)); return *this;}
-    inline PolicyGrantingServiceAccess& WithEntityName(const char* value) { SetEntityName(value); return *this;}
+    template<typename EntityNameT = Aws::String>
+    void SetEntityName(EntityNameT&& value) { m_entityNameHasBeenSet = true; m_entityName = std::forward<EntityNameT>(value); }
+    template<typename EntityNameT = Aws::String>
+    PolicyGrantingServiceAccess& WithEntityName(EntityNameT&& value) { SetEntityName(std::forward<EntityNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet = false;
 
-    PolicyType m_policyType;
+    PolicyType m_policyType{PolicyType::NOT_SET};
     bool m_policyTypeHasBeenSet = false;
 
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet = false;
 
-    PolicyOwnerEntityType m_entityType;
+    PolicyOwnerEntityType m_entityType{PolicyOwnerEntityType::NOT_SET};
     bool m_entityTypeHasBeenSet = false;
 
     Aws::String m_entityName;

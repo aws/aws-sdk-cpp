@@ -34,7 +34,7 @@ namespace Model
   class Protection
   {
   public:
-    AWS_SHIELD_API Protection();
+    AWS_SHIELD_API Protection() = default;
     AWS_SHIELD_API Protection(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Protection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of the protection.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Protection& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Protection& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Protection& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Protection& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The name of the protection. For example, <code>My CloudFront
      * distributions</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Protection& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Protection& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Protection& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Protection& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is
      * protected.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline Protection& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline Protection& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline Protection& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    Protection& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,29 +83,26 @@ namespace Model
      * <p>The unique identifier (ID) for the Route 53 health check that's associated
      * with the protection. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetHealthCheckIds() const{ return m_healthCheckIds; }
+    inline const Aws::Vector<Aws::String>& GetHealthCheckIds() const { return m_healthCheckIds; }
     inline bool HealthCheckIdsHasBeenSet() const { return m_healthCheckIdsHasBeenSet; }
-    inline void SetHealthCheckIds(const Aws::Vector<Aws::String>& value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds = value; }
-    inline void SetHealthCheckIds(Aws::Vector<Aws::String>&& value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds = std::move(value); }
-    inline Protection& WithHealthCheckIds(const Aws::Vector<Aws::String>& value) { SetHealthCheckIds(value); return *this;}
-    inline Protection& WithHealthCheckIds(Aws::Vector<Aws::String>&& value) { SetHealthCheckIds(std::move(value)); return *this;}
-    inline Protection& AddHealthCheckIds(const Aws::String& value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds.push_back(value); return *this; }
-    inline Protection& AddHealthCheckIds(Aws::String&& value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds.push_back(std::move(value)); return *this; }
-    inline Protection& AddHealthCheckIds(const char* value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds.push_back(value); return *this; }
+    template<typename HealthCheckIdsT = Aws::Vector<Aws::String>>
+    void SetHealthCheckIds(HealthCheckIdsT&& value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds = std::forward<HealthCheckIdsT>(value); }
+    template<typename HealthCheckIdsT = Aws::Vector<Aws::String>>
+    Protection& WithHealthCheckIds(HealthCheckIdsT&& value) { SetHealthCheckIds(std::forward<HealthCheckIdsT>(value)); return *this;}
+    template<typename HealthCheckIdsT = Aws::String>
+    Protection& AddHealthCheckIds(HealthCheckIdsT&& value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds.emplace_back(std::forward<HealthCheckIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ARN (Amazon Resource Name) of the protection.</p>
      */
-    inline const Aws::String& GetProtectionArn() const{ return m_protectionArn; }
+    inline const Aws::String& GetProtectionArn() const { return m_protectionArn; }
     inline bool ProtectionArnHasBeenSet() const { return m_protectionArnHasBeenSet; }
-    inline void SetProtectionArn(const Aws::String& value) { m_protectionArnHasBeenSet = true; m_protectionArn = value; }
-    inline void SetProtectionArn(Aws::String&& value) { m_protectionArnHasBeenSet = true; m_protectionArn = std::move(value); }
-    inline void SetProtectionArn(const char* value) { m_protectionArnHasBeenSet = true; m_protectionArn.assign(value); }
-    inline Protection& WithProtectionArn(const Aws::String& value) { SetProtectionArn(value); return *this;}
-    inline Protection& WithProtectionArn(Aws::String&& value) { SetProtectionArn(std::move(value)); return *this;}
-    inline Protection& WithProtectionArn(const char* value) { SetProtectionArn(value); return *this;}
+    template<typename ProtectionArnT = Aws::String>
+    void SetProtectionArn(ProtectionArnT&& value) { m_protectionArnHasBeenSet = true; m_protectionArn = std::forward<ProtectionArnT>(value); }
+    template<typename ProtectionArnT = Aws::String>
+    Protection& WithProtectionArn(ProtectionArnT&& value) { SetProtectionArn(std::forward<ProtectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,12 +112,12 @@ namespace Model
      * rules in the web ACL in order to respond to application layer events that Shield
      * Advanced determines to be DDoS attacks. </p>
      */
-    inline const ApplicationLayerAutomaticResponseConfiguration& GetApplicationLayerAutomaticResponseConfiguration() const{ return m_applicationLayerAutomaticResponseConfiguration; }
+    inline const ApplicationLayerAutomaticResponseConfiguration& GetApplicationLayerAutomaticResponseConfiguration() const { return m_applicationLayerAutomaticResponseConfiguration; }
     inline bool ApplicationLayerAutomaticResponseConfigurationHasBeenSet() const { return m_applicationLayerAutomaticResponseConfigurationHasBeenSet; }
-    inline void SetApplicationLayerAutomaticResponseConfiguration(const ApplicationLayerAutomaticResponseConfiguration& value) { m_applicationLayerAutomaticResponseConfigurationHasBeenSet = true; m_applicationLayerAutomaticResponseConfiguration = value; }
-    inline void SetApplicationLayerAutomaticResponseConfiguration(ApplicationLayerAutomaticResponseConfiguration&& value) { m_applicationLayerAutomaticResponseConfigurationHasBeenSet = true; m_applicationLayerAutomaticResponseConfiguration = std::move(value); }
-    inline Protection& WithApplicationLayerAutomaticResponseConfiguration(const ApplicationLayerAutomaticResponseConfiguration& value) { SetApplicationLayerAutomaticResponseConfiguration(value); return *this;}
-    inline Protection& WithApplicationLayerAutomaticResponseConfiguration(ApplicationLayerAutomaticResponseConfiguration&& value) { SetApplicationLayerAutomaticResponseConfiguration(std::move(value)); return *this;}
+    template<typename ApplicationLayerAutomaticResponseConfigurationT = ApplicationLayerAutomaticResponseConfiguration>
+    void SetApplicationLayerAutomaticResponseConfiguration(ApplicationLayerAutomaticResponseConfigurationT&& value) { m_applicationLayerAutomaticResponseConfigurationHasBeenSet = true; m_applicationLayerAutomaticResponseConfiguration = std::forward<ApplicationLayerAutomaticResponseConfigurationT>(value); }
+    template<typename ApplicationLayerAutomaticResponseConfigurationT = ApplicationLayerAutomaticResponseConfiguration>
+    Protection& WithApplicationLayerAutomaticResponseConfiguration(ApplicationLayerAutomaticResponseConfigurationT&& value) { SetApplicationLayerAutomaticResponseConfiguration(std::forward<ApplicationLayerAutomaticResponseConfigurationT>(value)); return *this;}
     ///@}
   private:
 

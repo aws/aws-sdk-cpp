@@ -20,27 +20,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-XmlNestedUnionStruct::XmlNestedUnionStruct() : 
-    m_stringValueHasBeenSet(false),
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_byteValue(0),
-    m_byteValueHasBeenSet(false),
-    m_shortValue(0),
-    m_shortValueHasBeenSet(false),
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_floatValue(0.0),
-    m_floatValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false)
-{
-}
-
 XmlNestedUnionStruct::XmlNestedUnionStruct(const XmlNode& xmlNode)
-  : XmlNestedUnionStruct()
 {
   *this = xmlNode;
 }
@@ -56,48 +36,56 @@ XmlNestedUnionStruct& XmlNestedUnionStruct::operator =(const XmlNode& xmlNode)
     {
       m_stringValue = Aws::Utils::Xml::DecodeEscapedXmlText(stringValueNode.GetText());
       m_stringValueHasBeenSet = true;
+       m_stringValueHasBeenSet = true;
     }
     XmlNode booleanValueNode = resultNode.FirstChild("booleanValue");
     if(!booleanValueNode.IsNull())
     {
       m_booleanValue = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(booleanValueNode.GetText()).c_str()).c_str());
       m_booleanValueHasBeenSet = true;
+       m_booleanValueHasBeenSet = true;
     }
     XmlNode byteValueNode = resultNode.FirstChild("byteValue");
     if(!byteValueNode.IsNull())
     {
       m_byteValue = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(byteValueNode.GetText()).c_str()).c_str());
       m_byteValueHasBeenSet = true;
+       m_byteValueHasBeenSet = true;
     }
     XmlNode shortValueNode = resultNode.FirstChild("shortValue");
     if(!shortValueNode.IsNull())
     {
       m_shortValue = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(shortValueNode.GetText()).c_str()).c_str());
       m_shortValueHasBeenSet = true;
+       m_shortValueHasBeenSet = true;
     }
     XmlNode integerValueNode = resultNode.FirstChild("integerValue");
     if(!integerValueNode.IsNull())
     {
       m_integerValue = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(integerValueNode.GetText()).c_str()).c_str());
       m_integerValueHasBeenSet = true;
+       m_integerValueHasBeenSet = true;
     }
     XmlNode longValueNode = resultNode.FirstChild("longValue");
     if(!longValueNode.IsNull())
     {
       m_longValue = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(longValueNode.GetText()).c_str()).c_str());
       m_longValueHasBeenSet = true;
+       m_longValueHasBeenSet = true;
     }
     XmlNode floatValueNode = resultNode.FirstChild("floatValue");
     if(!floatValueNode.IsNull())
     {
       m_floatValue = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(floatValueNode.GetText()).c_str()).c_str());
       m_floatValueHasBeenSet = true;
+       m_floatValueHasBeenSet = true;
     }
     XmlNode doubleValueNode = resultNode.FirstChild("doubleValue");
     if(!doubleValueNode.IsNull())
     {
       m_doubleValue = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(doubleValueNode.GetText()).c_str()).c_str());
       m_doubleValueHasBeenSet = true;
+       m_doubleValueHasBeenSet = true;
     }
   }
 

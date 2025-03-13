@@ -18,14 +18,7 @@ namespace ECR
 namespace Model
 {
 
-ReplicationDestination::ReplicationDestination() : 
-    m_regionHasBeenSet(false),
-    m_registryIdHasBeenSet(false)
-{
-}
-
 ReplicationDestination::ReplicationDestination(JsonView jsonValue)
-  : ReplicationDestination()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReplicationDestination& ReplicationDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
     m_registryIdHasBeenSet = true;
   }
-
   return *this;
 }
 

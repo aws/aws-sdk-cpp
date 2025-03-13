@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-MaintenanceWindowIdentityForTarget::MaintenanceWindowIdentityForTarget() : 
-    m_windowIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 MaintenanceWindowIdentityForTarget::MaintenanceWindowIdentityForTarget(JsonView jsonValue)
-  : MaintenanceWindowIdentityForTarget()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MaintenanceWindowIdentityForTarget& MaintenanceWindowIdentityForTarget::operator
   if(jsonValue.ValueExists("WindowId"))
   {
     m_windowId = jsonValue.GetString("WindowId");
-
     m_windowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

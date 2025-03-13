@@ -18,13 +18,7 @@ namespace MigrationHubRefactorSpaces
 namespace Model
 {
 
-LambdaEndpointInput::LambdaEndpointInput() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 LambdaEndpointInput::LambdaEndpointInput(JsonView jsonValue)
-  : LambdaEndpointInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LambdaEndpointInput& LambdaEndpointInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

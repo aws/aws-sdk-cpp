@@ -33,7 +33,7 @@ namespace Model
   class EvaluatedRule
   {
   public:
-    AWS_FRAUDDETECTOR_API EvaluatedRule();
+    AWS_FRAUDDETECTOR_API EvaluatedRule() = default;
     AWS_FRAUDDETECTOR_API EvaluatedRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API EvaluatedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,78 +43,69 @@ namespace Model
     /**
      * <p> The rule ID. </p>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline EvaluatedRule& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline EvaluatedRule& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline EvaluatedRule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    EvaluatedRule& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The rule version. </p>
      */
-    inline const Aws::String& GetRuleVersion() const{ return m_ruleVersion; }
+    inline const Aws::String& GetRuleVersion() const { return m_ruleVersion; }
     inline bool RuleVersionHasBeenSet() const { return m_ruleVersionHasBeenSet; }
-    inline void SetRuleVersion(const Aws::String& value) { m_ruleVersionHasBeenSet = true; m_ruleVersion = value; }
-    inline void SetRuleVersion(Aws::String&& value) { m_ruleVersionHasBeenSet = true; m_ruleVersion = std::move(value); }
-    inline void SetRuleVersion(const char* value) { m_ruleVersionHasBeenSet = true; m_ruleVersion.assign(value); }
-    inline EvaluatedRule& WithRuleVersion(const Aws::String& value) { SetRuleVersion(value); return *this;}
-    inline EvaluatedRule& WithRuleVersion(Aws::String&& value) { SetRuleVersion(std::move(value)); return *this;}
-    inline EvaluatedRule& WithRuleVersion(const char* value) { SetRuleVersion(value); return *this;}
+    template<typename RuleVersionT = Aws::String>
+    void SetRuleVersion(RuleVersionT&& value) { m_ruleVersionHasBeenSet = true; m_ruleVersion = std::forward<RuleVersionT>(value); }
+    template<typename RuleVersionT = Aws::String>
+    EvaluatedRule& WithRuleVersion(RuleVersionT&& value) { SetRuleVersion(std::forward<RuleVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The rule expression. </p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline EvaluatedRule& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline EvaluatedRule& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline EvaluatedRule& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    EvaluatedRule& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The rule expression value. </p>
      */
-    inline const Aws::String& GetExpressionWithValues() const{ return m_expressionWithValues; }
+    inline const Aws::String& GetExpressionWithValues() const { return m_expressionWithValues; }
     inline bool ExpressionWithValuesHasBeenSet() const { return m_expressionWithValuesHasBeenSet; }
-    inline void SetExpressionWithValues(const Aws::String& value) { m_expressionWithValuesHasBeenSet = true; m_expressionWithValues = value; }
-    inline void SetExpressionWithValues(Aws::String&& value) { m_expressionWithValuesHasBeenSet = true; m_expressionWithValues = std::move(value); }
-    inline void SetExpressionWithValues(const char* value) { m_expressionWithValuesHasBeenSet = true; m_expressionWithValues.assign(value); }
-    inline EvaluatedRule& WithExpressionWithValues(const Aws::String& value) { SetExpressionWithValues(value); return *this;}
-    inline EvaluatedRule& WithExpressionWithValues(Aws::String&& value) { SetExpressionWithValues(std::move(value)); return *this;}
-    inline EvaluatedRule& WithExpressionWithValues(const char* value) { SetExpressionWithValues(value); return *this;}
+    template<typename ExpressionWithValuesT = Aws::String>
+    void SetExpressionWithValues(ExpressionWithValuesT&& value) { m_expressionWithValuesHasBeenSet = true; m_expressionWithValues = std::forward<ExpressionWithValuesT>(value); }
+    template<typename ExpressionWithValuesT = Aws::String>
+    EvaluatedRule& WithExpressionWithValues(ExpressionWithValuesT&& value) { SetExpressionWithValues(std::forward<ExpressionWithValuesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The rule outcome. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetOutcomes() const{ return m_outcomes; }
+    inline const Aws::Vector<Aws::String>& GetOutcomes() const { return m_outcomes; }
     inline bool OutcomesHasBeenSet() const { return m_outcomesHasBeenSet; }
-    inline void SetOutcomes(const Aws::Vector<Aws::String>& value) { m_outcomesHasBeenSet = true; m_outcomes = value; }
-    inline void SetOutcomes(Aws::Vector<Aws::String>&& value) { m_outcomesHasBeenSet = true; m_outcomes = std::move(value); }
-    inline EvaluatedRule& WithOutcomes(const Aws::Vector<Aws::String>& value) { SetOutcomes(value); return *this;}
-    inline EvaluatedRule& WithOutcomes(Aws::Vector<Aws::String>&& value) { SetOutcomes(std::move(value)); return *this;}
-    inline EvaluatedRule& AddOutcomes(const Aws::String& value) { m_outcomesHasBeenSet = true; m_outcomes.push_back(value); return *this; }
-    inline EvaluatedRule& AddOutcomes(Aws::String&& value) { m_outcomesHasBeenSet = true; m_outcomes.push_back(std::move(value)); return *this; }
-    inline EvaluatedRule& AddOutcomes(const char* value) { m_outcomesHasBeenSet = true; m_outcomes.push_back(value); return *this; }
+    template<typename OutcomesT = Aws::Vector<Aws::String>>
+    void SetOutcomes(OutcomesT&& value) { m_outcomesHasBeenSet = true; m_outcomes = std::forward<OutcomesT>(value); }
+    template<typename OutcomesT = Aws::Vector<Aws::String>>
+    EvaluatedRule& WithOutcomes(OutcomesT&& value) { SetOutcomes(std::forward<OutcomesT>(value)); return *this;}
+    template<typename OutcomesT = Aws::String>
+    EvaluatedRule& AddOutcomes(OutcomesT&& value) { m_outcomesHasBeenSet = true; m_outcomes.emplace_back(std::forward<OutcomesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Indicates whether the rule was evaluated. </p>
      */
-    inline bool GetEvaluated() const{ return m_evaluated; }
+    inline bool GetEvaluated() const { return m_evaluated; }
     inline bool EvaluatedHasBeenSet() const { return m_evaluatedHasBeenSet; }
     inline void SetEvaluated(bool value) { m_evaluatedHasBeenSet = true; m_evaluated = value; }
     inline EvaluatedRule& WithEvaluated(bool value) { SetEvaluated(value); return *this;}
@@ -124,7 +115,7 @@ namespace Model
     /**
      * <p> Indicates whether the rule matched. </p>
      */
-    inline bool GetMatched() const{ return m_matched; }
+    inline bool GetMatched() const { return m_matched; }
     inline bool MatchedHasBeenSet() const { return m_matchedHasBeenSet; }
     inline void SetMatched(bool value) { m_matchedHasBeenSet = true; m_matched = value; }
     inline EvaluatedRule& WithMatched(bool value) { SetMatched(value); return *this;}
@@ -146,10 +137,10 @@ namespace Model
     Aws::Vector<Aws::String> m_outcomes;
     bool m_outcomesHasBeenSet = false;
 
-    bool m_evaluated;
+    bool m_evaluated{false};
     bool m_evaluatedHasBeenSet = false;
 
-    bool m_matched;
+    bool m_matched{false};
     bool m_matchedHasBeenSet = false;
   };
 

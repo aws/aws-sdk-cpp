@@ -31,7 +31,7 @@ namespace Model
   class TcpTimeout
   {
   public:
-    AWS_APPMESH_API TcpTimeout();
+    AWS_APPMESH_API TcpTimeout() = default;
     AWS_APPMESH_API TcpTimeout(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API TcpTimeout& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>An object that represents an idle timeout. An idle timeout bounds the amount
      * of time that a connection may be idle. The default value is none.</p>
      */
-    inline const Duration& GetIdle() const{ return m_idle; }
+    inline const Duration& GetIdle() const { return m_idle; }
     inline bool IdleHasBeenSet() const { return m_idleHasBeenSet; }
-    inline void SetIdle(const Duration& value) { m_idleHasBeenSet = true; m_idle = value; }
-    inline void SetIdle(Duration&& value) { m_idleHasBeenSet = true; m_idle = std::move(value); }
-    inline TcpTimeout& WithIdle(const Duration& value) { SetIdle(value); return *this;}
-    inline TcpTimeout& WithIdle(Duration&& value) { SetIdle(std::move(value)); return *this;}
+    template<typename IdleT = Duration>
+    void SetIdle(IdleT&& value) { m_idleHasBeenSet = true; m_idle = std::forward<IdleT>(value); }
+    template<typename IdleT = Duration>
+    TcpTimeout& WithIdle(IdleT&& value) { SetIdle(std::forward<IdleT>(value)); return *this;}
     ///@}
   private:
 

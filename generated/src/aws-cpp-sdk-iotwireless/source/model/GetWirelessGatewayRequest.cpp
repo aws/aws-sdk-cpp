@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetWirelessGatewayRequest::GetWirelessGatewayRequest() : 
-    m_identifierHasBeenSet(false),
-    m_identifierType(WirelessGatewayIdType::NOT_SET),
-    m_identifierTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetWirelessGatewayRequest::SerializePayload() const
 {
   return {};

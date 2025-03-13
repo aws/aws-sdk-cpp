@@ -20,15 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-TargetGroupTuple::TargetGroupTuple() : 
-    m_targetGroupArnHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false)
-{
-}
-
 TargetGroupTuple::TargetGroupTuple(const XmlNode& xmlNode)
-  : TargetGroupTuple()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ TargetGroupTuple& TargetGroupTuple::operator =(const XmlNode& xmlNode)
     {
       m_targetGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(targetGroupArnNode.GetText());
       m_targetGroupArnHasBeenSet = true;
+       m_targetGroupArnHasBeenSet = true;
     }
     XmlNode weightNode = resultNode.FirstChild("Weight");
     if(!weightNode.IsNull())
     {
       m_weight = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(weightNode.GetText()).c_str()).c_str());
       m_weightHasBeenSet = true;
+       m_weightHasBeenSet = true;
     }
   }
 

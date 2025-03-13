@@ -27,7 +27,7 @@ namespace Model
   class GetChallengePasswordResult
   {
   public:
-    AWS_PCACONNECTORSCEP_API GetChallengePasswordResult();
+    AWS_PCACONNECTORSCEP_API GetChallengePasswordResult() = default;
     AWS_PCACONNECTORSCEP_API GetChallengePasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PCACONNECTORSCEP_API GetChallengePasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The SCEP challenge password.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
-    inline void SetPassword(const Aws::String& value) { m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_password.assign(value); }
-    inline GetChallengePasswordResult& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline GetChallengePasswordResult& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline GetChallengePasswordResult& WithPassword(const char* value) { SetPassword(value); return *this;}
+    inline const Aws::String& GetPassword() const { return m_password; }
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    GetChallengePasswordResult& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetChallengePasswordResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetChallengePasswordResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetChallengePasswordResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetChallengePasswordResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_password;
+    bool m_passwordHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

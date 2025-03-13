@@ -18,14 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-ContainerServiceDeploymentRequest::ContainerServiceDeploymentRequest() : 
-    m_containersHasBeenSet(false),
-    m_publicEndpointHasBeenSet(false)
-{
-}
-
 ContainerServiceDeploymentRequest::ContainerServiceDeploymentRequest(JsonView jsonValue)
-  : ContainerServiceDeploymentRequest()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ContainerServiceDeploymentRequest& ContainerServiceDeploymentRequest::operator =
     }
     m_containersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicEndpoint"))
   {
     m_publicEndpoint = jsonValue.GetObject("publicEndpoint");
-
     m_publicEndpointHasBeenSet = true;
   }
-
   return *this;
 }
 

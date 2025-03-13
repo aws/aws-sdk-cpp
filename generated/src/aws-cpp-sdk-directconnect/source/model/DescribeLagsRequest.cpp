@@ -12,11 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLagsRequest::DescribeLagsRequest() : 
-    m_lagIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLagsRequest::SerializePayload() const
 {
   JsonValue payload;

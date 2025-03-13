@@ -18,18 +18,7 @@ namespace ECRPublic
 namespace Model
 {
 
-InvalidLayerPartException::InvalidLayerPartException() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_uploadIdHasBeenSet(false),
-    m_lastValidByteReceived(0),
-    m_lastValidByteReceivedHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InvalidLayerPartException::InvalidLayerPartException(JsonView jsonValue)
-  : InvalidLayerPartException()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ InvalidLayerPartException& InvalidLayerPartException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
     m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uploadId"))
   {
     m_uploadId = jsonValue.GetString("uploadId");
-
     m_uploadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastValidByteReceived"))
   {
     m_lastValidByteReceived = jsonValue.GetInt64("lastValidByteReceived");
-
     m_lastValidByteReceivedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

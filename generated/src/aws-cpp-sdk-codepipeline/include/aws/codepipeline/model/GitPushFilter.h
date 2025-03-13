@@ -35,7 +35,7 @@ namespace Model
   class GitPushFilter
   {
   public:
-    AWS_CODEPIPELINE_API GitPushFilter();
+    AWS_CODEPIPELINE_API GitPushFilter() = default;
     AWS_CODEPIPELINE_API GitPushFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API GitPushFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>The field that contains the details for the Git tags trigger
      * configuration.</p>
      */
-    inline const GitTagFilterCriteria& GetTags() const{ return m_tags; }
+    inline const GitTagFilterCriteria& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const GitTagFilterCriteria& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(GitTagFilterCriteria&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline GitPushFilter& WithTags(const GitTagFilterCriteria& value) { SetTags(value); return *this;}
-    inline GitPushFilter& WithTags(GitTagFilterCriteria&& value) { SetTags(std::move(value)); return *this;}
+    template<typename TagsT = GitTagFilterCriteria>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = GitTagFilterCriteria>
+    GitPushFilter& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>The field that specifies to filter on branches for the push trigger
      * configuration.</p>
      */
-    inline const GitBranchFilterCriteria& GetBranches() const{ return m_branches; }
+    inline const GitBranchFilterCriteria& GetBranches() const { return m_branches; }
     inline bool BranchesHasBeenSet() const { return m_branchesHasBeenSet; }
-    inline void SetBranches(const GitBranchFilterCriteria& value) { m_branchesHasBeenSet = true; m_branches = value; }
-    inline void SetBranches(GitBranchFilterCriteria&& value) { m_branchesHasBeenSet = true; m_branches = std::move(value); }
-    inline GitPushFilter& WithBranches(const GitBranchFilterCriteria& value) { SetBranches(value); return *this;}
-    inline GitPushFilter& WithBranches(GitBranchFilterCriteria&& value) { SetBranches(std::move(value)); return *this;}
+    template<typename BranchesT = GitBranchFilterCriteria>
+    void SetBranches(BranchesT&& value) { m_branchesHasBeenSet = true; m_branches = std::forward<BranchesT>(value); }
+    template<typename BranchesT = GitBranchFilterCriteria>
+    GitPushFilter& WithBranches(BranchesT&& value) { SetBranches(std::forward<BranchesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * <p>The field that specifies to filter on file paths for the push trigger
      * configuration.</p>
      */
-    inline const GitFilePathFilterCriteria& GetFilePaths() const{ return m_filePaths; }
+    inline const GitFilePathFilterCriteria& GetFilePaths() const { return m_filePaths; }
     inline bool FilePathsHasBeenSet() const { return m_filePathsHasBeenSet; }
-    inline void SetFilePaths(const GitFilePathFilterCriteria& value) { m_filePathsHasBeenSet = true; m_filePaths = value; }
-    inline void SetFilePaths(GitFilePathFilterCriteria&& value) { m_filePathsHasBeenSet = true; m_filePaths = std::move(value); }
-    inline GitPushFilter& WithFilePaths(const GitFilePathFilterCriteria& value) { SetFilePaths(value); return *this;}
-    inline GitPushFilter& WithFilePaths(GitFilePathFilterCriteria&& value) { SetFilePaths(std::move(value)); return *this;}
+    template<typename FilePathsT = GitFilePathFilterCriteria>
+    void SetFilePaths(FilePathsT&& value) { m_filePathsHasBeenSet = true; m_filePaths = std::forward<FilePathsT>(value); }
+    template<typename FilePathsT = GitFilePathFilterCriteria>
+    GitPushFilter& WithFilePaths(FilePathsT&& value) { SetFilePaths(std::forward<FilePathsT>(value)); return *this;}
     ///@}
   private:
 

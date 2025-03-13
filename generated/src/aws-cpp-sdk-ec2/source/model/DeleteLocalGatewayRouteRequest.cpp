@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteLocalGatewayRouteRequest::DeleteLocalGatewayRouteRequest() : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_destinationPrefixListIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLocalGatewayRouteRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,25 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterUserRequest::RegisterUserRequest() : 
-    m_identityType(IdentityType::NOT_SET),
-    m_identityTypeHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_userRole(UserRole::NOT_SET),
-    m_userRoleHasBeenSet(false),
-    m_iamArnHasBeenSet(false),
-    m_sessionNameHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_customPermissionsNameHasBeenSet(false),
-    m_externalLoginFederationProviderTypeHasBeenSet(false),
-    m_customFederationProviderUrlHasBeenSet(false),
-    m_externalLoginIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String RegisterUserRequest::SerializePayload() const
 {
   JsonValue payload;

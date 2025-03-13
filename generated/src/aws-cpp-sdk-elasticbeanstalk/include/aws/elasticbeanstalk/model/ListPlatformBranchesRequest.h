@@ -23,7 +23,7 @@ namespace Model
   class ListPlatformBranchesRequest : public ElasticBeanstalkRequest
   {
   public:
-    AWS_ELASTICBEANSTALK_API ListPlatformBranchesRequest();
+    AWS_ELASTICBEANSTALK_API ListPlatformBranchesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -64,21 +64,21 @@ namespace Model
      * <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is
      * limited to 10 items.</p>
      */
-    inline const Aws::Vector<SearchFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<SearchFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<SearchFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<SearchFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListPlatformBranchesRequest& WithFilters(const Aws::Vector<SearchFilter>& value) { SetFilters(value); return *this;}
-    inline ListPlatformBranchesRequest& WithFilters(Aws::Vector<SearchFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListPlatformBranchesRequest& AddFilters(const SearchFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListPlatformBranchesRequest& AddFilters(SearchFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<SearchFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<SearchFilter>>
+    ListPlatformBranchesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = SearchFilter>
+    ListPlatformBranchesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of platform branch values returned in one call.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline ListPlatformBranchesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -91,21 +91,19 @@ namespace Model
      * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
      * is specified, the first page is retrieved.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListPlatformBranchesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPlatformBranchesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPlatformBranchesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPlatformBranchesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SearchFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_nextToken;

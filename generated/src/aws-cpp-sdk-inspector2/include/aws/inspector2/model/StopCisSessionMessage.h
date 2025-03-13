@@ -34,7 +34,7 @@ namespace Model
   class StopCisSessionMessage
   {
   public:
-    AWS_INSPECTOR2_API StopCisSessionMessage();
+    AWS_INSPECTOR2_API StopCisSessionMessage() = default;
     AWS_INSPECTOR2_API StopCisSessionMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API StopCisSessionMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,78 +44,70 @@ namespace Model
     /**
      * <p>The message benchmark profile.</p>
      */
-    inline const Aws::String& GetBenchmarkProfile() const{ return m_benchmarkProfile; }
+    inline const Aws::String& GetBenchmarkProfile() const { return m_benchmarkProfile; }
     inline bool BenchmarkProfileHasBeenSet() const { return m_benchmarkProfileHasBeenSet; }
-    inline void SetBenchmarkProfile(const Aws::String& value) { m_benchmarkProfileHasBeenSet = true; m_benchmarkProfile = value; }
-    inline void SetBenchmarkProfile(Aws::String&& value) { m_benchmarkProfileHasBeenSet = true; m_benchmarkProfile = std::move(value); }
-    inline void SetBenchmarkProfile(const char* value) { m_benchmarkProfileHasBeenSet = true; m_benchmarkProfile.assign(value); }
-    inline StopCisSessionMessage& WithBenchmarkProfile(const Aws::String& value) { SetBenchmarkProfile(value); return *this;}
-    inline StopCisSessionMessage& WithBenchmarkProfile(Aws::String&& value) { SetBenchmarkProfile(std::move(value)); return *this;}
-    inline StopCisSessionMessage& WithBenchmarkProfile(const char* value) { SetBenchmarkProfile(value); return *this;}
+    template<typename BenchmarkProfileT = Aws::String>
+    void SetBenchmarkProfile(BenchmarkProfileT&& value) { m_benchmarkProfileHasBeenSet = true; m_benchmarkProfile = std::forward<BenchmarkProfileT>(value); }
+    template<typename BenchmarkProfileT = Aws::String>
+    StopCisSessionMessage& WithBenchmarkProfile(BenchmarkProfileT&& value) { SetBenchmarkProfile(std::forward<BenchmarkProfileT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message benchmark version.</p>
      */
-    inline const Aws::String& GetBenchmarkVersion() const{ return m_benchmarkVersion; }
+    inline const Aws::String& GetBenchmarkVersion() const { return m_benchmarkVersion; }
     inline bool BenchmarkVersionHasBeenSet() const { return m_benchmarkVersionHasBeenSet; }
-    inline void SetBenchmarkVersion(const Aws::String& value) { m_benchmarkVersionHasBeenSet = true; m_benchmarkVersion = value; }
-    inline void SetBenchmarkVersion(Aws::String&& value) { m_benchmarkVersionHasBeenSet = true; m_benchmarkVersion = std::move(value); }
-    inline void SetBenchmarkVersion(const char* value) { m_benchmarkVersionHasBeenSet = true; m_benchmarkVersion.assign(value); }
-    inline StopCisSessionMessage& WithBenchmarkVersion(const Aws::String& value) { SetBenchmarkVersion(value); return *this;}
-    inline StopCisSessionMessage& WithBenchmarkVersion(Aws::String&& value) { SetBenchmarkVersion(std::move(value)); return *this;}
-    inline StopCisSessionMessage& WithBenchmarkVersion(const char* value) { SetBenchmarkVersion(value); return *this;}
+    template<typename BenchmarkVersionT = Aws::String>
+    void SetBenchmarkVersion(BenchmarkVersionT&& value) { m_benchmarkVersionHasBeenSet = true; m_benchmarkVersion = std::forward<BenchmarkVersionT>(value); }
+    template<typename BenchmarkVersionT = Aws::String>
+    StopCisSessionMessage& WithBenchmarkVersion(BenchmarkVersionT&& value) { SetBenchmarkVersion(std::forward<BenchmarkVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message compute platform.</p>
      */
-    inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
+    inline const ComputePlatform& GetComputePlatform() const { return m_computePlatform; }
     inline bool ComputePlatformHasBeenSet() const { return m_computePlatformHasBeenSet; }
-    inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
-    inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
-    inline StopCisSessionMessage& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
-    inline StopCisSessionMessage& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
+    template<typename ComputePlatformT = ComputePlatform>
+    void SetComputePlatform(ComputePlatformT&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::forward<ComputePlatformT>(value); }
+    template<typename ComputePlatformT = ComputePlatform>
+    StopCisSessionMessage& WithComputePlatform(ComputePlatformT&& value) { SetComputePlatform(std::forward<ComputePlatformT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The progress of the message.</p>
      */
-    inline const StopCisMessageProgress& GetProgress() const{ return m_progress; }
+    inline const StopCisMessageProgress& GetProgress() const { return m_progress; }
     inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
-    inline void SetProgress(const StopCisMessageProgress& value) { m_progressHasBeenSet = true; m_progress = value; }
-    inline void SetProgress(StopCisMessageProgress&& value) { m_progressHasBeenSet = true; m_progress = std::move(value); }
-    inline StopCisSessionMessage& WithProgress(const StopCisMessageProgress& value) { SetProgress(value); return *this;}
-    inline StopCisSessionMessage& WithProgress(StopCisMessageProgress&& value) { SetProgress(std::move(value)); return *this;}
+    template<typename ProgressT = StopCisMessageProgress>
+    void SetProgress(ProgressT&& value) { m_progressHasBeenSet = true; m_progress = std::forward<ProgressT>(value); }
+    template<typename ProgressT = StopCisMessageProgress>
+    StopCisSessionMessage& WithProgress(ProgressT&& value) { SetProgress(std::forward<ProgressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the message.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline StopCisSessionMessage& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline StopCisSessionMessage& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline StopCisSessionMessage& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    StopCisSessionMessage& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the message.</p>
      */
-    inline const StopCisSessionStatus& GetStatus() const{ return m_status; }
+    inline StopCisSessionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StopCisSessionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StopCisSessionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline StopCisSessionMessage& WithStatus(const StopCisSessionStatus& value) { SetStatus(value); return *this;}
-    inline StopCisSessionMessage& WithStatus(StopCisSessionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StopCisSessionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StopCisSessionMessage& WithStatus(StopCisSessionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -134,7 +126,7 @@ namespace Model
     Aws::String m_reason;
     bool m_reasonHasBeenSet = false;
 
-    StopCisSessionStatus m_status;
+    StopCisSessionStatus m_status{StopCisSessionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-SparkSubmitJobDriver::SparkSubmitJobDriver() : 
-    m_entryPointHasBeenSet(false),
-    m_entryPointArgumentsHasBeenSet(false),
-    m_sparkSubmitParametersHasBeenSet(false)
-{
-}
-
 SparkSubmitJobDriver::SparkSubmitJobDriver(JsonView jsonValue)
-  : SparkSubmitJobDriver()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ SparkSubmitJobDriver& SparkSubmitJobDriver::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("entryPoint"))
   {
     m_entryPoint = jsonValue.GetString("entryPoint");
-
     m_entryPointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entryPointArguments"))
   {
     Aws::Utils::Array<JsonView> entryPointArgumentsJsonList = jsonValue.GetArray("entryPointArguments");
@@ -49,14 +39,11 @@ SparkSubmitJobDriver& SparkSubmitJobDriver::operator =(JsonView jsonValue)
     }
     m_entryPointArgumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sparkSubmitParameters"))
   {
     m_sparkSubmitParameters = jsonValue.GetString("sparkSubmitParameters");
-
     m_sparkSubmitParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

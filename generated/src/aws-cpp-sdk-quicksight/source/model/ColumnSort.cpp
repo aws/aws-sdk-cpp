@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ColumnSort::ColumnSort() : 
-    m_sortByHasBeenSet(false),
-    m_direction(SortDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_aggregationFunctionHasBeenSet(false)
-{
-}
-
 ColumnSort::ColumnSort(JsonView jsonValue)
-  : ColumnSort()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ColumnSort& ColumnSort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SortBy"))
   {
     m_sortBy = jsonValue.GetObject("SortBy");
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Direction"))
   {
     m_direction = SortDirectionMapper::GetSortDirectionForName(jsonValue.GetString("Direction"));
-
     m_directionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregationFunction"))
   {
     m_aggregationFunction = jsonValue.GetObject("AggregationFunction");
-
     m_aggregationFunctionHasBeenSet = true;
   }
-
   return *this;
 }
 

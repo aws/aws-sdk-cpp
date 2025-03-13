@@ -18,23 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-LicenseRecommendation::LicenseRecommendation() : 
-    m_resourceArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_currentLicenseConfigurationHasBeenSet(false),
-    m_lookbackPeriodInDays(0.0),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_finding(LicenseFinding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_findingReasonCodesHasBeenSet(false),
-    m_licenseRecommendationOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 LicenseRecommendation::LicenseRecommendation(JsonView jsonValue)
-  : LicenseRecommendation()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ LicenseRecommendation& LicenseRecommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentLicenseConfiguration"))
   {
     m_currentLicenseConfiguration = jsonValue.GetObject("currentLicenseConfiguration");
-
     m_currentLicenseConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lookbackPeriodInDays"))
   {
     m_lookbackPeriodInDays = jsonValue.GetDouble("lookbackPeriodInDays");
-
     m_lookbackPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRefreshTimestamp"))
   {
     m_lastRefreshTimestamp = jsonValue.GetDouble("lastRefreshTimestamp");
-
     m_lastRefreshTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("finding"))
   {
     m_finding = LicenseFindingMapper::GetLicenseFindingForName(jsonValue.GetString("finding"));
-
     m_findingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingReasonCodes"))
   {
     Aws::Utils::Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("findingReasonCodes");
@@ -92,7 +64,6 @@ LicenseRecommendation& LicenseRecommendation::operator =(JsonView jsonValue)
     }
     m_findingReasonCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseRecommendationOptions"))
   {
     Aws::Utils::Array<JsonView> licenseRecommendationOptionsJsonList = jsonValue.GetArray("licenseRecommendationOptions");
@@ -102,7 +73,6 @@ LicenseRecommendation& LicenseRecommendation::operator =(JsonView jsonValue)
     }
     m_licenseRecommendationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -112,7 +82,6 @@ LicenseRecommendation& LicenseRecommendation::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

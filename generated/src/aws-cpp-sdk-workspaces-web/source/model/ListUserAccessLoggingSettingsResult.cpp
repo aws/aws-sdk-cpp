@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListUserAccessLoggingSettingsResult::ListUserAccessLoggingSettingsResult()
-{
-}
-
 ListUserAccessLoggingSettingsResult::ListUserAccessLoggingSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListUserAccessLoggingSettingsResult& ListUserAccessLoggingSettingsResult::operat
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAccessLoggingSettings"))
   {
     Aws::Utils::Array<JsonView> userAccessLoggingSettingsJsonList = jsonValue.GetArray("userAccessLoggingSettings");
@@ -42,14 +37,15 @@ ListUserAccessLoggingSettingsResult& ListUserAccessLoggingSettingsResult::operat
     {
       m_userAccessLoggingSettings.push_back(userAccessLoggingSettingsJsonList[userAccessLoggingSettingsIndex].AsObject());
     }
+    m_userAccessLoggingSettingsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

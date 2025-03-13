@@ -12,11 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEventDataStoreRequest::DeleteEventDataStoreRequest() : 
-    m_eventDataStoreHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEventDataStoreRequest::SerializePayload() const
 {
   JsonValue payload;

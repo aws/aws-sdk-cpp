@@ -20,73 +20,7 @@ namespace RDS
 namespace Model
 {
 
-OrderableDBInstanceOption::OrderableDBInstanceOption() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBInstanceClassHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_availabilityZoneGroupHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_multiAZCapable(false),
-    m_multiAZCapableHasBeenSet(false),
-    m_readReplicaCapable(false),
-    m_readReplicaCapableHasBeenSet(false),
-    m_vpc(false),
-    m_vpcHasBeenSet(false),
-    m_supportsStorageEncryption(false),
-    m_supportsStorageEncryptionHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_supportsIops(false),
-    m_supportsIopsHasBeenSet(false),
-    m_supportsEnhancedMonitoring(false),
-    m_supportsEnhancedMonitoringHasBeenSet(false),
-    m_supportsIAMDatabaseAuthentication(false),
-    m_supportsIAMDatabaseAuthenticationHasBeenSet(false),
-    m_supportsPerformanceInsights(false),
-    m_supportsPerformanceInsightsHasBeenSet(false),
-    m_minStorageSize(0),
-    m_minStorageSizeHasBeenSet(false),
-    m_maxStorageSize(0),
-    m_maxStorageSizeHasBeenSet(false),
-    m_minIopsPerDbInstance(0),
-    m_minIopsPerDbInstanceHasBeenSet(false),
-    m_maxIopsPerDbInstance(0),
-    m_maxIopsPerDbInstanceHasBeenSet(false),
-    m_minIopsPerGib(0.0),
-    m_minIopsPerGibHasBeenSet(false),
-    m_maxIopsPerGib(0.0),
-    m_maxIopsPerGibHasBeenSet(false),
-    m_availableProcessorFeaturesHasBeenSet(false),
-    m_supportedEngineModesHasBeenSet(false),
-    m_supportsStorageAutoscaling(false),
-    m_supportsStorageAutoscalingHasBeenSet(false),
-    m_supportsKerberosAuthentication(false),
-    m_supportsKerberosAuthenticationHasBeenSet(false),
-    m_outpostCapable(false),
-    m_outpostCapableHasBeenSet(false),
-    m_supportedActivityStreamModesHasBeenSet(false),
-    m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false),
-    m_supportsClusters(false),
-    m_supportsClustersHasBeenSet(false),
-    m_supportedNetworkTypesHasBeenSet(false),
-    m_supportsStorageThroughput(false),
-    m_supportsStorageThroughputHasBeenSet(false),
-    m_minStorageThroughputPerDbInstance(0),
-    m_minStorageThroughputPerDbInstanceHasBeenSet(false),
-    m_maxStorageThroughputPerDbInstance(0),
-    m_maxStorageThroughputPerDbInstanceHasBeenSet(false),
-    m_minStorageThroughputPerIops(0.0),
-    m_minStorageThroughputPerIopsHasBeenSet(false),
-    m_maxStorageThroughputPerIops(0.0),
-    m_maxStorageThroughputPerIopsHasBeenSet(false),
-    m_supportsDedicatedLogVolume(false),
-    m_supportsDedicatedLogVolumeHasBeenSet(false)
-{
-}
-
 OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode)
-  : OrderableDBInstanceOption()
 {
   *this = xmlNode;
 }
@@ -102,246 +36,282 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+       m_engineVersionHasBeenSet = true;
     }
     XmlNode dBInstanceClassNode = resultNode.FirstChild("DBInstanceClass");
     if(!dBInstanceClassNode.IsNull())
     {
       m_dBInstanceClass = Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceClassNode.GetText());
       m_dBInstanceClassHasBeenSet = true;
+       m_dBInstanceClassHasBeenSet = true;
     }
     XmlNode licenseModelNode = resultNode.FirstChild("LicenseModel");
     if(!licenseModelNode.IsNull())
     {
       m_licenseModel = Aws::Utils::Xml::DecodeEscapedXmlText(licenseModelNode.GetText());
       m_licenseModelHasBeenSet = true;
+       m_licenseModelHasBeenSet = true;
     }
     XmlNode availabilityZoneGroupNode = resultNode.FirstChild("AvailabilityZoneGroup");
     if(!availabilityZoneGroupNode.IsNull())
     {
       m_availabilityZoneGroup = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneGroupNode.GetText());
       m_availabilityZoneGroupHasBeenSet = true;
+       m_availabilityZoneGroupHasBeenSet = true;
     }
     XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("AvailabilityZone");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember);
         availabilityZonesMember = availabilityZonesMember.NextNode("AvailabilityZone");
       }
 
-      m_availabilityZonesHasBeenSet = true;
+       m_availabilityZonesHasBeenSet = true;
     }
     XmlNode multiAZCapableNode = resultNode.FirstChild("MultiAZCapable");
     if(!multiAZCapableNode.IsNull())
     {
       m_multiAZCapable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAZCapableNode.GetText()).c_str()).c_str());
       m_multiAZCapableHasBeenSet = true;
+       m_multiAZCapableHasBeenSet = true;
     }
     XmlNode readReplicaCapableNode = resultNode.FirstChild("ReadReplicaCapable");
     if(!readReplicaCapableNode.IsNull())
     {
       m_readReplicaCapable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(readReplicaCapableNode.GetText()).c_str()).c_str());
       m_readReplicaCapableHasBeenSet = true;
+       m_readReplicaCapableHasBeenSet = true;
     }
     XmlNode vpcNode = resultNode.FirstChild("Vpc");
     if(!vpcNode.IsNull())
     {
       m_vpc = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcNode.GetText()).c_str()).c_str());
       m_vpcHasBeenSet = true;
+       m_vpcHasBeenSet = true;
     }
     XmlNode supportsStorageEncryptionNode = resultNode.FirstChild("SupportsStorageEncryption");
     if(!supportsStorageEncryptionNode.IsNull())
     {
       m_supportsStorageEncryption = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsStorageEncryptionNode.GetText()).c_str()).c_str());
       m_supportsStorageEncryptionHasBeenSet = true;
+       m_supportsStorageEncryptionHasBeenSet = true;
     }
     XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
     if(!storageTypeNode.IsNull())
     {
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
+       m_storageTypeHasBeenSet = true;
     }
     XmlNode supportsIopsNode = resultNode.FirstChild("SupportsIops");
     if(!supportsIopsNode.IsNull())
     {
       m_supportsIops = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsIopsNode.GetText()).c_str()).c_str());
       m_supportsIopsHasBeenSet = true;
+       m_supportsIopsHasBeenSet = true;
     }
     XmlNode supportsEnhancedMonitoringNode = resultNode.FirstChild("SupportsEnhancedMonitoring");
     if(!supportsEnhancedMonitoringNode.IsNull())
     {
       m_supportsEnhancedMonitoring = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsEnhancedMonitoringNode.GetText()).c_str()).c_str());
       m_supportsEnhancedMonitoringHasBeenSet = true;
+       m_supportsEnhancedMonitoringHasBeenSet = true;
     }
     XmlNode supportsIAMDatabaseAuthenticationNode = resultNode.FirstChild("SupportsIAMDatabaseAuthentication");
     if(!supportsIAMDatabaseAuthenticationNode.IsNull())
     {
       m_supportsIAMDatabaseAuthentication = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsIAMDatabaseAuthenticationNode.GetText()).c_str()).c_str());
       m_supportsIAMDatabaseAuthenticationHasBeenSet = true;
+       m_supportsIAMDatabaseAuthenticationHasBeenSet = true;
     }
     XmlNode supportsPerformanceInsightsNode = resultNode.FirstChild("SupportsPerformanceInsights");
     if(!supportsPerformanceInsightsNode.IsNull())
     {
       m_supportsPerformanceInsights = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsPerformanceInsightsNode.GetText()).c_str()).c_str());
       m_supportsPerformanceInsightsHasBeenSet = true;
+       m_supportsPerformanceInsightsHasBeenSet = true;
     }
     XmlNode minStorageSizeNode = resultNode.FirstChild("MinStorageSize");
     if(!minStorageSizeNode.IsNull())
     {
       m_minStorageSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minStorageSizeNode.GetText()).c_str()).c_str());
       m_minStorageSizeHasBeenSet = true;
+       m_minStorageSizeHasBeenSet = true;
     }
     XmlNode maxStorageSizeNode = resultNode.FirstChild("MaxStorageSize");
     if(!maxStorageSizeNode.IsNull())
     {
       m_maxStorageSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxStorageSizeNode.GetText()).c_str()).c_str());
       m_maxStorageSizeHasBeenSet = true;
+       m_maxStorageSizeHasBeenSet = true;
     }
     XmlNode minIopsPerDbInstanceNode = resultNode.FirstChild("MinIopsPerDbInstance");
     if(!minIopsPerDbInstanceNode.IsNull())
     {
       m_minIopsPerDbInstance = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minIopsPerDbInstanceNode.GetText()).c_str()).c_str());
       m_minIopsPerDbInstanceHasBeenSet = true;
+       m_minIopsPerDbInstanceHasBeenSet = true;
     }
     XmlNode maxIopsPerDbInstanceNode = resultNode.FirstChild("MaxIopsPerDbInstance");
     if(!maxIopsPerDbInstanceNode.IsNull())
     {
       m_maxIopsPerDbInstance = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxIopsPerDbInstanceNode.GetText()).c_str()).c_str());
       m_maxIopsPerDbInstanceHasBeenSet = true;
+       m_maxIopsPerDbInstanceHasBeenSet = true;
     }
     XmlNode minIopsPerGibNode = resultNode.FirstChild("MinIopsPerGib");
     if(!minIopsPerGibNode.IsNull())
     {
       m_minIopsPerGib = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minIopsPerGibNode.GetText()).c_str()).c_str());
       m_minIopsPerGibHasBeenSet = true;
+       m_minIopsPerGibHasBeenSet = true;
     }
     XmlNode maxIopsPerGibNode = resultNode.FirstChild("MaxIopsPerGib");
     if(!maxIopsPerGibNode.IsNull())
     {
       m_maxIopsPerGib = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxIopsPerGibNode.GetText()).c_str()).c_str());
       m_maxIopsPerGibHasBeenSet = true;
+       m_maxIopsPerGibHasBeenSet = true;
     }
     XmlNode availableProcessorFeaturesNode = resultNode.FirstChild("AvailableProcessorFeatures");
     if(!availableProcessorFeaturesNode.IsNull())
     {
       XmlNode availableProcessorFeaturesMember = availableProcessorFeaturesNode.FirstChild("AvailableProcessorFeature");
+      m_availableProcessorFeaturesHasBeenSet = !availableProcessorFeaturesMember.IsNull();
       while(!availableProcessorFeaturesMember.IsNull())
       {
         m_availableProcessorFeatures.push_back(availableProcessorFeaturesMember);
         availableProcessorFeaturesMember = availableProcessorFeaturesMember.NextNode("AvailableProcessorFeature");
       }
 
-      m_availableProcessorFeaturesHasBeenSet = true;
+       m_availableProcessorFeaturesHasBeenSet = true;
     }
     XmlNode supportedEngineModesNode = resultNode.FirstChild("SupportedEngineModes");
     if(!supportedEngineModesNode.IsNull())
     {
       XmlNode supportedEngineModesMember = supportedEngineModesNode.FirstChild("member");
+      m_supportedEngineModesHasBeenSet = !supportedEngineModesMember.IsNull();
       while(!supportedEngineModesMember.IsNull())
       {
         m_supportedEngineModes.push_back(supportedEngineModesMember.GetText());
         supportedEngineModesMember = supportedEngineModesMember.NextNode("member");
       }
 
-      m_supportedEngineModesHasBeenSet = true;
+       m_supportedEngineModesHasBeenSet = true;
     }
     XmlNode supportsStorageAutoscalingNode = resultNode.FirstChild("SupportsStorageAutoscaling");
     if(!supportsStorageAutoscalingNode.IsNull())
     {
       m_supportsStorageAutoscaling = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsStorageAutoscalingNode.GetText()).c_str()).c_str());
       m_supportsStorageAutoscalingHasBeenSet = true;
+       m_supportsStorageAutoscalingHasBeenSet = true;
     }
     XmlNode supportsKerberosAuthenticationNode = resultNode.FirstChild("SupportsKerberosAuthentication");
     if(!supportsKerberosAuthenticationNode.IsNull())
     {
       m_supportsKerberosAuthentication = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsKerberosAuthenticationNode.GetText()).c_str()).c_str());
       m_supportsKerberosAuthenticationHasBeenSet = true;
+       m_supportsKerberosAuthenticationHasBeenSet = true;
     }
     XmlNode outpostCapableNode = resultNode.FirstChild("OutpostCapable");
     if(!outpostCapableNode.IsNull())
     {
       m_outpostCapable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outpostCapableNode.GetText()).c_str()).c_str());
       m_outpostCapableHasBeenSet = true;
+       m_outpostCapableHasBeenSet = true;
     }
     XmlNode supportedActivityStreamModesNode = resultNode.FirstChild("SupportedActivityStreamModes");
     if(!supportedActivityStreamModesNode.IsNull())
     {
       XmlNode supportedActivityStreamModesMember = supportedActivityStreamModesNode.FirstChild("member");
+      m_supportedActivityStreamModesHasBeenSet = !supportedActivityStreamModesMember.IsNull();
       while(!supportedActivityStreamModesMember.IsNull())
       {
         m_supportedActivityStreamModes.push_back(supportedActivityStreamModesMember.GetText());
         supportedActivityStreamModesMember = supportedActivityStreamModesMember.NextNode("member");
       }
 
-      m_supportedActivityStreamModesHasBeenSet = true;
+       m_supportedActivityStreamModesHasBeenSet = true;
     }
     XmlNode supportsGlobalDatabasesNode = resultNode.FirstChild("SupportsGlobalDatabases");
     if(!supportsGlobalDatabasesNode.IsNull())
     {
       m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
       m_supportsGlobalDatabasesHasBeenSet = true;
+       m_supportsGlobalDatabasesHasBeenSet = true;
     }
     XmlNode supportsClustersNode = resultNode.FirstChild("SupportsClusters");
     if(!supportsClustersNode.IsNull())
     {
       m_supportsClusters = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsClustersNode.GetText()).c_str()).c_str());
       m_supportsClustersHasBeenSet = true;
+       m_supportsClustersHasBeenSet = true;
     }
     XmlNode supportedNetworkTypesNode = resultNode.FirstChild("SupportedNetworkTypes");
     if(!supportedNetworkTypesNode.IsNull())
     {
       XmlNode supportedNetworkTypesMember = supportedNetworkTypesNode.FirstChild("member");
+      m_supportedNetworkTypesHasBeenSet = !supportedNetworkTypesMember.IsNull();
       while(!supportedNetworkTypesMember.IsNull())
       {
         m_supportedNetworkTypes.push_back(supportedNetworkTypesMember.GetText());
         supportedNetworkTypesMember = supportedNetworkTypesMember.NextNode("member");
       }
 
-      m_supportedNetworkTypesHasBeenSet = true;
+       m_supportedNetworkTypesHasBeenSet = true;
     }
     XmlNode supportsStorageThroughputNode = resultNode.FirstChild("SupportsStorageThroughput");
     if(!supportsStorageThroughputNode.IsNull())
     {
       m_supportsStorageThroughput = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsStorageThroughputNode.GetText()).c_str()).c_str());
       m_supportsStorageThroughputHasBeenSet = true;
+       m_supportsStorageThroughputHasBeenSet = true;
     }
     XmlNode minStorageThroughputPerDbInstanceNode = resultNode.FirstChild("MinStorageThroughputPerDbInstance");
     if(!minStorageThroughputPerDbInstanceNode.IsNull())
     {
       m_minStorageThroughputPerDbInstance = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minStorageThroughputPerDbInstanceNode.GetText()).c_str()).c_str());
       m_minStorageThroughputPerDbInstanceHasBeenSet = true;
+       m_minStorageThroughputPerDbInstanceHasBeenSet = true;
     }
     XmlNode maxStorageThroughputPerDbInstanceNode = resultNode.FirstChild("MaxStorageThroughputPerDbInstance");
     if(!maxStorageThroughputPerDbInstanceNode.IsNull())
     {
       m_maxStorageThroughputPerDbInstance = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxStorageThroughputPerDbInstanceNode.GetText()).c_str()).c_str());
       m_maxStorageThroughputPerDbInstanceHasBeenSet = true;
+       m_maxStorageThroughputPerDbInstanceHasBeenSet = true;
     }
     XmlNode minStorageThroughputPerIopsNode = resultNode.FirstChild("MinStorageThroughputPerIops");
     if(!minStorageThroughputPerIopsNode.IsNull())
     {
       m_minStorageThroughputPerIops = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minStorageThroughputPerIopsNode.GetText()).c_str()).c_str());
       m_minStorageThroughputPerIopsHasBeenSet = true;
+       m_minStorageThroughputPerIopsHasBeenSet = true;
     }
     XmlNode maxStorageThroughputPerIopsNode = resultNode.FirstChild("MaxStorageThroughputPerIops");
     if(!maxStorageThroughputPerIopsNode.IsNull())
     {
       m_maxStorageThroughputPerIops = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxStorageThroughputPerIopsNode.GetText()).c_str()).c_str());
       m_maxStorageThroughputPerIopsHasBeenSet = true;
+       m_maxStorageThroughputPerIopsHasBeenSet = true;
     }
     XmlNode supportsDedicatedLogVolumeNode = resultNode.FirstChild("SupportsDedicatedLogVolume");
     if(!supportsDedicatedLogVolumeNode.IsNull())
     {
       m_supportsDedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsDedicatedLogVolumeNode.GetText()).c_str()).c_str());
       m_supportsDedicatedLogVolumeHasBeenSet = true;
+       m_supportsDedicatedLogVolumeHasBeenSet = true;
     }
   }
 

@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultFormatting::DefaultFormatting() : 
-    m_displayFormat(DisplayFormat::NOT_SET),
-    m_displayFormatHasBeenSet(false),
-    m_displayFormatOptionsHasBeenSet(false)
-{
-}
-
 DefaultFormatting::DefaultFormatting(JsonView jsonValue)
-  : DefaultFormatting()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DefaultFormatting& DefaultFormatting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DisplayFormat"))
   {
     m_displayFormat = DisplayFormatMapper::GetDisplayFormatForName(jsonValue.GetString("DisplayFormat"));
-
     m_displayFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayFormatOptions"))
   {
     m_displayFormatOptions = jsonValue.GetObject("DisplayFormatOptions");
-
     m_displayFormatOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

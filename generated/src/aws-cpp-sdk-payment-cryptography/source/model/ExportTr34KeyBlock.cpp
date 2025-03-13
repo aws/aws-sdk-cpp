@@ -18,19 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-ExportTr34KeyBlock::ExportTr34KeyBlock() : 
-    m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false),
-    m_wrappingKeyCertificateHasBeenSet(false),
-    m_exportTokenHasBeenSet(false),
-    m_keyBlockFormat(Tr34KeyBlockFormat::NOT_SET),
-    m_keyBlockFormatHasBeenSet(false),
-    m_randomNonceHasBeenSet(false),
-    m_keyBlockHeadersHasBeenSet(false)
-{
-}
-
 ExportTr34KeyBlock::ExportTr34KeyBlock(JsonView jsonValue)
-  : ExportTr34KeyBlock()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ExportTr34KeyBlock& ExportTr34KeyBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateAuthorityPublicKeyIdentifier"))
   {
     m_certificateAuthorityPublicKeyIdentifier = jsonValue.GetString("CertificateAuthorityPublicKeyIdentifier");
-
     m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WrappingKeyCertificate"))
   {
     m_wrappingKeyCertificate = jsonValue.GetString("WrappingKeyCertificate");
-
     m_wrappingKeyCertificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportToken"))
   {
     m_exportToken = jsonValue.GetString("ExportToken");
-
     m_exportTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyBlockFormat"))
   {
     m_keyBlockFormat = Tr34KeyBlockFormatMapper::GetTr34KeyBlockFormatForName(jsonValue.GetString("KeyBlockFormat"));
-
     m_keyBlockFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RandomNonce"))
   {
     m_randomNonce = jsonValue.GetString("RandomNonce");
-
     m_randomNonceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyBlockHeaders"))
   {
     m_keyBlockHeaders = jsonValue.GetObject("KeyBlockHeaders");
-
     m_keyBlockHeadersHasBeenSet = true;
   }
-
   return *this;
 }
 

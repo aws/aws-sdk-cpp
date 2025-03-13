@@ -29,7 +29,7 @@ namespace Model
   class ListRotationOverridesResult
   {
   public:
-    AWS_SSMCONTACTS_API ListRotationOverridesResult();
+    AWS_SSMCONTACTS_API ListRotationOverridesResult() = default;
     AWS_SSMCONTACTS_API ListRotationOverridesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSMCONTACTS_API ListRotationOverridesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of rotation overrides in the specified time range.</p>
      */
-    inline const Aws::Vector<RotationOverride>& GetRotationOverrides() const{ return m_rotationOverrides; }
-    inline void SetRotationOverrides(const Aws::Vector<RotationOverride>& value) { m_rotationOverrides = value; }
-    inline void SetRotationOverrides(Aws::Vector<RotationOverride>&& value) { m_rotationOverrides = std::move(value); }
-    inline ListRotationOverridesResult& WithRotationOverrides(const Aws::Vector<RotationOverride>& value) { SetRotationOverrides(value); return *this;}
-    inline ListRotationOverridesResult& WithRotationOverrides(Aws::Vector<RotationOverride>&& value) { SetRotationOverrides(std::move(value)); return *this;}
-    inline ListRotationOverridesResult& AddRotationOverrides(const RotationOverride& value) { m_rotationOverrides.push_back(value); return *this; }
-    inline ListRotationOverridesResult& AddRotationOverrides(RotationOverride&& value) { m_rotationOverrides.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RotationOverride>& GetRotationOverrides() const { return m_rotationOverrides; }
+    template<typename RotationOverridesT = Aws::Vector<RotationOverride>>
+    void SetRotationOverrides(RotationOverridesT&& value) { m_rotationOverridesHasBeenSet = true; m_rotationOverrides = std::forward<RotationOverridesT>(value); }
+    template<typename RotationOverridesT = Aws::Vector<RotationOverride>>
+    ListRotationOverridesResult& WithRotationOverrides(RotationOverridesT&& value) { SetRotationOverrides(std::forward<RotationOverridesT>(value)); return *this;}
+    template<typename RotationOverridesT = RotationOverride>
+    ListRotationOverridesResult& AddRotationOverrides(RotationOverridesT&& value) { m_rotationOverridesHasBeenSet = true; m_rotationOverrides.emplace_back(std::forward<RotationOverridesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of items to return. Use this token to get the next
      * set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRotationOverridesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRotationOverridesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRotationOverridesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRotationOverridesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRotationOverridesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRotationOverridesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRotationOverridesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRotationOverridesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RotationOverride> m_rotationOverrides;
+    bool m_rotationOverridesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

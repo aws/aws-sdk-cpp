@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamPoolSourceResource::IpamPoolSourceResource() : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(IpamPoolSourceResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false)
-{
-}
-
 IpamPoolSourceResource::IpamPoolSourceResource(const XmlNode& xmlNode)
-  : IpamPoolSourceResource()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ IpamPoolSourceResource& IpamPoolSourceResource::operator =(const XmlNode& xmlNod
     {
       m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
+       m_resourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = IpamPoolSourceResourceTypeMapper::GetIpamPoolSourceResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = IpamPoolSourceResourceTypeMapper::GetIpamPoolSourceResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceRegionNode = resultNode.FirstChild("resourceRegion");
     if(!resourceRegionNode.IsNull())
     {
       m_resourceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(resourceRegionNode.GetText());
       m_resourceRegionHasBeenSet = true;
+       m_resourceRegionHasBeenSet = true;
     }
     XmlNode resourceOwnerNode = resultNode.FirstChild("resourceOwner");
     if(!resourceOwnerNode.IsNull())
     {
       m_resourceOwner = Aws::Utils::Xml::DecodeEscapedXmlText(resourceOwnerNode.GetText());
       m_resourceOwnerHasBeenSet = true;
+       m_resourceOwnerHasBeenSet = true;
     }
   }
 

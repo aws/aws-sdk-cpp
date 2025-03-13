@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetachInstancesResult::DetachInstancesResult()
-{
-}
-
 DetachInstancesResult::DetachInstancesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DetachInstancesResult& DetachInstancesResult::operator =(const Aws::AmazonWebSer
     if(!activitiesNode.IsNull())
     {
       XmlNode activitiesMember = activitiesNode.FirstChild("member");
+      m_activitiesHasBeenSet = !activitiesMember.IsNull();
       while(!activitiesMember.IsNull())
       {
         m_activities.push_back(activitiesMember);
@@ -54,6 +51,7 @@ DetachInstancesResult& DetachInstancesResult::operator =(const Aws::AmazonWebSer
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DetachInstancesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

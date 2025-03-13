@@ -39,7 +39,7 @@ namespace Model
   class NetworkAutonomousSystem
   {
   public:
-    AWS_SECURITYHUB_API NetworkAutonomousSystem();
+    AWS_SECURITYHUB_API NetworkAutonomousSystem() = default;
     AWS_SECURITYHUB_API NetworkAutonomousSystem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API NetworkAutonomousSystem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,21 +49,19 @@ namespace Model
     /**
      * <p> The name associated with the AS. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline NetworkAutonomousSystem& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline NetworkAutonomousSystem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline NetworkAutonomousSystem& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    NetworkAutonomousSystem& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The unique number that identifies the AS. </p>
      */
-    inline int GetNumber() const{ return m_number; }
+    inline int GetNumber() const { return m_number; }
     inline bool NumberHasBeenSet() const { return m_numberHasBeenSet; }
     inline void SetNumber(int value) { m_numberHasBeenSet = true; m_number = value; }
     inline NetworkAutonomousSystem& WithNumber(int value) { SetNumber(value); return *this;}
@@ -73,7 +71,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_number;
+    int m_number{0};
     bool m_numberHasBeenSet = false;
   };
 

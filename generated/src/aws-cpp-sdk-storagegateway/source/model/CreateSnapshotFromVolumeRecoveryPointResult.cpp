@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSnapshotFromVolumeRecoveryPointResult::CreateSnapshotFromVolumeRecoveryPointResult()
-{
-}
-
 CreateSnapshotFromVolumeRecoveryPointResult::CreateSnapshotFromVolumeRecoveryPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateSnapshotFromVolumeRecoveryPointResult& CreateSnapshotFromVolumeRecoveryPoi
   if(jsonValue.ValueExists("SnapshotId"))
   {
     m_snapshotId = jsonValue.GetString("SnapshotId");
-
+    m_snapshotIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeARN"))
   {
     m_volumeARN = jsonValue.GetString("VolumeARN");
-
+    m_volumeARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeRecoveryPointTime"))
   {
     m_volumeRecoveryPointTime = jsonValue.GetString("VolumeRecoveryPointTime");
-
+    m_volumeRecoveryPointTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

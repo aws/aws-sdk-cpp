@@ -12,12 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAnalysisTemplateRequest::GetAnalysisTemplateRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_analysisTemplateIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetAnalysisTemplateRequest::SerializePayload() const
 {
   return {};

@@ -10,19 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-CreateEventSubscriptionRequest::CreateEventSubscriptionRequest() : 
-    m_subscriptionNameHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceIdsHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEventSubscriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

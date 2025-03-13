@@ -19,7 +19,7 @@ namespace Model
   class GetOrganizationAdminAccountRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API GetOrganizationAdminAccountRequest();
+    AWS_AUDITMANAGER_API GetOrganizationAdminAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

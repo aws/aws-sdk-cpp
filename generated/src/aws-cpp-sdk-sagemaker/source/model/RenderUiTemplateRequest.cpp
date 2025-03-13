@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RenderUiTemplateRequest::RenderUiTemplateRequest() : 
-    m_uiTemplateHasBeenSet(false),
-    m_taskHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_humanTaskUiArnHasBeenSet(false)
-{
-}
-
 Aws::String RenderUiTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

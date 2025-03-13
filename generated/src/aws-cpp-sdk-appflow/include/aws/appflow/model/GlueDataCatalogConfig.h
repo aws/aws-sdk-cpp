@@ -36,7 +36,7 @@ namespace Model
   class GlueDataCatalogConfig
   {
   public:
-    AWS_APPFLOW_API GlueDataCatalogConfig();
+    AWS_APPFLOW_API GlueDataCatalogConfig() = default;
     AWS_APPFLOW_API GlueDataCatalogConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API GlueDataCatalogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_id-based-policy-examples.html">Identity-based
      * policy examples for Amazon AppFlow</a>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline GlueDataCatalogConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline GlueDataCatalogConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline GlueDataCatalogConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    GlueDataCatalogConfig& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * this parameter.</p>  <p>When you configure a new flow with this parameter,
      * you must specify an existing database.</p> 
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline GlueDataCatalogConfig& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline GlueDataCatalogConfig& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline GlueDataCatalogConfig& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    GlueDataCatalogConfig& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * the flow that you configure with this setting. Amazon AppFlow adds the prefix to
      * the beginning of the each table name.</p>
      */
-    inline const Aws::String& GetTablePrefix() const{ return m_tablePrefix; }
+    inline const Aws::String& GetTablePrefix() const { return m_tablePrefix; }
     inline bool TablePrefixHasBeenSet() const { return m_tablePrefixHasBeenSet; }
-    inline void SetTablePrefix(const Aws::String& value) { m_tablePrefixHasBeenSet = true; m_tablePrefix = value; }
-    inline void SetTablePrefix(Aws::String&& value) { m_tablePrefixHasBeenSet = true; m_tablePrefix = std::move(value); }
-    inline void SetTablePrefix(const char* value) { m_tablePrefixHasBeenSet = true; m_tablePrefix.assign(value); }
-    inline GlueDataCatalogConfig& WithTablePrefix(const Aws::String& value) { SetTablePrefix(value); return *this;}
-    inline GlueDataCatalogConfig& WithTablePrefix(Aws::String&& value) { SetTablePrefix(std::move(value)); return *this;}
-    inline GlueDataCatalogConfig& WithTablePrefix(const char* value) { SetTablePrefix(value); return *this;}
+    template<typename TablePrefixT = Aws::String>
+    void SetTablePrefix(TablePrefixT&& value) { m_tablePrefixHasBeenSet = true; m_tablePrefix = std::forward<TablePrefixT>(value); }
+    template<typename TablePrefixT = Aws::String>
+    GlueDataCatalogConfig& WithTablePrefix(TablePrefixT&& value) { SetTablePrefix(std::forward<TablePrefixT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class NodeTypeSpecificValue
   {
   public:
-    AWS_DAX_API NodeTypeSpecificValue();
+    AWS_DAX_API NodeTypeSpecificValue() = default;
     AWS_DAX_API NodeTypeSpecificValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_DAX_API NodeTypeSpecificValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>A node type to which the parameter value applies.</p>
      */
-    inline const Aws::String& GetNodeType() const{ return m_nodeType; }
+    inline const Aws::String& GetNodeType() const { return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
-    inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
-    inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
-    inline NodeTypeSpecificValue& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
-    inline NodeTypeSpecificValue& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
-    inline NodeTypeSpecificValue& WithNodeType(const char* value) { SetNodeType(value); return *this;}
+    template<typename NodeTypeT = Aws::String>
+    void SetNodeType(NodeTypeT&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::forward<NodeTypeT>(value); }
+    template<typename NodeTypeT = Aws::String>
+    NodeTypeSpecificValue& WithNodeType(NodeTypeT&& value) { SetNodeType(std::forward<NodeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameter value for this node type.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline NodeTypeSpecificValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline NodeTypeSpecificValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline NodeTypeSpecificValue& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    NodeTypeSpecificValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

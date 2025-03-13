@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInstanceRequest::GetInstanceRequest() : 
-    m_instanceNameHasBeenSet(false)
-{
-}
-
 Aws::String GetInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

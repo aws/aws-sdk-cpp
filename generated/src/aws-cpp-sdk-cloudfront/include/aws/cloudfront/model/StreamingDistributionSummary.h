@@ -36,7 +36,7 @@ namespace Model
   class StreamingDistributionSummary
   {
   public:
-    AWS_CLOUDFRONT_API StreamingDistributionSummary();
+    AWS_CLOUDFRONT_API StreamingDistributionSummary() = default;
     AWS_CLOUDFRONT_API StreamingDistributionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API StreamingDistributionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
      * <p>The identifier for the distribution, for example,
      * <code>EDFDVBD632BHDS5</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline StreamingDistributionSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline StreamingDistributionSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline StreamingDistributionSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    StreamingDistributionSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
      * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline StreamingDistributionSummary& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline StreamingDistributionSummary& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline StreamingDistributionSummary& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    StreamingDistributionSummary& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,26 +76,24 @@ namespace Model
      * <code>Deployed</code>, the distribution's information is fully propagated
      * throughout the Amazon CloudFront system.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline StreamingDistributionSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline StreamingDistributionSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline StreamingDistributionSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    StreamingDistributionSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the distribution was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline StreamingDistributionSummary& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline StreamingDistributionSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    StreamingDistributionSummary& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,14 +101,12 @@ namespace Model
      * <p>The domain name corresponding to the distribution, for example,
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline StreamingDistributionSummary& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline StreamingDistributionSummary& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline StreamingDistributionSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    StreamingDistributionSummary& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +114,12 @@ namespace Model
      * <p>A complex type that contains information about the Amazon S3 bucket from
      * which you want CloudFront to get your media files for distribution.</p>
      */
-    inline const S3Origin& GetS3Origin() const{ return m_s3Origin; }
+    inline const S3Origin& GetS3Origin() const { return m_s3Origin; }
     inline bool S3OriginHasBeenSet() const { return m_s3OriginHasBeenSet; }
-    inline void SetS3Origin(const S3Origin& value) { m_s3OriginHasBeenSet = true; m_s3Origin = value; }
-    inline void SetS3Origin(S3Origin&& value) { m_s3OriginHasBeenSet = true; m_s3Origin = std::move(value); }
-    inline StreamingDistributionSummary& WithS3Origin(const S3Origin& value) { SetS3Origin(value); return *this;}
-    inline StreamingDistributionSummary& WithS3Origin(S3Origin&& value) { SetS3Origin(std::move(value)); return *this;}
+    template<typename S3OriginT = S3Origin>
+    void SetS3Origin(S3OriginT&& value) { m_s3OriginHasBeenSet = true; m_s3Origin = std::forward<S3OriginT>(value); }
+    template<typename S3OriginT = S3Origin>
+    StreamingDistributionSummary& WithS3Origin(S3OriginT&& value) { SetS3Origin(std::forward<S3OriginT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +127,12 @@ namespace Model
      * <p>A complex type that contains information about CNAMEs (alternate domain
      * names), if any, for this streaming distribution.</p>
      */
-    inline const Aliases& GetAliases() const{ return m_aliases; }
+    inline const Aliases& GetAliases() const { return m_aliases; }
     inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
-    inline void SetAliases(const Aliases& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
-    inline void SetAliases(Aliases&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
-    inline StreamingDistributionSummary& WithAliases(const Aliases& value) { SetAliases(value); return *this;}
-    inline StreamingDistributionSummary& WithAliases(Aliases&& value) { SetAliases(std::move(value)); return *this;}
+    template<typename AliasesT = Aliases>
+    void SetAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases = std::forward<AliasesT>(value); }
+    template<typename AliasesT = Aliases>
+    StreamingDistributionSummary& WithAliases(AliasesT&& value) { SetAliases(std::forward<AliasesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,26 +154,24 @@ namespace Model
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
-    inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
+    inline const TrustedSigners& GetTrustedSigners() const { return m_trustedSigners; }
     inline bool TrustedSignersHasBeenSet() const { return m_trustedSignersHasBeenSet; }
-    inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
-    inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
-    inline StreamingDistributionSummary& WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
-    inline StreamingDistributionSummary& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
+    template<typename TrustedSignersT = TrustedSigners>
+    void SetTrustedSigners(TrustedSignersT&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::forward<TrustedSignersT>(value); }
+    template<typename TrustedSignersT = TrustedSigners>
+    StreamingDistributionSummary& WithTrustedSigners(TrustedSignersT&& value) { SetTrustedSigners(std::forward<TrustedSignersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The comment originally specified when this distribution was created.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-    inline StreamingDistributionSummary& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline StreamingDistributionSummary& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline StreamingDistributionSummary& WithComment(const char* value) { SetComment(value); return *this;}
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    StreamingDistributionSummary& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,12 +179,10 @@ namespace Model
      * <p>A complex type that contains information about price class for this streaming
      * distribution.</p>
      */
-    inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
+    inline PriceClass GetPriceClass() const { return m_priceClass; }
     inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
-    inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
-    inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
-    inline StreamingDistributionSummary& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
-    inline StreamingDistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
+    inline void SetPriceClass(PriceClass value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
+    inline StreamingDistributionSummary& WithPriceClass(PriceClass value) { SetPriceClass(value); return *this;}
     ///@}
 
     ///@{
@@ -202,7 +190,7 @@ namespace Model
      * <p>Whether the distribution is enabled to accept end user requests for
      * content.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline StreamingDistributionSummary& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -218,7 +206,7 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_domainName;
@@ -236,10 +224,10 @@ namespace Model
     Aws::String m_comment;
     bool m_commentHasBeenSet = false;
 
-    PriceClass m_priceClass;
+    PriceClass m_priceClass{PriceClass::NOT_SET};
     bool m_priceClassHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

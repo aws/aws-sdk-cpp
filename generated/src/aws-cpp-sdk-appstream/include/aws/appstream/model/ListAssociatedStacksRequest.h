@@ -21,7 +21,7 @@ namespace Model
   class ListAssociatedStacksRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API ListAssociatedStacksRequest();
+    AWS_APPSTREAM_API ListAssociatedStacksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the fleet.</p>
      */
-    inline const Aws::String& GetFleetName() const{ return m_fleetName; }
+    inline const Aws::String& GetFleetName() const { return m_fleetName; }
     inline bool FleetNameHasBeenSet() const { return m_fleetNameHasBeenSet; }
-    inline void SetFleetName(const Aws::String& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
-    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
-    inline void SetFleetName(const char* value) { m_fleetNameHasBeenSet = true; m_fleetName.assign(value); }
-    inline ListAssociatedStacksRequest& WithFleetName(const Aws::String& value) { SetFleetName(value); return *this;}
-    inline ListAssociatedStacksRequest& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
-    inline ListAssociatedStacksRequest& WithFleetName(const char* value) { SetFleetName(value); return *this;}
+    template<typename FleetNameT = Aws::String>
+    void SetFleetName(FleetNameT&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::forward<FleetNameT>(value); }
+    template<typename FleetNameT = Aws::String>
+    ListAssociatedStacksRequest& WithFleetName(FleetNameT&& value) { SetFleetName(std::forward<FleetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If this value is null, it retrieves the first page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAssociatedStacksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAssociatedStacksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAssociatedStacksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAssociatedStacksRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

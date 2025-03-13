@@ -21,7 +21,7 @@ namespace Model
   class ListAutoScalingConfigurationsRequest : public AppRunnerRequest
   {
   public:
-    AWS_APPRUNNER_API ListAutoScalingConfigurationsRequest();
+    AWS_APPRUNNER_API ListAutoScalingConfigurationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * If specified, App Runner lists revisions that share this name. If not specified,
      * App Runner returns revisions of all active configurations.</p>
      */
-    inline const Aws::String& GetAutoScalingConfigurationName() const{ return m_autoScalingConfigurationName; }
+    inline const Aws::String& GetAutoScalingConfigurationName() const { return m_autoScalingConfigurationName; }
     inline bool AutoScalingConfigurationNameHasBeenSet() const { return m_autoScalingConfigurationNameHasBeenSet; }
-    inline void SetAutoScalingConfigurationName(const Aws::String& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = value; }
-    inline void SetAutoScalingConfigurationName(Aws::String&& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = std::move(value); }
-    inline void SetAutoScalingConfigurationName(const char* value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName.assign(value); }
-    inline ListAutoScalingConfigurationsRequest& WithAutoScalingConfigurationName(const Aws::String& value) { SetAutoScalingConfigurationName(value); return *this;}
-    inline ListAutoScalingConfigurationsRequest& WithAutoScalingConfigurationName(Aws::String&& value) { SetAutoScalingConfigurationName(std::move(value)); return *this;}
-    inline ListAutoScalingConfigurationsRequest& WithAutoScalingConfigurationName(const char* value) { SetAutoScalingConfigurationName(value); return *this;}
+    template<typename AutoScalingConfigurationNameT = Aws::String>
+    void SetAutoScalingConfigurationName(AutoScalingConfigurationNameT&& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = std::forward<AutoScalingConfigurationNameT>(value); }
+    template<typename AutoScalingConfigurationNameT = Aws::String>
+    ListAutoScalingConfigurationsRequest& WithAutoScalingConfigurationName(AutoScalingConfigurationNameT&& value) { SetAutoScalingConfigurationName(std::forward<AutoScalingConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * configuration name.</p> <p>Set to <code>false</code> to list all revisions for
      * each requested configuration name.</p> <p>Default: <code>true</code> </p>
      */
-    inline bool GetLatestOnly() const{ return m_latestOnly; }
+    inline bool GetLatestOnly() const { return m_latestOnly; }
     inline bool LatestOnlyHasBeenSet() const { return m_latestOnlyHasBeenSet; }
     inline void SetLatestOnly(bool value) { m_latestOnlyHasBeenSet = true; m_latestOnly = value; }
     inline ListAutoScalingConfigurationsRequest& WithLatestOnly(bool value) { SetLatestOnly(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
      * <code>MaxResults</code>, the request retrieves all available results in a single
      * response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAutoScalingConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,24 +81,22 @@ namespace Model
      * don't specify <code>NextToken</code>, the request retrieves the first result
      * page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAutoScalingConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAutoScalingConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAutoScalingConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAutoScalingConfigurationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_autoScalingConfigurationName;
     bool m_autoScalingConfigurationNameHasBeenSet = false;
 
-    bool m_latestOnly;
+    bool m_latestOnly{false};
     bool m_latestOnlyHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

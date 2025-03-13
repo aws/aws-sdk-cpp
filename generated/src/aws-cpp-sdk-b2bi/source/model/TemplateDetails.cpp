@@ -18,13 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-TemplateDetails::TemplateDetails() : 
-    m_x12HasBeenSet(false)
-{
-}
-
 TemplateDetails::TemplateDetails(JsonView jsonValue)
-  : TemplateDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TemplateDetails& TemplateDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("x12"))
   {
     m_x12 = jsonValue.GetObject("x12");
-
     m_x12HasBeenSet = true;
   }
-
   return *this;
 }
 

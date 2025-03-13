@@ -13,15 +13,6 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportCertificateRequest::ImportCertificateRequest() : 
-    m_certificateArnHasBeenSet(false),
-    m_certificateHasBeenSet(false),
-    m_privateKeyHasBeenSet(false),
-    m_certificateChainHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ImportCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-ResaleAuthorizationLastModifiedDateFilterDateRange::ResaleAuthorizationLastModifiedDateFilterDateRange() : 
-    m_afterValueHasBeenSet(false),
-    m_beforeValueHasBeenSet(false)
-{
-}
-
 ResaleAuthorizationLastModifiedDateFilterDateRange::ResaleAuthorizationLastModifiedDateFilterDateRange(JsonView jsonValue)
-  : ResaleAuthorizationLastModifiedDateFilterDateRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResaleAuthorizationLastModifiedDateFilterDateRange& ResaleAuthorizationLastModif
   if(jsonValue.ValueExists("AfterValue"))
   {
     m_afterValue = jsonValue.GetString("AfterValue");
-
     m_afterValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeforeValue"))
   {
     m_beforeValue = jsonValue.GetString("BeforeValue");
-
     m_beforeValueHasBeenSet = true;
   }
-
   return *this;
 }
 

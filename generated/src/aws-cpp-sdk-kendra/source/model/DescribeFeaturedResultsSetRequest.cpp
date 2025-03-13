@@ -12,12 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFeaturedResultsSetRequest::DescribeFeaturedResultsSetRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_featuredResultsSetIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFeaturedResultsSetRequest::SerializePayload() const
 {
   JsonValue payload;

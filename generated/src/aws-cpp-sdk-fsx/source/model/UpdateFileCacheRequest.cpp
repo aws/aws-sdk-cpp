@@ -12,14 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFileCacheRequest::UpdateFileCacheRequest() : 
-    m_fileCacheIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_lustreConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFileCacheRequest::SerializePayload() const
 {
   JsonValue payload;

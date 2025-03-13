@@ -12,12 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOpsItemRequest::GetOpsItemRequest() : 
-    m_opsItemIdHasBeenSet(false),
-    m_opsItemArnHasBeenSet(false)
-{
-}
-
 Aws::String GetOpsItemRequest::SerializePayload() const
 {
   JsonValue payload;

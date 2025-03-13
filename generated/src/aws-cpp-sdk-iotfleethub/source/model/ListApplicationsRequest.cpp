@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListApplicationsRequest::ListApplicationsRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListApplicationsRequest::SerializePayload() const
 {
   return {};

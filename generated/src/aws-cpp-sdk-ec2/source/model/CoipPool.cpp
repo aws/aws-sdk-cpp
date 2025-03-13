@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CoipPool::CoipPool() : 
-    m_poolIdHasBeenSet(false),
-    m_poolCidrsHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_poolArnHasBeenSet(false)
-{
-}
-
 CoipPool::CoipPool(const XmlNode& xmlNode)
-  : CoipPool()
 {
   *this = xmlNode;
 }
@@ -46,42 +36,47 @@ CoipPool& CoipPool::operator =(const XmlNode& xmlNode)
     {
       m_poolId = Aws::Utils::Xml::DecodeEscapedXmlText(poolIdNode.GetText());
       m_poolIdHasBeenSet = true;
+       m_poolIdHasBeenSet = true;
     }
     XmlNode poolCidrsNode = resultNode.FirstChild("poolCidrSet");
     if(!poolCidrsNode.IsNull())
     {
       XmlNode poolCidrsMember = poolCidrsNode.FirstChild("item");
+      m_poolCidrsHasBeenSet = !poolCidrsMember.IsNull();
       while(!poolCidrsMember.IsNull())
       {
         m_poolCidrs.push_back(poolCidrsMember.GetText());
         poolCidrsMember = poolCidrsMember.NextNode("item");
       }
 
-      m_poolCidrsHasBeenSet = true;
+       m_poolCidrsHasBeenSet = true;
     }
     XmlNode localGatewayRouteTableIdNode = resultNode.FirstChild("localGatewayRouteTableId");
     if(!localGatewayRouteTableIdNode.IsNull())
     {
       m_localGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableIdNode.GetText());
       m_localGatewayRouteTableIdHasBeenSet = true;
+       m_localGatewayRouteTableIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode poolArnNode = resultNode.FirstChild("poolArn");
     if(!poolArnNode.IsNull())
     {
       m_poolArn = Aws::Utils::Xml::DecodeEscapedXmlText(poolArnNode.GetText());
       m_poolArnHasBeenSet = true;
+       m_poolArnHasBeenSet = true;
     }
   }
 

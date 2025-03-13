@@ -15,22 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAppAssessmentsRequest::ListAppAssessmentsRequest() : 
-    m_appArnHasBeenSet(false),
-    m_assessmentNameHasBeenSet(false),
-    m_assessmentStatusHasBeenSet(false),
-    m_complianceStatus(ComplianceStatus::NOT_SET),
-    m_complianceStatusHasBeenSet(false),
-    m_invoker(AssessmentInvoker::NOT_SET),
-    m_invokerHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_reverseOrder(false),
-    m_reverseOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListAppAssessmentsRequest::SerializePayload() const
 {
   return {};

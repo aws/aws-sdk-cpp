@@ -18,18 +18,7 @@ namespace SWF
 namespace Model
 {
 
-ActivityTypeConfiguration::ActivityTypeConfiguration() : 
-    m_defaultTaskStartToCloseTimeoutHasBeenSet(false),
-    m_defaultTaskHeartbeatTimeoutHasBeenSet(false),
-    m_defaultTaskListHasBeenSet(false),
-    m_defaultTaskPriorityHasBeenSet(false),
-    m_defaultTaskScheduleToStartTimeoutHasBeenSet(false),
-    m_defaultTaskScheduleToCloseTimeoutHasBeenSet(false)
-{
-}
-
 ActivityTypeConfiguration::ActivityTypeConfiguration(JsonView jsonValue)
-  : ActivityTypeConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ActivityTypeConfiguration& ActivityTypeConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("defaultTaskStartToCloseTimeout"))
   {
     m_defaultTaskStartToCloseTimeout = jsonValue.GetString("defaultTaskStartToCloseTimeout");
-
     m_defaultTaskStartToCloseTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultTaskHeartbeatTimeout"))
   {
     m_defaultTaskHeartbeatTimeout = jsonValue.GetString("defaultTaskHeartbeatTimeout");
-
     m_defaultTaskHeartbeatTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultTaskList"))
   {
     m_defaultTaskList = jsonValue.GetObject("defaultTaskList");
-
     m_defaultTaskListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultTaskPriority"))
   {
     m_defaultTaskPriority = jsonValue.GetString("defaultTaskPriority");
-
     m_defaultTaskPriorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultTaskScheduleToStartTimeout"))
   {
     m_defaultTaskScheduleToStartTimeout = jsonValue.GetString("defaultTaskScheduleToStartTimeout");
-
     m_defaultTaskScheduleToStartTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultTaskScheduleToCloseTimeout"))
   {
     m_defaultTaskScheduleToCloseTimeout = jsonValue.GetString("defaultTaskScheduleToCloseTimeout");
-
     m_defaultTaskScheduleToCloseTimeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

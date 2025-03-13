@@ -18,26 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-ApplicationInstance::ApplicationInstance() : 
-    m_applicationInstanceIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_defaultRuntimeContextDeviceHasBeenSet(false),
-    m_defaultRuntimeContextDeviceNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_healthStatus(ApplicationInstanceHealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_runtimeContextStatesHasBeenSet(false),
-    m_status(ApplicationInstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ApplicationInstance::ApplicationInstance(JsonView jsonValue)
-  : ApplicationInstance()
 {
   *this = jsonValue;
 }
@@ -47,59 +28,43 @@ ApplicationInstance& ApplicationInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationInstanceId"))
   {
     m_applicationInstanceId = jsonValue.GetString("ApplicationInstanceId");
-
     m_applicationInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultRuntimeContextDevice"))
   {
     m_defaultRuntimeContextDevice = jsonValue.GetString("DefaultRuntimeContextDevice");
-
     m_defaultRuntimeContextDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultRuntimeContextDeviceName"))
   {
     m_defaultRuntimeContextDeviceName = jsonValue.GetString("DefaultRuntimeContextDeviceName");
-
     m_defaultRuntimeContextDeviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthStatus"))
   {
     m_healthStatus = ApplicationInstanceHealthStatusMapper::GetApplicationInstanceHealthStatusForName(jsonValue.GetString("HealthStatus"));
-
     m_healthStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuntimeContextStates"))
   {
     Aws::Utils::Array<JsonView> runtimeContextStatesJsonList = jsonValue.GetArray("RuntimeContextStates");
@@ -109,21 +74,16 @@ ApplicationInstance& ApplicationInstance::operator =(JsonView jsonValue)
     }
     m_runtimeContextStatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ApplicationInstanceStatusMapper::GetApplicationInstanceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDescription"))
   {
     m_statusDescription = jsonValue.GetString("StatusDescription");
-
     m_statusDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -133,7 +93,6 @@ ApplicationInstance& ApplicationInstance::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

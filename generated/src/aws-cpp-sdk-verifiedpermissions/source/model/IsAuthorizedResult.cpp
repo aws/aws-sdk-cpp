@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-IsAuthorizedResult::IsAuthorizedResult() : 
-    m_decision(Decision::NOT_SET)
-{
-}
-
 IsAuthorizedResult::IsAuthorizedResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : IsAuthorizedResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ IsAuthorizedResult& IsAuthorizedResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("decision"))
   {
     m_decision = DecisionMapper::GetDecisionForName(jsonValue.GetString("decision"));
-
+    m_decisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("determiningPolicies"))
   {
     Aws::Utils::Array<JsonView> determiningPoliciesJsonList = jsonValue.GetArray("determiningPolicies");
@@ -44,8 +37,8 @@ IsAuthorizedResult& IsAuthorizedResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_determiningPolicies.push_back(determiningPoliciesJsonList[determiningPoliciesIndex].AsObject());
     }
+    m_determiningPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -53,14 +46,15 @@ IsAuthorizedResult& IsAuthorizedResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

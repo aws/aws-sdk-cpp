@@ -33,7 +33,7 @@ namespace Model
   class Usage
   {
   public:
-    AWS_INSPECTOR2_API Usage();
+    AWS_INSPECTOR2_API Usage() = default;
     AWS_INSPECTOR2_API Usage(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Usage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,19 +43,17 @@ namespace Model
     /**
      * <p>The currency type used when calculating usage data.</p>
      */
-    inline const Currency& GetCurrency() const{ return m_currency; }
+    inline Currency GetCurrency() const { return m_currency; }
     inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }
-    inline void SetCurrency(const Currency& value) { m_currencyHasBeenSet = true; m_currency = value; }
-    inline void SetCurrency(Currency&& value) { m_currencyHasBeenSet = true; m_currency = std::move(value); }
-    inline Usage& WithCurrency(const Currency& value) { SetCurrency(value); return *this;}
-    inline Usage& WithCurrency(Currency&& value) { SetCurrency(std::move(value)); return *this;}
+    inline void SetCurrency(Currency value) { m_currencyHasBeenSet = true; m_currency = value; }
+    inline Usage& WithCurrency(Currency value) { SetCurrency(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The estimated monthly cost of Amazon Inspector.</p>
      */
-    inline double GetEstimatedMonthlyCost() const{ return m_estimatedMonthlyCost; }
+    inline double GetEstimatedMonthlyCost() const { return m_estimatedMonthlyCost; }
     inline bool EstimatedMonthlyCostHasBeenSet() const { return m_estimatedMonthlyCostHasBeenSet; }
     inline void SetEstimatedMonthlyCost(double value) { m_estimatedMonthlyCostHasBeenSet = true; m_estimatedMonthlyCost = value; }
     inline Usage& WithEstimatedMonthlyCost(double value) { SetEstimatedMonthlyCost(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     /**
      * <p>The total of usage.</p>
      */
-    inline double GetTotal() const{ return m_total; }
+    inline double GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
     inline void SetTotal(double value) { m_totalHasBeenSet = true; m_total = value; }
     inline Usage& WithTotal(double value) { SetTotal(value); return *this;}
@@ -75,25 +73,23 @@ namespace Model
     /**
      * <p>The type scan.</p>
      */
-    inline const UsageType& GetType() const{ return m_type; }
+    inline UsageType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const UsageType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(UsageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Usage& WithType(const UsageType& value) { SetType(value); return *this;}
-    inline Usage& WithType(UsageType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(UsageType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Usage& WithType(UsageType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    Currency m_currency;
+    Currency m_currency{Currency::NOT_SET};
     bool m_currencyHasBeenSet = false;
 
-    double m_estimatedMonthlyCost;
+    double m_estimatedMonthlyCost{0.0};
     bool m_estimatedMonthlyCostHasBeenSet = false;
 
-    double m_total;
+    double m_total{0.0};
     bool m_totalHasBeenSet = false;
 
-    UsageType m_type;
+    UsageType m_type{UsageType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

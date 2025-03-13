@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-KMSDisabledException::KMSDisabledException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 KMSDisabledException::KMSDisabledException(JsonView jsonValue)
-  : KMSDisabledException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KMSDisabledException& KMSDisabledException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

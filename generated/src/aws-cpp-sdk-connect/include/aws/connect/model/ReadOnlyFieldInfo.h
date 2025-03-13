@@ -32,7 +32,7 @@ namespace Model
   class ReadOnlyFieldInfo
   {
   public:
-    AWS_CONNECT_API ReadOnlyFieldInfo();
+    AWS_CONNECT_API ReadOnlyFieldInfo() = default;
     AWS_CONNECT_API ReadOnlyFieldInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ReadOnlyFieldInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Identifier of the read-only field.</p>
      */
-    inline const TaskTemplateFieldIdentifier& GetId() const{ return m_id; }
+    inline const TaskTemplateFieldIdentifier& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const TaskTemplateFieldIdentifier& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(TaskTemplateFieldIdentifier&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline ReadOnlyFieldInfo& WithId(const TaskTemplateFieldIdentifier& value) { SetId(value); return *this;}
-    inline ReadOnlyFieldInfo& WithId(TaskTemplateFieldIdentifier&& value) { SetId(std::move(value)); return *this;}
+    template<typename IdT = TaskTemplateFieldIdentifier>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = TaskTemplateFieldIdentifier>
+    ReadOnlyFieldInfo& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

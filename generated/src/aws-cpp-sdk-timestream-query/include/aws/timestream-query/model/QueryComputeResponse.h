@@ -33,7 +33,7 @@ namespace Model
   class QueryComputeResponse
   {
   public:
-    AWS_TIMESTREAMQUERY_API QueryComputeResponse();
+    AWS_TIMESTREAMQUERY_API QueryComputeResponse() = default;
     AWS_TIMESTREAMQUERY_API QueryComputeResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API QueryComputeResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * within an account. Note that in the Asia Pacific (Mumbai) region, the API
      * operation only recognizes the value <code>PROVISIONED</code>.</p>
      */
-    inline const ComputeMode& GetComputeMode() const{ return m_computeMode; }
+    inline ComputeMode GetComputeMode() const { return m_computeMode; }
     inline bool ComputeModeHasBeenSet() const { return m_computeModeHasBeenSet; }
-    inline void SetComputeMode(const ComputeMode& value) { m_computeModeHasBeenSet = true; m_computeMode = value; }
-    inline void SetComputeMode(ComputeMode&& value) { m_computeModeHasBeenSet = true; m_computeMode = std::move(value); }
-    inline QueryComputeResponse& WithComputeMode(const ComputeMode& value) { SetComputeMode(value); return *this;}
-    inline QueryComputeResponse& WithComputeMode(ComputeMode&& value) { SetComputeMode(std::move(value)); return *this;}
+    inline void SetComputeMode(ComputeMode value) { m_computeModeHasBeenSet = true; m_computeMode = value; }
+    inline QueryComputeResponse& WithComputeMode(ComputeMode value) { SetComputeMode(value); return *this;}
     ///@}
 
     ///@{
@@ -58,16 +56,16 @@ namespace Model
      * <p>Configuration object that contains settings for provisioned Timestream
      * Compute Units (TCUs) in your account.</p>
      */
-    inline const ProvisionedCapacityResponse& GetProvisionedCapacity() const{ return m_provisionedCapacity; }
+    inline const ProvisionedCapacityResponse& GetProvisionedCapacity() const { return m_provisionedCapacity; }
     inline bool ProvisionedCapacityHasBeenSet() const { return m_provisionedCapacityHasBeenSet; }
-    inline void SetProvisionedCapacity(const ProvisionedCapacityResponse& value) { m_provisionedCapacityHasBeenSet = true; m_provisionedCapacity = value; }
-    inline void SetProvisionedCapacity(ProvisionedCapacityResponse&& value) { m_provisionedCapacityHasBeenSet = true; m_provisionedCapacity = std::move(value); }
-    inline QueryComputeResponse& WithProvisionedCapacity(const ProvisionedCapacityResponse& value) { SetProvisionedCapacity(value); return *this;}
-    inline QueryComputeResponse& WithProvisionedCapacity(ProvisionedCapacityResponse&& value) { SetProvisionedCapacity(std::move(value)); return *this;}
+    template<typename ProvisionedCapacityT = ProvisionedCapacityResponse>
+    void SetProvisionedCapacity(ProvisionedCapacityT&& value) { m_provisionedCapacityHasBeenSet = true; m_provisionedCapacity = std::forward<ProvisionedCapacityT>(value); }
+    template<typename ProvisionedCapacityT = ProvisionedCapacityResponse>
+    QueryComputeResponse& WithProvisionedCapacity(ProvisionedCapacityT&& value) { SetProvisionedCapacity(std::forward<ProvisionedCapacityT>(value)); return *this;}
     ///@}
   private:
 
-    ComputeMode m_computeMode;
+    ComputeMode m_computeMode{ComputeMode::NOT_SET};
     bool m_computeModeHasBeenSet = false;
 
     ProvisionedCapacityResponse m_provisionedCapacity;

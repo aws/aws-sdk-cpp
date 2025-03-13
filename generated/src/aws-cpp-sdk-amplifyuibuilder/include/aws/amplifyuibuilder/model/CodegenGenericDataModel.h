@@ -34,7 +34,7 @@ namespace Model
   class CodegenGenericDataModel
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API CodegenGenericDataModel();
+    AWS_AMPLIFYUIBUILDER_API CodegenGenericDataModel() = default;
     AWS_AMPLIFYUIBUILDER_API CodegenGenericDataModel(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API CodegenGenericDataModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,25 +44,23 @@ namespace Model
     /**
      * <p>The fields in the generic data model.</p>
      */
-    inline const Aws::Map<Aws::String, CodegenGenericDataField>& GetFields() const{ return m_fields; }
+    inline const Aws::Map<Aws::String, CodegenGenericDataField>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    inline void SetFields(const Aws::Map<Aws::String, CodegenGenericDataField>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-    inline void SetFields(Aws::Map<Aws::String, CodegenGenericDataField>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-    inline CodegenGenericDataModel& WithFields(const Aws::Map<Aws::String, CodegenGenericDataField>& value) { SetFields(value); return *this;}
-    inline CodegenGenericDataModel& WithFields(Aws::Map<Aws::String, CodegenGenericDataField>&& value) { SetFields(std::move(value)); return *this;}
-    inline CodegenGenericDataModel& AddFields(const Aws::String& key, const CodegenGenericDataField& value) { m_fieldsHasBeenSet = true; m_fields.emplace(key, value); return *this; }
-    inline CodegenGenericDataModel& AddFields(Aws::String&& key, const CodegenGenericDataField& value) { m_fieldsHasBeenSet = true; m_fields.emplace(std::move(key), value); return *this; }
-    inline CodegenGenericDataModel& AddFields(const Aws::String& key, CodegenGenericDataField&& value) { m_fieldsHasBeenSet = true; m_fields.emplace(key, std::move(value)); return *this; }
-    inline CodegenGenericDataModel& AddFields(Aws::String&& key, CodegenGenericDataField&& value) { m_fieldsHasBeenSet = true; m_fields.emplace(std::move(key), std::move(value)); return *this; }
-    inline CodegenGenericDataModel& AddFields(const char* key, CodegenGenericDataField&& value) { m_fieldsHasBeenSet = true; m_fields.emplace(key, std::move(value)); return *this; }
-    inline CodegenGenericDataModel& AddFields(const char* key, const CodegenGenericDataField& value) { m_fieldsHasBeenSet = true; m_fields.emplace(key, value); return *this; }
+    template<typename FieldsT = Aws::Map<Aws::String, CodegenGenericDataField>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Map<Aws::String, CodegenGenericDataField>>
+    CodegenGenericDataModel& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsKeyT = Aws::String, typename FieldsValueT = CodegenGenericDataField>
+    CodegenGenericDataModel& AddFields(FieldsKeyT&& key, FieldsValueT&& value) {
+      m_fieldsHasBeenSet = true; m_fields.emplace(std::forward<FieldsKeyT>(key), std::forward<FieldsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the generic data model is a join table.</p>
      */
-    inline bool GetIsJoinTable() const{ return m_isJoinTable; }
+    inline bool GetIsJoinTable() const { return m_isJoinTable; }
     inline bool IsJoinTableHasBeenSet() const { return m_isJoinTableHasBeenSet; }
     inline void SetIsJoinTable(bool value) { m_isJoinTableHasBeenSet = true; m_isJoinTable = value; }
     inline CodegenGenericDataModel& WithIsJoinTable(bool value) { SetIsJoinTable(value); return *this;}
@@ -72,22 +70,21 @@ namespace Model
     /**
      * <p>The primary keys of the generic data model.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrimaryKeys() const{ return m_primaryKeys; }
+    inline const Aws::Vector<Aws::String>& GetPrimaryKeys() const { return m_primaryKeys; }
     inline bool PrimaryKeysHasBeenSet() const { return m_primaryKeysHasBeenSet; }
-    inline void SetPrimaryKeys(const Aws::Vector<Aws::String>& value) { m_primaryKeysHasBeenSet = true; m_primaryKeys = value; }
-    inline void SetPrimaryKeys(Aws::Vector<Aws::String>&& value) { m_primaryKeysHasBeenSet = true; m_primaryKeys = std::move(value); }
-    inline CodegenGenericDataModel& WithPrimaryKeys(const Aws::Vector<Aws::String>& value) { SetPrimaryKeys(value); return *this;}
-    inline CodegenGenericDataModel& WithPrimaryKeys(Aws::Vector<Aws::String>&& value) { SetPrimaryKeys(std::move(value)); return *this;}
-    inline CodegenGenericDataModel& AddPrimaryKeys(const Aws::String& value) { m_primaryKeysHasBeenSet = true; m_primaryKeys.push_back(value); return *this; }
-    inline CodegenGenericDataModel& AddPrimaryKeys(Aws::String&& value) { m_primaryKeysHasBeenSet = true; m_primaryKeys.push_back(std::move(value)); return *this; }
-    inline CodegenGenericDataModel& AddPrimaryKeys(const char* value) { m_primaryKeysHasBeenSet = true; m_primaryKeys.push_back(value); return *this; }
+    template<typename PrimaryKeysT = Aws::Vector<Aws::String>>
+    void SetPrimaryKeys(PrimaryKeysT&& value) { m_primaryKeysHasBeenSet = true; m_primaryKeys = std::forward<PrimaryKeysT>(value); }
+    template<typename PrimaryKeysT = Aws::Vector<Aws::String>>
+    CodegenGenericDataModel& WithPrimaryKeys(PrimaryKeysT&& value) { SetPrimaryKeys(std::forward<PrimaryKeysT>(value)); return *this;}
+    template<typename PrimaryKeysT = Aws::String>
+    CodegenGenericDataModel& AddPrimaryKeys(PrimaryKeysT&& value) { m_primaryKeysHasBeenSet = true; m_primaryKeys.emplace_back(std::forward<PrimaryKeysT>(value)); return *this; }
     ///@}
   private:
 
     Aws::Map<Aws::String, CodegenGenericDataField> m_fields;
     bool m_fieldsHasBeenSet = false;
 
-    bool m_isJoinTable;
+    bool m_isJoinTable{false};
     bool m_isJoinTableHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_primaryKeys;

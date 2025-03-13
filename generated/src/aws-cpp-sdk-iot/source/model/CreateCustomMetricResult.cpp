@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCustomMetricResult::CreateCustomMetricResult()
-{
-}
-
 CreateCustomMetricResult::CreateCustomMetricResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateCustomMetricResult& CreateCustomMetricResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("metricName"))
   {
     m_metricName = jsonValue.GetString("metricName");
-
+    m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricArn"))
   {
     m_metricArn = jsonValue.GetString("metricArn");
-
+    m_metricArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

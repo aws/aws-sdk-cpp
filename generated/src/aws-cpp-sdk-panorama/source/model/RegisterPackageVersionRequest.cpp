@@ -12,16 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterPackageVersionRequest::RegisterPackageVersionRequest() : 
-    m_markLatest(false),
-    m_markLatestHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_packageIdHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false)
-{
-}
-
 Aws::String RegisterPackageVersionRequest::SerializePayload() const
 {
   JsonValue payload;

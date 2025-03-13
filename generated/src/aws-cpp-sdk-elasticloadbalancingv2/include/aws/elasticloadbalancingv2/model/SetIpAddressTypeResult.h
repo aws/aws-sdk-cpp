@@ -28,7 +28,7 @@ namespace Model
   class SetIpAddressTypeResult
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API SetIpAddressTypeResult();
+    AWS_ELASTICLOADBALANCINGV2_API SetIpAddressTypeResult() = default;
     AWS_ELASTICLOADBALANCINGV2_API SetIpAddressTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCINGV2_API SetIpAddressTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,26 @@ namespace Model
     /**
      * <p>The IP address type.</p>
      */
-    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
-    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressType = value; }
-    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressType = std::move(value); }
-    inline SetIpAddressTypeResult& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
-    inline SetIpAddressTypeResult& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline SetIpAddressTypeResult& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline SetIpAddressTypeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline SetIpAddressTypeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    SetIpAddressTypeResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    IpAddressType m_ipAddressType;
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

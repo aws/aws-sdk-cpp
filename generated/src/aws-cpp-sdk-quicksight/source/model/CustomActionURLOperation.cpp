@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CustomActionURLOperation::CustomActionURLOperation() : 
-    m_uRLTemplateHasBeenSet(false),
-    m_uRLTarget(URLTargetConfiguration::NOT_SET),
-    m_uRLTargetHasBeenSet(false)
-{
-}
-
 CustomActionURLOperation::CustomActionURLOperation(JsonView jsonValue)
-  : CustomActionURLOperation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CustomActionURLOperation& CustomActionURLOperation::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("URLTemplate"))
   {
     m_uRLTemplate = jsonValue.GetString("URLTemplate");
-
     m_uRLTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("URLTarget"))
   {
     m_uRLTarget = URLTargetConfigurationMapper::GetURLTargetConfigurationForName(jsonValue.GetString("URLTarget"));
-
     m_uRLTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

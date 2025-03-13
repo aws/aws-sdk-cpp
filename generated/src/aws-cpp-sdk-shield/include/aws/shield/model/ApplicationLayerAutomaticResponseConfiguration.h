@@ -36,7 +36,7 @@ namespace Model
   class ApplicationLayerAutomaticResponseConfiguration
   {
   public:
-    AWS_SHIELD_API ApplicationLayerAutomaticResponseConfiguration();
+    AWS_SHIELD_API ApplicationLayerAutomaticResponseConfiguration() = default;
     AWS_SHIELD_API ApplicationLayerAutomaticResponseConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API ApplicationLayerAutomaticResponseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * <p>Indicates whether automatic application layer DDoS mitigation is enabled for
      * the protection. </p>
      */
-    inline const ApplicationLayerAutomaticResponseStatus& GetStatus() const{ return m_status; }
+    inline ApplicationLayerAutomaticResponseStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ApplicationLayerAutomaticResponseStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ApplicationLayerAutomaticResponseStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ApplicationLayerAutomaticResponseConfiguration& WithStatus(const ApplicationLayerAutomaticResponseStatus& value) { SetStatus(value); return *this;}
-    inline ApplicationLayerAutomaticResponseConfiguration& WithStatus(ApplicationLayerAutomaticResponseStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ApplicationLayerAutomaticResponseStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ApplicationLayerAutomaticResponseConfiguration& WithStatus(ApplicationLayerAutomaticResponseStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -64,16 +62,16 @@ namespace Model
      * Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group,
      * inside the web ACL that you have associated with the resource. </p>
      */
-    inline const ResponseAction& GetAction() const{ return m_action; }
+    inline const ResponseAction& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ResponseAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ResponseAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline ApplicationLayerAutomaticResponseConfiguration& WithAction(const ResponseAction& value) { SetAction(value); return *this;}
-    inline ApplicationLayerAutomaticResponseConfiguration& WithAction(ResponseAction&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = ResponseAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = ResponseAction>
+    ApplicationLayerAutomaticResponseConfiguration& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
   private:
 
-    ApplicationLayerAutomaticResponseStatus m_status;
+    ApplicationLayerAutomaticResponseStatus m_status{ApplicationLayerAutomaticResponseStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     ResponseAction m_action;

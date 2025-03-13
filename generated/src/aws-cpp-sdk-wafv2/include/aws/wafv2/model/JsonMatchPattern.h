@@ -35,7 +35,7 @@ namespace Model
   class JsonMatchPattern
   {
   public:
-    AWS_WAFV2_API JsonMatchPattern();
+    AWS_WAFV2_API JsonMatchPattern() = default;
     AWS_WAFV2_API JsonMatchPattern(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API JsonMatchPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <a>JsonBody</a>. </p> <p>You must specify either this setting or the
      * <code>IncludedPaths</code> setting, but not both.</p>
      */
-    inline const All& GetAll() const{ return m_all; }
+    inline const All& GetAll() const { return m_all; }
     inline bool AllHasBeenSet() const { return m_allHasBeenSet; }
-    inline void SetAll(const All& value) { m_allHasBeenSet = true; m_all = value; }
-    inline void SetAll(All&& value) { m_allHasBeenSet = true; m_all = std::move(value); }
-    inline JsonMatchPattern& WithAll(const All& value) { SetAll(value); return *this;}
-    inline JsonMatchPattern& WithAll(All&& value) { SetAll(std::move(value)); return *this;}
+    template<typename AllT = All>
+    void SetAll(AllT&& value) { m_allHasBeenSet = true; m_all = std::forward<AllT>(value); }
+    template<typename AllT = All>
+    JsonMatchPattern& WithAll(AllT&& value) { SetAll(std::forward<AllT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,15 +66,14 @@ namespace Model
      * <code>All</code> setting, but not both.</p>  <p>Don't use this option to
      * include all paths. Instead, use the <code>All</code> setting. </p> 
      */
-    inline const Aws::Vector<Aws::String>& GetIncludedPaths() const{ return m_includedPaths; }
+    inline const Aws::Vector<Aws::String>& GetIncludedPaths() const { return m_includedPaths; }
     inline bool IncludedPathsHasBeenSet() const { return m_includedPathsHasBeenSet; }
-    inline void SetIncludedPaths(const Aws::Vector<Aws::String>& value) { m_includedPathsHasBeenSet = true; m_includedPaths = value; }
-    inline void SetIncludedPaths(Aws::Vector<Aws::String>&& value) { m_includedPathsHasBeenSet = true; m_includedPaths = std::move(value); }
-    inline JsonMatchPattern& WithIncludedPaths(const Aws::Vector<Aws::String>& value) { SetIncludedPaths(value); return *this;}
-    inline JsonMatchPattern& WithIncludedPaths(Aws::Vector<Aws::String>&& value) { SetIncludedPaths(std::move(value)); return *this;}
-    inline JsonMatchPattern& AddIncludedPaths(const Aws::String& value) { m_includedPathsHasBeenSet = true; m_includedPaths.push_back(value); return *this; }
-    inline JsonMatchPattern& AddIncludedPaths(Aws::String&& value) { m_includedPathsHasBeenSet = true; m_includedPaths.push_back(std::move(value)); return *this; }
-    inline JsonMatchPattern& AddIncludedPaths(const char* value) { m_includedPathsHasBeenSet = true; m_includedPaths.push_back(value); return *this; }
+    template<typename IncludedPathsT = Aws::Vector<Aws::String>>
+    void SetIncludedPaths(IncludedPathsT&& value) { m_includedPathsHasBeenSet = true; m_includedPaths = std::forward<IncludedPathsT>(value); }
+    template<typename IncludedPathsT = Aws::Vector<Aws::String>>
+    JsonMatchPattern& WithIncludedPaths(IncludedPathsT&& value) { SetIncludedPaths(std::forward<IncludedPathsT>(value)); return *this;}
+    template<typename IncludedPathsT = Aws::String>
+    JsonMatchPattern& AddIncludedPaths(IncludedPathsT&& value) { m_includedPathsHasBeenSet = true; m_includedPaths.emplace_back(std::forward<IncludedPathsT>(value)); return *this; }
     ///@}
   private:
 

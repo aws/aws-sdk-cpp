@@ -12,11 +12,6 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RenewCertificateRequest::RenewCertificateRequest() : 
-    m_certificateArnHasBeenSet(false)
-{
-}
-
 Aws::String RenewCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

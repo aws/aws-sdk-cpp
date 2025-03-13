@@ -25,7 +25,7 @@ namespace Model
   class GetQAppRequest : public QAppsRequest
   {
   public:
-    AWS_QAPPS_API GetQAppRequest();
+    AWS_QAPPS_API GetQAppRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,35 +45,31 @@ namespace Model
      * <p>The unique identifier of the Amazon Q Business application environment
      * instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline GetQAppRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline GetQAppRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline GetQAppRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    GetQAppRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the Q App to retrieve.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline GetQAppRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline GetQAppRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline GetQAppRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    GetQAppRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the Q App.</p>
      */
-    inline int GetAppVersion() const{ return m_appVersion; }
+    inline int GetAppVersion() const { return m_appVersion; }
     inline bool AppVersionHasBeenSet() const { return m_appVersionHasBeenSet; }
     inline void SetAppVersion(int value) { m_appVersionHasBeenSet = true; m_appVersion = value; }
     inline GetQAppRequest& WithAppVersion(int value) { SetAppVersion(value); return *this;}
@@ -86,7 +82,7 @@ namespace Model
     Aws::String m_appId;
     bool m_appIdHasBeenSet = false;
 
-    int m_appVersion;
+    int m_appVersion{0};
     bool m_appVersionHasBeenSet = false;
   };
 

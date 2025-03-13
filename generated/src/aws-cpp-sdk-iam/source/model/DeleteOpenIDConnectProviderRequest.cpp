@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteOpenIDConnectProviderRequest::DeleteOpenIDConnectProviderRequest() : 
-    m_openIDConnectProviderArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOpenIDConnectProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;

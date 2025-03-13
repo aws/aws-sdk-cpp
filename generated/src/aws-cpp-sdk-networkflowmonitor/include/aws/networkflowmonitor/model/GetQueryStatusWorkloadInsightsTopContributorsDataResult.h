@@ -28,7 +28,7 @@ namespace Model
   class GetQueryStatusWorkloadInsightsTopContributorsDataResult
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API GetQueryStatusWorkloadInsightsTopContributorsDataResult();
+    AWS_NETWORKFLOWMONITOR_API GetQueryStatusWorkloadInsightsTopContributorsDataResult() = default;
     AWS_NETWORKFLOWMONITOR_API GetQueryStatusWorkloadInsightsTopContributorsDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFLOWMONITOR_API GetQueryStatusWorkloadInsightsTopContributorsDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,26 @@ namespace Model
      * <code>FAILED</code>: The query failed due to an error.</p> </li> <li> <p>
      * <code>CANCELED</code>: The query was canceled.</p> </li> </ul>
      */
-    inline const QueryStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const QueryStatus& value) { m_status = value; }
-    inline void SetStatus(QueryStatus&& value) { m_status = std::move(value); }
-    inline GetQueryStatusWorkloadInsightsTopContributorsDataResult& WithStatus(const QueryStatus& value) { SetStatus(value); return *this;}
-    inline GetQueryStatusWorkloadInsightsTopContributorsDataResult& WithStatus(QueryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline QueryStatus GetStatus() const { return m_status; }
+    inline void SetStatus(QueryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetQueryStatusWorkloadInsightsTopContributorsDataResult& WithStatus(QueryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetQueryStatusWorkloadInsightsTopContributorsDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetQueryStatusWorkloadInsightsTopContributorsDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetQueryStatusWorkloadInsightsTopContributorsDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetQueryStatusWorkloadInsightsTopContributorsDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    QueryStatus m_status;
+    QueryStatus m_status{QueryStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

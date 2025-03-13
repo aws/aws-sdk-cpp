@@ -19,17 +19,7 @@ namespace MigrationHubRefactorSpaces
 namespace Model
 {
 
-ThrottlingException::ThrottlingException() : 
-    m_messageHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_retryAfterSeconds(0),
-    m_retryAfterSecondsHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
-{
-}
-
 ThrottlingException::ThrottlingException(JsonView jsonValue)
-  : ThrottlingException()
 {
   *this = jsonValue;
 }
@@ -39,24 +29,18 @@ ThrottlingException& ThrottlingException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuotaCode"))
   {
     m_quotaCode = jsonValue.GetString("QuotaCode");
-
     m_quotaCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceCode"))
   {
     m_serviceCode = jsonValue.GetString("ServiceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

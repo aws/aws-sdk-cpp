@@ -27,7 +27,7 @@ namespace Model
   class GetCaseAttachmentUploadUrlResult
   {
   public:
-    AWS_SECURITYIR_API GetCaseAttachmentUploadUrlResult();
+    AWS_SECURITYIR_API GetCaseAttachmentUploadUrlResult() = default;
     AWS_SECURITYIR_API GetCaseAttachmentUploadUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYIR_API GetCaseAttachmentUploadUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>Response element providing the Amazon S3 presigned UTL to upload the
      * attachment.</p>
      */
-    inline const Aws::String& GetAttachmentPresignedUrl() const{ return m_attachmentPresignedUrl; }
-    inline void SetAttachmentPresignedUrl(const Aws::String& value) { m_attachmentPresignedUrl = value; }
-    inline void SetAttachmentPresignedUrl(Aws::String&& value) { m_attachmentPresignedUrl = std::move(value); }
-    inline void SetAttachmentPresignedUrl(const char* value) { m_attachmentPresignedUrl.assign(value); }
-    inline GetCaseAttachmentUploadUrlResult& WithAttachmentPresignedUrl(const Aws::String& value) { SetAttachmentPresignedUrl(value); return *this;}
-    inline GetCaseAttachmentUploadUrlResult& WithAttachmentPresignedUrl(Aws::String&& value) { SetAttachmentPresignedUrl(std::move(value)); return *this;}
-    inline GetCaseAttachmentUploadUrlResult& WithAttachmentPresignedUrl(const char* value) { SetAttachmentPresignedUrl(value); return *this;}
+    inline const Aws::String& GetAttachmentPresignedUrl() const { return m_attachmentPresignedUrl; }
+    template<typename AttachmentPresignedUrlT = Aws::String>
+    void SetAttachmentPresignedUrl(AttachmentPresignedUrlT&& value) { m_attachmentPresignedUrlHasBeenSet = true; m_attachmentPresignedUrl = std::forward<AttachmentPresignedUrlT>(value); }
+    template<typename AttachmentPresignedUrlT = Aws::String>
+    GetCaseAttachmentUploadUrlResult& WithAttachmentPresignedUrl(AttachmentPresignedUrlT&& value) { SetAttachmentPresignedUrl(std::forward<AttachmentPresignedUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCaseAttachmentUploadUrlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCaseAttachmentUploadUrlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCaseAttachmentUploadUrlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCaseAttachmentUploadUrlResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_attachmentPresignedUrl;
+    bool m_attachmentPresignedUrlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

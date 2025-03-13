@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CancelLegalHoldRequest::CancelLegalHoldRequest() : 
-    m_legalHoldIdHasBeenSet(false),
-    m_cancelDescriptionHasBeenSet(false),
-    m_retainRecordInDays(0),
-    m_retainRecordInDaysHasBeenSet(false)
-{
-}
-
 Aws::String CancelLegalHoldRequest::SerializePayload() const
 {
   return {};

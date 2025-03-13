@@ -31,7 +31,7 @@ namespace Model
   class GetSavingsPlansUtilizationDetailsResult
   {
   public:
-    AWS_COSTEXPLORER_API GetSavingsPlansUtilizationDetailsResult();
+    AWS_COSTEXPLORER_API GetSavingsPlansUtilizationDetailsResult() = default;
     AWS_COSTEXPLORER_API GetSavingsPlansUtilizationDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTEXPLORER_API GetSavingsPlansUtilizationDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,33 +41,33 @@ namespace Model
      * <p>Retrieves a single daily or monthly Savings Plans utilization rate and
      * details for your account.</p>
      */
-    inline const Aws::Vector<SavingsPlansUtilizationDetail>& GetSavingsPlansUtilizationDetails() const{ return m_savingsPlansUtilizationDetails; }
-    inline void SetSavingsPlansUtilizationDetails(const Aws::Vector<SavingsPlansUtilizationDetail>& value) { m_savingsPlansUtilizationDetails = value; }
-    inline void SetSavingsPlansUtilizationDetails(Aws::Vector<SavingsPlansUtilizationDetail>&& value) { m_savingsPlansUtilizationDetails = std::move(value); }
-    inline GetSavingsPlansUtilizationDetailsResult& WithSavingsPlansUtilizationDetails(const Aws::Vector<SavingsPlansUtilizationDetail>& value) { SetSavingsPlansUtilizationDetails(value); return *this;}
-    inline GetSavingsPlansUtilizationDetailsResult& WithSavingsPlansUtilizationDetails(Aws::Vector<SavingsPlansUtilizationDetail>&& value) { SetSavingsPlansUtilizationDetails(std::move(value)); return *this;}
-    inline GetSavingsPlansUtilizationDetailsResult& AddSavingsPlansUtilizationDetails(const SavingsPlansUtilizationDetail& value) { m_savingsPlansUtilizationDetails.push_back(value); return *this; }
-    inline GetSavingsPlansUtilizationDetailsResult& AddSavingsPlansUtilizationDetails(SavingsPlansUtilizationDetail&& value) { m_savingsPlansUtilizationDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SavingsPlansUtilizationDetail>& GetSavingsPlansUtilizationDetails() const { return m_savingsPlansUtilizationDetails; }
+    template<typename SavingsPlansUtilizationDetailsT = Aws::Vector<SavingsPlansUtilizationDetail>>
+    void SetSavingsPlansUtilizationDetails(SavingsPlansUtilizationDetailsT&& value) { m_savingsPlansUtilizationDetailsHasBeenSet = true; m_savingsPlansUtilizationDetails = std::forward<SavingsPlansUtilizationDetailsT>(value); }
+    template<typename SavingsPlansUtilizationDetailsT = Aws::Vector<SavingsPlansUtilizationDetail>>
+    GetSavingsPlansUtilizationDetailsResult& WithSavingsPlansUtilizationDetails(SavingsPlansUtilizationDetailsT&& value) { SetSavingsPlansUtilizationDetails(std::forward<SavingsPlansUtilizationDetailsT>(value)); return *this;}
+    template<typename SavingsPlansUtilizationDetailsT = SavingsPlansUtilizationDetail>
+    GetSavingsPlansUtilizationDetailsResult& AddSavingsPlansUtilizationDetails(SavingsPlansUtilizationDetailsT&& value) { m_savingsPlansUtilizationDetailsHasBeenSet = true; m_savingsPlansUtilizationDetails.emplace_back(std::forward<SavingsPlansUtilizationDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The total Savings Plans utilization, regardless of time period.</p>
      */
-    inline const SavingsPlansUtilizationAggregates& GetTotal() const{ return m_total; }
-    inline void SetTotal(const SavingsPlansUtilizationAggregates& value) { m_total = value; }
-    inline void SetTotal(SavingsPlansUtilizationAggregates&& value) { m_total = std::move(value); }
-    inline GetSavingsPlansUtilizationDetailsResult& WithTotal(const SavingsPlansUtilizationAggregates& value) { SetTotal(value); return *this;}
-    inline GetSavingsPlansUtilizationDetailsResult& WithTotal(SavingsPlansUtilizationAggregates&& value) { SetTotal(std::move(value)); return *this;}
+    inline const SavingsPlansUtilizationAggregates& GetTotal() const { return m_total; }
+    template<typename TotalT = SavingsPlansUtilizationAggregates>
+    void SetTotal(TotalT&& value) { m_totalHasBeenSet = true; m_total = std::forward<TotalT>(value); }
+    template<typename TotalT = SavingsPlansUtilizationAggregates>
+    GetSavingsPlansUtilizationDetailsResult& WithTotal(TotalT&& value) { SetTotal(std::forward<TotalT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriod = std::move(value); }
-    inline GetSavingsPlansUtilizationDetailsResult& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline GetSavingsPlansUtilizationDetailsResult& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    GetSavingsPlansUtilizationDetailsResult& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,36 +76,37 @@ namespace Model
      * the token when the response from a previous call has more results than the
      * maximum page size.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetSavingsPlansUtilizationDetailsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetSavingsPlansUtilizationDetailsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetSavingsPlansUtilizationDetailsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetSavingsPlansUtilizationDetailsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSavingsPlansUtilizationDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSavingsPlansUtilizationDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSavingsPlansUtilizationDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSavingsPlansUtilizationDetailsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SavingsPlansUtilizationDetail> m_savingsPlansUtilizationDetails;
+    bool m_savingsPlansUtilizationDetailsHasBeenSet = false;
 
     SavingsPlansUtilizationAggregates m_total;
+    bool m_totalHasBeenSet = false;
 
     DateInterval m_timePeriod;
+    bool m_timePeriodHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SlotStartTimeRangeRequest::SlotStartTimeRangeRequest() : 
-    m_earliestTimeHasBeenSet(false),
-    m_latestTimeHasBeenSet(false)
-{
-}
-
 SlotStartTimeRangeRequest::SlotStartTimeRangeRequest(const XmlNode& xmlNode)
-  : SlotStartTimeRangeRequest()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ SlotStartTimeRangeRequest& SlotStartTimeRangeRequest::operator =(const XmlNode& 
     {
       m_earliestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(earliestTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_earliestTimeHasBeenSet = true;
+       m_earliestTimeHasBeenSet = true;
     }
     XmlNode latestTimeNode = resultNode.FirstChild("LatestTime");
     if(!latestTimeNode.IsNull())
     {
       m_latestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(latestTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_latestTimeHasBeenSet = true;
+       m_latestTimeHasBeenSet = true;
     }
   }
 

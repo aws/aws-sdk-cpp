@@ -12,15 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartFileTransferRequest::StartFileTransferRequest() : 
-    m_connectorIdHasBeenSet(false),
-    m_sendFilePathsHasBeenSet(false),
-    m_retrieveFilePathsHasBeenSet(false),
-    m_localDirectoryPathHasBeenSet(false),
-    m_remoteDirectoryPathHasBeenSet(false)
-{
-}
-
 Aws::String StartFileTransferRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,19 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-AggregationSummary::AggregationSummary() : 
-    m_eventCount(0),
-    m_eventCountHasBeenSet(false),
-    m_aggregatedByHasBeenSet(false),
-    m_aggregatedAccountsHasBeenSet(false),
-    m_aggregatedRegionsHasBeenSet(false),
-    m_aggregatedOrganizationalUnitsHasBeenSet(false),
-    m_additionalSummarizationDimensionsHasBeenSet(false)
-{
-}
-
 AggregationSummary::AggregationSummary(JsonView jsonValue)
-  : AggregationSummary()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ AggregationSummary& AggregationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventCount"))
   {
     m_eventCount = jsonValue.GetInteger("eventCount");
-
     m_eventCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregatedBy"))
   {
     Aws::Utils::Array<JsonView> aggregatedByJsonList = jsonValue.GetArray("aggregatedBy");
@@ -53,28 +39,21 @@ AggregationSummary& AggregationSummary::operator =(JsonView jsonValue)
     }
     m_aggregatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregatedAccounts"))
   {
     m_aggregatedAccounts = jsonValue.GetObject("aggregatedAccounts");
-
     m_aggregatedAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregatedRegions"))
   {
     m_aggregatedRegions = jsonValue.GetObject("aggregatedRegions");
-
     m_aggregatedRegionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregatedOrganizationalUnits"))
   {
     m_aggregatedOrganizationalUnits = jsonValue.GetObject("aggregatedOrganizationalUnits");
-
     m_aggregatedOrganizationalUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalSummarizationDimensions"))
   {
     Aws::Utils::Array<JsonView> additionalSummarizationDimensionsJsonList = jsonValue.GetArray("additionalSummarizationDimensions");
@@ -84,7 +63,6 @@ AggregationSummary& AggregationSummary::operator =(JsonView jsonValue)
     }
     m_additionalSummarizationDimensionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace ECR
 namespace Model
 {
 
-RepositoryFilter::RepositoryFilter() : 
-    m_filterHasBeenSet(false),
-    m_filterType(RepositoryFilterType::NOT_SET),
-    m_filterTypeHasBeenSet(false)
-{
-}
-
 RepositoryFilter::RepositoryFilter(JsonView jsonValue)
-  : RepositoryFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RepositoryFilter& RepositoryFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("filter"))
   {
     m_filter = jsonValue.GetString("filter");
-
     m_filterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterType"))
   {
     m_filterType = RepositoryFilterTypeMapper::GetRepositoryFilterTypeForName(jsonValue.GetString("filterType"));
-
     m_filterTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-DescribeWorkspacesPoolsFilter::DescribeWorkspacesPoolsFilter() : 
-    m_name(DescribeWorkspacesPoolsFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(DescribeWorkspacesPoolsFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 DescribeWorkspacesPoolsFilter::DescribeWorkspacesPoolsFilter(JsonView jsonValue)
-  : DescribeWorkspacesPoolsFilter()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ DescribeWorkspacesPoolsFilter& DescribeWorkspacesPoolsFilter::operator =(JsonVie
   if(jsonValue.ValueExists("Name"))
   {
     m_name = DescribeWorkspacesPoolsFilterNameMapper::GetDescribeWorkspacesPoolsFilterNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -51,14 +39,11 @@ DescribeWorkspacesPoolsFilter& DescribeWorkspacesPoolsFilter::operator =(JsonVie
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = DescribeWorkspacesPoolsFilterOperatorMapper::GetDescribeWorkspacesPoolsFilterOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

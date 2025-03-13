@@ -24,7 +24,7 @@ namespace Model
   class CreateMetricAttributionRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API CreateMetricAttributionRequest();
+    AWS_PERSONALIZE_API CreateMetricAttributionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>A name for the metric attribution.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateMetricAttributionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateMetricAttributionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateMetricAttributionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateMetricAttributionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the destination dataset group for the
      * metric attribution.</p>
      */
-    inline const Aws::String& GetDatasetGroupArn() const{ return m_datasetGroupArn; }
+    inline const Aws::String& GetDatasetGroupArn() const { return m_datasetGroupArn; }
     inline bool DatasetGroupArnHasBeenSet() const { return m_datasetGroupArnHasBeenSet; }
-    inline void SetDatasetGroupArn(const Aws::String& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = value; }
-    inline void SetDatasetGroupArn(Aws::String&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::move(value); }
-    inline void SetDatasetGroupArn(const char* value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn.assign(value); }
-    inline CreateMetricAttributionRequest& WithDatasetGroupArn(const Aws::String& value) { SetDatasetGroupArn(value); return *this;}
-    inline CreateMetricAttributionRequest& WithDatasetGroupArn(Aws::String&& value) { SetDatasetGroupArn(std::move(value)); return *this;}
-    inline CreateMetricAttributionRequest& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
+    template<typename DatasetGroupArnT = Aws::String>
+    void SetDatasetGroupArn(DatasetGroupArnT&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::forward<DatasetGroupArnT>(value); }
+    template<typename DatasetGroupArnT = Aws::String>
+    CreateMetricAttributionRequest& WithDatasetGroupArn(DatasetGroupArnT&& value) { SetDatasetGroupArn(std::forward<DatasetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,26 +70,26 @@ namespace Model
      * the dataset type (either Interactions or Items) and column to sum as a
      * parameter. For example SUM(Items.PRICE).</p>
      */
-    inline const Aws::Vector<MetricAttribute>& GetMetrics() const{ return m_metrics; }
+    inline const Aws::Vector<MetricAttribute>& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const Aws::Vector<MetricAttribute>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(Aws::Vector<MetricAttribute>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline CreateMetricAttributionRequest& WithMetrics(const Aws::Vector<MetricAttribute>& value) { SetMetrics(value); return *this;}
-    inline CreateMetricAttributionRequest& WithMetrics(Aws::Vector<MetricAttribute>&& value) { SetMetrics(std::move(value)); return *this;}
-    inline CreateMetricAttributionRequest& AddMetrics(const MetricAttribute& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
-    inline CreateMetricAttributionRequest& AddMetrics(MetricAttribute&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
+    template<typename MetricsT = Aws::Vector<MetricAttribute>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Vector<MetricAttribute>>
+    CreateMetricAttributionRequest& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    template<typename MetricsT = MetricAttribute>
+    CreateMetricAttributionRequest& AddMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics.emplace_back(std::forward<MetricsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The output configuration details for the metric attribution.</p>
      */
-    inline const MetricAttributionOutput& GetMetricsOutputConfig() const{ return m_metricsOutputConfig; }
+    inline const MetricAttributionOutput& GetMetricsOutputConfig() const { return m_metricsOutputConfig; }
     inline bool MetricsOutputConfigHasBeenSet() const { return m_metricsOutputConfigHasBeenSet; }
-    inline void SetMetricsOutputConfig(const MetricAttributionOutput& value) { m_metricsOutputConfigHasBeenSet = true; m_metricsOutputConfig = value; }
-    inline void SetMetricsOutputConfig(MetricAttributionOutput&& value) { m_metricsOutputConfigHasBeenSet = true; m_metricsOutputConfig = std::move(value); }
-    inline CreateMetricAttributionRequest& WithMetricsOutputConfig(const MetricAttributionOutput& value) { SetMetricsOutputConfig(value); return *this;}
-    inline CreateMetricAttributionRequest& WithMetricsOutputConfig(MetricAttributionOutput&& value) { SetMetricsOutputConfig(std::move(value)); return *this;}
+    template<typename MetricsOutputConfigT = MetricAttributionOutput>
+    void SetMetricsOutputConfig(MetricsOutputConfigT&& value) { m_metricsOutputConfigHasBeenSet = true; m_metricsOutputConfig = std::forward<MetricsOutputConfigT>(value); }
+    template<typename MetricsOutputConfigT = MetricAttributionOutput>
+    CreateMetricAttributionRequest& WithMetricsOutputConfig(MetricsOutputConfigT&& value) { SetMetricsOutputConfig(std::forward<MetricsOutputConfigT>(value)); return *this;}
     ///@}
   private:
 

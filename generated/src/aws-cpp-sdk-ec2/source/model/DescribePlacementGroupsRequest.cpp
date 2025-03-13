@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribePlacementGroupsRequest::DescribePlacementGroupsRequest() : 
-    m_groupIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_groupNamesHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribePlacementGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

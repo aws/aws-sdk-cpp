@@ -29,7 +29,7 @@ namespace Model
   class DescribeAffectedAccountsForOrganizationResult
   {
   public:
-    AWS_HEALTH_API DescribeAffectedAccountsForOrganizationResult();
+    AWS_HEALTH_API DescribeAffectedAccountsForOrganizationResult() = default;
     AWS_HEALTH_API DescribeAffectedAccountsForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_HEALTH_API DescribeAffectedAccountsForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,14 +38,13 @@ namespace Model
     /**
      * <p>A JSON set of elements of the affected accounts.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAffectedAccounts() const{ return m_affectedAccounts; }
-    inline void SetAffectedAccounts(const Aws::Vector<Aws::String>& value) { m_affectedAccounts = value; }
-    inline void SetAffectedAccounts(Aws::Vector<Aws::String>&& value) { m_affectedAccounts = std::move(value); }
-    inline DescribeAffectedAccountsForOrganizationResult& WithAffectedAccounts(const Aws::Vector<Aws::String>& value) { SetAffectedAccounts(value); return *this;}
-    inline DescribeAffectedAccountsForOrganizationResult& WithAffectedAccounts(Aws::Vector<Aws::String>&& value) { SetAffectedAccounts(std::move(value)); return *this;}
-    inline DescribeAffectedAccountsForOrganizationResult& AddAffectedAccounts(const Aws::String& value) { m_affectedAccounts.push_back(value); return *this; }
-    inline DescribeAffectedAccountsForOrganizationResult& AddAffectedAccounts(Aws::String&& value) { m_affectedAccounts.push_back(std::move(value)); return *this; }
-    inline DescribeAffectedAccountsForOrganizationResult& AddAffectedAccounts(const char* value) { m_affectedAccounts.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAffectedAccounts() const { return m_affectedAccounts; }
+    template<typename AffectedAccountsT = Aws::Vector<Aws::String>>
+    void SetAffectedAccounts(AffectedAccountsT&& value) { m_affectedAccountsHasBeenSet = true; m_affectedAccounts = std::forward<AffectedAccountsT>(value); }
+    template<typename AffectedAccountsT = Aws::Vector<Aws::String>>
+    DescribeAffectedAccountsForOrganizationResult& WithAffectedAccounts(AffectedAccountsT&& value) { SetAffectedAccounts(std::forward<AffectedAccountsT>(value)); return *this;}
+    template<typename AffectedAccountsT = Aws::String>
+    DescribeAffectedAccountsForOrganizationResult& AddAffectedAccounts(AffectedAccountsT&& value) { m_affectedAccountsHasBeenSet = true; m_affectedAccounts.emplace_back(std::forward<AffectedAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,11 +62,9 @@ namespace Model
      * <code>eventArn</code> that you specified in the request is invalid or doesn't
      * exist.</p> </li> </ul>
      */
-    inline const EventScopeCode& GetEventScopeCode() const{ return m_eventScopeCode; }
-    inline void SetEventScopeCode(const EventScopeCode& value) { m_eventScopeCode = value; }
-    inline void SetEventScopeCode(EventScopeCode&& value) { m_eventScopeCode = std::move(value); }
-    inline DescribeAffectedAccountsForOrganizationResult& WithEventScopeCode(const EventScopeCode& value) { SetEventScopeCode(value); return *this;}
-    inline DescribeAffectedAccountsForOrganizationResult& WithEventScopeCode(EventScopeCode&& value) { SetEventScopeCode(std::move(value)); return *this;}
+    inline EventScopeCode GetEventScopeCode() const { return m_eventScopeCode; }
+    inline void SetEventScopeCode(EventScopeCode value) { m_eventScopeCodeHasBeenSet = true; m_eventScopeCode = value; }
+    inline DescribeAffectedAccountsForOrganizationResult& WithEventScopeCode(EventScopeCode value) { SetEventScopeCode(value); return *this;}
     ///@}
 
     ///@{
@@ -78,34 +75,34 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeAffectedAccountsForOrganizationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAffectedAccountsForOrganizationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAffectedAccountsForOrganizationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAffectedAccountsForOrganizationResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAffectedAccountsForOrganizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAffectedAccountsForOrganizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAffectedAccountsForOrganizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAffectedAccountsForOrganizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_affectedAccounts;
+    bool m_affectedAccountsHasBeenSet = false;
 
-    EventScopeCode m_eventScopeCode;
+    EventScopeCode m_eventScopeCode{EventScopeCode::NOT_SET};
+    bool m_eventScopeCodeHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

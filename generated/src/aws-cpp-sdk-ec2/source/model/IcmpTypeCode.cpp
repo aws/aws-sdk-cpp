@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IcmpTypeCode::IcmpTypeCode() : 
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_type(0),
-    m_typeHasBeenSet(false)
-{
-}
-
 IcmpTypeCode::IcmpTypeCode(const XmlNode& xmlNode)
-  : IcmpTypeCode()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ IcmpTypeCode& IcmpTypeCode::operator =(const XmlNode& xmlNode)
     {
       m_code = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
       m_type = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
   }
 

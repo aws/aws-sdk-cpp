@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateChapCredentialsResult::UpdateChapCredentialsResult()
-{
-}
-
 UpdateChapCredentialsResult::UpdateChapCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateChapCredentialsResult& UpdateChapCredentialsResult::operator =(const Aws::
   if(jsonValue.ValueExists("TargetARN"))
   {
     m_targetARN = jsonValue.GetString("TargetARN");
-
+    m_targetARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitiatorName"))
   {
     m_initiatorName = jsonValue.GetString("InitiatorName");
-
+    m_initiatorNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

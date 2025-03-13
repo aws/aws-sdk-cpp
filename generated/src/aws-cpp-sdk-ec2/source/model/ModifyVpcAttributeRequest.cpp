@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVpcAttributeRequest::ModifyVpcAttributeRequest() : 
-    m_enableDnsHostnamesHasBeenSet(false),
-    m_enableDnsSupportHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_enableNetworkAddressUsageMetricsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVpcAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

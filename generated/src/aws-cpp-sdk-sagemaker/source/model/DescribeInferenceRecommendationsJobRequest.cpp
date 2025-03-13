@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeInferenceRecommendationsJobRequest::DescribeInferenceRecommendationsJobRequest() : 
-    m_jobNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInferenceRecommendationsJobRequest::SerializePayload() const
 {
   JsonValue payload;

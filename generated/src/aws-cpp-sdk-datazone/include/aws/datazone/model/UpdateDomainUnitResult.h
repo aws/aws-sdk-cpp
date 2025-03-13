@@ -30,7 +30,7 @@ namespace Model
   class UpdateDomainUnitResult
   {
   public:
-    AWS_DATAZONE_API UpdateDomainUnitResult();
+    AWS_DATAZONE_API UpdateDomainUnitResult() = default;
     AWS_DATAZONE_API UpdateDomainUnitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API UpdateDomainUnitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,161 +40,156 @@ namespace Model
      * <p>The time stamp at which the domain unit that you want to update was
      * created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline UpdateDomainUnitResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline UpdateDomainUnitResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    UpdateDomainUnitResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user who created the domain unit that you want to update.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline UpdateDomainUnitResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline UpdateDomainUnitResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline UpdateDomainUnitResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    UpdateDomainUnitResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the domain unit that you want to update.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline UpdateDomainUnitResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateDomainUnitResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateDomainUnitResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateDomainUnitResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the domain where you want to update the domain unit.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
-    inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainId.assign(value); }
-    inline UpdateDomainUnitResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline UpdateDomainUnitResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline UpdateDomainUnitResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    UpdateDomainUnitResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the domain unit that you want to update.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline UpdateDomainUnitResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateDomainUnitResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateDomainUnitResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateDomainUnitResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which the domain unit was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline UpdateDomainUnitResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline UpdateDomainUnitResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    UpdateDomainUnitResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user who last updated the domain unit.</p>
      */
-    inline const Aws::String& GetLastUpdatedBy() const{ return m_lastUpdatedBy; }
-    inline void SetLastUpdatedBy(const Aws::String& value) { m_lastUpdatedBy = value; }
-    inline void SetLastUpdatedBy(Aws::String&& value) { m_lastUpdatedBy = std::move(value); }
-    inline void SetLastUpdatedBy(const char* value) { m_lastUpdatedBy.assign(value); }
-    inline UpdateDomainUnitResult& WithLastUpdatedBy(const Aws::String& value) { SetLastUpdatedBy(value); return *this;}
-    inline UpdateDomainUnitResult& WithLastUpdatedBy(Aws::String&& value) { SetLastUpdatedBy(std::move(value)); return *this;}
-    inline UpdateDomainUnitResult& WithLastUpdatedBy(const char* value) { SetLastUpdatedBy(value); return *this;}
+    inline const Aws::String& GetLastUpdatedBy() const { return m_lastUpdatedBy; }
+    template<typename LastUpdatedByT = Aws::String>
+    void SetLastUpdatedBy(LastUpdatedByT&& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = std::forward<LastUpdatedByT>(value); }
+    template<typename LastUpdatedByT = Aws::String>
+    UpdateDomainUnitResult& WithLastUpdatedBy(LastUpdatedByT&& value) { SetLastUpdatedBy(std::forward<LastUpdatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the domain unit that you want to update.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateDomainUnitResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateDomainUnitResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateDomainUnitResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateDomainUnitResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owners of the domain unit that you want to update.</p>
      */
-    inline const Aws::Vector<DomainUnitOwnerProperties>& GetOwners() const{ return m_owners; }
-    inline void SetOwners(const Aws::Vector<DomainUnitOwnerProperties>& value) { m_owners = value; }
-    inline void SetOwners(Aws::Vector<DomainUnitOwnerProperties>&& value) { m_owners = std::move(value); }
-    inline UpdateDomainUnitResult& WithOwners(const Aws::Vector<DomainUnitOwnerProperties>& value) { SetOwners(value); return *this;}
-    inline UpdateDomainUnitResult& WithOwners(Aws::Vector<DomainUnitOwnerProperties>&& value) { SetOwners(std::move(value)); return *this;}
-    inline UpdateDomainUnitResult& AddOwners(const DomainUnitOwnerProperties& value) { m_owners.push_back(value); return *this; }
-    inline UpdateDomainUnitResult& AddOwners(DomainUnitOwnerProperties&& value) { m_owners.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainUnitOwnerProperties>& GetOwners() const { return m_owners; }
+    template<typename OwnersT = Aws::Vector<DomainUnitOwnerProperties>>
+    void SetOwners(OwnersT&& value) { m_ownersHasBeenSet = true; m_owners = std::forward<OwnersT>(value); }
+    template<typename OwnersT = Aws::Vector<DomainUnitOwnerProperties>>
+    UpdateDomainUnitResult& WithOwners(OwnersT&& value) { SetOwners(std::forward<OwnersT>(value)); return *this;}
+    template<typename OwnersT = DomainUnitOwnerProperties>
+    UpdateDomainUnitResult& AddOwners(OwnersT&& value) { m_ownersHasBeenSet = true; m_owners.emplace_back(std::forward<OwnersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the parent domain unit.</p>
      */
-    inline const Aws::String& GetParentDomainUnitId() const{ return m_parentDomainUnitId; }
-    inline void SetParentDomainUnitId(const Aws::String& value) { m_parentDomainUnitId = value; }
-    inline void SetParentDomainUnitId(Aws::String&& value) { m_parentDomainUnitId = std::move(value); }
-    inline void SetParentDomainUnitId(const char* value) { m_parentDomainUnitId.assign(value); }
-    inline UpdateDomainUnitResult& WithParentDomainUnitId(const Aws::String& value) { SetParentDomainUnitId(value); return *this;}
-    inline UpdateDomainUnitResult& WithParentDomainUnitId(Aws::String&& value) { SetParentDomainUnitId(std::move(value)); return *this;}
-    inline UpdateDomainUnitResult& WithParentDomainUnitId(const char* value) { SetParentDomainUnitId(value); return *this;}
+    inline const Aws::String& GetParentDomainUnitId() const { return m_parentDomainUnitId; }
+    template<typename ParentDomainUnitIdT = Aws::String>
+    void SetParentDomainUnitId(ParentDomainUnitIdT&& value) { m_parentDomainUnitIdHasBeenSet = true; m_parentDomainUnitId = std::forward<ParentDomainUnitIdT>(value); }
+    template<typename ParentDomainUnitIdT = Aws::String>
+    UpdateDomainUnitResult& WithParentDomainUnitId(ParentDomainUnitIdT&& value) { SetParentDomainUnitId(std::forward<ParentDomainUnitIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDomainUnitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDomainUnitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDomainUnitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDomainUnitResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_domainId;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_lastUpdatedBy;
+    bool m_lastUpdatedByHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<DomainUnitOwnerProperties> m_owners;
+    bool m_ownersHasBeenSet = false;
 
     Aws::String m_parentDomainUnitId;
+    bool m_parentDomainUnitIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

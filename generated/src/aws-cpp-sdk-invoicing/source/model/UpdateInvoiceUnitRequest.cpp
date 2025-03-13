@@ -12,15 +12,6 @@ using namespace Aws::Invoicing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateInvoiceUnitRequest::UpdateInvoiceUnitRequest() : 
-    m_invoiceUnitArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_taxInheritanceDisabled(false),
-    m_taxInheritanceDisabledHasBeenSet(false),
-    m_ruleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateInvoiceUnitRequest::SerializePayload() const
 {
   JsonValue payload;

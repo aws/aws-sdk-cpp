@@ -18,16 +18,7 @@ namespace XRay
 namespace Model
 {
 
-FaultStatistics::FaultStatistics() : 
-    m_otherCount(0),
-    m_otherCountHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false)
-{
-}
-
 FaultStatistics::FaultStatistics(JsonView jsonValue)
-  : FaultStatistics()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FaultStatistics& FaultStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OtherCount"))
   {
     m_otherCount = jsonValue.GetInt64("OtherCount");
-
     m_otherCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCount"))
   {
     m_totalCount = jsonValue.GetInt64("TotalCount");
-
     m_totalCountHasBeenSet = true;
   }
-
   return *this;
 }
 

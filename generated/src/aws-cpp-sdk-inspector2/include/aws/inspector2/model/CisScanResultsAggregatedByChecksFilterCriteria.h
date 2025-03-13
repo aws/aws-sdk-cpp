@@ -35,7 +35,7 @@ namespace Model
   class CisScanResultsAggregatedByChecksFilterCriteria
   {
   public:
-    AWS_INSPECTOR2_API CisScanResultsAggregatedByChecksFilterCriteria();
+    AWS_INSPECTOR2_API CisScanResultsAggregatedByChecksFilterCriteria() = default;
     AWS_INSPECTOR2_API CisScanResultsAggregatedByChecksFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API CisScanResultsAggregatedByChecksFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,84 +45,84 @@ namespace Model
     /**
      * <p>The criteria's account ID filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetAccountIdFilters() const{ return m_accountIdFilters; }
+    inline const Aws::Vector<CisStringFilter>& GetAccountIdFilters() const { return m_accountIdFilters; }
     inline bool AccountIdFiltersHasBeenSet() const { return m_accountIdFiltersHasBeenSet; }
-    inline void SetAccountIdFilters(const Aws::Vector<CisStringFilter>& value) { m_accountIdFiltersHasBeenSet = true; m_accountIdFilters = value; }
-    inline void SetAccountIdFilters(Aws::Vector<CisStringFilter>&& value) { m_accountIdFiltersHasBeenSet = true; m_accountIdFilters = std::move(value); }
-    inline CisScanResultsAggregatedByChecksFilterCriteria& WithAccountIdFilters(const Aws::Vector<CisStringFilter>& value) { SetAccountIdFilters(value); return *this;}
-    inline CisScanResultsAggregatedByChecksFilterCriteria& WithAccountIdFilters(Aws::Vector<CisStringFilter>&& value) { SetAccountIdFilters(std::move(value)); return *this;}
-    inline CisScanResultsAggregatedByChecksFilterCriteria& AddAccountIdFilters(const CisStringFilter& value) { m_accountIdFiltersHasBeenSet = true; m_accountIdFilters.push_back(value); return *this; }
-    inline CisScanResultsAggregatedByChecksFilterCriteria& AddAccountIdFilters(CisStringFilter&& value) { m_accountIdFiltersHasBeenSet = true; m_accountIdFilters.push_back(std::move(value)); return *this; }
+    template<typename AccountIdFiltersT = Aws::Vector<CisStringFilter>>
+    void SetAccountIdFilters(AccountIdFiltersT&& value) { m_accountIdFiltersHasBeenSet = true; m_accountIdFilters = std::forward<AccountIdFiltersT>(value); }
+    template<typename AccountIdFiltersT = Aws::Vector<CisStringFilter>>
+    CisScanResultsAggregatedByChecksFilterCriteria& WithAccountIdFilters(AccountIdFiltersT&& value) { SetAccountIdFilters(std::forward<AccountIdFiltersT>(value)); return *this;}
+    template<typename AccountIdFiltersT = CisStringFilter>
+    CisScanResultsAggregatedByChecksFilterCriteria& AddAccountIdFilters(AccountIdFiltersT&& value) { m_accountIdFiltersHasBeenSet = true; m_accountIdFilters.emplace_back(std::forward<AccountIdFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The criteria's check ID filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetCheckIdFilters() const{ return m_checkIdFilters; }
+    inline const Aws::Vector<CisStringFilter>& GetCheckIdFilters() const { return m_checkIdFilters; }
     inline bool CheckIdFiltersHasBeenSet() const { return m_checkIdFiltersHasBeenSet; }
-    inline void SetCheckIdFilters(const Aws::Vector<CisStringFilter>& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters = value; }
-    inline void SetCheckIdFilters(Aws::Vector<CisStringFilter>&& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters = std::move(value); }
-    inline CisScanResultsAggregatedByChecksFilterCriteria& WithCheckIdFilters(const Aws::Vector<CisStringFilter>& value) { SetCheckIdFilters(value); return *this;}
-    inline CisScanResultsAggregatedByChecksFilterCriteria& WithCheckIdFilters(Aws::Vector<CisStringFilter>&& value) { SetCheckIdFilters(std::move(value)); return *this;}
-    inline CisScanResultsAggregatedByChecksFilterCriteria& AddCheckIdFilters(const CisStringFilter& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters.push_back(value); return *this; }
-    inline CisScanResultsAggregatedByChecksFilterCriteria& AddCheckIdFilters(CisStringFilter&& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters.push_back(std::move(value)); return *this; }
+    template<typename CheckIdFiltersT = Aws::Vector<CisStringFilter>>
+    void SetCheckIdFilters(CheckIdFiltersT&& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters = std::forward<CheckIdFiltersT>(value); }
+    template<typename CheckIdFiltersT = Aws::Vector<CisStringFilter>>
+    CisScanResultsAggregatedByChecksFilterCriteria& WithCheckIdFilters(CheckIdFiltersT&& value) { SetCheckIdFilters(std::forward<CheckIdFiltersT>(value)); return *this;}
+    template<typename CheckIdFiltersT = CisStringFilter>
+    CisScanResultsAggregatedByChecksFilterCriteria& AddCheckIdFilters(CheckIdFiltersT&& value) { m_checkIdFiltersHasBeenSet = true; m_checkIdFilters.emplace_back(std::forward<CheckIdFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The criteria's failed resources filters.</p>
      */
-    inline const Aws::Vector<CisNumberFilter>& GetFailedResourcesFilters() const{ return m_failedResourcesFilters; }
+    inline const Aws::Vector<CisNumberFilter>& GetFailedResourcesFilters() const { return m_failedResourcesFilters; }
     inline bool FailedResourcesFiltersHasBeenSet() const { return m_failedResourcesFiltersHasBeenSet; }
-    inline void SetFailedResourcesFilters(const Aws::Vector<CisNumberFilter>& value) { m_failedResourcesFiltersHasBeenSet = true; m_failedResourcesFilters = value; }
-    inline void SetFailedResourcesFilters(Aws::Vector<CisNumberFilter>&& value) { m_failedResourcesFiltersHasBeenSet = true; m_failedResourcesFilters = std::move(value); }
-    inline CisScanResultsAggregatedByChecksFilterCriteria& WithFailedResourcesFilters(const Aws::Vector<CisNumberFilter>& value) { SetFailedResourcesFilters(value); return *this;}
-    inline CisScanResultsAggregatedByChecksFilterCriteria& WithFailedResourcesFilters(Aws::Vector<CisNumberFilter>&& value) { SetFailedResourcesFilters(std::move(value)); return *this;}
-    inline CisScanResultsAggregatedByChecksFilterCriteria& AddFailedResourcesFilters(const CisNumberFilter& value) { m_failedResourcesFiltersHasBeenSet = true; m_failedResourcesFilters.push_back(value); return *this; }
-    inline CisScanResultsAggregatedByChecksFilterCriteria& AddFailedResourcesFilters(CisNumberFilter&& value) { m_failedResourcesFiltersHasBeenSet = true; m_failedResourcesFilters.push_back(std::move(value)); return *this; }
+    template<typename FailedResourcesFiltersT = Aws::Vector<CisNumberFilter>>
+    void SetFailedResourcesFilters(FailedResourcesFiltersT&& value) { m_failedResourcesFiltersHasBeenSet = true; m_failedResourcesFilters = std::forward<FailedResourcesFiltersT>(value); }
+    template<typename FailedResourcesFiltersT = Aws::Vector<CisNumberFilter>>
+    CisScanResultsAggregatedByChecksFilterCriteria& WithFailedResourcesFilters(FailedResourcesFiltersT&& value) { SetFailedResourcesFilters(std::forward<FailedResourcesFiltersT>(value)); return *this;}
+    template<typename FailedResourcesFiltersT = CisNumberFilter>
+    CisScanResultsAggregatedByChecksFilterCriteria& AddFailedResourcesFilters(FailedResourcesFiltersT&& value) { m_failedResourcesFiltersHasBeenSet = true; m_failedResourcesFilters.emplace_back(std::forward<FailedResourcesFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The criteria's platform filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetPlatformFilters() const{ return m_platformFilters; }
+    inline const Aws::Vector<CisStringFilter>& GetPlatformFilters() const { return m_platformFilters; }
     inline bool PlatformFiltersHasBeenSet() const { return m_platformFiltersHasBeenSet; }
-    inline void SetPlatformFilters(const Aws::Vector<CisStringFilter>& value) { m_platformFiltersHasBeenSet = true; m_platformFilters = value; }
-    inline void SetPlatformFilters(Aws::Vector<CisStringFilter>&& value) { m_platformFiltersHasBeenSet = true; m_platformFilters = std::move(value); }
-    inline CisScanResultsAggregatedByChecksFilterCriteria& WithPlatformFilters(const Aws::Vector<CisStringFilter>& value) { SetPlatformFilters(value); return *this;}
-    inline CisScanResultsAggregatedByChecksFilterCriteria& WithPlatformFilters(Aws::Vector<CisStringFilter>&& value) { SetPlatformFilters(std::move(value)); return *this;}
-    inline CisScanResultsAggregatedByChecksFilterCriteria& AddPlatformFilters(const CisStringFilter& value) { m_platformFiltersHasBeenSet = true; m_platformFilters.push_back(value); return *this; }
-    inline CisScanResultsAggregatedByChecksFilterCriteria& AddPlatformFilters(CisStringFilter&& value) { m_platformFiltersHasBeenSet = true; m_platformFilters.push_back(std::move(value)); return *this; }
+    template<typename PlatformFiltersT = Aws::Vector<CisStringFilter>>
+    void SetPlatformFilters(PlatformFiltersT&& value) { m_platformFiltersHasBeenSet = true; m_platformFilters = std::forward<PlatformFiltersT>(value); }
+    template<typename PlatformFiltersT = Aws::Vector<CisStringFilter>>
+    CisScanResultsAggregatedByChecksFilterCriteria& WithPlatformFilters(PlatformFiltersT&& value) { SetPlatformFilters(std::forward<PlatformFiltersT>(value)); return *this;}
+    template<typename PlatformFiltersT = CisStringFilter>
+    CisScanResultsAggregatedByChecksFilterCriteria& AddPlatformFilters(PlatformFiltersT&& value) { m_platformFiltersHasBeenSet = true; m_platformFilters.emplace_back(std::forward<PlatformFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The criteria's security level filters.</p>
      */
-    inline const Aws::Vector<CisSecurityLevelFilter>& GetSecurityLevelFilters() const{ return m_securityLevelFilters; }
+    inline const Aws::Vector<CisSecurityLevelFilter>& GetSecurityLevelFilters() const { return m_securityLevelFilters; }
     inline bool SecurityLevelFiltersHasBeenSet() const { return m_securityLevelFiltersHasBeenSet; }
-    inline void SetSecurityLevelFilters(const Aws::Vector<CisSecurityLevelFilter>& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters = value; }
-    inline void SetSecurityLevelFilters(Aws::Vector<CisSecurityLevelFilter>&& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters = std::move(value); }
-    inline CisScanResultsAggregatedByChecksFilterCriteria& WithSecurityLevelFilters(const Aws::Vector<CisSecurityLevelFilter>& value) { SetSecurityLevelFilters(value); return *this;}
-    inline CisScanResultsAggregatedByChecksFilterCriteria& WithSecurityLevelFilters(Aws::Vector<CisSecurityLevelFilter>&& value) { SetSecurityLevelFilters(std::move(value)); return *this;}
-    inline CisScanResultsAggregatedByChecksFilterCriteria& AddSecurityLevelFilters(const CisSecurityLevelFilter& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters.push_back(value); return *this; }
-    inline CisScanResultsAggregatedByChecksFilterCriteria& AddSecurityLevelFilters(CisSecurityLevelFilter&& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters.push_back(std::move(value)); return *this; }
+    template<typename SecurityLevelFiltersT = Aws::Vector<CisSecurityLevelFilter>>
+    void SetSecurityLevelFilters(SecurityLevelFiltersT&& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters = std::forward<SecurityLevelFiltersT>(value); }
+    template<typename SecurityLevelFiltersT = Aws::Vector<CisSecurityLevelFilter>>
+    CisScanResultsAggregatedByChecksFilterCriteria& WithSecurityLevelFilters(SecurityLevelFiltersT&& value) { SetSecurityLevelFilters(std::forward<SecurityLevelFiltersT>(value)); return *this;}
+    template<typename SecurityLevelFiltersT = CisSecurityLevelFilter>
+    CisScanResultsAggregatedByChecksFilterCriteria& AddSecurityLevelFilters(SecurityLevelFiltersT&& value) { m_securityLevelFiltersHasBeenSet = true; m_securityLevelFilters.emplace_back(std::forward<SecurityLevelFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The criteria's title filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetTitleFilters() const{ return m_titleFilters; }
+    inline const Aws::Vector<CisStringFilter>& GetTitleFilters() const { return m_titleFilters; }
     inline bool TitleFiltersHasBeenSet() const { return m_titleFiltersHasBeenSet; }
-    inline void SetTitleFilters(const Aws::Vector<CisStringFilter>& value) { m_titleFiltersHasBeenSet = true; m_titleFilters = value; }
-    inline void SetTitleFilters(Aws::Vector<CisStringFilter>&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters = std::move(value); }
-    inline CisScanResultsAggregatedByChecksFilterCriteria& WithTitleFilters(const Aws::Vector<CisStringFilter>& value) { SetTitleFilters(value); return *this;}
-    inline CisScanResultsAggregatedByChecksFilterCriteria& WithTitleFilters(Aws::Vector<CisStringFilter>&& value) { SetTitleFilters(std::move(value)); return *this;}
-    inline CisScanResultsAggregatedByChecksFilterCriteria& AddTitleFilters(const CisStringFilter& value) { m_titleFiltersHasBeenSet = true; m_titleFilters.push_back(value); return *this; }
-    inline CisScanResultsAggregatedByChecksFilterCriteria& AddTitleFilters(CisStringFilter&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters.push_back(std::move(value)); return *this; }
+    template<typename TitleFiltersT = Aws::Vector<CisStringFilter>>
+    void SetTitleFilters(TitleFiltersT&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters = std::forward<TitleFiltersT>(value); }
+    template<typename TitleFiltersT = Aws::Vector<CisStringFilter>>
+    CisScanResultsAggregatedByChecksFilterCriteria& WithTitleFilters(TitleFiltersT&& value) { SetTitleFilters(std::forward<TitleFiltersT>(value)); return *this;}
+    template<typename TitleFiltersT = CisStringFilter>
+    CisScanResultsAggregatedByChecksFilterCriteria& AddTitleFilters(TitleFiltersT&& value) { m_titleFiltersHasBeenSet = true; m_titleFilters.emplace_back(std::forward<TitleFiltersT>(value)); return *this; }
     ///@}
   private:
 

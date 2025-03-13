@@ -28,7 +28,7 @@ namespace Model
   class LookupEventsRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API LookupEventsRequest();
+    AWS_CLOUDTRAIL_API LookupEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,14 @@ namespace Model
      * <p>Contains a list of lookup attributes. Currently the list can contain only one
      * item.</p>
      */
-    inline const Aws::Vector<LookupAttribute>& GetLookupAttributes() const{ return m_lookupAttributes; }
+    inline const Aws::Vector<LookupAttribute>& GetLookupAttributes() const { return m_lookupAttributes; }
     inline bool LookupAttributesHasBeenSet() const { return m_lookupAttributesHasBeenSet; }
-    inline void SetLookupAttributes(const Aws::Vector<LookupAttribute>& value) { m_lookupAttributesHasBeenSet = true; m_lookupAttributes = value; }
-    inline void SetLookupAttributes(Aws::Vector<LookupAttribute>&& value) { m_lookupAttributesHasBeenSet = true; m_lookupAttributes = std::move(value); }
-    inline LookupEventsRequest& WithLookupAttributes(const Aws::Vector<LookupAttribute>& value) { SetLookupAttributes(value); return *this;}
-    inline LookupEventsRequest& WithLookupAttributes(Aws::Vector<LookupAttribute>&& value) { SetLookupAttributes(std::move(value)); return *this;}
-    inline LookupEventsRequest& AddLookupAttributes(const LookupAttribute& value) { m_lookupAttributesHasBeenSet = true; m_lookupAttributes.push_back(value); return *this; }
-    inline LookupEventsRequest& AddLookupAttributes(LookupAttribute&& value) { m_lookupAttributesHasBeenSet = true; m_lookupAttributes.push_back(std::move(value)); return *this; }
+    template<typename LookupAttributesT = Aws::Vector<LookupAttribute>>
+    void SetLookupAttributes(LookupAttributesT&& value) { m_lookupAttributesHasBeenSet = true; m_lookupAttributes = std::forward<LookupAttributesT>(value); }
+    template<typename LookupAttributesT = Aws::Vector<LookupAttribute>>
+    LookupEventsRequest& WithLookupAttributes(LookupAttributesT&& value) { SetLookupAttributes(std::forward<LookupAttributesT>(value)); return *this;}
+    template<typename LookupAttributesT = LookupAttribute>
+    LookupEventsRequest& AddLookupAttributes(LookupAttributesT&& value) { m_lookupAttributesHasBeenSet = true; m_lookupAttributes.emplace_back(std::forward<LookupAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * returned. If the specified start time is after the specified end time, an error
      * is returned.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline LookupEventsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline LookupEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    LookupEventsRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * returned. If the specified end time is before the specified start time, an error
      * is returned.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline LookupEventsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline LookupEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    LookupEventsRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +91,10 @@ namespace Model
      * specify <code>insight</code> as the value of <code>EventCategory</code>, no
      * Insights events are returned.</p>
      */
-    inline const EventCategory& GetEventCategory() const{ return m_eventCategory; }
+    inline EventCategory GetEventCategory() const { return m_eventCategory; }
     inline bool EventCategoryHasBeenSet() const { return m_eventCategoryHasBeenSet; }
-    inline void SetEventCategory(const EventCategory& value) { m_eventCategoryHasBeenSet = true; m_eventCategory = value; }
-    inline void SetEventCategory(EventCategory&& value) { m_eventCategoryHasBeenSet = true; m_eventCategory = std::move(value); }
-    inline LookupEventsRequest& WithEventCategory(const EventCategory& value) { SetEventCategory(value); return *this;}
-    inline LookupEventsRequest& WithEventCategory(EventCategory&& value) { SetEventCategory(std::move(value)); return *this;}
+    inline void SetEventCategory(EventCategory value) { m_eventCategoryHasBeenSet = true; m_eventCategory = value; }
+    inline LookupEventsRequest& WithEventCategory(EventCategory value) { SetEventCategory(value); return *this;}
     ///@}
 
     ///@{
@@ -104,7 +102,7 @@ namespace Model
      * <p>The number of events to return. Possible values are 1 through 50. The default
      * is 50.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline LookupEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -118,30 +116,28 @@ namespace Model
      * 'Username' with a value of 'root', the call with NextToken should include those
      * same parameters.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline LookupEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline LookupEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline LookupEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    LookupEventsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LookupAttribute> m_lookupAttributes;
     bool m_lookupAttributesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    EventCategory m_eventCategory;
+    EventCategory m_eventCategory{EventCategory::NOT_SET};
     bool m_eventCategoryHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

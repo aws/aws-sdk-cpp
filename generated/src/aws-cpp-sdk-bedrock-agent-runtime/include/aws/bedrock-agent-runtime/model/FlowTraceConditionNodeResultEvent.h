@@ -38,7 +38,7 @@ namespace Model
   class FlowTraceConditionNodeResultEvent
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FlowTraceConditionNodeResultEvent();
+    AWS_BEDROCKAGENTRUNTIME_API FlowTraceConditionNodeResultEvent() = default;
     AWS_BEDROCKAGENTRUNTIME_API FlowTraceConditionNodeResultEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FlowTraceConditionNodeResultEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The name of the condition node.</p>
      */
-    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
+    inline const Aws::String& GetNodeName() const { return m_nodeName; }
     inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
-    inline void SetNodeName(const Aws::String& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
-    inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::move(value); }
-    inline void SetNodeName(const char* value) { m_nodeNameHasBeenSet = true; m_nodeName.assign(value); }
-    inline FlowTraceConditionNodeResultEvent& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
-    inline FlowTraceConditionNodeResultEvent& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
-    inline FlowTraceConditionNodeResultEvent& WithNodeName(const char* value) { SetNodeName(value); return *this;}
+    template<typename NodeNameT = Aws::String>
+    void SetNodeName(NodeNameT&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::forward<NodeNameT>(value); }
+    template<typename NodeNameT = Aws::String>
+    FlowTraceConditionNodeResultEvent& WithNodeName(NodeNameT&& value) { SetNodeName(std::forward<NodeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,26 +61,26 @@ namespace Model
      * <p>An array of objects containing information about the conditions that were
      * satisfied.</p>
      */
-    inline const Aws::Vector<FlowTraceCondition>& GetSatisfiedConditions() const{ return m_satisfiedConditions; }
+    inline const Aws::Vector<FlowTraceCondition>& GetSatisfiedConditions() const { return m_satisfiedConditions; }
     inline bool SatisfiedConditionsHasBeenSet() const { return m_satisfiedConditionsHasBeenSet; }
-    inline void SetSatisfiedConditions(const Aws::Vector<FlowTraceCondition>& value) { m_satisfiedConditionsHasBeenSet = true; m_satisfiedConditions = value; }
-    inline void SetSatisfiedConditions(Aws::Vector<FlowTraceCondition>&& value) { m_satisfiedConditionsHasBeenSet = true; m_satisfiedConditions = std::move(value); }
-    inline FlowTraceConditionNodeResultEvent& WithSatisfiedConditions(const Aws::Vector<FlowTraceCondition>& value) { SetSatisfiedConditions(value); return *this;}
-    inline FlowTraceConditionNodeResultEvent& WithSatisfiedConditions(Aws::Vector<FlowTraceCondition>&& value) { SetSatisfiedConditions(std::move(value)); return *this;}
-    inline FlowTraceConditionNodeResultEvent& AddSatisfiedConditions(const FlowTraceCondition& value) { m_satisfiedConditionsHasBeenSet = true; m_satisfiedConditions.push_back(value); return *this; }
-    inline FlowTraceConditionNodeResultEvent& AddSatisfiedConditions(FlowTraceCondition&& value) { m_satisfiedConditionsHasBeenSet = true; m_satisfiedConditions.push_back(std::move(value)); return *this; }
+    template<typename SatisfiedConditionsT = Aws::Vector<FlowTraceCondition>>
+    void SetSatisfiedConditions(SatisfiedConditionsT&& value) { m_satisfiedConditionsHasBeenSet = true; m_satisfiedConditions = std::forward<SatisfiedConditionsT>(value); }
+    template<typename SatisfiedConditionsT = Aws::Vector<FlowTraceCondition>>
+    FlowTraceConditionNodeResultEvent& WithSatisfiedConditions(SatisfiedConditionsT&& value) { SetSatisfiedConditions(std::forward<SatisfiedConditionsT>(value)); return *this;}
+    template<typename SatisfiedConditionsT = FlowTraceCondition>
+    FlowTraceConditionNodeResultEvent& AddSatisfiedConditions(SatisfiedConditionsT&& value) { m_satisfiedConditionsHasBeenSet = true; m_satisfiedConditions.emplace_back(std::forward<SatisfiedConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the trace was returned.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline FlowTraceConditionNodeResultEvent& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline FlowTraceConditionNodeResultEvent& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    FlowTraceConditionNodeResultEvent& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -92,7 +90,7 @@ namespace Model
     Aws::Vector<FlowTraceCondition> m_satisfiedConditions;
     bool m_satisfiedConditionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
   };
 

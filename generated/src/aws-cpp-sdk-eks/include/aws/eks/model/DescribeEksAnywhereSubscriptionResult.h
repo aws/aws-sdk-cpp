@@ -28,7 +28,7 @@ namespace Model
   class DescribeEksAnywhereSubscriptionResult
   {
   public:
-    AWS_EKS_API DescribeEksAnywhereSubscriptionResult();
+    AWS_EKS_API DescribeEksAnywhereSubscriptionResult() = default;
     AWS_EKS_API DescribeEksAnywhereSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API DescribeEksAnywhereSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The full description of the subscription.</p>
      */
-    inline const EksAnywhereSubscription& GetSubscription() const{ return m_subscription; }
-    inline void SetSubscription(const EksAnywhereSubscription& value) { m_subscription = value; }
-    inline void SetSubscription(EksAnywhereSubscription&& value) { m_subscription = std::move(value); }
-    inline DescribeEksAnywhereSubscriptionResult& WithSubscription(const EksAnywhereSubscription& value) { SetSubscription(value); return *this;}
-    inline DescribeEksAnywhereSubscriptionResult& WithSubscription(EksAnywhereSubscription&& value) { SetSubscription(std::move(value)); return *this;}
+    inline const EksAnywhereSubscription& GetSubscription() const { return m_subscription; }
+    template<typename SubscriptionT = EksAnywhereSubscription>
+    void SetSubscription(SubscriptionT&& value) { m_subscriptionHasBeenSet = true; m_subscription = std::forward<SubscriptionT>(value); }
+    template<typename SubscriptionT = EksAnywhereSubscription>
+    DescribeEksAnywhereSubscriptionResult& WithSubscription(SubscriptionT&& value) { SetSubscription(std::forward<SubscriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEksAnywhereSubscriptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEksAnywhereSubscriptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEksAnywhereSubscriptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEksAnywhereSubscriptionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EksAnywhereSubscription m_subscription;
+    bool m_subscriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-RunIdentifier::RunIdentifier() : 
-    m_runIdHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false)
-{
-}
-
 RunIdentifier::RunIdentifier(JsonView jsonValue)
-  : RunIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RunIdentifier& RunIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RunId"))
   {
     m_runId = jsonValue.GetString("RunId");
-
     m_runIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobRunId"))
   {
     m_jobRunId = jsonValue.GetString("JobRunId");
-
     m_jobRunIdHasBeenSet = true;
   }
-
   return *this;
 }
 

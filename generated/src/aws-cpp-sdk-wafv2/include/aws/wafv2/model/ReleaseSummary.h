@@ -32,7 +32,7 @@ namespace Model
   class ReleaseSummary
   {
   public:
-    AWS_WAFV2_API ReleaseSummary();
+    AWS_WAFV2_API ReleaseSummary() = default;
     AWS_WAFV2_API ReleaseSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API ReleaseSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,31 @@ namespace Model
     /**
      * <p>The release version. </p>
      */
-    inline const Aws::String& GetReleaseVersion() const{ return m_releaseVersion; }
+    inline const Aws::String& GetReleaseVersion() const { return m_releaseVersion; }
     inline bool ReleaseVersionHasBeenSet() const { return m_releaseVersionHasBeenSet; }
-    inline void SetReleaseVersion(const Aws::String& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = value; }
-    inline void SetReleaseVersion(Aws::String&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::move(value); }
-    inline void SetReleaseVersion(const char* value) { m_releaseVersionHasBeenSet = true; m_releaseVersion.assign(value); }
-    inline ReleaseSummary& WithReleaseVersion(const Aws::String& value) { SetReleaseVersion(value); return *this;}
-    inline ReleaseSummary& WithReleaseVersion(Aws::String&& value) { SetReleaseVersion(std::move(value)); return *this;}
-    inline ReleaseSummary& WithReleaseVersion(const char* value) { SetReleaseVersion(value); return *this;}
+    template<typename ReleaseVersionT = Aws::String>
+    void SetReleaseVersion(ReleaseVersionT&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::forward<ReleaseVersionT>(value); }
+    template<typename ReleaseVersionT = Aws::String>
+    ReleaseSummary& WithReleaseVersion(ReleaseVersionT&& value) { SetReleaseVersion(std::forward<ReleaseVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the release. </p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline ReleaseSummary& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline ReleaseSummary& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    ReleaseSummary& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_releaseVersion;
     bool m_releaseVersionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
   };
 

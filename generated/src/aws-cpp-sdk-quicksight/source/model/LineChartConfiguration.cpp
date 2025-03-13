@@ -18,34 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LineChartConfiguration::LineChartConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_forecastConfigurationsHasBeenSet(false),
-    m_type(LineChartType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_smallMultiplesOptionsHasBeenSet(false),
-    m_xAxisDisplayOptionsHasBeenSet(false),
-    m_xAxisLabelOptionsHasBeenSet(false),
-    m_primaryYAxisDisplayOptionsHasBeenSet(false),
-    m_primaryYAxisLabelOptionsHasBeenSet(false),
-    m_secondaryYAxisDisplayOptionsHasBeenSet(false),
-    m_secondaryYAxisLabelOptionsHasBeenSet(false),
-    m_singleAxisOptionsHasBeenSet(false),
-    m_defaultSeriesSettingsHasBeenSet(false),
-    m_seriesHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_referenceLinesHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_contributionAnalysisDefaultsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 LineChartConfiguration::LineChartConfiguration(JsonView jsonValue)
-  : LineChartConfiguration()
 {
   *this = jsonValue;
 }
@@ -55,17 +28,13 @@ LineChartConfiguration& LineChartConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForecastConfigurations"))
   {
     Aws::Utils::Array<JsonView> forecastConfigurationsJsonList = jsonValue.GetArray("ForecastConfigurations");
@@ -75,77 +44,56 @@ LineChartConfiguration& LineChartConfiguration::operator =(JsonView jsonValue)
     }
     m_forecastConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = LineChartTypeMapper::GetLineChartTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmallMultiplesOptions"))
   {
     m_smallMultiplesOptions = jsonValue.GetObject("SmallMultiplesOptions");
-
     m_smallMultiplesOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XAxisDisplayOptions"))
   {
     m_xAxisDisplayOptions = jsonValue.GetObject("XAxisDisplayOptions");
-
     m_xAxisDisplayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XAxisLabelOptions"))
   {
     m_xAxisLabelOptions = jsonValue.GetObject("XAxisLabelOptions");
-
     m_xAxisLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryYAxisDisplayOptions"))
   {
     m_primaryYAxisDisplayOptions = jsonValue.GetObject("PrimaryYAxisDisplayOptions");
-
     m_primaryYAxisDisplayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryYAxisLabelOptions"))
   {
     m_primaryYAxisLabelOptions = jsonValue.GetObject("PrimaryYAxisLabelOptions");
-
     m_primaryYAxisLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryYAxisDisplayOptions"))
   {
     m_secondaryYAxisDisplayOptions = jsonValue.GetObject("SecondaryYAxisDisplayOptions");
-
     m_secondaryYAxisDisplayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryYAxisLabelOptions"))
   {
     m_secondaryYAxisLabelOptions = jsonValue.GetObject("SecondaryYAxisLabelOptions");
-
     m_secondaryYAxisLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SingleAxisOptions"))
   {
     m_singleAxisOptions = jsonValue.GetObject("SingleAxisOptions");
-
     m_singleAxisOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultSeriesSettings"))
   {
     m_defaultSeriesSettings = jsonValue.GetObject("DefaultSeriesSettings");
-
     m_defaultSeriesSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Series"))
   {
     Aws::Utils::Array<JsonView> seriesJsonList = jsonValue.GetArray("Series");
@@ -155,21 +103,16 @@ LineChartConfiguration& LineChartConfiguration::operator =(JsonView jsonValue)
     }
     m_seriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Legend"))
   {
     m_legend = jsonValue.GetObject("Legend");
-
     m_legendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataLabels"))
   {
     m_dataLabels = jsonValue.GetObject("DataLabels");
-
     m_dataLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceLines"))
   {
     Aws::Utils::Array<JsonView> referenceLinesJsonList = jsonValue.GetArray("ReferenceLines");
@@ -179,14 +122,11 @@ LineChartConfiguration& LineChartConfiguration::operator =(JsonView jsonValue)
     }
     m_referenceLinesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tooltip"))
   {
     m_tooltip = jsonValue.GetObject("Tooltip");
-
     m_tooltipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContributionAnalysisDefaults"))
   {
     Aws::Utils::Array<JsonView> contributionAnalysisDefaultsJsonList = jsonValue.GetArray("ContributionAnalysisDefaults");
@@ -196,21 +136,16 @@ LineChartConfiguration& LineChartConfiguration::operator =(JsonView jsonValue)
     }
     m_contributionAnalysisDefaultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualPalette"))
   {
     m_visualPalette = jsonValue.GetObject("VisualPalette");
-
     m_visualPaletteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

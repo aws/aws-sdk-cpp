@@ -18,13 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-X12Envelope::X12Envelope() : 
-    m_commonHasBeenSet(false)
-{
-}
-
 X12Envelope::X12Envelope(JsonView jsonValue)
-  : X12Envelope()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ X12Envelope& X12Envelope::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("common"))
   {
     m_common = jsonValue.GetObject("common");
-
     m_commonHasBeenSet = true;
   }
-
   return *this;
 }
 

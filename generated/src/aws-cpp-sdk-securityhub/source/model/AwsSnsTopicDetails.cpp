@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsSnsTopicDetails::AwsSnsTopicDetails() : 
-    m_kmsMasterKeyIdHasBeenSet(false),
-    m_subscriptionHasBeenSet(false),
-    m_topicNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_sqsSuccessFeedbackRoleArnHasBeenSet(false),
-    m_sqsFailureFeedbackRoleArnHasBeenSet(false),
-    m_applicationSuccessFeedbackRoleArnHasBeenSet(false),
-    m_firehoseSuccessFeedbackRoleArnHasBeenSet(false),
-    m_firehoseFailureFeedbackRoleArnHasBeenSet(false),
-    m_httpSuccessFeedbackRoleArnHasBeenSet(false),
-    m_httpFailureFeedbackRoleArnHasBeenSet(false)
-{
-}
-
 AwsSnsTopicDetails::AwsSnsTopicDetails(JsonView jsonValue)
-  : AwsSnsTopicDetails()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ AwsSnsTopicDetails& AwsSnsTopicDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KmsMasterKeyId"))
   {
     m_kmsMasterKeyId = jsonValue.GetString("KmsMasterKeyId");
-
     m_kmsMasterKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subscription"))
   {
     Aws::Utils::Array<JsonView> subscriptionJsonList = jsonValue.GetArray("Subscription");
@@ -57,70 +39,51 @@ AwsSnsTopicDetails& AwsSnsTopicDetails::operator =(JsonView jsonValue)
     }
     m_subscriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopicName"))
   {
     m_topicName = jsonValue.GetString("TopicName");
-
     m_topicNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SqsSuccessFeedbackRoleArn"))
   {
     m_sqsSuccessFeedbackRoleArn = jsonValue.GetString("SqsSuccessFeedbackRoleArn");
-
     m_sqsSuccessFeedbackRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SqsFailureFeedbackRoleArn"))
   {
     m_sqsFailureFeedbackRoleArn = jsonValue.GetString("SqsFailureFeedbackRoleArn");
-
     m_sqsFailureFeedbackRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationSuccessFeedbackRoleArn"))
   {
     m_applicationSuccessFeedbackRoleArn = jsonValue.GetString("ApplicationSuccessFeedbackRoleArn");
-
     m_applicationSuccessFeedbackRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirehoseSuccessFeedbackRoleArn"))
   {
     m_firehoseSuccessFeedbackRoleArn = jsonValue.GetString("FirehoseSuccessFeedbackRoleArn");
-
     m_firehoseSuccessFeedbackRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirehoseFailureFeedbackRoleArn"))
   {
     m_firehoseFailureFeedbackRoleArn = jsonValue.GetString("FirehoseFailureFeedbackRoleArn");
-
     m_firehoseFailureFeedbackRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpSuccessFeedbackRoleArn"))
   {
     m_httpSuccessFeedbackRoleArn = jsonValue.GetString("HttpSuccessFeedbackRoleArn");
-
     m_httpSuccessFeedbackRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpFailureFeedbackRoleArn"))
   {
     m_httpFailureFeedbackRoleArn = jsonValue.GetString("HttpFailureFeedbackRoleArn");
-
     m_httpFailureFeedbackRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

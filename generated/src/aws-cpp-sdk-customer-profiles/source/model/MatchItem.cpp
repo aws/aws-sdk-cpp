@@ -18,16 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-MatchItem::MatchItem() : 
-    m_matchIdHasBeenSet(false),
-    m_profileIdsHasBeenSet(false),
-    m_confidenceScore(0.0),
-    m_confidenceScoreHasBeenSet(false)
-{
-}
-
 MatchItem::MatchItem(JsonView jsonValue)
-  : MatchItem()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ MatchItem& MatchItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MatchId"))
   {
     m_matchId = jsonValue.GetString("MatchId");
-
     m_matchIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileIds"))
   {
     Aws::Utils::Array<JsonView> profileIdsJsonList = jsonValue.GetArray("ProfileIds");
@@ -50,14 +39,11 @@ MatchItem& MatchItem::operator =(JsonView jsonValue)
     }
     m_profileIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfidenceScore"))
   {
     m_confidenceScore = jsonValue.GetDouble("ConfidenceScore");
-
     m_confidenceScoreHasBeenSet = true;
   }
-
   return *this;
 }
 

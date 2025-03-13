@@ -18,15 +18,7 @@ namespace Detective
 namespace Model
 {
 
-Administrator::Administrator() : 
-    m_accountIdHasBeenSet(false),
-    m_graphArnHasBeenSet(false),
-    m_delegationTimeHasBeenSet(false)
-{
-}
-
 Administrator::Administrator(JsonView jsonValue)
-  : Administrator()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Administrator& Administrator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GraphArn"))
   {
     m_graphArn = jsonValue.GetString("GraphArn");
-
     m_graphArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DelegationTime"))
   {
     m_delegationTime = jsonValue.GetString("DelegationTime");
-
     m_delegationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

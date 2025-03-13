@@ -12,28 +12,6 @@ using namespace Aws::DocDBElastic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClusterRequest::UpdateClusterRequest() : 
-    m_adminUserPasswordHasBeenSet(false),
-    m_authType(Auth::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_clusterArnHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_shardCapacity(0),
-    m_shardCapacityHasBeenSet(false),
-    m_shardCount(0),
-    m_shardCountHasBeenSet(false),
-    m_shardInstanceCount(0),
-    m_shardInstanceCountHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

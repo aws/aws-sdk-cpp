@@ -33,7 +33,7 @@ namespace Model
   class IntervalDetails
   {
   public:
-    AWS_CONNECT_API IntervalDetails();
+    AWS_CONNECT_API IntervalDetails() = default;
     AWS_CONNECT_API IntervalDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API IntervalDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The timezone applied to requested metrics.</p>
      */
-    inline const Aws::String& GetTimeZone() const{ return m_timeZone; }
+    inline const Aws::String& GetTimeZone() const { return m_timeZone; }
     inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
-    inline void SetTimeZone(const Aws::String& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
-    inline void SetTimeZone(Aws::String&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
-    inline void SetTimeZone(const char* value) { m_timeZoneHasBeenSet = true; m_timeZone.assign(value); }
-    inline IntervalDetails& WithTimeZone(const Aws::String& value) { SetTimeZone(value); return *this;}
-    inline IntervalDetails& WithTimeZone(Aws::String&& value) { SetTimeZone(std::move(value)); return *this;}
-    inline IntervalDetails& WithTimeZone(const char* value) { SetTimeZone(value); return *this;}
+    template<typename TimeZoneT = Aws::String>
+    void SetTimeZone(TimeZoneT&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::forward<TimeZoneT>(value); }
+    template<typename TimeZoneT = Aws::String>
+    IntervalDetails& WithTimeZone(TimeZoneT&& value) { SetTimeZone(std::forward<TimeZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,19 +77,17 @@ namespace Model
      * <code>TOTAL</code>: The difference between <code>StartTime</code> and
      * <code>EndTime</code> must be less than 35 days.</p> </li> </ul>
      */
-    inline const IntervalPeriod& GetIntervalPeriod() const{ return m_intervalPeriod; }
+    inline IntervalPeriod GetIntervalPeriod() const { return m_intervalPeriod; }
     inline bool IntervalPeriodHasBeenSet() const { return m_intervalPeriodHasBeenSet; }
-    inline void SetIntervalPeriod(const IntervalPeriod& value) { m_intervalPeriodHasBeenSet = true; m_intervalPeriod = value; }
-    inline void SetIntervalPeriod(IntervalPeriod&& value) { m_intervalPeriodHasBeenSet = true; m_intervalPeriod = std::move(value); }
-    inline IntervalDetails& WithIntervalPeriod(const IntervalPeriod& value) { SetIntervalPeriod(value); return *this;}
-    inline IntervalDetails& WithIntervalPeriod(IntervalPeriod&& value) { SetIntervalPeriod(std::move(value)); return *this;}
+    inline void SetIntervalPeriod(IntervalPeriod value) { m_intervalPeriodHasBeenSet = true; m_intervalPeriod = value; }
+    inline IntervalDetails& WithIntervalPeriod(IntervalPeriod value) { SetIntervalPeriod(value); return *this;}
     ///@}
   private:
 
     Aws::String m_timeZone;
     bool m_timeZoneHasBeenSet = false;
 
-    IntervalPeriod m_intervalPeriod;
+    IntervalPeriod m_intervalPeriod{IntervalPeriod::NOT_SET};
     bool m_intervalPeriodHasBeenSet = false;
   };
 

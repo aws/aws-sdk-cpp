@@ -18,15 +18,7 @@ namespace finspace
 namespace Model
 {
 
-ErrorInfo::ErrorInfo() : 
-    m_errorMessageHasBeenSet(false),
-    m_errorType(ErrorDetails::NOT_SET),
-    m_errorTypeHasBeenSet(false)
-{
-}
-
 ErrorInfo::ErrorInfo(JsonView jsonValue)
-  : ErrorInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ErrorInfo& ErrorInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorType"))
   {
     m_errorType = ErrorDetailsMapper::GetErrorDetailsForName(jsonValue.GetString("errorType"));
-
     m_errorTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

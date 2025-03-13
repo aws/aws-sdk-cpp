@@ -46,7 +46,7 @@ namespace Model
   class PermissionsBoundary
   {
   public:
-    AWS_SSOADMIN_API PermissionsBoundary();
+    AWS_SSOADMIN_API PermissionsBoundary() = default;
     AWS_SSOADMIN_API PermissionsBoundary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API PermissionsBoundary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,12 +58,12 @@ namespace Model
      * IAM policy that matches the name and path in each Amazon Web Services account
      * where you want to deploy your permission set.</p>
      */
-    inline const CustomerManagedPolicyReference& GetCustomerManagedPolicyReference() const{ return m_customerManagedPolicyReference; }
+    inline const CustomerManagedPolicyReference& GetCustomerManagedPolicyReference() const { return m_customerManagedPolicyReference; }
     inline bool CustomerManagedPolicyReferenceHasBeenSet() const { return m_customerManagedPolicyReferenceHasBeenSet; }
-    inline void SetCustomerManagedPolicyReference(const CustomerManagedPolicyReference& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = value; }
-    inline void SetCustomerManagedPolicyReference(CustomerManagedPolicyReference&& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = std::move(value); }
-    inline PermissionsBoundary& WithCustomerManagedPolicyReference(const CustomerManagedPolicyReference& value) { SetCustomerManagedPolicyReference(value); return *this;}
-    inline PermissionsBoundary& WithCustomerManagedPolicyReference(CustomerManagedPolicyReference&& value) { SetCustomerManagedPolicyReference(std::move(value)); return *this;}
+    template<typename CustomerManagedPolicyReferenceT = CustomerManagedPolicyReference>
+    void SetCustomerManagedPolicyReference(CustomerManagedPolicyReferenceT&& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = std::forward<CustomerManagedPolicyReferenceT>(value); }
+    template<typename CustomerManagedPolicyReferenceT = CustomerManagedPolicyReference>
+    PermissionsBoundary& WithCustomerManagedPolicyReference(CustomerManagedPolicyReferenceT&& value) { SetCustomerManagedPolicyReference(std::forward<CustomerManagedPolicyReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +71,12 @@ namespace Model
      * <p>The Amazon Web Services managed policy ARN that you want to attach to a
      * permission set as a permissions boundary.</p>
      */
-    inline const Aws::String& GetManagedPolicyArn() const{ return m_managedPolicyArn; }
+    inline const Aws::String& GetManagedPolicyArn() const { return m_managedPolicyArn; }
     inline bool ManagedPolicyArnHasBeenSet() const { return m_managedPolicyArnHasBeenSet; }
-    inline void SetManagedPolicyArn(const Aws::String& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = value; }
-    inline void SetManagedPolicyArn(Aws::String&& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = std::move(value); }
-    inline void SetManagedPolicyArn(const char* value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn.assign(value); }
-    inline PermissionsBoundary& WithManagedPolicyArn(const Aws::String& value) { SetManagedPolicyArn(value); return *this;}
-    inline PermissionsBoundary& WithManagedPolicyArn(Aws::String&& value) { SetManagedPolicyArn(std::move(value)); return *this;}
-    inline PermissionsBoundary& WithManagedPolicyArn(const char* value) { SetManagedPolicyArn(value); return *this;}
+    template<typename ManagedPolicyArnT = Aws::String>
+    void SetManagedPolicyArn(ManagedPolicyArnT&& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = std::forward<ManagedPolicyArnT>(value); }
+    template<typename ManagedPolicyArnT = Aws::String>
+    PermissionsBoundary& WithManagedPolicyArn(ManagedPolicyArnT&& value) { SetManagedPolicyArn(std::forward<ManagedPolicyArnT>(value)); return *this;}
     ///@}
   private:
 

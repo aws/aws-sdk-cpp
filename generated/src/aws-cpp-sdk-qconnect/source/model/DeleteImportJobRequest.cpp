@@ -12,12 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteImportJobRequest::DeleteImportJobRequest() : 
-    m_importJobIdHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteImportJobRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class DisableActionConfiguration
   {
   public:
-    AWS_IOTEVENTSDATA_API DisableActionConfiguration();
+    AWS_IOTEVENTSDATA_API DisableActionConfiguration() = default;
     AWS_IOTEVENTSDATA_API DisableActionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API DisableActionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The note that you can leave when you disable the alarm.</p>
      */
-    inline const Aws::String& GetNote() const{ return m_note; }
+    inline const Aws::String& GetNote() const { return m_note; }
     inline bool NoteHasBeenSet() const { return m_noteHasBeenSet; }
-    inline void SetNote(const Aws::String& value) { m_noteHasBeenSet = true; m_note = value; }
-    inline void SetNote(Aws::String&& value) { m_noteHasBeenSet = true; m_note = std::move(value); }
-    inline void SetNote(const char* value) { m_noteHasBeenSet = true; m_note.assign(value); }
-    inline DisableActionConfiguration& WithNote(const Aws::String& value) { SetNote(value); return *this;}
-    inline DisableActionConfiguration& WithNote(Aws::String&& value) { SetNote(std::move(value)); return *this;}
-    inline DisableActionConfiguration& WithNote(const char* value) { SetNote(value); return *this;}
+    template<typename NoteT = Aws::String>
+    void SetNote(NoteT&& value) { m_noteHasBeenSet = true; m_note = std::forward<NoteT>(value); }
+    template<typename NoteT = Aws::String>
+    DisableActionConfiguration& WithNote(NoteT&& value) { SetNote(std::forward<NoteT>(value)); return *this;}
     ///@}
   private:
 

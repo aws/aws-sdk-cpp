@@ -41,7 +41,7 @@ namespace Model
   class OTAUpdateInfo
   {
   public:
-    AWS_IOT_API OTAUpdateInfo();
+    AWS_IOT_API OTAUpdateInfo() = default;
     AWS_IOT_API OTAUpdateInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API OTAUpdateInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,81 +51,74 @@ namespace Model
     /**
      * <p>The OTA update ID.</p>
      */
-    inline const Aws::String& GetOtaUpdateId() const{ return m_otaUpdateId; }
+    inline const Aws::String& GetOtaUpdateId() const { return m_otaUpdateId; }
     inline bool OtaUpdateIdHasBeenSet() const { return m_otaUpdateIdHasBeenSet; }
-    inline void SetOtaUpdateId(const Aws::String& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = value; }
-    inline void SetOtaUpdateId(Aws::String&& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = std::move(value); }
-    inline void SetOtaUpdateId(const char* value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId.assign(value); }
-    inline OTAUpdateInfo& WithOtaUpdateId(const Aws::String& value) { SetOtaUpdateId(value); return *this;}
-    inline OTAUpdateInfo& WithOtaUpdateId(Aws::String&& value) { SetOtaUpdateId(std::move(value)); return *this;}
-    inline OTAUpdateInfo& WithOtaUpdateId(const char* value) { SetOtaUpdateId(value); return *this;}
+    template<typename OtaUpdateIdT = Aws::String>
+    void SetOtaUpdateId(OtaUpdateIdT&& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = std::forward<OtaUpdateIdT>(value); }
+    template<typename OtaUpdateIdT = Aws::String>
+    OTAUpdateInfo& WithOtaUpdateId(OtaUpdateIdT&& value) { SetOtaUpdateId(std::forward<OtaUpdateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OTA update ARN.</p>
      */
-    inline const Aws::String& GetOtaUpdateArn() const{ return m_otaUpdateArn; }
+    inline const Aws::String& GetOtaUpdateArn() const { return m_otaUpdateArn; }
     inline bool OtaUpdateArnHasBeenSet() const { return m_otaUpdateArnHasBeenSet; }
-    inline void SetOtaUpdateArn(const Aws::String& value) { m_otaUpdateArnHasBeenSet = true; m_otaUpdateArn = value; }
-    inline void SetOtaUpdateArn(Aws::String&& value) { m_otaUpdateArnHasBeenSet = true; m_otaUpdateArn = std::move(value); }
-    inline void SetOtaUpdateArn(const char* value) { m_otaUpdateArnHasBeenSet = true; m_otaUpdateArn.assign(value); }
-    inline OTAUpdateInfo& WithOtaUpdateArn(const Aws::String& value) { SetOtaUpdateArn(value); return *this;}
-    inline OTAUpdateInfo& WithOtaUpdateArn(Aws::String&& value) { SetOtaUpdateArn(std::move(value)); return *this;}
-    inline OTAUpdateInfo& WithOtaUpdateArn(const char* value) { SetOtaUpdateArn(value); return *this;}
+    template<typename OtaUpdateArnT = Aws::String>
+    void SetOtaUpdateArn(OtaUpdateArnT&& value) { m_otaUpdateArnHasBeenSet = true; m_otaUpdateArn = std::forward<OtaUpdateArnT>(value); }
+    template<typename OtaUpdateArnT = Aws::String>
+    OTAUpdateInfo& WithOtaUpdateArn(OtaUpdateArnT&& value) { SetOtaUpdateArn(std::forward<OtaUpdateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the OTA update was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline OTAUpdateInfo& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline OTAUpdateInfo& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    OTAUpdateInfo& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the OTA update was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline OTAUpdateInfo& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline OTAUpdateInfo& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    OTAUpdateInfo& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the OTA update.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline OTAUpdateInfo& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline OTAUpdateInfo& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline OTAUpdateInfo& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    OTAUpdateInfo& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The targets of the OTA update.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTargets() const{ return m_targets; }
+    inline const Aws::Vector<Aws::String>& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    inline void SetTargets(const Aws::Vector<Aws::String>& value) { m_targetsHasBeenSet = true; m_targets = value; }
-    inline void SetTargets(Aws::Vector<Aws::String>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-    inline OTAUpdateInfo& WithTargets(const Aws::Vector<Aws::String>& value) { SetTargets(value); return *this;}
-    inline OTAUpdateInfo& WithTargets(Aws::Vector<Aws::String>&& value) { SetTargets(std::move(value)); return *this;}
-    inline OTAUpdateInfo& AddTargets(const Aws::String& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
-    inline OTAUpdateInfo& AddTargets(Aws::String&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
-    inline OTAUpdateInfo& AddTargets(const char* value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+    template<typename TargetsT = Aws::Vector<Aws::String>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Vector<Aws::String>>
+    OTAUpdateInfo& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    template<typename TargetsT = Aws::String>
+    OTAUpdateInfo& AddTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets.emplace_back(std::forward<TargetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -134,26 +127,25 @@ namespace Model
      * [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device
      * can choose the protocol.</p>
      */
-    inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
+    inline const Aws::Vector<Protocol>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-    inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-    inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-    inline OTAUpdateInfo& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
-    inline OTAUpdateInfo& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
-    inline OTAUpdateInfo& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
-    inline OTAUpdateInfo& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+    template<typename ProtocolsT = Aws::Vector<Protocol>>
+    void SetProtocols(ProtocolsT&& value) { m_protocolsHasBeenSet = true; m_protocols = std::forward<ProtocolsT>(value); }
+    template<typename ProtocolsT = Aws::Vector<Protocol>>
+    OTAUpdateInfo& WithProtocols(ProtocolsT&& value) { SetProtocols(std::forward<ProtocolsT>(value)); return *this;}
+    inline OTAUpdateInfo& AddProtocols(Protocol value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Configuration for the rollout of OTA updates.</p>
      */
-    inline const AwsJobExecutionsRolloutConfig& GetAwsJobExecutionsRolloutConfig() const{ return m_awsJobExecutionsRolloutConfig; }
+    inline const AwsJobExecutionsRolloutConfig& GetAwsJobExecutionsRolloutConfig() const { return m_awsJobExecutionsRolloutConfig; }
     inline bool AwsJobExecutionsRolloutConfigHasBeenSet() const { return m_awsJobExecutionsRolloutConfigHasBeenSet; }
-    inline void SetAwsJobExecutionsRolloutConfig(const AwsJobExecutionsRolloutConfig& value) { m_awsJobExecutionsRolloutConfigHasBeenSet = true; m_awsJobExecutionsRolloutConfig = value; }
-    inline void SetAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig&& value) { m_awsJobExecutionsRolloutConfigHasBeenSet = true; m_awsJobExecutionsRolloutConfig = std::move(value); }
-    inline OTAUpdateInfo& WithAwsJobExecutionsRolloutConfig(const AwsJobExecutionsRolloutConfig& value) { SetAwsJobExecutionsRolloutConfig(value); return *this;}
-    inline OTAUpdateInfo& WithAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig&& value) { SetAwsJobExecutionsRolloutConfig(std::move(value)); return *this;}
+    template<typename AwsJobExecutionsRolloutConfigT = AwsJobExecutionsRolloutConfig>
+    void SetAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfigT&& value) { m_awsJobExecutionsRolloutConfigHasBeenSet = true; m_awsJobExecutionsRolloutConfig = std::forward<AwsJobExecutionsRolloutConfigT>(value); }
+    template<typename AwsJobExecutionsRolloutConfigT = AwsJobExecutionsRolloutConfig>
+    OTAUpdateInfo& WithAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfigT&& value) { SetAwsJobExecutionsRolloutConfig(std::forward<AwsJobExecutionsRolloutConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,12 +153,12 @@ namespace Model
      * <p>Configuration information for pre-signed URLs. Valid when
      * <code>protocols</code> contains HTTP.</p>
      */
-    inline const AwsJobPresignedUrlConfig& GetAwsJobPresignedUrlConfig() const{ return m_awsJobPresignedUrlConfig; }
+    inline const AwsJobPresignedUrlConfig& GetAwsJobPresignedUrlConfig() const { return m_awsJobPresignedUrlConfig; }
     inline bool AwsJobPresignedUrlConfigHasBeenSet() const { return m_awsJobPresignedUrlConfigHasBeenSet; }
-    inline void SetAwsJobPresignedUrlConfig(const AwsJobPresignedUrlConfig& value) { m_awsJobPresignedUrlConfigHasBeenSet = true; m_awsJobPresignedUrlConfig = value; }
-    inline void SetAwsJobPresignedUrlConfig(AwsJobPresignedUrlConfig&& value) { m_awsJobPresignedUrlConfigHasBeenSet = true; m_awsJobPresignedUrlConfig = std::move(value); }
-    inline OTAUpdateInfo& WithAwsJobPresignedUrlConfig(const AwsJobPresignedUrlConfig& value) { SetAwsJobPresignedUrlConfig(value); return *this;}
-    inline OTAUpdateInfo& WithAwsJobPresignedUrlConfig(AwsJobPresignedUrlConfig&& value) { SetAwsJobPresignedUrlConfig(std::move(value)); return *this;}
+    template<typename AwsJobPresignedUrlConfigT = AwsJobPresignedUrlConfig>
+    void SetAwsJobPresignedUrlConfig(AwsJobPresignedUrlConfigT&& value) { m_awsJobPresignedUrlConfigHasBeenSet = true; m_awsJobPresignedUrlConfig = std::forward<AwsJobPresignedUrlConfigT>(value); }
+    template<typename AwsJobPresignedUrlConfigT = AwsJobPresignedUrlConfig>
+    OTAUpdateInfo& WithAwsJobPresignedUrlConfig(AwsJobPresignedUrlConfigT&& value) { SetAwsJobPresignedUrlConfig(std::forward<AwsJobPresignedUrlConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,97 +170,86 @@ namespace Model
      * when the thing is added to a target group, even after the OTA update was
      * completed by all things originally in the group. </p>
      */
-    inline const TargetSelection& GetTargetSelection() const{ return m_targetSelection; }
+    inline TargetSelection GetTargetSelection() const { return m_targetSelection; }
     inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
-    inline void SetTargetSelection(const TargetSelection& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
-    inline void SetTargetSelection(TargetSelection&& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = std::move(value); }
-    inline OTAUpdateInfo& WithTargetSelection(const TargetSelection& value) { SetTargetSelection(value); return *this;}
-    inline OTAUpdateInfo& WithTargetSelection(TargetSelection&& value) { SetTargetSelection(std::move(value)); return *this;}
+    inline void SetTargetSelection(TargetSelection value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
+    inline OTAUpdateInfo& WithTargetSelection(TargetSelection value) { SetTargetSelection(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of files associated with the OTA update.</p>
      */
-    inline const Aws::Vector<OTAUpdateFile>& GetOtaUpdateFiles() const{ return m_otaUpdateFiles; }
+    inline const Aws::Vector<OTAUpdateFile>& GetOtaUpdateFiles() const { return m_otaUpdateFiles; }
     inline bool OtaUpdateFilesHasBeenSet() const { return m_otaUpdateFilesHasBeenSet; }
-    inline void SetOtaUpdateFiles(const Aws::Vector<OTAUpdateFile>& value) { m_otaUpdateFilesHasBeenSet = true; m_otaUpdateFiles = value; }
-    inline void SetOtaUpdateFiles(Aws::Vector<OTAUpdateFile>&& value) { m_otaUpdateFilesHasBeenSet = true; m_otaUpdateFiles = std::move(value); }
-    inline OTAUpdateInfo& WithOtaUpdateFiles(const Aws::Vector<OTAUpdateFile>& value) { SetOtaUpdateFiles(value); return *this;}
-    inline OTAUpdateInfo& WithOtaUpdateFiles(Aws::Vector<OTAUpdateFile>&& value) { SetOtaUpdateFiles(std::move(value)); return *this;}
-    inline OTAUpdateInfo& AddOtaUpdateFiles(const OTAUpdateFile& value) { m_otaUpdateFilesHasBeenSet = true; m_otaUpdateFiles.push_back(value); return *this; }
-    inline OTAUpdateInfo& AddOtaUpdateFiles(OTAUpdateFile&& value) { m_otaUpdateFilesHasBeenSet = true; m_otaUpdateFiles.push_back(std::move(value)); return *this; }
+    template<typename OtaUpdateFilesT = Aws::Vector<OTAUpdateFile>>
+    void SetOtaUpdateFiles(OtaUpdateFilesT&& value) { m_otaUpdateFilesHasBeenSet = true; m_otaUpdateFiles = std::forward<OtaUpdateFilesT>(value); }
+    template<typename OtaUpdateFilesT = Aws::Vector<OTAUpdateFile>>
+    OTAUpdateInfo& WithOtaUpdateFiles(OtaUpdateFilesT&& value) { SetOtaUpdateFiles(std::forward<OtaUpdateFilesT>(value)); return *this;}
+    template<typename OtaUpdateFilesT = OTAUpdateFile>
+    OTAUpdateInfo& AddOtaUpdateFiles(OtaUpdateFilesT&& value) { m_otaUpdateFilesHasBeenSet = true; m_otaUpdateFiles.emplace_back(std::forward<OtaUpdateFilesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status of the OTA update.</p>
      */
-    inline const OTAUpdateStatus& GetOtaUpdateStatus() const{ return m_otaUpdateStatus; }
+    inline OTAUpdateStatus GetOtaUpdateStatus() const { return m_otaUpdateStatus; }
     inline bool OtaUpdateStatusHasBeenSet() const { return m_otaUpdateStatusHasBeenSet; }
-    inline void SetOtaUpdateStatus(const OTAUpdateStatus& value) { m_otaUpdateStatusHasBeenSet = true; m_otaUpdateStatus = value; }
-    inline void SetOtaUpdateStatus(OTAUpdateStatus&& value) { m_otaUpdateStatusHasBeenSet = true; m_otaUpdateStatus = std::move(value); }
-    inline OTAUpdateInfo& WithOtaUpdateStatus(const OTAUpdateStatus& value) { SetOtaUpdateStatus(value); return *this;}
-    inline OTAUpdateInfo& WithOtaUpdateStatus(OTAUpdateStatus&& value) { SetOtaUpdateStatus(std::move(value)); return *this;}
+    inline void SetOtaUpdateStatus(OTAUpdateStatus value) { m_otaUpdateStatusHasBeenSet = true; m_otaUpdateStatus = value; }
+    inline OTAUpdateInfo& WithOtaUpdateStatus(OTAUpdateStatus value) { SetOtaUpdateStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IoT job ID associated with the OTA update.</p>
      */
-    inline const Aws::String& GetAwsIotJobId() const{ return m_awsIotJobId; }
+    inline const Aws::String& GetAwsIotJobId() const { return m_awsIotJobId; }
     inline bool AwsIotJobIdHasBeenSet() const { return m_awsIotJobIdHasBeenSet; }
-    inline void SetAwsIotJobId(const Aws::String& value) { m_awsIotJobIdHasBeenSet = true; m_awsIotJobId = value; }
-    inline void SetAwsIotJobId(Aws::String&& value) { m_awsIotJobIdHasBeenSet = true; m_awsIotJobId = std::move(value); }
-    inline void SetAwsIotJobId(const char* value) { m_awsIotJobIdHasBeenSet = true; m_awsIotJobId.assign(value); }
-    inline OTAUpdateInfo& WithAwsIotJobId(const Aws::String& value) { SetAwsIotJobId(value); return *this;}
-    inline OTAUpdateInfo& WithAwsIotJobId(Aws::String&& value) { SetAwsIotJobId(std::move(value)); return *this;}
-    inline OTAUpdateInfo& WithAwsIotJobId(const char* value) { SetAwsIotJobId(value); return *this;}
+    template<typename AwsIotJobIdT = Aws::String>
+    void SetAwsIotJobId(AwsIotJobIdT&& value) { m_awsIotJobIdHasBeenSet = true; m_awsIotJobId = std::forward<AwsIotJobIdT>(value); }
+    template<typename AwsIotJobIdT = Aws::String>
+    OTAUpdateInfo& WithAwsIotJobId(AwsIotJobIdT&& value) { SetAwsIotJobId(std::forward<AwsIotJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IoT job ARN associated with the OTA update.</p>
      */
-    inline const Aws::String& GetAwsIotJobArn() const{ return m_awsIotJobArn; }
+    inline const Aws::String& GetAwsIotJobArn() const { return m_awsIotJobArn; }
     inline bool AwsIotJobArnHasBeenSet() const { return m_awsIotJobArnHasBeenSet; }
-    inline void SetAwsIotJobArn(const Aws::String& value) { m_awsIotJobArnHasBeenSet = true; m_awsIotJobArn = value; }
-    inline void SetAwsIotJobArn(Aws::String&& value) { m_awsIotJobArnHasBeenSet = true; m_awsIotJobArn = std::move(value); }
-    inline void SetAwsIotJobArn(const char* value) { m_awsIotJobArnHasBeenSet = true; m_awsIotJobArn.assign(value); }
-    inline OTAUpdateInfo& WithAwsIotJobArn(const Aws::String& value) { SetAwsIotJobArn(value); return *this;}
-    inline OTAUpdateInfo& WithAwsIotJobArn(Aws::String&& value) { SetAwsIotJobArn(std::move(value)); return *this;}
-    inline OTAUpdateInfo& WithAwsIotJobArn(const char* value) { SetAwsIotJobArn(value); return *this;}
+    template<typename AwsIotJobArnT = Aws::String>
+    void SetAwsIotJobArn(AwsIotJobArnT&& value) { m_awsIotJobArnHasBeenSet = true; m_awsIotJobArn = std::forward<AwsIotJobArnT>(value); }
+    template<typename AwsIotJobArnT = Aws::String>
+    OTAUpdateInfo& WithAwsIotJobArn(AwsIotJobArnT&& value) { SetAwsIotJobArn(std::forward<AwsIotJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Error information associated with the OTA update.</p>
      */
-    inline const ErrorInfo& GetErrorInfo() const{ return m_errorInfo; }
+    inline const ErrorInfo& GetErrorInfo() const { return m_errorInfo; }
     inline bool ErrorInfoHasBeenSet() const { return m_errorInfoHasBeenSet; }
-    inline void SetErrorInfo(const ErrorInfo& value) { m_errorInfoHasBeenSet = true; m_errorInfo = value; }
-    inline void SetErrorInfo(ErrorInfo&& value) { m_errorInfoHasBeenSet = true; m_errorInfo = std::move(value); }
-    inline OTAUpdateInfo& WithErrorInfo(const ErrorInfo& value) { SetErrorInfo(value); return *this;}
-    inline OTAUpdateInfo& WithErrorInfo(ErrorInfo&& value) { SetErrorInfo(std::move(value)); return *this;}
+    template<typename ErrorInfoT = ErrorInfo>
+    void SetErrorInfo(ErrorInfoT&& value) { m_errorInfoHasBeenSet = true; m_errorInfo = std::forward<ErrorInfoT>(value); }
+    template<typename ErrorInfoT = ErrorInfo>
+    OTAUpdateInfo& WithErrorInfo(ErrorInfoT&& value) { SetErrorInfo(std::forward<ErrorInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A collection of name/value pairs</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalParameters() const{ return m_additionalParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalParameters() const { return m_additionalParameters; }
     inline bool AdditionalParametersHasBeenSet() const { return m_additionalParametersHasBeenSet; }
-    inline void SetAdditionalParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters = value; }
-    inline void SetAdditionalParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters = std::move(value); }
-    inline OTAUpdateInfo& WithAdditionalParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalParameters(value); return *this;}
-    inline OTAUpdateInfo& WithAdditionalParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalParameters(std::move(value)); return *this;}
-    inline OTAUpdateInfo& AddAdditionalParameters(const Aws::String& key, const Aws::String& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(key, value); return *this; }
-    inline OTAUpdateInfo& AddAdditionalParameters(Aws::String&& key, const Aws::String& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(std::move(key), value); return *this; }
-    inline OTAUpdateInfo& AddAdditionalParameters(const Aws::String& key, Aws::String&& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(key, std::move(value)); return *this; }
-    inline OTAUpdateInfo& AddAdditionalParameters(Aws::String&& key, Aws::String&& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline OTAUpdateInfo& AddAdditionalParameters(const char* key, Aws::String&& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(key, std::move(value)); return *this; }
-    inline OTAUpdateInfo& AddAdditionalParameters(Aws::String&& key, const char* value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(std::move(key), value); return *this; }
-    inline OTAUpdateInfo& AddAdditionalParameters(const char* key, const char* value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(key, value); return *this; }
+    template<typename AdditionalParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalParameters(AdditionalParametersT&& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters = std::forward<AdditionalParametersT>(value); }
+    template<typename AdditionalParametersT = Aws::Map<Aws::String, Aws::String>>
+    OTAUpdateInfo& WithAdditionalParameters(AdditionalParametersT&& value) { SetAdditionalParameters(std::forward<AdditionalParametersT>(value)); return *this;}
+    template<typename AdditionalParametersKeyT = Aws::String, typename AdditionalParametersValueT = Aws::String>
+    OTAUpdateInfo& AddAdditionalParameters(AdditionalParametersKeyT&& key, AdditionalParametersValueT&& value) {
+      m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(std::forward<AdditionalParametersKeyT>(key), std::forward<AdditionalParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -278,10 +259,10 @@ namespace Model
     Aws::String m_otaUpdateArn;
     bool m_otaUpdateArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
     bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_description;
@@ -299,13 +280,13 @@ namespace Model
     AwsJobPresignedUrlConfig m_awsJobPresignedUrlConfig;
     bool m_awsJobPresignedUrlConfigHasBeenSet = false;
 
-    TargetSelection m_targetSelection;
+    TargetSelection m_targetSelection{TargetSelection::NOT_SET};
     bool m_targetSelectionHasBeenSet = false;
 
     Aws::Vector<OTAUpdateFile> m_otaUpdateFiles;
     bool m_otaUpdateFilesHasBeenSet = false;
 
-    OTAUpdateStatus m_otaUpdateStatus;
+    OTAUpdateStatus m_otaUpdateStatus{OTAUpdateStatus::NOT_SET};
     bool m_otaUpdateStatusHasBeenSet = false;
 
     Aws::String m_awsIotJobId;

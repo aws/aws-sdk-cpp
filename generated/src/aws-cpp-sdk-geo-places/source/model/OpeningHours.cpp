@@ -18,17 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-OpeningHours::OpeningHours() : 
-    m_displayHasBeenSet(false),
-    m_openNow(false),
-    m_openNowHasBeenSet(false),
-    m_componentsHasBeenSet(false),
-    m_categoriesHasBeenSet(false)
-{
-}
-
 OpeningHours::OpeningHours(JsonView jsonValue)
-  : OpeningHours()
 {
   *this = jsonValue;
 }
@@ -44,14 +34,11 @@ OpeningHours& OpeningHours::operator =(JsonView jsonValue)
     }
     m_displayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpenNow"))
   {
     m_openNow = jsonValue.GetBool("OpenNow");
-
     m_openNowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Components"))
   {
     Aws::Utils::Array<JsonView> componentsJsonList = jsonValue.GetArray("Components");
@@ -61,7 +48,6 @@ OpeningHours& OpeningHours::operator =(JsonView jsonValue)
     }
     m_componentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
@@ -71,7 +57,6 @@ OpeningHours& OpeningHours::operator =(JsonView jsonValue)
     }
     m_categoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

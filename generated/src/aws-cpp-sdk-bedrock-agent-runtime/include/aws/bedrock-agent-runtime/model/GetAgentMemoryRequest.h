@@ -26,7 +26,7 @@ namespace Model
   class GetAgentMemoryRequest : public BedrockAgentRuntimeRequest
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API GetAgentMemoryRequest();
+    AWS_BEDROCKAGENTRUNTIME_API GetAgentMemoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The unique identifier of an alias of an agent.</p>
      */
-    inline const Aws::String& GetAgentAliasId() const{ return m_agentAliasId; }
+    inline const Aws::String& GetAgentAliasId() const { return m_agentAliasId; }
     inline bool AgentAliasIdHasBeenSet() const { return m_agentAliasIdHasBeenSet; }
-    inline void SetAgentAliasId(const Aws::String& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = value; }
-    inline void SetAgentAliasId(Aws::String&& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = std::move(value); }
-    inline void SetAgentAliasId(const char* value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId.assign(value); }
-    inline GetAgentMemoryRequest& WithAgentAliasId(const Aws::String& value) { SetAgentAliasId(value); return *this;}
-    inline GetAgentMemoryRequest& WithAgentAliasId(Aws::String&& value) { SetAgentAliasId(std::move(value)); return *this;}
-    inline GetAgentMemoryRequest& WithAgentAliasId(const char* value) { SetAgentAliasId(value); return *this;}
+    template<typename AgentAliasIdT = Aws::String>
+    void SetAgentAliasId(AgentAliasIdT&& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = std::forward<AgentAliasIdT>(value); }
+    template<typename AgentAliasIdT = Aws::String>
+    GetAgentMemoryRequest& WithAgentAliasId(AgentAliasIdT&& value) { SetAgentAliasId(std::forward<AgentAliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the agent to which the alias belongs.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline GetAgentMemoryRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline GetAgentMemoryRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline GetAgentMemoryRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    GetAgentMemoryRequest& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * the <code>nextToken</code> field when making another request to return the next
      * batch of results.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline GetAgentMemoryRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -84,26 +80,22 @@ namespace Model
     /**
      * <p>The unique identifier of the memory. </p>
      */
-    inline const Aws::String& GetMemoryId() const{ return m_memoryId; }
+    inline const Aws::String& GetMemoryId() const { return m_memoryId; }
     inline bool MemoryIdHasBeenSet() const { return m_memoryIdHasBeenSet; }
-    inline void SetMemoryId(const Aws::String& value) { m_memoryIdHasBeenSet = true; m_memoryId = value; }
-    inline void SetMemoryId(Aws::String&& value) { m_memoryIdHasBeenSet = true; m_memoryId = std::move(value); }
-    inline void SetMemoryId(const char* value) { m_memoryIdHasBeenSet = true; m_memoryId.assign(value); }
-    inline GetAgentMemoryRequest& WithMemoryId(const Aws::String& value) { SetMemoryId(value); return *this;}
-    inline GetAgentMemoryRequest& WithMemoryId(Aws::String&& value) { SetMemoryId(std::move(value)); return *this;}
-    inline GetAgentMemoryRequest& WithMemoryId(const char* value) { SetMemoryId(value); return *this;}
+    template<typename MemoryIdT = Aws::String>
+    void SetMemoryId(MemoryIdT&& value) { m_memoryIdHasBeenSet = true; m_memoryId = std::forward<MemoryIdT>(value); }
+    template<typename MemoryIdT = Aws::String>
+    GetAgentMemoryRequest& WithMemoryId(MemoryIdT&& value) { SetMemoryId(std::forward<MemoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of memory.</p>
      */
-    inline const MemoryType& GetMemoryType() const{ return m_memoryType; }
+    inline MemoryType GetMemoryType() const { return m_memoryType; }
     inline bool MemoryTypeHasBeenSet() const { return m_memoryTypeHasBeenSet; }
-    inline void SetMemoryType(const MemoryType& value) { m_memoryTypeHasBeenSet = true; m_memoryType = value; }
-    inline void SetMemoryType(MemoryType&& value) { m_memoryTypeHasBeenSet = true; m_memoryType = std::move(value); }
-    inline GetAgentMemoryRequest& WithMemoryType(const MemoryType& value) { SetMemoryType(value); return *this;}
-    inline GetAgentMemoryRequest& WithMemoryType(MemoryType&& value) { SetMemoryType(std::move(value)); return *this;}
+    inline void SetMemoryType(MemoryType value) { m_memoryTypeHasBeenSet = true; m_memoryType = value; }
+    inline GetAgentMemoryRequest& WithMemoryType(MemoryType value) { SetMemoryType(value); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +104,12 @@ namespace Model
      * the request, enter the token returned in the <code>nextToken</code> field in the
      * response in this field to return the next batch of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetAgentMemoryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetAgentMemoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetAgentMemoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetAgentMemoryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -129,13 +119,13 @@ namespace Model
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_memoryId;
     bool m_memoryIdHasBeenSet = false;
 
-    MemoryType m_memoryType;
+    MemoryType m_memoryType{MemoryType::NOT_SET};
     bool m_memoryTypeHasBeenSet = false;
 
     Aws::String m_nextToken;

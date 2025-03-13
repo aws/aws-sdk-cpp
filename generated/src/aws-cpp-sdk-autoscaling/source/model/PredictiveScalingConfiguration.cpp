@@ -20,21 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-PredictiveScalingConfiguration::PredictiveScalingConfiguration() : 
-    m_metricSpecificationsHasBeenSet(false),
-    m_mode(PredictiveScalingMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_schedulingBufferTime(0),
-    m_schedulingBufferTimeHasBeenSet(false),
-    m_maxCapacityBreachBehavior(PredictiveScalingMaxCapacityBreachBehavior::NOT_SET),
-    m_maxCapacityBreachBehaviorHasBeenSet(false),
-    m_maxCapacityBuffer(0),
-    m_maxCapacityBufferHasBeenSet(false)
-{
-}
-
 PredictiveScalingConfiguration::PredictiveScalingConfiguration(const XmlNode& xmlNode)
-  : PredictiveScalingConfiguration()
 {
   *this = xmlNode;
 }
@@ -49,37 +35,42 @@ PredictiveScalingConfiguration& PredictiveScalingConfiguration::operator =(const
     if(!metricSpecificationsNode.IsNull())
     {
       XmlNode metricSpecificationsMember = metricSpecificationsNode.FirstChild("member");
+      m_metricSpecificationsHasBeenSet = !metricSpecificationsMember.IsNull();
       while(!metricSpecificationsMember.IsNull())
       {
         m_metricSpecifications.push_back(metricSpecificationsMember);
         metricSpecificationsMember = metricSpecificationsMember.NextNode("member");
       }
 
-      m_metricSpecificationsHasBeenSet = true;
+       m_metricSpecificationsHasBeenSet = true;
     }
     XmlNode modeNode = resultNode.FirstChild("Mode");
     if(!modeNode.IsNull())
     {
-      m_mode = PredictiveScalingModeMapper::GetPredictiveScalingModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()).c_str());
+      m_mode = PredictiveScalingModeMapper::GetPredictiveScalingModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()));
       m_modeHasBeenSet = true;
+       m_modeHasBeenSet = true;
     }
     XmlNode schedulingBufferTimeNode = resultNode.FirstChild("SchedulingBufferTime");
     if(!schedulingBufferTimeNode.IsNull())
     {
       m_schedulingBufferTime = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(schedulingBufferTimeNode.GetText()).c_str()).c_str());
       m_schedulingBufferTimeHasBeenSet = true;
+       m_schedulingBufferTimeHasBeenSet = true;
     }
     XmlNode maxCapacityBreachBehaviorNode = resultNode.FirstChild("MaxCapacityBreachBehavior");
     if(!maxCapacityBreachBehaviorNode.IsNull())
     {
-      m_maxCapacityBreachBehavior = PredictiveScalingMaxCapacityBreachBehaviorMapper::GetPredictiveScalingMaxCapacityBreachBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxCapacityBreachBehaviorNode.GetText()).c_str()).c_str());
+      m_maxCapacityBreachBehavior = PredictiveScalingMaxCapacityBreachBehaviorMapper::GetPredictiveScalingMaxCapacityBreachBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxCapacityBreachBehaviorNode.GetText()).c_str()));
       m_maxCapacityBreachBehaviorHasBeenSet = true;
+       m_maxCapacityBreachBehaviorHasBeenSet = true;
     }
     XmlNode maxCapacityBufferNode = resultNode.FirstChild("MaxCapacityBuffer");
     if(!maxCapacityBufferNode.IsNull())
     {
       m_maxCapacityBuffer = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxCapacityBufferNode.GetText()).c_str()).c_str());
       m_maxCapacityBufferHasBeenSet = true;
+       m_maxCapacityBufferHasBeenSet = true;
     }
   }
 

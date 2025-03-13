@@ -33,7 +33,7 @@ namespace Model
   class AudioLogSetting
   {
   public:
-    AWS_LEXMODELSV2_API AudioLogSetting();
+    AWS_LEXMODELSV2_API AudioLogSetting() = default;
     AWS_LEXMODELSV2_API AudioLogSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AudioLogSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>Determines whether audio logging in enabled for the bot.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AudioLogSetting& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -51,32 +51,32 @@ namespace Model
 
     ///@{
     
-    inline const AudioLogDestination& GetDestination() const{ return m_destination; }
+    inline const AudioLogDestination& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const AudioLogDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(AudioLogDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline AudioLogSetting& WithDestination(const AudioLogDestination& value) { SetDestination(value); return *this;}
-    inline AudioLogSetting& WithDestination(AudioLogDestination&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = AudioLogDestination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = AudioLogDestination>
+    AudioLogSetting& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The option to enable selective conversation log capture for audio.</p>
      */
-    inline bool GetSelectiveLoggingEnabled() const{ return m_selectiveLoggingEnabled; }
+    inline bool GetSelectiveLoggingEnabled() const { return m_selectiveLoggingEnabled; }
     inline bool SelectiveLoggingEnabledHasBeenSet() const { return m_selectiveLoggingEnabledHasBeenSet; }
     inline void SetSelectiveLoggingEnabled(bool value) { m_selectiveLoggingEnabledHasBeenSet = true; m_selectiveLoggingEnabled = value; }
     inline AudioLogSetting& WithSelectiveLoggingEnabled(bool value) { SetSelectiveLoggingEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     AudioLogDestination m_destination;
     bool m_destinationHasBeenSet = false;
 
-    bool m_selectiveLoggingEnabled;
+    bool m_selectiveLoggingEnabled{false};
     bool m_selectiveLoggingEnabledHasBeenSet = false;
   };
 

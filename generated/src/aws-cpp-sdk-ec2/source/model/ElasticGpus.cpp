@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ElasticGpus::ElasticGpus() : 
-    m_elasticGpuIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_elasticGpuTypeHasBeenSet(false),
-    m_elasticGpuHealthHasBeenSet(false),
-    m_elasticGpuState(ElasticGpuState::NOT_SET),
-    m_elasticGpuStateHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ElasticGpus::ElasticGpus(const XmlNode& xmlNode)
-  : ElasticGpus()
 {
   *this = xmlNode;
 }
@@ -49,48 +36,55 @@ ElasticGpus& ElasticGpus::operator =(const XmlNode& xmlNode)
     {
       m_elasticGpuId = Aws::Utils::Xml::DecodeEscapedXmlText(elasticGpuIdNode.GetText());
       m_elasticGpuIdHasBeenSet = true;
+       m_elasticGpuIdHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode elasticGpuTypeNode = resultNode.FirstChild("elasticGpuType");
     if(!elasticGpuTypeNode.IsNull())
     {
       m_elasticGpuType = Aws::Utils::Xml::DecodeEscapedXmlText(elasticGpuTypeNode.GetText());
       m_elasticGpuTypeHasBeenSet = true;
+       m_elasticGpuTypeHasBeenSet = true;
     }
     XmlNode elasticGpuHealthNode = resultNode.FirstChild("elasticGpuHealth");
     if(!elasticGpuHealthNode.IsNull())
     {
       m_elasticGpuHealth = elasticGpuHealthNode;
       m_elasticGpuHealthHasBeenSet = true;
+       m_elasticGpuHealthHasBeenSet = true;
     }
     XmlNode elasticGpuStateNode = resultNode.FirstChild("elasticGpuState");
     if(!elasticGpuStateNode.IsNull())
     {
-      m_elasticGpuState = ElasticGpuStateMapper::GetElasticGpuStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(elasticGpuStateNode.GetText()).c_str()).c_str());
+      m_elasticGpuState = ElasticGpuStateMapper::GetElasticGpuStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(elasticGpuStateNode.GetText()).c_str()));
       m_elasticGpuStateHasBeenSet = true;
+       m_elasticGpuStateHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

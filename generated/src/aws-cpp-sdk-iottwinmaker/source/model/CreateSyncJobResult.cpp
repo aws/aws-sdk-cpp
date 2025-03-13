@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSyncJobResult::CreateSyncJobResult() : 
-    m_state(SyncJobState::NOT_SET)
-{
-}
-
 CreateSyncJobResult::CreateSyncJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateSyncJobResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateSyncJobResult& CreateSyncJobResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
+    m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = SyncJobStateMapper::GetSyncJobStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

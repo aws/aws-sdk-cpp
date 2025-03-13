@@ -12,15 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutKeyPolicyRequest::PutKeyPolicyRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_bypassPolicyLockoutSafetyCheck(false),
-    m_bypassPolicyLockoutSafetyCheckHasBeenSet(false)
-{
-}
-
 Aws::String PutKeyPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

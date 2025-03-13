@@ -18,17 +18,7 @@ namespace EMR
 namespace Model
 {
 
-OnDemandCapacityReservationOptions::OnDemandCapacityReservationOptions() : 
-    m_usageStrategy(OnDemandCapacityReservationUsageStrategy::NOT_SET),
-    m_usageStrategyHasBeenSet(false),
-    m_capacityReservationPreference(OnDemandCapacityReservationPreference::NOT_SET),
-    m_capacityReservationPreferenceHasBeenSet(false),
-    m_capacityReservationResourceGroupArnHasBeenSet(false)
-{
-}
-
 OnDemandCapacityReservationOptions::OnDemandCapacityReservationOptions(JsonView jsonValue)
-  : OnDemandCapacityReservationOptions()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ OnDemandCapacityReservationOptions& OnDemandCapacityReservationOptions::operator
   if(jsonValue.ValueExists("UsageStrategy"))
   {
     m_usageStrategy = OnDemandCapacityReservationUsageStrategyMapper::GetOnDemandCapacityReservationUsageStrategyForName(jsonValue.GetString("UsageStrategy"));
-
     m_usageStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityReservationPreference"))
   {
     m_capacityReservationPreference = OnDemandCapacityReservationPreferenceMapper::GetOnDemandCapacityReservationPreferenceForName(jsonValue.GetString("CapacityReservationPreference"));
-
     m_capacityReservationPreferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityReservationResourceGroupArn"))
   {
     m_capacityReservationResourceGroupArn = jsonValue.GetString("CapacityReservationResourceGroupArn");
-
     m_capacityReservationResourceGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

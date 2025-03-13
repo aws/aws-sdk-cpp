@@ -34,7 +34,7 @@ namespace Model
   class ReservedInstanceOptions
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API ReservedInstanceOptions();
+    AWS_APPLICATIONDISCOVERYSERVICE_API ReservedInstanceOptions() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API ReservedInstanceOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API ReservedInstanceOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p> The payment plan to use for your Reserved Instance. </p>
      */
-    inline const PurchasingOption& GetPurchasingOption() const{ return m_purchasingOption; }
+    inline PurchasingOption GetPurchasingOption() const { return m_purchasingOption; }
     inline bool PurchasingOptionHasBeenSet() const { return m_purchasingOptionHasBeenSet; }
-    inline void SetPurchasingOption(const PurchasingOption& value) { m_purchasingOptionHasBeenSet = true; m_purchasingOption = value; }
-    inline void SetPurchasingOption(PurchasingOption&& value) { m_purchasingOptionHasBeenSet = true; m_purchasingOption = std::move(value); }
-    inline ReservedInstanceOptions& WithPurchasingOption(const PurchasingOption& value) { SetPurchasingOption(value); return *this;}
-    inline ReservedInstanceOptions& WithPurchasingOption(PurchasingOption&& value) { SetPurchasingOption(std::move(value)); return *this;}
+    inline void SetPurchasingOption(PurchasingOption value) { m_purchasingOptionHasBeenSet = true; m_purchasingOption = value; }
+    inline ReservedInstanceOptions& WithPurchasingOption(PurchasingOption value) { SetPurchasingOption(value); return *this;}
     ///@}
 
     ///@{
@@ -57,34 +55,30 @@ namespace Model
      * <p> The flexibility to change the instance types needed for your Reserved
      * Instance. </p>
      */
-    inline const OfferingClass& GetOfferingClass() const{ return m_offeringClass; }
+    inline OfferingClass GetOfferingClass() const { return m_offeringClass; }
     inline bool OfferingClassHasBeenSet() const { return m_offeringClassHasBeenSet; }
-    inline void SetOfferingClass(const OfferingClass& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
-    inline void SetOfferingClass(OfferingClass&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = std::move(value); }
-    inline ReservedInstanceOptions& WithOfferingClass(const OfferingClass& value) { SetOfferingClass(value); return *this;}
-    inline ReservedInstanceOptions& WithOfferingClass(OfferingClass&& value) { SetOfferingClass(std::move(value)); return *this;}
+    inline void SetOfferingClass(OfferingClass value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
+    inline ReservedInstanceOptions& WithOfferingClass(OfferingClass value) { SetOfferingClass(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The preferred duration of the Reserved Instance term. </p>
      */
-    inline const TermLength& GetTermLength() const{ return m_termLength; }
+    inline TermLength GetTermLength() const { return m_termLength; }
     inline bool TermLengthHasBeenSet() const { return m_termLengthHasBeenSet; }
-    inline void SetTermLength(const TermLength& value) { m_termLengthHasBeenSet = true; m_termLength = value; }
-    inline void SetTermLength(TermLength&& value) { m_termLengthHasBeenSet = true; m_termLength = std::move(value); }
-    inline ReservedInstanceOptions& WithTermLength(const TermLength& value) { SetTermLength(value); return *this;}
-    inline ReservedInstanceOptions& WithTermLength(TermLength&& value) { SetTermLength(std::move(value)); return *this;}
+    inline void SetTermLength(TermLength value) { m_termLengthHasBeenSet = true; m_termLength = value; }
+    inline ReservedInstanceOptions& WithTermLength(TermLength value) { SetTermLength(value); return *this;}
     ///@}
   private:
 
-    PurchasingOption m_purchasingOption;
+    PurchasingOption m_purchasingOption{PurchasingOption::NOT_SET};
     bool m_purchasingOptionHasBeenSet = false;
 
-    OfferingClass m_offeringClass;
+    OfferingClass m_offeringClass{OfferingClass::NOT_SET};
     bool m_offeringClassHasBeenSet = false;
 
-    TermLength m_termLength;
+    TermLength m_termLength{TermLength::NOT_SET};
     bool m_termLengthHasBeenSet = false;
   };
 

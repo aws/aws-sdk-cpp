@@ -20,23 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobManifestGeneratorFilter::JobManifestGeneratorFilter() : 
-    m_eligibleForReplication(false),
-    m_eligibleForReplicationHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_objectReplicationStatusesHasBeenSet(false),
-    m_keyNameConstraintHasBeenSet(false),
-    m_objectSizeGreaterThanBytes(0),
-    m_objectSizeGreaterThanBytesHasBeenSet(false),
-    m_objectSizeLessThanBytes(0),
-    m_objectSizeLessThanBytesHasBeenSet(false),
-    m_matchAnyStorageClassHasBeenSet(false)
-{
-}
-
 JobManifestGeneratorFilter::JobManifestGeneratorFilter(const XmlNode& xmlNode)
-  : JobManifestGeneratorFilter()
 {
   *this = xmlNode;
 }
@@ -52,60 +36,68 @@ JobManifestGeneratorFilter& JobManifestGeneratorFilter::operator =(const XmlNode
     {
       m_eligibleForReplication = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eligibleForReplicationNode.GetText()).c_str()).c_str());
       m_eligibleForReplicationHasBeenSet = true;
+       m_eligibleForReplicationHasBeenSet = true;
     }
     XmlNode createdAfterNode = resultNode.FirstChild("CreatedAfter");
     if(!createdAfterNode.IsNull())
     {
       m_createdAfter = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAfterNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAfterHasBeenSet = true;
+       m_createdAfterHasBeenSet = true;
     }
     XmlNode createdBeforeNode = resultNode.FirstChild("CreatedBefore");
     if(!createdBeforeNode.IsNull())
     {
       m_createdBefore = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdBeforeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdBeforeHasBeenSet = true;
+       m_createdBeforeHasBeenSet = true;
     }
     XmlNode objectReplicationStatusesNode = resultNode.FirstChild("ObjectReplicationStatuses");
     if(!objectReplicationStatusesNode.IsNull())
     {
       XmlNode objectReplicationStatusesMember = objectReplicationStatusesNode.FirstChild("member");
+      m_objectReplicationStatusesHasBeenSet = !objectReplicationStatusesMember.IsNull();
       while(!objectReplicationStatusesMember.IsNull())
       {
         m_objectReplicationStatuses.push_back(ReplicationStatusMapper::GetReplicationStatusForName(StringUtils::Trim(objectReplicationStatusesMember.GetText().c_str())));
         objectReplicationStatusesMember = objectReplicationStatusesMember.NextNode("member");
       }
 
-      m_objectReplicationStatusesHasBeenSet = true;
+       m_objectReplicationStatusesHasBeenSet = true;
     }
     XmlNode keyNameConstraintNode = resultNode.FirstChild("KeyNameConstraint");
     if(!keyNameConstraintNode.IsNull())
     {
       m_keyNameConstraint = keyNameConstraintNode;
       m_keyNameConstraintHasBeenSet = true;
+       m_keyNameConstraintHasBeenSet = true;
     }
     XmlNode objectSizeGreaterThanBytesNode = resultNode.FirstChild("ObjectSizeGreaterThanBytes");
     if(!objectSizeGreaterThanBytesNode.IsNull())
     {
       m_objectSizeGreaterThanBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectSizeGreaterThanBytesNode.GetText()).c_str()).c_str());
       m_objectSizeGreaterThanBytesHasBeenSet = true;
+       m_objectSizeGreaterThanBytesHasBeenSet = true;
     }
     XmlNode objectSizeLessThanBytesNode = resultNode.FirstChild("ObjectSizeLessThanBytes");
     if(!objectSizeLessThanBytesNode.IsNull())
     {
       m_objectSizeLessThanBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectSizeLessThanBytesNode.GetText()).c_str()).c_str());
       m_objectSizeLessThanBytesHasBeenSet = true;
+       m_objectSizeLessThanBytesHasBeenSet = true;
     }
     XmlNode matchAnyStorageClassNode = resultNode.FirstChild("MatchAnyStorageClass");
     if(!matchAnyStorageClassNode.IsNull())
     {
       XmlNode matchAnyStorageClassMember = matchAnyStorageClassNode.FirstChild("member");
+      m_matchAnyStorageClassHasBeenSet = !matchAnyStorageClassMember.IsNull();
       while(!matchAnyStorageClassMember.IsNull())
       {
         m_matchAnyStorageClass.push_back(S3StorageClassMapper::GetS3StorageClassForName(StringUtils::Trim(matchAnyStorageClassMember.GetText().c_str())));
         matchAnyStorageClassMember = matchAnyStorageClassMember.NextNode("member");
       }
 
-      m_matchAnyStorageClassHasBeenSet = true;
+       m_matchAnyStorageClassHasBeenSet = true;
     }
   }
 

@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Customer::Customer() : 
-    m_deviceInfoHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
-{
-}
-
 Customer::Customer(JsonView jsonValue)
-  : Customer()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Customer& Customer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceInfo"))
   {
     m_deviceInfo = jsonValue.GetObject("DeviceInfo");
-
     m_deviceInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Capabilities"))
   {
     m_capabilities = jsonValue.GetObject("Capabilities");
-
     m_capabilitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

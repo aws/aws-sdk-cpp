@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ScalarReferenceDetails::ScalarReferenceDetails() : 
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 ScalarReferenceDetails::ScalarReferenceDetails(const XmlNode& xmlNode)
-  : ScalarReferenceDetails()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ ScalarReferenceDetails& ScalarReferenceDetails::operator =(const XmlNode& xmlNod
     {
       m_value = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()).c_str()).c_str());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

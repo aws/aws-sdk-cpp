@@ -32,7 +32,7 @@ namespace Model
   class IotSiteWiseAssetModelPropertyIdentifier
   {
   public:
-    AWS_IOTEVENTS_API IotSiteWiseAssetModelPropertyIdentifier();
+    AWS_IOTEVENTS_API IotSiteWiseAssetModelPropertyIdentifier() = default;
     AWS_IOTEVENTS_API IotSiteWiseAssetModelPropertyIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API IotSiteWiseAssetModelPropertyIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p> The ID of the AWS IoT SiteWise asset model. </p>
      */
-    inline const Aws::String& GetAssetModelId() const{ return m_assetModelId; }
+    inline const Aws::String& GetAssetModelId() const { return m_assetModelId; }
     inline bool AssetModelIdHasBeenSet() const { return m_assetModelIdHasBeenSet; }
-    inline void SetAssetModelId(const Aws::String& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = value; }
-    inline void SetAssetModelId(Aws::String&& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = std::move(value); }
-    inline void SetAssetModelId(const char* value) { m_assetModelIdHasBeenSet = true; m_assetModelId.assign(value); }
-    inline IotSiteWiseAssetModelPropertyIdentifier& WithAssetModelId(const Aws::String& value) { SetAssetModelId(value); return *this;}
-    inline IotSiteWiseAssetModelPropertyIdentifier& WithAssetModelId(Aws::String&& value) { SetAssetModelId(std::move(value)); return *this;}
-    inline IotSiteWiseAssetModelPropertyIdentifier& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
+    template<typename AssetModelIdT = Aws::String>
+    void SetAssetModelId(AssetModelIdT&& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = std::forward<AssetModelIdT>(value); }
+    template<typename AssetModelIdT = Aws::String>
+    IotSiteWiseAssetModelPropertyIdentifier& WithAssetModelId(AssetModelIdT&& value) { SetAssetModelId(std::forward<AssetModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the AWS IoT SiteWise asset property. </p>
      */
-    inline const Aws::String& GetPropertyId() const{ return m_propertyId; }
+    inline const Aws::String& GetPropertyId() const { return m_propertyId; }
     inline bool PropertyIdHasBeenSet() const { return m_propertyIdHasBeenSet; }
-    inline void SetPropertyId(const Aws::String& value) { m_propertyIdHasBeenSet = true; m_propertyId = value; }
-    inline void SetPropertyId(Aws::String&& value) { m_propertyIdHasBeenSet = true; m_propertyId = std::move(value); }
-    inline void SetPropertyId(const char* value) { m_propertyIdHasBeenSet = true; m_propertyId.assign(value); }
-    inline IotSiteWiseAssetModelPropertyIdentifier& WithPropertyId(const Aws::String& value) { SetPropertyId(value); return *this;}
-    inline IotSiteWiseAssetModelPropertyIdentifier& WithPropertyId(Aws::String&& value) { SetPropertyId(std::move(value)); return *this;}
-    inline IotSiteWiseAssetModelPropertyIdentifier& WithPropertyId(const char* value) { SetPropertyId(value); return *this;}
+    template<typename PropertyIdT = Aws::String>
+    void SetPropertyId(PropertyIdT&& value) { m_propertyIdHasBeenSet = true; m_propertyId = std::forward<PropertyIdT>(value); }
+    template<typename PropertyIdT = Aws::String>
+    IotSiteWiseAssetModelPropertyIdentifier& WithPropertyId(PropertyIdT&& value) { SetPropertyId(std::forward<PropertyIdT>(value)); return *this;}
     ///@}
   private:
 

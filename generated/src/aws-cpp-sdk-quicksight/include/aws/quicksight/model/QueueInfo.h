@@ -32,7 +32,7 @@ namespace Model
   class QueueInfo
   {
   public:
-    AWS_QUICKSIGHT_API QueueInfo();
+    AWS_QUICKSIGHT_API QueueInfo() = default;
     AWS_QUICKSIGHT_API QueueInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API QueueInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the queued ingestion.</p>
      */
-    inline const Aws::String& GetWaitingOnIngestion() const{ return m_waitingOnIngestion; }
+    inline const Aws::String& GetWaitingOnIngestion() const { return m_waitingOnIngestion; }
     inline bool WaitingOnIngestionHasBeenSet() const { return m_waitingOnIngestionHasBeenSet; }
-    inline void SetWaitingOnIngestion(const Aws::String& value) { m_waitingOnIngestionHasBeenSet = true; m_waitingOnIngestion = value; }
-    inline void SetWaitingOnIngestion(Aws::String&& value) { m_waitingOnIngestionHasBeenSet = true; m_waitingOnIngestion = std::move(value); }
-    inline void SetWaitingOnIngestion(const char* value) { m_waitingOnIngestionHasBeenSet = true; m_waitingOnIngestion.assign(value); }
-    inline QueueInfo& WithWaitingOnIngestion(const Aws::String& value) { SetWaitingOnIngestion(value); return *this;}
-    inline QueueInfo& WithWaitingOnIngestion(Aws::String&& value) { SetWaitingOnIngestion(std::move(value)); return *this;}
-    inline QueueInfo& WithWaitingOnIngestion(const char* value) { SetWaitingOnIngestion(value); return *this;}
+    template<typename WaitingOnIngestionT = Aws::String>
+    void SetWaitingOnIngestion(WaitingOnIngestionT&& value) { m_waitingOnIngestionHasBeenSet = true; m_waitingOnIngestion = std::forward<WaitingOnIngestionT>(value); }
+    template<typename WaitingOnIngestionT = Aws::String>
+    QueueInfo& WithWaitingOnIngestion(WaitingOnIngestionT&& value) { SetWaitingOnIngestion(std::forward<WaitingOnIngestionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the
      * ongoing ingestion to complete.</p>
      */
-    inline const Aws::String& GetQueuedIngestion() const{ return m_queuedIngestion; }
+    inline const Aws::String& GetQueuedIngestion() const { return m_queuedIngestion; }
     inline bool QueuedIngestionHasBeenSet() const { return m_queuedIngestionHasBeenSet; }
-    inline void SetQueuedIngestion(const Aws::String& value) { m_queuedIngestionHasBeenSet = true; m_queuedIngestion = value; }
-    inline void SetQueuedIngestion(Aws::String&& value) { m_queuedIngestionHasBeenSet = true; m_queuedIngestion = std::move(value); }
-    inline void SetQueuedIngestion(const char* value) { m_queuedIngestionHasBeenSet = true; m_queuedIngestion.assign(value); }
-    inline QueueInfo& WithQueuedIngestion(const Aws::String& value) { SetQueuedIngestion(value); return *this;}
-    inline QueueInfo& WithQueuedIngestion(Aws::String&& value) { SetQueuedIngestion(std::move(value)); return *this;}
-    inline QueueInfo& WithQueuedIngestion(const char* value) { SetQueuedIngestion(value); return *this;}
+    template<typename QueuedIngestionT = Aws::String>
+    void SetQueuedIngestion(QueuedIngestionT&& value) { m_queuedIngestionHasBeenSet = true; m_queuedIngestion = std::forward<QueuedIngestionT>(value); }
+    template<typename QueuedIngestionT = Aws::String>
+    QueueInfo& WithQueuedIngestion(QueuedIngestionT&& value) { SetQueuedIngestion(std::forward<QueuedIngestionT>(value)); return *this;}
     ///@}
   private:
 

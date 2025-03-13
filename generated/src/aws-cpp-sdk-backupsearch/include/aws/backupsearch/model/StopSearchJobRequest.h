@@ -21,7 +21,7 @@ namespace Model
   class StopSearchJobRequest : public BackupSearchRequest
   {
   public:
-    AWS_BACKUPSEARCH_API StopSearchJobRequest();
+    AWS_BACKUPSEARCH_API StopSearchJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique string that specifies the search job.</p>
      */
-    inline const Aws::String& GetSearchJobIdentifier() const{ return m_searchJobIdentifier; }
+    inline const Aws::String& GetSearchJobIdentifier() const { return m_searchJobIdentifier; }
     inline bool SearchJobIdentifierHasBeenSet() const { return m_searchJobIdentifierHasBeenSet; }
-    inline void SetSearchJobIdentifier(const Aws::String& value) { m_searchJobIdentifierHasBeenSet = true; m_searchJobIdentifier = value; }
-    inline void SetSearchJobIdentifier(Aws::String&& value) { m_searchJobIdentifierHasBeenSet = true; m_searchJobIdentifier = std::move(value); }
-    inline void SetSearchJobIdentifier(const char* value) { m_searchJobIdentifierHasBeenSet = true; m_searchJobIdentifier.assign(value); }
-    inline StopSearchJobRequest& WithSearchJobIdentifier(const Aws::String& value) { SetSearchJobIdentifier(value); return *this;}
-    inline StopSearchJobRequest& WithSearchJobIdentifier(Aws::String&& value) { SetSearchJobIdentifier(std::move(value)); return *this;}
-    inline StopSearchJobRequest& WithSearchJobIdentifier(const char* value) { SetSearchJobIdentifier(value); return *this;}
+    template<typename SearchJobIdentifierT = Aws::String>
+    void SetSearchJobIdentifier(SearchJobIdentifierT&& value) { m_searchJobIdentifierHasBeenSet = true; m_searchJobIdentifier = std::forward<SearchJobIdentifierT>(value); }
+    template<typename SearchJobIdentifierT = Aws::String>
+    StopSearchJobRequest& WithSearchJobIdentifier(SearchJobIdentifierT&& value) { SetSearchJobIdentifier(std::forward<SearchJobIdentifierT>(value)); return *this;}
     ///@}
   private:
 

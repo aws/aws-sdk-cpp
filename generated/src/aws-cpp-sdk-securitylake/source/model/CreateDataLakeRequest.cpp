@@ -12,13 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataLakeRequest::CreateDataLakeRequest() : 
-    m_configurationsHasBeenSet(false),
-    m_metaStoreManagerRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataLakeRequest::SerializePayload() const
 {
   JsonValue payload;

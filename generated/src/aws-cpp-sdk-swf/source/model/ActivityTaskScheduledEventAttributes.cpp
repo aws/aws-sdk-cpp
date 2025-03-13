@@ -18,24 +18,7 @@ namespace SWF
 namespace Model
 {
 
-ActivityTaskScheduledEventAttributes::ActivityTaskScheduledEventAttributes() : 
-    m_activityTypeHasBeenSet(false),
-    m_activityIdHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_controlHasBeenSet(false),
-    m_scheduleToStartTimeoutHasBeenSet(false),
-    m_scheduleToCloseTimeoutHasBeenSet(false),
-    m_startToCloseTimeoutHasBeenSet(false),
-    m_taskListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false),
-    m_heartbeatTimeoutHasBeenSet(false)
-{
-}
-
 ActivityTaskScheduledEventAttributes::ActivityTaskScheduledEventAttributes(JsonView jsonValue)
-  : ActivityTaskScheduledEventAttributes()
 {
   *this = jsonValue;
 }
@@ -45,80 +28,58 @@ ActivityTaskScheduledEventAttributes& ActivityTaskScheduledEventAttributes::oper
   if(jsonValue.ValueExists("activityType"))
   {
     m_activityType = jsonValue.GetObject("activityType");
-
     m_activityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activityId"))
   {
     m_activityId = jsonValue.GetString("activityId");
-
     m_activityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("control"))
   {
     m_control = jsonValue.GetString("control");
-
     m_controlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduleToStartTimeout"))
   {
     m_scheduleToStartTimeout = jsonValue.GetString("scheduleToStartTimeout");
-
     m_scheduleToStartTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduleToCloseTimeout"))
   {
     m_scheduleToCloseTimeout = jsonValue.GetString("scheduleToCloseTimeout");
-
     m_scheduleToCloseTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startToCloseTimeout"))
   {
     m_startToCloseTimeout = jsonValue.GetString("startToCloseTimeout");
-
     m_startToCloseTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskList"))
   {
     m_taskList = jsonValue.GetObject("taskList");
-
     m_taskListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskPriority"))
   {
     m_taskPriority = jsonValue.GetString("taskPriority");
-
     m_taskPriorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
   {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
-
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("heartbeatTimeout"))
   {
     m_heartbeatTimeout = jsonValue.GetString("heartbeatTimeout");
-
     m_heartbeatTimeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

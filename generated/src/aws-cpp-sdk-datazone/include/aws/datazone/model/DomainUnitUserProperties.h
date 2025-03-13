@@ -31,7 +31,7 @@ namespace Model
   class DomainUnitUserProperties
   {
   public:
-    AWS_DATAZONE_API DomainUnitUserProperties();
+    AWS_DATAZONE_API DomainUnitUserProperties() = default;
     AWS_DATAZONE_API DomainUnitUserProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API DomainUnitUserProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of teh domain unit user.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline DomainUnitUserProperties& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline DomainUnitUserProperties& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline DomainUnitUserProperties& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    DomainUnitUserProperties& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
   private:
 

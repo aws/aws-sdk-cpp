@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VolumeStatusDetails::VolumeStatusDetails() : 
-    m_name(VolumeStatusName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 VolumeStatusDetails::VolumeStatusDetails(const XmlNode& xmlNode)
-  : VolumeStatusDetails()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ VolumeStatusDetails& VolumeStatusDetails::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
-      m_name = VolumeStatusNameMapper::GetVolumeStatusNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()).c_str());
+      m_name = VolumeStatusNameMapper::GetVolumeStatusNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()));
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

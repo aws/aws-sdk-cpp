@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-MemberUser::MemberUser() : 
-    m_userIdHasBeenSet(false)
-{
-}
-
 MemberUser::MemberUser(JsonView jsonValue)
-  : MemberUser()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MemberUser& MemberUser::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   return *this;
 }
 

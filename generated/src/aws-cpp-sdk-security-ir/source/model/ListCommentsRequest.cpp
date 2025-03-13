@@ -12,14 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCommentsRequest::ListCommentsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_caseIdHasBeenSet(false)
-{
-}
-
 Aws::String ListCommentsRequest::SerializePayload() const
 {
   JsonValue payload;

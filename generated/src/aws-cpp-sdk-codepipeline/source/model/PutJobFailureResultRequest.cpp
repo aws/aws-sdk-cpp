@@ -12,12 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutJobFailureResultRequest::PutJobFailureResultRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false)
-{
-}
-
 Aws::String PutJobFailureResultRequest::SerializePayload() const
 {
   JsonValue payload;

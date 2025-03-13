@@ -32,7 +32,7 @@ namespace Model
   class LaunchPermissionModifications
   {
   public:
-    AWS_EC2_API LaunchPermissionModifications();
+    AWS_EC2_API LaunchPermissionModifications() = default;
     AWS_EC2_API LaunchPermissionModifications(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LaunchPermissionModifications& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,14 @@ namespace Model
      * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the
      * list of launch permissions for the AMI.</p>
      */
-    inline const Aws::Vector<LaunchPermission>& GetAdd() const{ return m_add; }
+    inline const Aws::Vector<LaunchPermission>& GetAdd() const { return m_add; }
     inline bool AddHasBeenSet() const { return m_addHasBeenSet; }
-    inline void SetAdd(const Aws::Vector<LaunchPermission>& value) { m_addHasBeenSet = true; m_add = value; }
-    inline void SetAdd(Aws::Vector<LaunchPermission>&& value) { m_addHasBeenSet = true; m_add = std::move(value); }
-    inline LaunchPermissionModifications& WithAdd(const Aws::Vector<LaunchPermission>& value) { SetAdd(value); return *this;}
-    inline LaunchPermissionModifications& WithAdd(Aws::Vector<LaunchPermission>&& value) { SetAdd(std::move(value)); return *this;}
-    inline LaunchPermissionModifications& AddAdd(const LaunchPermission& value) { m_addHasBeenSet = true; m_add.push_back(value); return *this; }
-    inline LaunchPermissionModifications& AddAdd(LaunchPermission&& value) { m_addHasBeenSet = true; m_add.push_back(std::move(value)); return *this; }
+    template<typename AddT = Aws::Vector<LaunchPermission>>
+    void SetAdd(AddT&& value) { m_addHasBeenSet = true; m_add = std::forward<AddT>(value); }
+    template<typename AddT = Aws::Vector<LaunchPermission>>
+    LaunchPermissionModifications& WithAdd(AddT&& value) { SetAdd(std::forward<AddT>(value)); return *this;}
+    template<typename AddT = LaunchPermission>
+    LaunchPermissionModifications& AddAdd(AddT&& value) { m_addHasBeenSet = true; m_add.emplace_back(std::forward<AddT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove
      * from the list of launch permissions for the AMI.</p>
      */
-    inline const Aws::Vector<LaunchPermission>& GetRemove() const{ return m_remove; }
+    inline const Aws::Vector<LaunchPermission>& GetRemove() const { return m_remove; }
     inline bool RemoveHasBeenSet() const { return m_removeHasBeenSet; }
-    inline void SetRemove(const Aws::Vector<LaunchPermission>& value) { m_removeHasBeenSet = true; m_remove = value; }
-    inline void SetRemove(Aws::Vector<LaunchPermission>&& value) { m_removeHasBeenSet = true; m_remove = std::move(value); }
-    inline LaunchPermissionModifications& WithRemove(const Aws::Vector<LaunchPermission>& value) { SetRemove(value); return *this;}
-    inline LaunchPermissionModifications& WithRemove(Aws::Vector<LaunchPermission>&& value) { SetRemove(std::move(value)); return *this;}
-    inline LaunchPermissionModifications& AddRemove(const LaunchPermission& value) { m_removeHasBeenSet = true; m_remove.push_back(value); return *this; }
-    inline LaunchPermissionModifications& AddRemove(LaunchPermission&& value) { m_removeHasBeenSet = true; m_remove.push_back(std::move(value)); return *this; }
+    template<typename RemoveT = Aws::Vector<LaunchPermission>>
+    void SetRemove(RemoveT&& value) { m_removeHasBeenSet = true; m_remove = std::forward<RemoveT>(value); }
+    template<typename RemoveT = Aws::Vector<LaunchPermission>>
+    LaunchPermissionModifications& WithRemove(RemoveT&& value) { SetRemove(std::forward<RemoveT>(value)); return *this;}
+    template<typename RemoveT = LaunchPermission>
+    LaunchPermissionModifications& AddRemove(RemoveT&& value) { m_removeHasBeenSet = true; m_remove.emplace_back(std::forward<RemoveT>(value)); return *this; }
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutRetentionConfigurationResult::PutRetentionConfigurationResult()
-{
-}
-
 PutRetentionConfigurationResult::PutRetentionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutRetentionConfigurationResult& PutRetentionConfigurationResult::operator =(con
   if(jsonValue.ValueExists("RetentionConfiguration"))
   {
     m_retentionConfiguration = jsonValue.GetObject("RetentionConfiguration");
-
+    m_retentionConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

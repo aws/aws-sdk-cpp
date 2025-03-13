@@ -18,16 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-EBSResourceUtilization::EBSResourceUtilization() : 
-    m_ebsReadOpsPerSecondHasBeenSet(false),
-    m_ebsWriteOpsPerSecondHasBeenSet(false),
-    m_ebsReadBytesPerSecondHasBeenSet(false),
-    m_ebsWriteBytesPerSecondHasBeenSet(false)
-{
-}
-
 EBSResourceUtilization::EBSResourceUtilization(JsonView jsonValue)
-  : EBSResourceUtilization()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ EBSResourceUtilization& EBSResourceUtilization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EbsReadOpsPerSecond"))
   {
     m_ebsReadOpsPerSecond = jsonValue.GetString("EbsReadOpsPerSecond");
-
     m_ebsReadOpsPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsWriteOpsPerSecond"))
   {
     m_ebsWriteOpsPerSecond = jsonValue.GetString("EbsWriteOpsPerSecond");
-
     m_ebsWriteOpsPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsReadBytesPerSecond"))
   {
     m_ebsReadBytesPerSecond = jsonValue.GetString("EbsReadBytesPerSecond");
-
     m_ebsReadBytesPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsWriteBytesPerSecond"))
   {
     m_ebsWriteBytesPerSecond = jsonValue.GetString("EbsWriteBytesPerSecond");
-
     m_ebsWriteBytesPerSecondHasBeenSet = true;
   }
-
   return *this;
 }
 

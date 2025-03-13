@@ -21,7 +21,7 @@ namespace Model
   class DeleteTrialComponentRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeleteTrialComponentRequest();
+    AWS_SAGEMAKER_API DeleteTrialComponentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the component to delete.</p>
      */
-    inline const Aws::String& GetTrialComponentName() const{ return m_trialComponentName; }
+    inline const Aws::String& GetTrialComponentName() const { return m_trialComponentName; }
     inline bool TrialComponentNameHasBeenSet() const { return m_trialComponentNameHasBeenSet; }
-    inline void SetTrialComponentName(const Aws::String& value) { m_trialComponentNameHasBeenSet = true; m_trialComponentName = value; }
-    inline void SetTrialComponentName(Aws::String&& value) { m_trialComponentNameHasBeenSet = true; m_trialComponentName = std::move(value); }
-    inline void SetTrialComponentName(const char* value) { m_trialComponentNameHasBeenSet = true; m_trialComponentName.assign(value); }
-    inline DeleteTrialComponentRequest& WithTrialComponentName(const Aws::String& value) { SetTrialComponentName(value); return *this;}
-    inline DeleteTrialComponentRequest& WithTrialComponentName(Aws::String&& value) { SetTrialComponentName(std::move(value)); return *this;}
-    inline DeleteTrialComponentRequest& WithTrialComponentName(const char* value) { SetTrialComponentName(value); return *this;}
+    template<typename TrialComponentNameT = Aws::String>
+    void SetTrialComponentName(TrialComponentNameT&& value) { m_trialComponentNameHasBeenSet = true; m_trialComponentName = std::forward<TrialComponentNameT>(value); }
+    template<typename TrialComponentNameT = Aws::String>
+    DeleteTrialComponentRequest& WithTrialComponentName(TrialComponentNameT&& value) { SetTrialComponentName(std::forward<TrialComponentNameT>(value)); return *this;}
     ///@}
   private:
 

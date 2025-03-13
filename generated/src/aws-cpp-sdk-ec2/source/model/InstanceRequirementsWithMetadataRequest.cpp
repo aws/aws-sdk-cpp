@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceRequirementsWithMetadataRequest::InstanceRequirementsWithMetadataRequest() : 
-    m_architectureTypesHasBeenSet(false),
-    m_virtualizationTypesHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false)
-{
-}
-
 InstanceRequirementsWithMetadataRequest::InstanceRequirementsWithMetadataRequest(const XmlNode& xmlNode)
-  : InstanceRequirementsWithMetadataRequest()
 {
   *this = xmlNode;
 }
@@ -43,31 +35,34 @@ InstanceRequirementsWithMetadataRequest& InstanceRequirementsWithMetadataRequest
     if(!architectureTypesNode.IsNull())
     {
       XmlNode architectureTypesMember = architectureTypesNode.FirstChild("item");
+      m_architectureTypesHasBeenSet = !architectureTypesMember.IsNull();
       while(!architectureTypesMember.IsNull())
       {
         m_architectureTypes.push_back(ArchitectureTypeMapper::GetArchitectureTypeForName(StringUtils::Trim(architectureTypesMember.GetText().c_str())));
         architectureTypesMember = architectureTypesMember.NextNode("item");
       }
 
-      m_architectureTypesHasBeenSet = true;
+       m_architectureTypesHasBeenSet = true;
     }
     XmlNode virtualizationTypesNode = resultNode.FirstChild("VirtualizationType");
     if(!virtualizationTypesNode.IsNull())
     {
       XmlNode virtualizationTypesMember = virtualizationTypesNode.FirstChild("item");
+      m_virtualizationTypesHasBeenSet = !virtualizationTypesMember.IsNull();
       while(!virtualizationTypesMember.IsNull())
       {
         m_virtualizationTypes.push_back(VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(virtualizationTypesMember.GetText().c_str())));
         virtualizationTypesMember = virtualizationTypesMember.NextNode("item");
       }
 
-      m_virtualizationTypesHasBeenSet = true;
+       m_virtualizationTypesHasBeenSet = true;
     }
     XmlNode instanceRequirementsNode = resultNode.FirstChild("InstanceRequirements");
     if(!instanceRequirementsNode.IsNull())
     {
       m_instanceRequirements = instanceRequirementsNode;
       m_instanceRequirementsHasBeenSet = true;
+       m_instanceRequirementsHasBeenSet = true;
     }
   }
 

@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInferenceSchedulerResult::DescribeInferenceSchedulerResult() : 
-    m_status(InferenceSchedulerStatus::NOT_SET),
-    m_dataDelayOffsetInMinutes(0),
-    m_dataUploadFrequency(DataUploadFrequency::NOT_SET),
-    m_latestInferenceResult(LatestInferenceResult::NOT_SET)
-{
-}
-
 DescribeInferenceSchedulerResult::DescribeInferenceSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeInferenceSchedulerResult()
 {
   *this = result;
 }
@@ -37,93 +28,80 @@ DescribeInferenceSchedulerResult& DescribeInferenceSchedulerResult::operator =(c
   if(jsonValue.ValueExists("ModelArn"))
   {
     m_modelArn = jsonValue.GetString("ModelArn");
-
+    m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
+    m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceSchedulerName"))
   {
     m_inferenceSchedulerName = jsonValue.GetString("InferenceSchedulerName");
-
+    m_inferenceSchedulerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceSchedulerArn"))
   {
     m_inferenceSchedulerArn = jsonValue.GetString("InferenceSchedulerArn");
-
+    m_inferenceSchedulerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InferenceSchedulerStatusMapper::GetInferenceSchedulerStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataDelayOffsetInMinutes"))
   {
     m_dataDelayOffsetInMinutes = jsonValue.GetInt64("DataDelayOffsetInMinutes");
-
+    m_dataDelayOffsetInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataUploadFrequency"))
   {
     m_dataUploadFrequency = DataUploadFrequencyMapper::GetDataUploadFrequencyForName(jsonValue.GetString("DataUploadFrequency"));
-
+    m_dataUploadFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataInputConfiguration"))
   {
     m_dataInputConfiguration = jsonValue.GetObject("DataInputConfiguration");
-
+    m_dataInputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataOutputConfiguration"))
   {
     m_dataOutputConfiguration = jsonValue.GetObject("DataOutputConfiguration");
-
+    m_dataOutputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerSideKmsKeyId"))
   {
     m_serverSideKmsKeyId = jsonValue.GetString("ServerSideKmsKeyId");
-
+    m_serverSideKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestInferenceResult"))
   {
     m_latestInferenceResult = LatestInferenceResultMapper::GetLatestInferenceResultForName(jsonValue.GetString("LatestInferenceResult"));
-
+    m_latestInferenceResultHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

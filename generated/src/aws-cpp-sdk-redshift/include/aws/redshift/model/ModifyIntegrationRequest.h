@@ -21,7 +21,7 @@ namespace Model
   class ModifyIntegrationRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API ModifyIntegrationRequest();
+    AWS_REDSHIFT_API ModifyIntegrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,36 @@ namespace Model
     /**
      * <p>The unique identifier of the integration to modify.</p>
      */
-    inline const Aws::String& GetIntegrationArn() const{ return m_integrationArn; }
+    inline const Aws::String& GetIntegrationArn() const { return m_integrationArn; }
     inline bool IntegrationArnHasBeenSet() const { return m_integrationArnHasBeenSet; }
-    inline void SetIntegrationArn(const Aws::String& value) { m_integrationArnHasBeenSet = true; m_integrationArn = value; }
-    inline void SetIntegrationArn(Aws::String&& value) { m_integrationArnHasBeenSet = true; m_integrationArn = std::move(value); }
-    inline void SetIntegrationArn(const char* value) { m_integrationArnHasBeenSet = true; m_integrationArn.assign(value); }
-    inline ModifyIntegrationRequest& WithIntegrationArn(const Aws::String& value) { SetIntegrationArn(value); return *this;}
-    inline ModifyIntegrationRequest& WithIntegrationArn(Aws::String&& value) { SetIntegrationArn(std::move(value)); return *this;}
-    inline ModifyIntegrationRequest& WithIntegrationArn(const char* value) { SetIntegrationArn(value); return *this;}
+    template<typename IntegrationArnT = Aws::String>
+    void SetIntegrationArn(IntegrationArnT&& value) { m_integrationArnHasBeenSet = true; m_integrationArn = std::forward<IntegrationArnT>(value); }
+    template<typename IntegrationArnT = Aws::String>
+    ModifyIntegrationRequest& WithIntegrationArn(IntegrationArnT&& value) { SetIntegrationArn(std::forward<IntegrationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new description for the integration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ModifyIntegrationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ModifyIntegrationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ModifyIntegrationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ModifyIntegrationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new name for the integration.</p>
      */
-    inline const Aws::String& GetIntegrationName() const{ return m_integrationName; }
+    inline const Aws::String& GetIntegrationName() const { return m_integrationName; }
     inline bool IntegrationNameHasBeenSet() const { return m_integrationNameHasBeenSet; }
-    inline void SetIntegrationName(const Aws::String& value) { m_integrationNameHasBeenSet = true; m_integrationName = value; }
-    inline void SetIntegrationName(Aws::String&& value) { m_integrationNameHasBeenSet = true; m_integrationName = std::move(value); }
-    inline void SetIntegrationName(const char* value) { m_integrationNameHasBeenSet = true; m_integrationName.assign(value); }
-    inline ModifyIntegrationRequest& WithIntegrationName(const Aws::String& value) { SetIntegrationName(value); return *this;}
-    inline ModifyIntegrationRequest& WithIntegrationName(Aws::String&& value) { SetIntegrationName(std::move(value)); return *this;}
-    inline ModifyIntegrationRequest& WithIntegrationName(const char* value) { SetIntegrationName(value); return *this;}
+    template<typename IntegrationNameT = Aws::String>
+    void SetIntegrationName(IntegrationNameT&& value) { m_integrationNameHasBeenSet = true; m_integrationName = std::forward<IntegrationNameT>(value); }
+    template<typename IntegrationNameT = Aws::String>
+    ModifyIntegrationRequest& WithIntegrationName(IntegrationNameT&& value) { SetIntegrationName(std::forward<IntegrationNameT>(value)); return *this;}
     ///@}
   private:
 

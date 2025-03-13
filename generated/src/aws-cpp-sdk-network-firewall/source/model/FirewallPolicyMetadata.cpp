@@ -18,14 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-FirewallPolicyMetadata::FirewallPolicyMetadata() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 FirewallPolicyMetadata::FirewallPolicyMetadata(JsonView jsonValue)
-  : FirewallPolicyMetadata()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FirewallPolicyMetadata& FirewallPolicyMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

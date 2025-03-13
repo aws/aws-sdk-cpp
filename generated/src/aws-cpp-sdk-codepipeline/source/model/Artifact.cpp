@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-Artifact::Artifact() : 
-    m_nameHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 Artifact::Artifact(JsonView jsonValue)
-  : Artifact()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Artifact& Artifact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetString("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

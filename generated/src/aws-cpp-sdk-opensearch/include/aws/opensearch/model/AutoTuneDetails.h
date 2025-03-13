@@ -34,7 +34,7 @@ namespace Model
   class AutoTuneDetails
   {
   public:
-    AWS_OPENSEARCHSERVICE_API AutoTuneDetails();
+    AWS_OPENSEARCHSERVICE_API AutoTuneDetails() = default;
     AWS_OPENSEARCHSERVICE_API AutoTuneDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API AutoTuneDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>Container for details about a scheduled Auto-Tune action.</p>
      */
-    inline const ScheduledAutoTuneDetails& GetScheduledAutoTuneDetails() const{ return m_scheduledAutoTuneDetails; }
+    inline const ScheduledAutoTuneDetails& GetScheduledAutoTuneDetails() const { return m_scheduledAutoTuneDetails; }
     inline bool ScheduledAutoTuneDetailsHasBeenSet() const { return m_scheduledAutoTuneDetailsHasBeenSet; }
-    inline void SetScheduledAutoTuneDetails(const ScheduledAutoTuneDetails& value) { m_scheduledAutoTuneDetailsHasBeenSet = true; m_scheduledAutoTuneDetails = value; }
-    inline void SetScheduledAutoTuneDetails(ScheduledAutoTuneDetails&& value) { m_scheduledAutoTuneDetailsHasBeenSet = true; m_scheduledAutoTuneDetails = std::move(value); }
-    inline AutoTuneDetails& WithScheduledAutoTuneDetails(const ScheduledAutoTuneDetails& value) { SetScheduledAutoTuneDetails(value); return *this;}
-    inline AutoTuneDetails& WithScheduledAutoTuneDetails(ScheduledAutoTuneDetails&& value) { SetScheduledAutoTuneDetails(std::move(value)); return *this;}
+    template<typename ScheduledAutoTuneDetailsT = ScheduledAutoTuneDetails>
+    void SetScheduledAutoTuneDetails(ScheduledAutoTuneDetailsT&& value) { m_scheduledAutoTuneDetailsHasBeenSet = true; m_scheduledAutoTuneDetails = std::forward<ScheduledAutoTuneDetailsT>(value); }
+    template<typename ScheduledAutoTuneDetailsT = ScheduledAutoTuneDetails>
+    AutoTuneDetails& WithScheduledAutoTuneDetails(ScheduledAutoTuneDetailsT&& value) { SetScheduledAutoTuneDetails(std::forward<ScheduledAutoTuneDetailsT>(value)); return *this;}
     ///@}
   private:
 

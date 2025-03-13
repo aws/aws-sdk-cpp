@@ -18,19 +18,7 @@ namespace SQS
 namespace Model
 {
 
-Message::Message() : 
-    m_messageIdHasBeenSet(false),
-    m_receiptHandleHasBeenSet(false),
-    m_mD5OfBodyHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_mD5OfMessageAttributesHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false)
-{
-}
-
 Message::Message(JsonView jsonValue)
-  : Message()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ Message& Message::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MessageId"))
   {
     m_messageId = jsonValue.GetString("MessageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceiptHandle"))
   {
     m_receiptHandle = jsonValue.GetString("ReceiptHandle");
-
     m_receiptHandleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MD5OfBody"))
   {
     m_mD5OfBody = jsonValue.GetString("MD5OfBody");
-
     m_mD5OfBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -74,14 +54,11 @@ Message& Message::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MD5OfMessageAttributes"))
   {
     m_mD5OfMessageAttributes = jsonValue.GetString("MD5OfMessageAttributes");
-
     m_mD5OfMessageAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageAttributes"))
   {
     Aws::Map<Aws::String, JsonView> messageAttributesJsonMap = jsonValue.GetObject("MessageAttributes").GetAllObjects();
@@ -91,7 +68,6 @@ Message& Message::operator =(JsonView jsonValue)
     }
     m_messageAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-UpdateGatewayBridgeSourceRequest::UpdateGatewayBridgeSourceRequest() : 
-    m_bridgeArnHasBeenSet(false),
-    m_vpcInterfaceAttachmentHasBeenSet(false)
-{
-}
-
 UpdateGatewayBridgeSourceRequest::UpdateGatewayBridgeSourceRequest(JsonView jsonValue)
-  : UpdateGatewayBridgeSourceRequest()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UpdateGatewayBridgeSourceRequest& UpdateGatewayBridgeSourceRequest::operator =(J
   if(jsonValue.ValueExists("bridgeArn"))
   {
     m_bridgeArn = jsonValue.GetString("bridgeArn");
-
     m_bridgeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcInterfaceAttachment"))
   {
     m_vpcInterfaceAttachment = jsonValue.GetObject("vpcInterfaceAttachment");
-
     m_vpcInterfaceAttachmentHasBeenSet = true;
   }
-
   return *this;
 }
 

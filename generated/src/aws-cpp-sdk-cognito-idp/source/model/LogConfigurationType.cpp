@@ -18,19 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-LogConfigurationType::LogConfigurationType() : 
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_eventSource(EventSourceName::NOT_SET),
-    m_eventSourceHasBeenSet(false),
-    m_cloudWatchLogsConfigurationHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_firehoseConfigurationHasBeenSet(false)
-{
-}
-
 LogConfigurationType::LogConfigurationType(JsonView jsonValue)
-  : LogConfigurationType()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ LogConfigurationType& LogConfigurationType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LogLevel"))
   {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogLevel"));
-
     m_logLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventSource"))
   {
     m_eventSource = EventSourceNameMapper::GetEventSourceNameForName(jsonValue.GetString("EventSource"));
-
     m_eventSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLogsConfiguration"))
   {
     m_cloudWatchLogsConfiguration = jsonValue.GetObject("CloudWatchLogsConfiguration");
-
     m_cloudWatchLogsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Configuration"))
   {
     m_s3Configuration = jsonValue.GetObject("S3Configuration");
-
     m_s3ConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirehoseConfiguration"))
   {
     m_firehoseConfiguration = jsonValue.GetObject("FirehoseConfiguration");
-
     m_firehoseConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

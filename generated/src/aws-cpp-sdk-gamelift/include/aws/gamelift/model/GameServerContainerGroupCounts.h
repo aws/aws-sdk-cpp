@@ -39,7 +39,7 @@ namespace Model
   class GameServerContainerGroupCounts
   {
   public:
-    AWS_GAMELIFT_API GameServerContainerGroupCounts();
+    AWS_GAMELIFT_API GameServerContainerGroupCounts() = default;
     AWS_GAMELIFT_API GameServerContainerGroupCounts(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API GameServerContainerGroupCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * <p> The number of container groups that are starting up but haven't yet
      * registered. </p>
      */
-    inline int GetPENDING() const{ return m_pENDING; }
+    inline int GetPENDING() const { return m_pENDING; }
     inline bool PENDINGHasBeenSet() const { return m_pENDINGHasBeenSet; }
     inline void SetPENDING(int value) { m_pENDINGHasBeenSet = true; m_pENDING = value; }
     inline GameServerContainerGroupCounts& WithPENDING(int value) { SetPENDING(value); return *this;}
@@ -60,7 +60,7 @@ namespace Model
     /**
      * <p> The number of container groups that have active game sessions. </p>
      */
-    inline int GetACTIVE() const{ return m_aCTIVE; }
+    inline int GetACTIVE() const { return m_aCTIVE; }
     inline bool ACTIVEHasBeenSet() const { return m_aCTIVEHasBeenSet; }
     inline void SetACTIVE(int value) { m_aCTIVEHasBeenSet = true; m_aCTIVE = value; }
     inline GameServerContainerGroupCounts& WithACTIVE(int value) { SetACTIVE(value); return *this;}
@@ -70,7 +70,7 @@ namespace Model
     /**
      * <p> The number of container groups that have no active game sessions. </p>
      */
-    inline int GetIDLE() const{ return m_iDLE; }
+    inline int GetIDLE() const { return m_iDLE; }
     inline bool IDLEHasBeenSet() const { return m_iDLEHasBeenSet; }
     inline void SetIDLE(int value) { m_iDLEHasBeenSet = true; m_iDLE = value; }
     inline GameServerContainerGroupCounts& WithIDLE(int value) { SetIDLE(value); return *this;}
@@ -81,23 +81,23 @@ namespace Model
      * <p> The number of container groups that are in the process of shutting down.
      * </p>
      */
-    inline int GetTERMINATING() const{ return m_tERMINATING; }
+    inline int GetTERMINATING() const { return m_tERMINATING; }
     inline bool TERMINATINGHasBeenSet() const { return m_tERMINATINGHasBeenSet; }
     inline void SetTERMINATING(int value) { m_tERMINATINGHasBeenSet = true; m_tERMINATING = value; }
     inline GameServerContainerGroupCounts& WithTERMINATING(int value) { SetTERMINATING(value); return *this;}
     ///@}
   private:
 
-    int m_pENDING;
+    int m_pENDING{0};
     bool m_pENDINGHasBeenSet = false;
 
-    int m_aCTIVE;
+    int m_aCTIVE{0};
     bool m_aCTIVEHasBeenSet = false;
 
-    int m_iDLE;
+    int m_iDLE{0};
     bool m_iDLEHasBeenSet = false;
 
-    int m_tERMINATING;
+    int m_tERMINATING{0};
     bool m_tERMINATINGHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-EventInfo::EventInfo() : 
-    m_nameHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 EventInfo::EventInfo(JsonView jsonValue)
-  : EventInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EventInfo& EventInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

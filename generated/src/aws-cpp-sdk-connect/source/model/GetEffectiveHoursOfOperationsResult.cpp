@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEffectiveHoursOfOperationsResult::GetEffectiveHoursOfOperationsResult()
-{
-}
-
 GetEffectiveHoursOfOperationsResult::GetEffectiveHoursOfOperationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ GetEffectiveHoursOfOperationsResult& GetEffectiveHoursOfOperationsResult::operat
     {
       m_effectiveHoursOfOperationList.push_back(effectiveHoursOfOperationListJsonList[effectiveHoursOfOperationListIndex].AsObject());
     }
+    m_effectiveHoursOfOperationListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeZone"))
   {
     m_timeZone = jsonValue.GetString("TimeZone");
-
+    m_timeZoneHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

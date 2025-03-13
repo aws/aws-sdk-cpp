@@ -33,7 +33,7 @@ namespace Model
   class TestSetSortBy
   {
   public:
-    AWS_LEXMODELSV2_API TestSetSortBy();
+    AWS_LEXMODELSV2_API TestSetSortBy() = default;
     AWS_LEXMODELSV2_API TestSetSortBy(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TestSetSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,27 @@ namespace Model
      * <p>Specifies whether to sort the test sets by name or by the time they were last
      * updated.</p>
      */
-    inline const TestSetSortAttribute& GetAttribute() const{ return m_attribute; }
+    inline TestSetSortAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const TestSetSortAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(TestSetSortAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline TestSetSortBy& WithAttribute(const TestSetSortAttribute& value) { SetAttribute(value); return *this;}
-    inline TestSetSortBy& WithAttribute(TestSetSortAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(TestSetSortAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline TestSetSortBy& WithAttribute(TestSetSortAttribute value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether to sort in ascending or descending order.</p>
      */
-    inline const SortOrder& GetOrder() const{ return m_order; }
+    inline SortOrder GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-    inline void SetOrder(const SortOrder& value) { m_orderHasBeenSet = true; m_order = value; }
-    inline void SetOrder(SortOrder&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-    inline TestSetSortBy& WithOrder(const SortOrder& value) { SetOrder(value); return *this;}
-    inline TestSetSortBy& WithOrder(SortOrder&& value) { SetOrder(std::move(value)); return *this;}
+    inline void SetOrder(SortOrder value) { m_orderHasBeenSet = true; m_order = value; }
+    inline TestSetSortBy& WithOrder(SortOrder value) { SetOrder(value); return *this;}
     ///@}
   private:
 
-    TestSetSortAttribute m_attribute;
+    TestSetSortAttribute m_attribute{TestSetSortAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
-    SortOrder m_order;
+    SortOrder m_order{SortOrder::NOT_SET};
     bool m_orderHasBeenSet = false;
   };
 

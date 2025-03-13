@@ -18,14 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-SessionKeyVisa::SessionKeyVisa() : 
-    m_primaryAccountNumberHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false)
-{
-}
-
 SessionKeyVisa::SessionKeyVisa(JsonView jsonValue)
-  : SessionKeyVisa()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SessionKeyVisa& SessionKeyVisa::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
     m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
-
     m_primaryAccountNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PanSequenceNumber"))
   {
     m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
     m_panSequenceNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

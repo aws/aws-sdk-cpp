@@ -29,7 +29,7 @@ namespace Model
   class ListContentAssociationsResult
   {
   public:
-    AWS_QCONNECT_API ListContentAssociationsResult();
+    AWS_QCONNECT_API ListContentAssociationsResult() = default;
     AWS_QCONNECT_API ListContentAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API ListContentAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summary information about content associations.</p>
      */
-    inline const Aws::Vector<ContentAssociationSummary>& GetContentAssociationSummaries() const{ return m_contentAssociationSummaries; }
-    inline void SetContentAssociationSummaries(const Aws::Vector<ContentAssociationSummary>& value) { m_contentAssociationSummaries = value; }
-    inline void SetContentAssociationSummaries(Aws::Vector<ContentAssociationSummary>&& value) { m_contentAssociationSummaries = std::move(value); }
-    inline ListContentAssociationsResult& WithContentAssociationSummaries(const Aws::Vector<ContentAssociationSummary>& value) { SetContentAssociationSummaries(value); return *this;}
-    inline ListContentAssociationsResult& WithContentAssociationSummaries(Aws::Vector<ContentAssociationSummary>&& value) { SetContentAssociationSummaries(std::move(value)); return *this;}
-    inline ListContentAssociationsResult& AddContentAssociationSummaries(const ContentAssociationSummary& value) { m_contentAssociationSummaries.push_back(value); return *this; }
-    inline ListContentAssociationsResult& AddContentAssociationSummaries(ContentAssociationSummary&& value) { m_contentAssociationSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContentAssociationSummary>& GetContentAssociationSummaries() const { return m_contentAssociationSummaries; }
+    template<typename ContentAssociationSummariesT = Aws::Vector<ContentAssociationSummary>>
+    void SetContentAssociationSummaries(ContentAssociationSummariesT&& value) { m_contentAssociationSummariesHasBeenSet = true; m_contentAssociationSummaries = std::forward<ContentAssociationSummariesT>(value); }
+    template<typename ContentAssociationSummariesT = Aws::Vector<ContentAssociationSummary>>
+    ListContentAssociationsResult& WithContentAssociationSummaries(ContentAssociationSummariesT&& value) { SetContentAssociationSummaries(std::forward<ContentAssociationSummariesT>(value)); return *this;}
+    template<typename ContentAssociationSummariesT = ContentAssociationSummary>
+    ListContentAssociationsResult& AddContentAssociationSummaries(ContentAssociationSummariesT&& value) { m_contentAssociationSummariesHasBeenSet = true; m_contentAssociationSummaries.emplace_back(std::forward<ContentAssociationSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListContentAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListContentAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListContentAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListContentAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListContentAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListContentAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListContentAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListContentAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContentAssociationSummary> m_contentAssociationSummaries;
+    bool m_contentAssociationSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

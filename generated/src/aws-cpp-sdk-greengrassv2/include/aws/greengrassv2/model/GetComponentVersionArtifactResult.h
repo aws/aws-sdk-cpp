@@ -27,7 +27,7 @@ namespace Model
   class GetComponentVersionArtifactResult
   {
   public:
-    AWS_GREENGRASSV2_API GetComponentVersionArtifactResult();
+    AWS_GREENGRASSV2_API GetComponentVersionArtifactResult() = default;
     AWS_GREENGRASSV2_API GetComponentVersionArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASSV2_API GetComponentVersionArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The URL of the artifact.</p>
      */
-    inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
-    inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrl = value; }
-    inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrl = std::move(value); }
-    inline void SetPreSignedUrl(const char* value) { m_preSignedUrl.assign(value); }
-    inline GetComponentVersionArtifactResult& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
-    inline GetComponentVersionArtifactResult& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
-    inline GetComponentVersionArtifactResult& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
+    inline const Aws::String& GetPreSignedUrl() const { return m_preSignedUrl; }
+    template<typename PreSignedUrlT = Aws::String>
+    void SetPreSignedUrl(PreSignedUrlT&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::forward<PreSignedUrlT>(value); }
+    template<typename PreSignedUrlT = Aws::String>
+    GetComponentVersionArtifactResult& WithPreSignedUrl(PreSignedUrlT&& value) { SetPreSignedUrl(std::forward<PreSignedUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetComponentVersionArtifactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetComponentVersionArtifactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetComponentVersionArtifactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetComponentVersionArtifactResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_preSignedUrl;
+    bool m_preSignedUrlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

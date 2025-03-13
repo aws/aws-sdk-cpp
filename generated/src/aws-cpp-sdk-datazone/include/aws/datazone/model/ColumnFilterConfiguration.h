@@ -32,7 +32,7 @@ namespace Model
   class ColumnFilterConfiguration
   {
   public:
-    AWS_DATAZONE_API ColumnFilterConfiguration();
+    AWS_DATAZONE_API ColumnFilterConfiguration() = default;
     AWS_DATAZONE_API ColumnFilterConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API ColumnFilterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>Specifies whether to include column names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludedColumnNames() const{ return m_includedColumnNames; }
+    inline const Aws::Vector<Aws::String>& GetIncludedColumnNames() const { return m_includedColumnNames; }
     inline bool IncludedColumnNamesHasBeenSet() const { return m_includedColumnNamesHasBeenSet; }
-    inline void SetIncludedColumnNames(const Aws::Vector<Aws::String>& value) { m_includedColumnNamesHasBeenSet = true; m_includedColumnNames = value; }
-    inline void SetIncludedColumnNames(Aws::Vector<Aws::String>&& value) { m_includedColumnNamesHasBeenSet = true; m_includedColumnNames = std::move(value); }
-    inline ColumnFilterConfiguration& WithIncludedColumnNames(const Aws::Vector<Aws::String>& value) { SetIncludedColumnNames(value); return *this;}
-    inline ColumnFilterConfiguration& WithIncludedColumnNames(Aws::Vector<Aws::String>&& value) { SetIncludedColumnNames(std::move(value)); return *this;}
-    inline ColumnFilterConfiguration& AddIncludedColumnNames(const Aws::String& value) { m_includedColumnNamesHasBeenSet = true; m_includedColumnNames.push_back(value); return *this; }
-    inline ColumnFilterConfiguration& AddIncludedColumnNames(Aws::String&& value) { m_includedColumnNamesHasBeenSet = true; m_includedColumnNames.push_back(std::move(value)); return *this; }
-    inline ColumnFilterConfiguration& AddIncludedColumnNames(const char* value) { m_includedColumnNamesHasBeenSet = true; m_includedColumnNames.push_back(value); return *this; }
+    template<typename IncludedColumnNamesT = Aws::Vector<Aws::String>>
+    void SetIncludedColumnNames(IncludedColumnNamesT&& value) { m_includedColumnNamesHasBeenSet = true; m_includedColumnNames = std::forward<IncludedColumnNamesT>(value); }
+    template<typename IncludedColumnNamesT = Aws::Vector<Aws::String>>
+    ColumnFilterConfiguration& WithIncludedColumnNames(IncludedColumnNamesT&& value) { SetIncludedColumnNames(std::forward<IncludedColumnNamesT>(value)); return *this;}
+    template<typename IncludedColumnNamesT = Aws::String>
+    ColumnFilterConfiguration& AddIncludedColumnNames(IncludedColumnNamesT&& value) { m_includedColumnNamesHasBeenSet = true; m_includedColumnNames.emplace_back(std::forward<IncludedColumnNamesT>(value)); return *this; }
     ///@}
   private:
 

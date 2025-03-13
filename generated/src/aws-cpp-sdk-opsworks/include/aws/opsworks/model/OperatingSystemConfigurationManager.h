@@ -33,7 +33,7 @@ namespace Model
   class OperatingSystemConfigurationManager
   {
   public:
-    AWS_OPSWORKS_API OperatingSystemConfigurationManager();
+    AWS_OPSWORKS_API OperatingSystemConfigurationManager() = default;
     AWS_OPSWORKS_API OperatingSystemConfigurationManager(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API OperatingSystemConfigurationManager& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the configuration manager, which is Chef.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline OperatingSystemConfigurationManager& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline OperatingSystemConfigurationManager& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline OperatingSystemConfigurationManager& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    OperatingSystemConfigurationManager& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The versions of the configuration manager that are supported by an operating
      * system.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline OperatingSystemConfigurationManager& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline OperatingSystemConfigurationManager& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline OperatingSystemConfigurationManager& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    OperatingSystemConfigurationManager& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

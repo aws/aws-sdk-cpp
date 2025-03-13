@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddUploadBufferRequest::AddUploadBufferRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_diskIdsHasBeenSet(false)
-{
-}
-
 Aws::String AddUploadBufferRequest::SerializePayload() const
 {
   JsonValue payload;

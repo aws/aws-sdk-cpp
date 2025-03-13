@@ -18,15 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ImportAssetsFromRedshiftDataSharesResponseDetails::ImportAssetsFromRedshiftDataSharesResponseDetails() : 
-    m_assetSourcesHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 ImportAssetsFromRedshiftDataSharesResponseDetails::ImportAssetsFromRedshiftDataSharesResponseDetails(JsonView jsonValue)
-  : ImportAssetsFromRedshiftDataSharesResponseDetails()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ ImportAssetsFromRedshiftDataSharesResponseDetails& ImportAssetsFromRedshiftDataS
     }
     m_assetSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

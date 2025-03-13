@@ -30,7 +30,7 @@ namespace Model
   class DescribeVerifiedAccessTrustProvidersResponse
   {
   public:
-    AWS_EC2_API DescribeVerifiedAccessTrustProvidersResponse();
+    AWS_EC2_API DescribeVerifiedAccessTrustProvidersResponse() = default;
     AWS_EC2_API DescribeVerifiedAccessTrustProvidersResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeVerifiedAccessTrustProvidersResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Details about the Verified Access trust providers.</p>
      */
-    inline const Aws::Vector<VerifiedAccessTrustProvider>& GetVerifiedAccessTrustProviders() const{ return m_verifiedAccessTrustProviders; }
-    inline void SetVerifiedAccessTrustProviders(const Aws::Vector<VerifiedAccessTrustProvider>& value) { m_verifiedAccessTrustProviders = value; }
-    inline void SetVerifiedAccessTrustProviders(Aws::Vector<VerifiedAccessTrustProvider>&& value) { m_verifiedAccessTrustProviders = std::move(value); }
-    inline DescribeVerifiedAccessTrustProvidersResponse& WithVerifiedAccessTrustProviders(const Aws::Vector<VerifiedAccessTrustProvider>& value) { SetVerifiedAccessTrustProviders(value); return *this;}
-    inline DescribeVerifiedAccessTrustProvidersResponse& WithVerifiedAccessTrustProviders(Aws::Vector<VerifiedAccessTrustProvider>&& value) { SetVerifiedAccessTrustProviders(std::move(value)); return *this;}
-    inline DescribeVerifiedAccessTrustProvidersResponse& AddVerifiedAccessTrustProviders(const VerifiedAccessTrustProvider& value) { m_verifiedAccessTrustProviders.push_back(value); return *this; }
-    inline DescribeVerifiedAccessTrustProvidersResponse& AddVerifiedAccessTrustProviders(VerifiedAccessTrustProvider&& value) { m_verifiedAccessTrustProviders.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VerifiedAccessTrustProvider>& GetVerifiedAccessTrustProviders() const { return m_verifiedAccessTrustProviders; }
+    template<typename VerifiedAccessTrustProvidersT = Aws::Vector<VerifiedAccessTrustProvider>>
+    void SetVerifiedAccessTrustProviders(VerifiedAccessTrustProvidersT&& value) { m_verifiedAccessTrustProvidersHasBeenSet = true; m_verifiedAccessTrustProviders = std::forward<VerifiedAccessTrustProvidersT>(value); }
+    template<typename VerifiedAccessTrustProvidersT = Aws::Vector<VerifiedAccessTrustProvider>>
+    DescribeVerifiedAccessTrustProvidersResponse& WithVerifiedAccessTrustProviders(VerifiedAccessTrustProvidersT&& value) { SetVerifiedAccessTrustProviders(std::forward<VerifiedAccessTrustProvidersT>(value)); return *this;}
+    template<typename VerifiedAccessTrustProvidersT = VerifiedAccessTrustProvider>
+    DescribeVerifiedAccessTrustProvidersResponse& AddVerifiedAccessTrustProviders(VerifiedAccessTrustProvidersT&& value) { m_verifiedAccessTrustProvidersHasBeenSet = true; m_verifiedAccessTrustProviders.emplace_back(std::forward<VerifiedAccessTrustProvidersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeVerifiedAccessTrustProvidersResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeVerifiedAccessTrustProvidersResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeVerifiedAccessTrustProvidersResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeVerifiedAccessTrustProvidersResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeVerifiedAccessTrustProvidersResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeVerifiedAccessTrustProvidersResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeVerifiedAccessTrustProvidersResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VerifiedAccessTrustProvider> m_verifiedAccessTrustProviders;
+    bool m_verifiedAccessTrustProvidersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

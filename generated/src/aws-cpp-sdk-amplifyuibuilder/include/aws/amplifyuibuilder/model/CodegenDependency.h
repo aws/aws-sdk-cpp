@@ -32,7 +32,7 @@ namespace Model
   class CodegenDependency
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API CodegenDependency();
+    AWS_AMPLIFYUIBUILDER_API CodegenDependency() = default;
     AWS_AMPLIFYUIBUILDER_API CodegenDependency(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API CodegenDependency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>Name of the dependency package.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CodegenDependency& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CodegenDependency& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CodegenDependency& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CodegenDependency& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the version of the supported dependency package.</p>
      */
-    inline const Aws::String& GetSupportedVersion() const{ return m_supportedVersion; }
+    inline const Aws::String& GetSupportedVersion() const { return m_supportedVersion; }
     inline bool SupportedVersionHasBeenSet() const { return m_supportedVersionHasBeenSet; }
-    inline void SetSupportedVersion(const Aws::String& value) { m_supportedVersionHasBeenSet = true; m_supportedVersion = value; }
-    inline void SetSupportedVersion(Aws::String&& value) { m_supportedVersionHasBeenSet = true; m_supportedVersion = std::move(value); }
-    inline void SetSupportedVersion(const char* value) { m_supportedVersionHasBeenSet = true; m_supportedVersion.assign(value); }
-    inline CodegenDependency& WithSupportedVersion(const Aws::String& value) { SetSupportedVersion(value); return *this;}
-    inline CodegenDependency& WithSupportedVersion(Aws::String&& value) { SetSupportedVersion(std::move(value)); return *this;}
-    inline CodegenDependency& WithSupportedVersion(const char* value) { SetSupportedVersion(value); return *this;}
+    template<typename SupportedVersionT = Aws::String>
+    void SetSupportedVersion(SupportedVersionT&& value) { m_supportedVersionHasBeenSet = true; m_supportedVersion = std::forward<SupportedVersionT>(value); }
+    template<typename SupportedVersionT = Aws::String>
+    CodegenDependency& WithSupportedVersion(SupportedVersionT&& value) { SetSupportedVersion(std::forward<SupportedVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * <p>Determines if the dependency package is using Semantic versioning. If set to
      * true, it indicates that the dependency package uses Semantic versioning.</p>
      */
-    inline bool GetIsSemVer() const{ return m_isSemVer; }
+    inline bool GetIsSemVer() const { return m_isSemVer; }
     inline bool IsSemVerHasBeenSet() const { return m_isSemVerHasBeenSet; }
     inline void SetIsSemVer(bool value) { m_isSemVerHasBeenSet = true; m_isSemVer = value; }
     inline CodegenDependency& WithIsSemVer(bool value) { SetIsSemVer(value); return *this;}
@@ -82,14 +78,12 @@ namespace Model
      * <p>Indicates the reason to include the dependency package in your project
      * code.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline CodegenDependency& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline CodegenDependency& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline CodegenDependency& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    CodegenDependency& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -99,7 +93,7 @@ namespace Model
     Aws::String m_supportedVersion;
     bool m_supportedVersionHasBeenSet = false;
 
-    bool m_isSemVer;
+    bool m_isSemVer{false};
     bool m_isSemVerHasBeenSet = false;
 
     Aws::String m_reason;

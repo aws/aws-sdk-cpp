@@ -21,7 +21,7 @@ namespace Model
   class DescribeStackDriftDetectionStatusRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeStackDriftDetectionStatusRequest();
+    AWS_CLOUDFORMATION_API DescribeStackDriftDetectionStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * time this operation is run. However, the number of drift results CloudFormation
      * retains for any given stack, and for how long, may vary.</p>
      */
-    inline const Aws::String& GetStackDriftDetectionId() const{ return m_stackDriftDetectionId; }
+    inline const Aws::String& GetStackDriftDetectionId() const { return m_stackDriftDetectionId; }
     inline bool StackDriftDetectionIdHasBeenSet() const { return m_stackDriftDetectionIdHasBeenSet; }
-    inline void SetStackDriftDetectionId(const Aws::String& value) { m_stackDriftDetectionIdHasBeenSet = true; m_stackDriftDetectionId = value; }
-    inline void SetStackDriftDetectionId(Aws::String&& value) { m_stackDriftDetectionIdHasBeenSet = true; m_stackDriftDetectionId = std::move(value); }
-    inline void SetStackDriftDetectionId(const char* value) { m_stackDriftDetectionIdHasBeenSet = true; m_stackDriftDetectionId.assign(value); }
-    inline DescribeStackDriftDetectionStatusRequest& WithStackDriftDetectionId(const Aws::String& value) { SetStackDriftDetectionId(value); return *this;}
-    inline DescribeStackDriftDetectionStatusRequest& WithStackDriftDetectionId(Aws::String&& value) { SetStackDriftDetectionId(std::move(value)); return *this;}
-    inline DescribeStackDriftDetectionStatusRequest& WithStackDriftDetectionId(const char* value) { SetStackDriftDetectionId(value); return *this;}
+    template<typename StackDriftDetectionIdT = Aws::String>
+    void SetStackDriftDetectionId(StackDriftDetectionIdT&& value) { m_stackDriftDetectionIdHasBeenSet = true; m_stackDriftDetectionId = std::forward<StackDriftDetectionIdT>(value); }
+    template<typename StackDriftDetectionIdT = Aws::String>
+    DescribeStackDriftDetectionStatusRequest& WithStackDriftDetectionId(StackDriftDetectionIdT&& value) { SetStackDriftDetectionId(std::forward<StackDriftDetectionIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class GetDeploymentsRequest : public SagemakerEdgeManagerRequest
   {
   public:
-    AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsRequest();
+    AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
      * <p>The unique name of the device you want to get the configuration of active
      * deployments from.</p>
      */
-    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+    inline const Aws::String& GetDeviceName() const { return m_deviceName; }
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
-    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
-    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
-    inline GetDeploymentsRequest& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-    inline GetDeploymentsRequest& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-    inline GetDeploymentsRequest& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+    template<typename DeviceNameT = Aws::String>
+    void SetDeviceName(DeviceNameT&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::forward<DeviceNameT>(value); }
+    template<typename DeviceNameT = Aws::String>
+    GetDeploymentsRequest& WithDeviceName(DeviceNameT&& value) { SetDeviceName(std::forward<DeviceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the fleet that the device belongs to.</p>
      */
-    inline const Aws::String& GetDeviceFleetName() const{ return m_deviceFleetName; }
+    inline const Aws::String& GetDeviceFleetName() const { return m_deviceFleetName; }
     inline bool DeviceFleetNameHasBeenSet() const { return m_deviceFleetNameHasBeenSet; }
-    inline void SetDeviceFleetName(const Aws::String& value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName = value; }
-    inline void SetDeviceFleetName(Aws::String&& value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName = std::move(value); }
-    inline void SetDeviceFleetName(const char* value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName.assign(value); }
-    inline GetDeploymentsRequest& WithDeviceFleetName(const Aws::String& value) { SetDeviceFleetName(value); return *this;}
-    inline GetDeploymentsRequest& WithDeviceFleetName(Aws::String&& value) { SetDeviceFleetName(std::move(value)); return *this;}
-    inline GetDeploymentsRequest& WithDeviceFleetName(const char* value) { SetDeviceFleetName(value); return *this;}
+    template<typename DeviceFleetNameT = Aws::String>
+    void SetDeviceFleetName(DeviceFleetNameT&& value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName = std::forward<DeviceFleetNameT>(value); }
+    template<typename DeviceFleetNameT = Aws::String>
+    GetDeploymentsRequest& WithDeviceFleetName(DeviceFleetNameT&& value) { SetDeviceFleetName(std::forward<DeviceFleetNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateKeyRegistrationRequest::UpdateKeyRegistrationRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_keyRegistrationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateKeyRegistrationRequest::SerializePayload() const
 {
   JsonValue payload;

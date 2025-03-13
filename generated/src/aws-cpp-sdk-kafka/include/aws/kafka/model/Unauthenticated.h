@@ -24,7 +24,7 @@ namespace Model
   class Unauthenticated
   {
   public:
-    AWS_KAFKA_API Unauthenticated();
+    AWS_KAFKA_API Unauthenticated() = default;
     AWS_KAFKA_API Unauthenticated(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Unauthenticated& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -37,14 +37,14 @@ namespace Model
      * unauthenticated traffic to your cluster.</p>
          
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline Unauthenticated& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

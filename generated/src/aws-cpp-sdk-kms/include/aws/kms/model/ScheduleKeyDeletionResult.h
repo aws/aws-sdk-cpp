@@ -29,7 +29,7 @@ namespace Model
   class ScheduleKeyDeletionResult
   {
   public:
-    AWS_KMS_API ScheduleKeyDeletionResult();
+    AWS_KMS_API ScheduleKeyDeletionResult() = default;
     AWS_KMS_API ScheduleKeyDeletionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KMS_API ScheduleKeyDeletionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
      * ARN</a>) of the KMS key whose deletion is scheduled.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
-    inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyId.assign(value); }
-    inline ScheduleKeyDeletionResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline ScheduleKeyDeletionResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline ScheduleKeyDeletionResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    ScheduleKeyDeletionResult& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,11 +54,11 @@ namespace Model
      * deletion date for the primary key isn't known until its last replica key is
      * deleted.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeletionDate() const{ return m_deletionDate; }
-    inline void SetDeletionDate(const Aws::Utils::DateTime& value) { m_deletionDate = value; }
-    inline void SetDeletionDate(Aws::Utils::DateTime&& value) { m_deletionDate = std::move(value); }
-    inline ScheduleKeyDeletionResult& WithDeletionDate(const Aws::Utils::DateTime& value) { SetDeletionDate(value); return *this;}
-    inline ScheduleKeyDeletionResult& WithDeletionDate(Aws::Utils::DateTime&& value) { SetDeletionDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetDeletionDate() const { return m_deletionDate; }
+    template<typename DeletionDateT = Aws::Utils::DateTime>
+    void SetDeletionDate(DeletionDateT&& value) { m_deletionDateHasBeenSet = true; m_deletionDate = std::forward<DeletionDateT>(value); }
+    template<typename DeletionDateT = Aws::Utils::DateTime>
+    ScheduleKeyDeletionResult& WithDeletionDate(DeletionDateT&& value) { SetDeletionDate(std::forward<DeletionDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,11 +68,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
      * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const KeyState& GetKeyState() const{ return m_keyState; }
-    inline void SetKeyState(const KeyState& value) { m_keyState = value; }
-    inline void SetKeyState(KeyState&& value) { m_keyState = std::move(value); }
-    inline ScheduleKeyDeletionResult& WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
-    inline ScheduleKeyDeletionResult& WithKeyState(KeyState&& value) { SetKeyState(std::move(value)); return *this;}
+    inline KeyState GetKeyState() const { return m_keyState; }
+    inline void SetKeyState(KeyState value) { m_keyStateHasBeenSet = true; m_keyState = value; }
+    inline ScheduleKeyDeletionResult& WithKeyState(KeyState value) { SetKeyState(value); return *this;}
     ///@}
 
     ///@{
@@ -84,32 +80,35 @@ namespace Model
      * of its replica keys is deleted. Otherwise, the waiting period begins
      * immediately.</p>
      */
-    inline int GetPendingWindowInDays() const{ return m_pendingWindowInDays; }
-    inline void SetPendingWindowInDays(int value) { m_pendingWindowInDays = value; }
+    inline int GetPendingWindowInDays() const { return m_pendingWindowInDays; }
+    inline void SetPendingWindowInDays(int value) { m_pendingWindowInDaysHasBeenSet = true; m_pendingWindowInDays = value; }
     inline ScheduleKeyDeletionResult& WithPendingWindowInDays(int value) { SetPendingWindowInDays(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ScheduleKeyDeletionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ScheduleKeyDeletionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ScheduleKeyDeletionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ScheduleKeyDeletionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyId;
+    bool m_keyIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deletionDate;
+    Aws::Utils::DateTime m_deletionDate{};
+    bool m_deletionDateHasBeenSet = false;
 
-    KeyState m_keyState;
+    KeyState m_keyState{KeyState::NOT_SET};
+    bool m_keyStateHasBeenSet = false;
 
-    int m_pendingWindowInDays;
+    int m_pendingWindowInDays{0};
+    bool m_pendingWindowInDaysHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

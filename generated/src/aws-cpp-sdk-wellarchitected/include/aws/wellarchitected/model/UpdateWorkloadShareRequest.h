@@ -25,7 +25,7 @@ namespace Model
   class UpdateWorkloadShareRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API UpdateWorkloadShareRequest();
+    AWS_WELLARCHITECTED_API UpdateWorkloadShareRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,36 +38,30 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetShareId() const{ return m_shareId; }
+    inline const Aws::String& GetShareId() const { return m_shareId; }
     inline bool ShareIdHasBeenSet() const { return m_shareIdHasBeenSet; }
-    inline void SetShareId(const Aws::String& value) { m_shareIdHasBeenSet = true; m_shareId = value; }
-    inline void SetShareId(Aws::String&& value) { m_shareIdHasBeenSet = true; m_shareId = std::move(value); }
-    inline void SetShareId(const char* value) { m_shareIdHasBeenSet = true; m_shareId.assign(value); }
-    inline UpdateWorkloadShareRequest& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-    inline UpdateWorkloadShareRequest& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-    inline UpdateWorkloadShareRequest& WithShareId(const char* value) { SetShareId(value); return *this;}
+    template<typename ShareIdT = Aws::String>
+    void SetShareId(ShareIdT&& value) { m_shareIdHasBeenSet = true; m_shareId = std::forward<ShareIdT>(value); }
+    template<typename ShareIdT = Aws::String>
+    UpdateWorkloadShareRequest& WithShareId(ShareIdT&& value) { SetShareId(std::forward<ShareIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline UpdateWorkloadShareRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline UpdateWorkloadShareRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline UpdateWorkloadShareRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    UpdateWorkloadShareRequest& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const PermissionType& GetPermissionType() const{ return m_permissionType; }
+    inline PermissionType GetPermissionType() const { return m_permissionType; }
     inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
-    inline void SetPermissionType(const PermissionType& value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
-    inline void SetPermissionType(PermissionType&& value) { m_permissionTypeHasBeenSet = true; m_permissionType = std::move(value); }
-    inline UpdateWorkloadShareRequest& WithPermissionType(const PermissionType& value) { SetPermissionType(value); return *this;}
-    inline UpdateWorkloadShareRequest& WithPermissionType(PermissionType&& value) { SetPermissionType(std::move(value)); return *this;}
+    inline void SetPermissionType(PermissionType value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
+    inline UpdateWorkloadShareRequest& WithPermissionType(PermissionType value) { SetPermissionType(value); return *this;}
     ///@}
   private:
 
@@ -77,7 +71,7 @@ namespace Model
     Aws::String m_workloadId;
     bool m_workloadIdHasBeenSet = false;
 
-    PermissionType m_permissionType;
+    PermissionType m_permissionType{PermissionType::NOT_SET};
     bool m_permissionTypeHasBeenSet = false;
   };
 

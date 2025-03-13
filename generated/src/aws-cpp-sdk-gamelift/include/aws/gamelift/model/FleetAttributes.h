@@ -54,7 +54,7 @@ namespace Model
   class FleetAttributes
   {
   public:
-    AWS_GAMELIFT_API FleetAttributes();
+    AWS_GAMELIFT_API FleetAttributes() = default;
     AWS_GAMELIFT_API FleetAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API FleetAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,14 +64,12 @@ namespace Model
     /**
      * <p>A unique identifier for the fleet.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline FleetAttributes& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline FleetAttributes& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline FleetAttributes& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    FleetAttributes& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +82,12 @@ namespace Model
      * In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code>
      * value.</p>
      */
-    inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
+    inline const Aws::String& GetFleetArn() const { return m_fleetArn; }
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
-    inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
-    inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
-    inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
-    inline FleetAttributes& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
-    inline FleetAttributes& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
-    inline FleetAttributes& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
+    template<typename FleetArnT = Aws::String>
+    void SetFleetArn(FleetArnT&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::forward<FleetArnT>(value); }
+    template<typename FleetArnT = Aws::String>
+    FleetAttributes& WithFleetArn(FleetArnT&& value) { SetFleetArn(std::forward<FleetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +98,10 @@ namespace Model
      * On-Demand versus Spot Instances</a>. This fleet property can't be changed after
      * the fleet is created.</p>
      */
-    inline const FleetType& GetFleetType() const{ return m_fleetType; }
+    inline FleetType GetFleetType() const { return m_fleetType; }
     inline bool FleetTypeHasBeenSet() const { return m_fleetTypeHasBeenSet; }
-    inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
-    inline void SetFleetType(FleetType&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
-    inline FleetAttributes& WithFleetType(const FleetType& value) { SetFleetType(value); return *this;}
-    inline FleetAttributes& WithFleetType(FleetType&& value) { SetFleetType(std::move(value)); return *this;}
+    inline void SetFleetType(FleetType value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
+    inline FleetAttributes& WithFleetType(FleetType value) { SetFleetType(value); return *this;}
     ///@}
 
     ///@{
@@ -119,26 +113,22 @@ namespace Model
      * Instance Types</a> for detailed descriptions. This attribute is used with fleets
      * where <code>ComputeType</code> is <code>EC2</code>.</p>
      */
-    inline const EC2InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline EC2InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const EC2InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(EC2InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline FleetAttributes& WithInstanceType(const EC2InstanceType& value) { SetInstanceType(value); return *this;}
-    inline FleetAttributes& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(EC2InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline FleetAttributes& WithInstanceType(EC2InstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A human-readable description of the fleet.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline FleetAttributes& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline FleetAttributes& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline FleetAttributes& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    FleetAttributes& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,14 +136,12 @@ namespace Model
      * <p>A descriptive label that is associated with a fleet. Fleet names do not need
      * to be unique.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FleetAttributes& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FleetAttributes& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FleetAttributes& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FleetAttributes& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,12 +150,12 @@ namespace Model
      * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline FleetAttributes& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline FleetAttributes& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    FleetAttributes& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,12 +164,12 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetTerminationTime() const{ return m_terminationTime; }
+    inline const Aws::Utils::DateTime& GetTerminationTime() const { return m_terminationTime; }
     inline bool TerminationTimeHasBeenSet() const { return m_terminationTimeHasBeenSet; }
-    inline void SetTerminationTime(const Aws::Utils::DateTime& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
-    inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = std::move(value); }
-    inline FleetAttributes& WithTerminationTime(const Aws::Utils::DateTime& value) { SetTerminationTime(value); return *this;}
-    inline FleetAttributes& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(std::move(value)); return *this;}
+    template<typename TerminationTimeT = Aws::Utils::DateTime>
+    void SetTerminationTime(TerminationTimeT&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = std::forward<TerminationTimeT>(value); }
+    template<typename TerminationTimeT = Aws::Utils::DateTime>
+    FleetAttributes& WithTerminationTime(TerminationTimeT&& value) { SetTerminationTime(std::forward<TerminationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,12 +188,10 @@ namespace Model
      * delete fleet request.</p> </li> <li> <p>TERMINATED -- The fleet no longer
      * exists.</p> </li> </ul>
      */
-    inline const FleetStatus& GetStatus() const{ return m_status; }
+    inline FleetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FleetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FleetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FleetAttributes& WithStatus(const FleetStatus& value) { SetStatus(value); return *this;}
-    inline FleetAttributes& WithStatus(FleetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FleetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FleetAttributes& WithStatus(FleetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -214,14 +200,12 @@ namespace Model
      * this fleet. This attribute is used with fleets where <code>ComputeType</code> is
      * "EC2".</p>
      */
-    inline const Aws::String& GetBuildId() const{ return m_buildId; }
+    inline const Aws::String& GetBuildId() const { return m_buildId; }
     inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
-    inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
-    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
-    inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
-    inline FleetAttributes& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
-    inline FleetAttributes& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
-    inline FleetAttributes& WithBuildId(const char* value) { SetBuildId(value); return *this;}
+    template<typename BuildIdT = Aws::String>
+    void SetBuildId(BuildIdT&& value) { m_buildIdHasBeenSet = true; m_buildId = std::forward<BuildIdT>(value); }
+    template<typename BuildIdT = Aws::String>
+    FleetAttributes& WithBuildId(BuildIdT&& value) { SetBuildId(std::forward<BuildIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -233,14 +217,12 @@ namespace Model
      * <code>BuildId</code> value. This attribute is used with fleets where
      * <code>ComputeType</code> is "EC2".</p>
      */
-    inline const Aws::String& GetBuildArn() const{ return m_buildArn; }
+    inline const Aws::String& GetBuildArn() const { return m_buildArn; }
     inline bool BuildArnHasBeenSet() const { return m_buildArnHasBeenSet; }
-    inline void SetBuildArn(const Aws::String& value) { m_buildArnHasBeenSet = true; m_buildArn = value; }
-    inline void SetBuildArn(Aws::String&& value) { m_buildArnHasBeenSet = true; m_buildArn = std::move(value); }
-    inline void SetBuildArn(const char* value) { m_buildArnHasBeenSet = true; m_buildArn.assign(value); }
-    inline FleetAttributes& WithBuildArn(const Aws::String& value) { SetBuildArn(value); return *this;}
-    inline FleetAttributes& WithBuildArn(Aws::String&& value) { SetBuildArn(std::move(value)); return *this;}
-    inline FleetAttributes& WithBuildArn(const char* value) { SetBuildArn(value); return *this;}
+    template<typename BuildArnT = Aws::String>
+    void SetBuildArn(BuildArnT&& value) { m_buildArnHasBeenSet = true; m_buildArn = std::forward<BuildArnT>(value); }
+    template<typename BuildArnT = Aws::String>
+    FleetAttributes& WithBuildArn(BuildArnT&& value) { SetBuildArn(std::forward<BuildArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -249,14 +231,12 @@ namespace Model
      * instances in this fleet. This attribute is used with fleets where
      * <code>ComputeType</code> is "EC2".</p>
      */
-    inline const Aws::String& GetScriptId() const{ return m_scriptId; }
+    inline const Aws::String& GetScriptId() const { return m_scriptId; }
     inline bool ScriptIdHasBeenSet() const { return m_scriptIdHasBeenSet; }
-    inline void SetScriptId(const Aws::String& value) { m_scriptIdHasBeenSet = true; m_scriptId = value; }
-    inline void SetScriptId(Aws::String&& value) { m_scriptIdHasBeenSet = true; m_scriptId = std::move(value); }
-    inline void SetScriptId(const char* value) { m_scriptIdHasBeenSet = true; m_scriptId.assign(value); }
-    inline FleetAttributes& WithScriptId(const Aws::String& value) { SetScriptId(value); return *this;}
-    inline FleetAttributes& WithScriptId(Aws::String&& value) { SetScriptId(std::move(value)); return *this;}
-    inline FleetAttributes& WithScriptId(const char* value) { SetScriptId(value); return *this;}
+    template<typename ScriptIdT = Aws::String>
+    void SetScriptId(ScriptIdT&& value) { m_scriptIdHasBeenSet = true; m_scriptId = std::forward<ScriptIdT>(value); }
+    template<typename ScriptIdT = Aws::String>
+    FleetAttributes& WithScriptId(ScriptIdT&& value) { SetScriptId(std::forward<ScriptIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,14 +247,12 @@ namespace Model
      * this fleet. In a GameLift script ARN, the resource ID matches the
      * <code>ScriptId</code> value.</p>
      */
-    inline const Aws::String& GetScriptArn() const{ return m_scriptArn; }
+    inline const Aws::String& GetScriptArn() const { return m_scriptArn; }
     inline bool ScriptArnHasBeenSet() const { return m_scriptArnHasBeenSet; }
-    inline void SetScriptArn(const Aws::String& value) { m_scriptArnHasBeenSet = true; m_scriptArn = value; }
-    inline void SetScriptArn(Aws::String&& value) { m_scriptArnHasBeenSet = true; m_scriptArn = std::move(value); }
-    inline void SetScriptArn(const char* value) { m_scriptArnHasBeenSet = true; m_scriptArn.assign(value); }
-    inline FleetAttributes& WithScriptArn(const Aws::String& value) { SetScriptArn(value); return *this;}
-    inline FleetAttributes& WithScriptArn(Aws::String&& value) { SetScriptArn(std::move(value)); return *this;}
-    inline FleetAttributes& WithScriptArn(const char* value) { SetScriptArn(value); return *this;}
+    template<typename ScriptArnT = Aws::String>
+    void SetScriptArn(ScriptArnT&& value) { m_scriptArnHasBeenSet = true; m_scriptArn = std::forward<ScriptArnT>(value); }
+    template<typename ScriptArnT = Aws::String>
+    FleetAttributes& WithScriptArn(ScriptArnT&& value) { SetScriptArn(std::forward<ScriptArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -284,14 +262,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>.
      * Requests that use this parameter continue to be valid.</p>
      */
-    inline const Aws::String& GetServerLaunchPath() const{ return m_serverLaunchPath; }
+    inline const Aws::String& GetServerLaunchPath() const { return m_serverLaunchPath; }
     inline bool ServerLaunchPathHasBeenSet() const { return m_serverLaunchPathHasBeenSet; }
-    inline void SetServerLaunchPath(const Aws::String& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = value; }
-    inline void SetServerLaunchPath(Aws::String&& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = std::move(value); }
-    inline void SetServerLaunchPath(const char* value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath.assign(value); }
-    inline FleetAttributes& WithServerLaunchPath(const Aws::String& value) { SetServerLaunchPath(value); return *this;}
-    inline FleetAttributes& WithServerLaunchPath(Aws::String&& value) { SetServerLaunchPath(std::move(value)); return *this;}
-    inline FleetAttributes& WithServerLaunchPath(const char* value) { SetServerLaunchPath(value); return *this;}
+    template<typename ServerLaunchPathT = Aws::String>
+    void SetServerLaunchPath(ServerLaunchPathT&& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = std::forward<ServerLaunchPathT>(value); }
+    template<typename ServerLaunchPathT = Aws::String>
+    FleetAttributes& WithServerLaunchPath(ServerLaunchPathT&& value) { SetServerLaunchPath(std::forward<ServerLaunchPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -300,14 +276,12 @@ namespace Model
      * defined using the fleet's runtime configuration. Requests that use this
      * parameter continue to be valid.</p>
      */
-    inline const Aws::String& GetServerLaunchParameters() const{ return m_serverLaunchParameters; }
+    inline const Aws::String& GetServerLaunchParameters() const { return m_serverLaunchParameters; }
     inline bool ServerLaunchParametersHasBeenSet() const { return m_serverLaunchParametersHasBeenSet; }
-    inline void SetServerLaunchParameters(const Aws::String& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
-    inline void SetServerLaunchParameters(Aws::String&& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = std::move(value); }
-    inline void SetServerLaunchParameters(const char* value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters.assign(value); }
-    inline FleetAttributes& WithServerLaunchParameters(const Aws::String& value) { SetServerLaunchParameters(value); return *this;}
-    inline FleetAttributes& WithServerLaunchParameters(Aws::String&& value) { SetServerLaunchParameters(std::move(value)); return *this;}
-    inline FleetAttributes& WithServerLaunchParameters(const char* value) { SetServerLaunchParameters(value); return *this;}
+    template<typename ServerLaunchParametersT = Aws::String>
+    void SetServerLaunchParameters(ServerLaunchParametersT&& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = std::forward<ServerLaunchParametersT>(value); }
+    template<typename ServerLaunchParametersT = Aws::String>
+    FleetAttributes& WithServerLaunchParameters(ServerLaunchParametersT&& value) { SetServerLaunchParameters(std::forward<ServerLaunchParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -318,15 +292,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogPaths() const{ return m_logPaths; }
+    inline const Aws::Vector<Aws::String>& GetLogPaths() const { return m_logPaths; }
     inline bool LogPathsHasBeenSet() const { return m_logPathsHasBeenSet; }
-    inline void SetLogPaths(const Aws::Vector<Aws::String>& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
-    inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = std::move(value); }
-    inline FleetAttributes& WithLogPaths(const Aws::Vector<Aws::String>& value) { SetLogPaths(value); return *this;}
-    inline FleetAttributes& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(std::move(value)); return *this;}
-    inline FleetAttributes& AddLogPaths(const Aws::String& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
-    inline FleetAttributes& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(std::move(value)); return *this; }
-    inline FleetAttributes& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
+    template<typename LogPathsT = Aws::Vector<Aws::String>>
+    void SetLogPaths(LogPathsT&& value) { m_logPathsHasBeenSet = true; m_logPaths = std::forward<LogPathsT>(value); }
+    template<typename LogPathsT = Aws::Vector<Aws::String>>
+    FleetAttributes& WithLogPaths(LogPathsT&& value) { SetLogPaths(std::forward<LogPathsT>(value)); return *this;}
+    template<typename LogPathsT = Aws::String>
+    FleetAttributes& AddLogPaths(LogPathsT&& value) { m_logPathsHasBeenSet = true; m_logPaths.emplace_back(std::forward<LogPathsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -339,12 +312,10 @@ namespace Model
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
-    inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
+    inline ProtectionPolicy GetNewGameSessionProtectionPolicy() const { return m_newGameSessionProtectionPolicy; }
     inline bool NewGameSessionProtectionPolicyHasBeenSet() const { return m_newGameSessionProtectionPolicyHasBeenSet; }
-    inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
-    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = std::move(value); }
-    inline FleetAttributes& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
-    inline FleetAttributes& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(std::move(value)); return *this;}
+    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
+    inline FleetAttributes& WithNewGameSessionProtectionPolicy(ProtectionPolicy value) { SetNewGameSessionProtectionPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -361,22 +332,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
      * Migrate to Amazon GameLift server SDK version 5.</a> </p> 
      */
-    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+    inline OperatingSystem GetOperatingSystem() const { return m_operatingSystem; }
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
-    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
-    inline FleetAttributes& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
-    inline FleetAttributes& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+    inline void SetOperatingSystem(OperatingSystem value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+    inline FleetAttributes& WithOperatingSystem(OperatingSystem value) { SetOperatingSystem(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceCreationLimitPolicy& GetResourceCreationLimitPolicy() const{ return m_resourceCreationLimitPolicy; }
+    inline const ResourceCreationLimitPolicy& GetResourceCreationLimitPolicy() const { return m_resourceCreationLimitPolicy; }
     inline bool ResourceCreationLimitPolicyHasBeenSet() const { return m_resourceCreationLimitPolicyHasBeenSet; }
-    inline void SetResourceCreationLimitPolicy(const ResourceCreationLimitPolicy& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = value; }
-    inline void SetResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = std::move(value); }
-    inline FleetAttributes& WithResourceCreationLimitPolicy(const ResourceCreationLimitPolicy& value) { SetResourceCreationLimitPolicy(value); return *this;}
-    inline FleetAttributes& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(std::move(value)); return *this;}
+    template<typename ResourceCreationLimitPolicyT = ResourceCreationLimitPolicy>
+    void SetResourceCreationLimitPolicy(ResourceCreationLimitPolicyT&& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = std::forward<ResourceCreationLimitPolicyT>(value); }
+    template<typename ResourceCreationLimitPolicyT = ResourceCreationLimitPolicy>
+    FleetAttributes& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicyT&& value) { SetResourceCreationLimitPolicy(std::forward<ResourceCreationLimitPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -387,15 +356,14 @@ namespace Model
      * attribute is used with fleets where <code>ComputeType</code> is
      * <code>EC2</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
+    inline const Aws::Vector<Aws::String>& GetMetricGroups() const { return m_metricGroups; }
     inline bool MetricGroupsHasBeenSet() const { return m_metricGroupsHasBeenSet; }
-    inline void SetMetricGroups(const Aws::Vector<Aws::String>& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = value; }
-    inline void SetMetricGroups(Aws::Vector<Aws::String>&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::move(value); }
-    inline FleetAttributes& WithMetricGroups(const Aws::Vector<Aws::String>& value) { SetMetricGroups(value); return *this;}
-    inline FleetAttributes& WithMetricGroups(Aws::Vector<Aws::String>&& value) { SetMetricGroups(std::move(value)); return *this;}
-    inline FleetAttributes& AddMetricGroups(const Aws::String& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
-    inline FleetAttributes& AddMetricGroups(Aws::String&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(std::move(value)); return *this; }
-    inline FleetAttributes& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
+    template<typename MetricGroupsT = Aws::Vector<Aws::String>>
+    void SetMetricGroups(MetricGroupsT&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::forward<MetricGroupsT>(value); }
+    template<typename MetricGroupsT = Aws::Vector<Aws::String>>
+    FleetAttributes& WithMetricGroups(MetricGroupsT&& value) { SetMetricGroups(std::forward<MetricGroupsT>(value)); return *this;}
+    template<typename MetricGroupsT = Aws::String>
+    FleetAttributes& AddMetricGroups(MetricGroupsT&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.emplace_back(std::forward<MetricGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -405,14 +373,13 @@ namespace Model
      * This includes fleet auto-scaling. This attribute is used with fleets where
      * <code>ComputeType</code> is <code>EC2</code>.</p>
      */
-    inline const Aws::Vector<FleetAction>& GetStoppedActions() const{ return m_stoppedActions; }
+    inline const Aws::Vector<FleetAction>& GetStoppedActions() const { return m_stoppedActions; }
     inline bool StoppedActionsHasBeenSet() const { return m_stoppedActionsHasBeenSet; }
-    inline void SetStoppedActions(const Aws::Vector<FleetAction>& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = value; }
-    inline void SetStoppedActions(Aws::Vector<FleetAction>&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = std::move(value); }
-    inline FleetAttributes& WithStoppedActions(const Aws::Vector<FleetAction>& value) { SetStoppedActions(value); return *this;}
-    inline FleetAttributes& WithStoppedActions(Aws::Vector<FleetAction>&& value) { SetStoppedActions(std::move(value)); return *this;}
-    inline FleetAttributes& AddStoppedActions(const FleetAction& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(value); return *this; }
-    inline FleetAttributes& AddStoppedActions(FleetAction&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(std::move(value)); return *this; }
+    template<typename StoppedActionsT = Aws::Vector<FleetAction>>
+    void SetStoppedActions(StoppedActionsT&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = std::forward<StoppedActionsT>(value); }
+    template<typename StoppedActionsT = Aws::Vector<FleetAction>>
+    FleetAttributes& WithStoppedActions(StoppedActionsT&& value) { SetStoppedActions(std::forward<StoppedActionsT>(value)); return *this;}
+    inline FleetAttributes& AddStoppedActions(FleetAction value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -428,14 +395,12 @@ namespace Model
      * Access external resources from a game server</a>. This attribute is used with
      * fleets where <code>ComputeType</code> is <code>EC2</code>.</p>
      */
-    inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
+    inline const Aws::String& GetInstanceRoleArn() const { return m_instanceRoleArn; }
     inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
-    inline void SetInstanceRoleArn(const Aws::String& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = value; }
-    inline void SetInstanceRoleArn(Aws::String&& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = std::move(value); }
-    inline void SetInstanceRoleArn(const char* value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn.assign(value); }
-    inline FleetAttributes& WithInstanceRoleArn(const Aws::String& value) { SetInstanceRoleArn(value); return *this;}
-    inline FleetAttributes& WithInstanceRoleArn(Aws::String&& value) { SetInstanceRoleArn(std::move(value)); return *this;}
-    inline FleetAttributes& WithInstanceRoleArn(const char* value) { SetInstanceRoleArn(value); return *this;}
+    template<typename InstanceRoleArnT = Aws::String>
+    void SetInstanceRoleArn(InstanceRoleArnT&& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = std::forward<InstanceRoleArnT>(value); }
+    template<typename InstanceRoleArnT = Aws::String>
+    FleetAttributes& WithInstanceRoleArn(InstanceRoleArnT&& value) { SetInstanceRoleArn(std::forward<InstanceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -444,12 +409,12 @@ namespace Model
      * feature must be enabled when creating the fleet. All instances in a fleet share
      * the same certificate.</p>
      */
-    inline const CertificateConfiguration& GetCertificateConfiguration() const{ return m_certificateConfiguration; }
+    inline const CertificateConfiguration& GetCertificateConfiguration() const { return m_certificateConfiguration; }
     inline bool CertificateConfigurationHasBeenSet() const { return m_certificateConfigurationHasBeenSet; }
-    inline void SetCertificateConfiguration(const CertificateConfiguration& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = value; }
-    inline void SetCertificateConfiguration(CertificateConfiguration&& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = std::move(value); }
-    inline FleetAttributes& WithCertificateConfiguration(const CertificateConfiguration& value) { SetCertificateConfiguration(value); return *this;}
-    inline FleetAttributes& WithCertificateConfiguration(CertificateConfiguration&& value) { SetCertificateConfiguration(std::move(value)); return *this;}
+    template<typename CertificateConfigurationT = CertificateConfiguration>
+    void SetCertificateConfiguration(CertificateConfigurationT&& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = std::forward<CertificateConfigurationT>(value); }
+    template<typename CertificateConfigurationT = CertificateConfiguration>
+    FleetAttributes& WithCertificateConfiguration(CertificateConfigurationT&& value) { SetCertificateConfiguration(std::forward<CertificateConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -458,24 +423,22 @@ namespace Model
      * own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances
      * with managed Amazon GameLift.</p>
      */
-    inline const ComputeType& GetComputeType() const{ return m_computeType; }
+    inline ComputeType GetComputeType() const { return m_computeType; }
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
-    inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
-    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
-    inline FleetAttributes& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
-    inline FleetAttributes& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
+    inline void SetComputeType(ComputeType value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
+    inline FleetAttributes& WithComputeType(ComputeType value) { SetComputeType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A set of attributes that are specific to an Anywhere fleet.</p>
      */
-    inline const AnywhereConfiguration& GetAnywhereConfiguration() const{ return m_anywhereConfiguration; }
+    inline const AnywhereConfiguration& GetAnywhereConfiguration() const { return m_anywhereConfiguration; }
     inline bool AnywhereConfigurationHasBeenSet() const { return m_anywhereConfigurationHasBeenSet; }
-    inline void SetAnywhereConfiguration(const AnywhereConfiguration& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = value; }
-    inline void SetAnywhereConfiguration(AnywhereConfiguration&& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = std::move(value); }
-    inline FleetAttributes& WithAnywhereConfiguration(const AnywhereConfiguration& value) { SetAnywhereConfiguration(value); return *this;}
-    inline FleetAttributes& WithAnywhereConfiguration(AnywhereConfiguration&& value) { SetAnywhereConfiguration(std::move(value)); return *this;}
+    template<typename AnywhereConfigurationT = AnywhereConfiguration>
+    void SetAnywhereConfiguration(AnywhereConfigurationT&& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = std::forward<AnywhereConfigurationT>(value); }
+    template<typename AnywhereConfigurationT = AnywhereConfiguration>
+    FleetAttributes& WithAnywhereConfiguration(AnywhereConfigurationT&& value) { SetAnywhereConfiguration(std::forward<AnywhereConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -491,12 +454,10 @@ namespace Model
      * attribute is used with fleets where <code>ComputeType</code> is
      * <code>EC2</code>.</p>
      */
-    inline const InstanceRoleCredentialsProvider& GetInstanceRoleCredentialsProvider() const{ return m_instanceRoleCredentialsProvider; }
+    inline InstanceRoleCredentialsProvider GetInstanceRoleCredentialsProvider() const { return m_instanceRoleCredentialsProvider; }
     inline bool InstanceRoleCredentialsProviderHasBeenSet() const { return m_instanceRoleCredentialsProviderHasBeenSet; }
-    inline void SetInstanceRoleCredentialsProvider(const InstanceRoleCredentialsProvider& value) { m_instanceRoleCredentialsProviderHasBeenSet = true; m_instanceRoleCredentialsProvider = value; }
-    inline void SetInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider&& value) { m_instanceRoleCredentialsProviderHasBeenSet = true; m_instanceRoleCredentialsProvider = std::move(value); }
-    inline FleetAttributes& WithInstanceRoleCredentialsProvider(const InstanceRoleCredentialsProvider& value) { SetInstanceRoleCredentialsProvider(value); return *this;}
-    inline FleetAttributes& WithInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider&& value) { SetInstanceRoleCredentialsProvider(std::move(value)); return *this;}
+    inline void SetInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider value) { m_instanceRoleCredentialsProviderHasBeenSet = true; m_instanceRoleCredentialsProvider = value; }
+    inline FleetAttributes& WithInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider value) { SetInstanceRoleCredentialsProvider(value); return *this;}
     ///@}
   private:
 
@@ -506,10 +467,10 @@ namespace Model
     Aws::String m_fleetArn;
     bool m_fleetArnHasBeenSet = false;
 
-    FleetType m_fleetType;
+    FleetType m_fleetType{FleetType::NOT_SET};
     bool m_fleetTypeHasBeenSet = false;
 
-    EC2InstanceType m_instanceType;
+    EC2InstanceType m_instanceType{EC2InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_description;
@@ -518,13 +479,13 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_terminationTime;
+    Aws::Utils::DateTime m_terminationTime{};
     bool m_terminationTimeHasBeenSet = false;
 
-    FleetStatus m_status;
+    FleetStatus m_status{FleetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_buildId;
@@ -548,10 +509,10 @@ namespace Model
     Aws::Vector<Aws::String> m_logPaths;
     bool m_logPathsHasBeenSet = false;
 
-    ProtectionPolicy m_newGameSessionProtectionPolicy;
+    ProtectionPolicy m_newGameSessionProtectionPolicy{ProtectionPolicy::NOT_SET};
     bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
-    OperatingSystem m_operatingSystem;
+    OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
     bool m_operatingSystemHasBeenSet = false;
 
     ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
@@ -569,13 +530,13 @@ namespace Model
     CertificateConfiguration m_certificateConfiguration;
     bool m_certificateConfigurationHasBeenSet = false;
 
-    ComputeType m_computeType;
+    ComputeType m_computeType{ComputeType::NOT_SET};
     bool m_computeTypeHasBeenSet = false;
 
     AnywhereConfiguration m_anywhereConfiguration;
     bool m_anywhereConfigurationHasBeenSet = false;
 
-    InstanceRoleCredentialsProvider m_instanceRoleCredentialsProvider;
+    InstanceRoleCredentialsProvider m_instanceRoleCredentialsProvider{InstanceRoleCredentialsProvider::NOT_SET};
     bool m_instanceRoleCredentialsProviderHasBeenSet = false;
   };
 

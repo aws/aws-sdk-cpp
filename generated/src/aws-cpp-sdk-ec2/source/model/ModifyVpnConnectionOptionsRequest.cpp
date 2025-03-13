@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVpnConnectionOptionsRequest::ModifyVpnConnectionOptionsRequest() : 
-    m_vpnConnectionIdHasBeenSet(false),
-    m_localIpv4NetworkCidrHasBeenSet(false),
-    m_remoteIpv4NetworkCidrHasBeenSet(false),
-    m_localIpv6NetworkCidrHasBeenSet(false),
-    m_remoteIpv6NetworkCidrHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVpnConnectionOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

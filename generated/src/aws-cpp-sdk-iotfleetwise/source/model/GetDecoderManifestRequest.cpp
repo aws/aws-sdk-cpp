@@ -12,11 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDecoderManifestRequest::GetDecoderManifestRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetDecoderManifestRequest::SerializePayload() const
 {
   JsonValue payload;

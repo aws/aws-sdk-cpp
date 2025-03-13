@@ -18,21 +18,7 @@ namespace EMR
 namespace Model
 {
 
-NotebookExecutionSummary::NotebookExecutionSummary() : 
-    m_notebookExecutionIdHasBeenSet(false),
-    m_editorIdHasBeenSet(false),
-    m_notebookExecutionNameHasBeenSet(false),
-    m_status(NotebookExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_notebookS3LocationHasBeenSet(false),
-    m_executionEngineIdHasBeenSet(false)
-{
-}
-
 NotebookExecutionSummary::NotebookExecutionSummary(JsonView jsonValue)
-  : NotebookExecutionSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ NotebookExecutionSummary& NotebookExecutionSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("NotebookExecutionId"))
   {
     m_notebookExecutionId = jsonValue.GetString("NotebookExecutionId");
-
     m_notebookExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EditorId"))
   {
     m_editorId = jsonValue.GetString("EditorId");
-
     m_editorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookExecutionName"))
   {
     m_notebookExecutionName = jsonValue.GetString("NotebookExecutionName");
-
     m_notebookExecutionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = NotebookExecutionStatusMapper::GetNotebookExecutionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookS3Location"))
   {
     m_notebookS3Location = jsonValue.GetObject("NotebookS3Location");
-
     m_notebookS3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionEngineId"))
   {
     m_executionEngineId = jsonValue.GetString("ExecutionEngineId");
-
     m_executionEngineIdHasBeenSet = true;
   }
-
   return *this;
 }
 

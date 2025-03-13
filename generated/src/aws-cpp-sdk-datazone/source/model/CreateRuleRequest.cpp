@@ -12,20 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRuleRequest::CreateRuleRequest() : 
-    m_action(RuleAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_detailHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 Aws::String CreateRuleRequest::SerializePayload() const
 {
   JsonValue payload;

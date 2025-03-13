@@ -36,7 +36,7 @@ namespace Model
   class TableExcerpt
   {
   public:
-    AWS_KENDRA_API TableExcerpt();
+    AWS_KENDRA_API TableExcerpt() = default;
     AWS_KENDRA_API TableExcerpt(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API TableExcerpt& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,21 +46,21 @@ namespace Model
     /**
      * <p>A list of rows in the table excerpt.</p>
      */
-    inline const Aws::Vector<TableRow>& GetRows() const{ return m_rows; }
+    inline const Aws::Vector<TableRow>& GetRows() const { return m_rows; }
     inline bool RowsHasBeenSet() const { return m_rowsHasBeenSet; }
-    inline void SetRows(const Aws::Vector<TableRow>& value) { m_rowsHasBeenSet = true; m_rows = value; }
-    inline void SetRows(Aws::Vector<TableRow>&& value) { m_rowsHasBeenSet = true; m_rows = std::move(value); }
-    inline TableExcerpt& WithRows(const Aws::Vector<TableRow>& value) { SetRows(value); return *this;}
-    inline TableExcerpt& WithRows(Aws::Vector<TableRow>&& value) { SetRows(std::move(value)); return *this;}
-    inline TableExcerpt& AddRows(const TableRow& value) { m_rowsHasBeenSet = true; m_rows.push_back(value); return *this; }
-    inline TableExcerpt& AddRows(TableRow&& value) { m_rowsHasBeenSet = true; m_rows.push_back(std::move(value)); return *this; }
+    template<typename RowsT = Aws::Vector<TableRow>>
+    void SetRows(RowsT&& value) { m_rowsHasBeenSet = true; m_rows = std::forward<RowsT>(value); }
+    template<typename RowsT = Aws::Vector<TableRow>>
+    TableExcerpt& WithRows(RowsT&& value) { SetRows(std::forward<RowsT>(value)); return *this;}
+    template<typename RowsT = TableRow>
+    TableExcerpt& AddRows(RowsT&& value) { m_rowsHasBeenSet = true; m_rows.emplace_back(std::forward<RowsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A count of the number of rows in the original table within the document.</p>
      */
-    inline int GetTotalNumberOfRows() const{ return m_totalNumberOfRows; }
+    inline int GetTotalNumberOfRows() const { return m_totalNumberOfRows; }
     inline bool TotalNumberOfRowsHasBeenSet() const { return m_totalNumberOfRowsHasBeenSet; }
     inline void SetTotalNumberOfRows(int value) { m_totalNumberOfRowsHasBeenSet = true; m_totalNumberOfRows = value; }
     inline TableExcerpt& WithTotalNumberOfRows(int value) { SetTotalNumberOfRows(value); return *this;}
@@ -70,7 +70,7 @@ namespace Model
     Aws::Vector<TableRow> m_rows;
     bool m_rowsHasBeenSet = false;
 
-    int m_totalNumberOfRows;
+    int m_totalNumberOfRows{0};
     bool m_totalNumberOfRowsHasBeenSet = false;
   };
 

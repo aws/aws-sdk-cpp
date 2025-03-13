@@ -33,7 +33,7 @@ namespace Model
   class AwsEc2LaunchTemplateDataCpuOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataCpuOptionsDetails();
+    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataCpuOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataCpuOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataCpuOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p> The number of CPU cores for the instance. </p>
      */
-    inline int GetCoreCount() const{ return m_coreCount; }
+    inline int GetCoreCount() const { return m_coreCount; }
     inline bool CoreCountHasBeenSet() const { return m_coreCountHasBeenSet; }
     inline void SetCoreCount(int value) { m_coreCountHasBeenSet = true; m_coreCount = value; }
     inline AwsEc2LaunchTemplateDataCpuOptionsDetails& WithCoreCount(int value) { SetCoreCount(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
      * <p> The number of threads per CPU core. A value of <code>1</code> disables
      * multithreading for the instance, The default value is <code>2</code>. </p>
      */
-    inline int GetThreadsPerCore() const{ return m_threadsPerCore; }
+    inline int GetThreadsPerCore() const { return m_threadsPerCore; }
     inline bool ThreadsPerCoreHasBeenSet() const { return m_threadsPerCoreHasBeenSet; }
     inline void SetThreadsPerCore(int value) { m_threadsPerCoreHasBeenSet = true; m_threadsPerCore = value; }
     inline AwsEc2LaunchTemplateDataCpuOptionsDetails& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
     ///@}
   private:
 
-    int m_coreCount;
+    int m_coreCount{0};
     bool m_coreCountHasBeenSet = false;
 
-    int m_threadsPerCore;
+    int m_threadsPerCore{0};
     bool m_threadsPerCoreHasBeenSet = false;
   };
 

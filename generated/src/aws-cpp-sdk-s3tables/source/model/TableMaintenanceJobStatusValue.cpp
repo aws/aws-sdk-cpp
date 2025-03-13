@@ -18,16 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-TableMaintenanceJobStatusValue::TableMaintenanceJobStatusValue() : 
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastRunTimestampHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
-{
-}
-
 TableMaintenanceJobStatusValue::TableMaintenanceJobStatusValue(JsonView jsonValue)
-  : TableMaintenanceJobStatusValue()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TableMaintenanceJobStatusValue& TableMaintenanceJobStatusValue::operator =(JsonV
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRunTimestamp"))
   {
     m_lastRunTimestamp = jsonValue.GetString("lastRunTimestamp");
-
     m_lastRunTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureMessage"))
   {
     m_failureMessage = jsonValue.GetString("failureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

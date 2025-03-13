@@ -18,22 +18,7 @@ namespace EKS
 namespace Model
 {
 
-PodIdentityAssociation::PodIdentityAssociation() : 
-    m_clusterNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_serviceAccountHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_associationArnHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_ownerArnHasBeenSet(false)
-{
-}
-
 PodIdentityAssociation::PodIdentityAssociation(JsonView jsonValue)
-  : PodIdentityAssociation()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ PodIdentityAssociation& PodIdentityAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceAccount"))
   {
     m_serviceAccount = jsonValue.GetString("serviceAccount");
-
     m_serviceAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationArn"))
   {
     m_associationArn = jsonValue.GetString("associationArn");
-
     m_associationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationId"))
   {
     m_associationId = jsonValue.GetString("associationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -91,28 +64,21 @@ PodIdentityAssociation& PodIdentityAssociation::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetDouble("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerArn"))
   {
     m_ownerArn = jsonValue.GetString("ownerArn");
-
     m_ownerArnHasBeenSet = true;
   }
-
   return *this;
 }
 

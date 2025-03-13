@@ -35,7 +35,7 @@ namespace Model
   class ListenerTlsFileCertificate
   {
   public:
-    AWS_APPMESH_API ListenerTlsFileCertificate();
+    AWS_APPMESH_API ListenerTlsFileCertificate() = default;
     AWS_APPMESH_API ListenerTlsFileCertificate(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API ListenerTlsFileCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The certificate chain for the certificate.</p>
      */
-    inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
+    inline const Aws::String& GetCertificateChain() const { return m_certificateChain; }
     inline bool CertificateChainHasBeenSet() const { return m_certificateChainHasBeenSet; }
-    inline void SetCertificateChain(const Aws::String& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
-    inline void SetCertificateChain(Aws::String&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::move(value); }
-    inline void SetCertificateChain(const char* value) { m_certificateChainHasBeenSet = true; m_certificateChain.assign(value); }
-    inline ListenerTlsFileCertificate& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
-    inline ListenerTlsFileCertificate& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
-    inline ListenerTlsFileCertificate& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
+    template<typename CertificateChainT = Aws::String>
+    void SetCertificateChain(CertificateChainT&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::forward<CertificateChainT>(value); }
+    template<typename CertificateChainT = Aws::String>
+    ListenerTlsFileCertificate& WithCertificateChain(CertificateChainT&& value) { SetCertificateChain(std::forward<CertificateChainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The private key for a certificate stored on the file system of the virtual
      * node that the proxy is running on.</p>
      */
-    inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
+    inline const Aws::String& GetPrivateKey() const { return m_privateKey; }
     inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
-    inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
-    inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
-    inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
-    inline ListenerTlsFileCertificate& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
-    inline ListenerTlsFileCertificate& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
-    inline ListenerTlsFileCertificate& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
+    template<typename PrivateKeyT = Aws::String>
+    void SetPrivateKey(PrivateKeyT&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::forward<PrivateKeyT>(value); }
+    template<typename PrivateKeyT = Aws::String>
+    ListenerTlsFileCertificate& WithPrivateKey(PrivateKeyT&& value) { SetPrivateKey(std::forward<PrivateKeyT>(value)); return *this;}
     ///@}
   private:
 

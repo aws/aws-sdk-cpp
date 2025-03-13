@@ -21,7 +21,7 @@ namespace Model
   class DeleteWorkspaceImageRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API DeleteWorkspaceImageRequest();
+    AWS_WORKSPACES_API DeleteWorkspaceImageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The identifier of the image.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline DeleteWorkspaceImageRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline DeleteWorkspaceImageRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline DeleteWorkspaceImageRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    DeleteWorkspaceImageRequest& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
   private:
 

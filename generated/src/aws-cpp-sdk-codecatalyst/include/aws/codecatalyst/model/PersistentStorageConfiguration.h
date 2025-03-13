@@ -30,7 +30,7 @@ namespace Model
   class PersistentStorageConfiguration
   {
   public:
-    AWS_CODECATALYST_API PersistentStorageConfiguration();
+    AWS_CODECATALYST_API PersistentStorageConfiguration() = default;
     AWS_CODECATALYST_API PersistentStorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API PersistentStorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      *  <p>Valid values for storage are based on memory sizes in 16GB increments.
      * Valid values are 16, 32, and 64.</p> 
      */
-    inline int GetSizeInGiB() const{ return m_sizeInGiB; }
+    inline int GetSizeInGiB() const { return m_sizeInGiB; }
     inline bool SizeInGiBHasBeenSet() const { return m_sizeInGiBHasBeenSet; }
     inline void SetSizeInGiB(int value) { m_sizeInGiBHasBeenSet = true; m_sizeInGiB = value; }
     inline PersistentStorageConfiguration& WithSizeInGiB(int value) { SetSizeInGiB(value); return *this;}
     ///@}
   private:
 
-    int m_sizeInGiB;
+    int m_sizeInGiB{0};
     bool m_sizeInGiBHasBeenSet = false;
   };
 

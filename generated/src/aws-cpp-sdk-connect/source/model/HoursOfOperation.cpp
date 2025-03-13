@@ -18,21 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HoursOfOperation::HoursOfOperation() : 
-    m_hoursOfOperationIdHasBeenSet(false),
-    m_hoursOfOperationArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_timeZoneHasBeenSet(false),
-    m_configHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false)
-{
-}
-
 HoursOfOperation::HoursOfOperation(JsonView jsonValue)
-  : HoursOfOperation()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ HoursOfOperation& HoursOfOperation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HoursOfOperationId"))
   {
     m_hoursOfOperationId = jsonValue.GetString("HoursOfOperationId");
-
     m_hoursOfOperationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HoursOfOperationArn"))
   {
     m_hoursOfOperationArn = jsonValue.GetString("HoursOfOperationArn");
-
     m_hoursOfOperationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeZone"))
   {
     m_timeZone = jsonValue.GetString("TimeZone");
-
     m_timeZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Config"))
   {
     Aws::Utils::Array<JsonView> configJsonList = jsonValue.GetArray("Config");
@@ -83,7 +59,6 @@ HoursOfOperation& HoursOfOperation::operator =(JsonView jsonValue)
     }
     m_configHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -93,21 +68,16 @@ HoursOfOperation& HoursOfOperation::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedRegion"))
   {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
-
     m_lastModifiedRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

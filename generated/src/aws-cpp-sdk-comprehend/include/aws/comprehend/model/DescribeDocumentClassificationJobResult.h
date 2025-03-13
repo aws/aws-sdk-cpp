@@ -28,7 +28,7 @@ namespace Model
   class DescribeDocumentClassificationJobResult
   {
   public:
-    AWS_COMPREHEND_API DescribeDocumentClassificationJobResult();
+    AWS_COMPREHEND_API DescribeDocumentClassificationJobResult() = default;
     AWS_COMPREHEND_API DescribeDocumentClassificationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API DescribeDocumentClassificationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An object that describes the properties associated with the document
      * classification job.</p>
      */
-    inline const DocumentClassificationJobProperties& GetDocumentClassificationJobProperties() const{ return m_documentClassificationJobProperties; }
-    inline void SetDocumentClassificationJobProperties(const DocumentClassificationJobProperties& value) { m_documentClassificationJobProperties = value; }
-    inline void SetDocumentClassificationJobProperties(DocumentClassificationJobProperties&& value) { m_documentClassificationJobProperties = std::move(value); }
-    inline DescribeDocumentClassificationJobResult& WithDocumentClassificationJobProperties(const DocumentClassificationJobProperties& value) { SetDocumentClassificationJobProperties(value); return *this;}
-    inline DescribeDocumentClassificationJobResult& WithDocumentClassificationJobProperties(DocumentClassificationJobProperties&& value) { SetDocumentClassificationJobProperties(std::move(value)); return *this;}
+    inline const DocumentClassificationJobProperties& GetDocumentClassificationJobProperties() const { return m_documentClassificationJobProperties; }
+    template<typename DocumentClassificationJobPropertiesT = DocumentClassificationJobProperties>
+    void SetDocumentClassificationJobProperties(DocumentClassificationJobPropertiesT&& value) { m_documentClassificationJobPropertiesHasBeenSet = true; m_documentClassificationJobProperties = std::forward<DocumentClassificationJobPropertiesT>(value); }
+    template<typename DocumentClassificationJobPropertiesT = DocumentClassificationJobProperties>
+    DescribeDocumentClassificationJobResult& WithDocumentClassificationJobProperties(DocumentClassificationJobPropertiesT&& value) { SetDocumentClassificationJobProperties(std::forward<DocumentClassificationJobPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDocumentClassificationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDocumentClassificationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDocumentClassificationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDocumentClassificationJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DocumentClassificationJobProperties m_documentClassificationJobProperties;
+    bool m_documentClassificationJobPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

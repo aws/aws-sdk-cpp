@@ -18,19 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-AwsOpportunityLifeCycle::AwsOpportunityLifeCycle() : 
-    m_closedLostReason(AwsClosedLostReason::NOT_SET),
-    m_closedLostReasonHasBeenSet(false),
-    m_nextStepsHasBeenSet(false),
-    m_nextStepsHistoryHasBeenSet(false),
-    m_stage(AwsOpportunityStage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_targetCloseDateHasBeenSet(false)
-{
-}
-
 AwsOpportunityLifeCycle::AwsOpportunityLifeCycle(JsonView jsonValue)
-  : AwsOpportunityLifeCycle()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ AwsOpportunityLifeCycle& AwsOpportunityLifeCycle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClosedLostReason"))
   {
     m_closedLostReason = AwsClosedLostReasonMapper::GetAwsClosedLostReasonForName(jsonValue.GetString("ClosedLostReason"));
-
     m_closedLostReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextSteps"))
   {
     m_nextSteps = jsonValue.GetString("NextSteps");
-
     m_nextStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextStepsHistory"))
   {
     Aws::Utils::Array<JsonView> nextStepsHistoryJsonList = jsonValue.GetArray("NextStepsHistory");
@@ -60,21 +44,16 @@ AwsOpportunityLifeCycle& AwsOpportunityLifeCycle::operator =(JsonView jsonValue)
     }
     m_nextStepsHistoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stage"))
   {
     m_stage = AwsOpportunityStageMapper::GetAwsOpportunityStageForName(jsonValue.GetString("Stage"));
-
     m_stageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetCloseDate"))
   {
     m_targetCloseDate = jsonValue.GetString("TargetCloseDate");
-
     m_targetCloseDateHasBeenSet = true;
   }
-
   return *this;
 }
 

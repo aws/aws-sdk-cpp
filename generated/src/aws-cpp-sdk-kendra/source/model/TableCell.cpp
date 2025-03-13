@@ -18,19 +18,7 @@ namespace kendra
 namespace Model
 {
 
-TableCell::TableCell() : 
-    m_valueHasBeenSet(false),
-    m_topAnswer(false),
-    m_topAnswerHasBeenSet(false),
-    m_highlighted(false),
-    m_highlightedHasBeenSet(false),
-    m_header(false),
-    m_headerHasBeenSet(false)
-{
-}
-
 TableCell::TableCell(JsonView jsonValue)
-  : TableCell()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ TableCell& TableCell::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopAnswer"))
   {
     m_topAnswer = jsonValue.GetBool("TopAnswer");
-
     m_topAnswerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Highlighted"))
   {
     m_highlighted = jsonValue.GetBool("Highlighted");
-
     m_highlightedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Header"))
   {
     m_header = jsonValue.GetBool("Header");
-
     m_headerHasBeenSet = true;
   }
-
   return *this;
 }
 

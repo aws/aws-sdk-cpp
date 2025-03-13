@@ -18,15 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-OpeningHoursComponents::OpeningHoursComponents() : 
-    m_openTimeHasBeenSet(false),
-    m_openDurationHasBeenSet(false),
-    m_recurrenceHasBeenSet(false)
-{
-}
-
 OpeningHoursComponents::OpeningHoursComponents(JsonView jsonValue)
-  : OpeningHoursComponents()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ OpeningHoursComponents& OpeningHoursComponents::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OpenTime"))
   {
     m_openTime = jsonValue.GetString("OpenTime");
-
     m_openTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpenDuration"))
   {
     m_openDuration = jsonValue.GetString("OpenDuration");
-
     m_openDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recurrence"))
   {
     m_recurrence = jsonValue.GetString("Recurrence");
-
     m_recurrenceHasBeenSet = true;
   }
-
   return *this;
 }
 

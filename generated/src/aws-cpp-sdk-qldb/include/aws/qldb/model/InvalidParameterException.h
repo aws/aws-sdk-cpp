@@ -32,7 +32,7 @@ namespace Model
   class InvalidParameterException
   {
   public:
-    AWS_QLDB_API InvalidParameterException();
+    AWS_QLDB_API InvalidParameterException() = default;
     AWS_QLDB_API InvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDB_API InvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,28 +40,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InvalidParameterException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InvalidParameterException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InvalidParameterException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InvalidParameterException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the invalid parameter.</p>
      */
-    inline const Aws::String& GetParameterName() const{ return m_parameterName; }
+    inline const Aws::String& GetParameterName() const { return m_parameterName; }
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
-    inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
-    inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
-    inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
-    inline InvalidParameterException& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
-    inline InvalidParameterException& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
-    inline InvalidParameterException& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+    template<typename ParameterNameT = Aws::String>
+    void SetParameterName(ParameterNameT&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::forward<ParameterNameT>(value); }
+    template<typename ParameterNameT = Aws::String>
+    InvalidParameterException& WithParameterName(ParameterNameT&& value) { SetParameterName(std::forward<ParameterNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,19 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTemplateRequest::UpdateTemplateRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_layoutConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_requiredFieldsHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_status(TemplateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

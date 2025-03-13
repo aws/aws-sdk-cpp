@@ -32,7 +32,7 @@ namespace Model
   class PipeTargetKinesisStreamParameters
   {
   public:
-    AWS_PIPES_API PipeTargetKinesisStreamParameters();
+    AWS_PIPES_API PipeTargetKinesisStreamParameters() = default;
     AWS_PIPES_API PipeTargetKinesisStreamParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PipeTargetKinesisStreamParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * of this hashing mechanism, all data records with the same partition key map to
      * the same shard within the stream.</p>
      */
-    inline const Aws::String& GetPartitionKey() const{ return m_partitionKey; }
+    inline const Aws::String& GetPartitionKey() const { return m_partitionKey; }
     inline bool PartitionKeyHasBeenSet() const { return m_partitionKeyHasBeenSet; }
-    inline void SetPartitionKey(const Aws::String& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
-    inline void SetPartitionKey(Aws::String&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = std::move(value); }
-    inline void SetPartitionKey(const char* value) { m_partitionKeyHasBeenSet = true; m_partitionKey.assign(value); }
-    inline PipeTargetKinesisStreamParameters& WithPartitionKey(const Aws::String& value) { SetPartitionKey(value); return *this;}
-    inline PipeTargetKinesisStreamParameters& WithPartitionKey(Aws::String&& value) { SetPartitionKey(std::move(value)); return *this;}
-    inline PipeTargetKinesisStreamParameters& WithPartitionKey(const char* value) { SetPartitionKey(value); return *this;}
+    template<typename PartitionKeyT = Aws::String>
+    void SetPartitionKey(PartitionKeyT&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = std::forward<PartitionKeyT>(value); }
+    template<typename PartitionKeyT = Aws::String>
+    PipeTargetKinesisStreamParameters& WithPartitionKey(PartitionKeyT&& value) { SetPartitionKey(std::forward<PartitionKeyT>(value)); return *this;}
     ///@}
   private:
 

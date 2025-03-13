@@ -33,7 +33,7 @@ namespace Model
   class Container
   {
   public:
-    AWS_IMAGEBUILDER_API Container();
+    AWS_IMAGEBUILDER_API Container() = default;
     AWS_IMAGEBUILDER_API Container(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Container& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,29 +44,26 @@ namespace Model
      * <p>Containers and container images are Region-specific. This is the Region
      * context for the container.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline Container& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline Container& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline Container& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    Container& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of URIs for containers created in the context Region.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetImageUris() const{ return m_imageUris; }
+    inline const Aws::Vector<Aws::String>& GetImageUris() const { return m_imageUris; }
     inline bool ImageUrisHasBeenSet() const { return m_imageUrisHasBeenSet; }
-    inline void SetImageUris(const Aws::Vector<Aws::String>& value) { m_imageUrisHasBeenSet = true; m_imageUris = value; }
-    inline void SetImageUris(Aws::Vector<Aws::String>&& value) { m_imageUrisHasBeenSet = true; m_imageUris = std::move(value); }
-    inline Container& WithImageUris(const Aws::Vector<Aws::String>& value) { SetImageUris(value); return *this;}
-    inline Container& WithImageUris(Aws::Vector<Aws::String>&& value) { SetImageUris(std::move(value)); return *this;}
-    inline Container& AddImageUris(const Aws::String& value) { m_imageUrisHasBeenSet = true; m_imageUris.push_back(value); return *this; }
-    inline Container& AddImageUris(Aws::String&& value) { m_imageUrisHasBeenSet = true; m_imageUris.push_back(std::move(value)); return *this; }
-    inline Container& AddImageUris(const char* value) { m_imageUrisHasBeenSet = true; m_imageUris.push_back(value); return *this; }
+    template<typename ImageUrisT = Aws::Vector<Aws::String>>
+    void SetImageUris(ImageUrisT&& value) { m_imageUrisHasBeenSet = true; m_imageUris = std::forward<ImageUrisT>(value); }
+    template<typename ImageUrisT = Aws::Vector<Aws::String>>
+    Container& WithImageUris(ImageUrisT&& value) { SetImageUris(std::forward<ImageUrisT>(value)); return *this;}
+    template<typename ImageUrisT = Aws::String>
+    Container& AddImageUris(ImageUrisT&& value) { m_imageUrisHasBeenSet = true; m_imageUris.emplace_back(std::forward<ImageUrisT>(value)); return *this; }
     ///@}
   private:
 

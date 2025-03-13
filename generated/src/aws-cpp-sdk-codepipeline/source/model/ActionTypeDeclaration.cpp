@@ -18,20 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionTypeDeclaration::ActionTypeDeclaration() : 
-    m_descriptionHasBeenSet(false),
-    m_executorHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_inputArtifactDetailsHasBeenSet(false),
-    m_outputArtifactDetailsHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_urlsHasBeenSet(false)
-{
-}
-
 ActionTypeDeclaration::ActionTypeDeclaration(JsonView jsonValue)
-  : ActionTypeDeclaration()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ActionTypeDeclaration& ActionTypeDeclaration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executor"))
   {
     m_executor = jsonValue.GetObject("executor");
-
     m_executorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetObject("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputArtifactDetails"))
   {
     m_inputArtifactDetails = jsonValue.GetObject("inputArtifactDetails");
-
     m_inputArtifactDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputArtifactDetails"))
   {
     m_outputArtifactDetails = jsonValue.GetObject("outputArtifactDetails");
-
     m_outputArtifactDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("permissions"))
   {
     m_permissions = jsonValue.GetObject("permissions");
-
     m_permissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
@@ -89,14 +64,11 @@ ActionTypeDeclaration& ActionTypeDeclaration::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("urls"))
   {
     m_urls = jsonValue.GetObject("urls");
-
     m_urlsHasBeenSet = true;
   }
-
   return *this;
 }
 

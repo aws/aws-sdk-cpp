@@ -18,15 +18,7 @@ namespace XRay
 namespace Model
 {
 
-UnprocessedStatistics::UnprocessedStatistics() : 
-    m_ruleNameHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 UnprocessedStatistics::UnprocessedStatistics(JsonView jsonValue)
-  : UnprocessedStatistics()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UnprocessedStatistics& UnprocessedStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleName"))
   {
     m_ruleName = jsonValue.GetString("RuleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

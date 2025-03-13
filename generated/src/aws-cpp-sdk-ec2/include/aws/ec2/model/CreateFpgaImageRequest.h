@@ -24,7 +24,7 @@ namespace Model
   class CreateFpgaImageRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateFpgaImageRequest();
+    AWS_EC2_API CreateFpgaImageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,7 +46,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateFpgaImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -57,52 +57,48 @@ namespace Model
      * <p>The location of the encrypted design checkpoint in Amazon S3. The input must
      * be a tarball.</p>
      */
-    inline const StorageLocation& GetInputStorageLocation() const{ return m_inputStorageLocation; }
+    inline const StorageLocation& GetInputStorageLocation() const { return m_inputStorageLocation; }
     inline bool InputStorageLocationHasBeenSet() const { return m_inputStorageLocationHasBeenSet; }
-    inline void SetInputStorageLocation(const StorageLocation& value) { m_inputStorageLocationHasBeenSet = true; m_inputStorageLocation = value; }
-    inline void SetInputStorageLocation(StorageLocation&& value) { m_inputStorageLocationHasBeenSet = true; m_inputStorageLocation = std::move(value); }
-    inline CreateFpgaImageRequest& WithInputStorageLocation(const StorageLocation& value) { SetInputStorageLocation(value); return *this;}
-    inline CreateFpgaImageRequest& WithInputStorageLocation(StorageLocation&& value) { SetInputStorageLocation(std::move(value)); return *this;}
+    template<typename InputStorageLocationT = StorageLocation>
+    void SetInputStorageLocation(InputStorageLocationT&& value) { m_inputStorageLocationHasBeenSet = true; m_inputStorageLocation = std::forward<InputStorageLocationT>(value); }
+    template<typename InputStorageLocationT = StorageLocation>
+    CreateFpgaImageRequest& WithInputStorageLocation(InputStorageLocationT&& value) { SetInputStorageLocation(std::forward<InputStorageLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location in Amazon S3 for the output logs.</p>
      */
-    inline const StorageLocation& GetLogsStorageLocation() const{ return m_logsStorageLocation; }
+    inline const StorageLocation& GetLogsStorageLocation() const { return m_logsStorageLocation; }
     inline bool LogsStorageLocationHasBeenSet() const { return m_logsStorageLocationHasBeenSet; }
-    inline void SetLogsStorageLocation(const StorageLocation& value) { m_logsStorageLocationHasBeenSet = true; m_logsStorageLocation = value; }
-    inline void SetLogsStorageLocation(StorageLocation&& value) { m_logsStorageLocationHasBeenSet = true; m_logsStorageLocation = std::move(value); }
-    inline CreateFpgaImageRequest& WithLogsStorageLocation(const StorageLocation& value) { SetLogsStorageLocation(value); return *this;}
-    inline CreateFpgaImageRequest& WithLogsStorageLocation(StorageLocation&& value) { SetLogsStorageLocation(std::move(value)); return *this;}
+    template<typename LogsStorageLocationT = StorageLocation>
+    void SetLogsStorageLocation(LogsStorageLocationT&& value) { m_logsStorageLocationHasBeenSet = true; m_logsStorageLocation = std::forward<LogsStorageLocationT>(value); }
+    template<typename LogsStorageLocationT = StorageLocation>
+    CreateFpgaImageRequest& WithLogsStorageLocation(LogsStorageLocationT&& value) { SetLogsStorageLocation(std::forward<LogsStorageLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the AFI.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateFpgaImageRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateFpgaImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateFpgaImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateFpgaImageRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A name for the AFI.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateFpgaImageRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateFpgaImageRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateFpgaImageRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateFpgaImageRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,32 +108,30 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateFpgaImageRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateFpgaImageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateFpgaImageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateFpgaImageRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to apply to the FPGA image during creation.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateFpgaImageRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateFpgaImageRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateFpgaImageRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateFpgaImageRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateFpgaImageRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateFpgaImageRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     StorageLocation m_inputStorageLocation;

@@ -32,7 +32,7 @@ namespace Model
   class StorageFlowNodeServiceConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API StorageFlowNodeServiceConfiguration();
+    AWS_BEDROCKAGENT_API StorageFlowNodeServiceConfiguration() = default;
     AWS_BEDROCKAGENT_API StorageFlowNodeServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API StorageFlowNodeServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Contains configurations for the Amazon S3 location in which to store the
      * input into the node.</p>
      */
-    inline const StorageFlowNodeS3Configuration& GetS3() const{ return m_s3; }
+    inline const StorageFlowNodeS3Configuration& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const StorageFlowNodeS3Configuration& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(StorageFlowNodeS3Configuration&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline StorageFlowNodeServiceConfiguration& WithS3(const StorageFlowNodeS3Configuration& value) { SetS3(value); return *this;}
-    inline StorageFlowNodeServiceConfiguration& WithS3(StorageFlowNodeS3Configuration&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = StorageFlowNodeS3Configuration>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = StorageFlowNodeS3Configuration>
+    StorageFlowNodeServiceConfiguration& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 

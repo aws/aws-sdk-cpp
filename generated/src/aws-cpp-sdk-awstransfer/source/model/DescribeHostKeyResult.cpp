@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeHostKeyResult::DescribeHostKeyResult()
-{
-}
-
 DescribeHostKeyResult::DescribeHostKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeHostKeyResult& DescribeHostKeyResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("HostKey"))
   {
     m_hostKey = jsonValue.GetObject("HostKey");
-
+    m_hostKeyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

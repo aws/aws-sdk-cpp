@@ -33,7 +33,7 @@ namespace Model
   class CustomLogSourceConfiguration
   {
   public:
-    AWS_SECURITYLAKE_API CustomLogSourceConfiguration();
+    AWS_SECURITYLAKE_API CustomLogSourceConfiguration() = default;
     AWS_SECURITYLAKE_API CustomLogSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API CustomLogSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
      * <p>The configuration used for the Glue Crawler for a third-party custom
      * source.</p>
      */
-    inline const CustomLogSourceCrawlerConfiguration& GetCrawlerConfiguration() const{ return m_crawlerConfiguration; }
+    inline const CustomLogSourceCrawlerConfiguration& GetCrawlerConfiguration() const { return m_crawlerConfiguration; }
     inline bool CrawlerConfigurationHasBeenSet() const { return m_crawlerConfigurationHasBeenSet; }
-    inline void SetCrawlerConfiguration(const CustomLogSourceCrawlerConfiguration& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = value; }
-    inline void SetCrawlerConfiguration(CustomLogSourceCrawlerConfiguration&& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = std::move(value); }
-    inline CustomLogSourceConfiguration& WithCrawlerConfiguration(const CustomLogSourceCrawlerConfiguration& value) { SetCrawlerConfiguration(value); return *this;}
-    inline CustomLogSourceConfiguration& WithCrawlerConfiguration(CustomLogSourceCrawlerConfiguration&& value) { SetCrawlerConfiguration(std::move(value)); return *this;}
+    template<typename CrawlerConfigurationT = CustomLogSourceCrawlerConfiguration>
+    void SetCrawlerConfiguration(CrawlerConfigurationT&& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = std::forward<CrawlerConfigurationT>(value); }
+    template<typename CrawlerConfigurationT = CustomLogSourceCrawlerConfiguration>
+    CustomLogSourceConfiguration& WithCrawlerConfiguration(CrawlerConfigurationT&& value) { SetCrawlerConfiguration(std::forward<CrawlerConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identity of the log provider for the third-party custom source.</p>
      */
-    inline const AwsIdentity& GetProviderIdentity() const{ return m_providerIdentity; }
+    inline const AwsIdentity& GetProviderIdentity() const { return m_providerIdentity; }
     inline bool ProviderIdentityHasBeenSet() const { return m_providerIdentityHasBeenSet; }
-    inline void SetProviderIdentity(const AwsIdentity& value) { m_providerIdentityHasBeenSet = true; m_providerIdentity = value; }
-    inline void SetProviderIdentity(AwsIdentity&& value) { m_providerIdentityHasBeenSet = true; m_providerIdentity = std::move(value); }
-    inline CustomLogSourceConfiguration& WithProviderIdentity(const AwsIdentity& value) { SetProviderIdentity(value); return *this;}
-    inline CustomLogSourceConfiguration& WithProviderIdentity(AwsIdentity&& value) { SetProviderIdentity(std::move(value)); return *this;}
+    template<typename ProviderIdentityT = AwsIdentity>
+    void SetProviderIdentity(ProviderIdentityT&& value) { m_providerIdentityHasBeenSet = true; m_providerIdentity = std::forward<ProviderIdentityT>(value); }
+    template<typename ProviderIdentityT = AwsIdentity>
+    CustomLogSourceConfiguration& WithProviderIdentity(ProviderIdentityT&& value) { SetProviderIdentity(std::forward<ProviderIdentityT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-RevokeEndpointAccessRequest::RevokeEndpointAccessRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_accountHasBeenSet(false),
-    m_vpcIdsHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String RevokeEndpointAccessRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,15 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-FixedResponseActionConfig::FixedResponseActionConfig() : 
-    m_messageBodyHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
-{
-}
-
 FixedResponseActionConfig::FixedResponseActionConfig(const XmlNode& xmlNode)
-  : FixedResponseActionConfig()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ FixedResponseActionConfig& FixedResponseActionConfig::operator =(const XmlNode& 
     {
       m_messageBody = Aws::Utils::Xml::DecodeEscapedXmlText(messageBodyNode.GetText());
       m_messageBodyHasBeenSet = true;
+       m_messageBodyHasBeenSet = true;
     }
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
     if(!statusCodeNode.IsNull())
     {
       m_statusCode = Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText());
       m_statusCodeHasBeenSet = true;
+       m_statusCodeHasBeenSet = true;
     }
     XmlNode contentTypeNode = resultNode.FirstChild("ContentType");
     if(!contentTypeNode.IsNull())
     {
       m_contentType = Aws::Utils::Xml::DecodeEscapedXmlText(contentTypeNode.GetText());
       m_contentTypeHasBeenSet = true;
+       m_contentTypeHasBeenSet = true;
     }
   }
 

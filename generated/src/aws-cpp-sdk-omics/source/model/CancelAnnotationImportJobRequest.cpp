@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelAnnotationImportJobRequest::CancelAnnotationImportJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelAnnotationImportJobRequest::SerializePayload() const
 {
   return {};

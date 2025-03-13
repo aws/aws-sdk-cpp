@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetComponentResult::GetComponentResult()
-{
-}
-
 GetComponentResult::GetComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ GetComponentResult& GetComponentResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("component"))
   {
     m_component = jsonValue.GetObject("component");
-
+    m_componentHasBeenSet = true;
   }
-
 
 
   return *this;

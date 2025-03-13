@@ -28,7 +28,7 @@ namespace Model
   class DescribeEndpointRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DescribeEndpointRequest();
+    AWS_IOT_API DescribeEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,14 +54,12 @@ namespace Model
      * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
      * are more secure and are trusted by most popular browsers.</p>
      */
-    inline const Aws::String& GetEndpointType() const{ return m_endpointType; }
+    inline const Aws::String& GetEndpointType() const { return m_endpointType; }
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
-    inline void SetEndpointType(const Aws::String& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
-    inline void SetEndpointType(Aws::String&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
-    inline void SetEndpointType(const char* value) { m_endpointTypeHasBeenSet = true; m_endpointType.assign(value); }
-    inline DescribeEndpointRequest& WithEndpointType(const Aws::String& value) { SetEndpointType(value); return *this;}
-    inline DescribeEndpointRequest& WithEndpointType(Aws::String&& value) { SetEndpointType(std::move(value)); return *this;}
-    inline DescribeEndpointRequest& WithEndpointType(const char* value) { SetEndpointType(value); return *this;}
+    template<typename EndpointTypeT = Aws::String>
+    void SetEndpointType(EndpointTypeT&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::forward<EndpointTypeT>(value); }
+    template<typename EndpointTypeT = Aws::String>
+    DescribeEndpointRequest& WithEndpointType(EndpointTypeT&& value) { SetEndpointType(std::forward<EndpointTypeT>(value)); return *this;}
     ///@}
   private:
 

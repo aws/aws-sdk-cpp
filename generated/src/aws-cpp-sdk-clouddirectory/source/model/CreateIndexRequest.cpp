@@ -13,16 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIndexRequest::CreateIndexRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_orderedIndexedAttributeListHasBeenSet(false),
-    m_isUnique(false),
-    m_isUniqueHasBeenSet(false),
-    m_parentReferenceHasBeenSet(false),
-    m_linkNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateIndexRequest::SerializePayload() const
 {
   JsonValue payload;

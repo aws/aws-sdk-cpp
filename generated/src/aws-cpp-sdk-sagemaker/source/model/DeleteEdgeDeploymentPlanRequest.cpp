@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEdgeDeploymentPlanRequest::DeleteEdgeDeploymentPlanRequest() : 
-    m_edgeDeploymentPlanNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEdgeDeploymentPlanRequest::SerializePayload() const
 {
   JsonValue payload;

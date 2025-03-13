@@ -28,7 +28,7 @@ namespace Model
   class UpdateEmailTemplateRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API UpdateEmailTemplateRequest();
+    AWS_SESV2_API UpdateEmailTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the template.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline UpdateEmailTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline UpdateEmailTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline UpdateEmailTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    UpdateEmailTemplateRequest& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p>The content of the email template, composed of a subject line, an HTML part,
      * and a text-only part.</p>
      */
-    inline const EmailTemplateContent& GetTemplateContent() const{ return m_templateContent; }
+    inline const EmailTemplateContent& GetTemplateContent() const { return m_templateContent; }
     inline bool TemplateContentHasBeenSet() const { return m_templateContentHasBeenSet; }
-    inline void SetTemplateContent(const EmailTemplateContent& value) { m_templateContentHasBeenSet = true; m_templateContent = value; }
-    inline void SetTemplateContent(EmailTemplateContent&& value) { m_templateContentHasBeenSet = true; m_templateContent = std::move(value); }
-    inline UpdateEmailTemplateRequest& WithTemplateContent(const EmailTemplateContent& value) { SetTemplateContent(value); return *this;}
-    inline UpdateEmailTemplateRequest& WithTemplateContent(EmailTemplateContent&& value) { SetTemplateContent(std::move(value)); return *this;}
+    template<typename TemplateContentT = EmailTemplateContent>
+    void SetTemplateContent(TemplateContentT&& value) { m_templateContentHasBeenSet = true; m_templateContent = std::forward<TemplateContentT>(value); }
+    template<typename TemplateContentT = EmailTemplateContent>
+    UpdateEmailTemplateRequest& WithTemplateContent(TemplateContentT&& value) { SetTemplateContent(std::forward<TemplateContentT>(value)); return *this;}
     ///@}
   private:
 

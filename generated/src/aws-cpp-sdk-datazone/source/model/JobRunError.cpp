@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-JobRunError::JobRunError() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 JobRunError::JobRunError(JsonView jsonValue)
-  : JobRunError()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ JobRunError& JobRunError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

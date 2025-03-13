@@ -18,24 +18,7 @@ namespace signer
 namespace Model
 {
 
-SigningPlatform::SigningPlatform() : 
-    m_platformIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_partnerHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_category(Category::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_signingConfigurationHasBeenSet(false),
-    m_signingImageFormatHasBeenSet(false),
-    m_maxSizeInMB(0),
-    m_maxSizeInMBHasBeenSet(false),
-    m_revocationSupported(false),
-    m_revocationSupportedHasBeenSet(false)
-{
-}
-
 SigningPlatform::SigningPlatform(JsonView jsonValue)
-  : SigningPlatform()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ SigningPlatform& SigningPlatform::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("platformId"))
   {
     m_platformId = jsonValue.GetString("platformId");
-
     m_platformIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partner"))
   {
     m_partner = jsonValue.GetString("partner");
-
     m_partnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetString("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("category"))
   {
     m_category = CategoryMapper::GetCategoryForName(jsonValue.GetString("category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signingConfiguration"))
   {
     m_signingConfiguration = jsonValue.GetObject("signingConfiguration");
-
     m_signingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signingImageFormat"))
   {
     m_signingImageFormat = jsonValue.GetObject("signingImageFormat");
-
     m_signingImageFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxSizeInMB"))
   {
     m_maxSizeInMB = jsonValue.GetInteger("maxSizeInMB");
-
     m_maxSizeInMBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revocationSupported"))
   {
     m_revocationSupported = jsonValue.GetBool("revocationSupported");
-
     m_revocationSupportedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-Model::Model() : 
-    m_contentTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_modelIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_schemaHasBeenSet(false)
-{
-}
-
 Model::Model(JsonView jsonValue)
-  : Model()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ Model& Model::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contentType"))
   {
     m_contentType = jsonValue.GetString("contentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelId"))
   {
     m_modelId = jsonValue.GetString("modelId");
-
     m_modelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schema"))
   {
     m_schema = jsonValue.GetString("schema");
-
     m_schemaHasBeenSet = true;
   }
-
   return *this;
 }
 

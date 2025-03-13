@@ -12,15 +12,6 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEnabledControlsRequest::ListEnabledControlsRequest() : 
-    m_filterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_targetIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ListEnabledControlsRequest::SerializePayload() const
 {
   JsonValue payload;

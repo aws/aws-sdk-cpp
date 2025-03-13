@@ -23,10 +23,9 @@ namespace Model
   class GetSolFunctionPackageDescriptorResult
   {
   public:
-    AWS_TNB_API GetSolFunctionPackageDescriptorResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_TNB_API GetSolFunctionPackageDescriptorResult(GetSolFunctionPackageDescriptorResult&&);
-    AWS_TNB_API GetSolFunctionPackageDescriptorResult& operator=(GetSolFunctionPackageDescriptorResult&&);
+    AWS_TNB_API GetSolFunctionPackageDescriptorResult() = default;
+    AWS_TNB_API GetSolFunctionPackageDescriptorResult(GetSolFunctionPackageDescriptorResult&&) = default;
+    AWS_TNB_API GetSolFunctionPackageDescriptorResult& operator=(GetSolFunctionPackageDescriptorResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetSolFunctionPackageDescriptorResult(const GetSolFunctionPackageDescriptorResult&) = delete;
@@ -42,11 +41,9 @@ namespace Model
     /**
      * <p>Indicates the media type of the resource.</p>
      */
-    inline const DescriptorContentType& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const DescriptorContentType& value) { m_contentType = value; }
-    inline void SetContentType(DescriptorContentType&& value) { m_contentType = std::move(value); }
-    inline GetSolFunctionPackageDescriptorResult& WithContentType(const DescriptorContentType& value) { SetContentType(value); return *this;}
-    inline GetSolFunctionPackageDescriptorResult& WithContentType(DescriptorContentType&& value) { SetContentType(std::move(value)); return *this;}
+    inline DescriptorContentType GetContentType() const { return m_contentType; }
+    inline void SetContentType(DescriptorContentType value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline GetSolFunctionPackageDescriptorResult& WithContentType(DescriptorContentType value) { SetContentType(value); return *this;}
     ///@}
 
     ///@{
@@ -60,21 +57,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSolFunctionPackageDescriptorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSolFunctionPackageDescriptorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSolFunctionPackageDescriptorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSolFunctionPackageDescriptorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    DescriptorContentType m_contentType;
+    DescriptorContentType m_contentType{DescriptorContentType::NOT_SET};
+    bool m_contentTypeHasBeenSet = false;
 
-    Aws::Utils::Stream::ResponseStream m_vnfd;
+    Aws::Utils::Stream::ResponseStream m_vnfd{};
+    bool m_vnfdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

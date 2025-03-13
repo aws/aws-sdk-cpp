@@ -28,7 +28,7 @@ namespace Model
   class CancelFlowExecutionsResult
   {
   public:
-    AWS_APPFLOW_API CancelFlowExecutionsResult();
+    AWS_APPFLOW_API CancelFlowExecutionsResult() = default;
     AWS_APPFLOW_API CancelFlowExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPFLOW_API CancelFlowExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,31 +39,30 @@ namespace Model
      * ineligible for canceling because they haven't started yet or have already
      * completed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInvalidExecutions() const{ return m_invalidExecutions; }
-    inline void SetInvalidExecutions(const Aws::Vector<Aws::String>& value) { m_invalidExecutions = value; }
-    inline void SetInvalidExecutions(Aws::Vector<Aws::String>&& value) { m_invalidExecutions = std::move(value); }
-    inline CancelFlowExecutionsResult& WithInvalidExecutions(const Aws::Vector<Aws::String>& value) { SetInvalidExecutions(value); return *this;}
-    inline CancelFlowExecutionsResult& WithInvalidExecutions(Aws::Vector<Aws::String>&& value) { SetInvalidExecutions(std::move(value)); return *this;}
-    inline CancelFlowExecutionsResult& AddInvalidExecutions(const Aws::String& value) { m_invalidExecutions.push_back(value); return *this; }
-    inline CancelFlowExecutionsResult& AddInvalidExecutions(Aws::String&& value) { m_invalidExecutions.push_back(std::move(value)); return *this; }
-    inline CancelFlowExecutionsResult& AddInvalidExecutions(const char* value) { m_invalidExecutions.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetInvalidExecutions() const { return m_invalidExecutions; }
+    template<typename InvalidExecutionsT = Aws::Vector<Aws::String>>
+    void SetInvalidExecutions(InvalidExecutionsT&& value) { m_invalidExecutionsHasBeenSet = true; m_invalidExecutions = std::forward<InvalidExecutionsT>(value); }
+    template<typename InvalidExecutionsT = Aws::Vector<Aws::String>>
+    CancelFlowExecutionsResult& WithInvalidExecutions(InvalidExecutionsT&& value) { SetInvalidExecutions(std::forward<InvalidExecutionsT>(value)); return *this;}
+    template<typename InvalidExecutionsT = Aws::String>
+    CancelFlowExecutionsResult& AddInvalidExecutions(InvalidExecutionsT&& value) { m_invalidExecutionsHasBeenSet = true; m_invalidExecutions.emplace_back(std::forward<InvalidExecutionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelFlowExecutionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelFlowExecutionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelFlowExecutionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelFlowExecutionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_invalidExecutions;
+    bool m_invalidExecutionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,7 @@ namespace Model
   class UpdateTraceSegmentDestinationRequest : public XRayRequest
   {
   public:
-    AWS_XRAY_API UpdateTraceSegmentDestinationRequest();
+    AWS_XRAY_API UpdateTraceSegmentDestinationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,16 +36,14 @@ namespace Model
     /**
      * <p> The configured destination of trace segments. </p>
      */
-    inline const TraceSegmentDestination& GetDestination() const{ return m_destination; }
+    inline TraceSegmentDestination GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const TraceSegmentDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(TraceSegmentDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline UpdateTraceSegmentDestinationRequest& WithDestination(const TraceSegmentDestination& value) { SetDestination(value); return *this;}
-    inline UpdateTraceSegmentDestinationRequest& WithDestination(TraceSegmentDestination&& value) { SetDestination(std::move(value)); return *this;}
+    inline void SetDestination(TraceSegmentDestination value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline UpdateTraceSegmentDestinationRequest& WithDestination(TraceSegmentDestination value) { SetDestination(value); return *this;}
     ///@}
   private:
 
-    TraceSegmentDestination m_destination;
+    TraceSegmentDestination m_destination{TraceSegmentDestination::NOT_SET};
     bool m_destinationHasBeenSet = false;
   };
 

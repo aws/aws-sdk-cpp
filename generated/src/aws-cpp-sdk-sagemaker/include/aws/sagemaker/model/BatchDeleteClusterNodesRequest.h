@@ -22,7 +22,7 @@ namespace Model
   class BatchDeleteClusterNodesRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API BatchDeleteClusterNodesRequest();
+    AWS_SAGEMAKER_API BatchDeleteClusterNodesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The name of the SageMaker HyperPod cluster from which to delete the specified
      * nodes.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline BatchDeleteClusterNodesRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline BatchDeleteClusterNodesRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline BatchDeleteClusterNodesRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    BatchDeleteClusterNodesRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,15 +57,14 @@ namespace Model
      * href="http://aws.amazon.com/contact-us/">Support</a> for assistance.</p> </li>
      * </ul> 
      */
-    inline const Aws::Vector<Aws::String>& GetNodeIds() const{ return m_nodeIds; }
+    inline const Aws::Vector<Aws::String>& GetNodeIds() const { return m_nodeIds; }
     inline bool NodeIdsHasBeenSet() const { return m_nodeIdsHasBeenSet; }
-    inline void SetNodeIds(const Aws::Vector<Aws::String>& value) { m_nodeIdsHasBeenSet = true; m_nodeIds = value; }
-    inline void SetNodeIds(Aws::Vector<Aws::String>&& value) { m_nodeIdsHasBeenSet = true; m_nodeIds = std::move(value); }
-    inline BatchDeleteClusterNodesRequest& WithNodeIds(const Aws::Vector<Aws::String>& value) { SetNodeIds(value); return *this;}
-    inline BatchDeleteClusterNodesRequest& WithNodeIds(Aws::Vector<Aws::String>&& value) { SetNodeIds(std::move(value)); return *this;}
-    inline BatchDeleteClusterNodesRequest& AddNodeIds(const Aws::String& value) { m_nodeIdsHasBeenSet = true; m_nodeIds.push_back(value); return *this; }
-    inline BatchDeleteClusterNodesRequest& AddNodeIds(Aws::String&& value) { m_nodeIdsHasBeenSet = true; m_nodeIds.push_back(std::move(value)); return *this; }
-    inline BatchDeleteClusterNodesRequest& AddNodeIds(const char* value) { m_nodeIdsHasBeenSet = true; m_nodeIds.push_back(value); return *this; }
+    template<typename NodeIdsT = Aws::Vector<Aws::String>>
+    void SetNodeIds(NodeIdsT&& value) { m_nodeIdsHasBeenSet = true; m_nodeIds = std::forward<NodeIdsT>(value); }
+    template<typename NodeIdsT = Aws::Vector<Aws::String>>
+    BatchDeleteClusterNodesRequest& WithNodeIds(NodeIdsT&& value) { SetNodeIds(std::forward<NodeIdsT>(value)); return *this;}
+    template<typename NodeIdsT = Aws::String>
+    BatchDeleteClusterNodesRequest& AddNodeIds(NodeIdsT&& value) { m_nodeIdsHasBeenSet = true; m_nodeIds.emplace_back(std::forward<NodeIdsT>(value)); return *this; }
     ///@}
   private:
 

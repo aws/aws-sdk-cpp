@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-ServerProcess::ServerProcess() : 
-    m_launchPathHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_concurrentExecutions(0),
-    m_concurrentExecutionsHasBeenSet(false)
-{
-}
-
 ServerProcess::ServerProcess(JsonView jsonValue)
-  : ServerProcess()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ServerProcess& ServerProcess::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LaunchPath"))
   {
     m_launchPath = jsonValue.GetString("LaunchPath");
-
     m_launchPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     m_parameters = jsonValue.GetString("Parameters");
-
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConcurrentExecutions"))
   {
     m_concurrentExecutions = jsonValue.GetInteger("ConcurrentExecutions");
-
     m_concurrentExecutionsHasBeenSet = true;
   }
-
   return *this;
 }
 

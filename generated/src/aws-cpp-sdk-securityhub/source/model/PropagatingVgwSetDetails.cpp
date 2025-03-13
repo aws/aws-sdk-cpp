@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-PropagatingVgwSetDetails::PropagatingVgwSetDetails() : 
-    m_gatewayIdHasBeenSet(false)
-{
-}
-
 PropagatingVgwSetDetails::PropagatingVgwSetDetails(JsonView jsonValue)
-  : PropagatingVgwSetDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PropagatingVgwSetDetails& PropagatingVgwSetDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("GatewayId"))
   {
     m_gatewayId = jsonValue.GetString("GatewayId");
-
     m_gatewayIdHasBeenSet = true;
   }
-
   return *this;
 }
 

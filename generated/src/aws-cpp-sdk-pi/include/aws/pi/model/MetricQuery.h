@@ -41,7 +41,7 @@ namespace Model
   class MetricQuery
   {
   public:
-    AWS_PI_API MetricQuery();
+    AWS_PI_API MetricQuery() = default;
     AWS_PI_API MetricQuery(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API MetricQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -69,14 +69,12 @@ namespace Model
      * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use
      * cases, you can query <code>db.load.avg</code> only.</p>
      */
-    inline const Aws::String& GetMetric() const{ return m_metric; }
+    inline const Aws::String& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
-    inline MetricQuery& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
-    inline MetricQuery& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
-    inline MetricQuery& WithMetric(const char* value) { SetMetric(value); return *this;}
+    template<typename MetricT = Aws::String>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = Aws::String>
+    MetricQuery& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +85,12 @@ namespace Model
      * dimensions within that group. You can also request that Performance Insights
      * return a limited number of values for a dimension.</p>
      */
-    inline const DimensionGroup& GetGroupBy() const{ return m_groupBy; }
+    inline const DimensionGroup& GetGroupBy() const { return m_groupBy; }
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
-    inline void SetGroupBy(const DimensionGroup& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
-    inline void SetGroupBy(DimensionGroup&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
-    inline MetricQuery& WithGroupBy(const DimensionGroup& value) { SetGroupBy(value); return *this;}
-    inline MetricQuery& WithGroupBy(DimensionGroup&& value) { SetGroupBy(std::move(value)); return *this;}
+    template<typename GroupByT = DimensionGroup>
+    void SetGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy = std::forward<GroupByT>(value); }
+    template<typename GroupByT = DimensionGroup>
+    MetricQuery& WithGroupBy(GroupByT&& value) { SetGroupBy(std::forward<GroupByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,19 +102,16 @@ namespace Model
      * <code>db.sql.db_id</code> filter isn't available for RDS for SQL Server DB
      * instances.</p> 
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetFilter() const{ return m_filter; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::Map<Aws::String, Aws::String>& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::Map<Aws::String, Aws::String>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline MetricQuery& WithFilter(const Aws::Map<Aws::String, Aws::String>& value) { SetFilter(value); return *this;}
-    inline MetricQuery& WithFilter(Aws::Map<Aws::String, Aws::String>&& value) { SetFilter(std::move(value)); return *this;}
-    inline MetricQuery& AddFilter(const Aws::String& key, const Aws::String& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
-    inline MetricQuery& AddFilter(Aws::String&& key, const Aws::String& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
-    inline MetricQuery& AddFilter(const Aws::String& key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
-    inline MetricQuery& AddFilter(Aws::String&& key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), std::move(value)); return *this; }
-    inline MetricQuery& AddFilter(const char* key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
-    inline MetricQuery& AddFilter(Aws::String&& key, const char* value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
-    inline MetricQuery& AddFilter(const char* key, const char* value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
+    template<typename FilterT = Aws::Map<Aws::String, Aws::String>>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::Map<Aws::String, Aws::String>>
+    MetricQuery& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
+    template<typename FilterKeyT = Aws::String, typename FilterValueT = Aws::String>
+    MetricQuery& AddFilter(FilterKeyT&& key, FilterValueT&& value) {
+      m_filterHasBeenSet = true; m_filter.emplace(std::forward<FilterKeyT>(key), std::forward<FilterValueT>(value)); return *this;
+    }
     ///@}
   private:
 

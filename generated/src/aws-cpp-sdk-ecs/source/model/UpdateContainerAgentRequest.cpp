@@ -12,12 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateContainerAgentRequest::UpdateContainerAgentRequest() : 
-    m_clusterHasBeenSet(false),
-    m_containerInstanceHasBeenSet(false)
-{
-}
-
 Aws::String UpdateContainerAgentRequest::SerializePayload() const
 {
   JsonValue payload;

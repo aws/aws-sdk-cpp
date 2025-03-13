@@ -18,17 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DocumentReaderConfig::DocumentReaderConfig() : 
-    m_documentReadAction(DocumentReadAction::NOT_SET),
-    m_documentReadActionHasBeenSet(false),
-    m_documentReadMode(DocumentReadMode::NOT_SET),
-    m_documentReadModeHasBeenSet(false),
-    m_featureTypesHasBeenSet(false)
-{
-}
-
 DocumentReaderConfig::DocumentReaderConfig(JsonView jsonValue)
-  : DocumentReaderConfig()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ DocumentReaderConfig& DocumentReaderConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DocumentReadAction"))
   {
     m_documentReadAction = DocumentReadActionMapper::GetDocumentReadActionForName(jsonValue.GetString("DocumentReadAction"));
-
     m_documentReadActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentReadMode"))
   {
     m_documentReadMode = DocumentReadModeMapper::GetDocumentReadModeForName(jsonValue.GetString("DocumentReadMode"));
-
     m_documentReadModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureTypes"))
   {
     Aws::Utils::Array<JsonView> featureTypesJsonList = jsonValue.GetArray("FeatureTypes");
@@ -58,7 +44,6 @@ DocumentReaderConfig& DocumentReaderConfig::operator =(JsonView jsonValue)
     }
     m_featureTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

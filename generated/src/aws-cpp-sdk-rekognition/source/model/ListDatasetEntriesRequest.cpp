@@ -12,20 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDatasetEntriesRequest::ListDatasetEntriesRequest() : 
-    m_datasetArnHasBeenSet(false),
-    m_containsLabelsHasBeenSet(false),
-    m_labeled(false),
-    m_labeledHasBeenSet(false),
-    m_sourceRefContainsHasBeenSet(false),
-    m_hasErrors(false),
-    m_hasErrorsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDatasetEntriesRequest::SerializePayload() const
 {
   JsonValue payload;

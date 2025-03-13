@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-FileSystemLocation::FileSystemLocation() : 
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_type(FileSystemLocationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 FileSystemLocation::FileSystemLocation(JsonView jsonValue)
-  : FileSystemLocation()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FileSystemLocation& FileSystemLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = FileSystemLocationTypeMapper::GetFileSystemLocationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

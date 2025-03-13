@@ -29,7 +29,7 @@ namespace Model
   class ListCostAllocationTagsResult
   {
   public:
-    AWS_COSTEXPLORER_API ListCostAllocationTagsResult();
+    AWS_COSTEXPLORER_API ListCostAllocationTagsResult() = default;
     AWS_COSTEXPLORER_API ListCostAllocationTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTEXPLORER_API ListCostAllocationTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of cost allocation tags that includes the detailed metadata for each
      * one. </p>
      */
-    inline const Aws::Vector<CostAllocationTag>& GetCostAllocationTags() const{ return m_costAllocationTags; }
-    inline void SetCostAllocationTags(const Aws::Vector<CostAllocationTag>& value) { m_costAllocationTags = value; }
-    inline void SetCostAllocationTags(Aws::Vector<CostAllocationTag>&& value) { m_costAllocationTags = std::move(value); }
-    inline ListCostAllocationTagsResult& WithCostAllocationTags(const Aws::Vector<CostAllocationTag>& value) { SetCostAllocationTags(value); return *this;}
-    inline ListCostAllocationTagsResult& WithCostAllocationTags(Aws::Vector<CostAllocationTag>&& value) { SetCostAllocationTags(std::move(value)); return *this;}
-    inline ListCostAllocationTagsResult& AddCostAllocationTags(const CostAllocationTag& value) { m_costAllocationTags.push_back(value); return *this; }
-    inline ListCostAllocationTagsResult& AddCostAllocationTags(CostAllocationTag&& value) { m_costAllocationTags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CostAllocationTag>& GetCostAllocationTags() const { return m_costAllocationTags; }
+    template<typename CostAllocationTagsT = Aws::Vector<CostAllocationTag>>
+    void SetCostAllocationTags(CostAllocationTagsT&& value) { m_costAllocationTagsHasBeenSet = true; m_costAllocationTags = std::forward<CostAllocationTagsT>(value); }
+    template<typename CostAllocationTagsT = Aws::Vector<CostAllocationTag>>
+    ListCostAllocationTagsResult& WithCostAllocationTags(CostAllocationTagsT&& value) { SetCostAllocationTags(std::forward<CostAllocationTagsT>(value)); return *this;}
+    template<typename CostAllocationTagsT = CostAllocationTag>
+    ListCostAllocationTagsResult& AddCostAllocationTags(CostAllocationTagsT&& value) { m_costAllocationTagsHasBeenSet = true; m_costAllocationTags.emplace_back(std::forward<CostAllocationTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * the token when the response from a previous call has more results than the
      * maximum page size. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCostAllocationTagsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCostAllocationTagsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCostAllocationTagsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCostAllocationTagsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCostAllocationTagsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCostAllocationTagsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCostAllocationTagsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCostAllocationTagsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CostAllocationTag> m_costAllocationTags;
+    bool m_costAllocationTagsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class CellSignals
   {
   public:
-    AWS_LOCATIONSERVICE_API CellSignals();
+    AWS_LOCATIONSERVICE_API CellSignals() = default;
     AWS_LOCATIONSERVICE_API CellSignals(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API CellSignals& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>Information about the Long-Term Evolution (LTE) network the device is
      * connected to.</p>
      */
-    inline const Aws::Vector<LteCellDetails>& GetLteCellDetails() const{ return m_lteCellDetails; }
+    inline const Aws::Vector<LteCellDetails>& GetLteCellDetails() const { return m_lteCellDetails; }
     inline bool LteCellDetailsHasBeenSet() const { return m_lteCellDetailsHasBeenSet; }
-    inline void SetLteCellDetails(const Aws::Vector<LteCellDetails>& value) { m_lteCellDetailsHasBeenSet = true; m_lteCellDetails = value; }
-    inline void SetLteCellDetails(Aws::Vector<LteCellDetails>&& value) { m_lteCellDetailsHasBeenSet = true; m_lteCellDetails = std::move(value); }
-    inline CellSignals& WithLteCellDetails(const Aws::Vector<LteCellDetails>& value) { SetLteCellDetails(value); return *this;}
-    inline CellSignals& WithLteCellDetails(Aws::Vector<LteCellDetails>&& value) { SetLteCellDetails(std::move(value)); return *this;}
-    inline CellSignals& AddLteCellDetails(const LteCellDetails& value) { m_lteCellDetailsHasBeenSet = true; m_lteCellDetails.push_back(value); return *this; }
-    inline CellSignals& AddLteCellDetails(LteCellDetails&& value) { m_lteCellDetailsHasBeenSet = true; m_lteCellDetails.push_back(std::move(value)); return *this; }
+    template<typename LteCellDetailsT = Aws::Vector<LteCellDetails>>
+    void SetLteCellDetails(LteCellDetailsT&& value) { m_lteCellDetailsHasBeenSet = true; m_lteCellDetails = std::forward<LteCellDetailsT>(value); }
+    template<typename LteCellDetailsT = Aws::Vector<LteCellDetails>>
+    CellSignals& WithLteCellDetails(LteCellDetailsT&& value) { SetLteCellDetails(std::forward<LteCellDetailsT>(value)); return *this;}
+    template<typename LteCellDetailsT = LteCellDetails>
+    CellSignals& AddLteCellDetails(LteCellDetailsT&& value) { m_lteCellDetailsHasBeenSet = true; m_lteCellDetails.emplace_back(std::forward<LteCellDetailsT>(value)); return *this; }
     ///@}
   private:
 

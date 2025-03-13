@@ -20,27 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Vpc::Vpc() : 
-    m_ownerIdHasBeenSet(false),
-    m_instanceTenancy(Tenancy::NOT_SET),
-    m_instanceTenancyHasBeenSet(false),
-    m_ipv6CidrBlockAssociationSetHasBeenSet(false),
-    m_cidrBlockAssociationSetHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_encryptionControlHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_blockPublicAccessStatesHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_state(VpcState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_dhcpOptionsIdHasBeenSet(false)
-{
-}
-
 Vpc::Vpc(const XmlNode& xmlNode)
-  : Vpc()
 {
   *this = xmlNode;
 }
@@ -56,90 +36,102 @@ Vpc& Vpc::operator =(const XmlNode& xmlNode)
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode instanceTenancyNode = resultNode.FirstChild("instanceTenancy");
     if(!instanceTenancyNode.IsNull())
     {
-      m_instanceTenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTenancyNode.GetText()).c_str()).c_str());
+      m_instanceTenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTenancyNode.GetText()).c_str()));
       m_instanceTenancyHasBeenSet = true;
+       m_instanceTenancyHasBeenSet = true;
     }
     XmlNode ipv6CidrBlockAssociationSetNode = resultNode.FirstChild("ipv6CidrBlockAssociationSet");
     if(!ipv6CidrBlockAssociationSetNode.IsNull())
     {
       XmlNode ipv6CidrBlockAssociationSetMember = ipv6CidrBlockAssociationSetNode.FirstChild("item");
+      m_ipv6CidrBlockAssociationSetHasBeenSet = !ipv6CidrBlockAssociationSetMember.IsNull();
       while(!ipv6CidrBlockAssociationSetMember.IsNull())
       {
         m_ipv6CidrBlockAssociationSet.push_back(ipv6CidrBlockAssociationSetMember);
         ipv6CidrBlockAssociationSetMember = ipv6CidrBlockAssociationSetMember.NextNode("item");
       }
 
-      m_ipv6CidrBlockAssociationSetHasBeenSet = true;
+       m_ipv6CidrBlockAssociationSetHasBeenSet = true;
     }
     XmlNode cidrBlockAssociationSetNode = resultNode.FirstChild("cidrBlockAssociationSet");
     if(!cidrBlockAssociationSetNode.IsNull())
     {
       XmlNode cidrBlockAssociationSetMember = cidrBlockAssociationSetNode.FirstChild("item");
+      m_cidrBlockAssociationSetHasBeenSet = !cidrBlockAssociationSetMember.IsNull();
       while(!cidrBlockAssociationSetMember.IsNull())
       {
         m_cidrBlockAssociationSet.push_back(cidrBlockAssociationSetMember);
         cidrBlockAssociationSetMember = cidrBlockAssociationSetMember.NextNode("item");
       }
 
-      m_cidrBlockAssociationSetHasBeenSet = true;
+       m_cidrBlockAssociationSetHasBeenSet = true;
     }
     XmlNode isDefaultNode = resultNode.FirstChild("isDefault");
     if(!isDefaultNode.IsNull())
     {
       m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
+       m_isDefaultHasBeenSet = true;
     }
     XmlNode encryptionControlNode = resultNode.FirstChild("encryptionControl");
     if(!encryptionControlNode.IsNull())
     {
       m_encryptionControl = encryptionControlNode;
       m_encryptionControlHasBeenSet = true;
+       m_encryptionControlHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode blockPublicAccessStatesNode = resultNode.FirstChild("blockPublicAccessStates");
     if(!blockPublicAccessStatesNode.IsNull())
     {
       m_blockPublicAccessStates = blockPublicAccessStatesNode;
       m_blockPublicAccessStatesHasBeenSet = true;
+       m_blockPublicAccessStatesHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = VpcStateMapper::GetVpcStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VpcStateMapper::GetVpcStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode cidrBlockNode = resultNode.FirstChild("cidrBlock");
     if(!cidrBlockNode.IsNull())
     {
       m_cidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(cidrBlockNode.GetText());
       m_cidrBlockHasBeenSet = true;
+       m_cidrBlockHasBeenSet = true;
     }
     XmlNode dhcpOptionsIdNode = resultNode.FirstChild("dhcpOptionsId");
     if(!dhcpOptionsIdNode.IsNull())
     {
       m_dhcpOptionsId = Aws::Utils::Xml::DecodeEscapedXmlText(dhcpOptionsIdNode.GetText());
       m_dhcpOptionsIdHasBeenSet = true;
+       m_dhcpOptionsIdHasBeenSet = true;
     }
   }
 

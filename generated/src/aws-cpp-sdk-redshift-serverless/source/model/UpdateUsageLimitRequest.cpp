@@ -12,15 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUsageLimitRequest::UpdateUsageLimitRequest() : 
-    m_amount(0),
-    m_amountHasBeenSet(false),
-    m_breachAction(UsageLimitBreachAction::NOT_SET),
-    m_breachActionHasBeenSet(false),
-    m_usageLimitIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUsageLimitRequest::SerializePayload() const
 {
   JsonValue payload;

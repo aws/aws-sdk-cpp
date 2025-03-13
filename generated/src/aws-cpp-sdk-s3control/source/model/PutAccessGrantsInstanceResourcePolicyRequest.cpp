@@ -15,12 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-PutAccessGrantsInstanceResourcePolicyRequest::PutAccessGrantsInstanceResourcePolicyRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_organizationHasBeenSet(false)
-{
-}
 
 Aws::String PutAccessGrantsInstanceResourcePolicyRequest::SerializePayload() const
 {

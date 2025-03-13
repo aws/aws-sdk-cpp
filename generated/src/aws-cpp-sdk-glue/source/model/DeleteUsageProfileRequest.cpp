@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUsageProfileRequest::DeleteUsageProfileRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUsageProfileRequest::SerializePayload() const
 {
   JsonValue payload;

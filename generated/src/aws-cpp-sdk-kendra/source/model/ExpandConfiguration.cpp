@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ExpandConfiguration::ExpandConfiguration() : 
-    m_maxResultItemsToExpand(0),
-    m_maxResultItemsToExpandHasBeenSet(false),
-    m_maxExpandedResultsPerItem(0),
-    m_maxExpandedResultsPerItemHasBeenSet(false)
-{
-}
-
 ExpandConfiguration::ExpandConfiguration(JsonView jsonValue)
-  : ExpandConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ExpandConfiguration& ExpandConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaxResultItemsToExpand"))
   {
     m_maxResultItemsToExpand = jsonValue.GetInteger("MaxResultItemsToExpand");
-
     m_maxResultItemsToExpandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxExpandedResultsPerItem"))
   {
     m_maxExpandedResultsPerItem = jsonValue.GetInteger("MaxExpandedResultsPerItem");
-
     m_maxExpandedResultsPerItemHasBeenSet = true;
   }
-
   return *this;
 }
 

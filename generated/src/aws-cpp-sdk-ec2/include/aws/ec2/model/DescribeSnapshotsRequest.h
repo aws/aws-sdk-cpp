@@ -23,7 +23,7 @@ namespace Model
   class DescribeSnapshotsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeSnapshotsRequest();
+    AWS_EC2_API DescribeSnapshotsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeSnapshotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -56,14 +56,12 @@ namespace Model
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeSnapshotsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSnapshotsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSnapshotsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSnapshotsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,15 +70,14 @@ namespace Model
      * combination of Amazon Web Services account IDs, <code>self</code>, and
      * <code>amazon</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOwnerIds() const{ return m_ownerIds; }
+    inline const Aws::Vector<Aws::String>& GetOwnerIds() const { return m_ownerIds; }
     inline bool OwnerIdsHasBeenSet() const { return m_ownerIdsHasBeenSet; }
-    inline void SetOwnerIds(const Aws::Vector<Aws::String>& value) { m_ownerIdsHasBeenSet = true; m_ownerIds = value; }
-    inline void SetOwnerIds(Aws::Vector<Aws::String>&& value) { m_ownerIdsHasBeenSet = true; m_ownerIds = std::move(value); }
-    inline DescribeSnapshotsRequest& WithOwnerIds(const Aws::Vector<Aws::String>& value) { SetOwnerIds(value); return *this;}
-    inline DescribeSnapshotsRequest& WithOwnerIds(Aws::Vector<Aws::String>&& value) { SetOwnerIds(std::move(value)); return *this;}
-    inline DescribeSnapshotsRequest& AddOwnerIds(const Aws::String& value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(value); return *this; }
-    inline DescribeSnapshotsRequest& AddOwnerIds(Aws::String&& value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(std::move(value)); return *this; }
-    inline DescribeSnapshotsRequest& AddOwnerIds(const char* value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(value); return *this; }
+    template<typename OwnerIdsT = Aws::Vector<Aws::String>>
+    void SetOwnerIds(OwnerIdsT&& value) { m_ownerIdsHasBeenSet = true; m_ownerIds = std::forward<OwnerIdsT>(value); }
+    template<typename OwnerIdsT = Aws::Vector<Aws::String>>
+    DescribeSnapshotsRequest& WithOwnerIds(OwnerIdsT&& value) { SetOwnerIds(std::forward<OwnerIdsT>(value)); return *this;}
+    template<typename OwnerIdsT = Aws::String>
+    DescribeSnapshotsRequest& AddOwnerIds(OwnerIdsT&& value) { m_ownerIdsHasBeenSet = true; m_ownerIds.emplace_back(std::forward<OwnerIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,15 +85,14 @@ namespace Model
      * <p>The IDs of the Amazon Web Services accounts that can create volumes from the
      * snapshot.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRestorableByUserIds() const{ return m_restorableByUserIds; }
+    inline const Aws::Vector<Aws::String>& GetRestorableByUserIds() const { return m_restorableByUserIds; }
     inline bool RestorableByUserIdsHasBeenSet() const { return m_restorableByUserIdsHasBeenSet; }
-    inline void SetRestorableByUserIds(const Aws::Vector<Aws::String>& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds = value; }
-    inline void SetRestorableByUserIds(Aws::Vector<Aws::String>&& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds = std::move(value); }
-    inline DescribeSnapshotsRequest& WithRestorableByUserIds(const Aws::Vector<Aws::String>& value) { SetRestorableByUserIds(value); return *this;}
-    inline DescribeSnapshotsRequest& WithRestorableByUserIds(Aws::Vector<Aws::String>&& value) { SetRestorableByUserIds(std::move(value)); return *this;}
-    inline DescribeSnapshotsRequest& AddRestorableByUserIds(const Aws::String& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds.push_back(value); return *this; }
-    inline DescribeSnapshotsRequest& AddRestorableByUserIds(Aws::String&& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds.push_back(std::move(value)); return *this; }
-    inline DescribeSnapshotsRequest& AddRestorableByUserIds(const char* value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds.push_back(value); return *this; }
+    template<typename RestorableByUserIdsT = Aws::Vector<Aws::String>>
+    void SetRestorableByUserIds(RestorableByUserIdsT&& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds = std::forward<RestorableByUserIdsT>(value); }
+    template<typename RestorableByUserIdsT = Aws::Vector<Aws::String>>
+    DescribeSnapshotsRequest& WithRestorableByUserIds(RestorableByUserIdsT&& value) { SetRestorableByUserIds(std::forward<RestorableByUserIdsT>(value)); return *this;}
+    template<typename RestorableByUserIdsT = Aws::String>
+    DescribeSnapshotsRequest& AddRestorableByUserIds(RestorableByUserIdsT&& value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds.emplace_back(std::forward<RestorableByUserIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,15 +100,14 @@ namespace Model
      * <p>The snapshot IDs.</p> <p>Default: Describes the snapshots for which you have
      * create volume permissions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSnapshotIds() const{ return m_snapshotIds; }
+    inline const Aws::Vector<Aws::String>& GetSnapshotIds() const { return m_snapshotIds; }
     inline bool SnapshotIdsHasBeenSet() const { return m_snapshotIdsHasBeenSet; }
-    inline void SetSnapshotIds(const Aws::Vector<Aws::String>& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = value; }
-    inline void SetSnapshotIds(Aws::Vector<Aws::String>&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = std::move(value); }
-    inline DescribeSnapshotsRequest& WithSnapshotIds(const Aws::Vector<Aws::String>& value) { SetSnapshotIds(value); return *this;}
-    inline DescribeSnapshotsRequest& WithSnapshotIds(Aws::Vector<Aws::String>&& value) { SetSnapshotIds(std::move(value)); return *this;}
-    inline DescribeSnapshotsRequest& AddSnapshotIds(const Aws::String& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
-    inline DescribeSnapshotsRequest& AddSnapshotIds(Aws::String&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(std::move(value)); return *this; }
-    inline DescribeSnapshotsRequest& AddSnapshotIds(const char* value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
+    template<typename SnapshotIdsT = Aws::Vector<Aws::String>>
+    void SetSnapshotIds(SnapshotIdsT&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = std::forward<SnapshotIdsT>(value); }
+    template<typename SnapshotIdsT = Aws::Vector<Aws::String>>
+    DescribeSnapshotsRequest& WithSnapshotIds(SnapshotIdsT&& value) { SetSnapshotIds(std::forward<SnapshotIdsT>(value)); return *this;}
+    template<typename SnapshotIdsT = Aws::String>
+    DescribeSnapshotsRequest& AddSnapshotIds(SnapshotIdsT&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.emplace_back(std::forward<SnapshotIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -122,7 +117,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeSnapshotsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -160,18 +155,18 @@ namespace Model
      * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
      * </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeSnapshotsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeSnapshotsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeSnapshotsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeSnapshotsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeSnapshotsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeSnapshotsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
@@ -186,7 +181,7 @@ namespace Model
     Aws::Vector<Aws::String> m_snapshotIds;
     bool m_snapshotIdsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;

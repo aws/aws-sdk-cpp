@@ -12,12 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRevealConfigurationRequest::UpdateRevealConfigurationRequest() : 
-    m_configurationHasBeenSet(false),
-    m_retrievalConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRevealConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

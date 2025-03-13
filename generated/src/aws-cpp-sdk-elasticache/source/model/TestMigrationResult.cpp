@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestMigrationResult::TestMigrationResult()
-{
-}
-
 TestMigrationResult::TestMigrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ TestMigrationResult& TestMigrationResult::operator =(const Aws::AmazonWebService
     if(!replicationGroupNode.IsNull())
     {
       m_replicationGroup = replicationGroupNode;
+      m_replicationGroupHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::TestMigrationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

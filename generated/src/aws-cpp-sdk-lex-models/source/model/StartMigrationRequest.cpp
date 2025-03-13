@@ -12,16 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMigrationRequest::StartMigrationRequest() : 
-    m_v1BotNameHasBeenSet(false),
-    m_v1BotVersionHasBeenSet(false),
-    m_v2BotNameHasBeenSet(false),
-    m_v2BotRoleHasBeenSet(false),
-    m_migrationStrategy(MigrationStrategy::NOT_SET),
-    m_migrationStrategyHasBeenSet(false)
-{
-}
-
 Aws::String StartMigrationRequest::SerializePayload() const
 {
   JsonValue payload;

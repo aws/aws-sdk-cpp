@@ -24,7 +24,7 @@ namespace Model
   class CreateVpcIngressConnectionRequest : public AppRunnerRequest
   {
   public:
-    AWS_APPRUNNER_API CreateVpcIngressConnectionRequest();
+    AWS_APPRUNNER_API CreateVpcIngressConnectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for this App Runner service that is used to
      * create the VPC Ingress Connection resource.</p>
      */
-    inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-    inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-    inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-    inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-    inline CreateVpcIngressConnectionRequest& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-    inline CreateVpcIngressConnectionRequest& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-    inline CreateVpcIngressConnectionRequest& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    CreateVpcIngressConnectionRequest& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * the active VPC Ingress Connections in your Amazon Web Services account in the
      * Amazon Web Services Region. </p>
      */
-    inline const Aws::String& GetVpcIngressConnectionName() const{ return m_vpcIngressConnectionName; }
+    inline const Aws::String& GetVpcIngressConnectionName() const { return m_vpcIngressConnectionName; }
     inline bool VpcIngressConnectionNameHasBeenSet() const { return m_vpcIngressConnectionNameHasBeenSet; }
-    inline void SetVpcIngressConnectionName(const Aws::String& value) { m_vpcIngressConnectionNameHasBeenSet = true; m_vpcIngressConnectionName = value; }
-    inline void SetVpcIngressConnectionName(Aws::String&& value) { m_vpcIngressConnectionNameHasBeenSet = true; m_vpcIngressConnectionName = std::move(value); }
-    inline void SetVpcIngressConnectionName(const char* value) { m_vpcIngressConnectionNameHasBeenSet = true; m_vpcIngressConnectionName.assign(value); }
-    inline CreateVpcIngressConnectionRequest& WithVpcIngressConnectionName(const Aws::String& value) { SetVpcIngressConnectionName(value); return *this;}
-    inline CreateVpcIngressConnectionRequest& WithVpcIngressConnectionName(Aws::String&& value) { SetVpcIngressConnectionName(std::move(value)); return *this;}
-    inline CreateVpcIngressConnectionRequest& WithVpcIngressConnectionName(const char* value) { SetVpcIngressConnectionName(value); return *this;}
+    template<typename VpcIngressConnectionNameT = Aws::String>
+    void SetVpcIngressConnectionName(VpcIngressConnectionNameT&& value) { m_vpcIngressConnectionNameHasBeenSet = true; m_vpcIngressConnectionName = std::forward<VpcIngressConnectionNameT>(value); }
+    template<typename VpcIngressConnectionNameT = Aws::String>
+    CreateVpcIngressConnectionRequest& WithVpcIngressConnectionName(VpcIngressConnectionNameT&& value) { SetVpcIngressConnectionName(std::forward<VpcIngressConnectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,12 @@ namespace Model
      * Services PrivateLink VPC endpoint that are used to create the VPC Ingress
      * Connection resource.</p>
      */
-    inline const IngressVpcConfiguration& GetIngressVpcConfiguration() const{ return m_ingressVpcConfiguration; }
+    inline const IngressVpcConfiguration& GetIngressVpcConfiguration() const { return m_ingressVpcConfiguration; }
     inline bool IngressVpcConfigurationHasBeenSet() const { return m_ingressVpcConfigurationHasBeenSet; }
-    inline void SetIngressVpcConfiguration(const IngressVpcConfiguration& value) { m_ingressVpcConfigurationHasBeenSet = true; m_ingressVpcConfiguration = value; }
-    inline void SetIngressVpcConfiguration(IngressVpcConfiguration&& value) { m_ingressVpcConfigurationHasBeenSet = true; m_ingressVpcConfiguration = std::move(value); }
-    inline CreateVpcIngressConnectionRequest& WithIngressVpcConfiguration(const IngressVpcConfiguration& value) { SetIngressVpcConfiguration(value); return *this;}
-    inline CreateVpcIngressConnectionRequest& WithIngressVpcConfiguration(IngressVpcConfiguration&& value) { SetIngressVpcConfiguration(std::move(value)); return *this;}
+    template<typename IngressVpcConfigurationT = IngressVpcConfiguration>
+    void SetIngressVpcConfiguration(IngressVpcConfigurationT&& value) { m_ingressVpcConfigurationHasBeenSet = true; m_ingressVpcConfiguration = std::forward<IngressVpcConfigurationT>(value); }
+    template<typename IngressVpcConfigurationT = IngressVpcConfiguration>
+    CreateVpcIngressConnectionRequest& WithIngressVpcConfiguration(IngressVpcConfigurationT&& value) { SetIngressVpcConfiguration(std::forward<IngressVpcConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,14 @@ namespace Model
      * <p>An optional list of metadata items that you can associate with the VPC
      * Ingress Connection resource. A tag is a key-value pair.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateVpcIngressConnectionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateVpcIngressConnectionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateVpcIngressConnectionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateVpcIngressConnectionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateVpcIngressConnectionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateVpcIngressConnectionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

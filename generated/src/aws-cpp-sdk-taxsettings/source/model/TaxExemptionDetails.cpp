@@ -18,17 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-TaxExemptionDetails::TaxExemptionDetails() : 
-    m_heritageObtainedDetails(false),
-    m_heritageObtainedDetailsHasBeenSet(false),
-    m_heritageObtainedParentEntityHasBeenSet(false),
-    m_heritageObtainedReasonHasBeenSet(false),
-    m_taxExemptionsHasBeenSet(false)
-{
-}
-
 TaxExemptionDetails::TaxExemptionDetails(JsonView jsonValue)
-  : TaxExemptionDetails()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TaxExemptionDetails& TaxExemptionDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("heritageObtainedDetails"))
   {
     m_heritageObtainedDetails = jsonValue.GetBool("heritageObtainedDetails");
-
     m_heritageObtainedDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("heritageObtainedParentEntity"))
   {
     m_heritageObtainedParentEntity = jsonValue.GetString("heritageObtainedParentEntity");
-
     m_heritageObtainedParentEntityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("heritageObtainedReason"))
   {
     m_heritageObtainedReason = jsonValue.GetString("heritageObtainedReason");
-
     m_heritageObtainedReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taxExemptions"))
   {
     Aws::Utils::Array<JsonView> taxExemptionsJsonList = jsonValue.GetArray("taxExemptions");
@@ -65,7 +49,6 @@ TaxExemptionDetails& TaxExemptionDetails::operator =(JsonView jsonValue)
     }
     m_taxExemptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEngagementInvitationRequest::CreateEngagementInvitationRequest() : 
-    m_catalogHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_engagementIdentifierHasBeenSet(false),
-    m_invitationHasBeenSet(false)
-{
-}
-
 Aws::String CreateEngagementInvitationRequest::SerializePayload() const
 {
   JsonValue payload;

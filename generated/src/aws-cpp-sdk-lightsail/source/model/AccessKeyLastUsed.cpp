@@ -18,15 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-AccessKeyLastUsed::AccessKeyLastUsed() : 
-    m_lastUsedDateHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 AccessKeyLastUsed::AccessKeyLastUsed(JsonView jsonValue)
-  : AccessKeyLastUsed()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AccessKeyLastUsed& AccessKeyLastUsed::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lastUsedDate"))
   {
     m_lastUsedDate = jsonValue.GetDouble("lastUsedDate");
-
     m_lastUsedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

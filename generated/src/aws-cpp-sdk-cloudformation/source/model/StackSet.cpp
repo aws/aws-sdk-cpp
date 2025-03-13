@@ -20,31 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackSet::StackSet() : 
-    m_stackSetNameHasBeenSet(false),
-    m_stackSetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(StackSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_stackSetARNHasBeenSet(false),
-    m_administrationRoleARNHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false),
-    m_stackSetDriftDetectionDetailsHasBeenSet(false),
-    m_autoDeploymentHasBeenSet(false),
-    m_permissionModel(PermissionModels::NOT_SET),
-    m_permissionModelHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false),
-    m_managedExecutionHasBeenSet(false),
-    m_regionsHasBeenSet(false)
-{
-}
-
 StackSet::StackSet(const XmlNode& xmlNode)
-  : StackSet()
 {
   *this = xmlNode;
 }
@@ -60,132 +36,149 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
     {
       m_stackSetName = Aws::Utils::Xml::DecodeEscapedXmlText(stackSetNameNode.GetText());
       m_stackSetNameHasBeenSet = true;
+       m_stackSetNameHasBeenSet = true;
     }
     XmlNode stackSetIdNode = resultNode.FirstChild("StackSetId");
     if(!stackSetIdNode.IsNull())
     {
       m_stackSetId = Aws::Utils::Xml::DecodeEscapedXmlText(stackSetIdNode.GetText());
       m_stackSetIdHasBeenSet = true;
+       m_stackSetIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StackSetStatusMapper::GetStackSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StackSetStatusMapper::GetStackSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode templateBodyNode = resultNode.FirstChild("TemplateBody");
     if(!templateBodyNode.IsNull())
     {
       m_templateBody = Aws::Utils::Xml::DecodeEscapedXmlText(templateBodyNode.GetText());
       m_templateBodyHasBeenSet = true;
+       m_templateBodyHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("member");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);
         parametersMember = parametersMember.NextNode("member");
       }
 
-      m_parametersHasBeenSet = true;
+       m_parametersHasBeenSet = true;
     }
     XmlNode capabilitiesNode = resultNode.FirstChild("Capabilities");
     if(!capabilitiesNode.IsNull())
     {
       XmlNode capabilitiesMember = capabilitiesNode.FirstChild("member");
+      m_capabilitiesHasBeenSet = !capabilitiesMember.IsNull();
       while(!capabilitiesMember.IsNull())
       {
         m_capabilities.push_back(CapabilityMapper::GetCapabilityForName(StringUtils::Trim(capabilitiesMember.GetText().c_str())));
         capabilitiesMember = capabilitiesMember.NextNode("member");
       }
 
-      m_capabilitiesHasBeenSet = true;
+       m_capabilitiesHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode stackSetARNNode = resultNode.FirstChild("StackSetARN");
     if(!stackSetARNNode.IsNull())
     {
       m_stackSetARN = Aws::Utils::Xml::DecodeEscapedXmlText(stackSetARNNode.GetText());
       m_stackSetARNHasBeenSet = true;
+       m_stackSetARNHasBeenSet = true;
     }
     XmlNode administrationRoleARNNode = resultNode.FirstChild("AdministrationRoleARN");
     if(!administrationRoleARNNode.IsNull())
     {
       m_administrationRoleARN = Aws::Utils::Xml::DecodeEscapedXmlText(administrationRoleARNNode.GetText());
       m_administrationRoleARNHasBeenSet = true;
+       m_administrationRoleARNHasBeenSet = true;
     }
     XmlNode executionRoleNameNode = resultNode.FirstChild("ExecutionRoleName");
     if(!executionRoleNameNode.IsNull())
     {
       m_executionRoleName = Aws::Utils::Xml::DecodeEscapedXmlText(executionRoleNameNode.GetText());
       m_executionRoleNameHasBeenSet = true;
+       m_executionRoleNameHasBeenSet = true;
     }
     XmlNode stackSetDriftDetectionDetailsNode = resultNode.FirstChild("StackSetDriftDetectionDetails");
     if(!stackSetDriftDetectionDetailsNode.IsNull())
     {
       m_stackSetDriftDetectionDetails = stackSetDriftDetectionDetailsNode;
       m_stackSetDriftDetectionDetailsHasBeenSet = true;
+       m_stackSetDriftDetectionDetailsHasBeenSet = true;
     }
     XmlNode autoDeploymentNode = resultNode.FirstChild("AutoDeployment");
     if(!autoDeploymentNode.IsNull())
     {
       m_autoDeployment = autoDeploymentNode;
       m_autoDeploymentHasBeenSet = true;
+       m_autoDeploymentHasBeenSet = true;
     }
     XmlNode permissionModelNode = resultNode.FirstChild("PermissionModel");
     if(!permissionModelNode.IsNull())
     {
-      m_permissionModel = PermissionModelsMapper::GetPermissionModelsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionModelNode.GetText()).c_str()).c_str());
+      m_permissionModel = PermissionModelsMapper::GetPermissionModelsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionModelNode.GetText()).c_str()));
       m_permissionModelHasBeenSet = true;
+       m_permissionModelHasBeenSet = true;
     }
     XmlNode organizationalUnitIdsNode = resultNode.FirstChild("OrganizationalUnitIds");
     if(!organizationalUnitIdsNode.IsNull())
     {
       XmlNode organizationalUnitIdsMember = organizationalUnitIdsNode.FirstChild("member");
+      m_organizationalUnitIdsHasBeenSet = !organizationalUnitIdsMember.IsNull();
       while(!organizationalUnitIdsMember.IsNull())
       {
         m_organizationalUnitIds.push_back(organizationalUnitIdsMember.GetText());
         organizationalUnitIdsMember = organizationalUnitIdsMember.NextNode("member");
       }
 
-      m_organizationalUnitIdsHasBeenSet = true;
+       m_organizationalUnitIdsHasBeenSet = true;
     }
     XmlNode managedExecutionNode = resultNode.FirstChild("ManagedExecution");
     if(!managedExecutionNode.IsNull())
     {
       m_managedExecution = managedExecutionNode;
       m_managedExecutionHasBeenSet = true;
+       m_managedExecutionHasBeenSet = true;
     }
     XmlNode regionsNode = resultNode.FirstChild("Regions");
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("member");
+      m_regionsHasBeenSet = !regionsMember.IsNull();
       while(!regionsMember.IsNull())
       {
         m_regions.push_back(regionsMember.GetText());
         regionsMember = regionsMember.NextNode("member");
       }
 
-      m_regionsHasBeenSet = true;
+       m_regionsHasBeenSet = true;
     }
   }
 

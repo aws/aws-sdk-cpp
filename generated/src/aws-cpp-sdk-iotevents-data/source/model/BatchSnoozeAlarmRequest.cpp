@@ -12,11 +12,6 @@ using namespace Aws::IoTEventsData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchSnoozeAlarmRequest::BatchSnoozeAlarmRequest() : 
-    m_snoozeActionRequestsHasBeenSet(false)
-{
-}
-
 Aws::String BatchSnoozeAlarmRequest::SerializePayload() const
 {
   JsonValue payload;

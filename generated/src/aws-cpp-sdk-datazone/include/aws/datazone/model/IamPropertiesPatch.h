@@ -29,7 +29,7 @@ namespace Model
   class IamPropertiesPatch
   {
   public:
-    AWS_DATAZONE_API IamPropertiesPatch();
+    AWS_DATAZONE_API IamPropertiesPatch() = default;
     AWS_DATAZONE_API IamPropertiesPatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API IamPropertiesPatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
      * <p>Specifies whether Amazon Web Services Glue lineage sync is enabled for a
      * connection.</p>
      */
-    inline bool GetGlueLineageSyncEnabled() const{ return m_glueLineageSyncEnabled; }
+    inline bool GetGlueLineageSyncEnabled() const { return m_glueLineageSyncEnabled; }
     inline bool GlueLineageSyncEnabledHasBeenSet() const { return m_glueLineageSyncEnabledHasBeenSet; }
     inline void SetGlueLineageSyncEnabled(bool value) { m_glueLineageSyncEnabledHasBeenSet = true; m_glueLineageSyncEnabled = value; }
     inline IamPropertiesPatch& WithGlueLineageSyncEnabled(bool value) { SetGlueLineageSyncEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_glueLineageSyncEnabled;
+    bool m_glueLineageSyncEnabled{false};
     bool m_glueLineageSyncEnabledHasBeenSet = false;
   };
 

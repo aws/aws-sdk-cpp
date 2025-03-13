@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AuthorizationRule::AuthorizationRule() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_accessAll(false),
-    m_accessAllHasBeenSet(false),
-    m_destinationCidrHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AuthorizationRule::AuthorizationRule(const XmlNode& xmlNode)
-  : AuthorizationRule()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,42 @@ AuthorizationRule& AuthorizationRule::operator =(const XmlNode& xmlNode)
     {
       m_clientVpnEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(clientVpnEndpointIdNode.GetText());
       m_clientVpnEndpointIdHasBeenSet = true;
+       m_clientVpnEndpointIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("groupId");
     if(!groupIdNode.IsNull())
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
+       m_groupIdHasBeenSet = true;
     }
     XmlNode accessAllNode = resultNode.FirstChild("accessAll");
     if(!accessAllNode.IsNull())
     {
       m_accessAll = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(accessAllNode.GetText()).c_str()).c_str());
       m_accessAllHasBeenSet = true;
+       m_accessAllHasBeenSet = true;
     }
     XmlNode destinationCidrNode = resultNode.FirstChild("destinationCidr");
     if(!destinationCidrNode.IsNull())
     {
       m_destinationCidr = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrNode.GetText());
       m_destinationCidrHasBeenSet = true;
+       m_destinationCidrHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

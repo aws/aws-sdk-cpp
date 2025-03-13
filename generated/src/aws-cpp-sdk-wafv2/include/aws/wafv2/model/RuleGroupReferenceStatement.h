@@ -41,7 +41,7 @@ namespace Model
   class RuleGroupReferenceStatement
   {
   public:
-    AWS_WAFV2_API RuleGroupReferenceStatement();
+    AWS_WAFV2_API RuleGroupReferenceStatement() = default;
     AWS_WAFV2_API RuleGroupReferenceStatement(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RuleGroupReferenceStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the entity.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline RuleGroupReferenceStatement& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline RuleGroupReferenceStatement& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline RuleGroupReferenceStatement& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    RuleGroupReferenceStatement& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,14 @@ namespace Model
      * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
      * <code>Count</code>.</p> 
      */
-    inline const Aws::Vector<ExcludedRule>& GetExcludedRules() const{ return m_excludedRules; }
+    inline const Aws::Vector<ExcludedRule>& GetExcludedRules() const { return m_excludedRules; }
     inline bool ExcludedRulesHasBeenSet() const { return m_excludedRulesHasBeenSet; }
-    inline void SetExcludedRules(const Aws::Vector<ExcludedRule>& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = value; }
-    inline void SetExcludedRules(Aws::Vector<ExcludedRule>&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::move(value); }
-    inline RuleGroupReferenceStatement& WithExcludedRules(const Aws::Vector<ExcludedRule>& value) { SetExcludedRules(value); return *this;}
-    inline RuleGroupReferenceStatement& WithExcludedRules(Aws::Vector<ExcludedRule>&& value) { SetExcludedRules(std::move(value)); return *this;}
-    inline RuleGroupReferenceStatement& AddExcludedRules(const ExcludedRule& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(value); return *this; }
-    inline RuleGroupReferenceStatement& AddExcludedRules(ExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
+    template<typename ExcludedRulesT = Aws::Vector<ExcludedRule>>
+    void SetExcludedRules(ExcludedRulesT&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::forward<ExcludedRulesT>(value); }
+    template<typename ExcludedRulesT = Aws::Vector<ExcludedRule>>
+    RuleGroupReferenceStatement& WithExcludedRules(ExcludedRulesT&& value) { SetExcludedRules(std::forward<ExcludedRulesT>(value)); return *this;}
+    template<typename ExcludedRulesT = ExcludedRule>
+    RuleGroupReferenceStatement& AddExcludedRules(ExcludedRulesT&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.emplace_back(std::forward<ExcludedRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,14 +89,14 @@ namespace Model
      * traffic. You can also permanently override some or all actions, to modify how
      * the rule group manages your web traffic.</p>
      */
-    inline const Aws::Vector<RuleActionOverride>& GetRuleActionOverrides() const{ return m_ruleActionOverrides; }
+    inline const Aws::Vector<RuleActionOverride>& GetRuleActionOverrides() const { return m_ruleActionOverrides; }
     inline bool RuleActionOverridesHasBeenSet() const { return m_ruleActionOverridesHasBeenSet; }
-    inline void SetRuleActionOverrides(const Aws::Vector<RuleActionOverride>& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides = value; }
-    inline void SetRuleActionOverrides(Aws::Vector<RuleActionOverride>&& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides = std::move(value); }
-    inline RuleGroupReferenceStatement& WithRuleActionOverrides(const Aws::Vector<RuleActionOverride>& value) { SetRuleActionOverrides(value); return *this;}
-    inline RuleGroupReferenceStatement& WithRuleActionOverrides(Aws::Vector<RuleActionOverride>&& value) { SetRuleActionOverrides(std::move(value)); return *this;}
-    inline RuleGroupReferenceStatement& AddRuleActionOverrides(const RuleActionOverride& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides.push_back(value); return *this; }
-    inline RuleGroupReferenceStatement& AddRuleActionOverrides(RuleActionOverride&& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides.push_back(std::move(value)); return *this; }
+    template<typename RuleActionOverridesT = Aws::Vector<RuleActionOverride>>
+    void SetRuleActionOverrides(RuleActionOverridesT&& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides = std::forward<RuleActionOverridesT>(value); }
+    template<typename RuleActionOverridesT = Aws::Vector<RuleActionOverride>>
+    RuleGroupReferenceStatement& WithRuleActionOverrides(RuleActionOverridesT&& value) { SetRuleActionOverrides(std::forward<RuleActionOverridesT>(value)); return *this;}
+    template<typename RuleActionOverridesT = RuleActionOverride>
+    RuleGroupReferenceStatement& AddRuleActionOverrides(RuleActionOverridesT&& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides.emplace_back(std::forward<RuleActionOverridesT>(value)); return *this; }
     ///@}
   private:
 

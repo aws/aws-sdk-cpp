@@ -18,17 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-FrameCaptureSettings::FrameCaptureSettings() : 
-    m_captureInterval(0),
-    m_captureIntervalHasBeenSet(false),
-    m_captureIntervalUnits(FrameCaptureIntervalUnit::NOT_SET),
-    m_captureIntervalUnitsHasBeenSet(false),
-    m_timecodeBurninSettingsHasBeenSet(false)
-{
-}
-
 FrameCaptureSettings::FrameCaptureSettings(JsonView jsonValue)
-  : FrameCaptureSettings()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ FrameCaptureSettings& FrameCaptureSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("captureInterval"))
   {
     m_captureInterval = jsonValue.GetInteger("captureInterval");
-
     m_captureIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("captureIntervalUnits"))
   {
     m_captureIntervalUnits = FrameCaptureIntervalUnitMapper::GetFrameCaptureIntervalUnitForName(jsonValue.GetString("captureIntervalUnits"));
-
     m_captureIntervalUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timecodeBurninSettings"))
   {
     m_timecodeBurninSettings = jsonValue.GetObject("timecodeBurninSettings");
-
     m_timecodeBurninSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class EyeDirection
   {
   public:
-    AWS_REKOGNITION_API EyeDirection();
+    AWS_REKOGNITION_API EyeDirection() = default;
     AWS_REKOGNITION_API EyeDirection(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API EyeDirection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>Value representing eye direction on the yaw axis.</p>
      */
-    inline double GetYaw() const{ return m_yaw; }
+    inline double GetYaw() const { return m_yaw; }
     inline bool YawHasBeenSet() const { return m_yawHasBeenSet; }
     inline void SetYaw(double value) { m_yawHasBeenSet = true; m_yaw = value; }
     inline EyeDirection& WithYaw(double value) { SetYaw(value); return *this;}
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>Value representing eye direction on the pitch axis.</p>
      */
-    inline double GetPitch() const{ return m_pitch; }
+    inline double GetPitch() const { return m_pitch; }
     inline bool PitchHasBeenSet() const { return m_pitchHasBeenSet; }
     inline void SetPitch(double value) { m_pitchHasBeenSet = true; m_pitch = value; }
     inline EyeDirection& WithPitch(double value) { SetPitch(value); return *this;}
@@ -60,20 +60,20 @@ namespace Model
     /**
      * <p>The confidence that the service has in its predicted eye direction.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline EyeDirection& WithConfidence(double value) { SetConfidence(value); return *this;}
     ///@}
   private:
 
-    double m_yaw;
+    double m_yaw{0.0};
     bool m_yawHasBeenSet = false;
 
-    double m_pitch;
+    double m_pitch{0.0};
     bool m_pitchHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListInventoryEntriesResult::ListInventoryEntriesResult()
-{
-}
-
 ListInventoryEntriesResult::ListInventoryEntriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,23 @@ ListInventoryEntriesResult& ListInventoryEntriesResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
+    m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
+    m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaVersion"))
   {
     m_schemaVersion = jsonValue.GetString("SchemaVersion");
-
+    m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaptureTime"))
   {
     m_captureTime = jsonValue.GetString("CaptureTime");
-
+    m_captureTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Entries"))
   {
     Aws::Utils::Array<JsonView> entriesJsonList = jsonValue.GetArray("Entries");
@@ -66,20 +58,20 @@ ListInventoryEntriesResult& ListInventoryEntriesResult::operator =(const Aws::Am
       }
       m_entries.push_back(std::move(inventoryItemEntryMap));
     }
+    m_entriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

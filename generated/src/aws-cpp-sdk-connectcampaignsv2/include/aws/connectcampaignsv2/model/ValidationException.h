@@ -32,7 +32,7 @@ namespace Model
   class ValidationException
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API ValidationException();
+    AWS_CONNECTCAMPAIGNSV2_API ValidationException() = default;
     AWS_CONNECTCAMPAIGNSV2_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,26 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ValidationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ValidationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ValidationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ValidationException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetXAmzErrorType() const{ return m_xAmzErrorType; }
+    inline const Aws::String& GetXAmzErrorType() const { return m_xAmzErrorType; }
     inline bool XAmzErrorTypeHasBeenSet() const { return m_xAmzErrorTypeHasBeenSet; }
-    inline void SetXAmzErrorType(const Aws::String& value) { m_xAmzErrorTypeHasBeenSet = true; m_xAmzErrorType = value; }
-    inline void SetXAmzErrorType(Aws::String&& value) { m_xAmzErrorTypeHasBeenSet = true; m_xAmzErrorType = std::move(value); }
-    inline void SetXAmzErrorType(const char* value) { m_xAmzErrorTypeHasBeenSet = true; m_xAmzErrorType.assign(value); }
-    inline ValidationException& WithXAmzErrorType(const Aws::String& value) { SetXAmzErrorType(value); return *this;}
-    inline ValidationException& WithXAmzErrorType(Aws::String&& value) { SetXAmzErrorType(std::move(value)); return *this;}
-    inline ValidationException& WithXAmzErrorType(const char* value) { SetXAmzErrorType(value); return *this;}
+    template<typename XAmzErrorTypeT = Aws::String>
+    void SetXAmzErrorType(XAmzErrorTypeT&& value) { m_xAmzErrorTypeHasBeenSet = true; m_xAmzErrorType = std::forward<XAmzErrorTypeT>(value); }
+    template<typename XAmzErrorTypeT = Aws::String>
+    ValidationException& WithXAmzErrorType(XAmzErrorTypeT&& value) { SetXAmzErrorType(std::forward<XAmzErrorTypeT>(value)); return *this;}
     ///@}
   private:
 

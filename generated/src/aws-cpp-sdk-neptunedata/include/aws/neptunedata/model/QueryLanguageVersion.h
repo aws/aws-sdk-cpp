@@ -32,7 +32,7 @@ namespace Model
   class QueryLanguageVersion
   {
   public:
-    AWS_NEPTUNEDATA_API QueryLanguageVersion();
+    AWS_NEPTUNEDATA_API QueryLanguageVersion() = default;
     AWS_NEPTUNEDATA_API QueryLanguageVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API QueryLanguageVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The version of the query language.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline QueryLanguageVersion& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline QueryLanguageVersion& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline QueryLanguageVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    QueryLanguageVersion& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

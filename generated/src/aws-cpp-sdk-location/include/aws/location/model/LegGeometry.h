@@ -32,7 +32,7 @@ namespace Model
   class LegGeometry
   {
   public:
-    AWS_LOCATIONSERVICE_API LegGeometry();
+    AWS_LOCATIONSERVICE_API LegGeometry() = default;
     AWS_LOCATIONSERVICE_API LegGeometry(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API LegGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p>
      * </li> </ul>
      */
-    inline const Aws::Vector<Aws::Vector<double>>& GetLineString() const{ return m_lineString; }
+    inline const Aws::Vector<Aws::Vector<double>>& GetLineString() const { return m_lineString; }
     inline bool LineStringHasBeenSet() const { return m_lineStringHasBeenSet; }
-    inline void SetLineString(const Aws::Vector<Aws::Vector<double>>& value) { m_lineStringHasBeenSet = true; m_lineString = value; }
-    inline void SetLineString(Aws::Vector<Aws::Vector<double>>&& value) { m_lineStringHasBeenSet = true; m_lineString = std::move(value); }
-    inline LegGeometry& WithLineString(const Aws::Vector<Aws::Vector<double>>& value) { SetLineString(value); return *this;}
-    inline LegGeometry& WithLineString(Aws::Vector<Aws::Vector<double>>&& value) { SetLineString(std::move(value)); return *this;}
-    inline LegGeometry& AddLineString(const Aws::Vector<double>& value) { m_lineStringHasBeenSet = true; m_lineString.push_back(value); return *this; }
-    inline LegGeometry& AddLineString(Aws::Vector<double>&& value) { m_lineStringHasBeenSet = true; m_lineString.push_back(std::move(value)); return *this; }
+    template<typename LineStringT = Aws::Vector<Aws::Vector<double>>>
+    void SetLineString(LineStringT&& value) { m_lineStringHasBeenSet = true; m_lineString = std::forward<LineStringT>(value); }
+    template<typename LineStringT = Aws::Vector<Aws::Vector<double>>>
+    LegGeometry& WithLineString(LineStringT&& value) { SetLineString(std::forward<LineStringT>(value)); return *this;}
+    template<typename LineStringT = Aws::Vector<double>>
+    LegGeometry& AddLineString(LineStringT&& value) { m_lineStringHasBeenSet = true; m_lineString.emplace_back(std::forward<LineStringT>(value)); return *this; }
     ///@}
   private:
 

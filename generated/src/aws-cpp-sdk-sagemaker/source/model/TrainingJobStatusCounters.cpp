@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrainingJobStatusCounters::TrainingJobStatusCounters() : 
-    m_completed(0),
-    m_completedHasBeenSet(false),
-    m_inProgress(0),
-    m_inProgressHasBeenSet(false),
-    m_retryableError(0),
-    m_retryableErrorHasBeenSet(false),
-    m_nonRetryableError(0),
-    m_nonRetryableErrorHasBeenSet(false),
-    m_stopped(0),
-    m_stoppedHasBeenSet(false)
-{
-}
-
 TrainingJobStatusCounters::TrainingJobStatusCounters(JsonView jsonValue)
-  : TrainingJobStatusCounters()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ TrainingJobStatusCounters& TrainingJobStatusCounters::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Completed"))
   {
     m_completed = jsonValue.GetInteger("Completed");
-
     m_completedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InProgress"))
   {
     m_inProgress = jsonValue.GetInteger("InProgress");
-
     m_inProgressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryableError"))
   {
     m_retryableError = jsonValue.GetInteger("RetryableError");
-
     m_retryableErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NonRetryableError"))
   {
     m_nonRetryableError = jsonValue.GetInteger("NonRetryableError");
-
     m_nonRetryableErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stopped"))
   {
     m_stopped = jsonValue.GetInteger("Stopped");
-
     m_stoppedHasBeenSet = true;
   }
-
   return *this;
 }
 

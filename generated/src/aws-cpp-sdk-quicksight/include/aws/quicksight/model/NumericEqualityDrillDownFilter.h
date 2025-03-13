@@ -31,7 +31,7 @@ namespace Model
   class NumericEqualityDrillDownFilter
   {
   public:
-    AWS_QUICKSIGHT_API NumericEqualityDrillDownFilter();
+    AWS_QUICKSIGHT_API NumericEqualityDrillDownFilter() = default;
     AWS_QUICKSIGHT_API NumericEqualityDrillDownFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API NumericEqualityDrillDownFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,19 +41,19 @@ namespace Model
     /**
      * <p>The column that the filter is applied to.</p>
      */
-    inline const ColumnIdentifier& GetColumn() const{ return m_column; }
+    inline const ColumnIdentifier& GetColumn() const { return m_column; }
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-    inline void SetColumn(const ColumnIdentifier& value) { m_columnHasBeenSet = true; m_column = value; }
-    inline void SetColumn(ColumnIdentifier&& value) { m_columnHasBeenSet = true; m_column = std::move(value); }
-    inline NumericEqualityDrillDownFilter& WithColumn(const ColumnIdentifier& value) { SetColumn(value); return *this;}
-    inline NumericEqualityDrillDownFilter& WithColumn(ColumnIdentifier&& value) { SetColumn(std::move(value)); return *this;}
+    template<typename ColumnT = ColumnIdentifier>
+    void SetColumn(ColumnT&& value) { m_columnHasBeenSet = true; m_column = std::forward<ColumnT>(value); }
+    template<typename ColumnT = ColumnIdentifier>
+    NumericEqualityDrillDownFilter& WithColumn(ColumnT&& value) { SetColumn(std::forward<ColumnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the double input numeric drill down filter.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline NumericEqualityDrillDownFilter& WithValue(double value) { SetValue(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
     ColumnIdentifier m_column;
     bool m_columnHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

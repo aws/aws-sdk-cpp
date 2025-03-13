@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateQuickConnectResult::CreateQuickConnectResult()
-{
-}
-
 CreateQuickConnectResult::CreateQuickConnectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateQuickConnectResult& CreateQuickConnectResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("QuickConnectARN"))
   {
     m_quickConnectARN = jsonValue.GetString("QuickConnectARN");
-
+    m_quickConnectARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuickConnectId"))
   {
     m_quickConnectId = jsonValue.GetString("QuickConnectId");
-
+    m_quickConnectIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConfirmTopicRuleDestinationRequest::ConfirmTopicRuleDestinationRequest() : 
-    m_confirmationTokenHasBeenSet(false)
-{
-}
-
 Aws::String ConfirmTopicRuleDestinationRequest::SerializePayload() const
 {
   return {};

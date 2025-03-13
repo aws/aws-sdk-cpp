@@ -12,13 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDownloadUrlForLayerRequest::GetDownloadUrlForLayerRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_layerDigestHasBeenSet(false)
-{
-}
-
 Aws::String GetDownloadUrlForLayerRequest::SerializePayload() const
 {
   JsonValue payload;

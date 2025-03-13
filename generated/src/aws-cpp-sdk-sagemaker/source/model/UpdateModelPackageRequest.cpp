@@ -12,22 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateModelPackageRequest::UpdateModelPackageRequest() : 
-    m_modelPackageArnHasBeenSet(false),
-    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
-    m_modelApprovalStatusHasBeenSet(false),
-    m_approvalDescriptionHasBeenSet(false),
-    m_customerMetadataPropertiesHasBeenSet(false),
-    m_customerMetadataPropertiesToRemoveHasBeenSet(false),
-    m_additionalInferenceSpecificationsToAddHasBeenSet(false),
-    m_inferenceSpecificationHasBeenSet(false),
-    m_sourceUriHasBeenSet(false),
-    m_modelCardHasBeenSet(false),
-    m_modelLifeCycleHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String UpdateModelPackageRequest::SerializePayload() const
 {
   JsonValue payload;

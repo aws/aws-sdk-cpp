@@ -10,20 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-RecordHandlerProgressRequest::RecordHandlerProgressRequest() : 
-    m_bearerTokenHasBeenSet(false),
-    m_operationStatus(OperationStatus::NOT_SET),
-    m_operationStatusHasBeenSet(false),
-    m_currentOperationStatus(OperationStatus::NOT_SET),
-    m_currentOperationStatusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_errorCode(HandlerErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_resourceModelHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String RecordHandlerProgressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

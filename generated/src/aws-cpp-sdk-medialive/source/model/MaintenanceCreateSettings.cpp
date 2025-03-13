@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MaintenanceCreateSettings::MaintenanceCreateSettings() : 
-    m_maintenanceDay(MaintenanceDay::NOT_SET),
-    m_maintenanceDayHasBeenSet(false),
-    m_maintenanceStartTimeHasBeenSet(false)
-{
-}
-
 MaintenanceCreateSettings::MaintenanceCreateSettings(JsonView jsonValue)
-  : MaintenanceCreateSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MaintenanceCreateSettings& MaintenanceCreateSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("maintenanceDay"))
   {
     m_maintenanceDay = MaintenanceDayMapper::GetMaintenanceDayForName(jsonValue.GetString("maintenanceDay"));
-
     m_maintenanceDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maintenanceStartTime"))
   {
     m_maintenanceStartTime = jsonValue.GetString("maintenanceStartTime");
-
     m_maintenanceStartTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

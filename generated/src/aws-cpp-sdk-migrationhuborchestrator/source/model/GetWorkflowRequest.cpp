@@ -12,11 +12,6 @@ using namespace Aws::MigrationHubOrchestrator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWorkflowRequest::GetWorkflowRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkflowRequest::SerializePayload() const
 {
   return {};

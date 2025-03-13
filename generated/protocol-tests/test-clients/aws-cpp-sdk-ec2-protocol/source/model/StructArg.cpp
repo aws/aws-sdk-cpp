@@ -20,16 +20,7 @@ namespace EC2Protocol
 namespace Model
 {
 
-StructArg::StructArg() : 
-    m_stringArgHasBeenSet(false),
-    m_otherArg(false),
-    m_otherArgHasBeenSet(false),
-    m_recursiveArgHasBeenSet(false)
-{
-}
-
 StructArg::StructArg(const XmlNode& xmlNode)
-  : StructArg()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ StructArg& StructArg::operator =(const XmlNode& xmlNode)
     {
       m_stringArg = Aws::Utils::Xml::DecodeEscapedXmlText(stringArgNode.GetText());
       m_stringArgHasBeenSet = true;
+       m_stringArgHasBeenSet = true;
     }
     XmlNode otherArgNode = resultNode.FirstChild("OtherArg");
     if(!otherArgNode.IsNull())
     {
       m_otherArg = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(otherArgNode.GetText()).c_str()).c_str());
       m_otherArgHasBeenSet = true;
+       m_otherArgHasBeenSet = true;
     }
     XmlNode recursiveArgNode = resultNode.FirstChild("RecursiveArg");
     if(!recursiveArgNode.IsNull())
     {
       m_recursiveArg = Aws::MakeShared<StructArg>("StructArg", recursiveArgNode);
       m_recursiveArgHasBeenSet = true;
+       m_recursiveArgHasBeenSet = true;
     }
   }
 

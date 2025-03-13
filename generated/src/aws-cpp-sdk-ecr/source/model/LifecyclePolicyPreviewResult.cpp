@@ -18,18 +18,7 @@ namespace ECR
 namespace Model
 {
 
-LifecyclePolicyPreviewResult::LifecyclePolicyPreviewResult() : 
-    m_imageTagsHasBeenSet(false),
-    m_imageDigestHasBeenSet(false),
-    m_imagePushedAtHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_appliedRulePriority(0),
-    m_appliedRulePriorityHasBeenSet(false)
-{
-}
-
 LifecyclePolicyPreviewResult::LifecyclePolicyPreviewResult(JsonView jsonValue)
-  : LifecyclePolicyPreviewResult()
 {
   *this = jsonValue;
 }
@@ -45,35 +34,26 @@ LifecyclePolicyPreviewResult& LifecyclePolicyPreviewResult::operator =(JsonView 
     }
     m_imageTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageDigest"))
   {
     m_imageDigest = jsonValue.GetString("imageDigest");
-
     m_imageDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imagePushedAt"))
   {
     m_imagePushedAt = jsonValue.GetDouble("imagePushedAt");
-
     m_imagePushedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetObject("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appliedRulePriority"))
   {
     m_appliedRulePriority = jsonValue.GetInteger("appliedRulePriority");
-
     m_appliedRulePriorityHasBeenSet = true;
   }
-
   return *this;
 }
 

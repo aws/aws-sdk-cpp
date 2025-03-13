@@ -23,7 +23,7 @@ namespace Model
   class TagResourcesRequest : public ResourceGroupsTaggingAPIRequest
   {
   public:
-    AWS_RESOURCEGROUPSTAGGINGAPI_API TagResourcesRequest();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API TagResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,15 +45,14 @@ namespace Model
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
      * <i>Amazon Web Services General Reference</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceARNList() const{ return m_resourceARNList; }
+    inline const Aws::Vector<Aws::String>& GetResourceARNList() const { return m_resourceARNList; }
     inline bool ResourceARNListHasBeenSet() const { return m_resourceARNListHasBeenSet; }
-    inline void SetResourceARNList(const Aws::Vector<Aws::String>& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = value; }
-    inline void SetResourceARNList(Aws::Vector<Aws::String>&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = std::move(value); }
-    inline TagResourcesRequest& WithResourceARNList(const Aws::Vector<Aws::String>& value) { SetResourceARNList(value); return *this;}
-    inline TagResourcesRequest& WithResourceARNList(Aws::Vector<Aws::String>&& value) { SetResourceARNList(std::move(value)); return *this;}
-    inline TagResourcesRequest& AddResourceARNList(const Aws::String& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(value); return *this; }
-    inline TagResourcesRequest& AddResourceARNList(Aws::String&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(std::move(value)); return *this; }
-    inline TagResourcesRequest& AddResourceARNList(const char* value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(value); return *this; }
+    template<typename ResourceARNListT = Aws::Vector<Aws::String>>
+    void SetResourceARNList(ResourceARNListT&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = std::forward<ResourceARNListT>(value); }
+    template<typename ResourceARNListT = Aws::Vector<Aws::String>>
+    TagResourcesRequest& WithResourceARNList(ResourceARNListT&& value) { SetResourceARNList(std::forward<ResourceARNListT>(value)); return *this;}
+    template<typename ResourceARNListT = Aws::String>
+    TagResourcesRequest& AddResourceARNList(ResourceARNListT&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.emplace_back(std::forward<ResourceARNListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,19 +60,16 @@ namespace Model
      * <p>Specifies a list of tags that you want to add to the specified resources. A
      * tag consists of a key and a value that you define.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline TagResourcesRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline TagResourcesRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline TagResourcesRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline TagResourcesRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline TagResourcesRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline TagResourcesRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline TagResourcesRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline TagResourcesRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline TagResourcesRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    TagResourcesRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    TagResourcesRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

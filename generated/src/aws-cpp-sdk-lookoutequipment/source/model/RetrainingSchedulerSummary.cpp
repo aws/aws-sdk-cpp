@@ -18,19 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-RetrainingSchedulerSummary::RetrainingSchedulerSummary() : 
-    m_modelNameHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_status(RetrainingSchedulerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_retrainingStartDateHasBeenSet(false),
-    m_retrainingFrequencyHasBeenSet(false),
-    m_lookbackWindowHasBeenSet(false)
-{
-}
-
 RetrainingSchedulerSummary::RetrainingSchedulerSummary(JsonView jsonValue)
-  : RetrainingSchedulerSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ RetrainingSchedulerSummary& RetrainingSchedulerSummary::operator =(JsonView json
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelArn"))
   {
     m_modelArn = jsonValue.GetString("ModelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RetrainingSchedulerStatusMapper::GetRetrainingSchedulerStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetrainingStartDate"))
   {
     m_retrainingStartDate = jsonValue.GetDouble("RetrainingStartDate");
-
     m_retrainingStartDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetrainingFrequency"))
   {
     m_retrainingFrequency = jsonValue.GetString("RetrainingFrequency");
-
     m_retrainingFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LookbackWindow"))
   {
     m_lookbackWindow = jsonValue.GetString("LookbackWindow");
-
     m_lookbackWindowHasBeenSet = true;
   }
-
   return *this;
 }
 

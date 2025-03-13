@@ -37,7 +37,7 @@ namespace Model
   class DisassociateFileSystemAliasesResult
   {
   public:
-    AWS_FSX_API DisassociateFileSystemAliasesResult();
+    AWS_FSX_API DisassociateFileSystemAliasesResult() = default;
     AWS_FSX_API DisassociateFileSystemAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API DisassociateFileSystemAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,30 +47,30 @@ namespace Model
      * <p>An array of one or more DNS aliases that Amazon FSx is attempting to
      * disassociate from the file system.</p>
      */
-    inline const Aws::Vector<Alias>& GetAliases() const{ return m_aliases; }
-    inline void SetAliases(const Aws::Vector<Alias>& value) { m_aliases = value; }
-    inline void SetAliases(Aws::Vector<Alias>&& value) { m_aliases = std::move(value); }
-    inline DisassociateFileSystemAliasesResult& WithAliases(const Aws::Vector<Alias>& value) { SetAliases(value); return *this;}
-    inline DisassociateFileSystemAliasesResult& WithAliases(Aws::Vector<Alias>&& value) { SetAliases(std::move(value)); return *this;}
-    inline DisassociateFileSystemAliasesResult& AddAliases(const Alias& value) { m_aliases.push_back(value); return *this; }
-    inline DisassociateFileSystemAliasesResult& AddAliases(Alias&& value) { m_aliases.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Alias>& GetAliases() const { return m_aliases; }
+    template<typename AliasesT = Aws::Vector<Alias>>
+    void SetAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases = std::forward<AliasesT>(value); }
+    template<typename AliasesT = Aws::Vector<Alias>>
+    DisassociateFileSystemAliasesResult& WithAliases(AliasesT&& value) { SetAliases(std::forward<AliasesT>(value)); return *this;}
+    template<typename AliasesT = Alias>
+    DisassociateFileSystemAliasesResult& AddAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases.emplace_back(std::forward<AliasesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateFileSystemAliasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateFileSystemAliasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateFileSystemAliasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateFileSystemAliasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Alias> m_aliases;
+    bool m_aliasesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-Operation::Operation() : 
-    m_equationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputType(OutputType::NOT_SET),
-    m_outputTypeHasBeenSet(false)
-{
-}
-
 Operation::Operation(JsonView jsonValue)
-  : Operation()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Operation& Operation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Equation"))
   {
     m_equation = jsonValue.GetString("Equation");
-
     m_equationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputType"))
   {
     m_outputType = OutputTypeMapper::GetOutputTypeForName(jsonValue.GetString("OutputType"));
-
     m_outputTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

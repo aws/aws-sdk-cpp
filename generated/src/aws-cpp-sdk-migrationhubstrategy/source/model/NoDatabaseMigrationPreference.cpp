@@ -18,13 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-NoDatabaseMigrationPreference::NoDatabaseMigrationPreference() : 
-    m_targetDatabaseEngineHasBeenSet(false)
-{
-}
-
 NoDatabaseMigrationPreference::NoDatabaseMigrationPreference(JsonView jsonValue)
-  : NoDatabaseMigrationPreference()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ NoDatabaseMigrationPreference& NoDatabaseMigrationPreference::operator =(JsonVie
     }
     m_targetDatabaseEngineHasBeenSet = true;
   }
-
   return *this;
 }
 

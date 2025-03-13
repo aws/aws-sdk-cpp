@@ -32,7 +32,7 @@ namespace Model
   class InstanceState
   {
   public:
-    AWS_LIGHTSAIL_API InstanceState();
+    AWS_LIGHTSAIL_API InstanceState() = default;
     AWS_LIGHTSAIL_API InstanceState(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API InstanceState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The status code for the instance.</p>
      */
-    inline int GetCode() const{ return m_code; }
+    inline int GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
     inline InstanceState& WithCode(int value) { SetCode(value); return *this;}
@@ -52,18 +52,16 @@ namespace Model
     /**
      * <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline InstanceState& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline InstanceState& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline InstanceState& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    InstanceState& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    int m_code;
+    int m_code{0};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_name;

@@ -34,7 +34,7 @@ namespace Model
   class ResponseHeadersPolicyXSSProtection
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyXSSProtection();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyXSSProtection() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicyXSSProtection(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicyXSSProtection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,7 +47,7 @@ namespace Model
      * <code>X-XSS-Protection</code> HTTP response header received from the origin with
      * the one specified in this response headers policy.</p>
      */
-    inline bool GetOverride() const{ return m_override; }
+    inline bool GetOverride() const { return m_override; }
     inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
     inline void SetOverride(bool value) { m_overrideHasBeenSet = true; m_override = value; }
     inline ResponseHeadersPolicyXSSProtection& WithOverride(bool value) { SetOverride(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
      * in the MDN Web Docs.</p>
      */
-    inline bool GetProtection() const{ return m_protection; }
+    inline bool GetProtection() const { return m_protection; }
     inline bool ProtectionHasBeenSet() const { return m_protectionHasBeenSet; }
     inline void SetProtection(bool value) { m_protectionHasBeenSet = true; m_protection = value; }
     inline ResponseHeadersPolicyXSSProtection& WithProtection(bool value) { SetProtection(value); return *this;}
@@ -77,7 +77,7 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
      * in the MDN Web Docs.</p>
      */
-    inline bool GetModeBlock() const{ return m_modeBlock; }
+    inline bool GetModeBlock() const { return m_modeBlock; }
     inline bool ModeBlockHasBeenSet() const { return m_modeBlockHasBeenSet; }
     inline void SetModeBlock(bool value) { m_modeBlockHasBeenSet = true; m_modeBlock = value; }
     inline ResponseHeadersPolicyXSSProtection& WithModeBlock(bool value) { SetModeBlock(value); return *this;}
@@ -93,24 +93,22 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
      * in the MDN Web Docs.</p>
      */
-    inline const Aws::String& GetReportUri() const{ return m_reportUri; }
+    inline const Aws::String& GetReportUri() const { return m_reportUri; }
     inline bool ReportUriHasBeenSet() const { return m_reportUriHasBeenSet; }
-    inline void SetReportUri(const Aws::String& value) { m_reportUriHasBeenSet = true; m_reportUri = value; }
-    inline void SetReportUri(Aws::String&& value) { m_reportUriHasBeenSet = true; m_reportUri = std::move(value); }
-    inline void SetReportUri(const char* value) { m_reportUriHasBeenSet = true; m_reportUri.assign(value); }
-    inline ResponseHeadersPolicyXSSProtection& WithReportUri(const Aws::String& value) { SetReportUri(value); return *this;}
-    inline ResponseHeadersPolicyXSSProtection& WithReportUri(Aws::String&& value) { SetReportUri(std::move(value)); return *this;}
-    inline ResponseHeadersPolicyXSSProtection& WithReportUri(const char* value) { SetReportUri(value); return *this;}
+    template<typename ReportUriT = Aws::String>
+    void SetReportUri(ReportUriT&& value) { m_reportUriHasBeenSet = true; m_reportUri = std::forward<ReportUriT>(value); }
+    template<typename ReportUriT = Aws::String>
+    ResponseHeadersPolicyXSSProtection& WithReportUri(ReportUriT&& value) { SetReportUri(std::forward<ReportUriT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_override;
+    bool m_override{false};
     bool m_overrideHasBeenSet = false;
 
-    bool m_protection;
+    bool m_protection{false};
     bool m_protectionHasBeenSet = false;
 
-    bool m_modeBlock;
+    bool m_modeBlock{false};
     bool m_modeBlockHasBeenSet = false;
 
     Aws::String m_reportUri;

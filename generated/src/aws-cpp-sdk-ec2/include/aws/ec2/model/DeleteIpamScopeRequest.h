@@ -21,7 +21,7 @@ namespace Model
   class DeleteIpamScopeRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteIpamScopeRequest();
+    AWS_EC2_API DeleteIpamScopeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteIpamScopeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>The ID of the scope to delete.</p>
      */
-    inline const Aws::String& GetIpamScopeId() const{ return m_ipamScopeId; }
+    inline const Aws::String& GetIpamScopeId() const { return m_ipamScopeId; }
     inline bool IpamScopeIdHasBeenSet() const { return m_ipamScopeIdHasBeenSet; }
-    inline void SetIpamScopeId(const Aws::String& value) { m_ipamScopeIdHasBeenSet = true; m_ipamScopeId = value; }
-    inline void SetIpamScopeId(Aws::String&& value) { m_ipamScopeIdHasBeenSet = true; m_ipamScopeId = std::move(value); }
-    inline void SetIpamScopeId(const char* value) { m_ipamScopeIdHasBeenSet = true; m_ipamScopeId.assign(value); }
-    inline DeleteIpamScopeRequest& WithIpamScopeId(const Aws::String& value) { SetIpamScopeId(value); return *this;}
-    inline DeleteIpamScopeRequest& WithIpamScopeId(Aws::String&& value) { SetIpamScopeId(std::move(value)); return *this;}
-    inline DeleteIpamScopeRequest& WithIpamScopeId(const char* value) { SetIpamScopeId(value); return *this;}
+    template<typename IpamScopeIdT = Aws::String>
+    void SetIpamScopeId(IpamScopeIdT&& value) { m_ipamScopeIdHasBeenSet = true; m_ipamScopeId = std::forward<IpamScopeIdT>(value); }
+    template<typename IpamScopeIdT = Aws::String>
+    DeleteIpamScopeRequest& WithIpamScopeId(IpamScopeIdT&& value) { SetIpamScopeId(std::forward<IpamScopeIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamScopeId;

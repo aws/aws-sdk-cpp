@@ -18,14 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-DiskMap::DiskMap() : 
-    m_originalDiskPathHasBeenSet(false),
-    m_newDiskNameHasBeenSet(false)
-{
-}
-
 DiskMap::DiskMap(JsonView jsonValue)
-  : DiskMap()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DiskMap& DiskMap::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("originalDiskPath"))
   {
     m_originalDiskPath = jsonValue.GetString("originalDiskPath");
-
     m_originalDiskPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("newDiskName"))
   {
     m_newDiskName = jsonValue.GetString("newDiskName");
-
     m_newDiskNameHasBeenSet = true;
   }
-
   return *this;
 }
 

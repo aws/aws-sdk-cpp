@@ -12,13 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRoomRequest::UpdateRoomRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_roomIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRoomRequest::SerializePayload() const
 {
   JsonValue payload;

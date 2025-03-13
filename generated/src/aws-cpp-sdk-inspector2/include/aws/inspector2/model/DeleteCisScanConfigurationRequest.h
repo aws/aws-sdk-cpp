@@ -21,7 +21,7 @@ namespace Model
   class DeleteCisScanConfigurationRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API DeleteCisScanConfigurationRequest();
+    AWS_INSPECTOR2_API DeleteCisScanConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the CIS scan configuration.</p>
      */
-    inline const Aws::String& GetScanConfigurationArn() const{ return m_scanConfigurationArn; }
+    inline const Aws::String& GetScanConfigurationArn() const { return m_scanConfigurationArn; }
     inline bool ScanConfigurationArnHasBeenSet() const { return m_scanConfigurationArnHasBeenSet; }
-    inline void SetScanConfigurationArn(const Aws::String& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = value; }
-    inline void SetScanConfigurationArn(Aws::String&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::move(value); }
-    inline void SetScanConfigurationArn(const char* value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn.assign(value); }
-    inline DeleteCisScanConfigurationRequest& WithScanConfigurationArn(const Aws::String& value) { SetScanConfigurationArn(value); return *this;}
-    inline DeleteCisScanConfigurationRequest& WithScanConfigurationArn(Aws::String&& value) { SetScanConfigurationArn(std::move(value)); return *this;}
-    inline DeleteCisScanConfigurationRequest& WithScanConfigurationArn(const char* value) { SetScanConfigurationArn(value); return *this;}
+    template<typename ScanConfigurationArnT = Aws::String>
+    void SetScanConfigurationArn(ScanConfigurationArnT&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::forward<ScanConfigurationArnT>(value); }
+    template<typename ScanConfigurationArnT = Aws::String>
+    DeleteCisScanConfigurationRequest& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 

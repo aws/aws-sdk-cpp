@@ -33,7 +33,7 @@ namespace Model
   class RetentionConfiguration
   {
   public:
-    AWS_CONFIGSERVICE_API RetentionConfiguration();
+    AWS_CONFIGSERVICE_API RetentionConfiguration() = default;
     AWS_CONFIGSERVICE_API RetentionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API RetentionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the retention configuration object.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RetentionConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RetentionConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RetentionConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RetentionConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p>Number of days Config stores your historical information.</p> 
      * <p>Currently, only applicable to the configuration item history.</p> 
      */
-    inline int GetRetentionPeriodInDays() const{ return m_retentionPeriodInDays; }
+    inline int GetRetentionPeriodInDays() const { return m_retentionPeriodInDays; }
     inline bool RetentionPeriodInDaysHasBeenSet() const { return m_retentionPeriodInDaysHasBeenSet; }
     inline void SetRetentionPeriodInDays(int value) { m_retentionPeriodInDaysHasBeenSet = true; m_retentionPeriodInDays = value; }
     inline RetentionConfiguration& WithRetentionPeriodInDays(int value) { SetRetentionPeriodInDays(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_retentionPeriodInDays;
+    int m_retentionPeriodInDays{0};
     bool m_retentionPeriodInDaysHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-QueryLanguageVersion::QueryLanguageVersion() : 
-    m_versionHasBeenSet(false)
-{
-}
-
 QueryLanguageVersion::QueryLanguageVersion(JsonView jsonValue)
-  : QueryLanguageVersion()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QueryLanguageVersion& QueryLanguageVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class AppInputSource
   {
   public:
-    AWS_RESILIENCEHUB_API AppInputSource();
+    AWS_RESILIENCEHUB_API AppInputSource() = default;
     AWS_RESILIENCEHUB_API AppInputSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API AppInputSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,31 +45,29 @@ namespace Model
     /**
      * <p>The namespace on your Amazon Elastic Kubernetes Service cluster.</p>
      */
-    inline const EksSourceClusterNamespace& GetEksSourceClusterNamespace() const{ return m_eksSourceClusterNamespace; }
+    inline const EksSourceClusterNamespace& GetEksSourceClusterNamespace() const { return m_eksSourceClusterNamespace; }
     inline bool EksSourceClusterNamespaceHasBeenSet() const { return m_eksSourceClusterNamespaceHasBeenSet; }
-    inline void SetEksSourceClusterNamespace(const EksSourceClusterNamespace& value) { m_eksSourceClusterNamespaceHasBeenSet = true; m_eksSourceClusterNamespace = value; }
-    inline void SetEksSourceClusterNamespace(EksSourceClusterNamespace&& value) { m_eksSourceClusterNamespaceHasBeenSet = true; m_eksSourceClusterNamespace = std::move(value); }
-    inline AppInputSource& WithEksSourceClusterNamespace(const EksSourceClusterNamespace& value) { SetEksSourceClusterNamespace(value); return *this;}
-    inline AppInputSource& WithEksSourceClusterNamespace(EksSourceClusterNamespace&& value) { SetEksSourceClusterNamespace(std::move(value)); return *this;}
+    template<typename EksSourceClusterNamespaceT = EksSourceClusterNamespace>
+    void SetEksSourceClusterNamespace(EksSourceClusterNamespaceT&& value) { m_eksSourceClusterNamespaceHasBeenSet = true; m_eksSourceClusterNamespace = std::forward<EksSourceClusterNamespaceT>(value); }
+    template<typename EksSourceClusterNamespaceT = EksSourceClusterNamespace>
+    AppInputSource& WithEksSourceClusterNamespace(EksSourceClusterNamespaceT&& value) { SetEksSourceClusterNamespace(std::forward<EksSourceClusterNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource type of the input source.</p>
      */
-    inline const ResourceMappingType& GetImportType() const{ return m_importType; }
+    inline ResourceMappingType GetImportType() const { return m_importType; }
     inline bool ImportTypeHasBeenSet() const { return m_importTypeHasBeenSet; }
-    inline void SetImportType(const ResourceMappingType& value) { m_importTypeHasBeenSet = true; m_importType = value; }
-    inline void SetImportType(ResourceMappingType&& value) { m_importTypeHasBeenSet = true; m_importType = std::move(value); }
-    inline AppInputSource& WithImportType(const ResourceMappingType& value) { SetImportType(value); return *this;}
-    inline AppInputSource& WithImportType(ResourceMappingType&& value) { SetImportType(std::move(value)); return *this;}
+    inline void SetImportType(ResourceMappingType value) { m_importTypeHasBeenSet = true; m_importType = value; }
+    inline AppInputSource& WithImportType(ResourceMappingType value) { SetImportType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of resources.</p>
      */
-    inline int GetResourceCount() const{ return m_resourceCount; }
+    inline int GetResourceCount() const { return m_resourceCount; }
     inline bool ResourceCountHasBeenSet() const { return m_resourceCountHasBeenSet; }
     inline void SetResourceCount(int value) { m_resourceCountHasBeenSet = true; m_resourceCount = value; }
     inline AppInputSource& WithResourceCount(int value) { SetResourceCount(value); return *this;}
@@ -83,50 +81,46 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline AppInputSource& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline AppInputSource& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline AppInputSource& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    AppInputSource& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the input source.</p>
      */
-    inline const Aws::String& GetSourceName() const{ return m_sourceName; }
+    inline const Aws::String& GetSourceName() const { return m_sourceName; }
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }
-    inline void SetSourceName(const Aws::String& value) { m_sourceNameHasBeenSet = true; m_sourceName = value; }
-    inline void SetSourceName(Aws::String&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::move(value); }
-    inline void SetSourceName(const char* value) { m_sourceNameHasBeenSet = true; m_sourceName.assign(value); }
-    inline AppInputSource& WithSourceName(const Aws::String& value) { SetSourceName(value); return *this;}
-    inline AppInputSource& WithSourceName(Aws::String&& value) { SetSourceName(std::move(value)); return *this;}
-    inline AppInputSource& WithSourceName(const char* value) { SetSourceName(value); return *this;}
+    template<typename SourceNameT = Aws::String>
+    void SetSourceName(SourceNameT&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::forward<SourceNameT>(value); }
+    template<typename SourceNameT = Aws::String>
+    AppInputSource& WithSourceName(SourceNameT&& value) { SetSourceName(std::forward<SourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Terraform s3 state ﬁle.</p>
      */
-    inline const TerraformSource& GetTerraformSource() const{ return m_terraformSource; }
+    inline const TerraformSource& GetTerraformSource() const { return m_terraformSource; }
     inline bool TerraformSourceHasBeenSet() const { return m_terraformSourceHasBeenSet; }
-    inline void SetTerraformSource(const TerraformSource& value) { m_terraformSourceHasBeenSet = true; m_terraformSource = value; }
-    inline void SetTerraformSource(TerraformSource&& value) { m_terraformSourceHasBeenSet = true; m_terraformSource = std::move(value); }
-    inline AppInputSource& WithTerraformSource(const TerraformSource& value) { SetTerraformSource(value); return *this;}
-    inline AppInputSource& WithTerraformSource(TerraformSource&& value) { SetTerraformSource(std::move(value)); return *this;}
+    template<typename TerraformSourceT = TerraformSource>
+    void SetTerraformSource(TerraformSourceT&& value) { m_terraformSourceHasBeenSet = true; m_terraformSource = std::forward<TerraformSourceT>(value); }
+    template<typename TerraformSourceT = TerraformSource>
+    AppInputSource& WithTerraformSource(TerraformSourceT&& value) { SetTerraformSource(std::forward<TerraformSourceT>(value)); return *this;}
     ///@}
   private:
 
     EksSourceClusterNamespace m_eksSourceClusterNamespace;
     bool m_eksSourceClusterNamespaceHasBeenSet = false;
 
-    ResourceMappingType m_importType;
+    ResourceMappingType m_importType{ResourceMappingType::NOT_SET};
     bool m_importTypeHasBeenSet = false;
 
-    int m_resourceCount;
+    int m_resourceCount{0};
     bool m_resourceCountHasBeenSet = false;
 
     Aws::String m_sourceArn;

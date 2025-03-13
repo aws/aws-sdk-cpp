@@ -12,10 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableOrganizationAdminAccountRequest::DisableOrganizationAdminAccountRequest()
-{
-}
-
 Aws::String DisableOrganizationAdminAccountRequest::SerializePayload() const
 {
   return {};

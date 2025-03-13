@@ -12,11 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCoreNetworkRequest::GetCoreNetworkRequest() : 
-    m_coreNetworkIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCoreNetworkRequest::SerializePayload() const
 {
   return {};

@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-KGKeyPairIds::KGKeyPairIds() : 
-    m_keyGroupIdHasBeenSet(false),
-    m_keyPairIdsHasBeenSet(false)
-{
-}
-
 KGKeyPairIds::KGKeyPairIds(const XmlNode& xmlNode)
-  : KGKeyPairIds()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ KGKeyPairIds& KGKeyPairIds::operator =(const XmlNode& xmlNode)
     {
       m_keyGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(keyGroupIdNode.GetText());
       m_keyGroupIdHasBeenSet = true;
+       m_keyGroupIdHasBeenSet = true;
     }
     XmlNode keyPairIdsNode = resultNode.FirstChild("KeyPairIds");
     if(!keyPairIdsNode.IsNull())
     {
       m_keyPairIds = keyPairIdsNode;
       m_keyPairIdsHasBeenSet = true;
+       m_keyPairIdsHasBeenSet = true;
     }
   }
 

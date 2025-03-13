@@ -12,14 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBotResourceGenerationRequest::DescribeBotResourceGenerationRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_generationIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBotResourceGenerationRequest::SerializePayload() const
 {
   return {};

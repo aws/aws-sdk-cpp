@@ -25,7 +25,7 @@ namespace Model
   class DescribeIdentityRequest : public CognitoIdentityRequest
   {
   public:
-    AWS_COGNITOIDENTITY_API DescribeIdentityRequest();
+    AWS_COGNITOIDENTITY_API DescribeIdentityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
-    inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+    inline const Aws::String& GetIdentityId() const { return m_identityId; }
     inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
-    inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
-    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
-    inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
-    inline DescribeIdentityRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
-    inline DescribeIdentityRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
-    inline DescribeIdentityRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+    template<typename IdentityIdT = Aws::String>
+    void SetIdentityId(IdentityIdT&& value) { m_identityIdHasBeenSet = true; m_identityId = std::forward<IdentityIdT>(value); }
+    template<typename IdentityIdT = Aws::String>
+    DescribeIdentityRequest& WithIdentityId(IdentityIdT&& value) { SetIdentityId(std::forward<IdentityIdT>(value)); return *this;}
     ///@}
   private:
 

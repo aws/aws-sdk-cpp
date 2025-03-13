@@ -35,7 +35,7 @@ namespace Model
   class ListMonitoredResourcesFilters
   {
   public:
-    AWS_DEVOPSGURU_API ListMonitoredResourcesFilters();
+    AWS_DEVOPSGURU_API ListMonitoredResourcesFilters() = default;
     AWS_DEVOPSGURU_API ListMonitoredResourcesFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API ListMonitoredResourcesFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,30 +45,27 @@ namespace Model
     /**
      * <p> The permission status of a resource. </p>
      */
-    inline const ResourcePermission& GetResourcePermission() const{ return m_resourcePermission; }
+    inline ResourcePermission GetResourcePermission() const { return m_resourcePermission; }
     inline bool ResourcePermissionHasBeenSet() const { return m_resourcePermissionHasBeenSet; }
-    inline void SetResourcePermission(const ResourcePermission& value) { m_resourcePermissionHasBeenSet = true; m_resourcePermission = value; }
-    inline void SetResourcePermission(ResourcePermission&& value) { m_resourcePermissionHasBeenSet = true; m_resourcePermission = std::move(value); }
-    inline ListMonitoredResourcesFilters& WithResourcePermission(const ResourcePermission& value) { SetResourcePermission(value); return *this;}
-    inline ListMonitoredResourcesFilters& WithResourcePermission(ResourcePermission&& value) { SetResourcePermission(std::move(value)); return *this;}
+    inline void SetResourcePermission(ResourcePermission value) { m_resourcePermissionHasBeenSet = true; m_resourcePermission = value; }
+    inline ListMonitoredResourcesFilters& WithResourcePermission(ResourcePermission value) { SetResourcePermission(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of resource that you wish to retrieve, such as log groups. </p>
      */
-    inline const Aws::Vector<ResourceTypeFilter>& GetResourceTypeFilters() const{ return m_resourceTypeFilters; }
+    inline const Aws::Vector<ResourceTypeFilter>& GetResourceTypeFilters() const { return m_resourceTypeFilters; }
     inline bool ResourceTypeFiltersHasBeenSet() const { return m_resourceTypeFiltersHasBeenSet; }
-    inline void SetResourceTypeFilters(const Aws::Vector<ResourceTypeFilter>& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = value; }
-    inline void SetResourceTypeFilters(Aws::Vector<ResourceTypeFilter>&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = std::move(value); }
-    inline ListMonitoredResourcesFilters& WithResourceTypeFilters(const Aws::Vector<ResourceTypeFilter>& value) { SetResourceTypeFilters(value); return *this;}
-    inline ListMonitoredResourcesFilters& WithResourceTypeFilters(Aws::Vector<ResourceTypeFilter>&& value) { SetResourceTypeFilters(std::move(value)); return *this;}
-    inline ListMonitoredResourcesFilters& AddResourceTypeFilters(const ResourceTypeFilter& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
-    inline ListMonitoredResourcesFilters& AddResourceTypeFilters(ResourceTypeFilter&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(std::move(value)); return *this; }
+    template<typename ResourceTypeFiltersT = Aws::Vector<ResourceTypeFilter>>
+    void SetResourceTypeFilters(ResourceTypeFiltersT&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = std::forward<ResourceTypeFiltersT>(value); }
+    template<typename ResourceTypeFiltersT = Aws::Vector<ResourceTypeFilter>>
+    ListMonitoredResourcesFilters& WithResourceTypeFilters(ResourceTypeFiltersT&& value) { SetResourceTypeFilters(std::forward<ResourceTypeFiltersT>(value)); return *this;}
+    inline ListMonitoredResourcesFilters& AddResourceTypeFilters(ResourceTypeFilter value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
     ///@}
   private:
 
-    ResourcePermission m_resourcePermission;
+    ResourcePermission m_resourcePermission{ResourcePermission::NOT_SET};
     bool m_resourcePermissionHasBeenSet = false;
 
     Aws::Vector<ResourceTypeFilter> m_resourceTypeFilters;

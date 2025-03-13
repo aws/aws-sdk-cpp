@@ -18,15 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-InstanceConfig::InstanceConfig() : 
-    m_connectInstanceIdHasBeenSet(false),
-    m_serviceLinkedRoleArnHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false)
-{
-}
-
 InstanceConfig::InstanceConfig(JsonView jsonValue)
-  : InstanceConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InstanceConfig& InstanceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectInstanceId"))
   {
     m_connectInstanceId = jsonValue.GetString("connectInstanceId");
-
     m_connectInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceLinkedRoleArn"))
   {
     m_serviceLinkedRoleArn = jsonValue.GetString("serviceLinkedRoleArn");
-
     m_serviceLinkedRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionConfig"))
   {
     m_encryptionConfig = jsonValue.GetObject("encryptionConfig");
-
     m_encryptionConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

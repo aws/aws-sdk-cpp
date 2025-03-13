@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-DashboardInvalidInputError::DashboardInvalidInputError() : 
-    m_messageHasBeenSet(false),
-    m_dashboardValidationMessagesHasBeenSet(false)
-{
-}
-
 DashboardInvalidInputError::DashboardInvalidInputError(const XmlNode& xmlNode)
-  : DashboardInvalidInputError()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ DashboardInvalidInputError& DashboardInvalidInputError::operator =(const XmlNode
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
     XmlNode dashboardValidationMessagesNode = resultNode.FirstChild("dashboardValidationMessages");
     if(!dashboardValidationMessagesNode.IsNull())
     {
       XmlNode dashboardValidationMessagesMember = dashboardValidationMessagesNode.FirstChild("member");
+      m_dashboardValidationMessagesHasBeenSet = !dashboardValidationMessagesMember.IsNull();
       while(!dashboardValidationMessagesMember.IsNull())
       {
         m_dashboardValidationMessages.push_back(dashboardValidationMessagesMember);
         dashboardValidationMessagesMember = dashboardValidationMessagesMember.NextNode("member");
       }
 
-      m_dashboardValidationMessagesHasBeenSet = true;
+       m_dashboardValidationMessagesHasBeenSet = true;
     }
   }
 

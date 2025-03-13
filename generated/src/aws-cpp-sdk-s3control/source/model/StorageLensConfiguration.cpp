@@ -20,21 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-StorageLensConfiguration::StorageLensConfiguration() : 
-    m_idHasBeenSet(false),
-    m_accountLevelHasBeenSet(false),
-    m_includeHasBeenSet(false),
-    m_excludeHasBeenSet(false),
-    m_dataExportHasBeenSet(false),
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_awsOrgHasBeenSet(false),
-    m_storageLensArnHasBeenSet(false)
-{
-}
-
 StorageLensConfiguration::StorageLensConfiguration(const XmlNode& xmlNode)
-  : StorageLensConfiguration()
 {
   *this = xmlNode;
 }
@@ -50,48 +36,56 @@ StorageLensConfiguration& StorageLensConfiguration::operator =(const XmlNode& xm
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode accountLevelNode = resultNode.FirstChild("AccountLevel");
     if(!accountLevelNode.IsNull())
     {
       m_accountLevel = accountLevelNode;
       m_accountLevelHasBeenSet = true;
+       m_accountLevelHasBeenSet = true;
     }
     XmlNode includeNode = resultNode.FirstChild("Include");
     if(!includeNode.IsNull())
     {
       m_include = includeNode;
       m_includeHasBeenSet = true;
+       m_includeHasBeenSet = true;
     }
     XmlNode excludeNode = resultNode.FirstChild("Exclude");
     if(!excludeNode.IsNull())
     {
       m_exclude = excludeNode;
       m_excludeHasBeenSet = true;
+       m_excludeHasBeenSet = true;
     }
     XmlNode dataExportNode = resultNode.FirstChild("DataExport");
     if(!dataExportNode.IsNull())
     {
       m_dataExport = dataExportNode;
       m_dataExportHasBeenSet = true;
+       m_dataExportHasBeenSet = true;
     }
     XmlNode isEnabledNode = resultNode.FirstChild("IsEnabled");
     if(!isEnabledNode.IsNull())
     {
       m_isEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isEnabledNode.GetText()).c_str()).c_str());
       m_isEnabledHasBeenSet = true;
+       m_isEnabledHasBeenSet = true;
     }
     XmlNode awsOrgNode = resultNode.FirstChild("AwsOrg");
     if(!awsOrgNode.IsNull())
     {
       m_awsOrg = awsOrgNode;
       m_awsOrgHasBeenSet = true;
+       m_awsOrgHasBeenSet = true;
     }
     XmlNode storageLensArnNode = resultNode.FirstChild("StorageLensArn");
     if(!storageLensArnNode.IsNull())
     {
       m_storageLensArn = Aws::Utils::Xml::DecodeEscapedXmlText(storageLensArnNode.GetText());
       m_storageLensArnHasBeenSet = true;
+       m_storageLensArnHasBeenSet = true;
     }
   }
 

@@ -18,28 +18,7 @@ namespace ComprehendMedical
 namespace Model
 {
 
-ICD10CMEntity::ICD10CMEntity() : 
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_category(ICD10CMEntityCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_type(ICD10CMEntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_traitsHasBeenSet(false),
-    m_iCD10CMConceptsHasBeenSet(false)
-{
-}
-
 ICD10CMEntity::ICD10CMEntity(JsonView jsonValue)
-  : ICD10CMEntity()
 {
   *this = jsonValue;
 }
@@ -49,52 +28,38 @@ ICD10CMEntity& ICD10CMEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetInteger("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     m_category = ICD10CMEntityCategoryMapper::GetICD10CMEntityCategoryForName(jsonValue.GetString("Category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ICD10CMEntityTypeMapper::GetICD10CMEntityTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetDouble("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeginOffset"))
   {
     m_beginOffset = jsonValue.GetInteger("BeginOffset");
-
     m_beginOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndOffset"))
   {
     m_endOffset = jsonValue.GetInteger("EndOffset");
-
     m_endOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
@@ -104,7 +69,6 @@ ICD10CMEntity& ICD10CMEntity::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Traits"))
   {
     Aws::Utils::Array<JsonView> traitsJsonList = jsonValue.GetArray("Traits");
@@ -114,7 +78,6 @@ ICD10CMEntity& ICD10CMEntity::operator =(JsonView jsonValue)
     }
     m_traitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ICD10CMConcepts"))
   {
     Aws::Utils::Array<JsonView> iCD10CMConceptsJsonList = jsonValue.GetArray("ICD10CMConcepts");
@@ -124,7 +87,6 @@ ICD10CMEntity& ICD10CMEntity::operator =(JsonView jsonValue)
     }
     m_iCD10CMConceptsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-RoutingStrategy::RoutingStrategy() : 
-    m_type(RoutingStrategyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 RoutingStrategy::RoutingStrategy(JsonView jsonValue)
-  : RoutingStrategy()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RoutingStrategy& RoutingStrategy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RoutingStrategyTypeMapper::GetRoutingStrategyTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetId"))
   {
     m_fleetId = jsonValue.GetString("FleetId");
-
     m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-MergeOperations::MergeOperations() : 
-    m_source(ChangeTypeEnum::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_destination(ChangeTypeEnum::NOT_SET),
-    m_destinationHasBeenSet(false)
-{
-}
-
 MergeOperations::MergeOperations(JsonView jsonValue)
-  : MergeOperations()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MergeOperations& MergeOperations::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = ChangeTypeEnumMapper::GetChangeTypeEnumForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = ChangeTypeEnumMapper::GetChangeTypeEnumForName(jsonValue.GetString("destination"));
-
     m_destinationHasBeenSet = true;
   }
-
   return *this;
 }
 

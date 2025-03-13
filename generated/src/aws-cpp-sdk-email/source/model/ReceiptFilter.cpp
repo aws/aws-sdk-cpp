@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-ReceiptFilter::ReceiptFilter() : 
-    m_nameHasBeenSet(false),
-    m_ipFilterHasBeenSet(false)
-{
-}
-
 ReceiptFilter::ReceiptFilter(const XmlNode& xmlNode)
-  : ReceiptFilter()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ReceiptFilter& ReceiptFilter::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode ipFilterNode = resultNode.FirstChild("IpFilter");
     if(!ipFilterNode.IsNull())
     {
       m_ipFilter = ipFilterNode;
       m_ipFilterHasBeenSet = true;
+       m_ipFilterHasBeenSet = true;
     }
   }
 

@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UntagInstanceProfileRequest::UntagInstanceProfileRequest() : 
-    m_instanceProfileNameHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String UntagInstanceProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;

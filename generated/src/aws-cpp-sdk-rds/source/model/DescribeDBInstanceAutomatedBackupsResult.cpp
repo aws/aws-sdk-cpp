@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBInstanceAutomatedBackupsResult::DescribeDBInstanceAutomatedBackupsResult()
-{
-}
-
 DescribeDBInstanceAutomatedBackupsResult::DescribeDBInstanceAutomatedBackupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DescribeDBInstanceAutomatedBackupsResult& DescribeDBInstanceAutomatedBackupsResu
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode dBInstanceAutomatedBackupsNode = resultNode.FirstChild("DBInstanceAutomatedBackups");
     if(!dBInstanceAutomatedBackupsNode.IsNull())
     {
       XmlNode dBInstanceAutomatedBackupsMember = dBInstanceAutomatedBackupsNode.FirstChild("DBInstanceAutomatedBackup");
+      m_dBInstanceAutomatedBackupsHasBeenSet = !dBInstanceAutomatedBackupsMember.IsNull();
       while(!dBInstanceAutomatedBackupsMember.IsNull())
       {
         m_dBInstanceAutomatedBackups.push_back(dBInstanceAutomatedBackupsMember);
@@ -59,6 +57,7 @@ DescribeDBInstanceAutomatedBackupsResult& DescribeDBInstanceAutomatedBackupsResu
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBInstanceAutomatedBackupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

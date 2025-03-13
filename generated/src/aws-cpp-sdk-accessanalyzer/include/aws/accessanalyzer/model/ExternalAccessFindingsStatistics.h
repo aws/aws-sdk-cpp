@@ -34,7 +34,7 @@ namespace Model
   class ExternalAccessFindingsStatistics
   {
   public:
-    AWS_ACCESSANALYZER_API ExternalAccessFindingsStatistics();
+    AWS_ACCESSANALYZER_API ExternalAccessFindingsStatistics() = default;
     AWS_ACCESSANALYZER_API ExternalAccessFindingsStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API ExternalAccessFindingsStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,23 +45,22 @@ namespace Model
      * <p>The total number of active cross-account and public findings for each
      * resource type of the specified external access analyzer.</p>
      */
-    inline const Aws::Map<ResourceType, ResourceTypeDetails>& GetResourceTypeStatistics() const{ return m_resourceTypeStatistics; }
+    inline const Aws::Map<ResourceType, ResourceTypeDetails>& GetResourceTypeStatistics() const { return m_resourceTypeStatistics; }
     inline bool ResourceTypeStatisticsHasBeenSet() const { return m_resourceTypeStatisticsHasBeenSet; }
-    inline void SetResourceTypeStatistics(const Aws::Map<ResourceType, ResourceTypeDetails>& value) { m_resourceTypeStatisticsHasBeenSet = true; m_resourceTypeStatistics = value; }
-    inline void SetResourceTypeStatistics(Aws::Map<ResourceType, ResourceTypeDetails>&& value) { m_resourceTypeStatisticsHasBeenSet = true; m_resourceTypeStatistics = std::move(value); }
-    inline ExternalAccessFindingsStatistics& WithResourceTypeStatistics(const Aws::Map<ResourceType, ResourceTypeDetails>& value) { SetResourceTypeStatistics(value); return *this;}
-    inline ExternalAccessFindingsStatistics& WithResourceTypeStatistics(Aws::Map<ResourceType, ResourceTypeDetails>&& value) { SetResourceTypeStatistics(std::move(value)); return *this;}
-    inline ExternalAccessFindingsStatistics& AddResourceTypeStatistics(const ResourceType& key, const ResourceTypeDetails& value) { m_resourceTypeStatisticsHasBeenSet = true; m_resourceTypeStatistics.emplace(key, value); return *this; }
-    inline ExternalAccessFindingsStatistics& AddResourceTypeStatistics(ResourceType&& key, const ResourceTypeDetails& value) { m_resourceTypeStatisticsHasBeenSet = true; m_resourceTypeStatistics.emplace(std::move(key), value); return *this; }
-    inline ExternalAccessFindingsStatistics& AddResourceTypeStatistics(const ResourceType& key, ResourceTypeDetails&& value) { m_resourceTypeStatisticsHasBeenSet = true; m_resourceTypeStatistics.emplace(key, std::move(value)); return *this; }
-    inline ExternalAccessFindingsStatistics& AddResourceTypeStatistics(ResourceType&& key, ResourceTypeDetails&& value) { m_resourceTypeStatisticsHasBeenSet = true; m_resourceTypeStatistics.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename ResourceTypeStatisticsT = Aws::Map<ResourceType, ResourceTypeDetails>>
+    void SetResourceTypeStatistics(ResourceTypeStatisticsT&& value) { m_resourceTypeStatisticsHasBeenSet = true; m_resourceTypeStatistics = std::forward<ResourceTypeStatisticsT>(value); }
+    template<typename ResourceTypeStatisticsT = Aws::Map<ResourceType, ResourceTypeDetails>>
+    ExternalAccessFindingsStatistics& WithResourceTypeStatistics(ResourceTypeStatisticsT&& value) { SetResourceTypeStatistics(std::forward<ResourceTypeStatisticsT>(value)); return *this;}
+    inline ExternalAccessFindingsStatistics& AddResourceTypeStatistics(ResourceType key, ResourceTypeDetails value) {
+      m_resourceTypeStatisticsHasBeenSet = true; m_resourceTypeStatistics.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The number of active findings for the specified external access analyzer.</p>
      */
-    inline int GetTotalActiveFindings() const{ return m_totalActiveFindings; }
+    inline int GetTotalActiveFindings() const { return m_totalActiveFindings; }
     inline bool TotalActiveFindingsHasBeenSet() const { return m_totalActiveFindingsHasBeenSet; }
     inline void SetTotalActiveFindings(int value) { m_totalActiveFindingsHasBeenSet = true; m_totalActiveFindings = value; }
     inline ExternalAccessFindingsStatistics& WithTotalActiveFindings(int value) { SetTotalActiveFindings(value); return *this;}
@@ -72,7 +71,7 @@ namespace Model
      * <p>The number of archived findings for the specified external access
      * analyzer.</p>
      */
-    inline int GetTotalArchivedFindings() const{ return m_totalArchivedFindings; }
+    inline int GetTotalArchivedFindings() const { return m_totalArchivedFindings; }
     inline bool TotalArchivedFindingsHasBeenSet() const { return m_totalArchivedFindingsHasBeenSet; }
     inline void SetTotalArchivedFindings(int value) { m_totalArchivedFindingsHasBeenSet = true; m_totalArchivedFindings = value; }
     inline ExternalAccessFindingsStatistics& WithTotalArchivedFindings(int value) { SetTotalArchivedFindings(value); return *this;}
@@ -83,7 +82,7 @@ namespace Model
      * <p>The number of resolved findings for the specified external access
      * analyzer.</p>
      */
-    inline int GetTotalResolvedFindings() const{ return m_totalResolvedFindings; }
+    inline int GetTotalResolvedFindings() const { return m_totalResolvedFindings; }
     inline bool TotalResolvedFindingsHasBeenSet() const { return m_totalResolvedFindingsHasBeenSet; }
     inline void SetTotalResolvedFindings(int value) { m_totalResolvedFindingsHasBeenSet = true; m_totalResolvedFindings = value; }
     inline ExternalAccessFindingsStatistics& WithTotalResolvedFindings(int value) { SetTotalResolvedFindings(value); return *this;}
@@ -93,13 +92,13 @@ namespace Model
     Aws::Map<ResourceType, ResourceTypeDetails> m_resourceTypeStatistics;
     bool m_resourceTypeStatisticsHasBeenSet = false;
 
-    int m_totalActiveFindings;
+    int m_totalActiveFindings{0};
     bool m_totalActiveFindingsHasBeenSet = false;
 
-    int m_totalArchivedFindings;
+    int m_totalArchivedFindings{0};
     bool m_totalArchivedFindingsHasBeenSet = false;
 
-    int m_totalResolvedFindings;
+    int m_totalResolvedFindings{0};
     bool m_totalResolvedFindingsHasBeenSet = false;
   };
 

@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PortRange::PortRange() : 
-    m_from(0),
-    m_fromHasBeenSet(false),
-    m_to(0),
-    m_toHasBeenSet(false)
-{
-}
-
 PortRange::PortRange(const XmlNode& xmlNode)
-  : PortRange()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ PortRange& PortRange::operator =(const XmlNode& xmlNode)
     {
       m_from = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fromNode.GetText()).c_str()).c_str());
       m_fromHasBeenSet = true;
+       m_fromHasBeenSet = true;
     }
     XmlNode toNode = resultNode.FirstChild("to");
     if(!toNode.IsNull())
     {
       m_to = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(toNode.GetText()).c_str()).c_str());
       m_toHasBeenSet = true;
+       m_toHasBeenSet = true;
     }
   }
 

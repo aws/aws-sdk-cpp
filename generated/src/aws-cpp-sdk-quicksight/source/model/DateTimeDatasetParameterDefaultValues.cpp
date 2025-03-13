@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DateTimeDatasetParameterDefaultValues::DateTimeDatasetParameterDefaultValues() : 
-    m_staticValuesHasBeenSet(false)
-{
-}
-
 DateTimeDatasetParameterDefaultValues::DateTimeDatasetParameterDefaultValues(JsonView jsonValue)
-  : DateTimeDatasetParameterDefaultValues()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DateTimeDatasetParameterDefaultValues& DateTimeDatasetParameterDefaultValues::op
     }
     m_staticValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-WorkflowParameterDetail::WorkflowParameterDetail() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 WorkflowParameterDetail::WorkflowParameterDetail(JsonView jsonValue)
-  : WorkflowParameterDetail()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WorkflowParameterDetail& WorkflowParameterDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     Aws::Utils::Array<JsonView> defaultValueJsonList = jsonValue.GetArray("defaultValue");
@@ -57,14 +44,11 @@ WorkflowParameterDetail& WorkflowParameterDetail::operator =(JsonView jsonValue)
     }
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

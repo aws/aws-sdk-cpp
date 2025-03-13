@@ -37,7 +37,7 @@ namespace Model
   class GetRecommendationsResult
   {
   public:
-    AWS_CODEGURUPROFILER_API GetRecommendationsResult();
+    AWS_CODEGURUPROFILER_API GetRecommendationsResult() = default;
     AWS_CODEGURUPROFILER_API GetRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEGURUPROFILER_API GetRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,13 +46,13 @@ namespace Model
     /**
      * <p> The list of anomalies that the analysis has found for this profile. </p>
      */
-    inline const Aws::Vector<Anomaly>& GetAnomalies() const{ return m_anomalies; }
-    inline void SetAnomalies(const Aws::Vector<Anomaly>& value) { m_anomalies = value; }
-    inline void SetAnomalies(Aws::Vector<Anomaly>&& value) { m_anomalies = std::move(value); }
-    inline GetRecommendationsResult& WithAnomalies(const Aws::Vector<Anomaly>& value) { SetAnomalies(value); return *this;}
-    inline GetRecommendationsResult& WithAnomalies(Aws::Vector<Anomaly>&& value) { SetAnomalies(std::move(value)); return *this;}
-    inline GetRecommendationsResult& AddAnomalies(const Anomaly& value) { m_anomalies.push_back(value); return *this; }
-    inline GetRecommendationsResult& AddAnomalies(Anomaly&& value) { m_anomalies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Anomaly>& GetAnomalies() const { return m_anomalies; }
+    template<typename AnomaliesT = Aws::Vector<Anomaly>>
+    void SetAnomalies(AnomaliesT&& value) { m_anomaliesHasBeenSet = true; m_anomalies = std::forward<AnomaliesT>(value); }
+    template<typename AnomaliesT = Aws::Vector<Anomaly>>
+    GetRecommendationsResult& WithAnomalies(AnomaliesT&& value) { SetAnomalies(std::forward<AnomaliesT>(value)); return *this;}
+    template<typename AnomaliesT = Anomaly>
+    GetRecommendationsResult& AddAnomalies(AnomaliesT&& value) { m_anomaliesHasBeenSet = true; m_anomalies.emplace_back(std::forward<AnomaliesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,11 +61,11 @@ namespace Model
      * using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
      * millisecond past June 1, 2020 1:15:02 PM UTC. </p>
      */
-    inline const Aws::Utils::DateTime& GetProfileEndTime() const{ return m_profileEndTime; }
-    inline void SetProfileEndTime(const Aws::Utils::DateTime& value) { m_profileEndTime = value; }
-    inline void SetProfileEndTime(Aws::Utils::DateTime&& value) { m_profileEndTime = std::move(value); }
-    inline GetRecommendationsResult& WithProfileEndTime(const Aws::Utils::DateTime& value) { SetProfileEndTime(value); return *this;}
-    inline GetRecommendationsResult& WithProfileEndTime(Aws::Utils::DateTime&& value) { SetProfileEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetProfileEndTime() const { return m_profileEndTime; }
+    template<typename ProfileEndTimeT = Aws::Utils::DateTime>
+    void SetProfileEndTime(ProfileEndTimeT&& value) { m_profileEndTimeHasBeenSet = true; m_profileEndTime = std::forward<ProfileEndTimeT>(value); }
+    template<typename ProfileEndTimeT = Aws::Utils::DateTime>
+    GetRecommendationsResult& WithProfileEndTime(ProfileEndTimeT&& value) { SetProfileEndTime(std::forward<ProfileEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,62 +74,64 @@ namespace Model
      * using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
      * millisecond past June 1, 2020 1:15:02 PM UTC. </p>
      */
-    inline const Aws::Utils::DateTime& GetProfileStartTime() const{ return m_profileStartTime; }
-    inline void SetProfileStartTime(const Aws::Utils::DateTime& value) { m_profileStartTime = value; }
-    inline void SetProfileStartTime(Aws::Utils::DateTime&& value) { m_profileStartTime = std::move(value); }
-    inline GetRecommendationsResult& WithProfileStartTime(const Aws::Utils::DateTime& value) { SetProfileStartTime(value); return *this;}
-    inline GetRecommendationsResult& WithProfileStartTime(Aws::Utils::DateTime&& value) { SetProfileStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetProfileStartTime() const { return m_profileStartTime; }
+    template<typename ProfileStartTimeT = Aws::Utils::DateTime>
+    void SetProfileStartTime(ProfileStartTimeT&& value) { m_profileStartTimeHasBeenSet = true; m_profileStartTime = std::forward<ProfileStartTimeT>(value); }
+    template<typename ProfileStartTimeT = Aws::Utils::DateTime>
+    GetRecommendationsResult& WithProfileStartTime(ProfileStartTimeT&& value) { SetProfileStartTime(std::forward<ProfileStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the profiling group the analysis data is about.</p>
      */
-    inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
-    inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupName = value; }
-    inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupName = std::move(value); }
-    inline void SetProfilingGroupName(const char* value) { m_profilingGroupName.assign(value); }
-    inline GetRecommendationsResult& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
-    inline GetRecommendationsResult& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
-    inline GetRecommendationsResult& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
+    inline const Aws::String& GetProfilingGroupName() const { return m_profilingGroupName; }
+    template<typename ProfilingGroupNameT = Aws::String>
+    void SetProfilingGroupName(ProfilingGroupNameT&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::forward<ProfilingGroupNameT>(value); }
+    template<typename ProfilingGroupNameT = Aws::String>
+    GetRecommendationsResult& WithProfilingGroupName(ProfilingGroupNameT&& value) { SetProfilingGroupName(std::forward<ProfilingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of recommendations that the analysis found for this profile.</p>
      */
-    inline const Aws::Vector<Recommendation>& GetRecommendations() const{ return m_recommendations; }
-    inline void SetRecommendations(const Aws::Vector<Recommendation>& value) { m_recommendations = value; }
-    inline void SetRecommendations(Aws::Vector<Recommendation>&& value) { m_recommendations = std::move(value); }
-    inline GetRecommendationsResult& WithRecommendations(const Aws::Vector<Recommendation>& value) { SetRecommendations(value); return *this;}
-    inline GetRecommendationsResult& WithRecommendations(Aws::Vector<Recommendation>&& value) { SetRecommendations(std::move(value)); return *this;}
-    inline GetRecommendationsResult& AddRecommendations(const Recommendation& value) { m_recommendations.push_back(value); return *this; }
-    inline GetRecommendationsResult& AddRecommendations(Recommendation&& value) { m_recommendations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Recommendation>& GetRecommendations() const { return m_recommendations; }
+    template<typename RecommendationsT = Aws::Vector<Recommendation>>
+    void SetRecommendations(RecommendationsT&& value) { m_recommendationsHasBeenSet = true; m_recommendations = std::forward<RecommendationsT>(value); }
+    template<typename RecommendationsT = Aws::Vector<Recommendation>>
+    GetRecommendationsResult& WithRecommendations(RecommendationsT&& value) { SetRecommendations(std::forward<RecommendationsT>(value)); return *this;}
+    template<typename RecommendationsT = Recommendation>
+    GetRecommendationsResult& AddRecommendations(RecommendationsT&& value) { m_recommendationsHasBeenSet = true; m_recommendations.emplace_back(std::forward<RecommendationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRecommendationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRecommendationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRecommendationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRecommendationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Anomaly> m_anomalies;
+    bool m_anomaliesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_profileEndTime;
+    Aws::Utils::DateTime m_profileEndTime{};
+    bool m_profileEndTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_profileStartTime;
+    Aws::Utils::DateTime m_profileStartTime{};
+    bool m_profileStartTimeHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
+    bool m_profilingGroupNameHasBeenSet = false;
 
     Aws::Vector<Recommendation> m_recommendations;
+    bool m_recommendationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,13 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyReplicationSubnetGroupRequest::ModifyReplicationSubnetGroupRequest() : 
-    m_replicationSubnetGroupIdentifierHasBeenSet(false),
-    m_replicationSubnetGroupDescriptionHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyReplicationSubnetGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,16 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-FailoverGlobalClusterRequest::FailoverGlobalClusterRequest() : 
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_targetDbClusterIdentifierHasBeenSet(false),
-    m_allowDataLoss(false),
-    m_allowDataLossHasBeenSet(false),
-    m_switchover(false),
-    m_switchoverHasBeenSet(false)
-{
-}
-
 Aws::String FailoverGlobalClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

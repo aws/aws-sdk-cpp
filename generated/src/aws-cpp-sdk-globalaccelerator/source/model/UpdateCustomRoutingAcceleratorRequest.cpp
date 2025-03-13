@@ -12,17 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCustomRoutingAcceleratorRequest::UpdateCustomRoutingAcceleratorRequest() : 
-    m_acceleratorArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_ipAddressesHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCustomRoutingAcceleratorRequest::SerializePayload() const
 {
   JsonValue payload;

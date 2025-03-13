@@ -17,14 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyInstanceCpuOptionsResponse::ModifyInstanceCpuOptionsResponse() : 
-    m_coreCount(0),
-    m_threadsPerCore(0)
-{
-}
-
 ModifyInstanceCpuOptionsResponse::ModifyInstanceCpuOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ModifyInstanceCpuOptionsResponse()
 {
   *this = result;
 }
@@ -45,16 +38,19 @@ ModifyInstanceCpuOptionsResponse& ModifyInstanceCpuOptionsResponse::operator =(c
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
+      m_instanceIdHasBeenSet = true;
     }
     XmlNode coreCountNode = resultNode.FirstChild("coreCount");
     if(!coreCountNode.IsNull())
     {
       m_coreCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(coreCountNode.GetText()).c_str()).c_str());
+      m_coreCountHasBeenSet = true;
     }
     XmlNode threadsPerCoreNode = resultNode.FirstChild("threadsPerCore");
     if(!threadsPerCoreNode.IsNull())
     {
       m_threadsPerCore = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(threadsPerCoreNode.GetText()).c_str()).c_str());
+      m_threadsPerCoreHasBeenSet = true;
     }
   }
 
@@ -63,6 +59,7 @@ ModifyInstanceCpuOptionsResponse& ModifyInstanceCpuOptionsResponse::operator =(c
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyInstanceCpuOptionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

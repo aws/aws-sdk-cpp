@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-EndPoint::EndPoint() : 
-    m_streamTypeHasBeenSet(false),
-    m_kinesisStreamConfigHasBeenSet(false)
-{
-}
-
 EndPoint::EndPoint(const XmlNode& xmlNode)
-  : EndPoint()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ EndPoint& EndPoint::operator =(const XmlNode& xmlNode)
     {
       m_streamType = Aws::Utils::Xml::DecodeEscapedXmlText(streamTypeNode.GetText());
       m_streamTypeHasBeenSet = true;
+       m_streamTypeHasBeenSet = true;
     }
     XmlNode kinesisStreamConfigNode = resultNode.FirstChild("KinesisStreamConfig");
     if(!kinesisStreamConfigNode.IsNull())
     {
       m_kinesisStreamConfig = kinesisStreamConfigNode;
       m_kinesisStreamConfigHasBeenSet = true;
+       m_kinesisStreamConfigHasBeenSet = true;
     }
   }
 

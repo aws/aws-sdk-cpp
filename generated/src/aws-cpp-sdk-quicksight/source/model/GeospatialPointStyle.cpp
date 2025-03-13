@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialPointStyle::GeospatialPointStyle() : 
-    m_circleSymbolStyleHasBeenSet(false)
-{
-}
-
 GeospatialPointStyle::GeospatialPointStyle(JsonView jsonValue)
-  : GeospatialPointStyle()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GeospatialPointStyle& GeospatialPointStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CircleSymbolStyle"))
   {
     m_circleSymbolStyle = jsonValue.GetObject("CircleSymbolStyle");
-
     m_circleSymbolStyleHasBeenSet = true;
   }
-
   return *this;
 }
 

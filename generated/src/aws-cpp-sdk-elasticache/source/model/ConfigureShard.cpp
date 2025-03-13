@@ -20,17 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ConfigureShard::ConfigureShard() : 
-    m_nodeGroupIdHasBeenSet(false),
-    m_newReplicaCount(0),
-    m_newReplicaCountHasBeenSet(false),
-    m_preferredAvailabilityZonesHasBeenSet(false),
-    m_preferredOutpostArnsHasBeenSet(false)
-{
-}
-
 ConfigureShard::ConfigureShard(const XmlNode& xmlNode)
-  : ConfigureShard()
 {
   *this = xmlNode;
 }
@@ -46,36 +36,40 @@ ConfigureShard& ConfigureShard::operator =(const XmlNode& xmlNode)
     {
       m_nodeGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(nodeGroupIdNode.GetText());
       m_nodeGroupIdHasBeenSet = true;
+       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode newReplicaCountNode = resultNode.FirstChild("NewReplicaCount");
     if(!newReplicaCountNode.IsNull())
     {
       m_newReplicaCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(newReplicaCountNode.GetText()).c_str()).c_str());
       m_newReplicaCountHasBeenSet = true;
+       m_newReplicaCountHasBeenSet = true;
     }
     XmlNode preferredAvailabilityZonesNode = resultNode.FirstChild("PreferredAvailabilityZones");
     if(!preferredAvailabilityZonesNode.IsNull())
     {
       XmlNode preferredAvailabilityZonesMember = preferredAvailabilityZonesNode.FirstChild("PreferredAvailabilityZone");
+      m_preferredAvailabilityZonesHasBeenSet = !preferredAvailabilityZonesMember.IsNull();
       while(!preferredAvailabilityZonesMember.IsNull())
       {
         m_preferredAvailabilityZones.push_back(preferredAvailabilityZonesMember.GetText());
         preferredAvailabilityZonesMember = preferredAvailabilityZonesMember.NextNode("PreferredAvailabilityZone");
       }
 
-      m_preferredAvailabilityZonesHasBeenSet = true;
+       m_preferredAvailabilityZonesHasBeenSet = true;
     }
     XmlNode preferredOutpostArnsNode = resultNode.FirstChild("PreferredOutpostArns");
     if(!preferredOutpostArnsNode.IsNull())
     {
       XmlNode preferredOutpostArnsMember = preferredOutpostArnsNode.FirstChild("PreferredOutpostArn");
+      m_preferredOutpostArnsHasBeenSet = !preferredOutpostArnsMember.IsNull();
       while(!preferredOutpostArnsMember.IsNull())
       {
         m_preferredOutpostArns.push_back(preferredOutpostArnsMember.GetText());
         preferredOutpostArnsMember = preferredOutpostArnsMember.NextNode("PreferredOutpostArn");
       }
 
-      m_preferredOutpostArnsHasBeenSet = true;
+       m_preferredOutpostArnsHasBeenSet = true;
     }
   }
 

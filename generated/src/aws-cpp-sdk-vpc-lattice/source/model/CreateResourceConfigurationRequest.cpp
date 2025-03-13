@@ -12,24 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateResourceConfigurationRequest::CreateResourceConfigurationRequest() : 
-    m_allowAssociationToShareableServiceNetwork(false),
-    m_allowAssociationToShareableServiceNetworkHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_portRangesHasBeenSet(false),
-    m_protocol(ProtocolType::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_resourceConfigurationDefinitionHasBeenSet(false),
-    m_resourceConfigurationGroupIdentifierHasBeenSet(false),
-    m_resourceGatewayIdentifierHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(ResourceConfigurationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String CreateResourceConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

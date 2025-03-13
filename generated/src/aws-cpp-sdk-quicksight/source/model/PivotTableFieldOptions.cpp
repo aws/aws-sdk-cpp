@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PivotTableFieldOptions::PivotTableFieldOptions() : 
-    m_selectedFieldOptionsHasBeenSet(false),
-    m_dataPathOptionsHasBeenSet(false),
-    m_collapseStateOptionsHasBeenSet(false)
-{
-}
-
 PivotTableFieldOptions::PivotTableFieldOptions(JsonView jsonValue)
-  : PivotTableFieldOptions()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ PivotTableFieldOptions& PivotTableFieldOptions::operator =(JsonView jsonValue)
     }
     m_selectedFieldOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataPathOptions"))
   {
     Aws::Utils::Array<JsonView> dataPathOptionsJsonList = jsonValue.GetArray("DataPathOptions");
@@ -52,7 +43,6 @@ PivotTableFieldOptions& PivotTableFieldOptions::operator =(JsonView jsonValue)
     }
     m_dataPathOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollapseStateOptions"))
   {
     Aws::Utils::Array<JsonView> collapseStateOptionsJsonList = jsonValue.GetArray("CollapseStateOptions");
@@ -62,7 +52,6 @@ PivotTableFieldOptions& PivotTableFieldOptions::operator =(JsonView jsonValue)
     }
     m_collapseStateOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

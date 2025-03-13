@@ -18,13 +18,7 @@ namespace MQ
 namespace Model
 {
 
-EngineVersion::EngineVersion() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 EngineVersion::EngineVersion(JsonView jsonValue)
-  : EngineVersion()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EngineVersion& EngineVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

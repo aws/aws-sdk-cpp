@@ -12,11 +12,6 @@ using namespace Aws::JsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-OperationWithOptionalInputOutputRequest::OperationWithOptionalInputOutputRequest() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 Aws::String OperationWithOptionalInputOutputRequest::SerializePayload() const
 {
   JsonValue payload;

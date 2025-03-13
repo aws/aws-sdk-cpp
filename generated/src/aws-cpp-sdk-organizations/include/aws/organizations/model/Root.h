@@ -36,7 +36,7 @@ namespace Model
   class Root
   {
   public:
-    AWS_ORGANIZATIONS_API Root();
+    AWS_ORGANIZATIONS_API Root() = default;
     AWS_ORGANIZATIONS_API Root(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Root& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * a root ID string requires "r-" followed by from 4 to 32 lowercase letters or
      * digits.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Root& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Root& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Root& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Root& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
      * Authorization Reference</i>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Root& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Root& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Root& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Root& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Root& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Root& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Root& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Root& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,14 @@ namespace Model
      * <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to see the
      * availability of the policy types in that organization.</p> 
      */
-    inline const Aws::Vector<PolicyTypeSummary>& GetPolicyTypes() const{ return m_policyTypes; }
+    inline const Aws::Vector<PolicyTypeSummary>& GetPolicyTypes() const { return m_policyTypes; }
     inline bool PolicyTypesHasBeenSet() const { return m_policyTypesHasBeenSet; }
-    inline void SetPolicyTypes(const Aws::Vector<PolicyTypeSummary>& value) { m_policyTypesHasBeenSet = true; m_policyTypes = value; }
-    inline void SetPolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { m_policyTypesHasBeenSet = true; m_policyTypes = std::move(value); }
-    inline Root& WithPolicyTypes(const Aws::Vector<PolicyTypeSummary>& value) { SetPolicyTypes(value); return *this;}
-    inline Root& WithPolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { SetPolicyTypes(std::move(value)); return *this;}
-    inline Root& AddPolicyTypes(const PolicyTypeSummary& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
-    inline Root& AddPolicyTypes(PolicyTypeSummary&& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(std::move(value)); return *this; }
+    template<typename PolicyTypesT = Aws::Vector<PolicyTypeSummary>>
+    void SetPolicyTypes(PolicyTypesT&& value) { m_policyTypesHasBeenSet = true; m_policyTypes = std::forward<PolicyTypesT>(value); }
+    template<typename PolicyTypesT = Aws::Vector<PolicyTypeSummary>>
+    Root& WithPolicyTypes(PolicyTypesT&& value) { SetPolicyTypes(std::forward<PolicyTypesT>(value)); return *this;}
+    template<typename PolicyTypesT = PolicyTypeSummary>
+    Root& AddPolicyTypes(PolicyTypesT&& value) { m_policyTypesHasBeenSet = true; m_policyTypes.emplace_back(std::forward<PolicyTypesT>(value)); return *this; }
     ///@}
   private:
 

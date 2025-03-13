@@ -29,7 +29,7 @@ namespace Model
   class LoRaWANServiceProfile
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANServiceProfile();
+    AWS_IOTWIRELESS_API LoRaWANServiceProfile() = default;
     AWS_IOTWIRELESS_API LoRaWANServiceProfile(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANServiceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The AddGWMetaData value.</p>
      */
-    inline bool GetAddGwMetadata() const{ return m_addGwMetadata; }
+    inline bool GetAddGwMetadata() const { return m_addGwMetadata; }
     inline bool AddGwMetadataHasBeenSet() const { return m_addGwMetadataHasBeenSet; }
     inline void SetAddGwMetadata(bool value) { m_addGwMetadataHasBeenSet = true; m_addGwMetadata = value; }
     inline LoRaWANServiceProfile& WithAddGwMetadata(bool value) { SetAddGwMetadata(value); return *this;}
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The DrMin value.</p>
      */
-    inline int GetDrMin() const{ return m_drMin; }
+    inline int GetDrMin() const { return m_drMin; }
     inline bool DrMinHasBeenSet() const { return m_drMinHasBeenSet; }
     inline void SetDrMin(int value) { m_drMinHasBeenSet = true; m_drMin = value; }
     inline LoRaWANServiceProfile& WithDrMin(int value) { SetDrMin(value); return *this;}
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>The DrMax value.</p>
      */
-    inline int GetDrMax() const{ return m_drMax; }
+    inline int GetDrMax() const { return m_drMax; }
     inline bool DrMaxHasBeenSet() const { return m_drMaxHasBeenSet; }
     inline void SetDrMax(int value) { m_drMaxHasBeenSet = true; m_drMax = value; }
     inline LoRaWANServiceProfile& WithDrMax(int value) { SetDrMax(value); return *this;}
@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
      */
-    inline bool GetPrAllowed() const{ return m_prAllowed; }
+    inline bool GetPrAllowed() const { return m_prAllowed; }
     inline bool PrAllowedHasBeenSet() const { return m_prAllowedHasBeenSet; }
     inline void SetPrAllowed(bool value) { m_prAllowedHasBeenSet = true; m_prAllowed = value; }
     inline LoRaWANServiceProfile& WithPrAllowed(bool value) { SetPrAllowed(value); return *this;}
@@ -79,26 +79,26 @@ namespace Model
     /**
      * <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
      */
-    inline bool GetRaAllowed() const{ return m_raAllowed; }
+    inline bool GetRaAllowed() const { return m_raAllowed; }
     inline bool RaAllowedHasBeenSet() const { return m_raAllowedHasBeenSet; }
     inline void SetRaAllowed(bool value) { m_raAllowedHasBeenSet = true; m_raAllowed = value; }
     inline LoRaWANServiceProfile& WithRaAllowed(bool value) { SetRaAllowed(value); return *this;}
     ///@}
   private:
 
-    bool m_addGwMetadata;
+    bool m_addGwMetadata{false};
     bool m_addGwMetadataHasBeenSet = false;
 
-    int m_drMin;
+    int m_drMin{0};
     bool m_drMinHasBeenSet = false;
 
-    int m_drMax;
+    int m_drMax{0};
     bool m_drMaxHasBeenSet = false;
 
-    bool m_prAllowed;
+    bool m_prAllowed{false};
     bool m_prAllowedHasBeenSet = false;
 
-    bool m_raAllowed;
+    bool m_raAllowed{false};
     bool m_raAllowedHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeStackSummaryResult::DescribeStackSummaryResult()
-{
-}
-
 DescribeStackSummaryResult::DescribeStackSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeStackSummaryResult& DescribeStackSummaryResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("StackSummary"))
   {
     m_stackSummary = jsonValue.GetObject("StackSummary");
-
+    m_stackSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

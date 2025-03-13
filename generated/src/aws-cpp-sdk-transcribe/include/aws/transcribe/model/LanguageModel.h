@@ -42,7 +42,7 @@ namespace Model
   class LanguageModel
   {
   public:
-    AWS_TRANSCRIBESERVICE_API LanguageModel();
+    AWS_TRANSCRIBESERVICE_API LanguageModel() = default;
     AWS_TRANSCRIBESERVICE_API LanguageModel(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API LanguageModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
      * name is case sensitive, cannot contain spaces, and must be unique within an
      * Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
+    inline const Aws::String& GetModelName() const { return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-    inline LanguageModel& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline LanguageModel& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline LanguageModel& WithModelName(const char* value) { SetModelName(value); return *this;}
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    LanguageModel& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,12 @@ namespace Model
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline LanguageModel& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline LanguageModel& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    LanguageModel& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +84,12 @@ namespace Model
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline LanguageModel& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline LanguageModel& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    LanguageModel& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +103,10 @@ namespace Model
      * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
      */
-    inline const CLMLanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline CLMLanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const CLMLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(CLMLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline LanguageModel& WithLanguageCode(const CLMLanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline LanguageModel& WithLanguageCode(CLMLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(CLMLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline LanguageModel& WithLanguageCode(CLMLanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -118,12 +114,10 @@ namespace Model
      * <p>The Amazon Transcribe standard language model, or base model, used to create
      * your custom language model.</p>
      */
-    inline const BaseModelName& GetBaseModelName() const{ return m_baseModelName; }
+    inline BaseModelName GetBaseModelName() const { return m_baseModelName; }
     inline bool BaseModelNameHasBeenSet() const { return m_baseModelNameHasBeenSet; }
-    inline void SetBaseModelName(const BaseModelName& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = value; }
-    inline void SetBaseModelName(BaseModelName&& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = std::move(value); }
-    inline LanguageModel& WithBaseModelName(const BaseModelName& value) { SetBaseModelName(value); return *this;}
-    inline LanguageModel& WithBaseModelName(BaseModelName&& value) { SetBaseModelName(std::move(value)); return *this;}
+    inline void SetBaseModelName(BaseModelName value) { m_baseModelNameHasBeenSet = true; m_baseModelName = value; }
+    inline LanguageModel& WithBaseModelName(BaseModelName value) { SetBaseModelName(value); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +125,10 @@ namespace Model
      * <p>The status of the specified custom language model. When the status displays
      * as <code>COMPLETED</code> the model is ready for use.</p>
      */
-    inline const ModelStatus& GetModelStatus() const{ return m_modelStatus; }
+    inline ModelStatus GetModelStatus() const { return m_modelStatus; }
     inline bool ModelStatusHasBeenSet() const { return m_modelStatusHasBeenSet; }
-    inline void SetModelStatus(const ModelStatus& value) { m_modelStatusHasBeenSet = true; m_modelStatus = value; }
-    inline void SetModelStatus(ModelStatus&& value) { m_modelStatusHasBeenSet = true; m_modelStatus = std::move(value); }
-    inline LanguageModel& WithModelStatus(const ModelStatus& value) { SetModelStatus(value); return *this;}
-    inline LanguageModel& WithModelStatus(ModelStatus&& value) { SetModelStatus(std::move(value)); return *this;}
+    inline void SetModelStatus(ModelStatus value) { m_modelStatusHasBeenSet = true; m_modelStatus = value; }
+    inline LanguageModel& WithModelStatus(ModelStatus value) { SetModelStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -149,7 +141,7 @@ namespace Model
      * using the new base model. Base model upgrades for existing custom language
      * models are not supported.</p>
      */
-    inline bool GetUpgradeAvailability() const{ return m_upgradeAvailability; }
+    inline bool GetUpgradeAvailability() const { return m_upgradeAvailability; }
     inline bool UpgradeAvailabilityHasBeenSet() const { return m_upgradeAvailabilityHasBeenSet; }
     inline void SetUpgradeAvailability(bool value) { m_upgradeAvailabilityHasBeenSet = true; m_upgradeAvailability = value; }
     inline LanguageModel& WithUpgradeAvailability(bool value) { SetUpgradeAvailability(value); return *this;}
@@ -163,14 +155,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
      * Errors</a>.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline LanguageModel& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline LanguageModel& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline LanguageModel& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    LanguageModel& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,34 +169,34 @@ namespace Model
      * language model, in addition to the data access role ARN (Amazon Resource Name)
      * that has permissions to access these data.</p>
      */
-    inline const InputDataConfig& GetInputDataConfig() const{ return m_inputDataConfig; }
+    inline const InputDataConfig& GetInputDataConfig() const { return m_inputDataConfig; }
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
-    inline void SetInputDataConfig(const InputDataConfig& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
-    inline void SetInputDataConfig(InputDataConfig&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
-    inline LanguageModel& WithInputDataConfig(const InputDataConfig& value) { SetInputDataConfig(value); return *this;}
-    inline LanguageModel& WithInputDataConfig(InputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
+    template<typename InputDataConfigT = InputDataConfig>
+    void SetInputDataConfig(InputDataConfigT&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::forward<InputDataConfigT>(value); }
+    template<typename InputDataConfigT = InputDataConfig>
+    LanguageModel& WithInputDataConfig(InputDataConfigT&& value) { SetInputDataConfig(std::forward<InputDataConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_modelName;
     bool m_modelNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
-    CLMLanguageCode m_languageCode;
+    CLMLanguageCode m_languageCode{CLMLanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    BaseModelName m_baseModelName;
+    BaseModelName m_baseModelName{BaseModelName::NOT_SET};
     bool m_baseModelNameHasBeenSet = false;
 
-    ModelStatus m_modelStatus;
+    ModelStatus m_modelStatus{ModelStatus::NOT_SET};
     bool m_modelStatusHasBeenSet = false;
 
-    bool m_upgradeAvailability;
+    bool m_upgradeAvailability{false};
     bool m_upgradeAvailabilityHasBeenSet = false;
 
     Aws::String m_failureReason;

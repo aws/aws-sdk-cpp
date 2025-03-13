@@ -12,14 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCodeSigningConfigRequest::UpdateCodeSigningConfigRequest() : 
-    m_codeSigningConfigArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_allowedPublishersHasBeenSet(false),
-    m_codeSigningPoliciesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCodeSigningConfigRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ComplianceByResource::ComplianceByResource() : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_complianceHasBeenSet(false)
-{
-}
-
 ComplianceByResource::ComplianceByResource(JsonView jsonValue)
-  : ComplianceByResource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ComplianceByResource& ComplianceByResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Compliance"))
   {
     m_compliance = jsonValue.GetObject("Compliance");
-
     m_complianceHasBeenSet = true;
   }
-
   return *this;
 }
 

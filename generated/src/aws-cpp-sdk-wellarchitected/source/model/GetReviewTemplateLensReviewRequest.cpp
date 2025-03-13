@@ -12,12 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetReviewTemplateLensReviewRequest::GetReviewTemplateLensReviewRequest() : 
-    m_templateArnHasBeenSet(false),
-    m_lensAliasHasBeenSet(false)
-{
-}
-
 Aws::String GetReviewTemplateLensReviewRequest::SerializePayload() const
 {
   return {};

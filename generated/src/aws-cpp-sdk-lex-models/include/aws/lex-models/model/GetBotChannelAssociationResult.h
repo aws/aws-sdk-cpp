@@ -31,7 +31,7 @@ namespace Model
   class GetBotChannelAssociationResult
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetBotChannelAssociationResult();
+    AWS_LEXMODELBUILDINGSERVICE_API GetBotChannelAssociationResult() = default;
     AWS_LEXMODELBUILDINGSERVICE_API GetBotChannelAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELBUILDINGSERVICE_API GetBotChannelAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,22 @@ namespace Model
     /**
      * <p>The name of the association between the bot and the channel.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetBotChannelAssociationResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetBotChannelAssociationResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetBotChannelAssociationResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetBotChannelAssociationResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the association between the bot and the channel.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetBotChannelAssociationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetBotChannelAssociationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetBotChannelAssociationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetBotChannelAssociationResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,26 +63,22 @@ namespace Model
      * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
      * association is being made.</p>
      */
-    inline const Aws::String& GetBotAlias() const{ return m_botAlias; }
-    inline void SetBotAlias(const Aws::String& value) { m_botAlias = value; }
-    inline void SetBotAlias(Aws::String&& value) { m_botAlias = std::move(value); }
-    inline void SetBotAlias(const char* value) { m_botAlias.assign(value); }
-    inline GetBotChannelAssociationResult& WithBotAlias(const Aws::String& value) { SetBotAlias(value); return *this;}
-    inline GetBotChannelAssociationResult& WithBotAlias(Aws::String&& value) { SetBotAlias(std::move(value)); return *this;}
-    inline GetBotChannelAssociationResult& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
+    inline const Aws::String& GetBotAlias() const { return m_botAlias; }
+    template<typename BotAliasT = Aws::String>
+    void SetBotAlias(BotAliasT&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::forward<BotAliasT>(value); }
+    template<typename BotAliasT = Aws::String>
+    GetBotChannelAssociationResult& WithBotAlias(BotAliasT&& value) { SetBotAlias(std::forward<BotAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Amazon Lex bot.</p>
      */
-    inline const Aws::String& GetBotName() const{ return m_botName; }
-    inline void SetBotName(const Aws::String& value) { m_botName = value; }
-    inline void SetBotName(Aws::String&& value) { m_botName = std::move(value); }
-    inline void SetBotName(const char* value) { m_botName.assign(value); }
-    inline GetBotChannelAssociationResult& WithBotName(const Aws::String& value) { SetBotName(value); return *this;}
-    inline GetBotChannelAssociationResult& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
-    inline GetBotChannelAssociationResult& WithBotName(const char* value) { SetBotName(value); return *this;}
+    inline const Aws::String& GetBotName() const { return m_botName; }
+    template<typename BotNameT = Aws::String>
+    void SetBotName(BotNameT&& value) { m_botNameHasBeenSet = true; m_botName = std::forward<BotNameT>(value); }
+    template<typename BotNameT = Aws::String>
+    GetBotChannelAssociationResult& WithBotName(BotNameT&& value) { SetBotName(std::forward<BotNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,22 +86,20 @@ namespace Model
      * <p>The date that the association between the bot and the channel was
      * created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-    inline GetBotChannelAssociationResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline GetBotChannelAssociationResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    GetBotChannelAssociationResult& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the messaging platform.</p>
      */
-    inline const ChannelType& GetType() const{ return m_type; }
-    inline void SetType(const ChannelType& value) { m_type = value; }
-    inline void SetType(ChannelType&& value) { m_type = std::move(value); }
-    inline GetBotChannelAssociationResult& WithType(const ChannelType& value) { SetType(value); return *this;}
-    inline GetBotChannelAssociationResult& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
+    inline ChannelType GetType() const { return m_type; }
+    inline void SetType(ChannelType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetBotChannelAssociationResult& WithType(ChannelType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -117,18 +107,15 @@ namespace Model
      * <p>Provides information that the messaging platform needs to communicate with
      * the Amazon Lex bot.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetBotConfiguration() const{ return m_botConfiguration; }
-    inline void SetBotConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { m_botConfiguration = value; }
-    inline void SetBotConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { m_botConfiguration = std::move(value); }
-    inline GetBotChannelAssociationResult& WithBotConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { SetBotConfiguration(value); return *this;}
-    inline GetBotChannelAssociationResult& WithBotConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { SetBotConfiguration(std::move(value)); return *this;}
-    inline GetBotChannelAssociationResult& AddBotConfiguration(const Aws::String& key, const Aws::String& value) { m_botConfiguration.emplace(key, value); return *this; }
-    inline GetBotChannelAssociationResult& AddBotConfiguration(Aws::String&& key, const Aws::String& value) { m_botConfiguration.emplace(std::move(key), value); return *this; }
-    inline GetBotChannelAssociationResult& AddBotConfiguration(const Aws::String& key, Aws::String&& value) { m_botConfiguration.emplace(key, std::move(value)); return *this; }
-    inline GetBotChannelAssociationResult& AddBotConfiguration(Aws::String&& key, Aws::String&& value) { m_botConfiguration.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetBotChannelAssociationResult& AddBotConfiguration(const char* key, Aws::String&& value) { m_botConfiguration.emplace(key, std::move(value)); return *this; }
-    inline GetBotChannelAssociationResult& AddBotConfiguration(Aws::String&& key, const char* value) { m_botConfiguration.emplace(std::move(key), value); return *this; }
-    inline GetBotChannelAssociationResult& AddBotConfiguration(const char* key, const char* value) { m_botConfiguration.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetBotConfiguration() const { return m_botConfiguration; }
+    template<typename BotConfigurationT = Aws::Map<Aws::String, Aws::String>>
+    void SetBotConfiguration(BotConfigurationT&& value) { m_botConfigurationHasBeenSet = true; m_botConfiguration = std::forward<BotConfigurationT>(value); }
+    template<typename BotConfigurationT = Aws::Map<Aws::String, Aws::String>>
+    GetBotChannelAssociationResult& WithBotConfiguration(BotConfigurationT&& value) { SetBotConfiguration(std::forward<BotConfigurationT>(value)); return *this;}
+    template<typename BotConfigurationKeyT = Aws::String, typename BotConfigurationValueT = Aws::String>
+    GetBotChannelAssociationResult& AddBotConfiguration(BotConfigurationKeyT&& key, BotConfigurationValueT&& value) {
+      m_botConfigurationHasBeenSet = true; m_botConfiguration.emplace(std::forward<BotConfigurationKeyT>(key), std::forward<BotConfigurationValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -140,11 +127,9 @@ namespace Model
      * about the reason for the failure, see the <code>failureReason</code> field.</p>
      * </li> </ul>
      */
-    inline const ChannelStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ChannelStatus& value) { m_status = value; }
-    inline void SetStatus(ChannelStatus&& value) { m_status = std::move(value); }
-    inline GetBotChannelAssociationResult& WithStatus(const ChannelStatus& value) { SetStatus(value); return *this;}
-    inline GetBotChannelAssociationResult& WithStatus(ChannelStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ChannelStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ChannelStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetBotChannelAssociationResult& WithStatus(ChannelStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -152,46 +137,52 @@ namespace Model
      * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
      * that it failed to create the association.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline GetBotChannelAssociationResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline GetBotChannelAssociationResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline GetBotChannelAssociationResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    GetBotChannelAssociationResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBotChannelAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBotChannelAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBotChannelAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBotChannelAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_botAlias;
+    bool m_botAliasHasBeenSet = false;
 
     Aws::String m_botName;
+    bool m_botNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
 
-    ChannelType m_type;
+    ChannelType m_type{ChannelType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_botConfiguration;
+    bool m_botConfigurationHasBeenSet = false;
 
-    ChannelStatus m_status;
+    ChannelStatus m_status{ChannelStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

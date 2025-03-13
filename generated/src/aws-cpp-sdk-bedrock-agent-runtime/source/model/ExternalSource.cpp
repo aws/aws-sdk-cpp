@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ExternalSource::ExternalSource() : 
-    m_byteContentHasBeenSet(false),
-    m_s3LocationHasBeenSet(false),
-    m_sourceType(ExternalSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
-{
-}
-
 ExternalSource::ExternalSource(JsonView jsonValue)
-  : ExternalSource()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExternalSource& ExternalSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("byteContent"))
   {
     m_byteContent = jsonValue.GetObject("byteContent");
-
     m_byteContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceType"))
   {
     m_sourceType = ExternalSourceTypeMapper::GetExternalSourceTypeForName(jsonValue.GetString("sourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

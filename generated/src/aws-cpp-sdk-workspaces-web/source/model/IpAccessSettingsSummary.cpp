@@ -18,16 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-IpAccessSettingsSummary::IpAccessSettingsSummary() : 
-    m_creationDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_ipAccessSettingsArnHasBeenSet(false)
-{
-}
-
 IpAccessSettingsSummary::IpAccessSettingsSummary(JsonView jsonValue)
-  : IpAccessSettingsSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ IpAccessSettingsSummary& IpAccessSettingsSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAccessSettingsArn"))
   {
     m_ipAccessSettingsArn = jsonValue.GetString("ipAccessSettingsArn");
-
     m_ipAccessSettingsArnHasBeenSet = true;
   }
-
   return *this;
 }
 

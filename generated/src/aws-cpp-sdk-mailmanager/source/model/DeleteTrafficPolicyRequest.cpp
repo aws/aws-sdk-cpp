@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTrafficPolicyRequest::DeleteTrafficPolicyRequest() : 
-    m_trafficPolicyIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTrafficPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

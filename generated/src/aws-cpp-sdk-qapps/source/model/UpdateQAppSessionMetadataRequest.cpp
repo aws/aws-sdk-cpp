@@ -13,14 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQAppSessionMetadataRequest::UpdateQAppSessionMetadataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_sessionNameHasBeenSet(false),
-    m_sharingConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQAppSessionMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

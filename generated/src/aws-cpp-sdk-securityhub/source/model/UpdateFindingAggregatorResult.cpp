@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFindingAggregatorResult::UpdateFindingAggregatorResult()
-{
-}
-
 UpdateFindingAggregatorResult::UpdateFindingAggregatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ UpdateFindingAggregatorResult& UpdateFindingAggregatorResult::operator =(const A
   if(jsonValue.ValueExists("FindingAggregatorArn"))
   {
     m_findingAggregatorArn = jsonValue.GetString("FindingAggregatorArn");
-
+    m_findingAggregatorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FindingAggregationRegion"))
   {
     m_findingAggregationRegion = jsonValue.GetString("FindingAggregationRegion");
-
+    m_findingAggregationRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegionLinkingMode"))
   {
     m_regionLinkingMode = jsonValue.GetString("RegionLinkingMode");
-
+    m_regionLinkingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Regions"))
   {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
@@ -54,14 +47,15 @@ UpdateFindingAggregatorResult& UpdateFindingAggregatorResult::operator =(const A
     {
       m_regions.push_back(regionsJsonList[regionsIndex].AsString());
     }
+    m_regionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

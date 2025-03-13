@@ -22,7 +22,7 @@ namespace Model
   class GetMinuteUsageRequest : public GroundStationRequest
   {
   public:
-    AWS_GROUNDSTATION_API GetMinuteUsageRequest();
+    AWS_GROUNDSTATION_API GetMinuteUsageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     /**
      * <p>The month being requested, with a value of 1-12.</p>
      */
-    inline int GetMonth() const{ return m_month; }
+    inline int GetMonth() const { return m_month; }
     inline bool MonthHasBeenSet() const { return m_monthHasBeenSet; }
     inline void SetMonth(int value) { m_monthHasBeenSet = true; m_month = value; }
     inline GetMinuteUsageRequest& WithMonth(int value) { SetMonth(value); return *this;}
@@ -47,17 +47,17 @@ namespace Model
     /**
      * <p>The year being requested, in the format of YYYY.</p>
      */
-    inline int GetYear() const{ return m_year; }
+    inline int GetYear() const { return m_year; }
     inline bool YearHasBeenSet() const { return m_yearHasBeenSet; }
     inline void SetYear(int value) { m_yearHasBeenSet = true; m_year = value; }
     inline GetMinuteUsageRequest& WithYear(int value) { SetYear(value); return *this;}
     ///@}
   private:
 
-    int m_month;
+    int m_month{0};
     bool m_monthHasBeenSet = false;
 
-    int m_year;
+    int m_year{0};
     bool m_yearHasBeenSet = false;
   };
 

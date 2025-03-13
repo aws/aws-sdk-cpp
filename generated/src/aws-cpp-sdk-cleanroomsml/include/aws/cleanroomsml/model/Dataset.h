@@ -33,7 +33,7 @@ namespace Model
   class Dataset
   {
   public:
-    AWS_CLEANROOMSML_API Dataset();
+    AWS_CLEANROOMSML_API Dataset() = default;
     AWS_CLEANROOMSML_API Dataset(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>What type of information is found in the dataset.</p>
      */
-    inline const DatasetType& GetType() const{ return m_type; }
+    inline DatasetType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DatasetType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DatasetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Dataset& WithType(const DatasetType& value) { SetType(value); return *this;}
-    inline Dataset& WithType(DatasetType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DatasetType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Dataset& WithType(DatasetType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -56,16 +54,16 @@ namespace Model
      * <p>A DatasetInputConfig object that defines the data source and schema
      * mapping.</p>
      */
-    inline const DatasetInputConfig& GetInputConfig() const{ return m_inputConfig; }
+    inline const DatasetInputConfig& GetInputConfig() const { return m_inputConfig; }
     inline bool InputConfigHasBeenSet() const { return m_inputConfigHasBeenSet; }
-    inline void SetInputConfig(const DatasetInputConfig& value) { m_inputConfigHasBeenSet = true; m_inputConfig = value; }
-    inline void SetInputConfig(DatasetInputConfig&& value) { m_inputConfigHasBeenSet = true; m_inputConfig = std::move(value); }
-    inline Dataset& WithInputConfig(const DatasetInputConfig& value) { SetInputConfig(value); return *this;}
-    inline Dataset& WithInputConfig(DatasetInputConfig&& value) { SetInputConfig(std::move(value)); return *this;}
+    template<typename InputConfigT = DatasetInputConfig>
+    void SetInputConfig(InputConfigT&& value) { m_inputConfigHasBeenSet = true; m_inputConfig = std::forward<InputConfigT>(value); }
+    template<typename InputConfigT = DatasetInputConfig>
+    Dataset& WithInputConfig(InputConfigT&& value) { SetInputConfig(std::forward<InputConfigT>(value)); return *this;}
     ///@}
   private:
 
-    DatasetType m_type;
+    DatasetType m_type{DatasetType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     DatasetInputConfig m_inputConfig;

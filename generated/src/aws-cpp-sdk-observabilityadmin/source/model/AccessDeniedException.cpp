@@ -19,14 +19,7 @@ namespace ObservabilityAdmin
 namespace Model
 {
 
-AccessDeniedException::AccessDeniedException() : 
-    m_messageHasBeenSet(false),
-    m_amznErrorTypeHasBeenSet(false)
-{
-}
-
 AccessDeniedException::AccessDeniedException(JsonView jsonValue)
-  : AccessDeniedException()
 {
   *this = jsonValue;
 }
@@ -36,10 +29,8 @@ AccessDeniedException& AccessDeniedException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

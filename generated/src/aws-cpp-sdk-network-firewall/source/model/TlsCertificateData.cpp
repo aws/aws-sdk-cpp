@@ -18,16 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-TlsCertificateData::TlsCertificateData() : 
-    m_certificateArnHasBeenSet(false),
-    m_certificateSerialHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 TlsCertificateData::TlsCertificateData(JsonView jsonValue)
-  : TlsCertificateData()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TlsCertificateData& TlsCertificateData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateArn"))
   {
     m_certificateArn = jsonValue.GetString("CertificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateSerial"))
   {
     m_certificateSerial = jsonValue.GetString("CertificateSerial");
-
     m_certificateSerialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

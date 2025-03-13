@@ -18,20 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-MediaStreamPipeline::MediaStreamPipeline() : 
-    m_mediaPipelineIdHasBeenSet(false),
-    m_mediaPipelineArnHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_status(MediaPipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_sinksHasBeenSet(false)
-{
-}
-
 MediaStreamPipeline::MediaStreamPipeline(JsonView jsonValue)
-  : MediaStreamPipeline()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ MediaStreamPipeline& MediaStreamPipeline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MediaPipelineId"))
   {
     m_mediaPipelineId = jsonValue.GetString("MediaPipelineId");
-
     m_mediaPipelineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaPipelineArn"))
   {
     m_mediaPipelineArn = jsonValue.GetString("MediaPipelineArn");
-
     m_mediaPipelineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MediaPipelineStatusMapper::GetMediaPipelineStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
@@ -82,7 +59,6 @@ MediaStreamPipeline& MediaStreamPipeline::operator =(JsonView jsonValue)
     }
     m_sourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sinks"))
   {
     Aws::Utils::Array<JsonView> sinksJsonList = jsonValue.GetArray("Sinks");
@@ -92,7 +68,6 @@ MediaStreamPipeline& MediaStreamPipeline::operator =(JsonView jsonValue)
     }
     m_sinksHasBeenSet = true;
   }
-
   return *this;
 }
 

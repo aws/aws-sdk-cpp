@@ -10,11 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-CreateOrUpdateTagsRequest::CreateOrUpdateTagsRequest() : 
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateOrUpdateTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

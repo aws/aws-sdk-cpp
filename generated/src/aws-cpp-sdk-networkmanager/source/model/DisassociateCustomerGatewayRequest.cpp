@@ -12,12 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateCustomerGatewayRequest::DisassociateCustomerGatewayRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_customerGatewayArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateCustomerGatewayRequest::SerializePayload() const
 {
   return {};

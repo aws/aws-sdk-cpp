@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-StreamProcessorSettings::StreamProcessorSettings() : 
-    m_faceSearchHasBeenSet(false),
-    m_connectedHomeHasBeenSet(false)
-{
-}
-
 StreamProcessorSettings::StreamProcessorSettings(JsonView jsonValue)
-  : StreamProcessorSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StreamProcessorSettings& StreamProcessorSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FaceSearch"))
   {
     m_faceSearch = jsonValue.GetObject("FaceSearch");
-
     m_faceSearchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectedHome"))
   {
     m_connectedHome = jsonValue.GetObject("ConnectedHome");
-
     m_connectedHomeHasBeenSet = true;
   }
-
   return *this;
 }
 

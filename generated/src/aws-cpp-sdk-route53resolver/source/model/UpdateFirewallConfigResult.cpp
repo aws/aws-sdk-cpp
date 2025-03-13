@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFirewallConfigResult::UpdateFirewallConfigResult()
-{
-}
-
 UpdateFirewallConfigResult::UpdateFirewallConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateFirewallConfigResult& UpdateFirewallConfigResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("FirewallConfig"))
   {
     m_firewallConfig = jsonValue.GetObject("FirewallConfig");
-
+    m_firewallConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

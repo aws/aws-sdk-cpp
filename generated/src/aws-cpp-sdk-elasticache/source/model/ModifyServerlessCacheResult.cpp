@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyServerlessCacheResult::ModifyServerlessCacheResult()
-{
-}
-
 ModifyServerlessCacheResult::ModifyServerlessCacheResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ ModifyServerlessCacheResult& ModifyServerlessCacheResult::operator =(const Aws::
     if(!serverlessCacheNode.IsNull())
     {
       m_serverlessCache = serverlessCacheNode;
+      m_serverlessCacheHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::ModifyServerlessCacheResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

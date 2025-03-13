@@ -18,14 +18,7 @@ namespace ControlCatalog
 namespace Model
 {
 
-AssociatedObjectiveSummary::AssociatedObjectiveSummary() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AssociatedObjectiveSummary::AssociatedObjectiveSummary(JsonView jsonValue)
-  : AssociatedObjectiveSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AssociatedObjectiveSummary& AssociatedObjectiveSummary::operator =(JsonView json
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

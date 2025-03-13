@@ -32,7 +32,7 @@ namespace Model
   class Condition
   {
   public:
-    AWS_LEXMODELSV2_API Condition();
+    AWS_LEXMODELSV2_API Condition() = default;
     AWS_LEXMODELSV2_API Condition(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The expression string that is evaluated. </p>
      */
-    inline const Aws::String& GetExpressionString() const{ return m_expressionString; }
+    inline const Aws::String& GetExpressionString() const { return m_expressionString; }
     inline bool ExpressionStringHasBeenSet() const { return m_expressionStringHasBeenSet; }
-    inline void SetExpressionString(const Aws::String& value) { m_expressionStringHasBeenSet = true; m_expressionString = value; }
-    inline void SetExpressionString(Aws::String&& value) { m_expressionStringHasBeenSet = true; m_expressionString = std::move(value); }
-    inline void SetExpressionString(const char* value) { m_expressionStringHasBeenSet = true; m_expressionString.assign(value); }
-    inline Condition& WithExpressionString(const Aws::String& value) { SetExpressionString(value); return *this;}
-    inline Condition& WithExpressionString(Aws::String&& value) { SetExpressionString(std::move(value)); return *this;}
-    inline Condition& WithExpressionString(const char* value) { SetExpressionString(value); return *this;}
+    template<typename ExpressionStringT = Aws::String>
+    void SetExpressionString(ExpressionStringT&& value) { m_expressionStringHasBeenSet = true; m_expressionString = std::forward<ExpressionStringT>(value); }
+    template<typename ExpressionStringT = Aws::String>
+    Condition& WithExpressionString(ExpressionStringT&& value) { SetExpressionString(std::forward<ExpressionStringT>(value)); return *this;}
     ///@}
   private:
 

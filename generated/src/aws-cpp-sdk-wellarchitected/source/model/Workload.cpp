@@ -18,43 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-Workload::Workload() : 
-    m_workloadIdHasBeenSet(false),
-    m_workloadArnHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_environment(WorkloadEnvironment::NOT_SET),
-    m_environmentHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_awsRegionsHasBeenSet(false),
-    m_nonAwsRegionsHasBeenSet(false),
-    m_architecturalDesignHasBeenSet(false),
-    m_reviewOwnerHasBeenSet(false),
-    m_reviewRestrictionDateHasBeenSet(false),
-    m_isReviewOwnerUpdateAcknowledged(false),
-    m_isReviewOwnerUpdateAcknowledgedHasBeenSet(false),
-    m_industryTypeHasBeenSet(false),
-    m_industryHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_improvementStatus(WorkloadImprovementStatus::NOT_SET),
-    m_improvementStatusHasBeenSet(false),
-    m_riskCountsHasBeenSet(false),
-    m_pillarPrioritiesHasBeenSet(false),
-    m_lensesHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_shareInvitationIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_discoveryConfigHasBeenSet(false),
-    m_applicationsHasBeenSet(false),
-    m_profilesHasBeenSet(false),
-    m_prioritizedRiskCountsHasBeenSet(false),
-    m_jiraConfigurationHasBeenSet(false)
-{
-}
-
 Workload::Workload(JsonView jsonValue)
-  : Workload()
 {
   *this = jsonValue;
 }
@@ -64,45 +28,33 @@ Workload& Workload::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
     m_workloadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadArn"))
   {
     m_workloadArn = jsonValue.GetString("WorkloadArn");
-
     m_workloadArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadName"))
   {
     m_workloadName = jsonValue.GetString("WorkloadName");
-
     m_workloadNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     m_environment = WorkloadEnvironmentMapper::GetWorkloadEnvironmentForName(jsonValue.GetString("Environment"));
-
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountIds"))
   {
     Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
@@ -112,7 +64,6 @@ Workload& Workload::operator =(JsonView jsonValue)
     }
     m_accountIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegions"))
   {
     Aws::Utils::Array<JsonView> awsRegionsJsonList = jsonValue.GetArray("AwsRegions");
@@ -122,7 +73,6 @@ Workload& Workload::operator =(JsonView jsonValue)
     }
     m_awsRegionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NonAwsRegions"))
   {
     Aws::Utils::Array<JsonView> nonAwsRegionsJsonList = jsonValue.GetArray("NonAwsRegions");
@@ -132,63 +82,46 @@ Workload& Workload::operator =(JsonView jsonValue)
     }
     m_nonAwsRegionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchitecturalDesign"))
   {
     m_architecturalDesign = jsonValue.GetString("ArchitecturalDesign");
-
     m_architecturalDesignHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewOwner"))
   {
     m_reviewOwner = jsonValue.GetString("ReviewOwner");
-
     m_reviewOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewRestrictionDate"))
   {
     m_reviewRestrictionDate = jsonValue.GetDouble("ReviewRestrictionDate");
-
     m_reviewRestrictionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsReviewOwnerUpdateAcknowledged"))
   {
     m_isReviewOwnerUpdateAcknowledged = jsonValue.GetBool("IsReviewOwnerUpdateAcknowledged");
-
     m_isReviewOwnerUpdateAcknowledgedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndustryType"))
   {
     m_industryType = jsonValue.GetString("IndustryType");
-
     m_industryTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Industry"))
   {
     m_industry = jsonValue.GetString("Industry");
-
     m_industryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notes"))
   {
     m_notes = jsonValue.GetString("Notes");
-
     m_notesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImprovementStatus"))
   {
     m_improvementStatus = WorkloadImprovementStatusMapper::GetWorkloadImprovementStatusForName(jsonValue.GetString("ImprovementStatus"));
-
     m_improvementStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RiskCounts"))
   {
     Aws::Map<Aws::String, JsonView> riskCountsJsonMap = jsonValue.GetObject("RiskCounts").GetAllObjects();
@@ -198,7 +131,6 @@ Workload& Workload::operator =(JsonView jsonValue)
     }
     m_riskCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PillarPriorities"))
   {
     Aws::Utils::Array<JsonView> pillarPrioritiesJsonList = jsonValue.GetArray("PillarPriorities");
@@ -208,7 +140,6 @@ Workload& Workload::operator =(JsonView jsonValue)
     }
     m_pillarPrioritiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lenses"))
   {
     Aws::Utils::Array<JsonView> lensesJsonList = jsonValue.GetArray("Lenses");
@@ -218,21 +149,16 @@ Workload& Workload::operator =(JsonView jsonValue)
     }
     m_lensesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareInvitationId"))
   {
     m_shareInvitationId = jsonValue.GetString("ShareInvitationId");
-
     m_shareInvitationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -242,14 +168,11 @@ Workload& Workload::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiscoveryConfig"))
   {
     m_discoveryConfig = jsonValue.GetObject("DiscoveryConfig");
-
     m_discoveryConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Applications"))
   {
     Aws::Utils::Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
@@ -259,7 +182,6 @@ Workload& Workload::operator =(JsonView jsonValue)
     }
     m_applicationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Profiles"))
   {
     Aws::Utils::Array<JsonView> profilesJsonList = jsonValue.GetArray("Profiles");
@@ -269,7 +191,6 @@ Workload& Workload::operator =(JsonView jsonValue)
     }
     m_profilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrioritizedRiskCounts"))
   {
     Aws::Map<Aws::String, JsonView> prioritizedRiskCountsJsonMap = jsonValue.GetObject("PrioritizedRiskCounts").GetAllObjects();
@@ -279,14 +200,11 @@ Workload& Workload::operator =(JsonView jsonValue)
     }
     m_prioritizedRiskCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JiraConfiguration"))
   {
     m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
-
     m_jiraConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

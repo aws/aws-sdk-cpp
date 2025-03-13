@@ -31,7 +31,7 @@ namespace Model
   class InputWhitelistRule
   {
   public:
-    AWS_MEDIALIVE_API InputWhitelistRule();
+    AWS_MEDIALIVE_API InputWhitelistRule() = default;
     AWS_MEDIALIVE_API InputWhitelistRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InputWhitelistRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * The IPv4 CIDR that's whitelisted.
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline InputWhitelistRule& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline InputWhitelistRule& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline InputWhitelistRule& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    InputWhitelistRule& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
   private:
 

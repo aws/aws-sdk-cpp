@@ -27,7 +27,7 @@ namespace Model
   class DescribeComponentConfigurationRecommendationResult
   {
   public:
-    AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationRecommendationResult();
+    AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationRecommendationResult() = default;
     AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationRecommendationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationRecommendationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The recommended configuration settings of the component. The value is the
      * escaped JSON of the configuration.</p>
      */
-    inline const Aws::String& GetComponentConfiguration() const{ return m_componentConfiguration; }
-    inline void SetComponentConfiguration(const Aws::String& value) { m_componentConfiguration = value; }
-    inline void SetComponentConfiguration(Aws::String&& value) { m_componentConfiguration = std::move(value); }
-    inline void SetComponentConfiguration(const char* value) { m_componentConfiguration.assign(value); }
-    inline DescribeComponentConfigurationRecommendationResult& WithComponentConfiguration(const Aws::String& value) { SetComponentConfiguration(value); return *this;}
-    inline DescribeComponentConfigurationRecommendationResult& WithComponentConfiguration(Aws::String&& value) { SetComponentConfiguration(std::move(value)); return *this;}
-    inline DescribeComponentConfigurationRecommendationResult& WithComponentConfiguration(const char* value) { SetComponentConfiguration(value); return *this;}
+    inline const Aws::String& GetComponentConfiguration() const { return m_componentConfiguration; }
+    template<typename ComponentConfigurationT = Aws::String>
+    void SetComponentConfiguration(ComponentConfigurationT&& value) { m_componentConfigurationHasBeenSet = true; m_componentConfiguration = std::forward<ComponentConfigurationT>(value); }
+    template<typename ComponentConfigurationT = Aws::String>
+    DescribeComponentConfigurationRecommendationResult& WithComponentConfiguration(ComponentConfigurationT&& value) { SetComponentConfiguration(std::forward<ComponentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeComponentConfigurationRecommendationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeComponentConfigurationRecommendationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeComponentConfigurationRecommendationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeComponentConfigurationRecommendationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_componentConfiguration;
+    bool m_componentConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

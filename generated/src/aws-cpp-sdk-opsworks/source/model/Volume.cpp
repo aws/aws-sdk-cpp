@@ -18,29 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-Volume::Volume() : 
-    m_volumeIdHasBeenSet(false),
-    m_ec2VolumeIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_raidArrayIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_mountPointHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false)
-{
-}
-
 Volume::Volume(JsonView jsonValue)
-  : Volume()
 {
   *this = jsonValue;
 }
@@ -50,101 +28,73 @@ Volume& Volume::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VolumeId"))
   {
     m_volumeId = jsonValue.GetString("VolumeId");
-
     m_volumeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2VolumeId"))
   {
     m_ec2VolumeId = jsonValue.GetString("Ec2VolumeId");
-
     m_ec2VolumeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RaidArrayId"))
   {
     m_raidArrayId = jsonValue.GetString("RaidArrayId");
-
     m_raidArrayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetInteger("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Device"))
   {
     m_device = jsonValue.GetString("Device");
-
     m_deviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MountPoint"))
   {
     m_mountPoint = jsonValue.GetString("MountPoint");
-
     m_mountPointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeType"))
   {
     m_volumeType = jsonValue.GetString("VolumeType");
-
     m_volumeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Iops"))
   {
     m_iops = jsonValue.GetInteger("Iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encrypted"))
   {
     m_encrypted = jsonValue.GetBool("Encrypted");
-
     m_encryptedHasBeenSet = true;
   }
-
   return *this;
 }
 

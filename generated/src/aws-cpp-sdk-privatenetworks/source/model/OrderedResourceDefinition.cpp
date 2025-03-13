@@ -18,17 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-OrderedResourceDefinition::OrderedResourceDefinition() : 
-    m_commitmentConfigurationHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_type(NetworkResourceDefinitionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 OrderedResourceDefinition::OrderedResourceDefinition(JsonView jsonValue)
-  : OrderedResourceDefinition()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ OrderedResourceDefinition& OrderedResourceDefinition::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("commitmentConfiguration"))
   {
     m_commitmentConfiguration = jsonValue.GetObject("commitmentConfiguration");
-
     m_commitmentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = NetworkResourceDefinitionTypeMapper::GetNetworkResourceDefinitionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

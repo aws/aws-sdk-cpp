@@ -33,7 +33,7 @@ namespace Model
   class AWSManagedRulesBotControlRuleSet
   {
   public:
-    AWS_WAFV2_API AWSManagedRulesBotControlRuleSet();
+    AWS_WAFV2_API AWSManagedRulesBotControlRuleSet() = default;
     AWS_WAFV2_API AWSManagedRulesBotControlRuleSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API AWSManagedRulesBotControlRuleSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
      * Bot Control rule group</a> in the <i>WAF Developer Guide</i>.</p>
      */
-    inline const InspectionLevel& GetInspectionLevel() const{ return m_inspectionLevel; }
+    inline InspectionLevel GetInspectionLevel() const { return m_inspectionLevel; }
     inline bool InspectionLevelHasBeenSet() const { return m_inspectionLevelHasBeenSet; }
-    inline void SetInspectionLevel(const InspectionLevel& value) { m_inspectionLevelHasBeenSet = true; m_inspectionLevel = value; }
-    inline void SetInspectionLevel(InspectionLevel&& value) { m_inspectionLevelHasBeenSet = true; m_inspectionLevel = std::move(value); }
-    inline AWSManagedRulesBotControlRuleSet& WithInspectionLevel(const InspectionLevel& value) { SetInspectionLevel(value); return *this;}
-    inline AWSManagedRulesBotControlRuleSet& WithInspectionLevel(InspectionLevel&& value) { SetInspectionLevel(std::move(value)); return *this;}
+    inline void SetInspectionLevel(InspectionLevel value) { m_inspectionLevelHasBeenSet = true; m_inspectionLevel = value; }
+    inline AWSManagedRulesBotControlRuleSet& WithInspectionLevel(InspectionLevel value) { SetInspectionLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -69,17 +67,17 @@ namespace Model
      * Control rules listing</a> in the <i>WAF Developer Guide</i>.</p> <p>Default:
      * <code>TRUE</code> </p>
      */
-    inline bool GetEnableMachineLearning() const{ return m_enableMachineLearning; }
+    inline bool GetEnableMachineLearning() const { return m_enableMachineLearning; }
     inline bool EnableMachineLearningHasBeenSet() const { return m_enableMachineLearningHasBeenSet; }
     inline void SetEnableMachineLearning(bool value) { m_enableMachineLearningHasBeenSet = true; m_enableMachineLearning = value; }
     inline AWSManagedRulesBotControlRuleSet& WithEnableMachineLearning(bool value) { SetEnableMachineLearning(value); return *this;}
     ///@}
   private:
 
-    InspectionLevel m_inspectionLevel;
+    InspectionLevel m_inspectionLevel{InspectionLevel::NOT_SET};
     bool m_inspectionLevelHasBeenSet = false;
 
-    bool m_enableMachineLearning;
+    bool m_enableMachineLearning{false};
     bool m_enableMachineLearningHasBeenSet = false;
   };
 

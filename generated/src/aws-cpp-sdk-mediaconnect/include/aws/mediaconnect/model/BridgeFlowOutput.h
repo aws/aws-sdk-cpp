@@ -32,7 +32,7 @@ namespace Model
   class BridgeFlowOutput
   {
   public:
-    AWS_MEDIACONNECT_API BridgeFlowOutput();
+    AWS_MEDIACONNECT_API BridgeFlowOutput() = default;
     AWS_MEDIACONNECT_API BridgeFlowOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API BridgeFlowOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * The Amazon Resource Number (ARN) of the cloud flow.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-    inline BridgeFlowOutput& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline BridgeFlowOutput& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline BridgeFlowOutput& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    BridgeFlowOutput& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The Amazon Resource Number (ARN) of the flow source.
      */
-    inline const Aws::String& GetFlowSourceArn() const{ return m_flowSourceArn; }
+    inline const Aws::String& GetFlowSourceArn() const { return m_flowSourceArn; }
     inline bool FlowSourceArnHasBeenSet() const { return m_flowSourceArnHasBeenSet; }
-    inline void SetFlowSourceArn(const Aws::String& value) { m_flowSourceArnHasBeenSet = true; m_flowSourceArn = value; }
-    inline void SetFlowSourceArn(Aws::String&& value) { m_flowSourceArnHasBeenSet = true; m_flowSourceArn = std::move(value); }
-    inline void SetFlowSourceArn(const char* value) { m_flowSourceArnHasBeenSet = true; m_flowSourceArn.assign(value); }
-    inline BridgeFlowOutput& WithFlowSourceArn(const Aws::String& value) { SetFlowSourceArn(value); return *this;}
-    inline BridgeFlowOutput& WithFlowSourceArn(Aws::String&& value) { SetFlowSourceArn(std::move(value)); return *this;}
-    inline BridgeFlowOutput& WithFlowSourceArn(const char* value) { SetFlowSourceArn(value); return *this;}
+    template<typename FlowSourceArnT = Aws::String>
+    void SetFlowSourceArn(FlowSourceArnT&& value) { m_flowSourceArnHasBeenSet = true; m_flowSourceArn = std::forward<FlowSourceArnT>(value); }
+    template<typename FlowSourceArnT = Aws::String>
+    BridgeFlowOutput& WithFlowSourceArn(FlowSourceArnT&& value) { SetFlowSourceArn(std::forward<FlowSourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the bridge's output.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline BridgeFlowOutput& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline BridgeFlowOutput& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline BridgeFlowOutput& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    BridgeFlowOutput& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

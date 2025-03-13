@@ -12,17 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLogicallyAirGappedBackupVaultRequest::CreateLogicallyAirGappedBackupVaultRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_backupVaultTagsHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_minRetentionDays(0),
-    m_minRetentionDaysHasBeenSet(false),
-    m_maxRetentionDays(0),
-    m_maxRetentionDaysHasBeenSet(false)
-{
-}
-
 Aws::String CreateLogicallyAirGappedBackupVaultRequest::SerializePayload() const
 {
   JsonValue payload;

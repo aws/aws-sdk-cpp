@@ -18,13 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-DatasetSchema::DatasetSchema() : 
-    m_inlineDataSchemaHasBeenSet(false)
-{
-}
-
 DatasetSchema::DatasetSchema(JsonView jsonValue)
-  : DatasetSchema()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatasetSchema& DatasetSchema::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InlineDataSchema"))
   {
     m_inlineDataSchema = jsonValue.GetString("InlineDataSchema");
-
     m_inlineDataSchemaHasBeenSet = true;
   }
-
   return *this;
 }
 

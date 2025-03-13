@@ -12,11 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOpenCypherQueryStatusRequest::GetOpenCypherQueryStatusRequest() : 
-    m_queryIdHasBeenSet(false)
-{
-}
-
 Aws::String GetOpenCypherQueryStatusRequest::SerializePayload() const
 {
   return {};

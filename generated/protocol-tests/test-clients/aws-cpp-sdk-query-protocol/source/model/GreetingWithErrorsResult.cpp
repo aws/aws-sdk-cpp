@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GreetingWithErrorsResult::GreetingWithErrorsResult()
-{
-}
-
 GreetingWithErrorsResult::GreetingWithErrorsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ GreetingWithErrorsResult& GreetingWithErrorsResult::operator =(const Aws::Amazon
     if(!greetingNode.IsNull())
     {
       m_greeting = Aws::Utils::Xml::DecodeEscapedXmlText(greetingNode.GetText());
+      m_greetingHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::GreetingWithErrorsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

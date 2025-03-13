@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-CodeHookSpecification::CodeHookSpecification() : 
-    m_lambdaCodeHookHasBeenSet(false)
-{
-}
-
 CodeHookSpecification::CodeHookSpecification(JsonView jsonValue)
-  : CodeHookSpecification()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CodeHookSpecification& CodeHookSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lambdaCodeHook"))
   {
     m_lambdaCodeHook = jsonValue.GetObject("lambdaCodeHook");
-
     m_lambdaCodeHookHasBeenSet = true;
   }
-
   return *this;
 }
 

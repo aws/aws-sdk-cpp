@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteProjectVersionResult::DeleteProjectVersionResult() : 
-    m_status(ProjectVersionStatus::NOT_SET)
-{
-}
-
 DeleteProjectVersionResult::DeleteProjectVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteProjectVersionResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteProjectVersionResult& DeleteProjectVersionResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ProjectVersionStatusMapper::GetProjectVersionStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

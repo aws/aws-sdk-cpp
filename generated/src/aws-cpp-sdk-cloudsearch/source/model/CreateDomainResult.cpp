@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDomainResult::CreateDomainResult()
-{
-}
-
 CreateDomainResult::CreateDomainResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreateDomainResult& CreateDomainResult::operator =(const Aws::AmazonWebServiceRe
     if(!domainStatusNode.IsNull())
     {
       m_domainStatus = domainStatusNode;
+      m_domainStatusHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudSearch::Model::CreateDomainResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

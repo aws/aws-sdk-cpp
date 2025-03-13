@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataMetadataOptionsDetails::AwsEc2LaunchTemplateDataMetadataOptionsDetails() : 
-    m_httpEndpointHasBeenSet(false),
-    m_httpProtocolIpv6HasBeenSet(false),
-    m_httpTokensHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_instanceMetadataTagsHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataMetadataOptionsDetails::AwsEc2LaunchTemplateDataMetadataOptionsDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataMetadataOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AwsEc2LaunchTemplateDataMetadataOptionsDetails& AwsEc2LaunchTemplateDataMetadata
   if(jsonValue.ValueExists("HttpEndpoint"))
   {
     m_httpEndpoint = jsonValue.GetString("HttpEndpoint");
-
     m_httpEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpProtocolIpv6"))
   {
     m_httpProtocolIpv6 = jsonValue.GetString("HttpProtocolIpv6");
-
     m_httpProtocolIpv6HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpTokens"))
   {
     m_httpTokens = jsonValue.GetString("HttpTokens");
-
     m_httpTokensHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpPutResponseHopLimit"))
   {
     m_httpPutResponseHopLimit = jsonValue.GetInteger("HttpPutResponseHopLimit");
-
     m_httpPutResponseHopLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceMetadataTags"))
   {
     m_instanceMetadataTags = jsonValue.GetString("InstanceMetadataTags");
-
     m_instanceMetadataTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class VideoOverlayInputClipping
   {
   public:
-    AWS_MEDIACONVERT_API VideoOverlayInputClipping();
+    AWS_MEDIACONVERT_API VideoOverlayInputClipping() = default;
     AWS_MEDIACONVERT_API VideoOverlayInputClipping(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API VideoOverlayInputClipping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * minute, SS is the second, and FF is the frame number. When entering this value,
      * take into account your choice for Timecode source.
      */
-    inline const Aws::String& GetEndTimecode() const{ return m_endTimecode; }
+    inline const Aws::String& GetEndTimecode() const { return m_endTimecode; }
     inline bool EndTimecodeHasBeenSet() const { return m_endTimecodeHasBeenSet; }
-    inline void SetEndTimecode(const Aws::String& value) { m_endTimecodeHasBeenSet = true; m_endTimecode = value; }
-    inline void SetEndTimecode(Aws::String&& value) { m_endTimecodeHasBeenSet = true; m_endTimecode = std::move(value); }
-    inline void SetEndTimecode(const char* value) { m_endTimecodeHasBeenSet = true; m_endTimecode.assign(value); }
-    inline VideoOverlayInputClipping& WithEndTimecode(const Aws::String& value) { SetEndTimecode(value); return *this;}
-    inline VideoOverlayInputClipping& WithEndTimecode(Aws::String&& value) { SetEndTimecode(std::move(value)); return *this;}
-    inline VideoOverlayInputClipping& WithEndTimecode(const char* value) { SetEndTimecode(value); return *this;}
+    template<typename EndTimecodeT = Aws::String>
+    void SetEndTimecode(EndTimecodeT&& value) { m_endTimecodeHasBeenSet = true; m_endTimecode = std::forward<EndTimecodeT>(value); }
+    template<typename EndTimecodeT = Aws::String>
+    VideoOverlayInputClipping& WithEndTimecode(EndTimecodeT&& value) { SetEndTimecode(std::forward<EndTimecodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * minute, SS is the second, and FF is the frame number. When entering this value,
      * take into account your choice for Timecode source.
      */
-    inline const Aws::String& GetStartTimecode() const{ return m_startTimecode; }
+    inline const Aws::String& GetStartTimecode() const { return m_startTimecode; }
     inline bool StartTimecodeHasBeenSet() const { return m_startTimecodeHasBeenSet; }
-    inline void SetStartTimecode(const Aws::String& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = value; }
-    inline void SetStartTimecode(Aws::String&& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = std::move(value); }
-    inline void SetStartTimecode(const char* value) { m_startTimecodeHasBeenSet = true; m_startTimecode.assign(value); }
-    inline VideoOverlayInputClipping& WithStartTimecode(const Aws::String& value) { SetStartTimecode(value); return *this;}
-    inline VideoOverlayInputClipping& WithStartTimecode(Aws::String&& value) { SetStartTimecode(std::move(value)); return *this;}
-    inline VideoOverlayInputClipping& WithStartTimecode(const char* value) { SetStartTimecode(value); return *this;}
+    template<typename StartTimecodeT = Aws::String>
+    void SetStartTimecode(StartTimecodeT&& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = std::forward<StartTimecodeT>(value); }
+    template<typename StartTimecodeT = Aws::String>
+    VideoOverlayInputClipping& WithStartTimecode(StartTimecodeT&& value) { SetStartTimecode(std::forward<StartTimecodeT>(value)); return *this;}
     ///@}
   private:
 

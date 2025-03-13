@@ -32,7 +32,7 @@ namespace Model
   class PortRange
   {
   public:
-    AWS_NETWORKFIREWALL_API PortRange();
+    AWS_NETWORKFIREWALL_API PortRange() = default;
     AWS_NETWORKFIREWALL_API PortRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API PortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The lower limit of the port range. This must be less than or equal to the
      * <code>ToPort</code> specification. </p>
      */
-    inline int GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const { return m_fromPort; }
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
     inline PortRange& WithFromPort(int value) { SetFromPort(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
      * <p>The upper limit of the port range. This must be greater than or equal to the
      * <code>FromPort</code> specification. </p>
      */
-    inline int GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const { return m_toPort; }
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
     inline PortRange& WithToPort(int value) { SetToPort(value); return *this;}
     ///@}
   private:
 
-    int m_fromPort;
+    int m_fromPort{0};
     bool m_fromPortHasBeenSet = false;
 
-    int m_toPort;
+    int m_toPort{0};
     bool m_toPortHasBeenSet = false;
   };
 

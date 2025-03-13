@@ -52,7 +52,7 @@ namespace Model
   class VideoCodecSettings
   {
   public:
-    AWS_MEDIACONVERT_API VideoCodecSettings();
+    AWS_MEDIACONVERT_API VideoCodecSettings() = default;
     AWS_MEDIACONVERT_API VideoCodecSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API VideoCodecSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,12 +63,12 @@ namespace Model
      * Required when you set Codec, under VideoDescription>CodecSettings to the value
      * AV1.
      */
-    inline const Av1Settings& GetAv1Settings() const{ return m_av1Settings; }
+    inline const Av1Settings& GetAv1Settings() const { return m_av1Settings; }
     inline bool Av1SettingsHasBeenSet() const { return m_av1SettingsHasBeenSet; }
-    inline void SetAv1Settings(const Av1Settings& value) { m_av1SettingsHasBeenSet = true; m_av1Settings = value; }
-    inline void SetAv1Settings(Av1Settings&& value) { m_av1SettingsHasBeenSet = true; m_av1Settings = std::move(value); }
-    inline VideoCodecSettings& WithAv1Settings(const Av1Settings& value) { SetAv1Settings(value); return *this;}
-    inline VideoCodecSettings& WithAv1Settings(Av1Settings&& value) { SetAv1Settings(std::move(value)); return *this;}
+    template<typename Av1SettingsT = Av1Settings>
+    void SetAv1Settings(Av1SettingsT&& value) { m_av1SettingsHasBeenSet = true; m_av1Settings = std::forward<Av1SettingsT>(value); }
+    template<typename Av1SettingsT = Av1Settings>
+    VideoCodecSettings& WithAv1Settings(Av1SettingsT&& value) { SetAv1Settings(std::forward<Av1SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +79,12 @@ namespace Model
      * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
      * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
-    inline const AvcIntraSettings& GetAvcIntraSettings() const{ return m_avcIntraSettings; }
+    inline const AvcIntraSettings& GetAvcIntraSettings() const { return m_avcIntraSettings; }
     inline bool AvcIntraSettingsHasBeenSet() const { return m_avcIntraSettingsHasBeenSet; }
-    inline void SetAvcIntraSettings(const AvcIntraSettings& value) { m_avcIntraSettingsHasBeenSet = true; m_avcIntraSettings = value; }
-    inline void SetAvcIntraSettings(AvcIntraSettings&& value) { m_avcIntraSettingsHasBeenSet = true; m_avcIntraSettings = std::move(value); }
-    inline VideoCodecSettings& WithAvcIntraSettings(const AvcIntraSettings& value) { SetAvcIntraSettings(value); return *this;}
-    inline VideoCodecSettings& WithAvcIntraSettings(AvcIntraSettings&& value) { SetAvcIntraSettings(std::move(value)); return *this;}
+    template<typename AvcIntraSettingsT = AvcIntraSettings>
+    void SetAvcIntraSettings(AvcIntraSettingsT&& value) { m_avcIntraSettingsHasBeenSet = true; m_avcIntraSettings = std::forward<AvcIntraSettingsT>(value); }
+    template<typename AvcIntraSettingsT = AvcIntraSettings>
+    VideoCodecSettings& WithAvcIntraSettings(AvcIntraSettingsT&& value) { SetAvcIntraSettings(std::forward<AvcIntraSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,24 +96,22 @@ namespace Model
      * identical encoding attributes. When you choose Passthrough, your output
      * container must be MXF or QuickTime MOV.
      */
-    inline const VideoCodec& GetCodec() const{ return m_codec; }
+    inline VideoCodec GetCodec() const { return m_codec; }
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
-    inline void SetCodec(const VideoCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
-    inline void SetCodec(VideoCodec&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
-    inline VideoCodecSettings& WithCodec(const VideoCodec& value) { SetCodec(value); return *this;}
-    inline VideoCodecSettings& WithCodec(VideoCodec&& value) { SetCodec(std::move(value)); return *this;}
+    inline void SetCodec(VideoCodec value) { m_codecHasBeenSet = true; m_codec = value; }
+    inline VideoCodecSettings& WithCodec(VideoCodec value) { SetCodec(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value FRAME_CAPTURE.
      */
-    inline const FrameCaptureSettings& GetFrameCaptureSettings() const{ return m_frameCaptureSettings; }
+    inline const FrameCaptureSettings& GetFrameCaptureSettings() const { return m_frameCaptureSettings; }
     inline bool FrameCaptureSettingsHasBeenSet() const { return m_frameCaptureSettingsHasBeenSet; }
-    inline void SetFrameCaptureSettings(const FrameCaptureSettings& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = value; }
-    inline void SetFrameCaptureSettings(FrameCaptureSettings&& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = std::move(value); }
-    inline VideoCodecSettings& WithFrameCaptureSettings(const FrameCaptureSettings& value) { SetFrameCaptureSettings(value); return *this;}
-    inline VideoCodecSettings& WithFrameCaptureSettings(FrameCaptureSettings&& value) { SetFrameCaptureSettings(std::move(value)); return *this;}
+    template<typename FrameCaptureSettingsT = FrameCaptureSettings>
+    void SetFrameCaptureSettings(FrameCaptureSettingsT&& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = std::forward<FrameCaptureSettingsT>(value); }
+    template<typename FrameCaptureSettingsT = FrameCaptureSettings>
+    VideoCodecSettings& WithFrameCaptureSettings(FrameCaptureSettingsT&& value) { SetFrameCaptureSettings(std::forward<FrameCaptureSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,60 +119,60 @@ namespace Model
      * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
      * value GIF
      */
-    inline const GifSettings& GetGifSettings() const{ return m_gifSettings; }
+    inline const GifSettings& GetGifSettings() const { return m_gifSettings; }
     inline bool GifSettingsHasBeenSet() const { return m_gifSettingsHasBeenSet; }
-    inline void SetGifSettings(const GifSettings& value) { m_gifSettingsHasBeenSet = true; m_gifSettings = value; }
-    inline void SetGifSettings(GifSettings&& value) { m_gifSettingsHasBeenSet = true; m_gifSettings = std::move(value); }
-    inline VideoCodecSettings& WithGifSettings(const GifSettings& value) { SetGifSettings(value); return *this;}
-    inline VideoCodecSettings& WithGifSettings(GifSettings&& value) { SetGifSettings(std::move(value)); return *this;}
+    template<typename GifSettingsT = GifSettings>
+    void SetGifSettings(GifSettingsT&& value) { m_gifSettingsHasBeenSet = true; m_gifSettings = std::forward<GifSettingsT>(value); }
+    template<typename GifSettingsT = GifSettings>
+    VideoCodecSettings& WithGifSettings(GifSettingsT&& value) { SetGifSettings(std::forward<GifSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value H_264.
      */
-    inline const H264Settings& GetH264Settings() const{ return m_h264Settings; }
+    inline const H264Settings& GetH264Settings() const { return m_h264Settings; }
     inline bool H264SettingsHasBeenSet() const { return m_h264SettingsHasBeenSet; }
-    inline void SetH264Settings(const H264Settings& value) { m_h264SettingsHasBeenSet = true; m_h264Settings = value; }
-    inline void SetH264Settings(H264Settings&& value) { m_h264SettingsHasBeenSet = true; m_h264Settings = std::move(value); }
-    inline VideoCodecSettings& WithH264Settings(const H264Settings& value) { SetH264Settings(value); return *this;}
-    inline VideoCodecSettings& WithH264Settings(H264Settings&& value) { SetH264Settings(std::move(value)); return *this;}
+    template<typename H264SettingsT = H264Settings>
+    void SetH264Settings(H264SettingsT&& value) { m_h264SettingsHasBeenSet = true; m_h264Settings = std::forward<H264SettingsT>(value); }
+    template<typename H264SettingsT = H264Settings>
+    VideoCodecSettings& WithH264Settings(H264SettingsT&& value) { SetH264Settings(std::forward<H264SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Settings for H265 codec
      */
-    inline const H265Settings& GetH265Settings() const{ return m_h265Settings; }
+    inline const H265Settings& GetH265Settings() const { return m_h265Settings; }
     inline bool H265SettingsHasBeenSet() const { return m_h265SettingsHasBeenSet; }
-    inline void SetH265Settings(const H265Settings& value) { m_h265SettingsHasBeenSet = true; m_h265Settings = value; }
-    inline void SetH265Settings(H265Settings&& value) { m_h265SettingsHasBeenSet = true; m_h265Settings = std::move(value); }
-    inline VideoCodecSettings& WithH265Settings(const H265Settings& value) { SetH265Settings(value); return *this;}
-    inline VideoCodecSettings& WithH265Settings(H265Settings&& value) { SetH265Settings(std::move(value)); return *this;}
+    template<typename H265SettingsT = H265Settings>
+    void SetH265Settings(H265SettingsT&& value) { m_h265SettingsHasBeenSet = true; m_h265Settings = std::forward<H265SettingsT>(value); }
+    template<typename H265SettingsT = H265Settings>
+    VideoCodecSettings& WithH265Settings(H265SettingsT&& value) { SetH265Settings(std::forward<H265SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value MPEG2.
      */
-    inline const Mpeg2Settings& GetMpeg2Settings() const{ return m_mpeg2Settings; }
+    inline const Mpeg2Settings& GetMpeg2Settings() const { return m_mpeg2Settings; }
     inline bool Mpeg2SettingsHasBeenSet() const { return m_mpeg2SettingsHasBeenSet; }
-    inline void SetMpeg2Settings(const Mpeg2Settings& value) { m_mpeg2SettingsHasBeenSet = true; m_mpeg2Settings = value; }
-    inline void SetMpeg2Settings(Mpeg2Settings&& value) { m_mpeg2SettingsHasBeenSet = true; m_mpeg2Settings = std::move(value); }
-    inline VideoCodecSettings& WithMpeg2Settings(const Mpeg2Settings& value) { SetMpeg2Settings(value); return *this;}
-    inline VideoCodecSettings& WithMpeg2Settings(Mpeg2Settings&& value) { SetMpeg2Settings(std::move(value)); return *this;}
+    template<typename Mpeg2SettingsT = Mpeg2Settings>
+    void SetMpeg2Settings(Mpeg2SettingsT&& value) { m_mpeg2SettingsHasBeenSet = true; m_mpeg2Settings = std::forward<Mpeg2SettingsT>(value); }
+    template<typename Mpeg2SettingsT = Mpeg2Settings>
+    VideoCodecSettings& WithMpeg2Settings(Mpeg2SettingsT&& value) { SetMpeg2Settings(std::forward<Mpeg2SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value PRORES.
      */
-    inline const ProresSettings& GetProresSettings() const{ return m_proresSettings; }
+    inline const ProresSettings& GetProresSettings() const { return m_proresSettings; }
     inline bool ProresSettingsHasBeenSet() const { return m_proresSettingsHasBeenSet; }
-    inline void SetProresSettings(const ProresSettings& value) { m_proresSettingsHasBeenSet = true; m_proresSettings = value; }
-    inline void SetProresSettings(ProresSettings&& value) { m_proresSettingsHasBeenSet = true; m_proresSettings = std::move(value); }
-    inline VideoCodecSettings& WithProresSettings(const ProresSettings& value) { SetProresSettings(value); return *this;}
-    inline VideoCodecSettings& WithProresSettings(ProresSettings&& value) { SetProresSettings(std::move(value)); return *this;}
+    template<typename ProresSettingsT = ProresSettings>
+    void SetProresSettings(ProresSettingsT&& value) { m_proresSettingsHasBeenSet = true; m_proresSettings = std::forward<ProresSettingsT>(value); }
+    template<typename ProresSettingsT = ProresSettings>
+    VideoCodecSettings& WithProresSettings(ProresSettingsT&& value) { SetProresSettings(std::forward<ProresSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,60 +180,60 @@ namespace Model
      * Required when you set Codec, under VideoDescription>CodecSettings to the value
      * UNCOMPRESSED.
      */
-    inline const UncompressedSettings& GetUncompressedSettings() const{ return m_uncompressedSettings; }
+    inline const UncompressedSettings& GetUncompressedSettings() const { return m_uncompressedSettings; }
     inline bool UncompressedSettingsHasBeenSet() const { return m_uncompressedSettingsHasBeenSet; }
-    inline void SetUncompressedSettings(const UncompressedSettings& value) { m_uncompressedSettingsHasBeenSet = true; m_uncompressedSettings = value; }
-    inline void SetUncompressedSettings(UncompressedSettings&& value) { m_uncompressedSettingsHasBeenSet = true; m_uncompressedSettings = std::move(value); }
-    inline VideoCodecSettings& WithUncompressedSettings(const UncompressedSettings& value) { SetUncompressedSettings(value); return *this;}
-    inline VideoCodecSettings& WithUncompressedSettings(UncompressedSettings&& value) { SetUncompressedSettings(std::move(value)); return *this;}
+    template<typename UncompressedSettingsT = UncompressedSettings>
+    void SetUncompressedSettings(UncompressedSettingsT&& value) { m_uncompressedSettingsHasBeenSet = true; m_uncompressedSettings = std::forward<UncompressedSettingsT>(value); }
+    template<typename UncompressedSettingsT = UncompressedSettings>
+    VideoCodecSettings& WithUncompressedSettings(UncompressedSettingsT&& value) { SetUncompressedSettings(std::forward<UncompressedSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value VC3
      */
-    inline const Vc3Settings& GetVc3Settings() const{ return m_vc3Settings; }
+    inline const Vc3Settings& GetVc3Settings() const { return m_vc3Settings; }
     inline bool Vc3SettingsHasBeenSet() const { return m_vc3SettingsHasBeenSet; }
-    inline void SetVc3Settings(const Vc3Settings& value) { m_vc3SettingsHasBeenSet = true; m_vc3Settings = value; }
-    inline void SetVc3Settings(Vc3Settings&& value) { m_vc3SettingsHasBeenSet = true; m_vc3Settings = std::move(value); }
-    inline VideoCodecSettings& WithVc3Settings(const Vc3Settings& value) { SetVc3Settings(value); return *this;}
-    inline VideoCodecSettings& WithVc3Settings(Vc3Settings&& value) { SetVc3Settings(std::move(value)); return *this;}
+    template<typename Vc3SettingsT = Vc3Settings>
+    void SetVc3Settings(Vc3SettingsT&& value) { m_vc3SettingsHasBeenSet = true; m_vc3Settings = std::forward<Vc3SettingsT>(value); }
+    template<typename Vc3SettingsT = Vc3Settings>
+    VideoCodecSettings& WithVc3Settings(Vc3SettingsT&& value) { SetVc3Settings(std::forward<Vc3SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value VP8.
      */
-    inline const Vp8Settings& GetVp8Settings() const{ return m_vp8Settings; }
+    inline const Vp8Settings& GetVp8Settings() const { return m_vp8Settings; }
     inline bool Vp8SettingsHasBeenSet() const { return m_vp8SettingsHasBeenSet; }
-    inline void SetVp8Settings(const Vp8Settings& value) { m_vp8SettingsHasBeenSet = true; m_vp8Settings = value; }
-    inline void SetVp8Settings(Vp8Settings&& value) { m_vp8SettingsHasBeenSet = true; m_vp8Settings = std::move(value); }
-    inline VideoCodecSettings& WithVp8Settings(const Vp8Settings& value) { SetVp8Settings(value); return *this;}
-    inline VideoCodecSettings& WithVp8Settings(Vp8Settings&& value) { SetVp8Settings(std::move(value)); return *this;}
+    template<typename Vp8SettingsT = Vp8Settings>
+    void SetVp8Settings(Vp8SettingsT&& value) { m_vp8SettingsHasBeenSet = true; m_vp8Settings = std::forward<Vp8SettingsT>(value); }
+    template<typename Vp8SettingsT = Vp8Settings>
+    VideoCodecSettings& WithVp8Settings(Vp8SettingsT&& value) { SetVp8Settings(std::forward<Vp8SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value VP9.
      */
-    inline const Vp9Settings& GetVp9Settings() const{ return m_vp9Settings; }
+    inline const Vp9Settings& GetVp9Settings() const { return m_vp9Settings; }
     inline bool Vp9SettingsHasBeenSet() const { return m_vp9SettingsHasBeenSet; }
-    inline void SetVp9Settings(const Vp9Settings& value) { m_vp9SettingsHasBeenSet = true; m_vp9Settings = value; }
-    inline void SetVp9Settings(Vp9Settings&& value) { m_vp9SettingsHasBeenSet = true; m_vp9Settings = std::move(value); }
-    inline VideoCodecSettings& WithVp9Settings(const Vp9Settings& value) { SetVp9Settings(value); return *this;}
-    inline VideoCodecSettings& WithVp9Settings(Vp9Settings&& value) { SetVp9Settings(std::move(value)); return *this;}
+    template<typename Vp9SettingsT = Vp9Settings>
+    void SetVp9Settings(Vp9SettingsT&& value) { m_vp9SettingsHasBeenSet = true; m_vp9Settings = std::forward<Vp9SettingsT>(value); }
+    template<typename Vp9SettingsT = Vp9Settings>
+    VideoCodecSettings& WithVp9Settings(Vp9SettingsT&& value) { SetVp9Settings(std::forward<Vp9SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value XAVC.
      */
-    inline const XavcSettings& GetXavcSettings() const{ return m_xavcSettings; }
+    inline const XavcSettings& GetXavcSettings() const { return m_xavcSettings; }
     inline bool XavcSettingsHasBeenSet() const { return m_xavcSettingsHasBeenSet; }
-    inline void SetXavcSettings(const XavcSettings& value) { m_xavcSettingsHasBeenSet = true; m_xavcSettings = value; }
-    inline void SetXavcSettings(XavcSettings&& value) { m_xavcSettingsHasBeenSet = true; m_xavcSettings = std::move(value); }
-    inline VideoCodecSettings& WithXavcSettings(const XavcSettings& value) { SetXavcSettings(value); return *this;}
-    inline VideoCodecSettings& WithXavcSettings(XavcSettings&& value) { SetXavcSettings(std::move(value)); return *this;}
+    template<typename XavcSettingsT = XavcSettings>
+    void SetXavcSettings(XavcSettingsT&& value) { m_xavcSettingsHasBeenSet = true; m_xavcSettings = std::forward<XavcSettingsT>(value); }
+    template<typename XavcSettingsT = XavcSettings>
+    VideoCodecSettings& WithXavcSettings(XavcSettingsT&& value) { SetXavcSettings(std::forward<XavcSettingsT>(value)); return *this;}
     ///@}
   private:
 
@@ -245,7 +243,7 @@ namespace Model
     AvcIntraSettings m_avcIntraSettings;
     bool m_avcIntraSettingsHasBeenSet = false;
 
-    VideoCodec m_codec;
+    VideoCodec m_codec{VideoCodec::NOT_SET};
     bool m_codecHasBeenSet = false;
 
     FrameCaptureSettings m_frameCaptureSettings;

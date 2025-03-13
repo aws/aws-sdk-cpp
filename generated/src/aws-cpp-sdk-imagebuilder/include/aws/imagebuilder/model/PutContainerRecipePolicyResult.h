@@ -27,7 +27,7 @@ namespace Model
   class PutContainerRecipePolicyResult
   {
   public:
-    AWS_IMAGEBUILDER_API PutContainerRecipePolicyResult();
+    AWS_IMAGEBUILDER_API PutContainerRecipePolicyResult() = default;
     AWS_IMAGEBUILDER_API PutContainerRecipePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API PutContainerRecipePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutContainerRecipePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutContainerRecipePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutContainerRecipePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutContainerRecipePolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,19 +48,19 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the container recipe that this policy was
      * applied to.</p>
      */
-    inline const Aws::String& GetContainerRecipeArn() const{ return m_containerRecipeArn; }
-    inline void SetContainerRecipeArn(const Aws::String& value) { m_containerRecipeArn = value; }
-    inline void SetContainerRecipeArn(Aws::String&& value) { m_containerRecipeArn = std::move(value); }
-    inline void SetContainerRecipeArn(const char* value) { m_containerRecipeArn.assign(value); }
-    inline PutContainerRecipePolicyResult& WithContainerRecipeArn(const Aws::String& value) { SetContainerRecipeArn(value); return *this;}
-    inline PutContainerRecipePolicyResult& WithContainerRecipeArn(Aws::String&& value) { SetContainerRecipeArn(std::move(value)); return *this;}
-    inline PutContainerRecipePolicyResult& WithContainerRecipeArn(const char* value) { SetContainerRecipeArn(value); return *this;}
+    inline const Aws::String& GetContainerRecipeArn() const { return m_containerRecipeArn; }
+    template<typename ContainerRecipeArnT = Aws::String>
+    void SetContainerRecipeArn(ContainerRecipeArnT&& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = std::forward<ContainerRecipeArnT>(value); }
+    template<typename ContainerRecipeArnT = Aws::String>
+    PutContainerRecipePolicyResult& WithContainerRecipeArn(ContainerRecipeArnT&& value) { SetContainerRecipeArn(std::forward<ContainerRecipeArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_containerRecipeArn;
+    bool m_containerRecipeArnHasBeenSet = false;
   };
 
 } // namespace Model

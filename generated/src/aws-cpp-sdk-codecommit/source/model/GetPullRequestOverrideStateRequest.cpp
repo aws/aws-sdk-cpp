@@ -12,12 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPullRequestOverrideStateRequest::GetPullRequestOverrideStateRequest() : 
-    m_pullRequestIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetPullRequestOverrideStateRequest::SerializePayload() const
 {
   JsonValue payload;

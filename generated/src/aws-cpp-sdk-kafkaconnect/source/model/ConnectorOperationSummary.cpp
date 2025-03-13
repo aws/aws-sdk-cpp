@@ -18,19 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-ConnectorOperationSummary::ConnectorOperationSummary() : 
-    m_connectorOperationArnHasBeenSet(false),
-    m_connectorOperationType(ConnectorOperationType::NOT_SET),
-    m_connectorOperationTypeHasBeenSet(false),
-    m_connectorOperationState(ConnectorOperationState::NOT_SET),
-    m_connectorOperationStateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 ConnectorOperationSummary::ConnectorOperationSummary(JsonView jsonValue)
-  : ConnectorOperationSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ConnectorOperationSummary& ConnectorOperationSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("connectorOperationArn"))
   {
     m_connectorOperationArn = jsonValue.GetString("connectorOperationArn");
-
     m_connectorOperationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorOperationType"))
   {
     m_connectorOperationType = ConnectorOperationTypeMapper::GetConnectorOperationTypeForName(jsonValue.GetString("connectorOperationType"));
-
     m_connectorOperationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorOperationState"))
   {
     m_connectorOperationState = ConnectorOperationStateMapper::GetConnectorOperationStateForName(jsonValue.GetString("connectorOperationState"));
-
     m_connectorOperationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

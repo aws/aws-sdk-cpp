@@ -10,14 +10,6 @@
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-DeleteAttributesRequest::DeleteAttributesRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_itemNameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_expectedHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

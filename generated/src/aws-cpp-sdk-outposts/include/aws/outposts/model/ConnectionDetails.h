@@ -32,7 +32,7 @@ namespace Model
   class ConnectionDetails
   {
   public:
-    AWS_OUTPOSTS_API ConnectionDetails();
+    AWS_OUTPOSTS_API ConnectionDetails() = default;
     AWS_OUTPOSTS_API ConnectionDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API ConnectionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,85 +42,74 @@ namespace Model
     /**
      * <p> The public key of the client. </p>
      */
-    inline const Aws::String& GetClientPublicKey() const{ return m_clientPublicKey; }
+    inline const Aws::String& GetClientPublicKey() const { return m_clientPublicKey; }
     inline bool ClientPublicKeyHasBeenSet() const { return m_clientPublicKeyHasBeenSet; }
-    inline void SetClientPublicKey(const Aws::String& value) { m_clientPublicKeyHasBeenSet = true; m_clientPublicKey = value; }
-    inline void SetClientPublicKey(Aws::String&& value) { m_clientPublicKeyHasBeenSet = true; m_clientPublicKey = std::move(value); }
-    inline void SetClientPublicKey(const char* value) { m_clientPublicKeyHasBeenSet = true; m_clientPublicKey.assign(value); }
-    inline ConnectionDetails& WithClientPublicKey(const Aws::String& value) { SetClientPublicKey(value); return *this;}
-    inline ConnectionDetails& WithClientPublicKey(Aws::String&& value) { SetClientPublicKey(std::move(value)); return *this;}
-    inline ConnectionDetails& WithClientPublicKey(const char* value) { SetClientPublicKey(value); return *this;}
+    template<typename ClientPublicKeyT = Aws::String>
+    void SetClientPublicKey(ClientPublicKeyT&& value) { m_clientPublicKeyHasBeenSet = true; m_clientPublicKey = std::forward<ClientPublicKeyT>(value); }
+    template<typename ClientPublicKeyT = Aws::String>
+    ConnectionDetails& WithClientPublicKey(ClientPublicKeyT&& value) { SetClientPublicKey(std::forward<ClientPublicKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The public key of the server. </p>
      */
-    inline const Aws::String& GetServerPublicKey() const{ return m_serverPublicKey; }
+    inline const Aws::String& GetServerPublicKey() const { return m_serverPublicKey; }
     inline bool ServerPublicKeyHasBeenSet() const { return m_serverPublicKeyHasBeenSet; }
-    inline void SetServerPublicKey(const Aws::String& value) { m_serverPublicKeyHasBeenSet = true; m_serverPublicKey = value; }
-    inline void SetServerPublicKey(Aws::String&& value) { m_serverPublicKeyHasBeenSet = true; m_serverPublicKey = std::move(value); }
-    inline void SetServerPublicKey(const char* value) { m_serverPublicKeyHasBeenSet = true; m_serverPublicKey.assign(value); }
-    inline ConnectionDetails& WithServerPublicKey(const Aws::String& value) { SetServerPublicKey(value); return *this;}
-    inline ConnectionDetails& WithServerPublicKey(Aws::String&& value) { SetServerPublicKey(std::move(value)); return *this;}
-    inline ConnectionDetails& WithServerPublicKey(const char* value) { SetServerPublicKey(value); return *this;}
+    template<typename ServerPublicKeyT = Aws::String>
+    void SetServerPublicKey(ServerPublicKeyT&& value) { m_serverPublicKeyHasBeenSet = true; m_serverPublicKey = std::forward<ServerPublicKeyT>(value); }
+    template<typename ServerPublicKeyT = Aws::String>
+    ConnectionDetails& WithServerPublicKey(ServerPublicKeyT&& value) { SetServerPublicKey(std::forward<ServerPublicKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The endpoint for the server. </p>
      */
-    inline const Aws::String& GetServerEndpoint() const{ return m_serverEndpoint; }
+    inline const Aws::String& GetServerEndpoint() const { return m_serverEndpoint; }
     inline bool ServerEndpointHasBeenSet() const { return m_serverEndpointHasBeenSet; }
-    inline void SetServerEndpoint(const Aws::String& value) { m_serverEndpointHasBeenSet = true; m_serverEndpoint = value; }
-    inline void SetServerEndpoint(Aws::String&& value) { m_serverEndpointHasBeenSet = true; m_serverEndpoint = std::move(value); }
-    inline void SetServerEndpoint(const char* value) { m_serverEndpointHasBeenSet = true; m_serverEndpoint.assign(value); }
-    inline ConnectionDetails& WithServerEndpoint(const Aws::String& value) { SetServerEndpoint(value); return *this;}
-    inline ConnectionDetails& WithServerEndpoint(Aws::String&& value) { SetServerEndpoint(std::move(value)); return *this;}
-    inline ConnectionDetails& WithServerEndpoint(const char* value) { SetServerEndpoint(value); return *this;}
+    template<typename ServerEndpointT = Aws::String>
+    void SetServerEndpoint(ServerEndpointT&& value) { m_serverEndpointHasBeenSet = true; m_serverEndpoint = std::forward<ServerEndpointT>(value); }
+    template<typename ServerEndpointT = Aws::String>
+    ConnectionDetails& WithServerEndpoint(ServerEndpointT&& value) { SetServerEndpoint(std::forward<ServerEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The client tunnel address. </p>
      */
-    inline const Aws::String& GetClientTunnelAddress() const{ return m_clientTunnelAddress; }
+    inline const Aws::String& GetClientTunnelAddress() const { return m_clientTunnelAddress; }
     inline bool ClientTunnelAddressHasBeenSet() const { return m_clientTunnelAddressHasBeenSet; }
-    inline void SetClientTunnelAddress(const Aws::String& value) { m_clientTunnelAddressHasBeenSet = true; m_clientTunnelAddress = value; }
-    inline void SetClientTunnelAddress(Aws::String&& value) { m_clientTunnelAddressHasBeenSet = true; m_clientTunnelAddress = std::move(value); }
-    inline void SetClientTunnelAddress(const char* value) { m_clientTunnelAddressHasBeenSet = true; m_clientTunnelAddress.assign(value); }
-    inline ConnectionDetails& WithClientTunnelAddress(const Aws::String& value) { SetClientTunnelAddress(value); return *this;}
-    inline ConnectionDetails& WithClientTunnelAddress(Aws::String&& value) { SetClientTunnelAddress(std::move(value)); return *this;}
-    inline ConnectionDetails& WithClientTunnelAddress(const char* value) { SetClientTunnelAddress(value); return *this;}
+    template<typename ClientTunnelAddressT = Aws::String>
+    void SetClientTunnelAddress(ClientTunnelAddressT&& value) { m_clientTunnelAddressHasBeenSet = true; m_clientTunnelAddress = std::forward<ClientTunnelAddressT>(value); }
+    template<typename ClientTunnelAddressT = Aws::String>
+    ConnectionDetails& WithClientTunnelAddress(ClientTunnelAddressT&& value) { SetClientTunnelAddress(std::forward<ClientTunnelAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The server tunnel address. </p>
      */
-    inline const Aws::String& GetServerTunnelAddress() const{ return m_serverTunnelAddress; }
+    inline const Aws::String& GetServerTunnelAddress() const { return m_serverTunnelAddress; }
     inline bool ServerTunnelAddressHasBeenSet() const { return m_serverTunnelAddressHasBeenSet; }
-    inline void SetServerTunnelAddress(const Aws::String& value) { m_serverTunnelAddressHasBeenSet = true; m_serverTunnelAddress = value; }
-    inline void SetServerTunnelAddress(Aws::String&& value) { m_serverTunnelAddressHasBeenSet = true; m_serverTunnelAddress = std::move(value); }
-    inline void SetServerTunnelAddress(const char* value) { m_serverTunnelAddressHasBeenSet = true; m_serverTunnelAddress.assign(value); }
-    inline ConnectionDetails& WithServerTunnelAddress(const Aws::String& value) { SetServerTunnelAddress(value); return *this;}
-    inline ConnectionDetails& WithServerTunnelAddress(Aws::String&& value) { SetServerTunnelAddress(std::move(value)); return *this;}
-    inline ConnectionDetails& WithServerTunnelAddress(const char* value) { SetServerTunnelAddress(value); return *this;}
+    template<typename ServerTunnelAddressT = Aws::String>
+    void SetServerTunnelAddress(ServerTunnelAddressT&& value) { m_serverTunnelAddressHasBeenSet = true; m_serverTunnelAddress = std::forward<ServerTunnelAddressT>(value); }
+    template<typename ServerTunnelAddressT = Aws::String>
+    ConnectionDetails& WithServerTunnelAddress(ServerTunnelAddressT&& value) { SetServerTunnelAddress(std::forward<ServerTunnelAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The allowed IP addresses. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedIps() const{ return m_allowedIps; }
+    inline const Aws::Vector<Aws::String>& GetAllowedIps() const { return m_allowedIps; }
     inline bool AllowedIpsHasBeenSet() const { return m_allowedIpsHasBeenSet; }
-    inline void SetAllowedIps(const Aws::Vector<Aws::String>& value) { m_allowedIpsHasBeenSet = true; m_allowedIps = value; }
-    inline void SetAllowedIps(Aws::Vector<Aws::String>&& value) { m_allowedIpsHasBeenSet = true; m_allowedIps = std::move(value); }
-    inline ConnectionDetails& WithAllowedIps(const Aws::Vector<Aws::String>& value) { SetAllowedIps(value); return *this;}
-    inline ConnectionDetails& WithAllowedIps(Aws::Vector<Aws::String>&& value) { SetAllowedIps(std::move(value)); return *this;}
-    inline ConnectionDetails& AddAllowedIps(const Aws::String& value) { m_allowedIpsHasBeenSet = true; m_allowedIps.push_back(value); return *this; }
-    inline ConnectionDetails& AddAllowedIps(Aws::String&& value) { m_allowedIpsHasBeenSet = true; m_allowedIps.push_back(std::move(value)); return *this; }
-    inline ConnectionDetails& AddAllowedIps(const char* value) { m_allowedIpsHasBeenSet = true; m_allowedIps.push_back(value); return *this; }
+    template<typename AllowedIpsT = Aws::Vector<Aws::String>>
+    void SetAllowedIps(AllowedIpsT&& value) { m_allowedIpsHasBeenSet = true; m_allowedIps = std::forward<AllowedIpsT>(value); }
+    template<typename AllowedIpsT = Aws::Vector<Aws::String>>
+    ConnectionDetails& WithAllowedIps(AllowedIpsT&& value) { SetAllowedIps(std::forward<AllowedIpsT>(value)); return *this;}
+    template<typename AllowedIpsT = Aws::String>
+    ConnectionDetails& AddAllowedIps(AllowedIpsT&& value) { m_allowedIpsHasBeenSet = true; m_allowedIps.emplace_back(std::forward<AllowedIpsT>(value)); return *this; }
     ///@}
   private:
 

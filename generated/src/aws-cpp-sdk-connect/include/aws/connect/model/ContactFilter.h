@@ -35,7 +35,7 @@ namespace Model
   class ContactFilter
   {
   public:
-    AWS_CONNECT_API ContactFilter();
+    AWS_CONNECT_API ContactFilter() = default;
     AWS_CONNECT_API ContactFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ContactFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact
      * states</a>.</p>
      */
-    inline const Aws::Vector<ContactState>& GetContactStates() const{ return m_contactStates; }
+    inline const Aws::Vector<ContactState>& GetContactStates() const { return m_contactStates; }
     inline bool ContactStatesHasBeenSet() const { return m_contactStatesHasBeenSet; }
-    inline void SetContactStates(const Aws::Vector<ContactState>& value) { m_contactStatesHasBeenSet = true; m_contactStates = value; }
-    inline void SetContactStates(Aws::Vector<ContactState>&& value) { m_contactStatesHasBeenSet = true; m_contactStates = std::move(value); }
-    inline ContactFilter& WithContactStates(const Aws::Vector<ContactState>& value) { SetContactStates(value); return *this;}
-    inline ContactFilter& WithContactStates(Aws::Vector<ContactState>&& value) { SetContactStates(std::move(value)); return *this;}
-    inline ContactFilter& AddContactStates(const ContactState& value) { m_contactStatesHasBeenSet = true; m_contactStates.push_back(value); return *this; }
-    inline ContactFilter& AddContactStates(ContactState&& value) { m_contactStatesHasBeenSet = true; m_contactStates.push_back(std::move(value)); return *this; }
+    template<typename ContactStatesT = Aws::Vector<ContactState>>
+    void SetContactStates(ContactStatesT&& value) { m_contactStatesHasBeenSet = true; m_contactStates = std::forward<ContactStatesT>(value); }
+    template<typename ContactStatesT = Aws::Vector<ContactState>>
+    ContactFilter& WithContactStates(ContactStatesT&& value) { SetContactStates(std::forward<ContactStatesT>(value)); return *this;}
+    inline ContactFilter& AddContactStates(ContactState value) { m_contactStatesHasBeenSet = true; m_contactStates.push_back(value); return *this; }
     ///@}
   private:
 

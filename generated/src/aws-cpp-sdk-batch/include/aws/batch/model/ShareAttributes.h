@@ -33,7 +33,7 @@ namespace Model
   class ShareAttributes
   {
   public:
-    AWS_BATCH_API ShareAttributes();
+    AWS_BATCH_API ShareAttributes() = default;
     AWS_BATCH_API ShareAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API ShareAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * identifiers active in a job queue.</p> <p>The string is limited to 255
      * alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
-    inline const Aws::String& GetShareIdentifier() const{ return m_shareIdentifier; }
+    inline const Aws::String& GetShareIdentifier() const { return m_shareIdentifier; }
     inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
-    inline void SetShareIdentifier(const Aws::String& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = value; }
-    inline void SetShareIdentifier(Aws::String&& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = std::move(value); }
-    inline void SetShareIdentifier(const char* value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier.assign(value); }
-    inline ShareAttributes& WithShareIdentifier(const Aws::String& value) { SetShareIdentifier(value); return *this;}
-    inline ShareAttributes& WithShareIdentifier(Aws::String&& value) { SetShareIdentifier(std::move(value)); return *this;}
-    inline ShareAttributes& WithShareIdentifier(const char* value) { SetShareIdentifier(value); return *this;}
+    template<typename ShareIdentifierT = Aws::String>
+    void SetShareIdentifier(ShareIdentifierT&& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = std::forward<ShareIdentifierT>(value); }
+    template<typename ShareIdentifierT = Aws::String>
+    ShareAttributes& WithShareIdentifier(ShareIdentifierT&& value) { SetShareIdentifier(std::forward<ShareIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +68,7 @@ namespace Model
      * 1.</p> <p>The smallest supported value is 0.0001, and the largest supported
      * value is 999.9999.</p>
      */
-    inline double GetWeightFactor() const{ return m_weightFactor; }
+    inline double GetWeightFactor() const { return m_weightFactor; }
     inline bool WeightFactorHasBeenSet() const { return m_weightFactorHasBeenSet; }
     inline void SetWeightFactor(double value) { m_weightFactorHasBeenSet = true; m_weightFactor = value; }
     inline ShareAttributes& WithWeightFactor(double value) { SetWeightFactor(value); return *this;}
@@ -80,7 +78,7 @@ namespace Model
     Aws::String m_shareIdentifier;
     bool m_shareIdentifierHasBeenSet = false;
 
-    double m_weightFactor;
+    double m_weightFactor{0.0};
     bool m_weightFactorHasBeenSet = false;
   };
 

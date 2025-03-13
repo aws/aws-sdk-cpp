@@ -18,14 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-S3ContentBaseLocationDescription::S3ContentBaseLocationDescription() : 
-    m_bucketARNHasBeenSet(false),
-    m_basePathHasBeenSet(false)
-{
-}
-
 S3ContentBaseLocationDescription::S3ContentBaseLocationDescription(JsonView jsonValue)
-  : S3ContentBaseLocationDescription()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3ContentBaseLocationDescription& S3ContentBaseLocationDescription::operator =(J
   if(jsonValue.ValueExists("BucketARN"))
   {
     m_bucketARN = jsonValue.GetString("BucketARN");
-
     m_bucketARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BasePath"))
   {
     m_basePath = jsonValue.GetString("BasePath");
-
     m_basePathHasBeenSet = true;
   }
-
   return *this;
 }
 

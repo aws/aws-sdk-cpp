@@ -18,20 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-FlywheelModelEvaluationMetrics::FlywheelModelEvaluationMetrics() : 
-    m_averageF1Score(0.0),
-    m_averageF1ScoreHasBeenSet(false),
-    m_averagePrecision(0.0),
-    m_averagePrecisionHasBeenSet(false),
-    m_averageRecall(0.0),
-    m_averageRecallHasBeenSet(false),
-    m_averageAccuracy(0.0),
-    m_averageAccuracyHasBeenSet(false)
-{
-}
-
 FlywheelModelEvaluationMetrics::FlywheelModelEvaluationMetrics(JsonView jsonValue)
-  : FlywheelModelEvaluationMetrics()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ FlywheelModelEvaluationMetrics& FlywheelModelEvaluationMetrics::operator =(JsonV
   if(jsonValue.ValueExists("AverageF1Score"))
   {
     m_averageF1Score = jsonValue.GetDouble("AverageF1Score");
-
     m_averageF1ScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AveragePrecision"))
   {
     m_averagePrecision = jsonValue.GetDouble("AveragePrecision");
-
     m_averagePrecisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AverageRecall"))
   {
     m_averageRecall = jsonValue.GetDouble("AverageRecall");
-
     m_averageRecallHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AverageAccuracy"))
   {
     m_averageAccuracy = jsonValue.GetDouble("AverageAccuracy");
-
     m_averageAccuracyHasBeenSet = true;
   }
-
   return *this;
 }
 

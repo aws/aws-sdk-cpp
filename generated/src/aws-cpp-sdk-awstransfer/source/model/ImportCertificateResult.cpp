@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportCertificateResult::ImportCertificateResult()
-{
-}
-
 ImportCertificateResult::ImportCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ ImportCertificateResult& ImportCertificateResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("CertificateId"))
   {
     m_certificateId = jsonValue.GetString("CertificateId");
-
+    m_certificateIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

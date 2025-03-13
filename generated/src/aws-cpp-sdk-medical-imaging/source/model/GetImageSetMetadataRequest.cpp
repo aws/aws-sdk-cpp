@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetImageSetMetadataRequest::GetImageSetMetadataRequest() : 
-    m_datastoreIdHasBeenSet(false),
-    m_imageSetIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetImageSetMetadataRequest::SerializePayload() const
 {
   return {};

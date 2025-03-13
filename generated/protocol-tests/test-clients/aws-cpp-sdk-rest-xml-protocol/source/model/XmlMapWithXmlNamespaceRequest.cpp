@@ -14,10 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-XmlMapWithXmlNamespaceRequest::XmlMapWithXmlNamespaceRequest() : 
-    m_myMapHasBeenSet(false)
-{
-}
 
 Aws::String XmlMapWithXmlNamespaceRequest::SerializePayload() const
 {

@@ -12,12 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCostCategoryDefinitionRequest::DescribeCostCategoryDefinitionRequest() : 
-    m_costCategoryArnHasBeenSet(false),
-    m_effectiveOnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCostCategoryDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EksPropertiesOverride::EksPropertiesOverride() : 
-    m_podPropertiesHasBeenSet(false)
-{
-}
-
 EksPropertiesOverride::EksPropertiesOverride(JsonView jsonValue)
-  : EksPropertiesOverride()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EksPropertiesOverride& EksPropertiesOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("podProperties"))
   {
     m_podProperties = jsonValue.GetObject("podProperties");
-
     m_podPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

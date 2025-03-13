@@ -28,7 +28,7 @@ namespace Model
   class GetCrlResult
   {
   public:
-    AWS_ROLESANYWHERE_API GetCrlResult();
+    AWS_ROLESANYWHERE_API GetCrlResult() = default;
     AWS_ROLESANYWHERE_API GetCrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROLESANYWHERE_API GetCrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The state of the certificate revocation list (CRL) after a read or write
      * operation.</p>
      */
-    inline const CrlDetail& GetCrl() const{ return m_crl; }
-    inline void SetCrl(const CrlDetail& value) { m_crl = value; }
-    inline void SetCrl(CrlDetail&& value) { m_crl = std::move(value); }
-    inline GetCrlResult& WithCrl(const CrlDetail& value) { SetCrl(value); return *this;}
-    inline GetCrlResult& WithCrl(CrlDetail&& value) { SetCrl(std::move(value)); return *this;}
+    inline const CrlDetail& GetCrl() const { return m_crl; }
+    template<typename CrlT = CrlDetail>
+    void SetCrl(CrlT&& value) { m_crlHasBeenSet = true; m_crl = std::forward<CrlT>(value); }
+    template<typename CrlT = CrlDetail>
+    GetCrlResult& WithCrl(CrlT&& value) { SetCrl(std::forward<CrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCrlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCrlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCrlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCrlResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CrlDetail m_crl;
+    bool m_crlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,25 +20,7 @@ namespace Route53
 namespace Model
 {
 
-CloudWatchAlarmConfiguration::CloudWatchAlarmConfiguration() : 
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_statistic(Statistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
-{
-}
-
 CloudWatchAlarmConfiguration::CloudWatchAlarmConfiguration(const XmlNode& xmlNode)
-  : CloudWatchAlarmConfiguration()
 {
   *this = xmlNode;
 }
@@ -54,54 +36,62 @@ CloudWatchAlarmConfiguration& CloudWatchAlarmConfiguration::operator =(const Xml
     {
       m_evaluationPeriods = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationPeriodsNode.GetText()).c_str()).c_str());
       m_evaluationPeriodsHasBeenSet = true;
+       m_evaluationPeriodsHasBeenSet = true;
     }
     XmlNode thresholdNode = resultNode.FirstChild("Threshold");
     if(!thresholdNode.IsNull())
     {
       m_threshold = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(thresholdNode.GetText()).c_str()).c_str());
       m_thresholdHasBeenSet = true;
+       m_thresholdHasBeenSet = true;
     }
     XmlNode comparisonOperatorNode = resultNode.FirstChild("ComparisonOperator");
     if(!comparisonOperatorNode.IsNull())
     {
-      m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(comparisonOperatorNode.GetText()).c_str()).c_str());
+      m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(comparisonOperatorNode.GetText()).c_str()));
       m_comparisonOperatorHasBeenSet = true;
+       m_comparisonOperatorHasBeenSet = true;
     }
     XmlNode periodNode = resultNode.FirstChild("Period");
     if(!periodNode.IsNull())
     {
       m_period = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
       m_periodHasBeenSet = true;
+       m_periodHasBeenSet = true;
     }
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
     if(!metricNameNode.IsNull())
     {
       m_metricName = Aws::Utils::Xml::DecodeEscapedXmlText(metricNameNode.GetText());
       m_metricNameHasBeenSet = true;
+       m_metricNameHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
       m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
+       m_namespaceHasBeenSet = true;
     }
     XmlNode statisticNode = resultNode.FirstChild("Statistic");
     if(!statisticNode.IsNull())
     {
-      m_statistic = StatisticMapper::GetStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()).c_str());
+      m_statistic = StatisticMapper::GetStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()));
       m_statisticHasBeenSet = true;
+       m_statisticHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
     if(!dimensionsNode.IsNull())
     {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("Dimension");
+      m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
       while(!dimensionsMember.IsNull())
       {
         m_dimensions.push_back(dimensionsMember);
         dimensionsMember = dimensionsMember.NextNode("Dimension");
       }
 
-      m_dimensionsHasBeenSet = true;
+       m_dimensionsHasBeenSet = true;
     }
   }
 

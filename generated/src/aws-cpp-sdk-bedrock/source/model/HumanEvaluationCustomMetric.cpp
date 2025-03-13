@@ -18,15 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-HumanEvaluationCustomMetric::HumanEvaluationCustomMetric() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ratingMethodHasBeenSet(false)
-{
-}
-
 HumanEvaluationCustomMetric::HumanEvaluationCustomMetric(JsonView jsonValue)
-  : HumanEvaluationCustomMetric()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ HumanEvaluationCustomMetric& HumanEvaluationCustomMetric::operator =(JsonView js
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ratingMethod"))
   {
     m_ratingMethod = jsonValue.GetString("ratingMethod");
-
     m_ratingMethodHasBeenSet = true;
   }
-
   return *this;
 }
 

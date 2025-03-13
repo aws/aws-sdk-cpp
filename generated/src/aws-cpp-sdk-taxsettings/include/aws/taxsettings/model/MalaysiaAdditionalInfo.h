@@ -34,7 +34,7 @@ namespace Model
   class MalaysiaAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API MalaysiaAdditionalInfo();
+    AWS_TAXSETTINGS_API MalaysiaAdditionalInfo() = default;
     AWS_TAXSETTINGS_API MalaysiaAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API MalaysiaAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,28 +59,25 @@ namespace Model
      * with the Royal Malaysia Customs Department (RMCD), and have a valid SST
      * number.</p>
      */
-    inline const Aws::String& GetBusinessRegistrationNumber() const{ return m_businessRegistrationNumber; }
+    inline const Aws::String& GetBusinessRegistrationNumber() const { return m_businessRegistrationNumber; }
     inline bool BusinessRegistrationNumberHasBeenSet() const { return m_businessRegistrationNumberHasBeenSet; }
-    inline void SetBusinessRegistrationNumber(const Aws::String& value) { m_businessRegistrationNumberHasBeenSet = true; m_businessRegistrationNumber = value; }
-    inline void SetBusinessRegistrationNumber(Aws::String&& value) { m_businessRegistrationNumberHasBeenSet = true; m_businessRegistrationNumber = std::move(value); }
-    inline void SetBusinessRegistrationNumber(const char* value) { m_businessRegistrationNumberHasBeenSet = true; m_businessRegistrationNumber.assign(value); }
-    inline MalaysiaAdditionalInfo& WithBusinessRegistrationNumber(const Aws::String& value) { SetBusinessRegistrationNumber(value); return *this;}
-    inline MalaysiaAdditionalInfo& WithBusinessRegistrationNumber(Aws::String&& value) { SetBusinessRegistrationNumber(std::move(value)); return *this;}
-    inline MalaysiaAdditionalInfo& WithBusinessRegistrationNumber(const char* value) { SetBusinessRegistrationNumber(value); return *this;}
+    template<typename BusinessRegistrationNumberT = Aws::String>
+    void SetBusinessRegistrationNumber(BusinessRegistrationNumberT&& value) { m_businessRegistrationNumberHasBeenSet = true; m_businessRegistrationNumber = std::forward<BusinessRegistrationNumberT>(value); }
+    template<typename BusinessRegistrationNumberT = Aws::String>
+    MalaysiaAdditionalInfo& WithBusinessRegistrationNumber(BusinessRegistrationNumberT&& value) { SetBusinessRegistrationNumber(std::forward<BusinessRegistrationNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of service tax codes for your TRN in Malaysia.</p>
      */
-    inline const Aws::Vector<MalaysiaServiceTaxCode>& GetServiceTaxCodes() const{ return m_serviceTaxCodes; }
+    inline const Aws::Vector<MalaysiaServiceTaxCode>& GetServiceTaxCodes() const { return m_serviceTaxCodes; }
     inline bool ServiceTaxCodesHasBeenSet() const { return m_serviceTaxCodesHasBeenSet; }
-    inline void SetServiceTaxCodes(const Aws::Vector<MalaysiaServiceTaxCode>& value) { m_serviceTaxCodesHasBeenSet = true; m_serviceTaxCodes = value; }
-    inline void SetServiceTaxCodes(Aws::Vector<MalaysiaServiceTaxCode>&& value) { m_serviceTaxCodesHasBeenSet = true; m_serviceTaxCodes = std::move(value); }
-    inline MalaysiaAdditionalInfo& WithServiceTaxCodes(const Aws::Vector<MalaysiaServiceTaxCode>& value) { SetServiceTaxCodes(value); return *this;}
-    inline MalaysiaAdditionalInfo& WithServiceTaxCodes(Aws::Vector<MalaysiaServiceTaxCode>&& value) { SetServiceTaxCodes(std::move(value)); return *this;}
-    inline MalaysiaAdditionalInfo& AddServiceTaxCodes(const MalaysiaServiceTaxCode& value) { m_serviceTaxCodesHasBeenSet = true; m_serviceTaxCodes.push_back(value); return *this; }
-    inline MalaysiaAdditionalInfo& AddServiceTaxCodes(MalaysiaServiceTaxCode&& value) { m_serviceTaxCodesHasBeenSet = true; m_serviceTaxCodes.push_back(std::move(value)); return *this; }
+    template<typename ServiceTaxCodesT = Aws::Vector<MalaysiaServiceTaxCode>>
+    void SetServiceTaxCodes(ServiceTaxCodesT&& value) { m_serviceTaxCodesHasBeenSet = true; m_serviceTaxCodes = std::forward<ServiceTaxCodesT>(value); }
+    template<typename ServiceTaxCodesT = Aws::Vector<MalaysiaServiceTaxCode>>
+    MalaysiaAdditionalInfo& WithServiceTaxCodes(ServiceTaxCodesT&& value) { SetServiceTaxCodes(std::forward<ServiceTaxCodesT>(value)); return *this;}
+    inline MalaysiaAdditionalInfo& AddServiceTaxCodes(MalaysiaServiceTaxCode value) { m_serviceTaxCodesHasBeenSet = true; m_serviceTaxCodes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -100,14 +97,12 @@ namespace Model
      * with the Royal Malaysia Customs Department (RMCD), and have a valid SST
      * number.</p>
      */
-    inline const Aws::String& GetTaxInformationNumber() const{ return m_taxInformationNumber; }
+    inline const Aws::String& GetTaxInformationNumber() const { return m_taxInformationNumber; }
     inline bool TaxInformationNumberHasBeenSet() const { return m_taxInformationNumberHasBeenSet; }
-    inline void SetTaxInformationNumber(const Aws::String& value) { m_taxInformationNumberHasBeenSet = true; m_taxInformationNumber = value; }
-    inline void SetTaxInformationNumber(Aws::String&& value) { m_taxInformationNumberHasBeenSet = true; m_taxInformationNumber = std::move(value); }
-    inline void SetTaxInformationNumber(const char* value) { m_taxInformationNumberHasBeenSet = true; m_taxInformationNumber.assign(value); }
-    inline MalaysiaAdditionalInfo& WithTaxInformationNumber(const Aws::String& value) { SetTaxInformationNumber(value); return *this;}
-    inline MalaysiaAdditionalInfo& WithTaxInformationNumber(Aws::String&& value) { SetTaxInformationNumber(std::move(value)); return *this;}
-    inline MalaysiaAdditionalInfo& WithTaxInformationNumber(const char* value) { SetTaxInformationNumber(value); return *this;}
+    template<typename TaxInformationNumberT = Aws::String>
+    void SetTaxInformationNumber(TaxInformationNumberT&& value) { m_taxInformationNumberHasBeenSet = true; m_taxInformationNumber = std::forward<TaxInformationNumberT>(value); }
+    template<typename TaxInformationNumberT = Aws::String>
+    MalaysiaAdditionalInfo& WithTaxInformationNumber(TaxInformationNumberT&& value) { SetTaxInformationNumber(std::forward<TaxInformationNumberT>(value)); return *this;}
     ///@}
   private:
 

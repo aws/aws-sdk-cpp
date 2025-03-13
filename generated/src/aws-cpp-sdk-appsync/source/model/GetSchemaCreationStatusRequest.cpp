@@ -12,11 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSchemaCreationStatusRequest::GetSchemaCreationStatusRequest() : 
-    m_apiIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSchemaCreationStatusRequest::SerializePayload() const
 {
   return {};

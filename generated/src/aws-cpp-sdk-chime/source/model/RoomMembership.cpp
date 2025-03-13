@@ -18,18 +18,7 @@ namespace Chime
 namespace Model
 {
 
-RoomMembership::RoomMembership() : 
-    m_roomIdHasBeenSet(false),
-    m_memberHasBeenSet(false),
-    m_role(RoomMembershipRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_invitedByHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
-{
-}
-
 RoomMembership::RoomMembership(JsonView jsonValue)
-  : RoomMembership()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ RoomMembership& RoomMembership::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoomId"))
   {
     m_roomId = jsonValue.GetString("RoomId");
-
     m_roomIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Member"))
   {
     m_member = jsonValue.GetObject("Member");
-
     m_memberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = RoomMembershipRoleMapper::GetRoomMembershipRoleForName(jsonValue.GetString("Role"));
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvitedBy"))
   {
     m_invitedBy = jsonValue.GetString("InvitedBy");
-
     m_invitedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

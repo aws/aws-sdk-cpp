@@ -18,14 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-StatelessRulesAndCustomActions::StatelessRulesAndCustomActions() : 
-    m_statelessRulesHasBeenSet(false),
-    m_customActionsHasBeenSet(false)
-{
-}
-
 StatelessRulesAndCustomActions::StatelessRulesAndCustomActions(JsonView jsonValue)
-  : StatelessRulesAndCustomActions()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ StatelessRulesAndCustomActions& StatelessRulesAndCustomActions::operator =(JsonV
     }
     m_statelessRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomActions"))
   {
     Aws::Utils::Array<JsonView> customActionsJsonList = jsonValue.GetArray("CustomActions");
@@ -51,7 +43,6 @@ StatelessRulesAndCustomActions& StatelessRulesAndCustomActions::operator =(JsonV
     }
     m_customActionsHasBeenSet = true;
   }
-
   return *this;
 }
 

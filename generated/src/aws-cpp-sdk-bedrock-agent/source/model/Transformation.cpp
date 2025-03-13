@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-Transformation::Transformation() : 
-    m_stepToApply(StepType::NOT_SET),
-    m_stepToApplyHasBeenSet(false),
-    m_transformationFunctionHasBeenSet(false)
-{
-}
-
 Transformation::Transformation(JsonView jsonValue)
-  : Transformation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Transformation& Transformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stepToApply"))
   {
     m_stepToApply = StepTypeMapper::GetStepTypeForName(jsonValue.GetString("stepToApply"));
-
     m_stepToApplyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transformationFunction"))
   {
     m_transformationFunction = jsonValue.GetObject("transformationFunction");
-
     m_transformationFunctionHasBeenSet = true;
   }
-
   return *this;
 }
 

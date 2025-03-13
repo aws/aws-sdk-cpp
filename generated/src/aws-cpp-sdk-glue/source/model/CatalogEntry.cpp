@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CatalogEntry::CatalogEntry() : 
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
-{
-}
-
 CatalogEntry::CatalogEntry(JsonView jsonValue)
-  : CatalogEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CatalogEntry& CatalogEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   return *this;
 }
 

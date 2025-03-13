@@ -25,7 +25,7 @@ namespace Model
   class StopArchiveSearchRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API StopArchiveSearchRequest();
+    AWS_MAILMANAGER_API StopArchiveSearchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the search job to stop.</p>
      */
-    inline const Aws::String& GetSearchId() const{ return m_searchId; }
+    inline const Aws::String& GetSearchId() const { return m_searchId; }
     inline bool SearchIdHasBeenSet() const { return m_searchIdHasBeenSet; }
-    inline void SetSearchId(const Aws::String& value) { m_searchIdHasBeenSet = true; m_searchId = value; }
-    inline void SetSearchId(Aws::String&& value) { m_searchIdHasBeenSet = true; m_searchId = std::move(value); }
-    inline void SetSearchId(const char* value) { m_searchIdHasBeenSet = true; m_searchId.assign(value); }
-    inline StopArchiveSearchRequest& WithSearchId(const Aws::String& value) { SetSearchId(value); return *this;}
-    inline StopArchiveSearchRequest& WithSearchId(Aws::String&& value) { SetSearchId(std::move(value)); return *this;}
-    inline StopArchiveSearchRequest& WithSearchId(const char* value) { SetSearchId(value); return *this;}
+    template<typename SearchIdT = Aws::String>
+    void SetSearchId(SearchIdT&& value) { m_searchIdHasBeenSet = true; m_searchId = std::forward<SearchIdT>(value); }
+    template<typename SearchIdT = Aws::String>
+    StopArchiveSearchRequest& WithSearchId(SearchIdT&& value) { SetSearchId(std::forward<SearchIdT>(value)); return *this;}
     ///@}
   private:
 

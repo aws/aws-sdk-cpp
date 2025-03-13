@@ -12,13 +12,6 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopJobRequest::StopJobRequest() : 
-    m_appIdHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String StopJobRequest::SerializePayload() const
 {
   return {};

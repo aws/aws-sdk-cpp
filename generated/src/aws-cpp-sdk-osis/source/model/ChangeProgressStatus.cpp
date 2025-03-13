@@ -18,18 +18,7 @@ namespace OSIS
 namespace Model
 {
 
-ChangeProgressStatus::ChangeProgressStatus() : 
-    m_startTimeHasBeenSet(false),
-    m_status(ChangeProgressStatuses::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_totalNumberOfStages(0),
-    m_totalNumberOfStagesHasBeenSet(false),
-    m_changeProgressStagesHasBeenSet(false)
-{
-}
-
 ChangeProgressStatus::ChangeProgressStatus(JsonView jsonValue)
-  : ChangeProgressStatus()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ChangeProgressStatus& ChangeProgressStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ChangeProgressStatusesMapper::GetChangeProgressStatusesForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalNumberOfStages"))
   {
     m_totalNumberOfStages = jsonValue.GetInteger("TotalNumberOfStages");
-
     m_totalNumberOfStagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeProgressStages"))
   {
     Aws::Utils::Array<JsonView> changeProgressStagesJsonList = jsonValue.GetArray("ChangeProgressStages");
@@ -66,7 +49,6 @@ ChangeProgressStatus& ChangeProgressStatus::operator =(JsonView jsonValue)
     }
     m_changeProgressStagesHasBeenSet = true;
   }
-
   return *this;
 }
 

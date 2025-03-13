@@ -18,13 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-ExperimentSchedule::ExperimentSchedule() : 
-    m_analysisCompleteTimeHasBeenSet(false)
-{
-}
-
 ExperimentSchedule::ExperimentSchedule(JsonView jsonValue)
-  : ExperimentSchedule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExperimentSchedule& ExperimentSchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("analysisCompleteTime"))
   {
     m_analysisCompleteTime = jsonValue.GetDouble("analysisCompleteTime");
-
     m_analysisCompleteTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

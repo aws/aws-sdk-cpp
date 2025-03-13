@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-EnvironmentConfigurationUserParameter::EnvironmentConfigurationUserParameter() : 
-    m_environmentConfigurationNameHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_environmentParametersHasBeenSet(false)
-{
-}
-
 EnvironmentConfigurationUserParameter::EnvironmentConfigurationUserParameter(JsonView jsonValue)
-  : EnvironmentConfigurationUserParameter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EnvironmentConfigurationUserParameter& EnvironmentConfigurationUserParameter::op
   if(jsonValue.ValueExists("environmentConfigurationName"))
   {
     m_environmentConfigurationName = jsonValue.GetString("environmentConfigurationName");
-
     m_environmentConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentParameters"))
   {
     Aws::Utils::Array<JsonView> environmentParametersJsonList = jsonValue.GetArray("environmentParameters");
@@ -56,7 +44,6 @@ EnvironmentConfigurationUserParameter& EnvironmentConfigurationUserParameter::op
     }
     m_environmentParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

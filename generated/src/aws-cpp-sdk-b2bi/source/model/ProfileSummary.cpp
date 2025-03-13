@@ -18,20 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-ProfileSummary::ProfileSummary() : 
-    m_profileIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_businessNameHasBeenSet(false),
-    m_logging(Logging::NOT_SET),
-    m_loggingHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
-{
-}
-
 ProfileSummary::ProfileSummary(JsonView jsonValue)
-  : ProfileSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ ProfileSummary& ProfileSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("profileId"))
   {
     m_profileId = jsonValue.GetString("profileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("businessName"))
   {
     m_businessName = jsonValue.GetString("businessName");
-
     m_businessNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logging"))
   {
     m_logging = LoggingMapper::GetLoggingForName(jsonValue.GetString("logging"));
-
     m_loggingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupName"))
   {
     m_logGroupName = jsonValue.GetString("logGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

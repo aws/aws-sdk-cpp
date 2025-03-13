@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-JSONOutput::JSONOutput() : 
-    m_recordDelimiterHasBeenSet(false)
-{
-}
-
 JSONOutput::JSONOutput(const XmlNode& xmlNode)
-  : JSONOutput()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ JSONOutput& JSONOutput::operator =(const XmlNode& xmlNode)
     {
       m_recordDelimiter = Aws::Utils::Xml::DecodeEscapedXmlText(recordDelimiterNode.GetText());
       m_recordDelimiterHasBeenSet = true;
+       m_recordDelimiterHasBeenSet = true;
     }
   }
 

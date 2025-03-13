@@ -18,14 +18,7 @@ namespace Schemas
 namespace Model
 {
 
-PreconditionFailedException::PreconditionFailedException() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 PreconditionFailedException::PreconditionFailedException(JsonView jsonValue)
-  : PreconditionFailedException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PreconditionFailedException& PreconditionFailedException::operator =(JsonView js
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

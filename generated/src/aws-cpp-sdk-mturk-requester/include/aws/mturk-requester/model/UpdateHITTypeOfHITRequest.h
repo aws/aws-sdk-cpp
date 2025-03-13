@@ -21,7 +21,7 @@ namespace Model
   class UpdateHITTypeOfHITRequest : public MTurkRequest
   {
   public:
-    AWS_MTURK_API UpdateHITTypeOfHITRequest();
+    AWS_MTURK_API UpdateHITTypeOfHITRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The HIT to update.</p>
      */
-    inline const Aws::String& GetHITId() const{ return m_hITId; }
+    inline const Aws::String& GetHITId() const { return m_hITId; }
     inline bool HITIdHasBeenSet() const { return m_hITIdHasBeenSet; }
-    inline void SetHITId(const Aws::String& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
-    inline void SetHITId(const char* value) { m_hITIdHasBeenSet = true; m_hITId.assign(value); }
-    inline UpdateHITTypeOfHITRequest& WithHITId(const Aws::String& value) { SetHITId(value); return *this;}
-    inline UpdateHITTypeOfHITRequest& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
-    inline UpdateHITTypeOfHITRequest& WithHITId(const char* value) { SetHITId(value); return *this;}
+    template<typename HITIdT = Aws::String>
+    void SetHITId(HITIdT&& value) { m_hITIdHasBeenSet = true; m_hITId = std::forward<HITIdT>(value); }
+    template<typename HITIdT = Aws::String>
+    UpdateHITTypeOfHITRequest& WithHITId(HITIdT&& value) { SetHITId(std::forward<HITIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the new HIT type.</p>
      */
-    inline const Aws::String& GetHITTypeId() const{ return m_hITTypeId; }
+    inline const Aws::String& GetHITTypeId() const { return m_hITTypeId; }
     inline bool HITTypeIdHasBeenSet() const { return m_hITTypeIdHasBeenSet; }
-    inline void SetHITTypeId(const Aws::String& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = value; }
-    inline void SetHITTypeId(Aws::String&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = std::move(value); }
-    inline void SetHITTypeId(const char* value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId.assign(value); }
-    inline UpdateHITTypeOfHITRequest& WithHITTypeId(const Aws::String& value) { SetHITTypeId(value); return *this;}
-    inline UpdateHITTypeOfHITRequest& WithHITTypeId(Aws::String&& value) { SetHITTypeId(std::move(value)); return *this;}
-    inline UpdateHITTypeOfHITRequest& WithHITTypeId(const char* value) { SetHITTypeId(value); return *this;}
+    template<typename HITTypeIdT = Aws::String>
+    void SetHITTypeId(HITTypeIdT&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = std::forward<HITTypeIdT>(value); }
+    template<typename HITTypeIdT = Aws::String>
+    UpdateHITTypeOfHITRequest& WithHITTypeId(HITTypeIdT&& value) { SetHITTypeId(std::forward<HITTypeIdT>(value)); return *this;}
     ///@}
   private:
 

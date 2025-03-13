@@ -12,19 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProfileRequest::CreateProfileRequest() : 
-    m_nameHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_phoneHasBeenSet(false),
-    m_businessNameHasBeenSet(false),
-    m_logging(Logging::NOT_SET),
-    m_loggingHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateProfileRequest::SerializePayload() const
 {
   JsonValue payload;

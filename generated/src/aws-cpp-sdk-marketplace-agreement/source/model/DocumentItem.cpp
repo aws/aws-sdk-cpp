@@ -18,15 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-DocumentItem::DocumentItem() : 
-    m_typeHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 DocumentItem::DocumentItem(JsonView jsonValue)
-  : DocumentItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DocumentItem& DocumentItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateMultiRegionClusterResult
   {
   public:
-    AWS_MEMORYDB_API CreateMultiRegionClusterResult();
+    AWS_MEMORYDB_API CreateMultiRegionClusterResult() = default;
     AWS_MEMORYDB_API CreateMultiRegionClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEMORYDB_API CreateMultiRegionClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the newly created multi-Region cluster.</p>
      */
-    inline const MultiRegionCluster& GetMultiRegionCluster() const{ return m_multiRegionCluster; }
-    inline void SetMultiRegionCluster(const MultiRegionCluster& value) { m_multiRegionCluster = value; }
-    inline void SetMultiRegionCluster(MultiRegionCluster&& value) { m_multiRegionCluster = std::move(value); }
-    inline CreateMultiRegionClusterResult& WithMultiRegionCluster(const MultiRegionCluster& value) { SetMultiRegionCluster(value); return *this;}
-    inline CreateMultiRegionClusterResult& WithMultiRegionCluster(MultiRegionCluster&& value) { SetMultiRegionCluster(std::move(value)); return *this;}
+    inline const MultiRegionCluster& GetMultiRegionCluster() const { return m_multiRegionCluster; }
+    template<typename MultiRegionClusterT = MultiRegionCluster>
+    void SetMultiRegionCluster(MultiRegionClusterT&& value) { m_multiRegionClusterHasBeenSet = true; m_multiRegionCluster = std::forward<MultiRegionClusterT>(value); }
+    template<typename MultiRegionClusterT = MultiRegionCluster>
+    CreateMultiRegionClusterResult& WithMultiRegionCluster(MultiRegionClusterT&& value) { SetMultiRegionCluster(std::forward<MultiRegionClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMultiRegionClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMultiRegionClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMultiRegionClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMultiRegionClusterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MultiRegionCluster m_multiRegionCluster;
+    bool m_multiRegionClusterHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

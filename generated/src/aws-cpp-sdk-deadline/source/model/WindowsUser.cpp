@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-WindowsUser::WindowsUser() : 
-    m_userHasBeenSet(false),
-    m_passwordArnHasBeenSet(false)
-{
-}
-
 WindowsUser::WindowsUser(JsonView jsonValue)
-  : WindowsUser()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WindowsUser& WindowsUser::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetString("user");
-
     m_userHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("passwordArn"))
   {
     m_passwordArn = jsonValue.GetString("passwordArn");
-
     m_passwordArnHasBeenSet = true;
   }
-
   return *this;
 }
 

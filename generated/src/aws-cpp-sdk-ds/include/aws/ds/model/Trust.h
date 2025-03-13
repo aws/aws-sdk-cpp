@@ -37,7 +37,7 @@ namespace Model
   class Trust
   {
   public:
-    AWS_DIRECTORYSERVICE_API Trust();
+    AWS_DIRECTORYSERVICE_API Trust() = default;
     AWS_DIRECTORYSERVICE_API Trust(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Trust& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
      * <p>The Directory ID of the Amazon Web Services directory involved in the trust
      * relationship.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline Trust& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline Trust& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline Trust& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    Trust& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the trust relationship.</p>
      */
-    inline const Aws::String& GetTrustId() const{ return m_trustId; }
+    inline const Aws::String& GetTrustId() const { return m_trustId; }
     inline bool TrustIdHasBeenSet() const { return m_trustIdHasBeenSet; }
-    inline void SetTrustId(const Aws::String& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
-    inline void SetTrustId(Aws::String&& value) { m_trustIdHasBeenSet = true; m_trustId = std::move(value); }
-    inline void SetTrustId(const char* value) { m_trustIdHasBeenSet = true; m_trustId.assign(value); }
-    inline Trust& WithTrustId(const Aws::String& value) { SetTrustId(value); return *this;}
-    inline Trust& WithTrustId(Aws::String&& value) { SetTrustId(std::move(value)); return *this;}
-    inline Trust& WithTrustId(const char* value) { SetTrustId(value); return *this;}
+    template<typename TrustIdT = Aws::String>
+    void SetTrustId(TrustIdT&& value) { m_trustIdHasBeenSet = true; m_trustId = std::forward<TrustIdT>(value); }
+    template<typename TrustIdT = Aws::String>
+    Trust& WithTrustId(TrustIdT&& value) { SetTrustId(std::forward<TrustIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,112 +73,100 @@ namespace Model
      * <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the
      * trust relationship.</p>
      */
-    inline const Aws::String& GetRemoteDomainName() const{ return m_remoteDomainName; }
+    inline const Aws::String& GetRemoteDomainName() const { return m_remoteDomainName; }
     inline bool RemoteDomainNameHasBeenSet() const { return m_remoteDomainNameHasBeenSet; }
-    inline void SetRemoteDomainName(const Aws::String& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = value; }
-    inline void SetRemoteDomainName(Aws::String&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = std::move(value); }
-    inline void SetRemoteDomainName(const char* value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName.assign(value); }
-    inline Trust& WithRemoteDomainName(const Aws::String& value) { SetRemoteDomainName(value); return *this;}
-    inline Trust& WithRemoteDomainName(Aws::String&& value) { SetRemoteDomainName(std::move(value)); return *this;}
-    inline Trust& WithRemoteDomainName(const char* value) { SetRemoteDomainName(value); return *this;}
+    template<typename RemoteDomainNameT = Aws::String>
+    void SetRemoteDomainName(RemoteDomainNameT&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = std::forward<RemoteDomainNameT>(value); }
+    template<typename RemoteDomainNameT = Aws::String>
+    Trust& WithRemoteDomainName(RemoteDomainNameT&& value) { SetRemoteDomainName(std::forward<RemoteDomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The trust relationship type. <code>Forest</code> is the default.</p>
      */
-    inline const TrustType& GetTrustType() const{ return m_trustType; }
+    inline TrustType GetTrustType() const { return m_trustType; }
     inline bool TrustTypeHasBeenSet() const { return m_trustTypeHasBeenSet; }
-    inline void SetTrustType(const TrustType& value) { m_trustTypeHasBeenSet = true; m_trustType = value; }
-    inline void SetTrustType(TrustType&& value) { m_trustTypeHasBeenSet = true; m_trustType = std::move(value); }
-    inline Trust& WithTrustType(const TrustType& value) { SetTrustType(value); return *this;}
-    inline Trust& WithTrustType(TrustType&& value) { SetTrustType(std::move(value)); return *this;}
+    inline void SetTrustType(TrustType value) { m_trustTypeHasBeenSet = true; m_trustType = value; }
+    inline Trust& WithTrustType(TrustType value) { SetTrustType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The trust relationship direction.</p>
      */
-    inline const TrustDirection& GetTrustDirection() const{ return m_trustDirection; }
+    inline TrustDirection GetTrustDirection() const { return m_trustDirection; }
     inline bool TrustDirectionHasBeenSet() const { return m_trustDirectionHasBeenSet; }
-    inline void SetTrustDirection(const TrustDirection& value) { m_trustDirectionHasBeenSet = true; m_trustDirection = value; }
-    inline void SetTrustDirection(TrustDirection&& value) { m_trustDirectionHasBeenSet = true; m_trustDirection = std::move(value); }
-    inline Trust& WithTrustDirection(const TrustDirection& value) { SetTrustDirection(value); return *this;}
-    inline Trust& WithTrustDirection(TrustDirection&& value) { SetTrustDirection(std::move(value)); return *this;}
+    inline void SetTrustDirection(TrustDirection value) { m_trustDirectionHasBeenSet = true; m_trustDirection = value; }
+    inline Trust& WithTrustDirection(TrustDirection value) { SetTrustDirection(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The trust relationship state.</p>
      */
-    inline const TrustState& GetTrustState() const{ return m_trustState; }
+    inline TrustState GetTrustState() const { return m_trustState; }
     inline bool TrustStateHasBeenSet() const { return m_trustStateHasBeenSet; }
-    inline void SetTrustState(const TrustState& value) { m_trustStateHasBeenSet = true; m_trustState = value; }
-    inline void SetTrustState(TrustState&& value) { m_trustStateHasBeenSet = true; m_trustState = std::move(value); }
-    inline Trust& WithTrustState(const TrustState& value) { SetTrustState(value); return *this;}
-    inline Trust& WithTrustState(TrustState&& value) { SetTrustState(std::move(value)); return *this;}
+    inline void SetTrustState(TrustState value) { m_trustStateHasBeenSet = true; m_trustState = value; }
+    inline Trust& WithTrustState(TrustState value) { SetTrustState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the trust relationship was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDateTime() const{ return m_createdDateTime; }
+    inline const Aws::Utils::DateTime& GetCreatedDateTime() const { return m_createdDateTime; }
     inline bool CreatedDateTimeHasBeenSet() const { return m_createdDateTimeHasBeenSet; }
-    inline void SetCreatedDateTime(const Aws::Utils::DateTime& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = value; }
-    inline void SetCreatedDateTime(Aws::Utils::DateTime&& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = std::move(value); }
-    inline Trust& WithCreatedDateTime(const Aws::Utils::DateTime& value) { SetCreatedDateTime(value); return *this;}
-    inline Trust& WithCreatedDateTime(Aws::Utils::DateTime&& value) { SetCreatedDateTime(std::move(value)); return *this;}
+    template<typename CreatedDateTimeT = Aws::Utils::DateTime>
+    void SetCreatedDateTime(CreatedDateTimeT&& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = std::forward<CreatedDateTimeT>(value); }
+    template<typename CreatedDateTimeT = Aws::Utils::DateTime>
+    Trust& WithCreatedDateTime(CreatedDateTimeT&& value) { SetCreatedDateTime(std::forward<CreatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the trust relationship was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
-    inline Trust& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline Trust& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    Trust& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the TrustState was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetStateLastUpdatedDateTime() const{ return m_stateLastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetStateLastUpdatedDateTime() const { return m_stateLastUpdatedDateTime; }
     inline bool StateLastUpdatedDateTimeHasBeenSet() const { return m_stateLastUpdatedDateTimeHasBeenSet; }
-    inline void SetStateLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_stateLastUpdatedDateTimeHasBeenSet = true; m_stateLastUpdatedDateTime = value; }
-    inline void SetStateLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_stateLastUpdatedDateTimeHasBeenSet = true; m_stateLastUpdatedDateTime = std::move(value); }
-    inline Trust& WithStateLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetStateLastUpdatedDateTime(value); return *this;}
-    inline Trust& WithStateLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetStateLastUpdatedDateTime(std::move(value)); return *this;}
+    template<typename StateLastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetStateLastUpdatedDateTime(StateLastUpdatedDateTimeT&& value) { m_stateLastUpdatedDateTimeHasBeenSet = true; m_stateLastUpdatedDateTime = std::forward<StateLastUpdatedDateTimeT>(value); }
+    template<typename StateLastUpdatedDateTimeT = Aws::Utils::DateTime>
+    Trust& WithStateLastUpdatedDateTime(StateLastUpdatedDateTimeT&& value) { SetStateLastUpdatedDateTime(std::forward<StateLastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the TrustState.</p>
      */
-    inline const Aws::String& GetTrustStateReason() const{ return m_trustStateReason; }
+    inline const Aws::String& GetTrustStateReason() const { return m_trustStateReason; }
     inline bool TrustStateReasonHasBeenSet() const { return m_trustStateReasonHasBeenSet; }
-    inline void SetTrustStateReason(const Aws::String& value) { m_trustStateReasonHasBeenSet = true; m_trustStateReason = value; }
-    inline void SetTrustStateReason(Aws::String&& value) { m_trustStateReasonHasBeenSet = true; m_trustStateReason = std::move(value); }
-    inline void SetTrustStateReason(const char* value) { m_trustStateReasonHasBeenSet = true; m_trustStateReason.assign(value); }
-    inline Trust& WithTrustStateReason(const Aws::String& value) { SetTrustStateReason(value); return *this;}
-    inline Trust& WithTrustStateReason(Aws::String&& value) { SetTrustStateReason(std::move(value)); return *this;}
-    inline Trust& WithTrustStateReason(const char* value) { SetTrustStateReason(value); return *this;}
+    template<typename TrustStateReasonT = Aws::String>
+    void SetTrustStateReason(TrustStateReasonT&& value) { m_trustStateReasonHasBeenSet = true; m_trustStateReason = std::forward<TrustStateReasonT>(value); }
+    template<typename TrustStateReasonT = Aws::String>
+    Trust& WithTrustStateReason(TrustStateReasonT&& value) { SetTrustStateReason(std::forward<TrustStateReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Current state of selective authentication for the trust.</p>
      */
-    inline const SelectiveAuth& GetSelectiveAuth() const{ return m_selectiveAuth; }
+    inline SelectiveAuth GetSelectiveAuth() const { return m_selectiveAuth; }
     inline bool SelectiveAuthHasBeenSet() const { return m_selectiveAuthHasBeenSet; }
-    inline void SetSelectiveAuth(const SelectiveAuth& value) { m_selectiveAuthHasBeenSet = true; m_selectiveAuth = value; }
-    inline void SetSelectiveAuth(SelectiveAuth&& value) { m_selectiveAuthHasBeenSet = true; m_selectiveAuth = std::move(value); }
-    inline Trust& WithSelectiveAuth(const SelectiveAuth& value) { SetSelectiveAuth(value); return *this;}
-    inline Trust& WithSelectiveAuth(SelectiveAuth&& value) { SetSelectiveAuth(std::move(value)); return *this;}
+    inline void SetSelectiveAuth(SelectiveAuth value) { m_selectiveAuthHasBeenSet = true; m_selectiveAuth = value; }
+    inline Trust& WithSelectiveAuth(SelectiveAuth value) { SetSelectiveAuth(value); return *this;}
     ///@}
   private:
 
@@ -195,28 +179,28 @@ namespace Model
     Aws::String m_remoteDomainName;
     bool m_remoteDomainNameHasBeenSet = false;
 
-    TrustType m_trustType;
+    TrustType m_trustType{TrustType::NOT_SET};
     bool m_trustTypeHasBeenSet = false;
 
-    TrustDirection m_trustDirection;
+    TrustDirection m_trustDirection{TrustDirection::NOT_SET};
     bool m_trustDirectionHasBeenSet = false;
 
-    TrustState m_trustState;
+    TrustState m_trustState{TrustState::NOT_SET};
     bool m_trustStateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDateTime;
+    Aws::Utils::DateTime m_createdDateTime{};
     bool m_createdDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
     bool m_lastUpdatedDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stateLastUpdatedDateTime;
+    Aws::Utils::DateTime m_stateLastUpdatedDateTime{};
     bool m_stateLastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_trustStateReason;
     bool m_trustStateReasonHasBeenSet = false;
 
-    SelectiveAuth m_selectiveAuth;
+    SelectiveAuth m_selectiveAuth{SelectiveAuth::NOT_SET};
     bool m_selectiveAuthHasBeenSet = false;
   };
 

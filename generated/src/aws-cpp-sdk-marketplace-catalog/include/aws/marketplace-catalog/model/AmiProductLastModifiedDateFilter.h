@@ -32,7 +32,7 @@ namespace Model
   class AmiProductLastModifiedDateFilter
   {
   public:
-    AWS_MARKETPLACECATALOG_API AmiProductLastModifiedDateFilter();
+    AWS_MARKETPLACECATALOG_API AmiProductLastModifiedDateFilter() = default;
     AWS_MARKETPLACECATALOG_API AmiProductLastModifiedDateFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API AmiProductLastModifiedDateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Dates between which the AMI product was last modified.</p>
      */
-    inline const AmiProductLastModifiedDateFilterDateRange& GetDateRange() const{ return m_dateRange; }
+    inline const AmiProductLastModifiedDateFilterDateRange& GetDateRange() const { return m_dateRange; }
     inline bool DateRangeHasBeenSet() const { return m_dateRangeHasBeenSet; }
-    inline void SetDateRange(const AmiProductLastModifiedDateFilterDateRange& value) { m_dateRangeHasBeenSet = true; m_dateRange = value; }
-    inline void SetDateRange(AmiProductLastModifiedDateFilterDateRange&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::move(value); }
-    inline AmiProductLastModifiedDateFilter& WithDateRange(const AmiProductLastModifiedDateFilterDateRange& value) { SetDateRange(value); return *this;}
-    inline AmiProductLastModifiedDateFilter& WithDateRange(AmiProductLastModifiedDateFilterDateRange&& value) { SetDateRange(std::move(value)); return *this;}
+    template<typename DateRangeT = AmiProductLastModifiedDateFilterDateRange>
+    void SetDateRange(DateRangeT&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::forward<DateRangeT>(value); }
+    template<typename DateRangeT = AmiProductLastModifiedDateFilterDateRange>
+    AmiProductLastModifiedDateFilter& WithDateRange(DateRangeT&& value) { SetDateRange(std::forward<DateRangeT>(value)); return *this;}
     ///@}
   private:
 

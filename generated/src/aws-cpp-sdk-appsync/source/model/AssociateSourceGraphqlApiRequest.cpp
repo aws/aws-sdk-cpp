@@ -12,14 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateSourceGraphqlApiRequest::AssociateSourceGraphqlApiRequest() : 
-    m_mergedApiIdentifierHasBeenSet(false),
-    m_sourceApiIdentifierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceApiAssociationConfigHasBeenSet(false)
-{
-}
-
 Aws::String AssociateSourceGraphqlApiRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ClusterConfiguration::ClusterConfiguration() : 
-    m_executeCommandConfigurationHasBeenSet(false),
-    m_managedStorageConfigurationHasBeenSet(false)
-{
-}
-
 ClusterConfiguration::ClusterConfiguration(JsonView jsonValue)
-  : ClusterConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ClusterConfiguration& ClusterConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("executeCommandConfiguration"))
   {
     m_executeCommandConfiguration = jsonValue.GetObject("executeCommandConfiguration");
-
     m_executeCommandConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedStorageConfiguration"))
   {
     m_managedStorageConfiguration = jsonValue.GetObject("managedStorageConfiguration");
-
     m_managedStorageConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

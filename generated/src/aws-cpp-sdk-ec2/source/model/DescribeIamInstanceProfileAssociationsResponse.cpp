@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIamInstanceProfileAssociationsResponse::DescribeIamInstanceProfileAssociationsResponse()
-{
-}
-
 DescribeIamInstanceProfileAssociationsResponse::DescribeIamInstanceProfileAssociationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeIamInstanceProfileAssociationsResponse& DescribeIamInstanceProfileAssoci
     if(!iamInstanceProfileAssociationsNode.IsNull())
     {
       XmlNode iamInstanceProfileAssociationsMember = iamInstanceProfileAssociationsNode.FirstChild("item");
+      m_iamInstanceProfileAssociationsHasBeenSet = !iamInstanceProfileAssociationsMember.IsNull();
       while(!iamInstanceProfileAssociationsMember.IsNull())
       {
         m_iamInstanceProfileAssociations.push_back(iamInstanceProfileAssociationsMember);
@@ -53,6 +50,7 @@ DescribeIamInstanceProfileAssociationsResponse& DescribeIamInstanceProfileAssoci
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeIamInstanceProfileAssociationsResponse& DescribeIamInstanceProfileAssoci
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeIamInstanceProfileAssociationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

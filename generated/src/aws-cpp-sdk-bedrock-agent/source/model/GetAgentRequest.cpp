@@ -12,11 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAgentRequest::GetAgentRequest() : 
-    m_agentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAgentRequest::SerializePayload() const
 {
   return {};

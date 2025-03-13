@@ -33,7 +33,7 @@ namespace Model
   class BaselineEbsBandwidthMbpsRequest
   {
   public:
-    AWS_EC2_API BaselineEbsBandwidthMbpsRequest();
+    AWS_EC2_API BaselineEbsBandwidthMbpsRequest() = default;
     AWS_EC2_API BaselineEbsBandwidthMbpsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API BaselineEbsBandwidthMbpsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,7 +46,7 @@ namespace Model
      * <p>The minimum baseline bandwidth, in Mbps. To specify no minimum limit, omit
      * this parameter.</p>
      */
-    inline int GetMin() const{ return m_min; }
+    inline int GetMin() const { return m_min; }
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
     inline BaselineEbsBandwidthMbpsRequest& WithMin(int value) { SetMin(value); return *this;}
@@ -57,17 +57,17 @@ namespace Model
      * <p>The maximum baseline bandwidth, in Mbps. To specify no maximum limit, omit
      * this parameter.</p>
      */
-    inline int GetMax() const{ return m_max; }
+    inline int GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
     inline BaselineEbsBandwidthMbpsRequest& WithMax(int value) { SetMax(value); return *this;}
     ///@}
   private:
 
-    int m_min;
+    int m_min{0};
     bool m_minHasBeenSet = false;
 
-    int m_max;
+    int m_max{0};
     bool m_maxHasBeenSet = false;
   };
 

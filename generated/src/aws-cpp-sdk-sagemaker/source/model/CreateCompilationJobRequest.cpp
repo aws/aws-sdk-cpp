@@ -12,18 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCompilationJobRequest::CreateCompilationJobRequest() : 
-    m_compilationJobNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_modelPackageVersionArnHasBeenSet(false),
-    m_inputConfigHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCompilationJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,13 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-SetSubscriptionAttributesRequest::SetSubscriptionAttributesRequest() : 
-    m_subscriptionArnHasBeenSet(false),
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
-{
-}
-
 Aws::String SetSubscriptionAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

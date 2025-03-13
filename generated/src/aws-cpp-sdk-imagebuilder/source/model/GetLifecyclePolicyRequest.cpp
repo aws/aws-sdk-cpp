@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLifecyclePolicyRequest::GetLifecyclePolicyRequest() : 
-    m_lifecyclePolicyArnHasBeenSet(false)
-{
-}
-
 Aws::String GetLifecyclePolicyRequest::SerializePayload() const
 {
   return {};

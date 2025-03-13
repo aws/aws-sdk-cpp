@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PtrUpdateStatus::PtrUpdateStatus() : 
-    m_valueHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 PtrUpdateStatus::PtrUpdateStatus(const XmlNode& xmlNode)
-  : PtrUpdateStatus()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ PtrUpdateStatus& PtrUpdateStatus::operator =(const XmlNode& xmlNode)
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode reasonNode = resultNode.FirstChild("reason");
     if(!reasonNode.IsNull())
     {
       m_reason = Aws::Utils::Xml::DecodeEscapedXmlText(reasonNode.GetText());
       m_reasonHasBeenSet = true;
+       m_reasonHasBeenSet = true;
     }
   }
 

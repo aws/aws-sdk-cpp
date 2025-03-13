@@ -34,7 +34,7 @@ namespace Model
   class ExportToS3Task
   {
   public:
-    AWS_EC2_API ExportToS3Task();
+    AWS_EC2_API ExportToS3Task() = default;
     AWS_EC2_API ExportToS3Task(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ExportToS3Task& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,24 +47,20 @@ namespace Model
      * <p>The container format used to combine disk images with metadata (such as OVF).
      * If absent, only the disk image is exported.</p>
      */
-    inline const ContainerFormat& GetContainerFormat() const{ return m_containerFormat; }
+    inline ContainerFormat GetContainerFormat() const { return m_containerFormat; }
     inline bool ContainerFormatHasBeenSet() const { return m_containerFormatHasBeenSet; }
-    inline void SetContainerFormat(const ContainerFormat& value) { m_containerFormatHasBeenSet = true; m_containerFormat = value; }
-    inline void SetContainerFormat(ContainerFormat&& value) { m_containerFormatHasBeenSet = true; m_containerFormat = std::move(value); }
-    inline ExportToS3Task& WithContainerFormat(const ContainerFormat& value) { SetContainerFormat(value); return *this;}
-    inline ExportToS3Task& WithContainerFormat(ContainerFormat&& value) { SetContainerFormat(std::move(value)); return *this;}
+    inline void SetContainerFormat(ContainerFormat value) { m_containerFormatHasBeenSet = true; m_containerFormat = value; }
+    inline ExportToS3Task& WithContainerFormat(ContainerFormat value) { SetContainerFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format for the exported image.</p>
      */
-    inline const DiskImageFormat& GetDiskImageFormat() const{ return m_diskImageFormat; }
+    inline DiskImageFormat GetDiskImageFormat() const { return m_diskImageFormat; }
     inline bool DiskImageFormatHasBeenSet() const { return m_diskImageFormatHasBeenSet; }
-    inline void SetDiskImageFormat(const DiskImageFormat& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = value; }
-    inline void SetDiskImageFormat(DiskImageFormat&& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = std::move(value); }
-    inline ExportToS3Task& WithDiskImageFormat(const DiskImageFormat& value) { SetDiskImageFormat(value); return *this;}
-    inline ExportToS3Task& WithDiskImageFormat(DiskImageFormat&& value) { SetDiskImageFormat(std::move(value)); return *this;}
+    inline void SetDiskImageFormat(DiskImageFormat value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = value; }
+    inline ExportToS3Task& WithDiskImageFormat(DiskImageFormat value) { SetDiskImageFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -76,35 +72,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a>
      * in the VM Import/Export User Guide.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline ExportToS3Task& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline ExportToS3Task& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline ExportToS3Task& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    ExportToS3Task& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The encryption key for your S3 bucket.</p>
      */
-    inline const Aws::String& GetS3Key() const{ return m_s3Key; }
+    inline const Aws::String& GetS3Key() const { return m_s3Key; }
     inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
-    inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
-    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
-    inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
-    inline ExportToS3Task& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
-    inline ExportToS3Task& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
-    inline ExportToS3Task& WithS3Key(const char* value) { SetS3Key(value); return *this;}
+    template<typename S3KeyT = Aws::String>
+    void SetS3Key(S3KeyT&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::forward<S3KeyT>(value); }
+    template<typename S3KeyT = Aws::String>
+    ExportToS3Task& WithS3Key(S3KeyT&& value) { SetS3Key(std::forward<S3KeyT>(value)); return *this;}
     ///@}
   private:
 
-    ContainerFormat m_containerFormat;
+    ContainerFormat m_containerFormat{ContainerFormat::NOT_SET};
     bool m_containerFormatHasBeenSet = false;
 
-    DiskImageFormat m_diskImageFormat;
+    DiskImageFormat m_diskImageFormat{DiskImageFormat::NOT_SET};
     bool m_diskImageFormatHasBeenSet = false;
 
     Aws::String m_s3Bucket;

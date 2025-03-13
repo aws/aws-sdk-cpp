@@ -36,7 +36,7 @@ namespace Model
   class OrderableReplicationInstance
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API OrderableReplicationInstance();
+    AWS_DATABASEMIGRATIONSERVICE_API OrderableReplicationInstance() = default;
     AWS_DATABASEMIGRATIONSERVICE_API OrderableReplicationInstance(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API OrderableReplicationInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The version of the replication engine.</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline OrderableReplicationInstance& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline OrderableReplicationInstance& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline OrderableReplicationInstance& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    OrderableReplicationInstance& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,28 +64,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
      * Selecting the right DMS replication instance for your migration</a>. </p>
      */
-    inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
+    inline const Aws::String& GetReplicationInstanceClass() const { return m_replicationInstanceClass; }
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
-    inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
-    inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
-    inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
-    inline OrderableReplicationInstance& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
-    inline OrderableReplicationInstance& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
-    inline OrderableReplicationInstance& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
+    template<typename ReplicationInstanceClassT = Aws::String>
+    void SetReplicationInstanceClass(ReplicationInstanceClassT&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::forward<ReplicationInstanceClassT>(value); }
+    template<typename ReplicationInstanceClassT = Aws::String>
+    OrderableReplicationInstance& WithReplicationInstanceClass(ReplicationInstanceClassT&& value) { SetReplicationInstanceClass(std::forward<ReplicationInstanceClassT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of storage used by the replication instance.</p>
      */
-    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
-    inline OrderableReplicationInstance& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
-    inline OrderableReplicationInstance& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
-    inline OrderableReplicationInstance& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    OrderableReplicationInstance& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +89,7 @@ namespace Model
      * <p>The minimum amount of storage (in gigabytes) that can be allocated for the
      * replication instance.</p>
      */
-    inline int GetMinAllocatedStorage() const{ return m_minAllocatedStorage; }
+    inline int GetMinAllocatedStorage() const { return m_minAllocatedStorage; }
     inline bool MinAllocatedStorageHasBeenSet() const { return m_minAllocatedStorageHasBeenSet; }
     inline void SetMinAllocatedStorage(int value) { m_minAllocatedStorageHasBeenSet = true; m_minAllocatedStorage = value; }
     inline OrderableReplicationInstance& WithMinAllocatedStorage(int value) { SetMinAllocatedStorage(value); return *this;}
@@ -106,7 +100,7 @@ namespace Model
      * <p>The minimum amount of storage (in gigabytes) that can be allocated for the
      * replication instance.</p>
      */
-    inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
+    inline int GetMaxAllocatedStorage() const { return m_maxAllocatedStorage; }
     inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
     inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
     inline OrderableReplicationInstance& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
@@ -117,7 +111,7 @@ namespace Model
      * <p>The default amount of storage (in gigabytes) that is allocated for the
      * replication instance.</p>
      */
-    inline int GetDefaultAllocatedStorage() const{ return m_defaultAllocatedStorage; }
+    inline int GetDefaultAllocatedStorage() const { return m_defaultAllocatedStorage; }
     inline bool DefaultAllocatedStorageHasBeenSet() const { return m_defaultAllocatedStorageHasBeenSet; }
     inline void SetDefaultAllocatedStorage(int value) { m_defaultAllocatedStorageHasBeenSet = true; m_defaultAllocatedStorage = value; }
     inline OrderableReplicationInstance& WithDefaultAllocatedStorage(int value) { SetDefaultAllocatedStorage(value); return *this;}
@@ -128,7 +122,7 @@ namespace Model
      * <p>The amount of storage (in gigabytes) that is allocated for the replication
      * instance.</p>
      */
-    inline int GetIncludedAllocatedStorage() const{ return m_includedAllocatedStorage; }
+    inline int GetIncludedAllocatedStorage() const { return m_includedAllocatedStorage; }
     inline bool IncludedAllocatedStorageHasBeenSet() const { return m_includedAllocatedStorageHasBeenSet; }
     inline void SetIncludedAllocatedStorage(int value) { m_includedAllocatedStorageHasBeenSet = true; m_includedAllocatedStorage = value; }
     inline OrderableReplicationInstance& WithIncludedAllocatedStorage(int value) { SetIncludedAllocatedStorage(value); return *this;}
@@ -138,15 +132,14 @@ namespace Model
     /**
      * <p>List of Availability Zones for this replication instance.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const { return m_availabilityZones; }
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
-    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
-    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
-    inline OrderableReplicationInstance& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
-    inline OrderableReplicationInstance& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
-    inline OrderableReplicationInstance& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
-    inline OrderableReplicationInstance& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
-    inline OrderableReplicationInstance& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+    template<typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+    void SetAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::forward<AvailabilityZonesT>(value); }
+    template<typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+    OrderableReplicationInstance& WithAvailabilityZones(AvailabilityZonesT&& value) { SetAvailabilityZones(std::forward<AvailabilityZonesT>(value)); return *this;}
+    template<typename AvailabilityZonesT = Aws::String>
+    OrderableReplicationInstance& AddAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.emplace_back(std::forward<AvailabilityZonesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -156,12 +149,10 @@ namespace Model
      * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
      * parameter in versions 3.1.4 and later.</p> 
      */
-    inline const ReleaseStatusValues& GetReleaseStatus() const{ return m_releaseStatus; }
+    inline ReleaseStatusValues GetReleaseStatus() const { return m_releaseStatus; }
     inline bool ReleaseStatusHasBeenSet() const { return m_releaseStatusHasBeenSet; }
-    inline void SetReleaseStatus(const ReleaseStatusValues& value) { m_releaseStatusHasBeenSet = true; m_releaseStatus = value; }
-    inline void SetReleaseStatus(ReleaseStatusValues&& value) { m_releaseStatusHasBeenSet = true; m_releaseStatus = std::move(value); }
-    inline OrderableReplicationInstance& WithReleaseStatus(const ReleaseStatusValues& value) { SetReleaseStatus(value); return *this;}
-    inline OrderableReplicationInstance& WithReleaseStatus(ReleaseStatusValues&& value) { SetReleaseStatus(std::move(value)); return *this;}
+    inline void SetReleaseStatus(ReleaseStatusValues value) { m_releaseStatusHasBeenSet = true; m_releaseStatus = value; }
+    inline OrderableReplicationInstance& WithReleaseStatus(ReleaseStatusValues value) { SetReleaseStatus(value); return *this;}
     ///@}
   private:
 
@@ -174,22 +165,22 @@ namespace Model
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet = false;
 
-    int m_minAllocatedStorage;
+    int m_minAllocatedStorage{0};
     bool m_minAllocatedStorageHasBeenSet = false;
 
-    int m_maxAllocatedStorage;
+    int m_maxAllocatedStorage{0};
     bool m_maxAllocatedStorageHasBeenSet = false;
 
-    int m_defaultAllocatedStorage;
+    int m_defaultAllocatedStorage{0};
     bool m_defaultAllocatedStorageHasBeenSet = false;
 
-    int m_includedAllocatedStorage;
+    int m_includedAllocatedStorage{0};
     bool m_includedAllocatedStorageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet = false;
 
-    ReleaseStatusValues m_releaseStatus;
+    ReleaseStatusValues m_releaseStatus{ReleaseStatusValues::NOT_SET};
     bool m_releaseStatusHasBeenSet = false;
   };
 

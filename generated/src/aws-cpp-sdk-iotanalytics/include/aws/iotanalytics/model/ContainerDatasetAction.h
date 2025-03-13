@@ -35,7 +35,7 @@ namespace Model
   class ContainerDatasetAction
   {
   public:
-    AWS_IOTANALYTICS_API ContainerDatasetAction();
+    AWS_IOTANALYTICS_API ContainerDatasetAction() = default;
     AWS_IOTANALYTICS_API ContainerDatasetAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API ContainerDatasetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * contains an application and required support libraries and is used to generate
      * dataset contents.</p>
      */
-    inline const Aws::String& GetImage() const{ return m_image; }
+    inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-    inline ContainerDatasetAction& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-    inline ContainerDatasetAction& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-    inline ContainerDatasetAction& WithImage(const char* value) { SetImage(value); return *this;}
+    template<typename ImageT = Aws::String>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Aws::String>
+    ContainerDatasetAction& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * permission to retrieve the dataset contents that are the input to the
      * containerized application.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline ContainerDatasetAction& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline ContainerDatasetAction& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline ContainerDatasetAction& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    ContainerDatasetAction& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,12 @@ namespace Model
      * <p>Configuration of the resource that executes the
      * <code>containerAction</code>.</p>
      */
-    inline const ResourceConfiguration& GetResourceConfiguration() const{ return m_resourceConfiguration; }
+    inline const ResourceConfiguration& GetResourceConfiguration() const { return m_resourceConfiguration; }
     inline bool ResourceConfigurationHasBeenSet() const { return m_resourceConfigurationHasBeenSet; }
-    inline void SetResourceConfiguration(const ResourceConfiguration& value) { m_resourceConfigurationHasBeenSet = true; m_resourceConfiguration = value; }
-    inline void SetResourceConfiguration(ResourceConfiguration&& value) { m_resourceConfigurationHasBeenSet = true; m_resourceConfiguration = std::move(value); }
-    inline ContainerDatasetAction& WithResourceConfiguration(const ResourceConfiguration& value) { SetResourceConfiguration(value); return *this;}
-    inline ContainerDatasetAction& WithResourceConfiguration(ResourceConfiguration&& value) { SetResourceConfiguration(std::move(value)); return *this;}
+    template<typename ResourceConfigurationT = ResourceConfiguration>
+    void SetResourceConfiguration(ResourceConfigurationT&& value) { m_resourceConfigurationHasBeenSet = true; m_resourceConfiguration = std::forward<ResourceConfigurationT>(value); }
+    template<typename ResourceConfigurationT = ResourceConfiguration>
+    ContainerDatasetAction& WithResourceConfiguration(ResourceConfigurationT&& value) { SetResourceConfiguration(std::forward<ResourceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +91,14 @@ namespace Model
      * <code>stringValue</code>, <code>datasetContentVersionValue</code>, or
      * <code>outputFileUriValue</code>.</p>
      */
-    inline const Aws::Vector<Variable>& GetVariables() const{ return m_variables; }
+    inline const Aws::Vector<Variable>& GetVariables() const { return m_variables; }
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
-    inline void SetVariables(const Aws::Vector<Variable>& value) { m_variablesHasBeenSet = true; m_variables = value; }
-    inline void SetVariables(Aws::Vector<Variable>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
-    inline ContainerDatasetAction& WithVariables(const Aws::Vector<Variable>& value) { SetVariables(value); return *this;}
-    inline ContainerDatasetAction& WithVariables(Aws::Vector<Variable>&& value) { SetVariables(std::move(value)); return *this;}
-    inline ContainerDatasetAction& AddVariables(const Variable& value) { m_variablesHasBeenSet = true; m_variables.push_back(value); return *this; }
-    inline ContainerDatasetAction& AddVariables(Variable&& value) { m_variablesHasBeenSet = true; m_variables.push_back(std::move(value)); return *this; }
+    template<typename VariablesT = Aws::Vector<Variable>>
+    void SetVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables = std::forward<VariablesT>(value); }
+    template<typename VariablesT = Aws::Vector<Variable>>
+    ContainerDatasetAction& WithVariables(VariablesT&& value) { SetVariables(std::forward<VariablesT>(value)); return *this;}
+    template<typename VariablesT = Variable>
+    ContainerDatasetAction& AddVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables.emplace_back(std::forward<VariablesT>(value)); return *this; }
     ///@}
   private:
 

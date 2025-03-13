@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutEventsRequest::PutEventsRequest() : 
-    m_entriesHasBeenSet(false)
-{
-}
-
 Aws::String PutEventsRequest::SerializePayload() const
 {
   JsonValue payload;

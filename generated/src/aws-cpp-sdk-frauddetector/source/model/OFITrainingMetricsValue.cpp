@@ -18,14 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-OFITrainingMetricsValue::OFITrainingMetricsValue() : 
-    m_metricDataPointsHasBeenSet(false),
-    m_modelPerformanceHasBeenSet(false)
-{
-}
-
 OFITrainingMetricsValue::OFITrainingMetricsValue(JsonView jsonValue)
-  : OFITrainingMetricsValue()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ OFITrainingMetricsValue& OFITrainingMetricsValue::operator =(JsonView jsonValue)
     }
     m_metricDataPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelPerformance"))
   {
     m_modelPerformance = jsonValue.GetObject("modelPerformance");
-
     m_modelPerformanceHasBeenSet = true;
   }
-
   return *this;
 }
 

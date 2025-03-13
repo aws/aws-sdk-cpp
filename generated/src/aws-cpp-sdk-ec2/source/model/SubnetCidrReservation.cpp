@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SubnetCidrReservation::SubnetCidrReservation() : 
-    m_subnetCidrReservationIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_reservationType(SubnetCidrReservationType::NOT_SET),
-    m_reservationTypeHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 SubnetCidrReservation::SubnetCidrReservation(const XmlNode& xmlNode)
-  : SubnetCidrReservation()
 {
   *this = xmlNode;
 }
@@ -49,48 +36,55 @@ SubnetCidrReservation& SubnetCidrReservation::operator =(const XmlNode& xmlNode)
     {
       m_subnetCidrReservationId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetCidrReservationIdNode.GetText());
       m_subnetCidrReservationIdHasBeenSet = true;
+       m_subnetCidrReservationIdHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode cidrNode = resultNode.FirstChild("cidr");
     if(!cidrNode.IsNull())
     {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
+       m_cidrHasBeenSet = true;
     }
     XmlNode reservationTypeNode = resultNode.FirstChild("reservationType");
     if(!reservationTypeNode.IsNull())
     {
-      m_reservationType = SubnetCidrReservationTypeMapper::GetSubnetCidrReservationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservationTypeNode.GetText()).c_str()).c_str());
+      m_reservationType = SubnetCidrReservationTypeMapper::GetSubnetCidrReservationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservationTypeNode.GetText()).c_str()));
       m_reservationTypeHasBeenSet = true;
+       m_reservationTypeHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

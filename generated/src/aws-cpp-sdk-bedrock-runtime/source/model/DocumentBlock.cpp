@@ -18,16 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-DocumentBlock::DocumentBlock() : 
-    m_format(DocumentFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 DocumentBlock::DocumentBlock(JsonView jsonValue)
-  : DocumentBlock()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DocumentBlock& DocumentBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("format"))
   {
     m_format = DocumentFormatMapper::GetDocumentFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

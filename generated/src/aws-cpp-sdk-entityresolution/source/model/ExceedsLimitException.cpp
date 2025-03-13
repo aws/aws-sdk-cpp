@@ -18,16 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-ExceedsLimitException::ExceedsLimitException() : 
-    m_messageHasBeenSet(false),
-    m_quotaNameHasBeenSet(false),
-    m_quotaValue(0),
-    m_quotaValueHasBeenSet(false)
-{
-}
-
 ExceedsLimitException::ExceedsLimitException(JsonView jsonValue)
-  : ExceedsLimitException()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExceedsLimitException& ExceedsLimitException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quotaName"))
   {
     m_quotaName = jsonValue.GetString("quotaName");
-
     m_quotaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quotaValue"))
   {
     m_quotaValue = jsonValue.GetInteger("quotaValue");
-
     m_quotaValueHasBeenSet = true;
   }
-
   return *this;
 }
 

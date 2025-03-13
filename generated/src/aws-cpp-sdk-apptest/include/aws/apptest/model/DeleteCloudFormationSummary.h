@@ -32,7 +32,7 @@ namespace Model
   class DeleteCloudFormationSummary
   {
   public:
-    AWS_APPTEST_API DeleteCloudFormationSummary();
+    AWS_APPTEST_API DeleteCloudFormationSummary() = default;
     AWS_APPTEST_API DeleteCloudFormationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API DeleteCloudFormationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The step input of the deleted CloudFormation summary.</p>
      */
-    inline const DeleteCloudFormationStepInput& GetStepInput() const{ return m_stepInput; }
+    inline const DeleteCloudFormationStepInput& GetStepInput() const { return m_stepInput; }
     inline bool StepInputHasBeenSet() const { return m_stepInputHasBeenSet; }
-    inline void SetStepInput(const DeleteCloudFormationStepInput& value) { m_stepInputHasBeenSet = true; m_stepInput = value; }
-    inline void SetStepInput(DeleteCloudFormationStepInput&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::move(value); }
-    inline DeleteCloudFormationSummary& WithStepInput(const DeleteCloudFormationStepInput& value) { SetStepInput(value); return *this;}
-    inline DeleteCloudFormationSummary& WithStepInput(DeleteCloudFormationStepInput&& value) { SetStepInput(std::move(value)); return *this;}
+    template<typename StepInputT = DeleteCloudFormationStepInput>
+    void SetStepInput(StepInputT&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::forward<StepInputT>(value); }
+    template<typename StepInputT = DeleteCloudFormationStepInput>
+    DeleteCloudFormationSummary& WithStepInput(StepInputT&& value) { SetStepInput(std::forward<StepInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step output of the deleted CloudFormation summary.</p>
      */
-    inline const DeleteCloudFormationStepOutput& GetStepOutput() const{ return m_stepOutput; }
+    inline const DeleteCloudFormationStepOutput& GetStepOutput() const { return m_stepOutput; }
     inline bool StepOutputHasBeenSet() const { return m_stepOutputHasBeenSet; }
-    inline void SetStepOutput(const DeleteCloudFormationStepOutput& value) { m_stepOutputHasBeenSet = true; m_stepOutput = value; }
-    inline void SetStepOutput(DeleteCloudFormationStepOutput&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::move(value); }
-    inline DeleteCloudFormationSummary& WithStepOutput(const DeleteCloudFormationStepOutput& value) { SetStepOutput(value); return *this;}
-    inline DeleteCloudFormationSummary& WithStepOutput(DeleteCloudFormationStepOutput&& value) { SetStepOutput(std::move(value)); return *this;}
+    template<typename StepOutputT = DeleteCloudFormationStepOutput>
+    void SetStepOutput(StepOutputT&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::forward<StepOutputT>(value); }
+    template<typename StepOutputT = DeleteCloudFormationStepOutput>
+    DeleteCloudFormationSummary& WithStepOutput(StepOutputT&& value) { SetStepOutput(std::forward<StepOutputT>(value)); return *this;}
     ///@}
   private:
 

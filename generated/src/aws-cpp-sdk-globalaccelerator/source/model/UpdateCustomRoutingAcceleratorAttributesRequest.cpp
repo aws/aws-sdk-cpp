@@ -12,15 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCustomRoutingAcceleratorAttributesRequest::UpdateCustomRoutingAcceleratorAttributesRequest() : 
-    m_acceleratorArnHasBeenSet(false),
-    m_flowLogsEnabled(false),
-    m_flowLogsEnabledHasBeenSet(false),
-    m_flowLogsS3BucketHasBeenSet(false),
-    m_flowLogsS3PrefixHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCustomRoutingAcceleratorAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

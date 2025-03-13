@@ -18,16 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ZendeskConnectorProfileCredentials::ZendeskConnectorProfileCredentials() : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_accessTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false)
-{
-}
-
 ZendeskConnectorProfileCredentials::ZendeskConnectorProfileCredentials(JsonView jsonValue)
-  : ZendeskConnectorProfileCredentials()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ZendeskConnectorProfileCredentials& ZendeskConnectorProfileCredentials::operator
   if(jsonValue.ValueExists("clientId"))
   {
     m_clientId = jsonValue.GetString("clientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientSecret"))
   {
     m_clientSecret = jsonValue.GetString("clientSecret");
-
     m_clientSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessToken"))
   {
     m_accessToken = jsonValue.GetString("accessToken");
-
     m_accessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuthRequest"))
   {
     m_oAuthRequest = jsonValue.GetObject("oAuthRequest");
-
     m_oAuthRequestHasBeenSet = true;
   }
-
   return *this;
 }
 

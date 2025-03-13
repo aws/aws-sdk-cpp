@@ -27,7 +27,7 @@ namespace Model
   class DeletePublicIpv4PoolResponse
   {
   public:
-    AWS_EC2_API DeletePublicIpv4PoolResponse();
+    AWS_EC2_API DeletePublicIpv4PoolResponse() = default;
     AWS_EC2_API DeletePublicIpv4PoolResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeletePublicIpv4PoolResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -36,24 +36,26 @@ namespace Model
     /**
      * <p>Information about the result of deleting the public IPv4 pool.</p>
      */
-    inline bool GetReturnValue() const{ return m_returnValue; }
-    inline void SetReturnValue(bool value) { m_returnValue = value; }
+    inline bool GetReturnValue() const { return m_returnValue; }
+    inline void SetReturnValue(bool value) { m_returnValueHasBeenSet = true; m_returnValue = value; }
     inline DeletePublicIpv4PoolResponse& WithReturnValue(bool value) { SetReturnValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeletePublicIpv4PoolResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeletePublicIpv4PoolResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeletePublicIpv4PoolResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_returnValue;
+    bool m_returnValue{false};
+    bool m_returnValueHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

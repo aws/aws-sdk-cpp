@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFolderRequest::DescribeFolderRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_folderIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFolderRequest::SerializePayload() const
 {
   return {};

@@ -30,7 +30,7 @@ namespace Model
   class BatchGetResourceConfigResult
   {
   public:
-    AWS_CONFIGSERVICE_API BatchGetResourceConfigResult();
+    AWS_CONFIGSERVICE_API BatchGetResourceConfigResult() = default;
     AWS_CONFIGSERVICE_API BatchGetResourceConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API BatchGetResourceConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>A list that contains the current configuration of one or more resources.</p>
      */
-    inline const Aws::Vector<BaseConfigurationItem>& GetBaseConfigurationItems() const{ return m_baseConfigurationItems; }
-    inline void SetBaseConfigurationItems(const Aws::Vector<BaseConfigurationItem>& value) { m_baseConfigurationItems = value; }
-    inline void SetBaseConfigurationItems(Aws::Vector<BaseConfigurationItem>&& value) { m_baseConfigurationItems = std::move(value); }
-    inline BatchGetResourceConfigResult& WithBaseConfigurationItems(const Aws::Vector<BaseConfigurationItem>& value) { SetBaseConfigurationItems(value); return *this;}
-    inline BatchGetResourceConfigResult& WithBaseConfigurationItems(Aws::Vector<BaseConfigurationItem>&& value) { SetBaseConfigurationItems(std::move(value)); return *this;}
-    inline BatchGetResourceConfigResult& AddBaseConfigurationItems(const BaseConfigurationItem& value) { m_baseConfigurationItems.push_back(value); return *this; }
-    inline BatchGetResourceConfigResult& AddBaseConfigurationItems(BaseConfigurationItem&& value) { m_baseConfigurationItems.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BaseConfigurationItem>& GetBaseConfigurationItems() const { return m_baseConfigurationItems; }
+    template<typename BaseConfigurationItemsT = Aws::Vector<BaseConfigurationItem>>
+    void SetBaseConfigurationItems(BaseConfigurationItemsT&& value) { m_baseConfigurationItemsHasBeenSet = true; m_baseConfigurationItems = std::forward<BaseConfigurationItemsT>(value); }
+    template<typename BaseConfigurationItemsT = Aws::Vector<BaseConfigurationItem>>
+    BatchGetResourceConfigResult& WithBaseConfigurationItems(BaseConfigurationItemsT&& value) { SetBaseConfigurationItems(std::forward<BaseConfigurationItemsT>(value)); return *this;}
+    template<typename BaseConfigurationItemsT = BaseConfigurationItem>
+    BatchGetResourceConfigResult& AddBaseConfigurationItems(BaseConfigurationItemsT&& value) { m_baseConfigurationItemsHasBeenSet = true; m_baseConfigurationItems.emplace_back(std::forward<BaseConfigurationItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,33 @@ namespace Model
      * If there are no unprocessed resource keys, the response contains an empty
      * unprocessedResourceKeys list. </p>
      */
-    inline const Aws::Vector<ResourceKey>& GetUnprocessedResourceKeys() const{ return m_unprocessedResourceKeys; }
-    inline void SetUnprocessedResourceKeys(const Aws::Vector<ResourceKey>& value) { m_unprocessedResourceKeys = value; }
-    inline void SetUnprocessedResourceKeys(Aws::Vector<ResourceKey>&& value) { m_unprocessedResourceKeys = std::move(value); }
-    inline BatchGetResourceConfigResult& WithUnprocessedResourceKeys(const Aws::Vector<ResourceKey>& value) { SetUnprocessedResourceKeys(value); return *this;}
-    inline BatchGetResourceConfigResult& WithUnprocessedResourceKeys(Aws::Vector<ResourceKey>&& value) { SetUnprocessedResourceKeys(std::move(value)); return *this;}
-    inline BatchGetResourceConfigResult& AddUnprocessedResourceKeys(const ResourceKey& value) { m_unprocessedResourceKeys.push_back(value); return *this; }
-    inline BatchGetResourceConfigResult& AddUnprocessedResourceKeys(ResourceKey&& value) { m_unprocessedResourceKeys.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceKey>& GetUnprocessedResourceKeys() const { return m_unprocessedResourceKeys; }
+    template<typename UnprocessedResourceKeysT = Aws::Vector<ResourceKey>>
+    void SetUnprocessedResourceKeys(UnprocessedResourceKeysT&& value) { m_unprocessedResourceKeysHasBeenSet = true; m_unprocessedResourceKeys = std::forward<UnprocessedResourceKeysT>(value); }
+    template<typename UnprocessedResourceKeysT = Aws::Vector<ResourceKey>>
+    BatchGetResourceConfigResult& WithUnprocessedResourceKeys(UnprocessedResourceKeysT&& value) { SetUnprocessedResourceKeys(std::forward<UnprocessedResourceKeysT>(value)); return *this;}
+    template<typename UnprocessedResourceKeysT = ResourceKey>
+    BatchGetResourceConfigResult& AddUnprocessedResourceKeys(UnprocessedResourceKeysT&& value) { m_unprocessedResourceKeysHasBeenSet = true; m_unprocessedResourceKeys.emplace_back(std::forward<UnprocessedResourceKeysT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetResourceConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetResourceConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetResourceConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetResourceConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BaseConfigurationItem> m_baseConfigurationItems;
+    bool m_baseConfigurationItemsHasBeenSet = false;
 
     Aws::Vector<ResourceKey> m_unprocessedResourceKeys;
+    bool m_unprocessedResourceKeysHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

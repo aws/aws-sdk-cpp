@@ -21,7 +21,7 @@ namespace Model
   class GetControlRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API GetControlRequest();
+    AWS_AUDITMANAGER_API GetControlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p> The identifier for the control. </p>
      */
-    inline const Aws::String& GetControlId() const{ return m_controlId; }
+    inline const Aws::String& GetControlId() const { return m_controlId; }
     inline bool ControlIdHasBeenSet() const { return m_controlIdHasBeenSet; }
-    inline void SetControlId(const Aws::String& value) { m_controlIdHasBeenSet = true; m_controlId = value; }
-    inline void SetControlId(Aws::String&& value) { m_controlIdHasBeenSet = true; m_controlId = std::move(value); }
-    inline void SetControlId(const char* value) { m_controlIdHasBeenSet = true; m_controlId.assign(value); }
-    inline GetControlRequest& WithControlId(const Aws::String& value) { SetControlId(value); return *this;}
-    inline GetControlRequest& WithControlId(Aws::String&& value) { SetControlId(std::move(value)); return *this;}
-    inline GetControlRequest& WithControlId(const char* value) { SetControlId(value); return *this;}
+    template<typename ControlIdT = Aws::String>
+    void SetControlId(ControlIdT&& value) { m_controlIdHasBeenSet = true; m_controlId = std::forward<ControlIdT>(value); }
+    template<typename ControlIdT = Aws::String>
+    GetControlRequest& WithControlId(ControlIdT&& value) { SetControlId(std::forward<ControlIdT>(value)); return *this;}
     ///@}
   private:
 

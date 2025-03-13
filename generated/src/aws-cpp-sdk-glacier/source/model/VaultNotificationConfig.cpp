@@ -18,14 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-VaultNotificationConfig::VaultNotificationConfig() : 
-    m_sNSTopicHasBeenSet(false),
-    m_eventsHasBeenSet(false)
-{
-}
-
 VaultNotificationConfig::VaultNotificationConfig(JsonView jsonValue)
-  : VaultNotificationConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VaultNotificationConfig& VaultNotificationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SNSTopic"))
   {
     m_sNSTopic = jsonValue.GetString("SNSTopic");
-
     m_sNSTopicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Events"))
   {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
@@ -48,7 +39,6 @@ VaultNotificationConfig& VaultNotificationConfig::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   return *this;
 }
 

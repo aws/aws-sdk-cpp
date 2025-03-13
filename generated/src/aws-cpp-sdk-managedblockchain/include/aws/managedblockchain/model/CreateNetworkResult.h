@@ -27,7 +27,7 @@ namespace Model
   class CreateNetworkResult
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API CreateNetworkResult();
+    AWS_MANAGEDBLOCKCHAIN_API CreateNetworkResult() = default;
     AWS_MANAGEDBLOCKCHAIN_API CreateNetworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDBLOCKCHAIN_API CreateNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The unique identifier for the network.</p>
      */
-    inline const Aws::String& GetNetworkId() const{ return m_networkId; }
-    inline void SetNetworkId(const Aws::String& value) { m_networkId = value; }
-    inline void SetNetworkId(Aws::String&& value) { m_networkId = std::move(value); }
-    inline void SetNetworkId(const char* value) { m_networkId.assign(value); }
-    inline CreateNetworkResult& WithNetworkId(const Aws::String& value) { SetNetworkId(value); return *this;}
-    inline CreateNetworkResult& WithNetworkId(Aws::String&& value) { SetNetworkId(std::move(value)); return *this;}
-    inline CreateNetworkResult& WithNetworkId(const char* value) { SetNetworkId(value); return *this;}
+    inline const Aws::String& GetNetworkId() const { return m_networkId; }
+    template<typename NetworkIdT = Aws::String>
+    void SetNetworkId(NetworkIdT&& value) { m_networkIdHasBeenSet = true; m_networkId = std::forward<NetworkIdT>(value); }
+    template<typename NetworkIdT = Aws::String>
+    CreateNetworkResult& WithNetworkId(NetworkIdT&& value) { SetNetworkId(std::forward<NetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the first member within the network.</p>
      */
-    inline const Aws::String& GetMemberId() const{ return m_memberId; }
-    inline void SetMemberId(const Aws::String& value) { m_memberId = value; }
-    inline void SetMemberId(Aws::String&& value) { m_memberId = std::move(value); }
-    inline void SetMemberId(const char* value) { m_memberId.assign(value); }
-    inline CreateNetworkResult& WithMemberId(const Aws::String& value) { SetMemberId(value); return *this;}
-    inline CreateNetworkResult& WithMemberId(Aws::String&& value) { SetMemberId(std::move(value)); return *this;}
-    inline CreateNetworkResult& WithMemberId(const char* value) { SetMemberId(value); return *this;}
+    inline const Aws::String& GetMemberId() const { return m_memberId; }
+    template<typename MemberIdT = Aws::String>
+    void SetMemberId(MemberIdT&& value) { m_memberIdHasBeenSet = true; m_memberId = std::forward<MemberIdT>(value); }
+    template<typename MemberIdT = Aws::String>
+    CreateNetworkResult& WithMemberId(MemberIdT&& value) { SetMemberId(std::forward<MemberIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateNetworkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateNetworkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateNetworkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateNetworkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_networkId;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_memberId;
+    bool m_memberIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

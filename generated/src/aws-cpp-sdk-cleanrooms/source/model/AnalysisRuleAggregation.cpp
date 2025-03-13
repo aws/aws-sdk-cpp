@@ -18,22 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AnalysisRuleAggregation::AnalysisRuleAggregation() : 
-    m_aggregateColumnsHasBeenSet(false),
-    m_joinColumnsHasBeenSet(false),
-    m_joinRequired(JoinRequiredOption::NOT_SET),
-    m_joinRequiredHasBeenSet(false),
-    m_allowedJoinOperatorsHasBeenSet(false),
-    m_dimensionColumnsHasBeenSet(false),
-    m_scalarFunctionsHasBeenSet(false),
-    m_outputConstraintsHasBeenSet(false),
-    m_additionalAnalyses(AdditionalAnalyses::NOT_SET),
-    m_additionalAnalysesHasBeenSet(false)
-{
-}
-
 AnalysisRuleAggregation::AnalysisRuleAggregation(JsonView jsonValue)
-  : AnalysisRuleAggregation()
 {
   *this = jsonValue;
 }
@@ -49,7 +34,6 @@ AnalysisRuleAggregation& AnalysisRuleAggregation::operator =(JsonView jsonValue)
     }
     m_aggregateColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("joinColumns"))
   {
     Aws::Utils::Array<JsonView> joinColumnsJsonList = jsonValue.GetArray("joinColumns");
@@ -59,14 +43,11 @@ AnalysisRuleAggregation& AnalysisRuleAggregation::operator =(JsonView jsonValue)
     }
     m_joinColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("joinRequired"))
   {
     m_joinRequired = JoinRequiredOptionMapper::GetJoinRequiredOptionForName(jsonValue.GetString("joinRequired"));
-
     m_joinRequiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedJoinOperators"))
   {
     Aws::Utils::Array<JsonView> allowedJoinOperatorsJsonList = jsonValue.GetArray("allowedJoinOperators");
@@ -76,7 +57,6 @@ AnalysisRuleAggregation& AnalysisRuleAggregation::operator =(JsonView jsonValue)
     }
     m_allowedJoinOperatorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dimensionColumns"))
   {
     Aws::Utils::Array<JsonView> dimensionColumnsJsonList = jsonValue.GetArray("dimensionColumns");
@@ -86,7 +66,6 @@ AnalysisRuleAggregation& AnalysisRuleAggregation::operator =(JsonView jsonValue)
     }
     m_dimensionColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scalarFunctions"))
   {
     Aws::Utils::Array<JsonView> scalarFunctionsJsonList = jsonValue.GetArray("scalarFunctions");
@@ -96,7 +75,6 @@ AnalysisRuleAggregation& AnalysisRuleAggregation::operator =(JsonView jsonValue)
     }
     m_scalarFunctionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputConstraints"))
   {
     Aws::Utils::Array<JsonView> outputConstraintsJsonList = jsonValue.GetArray("outputConstraints");
@@ -106,14 +84,11 @@ AnalysisRuleAggregation& AnalysisRuleAggregation::operator =(JsonView jsonValue)
     }
     m_outputConstraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalAnalyses"))
   {
     m_additionalAnalyses = AdditionalAnalysesMapper::GetAdditionalAnalysesForName(jsonValue.GetString("additionalAnalyses"));
-
     m_additionalAnalysesHasBeenSet = true;
   }
-
   return *this;
 }
 

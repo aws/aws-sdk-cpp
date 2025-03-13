@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCustomDomainAssociationResult::CreateCustomDomainAssociationResult()
-{
-}
-
 CreateCustomDomainAssociationResult::CreateCustomDomainAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ CreateCustomDomainAssociationResult& CreateCustomDomainAssociationResult::operat
   if(jsonValue.ValueExists("customDomainCertificateArn"))
   {
     m_customDomainCertificateArn = jsonValue.GetString("customDomainCertificateArn");
-
+    m_customDomainCertificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDomainCertificateExpiryTime"))
   {
     m_customDomainCertificateExpiryTime = jsonValue.GetString("customDomainCertificateExpiryTime");
-
+    m_customDomainCertificateExpiryTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDomainName"))
   {
     m_customDomainName = jsonValue.GetString("customDomainName");
-
+    m_customDomainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workgroupName"))
   {
     m_workgroupName = jsonValue.GetString("workgroupName");
-
+    m_workgroupNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

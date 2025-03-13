@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationMetadata::EvaluationMetadata() : 
-    m_contactIdHasBeenSet(false),
-    m_evaluatorArnHasBeenSet(false),
-    m_contactAgentIdHasBeenSet(false),
-    m_scoreHasBeenSet(false)
-{
-}
-
 EvaluationMetadata::EvaluationMetadata(JsonView jsonValue)
-  : EvaluationMetadata()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ EvaluationMetadata& EvaluationMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContactId"))
   {
     m_contactId = jsonValue.GetString("ContactId");
-
     m_contactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluatorArn"))
   {
     m_evaluatorArn = jsonValue.GetString("EvaluatorArn");
-
     m_evaluatorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactAgentId"))
   {
     m_contactAgentId = jsonValue.GetString("ContactAgentId");
-
     m_contactAgentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetObject("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

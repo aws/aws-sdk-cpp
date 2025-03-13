@@ -18,17 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-DownlinkQueueMessage::DownlinkQueueMessage() : 
-    m_messageIdHasBeenSet(false),
-    m_transmitMode(0),
-    m_transmitModeHasBeenSet(false),
-    m_receivedAtHasBeenSet(false),
-    m_loRaWANHasBeenSet(false)
-{
-}
-
 DownlinkQueueMessage::DownlinkQueueMessage(JsonView jsonValue)
-  : DownlinkQueueMessage()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DownlinkQueueMessage& DownlinkQueueMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MessageId"))
   {
     m_messageId = jsonValue.GetString("MessageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransmitMode"))
   {
     m_transmitMode = jsonValue.GetInteger("TransmitMode");
-
     m_transmitModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceivedAt"))
   {
     m_receivedAt = jsonValue.GetString("ReceivedAt");
-
     m_receivedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoRaWAN"))
   {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");
-
     m_loRaWANHasBeenSet = true;
   }
-
   return *this;
 }
 

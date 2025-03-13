@@ -18,16 +18,7 @@ namespace MarketplaceMetering
 namespace Model
 {
 
-UsageRecordResult::UsageRecordResult() : 
-    m_usageRecordHasBeenSet(false),
-    m_meteringRecordIdHasBeenSet(false),
-    m_status(UsageRecordResultStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 UsageRecordResult::UsageRecordResult(JsonView jsonValue)
-  : UsageRecordResult()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UsageRecordResult& UsageRecordResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UsageRecord"))
   {
     m_usageRecord = jsonValue.GetObject("UsageRecord");
-
     m_usageRecordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeteringRecordId"))
   {
     m_meteringRecordId = jsonValue.GetString("MeteringRecordId");
-
     m_meteringRecordIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = UsageRecordResultStatusMapper::GetUsageRecordResultStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFraudstersRequest::ListFraudstersRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_watchlistIdHasBeenSet(false)
-{
-}
-
 Aws::String ListFraudstersRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,20 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSavingsPlansCoverageRequest::GetSavingsPlansCoverageRequest() : 
-    m_timePeriodHasBeenSet(false),
-    m_groupByHasBeenSet(false),
-    m_granularity(Granularity::NOT_SET),
-    m_granularityHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sortByHasBeenSet(false)
-{
-}
-
 Aws::String GetSavingsPlansCoverageRequest::SerializePayload() const
 {
   JsonValue payload;

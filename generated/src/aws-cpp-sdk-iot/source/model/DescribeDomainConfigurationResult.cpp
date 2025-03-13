@@ -17,17 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDomainConfigurationResult::DescribeDomainConfigurationResult() : 
-    m_domainConfigurationStatus(DomainConfigurationStatus::NOT_SET),
-    m_serviceType(ServiceType::NOT_SET),
-    m_domainType(DomainType::NOT_SET),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_applicationProtocol(ApplicationProtocol::NOT_SET)
-{
-}
-
 DescribeDomainConfigurationResult::DescribeDomainConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeDomainConfigurationResult()
 {
   *this = result;
 }
@@ -38,21 +28,18 @@ DescribeDomainConfigurationResult& DescribeDomainConfigurationResult::operator =
   if(jsonValue.ValueExists("domainConfigurationName"))
   {
     m_domainConfigurationName = jsonValue.GetString("domainConfigurationName");
-
+    m_domainConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainConfigurationArn"))
   {
     m_domainConfigurationArn = jsonValue.GetString("domainConfigurationArn");
-
+    m_domainConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
+    m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverCertificates"))
   {
     Aws::Utils::Array<JsonView> serverCertificatesJsonList = jsonValue.GetArray("serverCertificates");
@@ -60,74 +47,65 @@ DescribeDomainConfigurationResult& DescribeDomainConfigurationResult::operator =
     {
       m_serverCertificates.push_back(serverCertificatesJsonList[serverCertificatesIndex].AsObject());
     }
+    m_serverCertificatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizerConfig"))
   {
     m_authorizerConfig = jsonValue.GetObject("authorizerConfig");
-
+    m_authorizerConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainConfigurationStatus"))
   {
     m_domainConfigurationStatus = DomainConfigurationStatusMapper::GetDomainConfigurationStatusForName(jsonValue.GetString("domainConfigurationStatus"));
-
+    m_domainConfigurationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceType"))
   {
     m_serviceType = ServiceTypeMapper::GetServiceTypeForName(jsonValue.GetString("serviceType"));
-
+    m_serviceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainType"))
   {
     m_domainType = DomainTypeMapper::GetDomainTypeForName(jsonValue.GetString("domainType"));
-
+    m_domainTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastStatusChangeDate"))
   {
     m_lastStatusChangeDate = jsonValue.GetDouble("lastStatusChangeDate");
-
+    m_lastStatusChangeDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tlsConfig"))
   {
     m_tlsConfig = jsonValue.GetObject("tlsConfig");
-
+    m_tlsConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverCertificateConfig"))
   {
     m_serverCertificateConfig = jsonValue.GetObject("serverCertificateConfig");
-
+    m_serverCertificateConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("authenticationType"));
-
+    m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationProtocol"))
   {
     m_applicationProtocol = ApplicationProtocolMapper::GetApplicationProtocolForName(jsonValue.GetString("applicationProtocol"));
-
+    m_applicationProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientCertificateConfig"))
   {
     m_clientCertificateConfig = jsonValue.GetObject("clientCertificateConfig");
-
+    m_clientCertificateConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

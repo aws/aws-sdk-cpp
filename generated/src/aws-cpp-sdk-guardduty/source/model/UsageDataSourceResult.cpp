@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-UsageDataSourceResult::UsageDataSourceResult() : 
-    m_dataSource(DataSource::NOT_SET),
-    m_dataSourceHasBeenSet(false),
-    m_totalHasBeenSet(false)
-{
-}
-
 UsageDataSourceResult::UsageDataSourceResult(JsonView jsonValue)
-  : UsageDataSourceResult()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UsageDataSourceResult& UsageDataSourceResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataSource"))
   {
     m_dataSource = DataSourceMapper::GetDataSourceForName(jsonValue.GetString("dataSource"));
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("total"))
   {
     m_total = jsonValue.GetObject("total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

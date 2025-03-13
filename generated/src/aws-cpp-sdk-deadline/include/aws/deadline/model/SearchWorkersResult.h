@@ -29,7 +29,7 @@ namespace Model
   class SearchWorkersResult
   {
   public:
-    AWS_DEADLINE_API SearchWorkersResult();
+    AWS_DEADLINE_API SearchWorkersResult() = default;
     AWS_DEADLINE_API SearchWorkersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API SearchWorkersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The workers for the search.</p>
      */
-    inline const Aws::Vector<WorkerSearchSummary>& GetWorkers() const{ return m_workers; }
-    inline void SetWorkers(const Aws::Vector<WorkerSearchSummary>& value) { m_workers = value; }
-    inline void SetWorkers(Aws::Vector<WorkerSearchSummary>&& value) { m_workers = std::move(value); }
-    inline SearchWorkersResult& WithWorkers(const Aws::Vector<WorkerSearchSummary>& value) { SetWorkers(value); return *this;}
-    inline SearchWorkersResult& WithWorkers(Aws::Vector<WorkerSearchSummary>&& value) { SetWorkers(std::move(value)); return *this;}
-    inline SearchWorkersResult& AddWorkers(const WorkerSearchSummary& value) { m_workers.push_back(value); return *this; }
-    inline SearchWorkersResult& AddWorkers(WorkerSearchSummary&& value) { m_workers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WorkerSearchSummary>& GetWorkers() const { return m_workers; }
+    template<typename WorkersT = Aws::Vector<WorkerSearchSummary>>
+    void SetWorkers(WorkersT&& value) { m_workersHasBeenSet = true; m_workers = std::forward<WorkersT>(value); }
+    template<typename WorkersT = Aws::Vector<WorkerSearchSummary>>
+    SearchWorkersResult& WithWorkers(WorkersT&& value) { SetWorkers(std::forward<WorkersT>(value)); return *this;}
+    template<typename WorkersT = WorkerSearchSummary>
+    SearchWorkersResult& AddWorkers(WorkersT&& value) { m_workersHasBeenSet = true; m_workers.emplace_back(std::forward<WorkersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,8 +52,8 @@ namespace Model
      * <p>The next incremental starting point after the defined
      * <code>itemOffset</code>.</p>
      */
-    inline int GetNextItemOffset() const{ return m_nextItemOffset; }
-    inline void SetNextItemOffset(int value) { m_nextItemOffset = value; }
+    inline int GetNextItemOffset() const { return m_nextItemOffset; }
+    inline void SetNextItemOffset(int value) { m_nextItemOffsetHasBeenSet = true; m_nextItemOffset = value; }
     inline SearchWorkersResult& WithNextItemOffset(int value) { SetNextItemOffset(value); return *this;}
     ///@}
 
@@ -61,30 +61,32 @@ namespace Model
     /**
      * <p>The total number of results in the search.</p>
      */
-    inline int GetTotalResults() const{ return m_totalResults; }
-    inline void SetTotalResults(int value) { m_totalResults = value; }
+    inline int GetTotalResults() const { return m_totalResults; }
+    inline void SetTotalResults(int value) { m_totalResultsHasBeenSet = true; m_totalResults = value; }
     inline SearchWorkersResult& WithTotalResults(int value) { SetTotalResults(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchWorkersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchWorkersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchWorkersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchWorkersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<WorkerSearchSummary> m_workers;
+    bool m_workersHasBeenSet = false;
 
-    int m_nextItemOffset;
+    int m_nextItemOffset{0};
+    bool m_nextItemOffsetHasBeenSet = false;
 
-    int m_totalResults;
+    int m_totalResults{0};
+    bool m_totalResultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

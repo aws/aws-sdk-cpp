@@ -29,7 +29,7 @@ namespace Model
   class GetDigestResult
   {
   public:
-    AWS_QLDB_API GetDigestResult();
+    AWS_QLDB_API GetDigestResult() = default;
     AWS_QLDB_API GetDigestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QLDB_API GetDigestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,11 @@ namespace Model
      * <p>The 256-bit hash value representing the digest returned by a
      * <code>GetDigest</code> request.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetDigest() const{ return m_digest; }
-    inline void SetDigest(const Aws::Utils::ByteBuffer& value) { m_digest = value; }
-    inline void SetDigest(Aws::Utils::ByteBuffer&& value) { m_digest = std::move(value); }
-    inline GetDigestResult& WithDigest(const Aws::Utils::ByteBuffer& value) { SetDigest(value); return *this;}
-    inline GetDigestResult& WithDigest(Aws::Utils::ByteBuffer&& value) { SetDigest(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetDigest() const { return m_digest; }
+    template<typename DigestT = Aws::Utils::ByteBuffer>
+    void SetDigest(DigestT&& value) { m_digestHasBeenSet = true; m_digest = std::forward<DigestT>(value); }
+    template<typename DigestT = Aws::Utils::ByteBuffer>
+    GetDigestResult& WithDigest(DigestT&& value) { SetDigest(std::forward<DigestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,30 +52,31 @@ namespace Model
      * address is an Amazon Ion structure that has two fields: <code>strandId</code>
      * and <code>sequenceNo</code>.</p>
      */
-    inline const ValueHolder& GetDigestTipAddress() const{ return m_digestTipAddress; }
-    inline void SetDigestTipAddress(const ValueHolder& value) { m_digestTipAddress = value; }
-    inline void SetDigestTipAddress(ValueHolder&& value) { m_digestTipAddress = std::move(value); }
-    inline GetDigestResult& WithDigestTipAddress(const ValueHolder& value) { SetDigestTipAddress(value); return *this;}
-    inline GetDigestResult& WithDigestTipAddress(ValueHolder&& value) { SetDigestTipAddress(std::move(value)); return *this;}
+    inline const ValueHolder& GetDigestTipAddress() const { return m_digestTipAddress; }
+    template<typename DigestTipAddressT = ValueHolder>
+    void SetDigestTipAddress(DigestTipAddressT&& value) { m_digestTipAddressHasBeenSet = true; m_digestTipAddress = std::forward<DigestTipAddressT>(value); }
+    template<typename DigestTipAddressT = ValueHolder>
+    GetDigestResult& WithDigestTipAddress(DigestTipAddressT&& value) { SetDigestTipAddress(std::forward<DigestTipAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDigestResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDigestResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDigestResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDigestResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_digest;
+    Aws::Utils::ByteBuffer m_digest{};
+    bool m_digestHasBeenSet = false;
 
     ValueHolder m_digestTipAddress;
+    bool m_digestTipAddressHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

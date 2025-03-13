@@ -25,7 +25,7 @@ namespace Model
   class DeleteClientCertificateRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API DeleteClientCertificateRequest();
+    AWS_APIGATEWAY_API DeleteClientCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The identifier of the ClientCertificate resource to be deleted.</p>
      */
-    inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
+    inline const Aws::String& GetClientCertificateId() const { return m_clientCertificateId; }
     inline bool ClientCertificateIdHasBeenSet() const { return m_clientCertificateIdHasBeenSet; }
-    inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
-    inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = std::move(value); }
-    inline void SetClientCertificateId(const char* value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId.assign(value); }
-    inline DeleteClientCertificateRequest& WithClientCertificateId(const Aws::String& value) { SetClientCertificateId(value); return *this;}
-    inline DeleteClientCertificateRequest& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(std::move(value)); return *this;}
-    inline DeleteClientCertificateRequest& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
+    template<typename ClientCertificateIdT = Aws::String>
+    void SetClientCertificateId(ClientCertificateIdT&& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = std::forward<ClientCertificateIdT>(value); }
+    template<typename ClientCertificateIdT = Aws::String>
+    DeleteClientCertificateRequest& WithClientCertificateId(ClientCertificateIdT&& value) { SetClientCertificateId(std::forward<ClientCertificateIdT>(value)); return *this;}
     ///@}
   private:
 

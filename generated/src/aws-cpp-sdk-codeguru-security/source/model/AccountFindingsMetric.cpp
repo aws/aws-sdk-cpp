@@ -18,17 +18,7 @@ namespace CodeGuruSecurity
 namespace Model
 {
 
-AccountFindingsMetric::AccountFindingsMetric() : 
-    m_closedFindingsHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_meanTimeToCloseHasBeenSet(false),
-    m_newFindingsHasBeenSet(false),
-    m_openFindingsHasBeenSet(false)
-{
-}
-
 AccountFindingsMetric::AccountFindingsMetric(JsonView jsonValue)
-  : AccountFindingsMetric()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ AccountFindingsMetric& AccountFindingsMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("closedFindings"))
   {
     m_closedFindings = jsonValue.GetObject("closedFindings");
-
     m_closedFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("date"))
   {
     m_date = jsonValue.GetDouble("date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("meanTimeToClose"))
   {
     m_meanTimeToClose = jsonValue.GetObject("meanTimeToClose");
-
     m_meanTimeToCloseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("newFindings"))
   {
     m_newFindings = jsonValue.GetObject("newFindings");
-
     m_newFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openFindings"))
   {
     m_openFindings = jsonValue.GetObject("openFindings");
-
     m_openFindingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetFunctionRecursionConfigResult::GetFunctionRecursionConfigResult() : 
-    m_recursiveLoop(RecursiveLoop::NOT_SET)
-{
-}
-
 GetFunctionRecursionConfigResult::GetFunctionRecursionConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetFunctionRecursionConfigResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetFunctionRecursionConfigResult& GetFunctionRecursionConfigResult::operator =(c
   if(jsonValue.ValueExists("RecursiveLoop"))
   {
     m_recursiveLoop = RecursiveLoopMapper::GetRecursiveLoopForName(jsonValue.GetString("RecursiveLoop"));
-
+    m_recursiveLoopHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,14 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMarketplaceModelEndpointRequest::UpdateMarketplaceModelEndpointRequest() : 
-    m_endpointArnHasBeenSet(false),
-    m_endpointConfigHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateMarketplaceModelEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class OnPremisesTagSet
   {
   public:
-    AWS_CODEDEPLOY_API OnPremisesTagSet();
+    AWS_CODEDEPLOY_API OnPremisesTagSet() = default;
     AWS_CODEDEPLOY_API OnPremisesTagSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API OnPremisesTagSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * instance to be included in the deployment group, it must be identified by all of
      * the tag groups in the list.</p>
      */
-    inline const Aws::Vector<Aws::Vector<TagFilter>>& GetOnPremisesTagSetList() const{ return m_onPremisesTagSetList; }
+    inline const Aws::Vector<Aws::Vector<TagFilter>>& GetOnPremisesTagSetList() const { return m_onPremisesTagSetList; }
     inline bool OnPremisesTagSetListHasBeenSet() const { return m_onPremisesTagSetListHasBeenSet; }
-    inline void SetOnPremisesTagSetList(const Aws::Vector<Aws::Vector<TagFilter>>& value) { m_onPremisesTagSetListHasBeenSet = true; m_onPremisesTagSetList = value; }
-    inline void SetOnPremisesTagSetList(Aws::Vector<Aws::Vector<TagFilter>>&& value) { m_onPremisesTagSetListHasBeenSet = true; m_onPremisesTagSetList = std::move(value); }
-    inline OnPremisesTagSet& WithOnPremisesTagSetList(const Aws::Vector<Aws::Vector<TagFilter>>& value) { SetOnPremisesTagSetList(value); return *this;}
-    inline OnPremisesTagSet& WithOnPremisesTagSetList(Aws::Vector<Aws::Vector<TagFilter>>&& value) { SetOnPremisesTagSetList(std::move(value)); return *this;}
-    inline OnPremisesTagSet& AddOnPremisesTagSetList(const Aws::Vector<TagFilter>& value) { m_onPremisesTagSetListHasBeenSet = true; m_onPremisesTagSetList.push_back(value); return *this; }
-    inline OnPremisesTagSet& AddOnPremisesTagSetList(Aws::Vector<TagFilter>&& value) { m_onPremisesTagSetListHasBeenSet = true; m_onPremisesTagSetList.push_back(std::move(value)); return *this; }
+    template<typename OnPremisesTagSetListT = Aws::Vector<Aws::Vector<TagFilter>>>
+    void SetOnPremisesTagSetList(OnPremisesTagSetListT&& value) { m_onPremisesTagSetListHasBeenSet = true; m_onPremisesTagSetList = std::forward<OnPremisesTagSetListT>(value); }
+    template<typename OnPremisesTagSetListT = Aws::Vector<Aws::Vector<TagFilter>>>
+    OnPremisesTagSet& WithOnPremisesTagSetList(OnPremisesTagSetListT&& value) { SetOnPremisesTagSetList(std::forward<OnPremisesTagSetListT>(value)); return *this;}
+    template<typename OnPremisesTagSetListT = Aws::Vector<TagFilter>>
+    OnPremisesTagSet& AddOnPremisesTagSetList(OnPremisesTagSetListT&& value) { m_onPremisesTagSetListHasBeenSet = true; m_onPremisesTagSetList.emplace_back(std::forward<OnPremisesTagSetListT>(value)); return *this; }
     ///@}
   private:
 

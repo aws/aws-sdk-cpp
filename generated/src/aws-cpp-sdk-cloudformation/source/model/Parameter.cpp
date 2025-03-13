@@ -20,17 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-Parameter::Parameter() : 
-    m_parameterKeyHasBeenSet(false),
-    m_parameterValueHasBeenSet(false),
-    m_usePreviousValue(false),
-    m_usePreviousValueHasBeenSet(false),
-    m_resolvedValueHasBeenSet(false)
-{
-}
-
 Parameter::Parameter(const XmlNode& xmlNode)
-  : Parameter()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
     {
       m_parameterKey = Aws::Utils::Xml::DecodeEscapedXmlText(parameterKeyNode.GetText());
       m_parameterKeyHasBeenSet = true;
+       m_parameterKeyHasBeenSet = true;
     }
     XmlNode parameterValueNode = resultNode.FirstChild("ParameterValue");
     if(!parameterValueNode.IsNull())
     {
       m_parameterValue = Aws::Utils::Xml::DecodeEscapedXmlText(parameterValueNode.GetText());
       m_parameterValueHasBeenSet = true;
+       m_parameterValueHasBeenSet = true;
     }
     XmlNode usePreviousValueNode = resultNode.FirstChild("UsePreviousValue");
     if(!usePreviousValueNode.IsNull())
     {
       m_usePreviousValue = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usePreviousValueNode.GetText()).c_str()).c_str());
       m_usePreviousValueHasBeenSet = true;
+       m_usePreviousValueHasBeenSet = true;
     }
     XmlNode resolvedValueNode = resultNode.FirstChild("ResolvedValue");
     if(!resolvedValueNode.IsNull())
     {
       m_resolvedValue = Aws::Utils::Xml::DecodeEscapedXmlText(resolvedValueNode.GetText());
       m_resolvedValueHasBeenSet = true;
+       m_resolvedValueHasBeenSet = true;
     }
   }
 

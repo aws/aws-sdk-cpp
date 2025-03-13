@@ -34,7 +34,7 @@ namespace Model
   class ExperimentTemplateTarget
   {
   public:
-    AWS_FIS_API ExperimentTemplateTarget();
+    AWS_FIS_API ExperimentTemplateTarget() = default;
     AWS_FIS_API ExperimentTemplateTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API ExperimentTemplateTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,42 @@ namespace Model
     /**
      * <p>The resource type.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ExperimentTemplateTarget& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ExperimentTemplateTarget& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ExperimentTemplateTarget& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ExperimentTemplateTarget& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Names (ARNs) of the targets.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
+    inline const Aws::Vector<Aws::String>& GetResourceArns() const { return m_resourceArns; }
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
-    inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
-    inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
-    inline ExperimentTemplateTarget& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
-    inline ExperimentTemplateTarget& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
-    inline ExperimentTemplateTarget& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
-    inline ExperimentTemplateTarget& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
-    inline ExperimentTemplateTarget& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    void SetResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::forward<ResourceArnsT>(value); }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    ExperimentTemplateTarget& WithResourceArns(ResourceArnsT&& value) { SetResourceArns(std::forward<ResourceArnsT>(value)); return *this;}
+    template<typename ResourceArnsT = Aws::String>
+    ExperimentTemplateTarget& AddResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.emplace_back(std::forward<ResourceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tags for the target resources.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Map<Aws::String, Aws::String>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Map<Aws::String, Aws::String>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline ExperimentTemplateTarget& WithResourceTags(const Aws::Map<Aws::String, Aws::String>& value) { SetResourceTags(value); return *this;}
-    inline ExperimentTemplateTarget& WithResourceTags(Aws::Map<Aws::String, Aws::String>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline ExperimentTemplateTarget& AddResourceTags(const Aws::String& key, const Aws::String& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, value); return *this; }
-    inline ExperimentTemplateTarget& AddResourceTags(Aws::String&& key, const Aws::String& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(std::move(key), value); return *this; }
-    inline ExperimentTemplateTarget& AddResourceTags(const Aws::String& key, Aws::String&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, std::move(value)); return *this; }
-    inline ExperimentTemplateTarget& AddResourceTags(Aws::String&& key, Aws::String&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ExperimentTemplateTarget& AddResourceTags(const char* key, Aws::String&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, std::move(value)); return *this; }
-    inline ExperimentTemplateTarget& AddResourceTags(Aws::String&& key, const char* value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(std::move(key), value); return *this; }
-    inline ExperimentTemplateTarget& AddResourceTags(const char* key, const char* value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, value); return *this; }
+    template<typename ResourceTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Map<Aws::String, Aws::String>>
+    ExperimentTemplateTarget& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsKeyT = Aws::String, typename ResourceTagsValueT = Aws::String>
+    ExperimentTemplateTarget& AddResourceTags(ResourceTagsKeyT&& key, ResourceTagsValueT&& value) {
+      m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(std::forward<ResourceTagsKeyT>(key), std::forward<ResourceTagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -93,47 +87,42 @@ namespace Model
      * <p>The filters to apply to identify target resources using specific
      * attributes.</p>
      */
-    inline const Aws::Vector<ExperimentTemplateTargetFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<ExperimentTemplateTargetFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<ExperimentTemplateTargetFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<ExperimentTemplateTargetFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ExperimentTemplateTarget& WithFilters(const Aws::Vector<ExperimentTemplateTargetFilter>& value) { SetFilters(value); return *this;}
-    inline ExperimentTemplateTarget& WithFilters(Aws::Vector<ExperimentTemplateTargetFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ExperimentTemplateTarget& AddFilters(const ExperimentTemplateTargetFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ExperimentTemplateTarget& AddFilters(ExperimentTemplateTargetFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<ExperimentTemplateTargetFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<ExperimentTemplateTargetFilter>>
+    ExperimentTemplateTarget& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = ExperimentTemplateTargetFilter>
+    ExperimentTemplateTarget& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Scopes the identified resources to a specific count or percentage.</p>
      */
-    inline const Aws::String& GetSelectionMode() const{ return m_selectionMode; }
+    inline const Aws::String& GetSelectionMode() const { return m_selectionMode; }
     inline bool SelectionModeHasBeenSet() const { return m_selectionModeHasBeenSet; }
-    inline void SetSelectionMode(const Aws::String& value) { m_selectionModeHasBeenSet = true; m_selectionMode = value; }
-    inline void SetSelectionMode(Aws::String&& value) { m_selectionModeHasBeenSet = true; m_selectionMode = std::move(value); }
-    inline void SetSelectionMode(const char* value) { m_selectionModeHasBeenSet = true; m_selectionMode.assign(value); }
-    inline ExperimentTemplateTarget& WithSelectionMode(const Aws::String& value) { SetSelectionMode(value); return *this;}
-    inline ExperimentTemplateTarget& WithSelectionMode(Aws::String&& value) { SetSelectionMode(std::move(value)); return *this;}
-    inline ExperimentTemplateTarget& WithSelectionMode(const char* value) { SetSelectionMode(value); return *this;}
+    template<typename SelectionModeT = Aws::String>
+    void SetSelectionMode(SelectionModeT&& value) { m_selectionModeHasBeenSet = true; m_selectionMode = std::forward<SelectionModeT>(value); }
+    template<typename SelectionModeT = Aws::String>
+    ExperimentTemplateTarget& WithSelectionMode(SelectionModeT&& value) { SetSelectionMode(std::forward<SelectionModeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource type parameters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline ExperimentTemplateTarget& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline ExperimentTemplateTarget& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline ExperimentTemplateTarget& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline ExperimentTemplateTarget& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline ExperimentTemplateTarget& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline ExperimentTemplateTarget& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline ExperimentTemplateTarget& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline ExperimentTemplateTarget& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline ExperimentTemplateTarget& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    ExperimentTemplateTarget& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    ExperimentTemplateTarget& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

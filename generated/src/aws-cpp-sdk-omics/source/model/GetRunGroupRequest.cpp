@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRunGroupRequest::GetRunGroupRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetRunGroupRequest::SerializePayload() const
 {
   return {};

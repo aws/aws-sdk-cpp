@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationRestProfile::WaypointOptimizationRestProfile() : 
-    m_profileHasBeenSet(false)
-{
-}
-
 WaypointOptimizationRestProfile::WaypointOptimizationRestProfile(JsonView jsonValue)
-  : WaypointOptimizationRestProfile()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WaypointOptimizationRestProfile& WaypointOptimizationRestProfile::operator =(Jso
   if(jsonValue.ValueExists("Profile"))
   {
     m_profile = jsonValue.GetString("Profile");
-
     m_profileHasBeenSet = true;
   }
-
   return *this;
 }
 

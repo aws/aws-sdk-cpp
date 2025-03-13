@@ -32,7 +32,7 @@ namespace Model
   class LoadBalancerAddress
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API LoadBalancerAddress();
+    AWS_ELASTICLOADBALANCINGV2_API LoadBalancerAddress() = default;
     AWS_ELASTICLOADBALANCINGV2_API LoadBalancerAddress(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API LoadBalancerAddress& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The static IP address.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline LoadBalancerAddress& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline LoadBalancerAddress& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline LoadBalancerAddress& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    LoadBalancerAddress& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
      * internal-facing load balancer.</p>
      */
-    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
+    inline const Aws::String& GetAllocationId() const { return m_allocationId; }
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
-    inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
-    inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
-    inline LoadBalancerAddress& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
-    inline LoadBalancerAddress& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
-    inline LoadBalancerAddress& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+    template<typename AllocationIdT = Aws::String>
+    void SetAllocationId(AllocationIdT&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::forward<AllocationIdT>(value); }
+    template<typename AllocationIdT = Aws::String>
+    LoadBalancerAddress& WithAllocationId(AllocationIdT&& value) { SetAllocationId(std::forward<AllocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,28 +70,24 @@ namespace Model
      * <p>[Network Load Balancers] The private IPv4 address for an internal load
      * balancer.</p>
      */
-    inline const Aws::String& GetPrivateIPv4Address() const{ return m_privateIPv4Address; }
+    inline const Aws::String& GetPrivateIPv4Address() const { return m_privateIPv4Address; }
     inline bool PrivateIPv4AddressHasBeenSet() const { return m_privateIPv4AddressHasBeenSet; }
-    inline void SetPrivateIPv4Address(const Aws::String& value) { m_privateIPv4AddressHasBeenSet = true; m_privateIPv4Address = value; }
-    inline void SetPrivateIPv4Address(Aws::String&& value) { m_privateIPv4AddressHasBeenSet = true; m_privateIPv4Address = std::move(value); }
-    inline void SetPrivateIPv4Address(const char* value) { m_privateIPv4AddressHasBeenSet = true; m_privateIPv4Address.assign(value); }
-    inline LoadBalancerAddress& WithPrivateIPv4Address(const Aws::String& value) { SetPrivateIPv4Address(value); return *this;}
-    inline LoadBalancerAddress& WithPrivateIPv4Address(Aws::String&& value) { SetPrivateIPv4Address(std::move(value)); return *this;}
-    inline LoadBalancerAddress& WithPrivateIPv4Address(const char* value) { SetPrivateIPv4Address(value); return *this;}
+    template<typename PrivateIPv4AddressT = Aws::String>
+    void SetPrivateIPv4Address(PrivateIPv4AddressT&& value) { m_privateIPv4AddressHasBeenSet = true; m_privateIPv4Address = std::forward<PrivateIPv4AddressT>(value); }
+    template<typename PrivateIPv4AddressT = Aws::String>
+    LoadBalancerAddress& WithPrivateIPv4Address(PrivateIPv4AddressT&& value) { SetPrivateIPv4Address(std::forward<PrivateIPv4AddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>[Network Load Balancers] The IPv6 address.</p>
      */
-    inline const Aws::String& GetIPv6Address() const{ return m_iPv6Address; }
+    inline const Aws::String& GetIPv6Address() const { return m_iPv6Address; }
     inline bool IPv6AddressHasBeenSet() const { return m_iPv6AddressHasBeenSet; }
-    inline void SetIPv6Address(const Aws::String& value) { m_iPv6AddressHasBeenSet = true; m_iPv6Address = value; }
-    inline void SetIPv6Address(Aws::String&& value) { m_iPv6AddressHasBeenSet = true; m_iPv6Address = std::move(value); }
-    inline void SetIPv6Address(const char* value) { m_iPv6AddressHasBeenSet = true; m_iPv6Address.assign(value); }
-    inline LoadBalancerAddress& WithIPv6Address(const Aws::String& value) { SetIPv6Address(value); return *this;}
-    inline LoadBalancerAddress& WithIPv6Address(Aws::String&& value) { SetIPv6Address(std::move(value)); return *this;}
-    inline LoadBalancerAddress& WithIPv6Address(const char* value) { SetIPv6Address(value); return *this;}
+    template<typename IPv6AddressT = Aws::String>
+    void SetIPv6Address(IPv6AddressT&& value) { m_iPv6AddressHasBeenSet = true; m_iPv6Address = std::forward<IPv6AddressT>(value); }
+    template<typename IPv6AddressT = Aws::String>
+    LoadBalancerAddress& WithIPv6Address(IPv6AddressT&& value) { SetIPv6Address(std::forward<IPv6AddressT>(value)); return *this;}
     ///@}
   private:
 

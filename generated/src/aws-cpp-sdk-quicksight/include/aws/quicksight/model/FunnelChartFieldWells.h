@@ -33,7 +33,7 @@ namespace Model
   class FunnelChartFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API FunnelChartFieldWells();
+    AWS_QUICKSIGHT_API FunnelChartFieldWells() = default;
     AWS_QUICKSIGHT_API FunnelChartFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FunnelChartFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
      */
-    inline const FunnelChartAggregatedFieldWells& GetFunnelChartAggregatedFieldWells() const{ return m_funnelChartAggregatedFieldWells; }
+    inline const FunnelChartAggregatedFieldWells& GetFunnelChartAggregatedFieldWells() const { return m_funnelChartAggregatedFieldWells; }
     inline bool FunnelChartAggregatedFieldWellsHasBeenSet() const { return m_funnelChartAggregatedFieldWellsHasBeenSet; }
-    inline void SetFunnelChartAggregatedFieldWells(const FunnelChartAggregatedFieldWells& value) { m_funnelChartAggregatedFieldWellsHasBeenSet = true; m_funnelChartAggregatedFieldWells = value; }
-    inline void SetFunnelChartAggregatedFieldWells(FunnelChartAggregatedFieldWells&& value) { m_funnelChartAggregatedFieldWellsHasBeenSet = true; m_funnelChartAggregatedFieldWells = std::move(value); }
-    inline FunnelChartFieldWells& WithFunnelChartAggregatedFieldWells(const FunnelChartAggregatedFieldWells& value) { SetFunnelChartAggregatedFieldWells(value); return *this;}
-    inline FunnelChartFieldWells& WithFunnelChartAggregatedFieldWells(FunnelChartAggregatedFieldWells&& value) { SetFunnelChartAggregatedFieldWells(std::move(value)); return *this;}
+    template<typename FunnelChartAggregatedFieldWellsT = FunnelChartAggregatedFieldWells>
+    void SetFunnelChartAggregatedFieldWells(FunnelChartAggregatedFieldWellsT&& value) { m_funnelChartAggregatedFieldWellsHasBeenSet = true; m_funnelChartAggregatedFieldWells = std::forward<FunnelChartAggregatedFieldWellsT>(value); }
+    template<typename FunnelChartAggregatedFieldWellsT = FunnelChartAggregatedFieldWells>
+    FunnelChartFieldWells& WithFunnelChartAggregatedFieldWells(FunnelChartAggregatedFieldWellsT&& value) { SetFunnelChartAggregatedFieldWells(std::forward<FunnelChartAggregatedFieldWellsT>(value)); return *this;}
     ///@}
   private:
 

@@ -27,7 +27,7 @@ namespace Model
   class StartResourceStateUpdateResult
   {
   public:
-    AWS_IMAGEBUILDER_API StartResourceStateUpdateResult();
+    AWS_IMAGEBUILDER_API StartResourceStateUpdateResult() = default;
     AWS_IMAGEBUILDER_API StartResourceStateUpdateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API StartResourceStateUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
      * <p>Identifies the lifecycle runtime instance that started the resource state
      * update.</p>
      */
-    inline const Aws::String& GetLifecycleExecutionId() const{ return m_lifecycleExecutionId; }
-    inline void SetLifecycleExecutionId(const Aws::String& value) { m_lifecycleExecutionId = value; }
-    inline void SetLifecycleExecutionId(Aws::String&& value) { m_lifecycleExecutionId = std::move(value); }
-    inline void SetLifecycleExecutionId(const char* value) { m_lifecycleExecutionId.assign(value); }
-    inline StartResourceStateUpdateResult& WithLifecycleExecutionId(const Aws::String& value) { SetLifecycleExecutionId(value); return *this;}
-    inline StartResourceStateUpdateResult& WithLifecycleExecutionId(Aws::String&& value) { SetLifecycleExecutionId(std::move(value)); return *this;}
-    inline StartResourceStateUpdateResult& WithLifecycleExecutionId(const char* value) { SetLifecycleExecutionId(value); return *this;}
+    inline const Aws::String& GetLifecycleExecutionId() const { return m_lifecycleExecutionId; }
+    template<typename LifecycleExecutionIdT = Aws::String>
+    void SetLifecycleExecutionId(LifecycleExecutionIdT&& value) { m_lifecycleExecutionIdHasBeenSet = true; m_lifecycleExecutionId = std::forward<LifecycleExecutionIdT>(value); }
+    template<typename LifecycleExecutionIdT = Aws::String>
+    StartResourceStateUpdateResult& WithLifecycleExecutionId(LifecycleExecutionIdT&& value) { SetLifecycleExecutionId(std::forward<LifecycleExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,32 +49,31 @@ namespace Model
      * <p>The requested ARN of the Image Builder resource for the asynchronous
      * update.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
-    inline StartResourceStateUpdateResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline StartResourceStateUpdateResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline StartResourceStateUpdateResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    StartResourceStateUpdateResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartResourceStateUpdateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartResourceStateUpdateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartResourceStateUpdateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartResourceStateUpdateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_lifecycleExecutionId;
+    bool m_lifecycleExecutionIdHasBeenSet = false;
 
     Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

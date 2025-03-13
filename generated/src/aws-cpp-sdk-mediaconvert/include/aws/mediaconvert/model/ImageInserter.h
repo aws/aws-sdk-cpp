@@ -36,7 +36,7 @@ namespace Model
   class ImageInserter
   {
   public:
-    AWS_MEDIACONVERT_API ImageInserter();
+    AWS_MEDIACONVERT_API ImageInserter() = default;
     AWS_MEDIACONVERT_API ImageInserter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API ImageInserter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * Specify the images that you want to overlay on your video. The images must be
      * PNG or TGA files.
      */
-    inline const Aws::Vector<InsertableImage>& GetInsertableImages() const{ return m_insertableImages; }
+    inline const Aws::Vector<InsertableImage>& GetInsertableImages() const { return m_insertableImages; }
     inline bool InsertableImagesHasBeenSet() const { return m_insertableImagesHasBeenSet; }
-    inline void SetInsertableImages(const Aws::Vector<InsertableImage>& value) { m_insertableImagesHasBeenSet = true; m_insertableImages = value; }
-    inline void SetInsertableImages(Aws::Vector<InsertableImage>&& value) { m_insertableImagesHasBeenSet = true; m_insertableImages = std::move(value); }
-    inline ImageInserter& WithInsertableImages(const Aws::Vector<InsertableImage>& value) { SetInsertableImages(value); return *this;}
-    inline ImageInserter& WithInsertableImages(Aws::Vector<InsertableImage>&& value) { SetInsertableImages(std::move(value)); return *this;}
-    inline ImageInserter& AddInsertableImages(const InsertableImage& value) { m_insertableImagesHasBeenSet = true; m_insertableImages.push_back(value); return *this; }
-    inline ImageInserter& AddInsertableImages(InsertableImage&& value) { m_insertableImagesHasBeenSet = true; m_insertableImages.push_back(std::move(value)); return *this; }
+    template<typename InsertableImagesT = Aws::Vector<InsertableImage>>
+    void SetInsertableImages(InsertableImagesT&& value) { m_insertableImagesHasBeenSet = true; m_insertableImages = std::forward<InsertableImagesT>(value); }
+    template<typename InsertableImagesT = Aws::Vector<InsertableImage>>
+    ImageInserter& WithInsertableImages(InsertableImagesT&& value) { SetInsertableImages(std::forward<InsertableImagesT>(value)); return *this;}
+    template<typename InsertableImagesT = InsertableImage>
+    ImageInserter& AddInsertableImages(InsertableImagesT&& value) { m_insertableImagesHasBeenSet = true; m_insertableImages.emplace_back(std::forward<InsertableImagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,7 +65,7 @@ namespace Model
      * 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100,
      * or specify an integer from 100 to 1000.
      */
-    inline int GetSdrReferenceWhiteLevel() const{ return m_sdrReferenceWhiteLevel; }
+    inline int GetSdrReferenceWhiteLevel() const { return m_sdrReferenceWhiteLevel; }
     inline bool SdrReferenceWhiteLevelHasBeenSet() const { return m_sdrReferenceWhiteLevelHasBeenSet; }
     inline void SetSdrReferenceWhiteLevel(int value) { m_sdrReferenceWhiteLevelHasBeenSet = true; m_sdrReferenceWhiteLevel = value; }
     inline ImageInserter& WithSdrReferenceWhiteLevel(int value) { SetSdrReferenceWhiteLevel(value); return *this;}
@@ -75,7 +75,7 @@ namespace Model
     Aws::Vector<InsertableImage> m_insertableImages;
     bool m_insertableImagesHasBeenSet = false;
 
-    int m_sdrReferenceWhiteLevel;
+    int m_sdrReferenceWhiteLevel{0};
     bool m_sdrReferenceWhiteLevelHasBeenSet = false;
   };
 

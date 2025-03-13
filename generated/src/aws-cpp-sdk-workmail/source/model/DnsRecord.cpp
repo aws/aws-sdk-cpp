@@ -18,15 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-DnsRecord::DnsRecord() : 
-    m_typeHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 DnsRecord::DnsRecord(JsonView jsonValue)
-  : DnsRecord()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DnsRecord& DnsRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Hostname"))
   {
     m_hostname = jsonValue.GetString("Hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

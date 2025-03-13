@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateBudgetResult::CreateBudgetResult()
-{
-}
-
 CreateBudgetResult::CreateBudgetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateBudgetResult& CreateBudgetResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("budgetId"))
   {
     m_budgetId = jsonValue.GetString("budgetId");
-
+    m_budgetIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

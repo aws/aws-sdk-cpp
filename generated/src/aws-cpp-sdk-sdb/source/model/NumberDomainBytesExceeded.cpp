@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-NumberDomainBytesExceeded::NumberDomainBytesExceeded() : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
-{
-}
-
 NumberDomainBytesExceeded::NumberDomainBytesExceeded(const XmlNode& xmlNode)
-  : NumberDomainBytesExceeded()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ NumberDomainBytesExceeded& NumberDomainBytesExceeded::operator =(const XmlNode& 
     {
       m_boxUsage = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(boxUsageNode.GetText()).c_str()).c_str());
       m_boxUsageHasBeenSet = true;
+       m_boxUsageHasBeenSet = true;
     }
   }
 

@@ -33,7 +33,7 @@ namespace Model
   class ApprovalRuleOverriddenEventMetadata
   {
   public:
-    AWS_CODECOMMIT_API ApprovalRuleOverriddenEventMetadata();
+    AWS_CODECOMMIT_API ApprovalRuleOverriddenEventMetadata() = default;
     AWS_CODECOMMIT_API ApprovalRuleOverriddenEventMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API ApprovalRuleOverriddenEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The revision ID of the pull request when the override event occurred.</p>
      */
-    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
-    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
-    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
-    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
-    inline ApprovalRuleOverriddenEventMetadata& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-    inline ApprovalRuleOverriddenEventMetadata& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-    inline ApprovalRuleOverriddenEventMetadata& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    ApprovalRuleOverriddenEventMetadata& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the override event.</p>
      */
-    inline const OverrideStatus& GetOverrideStatus() const{ return m_overrideStatus; }
+    inline OverrideStatus GetOverrideStatus() const { return m_overrideStatus; }
     inline bool OverrideStatusHasBeenSet() const { return m_overrideStatusHasBeenSet; }
-    inline void SetOverrideStatus(const OverrideStatus& value) { m_overrideStatusHasBeenSet = true; m_overrideStatus = value; }
-    inline void SetOverrideStatus(OverrideStatus&& value) { m_overrideStatusHasBeenSet = true; m_overrideStatus = std::move(value); }
-    inline ApprovalRuleOverriddenEventMetadata& WithOverrideStatus(const OverrideStatus& value) { SetOverrideStatus(value); return *this;}
-    inline ApprovalRuleOverriddenEventMetadata& WithOverrideStatus(OverrideStatus&& value) { SetOverrideStatus(std::move(value)); return *this;}
+    inline void SetOverrideStatus(OverrideStatus value) { m_overrideStatusHasBeenSet = true; m_overrideStatus = value; }
+    inline ApprovalRuleOverriddenEventMetadata& WithOverrideStatus(OverrideStatus value) { SetOverrideStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_revisionId;
     bool m_revisionIdHasBeenSet = false;
 
-    OverrideStatus m_overrideStatus;
+    OverrideStatus m_overrideStatus{OverrideStatus::NOT_SET};
     bool m_overrideStatusHasBeenSet = false;
   };
 

@@ -18,17 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-WarningsListItem::WarningsListItem() : 
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_warnCode(PageBasedWarningCode::NOT_SET),
-    m_warnCodeHasBeenSet(false),
-    m_warnMessageHasBeenSet(false)
-{
-}
-
 WarningsListItem::WarningsListItem(JsonView jsonValue)
-  : WarningsListItem()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ WarningsListItem& WarningsListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Page"))
   {
     m_page = jsonValue.GetInteger("Page");
-
     m_pageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarnCode"))
   {
     m_warnCode = PageBasedWarningCodeMapper::GetPageBasedWarningCodeForName(jsonValue.GetString("WarnCode"));
-
     m_warnCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarnMessage"))
   {
     m_warnMessage = jsonValue.GetString("WarnMessage");
-
     m_warnMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

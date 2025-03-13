@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-WafAction::WafAction() : 
-    m_typeHasBeenSet(false)
-{
-}
-
 WafAction::WafAction(JsonView jsonValue)
-  : WafAction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WafAction& WafAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

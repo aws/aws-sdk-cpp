@@ -29,7 +29,7 @@ namespace Model
   class ListConnectionTypesResult
   {
   public:
-    AWS_GLUE_API ListConnectionTypesResult();
+    AWS_GLUE_API ListConnectionTypesResult() = default;
     AWS_GLUE_API ListConnectionTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API ListConnectionTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>A list of <code>ConnectionTypeBrief</code> objects containing brief
      * information about the supported connection types.</p>
      */
-    inline const Aws::Vector<ConnectionTypeBrief>& GetConnectionTypes() const{ return m_connectionTypes; }
-    inline void SetConnectionTypes(const Aws::Vector<ConnectionTypeBrief>& value) { m_connectionTypes = value; }
-    inline void SetConnectionTypes(Aws::Vector<ConnectionTypeBrief>&& value) { m_connectionTypes = std::move(value); }
-    inline ListConnectionTypesResult& WithConnectionTypes(const Aws::Vector<ConnectionTypeBrief>& value) { SetConnectionTypes(value); return *this;}
-    inline ListConnectionTypesResult& WithConnectionTypes(Aws::Vector<ConnectionTypeBrief>&& value) { SetConnectionTypes(std::move(value)); return *this;}
-    inline ListConnectionTypesResult& AddConnectionTypes(const ConnectionTypeBrief& value) { m_connectionTypes.push_back(value); return *this; }
-    inline ListConnectionTypesResult& AddConnectionTypes(ConnectionTypeBrief&& value) { m_connectionTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConnectionTypeBrief>& GetConnectionTypes() const { return m_connectionTypes; }
+    template<typename ConnectionTypesT = Aws::Vector<ConnectionTypeBrief>>
+    void SetConnectionTypes(ConnectionTypesT&& value) { m_connectionTypesHasBeenSet = true; m_connectionTypes = std::forward<ConnectionTypesT>(value); }
+    template<typename ConnectionTypesT = Aws::Vector<ConnectionTypeBrief>>
+    ListConnectionTypesResult& WithConnectionTypes(ConnectionTypesT&& value) { SetConnectionTypes(std::forward<ConnectionTypesT>(value)); return *this;}
+    template<typename ConnectionTypesT = ConnectionTypeBrief>
+    ListConnectionTypesResult& AddConnectionTypes(ConnectionTypesT&& value) { m_connectionTypesHasBeenSet = true; m_connectionTypes.emplace_back(std::forward<ConnectionTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A continuation token, if the current list segment is not the last.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListConnectionTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConnectionTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConnectionTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConnectionTypesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConnectionTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConnectionTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConnectionTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConnectionTypesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConnectionTypeBrief> m_connectionTypes;
+    bool m_connectionTypesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

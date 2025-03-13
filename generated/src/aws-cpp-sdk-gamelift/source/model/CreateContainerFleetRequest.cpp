@@ -12,28 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContainerFleetRequest::CreateContainerFleetRequest() : 
-    m_fleetRoleArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_gameServerContainerGroupDefinitionNameHasBeenSet(false),
-    m_perInstanceContainerGroupDefinitionNameHasBeenSet(false),
-    m_instanceConnectionPortRangeHasBeenSet(false),
-    m_instanceInboundPermissionsHasBeenSet(false),
-    m_gameServerContainerGroupsPerInstance(0),
-    m_gameServerContainerGroupsPerInstanceHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_billingType(ContainerFleetBillingType::NOT_SET),
-    m_billingTypeHasBeenSet(false),
-    m_locationsHasBeenSet(false),
-    m_metricGroupsHasBeenSet(false),
-    m_newGameSessionProtectionPolicy(ProtectionPolicy::NOT_SET),
-    m_newGameSessionProtectionPolicyHasBeenSet(false),
-    m_gameSessionCreationLimitPolicyHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateContainerFleetRequest::SerializePayload() const
 {
   JsonValue payload;

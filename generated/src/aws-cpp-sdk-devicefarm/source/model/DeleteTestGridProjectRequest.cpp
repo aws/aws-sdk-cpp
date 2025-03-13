@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTestGridProjectRequest::DeleteTestGridProjectRequest() : 
-    m_projectArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTestGridProjectRequest::SerializePayload() const
 {
   JsonValue payload;

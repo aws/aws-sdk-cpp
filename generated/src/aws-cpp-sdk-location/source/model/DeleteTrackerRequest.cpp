@@ -12,11 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTrackerRequest::DeleteTrackerRequest() : 
-    m_trackerNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTrackerRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class TranscriptFilter
   {
   public:
-    AWS_LEXMODELSV2_API TranscriptFilter();
+    AWS_LEXMODELSV2_API TranscriptFilter() = default;
     AWS_LEXMODELSV2_API TranscriptFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TranscriptFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The object representing the filter that Amazon Lex will use to select the
      * appropriate transcript when the transcript format is the Amazon Lex format.</p>
      */
-    inline const LexTranscriptFilter& GetLexTranscriptFilter() const{ return m_lexTranscriptFilter; }
+    inline const LexTranscriptFilter& GetLexTranscriptFilter() const { return m_lexTranscriptFilter; }
     inline bool LexTranscriptFilterHasBeenSet() const { return m_lexTranscriptFilterHasBeenSet; }
-    inline void SetLexTranscriptFilter(const LexTranscriptFilter& value) { m_lexTranscriptFilterHasBeenSet = true; m_lexTranscriptFilter = value; }
-    inline void SetLexTranscriptFilter(LexTranscriptFilter&& value) { m_lexTranscriptFilterHasBeenSet = true; m_lexTranscriptFilter = std::move(value); }
-    inline TranscriptFilter& WithLexTranscriptFilter(const LexTranscriptFilter& value) { SetLexTranscriptFilter(value); return *this;}
-    inline TranscriptFilter& WithLexTranscriptFilter(LexTranscriptFilter&& value) { SetLexTranscriptFilter(std::move(value)); return *this;}
+    template<typename LexTranscriptFilterT = LexTranscriptFilter>
+    void SetLexTranscriptFilter(LexTranscriptFilterT&& value) { m_lexTranscriptFilterHasBeenSet = true; m_lexTranscriptFilter = std::forward<LexTranscriptFilterT>(value); }
+    template<typename LexTranscriptFilterT = LexTranscriptFilter>
+    TranscriptFilter& WithLexTranscriptFilter(LexTranscriptFilterT&& value) { SetLexTranscriptFilter(std::forward<LexTranscriptFilterT>(value)); return *this;}
     ///@}
   private:
 

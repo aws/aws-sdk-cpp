@@ -41,7 +41,7 @@ namespace Model
   class ConfigurationTemplate
   {
   public:
-    AWS_CLOUDWATCHLOGS_API ConfigurationTemplate();
+    AWS_CLOUDWATCHLOGS_API ConfigurationTemplate() = default;
     AWS_CLOUDWATCHLOGS_API ConfigurationTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API ConfigurationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable
      * logging from Amazon Web Services services.</a>.</p>
      */
-    inline const Aws::String& GetService() const{ return m_service; }
+    inline const Aws::String& GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-    inline ConfigurationTemplate& WithService(const Aws::String& value) { SetService(value); return *this;}
-    inline ConfigurationTemplate& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-    inline ConfigurationTemplate& WithService(const char* value) { SetService(value); return *this;}
+    template<typename ServiceT = Aws::String>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Aws::String>
+    ConfigurationTemplate& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * <p>A string specifying which log type this configuration template applies
      * to.</p>
      */
-    inline const Aws::String& GetLogType() const{ return m_logType; }
+    inline const Aws::String& GetLogType() const { return m_logType; }
     inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
-    inline void SetLogType(const Aws::String& value) { m_logTypeHasBeenSet = true; m_logType = value; }
-    inline void SetLogType(Aws::String&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
-    inline void SetLogType(const char* value) { m_logTypeHasBeenSet = true; m_logType.assign(value); }
-    inline ConfigurationTemplate& WithLogType(const Aws::String& value) { SetLogType(value); return *this;}
-    inline ConfigurationTemplate& WithLogType(Aws::String&& value) { SetLogType(std::move(value)); return *this;}
-    inline ConfigurationTemplate& WithLogType(const char* value) { SetLogType(value); return *this;}
+    template<typename LogTypeT = Aws::String>
+    void SetLogType(LogTypeT&& value) { m_logTypeHasBeenSet = true; m_logType = std::forward<LogTypeT>(value); }
+    template<typename LogTypeT = Aws::String>
+    ConfigurationTemplate& WithLogType(LogTypeT&& value) { SetLogType(std::forward<LogTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * <p>A string specifying which resource type this configuration template applies
      * to.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ConfigurationTemplate& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ConfigurationTemplate& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ConfigurationTemplate& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ConfigurationTemplate& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +93,10 @@ namespace Model
      * <p>A string specifying which destination type this configuration template
      * applies to.</p>
      */
-    inline const DeliveryDestinationType& GetDeliveryDestinationType() const{ return m_deliveryDestinationType; }
+    inline DeliveryDestinationType GetDeliveryDestinationType() const { return m_deliveryDestinationType; }
     inline bool DeliveryDestinationTypeHasBeenSet() const { return m_deliveryDestinationTypeHasBeenSet; }
-    inline void SetDeliveryDestinationType(const DeliveryDestinationType& value) { m_deliveryDestinationTypeHasBeenSet = true; m_deliveryDestinationType = value; }
-    inline void SetDeliveryDestinationType(DeliveryDestinationType&& value) { m_deliveryDestinationTypeHasBeenSet = true; m_deliveryDestinationType = std::move(value); }
-    inline ConfigurationTemplate& WithDeliveryDestinationType(const DeliveryDestinationType& value) { SetDeliveryDestinationType(value); return *this;}
-    inline ConfigurationTemplate& WithDeliveryDestinationType(DeliveryDestinationType&& value) { SetDeliveryDestinationType(std::move(value)); return *this;}
+    inline void SetDeliveryDestinationType(DeliveryDestinationType value) { m_deliveryDestinationTypeHasBeenSet = true; m_deliveryDestinationType = value; }
+    inline ConfigurationTemplate& WithDeliveryDestinationType(DeliveryDestinationType value) { SetDeliveryDestinationType(value); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +104,12 @@ namespace Model
      * <p>A mapping that displays the default value of each property within a
      * delivery's configuration, if it is not specified in the request.</p>
      */
-    inline const ConfigurationTemplateDeliveryConfigValues& GetDefaultDeliveryConfigValues() const{ return m_defaultDeliveryConfigValues; }
+    inline const ConfigurationTemplateDeliveryConfigValues& GetDefaultDeliveryConfigValues() const { return m_defaultDeliveryConfigValues; }
     inline bool DefaultDeliveryConfigValuesHasBeenSet() const { return m_defaultDeliveryConfigValuesHasBeenSet; }
-    inline void SetDefaultDeliveryConfigValues(const ConfigurationTemplateDeliveryConfigValues& value) { m_defaultDeliveryConfigValuesHasBeenSet = true; m_defaultDeliveryConfigValues = value; }
-    inline void SetDefaultDeliveryConfigValues(ConfigurationTemplateDeliveryConfigValues&& value) { m_defaultDeliveryConfigValuesHasBeenSet = true; m_defaultDeliveryConfigValues = std::move(value); }
-    inline ConfigurationTemplate& WithDefaultDeliveryConfigValues(const ConfigurationTemplateDeliveryConfigValues& value) { SetDefaultDeliveryConfigValues(value); return *this;}
-    inline ConfigurationTemplate& WithDefaultDeliveryConfigValues(ConfigurationTemplateDeliveryConfigValues&& value) { SetDefaultDeliveryConfigValues(std::move(value)); return *this;}
+    template<typename DefaultDeliveryConfigValuesT = ConfigurationTemplateDeliveryConfigValues>
+    void SetDefaultDeliveryConfigValues(DefaultDeliveryConfigValuesT&& value) { m_defaultDeliveryConfigValuesHasBeenSet = true; m_defaultDeliveryConfigValues = std::forward<DefaultDeliveryConfigValuesT>(value); }
+    template<typename DefaultDeliveryConfigValuesT = ConfigurationTemplateDeliveryConfigValues>
+    ConfigurationTemplate& WithDefaultDeliveryConfigValues(DefaultDeliveryConfigValuesT&& value) { SetDefaultDeliveryConfigValues(std::forward<DefaultDeliveryConfigValuesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,14 +121,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html">UpdateDeliveryConfiguration</a>
      * operation.</p>
      */
-    inline const Aws::Vector<RecordField>& GetAllowedFields() const{ return m_allowedFields; }
+    inline const Aws::Vector<RecordField>& GetAllowedFields() const { return m_allowedFields; }
     inline bool AllowedFieldsHasBeenSet() const { return m_allowedFieldsHasBeenSet; }
-    inline void SetAllowedFields(const Aws::Vector<RecordField>& value) { m_allowedFieldsHasBeenSet = true; m_allowedFields = value; }
-    inline void SetAllowedFields(Aws::Vector<RecordField>&& value) { m_allowedFieldsHasBeenSet = true; m_allowedFields = std::move(value); }
-    inline ConfigurationTemplate& WithAllowedFields(const Aws::Vector<RecordField>& value) { SetAllowedFields(value); return *this;}
-    inline ConfigurationTemplate& WithAllowedFields(Aws::Vector<RecordField>&& value) { SetAllowedFields(std::move(value)); return *this;}
-    inline ConfigurationTemplate& AddAllowedFields(const RecordField& value) { m_allowedFieldsHasBeenSet = true; m_allowedFields.push_back(value); return *this; }
-    inline ConfigurationTemplate& AddAllowedFields(RecordField&& value) { m_allowedFieldsHasBeenSet = true; m_allowedFields.push_back(std::move(value)); return *this; }
+    template<typename AllowedFieldsT = Aws::Vector<RecordField>>
+    void SetAllowedFields(AllowedFieldsT&& value) { m_allowedFieldsHasBeenSet = true; m_allowedFields = std::forward<AllowedFieldsT>(value); }
+    template<typename AllowedFieldsT = Aws::Vector<RecordField>>
+    ConfigurationTemplate& WithAllowedFields(AllowedFieldsT&& value) { SetAllowedFields(std::forward<AllowedFieldsT>(value)); return *this;}
+    template<typename AllowedFieldsT = RecordField>
+    ConfigurationTemplate& AddAllowedFields(AllowedFieldsT&& value) { m_allowedFieldsHasBeenSet = true; m_allowedFields.emplace_back(std::forward<AllowedFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -144,14 +136,13 @@ namespace Model
      * <p>The list of delivery destination output formats that are supported by this
      * log source.</p>
      */
-    inline const Aws::Vector<OutputFormat>& GetAllowedOutputFormats() const{ return m_allowedOutputFormats; }
+    inline const Aws::Vector<OutputFormat>& GetAllowedOutputFormats() const { return m_allowedOutputFormats; }
     inline bool AllowedOutputFormatsHasBeenSet() const { return m_allowedOutputFormatsHasBeenSet; }
-    inline void SetAllowedOutputFormats(const Aws::Vector<OutputFormat>& value) { m_allowedOutputFormatsHasBeenSet = true; m_allowedOutputFormats = value; }
-    inline void SetAllowedOutputFormats(Aws::Vector<OutputFormat>&& value) { m_allowedOutputFormatsHasBeenSet = true; m_allowedOutputFormats = std::move(value); }
-    inline ConfigurationTemplate& WithAllowedOutputFormats(const Aws::Vector<OutputFormat>& value) { SetAllowedOutputFormats(value); return *this;}
-    inline ConfigurationTemplate& WithAllowedOutputFormats(Aws::Vector<OutputFormat>&& value) { SetAllowedOutputFormats(std::move(value)); return *this;}
-    inline ConfigurationTemplate& AddAllowedOutputFormats(const OutputFormat& value) { m_allowedOutputFormatsHasBeenSet = true; m_allowedOutputFormats.push_back(value); return *this; }
-    inline ConfigurationTemplate& AddAllowedOutputFormats(OutputFormat&& value) { m_allowedOutputFormatsHasBeenSet = true; m_allowedOutputFormats.push_back(std::move(value)); return *this; }
+    template<typename AllowedOutputFormatsT = Aws::Vector<OutputFormat>>
+    void SetAllowedOutputFormats(AllowedOutputFormatsT&& value) { m_allowedOutputFormatsHasBeenSet = true; m_allowedOutputFormats = std::forward<AllowedOutputFormatsT>(value); }
+    template<typename AllowedOutputFormatsT = Aws::Vector<OutputFormat>>
+    ConfigurationTemplate& WithAllowedOutputFormats(AllowedOutputFormatsT&& value) { SetAllowedOutputFormats(std::forward<AllowedOutputFormatsT>(value)); return *this;}
+    inline ConfigurationTemplate& AddAllowedOutputFormats(OutputFormat value) { m_allowedOutputFormatsHasBeenSet = true; m_allowedOutputFormats.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -160,14 +151,12 @@ namespace Model
      * create a delivery source on the desired resource type when calling <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
      */
-    inline const Aws::String& GetAllowedActionForAllowVendedLogsDeliveryForResource() const{ return m_allowedActionForAllowVendedLogsDeliveryForResource; }
+    inline const Aws::String& GetAllowedActionForAllowVendedLogsDeliveryForResource() const { return m_allowedActionForAllowVendedLogsDeliveryForResource; }
     inline bool AllowedActionForAllowVendedLogsDeliveryForResourceHasBeenSet() const { return m_allowedActionForAllowVendedLogsDeliveryForResourceHasBeenSet; }
-    inline void SetAllowedActionForAllowVendedLogsDeliveryForResource(const Aws::String& value) { m_allowedActionForAllowVendedLogsDeliveryForResourceHasBeenSet = true; m_allowedActionForAllowVendedLogsDeliveryForResource = value; }
-    inline void SetAllowedActionForAllowVendedLogsDeliveryForResource(Aws::String&& value) { m_allowedActionForAllowVendedLogsDeliveryForResourceHasBeenSet = true; m_allowedActionForAllowVendedLogsDeliveryForResource = std::move(value); }
-    inline void SetAllowedActionForAllowVendedLogsDeliveryForResource(const char* value) { m_allowedActionForAllowVendedLogsDeliveryForResourceHasBeenSet = true; m_allowedActionForAllowVendedLogsDeliveryForResource.assign(value); }
-    inline ConfigurationTemplate& WithAllowedActionForAllowVendedLogsDeliveryForResource(const Aws::String& value) { SetAllowedActionForAllowVendedLogsDeliveryForResource(value); return *this;}
-    inline ConfigurationTemplate& WithAllowedActionForAllowVendedLogsDeliveryForResource(Aws::String&& value) { SetAllowedActionForAllowVendedLogsDeliveryForResource(std::move(value)); return *this;}
-    inline ConfigurationTemplate& WithAllowedActionForAllowVendedLogsDeliveryForResource(const char* value) { SetAllowedActionForAllowVendedLogsDeliveryForResource(value); return *this;}
+    template<typename AllowedActionForAllowVendedLogsDeliveryForResourceT = Aws::String>
+    void SetAllowedActionForAllowVendedLogsDeliveryForResource(AllowedActionForAllowVendedLogsDeliveryForResourceT&& value) { m_allowedActionForAllowVendedLogsDeliveryForResourceHasBeenSet = true; m_allowedActionForAllowVendedLogsDeliveryForResource = std::forward<AllowedActionForAllowVendedLogsDeliveryForResourceT>(value); }
+    template<typename AllowedActionForAllowVendedLogsDeliveryForResourceT = Aws::String>
+    ConfigurationTemplate& WithAllowedActionForAllowVendedLogsDeliveryForResource(AllowedActionForAllowVendedLogsDeliveryForResourceT&& value) { SetAllowedActionForAllowVendedLogsDeliveryForResource(std::forward<AllowedActionForAllowVendedLogsDeliveryForResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,15 +168,14 @@ namespace Model
      * on a delivery that delivers in <code>Plain</code>, <code>W3C</code>, or
      * <code>Raw</code> format.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedFieldDelimiters() const{ return m_allowedFieldDelimiters; }
+    inline const Aws::Vector<Aws::String>& GetAllowedFieldDelimiters() const { return m_allowedFieldDelimiters; }
     inline bool AllowedFieldDelimitersHasBeenSet() const { return m_allowedFieldDelimitersHasBeenSet; }
-    inline void SetAllowedFieldDelimiters(const Aws::Vector<Aws::String>& value) { m_allowedFieldDelimitersHasBeenSet = true; m_allowedFieldDelimiters = value; }
-    inline void SetAllowedFieldDelimiters(Aws::Vector<Aws::String>&& value) { m_allowedFieldDelimitersHasBeenSet = true; m_allowedFieldDelimiters = std::move(value); }
-    inline ConfigurationTemplate& WithAllowedFieldDelimiters(const Aws::Vector<Aws::String>& value) { SetAllowedFieldDelimiters(value); return *this;}
-    inline ConfigurationTemplate& WithAllowedFieldDelimiters(Aws::Vector<Aws::String>&& value) { SetAllowedFieldDelimiters(std::move(value)); return *this;}
-    inline ConfigurationTemplate& AddAllowedFieldDelimiters(const Aws::String& value) { m_allowedFieldDelimitersHasBeenSet = true; m_allowedFieldDelimiters.push_back(value); return *this; }
-    inline ConfigurationTemplate& AddAllowedFieldDelimiters(Aws::String&& value) { m_allowedFieldDelimitersHasBeenSet = true; m_allowedFieldDelimiters.push_back(std::move(value)); return *this; }
-    inline ConfigurationTemplate& AddAllowedFieldDelimiters(const char* value) { m_allowedFieldDelimitersHasBeenSet = true; m_allowedFieldDelimiters.push_back(value); return *this; }
+    template<typename AllowedFieldDelimitersT = Aws::Vector<Aws::String>>
+    void SetAllowedFieldDelimiters(AllowedFieldDelimitersT&& value) { m_allowedFieldDelimitersHasBeenSet = true; m_allowedFieldDelimiters = std::forward<AllowedFieldDelimitersT>(value); }
+    template<typename AllowedFieldDelimitersT = Aws::Vector<Aws::String>>
+    ConfigurationTemplate& WithAllowedFieldDelimiters(AllowedFieldDelimitersT&& value) { SetAllowedFieldDelimiters(std::forward<AllowedFieldDelimitersT>(value)); return *this;}
+    template<typename AllowedFieldDelimitersT = Aws::String>
+    ConfigurationTemplate& AddAllowedFieldDelimiters(AllowedFieldDelimitersT&& value) { m_allowedFieldDelimitersHasBeenSet = true; m_allowedFieldDelimiters.emplace_back(std::forward<AllowedFieldDelimitersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -195,15 +183,14 @@ namespace Model
      * <p>The list of variable fields that can be used in the suffix path of a delivery
      * that delivers to an S3 bucket.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedSuffixPathFields() const{ return m_allowedSuffixPathFields; }
+    inline const Aws::Vector<Aws::String>& GetAllowedSuffixPathFields() const { return m_allowedSuffixPathFields; }
     inline bool AllowedSuffixPathFieldsHasBeenSet() const { return m_allowedSuffixPathFieldsHasBeenSet; }
-    inline void SetAllowedSuffixPathFields(const Aws::Vector<Aws::String>& value) { m_allowedSuffixPathFieldsHasBeenSet = true; m_allowedSuffixPathFields = value; }
-    inline void SetAllowedSuffixPathFields(Aws::Vector<Aws::String>&& value) { m_allowedSuffixPathFieldsHasBeenSet = true; m_allowedSuffixPathFields = std::move(value); }
-    inline ConfigurationTemplate& WithAllowedSuffixPathFields(const Aws::Vector<Aws::String>& value) { SetAllowedSuffixPathFields(value); return *this;}
-    inline ConfigurationTemplate& WithAllowedSuffixPathFields(Aws::Vector<Aws::String>&& value) { SetAllowedSuffixPathFields(std::move(value)); return *this;}
-    inline ConfigurationTemplate& AddAllowedSuffixPathFields(const Aws::String& value) { m_allowedSuffixPathFieldsHasBeenSet = true; m_allowedSuffixPathFields.push_back(value); return *this; }
-    inline ConfigurationTemplate& AddAllowedSuffixPathFields(Aws::String&& value) { m_allowedSuffixPathFieldsHasBeenSet = true; m_allowedSuffixPathFields.push_back(std::move(value)); return *this; }
-    inline ConfigurationTemplate& AddAllowedSuffixPathFields(const char* value) { m_allowedSuffixPathFieldsHasBeenSet = true; m_allowedSuffixPathFields.push_back(value); return *this; }
+    template<typename AllowedSuffixPathFieldsT = Aws::Vector<Aws::String>>
+    void SetAllowedSuffixPathFields(AllowedSuffixPathFieldsT&& value) { m_allowedSuffixPathFieldsHasBeenSet = true; m_allowedSuffixPathFields = std::forward<AllowedSuffixPathFieldsT>(value); }
+    template<typename AllowedSuffixPathFieldsT = Aws::Vector<Aws::String>>
+    ConfigurationTemplate& WithAllowedSuffixPathFields(AllowedSuffixPathFieldsT&& value) { SetAllowedSuffixPathFields(std::forward<AllowedSuffixPathFieldsT>(value)); return *this;}
+    template<typename AllowedSuffixPathFieldsT = Aws::String>
+    ConfigurationTemplate& AddAllowedSuffixPathFields(AllowedSuffixPathFieldsT&& value) { m_allowedSuffixPathFieldsHasBeenSet = true; m_allowedSuffixPathFields.emplace_back(std::forward<AllowedSuffixPathFieldsT>(value)); return *this; }
     ///@}
   private:
 
@@ -216,7 +203,7 @@ namespace Model
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
 
-    DeliveryDestinationType m_deliveryDestinationType;
+    DeliveryDestinationType m_deliveryDestinationType{DeliveryDestinationType::NOT_SET};
     bool m_deliveryDestinationTypeHasBeenSet = false;
 
     ConfigurationTemplateDeliveryConfigValues m_defaultDeliveryConfigValues;

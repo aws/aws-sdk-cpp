@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-USD::USD() : 
-    m_dollars(0),
-    m_dollarsHasBeenSet(false),
-    m_cents(0),
-    m_centsHasBeenSet(false),
-    m_tenthFractionsOfACent(0),
-    m_tenthFractionsOfACentHasBeenSet(false)
-{
-}
-
 USD::USD(JsonView jsonValue)
-  : USD()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ USD& USD::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Dollars"))
   {
     m_dollars = jsonValue.GetInteger("Dollars");
-
     m_dollarsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cents"))
   {
     m_cents = jsonValue.GetInteger("Cents");
-
     m_centsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TenthFractionsOfACent"))
   {
     m_tenthFractionsOfACent = jsonValue.GetInteger("TenthFractionsOfACent");
-
     m_tenthFractionsOfACentHasBeenSet = true;
   }
-
   return *this;
 }
 

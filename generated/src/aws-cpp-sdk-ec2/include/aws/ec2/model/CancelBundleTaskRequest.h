@@ -24,7 +24,7 @@ namespace Model
   class CancelBundleTaskRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CancelBundleTaskRequest();
+    AWS_EC2_API CancelBundleTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of the bundle task.</p>
      */
-    inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+    inline const Aws::String& GetBundleId() const { return m_bundleId; }
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
-    inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
-    inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
-    inline CancelBundleTaskRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
-    inline CancelBundleTaskRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
-    inline CancelBundleTaskRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
+    template<typename BundleIdT = Aws::String>
+    void SetBundleId(BundleIdT&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::forward<BundleIdT>(value); }
+    template<typename BundleIdT = Aws::String>
+    CancelBundleTaskRequest& WithBundleId(BundleIdT&& value) { SetBundleId(std::forward<BundleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CancelBundleTaskRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

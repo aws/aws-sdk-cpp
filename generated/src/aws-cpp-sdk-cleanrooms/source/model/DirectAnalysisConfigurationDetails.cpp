@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-DirectAnalysisConfigurationDetails::DirectAnalysisConfigurationDetails() : 
-    m_receiverAccountIdsHasBeenSet(false)
-{
-}
-
 DirectAnalysisConfigurationDetails::DirectAnalysisConfigurationDetails(JsonView jsonValue)
-  : DirectAnalysisConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DirectAnalysisConfigurationDetails& DirectAnalysisConfigurationDetails::operator
     }
     m_receiverAccountIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

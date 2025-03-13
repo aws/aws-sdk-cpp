@@ -35,7 +35,7 @@ namespace Model
   class Header
   {
   public:
-    AWS_NETWORKFIREWALL_API Header();
+    AWS_NETWORKFIREWALL_API Header() = default;
     AWS_NETWORKFIREWALL_API Header(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Header& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p>The protocol to inspect for. To specify all, you can use <code>IP</code>,
      * because all traffic on Amazon Web Services and on the internet is IP.</p>
      */
-    inline const StatefulRuleProtocol& GetProtocol() const{ return m_protocol; }
+    inline StatefulRuleProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const StatefulRuleProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(StatefulRuleProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline Header& WithProtocol(const StatefulRuleProtocol& value) { SetProtocol(value); return *this;}
-    inline Header& WithProtocol(StatefulRuleProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(StatefulRuleProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline Header& WithProtocol(StatefulRuleProtocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
      * Inter-Domain Routing</a>.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline Header& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline Header& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline Header& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    Header& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * example <code>1994</code> and you can specify a port range, for example
      * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
-    inline const Aws::String& GetSourcePort() const{ return m_sourcePort; }
+    inline const Aws::String& GetSourcePort() const { return m_sourcePort; }
     inline bool SourcePortHasBeenSet() const { return m_sourcePortHasBeenSet; }
-    inline void SetSourcePort(const Aws::String& value) { m_sourcePortHasBeenSet = true; m_sourcePort = value; }
-    inline void SetSourcePort(Aws::String&& value) { m_sourcePortHasBeenSet = true; m_sourcePort = std::move(value); }
-    inline void SetSourcePort(const char* value) { m_sourcePortHasBeenSet = true; m_sourcePort.assign(value); }
-    inline Header& WithSourcePort(const Aws::String& value) { SetSourcePort(value); return *this;}
-    inline Header& WithSourcePort(Aws::String&& value) { SetSourcePort(std::move(value)); return *this;}
-    inline Header& WithSourcePort(const char* value) { SetSourcePort(value); return *this;}
+    template<typename SourcePortT = Aws::String>
+    void SetSourcePort(SourcePortT&& value) { m_sourcePortHasBeenSet = true; m_sourcePort = std::forward<SourcePortT>(value); }
+    template<typename SourcePortT = Aws::String>
+    Header& WithSourcePort(SourcePortT&& value) { SetSourcePort(std::forward<SourcePortT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +103,10 @@ namespace Model
      * <code>FORWARD</code>, the inspection only matches traffic going from the source
      * to the destination. </p>
      */
-    inline const StatefulRuleDirection& GetDirection() const{ return m_direction; }
+    inline StatefulRuleDirection GetDirection() const { return m_direction; }
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
-    inline void SetDirection(const StatefulRuleDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
-    inline void SetDirection(StatefulRuleDirection&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
-    inline Header& WithDirection(const StatefulRuleDirection& value) { SetDirection(value); return *this;}
-    inline Header& WithDirection(StatefulRuleDirection&& value) { SetDirection(std::move(value)); return *this;}
+    inline void SetDirection(StatefulRuleDirection value) { m_directionHasBeenSet = true; m_direction = value; }
+    inline Header& WithDirection(StatefulRuleDirection value) { SetDirection(value); return *this;}
     ///@}
 
     ///@{
@@ -138,14 +130,12 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
      * Inter-Domain Routing</a>.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline Header& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline Header& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline Header& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    Header& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,18 +144,16 @@ namespace Model
      * example <code>1994</code> and you can specify a port range, for example
      * <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
      */
-    inline const Aws::String& GetDestinationPort() const{ return m_destinationPort; }
+    inline const Aws::String& GetDestinationPort() const { return m_destinationPort; }
     inline bool DestinationPortHasBeenSet() const { return m_destinationPortHasBeenSet; }
-    inline void SetDestinationPort(const Aws::String& value) { m_destinationPortHasBeenSet = true; m_destinationPort = value; }
-    inline void SetDestinationPort(Aws::String&& value) { m_destinationPortHasBeenSet = true; m_destinationPort = std::move(value); }
-    inline void SetDestinationPort(const char* value) { m_destinationPortHasBeenSet = true; m_destinationPort.assign(value); }
-    inline Header& WithDestinationPort(const Aws::String& value) { SetDestinationPort(value); return *this;}
-    inline Header& WithDestinationPort(Aws::String&& value) { SetDestinationPort(std::move(value)); return *this;}
-    inline Header& WithDestinationPort(const char* value) { SetDestinationPort(value); return *this;}
+    template<typename DestinationPortT = Aws::String>
+    void SetDestinationPort(DestinationPortT&& value) { m_destinationPortHasBeenSet = true; m_destinationPort = std::forward<DestinationPortT>(value); }
+    template<typename DestinationPortT = Aws::String>
+    Header& WithDestinationPort(DestinationPortT&& value) { SetDestinationPort(std::forward<DestinationPortT>(value)); return *this;}
     ///@}
   private:
 
-    StatefulRuleProtocol m_protocol;
+    StatefulRuleProtocol m_protocol{StatefulRuleProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
     Aws::String m_source;
@@ -174,7 +162,7 @@ namespace Model
     Aws::String m_sourcePort;
     bool m_sourcePortHasBeenSet = false;
 
-    StatefulRuleDirection m_direction;
+    StatefulRuleDirection m_direction{StatefulRuleDirection::NOT_SET};
     bool m_directionHasBeenSet = false;
 
     Aws::String m_destination;

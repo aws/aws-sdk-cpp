@@ -35,7 +35,7 @@ namespace Model
   class AWSManagedRulesACFPRuleSet
   {
   public:
-    AWS_WAFV2_API AWSManagedRulesACFPRuleSet();
+    AWS_WAFV2_API AWSManagedRulesACFPRuleSet() = default;
     AWS_WAFV2_API AWSManagedRulesACFPRuleSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API AWSManagedRulesACFPRuleSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * doesn't match the path <code>/home/web/newaccount</code> or
      * <code>/website/newaccount</code>. </p>
      */
-    inline const Aws::String& GetCreationPath() const{ return m_creationPath; }
+    inline const Aws::String& GetCreationPath() const { return m_creationPath; }
     inline bool CreationPathHasBeenSet() const { return m_creationPathHasBeenSet; }
-    inline void SetCreationPath(const Aws::String& value) { m_creationPathHasBeenSet = true; m_creationPath = value; }
-    inline void SetCreationPath(Aws::String&& value) { m_creationPathHasBeenSet = true; m_creationPath = std::move(value); }
-    inline void SetCreationPath(const char* value) { m_creationPathHasBeenSet = true; m_creationPath.assign(value); }
-    inline AWSManagedRulesACFPRuleSet& WithCreationPath(const Aws::String& value) { SetCreationPath(value); return *this;}
-    inline AWSManagedRulesACFPRuleSet& WithCreationPath(Aws::String&& value) { SetCreationPath(std::move(value)); return *this;}
-    inline AWSManagedRulesACFPRuleSet& WithCreationPath(const char* value) { SetCreationPath(value); return *this;}
+    template<typename CreationPathT = Aws::String>
+    void SetCreationPath(CreationPathT&& value) { m_creationPathHasBeenSet = true; m_creationPath = std::forward<CreationPathT>(value); }
+    template<typename CreationPathT = Aws::String>
+    AWSManagedRulesACFPRuleSet& WithCreationPath(CreationPathT&& value) { SetCreationPath(std::forward<CreationPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +77,12 @@ namespace Model
      * but doesn't match the path <code>/home/web/registration</code> or
      * <code>/website/registration</code>. </p>
      */
-    inline const Aws::String& GetRegistrationPagePath() const{ return m_registrationPagePath; }
+    inline const Aws::String& GetRegistrationPagePath() const { return m_registrationPagePath; }
     inline bool RegistrationPagePathHasBeenSet() const { return m_registrationPagePathHasBeenSet; }
-    inline void SetRegistrationPagePath(const Aws::String& value) { m_registrationPagePathHasBeenSet = true; m_registrationPagePath = value; }
-    inline void SetRegistrationPagePath(Aws::String&& value) { m_registrationPagePathHasBeenSet = true; m_registrationPagePath = std::move(value); }
-    inline void SetRegistrationPagePath(const char* value) { m_registrationPagePathHasBeenSet = true; m_registrationPagePath.assign(value); }
-    inline AWSManagedRulesACFPRuleSet& WithRegistrationPagePath(const Aws::String& value) { SetRegistrationPagePath(value); return *this;}
-    inline AWSManagedRulesACFPRuleSet& WithRegistrationPagePath(Aws::String&& value) { SetRegistrationPagePath(std::move(value)); return *this;}
-    inline AWSManagedRulesACFPRuleSet& WithRegistrationPagePath(const char* value) { SetRegistrationPagePath(value); return *this;}
+    template<typename RegistrationPagePathT = Aws::String>
+    void SetRegistrationPagePath(RegistrationPagePathT&& value) { m_registrationPagePathHasBeenSet = true; m_registrationPagePath = std::forward<RegistrationPagePathT>(value); }
+    template<typename RegistrationPagePathT = Aws::String>
+    AWSManagedRulesACFPRuleSet& WithRegistrationPagePath(RegistrationPagePathT&& value) { SetRegistrationPagePath(std::forward<RegistrationPagePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +90,12 @@ namespace Model
      * <p>The criteria for inspecting account creation requests, used by the ACFP rule
      * group to validate and track account creation attempts. </p>
      */
-    inline const RequestInspectionACFP& GetRequestInspection() const{ return m_requestInspection; }
+    inline const RequestInspectionACFP& GetRequestInspection() const { return m_requestInspection; }
     inline bool RequestInspectionHasBeenSet() const { return m_requestInspectionHasBeenSet; }
-    inline void SetRequestInspection(const RequestInspectionACFP& value) { m_requestInspectionHasBeenSet = true; m_requestInspection = value; }
-    inline void SetRequestInspection(RequestInspectionACFP&& value) { m_requestInspectionHasBeenSet = true; m_requestInspection = std::move(value); }
-    inline AWSManagedRulesACFPRuleSet& WithRequestInspection(const RequestInspectionACFP& value) { SetRequestInspection(value); return *this;}
-    inline AWSManagedRulesACFPRuleSet& WithRequestInspection(RequestInspectionACFP&& value) { SetRequestInspection(std::move(value)); return *this;}
+    template<typename RequestInspectionT = RequestInspectionACFP>
+    void SetRequestInspection(RequestInspectionT&& value) { m_requestInspectionHasBeenSet = true; m_requestInspection = std::forward<RequestInspectionT>(value); }
+    template<typename RequestInspectionT = RequestInspectionACFP>
+    AWSManagedRulesACFPRuleSet& WithRequestInspection(RequestInspectionT&& value) { SetRequestInspection(std::forward<RequestInspectionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +110,12 @@ namespace Model
      * requests from client sessions and IP addresses that have had too many successful
      * account creation attempts in a short amount of time. </p>
      */
-    inline const ResponseInspection& GetResponseInspection() const{ return m_responseInspection; }
+    inline const ResponseInspection& GetResponseInspection() const { return m_responseInspection; }
     inline bool ResponseInspectionHasBeenSet() const { return m_responseInspectionHasBeenSet; }
-    inline void SetResponseInspection(const ResponseInspection& value) { m_responseInspectionHasBeenSet = true; m_responseInspection = value; }
-    inline void SetResponseInspection(ResponseInspection&& value) { m_responseInspectionHasBeenSet = true; m_responseInspection = std::move(value); }
-    inline AWSManagedRulesACFPRuleSet& WithResponseInspection(const ResponseInspection& value) { SetResponseInspection(value); return *this;}
-    inline AWSManagedRulesACFPRuleSet& WithResponseInspection(ResponseInspection&& value) { SetResponseInspection(std::move(value)); return *this;}
+    template<typename ResponseInspectionT = ResponseInspection>
+    void SetResponseInspection(ResponseInspectionT&& value) { m_responseInspectionHasBeenSet = true; m_responseInspection = std::forward<ResponseInspectionT>(value); }
+    template<typename ResponseInspectionT = ResponseInspection>
+    AWSManagedRulesACFPRuleSet& WithResponseInspection(ResponseInspectionT&& value) { SetResponseInspection(std::forward<ResponseInspectionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,7 +123,7 @@ namespace Model
      * <p>Allow the use of regular expressions in the registration page path and the
      * account creation path. </p>
      */
-    inline bool GetEnableRegexInPath() const{ return m_enableRegexInPath; }
+    inline bool GetEnableRegexInPath() const { return m_enableRegexInPath; }
     inline bool EnableRegexInPathHasBeenSet() const { return m_enableRegexInPathHasBeenSet; }
     inline void SetEnableRegexInPath(bool value) { m_enableRegexInPathHasBeenSet = true; m_enableRegexInPath = value; }
     inline AWSManagedRulesACFPRuleSet& WithEnableRegexInPath(bool value) { SetEnableRegexInPath(value); return *this;}
@@ -146,7 +142,7 @@ namespace Model
     ResponseInspection m_responseInspection;
     bool m_responseInspectionHasBeenSet = false;
 
-    bool m_enableRegexInPath;
+    bool m_enableRegexInPath{false};
     bool m_enableRegexInPathHasBeenSet = false;
   };
 

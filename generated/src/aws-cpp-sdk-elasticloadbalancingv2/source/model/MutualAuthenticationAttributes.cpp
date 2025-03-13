@@ -20,20 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-MutualAuthenticationAttributes::MutualAuthenticationAttributes() : 
-    m_modeHasBeenSet(false),
-    m_trustStoreArnHasBeenSet(false),
-    m_ignoreClientCertificateExpiry(false),
-    m_ignoreClientCertificateExpiryHasBeenSet(false),
-    m_trustStoreAssociationStatus(TrustStoreAssociationStatusEnum::NOT_SET),
-    m_trustStoreAssociationStatusHasBeenSet(false),
-    m_advertiseTrustStoreCaNames(AdvertiseTrustStoreCaNamesEnum::NOT_SET),
-    m_advertiseTrustStoreCaNamesHasBeenSet(false)
-{
-}
-
 MutualAuthenticationAttributes::MutualAuthenticationAttributes(const XmlNode& xmlNode)
-  : MutualAuthenticationAttributes()
 {
   *this = xmlNode;
 }
@@ -49,30 +36,35 @@ MutualAuthenticationAttributes& MutualAuthenticationAttributes::operator =(const
     {
       m_mode = Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText());
       m_modeHasBeenSet = true;
+       m_modeHasBeenSet = true;
     }
     XmlNode trustStoreArnNode = resultNode.FirstChild("TrustStoreArn");
     if(!trustStoreArnNode.IsNull())
     {
       m_trustStoreArn = Aws::Utils::Xml::DecodeEscapedXmlText(trustStoreArnNode.GetText());
       m_trustStoreArnHasBeenSet = true;
+       m_trustStoreArnHasBeenSet = true;
     }
     XmlNode ignoreClientCertificateExpiryNode = resultNode.FirstChild("IgnoreClientCertificateExpiry");
     if(!ignoreClientCertificateExpiryNode.IsNull())
     {
       m_ignoreClientCertificateExpiry = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ignoreClientCertificateExpiryNode.GetText()).c_str()).c_str());
       m_ignoreClientCertificateExpiryHasBeenSet = true;
+       m_ignoreClientCertificateExpiryHasBeenSet = true;
     }
     XmlNode trustStoreAssociationStatusNode = resultNode.FirstChild("TrustStoreAssociationStatus");
     if(!trustStoreAssociationStatusNode.IsNull())
     {
-      m_trustStoreAssociationStatus = TrustStoreAssociationStatusEnumMapper::GetTrustStoreAssociationStatusEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trustStoreAssociationStatusNode.GetText()).c_str()).c_str());
+      m_trustStoreAssociationStatus = TrustStoreAssociationStatusEnumMapper::GetTrustStoreAssociationStatusEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trustStoreAssociationStatusNode.GetText()).c_str()));
       m_trustStoreAssociationStatusHasBeenSet = true;
+       m_trustStoreAssociationStatusHasBeenSet = true;
     }
     XmlNode advertiseTrustStoreCaNamesNode = resultNode.FirstChild("AdvertiseTrustStoreCaNames");
     if(!advertiseTrustStoreCaNamesNode.IsNull())
     {
-      m_advertiseTrustStoreCaNames = AdvertiseTrustStoreCaNamesEnumMapper::GetAdvertiseTrustStoreCaNamesEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(advertiseTrustStoreCaNamesNode.GetText()).c_str()).c_str());
+      m_advertiseTrustStoreCaNames = AdvertiseTrustStoreCaNamesEnumMapper::GetAdvertiseTrustStoreCaNamesEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(advertiseTrustStoreCaNamesNode.GetText()).c_str()));
       m_advertiseTrustStoreCaNamesHasBeenSet = true;
+       m_advertiseTrustStoreCaNamesHasBeenSet = true;
     }
   }
 

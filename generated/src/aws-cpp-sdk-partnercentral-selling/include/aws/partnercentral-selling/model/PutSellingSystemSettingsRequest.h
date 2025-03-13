@@ -21,7 +21,7 @@ namespace Model
   class PutSellingSystemSettingsRequest : public PartnerCentralSellingRequest
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API PutSellingSystemSettingsRequest();
+    AWS_PARTNERCENTRALSELLING_API PutSellingSystemSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * values include <code>AWS</code> for production and <code>Sandbox</code> for
      * testing environments.</p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-    inline PutSellingSystemSettingsRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline PutSellingSystemSettingsRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline PutSellingSystemSettingsRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    PutSellingSystemSettingsRequest& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>Specifies the ARN of the IAM Role used for resource snapshot job
      * executions.</p>
      */
-    inline const Aws::String& GetResourceSnapshotJobRoleIdentifier() const{ return m_resourceSnapshotJobRoleIdentifier; }
+    inline const Aws::String& GetResourceSnapshotJobRoleIdentifier() const { return m_resourceSnapshotJobRoleIdentifier; }
     inline bool ResourceSnapshotJobRoleIdentifierHasBeenSet() const { return m_resourceSnapshotJobRoleIdentifierHasBeenSet; }
-    inline void SetResourceSnapshotJobRoleIdentifier(const Aws::String& value) { m_resourceSnapshotJobRoleIdentifierHasBeenSet = true; m_resourceSnapshotJobRoleIdentifier = value; }
-    inline void SetResourceSnapshotJobRoleIdentifier(Aws::String&& value) { m_resourceSnapshotJobRoleIdentifierHasBeenSet = true; m_resourceSnapshotJobRoleIdentifier = std::move(value); }
-    inline void SetResourceSnapshotJobRoleIdentifier(const char* value) { m_resourceSnapshotJobRoleIdentifierHasBeenSet = true; m_resourceSnapshotJobRoleIdentifier.assign(value); }
-    inline PutSellingSystemSettingsRequest& WithResourceSnapshotJobRoleIdentifier(const Aws::String& value) { SetResourceSnapshotJobRoleIdentifier(value); return *this;}
-    inline PutSellingSystemSettingsRequest& WithResourceSnapshotJobRoleIdentifier(Aws::String&& value) { SetResourceSnapshotJobRoleIdentifier(std::move(value)); return *this;}
-    inline PutSellingSystemSettingsRequest& WithResourceSnapshotJobRoleIdentifier(const char* value) { SetResourceSnapshotJobRoleIdentifier(value); return *this;}
+    template<typename ResourceSnapshotJobRoleIdentifierT = Aws::String>
+    void SetResourceSnapshotJobRoleIdentifier(ResourceSnapshotJobRoleIdentifierT&& value) { m_resourceSnapshotJobRoleIdentifierHasBeenSet = true; m_resourceSnapshotJobRoleIdentifier = std::forward<ResourceSnapshotJobRoleIdentifierT>(value); }
+    template<typename ResourceSnapshotJobRoleIdentifierT = Aws::String>
+    PutSellingSystemSettingsRequest& WithResourceSnapshotJobRoleIdentifier(ResourceSnapshotJobRoleIdentifierT&& value) { SetResourceSnapshotJobRoleIdentifier(std::forward<ResourceSnapshotJobRoleIdentifierT>(value)); return *this;}
     ///@}
   private:
 

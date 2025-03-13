@@ -23,7 +23,7 @@ namespace Model
   class PutBackupVaultNotificationsRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API PutBackupVaultNotificationsRequest();
+    AWS_BACKUP_API PutBackupVaultNotificationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * identified by names that are unique to the account used to create them and the
      * Amazon Web Services Region where they are created.</p>
      */
-    inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
+    inline const Aws::String& GetBackupVaultName() const { return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
-    inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
-    inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
-    inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
-    inline PutBackupVaultNotificationsRequest& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
-    inline PutBackupVaultNotificationsRequest& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
-    inline PutBackupVaultNotificationsRequest& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
+    template<typename BackupVaultNameT = Aws::String>
+    void SetBackupVaultName(BackupVaultNameT&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::forward<BackupVaultNameT>(value); }
+    template<typename BackupVaultNameT = Aws::String>
+    PutBackupVaultNotificationsRequest& WithBackupVaultName(BackupVaultNameT&& value) { SetBackupVaultName(std::forward<BackupVaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * events; for example,
      * <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
      */
-    inline const Aws::String& GetSNSTopicArn() const{ return m_sNSTopicArn; }
+    inline const Aws::String& GetSNSTopicArn() const { return m_sNSTopicArn; }
     inline bool SNSTopicArnHasBeenSet() const { return m_sNSTopicArnHasBeenSet; }
-    inline void SetSNSTopicArn(const Aws::String& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = value; }
-    inline void SetSNSTopicArn(Aws::String&& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = std::move(value); }
-    inline void SetSNSTopicArn(const char* value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn.assign(value); }
-    inline PutBackupVaultNotificationsRequest& WithSNSTopicArn(const Aws::String& value) { SetSNSTopicArn(value); return *this;}
-    inline PutBackupVaultNotificationsRequest& WithSNSTopicArn(Aws::String&& value) { SetSNSTopicArn(std::move(value)); return *this;}
-    inline PutBackupVaultNotificationsRequest& WithSNSTopicArn(const char* value) { SetSNSTopicArn(value); return *this;}
+    template<typename SNSTopicArnT = Aws::String>
+    void SetSNSTopicArn(SNSTopicArnT&& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = std::forward<SNSTopicArnT>(value); }
+    template<typename SNSTopicArnT = Aws::String>
+    PutBackupVaultNotificationsRequest& WithSNSTopicArn(SNSTopicArnT&& value) { SetSNSTopicArn(std::forward<SNSTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,13 @@ namespace Model
      * do not return statuses or notifications. Refer to the list above for the
      * supported events.</p> 
      */
-    inline const Aws::Vector<BackupVaultEvent>& GetBackupVaultEvents() const{ return m_backupVaultEvents; }
+    inline const Aws::Vector<BackupVaultEvent>& GetBackupVaultEvents() const { return m_backupVaultEvents; }
     inline bool BackupVaultEventsHasBeenSet() const { return m_backupVaultEventsHasBeenSet; }
-    inline void SetBackupVaultEvents(const Aws::Vector<BackupVaultEvent>& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = value; }
-    inline void SetBackupVaultEvents(Aws::Vector<BackupVaultEvent>&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = std::move(value); }
-    inline PutBackupVaultNotificationsRequest& WithBackupVaultEvents(const Aws::Vector<BackupVaultEvent>& value) { SetBackupVaultEvents(value); return *this;}
-    inline PutBackupVaultNotificationsRequest& WithBackupVaultEvents(Aws::Vector<BackupVaultEvent>&& value) { SetBackupVaultEvents(std::move(value)); return *this;}
-    inline PutBackupVaultNotificationsRequest& AddBackupVaultEvents(const BackupVaultEvent& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(value); return *this; }
-    inline PutBackupVaultNotificationsRequest& AddBackupVaultEvents(BackupVaultEvent&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(std::move(value)); return *this; }
+    template<typename BackupVaultEventsT = Aws::Vector<BackupVaultEvent>>
+    void SetBackupVaultEvents(BackupVaultEventsT&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = std::forward<BackupVaultEventsT>(value); }
+    template<typename BackupVaultEventsT = Aws::Vector<BackupVaultEvent>>
+    PutBackupVaultNotificationsRequest& WithBackupVaultEvents(BackupVaultEventsT&& value) { SetBackupVaultEvents(std::forward<BackupVaultEventsT>(value)); return *this;}
+    inline PutBackupVaultNotificationsRequest& AddBackupVaultEvents(BackupVaultEvent value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(value); return *this; }
     ///@}
   private:
 

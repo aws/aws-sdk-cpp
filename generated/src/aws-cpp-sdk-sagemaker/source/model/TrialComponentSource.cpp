@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrialComponentSource::TrialComponentSource() : 
-    m_sourceArnHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false)
-{
-}
-
 TrialComponentSource::TrialComponentSource(JsonView jsonValue)
-  : TrialComponentSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TrialComponentSource& TrialComponentSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = jsonValue.GetString("SourceType");
-
     m_sourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

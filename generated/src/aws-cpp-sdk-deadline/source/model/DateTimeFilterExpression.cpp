@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-DateTimeFilterExpression::DateTimeFilterExpression() : 
-    m_nameHasBeenSet(false),
-    m_operator(ComparisonOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_dateTimeHasBeenSet(false)
-{
-}
-
 DateTimeFilterExpression::DateTimeFilterExpression(JsonView jsonValue)
-  : DateTimeFilterExpression()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DateTimeFilterExpression& DateTimeFilterExpression::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateTime"))
   {
     m_dateTime = jsonValue.GetString("dateTime");
-
     m_dateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

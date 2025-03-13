@@ -18,22 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-WorldGenerationJobSummary::WorldGenerationJobSummary() : 
-    m_arnHasBeenSet(false),
-    m_templateHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(WorldGenerationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_worldCountHasBeenSet(false),
-    m_succeededWorldCount(0),
-    m_succeededWorldCountHasBeenSet(false),
-    m_failedWorldCount(0),
-    m_failedWorldCountHasBeenSet(false)
-{
-}
-
 WorldGenerationJobSummary::WorldGenerationJobSummary(JsonView jsonValue)
-  : WorldGenerationJobSummary()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ WorldGenerationJobSummary& WorldGenerationJobSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("template"))
   {
     m_template = jsonValue.GetString("template");
-
     m_templateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorldGenerationJobStatusMapper::GetWorldGenerationJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("worldCount"))
   {
     m_worldCount = jsonValue.GetObject("worldCount");
-
     m_worldCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("succeededWorldCount"))
   {
     m_succeededWorldCount = jsonValue.GetInteger("succeededWorldCount");
-
     m_succeededWorldCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedWorldCount"))
   {
     m_failedWorldCount = jsonValue.GetInteger("failedWorldCount");
-
     m_failedWorldCountHasBeenSet = true;
   }
-
   return *this;
 }
 

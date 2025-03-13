@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceBlockDeviceMapping::InstanceBlockDeviceMapping() : 
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false)
-{
-}
-
 InstanceBlockDeviceMapping::InstanceBlockDeviceMapping(const XmlNode& xmlNode)
-  : InstanceBlockDeviceMapping()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ InstanceBlockDeviceMapping& InstanceBlockDeviceMapping::operator =(const XmlNode
     {
       m_deviceName = Aws::Utils::Xml::DecodeEscapedXmlText(deviceNameNode.GetText());
       m_deviceNameHasBeenSet = true;
+       m_deviceNameHasBeenSet = true;
     }
     XmlNode ebsNode = resultNode.FirstChild("ebs");
     if(!ebsNode.IsNull())
     {
       m_ebs = ebsNode;
       m_ebsHasBeenSet = true;
+       m_ebsHasBeenSet = true;
     }
   }
 

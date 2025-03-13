@@ -34,7 +34,7 @@ namespace Model
   class WorkflowDetails
   {
   public:
-    AWS_TRANSFER_API WorkflowDetails();
+    AWS_TRANSFER_API WorkflowDetails() = default;
     AWS_TRANSFER_API WorkflowDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API WorkflowDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,14 @@ namespace Model
      * <code>OnUpload</code> can contain a maximum of one <code>WorkflowDetail</code>
      * object.</p> 
      */
-    inline const Aws::Vector<WorkflowDetail>& GetOnUpload() const{ return m_onUpload; }
+    inline const Aws::Vector<WorkflowDetail>& GetOnUpload() const { return m_onUpload; }
     inline bool OnUploadHasBeenSet() const { return m_onUploadHasBeenSet; }
-    inline void SetOnUpload(const Aws::Vector<WorkflowDetail>& value) { m_onUploadHasBeenSet = true; m_onUpload = value; }
-    inline void SetOnUpload(Aws::Vector<WorkflowDetail>&& value) { m_onUploadHasBeenSet = true; m_onUpload = std::move(value); }
-    inline WorkflowDetails& WithOnUpload(const Aws::Vector<WorkflowDetail>& value) { SetOnUpload(value); return *this;}
-    inline WorkflowDetails& WithOnUpload(Aws::Vector<WorkflowDetail>&& value) { SetOnUpload(std::move(value)); return *this;}
-    inline WorkflowDetails& AddOnUpload(const WorkflowDetail& value) { m_onUploadHasBeenSet = true; m_onUpload.push_back(value); return *this; }
-    inline WorkflowDetails& AddOnUpload(WorkflowDetail&& value) { m_onUploadHasBeenSet = true; m_onUpload.push_back(std::move(value)); return *this; }
+    template<typename OnUploadT = Aws::Vector<WorkflowDetail>>
+    void SetOnUpload(OnUploadT&& value) { m_onUploadHasBeenSet = true; m_onUpload = std::forward<OnUploadT>(value); }
+    template<typename OnUploadT = Aws::Vector<WorkflowDetail>>
+    WorkflowDetails& WithOnUpload(OnUploadT&& value) { SetOnUpload(std::forward<OnUploadT>(value)); return *this;}
+    template<typename OnUploadT = WorkflowDetail>
+    WorkflowDetails& AddOnUpload(OnUploadT&& value) { m_onUploadHasBeenSet = true; m_onUpload.emplace_back(std::forward<OnUploadT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,14 +68,14 @@ namespace Model
      * session disconnects.</p>  <p> <code>OnPartialUpload</code> can contain a
      * maximum of one <code>WorkflowDetail</code> object.</p> 
      */
-    inline const Aws::Vector<WorkflowDetail>& GetOnPartialUpload() const{ return m_onPartialUpload; }
+    inline const Aws::Vector<WorkflowDetail>& GetOnPartialUpload() const { return m_onPartialUpload; }
     inline bool OnPartialUploadHasBeenSet() const { return m_onPartialUploadHasBeenSet; }
-    inline void SetOnPartialUpload(const Aws::Vector<WorkflowDetail>& value) { m_onPartialUploadHasBeenSet = true; m_onPartialUpload = value; }
-    inline void SetOnPartialUpload(Aws::Vector<WorkflowDetail>&& value) { m_onPartialUploadHasBeenSet = true; m_onPartialUpload = std::move(value); }
-    inline WorkflowDetails& WithOnPartialUpload(const Aws::Vector<WorkflowDetail>& value) { SetOnPartialUpload(value); return *this;}
-    inline WorkflowDetails& WithOnPartialUpload(Aws::Vector<WorkflowDetail>&& value) { SetOnPartialUpload(std::move(value)); return *this;}
-    inline WorkflowDetails& AddOnPartialUpload(const WorkflowDetail& value) { m_onPartialUploadHasBeenSet = true; m_onPartialUpload.push_back(value); return *this; }
-    inline WorkflowDetails& AddOnPartialUpload(WorkflowDetail&& value) { m_onPartialUploadHasBeenSet = true; m_onPartialUpload.push_back(std::move(value)); return *this; }
+    template<typename OnPartialUploadT = Aws::Vector<WorkflowDetail>>
+    void SetOnPartialUpload(OnPartialUploadT&& value) { m_onPartialUploadHasBeenSet = true; m_onPartialUpload = std::forward<OnPartialUploadT>(value); }
+    template<typename OnPartialUploadT = Aws::Vector<WorkflowDetail>>
+    WorkflowDetails& WithOnPartialUpload(OnPartialUploadT&& value) { SetOnPartialUpload(std::forward<OnPartialUploadT>(value)); return *this;}
+    template<typename OnPartialUploadT = WorkflowDetail>
+    WorkflowDetails& AddOnPartialUpload(OnPartialUploadT&& value) { m_onPartialUploadHasBeenSet = true; m_onPartialUpload.emplace_back(std::forward<OnPartialUploadT>(value)); return *this; }
     ///@}
   private:
 

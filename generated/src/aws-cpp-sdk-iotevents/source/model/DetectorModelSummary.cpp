@@ -18,15 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-DetectorModelSummary::DetectorModelSummary() : 
-    m_detectorModelNameHasBeenSet(false),
-    m_detectorModelDescriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 DetectorModelSummary::DetectorModelSummary(JsonView jsonValue)
-  : DetectorModelSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DetectorModelSummary& DetectorModelSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("detectorModelName"))
   {
     m_detectorModelName = jsonValue.GetString("detectorModelName");
-
     m_detectorModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorModelDescription"))
   {
     m_detectorModelDescription = jsonValue.GetString("detectorModelDescription");
-
     m_detectorModelDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

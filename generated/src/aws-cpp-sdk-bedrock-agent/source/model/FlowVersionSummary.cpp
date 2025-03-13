@@ -18,18 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-FlowVersionSummary::FlowVersionSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_status(FlowStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 FlowVersionSummary::FlowVersionSummary(JsonView jsonValue)
-  : FlowVersionSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ FlowVersionSummary& FlowVersionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FlowStatusMapper::GetFlowStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

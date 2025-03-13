@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteVirtualGatewayRequest::DeleteVirtualGatewayRequest() : 
-    m_meshNameHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false),
-    m_virtualGatewayNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVirtualGatewayRequest::SerializePayload() const
 {
   return {};

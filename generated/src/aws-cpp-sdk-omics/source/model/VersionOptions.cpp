@@ -18,13 +18,7 @@ namespace Omics
 namespace Model
 {
 
-VersionOptions::VersionOptions() : 
-    m_tsvVersionOptionsHasBeenSet(false)
-{
-}
-
 VersionOptions::VersionOptions(JsonView jsonValue)
-  : VersionOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VersionOptions& VersionOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tsvVersionOptions"))
   {
     m_tsvVersionOptions = jsonValue.GetObject("tsvVersionOptions");
-
     m_tsvVersionOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

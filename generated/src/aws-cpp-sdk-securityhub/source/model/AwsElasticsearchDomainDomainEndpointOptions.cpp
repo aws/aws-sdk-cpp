@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElasticsearchDomainDomainEndpointOptions::AwsElasticsearchDomainDomainEndpointOptions() : 
-    m_enforceHTTPS(false),
-    m_enforceHTTPSHasBeenSet(false),
-    m_tLSSecurityPolicyHasBeenSet(false)
-{
-}
-
 AwsElasticsearchDomainDomainEndpointOptions::AwsElasticsearchDomainDomainEndpointOptions(JsonView jsonValue)
-  : AwsElasticsearchDomainDomainEndpointOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsElasticsearchDomainDomainEndpointOptions& AwsElasticsearchDomainDomainEndpoin
   if(jsonValue.ValueExists("EnforceHTTPS"))
   {
     m_enforceHTTPS = jsonValue.GetBool("EnforceHTTPS");
-
     m_enforceHTTPSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TLSSecurityPolicy"))
   {
     m_tLSSecurityPolicy = jsonValue.GetString("TLSSecurityPolicy");
-
     m_tLSSecurityPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,19 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-BuildConfiguration::BuildConfiguration() : 
-    m_artifactNameHasBeenSet(false),
-    m_codeBuildServiceRoleHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false)
-{
-}
-
 BuildConfiguration::BuildConfiguration(const XmlNode& xmlNode)
-  : BuildConfiguration()
 {
   *this = xmlNode;
 }
@@ -48,30 +36,35 @@ BuildConfiguration& BuildConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_artifactName = Aws::Utils::Xml::DecodeEscapedXmlText(artifactNameNode.GetText());
       m_artifactNameHasBeenSet = true;
+       m_artifactNameHasBeenSet = true;
     }
     XmlNode codeBuildServiceRoleNode = resultNode.FirstChild("CodeBuildServiceRole");
     if(!codeBuildServiceRoleNode.IsNull())
     {
       m_codeBuildServiceRole = Aws::Utils::Xml::DecodeEscapedXmlText(codeBuildServiceRoleNode.GetText());
       m_codeBuildServiceRoleHasBeenSet = true;
+       m_codeBuildServiceRoleHasBeenSet = true;
     }
     XmlNode computeTypeNode = resultNode.FirstChild("ComputeType");
     if(!computeTypeNode.IsNull())
     {
-      m_computeType = ComputeTypeMapper::GetComputeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(computeTypeNode.GetText()).c_str()).c_str());
+      m_computeType = ComputeTypeMapper::GetComputeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(computeTypeNode.GetText()).c_str()));
       m_computeTypeHasBeenSet = true;
+       m_computeTypeHasBeenSet = true;
     }
     XmlNode imageNode = resultNode.FirstChild("Image");
     if(!imageNode.IsNull())
     {
       m_image = Aws::Utils::Xml::DecodeEscapedXmlText(imageNode.GetText());
       m_imageHasBeenSet = true;
+       m_imageHasBeenSet = true;
     }
     XmlNode timeoutInMinutesNode = resultNode.FirstChild("TimeoutInMinutes");
     if(!timeoutInMinutesNode.IsNull())
     {
       m_timeoutInMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeoutInMinutesNode.GetText()).c_str()).c_str());
       m_timeoutInMinutesHasBeenSet = true;
+       m_timeoutInMinutesHasBeenSet = true;
     }
   }
 

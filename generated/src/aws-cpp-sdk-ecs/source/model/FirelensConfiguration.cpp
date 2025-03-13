@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-FirelensConfiguration::FirelensConfiguration() : 
-    m_type(FirelensConfigurationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 FirelensConfiguration::FirelensConfiguration(JsonView jsonValue)
-  : FirelensConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ FirelensConfiguration& FirelensConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = FirelensConfigurationTypeMapper::GetFirelensConfigurationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("options"))
   {
     Aws::Map<Aws::String, JsonView> optionsJsonMap = jsonValue.GetObject("options").GetAllObjects();
@@ -49,7 +39,6 @@ FirelensConfiguration& FirelensConfiguration::operator =(JsonView jsonValue)
     }
     m_optionsHasBeenSet = true;
   }
-
   return *this;
 }
 

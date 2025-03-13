@@ -36,7 +36,7 @@ namespace Model
   class HubAccessConfig
   {
   public:
-    AWS_SAGEMAKER_API HubAccessConfig();
+    AWS_SAGEMAKER_API HubAccessConfig() = default;
     AWS_SAGEMAKER_API HubAccessConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HubAccessConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <code>ModelReference</code> resource type that points to a SageMaker JumpStart
      * public hub model.</p>
      */
-    inline const Aws::String& GetHubContentArn() const{ return m_hubContentArn; }
+    inline const Aws::String& GetHubContentArn() const { return m_hubContentArn; }
     inline bool HubContentArnHasBeenSet() const { return m_hubContentArnHasBeenSet; }
-    inline void SetHubContentArn(const Aws::String& value) { m_hubContentArnHasBeenSet = true; m_hubContentArn = value; }
-    inline void SetHubContentArn(Aws::String&& value) { m_hubContentArnHasBeenSet = true; m_hubContentArn = std::move(value); }
-    inline void SetHubContentArn(const char* value) { m_hubContentArnHasBeenSet = true; m_hubContentArn.assign(value); }
-    inline HubAccessConfig& WithHubContentArn(const Aws::String& value) { SetHubContentArn(value); return *this;}
-    inline HubAccessConfig& WithHubContentArn(Aws::String&& value) { SetHubContentArn(std::move(value)); return *this;}
-    inline HubAccessConfig& WithHubContentArn(const char* value) { SetHubContentArn(value); return *this;}
+    template<typename HubContentArnT = Aws::String>
+    void SetHubContentArn(HubContentArnT&& value) { m_hubContentArnHasBeenSet = true; m_hubContentArn = std::forward<HubContentArnT>(value); }
+    template<typename HubContentArnT = Aws::String>
+    HubAccessConfig& WithHubContentArn(HubContentArnT&& value) { SetHubContentArn(std::forward<HubContentArnT>(value)); return *this;}
     ///@}
   private:
 

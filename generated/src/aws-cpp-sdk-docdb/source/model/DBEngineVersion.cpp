@@ -20,24 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-DBEngineVersion::DBEngineVersion() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_dBEngineDescriptionHasBeenSet(false),
-    m_dBEngineVersionDescriptionHasBeenSet(false),
-    m_validUpgradeTargetHasBeenSet(false),
-    m_exportableLogTypesHasBeenSet(false),
-    m_supportsLogExportsToCloudwatchLogs(false),
-    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
-    m_supportedCACertificateIdentifiersHasBeenSet(false),
-    m_supportsCertificateRotationWithoutRestart(false),
-    m_supportsCertificateRotationWithoutRestartHasBeenSet(false)
-{
-}
-
 DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode)
-  : DBEngineVersion()
 {
   *this = xmlNode;
 }
@@ -53,78 +36,88 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+       m_engineVersionHasBeenSet = true;
     }
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
     if(!dBParameterGroupFamilyNode.IsNull())
     {
       m_dBParameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupFamilyNode.GetText());
       m_dBParameterGroupFamilyHasBeenSet = true;
+       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode dBEngineDescriptionNode = resultNode.FirstChild("DBEngineDescription");
     if(!dBEngineDescriptionNode.IsNull())
     {
       m_dBEngineDescription = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineDescriptionNode.GetText());
       m_dBEngineDescriptionHasBeenSet = true;
+       m_dBEngineDescriptionHasBeenSet = true;
     }
     XmlNode dBEngineVersionDescriptionNode = resultNode.FirstChild("DBEngineVersionDescription");
     if(!dBEngineVersionDescriptionNode.IsNull())
     {
       m_dBEngineVersionDescription = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineVersionDescriptionNode.GetText());
       m_dBEngineVersionDescriptionHasBeenSet = true;
+       m_dBEngineVersionDescriptionHasBeenSet = true;
     }
     XmlNode validUpgradeTargetNode = resultNode.FirstChild("ValidUpgradeTarget");
     if(!validUpgradeTargetNode.IsNull())
     {
       XmlNode validUpgradeTargetMember = validUpgradeTargetNode.FirstChild("UpgradeTarget");
+      m_validUpgradeTargetHasBeenSet = !validUpgradeTargetMember.IsNull();
       while(!validUpgradeTargetMember.IsNull())
       {
         m_validUpgradeTarget.push_back(validUpgradeTargetMember);
         validUpgradeTargetMember = validUpgradeTargetMember.NextNode("UpgradeTarget");
       }
 
-      m_validUpgradeTargetHasBeenSet = true;
+       m_validUpgradeTargetHasBeenSet = true;
     }
     XmlNode exportableLogTypesNode = resultNode.FirstChild("ExportableLogTypes");
     if(!exportableLogTypesNode.IsNull())
     {
       XmlNode exportableLogTypesMember = exportableLogTypesNode.FirstChild("member");
+      m_exportableLogTypesHasBeenSet = !exportableLogTypesMember.IsNull();
       while(!exportableLogTypesMember.IsNull())
       {
         m_exportableLogTypes.push_back(exportableLogTypesMember.GetText());
         exportableLogTypesMember = exportableLogTypesMember.NextNode("member");
       }
 
-      m_exportableLogTypesHasBeenSet = true;
+       m_exportableLogTypesHasBeenSet = true;
     }
     XmlNode supportsLogExportsToCloudwatchLogsNode = resultNode.FirstChild("SupportsLogExportsToCloudwatchLogs");
     if(!supportsLogExportsToCloudwatchLogsNode.IsNull())
     {
       m_supportsLogExportsToCloudwatchLogs = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLogExportsToCloudwatchLogsNode.GetText()).c_str()).c_str());
       m_supportsLogExportsToCloudwatchLogsHasBeenSet = true;
+       m_supportsLogExportsToCloudwatchLogsHasBeenSet = true;
     }
     XmlNode supportedCACertificateIdentifiersNode = resultNode.FirstChild("SupportedCACertificateIdentifiers");
     if(!supportedCACertificateIdentifiersNode.IsNull())
     {
       XmlNode supportedCACertificateIdentifiersMember = supportedCACertificateIdentifiersNode.FirstChild("member");
+      m_supportedCACertificateIdentifiersHasBeenSet = !supportedCACertificateIdentifiersMember.IsNull();
       while(!supportedCACertificateIdentifiersMember.IsNull())
       {
         m_supportedCACertificateIdentifiers.push_back(supportedCACertificateIdentifiersMember.GetText());
         supportedCACertificateIdentifiersMember = supportedCACertificateIdentifiersMember.NextNode("member");
       }
 
-      m_supportedCACertificateIdentifiersHasBeenSet = true;
+       m_supportedCACertificateIdentifiersHasBeenSet = true;
     }
     XmlNode supportsCertificateRotationWithoutRestartNode = resultNode.FirstChild("SupportsCertificateRotationWithoutRestart");
     if(!supportsCertificateRotationWithoutRestartNode.IsNull())
     {
       m_supportsCertificateRotationWithoutRestart = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsCertificateRotationWithoutRestartNode.GetText()).c_str()).c_str());
       m_supportsCertificateRotationWithoutRestartHasBeenSet = true;
+       m_supportsCertificateRotationWithoutRestartHasBeenSet = true;
     }
   }
 

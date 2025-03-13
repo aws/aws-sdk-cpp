@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FlowTraceCondition::FlowTraceCondition() : 
-    m_conditionNameHasBeenSet(false)
-{
-}
-
 FlowTraceCondition::FlowTraceCondition(JsonView jsonValue)
-  : FlowTraceCondition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FlowTraceCondition& FlowTraceCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("conditionName"))
   {
     m_conditionName = jsonValue.GetString("conditionName");
-
     m_conditionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeCodeBindingRequest::DescribeCodeBindingRequest() : 
-    m_languageHasBeenSet(false),
-    m_registryNameHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCodeBindingRequest::SerializePayload() const
 {
   return {};

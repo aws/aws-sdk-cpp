@@ -18,13 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-HiveJsonSerDe::HiveJsonSerDe() : 
-    m_timestampFormatsHasBeenSet(false)
-{
-}
-
 HiveJsonSerDe::HiveJsonSerDe(JsonView jsonValue)
-  : HiveJsonSerDe()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ HiveJsonSerDe& HiveJsonSerDe::operator =(JsonView jsonValue)
     }
     m_timestampFormatsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateVpnConnectionRequest::CreateVpnConnectionRequest() : 
-    m_customerGatewayIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_vpnGatewayIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateVpnConnectionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

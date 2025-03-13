@@ -25,7 +25,7 @@ namespace Model
   class ListRepositoriesRequest : public CodeArtifactRequest
   {
   public:
-    AWS_CODEARTIFACT_API ListRepositoriesRequest();
+    AWS_CODEARTIFACT_API ListRepositoriesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,21 +43,19 @@ namespace Model
      * <p> A prefix used to filter returned repositories. Only repositories with names
      * that start with <code>repositoryPrefix</code> are returned.</p>
      */
-    inline const Aws::String& GetRepositoryPrefix() const{ return m_repositoryPrefix; }
+    inline const Aws::String& GetRepositoryPrefix() const { return m_repositoryPrefix; }
     inline bool RepositoryPrefixHasBeenSet() const { return m_repositoryPrefixHasBeenSet; }
-    inline void SetRepositoryPrefix(const Aws::String& value) { m_repositoryPrefixHasBeenSet = true; m_repositoryPrefix = value; }
-    inline void SetRepositoryPrefix(Aws::String&& value) { m_repositoryPrefixHasBeenSet = true; m_repositoryPrefix = std::move(value); }
-    inline void SetRepositoryPrefix(const char* value) { m_repositoryPrefixHasBeenSet = true; m_repositoryPrefix.assign(value); }
-    inline ListRepositoriesRequest& WithRepositoryPrefix(const Aws::String& value) { SetRepositoryPrefix(value); return *this;}
-    inline ListRepositoriesRequest& WithRepositoryPrefix(Aws::String&& value) { SetRepositoryPrefix(std::move(value)); return *this;}
-    inline ListRepositoriesRequest& WithRepositoryPrefix(const char* value) { SetRepositoryPrefix(value); return *this;}
+    template<typename RepositoryPrefixT = Aws::String>
+    void SetRepositoryPrefix(RepositoryPrefixT&& value) { m_repositoryPrefixHasBeenSet = true; m_repositoryPrefix = std::forward<RepositoryPrefixT>(value); }
+    template<typename RepositoryPrefixT = Aws::String>
+    ListRepositoriesRequest& WithRepositoryPrefix(RepositoryPrefixT&& value) { SetRepositoryPrefix(std::forward<RepositoryPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The maximum number of results to return per page. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRepositoriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -68,21 +66,19 @@ namespace Model
      * <p> The token for the next set of results. Use the value returned in the
      * previous response in the next request to retrieve the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRepositoriesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRepositoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRepositoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRepositoriesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_repositoryPrefix;
     bool m_repositoryPrefixHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

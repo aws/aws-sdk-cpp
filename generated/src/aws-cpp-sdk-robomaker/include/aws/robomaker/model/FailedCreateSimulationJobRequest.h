@@ -35,7 +35,7 @@ namespace Model
   class FailedCreateSimulationJobRequest
   {
   public:
-    AWS_ROBOMAKER_API FailedCreateSimulationJobRequest();
+    AWS_ROBOMAKER_API FailedCreateSimulationJobRequest() = default;
     AWS_ROBOMAKER_API FailedCreateSimulationJobRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API FailedCreateSimulationJobRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,38 +45,34 @@ namespace Model
     /**
      * <p>The simulation job request.</p>
      */
-    inline const SimulationJobRequest& GetRequest() const{ return m_request; }
+    inline const SimulationJobRequest& GetRequest() const { return m_request; }
     inline bool RequestHasBeenSet() const { return m_requestHasBeenSet; }
-    inline void SetRequest(const SimulationJobRequest& value) { m_requestHasBeenSet = true; m_request = value; }
-    inline void SetRequest(SimulationJobRequest&& value) { m_requestHasBeenSet = true; m_request = std::move(value); }
-    inline FailedCreateSimulationJobRequest& WithRequest(const SimulationJobRequest& value) { SetRequest(value); return *this;}
-    inline FailedCreateSimulationJobRequest& WithRequest(SimulationJobRequest&& value) { SetRequest(std::move(value)); return *this;}
+    template<typename RequestT = SimulationJobRequest>
+    void SetRequest(RequestT&& value) { m_requestHasBeenSet = true; m_request = std::forward<RequestT>(value); }
+    template<typename RequestT = SimulationJobRequest>
+    FailedCreateSimulationJobRequest& WithRequest(RequestT&& value) { SetRequest(std::forward<RequestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure reason of the simulation job request.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline FailedCreateSimulationJobRequest& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline FailedCreateSimulationJobRequest& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline FailedCreateSimulationJobRequest& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    FailedCreateSimulationJobRequest& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure code.</p>
      */
-    inline const SimulationJobErrorCode& GetFailureCode() const{ return m_failureCode; }
+    inline SimulationJobErrorCode GetFailureCode() const { return m_failureCode; }
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    inline void SetFailureCode(const SimulationJobErrorCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-    inline void SetFailureCode(SimulationJobErrorCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-    inline FailedCreateSimulationJobRequest& WithFailureCode(const SimulationJobErrorCode& value) { SetFailureCode(value); return *this;}
-    inline FailedCreateSimulationJobRequest& WithFailureCode(SimulationJobErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
+    inline void SetFailureCode(SimulationJobErrorCode value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+    inline FailedCreateSimulationJobRequest& WithFailureCode(SimulationJobErrorCode value) { SetFailureCode(value); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +80,12 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the simulation job batch
      * failed.</p>
      */
-    inline const Aws::Utils::DateTime& GetFailedAt() const{ return m_failedAt; }
+    inline const Aws::Utils::DateTime& GetFailedAt() const { return m_failedAt; }
     inline bool FailedAtHasBeenSet() const { return m_failedAtHasBeenSet; }
-    inline void SetFailedAt(const Aws::Utils::DateTime& value) { m_failedAtHasBeenSet = true; m_failedAt = value; }
-    inline void SetFailedAt(Aws::Utils::DateTime&& value) { m_failedAtHasBeenSet = true; m_failedAt = std::move(value); }
-    inline FailedCreateSimulationJobRequest& WithFailedAt(const Aws::Utils::DateTime& value) { SetFailedAt(value); return *this;}
-    inline FailedCreateSimulationJobRequest& WithFailedAt(Aws::Utils::DateTime&& value) { SetFailedAt(std::move(value)); return *this;}
+    template<typename FailedAtT = Aws::Utils::DateTime>
+    void SetFailedAt(FailedAtT&& value) { m_failedAtHasBeenSet = true; m_failedAt = std::forward<FailedAtT>(value); }
+    template<typename FailedAtT = Aws::Utils::DateTime>
+    FailedCreateSimulationJobRequest& WithFailedAt(FailedAtT&& value) { SetFailedAt(std::forward<FailedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -99,10 +95,10 @@ namespace Model
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;
 
-    SimulationJobErrorCode m_failureCode;
+    SimulationJobErrorCode m_failureCode{SimulationJobErrorCode::NOT_SET};
     bool m_failureCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_failedAt;
+    Aws::Utils::DateTime m_failedAt{};
     bool m_failedAtHasBeenSet = false;
   };
 

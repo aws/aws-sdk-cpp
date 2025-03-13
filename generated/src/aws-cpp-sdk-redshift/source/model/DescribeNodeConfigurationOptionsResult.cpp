@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNodeConfigurationOptionsResult::DescribeNodeConfigurationOptionsResult()
-{
-}
-
 DescribeNodeConfigurationOptionsResult::DescribeNodeConfigurationOptionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeNodeConfigurationOptionsResult& DescribeNodeConfigurationOptionsResult::
     if(!nodeConfigurationOptionListNode.IsNull())
     {
       XmlNode nodeConfigurationOptionListMember = nodeConfigurationOptionListNode.FirstChild("NodeConfigurationOption");
+      m_nodeConfigurationOptionListHasBeenSet = !nodeConfigurationOptionListMember.IsNull();
       while(!nodeConfigurationOptionListMember.IsNull())
       {
         m_nodeConfigurationOptionList.push_back(nodeConfigurationOptionListMember);
@@ -53,12 +50,14 @@ DescribeNodeConfigurationOptionsResult& DescribeNodeConfigurationOptionsResult::
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeNodeConfigurationOptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

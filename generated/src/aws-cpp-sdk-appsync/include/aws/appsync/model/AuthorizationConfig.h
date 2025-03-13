@@ -33,7 +33,7 @@ namespace Model
   class AuthorizationConfig
   {
   public:
-    AWS_APPSYNC_API AuthorizationConfig();
+    AWS_APPSYNC_API AuthorizationConfig() = default;
     AWS_APPSYNC_API AuthorizationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API AuthorizationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
      * <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
      * </ul>
      */
-    inline const AuthorizationType& GetAuthorizationType() const{ return m_authorizationType; }
+    inline AuthorizationType GetAuthorizationType() const { return m_authorizationType; }
     inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
-    inline void SetAuthorizationType(const AuthorizationType& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
-    inline void SetAuthorizationType(AuthorizationType&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::move(value); }
-    inline AuthorizationConfig& WithAuthorizationType(const AuthorizationType& value) { SetAuthorizationType(value); return *this;}
-    inline AuthorizationConfig& WithAuthorizationType(AuthorizationType&& value) { SetAuthorizationType(std::move(value)); return *this;}
+    inline void SetAuthorizationType(AuthorizationType value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
+    inline AuthorizationConfig& WithAuthorizationType(AuthorizationType value) { SetAuthorizationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Identity and Access Management (IAM) settings.</p>
      */
-    inline const AwsIamConfig& GetAwsIamConfig() const{ return m_awsIamConfig; }
+    inline const AwsIamConfig& GetAwsIamConfig() const { return m_awsIamConfig; }
     inline bool AwsIamConfigHasBeenSet() const { return m_awsIamConfigHasBeenSet; }
-    inline void SetAwsIamConfig(const AwsIamConfig& value) { m_awsIamConfigHasBeenSet = true; m_awsIamConfig = value; }
-    inline void SetAwsIamConfig(AwsIamConfig&& value) { m_awsIamConfigHasBeenSet = true; m_awsIamConfig = std::move(value); }
-    inline AuthorizationConfig& WithAwsIamConfig(const AwsIamConfig& value) { SetAwsIamConfig(value); return *this;}
-    inline AuthorizationConfig& WithAwsIamConfig(AwsIamConfig&& value) { SetAwsIamConfig(std::move(value)); return *this;}
+    template<typename AwsIamConfigT = AwsIamConfig>
+    void SetAwsIamConfig(AwsIamConfigT&& value) { m_awsIamConfigHasBeenSet = true; m_awsIamConfig = std::forward<AwsIamConfigT>(value); }
+    template<typename AwsIamConfigT = AwsIamConfig>
+    AuthorizationConfig& WithAwsIamConfig(AwsIamConfigT&& value) { SetAwsIamConfig(std::forward<AwsIamConfigT>(value)); return *this;}
     ///@}
   private:
 
-    AuthorizationType m_authorizationType;
+    AuthorizationType m_authorizationType{AuthorizationType::NOT_SET};
     bool m_authorizationTypeHasBeenSet = false;
 
     AwsIamConfig m_awsIamConfig;

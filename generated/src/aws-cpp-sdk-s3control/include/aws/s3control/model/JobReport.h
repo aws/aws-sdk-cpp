@@ -33,7 +33,7 @@ namespace Model
   class JobReport
   {
   public:
-    AWS_S3CONTROL_API JobReport();
+    AWS_S3CONTROL_API JobReport() = default;
     AWS_S3CONTROL_API JobReport(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API JobReport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,26 +47,22 @@ namespace Model
      * buckets aren't supported as a location for Batch Operations to store job
      * completion reports.</p> 
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline JobReport& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline JobReport& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline JobReport& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    JobReport& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the specified job-completion report.</p>
      */
-    inline const JobReportFormat& GetFormat() const{ return m_format; }
+    inline JobReportFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const JobReportFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(JobReportFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline JobReport& WithFormat(const JobReportFormat& value) { SetFormat(value); return *this;}
-    inline JobReport& WithFormat(JobReportFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(JobReportFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline JobReport& WithFormat(JobReportFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * <p>Indicates whether the specified job will generate a job-completion
      * report.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline JobReport& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -86,14 +82,12 @@ namespace Model
      * job-completion report will be stored. Amazon S3 stores the job-completion report
      * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline JobReport& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline JobReport& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline JobReport& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    JobReport& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,28 +95,26 @@ namespace Model
      * <p>Indicates whether the job-completion report will include details of all tasks
      * or only failed tasks.</p>
      */
-    inline const JobReportScope& GetReportScope() const{ return m_reportScope; }
+    inline JobReportScope GetReportScope() const { return m_reportScope; }
     inline bool ReportScopeHasBeenSet() const { return m_reportScopeHasBeenSet; }
-    inline void SetReportScope(const JobReportScope& value) { m_reportScopeHasBeenSet = true; m_reportScope = value; }
-    inline void SetReportScope(JobReportScope&& value) { m_reportScopeHasBeenSet = true; m_reportScope = std::move(value); }
-    inline JobReport& WithReportScope(const JobReportScope& value) { SetReportScope(value); return *this;}
-    inline JobReport& WithReportScope(JobReportScope&& value) { SetReportScope(std::move(value)); return *this;}
+    inline void SetReportScope(JobReportScope value) { m_reportScopeHasBeenSet = true; m_reportScope = value; }
+    inline JobReport& WithReportScope(JobReportScope value) { SetReportScope(value); return *this;}
     ///@}
   private:
 
     Aws::String m_bucket;
     bool m_bucketHasBeenSet = false;
 
-    JobReportFormat m_format;
+    JobReportFormat m_format{JobReportFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_prefix;
     bool m_prefixHasBeenSet = false;
 
-    JobReportScope m_reportScope;
+    JobReportScope m_reportScope{JobReportScope::NOT_SET};
     bool m_reportScopeHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-GuardrailPiiEntity::GuardrailPiiEntity() : 
-    m_type(GuardrailPiiEntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_action(GuardrailSensitiveInformationAction::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 GuardrailPiiEntity::GuardrailPiiEntity(JsonView jsonValue)
-  : GuardrailPiiEntity()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GuardrailPiiEntity& GuardrailPiiEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailPiiEntityTypeMapper::GetGuardrailPiiEntityTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     m_action = GuardrailSensitiveInformationActionMapper::GetGuardrailSensitiveInformationActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   return *this;
 }
 

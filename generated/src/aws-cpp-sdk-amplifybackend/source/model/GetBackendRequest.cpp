@@ -12,12 +12,6 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBackendRequest::GetBackendRequest() : 
-    m_appIdHasBeenSet(false),
-    m_backendEnvironmentNameHasBeenSet(false)
-{
-}
-
 Aws::String GetBackendRequest::SerializePayload() const
 {
   JsonValue payload;

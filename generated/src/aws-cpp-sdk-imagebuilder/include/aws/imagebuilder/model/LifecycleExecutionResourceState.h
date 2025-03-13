@@ -33,7 +33,7 @@ namespace Model
   class LifecycleExecutionResourceState
   {
   public:
-    AWS_IMAGEBUILDER_API LifecycleExecutionResourceState();
+    AWS_IMAGEBUILDER_API LifecycleExecutionResourceState() = default;
     AWS_IMAGEBUILDER_API LifecycleExecutionResourceState(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API LifecycleExecutionResourceState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,26 @@ namespace Model
      * <p>The runtime status of the lifecycle action taken for the impacted
      * resource.</p>
      */
-    inline const LifecycleExecutionResourceStatus& GetStatus() const{ return m_status; }
+    inline LifecycleExecutionResourceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const LifecycleExecutionResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(LifecycleExecutionResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LifecycleExecutionResourceState& WithStatus(const LifecycleExecutionResourceStatus& value) { SetStatus(value); return *this;}
-    inline LifecycleExecutionResourceState& WithStatus(LifecycleExecutionResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(LifecycleExecutionResourceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LifecycleExecutionResourceState& WithStatus(LifecycleExecutionResourceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Messaging that clarifies the reason for the assigned status.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline LifecycleExecutionResourceState& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline LifecycleExecutionResourceState& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline LifecycleExecutionResourceState& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    LifecycleExecutionResourceState& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
-    LifecycleExecutionResourceStatus m_status;
+    LifecycleExecutionResourceStatus m_status{LifecycleExecutionResourceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;

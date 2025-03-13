@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocationsResult::DescribeLocationsResult()
-{
-}
-
 DescribeLocationsResult::DescribeLocationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeLocationsResult& DescribeLocationsResult::operator =(const Aws::AmazonWe
     {
       m_locations.push_back(locationsJsonList[locationsIndex].AsObject());
     }
+    m_locationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

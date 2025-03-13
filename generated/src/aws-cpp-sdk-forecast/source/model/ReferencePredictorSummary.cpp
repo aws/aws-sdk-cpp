@@ -18,15 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-ReferencePredictorSummary::ReferencePredictorSummary() : 
-    m_arnHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 ReferencePredictorSummary::ReferencePredictorSummary(JsonView jsonValue)
-  : ReferencePredictorSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ReferencePredictorSummary& ReferencePredictorSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

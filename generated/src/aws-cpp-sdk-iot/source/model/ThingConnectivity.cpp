@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ThingConnectivity::ThingConnectivity() : 
-    m_connected(false),
-    m_connectedHasBeenSet(false),
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_disconnectReasonHasBeenSet(false)
-{
-}
-
 ThingConnectivity::ThingConnectivity(JsonView jsonValue)
-  : ThingConnectivity()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ThingConnectivity& ThingConnectivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connected"))
   {
     m_connected = jsonValue.GetBool("connected");
-
     m_connectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetInt64("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disconnectReason"))
   {
     m_disconnectReason = jsonValue.GetString("disconnectReason");
-
     m_disconnectReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

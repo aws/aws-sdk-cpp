@@ -18,16 +18,7 @@ namespace MigrationHub
 namespace Model
 {
 
-MigrationTaskUpdate::MigrationTaskUpdate() : 
-    m_updateDateTimeHasBeenSet(false),
-    m_updateType(UpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false),
-    m_migrationTaskStateHasBeenSet(false)
-{
-}
-
 MigrationTaskUpdate::MigrationTaskUpdate(JsonView jsonValue)
-  : MigrationTaskUpdate()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MigrationTaskUpdate& MigrationTaskUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UpdateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("UpdateDateTime");
-
     m_updateDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateType"))
   {
     m_updateType = UpdateTypeMapper::GetUpdateTypeForName(jsonValue.GetString("UpdateType"));
-
     m_updateTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MigrationTaskState"))
   {
     m_migrationTaskState = jsonValue.GetObject("MigrationTaskState");
-
     m_migrationTaskStateHasBeenSet = true;
   }
-
   return *this;
 }
 

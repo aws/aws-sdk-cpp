@@ -18,14 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-ACLPendingChanges::ACLPendingChanges() : 
-    m_userNamesToRemoveHasBeenSet(false),
-    m_userNamesToAddHasBeenSet(false)
-{
-}
-
 ACLPendingChanges::ACLPendingChanges(JsonView jsonValue)
-  : ACLPendingChanges()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ACLPendingChanges& ACLPendingChanges::operator =(JsonView jsonValue)
     }
     m_userNamesToRemoveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserNamesToAdd"))
   {
     Aws::Utils::Array<JsonView> userNamesToAddJsonList = jsonValue.GetArray("UserNamesToAdd");
@@ -51,7 +43,6 @@ ACLPendingChanges& ACLPendingChanges::operator =(JsonView jsonValue)
     }
     m_userNamesToAddHasBeenSet = true;
   }
-
   return *this;
 }
 

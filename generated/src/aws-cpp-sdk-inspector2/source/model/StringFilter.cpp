@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-StringFilter::StringFilter() : 
-    m_comparison(StringComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 StringFilter::StringFilter(JsonView jsonValue)
-  : StringFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StringFilter& StringFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("comparison"))
   {
     m_comparison = StringComparisonMapper::GetStringComparisonForName(jsonValue.GetString("comparison"));
-
     m_comparisonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

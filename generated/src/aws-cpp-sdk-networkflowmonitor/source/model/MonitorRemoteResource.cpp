@@ -18,15 +18,7 @@ namespace NetworkFlowMonitor
 namespace Model
 {
 
-MonitorRemoteResource::MonitorRemoteResource() : 
-    m_type(MonitorRemoteResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 MonitorRemoteResource::MonitorRemoteResource(JsonView jsonValue)
-  : MonitorRemoteResource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MonitorRemoteResource& MonitorRemoteResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = MonitorRemoteResourceTypeMapper::GetMonitorRemoteResourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   return *this;
 }
 

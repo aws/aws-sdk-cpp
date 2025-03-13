@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsBackupBackupPlanRuleCopyActionsDetails::AwsBackupBackupPlanRuleCopyActionsDetails() : 
-    m_destinationBackupVaultArnHasBeenSet(false),
-    m_lifecycleHasBeenSet(false)
-{
-}
-
 AwsBackupBackupPlanRuleCopyActionsDetails::AwsBackupBackupPlanRuleCopyActionsDetails(JsonView jsonValue)
-  : AwsBackupBackupPlanRuleCopyActionsDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsBackupBackupPlanRuleCopyActionsDetails& AwsBackupBackupPlanRuleCopyActionsDet
   if(jsonValue.ValueExists("DestinationBackupVaultArn"))
   {
     m_destinationBackupVaultArn = jsonValue.GetString("DestinationBackupVaultArn");
-
     m_destinationBackupVaultArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = jsonValue.GetObject("Lifecycle");
-
     m_lifecycleHasBeenSet = true;
   }
-
   return *this;
 }
 

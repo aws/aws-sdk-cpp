@@ -34,7 +34,7 @@ namespace Model
   class DimensionContribution
   {
   public:
-    AWS_LOOKOUTMETRICS_API DimensionContribution();
+    AWS_LOOKOUTMETRICS_API DimensionContribution() = default;
     AWS_LOOKOUTMETRICS_API DimensionContribution(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API DimensionContribution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The name of the dimension.</p>
      */
-    inline const Aws::String& GetDimensionName() const{ return m_dimensionName; }
+    inline const Aws::String& GetDimensionName() const { return m_dimensionName; }
     inline bool DimensionNameHasBeenSet() const { return m_dimensionNameHasBeenSet; }
-    inline void SetDimensionName(const Aws::String& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
-    inline void SetDimensionName(Aws::String&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
-    inline void SetDimensionName(const char* value) { m_dimensionNameHasBeenSet = true; m_dimensionName.assign(value); }
-    inline DimensionContribution& WithDimensionName(const Aws::String& value) { SetDimensionName(value); return *this;}
-    inline DimensionContribution& WithDimensionName(Aws::String&& value) { SetDimensionName(std::move(value)); return *this;}
-    inline DimensionContribution& WithDimensionName(const char* value) { SetDimensionName(value); return *this;}
+    template<typename DimensionNameT = Aws::String>
+    void SetDimensionName(DimensionNameT&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::forward<DimensionNameT>(value); }
+    template<typename DimensionNameT = Aws::String>
+    DimensionContribution& WithDimensionName(DimensionNameT&& value) { SetDimensionName(std::forward<DimensionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of dimension values that contributed to the anomaly.</p>
      */
-    inline const Aws::Vector<DimensionValueContribution>& GetDimensionValueContributionList() const{ return m_dimensionValueContributionList; }
+    inline const Aws::Vector<DimensionValueContribution>& GetDimensionValueContributionList() const { return m_dimensionValueContributionList; }
     inline bool DimensionValueContributionListHasBeenSet() const { return m_dimensionValueContributionListHasBeenSet; }
-    inline void SetDimensionValueContributionList(const Aws::Vector<DimensionValueContribution>& value) { m_dimensionValueContributionListHasBeenSet = true; m_dimensionValueContributionList = value; }
-    inline void SetDimensionValueContributionList(Aws::Vector<DimensionValueContribution>&& value) { m_dimensionValueContributionListHasBeenSet = true; m_dimensionValueContributionList = std::move(value); }
-    inline DimensionContribution& WithDimensionValueContributionList(const Aws::Vector<DimensionValueContribution>& value) { SetDimensionValueContributionList(value); return *this;}
-    inline DimensionContribution& WithDimensionValueContributionList(Aws::Vector<DimensionValueContribution>&& value) { SetDimensionValueContributionList(std::move(value)); return *this;}
-    inline DimensionContribution& AddDimensionValueContributionList(const DimensionValueContribution& value) { m_dimensionValueContributionListHasBeenSet = true; m_dimensionValueContributionList.push_back(value); return *this; }
-    inline DimensionContribution& AddDimensionValueContributionList(DimensionValueContribution&& value) { m_dimensionValueContributionListHasBeenSet = true; m_dimensionValueContributionList.push_back(std::move(value)); return *this; }
+    template<typename DimensionValueContributionListT = Aws::Vector<DimensionValueContribution>>
+    void SetDimensionValueContributionList(DimensionValueContributionListT&& value) { m_dimensionValueContributionListHasBeenSet = true; m_dimensionValueContributionList = std::forward<DimensionValueContributionListT>(value); }
+    template<typename DimensionValueContributionListT = Aws::Vector<DimensionValueContribution>>
+    DimensionContribution& WithDimensionValueContributionList(DimensionValueContributionListT&& value) { SetDimensionValueContributionList(std::forward<DimensionValueContributionListT>(value)); return *this;}
+    template<typename DimensionValueContributionListT = DimensionValueContribution>
+    DimensionContribution& AddDimensionValueContributionList(DimensionValueContributionListT&& value) { m_dimensionValueContributionListHasBeenSet = true; m_dimensionValueContributionList.emplace_back(std::forward<DimensionValueContributionListT>(value)); return *this; }
     ///@}
   private:
 

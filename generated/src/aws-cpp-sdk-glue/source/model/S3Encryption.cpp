@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-S3Encryption::S3Encryption() : 
-    m_s3EncryptionMode(S3EncryptionMode::NOT_SET),
-    m_s3EncryptionModeHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 S3Encryption::S3Encryption(JsonView jsonValue)
-  : S3Encryption()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ S3Encryption& S3Encryption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3EncryptionMode"))
   {
     m_s3EncryptionMode = S3EncryptionModeMapper::GetS3EncryptionModeForName(jsonValue.GetString("S3EncryptionMode"));
-
     m_s3EncryptionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

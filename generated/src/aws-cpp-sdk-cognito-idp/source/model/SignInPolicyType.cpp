@@ -18,13 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-SignInPolicyType::SignInPolicyType() : 
-    m_allowedFirstAuthFactorsHasBeenSet(false)
-{
-}
-
 SignInPolicyType::SignInPolicyType(JsonView jsonValue)
-  : SignInPolicyType()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SignInPolicyType& SignInPolicyType::operator =(JsonView jsonValue)
     }
     m_allowedFirstAuthFactorsHasBeenSet = true;
   }
-
   return *this;
 }
 

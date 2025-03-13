@@ -12,16 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIPSetRequest::UpdateIPSetRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_ipSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_activate(false),
-    m_activateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIPSetRequest::SerializePayload() const
 {
   JsonValue payload;

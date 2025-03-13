@@ -12,12 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetClusterSessionCredentialsRequest::GetClusterSessionCredentialsRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String GetClusterSessionCredentialsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class GetSamplingTargetsRequest : public XRayRequest
   {
   public:
-    AWS_XRAY_API GetSamplingTargetsRequest();
+    AWS_XRAY_API GetSamplingTargetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,14 @@ namespace Model
     /**
      * <p>Information about rules that the service is using to sample requests.</p>
      */
-    inline const Aws::Vector<SamplingStatisticsDocument>& GetSamplingStatisticsDocuments() const{ return m_samplingStatisticsDocuments; }
+    inline const Aws::Vector<SamplingStatisticsDocument>& GetSamplingStatisticsDocuments() const { return m_samplingStatisticsDocuments; }
     inline bool SamplingStatisticsDocumentsHasBeenSet() const { return m_samplingStatisticsDocumentsHasBeenSet; }
-    inline void SetSamplingStatisticsDocuments(const Aws::Vector<SamplingStatisticsDocument>& value) { m_samplingStatisticsDocumentsHasBeenSet = true; m_samplingStatisticsDocuments = value; }
-    inline void SetSamplingStatisticsDocuments(Aws::Vector<SamplingStatisticsDocument>&& value) { m_samplingStatisticsDocumentsHasBeenSet = true; m_samplingStatisticsDocuments = std::move(value); }
-    inline GetSamplingTargetsRequest& WithSamplingStatisticsDocuments(const Aws::Vector<SamplingStatisticsDocument>& value) { SetSamplingStatisticsDocuments(value); return *this;}
-    inline GetSamplingTargetsRequest& WithSamplingStatisticsDocuments(Aws::Vector<SamplingStatisticsDocument>&& value) { SetSamplingStatisticsDocuments(std::move(value)); return *this;}
-    inline GetSamplingTargetsRequest& AddSamplingStatisticsDocuments(const SamplingStatisticsDocument& value) { m_samplingStatisticsDocumentsHasBeenSet = true; m_samplingStatisticsDocuments.push_back(value); return *this; }
-    inline GetSamplingTargetsRequest& AddSamplingStatisticsDocuments(SamplingStatisticsDocument&& value) { m_samplingStatisticsDocumentsHasBeenSet = true; m_samplingStatisticsDocuments.push_back(std::move(value)); return *this; }
+    template<typename SamplingStatisticsDocumentsT = Aws::Vector<SamplingStatisticsDocument>>
+    void SetSamplingStatisticsDocuments(SamplingStatisticsDocumentsT&& value) { m_samplingStatisticsDocumentsHasBeenSet = true; m_samplingStatisticsDocuments = std::forward<SamplingStatisticsDocumentsT>(value); }
+    template<typename SamplingStatisticsDocumentsT = Aws::Vector<SamplingStatisticsDocument>>
+    GetSamplingTargetsRequest& WithSamplingStatisticsDocuments(SamplingStatisticsDocumentsT&& value) { SetSamplingStatisticsDocuments(std::forward<SamplingStatisticsDocumentsT>(value)); return *this;}
+    template<typename SamplingStatisticsDocumentsT = SamplingStatisticsDocument>
+    GetSamplingTargetsRequest& AddSamplingStatisticsDocuments(SamplingStatisticsDocumentsT&& value) { m_samplingStatisticsDocumentsHasBeenSet = true; m_samplingStatisticsDocuments.emplace_back(std::forward<SamplingStatisticsDocumentsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ContentSourceConfiguration::ContentSourceConfiguration() : 
-    m_dataSourceIdsHasBeenSet(false),
-    m_faqIdsHasBeenSet(false),
-    m_directPutContent(false),
-    m_directPutContentHasBeenSet(false)
-{
-}
-
 ContentSourceConfiguration::ContentSourceConfiguration(JsonView jsonValue)
-  : ContentSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ ContentSourceConfiguration& ContentSourceConfiguration::operator =(JsonView json
     }
     m_dataSourceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaqIds"))
   {
     Aws::Utils::Array<JsonView> faqIdsJsonList = jsonValue.GetArray("FaqIds");
@@ -53,14 +43,11 @@ ContentSourceConfiguration& ContentSourceConfiguration::operator =(JsonView json
     }
     m_faqIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectPutContent"))
   {
     m_directPutContent = jsonValue.GetBool("DirectPutContent");
-
     m_directPutContentHasBeenSet = true;
   }
-
   return *this;
 }
 

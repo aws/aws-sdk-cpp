@@ -31,7 +31,7 @@ namespace Model
   class MulticastSourceSettings
   {
   public:
-    AWS_MEDIACONNECT_API MulticastSourceSettings();
+    AWS_MEDIACONNECT_API MulticastSourceSettings() = default;
     AWS_MEDIACONNECT_API MulticastSourceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API MulticastSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * The IP address of the source for source-specific multicast (SSM).
      */
-    inline const Aws::String& GetMulticastSourceIp() const{ return m_multicastSourceIp; }
+    inline const Aws::String& GetMulticastSourceIp() const { return m_multicastSourceIp; }
     inline bool MulticastSourceIpHasBeenSet() const { return m_multicastSourceIpHasBeenSet; }
-    inline void SetMulticastSourceIp(const Aws::String& value) { m_multicastSourceIpHasBeenSet = true; m_multicastSourceIp = value; }
-    inline void SetMulticastSourceIp(Aws::String&& value) { m_multicastSourceIpHasBeenSet = true; m_multicastSourceIp = std::move(value); }
-    inline void SetMulticastSourceIp(const char* value) { m_multicastSourceIpHasBeenSet = true; m_multicastSourceIp.assign(value); }
-    inline MulticastSourceSettings& WithMulticastSourceIp(const Aws::String& value) { SetMulticastSourceIp(value); return *this;}
-    inline MulticastSourceSettings& WithMulticastSourceIp(Aws::String&& value) { SetMulticastSourceIp(std::move(value)); return *this;}
-    inline MulticastSourceSettings& WithMulticastSourceIp(const char* value) { SetMulticastSourceIp(value); return *this;}
+    template<typename MulticastSourceIpT = Aws::String>
+    void SetMulticastSourceIp(MulticastSourceIpT&& value) { m_multicastSourceIpHasBeenSet = true; m_multicastSourceIp = std::forward<MulticastSourceIpT>(value); }
+    template<typename MulticastSourceIpT = Aws::String>
+    MulticastSourceSettings& WithMulticastSourceIp(MulticastSourceIpT&& value) { SetMulticastSourceIp(std::forward<MulticastSourceIpT>(value)); return *this;}
     ///@}
   private:
 

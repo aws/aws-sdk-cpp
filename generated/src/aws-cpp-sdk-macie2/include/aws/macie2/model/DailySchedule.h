@@ -30,7 +30,7 @@ namespace Model
   class DailySchedule
   {
   public:
-    AWS_MACIE2_API DailySchedule();
+    AWS_MACIE2_API DailySchedule() = default;
     AWS_MACIE2_API DailySchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API DailySchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;

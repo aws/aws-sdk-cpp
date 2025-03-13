@@ -18,20 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeSourceParameters::PipeSourceParameters() : 
-    m_filterCriteriaHasBeenSet(false),
-    m_kinesisStreamParametersHasBeenSet(false),
-    m_dynamoDBStreamParametersHasBeenSet(false),
-    m_sqsQueueParametersHasBeenSet(false),
-    m_activeMQBrokerParametersHasBeenSet(false),
-    m_rabbitMQBrokerParametersHasBeenSet(false),
-    m_managedStreamingKafkaParametersHasBeenSet(false),
-    m_selfManagedKafkaParametersHasBeenSet(false)
-{
-}
-
 PipeSourceParameters::PipeSourceParameters(JsonView jsonValue)
-  : PipeSourceParameters()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ PipeSourceParameters& PipeSourceParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterCriteria"))
   {
     m_filterCriteria = jsonValue.GetObject("FilterCriteria");
-
     m_filterCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisStreamParameters"))
   {
     m_kinesisStreamParameters = jsonValue.GetObject("KinesisStreamParameters");
-
     m_kinesisStreamParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DynamoDBStreamParameters"))
   {
     m_dynamoDBStreamParameters = jsonValue.GetObject("DynamoDBStreamParameters");
-
     m_dynamoDBStreamParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SqsQueueParameters"))
   {
     m_sqsQueueParameters = jsonValue.GetObject("SqsQueueParameters");
-
     m_sqsQueueParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveMQBrokerParameters"))
   {
     m_activeMQBrokerParameters = jsonValue.GetObject("ActiveMQBrokerParameters");
-
     m_activeMQBrokerParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RabbitMQBrokerParameters"))
   {
     m_rabbitMQBrokerParameters = jsonValue.GetObject("RabbitMQBrokerParameters");
-
     m_rabbitMQBrokerParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedStreamingKafkaParameters"))
   {
     m_managedStreamingKafkaParameters = jsonValue.GetObject("ManagedStreamingKafkaParameters");
-
     m_managedStreamingKafkaParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelfManagedKafkaParameters"))
   {
     m_selfManagedKafkaParameters = jsonValue.GetObject("SelfManagedKafkaParameters");
-
     m_selfManagedKafkaParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

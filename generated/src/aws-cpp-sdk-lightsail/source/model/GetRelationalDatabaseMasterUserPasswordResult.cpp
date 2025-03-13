@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRelationalDatabaseMasterUserPasswordResult::GetRelationalDatabaseMasterUserPasswordResult()
-{
-}
-
 GetRelationalDatabaseMasterUserPasswordResult::GetRelationalDatabaseMasterUserPasswordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetRelationalDatabaseMasterUserPasswordResult& GetRelationalDatabaseMasterUserPa
   if(jsonValue.ValueExists("masterUserPassword"))
   {
     m_masterUserPassword = jsonValue.GetString("masterUserPassword");
-
+    m_masterUserPasswordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

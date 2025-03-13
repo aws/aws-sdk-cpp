@@ -23,7 +23,7 @@ namespace Model
   class UpdateSubscriptionGrantStatusRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API UpdateSubscriptionGrantStatusRequest();
+    AWS_DATAZONE_API UpdateSubscriptionGrantStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The identifier of the asset the subscription grant status of which is to be
      * updated.</p>
      */
-    inline const Aws::String& GetAssetIdentifier() const{ return m_assetIdentifier; }
+    inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
     inline bool AssetIdentifierHasBeenSet() const { return m_assetIdentifierHasBeenSet; }
-    inline void SetAssetIdentifier(const Aws::String& value) { m_assetIdentifierHasBeenSet = true; m_assetIdentifier = value; }
-    inline void SetAssetIdentifier(Aws::String&& value) { m_assetIdentifierHasBeenSet = true; m_assetIdentifier = std::move(value); }
-    inline void SetAssetIdentifier(const char* value) { m_assetIdentifierHasBeenSet = true; m_assetIdentifier.assign(value); }
-    inline UpdateSubscriptionGrantStatusRequest& WithAssetIdentifier(const Aws::String& value) { SetAssetIdentifier(value); return *this;}
-    inline UpdateSubscriptionGrantStatusRequest& WithAssetIdentifier(Aws::String&& value) { SetAssetIdentifier(std::move(value)); return *this;}
-    inline UpdateSubscriptionGrantStatusRequest& WithAssetIdentifier(const char* value) { SetAssetIdentifier(value); return *this;}
+    template<typename AssetIdentifierT = Aws::String>
+    void SetAssetIdentifier(AssetIdentifierT&& value) { m_assetIdentifierHasBeenSet = true; m_assetIdentifier = std::forward<AssetIdentifierT>(value); }
+    template<typename AssetIdentifierT = Aws::String>
+    UpdateSubscriptionGrantStatusRequest& WithAssetIdentifier(AssetIdentifierT&& value) { SetAssetIdentifier(std::forward<AssetIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The identifier of the Amazon DataZone domain in which a subscription grant
      * status is to be updated.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline UpdateSubscriptionGrantStatusRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline UpdateSubscriptionGrantStatusRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline UpdateSubscriptionGrantStatusRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    UpdateSubscriptionGrantStatusRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +65,12 @@ namespace Model
      * <p>Specifies the error message that is returned if the operation cannot be
      * successfully completed.</p>
      */
-    inline const FailureCause& GetFailureCause() const{ return m_failureCause; }
+    inline const FailureCause& GetFailureCause() const { return m_failureCause; }
     inline bool FailureCauseHasBeenSet() const { return m_failureCauseHasBeenSet; }
-    inline void SetFailureCause(const FailureCause& value) { m_failureCauseHasBeenSet = true; m_failureCause = value; }
-    inline void SetFailureCause(FailureCause&& value) { m_failureCauseHasBeenSet = true; m_failureCause = std::move(value); }
-    inline UpdateSubscriptionGrantStatusRequest& WithFailureCause(const FailureCause& value) { SetFailureCause(value); return *this;}
-    inline UpdateSubscriptionGrantStatusRequest& WithFailureCause(FailureCause&& value) { SetFailureCause(std::move(value)); return *this;}
+    template<typename FailureCauseT = FailureCause>
+    void SetFailureCause(FailureCauseT&& value) { m_failureCauseHasBeenSet = true; m_failureCause = std::forward<FailureCauseT>(value); }
+    template<typename FailureCauseT = FailureCause>
+    UpdateSubscriptionGrantStatusRequest& WithFailureCause(FailureCauseT&& value) { SetFailureCause(std::forward<FailureCauseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * <p>The identifier of the subscription grant the status of which is to be
      * updated.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline UpdateSubscriptionGrantStatusRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline UpdateSubscriptionGrantStatusRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline UpdateSubscriptionGrantStatusRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    UpdateSubscriptionGrantStatusRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +91,10 @@ namespace Model
      * <p>The status to be updated as part of the
      * <code>UpdateSubscriptionGrantStatus</code> action.</p>
      */
-    inline const SubscriptionGrantStatus& GetStatus() const{ return m_status; }
+    inline SubscriptionGrantStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SubscriptionGrantStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SubscriptionGrantStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateSubscriptionGrantStatusRequest& WithStatus(const SubscriptionGrantStatus& value) { SetStatus(value); return *this;}
-    inline UpdateSubscriptionGrantStatusRequest& WithStatus(SubscriptionGrantStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SubscriptionGrantStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateSubscriptionGrantStatusRequest& WithStatus(SubscriptionGrantStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +102,12 @@ namespace Model
      * <p>The target name to be updated as part of the
      * <code>UpdateSubscriptionGrantStatus</code> action.</p>
      */
-    inline const Aws::String& GetTargetName() const{ return m_targetName; }
+    inline const Aws::String& GetTargetName() const { return m_targetName; }
     inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
-    inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
-    inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
-    inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
-    inline UpdateSubscriptionGrantStatusRequest& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
-    inline UpdateSubscriptionGrantStatusRequest& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
-    inline UpdateSubscriptionGrantStatusRequest& WithTargetName(const char* value) { SetTargetName(value); return *this;}
+    template<typename TargetNameT = Aws::String>
+    void SetTargetName(TargetNameT&& value) { m_targetNameHasBeenSet = true; m_targetName = std::forward<TargetNameT>(value); }
+    template<typename TargetNameT = Aws::String>
+    UpdateSubscriptionGrantStatusRequest& WithTargetName(TargetNameT&& value) { SetTargetName(std::forward<TargetNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -133,7 +123,7 @@ namespace Model
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
 
-    SubscriptionGrantStatus m_status;
+    SubscriptionGrantStatus m_status{SubscriptionGrantStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_targetName;

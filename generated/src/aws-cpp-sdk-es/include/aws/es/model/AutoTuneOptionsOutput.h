@@ -33,7 +33,7 @@ namespace Model
   class AutoTuneOptionsOutput
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API AutoTuneOptionsOutput();
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneOptionsOutput() = default;
     AWS_ELASTICSEARCHSERVICE_API AutoTuneOptionsOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API AutoTuneOptionsOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
      */
-    inline const AutoTuneState& GetState() const{ return m_state; }
+    inline AutoTuneState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const AutoTuneState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(AutoTuneState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline AutoTuneOptionsOutput& WithState(const AutoTuneState& value) { SetState(value); return *this;}
-    inline AutoTuneOptionsOutput& WithState(AutoTuneState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(AutoTuneState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline AutoTuneOptionsOutput& WithState(AutoTuneState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the error message while enabling or disabling the Auto-Tune.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline AutoTuneOptionsOutput& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline AutoTuneOptionsOutput& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline AutoTuneOptionsOutput& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    AutoTuneOptionsOutput& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 
-    AutoTuneState m_state;
+    AutoTuneState m_state{AutoTuneState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_errorMessage;

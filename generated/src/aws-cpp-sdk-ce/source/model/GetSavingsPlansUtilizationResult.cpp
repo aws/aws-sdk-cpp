@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSavingsPlansUtilizationResult::GetSavingsPlansUtilizationResult()
-{
-}
-
 GetSavingsPlansUtilizationResult::GetSavingsPlansUtilizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ GetSavingsPlansUtilizationResult& GetSavingsPlansUtilizationResult::operator =(c
     {
       m_savingsPlansUtilizationsByTime.push_back(savingsPlansUtilizationsByTimeJsonList[savingsPlansUtilizationsByTimeIndex].AsObject());
     }
+    m_savingsPlansUtilizationsByTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetObject("Total");
-
+    m_totalHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

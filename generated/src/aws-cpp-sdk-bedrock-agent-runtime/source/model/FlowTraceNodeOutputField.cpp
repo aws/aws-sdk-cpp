@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FlowTraceNodeOutputField::FlowTraceNodeOutputField() : 
-    m_contentHasBeenSet(false),
-    m_nodeOutputNameHasBeenSet(false)
-{
-}
-
 FlowTraceNodeOutputField::FlowTraceNodeOutputField(JsonView jsonValue)
-  : FlowTraceNodeOutputField()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FlowTraceNodeOutputField& FlowTraceNodeOutputField::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetObject("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeOutputName"))
   {
     m_nodeOutputName = jsonValue.GetString("nodeOutputName");
-
     m_nodeOutputNameHasBeenSet = true;
   }
-
   return *this;
 }
 

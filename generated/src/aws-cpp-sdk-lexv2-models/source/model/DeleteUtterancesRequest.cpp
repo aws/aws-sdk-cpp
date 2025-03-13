@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteUtterancesRequest::DeleteUtterancesRequest() : 
-    m_botIdHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUtterancesRequest::SerializePayload() const
 {
   return {};

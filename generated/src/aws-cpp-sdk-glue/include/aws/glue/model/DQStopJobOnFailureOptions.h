@@ -32,7 +32,7 @@ namespace Model
   class DQStopJobOnFailureOptions
   {
   public:
-    AWS_GLUE_API DQStopJobOnFailureOptions();
+    AWS_GLUE_API DQStopJobOnFailureOptions() = default;
     AWS_GLUE_API DQStopJobOnFailureOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DQStopJobOnFailureOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>When to stop job if your data quality evaluation fails. Options are Immediate
      * or AfterDataLoad.</p>
      */
-    inline const DQStopJobOnFailureTiming& GetStopJobOnFailureTiming() const{ return m_stopJobOnFailureTiming; }
+    inline DQStopJobOnFailureTiming GetStopJobOnFailureTiming() const { return m_stopJobOnFailureTiming; }
     inline bool StopJobOnFailureTimingHasBeenSet() const { return m_stopJobOnFailureTimingHasBeenSet; }
-    inline void SetStopJobOnFailureTiming(const DQStopJobOnFailureTiming& value) { m_stopJobOnFailureTimingHasBeenSet = true; m_stopJobOnFailureTiming = value; }
-    inline void SetStopJobOnFailureTiming(DQStopJobOnFailureTiming&& value) { m_stopJobOnFailureTimingHasBeenSet = true; m_stopJobOnFailureTiming = std::move(value); }
-    inline DQStopJobOnFailureOptions& WithStopJobOnFailureTiming(const DQStopJobOnFailureTiming& value) { SetStopJobOnFailureTiming(value); return *this;}
-    inline DQStopJobOnFailureOptions& WithStopJobOnFailureTiming(DQStopJobOnFailureTiming&& value) { SetStopJobOnFailureTiming(std::move(value)); return *this;}
+    inline void SetStopJobOnFailureTiming(DQStopJobOnFailureTiming value) { m_stopJobOnFailureTimingHasBeenSet = true; m_stopJobOnFailureTiming = value; }
+    inline DQStopJobOnFailureOptions& WithStopJobOnFailureTiming(DQStopJobOnFailureTiming value) { SetStopJobOnFailureTiming(value); return *this;}
     ///@}
   private:
 
-    DQStopJobOnFailureTiming m_stopJobOnFailureTiming;
+    DQStopJobOnFailureTiming m_stopJobOnFailureTiming{DQStopJobOnFailureTiming::NOT_SET};
     bool m_stopJobOnFailureTimingHasBeenSet = false;
   };
 

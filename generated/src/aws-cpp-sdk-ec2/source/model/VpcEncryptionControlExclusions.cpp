@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcEncryptionControlExclusions::VpcEncryptionControlExclusions() : 
-    m_internetGatewayHasBeenSet(false),
-    m_egressOnlyInternetGatewayHasBeenSet(false),
-    m_natGatewayHasBeenSet(false),
-    m_virtualPrivateGatewayHasBeenSet(false),
-    m_vpcPeeringHasBeenSet(false)
-{
-}
-
 VpcEncryptionControlExclusions::VpcEncryptionControlExclusions(const XmlNode& xmlNode)
-  : VpcEncryptionControlExclusions()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ VpcEncryptionControlExclusions& VpcEncryptionControlExclusions::operator =(const
     {
       m_internetGateway = internetGatewayNode;
       m_internetGatewayHasBeenSet = true;
+       m_internetGatewayHasBeenSet = true;
     }
     XmlNode egressOnlyInternetGatewayNode = resultNode.FirstChild("egressOnlyInternetGateway");
     if(!egressOnlyInternetGatewayNode.IsNull())
     {
       m_egressOnlyInternetGateway = egressOnlyInternetGatewayNode;
       m_egressOnlyInternetGatewayHasBeenSet = true;
+       m_egressOnlyInternetGatewayHasBeenSet = true;
     }
     XmlNode natGatewayNode = resultNode.FirstChild("natGateway");
     if(!natGatewayNode.IsNull())
     {
       m_natGateway = natGatewayNode;
       m_natGatewayHasBeenSet = true;
+       m_natGatewayHasBeenSet = true;
     }
     XmlNode virtualPrivateGatewayNode = resultNode.FirstChild("virtualPrivateGateway");
     if(!virtualPrivateGatewayNode.IsNull())
     {
       m_virtualPrivateGateway = virtualPrivateGatewayNode;
       m_virtualPrivateGatewayHasBeenSet = true;
+       m_virtualPrivateGatewayHasBeenSet = true;
     }
     XmlNode vpcPeeringNode = resultNode.FirstChild("vpcPeering");
     if(!vpcPeeringNode.IsNull())
     {
       m_vpcPeering = vpcPeeringNode;
       m_vpcPeeringHasBeenSet = true;
+       m_vpcPeeringHasBeenSet = true;
     }
   }
 

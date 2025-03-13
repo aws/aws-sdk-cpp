@@ -42,7 +42,7 @@ namespace Model
   class XssMatchSetUpdate
   {
   public:
-    AWS_WAFREGIONAL_API XssMatchSetUpdate();
+    AWS_WAFREGIONAL_API XssMatchSetUpdate() = default;
     AWS_WAFREGIONAL_API XssMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API XssMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
      * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
      */
-    inline const ChangeAction& GetAction() const{ return m_action; }
+    inline ChangeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline XssMatchSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-    inline XssMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ChangeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline XssMatchSetUpdate& WithAction(ChangeAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -68,16 +66,16 @@ namespace Model
      * cross-site scripting attacks and, if you want AWS WAF to inspect a header, the
      * name of the header.</p>
      */
-    inline const XssMatchTuple& GetXssMatchTuple() const{ return m_xssMatchTuple; }
+    inline const XssMatchTuple& GetXssMatchTuple() const { return m_xssMatchTuple; }
     inline bool XssMatchTupleHasBeenSet() const { return m_xssMatchTupleHasBeenSet; }
-    inline void SetXssMatchTuple(const XssMatchTuple& value) { m_xssMatchTupleHasBeenSet = true; m_xssMatchTuple = value; }
-    inline void SetXssMatchTuple(XssMatchTuple&& value) { m_xssMatchTupleHasBeenSet = true; m_xssMatchTuple = std::move(value); }
-    inline XssMatchSetUpdate& WithXssMatchTuple(const XssMatchTuple& value) { SetXssMatchTuple(value); return *this;}
-    inline XssMatchSetUpdate& WithXssMatchTuple(XssMatchTuple&& value) { SetXssMatchTuple(std::move(value)); return *this;}
+    template<typename XssMatchTupleT = XssMatchTuple>
+    void SetXssMatchTuple(XssMatchTupleT&& value) { m_xssMatchTupleHasBeenSet = true; m_xssMatchTuple = std::forward<XssMatchTupleT>(value); }
+    template<typename XssMatchTupleT = XssMatchTuple>
+    XssMatchSetUpdate& WithXssMatchTuple(XssMatchTupleT&& value) { SetXssMatchTuple(std::forward<XssMatchTupleT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeAction m_action;
+    ChangeAction m_action{ChangeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     XssMatchTuple m_xssMatchTuple;

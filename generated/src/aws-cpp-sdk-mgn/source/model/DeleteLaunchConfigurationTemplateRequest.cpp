@@ -12,11 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLaunchConfigurationTemplateRequest::DeleteLaunchConfigurationTemplateRequest() : 
-    m_launchConfigurationTemplateIDHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLaunchConfigurationTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

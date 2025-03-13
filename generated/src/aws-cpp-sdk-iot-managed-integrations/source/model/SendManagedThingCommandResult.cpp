@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendManagedThingCommandResult::SendManagedThingCommandResult()
-{
-}
-
 SendManagedThingCommandResult::SendManagedThingCommandResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ SendManagedThingCommandResult& SendManagedThingCommandResult::operator =(const A
   if(jsonValue.ValueExists("TraceId"))
   {
     m_traceId = jsonValue.GetString("TraceId");
-
+    m_traceIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

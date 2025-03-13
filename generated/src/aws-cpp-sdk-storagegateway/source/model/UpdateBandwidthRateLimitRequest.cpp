@@ -12,15 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBandwidthRateLimitRequest::UpdateBandwidthRateLimitRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_averageUploadRateLimitInBitsPerSec(0),
-    m_averageUploadRateLimitInBitsPerSecHasBeenSet(false),
-    m_averageDownloadRateLimitInBitsPerSec(0),
-    m_averageDownloadRateLimitInBitsPerSecHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBandwidthRateLimitRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePublicVirtualInterfaceRequest::CreatePublicVirtualInterfaceRequest() : 
-    m_connectionIdHasBeenSet(false),
-    m_newPublicVirtualInterfaceHasBeenSet(false)
-{
-}
-
 Aws::String CreatePublicVirtualInterfaceRequest::SerializePayload() const
 {
   JsonValue payload;

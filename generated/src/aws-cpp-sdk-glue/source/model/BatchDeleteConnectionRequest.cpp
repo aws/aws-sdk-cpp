@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteConnectionRequest::BatchDeleteConnectionRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_connectionNameListHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

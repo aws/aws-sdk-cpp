@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-OperatorRequest::OperatorRequest() : 
-    m_principalHasBeenSet(false)
-{
-}
-
 OperatorRequest::OperatorRequest(const XmlNode& xmlNode)
-  : OperatorRequest()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ OperatorRequest& OperatorRequest::operator =(const XmlNode& xmlNode)
     {
       m_principal = Aws::Utils::Xml::DecodeEscapedXmlText(principalNode.GetText());
       m_principalHasBeenSet = true;
+       m_principalHasBeenSet = true;
     }
   }
 

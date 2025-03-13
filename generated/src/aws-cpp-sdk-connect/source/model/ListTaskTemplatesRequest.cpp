@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTaskTemplatesRequest::ListTaskTemplatesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_status(TaskTemplateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String ListTaskTemplatesRequest::SerializePayload() const
 {
   return {};

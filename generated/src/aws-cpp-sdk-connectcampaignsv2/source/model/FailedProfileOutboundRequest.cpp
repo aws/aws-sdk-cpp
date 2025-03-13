@@ -18,16 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-FailedProfileOutboundRequest::FailedProfileOutboundRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_failureCode(ProfileOutboundRequestFailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false)
-{
-}
-
 FailedProfileOutboundRequest::FailedProfileOutboundRequest(JsonView jsonValue)
-  : FailedProfileOutboundRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FailedProfileOutboundRequest& FailedProfileOutboundRequest::operator =(JsonView 
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
     m_clientTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = ProfileOutboundRequestFailureCodeMapper::GetProfileOutboundRequestFailureCodeForName(jsonValue.GetString("failureCode"));
-
     m_failureCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

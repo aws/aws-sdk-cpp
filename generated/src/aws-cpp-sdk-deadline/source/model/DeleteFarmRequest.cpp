@@ -12,11 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFarmRequest::DeleteFarmRequest() : 
-    m_farmIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFarmRequest::SerializePayload() const
 {
   return {};

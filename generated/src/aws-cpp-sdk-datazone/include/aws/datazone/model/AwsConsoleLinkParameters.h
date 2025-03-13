@@ -32,7 +32,7 @@ namespace Model
   class AwsConsoleLinkParameters
   {
   public:
-    AWS_DATAZONE_API AwsConsoleLinkParameters();
+    AWS_DATAZONE_API AwsConsoleLinkParameters() = default;
     AWS_DATAZONE_API AwsConsoleLinkParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API AwsConsoleLinkParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The URI of the console link specified as part of the environment action.</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline AwsConsoleLinkParameters& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline AwsConsoleLinkParameters& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline AwsConsoleLinkParameters& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    AwsConsoleLinkParameters& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
   private:
 

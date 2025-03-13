@@ -22,7 +22,7 @@ namespace Model
   class GenerateTemplateRequest : public SMSRequest
   {
   public:
-    AWS_SMS_API GenerateTemplateRequest();
+    AWS_SMS_API GenerateTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,33 +39,29 @@ namespace Model
     /**
      * <p>The ID of the application associated with the CloudFormation template.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline GenerateTemplateRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline GenerateTemplateRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline GenerateTemplateRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    GenerateTemplateRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format for generating the CloudFormation template.</p>
      */
-    inline const OutputFormat& GetTemplateFormat() const{ return m_templateFormat; }
+    inline OutputFormat GetTemplateFormat() const { return m_templateFormat; }
     inline bool TemplateFormatHasBeenSet() const { return m_templateFormatHasBeenSet; }
-    inline void SetTemplateFormat(const OutputFormat& value) { m_templateFormatHasBeenSet = true; m_templateFormat = value; }
-    inline void SetTemplateFormat(OutputFormat&& value) { m_templateFormatHasBeenSet = true; m_templateFormat = std::move(value); }
-    inline GenerateTemplateRequest& WithTemplateFormat(const OutputFormat& value) { SetTemplateFormat(value); return *this;}
-    inline GenerateTemplateRequest& WithTemplateFormat(OutputFormat&& value) { SetTemplateFormat(std::move(value)); return *this;}
+    inline void SetTemplateFormat(OutputFormat value) { m_templateFormatHasBeenSet = true; m_templateFormat = value; }
+    inline GenerateTemplateRequest& WithTemplateFormat(OutputFormat value) { SetTemplateFormat(value); return *this;}
     ///@}
   private:
 
     Aws::String m_appId;
     bool m_appIdHasBeenSet = false;
 
-    OutputFormat m_templateFormat;
+    OutputFormat m_templateFormat{OutputFormat::NOT_SET};
     bool m_templateFormatHasBeenSet = false;
   };
 

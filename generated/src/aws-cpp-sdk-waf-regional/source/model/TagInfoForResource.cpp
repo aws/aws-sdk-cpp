@@ -18,14 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-TagInfoForResource::TagInfoForResource() : 
-    m_resourceARNHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 TagInfoForResource::TagInfoForResource(JsonView jsonValue)
-  : TagInfoForResource()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TagInfoForResource& TagInfoForResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceARN"))
   {
     m_resourceARN = jsonValue.GetString("ResourceARN");
-
     m_resourceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagList"))
   {
     Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
@@ -48,7 +39,6 @@ TagInfoForResource& TagInfoForResource::operator =(JsonView jsonValue)
     }
     m_tagListHasBeenSet = true;
   }
-
   return *this;
 }
 

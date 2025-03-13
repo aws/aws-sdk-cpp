@@ -18,14 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-TimestreamResources::TimestreamResources() : 
-    m_timestreamDatabaseNameHasBeenSet(false),
-    m_timestreamTableNameHasBeenSet(false)
-{
-}
-
 TimestreamResources::TimestreamResources(JsonView jsonValue)
-  : TimestreamResources()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimestreamResources& TimestreamResources::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timestreamDatabaseName"))
   {
     m_timestreamDatabaseName = jsonValue.GetString("timestreamDatabaseName");
-
     m_timestreamDatabaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestreamTableName"))
   {
     m_timestreamTableName = jsonValue.GetString("timestreamTableName");
-
     m_timestreamTableNameHasBeenSet = true;
   }
-
   return *this;
 }
 

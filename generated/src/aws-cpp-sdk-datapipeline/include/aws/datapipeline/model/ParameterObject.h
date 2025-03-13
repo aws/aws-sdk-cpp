@@ -33,7 +33,7 @@ namespace Model
   class ParameterObject
   {
   public:
-    AWS_DATAPIPELINE_API ParameterObject();
+    AWS_DATAPIPELINE_API ParameterObject() = default;
     AWS_DATAPIPELINE_API ParameterObject(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAPIPELINE_API ParameterObject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The ID of the parameter object. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ParameterObject& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ParameterObject& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ParameterObject& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ParameterObject& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The attributes of the parameter object.</p>
      */
-    inline const Aws::Vector<ParameterAttribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<ParameterAttribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<ParameterAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<ParameterAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline ParameterObject& WithAttributes(const Aws::Vector<ParameterAttribute>& value) { SetAttributes(value); return *this;}
-    inline ParameterObject& WithAttributes(Aws::Vector<ParameterAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline ParameterObject& AddAttributes(const ParameterAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline ParameterObject& AddAttributes(ParameterAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<ParameterAttribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<ParameterAttribute>>
+    ParameterObject& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = ParameterAttribute>
+    ParameterObject& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 

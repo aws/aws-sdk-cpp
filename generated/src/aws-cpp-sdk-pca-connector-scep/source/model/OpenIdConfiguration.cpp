@@ -18,15 +18,7 @@ namespace PcaConnectorScep
 namespace Model
 {
 
-OpenIdConfiguration::OpenIdConfiguration() : 
-    m_issuerHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_audienceHasBeenSet(false)
-{
-}
-
 OpenIdConfiguration::OpenIdConfiguration(JsonView jsonValue)
-  : OpenIdConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ OpenIdConfiguration& OpenIdConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Issuer"))
   {
     m_issuer = jsonValue.GetString("Issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Audience"))
   {
     m_audience = jsonValue.GetString("Audience");
-
     m_audienceHasBeenSet = true;
   }
-
   return *this;
 }
 

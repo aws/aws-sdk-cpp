@@ -34,7 +34,7 @@ namespace Model
   class ListCloudFrontOriginAccessIdentities2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API ListCloudFrontOriginAccessIdentities2020_05_31Result();
+    AWS_CLOUDFRONT_API ListCloudFrontOriginAccessIdentities2020_05_31Result() = default;
     AWS_CLOUDFRONT_API ListCloudFrontOriginAccessIdentities2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API ListCloudFrontOriginAccessIdentities2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
      */
-    inline const CloudFrontOriginAccessIdentityList& GetCloudFrontOriginAccessIdentityList() const{ return m_cloudFrontOriginAccessIdentityList; }
-    inline void SetCloudFrontOriginAccessIdentityList(const CloudFrontOriginAccessIdentityList& value) { m_cloudFrontOriginAccessIdentityList = value; }
-    inline void SetCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { m_cloudFrontOriginAccessIdentityList = std::move(value); }
-    inline ListCloudFrontOriginAccessIdentities2020_05_31Result& WithCloudFrontOriginAccessIdentityList(const CloudFrontOriginAccessIdentityList& value) { SetCloudFrontOriginAccessIdentityList(value); return *this;}
-    inline ListCloudFrontOriginAccessIdentities2020_05_31Result& WithCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { SetCloudFrontOriginAccessIdentityList(std::move(value)); return *this;}
+    inline const CloudFrontOriginAccessIdentityList& GetCloudFrontOriginAccessIdentityList() const { return m_cloudFrontOriginAccessIdentityList; }
+    template<typename CloudFrontOriginAccessIdentityListT = CloudFrontOriginAccessIdentityList>
+    void SetCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityListT&& value) { m_cloudFrontOriginAccessIdentityListHasBeenSet = true; m_cloudFrontOriginAccessIdentityList = std::forward<CloudFrontOriginAccessIdentityListT>(value); }
+    template<typename CloudFrontOriginAccessIdentityListT = CloudFrontOriginAccessIdentityList>
+    ListCloudFrontOriginAccessIdentities2020_05_31Result& WithCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityListT&& value) { SetCloudFrontOriginAccessIdentityList(std::forward<CloudFrontOriginAccessIdentityListT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCloudFrontOriginAccessIdentities2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCloudFrontOriginAccessIdentities2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCloudFrontOriginAccessIdentities2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCloudFrontOriginAccessIdentities2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CloudFrontOriginAccessIdentityList m_cloudFrontOriginAccessIdentityList;
+    bool m_cloudFrontOriginAccessIdentityListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

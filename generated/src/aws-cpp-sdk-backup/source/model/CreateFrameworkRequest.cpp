@@ -12,16 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFrameworkRequest::CreateFrameworkRequest() : 
-    m_frameworkNameHasBeenSet(false),
-    m_frameworkDescriptionHasBeenSet(false),
-    m_frameworkControlsHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true),
-    m_frameworkTagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFrameworkRequest::SerializePayload() const
 {
   JsonValue payload;

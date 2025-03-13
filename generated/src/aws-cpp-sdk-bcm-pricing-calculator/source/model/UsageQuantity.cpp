@@ -18,16 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-UsageQuantity::UsageQuantity() : 
-    m_startHourHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_amount(0.0),
-    m_amountHasBeenSet(false)
-{
-}
-
 UsageQuantity::UsageQuantity(JsonView jsonValue)
-  : UsageQuantity()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UsageQuantity& UsageQuantity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startHour"))
   {
     m_startHour = jsonValue.GetDouble("startHour");
-
     m_startHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = jsonValue.GetString("unit");
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amount"))
   {
     m_amount = jsonValue.GetDouble("amount");
-
     m_amountHasBeenSet = true;
   }
-
   return *this;
 }
 

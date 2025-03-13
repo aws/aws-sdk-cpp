@@ -34,7 +34,7 @@ namespace Model
   class RefreshSchedule
   {
   public:
-    AWS_QUICKSIGHT_API RefreshSchedule();
+    AWS_QUICKSIGHT_API RefreshSchedule() = default;
     AWS_QUICKSIGHT_API RefreshSchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RefreshSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
     /**
      * <p>An identifier for the refresh schedule.</p>
      */
-    inline const Aws::String& GetScheduleId() const{ return m_scheduleId; }
+    inline const Aws::String& GetScheduleId() const { return m_scheduleId; }
     inline bool ScheduleIdHasBeenSet() const { return m_scheduleIdHasBeenSet; }
-    inline void SetScheduleId(const Aws::String& value) { m_scheduleIdHasBeenSet = true; m_scheduleId = value; }
-    inline void SetScheduleId(Aws::String&& value) { m_scheduleIdHasBeenSet = true; m_scheduleId = std::move(value); }
-    inline void SetScheduleId(const char* value) { m_scheduleIdHasBeenSet = true; m_scheduleId.assign(value); }
-    inline RefreshSchedule& WithScheduleId(const Aws::String& value) { SetScheduleId(value); return *this;}
-    inline RefreshSchedule& WithScheduleId(Aws::String&& value) { SetScheduleId(std::move(value)); return *this;}
-    inline RefreshSchedule& WithScheduleId(const char* value) { SetScheduleId(value); return *this;}
+    template<typename ScheduleIdT = Aws::String>
+    void SetScheduleId(ScheduleIdT&& value) { m_scheduleIdHasBeenSet = true; m_scheduleId = std::forward<ScheduleIdT>(value); }
+    template<typename ScheduleIdT = Aws::String>
+    RefreshSchedule& WithScheduleId(ScheduleIdT&& value) { SetScheduleId(std::forward<ScheduleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The frequency for the refresh schedule.</p>
      */
-    inline const RefreshFrequency& GetScheduleFrequency() const{ return m_scheduleFrequency; }
+    inline const RefreshFrequency& GetScheduleFrequency() const { return m_scheduleFrequency; }
     inline bool ScheduleFrequencyHasBeenSet() const { return m_scheduleFrequencyHasBeenSet; }
-    inline void SetScheduleFrequency(const RefreshFrequency& value) { m_scheduleFrequencyHasBeenSet = true; m_scheduleFrequency = value; }
-    inline void SetScheduleFrequency(RefreshFrequency&& value) { m_scheduleFrequencyHasBeenSet = true; m_scheduleFrequency = std::move(value); }
-    inline RefreshSchedule& WithScheduleFrequency(const RefreshFrequency& value) { SetScheduleFrequency(value); return *this;}
-    inline RefreshSchedule& WithScheduleFrequency(RefreshFrequency&& value) { SetScheduleFrequency(std::move(value)); return *this;}
+    template<typename ScheduleFrequencyT = RefreshFrequency>
+    void SetScheduleFrequency(ScheduleFrequencyT&& value) { m_scheduleFrequencyHasBeenSet = true; m_scheduleFrequency = std::forward<ScheduleFrequencyT>(value); }
+    template<typename ScheduleFrequencyT = RefreshFrequency>
+    RefreshSchedule& WithScheduleFrequency(ScheduleFrequencyT&& value) { SetScheduleFrequency(std::forward<ScheduleFrequencyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,12 @@ namespace Model
      * <p>Time after which the refresh schedule can be started, expressed in
      * <code>YYYY-MM-DDTHH:MM:SS</code> format.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartAfterDateTime() const{ return m_startAfterDateTime; }
+    inline const Aws::Utils::DateTime& GetStartAfterDateTime() const { return m_startAfterDateTime; }
     inline bool StartAfterDateTimeHasBeenSet() const { return m_startAfterDateTimeHasBeenSet; }
-    inline void SetStartAfterDateTime(const Aws::Utils::DateTime& value) { m_startAfterDateTimeHasBeenSet = true; m_startAfterDateTime = value; }
-    inline void SetStartAfterDateTime(Aws::Utils::DateTime&& value) { m_startAfterDateTimeHasBeenSet = true; m_startAfterDateTime = std::move(value); }
-    inline RefreshSchedule& WithStartAfterDateTime(const Aws::Utils::DateTime& value) { SetStartAfterDateTime(value); return *this;}
-    inline RefreshSchedule& WithStartAfterDateTime(Aws::Utils::DateTime&& value) { SetStartAfterDateTime(std::move(value)); return *this;}
+    template<typename StartAfterDateTimeT = Aws::Utils::DateTime>
+    void SetStartAfterDateTime(StartAfterDateTimeT&& value) { m_startAfterDateTimeHasBeenSet = true; m_startAfterDateTime = std::forward<StartAfterDateTimeT>(value); }
+    template<typename StartAfterDateTimeT = Aws::Utils::DateTime>
+    RefreshSchedule& WithStartAfterDateTime(StartAfterDateTimeT&& value) { SetStartAfterDateTime(std::forward<StartAfterDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,26 +87,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing
      * SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
-    inline const IngestionType& GetRefreshType() const{ return m_refreshType; }
+    inline IngestionType GetRefreshType() const { return m_refreshType; }
     inline bool RefreshTypeHasBeenSet() const { return m_refreshTypeHasBeenSet; }
-    inline void SetRefreshType(const IngestionType& value) { m_refreshTypeHasBeenSet = true; m_refreshType = value; }
-    inline void SetRefreshType(IngestionType&& value) { m_refreshTypeHasBeenSet = true; m_refreshType = std::move(value); }
-    inline RefreshSchedule& WithRefreshType(const IngestionType& value) { SetRefreshType(value); return *this;}
-    inline RefreshSchedule& WithRefreshType(IngestionType&& value) { SetRefreshType(std::move(value)); return *this;}
+    inline void SetRefreshType(IngestionType value) { m_refreshTypeHasBeenSet = true; m_refreshType = value; }
+    inline RefreshSchedule& WithRefreshType(IngestionType value) { SetRefreshType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the refresh schedule.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline RefreshSchedule& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline RefreshSchedule& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline RefreshSchedule& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    RefreshSchedule& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -118,10 +112,10 @@ namespace Model
     RefreshFrequency m_scheduleFrequency;
     bool m_scheduleFrequencyHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startAfterDateTime;
+    Aws::Utils::DateTime m_startAfterDateTime{};
     bool m_startAfterDateTimeHasBeenSet = false;
 
-    IngestionType m_refreshType;
+    IngestionType m_refreshType{IngestionType::NOT_SET};
     bool m_refreshTypeHasBeenSet = false;
 
     Aws::String m_arn;

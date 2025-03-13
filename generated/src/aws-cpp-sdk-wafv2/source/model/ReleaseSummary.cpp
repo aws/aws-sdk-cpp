@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ReleaseSummary::ReleaseSummary() : 
-    m_releaseVersionHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 ReleaseSummary::ReleaseSummary(JsonView jsonValue)
-  : ReleaseSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReleaseSummary& ReleaseSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReleaseVersion"))
   {
     m_releaseVersion = jsonValue.GetString("ReleaseVersion");
-
     m_releaseVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

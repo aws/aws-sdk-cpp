@@ -18,15 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-MatchScoreDetails::MatchScoreDetails() : 
-    m_overall(0.0),
-    m_overallHasBeenSet(false),
-    m_componentsHasBeenSet(false)
-{
-}
-
 MatchScoreDetails::MatchScoreDetails(JsonView jsonValue)
-  : MatchScoreDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MatchScoreDetails& MatchScoreDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Overall"))
   {
     m_overall = jsonValue.GetDouble("Overall");
-
     m_overallHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Components"))
   {
     m_components = jsonValue.GetObject("Components");
-
     m_componentsHasBeenSet = true;
   }
-
   return *this;
 }
 

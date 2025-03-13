@@ -20,20 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyStrictTransportSecurity::ResponseHeadersPolicyStrictTransportSecurity() : 
-    m_override(false),
-    m_overrideHasBeenSet(false),
-    m_includeSubdomains(false),
-    m_includeSubdomainsHasBeenSet(false),
-    m_preload(false),
-    m_preloadHasBeenSet(false),
-    m_accessControlMaxAgeSec(0),
-    m_accessControlMaxAgeSecHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyStrictTransportSecurity::ResponseHeadersPolicyStrictTransportSecurity(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyStrictTransportSecurity()
 {
   *this = xmlNode;
 }
@@ -49,24 +36,28 @@ ResponseHeadersPolicyStrictTransportSecurity& ResponseHeadersPolicyStrictTranspo
     {
       m_override = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overrideNode.GetText()).c_str()).c_str());
       m_overrideHasBeenSet = true;
+       m_overrideHasBeenSet = true;
     }
     XmlNode includeSubdomainsNode = resultNode.FirstChild("IncludeSubdomains");
     if(!includeSubdomainsNode.IsNull())
     {
       m_includeSubdomains = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeSubdomainsNode.GetText()).c_str()).c_str());
       m_includeSubdomainsHasBeenSet = true;
+       m_includeSubdomainsHasBeenSet = true;
     }
     XmlNode preloadNode = resultNode.FirstChild("Preload");
     if(!preloadNode.IsNull())
     {
       m_preload = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(preloadNode.GetText()).c_str()).c_str());
       m_preloadHasBeenSet = true;
+       m_preloadHasBeenSet = true;
     }
     XmlNode accessControlMaxAgeSecNode = resultNode.FirstChild("AccessControlMaxAgeSec");
     if(!accessControlMaxAgeSecNode.IsNull())
     {
       m_accessControlMaxAgeSec = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(accessControlMaxAgeSecNode.GetText()).c_str()).c_str());
       m_accessControlMaxAgeSecHasBeenSet = true;
+       m_accessControlMaxAgeSecHasBeenSet = true;
     }
   }
 

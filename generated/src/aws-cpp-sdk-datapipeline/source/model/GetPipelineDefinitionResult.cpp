@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPipelineDefinitionResult::GetPipelineDefinitionResult()
-{
-}
-
 GetPipelineDefinitionResult::GetPipelineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetPipelineDefinitionResult& GetPipelineDefinitionResult::operator =(const Aws::
     {
       m_pipelineObjects.push_back(pipelineObjectsJsonList[pipelineObjectsIndex].AsObject());
     }
+    m_pipelineObjectsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterObjects"))
   {
     Aws::Utils::Array<JsonView> parameterObjectsJsonList = jsonValue.GetArray("parameterObjects");
@@ -45,8 +41,8 @@ GetPipelineDefinitionResult& GetPipelineDefinitionResult::operator =(const Aws::
     {
       m_parameterObjects.push_back(parameterObjectsJsonList[parameterObjectsIndex].AsObject());
     }
+    m_parameterObjectsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterValues"))
   {
     Aws::Utils::Array<JsonView> parameterValuesJsonList = jsonValue.GetArray("parameterValues");
@@ -54,14 +50,15 @@ GetPipelineDefinitionResult& GetPipelineDefinitionResult::operator =(const Aws::
     {
       m_parameterValues.push_back(parameterValuesJsonList[parameterValuesIndex].AsObject());
     }
+    m_parameterValuesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

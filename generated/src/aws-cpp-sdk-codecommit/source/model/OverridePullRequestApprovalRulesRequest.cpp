@@ -12,14 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-OverridePullRequestApprovalRulesRequest::OverridePullRequestApprovalRulesRequest() : 
-    m_pullRequestIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_overrideStatus(OverrideStatus::NOT_SET),
-    m_overrideStatusHasBeenSet(false)
-{
-}
-
 Aws::String OverridePullRequestApprovalRulesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace RDSDataService
 namespace Model
 {
 
-SqlStatementResult::SqlStatementResult() : 
-    m_resultFrameHasBeenSet(false),
-    m_numberOfRecordsUpdated(0),
-    m_numberOfRecordsUpdatedHasBeenSet(false)
-{
-}
-
 SqlStatementResult::SqlStatementResult(JsonView jsonValue)
-  : SqlStatementResult()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SqlStatementResult& SqlStatementResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resultFrame"))
   {
     m_resultFrame = jsonValue.GetObject("resultFrame");
-
     m_resultFrameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfRecordsUpdated"))
   {
     m_numberOfRecordsUpdated = jsonValue.GetInt64("numberOfRecordsUpdated");
-
     m_numberOfRecordsUpdatedHasBeenSet = true;
   }
-
   return *this;
 }
 

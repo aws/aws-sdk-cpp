@@ -33,7 +33,7 @@ namespace Model
   class RdsDbClusterSnapshotAttributeValue
   {
   public:
-    AWS_ACCESSANALYZER_API RdsDbClusterSnapshotAttributeValue();
+    AWS_ACCESSANALYZER_API RdsDbClusterSnapshotAttributeValue() = default;
     AWS_ACCESSANALYZER_API RdsDbClusterSnapshotAttributeValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API RdsDbClusterSnapshotAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,15 +56,14 @@ namespace Model
      * list for <code>accountIds</code> in the
      * <code>RdsDbClusterSnapshotAttributeValue</code>.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline RdsDbClusterSnapshotAttributeValue& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-    inline RdsDbClusterSnapshotAttributeValue& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline RdsDbClusterSnapshotAttributeValue& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline RdsDbClusterSnapshotAttributeValue& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-    inline RdsDbClusterSnapshotAttributeValue& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    RdsDbClusterSnapshotAttributeValue& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = Aws::String>
+    RdsDbClusterSnapshotAttributeValue& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
   private:
 

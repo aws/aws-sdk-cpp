@@ -32,7 +32,7 @@ namespace Model
   class InventoryDeletionSummaryItem
   {
   public:
-    AWS_SSM_API InventoryDeletionSummaryItem();
+    AWS_SSM_API InventoryDeletionSummaryItem() = default;
     AWS_SSM_API InventoryDeletionSummaryItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API InventoryDeletionSummaryItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The inventory type version.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline InventoryDeletionSummaryItem& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline InventoryDeletionSummaryItem& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline InventoryDeletionSummaryItem& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    InventoryDeletionSummaryItem& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A count of the number of deleted items.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline InventoryDeletionSummaryItem& WithCount(int value) { SetCount(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     /**
      * <p>The remaining number of items to delete.</p>
      */
-    inline int GetRemainingCount() const{ return m_remainingCount; }
+    inline int GetRemainingCount() const { return m_remainingCount; }
     inline bool RemainingCountHasBeenSet() const { return m_remainingCountHasBeenSet; }
     inline void SetRemainingCount(int value) { m_remainingCountHasBeenSet = true; m_remainingCount = value; }
     inline InventoryDeletionSummaryItem& WithRemainingCount(int value) { SetRemainingCount(value); return *this;}
@@ -76,10 +74,10 @@ namespace Model
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
-    int m_remainingCount;
+    int m_remainingCount{0};
     bool m_remainingCountHasBeenSet = false;
   };
 

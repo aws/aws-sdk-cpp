@@ -18,15 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-Credentials::Credentials() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false)
-{
-}
-
 Credentials::Credentials(JsonView jsonValue)
-  : Credentials()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Credentials& Credentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretAccessKey"))
   {
     m_secretAccessKey = jsonValue.GetString("secretAccessKey");
-
     m_secretAccessKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionToken"))
   {
     m_sessionToken = jsonValue.GetString("sessionToken");
-
     m_sessionTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

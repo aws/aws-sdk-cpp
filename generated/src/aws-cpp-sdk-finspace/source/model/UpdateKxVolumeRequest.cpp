@@ -12,16 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateKxVolumeRequest::UpdateKxVolumeRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_volumeNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_nas1ConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateKxVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

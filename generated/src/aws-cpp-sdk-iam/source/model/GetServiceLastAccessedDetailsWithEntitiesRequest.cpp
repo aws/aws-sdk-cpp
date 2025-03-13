@@ -10,15 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetServiceLastAccessedDetailsWithEntitiesRequest::GetServiceLastAccessedDetailsWithEntitiesRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_serviceNamespaceHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceLastAccessedDetailsWithEntitiesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

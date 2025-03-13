@@ -12,14 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetReplicationRunsRequest::GetReplicationRunsRequest() : 
-    m_replicationJobIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetReplicationRunsRequest::SerializePayload() const
 {
   JsonValue payload;

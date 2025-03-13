@@ -12,19 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListReviewPolicyResultsForHITRequest::ListReviewPolicyResultsForHITRequest() : 
-    m_hITIdHasBeenSet(false),
-    m_policyLevelsHasBeenSet(false),
-    m_retrieveActions(false),
-    m_retrieveActionsHasBeenSet(false),
-    m_retrieveResults(false),
-    m_retrieveResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListReviewPolicyResultsForHITRequest::SerializePayload() const
 {
   JsonValue payload;

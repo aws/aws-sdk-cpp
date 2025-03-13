@@ -30,7 +30,7 @@ namespace Model
   class GetQAppSessionResult
   {
   public:
-    AWS_QAPPS_API GetQAppSessionResult();
+    AWS_QAPPS_API GetQAppSessionResult() = default;
     AWS_QAPPS_API GetQAppSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QAPPS_API GetQAppSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,47 +39,41 @@ namespace Model
     /**
      * <p>The unique identifier of the Q App session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-    inline GetQAppSessionResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline GetQAppSessionResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline GetQAppSessionResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    GetQAppSessionResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Q App session.</p>
      */
-    inline const Aws::String& GetSessionArn() const{ return m_sessionArn; }
-    inline void SetSessionArn(const Aws::String& value) { m_sessionArn = value; }
-    inline void SetSessionArn(Aws::String&& value) { m_sessionArn = std::move(value); }
-    inline void SetSessionArn(const char* value) { m_sessionArn.assign(value); }
-    inline GetQAppSessionResult& WithSessionArn(const Aws::String& value) { SetSessionArn(value); return *this;}
-    inline GetQAppSessionResult& WithSessionArn(Aws::String&& value) { SetSessionArn(std::move(value)); return *this;}
-    inline GetQAppSessionResult& WithSessionArn(const char* value) { SetSessionArn(value); return *this;}
+    inline const Aws::String& GetSessionArn() const { return m_sessionArn; }
+    template<typename SessionArnT = Aws::String>
+    void SetSessionArn(SessionArnT&& value) { m_sessionArnHasBeenSet = true; m_sessionArn = std::forward<SessionArnT>(value); }
+    template<typename SessionArnT = Aws::String>
+    GetQAppSessionResult& WithSessionArn(SessionArnT&& value) { SetSessionArn(std::forward<SessionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Q App session.</p>
      */
-    inline const Aws::String& GetSessionName() const{ return m_sessionName; }
-    inline void SetSessionName(const Aws::String& value) { m_sessionName = value; }
-    inline void SetSessionName(Aws::String&& value) { m_sessionName = std::move(value); }
-    inline void SetSessionName(const char* value) { m_sessionName.assign(value); }
-    inline GetQAppSessionResult& WithSessionName(const Aws::String& value) { SetSessionName(value); return *this;}
-    inline GetQAppSessionResult& WithSessionName(Aws::String&& value) { SetSessionName(std::move(value)); return *this;}
-    inline GetQAppSessionResult& WithSessionName(const char* value) { SetSessionName(value); return *this;}
+    inline const Aws::String& GetSessionName() const { return m_sessionName; }
+    template<typename SessionNameT = Aws::String>
+    void SetSessionName(SessionNameT&& value) { m_sessionNameHasBeenSet = true; m_sessionName = std::forward<SessionNameT>(value); }
+    template<typename SessionNameT = Aws::String>
+    GetQAppSessionResult& WithSessionName(SessionNameT&& value) { SetSessionName(std::forward<SessionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the Q App used for the session.</p>
      */
-    inline int GetAppVersion() const{ return m_appVersion; }
-    inline void SetAppVersion(int value) { m_appVersion = value; }
+    inline int GetAppVersion() const { return m_appVersion; }
+    inline void SetAppVersion(int value) { m_appVersionHasBeenSet = true; m_appVersion = value; }
     inline GetQAppSessionResult& WithAppVersion(int value) { SetAppVersion(value); return *this;}
     ///@}
 
@@ -87,8 +81,8 @@ namespace Model
     /**
      * <p>The latest published version of the Q App used for the session.</p>
      */
-    inline int GetLatestPublishedAppVersion() const{ return m_latestPublishedAppVersion; }
-    inline void SetLatestPublishedAppVersion(int value) { m_latestPublishedAppVersion = value; }
+    inline int GetLatestPublishedAppVersion() const { return m_latestPublishedAppVersion; }
+    inline void SetLatestPublishedAppVersion(int value) { m_latestPublishedAppVersionHasBeenSet = true; m_latestPublishedAppVersion = value; }
     inline GetQAppSessionResult& WithLatestPublishedAppVersion(int value) { SetLatestPublishedAppVersion(value); return *this;}
     ///@}
 
@@ -96,28 +90,24 @@ namespace Model
     /**
      * <p>The current status of the Q App session.</p>
      */
-    inline const ExecutionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ExecutionStatus& value) { m_status = value; }
-    inline void SetStatus(ExecutionStatus&& value) { m_status = std::move(value); }
-    inline GetQAppSessionResult& WithStatus(const ExecutionStatus& value) { SetStatus(value); return *this;}
-    inline GetQAppSessionResult& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ExecutionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetQAppSessionResult& WithStatus(ExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status for each card in the Q App session.</p>
      */
-    inline const Aws::Map<Aws::String, CardStatus>& GetCardStatus() const{ return m_cardStatus; }
-    inline void SetCardStatus(const Aws::Map<Aws::String, CardStatus>& value) { m_cardStatus = value; }
-    inline void SetCardStatus(Aws::Map<Aws::String, CardStatus>&& value) { m_cardStatus = std::move(value); }
-    inline GetQAppSessionResult& WithCardStatus(const Aws::Map<Aws::String, CardStatus>& value) { SetCardStatus(value); return *this;}
-    inline GetQAppSessionResult& WithCardStatus(Aws::Map<Aws::String, CardStatus>&& value) { SetCardStatus(std::move(value)); return *this;}
-    inline GetQAppSessionResult& AddCardStatus(const Aws::String& key, const CardStatus& value) { m_cardStatus.emplace(key, value); return *this; }
-    inline GetQAppSessionResult& AddCardStatus(Aws::String&& key, const CardStatus& value) { m_cardStatus.emplace(std::move(key), value); return *this; }
-    inline GetQAppSessionResult& AddCardStatus(const Aws::String& key, CardStatus&& value) { m_cardStatus.emplace(key, std::move(value)); return *this; }
-    inline GetQAppSessionResult& AddCardStatus(Aws::String&& key, CardStatus&& value) { m_cardStatus.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetQAppSessionResult& AddCardStatus(const char* key, CardStatus&& value) { m_cardStatus.emplace(key, std::move(value)); return *this; }
-    inline GetQAppSessionResult& AddCardStatus(const char* key, const CardStatus& value) { m_cardStatus.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, CardStatus>& GetCardStatus() const { return m_cardStatus; }
+    template<typename CardStatusT = Aws::Map<Aws::String, CardStatus>>
+    void SetCardStatus(CardStatusT&& value) { m_cardStatusHasBeenSet = true; m_cardStatus = std::forward<CardStatusT>(value); }
+    template<typename CardStatusT = Aws::Map<Aws::String, CardStatus>>
+    GetQAppSessionResult& WithCardStatus(CardStatusT&& value) { SetCardStatus(std::forward<CardStatusT>(value)); return *this;}
+    template<typename CardStatusKeyT = Aws::String, typename CardStatusValueT = CardStatus>
+    GetQAppSessionResult& AddCardStatus(CardStatusKeyT&& key, CardStatusValueT&& value) {
+      m_cardStatusHasBeenSet = true; m_cardStatus.emplace(std::forward<CardStatusKeyT>(key), std::forward<CardStatusValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -125,40 +115,47 @@ namespace Model
      * <p>Indicates whether the current user is the owner of the Q App data collection
      * session.</p>
      */
-    inline bool GetUserIsHost() const{ return m_userIsHost; }
-    inline void SetUserIsHost(bool value) { m_userIsHost = value; }
+    inline bool GetUserIsHost() const { return m_userIsHost; }
+    inline void SetUserIsHost(bool value) { m_userIsHostHasBeenSet = true; m_userIsHost = value; }
     inline GetQAppSessionResult& WithUserIsHost(bool value) { SetUserIsHost(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetQAppSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetQAppSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetQAppSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetQAppSessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_sessionArn;
+    bool m_sessionArnHasBeenSet = false;
 
     Aws::String m_sessionName;
+    bool m_sessionNameHasBeenSet = false;
 
-    int m_appVersion;
+    int m_appVersion{0};
+    bool m_appVersionHasBeenSet = false;
 
-    int m_latestPublishedAppVersion;
+    int m_latestPublishedAppVersion{0};
+    bool m_latestPublishedAppVersionHasBeenSet = false;
 
-    ExecutionStatus m_status;
+    ExecutionStatus m_status{ExecutionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, CardStatus> m_cardStatus;
+    bool m_cardStatusHasBeenSet = false;
 
-    bool m_userIsHost;
+    bool m_userIsHost{false};
+    bool m_userIsHostHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

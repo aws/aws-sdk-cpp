@@ -18,24 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HyperParameterTuningJobSummary::HyperParameterTuningJobSummary() : 
-    m_hyperParameterTuningJobNameHasBeenSet(false),
-    m_hyperParameterTuningJobArnHasBeenSet(false),
-    m_hyperParameterTuningJobStatus(HyperParameterTuningJobStatus::NOT_SET),
-    m_hyperParameterTuningJobStatusHasBeenSet(false),
-    m_strategy(HyperParameterTuningJobStrategyType::NOT_SET),
-    m_strategyHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_hyperParameterTuningEndTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_trainingJobStatusCountersHasBeenSet(false),
-    m_objectiveStatusCountersHasBeenSet(false),
-    m_resourceLimitsHasBeenSet(false)
-{
-}
-
 HyperParameterTuningJobSummary::HyperParameterTuningJobSummary(JsonView jsonValue)
-  : HyperParameterTuningJobSummary()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ HyperParameterTuningJobSummary& HyperParameterTuningJobSummary::operator =(JsonV
   if(jsonValue.ValueExists("HyperParameterTuningJobName"))
   {
     m_hyperParameterTuningJobName = jsonValue.GetString("HyperParameterTuningJobName");
-
     m_hyperParameterTuningJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HyperParameterTuningJobArn"))
   {
     m_hyperParameterTuningJobArn = jsonValue.GetString("HyperParameterTuningJobArn");
-
     m_hyperParameterTuningJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HyperParameterTuningJobStatus"))
   {
     m_hyperParameterTuningJobStatus = HyperParameterTuningJobStatusMapper::GetHyperParameterTuningJobStatusForName(jsonValue.GetString("HyperParameterTuningJobStatus"));
-
     m_hyperParameterTuningJobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Strategy"))
   {
     m_strategy = HyperParameterTuningJobStrategyTypeMapper::GetHyperParameterTuningJobStrategyTypeForName(jsonValue.GetString("Strategy"));
-
     m_strategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HyperParameterTuningEndTime"))
   {
     m_hyperParameterTuningEndTime = jsonValue.GetDouble("HyperParameterTuningEndTime");
-
     m_hyperParameterTuningEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingJobStatusCounters"))
   {
     m_trainingJobStatusCounters = jsonValue.GetObject("TrainingJobStatusCounters");
-
     m_trainingJobStatusCountersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectiveStatusCounters"))
   {
     m_objectiveStatusCounters = jsonValue.GetObject("ObjectiveStatusCounters");
-
     m_objectiveStatusCountersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceLimits"))
   {
     m_resourceLimits = jsonValue.GetObject("ResourceLimits");
-
     m_resourceLimitsHasBeenSet = true;
   }
-
   return *this;
 }
 

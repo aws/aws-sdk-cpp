@@ -13,17 +13,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSecretRequest::UpdateSecretRequest() : 
-    m_secretIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_secretBinaryHasBeenSet(false),
-    m_secretStringHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSecretRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -15,25 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCopyJobsRequest::ListCopyJobsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_byResourceArnHasBeenSet(false),
-    m_byState(CopyJobState::NOT_SET),
-    m_byStateHasBeenSet(false),
-    m_byCreatedBeforeHasBeenSet(false),
-    m_byCreatedAfterHasBeenSet(false),
-    m_byResourceTypeHasBeenSet(false),
-    m_byDestinationVaultArnHasBeenSet(false),
-    m_byAccountIdHasBeenSet(false),
-    m_byCompleteBeforeHasBeenSet(false),
-    m_byCompleteAfterHasBeenSet(false),
-    m_byParentJobIdHasBeenSet(false),
-    m_byMessageCategoryHasBeenSet(false)
-{
-}
-
 Aws::String ListCopyJobsRequest::SerializePayload() const
 {
   return {};

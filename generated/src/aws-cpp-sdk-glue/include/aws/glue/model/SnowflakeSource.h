@@ -34,7 +34,7 @@ namespace Model
   class SnowflakeSource
   {
   public:
-    AWS_GLUE_API SnowflakeSource();
+    AWS_GLUE_API SnowflakeSource() = default;
     AWS_GLUE_API SnowflakeSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API SnowflakeSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,38 @@ namespace Model
     /**
      * <p>The name of the Snowflake data source.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SnowflakeSource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SnowflakeSource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SnowflakeSource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SnowflakeSource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration for the Snowflake data source.</p>
      */
-    inline const SnowflakeNodeData& GetData() const{ return m_data; }
+    inline const SnowflakeNodeData& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const SnowflakeNodeData& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(SnowflakeNodeData&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline SnowflakeSource& WithData(const SnowflakeNodeData& value) { SetData(value); return *this;}
-    inline SnowflakeSource& WithData(SnowflakeNodeData&& value) { SetData(std::move(value)); return *this;}
+    template<typename DataT = SnowflakeNodeData>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = SnowflakeNodeData>
+    SnowflakeSource& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies user-defined schemas for your output data.</p>
      */
-    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const{ return m_outputSchemas; }
+    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const { return m_outputSchemas; }
     inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }
-    inline void SetOutputSchemas(const Aws::Vector<GlueSchema>& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = value; }
-    inline void SetOutputSchemas(Aws::Vector<GlueSchema>&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::move(value); }
-    inline SnowflakeSource& WithOutputSchemas(const Aws::Vector<GlueSchema>& value) { SetOutputSchemas(value); return *this;}
-    inline SnowflakeSource& WithOutputSchemas(Aws::Vector<GlueSchema>&& value) { SetOutputSchemas(std::move(value)); return *this;}
-    inline SnowflakeSource& AddOutputSchemas(const GlueSchema& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.push_back(value); return *this; }
-    inline SnowflakeSource& AddOutputSchemas(GlueSchema&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.push_back(std::move(value)); return *this; }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    void SetOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::forward<OutputSchemasT>(value); }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    SnowflakeSource& WithOutputSchemas(OutputSchemasT&& value) { SetOutputSchemas(std::forward<OutputSchemasT>(value)); return *this;}
+    template<typename OutputSchemasT = GlueSchema>
+    SnowflakeSource& AddOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.emplace_back(std::forward<OutputSchemasT>(value)); return *this; }
     ///@}
   private:
 

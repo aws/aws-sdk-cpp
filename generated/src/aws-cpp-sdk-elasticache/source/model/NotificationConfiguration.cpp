@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-NotificationConfiguration::NotificationConfiguration() : 
-    m_topicArnHasBeenSet(false),
-    m_topicStatusHasBeenSet(false)
-{
-}
-
 NotificationConfiguration::NotificationConfiguration(const XmlNode& xmlNode)
-  : NotificationConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ NotificationConfiguration& NotificationConfiguration::operator =(const XmlNode& 
     {
       m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
+       m_topicArnHasBeenSet = true;
     }
     XmlNode topicStatusNode = resultNode.FirstChild("TopicStatus");
     if(!topicStatusNode.IsNull())
     {
       m_topicStatus = Aws::Utils::Xml::DecodeEscapedXmlText(topicStatusNode.GetText());
       m_topicStatusHasBeenSet = true;
+       m_topicStatusHasBeenSet = true;
     }
   }
 

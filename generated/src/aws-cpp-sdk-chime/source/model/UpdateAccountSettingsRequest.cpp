@@ -12,12 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAccountSettingsRequest::UpdateAccountSettingsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_accountSettingsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccountSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

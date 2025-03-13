@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PreconditionNotMetException::PreconditionNotMetException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 PreconditionNotMetException::PreconditionNotMetException(JsonView jsonValue)
-  : PreconditionNotMetException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PreconditionNotMetException& PreconditionNotMetException::operator =(JsonView js
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AcceptedAssetScope::AcceptedAssetScope() : 
-    m_assetIdHasBeenSet(false),
-    m_filterIdsHasBeenSet(false)
-{
-}
-
 AcceptedAssetScope::AcceptedAssetScope(JsonView jsonValue)
-  : AcceptedAssetScope()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AcceptedAssetScope& AcceptedAssetScope::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterIds"))
   {
     Aws::Utils::Array<JsonView> filterIdsJsonList = jsonValue.GetArray("filterIds");
@@ -48,7 +39,6 @@ AcceptedAssetScope& AcceptedAssetScope::operator =(JsonView jsonValue)
     }
     m_filterIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class GetContainerServicePowersResult
   {
   public:
-    AWS_LIGHTSAIL_API GetContainerServicePowersResult();
+    AWS_LIGHTSAIL_API GetContainerServicePowersResult() = default;
     AWS_LIGHTSAIL_API GetContainerServicePowersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetContainerServicePowersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>An array of objects that describe the powers that can be specified for a
      * container service.</p>
      */
-    inline const Aws::Vector<ContainerServicePower>& GetPowers() const{ return m_powers; }
-    inline void SetPowers(const Aws::Vector<ContainerServicePower>& value) { m_powers = value; }
-    inline void SetPowers(Aws::Vector<ContainerServicePower>&& value) { m_powers = std::move(value); }
-    inline GetContainerServicePowersResult& WithPowers(const Aws::Vector<ContainerServicePower>& value) { SetPowers(value); return *this;}
-    inline GetContainerServicePowersResult& WithPowers(Aws::Vector<ContainerServicePower>&& value) { SetPowers(std::move(value)); return *this;}
-    inline GetContainerServicePowersResult& AddPowers(const ContainerServicePower& value) { m_powers.push_back(value); return *this; }
-    inline GetContainerServicePowersResult& AddPowers(ContainerServicePower&& value) { m_powers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContainerServicePower>& GetPowers() const { return m_powers; }
+    template<typename PowersT = Aws::Vector<ContainerServicePower>>
+    void SetPowers(PowersT&& value) { m_powersHasBeenSet = true; m_powers = std::forward<PowersT>(value); }
+    template<typename PowersT = Aws::Vector<ContainerServicePower>>
+    GetContainerServicePowersResult& WithPowers(PowersT&& value) { SetPowers(std::forward<PowersT>(value)); return *this;}
+    template<typename PowersT = ContainerServicePower>
+    GetContainerServicePowersResult& AddPowers(PowersT&& value) { m_powersHasBeenSet = true; m_powers.emplace_back(std::forward<PowersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetContainerServicePowersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetContainerServicePowersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetContainerServicePowersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetContainerServicePowersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContainerServicePower> m_powers;
+    bool m_powersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

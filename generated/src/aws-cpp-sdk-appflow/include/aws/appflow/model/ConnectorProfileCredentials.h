@@ -50,7 +50,7 @@ namespace Model
   class ConnectorProfileCredentials
   {
   public:
-    AWS_APPFLOW_API ConnectorProfileCredentials();
+    AWS_APPFLOW_API ConnectorProfileCredentials() = default;
     AWS_APPFLOW_API ConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API ConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,36 +60,36 @@ namespace Model
     /**
      * <p> The connector-specific credentials required when using Amplitude. </p>
      */
-    inline const AmplitudeConnectorProfileCredentials& GetAmplitude() const{ return m_amplitude; }
+    inline const AmplitudeConnectorProfileCredentials& GetAmplitude() const { return m_amplitude; }
     inline bool AmplitudeHasBeenSet() const { return m_amplitudeHasBeenSet; }
-    inline void SetAmplitude(const AmplitudeConnectorProfileCredentials& value) { m_amplitudeHasBeenSet = true; m_amplitude = value; }
-    inline void SetAmplitude(AmplitudeConnectorProfileCredentials&& value) { m_amplitudeHasBeenSet = true; m_amplitude = std::move(value); }
-    inline ConnectorProfileCredentials& WithAmplitude(const AmplitudeConnectorProfileCredentials& value) { SetAmplitude(value); return *this;}
-    inline ConnectorProfileCredentials& WithAmplitude(AmplitudeConnectorProfileCredentials&& value) { SetAmplitude(std::move(value)); return *this;}
+    template<typename AmplitudeT = AmplitudeConnectorProfileCredentials>
+    void SetAmplitude(AmplitudeT&& value) { m_amplitudeHasBeenSet = true; m_amplitude = std::forward<AmplitudeT>(value); }
+    template<typename AmplitudeT = AmplitudeConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithAmplitude(AmplitudeT&& value) { SetAmplitude(std::forward<AmplitudeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using Datadog. </p>
      */
-    inline const DatadogConnectorProfileCredentials& GetDatadog() const{ return m_datadog; }
+    inline const DatadogConnectorProfileCredentials& GetDatadog() const { return m_datadog; }
     inline bool DatadogHasBeenSet() const { return m_datadogHasBeenSet; }
-    inline void SetDatadog(const DatadogConnectorProfileCredentials& value) { m_datadogHasBeenSet = true; m_datadog = value; }
-    inline void SetDatadog(DatadogConnectorProfileCredentials&& value) { m_datadogHasBeenSet = true; m_datadog = std::move(value); }
-    inline ConnectorProfileCredentials& WithDatadog(const DatadogConnectorProfileCredentials& value) { SetDatadog(value); return *this;}
-    inline ConnectorProfileCredentials& WithDatadog(DatadogConnectorProfileCredentials&& value) { SetDatadog(std::move(value)); return *this;}
+    template<typename DatadogT = DatadogConnectorProfileCredentials>
+    void SetDatadog(DatadogT&& value) { m_datadogHasBeenSet = true; m_datadog = std::forward<DatadogT>(value); }
+    template<typename DatadogT = DatadogConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithDatadog(DatadogT&& value) { SetDatadog(std::forward<DatadogT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using Dynatrace. </p>
      */
-    inline const DynatraceConnectorProfileCredentials& GetDynatrace() const{ return m_dynatrace; }
+    inline const DynatraceConnectorProfileCredentials& GetDynatrace() const { return m_dynatrace; }
     inline bool DynatraceHasBeenSet() const { return m_dynatraceHasBeenSet; }
-    inline void SetDynatrace(const DynatraceConnectorProfileCredentials& value) { m_dynatraceHasBeenSet = true; m_dynatrace = value; }
-    inline void SetDynatrace(DynatraceConnectorProfileCredentials&& value) { m_dynatraceHasBeenSet = true; m_dynatrace = std::move(value); }
-    inline ConnectorProfileCredentials& WithDynatrace(const DynatraceConnectorProfileCredentials& value) { SetDynatrace(value); return *this;}
-    inline ConnectorProfileCredentials& WithDynatrace(DynatraceConnectorProfileCredentials&& value) { SetDynatrace(std::move(value)); return *this;}
+    template<typename DynatraceT = DynatraceConnectorProfileCredentials>
+    void SetDynatrace(DynatraceT&& value) { m_dynatraceHasBeenSet = true; m_dynatrace = std::forward<DynatraceT>(value); }
+    template<typename DynatraceT = DynatraceConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithDynatrace(DynatraceT&& value) { SetDynatrace(std::forward<DynatraceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +97,12 @@ namespace Model
      * <p> The connector-specific credentials required when using Google Analytics.
      * </p>
      */
-    inline const GoogleAnalyticsConnectorProfileCredentials& GetGoogleAnalytics() const{ return m_googleAnalytics; }
+    inline const GoogleAnalyticsConnectorProfileCredentials& GetGoogleAnalytics() const { return m_googleAnalytics; }
     inline bool GoogleAnalyticsHasBeenSet() const { return m_googleAnalyticsHasBeenSet; }
-    inline void SetGoogleAnalytics(const GoogleAnalyticsConnectorProfileCredentials& value) { m_googleAnalyticsHasBeenSet = true; m_googleAnalytics = value; }
-    inline void SetGoogleAnalytics(GoogleAnalyticsConnectorProfileCredentials&& value) { m_googleAnalyticsHasBeenSet = true; m_googleAnalytics = std::move(value); }
-    inline ConnectorProfileCredentials& WithGoogleAnalytics(const GoogleAnalyticsConnectorProfileCredentials& value) { SetGoogleAnalytics(value); return *this;}
-    inline ConnectorProfileCredentials& WithGoogleAnalytics(GoogleAnalyticsConnectorProfileCredentials&& value) { SetGoogleAnalytics(std::move(value)); return *this;}
+    template<typename GoogleAnalyticsT = GoogleAnalyticsConnectorProfileCredentials>
+    void SetGoogleAnalytics(GoogleAnalyticsT&& value) { m_googleAnalyticsHasBeenSet = true; m_googleAnalytics = std::forward<GoogleAnalyticsT>(value); }
+    template<typename GoogleAnalyticsT = GoogleAnalyticsConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithGoogleAnalytics(GoogleAnalyticsT&& value) { SetGoogleAnalytics(std::forward<GoogleAnalyticsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,176 +110,176 @@ namespace Model
      * <p> The connector-specific credentials required when using Amazon Honeycode.
      * </p>
      */
-    inline const HoneycodeConnectorProfileCredentials& GetHoneycode() const{ return m_honeycode; }
+    inline const HoneycodeConnectorProfileCredentials& GetHoneycode() const { return m_honeycode; }
     inline bool HoneycodeHasBeenSet() const { return m_honeycodeHasBeenSet; }
-    inline void SetHoneycode(const HoneycodeConnectorProfileCredentials& value) { m_honeycodeHasBeenSet = true; m_honeycode = value; }
-    inline void SetHoneycode(HoneycodeConnectorProfileCredentials&& value) { m_honeycodeHasBeenSet = true; m_honeycode = std::move(value); }
-    inline ConnectorProfileCredentials& WithHoneycode(const HoneycodeConnectorProfileCredentials& value) { SetHoneycode(value); return *this;}
-    inline ConnectorProfileCredentials& WithHoneycode(HoneycodeConnectorProfileCredentials&& value) { SetHoneycode(std::move(value)); return *this;}
+    template<typename HoneycodeT = HoneycodeConnectorProfileCredentials>
+    void SetHoneycode(HoneycodeT&& value) { m_honeycodeHasBeenSet = true; m_honeycode = std::forward<HoneycodeT>(value); }
+    template<typename HoneycodeT = HoneycodeConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithHoneycode(HoneycodeT&& value) { SetHoneycode(std::forward<HoneycodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using Infor Nexus. </p>
      */
-    inline const InforNexusConnectorProfileCredentials& GetInforNexus() const{ return m_inforNexus; }
+    inline const InforNexusConnectorProfileCredentials& GetInforNexus() const { return m_inforNexus; }
     inline bool InforNexusHasBeenSet() const { return m_inforNexusHasBeenSet; }
-    inline void SetInforNexus(const InforNexusConnectorProfileCredentials& value) { m_inforNexusHasBeenSet = true; m_inforNexus = value; }
-    inline void SetInforNexus(InforNexusConnectorProfileCredentials&& value) { m_inforNexusHasBeenSet = true; m_inforNexus = std::move(value); }
-    inline ConnectorProfileCredentials& WithInforNexus(const InforNexusConnectorProfileCredentials& value) { SetInforNexus(value); return *this;}
-    inline ConnectorProfileCredentials& WithInforNexus(InforNexusConnectorProfileCredentials&& value) { SetInforNexus(std::move(value)); return *this;}
+    template<typename InforNexusT = InforNexusConnectorProfileCredentials>
+    void SetInforNexus(InforNexusT&& value) { m_inforNexusHasBeenSet = true; m_inforNexus = std::forward<InforNexusT>(value); }
+    template<typename InforNexusT = InforNexusConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithInforNexus(InforNexusT&& value) { SetInforNexus(std::forward<InforNexusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using Marketo. </p>
      */
-    inline const MarketoConnectorProfileCredentials& GetMarketo() const{ return m_marketo; }
+    inline const MarketoConnectorProfileCredentials& GetMarketo() const { return m_marketo; }
     inline bool MarketoHasBeenSet() const { return m_marketoHasBeenSet; }
-    inline void SetMarketo(const MarketoConnectorProfileCredentials& value) { m_marketoHasBeenSet = true; m_marketo = value; }
-    inline void SetMarketo(MarketoConnectorProfileCredentials&& value) { m_marketoHasBeenSet = true; m_marketo = std::move(value); }
-    inline ConnectorProfileCredentials& WithMarketo(const MarketoConnectorProfileCredentials& value) { SetMarketo(value); return *this;}
-    inline ConnectorProfileCredentials& WithMarketo(MarketoConnectorProfileCredentials&& value) { SetMarketo(std::move(value)); return *this;}
+    template<typename MarketoT = MarketoConnectorProfileCredentials>
+    void SetMarketo(MarketoT&& value) { m_marketoHasBeenSet = true; m_marketo = std::forward<MarketoT>(value); }
+    template<typename MarketoT = MarketoConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithMarketo(MarketoT&& value) { SetMarketo(std::forward<MarketoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using Amazon Redshift. </p>
      */
-    inline const RedshiftConnectorProfileCredentials& GetRedshift() const{ return m_redshift; }
+    inline const RedshiftConnectorProfileCredentials& GetRedshift() const { return m_redshift; }
     inline bool RedshiftHasBeenSet() const { return m_redshiftHasBeenSet; }
-    inline void SetRedshift(const RedshiftConnectorProfileCredentials& value) { m_redshiftHasBeenSet = true; m_redshift = value; }
-    inline void SetRedshift(RedshiftConnectorProfileCredentials&& value) { m_redshiftHasBeenSet = true; m_redshift = std::move(value); }
-    inline ConnectorProfileCredentials& WithRedshift(const RedshiftConnectorProfileCredentials& value) { SetRedshift(value); return *this;}
-    inline ConnectorProfileCredentials& WithRedshift(RedshiftConnectorProfileCredentials&& value) { SetRedshift(std::move(value)); return *this;}
+    template<typename RedshiftT = RedshiftConnectorProfileCredentials>
+    void SetRedshift(RedshiftT&& value) { m_redshiftHasBeenSet = true; m_redshift = std::forward<RedshiftT>(value); }
+    template<typename RedshiftT = RedshiftConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithRedshift(RedshiftT&& value) { SetRedshift(std::forward<RedshiftT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using Salesforce. </p>
      */
-    inline const SalesforceConnectorProfileCredentials& GetSalesforce() const{ return m_salesforce; }
+    inline const SalesforceConnectorProfileCredentials& GetSalesforce() const { return m_salesforce; }
     inline bool SalesforceHasBeenSet() const { return m_salesforceHasBeenSet; }
-    inline void SetSalesforce(const SalesforceConnectorProfileCredentials& value) { m_salesforceHasBeenSet = true; m_salesforce = value; }
-    inline void SetSalesforce(SalesforceConnectorProfileCredentials&& value) { m_salesforceHasBeenSet = true; m_salesforce = std::move(value); }
-    inline ConnectorProfileCredentials& WithSalesforce(const SalesforceConnectorProfileCredentials& value) { SetSalesforce(value); return *this;}
-    inline ConnectorProfileCredentials& WithSalesforce(SalesforceConnectorProfileCredentials&& value) { SetSalesforce(std::move(value)); return *this;}
+    template<typename SalesforceT = SalesforceConnectorProfileCredentials>
+    void SetSalesforce(SalesforceT&& value) { m_salesforceHasBeenSet = true; m_salesforce = std::forward<SalesforceT>(value); }
+    template<typename SalesforceT = SalesforceConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithSalesforce(SalesforceT&& value) { SetSalesforce(std::forward<SalesforceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using ServiceNow. </p>
      */
-    inline const ServiceNowConnectorProfileCredentials& GetServiceNow() const{ return m_serviceNow; }
+    inline const ServiceNowConnectorProfileCredentials& GetServiceNow() const { return m_serviceNow; }
     inline bool ServiceNowHasBeenSet() const { return m_serviceNowHasBeenSet; }
-    inline void SetServiceNow(const ServiceNowConnectorProfileCredentials& value) { m_serviceNowHasBeenSet = true; m_serviceNow = value; }
-    inline void SetServiceNow(ServiceNowConnectorProfileCredentials&& value) { m_serviceNowHasBeenSet = true; m_serviceNow = std::move(value); }
-    inline ConnectorProfileCredentials& WithServiceNow(const ServiceNowConnectorProfileCredentials& value) { SetServiceNow(value); return *this;}
-    inline ConnectorProfileCredentials& WithServiceNow(ServiceNowConnectorProfileCredentials&& value) { SetServiceNow(std::move(value)); return *this;}
+    template<typename ServiceNowT = ServiceNowConnectorProfileCredentials>
+    void SetServiceNow(ServiceNowT&& value) { m_serviceNowHasBeenSet = true; m_serviceNow = std::forward<ServiceNowT>(value); }
+    template<typename ServiceNowT = ServiceNowConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithServiceNow(ServiceNowT&& value) { SetServiceNow(std::forward<ServiceNowT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using Singular. </p>
      */
-    inline const SingularConnectorProfileCredentials& GetSingular() const{ return m_singular; }
+    inline const SingularConnectorProfileCredentials& GetSingular() const { return m_singular; }
     inline bool SingularHasBeenSet() const { return m_singularHasBeenSet; }
-    inline void SetSingular(const SingularConnectorProfileCredentials& value) { m_singularHasBeenSet = true; m_singular = value; }
-    inline void SetSingular(SingularConnectorProfileCredentials&& value) { m_singularHasBeenSet = true; m_singular = std::move(value); }
-    inline ConnectorProfileCredentials& WithSingular(const SingularConnectorProfileCredentials& value) { SetSingular(value); return *this;}
-    inline ConnectorProfileCredentials& WithSingular(SingularConnectorProfileCredentials&& value) { SetSingular(std::move(value)); return *this;}
+    template<typename SingularT = SingularConnectorProfileCredentials>
+    void SetSingular(SingularT&& value) { m_singularHasBeenSet = true; m_singular = std::forward<SingularT>(value); }
+    template<typename SingularT = SingularConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithSingular(SingularT&& value) { SetSingular(std::forward<SingularT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using Slack. </p>
      */
-    inline const SlackConnectorProfileCredentials& GetSlack() const{ return m_slack; }
+    inline const SlackConnectorProfileCredentials& GetSlack() const { return m_slack; }
     inline bool SlackHasBeenSet() const { return m_slackHasBeenSet; }
-    inline void SetSlack(const SlackConnectorProfileCredentials& value) { m_slackHasBeenSet = true; m_slack = value; }
-    inline void SetSlack(SlackConnectorProfileCredentials&& value) { m_slackHasBeenSet = true; m_slack = std::move(value); }
-    inline ConnectorProfileCredentials& WithSlack(const SlackConnectorProfileCredentials& value) { SetSlack(value); return *this;}
-    inline ConnectorProfileCredentials& WithSlack(SlackConnectorProfileCredentials&& value) { SetSlack(std::move(value)); return *this;}
+    template<typename SlackT = SlackConnectorProfileCredentials>
+    void SetSlack(SlackT&& value) { m_slackHasBeenSet = true; m_slack = std::forward<SlackT>(value); }
+    template<typename SlackT = SlackConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithSlack(SlackT&& value) { SetSlack(std::forward<SlackT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using Snowflake. </p>
      */
-    inline const SnowflakeConnectorProfileCredentials& GetSnowflake() const{ return m_snowflake; }
+    inline const SnowflakeConnectorProfileCredentials& GetSnowflake() const { return m_snowflake; }
     inline bool SnowflakeHasBeenSet() const { return m_snowflakeHasBeenSet; }
-    inline void SetSnowflake(const SnowflakeConnectorProfileCredentials& value) { m_snowflakeHasBeenSet = true; m_snowflake = value; }
-    inline void SetSnowflake(SnowflakeConnectorProfileCredentials&& value) { m_snowflakeHasBeenSet = true; m_snowflake = std::move(value); }
-    inline ConnectorProfileCredentials& WithSnowflake(const SnowflakeConnectorProfileCredentials& value) { SetSnowflake(value); return *this;}
-    inline ConnectorProfileCredentials& WithSnowflake(SnowflakeConnectorProfileCredentials&& value) { SetSnowflake(std::move(value)); return *this;}
+    template<typename SnowflakeT = SnowflakeConnectorProfileCredentials>
+    void SetSnowflake(SnowflakeT&& value) { m_snowflakeHasBeenSet = true; m_snowflake = std::forward<SnowflakeT>(value); }
+    template<typename SnowflakeT = SnowflakeConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithSnowflake(SnowflakeT&& value) { SetSnowflake(std::forward<SnowflakeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using Trend Micro. </p>
      */
-    inline const TrendmicroConnectorProfileCredentials& GetTrendmicro() const{ return m_trendmicro; }
+    inline const TrendmicroConnectorProfileCredentials& GetTrendmicro() const { return m_trendmicro; }
     inline bool TrendmicroHasBeenSet() const { return m_trendmicroHasBeenSet; }
-    inline void SetTrendmicro(const TrendmicroConnectorProfileCredentials& value) { m_trendmicroHasBeenSet = true; m_trendmicro = value; }
-    inline void SetTrendmicro(TrendmicroConnectorProfileCredentials&& value) { m_trendmicroHasBeenSet = true; m_trendmicro = std::move(value); }
-    inline ConnectorProfileCredentials& WithTrendmicro(const TrendmicroConnectorProfileCredentials& value) { SetTrendmicro(value); return *this;}
-    inline ConnectorProfileCredentials& WithTrendmicro(TrendmicroConnectorProfileCredentials&& value) { SetTrendmicro(std::move(value)); return *this;}
+    template<typename TrendmicroT = TrendmicroConnectorProfileCredentials>
+    void SetTrendmicro(TrendmicroT&& value) { m_trendmicroHasBeenSet = true; m_trendmicro = std::forward<TrendmicroT>(value); }
+    template<typename TrendmicroT = TrendmicroConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithTrendmicro(TrendmicroT&& value) { SetTrendmicro(std::forward<TrendmicroT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using Veeva. </p>
      */
-    inline const VeevaConnectorProfileCredentials& GetVeeva() const{ return m_veeva; }
+    inline const VeevaConnectorProfileCredentials& GetVeeva() const { return m_veeva; }
     inline bool VeevaHasBeenSet() const { return m_veevaHasBeenSet; }
-    inline void SetVeeva(const VeevaConnectorProfileCredentials& value) { m_veevaHasBeenSet = true; m_veeva = value; }
-    inline void SetVeeva(VeevaConnectorProfileCredentials&& value) { m_veevaHasBeenSet = true; m_veeva = std::move(value); }
-    inline ConnectorProfileCredentials& WithVeeva(const VeevaConnectorProfileCredentials& value) { SetVeeva(value); return *this;}
-    inline ConnectorProfileCredentials& WithVeeva(VeevaConnectorProfileCredentials&& value) { SetVeeva(std::move(value)); return *this;}
+    template<typename VeevaT = VeevaConnectorProfileCredentials>
+    void SetVeeva(VeevaT&& value) { m_veevaHasBeenSet = true; m_veeva = std::forward<VeevaT>(value); }
+    template<typename VeevaT = VeevaConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithVeeva(VeevaT&& value) { SetVeeva(std::forward<VeevaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The connector-specific credentials required when using Zendesk. </p>
      */
-    inline const ZendeskConnectorProfileCredentials& GetZendesk() const{ return m_zendesk; }
+    inline const ZendeskConnectorProfileCredentials& GetZendesk() const { return m_zendesk; }
     inline bool ZendeskHasBeenSet() const { return m_zendeskHasBeenSet; }
-    inline void SetZendesk(const ZendeskConnectorProfileCredentials& value) { m_zendeskHasBeenSet = true; m_zendesk = value; }
-    inline void SetZendesk(ZendeskConnectorProfileCredentials&& value) { m_zendeskHasBeenSet = true; m_zendesk = std::move(value); }
-    inline ConnectorProfileCredentials& WithZendesk(const ZendeskConnectorProfileCredentials& value) { SetZendesk(value); return *this;}
-    inline ConnectorProfileCredentials& WithZendesk(ZendeskConnectorProfileCredentials&& value) { SetZendesk(std::move(value)); return *this;}
+    template<typename ZendeskT = ZendeskConnectorProfileCredentials>
+    void SetZendesk(ZendeskT&& value) { m_zendeskHasBeenSet = true; m_zendesk = std::forward<ZendeskT>(value); }
+    template<typename ZendeskT = ZendeskConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithZendesk(ZendeskT&& value) { SetZendesk(std::forward<ZendeskT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SAPODataConnectorProfileCredentials& GetSAPOData() const{ return m_sAPOData; }
+    inline const SAPODataConnectorProfileCredentials& GetSAPOData() const { return m_sAPOData; }
     inline bool SAPODataHasBeenSet() const { return m_sAPODataHasBeenSet; }
-    inline void SetSAPOData(const SAPODataConnectorProfileCredentials& value) { m_sAPODataHasBeenSet = true; m_sAPOData = value; }
-    inline void SetSAPOData(SAPODataConnectorProfileCredentials&& value) { m_sAPODataHasBeenSet = true; m_sAPOData = std::move(value); }
-    inline ConnectorProfileCredentials& WithSAPOData(const SAPODataConnectorProfileCredentials& value) { SetSAPOData(value); return *this;}
-    inline ConnectorProfileCredentials& WithSAPOData(SAPODataConnectorProfileCredentials&& value) { SetSAPOData(std::move(value)); return *this;}
+    template<typename SAPODataT = SAPODataConnectorProfileCredentials>
+    void SetSAPOData(SAPODataT&& value) { m_sAPODataHasBeenSet = true; m_sAPOData = std::forward<SAPODataT>(value); }
+    template<typename SAPODataT = SAPODataConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithSAPOData(SAPODataT&& value) { SetSAPOData(std::forward<SAPODataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CustomConnectorProfileCredentials& GetCustomConnector() const{ return m_customConnector; }
+    inline const CustomConnectorProfileCredentials& GetCustomConnector() const { return m_customConnector; }
     inline bool CustomConnectorHasBeenSet() const { return m_customConnectorHasBeenSet; }
-    inline void SetCustomConnector(const CustomConnectorProfileCredentials& value) { m_customConnectorHasBeenSet = true; m_customConnector = value; }
-    inline void SetCustomConnector(CustomConnectorProfileCredentials&& value) { m_customConnectorHasBeenSet = true; m_customConnector = std::move(value); }
-    inline ConnectorProfileCredentials& WithCustomConnector(const CustomConnectorProfileCredentials& value) { SetCustomConnector(value); return *this;}
-    inline ConnectorProfileCredentials& WithCustomConnector(CustomConnectorProfileCredentials&& value) { SetCustomConnector(std::move(value)); return *this;}
+    template<typename CustomConnectorT = CustomConnectorProfileCredentials>
+    void SetCustomConnector(CustomConnectorT&& value) { m_customConnectorHasBeenSet = true; m_customConnector = std::forward<CustomConnectorT>(value); }
+    template<typename CustomConnectorT = CustomConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithCustomConnector(CustomConnectorT&& value) { SetCustomConnector(std::forward<CustomConnectorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connector-specific credentials required when using Salesforce Pardot.</p>
      */
-    inline const PardotConnectorProfileCredentials& GetPardot() const{ return m_pardot; }
+    inline const PardotConnectorProfileCredentials& GetPardot() const { return m_pardot; }
     inline bool PardotHasBeenSet() const { return m_pardotHasBeenSet; }
-    inline void SetPardot(const PardotConnectorProfileCredentials& value) { m_pardotHasBeenSet = true; m_pardot = value; }
-    inline void SetPardot(PardotConnectorProfileCredentials&& value) { m_pardotHasBeenSet = true; m_pardot = std::move(value); }
-    inline ConnectorProfileCredentials& WithPardot(const PardotConnectorProfileCredentials& value) { SetPardot(value); return *this;}
-    inline ConnectorProfileCredentials& WithPardot(PardotConnectorProfileCredentials&& value) { SetPardot(std::move(value)); return *this;}
+    template<typename PardotT = PardotConnectorProfileCredentials>
+    void SetPardot(PardotT&& value) { m_pardotHasBeenSet = true; m_pardot = std::forward<PardotT>(value); }
+    template<typename PardotT = PardotConnectorProfileCredentials>
+    ConnectorProfileCredentials& WithPardot(PardotT&& value) { SetPardot(std::forward<PardotT>(value)); return *this;}
     ///@}
   private:
 

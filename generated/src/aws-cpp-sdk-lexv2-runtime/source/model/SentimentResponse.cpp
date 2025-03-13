@@ -18,15 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-SentimentResponse::SentimentResponse() : 
-    m_sentiment(SentimentType::NOT_SET),
-    m_sentimentHasBeenSet(false),
-    m_sentimentScoreHasBeenSet(false)
-{
-}
-
 SentimentResponse::SentimentResponse(JsonView jsonValue)
-  : SentimentResponse()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SentimentResponse& SentimentResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sentiment"))
   {
     m_sentiment = SentimentTypeMapper::GetSentimentTypeForName(jsonValue.GetString("sentiment"));
-
     m_sentimentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sentimentScore"))
   {
     m_sentimentScore = jsonValue.GetObject("sentimentScore");
-
     m_sentimentScoreHasBeenSet = true;
   }
-
   return *this;
 }
 

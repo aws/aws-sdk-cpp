@@ -18,14 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-MetricAttributionOutput::MetricAttributionOutput() : 
-    m_s3DataDestinationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 MetricAttributionOutput::MetricAttributionOutput(JsonView jsonValue)
-  : MetricAttributionOutput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MetricAttributionOutput& MetricAttributionOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3DataDestination"))
   {
     m_s3DataDestination = jsonValue.GetObject("s3DataDestination");
-
     m_s3DataDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

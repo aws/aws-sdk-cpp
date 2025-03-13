@@ -21,7 +21,7 @@ namespace Model
   class UpdateAccountSettingsRequest : public AppConfigRequest
   {
   public:
-    AWS_APPCONFIG_API UpdateAccountSettingsRequest();
+    AWS_APPCONFIG_API UpdateAccountSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,12 @@ namespace Model
      * interval. Deletion protection is disabled by default. The default interval for
      * <code>ProtectionPeriodInMinutes</code> is 60.</p>
      */
-    inline const DeletionProtectionSettings& GetDeletionProtection() const{ return m_deletionProtection; }
+    inline const DeletionProtectionSettings& GetDeletionProtection() const { return m_deletionProtection; }
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
-    inline void SetDeletionProtection(const DeletionProtectionSettings& value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
-    inline void SetDeletionProtection(DeletionProtectionSettings&& value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = std::move(value); }
-    inline UpdateAccountSettingsRequest& WithDeletionProtection(const DeletionProtectionSettings& value) { SetDeletionProtection(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithDeletionProtection(DeletionProtectionSettings&& value) { SetDeletionProtection(std::move(value)); return *this;}
+    template<typename DeletionProtectionT = DeletionProtectionSettings>
+    void SetDeletionProtection(DeletionProtectionT&& value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = std::forward<DeletionProtectionT>(value); }
+    template<typename DeletionProtectionT = DeletionProtectionSettings>
+    UpdateAccountSettingsRequest& WithDeletionProtection(DeletionProtectionT&& value) { SetDeletionProtection(std::forward<DeletionProtectionT>(value)); return *this;}
     ///@}
   private:
 

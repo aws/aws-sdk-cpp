@@ -18,13 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-Backend::Backend() : 
-    m_stackArnHasBeenSet(false)
-{
-}
-
 Backend::Backend(JsonView jsonValue)
-  : Backend()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Backend& Backend::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stackArn"))
   {
     m_stackArn = jsonValue.GetString("stackArn");
-
     m_stackArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AvailableCapacity::AvailableCapacity() : 
-    m_availableInstanceCapacityHasBeenSet(false),
-    m_availableVCpus(0),
-    m_availableVCpusHasBeenSet(false)
-{
-}
-
 AvailableCapacity::AvailableCapacity(const XmlNode& xmlNode)
-  : AvailableCapacity()
 {
   *this = xmlNode;
 }
@@ -43,19 +35,21 @@ AvailableCapacity& AvailableCapacity::operator =(const XmlNode& xmlNode)
     if(!availableInstanceCapacityNode.IsNull())
     {
       XmlNode availableInstanceCapacityMember = availableInstanceCapacityNode.FirstChild("item");
+      m_availableInstanceCapacityHasBeenSet = !availableInstanceCapacityMember.IsNull();
       while(!availableInstanceCapacityMember.IsNull())
       {
         m_availableInstanceCapacity.push_back(availableInstanceCapacityMember);
         availableInstanceCapacityMember = availableInstanceCapacityMember.NextNode("item");
       }
 
-      m_availableInstanceCapacityHasBeenSet = true;
+       m_availableInstanceCapacityHasBeenSet = true;
     }
     XmlNode availableVCpusNode = resultNode.FirstChild("availableVCpus");
     if(!availableVCpusNode.IsNull())
     {
       m_availableVCpus = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableVCpusNode.GetText()).c_str()).c_str());
       m_availableVCpusHasBeenSet = true;
+       m_availableVCpusHasBeenSet = true;
     }
   }
 

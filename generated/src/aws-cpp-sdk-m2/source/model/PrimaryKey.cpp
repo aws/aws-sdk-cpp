@@ -18,17 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-PrimaryKey::PrimaryKey() : 
-    m_length(0),
-    m_lengthHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false)
-{
-}
-
 PrimaryKey::PrimaryKey(JsonView jsonValue)
-  : PrimaryKey()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ PrimaryKey& PrimaryKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("length"))
   {
     m_length = jsonValue.GetInteger("length");
-
     m_lengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offset"))
   {
     m_offset = jsonValue.GetInteger("offset");
-
     m_offsetHasBeenSet = true;
   }
-
   return *this;
 }
 

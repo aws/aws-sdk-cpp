@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricStreamFilter::MetricStreamFilter() : 
-    m_namespaceHasBeenSet(false),
-    m_metricNamesHasBeenSet(false)
-{
-}
-
 MetricStreamFilter::MetricStreamFilter(const XmlNode& xmlNode)
-  : MetricStreamFilter()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ MetricStreamFilter& MetricStreamFilter::operator =(const XmlNode& xmlNode)
     {
       m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
+       m_namespaceHasBeenSet = true;
     }
     XmlNode metricNamesNode = resultNode.FirstChild("MetricNames");
     if(!metricNamesNode.IsNull())
     {
       XmlNode metricNamesMember = metricNamesNode.FirstChild("member");
+      m_metricNamesHasBeenSet = !metricNamesMember.IsNull();
       while(!metricNamesMember.IsNull())
       {
         m_metricNames.push_back(metricNamesMember.GetText());
         metricNamesMember = metricNamesMember.NextNode("member");
       }
 
-      m_metricNamesHasBeenSet = true;
+       m_metricNamesHasBeenSet = true;
     }
   }
 

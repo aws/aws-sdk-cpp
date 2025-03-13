@@ -27,7 +27,7 @@ namespace Model
   class CreateDataflowEndpointGroupRequest : public GroundStationRequest
   {
   public:
-    AWS_GROUNDSTATION_API CreateDataflowEndpointGroupRequest();
+    AWS_GROUNDSTATION_API CreateDataflowEndpointGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * Station Dataflow Endpoint Group State Change event will be emitted when the
      * Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.</p>
      */
-    inline int GetContactPostPassDurationSeconds() const{ return m_contactPostPassDurationSeconds; }
+    inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }
     inline bool ContactPostPassDurationSecondsHasBeenSet() const { return m_contactPostPassDurationSecondsHasBeenSet; }
     inline void SetContactPostPassDurationSeconds(int value) { m_contactPostPassDurationSecondsHasBeenSet = true; m_contactPostPassDurationSeconds = value; }
     inline CreateDataflowEndpointGroupRequest& WithContactPostPassDurationSeconds(int value) { SetContactPostPassDurationSeconds(value); return *this;}
@@ -58,7 +58,7 @@ namespace Model
      * Station Dataflow Endpoint Group State Change event will be emitted when the
      * Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
      */
-    inline int GetContactPrePassDurationSeconds() const{ return m_contactPrePassDurationSeconds; }
+    inline int GetContactPrePassDurationSeconds() const { return m_contactPrePassDurationSeconds; }
     inline bool ContactPrePassDurationSecondsHasBeenSet() const { return m_contactPrePassDurationSecondsHasBeenSet; }
     inline void SetContactPrePassDurationSeconds(int value) { m_contactPrePassDurationSecondsHasBeenSet = true; m_contactPrePassDurationSeconds = value; }
     inline CreateDataflowEndpointGroupRequest& WithContactPrePassDurationSeconds(int value) { SetContactPrePassDurationSeconds(value); return *this;}
@@ -68,40 +68,37 @@ namespace Model
     /**
      * <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
      */
-    inline const Aws::Vector<EndpointDetails>& GetEndpointDetails() const{ return m_endpointDetails; }
+    inline const Aws::Vector<EndpointDetails>& GetEndpointDetails() const { return m_endpointDetails; }
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
-    inline void SetEndpointDetails(const Aws::Vector<EndpointDetails>& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
-    inline void SetEndpointDetails(Aws::Vector<EndpointDetails>&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
-    inline CreateDataflowEndpointGroupRequest& WithEndpointDetails(const Aws::Vector<EndpointDetails>& value) { SetEndpointDetails(value); return *this;}
-    inline CreateDataflowEndpointGroupRequest& WithEndpointDetails(Aws::Vector<EndpointDetails>&& value) { SetEndpointDetails(std::move(value)); return *this;}
-    inline CreateDataflowEndpointGroupRequest& AddEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails.push_back(value); return *this; }
-    inline CreateDataflowEndpointGroupRequest& AddEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails.push_back(std::move(value)); return *this; }
+    template<typename EndpointDetailsT = Aws::Vector<EndpointDetails>>
+    void SetEndpointDetails(EndpointDetailsT&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::forward<EndpointDetailsT>(value); }
+    template<typename EndpointDetailsT = Aws::Vector<EndpointDetails>>
+    CreateDataflowEndpointGroupRequest& WithEndpointDetails(EndpointDetailsT&& value) { SetEndpointDetails(std::forward<EndpointDetailsT>(value)); return *this;}
+    template<typename EndpointDetailsT = EndpointDetails>
+    CreateDataflowEndpointGroupRequest& AddEndpointDetails(EndpointDetailsT&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails.emplace_back(std::forward<EndpointDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Tags of a dataflow endpoint group.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDataflowEndpointGroupRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateDataflowEndpointGroupRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDataflowEndpointGroupRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateDataflowEndpointGroupRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateDataflowEndpointGroupRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateDataflowEndpointGroupRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateDataflowEndpointGroupRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateDataflowEndpointGroupRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateDataflowEndpointGroupRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateDataflowEndpointGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateDataflowEndpointGroupRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    int m_contactPostPassDurationSeconds;
+    int m_contactPostPassDurationSeconds{0};
     bool m_contactPostPassDurationSecondsHasBeenSet = false;
 
-    int m_contactPrePassDurationSeconds;
+    int m_contactPrePassDurationSeconds{0};
     bool m_contactPrePassDurationSecondsHasBeenSet = false;
 
     Aws::Vector<EndpointDetails> m_endpointDetails;

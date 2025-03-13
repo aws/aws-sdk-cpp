@@ -36,7 +36,7 @@ namespace Model
   class ImageResponseCard
   {
   public:
-    AWS_LEXMODELSV2_API ImageResponseCard();
+    AWS_LEXMODELSV2_API ImageResponseCard() = default;
     AWS_LEXMODELSV2_API ImageResponseCard(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API ImageResponseCard& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>The title to display on the response card. The format of the title is
      * determined by the platform displaying the response card.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline ImageResponseCard& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline ImageResponseCard& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline ImageResponseCard& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    ImageResponseCard& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p>The subtitle to display on the response card. The format of the subtitle is
      * determined by the platform displaying the response card.</p>
      */
-    inline const Aws::String& GetSubtitle() const{ return m_subtitle; }
+    inline const Aws::String& GetSubtitle() const { return m_subtitle; }
     inline bool SubtitleHasBeenSet() const { return m_subtitleHasBeenSet; }
-    inline void SetSubtitle(const Aws::String& value) { m_subtitleHasBeenSet = true; m_subtitle = value; }
-    inline void SetSubtitle(Aws::String&& value) { m_subtitleHasBeenSet = true; m_subtitle = std::move(value); }
-    inline void SetSubtitle(const char* value) { m_subtitleHasBeenSet = true; m_subtitle.assign(value); }
-    inline ImageResponseCard& WithSubtitle(const Aws::String& value) { SetSubtitle(value); return *this;}
-    inline ImageResponseCard& WithSubtitle(Aws::String&& value) { SetSubtitle(std::move(value)); return *this;}
-    inline ImageResponseCard& WithSubtitle(const char* value) { SetSubtitle(value); return *this;}
+    template<typename SubtitleT = Aws::String>
+    void SetSubtitle(SubtitleT&& value) { m_subtitleHasBeenSet = true; m_subtitle = std::forward<SubtitleT>(value); }
+    template<typename SubtitleT = Aws::String>
+    ImageResponseCard& WithSubtitle(SubtitleT&& value) { SetSubtitle(std::forward<SubtitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * publicly available so that the platform displaying the response card has access
      * to the image.</p>
      */
-    inline const Aws::String& GetImageUrl() const{ return m_imageUrl; }
+    inline const Aws::String& GetImageUrl() const { return m_imageUrl; }
     inline bool ImageUrlHasBeenSet() const { return m_imageUrlHasBeenSet; }
-    inline void SetImageUrl(const Aws::String& value) { m_imageUrlHasBeenSet = true; m_imageUrl = value; }
-    inline void SetImageUrl(Aws::String&& value) { m_imageUrlHasBeenSet = true; m_imageUrl = std::move(value); }
-    inline void SetImageUrl(const char* value) { m_imageUrlHasBeenSet = true; m_imageUrl.assign(value); }
-    inline ImageResponseCard& WithImageUrl(const Aws::String& value) { SetImageUrl(value); return *this;}
-    inline ImageResponseCard& WithImageUrl(Aws::String&& value) { SetImageUrl(std::move(value)); return *this;}
-    inline ImageResponseCard& WithImageUrl(const char* value) { SetImageUrl(value); return *this;}
+    template<typename ImageUrlT = Aws::String>
+    void SetImageUrl(ImageUrlT&& value) { m_imageUrlHasBeenSet = true; m_imageUrl = std::forward<ImageUrlT>(value); }
+    template<typename ImageUrlT = Aws::String>
+    ImageResponseCard& WithImageUrl(ImageUrlT&& value) { SetImageUrl(std::forward<ImageUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +88,14 @@ namespace Model
      * arrangement of the buttons is determined by the platform that displays the
      * button.</p>
      */
-    inline const Aws::Vector<Button>& GetButtons() const{ return m_buttons; }
+    inline const Aws::Vector<Button>& GetButtons() const { return m_buttons; }
     inline bool ButtonsHasBeenSet() const { return m_buttonsHasBeenSet; }
-    inline void SetButtons(const Aws::Vector<Button>& value) { m_buttonsHasBeenSet = true; m_buttons = value; }
-    inline void SetButtons(Aws::Vector<Button>&& value) { m_buttonsHasBeenSet = true; m_buttons = std::move(value); }
-    inline ImageResponseCard& WithButtons(const Aws::Vector<Button>& value) { SetButtons(value); return *this;}
-    inline ImageResponseCard& WithButtons(Aws::Vector<Button>&& value) { SetButtons(std::move(value)); return *this;}
-    inline ImageResponseCard& AddButtons(const Button& value) { m_buttonsHasBeenSet = true; m_buttons.push_back(value); return *this; }
-    inline ImageResponseCard& AddButtons(Button&& value) { m_buttonsHasBeenSet = true; m_buttons.push_back(std::move(value)); return *this; }
+    template<typename ButtonsT = Aws::Vector<Button>>
+    void SetButtons(ButtonsT&& value) { m_buttonsHasBeenSet = true; m_buttons = std::forward<ButtonsT>(value); }
+    template<typename ButtonsT = Aws::Vector<Button>>
+    ImageResponseCard& WithButtons(ButtonsT&& value) { SetButtons(std::forward<ButtonsT>(value)); return *this;}
+    template<typename ButtonsT = Button>
+    ImageResponseCard& AddButtons(ButtonsT&& value) { m_buttonsHasBeenSet = true; m_buttons.emplace_back(std::forward<ButtonsT>(value)); return *this; }
     ///@}
   private:
 

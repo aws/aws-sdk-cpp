@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-SourceSegment::SourceSegment() : 
-    m_segmentDefinitionNameHasBeenSet(false)
-{
-}
-
 SourceSegment::SourceSegment(JsonView jsonValue)
-  : SourceSegment()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SourceSegment& SourceSegment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SegmentDefinitionName"))
   {
     m_segmentDefinitionName = jsonValue.GetString("SegmentDefinitionName");
-
     m_segmentDefinitionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

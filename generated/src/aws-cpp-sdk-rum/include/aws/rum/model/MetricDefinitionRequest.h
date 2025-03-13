@@ -131,7 +131,7 @@ namespace Model
   class MetricDefinitionRequest
   {
   public:
-    AWS_CLOUDWATCHRUM_API MetricDefinitionRequest();
+    AWS_CLOUDWATCHRUM_API MetricDefinitionRequest() = default;
     AWS_CLOUDWATCHRUM_API MetricDefinitionRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API MetricDefinitionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -152,19 +152,16 @@ namespace Model
      * extended metrics and custom metrics, all dimensions listed in this field must
      * also be included in <code>EventPattern</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDimensionKeys() const{ return m_dimensionKeys; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDimensionKeys() const { return m_dimensionKeys; }
     inline bool DimensionKeysHasBeenSet() const { return m_dimensionKeysHasBeenSet; }
-    inline void SetDimensionKeys(const Aws::Map<Aws::String, Aws::String>& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys = value; }
-    inline void SetDimensionKeys(Aws::Map<Aws::String, Aws::String>&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys = std::move(value); }
-    inline MetricDefinitionRequest& WithDimensionKeys(const Aws::Map<Aws::String, Aws::String>& value) { SetDimensionKeys(value); return *this;}
-    inline MetricDefinitionRequest& WithDimensionKeys(Aws::Map<Aws::String, Aws::String>&& value) { SetDimensionKeys(std::move(value)); return *this;}
-    inline MetricDefinitionRequest& AddDimensionKeys(const Aws::String& key, const Aws::String& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(key, value); return *this; }
-    inline MetricDefinitionRequest& AddDimensionKeys(Aws::String&& key, const Aws::String& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(std::move(key), value); return *this; }
-    inline MetricDefinitionRequest& AddDimensionKeys(const Aws::String& key, Aws::String&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(key, std::move(value)); return *this; }
-    inline MetricDefinitionRequest& AddDimensionKeys(Aws::String&& key, Aws::String&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(std::move(key), std::move(value)); return *this; }
-    inline MetricDefinitionRequest& AddDimensionKeys(const char* key, Aws::String&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(key, std::move(value)); return *this; }
-    inline MetricDefinitionRequest& AddDimensionKeys(Aws::String&& key, const char* value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(std::move(key), value); return *this; }
-    inline MetricDefinitionRequest& AddDimensionKeys(const char* key, const char* value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(key, value); return *this; }
+    template<typename DimensionKeysT = Aws::Map<Aws::String, Aws::String>>
+    void SetDimensionKeys(DimensionKeysT&& value) { m_dimensionKeysHasBeenSet = true; m_dimensionKeys = std::forward<DimensionKeysT>(value); }
+    template<typename DimensionKeysT = Aws::Map<Aws::String, Aws::String>>
+    MetricDefinitionRequest& WithDimensionKeys(DimensionKeysT&& value) { SetDimensionKeys(std::forward<DimensionKeysT>(value)); return *this;}
+    template<typename DimensionKeysKeyT = Aws::String, typename DimensionKeysValueT = Aws::String>
+    MetricDefinitionRequest& AddDimensionKeys(DimensionKeysKeyT&& key, DimensionKeysValueT&& value) {
+      m_dimensionKeysHasBeenSet = true; m_dimensionKeys.emplace(std::forward<DimensionKeysKeyT>(key), std::forward<DimensionKeysValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -187,14 +184,12 @@ namespace Model
      * <code>DimensionKeys</code>, then the metric is published with the specified
      * dimensions. </p>
      */
-    inline const Aws::String& GetEventPattern() const{ return m_eventPattern; }
+    inline const Aws::String& GetEventPattern() const { return m_eventPattern; }
     inline bool EventPatternHasBeenSet() const { return m_eventPatternHasBeenSet; }
-    inline void SetEventPattern(const Aws::String& value) { m_eventPatternHasBeenSet = true; m_eventPattern = value; }
-    inline void SetEventPattern(Aws::String&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = std::move(value); }
-    inline void SetEventPattern(const char* value) { m_eventPatternHasBeenSet = true; m_eventPattern.assign(value); }
-    inline MetricDefinitionRequest& WithEventPattern(const Aws::String& value) { SetEventPattern(value); return *this;}
-    inline MetricDefinitionRequest& WithEventPattern(Aws::String&& value) { SetEventPattern(std::move(value)); return *this;}
-    inline MetricDefinitionRequest& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
+    template<typename EventPatternT = Aws::String>
+    void SetEventPattern(EventPatternT&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = std::forward<EventPatternT>(value); }
+    template<typename EventPatternT = Aws::String>
+    MetricDefinitionRequest& WithEventPattern(EventPatternT&& value) { SetEventPattern(std::forward<EventPatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -213,14 +208,12 @@ namespace Model
      * <code>JsErrorCount</code> </p> </li> <li> <p> <code>HttpErrorCount</code> </p>
      * </li> <li> <p> <code>SessionCount</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MetricDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MetricDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MetricDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MetricDefinitionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -230,14 +223,12 @@ namespace Model
      * specify this parameter if this structure is for an extended metric.</p> <p>You
      * cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline MetricDefinitionRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline MetricDefinitionRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline MetricDefinitionRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    MetricDefinitionRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -245,14 +236,12 @@ namespace Model
      * <p>The CloudWatch metric unit to use for this metric. If you omit this field,
      * the metric is recorded with no unit.</p>
      */
-    inline const Aws::String& GetUnitLabel() const{ return m_unitLabel; }
+    inline const Aws::String& GetUnitLabel() const { return m_unitLabel; }
     inline bool UnitLabelHasBeenSet() const { return m_unitLabelHasBeenSet; }
-    inline void SetUnitLabel(const Aws::String& value) { m_unitLabelHasBeenSet = true; m_unitLabel = value; }
-    inline void SetUnitLabel(Aws::String&& value) { m_unitLabelHasBeenSet = true; m_unitLabel = std::move(value); }
-    inline void SetUnitLabel(const char* value) { m_unitLabelHasBeenSet = true; m_unitLabel.assign(value); }
-    inline MetricDefinitionRequest& WithUnitLabel(const Aws::String& value) { SetUnitLabel(value); return *this;}
-    inline MetricDefinitionRequest& WithUnitLabel(Aws::String&& value) { SetUnitLabel(std::move(value)); return *this;}
-    inline MetricDefinitionRequest& WithUnitLabel(const char* value) { SetUnitLabel(value); return *this;}
+    template<typename UnitLabelT = Aws::String>
+    void SetUnitLabel(UnitLabelT&& value) { m_unitLabelHasBeenSet = true; m_unitLabel = std::forward<UnitLabelT>(value); }
+    template<typename UnitLabelT = Aws::String>
+    MetricDefinitionRequest& WithUnitLabel(UnitLabelT&& value) { SetUnitLabel(std::forward<UnitLabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -264,14 +253,12 @@ namespace Model
      * be passed to Evidently raw. Evidently will handle data extraction from the
      * event.</p>
      */
-    inline const Aws::String& GetValueKey() const{ return m_valueKey; }
+    inline const Aws::String& GetValueKey() const { return m_valueKey; }
     inline bool ValueKeyHasBeenSet() const { return m_valueKeyHasBeenSet; }
-    inline void SetValueKey(const Aws::String& value) { m_valueKeyHasBeenSet = true; m_valueKey = value; }
-    inline void SetValueKey(Aws::String&& value) { m_valueKeyHasBeenSet = true; m_valueKey = std::move(value); }
-    inline void SetValueKey(const char* value) { m_valueKeyHasBeenSet = true; m_valueKey.assign(value); }
-    inline MetricDefinitionRequest& WithValueKey(const Aws::String& value) { SetValueKey(value); return *this;}
-    inline MetricDefinitionRequest& WithValueKey(Aws::String&& value) { SetValueKey(std::move(value)); return *this;}
-    inline MetricDefinitionRequest& WithValueKey(const char* value) { SetValueKey(value); return *this;}
+    template<typename ValueKeyT = Aws::String>
+    void SetValueKey(ValueKeyT&& value) { m_valueKeyHasBeenSet = true; m_valueKey = std::forward<ValueKeyT>(value); }
+    template<typename ValueKeyT = Aws::String>
+    MetricDefinitionRequest& WithValueKey(ValueKeyT&& value) { SetValueKey(std::forward<ValueKeyT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class ListManagedPoliciesInPermissionSetResult
   {
   public:
-    AWS_SSOADMIN_API ListManagedPoliciesInPermissionSetResult();
+    AWS_SSOADMIN_API ListManagedPoliciesInPermissionSetResult() = default;
     AWS_SSOADMIN_API ListManagedPoliciesInPermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API ListManagedPoliciesInPermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of the <a>AttachedManagedPolicy</a> data type object.</p>
      */
-    inline const Aws::Vector<AttachedManagedPolicy>& GetAttachedManagedPolicies() const{ return m_attachedManagedPolicies; }
-    inline void SetAttachedManagedPolicies(const Aws::Vector<AttachedManagedPolicy>& value) { m_attachedManagedPolicies = value; }
-    inline void SetAttachedManagedPolicies(Aws::Vector<AttachedManagedPolicy>&& value) { m_attachedManagedPolicies = std::move(value); }
-    inline ListManagedPoliciesInPermissionSetResult& WithAttachedManagedPolicies(const Aws::Vector<AttachedManagedPolicy>& value) { SetAttachedManagedPolicies(value); return *this;}
-    inline ListManagedPoliciesInPermissionSetResult& WithAttachedManagedPolicies(Aws::Vector<AttachedManagedPolicy>&& value) { SetAttachedManagedPolicies(std::move(value)); return *this;}
-    inline ListManagedPoliciesInPermissionSetResult& AddAttachedManagedPolicies(const AttachedManagedPolicy& value) { m_attachedManagedPolicies.push_back(value); return *this; }
-    inline ListManagedPoliciesInPermissionSetResult& AddAttachedManagedPolicies(AttachedManagedPolicy&& value) { m_attachedManagedPolicies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AttachedManagedPolicy>& GetAttachedManagedPolicies() const { return m_attachedManagedPolicies; }
+    template<typename AttachedManagedPoliciesT = Aws::Vector<AttachedManagedPolicy>>
+    void SetAttachedManagedPolicies(AttachedManagedPoliciesT&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies = std::forward<AttachedManagedPoliciesT>(value); }
+    template<typename AttachedManagedPoliciesT = Aws::Vector<AttachedManagedPolicy>>
+    ListManagedPoliciesInPermissionSetResult& WithAttachedManagedPolicies(AttachedManagedPoliciesT&& value) { SetAttachedManagedPolicies(std::forward<AttachedManagedPoliciesT>(value)); return *this;}
+    template<typename AttachedManagedPoliciesT = AttachedManagedPolicy>
+    ListManagedPoliciesInPermissionSetResult& AddAttachedManagedPolicies(AttachedManagedPoliciesT&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.emplace_back(std::forward<AttachedManagedPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The pagination token for the list API. Initially the value is null. Use the
      * output of previous API calls to make subsequent calls.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListManagedPoliciesInPermissionSetResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListManagedPoliciesInPermissionSetResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListManagedPoliciesInPermissionSetResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListManagedPoliciesInPermissionSetResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListManagedPoliciesInPermissionSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListManagedPoliciesInPermissionSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListManagedPoliciesInPermissionSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListManagedPoliciesInPermissionSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AttachedManagedPolicy> m_attachedManagedPolicies;
+    bool m_attachedManagedPoliciesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

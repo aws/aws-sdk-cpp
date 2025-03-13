@@ -20,16 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-Output::Output() : 
-    m_outputKeyHasBeenSet(false),
-    m_outputValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_exportNameHasBeenSet(false)
-{
-}
-
 Output::Output(const XmlNode& xmlNode)
-  : Output()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ Output& Output::operator =(const XmlNode& xmlNode)
     {
       m_outputKey = Aws::Utils::Xml::DecodeEscapedXmlText(outputKeyNode.GetText());
       m_outputKeyHasBeenSet = true;
+       m_outputKeyHasBeenSet = true;
     }
     XmlNode outputValueNode = resultNode.FirstChild("OutputValue");
     if(!outputValueNode.IsNull())
     {
       m_outputValue = Aws::Utils::Xml::DecodeEscapedXmlText(outputValueNode.GetText());
       m_outputValueHasBeenSet = true;
+       m_outputValueHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode exportNameNode = resultNode.FirstChild("ExportName");
     if(!exportNameNode.IsNull())
     {
       m_exportName = Aws::Utils::Xml::DecodeEscapedXmlText(exportNameNode.GetText());
       m_exportNameHasBeenSet = true;
+       m_exportNameHasBeenSet = true;
     }
   }
 

@@ -18,18 +18,7 @@ namespace mgn
 namespace Model
 {
 
-LaunchTemplateDiskConf::LaunchTemplateDiskConf() : 
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false)
-{
-}
-
 LaunchTemplateDiskConf::LaunchTemplateDiskConf(JsonView jsonValue)
-  : LaunchTemplateDiskConf()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ LaunchTemplateDiskConf& LaunchTemplateDiskConf::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("iops"))
   {
     m_iops = jsonValue.GetInt64("iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("throughput"))
   {
     m_throughput = jsonValue.GetInt64("throughput");
-
     m_throughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeType"))
   {
     m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(jsonValue.GetString("volumeType"));
-
     m_volumeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

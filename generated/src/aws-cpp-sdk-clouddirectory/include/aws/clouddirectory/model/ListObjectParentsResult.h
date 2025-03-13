@@ -30,7 +30,7 @@ namespace Model
   class ListObjectParentsResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API ListObjectParentsResult();
+    AWS_CLOUDDIRECTORY_API ListObjectParentsResult() = default;
     AWS_CLOUDDIRECTORY_API ListObjectParentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API ListObjectParentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,65 +40,62 @@ namespace Model
      * <p>The parent structure, which is a map with key as the
      * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParents() const{ return m_parents; }
-    inline void SetParents(const Aws::Map<Aws::String, Aws::String>& value) { m_parents = value; }
-    inline void SetParents(Aws::Map<Aws::String, Aws::String>&& value) { m_parents = std::move(value); }
-    inline ListObjectParentsResult& WithParents(const Aws::Map<Aws::String, Aws::String>& value) { SetParents(value); return *this;}
-    inline ListObjectParentsResult& WithParents(Aws::Map<Aws::String, Aws::String>&& value) { SetParents(std::move(value)); return *this;}
-    inline ListObjectParentsResult& AddParents(const Aws::String& key, const Aws::String& value) { m_parents.emplace(key, value); return *this; }
-    inline ListObjectParentsResult& AddParents(Aws::String&& key, const Aws::String& value) { m_parents.emplace(std::move(key), value); return *this; }
-    inline ListObjectParentsResult& AddParents(const Aws::String& key, Aws::String&& value) { m_parents.emplace(key, std::move(value)); return *this; }
-    inline ListObjectParentsResult& AddParents(Aws::String&& key, Aws::String&& value) { m_parents.emplace(std::move(key), std::move(value)); return *this; }
-    inline ListObjectParentsResult& AddParents(const char* key, Aws::String&& value) { m_parents.emplace(key, std::move(value)); return *this; }
-    inline ListObjectParentsResult& AddParents(Aws::String&& key, const char* value) { m_parents.emplace(std::move(key), value); return *this; }
-    inline ListObjectParentsResult& AddParents(const char* key, const char* value) { m_parents.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParents() const { return m_parents; }
+    template<typename ParentsT = Aws::Map<Aws::String, Aws::String>>
+    void SetParents(ParentsT&& value) { m_parentsHasBeenSet = true; m_parents = std::forward<ParentsT>(value); }
+    template<typename ParentsT = Aws::Map<Aws::String, Aws::String>>
+    ListObjectParentsResult& WithParents(ParentsT&& value) { SetParents(std::forward<ParentsT>(value)); return *this;}
+    template<typename ParentsKeyT = Aws::String, typename ParentsValueT = Aws::String>
+    ListObjectParentsResult& AddParents(ParentsKeyT&& key, ParentsValueT&& value) {
+      m_parentsHasBeenSet = true; m_parents.emplace(std::forward<ParentsKeyT>(key), std::forward<ParentsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListObjectParentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListObjectParentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListObjectParentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListObjectParentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a list of parent reference and LinkName Tuples.</p>
      */
-    inline const Aws::Vector<ObjectIdentifierAndLinkNameTuple>& GetParentLinks() const{ return m_parentLinks; }
-    inline void SetParentLinks(const Aws::Vector<ObjectIdentifierAndLinkNameTuple>& value) { m_parentLinks = value; }
-    inline void SetParentLinks(Aws::Vector<ObjectIdentifierAndLinkNameTuple>&& value) { m_parentLinks = std::move(value); }
-    inline ListObjectParentsResult& WithParentLinks(const Aws::Vector<ObjectIdentifierAndLinkNameTuple>& value) { SetParentLinks(value); return *this;}
-    inline ListObjectParentsResult& WithParentLinks(Aws::Vector<ObjectIdentifierAndLinkNameTuple>&& value) { SetParentLinks(std::move(value)); return *this;}
-    inline ListObjectParentsResult& AddParentLinks(const ObjectIdentifierAndLinkNameTuple& value) { m_parentLinks.push_back(value); return *this; }
-    inline ListObjectParentsResult& AddParentLinks(ObjectIdentifierAndLinkNameTuple&& value) { m_parentLinks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ObjectIdentifierAndLinkNameTuple>& GetParentLinks() const { return m_parentLinks; }
+    template<typename ParentLinksT = Aws::Vector<ObjectIdentifierAndLinkNameTuple>>
+    void SetParentLinks(ParentLinksT&& value) { m_parentLinksHasBeenSet = true; m_parentLinks = std::forward<ParentLinksT>(value); }
+    template<typename ParentLinksT = Aws::Vector<ObjectIdentifierAndLinkNameTuple>>
+    ListObjectParentsResult& WithParentLinks(ParentLinksT&& value) { SetParentLinks(std::forward<ParentLinksT>(value)); return *this;}
+    template<typename ParentLinksT = ObjectIdentifierAndLinkNameTuple>
+    ListObjectParentsResult& AddParentLinks(ParentLinksT&& value) { m_parentLinksHasBeenSet = true; m_parentLinks.emplace_back(std::forward<ParentLinksT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListObjectParentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListObjectParentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListObjectParentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListObjectParentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_parents;
+    bool m_parentsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ObjectIdentifierAndLinkNameTuple> m_parentLinks;
+    bool m_parentLinksHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

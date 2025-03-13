@@ -20,17 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-HsmConfiguration::HsmConfiguration() : 
-    m_hsmConfigurationIdentifierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_hsmIpAddressHasBeenSet(false),
-    m_hsmPartitionNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 HsmConfiguration::HsmConfiguration(const XmlNode& xmlNode)
-  : HsmConfiguration()
 {
   *this = xmlNode;
 }
@@ -46,36 +36,41 @@ HsmConfiguration& HsmConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_hsmConfigurationIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(hsmConfigurationIdentifierNode.GetText());
       m_hsmConfigurationIdentifierHasBeenSet = true;
+       m_hsmConfigurationIdentifierHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode hsmIpAddressNode = resultNode.FirstChild("HsmIpAddress");
     if(!hsmIpAddressNode.IsNull())
     {
       m_hsmIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(hsmIpAddressNode.GetText());
       m_hsmIpAddressHasBeenSet = true;
+       m_hsmIpAddressHasBeenSet = true;
     }
     XmlNode hsmPartitionNameNode = resultNode.FirstChild("HsmPartitionName");
     if(!hsmPartitionNameNode.IsNull())
     {
       m_hsmPartitionName = Aws::Utils::Xml::DecodeEscapedXmlText(hsmPartitionNameNode.GetText());
       m_hsmPartitionNameHasBeenSet = true;
+       m_hsmPartitionNameHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("Tag");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

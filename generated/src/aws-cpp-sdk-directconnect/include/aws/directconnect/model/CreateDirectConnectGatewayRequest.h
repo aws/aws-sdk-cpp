@@ -21,7 +21,7 @@ namespace Model
   class CreateDirectConnectGatewayRequest : public DirectConnectRequest
   {
   public:
-    AWS_DIRECTCONNECT_API CreateDirectConnectGatewayRequest();
+    AWS_DIRECTCONNECT_API CreateDirectConnectGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the Direct Connect gateway.</p>
      */
-    inline const Aws::String& GetDirectConnectGatewayName() const{ return m_directConnectGatewayName; }
+    inline const Aws::String& GetDirectConnectGatewayName() const { return m_directConnectGatewayName; }
     inline bool DirectConnectGatewayNameHasBeenSet() const { return m_directConnectGatewayNameHasBeenSet; }
-    inline void SetDirectConnectGatewayName(const Aws::String& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = value; }
-    inline void SetDirectConnectGatewayName(Aws::String&& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = std::move(value); }
-    inline void SetDirectConnectGatewayName(const char* value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName.assign(value); }
-    inline CreateDirectConnectGatewayRequest& WithDirectConnectGatewayName(const Aws::String& value) { SetDirectConnectGatewayName(value); return *this;}
-    inline CreateDirectConnectGatewayRequest& WithDirectConnectGatewayName(Aws::String&& value) { SetDirectConnectGatewayName(std::move(value)); return *this;}
-    inline CreateDirectConnectGatewayRequest& WithDirectConnectGatewayName(const char* value) { SetDirectConnectGatewayName(value); return *this;}
+    template<typename DirectConnectGatewayNameT = Aws::String>
+    void SetDirectConnectGatewayName(DirectConnectGatewayNameT&& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = std::forward<DirectConnectGatewayNameT>(value); }
+    template<typename DirectConnectGatewayNameT = Aws::String>
+    CreateDirectConnectGatewayRequest& WithDirectConnectGatewayName(DirectConnectGatewayNameT&& value) { SetDirectConnectGatewayName(std::forward<DirectConnectGatewayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is
      * 64512.</p>
      */
-    inline long long GetAmazonSideAsn() const{ return m_amazonSideAsn; }
+    inline long long GetAmazonSideAsn() const { return m_amazonSideAsn; }
     inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }
     inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
     inline CreateDirectConnectGatewayRequest& WithAmazonSideAsn(long long value) { SetAmazonSideAsn(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_directConnectGatewayName;
     bool m_directConnectGatewayNameHasBeenSet = false;
 
-    long long m_amazonSideAsn;
+    long long m_amazonSideAsn{0};
     bool m_amazonSideAsnHasBeenSet = false;
   };
 

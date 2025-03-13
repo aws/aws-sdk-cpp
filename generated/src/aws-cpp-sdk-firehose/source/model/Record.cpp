@@ -19,13 +19,7 @@ namespace Firehose
 namespace Model
 {
 
-Record::Record() : 
-    m_dataHasBeenSet(false)
-{
-}
-
 Record::Record(JsonView jsonValue)
-  : Record()
 {
   *this = jsonValue;
 }
@@ -37,7 +31,6 @@ Record& Record::operator =(JsonView jsonValue)
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("Data"));
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

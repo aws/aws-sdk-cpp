@@ -37,7 +37,7 @@ namespace Model
   class AccessEndpoint
   {
   public:
-    AWS_APPSTREAM_API AccessEndpoint();
+    AWS_APPSTREAM_API AccessEndpoint() = default;
     AWS_APPSTREAM_API AccessEndpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API AccessEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,30 +47,26 @@ namespace Model
     /**
      * <p>The type of interface endpoint.</p>
      */
-    inline const AccessEndpointType& GetEndpointType() const{ return m_endpointType; }
+    inline AccessEndpointType GetEndpointType() const { return m_endpointType; }
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
-    inline void SetEndpointType(const AccessEndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
-    inline void SetEndpointType(AccessEndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
-    inline AccessEndpoint& WithEndpointType(const AccessEndpointType& value) { SetEndpointType(value); return *this;}
-    inline AccessEndpoint& WithEndpointType(AccessEndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
+    inline void SetEndpointType(AccessEndpointType value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+    inline AccessEndpoint& WithEndpointType(AccessEndpointType value) { SetEndpointType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
      */
-    inline const Aws::String& GetVpceId() const{ return m_vpceId; }
+    inline const Aws::String& GetVpceId() const { return m_vpceId; }
     inline bool VpceIdHasBeenSet() const { return m_vpceIdHasBeenSet; }
-    inline void SetVpceId(const Aws::String& value) { m_vpceIdHasBeenSet = true; m_vpceId = value; }
-    inline void SetVpceId(Aws::String&& value) { m_vpceIdHasBeenSet = true; m_vpceId = std::move(value); }
-    inline void SetVpceId(const char* value) { m_vpceIdHasBeenSet = true; m_vpceId.assign(value); }
-    inline AccessEndpoint& WithVpceId(const Aws::String& value) { SetVpceId(value); return *this;}
-    inline AccessEndpoint& WithVpceId(Aws::String&& value) { SetVpceId(std::move(value)); return *this;}
-    inline AccessEndpoint& WithVpceId(const char* value) { SetVpceId(value); return *this;}
+    template<typename VpceIdT = Aws::String>
+    void SetVpceId(VpceIdT&& value) { m_vpceIdHasBeenSet = true; m_vpceId = std::forward<VpceIdT>(value); }
+    template<typename VpceIdT = Aws::String>
+    AccessEndpoint& WithVpceId(VpceIdT&& value) { SetVpceId(std::forward<VpceIdT>(value)); return *this;}
     ///@}
   private:
 
-    AccessEndpointType m_endpointType;
+    AccessEndpointType m_endpointType{AccessEndpointType::NOT_SET};
     bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_vpceId;

@@ -34,7 +34,7 @@ namespace Model
   class SelfServiceAIAgentConfiguration
   {
   public:
-    AWS_QCONNECT_API SelfServiceAIAgentConfiguration();
+    AWS_QCONNECT_API SelfServiceAIAgentConfiguration() = default;
     AWS_QCONNECT_API SelfServiceAIAgentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API SelfServiceAIAgentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The association configurations for overriding behavior on this AI Agent.</p>
      */
-    inline const Aws::Vector<AssociationConfiguration>& GetAssociationConfigurations() const{ return m_associationConfigurations; }
+    inline const Aws::Vector<AssociationConfiguration>& GetAssociationConfigurations() const { return m_associationConfigurations; }
     inline bool AssociationConfigurationsHasBeenSet() const { return m_associationConfigurationsHasBeenSet; }
-    inline void SetAssociationConfigurations(const Aws::Vector<AssociationConfiguration>& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations = value; }
-    inline void SetAssociationConfigurations(Aws::Vector<AssociationConfiguration>&& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations = std::move(value); }
-    inline SelfServiceAIAgentConfiguration& WithAssociationConfigurations(const Aws::Vector<AssociationConfiguration>& value) { SetAssociationConfigurations(value); return *this;}
-    inline SelfServiceAIAgentConfiguration& WithAssociationConfigurations(Aws::Vector<AssociationConfiguration>&& value) { SetAssociationConfigurations(std::move(value)); return *this;}
-    inline SelfServiceAIAgentConfiguration& AddAssociationConfigurations(const AssociationConfiguration& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations.push_back(value); return *this; }
-    inline SelfServiceAIAgentConfiguration& AddAssociationConfigurations(AssociationConfiguration&& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations.push_back(std::move(value)); return *this; }
+    template<typename AssociationConfigurationsT = Aws::Vector<AssociationConfiguration>>
+    void SetAssociationConfigurations(AssociationConfigurationsT&& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations = std::forward<AssociationConfigurationsT>(value); }
+    template<typename AssociationConfigurationsT = Aws::Vector<AssociationConfiguration>>
+    SelfServiceAIAgentConfiguration& WithAssociationConfigurations(AssociationConfigurationsT&& value) { SetAssociationConfigurations(std::forward<AssociationConfigurationsT>(value)); return *this;}
+    template<typename AssociationConfigurationsT = AssociationConfiguration>
+    SelfServiceAIAgentConfiguration& AddAssociationConfigurations(AssociationConfigurationsT&& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations.emplace_back(std::forward<AssociationConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The AI Guardrail identifier used by the SELF_SERVICE AI Agent.</p>
      */
-    inline const Aws::String& GetSelfServiceAIGuardrailId() const{ return m_selfServiceAIGuardrailId; }
+    inline const Aws::String& GetSelfServiceAIGuardrailId() const { return m_selfServiceAIGuardrailId; }
     inline bool SelfServiceAIGuardrailIdHasBeenSet() const { return m_selfServiceAIGuardrailIdHasBeenSet; }
-    inline void SetSelfServiceAIGuardrailId(const Aws::String& value) { m_selfServiceAIGuardrailIdHasBeenSet = true; m_selfServiceAIGuardrailId = value; }
-    inline void SetSelfServiceAIGuardrailId(Aws::String&& value) { m_selfServiceAIGuardrailIdHasBeenSet = true; m_selfServiceAIGuardrailId = std::move(value); }
-    inline void SetSelfServiceAIGuardrailId(const char* value) { m_selfServiceAIGuardrailIdHasBeenSet = true; m_selfServiceAIGuardrailId.assign(value); }
-    inline SelfServiceAIAgentConfiguration& WithSelfServiceAIGuardrailId(const Aws::String& value) { SetSelfServiceAIGuardrailId(value); return *this;}
-    inline SelfServiceAIAgentConfiguration& WithSelfServiceAIGuardrailId(Aws::String&& value) { SetSelfServiceAIGuardrailId(std::move(value)); return *this;}
-    inline SelfServiceAIAgentConfiguration& WithSelfServiceAIGuardrailId(const char* value) { SetSelfServiceAIGuardrailId(value); return *this;}
+    template<typename SelfServiceAIGuardrailIdT = Aws::String>
+    void SetSelfServiceAIGuardrailId(SelfServiceAIGuardrailIdT&& value) { m_selfServiceAIGuardrailIdHasBeenSet = true; m_selfServiceAIGuardrailId = std::forward<SelfServiceAIGuardrailIdT>(value); }
+    template<typename SelfServiceAIGuardrailIdT = Aws::String>
+    SelfServiceAIAgentConfiguration& WithSelfServiceAIGuardrailId(SelfServiceAIGuardrailIdT&& value) { SetSelfServiceAIGuardrailId(std::forward<SelfServiceAIGuardrailIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * <p>The AI Prompt identifier for the Self Service Answer Generation prompt used
      * by the SELF_SERVICE AI Agent</p>
      */
-    inline const Aws::String& GetSelfServiceAnswerGenerationAIPromptId() const{ return m_selfServiceAnswerGenerationAIPromptId; }
+    inline const Aws::String& GetSelfServiceAnswerGenerationAIPromptId() const { return m_selfServiceAnswerGenerationAIPromptId; }
     inline bool SelfServiceAnswerGenerationAIPromptIdHasBeenSet() const { return m_selfServiceAnswerGenerationAIPromptIdHasBeenSet; }
-    inline void SetSelfServiceAnswerGenerationAIPromptId(const Aws::String& value) { m_selfServiceAnswerGenerationAIPromptIdHasBeenSet = true; m_selfServiceAnswerGenerationAIPromptId = value; }
-    inline void SetSelfServiceAnswerGenerationAIPromptId(Aws::String&& value) { m_selfServiceAnswerGenerationAIPromptIdHasBeenSet = true; m_selfServiceAnswerGenerationAIPromptId = std::move(value); }
-    inline void SetSelfServiceAnswerGenerationAIPromptId(const char* value) { m_selfServiceAnswerGenerationAIPromptIdHasBeenSet = true; m_selfServiceAnswerGenerationAIPromptId.assign(value); }
-    inline SelfServiceAIAgentConfiguration& WithSelfServiceAnswerGenerationAIPromptId(const Aws::String& value) { SetSelfServiceAnswerGenerationAIPromptId(value); return *this;}
-    inline SelfServiceAIAgentConfiguration& WithSelfServiceAnswerGenerationAIPromptId(Aws::String&& value) { SetSelfServiceAnswerGenerationAIPromptId(std::move(value)); return *this;}
-    inline SelfServiceAIAgentConfiguration& WithSelfServiceAnswerGenerationAIPromptId(const char* value) { SetSelfServiceAnswerGenerationAIPromptId(value); return *this;}
+    template<typename SelfServiceAnswerGenerationAIPromptIdT = Aws::String>
+    void SetSelfServiceAnswerGenerationAIPromptId(SelfServiceAnswerGenerationAIPromptIdT&& value) { m_selfServiceAnswerGenerationAIPromptIdHasBeenSet = true; m_selfServiceAnswerGenerationAIPromptId = std::forward<SelfServiceAnswerGenerationAIPromptIdT>(value); }
+    template<typename SelfServiceAnswerGenerationAIPromptIdT = Aws::String>
+    SelfServiceAIAgentConfiguration& WithSelfServiceAnswerGenerationAIPromptId(SelfServiceAnswerGenerationAIPromptIdT&& value) { SetSelfServiceAnswerGenerationAIPromptId(std::forward<SelfServiceAnswerGenerationAIPromptIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +84,12 @@ namespace Model
      * <p>The AI Prompt identifier for the Self Service Pre-Processing prompt used by
      * the SELF_SERVICE AI Agent</p>
      */
-    inline const Aws::String& GetSelfServicePreProcessingAIPromptId() const{ return m_selfServicePreProcessingAIPromptId; }
+    inline const Aws::String& GetSelfServicePreProcessingAIPromptId() const { return m_selfServicePreProcessingAIPromptId; }
     inline bool SelfServicePreProcessingAIPromptIdHasBeenSet() const { return m_selfServicePreProcessingAIPromptIdHasBeenSet; }
-    inline void SetSelfServicePreProcessingAIPromptId(const Aws::String& value) { m_selfServicePreProcessingAIPromptIdHasBeenSet = true; m_selfServicePreProcessingAIPromptId = value; }
-    inline void SetSelfServicePreProcessingAIPromptId(Aws::String&& value) { m_selfServicePreProcessingAIPromptIdHasBeenSet = true; m_selfServicePreProcessingAIPromptId = std::move(value); }
-    inline void SetSelfServicePreProcessingAIPromptId(const char* value) { m_selfServicePreProcessingAIPromptIdHasBeenSet = true; m_selfServicePreProcessingAIPromptId.assign(value); }
-    inline SelfServiceAIAgentConfiguration& WithSelfServicePreProcessingAIPromptId(const Aws::String& value) { SetSelfServicePreProcessingAIPromptId(value); return *this;}
-    inline SelfServiceAIAgentConfiguration& WithSelfServicePreProcessingAIPromptId(Aws::String&& value) { SetSelfServicePreProcessingAIPromptId(std::move(value)); return *this;}
-    inline SelfServiceAIAgentConfiguration& WithSelfServicePreProcessingAIPromptId(const char* value) { SetSelfServicePreProcessingAIPromptId(value); return *this;}
+    template<typename SelfServicePreProcessingAIPromptIdT = Aws::String>
+    void SetSelfServicePreProcessingAIPromptId(SelfServicePreProcessingAIPromptIdT&& value) { m_selfServicePreProcessingAIPromptIdHasBeenSet = true; m_selfServicePreProcessingAIPromptId = std::forward<SelfServicePreProcessingAIPromptIdT>(value); }
+    template<typename SelfServicePreProcessingAIPromptIdT = Aws::String>
+    SelfServiceAIAgentConfiguration& WithSelfServicePreProcessingAIPromptId(SelfServicePreProcessingAIPromptIdT&& value) { SetSelfServicePreProcessingAIPromptId(std::forward<SelfServicePreProcessingAIPromptIdT>(value)); return *this;}
     ///@}
   private:
 

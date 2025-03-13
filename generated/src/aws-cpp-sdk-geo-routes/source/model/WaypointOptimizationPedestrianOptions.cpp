@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationPedestrianOptions::WaypointOptimizationPedestrianOptions() : 
-    m_speed(0.0),
-    m_speedHasBeenSet(false)
-{
-}
-
 WaypointOptimizationPedestrianOptions::WaypointOptimizationPedestrianOptions(JsonView jsonValue)
-  : WaypointOptimizationPedestrianOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WaypointOptimizationPedestrianOptions& WaypointOptimizationPedestrianOptions::op
   if(jsonValue.ValueExists("Speed"))
   {
     m_speed = jsonValue.GetDouble("Speed");
-
     m_speedHasBeenSet = true;
   }
-
   return *this;
 }
 

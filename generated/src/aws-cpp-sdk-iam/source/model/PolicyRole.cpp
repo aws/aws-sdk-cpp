@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-PolicyRole::PolicyRole() : 
-    m_roleNameHasBeenSet(false),
-    m_roleIdHasBeenSet(false)
-{
-}
-
 PolicyRole::PolicyRole(const XmlNode& xmlNode)
-  : PolicyRole()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ PolicyRole& PolicyRole::operator =(const XmlNode& xmlNode)
     {
       m_roleName = Aws::Utils::Xml::DecodeEscapedXmlText(roleNameNode.GetText());
       m_roleNameHasBeenSet = true;
+       m_roleNameHasBeenSet = true;
     }
     XmlNode roleIdNode = resultNode.FirstChild("RoleId");
     if(!roleIdNode.IsNull())
     {
       m_roleId = Aws::Utils::Xml::DecodeEscapedXmlText(roleIdNode.GetText());
       m_roleIdHasBeenSet = true;
+       m_roleIdHasBeenSet = true;
     }
   }
 

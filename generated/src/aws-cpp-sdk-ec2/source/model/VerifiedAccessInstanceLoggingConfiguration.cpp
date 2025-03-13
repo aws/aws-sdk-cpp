@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessInstanceLoggingConfiguration::VerifiedAccessInstanceLoggingConfiguration() : 
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_accessLogsHasBeenSet(false)
-{
-}
-
 VerifiedAccessInstanceLoggingConfiguration::VerifiedAccessInstanceLoggingConfiguration(const XmlNode& xmlNode)
-  : VerifiedAccessInstanceLoggingConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ VerifiedAccessInstanceLoggingConfiguration& VerifiedAccessInstanceLoggingConfigu
     {
       m_verifiedAccessInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessInstanceIdNode.GetText());
       m_verifiedAccessInstanceIdHasBeenSet = true;
+       m_verifiedAccessInstanceIdHasBeenSet = true;
     }
     XmlNode accessLogsNode = resultNode.FirstChild("accessLogs");
     if(!accessLogsNode.IsNull())
     {
       m_accessLogs = accessLogsNode;
       m_accessLogsHasBeenSet = true;
+       m_accessLogsHasBeenSet = true;
     }
   }
 

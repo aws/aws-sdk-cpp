@@ -33,7 +33,7 @@ namespace Model
   class RecommendedAction
   {
   public:
-    AWS_REDSHIFT_API RecommendedAction();
+    AWS_REDSHIFT_API RecommendedAction() = default;
     AWS_REDSHIFT_API RecommendedAction(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API RecommendedAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The specific instruction about the command.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline RecommendedAction& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline RecommendedAction& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline RecommendedAction& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    RecommendedAction& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,40 +58,34 @@ namespace Model
      * <p>The database name to perform the action on. Only applicable if the type of
      * command is SQL.</p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline const Aws::String& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-    inline RecommendedAction& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-    inline RecommendedAction& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-    inline RecommendedAction& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    template<typename DatabaseT = Aws::String>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = Aws::String>
+    RecommendedAction& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The command to run.</p>
      */
-    inline const Aws::String& GetCommand() const{ return m_command; }
+    inline const Aws::String& GetCommand() const { return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-    inline void SetCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command = value; }
-    inline void SetCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-    inline void SetCommand(const char* value) { m_commandHasBeenSet = true; m_command.assign(value); }
-    inline RecommendedAction& WithCommand(const Aws::String& value) { SetCommand(value); return *this;}
-    inline RecommendedAction& WithCommand(Aws::String&& value) { SetCommand(std::move(value)); return *this;}
-    inline RecommendedAction& WithCommand(const char* value) { SetCommand(value); return *this;}
+    template<typename CommandT = Aws::String>
+    void SetCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command = std::forward<CommandT>(value); }
+    template<typename CommandT = Aws::String>
+    RecommendedAction& WithCommand(CommandT&& value) { SetCommand(std::forward<CommandT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of command.</p>
      */
-    inline const RecommendedActionType& GetType() const{ return m_type; }
+    inline RecommendedActionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RecommendedActionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RecommendedActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RecommendedAction& WithType(const RecommendedActionType& value) { SetType(value); return *this;}
-    inline RecommendedAction& WithType(RecommendedActionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RecommendedActionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RecommendedAction& WithType(RecommendedActionType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -106,7 +98,7 @@ namespace Model
     Aws::String m_command;
     bool m_commandHasBeenSet = false;
 
-    RecommendedActionType m_type;
+    RecommendedActionType m_type{RecommendedActionType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

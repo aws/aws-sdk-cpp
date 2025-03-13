@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EgressOnlyInternetGateway::EgressOnlyInternetGateway() : 
-    m_attachmentsHasBeenSet(false),
-    m_egressOnlyInternetGatewayIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 EgressOnlyInternetGateway::EgressOnlyInternetGateway(const XmlNode& xmlNode)
-  : EgressOnlyInternetGateway()
 {
   *this = xmlNode;
 }
@@ -43,31 +35,34 @@ EgressOnlyInternetGateway& EgressOnlyInternetGateway::operator =(const XmlNode& 
     if(!attachmentsNode.IsNull())
     {
       XmlNode attachmentsMember = attachmentsNode.FirstChild("item");
+      m_attachmentsHasBeenSet = !attachmentsMember.IsNull();
       while(!attachmentsMember.IsNull())
       {
         m_attachments.push_back(attachmentsMember);
         attachmentsMember = attachmentsMember.NextNode("item");
       }
 
-      m_attachmentsHasBeenSet = true;
+       m_attachmentsHasBeenSet = true;
     }
     XmlNode egressOnlyInternetGatewayIdNode = resultNode.FirstChild("egressOnlyInternetGatewayId");
     if(!egressOnlyInternetGatewayIdNode.IsNull())
     {
       m_egressOnlyInternetGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(egressOnlyInternetGatewayIdNode.GetText());
       m_egressOnlyInternetGatewayIdHasBeenSet = true;
+       m_egressOnlyInternetGatewayIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

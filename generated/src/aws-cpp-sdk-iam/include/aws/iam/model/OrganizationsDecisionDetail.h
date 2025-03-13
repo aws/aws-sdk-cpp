@@ -30,7 +30,7 @@ namespace Model
   class OrganizationsDecisionDetail
   {
   public:
-    AWS_IAM_API OrganizationsDecisionDetail();
+    AWS_IAM_API OrganizationsDecisionDetail() = default;
     AWS_IAM_API OrganizationsDecisionDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API OrganizationsDecisionDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,14 @@ namespace Model
      * <p>Specifies whether the simulated operation is allowed by the Organizations
      * service control policies that impact the simulated user's account.</p>
      */
-    inline bool GetAllowedByOrganizations() const{ return m_allowedByOrganizations; }
+    inline bool GetAllowedByOrganizations() const { return m_allowedByOrganizations; }
     inline bool AllowedByOrganizationsHasBeenSet() const { return m_allowedByOrganizationsHasBeenSet; }
     inline void SetAllowedByOrganizations(bool value) { m_allowedByOrganizationsHasBeenSet = true; m_allowedByOrganizations = value; }
     inline OrganizationsDecisionDetail& WithAllowedByOrganizations(bool value) { SetAllowedByOrganizations(value); return *this;}
     ///@}
   private:
 
-    bool m_allowedByOrganizations;
+    bool m_allowedByOrganizations{false};
     bool m_allowedByOrganizationsHasBeenSet = false;
   };
 

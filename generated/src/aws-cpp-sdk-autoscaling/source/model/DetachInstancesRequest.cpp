@@ -10,14 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DetachInstancesRequest::DetachInstancesRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_shouldDecrementDesiredCapacity(false),
-    m_shouldDecrementDesiredCapacityHasBeenSet(false)
-{
-}
-
 Aws::String DetachInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

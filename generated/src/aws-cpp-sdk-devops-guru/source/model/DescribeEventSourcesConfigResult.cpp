@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEventSourcesConfigResult::DescribeEventSourcesConfigResult()
-{
-}
-
 DescribeEventSourcesConfigResult::DescribeEventSourcesConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeEventSourcesConfigResult& DescribeEventSourcesConfigResult::operator =(c
   if(jsonValue.ValueExists("EventSources"))
   {
     m_eventSources = jsonValue.GetObject("EventSources");
-
+    m_eventSourcesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

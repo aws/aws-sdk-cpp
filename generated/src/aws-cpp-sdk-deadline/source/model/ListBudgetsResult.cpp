@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBudgetsResult::ListBudgetsResult()
-{
-}
-
 ListBudgetsResult::ListBudgetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListBudgetsResult& ListBudgetsResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("budgets"))
   {
     Aws::Utils::Array<JsonView> budgetsJsonList = jsonValue.GetArray("budgets");
@@ -42,14 +37,15 @@ ListBudgetsResult& ListBudgetsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_budgets.push_back(budgetsJsonList[budgetsIndex].AsObject());
     }
+    m_budgetsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

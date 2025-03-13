@@ -29,7 +29,7 @@ namespace Model
   class DetectSentimentResult
   {
   public:
-    AWS_COMPREHEND_API DetectSentimentResult();
+    AWS_COMPREHEND_API DetectSentimentResult() = default;
     AWS_COMPREHEND_API DetectSentimentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API DetectSentimentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,9 @@ namespace Model
      * <p>The inferred sentiment that Amazon Comprehend has the highest level of
      * confidence in.</p>
      */
-    inline const SentimentType& GetSentiment() const{ return m_sentiment; }
-    inline void SetSentiment(const SentimentType& value) { m_sentiment = value; }
-    inline void SetSentiment(SentimentType&& value) { m_sentiment = std::move(value); }
-    inline DetectSentimentResult& WithSentiment(const SentimentType& value) { SetSentiment(value); return *this;}
-    inline DetectSentimentResult& WithSentiment(SentimentType&& value) { SetSentiment(std::move(value)); return *this;}
+    inline SentimentType GetSentiment() const { return m_sentiment; }
+    inline void SetSentiment(SentimentType value) { m_sentimentHasBeenSet = true; m_sentiment = value; }
+    inline DetectSentimentResult& WithSentiment(SentimentType value) { SetSentiment(value); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +49,31 @@ namespace Model
      * <p>An object that lists the sentiments, and their corresponding confidence
      * levels.</p>
      */
-    inline const SentimentScore& GetSentimentScore() const{ return m_sentimentScore; }
-    inline void SetSentimentScore(const SentimentScore& value) { m_sentimentScore = value; }
-    inline void SetSentimentScore(SentimentScore&& value) { m_sentimentScore = std::move(value); }
-    inline DetectSentimentResult& WithSentimentScore(const SentimentScore& value) { SetSentimentScore(value); return *this;}
-    inline DetectSentimentResult& WithSentimentScore(SentimentScore&& value) { SetSentimentScore(std::move(value)); return *this;}
+    inline const SentimentScore& GetSentimentScore() const { return m_sentimentScore; }
+    template<typename SentimentScoreT = SentimentScore>
+    void SetSentimentScore(SentimentScoreT&& value) { m_sentimentScoreHasBeenSet = true; m_sentimentScore = std::forward<SentimentScoreT>(value); }
+    template<typename SentimentScoreT = SentimentScore>
+    DetectSentimentResult& WithSentimentScore(SentimentScoreT&& value) { SetSentimentScore(std::forward<SentimentScoreT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetectSentimentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetectSentimentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetectSentimentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetectSentimentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    SentimentType m_sentiment;
+    SentimentType m_sentiment{SentimentType::NOT_SET};
+    bool m_sentimentHasBeenSet = false;
 
     SentimentScore m_sentimentScore;
+    bool m_sentimentScoreHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

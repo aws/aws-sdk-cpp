@@ -33,7 +33,7 @@ namespace Model
   class GetComplianceSummaryByConfigRuleResult
   {
   public:
-    AWS_CONFIGSERVICE_API GetComplianceSummaryByConfigRuleResult();
+    AWS_CONFIGSERVICE_API GetComplianceSummaryByConfigRuleResult() = default;
     AWS_CONFIGSERVICE_API GetComplianceSummaryByConfigRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API GetComplianceSummaryByConfigRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
      * <p>The number of Config rules that are compliant and the number that are
      * noncompliant, up to a maximum of 25 for each.</p>
      */
-    inline const ComplianceSummary& GetComplianceSummary() const{ return m_complianceSummary; }
-    inline void SetComplianceSummary(const ComplianceSummary& value) { m_complianceSummary = value; }
-    inline void SetComplianceSummary(ComplianceSummary&& value) { m_complianceSummary = std::move(value); }
-    inline GetComplianceSummaryByConfigRuleResult& WithComplianceSummary(const ComplianceSummary& value) { SetComplianceSummary(value); return *this;}
-    inline GetComplianceSummaryByConfigRuleResult& WithComplianceSummary(ComplianceSummary&& value) { SetComplianceSummary(std::move(value)); return *this;}
+    inline const ComplianceSummary& GetComplianceSummary() const { return m_complianceSummary; }
+    template<typename ComplianceSummaryT = ComplianceSummary>
+    void SetComplianceSummary(ComplianceSummaryT&& value) { m_complianceSummaryHasBeenSet = true; m_complianceSummary = std::forward<ComplianceSummaryT>(value); }
+    template<typename ComplianceSummaryT = ComplianceSummary>
+    GetComplianceSummaryByConfigRuleResult& WithComplianceSummary(ComplianceSummaryT&& value) { SetComplianceSummary(std::forward<ComplianceSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetComplianceSummaryByConfigRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetComplianceSummaryByConfigRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetComplianceSummaryByConfigRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetComplianceSummaryByConfigRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ComplianceSummary m_complianceSummary;
+    bool m_complianceSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

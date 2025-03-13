@@ -18,20 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-JobData::JobData() : 
-    m_actionTypeIdHasBeenSet(false),
-    m_actionConfigurationHasBeenSet(false),
-    m_pipelineContextHasBeenSet(false),
-    m_inputArtifactsHasBeenSet(false),
-    m_outputArtifactsHasBeenSet(false),
-    m_artifactCredentialsHasBeenSet(false),
-    m_continuationTokenHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false)
-{
-}
-
 JobData::JobData(JsonView jsonValue)
-  : JobData()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ JobData& JobData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionTypeId"))
   {
     m_actionTypeId = jsonValue.GetObject("actionTypeId");
-
     m_actionTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionConfiguration"))
   {
     m_actionConfiguration = jsonValue.GetObject("actionConfiguration");
-
     m_actionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineContext"))
   {
     m_pipelineContext = jsonValue.GetObject("pipelineContext");
-
     m_pipelineContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputArtifacts"))
   {
     Aws::Utils::Array<JsonView> inputArtifactsJsonList = jsonValue.GetArray("inputArtifacts");
@@ -68,7 +49,6 @@ JobData& JobData::operator =(JsonView jsonValue)
     }
     m_inputArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputArtifacts"))
   {
     Aws::Utils::Array<JsonView> outputArtifactsJsonList = jsonValue.GetArray("outputArtifacts");
@@ -78,28 +58,21 @@ JobData& JobData::operator =(JsonView jsonValue)
     }
     m_outputArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("artifactCredentials"))
   {
     m_artifactCredentials = jsonValue.GetObject("artifactCredentials");
-
     m_artifactCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("continuationToken"))
   {
     m_continuationToken = jsonValue.GetString("continuationToken");
-
     m_continuationTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionKey"))
   {
     m_encryptionKey = jsonValue.GetObject("encryptionKey");
-
     m_encryptionKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

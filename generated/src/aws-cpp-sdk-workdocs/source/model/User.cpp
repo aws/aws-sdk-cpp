@@ -18,30 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-User::User() : 
-    m_idHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_givenNameHasBeenSet(false),
-    m_surnameHasBeenSet(false),
-    m_organizationIdHasBeenSet(false),
-    m_rootFolderIdHasBeenSet(false),
-    m_recycleBinFolderIdHasBeenSet(false),
-    m_status(UserStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(UserType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_modifiedTimestampHasBeenSet(false),
-    m_timeZoneIdHasBeenSet(false),
-    m_locale(LocaleType::NOT_SET),
-    m_localeHasBeenSet(false),
-    m_storageHasBeenSet(false)
-{
-}
-
 User::User(JsonView jsonValue)
-  : User()
 {
   *this = jsonValue;
 }
@@ -51,108 +28,78 @@ User& User::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddress"))
   {
     m_emailAddress = jsonValue.GetString("EmailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GivenName"))
   {
     m_givenName = jsonValue.GetString("GivenName");
-
     m_givenNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Surname"))
   {
     m_surname = jsonValue.GetString("Surname");
-
     m_surnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationId"))
   {
     m_organizationId = jsonValue.GetString("OrganizationId");
-
     m_organizationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootFolderId"))
   {
     m_rootFolderId = jsonValue.GetString("RootFolderId");
-
     m_rootFolderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecycleBinFolderId"))
   {
     m_recycleBinFolderId = jsonValue.GetString("RecycleBinFolderId");
-
     m_recycleBinFolderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = UserStatusTypeMapper::GetUserStatusTypeForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = UserTypeMapper::GetUserTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifiedTimestamp"))
   {
     m_modifiedTimestamp = jsonValue.GetDouble("ModifiedTimestamp");
-
     m_modifiedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeZoneId"))
   {
     m_timeZoneId = jsonValue.GetString("TimeZoneId");
-
     m_timeZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Locale"))
   {
     m_locale = LocaleTypeMapper::GetLocaleTypeForName(jsonValue.GetString("Locale"));
-
     m_localeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Storage"))
   {
     m_storage = jsonValue.GetObject("Storage");
-
     m_storageHasBeenSet = true;
   }
-
   return *this;
 }
 

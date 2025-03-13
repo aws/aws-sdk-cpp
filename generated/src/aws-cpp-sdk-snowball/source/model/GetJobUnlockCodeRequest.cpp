@@ -12,11 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetJobUnlockCodeRequest::GetJobUnlockCodeRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetJobUnlockCodeRequest::SerializePayload() const
 {
   JsonValue payload;

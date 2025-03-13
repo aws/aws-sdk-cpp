@@ -18,22 +18,7 @@ namespace IoTDeviceAdvisor
 namespace Model
 {
 
-SuiteDefinitionInformation::SuiteDefinitionInformation() : 
-    m_suiteDefinitionIdHasBeenSet(false),
-    m_suiteDefinitionNameHasBeenSet(false),
-    m_defaultDevicesHasBeenSet(false),
-    m_intendedForQualification(false),
-    m_intendedForQualificationHasBeenSet(false),
-    m_isLongDurationTest(false),
-    m_isLongDurationTestHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 SuiteDefinitionInformation::SuiteDefinitionInformation(JsonView jsonValue)
-  : SuiteDefinitionInformation()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ SuiteDefinitionInformation& SuiteDefinitionInformation::operator =(JsonView json
   if(jsonValue.ValueExists("suiteDefinitionId"))
   {
     m_suiteDefinitionId = jsonValue.GetString("suiteDefinitionId");
-
     m_suiteDefinitionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suiteDefinitionName"))
   {
     m_suiteDefinitionName = jsonValue.GetString("suiteDefinitionName");
-
     m_suiteDefinitionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultDevices"))
   {
     Aws::Utils::Array<JsonView> defaultDevicesJsonList = jsonValue.GetArray("defaultDevices");
@@ -63,35 +44,26 @@ SuiteDefinitionInformation& SuiteDefinitionInformation::operator =(JsonView json
     }
     m_defaultDevicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intendedForQualification"))
   {
     m_intendedForQualification = jsonValue.GetBool("intendedForQualification");
-
     m_intendedForQualificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isLongDurationTest"))
   {
     m_isLongDurationTest = jsonValue.GetBool("isLongDurationTest");
-
     m_isLongDurationTestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

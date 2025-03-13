@@ -30,7 +30,7 @@ namespace Model
   class GetInstanceTpmEkPubResponse
   {
   public:
-    AWS_EC2_API GetInstanceTpmEkPubResponse();
+    AWS_EC2_API GetInstanceTpmEkPubResponse() = default;
     AWS_EC2_API GetInstanceTpmEkPubResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetInstanceTpmEkPubResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,69 +39,66 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
-    inline GetInstanceTpmEkPubResponse& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline GetInstanceTpmEkPubResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline GetInstanceTpmEkPubResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    GetInstanceTpmEkPubResponse& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The public endorsement key type.</p>
      */
-    inline const EkPubKeyType& GetKeyType() const{ return m_keyType; }
-    inline void SetKeyType(const EkPubKeyType& value) { m_keyType = value; }
-    inline void SetKeyType(EkPubKeyType&& value) { m_keyType = std::move(value); }
-    inline GetInstanceTpmEkPubResponse& WithKeyType(const EkPubKeyType& value) { SetKeyType(value); return *this;}
-    inline GetInstanceTpmEkPubResponse& WithKeyType(EkPubKeyType&& value) { SetKeyType(std::move(value)); return *this;}
+    inline EkPubKeyType GetKeyType() const { return m_keyType; }
+    inline void SetKeyType(EkPubKeyType value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
+    inline GetInstanceTpmEkPubResponse& WithKeyType(EkPubKeyType value) { SetKeyType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The public endorsement key format.</p>
      */
-    inline const EkPubKeyFormat& GetKeyFormat() const{ return m_keyFormat; }
-    inline void SetKeyFormat(const EkPubKeyFormat& value) { m_keyFormat = value; }
-    inline void SetKeyFormat(EkPubKeyFormat&& value) { m_keyFormat = std::move(value); }
-    inline GetInstanceTpmEkPubResponse& WithKeyFormat(const EkPubKeyFormat& value) { SetKeyFormat(value); return *this;}
-    inline GetInstanceTpmEkPubResponse& WithKeyFormat(EkPubKeyFormat&& value) { SetKeyFormat(std::move(value)); return *this;}
+    inline EkPubKeyFormat GetKeyFormat() const { return m_keyFormat; }
+    inline void SetKeyFormat(EkPubKeyFormat value) { m_keyFormatHasBeenSet = true; m_keyFormat = value; }
+    inline GetInstanceTpmEkPubResponse& WithKeyFormat(EkPubKeyFormat value) { SetKeyFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The public endorsement key material.</p>
      */
-    inline const Aws::String& GetKeyValue() const{ return m_keyValue; }
-    inline void SetKeyValue(const Aws::String& value) { m_keyValue = value; }
-    inline void SetKeyValue(Aws::String&& value) { m_keyValue = std::move(value); }
-    inline void SetKeyValue(const char* value) { m_keyValue.assign(value); }
-    inline GetInstanceTpmEkPubResponse& WithKeyValue(const Aws::String& value) { SetKeyValue(value); return *this;}
-    inline GetInstanceTpmEkPubResponse& WithKeyValue(Aws::String&& value) { SetKeyValue(std::move(value)); return *this;}
-    inline GetInstanceTpmEkPubResponse& WithKeyValue(const char* value) { SetKeyValue(value); return *this;}
+    inline const Aws::String& GetKeyValue() const { return m_keyValue; }
+    template<typename KeyValueT = Aws::String>
+    void SetKeyValue(KeyValueT&& value) { m_keyValueHasBeenSet = true; m_keyValue = std::forward<KeyValueT>(value); }
+    template<typename KeyValueT = Aws::String>
+    GetInstanceTpmEkPubResponse& WithKeyValue(KeyValueT&& value) { SetKeyValue(std::forward<KeyValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetInstanceTpmEkPubResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetInstanceTpmEkPubResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetInstanceTpmEkPubResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
 
-    EkPubKeyType m_keyType;
+    EkPubKeyType m_keyType{EkPubKeyType::NOT_SET};
+    bool m_keyTypeHasBeenSet = false;
 
-    EkPubKeyFormat m_keyFormat;
+    EkPubKeyFormat m_keyFormat{EkPubKeyFormat::NOT_SET};
+    bool m_keyFormatHasBeenSet = false;
 
     Aws::String m_keyValue;
+    bool m_keyValueHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ColumnSchema::ColumnSchema() : 
-    m_nameHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_geographicRoleHasBeenSet(false)
-{
-}
-
 ColumnSchema::ColumnSchema(JsonView jsonValue)
-  : ColumnSchema()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ColumnSchema& ColumnSchema::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataType"))
   {
     m_dataType = jsonValue.GetString("DataType");
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeographicRole"))
   {
     m_geographicRole = jsonValue.GetString("GeographicRole");
-
     m_geographicRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-ConstraintViolationException::ConstraintViolationException() : 
-    m_messageHasBeenSet(false),
-    m_reason(ConstraintViolationExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ConstraintViolationException::ConstraintViolationException(JsonView jsonValue)
-  : ConstraintViolationException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ConstraintViolationException& ConstraintViolationException::operator =(JsonView 
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = ConstraintViolationExceptionReasonMapper::GetConstraintViolationExceptionReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

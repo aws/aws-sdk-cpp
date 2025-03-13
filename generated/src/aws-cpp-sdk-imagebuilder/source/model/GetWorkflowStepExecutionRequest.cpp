@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetWorkflowStepExecutionRequest::GetWorkflowStepExecutionRequest() : 
-    m_stepExecutionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkflowStepExecutionRequest::SerializePayload() const
 {
   return {};

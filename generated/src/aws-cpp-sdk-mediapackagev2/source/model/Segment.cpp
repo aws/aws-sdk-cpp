@@ -18,23 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-Segment::Segment() : 
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false),
-    m_segmentNameHasBeenSet(false),
-    m_tsUseAudioRenditionGroup(false),
-    m_tsUseAudioRenditionGroupHasBeenSet(false),
-    m_includeIframeOnlyStreams(false),
-    m_includeIframeOnlyStreamsHasBeenSet(false),
-    m_tsIncludeDvbSubtitles(false),
-    m_tsIncludeDvbSubtitlesHasBeenSet(false),
-    m_scteHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
-{
-}
-
 Segment::Segment(JsonView jsonValue)
-  : Segment()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ Segment& Segment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SegmentDurationSeconds"))
   {
     m_segmentDurationSeconds = jsonValue.GetInteger("SegmentDurationSeconds");
-
     m_segmentDurationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentName"))
   {
     m_segmentName = jsonValue.GetString("SegmentName");
-
     m_segmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TsUseAudioRenditionGroup"))
   {
     m_tsUseAudioRenditionGroup = jsonValue.GetBool("TsUseAudioRenditionGroup");
-
     m_tsUseAudioRenditionGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeIframeOnlyStreams"))
   {
     m_includeIframeOnlyStreams = jsonValue.GetBool("IncludeIframeOnlyStreams");
-
     m_includeIframeOnlyStreamsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TsIncludeDvbSubtitles"))
   {
     m_tsIncludeDvbSubtitles = jsonValue.GetBool("TsIncludeDvbSubtitles");
-
     m_tsIncludeDvbSubtitlesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scte"))
   {
     m_scte = jsonValue.GetObject("Scte");
-
     m_scteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encryption"))
   {
     m_encryption = jsonValue.GetObject("Encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-MonitoringConfigurationUpdate::MonitoringConfigurationUpdate() : 
-    m_configurationTypeUpdate(ConfigurationType::NOT_SET),
-    m_configurationTypeUpdateHasBeenSet(false),
-    m_metricsLevelUpdate(MetricsLevel::NOT_SET),
-    m_metricsLevelUpdateHasBeenSet(false),
-    m_logLevelUpdate(LogLevel::NOT_SET),
-    m_logLevelUpdateHasBeenSet(false)
-{
-}
-
 MonitoringConfigurationUpdate::MonitoringConfigurationUpdate(JsonView jsonValue)
-  : MonitoringConfigurationUpdate()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ MonitoringConfigurationUpdate& MonitoringConfigurationUpdate::operator =(JsonVie
   if(jsonValue.ValueExists("ConfigurationTypeUpdate"))
   {
     m_configurationTypeUpdate = ConfigurationTypeMapper::GetConfigurationTypeForName(jsonValue.GetString("ConfigurationTypeUpdate"));
-
     m_configurationTypeUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricsLevelUpdate"))
   {
     m_metricsLevelUpdate = MetricsLevelMapper::GetMetricsLevelForName(jsonValue.GetString("MetricsLevelUpdate"));
-
     m_metricsLevelUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogLevelUpdate"))
   {
     m_logLevelUpdate = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogLevelUpdate"));
-
     m_logLevelUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

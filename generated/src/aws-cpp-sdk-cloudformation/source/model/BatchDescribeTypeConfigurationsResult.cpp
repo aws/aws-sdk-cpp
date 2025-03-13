@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDescribeTypeConfigurationsResult::BatchDescribeTypeConfigurationsResult()
-{
-}
-
 BatchDescribeTypeConfigurationsResult::BatchDescribeTypeConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ BatchDescribeTypeConfigurationsResult& BatchDescribeTypeConfigurationsResult::op
     if(!errorsNode.IsNull())
     {
       XmlNode errorsMember = errorsNode.FirstChild("member");
+      m_errorsHasBeenSet = !errorsMember.IsNull();
       while(!errorsMember.IsNull())
       {
         m_errors.push_back(errorsMember);
@@ -53,6 +50,7 @@ BatchDescribeTypeConfigurationsResult& BatchDescribeTypeConfigurationsResult::op
     if(!unprocessedTypeConfigurationsNode.IsNull())
     {
       XmlNode unprocessedTypeConfigurationsMember = unprocessedTypeConfigurationsNode.FirstChild("member");
+      m_unprocessedTypeConfigurationsHasBeenSet = !unprocessedTypeConfigurationsMember.IsNull();
       while(!unprocessedTypeConfigurationsMember.IsNull())
       {
         m_unprocessedTypeConfigurations.push_back(unprocessedTypeConfigurationsMember);
@@ -64,6 +62,7 @@ BatchDescribeTypeConfigurationsResult& BatchDescribeTypeConfigurationsResult::op
     if(!typeConfigurationsNode.IsNull())
     {
       XmlNode typeConfigurationsMember = typeConfigurationsNode.FirstChild("member");
+      m_typeConfigurationsHasBeenSet = !typeConfigurationsMember.IsNull();
       while(!typeConfigurationsMember.IsNull())
       {
         m_typeConfigurations.push_back(typeConfigurationsMember);
@@ -76,6 +75,7 @@ BatchDescribeTypeConfigurationsResult& BatchDescribeTypeConfigurationsResult::op
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::BatchDescribeTypeConfigurationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchPutPropertyValuesResult::BatchPutPropertyValuesResult()
-{
-}
-
 BatchPutPropertyValuesResult::BatchPutPropertyValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchPutPropertyValuesResult& BatchPutPropertyValuesResult::operator =(const Aws
     {
       m_errorEntries.push_back(errorEntriesJsonList[errorEntriesIndex].AsObject());
     }
+    m_errorEntriesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

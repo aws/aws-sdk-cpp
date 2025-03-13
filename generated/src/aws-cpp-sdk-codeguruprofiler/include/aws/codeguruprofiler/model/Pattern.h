@@ -33,7 +33,7 @@ namespace Model
   class Pattern
   {
   public:
-    AWS_CODEGURUPROFILER_API Pattern();
+    AWS_CODEGURUPROFILER_API Pattern() = default;
     AWS_CODEGURUPROFILER_API Pattern(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Pattern& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p> A list of the different counters used to determine if there is a match. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetCountersToAggregate() const{ return m_countersToAggregate; }
+    inline const Aws::Vector<Aws::String>& GetCountersToAggregate() const { return m_countersToAggregate; }
     inline bool CountersToAggregateHasBeenSet() const { return m_countersToAggregateHasBeenSet; }
-    inline void SetCountersToAggregate(const Aws::Vector<Aws::String>& value) { m_countersToAggregateHasBeenSet = true; m_countersToAggregate = value; }
-    inline void SetCountersToAggregate(Aws::Vector<Aws::String>&& value) { m_countersToAggregateHasBeenSet = true; m_countersToAggregate = std::move(value); }
-    inline Pattern& WithCountersToAggregate(const Aws::Vector<Aws::String>& value) { SetCountersToAggregate(value); return *this;}
-    inline Pattern& WithCountersToAggregate(Aws::Vector<Aws::String>&& value) { SetCountersToAggregate(std::move(value)); return *this;}
-    inline Pattern& AddCountersToAggregate(const Aws::String& value) { m_countersToAggregateHasBeenSet = true; m_countersToAggregate.push_back(value); return *this; }
-    inline Pattern& AddCountersToAggregate(Aws::String&& value) { m_countersToAggregateHasBeenSet = true; m_countersToAggregate.push_back(std::move(value)); return *this; }
-    inline Pattern& AddCountersToAggregate(const char* value) { m_countersToAggregateHasBeenSet = true; m_countersToAggregate.push_back(value); return *this; }
+    template<typename CountersToAggregateT = Aws::Vector<Aws::String>>
+    void SetCountersToAggregate(CountersToAggregateT&& value) { m_countersToAggregateHasBeenSet = true; m_countersToAggregate = std::forward<CountersToAggregateT>(value); }
+    template<typename CountersToAggregateT = Aws::Vector<Aws::String>>
+    Pattern& WithCountersToAggregate(CountersToAggregateT&& value) { SetCountersToAggregate(std::forward<CountersToAggregateT>(value)); return *this;}
+    template<typename CountersToAggregateT = Aws::String>
+    Pattern& AddCountersToAggregate(CountersToAggregateT&& value) { m_countersToAggregateHasBeenSet = true; m_countersToAggregate.emplace_back(std::forward<CountersToAggregateT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,42 +58,36 @@ namespace Model
      * <p>The description of the recommendation. This explains a potential inefficiency
      * in a profiled application.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Pattern& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Pattern& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Pattern& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Pattern& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The universally unique identifier (UUID) of this pattern.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Pattern& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Pattern& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Pattern& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Pattern& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for this pattern.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Pattern& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Pattern& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Pattern& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Pattern& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +95,12 @@ namespace Model
      * <p> A string that contains the steps recommended to address the potential
      * inefficiency. </p>
      */
-    inline const Aws::String& GetResolutionSteps() const{ return m_resolutionSteps; }
+    inline const Aws::String& GetResolutionSteps() const { return m_resolutionSteps; }
     inline bool ResolutionStepsHasBeenSet() const { return m_resolutionStepsHasBeenSet; }
-    inline void SetResolutionSteps(const Aws::String& value) { m_resolutionStepsHasBeenSet = true; m_resolutionSteps = value; }
-    inline void SetResolutionSteps(Aws::String&& value) { m_resolutionStepsHasBeenSet = true; m_resolutionSteps = std::move(value); }
-    inline void SetResolutionSteps(const char* value) { m_resolutionStepsHasBeenSet = true; m_resolutionSteps.assign(value); }
-    inline Pattern& WithResolutionSteps(const Aws::String& value) { SetResolutionSteps(value); return *this;}
-    inline Pattern& WithResolutionSteps(Aws::String&& value) { SetResolutionSteps(std::move(value)); return *this;}
-    inline Pattern& WithResolutionSteps(const char* value) { SetResolutionSteps(value); return *this;}
+    template<typename ResolutionStepsT = Aws::String>
+    void SetResolutionSteps(ResolutionStepsT&& value) { m_resolutionStepsHasBeenSet = true; m_resolutionSteps = std::forward<ResolutionStepsT>(value); }
+    template<typename ResolutionStepsT = Aws::String>
+    Pattern& WithResolutionSteps(ResolutionStepsT&& value) { SetResolutionSteps(std::forward<ResolutionStepsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +108,14 @@ namespace Model
      * <p>A list of frame names that were searched during the analysis that generated a
      * recommendation.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetTargetFrames() const{ return m_targetFrames; }
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetTargetFrames() const { return m_targetFrames; }
     inline bool TargetFramesHasBeenSet() const { return m_targetFramesHasBeenSet; }
-    inline void SetTargetFrames(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_targetFramesHasBeenSet = true; m_targetFrames = value; }
-    inline void SetTargetFrames(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_targetFramesHasBeenSet = true; m_targetFrames = std::move(value); }
-    inline Pattern& WithTargetFrames(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetTargetFrames(value); return *this;}
-    inline Pattern& WithTargetFrames(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetTargetFrames(std::move(value)); return *this;}
-    inline Pattern& AddTargetFrames(const Aws::Vector<Aws::String>& value) { m_targetFramesHasBeenSet = true; m_targetFrames.push_back(value); return *this; }
-    inline Pattern& AddTargetFrames(Aws::Vector<Aws::String>&& value) { m_targetFramesHasBeenSet = true; m_targetFrames.push_back(std::move(value)); return *this; }
+    template<typename TargetFramesT = Aws::Vector<Aws::Vector<Aws::String>>>
+    void SetTargetFrames(TargetFramesT&& value) { m_targetFramesHasBeenSet = true; m_targetFrames = std::forward<TargetFramesT>(value); }
+    template<typename TargetFramesT = Aws::Vector<Aws::Vector<Aws::String>>>
+    Pattern& WithTargetFrames(TargetFramesT&& value) { SetTargetFrames(std::forward<TargetFramesT>(value)); return *this;}
+    template<typename TargetFramesT = Aws::Vector<Aws::String>>
+    Pattern& AddTargetFrames(TargetFramesT&& value) { m_targetFramesHasBeenSet = true; m_targetFrames.emplace_back(std::forward<TargetFramesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -133,7 +124,7 @@ namespace Model
      * recommendation. The percentage of time is the same as the percentage of the
      * total gathered sample counts during analysis. </p>
      */
-    inline double GetThresholdPercent() const{ return m_thresholdPercent; }
+    inline double GetThresholdPercent() const { return m_thresholdPercent; }
     inline bool ThresholdPercentHasBeenSet() const { return m_thresholdPercentHasBeenSet; }
     inline void SetThresholdPercent(double value) { m_thresholdPercentHasBeenSet = true; m_thresholdPercent = value; }
     inline Pattern& WithThresholdPercent(double value) { SetThresholdPercent(value); return *this;}
@@ -158,7 +149,7 @@ namespace Model
     Aws::Vector<Aws::Vector<Aws::String>> m_targetFrames;
     bool m_targetFramesHasBeenSet = false;
 
-    double m_thresholdPercent;
+    double m_thresholdPercent{0.0};
     bool m_thresholdPercentHasBeenSet = false;
   };
 

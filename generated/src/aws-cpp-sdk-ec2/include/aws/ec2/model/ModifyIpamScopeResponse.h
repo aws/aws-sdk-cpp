@@ -28,7 +28,7 @@ namespace Model
   class ModifyIpamScopeResponse
   {
   public:
-    AWS_EC2_API ModifyIpamScopeResponse();
+    AWS_EC2_API ModifyIpamScopeResponse() = default;
     AWS_EC2_API ModifyIpamScopeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyIpamScopeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The results of the modification.</p>
      */
-    inline const IpamScope& GetIpamScope() const{ return m_ipamScope; }
-    inline void SetIpamScope(const IpamScope& value) { m_ipamScope = value; }
-    inline void SetIpamScope(IpamScope&& value) { m_ipamScope = std::move(value); }
-    inline ModifyIpamScopeResponse& WithIpamScope(const IpamScope& value) { SetIpamScope(value); return *this;}
-    inline ModifyIpamScopeResponse& WithIpamScope(IpamScope&& value) { SetIpamScope(std::move(value)); return *this;}
+    inline const IpamScope& GetIpamScope() const { return m_ipamScope; }
+    template<typename IpamScopeT = IpamScope>
+    void SetIpamScope(IpamScopeT&& value) { m_ipamScopeHasBeenSet = true; m_ipamScope = std::forward<IpamScopeT>(value); }
+    template<typename IpamScopeT = IpamScope>
+    ModifyIpamScopeResponse& WithIpamScope(IpamScopeT&& value) { SetIpamScope(std::forward<IpamScopeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyIpamScopeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyIpamScopeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyIpamScopeResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     IpamScope m_ipamScope;
+    bool m_ipamScopeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

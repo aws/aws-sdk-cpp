@@ -31,7 +31,7 @@ namespace Model
   class StreamProcessorInput
   {
   public:
-    AWS_REKOGNITION_API StreamProcessorInput();
+    AWS_REKOGNITION_API StreamProcessorInput() = default;
     AWS_REKOGNITION_API StreamProcessorInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API StreamProcessorInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The Kinesis video stream input stream for the source streaming video.</p>
      */
-    inline const KinesisVideoStream& GetKinesisVideoStream() const{ return m_kinesisVideoStream; }
+    inline const KinesisVideoStream& GetKinesisVideoStream() const { return m_kinesisVideoStream; }
     inline bool KinesisVideoStreamHasBeenSet() const { return m_kinesisVideoStreamHasBeenSet; }
-    inline void SetKinesisVideoStream(const KinesisVideoStream& value) { m_kinesisVideoStreamHasBeenSet = true; m_kinesisVideoStream = value; }
-    inline void SetKinesisVideoStream(KinesisVideoStream&& value) { m_kinesisVideoStreamHasBeenSet = true; m_kinesisVideoStream = std::move(value); }
-    inline StreamProcessorInput& WithKinesisVideoStream(const KinesisVideoStream& value) { SetKinesisVideoStream(value); return *this;}
-    inline StreamProcessorInput& WithKinesisVideoStream(KinesisVideoStream&& value) { SetKinesisVideoStream(std::move(value)); return *this;}
+    template<typename KinesisVideoStreamT = KinesisVideoStream>
+    void SetKinesisVideoStream(KinesisVideoStreamT&& value) { m_kinesisVideoStreamHasBeenSet = true; m_kinesisVideoStream = std::forward<KinesisVideoStreamT>(value); }
+    template<typename KinesisVideoStreamT = KinesisVideoStream>
+    StreamProcessorInput& WithKinesisVideoStream(KinesisVideoStreamT&& value) { SetKinesisVideoStream(std::forward<KinesisVideoStreamT>(value)); return *this;}
     ///@}
   private:
 

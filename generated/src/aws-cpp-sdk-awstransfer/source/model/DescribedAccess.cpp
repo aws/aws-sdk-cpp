@@ -18,20 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-DescribedAccess::DescribedAccess() : 
-    m_homeDirectoryHasBeenSet(false),
-    m_homeDirectoryMappingsHasBeenSet(false),
-    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
-    m_homeDirectoryTypeHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_posixProfileHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
-{
-}
-
 DescribedAccess::DescribedAccess(JsonView jsonValue)
-  : DescribedAccess()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ DescribedAccess& DescribedAccess::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HomeDirectory"))
   {
     m_homeDirectory = jsonValue.GetString("HomeDirectory");
-
     m_homeDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomeDirectoryMappings"))
   {
     Aws::Utils::Array<JsonView> homeDirectoryMappingsJsonList = jsonValue.GetArray("HomeDirectoryMappings");
@@ -54,42 +39,31 @@ DescribedAccess& DescribedAccess::operator =(JsonView jsonValue)
     }
     m_homeDirectoryMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HomeDirectoryType"))
   {
     m_homeDirectoryType = HomeDirectoryTypeMapper::GetHomeDirectoryTypeForName(jsonValue.GetString("HomeDirectoryType"));
-
     m_homeDirectoryTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetString("Policy");
-
     m_policyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PosixProfile"))
   {
     m_posixProfile = jsonValue.GetObject("PosixProfile");
-
     m_posixProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExternalId"))
   {
     m_externalId = jsonValue.GetString("ExternalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   return *this;
 }
 

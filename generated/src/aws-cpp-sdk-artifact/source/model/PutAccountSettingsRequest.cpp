@@ -12,12 +12,6 @@ using namespace Aws::Artifact::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAccountSettingsRequest::PutAccountSettingsRequest() : 
-    m_notificationSubscriptionStatus(NotificationSubscriptionStatus::NOT_SET),
-    m_notificationSubscriptionStatusHasBeenSet(false)
-{
-}
-
 Aws::String PutAccountSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

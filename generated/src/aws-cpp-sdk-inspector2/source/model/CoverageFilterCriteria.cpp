@@ -18,27 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CoverageFilterCriteria::CoverageFilterCriteria() : 
-    m_accountIdHasBeenSet(false),
-    m_ec2InstanceTagsHasBeenSet(false),
-    m_ecrImageTagsHasBeenSet(false),
-    m_ecrRepositoryNameHasBeenSet(false),
-    m_imagePulledAtHasBeenSet(false),
-    m_lambdaFunctionNameHasBeenSet(false),
-    m_lambdaFunctionRuntimeHasBeenSet(false),
-    m_lambdaFunctionTagsHasBeenSet(false),
-    m_lastScannedAtHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_scanModeHasBeenSet(false),
-    m_scanStatusCodeHasBeenSet(false),
-    m_scanStatusReasonHasBeenSet(false),
-    m_scanTypeHasBeenSet(false)
-{
-}
-
 CoverageFilterCriteria::CoverageFilterCriteria(JsonView jsonValue)
-  : CoverageFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -54,7 +34,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2InstanceTags"))
   {
     Aws::Utils::Array<JsonView> ec2InstanceTagsJsonList = jsonValue.GetArray("ec2InstanceTags");
@@ -64,7 +43,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_ec2InstanceTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrImageTags"))
   {
     Aws::Utils::Array<JsonView> ecrImageTagsJsonList = jsonValue.GetArray("ecrImageTags");
@@ -74,7 +52,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_ecrImageTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrRepositoryName"))
   {
     Aws::Utils::Array<JsonView> ecrRepositoryNameJsonList = jsonValue.GetArray("ecrRepositoryName");
@@ -84,7 +61,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_ecrRepositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imagePulledAt"))
   {
     Aws::Utils::Array<JsonView> imagePulledAtJsonList = jsonValue.GetArray("imagePulledAt");
@@ -94,7 +70,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_imagePulledAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionName"))
   {
     Aws::Utils::Array<JsonView> lambdaFunctionNameJsonList = jsonValue.GetArray("lambdaFunctionName");
@@ -104,7 +79,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_lambdaFunctionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionRuntime"))
   {
     Aws::Utils::Array<JsonView> lambdaFunctionRuntimeJsonList = jsonValue.GetArray("lambdaFunctionRuntime");
@@ -114,7 +88,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_lambdaFunctionRuntimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionTags"))
   {
     Aws::Utils::Array<JsonView> lambdaFunctionTagsJsonList = jsonValue.GetArray("lambdaFunctionTags");
@@ -124,7 +97,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_lambdaFunctionTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastScannedAt"))
   {
     Aws::Utils::Array<JsonView> lastScannedAtJsonList = jsonValue.GetArray("lastScannedAt");
@@ -134,7 +106,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_lastScannedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     Aws::Utils::Array<JsonView> resourceIdJsonList = jsonValue.GetArray("resourceId");
@@ -144,7 +115,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     Aws::Utils::Array<JsonView> resourceTypeJsonList = jsonValue.GetArray("resourceType");
@@ -154,7 +124,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanMode"))
   {
     Aws::Utils::Array<JsonView> scanModeJsonList = jsonValue.GetArray("scanMode");
@@ -164,7 +133,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_scanModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanStatusCode"))
   {
     Aws::Utils::Array<JsonView> scanStatusCodeJsonList = jsonValue.GetArray("scanStatusCode");
@@ -174,7 +142,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_scanStatusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanStatusReason"))
   {
     Aws::Utils::Array<JsonView> scanStatusReasonJsonList = jsonValue.GetArray("scanStatusReason");
@@ -184,7 +151,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_scanStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanType"))
   {
     Aws::Utils::Array<JsonView> scanTypeJsonList = jsonValue.GetArray("scanType");
@@ -194,7 +160,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_scanTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

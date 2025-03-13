@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioSelectorSettings::AudioSelectorSettings() : 
-    m_audioHlsRenditionSelectionHasBeenSet(false),
-    m_audioLanguageSelectionHasBeenSet(false),
-    m_audioPidSelectionHasBeenSet(false),
-    m_audioTrackSelectionHasBeenSet(false)
-{
-}
-
 AudioSelectorSettings::AudioSelectorSettings(JsonView jsonValue)
-  : AudioSelectorSettings()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AudioSelectorSettings& AudioSelectorSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audioHlsRenditionSelection"))
   {
     m_audioHlsRenditionSelection = jsonValue.GetObject("audioHlsRenditionSelection");
-
     m_audioHlsRenditionSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioLanguageSelection"))
   {
     m_audioLanguageSelection = jsonValue.GetObject("audioLanguageSelection");
-
     m_audioLanguageSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioPidSelection"))
   {
     m_audioPidSelection = jsonValue.GetObject("audioPidSelection");
-
     m_audioPidSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioTrackSelection"))
   {
     m_audioTrackSelection = jsonValue.GetObject("audioTrackSelection");
-
     m_audioTrackSelectionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PeeringConnectionOptions::PeeringConnectionOptions() : 
-    m_allowDnsResolutionFromRemoteVpc(false),
-    m_allowDnsResolutionFromRemoteVpcHasBeenSet(false),
-    m_allowEgressFromLocalClassicLinkToRemoteVpc(false),
-    m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet(false),
-    m_allowEgressFromLocalVpcToRemoteClassicLink(false),
-    m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet(false)
-{
-}
-
 PeeringConnectionOptions::PeeringConnectionOptions(const XmlNode& xmlNode)
-  : PeeringConnectionOptions()
 {
   *this = xmlNode;
 }
@@ -47,18 +36,21 @@ PeeringConnectionOptions& PeeringConnectionOptions::operator =(const XmlNode& xm
     {
       m_allowDnsResolutionFromRemoteVpc = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowDnsResolutionFromRemoteVpcNode.GetText()).c_str()).c_str());
       m_allowDnsResolutionFromRemoteVpcHasBeenSet = true;
+       m_allowDnsResolutionFromRemoteVpcHasBeenSet = true;
     }
     XmlNode allowEgressFromLocalClassicLinkToRemoteVpcNode = resultNode.FirstChild("allowEgressFromLocalClassicLinkToRemoteVpc");
     if(!allowEgressFromLocalClassicLinkToRemoteVpcNode.IsNull())
     {
       m_allowEgressFromLocalClassicLinkToRemoteVpc = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowEgressFromLocalClassicLinkToRemoteVpcNode.GetText()).c_str()).c_str());
       m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = true;
+       m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = true;
     }
     XmlNode allowEgressFromLocalVpcToRemoteClassicLinkNode = resultNode.FirstChild("allowEgressFromLocalVpcToRemoteClassicLink");
     if(!allowEgressFromLocalVpcToRemoteClassicLinkNode.IsNull())
     {
       m_allowEgressFromLocalVpcToRemoteClassicLink = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowEgressFromLocalVpcToRemoteClassicLinkNode.GetText()).c_str()).c_str());
       m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet = true;
+       m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet = true;
     }
   }
 

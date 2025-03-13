@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AdditionalDetail::AdditionalDetail() : 
-    m_additionalDetailTypeHasBeenSet(false),
-    m_componentHasBeenSet(false),
-    m_vpcEndpointServiceHasBeenSet(false),
-    m_ruleOptionsHasBeenSet(false),
-    m_ruleGroupTypePairsHasBeenSet(false),
-    m_ruleGroupRuleOptionsPairsHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false)
-{
-}
-
 AdditionalDetail::AdditionalDetail(const XmlNode& xmlNode)
-  : AdditionalDetail()
 {
   *this = xmlNode;
 }
@@ -49,72 +36,80 @@ AdditionalDetail& AdditionalDetail::operator =(const XmlNode& xmlNode)
     {
       m_additionalDetailType = Aws::Utils::Xml::DecodeEscapedXmlText(additionalDetailTypeNode.GetText());
       m_additionalDetailTypeHasBeenSet = true;
+       m_additionalDetailTypeHasBeenSet = true;
     }
     XmlNode componentNode = resultNode.FirstChild("component");
     if(!componentNode.IsNull())
     {
       m_component = componentNode;
       m_componentHasBeenSet = true;
+       m_componentHasBeenSet = true;
     }
     XmlNode vpcEndpointServiceNode = resultNode.FirstChild("vpcEndpointService");
     if(!vpcEndpointServiceNode.IsNull())
     {
       m_vpcEndpointService = vpcEndpointServiceNode;
       m_vpcEndpointServiceHasBeenSet = true;
+       m_vpcEndpointServiceHasBeenSet = true;
     }
     XmlNode ruleOptionsNode = resultNode.FirstChild("ruleOptionSet");
     if(!ruleOptionsNode.IsNull())
     {
       XmlNode ruleOptionsMember = ruleOptionsNode.FirstChild("item");
+      m_ruleOptionsHasBeenSet = !ruleOptionsMember.IsNull();
       while(!ruleOptionsMember.IsNull())
       {
         m_ruleOptions.push_back(ruleOptionsMember);
         ruleOptionsMember = ruleOptionsMember.NextNode("item");
       }
 
-      m_ruleOptionsHasBeenSet = true;
+       m_ruleOptionsHasBeenSet = true;
     }
     XmlNode ruleGroupTypePairsNode = resultNode.FirstChild("ruleGroupTypePairSet");
     if(!ruleGroupTypePairsNode.IsNull())
     {
       XmlNode ruleGroupTypePairsMember = ruleGroupTypePairsNode.FirstChild("item");
+      m_ruleGroupTypePairsHasBeenSet = !ruleGroupTypePairsMember.IsNull();
       while(!ruleGroupTypePairsMember.IsNull())
       {
         m_ruleGroupTypePairs.push_back(ruleGroupTypePairsMember);
         ruleGroupTypePairsMember = ruleGroupTypePairsMember.NextNode("item");
       }
 
-      m_ruleGroupTypePairsHasBeenSet = true;
+       m_ruleGroupTypePairsHasBeenSet = true;
     }
     XmlNode ruleGroupRuleOptionsPairsNode = resultNode.FirstChild("ruleGroupRuleOptionsPairSet");
     if(!ruleGroupRuleOptionsPairsNode.IsNull())
     {
       XmlNode ruleGroupRuleOptionsPairsMember = ruleGroupRuleOptionsPairsNode.FirstChild("item");
+      m_ruleGroupRuleOptionsPairsHasBeenSet = !ruleGroupRuleOptionsPairsMember.IsNull();
       while(!ruleGroupRuleOptionsPairsMember.IsNull())
       {
         m_ruleGroupRuleOptionsPairs.push_back(ruleGroupRuleOptionsPairsMember);
         ruleGroupRuleOptionsPairsMember = ruleGroupRuleOptionsPairsMember.NextNode("item");
       }
 
-      m_ruleGroupRuleOptionsPairsHasBeenSet = true;
+       m_ruleGroupRuleOptionsPairsHasBeenSet = true;
     }
     XmlNode serviceNameNode = resultNode.FirstChild("serviceName");
     if(!serviceNameNode.IsNull())
     {
       m_serviceName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNameNode.GetText());
       m_serviceNameHasBeenSet = true;
+       m_serviceNameHasBeenSet = true;
     }
     XmlNode loadBalancersNode = resultNode.FirstChild("loadBalancerSet");
     if(!loadBalancersNode.IsNull())
     {
       XmlNode loadBalancersMember = loadBalancersNode.FirstChild("item");
+      m_loadBalancersHasBeenSet = !loadBalancersMember.IsNull();
       while(!loadBalancersMember.IsNull())
       {
         m_loadBalancers.push_back(loadBalancersMember);
         loadBalancersMember = loadBalancersMember.NextNode("item");
       }
 
-      m_loadBalancersHasBeenSet = true;
+       m_loadBalancersHasBeenSet = true;
     }
   }
 

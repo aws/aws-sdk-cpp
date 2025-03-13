@@ -34,7 +34,7 @@ namespace Model
   class LifecyclePolicyPreviewResult
   {
   public:
-    AWS_ECR_API LifecyclePolicyPreviewResult();
+    AWS_ECR_API LifecyclePolicyPreviewResult() = default;
     AWS_ECR_API LifecyclePolicyPreviewResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API LifecyclePolicyPreviewResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,29 +44,26 @@ namespace Model
     /**
      * <p>The list of tags associated with this image.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetImageTags() const{ return m_imageTags; }
+    inline const Aws::Vector<Aws::String>& GetImageTags() const { return m_imageTags; }
     inline bool ImageTagsHasBeenSet() const { return m_imageTagsHasBeenSet; }
-    inline void SetImageTags(const Aws::Vector<Aws::String>& value) { m_imageTagsHasBeenSet = true; m_imageTags = value; }
-    inline void SetImageTags(Aws::Vector<Aws::String>&& value) { m_imageTagsHasBeenSet = true; m_imageTags = std::move(value); }
-    inline LifecyclePolicyPreviewResult& WithImageTags(const Aws::Vector<Aws::String>& value) { SetImageTags(value); return *this;}
-    inline LifecyclePolicyPreviewResult& WithImageTags(Aws::Vector<Aws::String>&& value) { SetImageTags(std::move(value)); return *this;}
-    inline LifecyclePolicyPreviewResult& AddImageTags(const Aws::String& value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(value); return *this; }
-    inline LifecyclePolicyPreviewResult& AddImageTags(Aws::String&& value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(std::move(value)); return *this; }
-    inline LifecyclePolicyPreviewResult& AddImageTags(const char* value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(value); return *this; }
+    template<typename ImageTagsT = Aws::Vector<Aws::String>>
+    void SetImageTags(ImageTagsT&& value) { m_imageTagsHasBeenSet = true; m_imageTags = std::forward<ImageTagsT>(value); }
+    template<typename ImageTagsT = Aws::Vector<Aws::String>>
+    LifecyclePolicyPreviewResult& WithImageTags(ImageTagsT&& value) { SetImageTags(std::forward<ImageTagsT>(value)); return *this;}
+    template<typename ImageTagsT = Aws::String>
+    LifecyclePolicyPreviewResult& AddImageTags(ImageTagsT&& value) { m_imageTagsHasBeenSet = true; m_imageTags.emplace_back(std::forward<ImageTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
      */
-    inline const Aws::String& GetImageDigest() const{ return m_imageDigest; }
+    inline const Aws::String& GetImageDigest() const { return m_imageDigest; }
     inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
-    inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
-    inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::move(value); }
-    inline void SetImageDigest(const char* value) { m_imageDigestHasBeenSet = true; m_imageDigest.assign(value); }
-    inline LifecyclePolicyPreviewResult& WithImageDigest(const Aws::String& value) { SetImageDigest(value); return *this;}
-    inline LifecyclePolicyPreviewResult& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
-    inline LifecyclePolicyPreviewResult& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
+    template<typename ImageDigestT = Aws::String>
+    void SetImageDigest(ImageDigestT&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::forward<ImageDigestT>(value); }
+    template<typename ImageDigestT = Aws::String>
+    LifecyclePolicyPreviewResult& WithImageDigest(ImageDigestT&& value) { SetImageDigest(std::forward<ImageDigestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,31 +71,31 @@ namespace Model
      * <p>The date and time, expressed in standard JavaScript date format, at which the
      * current image was pushed to the repository.</p>
      */
-    inline const Aws::Utils::DateTime& GetImagePushedAt() const{ return m_imagePushedAt; }
+    inline const Aws::Utils::DateTime& GetImagePushedAt() const { return m_imagePushedAt; }
     inline bool ImagePushedAtHasBeenSet() const { return m_imagePushedAtHasBeenSet; }
-    inline void SetImagePushedAt(const Aws::Utils::DateTime& value) { m_imagePushedAtHasBeenSet = true; m_imagePushedAt = value; }
-    inline void SetImagePushedAt(Aws::Utils::DateTime&& value) { m_imagePushedAtHasBeenSet = true; m_imagePushedAt = std::move(value); }
-    inline LifecyclePolicyPreviewResult& WithImagePushedAt(const Aws::Utils::DateTime& value) { SetImagePushedAt(value); return *this;}
-    inline LifecyclePolicyPreviewResult& WithImagePushedAt(Aws::Utils::DateTime&& value) { SetImagePushedAt(std::move(value)); return *this;}
+    template<typename ImagePushedAtT = Aws::Utils::DateTime>
+    void SetImagePushedAt(ImagePushedAtT&& value) { m_imagePushedAtHasBeenSet = true; m_imagePushedAt = std::forward<ImagePushedAtT>(value); }
+    template<typename ImagePushedAtT = Aws::Utils::DateTime>
+    LifecyclePolicyPreviewResult& WithImagePushedAt(ImagePushedAtT&& value) { SetImagePushedAt(std::forward<ImagePushedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of action to be taken.</p>
      */
-    inline const LifecyclePolicyRuleAction& GetAction() const{ return m_action; }
+    inline const LifecyclePolicyRuleAction& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const LifecyclePolicyRuleAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(LifecyclePolicyRuleAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline LifecyclePolicyPreviewResult& WithAction(const LifecyclePolicyRuleAction& value) { SetAction(value); return *this;}
-    inline LifecyclePolicyPreviewResult& WithAction(LifecyclePolicyRuleAction&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = LifecyclePolicyRuleAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = LifecyclePolicyRuleAction>
+    LifecyclePolicyPreviewResult& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The priority of the applied rule.</p>
      */
-    inline int GetAppliedRulePriority() const{ return m_appliedRulePriority; }
+    inline int GetAppliedRulePriority() const { return m_appliedRulePriority; }
     inline bool AppliedRulePriorityHasBeenSet() const { return m_appliedRulePriorityHasBeenSet; }
     inline void SetAppliedRulePriority(int value) { m_appliedRulePriorityHasBeenSet = true; m_appliedRulePriority = value; }
     inline LifecyclePolicyPreviewResult& WithAppliedRulePriority(int value) { SetAppliedRulePriority(value); return *this;}
@@ -111,13 +108,13 @@ namespace Model
     Aws::String m_imageDigest;
     bool m_imageDigestHasBeenSet = false;
 
-    Aws::Utils::DateTime m_imagePushedAt;
+    Aws::Utils::DateTime m_imagePushedAt{};
     bool m_imagePushedAtHasBeenSet = false;
 
     LifecyclePolicyRuleAction m_action;
     bool m_actionHasBeenSet = false;
 
-    int m_appliedRulePriority;
+    int m_appliedRulePriority{0};
     bool m_appliedRulePriorityHasBeenSet = false;
   };
 

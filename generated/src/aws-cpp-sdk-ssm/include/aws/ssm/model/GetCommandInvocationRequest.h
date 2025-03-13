@@ -21,7 +21,7 @@ namespace Model
   class GetCommandInvocationRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetCommandInvocationRequest();
+    AWS_SSM_API GetCommandInvocationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>(Required) The parent command ID of the invocation plugin.</p>
      */
-    inline const Aws::String& GetCommandId() const{ return m_commandId; }
+    inline const Aws::String& GetCommandId() const { return m_commandId; }
     inline bool CommandIdHasBeenSet() const { return m_commandIdHasBeenSet; }
-    inline void SetCommandId(const Aws::String& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
-    inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = std::move(value); }
-    inline void SetCommandId(const char* value) { m_commandIdHasBeenSet = true; m_commandId.assign(value); }
-    inline GetCommandInvocationRequest& WithCommandId(const Aws::String& value) { SetCommandId(value); return *this;}
-    inline GetCommandInvocationRequest& WithCommandId(Aws::String&& value) { SetCommandId(std::move(value)); return *this;}
-    inline GetCommandInvocationRequest& WithCommandId(const char* value) { SetCommandId(value); return *this;}
+    template<typename CommandIdT = Aws::String>
+    void SetCommandId(CommandIdT&& value) { m_commandIdHasBeenSet = true; m_commandId = std::forward<CommandIdT>(value); }
+    template<typename CommandIdT = Aws::String>
+    GetCommandInvocationRequest& WithCommandId(CommandIdT&& value) { SetCommandId(std::forward<CommandIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * device, and on-premises server or VM in your hybrid environment that is
      * configured for Amazon Web Services Systems Manager.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline GetCommandInvocationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline GetCommandInvocationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline GetCommandInvocationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    GetCommandInvocationRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * <code>PluginName</code> is the <code>Name</code> attribute of the
      * <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
      */
-    inline const Aws::String& GetPluginName() const{ return m_pluginName; }
+    inline const Aws::String& GetPluginName() const { return m_pluginName; }
     inline bool PluginNameHasBeenSet() const { return m_pluginNameHasBeenSet; }
-    inline void SetPluginName(const Aws::String& value) { m_pluginNameHasBeenSet = true; m_pluginName = value; }
-    inline void SetPluginName(Aws::String&& value) { m_pluginNameHasBeenSet = true; m_pluginName = std::move(value); }
-    inline void SetPluginName(const char* value) { m_pluginNameHasBeenSet = true; m_pluginName.assign(value); }
-    inline GetCommandInvocationRequest& WithPluginName(const Aws::String& value) { SetPluginName(value); return *this;}
-    inline GetCommandInvocationRequest& WithPluginName(Aws::String&& value) { SetPluginName(std::move(value)); return *this;}
-    inline GetCommandInvocationRequest& WithPluginName(const char* value) { SetPluginName(value); return *this;}
+    template<typename PluginNameT = Aws::String>
+    void SetPluginName(PluginNameT&& value) { m_pluginNameHasBeenSet = true; m_pluginName = std::forward<PluginNameT>(value); }
+    template<typename PluginNameT = Aws::String>
+    GetCommandInvocationRequest& WithPluginName(PluginNameT&& value) { SetPluginName(std::forward<PluginNameT>(value)); return *this;}
     ///@}
   private:
 

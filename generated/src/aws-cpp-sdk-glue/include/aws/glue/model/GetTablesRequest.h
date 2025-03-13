@@ -24,7 +24,7 @@ namespace Model
   class GetTablesRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API GetTablesRequest();
+    AWS_GLUE_API GetTablesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The ID of the Data Catalog where the tables reside. If none is provided, the
      * Amazon Web Services account ID is used by default.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline GetTablesRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline GetTablesRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline GetTablesRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    GetTablesRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The database in the catalog whose tables to list. For Hive compatibility,
      * this name is entirely lowercase.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline GetTablesRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline GetTablesRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline GetTablesRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    GetTablesRequest& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,35 +68,31 @@ namespace Model
      * <p>A regular expression pattern. If present, only those tables whose names match
      * the pattern are returned.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline GetTablesRequest& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline GetTablesRequest& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline GetTablesRequest& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    GetTablesRequest& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A continuation token, included if this is a continuation call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetTablesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetTablesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetTablesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetTablesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of tables to return in a single response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetTablesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -110,14 +102,12 @@ namespace Model
     /**
      * <p>The transaction ID at which to read the table contents.</p>
      */
-    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+    inline const Aws::String& GetTransactionId() const { return m_transactionId; }
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
-    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
-    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
-    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
-    inline GetTablesRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-    inline GetTablesRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-    inline GetTablesRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+    template<typename TransactionIdT = Aws::String>
+    void SetTransactionId(TransactionIdT&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::forward<TransactionIdT>(value); }
+    template<typename TransactionIdT = Aws::String>
+    GetTablesRequest& WithTransactionId(TransactionIdT&& value) { SetTransactionId(std::forward<TransactionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,12 +116,12 @@ namespace Model
      * transaction commit time will be used. Cannot be specified along with
      * <code>TransactionId</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetQueryAsOfTime() const{ return m_queryAsOfTime; }
+    inline const Aws::Utils::DateTime& GetQueryAsOfTime() const { return m_queryAsOfTime; }
     inline bool QueryAsOfTimeHasBeenSet() const { return m_queryAsOfTimeHasBeenSet; }
-    inline void SetQueryAsOfTime(const Aws::Utils::DateTime& value) { m_queryAsOfTimeHasBeenSet = true; m_queryAsOfTime = value; }
-    inline void SetQueryAsOfTime(Aws::Utils::DateTime&& value) { m_queryAsOfTimeHasBeenSet = true; m_queryAsOfTime = std::move(value); }
-    inline GetTablesRequest& WithQueryAsOfTime(const Aws::Utils::DateTime& value) { SetQueryAsOfTime(value); return *this;}
-    inline GetTablesRequest& WithQueryAsOfTime(Aws::Utils::DateTime&& value) { SetQueryAsOfTime(std::move(value)); return *this;}
+    template<typename QueryAsOfTimeT = Aws::Utils::DateTime>
+    void SetQueryAsOfTime(QueryAsOfTimeT&& value) { m_queryAsOfTimeHasBeenSet = true; m_queryAsOfTime = std::forward<QueryAsOfTimeT>(value); }
+    template<typename QueryAsOfTimeT = Aws::Utils::DateTime>
+    GetTablesRequest& WithQueryAsOfTime(QueryAsOfTimeT&& value) { SetQueryAsOfTime(std::forward<QueryAsOfTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,7 +129,7 @@ namespace Model
      * <p>Specifies whether to include status details related to a request to create or
      * update an Glue Data Catalog view.</p>
      */
-    inline bool GetIncludeStatusDetails() const{ return m_includeStatusDetails; }
+    inline bool GetIncludeStatusDetails() const { return m_includeStatusDetails; }
     inline bool IncludeStatusDetailsHasBeenSet() const { return m_includeStatusDetailsHasBeenSet; }
     inline void SetIncludeStatusDetails(bool value) { m_includeStatusDetailsHasBeenSet = true; m_includeStatusDetails = value; }
     inline GetTablesRequest& WithIncludeStatusDetails(bool value) { SetIncludeStatusDetails(value); return *this;}
@@ -154,14 +144,13 @@ namespace Model
      * database.</p> </li> <li> <p> <code>NAME</code>, <code>TABLE_TYPE</code> - Names
      * of all tables and the table types.</p> </li> </ul>
      */
-    inline const Aws::Vector<TableAttributes>& GetAttributesToGet() const{ return m_attributesToGet; }
+    inline const Aws::Vector<TableAttributes>& GetAttributesToGet() const { return m_attributesToGet; }
     inline bool AttributesToGetHasBeenSet() const { return m_attributesToGetHasBeenSet; }
-    inline void SetAttributesToGet(const Aws::Vector<TableAttributes>& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
-    inline void SetAttributesToGet(Aws::Vector<TableAttributes>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::move(value); }
-    inline GetTablesRequest& WithAttributesToGet(const Aws::Vector<TableAttributes>& value) { SetAttributesToGet(value); return *this;}
-    inline GetTablesRequest& WithAttributesToGet(Aws::Vector<TableAttributes>&& value) { SetAttributesToGet(std::move(value)); return *this;}
-    inline GetTablesRequest& AddAttributesToGet(const TableAttributes& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
-    inline GetTablesRequest& AddAttributesToGet(TableAttributes&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(std::move(value)); return *this; }
+    template<typename AttributesToGetT = Aws::Vector<TableAttributes>>
+    void SetAttributesToGet(AttributesToGetT&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::forward<AttributesToGetT>(value); }
+    template<typename AttributesToGetT = Aws::Vector<TableAttributes>>
+    GetTablesRequest& WithAttributesToGet(AttributesToGetT&& value) { SetAttributesToGet(std::forward<AttributesToGetT>(value)); return *this;}
+    inline GetTablesRequest& AddAttributesToGet(TableAttributes value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
     ///@}
   private:
 
@@ -177,16 +166,16 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_transactionId;
     bool m_transactionIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_queryAsOfTime;
+    Aws::Utils::DateTime m_queryAsOfTime{};
     bool m_queryAsOfTimeHasBeenSet = false;
 
-    bool m_includeStatusDetails;
+    bool m_includeStatusDetails{false};
     bool m_includeStatusDetailsHasBeenSet = false;
 
     Aws::Vector<TableAttributes> m_attributesToGet;

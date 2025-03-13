@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListQueuedMessagesRequest::ListQueuedMessagesRequest() : 
-    m_idHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_wirelessDeviceType(WirelessDeviceType::NOT_SET),
-    m_wirelessDeviceTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListQueuedMessagesRequest::SerializePayload() const
 {
   return {};

@@ -18,17 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-LambdaActivity::LambdaActivity() : 
-    m_nameHasBeenSet(false),
-    m_lambdaNameHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_nextHasBeenSet(false)
-{
-}
-
 LambdaActivity::LambdaActivity(JsonView jsonValue)
-  : LambdaActivity()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ LambdaActivity& LambdaActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaName"))
   {
     m_lambdaName = jsonValue.GetString("lambdaName");
-
     m_lambdaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchSize"))
   {
     m_batchSize = jsonValue.GetInteger("batchSize");
-
     m_batchSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("next"))
   {
     m_next = jsonValue.GetString("next");
-
     m_nextHasBeenSet = true;
   }
-
   return *this;
 }
 

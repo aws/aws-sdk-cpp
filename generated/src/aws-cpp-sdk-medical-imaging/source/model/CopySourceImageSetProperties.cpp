@@ -18,21 +18,7 @@ namespace MedicalImaging
 namespace Model
 {
 
-CopySourceImageSetProperties::CopySourceImageSetProperties() : 
-    m_imageSetIdHasBeenSet(false),
-    m_latestVersionIdHasBeenSet(false),
-    m_imageSetState(ImageSetState::NOT_SET),
-    m_imageSetStateHasBeenSet(false),
-    m_imageSetWorkflowStatus(ImageSetWorkflowStatus::NOT_SET),
-    m_imageSetWorkflowStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_imageSetArnHasBeenSet(false)
-{
-}
-
 CopySourceImageSetProperties::CopySourceImageSetProperties(JsonView jsonValue)
-  : CopySourceImageSetProperties()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ CopySourceImageSetProperties& CopySourceImageSetProperties::operator =(JsonView 
   if(jsonValue.ValueExists("imageSetId"))
   {
     m_imageSetId = jsonValue.GetString("imageSetId");
-
     m_imageSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestVersionId"))
   {
     m_latestVersionId = jsonValue.GetString("latestVersionId");
-
     m_latestVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSetState"))
   {
     m_imageSetState = ImageSetStateMapper::GetImageSetStateForName(jsonValue.GetString("imageSetState"));
-
     m_imageSetStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSetWorkflowStatus"))
   {
     m_imageSetWorkflowStatus = ImageSetWorkflowStatusMapper::GetImageSetWorkflowStatusForName(jsonValue.GetString("imageSetWorkflowStatus"));
-
     m_imageSetWorkflowStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSetArn"))
   {
     m_imageSetArn = jsonValue.GetString("imageSetArn");
-
     m_imageSetArnHasBeenSet = true;
   }
-
   return *this;
 }
 

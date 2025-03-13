@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GutterStyle::GutterStyle() : 
-    m_show(false),
-    m_showHasBeenSet(false)
-{
-}
-
 GutterStyle::GutterStyle(JsonView jsonValue)
-  : GutterStyle()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GutterStyle& GutterStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Show"))
   {
     m_show = jsonValue.GetBool("Show");
-
     m_showHasBeenSet = true;
   }
-
   return *this;
 }
 

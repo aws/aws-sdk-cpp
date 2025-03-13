@@ -18,23 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-ServiceNetworkSummary::ServiceNetworkSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_numberOfAssociatedResourceConfigurations(0),
-    m_numberOfAssociatedResourceConfigurationsHasBeenSet(false),
-    m_numberOfAssociatedServices(0),
-    m_numberOfAssociatedServicesHasBeenSet(false),
-    m_numberOfAssociatedVPCs(0),
-    m_numberOfAssociatedVPCsHasBeenSet(false)
-{
-}
-
 ServiceNetworkSummary::ServiceNetworkSummary(JsonView jsonValue)
-  : ServiceNetworkSummary()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ ServiceNetworkSummary& ServiceNetworkSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfAssociatedResourceConfigurations"))
   {
     m_numberOfAssociatedResourceConfigurations = jsonValue.GetInt64("numberOfAssociatedResourceConfigurations");
-
     m_numberOfAssociatedResourceConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfAssociatedServices"))
   {
     m_numberOfAssociatedServices = jsonValue.GetInt64("numberOfAssociatedServices");
-
     m_numberOfAssociatedServicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfAssociatedVPCs"))
   {
     m_numberOfAssociatedVPCs = jsonValue.GetInt64("numberOfAssociatedVPCs");
-
     m_numberOfAssociatedVPCsHasBeenSet = true;
   }
-
   return *this;
 }
 

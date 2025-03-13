@@ -30,7 +30,7 @@ namespace Model
   class NoApiRenderConfig
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API NoApiRenderConfig();
+    AWS_AMPLIFYUIBUILDER_API NoApiRenderConfig() = default;
     AWS_AMPLIFYUIBUILDER_API NoApiRenderConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API NoApiRenderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;

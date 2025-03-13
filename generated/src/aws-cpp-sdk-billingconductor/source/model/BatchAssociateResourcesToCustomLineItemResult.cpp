@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchAssociateResourcesToCustomLineItemResult::BatchAssociateResourcesToCustomLineItemResult()
-{
-}
-
 BatchAssociateResourcesToCustomLineItemResult::BatchAssociateResourcesToCustomLineItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchAssociateResourcesToCustomLineItemResult& BatchAssociateResourcesToCustomLi
     {
       m_successfullyAssociatedResources.push_back(successfullyAssociatedResourcesJsonList[successfullyAssociatedResourcesIndex].AsObject());
     }
+    m_successfullyAssociatedResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedAssociatedResources"))
   {
     Aws::Utils::Array<JsonView> failedAssociatedResourcesJsonList = jsonValue.GetArray("FailedAssociatedResources");
@@ -45,14 +41,15 @@ BatchAssociateResourcesToCustomLineItemResult& BatchAssociateResourcesToCustomLi
     {
       m_failedAssociatedResources.push_back(failedAssociatedResourcesJsonList[failedAssociatedResourcesIndex].AsObject());
     }
+    m_failedAssociatedResourcesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

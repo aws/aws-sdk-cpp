@@ -12,12 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLimitRequest::GetLimitRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_limitIdHasBeenSet(false)
-{
-}
-
 Aws::String GetLimitRequest::SerializePayload() const
 {
   return {};

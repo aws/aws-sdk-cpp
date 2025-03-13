@@ -29,7 +29,7 @@ namespace Model
   class BatchAssociateClientDeviceWithCoreDeviceResult
   {
   public:
-    AWS_GREENGRASSV2_API BatchAssociateClientDeviceWithCoreDeviceResult();
+    AWS_GREENGRASSV2_API BatchAssociateClientDeviceWithCoreDeviceResult() = default;
     AWS_GREENGRASSV2_API BatchAssociateClientDeviceWithCoreDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASSV2_API BatchAssociateClientDeviceWithCoreDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>The list of any errors for the entries in the request. Each error entry
      * contains the name of the IoT thing that failed to associate.</p>
      */
-    inline const Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>& GetErrorEntries() const{ return m_errorEntries; }
-    inline void SetErrorEntries(const Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>& value) { m_errorEntries = value; }
-    inline void SetErrorEntries(Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>&& value) { m_errorEntries = std::move(value); }
-    inline BatchAssociateClientDeviceWithCoreDeviceResult& WithErrorEntries(const Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>& value) { SetErrorEntries(value); return *this;}
-    inline BatchAssociateClientDeviceWithCoreDeviceResult& WithErrorEntries(Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>&& value) { SetErrorEntries(std::move(value)); return *this;}
-    inline BatchAssociateClientDeviceWithCoreDeviceResult& AddErrorEntries(const AssociateClientDeviceWithCoreDeviceErrorEntry& value) { m_errorEntries.push_back(value); return *this; }
-    inline BatchAssociateClientDeviceWithCoreDeviceResult& AddErrorEntries(AssociateClientDeviceWithCoreDeviceErrorEntry&& value) { m_errorEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>& GetErrorEntries() const { return m_errorEntries; }
+    template<typename ErrorEntriesT = Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>>
+    void SetErrorEntries(ErrorEntriesT&& value) { m_errorEntriesHasBeenSet = true; m_errorEntries = std::forward<ErrorEntriesT>(value); }
+    template<typename ErrorEntriesT = Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>>
+    BatchAssociateClientDeviceWithCoreDeviceResult& WithErrorEntries(ErrorEntriesT&& value) { SetErrorEntries(std::forward<ErrorEntriesT>(value)); return *this;}
+    template<typename ErrorEntriesT = AssociateClientDeviceWithCoreDeviceErrorEntry>
+    BatchAssociateClientDeviceWithCoreDeviceResult& AddErrorEntries(ErrorEntriesT&& value) { m_errorEntriesHasBeenSet = true; m_errorEntries.emplace_back(std::forward<ErrorEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchAssociateClientDeviceWithCoreDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchAssociateClientDeviceWithCoreDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchAssociateClientDeviceWithCoreDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchAssociateClientDeviceWithCoreDeviceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry> m_errorEntries;
+    bool m_errorEntriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

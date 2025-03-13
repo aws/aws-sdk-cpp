@@ -28,7 +28,7 @@ namespace Model
   class DeleteIpamResourceDiscoveryResponse
   {
   public:
-    AWS_EC2_API DeleteIpamResourceDiscoveryResponse();
+    AWS_EC2_API DeleteIpamResourceDiscoveryResponse() = default;
     AWS_EC2_API DeleteIpamResourceDiscoveryResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteIpamResourceDiscoveryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The IPAM resource discovery.</p>
      */
-    inline const IpamResourceDiscovery& GetIpamResourceDiscovery() const{ return m_ipamResourceDiscovery; }
-    inline void SetIpamResourceDiscovery(const IpamResourceDiscovery& value) { m_ipamResourceDiscovery = value; }
-    inline void SetIpamResourceDiscovery(IpamResourceDiscovery&& value) { m_ipamResourceDiscovery = std::move(value); }
-    inline DeleteIpamResourceDiscoveryResponse& WithIpamResourceDiscovery(const IpamResourceDiscovery& value) { SetIpamResourceDiscovery(value); return *this;}
-    inline DeleteIpamResourceDiscoveryResponse& WithIpamResourceDiscovery(IpamResourceDiscovery&& value) { SetIpamResourceDiscovery(std::move(value)); return *this;}
+    inline const IpamResourceDiscovery& GetIpamResourceDiscovery() const { return m_ipamResourceDiscovery; }
+    template<typename IpamResourceDiscoveryT = IpamResourceDiscovery>
+    void SetIpamResourceDiscovery(IpamResourceDiscoveryT&& value) { m_ipamResourceDiscoveryHasBeenSet = true; m_ipamResourceDiscovery = std::forward<IpamResourceDiscoveryT>(value); }
+    template<typename IpamResourceDiscoveryT = IpamResourceDiscovery>
+    DeleteIpamResourceDiscoveryResponse& WithIpamResourceDiscovery(IpamResourceDiscoveryT&& value) { SetIpamResourceDiscovery(std::forward<IpamResourceDiscoveryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteIpamResourceDiscoveryResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteIpamResourceDiscoveryResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteIpamResourceDiscoveryResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     IpamResourceDiscovery m_ipamResourceDiscovery;
+    bool m_ipamResourceDiscoveryHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

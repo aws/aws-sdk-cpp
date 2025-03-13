@@ -26,7 +26,7 @@ namespace Model
   class BatchGetMetricDataRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API BatchGetMetricDataRequest();
+    AWS_SESV2_API BatchGetMetricDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>A list of queries for metrics to be retrieved.</p>
      */
-    inline const Aws::Vector<BatchGetMetricDataQuery>& GetQueries() const{ return m_queries; }
+    inline const Aws::Vector<BatchGetMetricDataQuery>& GetQueries() const { return m_queries; }
     inline bool QueriesHasBeenSet() const { return m_queriesHasBeenSet; }
-    inline void SetQueries(const Aws::Vector<BatchGetMetricDataQuery>& value) { m_queriesHasBeenSet = true; m_queries = value; }
-    inline void SetQueries(Aws::Vector<BatchGetMetricDataQuery>&& value) { m_queriesHasBeenSet = true; m_queries = std::move(value); }
-    inline BatchGetMetricDataRequest& WithQueries(const Aws::Vector<BatchGetMetricDataQuery>& value) { SetQueries(value); return *this;}
-    inline BatchGetMetricDataRequest& WithQueries(Aws::Vector<BatchGetMetricDataQuery>&& value) { SetQueries(std::move(value)); return *this;}
-    inline BatchGetMetricDataRequest& AddQueries(const BatchGetMetricDataQuery& value) { m_queriesHasBeenSet = true; m_queries.push_back(value); return *this; }
-    inline BatchGetMetricDataRequest& AddQueries(BatchGetMetricDataQuery&& value) { m_queriesHasBeenSet = true; m_queries.push_back(std::move(value)); return *this; }
+    template<typename QueriesT = Aws::Vector<BatchGetMetricDataQuery>>
+    void SetQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries = std::forward<QueriesT>(value); }
+    template<typename QueriesT = Aws::Vector<BatchGetMetricDataQuery>>
+    BatchGetMetricDataRequest& WithQueries(QueriesT&& value) { SetQueries(std::forward<QueriesT>(value)); return *this;}
+    template<typename QueriesT = BatchGetMetricDataQuery>
+    BatchGetMetricDataRequest& AddQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries.emplace_back(std::forward<QueriesT>(value)); return *this; }
     ///@}
   private:
 

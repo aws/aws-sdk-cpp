@@ -34,7 +34,7 @@ namespace Model
   class S3Source
   {
   public:
-    AWS_QUICKSIGHT_API S3Source();
+    AWS_QUICKSIGHT_API S3Source() = default;
     AWS_QUICKSIGHT_API S3Source(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API S3Source& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the data source.</p>
      */
-    inline const Aws::String& GetDataSourceArn() const{ return m_dataSourceArn; }
+    inline const Aws::String& GetDataSourceArn() const { return m_dataSourceArn; }
     inline bool DataSourceArnHasBeenSet() const { return m_dataSourceArnHasBeenSet; }
-    inline void SetDataSourceArn(const Aws::String& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = value; }
-    inline void SetDataSourceArn(Aws::String&& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = std::move(value); }
-    inline void SetDataSourceArn(const char* value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn.assign(value); }
-    inline S3Source& WithDataSourceArn(const Aws::String& value) { SetDataSourceArn(value); return *this;}
-    inline S3Source& WithDataSourceArn(Aws::String&& value) { SetDataSourceArn(std::move(value)); return *this;}
-    inline S3Source& WithDataSourceArn(const char* value) { SetDataSourceArn(value); return *this;}
+    template<typename DataSourceArnT = Aws::String>
+    void SetDataSourceArn(DataSourceArnT&& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = std::forward<DataSourceArnT>(value); }
+    template<typename DataSourceArnT = Aws::String>
+    S3Source& WithDataSourceArn(DataSourceArnT&& value) { SetDataSourceArn(std::forward<DataSourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the format for the S3 source file or files.</p>
      */
-    inline const UploadSettings& GetUploadSettings() const{ return m_uploadSettings; }
+    inline const UploadSettings& GetUploadSettings() const { return m_uploadSettings; }
     inline bool UploadSettingsHasBeenSet() const { return m_uploadSettingsHasBeenSet; }
-    inline void SetUploadSettings(const UploadSettings& value) { m_uploadSettingsHasBeenSet = true; m_uploadSettings = value; }
-    inline void SetUploadSettings(UploadSettings&& value) { m_uploadSettingsHasBeenSet = true; m_uploadSettings = std::move(value); }
-    inline S3Source& WithUploadSettings(const UploadSettings& value) { SetUploadSettings(value); return *this;}
-    inline S3Source& WithUploadSettings(UploadSettings&& value) { SetUploadSettings(std::move(value)); return *this;}
+    template<typename UploadSettingsT = UploadSettings>
+    void SetUploadSettings(UploadSettingsT&& value) { m_uploadSettingsHasBeenSet = true; m_uploadSettings = std::forward<UploadSettingsT>(value); }
+    template<typename UploadSettingsT = UploadSettings>
+    S3Source& WithUploadSettings(UploadSettingsT&& value) { SetUploadSettings(std::forward<UploadSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,14 @@ namespace Model
      * aren't JSON, only <code>STRING</code> data types are supported in input
      * columns.</p> 
      */
-    inline const Aws::Vector<InputColumn>& GetInputColumns() const{ return m_inputColumns; }
+    inline const Aws::Vector<InputColumn>& GetInputColumns() const { return m_inputColumns; }
     inline bool InputColumnsHasBeenSet() const { return m_inputColumnsHasBeenSet; }
-    inline void SetInputColumns(const Aws::Vector<InputColumn>& value) { m_inputColumnsHasBeenSet = true; m_inputColumns = value; }
-    inline void SetInputColumns(Aws::Vector<InputColumn>&& value) { m_inputColumnsHasBeenSet = true; m_inputColumns = std::move(value); }
-    inline S3Source& WithInputColumns(const Aws::Vector<InputColumn>& value) { SetInputColumns(value); return *this;}
-    inline S3Source& WithInputColumns(Aws::Vector<InputColumn>&& value) { SetInputColumns(std::move(value)); return *this;}
-    inline S3Source& AddInputColumns(const InputColumn& value) { m_inputColumnsHasBeenSet = true; m_inputColumns.push_back(value); return *this; }
-    inline S3Source& AddInputColumns(InputColumn&& value) { m_inputColumnsHasBeenSet = true; m_inputColumns.push_back(std::move(value)); return *this; }
+    template<typename InputColumnsT = Aws::Vector<InputColumn>>
+    void SetInputColumns(InputColumnsT&& value) { m_inputColumnsHasBeenSet = true; m_inputColumns = std::forward<InputColumnsT>(value); }
+    template<typename InputColumnsT = Aws::Vector<InputColumn>>
+    S3Source& WithInputColumns(InputColumnsT&& value) { SetInputColumns(std::forward<InputColumnsT>(value)); return *this;}
+    template<typename InputColumnsT = InputColumn>
+    S3Source& AddInputColumns(InputColumnsT&& value) { m_inputColumnsHasBeenSet = true; m_inputColumns.emplace_back(std::forward<InputColumnsT>(value)); return *this; }
     ///@}
   private:
 

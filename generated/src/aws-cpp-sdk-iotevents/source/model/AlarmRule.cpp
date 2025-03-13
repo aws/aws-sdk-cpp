@@ -18,13 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-AlarmRule::AlarmRule() : 
-    m_simpleRuleHasBeenSet(false)
-{
-}
-
 AlarmRule::AlarmRule(JsonView jsonValue)
-  : AlarmRule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AlarmRule& AlarmRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("simpleRule"))
   {
     m_simpleRule = jsonValue.GetObject("simpleRule");
-
     m_simpleRuleHasBeenSet = true;
   }
-
   return *this;
 }
 

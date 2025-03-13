@@ -20,44 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-Stack::Stack() : 
-    m_stackIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_changeSetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_deletionTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_rollbackConfigurationHasBeenSet(false),
-    m_stackStatus(StackStatus::NOT_SET),
-    m_stackStatusHasBeenSet(false),
-    m_stackStatusReasonHasBeenSet(false),
-    m_disableRollback(false),
-    m_disableRollbackHasBeenSet(false),
-    m_notificationARNsHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_enableTerminationProtection(false),
-    m_enableTerminationProtectionHasBeenSet(false),
-    m_parentIdHasBeenSet(false),
-    m_rootIdHasBeenSet(false),
-    m_driftInformationHasBeenSet(false),
-    m_retainExceptOnCreate(false),
-    m_retainExceptOnCreateHasBeenSet(false),
-    m_deletionMode(DeletionMode::NOT_SET),
-    m_deletionModeHasBeenSet(false),
-    m_detailedStatus(DetailedStatus::NOT_SET),
-    m_detailedStatusHasBeenSet(false)
-{
-}
-
 Stack::Stack(const XmlNode& xmlNode)
-  : Stack()
 {
   *this = xmlNode;
 }
@@ -73,180 +36,205 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     {
       m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
       m_stackIdHasBeenSet = true;
+       m_stackIdHasBeenSet = true;
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
     if(!stackNameNode.IsNull())
     {
       m_stackName = Aws::Utils::Xml::DecodeEscapedXmlText(stackNameNode.GetText());
       m_stackNameHasBeenSet = true;
+       m_stackNameHasBeenSet = true;
     }
     XmlNode changeSetIdNode = resultNode.FirstChild("ChangeSetId");
     if(!changeSetIdNode.IsNull())
     {
       m_changeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(changeSetIdNode.GetText());
       m_changeSetIdHasBeenSet = true;
+       m_changeSetIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("member");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);
         parametersMember = parametersMember.NextNode("member");
       }
 
-      m_parametersHasBeenSet = true;
+       m_parametersHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode deletionTimeNode = resultNode.FirstChild("DeletionTime");
     if(!deletionTimeNode.IsNull())
     {
       m_deletionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_deletionTimeHasBeenSet = true;
+       m_deletionTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("LastUpdatedTime");
     if(!lastUpdatedTimeNode.IsNull())
     {
       m_lastUpdatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUpdatedTimeHasBeenSet = true;
+       m_lastUpdatedTimeHasBeenSet = true;
     }
     XmlNode rollbackConfigurationNode = resultNode.FirstChild("RollbackConfiguration");
     if(!rollbackConfigurationNode.IsNull())
     {
       m_rollbackConfiguration = rollbackConfigurationNode;
       m_rollbackConfigurationHasBeenSet = true;
+       m_rollbackConfigurationHasBeenSet = true;
     }
     XmlNode stackStatusNode = resultNode.FirstChild("StackStatus");
     if(!stackStatusNode.IsNull())
     {
-      m_stackStatus = StackStatusMapper::GetStackStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackStatusNode.GetText()).c_str()).c_str());
+      m_stackStatus = StackStatusMapper::GetStackStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackStatusNode.GetText()).c_str()));
       m_stackStatusHasBeenSet = true;
+       m_stackStatusHasBeenSet = true;
     }
     XmlNode stackStatusReasonNode = resultNode.FirstChild("StackStatusReason");
     if(!stackStatusReasonNode.IsNull())
     {
       m_stackStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(stackStatusReasonNode.GetText());
       m_stackStatusReasonHasBeenSet = true;
+       m_stackStatusReasonHasBeenSet = true;
     }
     XmlNode disableRollbackNode = resultNode.FirstChild("DisableRollback");
     if(!disableRollbackNode.IsNull())
     {
       m_disableRollback = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disableRollbackNode.GetText()).c_str()).c_str());
       m_disableRollbackHasBeenSet = true;
+       m_disableRollbackHasBeenSet = true;
     }
     XmlNode notificationARNsNode = resultNode.FirstChild("NotificationARNs");
     if(!notificationARNsNode.IsNull())
     {
       XmlNode notificationARNsMember = notificationARNsNode.FirstChild("member");
+      m_notificationARNsHasBeenSet = !notificationARNsMember.IsNull();
       while(!notificationARNsMember.IsNull())
       {
         m_notificationARNs.push_back(notificationARNsMember.GetText());
         notificationARNsMember = notificationARNsMember.NextNode("member");
       }
 
-      m_notificationARNsHasBeenSet = true;
+       m_notificationARNsHasBeenSet = true;
     }
     XmlNode timeoutInMinutesNode = resultNode.FirstChild("TimeoutInMinutes");
     if(!timeoutInMinutesNode.IsNull())
     {
       m_timeoutInMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeoutInMinutesNode.GetText()).c_str()).c_str());
       m_timeoutInMinutesHasBeenSet = true;
+       m_timeoutInMinutesHasBeenSet = true;
     }
     XmlNode capabilitiesNode = resultNode.FirstChild("Capabilities");
     if(!capabilitiesNode.IsNull())
     {
       XmlNode capabilitiesMember = capabilitiesNode.FirstChild("member");
+      m_capabilitiesHasBeenSet = !capabilitiesMember.IsNull();
       while(!capabilitiesMember.IsNull())
       {
         m_capabilities.push_back(CapabilityMapper::GetCapabilityForName(StringUtils::Trim(capabilitiesMember.GetText().c_str())));
         capabilitiesMember = capabilitiesMember.NextNode("member");
       }
 
-      m_capabilitiesHasBeenSet = true;
+       m_capabilitiesHasBeenSet = true;
     }
     XmlNode outputsNode = resultNode.FirstChild("Outputs");
     if(!outputsNode.IsNull())
     {
       XmlNode outputsMember = outputsNode.FirstChild("member");
+      m_outputsHasBeenSet = !outputsMember.IsNull();
       while(!outputsMember.IsNull())
       {
         m_outputs.push_back(outputsMember);
         outputsMember = outputsMember.NextNode("member");
       }
 
-      m_outputsHasBeenSet = true;
+       m_outputsHasBeenSet = true;
     }
     XmlNode roleARNNode = resultNode.FirstChild("RoleARN");
     if(!roleARNNode.IsNull())
     {
       m_roleARN = Aws::Utils::Xml::DecodeEscapedXmlText(roleARNNode.GetText());
       m_roleARNHasBeenSet = true;
+       m_roleARNHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode enableTerminationProtectionNode = resultNode.FirstChild("EnableTerminationProtection");
     if(!enableTerminationProtectionNode.IsNull())
     {
       m_enableTerminationProtection = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableTerminationProtectionNode.GetText()).c_str()).c_str());
       m_enableTerminationProtectionHasBeenSet = true;
+       m_enableTerminationProtectionHasBeenSet = true;
     }
     XmlNode parentIdNode = resultNode.FirstChild("ParentId");
     if(!parentIdNode.IsNull())
     {
       m_parentId = Aws::Utils::Xml::DecodeEscapedXmlText(parentIdNode.GetText());
       m_parentIdHasBeenSet = true;
+       m_parentIdHasBeenSet = true;
     }
     XmlNode rootIdNode = resultNode.FirstChild("RootId");
     if(!rootIdNode.IsNull())
     {
       m_rootId = Aws::Utils::Xml::DecodeEscapedXmlText(rootIdNode.GetText());
       m_rootIdHasBeenSet = true;
+       m_rootIdHasBeenSet = true;
     }
     XmlNode driftInformationNode = resultNode.FirstChild("DriftInformation");
     if(!driftInformationNode.IsNull())
     {
       m_driftInformation = driftInformationNode;
       m_driftInformationHasBeenSet = true;
+       m_driftInformationHasBeenSet = true;
     }
     XmlNode retainExceptOnCreateNode = resultNode.FirstChild("RetainExceptOnCreate");
     if(!retainExceptOnCreateNode.IsNull())
     {
       m_retainExceptOnCreate = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(retainExceptOnCreateNode.GetText()).c_str()).c_str());
       m_retainExceptOnCreateHasBeenSet = true;
+       m_retainExceptOnCreateHasBeenSet = true;
     }
     XmlNode deletionModeNode = resultNode.FirstChild("DeletionMode");
     if(!deletionModeNode.IsNull())
     {
-      m_deletionMode = DeletionModeMapper::GetDeletionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionModeNode.GetText()).c_str()).c_str());
+      m_deletionMode = DeletionModeMapper::GetDeletionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionModeNode.GetText()).c_str()));
       m_deletionModeHasBeenSet = true;
+       m_deletionModeHasBeenSet = true;
     }
     XmlNode detailedStatusNode = resultNode.FirstChild("DetailedStatus");
     if(!detailedStatusNode.IsNull())
     {
-      m_detailedStatus = DetailedStatusMapper::GetDetailedStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(detailedStatusNode.GetText()).c_str()).c_str());
+      m_detailedStatus = DetailedStatusMapper::GetDetailedStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(detailedStatusNode.GetText()).c_str()));
       m_detailedStatusHasBeenSet = true;
+       m_detailedStatusHasBeenSet = true;
     }
   }
 

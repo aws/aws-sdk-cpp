@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutProtocolsListResult::PutProtocolsListResult()
-{
-}
-
 PutProtocolsListResult::PutProtocolsListResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ PutProtocolsListResult& PutProtocolsListResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ProtocolsList"))
   {
     m_protocolsList = jsonValue.GetObject("ProtocolsList");
-
+    m_protocolsListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtocolsListArn"))
   {
     m_protocolsListArn = jsonValue.GetString("ProtocolsListArn");
-
+    m_protocolsListArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

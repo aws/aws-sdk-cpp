@@ -29,7 +29,7 @@ namespace Model
   class ListUsersResult
   {
   public:
-    AWS_TRANSFER_API ListUsersResult();
+    AWS_TRANSFER_API ListUsersResult() = default;
     AWS_TRANSFER_API ListUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API ListUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,11 @@ namespace Model
      * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListUsersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListUsersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListUsersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListUsersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,13 +53,11 @@ namespace Model
      * <p>A system-assigned unique identifier for a server that the users are assigned
      * to.</p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
-    inline void SetServerId(const Aws::String& value) { m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverId.assign(value); }
-    inline ListUsersResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline ListUsersResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline ListUsersResult& WithServerId(const char* value) { SetServerId(value); return *this;}
+    inline const Aws::String& GetServerId() const { return m_serverId; }
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    ListUsersResult& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,34 +65,36 @@ namespace Model
      * <p>Returns the Transfer Family users and their properties for the
      * <code>ServerId</code> value that you specify.</p>
      */
-    inline const Aws::Vector<ListedUser>& GetUsers() const{ return m_users; }
-    inline void SetUsers(const Aws::Vector<ListedUser>& value) { m_users = value; }
-    inline void SetUsers(Aws::Vector<ListedUser>&& value) { m_users = std::move(value); }
-    inline ListUsersResult& WithUsers(const Aws::Vector<ListedUser>& value) { SetUsers(value); return *this;}
-    inline ListUsersResult& WithUsers(Aws::Vector<ListedUser>&& value) { SetUsers(std::move(value)); return *this;}
-    inline ListUsersResult& AddUsers(const ListedUser& value) { m_users.push_back(value); return *this; }
-    inline ListUsersResult& AddUsers(ListedUser&& value) { m_users.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListedUser>& GetUsers() const { return m_users; }
+    template<typename UsersT = Aws::Vector<ListedUser>>
+    void SetUsers(UsersT&& value) { m_usersHasBeenSet = true; m_users = std::forward<UsersT>(value); }
+    template<typename UsersT = Aws::Vector<ListedUser>>
+    ListUsersResult& WithUsers(UsersT&& value) { SetUsers(std::forward<UsersT>(value)); return *this;}
+    template<typename UsersT = ListedUser>
+    ListUsersResult& AddUsers(UsersT&& value) { m_usersHasBeenSet = true; m_users.emplace_back(std::forward<UsersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListUsersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListUsersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListUsersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListUsersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_serverId;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::Vector<ListedUser> m_users;
+    bool m_usersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

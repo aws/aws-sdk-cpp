@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-Dimension::Dimension() : 
-    m_name(DimensionName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Dimension::Dimension(JsonView jsonValue)
-  : Dimension()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Dimension& Dimension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = DimensionNameMapper::GetDimensionNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

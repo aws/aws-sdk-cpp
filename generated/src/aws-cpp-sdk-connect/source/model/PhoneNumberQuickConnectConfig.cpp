@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-PhoneNumberQuickConnectConfig::PhoneNumberQuickConnectConfig() : 
-    m_phoneNumberHasBeenSet(false)
-{
-}
-
 PhoneNumberQuickConnectConfig::PhoneNumberQuickConnectConfig(JsonView jsonValue)
-  : PhoneNumberQuickConnectConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PhoneNumberQuickConnectConfig& PhoneNumberQuickConnectConfig::operator =(JsonVie
   if(jsonValue.ValueExists("PhoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

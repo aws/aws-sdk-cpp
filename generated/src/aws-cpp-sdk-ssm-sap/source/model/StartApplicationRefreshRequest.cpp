@@ -12,11 +12,6 @@ using namespace Aws::SsmSap::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartApplicationRefreshRequest::StartApplicationRefreshRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String StartApplicationRefreshRequest::SerializePayload() const
 {
   JsonValue payload;

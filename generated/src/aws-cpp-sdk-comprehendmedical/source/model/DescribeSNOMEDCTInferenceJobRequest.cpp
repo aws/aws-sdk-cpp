@@ -12,11 +12,6 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSNOMEDCTInferenceJobRequest::DescribeSNOMEDCTInferenceJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSNOMEDCTInferenceJobRequest::SerializePayload() const
 {
   JsonValue payload;

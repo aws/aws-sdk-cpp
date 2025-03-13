@@ -29,7 +29,7 @@ namespace Model
   class ListBucketIntelligentTieringConfigurationsResult
   {
   public:
-    AWS_S3_API ListBucketIntelligentTieringConfigurationsResult();
+    AWS_S3_API ListBucketIntelligentTieringConfigurationsResult() = default;
     AWS_S3_API ListBucketIntelligentTieringConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3_API ListBucketIntelligentTieringConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -41,8 +41,8 @@ namespace Model
      * <code>NextContinuationToken</code> will be provided for a subsequent
      * request.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline ListBucketIntelligentTieringConfigurationsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
     ///@}
 
@@ -51,13 +51,11 @@ namespace Model
      * <p>The <code>ContinuationToken</code> that represents a placeholder from where
      * this request should begin.</p>
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
-    inline ListBucketIntelligentTieringConfigurationsResult& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline ListBucketIntelligentTieringConfigurationsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline ListBucketIntelligentTieringConfigurationsResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    ListBucketIntelligentTieringConfigurationsResult& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,49 +65,50 @@ namespace Model
      * a subsequent request. The continuation token is an opaque value that Amazon S3
      * understands.</p>
      */
-    inline const Aws::String& GetNextContinuationToken() const{ return m_nextContinuationToken; }
-    inline void SetNextContinuationToken(const Aws::String& value) { m_nextContinuationToken = value; }
-    inline void SetNextContinuationToken(Aws::String&& value) { m_nextContinuationToken = std::move(value); }
-    inline void SetNextContinuationToken(const char* value) { m_nextContinuationToken.assign(value); }
-    inline ListBucketIntelligentTieringConfigurationsResult& WithNextContinuationToken(const Aws::String& value) { SetNextContinuationToken(value); return *this;}
-    inline ListBucketIntelligentTieringConfigurationsResult& WithNextContinuationToken(Aws::String&& value) { SetNextContinuationToken(std::move(value)); return *this;}
-    inline ListBucketIntelligentTieringConfigurationsResult& WithNextContinuationToken(const char* value) { SetNextContinuationToken(value); return *this;}
+    inline const Aws::String& GetNextContinuationToken() const { return m_nextContinuationToken; }
+    template<typename NextContinuationTokenT = Aws::String>
+    void SetNextContinuationToken(NextContinuationTokenT&& value) { m_nextContinuationTokenHasBeenSet = true; m_nextContinuationToken = std::forward<NextContinuationTokenT>(value); }
+    template<typename NextContinuationTokenT = Aws::String>
+    ListBucketIntelligentTieringConfigurationsResult& WithNextContinuationToken(NextContinuationTokenT&& value) { SetNextContinuationToken(std::forward<NextContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of S3 Intelligent-Tiering configurations for a bucket.</p>
      */
-    inline const Aws::Vector<IntelligentTieringConfiguration>& GetIntelligentTieringConfigurationList() const{ return m_intelligentTieringConfigurationList; }
-    inline void SetIntelligentTieringConfigurationList(const Aws::Vector<IntelligentTieringConfiguration>& value) { m_intelligentTieringConfigurationList = value; }
-    inline void SetIntelligentTieringConfigurationList(Aws::Vector<IntelligentTieringConfiguration>&& value) { m_intelligentTieringConfigurationList = std::move(value); }
-    inline ListBucketIntelligentTieringConfigurationsResult& WithIntelligentTieringConfigurationList(const Aws::Vector<IntelligentTieringConfiguration>& value) { SetIntelligentTieringConfigurationList(value); return *this;}
-    inline ListBucketIntelligentTieringConfigurationsResult& WithIntelligentTieringConfigurationList(Aws::Vector<IntelligentTieringConfiguration>&& value) { SetIntelligentTieringConfigurationList(std::move(value)); return *this;}
-    inline ListBucketIntelligentTieringConfigurationsResult& AddIntelligentTieringConfigurationList(const IntelligentTieringConfiguration& value) { m_intelligentTieringConfigurationList.push_back(value); return *this; }
-    inline ListBucketIntelligentTieringConfigurationsResult& AddIntelligentTieringConfigurationList(IntelligentTieringConfiguration&& value) { m_intelligentTieringConfigurationList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IntelligentTieringConfiguration>& GetIntelligentTieringConfigurationList() const { return m_intelligentTieringConfigurationList; }
+    template<typename IntelligentTieringConfigurationListT = Aws::Vector<IntelligentTieringConfiguration>>
+    void SetIntelligentTieringConfigurationList(IntelligentTieringConfigurationListT&& value) { m_intelligentTieringConfigurationListHasBeenSet = true; m_intelligentTieringConfigurationList = std::forward<IntelligentTieringConfigurationListT>(value); }
+    template<typename IntelligentTieringConfigurationListT = Aws::Vector<IntelligentTieringConfiguration>>
+    ListBucketIntelligentTieringConfigurationsResult& WithIntelligentTieringConfigurationList(IntelligentTieringConfigurationListT&& value) { SetIntelligentTieringConfigurationList(std::forward<IntelligentTieringConfigurationListT>(value)); return *this;}
+    template<typename IntelligentTieringConfigurationListT = IntelligentTieringConfiguration>
+    ListBucketIntelligentTieringConfigurationsResult& AddIntelligentTieringConfigurationList(IntelligentTieringConfigurationListT&& value) { m_intelligentTieringConfigurationListHasBeenSet = true; m_intelligentTieringConfigurationList.emplace_back(std::forward<IntelligentTieringConfigurationListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBucketIntelligentTieringConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBucketIntelligentTieringConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBucketIntelligentTieringConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBucketIntelligentTieringConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::String m_continuationToken;
+    bool m_continuationTokenHasBeenSet = false;
 
     Aws::String m_nextContinuationToken;
+    bool m_nextContinuationTokenHasBeenSet = false;
 
     Aws::Vector<IntelligentTieringConfiguration> m_intelligentTieringConfigurationList;
+    bool m_intelligentTieringConfigurationListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

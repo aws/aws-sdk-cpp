@@ -12,10 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataLakePrincipalRequest::GetDataLakePrincipalRequest()
-{
-}
-
 Aws::String GetDataLakePrincipalRequest::SerializePayload() const
 {
   return {};

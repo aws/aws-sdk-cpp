@@ -21,7 +21,7 @@ namespace Model
   class UpdateGroupRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API UpdateGroupRequest();
+    AWS_IAM_API UpdateGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline UpdateGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline UpdateGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline UpdateGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    UpdateGroupRequest& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
      * and lowercased letters.</p>
      */
-    inline const Aws::String& GetNewPath() const{ return m_newPath; }
+    inline const Aws::String& GetNewPath() const { return m_newPath; }
     inline bool NewPathHasBeenSet() const { return m_newPathHasBeenSet; }
-    inline void SetNewPath(const Aws::String& value) { m_newPathHasBeenSet = true; m_newPath = value; }
-    inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = std::move(value); }
-    inline void SetNewPath(const char* value) { m_newPathHasBeenSet = true; m_newPath.assign(value); }
-    inline UpdateGroupRequest& WithNewPath(const Aws::String& value) { SetNewPath(value); return *this;}
-    inline UpdateGroupRequest& WithNewPath(Aws::String&& value) { SetNewPath(std::move(value)); return *this;}
-    inline UpdateGroupRequest& WithNewPath(const char* value) { SetNewPath(value); return *this;}
+    template<typename NewPathT = Aws::String>
+    void SetNewPath(NewPathT&& value) { m_newPathHasBeenSet = true; m_newPath = std::forward<NewPathT>(value); }
+    template<typename NewPathT = Aws::String>
+    UpdateGroupRequest& WithNewPath(NewPathT&& value) { SetNewPath(std::forward<NewPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * account. Names are not distinguished by case. For example, you cannot create
      * resources named both "MyResource" and "myresource".</p>
      */
-    inline const Aws::String& GetNewGroupName() const{ return m_newGroupName; }
+    inline const Aws::String& GetNewGroupName() const { return m_newGroupName; }
     inline bool NewGroupNameHasBeenSet() const { return m_newGroupNameHasBeenSet; }
-    inline void SetNewGroupName(const Aws::String& value) { m_newGroupNameHasBeenSet = true; m_newGroupName = value; }
-    inline void SetNewGroupName(Aws::String&& value) { m_newGroupNameHasBeenSet = true; m_newGroupName = std::move(value); }
-    inline void SetNewGroupName(const char* value) { m_newGroupNameHasBeenSet = true; m_newGroupName.assign(value); }
-    inline UpdateGroupRequest& WithNewGroupName(const Aws::String& value) { SetNewGroupName(value); return *this;}
-    inline UpdateGroupRequest& WithNewGroupName(Aws::String&& value) { SetNewGroupName(std::move(value)); return *this;}
-    inline UpdateGroupRequest& WithNewGroupName(const char* value) { SetNewGroupName(value); return *this;}
+    template<typename NewGroupNameT = Aws::String>
+    void SetNewGroupName(NewGroupNameT&& value) { m_newGroupNameHasBeenSet = true; m_newGroupName = std::forward<NewGroupNameT>(value); }
+    template<typename NewGroupNameT = Aws::String>
+    UpdateGroupRequest& WithNewGroupName(NewGroupNameT&& value) { SetNewGroupName(std::forward<NewGroupNameT>(value)); return *this;}
     ///@}
   private:
 

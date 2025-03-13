@@ -12,19 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchProvisionedProductsRequest::SearchProvisionedProductsRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_accessLevelFilterHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String SearchProvisionedProductsRequest::SerializePayload() const
 {
   JsonValue payload;

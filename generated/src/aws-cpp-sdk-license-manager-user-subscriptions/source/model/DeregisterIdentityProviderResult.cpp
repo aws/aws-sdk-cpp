@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeregisterIdentityProviderResult::DeregisterIdentityProviderResult()
-{
-}
-
 DeregisterIdentityProviderResult::DeregisterIdentityProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeregisterIdentityProviderResult& DeregisterIdentityProviderResult::operator =(c
   if(jsonValue.ValueExists("IdentityProviderSummary"))
   {
     m_identityProviderSummary = jsonValue.GetObject("IdentityProviderSummary");
-
+    m_identityProviderSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

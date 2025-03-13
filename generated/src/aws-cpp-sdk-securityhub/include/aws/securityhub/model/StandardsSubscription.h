@@ -36,7 +36,7 @@ namespace Model
   class StandardsSubscription
   {
   public:
-    AWS_SECURITYHUB_API StandardsSubscription();
+    AWS_SECURITYHUB_API StandardsSubscription() = default;
     AWS_SECURITYHUB_API StandardsSubscription(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API StandardsSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,47 +47,40 @@ namespace Model
      * <p>The ARN of a resource that represents your subscription to a supported
      * standard.</p>
      */
-    inline const Aws::String& GetStandardsSubscriptionArn() const{ return m_standardsSubscriptionArn; }
+    inline const Aws::String& GetStandardsSubscriptionArn() const { return m_standardsSubscriptionArn; }
     inline bool StandardsSubscriptionArnHasBeenSet() const { return m_standardsSubscriptionArnHasBeenSet; }
-    inline void SetStandardsSubscriptionArn(const Aws::String& value) { m_standardsSubscriptionArnHasBeenSet = true; m_standardsSubscriptionArn = value; }
-    inline void SetStandardsSubscriptionArn(Aws::String&& value) { m_standardsSubscriptionArnHasBeenSet = true; m_standardsSubscriptionArn = std::move(value); }
-    inline void SetStandardsSubscriptionArn(const char* value) { m_standardsSubscriptionArnHasBeenSet = true; m_standardsSubscriptionArn.assign(value); }
-    inline StandardsSubscription& WithStandardsSubscriptionArn(const Aws::String& value) { SetStandardsSubscriptionArn(value); return *this;}
-    inline StandardsSubscription& WithStandardsSubscriptionArn(Aws::String&& value) { SetStandardsSubscriptionArn(std::move(value)); return *this;}
-    inline StandardsSubscription& WithStandardsSubscriptionArn(const char* value) { SetStandardsSubscriptionArn(value); return *this;}
+    template<typename StandardsSubscriptionArnT = Aws::String>
+    void SetStandardsSubscriptionArn(StandardsSubscriptionArnT&& value) { m_standardsSubscriptionArnHasBeenSet = true; m_standardsSubscriptionArn = std::forward<StandardsSubscriptionArnT>(value); }
+    template<typename StandardsSubscriptionArnT = Aws::String>
+    StandardsSubscription& WithStandardsSubscriptionArn(StandardsSubscriptionArnT&& value) { SetStandardsSubscriptionArn(std::forward<StandardsSubscriptionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of a standard.</p>
      */
-    inline const Aws::String& GetStandardsArn() const{ return m_standardsArn; }
+    inline const Aws::String& GetStandardsArn() const { return m_standardsArn; }
     inline bool StandardsArnHasBeenSet() const { return m_standardsArnHasBeenSet; }
-    inline void SetStandardsArn(const Aws::String& value) { m_standardsArnHasBeenSet = true; m_standardsArn = value; }
-    inline void SetStandardsArn(Aws::String&& value) { m_standardsArnHasBeenSet = true; m_standardsArn = std::move(value); }
-    inline void SetStandardsArn(const char* value) { m_standardsArnHasBeenSet = true; m_standardsArn.assign(value); }
-    inline StandardsSubscription& WithStandardsArn(const Aws::String& value) { SetStandardsArn(value); return *this;}
-    inline StandardsSubscription& WithStandardsArn(Aws::String&& value) { SetStandardsArn(std::move(value)); return *this;}
-    inline StandardsSubscription& WithStandardsArn(const char* value) { SetStandardsArn(value); return *this;}
+    template<typename StandardsArnT = Aws::String>
+    void SetStandardsArn(StandardsArnT&& value) { m_standardsArnHasBeenSet = true; m_standardsArn = std::forward<StandardsArnT>(value); }
+    template<typename StandardsArnT = Aws::String>
+    StandardsSubscription& WithStandardsArn(StandardsArnT&& value) { SetStandardsArn(std::forward<StandardsArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A key-value pair of input for the standard.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetStandardsInput() const{ return m_standardsInput; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetStandardsInput() const { return m_standardsInput; }
     inline bool StandardsInputHasBeenSet() const { return m_standardsInputHasBeenSet; }
-    inline void SetStandardsInput(const Aws::Map<Aws::String, Aws::String>& value) { m_standardsInputHasBeenSet = true; m_standardsInput = value; }
-    inline void SetStandardsInput(Aws::Map<Aws::String, Aws::String>&& value) { m_standardsInputHasBeenSet = true; m_standardsInput = std::move(value); }
-    inline StandardsSubscription& WithStandardsInput(const Aws::Map<Aws::String, Aws::String>& value) { SetStandardsInput(value); return *this;}
-    inline StandardsSubscription& WithStandardsInput(Aws::Map<Aws::String, Aws::String>&& value) { SetStandardsInput(std::move(value)); return *this;}
-    inline StandardsSubscription& AddStandardsInput(const Aws::String& key, const Aws::String& value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(key, value); return *this; }
-    inline StandardsSubscription& AddStandardsInput(Aws::String&& key, const Aws::String& value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(std::move(key), value); return *this; }
-    inline StandardsSubscription& AddStandardsInput(const Aws::String& key, Aws::String&& value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(key, std::move(value)); return *this; }
-    inline StandardsSubscription& AddStandardsInput(Aws::String&& key, Aws::String&& value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(std::move(key), std::move(value)); return *this; }
-    inline StandardsSubscription& AddStandardsInput(const char* key, Aws::String&& value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(key, std::move(value)); return *this; }
-    inline StandardsSubscription& AddStandardsInput(Aws::String&& key, const char* value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(std::move(key), value); return *this; }
-    inline StandardsSubscription& AddStandardsInput(const char* key, const char* value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(key, value); return *this; }
+    template<typename StandardsInputT = Aws::Map<Aws::String, Aws::String>>
+    void SetStandardsInput(StandardsInputT&& value) { m_standardsInputHasBeenSet = true; m_standardsInput = std::forward<StandardsInputT>(value); }
+    template<typename StandardsInputT = Aws::Map<Aws::String, Aws::String>>
+    StandardsSubscription& WithStandardsInput(StandardsInputT&& value) { SetStandardsInput(std::forward<StandardsInputT>(value)); return *this;}
+    template<typename StandardsInputKeyT = Aws::String, typename StandardsInputValueT = Aws::String>
+    StandardsSubscription& AddStandardsInput(StandardsInputKeyT&& key, StandardsInputValueT&& value) {
+      m_standardsInputHasBeenSet = true; m_standardsInput.emplace(std::forward<StandardsInputKeyT>(key), std::forward<StandardsInputValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -100,12 +93,10 @@ namespace Model
      * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
      * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
-    inline const StandardsStatus& GetStandardsStatus() const{ return m_standardsStatus; }
+    inline StandardsStatus GetStandardsStatus() const { return m_standardsStatus; }
     inline bool StandardsStatusHasBeenSet() const { return m_standardsStatusHasBeenSet; }
-    inline void SetStandardsStatus(const StandardsStatus& value) { m_standardsStatusHasBeenSet = true; m_standardsStatus = value; }
-    inline void SetStandardsStatus(StandardsStatus&& value) { m_standardsStatusHasBeenSet = true; m_standardsStatus = std::move(value); }
-    inline StandardsSubscription& WithStandardsStatus(const StandardsStatus& value) { SetStandardsStatus(value); return *this;}
-    inline StandardsSubscription& WithStandardsStatus(StandardsStatus&& value) { SetStandardsStatus(std::move(value)); return *this;}
+    inline void SetStandardsStatus(StandardsStatus value) { m_standardsStatusHasBeenSet = true; m_standardsStatus = value; }
+    inline StandardsSubscription& WithStandardsStatus(StandardsStatus value) { SetStandardsStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -118,24 +109,22 @@ namespace Model
      * subscription cannot be retrieved or updated yet. Security Hub is still
      * processing a request to create the controls.</p> </li> </ul>
      */
-    inline const StandardsControlsUpdatable& GetStandardsControlsUpdatable() const{ return m_standardsControlsUpdatable; }
+    inline StandardsControlsUpdatable GetStandardsControlsUpdatable() const { return m_standardsControlsUpdatable; }
     inline bool StandardsControlsUpdatableHasBeenSet() const { return m_standardsControlsUpdatableHasBeenSet; }
-    inline void SetStandardsControlsUpdatable(const StandardsControlsUpdatable& value) { m_standardsControlsUpdatableHasBeenSet = true; m_standardsControlsUpdatable = value; }
-    inline void SetStandardsControlsUpdatable(StandardsControlsUpdatable&& value) { m_standardsControlsUpdatableHasBeenSet = true; m_standardsControlsUpdatable = std::move(value); }
-    inline StandardsSubscription& WithStandardsControlsUpdatable(const StandardsControlsUpdatable& value) { SetStandardsControlsUpdatable(value); return *this;}
-    inline StandardsSubscription& WithStandardsControlsUpdatable(StandardsControlsUpdatable&& value) { SetStandardsControlsUpdatable(std::move(value)); return *this;}
+    inline void SetStandardsControlsUpdatable(StandardsControlsUpdatable value) { m_standardsControlsUpdatableHasBeenSet = true; m_standardsControlsUpdatable = value; }
+    inline StandardsSubscription& WithStandardsControlsUpdatable(StandardsControlsUpdatable value) { SetStandardsControlsUpdatable(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the current status.</p>
      */
-    inline const StandardsStatusReason& GetStandardsStatusReason() const{ return m_standardsStatusReason; }
+    inline const StandardsStatusReason& GetStandardsStatusReason() const { return m_standardsStatusReason; }
     inline bool StandardsStatusReasonHasBeenSet() const { return m_standardsStatusReasonHasBeenSet; }
-    inline void SetStandardsStatusReason(const StandardsStatusReason& value) { m_standardsStatusReasonHasBeenSet = true; m_standardsStatusReason = value; }
-    inline void SetStandardsStatusReason(StandardsStatusReason&& value) { m_standardsStatusReasonHasBeenSet = true; m_standardsStatusReason = std::move(value); }
-    inline StandardsSubscription& WithStandardsStatusReason(const StandardsStatusReason& value) { SetStandardsStatusReason(value); return *this;}
-    inline StandardsSubscription& WithStandardsStatusReason(StandardsStatusReason&& value) { SetStandardsStatusReason(std::move(value)); return *this;}
+    template<typename StandardsStatusReasonT = StandardsStatusReason>
+    void SetStandardsStatusReason(StandardsStatusReasonT&& value) { m_standardsStatusReasonHasBeenSet = true; m_standardsStatusReason = std::forward<StandardsStatusReasonT>(value); }
+    template<typename StandardsStatusReasonT = StandardsStatusReason>
+    StandardsSubscription& WithStandardsStatusReason(StandardsStatusReasonT&& value) { SetStandardsStatusReason(std::forward<StandardsStatusReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -148,10 +137,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_standardsInput;
     bool m_standardsInputHasBeenSet = false;
 
-    StandardsStatus m_standardsStatus;
+    StandardsStatus m_standardsStatus{StandardsStatus::NOT_SET};
     bool m_standardsStatusHasBeenSet = false;
 
-    StandardsControlsUpdatable m_standardsControlsUpdatable;
+    StandardsControlsUpdatable m_standardsControlsUpdatable{StandardsControlsUpdatable::NOT_SET};
     bool m_standardsControlsUpdatableHasBeenSet = false;
 
     StandardsStatusReason m_standardsStatusReason;

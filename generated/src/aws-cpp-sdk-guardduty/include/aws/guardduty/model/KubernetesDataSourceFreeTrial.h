@@ -32,7 +32,7 @@ namespace Model
   class KubernetesDataSourceFreeTrial
   {
   public:
-    AWS_GUARDDUTY_API KubernetesDataSourceFreeTrial();
+    AWS_GUARDDUTY_API KubernetesDataSourceFreeTrial() = default;
     AWS_GUARDDUTY_API KubernetesDataSourceFreeTrial(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API KubernetesDataSourceFreeTrial& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
      */
-    inline const DataSourceFreeTrial& GetAuditLogs() const{ return m_auditLogs; }
+    inline const DataSourceFreeTrial& GetAuditLogs() const { return m_auditLogs; }
     inline bool AuditLogsHasBeenSet() const { return m_auditLogsHasBeenSet; }
-    inline void SetAuditLogs(const DataSourceFreeTrial& value) { m_auditLogsHasBeenSet = true; m_auditLogs = value; }
-    inline void SetAuditLogs(DataSourceFreeTrial&& value) { m_auditLogsHasBeenSet = true; m_auditLogs = std::move(value); }
-    inline KubernetesDataSourceFreeTrial& WithAuditLogs(const DataSourceFreeTrial& value) { SetAuditLogs(value); return *this;}
-    inline KubernetesDataSourceFreeTrial& WithAuditLogs(DataSourceFreeTrial&& value) { SetAuditLogs(std::move(value)); return *this;}
+    template<typename AuditLogsT = DataSourceFreeTrial>
+    void SetAuditLogs(AuditLogsT&& value) { m_auditLogsHasBeenSet = true; m_auditLogs = std::forward<AuditLogsT>(value); }
+    template<typename AuditLogsT = DataSourceFreeTrial>
+    KubernetesDataSourceFreeTrial& WithAuditLogs(AuditLogsT&& value) { SetAuditLogs(std::forward<AuditLogsT>(value)); return *this;}
     ///@}
   private:
 

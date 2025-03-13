@@ -27,7 +27,7 @@ namespace Model
   class UpdateConnectorRequest : public KafkaConnectRequest
   {
   public:
-    AWS_KAFKACONNECT_API UpdateConnectorRequest();
+    AWS_KAFKACONNECT_API UpdateConnectorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The target capacity.</p>
      */
-    inline const CapacityUpdate& GetCapacity() const{ return m_capacity; }
+    inline const CapacityUpdate& GetCapacity() const { return m_capacity; }
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
-    inline void SetCapacity(const CapacityUpdate& value) { m_capacityHasBeenSet = true; m_capacity = value; }
-    inline void SetCapacity(CapacityUpdate&& value) { m_capacityHasBeenSet = true; m_capacity = std::move(value); }
-    inline UpdateConnectorRequest& WithCapacity(const CapacityUpdate& value) { SetCapacity(value); return *this;}
-    inline UpdateConnectorRequest& WithCapacity(CapacityUpdate&& value) { SetCapacity(std::move(value)); return *this;}
+    template<typename CapacityT = CapacityUpdate>
+    void SetCapacity(CapacityT&& value) { m_capacityHasBeenSet = true; m_capacity = std::forward<CapacityT>(value); }
+    template<typename CapacityT = CapacityUpdate>
+    UpdateConnectorRequest& WithCapacity(CapacityT&& value) { SetCapacity(std::forward<CapacityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,47 +57,40 @@ namespace Model
      * <p>A map of keys to values that represent the configuration for the
      * connector.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetConnectorConfiguration() const{ return m_connectorConfiguration; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetConnectorConfiguration() const { return m_connectorConfiguration; }
     inline bool ConnectorConfigurationHasBeenSet() const { return m_connectorConfigurationHasBeenSet; }
-    inline void SetConnectorConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration = value; }
-    inline void SetConnectorConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration = std::move(value); }
-    inline UpdateConnectorRequest& WithConnectorConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { SetConnectorConfiguration(value); return *this;}
-    inline UpdateConnectorRequest& WithConnectorConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { SetConnectorConfiguration(std::move(value)); return *this;}
-    inline UpdateConnectorRequest& AddConnectorConfiguration(const Aws::String& key, const Aws::String& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(key, value); return *this; }
-    inline UpdateConnectorRequest& AddConnectorConfiguration(Aws::String&& key, const Aws::String& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(std::move(key), value); return *this; }
-    inline UpdateConnectorRequest& AddConnectorConfiguration(const Aws::String& key, Aws::String&& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(key, std::move(value)); return *this; }
-    inline UpdateConnectorRequest& AddConnectorConfiguration(Aws::String&& key, Aws::String&& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateConnectorRequest& AddConnectorConfiguration(const char* key, Aws::String&& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(key, std::move(value)); return *this; }
-    inline UpdateConnectorRequest& AddConnectorConfiguration(Aws::String&& key, const char* value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(std::move(key), value); return *this; }
-    inline UpdateConnectorRequest& AddConnectorConfiguration(const char* key, const char* value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(key, value); return *this; }
+    template<typename ConnectorConfigurationT = Aws::Map<Aws::String, Aws::String>>
+    void SetConnectorConfiguration(ConnectorConfigurationT&& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration = std::forward<ConnectorConfigurationT>(value); }
+    template<typename ConnectorConfigurationT = Aws::Map<Aws::String, Aws::String>>
+    UpdateConnectorRequest& WithConnectorConfiguration(ConnectorConfigurationT&& value) { SetConnectorConfiguration(std::forward<ConnectorConfigurationT>(value)); return *this;}
+    template<typename ConnectorConfigurationKeyT = Aws::String, typename ConnectorConfigurationValueT = Aws::String>
+    UpdateConnectorRequest& AddConnectorConfiguration(ConnectorConfigurationKeyT&& key, ConnectorConfigurationValueT&& value) {
+      m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration.emplace(std::forward<ConnectorConfigurationKeyT>(key), std::forward<ConnectorConfigurationValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
      */
-    inline const Aws::String& GetConnectorArn() const{ return m_connectorArn; }
+    inline const Aws::String& GetConnectorArn() const { return m_connectorArn; }
     inline bool ConnectorArnHasBeenSet() const { return m_connectorArnHasBeenSet; }
-    inline void SetConnectorArn(const Aws::String& value) { m_connectorArnHasBeenSet = true; m_connectorArn = value; }
-    inline void SetConnectorArn(Aws::String&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::move(value); }
-    inline void SetConnectorArn(const char* value) { m_connectorArnHasBeenSet = true; m_connectorArn.assign(value); }
-    inline UpdateConnectorRequest& WithConnectorArn(const Aws::String& value) { SetConnectorArn(value); return *this;}
-    inline UpdateConnectorRequest& WithConnectorArn(Aws::String&& value) { SetConnectorArn(std::move(value)); return *this;}
-    inline UpdateConnectorRequest& WithConnectorArn(const char* value) { SetConnectorArn(value); return *this;}
+    template<typename ConnectorArnT = Aws::String>
+    void SetConnectorArn(ConnectorArnT&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::forward<ConnectorArnT>(value); }
+    template<typename ConnectorArnT = Aws::String>
+    UpdateConnectorRequest& WithConnectorArn(ConnectorArnT&& value) { SetConnectorArn(std::forward<ConnectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current version of the connector that you want to update.</p>
      */
-    inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+    inline const Aws::String& GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-    inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-    inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-    inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
-    inline UpdateConnectorRequest& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-    inline UpdateConnectorRequest& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-    inline UpdateConnectorRequest& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
+    template<typename CurrentVersionT = Aws::String>
+    void SetCurrentVersion(CurrentVersionT&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::forward<CurrentVersionT>(value); }
+    template<typename CurrentVersionT = Aws::String>
+    UpdateConnectorRequest& WithCurrentVersion(CurrentVersionT&& value) { SetCurrentVersion(std::forward<CurrentVersionT>(value)); return *this;}
     ///@}
   private:
 

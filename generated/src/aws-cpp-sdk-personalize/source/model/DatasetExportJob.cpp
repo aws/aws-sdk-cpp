@@ -18,23 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-DatasetExportJob::DatasetExportJob() : 
-    m_jobNameHasBeenSet(false),
-    m_datasetExportJobArnHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_ingestionMode(IngestionMode::NOT_SET),
-    m_ingestionModeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_jobOutputHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 DatasetExportJob::DatasetExportJob(JsonView jsonValue)
-  : DatasetExportJob()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ DatasetExportJob& DatasetExportJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetExportJobArn"))
   {
     m_datasetExportJobArn = jsonValue.GetString("datasetExportJobArn");
-
     m_datasetExportJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetArn"))
   {
     m_datasetArn = jsonValue.GetString("datasetArn");
-
     m_datasetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingestionMode"))
   {
     m_ingestionMode = IngestionModeMapper::GetIngestionModeForName(jsonValue.GetString("ingestionMode"));
-
     m_ingestionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobOutput"))
   {
     m_jobOutput = jsonValue.GetObject("jobOutput");
-
     m_jobOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

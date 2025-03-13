@@ -33,7 +33,7 @@ namespace Model
   class ReplicationTopicNameConfiguration
   {
   public:
-    AWS_KAFKA_API ReplicationTopicNameConfiguration();
+    AWS_KAFKA_API ReplicationTopicNameConfiguration() = default;
     AWS_KAFKA_API ReplicationTopicNameConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API ReplicationTopicNameConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
     /**
      * <p>The type of replicated topic name.</p>
      */
-    inline const ReplicationTopicNameConfigurationType& GetType() const{ return m_type; }
+    inline ReplicationTopicNameConfigurationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ReplicationTopicNameConfigurationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ReplicationTopicNameConfigurationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ReplicationTopicNameConfiguration& WithType(const ReplicationTopicNameConfigurationType& value) { SetType(value); return *this;}
-    inline ReplicationTopicNameConfiguration& WithType(ReplicationTopicNameConfigurationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ReplicationTopicNameConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ReplicationTopicNameConfiguration& WithType(ReplicationTopicNameConfigurationType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    ReplicationTopicNameConfigurationType m_type;
+    ReplicationTopicNameConfigurationType m_type{ReplicationTopicNameConfigurationType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

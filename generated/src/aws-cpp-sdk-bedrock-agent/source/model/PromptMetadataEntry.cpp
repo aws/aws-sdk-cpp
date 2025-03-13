@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PromptMetadataEntry::PromptMetadataEntry() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 PromptMetadataEntry::PromptMetadataEntry(JsonView jsonValue)
-  : PromptMetadataEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PromptMetadataEntry& PromptMetadataEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

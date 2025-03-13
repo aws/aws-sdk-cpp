@@ -10,14 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-ValidateConfigurationSettingsRequest::ValidateConfigurationSettingsRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false)
-{
-}
-
 Aws::String ValidateConfigurationSettingsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

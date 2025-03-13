@@ -12,12 +12,6 @@ using namespace Aws::Account::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableRegionRequest::DisableRegionRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_regionNameHasBeenSet(false)
-{
-}
-
 Aws::String DisableRegionRequest::SerializePayload() const
 {
   JsonValue payload;

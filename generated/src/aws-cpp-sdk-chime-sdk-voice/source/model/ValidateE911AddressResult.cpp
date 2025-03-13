@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ValidateE911AddressResult::ValidateE911AddressResult() : 
-    m_validationResult(0)
-{
-}
-
 ValidateE911AddressResult::ValidateE911AddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ValidateE911AddressResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ ValidateE911AddressResult& ValidateE911AddressResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("ValidationResult"))
   {
     m_validationResult = jsonValue.GetInteger("ValidationResult");
-
+    m_validationResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressExternalId"))
   {
     m_addressExternalId = jsonValue.GetString("AddressExternalId");
-
+    m_addressExternalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetObject("Address");
-
+    m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CandidateAddressList"))
   {
     Aws::Utils::Array<JsonView> candidateAddressListJsonList = jsonValue.GetArray("CandidateAddressList");
@@ -56,14 +47,15 @@ ValidateE911AddressResult& ValidateE911AddressResult::operator =(const Aws::Amaz
     {
       m_candidateAddressList.push_back(candidateAddressListJsonList[candidateAddressListIndex].AsObject());
     }
+    m_candidateAddressListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

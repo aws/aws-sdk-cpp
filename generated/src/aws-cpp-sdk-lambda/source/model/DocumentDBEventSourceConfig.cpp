@@ -18,16 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-DocumentDBEventSourceConfig::DocumentDBEventSourceConfig() : 
-    m_databaseNameHasBeenSet(false),
-    m_collectionNameHasBeenSet(false),
-    m_fullDocument(FullDocument::NOT_SET),
-    m_fullDocumentHasBeenSet(false)
-{
-}
-
 DocumentDBEventSourceConfig::DocumentDBEventSourceConfig(JsonView jsonValue)
-  : DocumentDBEventSourceConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DocumentDBEventSourceConfig& DocumentDBEventSourceConfig::operator =(JsonView js
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectionName"))
   {
     m_collectionName = jsonValue.GetString("CollectionName");
-
     m_collectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FullDocument"))
   {
     m_fullDocument = FullDocumentMapper::GetFullDocumentForName(jsonValue.GetString("FullDocument"));
-
     m_fullDocumentHasBeenSet = true;
   }
-
   return *this;
 }
 

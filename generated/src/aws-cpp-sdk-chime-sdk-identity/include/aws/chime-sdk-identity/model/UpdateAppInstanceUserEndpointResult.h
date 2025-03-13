@@ -27,7 +27,7 @@ namespace Model
   class UpdateAppInstanceUserEndpointResult
   {
   public:
-    AWS_CHIMESDKIDENTITY_API UpdateAppInstanceUserEndpointResult();
+    AWS_CHIMESDKIDENTITY_API UpdateAppInstanceUserEndpointResult() = default;
     AWS_CHIMESDKIDENTITY_API UpdateAppInstanceUserEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKIDENTITY_API UpdateAppInstanceUserEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The ARN of the <code>AppInstanceUser</code>.</p>
      */
-    inline const Aws::String& GetAppInstanceUserArn() const{ return m_appInstanceUserArn; }
-    inline void SetAppInstanceUserArn(const Aws::String& value) { m_appInstanceUserArn = value; }
-    inline void SetAppInstanceUserArn(Aws::String&& value) { m_appInstanceUserArn = std::move(value); }
-    inline void SetAppInstanceUserArn(const char* value) { m_appInstanceUserArn.assign(value); }
-    inline UpdateAppInstanceUserEndpointResult& WithAppInstanceUserArn(const Aws::String& value) { SetAppInstanceUserArn(value); return *this;}
-    inline UpdateAppInstanceUserEndpointResult& WithAppInstanceUserArn(Aws::String&& value) { SetAppInstanceUserArn(std::move(value)); return *this;}
-    inline UpdateAppInstanceUserEndpointResult& WithAppInstanceUserArn(const char* value) { SetAppInstanceUserArn(value); return *this;}
+    inline const Aws::String& GetAppInstanceUserArn() const { return m_appInstanceUserArn; }
+    template<typename AppInstanceUserArnT = Aws::String>
+    void SetAppInstanceUserArn(AppInstanceUserArnT&& value) { m_appInstanceUserArnHasBeenSet = true; m_appInstanceUserArn = std::forward<AppInstanceUserArnT>(value); }
+    template<typename AppInstanceUserArnT = Aws::String>
+    UpdateAppInstanceUserEndpointResult& WithAppInstanceUserArn(AppInstanceUserArnT&& value) { SetAppInstanceUserArn(std::forward<AppInstanceUserArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointId.assign(value); }
-    inline UpdateAppInstanceUserEndpointResult& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline UpdateAppInstanceUserEndpointResult& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline UpdateAppInstanceUserEndpointResult& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    UpdateAppInstanceUserEndpointResult& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAppInstanceUserEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAppInstanceUserEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAppInstanceUserEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAppInstanceUserEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appInstanceUserArn;
+    bool m_appInstanceUserArnHasBeenSet = false;
 
     Aws::String m_endpointId;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

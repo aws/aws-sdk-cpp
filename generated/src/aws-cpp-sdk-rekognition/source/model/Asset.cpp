@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-Asset::Asset() : 
-    m_groundTruthManifestHasBeenSet(false)
-{
-}
-
 Asset::Asset(JsonView jsonValue)
-  : Asset()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Asset& Asset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroundTruthManifest"))
   {
     m_groundTruthManifest = jsonValue.GetObject("GroundTruthManifest");
-
     m_groundTruthManifestHasBeenSet = true;
   }
-
   return *this;
 }
 

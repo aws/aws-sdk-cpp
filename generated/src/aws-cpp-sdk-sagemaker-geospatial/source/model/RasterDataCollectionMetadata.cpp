@@ -18,20 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-RasterDataCollectionMetadata::RasterDataCollectionMetadata() : 
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_descriptionPageUrlHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_supportedFiltersHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(DataCollectionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RasterDataCollectionMetadata::RasterDataCollectionMetadata(JsonView jsonValue)
-  : RasterDataCollectionMetadata()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ RasterDataCollectionMetadata& RasterDataCollectionMetadata::operator =(JsonView 
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DescriptionPageUrl"))
   {
     m_descriptionPageUrl = jsonValue.GetString("DescriptionPageUrl");
-
     m_descriptionPageUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedFilters"))
   {
     Aws::Utils::Array<JsonView> supportedFiltersJsonList = jsonValue.GetArray("SupportedFilters");
@@ -75,7 +54,6 @@ RasterDataCollectionMetadata& RasterDataCollectionMetadata::operator =(JsonView 
     }
     m_supportedFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -85,14 +63,11 @@ RasterDataCollectionMetadata& RasterDataCollectionMetadata::operator =(JsonView 
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DataCollectionTypeMapper::GetDataCollectionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class ScannedResource
   {
   public:
-    AWS_CLOUDFORMATION_API ScannedResource();
+    AWS_CLOUDFORMATION_API ScannedResource() = default;
     AWS_CLOUDFORMATION_API ScannedResource(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API ScannedResource& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
      * type support for imports and drift detection</a> In the <i>CloudFormation User
      * Guide</i> </p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ScannedResource& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ScannedResource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ScannedResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ScannedResource& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,26 +69,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-primaryidentifier">primaryIdentifier</a>
      * in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetResourceIdentifier() const { return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    inline void SetResourceIdentifier(const Aws::Map<Aws::String, Aws::String>& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(Aws::Map<Aws::String, Aws::String>&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-    inline ScannedResource& WithResourceIdentifier(const Aws::Map<Aws::String, Aws::String>& value) { SetResourceIdentifier(value); return *this;}
-    inline ScannedResource& WithResourceIdentifier(Aws::Map<Aws::String, Aws::String>&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-    inline ScannedResource& AddResourceIdentifier(const Aws::String& key, const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.emplace(key, value); return *this; }
-    inline ScannedResource& AddResourceIdentifier(Aws::String&& key, const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.emplace(std::move(key), value); return *this; }
-    inline ScannedResource& AddResourceIdentifier(const Aws::String& key, Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.emplace(key, std::move(value)); return *this; }
-    inline ScannedResource& AddResourceIdentifier(Aws::String&& key, Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.emplace(std::move(key), std::move(value)); return *this; }
-    inline ScannedResource& AddResourceIdentifier(const char* key, Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.emplace(key, std::move(value)); return *this; }
-    inline ScannedResource& AddResourceIdentifier(Aws::String&& key, const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.emplace(std::move(key), value); return *this; }
-    inline ScannedResource& AddResourceIdentifier(const char* key, const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.emplace(key, value); return *this; }
+    template<typename ResourceIdentifierT = Aws::Map<Aws::String, Aws::String>>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::Map<Aws::String, Aws::String>>
+    ScannedResource& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
+    template<typename ResourceIdentifierKeyT = Aws::String, typename ResourceIdentifierValueT = Aws::String>
+    ScannedResource& AddResourceIdentifier(ResourceIdentifierKeyT&& key, ResourceIdentifierValueT&& value) {
+      m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.emplace(std::forward<ResourceIdentifierKeyT>(key), std::forward<ResourceIdentifierValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>If <code>true</code>, the resource is managed by a CloudFormation stack.</p>
      */
-    inline bool GetManagedByStack() const{ return m_managedByStack; }
+    inline bool GetManagedByStack() const { return m_managedByStack; }
     inline bool ManagedByStackHasBeenSet() const { return m_managedByStackHasBeenSet; }
     inline void SetManagedByStack(bool value) { m_managedByStackHasBeenSet = true; m_managedByStack = value; }
     inline ScannedResource& WithManagedByStack(bool value) { SetManagedByStack(value); return *this;}
@@ -103,7 +98,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
 
-    bool m_managedByStack;
+    bool m_managedByStack{false};
     bool m_managedByStackHasBeenSet = false;
   };
 

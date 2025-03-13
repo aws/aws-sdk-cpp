@@ -28,33 +28,35 @@ namespace Model
   class XmlNamespacesResponse
   {
   public:
-    AWS_EC2PROTOCOL_API XmlNamespacesResponse();
+    AWS_EC2PROTOCOL_API XmlNamespacesResponse() = default;
     AWS_EC2PROTOCOL_API XmlNamespacesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2PROTOCOL_API XmlNamespacesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const XmlNamespaceNested& GetNested() const{ return m_nested; }
-    inline void SetNested(const XmlNamespaceNested& value) { m_nested = value; }
-    inline void SetNested(XmlNamespaceNested&& value) { m_nested = std::move(value); }
-    inline XmlNamespacesResponse& WithNested(const XmlNamespaceNested& value) { SetNested(value); return *this;}
-    inline XmlNamespacesResponse& WithNested(XmlNamespaceNested&& value) { SetNested(std::move(value)); return *this;}
+    inline const XmlNamespaceNested& GetNested() const { return m_nested; }
+    template<typename NestedT = XmlNamespaceNested>
+    void SetNested(NestedT&& value) { m_nestedHasBeenSet = true; m_nested = std::forward<NestedT>(value); }
+    template<typename NestedT = XmlNamespaceNested>
+    XmlNamespacesResponse& WithNested(NestedT&& value) { SetNested(std::forward<NestedT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline XmlNamespacesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline XmlNamespacesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    XmlNamespacesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     XmlNamespaceNested m_nested;
+    bool m_nestedHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

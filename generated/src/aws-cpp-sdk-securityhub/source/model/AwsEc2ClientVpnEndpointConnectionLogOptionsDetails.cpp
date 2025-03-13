@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2ClientVpnEndpointConnectionLogOptionsDetails::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_cloudwatchLogGroupHasBeenSet(false),
-    m_cloudwatchLogStreamHasBeenSet(false)
-{
-}
-
 AwsEc2ClientVpnEndpointConnectionLogOptionsDetails::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails(JsonView jsonValue)
-  : AwsEc2ClientVpnEndpointConnectionLogOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AwsEc2ClientVpnEndpointConnectionLogOptionsDetails& AwsEc2ClientVpnEndpointConne
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudwatchLogGroup"))
   {
     m_cloudwatchLogGroup = jsonValue.GetString("CloudwatchLogGroup");
-
     m_cloudwatchLogGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudwatchLogStream"))
   {
     m_cloudwatchLogStream = jsonValue.GetString("CloudwatchLogStream");
-
     m_cloudwatchLogStreamHasBeenSet = true;
   }
-
   return *this;
 }
 

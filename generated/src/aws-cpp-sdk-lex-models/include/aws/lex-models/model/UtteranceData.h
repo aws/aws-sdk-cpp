@@ -33,7 +33,7 @@ namespace Model
   class UtteranceData
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API UtteranceData();
+    AWS_LEXMODELBUILDINGSERVICE_API UtteranceData() = default;
     AWS_LEXMODELBUILDINGSERVICE_API UtteranceData(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API UtteranceData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,21 +44,19 @@ namespace Model
      * <p>The text that was entered by the user or the text representation of an audio
      * clip.</p>
      */
-    inline const Aws::String& GetUtteranceString() const{ return m_utteranceString; }
+    inline const Aws::String& GetUtteranceString() const { return m_utteranceString; }
     inline bool UtteranceStringHasBeenSet() const { return m_utteranceStringHasBeenSet; }
-    inline void SetUtteranceString(const Aws::String& value) { m_utteranceStringHasBeenSet = true; m_utteranceString = value; }
-    inline void SetUtteranceString(Aws::String&& value) { m_utteranceStringHasBeenSet = true; m_utteranceString = std::move(value); }
-    inline void SetUtteranceString(const char* value) { m_utteranceStringHasBeenSet = true; m_utteranceString.assign(value); }
-    inline UtteranceData& WithUtteranceString(const Aws::String& value) { SetUtteranceString(value); return *this;}
-    inline UtteranceData& WithUtteranceString(Aws::String&& value) { SetUtteranceString(std::move(value)); return *this;}
-    inline UtteranceData& WithUtteranceString(const char* value) { SetUtteranceString(value); return *this;}
+    template<typename UtteranceStringT = Aws::String>
+    void SetUtteranceString(UtteranceStringT&& value) { m_utteranceStringHasBeenSet = true; m_utteranceString = std::forward<UtteranceStringT>(value); }
+    template<typename UtteranceStringT = Aws::String>
+    UtteranceData& WithUtteranceString(UtteranceStringT&& value) { SetUtteranceString(std::forward<UtteranceStringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of times that the utterance was processed.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline UtteranceData& WithCount(int value) { SetCount(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     /**
      * <p>The total number of individuals that used the utterance.</p>
      */
-    inline int GetDistinctUsers() const{ return m_distinctUsers; }
+    inline int GetDistinctUsers() const { return m_distinctUsers; }
     inline bool DistinctUsersHasBeenSet() const { return m_distinctUsersHasBeenSet; }
     inline void SetDistinctUsers(int value) { m_distinctUsersHasBeenSet = true; m_distinctUsers = value; }
     inline UtteranceData& WithDistinctUsers(int value) { SetDistinctUsers(value); return *this;}
@@ -78,40 +76,40 @@ namespace Model
     /**
      * <p>The date that the utterance was first recorded.</p>
      */
-    inline const Aws::Utils::DateTime& GetFirstUtteredDate() const{ return m_firstUtteredDate; }
+    inline const Aws::Utils::DateTime& GetFirstUtteredDate() const { return m_firstUtteredDate; }
     inline bool FirstUtteredDateHasBeenSet() const { return m_firstUtteredDateHasBeenSet; }
-    inline void SetFirstUtteredDate(const Aws::Utils::DateTime& value) { m_firstUtteredDateHasBeenSet = true; m_firstUtteredDate = value; }
-    inline void SetFirstUtteredDate(Aws::Utils::DateTime&& value) { m_firstUtteredDateHasBeenSet = true; m_firstUtteredDate = std::move(value); }
-    inline UtteranceData& WithFirstUtteredDate(const Aws::Utils::DateTime& value) { SetFirstUtteredDate(value); return *this;}
-    inline UtteranceData& WithFirstUtteredDate(Aws::Utils::DateTime&& value) { SetFirstUtteredDate(std::move(value)); return *this;}
+    template<typename FirstUtteredDateT = Aws::Utils::DateTime>
+    void SetFirstUtteredDate(FirstUtteredDateT&& value) { m_firstUtteredDateHasBeenSet = true; m_firstUtteredDate = std::forward<FirstUtteredDateT>(value); }
+    template<typename FirstUtteredDateT = Aws::Utils::DateTime>
+    UtteranceData& WithFirstUtteredDate(FirstUtteredDateT&& value) { SetFirstUtteredDate(std::forward<FirstUtteredDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date that the utterance was last recorded.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUtteredDate() const{ return m_lastUtteredDate; }
+    inline const Aws::Utils::DateTime& GetLastUtteredDate() const { return m_lastUtteredDate; }
     inline bool LastUtteredDateHasBeenSet() const { return m_lastUtteredDateHasBeenSet; }
-    inline void SetLastUtteredDate(const Aws::Utils::DateTime& value) { m_lastUtteredDateHasBeenSet = true; m_lastUtteredDate = value; }
-    inline void SetLastUtteredDate(Aws::Utils::DateTime&& value) { m_lastUtteredDateHasBeenSet = true; m_lastUtteredDate = std::move(value); }
-    inline UtteranceData& WithLastUtteredDate(const Aws::Utils::DateTime& value) { SetLastUtteredDate(value); return *this;}
-    inline UtteranceData& WithLastUtteredDate(Aws::Utils::DateTime&& value) { SetLastUtteredDate(std::move(value)); return *this;}
+    template<typename LastUtteredDateT = Aws::Utils::DateTime>
+    void SetLastUtteredDate(LastUtteredDateT&& value) { m_lastUtteredDateHasBeenSet = true; m_lastUtteredDate = std::forward<LastUtteredDateT>(value); }
+    template<typename LastUtteredDateT = Aws::Utils::DateTime>
+    UtteranceData& WithLastUtteredDate(LastUtteredDateT&& value) { SetLastUtteredDate(std::forward<LastUtteredDateT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_utteranceString;
     bool m_utteranceStringHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
-    int m_distinctUsers;
+    int m_distinctUsers{0};
     bool m_distinctUsersHasBeenSet = false;
 
-    Aws::Utils::DateTime m_firstUtteredDate;
+    Aws::Utils::DateTime m_firstUtteredDate{};
     bool m_firstUtteredDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUtteredDate;
+    Aws::Utils::DateTime m_lastUtteredDate{};
     bool m_lastUtteredDateHasBeenSet = false;
   };
 

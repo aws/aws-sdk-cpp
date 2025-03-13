@@ -12,11 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTagOptionRequest::DescribeTagOptionRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTagOptionRequest::SerializePayload() const
 {
   JsonValue payload;

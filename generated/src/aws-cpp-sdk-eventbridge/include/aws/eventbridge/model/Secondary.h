@@ -32,7 +32,7 @@ namespace Model
   class Secondary
   {
   public:
-    AWS_EVENTBRIDGE_API Secondary();
+    AWS_EVENTBRIDGE_API Secondary() = default;
     AWS_EVENTBRIDGE_API Secondary(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Secondary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Defines the secondary Region.</p>
      */
-    inline const Aws::String& GetRoute() const{ return m_route; }
+    inline const Aws::String& GetRoute() const { return m_route; }
     inline bool RouteHasBeenSet() const { return m_routeHasBeenSet; }
-    inline void SetRoute(const Aws::String& value) { m_routeHasBeenSet = true; m_route = value; }
-    inline void SetRoute(Aws::String&& value) { m_routeHasBeenSet = true; m_route = std::move(value); }
-    inline void SetRoute(const char* value) { m_routeHasBeenSet = true; m_route.assign(value); }
-    inline Secondary& WithRoute(const Aws::String& value) { SetRoute(value); return *this;}
-    inline Secondary& WithRoute(Aws::String&& value) { SetRoute(std::move(value)); return *this;}
-    inline Secondary& WithRoute(const char* value) { SetRoute(value); return *this;}
+    template<typename RouteT = Aws::String>
+    void SetRoute(RouteT&& value) { m_routeHasBeenSet = true; m_route = std::forward<RouteT>(value); }
+    template<typename RouteT = Aws::String>
+    Secondary& WithRoute(RouteT&& value) { SetRoute(std::forward<RouteT>(value)); return *this;}
     ///@}
   private:
 

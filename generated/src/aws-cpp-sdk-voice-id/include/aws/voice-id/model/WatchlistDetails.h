@@ -31,7 +31,7 @@ namespace Model
   class WatchlistDetails
   {
   public:
-    AWS_VOICEID_API WatchlistDetails();
+    AWS_VOICEID_API WatchlistDetails() = default;
     AWS_VOICEID_API WatchlistDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API WatchlistDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The identifier of the default watchlist.</p>
      */
-    inline const Aws::String& GetDefaultWatchlistId() const{ return m_defaultWatchlistId; }
+    inline const Aws::String& GetDefaultWatchlistId() const { return m_defaultWatchlistId; }
     inline bool DefaultWatchlistIdHasBeenSet() const { return m_defaultWatchlistIdHasBeenSet; }
-    inline void SetDefaultWatchlistId(const Aws::String& value) { m_defaultWatchlistIdHasBeenSet = true; m_defaultWatchlistId = value; }
-    inline void SetDefaultWatchlistId(Aws::String&& value) { m_defaultWatchlistIdHasBeenSet = true; m_defaultWatchlistId = std::move(value); }
-    inline void SetDefaultWatchlistId(const char* value) { m_defaultWatchlistIdHasBeenSet = true; m_defaultWatchlistId.assign(value); }
-    inline WatchlistDetails& WithDefaultWatchlistId(const Aws::String& value) { SetDefaultWatchlistId(value); return *this;}
-    inline WatchlistDetails& WithDefaultWatchlistId(Aws::String&& value) { SetDefaultWatchlistId(std::move(value)); return *this;}
-    inline WatchlistDetails& WithDefaultWatchlistId(const char* value) { SetDefaultWatchlistId(value); return *this;}
+    template<typename DefaultWatchlistIdT = Aws::String>
+    void SetDefaultWatchlistId(DefaultWatchlistIdT&& value) { m_defaultWatchlistIdHasBeenSet = true; m_defaultWatchlistId = std::forward<DefaultWatchlistIdT>(value); }
+    template<typename DefaultWatchlistIdT = Aws::String>
+    WatchlistDetails& WithDefaultWatchlistId(DefaultWatchlistIdT&& value) { SetDefaultWatchlistId(std::forward<DefaultWatchlistIdT>(value)); return *this;}
     ///@}
   private:
 

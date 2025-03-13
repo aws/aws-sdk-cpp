@@ -33,7 +33,7 @@ namespace Model
   class GpuDeviceInfo
   {
   public:
-    AWS_EC2_API GpuDeviceInfo();
+    AWS_EC2_API GpuDeviceInfo() = default;
     AWS_EC2_API GpuDeviceInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API GpuDeviceInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,35 +45,31 @@ namespace Model
     /**
      * <p>The name of the GPU accelerator.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GpuDeviceInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GpuDeviceInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GpuDeviceInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GpuDeviceInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The manufacturer of the GPU accelerator.</p>
      */
-    inline const Aws::String& GetManufacturer() const{ return m_manufacturer; }
+    inline const Aws::String& GetManufacturer() const { return m_manufacturer; }
     inline bool ManufacturerHasBeenSet() const { return m_manufacturerHasBeenSet; }
-    inline void SetManufacturer(const Aws::String& value) { m_manufacturerHasBeenSet = true; m_manufacturer = value; }
-    inline void SetManufacturer(Aws::String&& value) { m_manufacturerHasBeenSet = true; m_manufacturer = std::move(value); }
-    inline void SetManufacturer(const char* value) { m_manufacturerHasBeenSet = true; m_manufacturer.assign(value); }
-    inline GpuDeviceInfo& WithManufacturer(const Aws::String& value) { SetManufacturer(value); return *this;}
-    inline GpuDeviceInfo& WithManufacturer(Aws::String&& value) { SetManufacturer(std::move(value)); return *this;}
-    inline GpuDeviceInfo& WithManufacturer(const char* value) { SetManufacturer(value); return *this;}
+    template<typename ManufacturerT = Aws::String>
+    void SetManufacturer(ManufacturerT&& value) { m_manufacturerHasBeenSet = true; m_manufacturer = std::forward<ManufacturerT>(value); }
+    template<typename ManufacturerT = Aws::String>
+    GpuDeviceInfo& WithManufacturer(ManufacturerT&& value) { SetManufacturer(std::forward<ManufacturerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of GPUs for the instance type.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline GpuDeviceInfo& WithCount(int value) { SetCount(value); return *this;}
@@ -83,12 +79,12 @@ namespace Model
     /**
      * <p>Describes the memory available to the GPU accelerator.</p>
      */
-    inline const GpuDeviceMemoryInfo& GetMemoryInfo() const{ return m_memoryInfo; }
+    inline const GpuDeviceMemoryInfo& GetMemoryInfo() const { return m_memoryInfo; }
     inline bool MemoryInfoHasBeenSet() const { return m_memoryInfoHasBeenSet; }
-    inline void SetMemoryInfo(const GpuDeviceMemoryInfo& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = value; }
-    inline void SetMemoryInfo(GpuDeviceMemoryInfo&& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = std::move(value); }
-    inline GpuDeviceInfo& WithMemoryInfo(const GpuDeviceMemoryInfo& value) { SetMemoryInfo(value); return *this;}
-    inline GpuDeviceInfo& WithMemoryInfo(GpuDeviceMemoryInfo&& value) { SetMemoryInfo(std::move(value)); return *this;}
+    template<typename MemoryInfoT = GpuDeviceMemoryInfo>
+    void SetMemoryInfo(MemoryInfoT&& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = std::forward<MemoryInfoT>(value); }
+    template<typename MemoryInfoT = GpuDeviceMemoryInfo>
+    GpuDeviceInfo& WithMemoryInfo(MemoryInfoT&& value) { SetMemoryInfo(std::forward<MemoryInfoT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,7 +94,7 @@ namespace Model
     Aws::String m_manufacturer;
     bool m_manufacturerHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
     GpuDeviceMemoryInfo m_memoryInfo;

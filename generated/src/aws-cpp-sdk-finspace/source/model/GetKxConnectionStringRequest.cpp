@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetKxConnectionStringRequest::GetKxConnectionStringRequest() : 
-    m_userArnHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
-{
-}
-
 Aws::String GetKxConnectionStringRequest::SerializePayload() const
 {
   return {};

@@ -18,19 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-LoadBalancerTlsCertificateDomainValidationRecord::LoadBalancerTlsCertificateDomainValidationRecord() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_validationStatus(LoadBalancerTlsCertificateDomainStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_dnsRecordCreationStateHasBeenSet(false)
-{
-}
-
 LoadBalancerTlsCertificateDomainValidationRecord::LoadBalancerTlsCertificateDomainValidationRecord(JsonView jsonValue)
-  : LoadBalancerTlsCertificateDomainValidationRecord()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ LoadBalancerTlsCertificateDomainValidationRecord& LoadBalancerTlsCertificateDoma
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validationStatus"))
   {
     m_validationStatus = LoadBalancerTlsCertificateDomainStatusMapper::GetLoadBalancerTlsCertificateDomainStatusForName(jsonValue.GetString("validationStatus"));
-
     m_validationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dnsRecordCreationState"))
   {
     m_dnsRecordCreationState = jsonValue.GetObject("dnsRecordCreationState");
-
     m_dnsRecordCreationStateHasBeenSet = true;
   }
-
   return *this;
 }
 

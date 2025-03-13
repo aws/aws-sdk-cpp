@@ -22,7 +22,7 @@ namespace Model
   class UpdateRunCacheRequest : public OmicsRequest
   {
   public:
-    AWS_OMICS_API UpdateRunCacheRequest();
+    AWS_OMICS_API UpdateRunCacheRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,58 +37,50 @@ namespace Model
     /**
      * <p>Update the default run cache behavior.</p>
      */
-    inline const CacheBehavior& GetCacheBehavior() const{ return m_cacheBehavior; }
+    inline CacheBehavior GetCacheBehavior() const { return m_cacheBehavior; }
     inline bool CacheBehaviorHasBeenSet() const { return m_cacheBehaviorHasBeenSet; }
-    inline void SetCacheBehavior(const CacheBehavior& value) { m_cacheBehaviorHasBeenSet = true; m_cacheBehavior = value; }
-    inline void SetCacheBehavior(CacheBehavior&& value) { m_cacheBehaviorHasBeenSet = true; m_cacheBehavior = std::move(value); }
-    inline UpdateRunCacheRequest& WithCacheBehavior(const CacheBehavior& value) { SetCacheBehavior(value); return *this;}
-    inline UpdateRunCacheRequest& WithCacheBehavior(CacheBehavior&& value) { SetCacheBehavior(std::move(value)); return *this;}
+    inline void SetCacheBehavior(CacheBehavior value) { m_cacheBehaviorHasBeenSet = true; m_cacheBehavior = value; }
+    inline UpdateRunCacheRequest& WithCacheBehavior(CacheBehavior value) { SetCacheBehavior(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Update the run cache description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateRunCacheRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateRunCacheRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateRunCacheRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateRunCacheRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the run cache you want to update.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateRunCacheRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateRunCacheRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateRunCacheRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateRunCacheRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Update the name of the run cache.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateRunCacheRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateRunCacheRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateRunCacheRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateRunCacheRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    CacheBehavior m_cacheBehavior;
+    CacheBehavior m_cacheBehavior{CacheBehavior::NOT_SET};
     bool m_cacheBehaviorHasBeenSet = false;
 
     Aws::String m_description;

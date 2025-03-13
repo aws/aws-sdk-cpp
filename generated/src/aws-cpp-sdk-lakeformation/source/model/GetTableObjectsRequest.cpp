@@ -12,19 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTableObjectsRequest::GetTableObjectsRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_queryAsOfTimeHasBeenSet(false),
-    m_partitionPredicateHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetTableObjectsRequest::SerializePayload() const
 {
   JsonValue payload;

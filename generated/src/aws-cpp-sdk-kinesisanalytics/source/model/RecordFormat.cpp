@@ -18,15 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-RecordFormat::RecordFormat() : 
-    m_recordFormatType(RecordFormatType::NOT_SET),
-    m_recordFormatTypeHasBeenSet(false),
-    m_mappingParametersHasBeenSet(false)
-{
-}
-
 RecordFormat::RecordFormat(JsonView jsonValue)
-  : RecordFormat()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RecordFormat& RecordFormat::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecordFormatType"))
   {
     m_recordFormatType = RecordFormatTypeMapper::GetRecordFormatTypeForName(jsonValue.GetString("RecordFormatType"));
-
     m_recordFormatTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MappingParameters"))
   {
     m_mappingParameters = jsonValue.GetObject("MappingParameters");
-
     m_mappingParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

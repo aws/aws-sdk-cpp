@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VCpuCountRangeRequest::VCpuCountRangeRequest() : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 VCpuCountRangeRequest::VCpuCountRangeRequest(const XmlNode& xmlNode)
-  : VCpuCountRangeRequest()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ VCpuCountRangeRequest& VCpuCountRangeRequest::operator =(const XmlNode& xmlNode)
     {
       m_min = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minNode.GetText()).c_str()).c_str());
       m_minHasBeenSet = true;
+       m_minHasBeenSet = true;
     }
     XmlNode maxNode = resultNode.FirstChild("Max");
     if(!maxNode.IsNull())
     {
       m_max = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNode.GetText()).c_str()).c_str());
       m_maxHasBeenSet = true;
+       m_maxHasBeenSet = true;
     }
   }
 

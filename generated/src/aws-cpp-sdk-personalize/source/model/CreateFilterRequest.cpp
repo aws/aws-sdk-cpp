@@ -12,14 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFilterRequest::CreateFilterRequest() : 
-    m_nameHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFilterRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateTrialComponentResult::AssociateTrialComponentResult()
-{
-}
-
 AssociateTrialComponentResult::AssociateTrialComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ AssociateTrialComponentResult& AssociateTrialComponentResult::operator =(const A
   if(jsonValue.ValueExists("TrialComponentArn"))
   {
     m_trialComponentArn = jsonValue.GetString("TrialComponentArn");
-
+    m_trialComponentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrialArn"))
   {
     m_trialArn = jsonValue.GetString("TrialArn");
-
+    m_trialArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

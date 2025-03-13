@@ -28,7 +28,7 @@ namespace Model
   class DescribeBatchLoadTaskResult
   {
   public:
-    AWS_TIMESTREAMWRITE_API DescribeBatchLoadTaskResult();
+    AWS_TIMESTREAMWRITE_API DescribeBatchLoadTaskResult() = default;
     AWS_TIMESTREAMWRITE_API DescribeBatchLoadTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TIMESTREAMWRITE_API DescribeBatchLoadTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Description of the batch load task.</p>
      */
-    inline const BatchLoadTaskDescription& GetBatchLoadTaskDescription() const{ return m_batchLoadTaskDescription; }
-    inline void SetBatchLoadTaskDescription(const BatchLoadTaskDescription& value) { m_batchLoadTaskDescription = value; }
-    inline void SetBatchLoadTaskDescription(BatchLoadTaskDescription&& value) { m_batchLoadTaskDescription = std::move(value); }
-    inline DescribeBatchLoadTaskResult& WithBatchLoadTaskDescription(const BatchLoadTaskDescription& value) { SetBatchLoadTaskDescription(value); return *this;}
-    inline DescribeBatchLoadTaskResult& WithBatchLoadTaskDescription(BatchLoadTaskDescription&& value) { SetBatchLoadTaskDescription(std::move(value)); return *this;}
+    inline const BatchLoadTaskDescription& GetBatchLoadTaskDescription() const { return m_batchLoadTaskDescription; }
+    template<typename BatchLoadTaskDescriptionT = BatchLoadTaskDescription>
+    void SetBatchLoadTaskDescription(BatchLoadTaskDescriptionT&& value) { m_batchLoadTaskDescriptionHasBeenSet = true; m_batchLoadTaskDescription = std::forward<BatchLoadTaskDescriptionT>(value); }
+    template<typename BatchLoadTaskDescriptionT = BatchLoadTaskDescription>
+    DescribeBatchLoadTaskResult& WithBatchLoadTaskDescription(BatchLoadTaskDescriptionT&& value) { SetBatchLoadTaskDescription(std::forward<BatchLoadTaskDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeBatchLoadTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeBatchLoadTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeBatchLoadTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeBatchLoadTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BatchLoadTaskDescription m_batchLoadTaskDescription;
+    bool m_batchLoadTaskDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

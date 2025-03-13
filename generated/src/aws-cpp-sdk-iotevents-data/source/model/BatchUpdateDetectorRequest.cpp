@@ -12,11 +12,6 @@ using namespace Aws::IoTEventsData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateDetectorRequest::BatchUpdateDetectorRequest() : 
-    m_detectorsHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateDetectorRequest::SerializePayload() const
 {
   JsonValue payload;

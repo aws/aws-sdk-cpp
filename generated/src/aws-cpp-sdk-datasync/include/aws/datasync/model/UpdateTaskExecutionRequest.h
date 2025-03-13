@@ -22,7 +22,7 @@ namespace Model
   class UpdateTaskExecutionRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API UpdateTaskExecutionRequest();
+    AWS_DATASYNC_API UpdateTaskExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,24 +40,22 @@ namespace Model
      * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
      * updating.</p>
      */
-    inline const Aws::String& GetTaskExecutionArn() const{ return m_taskExecutionArn; }
+    inline const Aws::String& GetTaskExecutionArn() const { return m_taskExecutionArn; }
     inline bool TaskExecutionArnHasBeenSet() const { return m_taskExecutionArnHasBeenSet; }
-    inline void SetTaskExecutionArn(const Aws::String& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = value; }
-    inline void SetTaskExecutionArn(Aws::String&& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = std::move(value); }
-    inline void SetTaskExecutionArn(const char* value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn.assign(value); }
-    inline UpdateTaskExecutionRequest& WithTaskExecutionArn(const Aws::String& value) { SetTaskExecutionArn(value); return *this;}
-    inline UpdateTaskExecutionRequest& WithTaskExecutionArn(Aws::String&& value) { SetTaskExecutionArn(std::move(value)); return *this;}
-    inline UpdateTaskExecutionRequest& WithTaskExecutionArn(const char* value) { SetTaskExecutionArn(value); return *this;}
+    template<typename TaskExecutionArnT = Aws::String>
+    void SetTaskExecutionArn(TaskExecutionArnT&& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = std::forward<TaskExecutionArnT>(value); }
+    template<typename TaskExecutionArnT = Aws::String>
+    UpdateTaskExecutionRequest& WithTaskExecutionArn(TaskExecutionArnT&& value) { SetTaskExecutionArn(std::forward<TaskExecutionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Options& GetOptions() const{ return m_options; }
+    inline const Options& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Options& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Options&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline UpdateTaskExecutionRequest& WithOptions(const Options& value) { SetOptions(value); return *this;}
-    inline UpdateTaskExecutionRequest& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = Options>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Options>
+    UpdateTaskExecutionRequest& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
   private:
 

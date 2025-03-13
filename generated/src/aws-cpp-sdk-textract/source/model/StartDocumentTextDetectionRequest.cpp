@@ -12,16 +12,6 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDocumentTextDetectionRequest::StartDocumentTextDetectionRequest() : 
-    m_documentLocationHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_jobTagHasBeenSet(false),
-    m_notificationChannelHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String StartDocumentTextDetectionRequest::SerializePayload() const
 {
   JsonValue payload;

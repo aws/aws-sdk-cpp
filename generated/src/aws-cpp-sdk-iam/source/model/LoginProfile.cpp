@@ -20,16 +20,7 @@ namespace IAM
 namespace Model
 {
 
-LoginProfile::LoginProfile() : 
-    m_userNameHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_passwordResetRequired(false),
-    m_passwordResetRequiredHasBeenSet(false)
-{
-}
-
 LoginProfile::LoginProfile(const XmlNode& xmlNode)
-  : LoginProfile()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ LoginProfile& LoginProfile::operator =(const XmlNode& xmlNode)
     {
       m_userName = Aws::Utils::Xml::DecodeEscapedXmlText(userNameNode.GetText());
       m_userNameHasBeenSet = true;
+       m_userNameHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
     XmlNode passwordResetRequiredNode = resultNode.FirstChild("PasswordResetRequired");
     if(!passwordResetRequiredNode.IsNull())
     {
       m_passwordResetRequired = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(passwordResetRequiredNode.GetText()).c_str()).c_str());
       m_passwordResetRequiredHasBeenSet = true;
+       m_passwordResetRequiredHasBeenSet = true;
     }
   }
 

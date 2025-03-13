@@ -22,7 +22,7 @@ namespace Model
   class RetryBuildBatchRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API RetryBuildBatchRequest();
+    AWS_CODEBUILD_API RetryBuildBatchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>Specifies the identifier of the batch build to restart.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline RetryBuildBatchRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline RetryBuildBatchRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline RetryBuildBatchRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    RetryBuildBatchRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,26 +55,22 @@ namespace Model
      * repeat the <code>RetryBuildBatch</code> request with the same token, but change
      * a parameter, CodeBuild returns a parameter mismatch error.</p>
      */
-    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-    inline RetryBuildBatchRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-    inline RetryBuildBatchRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-    inline RetryBuildBatchRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    RetryBuildBatchRequest& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the type of retry to perform.</p>
      */
-    inline const RetryBuildBatchType& GetRetryType() const{ return m_retryType; }
+    inline RetryBuildBatchType GetRetryType() const { return m_retryType; }
     inline bool RetryTypeHasBeenSet() const { return m_retryTypeHasBeenSet; }
-    inline void SetRetryType(const RetryBuildBatchType& value) { m_retryTypeHasBeenSet = true; m_retryType = value; }
-    inline void SetRetryType(RetryBuildBatchType&& value) { m_retryTypeHasBeenSet = true; m_retryType = std::move(value); }
-    inline RetryBuildBatchRequest& WithRetryType(const RetryBuildBatchType& value) { SetRetryType(value); return *this;}
-    inline RetryBuildBatchRequest& WithRetryType(RetryBuildBatchType&& value) { SetRetryType(std::move(value)); return *this;}
+    inline void SetRetryType(RetryBuildBatchType value) { m_retryTypeHasBeenSet = true; m_retryType = value; }
+    inline RetryBuildBatchRequest& WithRetryType(RetryBuildBatchType value) { SetRetryType(value); return *this;}
     ///@}
   private:
 
@@ -86,7 +80,7 @@ namespace Model
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet = false;
 
-    RetryBuildBatchType m_retryType;
+    RetryBuildBatchType m_retryType{RetryBuildBatchType::NOT_SET};
     bool m_retryTypeHasBeenSet = false;
   };
 

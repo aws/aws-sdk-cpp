@@ -31,7 +31,7 @@ namespace Model
   class RouteMatrixAvoidanceArea
   {
   public:
-    AWS_GEOROUTES_API RouteMatrixAvoidanceArea();
+    AWS_GEOROUTES_API RouteMatrixAvoidanceArea() = default;
     AWS_GEOROUTES_API RouteMatrixAvoidanceArea(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMatrixAvoidanceArea& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Geometry of the area to be avoided.</p>
      */
-    inline const RouteMatrixAvoidanceAreaGeometry& GetGeometry() const{ return m_geometry; }
+    inline const RouteMatrixAvoidanceAreaGeometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
-    inline void SetGeometry(const RouteMatrixAvoidanceAreaGeometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
-    inline void SetGeometry(RouteMatrixAvoidanceAreaGeometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
-    inline RouteMatrixAvoidanceArea& WithGeometry(const RouteMatrixAvoidanceAreaGeometry& value) { SetGeometry(value); return *this;}
-    inline RouteMatrixAvoidanceArea& WithGeometry(RouteMatrixAvoidanceAreaGeometry&& value) { SetGeometry(std::move(value)); return *this;}
+    template<typename GeometryT = RouteMatrixAvoidanceAreaGeometry>
+    void SetGeometry(GeometryT&& value) { m_geometryHasBeenSet = true; m_geometry = std::forward<GeometryT>(value); }
+    template<typename GeometryT = RouteMatrixAvoidanceAreaGeometry>
+    RouteMatrixAvoidanceArea& WithGeometry(GeometryT&& value) { SetGeometry(std::forward<GeometryT>(value)); return *this;}
     ///@}
   private:
 

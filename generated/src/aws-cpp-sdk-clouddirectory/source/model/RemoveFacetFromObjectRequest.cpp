@@ -13,13 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveFacetFromObjectRequest::RemoveFacetFromObjectRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_schemaFacetHasBeenSet(false),
-    m_objectReferenceHasBeenSet(false)
-{
-}
-
 Aws::String RemoveFacetFromObjectRequest::SerializePayload() const
 {
   JsonValue payload;

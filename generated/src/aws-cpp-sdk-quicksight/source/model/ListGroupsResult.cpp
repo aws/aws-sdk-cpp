@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListGroupsResult::ListGroupsResult() : 
-    m_status(0)
-{
-}
-
 ListGroupsResult::ListGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListGroupsResult()
 {
   *this = result;
 }
@@ -38,24 +32,24 @@ ListGroupsResult& ListGroupsResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_groupList.push_back(groupListJsonList[groupListIndex].AsObject());
     }
+    m_groupListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

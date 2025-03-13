@@ -20,15 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheParameterGroupStatus::CacheParameterGroupStatus() : 
-    m_cacheParameterGroupNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_cacheNodeIdsToRebootHasBeenSet(false)
-{
-}
-
 CacheParameterGroupStatus::CacheParameterGroupStatus(const XmlNode& xmlNode)
-  : CacheParameterGroupStatus()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ CacheParameterGroupStatus& CacheParameterGroupStatus::operator =(const XmlNode& 
     {
       m_cacheParameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(cacheParameterGroupNameNode.GetText());
       m_cacheParameterGroupNameHasBeenSet = true;
+       m_cacheParameterGroupNameHasBeenSet = true;
     }
     XmlNode parameterApplyStatusNode = resultNode.FirstChild("ParameterApplyStatus");
     if(!parameterApplyStatusNode.IsNull())
     {
       m_parameterApplyStatus = Aws::Utils::Xml::DecodeEscapedXmlText(parameterApplyStatusNode.GetText());
       m_parameterApplyStatusHasBeenSet = true;
+       m_parameterApplyStatusHasBeenSet = true;
     }
     XmlNode cacheNodeIdsToRebootNode = resultNode.FirstChild("CacheNodeIdsToReboot");
     if(!cacheNodeIdsToRebootNode.IsNull())
     {
       XmlNode cacheNodeIdsToRebootMember = cacheNodeIdsToRebootNode.FirstChild("CacheNodeId");
+      m_cacheNodeIdsToRebootHasBeenSet = !cacheNodeIdsToRebootMember.IsNull();
       while(!cacheNodeIdsToRebootMember.IsNull())
       {
         m_cacheNodeIdsToReboot.push_back(cacheNodeIdsToRebootMember.GetText());
         cacheNodeIdsToRebootMember = cacheNodeIdsToRebootMember.NextNode("CacheNodeId");
       }
 
-      m_cacheNodeIdsToRebootHasBeenSet = true;
+       m_cacheNodeIdsToRebootHasBeenSet = true;
     }
   }
 

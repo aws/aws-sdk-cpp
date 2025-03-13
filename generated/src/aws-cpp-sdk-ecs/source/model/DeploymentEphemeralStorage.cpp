@@ -18,13 +18,7 @@ namespace ECS
 namespace Model
 {
 
-DeploymentEphemeralStorage::DeploymentEphemeralStorage() : 
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 DeploymentEphemeralStorage::DeploymentEphemeralStorage(JsonView jsonValue)
-  : DeploymentEphemeralStorage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeploymentEphemeralStorage& DeploymentEphemeralStorage::operator =(JsonView json
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

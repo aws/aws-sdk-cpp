@@ -34,7 +34,7 @@ namespace Model
   class RegistryScanningConfiguration
   {
   public:
-    AWS_ECR_API RegistryScanningConfiguration();
+    AWS_ECR_API RegistryScanningConfiguration() = default;
     AWS_ECR_API RegistryScanningConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API RegistryScanningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,28 @@ namespace Model
     /**
      * <p>The type of scanning configured for the registry.</p>
      */
-    inline const ScanType& GetScanType() const{ return m_scanType; }
+    inline ScanType GetScanType() const { return m_scanType; }
     inline bool ScanTypeHasBeenSet() const { return m_scanTypeHasBeenSet; }
-    inline void SetScanType(const ScanType& value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
-    inline void SetScanType(ScanType&& value) { m_scanTypeHasBeenSet = true; m_scanType = std::move(value); }
-    inline RegistryScanningConfiguration& WithScanType(const ScanType& value) { SetScanType(value); return *this;}
-    inline RegistryScanningConfiguration& WithScanType(ScanType&& value) { SetScanType(std::move(value)); return *this;}
+    inline void SetScanType(ScanType value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
+    inline RegistryScanningConfiguration& WithScanType(ScanType value) { SetScanType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scanning rules associated with the registry.</p>
      */
-    inline const Aws::Vector<RegistryScanningRule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<RegistryScanningRule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<RegistryScanningRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<RegistryScanningRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline RegistryScanningConfiguration& WithRules(const Aws::Vector<RegistryScanningRule>& value) { SetRules(value); return *this;}
-    inline RegistryScanningConfiguration& WithRules(Aws::Vector<RegistryScanningRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline RegistryScanningConfiguration& AddRules(const RegistryScanningRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline RegistryScanningConfiguration& AddRules(RegistryScanningRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<RegistryScanningRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<RegistryScanningRule>>
+    RegistryScanningConfiguration& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = RegistryScanningRule>
+    RegistryScanningConfiguration& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 
-    ScanType m_scanType;
+    ScanType m_scanType{ScanType::NOT_SET};
     bool m_scanTypeHasBeenSet = false;
 
     Aws::Vector<RegistryScanningRule> m_rules;

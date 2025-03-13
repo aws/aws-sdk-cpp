@@ -34,7 +34,7 @@ namespace Model
   class DescribeChapCredentialsResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeChapCredentialsResult();
+    AWS_STORAGEGATEWAY_API DescribeChapCredentialsResult() = default;
     AWS_STORAGEGATEWAY_API DescribeChapCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeChapCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -54,30 +54,30 @@ namespace Model
      * (e.g. Windows client).</p> </li> <li> <p> <b>TargetARN</b>: The Amazon Resource
      * Name (ARN) of the storage volume.</p> </li> </ul>
      */
-    inline const Aws::Vector<ChapInfo>& GetChapCredentials() const{ return m_chapCredentials; }
-    inline void SetChapCredentials(const Aws::Vector<ChapInfo>& value) { m_chapCredentials = value; }
-    inline void SetChapCredentials(Aws::Vector<ChapInfo>&& value) { m_chapCredentials = std::move(value); }
-    inline DescribeChapCredentialsResult& WithChapCredentials(const Aws::Vector<ChapInfo>& value) { SetChapCredentials(value); return *this;}
-    inline DescribeChapCredentialsResult& WithChapCredentials(Aws::Vector<ChapInfo>&& value) { SetChapCredentials(std::move(value)); return *this;}
-    inline DescribeChapCredentialsResult& AddChapCredentials(const ChapInfo& value) { m_chapCredentials.push_back(value); return *this; }
-    inline DescribeChapCredentialsResult& AddChapCredentials(ChapInfo&& value) { m_chapCredentials.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ChapInfo>& GetChapCredentials() const { return m_chapCredentials; }
+    template<typename ChapCredentialsT = Aws::Vector<ChapInfo>>
+    void SetChapCredentials(ChapCredentialsT&& value) { m_chapCredentialsHasBeenSet = true; m_chapCredentials = std::forward<ChapCredentialsT>(value); }
+    template<typename ChapCredentialsT = Aws::Vector<ChapInfo>>
+    DescribeChapCredentialsResult& WithChapCredentials(ChapCredentialsT&& value) { SetChapCredentials(std::forward<ChapCredentialsT>(value)); return *this;}
+    template<typename ChapCredentialsT = ChapInfo>
+    DescribeChapCredentialsResult& AddChapCredentials(ChapCredentialsT&& value) { m_chapCredentialsHasBeenSet = true; m_chapCredentials.emplace_back(std::forward<ChapCredentialsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeChapCredentialsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeChapCredentialsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeChapCredentialsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeChapCredentialsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ChapInfo> m_chapCredentials;
+    bool m_chapCredentialsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

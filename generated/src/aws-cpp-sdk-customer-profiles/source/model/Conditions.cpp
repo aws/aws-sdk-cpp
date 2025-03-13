@@ -18,16 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-Conditions::Conditions() : 
-    m_rangeHasBeenSet(false),
-    m_objectCount(0),
-    m_objectCountHasBeenSet(false),
-    m_thresholdHasBeenSet(false)
-{
-}
-
 Conditions::Conditions(JsonView jsonValue)
-  : Conditions()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Conditions& Conditions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Range"))
   {
     m_range = jsonValue.GetObject("Range");
-
     m_rangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectCount"))
   {
     m_objectCount = jsonValue.GetInteger("ObjectCount");
-
     m_objectCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Threshold"))
   {
     m_threshold = jsonValue.GetObject("Threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

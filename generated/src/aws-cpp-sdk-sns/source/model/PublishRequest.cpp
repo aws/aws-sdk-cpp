@@ -10,19 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-PublishRequest::PublishRequest() : 
-    m_topicArnHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_messageStructureHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false),
-    m_messageDeduplicationIdHasBeenSet(false),
-    m_messageGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String PublishRequest::SerializePayload() const
 {
   Aws::StringStream ss;

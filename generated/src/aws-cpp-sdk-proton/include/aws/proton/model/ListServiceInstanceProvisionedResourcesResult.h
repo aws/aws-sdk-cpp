@@ -29,7 +29,7 @@ namespace Model
   class ListServiceInstanceProvisionedResourcesResult
   {
   public:
-    AWS_PROTON_API ListServiceInstanceProvisionedResourcesResult();
+    AWS_PROTON_API ListServiceInstanceProvisionedResourcesResult() = default;
     AWS_PROTON_API ListServiceInstanceProvisionedResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API ListServiceInstanceProvisionedResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * array of provisioned resources, after the current requested list of provisioned
      * resources.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListServiceInstanceProvisionedResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServiceInstanceProvisionedResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServiceInstanceProvisionedResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServiceInstanceProvisionedResourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of provisioned resources for a service instance.</p>
      */
-    inline const Aws::Vector<ProvisionedResource>& GetProvisionedResources() const{ return m_provisionedResources; }
-    inline void SetProvisionedResources(const Aws::Vector<ProvisionedResource>& value) { m_provisionedResources = value; }
-    inline void SetProvisionedResources(Aws::Vector<ProvisionedResource>&& value) { m_provisionedResources = std::move(value); }
-    inline ListServiceInstanceProvisionedResourcesResult& WithProvisionedResources(const Aws::Vector<ProvisionedResource>& value) { SetProvisionedResources(value); return *this;}
-    inline ListServiceInstanceProvisionedResourcesResult& WithProvisionedResources(Aws::Vector<ProvisionedResource>&& value) { SetProvisionedResources(std::move(value)); return *this;}
-    inline ListServiceInstanceProvisionedResourcesResult& AddProvisionedResources(const ProvisionedResource& value) { m_provisionedResources.push_back(value); return *this; }
-    inline ListServiceInstanceProvisionedResourcesResult& AddProvisionedResources(ProvisionedResource&& value) { m_provisionedResources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProvisionedResource>& GetProvisionedResources() const { return m_provisionedResources; }
+    template<typename ProvisionedResourcesT = Aws::Vector<ProvisionedResource>>
+    void SetProvisionedResources(ProvisionedResourcesT&& value) { m_provisionedResourcesHasBeenSet = true; m_provisionedResources = std::forward<ProvisionedResourcesT>(value); }
+    template<typename ProvisionedResourcesT = Aws::Vector<ProvisionedResource>>
+    ListServiceInstanceProvisionedResourcesResult& WithProvisionedResources(ProvisionedResourcesT&& value) { SetProvisionedResources(std::forward<ProvisionedResourcesT>(value)); return *this;}
+    template<typename ProvisionedResourcesT = ProvisionedResource>
+    ListServiceInstanceProvisionedResourcesResult& AddProvisionedResources(ProvisionedResourcesT&& value) { m_provisionedResourcesHasBeenSet = true; m_provisionedResources.emplace_back(std::forward<ProvisionedResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListServiceInstanceProvisionedResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListServiceInstanceProvisionedResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListServiceInstanceProvisionedResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListServiceInstanceProvisionedResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ProvisionedResource> m_provisionedResources;
+    bool m_provisionedResourcesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-AwsSubmission::AwsSubmission() : 
-    m_involvementType(SalesInvolvementType::NOT_SET),
-    m_involvementTypeHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 AwsSubmission::AwsSubmission(JsonView jsonValue)
-  : AwsSubmission()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AwsSubmission& AwsSubmission::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InvolvementType"))
   {
     m_involvementType = SalesInvolvementTypeMapper::GetSalesInvolvementTypeForName(jsonValue.GetString("InvolvementType"));
-
     m_involvementTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

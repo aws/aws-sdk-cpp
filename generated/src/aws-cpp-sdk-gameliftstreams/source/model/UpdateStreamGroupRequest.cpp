@@ -12,13 +12,6 @@ using namespace Aws::GameLiftStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStreamGroupRequest::UpdateStreamGroupRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_locationConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStreamGroupRequest::SerializePayload() const
 {
   JsonValue payload;

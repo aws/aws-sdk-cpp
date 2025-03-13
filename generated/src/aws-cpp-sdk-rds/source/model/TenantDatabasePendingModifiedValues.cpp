@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-TenantDatabasePendingModifiedValues::TenantDatabasePendingModifiedValues() : 
-    m_masterUserPasswordHasBeenSet(false),
-    m_tenantDBNameHasBeenSet(false)
-{
-}
-
 TenantDatabasePendingModifiedValues::TenantDatabasePendingModifiedValues(const XmlNode& xmlNode)
-  : TenantDatabasePendingModifiedValues()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ TenantDatabasePendingModifiedValues& TenantDatabasePendingModifiedValues::operat
     {
       m_masterUserPassword = Aws::Utils::Xml::DecodeEscapedXmlText(masterUserPasswordNode.GetText());
       m_masterUserPasswordHasBeenSet = true;
+       m_masterUserPasswordHasBeenSet = true;
     }
     XmlNode tenantDBNameNode = resultNode.FirstChild("TenantDBName");
     if(!tenantDBNameNode.IsNull())
     {
       m_tenantDBName = Aws::Utils::Xml::DecodeEscapedXmlText(tenantDBNameNode.GetText());
       m_tenantDBNameHasBeenSet = true;
+       m_tenantDBNameHasBeenSet = true;
     }
   }
 

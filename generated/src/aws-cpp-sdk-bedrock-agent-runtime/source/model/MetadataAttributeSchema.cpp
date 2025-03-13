@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-MetadataAttributeSchema::MetadataAttributeSchema() : 
-    m_descriptionHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_type(AttributeType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 MetadataAttributeSchema::MetadataAttributeSchema(JsonView jsonValue)
-  : MetadataAttributeSchema()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MetadataAttributeSchema& MetadataAttributeSchema::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = AttributeTypeMapper::GetAttributeTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ScheduledInstancesEbs::ScheduledInstancesEbs() : 
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false)
-{
-}
-
 ScheduledInstancesEbs::ScheduledInstancesEbs(const XmlNode& xmlNode)
-  : ScheduledInstancesEbs()
 {
   *this = xmlNode;
 }
@@ -51,36 +36,42 @@ ScheduledInstancesEbs& ScheduledInstancesEbs::operator =(const XmlNode& xmlNode)
     {
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
+       m_deleteOnTerminationHasBeenSet = true;
     }
     XmlNode encryptedNode = resultNode.FirstChild("Encrypted");
     if(!encryptedNode.IsNull())
     {
       m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptedNode.GetText()).c_str()).c_str());
       m_encryptedHasBeenSet = true;
+       m_encryptedHasBeenSet = true;
     }
     XmlNode iopsNode = resultNode.FirstChild("Iops");
     if(!iopsNode.IsNull())
     {
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iopsNode.GetText()).c_str()).c_str());
       m_iopsHasBeenSet = true;
+       m_iopsHasBeenSet = true;
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("SnapshotId");
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
       m_snapshotIdHasBeenSet = true;
+       m_snapshotIdHasBeenSet = true;
     }
     XmlNode volumeSizeNode = resultNode.FirstChild("VolumeSize");
     if(!volumeSizeNode.IsNull())
     {
       m_volumeSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeSizeNode.GetText()).c_str()).c_str());
       m_volumeSizeHasBeenSet = true;
+       m_volumeSizeHasBeenSet = true;
     }
     XmlNode volumeTypeNode = resultNode.FirstChild("VolumeType");
     if(!volumeTypeNode.IsNull())
     {
       m_volumeType = Aws::Utils::Xml::DecodeEscapedXmlText(volumeTypeNode.GetText());
       m_volumeTypeHasBeenSet = true;
+       m_volumeTypeHasBeenSet = true;
     }
   }
 

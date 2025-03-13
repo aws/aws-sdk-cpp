@@ -22,7 +22,7 @@ namespace Model
   class UpdateDatasetEntriesRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API UpdateDatasetEntriesRequest();
+    AWS_REKOGNITION_API UpdateDatasetEntriesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-    inline UpdateDatasetEntriesRequest& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline UpdateDatasetEntriesRequest& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline UpdateDatasetEntriesRequest& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    UpdateDatasetEntriesRequest& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The changes that you want to make to the dataset. </p>
      */
-    inline const DatasetChanges& GetChanges() const{ return m_changes; }
+    inline const DatasetChanges& GetChanges() const { return m_changes; }
     inline bool ChangesHasBeenSet() const { return m_changesHasBeenSet; }
-    inline void SetChanges(const DatasetChanges& value) { m_changesHasBeenSet = true; m_changes = value; }
-    inline void SetChanges(DatasetChanges&& value) { m_changesHasBeenSet = true; m_changes = std::move(value); }
-    inline UpdateDatasetEntriesRequest& WithChanges(const DatasetChanges& value) { SetChanges(value); return *this;}
-    inline UpdateDatasetEntriesRequest& WithChanges(DatasetChanges&& value) { SetChanges(std::move(value)); return *this;}
+    template<typename ChangesT = DatasetChanges>
+    void SetChanges(ChangesT&& value) { m_changesHasBeenSet = true; m_changes = std::forward<ChangesT>(value); }
+    template<typename ChangesT = DatasetChanges>
+    UpdateDatasetEntriesRequest& WithChanges(ChangesT&& value) { SetChanges(std::forward<ChangesT>(value)); return *this;}
     ///@}
   private:
 

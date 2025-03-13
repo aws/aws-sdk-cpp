@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SuccessfulRequest::SuccessfulRequest() : 
-    m_requestIdentifierHasBeenSet(false),
-    m_contactIdHasBeenSet(false)
-{
-}
-
 SuccessfulRequest::SuccessfulRequest(JsonView jsonValue)
-  : SuccessfulRequest()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SuccessfulRequest& SuccessfulRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RequestIdentifier"))
   {
     m_requestIdentifier = jsonValue.GetString("RequestIdentifier");
-
     m_requestIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactId"))
   {
     m_contactId = jsonValue.GetString("ContactId");
-
     m_contactIdHasBeenSet = true;
   }
-
   return *this;
 }
 

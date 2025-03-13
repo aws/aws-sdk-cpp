@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-ImportDataFormat::ImportDataFormat() : 
-    m_importDataType(ImportDataType::NOT_SET),
-    m_importDataTypeHasBeenSet(false)
-{
-}
-
 ImportDataFormat::ImportDataFormat(JsonView jsonValue)
-  : ImportDataFormat()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ImportDataFormat& ImportDataFormat::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImportDataType"))
   {
     m_importDataType = ImportDataTypeMapper::GetImportDataTypeForName(jsonValue.GetString("ImportDataType"));
-
     m_importDataTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

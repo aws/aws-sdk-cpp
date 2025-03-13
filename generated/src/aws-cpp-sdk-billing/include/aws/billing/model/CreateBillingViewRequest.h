@@ -25,7 +25,7 @@ namespace Model
   class CreateBillingViewRequest : public BillingRequest
   {
   public:
-    AWS_BILLING_API CreateBillingViewRequest();
+    AWS_BILLING_API CreateBillingViewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p> The name of the billing view. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateBillingViewRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateBillingViewRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateBillingViewRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateBillingViewRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The description of the billing view. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateBillingViewRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateBillingViewRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateBillingViewRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateBillingViewRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,15 +67,14 @@ namespace Model
      * <p>A list of billing views used as the data source for the custom billing
      * view.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceViews() const{ return m_sourceViews; }
+    inline const Aws::Vector<Aws::String>& GetSourceViews() const { return m_sourceViews; }
     inline bool SourceViewsHasBeenSet() const { return m_sourceViewsHasBeenSet; }
-    inline void SetSourceViews(const Aws::Vector<Aws::String>& value) { m_sourceViewsHasBeenSet = true; m_sourceViews = value; }
-    inline void SetSourceViews(Aws::Vector<Aws::String>&& value) { m_sourceViewsHasBeenSet = true; m_sourceViews = std::move(value); }
-    inline CreateBillingViewRequest& WithSourceViews(const Aws::Vector<Aws::String>& value) { SetSourceViews(value); return *this;}
-    inline CreateBillingViewRequest& WithSourceViews(Aws::Vector<Aws::String>&& value) { SetSourceViews(std::move(value)); return *this;}
-    inline CreateBillingViewRequest& AddSourceViews(const Aws::String& value) { m_sourceViewsHasBeenSet = true; m_sourceViews.push_back(value); return *this; }
-    inline CreateBillingViewRequest& AddSourceViews(Aws::String&& value) { m_sourceViewsHasBeenSet = true; m_sourceViews.push_back(std::move(value)); return *this; }
-    inline CreateBillingViewRequest& AddSourceViews(const char* value) { m_sourceViewsHasBeenSet = true; m_sourceViews.push_back(value); return *this; }
+    template<typename SourceViewsT = Aws::Vector<Aws::String>>
+    void SetSourceViews(SourceViewsT&& value) { m_sourceViewsHasBeenSet = true; m_sourceViews = std::forward<SourceViewsT>(value); }
+    template<typename SourceViewsT = Aws::Vector<Aws::String>>
+    CreateBillingViewRequest& WithSourceViews(SourceViewsT&& value) { SetSourceViews(std::forward<SourceViewsT>(value)); return *this;}
+    template<typename SourceViewsT = Aws::String>
+    CreateBillingViewRequest& AddSourceViews(SourceViewsT&& value) { m_sourceViewsHasBeenSet = true; m_sourceViews.emplace_back(std::forward<SourceViewsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,12 +84,12 @@ namespace Model
      * Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.
      * </p>
      */
-    inline const Expression& GetDataFilterExpression() const{ return m_dataFilterExpression; }
+    inline const Expression& GetDataFilterExpression() const { return m_dataFilterExpression; }
     inline bool DataFilterExpressionHasBeenSet() const { return m_dataFilterExpressionHasBeenSet; }
-    inline void SetDataFilterExpression(const Expression& value) { m_dataFilterExpressionHasBeenSet = true; m_dataFilterExpression = value; }
-    inline void SetDataFilterExpression(Expression&& value) { m_dataFilterExpressionHasBeenSet = true; m_dataFilterExpression = std::move(value); }
-    inline CreateBillingViewRequest& WithDataFilterExpression(const Expression& value) { SetDataFilterExpression(value); return *this;}
-    inline CreateBillingViewRequest& WithDataFilterExpression(Expression&& value) { SetDataFilterExpression(std::move(value)); return *this;}
+    template<typename DataFilterExpressionT = Expression>
+    void SetDataFilterExpression(DataFilterExpressionT&& value) { m_dataFilterExpressionHasBeenSet = true; m_dataFilterExpression = std::forward<DataFilterExpressionT>(value); }
+    template<typename DataFilterExpressionT = Expression>
+    CreateBillingViewRequest& WithDataFilterExpression(DataFilterExpressionT&& value) { SetDataFilterExpression(std::forward<DataFilterExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +100,12 @@ namespace Model
      * complete successfully without performing any further actions with an idempotent
      * request. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateBillingViewRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateBillingViewRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateBillingViewRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateBillingViewRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +113,14 @@ namespace Model
      * <p>A list of key value map specifying tags associated to the billing view being
      * created. </p>
      */
-    inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Vector<ResourceTag>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline CreateBillingViewRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
-    inline CreateBillingViewRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline CreateBillingViewRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-    inline CreateBillingViewRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    CreateBillingViewRequest& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsT = ResourceTag>
+    CreateBillingViewRequest& AddResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value)); return *this; }
     ///@}
   private:
 

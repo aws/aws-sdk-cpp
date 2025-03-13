@@ -22,7 +22,7 @@ namespace Model
   class ImportNotebookRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API ImportNotebookRequest();
+    AWS_ATHENA_API ImportNotebookRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The name of the Spark enabled workgroup to import the notebook to.</p>
      */
-    inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+    inline const Aws::String& GetWorkGroup() const { return m_workGroup; }
     inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
-    inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
-    inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
-    inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
-    inline ImportNotebookRequest& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
-    inline ImportNotebookRequest& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
-    inline ImportNotebookRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
+    template<typename WorkGroupT = Aws::String>
+    void SetWorkGroup(WorkGroupT&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::forward<WorkGroupT>(value); }
+    template<typename WorkGroupT = Aws::String>
+    ImportNotebookRequest& WithWorkGroup(WorkGroupT&& value) { SetWorkGroup(std::forward<WorkGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the notebook to import.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ImportNotebookRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ImportNotebookRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ImportNotebookRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ImportNotebookRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,12 @@ namespace Model
      * <p>The notebook content to be imported. The payload must be in
      * <code>ipynb</code> format.</p>
      */
-    inline const Aws::String& GetPayload() const{ return m_payload; }
+    inline const Aws::String& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Aws::String& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Aws::String&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline void SetPayload(const char* value) { m_payloadHasBeenSet = true; m_payload.assign(value); }
-    inline ImportNotebookRequest& WithPayload(const Aws::String& value) { SetPayload(value); return *this;}
-    inline ImportNotebookRequest& WithPayload(Aws::String&& value) { SetPayload(std::move(value)); return *this;}
-    inline ImportNotebookRequest& WithPayload(const char* value) { SetPayload(value); return *this;}
+    template<typename PayloadT = Aws::String>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Aws::String>
+    ImportNotebookRequest& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +77,10 @@ namespace Model
      * <p>The notebook content type. Currently, the only valid type is
      * <code>IPYNB</code>.</p>
      */
-    inline const NotebookType& GetType() const{ return m_type; }
+    inline NotebookType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const NotebookType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(NotebookType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ImportNotebookRequest& WithType(const NotebookType& value) { SetType(value); return *this;}
-    inline ImportNotebookRequest& WithType(NotebookType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(NotebookType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ImportNotebookRequest& WithType(NotebookType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +88,12 @@ namespace Model
      * <p>A URI that specifies the Amazon S3 location of a notebook file in
      * <code>ipynb</code> format.</p>
      */
-    inline const Aws::String& GetNotebookS3LocationUri() const{ return m_notebookS3LocationUri; }
+    inline const Aws::String& GetNotebookS3LocationUri() const { return m_notebookS3LocationUri; }
     inline bool NotebookS3LocationUriHasBeenSet() const { return m_notebookS3LocationUriHasBeenSet; }
-    inline void SetNotebookS3LocationUri(const Aws::String& value) { m_notebookS3LocationUriHasBeenSet = true; m_notebookS3LocationUri = value; }
-    inline void SetNotebookS3LocationUri(Aws::String&& value) { m_notebookS3LocationUriHasBeenSet = true; m_notebookS3LocationUri = std::move(value); }
-    inline void SetNotebookS3LocationUri(const char* value) { m_notebookS3LocationUriHasBeenSet = true; m_notebookS3LocationUri.assign(value); }
-    inline ImportNotebookRequest& WithNotebookS3LocationUri(const Aws::String& value) { SetNotebookS3LocationUri(value); return *this;}
-    inline ImportNotebookRequest& WithNotebookS3LocationUri(Aws::String&& value) { SetNotebookS3LocationUri(std::move(value)); return *this;}
-    inline ImportNotebookRequest& WithNotebookS3LocationUri(const char* value) { SetNotebookS3LocationUri(value); return *this;}
+    template<typename NotebookS3LocationUriT = Aws::String>
+    void SetNotebookS3LocationUri(NotebookS3LocationUriT&& value) { m_notebookS3LocationUriHasBeenSet = true; m_notebookS3LocationUri = std::forward<NotebookS3LocationUriT>(value); }
+    template<typename NotebookS3LocationUriT = Aws::String>
+    ImportNotebookRequest& WithNotebookS3LocationUri(NotebookS3LocationUriT&& value) { SetNotebookS3LocationUri(std::forward<NotebookS3LocationUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +105,12 @@ namespace Model
      * the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
      * this token or the action will fail.</p> 
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline ImportNotebookRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline ImportNotebookRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline ImportNotebookRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    ImportNotebookRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -135,7 +123,7 @@ namespace Model
     Aws::String m_payload;
     bool m_payloadHasBeenSet = false;
 
-    NotebookType m_type;
+    NotebookType m_type{NotebookType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_notebookS3LocationUri;

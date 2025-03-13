@@ -32,7 +32,7 @@ namespace Model
   class ClusterSnapshotInList
   {
   public:
-    AWS_DOCDBELASTIC_API ClusterSnapshotInList();
+    AWS_DOCDBELASTIC_API ClusterSnapshotInList() = default;
     AWS_DOCDBELASTIC_API ClusterSnapshotInList(Aws::Utils::Json::JsonView jsonValue);
     AWS_DOCDBELASTIC_API ClusterSnapshotInList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DOCDBELASTIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ARN identifier of the elastic cluster.</p>
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline ClusterSnapshotInList& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline ClusterSnapshotInList& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline ClusterSnapshotInList& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    ClusterSnapshotInList& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN identifier of the elastic cluster snapshot.</p>
      */
-    inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
+    inline const Aws::String& GetSnapshotArn() const { return m_snapshotArn; }
     inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
-    inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
-    inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
-    inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
-    inline ClusterSnapshotInList& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
-    inline ClusterSnapshotInList& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
-    inline ClusterSnapshotInList& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}
+    template<typename SnapshotArnT = Aws::String>
+    void SetSnapshotArn(SnapshotArnT&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::forward<SnapshotArnT>(value); }
+    template<typename SnapshotArnT = Aws::String>
+    ClusterSnapshotInList& WithSnapshotArn(SnapshotArnT&& value) { SetSnapshotArn(std::forward<SnapshotArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,40 +67,34 @@ namespace Model
      * <p>The time when the elastic cluster snapshot was created in Universal
      * Coordinated Time (UTC).</p>
      */
-    inline const Aws::String& GetSnapshotCreationTime() const{ return m_snapshotCreationTime; }
+    inline const Aws::String& GetSnapshotCreationTime() const { return m_snapshotCreationTime; }
     inline bool SnapshotCreationTimeHasBeenSet() const { return m_snapshotCreationTimeHasBeenSet; }
-    inline void SetSnapshotCreationTime(const Aws::String& value) { m_snapshotCreationTimeHasBeenSet = true; m_snapshotCreationTime = value; }
-    inline void SetSnapshotCreationTime(Aws::String&& value) { m_snapshotCreationTimeHasBeenSet = true; m_snapshotCreationTime = std::move(value); }
-    inline void SetSnapshotCreationTime(const char* value) { m_snapshotCreationTimeHasBeenSet = true; m_snapshotCreationTime.assign(value); }
-    inline ClusterSnapshotInList& WithSnapshotCreationTime(const Aws::String& value) { SetSnapshotCreationTime(value); return *this;}
-    inline ClusterSnapshotInList& WithSnapshotCreationTime(Aws::String&& value) { SetSnapshotCreationTime(std::move(value)); return *this;}
-    inline ClusterSnapshotInList& WithSnapshotCreationTime(const char* value) { SetSnapshotCreationTime(value); return *this;}
+    template<typename SnapshotCreationTimeT = Aws::String>
+    void SetSnapshotCreationTime(SnapshotCreationTimeT&& value) { m_snapshotCreationTimeHasBeenSet = true; m_snapshotCreationTime = std::forward<SnapshotCreationTimeT>(value); }
+    template<typename SnapshotCreationTimeT = Aws::String>
+    ClusterSnapshotInList& WithSnapshotCreationTime(SnapshotCreationTimeT&& value) { SetSnapshotCreationTime(std::forward<SnapshotCreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the elastic cluster snapshot.</p>
      */
-    inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+    inline const Aws::String& GetSnapshotName() const { return m_snapshotName; }
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
-    inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
-    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
-    inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
-    inline ClusterSnapshotInList& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
-    inline ClusterSnapshotInList& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
-    inline ClusterSnapshotInList& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
+    template<typename SnapshotNameT = Aws::String>
+    void SetSnapshotName(SnapshotNameT&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::forward<SnapshotNameT>(value); }
+    template<typename SnapshotNameT = Aws::String>
+    ClusterSnapshotInList& WithSnapshotName(SnapshotNameT&& value) { SetSnapshotName(std::forward<SnapshotNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the elastic cluster snapshot.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
+    inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ClusterSnapshotInList& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline ClusterSnapshotInList& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ClusterSnapshotInList& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -120,7 +110,7 @@ namespace Model
     Aws::String m_snapshotName;
     bool m_snapshotNameHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

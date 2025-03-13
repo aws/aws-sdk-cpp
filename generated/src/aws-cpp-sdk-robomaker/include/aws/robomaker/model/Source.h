@@ -32,7 +32,7 @@ namespace Model
   class Source
   {
   public:
-    AWS_ROBOMAKER_API Source();
+    AWS_ROBOMAKER_API Source() = default;
     AWS_ROBOMAKER_API Source(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The s3 bucket name.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline Source& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline Source& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline Source& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    Source& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The s3 object key.</p>
      */
-    inline const Aws::String& GetS3Key() const{ return m_s3Key; }
+    inline const Aws::String& GetS3Key() const { return m_s3Key; }
     inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
-    inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
-    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
-    inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
-    inline Source& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
-    inline Source& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
-    inline Source& WithS3Key(const char* value) { SetS3Key(value); return *this;}
+    template<typename S3KeyT = Aws::String>
+    void SetS3Key(S3KeyT&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::forward<S3KeyT>(value); }
+    template<typename S3KeyT = Aws::String>
+    Source& WithS3Key(S3KeyT&& value) { SetS3Key(std::forward<S3KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,26 +67,22 @@ namespace Model
      * <p>A hash of the object specified by <code>s3Bucket</code> and
      * <code>s3Key</code>.</p>
      */
-    inline const Aws::String& GetEtag() const{ return m_etag; }
+    inline const Aws::String& GetEtag() const { return m_etag; }
     inline bool EtagHasBeenSet() const { return m_etagHasBeenSet; }
-    inline void SetEtag(const Aws::String& value) { m_etagHasBeenSet = true; m_etag = value; }
-    inline void SetEtag(Aws::String&& value) { m_etagHasBeenSet = true; m_etag = std::move(value); }
-    inline void SetEtag(const char* value) { m_etagHasBeenSet = true; m_etag.assign(value); }
-    inline Source& WithEtag(const Aws::String& value) { SetEtag(value); return *this;}
-    inline Source& WithEtag(Aws::String&& value) { SetEtag(std::move(value)); return *this;}
-    inline Source& WithEtag(const char* value) { SetEtag(value); return *this;}
+    template<typename EtagT = Aws::String>
+    void SetEtag(EtagT&& value) { m_etagHasBeenSet = true; m_etag = std::forward<EtagT>(value); }
+    template<typename EtagT = Aws::String>
+    Source& WithEtag(EtagT&& value) { SetEtag(std::forward<EtagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The taget processor architecture for the application.</p>
      */
-    inline const Architecture& GetArchitecture() const{ return m_architecture; }
+    inline Architecture GetArchitecture() const { return m_architecture; }
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-    inline Source& WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
-    inline Source& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
+    inline void SetArchitecture(Architecture value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline Source& WithArchitecture(Architecture value) { SetArchitecture(value); return *this;}
     ///@}
   private:
 
@@ -103,7 +95,7 @@ namespace Model
     Aws::String m_etag;
     bool m_etagHasBeenSet = false;
 
-    Architecture m_architecture;
+    Architecture m_architecture{Architecture::NOT_SET};
     bool m_architectureHasBeenSet = false;
   };
 

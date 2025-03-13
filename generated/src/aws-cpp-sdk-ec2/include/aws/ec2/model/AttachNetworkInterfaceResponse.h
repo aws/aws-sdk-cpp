@@ -33,7 +33,7 @@ namespace Model
   class AttachNetworkInterfaceResponse
   {
   public:
-    AWS_EC2_API AttachNetworkInterfaceResponse();
+    AWS_EC2_API AttachNetworkInterfaceResponse() = default;
     AWS_EC2_API AttachNetworkInterfaceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AttachNetworkInterfaceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,39 +42,40 @@ namespace Model
     /**
      * <p>The ID of the network interface attachment.</p>
      */
-    inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
-    inline void SetAttachmentId(const Aws::String& value) { m_attachmentId = value; }
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentId = std::move(value); }
-    inline void SetAttachmentId(const char* value) { m_attachmentId.assign(value); }
-    inline AttachNetworkInterfaceResponse& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-    inline AttachNetworkInterfaceResponse& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-    inline AttachNetworkInterfaceResponse& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
+    template<typename AttachmentIdT = Aws::String>
+    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
+    template<typename AttachmentIdT = Aws::String>
+    AttachNetworkInterfaceResponse& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The index of the network card.</p>
      */
-    inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
-    inline void SetNetworkCardIndex(int value) { m_networkCardIndex = value; }
+    inline int GetNetworkCardIndex() const { return m_networkCardIndex; }
+    inline void SetNetworkCardIndex(int value) { m_networkCardIndexHasBeenSet = true; m_networkCardIndex = value; }
     inline AttachNetworkInterfaceResponse& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AttachNetworkInterfaceResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AttachNetworkInterfaceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AttachNetworkInterfaceResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_attachmentId;
+    bool m_attachmentIdHasBeenSet = false;
 
-    int m_networkCardIndex;
+    int m_networkCardIndex{0};
+    bool m_networkCardIndexHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

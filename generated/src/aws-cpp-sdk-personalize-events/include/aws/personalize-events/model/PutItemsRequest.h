@@ -23,7 +23,7 @@ namespace Model
   class PutItemsRequest : public PersonalizeEventsRequest
   {
   public:
-    AWS_PERSONALIZEEVENTS_API PutItemsRequest();
+    AWS_PERSONALIZEEVENTS_API PutItemsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,26 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item
      * or items to.</p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-    inline PutItemsRequest& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline PutItemsRequest& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline PutItemsRequest& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    PutItemsRequest& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of item data.</p>
      */
-    inline const Aws::Vector<Item>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<Item>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<Item>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<Item>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline PutItemsRequest& WithItems(const Aws::Vector<Item>& value) { SetItems(value); return *this;}
-    inline PutItemsRequest& WithItems(Aws::Vector<Item>&& value) { SetItems(std::move(value)); return *this;}
-    inline PutItemsRequest& AddItems(const Item& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline PutItemsRequest& AddItems(Item&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<Item>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<Item>>
+    PutItemsRequest& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = Item>
+    PutItemsRequest& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 

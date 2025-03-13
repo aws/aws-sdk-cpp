@@ -18,13 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-DestinationConfiguration::DestinationConfiguration() : 
-    m_auditLogHasBeenSet(false)
-{
-}
-
 DestinationConfiguration::DestinationConfiguration(JsonView jsonValue)
-  : DestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DestinationConfiguration& DestinationConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("auditLog"))
   {
     m_auditLog = jsonValue.GetObject("auditLog");
-
     m_auditLogHasBeenSet = true;
   }
-
   return *this;
 }
 

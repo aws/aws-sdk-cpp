@@ -12,11 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTaskRequest::DeleteTaskRequest() : 
-    m_taskArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTaskRequest::SerializePayload() const
 {
   JsonValue payload;

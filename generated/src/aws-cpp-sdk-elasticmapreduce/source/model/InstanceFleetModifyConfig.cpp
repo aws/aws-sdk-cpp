@@ -18,20 +18,7 @@ namespace EMR
 namespace Model
 {
 
-InstanceFleetModifyConfig::InstanceFleetModifyConfig() : 
-    m_instanceFleetIdHasBeenSet(false),
-    m_targetOnDemandCapacity(0),
-    m_targetOnDemandCapacityHasBeenSet(false),
-    m_targetSpotCapacity(0),
-    m_targetSpotCapacityHasBeenSet(false),
-    m_resizeSpecificationsHasBeenSet(false),
-    m_instanceTypeConfigsHasBeenSet(false),
-    m_contextHasBeenSet(false)
-{
-}
-
 InstanceFleetModifyConfig::InstanceFleetModifyConfig(JsonView jsonValue)
-  : InstanceFleetModifyConfig()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ InstanceFleetModifyConfig& InstanceFleetModifyConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("InstanceFleetId"))
   {
     m_instanceFleetId = jsonValue.GetString("InstanceFleetId");
-
     m_instanceFleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetOnDemandCapacity"))
   {
     m_targetOnDemandCapacity = jsonValue.GetInteger("TargetOnDemandCapacity");
-
     m_targetOnDemandCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetSpotCapacity"))
   {
     m_targetSpotCapacity = jsonValue.GetInteger("TargetSpotCapacity");
-
     m_targetSpotCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResizeSpecifications"))
   {
     m_resizeSpecifications = jsonValue.GetObject("ResizeSpecifications");
-
     m_resizeSpecificationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceTypeConfigs"))
   {
     Aws::Utils::Array<JsonView> instanceTypeConfigsJsonList = jsonValue.GetArray("InstanceTypeConfigs");
@@ -75,14 +54,11 @@ InstanceFleetModifyConfig& InstanceFleetModifyConfig::operator =(JsonView jsonVa
     }
     m_instanceTypeConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Context"))
   {
     m_context = jsonValue.GetString("Context");
-
     m_contextHasBeenSet = true;
   }
-
   return *this;
 }
 

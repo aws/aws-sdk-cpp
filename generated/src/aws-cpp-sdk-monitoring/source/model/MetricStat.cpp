@@ -20,18 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricStat::MetricStat() : 
-    m_metricHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_statHasBeenSet(false),
-    m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 MetricStat::MetricStat(const XmlNode& xmlNode)
-  : MetricStat()
 {
   *this = xmlNode;
 }
@@ -47,24 +36,28 @@ MetricStat& MetricStat::operator =(const XmlNode& xmlNode)
     {
       m_metric = metricNode;
       m_metricHasBeenSet = true;
+       m_metricHasBeenSet = true;
     }
     XmlNode periodNode = resultNode.FirstChild("Period");
     if(!periodNode.IsNull())
     {
       m_period = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
       m_periodHasBeenSet = true;
+       m_periodHasBeenSet = true;
     }
     XmlNode statNode = resultNode.FirstChild("Stat");
     if(!statNode.IsNull())
     {
       m_stat = Aws::Utils::Xml::DecodeEscapedXmlText(statNode.GetText());
       m_statHasBeenSet = true;
+       m_statHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
     {
-      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()).c_str());
+      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
       m_unitHasBeenSet = true;
+       m_unitHasBeenSet = true;
     }
   }
 

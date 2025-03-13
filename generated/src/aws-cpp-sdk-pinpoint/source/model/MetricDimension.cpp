@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-MetricDimension::MetricDimension() : 
-    m_comparisonOperatorHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 MetricDimension::MetricDimension(JsonView jsonValue)
-  : MetricDimension()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MetricDimension& MetricDimension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = jsonValue.GetString("ComparisonOperator");
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

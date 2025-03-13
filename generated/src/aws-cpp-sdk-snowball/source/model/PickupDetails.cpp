@@ -18,19 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-PickupDetails::PickupDetails() : 
-    m_nameHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_identificationNumberHasBeenSet(false),
-    m_identificationExpirationDateHasBeenSet(false),
-    m_identificationIssuingOrgHasBeenSet(false),
-    m_devicePickupIdHasBeenSet(false)
-{
-}
-
 PickupDetails::PickupDetails(JsonView jsonValue)
-  : PickupDetails()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ PickupDetails& PickupDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Email"))
   {
     m_email = jsonValue.GetString("Email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentificationNumber"))
   {
     m_identificationNumber = jsonValue.GetString("IdentificationNumber");
-
     m_identificationNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentificationExpirationDate"))
   {
     m_identificationExpirationDate = jsonValue.GetDouble("IdentificationExpirationDate");
-
     m_identificationExpirationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentificationIssuingOrg"))
   {
     m_identificationIssuingOrg = jsonValue.GetString("IdentificationIssuingOrg");
-
     m_identificationIssuingOrgHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DevicePickupId"))
   {
     m_devicePickupId = jsonValue.GetString("DevicePickupId");
-
     m_devicePickupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

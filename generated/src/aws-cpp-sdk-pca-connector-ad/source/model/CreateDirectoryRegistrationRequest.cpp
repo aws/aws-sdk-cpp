@@ -12,14 +12,6 @@ using namespace Aws::PcaConnectorAd::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDirectoryRegistrationRequest::CreateDirectoryRegistrationRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_directoryIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDirectoryRegistrationRequest::SerializePayload() const
 {
   JsonValue payload;

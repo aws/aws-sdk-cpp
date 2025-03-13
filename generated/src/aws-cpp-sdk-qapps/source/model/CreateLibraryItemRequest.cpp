@@ -13,15 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLibraryItemRequest::CreateLibraryItemRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_appVersion(0),
-    m_appVersionHasBeenSet(false),
-    m_categoriesHasBeenSet(false)
-{
-}
-
 Aws::String CreateLibraryItemRequest::SerializePayload() const
 {
   JsonValue payload;

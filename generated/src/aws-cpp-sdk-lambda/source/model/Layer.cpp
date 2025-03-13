@@ -18,17 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-Layer::Layer() : 
-    m_arnHasBeenSet(false),
-    m_codeSize(0),
-    m_codeSizeHasBeenSet(false),
-    m_signingProfileVersionArnHasBeenSet(false),
-    m_signingJobArnHasBeenSet(false)
-{
-}
-
 Layer::Layer(JsonView jsonValue)
-  : Layer()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Layer& Layer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeSize"))
   {
     m_codeSize = jsonValue.GetInt64("CodeSize");
-
     m_codeSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SigningProfileVersionArn"))
   {
     m_signingProfileVersionArn = jsonValue.GetString("SigningProfileVersionArn");
-
     m_signingProfileVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SigningJobArn"))
   {
     m_signingJobArn = jsonValue.GetString("SigningJobArn");
-
     m_signingJobArnHasBeenSet = true;
   }
-
   return *this;
 }
 

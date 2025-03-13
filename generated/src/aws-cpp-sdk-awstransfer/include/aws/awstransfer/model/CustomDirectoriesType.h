@@ -32,7 +32,7 @@ namespace Model
   class CustomDirectoriesType
   {
   public:
-    AWS_TRANSFER_API CustomDirectoriesType();
+    AWS_TRANSFER_API CustomDirectoriesType() = default;
     AWS_TRANSFER_API CustomDirectoriesType(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API CustomDirectoriesType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,70 +42,60 @@ namespace Model
     /**
      * <p>Specifies a location to store failed AS2 message files.</p>
      */
-    inline const Aws::String& GetFailedFilesDirectory() const{ return m_failedFilesDirectory; }
+    inline const Aws::String& GetFailedFilesDirectory() const { return m_failedFilesDirectory; }
     inline bool FailedFilesDirectoryHasBeenSet() const { return m_failedFilesDirectoryHasBeenSet; }
-    inline void SetFailedFilesDirectory(const Aws::String& value) { m_failedFilesDirectoryHasBeenSet = true; m_failedFilesDirectory = value; }
-    inline void SetFailedFilesDirectory(Aws::String&& value) { m_failedFilesDirectoryHasBeenSet = true; m_failedFilesDirectory = std::move(value); }
-    inline void SetFailedFilesDirectory(const char* value) { m_failedFilesDirectoryHasBeenSet = true; m_failedFilesDirectory.assign(value); }
-    inline CustomDirectoriesType& WithFailedFilesDirectory(const Aws::String& value) { SetFailedFilesDirectory(value); return *this;}
-    inline CustomDirectoriesType& WithFailedFilesDirectory(Aws::String&& value) { SetFailedFilesDirectory(std::move(value)); return *this;}
-    inline CustomDirectoriesType& WithFailedFilesDirectory(const char* value) { SetFailedFilesDirectory(value); return *this;}
+    template<typename FailedFilesDirectoryT = Aws::String>
+    void SetFailedFilesDirectory(FailedFilesDirectoryT&& value) { m_failedFilesDirectoryHasBeenSet = true; m_failedFilesDirectory = std::forward<FailedFilesDirectoryT>(value); }
+    template<typename FailedFilesDirectoryT = Aws::String>
+    CustomDirectoriesType& WithFailedFilesDirectory(FailedFilesDirectoryT&& value) { SetFailedFilesDirectory(std::forward<FailedFilesDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a location to store MDN files.</p>
      */
-    inline const Aws::String& GetMdnFilesDirectory() const{ return m_mdnFilesDirectory; }
+    inline const Aws::String& GetMdnFilesDirectory() const { return m_mdnFilesDirectory; }
     inline bool MdnFilesDirectoryHasBeenSet() const { return m_mdnFilesDirectoryHasBeenSet; }
-    inline void SetMdnFilesDirectory(const Aws::String& value) { m_mdnFilesDirectoryHasBeenSet = true; m_mdnFilesDirectory = value; }
-    inline void SetMdnFilesDirectory(Aws::String&& value) { m_mdnFilesDirectoryHasBeenSet = true; m_mdnFilesDirectory = std::move(value); }
-    inline void SetMdnFilesDirectory(const char* value) { m_mdnFilesDirectoryHasBeenSet = true; m_mdnFilesDirectory.assign(value); }
-    inline CustomDirectoriesType& WithMdnFilesDirectory(const Aws::String& value) { SetMdnFilesDirectory(value); return *this;}
-    inline CustomDirectoriesType& WithMdnFilesDirectory(Aws::String&& value) { SetMdnFilesDirectory(std::move(value)); return *this;}
-    inline CustomDirectoriesType& WithMdnFilesDirectory(const char* value) { SetMdnFilesDirectory(value); return *this;}
+    template<typename MdnFilesDirectoryT = Aws::String>
+    void SetMdnFilesDirectory(MdnFilesDirectoryT&& value) { m_mdnFilesDirectoryHasBeenSet = true; m_mdnFilesDirectory = std::forward<MdnFilesDirectoryT>(value); }
+    template<typename MdnFilesDirectoryT = Aws::String>
+    CustomDirectoriesType& WithMdnFilesDirectory(MdnFilesDirectoryT&& value) { SetMdnFilesDirectory(std::forward<MdnFilesDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a location to store the payload for AS2 message files.</p>
      */
-    inline const Aws::String& GetPayloadFilesDirectory() const{ return m_payloadFilesDirectory; }
+    inline const Aws::String& GetPayloadFilesDirectory() const { return m_payloadFilesDirectory; }
     inline bool PayloadFilesDirectoryHasBeenSet() const { return m_payloadFilesDirectoryHasBeenSet; }
-    inline void SetPayloadFilesDirectory(const Aws::String& value) { m_payloadFilesDirectoryHasBeenSet = true; m_payloadFilesDirectory = value; }
-    inline void SetPayloadFilesDirectory(Aws::String&& value) { m_payloadFilesDirectoryHasBeenSet = true; m_payloadFilesDirectory = std::move(value); }
-    inline void SetPayloadFilesDirectory(const char* value) { m_payloadFilesDirectoryHasBeenSet = true; m_payloadFilesDirectory.assign(value); }
-    inline CustomDirectoriesType& WithPayloadFilesDirectory(const Aws::String& value) { SetPayloadFilesDirectory(value); return *this;}
-    inline CustomDirectoriesType& WithPayloadFilesDirectory(Aws::String&& value) { SetPayloadFilesDirectory(std::move(value)); return *this;}
-    inline CustomDirectoriesType& WithPayloadFilesDirectory(const char* value) { SetPayloadFilesDirectory(value); return *this;}
+    template<typename PayloadFilesDirectoryT = Aws::String>
+    void SetPayloadFilesDirectory(PayloadFilesDirectoryT&& value) { m_payloadFilesDirectoryHasBeenSet = true; m_payloadFilesDirectory = std::forward<PayloadFilesDirectoryT>(value); }
+    template<typename PayloadFilesDirectoryT = Aws::String>
+    CustomDirectoriesType& WithPayloadFilesDirectory(PayloadFilesDirectoryT&& value) { SetPayloadFilesDirectory(std::forward<PayloadFilesDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a location to store AS2 status messages.</p>
      */
-    inline const Aws::String& GetStatusFilesDirectory() const{ return m_statusFilesDirectory; }
+    inline const Aws::String& GetStatusFilesDirectory() const { return m_statusFilesDirectory; }
     inline bool StatusFilesDirectoryHasBeenSet() const { return m_statusFilesDirectoryHasBeenSet; }
-    inline void SetStatusFilesDirectory(const Aws::String& value) { m_statusFilesDirectoryHasBeenSet = true; m_statusFilesDirectory = value; }
-    inline void SetStatusFilesDirectory(Aws::String&& value) { m_statusFilesDirectoryHasBeenSet = true; m_statusFilesDirectory = std::move(value); }
-    inline void SetStatusFilesDirectory(const char* value) { m_statusFilesDirectoryHasBeenSet = true; m_statusFilesDirectory.assign(value); }
-    inline CustomDirectoriesType& WithStatusFilesDirectory(const Aws::String& value) { SetStatusFilesDirectory(value); return *this;}
-    inline CustomDirectoriesType& WithStatusFilesDirectory(Aws::String&& value) { SetStatusFilesDirectory(std::move(value)); return *this;}
-    inline CustomDirectoriesType& WithStatusFilesDirectory(const char* value) { SetStatusFilesDirectory(value); return *this;}
+    template<typename StatusFilesDirectoryT = Aws::String>
+    void SetStatusFilesDirectory(StatusFilesDirectoryT&& value) { m_statusFilesDirectoryHasBeenSet = true; m_statusFilesDirectory = std::forward<StatusFilesDirectoryT>(value); }
+    template<typename StatusFilesDirectoryT = Aws::String>
+    CustomDirectoriesType& WithStatusFilesDirectory(StatusFilesDirectoryT&& value) { SetStatusFilesDirectory(std::forward<StatusFilesDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a location to store temporary AS2 message files.</p>
      */
-    inline const Aws::String& GetTemporaryFilesDirectory() const{ return m_temporaryFilesDirectory; }
+    inline const Aws::String& GetTemporaryFilesDirectory() const { return m_temporaryFilesDirectory; }
     inline bool TemporaryFilesDirectoryHasBeenSet() const { return m_temporaryFilesDirectoryHasBeenSet; }
-    inline void SetTemporaryFilesDirectory(const Aws::String& value) { m_temporaryFilesDirectoryHasBeenSet = true; m_temporaryFilesDirectory = value; }
-    inline void SetTemporaryFilesDirectory(Aws::String&& value) { m_temporaryFilesDirectoryHasBeenSet = true; m_temporaryFilesDirectory = std::move(value); }
-    inline void SetTemporaryFilesDirectory(const char* value) { m_temporaryFilesDirectoryHasBeenSet = true; m_temporaryFilesDirectory.assign(value); }
-    inline CustomDirectoriesType& WithTemporaryFilesDirectory(const Aws::String& value) { SetTemporaryFilesDirectory(value); return *this;}
-    inline CustomDirectoriesType& WithTemporaryFilesDirectory(Aws::String&& value) { SetTemporaryFilesDirectory(std::move(value)); return *this;}
-    inline CustomDirectoriesType& WithTemporaryFilesDirectory(const char* value) { SetTemporaryFilesDirectory(value); return *this;}
+    template<typename TemporaryFilesDirectoryT = Aws::String>
+    void SetTemporaryFilesDirectory(TemporaryFilesDirectoryT&& value) { m_temporaryFilesDirectoryHasBeenSet = true; m_temporaryFilesDirectory = std::forward<TemporaryFilesDirectoryT>(value); }
+    template<typename TemporaryFilesDirectoryT = Aws::String>
+    CustomDirectoriesType& WithTemporaryFilesDirectory(TemporaryFilesDirectoryT&& value) { SetTemporaryFilesDirectory(std::forward<TemporaryFilesDirectoryT>(value)); return *this;}
     ///@}
   private:
 

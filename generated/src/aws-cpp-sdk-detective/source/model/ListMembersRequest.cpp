@@ -12,14 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMembersRequest::ListMembersRequest() : 
-    m_graphArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListMembersRequest::SerializePayload() const
 {
   JsonValue payload;

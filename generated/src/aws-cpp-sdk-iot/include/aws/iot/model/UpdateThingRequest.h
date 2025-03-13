@@ -25,7 +25,7 @@ namespace Model
   class UpdateThingRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API UpdateThingRequest();
+    AWS_IOT_API UpdateThingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * change a thing's name, you must create a new thing, give it the new name, and
      * then delete the old thing.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline UpdateThingRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline UpdateThingRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline UpdateThingRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    UpdateThingRequest& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the thing type.</p>
      */
-    inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
+    inline const Aws::String& GetThingTypeName() const { return m_thingTypeName; }
     inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
-    inline void SetThingTypeName(const Aws::String& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
-    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::move(value); }
-    inline void SetThingTypeName(const char* value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName.assign(value); }
-    inline UpdateThingRequest& WithThingTypeName(const Aws::String& value) { SetThingTypeName(value); return *this;}
-    inline UpdateThingRequest& WithThingTypeName(Aws::String&& value) { SetThingTypeName(std::move(value)); return *this;}
-    inline UpdateThingRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+    template<typename ThingTypeNameT = Aws::String>
+    void SetThingTypeName(ThingTypeNameT&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::forward<ThingTypeNameT>(value); }
+    template<typename ThingTypeNameT = Aws::String>
+    UpdateThingRequest& WithThingTypeName(ThingTypeNameT&& value) { SetThingTypeName(std::forward<ThingTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * example:</p> <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
      * <p>This data is used to add new attributes or update existing attributes.</p>
      */
-    inline const AttributePayload& GetAttributePayload() const{ return m_attributePayload; }
+    inline const AttributePayload& GetAttributePayload() const { return m_attributePayload; }
     inline bool AttributePayloadHasBeenSet() const { return m_attributePayloadHasBeenSet; }
-    inline void SetAttributePayload(const AttributePayload& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = value; }
-    inline void SetAttributePayload(AttributePayload&& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = std::move(value); }
-    inline UpdateThingRequest& WithAttributePayload(const AttributePayload& value) { SetAttributePayload(value); return *this;}
-    inline UpdateThingRequest& WithAttributePayload(AttributePayload&& value) { SetAttributePayload(std::move(value)); return *this;}
+    template<typename AttributePayloadT = AttributePayload>
+    void SetAttributePayload(AttributePayloadT&& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = std::forward<AttributePayloadT>(value); }
+    template<typename AttributePayloadT = AttributePayload>
+    UpdateThingRequest& WithAttributePayload(AttributePayloadT&& value) { SetAttributePayload(std::forward<AttributePayloadT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +83,7 @@ namespace Model
      * request, the <code>UpdateThing</code> request is rejected with a
      * <code>VersionConflictException</code>.</p>
      */
-    inline long long GetExpectedVersion() const{ return m_expectedVersion; }
+    inline long long GetExpectedVersion() const { return m_expectedVersion; }
     inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
     inline UpdateThingRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
@@ -98,7 +94,7 @@ namespace Model
      * <p>Remove a thing type association. If <b>true</b>, the association is
      * removed.</p>
      */
-    inline bool GetRemoveThingType() const{ return m_removeThingType; }
+    inline bool GetRemoveThingType() const { return m_removeThingType; }
     inline bool RemoveThingTypeHasBeenSet() const { return m_removeThingTypeHasBeenSet; }
     inline void SetRemoveThingType(bool value) { m_removeThingTypeHasBeenSet = true; m_removeThingType = value; }
     inline UpdateThingRequest& WithRemoveThingType(bool value) { SetRemoveThingType(value); return *this;}
@@ -114,10 +110,10 @@ namespace Model
     AttributePayload m_attributePayload;
     bool m_attributePayloadHasBeenSet = false;
 
-    long long m_expectedVersion;
+    long long m_expectedVersion{0};
     bool m_expectedVersionHasBeenSet = false;
 
-    bool m_removeThingType;
+    bool m_removeThingType{false};
     bool m_removeThingTypeHasBeenSet = false;
   };
 

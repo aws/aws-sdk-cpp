@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteScheduledActionRequest::DeleteScheduledActionRequest() : 
-    m_scheduledActionNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScheduledActionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

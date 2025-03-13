@@ -12,11 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetVocabularyRequest::GetVocabularyRequest() : 
-    m_vocabularyNameHasBeenSet(false)
-{
-}
-
 Aws::String GetVocabularyRequest::SerializePayload() const
 {
   JsonValue payload;

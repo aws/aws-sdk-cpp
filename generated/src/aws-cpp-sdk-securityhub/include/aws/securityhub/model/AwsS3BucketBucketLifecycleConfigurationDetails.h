@@ -33,7 +33,7 @@ namespace Model
   class AwsS3BucketBucketLifecycleConfigurationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationDetails();
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationDetails() = default;
     AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The lifecycle rules.</p>
      */
-    inline const Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesDetails>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesDetails>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesDetails>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesDetails>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline AwsS3BucketBucketLifecycleConfigurationDetails& WithRules(const Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesDetails>& value) { SetRules(value); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationDetails& WithRules(Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesDetails>&& value) { SetRules(std::move(value)); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationDetails& AddRules(const AwsS3BucketBucketLifecycleConfigurationRulesDetails& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline AwsS3BucketBucketLifecycleConfigurationDetails& AddRules(AwsS3BucketBucketLifecycleConfigurationRulesDetails&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesDetails>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesDetails>>
+    AwsS3BucketBucketLifecycleConfigurationDetails& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = AwsS3BucketBucketLifecycleConfigurationRulesDetails>
+    AwsS3BucketBucketLifecycleConfigurationDetails& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 

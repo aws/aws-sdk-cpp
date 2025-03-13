@@ -34,7 +34,7 @@ namespace Model
   class ComparisonFormatConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API ComparisonFormatConfiguration();
+    AWS_QUICKSIGHT_API ComparisonFormatConfiguration() = default;
     AWS_QUICKSIGHT_API ComparisonFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ComparisonFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The number display format.</p>
      */
-    inline const NumberDisplayFormatConfiguration& GetNumberDisplayFormatConfiguration() const{ return m_numberDisplayFormatConfiguration; }
+    inline const NumberDisplayFormatConfiguration& GetNumberDisplayFormatConfiguration() const { return m_numberDisplayFormatConfiguration; }
     inline bool NumberDisplayFormatConfigurationHasBeenSet() const { return m_numberDisplayFormatConfigurationHasBeenSet; }
-    inline void SetNumberDisplayFormatConfiguration(const NumberDisplayFormatConfiguration& value) { m_numberDisplayFormatConfigurationHasBeenSet = true; m_numberDisplayFormatConfiguration = value; }
-    inline void SetNumberDisplayFormatConfiguration(NumberDisplayFormatConfiguration&& value) { m_numberDisplayFormatConfigurationHasBeenSet = true; m_numberDisplayFormatConfiguration = std::move(value); }
-    inline ComparisonFormatConfiguration& WithNumberDisplayFormatConfiguration(const NumberDisplayFormatConfiguration& value) { SetNumberDisplayFormatConfiguration(value); return *this;}
-    inline ComparisonFormatConfiguration& WithNumberDisplayFormatConfiguration(NumberDisplayFormatConfiguration&& value) { SetNumberDisplayFormatConfiguration(std::move(value)); return *this;}
+    template<typename NumberDisplayFormatConfigurationT = NumberDisplayFormatConfiguration>
+    void SetNumberDisplayFormatConfiguration(NumberDisplayFormatConfigurationT&& value) { m_numberDisplayFormatConfigurationHasBeenSet = true; m_numberDisplayFormatConfiguration = std::forward<NumberDisplayFormatConfigurationT>(value); }
+    template<typename NumberDisplayFormatConfigurationT = NumberDisplayFormatConfiguration>
+    ComparisonFormatConfiguration& WithNumberDisplayFormatConfiguration(NumberDisplayFormatConfigurationT&& value) { SetNumberDisplayFormatConfiguration(std::forward<NumberDisplayFormatConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The percentage display format.</p>
      */
-    inline const PercentageDisplayFormatConfiguration& GetPercentageDisplayFormatConfiguration() const{ return m_percentageDisplayFormatConfiguration; }
+    inline const PercentageDisplayFormatConfiguration& GetPercentageDisplayFormatConfiguration() const { return m_percentageDisplayFormatConfiguration; }
     inline bool PercentageDisplayFormatConfigurationHasBeenSet() const { return m_percentageDisplayFormatConfigurationHasBeenSet; }
-    inline void SetPercentageDisplayFormatConfiguration(const PercentageDisplayFormatConfiguration& value) { m_percentageDisplayFormatConfigurationHasBeenSet = true; m_percentageDisplayFormatConfiguration = value; }
-    inline void SetPercentageDisplayFormatConfiguration(PercentageDisplayFormatConfiguration&& value) { m_percentageDisplayFormatConfigurationHasBeenSet = true; m_percentageDisplayFormatConfiguration = std::move(value); }
-    inline ComparisonFormatConfiguration& WithPercentageDisplayFormatConfiguration(const PercentageDisplayFormatConfiguration& value) { SetPercentageDisplayFormatConfiguration(value); return *this;}
-    inline ComparisonFormatConfiguration& WithPercentageDisplayFormatConfiguration(PercentageDisplayFormatConfiguration&& value) { SetPercentageDisplayFormatConfiguration(std::move(value)); return *this;}
+    template<typename PercentageDisplayFormatConfigurationT = PercentageDisplayFormatConfiguration>
+    void SetPercentageDisplayFormatConfiguration(PercentageDisplayFormatConfigurationT&& value) { m_percentageDisplayFormatConfigurationHasBeenSet = true; m_percentageDisplayFormatConfiguration = std::forward<PercentageDisplayFormatConfigurationT>(value); }
+    template<typename PercentageDisplayFormatConfigurationT = PercentageDisplayFormatConfiguration>
+    ComparisonFormatConfiguration& WithPercentageDisplayFormatConfiguration(PercentageDisplayFormatConfigurationT&& value) { SetPercentageDisplayFormatConfiguration(std::forward<PercentageDisplayFormatConfigurationT>(value)); return *this;}
     ///@}
   private:
 

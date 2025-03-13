@@ -18,13 +18,7 @@ namespace AppConfigData
 namespace Model
 {
 
-BadRequestDetails::BadRequestDetails() : 
-    m_invalidParametersHasBeenSet(false)
-{
-}
-
 BadRequestDetails::BadRequestDetails(JsonView jsonValue)
-  : BadRequestDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ BadRequestDetails& BadRequestDetails::operator =(JsonView jsonValue)
     }
     m_invalidParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

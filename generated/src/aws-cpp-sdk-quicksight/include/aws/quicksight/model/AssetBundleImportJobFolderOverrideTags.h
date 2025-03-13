@@ -34,7 +34,7 @@ namespace Model
   class AssetBundleImportJobFolderOverrideTags
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobFolderOverrideTags();
+    AWS_QUICKSIGHT_API AssetBundleImportJobFolderOverrideTags() = default;
     AWS_QUICKSIGHT_API AssetBundleImportJobFolderOverrideTags(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportJobFolderOverrideTags& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,29 +45,28 @@ namespace Model
      * <p>A list of folder IDs that you want to apply overrides to. You can use
      * <code>*</code> to override all folders in this asset bundle.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFolderIds() const{ return m_folderIds; }
+    inline const Aws::Vector<Aws::String>& GetFolderIds() const { return m_folderIds; }
     inline bool FolderIdsHasBeenSet() const { return m_folderIdsHasBeenSet; }
-    inline void SetFolderIds(const Aws::Vector<Aws::String>& value) { m_folderIdsHasBeenSet = true; m_folderIds = value; }
-    inline void SetFolderIds(Aws::Vector<Aws::String>&& value) { m_folderIdsHasBeenSet = true; m_folderIds = std::move(value); }
-    inline AssetBundleImportJobFolderOverrideTags& WithFolderIds(const Aws::Vector<Aws::String>& value) { SetFolderIds(value); return *this;}
-    inline AssetBundleImportJobFolderOverrideTags& WithFolderIds(Aws::Vector<Aws::String>&& value) { SetFolderIds(std::move(value)); return *this;}
-    inline AssetBundleImportJobFolderOverrideTags& AddFolderIds(const Aws::String& value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(value); return *this; }
-    inline AssetBundleImportJobFolderOverrideTags& AddFolderIds(Aws::String&& value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(std::move(value)); return *this; }
-    inline AssetBundleImportJobFolderOverrideTags& AddFolderIds(const char* value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(value); return *this; }
+    template<typename FolderIdsT = Aws::Vector<Aws::String>>
+    void SetFolderIds(FolderIdsT&& value) { m_folderIdsHasBeenSet = true; m_folderIds = std::forward<FolderIdsT>(value); }
+    template<typename FolderIdsT = Aws::Vector<Aws::String>>
+    AssetBundleImportJobFolderOverrideTags& WithFolderIds(FolderIdsT&& value) { SetFolderIds(std::forward<FolderIdsT>(value)); return *this;}
+    template<typename FolderIdsT = Aws::String>
+    AssetBundleImportJobFolderOverrideTags& AddFolderIds(FolderIdsT&& value) { m_folderIdsHasBeenSet = true; m_folderIds.emplace_back(std::forward<FolderIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of tags for the folders that you want to apply overrides to.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline AssetBundleImportJobFolderOverrideTags& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline AssetBundleImportJobFolderOverrideTags& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline AssetBundleImportJobFolderOverrideTags& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline AssetBundleImportJobFolderOverrideTags& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    AssetBundleImportJobFolderOverrideTags& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    AssetBundleImportJobFolderOverrideTags& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class EvaluatedExternalModel
   {
   public:
-    AWS_FRAUDDETECTOR_API EvaluatedExternalModel();
+    AWS_FRAUDDETECTOR_API EvaluatedExternalModel() = default;
     AWS_FRAUDDETECTOR_API EvaluatedExternalModel(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API EvaluatedExternalModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p> The endpoint of the external (Amazon Sagemaker) model. </p>
      */
-    inline const Aws::String& GetModelEndpoint() const{ return m_modelEndpoint; }
+    inline const Aws::String& GetModelEndpoint() const { return m_modelEndpoint; }
     inline bool ModelEndpointHasBeenSet() const { return m_modelEndpointHasBeenSet; }
-    inline void SetModelEndpoint(const Aws::String& value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint = value; }
-    inline void SetModelEndpoint(Aws::String&& value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint = std::move(value); }
-    inline void SetModelEndpoint(const char* value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint.assign(value); }
-    inline EvaluatedExternalModel& WithModelEndpoint(const Aws::String& value) { SetModelEndpoint(value); return *this;}
-    inline EvaluatedExternalModel& WithModelEndpoint(Aws::String&& value) { SetModelEndpoint(std::move(value)); return *this;}
-    inline EvaluatedExternalModel& WithModelEndpoint(const char* value) { SetModelEndpoint(value); return *this;}
+    template<typename ModelEndpointT = Aws::String>
+    void SetModelEndpoint(ModelEndpointT&& value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint = std::forward<ModelEndpointT>(value); }
+    template<typename ModelEndpointT = Aws::String>
+    EvaluatedExternalModel& WithModelEndpoint(ModelEndpointT&& value) { SetModelEndpoint(std::forward<ModelEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Indicates whether event variables were used to generate predictions. </p>
      */
-    inline bool GetUseEventVariables() const{ return m_useEventVariables; }
+    inline bool GetUseEventVariables() const { return m_useEventVariables; }
     inline bool UseEventVariablesHasBeenSet() const { return m_useEventVariablesHasBeenSet; }
     inline void SetUseEventVariables(bool value) { m_useEventVariablesHasBeenSet = true; m_useEventVariables = value; }
     inline EvaluatedExternalModel& WithUseEventVariables(bool value) { SetUseEventVariables(value); return *this;}
@@ -67,45 +65,39 @@ namespace Model
     /**
      * <p> Input variables use for generating predictions. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetInputVariables() const{ return m_inputVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetInputVariables() const { return m_inputVariables; }
     inline bool InputVariablesHasBeenSet() const { return m_inputVariablesHasBeenSet; }
-    inline void SetInputVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_inputVariablesHasBeenSet = true; m_inputVariables = value; }
-    inline void SetInputVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables = std::move(value); }
-    inline EvaluatedExternalModel& WithInputVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetInputVariables(value); return *this;}
-    inline EvaluatedExternalModel& WithInputVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetInputVariables(std::move(value)); return *this;}
-    inline EvaluatedExternalModel& AddInputVariables(const Aws::String& key, const Aws::String& value) { m_inputVariablesHasBeenSet = true; m_inputVariables.emplace(key, value); return *this; }
-    inline EvaluatedExternalModel& AddInputVariables(Aws::String&& key, const Aws::String& value) { m_inputVariablesHasBeenSet = true; m_inputVariables.emplace(std::move(key), value); return *this; }
-    inline EvaluatedExternalModel& AddInputVariables(const Aws::String& key, Aws::String&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables.emplace(key, std::move(value)); return *this; }
-    inline EvaluatedExternalModel& AddInputVariables(Aws::String&& key, Aws::String&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline EvaluatedExternalModel& AddInputVariables(const char* key, Aws::String&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables.emplace(key, std::move(value)); return *this; }
-    inline EvaluatedExternalModel& AddInputVariables(Aws::String&& key, const char* value) { m_inputVariablesHasBeenSet = true; m_inputVariables.emplace(std::move(key), value); return *this; }
-    inline EvaluatedExternalModel& AddInputVariables(const char* key, const char* value) { m_inputVariablesHasBeenSet = true; m_inputVariables.emplace(key, value); return *this; }
+    template<typename InputVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetInputVariables(InputVariablesT&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables = std::forward<InputVariablesT>(value); }
+    template<typename InputVariablesT = Aws::Map<Aws::String, Aws::String>>
+    EvaluatedExternalModel& WithInputVariables(InputVariablesT&& value) { SetInputVariables(std::forward<InputVariablesT>(value)); return *this;}
+    template<typename InputVariablesKeyT = Aws::String, typename InputVariablesValueT = Aws::String>
+    EvaluatedExternalModel& AddInputVariables(InputVariablesKeyT&& key, InputVariablesValueT&& value) {
+      m_inputVariablesHasBeenSet = true; m_inputVariables.emplace(std::forward<InputVariablesKeyT>(key), std::forward<InputVariablesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p> Output variables. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetOutputVariables() const{ return m_outputVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetOutputVariables() const { return m_outputVariables; }
     inline bool OutputVariablesHasBeenSet() const { return m_outputVariablesHasBeenSet; }
-    inline void SetOutputVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = value; }
-    inline void SetOutputVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = std::move(value); }
-    inline EvaluatedExternalModel& WithOutputVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetOutputVariables(value); return *this;}
-    inline EvaluatedExternalModel& WithOutputVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetOutputVariables(std::move(value)); return *this;}
-    inline EvaluatedExternalModel& AddOutputVariables(const Aws::String& key, const Aws::String& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, value); return *this; }
-    inline EvaluatedExternalModel& AddOutputVariables(Aws::String&& key, const Aws::String& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::move(key), value); return *this; }
-    inline EvaluatedExternalModel& AddOutputVariables(const Aws::String& key, Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, std::move(value)); return *this; }
-    inline EvaluatedExternalModel& AddOutputVariables(Aws::String&& key, Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline EvaluatedExternalModel& AddOutputVariables(const char* key, Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, std::move(value)); return *this; }
-    inline EvaluatedExternalModel& AddOutputVariables(Aws::String&& key, const char* value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::move(key), value); return *this; }
-    inline EvaluatedExternalModel& AddOutputVariables(const char* key, const char* value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, value); return *this; }
+    template<typename OutputVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetOutputVariables(OutputVariablesT&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = std::forward<OutputVariablesT>(value); }
+    template<typename OutputVariablesT = Aws::Map<Aws::String, Aws::String>>
+    EvaluatedExternalModel& WithOutputVariables(OutputVariablesT&& value) { SetOutputVariables(std::forward<OutputVariablesT>(value)); return *this;}
+    template<typename OutputVariablesKeyT = Aws::String, typename OutputVariablesValueT = Aws::String>
+    EvaluatedExternalModel& AddOutputVariables(OutputVariablesKeyT&& key, OutputVariablesValueT&& value) {
+      m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::forward<OutputVariablesKeyT>(key), std::forward<OutputVariablesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_modelEndpoint;
     bool m_modelEndpointHasBeenSet = false;
 
-    bool m_useEventVariables;
+    bool m_useEventVariables{false};
     bool m_useEventVariablesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_inputVariables;

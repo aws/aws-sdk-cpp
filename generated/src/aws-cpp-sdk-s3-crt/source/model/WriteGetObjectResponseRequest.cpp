@@ -17,63 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-WriteGetObjectResponseRequest::WriteGetObjectResponseRequest() : 
-    m_requestRouteHasBeenSet(false),
-    m_requestTokenHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_acceptRangesHasBeenSet(false),
-    m_cacheControlHasBeenSet(false),
-    m_contentDispositionHasBeenSet(false),
-    m_contentEncodingHasBeenSet(false),
-    m_contentLanguageHasBeenSet(false),
-    m_contentLength(0),
-    m_contentLengthHasBeenSet(false),
-    m_contentRangeHasBeenSet(false),
-    m_checksumCRC32HasBeenSet(false),
-    m_checksumCRC32CHasBeenSet(false),
-    m_checksumCRC64NVMEHasBeenSet(false),
-    m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false),
-    m_deleteMarker(false),
-    m_deleteMarkerHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_expiresHasBeenSet(false),
-    m_expirationHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_missingMeta(0),
-    m_missingMetaHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_objectLockMode(ObjectLockMode::NOT_SET),
-    m_objectLockModeHasBeenSet(false),
-    m_objectLockLegalHoldStatus(ObjectLockLegalHoldStatus::NOT_SET),
-    m_objectLockLegalHoldStatusHasBeenSet(false),
-    m_objectLockRetainUntilDateHasBeenSet(false),
-    m_partsCount(0),
-    m_partsCountHasBeenSet(false),
-    m_replicationStatus(ReplicationStatus::NOT_SET),
-    m_replicationStatusHasBeenSet(false),
-    m_requestCharged(RequestCharged::NOT_SET),
-    m_requestChargedHasBeenSet(false),
-    m_restoreHasBeenSet(false),
-    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
-    m_serverSideEncryptionHasBeenSet(false),
-    m_sSECustomerAlgorithmHasBeenSet(false),
-    m_sSEKMSKeyIdHasBeenSet(false),
-    m_sSECustomerKeyMD5HasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_tagCount(0),
-    m_tagCountHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_bucketKeyEnabled(false),
-    m_bucketKeyEnabledHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
-
 
 void WriteGetObjectResponseRequest::AddQueryStringParameters(URI& uri) const
 {

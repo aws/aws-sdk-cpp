@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Trace::Trace() : 
-    m_textHasBeenSet(false)
-{
-}
-
 Trace::Trace(JsonView jsonValue)
-  : Trace()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Trace& Trace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

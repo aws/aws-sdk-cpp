@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccountSendingEnabledResult::GetAccountSendingEnabledResult() : 
-    m_enabled(false)
-{
-}
-
 GetAccountSendingEnabledResult::GetAccountSendingEnabledResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetAccountSendingEnabledResult()
 {
   *this = result;
 }
@@ -44,12 +38,14 @@ GetAccountSendingEnabledResult& GetAccountSendingEnabledResult::operator =(const
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
+      m_enabledHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::GetAccountSendingEnabledResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

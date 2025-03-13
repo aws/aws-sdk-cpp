@@ -28,7 +28,7 @@ namespace Model
   class GetRecommendationResult
   {
   public:
-    AWS_TRUSTEDADVISOR_API GetRecommendationResult();
+    AWS_TRUSTEDADVISOR_API GetRecommendationResult() = default;
     AWS_TRUSTEDADVISOR_API GetRecommendationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRUSTEDADVISOR_API GetRecommendationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The Recommendation</p>
      */
-    inline const Recommendation& GetRecommendation() const{ return m_recommendation; }
-    inline void SetRecommendation(const Recommendation& value) { m_recommendation = value; }
-    inline void SetRecommendation(Recommendation&& value) { m_recommendation = std::move(value); }
-    inline GetRecommendationResult& WithRecommendation(const Recommendation& value) { SetRecommendation(value); return *this;}
-    inline GetRecommendationResult& WithRecommendation(Recommendation&& value) { SetRecommendation(std::move(value)); return *this;}
+    inline const Recommendation& GetRecommendation() const { return m_recommendation; }
+    template<typename RecommendationT = Recommendation>
+    void SetRecommendation(RecommendationT&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::forward<RecommendationT>(value); }
+    template<typename RecommendationT = Recommendation>
+    GetRecommendationResult& WithRecommendation(RecommendationT&& value) { SetRecommendation(std::forward<RecommendationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRecommendationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRecommendationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRecommendationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRecommendationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Recommendation m_recommendation;
+    bool m_recommendationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

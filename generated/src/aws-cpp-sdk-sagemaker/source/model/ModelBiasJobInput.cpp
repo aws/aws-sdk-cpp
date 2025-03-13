@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelBiasJobInput::ModelBiasJobInput() : 
-    m_endpointInputHasBeenSet(false),
-    m_batchTransformInputHasBeenSet(false),
-    m_groundTruthS3InputHasBeenSet(false)
-{
-}
-
 ModelBiasJobInput::ModelBiasJobInput(JsonView jsonValue)
-  : ModelBiasJobInput()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ModelBiasJobInput& ModelBiasJobInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointInput"))
   {
     m_endpointInput = jsonValue.GetObject("EndpointInput");
-
     m_endpointInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchTransformInput"))
   {
     m_batchTransformInput = jsonValue.GetObject("BatchTransformInput");
-
     m_batchTransformInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroundTruthS3Input"))
   {
     m_groundTruthS3Input = jsonValue.GetObject("GroundTruthS3Input");
-
     m_groundTruthS3InputHasBeenSet = true;
   }
-
   return *this;
 }
 

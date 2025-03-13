@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NeuronDeviceCoreInfo::NeuronDeviceCoreInfo() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
-{
-}
-
 NeuronDeviceCoreInfo::NeuronDeviceCoreInfo(const XmlNode& xmlNode)
-  : NeuronDeviceCoreInfo()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ NeuronDeviceCoreInfo& NeuronDeviceCoreInfo::operator =(const XmlNode& xmlNode)
     {
       m_count = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
       m_countHasBeenSet = true;
+       m_countHasBeenSet = true;
     }
     XmlNode versionNode = resultNode.FirstChild("version");
     if(!versionNode.IsNull())
     {
       m_version = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(versionNode.GetText()).c_str()).c_str());
       m_versionHasBeenSet = true;
+       m_versionHasBeenSet = true;
     }
   }
 

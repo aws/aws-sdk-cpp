@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DescribeFleetsInstances::DescribeFleetsInstances() : 
-    m_launchTemplateAndOverridesHasBeenSet(false),
-    m_lifecycle(InstanceLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_platform(PlatformValues::NOT_SET),
-    m_platformHasBeenSet(false)
-{
-}
-
 DescribeFleetsInstances::DescribeFleetsInstances(const XmlNode& xmlNode)
-  : DescribeFleetsInstances()
 {
   *this = xmlNode;
 }
@@ -49,36 +36,41 @@ DescribeFleetsInstances& DescribeFleetsInstances::operator =(const XmlNode& xmlN
     {
       m_launchTemplateAndOverrides = launchTemplateAndOverridesNode;
       m_launchTemplateAndOverridesHasBeenSet = true;
+       m_launchTemplateAndOverridesHasBeenSet = true;
     }
     XmlNode lifecycleNode = resultNode.FirstChild("lifecycle");
     if(!lifecycleNode.IsNull())
     {
-      m_lifecycle = InstanceLifecycleMapper::GetInstanceLifecycleForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleNode.GetText()).c_str()).c_str());
+      m_lifecycle = InstanceLifecycleMapper::GetInstanceLifecycleForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleNode.GetText()).c_str()));
       m_lifecycleHasBeenSet = true;
+       m_lifecycleHasBeenSet = true;
     }
     XmlNode instanceIdsNode = resultNode.FirstChild("instanceIds");
     if(!instanceIdsNode.IsNull())
     {
       XmlNode instanceIdsMember = instanceIdsNode.FirstChild("item");
+      m_instanceIdsHasBeenSet = !instanceIdsMember.IsNull();
       while(!instanceIdsMember.IsNull())
       {
         m_instanceIds.push_back(instanceIdsMember.GetText());
         instanceIdsMember = instanceIdsMember.NextNode("item");
       }
 
-      m_instanceIdsHasBeenSet = true;
+       m_instanceIdsHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
-      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()).c_str());
+      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()));
       m_platformHasBeenSet = true;
+       m_platformHasBeenSet = true;
     }
   }
 

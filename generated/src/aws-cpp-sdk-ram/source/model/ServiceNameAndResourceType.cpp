@@ -18,16 +18,7 @@ namespace RAM
 namespace Model
 {
 
-ServiceNameAndResourceType::ServiceNameAndResourceType() : 
-    m_resourceTypeHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_resourceRegionScope(ResourceRegionScope::NOT_SET),
-    m_resourceRegionScopeHasBeenSet(false)
-{
-}
-
 ServiceNameAndResourceType::ServiceNameAndResourceType(JsonView jsonValue)
-  : ServiceNameAndResourceType()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ServiceNameAndResourceType& ServiceNameAndResourceType::operator =(JsonView json
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceRegionScope"))
   {
     m_resourceRegionScope = ResourceRegionScopeMapper::GetResourceRegionScopeForName(jsonValue.GetString("resourceRegionScope"));
-
     m_resourceRegionScopeHasBeenSet = true;
   }
-
   return *this;
 }
 

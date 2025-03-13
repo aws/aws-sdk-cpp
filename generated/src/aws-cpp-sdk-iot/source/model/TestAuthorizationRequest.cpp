@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-TestAuthorizationRequest::TestAuthorizationRequest() : 
-    m_principalHasBeenSet(false),
-    m_cognitoIdentityPoolIdHasBeenSet(false),
-    m_authInfosHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_policyNamesToAddHasBeenSet(false),
-    m_policyNamesToSkipHasBeenSet(false)
-{
-}
-
 Aws::String TestAuthorizationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,20 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-NotificationConfigurationStructure::NotificationConfigurationStructure() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(NotificationConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_aggregationDuration(AggregationDuration::NOT_SET),
-    m_aggregationDurationHasBeenSet(false)
-{
-}
-
 NotificationConfigurationStructure::NotificationConfigurationStructure(JsonView jsonValue)
-  : NotificationConfigurationStructure()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ NotificationConfigurationStructure& NotificationConfigurationStructure::operator
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = NotificationConfigurationStatusMapper::GetNotificationConfigurationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationDuration"))
   {
     m_aggregationDuration = AggregationDurationMapper::GetAggregationDurationForName(jsonValue.GetString("aggregationDuration"));
-
     m_aggregationDurationHasBeenSet = true;
   }
-
   return *this;
 }
 

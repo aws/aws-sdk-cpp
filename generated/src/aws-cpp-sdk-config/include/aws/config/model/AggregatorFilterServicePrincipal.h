@@ -34,7 +34,7 @@ namespace Model
   class AggregatorFilterServicePrincipal
   {
   public:
-    AWS_CONFIGSERVICE_API AggregatorFilterServicePrincipal();
+    AWS_CONFIGSERVICE_API AggregatorFilterServicePrincipal() = default;
     AWS_CONFIGSERVICE_API AggregatorFilterServicePrincipal(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API AggregatorFilterServicePrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * that the list of service principals in the <code>Value</code> field will be
      * aggregated and no other service principals will be filtered.</p>
      */
-    inline const AggregatorFilterType& GetType() const{ return m_type; }
+    inline AggregatorFilterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AggregatorFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AggregatorFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AggregatorFilterServicePrincipal& WithType(const AggregatorFilterType& value) { SetType(value); return *this;}
-    inline AggregatorFilterServicePrincipal& WithType(AggregatorFilterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AggregatorFilterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AggregatorFilterServicePrincipal& WithType(AggregatorFilterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,18 @@ namespace Model
      * <p>Comma-separated list of service principals for the linked Amazon Web Services
      * services to filter your aggregated service-linked configuration recorders.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValue() const{ return m_value; }
+    inline const Aws::Vector<Aws::String>& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Vector<Aws::String>& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Vector<Aws::String>&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline AggregatorFilterServicePrincipal& WithValue(const Aws::Vector<Aws::String>& value) { SetValue(value); return *this;}
-    inline AggregatorFilterServicePrincipal& WithValue(Aws::Vector<Aws::String>&& value) { SetValue(std::move(value)); return *this;}
-    inline AggregatorFilterServicePrincipal& AddValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value.push_back(value); return *this; }
-    inline AggregatorFilterServicePrincipal& AddValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value.push_back(std::move(value)); return *this; }
-    inline AggregatorFilterServicePrincipal& AddValue(const char* value) { m_valueHasBeenSet = true; m_value.push_back(value); return *this; }
+    template<typename ValueT = Aws::Vector<Aws::String>>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Vector<Aws::String>>
+    AggregatorFilterServicePrincipal& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
+    template<typename ValueT = Aws::String>
+    AggregatorFilterServicePrincipal& AddValue(ValueT&& value) { m_valueHasBeenSet = true; m_value.emplace_back(std::forward<ValueT>(value)); return *this; }
     ///@}
   private:
 
-    AggregatorFilterType m_type;
+    AggregatorFilterType m_type{AggregatorFilterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_value;

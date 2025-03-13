@@ -46,7 +46,7 @@ namespace Model
   class S3CopyObjectOperation
   {
   public:
-    AWS_S3CONTROL_API S3CopyObjectOperation();
+    AWS_S3CONTROL_API S3CopyObjectOperation() = default;
     AWS_S3CONTROL_API S3CopyObjectOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API S3CopyObjectOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -72,14 +72,12 @@ namespace Model
      * Request</code> error with the error code <code>InvalidRequest</code>.</p>
      *  </li> </ul>
      */
-    inline const Aws::String& GetTargetResource() const{ return m_targetResource; }
+    inline const Aws::String& GetTargetResource() const { return m_targetResource; }
     inline bool TargetResourceHasBeenSet() const { return m_targetResourceHasBeenSet; }
-    inline void SetTargetResource(const Aws::String& value) { m_targetResourceHasBeenSet = true; m_targetResource = value; }
-    inline void SetTargetResource(Aws::String&& value) { m_targetResourceHasBeenSet = true; m_targetResource = std::move(value); }
-    inline void SetTargetResource(const char* value) { m_targetResourceHasBeenSet = true; m_targetResource.assign(value); }
-    inline S3CopyObjectOperation& WithTargetResource(const Aws::String& value) { SetTargetResource(value); return *this;}
-    inline S3CopyObjectOperation& WithTargetResource(Aws::String&& value) { SetTargetResource(std::move(value)); return *this;}
-    inline S3CopyObjectOperation& WithTargetResource(const char* value) { SetTargetResource(value); return *this;}
+    template<typename TargetResourceT = Aws::String>
+    void SetTargetResource(TargetResourceT&& value) { m_targetResourceHasBeenSet = true; m_targetResource = std::forward<TargetResourceT>(value); }
+    template<typename TargetResourceT = Aws::String>
+    S3CopyObjectOperation& WithTargetResource(TargetResourceT&& value) { SetTargetResource(std::forward<TargetResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +85,10 @@ namespace Model
      * <p/>  <p>This functionality is not supported by directory buckets.</p>
      * 
      */
-    inline const S3CannedAccessControlList& GetCannedAccessControlList() const{ return m_cannedAccessControlList; }
+    inline S3CannedAccessControlList GetCannedAccessControlList() const { return m_cannedAccessControlList; }
     inline bool CannedAccessControlListHasBeenSet() const { return m_cannedAccessControlListHasBeenSet; }
-    inline void SetCannedAccessControlList(const S3CannedAccessControlList& value) { m_cannedAccessControlListHasBeenSet = true; m_cannedAccessControlList = value; }
-    inline void SetCannedAccessControlList(S3CannedAccessControlList&& value) { m_cannedAccessControlListHasBeenSet = true; m_cannedAccessControlList = std::move(value); }
-    inline S3CopyObjectOperation& WithCannedAccessControlList(const S3CannedAccessControlList& value) { SetCannedAccessControlList(value); return *this;}
-    inline S3CopyObjectOperation& WithCannedAccessControlList(S3CannedAccessControlList&& value) { SetCannedAccessControlList(std::move(value)); return *this;}
+    inline void SetCannedAccessControlList(S3CannedAccessControlList value) { m_cannedAccessControlListHasBeenSet = true; m_cannedAccessControlList = value; }
+    inline S3CopyObjectOperation& WithCannedAccessControlList(S3CannedAccessControlList value) { SetCannedAccessControlList(value); return *this;}
     ///@}
 
     ///@{
@@ -100,38 +96,36 @@ namespace Model
      * <p/>  <p>This functionality is not supported by directory buckets.</p>
      * 
      */
-    inline const Aws::Vector<S3Grant>& GetAccessControlGrants() const{ return m_accessControlGrants; }
+    inline const Aws::Vector<S3Grant>& GetAccessControlGrants() const { return m_accessControlGrants; }
     inline bool AccessControlGrantsHasBeenSet() const { return m_accessControlGrantsHasBeenSet; }
-    inline void SetAccessControlGrants(const Aws::Vector<S3Grant>& value) { m_accessControlGrantsHasBeenSet = true; m_accessControlGrants = value; }
-    inline void SetAccessControlGrants(Aws::Vector<S3Grant>&& value) { m_accessControlGrantsHasBeenSet = true; m_accessControlGrants = std::move(value); }
-    inline S3CopyObjectOperation& WithAccessControlGrants(const Aws::Vector<S3Grant>& value) { SetAccessControlGrants(value); return *this;}
-    inline S3CopyObjectOperation& WithAccessControlGrants(Aws::Vector<S3Grant>&& value) { SetAccessControlGrants(std::move(value)); return *this;}
-    inline S3CopyObjectOperation& AddAccessControlGrants(const S3Grant& value) { m_accessControlGrantsHasBeenSet = true; m_accessControlGrants.push_back(value); return *this; }
-    inline S3CopyObjectOperation& AddAccessControlGrants(S3Grant&& value) { m_accessControlGrantsHasBeenSet = true; m_accessControlGrants.push_back(std::move(value)); return *this; }
+    template<typename AccessControlGrantsT = Aws::Vector<S3Grant>>
+    void SetAccessControlGrants(AccessControlGrantsT&& value) { m_accessControlGrantsHasBeenSet = true; m_accessControlGrants = std::forward<AccessControlGrantsT>(value); }
+    template<typename AccessControlGrantsT = Aws::Vector<S3Grant>>
+    S3CopyObjectOperation& WithAccessControlGrants(AccessControlGrantsT&& value) { SetAccessControlGrants(std::forward<AccessControlGrantsT>(value)); return *this;}
+    template<typename AccessControlGrantsT = S3Grant>
+    S3CopyObjectOperation& AddAccessControlGrants(AccessControlGrantsT&& value) { m_accessControlGrantsHasBeenSet = true; m_accessControlGrants.emplace_back(std::forward<AccessControlGrantsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const S3MetadataDirective& GetMetadataDirective() const{ return m_metadataDirective; }
+    inline S3MetadataDirective GetMetadataDirective() const { return m_metadataDirective; }
     inline bool MetadataDirectiveHasBeenSet() const { return m_metadataDirectiveHasBeenSet; }
-    inline void SetMetadataDirective(const S3MetadataDirective& value) { m_metadataDirectiveHasBeenSet = true; m_metadataDirective = value; }
-    inline void SetMetadataDirective(S3MetadataDirective&& value) { m_metadataDirectiveHasBeenSet = true; m_metadataDirective = std::move(value); }
-    inline S3CopyObjectOperation& WithMetadataDirective(const S3MetadataDirective& value) { SetMetadataDirective(value); return *this;}
-    inline S3CopyObjectOperation& WithMetadataDirective(S3MetadataDirective&& value) { SetMetadataDirective(std::move(value)); return *this;}
+    inline void SetMetadataDirective(S3MetadataDirective value) { m_metadataDirectiveHasBeenSet = true; m_metadataDirective = value; }
+    inline S3CopyObjectOperation& WithMetadataDirective(S3MetadataDirective value) { SetMetadataDirective(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Utils::DateTime& GetModifiedSinceConstraint() const{ return m_modifiedSinceConstraint; }
+    inline const Aws::Utils::DateTime& GetModifiedSinceConstraint() const { return m_modifiedSinceConstraint; }
     inline bool ModifiedSinceConstraintHasBeenSet() const { return m_modifiedSinceConstraintHasBeenSet; }
-    inline void SetModifiedSinceConstraint(const Aws::Utils::DateTime& value) { m_modifiedSinceConstraintHasBeenSet = true; m_modifiedSinceConstraint = value; }
-    inline void SetModifiedSinceConstraint(Aws::Utils::DateTime&& value) { m_modifiedSinceConstraintHasBeenSet = true; m_modifiedSinceConstraint = std::move(value); }
-    inline S3CopyObjectOperation& WithModifiedSinceConstraint(const Aws::Utils::DateTime& value) { SetModifiedSinceConstraint(value); return *this;}
-    inline S3CopyObjectOperation& WithModifiedSinceConstraint(Aws::Utils::DateTime&& value) { SetModifiedSinceConstraint(std::move(value)); return *this;}
+    template<typename ModifiedSinceConstraintT = Aws::Utils::DateTime>
+    void SetModifiedSinceConstraint(ModifiedSinceConstraintT&& value) { m_modifiedSinceConstraintHasBeenSet = true; m_modifiedSinceConstraint = std::forward<ModifiedSinceConstraintT>(value); }
+    template<typename ModifiedSinceConstraintT = Aws::Utils::DateTime>
+    S3CopyObjectOperation& WithModifiedSinceConstraint(ModifiedSinceConstraintT&& value) { SetModifiedSinceConstraint(std::forward<ModifiedSinceConstraintT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,12 +134,12 @@ namespace Model
      * the original objects. If you specify an empty set, the new objects will have no
      * tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
      */
-    inline const S3ObjectMetadata& GetNewObjectMetadata() const{ return m_newObjectMetadata; }
+    inline const S3ObjectMetadata& GetNewObjectMetadata() const { return m_newObjectMetadata; }
     inline bool NewObjectMetadataHasBeenSet() const { return m_newObjectMetadataHasBeenSet; }
-    inline void SetNewObjectMetadata(const S3ObjectMetadata& value) { m_newObjectMetadataHasBeenSet = true; m_newObjectMetadata = value; }
-    inline void SetNewObjectMetadata(S3ObjectMetadata&& value) { m_newObjectMetadataHasBeenSet = true; m_newObjectMetadata = std::move(value); }
-    inline S3CopyObjectOperation& WithNewObjectMetadata(const S3ObjectMetadata& value) { SetNewObjectMetadata(value); return *this;}
-    inline S3CopyObjectOperation& WithNewObjectMetadata(S3ObjectMetadata&& value) { SetNewObjectMetadata(std::move(value)); return *this;}
+    template<typename NewObjectMetadataT = S3ObjectMetadata>
+    void SetNewObjectMetadata(NewObjectMetadataT&& value) { m_newObjectMetadataHasBeenSet = true; m_newObjectMetadata = std::forward<NewObjectMetadataT>(value); }
+    template<typename NewObjectMetadataT = S3ObjectMetadata>
+    S3CopyObjectOperation& WithNewObjectMetadata(NewObjectMetadataT&& value) { SetNewObjectMetadata(std::forward<NewObjectMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,14 +152,14 @@ namespace Model
      * specify an empty tag set in the <code>NewObjectTagging</code> field to prevent
      * copying the source object tags to the directory bucket.</p> 
      */
-    inline const Aws::Vector<S3Tag>& GetNewObjectTagging() const{ return m_newObjectTagging; }
+    inline const Aws::Vector<S3Tag>& GetNewObjectTagging() const { return m_newObjectTagging; }
     inline bool NewObjectTaggingHasBeenSet() const { return m_newObjectTaggingHasBeenSet; }
-    inline void SetNewObjectTagging(const Aws::Vector<S3Tag>& value) { m_newObjectTaggingHasBeenSet = true; m_newObjectTagging = value; }
-    inline void SetNewObjectTagging(Aws::Vector<S3Tag>&& value) { m_newObjectTaggingHasBeenSet = true; m_newObjectTagging = std::move(value); }
-    inline S3CopyObjectOperation& WithNewObjectTagging(const Aws::Vector<S3Tag>& value) { SetNewObjectTagging(value); return *this;}
-    inline S3CopyObjectOperation& WithNewObjectTagging(Aws::Vector<S3Tag>&& value) { SetNewObjectTagging(std::move(value)); return *this;}
-    inline S3CopyObjectOperation& AddNewObjectTagging(const S3Tag& value) { m_newObjectTaggingHasBeenSet = true; m_newObjectTagging.push_back(value); return *this; }
-    inline S3CopyObjectOperation& AddNewObjectTagging(S3Tag&& value) { m_newObjectTaggingHasBeenSet = true; m_newObjectTagging.push_back(std::move(value)); return *this; }
+    template<typename NewObjectTaggingT = Aws::Vector<S3Tag>>
+    void SetNewObjectTagging(NewObjectTaggingT&& value) { m_newObjectTaggingHasBeenSet = true; m_newObjectTagging = std::forward<NewObjectTaggingT>(value); }
+    template<typename NewObjectTaggingT = Aws::Vector<S3Tag>>
+    S3CopyObjectOperation& WithNewObjectTagging(NewObjectTaggingT&& value) { SetNewObjectTagging(std::forward<NewObjectTaggingT>(value)); return *this;}
+    template<typename NewObjectTaggingT = S3Tag>
+    S3CopyObjectOperation& AddNewObjectTagging(NewObjectTaggingT&& value) { m_newObjectTaggingHasBeenSet = true; m_newObjectTagging.emplace_back(std::forward<NewObjectTaggingT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -176,14 +170,12 @@ namespace Model
      * object copy is accessed through a website endpoint.</p>  <p>This
      * functionality is not supported by directory buckets.</p> 
      */
-    inline const Aws::String& GetRedirectLocation() const{ return m_redirectLocation; }
+    inline const Aws::String& GetRedirectLocation() const { return m_redirectLocation; }
     inline bool RedirectLocationHasBeenSet() const { return m_redirectLocationHasBeenSet; }
-    inline void SetRedirectLocation(const Aws::String& value) { m_redirectLocationHasBeenSet = true; m_redirectLocation = value; }
-    inline void SetRedirectLocation(Aws::String&& value) { m_redirectLocationHasBeenSet = true; m_redirectLocation = std::move(value); }
-    inline void SetRedirectLocation(const char* value) { m_redirectLocationHasBeenSet = true; m_redirectLocation.assign(value); }
-    inline S3CopyObjectOperation& WithRedirectLocation(const Aws::String& value) { SetRedirectLocation(value); return *this;}
-    inline S3CopyObjectOperation& WithRedirectLocation(Aws::String&& value) { SetRedirectLocation(std::move(value)); return *this;}
-    inline S3CopyObjectOperation& WithRedirectLocation(const char* value) { SetRedirectLocation(value); return *this;}
+    template<typename RedirectLocationT = Aws::String>
+    void SetRedirectLocation(RedirectLocationT&& value) { m_redirectLocationHasBeenSet = true; m_redirectLocation = std::forward<RedirectLocationT>(value); }
+    template<typename RedirectLocationT = Aws::String>
+    S3CopyObjectOperation& WithRedirectLocation(RedirectLocationT&& value) { SetRedirectLocation(std::forward<RedirectLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,7 +183,7 @@ namespace Model
      * <p/>  <p>This functionality is not supported by directory buckets.</p>
      * 
      */
-    inline bool GetRequesterPays() const{ return m_requesterPays; }
+    inline bool GetRequesterPays() const { return m_requesterPays; }
     inline bool RequesterPaysHasBeenSet() const { return m_requesterPaysHasBeenSet; }
     inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
     inline S3CopyObjectOperation& WithRequesterPays(bool value) { SetRequesterPays(value); return *this;}
@@ -203,24 +195,22 @@ namespace Model
      * operation.</p>  <p> <b>Directory buckets </b> - This functionality is not
      * supported by directory buckets. </p> 
      */
-    inline const S3StorageClass& GetStorageClass() const{ return m_storageClass; }
+    inline S3StorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-    inline void SetStorageClass(const S3StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-    inline void SetStorageClass(S3StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-    inline S3CopyObjectOperation& WithStorageClass(const S3StorageClass& value) { SetStorageClass(value); return *this;}
-    inline S3CopyObjectOperation& WithStorageClass(S3StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+    inline void SetStorageClass(S3StorageClass value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline S3CopyObjectOperation& WithStorageClass(S3StorageClass value) { SetStorageClass(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Utils::DateTime& GetUnModifiedSinceConstraint() const{ return m_unModifiedSinceConstraint; }
+    inline const Aws::Utils::DateTime& GetUnModifiedSinceConstraint() const { return m_unModifiedSinceConstraint; }
     inline bool UnModifiedSinceConstraintHasBeenSet() const { return m_unModifiedSinceConstraintHasBeenSet; }
-    inline void SetUnModifiedSinceConstraint(const Aws::Utils::DateTime& value) { m_unModifiedSinceConstraintHasBeenSet = true; m_unModifiedSinceConstraint = value; }
-    inline void SetUnModifiedSinceConstraint(Aws::Utils::DateTime&& value) { m_unModifiedSinceConstraintHasBeenSet = true; m_unModifiedSinceConstraint = std::move(value); }
-    inline S3CopyObjectOperation& WithUnModifiedSinceConstraint(const Aws::Utils::DateTime& value) { SetUnModifiedSinceConstraint(value); return *this;}
-    inline S3CopyObjectOperation& WithUnModifiedSinceConstraint(Aws::Utils::DateTime&& value) { SetUnModifiedSinceConstraint(std::move(value)); return *this;}
+    template<typename UnModifiedSinceConstraintT = Aws::Utils::DateTime>
+    void SetUnModifiedSinceConstraint(UnModifiedSinceConstraintT&& value) { m_unModifiedSinceConstraintHasBeenSet = true; m_unModifiedSinceConstraint = std::forward<UnModifiedSinceConstraintT>(value); }
+    template<typename UnModifiedSinceConstraintT = Aws::Utils::DateTime>
+    S3CopyObjectOperation& WithUnModifiedSinceConstraint(UnModifiedSinceConstraintT&& value) { SetUnModifiedSinceConstraint(std::forward<UnModifiedSinceConstraintT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -249,14 +239,12 @@ namespace Model
      * key that you specified for the directory bucket's default encryption
      * configuration. </p> 
      */
-    inline const Aws::String& GetSSEAwsKmsKeyId() const{ return m_sSEAwsKmsKeyId; }
+    inline const Aws::String& GetSSEAwsKmsKeyId() const { return m_sSEAwsKmsKeyId; }
     inline bool SSEAwsKmsKeyIdHasBeenSet() const { return m_sSEAwsKmsKeyIdHasBeenSet; }
-    inline void SetSSEAwsKmsKeyId(const Aws::String& value) { m_sSEAwsKmsKeyIdHasBeenSet = true; m_sSEAwsKmsKeyId = value; }
-    inline void SetSSEAwsKmsKeyId(Aws::String&& value) { m_sSEAwsKmsKeyIdHasBeenSet = true; m_sSEAwsKmsKeyId = std::move(value); }
-    inline void SetSSEAwsKmsKeyId(const char* value) { m_sSEAwsKmsKeyIdHasBeenSet = true; m_sSEAwsKmsKeyId.assign(value); }
-    inline S3CopyObjectOperation& WithSSEAwsKmsKeyId(const Aws::String& value) { SetSSEAwsKmsKeyId(value); return *this;}
-    inline S3CopyObjectOperation& WithSSEAwsKmsKeyId(Aws::String&& value) { SetSSEAwsKmsKeyId(std::move(value)); return *this;}
-    inline S3CopyObjectOperation& WithSSEAwsKmsKeyId(const char* value) { SetSSEAwsKmsKeyId(value); return *this;}
+    template<typename SSEAwsKmsKeyIdT = Aws::String>
+    void SetSSEAwsKmsKeyId(SSEAwsKmsKeyIdT&& value) { m_sSEAwsKmsKeyIdHasBeenSet = true; m_sSEAwsKmsKeyId = std::forward<SSEAwsKmsKeyIdT>(value); }
+    template<typename SSEAwsKmsKeyIdT = Aws::String>
+    S3CopyObjectOperation& WithSSEAwsKmsKeyId(SSEAwsKmsKeyIdT&& value) { SetSSEAwsKmsKeyId(std::forward<SSEAwsKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -266,14 +254,12 @@ namespace Model
      * destination bucket, set the <code>TargetKeyPrefix</code> property to
      * <code>Folder1</code>.</p>
      */
-    inline const Aws::String& GetTargetKeyPrefix() const{ return m_targetKeyPrefix; }
+    inline const Aws::String& GetTargetKeyPrefix() const { return m_targetKeyPrefix; }
     inline bool TargetKeyPrefixHasBeenSet() const { return m_targetKeyPrefixHasBeenSet; }
-    inline void SetTargetKeyPrefix(const Aws::String& value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix = value; }
-    inline void SetTargetKeyPrefix(Aws::String&& value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix = std::move(value); }
-    inline void SetTargetKeyPrefix(const char* value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix.assign(value); }
-    inline S3CopyObjectOperation& WithTargetKeyPrefix(const Aws::String& value) { SetTargetKeyPrefix(value); return *this;}
-    inline S3CopyObjectOperation& WithTargetKeyPrefix(Aws::String&& value) { SetTargetKeyPrefix(std::move(value)); return *this;}
-    inline S3CopyObjectOperation& WithTargetKeyPrefix(const char* value) { SetTargetKeyPrefix(value); return *this;}
+    template<typename TargetKeyPrefixT = Aws::String>
+    void SetTargetKeyPrefix(TargetKeyPrefixT&& value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix = std::forward<TargetKeyPrefixT>(value); }
+    template<typename TargetKeyPrefixT = Aws::String>
+    S3CopyObjectOperation& WithTargetKeyPrefix(TargetKeyPrefixT&& value) { SetTargetKeyPrefix(std::forward<TargetKeyPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -282,12 +268,10 @@ namespace Model
      * job.</p>  <p>This functionality is not supported by directory buckets.</p>
      * 
      */
-    inline const S3ObjectLockLegalHoldStatus& GetObjectLockLegalHoldStatus() const{ return m_objectLockLegalHoldStatus; }
+    inline S3ObjectLockLegalHoldStatus GetObjectLockLegalHoldStatus() const { return m_objectLockLegalHoldStatus; }
     inline bool ObjectLockLegalHoldStatusHasBeenSet() const { return m_objectLockLegalHoldStatusHasBeenSet; }
-    inline void SetObjectLockLegalHoldStatus(const S3ObjectLockLegalHoldStatus& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = value; }
-    inline void SetObjectLockLegalHoldStatus(S3ObjectLockLegalHoldStatus&& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = std::move(value); }
-    inline S3CopyObjectOperation& WithObjectLockLegalHoldStatus(const S3ObjectLockLegalHoldStatus& value) { SetObjectLockLegalHoldStatus(value); return *this;}
-    inline S3CopyObjectOperation& WithObjectLockLegalHoldStatus(S3ObjectLockLegalHoldStatus&& value) { SetObjectLockLegalHoldStatus(std::move(value)); return *this;}
+    inline void SetObjectLockLegalHoldStatus(S3ObjectLockLegalHoldStatus value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = value; }
+    inline S3CopyObjectOperation& WithObjectLockLegalHoldStatus(S3ObjectLockLegalHoldStatus value) { SetObjectLockLegalHoldStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -296,12 +280,10 @@ namespace Model
      * job.</p>  <p>This functionality is not supported by directory buckets.</p>
      * 
      */
-    inline const S3ObjectLockMode& GetObjectLockMode() const{ return m_objectLockMode; }
+    inline S3ObjectLockMode GetObjectLockMode() const { return m_objectLockMode; }
     inline bool ObjectLockModeHasBeenSet() const { return m_objectLockModeHasBeenSet; }
-    inline void SetObjectLockMode(const S3ObjectLockMode& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = value; }
-    inline void SetObjectLockMode(S3ObjectLockMode&& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = std::move(value); }
-    inline S3CopyObjectOperation& WithObjectLockMode(const S3ObjectLockMode& value) { SetObjectLockMode(value); return *this;}
-    inline S3CopyObjectOperation& WithObjectLockMode(S3ObjectLockMode&& value) { SetObjectLockMode(std::move(value)); return *this;}
+    inline void SetObjectLockMode(S3ObjectLockMode value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = value; }
+    inline S3CopyObjectOperation& WithObjectLockMode(S3ObjectLockMode value) { SetObjectLockMode(value); return *this;}
     ///@}
 
     ///@{
@@ -310,12 +292,12 @@ namespace Model
      * objects in the Batch Operations job.</p>  <p>This functionality is not
      * supported by directory buckets.</p> 
      */
-    inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
+    inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const { return m_objectLockRetainUntilDate; }
     inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
-    inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = value; }
-    inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::move(value); }
-    inline S3CopyObjectOperation& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
-    inline S3CopyObjectOperation& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
+    template<typename ObjectLockRetainUntilDateT = Aws::Utils::DateTime>
+    void SetObjectLockRetainUntilDate(ObjectLockRetainUntilDateT&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::forward<ObjectLockRetainUntilDateT>(value); }
+    template<typename ObjectLockRetainUntilDateT = Aws::Utils::DateTime>
+    S3CopyObjectOperation& WithObjectLockRetainUntilDate(ObjectLockRetainUntilDateT&& value) { SetObjectLockRetainUntilDate(std::forward<ObjectLockRetainUntilDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -333,7 +315,7 @@ namespace Model
      * Copy operation in Batch Operations</a>. In this case, Amazon S3 makes a call to
      * KMS every time a copy request is made for a KMS-encrypted object.</p> 
      */
-    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+    inline bool GetBucketKeyEnabled() const { return m_bucketKeyEnabled; }
     inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
     inline S3CopyObjectOperation& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
@@ -346,28 +328,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const S3ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+    inline S3ChecksumAlgorithm GetChecksumAlgorithm() const { return m_checksumAlgorithm; }
     inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
-    inline void SetChecksumAlgorithm(const S3ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
-    inline void SetChecksumAlgorithm(S3ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
-    inline S3CopyObjectOperation& WithChecksumAlgorithm(const S3ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
-    inline S3CopyObjectOperation& WithChecksumAlgorithm(S3ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
+    inline void SetChecksumAlgorithm(S3ChecksumAlgorithm value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+    inline S3CopyObjectOperation& WithChecksumAlgorithm(S3ChecksumAlgorithm value) { SetChecksumAlgorithm(value); return *this;}
     ///@}
   private:
 
     Aws::String m_targetResource;
     bool m_targetResourceHasBeenSet = false;
 
-    S3CannedAccessControlList m_cannedAccessControlList;
+    S3CannedAccessControlList m_cannedAccessControlList{S3CannedAccessControlList::NOT_SET};
     bool m_cannedAccessControlListHasBeenSet = false;
 
     Aws::Vector<S3Grant> m_accessControlGrants;
     bool m_accessControlGrantsHasBeenSet = false;
 
-    S3MetadataDirective m_metadataDirective;
+    S3MetadataDirective m_metadataDirective{S3MetadataDirective::NOT_SET};
     bool m_metadataDirectiveHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedSinceConstraint;
+    Aws::Utils::DateTime m_modifiedSinceConstraint{};
     bool m_modifiedSinceConstraintHasBeenSet = false;
 
     S3ObjectMetadata m_newObjectMetadata;
@@ -379,13 +359,13 @@ namespace Model
     Aws::String m_redirectLocation;
     bool m_redirectLocationHasBeenSet = false;
 
-    bool m_requesterPays;
+    bool m_requesterPays{false};
     bool m_requesterPaysHasBeenSet = false;
 
-    S3StorageClass m_storageClass;
+    S3StorageClass m_storageClass{S3StorageClass::NOT_SET};
     bool m_storageClassHasBeenSet = false;
 
-    Aws::Utils::DateTime m_unModifiedSinceConstraint;
+    Aws::Utils::DateTime m_unModifiedSinceConstraint{};
     bool m_unModifiedSinceConstraintHasBeenSet = false;
 
     Aws::String m_sSEAwsKmsKeyId;
@@ -394,19 +374,19 @@ namespace Model
     Aws::String m_targetKeyPrefix;
     bool m_targetKeyPrefixHasBeenSet = false;
 
-    S3ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus;
+    S3ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus{S3ObjectLockLegalHoldStatus::NOT_SET};
     bool m_objectLockLegalHoldStatusHasBeenSet = false;
 
-    S3ObjectLockMode m_objectLockMode;
+    S3ObjectLockMode m_objectLockMode{S3ObjectLockMode::NOT_SET};
     bool m_objectLockModeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_objectLockRetainUntilDate;
+    Aws::Utils::DateTime m_objectLockRetainUntilDate{};
     bool m_objectLockRetainUntilDateHasBeenSet = false;
 
-    bool m_bucketKeyEnabled;
+    bool m_bucketKeyEnabled{false};
     bool m_bucketKeyEnabledHasBeenSet = false;
 
-    S3ChecksumAlgorithm m_checksumAlgorithm;
+    S3ChecksumAlgorithm m_checksumAlgorithm{S3ChecksumAlgorithm::NOT_SET};
     bool m_checksumAlgorithmHasBeenSet = false;
   };
 

@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ConnectionTrackingSpecificationRequest::ConnectionTrackingSpecificationRequest() : 
-    m_tcpEstablishedTimeout(0),
-    m_tcpEstablishedTimeoutHasBeenSet(false),
-    m_udpStreamTimeout(0),
-    m_udpStreamTimeoutHasBeenSet(false),
-    m_udpTimeout(0),
-    m_udpTimeoutHasBeenSet(false)
-{
-}
-
 ConnectionTrackingSpecificationRequest::ConnectionTrackingSpecificationRequest(const XmlNode& xmlNode)
-  : ConnectionTrackingSpecificationRequest()
 {
   *this = xmlNode;
 }
@@ -47,18 +36,21 @@ ConnectionTrackingSpecificationRequest& ConnectionTrackingSpecificationRequest::
     {
       m_tcpEstablishedTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tcpEstablishedTimeoutNode.GetText()).c_str()).c_str());
       m_tcpEstablishedTimeoutHasBeenSet = true;
+       m_tcpEstablishedTimeoutHasBeenSet = true;
     }
     XmlNode udpStreamTimeoutNode = resultNode.FirstChild("UdpStreamTimeout");
     if(!udpStreamTimeoutNode.IsNull())
     {
       m_udpStreamTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(udpStreamTimeoutNode.GetText()).c_str()).c_str());
       m_udpStreamTimeoutHasBeenSet = true;
+       m_udpStreamTimeoutHasBeenSet = true;
     }
     XmlNode udpTimeoutNode = resultNode.FirstChild("UdpTimeout");
     if(!udpTimeoutNode.IsNull())
     {
       m_udpTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(udpTimeoutNode.GetText()).c_str()).c_str());
       m_udpTimeoutHasBeenSet = true;
+       m_udpTimeoutHasBeenSet = true;
     }
   }
 

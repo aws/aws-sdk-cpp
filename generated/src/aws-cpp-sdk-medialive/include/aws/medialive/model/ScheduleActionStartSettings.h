@@ -34,7 +34,7 @@ namespace Model
   class ScheduleActionStartSettings
   {
   public:
-    AWS_MEDIALIVE_API ScheduleActionStartSettings();
+    AWS_MEDIALIVE_API ScheduleActionStartSettings() = default;
     AWS_MEDIALIVE_API ScheduleActionStartSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API ScheduleActionStartSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * Option for specifying the start time for an action.
      */
-    inline const FixedModeScheduleActionStartSettings& GetFixedModeScheduleActionStartSettings() const{ return m_fixedModeScheduleActionStartSettings; }
+    inline const FixedModeScheduleActionStartSettings& GetFixedModeScheduleActionStartSettings() const { return m_fixedModeScheduleActionStartSettings; }
     inline bool FixedModeScheduleActionStartSettingsHasBeenSet() const { return m_fixedModeScheduleActionStartSettingsHasBeenSet; }
-    inline void SetFixedModeScheduleActionStartSettings(const FixedModeScheduleActionStartSettings& value) { m_fixedModeScheduleActionStartSettingsHasBeenSet = true; m_fixedModeScheduleActionStartSettings = value; }
-    inline void SetFixedModeScheduleActionStartSettings(FixedModeScheduleActionStartSettings&& value) { m_fixedModeScheduleActionStartSettingsHasBeenSet = true; m_fixedModeScheduleActionStartSettings = std::move(value); }
-    inline ScheduleActionStartSettings& WithFixedModeScheduleActionStartSettings(const FixedModeScheduleActionStartSettings& value) { SetFixedModeScheduleActionStartSettings(value); return *this;}
-    inline ScheduleActionStartSettings& WithFixedModeScheduleActionStartSettings(FixedModeScheduleActionStartSettings&& value) { SetFixedModeScheduleActionStartSettings(std::move(value)); return *this;}
+    template<typename FixedModeScheduleActionStartSettingsT = FixedModeScheduleActionStartSettings>
+    void SetFixedModeScheduleActionStartSettings(FixedModeScheduleActionStartSettingsT&& value) { m_fixedModeScheduleActionStartSettingsHasBeenSet = true; m_fixedModeScheduleActionStartSettings = std::forward<FixedModeScheduleActionStartSettingsT>(value); }
+    template<typename FixedModeScheduleActionStartSettingsT = FixedModeScheduleActionStartSettings>
+    ScheduleActionStartSettings& WithFixedModeScheduleActionStartSettings(FixedModeScheduleActionStartSettingsT&& value) { SetFixedModeScheduleActionStartSettings(std::forward<FixedModeScheduleActionStartSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Option for specifying an action as relative to another action.
      */
-    inline const FollowModeScheduleActionStartSettings& GetFollowModeScheduleActionStartSettings() const{ return m_followModeScheduleActionStartSettings; }
+    inline const FollowModeScheduleActionStartSettings& GetFollowModeScheduleActionStartSettings() const { return m_followModeScheduleActionStartSettings; }
     inline bool FollowModeScheduleActionStartSettingsHasBeenSet() const { return m_followModeScheduleActionStartSettingsHasBeenSet; }
-    inline void SetFollowModeScheduleActionStartSettings(const FollowModeScheduleActionStartSettings& value) { m_followModeScheduleActionStartSettingsHasBeenSet = true; m_followModeScheduleActionStartSettings = value; }
-    inline void SetFollowModeScheduleActionStartSettings(FollowModeScheduleActionStartSettings&& value) { m_followModeScheduleActionStartSettingsHasBeenSet = true; m_followModeScheduleActionStartSettings = std::move(value); }
-    inline ScheduleActionStartSettings& WithFollowModeScheduleActionStartSettings(const FollowModeScheduleActionStartSettings& value) { SetFollowModeScheduleActionStartSettings(value); return *this;}
-    inline ScheduleActionStartSettings& WithFollowModeScheduleActionStartSettings(FollowModeScheduleActionStartSettings&& value) { SetFollowModeScheduleActionStartSettings(std::move(value)); return *this;}
+    template<typename FollowModeScheduleActionStartSettingsT = FollowModeScheduleActionStartSettings>
+    void SetFollowModeScheduleActionStartSettings(FollowModeScheduleActionStartSettingsT&& value) { m_followModeScheduleActionStartSettingsHasBeenSet = true; m_followModeScheduleActionStartSettings = std::forward<FollowModeScheduleActionStartSettingsT>(value); }
+    template<typename FollowModeScheduleActionStartSettingsT = FollowModeScheduleActionStartSettings>
+    ScheduleActionStartSettings& WithFollowModeScheduleActionStartSettings(FollowModeScheduleActionStartSettingsT&& value) { SetFollowModeScheduleActionStartSettings(std::forward<FollowModeScheduleActionStartSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Option for specifying an action that should be applied immediately.
      */
-    inline const ImmediateModeScheduleActionStartSettings& GetImmediateModeScheduleActionStartSettings() const{ return m_immediateModeScheduleActionStartSettings; }
+    inline const ImmediateModeScheduleActionStartSettings& GetImmediateModeScheduleActionStartSettings() const { return m_immediateModeScheduleActionStartSettings; }
     inline bool ImmediateModeScheduleActionStartSettingsHasBeenSet() const { return m_immediateModeScheduleActionStartSettingsHasBeenSet; }
-    inline void SetImmediateModeScheduleActionStartSettings(const ImmediateModeScheduleActionStartSettings& value) { m_immediateModeScheduleActionStartSettingsHasBeenSet = true; m_immediateModeScheduleActionStartSettings = value; }
-    inline void SetImmediateModeScheduleActionStartSettings(ImmediateModeScheduleActionStartSettings&& value) { m_immediateModeScheduleActionStartSettingsHasBeenSet = true; m_immediateModeScheduleActionStartSettings = std::move(value); }
-    inline ScheduleActionStartSettings& WithImmediateModeScheduleActionStartSettings(const ImmediateModeScheduleActionStartSettings& value) { SetImmediateModeScheduleActionStartSettings(value); return *this;}
-    inline ScheduleActionStartSettings& WithImmediateModeScheduleActionStartSettings(ImmediateModeScheduleActionStartSettings&& value) { SetImmediateModeScheduleActionStartSettings(std::move(value)); return *this;}
+    template<typename ImmediateModeScheduleActionStartSettingsT = ImmediateModeScheduleActionStartSettings>
+    void SetImmediateModeScheduleActionStartSettings(ImmediateModeScheduleActionStartSettingsT&& value) { m_immediateModeScheduleActionStartSettingsHasBeenSet = true; m_immediateModeScheduleActionStartSettings = std::forward<ImmediateModeScheduleActionStartSettingsT>(value); }
+    template<typename ImmediateModeScheduleActionStartSettingsT = ImmediateModeScheduleActionStartSettings>
+    ScheduleActionStartSettings& WithImmediateModeScheduleActionStartSettings(ImmediateModeScheduleActionStartSettingsT&& value) { SetImmediateModeScheduleActionStartSettings(std::forward<ImmediateModeScheduleActionStartSettingsT>(value)); return *this;}
     ///@}
   private:
 

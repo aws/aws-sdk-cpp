@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeImageReplicationStatusResult::DescribeImageReplicationStatusResult()
-{
-}
-
 DescribeImageReplicationStatusResult::DescribeImageReplicationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ DescribeImageReplicationStatusResult& DescribeImageReplicationStatusResult::oper
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
+    m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageId"))
   {
     m_imageId = jsonValue.GetObject("imageId");
-
+    m_imageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationStatuses"))
   {
     Aws::Utils::Array<JsonView> replicationStatusesJsonList = jsonValue.GetArray("replicationStatuses");
@@ -48,14 +42,15 @@ DescribeImageReplicationStatusResult& DescribeImageReplicationStatusResult::oper
     {
       m_replicationStatuses.push_back(replicationStatusesJsonList[replicationStatusesIndex].AsObject());
     }
+    m_replicationStatusesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

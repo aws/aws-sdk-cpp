@@ -36,7 +36,7 @@ namespace Model
   class RemediationExecutionStatus
   {
   public:
-    AWS_CONFIGSERVICE_API RemediationExecutionStatus();
+    AWS_CONFIGSERVICE_API RemediationExecutionStatus() = default;
     AWS_CONFIGSERVICE_API RemediationExecutionStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API RemediationExecutionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,78 +44,76 @@ namespace Model
 
     ///@{
     
-    inline const ResourceKey& GetResourceKey() const{ return m_resourceKey; }
+    inline const ResourceKey& GetResourceKey() const { return m_resourceKey; }
     inline bool ResourceKeyHasBeenSet() const { return m_resourceKeyHasBeenSet; }
-    inline void SetResourceKey(const ResourceKey& value) { m_resourceKeyHasBeenSet = true; m_resourceKey = value; }
-    inline void SetResourceKey(ResourceKey&& value) { m_resourceKeyHasBeenSet = true; m_resourceKey = std::move(value); }
-    inline RemediationExecutionStatus& WithResourceKey(const ResourceKey& value) { SetResourceKey(value); return *this;}
-    inline RemediationExecutionStatus& WithResourceKey(ResourceKey&& value) { SetResourceKey(std::move(value)); return *this;}
+    template<typename ResourceKeyT = ResourceKey>
+    void SetResourceKey(ResourceKeyT&& value) { m_resourceKeyHasBeenSet = true; m_resourceKey = std::forward<ResourceKeyT>(value); }
+    template<typename ResourceKeyT = ResourceKey>
+    RemediationExecutionStatus& WithResourceKey(ResourceKeyT&& value) { SetResourceKey(std::forward<ResourceKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ENUM of the values.</p>
      */
-    inline const RemediationExecutionState& GetState() const{ return m_state; }
+    inline RemediationExecutionState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const RemediationExecutionState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(RemediationExecutionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline RemediationExecutionStatus& WithState(const RemediationExecutionState& value) { SetState(value); return *this;}
-    inline RemediationExecutionStatus& WithState(RemediationExecutionState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(RemediationExecutionState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline RemediationExecutionStatus& WithState(RemediationExecutionState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details of every step.</p>
      */
-    inline const Aws::Vector<RemediationExecutionStep>& GetStepDetails() const{ return m_stepDetails; }
+    inline const Aws::Vector<RemediationExecutionStep>& GetStepDetails() const { return m_stepDetails; }
     inline bool StepDetailsHasBeenSet() const { return m_stepDetailsHasBeenSet; }
-    inline void SetStepDetails(const Aws::Vector<RemediationExecutionStep>& value) { m_stepDetailsHasBeenSet = true; m_stepDetails = value; }
-    inline void SetStepDetails(Aws::Vector<RemediationExecutionStep>&& value) { m_stepDetailsHasBeenSet = true; m_stepDetails = std::move(value); }
-    inline RemediationExecutionStatus& WithStepDetails(const Aws::Vector<RemediationExecutionStep>& value) { SetStepDetails(value); return *this;}
-    inline RemediationExecutionStatus& WithStepDetails(Aws::Vector<RemediationExecutionStep>&& value) { SetStepDetails(std::move(value)); return *this;}
-    inline RemediationExecutionStatus& AddStepDetails(const RemediationExecutionStep& value) { m_stepDetailsHasBeenSet = true; m_stepDetails.push_back(value); return *this; }
-    inline RemediationExecutionStatus& AddStepDetails(RemediationExecutionStep&& value) { m_stepDetailsHasBeenSet = true; m_stepDetails.push_back(std::move(value)); return *this; }
+    template<typename StepDetailsT = Aws::Vector<RemediationExecutionStep>>
+    void SetStepDetails(StepDetailsT&& value) { m_stepDetailsHasBeenSet = true; m_stepDetails = std::forward<StepDetailsT>(value); }
+    template<typename StepDetailsT = Aws::Vector<RemediationExecutionStep>>
+    RemediationExecutionStatus& WithStepDetails(StepDetailsT&& value) { SetStepDetails(std::forward<StepDetailsT>(value)); return *this;}
+    template<typename StepDetailsT = RemediationExecutionStep>
+    RemediationExecutionStatus& AddStepDetails(StepDetailsT&& value) { m_stepDetailsHasBeenSet = true; m_stepDetails.emplace_back(std::forward<StepDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Start time when the remediation was executed.</p>
      */
-    inline const Aws::Utils::DateTime& GetInvocationTime() const{ return m_invocationTime; }
+    inline const Aws::Utils::DateTime& GetInvocationTime() const { return m_invocationTime; }
     inline bool InvocationTimeHasBeenSet() const { return m_invocationTimeHasBeenSet; }
-    inline void SetInvocationTime(const Aws::Utils::DateTime& value) { m_invocationTimeHasBeenSet = true; m_invocationTime = value; }
-    inline void SetInvocationTime(Aws::Utils::DateTime&& value) { m_invocationTimeHasBeenSet = true; m_invocationTime = std::move(value); }
-    inline RemediationExecutionStatus& WithInvocationTime(const Aws::Utils::DateTime& value) { SetInvocationTime(value); return *this;}
-    inline RemediationExecutionStatus& WithInvocationTime(Aws::Utils::DateTime&& value) { SetInvocationTime(std::move(value)); return *this;}
+    template<typename InvocationTimeT = Aws::Utils::DateTime>
+    void SetInvocationTime(InvocationTimeT&& value) { m_invocationTimeHasBeenSet = true; m_invocationTime = std::forward<InvocationTimeT>(value); }
+    template<typename InvocationTimeT = Aws::Utils::DateTime>
+    RemediationExecutionStatus& WithInvocationTime(InvocationTimeT&& value) { SetInvocationTime(std::forward<InvocationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the remediation execution was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline RemediationExecutionStatus& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline RemediationExecutionStatus& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    RemediationExecutionStatus& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
   private:
 
     ResourceKey m_resourceKey;
     bool m_resourceKeyHasBeenSet = false;
 
-    RemediationExecutionState m_state;
+    RemediationExecutionState m_state{RemediationExecutionState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::Vector<RemediationExecutionStep> m_stepDetails;
     bool m_stepDetailsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_invocationTime;
+    Aws::Utils::DateTime m_invocationTime{};
     bool m_invocationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
   };
 

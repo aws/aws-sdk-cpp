@@ -18,16 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ConverseStreamMetadataEvent::ConverseStreamMetadataEvent() : 
-    m_usageHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_traceHasBeenSet(false),
-    m_performanceConfigHasBeenSet(false)
-{
-}
-
 ConverseStreamMetadataEvent::ConverseStreamMetadataEvent(JsonView jsonValue)
-  : ConverseStreamMetadataEvent()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ConverseStreamMetadataEvent& ConverseStreamMetadataEvent::operator =(JsonView js
   if(jsonValue.ValueExists("usage"))
   {
     m_usage = jsonValue.GetObject("usage");
-
     m_usageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metrics"))
   {
     m_metrics = jsonValue.GetObject("metrics");
-
     m_metricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trace"))
   {
     m_trace = jsonValue.GetObject("trace");
-
     m_traceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performanceConfig"))
   {
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
-
     m_performanceConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-PartnershipSummary::PartnershipSummary() : 
-    m_profileIdHasBeenSet(false),
-    m_partnershipIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_capabilityOptionsHasBeenSet(false),
-    m_tradingPartnerIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
-{
-}
-
 PartnershipSummary::PartnershipSummary(JsonView jsonValue)
-  : PartnershipSummary()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ PartnershipSummary& PartnershipSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("profileId"))
   {
     m_profileId = jsonValue.GetString("profileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partnershipId"))
   {
     m_partnershipId = jsonValue.GetString("partnershipId");
-
     m_partnershipIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilities"))
   {
     Aws::Utils::Array<JsonView> capabilitiesJsonList = jsonValue.GetArray("capabilities");
@@ -68,35 +49,26 @@ PartnershipSummary& PartnershipSummary::operator =(JsonView jsonValue)
     }
     m_capabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilityOptions"))
   {
     m_capabilityOptions = jsonValue.GetObject("capabilityOptions");
-
     m_capabilityOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tradingPartnerId"))
   {
     m_tradingPartnerId = jsonValue.GetString("tradingPartnerId");
-
     m_tradingPartnerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class BatchReadException
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchReadException();
+    AWS_CLOUDDIRECTORY_API BatchReadException() = default;
     AWS_CLOUDDIRECTORY_API BatchReadException(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchReadException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>A type of exception, such as <code>InvalidArnException</code>.</p>
      */
-    inline const BatchReadExceptionType& GetType() const{ return m_type; }
+    inline BatchReadExceptionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const BatchReadExceptionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(BatchReadExceptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline BatchReadException& WithType(const BatchReadExceptionType& value) { SetType(value); return *this;}
-    inline BatchReadException& WithType(BatchReadExceptionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(BatchReadExceptionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline BatchReadException& WithType(BatchReadExceptionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An exception message that is associated with the failure.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline BatchReadException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline BatchReadException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline BatchReadException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    BatchReadException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    BatchReadExceptionType m_type;
+    BatchReadExceptionType m_type{BatchReadExceptionType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_message;

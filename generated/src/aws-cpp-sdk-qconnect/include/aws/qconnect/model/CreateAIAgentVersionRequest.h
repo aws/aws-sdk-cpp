@@ -23,7 +23,7 @@ namespace Model
   class CreateAIAgentVersionRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API CreateAIAgentVersionRequest();
+    AWS_QCONNECT_API CreateAIAgentVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Q in Connect AI Agent.</p>
      */
-    inline const Aws::String& GetAiAgentId() const{ return m_aiAgentId; }
+    inline const Aws::String& GetAiAgentId() const { return m_aiAgentId; }
     inline bool AiAgentIdHasBeenSet() const { return m_aiAgentIdHasBeenSet; }
-    inline void SetAiAgentId(const Aws::String& value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId = value; }
-    inline void SetAiAgentId(Aws::String&& value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId = std::move(value); }
-    inline void SetAiAgentId(const char* value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId.assign(value); }
-    inline CreateAIAgentVersionRequest& WithAiAgentId(const Aws::String& value) { SetAiAgentId(value); return *this;}
-    inline CreateAIAgentVersionRequest& WithAiAgentId(Aws::String&& value) { SetAiAgentId(std::move(value)); return *this;}
-    inline CreateAIAgentVersionRequest& WithAiAgentId(const char* value) { SetAiAgentId(value); return *this;}
+    template<typename AiAgentIdT = Aws::String>
+    void SetAiAgentId(AiAgentIdT&& value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId = std::forward<AiAgentIdT>(value); }
+    template<typename AiAgentIdT = Aws::String>
+    CreateAIAgentVersionRequest& WithAiAgentId(AiAgentIdT&& value) { SetAiAgentId(std::forward<AiAgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
-    inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
-    inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
-    inline CreateAIAgentVersionRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-    inline CreateAIAgentVersionRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-    inline CreateAIAgentVersionRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    CreateAIAgentVersionRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>..</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateAIAgentVersionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateAIAgentVersionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateAIAgentVersionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateAIAgentVersionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +84,12 @@ namespace Model
      * version creation can fail if an update to the AI Agent post the specified
      * modification time has been made.</p>
      */
-    inline const Aws::Utils::DateTime& GetModifiedTime() const{ return m_modifiedTime; }
+    inline const Aws::Utils::DateTime& GetModifiedTime() const { return m_modifiedTime; }
     inline bool ModifiedTimeHasBeenSet() const { return m_modifiedTimeHasBeenSet; }
-    inline void SetModifiedTime(const Aws::Utils::DateTime& value) { m_modifiedTimeHasBeenSet = true; m_modifiedTime = value; }
-    inline void SetModifiedTime(Aws::Utils::DateTime&& value) { m_modifiedTimeHasBeenSet = true; m_modifiedTime = std::move(value); }
-    inline CreateAIAgentVersionRequest& WithModifiedTime(const Aws::Utils::DateTime& value) { SetModifiedTime(value); return *this;}
-    inline CreateAIAgentVersionRequest& WithModifiedTime(Aws::Utils::DateTime&& value) { SetModifiedTime(std::move(value)); return *this;}
+    template<typename ModifiedTimeT = Aws::Utils::DateTime>
+    void SetModifiedTime(ModifiedTimeT&& value) { m_modifiedTimeHasBeenSet = true; m_modifiedTime = std::forward<ModifiedTimeT>(value); }
+    template<typename ModifiedTimeT = Aws::Utils::DateTime>
+    CreateAIAgentVersionRequest& WithModifiedTime(ModifiedTimeT&& value) { SetModifiedTime(std::forward<ModifiedTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -108,7 +102,7 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedTime;
+    Aws::Utils::DateTime m_modifiedTime{};
     bool m_modifiedTimeHasBeenSet = false;
   };
 

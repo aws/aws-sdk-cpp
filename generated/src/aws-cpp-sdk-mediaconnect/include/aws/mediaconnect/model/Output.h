@@ -37,7 +37,7 @@ namespace Model
   class Output
   {
   public:
-    AWS_MEDIACONNECT_API Output();
+    AWS_MEDIACONNECT_API Output() = default;
     AWS_MEDIACONNECT_API Output(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
     /**
      * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
      */
-    inline int GetDataTransferSubscriberFeePercent() const{ return m_dataTransferSubscriberFeePercent; }
+    inline int GetDataTransferSubscriberFeePercent() const { return m_dataTransferSubscriberFeePercent; }
     inline bool DataTransferSubscriberFeePercentHasBeenSet() const { return m_dataTransferSubscriberFeePercentHasBeenSet; }
     inline void SetDataTransferSubscriberFeePercent(int value) { m_dataTransferSubscriberFeePercentHasBeenSet = true; m_dataTransferSubscriberFeePercent = value; }
     inline Output& WithDataTransferSubscriberFeePercent(int value) { SetDataTransferSubscriberFeePercent(value); return *this;}
@@ -57,28 +57,24 @@ namespace Model
     /**
      * A description of the output.
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Output& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Output& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Output& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Output& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The address where you want to send the output.
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline Output& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline Output& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline Output& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    Output& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,12 @@ namespace Model
      * The type of key used for the encryption. If no keyType is provided, the service
      * will use the default setting (static-key).
      */
-    inline const Encryption& GetEncryption() const{ return m_encryption; }
+    inline const Encryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline Output& WithEncryption(const Encryption& value) { SetEncryption(value); return *this;}
-    inline Output& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = Encryption>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = Encryption>
+    Output& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +95,12 @@ namespace Model
      * The ARN of the entitlement on the originator''s flow. This value is relevant
      * only on entitled flows.
      */
-    inline const Aws::String& GetEntitlementArn() const{ return m_entitlementArn; }
+    inline const Aws::String& GetEntitlementArn() const { return m_entitlementArn; }
     inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
-    inline void SetEntitlementArn(const Aws::String& value) { m_entitlementArnHasBeenSet = true; m_entitlementArn = value; }
-    inline void SetEntitlementArn(Aws::String&& value) { m_entitlementArnHasBeenSet = true; m_entitlementArn = std::move(value); }
-    inline void SetEntitlementArn(const char* value) { m_entitlementArnHasBeenSet = true; m_entitlementArn.assign(value); }
-    inline Output& WithEntitlementArn(const Aws::String& value) { SetEntitlementArn(value); return *this;}
-    inline Output& WithEntitlementArn(Aws::String&& value) { SetEntitlementArn(std::move(value)); return *this;}
-    inline Output& WithEntitlementArn(const char* value) { SetEntitlementArn(value); return *this;}
+    template<typename EntitlementArnT = Aws::String>
+    void SetEntitlementArn(EntitlementArnT&& value) { m_entitlementArnHasBeenSet = true; m_entitlementArn = std::forward<EntitlementArnT>(value); }
+    template<typename EntitlementArnT = Aws::String>
+    Output& WithEntitlementArn(EntitlementArnT&& value) { SetEntitlementArn(std::forward<EntitlementArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +111,12 @@ namespace Model
      * represented by the elastic network interface IP address of the VPC. This field
      * applies only to outputs that use the Zixi pull or SRT listener protocol.
      */
-    inline const Aws::String& GetListenerAddress() const{ return m_listenerAddress; }
+    inline const Aws::String& GetListenerAddress() const { return m_listenerAddress; }
     inline bool ListenerAddressHasBeenSet() const { return m_listenerAddressHasBeenSet; }
-    inline void SetListenerAddress(const Aws::String& value) { m_listenerAddressHasBeenSet = true; m_listenerAddress = value; }
-    inline void SetListenerAddress(Aws::String&& value) { m_listenerAddressHasBeenSet = true; m_listenerAddress = std::move(value); }
-    inline void SetListenerAddress(const char* value) { m_listenerAddressHasBeenSet = true; m_listenerAddress.assign(value); }
-    inline Output& WithListenerAddress(const Aws::String& value) { SetListenerAddress(value); return *this;}
-    inline Output& WithListenerAddress(Aws::String&& value) { SetListenerAddress(std::move(value)); return *this;}
-    inline Output& WithListenerAddress(const char* value) { SetListenerAddress(value); return *this;}
+    template<typename ListenerAddressT = Aws::String>
+    void SetListenerAddress(ListenerAddressT&& value) { m_listenerAddressHasBeenSet = true; m_listenerAddress = std::forward<ListenerAddressT>(value); }
+    template<typename ListenerAddressT = Aws::String>
+    Output& WithListenerAddress(ListenerAddressT&& value) { SetListenerAddress(std::forward<ListenerAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,63 +124,57 @@ namespace Model
      * The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant
      * only for outputs that were added by creating a MediaLive input.
      */
-    inline const Aws::String& GetMediaLiveInputArn() const{ return m_mediaLiveInputArn; }
+    inline const Aws::String& GetMediaLiveInputArn() const { return m_mediaLiveInputArn; }
     inline bool MediaLiveInputArnHasBeenSet() const { return m_mediaLiveInputArnHasBeenSet; }
-    inline void SetMediaLiveInputArn(const Aws::String& value) { m_mediaLiveInputArnHasBeenSet = true; m_mediaLiveInputArn = value; }
-    inline void SetMediaLiveInputArn(Aws::String&& value) { m_mediaLiveInputArnHasBeenSet = true; m_mediaLiveInputArn = std::move(value); }
-    inline void SetMediaLiveInputArn(const char* value) { m_mediaLiveInputArnHasBeenSet = true; m_mediaLiveInputArn.assign(value); }
-    inline Output& WithMediaLiveInputArn(const Aws::String& value) { SetMediaLiveInputArn(value); return *this;}
-    inline Output& WithMediaLiveInputArn(Aws::String&& value) { SetMediaLiveInputArn(std::move(value)); return *this;}
-    inline Output& WithMediaLiveInputArn(const char* value) { SetMediaLiveInputArn(value); return *this;}
+    template<typename MediaLiveInputArnT = Aws::String>
+    void SetMediaLiveInputArn(MediaLiveInputArnT&& value) { m_mediaLiveInputArnHasBeenSet = true; m_mediaLiveInputArn = std::forward<MediaLiveInputArnT>(value); }
+    template<typename MediaLiveInputArnT = Aws::String>
+    Output& WithMediaLiveInputArn(MediaLiveInputArnT&& value) { SetMediaLiveInputArn(std::forward<MediaLiveInputArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The configuration for each media stream that is associated with the output.
      */
-    inline const Aws::Vector<MediaStreamOutputConfiguration>& GetMediaStreamOutputConfigurations() const{ return m_mediaStreamOutputConfigurations; }
+    inline const Aws::Vector<MediaStreamOutputConfiguration>& GetMediaStreamOutputConfigurations() const { return m_mediaStreamOutputConfigurations; }
     inline bool MediaStreamOutputConfigurationsHasBeenSet() const { return m_mediaStreamOutputConfigurationsHasBeenSet; }
-    inline void SetMediaStreamOutputConfigurations(const Aws::Vector<MediaStreamOutputConfiguration>& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = value; }
-    inline void SetMediaStreamOutputConfigurations(Aws::Vector<MediaStreamOutputConfiguration>&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = std::move(value); }
-    inline Output& WithMediaStreamOutputConfigurations(const Aws::Vector<MediaStreamOutputConfiguration>& value) { SetMediaStreamOutputConfigurations(value); return *this;}
-    inline Output& WithMediaStreamOutputConfigurations(Aws::Vector<MediaStreamOutputConfiguration>&& value) { SetMediaStreamOutputConfigurations(std::move(value)); return *this;}
-    inline Output& AddMediaStreamOutputConfigurations(const MediaStreamOutputConfiguration& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.push_back(value); return *this; }
-    inline Output& AddMediaStreamOutputConfigurations(MediaStreamOutputConfiguration&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.push_back(std::move(value)); return *this; }
+    template<typename MediaStreamOutputConfigurationsT = Aws::Vector<MediaStreamOutputConfiguration>>
+    void SetMediaStreamOutputConfigurations(MediaStreamOutputConfigurationsT&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = std::forward<MediaStreamOutputConfigurationsT>(value); }
+    template<typename MediaStreamOutputConfigurationsT = Aws::Vector<MediaStreamOutputConfiguration>>
+    Output& WithMediaStreamOutputConfigurations(MediaStreamOutputConfigurationsT&& value) { SetMediaStreamOutputConfigurations(std::forward<MediaStreamOutputConfigurationsT>(value)); return *this;}
+    template<typename MediaStreamOutputConfigurationsT = MediaStreamOutputConfiguration>
+    Output& AddMediaStreamOutputConfigurations(MediaStreamOutputConfigurationsT&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.emplace_back(std::forward<MediaStreamOutputConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The name of the output. This value must be unique within the current flow.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Output& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Output& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Output& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Output& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ARN of the output.
      */
-    inline const Aws::String& GetOutputArn() const{ return m_outputArn; }
+    inline const Aws::String& GetOutputArn() const { return m_outputArn; }
     inline bool OutputArnHasBeenSet() const { return m_outputArnHasBeenSet; }
-    inline void SetOutputArn(const Aws::String& value) { m_outputArnHasBeenSet = true; m_outputArn = value; }
-    inline void SetOutputArn(Aws::String&& value) { m_outputArnHasBeenSet = true; m_outputArn = std::move(value); }
-    inline void SetOutputArn(const char* value) { m_outputArnHasBeenSet = true; m_outputArn.assign(value); }
-    inline Output& WithOutputArn(const Aws::String& value) { SetOutputArn(value); return *this;}
-    inline Output& WithOutputArn(Aws::String&& value) { SetOutputArn(std::move(value)); return *this;}
-    inline Output& WithOutputArn(const char* value) { SetOutputArn(value); return *this;}
+    template<typename OutputArnT = Aws::String>
+    void SetOutputArn(OutputArnT&& value) { m_outputArnHasBeenSet = true; m_outputArn = std::forward<OutputArnT>(value); }
+    template<typename OutputArnT = Aws::String>
+    Output& WithOutputArn(OutputArnT&& value) { SetOutputArn(std::forward<OutputArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The port to use when content is distributed to this output.
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline Output& WithPort(int value) { SetPort(value); return *this;}
@@ -198,50 +184,48 @@ namespace Model
     /**
      * Attributes related to the transport stream that are used in the output.
      */
-    inline const Transport& GetTransport() const{ return m_transport; }
+    inline const Transport& GetTransport() const { return m_transport; }
     inline bool TransportHasBeenSet() const { return m_transportHasBeenSet; }
-    inline void SetTransport(const Transport& value) { m_transportHasBeenSet = true; m_transport = value; }
-    inline void SetTransport(Transport&& value) { m_transportHasBeenSet = true; m_transport = std::move(value); }
-    inline Output& WithTransport(const Transport& value) { SetTransport(value); return *this;}
-    inline Output& WithTransport(Transport&& value) { SetTransport(std::move(value)); return *this;}
+    template<typename TransportT = Transport>
+    void SetTransport(TransportT&& value) { m_transportHasBeenSet = true; m_transport = std::forward<TransportT>(value); }
+    template<typename TransportT = Transport>
+    Output& WithTransport(TransportT&& value) { SetTransport(std::forward<TransportT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the VPC interface attachment to use for this output.
      */
-    inline const VpcInterfaceAttachment& GetVpcInterfaceAttachment() const{ return m_vpcInterfaceAttachment; }
+    inline const VpcInterfaceAttachment& GetVpcInterfaceAttachment() const { return m_vpcInterfaceAttachment; }
     inline bool VpcInterfaceAttachmentHasBeenSet() const { return m_vpcInterfaceAttachmentHasBeenSet; }
-    inline void SetVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { m_vpcInterfaceAttachmentHasBeenSet = true; m_vpcInterfaceAttachment = value; }
-    inline void SetVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { m_vpcInterfaceAttachmentHasBeenSet = true; m_vpcInterfaceAttachment = std::move(value); }
-    inline Output& WithVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { SetVpcInterfaceAttachment(value); return *this;}
-    inline Output& WithVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { SetVpcInterfaceAttachment(std::move(value)); return *this;}
+    template<typename VpcInterfaceAttachmentT = VpcInterfaceAttachment>
+    void SetVpcInterfaceAttachment(VpcInterfaceAttachmentT&& value) { m_vpcInterfaceAttachmentHasBeenSet = true; m_vpcInterfaceAttachment = std::forward<VpcInterfaceAttachmentT>(value); }
+    template<typename VpcInterfaceAttachmentT = VpcInterfaceAttachment>
+    Output& WithVpcInterfaceAttachment(VpcInterfaceAttachmentT&& value) { SetVpcInterfaceAttachment(std::forward<VpcInterfaceAttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ARN of the bridge that added this output.
      */
-    inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
+    inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
-    inline void SetBridgeArn(const Aws::String& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = value; }
-    inline void SetBridgeArn(Aws::String&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::move(value); }
-    inline void SetBridgeArn(const char* value) { m_bridgeArnHasBeenSet = true; m_bridgeArn.assign(value); }
-    inline Output& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
-    inline Output& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
-    inline Output& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
+    template<typename BridgeArnT = Aws::String>
+    void SetBridgeArn(BridgeArnT&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::forward<BridgeArnT>(value); }
+    template<typename BridgeArnT = Aws::String>
+    Output& WithBridgeArn(BridgeArnT&& value) { SetBridgeArn(std::forward<BridgeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The bridge output ports currently in use.
      */
-    inline const Aws::Vector<int>& GetBridgePorts() const{ return m_bridgePorts; }
+    inline const Aws::Vector<int>& GetBridgePorts() const { return m_bridgePorts; }
     inline bool BridgePortsHasBeenSet() const { return m_bridgePortsHasBeenSet; }
-    inline void SetBridgePorts(const Aws::Vector<int>& value) { m_bridgePortsHasBeenSet = true; m_bridgePorts = value; }
-    inline void SetBridgePorts(Aws::Vector<int>&& value) { m_bridgePortsHasBeenSet = true; m_bridgePorts = std::move(value); }
-    inline Output& WithBridgePorts(const Aws::Vector<int>& value) { SetBridgePorts(value); return *this;}
-    inline Output& WithBridgePorts(Aws::Vector<int>&& value) { SetBridgePorts(std::move(value)); return *this;}
+    template<typename BridgePortsT = Aws::Vector<int>>
+    void SetBridgePorts(BridgePortsT&& value) { m_bridgePortsHasBeenSet = true; m_bridgePorts = std::forward<BridgePortsT>(value); }
+    template<typename BridgePortsT = Aws::Vector<int>>
+    Output& WithBridgePorts(BridgePortsT&& value) { SetBridgePorts(std::forward<BridgePortsT>(value)); return *this;}
     inline Output& AddBridgePorts(int value) { m_bridgePortsHasBeenSet = true; m_bridgePorts.push_back(value); return *this; }
     ///@}
 
@@ -249,16 +233,14 @@ namespace Model
     /**
      * An indication of whether the output is transmitting data or not.
      */
-    inline const OutputStatus& GetOutputStatus() const{ return m_outputStatus; }
+    inline OutputStatus GetOutputStatus() const { return m_outputStatus; }
     inline bool OutputStatusHasBeenSet() const { return m_outputStatusHasBeenSet; }
-    inline void SetOutputStatus(const OutputStatus& value) { m_outputStatusHasBeenSet = true; m_outputStatus = value; }
-    inline void SetOutputStatus(OutputStatus&& value) { m_outputStatusHasBeenSet = true; m_outputStatus = std::move(value); }
-    inline Output& WithOutputStatus(const OutputStatus& value) { SetOutputStatus(value); return *this;}
-    inline Output& WithOutputStatus(OutputStatus&& value) { SetOutputStatus(std::move(value)); return *this;}
+    inline void SetOutputStatus(OutputStatus value) { m_outputStatusHasBeenSet = true; m_outputStatus = value; }
+    inline Output& WithOutputStatus(OutputStatus value) { SetOutputStatus(value); return *this;}
     ///@}
   private:
 
-    int m_dataTransferSubscriberFeePercent;
+    int m_dataTransferSubscriberFeePercent{0};
     bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
 
     Aws::String m_description;
@@ -288,7 +270,7 @@ namespace Model
     Aws::String m_outputArn;
     bool m_outputArnHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Transport m_transport;
@@ -303,7 +285,7 @@ namespace Model
     Aws::Vector<int> m_bridgePorts;
     bool m_bridgePortsHasBeenSet = false;
 
-    OutputStatus m_outputStatus;
+    OutputStatus m_outputStatus{OutputStatus::NOT_SET};
     bool m_outputStatusHasBeenSet = false;
   };
 

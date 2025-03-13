@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-IcebergOrphanFileDeletionConfiguration::IcebergOrphanFileDeletionConfiguration() : 
-    m_orphanFileRetentionPeriodInDays(0),
-    m_orphanFileRetentionPeriodInDaysHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 IcebergOrphanFileDeletionConfiguration::IcebergOrphanFileDeletionConfiguration(JsonView jsonValue)
-  : IcebergOrphanFileDeletionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ IcebergOrphanFileDeletionConfiguration& IcebergOrphanFileDeletionConfiguration::
   if(jsonValue.ValueExists("orphanFileRetentionPeriodInDays"))
   {
     m_orphanFileRetentionPeriodInDays = jsonValue.GetInteger("orphanFileRetentionPeriodInDays");
-
     m_orphanFileRetentionPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

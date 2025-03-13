@@ -12,18 +12,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDatasetRequest::CreateDatasetRequest() : 
-    m_datasetNameHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_triggersHasBeenSet(false),
-    m_contentDeliveryRulesHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false),
-    m_versioningConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lateDataRulesHasBeenSet(false)
-{
-}
-
 Aws::String CreateDatasetRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class AgentOrchestrationConfig
   {
   public:
-    AWS_CODEGURUPROFILER_API AgentOrchestrationConfig();
+    AWS_CODEGURUPROFILER_API AgentOrchestrationConfig() = default;
     AWS_CODEGURUPROFILER_API AgentOrchestrationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API AgentOrchestrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p> A <code>Boolean</code> that specifies whether the profiling agent collects
      * profiling data or not. Set to <code>true</code> to enable profiling. </p>
      */
-    inline bool GetProfilingEnabled() const{ return m_profilingEnabled; }
+    inline bool GetProfilingEnabled() const { return m_profilingEnabled; }
     inline bool ProfilingEnabledHasBeenSet() const { return m_profilingEnabledHasBeenSet; }
     inline void SetProfilingEnabled(bool value) { m_profilingEnabledHasBeenSet = true; m_profilingEnabled = value; }
     inline AgentOrchestrationConfig& WithProfilingEnabled(bool value) { SetProfilingEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_profilingEnabled;
+    bool m_profilingEnabled{false};
     bool m_profilingEnabledHasBeenSet = false;
   };
 

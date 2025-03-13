@@ -27,7 +27,7 @@ namespace Model
   class PutRuleResult
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API PutRuleResult();
+    AWS_CLOUDWATCHEVENTS_API PutRuleResult() = default;
     AWS_CLOUDWATCHEVENTS_API PutRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVENTS_API PutRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
-    inline const Aws::String& GetRuleArn() const{ return m_ruleArn; }
-    inline void SetRuleArn(const Aws::String& value) { m_ruleArn = value; }
-    inline void SetRuleArn(Aws::String&& value) { m_ruleArn = std::move(value); }
-    inline void SetRuleArn(const char* value) { m_ruleArn.assign(value); }
-    inline PutRuleResult& WithRuleArn(const Aws::String& value) { SetRuleArn(value); return *this;}
-    inline PutRuleResult& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
-    inline PutRuleResult& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
+    inline const Aws::String& GetRuleArn() const { return m_ruleArn; }
+    template<typename RuleArnT = Aws::String>
+    void SetRuleArn(RuleArnT&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = std::forward<RuleArnT>(value); }
+    template<typename RuleArnT = Aws::String>
+    PutRuleResult& WithRuleArn(RuleArnT&& value) { SetRuleArn(std::forward<RuleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_ruleArn;
+    bool m_ruleArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

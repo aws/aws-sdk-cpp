@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-StringListConfigurationOptions::StringListConfigurationOptions() : 
-    m_defaultValueHasBeenSet(false),
-    m_re2ExpressionHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_expressionDescriptionHasBeenSet(false)
-{
-}
-
 StringListConfigurationOptions::StringListConfigurationOptions(JsonView jsonValue)
-  : StringListConfigurationOptions()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ StringListConfigurationOptions& StringListConfigurationOptions::operator =(JsonV
     }
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Re2Expression"))
   {
     m_re2Expression = jsonValue.GetString("Re2Expression");
-
     m_re2ExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxItems"))
   {
     m_maxItems = jsonValue.GetInteger("MaxItems");
-
     m_maxItemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpressionDescription"))
   {
     m_expressionDescription = jsonValue.GetString("ExpressionDescription");
-
     m_expressionDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-StorageLensAwsOrg::StorageLensAwsOrg() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 StorageLensAwsOrg::StorageLensAwsOrg(const XmlNode& xmlNode)
-  : StorageLensAwsOrg()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ StorageLensAwsOrg& StorageLensAwsOrg::operator =(const XmlNode& xmlNode)
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
   }
 

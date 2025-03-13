@@ -20,13 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CloudWatchLogsDestinationDetails::CloudWatchLogsDestinationDetails() : 
-    m_logGroupHasBeenSet(false)
-{
-}
-
 CloudWatchLogsDestinationDetails::CloudWatchLogsDestinationDetails(const XmlNode& xmlNode)
-  : CloudWatchLogsDestinationDetails()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ CloudWatchLogsDestinationDetails& CloudWatchLogsDestinationDetails::operator =(c
     {
       m_logGroup = Aws::Utils::Xml::DecodeEscapedXmlText(logGroupNode.GetText());
       m_logGroupHasBeenSet = true;
+       m_logGroupHasBeenSet = true;
     }
   }
 

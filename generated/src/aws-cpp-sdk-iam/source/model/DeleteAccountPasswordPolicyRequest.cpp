@@ -10,10 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteAccountPasswordPolicyRequest::DeleteAccountPasswordPolicyRequest()
-{
-}
-
 Aws::String DeleteAccountPasswordPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

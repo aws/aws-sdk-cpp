@@ -28,7 +28,7 @@ namespace Model
   class GetManagedViewResult
   {
   public:
-    AWS_RESOURCEEXPLORER2_API GetManagedViewResult();
+    AWS_RESOURCEEXPLORER2_API GetManagedViewResult() = default;
     AWS_RESOURCEEXPLORER2_API GetManagedViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEEXPLORER2_API GetManagedViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the specified managed view. </p>
      */
-    inline const ManagedView& GetManagedView() const{ return m_managedView; }
-    inline void SetManagedView(const ManagedView& value) { m_managedView = value; }
-    inline void SetManagedView(ManagedView&& value) { m_managedView = std::move(value); }
-    inline GetManagedViewResult& WithManagedView(const ManagedView& value) { SetManagedView(value); return *this;}
-    inline GetManagedViewResult& WithManagedView(ManagedView&& value) { SetManagedView(std::move(value)); return *this;}
+    inline const ManagedView& GetManagedView() const { return m_managedView; }
+    template<typename ManagedViewT = ManagedView>
+    void SetManagedView(ManagedViewT&& value) { m_managedViewHasBeenSet = true; m_managedView = std::forward<ManagedViewT>(value); }
+    template<typename ManagedViewT = ManagedView>
+    GetManagedViewResult& WithManagedView(ManagedViewT&& value) { SetManagedView(std::forward<ManagedViewT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetManagedViewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetManagedViewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetManagedViewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetManagedViewResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ManagedView m_managedView;
+    bool m_managedViewHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

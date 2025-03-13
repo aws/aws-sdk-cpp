@@ -18,20 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-NodeInfo::NodeInfo() : 
-    m_addedToClusterTimeHasBeenSet(false),
-    m_brokerNodeInfoHasBeenSet(false),
-    m_controllerNodeInfoHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_nodeARNHasBeenSet(false),
-    m_nodeType(NodeType::NOT_SET),
-    m_nodeTypeHasBeenSet(false),
-    m_zookeeperNodeInfoHasBeenSet(false)
-{
-}
-
 NodeInfo::NodeInfo(JsonView jsonValue)
-  : NodeInfo()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ NodeInfo& NodeInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("addedToClusterTime"))
   {
     m_addedToClusterTime = jsonValue.GetString("addedToClusterTime");
-
     m_addedToClusterTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("brokerNodeInfo"))
   {
     m_brokerNodeInfo = jsonValue.GetObject("brokerNodeInfo");
-
     m_brokerNodeInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("controllerNodeInfo"))
   {
     m_controllerNodeInfo = jsonValue.GetObject("controllerNodeInfo");
-
     m_controllerNodeInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeARN"))
   {
     m_nodeARN = jsonValue.GetString("nodeARN");
-
     m_nodeARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeType"))
   {
     m_nodeType = NodeTypeMapper::GetNodeTypeForName(jsonValue.GetString("nodeType"));
-
     m_nodeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zookeeperNodeInfo"))
   {
     m_zookeeperNodeInfo = jsonValue.GetObject("zookeeperNodeInfo");
-
     m_zookeeperNodeInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

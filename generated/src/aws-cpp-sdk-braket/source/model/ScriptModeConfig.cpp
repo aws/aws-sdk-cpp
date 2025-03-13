@@ -18,16 +18,7 @@ namespace Braket
 namespace Model
 {
 
-ScriptModeConfig::ScriptModeConfig() : 
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_entryPointHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
-{
-}
-
 ScriptModeConfig::ScriptModeConfig(JsonView jsonValue)
-  : ScriptModeConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ScriptModeConfig& ScriptModeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("compressionType"))
   {
     m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(jsonValue.GetString("compressionType"));
-
     m_compressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entryPoint"))
   {
     m_entryPoint = jsonValue.GetString("entryPoint");
-
     m_entryPointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

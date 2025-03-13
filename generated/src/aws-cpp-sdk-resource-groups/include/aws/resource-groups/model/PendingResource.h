@@ -34,7 +34,7 @@ namespace Model
   class PendingResource
   {
   public:
-    AWS_RESOURCEGROUPS_API PendingResource();
+    AWS_RESOURCEGROUPS_API PendingResource() = default;
     AWS_RESOURCEGROUPS_API PendingResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API PendingResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline PendingResource& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline PendingResource& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline PendingResource& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    PendingResource& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
   private:
 

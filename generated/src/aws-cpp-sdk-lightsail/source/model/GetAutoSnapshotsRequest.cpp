@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAutoSnapshotsRequest::GetAutoSnapshotsRequest() : 
-    m_resourceNameHasBeenSet(false)
-{
-}
-
 Aws::String GetAutoSnapshotsRequest::SerializePayload() const
 {
   JsonValue payload;

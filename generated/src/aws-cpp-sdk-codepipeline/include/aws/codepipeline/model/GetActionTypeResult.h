@@ -28,7 +28,7 @@ namespace Model
   class GetActionTypeResult
   {
   public:
-    AWS_CODEPIPELINE_API GetActionTypeResult();
+    AWS_CODEPIPELINE_API GetActionTypeResult() = default;
     AWS_CODEPIPELINE_API GetActionTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEPIPELINE_API GetActionTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The action type information for the requested action type, such as the action
      * type ID.</p>
      */
-    inline const ActionTypeDeclaration& GetActionType() const{ return m_actionType; }
-    inline void SetActionType(const ActionTypeDeclaration& value) { m_actionType = value; }
-    inline void SetActionType(ActionTypeDeclaration&& value) { m_actionType = std::move(value); }
-    inline GetActionTypeResult& WithActionType(const ActionTypeDeclaration& value) { SetActionType(value); return *this;}
-    inline GetActionTypeResult& WithActionType(ActionTypeDeclaration&& value) { SetActionType(std::move(value)); return *this;}
+    inline const ActionTypeDeclaration& GetActionType() const { return m_actionType; }
+    template<typename ActionTypeT = ActionTypeDeclaration>
+    void SetActionType(ActionTypeT&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::forward<ActionTypeT>(value); }
+    template<typename ActionTypeT = ActionTypeDeclaration>
+    GetActionTypeResult& WithActionType(ActionTypeT&& value) { SetActionType(std::forward<ActionTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetActionTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetActionTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetActionTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetActionTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ActionTypeDeclaration m_actionType;
+    bool m_actionTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

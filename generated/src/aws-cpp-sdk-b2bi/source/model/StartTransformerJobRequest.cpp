@@ -12,15 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartTransformerJobRequest::StartTransformerJobRequest() : 
-    m_inputFileHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_transformerIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartTransformerJobRequest::SerializePayload() const
 {
   JsonValue payload;

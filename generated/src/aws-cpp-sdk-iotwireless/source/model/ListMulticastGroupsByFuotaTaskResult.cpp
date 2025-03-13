@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMulticastGroupsByFuotaTaskResult::ListMulticastGroupsByFuotaTaskResult()
-{
-}
-
 ListMulticastGroupsByFuotaTaskResult::ListMulticastGroupsByFuotaTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListMulticastGroupsByFuotaTaskResult& ListMulticastGroupsByFuotaTaskResult::oper
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MulticastGroupList"))
   {
     Aws::Utils::Array<JsonView> multicastGroupListJsonList = jsonValue.GetArray("MulticastGroupList");
@@ -42,14 +37,15 @@ ListMulticastGroupsByFuotaTaskResult& ListMulticastGroupsByFuotaTaskResult::oper
     {
       m_multicastGroupList.push_back(multicastGroupListJsonList[multicastGroupListIndex].AsObject());
     }
+    m_multicastGroupListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

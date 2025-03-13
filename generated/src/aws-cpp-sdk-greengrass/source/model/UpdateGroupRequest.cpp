@@ -12,12 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGroupRequest::UpdateGroupRequest() : 
-    m_groupIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGroupRequest::SerializePayload() const
 {
   JsonValue payload;

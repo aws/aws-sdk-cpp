@@ -18,20 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-DeliveryDestination::DeliveryDestination() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_deliveryDestinationType(DeliveryDestinationType::NOT_SET),
-    m_deliveryDestinationTypeHasBeenSet(false),
-    m_outputFormat(OutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false),
-    m_deliveryDestinationConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DeliveryDestination::DeliveryDestination(JsonView jsonValue)
-  : DeliveryDestination()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ DeliveryDestination& DeliveryDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deliveryDestinationType"))
   {
     m_deliveryDestinationType = DeliveryDestinationTypeMapper::GetDeliveryDestinationTypeForName(jsonValue.GetString("deliveryDestinationType"));
-
     m_deliveryDestinationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputFormat"))
   {
     m_outputFormat = OutputFormatMapper::GetOutputFormatForName(jsonValue.GetString("outputFormat"));
-
     m_outputFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deliveryDestinationConfiguration"))
   {
     m_deliveryDestinationConfiguration = jsonValue.GetObject("deliveryDestinationConfiguration");
-
     m_deliveryDestinationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -82,7 +59,6 @@ DeliveryDestination& DeliveryDestination::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,22 +18,7 @@ namespace ApplicationInsights
 namespace Model
 {
 
-ApplicationComponent::ApplicationComponent() : 
-    m_componentNameHasBeenSet(false),
-    m_componentRemarksHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_osType(OsType::NOT_SET),
-    m_osTypeHasBeenSet(false),
-    m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_monitor(false),
-    m_monitorHasBeenSet(false),
-    m_detectedWorkloadHasBeenSet(false)
-{
-}
-
 ApplicationComponent::ApplicationComponent(JsonView jsonValue)
-  : ApplicationComponent()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ ApplicationComponent& ApplicationComponent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComponentName"))
   {
     m_componentName = jsonValue.GetString("ComponentName");
-
     m_componentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComponentRemarks"))
   {
     m_componentRemarks = jsonValue.GetString("ComponentRemarks");
-
     m_componentRemarksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OsType"))
   {
     m_osType = OsTypeMapper::GetOsTypeForName(jsonValue.GetString("OsType"));
-
     m_osTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tier"))
   {
     m_tier = TierMapper::GetTierForName(jsonValue.GetString("Tier"));
-
     m_tierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Monitor"))
   {
     m_monitor = jsonValue.GetBool("Monitor");
-
     m_monitorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetectedWorkload"))
   {
     Aws::Map<Aws::String, JsonView> detectedWorkloadJsonMap = jsonValue.GetObject("DetectedWorkload").GetAllObjects();
@@ -97,7 +70,6 @@ ApplicationComponent& ApplicationComponent::operator =(JsonView jsonValue)
     }
     m_detectedWorkloadHasBeenSet = true;
   }
-
   return *this;
 }
 

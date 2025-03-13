@@ -33,7 +33,7 @@ namespace Model
   class FpgaDeviceInfo
   {
   public:
-    AWS_EC2_API FpgaDeviceInfo();
+    AWS_EC2_API FpgaDeviceInfo() = default;
     AWS_EC2_API FpgaDeviceInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FpgaDeviceInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,35 +45,31 @@ namespace Model
     /**
      * <p>The name of the FPGA accelerator.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FpgaDeviceInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FpgaDeviceInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FpgaDeviceInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FpgaDeviceInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The manufacturer of the FPGA accelerator.</p>
      */
-    inline const Aws::String& GetManufacturer() const{ return m_manufacturer; }
+    inline const Aws::String& GetManufacturer() const { return m_manufacturer; }
     inline bool ManufacturerHasBeenSet() const { return m_manufacturerHasBeenSet; }
-    inline void SetManufacturer(const Aws::String& value) { m_manufacturerHasBeenSet = true; m_manufacturer = value; }
-    inline void SetManufacturer(Aws::String&& value) { m_manufacturerHasBeenSet = true; m_manufacturer = std::move(value); }
-    inline void SetManufacturer(const char* value) { m_manufacturerHasBeenSet = true; m_manufacturer.assign(value); }
-    inline FpgaDeviceInfo& WithManufacturer(const Aws::String& value) { SetManufacturer(value); return *this;}
-    inline FpgaDeviceInfo& WithManufacturer(Aws::String&& value) { SetManufacturer(std::move(value)); return *this;}
-    inline FpgaDeviceInfo& WithManufacturer(const char* value) { SetManufacturer(value); return *this;}
+    template<typename ManufacturerT = Aws::String>
+    void SetManufacturer(ManufacturerT&& value) { m_manufacturerHasBeenSet = true; m_manufacturer = std::forward<ManufacturerT>(value); }
+    template<typename ManufacturerT = Aws::String>
+    FpgaDeviceInfo& WithManufacturer(ManufacturerT&& value) { SetManufacturer(std::forward<ManufacturerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The count of FPGA accelerators for the instance type.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline FpgaDeviceInfo& WithCount(int value) { SetCount(value); return *this;}
@@ -83,12 +79,12 @@ namespace Model
     /**
      * <p>Describes the memory for the FPGA accelerator for the instance type.</p>
      */
-    inline const FpgaDeviceMemoryInfo& GetMemoryInfo() const{ return m_memoryInfo; }
+    inline const FpgaDeviceMemoryInfo& GetMemoryInfo() const { return m_memoryInfo; }
     inline bool MemoryInfoHasBeenSet() const { return m_memoryInfoHasBeenSet; }
-    inline void SetMemoryInfo(const FpgaDeviceMemoryInfo& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = value; }
-    inline void SetMemoryInfo(FpgaDeviceMemoryInfo&& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = std::move(value); }
-    inline FpgaDeviceInfo& WithMemoryInfo(const FpgaDeviceMemoryInfo& value) { SetMemoryInfo(value); return *this;}
-    inline FpgaDeviceInfo& WithMemoryInfo(FpgaDeviceMemoryInfo&& value) { SetMemoryInfo(std::move(value)); return *this;}
+    template<typename MemoryInfoT = FpgaDeviceMemoryInfo>
+    void SetMemoryInfo(MemoryInfoT&& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = std::forward<MemoryInfoT>(value); }
+    template<typename MemoryInfoT = FpgaDeviceMemoryInfo>
+    FpgaDeviceInfo& WithMemoryInfo(MemoryInfoT&& value) { SetMemoryInfo(std::forward<MemoryInfoT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,7 +94,7 @@ namespace Model
     Aws::String m_manufacturer;
     bool m_manufacturerHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
     FpgaDeviceMemoryInfo m_memoryInfo;

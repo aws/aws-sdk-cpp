@@ -18,10 +18,6 @@ namespace QuickSight
 namespace Model
 {
 
-AllSheetsFilterScopeConfiguration::AllSheetsFilterScopeConfiguration()
-{
-}
-
 AllSheetsFilterScopeConfiguration::AllSheetsFilterScopeConfiguration(JsonView jsonValue)
 {
   *this = jsonValue;

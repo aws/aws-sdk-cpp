@@ -34,7 +34,7 @@ namespace Model
   class IsolineTravelModeOptions
   {
   public:
-    AWS_GEOROUTES_API IsolineTravelModeOptions();
+    AWS_GEOROUTES_API IsolineTravelModeOptions() = default;
     AWS_GEOROUTES_API IsolineTravelModeOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API IsolineTravelModeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>Travel mode options when the provided travel mode is "Car"</p>
      */
-    inline const IsolineCarOptions& GetCar() const{ return m_car; }
+    inline const IsolineCarOptions& GetCar() const { return m_car; }
     inline bool CarHasBeenSet() const { return m_carHasBeenSet; }
-    inline void SetCar(const IsolineCarOptions& value) { m_carHasBeenSet = true; m_car = value; }
-    inline void SetCar(IsolineCarOptions&& value) { m_carHasBeenSet = true; m_car = std::move(value); }
-    inline IsolineTravelModeOptions& WithCar(const IsolineCarOptions& value) { SetCar(value); return *this;}
-    inline IsolineTravelModeOptions& WithCar(IsolineCarOptions&& value) { SetCar(std::move(value)); return *this;}
+    template<typename CarT = IsolineCarOptions>
+    void SetCar(CarT&& value) { m_carHasBeenSet = true; m_car = std::forward<CarT>(value); }
+    template<typename CarT = IsolineCarOptions>
+    IsolineTravelModeOptions& WithCar(CarT&& value) { SetCar(std::forward<CarT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,24 +59,24 @@ namespace Model
      * avoidance option <code>ControlledAccessHighways</code> defaults to
      * <code>true</code>.</p> 
      */
-    inline const IsolineScooterOptions& GetScooter() const{ return m_scooter; }
+    inline const IsolineScooterOptions& GetScooter() const { return m_scooter; }
     inline bool ScooterHasBeenSet() const { return m_scooterHasBeenSet; }
-    inline void SetScooter(const IsolineScooterOptions& value) { m_scooterHasBeenSet = true; m_scooter = value; }
-    inline void SetScooter(IsolineScooterOptions&& value) { m_scooterHasBeenSet = true; m_scooter = std::move(value); }
-    inline IsolineTravelModeOptions& WithScooter(const IsolineScooterOptions& value) { SetScooter(value); return *this;}
-    inline IsolineTravelModeOptions& WithScooter(IsolineScooterOptions&& value) { SetScooter(std::move(value)); return *this;}
+    template<typename ScooterT = IsolineScooterOptions>
+    void SetScooter(ScooterT&& value) { m_scooterHasBeenSet = true; m_scooter = std::forward<ScooterT>(value); }
+    template<typename ScooterT = IsolineScooterOptions>
+    IsolineTravelModeOptions& WithScooter(ScooterT&& value) { SetScooter(std::forward<ScooterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Travel mode options when the provided travel mode is "Truck"</p>
      */
-    inline const IsolineTruckOptions& GetTruck() const{ return m_truck; }
+    inline const IsolineTruckOptions& GetTruck() const { return m_truck; }
     inline bool TruckHasBeenSet() const { return m_truckHasBeenSet; }
-    inline void SetTruck(const IsolineTruckOptions& value) { m_truckHasBeenSet = true; m_truck = value; }
-    inline void SetTruck(IsolineTruckOptions&& value) { m_truckHasBeenSet = true; m_truck = std::move(value); }
-    inline IsolineTravelModeOptions& WithTruck(const IsolineTruckOptions& value) { SetTruck(value); return *this;}
-    inline IsolineTravelModeOptions& WithTruck(IsolineTruckOptions&& value) { SetTruck(std::move(value)); return *this;}
+    template<typename TruckT = IsolineTruckOptions>
+    void SetTruck(TruckT&& value) { m_truckHasBeenSet = true; m_truck = std::forward<TruckT>(value); }
+    template<typename TruckT = IsolineTruckOptions>
+    IsolineTravelModeOptions& WithTruck(TruckT&& value) { SetTruck(std::forward<TruckT>(value)); return *this;}
     ///@}
   private:
 

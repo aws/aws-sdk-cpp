@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLensRequest::GetLensRequest() : 
-    m_lensAliasHasBeenSet(false),
-    m_lensVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetLensRequest::SerializePayload() const
 {
   return {};

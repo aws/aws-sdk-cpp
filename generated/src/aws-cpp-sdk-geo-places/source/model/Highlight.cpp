@@ -18,17 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-Highlight::Highlight() : 
-    m_startIndex(0),
-    m_startIndexHasBeenSet(false),
-    m_endIndex(0),
-    m_endIndexHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Highlight::Highlight(JsonView jsonValue)
-  : Highlight()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ Highlight& Highlight::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartIndex"))
   {
     m_startIndex = jsonValue.GetInteger("StartIndex");
-
     m_startIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndIndex"))
   {
     m_endIndex = jsonValue.GetInteger("EndIndex");
-
     m_endIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

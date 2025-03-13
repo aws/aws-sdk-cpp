@@ -10,13 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyDBSnapshotRequest::ModifyDBSnapshotRequest() : 
-    m_dBSnapshotIdentifierHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String ModifyDBSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

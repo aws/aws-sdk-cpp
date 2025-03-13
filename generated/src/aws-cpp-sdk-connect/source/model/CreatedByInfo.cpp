@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-CreatedByInfo::CreatedByInfo() : 
-    m_connectUserArnHasBeenSet(false),
-    m_aWSIdentityArnHasBeenSet(false)
-{
-}
-
 CreatedByInfo::CreatedByInfo(JsonView jsonValue)
-  : CreatedByInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CreatedByInfo& CreatedByInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectUserArn"))
   {
     m_connectUserArn = jsonValue.GetString("ConnectUserArn");
-
     m_connectUserArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AWSIdentityArn"))
   {
     m_aWSIdentityArn = jsonValue.GetString("AWSIdentityArn");
-
     m_aWSIdentityArnHasBeenSet = true;
   }
-
   return *this;
 }
 

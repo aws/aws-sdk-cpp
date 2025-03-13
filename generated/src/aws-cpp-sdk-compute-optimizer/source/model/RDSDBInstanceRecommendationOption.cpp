@@ -18,20 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RDSDBInstanceRecommendationOption::RDSDBInstanceRecommendationOption() : 
-    m_dbInstanceClassHasBeenSet(false),
-    m_projectedUtilizationMetricsHasBeenSet(false),
-    m_performanceRisk(0.0),
-    m_performanceRiskHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false),
-    m_savingsOpportunityAfterDiscountsHasBeenSet(false)
-{
-}
-
 RDSDBInstanceRecommendationOption::RDSDBInstanceRecommendationOption(JsonView jsonValue)
-  : RDSDBInstanceRecommendationOption()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ RDSDBInstanceRecommendationOption& RDSDBInstanceRecommendationOption::operator =
   if(jsonValue.ValueExists("dbInstanceClass"))
   {
     m_dbInstanceClass = jsonValue.GetString("dbInstanceClass");
-
     m_dbInstanceClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectedUtilizationMetrics"))
   {
     Aws::Utils::Array<JsonView> projectedUtilizationMetricsJsonList = jsonValue.GetArray("projectedUtilizationMetrics");
@@ -54,35 +39,26 @@ RDSDBInstanceRecommendationOption& RDSDBInstanceRecommendationOption::operator =
     }
     m_projectedUtilizationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performanceRisk"))
   {
     m_performanceRisk = jsonValue.GetDouble("performanceRisk");
-
     m_performanceRiskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rank"))
   {
     m_rank = jsonValue.GetInteger("rank");
-
     m_rankHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsOpportunity"))
   {
     m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
-
     m_savingsOpportunityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsOpportunityAfterDiscounts"))
   {
     m_savingsOpportunityAfterDiscounts = jsonValue.GetObject("savingsOpportunityAfterDiscounts");
-
     m_savingsOpportunityAfterDiscountsHasBeenSet = true;
   }
-
   return *this;
 }
 

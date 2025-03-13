@@ -26,7 +26,7 @@ namespace Model
   class CreateScanRequest : public CodeGuruSecurityRequest
   {
   public:
-    AWS_CODEGURUSECURITY_API CreateScanRequest();
+    AWS_CODEGURUSECURITY_API CreateScanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,12 +45,10 @@ namespace Model
      * both security findings and quality findings. Defaults to <code>Security</code>
      * type if missing.</p>
      */
-    inline const AnalysisType& GetAnalysisType() const{ return m_analysisType; }
+    inline AnalysisType GetAnalysisType() const { return m_analysisType; }
     inline bool AnalysisTypeHasBeenSet() const { return m_analysisTypeHasBeenSet; }
-    inline void SetAnalysisType(const AnalysisType& value) { m_analysisTypeHasBeenSet = true; m_analysisType = value; }
-    inline void SetAnalysisType(AnalysisType&& value) { m_analysisTypeHasBeenSet = true; m_analysisType = std::move(value); }
-    inline CreateScanRequest& WithAnalysisType(const AnalysisType& value) { SetAnalysisType(value); return *this;}
-    inline CreateScanRequest& WithAnalysisType(AnalysisType&& value) { SetAnalysisType(std::move(value)); return *this;}
+    inline void SetAnalysisType(AnalysisType value) { m_analysisTypeHasBeenSet = true; m_analysisType = value; }
+    inline CreateScanRequest& WithAnalysisType(AnalysisType value) { SetAnalysisType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,26 +57,24 @@ namespace Model
      * value to prevent the accidental creation of duplicate scans if there are
      * failures and retries.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateScanRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateScanRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateScanRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateScanRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the resource object to be scanned.</p>
      */
-    inline const ResourceId& GetResourceId() const{ return m_resourceId; }
+    inline const ResourceId& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const ResourceId& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(ResourceId&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline CreateScanRequest& WithResourceId(const ResourceId& value) { SetResourceId(value); return *this;}
-    inline CreateScanRequest& WithResourceId(ResourceId&& value) { SetResourceId(std::move(value)); return *this;}
+    template<typename ResourceIdT = ResourceId>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = ResourceId>
+    CreateScanRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,12 @@ namespace Model
      * multiple scans of the same resource. Only allowed for a <code>STANDARD</code>
      * scan type. </p>
      */
-    inline const Aws::String& GetScanName() const{ return m_scanName; }
+    inline const Aws::String& GetScanName() const { return m_scanName; }
     inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
-    inline void SetScanName(const Aws::String& value) { m_scanNameHasBeenSet = true; m_scanName = value; }
-    inline void SetScanName(Aws::String&& value) { m_scanNameHasBeenSet = true; m_scanName = std::move(value); }
-    inline void SetScanName(const char* value) { m_scanNameHasBeenSet = true; m_scanName.assign(value); }
-    inline CreateScanRequest& WithScanName(const Aws::String& value) { SetScanName(value); return *this;}
-    inline CreateScanRequest& WithScanName(Aws::String&& value) { SetScanName(std::move(value)); return *this;}
-    inline CreateScanRequest& WithScanName(const char* value) { SetScanName(value); return *this;}
+    template<typename ScanNameT = Aws::String>
+    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
+    template<typename ScanNameT = Aws::String>
+    CreateScanRequest& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +99,10 @@ namespace Model
      * your code in near-real time. <code>Standard</code> scans have standard resource
      * limits and use the full set of detectors to analyze your code.</p>
      */
-    inline const ScanType& GetScanType() const{ return m_scanType; }
+    inline ScanType GetScanType() const { return m_scanType; }
     inline bool ScanTypeHasBeenSet() const { return m_scanTypeHasBeenSet; }
-    inline void SetScanType(const ScanType& value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
-    inline void SetScanType(ScanType&& value) { m_scanTypeHasBeenSet = true; m_scanType = std::move(value); }
-    inline CreateScanRequest& WithScanType(const ScanType& value) { SetScanType(value); return *this;}
-    inline CreateScanRequest& WithScanType(ScanType&& value) { SetScanType(std::move(value)); return *this;}
+    inline void SetScanType(ScanType value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
+    inline CreateScanRequest& WithScanType(ScanType value) { SetScanType(value); return *this;}
     ///@}
 
     ///@{
@@ -123,23 +115,20 @@ namespace Model
      * Omitting the tag value is the same as using an empty string. Tag values are case
      * sensitive.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateScanRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateScanRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateScanRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateScanRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateScanRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateScanRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateScanRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateScanRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateScanRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateScanRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateScanRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    AnalysisType m_analysisType;
+    AnalysisType m_analysisType{AnalysisType::NOT_SET};
     bool m_analysisTypeHasBeenSet = false;
 
     Aws::String m_clientToken;
@@ -151,7 +140,7 @@ namespace Model
     Aws::String m_scanName;
     bool m_scanNameHasBeenSet = false;
 
-    ScanType m_scanType;
+    ScanType m_scanType{ScanType::NOT_SET};
     bool m_scanTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

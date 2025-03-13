@@ -20,14 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-Limit::Limit() : 
-    m_nameHasBeenSet(false),
-    m_maxHasBeenSet(false)
-{
-}
-
 Limit::Limit(const XmlNode& xmlNode)
-  : Limit()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Limit& Limit::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode maxNode = resultNode.FirstChild("Max");
     if(!maxNode.IsNull())
     {
       m_max = Aws::Utils::Xml::DecodeEscapedXmlText(maxNode.GetText());
       m_maxHasBeenSet = true;
+       m_maxHasBeenSet = true;
     }
   }
 

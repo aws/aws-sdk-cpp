@@ -18,16 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-CustomPattern::CustomPattern() : 
-    m_keywordRegexHasBeenSet(false),
-    m_patternDescriptionHasBeenSet(false),
-    m_patternNameHasBeenSet(false),
-    m_patternRegexHasBeenSet(false)
-{
-}
-
 CustomPattern::CustomPattern(JsonView jsonValue)
-  : CustomPattern()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CustomPattern& CustomPattern::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("keywordRegex"))
   {
     m_keywordRegex = jsonValue.GetString("keywordRegex");
-
     m_keywordRegexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("patternDescription"))
   {
     m_patternDescription = jsonValue.GetString("patternDescription");
-
     m_patternDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("patternName"))
   {
     m_patternName = jsonValue.GetString("patternName");
-
     m_patternNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("patternRegex"))
   {
     m_patternRegex = jsonValue.GetString("patternRegex");
-
     m_patternRegexHasBeenSet = true;
   }
-
   return *this;
 }
 

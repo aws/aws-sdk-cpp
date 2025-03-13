@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLabelGroupResult::DescribeLabelGroupResult()
-{
-}
-
 DescribeLabelGroupResult::DescribeLabelGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ DescribeLabelGroupResult& DescribeLabelGroupResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("LabelGroupName"))
   {
     m_labelGroupName = jsonValue.GetString("LabelGroupName");
-
+    m_labelGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelGroupArn"))
   {
     m_labelGroupArn = jsonValue.GetString("LabelGroupArn");
-
+    m_labelGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaultCodes"))
   {
     Aws::Utils::Array<JsonView> faultCodesJsonList = jsonValue.GetArray("FaultCodes");
@@ -48,26 +42,25 @@ DescribeLabelGroupResult& DescribeLabelGroupResult::operator =(const Aws::Amazon
     {
       m_faultCodes.push_back(faultCodesJsonList[faultCodesIndex].AsString());
     }
+    m_faultCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

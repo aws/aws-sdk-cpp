@@ -18,13 +18,7 @@ namespace SimSpaceWeaver
 namespace Model
 {
 
-CloudWatchLogsLogGroup::CloudWatchLogsLogGroup() : 
-    m_logGroupArnHasBeenSet(false)
-{
-}
-
 CloudWatchLogsLogGroup::CloudWatchLogsLogGroup(JsonView jsonValue)
-  : CloudWatchLogsLogGroup()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CloudWatchLogsLogGroup& CloudWatchLogsLogGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LogGroupArn"))
   {
     m_logGroupArn = jsonValue.GetString("LogGroupArn");
-
     m_logGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

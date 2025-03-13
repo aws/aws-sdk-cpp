@@ -33,7 +33,7 @@ namespace Model
   class EngineConfiguration
   {
   public:
-    AWS_ATHENA_API EngineConfiguration();
+    AWS_ATHENA_API EngineConfiguration() = default;
     AWS_ATHENA_API EngineConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API EngineConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * executor that orchestrates processing work and manages other executors in a
      * notebook session. The default is 1.</p>
      */
-    inline int GetCoordinatorDpuSize() const{ return m_coordinatorDpuSize; }
+    inline int GetCoordinatorDpuSize() const { return m_coordinatorDpuSize; }
     inline bool CoordinatorDpuSizeHasBeenSet() const { return m_coordinatorDpuSizeHasBeenSet; }
     inline void SetCoordinatorDpuSize(int value) { m_coordinatorDpuSizeHasBeenSet = true; m_coordinatorDpuSize = value; }
     inline EngineConfiguration& WithCoordinatorDpuSize(int value) { SetCoordinatorDpuSize(value); return *this;}
@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>The maximum number of DPUs that can run concurrently.</p>
      */
-    inline int GetMaxConcurrentDpus() const{ return m_maxConcurrentDpus; }
+    inline int GetMaxConcurrentDpus() const { return m_maxConcurrentDpus; }
     inline bool MaxConcurrentDpusHasBeenSet() const { return m_maxConcurrentDpusHasBeenSet; }
     inline void SetMaxConcurrentDpus(int value) { m_maxConcurrentDpusHasBeenSet = true; m_maxConcurrentDpus = value; }
     inline EngineConfiguration& WithMaxConcurrentDpus(int value) { SetMaxConcurrentDpus(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
      * unit of compute that a notebook session can request from Athena. The default is
      * 1.</p>
      */
-    inline int GetDefaultExecutorDpuSize() const{ return m_defaultExecutorDpuSize; }
+    inline int GetDefaultExecutorDpuSize() const { return m_defaultExecutorDpuSize; }
     inline bool DefaultExecutorDpuSizeHasBeenSet() const { return m_defaultExecutorDpuSizeHasBeenSet; }
     inline void SetDefaultExecutorDpuSize(int value) { m_defaultExecutorDpuSizeHasBeenSet = true; m_defaultExecutorDpuSize = value; }
     inline EngineConfiguration& WithDefaultExecutorDpuSize(int value) { SetDefaultExecutorDpuSize(value); return *this;}
@@ -82,19 +82,16 @@ namespace Model
      * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
      * the Athena notebook ID.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalConfigs() const{ return m_additionalConfigs; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalConfigs() const { return m_additionalConfigs; }
     inline bool AdditionalConfigsHasBeenSet() const { return m_additionalConfigsHasBeenSet; }
-    inline void SetAdditionalConfigs(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs = value; }
-    inline void SetAdditionalConfigs(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs = std::move(value); }
-    inline EngineConfiguration& WithAdditionalConfigs(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalConfigs(value); return *this;}
-    inline EngineConfiguration& WithAdditionalConfigs(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalConfigs(std::move(value)); return *this;}
-    inline EngineConfiguration& AddAdditionalConfigs(const Aws::String& key, const Aws::String& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(key, value); return *this; }
-    inline EngineConfiguration& AddAdditionalConfigs(Aws::String&& key, const Aws::String& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(std::move(key), value); return *this; }
-    inline EngineConfiguration& AddAdditionalConfigs(const Aws::String& key, Aws::String&& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(key, std::move(value)); return *this; }
-    inline EngineConfiguration& AddAdditionalConfigs(Aws::String&& key, Aws::String&& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(std::move(key), std::move(value)); return *this; }
-    inline EngineConfiguration& AddAdditionalConfigs(const char* key, Aws::String&& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(key, std::move(value)); return *this; }
-    inline EngineConfiguration& AddAdditionalConfigs(Aws::String&& key, const char* value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(std::move(key), value); return *this; }
-    inline EngineConfiguration& AddAdditionalConfigs(const char* key, const char* value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(key, value); return *this; }
+    template<typename AdditionalConfigsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalConfigs(AdditionalConfigsT&& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs = std::forward<AdditionalConfigsT>(value); }
+    template<typename AdditionalConfigsT = Aws::Map<Aws::String, Aws::String>>
+    EngineConfiguration& WithAdditionalConfigs(AdditionalConfigsT&& value) { SetAdditionalConfigs(std::forward<AdditionalConfigsT>(value)); return *this;}
+    template<typename AdditionalConfigsKeyT = Aws::String, typename AdditionalConfigsValueT = Aws::String>
+    EngineConfiguration& AddAdditionalConfigs(AdditionalConfigsKeyT&& key, AdditionalConfigsValueT&& value) {
+      m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(std::forward<AdditionalConfigsKeyT>(key), std::forward<AdditionalConfigsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -102,29 +99,26 @@ namespace Model
      * <p>Specifies custom jar files and Spark properties for use cases like cluster
      * encryption, table formats, and general Spark tuning.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSparkProperties() const{ return m_sparkProperties; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSparkProperties() const { return m_sparkProperties; }
     inline bool SparkPropertiesHasBeenSet() const { return m_sparkPropertiesHasBeenSet; }
-    inline void SetSparkProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties = value; }
-    inline void SetSparkProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties = std::move(value); }
-    inline EngineConfiguration& WithSparkProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetSparkProperties(value); return *this;}
-    inline EngineConfiguration& WithSparkProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetSparkProperties(std::move(value)); return *this;}
-    inline EngineConfiguration& AddSparkProperties(const Aws::String& key, const Aws::String& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, value); return *this; }
-    inline EngineConfiguration& AddSparkProperties(Aws::String&& key, const Aws::String& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::move(key), value); return *this; }
-    inline EngineConfiguration& AddSparkProperties(const Aws::String& key, Aws::String&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, std::move(value)); return *this; }
-    inline EngineConfiguration& AddSparkProperties(Aws::String&& key, Aws::String&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline EngineConfiguration& AddSparkProperties(const char* key, Aws::String&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, std::move(value)); return *this; }
-    inline EngineConfiguration& AddSparkProperties(Aws::String&& key, const char* value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::move(key), value); return *this; }
-    inline EngineConfiguration& AddSparkProperties(const char* key, const char* value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, value); return *this; }
+    template<typename SparkPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetSparkProperties(SparkPropertiesT&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties = std::forward<SparkPropertiesT>(value); }
+    template<typename SparkPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    EngineConfiguration& WithSparkProperties(SparkPropertiesT&& value) { SetSparkProperties(std::forward<SparkPropertiesT>(value)); return *this;}
+    template<typename SparkPropertiesKeyT = Aws::String, typename SparkPropertiesValueT = Aws::String>
+    EngineConfiguration& AddSparkProperties(SparkPropertiesKeyT&& key, SparkPropertiesValueT&& value) {
+      m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::forward<SparkPropertiesKeyT>(key), std::forward<SparkPropertiesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    int m_coordinatorDpuSize;
+    int m_coordinatorDpuSize{0};
     bool m_coordinatorDpuSizeHasBeenSet = false;
 
-    int m_maxConcurrentDpus;
+    int m_maxConcurrentDpus{0};
     bool m_maxConcurrentDpusHasBeenSet = false;
 
-    int m_defaultExecutorDpuSize;
+    int m_defaultExecutorDpuSize{0};
     bool m_defaultExecutorDpuSizeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_additionalConfigs;

@@ -18,20 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-AbortConfigCriteria::AbortConfigCriteria() : 
-    m_action(AbortCriteriaAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_failureType(AbortCriteriaFailureType::NOT_SET),
-    m_failureTypeHasBeenSet(false),
-    m_minNumberOfExecutedThings(0),
-    m_minNumberOfExecutedThingsHasBeenSet(false),
-    m_thresholdPercentage(0.0),
-    m_thresholdPercentageHasBeenSet(false)
-{
-}
-
 AbortConfigCriteria::AbortConfigCriteria(JsonView jsonValue)
-  : AbortConfigCriteria()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ AbortConfigCriteria& AbortConfigCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = AbortCriteriaActionMapper::GetAbortCriteriaActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureType"))
   {
     m_failureType = AbortCriteriaFailureTypeMapper::GetAbortCriteriaFailureTypeForName(jsonValue.GetString("FailureType"));
-
     m_failureTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinNumberOfExecutedThings"))
   {
     m_minNumberOfExecutedThings = jsonValue.GetInteger("MinNumberOfExecutedThings");
-
     m_minNumberOfExecutedThingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThresholdPercentage"))
   {
     m_thresholdPercentage = jsonValue.GetDouble("ThresholdPercentage");
-
     m_thresholdPercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

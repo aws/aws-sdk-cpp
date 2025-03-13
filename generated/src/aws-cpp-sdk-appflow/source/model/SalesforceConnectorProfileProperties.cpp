@@ -18,17 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SalesforceConnectorProfileProperties::SalesforceConnectorProfileProperties() : 
-    m_instanceUrlHasBeenSet(false),
-    m_isSandboxEnvironment(false),
-    m_isSandboxEnvironmentHasBeenSet(false),
-    m_usePrivateLinkForMetadataAndAuthorization(false),
-    m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet(false)
-{
-}
-
 SalesforceConnectorProfileProperties::SalesforceConnectorProfileProperties(JsonView jsonValue)
-  : SalesforceConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ SalesforceConnectorProfileProperties& SalesforceConnectorProfileProperties::oper
   if(jsonValue.ValueExists("instanceUrl"))
   {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
-
     m_instanceUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isSandboxEnvironment"))
   {
     m_isSandboxEnvironment = jsonValue.GetBool("isSandboxEnvironment");
-
     m_isSandboxEnvironmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usePrivateLinkForMetadataAndAuthorization"))
   {
     m_usePrivateLinkForMetadataAndAuthorization = jsonValue.GetBool("usePrivateLinkForMetadataAndAuthorization");
-
     m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet = true;
   }
-
   return *this;
 }
 

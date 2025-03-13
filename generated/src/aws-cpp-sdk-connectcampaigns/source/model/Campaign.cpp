@@ -18,19 +18,7 @@ namespace ConnectCampaigns
 namespace Model
 {
 
-Campaign::Campaign() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_connectInstanceIdHasBeenSet(false),
-    m_dialerConfigHasBeenSet(false),
-    m_outboundCallConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Campaign::Campaign(JsonView jsonValue)
-  : Campaign()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Campaign& Campaign::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectInstanceId"))
   {
     m_connectInstanceId = jsonValue.GetString("connectInstanceId");
-
     m_connectInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dialerConfig"))
   {
     m_dialerConfig = jsonValue.GetObject("dialerConfig");
-
     m_dialerConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outboundCallConfig"))
   {
     m_outboundCallConfig = jsonValue.GetObject("outboundCallConfig");
-
     m_outboundCallConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -88,7 +64,6 @@ Campaign& Campaign::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

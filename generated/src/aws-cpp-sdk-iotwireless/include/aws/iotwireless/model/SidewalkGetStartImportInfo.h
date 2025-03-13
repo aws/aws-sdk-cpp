@@ -33,7 +33,7 @@ namespace Model
   class SidewalkGetStartImportInfo
   {
   public:
-    AWS_IOTWIRELESS_API SidewalkGetStartImportInfo();
+    AWS_IOTWIRELESS_API SidewalkGetStartImportInfo() = default;
     AWS_IOTWIRELESS_API SidewalkGetStartImportInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API SidewalkGetStartImportInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>List of Sidewalk devices that are added to the import task.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDeviceCreationFileList() const{ return m_deviceCreationFileList; }
+    inline const Aws::Vector<Aws::String>& GetDeviceCreationFileList() const { return m_deviceCreationFileList; }
     inline bool DeviceCreationFileListHasBeenSet() const { return m_deviceCreationFileListHasBeenSet; }
-    inline void SetDeviceCreationFileList(const Aws::Vector<Aws::String>& value) { m_deviceCreationFileListHasBeenSet = true; m_deviceCreationFileList = value; }
-    inline void SetDeviceCreationFileList(Aws::Vector<Aws::String>&& value) { m_deviceCreationFileListHasBeenSet = true; m_deviceCreationFileList = std::move(value); }
-    inline SidewalkGetStartImportInfo& WithDeviceCreationFileList(const Aws::Vector<Aws::String>& value) { SetDeviceCreationFileList(value); return *this;}
-    inline SidewalkGetStartImportInfo& WithDeviceCreationFileList(Aws::Vector<Aws::String>&& value) { SetDeviceCreationFileList(std::move(value)); return *this;}
-    inline SidewalkGetStartImportInfo& AddDeviceCreationFileList(const Aws::String& value) { m_deviceCreationFileListHasBeenSet = true; m_deviceCreationFileList.push_back(value); return *this; }
-    inline SidewalkGetStartImportInfo& AddDeviceCreationFileList(Aws::String&& value) { m_deviceCreationFileListHasBeenSet = true; m_deviceCreationFileList.push_back(std::move(value)); return *this; }
-    inline SidewalkGetStartImportInfo& AddDeviceCreationFileList(const char* value) { m_deviceCreationFileListHasBeenSet = true; m_deviceCreationFileList.push_back(value); return *this; }
+    template<typename DeviceCreationFileListT = Aws::Vector<Aws::String>>
+    void SetDeviceCreationFileList(DeviceCreationFileListT&& value) { m_deviceCreationFileListHasBeenSet = true; m_deviceCreationFileList = std::forward<DeviceCreationFileListT>(value); }
+    template<typename DeviceCreationFileListT = Aws::Vector<Aws::String>>
+    SidewalkGetStartImportInfo& WithDeviceCreationFileList(DeviceCreationFileListT&& value) { SetDeviceCreationFileList(std::forward<DeviceCreationFileListT>(value)); return *this;}
+    template<typename DeviceCreationFileListT = Aws::String>
+    SidewalkGetStartImportInfo& AddDeviceCreationFileList(DeviceCreationFileListT&& value) { m_deviceCreationFileListHasBeenSet = true; m_deviceCreationFileList.emplace_back(std::forward<DeviceCreationFileListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +58,12 @@ namespace Model
      * <p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3
      * bucket.</p>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline SidewalkGetStartImportInfo& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline SidewalkGetStartImportInfo& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline SidewalkGetStartImportInfo& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    SidewalkGetStartImportInfo& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
   private:
 

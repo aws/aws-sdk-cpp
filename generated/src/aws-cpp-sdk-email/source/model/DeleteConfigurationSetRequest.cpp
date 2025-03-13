@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DeleteConfigurationSetRequest::DeleteConfigurationSetRequest() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConfigurationSetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

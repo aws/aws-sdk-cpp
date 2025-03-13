@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-DetailedStatusCodesMetrics::DetailedStatusCodesMetrics() : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
-{
-}
-
 DetailedStatusCodesMetrics::DetailedStatusCodesMetrics(const XmlNode& xmlNode)
-  : DetailedStatusCodesMetrics()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ DetailedStatusCodesMetrics& DetailedStatusCodesMetrics::operator =(const XmlNode
     {
       m_isEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isEnabledNode.GetText()).c_str()).c_str());
       m_isEnabledHasBeenSet = true;
+       m_isEnabledHasBeenSet = true;
     }
   }
 

@@ -12,11 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteReplicationJobRequest::DeleteReplicationJobRequest() : 
-    m_replicationJobIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReplicationJobRequest::SerializePayload() const
 {
   JsonValue payload;

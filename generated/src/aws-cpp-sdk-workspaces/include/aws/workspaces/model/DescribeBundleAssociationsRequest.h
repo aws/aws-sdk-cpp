@@ -23,7 +23,7 @@ namespace Model
   class DescribeBundleAssociationsRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API DescribeBundleAssociationsRequest();
+    AWS_WORKSPACES_API DescribeBundleAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,25 @@ namespace Model
     /**
      * <p>The identifier of the bundle.</p>
      */
-    inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+    inline const Aws::String& GetBundleId() const { return m_bundleId; }
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
-    inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
-    inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
-    inline DescribeBundleAssociationsRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
-    inline DescribeBundleAssociationsRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
-    inline DescribeBundleAssociationsRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
+    template<typename BundleIdT = Aws::String>
+    void SetBundleId(BundleIdT&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::forward<BundleIdT>(value); }
+    template<typename BundleIdT = Aws::String>
+    DescribeBundleAssociationsRequest& WithBundleId(BundleIdT&& value) { SetBundleId(std::forward<BundleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource types of the associated resource.</p>
      */
-    inline const Aws::Vector<BundleAssociatedResourceType>& GetAssociatedResourceTypes() const{ return m_associatedResourceTypes; }
+    inline const Aws::Vector<BundleAssociatedResourceType>& GetAssociatedResourceTypes() const { return m_associatedResourceTypes; }
     inline bool AssociatedResourceTypesHasBeenSet() const { return m_associatedResourceTypesHasBeenSet; }
-    inline void SetAssociatedResourceTypes(const Aws::Vector<BundleAssociatedResourceType>& value) { m_associatedResourceTypesHasBeenSet = true; m_associatedResourceTypes = value; }
-    inline void SetAssociatedResourceTypes(Aws::Vector<BundleAssociatedResourceType>&& value) { m_associatedResourceTypesHasBeenSet = true; m_associatedResourceTypes = std::move(value); }
-    inline DescribeBundleAssociationsRequest& WithAssociatedResourceTypes(const Aws::Vector<BundleAssociatedResourceType>& value) { SetAssociatedResourceTypes(value); return *this;}
-    inline DescribeBundleAssociationsRequest& WithAssociatedResourceTypes(Aws::Vector<BundleAssociatedResourceType>&& value) { SetAssociatedResourceTypes(std::move(value)); return *this;}
-    inline DescribeBundleAssociationsRequest& AddAssociatedResourceTypes(const BundleAssociatedResourceType& value) { m_associatedResourceTypesHasBeenSet = true; m_associatedResourceTypes.push_back(value); return *this; }
-    inline DescribeBundleAssociationsRequest& AddAssociatedResourceTypes(BundleAssociatedResourceType&& value) { m_associatedResourceTypesHasBeenSet = true; m_associatedResourceTypes.push_back(std::move(value)); return *this; }
+    template<typename AssociatedResourceTypesT = Aws::Vector<BundleAssociatedResourceType>>
+    void SetAssociatedResourceTypes(AssociatedResourceTypesT&& value) { m_associatedResourceTypesHasBeenSet = true; m_associatedResourceTypes = std::forward<AssociatedResourceTypesT>(value); }
+    template<typename AssociatedResourceTypesT = Aws::Vector<BundleAssociatedResourceType>>
+    DescribeBundleAssociationsRequest& WithAssociatedResourceTypes(AssociatedResourceTypesT&& value) { SetAssociatedResourceTypes(std::forward<AssociatedResourceTypesT>(value)); return *this;}
+    inline DescribeBundleAssociationsRequest& AddAssociatedResourceTypes(BundleAssociatedResourceType value) { m_associatedResourceTypesHasBeenSet = true; m_associatedResourceTypes.push_back(value); return *this; }
     ///@}
   private:
 

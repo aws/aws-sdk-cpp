@@ -34,7 +34,7 @@ namespace Model
   class DescribeReplicationsResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationsResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationsResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,45 +45,44 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeReplicationsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeReplicationsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeReplicationsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeReplicationsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The replication descriptions.</p>
      */
-    inline const Aws::Vector<Replication>& GetReplications() const{ return m_replications; }
-    inline void SetReplications(const Aws::Vector<Replication>& value) { m_replications = value; }
-    inline void SetReplications(Aws::Vector<Replication>&& value) { m_replications = std::move(value); }
-    inline DescribeReplicationsResult& WithReplications(const Aws::Vector<Replication>& value) { SetReplications(value); return *this;}
-    inline DescribeReplicationsResult& WithReplications(Aws::Vector<Replication>&& value) { SetReplications(std::move(value)); return *this;}
-    inline DescribeReplicationsResult& AddReplications(const Replication& value) { m_replications.push_back(value); return *this; }
-    inline DescribeReplicationsResult& AddReplications(Replication&& value) { m_replications.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Replication>& GetReplications() const { return m_replications; }
+    template<typename ReplicationsT = Aws::Vector<Replication>>
+    void SetReplications(ReplicationsT&& value) { m_replicationsHasBeenSet = true; m_replications = std::forward<ReplicationsT>(value); }
+    template<typename ReplicationsT = Aws::Vector<Replication>>
+    DescribeReplicationsResult& WithReplications(ReplicationsT&& value) { SetReplications(std::forward<ReplicationsT>(value)); return *this;}
+    template<typename ReplicationsT = Replication>
+    DescribeReplicationsResult& AddReplications(ReplicationsT&& value) { m_replicationsHasBeenSet = true; m_replications.emplace_back(std::forward<ReplicationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeReplicationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeReplicationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeReplicationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeReplicationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<Replication> m_replications;
+    bool m_replicationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

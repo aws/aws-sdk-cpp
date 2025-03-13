@@ -12,11 +12,6 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetManagedNotificationConfigurationRequest::GetManagedNotificationConfigurationRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetManagedNotificationConfigurationRequest::SerializePayload() const
 {
   return {};

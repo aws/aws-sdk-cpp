@@ -31,7 +31,7 @@ namespace Model
   class SheetTextBox
   {
   public:
-    AWS_QUICKSIGHT_API SheetTextBox();
+    AWS_QUICKSIGHT_API SheetTextBox() = default;
     AWS_QUICKSIGHT_API SheetTextBox(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SheetTextBox& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * the context of a dashboard, template, or analysis. Two dashboards, analyses, or
      * templates can have text boxes that share identifiers.</p>
      */
-    inline const Aws::String& GetSheetTextBoxId() const{ return m_sheetTextBoxId; }
+    inline const Aws::String& GetSheetTextBoxId() const { return m_sheetTextBoxId; }
     inline bool SheetTextBoxIdHasBeenSet() const { return m_sheetTextBoxIdHasBeenSet; }
-    inline void SetSheetTextBoxId(const Aws::String& value) { m_sheetTextBoxIdHasBeenSet = true; m_sheetTextBoxId = value; }
-    inline void SetSheetTextBoxId(Aws::String&& value) { m_sheetTextBoxIdHasBeenSet = true; m_sheetTextBoxId = std::move(value); }
-    inline void SetSheetTextBoxId(const char* value) { m_sheetTextBoxIdHasBeenSet = true; m_sheetTextBoxId.assign(value); }
-    inline SheetTextBox& WithSheetTextBoxId(const Aws::String& value) { SetSheetTextBoxId(value); return *this;}
-    inline SheetTextBox& WithSheetTextBoxId(Aws::String&& value) { SetSheetTextBoxId(std::move(value)); return *this;}
-    inline SheetTextBox& WithSheetTextBoxId(const char* value) { SetSheetTextBoxId(value); return *this;}
+    template<typename SheetTextBoxIdT = Aws::String>
+    void SetSheetTextBoxId(SheetTextBoxIdT&& value) { m_sheetTextBoxIdHasBeenSet = true; m_sheetTextBoxId = std::forward<SheetTextBoxIdT>(value); }
+    template<typename SheetTextBoxIdT = Aws::String>
+    SheetTextBox& WithSheetTextBoxId(SheetTextBoxIdT&& value) { SetSheetTextBoxId(std::forward<SheetTextBoxIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content that is displayed in the text box.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline SheetTextBox& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline SheetTextBox& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline SheetTextBox& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    SheetTextBox& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 

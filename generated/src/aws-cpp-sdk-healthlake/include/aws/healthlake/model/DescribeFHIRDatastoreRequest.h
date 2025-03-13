@@ -21,7 +21,7 @@ namespace Model
   class DescribeFHIRDatastoreRequest : public HealthLakeRequest
   {
   public:
-    AWS_HEALTHLAKE_API DescribeFHIRDatastoreRequest();
+    AWS_HEALTHLAKE_API DescribeFHIRDatastoreRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The AWS-generated data store ID.</p>
      */
-    inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
+    inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
-    inline void SetDatastoreId(const Aws::String& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = value; }
-    inline void SetDatastoreId(Aws::String&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::move(value); }
-    inline void SetDatastoreId(const char* value) { m_datastoreIdHasBeenSet = true; m_datastoreId.assign(value); }
-    inline DescribeFHIRDatastoreRequest& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
-    inline DescribeFHIRDatastoreRequest& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
-    inline DescribeFHIRDatastoreRequest& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
+    template<typename DatastoreIdT = Aws::String>
+    void SetDatastoreId(DatastoreIdT&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::forward<DatastoreIdT>(value); }
+    template<typename DatastoreIdT = Aws::String>
+    DescribeFHIRDatastoreRequest& WithDatastoreId(DatastoreIdT&& value) { SetDatastoreId(std::forward<DatastoreIdT>(value)); return *this;}
     ///@}
   private:
 

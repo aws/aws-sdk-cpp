@@ -12,11 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetManagedThingCapabilitiesRequest::GetManagedThingCapabilitiesRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetManagedThingCapabilitiesRequest::SerializePayload() const
 {
   return {};

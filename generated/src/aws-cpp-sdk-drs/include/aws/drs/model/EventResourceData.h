@@ -31,7 +31,7 @@ namespace Model
   class EventResourceData
   {
   public:
-    AWS_DRS_API EventResourceData();
+    AWS_DRS_API EventResourceData() = default;
     AWS_DRS_API EventResourceData(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API EventResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Source Network properties.</p>
      */
-    inline const SourceNetworkData& GetSourceNetworkData() const{ return m_sourceNetworkData; }
+    inline const SourceNetworkData& GetSourceNetworkData() const { return m_sourceNetworkData; }
     inline bool SourceNetworkDataHasBeenSet() const { return m_sourceNetworkDataHasBeenSet; }
-    inline void SetSourceNetworkData(const SourceNetworkData& value) { m_sourceNetworkDataHasBeenSet = true; m_sourceNetworkData = value; }
-    inline void SetSourceNetworkData(SourceNetworkData&& value) { m_sourceNetworkDataHasBeenSet = true; m_sourceNetworkData = std::move(value); }
-    inline EventResourceData& WithSourceNetworkData(const SourceNetworkData& value) { SetSourceNetworkData(value); return *this;}
-    inline EventResourceData& WithSourceNetworkData(SourceNetworkData&& value) { SetSourceNetworkData(std::move(value)); return *this;}
+    template<typename SourceNetworkDataT = SourceNetworkData>
+    void SetSourceNetworkData(SourceNetworkDataT&& value) { m_sourceNetworkDataHasBeenSet = true; m_sourceNetworkData = std::forward<SourceNetworkDataT>(value); }
+    template<typename SourceNetworkDataT = SourceNetworkData>
+    EventResourceData& WithSourceNetworkData(SourceNetworkDataT&& value) { SetSourceNetworkData(std::forward<SourceNetworkDataT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::HealthLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFHIRExportJobRequest::DescribeFHIRExportJobRequest() : 
-    m_datastoreIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFHIRExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

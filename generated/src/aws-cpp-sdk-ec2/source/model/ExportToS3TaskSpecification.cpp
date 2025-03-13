@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ExportToS3TaskSpecification::ExportToS3TaskSpecification() : 
-    m_diskImageFormat(DiskImageFormat::NOT_SET),
-    m_diskImageFormatHasBeenSet(false),
-    m_containerFormat(ContainerFormat::NOT_SET),
-    m_containerFormatHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false)
-{
-}
-
 ExportToS3TaskSpecification::ExportToS3TaskSpecification(const XmlNode& xmlNode)
-  : ExportToS3TaskSpecification()
 {
   *this = xmlNode;
 }
@@ -45,26 +34,30 @@ ExportToS3TaskSpecification& ExportToS3TaskSpecification::operator =(const XmlNo
     XmlNode diskImageFormatNode = resultNode.FirstChild("diskImageFormat");
     if(!diskImageFormatNode.IsNull())
     {
-      m_diskImageFormat = DiskImageFormatMapper::GetDiskImageFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(diskImageFormatNode.GetText()).c_str()).c_str());
+      m_diskImageFormat = DiskImageFormatMapper::GetDiskImageFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(diskImageFormatNode.GetText()).c_str()));
       m_diskImageFormatHasBeenSet = true;
+       m_diskImageFormatHasBeenSet = true;
     }
     XmlNode containerFormatNode = resultNode.FirstChild("containerFormat");
     if(!containerFormatNode.IsNull())
     {
-      m_containerFormat = ContainerFormatMapper::GetContainerFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(containerFormatNode.GetText()).c_str()).c_str());
+      m_containerFormat = ContainerFormatMapper::GetContainerFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(containerFormatNode.GetText()).c_str()));
       m_containerFormatHasBeenSet = true;
+       m_containerFormatHasBeenSet = true;
     }
     XmlNode s3BucketNode = resultNode.FirstChild("s3Bucket");
     if(!s3BucketNode.IsNull())
     {
       m_s3Bucket = Aws::Utils::Xml::DecodeEscapedXmlText(s3BucketNode.GetText());
       m_s3BucketHasBeenSet = true;
+       m_s3BucketHasBeenSet = true;
     }
     XmlNode s3PrefixNode = resultNode.FirstChild("s3Prefix");
     if(!s3PrefixNode.IsNull())
     {
       m_s3Prefix = Aws::Utils::Xml::DecodeEscapedXmlText(s3PrefixNode.GetText());
       m_s3PrefixHasBeenSet = true;
+       m_s3PrefixHasBeenSet = true;
     }
   }
 

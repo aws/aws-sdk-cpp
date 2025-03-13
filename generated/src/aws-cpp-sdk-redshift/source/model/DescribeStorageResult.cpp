@@ -17,14 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeStorageResult::DescribeStorageResult() : 
-    m_totalBackupSizeInMegaBytes(0.0),
-    m_totalProvisionedStorageInMegaBytes(0.0)
-{
-}
-
 DescribeStorageResult::DescribeStorageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DescribeStorageResult()
 {
   *this = result;
 }
@@ -45,17 +38,20 @@ DescribeStorageResult& DescribeStorageResult::operator =(const Aws::AmazonWebSer
     if(!totalBackupSizeInMegaBytesNode.IsNull())
     {
       m_totalBackupSizeInMegaBytes = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalBackupSizeInMegaBytesNode.GetText()).c_str()).c_str());
+      m_totalBackupSizeInMegaBytesHasBeenSet = true;
     }
     XmlNode totalProvisionedStorageInMegaBytesNode = resultNode.FirstChild("TotalProvisionedStorageInMegaBytes");
     if(!totalProvisionedStorageInMegaBytesNode.IsNull())
     {
       m_totalProvisionedStorageInMegaBytes = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalProvisionedStorageInMegaBytesNode.GetText()).c_str()).c_str());
+      m_totalProvisionedStorageInMegaBytesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeStorageResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

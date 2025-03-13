@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringScheduleConfig::MonitoringScheduleConfig() : 
-    m_scheduleConfigHasBeenSet(false),
-    m_monitoringJobDefinitionHasBeenSet(false),
-    m_monitoringJobDefinitionNameHasBeenSet(false),
-    m_monitoringType(MonitoringType::NOT_SET),
-    m_monitoringTypeHasBeenSet(false)
-{
-}
-
 MonitoringScheduleConfig::MonitoringScheduleConfig(JsonView jsonValue)
-  : MonitoringScheduleConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ MonitoringScheduleConfig& MonitoringScheduleConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ScheduleConfig"))
   {
     m_scheduleConfig = jsonValue.GetObject("ScheduleConfig");
-
     m_scheduleConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringJobDefinition"))
   {
     m_monitoringJobDefinition = jsonValue.GetObject("MonitoringJobDefinition");
-
     m_monitoringJobDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringJobDefinitionName"))
   {
     m_monitoringJobDefinitionName = jsonValue.GetString("MonitoringJobDefinitionName");
-
     m_monitoringJobDefinitionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringType"))
   {
     m_monitoringType = MonitoringTypeMapper::GetMonitoringTypeForName(jsonValue.GetString("MonitoringType"));
-
     m_monitoringTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

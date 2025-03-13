@@ -18,13 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-AudioStandardExtraction::AudioStandardExtraction() : 
-    m_categoryHasBeenSet(false)
-{
-}
-
 AudioStandardExtraction::AudioStandardExtraction(JsonView jsonValue)
-  : AudioStandardExtraction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AudioStandardExtraction& AudioStandardExtraction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("category"))
   {
     m_category = jsonValue.GetObject("category");
-
     m_categoryHasBeenSet = true;
   }
-
   return *this;
 }
 

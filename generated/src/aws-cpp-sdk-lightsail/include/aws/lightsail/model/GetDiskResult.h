@@ -28,7 +28,7 @@ namespace Model
   class GetDiskResult
   {
   public:
-    AWS_LIGHTSAIL_API GetDiskResult();
+    AWS_LIGHTSAIL_API GetDiskResult() = default;
     AWS_LIGHTSAIL_API GetDiskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetDiskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object containing information about the disk.</p>
      */
-    inline const Disk& GetDisk() const{ return m_disk; }
-    inline void SetDisk(const Disk& value) { m_disk = value; }
-    inline void SetDisk(Disk&& value) { m_disk = std::move(value); }
-    inline GetDiskResult& WithDisk(const Disk& value) { SetDisk(value); return *this;}
-    inline GetDiskResult& WithDisk(Disk&& value) { SetDisk(std::move(value)); return *this;}
+    inline const Disk& GetDisk() const { return m_disk; }
+    template<typename DiskT = Disk>
+    void SetDisk(DiskT&& value) { m_diskHasBeenSet = true; m_disk = std::forward<DiskT>(value); }
+    template<typename DiskT = Disk>
+    GetDiskResult& WithDisk(DiskT&& value) { SetDisk(std::forward<DiskT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDiskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDiskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDiskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDiskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Disk m_disk;
+    bool m_diskHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

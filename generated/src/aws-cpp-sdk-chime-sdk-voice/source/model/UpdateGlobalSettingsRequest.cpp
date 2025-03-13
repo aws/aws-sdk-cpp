@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGlobalSettingsRequest::UpdateGlobalSettingsRequest() : 
-    m_voiceConnectorHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGlobalSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

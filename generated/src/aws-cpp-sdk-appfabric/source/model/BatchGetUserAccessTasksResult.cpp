@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetUserAccessTasksResult::BatchGetUserAccessTasksResult()
-{
-}
-
 BatchGetUserAccessTasksResult::BatchGetUserAccessTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchGetUserAccessTasksResult& BatchGetUserAccessTasksResult::operator =(const A
     {
       m_userAccessResultsList.push_back(userAccessResultsListJsonList[userAccessResultsListIndex].AsObject());
     }
+    m_userAccessResultsListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

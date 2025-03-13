@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-BundleTask::BundleTask() : 
-    m_instanceIdHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_state(BundleTaskState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_bundleTaskErrorHasBeenSet(false)
-{
-}
-
 BundleTask::BundleTask(const XmlNode& xmlNode)
-  : BundleTask()
 {
   *this = xmlNode;
 }
@@ -50,48 +36,56 @@ BundleTask& BundleTask::operator =(const XmlNode& xmlNode)
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode bundleIdNode = resultNode.FirstChild("bundleId");
     if(!bundleIdNode.IsNull())
     {
       m_bundleId = Aws::Utils::Xml::DecodeEscapedXmlText(bundleIdNode.GetText());
       m_bundleIdHasBeenSet = true;
+       m_bundleIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = BundleTaskStateMapper::GetBundleTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = BundleTaskStateMapper::GetBundleTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
     if(!startTimeNode.IsNull())
     {
       m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
+       m_startTimeHasBeenSet = true;
     }
     XmlNode updateTimeNode = resultNode.FirstChild("updateTime");
     if(!updateTimeNode.IsNull())
     {
       m_updateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateTimeHasBeenSet = true;
+       m_updateTimeHasBeenSet = true;
     }
     XmlNode storageNode = resultNode.FirstChild("storage");
     if(!storageNode.IsNull())
     {
       m_storage = storageNode;
       m_storageHasBeenSet = true;
+       m_storageHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())
     {
       m_progress = Aws::Utils::Xml::DecodeEscapedXmlText(progressNode.GetText());
       m_progressHasBeenSet = true;
+       m_progressHasBeenSet = true;
     }
     XmlNode bundleTaskErrorNode = resultNode.FirstChild("error");
     if(!bundleTaskErrorNode.IsNull())
     {
       m_bundleTaskError = bundleTaskErrorNode;
       m_bundleTaskErrorHasBeenSet = true;
+       m_bundleTaskErrorHasBeenSet = true;
     }
   }
 

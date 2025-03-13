@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddAssociationRequest::AddAssociationRequest() : 
-    m_sourceArnHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_associationType(AssociationEdgeType::NOT_SET),
-    m_associationTypeHasBeenSet(false)
-{
-}
-
 Aws::String AddAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

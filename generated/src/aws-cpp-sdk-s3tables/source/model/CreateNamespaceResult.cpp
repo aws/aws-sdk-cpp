@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateNamespaceResult::CreateNamespaceResult()
-{
-}
-
 CreateNamespaceResult::CreateNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ CreateNamespaceResult& CreateNamespaceResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("tableBucketARN"))
   {
     m_tableBucketARN = jsonValue.GetString("tableBucketARN");
-
+    m_tableBucketARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     Aws::Utils::Array<JsonView> namespaceJsonList = jsonValue.GetArray("namespace");
@@ -42,14 +37,15 @@ CreateNamespaceResult& CreateNamespaceResult::operator =(const Aws::AmazonWebSer
     {
       m_namespace.push_back(namespaceJsonList[namespaceIndex].AsString());
     }
+    m_namespaceHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

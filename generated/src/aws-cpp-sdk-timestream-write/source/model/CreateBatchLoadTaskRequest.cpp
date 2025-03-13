@@ -12,19 +12,6 @@ using namespace Aws::TimestreamWrite::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBatchLoadTaskRequest::CreateBatchLoadTaskRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dataModelConfigurationHasBeenSet(false),
-    m_dataSourceConfigurationHasBeenSet(false),
-    m_reportConfigurationHasBeenSet(false),
-    m_targetDatabaseNameHasBeenSet(false),
-    m_targetTableNameHasBeenSet(false),
-    m_recordVersion(0),
-    m_recordVersionHasBeenSet(false)
-{
-}
-
 Aws::String CreateBatchLoadTaskRequest::SerializePayload() const
 {
   JsonValue payload;

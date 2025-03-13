@@ -18,18 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-GrpcRetryPolicy::GrpcRetryPolicy() : 
-    m_grpcRetryEventsHasBeenSet(false),
-    m_httpRetryEventsHasBeenSet(false),
-    m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false),
-    m_perRetryTimeoutHasBeenSet(false),
-    m_tcpRetryEventsHasBeenSet(false)
-{
-}
-
 GrpcRetryPolicy::GrpcRetryPolicy(JsonView jsonValue)
-  : GrpcRetryPolicy()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ GrpcRetryPolicy& GrpcRetryPolicy::operator =(JsonView jsonValue)
     }
     m_grpcRetryEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpRetryEvents"))
   {
     Aws::Utils::Array<JsonView> httpRetryEventsJsonList = jsonValue.GetArray("httpRetryEvents");
@@ -55,21 +43,16 @@ GrpcRetryPolicy& GrpcRetryPolicy::operator =(JsonView jsonValue)
     }
     m_httpRetryEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxRetries"))
   {
     m_maxRetries = jsonValue.GetInt64("maxRetries");
-
     m_maxRetriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("perRetryTimeout"))
   {
     m_perRetryTimeout = jsonValue.GetObject("perRetryTimeout");
-
     m_perRetryTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tcpRetryEvents"))
   {
     Aws::Utils::Array<JsonView> tcpRetryEventsJsonList = jsonValue.GetArray("tcpRetryEvents");
@@ -79,7 +62,6 @@ GrpcRetryPolicy& GrpcRetryPolicy::operator =(JsonView jsonValue)
     }
     m_tcpRetryEventsHasBeenSet = true;
   }
-
   return *this;
 }
 

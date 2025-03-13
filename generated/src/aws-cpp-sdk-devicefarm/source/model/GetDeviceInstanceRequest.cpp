@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeviceInstanceRequest::GetDeviceInstanceRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetDeviceInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

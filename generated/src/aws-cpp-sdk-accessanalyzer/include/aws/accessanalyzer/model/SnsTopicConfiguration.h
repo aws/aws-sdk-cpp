@@ -41,7 +41,7 @@ namespace Model
   class SnsTopicConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API SnsTopicConfiguration();
+    AWS_ACCESSANALYZER_API SnsTopicConfiguration() = default;
     AWS_ACCESSANALYZER_API SnsTopicConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API SnsTopicConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetTopicPolicy() const{ return m_topicPolicy; }
+    inline const Aws::String& GetTopicPolicy() const { return m_topicPolicy; }
     inline bool TopicPolicyHasBeenSet() const { return m_topicPolicyHasBeenSet; }
-    inline void SetTopicPolicy(const Aws::String& value) { m_topicPolicyHasBeenSet = true; m_topicPolicy = value; }
-    inline void SetTopicPolicy(Aws::String&& value) { m_topicPolicyHasBeenSet = true; m_topicPolicy = std::move(value); }
-    inline void SetTopicPolicy(const char* value) { m_topicPolicyHasBeenSet = true; m_topicPolicy.assign(value); }
-    inline SnsTopicConfiguration& WithTopicPolicy(const Aws::String& value) { SetTopicPolicy(value); return *this;}
-    inline SnsTopicConfiguration& WithTopicPolicy(Aws::String&& value) { SetTopicPolicy(std::move(value)); return *this;}
-    inline SnsTopicConfiguration& WithTopicPolicy(const char* value) { SetTopicPolicy(value); return *this;}
+    template<typename TopicPolicyT = Aws::String>
+    void SetTopicPolicy(TopicPolicyT&& value) { m_topicPolicyHasBeenSet = true; m_topicPolicy = std::forward<TopicPolicyT>(value); }
+    template<typename TopicPolicyT = Aws::String>
+    SnsTopicConfiguration& WithTopicPolicy(TopicPolicyT&& value) { SetTopicPolicy(std::forward<TopicPolicyT>(value)); return *this;}
     ///@}
   private:
 

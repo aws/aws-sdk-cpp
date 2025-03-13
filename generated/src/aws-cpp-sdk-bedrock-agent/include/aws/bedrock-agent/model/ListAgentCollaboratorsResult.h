@@ -29,7 +29,7 @@ namespace Model
   class ListAgentCollaboratorsResult
   {
   public:
-    AWS_BEDROCKAGENT_API ListAgentCollaboratorsResult();
+    AWS_BEDROCKAGENT_API ListAgentCollaboratorsResult() = default;
     AWS_BEDROCKAGENT_API ListAgentCollaboratorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API ListAgentCollaboratorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of collaborator summaries.</p>
      */
-    inline const Aws::Vector<AgentCollaboratorSummary>& GetAgentCollaboratorSummaries() const{ return m_agentCollaboratorSummaries; }
-    inline void SetAgentCollaboratorSummaries(const Aws::Vector<AgentCollaboratorSummary>& value) { m_agentCollaboratorSummaries = value; }
-    inline void SetAgentCollaboratorSummaries(Aws::Vector<AgentCollaboratorSummary>&& value) { m_agentCollaboratorSummaries = std::move(value); }
-    inline ListAgentCollaboratorsResult& WithAgentCollaboratorSummaries(const Aws::Vector<AgentCollaboratorSummary>& value) { SetAgentCollaboratorSummaries(value); return *this;}
-    inline ListAgentCollaboratorsResult& WithAgentCollaboratorSummaries(Aws::Vector<AgentCollaboratorSummary>&& value) { SetAgentCollaboratorSummaries(std::move(value)); return *this;}
-    inline ListAgentCollaboratorsResult& AddAgentCollaboratorSummaries(const AgentCollaboratorSummary& value) { m_agentCollaboratorSummaries.push_back(value); return *this; }
-    inline ListAgentCollaboratorsResult& AddAgentCollaboratorSummaries(AgentCollaboratorSummary&& value) { m_agentCollaboratorSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AgentCollaboratorSummary>& GetAgentCollaboratorSummaries() const { return m_agentCollaboratorSummaries; }
+    template<typename AgentCollaboratorSummariesT = Aws::Vector<AgentCollaboratorSummary>>
+    void SetAgentCollaboratorSummaries(AgentCollaboratorSummariesT&& value) { m_agentCollaboratorSummariesHasBeenSet = true; m_agentCollaboratorSummaries = std::forward<AgentCollaboratorSummariesT>(value); }
+    template<typename AgentCollaboratorSummariesT = Aws::Vector<AgentCollaboratorSummary>>
+    ListAgentCollaboratorsResult& WithAgentCollaboratorSummaries(AgentCollaboratorSummariesT&& value) { SetAgentCollaboratorSummaries(std::forward<AgentCollaboratorSummariesT>(value)); return *this;}
+    template<typename AgentCollaboratorSummariesT = AgentCollaboratorSummary>
+    ListAgentCollaboratorsResult& AddAgentCollaboratorSummaries(AgentCollaboratorSummariesT&& value) { m_agentCollaboratorSummariesHasBeenSet = true; m_agentCollaboratorSummaries.emplace_back(std::forward<AgentCollaboratorSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>Specify the pagination token from a previous request to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAgentCollaboratorsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAgentCollaboratorsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAgentCollaboratorsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAgentCollaboratorsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAgentCollaboratorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAgentCollaboratorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAgentCollaboratorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAgentCollaboratorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AgentCollaboratorSummary> m_agentCollaboratorSummaries;
+    bool m_agentCollaboratorSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

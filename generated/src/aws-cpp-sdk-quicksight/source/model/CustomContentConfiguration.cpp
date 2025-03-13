@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CustomContentConfiguration::CustomContentConfiguration() : 
-    m_contentUrlHasBeenSet(false),
-    m_contentType(CustomContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_imageScaling(CustomContentImageScalingConfiguration::NOT_SET),
-    m_imageScalingHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 CustomContentConfiguration::CustomContentConfiguration(JsonView jsonValue)
-  : CustomContentConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ CustomContentConfiguration& CustomContentConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("ContentUrl"))
   {
     m_contentUrl = jsonValue.GetString("ContentUrl");
-
     m_contentUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = CustomContentTypeMapper::GetCustomContentTypeForName(jsonValue.GetString("ContentType"));
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageScaling"))
   {
     m_imageScaling = CustomContentImageScalingConfigurationMapper::GetCustomContentImageScalingConfigurationForName(jsonValue.GetString("ImageScaling"));
-
     m_imageScalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

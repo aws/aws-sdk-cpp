@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketMetadataTableConfigurationSdkResult::GetBucketMetadataTableConfigurationSdkResult()
-{
-}
-
 GetBucketMetadataTableConfigurationSdkResult::GetBucketMetadataTableConfigurationSdkResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetBucketMetadataTableConfigurationSdkResult& GetBucketMetadataTableConfiguratio
   if(!resultNode.IsNull())
   {
     m_getBucketMetadataTableConfigurationResult = resultNode;
+    m_getBucketMetadataTableConfigurationResultHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ GetBucketMetadataTableConfigurationSdkResult& GetBucketMetadataTableConfiguratio
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -18,26 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-DescribeNodeSummary::DescribeNodeSummary() : 
-    m_arnHasBeenSet(false),
-    m_channelPlacementGroupsHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_connectionState(NodeConnectionState::NOT_SET),
-    m_connectionStateHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_managedInstanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nodeInterfaceMappingsHasBeenSet(false),
-    m_role(NodeRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_state(NodeState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 DescribeNodeSummary::DescribeNodeSummary(JsonView jsonValue)
-  : DescribeNodeSummary()
 {
   *this = jsonValue;
 }
@@ -47,10 +28,8 @@ DescribeNodeSummary& DescribeNodeSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelPlacementGroups"))
   {
     Aws::Utils::Array<JsonView> channelPlacementGroupsJsonList = jsonValue.GetArray("channelPlacementGroups");
@@ -60,49 +39,36 @@ DescribeNodeSummary& DescribeNodeSummary::operator =(JsonView jsonValue)
     }
     m_channelPlacementGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterId"))
   {
     m_clusterId = jsonValue.GetString("clusterId");
-
     m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionState"))
   {
     m_connectionState = NodeConnectionStateMapper::GetNodeConnectionStateForName(jsonValue.GetString("connectionState"));
-
     m_connectionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceArn"))
   {
     m_instanceArn = jsonValue.GetString("instanceArn");
-
     m_instanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedInstanceId"))
   {
     m_managedInstanceId = jsonValue.GetString("managedInstanceId");
-
     m_managedInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeInterfaceMappings"))
   {
     Aws::Utils::Array<JsonView> nodeInterfaceMappingsJsonList = jsonValue.GetArray("nodeInterfaceMappings");
@@ -112,21 +78,16 @@ DescribeNodeSummary& DescribeNodeSummary::operator =(JsonView jsonValue)
     }
     m_nodeInterfaceMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("role"))
   {
     m_role = NodeRoleMapper::GetNodeRoleForName(jsonValue.GetString("role"));
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = NodeStateMapper::GetNodeStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateAwsAccountWithPartnerAccountRequest::AssociateAwsAccountWithPartnerAccountRequest() : 
-    m_sidewalkHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String AssociateAwsAccountWithPartnerAccountRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class BatchRemoveRoleResult
   {
   public:
-    AWS_REPOSTSPACE_API BatchRemoveRoleResult();
+    AWS_REPOSTSPACE_API BatchRemoveRoleResult() = default;
     AWS_REPOSTSPACE_API BatchRemoveRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REPOSTSPACE_API BatchRemoveRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,46 +38,46 @@ namespace Model
     /**
      * <p>An array of errors that occurred when roles were removed.</p>
      */
-    inline const Aws::Vector<BatchError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchError>&& value) { m_errors = std::move(value); }
-    inline BatchRemoveRoleResult& WithErrors(const Aws::Vector<BatchError>& value) { SetErrors(value); return *this;}
-    inline BatchRemoveRoleResult& WithErrors(Aws::Vector<BatchError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchRemoveRoleResult& AddErrors(const BatchError& value) { m_errors.push_back(value); return *this; }
-    inline BatchRemoveRoleResult& AddErrors(BatchError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchError>>
+    BatchRemoveRoleResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchError>
+    BatchRemoveRoleResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An array of successfully updated accessor identifiers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemovedAccessorIds() const{ return m_removedAccessorIds; }
-    inline void SetRemovedAccessorIds(const Aws::Vector<Aws::String>& value) { m_removedAccessorIds = value; }
-    inline void SetRemovedAccessorIds(Aws::Vector<Aws::String>&& value) { m_removedAccessorIds = std::move(value); }
-    inline BatchRemoveRoleResult& WithRemovedAccessorIds(const Aws::Vector<Aws::String>& value) { SetRemovedAccessorIds(value); return *this;}
-    inline BatchRemoveRoleResult& WithRemovedAccessorIds(Aws::Vector<Aws::String>&& value) { SetRemovedAccessorIds(std::move(value)); return *this;}
-    inline BatchRemoveRoleResult& AddRemovedAccessorIds(const Aws::String& value) { m_removedAccessorIds.push_back(value); return *this; }
-    inline BatchRemoveRoleResult& AddRemovedAccessorIds(Aws::String&& value) { m_removedAccessorIds.push_back(std::move(value)); return *this; }
-    inline BatchRemoveRoleResult& AddRemovedAccessorIds(const char* value) { m_removedAccessorIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetRemovedAccessorIds() const { return m_removedAccessorIds; }
+    template<typename RemovedAccessorIdsT = Aws::Vector<Aws::String>>
+    void SetRemovedAccessorIds(RemovedAccessorIdsT&& value) { m_removedAccessorIdsHasBeenSet = true; m_removedAccessorIds = std::forward<RemovedAccessorIdsT>(value); }
+    template<typename RemovedAccessorIdsT = Aws::Vector<Aws::String>>
+    BatchRemoveRoleResult& WithRemovedAccessorIds(RemovedAccessorIdsT&& value) { SetRemovedAccessorIds(std::forward<RemovedAccessorIdsT>(value)); return *this;}
+    template<typename RemovedAccessorIdsT = Aws::String>
+    BatchRemoveRoleResult& AddRemovedAccessorIds(RemovedAccessorIdsT&& value) { m_removedAccessorIdsHasBeenSet = true; m_removedAccessorIds.emplace_back(std::forward<RemovedAccessorIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchRemoveRoleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchRemoveRoleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchRemoveRoleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchRemoveRoleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removedAccessorIds;
+    bool m_removedAccessorIdsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

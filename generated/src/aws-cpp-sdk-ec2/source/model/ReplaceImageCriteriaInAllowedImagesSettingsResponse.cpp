@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ReplaceImageCriteriaInAllowedImagesSettingsResponse::ReplaceImageCriteriaInAllowedImagesSettingsResponse() : 
-    m_returnValue(false)
-{
-}
-
 ReplaceImageCriteriaInAllowedImagesSettingsResponse::ReplaceImageCriteriaInAllowedImagesSettingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ReplaceImageCriteriaInAllowedImagesSettingsResponse()
 {
   *this = result;
 }
@@ -44,6 +38,7 @@ ReplaceImageCriteriaInAllowedImagesSettingsResponse& ReplaceImageCriteriaInAllow
     if(!returnValueNode.IsNull())
     {
       m_returnValue = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnValueNode.GetText()).c_str()).c_str());
+      m_returnValueHasBeenSet = true;
     }
   }
 
@@ -52,6 +47,7 @@ ReplaceImageCriteriaInAllowedImagesSettingsResponse& ReplaceImageCriteriaInAllow
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ReplaceImageCriteriaInAllowedImagesSettingsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

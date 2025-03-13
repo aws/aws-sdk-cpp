@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-AutomatedDiscoveryAccountUpdate::AutomatedDiscoveryAccountUpdate() : 
-    m_accountIdHasBeenSet(false),
-    m_status(AutomatedDiscoveryAccountStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 AutomatedDiscoveryAccountUpdate::AutomatedDiscoveryAccountUpdate(JsonView jsonValue)
-  : AutomatedDiscoveryAccountUpdate()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AutomatedDiscoveryAccountUpdate& AutomatedDiscoveryAccountUpdate::operator =(Jso
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AutomatedDiscoveryAccountStatusMapper::GetAutomatedDiscoveryAccountStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

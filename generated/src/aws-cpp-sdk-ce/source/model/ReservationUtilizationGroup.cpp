@@ -18,16 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-ReservationUtilizationGroup::ReservationUtilizationGroup() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_utilizationHasBeenSet(false)
-{
-}
-
 ReservationUtilizationGroup::ReservationUtilizationGroup(JsonView jsonValue)
-  : ReservationUtilizationGroup()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ReservationUtilizationGroup& ReservationUtilizationGroup::operator =(JsonView js
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -57,14 +44,11 @@ ReservationUtilizationGroup& ReservationUtilizationGroup::operator =(JsonView js
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Utilization"))
   {
     m_utilization = jsonValue.GetObject("Utilization");
-
     m_utilizationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class PutResourceAttributesRequest : public MigrationHubRequest
   {
   public:
-    AWS_MIGRATIONHUB_API PutResourceAttributesRequest();
+    AWS_MIGRATIONHUB_API PutResourceAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
-    inline const Aws::String& GetProgressUpdateStream() const{ return m_progressUpdateStream; }
+    inline const Aws::String& GetProgressUpdateStream() const { return m_progressUpdateStream; }
     inline bool ProgressUpdateStreamHasBeenSet() const { return m_progressUpdateStreamHasBeenSet; }
-    inline void SetProgressUpdateStream(const Aws::String& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = value; }
-    inline void SetProgressUpdateStream(Aws::String&& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = std::move(value); }
-    inline void SetProgressUpdateStream(const char* value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream.assign(value); }
-    inline PutResourceAttributesRequest& WithProgressUpdateStream(const Aws::String& value) { SetProgressUpdateStream(value); return *this;}
-    inline PutResourceAttributesRequest& WithProgressUpdateStream(Aws::String&& value) { SetProgressUpdateStream(std::move(value)); return *this;}
-    inline PutResourceAttributesRequest& WithProgressUpdateStream(const char* value) { SetProgressUpdateStream(value); return *this;}
+    template<typename ProgressUpdateStreamT = Aws::String>
+    void SetProgressUpdateStream(ProgressUpdateStreamT&& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = std::forward<ProgressUpdateStreamT>(value); }
+    template<typename ProgressUpdateStreamT = Aws::String>
+    PutResourceAttributesRequest& WithProgressUpdateStream(ProgressUpdateStreamT&& value) { SetProgressUpdateStream(std::forward<ProgressUpdateStreamT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>Unique identifier that references the migration task. <i>Do not store
      * personal data in this field.</i> </p>
      */
-    inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
+    inline const Aws::String& GetMigrationTaskName() const { return m_migrationTaskName; }
     inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
-    inline void SetMigrationTaskName(const Aws::String& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = value; }
-    inline void SetMigrationTaskName(Aws::String&& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = std::move(value); }
-    inline void SetMigrationTaskName(const char* value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName.assign(value); }
-    inline PutResourceAttributesRequest& WithMigrationTaskName(const Aws::String& value) { SetMigrationTaskName(value); return *this;}
-    inline PutResourceAttributesRequest& WithMigrationTaskName(Aws::String&& value) { SetMigrationTaskName(std::move(value)); return *this;}
-    inline PutResourceAttributesRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
+    template<typename MigrationTaskNameT = Aws::String>
+    void SetMigrationTaskName(MigrationTaskNameT&& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = std::forward<MigrationTaskNameT>(value); }
+    template<typename MigrationTaskNameT = Aws::String>
+    PutResourceAttributesRequest& WithMigrationTaskName(MigrationTaskNameT&& value) { SetMigrationTaskName(std::forward<MigrationTaskNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,14 @@ namespace Model
      * <code>ResourceAttributeList</code> parameter to maximize the chances of
      * matching.</p> </li> </ul> 
      */
-    inline const Aws::Vector<ResourceAttribute>& GetResourceAttributeList() const{ return m_resourceAttributeList; }
+    inline const Aws::Vector<ResourceAttribute>& GetResourceAttributeList() const { return m_resourceAttributeList; }
     inline bool ResourceAttributeListHasBeenSet() const { return m_resourceAttributeListHasBeenSet; }
-    inline void SetResourceAttributeList(const Aws::Vector<ResourceAttribute>& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList = value; }
-    inline void SetResourceAttributeList(Aws::Vector<ResourceAttribute>&& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList = std::move(value); }
-    inline PutResourceAttributesRequest& WithResourceAttributeList(const Aws::Vector<ResourceAttribute>& value) { SetResourceAttributeList(value); return *this;}
-    inline PutResourceAttributesRequest& WithResourceAttributeList(Aws::Vector<ResourceAttribute>&& value) { SetResourceAttributeList(std::move(value)); return *this;}
-    inline PutResourceAttributesRequest& AddResourceAttributeList(const ResourceAttribute& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList.push_back(value); return *this; }
-    inline PutResourceAttributesRequest& AddResourceAttributeList(ResourceAttribute&& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList.push_back(std::move(value)); return *this; }
+    template<typename ResourceAttributeListT = Aws::Vector<ResourceAttribute>>
+    void SetResourceAttributeList(ResourceAttributeListT&& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList = std::forward<ResourceAttributeListT>(value); }
+    template<typename ResourceAttributeListT = Aws::Vector<ResourceAttribute>>
+    PutResourceAttributesRequest& WithResourceAttributeList(ResourceAttributeListT&& value) { SetResourceAttributeList(std::forward<ResourceAttributeListT>(value)); return *this;}
+    template<typename ResourceAttributeListT = ResourceAttribute>
+    PutResourceAttributesRequest& AddResourceAttributeList(ResourceAttributeListT&& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList.emplace_back(std::forward<ResourceAttributeListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -102,7 +98,7 @@ namespace Model
      * <p>Optional boolean flag to indicate whether any effect should take place. Used
      * to test if the caller has permission to make the call.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline PutResourceAttributesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -118,7 +114,7 @@ namespace Model
     Aws::Vector<ResourceAttribute> m_resourceAttributeList;
     bool m_resourceAttributeListHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration() : 
-    m_rulesHasBeenSet(false)
-{
-}
-
 ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(const XmlNode& xmlNode)
-  : ServerSideEncryptionConfiguration()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ ServerSideEncryptionConfiguration& ServerSideEncryptionConfiguration::operator =
     if(!rulesNode.IsNull())
     {
       XmlNode ruleMember = rulesNode;
+      m_rulesHasBeenSet = !ruleMember.IsNull();
       while(!ruleMember.IsNull())
       {
         m_rules.push_back(ruleMember);
         ruleMember = ruleMember.NextNode("Rule");
       }
 
-      m_rulesHasBeenSet = true;
+       m_rulesHasBeenSet = true;
     }
   }
 

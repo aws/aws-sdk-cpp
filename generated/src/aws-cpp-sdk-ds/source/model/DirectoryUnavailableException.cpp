@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-DirectoryUnavailableException::DirectoryUnavailableException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 DirectoryUnavailableException::DirectoryUnavailableException(JsonView jsonValue)
-  : DirectoryUnavailableException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DirectoryUnavailableException& DirectoryUnavailableException::operator =(JsonVie
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

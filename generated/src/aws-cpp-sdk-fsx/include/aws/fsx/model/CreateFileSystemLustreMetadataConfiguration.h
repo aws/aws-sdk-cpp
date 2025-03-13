@@ -39,7 +39,7 @@ namespace Model
   class CreateFileSystemLustreMetadataConfiguration
   {
   public:
-    AWS_FSX_API CreateFileSystemLustreMetadataConfiguration();
+    AWS_FSX_API CreateFileSystemLustreMetadataConfiguration() = default;
     AWS_FSX_API CreateFileSystemLustreMetadataConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API CreateFileSystemLustreMetadataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,7 +57,7 @@ namespace Model
      * specify a value because FSx for Lustre automatically sets the value based on
      * your file system storage capacity. </p> 
      */
-    inline int GetIops() const{ return m_iops; }
+    inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline CreateFileSystemLustreMetadataConfiguration& WithIops(int value) { SetIops(value); return *this;}
@@ -72,19 +72,17 @@ namespace Model
      * storage capacity.</p> </li> <li> <p>In USER_PROVISIONED mode, you specify the
      * number of Metadata IOPS to provision for your file system.</p> </li> </ul>
      */
-    inline const MetadataConfigurationMode& GetMode() const{ return m_mode; }
+    inline MetadataConfigurationMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const MetadataConfigurationMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(MetadataConfigurationMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline CreateFileSystemLustreMetadataConfiguration& WithMode(const MetadataConfigurationMode& value) { SetMode(value); return *this;}
-    inline CreateFileSystemLustreMetadataConfiguration& WithMode(MetadataConfigurationMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(MetadataConfigurationMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline CreateFileSystemLustreMetadataConfiguration& WithMode(MetadataConfigurationMode value) { SetMode(value); return *this;}
     ///@}
   private:
 
-    int m_iops;
+    int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
-    MetadataConfigurationMode m_mode;
+    MetadataConfigurationMode m_mode{MetadataConfigurationMode::NOT_SET};
     bool m_modeHasBeenSet = false;
   };
 

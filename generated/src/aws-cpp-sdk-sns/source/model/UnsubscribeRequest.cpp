@@ -10,11 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-UnsubscribeRequest::UnsubscribeRequest() : 
-    m_subscriptionArnHasBeenSet(false)
-{
-}
-
 Aws::String UnsubscribeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

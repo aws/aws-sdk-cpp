@@ -28,7 +28,7 @@ namespace Model
   class DeleteNetworkInsightsPathResponse
   {
   public:
-    AWS_EC2_API DeleteNetworkInsightsPathResponse();
+    AWS_EC2_API DeleteNetworkInsightsPathResponse() = default;
     AWS_EC2_API DeleteNetworkInsightsPathResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteNetworkInsightsPathResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The ID of the path.</p>
      */
-    inline const Aws::String& GetNetworkInsightsPathId() const{ return m_networkInsightsPathId; }
-    inline void SetNetworkInsightsPathId(const Aws::String& value) { m_networkInsightsPathId = value; }
-    inline void SetNetworkInsightsPathId(Aws::String&& value) { m_networkInsightsPathId = std::move(value); }
-    inline void SetNetworkInsightsPathId(const char* value) { m_networkInsightsPathId.assign(value); }
-    inline DeleteNetworkInsightsPathResponse& WithNetworkInsightsPathId(const Aws::String& value) { SetNetworkInsightsPathId(value); return *this;}
-    inline DeleteNetworkInsightsPathResponse& WithNetworkInsightsPathId(Aws::String&& value) { SetNetworkInsightsPathId(std::move(value)); return *this;}
-    inline DeleteNetworkInsightsPathResponse& WithNetworkInsightsPathId(const char* value) { SetNetworkInsightsPathId(value); return *this;}
+    inline const Aws::String& GetNetworkInsightsPathId() const { return m_networkInsightsPathId; }
+    template<typename NetworkInsightsPathIdT = Aws::String>
+    void SetNetworkInsightsPathId(NetworkInsightsPathIdT&& value) { m_networkInsightsPathIdHasBeenSet = true; m_networkInsightsPathId = std::forward<NetworkInsightsPathIdT>(value); }
+    template<typename NetworkInsightsPathIdT = Aws::String>
+    DeleteNetworkInsightsPathResponse& WithNetworkInsightsPathId(NetworkInsightsPathIdT&& value) { SetNetworkInsightsPathId(std::forward<NetworkInsightsPathIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteNetworkInsightsPathResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteNetworkInsightsPathResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteNetworkInsightsPathResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_networkInsightsPathId;
+    bool m_networkInsightsPathIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

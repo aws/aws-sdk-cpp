@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLensReviewReportRequest::GetLensReviewReportRequest() : 
-    m_workloadIdHasBeenSet(false),
-    m_lensAliasHasBeenSet(false),
-    m_milestoneNumber(0),
-    m_milestoneNumberHasBeenSet(false)
-{
-}
-
 Aws::String GetLensReviewReportRequest::SerializePayload() const
 {
   return {};

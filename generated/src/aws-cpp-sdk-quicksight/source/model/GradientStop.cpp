@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GradientStop::GradientStop() : 
-    m_gradientOffset(0.0),
-    m_gradientOffsetHasBeenSet(false),
-    m_dataValue(0.0),
-    m_dataValueHasBeenSet(false),
-    m_colorHasBeenSet(false)
-{
-}
-
 GradientStop::GradientStop(JsonView jsonValue)
-  : GradientStop()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ GradientStop& GradientStop::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GradientOffset"))
   {
     m_gradientOffset = jsonValue.GetDouble("GradientOffset");
-
     m_gradientOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataValue"))
   {
     m_dataValue = jsonValue.GetDouble("DataValue");
-
     m_dataValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   return *this;
 }
 

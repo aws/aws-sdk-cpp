@@ -34,7 +34,7 @@ namespace Model
   class ParticipantThumbnailConfiguration
   {
   public:
-    AWS_IVSREALTIME_API ParticipantThumbnailConfiguration();
+    AWS_IVSREALTIME_API ParticipantThumbnailConfiguration() = default;
     AWS_IVSREALTIME_API ParticipantThumbnailConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API ParticipantThumbnailConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>The targeted thumbnail-generation interval in seconds. This is configurable
      * only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
      */
-    inline int GetTargetIntervalSeconds() const{ return m_targetIntervalSeconds; }
+    inline int GetTargetIntervalSeconds() const { return m_targetIntervalSeconds; }
     inline bool TargetIntervalSecondsHasBeenSet() const { return m_targetIntervalSecondsHasBeenSet; }
     inline void SetTargetIntervalSeconds(int value) { m_targetIntervalSecondsHasBeenSet = true; m_targetIntervalSeconds = value; }
     inline ParticipantThumbnailConfiguration& WithTargetIntervalSeconds(int value) { SetTargetIntervalSeconds(value); return *this;}
@@ -61,36 +61,33 @@ namespace Model
      * <code>SEQUENTIAL</code> and <code>LATEST</code>. Default:
      * <code>SEQUENTIAL</code>.</p>
      */
-    inline const Aws::Vector<ThumbnailStorageType>& GetStorage() const{ return m_storage; }
+    inline const Aws::Vector<ThumbnailStorageType>& GetStorage() const { return m_storage; }
     inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
-    inline void SetStorage(const Aws::Vector<ThumbnailStorageType>& value) { m_storageHasBeenSet = true; m_storage = value; }
-    inline void SetStorage(Aws::Vector<ThumbnailStorageType>&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
-    inline ParticipantThumbnailConfiguration& WithStorage(const Aws::Vector<ThumbnailStorageType>& value) { SetStorage(value); return *this;}
-    inline ParticipantThumbnailConfiguration& WithStorage(Aws::Vector<ThumbnailStorageType>&& value) { SetStorage(std::move(value)); return *this;}
-    inline ParticipantThumbnailConfiguration& AddStorage(const ThumbnailStorageType& value) { m_storageHasBeenSet = true; m_storage.push_back(value); return *this; }
-    inline ParticipantThumbnailConfiguration& AddStorage(ThumbnailStorageType&& value) { m_storageHasBeenSet = true; m_storage.push_back(std::move(value)); return *this; }
+    template<typename StorageT = Aws::Vector<ThumbnailStorageType>>
+    void SetStorage(StorageT&& value) { m_storageHasBeenSet = true; m_storage = std::forward<StorageT>(value); }
+    template<typename StorageT = Aws::Vector<ThumbnailStorageType>>
+    ParticipantThumbnailConfiguration& WithStorage(StorageT&& value) { SetStorage(std::forward<StorageT>(value)); return *this;}
+    inline ParticipantThumbnailConfiguration& AddStorage(ThumbnailStorageType value) { m_storageHasBeenSet = true; m_storage.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Thumbnail recording mode. Default: <code>DISABLED</code>.</p>
      */
-    inline const ThumbnailRecordingMode& GetRecordingMode() const{ return m_recordingMode; }
+    inline ThumbnailRecordingMode GetRecordingMode() const { return m_recordingMode; }
     inline bool RecordingModeHasBeenSet() const { return m_recordingModeHasBeenSet; }
-    inline void SetRecordingMode(const ThumbnailRecordingMode& value) { m_recordingModeHasBeenSet = true; m_recordingMode = value; }
-    inline void SetRecordingMode(ThumbnailRecordingMode&& value) { m_recordingModeHasBeenSet = true; m_recordingMode = std::move(value); }
-    inline ParticipantThumbnailConfiguration& WithRecordingMode(const ThumbnailRecordingMode& value) { SetRecordingMode(value); return *this;}
-    inline ParticipantThumbnailConfiguration& WithRecordingMode(ThumbnailRecordingMode&& value) { SetRecordingMode(std::move(value)); return *this;}
+    inline void SetRecordingMode(ThumbnailRecordingMode value) { m_recordingModeHasBeenSet = true; m_recordingMode = value; }
+    inline ParticipantThumbnailConfiguration& WithRecordingMode(ThumbnailRecordingMode value) { SetRecordingMode(value); return *this;}
     ///@}
   private:
 
-    int m_targetIntervalSeconds;
+    int m_targetIntervalSeconds{0};
     bool m_targetIntervalSecondsHasBeenSet = false;
 
     Aws::Vector<ThumbnailStorageType> m_storage;
     bool m_storageHasBeenSet = false;
 
-    ThumbnailRecordingMode m_recordingMode;
+    ThumbnailRecordingMode m_recordingMode{ThumbnailRecordingMode::NOT_SET};
     bool m_recordingModeHasBeenSet = false;
   };
 

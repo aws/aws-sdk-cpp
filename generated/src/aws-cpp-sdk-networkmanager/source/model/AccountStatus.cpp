@@ -18,14 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-AccountStatus::AccountStatus() : 
-    m_accountIdHasBeenSet(false),
-    m_sLRDeploymentStatusHasBeenSet(false)
-{
-}
-
 AccountStatus::AccountStatus(JsonView jsonValue)
-  : AccountStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AccountStatus& AccountStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SLRDeploymentStatus"))
   {
     m_sLRDeploymentStatus = jsonValue.GetString("SLRDeploymentStatus");
-
     m_sLRDeploymentStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

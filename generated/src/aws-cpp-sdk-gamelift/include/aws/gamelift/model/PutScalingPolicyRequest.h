@@ -26,7 +26,7 @@ namespace Model
   class PutScalingPolicyRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API PutScalingPolicyRequest();
+    AWS_GAMELIFT_API PutScalingPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * names do not need to be unique. A fleet can have only one scaling policy with
      * the same name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PutScalingPolicyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PutScalingPolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PutScalingPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PutScalingPolicyRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,21 +59,19 @@ namespace Model
      * the fleet ID or ARN value. The fleet cannot be in any of the following statuses:
      * ERROR or DELETING.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline PutScalingPolicyRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline PutScalingPolicyRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline PutScalingPolicyRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    PutScalingPolicyRequest& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
      */
-    inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
+    inline int GetScalingAdjustment() const { return m_scalingAdjustment; }
     inline bool ScalingAdjustmentHasBeenSet() const { return m_scalingAdjustmentHasBeenSet; }
     inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
     inline PutScalingPolicyRequest& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
@@ -92,19 +88,17 @@ namespace Model
      * a percentage. Positive values scale up while negative values scale down; for
      * example, a value of "-10" scales the fleet down by 10%.</p> </li> </ul>
      */
-    inline const ScalingAdjustmentType& GetScalingAdjustmentType() const{ return m_scalingAdjustmentType; }
+    inline ScalingAdjustmentType GetScalingAdjustmentType() const { return m_scalingAdjustmentType; }
     inline bool ScalingAdjustmentTypeHasBeenSet() const { return m_scalingAdjustmentTypeHasBeenSet; }
-    inline void SetScalingAdjustmentType(const ScalingAdjustmentType& value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = value; }
-    inline void SetScalingAdjustmentType(ScalingAdjustmentType&& value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = std::move(value); }
-    inline PutScalingPolicyRequest& WithScalingAdjustmentType(const ScalingAdjustmentType& value) { SetScalingAdjustmentType(value); return *this;}
-    inline PutScalingPolicyRequest& WithScalingAdjustmentType(ScalingAdjustmentType&& value) { SetScalingAdjustmentType(std::move(value)); return *this;}
+    inline void SetScalingAdjustmentType(ScalingAdjustmentType value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = value; }
+    inline PutScalingPolicyRequest& WithScalingAdjustmentType(ScalingAdjustmentType value) { SetScalingAdjustmentType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metric value used to trigger a scaling event.</p>
      */
-    inline double GetThreshold() const{ return m_threshold; }
+    inline double GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline PutScalingPolicyRequest& WithThreshold(double value) { SetThreshold(value); return *this;}
@@ -115,12 +109,10 @@ namespace Model
      * <p>Comparison operator to use when measuring the metric against the threshold
      * value.</p>
      */
-    inline const ComparisonOperatorType& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ComparisonOperatorType GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ComparisonOperatorType& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ComparisonOperatorType&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline PutScalingPolicyRequest& WithComparisonOperator(const ComparisonOperatorType& value) { SetComparisonOperator(value); return *this;}
-    inline PutScalingPolicyRequest& WithComparisonOperator(ComparisonOperatorType&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ComparisonOperatorType value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline PutScalingPolicyRequest& WithComparisonOperator(ComparisonOperatorType value) { SetComparisonOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -128,7 +120,7 @@ namespace Model
      * <p>Length of time (in minutes) the metric must be at or beyond the threshold
      * before a scaling event is triggered.</p>
      */
-    inline int GetEvaluationPeriods() const{ return m_evaluationPeriods; }
+    inline int GetEvaluationPeriods() const { return m_evaluationPeriods; }
     inline bool EvaluationPeriodsHasBeenSet() const { return m_evaluationPeriodsHasBeenSet; }
     inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
     inline PutScalingPolicyRequest& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
@@ -163,12 +155,10 @@ namespace Model
      * requests, in any queue, where the current fleet is the top-priority destination.
      * </p> </li> </ul>
      */
-    inline const MetricName& GetMetricName() const{ return m_metricName; }
+    inline MetricName GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const MetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(MetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline PutScalingPolicyRequest& WithMetricName(const MetricName& value) { SetMetricName(value); return *this;}
-    inline PutScalingPolicyRequest& WithMetricName(MetricName&& value) { SetMetricName(std::move(value)); return *this;}
+    inline void SetMetricName(MetricName value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline PutScalingPolicyRequest& WithMetricName(MetricName value) { SetMetricName(value); return *this;}
     ///@}
 
     ///@{
@@ -180,24 +170,22 @@ namespace Model
      * <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and
      * <i>ScalingAdjustment</i>.</p>
      */
-    inline const PolicyType& GetPolicyType() const{ return m_policyType; }
+    inline PolicyType GetPolicyType() const { return m_policyType; }
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
-    inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
-    inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
-    inline PutScalingPolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
-    inline PutScalingPolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
+    inline void SetPolicyType(PolicyType value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
+    inline PutScalingPolicyRequest& WithPolicyType(PolicyType value) { SetPolicyType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that contains settings for a target-based scaling policy.</p>
      */
-    inline const TargetConfiguration& GetTargetConfiguration() const{ return m_targetConfiguration; }
+    inline const TargetConfiguration& GetTargetConfiguration() const { return m_targetConfiguration; }
     inline bool TargetConfigurationHasBeenSet() const { return m_targetConfigurationHasBeenSet; }
-    inline void SetTargetConfiguration(const TargetConfiguration& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = value; }
-    inline void SetTargetConfiguration(TargetConfiguration&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = std::move(value); }
-    inline PutScalingPolicyRequest& WithTargetConfiguration(const TargetConfiguration& value) { SetTargetConfiguration(value); return *this;}
-    inline PutScalingPolicyRequest& WithTargetConfiguration(TargetConfiguration&& value) { SetTargetConfiguration(std::move(value)); return *this;}
+    template<typename TargetConfigurationT = TargetConfiguration>
+    void SetTargetConfiguration(TargetConfigurationT&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = std::forward<TargetConfigurationT>(value); }
+    template<typename TargetConfigurationT = TargetConfiguration>
+    PutScalingPolicyRequest& WithTargetConfiguration(TargetConfigurationT&& value) { SetTargetConfiguration(std::forward<TargetConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -207,25 +195,25 @@ namespace Model
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet = false;
 
-    int m_scalingAdjustment;
+    int m_scalingAdjustment{0};
     bool m_scalingAdjustmentHasBeenSet = false;
 
-    ScalingAdjustmentType m_scalingAdjustmentType;
+    ScalingAdjustmentType m_scalingAdjustmentType{ScalingAdjustmentType::NOT_SET};
     bool m_scalingAdjustmentTypeHasBeenSet = false;
 
-    double m_threshold;
+    double m_threshold{0.0};
     bool m_thresholdHasBeenSet = false;
 
-    ComparisonOperatorType m_comparisonOperator;
+    ComparisonOperatorType m_comparisonOperator{ComparisonOperatorType::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
 
-    int m_evaluationPeriods;
+    int m_evaluationPeriods{0};
     bool m_evaluationPeriodsHasBeenSet = false;
 
-    MetricName m_metricName;
+    MetricName m_metricName{MetricName::NOT_SET};
     bool m_metricNameHasBeenSet = false;
 
-    PolicyType m_policyType;
+    PolicyType m_policyType{PolicyType::NOT_SET};
     bool m_policyTypeHasBeenSet = false;
 
     TargetConfiguration m_targetConfiguration;

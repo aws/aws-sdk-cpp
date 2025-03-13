@@ -10,19 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-SendEmailRequest::SendEmailRequest() : 
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_replyToAddressesHasBeenSet(false),
-    m_returnPathHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_returnPathArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 Aws::String SendEmailRequest::SerializePayload() const
 {
   Aws::StringStream ss;

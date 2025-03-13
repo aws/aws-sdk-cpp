@@ -18,18 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-CodeSigningConfig::CodeSigningConfig() : 
-    m_codeSigningConfigIdHasBeenSet(false),
-    m_codeSigningConfigArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_allowedPublishersHasBeenSet(false),
-    m_codeSigningPoliciesHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
-{
-}
-
 CodeSigningConfig::CodeSigningConfig(JsonView jsonValue)
-  : CodeSigningConfig()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ CodeSigningConfig& CodeSigningConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CodeSigningConfigId"))
   {
     m_codeSigningConfigId = jsonValue.GetString("CodeSigningConfigId");
-
     m_codeSigningConfigIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeSigningConfigArn"))
   {
     m_codeSigningConfigArn = jsonValue.GetString("CodeSigningConfigArn");
-
     m_codeSigningConfigArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedPublishers"))
   {
     m_allowedPublishers = jsonValue.GetObject("AllowedPublishers");
-
     m_allowedPublishersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeSigningPolicies"))
   {
     m_codeSigningPolicies = jsonValue.GetObject("CodeSigningPolicies");
-
     m_codeSigningPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModified"))
   {
     m_lastModified = jsonValue.GetString("LastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   return *this;
 }
 

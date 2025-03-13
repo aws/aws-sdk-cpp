@@ -33,7 +33,7 @@ namespace Model
   class DeleteReplicationTaskResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DeleteReplicationTaskResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DeleteReplicationTaskResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DeleteReplicationTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DeleteReplicationTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The deleted replication task.</p>
      */
-    inline const ReplicationTask& GetReplicationTask() const{ return m_replicationTask; }
-    inline void SetReplicationTask(const ReplicationTask& value) { m_replicationTask = value; }
-    inline void SetReplicationTask(ReplicationTask&& value) { m_replicationTask = std::move(value); }
-    inline DeleteReplicationTaskResult& WithReplicationTask(const ReplicationTask& value) { SetReplicationTask(value); return *this;}
-    inline DeleteReplicationTaskResult& WithReplicationTask(ReplicationTask&& value) { SetReplicationTask(std::move(value)); return *this;}
+    inline const ReplicationTask& GetReplicationTask() const { return m_replicationTask; }
+    template<typename ReplicationTaskT = ReplicationTask>
+    void SetReplicationTask(ReplicationTaskT&& value) { m_replicationTaskHasBeenSet = true; m_replicationTask = std::forward<ReplicationTaskT>(value); }
+    template<typename ReplicationTaskT = ReplicationTask>
+    DeleteReplicationTaskResult& WithReplicationTask(ReplicationTaskT&& value) { SetReplicationTask(std::forward<ReplicationTaskT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteReplicationTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteReplicationTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteReplicationTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteReplicationTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ReplicationTask m_replicationTask;
+    bool m_replicationTaskHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,7 @@ namespace Model
   class ListPartnerEventSourceAccountsResult
   {
   public:
-    AWS_EVENTBRIDGE_API ListPartnerEventSourceAccountsResult();
+    AWS_EVENTBRIDGE_API ListPartnerEventSourceAccountsResult() = default;
     AWS_EVENTBRIDGE_API ListPartnerEventSourceAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EVENTBRIDGE_API ListPartnerEventSourceAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of partner event sources returned by the operation.</p>
      */
-    inline const Aws::Vector<PartnerEventSourceAccount>& GetPartnerEventSourceAccounts() const{ return m_partnerEventSourceAccounts; }
-    inline void SetPartnerEventSourceAccounts(const Aws::Vector<PartnerEventSourceAccount>& value) { m_partnerEventSourceAccounts = value; }
-    inline void SetPartnerEventSourceAccounts(Aws::Vector<PartnerEventSourceAccount>&& value) { m_partnerEventSourceAccounts = std::move(value); }
-    inline ListPartnerEventSourceAccountsResult& WithPartnerEventSourceAccounts(const Aws::Vector<PartnerEventSourceAccount>& value) { SetPartnerEventSourceAccounts(value); return *this;}
-    inline ListPartnerEventSourceAccountsResult& WithPartnerEventSourceAccounts(Aws::Vector<PartnerEventSourceAccount>&& value) { SetPartnerEventSourceAccounts(std::move(value)); return *this;}
-    inline ListPartnerEventSourceAccountsResult& AddPartnerEventSourceAccounts(const PartnerEventSourceAccount& value) { m_partnerEventSourceAccounts.push_back(value); return *this; }
-    inline ListPartnerEventSourceAccountsResult& AddPartnerEventSourceAccounts(PartnerEventSourceAccount&& value) { m_partnerEventSourceAccounts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PartnerEventSourceAccount>& GetPartnerEventSourceAccounts() const { return m_partnerEventSourceAccounts; }
+    template<typename PartnerEventSourceAccountsT = Aws::Vector<PartnerEventSourceAccount>>
+    void SetPartnerEventSourceAccounts(PartnerEventSourceAccountsT&& value) { m_partnerEventSourceAccountsHasBeenSet = true; m_partnerEventSourceAccounts = std::forward<PartnerEventSourceAccountsT>(value); }
+    template<typename PartnerEventSourceAccountsT = Aws::Vector<PartnerEventSourceAccount>>
+    ListPartnerEventSourceAccountsResult& WithPartnerEventSourceAccounts(PartnerEventSourceAccountsT&& value) { SetPartnerEventSourceAccounts(std::forward<PartnerEventSourceAccountsT>(value)); return *this;}
+    template<typename PartnerEventSourceAccountsT = PartnerEventSourceAccount>
+    ListPartnerEventSourceAccountsResult& AddPartnerEventSourceAccounts(PartnerEventSourceAccountsT&& value) { m_partnerEventSourceAccountsHasBeenSet = true; m_partnerEventSourceAccounts.emplace_back(std::forward<PartnerEventSourceAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * other arguments unchanged.</p> <p> Using an expired pagination token results in
      * an <code>HTTP 400 InvalidToken</code> error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPartnerEventSourceAccountsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPartnerEventSourceAccountsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPartnerEventSourceAccountsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPartnerEventSourceAccountsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPartnerEventSourceAccountsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPartnerEventSourceAccountsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPartnerEventSourceAccountsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPartnerEventSourceAccountsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PartnerEventSourceAccount> m_partnerEventSourceAccounts;
+    bool m_partnerEventSourceAccountsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,16 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFirewallRuleGroupAssociationRequest::UpdateFirewallRuleGroupAssociationRequest() : 
-    m_firewallRuleGroupAssociationIdHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_mutationProtection(MutationProtectionStatus::NOT_SET),
-    m_mutationProtectionHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFirewallRuleGroupAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

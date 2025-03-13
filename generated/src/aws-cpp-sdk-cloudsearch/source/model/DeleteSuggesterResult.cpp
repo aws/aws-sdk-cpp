@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteSuggesterResult::DeleteSuggesterResult()
-{
-}
-
 DeleteSuggesterResult::DeleteSuggesterResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DeleteSuggesterResult& DeleteSuggesterResult::operator =(const Aws::AmazonWebSer
     if(!suggesterNode.IsNull())
     {
       m_suggester = suggesterNode;
+      m_suggesterHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudSearch::Model::DeleteSuggesterResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

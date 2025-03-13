@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails() : 
-    m_addHasBeenSet(false),
-    m_dropHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails& AwsE
     }
     m_addHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Drop"))
   {
     Aws::Utils::Array<JsonView> dropJsonList = jsonValue.GetArray("Drop");
@@ -51,7 +43,6 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails& AwsE
     }
     m_dropHasBeenSet = true;
   }
-
   return *this;
 }
 

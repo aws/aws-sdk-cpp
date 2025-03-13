@@ -35,7 +35,7 @@ namespace Model
   class PartitionIndexDescriptor
   {
   public:
-    AWS_GLUE_API PartitionIndexDescriptor();
+    AWS_GLUE_API PartitionIndexDescriptor() = default;
     AWS_GLUE_API PartitionIndexDescriptor(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API PartitionIndexDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the partition index.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-    inline PartitionIndexDescriptor& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline PartitionIndexDescriptor& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline PartitionIndexDescriptor& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    PartitionIndexDescriptor& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,14 @@ namespace Model
      * <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for
      * the partition index.</p>
      */
-    inline const Aws::Vector<KeySchemaElement>& GetKeys() const{ return m_keys; }
+    inline const Aws::Vector<KeySchemaElement>& GetKeys() const { return m_keys; }
     inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
-    inline void SetKeys(const Aws::Vector<KeySchemaElement>& value) { m_keysHasBeenSet = true; m_keys = value; }
-    inline void SetKeys(Aws::Vector<KeySchemaElement>&& value) { m_keysHasBeenSet = true; m_keys = std::move(value); }
-    inline PartitionIndexDescriptor& WithKeys(const Aws::Vector<KeySchemaElement>& value) { SetKeys(value); return *this;}
-    inline PartitionIndexDescriptor& WithKeys(Aws::Vector<KeySchemaElement>&& value) { SetKeys(std::move(value)); return *this;}
-    inline PartitionIndexDescriptor& AddKeys(const KeySchemaElement& value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
-    inline PartitionIndexDescriptor& AddKeys(KeySchemaElement&& value) { m_keysHasBeenSet = true; m_keys.push_back(std::move(value)); return *this; }
+    template<typename KeysT = Aws::Vector<KeySchemaElement>>
+    void SetKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys = std::forward<KeysT>(value); }
+    template<typename KeysT = Aws::Vector<KeySchemaElement>>
+    PartitionIndexDescriptor& WithKeys(KeysT&& value) { SetKeys(std::forward<KeysT>(value)); return *this;}
+    template<typename KeysT = KeySchemaElement>
+    PartitionIndexDescriptor& AddKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys.emplace_back(std::forward<KeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,12 +77,10 @@ namespace Model
      * creation fails. </p> </li> <li> <p>DELETING: The index is deleted from the list
      * of indexes.</p> </li> </ul>
      */
-    inline const PartitionIndexStatus& GetIndexStatus() const{ return m_indexStatus; }
+    inline PartitionIndexStatus GetIndexStatus() const { return m_indexStatus; }
     inline bool IndexStatusHasBeenSet() const { return m_indexStatusHasBeenSet; }
-    inline void SetIndexStatus(const PartitionIndexStatus& value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
-    inline void SetIndexStatus(PartitionIndexStatus&& value) { m_indexStatusHasBeenSet = true; m_indexStatus = std::move(value); }
-    inline PartitionIndexDescriptor& WithIndexStatus(const PartitionIndexStatus& value) { SetIndexStatus(value); return *this;}
-    inline PartitionIndexDescriptor& WithIndexStatus(PartitionIndexStatus&& value) { SetIndexStatus(std::move(value)); return *this;}
+    inline void SetIndexStatus(PartitionIndexStatus value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
+    inline PartitionIndexDescriptor& WithIndexStatus(PartitionIndexStatus value) { SetIndexStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +88,14 @@ namespace Model
      * <p>A list of errors that can occur when registering partition indexes for an
      * existing table.</p>
      */
-    inline const Aws::Vector<BackfillError>& GetBackfillErrors() const{ return m_backfillErrors; }
+    inline const Aws::Vector<BackfillError>& GetBackfillErrors() const { return m_backfillErrors; }
     inline bool BackfillErrorsHasBeenSet() const { return m_backfillErrorsHasBeenSet; }
-    inline void SetBackfillErrors(const Aws::Vector<BackfillError>& value) { m_backfillErrorsHasBeenSet = true; m_backfillErrors = value; }
-    inline void SetBackfillErrors(Aws::Vector<BackfillError>&& value) { m_backfillErrorsHasBeenSet = true; m_backfillErrors = std::move(value); }
-    inline PartitionIndexDescriptor& WithBackfillErrors(const Aws::Vector<BackfillError>& value) { SetBackfillErrors(value); return *this;}
-    inline PartitionIndexDescriptor& WithBackfillErrors(Aws::Vector<BackfillError>&& value) { SetBackfillErrors(std::move(value)); return *this;}
-    inline PartitionIndexDescriptor& AddBackfillErrors(const BackfillError& value) { m_backfillErrorsHasBeenSet = true; m_backfillErrors.push_back(value); return *this; }
-    inline PartitionIndexDescriptor& AddBackfillErrors(BackfillError&& value) { m_backfillErrorsHasBeenSet = true; m_backfillErrors.push_back(std::move(value)); return *this; }
+    template<typename BackfillErrorsT = Aws::Vector<BackfillError>>
+    void SetBackfillErrors(BackfillErrorsT&& value) { m_backfillErrorsHasBeenSet = true; m_backfillErrors = std::forward<BackfillErrorsT>(value); }
+    template<typename BackfillErrorsT = Aws::Vector<BackfillError>>
+    PartitionIndexDescriptor& WithBackfillErrors(BackfillErrorsT&& value) { SetBackfillErrors(std::forward<BackfillErrorsT>(value)); return *this;}
+    template<typename BackfillErrorsT = BackfillError>
+    PartitionIndexDescriptor& AddBackfillErrors(BackfillErrorsT&& value) { m_backfillErrorsHasBeenSet = true; m_backfillErrors.emplace_back(std::forward<BackfillErrorsT>(value)); return *this; }
     ///@}
   private:
 
@@ -109,7 +105,7 @@ namespace Model
     Aws::Vector<KeySchemaElement> m_keys;
     bool m_keysHasBeenSet = false;
 
-    PartitionIndexStatus m_indexStatus;
+    PartitionIndexStatus m_indexStatus{PartitionIndexStatus::NOT_SET};
     bool m_indexStatusHasBeenSet = false;
 
     Aws::Vector<BackfillError> m_backfillErrors;

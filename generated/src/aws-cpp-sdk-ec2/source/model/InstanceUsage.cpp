@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceUsage::InstanceUsage() : 
-    m_accountIdHasBeenSet(false),
-    m_usedInstanceCount(0),
-    m_usedInstanceCountHasBeenSet(false)
-{
-}
-
 InstanceUsage::InstanceUsage(const XmlNode& xmlNode)
-  : InstanceUsage()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ InstanceUsage& InstanceUsage::operator =(const XmlNode& xmlNode)
     {
       m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
+       m_accountIdHasBeenSet = true;
     }
     XmlNode usedInstanceCountNode = resultNode.FirstChild("usedInstanceCount");
     if(!usedInstanceCountNode.IsNull())
     {
       m_usedInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usedInstanceCountNode.GetText()).c_str()).c_str());
       m_usedInstanceCountHasBeenSet = true;
+       m_usedInstanceCountHasBeenSet = true;
     }
   }
 

@@ -36,7 +36,7 @@ namespace Model
   class ECSServiceProjectedMetric
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API ECSServiceProjectedMetric();
+    AWS_COMPUTEOPTIMIZER_API ECSServiceProjectedMetric() = default;
     AWS_COMPUTEOPTIMIZER_API ECSServiceProjectedMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API ECSServiceProjectedMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,38 +50,36 @@ namespace Model
      * <code>Memory</code> — The percentage of memory that's currently in use on the
      * service tasks.</p> </li> </ul>
      */
-    inline const ECSServiceMetricName& GetName() const{ return m_name; }
+    inline ECSServiceMetricName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ECSServiceMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ECSServiceMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ECSServiceProjectedMetric& WithName(const ECSServiceMetricName& value) { SetName(value); return *this;}
-    inline ECSServiceProjectedMetric& WithName(ECSServiceMetricName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ECSServiceMetricName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ECSServiceProjectedMetric& WithName(ECSServiceMetricName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The timestamps of the projected metric. </p>
      */
-    inline const Aws::Vector<Aws::Utils::DateTime>& GetTimestamps() const{ return m_timestamps; }
+    inline const Aws::Vector<Aws::Utils::DateTime>& GetTimestamps() const { return m_timestamps; }
     inline bool TimestampsHasBeenSet() const { return m_timestampsHasBeenSet; }
-    inline void SetTimestamps(const Aws::Vector<Aws::Utils::DateTime>& value) { m_timestampsHasBeenSet = true; m_timestamps = value; }
-    inline void SetTimestamps(Aws::Vector<Aws::Utils::DateTime>&& value) { m_timestampsHasBeenSet = true; m_timestamps = std::move(value); }
-    inline ECSServiceProjectedMetric& WithTimestamps(const Aws::Vector<Aws::Utils::DateTime>& value) { SetTimestamps(value); return *this;}
-    inline ECSServiceProjectedMetric& WithTimestamps(Aws::Vector<Aws::Utils::DateTime>&& value) { SetTimestamps(std::move(value)); return *this;}
-    inline ECSServiceProjectedMetric& AddTimestamps(const Aws::Utils::DateTime& value) { m_timestampsHasBeenSet = true; m_timestamps.push_back(value); return *this; }
-    inline ECSServiceProjectedMetric& AddTimestamps(Aws::Utils::DateTime&& value) { m_timestampsHasBeenSet = true; m_timestamps.push_back(std::move(value)); return *this; }
+    template<typename TimestampsT = Aws::Vector<Aws::Utils::DateTime>>
+    void SetTimestamps(TimestampsT&& value) { m_timestampsHasBeenSet = true; m_timestamps = std::forward<TimestampsT>(value); }
+    template<typename TimestampsT = Aws::Vector<Aws::Utils::DateTime>>
+    ECSServiceProjectedMetric& WithTimestamps(TimestampsT&& value) { SetTimestamps(std::forward<TimestampsT>(value)); return *this;}
+    template<typename TimestampsT = Aws::Utils::DateTime>
+    ECSServiceProjectedMetric& AddTimestamps(TimestampsT&& value) { m_timestampsHasBeenSet = true; m_timestamps.emplace_back(std::forward<TimestampsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The upper bound values for the projected metric. </p>
      */
-    inline const Aws::Vector<double>& GetUpperBoundValues() const{ return m_upperBoundValues; }
+    inline const Aws::Vector<double>& GetUpperBoundValues() const { return m_upperBoundValues; }
     inline bool UpperBoundValuesHasBeenSet() const { return m_upperBoundValuesHasBeenSet; }
-    inline void SetUpperBoundValues(const Aws::Vector<double>& value) { m_upperBoundValuesHasBeenSet = true; m_upperBoundValues = value; }
-    inline void SetUpperBoundValues(Aws::Vector<double>&& value) { m_upperBoundValuesHasBeenSet = true; m_upperBoundValues = std::move(value); }
-    inline ECSServiceProjectedMetric& WithUpperBoundValues(const Aws::Vector<double>& value) { SetUpperBoundValues(value); return *this;}
-    inline ECSServiceProjectedMetric& WithUpperBoundValues(Aws::Vector<double>&& value) { SetUpperBoundValues(std::move(value)); return *this;}
+    template<typename UpperBoundValuesT = Aws::Vector<double>>
+    void SetUpperBoundValues(UpperBoundValuesT&& value) { m_upperBoundValuesHasBeenSet = true; m_upperBoundValues = std::forward<UpperBoundValuesT>(value); }
+    template<typename UpperBoundValuesT = Aws::Vector<double>>
+    ECSServiceProjectedMetric& WithUpperBoundValues(UpperBoundValuesT&& value) { SetUpperBoundValues(std::forward<UpperBoundValuesT>(value)); return *this;}
     inline ECSServiceProjectedMetric& AddUpperBoundValues(double value) { m_upperBoundValuesHasBeenSet = true; m_upperBoundValues.push_back(value); return *this; }
     ///@}
 
@@ -89,17 +87,17 @@ namespace Model
     /**
      * <p> The lower bound values for the projected metric. </p>
      */
-    inline const Aws::Vector<double>& GetLowerBoundValues() const{ return m_lowerBoundValues; }
+    inline const Aws::Vector<double>& GetLowerBoundValues() const { return m_lowerBoundValues; }
     inline bool LowerBoundValuesHasBeenSet() const { return m_lowerBoundValuesHasBeenSet; }
-    inline void SetLowerBoundValues(const Aws::Vector<double>& value) { m_lowerBoundValuesHasBeenSet = true; m_lowerBoundValues = value; }
-    inline void SetLowerBoundValues(Aws::Vector<double>&& value) { m_lowerBoundValuesHasBeenSet = true; m_lowerBoundValues = std::move(value); }
-    inline ECSServiceProjectedMetric& WithLowerBoundValues(const Aws::Vector<double>& value) { SetLowerBoundValues(value); return *this;}
-    inline ECSServiceProjectedMetric& WithLowerBoundValues(Aws::Vector<double>&& value) { SetLowerBoundValues(std::move(value)); return *this;}
+    template<typename LowerBoundValuesT = Aws::Vector<double>>
+    void SetLowerBoundValues(LowerBoundValuesT&& value) { m_lowerBoundValuesHasBeenSet = true; m_lowerBoundValues = std::forward<LowerBoundValuesT>(value); }
+    template<typename LowerBoundValuesT = Aws::Vector<double>>
+    ECSServiceProjectedMetric& WithLowerBoundValues(LowerBoundValuesT&& value) { SetLowerBoundValues(std::forward<LowerBoundValuesT>(value)); return *this;}
     inline ECSServiceProjectedMetric& AddLowerBoundValues(double value) { m_lowerBoundValuesHasBeenSet = true; m_lowerBoundValues.push_back(value); return *this; }
     ///@}
   private:
 
-    ECSServiceMetricName m_name;
+    ECSServiceMetricName m_name{ECSServiceMetricName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::DateTime> m_timestamps;

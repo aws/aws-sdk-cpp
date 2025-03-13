@@ -25,7 +25,7 @@ namespace Model
   class DeleteResourcePolicyRequest : public CloudWatchRUMRequest
   {
   public:
-    AWS_CLOUDWATCHRUM_API DeleteResourcePolicyRequest();
+    AWS_CLOUDWATCHRUM_API DeleteResourcePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The app monitor that you want to remove the resource policy from.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DeleteResourcePolicyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteResourcePolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteResourcePolicyRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteResourcePolicyRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * request will be rejected with an <code>InvalidPolicyRevisionIdException</code>
      * error.</p>
      */
-    inline const Aws::String& GetPolicyRevisionId() const{ return m_policyRevisionId; }
+    inline const Aws::String& GetPolicyRevisionId() const { return m_policyRevisionId; }
     inline bool PolicyRevisionIdHasBeenSet() const { return m_policyRevisionIdHasBeenSet; }
-    inline void SetPolicyRevisionId(const Aws::String& value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId = value; }
-    inline void SetPolicyRevisionId(Aws::String&& value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId = std::move(value); }
-    inline void SetPolicyRevisionId(const char* value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId.assign(value); }
-    inline DeleteResourcePolicyRequest& WithPolicyRevisionId(const Aws::String& value) { SetPolicyRevisionId(value); return *this;}
-    inline DeleteResourcePolicyRequest& WithPolicyRevisionId(Aws::String&& value) { SetPolicyRevisionId(std::move(value)); return *this;}
-    inline DeleteResourcePolicyRequest& WithPolicyRevisionId(const char* value) { SetPolicyRevisionId(value); return *this;}
+    template<typename PolicyRevisionIdT = Aws::String>
+    void SetPolicyRevisionId(PolicyRevisionIdT&& value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId = std::forward<PolicyRevisionIdT>(value); }
+    template<typename PolicyRevisionIdT = Aws::String>
+    DeleteResourcePolicyRequest& WithPolicyRevisionId(PolicyRevisionIdT&& value) { SetPolicyRevisionId(std::forward<PolicyRevisionIdT>(value)); return *this;}
     ///@}
   private:
 

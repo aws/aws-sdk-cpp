@@ -27,7 +27,7 @@ namespace Model
   class UpdatePackageConfigurationRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API UpdatePackageConfigurationRequest();
+    AWS_IOT_API UpdatePackageConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,12 +45,12 @@ namespace Model
      * <p>Configuration to manage job's package version reporting. This updates the
      * thing's reserved named shadow that the job targets.</p>
      */
-    inline const VersionUpdateByJobsConfig& GetVersionUpdateByJobsConfig() const{ return m_versionUpdateByJobsConfig; }
+    inline const VersionUpdateByJobsConfig& GetVersionUpdateByJobsConfig() const { return m_versionUpdateByJobsConfig; }
     inline bool VersionUpdateByJobsConfigHasBeenSet() const { return m_versionUpdateByJobsConfigHasBeenSet; }
-    inline void SetVersionUpdateByJobsConfig(const VersionUpdateByJobsConfig& value) { m_versionUpdateByJobsConfigHasBeenSet = true; m_versionUpdateByJobsConfig = value; }
-    inline void SetVersionUpdateByJobsConfig(VersionUpdateByJobsConfig&& value) { m_versionUpdateByJobsConfigHasBeenSet = true; m_versionUpdateByJobsConfig = std::move(value); }
-    inline UpdatePackageConfigurationRequest& WithVersionUpdateByJobsConfig(const VersionUpdateByJobsConfig& value) { SetVersionUpdateByJobsConfig(value); return *this;}
-    inline UpdatePackageConfigurationRequest& WithVersionUpdateByJobsConfig(VersionUpdateByJobsConfig&& value) { SetVersionUpdateByJobsConfig(std::move(value)); return *this;}
+    template<typename VersionUpdateByJobsConfigT = VersionUpdateByJobsConfig>
+    void SetVersionUpdateByJobsConfig(VersionUpdateByJobsConfigT&& value) { m_versionUpdateByJobsConfigHasBeenSet = true; m_versionUpdateByJobsConfig = std::forward<VersionUpdateByJobsConfigT>(value); }
+    template<typename VersionUpdateByJobsConfigT = VersionUpdateByJobsConfig>
+    UpdatePackageConfigurationRequest& WithVersionUpdateByJobsConfig(VersionUpdateByJobsConfigT&& value) { SetVersionUpdateByJobsConfig(std::forward<VersionUpdateByJobsConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdatePackageConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdatePackageConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdatePackageConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdatePackageConfigurationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

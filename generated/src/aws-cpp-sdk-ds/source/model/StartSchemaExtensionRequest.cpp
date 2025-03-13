@@ -12,15 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSchemaExtensionRequest::StartSchemaExtensionRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_createSnapshotBeforeSchemaExtension(false),
-    m_createSnapshotBeforeSchemaExtensionHasBeenSet(false),
-    m_ldifContentHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String StartSchemaExtensionRequest::SerializePayload() const
 {
   JsonValue payload;

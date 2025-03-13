@@ -29,7 +29,7 @@ namespace Model
   class GetContainerServicesResult
   {
   public:
-    AWS_LIGHTSAIL_API GetContainerServicesResult();
+    AWS_LIGHTSAIL_API GetContainerServicesResult() = default;
     AWS_LIGHTSAIL_API GetContainerServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetContainerServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>An array of objects that describe one or more container services.</p>
      */
-    inline const Aws::Vector<ContainerService>& GetContainerServices() const{ return m_containerServices; }
-    inline void SetContainerServices(const Aws::Vector<ContainerService>& value) { m_containerServices = value; }
-    inline void SetContainerServices(Aws::Vector<ContainerService>&& value) { m_containerServices = std::move(value); }
-    inline GetContainerServicesResult& WithContainerServices(const Aws::Vector<ContainerService>& value) { SetContainerServices(value); return *this;}
-    inline GetContainerServicesResult& WithContainerServices(Aws::Vector<ContainerService>&& value) { SetContainerServices(std::move(value)); return *this;}
-    inline GetContainerServicesResult& AddContainerServices(const ContainerService& value) { m_containerServices.push_back(value); return *this; }
-    inline GetContainerServicesResult& AddContainerServices(ContainerService&& value) { m_containerServices.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContainerService>& GetContainerServices() const { return m_containerServices; }
+    template<typename ContainerServicesT = Aws::Vector<ContainerService>>
+    void SetContainerServices(ContainerServicesT&& value) { m_containerServicesHasBeenSet = true; m_containerServices = std::forward<ContainerServicesT>(value); }
+    template<typename ContainerServicesT = Aws::Vector<ContainerService>>
+    GetContainerServicesResult& WithContainerServices(ContainerServicesT&& value) { SetContainerServices(std::forward<ContainerServicesT>(value)); return *this;}
+    template<typename ContainerServicesT = ContainerService>
+    GetContainerServicesResult& AddContainerServices(ContainerServicesT&& value) { m_containerServicesHasBeenSet = true; m_containerServices.emplace_back(std::forward<ContainerServicesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetContainerServicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetContainerServicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetContainerServicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetContainerServicesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContainerService> m_containerServices;
+    bool m_containerServicesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

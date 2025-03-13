@@ -18,15 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ImageScanState::ImageScanState() : 
-    m_status(ImageScanStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ImageScanState::ImageScanState(JsonView jsonValue)
-  : ImageScanState()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ImageScanState& ImageScanState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = ImageScanStatusMapper::GetImageScanStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

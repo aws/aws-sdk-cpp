@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationFailedConstraint::WaypointOptimizationFailedConstraint() : 
-    m_constraint(WaypointOptimizationConstraint::NOT_SET),
-    m_constraintHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 WaypointOptimizationFailedConstraint::WaypointOptimizationFailedConstraint(JsonView jsonValue)
-  : WaypointOptimizationFailedConstraint()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WaypointOptimizationFailedConstraint& WaypointOptimizationFailedConstraint::oper
   if(jsonValue.ValueExists("Constraint"))
   {
     m_constraint = WaypointOptimizationConstraintMapper::GetWaypointOptimizationConstraintForName(jsonValue.GetString("Constraint"));
-
     m_constraintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

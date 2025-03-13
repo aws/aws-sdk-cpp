@@ -28,7 +28,7 @@ namespace Model
   class GetCrawlerResult
   {
   public:
-    AWS_GLUE_API GetCrawlerResult();
+    AWS_GLUE_API GetCrawlerResult() = default;
     AWS_GLUE_API GetCrawlerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetCrawlerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The metadata for the specified crawler.</p>
      */
-    inline const Crawler& GetCrawler() const{ return m_crawler; }
-    inline void SetCrawler(const Crawler& value) { m_crawler = value; }
-    inline void SetCrawler(Crawler&& value) { m_crawler = std::move(value); }
-    inline GetCrawlerResult& WithCrawler(const Crawler& value) { SetCrawler(value); return *this;}
-    inline GetCrawlerResult& WithCrawler(Crawler&& value) { SetCrawler(std::move(value)); return *this;}
+    inline const Crawler& GetCrawler() const { return m_crawler; }
+    template<typename CrawlerT = Crawler>
+    void SetCrawler(CrawlerT&& value) { m_crawlerHasBeenSet = true; m_crawler = std::forward<CrawlerT>(value); }
+    template<typename CrawlerT = Crawler>
+    GetCrawlerResult& WithCrawler(CrawlerT&& value) { SetCrawler(std::forward<CrawlerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCrawlerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCrawlerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCrawlerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCrawlerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Crawler m_crawler;
+    bool m_crawlerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

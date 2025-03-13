@@ -33,7 +33,7 @@ namespace Model
   class ActivateReadSetJobItem
   {
   public:
-    AWS_OMICS_API ActivateReadSetJobItem();
+    AWS_OMICS_API ActivateReadSetJobItem() = default;
     AWS_OMICS_API ActivateReadSetJobItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API ActivateReadSetJobItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,64 +43,58 @@ namespace Model
     /**
      * <p>The job's ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ActivateReadSetJobItem& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ActivateReadSetJobItem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ActivateReadSetJobItem& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ActivateReadSetJobItem& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's sequence store ID.</p>
      */
-    inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
+    inline const Aws::String& GetSequenceStoreId() const { return m_sequenceStoreId; }
     inline bool SequenceStoreIdHasBeenSet() const { return m_sequenceStoreIdHasBeenSet; }
-    inline void SetSequenceStoreId(const Aws::String& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = value; }
-    inline void SetSequenceStoreId(Aws::String&& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = std::move(value); }
-    inline void SetSequenceStoreId(const char* value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId.assign(value); }
-    inline ActivateReadSetJobItem& WithSequenceStoreId(const Aws::String& value) { SetSequenceStoreId(value); return *this;}
-    inline ActivateReadSetJobItem& WithSequenceStoreId(Aws::String&& value) { SetSequenceStoreId(std::move(value)); return *this;}
-    inline ActivateReadSetJobItem& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
+    template<typename SequenceStoreIdT = Aws::String>
+    void SetSequenceStoreId(SequenceStoreIdT&& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = std::forward<SequenceStoreIdT>(value); }
+    template<typename SequenceStoreIdT = Aws::String>
+    ActivateReadSetJobItem& WithSequenceStoreId(SequenceStoreIdT&& value) { SetSequenceStoreId(std::forward<SequenceStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's status.</p>
      */
-    inline const ReadSetActivationJobStatus& GetStatus() const{ return m_status; }
+    inline ReadSetActivationJobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReadSetActivationJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReadSetActivationJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ActivateReadSetJobItem& WithStatus(const ReadSetActivationJobStatus& value) { SetStatus(value); return *this;}
-    inline ActivateReadSetJobItem& WithStatus(ReadSetActivationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ReadSetActivationJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ActivateReadSetJobItem& WithStatus(ReadSetActivationJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ActivateReadSetJobItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ActivateReadSetJobItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ActivateReadSetJobItem& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the job completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
+    inline const Aws::Utils::DateTime& GetCompletionTime() const { return m_completionTime; }
     inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
-    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
-    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
-    inline ActivateReadSetJobItem& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-    inline ActivateReadSetJobItem& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    void SetCompletionTime(CompletionTimeT&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::forward<CompletionTimeT>(value); }
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    ActivateReadSetJobItem& WithCompletionTime(CompletionTimeT&& value) { SetCompletionTime(std::forward<CompletionTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -110,13 +104,13 @@ namespace Model
     Aws::String m_sequenceStoreId;
     bool m_sequenceStoreIdHasBeenSet = false;
 
-    ReadSetActivationJobStatus m_status;
+    ReadSetActivationJobStatus m_status{ReadSetActivationJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completionTime;
+    Aws::Utils::DateTime m_completionTime{};
     bool m_completionTimeHasBeenSet = false;
   };
 

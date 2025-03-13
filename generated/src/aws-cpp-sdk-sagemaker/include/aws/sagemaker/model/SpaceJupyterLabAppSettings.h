@@ -35,7 +35,7 @@ namespace Model
   class SpaceJupyterLabAppSettings
   {
   public:
-    AWS_SAGEMAKER_API SpaceJupyterLabAppSettings();
+    AWS_SAGEMAKER_API SpaceJupyterLabAppSettings() = default;
     AWS_SAGEMAKER_API SpaceJupyterLabAppSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SpaceJupyterLabAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
 
     ///@{
     
-    inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
+    inline const ResourceSpec& GetDefaultResourceSpec() const { return m_defaultResourceSpec; }
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
-    inline void SetDefaultResourceSpec(const ResourceSpec& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = value; }
-    inline void SetDefaultResourceSpec(ResourceSpec&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::move(value); }
-    inline SpaceJupyterLabAppSettings& WithDefaultResourceSpec(const ResourceSpec& value) { SetDefaultResourceSpec(value); return *this;}
-    inline SpaceJupyterLabAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
+    template<typename DefaultResourceSpecT = ResourceSpec>
+    void SetDefaultResourceSpec(DefaultResourceSpecT&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::forward<DefaultResourceSpecT>(value); }
+    template<typename DefaultResourceSpecT = ResourceSpec>
+    SpaceJupyterLabAppSettings& WithDefaultResourceSpec(DefaultResourceSpecT&& value) { SetDefaultResourceSpec(std::forward<DefaultResourceSpecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +56,14 @@ namespace Model
      * <p>A list of Git repositories that SageMaker automatically displays to users for
      * cloning in the JupyterLab application.</p>
      */
-    inline const Aws::Vector<CodeRepository>& GetCodeRepositories() const{ return m_codeRepositories; }
+    inline const Aws::Vector<CodeRepository>& GetCodeRepositories() const { return m_codeRepositories; }
     inline bool CodeRepositoriesHasBeenSet() const { return m_codeRepositoriesHasBeenSet; }
-    inline void SetCodeRepositories(const Aws::Vector<CodeRepository>& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories = value; }
-    inline void SetCodeRepositories(Aws::Vector<CodeRepository>&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories = std::move(value); }
-    inline SpaceJupyterLabAppSettings& WithCodeRepositories(const Aws::Vector<CodeRepository>& value) { SetCodeRepositories(value); return *this;}
-    inline SpaceJupyterLabAppSettings& WithCodeRepositories(Aws::Vector<CodeRepository>&& value) { SetCodeRepositories(std::move(value)); return *this;}
-    inline SpaceJupyterLabAppSettings& AddCodeRepositories(const CodeRepository& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.push_back(value); return *this; }
-    inline SpaceJupyterLabAppSettings& AddCodeRepositories(CodeRepository&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.push_back(std::move(value)); return *this; }
+    template<typename CodeRepositoriesT = Aws::Vector<CodeRepository>>
+    void SetCodeRepositories(CodeRepositoriesT&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories = std::forward<CodeRepositoriesT>(value); }
+    template<typename CodeRepositoriesT = Aws::Vector<CodeRepository>>
+    SpaceJupyterLabAppSettings& WithCodeRepositories(CodeRepositoriesT&& value) { SetCodeRepositories(std::forward<CodeRepositoriesT>(value)); return *this;}
+    template<typename CodeRepositoriesT = CodeRepository>
+    SpaceJupyterLabAppSettings& AddCodeRepositories(CodeRepositoriesT&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.emplace_back(std::forward<CodeRepositoriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * <p>Settings that are used to configure and manage the lifecycle of JupyterLab
      * applications in a space.</p>
      */
-    inline const SpaceAppLifecycleManagement& GetAppLifecycleManagement() const{ return m_appLifecycleManagement; }
+    inline const SpaceAppLifecycleManagement& GetAppLifecycleManagement() const { return m_appLifecycleManagement; }
     inline bool AppLifecycleManagementHasBeenSet() const { return m_appLifecycleManagementHasBeenSet; }
-    inline void SetAppLifecycleManagement(const SpaceAppLifecycleManagement& value) { m_appLifecycleManagementHasBeenSet = true; m_appLifecycleManagement = value; }
-    inline void SetAppLifecycleManagement(SpaceAppLifecycleManagement&& value) { m_appLifecycleManagementHasBeenSet = true; m_appLifecycleManagement = std::move(value); }
-    inline SpaceJupyterLabAppSettings& WithAppLifecycleManagement(const SpaceAppLifecycleManagement& value) { SetAppLifecycleManagement(value); return *this;}
-    inline SpaceJupyterLabAppSettings& WithAppLifecycleManagement(SpaceAppLifecycleManagement&& value) { SetAppLifecycleManagement(std::move(value)); return *this;}
+    template<typename AppLifecycleManagementT = SpaceAppLifecycleManagement>
+    void SetAppLifecycleManagement(AppLifecycleManagementT&& value) { m_appLifecycleManagementHasBeenSet = true; m_appLifecycleManagement = std::forward<AppLifecycleManagementT>(value); }
+    template<typename AppLifecycleManagementT = SpaceAppLifecycleManagement>
+    SpaceJupyterLabAppSettings& WithAppLifecycleManagement(AppLifecycleManagementT&& value) { SetAppLifecycleManagement(std::forward<AppLifecycleManagementT>(value)); return *this;}
     ///@}
   private:
 

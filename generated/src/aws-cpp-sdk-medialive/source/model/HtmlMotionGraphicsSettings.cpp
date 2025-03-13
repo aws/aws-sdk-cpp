@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-HtmlMotionGraphicsSettings::HtmlMotionGraphicsSettings()
-{
-}
-
 HtmlMotionGraphicsSettings::HtmlMotionGraphicsSettings(JsonView jsonValue)
 {
   *this = jsonValue;

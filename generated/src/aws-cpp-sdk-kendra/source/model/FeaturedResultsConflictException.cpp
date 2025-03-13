@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-FeaturedResultsConflictException::FeaturedResultsConflictException() : 
-    m_messageHasBeenSet(false),
-    m_conflictingItemsHasBeenSet(false)
-{
-}
-
 FeaturedResultsConflictException::FeaturedResultsConflictException(JsonView jsonValue)
-  : FeaturedResultsConflictException()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FeaturedResultsConflictException& FeaturedResultsConflictException::operator =(J
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConflictingItems"))
   {
     Aws::Utils::Array<JsonView> conflictingItemsJsonList = jsonValue.GetArray("ConflictingItems");
@@ -48,7 +39,6 @@ FeaturedResultsConflictException& FeaturedResultsConflictException::operator =(J
     }
     m_conflictingItemsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-TemporaryCredential::TemporaryCredential() : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_validForInMinutes(0),
-    m_validForInMinutesHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 TemporaryCredential::TemporaryCredential(JsonView jsonValue)
-  : TemporaryCredential()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TemporaryCredential& TemporaryCredential::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidForInMinutes"))
   {
     m_validForInMinutes = jsonValue.GetInteger("ValidForInMinutes");
-
     m_validForInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

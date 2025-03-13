@@ -29,7 +29,7 @@ namespace Model
   class ListModelCopyJobsRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API ListModelCopyJobsRequest();
+    AWS_BEDROCK_API ListModelCopyJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,24 +46,24 @@ namespace Model
     /**
      * <p>Filters for model copy jobs created after the specified time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
+    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const { return m_creationTimeAfter; }
     inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
-    inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
-    inline void SetCreationTimeAfter(Aws::Utils::DateTime&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::move(value); }
-    inline ListModelCopyJobsRequest& WithCreationTimeAfter(const Aws::Utils::DateTime& value) { SetCreationTimeAfter(value); return *this;}
-    inline ListModelCopyJobsRequest& WithCreationTimeAfter(Aws::Utils::DateTime&& value) { SetCreationTimeAfter(std::move(value)); return *this;}
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    void SetCreationTimeAfter(CreationTimeAfterT&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::forward<CreationTimeAfterT>(value); }
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    ListModelCopyJobsRequest& WithCreationTimeAfter(CreationTimeAfterT&& value) { SetCreationTimeAfter(std::forward<CreationTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filters for model copy jobs created before the specified time. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
+    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const { return m_creationTimeBefore; }
     inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
-    inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
-    inline void SetCreationTimeBefore(Aws::Utils::DateTime&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::move(value); }
-    inline ListModelCopyJobsRequest& WithCreationTimeBefore(const Aws::Utils::DateTime& value) { SetCreationTimeBefore(value); return *this;}
-    inline ListModelCopyJobsRequest& WithCreationTimeBefore(Aws::Utils::DateTime&& value) { SetCreationTimeBefore(std::move(value)); return *this;}
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    void SetCreationTimeBefore(CreationTimeBeforeT&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::forward<CreationTimeBeforeT>(value); }
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    ListModelCopyJobsRequest& WithCreationTimeBefore(CreationTimeBeforeT&& value) { SetCreationTimeBefore(std::forward<CreationTimeBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,10 @@ namespace Model
      * <p>Filters for model copy jobs whose status matches the value that you
      * specify.</p>
      */
-    inline const ModelCopyJobStatus& GetStatusEquals() const{ return m_statusEquals; }
+    inline ModelCopyJobStatus GetStatusEquals() const { return m_statusEquals; }
     inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
-    inline void SetStatusEquals(const ModelCopyJobStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
-    inline void SetStatusEquals(ModelCopyJobStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
-    inline ListModelCopyJobsRequest& WithStatusEquals(const ModelCopyJobStatus& value) { SetStatusEquals(value); return *this;}
-    inline ListModelCopyJobsRequest& WithStatusEquals(ModelCopyJobStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
+    inline void SetStatusEquals(ModelCopyJobStatus value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
+    inline ListModelCopyJobsRequest& WithStatusEquals(ModelCopyJobStatus value) { SetStatusEquals(value); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +82,12 @@ namespace Model
      * <p>Filters for model copy jobs in which the account that the source model
      * belongs to is equal to the value that you specify.</p>
      */
-    inline const Aws::String& GetSourceAccountEquals() const{ return m_sourceAccountEquals; }
+    inline const Aws::String& GetSourceAccountEquals() const { return m_sourceAccountEquals; }
     inline bool SourceAccountEqualsHasBeenSet() const { return m_sourceAccountEqualsHasBeenSet; }
-    inline void SetSourceAccountEquals(const Aws::String& value) { m_sourceAccountEqualsHasBeenSet = true; m_sourceAccountEquals = value; }
-    inline void SetSourceAccountEquals(Aws::String&& value) { m_sourceAccountEqualsHasBeenSet = true; m_sourceAccountEquals = std::move(value); }
-    inline void SetSourceAccountEquals(const char* value) { m_sourceAccountEqualsHasBeenSet = true; m_sourceAccountEquals.assign(value); }
-    inline ListModelCopyJobsRequest& WithSourceAccountEquals(const Aws::String& value) { SetSourceAccountEquals(value); return *this;}
-    inline ListModelCopyJobsRequest& WithSourceAccountEquals(Aws::String&& value) { SetSourceAccountEquals(std::move(value)); return *this;}
-    inline ListModelCopyJobsRequest& WithSourceAccountEquals(const char* value) { SetSourceAccountEquals(value); return *this;}
+    template<typename SourceAccountEqualsT = Aws::String>
+    void SetSourceAccountEquals(SourceAccountEqualsT&& value) { m_sourceAccountEqualsHasBeenSet = true; m_sourceAccountEquals = std::forward<SourceAccountEqualsT>(value); }
+    template<typename SourceAccountEqualsT = Aws::String>
+    ListModelCopyJobsRequest& WithSourceAccountEquals(SourceAccountEqualsT&& value) { SetSourceAccountEquals(std::forward<SourceAccountEqualsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +95,12 @@ namespace Model
      * <p>Filters for model copy jobs in which the Amazon Resource Name (ARN) of the
      * source model to is equal to the value that you specify.</p>
      */
-    inline const Aws::String& GetSourceModelArnEquals() const{ return m_sourceModelArnEquals; }
+    inline const Aws::String& GetSourceModelArnEquals() const { return m_sourceModelArnEquals; }
     inline bool SourceModelArnEqualsHasBeenSet() const { return m_sourceModelArnEqualsHasBeenSet; }
-    inline void SetSourceModelArnEquals(const Aws::String& value) { m_sourceModelArnEqualsHasBeenSet = true; m_sourceModelArnEquals = value; }
-    inline void SetSourceModelArnEquals(Aws::String&& value) { m_sourceModelArnEqualsHasBeenSet = true; m_sourceModelArnEquals = std::move(value); }
-    inline void SetSourceModelArnEquals(const char* value) { m_sourceModelArnEqualsHasBeenSet = true; m_sourceModelArnEquals.assign(value); }
-    inline ListModelCopyJobsRequest& WithSourceModelArnEquals(const Aws::String& value) { SetSourceModelArnEquals(value); return *this;}
-    inline ListModelCopyJobsRequest& WithSourceModelArnEquals(Aws::String&& value) { SetSourceModelArnEquals(std::move(value)); return *this;}
-    inline ListModelCopyJobsRequest& WithSourceModelArnEquals(const char* value) { SetSourceModelArnEquals(value); return *this;}
+    template<typename SourceModelArnEqualsT = Aws::String>
+    void SetSourceModelArnEquals(SourceModelArnEqualsT&& value) { m_sourceModelArnEqualsHasBeenSet = true; m_sourceModelArnEquals = std::forward<SourceModelArnEqualsT>(value); }
+    template<typename SourceModelArnEqualsT = Aws::String>
+    ListModelCopyJobsRequest& WithSourceModelArnEquals(SourceModelArnEqualsT&& value) { SetSourceModelArnEquals(std::forward<SourceModelArnEqualsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +108,12 @@ namespace Model
      * <p>Filters for model copy jobs in which the name of the copied model contains
      * the string that you specify.</p>
      */
-    inline const Aws::String& GetTargetModelNameContains() const{ return m_targetModelNameContains; }
+    inline const Aws::String& GetTargetModelNameContains() const { return m_targetModelNameContains; }
     inline bool TargetModelNameContainsHasBeenSet() const { return m_targetModelNameContainsHasBeenSet; }
-    inline void SetTargetModelNameContains(const Aws::String& value) { m_targetModelNameContainsHasBeenSet = true; m_targetModelNameContains = value; }
-    inline void SetTargetModelNameContains(Aws::String&& value) { m_targetModelNameContainsHasBeenSet = true; m_targetModelNameContains = std::move(value); }
-    inline void SetTargetModelNameContains(const char* value) { m_targetModelNameContainsHasBeenSet = true; m_targetModelNameContains.assign(value); }
-    inline ListModelCopyJobsRequest& WithTargetModelNameContains(const Aws::String& value) { SetTargetModelNameContains(value); return *this;}
-    inline ListModelCopyJobsRequest& WithTargetModelNameContains(Aws::String&& value) { SetTargetModelNameContains(std::move(value)); return *this;}
-    inline ListModelCopyJobsRequest& WithTargetModelNameContains(const char* value) { SetTargetModelNameContains(value); return *this;}
+    template<typename TargetModelNameContainsT = Aws::String>
+    void SetTargetModelNameContains(TargetModelNameContainsT&& value) { m_targetModelNameContainsHasBeenSet = true; m_targetModelNameContains = std::forward<TargetModelNameContainsT>(value); }
+    template<typename TargetModelNameContainsT = Aws::String>
+    ListModelCopyJobsRequest& WithTargetModelNameContains(TargetModelNameContainsT&& value) { SetTargetModelNameContains(std::forward<TargetModelNameContainsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,7 +123,7 @@ namespace Model
      * the <code>nextToken</code> field when making another request to return the next
      * batch of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListModelCopyJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -144,48 +136,42 @@ namespace Model
      * <code>nextToken</code> field in the response in this field to return the next
      * batch of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListModelCopyJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListModelCopyJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListModelCopyJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListModelCopyJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The field to sort by in the returned list of model copy jobs.</p>
      */
-    inline const SortJobsBy& GetSortBy() const{ return m_sortBy; }
+    inline SortJobsBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortJobsBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortJobsBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListModelCopyJobsRequest& WithSortBy(const SortJobsBy& value) { SetSortBy(value); return *this;}
-    inline ListModelCopyJobsRequest& WithSortBy(SortJobsBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(SortJobsBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListModelCopyJobsRequest& WithSortBy(SortJobsBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether to sort the results in ascending or descending order.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListModelCopyJobsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListModelCopyJobsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListModelCopyJobsRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationTimeAfter;
+    Aws::Utils::DateTime m_creationTimeAfter{};
     bool m_creationTimeAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeBefore;
+    Aws::Utils::DateTime m_creationTimeBefore{};
     bool m_creationTimeBeforeHasBeenSet = false;
 
-    ModelCopyJobStatus m_statusEquals;
+    ModelCopyJobStatus m_statusEquals{ModelCopyJobStatus::NOT_SET};
     bool m_statusEqualsHasBeenSet = false;
 
     Aws::String m_sourceAccountEquals;
@@ -197,16 +183,16 @@ namespace Model
     Aws::String m_targetModelNameContains;
     bool m_targetModelNameContainsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    SortJobsBy m_sortBy;
+    SortJobsBy m_sortBy{SortJobsBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

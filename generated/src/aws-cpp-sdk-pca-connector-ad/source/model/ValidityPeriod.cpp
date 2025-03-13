@@ -18,16 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-ValidityPeriod::ValidityPeriod() : 
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_periodType(ValidityPeriodType::NOT_SET),
-    m_periodTypeHasBeenSet(false)
-{
-}
-
 ValidityPeriod::ValidityPeriod(JsonView jsonValue)
-  : ValidityPeriod()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ValidityPeriod& ValidityPeriod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Period"))
   {
     m_period = jsonValue.GetInt64("Period");
-
     m_periodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeriodType"))
   {
     m_periodType = ValidityPeriodTypeMapper::GetValidityPeriodTypeForName(jsonValue.GetString("PeriodType"));
-
     m_periodTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

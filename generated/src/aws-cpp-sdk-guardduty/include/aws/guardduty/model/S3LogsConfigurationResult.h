@@ -32,7 +32,7 @@ namespace Model
   class S3LogsConfigurationResult
   {
   public:
-    AWS_GUARDDUTY_API S3LogsConfigurationResult();
+    AWS_GUARDDUTY_API S3LogsConfigurationResult() = default;
     AWS_GUARDDUTY_API S3LogsConfigurationResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API S3LogsConfigurationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>A value that describes whether S3 data event logs are automatically enabled
      * for new members of the organization.</p>
      */
-    inline const DataSourceStatus& GetStatus() const{ return m_status; }
+    inline DataSourceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DataSourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DataSourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline S3LogsConfigurationResult& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
-    inline S3LogsConfigurationResult& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DataSourceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline S3LogsConfigurationResult& WithStatus(DataSourceStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    DataSourceStatus m_status;
+    DataSourceStatus m_status{DataSourceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

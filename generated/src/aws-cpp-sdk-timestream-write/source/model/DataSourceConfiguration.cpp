@@ -18,16 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-DataSourceConfiguration::DataSourceConfiguration() : 
-    m_dataSourceS3ConfigurationHasBeenSet(false),
-    m_csvConfigurationHasBeenSet(false),
-    m_dataFormat(BatchLoadDataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false)
-{
-}
-
 DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue)
-  : DataSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSourceS3Configuration"))
   {
     m_dataSourceS3Configuration = jsonValue.GetObject("DataSourceS3Configuration");
-
     m_dataSourceS3ConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CsvConfiguration"))
   {
     m_csvConfiguration = jsonValue.GetObject("CsvConfiguration");
-
     m_csvConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataFormat"))
   {
     m_dataFormat = BatchLoadDataFormatMapper::GetBatchLoadDataFormatForName(jsonValue.GetString("DataFormat"));
-
     m_dataFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

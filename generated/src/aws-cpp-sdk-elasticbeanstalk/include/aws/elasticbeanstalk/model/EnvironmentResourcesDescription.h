@@ -32,7 +32,7 @@ namespace Model
   class EnvironmentResourcesDescription
   {
   public:
-    AWS_ELASTICBEANSTALK_API EnvironmentResourcesDescription();
+    AWS_ELASTICBEANSTALK_API EnvironmentResourcesDescription() = default;
     AWS_ELASTICBEANSTALK_API EnvironmentResourcesDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API EnvironmentResourcesDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>Describes the LoadBalancer.</p>
      */
-    inline const LoadBalancerDescription& GetLoadBalancer() const{ return m_loadBalancer; }
+    inline const LoadBalancerDescription& GetLoadBalancer() const { return m_loadBalancer; }
     inline bool LoadBalancerHasBeenSet() const { return m_loadBalancerHasBeenSet; }
-    inline void SetLoadBalancer(const LoadBalancerDescription& value) { m_loadBalancerHasBeenSet = true; m_loadBalancer = value; }
-    inline void SetLoadBalancer(LoadBalancerDescription&& value) { m_loadBalancerHasBeenSet = true; m_loadBalancer = std::move(value); }
-    inline EnvironmentResourcesDescription& WithLoadBalancer(const LoadBalancerDescription& value) { SetLoadBalancer(value); return *this;}
-    inline EnvironmentResourcesDescription& WithLoadBalancer(LoadBalancerDescription&& value) { SetLoadBalancer(std::move(value)); return *this;}
+    template<typename LoadBalancerT = LoadBalancerDescription>
+    void SetLoadBalancer(LoadBalancerT&& value) { m_loadBalancerHasBeenSet = true; m_loadBalancer = std::forward<LoadBalancerT>(value); }
+    template<typename LoadBalancerT = LoadBalancerDescription>
+    EnvironmentResourcesDescription& WithLoadBalancer(LoadBalancerT&& value) { SetLoadBalancer(std::forward<LoadBalancerT>(value)); return *this;}
     ///@}
   private:
 

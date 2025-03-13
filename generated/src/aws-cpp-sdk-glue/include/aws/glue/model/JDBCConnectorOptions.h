@@ -36,7 +36,7 @@ namespace Model
   class JDBCConnectorOptions
   {
   public:
-    AWS_GLUE_API JDBCConnectorOptions();
+    AWS_GLUE_API JDBCConnectorOptions() = default;
     AWS_GLUE_API JDBCConnectorOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API JDBCConnectorOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * table name, you should validate that the query works with the specified
      * <code>filterPredicate</code>.</p>
      */
-    inline const Aws::String& GetFilterPredicate() const{ return m_filterPredicate; }
+    inline const Aws::String& GetFilterPredicate() const { return m_filterPredicate; }
     inline bool FilterPredicateHasBeenSet() const { return m_filterPredicateHasBeenSet; }
-    inline void SetFilterPredicate(const Aws::String& value) { m_filterPredicateHasBeenSet = true; m_filterPredicate = value; }
-    inline void SetFilterPredicate(Aws::String&& value) { m_filterPredicateHasBeenSet = true; m_filterPredicate = std::move(value); }
-    inline void SetFilterPredicate(const char* value) { m_filterPredicateHasBeenSet = true; m_filterPredicate.assign(value); }
-    inline JDBCConnectorOptions& WithFilterPredicate(const Aws::String& value) { SetFilterPredicate(value); return *this;}
-    inline JDBCConnectorOptions& WithFilterPredicate(Aws::String&& value) { SetFilterPredicate(std::move(value)); return *this;}
-    inline JDBCConnectorOptions& WithFilterPredicate(const char* value) { SetFilterPredicate(value); return *this;}
+    template<typename FilterPredicateT = Aws::String>
+    void SetFilterPredicate(FilterPredicateT&& value) { m_filterPredicateHasBeenSet = true; m_filterPredicate = std::forward<FilterPredicateT>(value); }
+    template<typename FilterPredicateT = Aws::String>
+    JDBCConnectorOptions& WithFilterPredicate(FilterPredicateT&& value) { SetFilterPredicate(std::forward<FilterPredicateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <code>upperBound</code>, and <code>numPartitions</code>. This option works the
      * same way as in the Spark SQL JDBC reader.</p>
      */
-    inline const Aws::String& GetPartitionColumn() const{ return m_partitionColumn; }
+    inline const Aws::String& GetPartitionColumn() const { return m_partitionColumn; }
     inline bool PartitionColumnHasBeenSet() const { return m_partitionColumnHasBeenSet; }
-    inline void SetPartitionColumn(const Aws::String& value) { m_partitionColumnHasBeenSet = true; m_partitionColumn = value; }
-    inline void SetPartitionColumn(Aws::String&& value) { m_partitionColumnHasBeenSet = true; m_partitionColumn = std::move(value); }
-    inline void SetPartitionColumn(const char* value) { m_partitionColumnHasBeenSet = true; m_partitionColumn.assign(value); }
-    inline JDBCConnectorOptions& WithPartitionColumn(const Aws::String& value) { SetPartitionColumn(value); return *this;}
-    inline JDBCConnectorOptions& WithPartitionColumn(Aws::String&& value) { SetPartitionColumn(std::move(value)); return *this;}
-    inline JDBCConnectorOptions& WithPartitionColumn(const char* value) { SetPartitionColumn(value); return *this;}
+    template<typename PartitionColumnT = Aws::String>
+    void SetPartitionColumn(PartitionColumnT&& value) { m_partitionColumnHasBeenSet = true; m_partitionColumn = std::forward<PartitionColumnT>(value); }
+    template<typename PartitionColumnT = Aws::String>
+    JDBCConnectorOptions& WithPartitionColumn(PartitionColumnT&& value) { SetPartitionColumn(std::forward<PartitionColumnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +77,7 @@ namespace Model
      * <p>The minimum value of <code>partitionColumn</code> that is used to decide
      * partition stride.</p>
      */
-    inline long long GetLowerBound() const{ return m_lowerBound; }
+    inline long long GetLowerBound() const { return m_lowerBound; }
     inline bool LowerBoundHasBeenSet() const { return m_lowerBoundHasBeenSet; }
     inline void SetLowerBound(long long value) { m_lowerBoundHasBeenSet = true; m_lowerBound = value; }
     inline JDBCConnectorOptions& WithLowerBound(long long value) { SetLowerBound(value); return *this;}
@@ -92,7 +88,7 @@ namespace Model
      * <p>The maximum value of <code>partitionColumn</code> that is used to decide
      * partition stride.</p>
      */
-    inline long long GetUpperBound() const{ return m_upperBound; }
+    inline long long GetUpperBound() const { return m_upperBound; }
     inline bool UpperBoundHasBeenSet() const { return m_upperBoundHasBeenSet; }
     inline void SetUpperBound(long long value) { m_upperBoundHasBeenSet = true; m_upperBound = value; }
     inline JDBCConnectorOptions& WithUpperBound(long long value) { SetUpperBound(value); return *this;}
@@ -105,7 +101,7 @@ namespace Model
      * generated <code>WHERE</code> clause expressions that are used to split the
      * <code>partitionColumn</code>.</p>
      */
-    inline long long GetNumPartitions() const{ return m_numPartitions; }
+    inline long long GetNumPartitions() const { return m_numPartitions; }
     inline bool NumPartitionsHasBeenSet() const { return m_numPartitionsHasBeenSet; }
     inline void SetNumPartitions(long long value) { m_numPartitionsHasBeenSet = true; m_numPartitions = value; }
     inline JDBCConnectorOptions& WithNumPartitions(long long value) { SetNumPartitions(value); return *this;}
@@ -115,29 +111,26 @@ namespace Model
     /**
      * <p>The name of the job bookmark keys on which to sort.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetJobBookmarkKeys() const{ return m_jobBookmarkKeys; }
+    inline const Aws::Vector<Aws::String>& GetJobBookmarkKeys() const { return m_jobBookmarkKeys; }
     inline bool JobBookmarkKeysHasBeenSet() const { return m_jobBookmarkKeysHasBeenSet; }
-    inline void SetJobBookmarkKeys(const Aws::Vector<Aws::String>& value) { m_jobBookmarkKeysHasBeenSet = true; m_jobBookmarkKeys = value; }
-    inline void SetJobBookmarkKeys(Aws::Vector<Aws::String>&& value) { m_jobBookmarkKeysHasBeenSet = true; m_jobBookmarkKeys = std::move(value); }
-    inline JDBCConnectorOptions& WithJobBookmarkKeys(const Aws::Vector<Aws::String>& value) { SetJobBookmarkKeys(value); return *this;}
-    inline JDBCConnectorOptions& WithJobBookmarkKeys(Aws::Vector<Aws::String>&& value) { SetJobBookmarkKeys(std::move(value)); return *this;}
-    inline JDBCConnectorOptions& AddJobBookmarkKeys(const Aws::String& value) { m_jobBookmarkKeysHasBeenSet = true; m_jobBookmarkKeys.push_back(value); return *this; }
-    inline JDBCConnectorOptions& AddJobBookmarkKeys(Aws::String&& value) { m_jobBookmarkKeysHasBeenSet = true; m_jobBookmarkKeys.push_back(std::move(value)); return *this; }
-    inline JDBCConnectorOptions& AddJobBookmarkKeys(const char* value) { m_jobBookmarkKeysHasBeenSet = true; m_jobBookmarkKeys.push_back(value); return *this; }
+    template<typename JobBookmarkKeysT = Aws::Vector<Aws::String>>
+    void SetJobBookmarkKeys(JobBookmarkKeysT&& value) { m_jobBookmarkKeysHasBeenSet = true; m_jobBookmarkKeys = std::forward<JobBookmarkKeysT>(value); }
+    template<typename JobBookmarkKeysT = Aws::Vector<Aws::String>>
+    JDBCConnectorOptions& WithJobBookmarkKeys(JobBookmarkKeysT&& value) { SetJobBookmarkKeys(std::forward<JobBookmarkKeysT>(value)); return *this;}
+    template<typename JobBookmarkKeysT = Aws::String>
+    JDBCConnectorOptions& AddJobBookmarkKeys(JobBookmarkKeysT&& value) { m_jobBookmarkKeysHasBeenSet = true; m_jobBookmarkKeys.emplace_back(std::forward<JobBookmarkKeysT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies an ascending or descending sort order.</p>
      */
-    inline const Aws::String& GetJobBookmarkKeysSortOrder() const{ return m_jobBookmarkKeysSortOrder; }
+    inline const Aws::String& GetJobBookmarkKeysSortOrder() const { return m_jobBookmarkKeysSortOrder; }
     inline bool JobBookmarkKeysSortOrderHasBeenSet() const { return m_jobBookmarkKeysSortOrderHasBeenSet; }
-    inline void SetJobBookmarkKeysSortOrder(const Aws::String& value) { m_jobBookmarkKeysSortOrderHasBeenSet = true; m_jobBookmarkKeysSortOrder = value; }
-    inline void SetJobBookmarkKeysSortOrder(Aws::String&& value) { m_jobBookmarkKeysSortOrderHasBeenSet = true; m_jobBookmarkKeysSortOrder = std::move(value); }
-    inline void SetJobBookmarkKeysSortOrder(const char* value) { m_jobBookmarkKeysSortOrderHasBeenSet = true; m_jobBookmarkKeysSortOrder.assign(value); }
-    inline JDBCConnectorOptions& WithJobBookmarkKeysSortOrder(const Aws::String& value) { SetJobBookmarkKeysSortOrder(value); return *this;}
-    inline JDBCConnectorOptions& WithJobBookmarkKeysSortOrder(Aws::String&& value) { SetJobBookmarkKeysSortOrder(std::move(value)); return *this;}
-    inline JDBCConnectorOptions& WithJobBookmarkKeysSortOrder(const char* value) { SetJobBookmarkKeysSortOrder(value); return *this;}
+    template<typename JobBookmarkKeysSortOrderT = Aws::String>
+    void SetJobBookmarkKeysSortOrder(JobBookmarkKeysSortOrderT&& value) { m_jobBookmarkKeysSortOrderHasBeenSet = true; m_jobBookmarkKeysSortOrder = std::forward<JobBookmarkKeysSortOrderT>(value); }
+    template<typename JobBookmarkKeysSortOrderT = Aws::String>
+    JDBCConnectorOptions& WithJobBookmarkKeysSortOrder(JobBookmarkKeysSortOrderT&& value) { SetJobBookmarkKeysSortOrder(std::forward<JobBookmarkKeysSortOrderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,16 +145,15 @@ namespace Model
      * documentation for your JDBC driver to understand how the driver performs the
      * conversions.</p>
      */
-    inline const Aws::Map<JDBCDataType, GlueRecordType>& GetDataTypeMapping() const{ return m_dataTypeMapping; }
+    inline const Aws::Map<JDBCDataType, GlueRecordType>& GetDataTypeMapping() const { return m_dataTypeMapping; }
     inline bool DataTypeMappingHasBeenSet() const { return m_dataTypeMappingHasBeenSet; }
-    inline void SetDataTypeMapping(const Aws::Map<JDBCDataType, GlueRecordType>& value) { m_dataTypeMappingHasBeenSet = true; m_dataTypeMapping = value; }
-    inline void SetDataTypeMapping(Aws::Map<JDBCDataType, GlueRecordType>&& value) { m_dataTypeMappingHasBeenSet = true; m_dataTypeMapping = std::move(value); }
-    inline JDBCConnectorOptions& WithDataTypeMapping(const Aws::Map<JDBCDataType, GlueRecordType>& value) { SetDataTypeMapping(value); return *this;}
-    inline JDBCConnectorOptions& WithDataTypeMapping(Aws::Map<JDBCDataType, GlueRecordType>&& value) { SetDataTypeMapping(std::move(value)); return *this;}
-    inline JDBCConnectorOptions& AddDataTypeMapping(const JDBCDataType& key, const GlueRecordType& value) { m_dataTypeMappingHasBeenSet = true; m_dataTypeMapping.emplace(key, value); return *this; }
-    inline JDBCConnectorOptions& AddDataTypeMapping(JDBCDataType&& key, const GlueRecordType& value) { m_dataTypeMappingHasBeenSet = true; m_dataTypeMapping.emplace(std::move(key), value); return *this; }
-    inline JDBCConnectorOptions& AddDataTypeMapping(const JDBCDataType& key, GlueRecordType&& value) { m_dataTypeMappingHasBeenSet = true; m_dataTypeMapping.emplace(key, std::move(value)); return *this; }
-    inline JDBCConnectorOptions& AddDataTypeMapping(JDBCDataType&& key, GlueRecordType&& value) { m_dataTypeMappingHasBeenSet = true; m_dataTypeMapping.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename DataTypeMappingT = Aws::Map<JDBCDataType, GlueRecordType>>
+    void SetDataTypeMapping(DataTypeMappingT&& value) { m_dataTypeMappingHasBeenSet = true; m_dataTypeMapping = std::forward<DataTypeMappingT>(value); }
+    template<typename DataTypeMappingT = Aws::Map<JDBCDataType, GlueRecordType>>
+    JDBCConnectorOptions& WithDataTypeMapping(DataTypeMappingT&& value) { SetDataTypeMapping(std::forward<DataTypeMappingT>(value)); return *this;}
+    inline JDBCConnectorOptions& AddDataTypeMapping(JDBCDataType key, GlueRecordType value) {
+      m_dataTypeMappingHasBeenSet = true; m_dataTypeMapping.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
@@ -171,13 +163,13 @@ namespace Model
     Aws::String m_partitionColumn;
     bool m_partitionColumnHasBeenSet = false;
 
-    long long m_lowerBound;
+    long long m_lowerBound{0};
     bool m_lowerBoundHasBeenSet = false;
 
-    long long m_upperBound;
+    long long m_upperBound{0};
     bool m_upperBoundHasBeenSet = false;
 
-    long long m_numPartitions;
+    long long m_numPartitions{0};
     bool m_numPartitionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_jobBookmarkKeys;

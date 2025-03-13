@@ -33,7 +33,7 @@ namespace Model
   class TypedLinkAttributeRange
   {
   public:
-    AWS_CLOUDDIRECTORY_API TypedLinkAttributeRange();
+    AWS_CLOUDDIRECTORY_API TypedLinkAttributeRange() = default;
     AWS_CLOUDDIRECTORY_API TypedLinkAttributeRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API TypedLinkAttributeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The unique name of the typed link attribute.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline TypedLinkAttributeRange& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline TypedLinkAttributeRange& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline TypedLinkAttributeRange& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    TypedLinkAttributeRange& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The range of attribute values that are being selected.</p>
      */
-    inline const TypedAttributeValueRange& GetRange() const{ return m_range; }
+    inline const TypedAttributeValueRange& GetRange() const { return m_range; }
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-    inline void SetRange(const TypedAttributeValueRange& value) { m_rangeHasBeenSet = true; m_range = value; }
-    inline void SetRange(TypedAttributeValueRange&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
-    inline TypedLinkAttributeRange& WithRange(const TypedAttributeValueRange& value) { SetRange(value); return *this;}
-    inline TypedLinkAttributeRange& WithRange(TypedAttributeValueRange&& value) { SetRange(std::move(value)); return *this;}
+    template<typename RangeT = TypedAttributeValueRange>
+    void SetRange(RangeT&& value) { m_rangeHasBeenSet = true; m_range = std::forward<RangeT>(value); }
+    template<typename RangeT = TypedAttributeValueRange>
+    TypedLinkAttributeRange& WithRange(RangeT&& value) { SetRange(std::forward<RangeT>(value)); return *this;}
     ///@}
   private:
 

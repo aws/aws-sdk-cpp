@@ -12,10 +12,6 @@ using namespace Aws::ECRPublic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAuthorizationTokenRequest::GetAuthorizationTokenRequest()
-{
-}
-
 Aws::String GetAuthorizationTokenRequest::SerializePayload() const
 {
   return "{}";

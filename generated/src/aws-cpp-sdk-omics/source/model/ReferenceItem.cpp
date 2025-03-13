@@ -18,13 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ReferenceItem::ReferenceItem() : 
-    m_referenceArnHasBeenSet(false)
-{
-}
-
 ReferenceItem::ReferenceItem(JsonView jsonValue)
-  : ReferenceItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReferenceItem& ReferenceItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("referenceArn"))
   {
     m_referenceArn = jsonValue.GetString("referenceArn");
-
     m_referenceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

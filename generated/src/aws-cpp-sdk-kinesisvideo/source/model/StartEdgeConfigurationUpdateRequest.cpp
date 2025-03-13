@@ -12,13 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartEdgeConfigurationUpdateRequest::StartEdgeConfigurationUpdateRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_edgeConfigHasBeenSet(false)
-{
-}
-
 Aws::String StartEdgeConfigurationUpdateRequest::SerializePayload() const
 {
   JsonValue payload;

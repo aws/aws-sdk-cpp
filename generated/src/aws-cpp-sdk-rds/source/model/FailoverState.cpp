@@ -20,18 +20,7 @@ namespace RDS
 namespace Model
 {
 
-FailoverState::FailoverState() : 
-    m_status(FailoverStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_fromDbClusterArnHasBeenSet(false),
-    m_toDbClusterArnHasBeenSet(false),
-    m_isDataLossAllowed(false),
-    m_isDataLossAllowedHasBeenSet(false)
-{
-}
-
 FailoverState::FailoverState(const XmlNode& xmlNode)
-  : FailoverState()
 {
   *this = xmlNode;
 }
@@ -45,26 +34,30 @@ FailoverState& FailoverState::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = FailoverStatusMapper::GetFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = FailoverStatusMapper::GetFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode fromDbClusterArnNode = resultNode.FirstChild("FromDbClusterArn");
     if(!fromDbClusterArnNode.IsNull())
     {
       m_fromDbClusterArn = Aws::Utils::Xml::DecodeEscapedXmlText(fromDbClusterArnNode.GetText());
       m_fromDbClusterArnHasBeenSet = true;
+       m_fromDbClusterArnHasBeenSet = true;
     }
     XmlNode toDbClusterArnNode = resultNode.FirstChild("ToDbClusterArn");
     if(!toDbClusterArnNode.IsNull())
     {
       m_toDbClusterArn = Aws::Utils::Xml::DecodeEscapedXmlText(toDbClusterArnNode.GetText());
       m_toDbClusterArnHasBeenSet = true;
+       m_toDbClusterArnHasBeenSet = true;
     }
     XmlNode isDataLossAllowedNode = resultNode.FirstChild("IsDataLossAllowed");
     if(!isDataLossAllowedNode.IsNull())
     {
       m_isDataLossAllowed = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDataLossAllowedNode.GetText()).c_str()).c_str());
       m_isDataLossAllowedHasBeenSet = true;
+       m_isDataLossAllowedHasBeenSet = true;
     }
   }
 

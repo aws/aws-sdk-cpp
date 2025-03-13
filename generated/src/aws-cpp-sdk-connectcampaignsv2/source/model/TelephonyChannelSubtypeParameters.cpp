@@ -18,16 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-TelephonyChannelSubtypeParameters::TelephonyChannelSubtypeParameters() : 
-    m_destinationPhoneNumberHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_connectSourcePhoneNumberHasBeenSet(false),
-    m_answerMachineDetectionConfigHasBeenSet(false)
-{
-}
-
 TelephonyChannelSubtypeParameters::TelephonyChannelSubtypeParameters(JsonView jsonValue)
-  : TelephonyChannelSubtypeParameters()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ TelephonyChannelSubtypeParameters& TelephonyChannelSubtypeParameters::operator =
   if(jsonValue.ValueExists("destinationPhoneNumber"))
   {
     m_destinationPhoneNumber = jsonValue.GetString("destinationPhoneNumber");
-
     m_destinationPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -50,21 +39,16 @@ TelephonyChannelSubtypeParameters& TelephonyChannelSubtypeParameters::operator =
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectSourcePhoneNumber"))
   {
     m_connectSourcePhoneNumber = jsonValue.GetString("connectSourcePhoneNumber");
-
     m_connectSourcePhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("answerMachineDetectionConfig"))
   {
     m_answerMachineDetectionConfig = jsonValue.GetObject("answerMachineDetectionConfig");
-
     m_answerMachineDetectionConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

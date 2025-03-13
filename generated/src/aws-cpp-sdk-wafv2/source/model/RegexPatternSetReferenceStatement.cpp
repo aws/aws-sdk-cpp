@@ -18,15 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RegexPatternSetReferenceStatement::RegexPatternSetReferenceStatement() : 
-    m_aRNHasBeenSet(false),
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false)
-{
-}
-
 RegexPatternSetReferenceStatement::RegexPatternSetReferenceStatement(JsonView jsonValue)
-  : RegexPatternSetReferenceStatement()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RegexPatternSetReferenceStatement& RegexPatternSetReferenceStatement::operator =
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldToMatch"))
   {
     m_fieldToMatch = jsonValue.GetObject("FieldToMatch");
-
     m_fieldToMatchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextTransformations"))
   {
     Aws::Utils::Array<JsonView> textTransformationsJsonList = jsonValue.GetArray("TextTransformations");
@@ -56,7 +44,6 @@ RegexPatternSetReferenceStatement& RegexPatternSetReferenceStatement::operator =
     }
     m_textTransformationsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PromptAgentResource::PromptAgentResource() : 
-    m_agentIdentifierHasBeenSet(false)
-{
-}
-
 PromptAgentResource::PromptAgentResource(JsonView jsonValue)
-  : PromptAgentResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PromptAgentResource& PromptAgentResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agentIdentifier"))
   {
     m_agentIdentifier = jsonValue.GetString("agentIdentifier");
-
     m_agentIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

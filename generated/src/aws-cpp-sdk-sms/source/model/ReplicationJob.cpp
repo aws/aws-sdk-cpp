@@ -18,37 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ReplicationJob::ReplicationJob() : 
-    m_replicationJobIdHasBeenSet(false),
-    m_serverIdHasBeenSet(false),
-    m_serverType(ServerType::NOT_SET),
-    m_serverTypeHasBeenSet(false),
-    m_vmServerHasBeenSet(false),
-    m_seedReplicationTimeHasBeenSet(false),
-    m_frequency(0),
-    m_frequencyHasBeenSet(false),
-    m_runOnce(false),
-    m_runOnceHasBeenSet(false),
-    m_nextReplicationRunStartTimeHasBeenSet(false),
-    m_licenseType(LicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_latestAmiIdHasBeenSet(false),
-    m_state(ReplicationJobState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_numberOfRecentAmisToKeep(0),
-    m_numberOfRecentAmisToKeepHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_replicationRunListHasBeenSet(false)
-{
-}
-
 ReplicationJob::ReplicationJob(JsonView jsonValue)
-  : ReplicationJob()
 {
   *this = jsonValue;
 }
@@ -58,122 +28,88 @@ ReplicationJob& ReplicationJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("replicationJobId"))
   {
     m_replicationJobId = jsonValue.GetString("replicationJobId");
-
     m_replicationJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverId"))
   {
     m_serverId = jsonValue.GetString("serverId");
-
     m_serverIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverType"))
   {
     m_serverType = ServerTypeMapper::GetServerTypeForName(jsonValue.GetString("serverType"));
-
     m_serverTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vmServer"))
   {
     m_vmServer = jsonValue.GetObject("vmServer");
-
     m_vmServerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("seedReplicationTime"))
   {
     m_seedReplicationTime = jsonValue.GetDouble("seedReplicationTime");
-
     m_seedReplicationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frequency"))
   {
     m_frequency = jsonValue.GetInteger("frequency");
-
     m_frequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runOnce"))
   {
     m_runOnce = jsonValue.GetBool("runOnce");
-
     m_runOnceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextReplicationRunStartTime"))
   {
     m_nextReplicationRunStartTime = jsonValue.GetDouble("nextReplicationRunStartTime");
-
     m_nextReplicationRunStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseType"))
   {
     m_licenseType = LicenseTypeMapper::GetLicenseTypeForName(jsonValue.GetString("licenseType"));
-
     m_licenseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleName"))
   {
     m_roleName = jsonValue.GetString("roleName");
-
     m_roleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestAmiId"))
   {
     m_latestAmiId = jsonValue.GetString("latestAmiId");
-
     m_latestAmiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ReplicationJobStateMapper::GetReplicationJobStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfRecentAmisToKeep"))
   {
     m_numberOfRecentAmisToKeep = jsonValue.GetInteger("numberOfRecentAmisToKeep");
-
     m_numberOfRecentAmisToKeepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encrypted"))
   {
     m_encrypted = jsonValue.GetBool("encrypted");
-
     m_encryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationRunList"))
   {
     Aws::Utils::Array<JsonView> replicationRunListJsonList = jsonValue.GetArray("replicationRunList");
@@ -183,7 +119,6 @@ ReplicationJob& ReplicationJob::operator =(JsonView jsonValue)
     }
     m_replicationRunListHasBeenSet = true;
   }
-
   return *this;
 }
 

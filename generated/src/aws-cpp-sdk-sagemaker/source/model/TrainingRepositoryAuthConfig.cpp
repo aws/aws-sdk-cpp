@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrainingRepositoryAuthConfig::TrainingRepositoryAuthConfig() : 
-    m_trainingRepositoryCredentialsProviderArnHasBeenSet(false)
-{
-}
-
 TrainingRepositoryAuthConfig::TrainingRepositoryAuthConfig(JsonView jsonValue)
-  : TrainingRepositoryAuthConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TrainingRepositoryAuthConfig& TrainingRepositoryAuthConfig::operator =(JsonView 
   if(jsonValue.ValueExists("TrainingRepositoryCredentialsProviderArn"))
   {
     m_trainingRepositoryCredentialsProviderArn = jsonValue.GetString("TrainingRepositoryCredentialsProviderArn");
-
     m_trainingRepositoryCredentialsProviderArnHasBeenSet = true;
   }
-
   return *this;
 }
 

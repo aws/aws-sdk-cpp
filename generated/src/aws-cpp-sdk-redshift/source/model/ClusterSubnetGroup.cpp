@@ -20,19 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterSubnetGroup::ClusterSubnetGroup() : 
-    m_clusterSubnetGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetGroupStatusHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_supportedClusterIpAddressTypesHasBeenSet(false)
-{
-}
-
 ClusterSubnetGroup::ClusterSubnetGroup(const XmlNode& xmlNode)
-  : ClusterSubnetGroup()
 {
   *this = xmlNode;
 }
@@ -48,60 +36,67 @@ ClusterSubnetGroup& ClusterSubnetGroup::operator =(const XmlNode& xmlNode)
     {
       m_clusterSubnetGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(clusterSubnetGroupNameNode.GetText());
       m_clusterSubnetGroupNameHasBeenSet = true;
+       m_clusterSubnetGroupNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode subnetGroupStatusNode = resultNode.FirstChild("SubnetGroupStatus");
     if(!subnetGroupStatusNode.IsNull())
     {
       m_subnetGroupStatus = Aws::Utils::Xml::DecodeEscapedXmlText(subnetGroupStatusNode.GetText());
       m_subnetGroupStatusHasBeenSet = true;
+       m_subnetGroupStatusHasBeenSet = true;
     }
     XmlNode subnetsNode = resultNode.FirstChild("Subnets");
     if(!subnetsNode.IsNull())
     {
       XmlNode subnetsMember = subnetsNode.FirstChild("Subnet");
+      m_subnetsHasBeenSet = !subnetsMember.IsNull();
       while(!subnetsMember.IsNull())
       {
         m_subnets.push_back(subnetsMember);
         subnetsMember = subnetsMember.NextNode("Subnet");
       }
 
-      m_subnetsHasBeenSet = true;
+       m_subnetsHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("Tag");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode supportedClusterIpAddressTypesNode = resultNode.FirstChild("SupportedClusterIpAddressTypes");
     if(!supportedClusterIpAddressTypesNode.IsNull())
     {
       XmlNode supportedClusterIpAddressTypesMember = supportedClusterIpAddressTypesNode.FirstChild("item");
+      m_supportedClusterIpAddressTypesHasBeenSet = !supportedClusterIpAddressTypesMember.IsNull();
       while(!supportedClusterIpAddressTypesMember.IsNull())
       {
         m_supportedClusterIpAddressTypes.push_back(supportedClusterIpAddressTypesMember.GetText());
         supportedClusterIpAddressTypesMember = supportedClusterIpAddressTypesMember.NextNode("item");
       }
 
-      m_supportedClusterIpAddressTypesHasBeenSet = true;
+       m_supportedClusterIpAddressTypesHasBeenSet = true;
     }
   }
 

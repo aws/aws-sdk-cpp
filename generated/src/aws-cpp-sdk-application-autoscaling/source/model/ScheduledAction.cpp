@@ -18,25 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-ScheduledAction::ScheduledAction() : 
-    m_scheduledActionNameHasBeenSet(false),
-    m_scheduledActionARNHasBeenSet(false),
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_scalableTargetActionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 ScheduledAction::ScheduledAction(JsonView jsonValue)
-  : ScheduledAction()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ ScheduledAction& ScheduledAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ScheduledActionName"))
   {
     m_scheduledActionName = jsonValue.GetString("ScheduledActionName");
-
     m_scheduledActionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduledActionARN"))
   {
     m_scheduledActionARN = jsonValue.GetString("ScheduledActionARN");
-
     m_scheduledActionARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceNamespace"))
   {
     m_serviceNamespace = ServiceNamespaceMapper::GetServiceNamespaceForName(jsonValue.GetString("ServiceNamespace"));
-
     m_serviceNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = jsonValue.GetString("Schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timezone"))
   {
     m_timezone = jsonValue.GetString("Timezone");
-
     m_timezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalableDimension"))
   {
     m_scalableDimension = ScalableDimensionMapper::GetScalableDimensionForName(jsonValue.GetString("ScalableDimension"));
-
     m_scalableDimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalableTargetAction"))
   {
     m_scalableTargetAction = jsonValue.GetObject("ScalableTargetAction");
-
     m_scalableTargetActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

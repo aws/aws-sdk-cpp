@@ -33,7 +33,7 @@ namespace Model
   class RouteSummary
   {
   public:
-    AWS_GEOROUTES_API RouteSummary();
+    AWS_GEOROUTES_API RouteSummary() = default;
     AWS_GEOROUTES_API RouteSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>Distance of the route.</p>
      */
-    inline long long GetDistance() const{ return m_distance; }
+    inline long long GetDistance() const { return m_distance; }
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
     inline void SetDistance(long long value) { m_distanceHasBeenSet = true; m_distance = value; }
     inline RouteSummary& WithDistance(long long value) { SetDistance(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>Duration of the route.</p> <p> <b>Unit</b>: <code>seconds</code> </p>
      */
-    inline long long GetDuration() const{ return m_duration; }
+    inline long long GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
     inline RouteSummary& WithDuration(long long value) { SetDuration(value); return *this;}
@@ -63,19 +63,19 @@ namespace Model
     /**
      * <p>Toll summary for the complete route.</p>
      */
-    inline const RouteTollSummary& GetTolls() const{ return m_tolls; }
+    inline const RouteTollSummary& GetTolls() const { return m_tolls; }
     inline bool TollsHasBeenSet() const { return m_tollsHasBeenSet; }
-    inline void SetTolls(const RouteTollSummary& value) { m_tollsHasBeenSet = true; m_tolls = value; }
-    inline void SetTolls(RouteTollSummary&& value) { m_tollsHasBeenSet = true; m_tolls = std::move(value); }
-    inline RouteSummary& WithTolls(const RouteTollSummary& value) { SetTolls(value); return *this;}
-    inline RouteSummary& WithTolls(RouteTollSummary&& value) { SetTolls(std::move(value)); return *this;}
+    template<typename TollsT = RouteTollSummary>
+    void SetTolls(TollsT&& value) { m_tollsHasBeenSet = true; m_tolls = std::forward<TollsT>(value); }
+    template<typename TollsT = RouteTollSummary>
+    RouteSummary& WithTolls(TollsT&& value) { SetTolls(std::forward<TollsT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_distance;
+    long long m_distance{0};
     bool m_distanceHasBeenSet = false;
 
-    long long m_duration;
+    long long m_duration{0};
     bool m_durationHasBeenSet = false;
 
     RouteTollSummary m_tolls;

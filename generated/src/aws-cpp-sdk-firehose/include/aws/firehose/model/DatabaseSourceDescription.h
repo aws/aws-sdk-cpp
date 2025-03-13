@@ -42,7 +42,7 @@ namespace Model
   class DatabaseSourceDescription
   {
   public:
-    AWS_FIREHOSE_API DatabaseSourceDescription();
+    AWS_FIREHOSE_API DatabaseSourceDescription() = default;
     AWS_FIREHOSE_API DatabaseSourceDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API DatabaseSourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * <ul> <li> <p>MySQL</p> </li> <li> <p>PostgreSQL</p> </li> </ul> <p>Amazon Data
      * Firehose is in preview release and is subject to change.</p>
      */
-    inline const DatabaseType& GetType() const{ return m_type; }
+    inline DatabaseType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DatabaseType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DatabaseType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DatabaseSourceDescription& WithType(const DatabaseType& value) { SetType(value); return *this;}
-    inline DatabaseSourceDescription& WithType(DatabaseType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DatabaseType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DatabaseSourceDescription& WithType(DatabaseType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * <p> The endpoint of the database server. </p> <p>Amazon Data Firehose is in
      * preview release and is subject to change.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline DatabaseSourceDescription& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline DatabaseSourceDescription& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline DatabaseSourceDescription& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    DatabaseSourceDescription& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +80,7 @@ namespace Model
      * database type</p> </li> </ul> <p>Amazon Data Firehose is in preview release and
      * is subject to change.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline DatabaseSourceDescription& WithPort(int value) { SetPort(value); return *this;}
@@ -96,12 +92,10 @@ namespace Model
      * endpoint. </p> <p>Amazon Data Firehose is in preview release and is subject to
      * change.</p>
      */
-    inline const SSLMode& GetSSLMode() const{ return m_sSLMode; }
+    inline SSLMode GetSSLMode() const { return m_sSLMode; }
     inline bool SSLModeHasBeenSet() const { return m_sSLModeHasBeenSet; }
-    inline void SetSSLMode(const SSLMode& value) { m_sSLModeHasBeenSet = true; m_sSLMode = value; }
-    inline void SetSSLMode(SSLMode&& value) { m_sSLModeHasBeenSet = true; m_sSLMode = std::move(value); }
-    inline DatabaseSourceDescription& WithSSLMode(const SSLMode& value) { SetSSLMode(value); return *this;}
-    inline DatabaseSourceDescription& WithSSLMode(SSLMode&& value) { SetSSLMode(std::move(value)); return *this;}
+    inline void SetSSLMode(SSLMode value) { m_sSLModeHasBeenSet = true; m_sSLMode = value; }
+    inline DatabaseSourceDescription& WithSSLMode(SSLMode value) { SetSSLMode(value); return *this;}
     ///@}
 
     ///@{
@@ -110,12 +104,12 @@ namespace Model
      * read from. </p> <p>Amazon Data Firehose is in preview release and is subject to
      * change.</p>
      */
-    inline const DatabaseList& GetDatabases() const{ return m_databases; }
+    inline const DatabaseList& GetDatabases() const { return m_databases; }
     inline bool DatabasesHasBeenSet() const { return m_databasesHasBeenSet; }
-    inline void SetDatabases(const DatabaseList& value) { m_databasesHasBeenSet = true; m_databases = value; }
-    inline void SetDatabases(DatabaseList&& value) { m_databasesHasBeenSet = true; m_databases = std::move(value); }
-    inline DatabaseSourceDescription& WithDatabases(const DatabaseList& value) { SetDatabases(value); return *this;}
-    inline DatabaseSourceDescription& WithDatabases(DatabaseList&& value) { SetDatabases(std::move(value)); return *this;}
+    template<typename DatabasesT = DatabaseList>
+    void SetDatabases(DatabasesT&& value) { m_databasesHasBeenSet = true; m_databases = std::forward<DatabasesT>(value); }
+    template<typename DatabasesT = DatabaseList>
+    DatabaseSourceDescription& WithDatabases(DatabasesT&& value) { SetDatabases(std::forward<DatabasesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +118,12 @@ namespace Model
      * from. </p> <p>Amazon Data Firehose is in preview release and is subject to
      * change.</p>
      */
-    inline const DatabaseTableList& GetTables() const{ return m_tables; }
+    inline const DatabaseTableList& GetTables() const { return m_tables; }
     inline bool TablesHasBeenSet() const { return m_tablesHasBeenSet; }
-    inline void SetTables(const DatabaseTableList& value) { m_tablesHasBeenSet = true; m_tables = value; }
-    inline void SetTables(DatabaseTableList&& value) { m_tablesHasBeenSet = true; m_tables = std::move(value); }
-    inline DatabaseSourceDescription& WithTables(const DatabaseTableList& value) { SetTables(value); return *this;}
-    inline DatabaseSourceDescription& WithTables(DatabaseTableList&& value) { SetTables(std::move(value)); return *this;}
+    template<typename TablesT = DatabaseTableList>
+    void SetTables(TablesT&& value) { m_tablesHasBeenSet = true; m_tables = std::forward<TablesT>(value); }
+    template<typename TablesT = DatabaseTableList>
+    DatabaseSourceDescription& WithTables(TablesT&& value) { SetTables(std::forward<TablesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,12 +132,12 @@ namespace Model
      * from. </p> <p>Amazon Data Firehose is in preview release and is subject to
      * change.</p>
      */
-    inline const DatabaseColumnList& GetColumns() const{ return m_columns; }
+    inline const DatabaseColumnList& GetColumns() const { return m_columns; }
     inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
-    inline void SetColumns(const DatabaseColumnList& value) { m_columnsHasBeenSet = true; m_columns = value; }
-    inline void SetColumns(DatabaseColumnList&& value) { m_columnsHasBeenSet = true; m_columns = std::move(value); }
-    inline DatabaseSourceDescription& WithColumns(const DatabaseColumnList& value) { SetColumns(value); return *this;}
-    inline DatabaseSourceDescription& WithColumns(DatabaseColumnList&& value) { SetColumns(std::move(value)); return *this;}
+    template<typename ColumnsT = DatabaseColumnList>
+    void SetColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns = std::forward<ColumnsT>(value); }
+    template<typename ColumnsT = DatabaseColumnList>
+    DatabaseSourceDescription& WithColumns(ColumnsT&& value) { SetColumns(std::forward<ColumnsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,15 +146,14 @@ namespace Model
      * taking snapshot if the tables don’t have primary keys configured. </p> <p>Amazon
      * Data Firehose is in preview release and is subject to change.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSurrogateKeys() const{ return m_surrogateKeys; }
+    inline const Aws::Vector<Aws::String>& GetSurrogateKeys() const { return m_surrogateKeys; }
     inline bool SurrogateKeysHasBeenSet() const { return m_surrogateKeysHasBeenSet; }
-    inline void SetSurrogateKeys(const Aws::Vector<Aws::String>& value) { m_surrogateKeysHasBeenSet = true; m_surrogateKeys = value; }
-    inline void SetSurrogateKeys(Aws::Vector<Aws::String>&& value) { m_surrogateKeysHasBeenSet = true; m_surrogateKeys = std::move(value); }
-    inline DatabaseSourceDescription& WithSurrogateKeys(const Aws::Vector<Aws::String>& value) { SetSurrogateKeys(value); return *this;}
-    inline DatabaseSourceDescription& WithSurrogateKeys(Aws::Vector<Aws::String>&& value) { SetSurrogateKeys(std::move(value)); return *this;}
-    inline DatabaseSourceDescription& AddSurrogateKeys(const Aws::String& value) { m_surrogateKeysHasBeenSet = true; m_surrogateKeys.push_back(value); return *this; }
-    inline DatabaseSourceDescription& AddSurrogateKeys(Aws::String&& value) { m_surrogateKeysHasBeenSet = true; m_surrogateKeys.push_back(std::move(value)); return *this; }
-    inline DatabaseSourceDescription& AddSurrogateKeys(const char* value) { m_surrogateKeysHasBeenSet = true; m_surrogateKeys.push_back(value); return *this; }
+    template<typename SurrogateKeysT = Aws::Vector<Aws::String>>
+    void SetSurrogateKeys(SurrogateKeysT&& value) { m_surrogateKeysHasBeenSet = true; m_surrogateKeys = std::forward<SurrogateKeysT>(value); }
+    template<typename SurrogateKeysT = Aws::Vector<Aws::String>>
+    DatabaseSourceDescription& WithSurrogateKeys(SurrogateKeysT&& value) { SetSurrogateKeys(std::forward<SurrogateKeysT>(value)); return *this;}
+    template<typename SurrogateKeysT = Aws::String>
+    DatabaseSourceDescription& AddSurrogateKeys(SurrogateKeysT&& value) { m_surrogateKeysHasBeenSet = true; m_surrogateKeys.emplace_back(std::forward<SurrogateKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -169,14 +162,12 @@ namespace Model
      * Firehose uses to track snapshot progress. </p> <p>Amazon Data Firehose is in
      * preview release and is subject to change.</p>
      */
-    inline const Aws::String& GetSnapshotWatermarkTable() const{ return m_snapshotWatermarkTable; }
+    inline const Aws::String& GetSnapshotWatermarkTable() const { return m_snapshotWatermarkTable; }
     inline bool SnapshotWatermarkTableHasBeenSet() const { return m_snapshotWatermarkTableHasBeenSet; }
-    inline void SetSnapshotWatermarkTable(const Aws::String& value) { m_snapshotWatermarkTableHasBeenSet = true; m_snapshotWatermarkTable = value; }
-    inline void SetSnapshotWatermarkTable(Aws::String&& value) { m_snapshotWatermarkTableHasBeenSet = true; m_snapshotWatermarkTable = std::move(value); }
-    inline void SetSnapshotWatermarkTable(const char* value) { m_snapshotWatermarkTableHasBeenSet = true; m_snapshotWatermarkTable.assign(value); }
-    inline DatabaseSourceDescription& WithSnapshotWatermarkTable(const Aws::String& value) { SetSnapshotWatermarkTable(value); return *this;}
-    inline DatabaseSourceDescription& WithSnapshotWatermarkTable(Aws::String&& value) { SetSnapshotWatermarkTable(std::move(value)); return *this;}
-    inline DatabaseSourceDescription& WithSnapshotWatermarkTable(const char* value) { SetSnapshotWatermarkTable(value); return *this;}
+    template<typename SnapshotWatermarkTableT = Aws::String>
+    void SetSnapshotWatermarkTable(SnapshotWatermarkTableT&& value) { m_snapshotWatermarkTableHasBeenSet = true; m_snapshotWatermarkTable = std::forward<SnapshotWatermarkTableT>(value); }
+    template<typename SnapshotWatermarkTableT = Aws::String>
+    DatabaseSourceDescription& WithSnapshotWatermarkTable(SnapshotWatermarkTableT&& value) { SetSnapshotWatermarkTable(std::forward<SnapshotWatermarkTableT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -185,14 +176,14 @@ namespace Model
      * database endpoint that Firehose reads. </p> <p>Amazon Data Firehose is in
      * preview release and is subject to change.</p>
      */
-    inline const Aws::Vector<DatabaseSnapshotInfo>& GetSnapshotInfo() const{ return m_snapshotInfo; }
+    inline const Aws::Vector<DatabaseSnapshotInfo>& GetSnapshotInfo() const { return m_snapshotInfo; }
     inline bool SnapshotInfoHasBeenSet() const { return m_snapshotInfoHasBeenSet; }
-    inline void SetSnapshotInfo(const Aws::Vector<DatabaseSnapshotInfo>& value) { m_snapshotInfoHasBeenSet = true; m_snapshotInfo = value; }
-    inline void SetSnapshotInfo(Aws::Vector<DatabaseSnapshotInfo>&& value) { m_snapshotInfoHasBeenSet = true; m_snapshotInfo = std::move(value); }
-    inline DatabaseSourceDescription& WithSnapshotInfo(const Aws::Vector<DatabaseSnapshotInfo>& value) { SetSnapshotInfo(value); return *this;}
-    inline DatabaseSourceDescription& WithSnapshotInfo(Aws::Vector<DatabaseSnapshotInfo>&& value) { SetSnapshotInfo(std::move(value)); return *this;}
-    inline DatabaseSourceDescription& AddSnapshotInfo(const DatabaseSnapshotInfo& value) { m_snapshotInfoHasBeenSet = true; m_snapshotInfo.push_back(value); return *this; }
-    inline DatabaseSourceDescription& AddSnapshotInfo(DatabaseSnapshotInfo&& value) { m_snapshotInfoHasBeenSet = true; m_snapshotInfo.push_back(std::move(value)); return *this; }
+    template<typename SnapshotInfoT = Aws::Vector<DatabaseSnapshotInfo>>
+    void SetSnapshotInfo(SnapshotInfoT&& value) { m_snapshotInfoHasBeenSet = true; m_snapshotInfo = std::forward<SnapshotInfoT>(value); }
+    template<typename SnapshotInfoT = Aws::Vector<DatabaseSnapshotInfo>>
+    DatabaseSourceDescription& WithSnapshotInfo(SnapshotInfoT&& value) { SetSnapshotInfo(std::forward<SnapshotInfoT>(value)); return *this;}
+    template<typename SnapshotInfoT = DatabaseSnapshotInfo>
+    DatabaseSourceDescription& AddSnapshotInfo(SnapshotInfoT&& value) { m_snapshotInfoHasBeenSet = true; m_snapshotInfo.emplace_back(std::forward<SnapshotInfoT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -201,12 +192,12 @@ namespace Model
      * connect to source database endpoint. </p> <p>Amazon Data Firehose is in preview
      * release and is subject to change.</p>
      */
-    inline const DatabaseSourceAuthenticationConfiguration& GetDatabaseSourceAuthenticationConfiguration() const{ return m_databaseSourceAuthenticationConfiguration; }
+    inline const DatabaseSourceAuthenticationConfiguration& GetDatabaseSourceAuthenticationConfiguration() const { return m_databaseSourceAuthenticationConfiguration; }
     inline bool DatabaseSourceAuthenticationConfigurationHasBeenSet() const { return m_databaseSourceAuthenticationConfigurationHasBeenSet; }
-    inline void SetDatabaseSourceAuthenticationConfiguration(const DatabaseSourceAuthenticationConfiguration& value) { m_databaseSourceAuthenticationConfigurationHasBeenSet = true; m_databaseSourceAuthenticationConfiguration = value; }
-    inline void SetDatabaseSourceAuthenticationConfiguration(DatabaseSourceAuthenticationConfiguration&& value) { m_databaseSourceAuthenticationConfigurationHasBeenSet = true; m_databaseSourceAuthenticationConfiguration = std::move(value); }
-    inline DatabaseSourceDescription& WithDatabaseSourceAuthenticationConfiguration(const DatabaseSourceAuthenticationConfiguration& value) { SetDatabaseSourceAuthenticationConfiguration(value); return *this;}
-    inline DatabaseSourceDescription& WithDatabaseSourceAuthenticationConfiguration(DatabaseSourceAuthenticationConfiguration&& value) { SetDatabaseSourceAuthenticationConfiguration(std::move(value)); return *this;}
+    template<typename DatabaseSourceAuthenticationConfigurationT = DatabaseSourceAuthenticationConfiguration>
+    void SetDatabaseSourceAuthenticationConfiguration(DatabaseSourceAuthenticationConfigurationT&& value) { m_databaseSourceAuthenticationConfigurationHasBeenSet = true; m_databaseSourceAuthenticationConfiguration = std::forward<DatabaseSourceAuthenticationConfigurationT>(value); }
+    template<typename DatabaseSourceAuthenticationConfigurationT = DatabaseSourceAuthenticationConfiguration>
+    DatabaseSourceDescription& WithDatabaseSourceAuthenticationConfiguration(DatabaseSourceAuthenticationConfigurationT&& value) { SetDatabaseSourceAuthenticationConfiguration(std::forward<DatabaseSourceAuthenticationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,25 +206,25 @@ namespace Model
      * PrivateLink to the database. </p> <p>Amazon Data Firehose is in preview release
      * and is subject to change.</p>
      */
-    inline const DatabaseSourceVPCConfiguration& GetDatabaseSourceVPCConfiguration() const{ return m_databaseSourceVPCConfiguration; }
+    inline const DatabaseSourceVPCConfiguration& GetDatabaseSourceVPCConfiguration() const { return m_databaseSourceVPCConfiguration; }
     inline bool DatabaseSourceVPCConfigurationHasBeenSet() const { return m_databaseSourceVPCConfigurationHasBeenSet; }
-    inline void SetDatabaseSourceVPCConfiguration(const DatabaseSourceVPCConfiguration& value) { m_databaseSourceVPCConfigurationHasBeenSet = true; m_databaseSourceVPCConfiguration = value; }
-    inline void SetDatabaseSourceVPCConfiguration(DatabaseSourceVPCConfiguration&& value) { m_databaseSourceVPCConfigurationHasBeenSet = true; m_databaseSourceVPCConfiguration = std::move(value); }
-    inline DatabaseSourceDescription& WithDatabaseSourceVPCConfiguration(const DatabaseSourceVPCConfiguration& value) { SetDatabaseSourceVPCConfiguration(value); return *this;}
-    inline DatabaseSourceDescription& WithDatabaseSourceVPCConfiguration(DatabaseSourceVPCConfiguration&& value) { SetDatabaseSourceVPCConfiguration(std::move(value)); return *this;}
+    template<typename DatabaseSourceVPCConfigurationT = DatabaseSourceVPCConfiguration>
+    void SetDatabaseSourceVPCConfiguration(DatabaseSourceVPCConfigurationT&& value) { m_databaseSourceVPCConfigurationHasBeenSet = true; m_databaseSourceVPCConfiguration = std::forward<DatabaseSourceVPCConfigurationT>(value); }
+    template<typename DatabaseSourceVPCConfigurationT = DatabaseSourceVPCConfiguration>
+    DatabaseSourceDescription& WithDatabaseSourceVPCConfiguration(DatabaseSourceVPCConfigurationT&& value) { SetDatabaseSourceVPCConfiguration(std::forward<DatabaseSourceVPCConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    DatabaseType m_type;
+    DatabaseType m_type{DatabaseType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
-    SSLMode m_sSLMode;
+    SSLMode m_sSLMode{SSLMode::NOT_SET};
     bool m_sSLModeHasBeenSet = false;
 
     DatabaseList m_databases;

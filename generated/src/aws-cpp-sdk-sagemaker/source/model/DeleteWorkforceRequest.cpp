@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkforceRequest::DeleteWorkforceRequest() : 
-    m_workforceNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkforceRequest::SerializePayload() const
 {
   JsonValue payload;

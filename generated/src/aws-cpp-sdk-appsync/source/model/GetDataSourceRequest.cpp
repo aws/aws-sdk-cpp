@@ -12,12 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataSourceRequest::GetDataSourceRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetDataSourceRequest::SerializePayload() const
 {
   return {};

@@ -21,7 +21,7 @@ namespace Model
   class DeregisterTaskDefinitionRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API DeregisterTaskDefinitionRequest();
+    AWS_ECS_API DeregisterTaskDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
      * definition to deregister. You must specify a <code>revision</code>.</p>
      */
-    inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
+    inline const Aws::String& GetTaskDefinition() const { return m_taskDefinition; }
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
-    inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
-    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
-    inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
-    inline DeregisterTaskDefinitionRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
-    inline DeregisterTaskDefinitionRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
-    inline DeregisterTaskDefinitionRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
+    template<typename TaskDefinitionT = Aws::String>
+    void SetTaskDefinition(TaskDefinitionT&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::forward<TaskDefinitionT>(value); }
+    template<typename TaskDefinitionT = Aws::String>
+    DeregisterTaskDefinitionRequest& WithTaskDefinition(TaskDefinitionT&& value) { SetTaskDefinition(std::forward<TaskDefinitionT>(value)); return *this;}
     ///@}
   private:
 

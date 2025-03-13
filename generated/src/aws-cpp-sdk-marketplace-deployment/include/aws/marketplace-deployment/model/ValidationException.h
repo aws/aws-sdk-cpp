@@ -31,7 +31,7 @@ namespace Model
   class ValidationException
   {
   public:
-    AWS_MARKETPLACEDEPLOYMENT_API ValidationException();
+    AWS_MARKETPLACEDEPLOYMENT_API ValidationException() = default;
     AWS_MARKETPLACEDEPLOYMENT_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACEDEPLOYMENT_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACEDEPLOYMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,26 +41,22 @@ namespace Model
     /**
      * <p>The field name associated with the error.</p>
      */
-    inline const Aws::String& GetFieldName() const{ return m_fieldName; }
+    inline const Aws::String& GetFieldName() const { return m_fieldName; }
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-    inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-    inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-    inline ValidationException& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-    inline ValidationException& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-    inline ValidationException& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    template<typename FieldNameT = Aws::String>
+    void SetFieldName(FieldNameT&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::forward<FieldNameT>(value); }
+    template<typename FieldNameT = Aws::String>
+    ValidationException& WithFieldName(FieldNameT&& value) { SetFieldName(std::forward<FieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ValidationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ValidationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ValidationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ValidationException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

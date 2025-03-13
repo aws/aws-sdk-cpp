@@ -31,7 +31,7 @@ namespace Model
   class DimensionDetail
   {
   public:
-    AWS_PI_API DimensionDetail();
+    AWS_PI_API DimensionDetail() = default;
     AWS_PI_API DimensionDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API DimensionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The identifier of a dimension.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline DimensionDetail& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline DimensionDetail& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline DimensionDetail& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    DimensionDetail& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
   private:
 

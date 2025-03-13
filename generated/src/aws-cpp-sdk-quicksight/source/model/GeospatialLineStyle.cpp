@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialLineStyle::GeospatialLineStyle() : 
-    m_lineSymbolStyleHasBeenSet(false)
-{
-}
-
 GeospatialLineStyle::GeospatialLineStyle(JsonView jsonValue)
-  : GeospatialLineStyle()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GeospatialLineStyle& GeospatialLineStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LineSymbolStyle"))
   {
     m_lineSymbolStyle = jsonValue.GetObject("LineSymbolStyle");
-
     m_lineSymbolStyleHasBeenSet = true;
   }
-
   return *this;
 }
 

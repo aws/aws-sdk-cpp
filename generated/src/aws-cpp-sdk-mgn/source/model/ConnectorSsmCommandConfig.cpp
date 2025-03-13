@@ -18,18 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ConnectorSsmCommandConfig::ConnectorSsmCommandConfig() : 
-    m_cloudWatchLogGroupNameHasBeenSet(false),
-    m_cloudWatchOutputEnabled(false),
-    m_cloudWatchOutputEnabledHasBeenSet(false),
-    m_outputS3BucketNameHasBeenSet(false),
-    m_s3OutputEnabled(false),
-    m_s3OutputEnabledHasBeenSet(false)
-{
-}
-
 ConnectorSsmCommandConfig::ConnectorSsmCommandConfig(JsonView jsonValue)
-  : ConnectorSsmCommandConfig()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ConnectorSsmCommandConfig& ConnectorSsmCommandConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("cloudWatchLogGroupName"))
   {
     m_cloudWatchLogGroupName = jsonValue.GetString("cloudWatchLogGroupName");
-
     m_cloudWatchLogGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cloudWatchOutputEnabled"))
   {
     m_cloudWatchOutputEnabled = jsonValue.GetBool("cloudWatchOutputEnabled");
-
     m_cloudWatchOutputEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputS3BucketName"))
   {
     m_outputS3BucketName = jsonValue.GetString("outputS3BucketName");
-
     m_outputS3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3OutputEnabled"))
   {
     m_s3OutputEnabled = jsonValue.GetBool("s3OutputEnabled");
-
     m_s3OutputEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

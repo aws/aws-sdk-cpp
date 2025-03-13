@@ -12,23 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProvisionedProductPlanRequest::CreateProvisionedProductPlanRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_planNameHasBeenSet(false),
-    m_planType(ProvisionedProductPlanType::NOT_SET),
-    m_planTypeHasBeenSet(false),
-    m_notificationArnsHasBeenSet(false),
-    m_pathIdHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_provisionedProductNameHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false),
-    m_provisioningParametersHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateProvisionedProductPlanRequest::SerializePayload() const
 {
   JsonValue payload;

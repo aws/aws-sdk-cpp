@@ -25,7 +25,7 @@ namespace Model
   class DeleteGatewayRouteRequest : public AppMeshRequest
   {
   public:
-    AWS_APPMESH_API DeleteGatewayRouteRequest();
+    AWS_APPMESH_API DeleteGatewayRouteRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the gateway route to delete.</p>
      */
-    inline const Aws::String& GetGatewayRouteName() const{ return m_gatewayRouteName; }
+    inline const Aws::String& GetGatewayRouteName() const { return m_gatewayRouteName; }
     inline bool GatewayRouteNameHasBeenSet() const { return m_gatewayRouteNameHasBeenSet; }
-    inline void SetGatewayRouteName(const Aws::String& value) { m_gatewayRouteNameHasBeenSet = true; m_gatewayRouteName = value; }
-    inline void SetGatewayRouteName(Aws::String&& value) { m_gatewayRouteNameHasBeenSet = true; m_gatewayRouteName = std::move(value); }
-    inline void SetGatewayRouteName(const char* value) { m_gatewayRouteNameHasBeenSet = true; m_gatewayRouteName.assign(value); }
-    inline DeleteGatewayRouteRequest& WithGatewayRouteName(const Aws::String& value) { SetGatewayRouteName(value); return *this;}
-    inline DeleteGatewayRouteRequest& WithGatewayRouteName(Aws::String&& value) { SetGatewayRouteName(std::move(value)); return *this;}
-    inline DeleteGatewayRouteRequest& WithGatewayRouteName(const char* value) { SetGatewayRouteName(value); return *this;}
+    template<typename GatewayRouteNameT = Aws::String>
+    void SetGatewayRouteName(GatewayRouteNameT&& value) { m_gatewayRouteNameHasBeenSet = true; m_gatewayRouteName = std::forward<GatewayRouteNameT>(value); }
+    template<typename GatewayRouteNameT = Aws::String>
+    DeleteGatewayRouteRequest& WithGatewayRouteName(GatewayRouteNameT&& value) { SetGatewayRouteName(std::forward<GatewayRouteNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service mesh to delete the gateway route from.</p>
      */
-    inline const Aws::String& GetMeshName() const{ return m_meshName; }
+    inline const Aws::String& GetMeshName() const { return m_meshName; }
     inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
-    inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
-    inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
-    inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
-    inline DeleteGatewayRouteRequest& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
-    inline DeleteGatewayRouteRequest& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
-    inline DeleteGatewayRouteRequest& WithMeshName(const char* value) { SetMeshName(value); return *this;}
+    template<typename MeshNameT = Aws::String>
+    void SetMeshName(MeshNameT&& value) { m_meshNameHasBeenSet = true; m_meshName = std::forward<MeshNameT>(value); }
+    template<typename MeshNameT = Aws::String>
+    DeleteGatewayRouteRequest& WithMeshName(MeshNameT&& value) { SetMeshName(std::forward<MeshNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,28 +70,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
-    inline const Aws::String& GetMeshOwner() const{ return m_meshOwner; }
+    inline const Aws::String& GetMeshOwner() const { return m_meshOwner; }
     inline bool MeshOwnerHasBeenSet() const { return m_meshOwnerHasBeenSet; }
-    inline void SetMeshOwner(const Aws::String& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = value; }
-    inline void SetMeshOwner(Aws::String&& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = std::move(value); }
-    inline void SetMeshOwner(const char* value) { m_meshOwnerHasBeenSet = true; m_meshOwner.assign(value); }
-    inline DeleteGatewayRouteRequest& WithMeshOwner(const Aws::String& value) { SetMeshOwner(value); return *this;}
-    inline DeleteGatewayRouteRequest& WithMeshOwner(Aws::String&& value) { SetMeshOwner(std::move(value)); return *this;}
-    inline DeleteGatewayRouteRequest& WithMeshOwner(const char* value) { SetMeshOwner(value); return *this;}
+    template<typename MeshOwnerT = Aws::String>
+    void SetMeshOwner(MeshOwnerT&& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = std::forward<MeshOwnerT>(value); }
+    template<typename MeshOwnerT = Aws::String>
+    DeleteGatewayRouteRequest& WithMeshOwner(MeshOwnerT&& value) { SetMeshOwner(std::forward<MeshOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the virtual gateway to delete the route from.</p>
      */
-    inline const Aws::String& GetVirtualGatewayName() const{ return m_virtualGatewayName; }
+    inline const Aws::String& GetVirtualGatewayName() const { return m_virtualGatewayName; }
     inline bool VirtualGatewayNameHasBeenSet() const { return m_virtualGatewayNameHasBeenSet; }
-    inline void SetVirtualGatewayName(const Aws::String& value) { m_virtualGatewayNameHasBeenSet = true; m_virtualGatewayName = value; }
-    inline void SetVirtualGatewayName(Aws::String&& value) { m_virtualGatewayNameHasBeenSet = true; m_virtualGatewayName = std::move(value); }
-    inline void SetVirtualGatewayName(const char* value) { m_virtualGatewayNameHasBeenSet = true; m_virtualGatewayName.assign(value); }
-    inline DeleteGatewayRouteRequest& WithVirtualGatewayName(const Aws::String& value) { SetVirtualGatewayName(value); return *this;}
-    inline DeleteGatewayRouteRequest& WithVirtualGatewayName(Aws::String&& value) { SetVirtualGatewayName(std::move(value)); return *this;}
-    inline DeleteGatewayRouteRequest& WithVirtualGatewayName(const char* value) { SetVirtualGatewayName(value); return *this;}
+    template<typename VirtualGatewayNameT = Aws::String>
+    void SetVirtualGatewayName(VirtualGatewayNameT&& value) { m_virtualGatewayNameHasBeenSet = true; m_virtualGatewayName = std::forward<VirtualGatewayNameT>(value); }
+    template<typename VirtualGatewayNameT = Aws::String>
+    DeleteGatewayRouteRequest& WithVirtualGatewayName(VirtualGatewayNameT&& value) { SetVirtualGatewayName(std::forward<VirtualGatewayNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-DeliveryDestinationConfiguration::DeliveryDestinationConfiguration() : 
-    m_destinationResourceArnHasBeenSet(false)
-{
-}
-
 DeliveryDestinationConfiguration::DeliveryDestinationConfiguration(JsonView jsonValue)
-  : DeliveryDestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeliveryDestinationConfiguration& DeliveryDestinationConfiguration::operator =(J
   if(jsonValue.ValueExists("destinationResourceArn"))
   {
     m_destinationResourceArn = jsonValue.GetString("destinationResourceArn");
-
     m_destinationResourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

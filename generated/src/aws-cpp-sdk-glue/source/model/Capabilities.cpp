@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Capabilities::Capabilities() : 
-    m_supportedAuthenticationTypesHasBeenSet(false),
-    m_supportedDataOperationsHasBeenSet(false),
-    m_supportedComputeEnvironmentsHasBeenSet(false)
-{
-}
-
 Capabilities::Capabilities(JsonView jsonValue)
-  : Capabilities()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ Capabilities& Capabilities::operator =(JsonView jsonValue)
     }
     m_supportedAuthenticationTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedDataOperations"))
   {
     Aws::Utils::Array<JsonView> supportedDataOperationsJsonList = jsonValue.GetArray("SupportedDataOperations");
@@ -52,7 +43,6 @@ Capabilities& Capabilities::operator =(JsonView jsonValue)
     }
     m_supportedDataOperationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedComputeEnvironments"))
   {
     Aws::Utils::Array<JsonView> supportedComputeEnvironmentsJsonList = jsonValue.GetArray("SupportedComputeEnvironments");
@@ -62,7 +52,6 @@ Capabilities& Capabilities::operator =(JsonView jsonValue)
     }
     m_supportedComputeEnvironmentsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,10 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccountRequest::GetAccountRequest()
-{
-}
-
 Aws::String GetAccountRequest::SerializePayload() const
 {
   return {};

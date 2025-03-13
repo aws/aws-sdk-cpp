@@ -12,13 +12,6 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveAllBackendsRequest::RemoveAllBackendsRequest() : 
-    m_appIdHasBeenSet(false),
-    m_cleanAmplifyApp(false),
-    m_cleanAmplifyAppHasBeenSet(false)
-{
-}
-
 Aws::String RemoveAllBackendsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class DeleteInferenceProfileRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API DeleteInferenceProfileRequest();
+    AWS_BEDROCK_API DeleteInferenceProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) or ID of the application inference profile to
      * delete.</p>
      */
-    inline const Aws::String& GetInferenceProfileIdentifier() const{ return m_inferenceProfileIdentifier; }
+    inline const Aws::String& GetInferenceProfileIdentifier() const { return m_inferenceProfileIdentifier; }
     inline bool InferenceProfileIdentifierHasBeenSet() const { return m_inferenceProfileIdentifierHasBeenSet; }
-    inline void SetInferenceProfileIdentifier(const Aws::String& value) { m_inferenceProfileIdentifierHasBeenSet = true; m_inferenceProfileIdentifier = value; }
-    inline void SetInferenceProfileIdentifier(Aws::String&& value) { m_inferenceProfileIdentifierHasBeenSet = true; m_inferenceProfileIdentifier = std::move(value); }
-    inline void SetInferenceProfileIdentifier(const char* value) { m_inferenceProfileIdentifierHasBeenSet = true; m_inferenceProfileIdentifier.assign(value); }
-    inline DeleteInferenceProfileRequest& WithInferenceProfileIdentifier(const Aws::String& value) { SetInferenceProfileIdentifier(value); return *this;}
-    inline DeleteInferenceProfileRequest& WithInferenceProfileIdentifier(Aws::String&& value) { SetInferenceProfileIdentifier(std::move(value)); return *this;}
-    inline DeleteInferenceProfileRequest& WithInferenceProfileIdentifier(const char* value) { SetInferenceProfileIdentifier(value); return *this;}
+    template<typename InferenceProfileIdentifierT = Aws::String>
+    void SetInferenceProfileIdentifier(InferenceProfileIdentifierT&& value) { m_inferenceProfileIdentifierHasBeenSet = true; m_inferenceProfileIdentifier = std::forward<InferenceProfileIdentifierT>(value); }
+    template<typename InferenceProfileIdentifierT = Aws::String>
+    DeleteInferenceProfileRequest& WithInferenceProfileIdentifier(InferenceProfileIdentifierT&& value) { SetInferenceProfileIdentifier(std::forward<InferenceProfileIdentifierT>(value)); return *this;}
     ///@}
   private:
 

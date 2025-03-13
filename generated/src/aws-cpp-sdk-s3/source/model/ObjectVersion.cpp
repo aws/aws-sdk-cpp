@@ -20,27 +20,7 @@ namespace S3
 namespace Model
 {
 
-ObjectVersion::ObjectVersion() : 
-    m_eTagHasBeenSet(false),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_checksumType(ChecksumType::NOT_SET),
-    m_checksumTypeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_storageClass(ObjectVersionStorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_isLatest(false),
-    m_isLatestHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_restoreStatusHasBeenSet(false)
-{
-}
-
 ObjectVersion::ObjectVersion(const XmlNode& xmlNode)
-  : ObjectVersion()
 {
   *this = xmlNode;
 }
@@ -56,72 +36,83 @@ ObjectVersion& ObjectVersion::operator =(const XmlNode& xmlNode)
     {
       m_eTag = Aws::Utils::Xml::DecodeEscapedXmlText(eTagNode.GetText());
       m_eTagHasBeenSet = true;
+       m_eTagHasBeenSet = true;
     }
     XmlNode checksumAlgorithmNode = resultNode.FirstChild("ChecksumAlgorithm");
     if(!checksumAlgorithmNode.IsNull())
     {
       XmlNode checksumAlgorithmMember = checksumAlgorithmNode;
+      m_checksumAlgorithmHasBeenSet = !checksumAlgorithmMember.IsNull();
       while(!checksumAlgorithmMember.IsNull())
       {
         m_checksumAlgorithm.push_back(ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(StringUtils::Trim(checksumAlgorithmMember.GetText().c_str())));
         checksumAlgorithmMember = checksumAlgorithmMember.NextNode("ChecksumAlgorithm");
       }
 
-      m_checksumAlgorithmHasBeenSet = true;
+       m_checksumAlgorithmHasBeenSet = true;
     }
     XmlNode checksumTypeNode = resultNode.FirstChild("ChecksumType");
     if(!checksumTypeNode.IsNull())
     {
-      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()).c_str());
+      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()));
       m_checksumTypeHasBeenSet = true;
+       m_checksumTypeHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
     if(!sizeNode.IsNull())
     {
       m_size = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeNode.GetText()).c_str()).c_str());
       m_sizeHasBeenSet = true;
+       m_sizeHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
     if(!storageClassNode.IsNull())
     {
-      m_storageClass = ObjectVersionStorageClassMapper::GetObjectVersionStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()).c_str());
+      m_storageClass = ObjectVersionStorageClassMapper::GetObjectVersionStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()));
       m_storageClassHasBeenSet = true;
+       m_storageClassHasBeenSet = true;
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
       m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
+       m_keyHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
     if(!versionIdNode.IsNull())
     {
       m_versionId = Aws::Utils::Xml::DecodeEscapedXmlText(versionIdNode.GetText());
       m_versionIdHasBeenSet = true;
+       m_versionIdHasBeenSet = true;
     }
     XmlNode isLatestNode = resultNode.FirstChild("IsLatest");
     if(!isLatestNode.IsNull())
     {
       m_isLatest = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isLatestNode.GetText()).c_str()).c_str());
       m_isLatestHasBeenSet = true;
+       m_isLatestHasBeenSet = true;
     }
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
       m_lastModified = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedHasBeenSet = true;
+       m_lastModifiedHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
     if(!ownerNode.IsNull())
     {
       m_owner = ownerNode;
       m_ownerHasBeenSet = true;
+       m_ownerHasBeenSet = true;
     }
     XmlNode restoreStatusNode = resultNode.FirstChild("RestoreStatus");
     if(!restoreStatusNode.IsNull())
     {
       m_restoreStatus = restoreStatusNode;
       m_restoreStatusHasBeenSet = true;
+       m_restoreStatusHasBeenSet = true;
     }
   }
 

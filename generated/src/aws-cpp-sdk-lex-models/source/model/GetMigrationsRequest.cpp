@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetMigrationsRequest::GetMigrationsRequest() : 
-    m_sortByAttribute(MigrationSortAttribute::NOT_SET),
-    m_sortByAttributeHasBeenSet(false),
-    m_sortByOrder(SortOrder::NOT_SET),
-    m_sortByOrderHasBeenSet(false),
-    m_v1BotNameContainsHasBeenSet(false),
-    m_migrationStatusEquals(MigrationStatus::NOT_SET),
-    m_migrationStatusEqualsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetMigrationsRequest::SerializePayload() const
 {
   return {};

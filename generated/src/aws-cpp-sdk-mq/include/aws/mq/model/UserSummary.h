@@ -33,7 +33,7 @@ namespace Model
   class UserSummary
   {
   public:
-    AWS_MQ_API UserSummary();
+    AWS_MQ_API UserSummary() = default;
     AWS_MQ_API UserSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MQ_API UserSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The type of change pending for the broker user.</p>
      */
-    inline const ChangeType& GetPendingChange() const{ return m_pendingChange; }
+    inline ChangeType GetPendingChange() const { return m_pendingChange; }
     inline bool PendingChangeHasBeenSet() const { return m_pendingChangeHasBeenSet; }
-    inline void SetPendingChange(const ChangeType& value) { m_pendingChangeHasBeenSet = true; m_pendingChange = value; }
-    inline void SetPendingChange(ChangeType&& value) { m_pendingChangeHasBeenSet = true; m_pendingChange = std::move(value); }
-    inline UserSummary& WithPendingChange(const ChangeType& value) { SetPendingChange(value); return *this;}
-    inline UserSummary& WithPendingChange(ChangeType&& value) { SetPendingChange(std::move(value)); return *this;}
+    inline void SetPendingChange(ChangeType value) { m_pendingChangeHasBeenSet = true; m_pendingChange = value; }
+    inline UserSummary& WithPendingChange(ChangeType value) { SetPendingChange(value); return *this;}
     ///@}
 
     ///@{
@@ -57,18 +55,16 @@ namespace Model
      * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
      * This value must be 2-100 characters long.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline UserSummary& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline UserSummary& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline UserSummary& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    UserSummary& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeType m_pendingChange;
+    ChangeType m_pendingChange{ChangeType::NOT_SET};
     bool m_pendingChangeHasBeenSet = false;
 
     Aws::String m_username;

@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorkspaceSnapshotsRequest::DescribeWorkspaceSnapshotsRequest() : 
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorkspaceSnapshotsRequest::SerializePayload() const
 {
   JsonValue payload;

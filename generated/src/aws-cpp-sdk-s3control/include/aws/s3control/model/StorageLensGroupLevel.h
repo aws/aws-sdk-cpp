@@ -31,7 +31,7 @@ namespace Model
   class StorageLensGroupLevel
   {
   public:
-    AWS_S3CONTROL_API StorageLensGroupLevel();
+    AWS_S3CONTROL_API StorageLensGroupLevel() = default;
     AWS_S3CONTROL_API StorageLensGroupLevel(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API StorageLensGroupLevel& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,12 @@ namespace Model
      * Lens group aggregation. If this value is left null, then all Storage Lens groups
      * are selected. </p>
      */
-    inline const StorageLensGroupLevelSelectionCriteria& GetSelectionCriteria() const{ return m_selectionCriteria; }
+    inline const StorageLensGroupLevelSelectionCriteria& GetSelectionCriteria() const { return m_selectionCriteria; }
     inline bool SelectionCriteriaHasBeenSet() const { return m_selectionCriteriaHasBeenSet; }
-    inline void SetSelectionCriteria(const StorageLensGroupLevelSelectionCriteria& value) { m_selectionCriteriaHasBeenSet = true; m_selectionCriteria = value; }
-    inline void SetSelectionCriteria(StorageLensGroupLevelSelectionCriteria&& value) { m_selectionCriteriaHasBeenSet = true; m_selectionCriteria = std::move(value); }
-    inline StorageLensGroupLevel& WithSelectionCriteria(const StorageLensGroupLevelSelectionCriteria& value) { SetSelectionCriteria(value); return *this;}
-    inline StorageLensGroupLevel& WithSelectionCriteria(StorageLensGroupLevelSelectionCriteria&& value) { SetSelectionCriteria(std::move(value)); return *this;}
+    template<typename SelectionCriteriaT = StorageLensGroupLevelSelectionCriteria>
+    void SetSelectionCriteria(SelectionCriteriaT&& value) { m_selectionCriteriaHasBeenSet = true; m_selectionCriteria = std::forward<SelectionCriteriaT>(value); }
+    template<typename SelectionCriteriaT = StorageLensGroupLevelSelectionCriteria>
+    StorageLensGroupLevel& WithSelectionCriteria(SelectionCriteriaT&& value) { SetSelectionCriteria(std::forward<SelectionCriteriaT>(value)); return *this;}
     ///@}
   private:
 

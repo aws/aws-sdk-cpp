@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-TransformationConfiguration::TransformationConfiguration() : 
-    m_mode(QueryTransformationMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_textToSqlConfigurationHasBeenSet(false)
-{
-}
-
 TransformationConfiguration::TransformationConfiguration(JsonView jsonValue)
-  : TransformationConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TransformationConfiguration& TransformationConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = QueryTransformationModeMapper::GetQueryTransformationModeForName(jsonValue.GetString("mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textToSqlConfiguration"))
   {
     m_textToSqlConfiguration = jsonValue.GetObject("textToSqlConfiguration");
-
     m_textToSqlConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

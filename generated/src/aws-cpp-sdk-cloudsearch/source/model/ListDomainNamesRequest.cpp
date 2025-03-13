@@ -10,10 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-ListDomainNamesRequest::ListDomainNamesRequest()
-{
-}
-
 Aws::String ListDomainNamesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-ProximityEventConfiguration::ProximityEventConfiguration() : 
-    m_sidewalkHasBeenSet(false),
-    m_wirelessDeviceIdEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_wirelessDeviceIdEventTopicHasBeenSet(false)
-{
-}
-
 ProximityEventConfiguration::ProximityEventConfiguration(JsonView jsonValue)
-  : ProximityEventConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ProximityEventConfiguration& ProximityEventConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("Sidewalk"))
   {
     m_sidewalk = jsonValue.GetObject("Sidewalk");
-
     m_sidewalkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WirelessDeviceIdEventTopic"))
   {
     m_wirelessDeviceIdEventTopic = EventNotificationTopicStatusMapper::GetEventNotificationTopicStatusForName(jsonValue.GetString("WirelessDeviceIdEventTopic"));
-
     m_wirelessDeviceIdEventTopicHasBeenSet = true;
   }
-
   return *this;
 }
 

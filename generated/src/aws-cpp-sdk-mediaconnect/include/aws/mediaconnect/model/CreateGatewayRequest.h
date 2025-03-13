@@ -27,7 +27,7 @@ namespace Model
   class CreateGatewayRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API CreateGatewayRequest();
+    AWS_MEDIACONNECT_API CreateGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,15 +45,14 @@ namespace Model
      * should be in the form of a Classless Inter-Domain Routing (CIDR) block; for
      * example, 10.0.0.0/16.
      */
-    inline const Aws::Vector<Aws::String>& GetEgressCidrBlocks() const{ return m_egressCidrBlocks; }
+    inline const Aws::Vector<Aws::String>& GetEgressCidrBlocks() const { return m_egressCidrBlocks; }
     inline bool EgressCidrBlocksHasBeenSet() const { return m_egressCidrBlocksHasBeenSet; }
-    inline void SetEgressCidrBlocks(const Aws::Vector<Aws::String>& value) { m_egressCidrBlocksHasBeenSet = true; m_egressCidrBlocks = value; }
-    inline void SetEgressCidrBlocks(Aws::Vector<Aws::String>&& value) { m_egressCidrBlocksHasBeenSet = true; m_egressCidrBlocks = std::move(value); }
-    inline CreateGatewayRequest& WithEgressCidrBlocks(const Aws::Vector<Aws::String>& value) { SetEgressCidrBlocks(value); return *this;}
-    inline CreateGatewayRequest& WithEgressCidrBlocks(Aws::Vector<Aws::String>&& value) { SetEgressCidrBlocks(std::move(value)); return *this;}
-    inline CreateGatewayRequest& AddEgressCidrBlocks(const Aws::String& value) { m_egressCidrBlocksHasBeenSet = true; m_egressCidrBlocks.push_back(value); return *this; }
-    inline CreateGatewayRequest& AddEgressCidrBlocks(Aws::String&& value) { m_egressCidrBlocksHasBeenSet = true; m_egressCidrBlocks.push_back(std::move(value)); return *this; }
-    inline CreateGatewayRequest& AddEgressCidrBlocks(const char* value) { m_egressCidrBlocksHasBeenSet = true; m_egressCidrBlocks.push_back(value); return *this; }
+    template<typename EgressCidrBlocksT = Aws::Vector<Aws::String>>
+    void SetEgressCidrBlocks(EgressCidrBlocksT&& value) { m_egressCidrBlocksHasBeenSet = true; m_egressCidrBlocks = std::forward<EgressCidrBlocksT>(value); }
+    template<typename EgressCidrBlocksT = Aws::Vector<Aws::String>>
+    CreateGatewayRequest& WithEgressCidrBlocks(EgressCidrBlocksT&& value) { SetEgressCidrBlocks(std::forward<EgressCidrBlocksT>(value)); return *this;}
+    template<typename EgressCidrBlocksT = Aws::String>
+    CreateGatewayRequest& AddEgressCidrBlocks(EgressCidrBlocksT&& value) { m_egressCidrBlocksHasBeenSet = true; m_egressCidrBlocks.emplace_back(std::forward<EgressCidrBlocksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,28 +60,26 @@ namespace Model
      * The name of the gateway. This name can not be modified after the gateway is
      * created.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateGatewayRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateGatewayRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateGatewayRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateGatewayRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The list of networks that you want to add.
      */
-    inline const Aws::Vector<GatewayNetwork>& GetNetworks() const{ return m_networks; }
+    inline const Aws::Vector<GatewayNetwork>& GetNetworks() const { return m_networks; }
     inline bool NetworksHasBeenSet() const { return m_networksHasBeenSet; }
-    inline void SetNetworks(const Aws::Vector<GatewayNetwork>& value) { m_networksHasBeenSet = true; m_networks = value; }
-    inline void SetNetworks(Aws::Vector<GatewayNetwork>&& value) { m_networksHasBeenSet = true; m_networks = std::move(value); }
-    inline CreateGatewayRequest& WithNetworks(const Aws::Vector<GatewayNetwork>& value) { SetNetworks(value); return *this;}
-    inline CreateGatewayRequest& WithNetworks(Aws::Vector<GatewayNetwork>&& value) { SetNetworks(std::move(value)); return *this;}
-    inline CreateGatewayRequest& AddNetworks(const GatewayNetwork& value) { m_networksHasBeenSet = true; m_networks.push_back(value); return *this; }
-    inline CreateGatewayRequest& AddNetworks(GatewayNetwork&& value) { m_networksHasBeenSet = true; m_networks.push_back(std::move(value)); return *this; }
+    template<typename NetworksT = Aws::Vector<GatewayNetwork>>
+    void SetNetworks(NetworksT&& value) { m_networksHasBeenSet = true; m_networks = std::forward<NetworksT>(value); }
+    template<typename NetworksT = Aws::Vector<GatewayNetwork>>
+    CreateGatewayRequest& WithNetworks(NetworksT&& value) { SetNetworks(std::forward<NetworksT>(value)); return *this;}
+    template<typename NetworksT = GatewayNetwork>
+    CreateGatewayRequest& AddNetworks(NetworksT&& value) { m_networksHasBeenSet = true; m_networks.emplace_back(std::forward<NetworksT>(value)); return *this; }
     ///@}
   private:
 

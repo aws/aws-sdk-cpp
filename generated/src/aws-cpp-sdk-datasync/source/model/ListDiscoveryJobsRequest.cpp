@@ -12,14 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDiscoveryJobsRequest::ListDiscoveryJobsRequest() : 
-    m_storageSystemArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDiscoveryJobsRequest::SerializePayload() const
 {
   JsonValue payload;

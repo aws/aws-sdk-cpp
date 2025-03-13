@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ProjectPolicyGrantPrincipal::ProjectPolicyGrantPrincipal() : 
-    m_projectDesignation(ProjectDesignation::NOT_SET),
-    m_projectDesignationHasBeenSet(false),
-    m_projectGrantFilterHasBeenSet(false),
-    m_projectIdentifierHasBeenSet(false)
-{
-}
-
 ProjectPolicyGrantPrincipal::ProjectPolicyGrantPrincipal(JsonView jsonValue)
-  : ProjectPolicyGrantPrincipal()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ProjectPolicyGrantPrincipal& ProjectPolicyGrantPrincipal::operator =(JsonView js
   if(jsonValue.ValueExists("projectDesignation"))
   {
     m_projectDesignation = ProjectDesignationMapper::GetProjectDesignationForName(jsonValue.GetString("projectDesignation"));
-
     m_projectDesignationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectGrantFilter"))
   {
     m_projectGrantFilter = jsonValue.GetObject("projectGrantFilter");
-
     m_projectGrantFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectIdentifier"))
   {
     m_projectIdentifier = jsonValue.GetString("projectIdentifier");
-
     m_projectIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

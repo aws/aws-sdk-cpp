@@ -18,17 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxSavedownStorageConfiguration::KxSavedownStorageConfiguration() : 
-    m_type(KxSavedownStorageType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_volumeNameHasBeenSet(false)
-{
-}
-
 KxSavedownStorageConfiguration::KxSavedownStorageConfiguration(JsonView jsonValue)
-  : KxSavedownStorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ KxSavedownStorageConfiguration& KxSavedownStorageConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("type"))
   {
     m_type = KxSavedownStorageTypeMapper::GetKxSavedownStorageTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("size"))
   {
     m_size = jsonValue.GetInteger("size");
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeName"))
   {
     m_volumeName = jsonValue.GetString("volumeName");
-
     m_volumeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

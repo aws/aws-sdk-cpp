@@ -18,18 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-FindingsReportSummary::FindingsReportSummary() : 
-    m_idHasBeenSet(false),
-    m_profileEndTimeHasBeenSet(false),
-    m_profileStartTimeHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false),
-    m_totalNumberOfFindings(0),
-    m_totalNumberOfFindingsHasBeenSet(false)
-{
-}
-
 FindingsReportSummary::FindingsReportSummary(JsonView jsonValue)
-  : FindingsReportSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ FindingsReportSummary& FindingsReportSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileEndTime"))
   {
     m_profileEndTime = jsonValue.GetString("profileEndTime");
-
     m_profileEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileStartTime"))
   {
     m_profileStartTime = jsonValue.GetString("profileStartTime");
-
     m_profileStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profilingGroupName"))
   {
     m_profilingGroupName = jsonValue.GetString("profilingGroupName");
-
     m_profilingGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalNumberOfFindings"))
   {
     m_totalNumberOfFindings = jsonValue.GetInteger("totalNumberOfFindings");
-
     m_totalNumberOfFindingsHasBeenSet = true;
   }
-
   return *this;
 }
 

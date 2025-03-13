@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetManagedThingConnectivityDataResult::GetManagedThingConnectivityDataResult() : 
-    m_connected(false),
-    m_disconnectReason(DisconnectReasonValue::NOT_SET)
-{
-}
-
 GetManagedThingConnectivityDataResult::GetManagedThingConnectivityDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetManagedThingConnectivityDataResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ GetManagedThingConnectivityDataResult& GetManagedThingConnectivityDataResult::op
   if(jsonValue.ValueExists("ManagedThingId"))
   {
     m_managedThingId = jsonValue.GetString("ManagedThingId");
-
+    m_managedThingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Connected"))
   {
     m_connected = jsonValue.GetBool("Connected");
-
+    m_connectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
+    m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisconnectReason"))
   {
     m_disconnectReason = DisconnectReasonValueMapper::GetDisconnectReasonValueForName(jsonValue.GetString("DisconnectReason"));
-
+    m_disconnectReasonHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

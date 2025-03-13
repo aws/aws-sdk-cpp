@@ -18,19 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-CandidateAddress::CandidateAddress() : 
-    m_streetInfoHasBeenSet(false),
-    m_streetNumberHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_postalCodePlus4HasBeenSet(false),
-    m_countryHasBeenSet(false)
-{
-}
-
 CandidateAddress::CandidateAddress(JsonView jsonValue)
-  : CandidateAddress()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ CandidateAddress& CandidateAddress::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("streetInfo"))
   {
     m_streetInfo = jsonValue.GetString("streetInfo");
-
     m_streetInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streetNumber"))
   {
     m_streetNumber = jsonValue.GetString("streetNumber");
-
     m_streetNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("city"))
   {
     m_city = jsonValue.GetString("city");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetString("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postalCode"))
   {
     m_postalCode = jsonValue.GetString("postalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postalCodePlus4"))
   {
     m_postalCodePlus4 = jsonValue.GetString("postalCodePlus4");
-
     m_postalCodePlus4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("country"))
   {
     m_country = jsonValue.GetString("country");
-
     m_countryHasBeenSet = true;
   }
-
   return *this;
 }
 

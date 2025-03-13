@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetNamedQueryResult::BatchGetNamedQueryResult()
-{
-}
-
 BatchGetNamedQueryResult::BatchGetNamedQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetNamedQueryResult& BatchGetNamedQueryResult::operator =(const Aws::Amazon
     {
       m_namedQueries.push_back(namedQueriesJsonList[namedQueriesIndex].AsObject());
     }
+    m_namedQueriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedNamedQueryIds"))
   {
     Aws::Utils::Array<JsonView> unprocessedNamedQueryIdsJsonList = jsonValue.GetArray("UnprocessedNamedQueryIds");
@@ -45,14 +41,15 @@ BatchGetNamedQueryResult& BatchGetNamedQueryResult::operator =(const Aws::Amazon
     {
       m_unprocessedNamedQueryIds.push_back(unprocessedNamedQueryIdsJsonList[unprocessedNamedQueryIdsIndex].AsObject());
     }
+    m_unprocessedNamedQueryIdsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

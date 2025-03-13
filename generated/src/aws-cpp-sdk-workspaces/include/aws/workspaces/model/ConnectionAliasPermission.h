@@ -35,7 +35,7 @@ namespace Model
   class ConnectionAliasPermission
   {
   public:
-    AWS_WORKSPACES_API ConnectionAliasPermission();
+    AWS_WORKSPACES_API ConnectionAliasPermission() = default;
     AWS_WORKSPACES_API ConnectionAliasPermission(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API ConnectionAliasPermission& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The identifier of the Amazon Web Services account that the connection alias
      * is shared with.</p>
      */
-    inline const Aws::String& GetSharedAccountId() const{ return m_sharedAccountId; }
+    inline const Aws::String& GetSharedAccountId() const { return m_sharedAccountId; }
     inline bool SharedAccountIdHasBeenSet() const { return m_sharedAccountIdHasBeenSet; }
-    inline void SetSharedAccountId(const Aws::String& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = value; }
-    inline void SetSharedAccountId(Aws::String&& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = std::move(value); }
-    inline void SetSharedAccountId(const char* value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId.assign(value); }
-    inline ConnectionAliasPermission& WithSharedAccountId(const Aws::String& value) { SetSharedAccountId(value); return *this;}
-    inline ConnectionAliasPermission& WithSharedAccountId(Aws::String&& value) { SetSharedAccountId(std::move(value)); return *this;}
-    inline ConnectionAliasPermission& WithSharedAccountId(const char* value) { SetSharedAccountId(value); return *this;}
+    template<typename SharedAccountIdT = Aws::String>
+    void SetSharedAccountId(SharedAccountIdT&& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = std::forward<SharedAccountIdT>(value); }
+    template<typename SharedAccountIdT = Aws::String>
+    ConnectionAliasPermission& WithSharedAccountId(SharedAccountIdT&& value) { SetSharedAccountId(std::forward<SharedAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <p>Indicates whether the specified Amazon Web Services account is allowed to
      * associate the connection alias with a directory.</p>
      */
-    inline bool GetAllowAssociation() const{ return m_allowAssociation; }
+    inline bool GetAllowAssociation() const { return m_allowAssociation; }
     inline bool AllowAssociationHasBeenSet() const { return m_allowAssociationHasBeenSet; }
     inline void SetAllowAssociation(bool value) { m_allowAssociationHasBeenSet = true; m_allowAssociation = value; }
     inline ConnectionAliasPermission& WithAllowAssociation(bool value) { SetAllowAssociation(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_sharedAccountId;
     bool m_sharedAccountIdHasBeenSet = false;
 
-    bool m_allowAssociation;
+    bool m_allowAssociation{false};
     bool m_allowAssociationHasBeenSet = false;
   };
 

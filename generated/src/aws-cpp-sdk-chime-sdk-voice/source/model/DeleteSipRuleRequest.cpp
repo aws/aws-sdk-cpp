@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSipRuleRequest::DeleteSipRuleRequest() : 
-    m_sipRuleIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSipRuleRequest::SerializePayload() const
 {
   return {};

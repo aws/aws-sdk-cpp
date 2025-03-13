@@ -12,15 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAutoMergingPreviewRequest::GetAutoMergingPreviewRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_consolidationHasBeenSet(false),
-    m_conflictResolutionHasBeenSet(false),
-    m_minAllowedConfidenceScoreForMerging(0.0),
-    m_minAllowedConfidenceScoreForMergingHasBeenSet(false)
-{
-}
-
 Aws::String GetAutoMergingPreviewRequest::SerializePayload() const
 {
   JsonValue payload;

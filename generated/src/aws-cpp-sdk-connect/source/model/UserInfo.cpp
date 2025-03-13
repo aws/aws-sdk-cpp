@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UserInfo::UserInfo() : 
-    m_userIdHasBeenSet(false)
-{
-}
-
 UserInfo::UserInfo(JsonView jsonValue)
-  : UserInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UserInfo& UserInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   return *this;
 }
 

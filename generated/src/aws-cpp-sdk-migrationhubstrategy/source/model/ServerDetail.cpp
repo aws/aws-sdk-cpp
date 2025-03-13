@@ -18,28 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-ServerDetail::ServerDetail() : 
-    m_antipatternReportS3ObjectHasBeenSet(false),
-    m_antipatternReportStatus(AntipatternReportStatus::NOT_SET),
-    m_antipatternReportStatusHasBeenSet(false),
-    m_antipatternReportStatusMessageHasBeenSet(false),
-    m_applicationComponentStrategySummaryHasBeenSet(false),
-    m_dataCollectionStatus(RunTimeAssessmentStatus::NOT_SET),
-    m_dataCollectionStatusHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastAnalyzedTimestampHasBeenSet(false),
-    m_listAntipatternSeveritySummaryHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recommendationSetHasBeenSet(false),
-    m_serverErrorHasBeenSet(false),
-    m_serverTypeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_systemInfoHasBeenSet(false)
-{
-}
-
 ServerDetail::ServerDetail(JsonView jsonValue)
-  : ServerDetail()
 {
   *this = jsonValue;
 }
@@ -49,24 +28,18 @@ ServerDetail& ServerDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("antipatternReportS3Object"))
   {
     m_antipatternReportS3Object = jsonValue.GetObject("antipatternReportS3Object");
-
     m_antipatternReportS3ObjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antipatternReportStatus"))
   {
     m_antipatternReportStatus = AntipatternReportStatusMapper::GetAntipatternReportStatusForName(jsonValue.GetString("antipatternReportStatus"));
-
     m_antipatternReportStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antipatternReportStatusMessage"))
   {
     m_antipatternReportStatusMessage = jsonValue.GetString("antipatternReportStatusMessage");
-
     m_antipatternReportStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationComponentStrategySummary"))
   {
     Aws::Utils::Array<JsonView> applicationComponentStrategySummaryJsonList = jsonValue.GetArray("applicationComponentStrategySummary");
@@ -76,28 +49,21 @@ ServerDetail& ServerDetail::operator =(JsonView jsonValue)
     }
     m_applicationComponentStrategySummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataCollectionStatus"))
   {
     m_dataCollectionStatus = RunTimeAssessmentStatusMapper::GetRunTimeAssessmentStatusForName(jsonValue.GetString("dataCollectionStatus"));
-
     m_dataCollectionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastAnalyzedTimestamp"))
   {
     m_lastAnalyzedTimestamp = jsonValue.GetDouble("lastAnalyzedTimestamp");
-
     m_lastAnalyzedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listAntipatternSeveritySummary"))
   {
     Aws::Utils::Array<JsonView> listAntipatternSeveritySummaryJsonList = jsonValue.GetArray("listAntipatternSeveritySummary");
@@ -107,49 +73,36 @@ ServerDetail& ServerDetail::operator =(JsonView jsonValue)
     }
     m_listAntipatternSeveritySummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationSet"))
   {
     m_recommendationSet = jsonValue.GetObject("recommendationSet");
-
     m_recommendationSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverError"))
   {
     m_serverError = jsonValue.GetObject("serverError");
-
     m_serverErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverType"))
   {
     m_serverType = jsonValue.GetString("serverType");
-
     m_serverTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("systemInfo"))
   {
     m_systemInfo = jsonValue.GetObject("systemInfo");
-
     m_systemInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

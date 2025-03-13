@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ProvisionIpamPoolCidrResponse::ProvisionIpamPoolCidrResponse()
-{
-}
-
 ProvisionIpamPoolCidrResponse::ProvisionIpamPoolCidrResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ProvisionIpamPoolCidrResponse& ProvisionIpamPoolCidrResponse::operator =(const A
     if(!ipamPoolCidrNode.IsNull())
     {
       m_ipamPoolCidr = ipamPoolCidrNode;
+      m_ipamPoolCidrHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ ProvisionIpamPoolCidrResponse& ProvisionIpamPoolCidrResponse::operator =(const A
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ProvisionIpamPoolCidrResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

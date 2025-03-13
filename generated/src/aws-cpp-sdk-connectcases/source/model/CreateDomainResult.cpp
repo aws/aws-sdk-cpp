@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDomainResult::CreateDomainResult() : 
-    m_domainStatus(DomainStatus::NOT_SET)
-{
-}
-
 CreateDomainResult::CreateDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateDomainResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateDomainResult& CreateDomainResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("domainArn"))
   {
     m_domainArn = jsonValue.GetString("domainArn");
-
+    m_domainArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
+    m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainStatus"))
   {
     m_domainStatus = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("domainStatus"));
-
+    m_domainStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

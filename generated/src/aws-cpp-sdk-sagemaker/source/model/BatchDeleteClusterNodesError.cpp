@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-BatchDeleteClusterNodesError::BatchDeleteClusterNodesError() : 
-    m_code(BatchDeleteClusterNodesErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
-{
-}
-
 BatchDeleteClusterNodesError::BatchDeleteClusterNodesError(JsonView jsonValue)
-  : BatchDeleteClusterNodesError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchDeleteClusterNodesError& BatchDeleteClusterNodesError::operator =(JsonView 
   if(jsonValue.ValueExists("Code"))
   {
     m_code = BatchDeleteClusterNodesErrorCodeMapper::GetBatchDeleteClusterNodesErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeId"))
   {
     m_nodeId = jsonValue.GetString("NodeId");
-
     m_nodeIdHasBeenSet = true;
   }
-
   return *this;
 }
 

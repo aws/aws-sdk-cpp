@@ -33,7 +33,7 @@ namespace Model
   class ListingItem
   {
   public:
-    AWS_DATAZONE_API ListingItem();
+    AWS_DATAZONE_API ListingItem() = default;
     AWS_DATAZONE_API ListingItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API ListingItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>An asset published in an Amazon DataZone catalog.</p>
      */
-    inline const AssetListing& GetAssetListing() const{ return m_assetListing; }
+    inline const AssetListing& GetAssetListing() const { return m_assetListing; }
     inline bool AssetListingHasBeenSet() const { return m_assetListingHasBeenSet; }
-    inline void SetAssetListing(const AssetListing& value) { m_assetListingHasBeenSet = true; m_assetListing = value; }
-    inline void SetAssetListing(AssetListing&& value) { m_assetListingHasBeenSet = true; m_assetListing = std::move(value); }
-    inline ListingItem& WithAssetListing(const AssetListing& value) { SetAssetListing(value); return *this;}
-    inline ListingItem& WithAssetListing(AssetListing&& value) { SetAssetListing(std::move(value)); return *this;}
+    template<typename AssetListingT = AssetListing>
+    void SetAssetListing(AssetListingT&& value) { m_assetListingHasBeenSet = true; m_assetListing = std::forward<AssetListingT>(value); }
+    template<typename AssetListingT = AssetListing>
+    ListingItem& WithAssetListing(AssetListingT&& value) { SetAssetListing(std::forward<AssetListingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data product listing.</p>
      */
-    inline const DataProductListing& GetDataProductListing() const{ return m_dataProductListing; }
+    inline const DataProductListing& GetDataProductListing() const { return m_dataProductListing; }
     inline bool DataProductListingHasBeenSet() const { return m_dataProductListingHasBeenSet; }
-    inline void SetDataProductListing(const DataProductListing& value) { m_dataProductListingHasBeenSet = true; m_dataProductListing = value; }
-    inline void SetDataProductListing(DataProductListing&& value) { m_dataProductListingHasBeenSet = true; m_dataProductListing = std::move(value); }
-    inline ListingItem& WithDataProductListing(const DataProductListing& value) { SetDataProductListing(value); return *this;}
-    inline ListingItem& WithDataProductListing(DataProductListing&& value) { SetDataProductListing(std::move(value)); return *this;}
+    template<typename DataProductListingT = DataProductListing>
+    void SetDataProductListing(DataProductListingT&& value) { m_dataProductListingHasBeenSet = true; m_dataProductListing = std::forward<DataProductListingT>(value); }
+    template<typename DataProductListingT = DataProductListing>
+    ListingItem& WithDataProductListing(DataProductListingT&& value) { SetDataProductListing(std::forward<DataProductListingT>(value)); return *this;}
     ///@}
   private:
 

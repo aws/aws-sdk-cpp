@@ -29,7 +29,7 @@ namespace Model
   class RecommendationResourcesAggregates
   {
   public:
-    AWS_TRUSTEDADVISOR_API RecommendationResourcesAggregates();
+    AWS_TRUSTEDADVISOR_API RecommendationResourcesAggregates() = default;
     AWS_TRUSTEDADVISOR_API RecommendationResourcesAggregates(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRUSTEDADVISOR_API RecommendationResourcesAggregates& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRUSTEDADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
      * <p>The number of AWS resources that were flagged to have errors according to the
      * Trusted Advisor check</p>
      */
-    inline long long GetErrorCount() const{ return m_errorCount; }
+    inline long long GetErrorCount() const { return m_errorCount; }
     inline bool ErrorCountHasBeenSet() const { return m_errorCountHasBeenSet; }
     inline void SetErrorCount(long long value) { m_errorCountHasBeenSet = true; m_errorCount = value; }
     inline RecommendationResourcesAggregates& WithErrorCount(long long value) { SetErrorCount(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
      * <p>The number of AWS resources that were flagged to be OK according to the
      * Trusted Advisor check</p>
      */
-    inline long long GetOkCount() const{ return m_okCount; }
+    inline long long GetOkCount() const { return m_okCount; }
     inline bool OkCountHasBeenSet() const { return m_okCountHasBeenSet; }
     inline void SetOkCount(long long value) { m_okCountHasBeenSet = true; m_okCount = value; }
     inline RecommendationResourcesAggregates& WithOkCount(long long value) { SetOkCount(value); return *this;}
@@ -62,20 +62,20 @@ namespace Model
      * <p>The number of AWS resources that were flagged to have warning according to
      * the Trusted Advisor check </p>
      */
-    inline long long GetWarningCount() const{ return m_warningCount; }
+    inline long long GetWarningCount() const { return m_warningCount; }
     inline bool WarningCountHasBeenSet() const { return m_warningCountHasBeenSet; }
     inline void SetWarningCount(long long value) { m_warningCountHasBeenSet = true; m_warningCount = value; }
     inline RecommendationResourcesAggregates& WithWarningCount(long long value) { SetWarningCount(value); return *this;}
     ///@}
   private:
 
-    long long m_errorCount;
+    long long m_errorCount{0};
     bool m_errorCountHasBeenSet = false;
 
-    long long m_okCount;
+    long long m_okCount{0};
     bool m_okCountHasBeenSet = false;
 
-    long long m_warningCount;
+    long long m_warningCount{0};
     bool m_warningCountHasBeenSet = false;
   };
 

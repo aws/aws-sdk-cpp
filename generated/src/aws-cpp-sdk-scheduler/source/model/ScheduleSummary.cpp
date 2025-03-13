@@ -18,20 +18,7 @@ namespace Scheduler
 namespace Model
 {
 
-ScheduleSummary::ScheduleSummary() : 
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_lastModificationDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(ScheduleState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 ScheduleSummary::ScheduleSummary(JsonView jsonValue)
-  : ScheduleSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ ScheduleSummary& ScheduleSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationDate"))
   {
     m_lastModificationDate = jsonValue.GetDouble("LastModificationDate");
-
     m_lastModificationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ScheduleStateMapper::GetScheduleStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetObject("Target");
-
     m_targetHasBeenSet = true;
   }
-
   return *this;
 }
 

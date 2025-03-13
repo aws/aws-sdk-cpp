@@ -47,7 +47,7 @@ namespace Model
   class ContainerProperties
   {
   public:
-    AWS_BATCH_API ContainerProperties();
+    AWS_BATCH_API ContainerProperties() = default;
     AWS_BATCH_API ContainerProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API ContainerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -84,14 +84,12 @@ namespace Model
      * <p>Images in other online repositories are qualified further by a domain name
      * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
-    inline const Aws::String& GetImage() const{ return m_image; }
+    inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-    inline ContainerProperties& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-    inline ContainerProperties& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-    inline ContainerProperties& WithImage(const char* value) { SetImage(value); return *this;}
+    template<typename ImageT = Aws::String>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Aws::String>
+    ContainerProperties& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,15 +104,14 @@ namespace Model
      * information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
+    inline const Aws::Vector<Aws::String>& GetCommand() const { return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-    inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-    inline ContainerProperties& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
-    inline ContainerProperties& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
-    inline ContainerProperties& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
-    inline ContainerProperties& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
-    inline ContainerProperties& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    void SetCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command = std::forward<CommandT>(value); }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    ContainerProperties& WithCommand(CommandT&& value) { SetCommand(std::forward<CommandT>(value)); return *this;}
+    template<typename CommandT = Aws::String>
+    ContainerProperties& AddCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command.emplace_back(std::forward<CommandT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -125,14 +122,12 @@ namespace Model
      * roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetJobRoleArn() const{ return m_jobRoleArn; }
+    inline const Aws::String& GetJobRoleArn() const { return m_jobRoleArn; }
     inline bool JobRoleArnHasBeenSet() const { return m_jobRoleArnHasBeenSet; }
-    inline void SetJobRoleArn(const Aws::String& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = value; }
-    inline void SetJobRoleArn(Aws::String&& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = std::move(value); }
-    inline void SetJobRoleArn(const char* value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn.assign(value); }
-    inline ContainerProperties& WithJobRoleArn(const Aws::String& value) { SetJobRoleArn(value); return *this;}
-    inline ContainerProperties& WithJobRoleArn(Aws::String&& value) { SetJobRoleArn(std::move(value)); return *this;}
-    inline ContainerProperties& WithJobRoleArn(const char* value) { SetJobRoleArn(value); return *this;}
+    template<typename JobRoleArnT = Aws::String>
+    void SetJobRoleArn(JobRoleArnT&& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = std::forward<JobRoleArnT>(value); }
+    template<typename JobRoleArnT = Aws::String>
+    ContainerProperties& WithJobRoleArn(JobRoleArnT&& value) { SetJobRoleArn(std::forward<JobRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,28 +138,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch
      * execution IAM role</a> in the <i>Batch User Guide</i>.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline ContainerProperties& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline ContainerProperties& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline ContainerProperties& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    ContainerProperties& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of data volumes used in a job.</p>
      */
-    inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
+    inline const Aws::Vector<Volume>& GetVolumes() const { return m_volumes; }
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
-    inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
-    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
-    inline ContainerProperties& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
-    inline ContainerProperties& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
-    inline ContainerProperties& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
-    inline ContainerProperties& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
+    template<typename VolumesT = Aws::Vector<Volume>>
+    void SetVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes = std::forward<VolumesT>(value); }
+    template<typename VolumesT = Aws::Vector<Volume>>
+    ContainerProperties& WithVolumes(VolumesT&& value) { SetVolumes(std::forward<VolumesT>(value)); return *this;}
+    template<typename VolumesT = Volume>
+    ContainerProperties& AddVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes.emplace_back(std::forward<VolumesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -181,14 +174,14 @@ namespace Model
      * <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming
      * convention is reserved for variables that Batch sets.</p> 
      */
-    inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
+    inline const Aws::Vector<KeyValuePair>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline ContainerProperties& WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
-    inline ContainerProperties& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline ContainerProperties& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
-    inline ContainerProperties& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
+    template<typename EnvironmentT = Aws::Vector<KeyValuePair>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Vector<KeyValuePair>>
+    ContainerProperties& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentT = KeyValuePair>
+    ContainerProperties& AddEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment.emplace_back(std::forward<EnvironmentT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -201,14 +194,14 @@ namespace Model
      * <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline const Aws::Vector<MountPoint>& GetMountPoints() const{ return m_mountPoints; }
+    inline const Aws::Vector<MountPoint>& GetMountPoints() const { return m_mountPoints; }
     inline bool MountPointsHasBeenSet() const { return m_mountPointsHasBeenSet; }
-    inline void SetMountPoints(const Aws::Vector<MountPoint>& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
-    inline void SetMountPoints(Aws::Vector<MountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::move(value); }
-    inline ContainerProperties& WithMountPoints(const Aws::Vector<MountPoint>& value) { SetMountPoints(value); return *this;}
-    inline ContainerProperties& WithMountPoints(Aws::Vector<MountPoint>&& value) { SetMountPoints(std::move(value)); return *this;}
-    inline ContainerProperties& AddMountPoints(const MountPoint& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(value); return *this; }
-    inline ContainerProperties& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
+    template<typename MountPointsT = Aws::Vector<MountPoint>>
+    void SetMountPoints(MountPointsT&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::forward<MountPointsT>(value); }
+    template<typename MountPointsT = Aws::Vector<MountPoint>>
+    ContainerProperties& WithMountPoints(MountPointsT&& value) { SetMountPoints(std::forward<MountPointsT>(value)); return *this;}
+    template<typename MountPointsT = MountPoint>
+    ContainerProperties& AddMountPoints(MountPointsT&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.emplace_back(std::forward<MountPointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -220,7 +213,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--read-only</code> option to <code>docker run</code>.</p>
      */
-    inline bool GetReadonlyRootFilesystem() const{ return m_readonlyRootFilesystem; }
+    inline bool GetReadonlyRootFilesystem() const { return m_readonlyRootFilesystem; }
     inline bool ReadonlyRootFilesystemHasBeenSet() const { return m_readonlyRootFilesystemHasBeenSet; }
     inline void SetReadonlyRootFilesystem(bool value) { m_readonlyRootFilesystemHasBeenSet = true; m_readonlyRootFilesystem = value; }
     inline ContainerProperties& WithReadonlyRootFilesystem(bool value) { SetReadonlyRootFilesystem(value); return *this;}
@@ -240,7 +233,7 @@ namespace Model
      * running on Fargate resources and shouldn't be provided, or specified as
      * false.</p> 
      */
-    inline bool GetPrivileged() const{ return m_privileged; }
+    inline bool GetPrivileged() const { return m_privileged; }
     inline bool PrivilegedHasBeenSet() const { return m_privilegedHasBeenSet; }
     inline void SetPrivileged(bool value) { m_privilegedHasBeenSet = true; m_privileged = value; }
     inline ContainerProperties& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
@@ -258,14 +251,14 @@ namespace Model
      * <p>This parameter isn't applicable to jobs that are running on Fargate resources
      * and shouldn't be provided.</p> 
      */
-    inline const Aws::Vector<Ulimit>& GetUlimits() const{ return m_ulimits; }
+    inline const Aws::Vector<Ulimit>& GetUlimits() const { return m_ulimits; }
     inline bool UlimitsHasBeenSet() const { return m_ulimitsHasBeenSet; }
-    inline void SetUlimits(const Aws::Vector<Ulimit>& value) { m_ulimitsHasBeenSet = true; m_ulimits = value; }
-    inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::move(value); }
-    inline ContainerProperties& WithUlimits(const Aws::Vector<Ulimit>& value) { SetUlimits(value); return *this;}
-    inline ContainerProperties& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(std::move(value)); return *this;}
-    inline ContainerProperties& AddUlimits(const Ulimit& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(value); return *this; }
-    inline ContainerProperties& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(std::move(value)); return *this; }
+    template<typename UlimitsT = Aws::Vector<Ulimit>>
+    void SetUlimits(UlimitsT&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::forward<UlimitsT>(value); }
+    template<typename UlimitsT = Aws::Vector<Ulimit>>
+    ContainerProperties& WithUlimits(UlimitsT&& value) { SetUlimits(std::forward<UlimitsT>(value)); return *this;}
+    template<typename UlimitsT = Ulimit>
+    ContainerProperties& AddUlimits(UlimitsT&& value) { m_ulimitsHasBeenSet = true; m_ulimits.emplace_back(std::forward<UlimitsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -278,14 +271,12 @@ namespace Model
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
-    inline const Aws::String& GetUser() const{ return m_user; }
+    inline const Aws::String& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
-    inline ContainerProperties& WithUser(const Aws::String& value) { SetUser(value); return *this;}
-    inline ContainerProperties& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
-    inline ContainerProperties& WithUser(const char* value) { SetUser(value); return *this;}
+    template<typename UserT = Aws::String>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = Aws::String>
+    ContainerProperties& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -295,14 +286,12 @@ namespace Model
      * parameter isn't applicable to single-node container jobs or jobs that run on
      * Fargate resources, and shouldn't be provided.</p> 
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline ContainerProperties& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline ContainerProperties& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline ContainerProperties& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    ContainerProperties& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -311,14 +300,14 @@ namespace Model
      * resources include <code>GPU</code>, <code>MEMORY</code>, and
      * <code>VCPU</code>.</p>
      */
-    inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const{ return m_resourceRequirements; }
+    inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const { return m_resourceRequirements; }
     inline bool ResourceRequirementsHasBeenSet() const { return m_resourceRequirementsHasBeenSet; }
-    inline void SetResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = value; }
-    inline void SetResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::move(value); }
-    inline ContainerProperties& WithResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { SetResourceRequirements(value); return *this;}
-    inline ContainerProperties& WithResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { SetResourceRequirements(std::move(value)); return *this;}
-    inline ContainerProperties& AddResourceRequirements(const ResourceRequirement& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(value); return *this; }
-    inline ContainerProperties& AddResourceRequirements(ResourceRequirement&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(std::move(value)); return *this; }
+    template<typename ResourceRequirementsT = Aws::Vector<ResourceRequirement>>
+    void SetResourceRequirements(ResourceRequirementsT&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::forward<ResourceRequirementsT>(value); }
+    template<typename ResourceRequirementsT = Aws::Vector<ResourceRequirement>>
+    ContainerProperties& WithResourceRequirements(ResourceRequirementsT&& value) { SetResourceRequirements(std::forward<ResourceRequirementsT>(value)); return *this;}
+    template<typename ResourceRequirementsT = ResourceRequirement>
+    ContainerProperties& AddResourceRequirements(ResourceRequirementsT&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.emplace_back(std::forward<ResourceRequirementsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -326,12 +315,12 @@ namespace Model
      * <p>Linux-specific modifications that are applied to the container, such as
      * details for device mappings.</p>
      */
-    inline const LinuxParameters& GetLinuxParameters() const{ return m_linuxParameters; }
+    inline const LinuxParameters& GetLinuxParameters() const { return m_linuxParameters; }
     inline bool LinuxParametersHasBeenSet() const { return m_linuxParametersHasBeenSet; }
-    inline void SetLinuxParameters(const LinuxParameters& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = value; }
-    inline void SetLinuxParameters(LinuxParameters&& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = std::move(value); }
-    inline ContainerProperties& WithLinuxParameters(const LinuxParameters& value) { SetLinuxParameters(value); return *this;}
-    inline ContainerProperties& WithLinuxParameters(LinuxParameters&& value) { SetLinuxParameters(std::move(value)); return *this;}
+    template<typename LinuxParametersT = LinuxParameters>
+    void SetLinuxParameters(LinuxParametersT&& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = std::forward<LinuxParametersT>(value); }
+    template<typename LinuxParametersT = LinuxParameters>
+    ContainerProperties& WithLinuxParameters(LinuxParametersT&& value) { SetLinuxParameters(std::forward<LinuxParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -367,12 +356,12 @@ namespace Model
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
-    inline const LogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+    inline const LogConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-    inline void SetLogConfiguration(const LogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-    inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-    inline ContainerProperties& WithLogConfiguration(const LogConfiguration& value) { SetLogConfiguration(value); return *this;}
-    inline ContainerProperties& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+    template<typename LogConfigurationT = LogConfiguration>
+    void SetLogConfiguration(LogConfigurationT&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::forward<LogConfigurationT>(value); }
+    template<typename LogConfigurationT = LogConfiguration>
+    ContainerProperties& WithLogConfiguration(LogConfigurationT&& value) { SetLogConfiguration(std::forward<LogConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -381,14 +370,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
      * sensitive data</a> in the <i>Batch User Guide</i>.</p>
      */
-    inline const Aws::Vector<Secret>& GetSecrets() const{ return m_secrets; }
+    inline const Aws::Vector<Secret>& GetSecrets() const { return m_secrets; }
     inline bool SecretsHasBeenSet() const { return m_secretsHasBeenSet; }
-    inline void SetSecrets(const Aws::Vector<Secret>& value) { m_secretsHasBeenSet = true; m_secrets = value; }
-    inline void SetSecrets(Aws::Vector<Secret>&& value) { m_secretsHasBeenSet = true; m_secrets = std::move(value); }
-    inline ContainerProperties& WithSecrets(const Aws::Vector<Secret>& value) { SetSecrets(value); return *this;}
-    inline ContainerProperties& WithSecrets(Aws::Vector<Secret>&& value) { SetSecrets(std::move(value)); return *this;}
-    inline ContainerProperties& AddSecrets(const Secret& value) { m_secretsHasBeenSet = true; m_secrets.push_back(value); return *this; }
-    inline ContainerProperties& AddSecrets(Secret&& value) { m_secretsHasBeenSet = true; m_secrets.push_back(std::move(value)); return *this; }
+    template<typename SecretsT = Aws::Vector<Secret>>
+    void SetSecrets(SecretsT&& value) { m_secretsHasBeenSet = true; m_secrets = std::forward<SecretsT>(value); }
+    template<typename SecretsT = Aws::Vector<Secret>>
+    ContainerProperties& WithSecrets(SecretsT&& value) { SetSecrets(std::forward<SecretsT>(value)); return *this;}
+    template<typename SecretsT = Secret>
+    ContainerProperties& AddSecrets(SecretsT&& value) { m_secretsHasBeenSet = true; m_secrets.emplace_back(std::forward<SecretsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -397,12 +386,12 @@ namespace Model
      * Jobs that are running on Amazon EC2 resources must not specify this
      * parameter.</p>
      */
-    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+    inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
-    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
-    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
-    inline ContainerProperties& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
-    inline ContainerProperties& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    void SetNetworkConfiguration(NetworkConfigurationT&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::forward<NetworkConfigurationT>(value); }
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    ContainerProperties& WithNetworkConfiguration(NetworkConfigurationT&& value) { SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -411,12 +400,12 @@ namespace Model
      * Jobs that are running on Amazon EC2 resources must not specify this
      * parameter.</p>
      */
-    inline const FargatePlatformConfiguration& GetFargatePlatformConfiguration() const{ return m_fargatePlatformConfiguration; }
+    inline const FargatePlatformConfiguration& GetFargatePlatformConfiguration() const { return m_fargatePlatformConfiguration; }
     inline bool FargatePlatformConfigurationHasBeenSet() const { return m_fargatePlatformConfigurationHasBeenSet; }
-    inline void SetFargatePlatformConfiguration(const FargatePlatformConfiguration& value) { m_fargatePlatformConfigurationHasBeenSet = true; m_fargatePlatformConfiguration = value; }
-    inline void SetFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { m_fargatePlatformConfigurationHasBeenSet = true; m_fargatePlatformConfiguration = std::move(value); }
-    inline ContainerProperties& WithFargatePlatformConfiguration(const FargatePlatformConfiguration& value) { SetFargatePlatformConfiguration(value); return *this;}
-    inline ContainerProperties& WithFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { SetFargatePlatformConfiguration(std::move(value)); return *this;}
+    template<typename FargatePlatformConfigurationT = FargatePlatformConfiguration>
+    void SetFargatePlatformConfiguration(FargatePlatformConfigurationT&& value) { m_fargatePlatformConfigurationHasBeenSet = true; m_fargatePlatformConfiguration = std::forward<FargatePlatformConfigurationT>(value); }
+    template<typename FargatePlatformConfigurationT = FargatePlatformConfiguration>
+    ContainerProperties& WithFargatePlatformConfiguration(FargatePlatformConfigurationT&& value) { SetFargatePlatformConfiguration(std::forward<FargatePlatformConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -425,12 +414,12 @@ namespace Model
      * used to expand the total amount of ephemeral storage available, beyond the
      * default amount, for tasks hosted on Fargate.</p>
      */
-    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+    inline const EphemeralStorage& GetEphemeralStorage() const { return m_ephemeralStorage; }
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
-    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
-    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
-    inline ContainerProperties& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
-    inline ContainerProperties& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+    template<typename EphemeralStorageT = EphemeralStorage>
+    void SetEphemeralStorage(EphemeralStorageT&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::forward<EphemeralStorageT>(value); }
+    template<typename EphemeralStorageT = EphemeralStorage>
+    ContainerProperties& WithEphemeralStorage(EphemeralStorageT&& value) { SetEphemeralStorage(std::forward<EphemeralStorageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -438,24 +427,24 @@ namespace Model
      * <p>An object that represents the compute environment architecture for Batch jobs
      * on Fargate.</p>
      */
-    inline const RuntimePlatform& GetRuntimePlatform() const{ return m_runtimePlatform; }
+    inline const RuntimePlatform& GetRuntimePlatform() const { return m_runtimePlatform; }
     inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
-    inline void SetRuntimePlatform(const RuntimePlatform& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = value; }
-    inline void SetRuntimePlatform(RuntimePlatform&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::move(value); }
-    inline ContainerProperties& WithRuntimePlatform(const RuntimePlatform& value) { SetRuntimePlatform(value); return *this;}
-    inline ContainerProperties& WithRuntimePlatform(RuntimePlatform&& value) { SetRuntimePlatform(std::move(value)); return *this;}
+    template<typename RuntimePlatformT = RuntimePlatform>
+    void SetRuntimePlatform(RuntimePlatformT&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::forward<RuntimePlatformT>(value); }
+    template<typename RuntimePlatformT = RuntimePlatform>
+    ContainerProperties& WithRuntimePlatform(RuntimePlatformT&& value) { SetRuntimePlatform(std::forward<RuntimePlatformT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The private repository authentication credentials to use.</p>
      */
-    inline const RepositoryCredentials& GetRepositoryCredentials() const{ return m_repositoryCredentials; }
+    inline const RepositoryCredentials& GetRepositoryCredentials() const { return m_repositoryCredentials; }
     inline bool RepositoryCredentialsHasBeenSet() const { return m_repositoryCredentialsHasBeenSet; }
-    inline void SetRepositoryCredentials(const RepositoryCredentials& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = value; }
-    inline void SetRepositoryCredentials(RepositoryCredentials&& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = std::move(value); }
-    inline ContainerProperties& WithRepositoryCredentials(const RepositoryCredentials& value) { SetRepositoryCredentials(value); return *this;}
-    inline ContainerProperties& WithRepositoryCredentials(RepositoryCredentials&& value) { SetRepositoryCredentials(std::move(value)); return *this;}
+    template<typename RepositoryCredentialsT = RepositoryCredentials>
+    void SetRepositoryCredentials(RepositoryCredentialsT&& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = std::forward<RepositoryCredentialsT>(value); }
+    template<typename RepositoryCredentialsT = RepositoryCredentials>
+    ContainerProperties& WithRepositoryCredentials(RepositoryCredentialsT&& value) { SetRepositoryCredentials(std::forward<RepositoryCredentialsT>(value)); return *this;}
     ///@}
   private:
 
@@ -480,10 +469,10 @@ namespace Model
     Aws::Vector<MountPoint> m_mountPoints;
     bool m_mountPointsHasBeenSet = false;
 
-    bool m_readonlyRootFilesystem;
+    bool m_readonlyRootFilesystem{false};
     bool m_readonlyRootFilesystemHasBeenSet = false;
 
-    bool m_privileged;
+    bool m_privileged{false};
     bool m_privilegedHasBeenSet = false;
 
     Aws::Vector<Ulimit> m_ulimits;

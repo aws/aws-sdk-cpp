@@ -33,7 +33,7 @@ namespace Model
   class ProductCode
   {
   public:
-    AWS_DRS_API ProductCode();
+    AWS_DRS_API ProductCode() = default;
     AWS_DRS_API ProductCode(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API ProductCode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>Id of a product code associated with a volume.</p>
      */
-    inline const Aws::String& GetProductCodeId() const{ return m_productCodeId; }
+    inline const Aws::String& GetProductCodeId() const { return m_productCodeId; }
     inline bool ProductCodeIdHasBeenSet() const { return m_productCodeIdHasBeenSet; }
-    inline void SetProductCodeId(const Aws::String& value) { m_productCodeIdHasBeenSet = true; m_productCodeId = value; }
-    inline void SetProductCodeId(Aws::String&& value) { m_productCodeIdHasBeenSet = true; m_productCodeId = std::move(value); }
-    inline void SetProductCodeId(const char* value) { m_productCodeIdHasBeenSet = true; m_productCodeId.assign(value); }
-    inline ProductCode& WithProductCodeId(const Aws::String& value) { SetProductCodeId(value); return *this;}
-    inline ProductCode& WithProductCodeId(Aws::String&& value) { SetProductCodeId(std::move(value)); return *this;}
-    inline ProductCode& WithProductCodeId(const char* value) { SetProductCodeId(value); return *this;}
+    template<typename ProductCodeIdT = Aws::String>
+    void SetProductCodeId(ProductCodeIdT&& value) { m_productCodeIdHasBeenSet = true; m_productCodeId = std::forward<ProductCodeIdT>(value); }
+    template<typename ProductCodeIdT = Aws::String>
+    ProductCode& WithProductCodeId(ProductCodeIdT&& value) { SetProductCodeId(std::forward<ProductCodeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Mode of a product code associated with a volume.</p>
      */
-    inline const ProductCodeMode& GetProductCodeMode() const{ return m_productCodeMode; }
+    inline ProductCodeMode GetProductCodeMode() const { return m_productCodeMode; }
     inline bool ProductCodeModeHasBeenSet() const { return m_productCodeModeHasBeenSet; }
-    inline void SetProductCodeMode(const ProductCodeMode& value) { m_productCodeModeHasBeenSet = true; m_productCodeMode = value; }
-    inline void SetProductCodeMode(ProductCodeMode&& value) { m_productCodeModeHasBeenSet = true; m_productCodeMode = std::move(value); }
-    inline ProductCode& WithProductCodeMode(const ProductCodeMode& value) { SetProductCodeMode(value); return *this;}
-    inline ProductCode& WithProductCodeMode(ProductCodeMode&& value) { SetProductCodeMode(std::move(value)); return *this;}
+    inline void SetProductCodeMode(ProductCodeMode value) { m_productCodeModeHasBeenSet = true; m_productCodeMode = value; }
+    inline ProductCode& WithProductCodeMode(ProductCodeMode value) { SetProductCodeMode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_productCodeId;
     bool m_productCodeIdHasBeenSet = false;
 
-    ProductCodeMode m_productCodeMode;
+    ProductCodeMode m_productCodeMode{ProductCodeMode::NOT_SET};
     bool m_productCodeModeHasBeenSet = false;
   };
 

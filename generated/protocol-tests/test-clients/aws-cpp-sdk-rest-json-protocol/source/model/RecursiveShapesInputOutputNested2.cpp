@@ -19,41 +19,23 @@ namespace RestJsonProtocol
 namespace Model
 {
 
-RecursiveShapesInputOutputNested2::RecursiveShapesInputOutputNested2() : 
-    m_barHasBeenSet(false),
-    m_recursiveMemberHasBeenSet(false)
-{
-}
-
 RecursiveShapesInputOutputNested2::RecursiveShapesInputOutputNested2(JsonView jsonValue)
-  : RecursiveShapesInputOutputNested2()
 {
   *this = jsonValue;
 }
-
-const RecursiveShapesInputOutputNested1& RecursiveShapesInputOutputNested2::GetRecursiveMember() const{ return *m_recursiveMember; }
-bool RecursiveShapesInputOutputNested2::RecursiveMemberHasBeenSet() const { return m_recursiveMemberHasBeenSet; }
-void RecursiveShapesInputOutputNested2::SetRecursiveMember(const RecursiveShapesInputOutputNested1& value) { m_recursiveMemberHasBeenSet = true; m_recursiveMember = Aws::MakeShared<RecursiveShapesInputOutputNested1>("RecursiveShapesInputOutputNested2", value); }
-void RecursiveShapesInputOutputNested2::SetRecursiveMember(RecursiveShapesInputOutputNested1&& value) { m_recursiveMemberHasBeenSet = true; m_recursiveMember = Aws::MakeShared<RecursiveShapesInputOutputNested1>("RecursiveShapesInputOutputNested2", std::move(value)); }
-RecursiveShapesInputOutputNested2& RecursiveShapesInputOutputNested2::WithRecursiveMember(const RecursiveShapesInputOutputNested1& value) { SetRecursiveMember(value); return *this;}
-RecursiveShapesInputOutputNested2& RecursiveShapesInputOutputNested2::WithRecursiveMember(RecursiveShapesInputOutputNested1&& value) { SetRecursiveMember(std::move(value)); return *this;}
 
 RecursiveShapesInputOutputNested2& RecursiveShapesInputOutputNested2::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bar"))
   {
     m_bar = jsonValue.GetString("bar");
-
     m_barHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recursiveMember"))
   {
     m_recursiveMember = Aws::MakeShared<RecursiveShapesInputOutputNested1>("RecursiveShapesInputOutputNested2", jsonValue.GetObject("recursiveMember"));
-
     m_recursiveMemberHasBeenSet = true;
   }
-
   return *this;
 }
 

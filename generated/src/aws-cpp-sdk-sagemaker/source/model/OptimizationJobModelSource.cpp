@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OptimizationJobModelSource::OptimizationJobModelSource() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 OptimizationJobModelSource::OptimizationJobModelSource(JsonView jsonValue)
-  : OptimizationJobModelSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OptimizationJobModelSource& OptimizationJobModelSource::operator =(JsonView json
   if(jsonValue.ValueExists("S3"))
   {
     m_s3 = jsonValue.GetObject("S3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

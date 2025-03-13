@@ -21,7 +21,7 @@ namespace Model
   class GetProbeRequest : public NetworkMonitorRequest
   {
   public:
-    AWS_NETWORKMONITOR_API GetProbeRequest();
+    AWS_NETWORKMONITOR_API GetProbeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The name of the monitor associated with the probe. Run
      * <code>ListMonitors</code> to get a list of monitor names.</p>
      */
-    inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
+    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-    inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
-    inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
-    inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
-    inline GetProbeRequest& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-    inline GetProbeRequest& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-    inline GetProbeRequest& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
+    template<typename MonitorNameT = Aws::String>
+    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
+    template<typename MonitorNameT = Aws::String>
+    GetProbeRequest& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +50,12 @@ namespace Model
      * <p>The ID of the probe to get information about. Run <code>GetMonitor</code>
      * action to get a list of probes and probe IDs for the monitor.</p>
      */
-    inline const Aws::String& GetProbeId() const{ return m_probeId; }
+    inline const Aws::String& GetProbeId() const { return m_probeId; }
     inline bool ProbeIdHasBeenSet() const { return m_probeIdHasBeenSet; }
-    inline void SetProbeId(const Aws::String& value) { m_probeIdHasBeenSet = true; m_probeId = value; }
-    inline void SetProbeId(Aws::String&& value) { m_probeIdHasBeenSet = true; m_probeId = std::move(value); }
-    inline void SetProbeId(const char* value) { m_probeIdHasBeenSet = true; m_probeId.assign(value); }
-    inline GetProbeRequest& WithProbeId(const Aws::String& value) { SetProbeId(value); return *this;}
-    inline GetProbeRequest& WithProbeId(Aws::String&& value) { SetProbeId(std::move(value)); return *this;}
-    inline GetProbeRequest& WithProbeId(const char* value) { SetProbeId(value); return *this;}
+    template<typename ProbeIdT = Aws::String>
+    void SetProbeId(ProbeIdT&& value) { m_probeIdHasBeenSet = true; m_probeId = std::forward<ProbeIdT>(value); }
+    template<typename ProbeIdT = Aws::String>
+    GetProbeRequest& WithProbeId(ProbeIdT&& value) { SetProbeId(std::forward<ProbeIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchTablesByLFTagsResult::SearchTablesByLFTagsResult()
-{
-}
-
 SearchTablesByLFTagsResult::SearchTablesByLFTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ SearchTablesByLFTagsResult& SearchTablesByLFTagsResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableList"))
   {
     Aws::Utils::Array<JsonView> tableListJsonList = jsonValue.GetArray("TableList");
@@ -42,14 +37,15 @@ SearchTablesByLFTagsResult& SearchTablesByLFTagsResult::operator =(const Aws::Am
     {
       m_tableList.push_back(tableListJsonList[tableListIndex].AsObject());
     }
+    m_tableListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

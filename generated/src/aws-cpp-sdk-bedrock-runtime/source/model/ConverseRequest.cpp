@@ -12,21 +12,6 @@ using namespace Aws::BedrockRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConverseRequest::ConverseRequest() : 
-    m_modelIdHasBeenSet(false),
-    m_messagesHasBeenSet(false),
-    m_systemHasBeenSet(false),
-    m_inferenceConfigHasBeenSet(false),
-    m_toolConfigHasBeenSet(false),
-    m_guardrailConfigHasBeenSet(false),
-    m_additionalModelRequestFieldsHasBeenSet(false),
-    m_promptVariablesHasBeenSet(false),
-    m_additionalModelResponseFieldPathsHasBeenSet(false),
-    m_requestMetadataHasBeenSet(false),
-    m_performanceConfigHasBeenSet(false)
-{
-}
-
 Aws::String ConverseRequest::SerializePayload() const
 {
   JsonValue payload;

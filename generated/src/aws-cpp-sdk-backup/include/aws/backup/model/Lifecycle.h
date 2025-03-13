@@ -41,7 +41,7 @@ namespace Model
   class Lifecycle
   {
   public:
-    AWS_BACKUP_API Lifecycle();
+    AWS_BACKUP_API Lifecycle() = default;
     AWS_BACKUP_API Lifecycle(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Lifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,7 +52,7 @@ namespace Model
      * <p>The number of days after creation that a recovery point is moved to cold
      * storage.</p>
      */
-    inline long long GetMoveToColdStorageAfterDays() const{ return m_moveToColdStorageAfterDays; }
+    inline long long GetMoveToColdStorageAfterDays() const { return m_moveToColdStorageAfterDays; }
     inline bool MoveToColdStorageAfterDaysHasBeenSet() const { return m_moveToColdStorageAfterDaysHasBeenSet; }
     inline void SetMoveToColdStorageAfterDays(long long value) { m_moveToColdStorageAfterDaysHasBeenSet = true; m_moveToColdStorageAfterDays = value; }
     inline Lifecycle& WithMoveToColdStorageAfterDays(long long value) { SetMoveToColdStorageAfterDays(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
      * value must be at least 90 days after the number of days specified in
      * <code>MoveToColdStorageAfterDays</code>.</p>
      */
-    inline long long GetDeleteAfterDays() const{ return m_deleteAfterDays; }
+    inline long long GetDeleteAfterDays() const { return m_deleteAfterDays; }
     inline bool DeleteAfterDaysHasBeenSet() const { return m_deleteAfterDaysHasBeenSet; }
     inline void SetDeleteAfterDays(long long value) { m_deleteAfterDaysHasBeenSet = true; m_deleteAfterDays = value; }
     inline Lifecycle& WithDeleteAfterDays(long long value) { SetDeleteAfterDays(value); return *this;}
@@ -75,20 +75,20 @@ namespace Model
      * <p>If the value is true, your backup plan transitions supported resources to
      * archive (cold) storage tier in accordance with your lifecycle settings.</p>
      */
-    inline bool GetOptInToArchiveForSupportedResources() const{ return m_optInToArchiveForSupportedResources; }
+    inline bool GetOptInToArchiveForSupportedResources() const { return m_optInToArchiveForSupportedResources; }
     inline bool OptInToArchiveForSupportedResourcesHasBeenSet() const { return m_optInToArchiveForSupportedResourcesHasBeenSet; }
     inline void SetOptInToArchiveForSupportedResources(bool value) { m_optInToArchiveForSupportedResourcesHasBeenSet = true; m_optInToArchiveForSupportedResources = value; }
     inline Lifecycle& WithOptInToArchiveForSupportedResources(bool value) { SetOptInToArchiveForSupportedResources(value); return *this;}
     ///@}
   private:
 
-    long long m_moveToColdStorageAfterDays;
+    long long m_moveToColdStorageAfterDays{0};
     bool m_moveToColdStorageAfterDaysHasBeenSet = false;
 
-    long long m_deleteAfterDays;
+    long long m_deleteAfterDays{0};
     bool m_deleteAfterDaysHasBeenSet = false;
 
-    bool m_optInToArchiveForSupportedResources;
+    bool m_optInToArchiveForSupportedResources{false};
     bool m_optInToArchiveForSupportedResourcesHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class Message
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API Message();
+    AWS_ROUTE53RECOVERYREADINESS_API Message() = default;
     AWS_ROUTE53RECOVERYREADINESS_API Message(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYREADINESS_API Message& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The text of a readiness check message.</p>
      */
-    inline const Aws::String& GetMessageText() const{ return m_messageText; }
+    inline const Aws::String& GetMessageText() const { return m_messageText; }
     inline bool MessageTextHasBeenSet() const { return m_messageTextHasBeenSet; }
-    inline void SetMessageText(const Aws::String& value) { m_messageTextHasBeenSet = true; m_messageText = value; }
-    inline void SetMessageText(Aws::String&& value) { m_messageTextHasBeenSet = true; m_messageText = std::move(value); }
-    inline void SetMessageText(const char* value) { m_messageTextHasBeenSet = true; m_messageText.assign(value); }
-    inline Message& WithMessageText(const Aws::String& value) { SetMessageText(value); return *this;}
-    inline Message& WithMessageText(Aws::String&& value) { SetMessageText(std::move(value)); return *this;}
-    inline Message& WithMessageText(const char* value) { SetMessageText(value); return *this;}
+    template<typename MessageTextT = Aws::String>
+    void SetMessageText(MessageTextT&& value) { m_messageTextHasBeenSet = true; m_messageText = std::forward<MessageTextT>(value); }
+    template<typename MessageTextT = Aws::String>
+    Message& WithMessageText(MessageTextT&& value) { SetMessageText(std::forward<MessageTextT>(value)); return *this;}
     ///@}
   private:
 

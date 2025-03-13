@@ -18,17 +18,7 @@ namespace Athena
 namespace Model
 {
 
-PreparedStatement::PreparedStatement() : 
-    m_statementNameHasBeenSet(false),
-    m_queryStatementHasBeenSet(false),
-    m_workGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 PreparedStatement::PreparedStatement(JsonView jsonValue)
-  : PreparedStatement()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ PreparedStatement& PreparedStatement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StatementName"))
   {
     m_statementName = jsonValue.GetString("StatementName");
-
     m_statementNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryStatement"))
   {
     m_queryStatement = jsonValue.GetString("QueryStatement");
-
     m_queryStatementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkGroupName"))
   {
     m_workGroupName = jsonValue.GetString("WorkGroupName");
-
     m_workGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

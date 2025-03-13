@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2NetworkInterfaceAttachment::AwsEc2NetworkInterfaceAttachment() : 
-    m_attachTimeHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_deviceIndex(0),
-    m_deviceIndexHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceOwnerIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsEc2NetworkInterfaceAttachment::AwsEc2NetworkInterfaceAttachment(JsonView jsonValue)
-  : AwsEc2NetworkInterfaceAttachment()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ AwsEc2NetworkInterfaceAttachment& AwsEc2NetworkInterfaceAttachment::operator =(J
   if(jsonValue.ValueExists("AttachTime"))
   {
     m_attachTime = jsonValue.GetString("AttachTime");
-
     m_attachTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentId"))
   {
     m_attachmentId = jsonValue.GetString("AttachmentId");
-
     m_attachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteOnTermination"))
   {
     m_deleteOnTermination = jsonValue.GetBool("DeleteOnTermination");
-
     m_deleteOnTerminationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceIndex"))
   {
     m_deviceIndex = jsonValue.GetInteger("DeviceIndex");
-
     m_deviceIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceOwnerId"))
   {
     m_instanceOwnerId = jsonValue.GetString("InstanceOwnerId");
-
     m_instanceOwnerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DescribeGatewayCapabilityConfigurationRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API DescribeGatewayCapabilityConfigurationRequest();
+    AWS_IOTSITEWISE_API DescribeGatewayCapabilityConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the gateway that defines the capability configuration.</p>
      */
-    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+    inline const Aws::String& GetGatewayId() const { return m_gatewayId; }
     inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
-    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
-    inline DescribeGatewayCapabilityConfigurationRequest& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-    inline DescribeGatewayCapabilityConfigurationRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-    inline DescribeGatewayCapabilityConfigurationRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    template<typename GatewayIdT = Aws::String>
+    void SetGatewayId(GatewayIdT&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::forward<GatewayIdT>(value); }
+    template<typename GatewayIdT = Aws::String>
+    DescribeGatewayCapabilityConfigurationRequest& WithGatewayId(GatewayIdT&& value) { SetGatewayId(std::forward<GatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
      * where <code>version</code> is a number such as <code>1</code>.</p>
      */
-    inline const Aws::String& GetCapabilityNamespace() const{ return m_capabilityNamespace; }
+    inline const Aws::String& GetCapabilityNamespace() const { return m_capabilityNamespace; }
     inline bool CapabilityNamespaceHasBeenSet() const { return m_capabilityNamespaceHasBeenSet; }
-    inline void SetCapabilityNamespace(const Aws::String& value) { m_capabilityNamespaceHasBeenSet = true; m_capabilityNamespace = value; }
-    inline void SetCapabilityNamespace(Aws::String&& value) { m_capabilityNamespaceHasBeenSet = true; m_capabilityNamespace = std::move(value); }
-    inline void SetCapabilityNamespace(const char* value) { m_capabilityNamespaceHasBeenSet = true; m_capabilityNamespace.assign(value); }
-    inline DescribeGatewayCapabilityConfigurationRequest& WithCapabilityNamespace(const Aws::String& value) { SetCapabilityNamespace(value); return *this;}
-    inline DescribeGatewayCapabilityConfigurationRequest& WithCapabilityNamespace(Aws::String&& value) { SetCapabilityNamespace(std::move(value)); return *this;}
-    inline DescribeGatewayCapabilityConfigurationRequest& WithCapabilityNamespace(const char* value) { SetCapabilityNamespace(value); return *this;}
+    template<typename CapabilityNamespaceT = Aws::String>
+    void SetCapabilityNamespace(CapabilityNamespaceT&& value) { m_capabilityNamespaceHasBeenSet = true; m_capabilityNamespace = std::forward<CapabilityNamespaceT>(value); }
+    template<typename CapabilityNamespaceT = Aws::String>
+    DescribeGatewayCapabilityConfigurationRequest& WithCapabilityNamespace(CapabilityNamespaceT&& value) { SetCapabilityNamespace(std::forward<CapabilityNamespaceT>(value)); return *this;}
     ///@}
   private:
 

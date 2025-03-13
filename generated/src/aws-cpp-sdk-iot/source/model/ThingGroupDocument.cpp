@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ThingGroupDocument::ThingGroupDocument() : 
-    m_thingGroupNameHasBeenSet(false),
-    m_thingGroupIdHasBeenSet(false),
-    m_thingGroupDescriptionHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_parentGroupNamesHasBeenSet(false)
-{
-}
-
 ThingGroupDocument::ThingGroupDocument(JsonView jsonValue)
-  : ThingGroupDocument()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ThingGroupDocument& ThingGroupDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("thingGroupName"))
   {
     m_thingGroupName = jsonValue.GetString("thingGroupName");
-
     m_thingGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingGroupId"))
   {
     m_thingGroupId = jsonValue.GetString("thingGroupId");
-
     m_thingGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingGroupDescription"))
   {
     m_thingGroupDescription = jsonValue.GetString("thingGroupDescription");
-
     m_thingGroupDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -65,7 +49,6 @@ ThingGroupDocument& ThingGroupDocument::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentGroupNames"))
   {
     Aws::Utils::Array<JsonView> parentGroupNamesJsonList = jsonValue.GetArray("parentGroupNames");
@@ -75,7 +58,6 @@ ThingGroupDocument& ThingGroupDocument::operator =(JsonView jsonValue)
     }
     m_parentGroupNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

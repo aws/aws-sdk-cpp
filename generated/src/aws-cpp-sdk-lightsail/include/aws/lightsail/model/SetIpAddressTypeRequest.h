@@ -23,7 +23,7 @@ namespace Model
   class SetIpAddressTypeRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API SetIpAddressTypeRequest();
+    AWS_LIGHTSAIL_API SetIpAddressTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,26 +45,22 @@ namespace Model
      * Services Region configuration to <code>us-east-1</code> to create, view, or edit
      * distributions.</p> 
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline SetIpAddressTypeRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline SetIpAddressTypeRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline SetIpAddressTypeRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the resource for which to set the IP address type.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline SetIpAddressTypeRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline SetIpAddressTypeRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline SetIpAddressTypeRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    SetIpAddressTypeRequest& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,10 @@ namespace Model
      * values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
      * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
-    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
-    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
-    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
-    inline SetIpAddressTypeRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
-    inline SetIpAddressTypeRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline SetIpAddressTypeRequest& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
     ///@}
 
     ///@{
@@ -92,23 +86,23 @@ namespace Model
      * <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only
      * instance bundle begins immediately.</p> 
      */
-    inline bool GetAcceptBundleUpdate() const{ return m_acceptBundleUpdate; }
+    inline bool GetAcceptBundleUpdate() const { return m_acceptBundleUpdate; }
     inline bool AcceptBundleUpdateHasBeenSet() const { return m_acceptBundleUpdateHasBeenSet; }
     inline void SetAcceptBundleUpdate(bool value) { m_acceptBundleUpdateHasBeenSet = true; m_acceptBundleUpdate = value; }
     inline SetIpAddressTypeRequest& WithAcceptBundleUpdate(bool value) { SetAcceptBundleUpdate(value); return *this;}
     ///@}
   private:
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet = false;
 
-    IpAddressType m_ipAddressType;
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
     bool m_ipAddressTypeHasBeenSet = false;
 
-    bool m_acceptBundleUpdate;
+    bool m_acceptBundleUpdate{false};
     bool m_acceptBundleUpdateHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace MediaPackageVod
 namespace Model
 {
 
-EgressEndpoint::EgressEndpoint() : 
-    m_packagingConfigurationIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 EgressEndpoint::EgressEndpoint(JsonView jsonValue)
-  : EgressEndpoint()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EgressEndpoint& EgressEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("packagingConfigurationId"))
   {
     m_packagingConfigurationId = jsonValue.GetString("packagingConfigurationId");
-
     m_packagingConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

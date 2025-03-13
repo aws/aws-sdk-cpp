@@ -28,35 +28,35 @@ namespace Model
   class GetInAppMessagesResult
   {
   public:
-    AWS_PINPOINT_API GetInAppMessagesResult();
+    AWS_PINPOINT_API GetInAppMessagesResult() = default;
     AWS_PINPOINT_API GetInAppMessagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetInAppMessagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const InAppMessagesResponse& GetInAppMessagesResponse() const{ return m_inAppMessagesResponse; }
-    inline void SetInAppMessagesResponse(const InAppMessagesResponse& value) { m_inAppMessagesResponse = value; }
-    inline void SetInAppMessagesResponse(InAppMessagesResponse&& value) { m_inAppMessagesResponse = std::move(value); }
-    inline GetInAppMessagesResult& WithInAppMessagesResponse(const InAppMessagesResponse& value) { SetInAppMessagesResponse(value); return *this;}
-    inline GetInAppMessagesResult& WithInAppMessagesResponse(InAppMessagesResponse&& value) { SetInAppMessagesResponse(std::move(value)); return *this;}
+    inline const InAppMessagesResponse& GetInAppMessagesResponse() const { return m_inAppMessagesResponse; }
+    template<typename InAppMessagesResponseT = InAppMessagesResponse>
+    void SetInAppMessagesResponse(InAppMessagesResponseT&& value) { m_inAppMessagesResponseHasBeenSet = true; m_inAppMessagesResponse = std::forward<InAppMessagesResponseT>(value); }
+    template<typename InAppMessagesResponseT = InAppMessagesResponse>
+    GetInAppMessagesResult& WithInAppMessagesResponse(InAppMessagesResponseT&& value) { SetInAppMessagesResponse(std::forward<InAppMessagesResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInAppMessagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInAppMessagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInAppMessagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInAppMessagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     InAppMessagesResponse m_inAppMessagesResponse;
+    bool m_inAppMessagesResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

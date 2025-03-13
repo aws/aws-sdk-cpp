@@ -32,7 +32,7 @@ namespace Model
   class OperationStatusFilter
   {
   public:
-    AWS_SSOADMIN_API OperationStatusFilter();
+    AWS_SSOADMIN_API OperationStatusFilter() = default;
     AWS_SSOADMIN_API OperationStatusFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API OperationStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>Filters the list operations result based on the status attribute.</p>
      */
-    inline const StatusValues& GetStatus() const{ return m_status; }
+    inline StatusValues GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StatusValues& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StatusValues&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OperationStatusFilter& WithStatus(const StatusValues& value) { SetStatus(value); return *this;}
-    inline OperationStatusFilter& WithStatus(StatusValues&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StatusValues value) { m_statusHasBeenSet = true; m_status = value; }
+    inline OperationStatusFilter& WithStatus(StatusValues value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    StatusValues m_status;
+    StatusValues m_status{StatusValues::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

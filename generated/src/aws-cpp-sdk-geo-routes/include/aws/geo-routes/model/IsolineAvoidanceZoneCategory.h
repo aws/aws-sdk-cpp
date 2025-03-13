@@ -31,7 +31,7 @@ namespace Model
   class IsolineAvoidanceZoneCategory
   {
   public:
-    AWS_GEOROUTES_API IsolineAvoidanceZoneCategory();
+    AWS_GEOROUTES_API IsolineAvoidanceZoneCategory() = default;
     AWS_GEOROUTES_API IsolineAvoidanceZoneCategory(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API IsolineAvoidanceZoneCategory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>Zone category to be avoided.</p>
      */
-    inline const IsolineZoneCategory& GetCategory() const{ return m_category; }
+    inline IsolineZoneCategory GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const IsolineZoneCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(IsolineZoneCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline IsolineAvoidanceZoneCategory& WithCategory(const IsolineZoneCategory& value) { SetCategory(value); return *this;}
-    inline IsolineAvoidanceZoneCategory& WithCategory(IsolineZoneCategory&& value) { SetCategory(std::move(value)); return *this;}
+    inline void SetCategory(IsolineZoneCategory value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline IsolineAvoidanceZoneCategory& WithCategory(IsolineZoneCategory value) { SetCategory(value); return *this;}
     ///@}
   private:
 
-    IsolineZoneCategory m_category;
+    IsolineZoneCategory m_category{IsolineZoneCategory::NOT_SET};
     bool m_categoryHasBeenSet = false;
   };
 

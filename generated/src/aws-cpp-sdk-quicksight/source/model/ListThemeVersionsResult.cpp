@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListThemeVersionsResult::ListThemeVersionsResult() : 
-    m_status(0)
-{
-}
-
 ListThemeVersionsResult::ListThemeVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListThemeVersionsResult()
 {
   *this = result;
 }
@@ -38,24 +32,24 @@ ListThemeVersionsResult& ListThemeVersionsResult::operator =(const Aws::AmazonWe
     {
       m_themeVersionSummaryList.push_back(themeVersionSummaryListJsonList[themeVersionSummaryListIndex].AsObject());
     }
+    m_themeVersionSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

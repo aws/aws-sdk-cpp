@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-Field::Field() : 
-    m_nameHasBeenSet(false),
-    m_type(FieldType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Field::Field(JsonView jsonValue)
-  : Field()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Field& Field::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = FieldTypeMapper::GetFieldTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

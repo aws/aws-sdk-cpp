@@ -22,7 +22,7 @@ namespace Model
   class EnableImageDeprecationRequest : public EC2Request
   {
   public:
-    AWS_EC2_API EnableImageDeprecationRequest();
+    AWS_EC2_API EnableImageDeprecationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline EnableImageDeprecationRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline EnableImageDeprecationRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline EnableImageDeprecationRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    EnableImageDeprecationRequest& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * <code>DeprecateAt</code> is 10 years from now, except for public AMIs, where the
      * upper limit is 2 years from the creation date.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeprecateAt() const{ return m_deprecateAt; }
+    inline const Aws::Utils::DateTime& GetDeprecateAt() const { return m_deprecateAt; }
     inline bool DeprecateAtHasBeenSet() const { return m_deprecateAtHasBeenSet; }
-    inline void SetDeprecateAt(const Aws::Utils::DateTime& value) { m_deprecateAtHasBeenSet = true; m_deprecateAt = value; }
-    inline void SetDeprecateAt(Aws::Utils::DateTime&& value) { m_deprecateAtHasBeenSet = true; m_deprecateAt = std::move(value); }
-    inline EnableImageDeprecationRequest& WithDeprecateAt(const Aws::Utils::DateTime& value) { SetDeprecateAt(value); return *this;}
-    inline EnableImageDeprecationRequest& WithDeprecateAt(Aws::Utils::DateTime&& value) { SetDeprecateAt(std::move(value)); return *this;}
+    template<typename DeprecateAtT = Aws::Utils::DateTime>
+    void SetDeprecateAt(DeprecateAtT&& value) { m_deprecateAtHasBeenSet = true; m_deprecateAt = std::forward<DeprecateAtT>(value); }
+    template<typename DeprecateAtT = Aws::Utils::DateTime>
+    EnableImageDeprecationRequest& WithDeprecateAt(DeprecateAtT&& value) { SetDeprecateAt(std::forward<DeprecateAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +73,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline EnableImageDeprecationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -85,10 +83,10 @@ namespace Model
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deprecateAt;
+    Aws::Utils::DateTime m_deprecateAt{};
     bool m_deprecateAtHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

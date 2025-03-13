@@ -29,7 +29,7 @@ namespace Model
   class ListAnomalyDetectorsResult
   {
   public:
-    AWS_LOOKOUTMETRICS_API ListAnomalyDetectorsResult();
+    AWS_LOOKOUTMETRICS_API ListAnomalyDetectorsResult() = default;
     AWS_LOOKOUTMETRICS_API ListAnomalyDetectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTMETRICS_API ListAnomalyDetectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of anomaly detectors in the account in the current region.</p>
      */
-    inline const Aws::Vector<AnomalyDetectorSummary>& GetAnomalyDetectorSummaryList() const{ return m_anomalyDetectorSummaryList; }
-    inline void SetAnomalyDetectorSummaryList(const Aws::Vector<AnomalyDetectorSummary>& value) { m_anomalyDetectorSummaryList = value; }
-    inline void SetAnomalyDetectorSummaryList(Aws::Vector<AnomalyDetectorSummary>&& value) { m_anomalyDetectorSummaryList = std::move(value); }
-    inline ListAnomalyDetectorsResult& WithAnomalyDetectorSummaryList(const Aws::Vector<AnomalyDetectorSummary>& value) { SetAnomalyDetectorSummaryList(value); return *this;}
-    inline ListAnomalyDetectorsResult& WithAnomalyDetectorSummaryList(Aws::Vector<AnomalyDetectorSummary>&& value) { SetAnomalyDetectorSummaryList(std::move(value)); return *this;}
-    inline ListAnomalyDetectorsResult& AddAnomalyDetectorSummaryList(const AnomalyDetectorSummary& value) { m_anomalyDetectorSummaryList.push_back(value); return *this; }
-    inline ListAnomalyDetectorsResult& AddAnomalyDetectorSummaryList(AnomalyDetectorSummary&& value) { m_anomalyDetectorSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AnomalyDetectorSummary>& GetAnomalyDetectorSummaryList() const { return m_anomalyDetectorSummaryList; }
+    template<typename AnomalyDetectorSummaryListT = Aws::Vector<AnomalyDetectorSummary>>
+    void SetAnomalyDetectorSummaryList(AnomalyDetectorSummaryListT&& value) { m_anomalyDetectorSummaryListHasBeenSet = true; m_anomalyDetectorSummaryList = std::forward<AnomalyDetectorSummaryListT>(value); }
+    template<typename AnomalyDetectorSummaryListT = Aws::Vector<AnomalyDetectorSummary>>
+    ListAnomalyDetectorsResult& WithAnomalyDetectorSummaryList(AnomalyDetectorSummaryListT&& value) { SetAnomalyDetectorSummaryList(std::forward<AnomalyDetectorSummaryListT>(value)); return *this;}
+    template<typename AnomalyDetectorSummaryListT = AnomalyDetectorSummary>
+    ListAnomalyDetectorsResult& AddAnomalyDetectorSummaryList(AnomalyDetectorSummaryListT&& value) { m_anomalyDetectorSummaryListHasBeenSet = true; m_anomalyDetectorSummaryList.emplace_back(std::forward<AnomalyDetectorSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If the response is truncated, the service returns this token. To retrieve the
      * next set of results, use the token in the next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAnomalyDetectorsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAnomalyDetectorsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAnomalyDetectorsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAnomalyDetectorsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAnomalyDetectorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAnomalyDetectorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAnomalyDetectorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAnomalyDetectorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AnomalyDetectorSummary> m_anomalyDetectorSummaryList;
+    bool m_anomalyDetectorSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

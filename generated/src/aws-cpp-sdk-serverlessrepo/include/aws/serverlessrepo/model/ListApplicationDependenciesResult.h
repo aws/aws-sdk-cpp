@@ -29,7 +29,7 @@ namespace Model
   class ListApplicationDependenciesResult
   {
   public:
-    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ListApplicationDependenciesResult();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ListApplicationDependenciesResult() = default;
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API ListApplicationDependenciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API ListApplicationDependenciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>An array of application summaries nested in the application.</p>
      */
-    inline const Aws::Vector<ApplicationDependencySummary>& GetDependencies() const{ return m_dependencies; }
-    inline void SetDependencies(const Aws::Vector<ApplicationDependencySummary>& value) { m_dependencies = value; }
-    inline void SetDependencies(Aws::Vector<ApplicationDependencySummary>&& value) { m_dependencies = std::move(value); }
-    inline ListApplicationDependenciesResult& WithDependencies(const Aws::Vector<ApplicationDependencySummary>& value) { SetDependencies(value); return *this;}
-    inline ListApplicationDependenciesResult& WithDependencies(Aws::Vector<ApplicationDependencySummary>&& value) { SetDependencies(std::move(value)); return *this;}
-    inline ListApplicationDependenciesResult& AddDependencies(const ApplicationDependencySummary& value) { m_dependencies.push_back(value); return *this; }
-    inline ListApplicationDependenciesResult& AddDependencies(ApplicationDependencySummary&& value) { m_dependencies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ApplicationDependencySummary>& GetDependencies() const { return m_dependencies; }
+    template<typename DependenciesT = Aws::Vector<ApplicationDependencySummary>>
+    void SetDependencies(DependenciesT&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::forward<DependenciesT>(value); }
+    template<typename DependenciesT = Aws::Vector<ApplicationDependencySummary>>
+    ListApplicationDependenciesResult& WithDependencies(DependenciesT&& value) { SetDependencies(std::forward<DependenciesT>(value)); return *this;}
+    template<typename DependenciesT = ApplicationDependencySummary>
+    ListApplicationDependenciesResult& AddDependencies(DependenciesT&& value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace_back(std::forward<DependenciesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token to request the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListApplicationDependenciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListApplicationDependenciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListApplicationDependenciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListApplicationDependenciesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListApplicationDependenciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListApplicationDependenciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListApplicationDependenciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListApplicationDependenciesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ApplicationDependencySummary> m_dependencies;
+    bool m_dependenciesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

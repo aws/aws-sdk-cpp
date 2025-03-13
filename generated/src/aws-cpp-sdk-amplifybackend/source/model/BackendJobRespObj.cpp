@@ -18,20 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-BackendJobRespObj::BackendJobRespObj() : 
-    m_appIdHasBeenSet(false),
-    m_backendEnvironmentNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 BackendJobRespObj::BackendJobRespObj(JsonView jsonValue)
-  : BackendJobRespObj()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ BackendJobRespObj& BackendJobRespObj::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
     m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("backendEnvironmentName"))
   {
     m_backendEnvironmentName = jsonValue.GetString("backendEnvironmentName");
-
     m_backendEnvironmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetString("operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

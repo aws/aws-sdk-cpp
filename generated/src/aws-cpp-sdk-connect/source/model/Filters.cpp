@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Filters::Filters() : 
-    m_queuesHasBeenSet(false),
-    m_channelsHasBeenSet(false),
-    m_routingProfilesHasBeenSet(false),
-    m_routingStepExpressionsHasBeenSet(false)
-{
-}
-
 Filters::Filters(JsonView jsonValue)
-  : Filters()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_queuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Channels"))
   {
     Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("Channels");
@@ -53,7 +43,6 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_channelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingProfiles"))
   {
     Aws::Utils::Array<JsonView> routingProfilesJsonList = jsonValue.GetArray("RoutingProfiles");
@@ -63,7 +52,6 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_routingProfilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingStepExpressions"))
   {
     Aws::Utils::Array<JsonView> routingStepExpressionsJsonList = jsonValue.GetArray("RoutingStepExpressions");
@@ -73,7 +61,6 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_routingStepExpressionsHasBeenSet = true;
   }
-
   return *this;
 }
 

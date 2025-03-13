@@ -25,7 +25,7 @@ namespace Model
   class CreateResolverRuleRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API CreateResolverRuleRequest();
+    AWS_ROUTE53RESOLVER_API CreateResolverRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
-    inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+    inline const Aws::String& GetCreatorRequestId() const { return m_creatorRequestId; }
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
-    inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
-    inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
-    inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
-    inline CreateResolverRuleRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
-    inline CreateResolverRuleRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
-    inline CreateResolverRuleRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
+    template<typename CreatorRequestIdT = Aws::String>
+    void SetCreatorRequestId(CreatorRequestIdT&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::forward<CreatorRequestIdT>(value); }
+    template<typename CreatorRequestIdT = Aws::String>
+    CreateResolverRuleRequest& WithCreatorRequestId(CreatorRequestIdT&& value) { SetCreatorRequestId(std::forward<CreatorRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>A friendly name that lets you easily find a rule in the Resolver dashboard in
      * the Route 53 console.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateResolverRuleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateResolverRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateResolverRuleRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateResolverRuleRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,10 @@ namespace Model
      * <code>RuleType</code>.</p> <p>Currently, only Resolver can create rules that
      * have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
      */
-    inline const RuleTypeOption& GetRuleType() const{ return m_ruleType; }
+    inline RuleTypeOption GetRuleType() const { return m_ruleType; }
     inline bool RuleTypeHasBeenSet() const { return m_ruleTypeHasBeenSet; }
-    inline void SetRuleType(const RuleTypeOption& value) { m_ruleTypeHasBeenSet = true; m_ruleType = value; }
-    inline void SetRuleType(RuleTypeOption&& value) { m_ruleTypeHasBeenSet = true; m_ruleType = std::move(value); }
-    inline CreateResolverRuleRequest& WithRuleType(const RuleTypeOption& value) { SetRuleType(value); return *this;}
-    inline CreateResolverRuleRequest& WithRuleType(RuleTypeOption&& value) { SetRuleType(std::move(value)); return *this;}
+    inline void SetRuleType(RuleTypeOption value) { m_ruleTypeHasBeenSet = true; m_ruleType = value; }
+    inline CreateResolverRuleRequest& WithRuleType(RuleTypeOption value) { SetRuleType(value); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +92,12 @@ namespace Model
      * (example.com and www.example.com), outbound DNS queries are routed using the
      * Resolver rule that contains the most specific domain name (www.example.com).</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline CreateResolverRuleRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline CreateResolverRuleRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline CreateResolverRuleRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    CreateResolverRuleRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +107,14 @@ namespace Model
      * addresses with a space.</p> <p> <code>TargetIps</code> is available only when
      * the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
      */
-    inline const Aws::Vector<TargetAddress>& GetTargetIps() const{ return m_targetIps; }
+    inline const Aws::Vector<TargetAddress>& GetTargetIps() const { return m_targetIps; }
     inline bool TargetIpsHasBeenSet() const { return m_targetIpsHasBeenSet; }
-    inline void SetTargetIps(const Aws::Vector<TargetAddress>& value) { m_targetIpsHasBeenSet = true; m_targetIps = value; }
-    inline void SetTargetIps(Aws::Vector<TargetAddress>&& value) { m_targetIpsHasBeenSet = true; m_targetIps = std::move(value); }
-    inline CreateResolverRuleRequest& WithTargetIps(const Aws::Vector<TargetAddress>& value) { SetTargetIps(value); return *this;}
-    inline CreateResolverRuleRequest& WithTargetIps(Aws::Vector<TargetAddress>&& value) { SetTargetIps(std::move(value)); return *this;}
-    inline CreateResolverRuleRequest& AddTargetIps(const TargetAddress& value) { m_targetIpsHasBeenSet = true; m_targetIps.push_back(value); return *this; }
-    inline CreateResolverRuleRequest& AddTargetIps(TargetAddress&& value) { m_targetIpsHasBeenSet = true; m_targetIps.push_back(std::move(value)); return *this; }
+    template<typename TargetIpsT = Aws::Vector<TargetAddress>>
+    void SetTargetIps(TargetIpsT&& value) { m_targetIpsHasBeenSet = true; m_targetIps = std::forward<TargetIpsT>(value); }
+    template<typename TargetIpsT = Aws::Vector<TargetAddress>>
+    CreateResolverRuleRequest& WithTargetIps(TargetIpsT&& value) { SetTargetIps(std::forward<TargetIpsT>(value)); return *this;}
+    template<typename TargetIpsT = TargetAddress>
+    CreateResolverRuleRequest& AddTargetIps(TargetIpsT&& value) { m_targetIpsHasBeenSet = true; m_targetIps.emplace_back(std::forward<TargetIpsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -130,14 +122,12 @@ namespace Model
      * <p>The ID of the outbound Resolver endpoint that you want to use to route DNS
      * queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
      */
-    inline const Aws::String& GetResolverEndpointId() const{ return m_resolverEndpointId; }
+    inline const Aws::String& GetResolverEndpointId() const { return m_resolverEndpointId; }
     inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
-    inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
-    inline void SetResolverEndpointId(Aws::String&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::move(value); }
-    inline void SetResolverEndpointId(const char* value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId.assign(value); }
-    inline CreateResolverRuleRequest& WithResolverEndpointId(const Aws::String& value) { SetResolverEndpointId(value); return *this;}
-    inline CreateResolverRuleRequest& WithResolverEndpointId(Aws::String&& value) { SetResolverEndpointId(std::move(value)); return *this;}
-    inline CreateResolverRuleRequest& WithResolverEndpointId(const char* value) { SetResolverEndpointId(value); return *this;}
+    template<typename ResolverEndpointIdT = Aws::String>
+    void SetResolverEndpointId(ResolverEndpointIdT&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::forward<ResolverEndpointIdT>(value); }
+    template<typename ResolverEndpointIdT = Aws::String>
+    CreateResolverRuleRequest& WithResolverEndpointId(ResolverEndpointIdT&& value) { SetResolverEndpointId(std::forward<ResolverEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +135,14 @@ namespace Model
      * <p>A list of the tag keys and values that you want to associate with the
      * endpoint.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateResolverRuleRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateResolverRuleRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateResolverRuleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateResolverRuleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateResolverRuleRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateResolverRuleRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -162,7 +152,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    RuleTypeOption m_ruleType;
+    RuleTypeOption m_ruleType{RuleTypeOption::NOT_SET};
     bool m_ruleTypeHasBeenSet = false;
 
     Aws::String m_domainName;

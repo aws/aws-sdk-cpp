@@ -35,7 +35,7 @@ namespace Model
   class InspectionData
   {
   public:
-    AWS_SFN_API InspectionData();
+    AWS_SFN_API InspectionData() = default;
     AWS_SFN_API InspectionData(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API InspectionData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The raw state input.</p>
      */
-    inline const Aws::String& GetInput() const{ return m_input; }
+    inline const Aws::String& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
-    inline InspectionData& WithInput(const Aws::String& value) { SetInput(value); return *this;}
-    inline InspectionData& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
-    inline InspectionData& WithInput(const char* value) { SetInput(value); return *this;}
+    template<typename InputT = Aws::String>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Aws::String>
+    InspectionData& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/data-transform.html">Transforming
      * data with Step Functions</a>.</p>
      */
-    inline const Aws::String& GetAfterArguments() const{ return m_afterArguments; }
+    inline const Aws::String& GetAfterArguments() const { return m_afterArguments; }
     inline bool AfterArgumentsHasBeenSet() const { return m_afterArgumentsHasBeenSet; }
-    inline void SetAfterArguments(const Aws::String& value) { m_afterArgumentsHasBeenSet = true; m_afterArguments = value; }
-    inline void SetAfterArguments(Aws::String&& value) { m_afterArgumentsHasBeenSet = true; m_afterArguments = std::move(value); }
-    inline void SetAfterArguments(const char* value) { m_afterArgumentsHasBeenSet = true; m_afterArguments.assign(value); }
-    inline InspectionData& WithAfterArguments(const Aws::String& value) { SetAfterArguments(value); return *this;}
-    inline InspectionData& WithAfterArguments(Aws::String&& value) { SetAfterArguments(std::move(value)); return *this;}
-    inline InspectionData& WithAfterArguments(const char* value) { SetAfterArguments(value); return *this;}
+    template<typename AfterArgumentsT = Aws::String>
+    void SetAfterArguments(AfterArgumentsT&& value) { m_afterArgumentsHasBeenSet = true; m_afterArguments = std::forward<AfterArgumentsT>(value); }
+    template<typename AfterArgumentsT = Aws::String>
+    InspectionData& WithAfterArguments(AfterArgumentsT&& value) { SetAfterArguments(std::forward<AfterArgumentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a>
      * filter. Not populated when QueryLanguage is JSONata.</p>
      */
-    inline const Aws::String& GetAfterInputPath() const{ return m_afterInputPath; }
+    inline const Aws::String& GetAfterInputPath() const { return m_afterInputPath; }
     inline bool AfterInputPathHasBeenSet() const { return m_afterInputPathHasBeenSet; }
-    inline void SetAfterInputPath(const Aws::String& value) { m_afterInputPathHasBeenSet = true; m_afterInputPath = value; }
-    inline void SetAfterInputPath(Aws::String&& value) { m_afterInputPathHasBeenSet = true; m_afterInputPath = std::move(value); }
-    inline void SetAfterInputPath(const char* value) { m_afterInputPathHasBeenSet = true; m_afterInputPath.assign(value); }
-    inline InspectionData& WithAfterInputPath(const Aws::String& value) { SetAfterInputPath(value); return *this;}
-    inline InspectionData& WithAfterInputPath(Aws::String&& value) { SetAfterInputPath(std::move(value)); return *this;}
-    inline InspectionData& WithAfterInputPath(const char* value) { SetAfterInputPath(value); return *this;}
+    template<typename AfterInputPathT = Aws::String>
+    void SetAfterInputPath(AfterInputPathT&& value) { m_afterInputPathHasBeenSet = true; m_afterInputPath = std::forward<AfterInputPathT>(value); }
+    template<typename AfterInputPathT = Aws::String>
+    InspectionData& WithAfterInputPath(AfterInputPathT&& value) { SetAfterInputPath(std::forward<AfterInputPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,28 +89,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a>
      * filter. Not populated when QueryLanguage is JSONata.</p>
      */
-    inline const Aws::String& GetAfterParameters() const{ return m_afterParameters; }
+    inline const Aws::String& GetAfterParameters() const { return m_afterParameters; }
     inline bool AfterParametersHasBeenSet() const { return m_afterParametersHasBeenSet; }
-    inline void SetAfterParameters(const Aws::String& value) { m_afterParametersHasBeenSet = true; m_afterParameters = value; }
-    inline void SetAfterParameters(Aws::String&& value) { m_afterParametersHasBeenSet = true; m_afterParameters = std::move(value); }
-    inline void SetAfterParameters(const char* value) { m_afterParametersHasBeenSet = true; m_afterParameters.assign(value); }
-    inline InspectionData& WithAfterParameters(const Aws::String& value) { SetAfterParameters(value); return *this;}
-    inline InspectionData& WithAfterParameters(Aws::String&& value) { SetAfterParameters(std::move(value)); return *this;}
-    inline InspectionData& WithAfterParameters(const char* value) { SetAfterParameters(value); return *this;}
+    template<typename AfterParametersT = Aws::String>
+    void SetAfterParameters(AfterParametersT&& value) { m_afterParametersHasBeenSet = true; m_afterParameters = std::forward<AfterParametersT>(value); }
+    template<typename AfterParametersT = Aws::String>
+    InspectionData& WithAfterParameters(AfterParametersT&& value) { SetAfterParameters(std::forward<AfterParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state's raw result.</p>
      */
-    inline const Aws::String& GetResult() const{ return m_result; }
+    inline const Aws::String& GetResult() const { return m_result; }
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-    inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
-    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-    inline void SetResult(const char* value) { m_resultHasBeenSet = true; m_result.assign(value); }
-    inline InspectionData& WithResult(const Aws::String& value) { SetResult(value); return *this;}
-    inline InspectionData& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
-    inline InspectionData& WithResult(const char* value) { SetResult(value); return *this;}
+    template<typename ResultT = Aws::String>
+    void SetResult(ResultT&& value) { m_resultHasBeenSet = true; m_result = std::forward<ResultT>(value); }
+    template<typename ResultT = Aws::String>
+    InspectionData& WithResult(ResultT&& value) { SetResult(std::forward<ResultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,14 +115,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a>
      * filter. Not populated when QueryLanguage is JSONata.</p>
      */
-    inline const Aws::String& GetAfterResultSelector() const{ return m_afterResultSelector; }
+    inline const Aws::String& GetAfterResultSelector() const { return m_afterResultSelector; }
     inline bool AfterResultSelectorHasBeenSet() const { return m_afterResultSelectorHasBeenSet; }
-    inline void SetAfterResultSelector(const Aws::String& value) { m_afterResultSelectorHasBeenSet = true; m_afterResultSelector = value; }
-    inline void SetAfterResultSelector(Aws::String&& value) { m_afterResultSelectorHasBeenSet = true; m_afterResultSelector = std::move(value); }
-    inline void SetAfterResultSelector(const char* value) { m_afterResultSelectorHasBeenSet = true; m_afterResultSelector.assign(value); }
-    inline InspectionData& WithAfterResultSelector(const Aws::String& value) { SetAfterResultSelector(value); return *this;}
-    inline InspectionData& WithAfterResultSelector(Aws::String&& value) { SetAfterResultSelector(std::move(value)); return *this;}
-    inline InspectionData& WithAfterResultSelector(const char* value) { SetAfterResultSelector(value); return *this;}
+    template<typename AfterResultSelectorT = Aws::String>
+    void SetAfterResultSelector(AfterResultSelectorT&& value) { m_afterResultSelectorHasBeenSet = true; m_afterResultSelector = std::forward<AfterResultSelectorT>(value); }
+    template<typename AfterResultSelectorT = Aws::String>
+    InspectionData& WithAfterResultSelector(AfterResultSelectorT&& value) { SetAfterResultSelector(std::forward<AfterResultSelectorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,38 +130,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a>
      * filter. Not populated when QueryLanguage is JSONata.</p>
      */
-    inline const Aws::String& GetAfterResultPath() const{ return m_afterResultPath; }
+    inline const Aws::String& GetAfterResultPath() const { return m_afterResultPath; }
     inline bool AfterResultPathHasBeenSet() const { return m_afterResultPathHasBeenSet; }
-    inline void SetAfterResultPath(const Aws::String& value) { m_afterResultPathHasBeenSet = true; m_afterResultPath = value; }
-    inline void SetAfterResultPath(Aws::String&& value) { m_afterResultPathHasBeenSet = true; m_afterResultPath = std::move(value); }
-    inline void SetAfterResultPath(const char* value) { m_afterResultPathHasBeenSet = true; m_afterResultPath.assign(value); }
-    inline InspectionData& WithAfterResultPath(const Aws::String& value) { SetAfterResultPath(value); return *this;}
-    inline InspectionData& WithAfterResultPath(Aws::String&& value) { SetAfterResultPath(std::move(value)); return *this;}
-    inline InspectionData& WithAfterResultPath(const char* value) { SetAfterResultPath(value); return *this;}
+    template<typename AfterResultPathT = Aws::String>
+    void SetAfterResultPath(AfterResultPathT&& value) { m_afterResultPathHasBeenSet = true; m_afterResultPath = std::forward<AfterResultPathT>(value); }
+    template<typename AfterResultPathT = Aws::String>
+    InspectionData& WithAfterResultPath(AfterResultPathT&& value) { SetAfterResultPath(std::forward<AfterResultPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The raw HTTP request that is sent when you test an HTTP Task.</p>
      */
-    inline const InspectionDataRequest& GetRequest() const{ return m_request; }
+    inline const InspectionDataRequest& GetRequest() const { return m_request; }
     inline bool RequestHasBeenSet() const { return m_requestHasBeenSet; }
-    inline void SetRequest(const InspectionDataRequest& value) { m_requestHasBeenSet = true; m_request = value; }
-    inline void SetRequest(InspectionDataRequest&& value) { m_requestHasBeenSet = true; m_request = std::move(value); }
-    inline InspectionData& WithRequest(const InspectionDataRequest& value) { SetRequest(value); return *this;}
-    inline InspectionData& WithRequest(InspectionDataRequest&& value) { SetRequest(std::move(value)); return *this;}
+    template<typename RequestT = InspectionDataRequest>
+    void SetRequest(RequestT&& value) { m_requestHasBeenSet = true; m_request = std::forward<RequestT>(value); }
+    template<typename RequestT = InspectionDataRequest>
+    InspectionData& WithRequest(RequestT&& value) { SetRequest(std::forward<RequestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The raw HTTP response that is returned when you test an HTTP Task.</p>
      */
-    inline const InspectionDataResponse& GetResponse() const{ return m_response; }
+    inline const InspectionDataResponse& GetResponse() const { return m_response; }
     inline bool ResponseHasBeenSet() const { return m_responseHasBeenSet; }
-    inline void SetResponse(const InspectionDataResponse& value) { m_responseHasBeenSet = true; m_response = value; }
-    inline void SetResponse(InspectionDataResponse&& value) { m_responseHasBeenSet = true; m_response = std::move(value); }
-    inline InspectionData& WithResponse(const InspectionDataResponse& value) { SetResponse(value); return *this;}
-    inline InspectionData& WithResponse(InspectionDataResponse&& value) { SetResponse(std::move(value)); return *this;}
+    template<typename ResponseT = InspectionDataResponse>
+    void SetResponse(ResponseT&& value) { m_responseHasBeenSet = true; m_response = std::forward<ResponseT>(value); }
+    template<typename ResponseT = InspectionDataResponse>
+    InspectionData& WithResponse(ResponseT&& value) { SetResponse(std::forward<ResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,14 +168,12 @@ namespace Model
      * the state. The set will include variables assigned in the state and variables
      * set up as test state input.</p>
      */
-    inline const Aws::String& GetVariables() const{ return m_variables; }
+    inline const Aws::String& GetVariables() const { return m_variables; }
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
-    inline void SetVariables(const Aws::String& value) { m_variablesHasBeenSet = true; m_variables = value; }
-    inline void SetVariables(Aws::String&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
-    inline void SetVariables(const char* value) { m_variablesHasBeenSet = true; m_variables.assign(value); }
-    inline InspectionData& WithVariables(const Aws::String& value) { SetVariables(value); return *this;}
-    inline InspectionData& WithVariables(Aws::String&& value) { SetVariables(std::move(value)); return *this;}
-    inline InspectionData& WithVariables(const char* value) { SetVariables(value); return *this;}
+    template<typename VariablesT = Aws::String>
+    void SetVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables = std::forward<VariablesT>(value); }
+    template<typename VariablesT = Aws::String>
+    InspectionData& WithVariables(VariablesT&& value) { SetVariables(std::forward<VariablesT>(value)); return *this;}
     ///@}
   private:
 

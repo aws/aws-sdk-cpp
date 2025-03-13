@@ -29,7 +29,7 @@ namespace Model
   class ListStorageLensGroupsResult
   {
   public:
-    AWS_S3CONTROL_API ListStorageLensGroupsResult();
+    AWS_S3CONTROL_API ListStorageLensGroupsResult() = default;
     AWS_S3CONTROL_API ListStorageLensGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CONTROL_API ListStorageLensGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,13 +42,11 @@ namespace Model
      * the next page. Keep all other arguments unchanged. Each pagination token expires
      * after 24 hours. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStorageLensGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStorageLensGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStorageLensGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStorageLensGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,49 +54,49 @@ namespace Model
      * <p> The list of Storage Lens groups that exist in the specified home Region.
      * </p>
      */
-    inline const Aws::Vector<ListStorageLensGroupEntry>& GetStorageLensGroupList() const{ return m_storageLensGroupList; }
-    inline void SetStorageLensGroupList(const Aws::Vector<ListStorageLensGroupEntry>& value) { m_storageLensGroupList = value; }
-    inline void SetStorageLensGroupList(Aws::Vector<ListStorageLensGroupEntry>&& value) { m_storageLensGroupList = std::move(value); }
-    inline ListStorageLensGroupsResult& WithStorageLensGroupList(const Aws::Vector<ListStorageLensGroupEntry>& value) { SetStorageLensGroupList(value); return *this;}
-    inline ListStorageLensGroupsResult& WithStorageLensGroupList(Aws::Vector<ListStorageLensGroupEntry>&& value) { SetStorageLensGroupList(std::move(value)); return *this;}
-    inline ListStorageLensGroupsResult& AddStorageLensGroupList(const ListStorageLensGroupEntry& value) { m_storageLensGroupList.push_back(value); return *this; }
-    inline ListStorageLensGroupsResult& AddStorageLensGroupList(ListStorageLensGroupEntry&& value) { m_storageLensGroupList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListStorageLensGroupEntry>& GetStorageLensGroupList() const { return m_storageLensGroupList; }
+    template<typename StorageLensGroupListT = Aws::Vector<ListStorageLensGroupEntry>>
+    void SetStorageLensGroupList(StorageLensGroupListT&& value) { m_storageLensGroupListHasBeenSet = true; m_storageLensGroupList = std::forward<StorageLensGroupListT>(value); }
+    template<typename StorageLensGroupListT = Aws::Vector<ListStorageLensGroupEntry>>
+    ListStorageLensGroupsResult& WithStorageLensGroupList(StorageLensGroupListT&& value) { SetStorageLensGroupList(std::forward<StorageLensGroupListT>(value)); return *this;}
+    template<typename StorageLensGroupListT = ListStorageLensGroupEntry>
+    ListStorageLensGroupsResult& AddStorageLensGroupList(StorageLensGroupListT&& value) { m_storageLensGroupListHasBeenSet = true; m_storageLensGroupList.emplace_back(std::forward<StorageLensGroupListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * AWS Request Id value
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStorageLensGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStorageLensGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStorageLensGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStorageLensGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * x-amz-id-2 header value, also known as Host Id
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostId.assign(value); }
-    inline ListStorageLensGroupsResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline ListStorageLensGroupsResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline ListStorageLensGroupsResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    inline const Aws::String& GetHostId() const { return m_hostId; }
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    ListStorageLensGroupsResult& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ListStorageLensGroupEntry> m_storageLensGroupList;
+    bool m_storageLensGroupListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

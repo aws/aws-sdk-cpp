@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-RuleIsInAddressList::RuleIsInAddressList() : 
-    m_addressListsHasBeenSet(false),
-    m_attribute(RuleAddressListEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
-{
-}
-
 RuleIsInAddressList::RuleIsInAddressList(JsonView jsonValue)
-  : RuleIsInAddressList()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ RuleIsInAddressList& RuleIsInAddressList::operator =(JsonView jsonValue)
     }
     m_addressListsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = RuleAddressListEmailAttributeMapper::GetRuleAddressListEmailAttributeForName(jsonValue.GetString("Attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AnalysisTemplateValidationStatusDetail::AnalysisTemplateValidationStatusDetail() : 
-    m_type(AnalysisTemplateValidationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(AnalysisTemplateValidationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonsHasBeenSet(false)
-{
-}
-
 AnalysisTemplateValidationStatusDetail::AnalysisTemplateValidationStatusDetail(JsonView jsonValue)
-  : AnalysisTemplateValidationStatusDetail()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ AnalysisTemplateValidationStatusDetail& AnalysisTemplateValidationStatusDetail::
   if(jsonValue.ValueExists("type"))
   {
     m_type = AnalysisTemplateValidationTypeMapper::GetAnalysisTemplateValidationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AnalysisTemplateValidationStatusMapper::GetAnalysisTemplateValidationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasons"))
   {
     Aws::Utils::Array<JsonView> reasonsJsonList = jsonValue.GetArray("reasons");
@@ -58,7 +44,6 @@ AnalysisTemplateValidationStatusDetail& AnalysisTemplateValidationStatusDetail::
     }
     m_reasonsHasBeenSet = true;
   }
-
   return *this;
 }
 

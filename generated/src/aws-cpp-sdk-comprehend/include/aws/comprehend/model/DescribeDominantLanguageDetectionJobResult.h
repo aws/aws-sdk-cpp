@@ -28,7 +28,7 @@ namespace Model
   class DescribeDominantLanguageDetectionJobResult
   {
   public:
-    AWS_COMPREHEND_API DescribeDominantLanguageDetectionJobResult();
+    AWS_COMPREHEND_API DescribeDominantLanguageDetectionJobResult() = default;
     AWS_COMPREHEND_API DescribeDominantLanguageDetectionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API DescribeDominantLanguageDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An object that contains the properties associated with a dominant language
      * detection job.</p>
      */
-    inline const DominantLanguageDetectionJobProperties& GetDominantLanguageDetectionJobProperties() const{ return m_dominantLanguageDetectionJobProperties; }
-    inline void SetDominantLanguageDetectionJobProperties(const DominantLanguageDetectionJobProperties& value) { m_dominantLanguageDetectionJobProperties = value; }
-    inline void SetDominantLanguageDetectionJobProperties(DominantLanguageDetectionJobProperties&& value) { m_dominantLanguageDetectionJobProperties = std::move(value); }
-    inline DescribeDominantLanguageDetectionJobResult& WithDominantLanguageDetectionJobProperties(const DominantLanguageDetectionJobProperties& value) { SetDominantLanguageDetectionJobProperties(value); return *this;}
-    inline DescribeDominantLanguageDetectionJobResult& WithDominantLanguageDetectionJobProperties(DominantLanguageDetectionJobProperties&& value) { SetDominantLanguageDetectionJobProperties(std::move(value)); return *this;}
+    inline const DominantLanguageDetectionJobProperties& GetDominantLanguageDetectionJobProperties() const { return m_dominantLanguageDetectionJobProperties; }
+    template<typename DominantLanguageDetectionJobPropertiesT = DominantLanguageDetectionJobProperties>
+    void SetDominantLanguageDetectionJobProperties(DominantLanguageDetectionJobPropertiesT&& value) { m_dominantLanguageDetectionJobPropertiesHasBeenSet = true; m_dominantLanguageDetectionJobProperties = std::forward<DominantLanguageDetectionJobPropertiesT>(value); }
+    template<typename DominantLanguageDetectionJobPropertiesT = DominantLanguageDetectionJobProperties>
+    DescribeDominantLanguageDetectionJobResult& WithDominantLanguageDetectionJobProperties(DominantLanguageDetectionJobPropertiesT&& value) { SetDominantLanguageDetectionJobProperties(std::forward<DominantLanguageDetectionJobPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDominantLanguageDetectionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDominantLanguageDetectionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDominantLanguageDetectionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDominantLanguageDetectionJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DominantLanguageDetectionJobProperties m_dominantLanguageDetectionJobProperties;
+    bool m_dominantLanguageDetectionJobPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,21 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListUtteranceMetricsRequest::ListUtteranceMetricsRequest() : 
-    m_botIdHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_binByHasBeenSet(false),
-    m_groupByHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListUtteranceMetricsRequest::SerializePayload() const
 {
   JsonValue payload;

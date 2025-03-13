@@ -33,7 +33,7 @@ namespace Model
   class UserContextDataType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API UserContextDataType();
+    AWS_COGNITOIDENTITYPROVIDER_API UserContextDataType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API UserContextDataType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API UserContextDataType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The source IP address of your user's device.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline UserContextDataType& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline UserContextDataType& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline UserContextDataType& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    UserContextDataType& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding
      * user device and session data to API requests</a>.</p>
      */
-    inline const Aws::String& GetEncodedData() const{ return m_encodedData; }
+    inline const Aws::String& GetEncodedData() const { return m_encodedData; }
     inline bool EncodedDataHasBeenSet() const { return m_encodedDataHasBeenSet; }
-    inline void SetEncodedData(const Aws::String& value) { m_encodedDataHasBeenSet = true; m_encodedData = value; }
-    inline void SetEncodedData(Aws::String&& value) { m_encodedDataHasBeenSet = true; m_encodedData = std::move(value); }
-    inline void SetEncodedData(const char* value) { m_encodedDataHasBeenSet = true; m_encodedData.assign(value); }
-    inline UserContextDataType& WithEncodedData(const Aws::String& value) { SetEncodedData(value); return *this;}
-    inline UserContextDataType& WithEncodedData(Aws::String&& value) { SetEncodedData(std::move(value)); return *this;}
-    inline UserContextDataType& WithEncodedData(const char* value) { SetEncodedData(value); return *this;}
+    template<typename EncodedDataT = Aws::String>
+    void SetEncodedData(EncodedDataT&& value) { m_encodedDataHasBeenSet = true; m_encodedData = std::forward<EncodedDataT>(value); }
+    template<typename EncodedDataT = Aws::String>
+    UserContextDataType& WithEncodedData(EncodedDataT&& value) { SetEncodedData(std::forward<EncodedDataT>(value)); return *this;}
     ///@}
   private:
 

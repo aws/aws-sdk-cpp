@@ -18,15 +18,7 @@ namespace Athena
 namespace Model
 {
 
-UnprocessedQueryExecutionId::UnprocessedQueryExecutionId() : 
-    m_queryExecutionIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 UnprocessedQueryExecutionId::UnprocessedQueryExecutionId(JsonView jsonValue)
-  : UnprocessedQueryExecutionId()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UnprocessedQueryExecutionId& UnprocessedQueryExecutionId::operator =(JsonView js
   if(jsonValue.ValueExists("QueryExecutionId"))
   {
     m_queryExecutionId = jsonValue.GetString("QueryExecutionId");
-
     m_queryExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

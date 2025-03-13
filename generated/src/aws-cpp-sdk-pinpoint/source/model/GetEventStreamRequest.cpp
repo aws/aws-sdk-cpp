@@ -12,11 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEventStreamRequest::GetEventStreamRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetEventStreamRequest::SerializePayload() const
 {
   return {};

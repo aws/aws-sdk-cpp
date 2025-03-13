@@ -18,20 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-NetworkEndpoint::NetworkEndpoint() : 
-    m_idHasBeenSet(false),
-    m_ipHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_autonomousSystemHasBeenSet(false),
-    m_connectionHasBeenSet(false)
-{
-}
-
 NetworkEndpoint::NetworkEndpoint(JsonView jsonValue)
-  : NetworkEndpoint()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ NetworkEndpoint& NetworkEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ip"))
   {
     m_ip = jsonValue.GetString("Ip");
-
     m_ipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetObject("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutonomousSystem"))
   {
     m_autonomousSystem = jsonValue.GetObject("AutonomousSystem");
-
     m_autonomousSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Connection"))
   {
     m_connection = jsonValue.GetObject("Connection");
-
     m_connectionHasBeenSet = true;
   }
-
   return *this;
 }
 

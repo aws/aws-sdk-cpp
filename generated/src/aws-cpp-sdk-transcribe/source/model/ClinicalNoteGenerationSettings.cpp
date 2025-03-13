@@ -18,14 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-ClinicalNoteGenerationSettings::ClinicalNoteGenerationSettings() : 
-    m_noteTemplate(MedicalScribeNoteTemplate::NOT_SET),
-    m_noteTemplateHasBeenSet(false)
-{
-}
-
 ClinicalNoteGenerationSettings::ClinicalNoteGenerationSettings(JsonView jsonValue)
-  : ClinicalNoteGenerationSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ClinicalNoteGenerationSettings& ClinicalNoteGenerationSettings::operator =(JsonV
   if(jsonValue.ValueExists("NoteTemplate"))
   {
     m_noteTemplate = MedicalScribeNoteTemplateMapper::GetMedicalScribeNoteTemplateForName(jsonValue.GetString("NoteTemplate"));
-
     m_noteTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

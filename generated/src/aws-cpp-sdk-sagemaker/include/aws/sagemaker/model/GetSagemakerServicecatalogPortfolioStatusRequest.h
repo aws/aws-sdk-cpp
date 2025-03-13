@@ -19,7 +19,7 @@ namespace Model
   class GetSagemakerServicecatalogPortfolioStatusRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API GetSagemakerServicecatalogPortfolioStatusRequest();
+    AWS_SAGEMAKER_API GetSagemakerServicecatalogPortfolioStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

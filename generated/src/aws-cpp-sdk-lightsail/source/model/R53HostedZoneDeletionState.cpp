@@ -18,15 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-R53HostedZoneDeletionState::R53HostedZoneDeletionState() : 
-    m_code(R53HostedZoneDeletionStateCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 R53HostedZoneDeletionState::R53HostedZoneDeletionState(JsonView jsonValue)
-  : R53HostedZoneDeletionState()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ R53HostedZoneDeletionState& R53HostedZoneDeletionState::operator =(JsonView json
   if(jsonValue.ValueExists("code"))
   {
     m_code = R53HostedZoneDeletionStateCodeMapper::GetR53HostedZoneDeletionStateCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

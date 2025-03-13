@@ -21,7 +21,7 @@ namespace Model
   class DescribeAuditFindingRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DescribeAuditFindingRequest();
+    AWS_IOT_API DescribeAuditFindingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>A unique identifier for a single audit finding. You can use this identifier
      * to apply mitigation actions to the finding.</p>
      */
-    inline const Aws::String& GetFindingId() const{ return m_findingId; }
+    inline const Aws::String& GetFindingId() const { return m_findingId; }
     inline bool FindingIdHasBeenSet() const { return m_findingIdHasBeenSet; }
-    inline void SetFindingId(const Aws::String& value) { m_findingIdHasBeenSet = true; m_findingId = value; }
-    inline void SetFindingId(Aws::String&& value) { m_findingIdHasBeenSet = true; m_findingId = std::move(value); }
-    inline void SetFindingId(const char* value) { m_findingIdHasBeenSet = true; m_findingId.assign(value); }
-    inline DescribeAuditFindingRequest& WithFindingId(const Aws::String& value) { SetFindingId(value); return *this;}
-    inline DescribeAuditFindingRequest& WithFindingId(Aws::String&& value) { SetFindingId(std::move(value)); return *this;}
-    inline DescribeAuditFindingRequest& WithFindingId(const char* value) { SetFindingId(value); return *this;}
+    template<typename FindingIdT = Aws::String>
+    void SetFindingId(FindingIdT&& value) { m_findingIdHasBeenSet = true; m_findingId = std::forward<FindingIdT>(value); }
+    template<typename FindingIdT = Aws::String>
+    DescribeAuditFindingRequest& WithFindingId(FindingIdT&& value) { SetFindingId(std::forward<FindingIdT>(value)); return *this;}
     ///@}
   private:
 

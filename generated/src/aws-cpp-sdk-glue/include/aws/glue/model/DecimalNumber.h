@@ -31,7 +31,7 @@ namespace Model
   class DecimalNumber
   {
   public:
-    AWS_GLUE_API DecimalNumber();
+    AWS_GLUE_API DecimalNumber() = default;
     AWS_GLUE_API DecimalNumber(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DecimalNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The unscaled numeric value.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetUnscaledValue() const{ return m_unscaledValue; }
+    inline const Aws::Utils::ByteBuffer& GetUnscaledValue() const { return m_unscaledValue; }
     inline bool UnscaledValueHasBeenSet() const { return m_unscaledValueHasBeenSet; }
-    inline void SetUnscaledValue(const Aws::Utils::ByteBuffer& value) { m_unscaledValueHasBeenSet = true; m_unscaledValue = value; }
-    inline void SetUnscaledValue(Aws::Utils::ByteBuffer&& value) { m_unscaledValueHasBeenSet = true; m_unscaledValue = std::move(value); }
-    inline DecimalNumber& WithUnscaledValue(const Aws::Utils::ByteBuffer& value) { SetUnscaledValue(value); return *this;}
-    inline DecimalNumber& WithUnscaledValue(Aws::Utils::ByteBuffer&& value) { SetUnscaledValue(std::move(value)); return *this;}
+    template<typename UnscaledValueT = Aws::Utils::ByteBuffer>
+    void SetUnscaledValue(UnscaledValueT&& value) { m_unscaledValueHasBeenSet = true; m_unscaledValue = std::forward<UnscaledValueT>(value); }
+    template<typename UnscaledValueT = Aws::Utils::ByteBuffer>
+    DecimalNumber& WithUnscaledValue(UnscaledValueT&& value) { SetUnscaledValue(std::forward<UnscaledValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,17 +54,17 @@ namespace Model
      * <p>The scale that determines where the decimal point falls in the unscaled
      * value.</p>
      */
-    inline int GetScale() const{ return m_scale; }
+    inline int GetScale() const { return m_scale; }
     inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
     inline void SetScale(int value) { m_scaleHasBeenSet = true; m_scale = value; }
     inline DecimalNumber& WithScale(int value) { SetScale(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_unscaledValue;
+    Aws::Utils::ByteBuffer m_unscaledValue{};
     bool m_unscaledValueHasBeenSet = false;
 
-    int m_scale;
+    int m_scale{0};
     bool m_scaleHasBeenSet = false;
   };
 

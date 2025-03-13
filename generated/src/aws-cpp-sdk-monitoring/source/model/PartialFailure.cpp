@@ -20,16 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-PartialFailure::PartialFailure() : 
-    m_failureResourceHasBeenSet(false),
-    m_exceptionTypeHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_failureDescriptionHasBeenSet(false)
-{
-}
-
 PartialFailure::PartialFailure(const XmlNode& xmlNode)
-  : PartialFailure()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ PartialFailure& PartialFailure::operator =(const XmlNode& xmlNode)
     {
       m_failureResource = Aws::Utils::Xml::DecodeEscapedXmlText(failureResourceNode.GetText());
       m_failureResourceHasBeenSet = true;
+       m_failureResourceHasBeenSet = true;
     }
     XmlNode exceptionTypeNode = resultNode.FirstChild("ExceptionType");
     if(!exceptionTypeNode.IsNull())
     {
       m_exceptionType = Aws::Utils::Xml::DecodeEscapedXmlText(exceptionTypeNode.GetText());
       m_exceptionTypeHasBeenSet = true;
+       m_exceptionTypeHasBeenSet = true;
     }
     XmlNode failureCodeNode = resultNode.FirstChild("FailureCode");
     if(!failureCodeNode.IsNull())
     {
       m_failureCode = Aws::Utils::Xml::DecodeEscapedXmlText(failureCodeNode.GetText());
       m_failureCodeHasBeenSet = true;
+       m_failureCodeHasBeenSet = true;
     }
     XmlNode failureDescriptionNode = resultNode.FirstChild("FailureDescription");
     if(!failureDescriptionNode.IsNull())
     {
       m_failureDescription = Aws::Utils::Xml::DecodeEscapedXmlText(failureDescriptionNode.GetText());
       m_failureDescriptionHasBeenSet = true;
+       m_failureDescriptionHasBeenSet = true;
     }
   }
 

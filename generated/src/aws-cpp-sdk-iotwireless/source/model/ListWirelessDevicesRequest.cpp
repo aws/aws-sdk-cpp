@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListWirelessDevicesRequest::ListWirelessDevicesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
-    m_deviceProfileIdHasBeenSet(false),
-    m_serviceProfileIdHasBeenSet(false),
-    m_wirelessDeviceType(WirelessDeviceType::NOT_SET),
-    m_wirelessDeviceTypeHasBeenSet(false),
-    m_fuotaTaskIdHasBeenSet(false),
-    m_multicastGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String ListWirelessDevicesRequest::SerializePayload() const
 {
   return {};

@@ -23,7 +23,7 @@ namespace Model
   class DescribeBatchPredictionsRequest : public MachineLearningRequest
   {
   public:
-    AWS_MACHINELEARNING_API DescribeBatchPredictionsRequest();
+    AWS_MACHINELEARNING_API DescribeBatchPredictionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,12 +54,10 @@ namespace Model
      * the <code>BatchPrediction</code>. The URL can identify either a file or an
      * Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li> </ul>
      */
-    inline const BatchPredictionFilterVariable& GetFilterVariable() const{ return m_filterVariable; }
+    inline BatchPredictionFilterVariable GetFilterVariable() const { return m_filterVariable; }
     inline bool FilterVariableHasBeenSet() const { return m_filterVariableHasBeenSet; }
-    inline void SetFilterVariable(const BatchPredictionFilterVariable& value) { m_filterVariableHasBeenSet = true; m_filterVariable = value; }
-    inline void SetFilterVariable(BatchPredictionFilterVariable&& value) { m_filterVariableHasBeenSet = true; m_filterVariable = std::move(value); }
-    inline DescribeBatchPredictionsRequest& WithFilterVariable(const BatchPredictionFilterVariable& value) { SetFilterVariable(value); return *this;}
-    inline DescribeBatchPredictionsRequest& WithFilterVariable(BatchPredictionFilterVariable&& value) { SetFilterVariable(std::move(value)); return *this;}
+    inline void SetFilterVariable(BatchPredictionFilterVariable value) { m_filterVariableHasBeenSet = true; m_filterVariable = value; }
+    inline DescribeBatchPredictionsRequest& WithFilterVariable(BatchPredictionFilterVariable value) { SetFilterVariable(value); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * <code>FilterVariable</code> values that exactly match the value specified with
      * <code>EQ</code>.</p>
      */
-    inline const Aws::String& GetEQ() const{ return m_eQ; }
+    inline const Aws::String& GetEQ() const { return m_eQ; }
     inline bool EQHasBeenSet() const { return m_eQHasBeenSet; }
-    inline void SetEQ(const Aws::String& value) { m_eQHasBeenSet = true; m_eQ = value; }
-    inline void SetEQ(Aws::String&& value) { m_eQHasBeenSet = true; m_eQ = std::move(value); }
-    inline void SetEQ(const char* value) { m_eQHasBeenSet = true; m_eQ.assign(value); }
-    inline DescribeBatchPredictionsRequest& WithEQ(const Aws::String& value) { SetEQ(value); return *this;}
-    inline DescribeBatchPredictionsRequest& WithEQ(Aws::String&& value) { SetEQ(std::move(value)); return *this;}
-    inline DescribeBatchPredictionsRequest& WithEQ(const char* value) { SetEQ(value); return *this;}
+    template<typename EQT = Aws::String>
+    void SetEQ(EQT&& value) { m_eQHasBeenSet = true; m_eQ = std::forward<EQT>(value); }
+    template<typename EQT = Aws::String>
+    DescribeBatchPredictionsRequest& WithEQ(EQT&& value) { SetEQ(std::forward<EQT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * <code>FilterVariable</code> values that are greater than the value specified
      * with <code>GT</code>.</p>
      */
-    inline const Aws::String& GetGT() const{ return m_gT; }
+    inline const Aws::String& GetGT() const { return m_gT; }
     inline bool GTHasBeenSet() const { return m_gTHasBeenSet; }
-    inline void SetGT(const Aws::String& value) { m_gTHasBeenSet = true; m_gT = value; }
-    inline void SetGT(Aws::String&& value) { m_gTHasBeenSet = true; m_gT = std::move(value); }
-    inline void SetGT(const char* value) { m_gTHasBeenSet = true; m_gT.assign(value); }
-    inline DescribeBatchPredictionsRequest& WithGT(const Aws::String& value) { SetGT(value); return *this;}
-    inline DescribeBatchPredictionsRequest& WithGT(Aws::String&& value) { SetGT(std::move(value)); return *this;}
-    inline DescribeBatchPredictionsRequest& WithGT(const char* value) { SetGT(value); return *this;}
+    template<typename GTT = Aws::String>
+    void SetGT(GTT&& value) { m_gTHasBeenSet = true; m_gT = std::forward<GTT>(value); }
+    template<typename GTT = Aws::String>
+    DescribeBatchPredictionsRequest& WithGT(GTT&& value) { SetGT(std::forward<GTT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +94,12 @@ namespace Model
      * <code>FilterVariable</code> values that are less than the value specified with
      * <code>LT</code>.</p>
      */
-    inline const Aws::String& GetLT() const{ return m_lT; }
+    inline const Aws::String& GetLT() const { return m_lT; }
     inline bool LTHasBeenSet() const { return m_lTHasBeenSet; }
-    inline void SetLT(const Aws::String& value) { m_lTHasBeenSet = true; m_lT = value; }
-    inline void SetLT(Aws::String&& value) { m_lTHasBeenSet = true; m_lT = std::move(value); }
-    inline void SetLT(const char* value) { m_lTHasBeenSet = true; m_lT.assign(value); }
-    inline DescribeBatchPredictionsRequest& WithLT(const Aws::String& value) { SetLT(value); return *this;}
-    inline DescribeBatchPredictionsRequest& WithLT(Aws::String&& value) { SetLT(std::move(value)); return *this;}
-    inline DescribeBatchPredictionsRequest& WithLT(const char* value) { SetLT(value); return *this;}
+    template<typename LTT = Aws::String>
+    void SetLT(LTT&& value) { m_lTHasBeenSet = true; m_lT = std::forward<LTT>(value); }
+    template<typename LTT = Aws::String>
+    DescribeBatchPredictionsRequest& WithLT(LTT&& value) { SetLT(std::forward<LTT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +108,12 @@ namespace Model
      * results will have <code>FilterVariable</code> values that are greater than or
      * equal to the value specified with <code>GE</code>. </p>
      */
-    inline const Aws::String& GetGE() const{ return m_gE; }
+    inline const Aws::String& GetGE() const { return m_gE; }
     inline bool GEHasBeenSet() const { return m_gEHasBeenSet; }
-    inline void SetGE(const Aws::String& value) { m_gEHasBeenSet = true; m_gE = value; }
-    inline void SetGE(Aws::String&& value) { m_gEHasBeenSet = true; m_gE = std::move(value); }
-    inline void SetGE(const char* value) { m_gEHasBeenSet = true; m_gE.assign(value); }
-    inline DescribeBatchPredictionsRequest& WithGE(const Aws::String& value) { SetGE(value); return *this;}
-    inline DescribeBatchPredictionsRequest& WithGE(Aws::String&& value) { SetGE(std::move(value)); return *this;}
-    inline DescribeBatchPredictionsRequest& WithGE(const char* value) { SetGE(value); return *this;}
+    template<typename GET = Aws::String>
+    void SetGE(GET&& value) { m_gEHasBeenSet = true; m_gE = std::forward<GET>(value); }
+    template<typename GET = Aws::String>
+    DescribeBatchPredictionsRequest& WithGE(GET&& value) { SetGE(std::forward<GET>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,14 +122,12 @@ namespace Model
      * will have <code>FilterVariable</code> values that are less than or equal to the
      * value specified with <code>LE</code>.</p>
      */
-    inline const Aws::String& GetLE() const{ return m_lE; }
+    inline const Aws::String& GetLE() const { return m_lE; }
     inline bool LEHasBeenSet() const { return m_lEHasBeenSet; }
-    inline void SetLE(const Aws::String& value) { m_lEHasBeenSet = true; m_lE = value; }
-    inline void SetLE(Aws::String&& value) { m_lEHasBeenSet = true; m_lE = std::move(value); }
-    inline void SetLE(const char* value) { m_lEHasBeenSet = true; m_lE.assign(value); }
-    inline DescribeBatchPredictionsRequest& WithLE(const Aws::String& value) { SetLE(value); return *this;}
-    inline DescribeBatchPredictionsRequest& WithLE(Aws::String&& value) { SetLE(std::move(value)); return *this;}
-    inline DescribeBatchPredictionsRequest& WithLE(const char* value) { SetLE(value); return *this;}
+    template<typename LET = Aws::String>
+    void SetLE(LET&& value) { m_lEHasBeenSet = true; m_lE = std::forward<LET>(value); }
+    template<typename LET = Aws::String>
+    DescribeBatchPredictionsRequest& WithLE(LET&& value) { SetLE(std::forward<LET>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,14 +136,12 @@ namespace Model
      * <code>FilterVariable</code> values not equal to the value specified with
      * <code>NE</code>.</p>
      */
-    inline const Aws::String& GetNE() const{ return m_nE; }
+    inline const Aws::String& GetNE() const { return m_nE; }
     inline bool NEHasBeenSet() const { return m_nEHasBeenSet; }
-    inline void SetNE(const Aws::String& value) { m_nEHasBeenSet = true; m_nE = value; }
-    inline void SetNE(Aws::String&& value) { m_nEHasBeenSet = true; m_nE = std::move(value); }
-    inline void SetNE(const char* value) { m_nEHasBeenSet = true; m_nE.assign(value); }
-    inline DescribeBatchPredictionsRequest& WithNE(const Aws::String& value) { SetNE(value); return *this;}
-    inline DescribeBatchPredictionsRequest& WithNE(Aws::String&& value) { SetNE(std::move(value)); return *this;}
-    inline DescribeBatchPredictionsRequest& WithNE(const char* value) { SetNE(value); return *this;}
+    template<typename NET = Aws::String>
+    void SetNE(NET&& value) { m_nEHasBeenSet = true; m_nE = std::forward<NET>(value); }
+    template<typename NET = Aws::String>
+    DescribeBatchPredictionsRequest& WithNE(NET&& value) { SetNE(std::forward<NET>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,14 +155,12 @@ namespace Model
      * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
      * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline DescribeBatchPredictionsRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline DescribeBatchPredictionsRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline DescribeBatchPredictionsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    DescribeBatchPredictionsRequest& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,26 +171,22 @@ namespace Model
      * list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted by
      * <code>FilterVariable</code>.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline DescribeBatchPredictionsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline DescribeBatchPredictionsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline DescribeBatchPredictionsRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An ID of the page in the paginated results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeBatchPredictionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeBatchPredictionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeBatchPredictionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeBatchPredictionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,14 +195,14 @@ namespace Model
      * acceptable values is <code>1</code> through <code>100</code>. The default value
      * is <code>100</code>.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeBatchPredictionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
     ///@}
   private:
 
-    BatchPredictionFilterVariable m_filterVariable;
+    BatchPredictionFilterVariable m_filterVariable{BatchPredictionFilterVariable::NOT_SET};
     bool m_filterVariableHasBeenSet = false;
 
     Aws::String m_eQ;
@@ -246,13 +226,13 @@ namespace Model
     Aws::String m_prefix;
     bool m_prefixHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyPrivateDnsNameOptionsRequest::ModifyPrivateDnsNameOptionsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_privateDnsHostnameType(HostnameType::NOT_SET),
-    m_privateDnsHostnameTypeHasBeenSet(false),
-    m_enableResourceNameDnsARecord(false),
-    m_enableResourceNameDnsARecordHasBeenSet(false),
-    m_enableResourceNameDnsAAAARecord(false),
-    m_enableResourceNameDnsAAAARecordHasBeenSet(false)
-{
-}
-
 Aws::String ModifyPrivateDnsNameOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

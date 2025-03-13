@@ -21,7 +21,7 @@ namespace Model
   class DescribePermissionSetProvisioningStatusRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API DescribePermissionSetProvisioningStatusRequest();
+    AWS_SSOADMIN_API DescribePermissionSetProvisioningStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline DescribePermissionSetProvisioningStatusRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline DescribePermissionSetProvisioningStatusRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline DescribePermissionSetProvisioningStatusRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    DescribePermissionSetProvisioningStatusRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The identifier that is provided by the <a>ProvisionPermissionSet</a> call to
      * retrieve the current status of the provisioning workflow.</p>
      */
-    inline const Aws::String& GetProvisionPermissionSetRequestId() const{ return m_provisionPermissionSetRequestId; }
+    inline const Aws::String& GetProvisionPermissionSetRequestId() const { return m_provisionPermissionSetRequestId; }
     inline bool ProvisionPermissionSetRequestIdHasBeenSet() const { return m_provisionPermissionSetRequestIdHasBeenSet; }
-    inline void SetProvisionPermissionSetRequestId(const Aws::String& value) { m_provisionPermissionSetRequestIdHasBeenSet = true; m_provisionPermissionSetRequestId = value; }
-    inline void SetProvisionPermissionSetRequestId(Aws::String&& value) { m_provisionPermissionSetRequestIdHasBeenSet = true; m_provisionPermissionSetRequestId = std::move(value); }
-    inline void SetProvisionPermissionSetRequestId(const char* value) { m_provisionPermissionSetRequestIdHasBeenSet = true; m_provisionPermissionSetRequestId.assign(value); }
-    inline DescribePermissionSetProvisioningStatusRequest& WithProvisionPermissionSetRequestId(const Aws::String& value) { SetProvisionPermissionSetRequestId(value); return *this;}
-    inline DescribePermissionSetProvisioningStatusRequest& WithProvisionPermissionSetRequestId(Aws::String&& value) { SetProvisionPermissionSetRequestId(std::move(value)); return *this;}
-    inline DescribePermissionSetProvisioningStatusRequest& WithProvisionPermissionSetRequestId(const char* value) { SetProvisionPermissionSetRequestId(value); return *this;}
+    template<typename ProvisionPermissionSetRequestIdT = Aws::String>
+    void SetProvisionPermissionSetRequestId(ProvisionPermissionSetRequestIdT&& value) { m_provisionPermissionSetRequestIdHasBeenSet = true; m_provisionPermissionSetRequestId = std::forward<ProvisionPermissionSetRequestIdT>(value); }
+    template<typename ProvisionPermissionSetRequestIdT = Aws::String>
+    DescribePermissionSetProvisioningStatusRequest& WithProvisionPermissionSetRequestId(ProvisionPermissionSetRequestIdT&& value) { SetProvisionPermissionSetRequestId(std::forward<ProvisionPermissionSetRequestIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -39,7 +39,7 @@ namespace Model
   class StateTemplateAssociation
   {
   public:
-    AWS_IOTFLEETWISE_API StateTemplateAssociation();
+    AWS_IOTFLEETWISE_API StateTemplateAssociation() = default;
     AWS_IOTFLEETWISE_API StateTemplateAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API StateTemplateAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,24 +49,22 @@ namespace Model
     /**
      * <p>The unique ID of the state template.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline StateTemplateAssociation& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline StateTemplateAssociation& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline StateTemplateAssociation& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    StateTemplateAssociation& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const StateTemplateUpdateStrategy& GetStateTemplateUpdateStrategy() const{ return m_stateTemplateUpdateStrategy; }
+    inline const StateTemplateUpdateStrategy& GetStateTemplateUpdateStrategy() const { return m_stateTemplateUpdateStrategy; }
     inline bool StateTemplateUpdateStrategyHasBeenSet() const { return m_stateTemplateUpdateStrategyHasBeenSet; }
-    inline void SetStateTemplateUpdateStrategy(const StateTemplateUpdateStrategy& value) { m_stateTemplateUpdateStrategyHasBeenSet = true; m_stateTemplateUpdateStrategy = value; }
-    inline void SetStateTemplateUpdateStrategy(StateTemplateUpdateStrategy&& value) { m_stateTemplateUpdateStrategyHasBeenSet = true; m_stateTemplateUpdateStrategy = std::move(value); }
-    inline StateTemplateAssociation& WithStateTemplateUpdateStrategy(const StateTemplateUpdateStrategy& value) { SetStateTemplateUpdateStrategy(value); return *this;}
-    inline StateTemplateAssociation& WithStateTemplateUpdateStrategy(StateTemplateUpdateStrategy&& value) { SetStateTemplateUpdateStrategy(std::move(value)); return *this;}
+    template<typename StateTemplateUpdateStrategyT = StateTemplateUpdateStrategy>
+    void SetStateTemplateUpdateStrategy(StateTemplateUpdateStrategyT&& value) { m_stateTemplateUpdateStrategyHasBeenSet = true; m_stateTemplateUpdateStrategy = std::forward<StateTemplateUpdateStrategyT>(value); }
+    template<typename StateTemplateUpdateStrategyT = StateTemplateUpdateStrategy>
+    StateTemplateAssociation& WithStateTemplateUpdateStrategy(StateTemplateUpdateStrategyT&& value) { SetStateTemplateUpdateStrategy(std::forward<StateTemplateUpdateStrategyT>(value)); return *this;}
     ///@}
   private:
 

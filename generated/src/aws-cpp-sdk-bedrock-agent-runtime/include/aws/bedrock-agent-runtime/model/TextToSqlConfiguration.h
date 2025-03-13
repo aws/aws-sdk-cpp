@@ -33,7 +33,7 @@ namespace Model
   class TextToSqlConfiguration
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API TextToSqlConfiguration();
+    AWS_BEDROCKAGENTRUNTIME_API TextToSqlConfiguration() = default;
     AWS_BEDROCKAGENTRUNTIME_API TextToSqlConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API TextToSqlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>Specifies configurations for a knowledge base to use in transformation.</p>
      */
-    inline const TextToSqlKnowledgeBaseConfiguration& GetKnowledgeBaseConfiguration() const{ return m_knowledgeBaseConfiguration; }
+    inline const TextToSqlKnowledgeBaseConfiguration& GetKnowledgeBaseConfiguration() const { return m_knowledgeBaseConfiguration; }
     inline bool KnowledgeBaseConfigurationHasBeenSet() const { return m_knowledgeBaseConfigurationHasBeenSet; }
-    inline void SetKnowledgeBaseConfiguration(const TextToSqlKnowledgeBaseConfiguration& value) { m_knowledgeBaseConfigurationHasBeenSet = true; m_knowledgeBaseConfiguration = value; }
-    inline void SetKnowledgeBaseConfiguration(TextToSqlKnowledgeBaseConfiguration&& value) { m_knowledgeBaseConfigurationHasBeenSet = true; m_knowledgeBaseConfiguration = std::move(value); }
-    inline TextToSqlConfiguration& WithKnowledgeBaseConfiguration(const TextToSqlKnowledgeBaseConfiguration& value) { SetKnowledgeBaseConfiguration(value); return *this;}
-    inline TextToSqlConfiguration& WithKnowledgeBaseConfiguration(TextToSqlKnowledgeBaseConfiguration&& value) { SetKnowledgeBaseConfiguration(std::move(value)); return *this;}
+    template<typename KnowledgeBaseConfigurationT = TextToSqlKnowledgeBaseConfiguration>
+    void SetKnowledgeBaseConfiguration(KnowledgeBaseConfigurationT&& value) { m_knowledgeBaseConfigurationHasBeenSet = true; m_knowledgeBaseConfiguration = std::forward<KnowledgeBaseConfigurationT>(value); }
+    template<typename KnowledgeBaseConfigurationT = TextToSqlKnowledgeBaseConfiguration>
+    TextToSqlConfiguration& WithKnowledgeBaseConfiguration(KnowledgeBaseConfigurationT&& value) { SetKnowledgeBaseConfiguration(std::forward<KnowledgeBaseConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of resource to use in transformation.</p>
      */
-    inline const TextToSqlConfigurationType& GetType() const{ return m_type; }
+    inline TextToSqlConfigurationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TextToSqlConfigurationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TextToSqlConfigurationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline TextToSqlConfiguration& WithType(const TextToSqlConfigurationType& value) { SetType(value); return *this;}
-    inline TextToSqlConfiguration& WithType(TextToSqlConfigurationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TextToSqlConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline TextToSqlConfiguration& WithType(TextToSqlConfigurationType value) { SetType(value); return *this;}
     ///@}
   private:
 
     TextToSqlKnowledgeBaseConfiguration m_knowledgeBaseConfiguration;
     bool m_knowledgeBaseConfigurationHasBeenSet = false;
 
-    TextToSqlConfigurationType m_type;
+    TextToSqlConfigurationType m_type{TextToSqlConfigurationType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-PolicyCondition::PolicyCondition() : 
-    m_booleanExpressionHasBeenSet(false),
-    m_ipExpressionHasBeenSet(false),
-    m_stringExpressionHasBeenSet(false),
-    m_tlsExpressionHasBeenSet(false)
-{
-}
-
 PolicyCondition::PolicyCondition(JsonView jsonValue)
-  : PolicyCondition()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PolicyCondition& PolicyCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BooleanExpression"))
   {
     m_booleanExpression = jsonValue.GetObject("BooleanExpression");
-
     m_booleanExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpExpression"))
   {
     m_ipExpression = jsonValue.GetObject("IpExpression");
-
     m_ipExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringExpression"))
   {
     m_stringExpression = jsonValue.GetObject("StringExpression");
-
     m_stringExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TlsExpression"))
   {
     m_tlsExpression = jsonValue.GetObject("TlsExpression");
-
     m_tlsExpressionHasBeenSet = true;
   }
-
   return *this;
 }
 

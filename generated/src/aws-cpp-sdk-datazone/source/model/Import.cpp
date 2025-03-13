@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-Import::Import() : 
-    m_nameHasBeenSet(false),
-    m_revisionHasBeenSet(false)
-{
-}
-
 Import::Import(JsonView jsonValue)
-  : Import()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Import& Import::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetString("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-PartitionKey::PartitionKey() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 PartitionKey::PartitionKey(JsonView jsonValue)
-  : PartitionKey()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PartitionKey& PartitionKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

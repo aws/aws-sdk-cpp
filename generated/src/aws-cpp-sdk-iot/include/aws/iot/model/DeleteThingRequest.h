@@ -28,7 +28,7 @@ namespace Model
   class DeleteThingRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DeleteThingRequest();
+    AWS_IOT_API DeleteThingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the thing to delete.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline DeleteThingRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline DeleteThingRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline DeleteThingRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    DeleteThingRequest& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * request, the <code>DeleteThing</code> request is rejected with a
      * <code>VersionConflictException</code>.</p>
      */
-    inline long long GetExpectedVersion() const{ return m_expectedVersion; }
+    inline long long GetExpectedVersion() const { return m_expectedVersion; }
     inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
     inline DeleteThingRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
@@ -72,7 +70,7 @@ namespace Model
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet = false;
 
-    long long m_expectedVersion;
+    long long m_expectedVersion{0};
     bool m_expectedVersionHasBeenSet = false;
   };
 

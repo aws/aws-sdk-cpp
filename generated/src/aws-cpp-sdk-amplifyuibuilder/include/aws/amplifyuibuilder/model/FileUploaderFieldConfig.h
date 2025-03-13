@@ -34,7 +34,7 @@ namespace Model
   class FileUploaderFieldConfig
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API FileUploaderFieldConfig();
+    AWS_AMPLIFYUIBUILDER_API FileUploaderFieldConfig() = default;
     AWS_AMPLIFYUIBUILDER_API FileUploaderFieldConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API FileUploaderFieldConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File
      * access levels</a> in the <i>Amplify documentation</i>.</p>
      */
-    inline const StorageAccessLevel& GetAccessLevel() const{ return m_accessLevel; }
+    inline StorageAccessLevel GetAccessLevel() const { return m_accessLevel; }
     inline bool AccessLevelHasBeenSet() const { return m_accessLevelHasBeenSet; }
-    inline void SetAccessLevel(const StorageAccessLevel& value) { m_accessLevelHasBeenSet = true; m_accessLevel = value; }
-    inline void SetAccessLevel(StorageAccessLevel&& value) { m_accessLevelHasBeenSet = true; m_accessLevel = std::move(value); }
-    inline FileUploaderFieldConfig& WithAccessLevel(const StorageAccessLevel& value) { SetAccessLevel(value); return *this;}
-    inline FileUploaderFieldConfig& WithAccessLevel(StorageAccessLevel&& value) { SetAccessLevel(std::move(value)); return *this;}
+    inline void SetAccessLevel(StorageAccessLevel value) { m_accessLevelHasBeenSet = true; m_accessLevel = value; }
+    inline FileUploaderFieldConfig& WithAccessLevel(StorageAccessLevel value) { SetAccessLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -64,15 +62,14 @@ namespace Model
      * this information in an array of strings specifying the valid file
      * extensions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAcceptedFileTypes() const{ return m_acceptedFileTypes; }
+    inline const Aws::Vector<Aws::String>& GetAcceptedFileTypes() const { return m_acceptedFileTypes; }
     inline bool AcceptedFileTypesHasBeenSet() const { return m_acceptedFileTypesHasBeenSet; }
-    inline void SetAcceptedFileTypes(const Aws::Vector<Aws::String>& value) { m_acceptedFileTypesHasBeenSet = true; m_acceptedFileTypes = value; }
-    inline void SetAcceptedFileTypes(Aws::Vector<Aws::String>&& value) { m_acceptedFileTypesHasBeenSet = true; m_acceptedFileTypes = std::move(value); }
-    inline FileUploaderFieldConfig& WithAcceptedFileTypes(const Aws::Vector<Aws::String>& value) { SetAcceptedFileTypes(value); return *this;}
-    inline FileUploaderFieldConfig& WithAcceptedFileTypes(Aws::Vector<Aws::String>&& value) { SetAcceptedFileTypes(std::move(value)); return *this;}
-    inline FileUploaderFieldConfig& AddAcceptedFileTypes(const Aws::String& value) { m_acceptedFileTypesHasBeenSet = true; m_acceptedFileTypes.push_back(value); return *this; }
-    inline FileUploaderFieldConfig& AddAcceptedFileTypes(Aws::String&& value) { m_acceptedFileTypesHasBeenSet = true; m_acceptedFileTypes.push_back(std::move(value)); return *this; }
-    inline FileUploaderFieldConfig& AddAcceptedFileTypes(const char* value) { m_acceptedFileTypesHasBeenSet = true; m_acceptedFileTypes.push_back(value); return *this; }
+    template<typename AcceptedFileTypesT = Aws::Vector<Aws::String>>
+    void SetAcceptedFileTypes(AcceptedFileTypesT&& value) { m_acceptedFileTypesHasBeenSet = true; m_acceptedFileTypes = std::forward<AcceptedFileTypesT>(value); }
+    template<typename AcceptedFileTypesT = Aws::Vector<Aws::String>>
+    FileUploaderFieldConfig& WithAcceptedFileTypes(AcceptedFileTypesT&& value) { SetAcceptedFileTypes(std::forward<AcceptedFileTypesT>(value)); return *this;}
+    template<typename AcceptedFileTypesT = Aws::String>
+    FileUploaderFieldConfig& AddAcceptedFileTypes(AcceptedFileTypesT&& value) { m_acceptedFileTypesHasBeenSet = true; m_acceptedFileTypes.emplace_back(std::forward<AcceptedFileTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,7 +78,7 @@ namespace Model
      * for upload. The default value is <code>true</code> to display the image
      * preview.</p>
      */
-    inline bool GetShowThumbnails() const{ return m_showThumbnails; }
+    inline bool GetShowThumbnails() const { return m_showThumbnails; }
     inline bool ShowThumbnailsHasBeenSet() const { return m_showThumbnailsHasBeenSet; }
     inline void SetShowThumbnails(bool value) { m_showThumbnailsHasBeenSet = true; m_showThumbnails = value; }
     inline FileUploaderFieldConfig& WithShowThumbnails(bool value) { SetShowThumbnails(value); return *this;}
@@ -95,7 +92,7 @@ namespace Model
      * into chunks before upload. The progress of the upload isn't continuous, because
      * the file uploader uploads a chunk at a time.</p>
      */
-    inline bool GetIsResumable() const{ return m_isResumable; }
+    inline bool GetIsResumable() const { return m_isResumable; }
     inline bool IsResumableHasBeenSet() const { return m_isResumableHasBeenSet; }
     inline void SetIsResumable(bool value) { m_isResumableHasBeenSet = true; m_isResumable = value; }
     inline FileUploaderFieldConfig& WithIsResumable(bool value) { SetIsResumable(value); return *this;}
@@ -106,7 +103,7 @@ namespace Model
      * <p>Specifies the maximum number of files that can be selected to upload. The
      * default value is an unlimited number of files.</p>
      */
-    inline int GetMaxFileCount() const{ return m_maxFileCount; }
+    inline int GetMaxFileCount() const { return m_maxFileCount; }
     inline bool MaxFileCountHasBeenSet() const { return m_maxFileCountHasBeenSet; }
     inline void SetMaxFileCount(int value) { m_maxFileCountHasBeenSet = true; m_maxFileCount = value; }
     inline FileUploaderFieldConfig& WithMaxFileCount(int value) { SetMaxFileCount(value); return *this;}
@@ -117,29 +114,29 @@ namespace Model
      * <p>The maximum file size in bytes that the file uploader will accept. The
      * default value is an unlimited file size.</p>
      */
-    inline int GetMaxSize() const{ return m_maxSize; }
+    inline int GetMaxSize() const { return m_maxSize; }
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
     inline FileUploaderFieldConfig& WithMaxSize(int value) { SetMaxSize(value); return *this;}
     ///@}
   private:
 
-    StorageAccessLevel m_accessLevel;
+    StorageAccessLevel m_accessLevel{StorageAccessLevel::NOT_SET};
     bool m_accessLevelHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_acceptedFileTypes;
     bool m_acceptedFileTypesHasBeenSet = false;
 
-    bool m_showThumbnails;
+    bool m_showThumbnails{false};
     bool m_showThumbnailsHasBeenSet = false;
 
-    bool m_isResumable;
+    bool m_isResumable{false};
     bool m_isResumableHasBeenSet = false;
 
-    int m_maxFileCount;
+    int m_maxFileCount{0};
     bool m_maxFileCountHasBeenSet = false;
 
-    int m_maxSize;
+    int m_maxSize{0};
     bool m_maxSizeHasBeenSet = false;
   };
 

@@ -12,12 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceNetworkVpcAssociationRequest::UpdateServiceNetworkVpcAssociationRequest() : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_serviceNetworkVpcAssociationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceNetworkVpcAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,20 +18,7 @@ namespace BCMDataExports
 namespace Model
 {
 
-S3OutputConfigurations::S3OutputConfigurations() : 
-    m_compression(CompressionOption::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_format(FormatOption::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_outputType(S3OutputType::NOT_SET),
-    m_outputTypeHasBeenSet(false),
-    m_overwrite(OverwriteOption::NOT_SET),
-    m_overwriteHasBeenSet(false)
-{
-}
-
 S3OutputConfigurations::S3OutputConfigurations(JsonView jsonValue)
-  : S3OutputConfigurations()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ S3OutputConfigurations& S3OutputConfigurations::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Compression"))
   {
     m_compression = CompressionOptionMapper::GetCompressionOptionForName(jsonValue.GetString("Compression"));
-
     m_compressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = FormatOptionMapper::GetFormatOptionForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputType"))
   {
     m_outputType = S3OutputTypeMapper::GetS3OutputTypeForName(jsonValue.GetString("OutputType"));
-
     m_outputTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Overwrite"))
   {
     m_overwrite = OverwriteOptionMapper::GetOverwriteOptionForName(jsonValue.GetString("Overwrite"));
-
     m_overwriteHasBeenSet = true;
   }
-
   return *this;
 }
 

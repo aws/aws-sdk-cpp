@@ -29,7 +29,7 @@ namespace Model
   class ImagePermissions
   {
   public:
-    AWS_APPSTREAM_API ImagePermissions();
+    AWS_APPSTREAM_API ImagePermissions() = default;
     AWS_APPSTREAM_API ImagePermissions(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API ImagePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Indicates whether the image can be used for a fleet.</p>
      */
-    inline bool GetAllowFleet() const{ return m_allowFleet; }
+    inline bool GetAllowFleet() const { return m_allowFleet; }
     inline bool AllowFleetHasBeenSet() const { return m_allowFleetHasBeenSet; }
     inline void SetAllowFleet(bool value) { m_allowFleetHasBeenSet = true; m_allowFleet = value; }
     inline ImagePermissions& WithAllowFleet(bool value) { SetAllowFleet(value); return *this;}
@@ -49,17 +49,17 @@ namespace Model
     /**
      * <p>Indicates whether the image can be used for an image builder.</p>
      */
-    inline bool GetAllowImageBuilder() const{ return m_allowImageBuilder; }
+    inline bool GetAllowImageBuilder() const { return m_allowImageBuilder; }
     inline bool AllowImageBuilderHasBeenSet() const { return m_allowImageBuilderHasBeenSet; }
     inline void SetAllowImageBuilder(bool value) { m_allowImageBuilderHasBeenSet = true; m_allowImageBuilder = value; }
     inline ImagePermissions& WithAllowImageBuilder(bool value) { SetAllowImageBuilder(value); return *this;}
     ///@}
   private:
 
-    bool m_allowFleet;
+    bool m_allowFleet{false};
     bool m_allowFleetHasBeenSet = false;
 
-    bool m_allowImageBuilder;
+    bool m_allowImageBuilder{false};
     bool m_allowImageBuilderHasBeenSet = false;
   };
 

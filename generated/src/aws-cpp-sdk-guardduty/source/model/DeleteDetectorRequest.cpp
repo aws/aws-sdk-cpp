@@ -12,11 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDetectorRequest::DeleteDetectorRequest() : 
-    m_detectorIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDetectorRequest::SerializePayload() const
 {
   return {};

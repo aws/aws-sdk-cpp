@@ -18,13 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-EngineWorkflowResourceIdentifier::EngineWorkflowResourceIdentifier() : 
-    m_uniqueTagHasBeenSet(false)
-{
-}
-
 EngineWorkflowResourceIdentifier::EngineWorkflowResourceIdentifier(JsonView jsonValue)
-  : EngineWorkflowResourceIdentifier()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EngineWorkflowResourceIdentifier& EngineWorkflowResourceIdentifier::operator =(J
   if(jsonValue.ValueExists("UniqueTag"))
   {
     m_uniqueTag = jsonValue.GetObject("UniqueTag");
-
     m_uniqueTagHasBeenSet = true;
   }
-
   return *this;
 }
 

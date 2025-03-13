@@ -18,29 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-UserImportJobType::UserImportJobType() : 
-    m_jobNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_preSignedUrlHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_status(UserImportJobStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_cloudWatchLogsRoleArnHasBeenSet(false),
-    m_importedUsers(0),
-    m_importedUsersHasBeenSet(false),
-    m_skippedUsers(0),
-    m_skippedUsersHasBeenSet(false),
-    m_failedUsers(0),
-    m_failedUsersHasBeenSet(false),
-    m_completionMessageHasBeenSet(false)
-{
-}
-
 UserImportJobType::UserImportJobType(JsonView jsonValue)
-  : UserImportJobType()
 {
   *this = jsonValue;
 }
@@ -50,94 +28,68 @@ UserImportJobType& UserImportJobType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreSignedUrl"))
   {
     m_preSignedUrl = jsonValue.GetString("PreSignedUrl");
-
     m_preSignedUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartDate"))
   {
     m_startDate = jsonValue.GetDouble("StartDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionDate"))
   {
     m_completionDate = jsonValue.GetDouble("CompletionDate");
-
     m_completionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = UserImportJobStatusTypeMapper::GetUserImportJobStatusTypeForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLogsRoleArn"))
   {
     m_cloudWatchLogsRoleArn = jsonValue.GetString("CloudWatchLogsRoleArn");
-
     m_cloudWatchLogsRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportedUsers"))
   {
     m_importedUsers = jsonValue.GetInt64("ImportedUsers");
-
     m_importedUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SkippedUsers"))
   {
     m_skippedUsers = jsonValue.GetInt64("SkippedUsers");
-
     m_skippedUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedUsers"))
   {
     m_failedUsers = jsonValue.GetInt64("FailedUsers");
-
     m_failedUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionMessage"))
   {
     m_completionMessage = jsonValue.GetString("CompletionMessage");
-
     m_completionMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

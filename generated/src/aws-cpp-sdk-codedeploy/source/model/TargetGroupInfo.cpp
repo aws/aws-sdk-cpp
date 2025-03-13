@@ -18,13 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-TargetGroupInfo::TargetGroupInfo() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 TargetGroupInfo::TargetGroupInfo(JsonView jsonValue)
-  : TargetGroupInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TargetGroupInfo& TargetGroupInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

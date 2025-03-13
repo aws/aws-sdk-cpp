@@ -18,13 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-RebuildRequest::RebuildRequest() : 
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 RebuildRequest::RebuildRequest(JsonView jsonValue)
-  : RebuildRequest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RebuildRequest& RebuildRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkspaceId"))
   {
     m_workspaceId = jsonValue.GetString("WorkspaceId");
-
     m_workspaceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

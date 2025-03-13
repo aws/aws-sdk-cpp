@@ -21,7 +21,7 @@ namespace Model
   class CreateCachePolicy2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API CreateCachePolicy2020_05_31Request();
+    AWS_CLOUDFRONT_API CreateCachePolicy2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
     /**
      * <p>A cache policy configuration.</p>
      */
-    inline const CachePolicyConfig& GetCachePolicyConfig() const{ return m_cachePolicyConfig; }
+    inline const CachePolicyConfig& GetCachePolicyConfig() const { return m_cachePolicyConfig; }
     inline bool CachePolicyConfigHasBeenSet() const { return m_cachePolicyConfigHasBeenSet; }
-    inline void SetCachePolicyConfig(const CachePolicyConfig& value) { m_cachePolicyConfigHasBeenSet = true; m_cachePolicyConfig = value; }
-    inline void SetCachePolicyConfig(CachePolicyConfig&& value) { m_cachePolicyConfigHasBeenSet = true; m_cachePolicyConfig = std::move(value); }
-    inline CreateCachePolicy2020_05_31Request& WithCachePolicyConfig(const CachePolicyConfig& value) { SetCachePolicyConfig(value); return *this;}
-    inline CreateCachePolicy2020_05_31Request& WithCachePolicyConfig(CachePolicyConfig&& value) { SetCachePolicyConfig(std::move(value)); return *this;}
+    template<typename CachePolicyConfigT = CachePolicyConfig>
+    void SetCachePolicyConfig(CachePolicyConfigT&& value) { m_cachePolicyConfigHasBeenSet = true; m_cachePolicyConfig = std::forward<CachePolicyConfigT>(value); }
+    template<typename CachePolicyConfigT = CachePolicyConfig>
+    CreateCachePolicy2020_05_31Request& WithCachePolicyConfig(CachePolicyConfigT&& value) { SetCachePolicyConfig(std::forward<CachePolicyConfigT>(value)); return *this;}
     ///@}
   private:
 

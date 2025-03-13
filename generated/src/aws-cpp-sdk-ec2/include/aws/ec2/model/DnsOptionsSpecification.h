@@ -31,7 +31,7 @@ namespace Model
   class DnsOptionsSpecification
   {
   public:
-    AWS_EC2_API DnsOptionsSpecification();
+    AWS_EC2_API DnsOptionsSpecification() = default;
     AWS_EC2_API DnsOptionsSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DnsOptionsSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The DNS records created for the endpoint.</p>
      */
-    inline const DnsRecordIpType& GetDnsRecordIpType() const{ return m_dnsRecordIpType; }
+    inline DnsRecordIpType GetDnsRecordIpType() const { return m_dnsRecordIpType; }
     inline bool DnsRecordIpTypeHasBeenSet() const { return m_dnsRecordIpTypeHasBeenSet; }
-    inline void SetDnsRecordIpType(const DnsRecordIpType& value) { m_dnsRecordIpTypeHasBeenSet = true; m_dnsRecordIpType = value; }
-    inline void SetDnsRecordIpType(DnsRecordIpType&& value) { m_dnsRecordIpTypeHasBeenSet = true; m_dnsRecordIpType = std::move(value); }
-    inline DnsOptionsSpecification& WithDnsRecordIpType(const DnsRecordIpType& value) { SetDnsRecordIpType(value); return *this;}
-    inline DnsOptionsSpecification& WithDnsRecordIpType(DnsRecordIpType&& value) { SetDnsRecordIpType(std::move(value)); return *this;}
+    inline void SetDnsRecordIpType(DnsRecordIpType value) { m_dnsRecordIpTypeHasBeenSet = true; m_dnsRecordIpType = value; }
+    inline DnsOptionsSpecification& WithDnsRecordIpType(DnsRecordIpType value) { SetDnsRecordIpType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,17 +57,17 @@ namespace Model
      * endpoint and traffic that originates from on-premises to the interface
      * endpoint.</p>
      */
-    inline bool GetPrivateDnsOnlyForInboundResolverEndpoint() const{ return m_privateDnsOnlyForInboundResolverEndpoint; }
+    inline bool GetPrivateDnsOnlyForInboundResolverEndpoint() const { return m_privateDnsOnlyForInboundResolverEndpoint; }
     inline bool PrivateDnsOnlyForInboundResolverEndpointHasBeenSet() const { return m_privateDnsOnlyForInboundResolverEndpointHasBeenSet; }
     inline void SetPrivateDnsOnlyForInboundResolverEndpoint(bool value) { m_privateDnsOnlyForInboundResolverEndpointHasBeenSet = true; m_privateDnsOnlyForInboundResolverEndpoint = value; }
     inline DnsOptionsSpecification& WithPrivateDnsOnlyForInboundResolverEndpoint(bool value) { SetPrivateDnsOnlyForInboundResolverEndpoint(value); return *this;}
     ///@}
   private:
 
-    DnsRecordIpType m_dnsRecordIpType;
+    DnsRecordIpType m_dnsRecordIpType{DnsRecordIpType::NOT_SET};
     bool m_dnsRecordIpTypeHasBeenSet = false;
 
-    bool m_privateDnsOnlyForInboundResolverEndpoint;
+    bool m_privateDnsOnlyForInboundResolverEndpoint{false};
     bool m_privateDnsOnlyForInboundResolverEndpointHasBeenSet = false;
   };
 

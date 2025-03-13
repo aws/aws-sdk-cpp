@@ -18,15 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-PoolFilter::PoolFilter() : 
-    m_name(PoolFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 PoolFilter::PoolFilter(JsonView jsonValue)
-  : PoolFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ PoolFilter& PoolFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = PoolFilterNameMapper::GetPoolFilterNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ PoolFilter& PoolFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

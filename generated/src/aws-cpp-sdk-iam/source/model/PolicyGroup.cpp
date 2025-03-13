@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-PolicyGroup::PolicyGroup() : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 PolicyGroup::PolicyGroup(const XmlNode& xmlNode)
-  : PolicyGroup()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ PolicyGroup& PolicyGroup::operator =(const XmlNode& xmlNode)
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
+       m_groupNameHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("GroupId");
     if(!groupIdNode.IsNull())
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
+       m_groupIdHasBeenSet = true;
     }
   }
 

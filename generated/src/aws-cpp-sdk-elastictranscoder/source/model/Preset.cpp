@@ -18,21 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-Preset::Preset() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_containerHasBeenSet(false),
-    m_audioHasBeenSet(false),
-    m_videoHasBeenSet(false),
-    m_thumbnailsHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Preset::Preset(JsonView jsonValue)
-  : Preset()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ Preset& Preset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Container"))
   {
     m_container = jsonValue.GetString("Container");
-
     m_containerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Audio"))
   {
     m_audio = jsonValue.GetObject("Audio");
-
     m_audioHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Video"))
   {
     m_video = jsonValue.GetObject("Video");
-
     m_videoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Thumbnails"))
   {
     m_thumbnails = jsonValue.GetObject("Thumbnails");
-
     m_thumbnailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

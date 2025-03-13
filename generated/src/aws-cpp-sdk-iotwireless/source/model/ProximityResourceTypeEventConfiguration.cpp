@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-ProximityResourceTypeEventConfiguration::ProximityResourceTypeEventConfiguration() : 
-    m_sidewalkHasBeenSet(false)
-{
-}
-
 ProximityResourceTypeEventConfiguration::ProximityResourceTypeEventConfiguration(JsonView jsonValue)
-  : ProximityResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProximityResourceTypeEventConfiguration& ProximityResourceTypeEventConfiguration
   if(jsonValue.ValueExists("Sidewalk"))
   {
     m_sidewalk = jsonValue.GetObject("Sidewalk");
-
     m_sidewalkHasBeenSet = true;
   }
-
   return *this;
 }
 

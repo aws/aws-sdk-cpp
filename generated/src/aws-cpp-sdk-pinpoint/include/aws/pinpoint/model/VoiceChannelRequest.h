@@ -30,7 +30,7 @@ namespace Model
   class VoiceChannelRequest
   {
   public:
-    AWS_PINPOINT_API VoiceChannelRequest();
+    AWS_PINPOINT_API VoiceChannelRequest() = default;
     AWS_PINPOINT_API VoiceChannelRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API VoiceChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Specifies whether to enable the voice channel for the application.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline VoiceChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

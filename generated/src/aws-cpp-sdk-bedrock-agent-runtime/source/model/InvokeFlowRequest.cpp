@@ -12,18 +12,6 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InvokeFlowRequest::InvokeFlowRequest() : 
-    m_enableTrace(false),
-    m_enableTraceHasBeenSet(false),
-    m_executionIdHasBeenSet(false),
-    m_flowAliasIdentifierHasBeenSet(false),
-    m_flowIdentifierHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_modelPerformanceConfigurationHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 Aws::String InvokeFlowRequest::SerializePayload() const
 {
   JsonValue payload;

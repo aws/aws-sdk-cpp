@@ -32,7 +32,7 @@ namespace Model
   class CreatedByInfo
   {
   public:
-    AWS_CONNECT_API CreatedByInfo();
+    AWS_CONNECT_API CreatedByInfo() = default;
     AWS_CONNECT_API CreatedByInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API CreatedByInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-resources-for-iam-policies">connect
      * user</a>.</p>
      */
-    inline const Aws::String& GetConnectUserArn() const{ return m_connectUserArn; }
+    inline const Aws::String& GetConnectUserArn() const { return m_connectUserArn; }
     inline bool ConnectUserArnHasBeenSet() const { return m_connectUserArnHasBeenSet; }
-    inline void SetConnectUserArn(const Aws::String& value) { m_connectUserArnHasBeenSet = true; m_connectUserArn = value; }
-    inline void SetConnectUserArn(Aws::String&& value) { m_connectUserArnHasBeenSet = true; m_connectUserArn = std::move(value); }
-    inline void SetConnectUserArn(const char* value) { m_connectUserArnHasBeenSet = true; m_connectUserArn.assign(value); }
-    inline CreatedByInfo& WithConnectUserArn(const Aws::String& value) { SetConnectUserArn(value); return *this;}
-    inline CreatedByInfo& WithConnectUserArn(Aws::String&& value) { SetConnectUserArn(std::move(value)); return *this;}
-    inline CreatedByInfo& WithConnectUserArn(const char* value) { SetConnectUserArn(value); return *this;}
+    template<typename ConnectUserArnT = Aws::String>
+    void SetConnectUserArn(ConnectUserArnT&& value) { m_connectUserArnHasBeenSet = true; m_connectUserArn = std::forward<ConnectUserArnT>(value); }
+    template<typename ConnectUserArnT = Aws::String>
+    CreatedByInfo& WithConnectUserArn(ConnectUserArnT&& value) { SetConnectUserArn(std::forward<ConnectUserArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * populate this and this value is calculated automatically if
      * <code>ConnectUserArn</code> is not provided.</p>
      */
-    inline const Aws::String& GetAWSIdentityArn() const{ return m_aWSIdentityArn; }
+    inline const Aws::String& GetAWSIdentityArn() const { return m_aWSIdentityArn; }
     inline bool AWSIdentityArnHasBeenSet() const { return m_aWSIdentityArnHasBeenSet; }
-    inline void SetAWSIdentityArn(const Aws::String& value) { m_aWSIdentityArnHasBeenSet = true; m_aWSIdentityArn = value; }
-    inline void SetAWSIdentityArn(Aws::String&& value) { m_aWSIdentityArnHasBeenSet = true; m_aWSIdentityArn = std::move(value); }
-    inline void SetAWSIdentityArn(const char* value) { m_aWSIdentityArnHasBeenSet = true; m_aWSIdentityArn.assign(value); }
-    inline CreatedByInfo& WithAWSIdentityArn(const Aws::String& value) { SetAWSIdentityArn(value); return *this;}
-    inline CreatedByInfo& WithAWSIdentityArn(Aws::String&& value) { SetAWSIdentityArn(std::move(value)); return *this;}
-    inline CreatedByInfo& WithAWSIdentityArn(const char* value) { SetAWSIdentityArn(value); return *this;}
+    template<typename AWSIdentityArnT = Aws::String>
+    void SetAWSIdentityArn(AWSIdentityArnT&& value) { m_aWSIdentityArnHasBeenSet = true; m_aWSIdentityArn = std::forward<AWSIdentityArnT>(value); }
+    template<typename AWSIdentityArnT = Aws::String>
+    CreatedByInfo& WithAWSIdentityArn(AWSIdentityArnT&& value) { SetAWSIdentityArn(std::forward<AWSIdentityArnT>(value)); return *this;}
     ///@}
   private:
 

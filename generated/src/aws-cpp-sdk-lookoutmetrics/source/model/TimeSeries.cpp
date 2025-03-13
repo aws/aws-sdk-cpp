@@ -18,15 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-TimeSeries::TimeSeries() : 
-    m_timeSeriesIdHasBeenSet(false),
-    m_dimensionListHasBeenSet(false),
-    m_metricValueListHasBeenSet(false)
-{
-}
-
 TimeSeries::TimeSeries(JsonView jsonValue)
-  : TimeSeries()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ TimeSeries& TimeSeries::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimeSeriesId"))
   {
     m_timeSeriesId = jsonValue.GetString("TimeSeriesId");
-
     m_timeSeriesIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionList"))
   {
     Aws::Utils::Array<JsonView> dimensionListJsonList = jsonValue.GetArray("DimensionList");
@@ -49,7 +39,6 @@ TimeSeries& TimeSeries::operator =(JsonView jsonValue)
     }
     m_dimensionListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricValueList"))
   {
     Aws::Utils::Array<JsonView> metricValueListJsonList = jsonValue.GetArray("MetricValueList");
@@ -59,7 +48,6 @@ TimeSeries& TimeSeries::operator =(JsonView jsonValue)
     }
     m_metricValueListHasBeenSet = true;
   }
-
   return *this;
 }
 

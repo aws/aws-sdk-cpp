@@ -12,24 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateImageBuilderRequest::CreateImageBuilderRequest() : 
-    m_nameHasBeenSet(false),
-    m_imageNameHasBeenSet(false),
-    m_imageArnHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_enableDefaultInternetAccess(false),
-    m_enableDefaultInternetAccessHasBeenSet(false),
-    m_domainJoinInfoHasBeenSet(false),
-    m_appstreamAgentVersionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false)
-{
-}
-
 Aws::String CreateImageBuilderRequest::SerializePayload() const
 {
   JsonValue payload;

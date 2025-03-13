@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ipv6Range::Ipv6Range() : 
-    m_descriptionHasBeenSet(false),
-    m_cidrIpv6HasBeenSet(false)
-{
-}
-
 Ipv6Range::Ipv6Range(const XmlNode& xmlNode)
-  : Ipv6Range()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Ipv6Range& Ipv6Range::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode cidrIpv6Node = resultNode.FirstChild("cidrIpv6");
     if(!cidrIpv6Node.IsNull())
     {
       m_cidrIpv6 = Aws::Utils::Xml::DecodeEscapedXmlText(cidrIpv6Node.GetText());
       m_cidrIpv6HasBeenSet = true;
+       m_cidrIpv6HasBeenSet = true;
     }
   }
 

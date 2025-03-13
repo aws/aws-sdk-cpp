@@ -30,7 +30,7 @@ namespace Model
   class RouteSpanSpeedLimitDetails
   {
   public:
-    AWS_GEOROUTES_API RouteSpanSpeedLimitDetails();
+    AWS_GEOROUTES_API RouteSpanSpeedLimitDetails() = default;
     AWS_GEOROUTES_API RouteSpanSpeedLimitDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteSpanSpeedLimitDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>Maximum speed.</p> <p> <b>Unit</b>: <code>KilometersPerHour</code> </p>
      */
-    inline double GetMaxSpeed() const{ return m_maxSpeed; }
+    inline double GetMaxSpeed() const { return m_maxSpeed; }
     inline bool MaxSpeedHasBeenSet() const { return m_maxSpeedHasBeenSet; }
     inline void SetMaxSpeed(double value) { m_maxSpeedHasBeenSet = true; m_maxSpeed = value; }
     inline RouteSpanSpeedLimitDetails& WithMaxSpeed(double value) { SetMaxSpeed(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>If the span doesn't have a speed limit like the Autobahn.</p>
      */
-    inline bool GetUnlimited() const{ return m_unlimited; }
+    inline bool GetUnlimited() const { return m_unlimited; }
     inline bool UnlimitedHasBeenSet() const { return m_unlimitedHasBeenSet; }
     inline void SetUnlimited(bool value) { m_unlimitedHasBeenSet = true; m_unlimited = value; }
     inline RouteSpanSpeedLimitDetails& WithUnlimited(bool value) { SetUnlimited(value); return *this;}
     ///@}
   private:
 
-    double m_maxSpeed;
+    double m_maxSpeed{0.0};
     bool m_maxSpeedHasBeenSet = false;
 
-    bool m_unlimited;
+    bool m_unlimited{false};
     bool m_unlimitedHasBeenSet = false;
   };
 

@@ -27,7 +27,7 @@ namespace Model
   class CreateMLTransformRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API CreateMLTransformRequest();
+    AWS_GLUE_API CreateMLTransformRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The unique name that you give the transform when you create it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateMLTransformRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateMLTransformRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateMLTransformRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateMLTransformRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,26 @@ namespace Model
      * <p>A description of the machine learning transform that is being defined. The
      * default is an empty string.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateMLTransformRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateMLTransformRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateMLTransformRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateMLTransformRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of Glue table definitions used by the transform.</p>
      */
-    inline const Aws::Vector<GlueTable>& GetInputRecordTables() const{ return m_inputRecordTables; }
+    inline const Aws::Vector<GlueTable>& GetInputRecordTables() const { return m_inputRecordTables; }
     inline bool InputRecordTablesHasBeenSet() const { return m_inputRecordTablesHasBeenSet; }
-    inline void SetInputRecordTables(const Aws::Vector<GlueTable>& value) { m_inputRecordTablesHasBeenSet = true; m_inputRecordTables = value; }
-    inline void SetInputRecordTables(Aws::Vector<GlueTable>&& value) { m_inputRecordTablesHasBeenSet = true; m_inputRecordTables = std::move(value); }
-    inline CreateMLTransformRequest& WithInputRecordTables(const Aws::Vector<GlueTable>& value) { SetInputRecordTables(value); return *this;}
-    inline CreateMLTransformRequest& WithInputRecordTables(Aws::Vector<GlueTable>&& value) { SetInputRecordTables(std::move(value)); return *this;}
-    inline CreateMLTransformRequest& AddInputRecordTables(const GlueTable& value) { m_inputRecordTablesHasBeenSet = true; m_inputRecordTables.push_back(value); return *this; }
-    inline CreateMLTransformRequest& AddInputRecordTables(GlueTable&& value) { m_inputRecordTablesHasBeenSet = true; m_inputRecordTables.push_back(std::move(value)); return *this; }
+    template<typename InputRecordTablesT = Aws::Vector<GlueTable>>
+    void SetInputRecordTables(InputRecordTablesT&& value) { m_inputRecordTablesHasBeenSet = true; m_inputRecordTables = std::forward<InputRecordTablesT>(value); }
+    template<typename InputRecordTablesT = Aws::Vector<GlueTable>>
+    CreateMLTransformRequest& WithInputRecordTables(InputRecordTablesT&& value) { SetInputRecordTables(std::forward<InputRecordTablesT>(value)); return *this;}
+    template<typename InputRecordTablesT = GlueTable>
+    CreateMLTransformRequest& AddInputRecordTables(InputRecordTablesT&& value) { m_inputRecordTablesHasBeenSet = true; m_inputRecordTables.emplace_back(std::forward<InputRecordTablesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,12 +84,12 @@ namespace Model
      * <p>The algorithmic parameters that are specific to the transform type used.
      * Conditionally dependent on the transform type.</p>
      */
-    inline const TransformParameters& GetParameters() const{ return m_parameters; }
+    inline const TransformParameters& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const TransformParameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(TransformParameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline CreateMLTransformRequest& WithParameters(const TransformParameters& value) { SetParameters(value); return *this;}
-    inline CreateMLTransformRequest& WithParameters(TransformParameters&& value) { SetParameters(std::move(value)); return *this;}
+    template<typename ParametersT = TransformParameters>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = TransformParameters>
+    CreateMLTransformRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +105,12 @@ namespace Model
      * temporary directory, scripts, and any libraries used by the task run for this
      * transform.</p> </li> </ul>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline CreateMLTransformRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline CreateMLTransformRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline CreateMLTransformRequest& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    CreateMLTransformRequest& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,14 +122,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
      * Versions</a> in the developer guide.</p>
      */
-    inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
+    inline const Aws::String& GetGlueVersion() const { return m_glueVersion; }
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
-    inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
-    inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
-    inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
-    inline CreateMLTransformRequest& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
-    inline CreateMLTransformRequest& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
-    inline CreateMLTransformRequest& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
+    template<typename GlueVersionT = Aws::String>
+    void SetGlueVersion(GlueVersionT&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::forward<GlueVersionT>(value); }
+    template<typename GlueVersionT = Aws::String>
+    CreateMLTransformRequest& WithGlueVersion(GlueVersionT&& value) { SetGlueVersion(std::forward<GlueVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,7 +152,7 @@ namespace Model
      * <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically
      * and becomes read-only.</p>
      */
-    inline double GetMaxCapacity() const{ return m_maxCapacity; }
+    inline double GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline CreateMLTransformRequest& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
@@ -186,12 +178,10 @@ namespace Model
      * </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must
      * both be at least 1.</p> </li> </ul>
      */
-    inline const WorkerType& GetWorkerType() const{ return m_workerType; }
+    inline WorkerType GetWorkerType() const { return m_workerType; }
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
-    inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
-    inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
-    inline CreateMLTransformRequest& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
-    inline CreateMLTransformRequest& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
+    inline void SetWorkerType(WorkerType value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
+    inline CreateMLTransformRequest& WithWorkerType(WorkerType value) { SetWorkerType(value); return *this;}
     ///@}
 
     ///@{
@@ -200,7 +190,7 @@ namespace Model
      * when this task runs.</p> <p>If <code>WorkerType</code> is set, then
      * <code>NumberOfWorkers</code> is required (and vice versa).</p>
      */
-    inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
+    inline int GetNumberOfWorkers() const { return m_numberOfWorkers; }
     inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
     inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
     inline CreateMLTransformRequest& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
@@ -213,7 +203,7 @@ namespace Model
      * is terminated and enters <code>TIMEOUT</code> status. The default is 2,880
      * minutes (48 hours).</p>
      */
-    inline int GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
     inline CreateMLTransformRequest& WithTimeout(int value) { SetTimeout(value); return *this;}
@@ -224,7 +214,7 @@ namespace Model
      * <p>The maximum number of times to retry a task for this transform after a task
      * run fails.</p>
      */
-    inline int GetMaxRetries() const{ return m_maxRetries; }
+    inline int GetMaxRetries() const { return m_maxRetries; }
     inline bool MaxRetriesHasBeenSet() const { return m_maxRetriesHasBeenSet; }
     inline void SetMaxRetries(int value) { m_maxRetriesHasBeenSet = true; m_maxRetries = value; }
     inline CreateMLTransformRequest& WithMaxRetries(int value) { SetMaxRetries(value); return *this;}
@@ -238,19 +228,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
      * Services Tags in Glue</a> in the developer guide.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateMLTransformRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateMLTransformRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateMLTransformRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateMLTransformRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateMLTransformRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateMLTransformRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateMLTransformRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateMLTransformRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateMLTransformRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateMLTransformRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateMLTransformRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -259,12 +246,12 @@ namespace Model
      * data. Machine learning transforms can access user data encrypted in Amazon S3
      * using KMS.</p>
      */
-    inline const TransformEncryption& GetTransformEncryption() const{ return m_transformEncryption; }
+    inline const TransformEncryption& GetTransformEncryption() const { return m_transformEncryption; }
     inline bool TransformEncryptionHasBeenSet() const { return m_transformEncryptionHasBeenSet; }
-    inline void SetTransformEncryption(const TransformEncryption& value) { m_transformEncryptionHasBeenSet = true; m_transformEncryption = value; }
-    inline void SetTransformEncryption(TransformEncryption&& value) { m_transformEncryptionHasBeenSet = true; m_transformEncryption = std::move(value); }
-    inline CreateMLTransformRequest& WithTransformEncryption(const TransformEncryption& value) { SetTransformEncryption(value); return *this;}
-    inline CreateMLTransformRequest& WithTransformEncryption(TransformEncryption&& value) { SetTransformEncryption(std::move(value)); return *this;}
+    template<typename TransformEncryptionT = TransformEncryption>
+    void SetTransformEncryption(TransformEncryptionT&& value) { m_transformEncryptionHasBeenSet = true; m_transformEncryption = std::forward<TransformEncryptionT>(value); }
+    template<typename TransformEncryptionT = TransformEncryption>
+    CreateMLTransformRequest& WithTransformEncryption(TransformEncryptionT&& value) { SetTransformEncryption(std::forward<TransformEncryptionT>(value)); return *this;}
     ///@}
   private:
 
@@ -286,19 +273,19 @@ namespace Model
     Aws::String m_glueVersion;
     bool m_glueVersionHasBeenSet = false;
 
-    double m_maxCapacity;
+    double m_maxCapacity{0.0};
     bool m_maxCapacityHasBeenSet = false;
 
-    WorkerType m_workerType;
+    WorkerType m_workerType{WorkerType::NOT_SET};
     bool m_workerTypeHasBeenSet = false;
 
-    int m_numberOfWorkers;
+    int m_numberOfWorkers{0};
     bool m_numberOfWorkersHasBeenSet = false;
 
-    int m_timeout;
+    int m_timeout{0};
     bool m_timeoutHasBeenSet = false;
 
-    int m_maxRetries;
+    int m_maxRetries{0};
     bool m_maxRetriesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

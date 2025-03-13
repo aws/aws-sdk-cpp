@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateConfigurationSetTrackingOptionsResult::CreateConfigurationSetTrackingOptionsResult()
-{
-}
-
 CreateConfigurationSetTrackingOptionsResult::CreateConfigurationSetTrackingOptionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ CreateConfigurationSetTrackingOptionsResult& CreateConfigurationSetTrackingOptio
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::CreateConfigurationSetTrackingOptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -36,7 +36,7 @@ namespace Model
   class ProjectSource
   {
   public:
-    AWS_CODEBUILD_API ProjectSource();
+    AWS_CODEBUILD_API ProjectSource() = default;
     AWS_CODEBUILD_API ProjectSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ProjectSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,10 @@ namespace Model
      * <li> <p> <code>S3</code>: The source code is in an Amazon S3 bucket.</p> </li>
      * </ul>
      */
-    inline const SourceType& GetType() const{ return m_type; }
+    inline SourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ProjectSource& WithType(const SourceType& value) { SetType(value); return *this;}
-    inline ProjectSource& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ProjectSource& WithType(SourceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -121,21 +119,19 @@ namespace Model
      * for the <code>Type</code> property, don't specify this property. For all of the
      * other types, you must specify <code>Location</code>. </p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline ProjectSource& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline ProjectSource& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline ProjectSource& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    ProjectSource& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the Git clone depth for the build project.</p>
      */
-    inline int GetGitCloneDepth() const{ return m_gitCloneDepth; }
+    inline int GetGitCloneDepth() const { return m_gitCloneDepth; }
     inline bool GitCloneDepthHasBeenSet() const { return m_gitCloneDepthHasBeenSet; }
     inline void SetGitCloneDepth(int value) { m_gitCloneDepthHasBeenSet = true; m_gitCloneDepth = value; }
     inline ProjectSource& WithGitCloneDepth(int value) { SetGitCloneDepth(value); return *this;}
@@ -146,12 +142,12 @@ namespace Model
      * <p> Information about the Git submodules configuration for the build project.
      * </p>
      */
-    inline const GitSubmodulesConfig& GetGitSubmodulesConfig() const{ return m_gitSubmodulesConfig; }
+    inline const GitSubmodulesConfig& GetGitSubmodulesConfig() const { return m_gitSubmodulesConfig; }
     inline bool GitSubmodulesConfigHasBeenSet() const { return m_gitSubmodulesConfigHasBeenSet; }
-    inline void SetGitSubmodulesConfig(const GitSubmodulesConfig& value) { m_gitSubmodulesConfigHasBeenSet = true; m_gitSubmodulesConfig = value; }
-    inline void SetGitSubmodulesConfig(GitSubmodulesConfig&& value) { m_gitSubmodulesConfigHasBeenSet = true; m_gitSubmodulesConfig = std::move(value); }
-    inline ProjectSource& WithGitSubmodulesConfig(const GitSubmodulesConfig& value) { SetGitSubmodulesConfig(value); return *this;}
-    inline ProjectSource& WithGitSubmodulesConfig(GitSubmodulesConfig&& value) { SetGitSubmodulesConfig(std::move(value)); return *this;}
+    template<typename GitSubmodulesConfigT = GitSubmodulesConfig>
+    void SetGitSubmodulesConfig(GitSubmodulesConfigT&& value) { m_gitSubmodulesConfigHasBeenSet = true; m_gitSubmodulesConfig = std::forward<GitSubmodulesConfigT>(value); }
+    template<typename GitSubmodulesConfigT = GitSubmodulesConfig>
+    ProjectSource& WithGitSubmodulesConfig(GitSubmodulesConfigT&& value) { SetGitSubmodulesConfig(std::forward<GitSubmodulesConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,14 +164,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
      * File Name and Storage Location</a>. </p>
      */
-    inline const Aws::String& GetBuildspec() const{ return m_buildspec; }
+    inline const Aws::String& GetBuildspec() const { return m_buildspec; }
     inline bool BuildspecHasBeenSet() const { return m_buildspecHasBeenSet; }
-    inline void SetBuildspec(const Aws::String& value) { m_buildspecHasBeenSet = true; m_buildspec = value; }
-    inline void SetBuildspec(Aws::String&& value) { m_buildspecHasBeenSet = true; m_buildspec = std::move(value); }
-    inline void SetBuildspec(const char* value) { m_buildspecHasBeenSet = true; m_buildspec.assign(value); }
-    inline ProjectSource& WithBuildspec(const Aws::String& value) { SetBuildspec(value); return *this;}
-    inline ProjectSource& WithBuildspec(Aws::String&& value) { SetBuildspec(std::move(value)); return *this;}
-    inline ProjectSource& WithBuildspec(const char* value) { SetBuildspec(value); return *this;}
+    template<typename BuildspecT = Aws::String>
+    void SetBuildspec(BuildspecT&& value) { m_buildspecHasBeenSet = true; m_buildspec = std::forward<BuildspecT>(value); }
+    template<typename BuildspecT = Aws::String>
+    ProjectSource& WithBuildspec(BuildspecT&& value) { SetBuildspec(std::forward<BuildspecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,12 +177,12 @@ namespace Model
      * <p>Information about the authorization settings for CodeBuild to access the
      * source code to be built.</p>
      */
-    inline const SourceAuth& GetAuth() const{ return m_auth; }
+    inline const SourceAuth& GetAuth() const { return m_auth; }
     inline bool AuthHasBeenSet() const { return m_authHasBeenSet; }
-    inline void SetAuth(const SourceAuth& value) { m_authHasBeenSet = true; m_auth = value; }
-    inline void SetAuth(SourceAuth&& value) { m_authHasBeenSet = true; m_auth = std::move(value); }
-    inline ProjectSource& WithAuth(const SourceAuth& value) { SetAuth(value); return *this;}
-    inline ProjectSource& WithAuth(SourceAuth&& value) { SetAuth(std::move(value)); return *this;}
+    template<typename AuthT = SourceAuth>
+    void SetAuth(AuthT&& value) { m_authHasBeenSet = true; m_auth = std::forward<AuthT>(value); }
+    template<typename AuthT = SourceAuth>
+    ProjectSource& WithAuth(AuthT&& value) { SetAuth(std::forward<AuthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -207,7 +201,7 @@ namespace Model
      * <p>If your project's builds are triggered by a webhook, you must push a new
      * commit to the repo for a change to this property to take effect.</p>
      */
-    inline bool GetReportBuildStatus() const{ return m_reportBuildStatus; }
+    inline bool GetReportBuildStatus() const { return m_reportBuildStatus; }
     inline bool ReportBuildStatusHasBeenSet() const { return m_reportBuildStatusHasBeenSet; }
     inline void SetReportBuildStatus(bool value) { m_reportBuildStatusHasBeenSet = true; m_reportBuildStatus = value; }
     inline ProjectSource& WithReportBuildStatus(bool value) { SetReportBuildStatus(value); return *this;}
@@ -220,12 +214,12 @@ namespace Model
      * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
      * <code>BITBUCKET</code>.</p>
      */
-    inline const BuildStatusConfig& GetBuildStatusConfig() const{ return m_buildStatusConfig; }
+    inline const BuildStatusConfig& GetBuildStatusConfig() const { return m_buildStatusConfig; }
     inline bool BuildStatusConfigHasBeenSet() const { return m_buildStatusConfigHasBeenSet; }
-    inline void SetBuildStatusConfig(const BuildStatusConfig& value) { m_buildStatusConfigHasBeenSet = true; m_buildStatusConfig = value; }
-    inline void SetBuildStatusConfig(BuildStatusConfig&& value) { m_buildStatusConfigHasBeenSet = true; m_buildStatusConfig = std::move(value); }
-    inline ProjectSource& WithBuildStatusConfig(const BuildStatusConfig& value) { SetBuildStatusConfig(value); return *this;}
-    inline ProjectSource& WithBuildStatusConfig(BuildStatusConfig&& value) { SetBuildStatusConfig(std::move(value)); return *this;}
+    template<typename BuildStatusConfigT = BuildStatusConfig>
+    void SetBuildStatusConfig(BuildStatusConfigT&& value) { m_buildStatusConfigHasBeenSet = true; m_buildStatusConfig = std::forward<BuildStatusConfigT>(value); }
+    template<typename BuildStatusConfigT = BuildStatusConfig>
+    ProjectSource& WithBuildStatusConfig(BuildStatusConfigT&& value) { SetBuildStatusConfig(std::forward<BuildStatusConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -233,7 +227,7 @@ namespace Model
      * <p>Enable this flag to ignore SSL warnings while connecting to the project
      * source code.</p>
      */
-    inline bool GetInsecureSsl() const{ return m_insecureSsl; }
+    inline bool GetInsecureSsl() const { return m_insecureSsl; }
     inline bool InsecureSslHasBeenSet() const { return m_insecureSslHasBeenSet; }
     inline void SetInsecureSsl(bool value) { m_insecureSslHasBeenSet = true; m_insecureSsl = value; }
     inline ProjectSource& WithInsecureSsl(bool value) { SetInsecureSsl(value); return *this;}
@@ -245,24 +239,22 @@ namespace Model
      * alphanumeric characters and underscores, and must be less than 128 characters in
      * length. </p>
      */
-    inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
+    inline const Aws::String& GetSourceIdentifier() const { return m_sourceIdentifier; }
     inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
-    inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
-    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
-    inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
-    inline ProjectSource& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
-    inline ProjectSource& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
-    inline ProjectSource& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
+    template<typename SourceIdentifierT = Aws::String>
+    void SetSourceIdentifier(SourceIdentifierT&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::forward<SourceIdentifierT>(value); }
+    template<typename SourceIdentifierT = Aws::String>
+    ProjectSource& WithSourceIdentifier(SourceIdentifierT&& value) { SetSourceIdentifier(std::forward<SourceIdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    SourceType m_type;
+    SourceType m_type{SourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_location;
     bool m_locationHasBeenSet = false;
 
-    int m_gitCloneDepth;
+    int m_gitCloneDepth{0};
     bool m_gitCloneDepthHasBeenSet = false;
 
     GitSubmodulesConfig m_gitSubmodulesConfig;
@@ -274,13 +266,13 @@ namespace Model
     SourceAuth m_auth;
     bool m_authHasBeenSet = false;
 
-    bool m_reportBuildStatus;
+    bool m_reportBuildStatus{false};
     bool m_reportBuildStatusHasBeenSet = false;
 
     BuildStatusConfig m_buildStatusConfig;
     bool m_buildStatusConfigHasBeenSet = false;
 
-    bool m_insecureSsl;
+    bool m_insecureSsl{false};
     bool m_insecureSslHasBeenSet = false;
 
     Aws::String m_sourceIdentifier;

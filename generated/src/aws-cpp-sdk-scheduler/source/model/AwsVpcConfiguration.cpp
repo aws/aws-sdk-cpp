@@ -18,16 +18,7 @@ namespace Scheduler
 namespace Model
 {
 
-AwsVpcConfiguration::AwsVpcConfiguration() : 
-    m_assignPublicIp(AssignPublicIp::NOT_SET),
-    m_assignPublicIpHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
-{
-}
-
 AwsVpcConfiguration::AwsVpcConfiguration(JsonView jsonValue)
-  : AwsVpcConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ AwsVpcConfiguration& AwsVpcConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssignPublicIp"))
   {
     m_assignPublicIp = AssignPublicIpMapper::GetAssignPublicIpForName(jsonValue.GetString("AssignPublicIp"));
-
     m_assignPublicIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
@@ -50,7 +39,6 @@ AwsVpcConfiguration& AwsVpcConfiguration::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
@@ -60,7 +48,6 @@ AwsVpcConfiguration& AwsVpcConfiguration::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,24 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcEndpointAssociation::VpcEndpointAssociation() : 
-    m_idHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_serviceNetworkArnHasBeenSet(false),
-    m_serviceNetworkNameHasBeenSet(false),
-    m_associatedResourceAccessibilityHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_dnsEntryHasBeenSet(false),
-    m_privateDnsEntryHasBeenSet(false),
-    m_associatedResourceArnHasBeenSet(false),
-    m_resourceConfigurationGroupArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 VpcEndpointAssociation::VpcEndpointAssociation(const XmlNode& xmlNode)
-  : VpcEndpointAssociation()
 {
   *this = xmlNode;
 }
@@ -53,78 +36,90 @@ VpcEndpointAssociation& VpcEndpointAssociation::operator =(const XmlNode& xmlNod
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode vpcEndpointIdNode = resultNode.FirstChild("vpcEndpointId");
     if(!vpcEndpointIdNode.IsNull())
     {
       m_vpcEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointIdNode.GetText());
       m_vpcEndpointIdHasBeenSet = true;
+       m_vpcEndpointIdHasBeenSet = true;
     }
     XmlNode serviceNetworkArnNode = resultNode.FirstChild("serviceNetworkArn");
     if(!serviceNetworkArnNode.IsNull())
     {
       m_serviceNetworkArn = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNetworkArnNode.GetText());
       m_serviceNetworkArnHasBeenSet = true;
+       m_serviceNetworkArnHasBeenSet = true;
     }
     XmlNode serviceNetworkNameNode = resultNode.FirstChild("serviceNetworkName");
     if(!serviceNetworkNameNode.IsNull())
     {
       m_serviceNetworkName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNetworkNameNode.GetText());
       m_serviceNetworkNameHasBeenSet = true;
+       m_serviceNetworkNameHasBeenSet = true;
     }
     XmlNode associatedResourceAccessibilityNode = resultNode.FirstChild("associatedResourceAccessibility");
     if(!associatedResourceAccessibilityNode.IsNull())
     {
       m_associatedResourceAccessibility = Aws::Utils::Xml::DecodeEscapedXmlText(associatedResourceAccessibilityNode.GetText());
       m_associatedResourceAccessibilityHasBeenSet = true;
+       m_associatedResourceAccessibilityHasBeenSet = true;
     }
     XmlNode failureReasonNode = resultNode.FirstChild("failureReason");
     if(!failureReasonNode.IsNull())
     {
       m_failureReason = Aws::Utils::Xml::DecodeEscapedXmlText(failureReasonNode.GetText());
       m_failureReasonHasBeenSet = true;
+       m_failureReasonHasBeenSet = true;
     }
     XmlNode failureCodeNode = resultNode.FirstChild("failureCode");
     if(!failureCodeNode.IsNull())
     {
       m_failureCode = Aws::Utils::Xml::DecodeEscapedXmlText(failureCodeNode.GetText());
       m_failureCodeHasBeenSet = true;
+       m_failureCodeHasBeenSet = true;
     }
     XmlNode dnsEntryNode = resultNode.FirstChild("dnsEntry");
     if(!dnsEntryNode.IsNull())
     {
       m_dnsEntry = dnsEntryNode;
       m_dnsEntryHasBeenSet = true;
+       m_dnsEntryHasBeenSet = true;
     }
     XmlNode privateDnsEntryNode = resultNode.FirstChild("privateDnsEntry");
     if(!privateDnsEntryNode.IsNull())
     {
       m_privateDnsEntry = privateDnsEntryNode;
       m_privateDnsEntryHasBeenSet = true;
+       m_privateDnsEntryHasBeenSet = true;
     }
     XmlNode associatedResourceArnNode = resultNode.FirstChild("associatedResourceArn");
     if(!associatedResourceArnNode.IsNull())
     {
       m_associatedResourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(associatedResourceArnNode.GetText());
       m_associatedResourceArnHasBeenSet = true;
+       m_associatedResourceArnHasBeenSet = true;
     }
     XmlNode resourceConfigurationGroupArnNode = resultNode.FirstChild("resourceConfigurationGroupArn");
     if(!resourceConfigurationGroupArnNode.IsNull())
     {
       m_resourceConfigurationGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(resourceConfigurationGroupArnNode.GetText());
       m_resourceConfigurationGroupArnHasBeenSet = true;
+       m_resourceConfigurationGroupArnHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

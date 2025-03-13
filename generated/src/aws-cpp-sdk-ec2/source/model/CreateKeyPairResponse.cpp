@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateKeyPairResponse::CreateKeyPairResponse()
-{
-}
-
 CreateKeyPairResponse::CreateKeyPairResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ CreateKeyPairResponse& CreateKeyPairResponse::operator =(const Aws::AmazonWebSer
     if(!keyPairIdNode.IsNull())
     {
       m_keyPairId = Aws::Utils::Xml::DecodeEscapedXmlText(keyPairIdNode.GetText());
+      m_keyPairIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -58,16 +56,19 @@ CreateKeyPairResponse& CreateKeyPairResponse::operator =(const Aws::AmazonWebSer
     if(!keyNameNode.IsNull())
     {
       m_keyName = Aws::Utils::Xml::DecodeEscapedXmlText(keyNameNode.GetText());
+      m_keyNameHasBeenSet = true;
     }
     XmlNode keyFingerprintNode = resultNode.FirstChild("keyFingerprint");
     if(!keyFingerprintNode.IsNull())
     {
       m_keyFingerprint = Aws::Utils::Xml::DecodeEscapedXmlText(keyFingerprintNode.GetText());
+      m_keyFingerprintHasBeenSet = true;
     }
     XmlNode keyMaterialNode = resultNode.FirstChild("keyMaterial");
     if(!keyMaterialNode.IsNull())
     {
       m_keyMaterial = Aws::Utils::Xml::DecodeEscapedXmlText(keyMaterialNode.GetText());
+      m_keyMaterialHasBeenSet = true;
     }
   }
 
@@ -76,6 +77,7 @@ CreateKeyPairResponse& CreateKeyPairResponse::operator =(const Aws::AmazonWebSer
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateKeyPairResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

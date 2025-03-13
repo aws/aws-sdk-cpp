@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackInstanceFilter::StackInstanceFilter() : 
-    m_name(StackInstanceFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 StackInstanceFilter::StackInstanceFilter(const XmlNode& xmlNode)
-  : StackInstanceFilter()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ StackInstanceFilter& StackInstanceFilter::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StackInstanceFilterNameMapper::GetStackInstanceFilterNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()).c_str());
+      m_name = StackInstanceFilterNameMapper::GetStackInstanceFilterNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()));
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");
     if(!valuesNode.IsNull())
     {
       m_values = Aws::Utils::Xml::DecodeEscapedXmlText(valuesNode.GetText());
       m_valuesHasBeenSet = true;
+       m_valuesHasBeenSet = true;
     }
   }
 

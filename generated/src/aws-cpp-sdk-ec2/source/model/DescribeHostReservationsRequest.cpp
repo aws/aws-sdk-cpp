@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeHostReservationsRequest::DescribeHostReservationsRequest() : 
-    m_filterHasBeenSet(false),
-    m_hostReservationIdSetHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeHostReservationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

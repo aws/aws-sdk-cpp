@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAccountRolesResult::ListAccountRolesResult()
-{
-}
-
 ListAccountRolesResult::ListAccountRolesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListAccountRolesResult& ListAccountRolesResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleList"))
   {
     Aws::Utils::Array<JsonView> roleListJsonList = jsonValue.GetArray("roleList");
@@ -42,14 +37,15 @@ ListAccountRolesResult& ListAccountRolesResult::operator =(const Aws::AmazonWebS
     {
       m_roleList.push_back(roleListJsonList[roleListIndex].AsObject());
     }
+    m_roleListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -33,7 +33,7 @@ namespace Model
   class ReservationPlanSettings
   {
   public:
-    AWS_MEDIACONVERT_API ReservationPlanSettings();
+    AWS_MEDIACONVERT_API ReservationPlanSettings() = default;
     AWS_MEDIACONVERT_API ReservationPlanSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API ReservationPlanSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * The length of the term of your reserved queue pricing plan commitment.
      */
-    inline const Commitment& GetCommitment() const{ return m_commitment; }
+    inline Commitment GetCommitment() const { return m_commitment; }
     inline bool CommitmentHasBeenSet() const { return m_commitmentHasBeenSet; }
-    inline void SetCommitment(const Commitment& value) { m_commitmentHasBeenSet = true; m_commitment = value; }
-    inline void SetCommitment(Commitment&& value) { m_commitmentHasBeenSet = true; m_commitment = std::move(value); }
-    inline ReservationPlanSettings& WithCommitment(const Commitment& value) { SetCommitment(value); return *this;}
-    inline ReservationPlanSettings& WithCommitment(Commitment&& value) { SetCommitment(std::move(value)); return *this;}
+    inline void SetCommitment(Commitment value) { m_commitmentHasBeenSet = true; m_commitment = value; }
+    inline ReservationPlanSettings& WithCommitment(Commitment value) { SetCommitment(value); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * is auto renewed, you extend your commitment by 12 months from the auto renew
      * date. You can cancel this commitment.
      */
-    inline const RenewalType& GetRenewalType() const{ return m_renewalType; }
+    inline RenewalType GetRenewalType() const { return m_renewalType; }
     inline bool RenewalTypeHasBeenSet() const { return m_renewalTypeHasBeenSet; }
-    inline void SetRenewalType(const RenewalType& value) { m_renewalTypeHasBeenSet = true; m_renewalType = value; }
-    inline void SetRenewalType(RenewalType&& value) { m_renewalTypeHasBeenSet = true; m_renewalType = std::move(value); }
-    inline ReservationPlanSettings& WithRenewalType(const RenewalType& value) { SetRenewalType(value); return *this;}
-    inline ReservationPlanSettings& WithRenewalType(RenewalType&& value) { SetRenewalType(std::move(value)); return *this;}
+    inline void SetRenewalType(RenewalType value) { m_renewalTypeHasBeenSet = true; m_renewalType = value; }
+    inline ReservationPlanSettings& WithRenewalType(RenewalType value) { SetRenewalType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,20 +73,20 @@ namespace Model
      * your commitment or revert to your original commitment after you increase the
      * capacity.
      */
-    inline int GetReservedSlots() const{ return m_reservedSlots; }
+    inline int GetReservedSlots() const { return m_reservedSlots; }
     inline bool ReservedSlotsHasBeenSet() const { return m_reservedSlotsHasBeenSet; }
     inline void SetReservedSlots(int value) { m_reservedSlotsHasBeenSet = true; m_reservedSlots = value; }
     inline ReservationPlanSettings& WithReservedSlots(int value) { SetReservedSlots(value); return *this;}
     ///@}
   private:
 
-    Commitment m_commitment;
+    Commitment m_commitment{Commitment::NOT_SET};
     bool m_commitmentHasBeenSet = false;
 
-    RenewalType m_renewalType;
+    RenewalType m_renewalType{RenewalType::NOT_SET};
     bool m_renewalTypeHasBeenSet = false;
 
-    int m_reservedSlots;
+    int m_reservedSlots{0};
     bool m_reservedSlotsHasBeenSet = false;
   };
 

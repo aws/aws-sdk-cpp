@@ -28,7 +28,7 @@ namespace Model
   class DescribeFeatureTransformationResult
   {
   public:
-    AWS_PERSONALIZE_API DescribeFeatureTransformationResult();
+    AWS_PERSONALIZE_API DescribeFeatureTransformationResult() = default;
     AWS_PERSONALIZE_API DescribeFeatureTransformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API DescribeFeatureTransformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A listing of the FeatureTransformation properties.</p>
      */
-    inline const FeatureTransformation& GetFeatureTransformation() const{ return m_featureTransformation; }
-    inline void SetFeatureTransformation(const FeatureTransformation& value) { m_featureTransformation = value; }
-    inline void SetFeatureTransformation(FeatureTransformation&& value) { m_featureTransformation = std::move(value); }
-    inline DescribeFeatureTransformationResult& WithFeatureTransformation(const FeatureTransformation& value) { SetFeatureTransformation(value); return *this;}
-    inline DescribeFeatureTransformationResult& WithFeatureTransformation(FeatureTransformation&& value) { SetFeatureTransformation(std::move(value)); return *this;}
+    inline const FeatureTransformation& GetFeatureTransformation() const { return m_featureTransformation; }
+    template<typename FeatureTransformationT = FeatureTransformation>
+    void SetFeatureTransformation(FeatureTransformationT&& value) { m_featureTransformationHasBeenSet = true; m_featureTransformation = std::forward<FeatureTransformationT>(value); }
+    template<typename FeatureTransformationT = FeatureTransformation>
+    DescribeFeatureTransformationResult& WithFeatureTransformation(FeatureTransformationT&& value) { SetFeatureTransformation(std::forward<FeatureTransformationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFeatureTransformationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFeatureTransformationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFeatureTransformationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFeatureTransformationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FeatureTransformation m_featureTransformation;
+    bool m_featureTransformationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

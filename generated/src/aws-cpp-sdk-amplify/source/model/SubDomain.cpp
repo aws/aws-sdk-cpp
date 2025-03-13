@@ -18,16 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-SubDomain::SubDomain() : 
-    m_subDomainSettingHasBeenSet(false),
-    m_verified(false),
-    m_verifiedHasBeenSet(false),
-    m_dnsRecordHasBeenSet(false)
-{
-}
-
 SubDomain::SubDomain(JsonView jsonValue)
-  : SubDomain()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SubDomain& SubDomain::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("subDomainSetting"))
   {
     m_subDomainSetting = jsonValue.GetObject("subDomainSetting");
-
     m_subDomainSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("verified"))
   {
     m_verified = jsonValue.GetBool("verified");
-
     m_verifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dnsRecord"))
   {
     m_dnsRecord = jsonValue.GetString("dnsRecord");
-
     m_dnsRecordHasBeenSet = true;
   }
-
   return *this;
 }
 

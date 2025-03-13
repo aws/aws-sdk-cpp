@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateStreamingDistribution2020_05_31Request::CreateStreamingDistribution2020_05_31Request() : 
-    m_streamingDistributionConfigHasBeenSet(false)
-{
-}
 
 Aws::String CreateStreamingDistribution2020_05_31Request::SerializePayload() const
 {

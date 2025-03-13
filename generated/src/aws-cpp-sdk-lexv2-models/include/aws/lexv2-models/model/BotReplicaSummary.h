@@ -35,7 +35,7 @@ namespace Model
   class BotReplicaSummary
   {
   public:
-    AWS_LEXMODELSV2_API BotReplicaSummary();
+    AWS_LEXMODELSV2_API BotReplicaSummary() = default;
     AWS_LEXMODELSV2_API BotReplicaSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API BotReplicaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,63 +45,58 @@ namespace Model
     /**
      * <p>The replica region used in the replication statuses summary.</p>
      */
-    inline const Aws::String& GetReplicaRegion() const{ return m_replicaRegion; }
+    inline const Aws::String& GetReplicaRegion() const { return m_replicaRegion; }
     inline bool ReplicaRegionHasBeenSet() const { return m_replicaRegionHasBeenSet; }
-    inline void SetReplicaRegion(const Aws::String& value) { m_replicaRegionHasBeenSet = true; m_replicaRegion = value; }
-    inline void SetReplicaRegion(Aws::String&& value) { m_replicaRegionHasBeenSet = true; m_replicaRegion = std::move(value); }
-    inline void SetReplicaRegion(const char* value) { m_replicaRegionHasBeenSet = true; m_replicaRegion.assign(value); }
-    inline BotReplicaSummary& WithReplicaRegion(const Aws::String& value) { SetReplicaRegion(value); return *this;}
-    inline BotReplicaSummary& WithReplicaRegion(Aws::String&& value) { SetReplicaRegion(std::move(value)); return *this;}
-    inline BotReplicaSummary& WithReplicaRegion(const char* value) { SetReplicaRegion(value); return *this;}
+    template<typename ReplicaRegionT = Aws::String>
+    void SetReplicaRegion(ReplicaRegionT&& value) { m_replicaRegionHasBeenSet = true; m_replicaRegion = std::forward<ReplicaRegionT>(value); }
+    template<typename ReplicaRegionT = Aws::String>
+    BotReplicaSummary& WithReplicaRegion(ReplicaRegionT&& value) { SetReplicaRegion(std::forward<ReplicaRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation time and date for the replicated bots.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-    inline BotReplicaSummary& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline BotReplicaSummary& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    BotReplicaSummary& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operation status for the replicated bot applicable.</p>
      */
-    inline const BotReplicaStatus& GetBotReplicaStatus() const{ return m_botReplicaStatus; }
+    inline BotReplicaStatus GetBotReplicaStatus() const { return m_botReplicaStatus; }
     inline bool BotReplicaStatusHasBeenSet() const { return m_botReplicaStatusHasBeenSet; }
-    inline void SetBotReplicaStatus(const BotReplicaStatus& value) { m_botReplicaStatusHasBeenSet = true; m_botReplicaStatus = value; }
-    inline void SetBotReplicaStatus(BotReplicaStatus&& value) { m_botReplicaStatusHasBeenSet = true; m_botReplicaStatus = std::move(value); }
-    inline BotReplicaSummary& WithBotReplicaStatus(const BotReplicaStatus& value) { SetBotReplicaStatus(value); return *this;}
-    inline BotReplicaSummary& WithBotReplicaStatus(BotReplicaStatus&& value) { SetBotReplicaStatus(std::move(value)); return *this;}
+    inline void SetBotReplicaStatus(BotReplicaStatus value) { m_botReplicaStatusHasBeenSet = true; m_botReplicaStatus = value; }
+    inline BotReplicaSummary& WithBotReplicaStatus(BotReplicaStatus value) { SetBotReplicaStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reasons for the failure for the replicated bot.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFailureReasons() const{ return m_failureReasons; }
+    inline const Aws::Vector<Aws::String>& GetFailureReasons() const { return m_failureReasons; }
     inline bool FailureReasonsHasBeenSet() const { return m_failureReasonsHasBeenSet; }
-    inline void SetFailureReasons(const Aws::Vector<Aws::String>& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = value; }
-    inline void SetFailureReasons(Aws::Vector<Aws::String>&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = std::move(value); }
-    inline BotReplicaSummary& WithFailureReasons(const Aws::Vector<Aws::String>& value) { SetFailureReasons(value); return *this;}
-    inline BotReplicaSummary& WithFailureReasons(Aws::Vector<Aws::String>&& value) { SetFailureReasons(std::move(value)); return *this;}
-    inline BotReplicaSummary& AddFailureReasons(const Aws::String& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
-    inline BotReplicaSummary& AddFailureReasons(Aws::String&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(std::move(value)); return *this; }
-    inline BotReplicaSummary& AddFailureReasons(const char* value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
+    template<typename FailureReasonsT = Aws::Vector<Aws::String>>
+    void SetFailureReasons(FailureReasonsT&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = std::forward<FailureReasonsT>(value); }
+    template<typename FailureReasonsT = Aws::Vector<Aws::String>>
+    BotReplicaSummary& WithFailureReasons(FailureReasonsT&& value) { SetFailureReasons(std::forward<FailureReasonsT>(value)); return *this;}
+    template<typename FailureReasonsT = Aws::String>
+    BotReplicaSummary& AddFailureReasons(FailureReasonsT&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.emplace_back(std::forward<FailureReasonsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_replicaRegion;
     bool m_replicaRegionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
     bool m_creationDateTimeHasBeenSet = false;
 
-    BotReplicaStatus m_botReplicaStatus;
+    BotReplicaStatus m_botReplicaStatus{BotReplicaStatus::NOT_SET};
     bool m_botReplicaStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_failureReasons;

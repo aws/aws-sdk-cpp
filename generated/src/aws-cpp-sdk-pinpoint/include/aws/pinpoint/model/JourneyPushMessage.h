@@ -32,7 +32,7 @@ namespace Model
   class JourneyPushMessage
   {
   public:
-    AWS_PINPOINT_API JourneyPushMessage();
+    AWS_PINPOINT_API JourneyPushMessage() = default;
     AWS_PINPOINT_API JourneyPushMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API JourneyPushMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * to deliver the notification again.</p> <p>This value doesn't apply to messages
      * that are sent through the Amazon Device Messaging (ADM) service.</p>
      */
-    inline const Aws::String& GetTimeToLive() const{ return m_timeToLive; }
+    inline const Aws::String& GetTimeToLive() const { return m_timeToLive; }
     inline bool TimeToLiveHasBeenSet() const { return m_timeToLiveHasBeenSet; }
-    inline void SetTimeToLive(const Aws::String& value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
-    inline void SetTimeToLive(Aws::String&& value) { m_timeToLiveHasBeenSet = true; m_timeToLive = std::move(value); }
-    inline void SetTimeToLive(const char* value) { m_timeToLiveHasBeenSet = true; m_timeToLive.assign(value); }
-    inline JourneyPushMessage& WithTimeToLive(const Aws::String& value) { SetTimeToLive(value); return *this;}
-    inline JourneyPushMessage& WithTimeToLive(Aws::String&& value) { SetTimeToLive(std::move(value)); return *this;}
-    inline JourneyPushMessage& WithTimeToLive(const char* value) { SetTimeToLive(value); return *this;}
+    template<typename TimeToLiveT = Aws::String>
+    void SetTimeToLive(TimeToLiveT&& value) { m_timeToLiveHasBeenSet = true; m_timeToLive = std::forward<TimeToLiveT>(value); }
+    template<typename TimeToLiveT = Aws::String>
+    JourneyPushMessage& WithTimeToLive(TimeToLiveT&& value) { SetTimeToLive(std::forward<TimeToLiveT>(value)); return *this;}
     ///@}
   private:
 

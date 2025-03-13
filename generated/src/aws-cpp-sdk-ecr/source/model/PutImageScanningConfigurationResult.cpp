@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutImageScanningConfigurationResult::PutImageScanningConfigurationResult()
-{
-}
-
 PutImageScanningConfigurationResult::PutImageScanningConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ PutImageScanningConfigurationResult& PutImageScanningConfigurationResult::operat
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
+    m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
+    m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageScanningConfiguration"))
   {
     m_imageScanningConfiguration = jsonValue.GetObject("imageScanningConfiguration");
-
+    m_imageScanningConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

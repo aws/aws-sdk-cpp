@@ -10,12 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DescribeConfigurationSetRequest::DescribeConfigurationSetRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_configurationSetAttributeNamesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConfigurationSetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

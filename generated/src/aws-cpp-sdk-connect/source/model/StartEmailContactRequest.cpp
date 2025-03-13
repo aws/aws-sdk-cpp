@@ -12,25 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartEmailContactRequest::StartEmailContactRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_fromEmailAddressHasBeenSet(false),
-    m_destinationEmailAddressHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_referencesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_emailMessageHasBeenSet(false),
-    m_additionalRecipientsHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_segmentAttributesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartEmailContactRequest::SerializePayload() const
 {
   JsonValue payload;

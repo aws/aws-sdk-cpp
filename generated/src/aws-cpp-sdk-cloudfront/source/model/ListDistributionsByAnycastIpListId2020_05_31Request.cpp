@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDistributionsByAnycastIpListId2020_05_31Request::ListDistributionsByAnycastIpListId2020_05_31Request() : 
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false),
-    m_anycastIpListIdHasBeenSet(false)
-{
-}
 
 Aws::String ListDistributionsByAnycastIpListId2020_05_31Request::SerializePayload() const
 {

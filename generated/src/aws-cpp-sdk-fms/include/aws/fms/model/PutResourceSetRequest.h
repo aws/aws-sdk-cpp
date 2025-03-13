@@ -23,7 +23,7 @@ namespace Model
   class PutResourceSetRequest : public FMSRequest
   {
   public:
-    AWS_FMS_API PutResourceSetRequest();
+    AWS_FMS_API PutResourceSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,12 @@ namespace Model
     /**
      * <p>Details about the resource set to be created or updated.&gt;</p>
      */
-    inline const ResourceSet& GetResourceSet() const{ return m_resourceSet; }
+    inline const ResourceSet& GetResourceSet() const { return m_resourceSet; }
     inline bool ResourceSetHasBeenSet() const { return m_resourceSetHasBeenSet; }
-    inline void SetResourceSet(const ResourceSet& value) { m_resourceSetHasBeenSet = true; m_resourceSet = value; }
-    inline void SetResourceSet(ResourceSet&& value) { m_resourceSetHasBeenSet = true; m_resourceSet = std::move(value); }
-    inline PutResourceSetRequest& WithResourceSet(const ResourceSet& value) { SetResourceSet(value); return *this;}
-    inline PutResourceSetRequest& WithResourceSet(ResourceSet&& value) { SetResourceSet(std::move(value)); return *this;}
+    template<typename ResourceSetT = ResourceSet>
+    void SetResourceSet(ResourceSetT&& value) { m_resourceSetHasBeenSet = true; m_resourceSet = std::forward<ResourceSetT>(value); }
+    template<typename ResourceSetT = ResourceSet>
+    PutResourceSetRequest& WithResourceSet(ResourceSetT&& value) { SetResourceSet(std::forward<ResourceSetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +56,14 @@ namespace Model
      * the value to the customer name or ID. You can specify one or more tags to add to
      * each Amazon Web Services resource, up to 50 tags for a resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+    inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
-    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
-    inline PutResourceSetRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-    inline PutResourceSetRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-    inline PutResourceSetRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
-    inline PutResourceSetRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+    template<typename TagListT = Aws::Vector<Tag>>
+    void SetTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList = std::forward<TagListT>(value); }
+    template<typename TagListT = Aws::Vector<Tag>>
+    PutResourceSetRequest& WithTagList(TagListT&& value) { SetTagList(std::forward<TagListT>(value)); return *this;}
+    template<typename TagListT = Tag>
+    PutResourceSetRequest& AddTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList.emplace_back(std::forward<TagListT>(value)); return *this; }
     ///@}
   private:
 

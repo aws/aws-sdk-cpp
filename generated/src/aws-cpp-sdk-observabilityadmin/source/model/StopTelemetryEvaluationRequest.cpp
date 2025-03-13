@@ -12,10 +12,6 @@ using namespace Aws::ObservabilityAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopTelemetryEvaluationRequest::StopTelemetryEvaluationRequest()
-{
-}
-
 Aws::String StopTelemetryEvaluationRequest::SerializePayload() const
 {
   return {};

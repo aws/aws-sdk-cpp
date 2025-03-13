@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteContinueStepDetails::RouteContinueStepDetails() : 
-    m_intersectionHasBeenSet(false)
-{
-}
-
 RouteContinueStepDetails::RouteContinueStepDetails(JsonView jsonValue)
-  : RouteContinueStepDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RouteContinueStepDetails& RouteContinueStepDetails::operator =(JsonView jsonValu
     }
     m_intersectionHasBeenSet = true;
   }
-
   return *this;
 }
 

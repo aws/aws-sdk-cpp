@@ -22,7 +22,7 @@ namespace Model
   class RebuildWorkspacesRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API RebuildWorkspacesRequest();
+    AWS_WORKSPACES_API RebuildWorkspacesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
      */
-    inline const Aws::Vector<RebuildRequest>& GetRebuildWorkspaceRequests() const{ return m_rebuildWorkspaceRequests; }
+    inline const Aws::Vector<RebuildRequest>& GetRebuildWorkspaceRequests() const { return m_rebuildWorkspaceRequests; }
     inline bool RebuildWorkspaceRequestsHasBeenSet() const { return m_rebuildWorkspaceRequestsHasBeenSet; }
-    inline void SetRebuildWorkspaceRequests(const Aws::Vector<RebuildRequest>& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests = value; }
-    inline void SetRebuildWorkspaceRequests(Aws::Vector<RebuildRequest>&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests = std::move(value); }
-    inline RebuildWorkspacesRequest& WithRebuildWorkspaceRequests(const Aws::Vector<RebuildRequest>& value) { SetRebuildWorkspaceRequests(value); return *this;}
-    inline RebuildWorkspacesRequest& WithRebuildWorkspaceRequests(Aws::Vector<RebuildRequest>&& value) { SetRebuildWorkspaceRequests(std::move(value)); return *this;}
-    inline RebuildWorkspacesRequest& AddRebuildWorkspaceRequests(const RebuildRequest& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests.push_back(value); return *this; }
-    inline RebuildWorkspacesRequest& AddRebuildWorkspaceRequests(RebuildRequest&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests.push_back(std::move(value)); return *this; }
+    template<typename RebuildWorkspaceRequestsT = Aws::Vector<RebuildRequest>>
+    void SetRebuildWorkspaceRequests(RebuildWorkspaceRequestsT&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests = std::forward<RebuildWorkspaceRequestsT>(value); }
+    template<typename RebuildWorkspaceRequestsT = Aws::Vector<RebuildRequest>>
+    RebuildWorkspacesRequest& WithRebuildWorkspaceRequests(RebuildWorkspaceRequestsT&& value) { SetRebuildWorkspaceRequests(std::forward<RebuildWorkspaceRequestsT>(value)); return *this;}
+    template<typename RebuildWorkspaceRequestsT = RebuildRequest>
+    RebuildWorkspacesRequest& AddRebuildWorkspaceRequests(RebuildWorkspaceRequestsT&& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests.emplace_back(std::forward<RebuildWorkspaceRequestsT>(value)); return *this; }
     ///@}
   private:
 

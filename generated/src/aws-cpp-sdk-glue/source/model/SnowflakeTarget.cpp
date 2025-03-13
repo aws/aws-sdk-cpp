@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SnowflakeTarget::SnowflakeTarget() : 
-    m_nameHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_inputsHasBeenSet(false)
-{
-}
-
 SnowflakeTarget::SnowflakeTarget(JsonView jsonValue)
-  : SnowflakeTarget()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SnowflakeTarget& SnowflakeTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     m_data = jsonValue.GetObject("Data");
-
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -56,7 +44,6 @@ SnowflakeTarget& SnowflakeTarget::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   return *this;
 }
 

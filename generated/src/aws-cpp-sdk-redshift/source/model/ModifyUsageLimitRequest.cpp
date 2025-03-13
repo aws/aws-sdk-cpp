@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyUsageLimitRequest::ModifyUsageLimitRequest() : 
-    m_usageLimitIdHasBeenSet(false),
-    m_amount(0),
-    m_amountHasBeenSet(false),
-    m_breachAction(UsageLimitBreachAction::NOT_SET),
-    m_breachActionHasBeenSet(false)
-{
-}
-
 Aws::String ModifyUsageLimitRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUploadRequest::DeleteUploadRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUploadRequest::SerializePayload() const
 {
   JsonValue payload;

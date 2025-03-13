@@ -18,13 +18,7 @@ namespace ivschat
 namespace Model
 {
 
-FirehoseDestinationConfiguration::FirehoseDestinationConfiguration() : 
-    m_deliveryStreamNameHasBeenSet(false)
-{
-}
-
 FirehoseDestinationConfiguration::FirehoseDestinationConfiguration(JsonView jsonValue)
-  : FirehoseDestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FirehoseDestinationConfiguration& FirehoseDestinationConfiguration::operator =(J
   if(jsonValue.ValueExists("deliveryStreamName"))
   {
     m_deliveryStreamName = jsonValue.GetString("deliveryStreamName");
-
     m_deliveryStreamNameHasBeenSet = true;
   }
-
   return *this;
 }
 

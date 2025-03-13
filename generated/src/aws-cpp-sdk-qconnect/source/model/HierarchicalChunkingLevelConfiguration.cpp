@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-HierarchicalChunkingLevelConfiguration::HierarchicalChunkingLevelConfiguration() : 
-    m_maxTokens(0),
-    m_maxTokensHasBeenSet(false)
-{
-}
-
 HierarchicalChunkingLevelConfiguration::HierarchicalChunkingLevelConfiguration(JsonView jsonValue)
-  : HierarchicalChunkingLevelConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ HierarchicalChunkingLevelConfiguration& HierarchicalChunkingLevelConfiguration::
   if(jsonValue.ValueExists("maxTokens"))
   {
     m_maxTokens = jsonValue.GetInteger("maxTokens");
-
     m_maxTokensHasBeenSet = true;
   }
-
   return *this;
 }
 

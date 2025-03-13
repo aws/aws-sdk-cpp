@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRoute53HostedZoneDetails::AwsRoute53HostedZoneDetails() : 
-    m_hostedZoneHasBeenSet(false),
-    m_vpcsHasBeenSet(false),
-    m_nameServersHasBeenSet(false),
-    m_queryLoggingConfigHasBeenSet(false)
-{
-}
-
 AwsRoute53HostedZoneDetails::AwsRoute53HostedZoneDetails(JsonView jsonValue)
-  : AwsRoute53HostedZoneDetails()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ AwsRoute53HostedZoneDetails& AwsRoute53HostedZoneDetails::operator =(JsonView js
   if(jsonValue.ValueExists("HostedZone"))
   {
     m_hostedZone = jsonValue.GetObject("HostedZone");
-
     m_hostedZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Vpcs"))
   {
     Aws::Utils::Array<JsonView> vpcsJsonList = jsonValue.GetArray("Vpcs");
@@ -50,7 +39,6 @@ AwsRoute53HostedZoneDetails& AwsRoute53HostedZoneDetails::operator =(JsonView js
     }
     m_vpcsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NameServers"))
   {
     Aws::Utils::Array<JsonView> nameServersJsonList = jsonValue.GetArray("NameServers");
@@ -60,14 +48,11 @@ AwsRoute53HostedZoneDetails& AwsRoute53HostedZoneDetails::operator =(JsonView js
     }
     m_nameServersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryLoggingConfig"))
   {
     m_queryLoggingConfig = jsonValue.GetObject("QueryLoggingConfig");
-
     m_queryLoggingConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

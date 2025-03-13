@@ -12,11 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBuildRequest::DeleteBuildRequest() : 
-    m_buildIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBuildRequest::SerializePayload() const
 {
   JsonValue payload;

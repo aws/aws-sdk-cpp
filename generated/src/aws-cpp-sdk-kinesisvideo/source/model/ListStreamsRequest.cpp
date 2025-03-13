@@ -12,14 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListStreamsRequest::ListStreamsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_streamNameConditionHasBeenSet(false)
-{
-}
-
 Aws::String ListStreamsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace Route53RecoveryReadiness
 namespace Model
 {
 
-ReadinessCheckOutput::ReadinessCheckOutput() : 
-    m_readinessCheckArnHasBeenSet(false),
-    m_readinessCheckNameHasBeenSet(false),
-    m_resourceSetHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ReadinessCheckOutput::ReadinessCheckOutput(JsonView jsonValue)
-  : ReadinessCheckOutput()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ReadinessCheckOutput& ReadinessCheckOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("readinessCheckArn"))
   {
     m_readinessCheckArn = jsonValue.GetString("readinessCheckArn");
-
     m_readinessCheckArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readinessCheckName"))
   {
     m_readinessCheckName = jsonValue.GetString("readinessCheckName");
-
     m_readinessCheckNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceSet"))
   {
     m_resourceSet = jsonValue.GetString("resourceSet");
-
     m_resourceSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -64,7 +49,6 @@ ReadinessCheckOutput& ReadinessCheckOutput::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

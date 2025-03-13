@@ -12,11 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteImportRequest::DeleteImportRequest() : 
-    m_importIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteImportRequest::SerializePayload() const
 {
   return {};

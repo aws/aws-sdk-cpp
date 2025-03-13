@@ -12,21 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLabelingJobsForWorkteamRequest::ListLabelingJobsForWorkteamRequest() : 
-    m_workteamArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_jobReferenceCodeContainsHasBeenSet(false),
-    m_sortBy(ListLabelingJobsForWorkteamSortByOptions::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListLabelingJobsForWorkteamRequest::SerializePayload() const
 {
   JsonValue payload;

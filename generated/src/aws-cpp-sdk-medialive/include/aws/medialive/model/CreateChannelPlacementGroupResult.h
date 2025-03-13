@@ -35,7 +35,7 @@ namespace Model
   class CreateChannelPlacementGroupResult
   {
   public:
-    AWS_MEDIALIVE_API CreateChannelPlacementGroupResult();
+    AWS_MEDIALIVE_API CreateChannelPlacementGroupResult() = default;
     AWS_MEDIALIVE_API CreateChannelPlacementGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API CreateChannelPlacementGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,40 +45,35 @@ namespace Model
      * The ARN of this ChannelPlacementGroup. It is automatically assigned when the
      * ChannelPlacementGroup is created.
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateChannelPlacementGroupResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateChannelPlacementGroupResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateChannelPlacementGroupResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateChannelPlacementGroupResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Used in ListChannelPlacementGroupsResult
      */
-    inline const Aws::Vector<Aws::String>& GetChannels() const{ return m_channels; }
-    inline void SetChannels(const Aws::Vector<Aws::String>& value) { m_channels = value; }
-    inline void SetChannels(Aws::Vector<Aws::String>&& value) { m_channels = std::move(value); }
-    inline CreateChannelPlacementGroupResult& WithChannels(const Aws::Vector<Aws::String>& value) { SetChannels(value); return *this;}
-    inline CreateChannelPlacementGroupResult& WithChannels(Aws::Vector<Aws::String>&& value) { SetChannels(std::move(value)); return *this;}
-    inline CreateChannelPlacementGroupResult& AddChannels(const Aws::String& value) { m_channels.push_back(value); return *this; }
-    inline CreateChannelPlacementGroupResult& AddChannels(Aws::String&& value) { m_channels.push_back(std::move(value)); return *this; }
-    inline CreateChannelPlacementGroupResult& AddChannels(const char* value) { m_channels.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetChannels() const { return m_channels; }
+    template<typename ChannelsT = Aws::Vector<Aws::String>>
+    void SetChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels = std::forward<ChannelsT>(value); }
+    template<typename ChannelsT = Aws::Vector<Aws::String>>
+    CreateChannelPlacementGroupResult& WithChannels(ChannelsT&& value) { SetChannels(std::forward<ChannelsT>(value)); return *this;}
+    template<typename ChannelsT = Aws::String>
+    CreateChannelPlacementGroupResult& AddChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels.emplace_back(std::forward<ChannelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The ID of the Cluster that the Node belongs to.
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterId.assign(value); }
-    inline CreateChannelPlacementGroupResult& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline CreateChannelPlacementGroupResult& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline CreateChannelPlacementGroupResult& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    CreateChannelPlacementGroupResult& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,26 +81,22 @@ namespace Model
      * The ID of the ChannelPlacementGroup. Unique in the AWS account. The ID is the
      * resource-id portion of the ARN.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateChannelPlacementGroupResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateChannelPlacementGroupResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateChannelPlacementGroupResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateChannelPlacementGroupResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name that you specified for the ChannelPlacementGroup.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateChannelPlacementGroupResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateChannelPlacementGroupResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateChannelPlacementGroupResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateChannelPlacementGroupResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,54 +104,57 @@ namespace Model
      * An array with one item, which is the single Node that is associated with the
      * ChannelPlacementGroup.
      */
-    inline const Aws::Vector<Aws::String>& GetNodes() const{ return m_nodes; }
-    inline void SetNodes(const Aws::Vector<Aws::String>& value) { m_nodes = value; }
-    inline void SetNodes(Aws::Vector<Aws::String>&& value) { m_nodes = std::move(value); }
-    inline CreateChannelPlacementGroupResult& WithNodes(const Aws::Vector<Aws::String>& value) { SetNodes(value); return *this;}
-    inline CreateChannelPlacementGroupResult& WithNodes(Aws::Vector<Aws::String>&& value) { SetNodes(std::move(value)); return *this;}
-    inline CreateChannelPlacementGroupResult& AddNodes(const Aws::String& value) { m_nodes.push_back(value); return *this; }
-    inline CreateChannelPlacementGroupResult& AddNodes(Aws::String&& value) { m_nodes.push_back(std::move(value)); return *this; }
-    inline CreateChannelPlacementGroupResult& AddNodes(const char* value) { m_nodes.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetNodes() const { return m_nodes; }
+    template<typename NodesT = Aws::Vector<Aws::String>>
+    void SetNodes(NodesT&& value) { m_nodesHasBeenSet = true; m_nodes = std::forward<NodesT>(value); }
+    template<typename NodesT = Aws::Vector<Aws::String>>
+    CreateChannelPlacementGroupResult& WithNodes(NodesT&& value) { SetNodes(std::forward<NodesT>(value)); return *this;}
+    template<typename NodesT = Aws::String>
+    CreateChannelPlacementGroupResult& AddNodes(NodesT&& value) { m_nodesHasBeenSet = true; m_nodes.emplace_back(std::forward<NodesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The current state of the ChannelPlacementGroup.
      */
-    inline const ChannelPlacementGroupState& GetState() const{ return m_state; }
-    inline void SetState(const ChannelPlacementGroupState& value) { m_state = value; }
-    inline void SetState(ChannelPlacementGroupState&& value) { m_state = std::move(value); }
-    inline CreateChannelPlacementGroupResult& WithState(const ChannelPlacementGroupState& value) { SetState(value); return *this;}
-    inline CreateChannelPlacementGroupResult& WithState(ChannelPlacementGroupState&& value) { SetState(std::move(value)); return *this;}
+    inline ChannelPlacementGroupState GetState() const { return m_state; }
+    inline void SetState(ChannelPlacementGroupState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline CreateChannelPlacementGroupResult& WithState(ChannelPlacementGroupState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateChannelPlacementGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateChannelPlacementGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateChannelPlacementGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateChannelPlacementGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_channels;
+    bool m_channelsHasBeenSet = false;
 
     Aws::String m_clusterId;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nodes;
+    bool m_nodesHasBeenSet = false;
 
-    ChannelPlacementGroupState m_state;
+    ChannelPlacementGroupState m_state{ChannelPlacementGroupState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

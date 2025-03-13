@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessGroup::VerifiedAccessGroup() : 
-    m_verifiedAccessGroupIdHasBeenSet(false),
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_verifiedAccessGroupArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_deletionTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sseSpecificationHasBeenSet(false)
-{
-}
-
 VerifiedAccessGroup::VerifiedAccessGroup(const XmlNode& xmlNode)
-  : VerifiedAccessGroup()
 {
   *this = xmlNode;
 }
@@ -51,66 +36,76 @@ VerifiedAccessGroup& VerifiedAccessGroup::operator =(const XmlNode& xmlNode)
     {
       m_verifiedAccessGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessGroupIdNode.GetText());
       m_verifiedAccessGroupIdHasBeenSet = true;
+       m_verifiedAccessGroupIdHasBeenSet = true;
     }
     XmlNode verifiedAccessInstanceIdNode = resultNode.FirstChild("verifiedAccessInstanceId");
     if(!verifiedAccessInstanceIdNode.IsNull())
     {
       m_verifiedAccessInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessInstanceIdNode.GetText());
       m_verifiedAccessInstanceIdHasBeenSet = true;
+       m_verifiedAccessInstanceIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("owner");
     if(!ownerNode.IsNull())
     {
       m_owner = Aws::Utils::Xml::DecodeEscapedXmlText(ownerNode.GetText());
       m_ownerHasBeenSet = true;
+       m_ownerHasBeenSet = true;
     }
     XmlNode verifiedAccessGroupArnNode = resultNode.FirstChild("verifiedAccessGroupArn");
     if(!verifiedAccessGroupArnNode.IsNull())
     {
       m_verifiedAccessGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessGroupArnNode.GetText());
       m_verifiedAccessGroupArnHasBeenSet = true;
+       m_verifiedAccessGroupArnHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText());
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("lastUpdatedTime");
     if(!lastUpdatedTimeNode.IsNull())
     {
       m_lastUpdatedTime = Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedTimeNode.GetText());
       m_lastUpdatedTimeHasBeenSet = true;
+       m_lastUpdatedTimeHasBeenSet = true;
     }
     XmlNode deletionTimeNode = resultNode.FirstChild("deletionTime");
     if(!deletionTimeNode.IsNull())
     {
       m_deletionTime = Aws::Utils::Xml::DecodeEscapedXmlText(deletionTimeNode.GetText());
       m_deletionTimeHasBeenSet = true;
+       m_deletionTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode sseSpecificationNode = resultNode.FirstChild("sseSpecification");
     if(!sseSpecificationNode.IsNull())
     {
       m_sseSpecification = sseSpecificationNode;
       m_sseSpecificationHasBeenSet = true;
+       m_sseSpecificationHasBeenSet = true;
     }
   }
 

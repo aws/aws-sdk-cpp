@@ -29,7 +29,7 @@ namespace Model
   class GetInstanceSnapshotsResult
   {
   public:
-    AWS_LIGHTSAIL_API GetInstanceSnapshotsResult();
+    AWS_LIGHTSAIL_API GetInstanceSnapshotsResult() = default;
     AWS_LIGHTSAIL_API GetInstanceSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetInstanceSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get instance snapshots request.</p>
      */
-    inline const Aws::Vector<InstanceSnapshot>& GetInstanceSnapshots() const{ return m_instanceSnapshots; }
-    inline void SetInstanceSnapshots(const Aws::Vector<InstanceSnapshot>& value) { m_instanceSnapshots = value; }
-    inline void SetInstanceSnapshots(Aws::Vector<InstanceSnapshot>&& value) { m_instanceSnapshots = std::move(value); }
-    inline GetInstanceSnapshotsResult& WithInstanceSnapshots(const Aws::Vector<InstanceSnapshot>& value) { SetInstanceSnapshots(value); return *this;}
-    inline GetInstanceSnapshotsResult& WithInstanceSnapshots(Aws::Vector<InstanceSnapshot>&& value) { SetInstanceSnapshots(std::move(value)); return *this;}
-    inline GetInstanceSnapshotsResult& AddInstanceSnapshots(const InstanceSnapshot& value) { m_instanceSnapshots.push_back(value); return *this; }
-    inline GetInstanceSnapshotsResult& AddInstanceSnapshots(InstanceSnapshot&& value) { m_instanceSnapshots.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InstanceSnapshot>& GetInstanceSnapshots() const { return m_instanceSnapshots; }
+    template<typename InstanceSnapshotsT = Aws::Vector<InstanceSnapshot>>
+    void SetInstanceSnapshots(InstanceSnapshotsT&& value) { m_instanceSnapshotsHasBeenSet = true; m_instanceSnapshots = std::forward<InstanceSnapshotsT>(value); }
+    template<typename InstanceSnapshotsT = Aws::Vector<InstanceSnapshot>>
+    GetInstanceSnapshotsResult& WithInstanceSnapshots(InstanceSnapshotsT&& value) { SetInstanceSnapshots(std::forward<InstanceSnapshotsT>(value)); return *this;}
+    template<typename InstanceSnapshotsT = InstanceSnapshot>
+    GetInstanceSnapshotsResult& AddInstanceSnapshots(InstanceSnapshotsT&& value) { m_instanceSnapshotsHasBeenSet = true; m_instanceSnapshots.emplace_back(std::forward<InstanceSnapshotsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * <code>GetInstanceSnapshots</code> request and specify the next page token using
      * the <code>pageToken</code> parameter.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetInstanceSnapshotsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetInstanceSnapshotsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetInstanceSnapshotsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetInstanceSnapshotsResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInstanceSnapshotsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInstanceSnapshotsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInstanceSnapshotsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInstanceSnapshotsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InstanceSnapshot> m_instanceSnapshots;
+    bool m_instanceSnapshotsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

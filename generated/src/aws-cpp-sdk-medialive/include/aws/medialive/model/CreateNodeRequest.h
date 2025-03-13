@@ -29,7 +29,7 @@ namespace Model
   class CreateNodeRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API CreateNodeRequest();
+    AWS_MEDIALIVE_API CreateNodeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,42 +44,38 @@ namespace Model
     /**
      * The ID of the cluster.
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline CreateNodeRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline CreateNodeRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline CreateNodeRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    CreateNodeRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The user-specified name of the Node to be created.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateNodeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateNodeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateNodeRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateNodeRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Documentation update needed
      */
-    inline const Aws::Vector<NodeInterfaceMappingCreateRequest>& GetNodeInterfaceMappings() const{ return m_nodeInterfaceMappings; }
+    inline const Aws::Vector<NodeInterfaceMappingCreateRequest>& GetNodeInterfaceMappings() const { return m_nodeInterfaceMappings; }
     inline bool NodeInterfaceMappingsHasBeenSet() const { return m_nodeInterfaceMappingsHasBeenSet; }
-    inline void SetNodeInterfaceMappings(const Aws::Vector<NodeInterfaceMappingCreateRequest>& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings = value; }
-    inline void SetNodeInterfaceMappings(Aws::Vector<NodeInterfaceMappingCreateRequest>&& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings = std::move(value); }
-    inline CreateNodeRequest& WithNodeInterfaceMappings(const Aws::Vector<NodeInterfaceMappingCreateRequest>& value) { SetNodeInterfaceMappings(value); return *this;}
-    inline CreateNodeRequest& WithNodeInterfaceMappings(Aws::Vector<NodeInterfaceMappingCreateRequest>&& value) { SetNodeInterfaceMappings(std::move(value)); return *this;}
-    inline CreateNodeRequest& AddNodeInterfaceMappings(const NodeInterfaceMappingCreateRequest& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings.push_back(value); return *this; }
-    inline CreateNodeRequest& AddNodeInterfaceMappings(NodeInterfaceMappingCreateRequest&& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings.push_back(std::move(value)); return *this; }
+    template<typename NodeInterfaceMappingsT = Aws::Vector<NodeInterfaceMappingCreateRequest>>
+    void SetNodeInterfaceMappings(NodeInterfaceMappingsT&& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings = std::forward<NodeInterfaceMappingsT>(value); }
+    template<typename NodeInterfaceMappingsT = Aws::Vector<NodeInterfaceMappingCreateRequest>>
+    CreateNodeRequest& WithNodeInterfaceMappings(NodeInterfaceMappingsT&& value) { SetNodeInterfaceMappings(std::forward<NodeInterfaceMappingsT>(value)); return *this;}
+    template<typename NodeInterfaceMappingsT = NodeInterfaceMappingCreateRequest>
+    CreateNodeRequest& AddNodeInterfaceMappings(NodeInterfaceMappingsT&& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings.emplace_back(std::forward<NodeInterfaceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,14 +83,12 @@ namespace Model
      * An ID that you assign to a create request. This ID ensures idempotency when
      * creating resources.
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline CreateNodeRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateNodeRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateNodeRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateNodeRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,31 +97,26 @@ namespace Model
      * for encoding. BACKUP means the Node is a redundant Node and might get used if an
      * ACTIVE Node fails.
      */
-    inline const NodeRole& GetRole() const{ return m_role; }
+    inline NodeRole GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const NodeRole& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(NodeRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline CreateNodeRequest& WithRole(const NodeRole& value) { SetRole(value); return *this;}
-    inline CreateNodeRequest& WithRole(NodeRole&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(NodeRole value) { m_roleHasBeenSet = true; m_role = value; }
+    inline CreateNodeRequest& WithRole(NodeRole value) { SetRole(value); return *this;}
     ///@}
 
     ///@{
     /**
      * A collection of key-value pairs.
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateNodeRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateNodeRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateNodeRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateNodeRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateNodeRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateNodeRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateNodeRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateNodeRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateNodeRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateNodeRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateNodeRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -143,7 +132,7 @@ namespace Model
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
 
-    NodeRole m_role;
+    NodeRole m_role{NodeRole::NOT_SET};
     bool m_roleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ImageInteractionOptions::ImageInteractionOptions() : 
-    m_imageMenuOptionHasBeenSet(false)
-{
-}
-
 ImageInteractionOptions::ImageInteractionOptions(JsonView jsonValue)
-  : ImageInteractionOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ImageInteractionOptions& ImageInteractionOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImageMenuOption"))
   {
     m_imageMenuOption = jsonValue.GetObject("ImageMenuOption");
-
     m_imageMenuOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace KendraRanking
 namespace Model
 {
 
-CapacityUnitsConfiguration::CapacityUnitsConfiguration() : 
-    m_rescoreCapacityUnits(0),
-    m_rescoreCapacityUnitsHasBeenSet(false)
-{
-}
-
 CapacityUnitsConfiguration::CapacityUnitsConfiguration(JsonView jsonValue)
-  : CapacityUnitsConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CapacityUnitsConfiguration& CapacityUnitsConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("RescoreCapacityUnits"))
   {
     m_rescoreCapacityUnits = jsonValue.GetInteger("RescoreCapacityUnits");
-
     m_rescoreCapacityUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

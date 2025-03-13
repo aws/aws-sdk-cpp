@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceCount::InstanceCount() : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_state(ListingState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 InstanceCount::InstanceCount(const XmlNode& xmlNode)
-  : InstanceCount()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ InstanceCount& InstanceCount::operator =(const XmlNode& xmlNode)
     {
       m_instanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCountNode.GetText()).c_str()).c_str());
       m_instanceCountHasBeenSet = true;
+       m_instanceCountHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = ListingStateMapper::GetListingStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = ListingStateMapper::GetListingStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
   }
 

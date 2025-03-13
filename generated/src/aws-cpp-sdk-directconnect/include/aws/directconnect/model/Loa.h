@@ -34,7 +34,7 @@ namespace Model
   class Loa
   {
   public:
-    AWS_DIRECTCONNECT_API Loa();
+    AWS_DIRECTCONNECT_API Loa() = default;
     AWS_DIRECTCONNECT_API Loa(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API Loa& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The binary contents of the LOA-CFA document.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetLoaContent() const{ return m_loaContent; }
+    inline const Aws::Utils::ByteBuffer& GetLoaContent() const { return m_loaContent; }
     inline bool LoaContentHasBeenSet() const { return m_loaContentHasBeenSet; }
-    inline void SetLoaContent(const Aws::Utils::ByteBuffer& value) { m_loaContentHasBeenSet = true; m_loaContent = value; }
-    inline void SetLoaContent(Aws::Utils::ByteBuffer&& value) { m_loaContentHasBeenSet = true; m_loaContent = std::move(value); }
-    inline Loa& WithLoaContent(const Aws::Utils::ByteBuffer& value) { SetLoaContent(value); return *this;}
-    inline Loa& WithLoaContent(Aws::Utils::ByteBuffer&& value) { SetLoaContent(std::move(value)); return *this;}
+    template<typename LoaContentT = Aws::Utils::ByteBuffer>
+    void SetLoaContent(LoaContentT&& value) { m_loaContentHasBeenSet = true; m_loaContent = std::forward<LoaContentT>(value); }
+    template<typename LoaContentT = Aws::Utils::ByteBuffer>
+    Loa& WithLoaContent(LoaContentT&& value) { SetLoaContent(std::forward<LoaContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,31 +57,27 @@ namespace Model
      * <p>The standard media type for the LOA-CFA document. The only supported value is
      * application/pdf.</p>
      */
-    inline const LoaContentType& GetLoaContentType() const{ return m_loaContentType; }
+    inline LoaContentType GetLoaContentType() const { return m_loaContentType; }
     inline bool LoaContentTypeHasBeenSet() const { return m_loaContentTypeHasBeenSet; }
-    inline void SetLoaContentType(const LoaContentType& value) { m_loaContentTypeHasBeenSet = true; m_loaContentType = value; }
-    inline void SetLoaContentType(LoaContentType&& value) { m_loaContentTypeHasBeenSet = true; m_loaContentType = std::move(value); }
-    inline Loa& WithLoaContentType(const LoaContentType& value) { SetLoaContentType(value); return *this;}
-    inline Loa& WithLoaContentType(LoaContentType&& value) { SetLoaContentType(std::move(value)); return *this;}
+    inline void SetLoaContentType(LoaContentType value) { m_loaContentTypeHasBeenSet = true; m_loaContentType = value; }
+    inline Loa& WithLoaContentType(LoaContentType value) { SetLoaContentType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline Loa& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline Loa& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline Loa& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    Loa& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_loaContent;
+    Aws::Utils::ByteBuffer m_loaContent{};
     bool m_loaContentHasBeenSet = false;
 
-    LoaContentType m_loaContentType;
+    LoaContentType m_loaContentType{LoaContentType::NOT_SET};
     bool m_loaContentTypeHasBeenSet = false;
 
     Aws::String m_requestId;

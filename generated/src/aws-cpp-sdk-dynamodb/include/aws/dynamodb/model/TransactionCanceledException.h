@@ -106,7 +106,7 @@ namespace Model
   class TransactionCanceledException
   {
   public:
-    AWS_DYNAMODB_API TransactionCanceledException();
+    AWS_DYNAMODB_API TransactionCanceledException() = default;
     AWS_DYNAMODB_API TransactionCanceledException(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API TransactionCanceledException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -114,28 +114,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline TransactionCanceledException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline TransactionCanceledException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline TransactionCanceledException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    TransactionCanceledException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of cancellation reasons.</p>
      */
-    inline const Aws::Vector<CancellationReason>& GetCancellationReasons() const{ return m_cancellationReasons; }
+    inline const Aws::Vector<CancellationReason>& GetCancellationReasons() const { return m_cancellationReasons; }
     inline bool CancellationReasonsHasBeenSet() const { return m_cancellationReasonsHasBeenSet; }
-    inline void SetCancellationReasons(const Aws::Vector<CancellationReason>& value) { m_cancellationReasonsHasBeenSet = true; m_cancellationReasons = value; }
-    inline void SetCancellationReasons(Aws::Vector<CancellationReason>&& value) { m_cancellationReasonsHasBeenSet = true; m_cancellationReasons = std::move(value); }
-    inline TransactionCanceledException& WithCancellationReasons(const Aws::Vector<CancellationReason>& value) { SetCancellationReasons(value); return *this;}
-    inline TransactionCanceledException& WithCancellationReasons(Aws::Vector<CancellationReason>&& value) { SetCancellationReasons(std::move(value)); return *this;}
-    inline TransactionCanceledException& AddCancellationReasons(const CancellationReason& value) { m_cancellationReasonsHasBeenSet = true; m_cancellationReasons.push_back(value); return *this; }
-    inline TransactionCanceledException& AddCancellationReasons(CancellationReason&& value) { m_cancellationReasonsHasBeenSet = true; m_cancellationReasons.push_back(std::move(value)); return *this; }
+    template<typename CancellationReasonsT = Aws::Vector<CancellationReason>>
+    void SetCancellationReasons(CancellationReasonsT&& value) { m_cancellationReasonsHasBeenSet = true; m_cancellationReasons = std::forward<CancellationReasonsT>(value); }
+    template<typename CancellationReasonsT = Aws::Vector<CancellationReason>>
+    TransactionCanceledException& WithCancellationReasons(CancellationReasonsT&& value) { SetCancellationReasons(std::forward<CancellationReasonsT>(value)); return *this;}
+    template<typename CancellationReasonsT = CancellationReason>
+    TransactionCanceledException& AddCancellationReasons(CancellationReasonsT&& value) { m_cancellationReasonsHasBeenSet = true; m_cancellationReasons.emplace_back(std::forward<CancellationReasonsT>(value)); return *this; }
     ///@}
   private:
 

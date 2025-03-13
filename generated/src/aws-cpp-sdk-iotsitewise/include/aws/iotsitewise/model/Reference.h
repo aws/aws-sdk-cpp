@@ -31,7 +31,7 @@ namespace Model
   class Reference
   {
   public:
-    AWS_IOTSITEWISE_API Reference();
+    AWS_IOTSITEWISE_API Reference() = default;
     AWS_IOTSITEWISE_API Reference(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Reference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Contains the dataset reference information.</p>
      */
-    inline const DataSetReference& GetDataset() const{ return m_dataset; }
+    inline const DataSetReference& GetDataset() const { return m_dataset; }
     inline bool DatasetHasBeenSet() const { return m_datasetHasBeenSet; }
-    inline void SetDataset(const DataSetReference& value) { m_datasetHasBeenSet = true; m_dataset = value; }
-    inline void SetDataset(DataSetReference&& value) { m_datasetHasBeenSet = true; m_dataset = std::move(value); }
-    inline Reference& WithDataset(const DataSetReference& value) { SetDataset(value); return *this;}
-    inline Reference& WithDataset(DataSetReference&& value) { SetDataset(std::move(value)); return *this;}
+    template<typename DatasetT = DataSetReference>
+    void SetDataset(DatasetT&& value) { m_datasetHasBeenSet = true; m_dataset = std::forward<DatasetT>(value); }
+    template<typename DatasetT = DataSetReference>
+    Reference& WithDataset(DatasetT&& value) { SetDataset(std::forward<DatasetT>(value)); return *this;}
     ///@}
   private:
 

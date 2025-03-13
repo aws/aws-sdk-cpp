@@ -32,7 +32,7 @@ namespace Model
   class TemporalFilterSettings
   {
   public:
-    AWS_MEDIALIVE_API TemporalFilterSettings();
+    AWS_MEDIALIVE_API TemporalFilterSettings() = default;
     AWS_MEDIALIVE_API TemporalFilterSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API TemporalFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
 - If the source content is already clean, the filter tends to
      * decrease the bitrate, especially when the rate control mode is QVBR.
      */
-    inline const TemporalFilterPostFilterSharpening& GetPostFilterSharpening() const{ return m_postFilterSharpening; }
+    inline TemporalFilterPostFilterSharpening GetPostFilterSharpening() const { return m_postFilterSharpening; }
     inline bool PostFilterSharpeningHasBeenSet() const { return m_postFilterSharpeningHasBeenSet; }
-    inline void SetPostFilterSharpening(const TemporalFilterPostFilterSharpening& value) { m_postFilterSharpeningHasBeenSet = true; m_postFilterSharpening = value; }
-    inline void SetPostFilterSharpening(TemporalFilterPostFilterSharpening&& value) { m_postFilterSharpeningHasBeenSet = true; m_postFilterSharpening = std::move(value); }
-    inline TemporalFilterSettings& WithPostFilterSharpening(const TemporalFilterPostFilterSharpening& value) { SetPostFilterSharpening(value); return *this;}
-    inline TemporalFilterSettings& WithPostFilterSharpening(TemporalFilterPostFilterSharpening&& value) { SetPostFilterSharpening(std::move(value)); return *this;}
+    inline void SetPostFilterSharpening(TemporalFilterPostFilterSharpening value) { m_postFilterSharpeningHasBeenSet = true; m_postFilterSharpening = value; }
+    inline TemporalFilterSettings& WithPostFilterSharpening(TemporalFilterPostFilterSharpening value) { SetPostFilterSharpening(value); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * Choose a filter strength. We recommend a strength of 1 or 2. A higher strength
      * might take out good information, resulting in an image that is overly soft.
      */
-    inline const TemporalFilterStrength& GetStrength() const{ return m_strength; }
+    inline TemporalFilterStrength GetStrength() const { return m_strength; }
     inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
-    inline void SetStrength(const TemporalFilterStrength& value) { m_strengthHasBeenSet = true; m_strength = value; }
-    inline void SetStrength(TemporalFilterStrength&& value) { m_strengthHasBeenSet = true; m_strength = std::move(value); }
-    inline TemporalFilterSettings& WithStrength(const TemporalFilterStrength& value) { SetStrength(value); return *this;}
-    inline TemporalFilterSettings& WithStrength(TemporalFilterStrength&& value) { SetStrength(std::move(value)); return *this;}
+    inline void SetStrength(TemporalFilterStrength value) { m_strengthHasBeenSet = true; m_strength = value; }
+    inline TemporalFilterSettings& WithStrength(TemporalFilterStrength value) { SetStrength(value); return *this;}
     ///@}
   private:
 
-    TemporalFilterPostFilterSharpening m_postFilterSharpening;
+    TemporalFilterPostFilterSharpening m_postFilterSharpening{TemporalFilterPostFilterSharpening::NOT_SET};
     bool m_postFilterSharpeningHasBeenSet = false;
 
-    TemporalFilterStrength m_strength;
+    TemporalFilterStrength m_strength{TemporalFilterStrength::NOT_SET};
     bool m_strengthHasBeenSet = false;
   };
 

@@ -12,30 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUserRequest::UpdateUserRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_role(UserRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_hiddenFromGlobalAddressList(false),
-    m_hiddenFromGlobalAddressListHasBeenSet(false),
-    m_initialsHasBeenSet(false),
-    m_telephoneHasBeenSet(false),
-    m_streetHasBeenSet(false),
-    m_jobTitleHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_companyHasBeenSet(false),
-    m_zipCodeHasBeenSet(false),
-    m_departmentHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_officeHasBeenSet(false),
-    m_identityProviderUserIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserRequest::SerializePayload() const
 {
   JsonValue payload;

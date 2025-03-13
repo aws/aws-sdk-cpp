@@ -34,7 +34,7 @@ namespace Model
   class CopyStepDetails
   {
   public:
-    AWS_TRANSFER_API CopyStepDetails();
+    AWS_TRANSFER_API CopyStepDetails() = default;
     AWS_TRANSFER_API CopyStepDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API CopyStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the step, used as an identifier.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CopyStepDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CopyStepDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CopyStepDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CopyStepDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,12 @@ namespace Model
      * resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on
      * the date the file is uploaded in UTC.</p>  </li> </ul>
      */
-    inline const InputFileLocation& GetDestinationFileLocation() const{ return m_destinationFileLocation; }
+    inline const InputFileLocation& GetDestinationFileLocation() const { return m_destinationFileLocation; }
     inline bool DestinationFileLocationHasBeenSet() const { return m_destinationFileLocationHasBeenSet; }
-    inline void SetDestinationFileLocation(const InputFileLocation& value) { m_destinationFileLocationHasBeenSet = true; m_destinationFileLocation = value; }
-    inline void SetDestinationFileLocation(InputFileLocation&& value) { m_destinationFileLocationHasBeenSet = true; m_destinationFileLocation = std::move(value); }
-    inline CopyStepDetails& WithDestinationFileLocation(const InputFileLocation& value) { SetDestinationFileLocation(value); return *this;}
-    inline CopyStepDetails& WithDestinationFileLocation(InputFileLocation&& value) { SetDestinationFileLocation(std::move(value)); return *this;}
+    template<typename DestinationFileLocationT = InputFileLocation>
+    void SetDestinationFileLocation(DestinationFileLocationT&& value) { m_destinationFileLocationHasBeenSet = true; m_destinationFileLocation = std::forward<DestinationFileLocationT>(value); }
+    template<typename DestinationFileLocationT = InputFileLocation>
+    CopyStepDetails& WithDestinationFileLocation(DestinationFileLocationT&& value) { SetDestinationFileLocation(std::forward<DestinationFileLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +84,10 @@ namespace Model
      * <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the
      * workflow processing stops.</p> </li> </ul>
      */
-    inline const OverwriteExisting& GetOverwriteExisting() const{ return m_overwriteExisting; }
+    inline OverwriteExisting GetOverwriteExisting() const { return m_overwriteExisting; }
     inline bool OverwriteExistingHasBeenSet() const { return m_overwriteExistingHasBeenSet; }
-    inline void SetOverwriteExisting(const OverwriteExisting& value) { m_overwriteExistingHasBeenSet = true; m_overwriteExisting = value; }
-    inline void SetOverwriteExisting(OverwriteExisting&& value) { m_overwriteExistingHasBeenSet = true; m_overwriteExisting = std::move(value); }
-    inline CopyStepDetails& WithOverwriteExisting(const OverwriteExisting& value) { SetOverwriteExisting(value); return *this;}
-    inline CopyStepDetails& WithOverwriteExisting(OverwriteExisting&& value) { SetOverwriteExisting(std::move(value)); return *this;}
+    inline void SetOverwriteExisting(OverwriteExisting value) { m_overwriteExistingHasBeenSet = true; m_overwriteExisting = value; }
+    inline CopyStepDetails& WithOverwriteExisting(OverwriteExisting value) { SetOverwriteExisting(value); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +100,12 @@ namespace Model
      * </li> <li> <p>To use the originally uploaded file location as input for this
      * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetSourceFileLocation() const{ return m_sourceFileLocation; }
+    inline const Aws::String& GetSourceFileLocation() const { return m_sourceFileLocation; }
     inline bool SourceFileLocationHasBeenSet() const { return m_sourceFileLocationHasBeenSet; }
-    inline void SetSourceFileLocation(const Aws::String& value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation = value; }
-    inline void SetSourceFileLocation(Aws::String&& value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation = std::move(value); }
-    inline void SetSourceFileLocation(const char* value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation.assign(value); }
-    inline CopyStepDetails& WithSourceFileLocation(const Aws::String& value) { SetSourceFileLocation(value); return *this;}
-    inline CopyStepDetails& WithSourceFileLocation(Aws::String&& value) { SetSourceFileLocation(std::move(value)); return *this;}
-    inline CopyStepDetails& WithSourceFileLocation(const char* value) { SetSourceFileLocation(value); return *this;}
+    template<typename SourceFileLocationT = Aws::String>
+    void SetSourceFileLocation(SourceFileLocationT&& value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation = std::forward<SourceFileLocationT>(value); }
+    template<typename SourceFileLocationT = Aws::String>
+    CopyStepDetails& WithSourceFileLocation(SourceFileLocationT&& value) { SetSourceFileLocation(std::forward<SourceFileLocationT>(value)); return *this;}
     ///@}
   private:
 
@@ -121,7 +115,7 @@ namespace Model
     InputFileLocation m_destinationFileLocation;
     bool m_destinationFileLocationHasBeenSet = false;
 
-    OverwriteExisting m_overwriteExisting;
+    OverwriteExisting m_overwriteExisting{OverwriteExisting::NOT_SET};
     bool m_overwriteExistingHasBeenSet = false;
 
     Aws::String m_sourceFileLocation;

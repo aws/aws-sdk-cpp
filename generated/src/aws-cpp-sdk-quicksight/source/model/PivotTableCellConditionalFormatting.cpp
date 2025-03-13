@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PivotTableCellConditionalFormatting::PivotTableCellConditionalFormatting() : 
-    m_fieldIdHasBeenSet(false),
-    m_textFormatHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_scopesHasBeenSet(false)
-{
-}
-
 PivotTableCellConditionalFormatting::PivotTableCellConditionalFormatting(JsonView jsonValue)
-  : PivotTableCellConditionalFormatting()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PivotTableCellConditionalFormatting& PivotTableCellConditionalFormatting::operat
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextFormat"))
   {
     m_textFormat = jsonValue.GetObject("TextFormat");
-
     m_textFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scope"))
   {
     m_scope = jsonValue.GetObject("Scope");
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scopes"))
   {
     Aws::Utils::Array<JsonView> scopesJsonList = jsonValue.GetArray("Scopes");
@@ -64,7 +49,6 @@ PivotTableCellConditionalFormatting& PivotTableCellConditionalFormatting::operat
     }
     m_scopesHasBeenSet = true;
   }
-
   return *this;
 }
 

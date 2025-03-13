@@ -34,7 +34,7 @@ namespace Model
   class Adapter
   {
   public:
-    AWS_TEXTRACT_API Adapter();
+    AWS_TEXTRACT_API Adapter() = default;
     AWS_TEXTRACT_API Adapter(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Adapter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>A unique identifier for the adapter resource.</p>
      */
-    inline const Aws::String& GetAdapterId() const{ return m_adapterId; }
+    inline const Aws::String& GetAdapterId() const { return m_adapterId; }
     inline bool AdapterIdHasBeenSet() const { return m_adapterIdHasBeenSet; }
-    inline void SetAdapterId(const Aws::String& value) { m_adapterIdHasBeenSet = true; m_adapterId = value; }
-    inline void SetAdapterId(Aws::String&& value) { m_adapterIdHasBeenSet = true; m_adapterId = std::move(value); }
-    inline void SetAdapterId(const char* value) { m_adapterIdHasBeenSet = true; m_adapterId.assign(value); }
-    inline Adapter& WithAdapterId(const Aws::String& value) { SetAdapterId(value); return *this;}
-    inline Adapter& WithAdapterId(Aws::String&& value) { SetAdapterId(std::move(value)); return *this;}
-    inline Adapter& WithAdapterId(const char* value) { SetAdapterId(value); return *this;}
+    template<typename AdapterIdT = Aws::String>
+    void SetAdapterId(AdapterIdT&& value) { m_adapterIdHasBeenSet = true; m_adapterId = std::forward<AdapterIdT>(value); }
+    template<typename AdapterIdT = Aws::String>
+    Adapter& WithAdapterId(AdapterIdT&& value) { SetAdapterId(std::forward<AdapterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,29 +65,26 @@ namespace Model
      * document.</p> </li> <li> <p>Specified pages must be greater than 0 and less than
      * or equal to the number of pages in the document.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetPages() const{ return m_pages; }
+    inline const Aws::Vector<Aws::String>& GetPages() const { return m_pages; }
     inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
-    inline void SetPages(const Aws::Vector<Aws::String>& value) { m_pagesHasBeenSet = true; m_pages = value; }
-    inline void SetPages(Aws::Vector<Aws::String>&& value) { m_pagesHasBeenSet = true; m_pages = std::move(value); }
-    inline Adapter& WithPages(const Aws::Vector<Aws::String>& value) { SetPages(value); return *this;}
-    inline Adapter& WithPages(Aws::Vector<Aws::String>&& value) { SetPages(std::move(value)); return *this;}
-    inline Adapter& AddPages(const Aws::String& value) { m_pagesHasBeenSet = true; m_pages.push_back(value); return *this; }
-    inline Adapter& AddPages(Aws::String&& value) { m_pagesHasBeenSet = true; m_pages.push_back(std::move(value)); return *this; }
-    inline Adapter& AddPages(const char* value) { m_pagesHasBeenSet = true; m_pages.push_back(value); return *this; }
+    template<typename PagesT = Aws::Vector<Aws::String>>
+    void SetPages(PagesT&& value) { m_pagesHasBeenSet = true; m_pages = std::forward<PagesT>(value); }
+    template<typename PagesT = Aws::Vector<Aws::String>>
+    Adapter& WithPages(PagesT&& value) { SetPages(std::forward<PagesT>(value)); return *this;}
+    template<typename PagesT = Aws::String>
+    Adapter& AddPages(PagesT&& value) { m_pagesHasBeenSet = true; m_pages.emplace_back(std::forward<PagesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A string that identifies the version of the adapter.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline Adapter& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline Adapter& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline Adapter& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    Adapter& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-MetadataEntry::MetadataEntry() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 MetadataEntry::MetadataEntry(const XmlNode& xmlNode)
-  : MetadataEntry()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ MetadataEntry& MetadataEntry::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

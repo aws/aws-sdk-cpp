@@ -21,7 +21,7 @@ namespace Model
   class GetNotebookMetadataRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API GetNotebookMetadataRequest();
+    AWS_ATHENA_API GetNotebookMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the notebook whose metadata is to be retrieved.</p>
      */
-    inline const Aws::String& GetNotebookId() const{ return m_notebookId; }
+    inline const Aws::String& GetNotebookId() const { return m_notebookId; }
     inline bool NotebookIdHasBeenSet() const { return m_notebookIdHasBeenSet; }
-    inline void SetNotebookId(const Aws::String& value) { m_notebookIdHasBeenSet = true; m_notebookId = value; }
-    inline void SetNotebookId(Aws::String&& value) { m_notebookIdHasBeenSet = true; m_notebookId = std::move(value); }
-    inline void SetNotebookId(const char* value) { m_notebookIdHasBeenSet = true; m_notebookId.assign(value); }
-    inline GetNotebookMetadataRequest& WithNotebookId(const Aws::String& value) { SetNotebookId(value); return *this;}
-    inline GetNotebookMetadataRequest& WithNotebookId(Aws::String&& value) { SetNotebookId(std::move(value)); return *this;}
-    inline GetNotebookMetadataRequest& WithNotebookId(const char* value) { SetNotebookId(value); return *this;}
+    template<typename NotebookIdT = Aws::String>
+    void SetNotebookId(NotebookIdT&& value) { m_notebookIdHasBeenSet = true; m_notebookId = std::forward<NotebookIdT>(value); }
+    template<typename NotebookIdT = Aws::String>
+    GetNotebookMetadataRequest& WithNotebookId(NotebookIdT&& value) { SetNotebookId(std::forward<NotebookIdT>(value)); return *this;}
     ///@}
   private:
 

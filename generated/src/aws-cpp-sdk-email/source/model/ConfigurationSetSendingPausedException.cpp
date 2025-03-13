@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-ConfigurationSetSendingPausedException::ConfigurationSetSendingPausedException() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 ConfigurationSetSendingPausedException::ConfigurationSetSendingPausedException(const XmlNode& xmlNode)
-  : ConfigurationSetSendingPausedException()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ConfigurationSetSendingPausedException& ConfigurationSetSendingPausedException::
     {
       m_configurationSetName = Aws::Utils::Xml::DecodeEscapedXmlText(configurationSetNameNode.GetText());
       m_configurationSetNameHasBeenSet = true;
+       m_configurationSetNameHasBeenSet = true;
     }
   }
 

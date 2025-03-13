@@ -31,7 +31,7 @@ namespace Model
   class CustomRoutingAcceleratorAttributes
   {
   public:
-    AWS_GLOBALACCELERATOR_API CustomRoutingAcceleratorAttributes();
+    AWS_GLOBALACCELERATOR_API CustomRoutingAcceleratorAttributes() = default;
     AWS_GLOBALACCELERATOR_API CustomRoutingAcceleratorAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API CustomRoutingAcceleratorAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
      * logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
-    inline bool GetFlowLogsEnabled() const{ return m_flowLogsEnabled; }
+    inline bool GetFlowLogsEnabled() const { return m_flowLogsEnabled; }
     inline bool FlowLogsEnabledHasBeenSet() const { return m_flowLogsEnabledHasBeenSet; }
     inline void SetFlowLogsEnabled(bool value) { m_flowLogsEnabledHasBeenSet = true; m_flowLogsEnabled = value; }
     inline CustomRoutingAcceleratorAttributes& WithFlowLogsEnabled(bool value) { SetFlowLogsEnabled(value); return *this;}
@@ -58,14 +58,12 @@ namespace Model
      * have a bucket policy that grants Global Accelerator permission to write to the
      * bucket.</p>
      */
-    inline const Aws::String& GetFlowLogsS3Bucket() const{ return m_flowLogsS3Bucket; }
+    inline const Aws::String& GetFlowLogsS3Bucket() const { return m_flowLogsS3Bucket; }
     inline bool FlowLogsS3BucketHasBeenSet() const { return m_flowLogsS3BucketHasBeenSet; }
-    inline void SetFlowLogsS3Bucket(const Aws::String& value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket = value; }
-    inline void SetFlowLogsS3Bucket(Aws::String&& value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket = std::move(value); }
-    inline void SetFlowLogsS3Bucket(const char* value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket.assign(value); }
-    inline CustomRoutingAcceleratorAttributes& WithFlowLogsS3Bucket(const Aws::String& value) { SetFlowLogsS3Bucket(value); return *this;}
-    inline CustomRoutingAcceleratorAttributes& WithFlowLogsS3Bucket(Aws::String&& value) { SetFlowLogsS3Bucket(std::move(value)); return *this;}
-    inline CustomRoutingAcceleratorAttributes& WithFlowLogsS3Bucket(const char* value) { SetFlowLogsS3Bucket(value); return *this;}
+    template<typename FlowLogsS3BucketT = Aws::String>
+    void SetFlowLogsS3Bucket(FlowLogsS3BucketT&& value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket = std::forward<FlowLogsS3BucketT>(value); }
+    template<typename FlowLogsS3BucketT = Aws::String>
+    CustomRoutingAcceleratorAttributes& WithFlowLogsS3Bucket(FlowLogsS3BucketT&& value) { SetFlowLogsS3Bucket(std::forward<FlowLogsS3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,18 +75,16 @@ namespace Model
      * folder structure will include a double slash (//), like the following:</p>
      * <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
      */
-    inline const Aws::String& GetFlowLogsS3Prefix() const{ return m_flowLogsS3Prefix; }
+    inline const Aws::String& GetFlowLogsS3Prefix() const { return m_flowLogsS3Prefix; }
     inline bool FlowLogsS3PrefixHasBeenSet() const { return m_flowLogsS3PrefixHasBeenSet; }
-    inline void SetFlowLogsS3Prefix(const Aws::String& value) { m_flowLogsS3PrefixHasBeenSet = true; m_flowLogsS3Prefix = value; }
-    inline void SetFlowLogsS3Prefix(Aws::String&& value) { m_flowLogsS3PrefixHasBeenSet = true; m_flowLogsS3Prefix = std::move(value); }
-    inline void SetFlowLogsS3Prefix(const char* value) { m_flowLogsS3PrefixHasBeenSet = true; m_flowLogsS3Prefix.assign(value); }
-    inline CustomRoutingAcceleratorAttributes& WithFlowLogsS3Prefix(const Aws::String& value) { SetFlowLogsS3Prefix(value); return *this;}
-    inline CustomRoutingAcceleratorAttributes& WithFlowLogsS3Prefix(Aws::String&& value) { SetFlowLogsS3Prefix(std::move(value)); return *this;}
-    inline CustomRoutingAcceleratorAttributes& WithFlowLogsS3Prefix(const char* value) { SetFlowLogsS3Prefix(value); return *this;}
+    template<typename FlowLogsS3PrefixT = Aws::String>
+    void SetFlowLogsS3Prefix(FlowLogsS3PrefixT&& value) { m_flowLogsS3PrefixHasBeenSet = true; m_flowLogsS3Prefix = std::forward<FlowLogsS3PrefixT>(value); }
+    template<typename FlowLogsS3PrefixT = Aws::String>
+    CustomRoutingAcceleratorAttributes& WithFlowLogsS3Prefix(FlowLogsS3PrefixT&& value) { SetFlowLogsS3Prefix(std::forward<FlowLogsS3PrefixT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_flowLogsEnabled;
+    bool m_flowLogsEnabled{false};
     bool m_flowLogsEnabledHasBeenSet = false;
 
     Aws::String m_flowLogsS3Bucket;

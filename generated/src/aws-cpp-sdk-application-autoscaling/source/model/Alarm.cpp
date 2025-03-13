@@ -18,14 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-Alarm::Alarm() : 
-    m_alarmNameHasBeenSet(false),
-    m_alarmARNHasBeenSet(false)
-{
-}
-
 Alarm::Alarm(JsonView jsonValue)
-  : Alarm()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Alarm& Alarm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AlarmName"))
   {
     m_alarmName = jsonValue.GetString("AlarmName");
-
     m_alarmNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlarmARN"))
   {
     m_alarmARN = jsonValue.GetString("AlarmARN");
-
     m_alarmARNHasBeenSet = true;
   }
-
   return *this;
 }
 

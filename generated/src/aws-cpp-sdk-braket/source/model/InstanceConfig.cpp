@@ -18,18 +18,7 @@ namespace Braket
 namespace Model
 {
 
-InstanceConfig::InstanceConfig() : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_volumeSizeInGb(0),
-    m_volumeSizeInGbHasBeenSet(false)
-{
-}
-
 InstanceConfig::InstanceConfig(JsonView jsonValue)
-  : InstanceConfig()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ InstanceConfig& InstanceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("instanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(jsonValue.GetString("instanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeSizeInGb"))
   {
     m_volumeSizeInGb = jsonValue.GetInteger("volumeSizeInGb");
-
     m_volumeSizeInGbHasBeenSet = true;
   }
-
   return *this;
 }
 

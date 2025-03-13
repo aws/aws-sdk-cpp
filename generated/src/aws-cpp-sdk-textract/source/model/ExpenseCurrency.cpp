@@ -18,15 +18,7 @@ namespace Textract
 namespace Model
 {
 
-ExpenseCurrency::ExpenseCurrency() : 
-    m_codeHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
-{
-}
-
 ExpenseCurrency::ExpenseCurrency(JsonView jsonValue)
-  : ExpenseCurrency()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExpenseCurrency& ExpenseCurrency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

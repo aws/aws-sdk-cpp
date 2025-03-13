@@ -12,13 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBranchRequest::CreateBranchRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_commitIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateBranchRequest::SerializePayload() const
 {
   JsonValue payload;

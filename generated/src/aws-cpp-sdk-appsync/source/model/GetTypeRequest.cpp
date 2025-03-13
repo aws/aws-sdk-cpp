@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTypeRequest::GetTypeRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_format(TypeDefinitionFormat::NOT_SET),
-    m_formatHasBeenSet(false)
-{
-}
-
 Aws::String GetTypeRequest::SerializePayload() const
 {
   return {};

@@ -18,83 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CodeGenConfigurationNode::CodeGenConfigurationNode() : 
-    m_athenaConnectorSourceHasBeenSet(false),
-    m_jDBCConnectorSourceHasBeenSet(false),
-    m_sparkConnectorSourceHasBeenSet(false),
-    m_catalogSourceHasBeenSet(false),
-    m_redshiftSourceHasBeenSet(false),
-    m_s3CatalogSourceHasBeenSet(false),
-    m_s3CsvSourceHasBeenSet(false),
-    m_s3JsonSourceHasBeenSet(false),
-    m_s3ParquetSourceHasBeenSet(false),
-    m_relationalCatalogSourceHasBeenSet(false),
-    m_dynamoDBCatalogSourceHasBeenSet(false),
-    m_jDBCConnectorTargetHasBeenSet(false),
-    m_sparkConnectorTargetHasBeenSet(false),
-    m_catalogTargetHasBeenSet(false),
-    m_redshiftTargetHasBeenSet(false),
-    m_s3CatalogTargetHasBeenSet(false),
-    m_s3GlueParquetTargetHasBeenSet(false),
-    m_s3DirectTargetHasBeenSet(false),
-    m_applyMappingHasBeenSet(false),
-    m_selectFieldsHasBeenSet(false),
-    m_dropFieldsHasBeenSet(false),
-    m_renameFieldHasBeenSet(false),
-    m_spigotHasBeenSet(false),
-    m_joinHasBeenSet(false),
-    m_splitFieldsHasBeenSet(false),
-    m_selectFromCollectionHasBeenSet(false),
-    m_fillMissingValuesHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_customCodeHasBeenSet(false),
-    m_sparkSQLHasBeenSet(false),
-    m_directKinesisSourceHasBeenSet(false),
-    m_directKafkaSourceHasBeenSet(false),
-    m_catalogKinesisSourceHasBeenSet(false),
-    m_catalogKafkaSourceHasBeenSet(false),
-    m_dropNullFieldsHasBeenSet(false),
-    m_mergeHasBeenSet(false),
-    m_unionHasBeenSet(false),
-    m_pIIDetectionHasBeenSet(false),
-    m_aggregateHasBeenSet(false),
-    m_dropDuplicatesHasBeenSet(false),
-    m_governedCatalogTargetHasBeenSet(false),
-    m_governedCatalogSourceHasBeenSet(false),
-    m_microsoftSQLServerCatalogSourceHasBeenSet(false),
-    m_mySQLCatalogSourceHasBeenSet(false),
-    m_oracleSQLCatalogSourceHasBeenSet(false),
-    m_postgreSQLCatalogSourceHasBeenSet(false),
-    m_microsoftSQLServerCatalogTargetHasBeenSet(false),
-    m_mySQLCatalogTargetHasBeenSet(false),
-    m_oracleSQLCatalogTargetHasBeenSet(false),
-    m_postgreSQLCatalogTargetHasBeenSet(false),
-    m_dynamicTransformHasBeenSet(false),
-    m_evaluateDataQualityHasBeenSet(false),
-    m_s3CatalogHudiSourceHasBeenSet(false),
-    m_catalogHudiSourceHasBeenSet(false),
-    m_s3HudiSourceHasBeenSet(false),
-    m_s3HudiCatalogTargetHasBeenSet(false),
-    m_s3HudiDirectTargetHasBeenSet(false),
-    m_directJDBCSourceHasBeenSet(false),
-    m_s3CatalogDeltaSourceHasBeenSet(false),
-    m_catalogDeltaSourceHasBeenSet(false),
-    m_s3DeltaSourceHasBeenSet(false),
-    m_s3DeltaCatalogTargetHasBeenSet(false),
-    m_s3DeltaDirectTargetHasBeenSet(false),
-    m_amazonRedshiftSourceHasBeenSet(false),
-    m_amazonRedshiftTargetHasBeenSet(false),
-    m_evaluateDataQualityMultiFrameHasBeenSet(false),
-    m_recipeHasBeenSet(false),
-    m_snowflakeSourceHasBeenSet(false),
-    m_snowflakeTargetHasBeenSet(false),
-    m_connectorDataSourceHasBeenSet(false),
-    m_connectorDataTargetHasBeenSet(false)
-{
-}
-
 CodeGenConfigurationNode::CodeGenConfigurationNode(JsonView jsonValue)
-  : CodeGenConfigurationNode()
 {
   *this = jsonValue;
 }
@@ -104,500 +28,358 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AthenaConnectorSource"))
   {
     m_athenaConnectorSource = jsonValue.GetObject("AthenaConnectorSource");
-
     m_athenaConnectorSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JDBCConnectorSource"))
   {
     m_jDBCConnectorSource = jsonValue.GetObject("JDBCConnectorSource");
-
     m_jDBCConnectorSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SparkConnectorSource"))
   {
     m_sparkConnectorSource = jsonValue.GetObject("SparkConnectorSource");
-
     m_sparkConnectorSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogSource"))
   {
     m_catalogSource = jsonValue.GetObject("CatalogSource");
-
     m_catalogSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftSource"))
   {
     m_redshiftSource = jsonValue.GetObject("RedshiftSource");
-
     m_redshiftSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3CatalogSource"))
   {
     m_s3CatalogSource = jsonValue.GetObject("S3CatalogSource");
-
     m_s3CatalogSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3CsvSource"))
   {
     m_s3CsvSource = jsonValue.GetObject("S3CsvSource");
-
     m_s3CsvSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3JsonSource"))
   {
     m_s3JsonSource = jsonValue.GetObject("S3JsonSource");
-
     m_s3JsonSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3ParquetSource"))
   {
     m_s3ParquetSource = jsonValue.GetObject("S3ParquetSource");
-
     m_s3ParquetSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelationalCatalogSource"))
   {
     m_relationalCatalogSource = jsonValue.GetObject("RelationalCatalogSource");
-
     m_relationalCatalogSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DynamoDBCatalogSource"))
   {
     m_dynamoDBCatalogSource = jsonValue.GetObject("DynamoDBCatalogSource");
-
     m_dynamoDBCatalogSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JDBCConnectorTarget"))
   {
     m_jDBCConnectorTarget = jsonValue.GetObject("JDBCConnectorTarget");
-
     m_jDBCConnectorTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SparkConnectorTarget"))
   {
     m_sparkConnectorTarget = jsonValue.GetObject("SparkConnectorTarget");
-
     m_sparkConnectorTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogTarget"))
   {
     m_catalogTarget = jsonValue.GetObject("CatalogTarget");
-
     m_catalogTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftTarget"))
   {
     m_redshiftTarget = jsonValue.GetObject("RedshiftTarget");
-
     m_redshiftTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3CatalogTarget"))
   {
     m_s3CatalogTarget = jsonValue.GetObject("S3CatalogTarget");
-
     m_s3CatalogTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3GlueParquetTarget"))
   {
     m_s3GlueParquetTarget = jsonValue.GetObject("S3GlueParquetTarget");
-
     m_s3GlueParquetTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DirectTarget"))
   {
     m_s3DirectTarget = jsonValue.GetObject("S3DirectTarget");
-
     m_s3DirectTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplyMapping"))
   {
     m_applyMapping = jsonValue.GetObject("ApplyMapping");
-
     m_applyMappingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectFields"))
   {
     m_selectFields = jsonValue.GetObject("SelectFields");
-
     m_selectFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DropFields"))
   {
     m_dropFields = jsonValue.GetObject("DropFields");
-
     m_dropFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RenameField"))
   {
     m_renameField = jsonValue.GetObject("RenameField");
-
     m_renameFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Spigot"))
   {
     m_spigot = jsonValue.GetObject("Spigot");
-
     m_spigotHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Join"))
   {
     m_join = jsonValue.GetObject("Join");
-
     m_joinHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SplitFields"))
   {
     m_splitFields = jsonValue.GetObject("SplitFields");
-
     m_splitFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectFromCollection"))
   {
     m_selectFromCollection = jsonValue.GetObject("SelectFromCollection");
-
     m_selectFromCollectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FillMissingValues"))
   {
     m_fillMissingValues = jsonValue.GetObject("FillMissingValues");
-
     m_fillMissingValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filter"))
   {
     m_filter = jsonValue.GetObject("Filter");
-
     m_filterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomCode"))
   {
     m_customCode = jsonValue.GetObject("CustomCode");
-
     m_customCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SparkSQL"))
   {
     m_sparkSQL = jsonValue.GetObject("SparkSQL");
-
     m_sparkSQLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectKinesisSource"))
   {
     m_directKinesisSource = jsonValue.GetObject("DirectKinesisSource");
-
     m_directKinesisSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectKafkaSource"))
   {
     m_directKafkaSource = jsonValue.GetObject("DirectKafkaSource");
-
     m_directKafkaSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogKinesisSource"))
   {
     m_catalogKinesisSource = jsonValue.GetObject("CatalogKinesisSource");
-
     m_catalogKinesisSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogKafkaSource"))
   {
     m_catalogKafkaSource = jsonValue.GetObject("CatalogKafkaSource");
-
     m_catalogKafkaSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DropNullFields"))
   {
     m_dropNullFields = jsonValue.GetObject("DropNullFields");
-
     m_dropNullFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Merge"))
   {
     m_merge = jsonValue.GetObject("Merge");
-
     m_mergeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Union"))
   {
     m_union = jsonValue.GetObject("Union");
-
     m_unionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PIIDetection"))
   {
     m_pIIDetection = jsonValue.GetObject("PIIDetection");
-
     m_pIIDetectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aggregate"))
   {
     m_aggregate = jsonValue.GetObject("Aggregate");
-
     m_aggregateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DropDuplicates"))
   {
     m_dropDuplicates = jsonValue.GetObject("DropDuplicates");
-
     m_dropDuplicatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GovernedCatalogTarget"))
   {
     m_governedCatalogTarget = jsonValue.GetObject("GovernedCatalogTarget");
-
     m_governedCatalogTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GovernedCatalogSource"))
   {
     m_governedCatalogSource = jsonValue.GetObject("GovernedCatalogSource");
-
     m_governedCatalogSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MicrosoftSQLServerCatalogSource"))
   {
     m_microsoftSQLServerCatalogSource = jsonValue.GetObject("MicrosoftSQLServerCatalogSource");
-
     m_microsoftSQLServerCatalogSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MySQLCatalogSource"))
   {
     m_mySQLCatalogSource = jsonValue.GetObject("MySQLCatalogSource");
-
     m_mySQLCatalogSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OracleSQLCatalogSource"))
   {
     m_oracleSQLCatalogSource = jsonValue.GetObject("OracleSQLCatalogSource");
-
     m_oracleSQLCatalogSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostgreSQLCatalogSource"))
   {
     m_postgreSQLCatalogSource = jsonValue.GetObject("PostgreSQLCatalogSource");
-
     m_postgreSQLCatalogSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MicrosoftSQLServerCatalogTarget"))
   {
     m_microsoftSQLServerCatalogTarget = jsonValue.GetObject("MicrosoftSQLServerCatalogTarget");
-
     m_microsoftSQLServerCatalogTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MySQLCatalogTarget"))
   {
     m_mySQLCatalogTarget = jsonValue.GetObject("MySQLCatalogTarget");
-
     m_mySQLCatalogTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OracleSQLCatalogTarget"))
   {
     m_oracleSQLCatalogTarget = jsonValue.GetObject("OracleSQLCatalogTarget");
-
     m_oracleSQLCatalogTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostgreSQLCatalogTarget"))
   {
     m_postgreSQLCatalogTarget = jsonValue.GetObject("PostgreSQLCatalogTarget");
-
     m_postgreSQLCatalogTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DynamicTransform"))
   {
     m_dynamicTransform = jsonValue.GetObject("DynamicTransform");
-
     m_dynamicTransformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluateDataQuality"))
   {
     m_evaluateDataQuality = jsonValue.GetObject("EvaluateDataQuality");
-
     m_evaluateDataQualityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3CatalogHudiSource"))
   {
     m_s3CatalogHudiSource = jsonValue.GetObject("S3CatalogHudiSource");
-
     m_s3CatalogHudiSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogHudiSource"))
   {
     m_catalogHudiSource = jsonValue.GetObject("CatalogHudiSource");
-
     m_catalogHudiSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3HudiSource"))
   {
     m_s3HudiSource = jsonValue.GetObject("S3HudiSource");
-
     m_s3HudiSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3HudiCatalogTarget"))
   {
     m_s3HudiCatalogTarget = jsonValue.GetObject("S3HudiCatalogTarget");
-
     m_s3HudiCatalogTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3HudiDirectTarget"))
   {
     m_s3HudiDirectTarget = jsonValue.GetObject("S3HudiDirectTarget");
-
     m_s3HudiDirectTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectJDBCSource"))
   {
     m_directJDBCSource = jsonValue.GetObject("DirectJDBCSource");
-
     m_directJDBCSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3CatalogDeltaSource"))
   {
     m_s3CatalogDeltaSource = jsonValue.GetObject("S3CatalogDeltaSource");
-
     m_s3CatalogDeltaSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogDeltaSource"))
   {
     m_catalogDeltaSource = jsonValue.GetObject("CatalogDeltaSource");
-
     m_catalogDeltaSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DeltaSource"))
   {
     m_s3DeltaSource = jsonValue.GetObject("S3DeltaSource");
-
     m_s3DeltaSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DeltaCatalogTarget"))
   {
     m_s3DeltaCatalogTarget = jsonValue.GetObject("S3DeltaCatalogTarget");
-
     m_s3DeltaCatalogTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DeltaDirectTarget"))
   {
     m_s3DeltaDirectTarget = jsonValue.GetObject("S3DeltaDirectTarget");
-
     m_s3DeltaDirectTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmazonRedshiftSource"))
   {
     m_amazonRedshiftSource = jsonValue.GetObject("AmazonRedshiftSource");
-
     m_amazonRedshiftSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmazonRedshiftTarget"))
   {
     m_amazonRedshiftTarget = jsonValue.GetObject("AmazonRedshiftTarget");
-
     m_amazonRedshiftTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluateDataQualityMultiFrame"))
   {
     m_evaluateDataQualityMultiFrame = jsonValue.GetObject("EvaluateDataQualityMultiFrame");
-
     m_evaluateDataQualityMultiFrameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recipe"))
   {
     m_recipe = jsonValue.GetObject("Recipe");
-
     m_recipeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnowflakeSource"))
   {
     m_snowflakeSource = jsonValue.GetObject("SnowflakeSource");
-
     m_snowflakeSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnowflakeTarget"))
   {
     m_snowflakeTarget = jsonValue.GetObject("SnowflakeTarget");
-
     m_snowflakeTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectorDataSource"))
   {
     m_connectorDataSource = jsonValue.GetObject("ConnectorDataSource");
-
     m_connectorDataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectorDataTarget"))
   {
     m_connectorDataTarget = jsonValue.GetObject("ConnectorDataTarget");
-
     m_connectorDataTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

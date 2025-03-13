@@ -18,14 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-AssociatedClientDevice::AssociatedClientDevice() : 
-    m_thingNameHasBeenSet(false),
-    m_associationTimestampHasBeenSet(false)
-{
-}
-
 AssociatedClientDevice::AssociatedClientDevice(JsonView jsonValue)
-  : AssociatedClientDevice()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AssociatedClientDevice& AssociatedClientDevice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("thingName"))
   {
     m_thingName = jsonValue.GetString("thingName");
-
     m_thingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationTimestamp"))
   {
     m_associationTimestamp = jsonValue.GetDouble("associationTimestamp");
-
     m_associationTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

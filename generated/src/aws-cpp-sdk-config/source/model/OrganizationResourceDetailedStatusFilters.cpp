@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-OrganizationResourceDetailedStatusFilters::OrganizationResourceDetailedStatusFilters() : 
-    m_accountIdHasBeenSet(false),
-    m_status(OrganizationResourceDetailedStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 OrganizationResourceDetailedStatusFilters::OrganizationResourceDetailedStatusFilters(JsonView jsonValue)
-  : OrganizationResourceDetailedStatusFilters()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OrganizationResourceDetailedStatusFilters& OrganizationResourceDetailedStatusFil
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OrganizationResourceDetailedStatusMapper::GetOrganizationResourceDetailedStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

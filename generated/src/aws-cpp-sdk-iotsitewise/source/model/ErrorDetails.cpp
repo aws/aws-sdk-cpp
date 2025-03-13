@@ -18,16 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-ErrorDetails::ErrorDetails() : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 ErrorDetails::ErrorDetails(JsonView jsonValue)
-  : ErrorDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ErrorDetails& ErrorDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     Aws::Utils::Array<JsonView> detailsJsonList = jsonValue.GetArray("details");
@@ -57,7 +44,6 @@ ErrorDetails& ErrorDetails::operator =(JsonView jsonValue)
     }
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class VpcOriginConfig
   {
   public:
-    AWS_CLOUDFRONT_API VpcOriginConfig();
+    AWS_CLOUDFRONT_API VpcOriginConfig() = default;
     AWS_CLOUDFRONT_API VpcOriginConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API VpcOriginConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The VPC origin ID.</p>
      */
-    inline const Aws::String& GetVpcOriginId() const{ return m_vpcOriginId; }
+    inline const Aws::String& GetVpcOriginId() const { return m_vpcOriginId; }
     inline bool VpcOriginIdHasBeenSet() const { return m_vpcOriginIdHasBeenSet; }
-    inline void SetVpcOriginId(const Aws::String& value) { m_vpcOriginIdHasBeenSet = true; m_vpcOriginId = value; }
-    inline void SetVpcOriginId(Aws::String&& value) { m_vpcOriginIdHasBeenSet = true; m_vpcOriginId = std::move(value); }
-    inline void SetVpcOriginId(const char* value) { m_vpcOriginIdHasBeenSet = true; m_vpcOriginId.assign(value); }
-    inline VpcOriginConfig& WithVpcOriginId(const Aws::String& value) { SetVpcOriginId(value); return *this;}
-    inline VpcOriginConfig& WithVpcOriginId(Aws::String&& value) { SetVpcOriginId(std::move(value)); return *this;}
-    inline VpcOriginConfig& WithVpcOriginId(const char* value) { SetVpcOriginId(value); return *this;}
+    template<typename VpcOriginIdT = Aws::String>
+    void SetVpcOriginId(VpcOriginIdT&& value) { m_vpcOriginIdHasBeenSet = true; m_vpcOriginId = std::forward<VpcOriginIdT>(value); }
+    template<typename VpcOriginIdT = Aws::String>
+    VpcOriginConfig& WithVpcOriginId(VpcOriginIdT&& value) { SetVpcOriginId(std::forward<VpcOriginIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
-    inline int GetOriginReadTimeout() const{ return m_originReadTimeout; }
+    inline int GetOriginReadTimeout() const { return m_originReadTimeout; }
     inline bool OriginReadTimeoutHasBeenSet() const { return m_originReadTimeoutHasBeenSet; }
     inline void SetOriginReadTimeout(int value) { m_originReadTimeoutHasBeenSet = true; m_originReadTimeout = value; }
     inline VpcOriginConfig& WithOriginReadTimeout(int value) { SetOriginReadTimeout(value); return *this;}
@@ -77,7 +75,7 @@ namespace Model
      * timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
-    inline int GetOriginKeepaliveTimeout() const{ return m_originKeepaliveTimeout; }
+    inline int GetOriginKeepaliveTimeout() const { return m_originKeepaliveTimeout; }
     inline bool OriginKeepaliveTimeoutHasBeenSet() const { return m_originKeepaliveTimeoutHasBeenSet; }
     inline void SetOriginKeepaliveTimeout(int value) { m_originKeepaliveTimeoutHasBeenSet = true; m_originKeepaliveTimeout = value; }
     inline VpcOriginConfig& WithOriginKeepaliveTimeout(int value) { SetOriginKeepaliveTimeout(value); return *this;}
@@ -87,10 +85,10 @@ namespace Model
     Aws::String m_vpcOriginId;
     bool m_vpcOriginIdHasBeenSet = false;
 
-    int m_originReadTimeout;
+    int m_originReadTimeout{0};
     bool m_originReadTimeoutHasBeenSet = false;
 
-    int m_originKeepaliveTimeout;
+    int m_originKeepaliveTimeout{0};
     bool m_originKeepaliveTimeoutHasBeenSet = false;
   };
 

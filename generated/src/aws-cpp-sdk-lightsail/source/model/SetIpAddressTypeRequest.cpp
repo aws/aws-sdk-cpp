@@ -12,17 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetIpAddressTypeRequest::SetIpAddressTypeRequest() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_acceptBundleUpdate(false),
-    m_acceptBundleUpdateHasBeenSet(false)
-{
-}
-
 Aws::String SetIpAddressTypeRequest::SerializePayload() const
 {
   JsonValue payload;

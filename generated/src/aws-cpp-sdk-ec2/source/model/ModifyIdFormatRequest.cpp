@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyIdFormatRequest::ModifyIdFormatRequest() : 
-    m_resourceHasBeenSet(false),
-    m_useLongIds(false),
-    m_useLongIdsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyIdFormatRequest::SerializePayload() const
 {
   Aws::StringStream ss;

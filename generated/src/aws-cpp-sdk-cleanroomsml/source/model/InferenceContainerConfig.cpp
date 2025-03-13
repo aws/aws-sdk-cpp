@@ -18,13 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-InferenceContainerConfig::InferenceContainerConfig() : 
-    m_imageUriHasBeenSet(false)
-{
-}
-
 InferenceContainerConfig::InferenceContainerConfig(JsonView jsonValue)
-  : InferenceContainerConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InferenceContainerConfig& InferenceContainerConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("imageUri"))
   {
     m_imageUri = jsonValue.GetString("imageUri");
-
     m_imageUriHasBeenSet = true;
   }
-
   return *this;
 }
 

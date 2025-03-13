@@ -27,7 +27,7 @@ namespace Model
   class CreateTrainedModelResult
   {
   public:
-    AWS_CLEANROOMSML_API CreateTrainedModelResult();
+    AWS_CLEANROOMSML_API CreateTrainedModelResult() = default;
     AWS_CLEANROOMSML_API CreateTrainedModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMSML_API CreateTrainedModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the trained model.</p>
      */
-    inline const Aws::String& GetTrainedModelArn() const{ return m_trainedModelArn; }
-    inline void SetTrainedModelArn(const Aws::String& value) { m_trainedModelArn = value; }
-    inline void SetTrainedModelArn(Aws::String&& value) { m_trainedModelArn = std::move(value); }
-    inline void SetTrainedModelArn(const char* value) { m_trainedModelArn.assign(value); }
-    inline CreateTrainedModelResult& WithTrainedModelArn(const Aws::String& value) { SetTrainedModelArn(value); return *this;}
-    inline CreateTrainedModelResult& WithTrainedModelArn(Aws::String&& value) { SetTrainedModelArn(std::move(value)); return *this;}
-    inline CreateTrainedModelResult& WithTrainedModelArn(const char* value) { SetTrainedModelArn(value); return *this;}
+    inline const Aws::String& GetTrainedModelArn() const { return m_trainedModelArn; }
+    template<typename TrainedModelArnT = Aws::String>
+    void SetTrainedModelArn(TrainedModelArnT&& value) { m_trainedModelArnHasBeenSet = true; m_trainedModelArn = std::forward<TrainedModelArnT>(value); }
+    template<typename TrainedModelArnT = Aws::String>
+    CreateTrainedModelResult& WithTrainedModelArn(TrainedModelArnT&& value) { SetTrainedModelArn(std::forward<TrainedModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateTrainedModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateTrainedModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateTrainedModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateTrainedModelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trainedModelArn;
+    bool m_trainedModelArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

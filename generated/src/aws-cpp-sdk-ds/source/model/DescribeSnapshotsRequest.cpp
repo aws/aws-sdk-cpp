@@ -12,15 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSnapshotsRequest::DescribeSnapshotsRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_snapshotIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSnapshotsRequest::SerializePayload() const
 {
   JsonValue payload;

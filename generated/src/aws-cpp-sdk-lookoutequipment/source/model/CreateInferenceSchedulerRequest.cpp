@@ -12,23 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInferenceSchedulerRequest::CreateInferenceSchedulerRequest() : 
-    m_modelNameHasBeenSet(false),
-    m_inferenceSchedulerNameHasBeenSet(false),
-    m_dataDelayOffsetInMinutes(0),
-    m_dataDelayOffsetInMinutesHasBeenSet(false),
-    m_dataUploadFrequency(DataUploadFrequency::NOT_SET),
-    m_dataUploadFrequencyHasBeenSet(false),
-    m_dataInputConfigurationHasBeenSet(false),
-    m_dataOutputConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_serverSideKmsKeyIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateInferenceSchedulerRequest::SerializePayload() const
 {
   JsonValue payload;

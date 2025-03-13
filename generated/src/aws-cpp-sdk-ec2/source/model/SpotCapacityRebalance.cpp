@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SpotCapacityRebalance::SpotCapacityRebalance() : 
-    m_replacementStrategy(ReplacementStrategy::NOT_SET),
-    m_replacementStrategyHasBeenSet(false),
-    m_terminationDelay(0),
-    m_terminationDelayHasBeenSet(false)
-{
-}
-
 SpotCapacityRebalance::SpotCapacityRebalance(const XmlNode& xmlNode)
-  : SpotCapacityRebalance()
 {
   *this = xmlNode;
 }
@@ -43,14 +34,16 @@ SpotCapacityRebalance& SpotCapacityRebalance::operator =(const XmlNode& xmlNode)
     XmlNode replacementStrategyNode = resultNode.FirstChild("replacementStrategy");
     if(!replacementStrategyNode.IsNull())
     {
-      m_replacementStrategy = ReplacementStrategyMapper::GetReplacementStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replacementStrategyNode.GetText()).c_str()).c_str());
+      m_replacementStrategy = ReplacementStrategyMapper::GetReplacementStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replacementStrategyNode.GetText()).c_str()));
       m_replacementStrategyHasBeenSet = true;
+       m_replacementStrategyHasBeenSet = true;
     }
     XmlNode terminationDelayNode = resultNode.FirstChild("terminationDelay");
     if(!terminationDelayNode.IsNull())
     {
       m_terminationDelay = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(terminationDelayNode.GetText()).c_str()).c_str());
       m_terminationDelayHasBeenSet = true;
+       m_terminationDelayHasBeenSet = true;
     }
   }
 

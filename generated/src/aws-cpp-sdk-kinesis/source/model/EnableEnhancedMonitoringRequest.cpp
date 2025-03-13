@@ -12,13 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableEnhancedMonitoringRequest::EnableEnhancedMonitoringRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_shardLevelMetricsHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String EnableEnhancedMonitoringRequest::SerializePayload() const
 {
   JsonValue payload;

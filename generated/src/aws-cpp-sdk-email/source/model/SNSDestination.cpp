@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-SNSDestination::SNSDestination() : 
-    m_topicARNHasBeenSet(false)
-{
-}
-
 SNSDestination::SNSDestination(const XmlNode& xmlNode)
-  : SNSDestination()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ SNSDestination& SNSDestination::operator =(const XmlNode& xmlNode)
     {
       m_topicARN = Aws::Utils::Xml::DecodeEscapedXmlText(topicARNNode.GetText());
       m_topicARNHasBeenSet = true;
+       m_topicARNHasBeenSet = true;
     }
   }
 

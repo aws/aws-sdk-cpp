@@ -12,11 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteExportRequest::DeleteExportRequest() : 
-    m_exportIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteExportRequest::SerializePayload() const
 {
   return {};

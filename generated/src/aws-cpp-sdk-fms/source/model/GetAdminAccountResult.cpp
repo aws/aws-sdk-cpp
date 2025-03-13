@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAdminAccountResult::GetAdminAccountResult() : 
-    m_roleStatus(AccountRoleStatus::NOT_SET)
-{
-}
-
 GetAdminAccountResult::GetAdminAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAdminAccountResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetAdminAccountResult& GetAdminAccountResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("AdminAccount"))
   {
     m_adminAccount = jsonValue.GetString("AdminAccount");
-
+    m_adminAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleStatus"))
   {
     m_roleStatus = AccountRoleStatusMapper::GetAccountRoleStatusForName(jsonValue.GetString("RoleStatus"));
-
+    m_roleStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

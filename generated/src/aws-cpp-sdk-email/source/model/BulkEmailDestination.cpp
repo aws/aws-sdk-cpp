@@ -20,15 +20,7 @@ namespace SES
 namespace Model
 {
 
-BulkEmailDestination::BulkEmailDestination() : 
-    m_destinationHasBeenSet(false),
-    m_replacementTagsHasBeenSet(false),
-    m_replacementTemplateDataHasBeenSet(false)
-{
-}
-
 BulkEmailDestination::BulkEmailDestination(const XmlNode& xmlNode)
-  : BulkEmailDestination()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ BulkEmailDestination& BulkEmailDestination::operator =(const XmlNode& xmlNode)
     {
       m_destination = destinationNode;
       m_destinationHasBeenSet = true;
+       m_destinationHasBeenSet = true;
     }
     XmlNode replacementTagsNode = resultNode.FirstChild("ReplacementTags");
     if(!replacementTagsNode.IsNull())
     {
       XmlNode replacementTagsMember = replacementTagsNode.FirstChild("member");
+      m_replacementTagsHasBeenSet = !replacementTagsMember.IsNull();
       while(!replacementTagsMember.IsNull())
       {
         m_replacementTags.push_back(replacementTagsMember);
         replacementTagsMember = replacementTagsMember.NextNode("member");
       }
 
-      m_replacementTagsHasBeenSet = true;
+       m_replacementTagsHasBeenSet = true;
     }
     XmlNode replacementTemplateDataNode = resultNode.FirstChild("ReplacementTemplateData");
     if(!replacementTemplateDataNode.IsNull())
     {
       m_replacementTemplateData = Aws::Utils::Xml::DecodeEscapedXmlText(replacementTemplateDataNode.GetText());
       m_replacementTemplateDataHasBeenSet = true;
+       m_replacementTemplateDataHasBeenSet = true;
     }
   }
 

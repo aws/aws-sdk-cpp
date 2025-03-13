@@ -22,7 +22,7 @@ namespace Model
   class CreateLicenseConversionTaskForResourceRequest : public LicenseManagerRequest
   {
   public:
-    AWS_LICENSEMANAGER_API CreateLicenseConversionTaskForResourceRequest();
+    AWS_LICENSEMANAGER_API CreateLicenseConversionTaskForResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the resource you are converting the license
      * type for.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline CreateLicenseConversionTaskForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline CreateLicenseConversionTaskForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline CreateLicenseConversionTaskForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    CreateLicenseConversionTaskForResourceRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
      * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
-    inline const LicenseConversionContext& GetSourceLicenseContext() const{ return m_sourceLicenseContext; }
+    inline const LicenseConversionContext& GetSourceLicenseContext() const { return m_sourceLicenseContext; }
     inline bool SourceLicenseContextHasBeenSet() const { return m_sourceLicenseContextHasBeenSet; }
-    inline void SetSourceLicenseContext(const LicenseConversionContext& value) { m_sourceLicenseContextHasBeenSet = true; m_sourceLicenseContext = value; }
-    inline void SetSourceLicenseContext(LicenseConversionContext&& value) { m_sourceLicenseContextHasBeenSet = true; m_sourceLicenseContext = std::move(value); }
-    inline CreateLicenseConversionTaskForResourceRequest& WithSourceLicenseContext(const LicenseConversionContext& value) { SetSourceLicenseContext(value); return *this;}
-    inline CreateLicenseConversionTaskForResourceRequest& WithSourceLicenseContext(LicenseConversionContext&& value) { SetSourceLicenseContext(std::move(value)); return *this;}
+    template<typename SourceLicenseContextT = LicenseConversionContext>
+    void SetSourceLicenseContext(SourceLicenseContextT&& value) { m_sourceLicenseContextHasBeenSet = true; m_sourceLicenseContext = std::forward<SourceLicenseContextT>(value); }
+    template<typename SourceLicenseContextT = LicenseConversionContext>
+    CreateLicenseConversionTaskForResourceRequest& WithSourceLicenseContext(SourceLicenseContextT&& value) { SetSourceLicenseContext(std::forward<SourceLicenseContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
      * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
-    inline const LicenseConversionContext& GetDestinationLicenseContext() const{ return m_destinationLicenseContext; }
+    inline const LicenseConversionContext& GetDestinationLicenseContext() const { return m_destinationLicenseContext; }
     inline bool DestinationLicenseContextHasBeenSet() const { return m_destinationLicenseContextHasBeenSet; }
-    inline void SetDestinationLicenseContext(const LicenseConversionContext& value) { m_destinationLicenseContextHasBeenSet = true; m_destinationLicenseContext = value; }
-    inline void SetDestinationLicenseContext(LicenseConversionContext&& value) { m_destinationLicenseContextHasBeenSet = true; m_destinationLicenseContext = std::move(value); }
-    inline CreateLicenseConversionTaskForResourceRequest& WithDestinationLicenseContext(const LicenseConversionContext& value) { SetDestinationLicenseContext(value); return *this;}
-    inline CreateLicenseConversionTaskForResourceRequest& WithDestinationLicenseContext(LicenseConversionContext&& value) { SetDestinationLicenseContext(std::move(value)); return *this;}
+    template<typename DestinationLicenseContextT = LicenseConversionContext>
+    void SetDestinationLicenseContext(DestinationLicenseContextT&& value) { m_destinationLicenseContextHasBeenSet = true; m_destinationLicenseContext = std::forward<DestinationLicenseContextT>(value); }
+    template<typename DestinationLicenseContextT = LicenseConversionContext>
+    CreateLicenseConversionTaskForResourceRequest& WithDestinationLicenseContext(DestinationLicenseContextT&& value) { SetDestinationLicenseContext(std::forward<DestinationLicenseContextT>(value)); return *this;}
     ///@}
   private:
 

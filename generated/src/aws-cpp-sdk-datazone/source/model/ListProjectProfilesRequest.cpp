@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListProjectProfilesRequest::ListProjectProfilesRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortBy(SortFieldProject::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListProjectProfilesRequest::SerializePayload() const
 {
   return {};

@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-VpcInfoPeeringOptionsDetails::VpcInfoPeeringOptionsDetails() : 
-    m_allowDnsResolutionFromRemoteVpc(false),
-    m_allowDnsResolutionFromRemoteVpcHasBeenSet(false),
-    m_allowEgressFromLocalClassicLinkToRemoteVpc(false),
-    m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet(false),
-    m_allowEgressFromLocalVpcToRemoteClassicLink(false),
-    m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet(false)
-{
-}
-
 VpcInfoPeeringOptionsDetails::VpcInfoPeeringOptionsDetails(JsonView jsonValue)
-  : VpcInfoPeeringOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ VpcInfoPeeringOptionsDetails& VpcInfoPeeringOptionsDetails::operator =(JsonView 
   if(jsonValue.ValueExists("AllowDnsResolutionFromRemoteVpc"))
   {
     m_allowDnsResolutionFromRemoteVpc = jsonValue.GetBool("AllowDnsResolutionFromRemoteVpc");
-
     m_allowDnsResolutionFromRemoteVpcHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowEgressFromLocalClassicLinkToRemoteVpc"))
   {
     m_allowEgressFromLocalClassicLinkToRemoteVpc = jsonValue.GetBool("AllowEgressFromLocalClassicLinkToRemoteVpc");
-
     m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowEgressFromLocalVpcToRemoteClassicLink"))
   {
     m_allowEgressFromLocalVpcToRemoteClassicLink = jsonValue.GetBool("AllowEgressFromLocalVpcToRemoteClassicLink");
-
     m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet = true;
   }
-
   return *this;
 }
 

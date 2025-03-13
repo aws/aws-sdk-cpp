@@ -18,13 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-SlotNotAvailableException::SlotNotAvailableException() : 
-    m_slotSuggestionsHasBeenSet(false)
-{
-}
-
 SlotNotAvailableException::SlotNotAvailableException(JsonView jsonValue)
-  : SlotNotAvailableException()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SlotNotAvailableException& SlotNotAvailableException::operator =(JsonView jsonVa
     }
     m_slotSuggestionsHasBeenSet = true;
   }
-
   return *this;
 }
 

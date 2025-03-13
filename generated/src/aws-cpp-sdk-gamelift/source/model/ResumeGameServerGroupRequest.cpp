@@ -12,12 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResumeGameServerGroupRequest::ResumeGameServerGroupRequest() : 
-    m_gameServerGroupNameHasBeenSet(false),
-    m_resumeActionsHasBeenSet(false)
-{
-}
-
 Aws::String ResumeGameServerGroupRequest::SerializePayload() const
 {
   JsonValue payload;

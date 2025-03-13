@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RecommendationSource::RecommendationSource() : 
-    m_recommendationSourceArnHasBeenSet(false),
-    m_recommendationSourceType(RecommendationSourceType::NOT_SET),
-    m_recommendationSourceTypeHasBeenSet(false)
-{
-}
-
 RecommendationSource::RecommendationSource(JsonView jsonValue)
-  : RecommendationSource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RecommendationSource& RecommendationSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("recommendationSourceArn"))
   {
     m_recommendationSourceArn = jsonValue.GetString("recommendationSourceArn");
-
     m_recommendationSourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationSourceType"))
   {
     m_recommendationSourceType = RecommendationSourceTypeMapper::GetRecommendationSourceTypeForName(jsonValue.GetString("recommendationSourceType"));
-
     m_recommendationSourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

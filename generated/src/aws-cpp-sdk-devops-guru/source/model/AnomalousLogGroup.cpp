@@ -18,18 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-AnomalousLogGroup::AnomalousLogGroup() : 
-    m_logGroupNameHasBeenSet(false),
-    m_impactStartTimeHasBeenSet(false),
-    m_impactEndTimeHasBeenSet(false),
-    m_numberOfLogLinesScanned(0),
-    m_numberOfLogLinesScannedHasBeenSet(false),
-    m_logAnomalyShowcasesHasBeenSet(false)
-{
-}
-
 AnomalousLogGroup::AnomalousLogGroup(JsonView jsonValue)
-  : AnomalousLogGroup()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AnomalousLogGroup& AnomalousLogGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LogGroupName"))
   {
     m_logGroupName = jsonValue.GetString("LogGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImpactStartTime"))
   {
     m_impactStartTime = jsonValue.GetDouble("ImpactStartTime");
-
     m_impactStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImpactEndTime"))
   {
     m_impactEndTime = jsonValue.GetDouble("ImpactEndTime");
-
     m_impactEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfLogLinesScanned"))
   {
     m_numberOfLogLinesScanned = jsonValue.GetInteger("NumberOfLogLinesScanned");
-
     m_numberOfLogLinesScannedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogAnomalyShowcases"))
   {
     Aws::Utils::Array<JsonView> logAnomalyShowcasesJsonList = jsonValue.GetArray("LogAnomalyShowcases");
@@ -73,7 +54,6 @@ AnomalousLogGroup& AnomalousLogGroup::operator =(JsonView jsonValue)
     }
     m_logAnomalyShowcasesHasBeenSet = true;
   }
-
   return *this;
 }
 

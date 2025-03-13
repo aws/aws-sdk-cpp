@@ -21,7 +21,7 @@ namespace Model
   class ConstantQueryStringRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API ConstantQueryStringRequest();
+    AWS_RESTXMLPROTOCOL_API ConstantQueryStringRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,14 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetHello() const{ return m_hello; }
+    inline const Aws::String& GetHello() const { return m_hello; }
     inline bool HelloHasBeenSet() const { return m_helloHasBeenSet; }
-    inline void SetHello(const Aws::String& value) { m_helloHasBeenSet = true; m_hello = value; }
-    inline void SetHello(Aws::String&& value) { m_helloHasBeenSet = true; m_hello = std::move(value); }
-    inline void SetHello(const char* value) { m_helloHasBeenSet = true; m_hello.assign(value); }
-    inline ConstantQueryStringRequest& WithHello(const Aws::String& value) { SetHello(value); return *this;}
-    inline ConstantQueryStringRequest& WithHello(Aws::String&& value) { SetHello(std::move(value)); return *this;}
-    inline ConstantQueryStringRequest& WithHello(const char* value) { SetHello(value); return *this;}
+    template<typename HelloT = Aws::String>
+    void SetHello(HelloT&& value) { m_helloHasBeenSet = true; m_hello = std::forward<HelloT>(value); }
+    template<typename HelloT = Aws::String>
+    ConstantQueryStringRequest& WithHello(HelloT&& value) { SetHello(std::forward<HelloT>(value)); return *this;}
     ///@}
   private:
 

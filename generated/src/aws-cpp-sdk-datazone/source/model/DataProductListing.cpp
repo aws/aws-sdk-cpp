@@ -18,19 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DataProductListing::DataProductListing() : 
-    m_createdAtHasBeenSet(false),
-    m_dataProductIdHasBeenSet(false),
-    m_dataProductRevisionHasBeenSet(false),
-    m_formsHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false)
-{
-}
-
 DataProductListing::DataProductListing(JsonView jsonValue)
-  : DataProductListing()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ DataProductListing& DataProductListing::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataProductId"))
   {
     m_dataProductId = jsonValue.GetString("dataProductId");
-
     m_dataProductIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataProductRevision"))
   {
     m_dataProductRevision = jsonValue.GetString("dataProductRevision");
-
     m_dataProductRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("forms"))
   {
     m_forms = jsonValue.GetString("forms");
-
     m_formsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glossaryTerms"))
   {
     Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("glossaryTerms");
@@ -74,7 +54,6 @@ DataProductListing& DataProductListing::operator =(JsonView jsonValue)
     }
     m_glossaryTermsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
@@ -84,14 +63,11 @@ DataProductListing& DataProductListing::operator =(JsonView jsonValue)
     }
     m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owningProjectId"))
   {
     m_owningProjectId = jsonValue.GetString("owningProjectId");
-
     m_owningProjectIdHasBeenSet = true;
   }
-
   return *this;
 }
 

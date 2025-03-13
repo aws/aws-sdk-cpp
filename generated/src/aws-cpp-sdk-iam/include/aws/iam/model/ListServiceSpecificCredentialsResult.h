@@ -29,7 +29,7 @@ namespace Model
   class ListServiceSpecificCredentialsResult
   {
   public:
-    AWS_IAM_API ListServiceSpecificCredentialsResult();
+    AWS_IAM_API ListServiceSpecificCredentialsResult() = default;
     AWS_IAM_API ListServiceSpecificCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API ListServiceSpecificCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,28 +39,30 @@ namespace Model
      * <p>A list of structures that each contain details about a service-specific
      * credential.</p>
      */
-    inline const Aws::Vector<ServiceSpecificCredentialMetadata>& GetServiceSpecificCredentials() const{ return m_serviceSpecificCredentials; }
-    inline void SetServiceSpecificCredentials(const Aws::Vector<ServiceSpecificCredentialMetadata>& value) { m_serviceSpecificCredentials = value; }
-    inline void SetServiceSpecificCredentials(Aws::Vector<ServiceSpecificCredentialMetadata>&& value) { m_serviceSpecificCredentials = std::move(value); }
-    inline ListServiceSpecificCredentialsResult& WithServiceSpecificCredentials(const Aws::Vector<ServiceSpecificCredentialMetadata>& value) { SetServiceSpecificCredentials(value); return *this;}
-    inline ListServiceSpecificCredentialsResult& WithServiceSpecificCredentials(Aws::Vector<ServiceSpecificCredentialMetadata>&& value) { SetServiceSpecificCredentials(std::move(value)); return *this;}
-    inline ListServiceSpecificCredentialsResult& AddServiceSpecificCredentials(const ServiceSpecificCredentialMetadata& value) { m_serviceSpecificCredentials.push_back(value); return *this; }
-    inline ListServiceSpecificCredentialsResult& AddServiceSpecificCredentials(ServiceSpecificCredentialMetadata&& value) { m_serviceSpecificCredentials.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceSpecificCredentialMetadata>& GetServiceSpecificCredentials() const { return m_serviceSpecificCredentials; }
+    template<typename ServiceSpecificCredentialsT = Aws::Vector<ServiceSpecificCredentialMetadata>>
+    void SetServiceSpecificCredentials(ServiceSpecificCredentialsT&& value) { m_serviceSpecificCredentialsHasBeenSet = true; m_serviceSpecificCredentials = std::forward<ServiceSpecificCredentialsT>(value); }
+    template<typename ServiceSpecificCredentialsT = Aws::Vector<ServiceSpecificCredentialMetadata>>
+    ListServiceSpecificCredentialsResult& WithServiceSpecificCredentials(ServiceSpecificCredentialsT&& value) { SetServiceSpecificCredentials(std::forward<ServiceSpecificCredentialsT>(value)); return *this;}
+    template<typename ServiceSpecificCredentialsT = ServiceSpecificCredentialMetadata>
+    ListServiceSpecificCredentialsResult& AddServiceSpecificCredentials(ServiceSpecificCredentialsT&& value) { m_serviceSpecificCredentialsHasBeenSet = true; m_serviceSpecificCredentials.emplace_back(std::forward<ServiceSpecificCredentialsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListServiceSpecificCredentialsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListServiceSpecificCredentialsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListServiceSpecificCredentialsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ServiceSpecificCredentialMetadata> m_serviceSpecificCredentials;
+    bool m_serviceSpecificCredentialsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

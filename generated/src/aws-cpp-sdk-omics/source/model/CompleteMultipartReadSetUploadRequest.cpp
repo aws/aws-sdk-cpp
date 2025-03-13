@@ -12,13 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CompleteMultipartReadSetUploadRequest::CompleteMultipartReadSetUploadRequest() : 
-    m_sequenceStoreIdHasBeenSet(false),
-    m_uploadIdHasBeenSet(false),
-    m_partsHasBeenSet(false)
-{
-}
-
 Aws::String CompleteMultipartReadSetUploadRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,30 +18,7 @@ namespace kendra
 namespace Model
 {
 
-SlackConfiguration::SlackConfiguration() : 
-    m_teamIdHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_slackEntityListHasBeenSet(false),
-    m_useChangeLog(false),
-    m_useChangeLogHasBeenSet(false),
-    m_crawlBotMessage(false),
-    m_crawlBotMessageHasBeenSet(false),
-    m_excludeArchived(false),
-    m_excludeArchivedHasBeenSet(false),
-    m_sinceCrawlDateHasBeenSet(false),
-    m_lookBackPeriod(0),
-    m_lookBackPeriodHasBeenSet(false),
-    m_privateChannelFilterHasBeenSet(false),
-    m_publicChannelFilterHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
-{
-}
-
 SlackConfiguration::SlackConfiguration(JsonView jsonValue)
-  : SlackConfiguration()
 {
   *this = jsonValue;
 }
@@ -51,24 +28,18 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TeamId"))
   {
     m_teamId = jsonValue.GetString("TeamId");
-
     m_teamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("VpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SlackEntityList"))
   {
     Aws::Utils::Array<JsonView> slackEntityListJsonList = jsonValue.GetArray("SlackEntityList");
@@ -78,42 +49,31 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
     }
     m_slackEntityListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseChangeLog"))
   {
     m_useChangeLog = jsonValue.GetBool("UseChangeLog");
-
     m_useChangeLogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlBotMessage"))
   {
     m_crawlBotMessage = jsonValue.GetBool("CrawlBotMessage");
-
     m_crawlBotMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeArchived"))
   {
     m_excludeArchived = jsonValue.GetBool("ExcludeArchived");
-
     m_excludeArchivedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SinceCrawlDate"))
   {
     m_sinceCrawlDate = jsonValue.GetString("SinceCrawlDate");
-
     m_sinceCrawlDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LookBackPeriod"))
   {
     m_lookBackPeriod = jsonValue.GetInteger("LookBackPeriod");
-
     m_lookBackPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateChannelFilter"))
   {
     Aws::Utils::Array<JsonView> privateChannelFilterJsonList = jsonValue.GetArray("PrivateChannelFilter");
@@ -123,7 +83,6 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
     }
     m_privateChannelFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicChannelFilter"))
   {
     Aws::Utils::Array<JsonView> publicChannelFilterJsonList = jsonValue.GetArray("PublicChannelFilter");
@@ -133,7 +92,6 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
     }
     m_publicChannelFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
@@ -143,7 +101,6 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
     }
     m_inclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
@@ -153,7 +110,6 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
     }
     m_exclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldMappings"))
   {
     Aws::Utils::Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
@@ -163,7 +119,6 @@ SlackConfiguration& SlackConfiguration::operator =(JsonView jsonValue)
     }
     m_fieldMappingsHasBeenSet = true;
   }
-
   return *this;
 }
 

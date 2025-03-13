@@ -12,21 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFaqRequest::CreateFaqRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_s3PathHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_fileFormat(FaqFileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_languageCodeHasBeenSet(false)
-{
-}
-
 Aws::String CreateFaqRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,18 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEdgePackagingJobRequest::CreateEdgePackagingJobRequest() : 
-    m_edgePackagingJobNameHasBeenSet(false),
-    m_compilationJobNameHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_resourceKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEdgePackagingJobRequest::SerializePayload() const
 {
   JsonValue payload;

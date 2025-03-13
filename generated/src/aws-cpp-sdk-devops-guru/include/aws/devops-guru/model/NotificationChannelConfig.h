@@ -34,7 +34,7 @@ namespace Model
   class NotificationChannelConfig
   {
   public:
-    AWS_DEVOPSGURU_API NotificationChannelConfig();
+    AWS_DEVOPSGURU_API NotificationChannelConfig() = default;
     AWS_DEVOPSGURU_API NotificationChannelConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API NotificationChannelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
      * for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
      */
-    inline const SnsChannelConfig& GetSns() const{ return m_sns; }
+    inline const SnsChannelConfig& GetSns() const { return m_sns; }
     inline bool SnsHasBeenSet() const { return m_snsHasBeenSet; }
-    inline void SetSns(const SnsChannelConfig& value) { m_snsHasBeenSet = true; m_sns = value; }
-    inline void SetSns(SnsChannelConfig&& value) { m_snsHasBeenSet = true; m_sns = std::move(value); }
-    inline NotificationChannelConfig& WithSns(const SnsChannelConfig& value) { SetSns(value); return *this;}
-    inline NotificationChannelConfig& WithSns(SnsChannelConfig&& value) { SetSns(std::move(value)); return *this;}
+    template<typename SnsT = SnsChannelConfig>
+    void SetSns(SnsT&& value) { m_snsHasBeenSet = true; m_sns = std::forward<SnsT>(value); }
+    template<typename SnsT = SnsChannelConfig>
+    NotificationChannelConfig& WithSns(SnsT&& value) { SetSns(std::forward<SnsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +70,12 @@ namespace Model
      * configurations are to receive notifications for all message types of
      * <code>High</code> or <code>Medium</code> severity. </p>
      */
-    inline const NotificationFilterConfig& GetFilters() const{ return m_filters; }
+    inline const NotificationFilterConfig& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const NotificationFilterConfig& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(NotificationFilterConfig&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline NotificationChannelConfig& WithFilters(const NotificationFilterConfig& value) { SetFilters(value); return *this;}
-    inline NotificationChannelConfig& WithFilters(NotificationFilterConfig&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = NotificationFilterConfig>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = NotificationFilterConfig>
+    NotificationChannelConfig& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
   private:
 

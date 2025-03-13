@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-HostedZoneOwner::HostedZoneOwner() : 
-    m_owningAccountHasBeenSet(false),
-    m_owningServiceHasBeenSet(false)
-{
-}
-
 HostedZoneOwner::HostedZoneOwner(const XmlNode& xmlNode)
-  : HostedZoneOwner()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ HostedZoneOwner& HostedZoneOwner::operator =(const XmlNode& xmlNode)
     {
       m_owningAccount = Aws::Utils::Xml::DecodeEscapedXmlText(owningAccountNode.GetText());
       m_owningAccountHasBeenSet = true;
+       m_owningAccountHasBeenSet = true;
     }
     XmlNode owningServiceNode = resultNode.FirstChild("OwningService");
     if(!owningServiceNode.IsNull())
     {
       m_owningService = Aws::Utils::Xml::DecodeEscapedXmlText(owningServiceNode.GetText());
       m_owningServiceHasBeenSet = true;
+       m_owningServiceHasBeenSet = true;
     }
   }
 

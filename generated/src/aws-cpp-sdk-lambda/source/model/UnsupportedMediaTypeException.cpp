@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-UnsupportedMediaTypeException::UnsupportedMediaTypeException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 UnsupportedMediaTypeException::UnsupportedMediaTypeException(JsonView jsonValue)
-  : UnsupportedMediaTypeException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnsupportedMediaTypeException& UnsupportedMediaTypeException::operator =(JsonVie
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

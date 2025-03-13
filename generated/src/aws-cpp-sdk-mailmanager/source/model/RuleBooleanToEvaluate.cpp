@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-RuleBooleanToEvaluate::RuleBooleanToEvaluate() : 
-    m_attribute(RuleBooleanEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_isInAddressListHasBeenSet(false)
-{
-}
-
 RuleBooleanToEvaluate::RuleBooleanToEvaluate(JsonView jsonValue)
-  : RuleBooleanToEvaluate()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RuleBooleanToEvaluate& RuleBooleanToEvaluate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = RuleBooleanEmailAttributeMapper::GetRuleBooleanEmailAttributeForName(jsonValue.GetString("Attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsInAddressList"))
   {
     m_isInAddressList = jsonValue.GetObject("IsInAddressList");
-
     m_isInAddressListHasBeenSet = true;
   }
-
   return *this;
 }
 

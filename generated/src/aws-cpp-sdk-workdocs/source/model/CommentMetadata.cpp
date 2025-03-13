@@ -18,19 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-CommentMetadata::CommentMetadata() : 
-    m_commentIdHasBeenSet(false),
-    m_contributorHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_commentStatus(CommentStatusType::NOT_SET),
-    m_commentStatusHasBeenSet(false),
-    m_recipientIdHasBeenSet(false),
-    m_contributorIdHasBeenSet(false)
-{
-}
-
 CommentMetadata::CommentMetadata(JsonView jsonValue)
-  : CommentMetadata()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ CommentMetadata& CommentMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CommentId"))
   {
     m_commentId = jsonValue.GetString("CommentId");
-
     m_commentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Contributor"))
   {
     m_contributor = jsonValue.GetObject("Contributor");
-
     m_contributorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommentStatus"))
   {
     m_commentStatus = CommentStatusTypeMapper::GetCommentStatusTypeForName(jsonValue.GetString("CommentStatus"));
-
     m_commentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecipientId"))
   {
     m_recipientId = jsonValue.GetString("RecipientId");
-
     m_recipientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContributorId"))
   {
     m_contributorId = jsonValue.GetString("ContributorId");
-
     m_contributorIdHasBeenSet = true;
   }
-
   return *this;
 }
 

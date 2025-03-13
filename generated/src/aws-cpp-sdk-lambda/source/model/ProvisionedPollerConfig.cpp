@@ -18,16 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-ProvisionedPollerConfig::ProvisionedPollerConfig() : 
-    m_minimumPollers(0),
-    m_minimumPollersHasBeenSet(false),
-    m_maximumPollers(0),
-    m_maximumPollersHasBeenSet(false)
-{
-}
-
 ProvisionedPollerConfig::ProvisionedPollerConfig(JsonView jsonValue)
-  : ProvisionedPollerConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ProvisionedPollerConfig& ProvisionedPollerConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MinimumPollers"))
   {
     m_minimumPollers = jsonValue.GetInteger("MinimumPollers");
-
     m_minimumPollersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumPollers"))
   {
     m_maximumPollers = jsonValue.GetInteger("MaximumPollers");
-
     m_maximumPollersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateSyncConfigurationResult
   {
   public:
-    AWS_CODESTARCONNECTIONS_API CreateSyncConfigurationResult();
+    AWS_CODESTARCONNECTIONS_API CreateSyncConfigurationResult() = default;
     AWS_CODESTARCONNECTIONS_API CreateSyncConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODESTARCONNECTIONS_API CreateSyncConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * allows Amazon Web Services to sync content from a Git repository to update a
      * specified Amazon Web Services resource. </p>
      */
-    inline const SyncConfiguration& GetSyncConfiguration() const{ return m_syncConfiguration; }
-    inline void SetSyncConfiguration(const SyncConfiguration& value) { m_syncConfiguration = value; }
-    inline void SetSyncConfiguration(SyncConfiguration&& value) { m_syncConfiguration = std::move(value); }
-    inline CreateSyncConfigurationResult& WithSyncConfiguration(const SyncConfiguration& value) { SetSyncConfiguration(value); return *this;}
-    inline CreateSyncConfigurationResult& WithSyncConfiguration(SyncConfiguration&& value) { SetSyncConfiguration(std::move(value)); return *this;}
+    inline const SyncConfiguration& GetSyncConfiguration() const { return m_syncConfiguration; }
+    template<typename SyncConfigurationT = SyncConfiguration>
+    void SetSyncConfiguration(SyncConfigurationT&& value) { m_syncConfigurationHasBeenSet = true; m_syncConfiguration = std::forward<SyncConfigurationT>(value); }
+    template<typename SyncConfigurationT = SyncConfiguration>
+    CreateSyncConfigurationResult& WithSyncConfiguration(SyncConfigurationT&& value) { SetSyncConfiguration(std::forward<SyncConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateSyncConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateSyncConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateSyncConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateSyncConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SyncConfiguration m_syncConfiguration;
+    bool m_syncConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

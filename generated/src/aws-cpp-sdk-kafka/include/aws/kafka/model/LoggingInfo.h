@@ -26,7 +26,7 @@ namespace Model
   class LoggingInfo
   {
   public:
-    AWS_KAFKA_API LoggingInfo();
+    AWS_KAFKA_API LoggingInfo() = default;
     AWS_KAFKA_API LoggingInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API LoggingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -34,12 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const BrokerLogs& GetBrokerLogs() const{ return m_brokerLogs; }
+    inline const BrokerLogs& GetBrokerLogs() const { return m_brokerLogs; }
     inline bool BrokerLogsHasBeenSet() const { return m_brokerLogsHasBeenSet; }
-    inline void SetBrokerLogs(const BrokerLogs& value) { m_brokerLogsHasBeenSet = true; m_brokerLogs = value; }
-    inline void SetBrokerLogs(BrokerLogs&& value) { m_brokerLogsHasBeenSet = true; m_brokerLogs = std::move(value); }
-    inline LoggingInfo& WithBrokerLogs(const BrokerLogs& value) { SetBrokerLogs(value); return *this;}
-    inline LoggingInfo& WithBrokerLogs(BrokerLogs&& value) { SetBrokerLogs(std::move(value)); return *this;}
+    template<typename BrokerLogsT = BrokerLogs>
+    void SetBrokerLogs(BrokerLogsT&& value) { m_brokerLogsHasBeenSet = true; m_brokerLogs = std::forward<BrokerLogsT>(value); }
+    template<typename BrokerLogsT = BrokerLogs>
+    LoggingInfo& WithBrokerLogs(BrokerLogsT&& value) { SetBrokerLogs(std::forward<BrokerLogsT>(value)); return *this;}
     ///@}
   private:
 

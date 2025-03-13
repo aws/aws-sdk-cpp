@@ -32,7 +32,7 @@ namespace Model
   class RotationRulesType
   {
   public:
-    AWS_SECRETSMANAGER_API RotationRulesType();
+    AWS_SECRETSMANAGER_API RotationRulesType() = default;
     AWS_SECRETSMANAGER_API RotationRulesType(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECRETSMANAGER_API RotationRulesType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECRETSMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,7 +53,7 @@ namespace Model
      * <code>ScheduleExpression</code>, but not both. To set a rotation schedule in
      * hours, use <code>ScheduleExpression</code>.</p>
      */
-    inline long long GetAutomaticallyAfterDays() const{ return m_automaticallyAfterDays; }
+    inline long long GetAutomaticallyAfterDays() const { return m_automaticallyAfterDays; }
     inline bool AutomaticallyAfterDaysHasBeenSet() const { return m_automaticallyAfterDaysHasBeenSet; }
     inline void SetAutomaticallyAfterDays(long long value) { m_automaticallyAfterDaysHasBeenSet = true; m_automaticallyAfterDays = value; }
     inline RotationRulesType& WithAutomaticallyAfterDays(long long value) { SetAutomaticallyAfterDays(value); return *this;}
@@ -73,14 +73,12 @@ namespace Model
      * expressions in Secrets Manager rotation</a> in the <i>Secrets Manager Users
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetDuration() const{ return m_duration; }
+    inline const Aws::String& GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-    inline void SetDuration(const Aws::String& value) { m_durationHasBeenSet = true; m_duration = value; }
-    inline void SetDuration(Aws::String&& value) { m_durationHasBeenSet = true; m_duration = std::move(value); }
-    inline void SetDuration(const char* value) { m_durationHasBeenSet = true; m_duration.assign(value); }
-    inline RotationRulesType& WithDuration(const Aws::String& value) { SetDuration(value); return *this;}
-    inline RotationRulesType& WithDuration(Aws::String&& value) { SetDuration(std::move(value)); return *this;}
-    inline RotationRulesType& WithDuration(const char* value) { SetDuration(value); return *this;}
+    template<typename DurationT = Aws::String>
+    void SetDuration(DurationT&& value) { m_durationHasBeenSet = true; m_duration = std::forward<DurationT>(value); }
+    template<typename DurationT = Aws::String>
+    RotationRulesType& WithDuration(DurationT&& value) { SetDuration(std::forward<DurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,18 +107,16 @@ namespace Model
      * The rotation window must not extend into the next UTC day or into the next
      * rotation window.</p>
      */
-    inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+    inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-    inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-    inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-    inline RotationRulesType& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-    inline RotationRulesType& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-    inline RotationRulesType& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    template<typename ScheduleExpressionT = Aws::String>
+    void SetScheduleExpression(ScheduleExpressionT&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::forward<ScheduleExpressionT>(value); }
+    template<typename ScheduleExpressionT = Aws::String>
+    RotationRulesType& WithScheduleExpression(ScheduleExpressionT&& value) { SetScheduleExpression(std::forward<ScheduleExpressionT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_automaticallyAfterDays;
+    long long m_automaticallyAfterDays{0};
     bool m_automaticallyAfterDaysHasBeenSet = false;
 
     Aws::String m_duration;

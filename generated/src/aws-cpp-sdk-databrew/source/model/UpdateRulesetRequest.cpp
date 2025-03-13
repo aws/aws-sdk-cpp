@@ -12,13 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRulesetRequest::UpdateRulesetRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRulesetRequest::SerializePayload() const
 {
   JsonValue payload;

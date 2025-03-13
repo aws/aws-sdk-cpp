@@ -23,7 +23,7 @@ namespace Model
   class DescribeSnapshotsRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API DescribeSnapshotsRequest();
+    AWS_FSX_API DescribeSnapshotsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
      * overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code>
      * error occurs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSnapshotIds() const{ return m_snapshotIds; }
+    inline const Aws::Vector<Aws::String>& GetSnapshotIds() const { return m_snapshotIds; }
     inline bool SnapshotIdsHasBeenSet() const { return m_snapshotIdsHasBeenSet; }
-    inline void SetSnapshotIds(const Aws::Vector<Aws::String>& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = value; }
-    inline void SetSnapshotIds(Aws::Vector<Aws::String>&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = std::move(value); }
-    inline DescribeSnapshotsRequest& WithSnapshotIds(const Aws::Vector<Aws::String>& value) { SetSnapshotIds(value); return *this;}
-    inline DescribeSnapshotsRequest& WithSnapshotIds(Aws::Vector<Aws::String>&& value) { SetSnapshotIds(std::move(value)); return *this;}
-    inline DescribeSnapshotsRequest& AddSnapshotIds(const Aws::String& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
-    inline DescribeSnapshotsRequest& AddSnapshotIds(Aws::String&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(std::move(value)); return *this; }
-    inline DescribeSnapshotsRequest& AddSnapshotIds(const char* value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
+    template<typename SnapshotIdsT = Aws::Vector<Aws::String>>
+    void SetSnapshotIds(SnapshotIdsT&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = std::forward<SnapshotIdsT>(value); }
+    template<typename SnapshotIdsT = Aws::Vector<Aws::String>>
+    DescribeSnapshotsRequest& WithSnapshotIds(SnapshotIdsT&& value) { SetSnapshotIds(std::forward<SnapshotIdsT>(value)); return *this;}
+    template<typename SnapshotIdsT = Aws::String>
+    DescribeSnapshotsRequest& AddSnapshotIds(SnapshotIdsT&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.emplace_back(std::forward<SnapshotIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,19 +57,19 @@ namespace Model
      * <p>The filters structure. The supported names are <code>file-system-id</code> or
      * <code>volume-id</code>.</p>
      */
-    inline const Aws::Vector<SnapshotFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<SnapshotFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<SnapshotFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<SnapshotFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeSnapshotsRequest& WithFilters(const Aws::Vector<SnapshotFilter>& value) { SetFilters(value); return *this;}
-    inline DescribeSnapshotsRequest& WithFilters(Aws::Vector<SnapshotFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeSnapshotsRequest& AddFilters(const SnapshotFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeSnapshotsRequest& AddFilters(SnapshotFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<SnapshotFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<SnapshotFilter>>
+    DescribeSnapshotsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = SnapshotFilter>
+    DescribeSnapshotsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeSnapshotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -78,14 +77,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeSnapshotsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSnapshotsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSnapshotsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSnapshotsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +92,7 @@ namespace Model
      * to see the snapshots in your account and the ones shared with you from another
      * account.</p>
      */
-    inline bool GetIncludeShared() const{ return m_includeShared; }
+    inline bool GetIncludeShared() const { return m_includeShared; }
     inline bool IncludeSharedHasBeenSet() const { return m_includeSharedHasBeenSet; }
     inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
     inline DescribeSnapshotsRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
@@ -108,13 +105,13 @@ namespace Model
     Aws::Vector<SnapshotFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    bool m_includeShared;
+    bool m_includeShared{false};
     bool m_includeSharedHasBeenSet = false;
   };
 

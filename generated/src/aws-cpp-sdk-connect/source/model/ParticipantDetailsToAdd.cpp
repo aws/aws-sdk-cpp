@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ParticipantDetailsToAdd::ParticipantDetailsToAdd() : 
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 ParticipantDetailsToAdd::ParticipantDetailsToAdd(JsonView jsonValue)
-  : ParticipantDetailsToAdd()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ParticipantDetailsToAdd& ParticipantDetailsToAdd::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
-
     m_participantRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

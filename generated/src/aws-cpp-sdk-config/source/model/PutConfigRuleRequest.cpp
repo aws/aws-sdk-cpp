@@ -12,12 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutConfigRuleRequest::PutConfigRuleRequest() : 
-    m_configRuleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PutConfigRuleRequest::SerializePayload() const
 {
   JsonValue payload;

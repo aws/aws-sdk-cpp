@@ -18,15 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-PolicyEnforcedException::PolicyEnforcedException() : 
-    m_typeHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 PolicyEnforcedException::PolicyEnforcedException(JsonView jsonValue)
-  : PolicyEnforcedException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PolicyEnforcedException& PolicyEnforcedException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

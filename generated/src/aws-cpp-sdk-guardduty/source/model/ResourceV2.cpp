@@ -18,22 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ResourceV2::ResourceV2() : 
-    m_uidHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_resourceType(FindingResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_cloudPartitionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dataHasBeenSet(false)
-{
-}
-
 ResourceV2::ResourceV2(JsonView jsonValue)
-  : ResourceV2()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ ResourceV2& ResourceV2::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("uid"))
   {
     m_uid = jsonValue.GetString("uid");
-
     m_uidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = FindingResourceTypeMapper::GetFindingResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("service"))
   {
     m_service = jsonValue.GetString("service");
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cloudPartition"))
   {
     m_cloudPartition = jsonValue.GetString("cloudPartition");
-
     m_cloudPartitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -98,14 +69,11 @@ ResourceV2& ResourceV2::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetObject("data");
-
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

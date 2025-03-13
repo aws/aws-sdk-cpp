@@ -18,13 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ChannelModeratorSummary::ChannelModeratorSummary() : 
-    m_moderatorHasBeenSet(false)
-{
-}
-
 ChannelModeratorSummary::ChannelModeratorSummary(JsonView jsonValue)
-  : ChannelModeratorSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ChannelModeratorSummary& ChannelModeratorSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Moderator"))
   {
     m_moderator = jsonValue.GetObject("Moderator");
-
     m_moderatorHasBeenSet = true;
   }
-
   return *this;
 }
 

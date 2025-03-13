@@ -18,13 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-DestinationDetail::DestinationDetail() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 DestinationDetail::DestinationDetail(JsonView jsonValue)
-  : DestinationDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DestinationDetail& DestinationDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

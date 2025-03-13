@@ -12,12 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveTagsFromOnPremisesInstancesRequest::RemoveTagsFromOnPremisesInstancesRequest() : 
-    m_tagsHasBeenSet(false),
-    m_instanceNamesHasBeenSet(false)
-{
-}
-
 Aws::String RemoveTagsFromOnPremisesInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

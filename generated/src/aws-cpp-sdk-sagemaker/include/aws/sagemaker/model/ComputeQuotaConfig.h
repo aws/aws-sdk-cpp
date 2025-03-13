@@ -36,7 +36,7 @@ namespace Model
   class ComputeQuotaConfig
   {
   public:
-    AWS_SAGEMAKER_API ComputeQuotaConfig();
+    AWS_SAGEMAKER_API ComputeQuotaConfig() = default;
     AWS_SAGEMAKER_API ComputeQuotaConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ComputeQuotaConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
     /**
      * <p>Allocate compute resources by instance types.</p>
      */
-    inline const Aws::Vector<ComputeQuotaResourceConfig>& GetComputeQuotaResources() const{ return m_computeQuotaResources; }
+    inline const Aws::Vector<ComputeQuotaResourceConfig>& GetComputeQuotaResources() const { return m_computeQuotaResources; }
     inline bool ComputeQuotaResourcesHasBeenSet() const { return m_computeQuotaResourcesHasBeenSet; }
-    inline void SetComputeQuotaResources(const Aws::Vector<ComputeQuotaResourceConfig>& value) { m_computeQuotaResourcesHasBeenSet = true; m_computeQuotaResources = value; }
-    inline void SetComputeQuotaResources(Aws::Vector<ComputeQuotaResourceConfig>&& value) { m_computeQuotaResourcesHasBeenSet = true; m_computeQuotaResources = std::move(value); }
-    inline ComputeQuotaConfig& WithComputeQuotaResources(const Aws::Vector<ComputeQuotaResourceConfig>& value) { SetComputeQuotaResources(value); return *this;}
-    inline ComputeQuotaConfig& WithComputeQuotaResources(Aws::Vector<ComputeQuotaResourceConfig>&& value) { SetComputeQuotaResources(std::move(value)); return *this;}
-    inline ComputeQuotaConfig& AddComputeQuotaResources(const ComputeQuotaResourceConfig& value) { m_computeQuotaResourcesHasBeenSet = true; m_computeQuotaResources.push_back(value); return *this; }
-    inline ComputeQuotaConfig& AddComputeQuotaResources(ComputeQuotaResourceConfig&& value) { m_computeQuotaResourcesHasBeenSet = true; m_computeQuotaResources.push_back(std::move(value)); return *this; }
+    template<typename ComputeQuotaResourcesT = Aws::Vector<ComputeQuotaResourceConfig>>
+    void SetComputeQuotaResources(ComputeQuotaResourcesT&& value) { m_computeQuotaResourcesHasBeenSet = true; m_computeQuotaResources = std::forward<ComputeQuotaResourcesT>(value); }
+    template<typename ComputeQuotaResourcesT = Aws::Vector<ComputeQuotaResourceConfig>>
+    ComputeQuotaConfig& WithComputeQuotaResources(ComputeQuotaResourcesT&& value) { SetComputeQuotaResources(std::forward<ComputeQuotaResourcesT>(value)); return *this;}
+    template<typename ComputeQuotaResourcesT = ComputeQuotaResourceConfig>
+    ComputeQuotaConfig& AddComputeQuotaResources(ComputeQuotaResourcesT&& value) { m_computeQuotaResourcesHasBeenSet = true; m_computeQuotaResources.emplace_back(std::forward<ComputeQuotaResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * <p>Resource sharing configuration. This defines how an entity can lend and
      * borrow idle compute with other entities within the cluster.</p>
      */
-    inline const ResourceSharingConfig& GetResourceSharingConfig() const{ return m_resourceSharingConfig; }
+    inline const ResourceSharingConfig& GetResourceSharingConfig() const { return m_resourceSharingConfig; }
     inline bool ResourceSharingConfigHasBeenSet() const { return m_resourceSharingConfigHasBeenSet; }
-    inline void SetResourceSharingConfig(const ResourceSharingConfig& value) { m_resourceSharingConfigHasBeenSet = true; m_resourceSharingConfig = value; }
-    inline void SetResourceSharingConfig(ResourceSharingConfig&& value) { m_resourceSharingConfigHasBeenSet = true; m_resourceSharingConfig = std::move(value); }
-    inline ComputeQuotaConfig& WithResourceSharingConfig(const ResourceSharingConfig& value) { SetResourceSharingConfig(value); return *this;}
-    inline ComputeQuotaConfig& WithResourceSharingConfig(ResourceSharingConfig&& value) { SetResourceSharingConfig(std::move(value)); return *this;}
+    template<typename ResourceSharingConfigT = ResourceSharingConfig>
+    void SetResourceSharingConfig(ResourceSharingConfigT&& value) { m_resourceSharingConfigHasBeenSet = true; m_resourceSharingConfig = std::forward<ResourceSharingConfigT>(value); }
+    template<typename ResourceSharingConfigT = ResourceSharingConfig>
+    ComputeQuotaConfig& WithResourceSharingConfig(ResourceSharingConfigT&& value) { SetResourceSharingConfig(std::forward<ResourceSharingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,10 @@ namespace Model
      * preempted by their own higher priority tasks.</p> <p>Default is
      * <code>LowerPriority</code>.</p>
      */
-    inline const PreemptTeamTasks& GetPreemptTeamTasks() const{ return m_preemptTeamTasks; }
+    inline PreemptTeamTasks GetPreemptTeamTasks() const { return m_preemptTeamTasks; }
     inline bool PreemptTeamTasksHasBeenSet() const { return m_preemptTeamTasksHasBeenSet; }
-    inline void SetPreemptTeamTasks(const PreemptTeamTasks& value) { m_preemptTeamTasksHasBeenSet = true; m_preemptTeamTasks = value; }
-    inline void SetPreemptTeamTasks(PreemptTeamTasks&& value) { m_preemptTeamTasksHasBeenSet = true; m_preemptTeamTasks = std::move(value); }
-    inline ComputeQuotaConfig& WithPreemptTeamTasks(const PreemptTeamTasks& value) { SetPreemptTeamTasks(value); return *this;}
-    inline ComputeQuotaConfig& WithPreemptTeamTasks(PreemptTeamTasks&& value) { SetPreemptTeamTasks(std::move(value)); return *this;}
+    inline void SetPreemptTeamTasks(PreemptTeamTasks value) { m_preemptTeamTasksHasBeenSet = true; m_preemptTeamTasks = value; }
+    inline ComputeQuotaConfig& WithPreemptTeamTasks(PreemptTeamTasks value) { SetPreemptTeamTasks(value); return *this;}
     ///@}
   private:
 
@@ -91,7 +89,7 @@ namespace Model
     ResourceSharingConfig m_resourceSharingConfig;
     bool m_resourceSharingConfigHasBeenSet = false;
 
-    PreemptTeamTasks m_preemptTeamTasks;
+    PreemptTeamTasks m_preemptTeamTasks{PreemptTeamTasks::NOT_SET};
     bool m_preemptTeamTasksHasBeenSet = false;
   };
 

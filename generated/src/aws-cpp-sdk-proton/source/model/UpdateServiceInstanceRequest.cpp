@@ -12,19 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceInstanceRequest::UpdateServiceInstanceRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_deploymentType(DeploymentUpdateType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_templateMajorVersionHasBeenSet(false),
-    m_templateMinorVersionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,16 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-ReplaceableAttribute::ReplaceableAttribute() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_replace(false),
-    m_replaceHasBeenSet(false)
-{
-}
-
 ReplaceableAttribute::ReplaceableAttribute(const XmlNode& xmlNode)
-  : ReplaceableAttribute()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ ReplaceableAttribute& ReplaceableAttribute::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
     XmlNode replaceNode = resultNode.FirstChild("Replace");
     if(!replaceNode.IsNull())
     {
       m_replace = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replaceNode.GetText()).c_str()).c_str());
       m_replaceHasBeenSet = true;
+       m_replaceHasBeenSet = true;
     }
   }
 

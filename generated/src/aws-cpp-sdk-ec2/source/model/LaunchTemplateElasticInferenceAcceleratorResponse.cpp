@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateElasticInferenceAcceleratorResponse::LaunchTemplateElasticInferenceAcceleratorResponse() : 
-    m_typeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 LaunchTemplateElasticInferenceAcceleratorResponse::LaunchTemplateElasticInferenceAcceleratorResponse(const XmlNode& xmlNode)
-  : LaunchTemplateElasticInferenceAcceleratorResponse()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ LaunchTemplateElasticInferenceAcceleratorResponse& LaunchTemplateElasticInferenc
     {
       m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode countNode = resultNode.FirstChild("count");
     if(!countNode.IsNull())
     {
       m_count = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
       m_countHasBeenSet = true;
+       m_countHasBeenSet = true;
     }
   }
 

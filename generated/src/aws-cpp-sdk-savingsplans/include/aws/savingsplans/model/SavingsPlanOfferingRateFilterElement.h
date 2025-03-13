@@ -34,7 +34,7 @@ namespace Model
   class SavingsPlanOfferingRateFilterElement
   {
   public:
-    AWS_SAVINGSPLANS_API SavingsPlanOfferingRateFilterElement();
+    AWS_SAVINGSPLANS_API SavingsPlanOfferingRateFilterElement() = default;
     AWS_SAVINGSPLANS_API SavingsPlanOfferingRateFilterElement(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAVINGSPLANS_API SavingsPlanOfferingRateFilterElement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAVINGSPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,28 @@ namespace Model
     /**
      * <p>The filter name.</p>
      */
-    inline const SavingsPlanRateFilterAttribute& GetName() const{ return m_name; }
+    inline SavingsPlanRateFilterAttribute GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const SavingsPlanRateFilterAttribute& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(SavingsPlanRateFilterAttribute&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline SavingsPlanOfferingRateFilterElement& WithName(const SavingsPlanRateFilterAttribute& value) { SetName(value); return *this;}
-    inline SavingsPlanOfferingRateFilterElement& WithName(SavingsPlanRateFilterAttribute&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(SavingsPlanRateFilterAttribute value) { m_nameHasBeenSet = true; m_name = value; }
+    inline SavingsPlanOfferingRateFilterElement& WithName(SavingsPlanRateFilterAttribute value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline SavingsPlanOfferingRateFilterElement& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline SavingsPlanOfferingRateFilterElement& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline SavingsPlanOfferingRateFilterElement& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline SavingsPlanOfferingRateFilterElement& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline SavingsPlanOfferingRateFilterElement& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    SavingsPlanOfferingRateFilterElement& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    SavingsPlanOfferingRateFilterElement& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    SavingsPlanRateFilterAttribute m_name;
+    SavingsPlanRateFilterAttribute m_name{SavingsPlanRateFilterAttribute::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

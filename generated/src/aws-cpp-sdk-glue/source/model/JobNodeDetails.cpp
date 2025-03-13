@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-JobNodeDetails::JobNodeDetails() : 
-    m_jobRunsHasBeenSet(false)
-{
-}
-
 JobNodeDetails::JobNodeDetails(JsonView jsonValue)
-  : JobNodeDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ JobNodeDetails& JobNodeDetails::operator =(JsonView jsonValue)
     }
     m_jobRunsHasBeenSet = true;
   }
-
   return *this;
 }
 

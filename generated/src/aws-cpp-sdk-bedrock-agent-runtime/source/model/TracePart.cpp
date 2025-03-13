@@ -18,20 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-TracePart::TracePart() : 
-    m_agentAliasIdHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_callerChainHasBeenSet(false),
-    m_collaboratorNameHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_traceHasBeenSet(false)
-{
-}
-
 TracePart::TracePart(JsonView jsonValue)
-  : TracePart()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ TracePart& TracePart::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agentAliasId"))
   {
     m_agentAliasId = jsonValue.GetString("agentAliasId");
-
     m_agentAliasIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
-
     m_agentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentVersion"))
   {
     m_agentVersion = jsonValue.GetString("agentVersion");
-
     m_agentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("callerChain"))
   {
     Aws::Utils::Array<JsonView> callerChainJsonList = jsonValue.GetArray("callerChain");
@@ -68,35 +49,26 @@ TracePart& TracePart::operator =(JsonView jsonValue)
     }
     m_callerChainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaboratorName"))
   {
     m_collaboratorName = jsonValue.GetString("collaboratorName");
-
     m_collaboratorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTime"))
   {
     m_eventTime = jsonValue.GetString("eventTime");
-
     m_eventTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trace"))
   {
     m_trace = jsonValue.GetObject("trace");
-
     m_traceHasBeenSet = true;
   }
-
   return *this;
 }
 

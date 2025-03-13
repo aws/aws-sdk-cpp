@@ -18,19 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-EngagementSummary::EngagementSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_memberCount(0),
-    m_memberCountHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 EngagementSummary::EngagementSummary(JsonView jsonValue)
-  : EngagementSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ EngagementSummary& EngagementSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberCount"))
   {
     m_memberCount = jsonValue.GetInteger("MemberCount");
-
     m_memberCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   return *this;
 }
 

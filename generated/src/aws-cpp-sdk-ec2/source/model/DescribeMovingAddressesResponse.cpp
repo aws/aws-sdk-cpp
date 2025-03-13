@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeMovingAddressesResponse::DescribeMovingAddressesResponse()
-{
-}
-
 DescribeMovingAddressesResponse::DescribeMovingAddressesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeMovingAddressesResponse& DescribeMovingAddressesResponse::operator =(con
     if(!movingAddressStatusesNode.IsNull())
     {
       XmlNode movingAddressStatusesMember = movingAddressStatusesNode.FirstChild("item");
+      m_movingAddressStatusesHasBeenSet = !movingAddressStatusesMember.IsNull();
       while(!movingAddressStatusesMember.IsNull())
       {
         m_movingAddressStatuses.push_back(movingAddressStatusesMember);
@@ -53,6 +50,7 @@ DescribeMovingAddressesResponse& DescribeMovingAddressesResponse::operator =(con
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeMovingAddressesResponse& DescribeMovingAddressesResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeMovingAddressesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

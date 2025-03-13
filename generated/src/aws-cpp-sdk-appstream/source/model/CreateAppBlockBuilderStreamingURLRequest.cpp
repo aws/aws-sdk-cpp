@@ -12,13 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAppBlockBuilderStreamingURLRequest::CreateAppBlockBuilderStreamingURLRequest() : 
-    m_appBlockBuilderNameHasBeenSet(false),
-    m_validity(0),
-    m_validityHasBeenSet(false)
-{
-}
-
 Aws::String CreateAppBlockBuilderStreamingURLRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RateBasedStatementManagedKeysIPSet::RateBasedStatementManagedKeysIPSet() : 
-    m_iPAddressVersion(IPAddressVersion::NOT_SET),
-    m_iPAddressVersionHasBeenSet(false),
-    m_addressesHasBeenSet(false)
-{
-}
-
 RateBasedStatementManagedKeysIPSet::RateBasedStatementManagedKeysIPSet(JsonView jsonValue)
-  : RateBasedStatementManagedKeysIPSet()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ RateBasedStatementManagedKeysIPSet& RateBasedStatementManagedKeysIPSet::operator
   if(jsonValue.ValueExists("IPAddressVersion"))
   {
     m_iPAddressVersion = IPAddressVersionMapper::GetIPAddressVersionForName(jsonValue.GetString("IPAddressVersion"));
-
     m_iPAddressVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Addresses"))
   {
     Aws::Utils::Array<JsonView> addressesJsonList = jsonValue.GetArray("Addresses");
@@ -49,7 +39,6 @@ RateBasedStatementManagedKeysIPSet& RateBasedStatementManagedKeysIPSet::operator
     }
     m_addressesHasBeenSet = true;
   }
-
   return *this;
 }
 

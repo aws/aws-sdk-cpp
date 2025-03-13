@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeFleetHistoryRequest::DescribeFleetHistoryRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_eventType(FleetEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFleetHistoryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

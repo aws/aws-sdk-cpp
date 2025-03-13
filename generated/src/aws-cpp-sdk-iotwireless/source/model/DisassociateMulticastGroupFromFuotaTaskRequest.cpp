@@ -12,12 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateMulticastGroupFromFuotaTaskRequest::DisassociateMulticastGroupFromFuotaTaskRequest() : 
-    m_idHasBeenSet(false),
-    m_multicastGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateMulticastGroupFromFuotaTaskRequest::SerializePayload() const
 {
   return {};

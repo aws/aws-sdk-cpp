@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ExperienceEntitiesSummary::ExperienceEntitiesSummary() : 
-    m_entityIdHasBeenSet(false),
-    m_entityType(EntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false),
-    m_displayDataHasBeenSet(false)
-{
-}
-
 ExperienceEntitiesSummary::ExperienceEntitiesSummary(JsonView jsonValue)
-  : ExperienceEntitiesSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExperienceEntitiesSummary& ExperienceEntitiesSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("EntityId"))
   {
     m_entityId = jsonValue.GetString("EntityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityType"))
   {
     m_entityType = EntityTypeMapper::GetEntityTypeForName(jsonValue.GetString("EntityType"));
-
     m_entityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayData"))
   {
     m_displayData = jsonValue.GetObject("DisplayData");
-
     m_displayDataHasBeenSet = true;
   }
-
   return *this;
 }
 

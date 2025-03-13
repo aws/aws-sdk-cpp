@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetControlResult::GetControlResult() : 
-    m_behavior(ControlBehavior::NOT_SET)
-{
-}
-
 GetControlResult::GetControlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetControlResult()
 {
   *this = result;
 }
@@ -34,39 +28,33 @@ GetControlResult& GetControlResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Behavior"))
   {
     m_behavior = ControlBehaviorMapper::GetControlBehaviorForName(jsonValue.GetString("Behavior"));
-
+    m_behaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegionConfiguration"))
   {
     m_regionConfiguration = jsonValue.GetObject("RegionConfiguration");
-
+    m_regionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Implementation"))
   {
     m_implementation = jsonValue.GetObject("Implementation");
-
+    m_implementationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
@@ -74,14 +62,15 @@ GetControlResult& GetControlResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
     }
+    m_parametersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -32,7 +32,7 @@ namespace Model
   class ExportReference
   {
   public:
-    AWS_BCMDATAEXPORTS_API ExportReference();
+    AWS_BCMDATAEXPORTS_API ExportReference() = default;
     AWS_BCMDATAEXPORTS_API ExportReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMDATAEXPORTS_API ExportReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMDATAEXPORTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,36 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for this export.</p>
      */
-    inline const Aws::String& GetExportArn() const{ return m_exportArn; }
+    inline const Aws::String& GetExportArn() const { return m_exportArn; }
     inline bool ExportArnHasBeenSet() const { return m_exportArnHasBeenSet; }
-    inline void SetExportArn(const Aws::String& value) { m_exportArnHasBeenSet = true; m_exportArn = value; }
-    inline void SetExportArn(Aws::String&& value) { m_exportArnHasBeenSet = true; m_exportArn = std::move(value); }
-    inline void SetExportArn(const char* value) { m_exportArnHasBeenSet = true; m_exportArn.assign(value); }
-    inline ExportReference& WithExportArn(const Aws::String& value) { SetExportArn(value); return *this;}
-    inline ExportReference& WithExportArn(Aws::String&& value) { SetExportArn(std::move(value)); return *this;}
-    inline ExportReference& WithExportArn(const char* value) { SetExportArn(value); return *this;}
+    template<typename ExportArnT = Aws::String>
+    void SetExportArn(ExportArnT&& value) { m_exportArnHasBeenSet = true; m_exportArn = std::forward<ExportArnT>(value); }
+    template<typename ExportArnT = Aws::String>
+    ExportReference& WithExportArn(ExportArnT&& value) { SetExportArn(std::forward<ExportArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of this specific data export.</p>
      */
-    inline const Aws::String& GetExportName() const{ return m_exportName; }
+    inline const Aws::String& GetExportName() const { return m_exportName; }
     inline bool ExportNameHasBeenSet() const { return m_exportNameHasBeenSet; }
-    inline void SetExportName(const Aws::String& value) { m_exportNameHasBeenSet = true; m_exportName = value; }
-    inline void SetExportName(Aws::String&& value) { m_exportNameHasBeenSet = true; m_exportName = std::move(value); }
-    inline void SetExportName(const char* value) { m_exportNameHasBeenSet = true; m_exportName.assign(value); }
-    inline ExportReference& WithExportName(const Aws::String& value) { SetExportName(value); return *this;}
-    inline ExportReference& WithExportName(Aws::String&& value) { SetExportName(std::move(value)); return *this;}
-    inline ExportReference& WithExportName(const char* value) { SetExportName(value); return *this;}
+    template<typename ExportNameT = Aws::String>
+    void SetExportName(ExportNameT&& value) { m_exportNameHasBeenSet = true; m_exportName = std::forward<ExportNameT>(value); }
+    template<typename ExportNameT = Aws::String>
+    ExportReference& WithExportName(ExportNameT&& value) { SetExportName(std::forward<ExportNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of this specific data export.</p>
      */
-    inline const ExportStatus& GetExportStatus() const{ return m_exportStatus; }
+    inline const ExportStatus& GetExportStatus() const { return m_exportStatus; }
     inline bool ExportStatusHasBeenSet() const { return m_exportStatusHasBeenSet; }
-    inline void SetExportStatus(const ExportStatus& value) { m_exportStatusHasBeenSet = true; m_exportStatus = value; }
-    inline void SetExportStatus(ExportStatus&& value) { m_exportStatusHasBeenSet = true; m_exportStatus = std::move(value); }
-    inline ExportReference& WithExportStatus(const ExportStatus& value) { SetExportStatus(value); return *this;}
-    inline ExportReference& WithExportStatus(ExportStatus&& value) { SetExportStatus(std::move(value)); return *this;}
+    template<typename ExportStatusT = ExportStatus>
+    void SetExportStatus(ExportStatusT&& value) { m_exportStatusHasBeenSet = true; m_exportStatus = std::forward<ExportStatusT>(value); }
+    template<typename ExportStatusT = ExportStatus>
+    ExportReference& WithExportStatus(ExportStatusT&& value) { SetExportStatus(std::forward<ExportStatusT>(value)); return *this;}
     ///@}
   private:
 

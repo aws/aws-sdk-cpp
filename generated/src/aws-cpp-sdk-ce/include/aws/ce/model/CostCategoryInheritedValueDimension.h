@@ -39,7 +39,7 @@ namespace Model
   class CostCategoryInheritedValueDimension
   {
   public:
-    AWS_COSTEXPLORER_API CostCategoryInheritedValueDimension();
+    AWS_COSTEXPLORER_API CostCategoryInheritedValueDimension() = default;
     AWS_COSTEXPLORER_API CostCategoryInheritedValueDimension(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API CostCategoryInheritedValueDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,30 +52,26 @@ namespace Model
      * name. If you specify <code>TAG</code>, the cost category value is based on the
      * value of the specified tag key.</p>
      */
-    inline const CostCategoryInheritedValueDimensionName& GetDimensionName() const{ return m_dimensionName; }
+    inline CostCategoryInheritedValueDimensionName GetDimensionName() const { return m_dimensionName; }
     inline bool DimensionNameHasBeenSet() const { return m_dimensionNameHasBeenSet; }
-    inline void SetDimensionName(const CostCategoryInheritedValueDimensionName& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
-    inline void SetDimensionName(CostCategoryInheritedValueDimensionName&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
-    inline CostCategoryInheritedValueDimension& WithDimensionName(const CostCategoryInheritedValueDimensionName& value) { SetDimensionName(value); return *this;}
-    inline CostCategoryInheritedValueDimension& WithDimensionName(CostCategoryInheritedValueDimensionName&& value) { SetDimensionName(std::move(value)); return *this;}
+    inline void SetDimensionName(CostCategoryInheritedValueDimensionName value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
+    inline CostCategoryInheritedValueDimension& WithDimensionName(CostCategoryInheritedValueDimensionName value) { SetDimensionName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key to extract cost category values.</p>
      */
-    inline const Aws::String& GetDimensionKey() const{ return m_dimensionKey; }
+    inline const Aws::String& GetDimensionKey() const { return m_dimensionKey; }
     inline bool DimensionKeyHasBeenSet() const { return m_dimensionKeyHasBeenSet; }
-    inline void SetDimensionKey(const Aws::String& value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey = value; }
-    inline void SetDimensionKey(Aws::String&& value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey = std::move(value); }
-    inline void SetDimensionKey(const char* value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey.assign(value); }
-    inline CostCategoryInheritedValueDimension& WithDimensionKey(const Aws::String& value) { SetDimensionKey(value); return *this;}
-    inline CostCategoryInheritedValueDimension& WithDimensionKey(Aws::String&& value) { SetDimensionKey(std::move(value)); return *this;}
-    inline CostCategoryInheritedValueDimension& WithDimensionKey(const char* value) { SetDimensionKey(value); return *this;}
+    template<typename DimensionKeyT = Aws::String>
+    void SetDimensionKey(DimensionKeyT&& value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey = std::forward<DimensionKeyT>(value); }
+    template<typename DimensionKeyT = Aws::String>
+    CostCategoryInheritedValueDimension& WithDimensionKey(DimensionKeyT&& value) { SetDimensionKey(std::forward<DimensionKeyT>(value)); return *this;}
     ///@}
   private:
 
-    CostCategoryInheritedValueDimensionName m_dimensionName;
+    CostCategoryInheritedValueDimensionName m_dimensionName{CostCategoryInheritedValueDimensionName::NOT_SET};
     bool m_dimensionNameHasBeenSet = false;
 
     Aws::String m_dimensionKey;

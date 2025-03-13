@@ -22,10 +22,9 @@ namespace Model
   class GetRawMessageContentResult
   {
   public:
-    AWS_WORKMAILMESSAGEFLOW_API GetRawMessageContentResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_WORKMAILMESSAGEFLOW_API GetRawMessageContentResult(GetRawMessageContentResult&&);
-    AWS_WORKMAILMESSAGEFLOW_API GetRawMessageContentResult& operator=(GetRawMessageContentResult&&);
+    AWS_WORKMAILMESSAGEFLOW_API GetRawMessageContentResult() = default;
+    AWS_WORKMAILMESSAGEFLOW_API GetRawMessageContentResult(GetRawMessageContentResult&&) = default;
+    AWS_WORKMAILMESSAGEFLOW_API GetRawMessageContentResult& operator=(GetRawMessageContentResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetRawMessageContentResult(const GetRawMessageContentResult&) = delete;
@@ -48,19 +47,19 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRawMessageContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRawMessageContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRawMessageContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRawMessageContentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_messageContent;
+    Aws::Utils::Stream::ResponseStream m_messageContent{};
+    bool m_messageContentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

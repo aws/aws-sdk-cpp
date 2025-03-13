@@ -12,11 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetVpcLinkRequest::GetVpcLinkRequest() : 
-    m_vpcLinkIdHasBeenSet(false)
-{
-}
-
 Aws::String GetVpcLinkRequest::SerializePayload() const
 {
   return {};

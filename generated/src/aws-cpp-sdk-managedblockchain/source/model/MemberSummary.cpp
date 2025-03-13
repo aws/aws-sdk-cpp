@@ -18,21 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-MemberSummary::MemberSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(MemberStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_isOwned(false),
-    m_isOwnedHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 MemberSummary::MemberSummary(JsonView jsonValue)
-  : MemberSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ MemberSummary& MemberSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MemberStatusMapper::GetMemberStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsOwned"))
   {
     m_isOwned = jsonValue.GetBool("IsOwned");
-
     m_isOwnedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

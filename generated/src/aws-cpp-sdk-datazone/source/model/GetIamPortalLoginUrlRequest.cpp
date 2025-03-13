@@ -12,11 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIamPortalLoginUrlRequest::GetIamPortalLoginUrlRequest() : 
-    m_domainIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetIamPortalLoginUrlRequest::SerializePayload() const
 {
   return {};

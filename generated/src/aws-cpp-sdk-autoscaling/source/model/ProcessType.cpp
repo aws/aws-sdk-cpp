@@ -20,13 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-ProcessType::ProcessType() : 
-    m_processNameHasBeenSet(false)
-{
-}
-
 ProcessType::ProcessType(const XmlNode& xmlNode)
-  : ProcessType()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ProcessType& ProcessType::operator =(const XmlNode& xmlNode)
     {
       m_processName = Aws::Utils::Xml::DecodeEscapedXmlText(processNameNode.GetText());
       m_processNameHasBeenSet = true;
+       m_processNameHasBeenSet = true;
     }
   }
 

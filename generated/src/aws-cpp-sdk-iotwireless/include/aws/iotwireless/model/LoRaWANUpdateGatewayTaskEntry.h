@@ -31,7 +31,7 @@ namespace Model
   class LoRaWANUpdateGatewayTaskEntry
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANUpdateGatewayTaskEntry();
+    AWS_IOTWIRELESS_API LoRaWANUpdateGatewayTaskEntry() = default;
     AWS_IOTWIRELESS_API LoRaWANUpdateGatewayTaskEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANUpdateGatewayTaskEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,24 +41,24 @@ namespace Model
     /**
      * <p>The version of the gateways that should receive the update.</p>
      */
-    inline const LoRaWANGatewayVersion& GetCurrentVersion() const{ return m_currentVersion; }
+    inline const LoRaWANGatewayVersion& GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-    inline void SetCurrentVersion(const LoRaWANGatewayVersion& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-    inline void SetCurrentVersion(LoRaWANGatewayVersion&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-    inline LoRaWANUpdateGatewayTaskEntry& WithCurrentVersion(const LoRaWANGatewayVersion& value) { SetCurrentVersion(value); return *this;}
-    inline LoRaWANUpdateGatewayTaskEntry& WithCurrentVersion(LoRaWANGatewayVersion&& value) { SetCurrentVersion(std::move(value)); return *this;}
+    template<typename CurrentVersionT = LoRaWANGatewayVersion>
+    void SetCurrentVersion(CurrentVersionT&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::forward<CurrentVersionT>(value); }
+    template<typename CurrentVersionT = LoRaWANGatewayVersion>
+    LoRaWANUpdateGatewayTaskEntry& WithCurrentVersion(CurrentVersionT&& value) { SetCurrentVersion(std::forward<CurrentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The firmware version to update the gateway to.</p>
      */
-    inline const LoRaWANGatewayVersion& GetUpdateVersion() const{ return m_updateVersion; }
+    inline const LoRaWANGatewayVersion& GetUpdateVersion() const { return m_updateVersion; }
     inline bool UpdateVersionHasBeenSet() const { return m_updateVersionHasBeenSet; }
-    inline void SetUpdateVersion(const LoRaWANGatewayVersion& value) { m_updateVersionHasBeenSet = true; m_updateVersion = value; }
-    inline void SetUpdateVersion(LoRaWANGatewayVersion&& value) { m_updateVersionHasBeenSet = true; m_updateVersion = std::move(value); }
-    inline LoRaWANUpdateGatewayTaskEntry& WithUpdateVersion(const LoRaWANGatewayVersion& value) { SetUpdateVersion(value); return *this;}
-    inline LoRaWANUpdateGatewayTaskEntry& WithUpdateVersion(LoRaWANGatewayVersion&& value) { SetUpdateVersion(std::move(value)); return *this;}
+    template<typename UpdateVersionT = LoRaWANGatewayVersion>
+    void SetUpdateVersion(UpdateVersionT&& value) { m_updateVersionHasBeenSet = true; m_updateVersion = std::forward<UpdateVersionT>(value); }
+    template<typename UpdateVersionT = LoRaWANGatewayVersion>
+    LoRaWANUpdateGatewayTaskEntry& WithUpdateVersion(UpdateVersionT&& value) { SetUpdateVersion(std::forward<UpdateVersionT>(value)); return *this;}
     ///@}
   private:
 

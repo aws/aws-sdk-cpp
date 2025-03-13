@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSpeakersResult::ListSpeakersResult()
-{
-}
-
 ListSpeakersResult::ListSpeakersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListSpeakersResult& ListSpeakersResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpeakerSummaries"))
   {
     Aws::Utils::Array<JsonView> speakerSummariesJsonList = jsonValue.GetArray("SpeakerSummaries");
@@ -42,14 +37,15 @@ ListSpeakersResult& ListSpeakersResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_speakerSummaries.push_back(speakerSummariesJsonList[speakerSummariesIndex].AsObject());
     }
+    m_speakerSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

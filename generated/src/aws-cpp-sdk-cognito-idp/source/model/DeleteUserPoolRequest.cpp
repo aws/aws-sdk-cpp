@@ -12,11 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUserPoolRequest::DeleteUserPoolRequest() : 
-    m_userPoolIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUserPoolRequest::SerializePayload() const
 {
   JsonValue payload;

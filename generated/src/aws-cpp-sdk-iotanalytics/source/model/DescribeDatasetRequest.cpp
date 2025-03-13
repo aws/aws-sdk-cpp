@@ -12,11 +12,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDatasetRequest::DescribeDatasetRequest() : 
-    m_datasetNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDatasetRequest::SerializePayload() const
 {
   return {};

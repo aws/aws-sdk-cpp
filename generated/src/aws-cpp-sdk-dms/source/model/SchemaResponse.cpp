@@ -18,24 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-SchemaResponse::SchemaResponse() : 
-    m_codeLineCount(0),
-    m_codeLineCountHasBeenSet(false),
-    m_codeSize(0),
-    m_codeSizeHasBeenSet(false),
-    m_complexityHasBeenSet(false),
-    m_serverHasBeenSet(false),
-    m_databaseInstanceHasBeenSet(false),
-    m_schemaIdHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_originalSchemaHasBeenSet(false),
-    m_similarity(0.0),
-    m_similarityHasBeenSet(false)
-{
-}
-
 SchemaResponse::SchemaResponse(JsonView jsonValue)
-  : SchemaResponse()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ SchemaResponse& SchemaResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CodeLineCount"))
   {
     m_codeLineCount = jsonValue.GetInt64("CodeLineCount");
-
     m_codeLineCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeSize"))
   {
     m_codeSize = jsonValue.GetInt64("CodeSize");
-
     m_codeSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Complexity"))
   {
     m_complexity = jsonValue.GetString("Complexity");
-
     m_complexityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Server"))
   {
     m_server = jsonValue.GetObject("Server");
-
     m_serverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseInstance"))
   {
     m_databaseInstance = jsonValue.GetObject("DatabaseInstance");
-
     m_databaseInstanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaId"))
   {
     m_schemaId = jsonValue.GetString("SchemaId");
-
     m_schemaIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaName"))
   {
     m_schemaName = jsonValue.GetString("SchemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginalSchema"))
   {
     m_originalSchema = jsonValue.GetObject("OriginalSchema");
-
     m_originalSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Similarity"))
   {
     m_similarity = jsonValue.GetDouble("Similarity");
-
     m_similarityHasBeenSet = true;
   }
-
   return *this;
 }
 

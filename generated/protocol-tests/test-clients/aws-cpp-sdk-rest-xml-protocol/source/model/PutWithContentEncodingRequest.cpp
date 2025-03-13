@@ -15,11 +15,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-PutWithContentEncodingRequest::PutWithContentEncodingRequest() : 
-    m_encodingHasBeenSet(false),
-    m_dataHasBeenSet(false)
-{
-}
 
 Aws::String PutWithContentEncodingRequest::SerializePayload() const
 {
@@ -51,3 +46,27 @@ Aws::Http::HeaderValueCollection PutWithContentEncodingRequest::GetRequestSpecif
 
   return headers;
 }
+
+#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
+Aws::Client::CompressionAlgorithm PutWithContentEncodingRequest::GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const
+{
+    if (config.useRequestCompression == Aws::Client::UseRequestCompression::DISABLE)
+    {
+        return Aws::Client::CompressionAlgorithm::NONE;
+    }
+
+    const auto& body = AmazonSerializableWebServiceRequest::GetBody();
+    body->seekg(0, body->end);
+    size_t bodySize = body->tellg();
+    body->seekg(0, body->beg);
+    if ( bodySize < config.requestMinCompressionSizeBytes)
+    {
+        return Aws::Client::CompressionAlgorithm::NONE;
+    }
+    else
+    {
+        return Aws::Client::CompressionAlgorithm::GZIP;
+    }
+}
+#endif
+

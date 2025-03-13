@@ -20,23 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ReservedCacheNodesOffering::ReservedCacheNodesOffering() : 
-    m_reservedCacheNodesOfferingIdHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_productDescriptionHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
-{
-}
-
 ReservedCacheNodesOffering::ReservedCacheNodesOffering(const XmlNode& xmlNode)
-  : ReservedCacheNodesOffering()
 {
   *this = xmlNode;
 }
@@ -52,54 +36,62 @@ ReservedCacheNodesOffering& ReservedCacheNodesOffering::operator =(const XmlNode
     {
       m_reservedCacheNodesOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedCacheNodesOfferingIdNode.GetText());
       m_reservedCacheNodesOfferingIdHasBeenSet = true;
+       m_reservedCacheNodesOfferingIdHasBeenSet = true;
     }
     XmlNode cacheNodeTypeNode = resultNode.FirstChild("CacheNodeType");
     if(!cacheNodeTypeNode.IsNull())
     {
       m_cacheNodeType = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeTypeNode.GetText());
       m_cacheNodeTypeHasBeenSet = true;
+       m_cacheNodeTypeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
     if(!durationNode.IsNull())
     {
       m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
       m_durationHasBeenSet = true;
+       m_durationHasBeenSet = true;
     }
     XmlNode fixedPriceNode = resultNode.FirstChild("FixedPrice");
     if(!fixedPriceNode.IsNull())
     {
       m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fixedPriceNode.GetText()).c_str()).c_str());
       m_fixedPriceHasBeenSet = true;
+       m_fixedPriceHasBeenSet = true;
     }
     XmlNode usagePriceNode = resultNode.FirstChild("UsagePrice");
     if(!usagePriceNode.IsNull())
     {
       m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usagePriceNode.GetText()).c_str()).c_str());
       m_usagePriceHasBeenSet = true;
+       m_usagePriceHasBeenSet = true;
     }
     XmlNode productDescriptionNode = resultNode.FirstChild("ProductDescription");
     if(!productDescriptionNode.IsNull())
     {
       m_productDescription = Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText());
       m_productDescriptionHasBeenSet = true;
+       m_productDescriptionHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
     if(!offeringTypeNode.IsNull())
     {
       m_offeringType = Aws::Utils::Xml::DecodeEscapedXmlText(offeringTypeNode.GetText());
       m_offeringTypeHasBeenSet = true;
+       m_offeringTypeHasBeenSet = true;
     }
     XmlNode recurringChargesNode = resultNode.FirstChild("RecurringCharges");
     if(!recurringChargesNode.IsNull())
     {
       XmlNode recurringChargesMember = recurringChargesNode.FirstChild("RecurringCharge");
+      m_recurringChargesHasBeenSet = !recurringChargesMember.IsNull();
       while(!recurringChargesMember.IsNull())
       {
         m_recurringCharges.push_back(recurringChargesMember);
         recurringChargesMember = recurringChargesMember.NextNode("RecurringCharge");
       }
 
-      m_recurringChargesHasBeenSet = true;
+       m_recurringChargesHasBeenSet = true;
     }
   }
 

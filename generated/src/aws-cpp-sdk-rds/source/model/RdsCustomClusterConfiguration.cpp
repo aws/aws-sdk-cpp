@@ -20,16 +20,7 @@ namespace RDS
 namespace Model
 {
 
-RdsCustomClusterConfiguration::RdsCustomClusterConfiguration() : 
-    m_interconnectSubnetIdHasBeenSet(false),
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_replicaMode(ReplicaMode::NOT_SET),
-    m_replicaModeHasBeenSet(false)
-{
-}
-
 RdsCustomClusterConfiguration::RdsCustomClusterConfiguration(const XmlNode& xmlNode)
-  : RdsCustomClusterConfiguration()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ RdsCustomClusterConfiguration& RdsCustomClusterConfiguration::operator =(const X
     {
       m_interconnectSubnetId = Aws::Utils::Xml::DecodeEscapedXmlText(interconnectSubnetIdNode.GetText());
       m_interconnectSubnetIdHasBeenSet = true;
+       m_interconnectSubnetIdHasBeenSet = true;
     }
     XmlNode transitGatewayMulticastDomainIdNode = resultNode.FirstChild("TransitGatewayMulticastDomainId");
     if(!transitGatewayMulticastDomainIdNode.IsNull())
     {
       m_transitGatewayMulticastDomainId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayMulticastDomainIdNode.GetText());
       m_transitGatewayMulticastDomainIdHasBeenSet = true;
+       m_transitGatewayMulticastDomainIdHasBeenSet = true;
     }
     XmlNode replicaModeNode = resultNode.FirstChild("ReplicaMode");
     if(!replicaModeNode.IsNull())
     {
-      m_replicaMode = ReplicaModeMapper::GetReplicaModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicaModeNode.GetText()).c_str()).c_str());
+      m_replicaMode = ReplicaModeMapper::GetReplicaModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicaModeNode.GetText()).c_str()));
       m_replicaModeHasBeenSet = true;
+       m_replicaModeHasBeenSet = true;
     }
   }
 

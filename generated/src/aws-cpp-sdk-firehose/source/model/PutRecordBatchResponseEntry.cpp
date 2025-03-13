@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-PutRecordBatchResponseEntry::PutRecordBatchResponseEntry() : 
-    m_recordIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 PutRecordBatchResponseEntry::PutRecordBatchResponseEntry(JsonView jsonValue)
-  : PutRecordBatchResponseEntry()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PutRecordBatchResponseEntry& PutRecordBatchResponseEntry::operator =(JsonView js
   if(jsonValue.ValueExists("RecordId"))
   {
     m_recordId = jsonValue.GetString("RecordId");
-
     m_recordIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

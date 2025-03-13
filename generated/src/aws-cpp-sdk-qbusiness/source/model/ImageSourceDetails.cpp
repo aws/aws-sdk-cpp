@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ImageSourceDetails::ImageSourceDetails() : 
-    m_mediaIdHasBeenSet(false),
-    m_mediaMimeTypeHasBeenSet(false)
-{
-}
-
 ImageSourceDetails::ImageSourceDetails(JsonView jsonValue)
-  : ImageSourceDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ImageSourceDetails& ImageSourceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("mediaId"))
   {
     m_mediaId = jsonValue.GetString("mediaId");
-
     m_mediaIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaMimeType"))
   {
     m_mediaMimeType = jsonValue.GetString("mediaMimeType");
-
     m_mediaMimeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

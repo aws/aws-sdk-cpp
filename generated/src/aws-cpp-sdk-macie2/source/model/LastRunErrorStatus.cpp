@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-LastRunErrorStatus::LastRunErrorStatus() : 
-    m_code(LastRunErrorStatusCode::NOT_SET),
-    m_codeHasBeenSet(false)
-{
-}
-
 LastRunErrorStatus::LastRunErrorStatus(JsonView jsonValue)
-  : LastRunErrorStatus()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LastRunErrorStatus& LastRunErrorStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = LastRunErrorStatusCodeMapper::GetLastRunErrorStatusCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

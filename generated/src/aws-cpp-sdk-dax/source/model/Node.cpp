@@ -18,18 +18,7 @@ namespace DAX
 namespace Model
 {
 
-Node::Node() : 
-    m_nodeIdHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_nodeCreateTimeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_nodeStatusHasBeenSet(false),
-    m_parameterGroupStatusHasBeenSet(false)
-{
-}
-
 Node::Node(JsonView jsonValue)
-  : Node()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ Node& Node::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NodeId"))
   {
     m_nodeId = jsonValue.GetString("NodeId");
-
     m_nodeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetObject("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeCreateTime"))
   {
     m_nodeCreateTime = jsonValue.GetDouble("NodeCreateTime");
-
     m_nodeCreateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeStatus"))
   {
     m_nodeStatus = jsonValue.GetString("NodeStatus");
-
     m_nodeStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterGroupStatus"))
   {
     m_parameterGroupStatus = jsonValue.GetString("ParameterGroupStatus");
-
     m_parameterGroupStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetStagesRequest::GetStagesRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetStagesRequest::SerializePayload() const
 {
   return {};

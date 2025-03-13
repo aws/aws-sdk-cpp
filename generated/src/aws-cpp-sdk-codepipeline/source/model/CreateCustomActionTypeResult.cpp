@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCustomActionTypeResult::CreateCustomActionTypeResult()
-{
-}
-
 CreateCustomActionTypeResult::CreateCustomActionTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ CreateCustomActionTypeResult& CreateCustomActionTypeResult::operator =(const Aws
   if(jsonValue.ValueExists("actionType"))
   {
     m_actionType = jsonValue.GetObject("actionType");
-
+    m_actionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -42,14 +37,15 @@ CreateCustomActionTypeResult& CreateCustomActionTypeResult::operator =(const Aws
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

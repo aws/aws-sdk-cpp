@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-FieldLevelEncryptionSummary::FieldLevelEncryptionSummary() : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_queryArgProfileConfigHasBeenSet(false),
-    m_contentTypeProfileConfigHasBeenSet(false)
-{
-}
-
 FieldLevelEncryptionSummary::FieldLevelEncryptionSummary(const XmlNode& xmlNode)
-  : FieldLevelEncryptionSummary()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ FieldLevelEncryptionSummary& FieldLevelEncryptionSummary::operator =(const XmlNo
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
+       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
     XmlNode queryArgProfileConfigNode = resultNode.FirstChild("QueryArgProfileConfig");
     if(!queryArgProfileConfigNode.IsNull())
     {
       m_queryArgProfileConfig = queryArgProfileConfigNode;
       m_queryArgProfileConfigHasBeenSet = true;
+       m_queryArgProfileConfigHasBeenSet = true;
     }
     XmlNode contentTypeProfileConfigNode = resultNode.FirstChild("ContentTypeProfileConfig");
     if(!contentTypeProfileConfigNode.IsNull())
     {
       m_contentTypeProfileConfig = contentTypeProfileConfigNode;
       m_contentTypeProfileConfigHasBeenSet = true;
+       m_contentTypeProfileConfigHasBeenSet = true;
     }
   }
 

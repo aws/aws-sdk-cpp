@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-IotEventsAction::IotEventsAction() : 
-    m_inputNameHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_batchMode(false),
-    m_batchModeHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 IotEventsAction::IotEventsAction(JsonView jsonValue)
-  : IotEventsAction()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ IotEventsAction& IotEventsAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputName"))
   {
     m_inputName = jsonValue.GetString("inputName");
-
     m_inputNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messageId"))
   {
     m_messageId = jsonValue.GetString("messageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchMode"))
   {
     m_batchMode = jsonValue.GetBool("batchMode");
-
     m_batchModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

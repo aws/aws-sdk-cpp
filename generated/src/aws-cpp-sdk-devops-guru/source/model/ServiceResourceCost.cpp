@@ -18,21 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-ServiceResourceCost::ServiceResourceCost() : 
-    m_typeHasBeenSet(false),
-    m_state(CostEstimationServiceResourceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_unitCost(0.0),
-    m_unitCostHasBeenSet(false),
-    m_cost(0.0),
-    m_costHasBeenSet(false)
-{
-}
-
 ServiceResourceCost::ServiceResourceCost(JsonView jsonValue)
-  : ServiceResourceCost()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ ServiceResourceCost& ServiceResourceCost::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = CostEstimationServiceResourceStateMapper::GetCostEstimationServiceResourceStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnitCost"))
   {
     m_unitCost = jsonValue.GetDouble("UnitCost");
-
     m_unitCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cost"))
   {
     m_cost = jsonValue.GetDouble("Cost");
-
     m_costHasBeenSet = true;
   }
-
   return *this;
 }
 

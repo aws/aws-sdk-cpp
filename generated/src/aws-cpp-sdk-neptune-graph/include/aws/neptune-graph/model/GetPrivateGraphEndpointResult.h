@@ -29,7 +29,7 @@ namespace Model
   class GetPrivateGraphEndpointResult
   {
   public:
-    AWS_NEPTUNEGRAPH_API GetPrivateGraphEndpointResult();
+    AWS_NEPTUNEGRAPH_API GetPrivateGraphEndpointResult() = default;
     AWS_NEPTUNEGRAPH_API GetPrivateGraphEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEGRAPH_API GetPrivateGraphEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,74 +38,70 @@ namespace Model
     /**
      * <p>The ID of the VPC where the private endpoint is located.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcId.assign(value); }
-    inline GetPrivateGraphEndpointResult& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline GetPrivateGraphEndpointResult& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline GetPrivateGraphEndpointResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    GetPrivateGraphEndpointResult& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subnet IDs involved.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIds = std::move(value); }
-    inline GetPrivateGraphEndpointResult& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline GetPrivateGraphEndpointResult& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline GetPrivateGraphEndpointResult& AddSubnetIds(const Aws::String& value) { m_subnetIds.push_back(value); return *this; }
-    inline GetPrivateGraphEndpointResult& AddSubnetIds(Aws::String&& value) { m_subnetIds.push_back(std::move(value)); return *this; }
-    inline GetPrivateGraphEndpointResult& AddSubnetIds(const char* value) { m_subnetIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    GetPrivateGraphEndpointResult& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    GetPrivateGraphEndpointResult& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The current status of the private endpoint.</p>
      */
-    inline const PrivateGraphEndpointStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const PrivateGraphEndpointStatus& value) { m_status = value; }
-    inline void SetStatus(PrivateGraphEndpointStatus&& value) { m_status = std::move(value); }
-    inline GetPrivateGraphEndpointResult& WithStatus(const PrivateGraphEndpointStatus& value) { SetStatus(value); return *this;}
-    inline GetPrivateGraphEndpointResult& WithStatus(PrivateGraphEndpointStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline PrivateGraphEndpointStatus GetStatus() const { return m_status; }
+    inline void SetStatus(PrivateGraphEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetPrivateGraphEndpointResult& WithStatus(PrivateGraphEndpointStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the private endpoint.</p>
      */
-    inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
-    inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointId = value; }
-    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointId = std::move(value); }
-    inline void SetVpcEndpointId(const char* value) { m_vpcEndpointId.assign(value); }
-    inline GetPrivateGraphEndpointResult& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
-    inline GetPrivateGraphEndpointResult& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
-    inline GetPrivateGraphEndpointResult& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
+    inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
+    template<typename VpcEndpointIdT = Aws::String>
+    void SetVpcEndpointId(VpcEndpointIdT&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::forward<VpcEndpointIdT>(value); }
+    template<typename VpcEndpointIdT = Aws::String>
+    GetPrivateGraphEndpointResult& WithVpcEndpointId(VpcEndpointIdT&& value) { SetVpcEndpointId(std::forward<VpcEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPrivateGraphEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPrivateGraphEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPrivateGraphEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPrivateGraphEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
+    bool m_subnetIdsHasBeenSet = false;
 
-    PrivateGraphEndpointStatus m_status;
+    PrivateGraphEndpointStatus m_status{PrivateGraphEndpointStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_vpcEndpointId;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

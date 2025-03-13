@@ -18,16 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlansUtilizationByTime::SavingsPlansUtilizationByTime() : 
-    m_timePeriodHasBeenSet(false),
-    m_utilizationHasBeenSet(false),
-    m_savingsHasBeenSet(false),
-    m_amortizedCommitmentHasBeenSet(false)
-{
-}
-
 SavingsPlansUtilizationByTime::SavingsPlansUtilizationByTime(JsonView jsonValue)
-  : SavingsPlansUtilizationByTime()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SavingsPlansUtilizationByTime& SavingsPlansUtilizationByTime::operator =(JsonVie
   if(jsonValue.ValueExists("TimePeriod"))
   {
     m_timePeriod = jsonValue.GetObject("TimePeriod");
-
     m_timePeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Utilization"))
   {
     m_utilization = jsonValue.GetObject("Utilization");
-
     m_utilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Savings"))
   {
     m_savings = jsonValue.GetObject("Savings");
-
     m_savingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmortizedCommitment"))
   {
     m_amortizedCommitment = jsonValue.GetObject("AmortizedCommitment");
-
     m_amortizedCommitmentHasBeenSet = true;
   }
-
   return *this;
 }
 

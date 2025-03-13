@@ -34,7 +34,7 @@ namespace Model
   class ContainerDistributionConfiguration
   {
   public:
-    AWS_IMAGEBUILDER_API ContainerDistributionConfiguration();
+    AWS_IMAGEBUILDER_API ContainerDistributionConfiguration() = default;
     AWS_IMAGEBUILDER_API ContainerDistributionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API ContainerDistributionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,41 +44,38 @@ namespace Model
     /**
      * <p>The description of the container distribution configuration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ContainerDistributionConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ContainerDistributionConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ContainerDistributionConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ContainerDistributionConfiguration& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags that are attached to the container distribution configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetContainerTags() const{ return m_containerTags; }
+    inline const Aws::Vector<Aws::String>& GetContainerTags() const { return m_containerTags; }
     inline bool ContainerTagsHasBeenSet() const { return m_containerTagsHasBeenSet; }
-    inline void SetContainerTags(const Aws::Vector<Aws::String>& value) { m_containerTagsHasBeenSet = true; m_containerTags = value; }
-    inline void SetContainerTags(Aws::Vector<Aws::String>&& value) { m_containerTagsHasBeenSet = true; m_containerTags = std::move(value); }
-    inline ContainerDistributionConfiguration& WithContainerTags(const Aws::Vector<Aws::String>& value) { SetContainerTags(value); return *this;}
-    inline ContainerDistributionConfiguration& WithContainerTags(Aws::Vector<Aws::String>&& value) { SetContainerTags(std::move(value)); return *this;}
-    inline ContainerDistributionConfiguration& AddContainerTags(const Aws::String& value) { m_containerTagsHasBeenSet = true; m_containerTags.push_back(value); return *this; }
-    inline ContainerDistributionConfiguration& AddContainerTags(Aws::String&& value) { m_containerTagsHasBeenSet = true; m_containerTags.push_back(std::move(value)); return *this; }
-    inline ContainerDistributionConfiguration& AddContainerTags(const char* value) { m_containerTagsHasBeenSet = true; m_containerTags.push_back(value); return *this; }
+    template<typename ContainerTagsT = Aws::Vector<Aws::String>>
+    void SetContainerTags(ContainerTagsT&& value) { m_containerTagsHasBeenSet = true; m_containerTags = std::forward<ContainerTagsT>(value); }
+    template<typename ContainerTagsT = Aws::Vector<Aws::String>>
+    ContainerDistributionConfiguration& WithContainerTags(ContainerTagsT&& value) { SetContainerTags(std::forward<ContainerTagsT>(value)); return *this;}
+    template<typename ContainerTagsT = Aws::String>
+    ContainerDistributionConfiguration& AddContainerTags(ContainerTagsT&& value) { m_containerTagsHasBeenSet = true; m_containerTags.emplace_back(std::forward<ContainerTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The destination repository for the container distribution configuration.</p>
      */
-    inline const TargetContainerRepository& GetTargetRepository() const{ return m_targetRepository; }
+    inline const TargetContainerRepository& GetTargetRepository() const { return m_targetRepository; }
     inline bool TargetRepositoryHasBeenSet() const { return m_targetRepositoryHasBeenSet; }
-    inline void SetTargetRepository(const TargetContainerRepository& value) { m_targetRepositoryHasBeenSet = true; m_targetRepository = value; }
-    inline void SetTargetRepository(TargetContainerRepository&& value) { m_targetRepositoryHasBeenSet = true; m_targetRepository = std::move(value); }
-    inline ContainerDistributionConfiguration& WithTargetRepository(const TargetContainerRepository& value) { SetTargetRepository(value); return *this;}
-    inline ContainerDistributionConfiguration& WithTargetRepository(TargetContainerRepository&& value) { SetTargetRepository(std::move(value)); return *this;}
+    template<typename TargetRepositoryT = TargetContainerRepository>
+    void SetTargetRepository(TargetRepositoryT&& value) { m_targetRepositoryHasBeenSet = true; m_targetRepository = std::forward<TargetRepositoryT>(value); }
+    template<typename TargetRepositoryT = TargetContainerRepository>
+    ContainerDistributionConfiguration& WithTargetRepository(TargetRepositoryT&& value) { SetTargetRepository(std::forward<TargetRepositoryT>(value)); return *this;}
     ///@}
   private:
 

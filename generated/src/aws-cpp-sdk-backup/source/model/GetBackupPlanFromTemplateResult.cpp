@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBackupPlanFromTemplateResult::GetBackupPlanFromTemplateResult()
-{
-}
-
 GetBackupPlanFromTemplateResult::GetBackupPlanFromTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetBackupPlanFromTemplateResult& GetBackupPlanFromTemplateResult::operator =(con
   if(jsonValue.ValueExists("BackupPlanDocument"))
   {
     m_backupPlanDocument = jsonValue.GetObject("BackupPlanDocument");
-
+    m_backupPlanDocumentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

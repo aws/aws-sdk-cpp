@@ -12,16 +12,6 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDevEnvironmentSessionsRequest::ListDevEnvironmentSessionsRequest() : 
-    m_spaceNameHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_devEnvironmentIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDevEnvironmentSessionsRequest::SerializePayload() const
 {
   JsonValue payload;

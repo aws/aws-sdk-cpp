@@ -18,37 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Visual::Visual() : 
-    m_tableVisualHasBeenSet(false),
-    m_pivotTableVisualHasBeenSet(false),
-    m_barChartVisualHasBeenSet(false),
-    m_kPIVisualHasBeenSet(false),
-    m_pieChartVisualHasBeenSet(false),
-    m_gaugeChartVisualHasBeenSet(false),
-    m_lineChartVisualHasBeenSet(false),
-    m_heatMapVisualHasBeenSet(false),
-    m_treeMapVisualHasBeenSet(false),
-    m_geospatialMapVisualHasBeenSet(false),
-    m_filledMapVisualHasBeenSet(false),
-    m_layerMapVisualHasBeenSet(false),
-    m_funnelChartVisualHasBeenSet(false),
-    m_scatterPlotVisualHasBeenSet(false),
-    m_comboChartVisualHasBeenSet(false),
-    m_boxPlotVisualHasBeenSet(false),
-    m_waterfallVisualHasBeenSet(false),
-    m_histogramVisualHasBeenSet(false),
-    m_wordCloudVisualHasBeenSet(false),
-    m_insightVisualHasBeenSet(false),
-    m_sankeyDiagramVisualHasBeenSet(false),
-    m_customContentVisualHasBeenSet(false),
-    m_emptyVisualHasBeenSet(false),
-    m_radarChartVisualHasBeenSet(false),
-    m_pluginVisualHasBeenSet(false)
-{
-}
-
 Visual::Visual(JsonView jsonValue)
-  : Visual()
 {
   *this = jsonValue;
 }
@@ -58,178 +28,128 @@ Visual& Visual::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TableVisual"))
   {
     m_tableVisual = jsonValue.GetObject("TableVisual");
-
     m_tableVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PivotTableVisual"))
   {
     m_pivotTableVisual = jsonValue.GetObject("PivotTableVisual");
-
     m_pivotTableVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BarChartVisual"))
   {
     m_barChartVisual = jsonValue.GetObject("BarChartVisual");
-
     m_barChartVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KPIVisual"))
   {
     m_kPIVisual = jsonValue.GetObject("KPIVisual");
-
     m_kPIVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PieChartVisual"))
   {
     m_pieChartVisual = jsonValue.GetObject("PieChartVisual");
-
     m_pieChartVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GaugeChartVisual"))
   {
     m_gaugeChartVisual = jsonValue.GetObject("GaugeChartVisual");
-
     m_gaugeChartVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineChartVisual"))
   {
     m_lineChartVisual = jsonValue.GetObject("LineChartVisual");
-
     m_lineChartVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeatMapVisual"))
   {
     m_heatMapVisual = jsonValue.GetObject("HeatMapVisual");
-
     m_heatMapVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TreeMapVisual"))
   {
     m_treeMapVisual = jsonValue.GetObject("TreeMapVisual");
-
     m_treeMapVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeospatialMapVisual"))
   {
     m_geospatialMapVisual = jsonValue.GetObject("GeospatialMapVisual");
-
     m_geospatialMapVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilledMapVisual"))
   {
     m_filledMapVisual = jsonValue.GetObject("FilledMapVisual");
-
     m_filledMapVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LayerMapVisual"))
   {
     m_layerMapVisual = jsonValue.GetObject("LayerMapVisual");
-
     m_layerMapVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunnelChartVisual"))
   {
     m_funnelChartVisual = jsonValue.GetObject("FunnelChartVisual");
-
     m_funnelChartVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScatterPlotVisual"))
   {
     m_scatterPlotVisual = jsonValue.GetObject("ScatterPlotVisual");
-
     m_scatterPlotVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComboChartVisual"))
   {
     m_comboChartVisual = jsonValue.GetObject("ComboChartVisual");
-
     m_comboChartVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BoxPlotVisual"))
   {
     m_boxPlotVisual = jsonValue.GetObject("BoxPlotVisual");
-
     m_boxPlotVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaterfallVisual"))
   {
     m_waterfallVisual = jsonValue.GetObject("WaterfallVisual");
-
     m_waterfallVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HistogramVisual"))
   {
     m_histogramVisual = jsonValue.GetObject("HistogramVisual");
-
     m_histogramVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WordCloudVisual"))
   {
     m_wordCloudVisual = jsonValue.GetObject("WordCloudVisual");
-
     m_wordCloudVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsightVisual"))
   {
     m_insightVisual = jsonValue.GetObject("InsightVisual");
-
     m_insightVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SankeyDiagramVisual"))
   {
     m_sankeyDiagramVisual = jsonValue.GetObject("SankeyDiagramVisual");
-
     m_sankeyDiagramVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomContentVisual"))
   {
     m_customContentVisual = jsonValue.GetObject("CustomContentVisual");
-
     m_customContentVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmptyVisual"))
   {
     m_emptyVisual = jsonValue.GetObject("EmptyVisual");
-
     m_emptyVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RadarChartVisual"))
   {
     m_radarChartVisual = jsonValue.GetObject("RadarChartVisual");
-
     m_radarChartVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PluginVisual"))
   {
     m_pluginVisual = jsonValue.GetObject("PluginVisual");
-
     m_pluginVisualHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,23 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-HlsSettings::HlsSettings() : 
-    m_audioGroupIdHasBeenSet(false),
-    m_audioOnlyContainer(HlsAudioOnlyContainer::NOT_SET),
-    m_audioOnlyContainerHasBeenSet(false),
-    m_audioRenditionSetsHasBeenSet(false),
-    m_audioTrackType(HlsAudioTrackType::NOT_SET),
-    m_audioTrackTypeHasBeenSet(false),
-    m_descriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag::NOT_SET),
-    m_descriptiveVideoServiceFlagHasBeenSet(false),
-    m_iFrameOnlyManifest(HlsIFrameOnlyManifest::NOT_SET),
-    m_iFrameOnlyManifestHasBeenSet(false),
-    m_segmentModifierHasBeenSet(false)
-{
-}
-
 HlsSettings::HlsSettings(JsonView jsonValue)
-  : HlsSettings()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ HlsSettings& HlsSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audioGroupId"))
   {
     m_audioGroupId = jsonValue.GetString("audioGroupId");
-
     m_audioGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioOnlyContainer"))
   {
     m_audioOnlyContainer = HlsAudioOnlyContainerMapper::GetHlsAudioOnlyContainerForName(jsonValue.GetString("audioOnlyContainer"));
-
     m_audioOnlyContainerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioRenditionSets"))
   {
     m_audioRenditionSets = jsonValue.GetString("audioRenditionSets");
-
     m_audioRenditionSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioTrackType"))
   {
     m_audioTrackType = HlsAudioTrackTypeMapper::GetHlsAudioTrackTypeForName(jsonValue.GetString("audioTrackType"));
-
     m_audioTrackTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("descriptiveVideoServiceFlag"))
   {
     m_descriptiveVideoServiceFlag = HlsDescriptiveVideoServiceFlagMapper::GetHlsDescriptiveVideoServiceFlagForName(jsonValue.GetString("descriptiveVideoServiceFlag"));
-
     m_descriptiveVideoServiceFlagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iFrameOnlyManifest"))
   {
     m_iFrameOnlyManifest = HlsIFrameOnlyManifestMapper::GetHlsIFrameOnlyManifestForName(jsonValue.GetString("iFrameOnlyManifest"));
-
     m_iFrameOnlyManifestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentModifier"))
   {
     m_segmentModifier = jsonValue.GetString("segmentModifier");
-
     m_segmentModifierHasBeenSet = true;
   }
-
   return *this;
 }
 

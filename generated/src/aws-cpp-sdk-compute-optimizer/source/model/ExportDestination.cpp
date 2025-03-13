@@ -18,13 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ExportDestination::ExportDestination() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 ExportDestination::ExportDestination(JsonView jsonValue)
-  : ExportDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExportDestination& ExportDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

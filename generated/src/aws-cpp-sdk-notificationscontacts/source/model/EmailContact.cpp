@@ -18,19 +18,7 @@ namespace NotificationsContacts
 namespace Model
 {
 
-EmailContact::EmailContact() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_status(EmailContactStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 EmailContact::EmailContact(JsonView jsonValue)
-  : EmailContact()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ EmailContact& EmailContact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("address"))
   {
     m_address = jsonValue.GetString("address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = EmailContactStatusMapper::GetEmailContactStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

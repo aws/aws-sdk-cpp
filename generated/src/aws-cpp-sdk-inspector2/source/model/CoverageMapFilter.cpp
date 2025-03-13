@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CoverageMapFilter::CoverageMapFilter() : 
-    m_comparison(CoverageMapComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 CoverageMapFilter::CoverageMapFilter(JsonView jsonValue)
-  : CoverageMapFilter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CoverageMapFilter& CoverageMapFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("comparison"))
   {
     m_comparison = CoverageMapComparisonMapper::GetCoverageMapComparisonForName(jsonValue.GetString("comparison"));
-
     m_comparisonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

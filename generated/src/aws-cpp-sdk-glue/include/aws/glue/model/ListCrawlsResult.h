@@ -29,7 +29,7 @@ namespace Model
   class ListCrawlsResult
   {
   public:
-    AWS_GLUE_API ListCrawlsResult();
+    AWS_GLUE_API ListCrawlsResult() = default;
     AWS_GLUE_API ListCrawlsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API ListCrawlsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs
      * that meet your criteria.</p>
      */
-    inline const Aws::Vector<CrawlerHistory>& GetCrawls() const{ return m_crawls; }
-    inline void SetCrawls(const Aws::Vector<CrawlerHistory>& value) { m_crawls = value; }
-    inline void SetCrawls(Aws::Vector<CrawlerHistory>&& value) { m_crawls = std::move(value); }
-    inline ListCrawlsResult& WithCrawls(const Aws::Vector<CrawlerHistory>& value) { SetCrawls(value); return *this;}
-    inline ListCrawlsResult& WithCrawls(Aws::Vector<CrawlerHistory>&& value) { SetCrawls(std::move(value)); return *this;}
-    inline ListCrawlsResult& AddCrawls(const CrawlerHistory& value) { m_crawls.push_back(value); return *this; }
-    inline ListCrawlsResult& AddCrawls(CrawlerHistory&& value) { m_crawls.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CrawlerHistory>& GetCrawls() const { return m_crawls; }
+    template<typename CrawlsT = Aws::Vector<CrawlerHistory>>
+    void SetCrawls(CrawlsT&& value) { m_crawlsHasBeenSet = true; m_crawls = std::forward<CrawlsT>(value); }
+    template<typename CrawlsT = Aws::Vector<CrawlerHistory>>
+    ListCrawlsResult& WithCrawls(CrawlsT&& value) { SetCrawls(std::forward<CrawlsT>(value)); return *this;}
+    template<typename CrawlsT = CrawlerHistory>
+    ListCrawlsResult& AddCrawls(CrawlsT&& value) { m_crawlsHasBeenSet = true; m_crawls.emplace_back(std::forward<CrawlsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>A continuation token for paginating the returned list of tokens, returned if
      * the current segment of the list is not the last.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCrawlsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCrawlsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCrawlsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCrawlsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCrawlsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCrawlsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCrawlsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCrawlsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CrawlerHistory> m_crawls;
+    bool m_crawlsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

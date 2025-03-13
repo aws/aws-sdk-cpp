@@ -18,23 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ResourceConfig::ResourceConfig() : 
-    m_instanceType(TrainingInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_keepAlivePeriodInSeconds(0),
-    m_keepAlivePeriodInSecondsHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false),
-    m_trainingPlanArnHasBeenSet(false)
-{
-}
-
 ResourceConfig::ResourceConfig(JsonView jsonValue)
-  : ResourceConfig()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = TrainingInstanceTypeMapper::GetTrainingInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSizeInGB"))
   {
     m_volumeSizeInGB = jsonValue.GetInteger("VolumeSizeInGB");
-
     m_volumeSizeInGBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeKmsKeyId"))
   {
     m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
-
     m_volumeKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeepAlivePeriodInSeconds"))
   {
     m_keepAlivePeriodInSeconds = jsonValue.GetInteger("KeepAlivePeriodInSeconds");
-
     m_keepAlivePeriodInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceGroups"))
   {
     Aws::Utils::Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
@@ -85,14 +59,11 @@ ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
     }
     m_instanceGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingPlanArn"))
   {
     m_trainingPlanArn = jsonValue.GetString("TrainingPlanArn");
-
     m_trainingPlanArnHasBeenSet = true;
   }
-
   return *this;
 }
 

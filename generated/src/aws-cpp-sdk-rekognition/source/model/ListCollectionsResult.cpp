@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCollectionsResult::ListCollectionsResult()
-{
-}
-
 ListCollectionsResult::ListCollectionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,13 @@ ListCollectionsResult& ListCollectionsResult::operator =(const Aws::AmazonWebSer
     {
       m_collectionIds.push_back(collectionIdsJsonList[collectionIdsIndex].AsString());
     }
+    m_collectionIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceModelVersions"))
   {
     Aws::Utils::Array<JsonView> faceModelVersionsJsonList = jsonValue.GetArray("FaceModelVersions");
@@ -51,14 +46,15 @@ ListCollectionsResult& ListCollectionsResult::operator =(const Aws::AmazonWebSer
     {
       m_faceModelVersions.push_back(faceModelVersionsJsonList[faceModelVersionsIndex].AsString());
     }
+    m_faceModelVersionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

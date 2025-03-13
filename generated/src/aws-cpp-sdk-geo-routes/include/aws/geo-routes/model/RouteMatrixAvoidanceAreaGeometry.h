@@ -32,7 +32,7 @@ namespace Model
   class RouteMatrixAvoidanceAreaGeometry
   {
   public:
-    AWS_GEOROUTES_API RouteMatrixAvoidanceAreaGeometry();
+    AWS_GEOROUTES_API RouteMatrixAvoidanceAreaGeometry() = default;
     AWS_GEOROUTES_API RouteMatrixAvoidanceAreaGeometry(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMatrixAvoidanceAreaGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * box; the second pair represents the X and Y coordinates (longitude and latitude)
      * of the northeast corner.</p>
      */
-    inline const Aws::Vector<double>& GetBoundingBox() const{ return m_boundingBox; }
+    inline const Aws::Vector<double>& GetBoundingBox() const { return m_boundingBox; }
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-    inline void SetBoundingBox(const Aws::Vector<double>& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-    inline void SetBoundingBox(Aws::Vector<double>&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-    inline RouteMatrixAvoidanceAreaGeometry& WithBoundingBox(const Aws::Vector<double>& value) { SetBoundingBox(value); return *this;}
-    inline RouteMatrixAvoidanceAreaGeometry& WithBoundingBox(Aws::Vector<double>&& value) { SetBoundingBox(std::move(value)); return *this;}
+    template<typename BoundingBoxT = Aws::Vector<double>>
+    void SetBoundingBox(BoundingBoxT&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::forward<BoundingBoxT>(value); }
+    template<typename BoundingBoxT = Aws::Vector<double>>
+    RouteMatrixAvoidanceAreaGeometry& WithBoundingBox(BoundingBoxT&& value) { SetBoundingBox(std::forward<BoundingBoxT>(value)); return *this;}
     inline RouteMatrixAvoidanceAreaGeometry& AddBoundingBox(double value) { m_boundingBoxHasBeenSet = true; m_boundingBox.push_back(value); return *this; }
     ///@}
 
@@ -58,14 +58,14 @@ namespace Model
     /**
      * <p>Geometry defined as a polygon with only one linear ring.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& GetPolygon() const{ return m_polygon; }
+    inline const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& GetPolygon() const { return m_polygon; }
     inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
-    inline void SetPolygon(const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& value) { m_polygonHasBeenSet = true; m_polygon = value; }
-    inline void SetPolygon(Aws::Vector<Aws::Vector<Aws::Vector<double>>>&& value) { m_polygonHasBeenSet = true; m_polygon = std::move(value); }
-    inline RouteMatrixAvoidanceAreaGeometry& WithPolygon(const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& value) { SetPolygon(value); return *this;}
-    inline RouteMatrixAvoidanceAreaGeometry& WithPolygon(Aws::Vector<Aws::Vector<Aws::Vector<double>>>&& value) { SetPolygon(std::move(value)); return *this;}
-    inline RouteMatrixAvoidanceAreaGeometry& AddPolygon(const Aws::Vector<Aws::Vector<double>>& value) { m_polygonHasBeenSet = true; m_polygon.push_back(value); return *this; }
-    inline RouteMatrixAvoidanceAreaGeometry& AddPolygon(Aws::Vector<Aws::Vector<double>>&& value) { m_polygonHasBeenSet = true; m_polygon.push_back(std::move(value)); return *this; }
+    template<typename PolygonT = Aws::Vector<Aws::Vector<Aws::Vector<double>>>>
+    void SetPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon = std::forward<PolygonT>(value); }
+    template<typename PolygonT = Aws::Vector<Aws::Vector<Aws::Vector<double>>>>
+    RouteMatrixAvoidanceAreaGeometry& WithPolygon(PolygonT&& value) { SetPolygon(std::forward<PolygonT>(value)); return *this;}
+    template<typename PolygonT = Aws::Vector<Aws::Vector<double>>>
+    RouteMatrixAvoidanceAreaGeometry& AddPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon.emplace_back(std::forward<PolygonT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,15 +76,14 @@ namespace Model
      * encoding, see <a
      * href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPolylinePolygon() const{ return m_polylinePolygon; }
+    inline const Aws::Vector<Aws::String>& GetPolylinePolygon() const { return m_polylinePolygon; }
     inline bool PolylinePolygonHasBeenSet() const { return m_polylinePolygonHasBeenSet; }
-    inline void SetPolylinePolygon(const Aws::Vector<Aws::String>& value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon = value; }
-    inline void SetPolylinePolygon(Aws::Vector<Aws::String>&& value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon = std::move(value); }
-    inline RouteMatrixAvoidanceAreaGeometry& WithPolylinePolygon(const Aws::Vector<Aws::String>& value) { SetPolylinePolygon(value); return *this;}
-    inline RouteMatrixAvoidanceAreaGeometry& WithPolylinePolygon(Aws::Vector<Aws::String>&& value) { SetPolylinePolygon(std::move(value)); return *this;}
-    inline RouteMatrixAvoidanceAreaGeometry& AddPolylinePolygon(const Aws::String& value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon.push_back(value); return *this; }
-    inline RouteMatrixAvoidanceAreaGeometry& AddPolylinePolygon(Aws::String&& value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon.push_back(std::move(value)); return *this; }
-    inline RouteMatrixAvoidanceAreaGeometry& AddPolylinePolygon(const char* value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon.push_back(value); return *this; }
+    template<typename PolylinePolygonT = Aws::Vector<Aws::String>>
+    void SetPolylinePolygon(PolylinePolygonT&& value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon = std::forward<PolylinePolygonT>(value); }
+    template<typename PolylinePolygonT = Aws::Vector<Aws::String>>
+    RouteMatrixAvoidanceAreaGeometry& WithPolylinePolygon(PolylinePolygonT&& value) { SetPolylinePolygon(std::forward<PolylinePolygonT>(value)); return *this;}
+    template<typename PolylinePolygonT = Aws::String>
+    RouteMatrixAvoidanceAreaGeometry& AddPolylinePolygon(PolylinePolygonT&& value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon.emplace_back(std::forward<PolylinePolygonT>(value)); return *this; }
     ///@}
   private:
 

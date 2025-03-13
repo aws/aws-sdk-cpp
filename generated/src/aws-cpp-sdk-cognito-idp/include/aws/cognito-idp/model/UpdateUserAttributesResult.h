@@ -35,7 +35,7 @@ namespace Model
   class UpdateUserAttributesResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API UpdateUserAttributesResult();
+    AWS_COGNITOIDENTITYPROVIDER_API UpdateUserAttributesResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API UpdateUserAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API UpdateUserAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -52,30 +52,30 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#verifying-when-users-change-their-email-or-phone-number">Verifying
      * when users change their email or phone number</a>.</p>
      */
-    inline const Aws::Vector<CodeDeliveryDetailsType>& GetCodeDeliveryDetailsList() const{ return m_codeDeliveryDetailsList; }
-    inline void SetCodeDeliveryDetailsList(const Aws::Vector<CodeDeliveryDetailsType>& value) { m_codeDeliveryDetailsList = value; }
-    inline void SetCodeDeliveryDetailsList(Aws::Vector<CodeDeliveryDetailsType>&& value) { m_codeDeliveryDetailsList = std::move(value); }
-    inline UpdateUserAttributesResult& WithCodeDeliveryDetailsList(const Aws::Vector<CodeDeliveryDetailsType>& value) { SetCodeDeliveryDetailsList(value); return *this;}
-    inline UpdateUserAttributesResult& WithCodeDeliveryDetailsList(Aws::Vector<CodeDeliveryDetailsType>&& value) { SetCodeDeliveryDetailsList(std::move(value)); return *this;}
-    inline UpdateUserAttributesResult& AddCodeDeliveryDetailsList(const CodeDeliveryDetailsType& value) { m_codeDeliveryDetailsList.push_back(value); return *this; }
-    inline UpdateUserAttributesResult& AddCodeDeliveryDetailsList(CodeDeliveryDetailsType&& value) { m_codeDeliveryDetailsList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CodeDeliveryDetailsType>& GetCodeDeliveryDetailsList() const { return m_codeDeliveryDetailsList; }
+    template<typename CodeDeliveryDetailsListT = Aws::Vector<CodeDeliveryDetailsType>>
+    void SetCodeDeliveryDetailsList(CodeDeliveryDetailsListT&& value) { m_codeDeliveryDetailsListHasBeenSet = true; m_codeDeliveryDetailsList = std::forward<CodeDeliveryDetailsListT>(value); }
+    template<typename CodeDeliveryDetailsListT = Aws::Vector<CodeDeliveryDetailsType>>
+    UpdateUserAttributesResult& WithCodeDeliveryDetailsList(CodeDeliveryDetailsListT&& value) { SetCodeDeliveryDetailsList(std::forward<CodeDeliveryDetailsListT>(value)); return *this;}
+    template<typename CodeDeliveryDetailsListT = CodeDeliveryDetailsType>
+    UpdateUserAttributesResult& AddCodeDeliveryDetailsList(CodeDeliveryDetailsListT&& value) { m_codeDeliveryDetailsListHasBeenSet = true; m_codeDeliveryDetailsList.emplace_back(std::forward<CodeDeliveryDetailsListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateUserAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateUserAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateUserAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateUserAttributesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CodeDeliveryDetailsType> m_codeDeliveryDetailsList;
+    bool m_codeDeliveryDetailsListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

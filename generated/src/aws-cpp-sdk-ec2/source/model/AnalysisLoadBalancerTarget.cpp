@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AnalysisLoadBalancerTarget::AnalysisLoadBalancerTarget() : 
-    m_addressHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 AnalysisLoadBalancerTarget::AnalysisLoadBalancerTarget(const XmlNode& xmlNode)
-  : AnalysisLoadBalancerTarget()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ AnalysisLoadBalancerTarget& AnalysisLoadBalancerTarget::operator =(const XmlNode
     {
       m_address = Aws::Utils::Xml::DecodeEscapedXmlText(addressNode.GetText());
       m_addressHasBeenSet = true;
+       m_addressHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode instanceNode = resultNode.FirstChild("instance");
     if(!instanceNode.IsNull())
     {
       m_instance = instanceNode;
       m_instanceHasBeenSet = true;
+       m_instanceHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
   }
 

@@ -31,7 +31,7 @@ namespace Model
   class KmsException
   {
   public:
-    AWS_ECR_API KmsException();
+    AWS_ECR_API KmsException() = default;
     AWS_ECR_API KmsException(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API KmsException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,28 +39,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline KmsException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline KmsException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline KmsException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    KmsException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error code returned by KMS.</p>
      */
-    inline const Aws::String& GetKmsError() const{ return m_kmsError; }
+    inline const Aws::String& GetKmsError() const { return m_kmsError; }
     inline bool KmsErrorHasBeenSet() const { return m_kmsErrorHasBeenSet; }
-    inline void SetKmsError(const Aws::String& value) { m_kmsErrorHasBeenSet = true; m_kmsError = value; }
-    inline void SetKmsError(Aws::String&& value) { m_kmsErrorHasBeenSet = true; m_kmsError = std::move(value); }
-    inline void SetKmsError(const char* value) { m_kmsErrorHasBeenSet = true; m_kmsError.assign(value); }
-    inline KmsException& WithKmsError(const Aws::String& value) { SetKmsError(value); return *this;}
-    inline KmsException& WithKmsError(Aws::String&& value) { SetKmsError(std::move(value)); return *this;}
-    inline KmsException& WithKmsError(const char* value) { SetKmsError(value); return *this;}
+    template<typename KmsErrorT = Aws::String>
+    void SetKmsError(KmsErrorT&& value) { m_kmsErrorHasBeenSet = true; m_kmsError = std::forward<KmsErrorT>(value); }
+    template<typename KmsErrorT = Aws::String>
+    KmsException& WithKmsError(KmsErrorT&& value) { SetKmsError(std::forward<KmsErrorT>(value)); return *this;}
     ///@}
   private:
 

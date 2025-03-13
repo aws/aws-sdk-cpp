@@ -28,7 +28,7 @@ namespace Model
   class GetChannelMessageStatusResult
   {
   public:
-    AWS_CHIMESDKMESSAGING_API GetChannelMessageStatusResult();
+    AWS_CHIMESDKMESSAGING_API GetChannelMessageStatusResult() = default;
     AWS_CHIMESDKMESSAGING_API GetChannelMessageStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMESSAGING_API GetChannelMessageStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The message status and details.</p>
      */
-    inline const ChannelMessageStatusStructure& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ChannelMessageStatusStructure& value) { m_status = value; }
-    inline void SetStatus(ChannelMessageStatusStructure&& value) { m_status = std::move(value); }
-    inline GetChannelMessageStatusResult& WithStatus(const ChannelMessageStatusStructure& value) { SetStatus(value); return *this;}
-    inline GetChannelMessageStatusResult& WithStatus(ChannelMessageStatusStructure&& value) { SetStatus(std::move(value)); return *this;}
+    inline const ChannelMessageStatusStructure& GetStatus() const { return m_status; }
+    template<typename StatusT = ChannelMessageStatusStructure>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = ChannelMessageStatusStructure>
+    GetChannelMessageStatusResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetChannelMessageStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetChannelMessageStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetChannelMessageStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetChannelMessageStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ChannelMessageStatusStructure m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

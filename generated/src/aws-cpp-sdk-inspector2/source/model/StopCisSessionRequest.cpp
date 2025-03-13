@@ -12,13 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopCisSessionRequest::StopCisSessionRequest() : 
-    m_messageHasBeenSet(false),
-    m_scanJobIdHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false)
-{
-}
-
 Aws::String StopCisSessionRequest::SerializePayload() const
 {
   JsonValue payload;

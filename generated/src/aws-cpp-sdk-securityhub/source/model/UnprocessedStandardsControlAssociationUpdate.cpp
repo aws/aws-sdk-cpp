@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-UnprocessedStandardsControlAssociationUpdate::UnprocessedStandardsControlAssociationUpdate() : 
-    m_standardsControlAssociationUpdateHasBeenSet(false),
-    m_errorCode(UnprocessedErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorReasonHasBeenSet(false)
-{
-}
-
 UnprocessedStandardsControlAssociationUpdate::UnprocessedStandardsControlAssociationUpdate(JsonView jsonValue)
-  : UnprocessedStandardsControlAssociationUpdate()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UnprocessedStandardsControlAssociationUpdate& UnprocessedStandardsControlAssocia
   if(jsonValue.ValueExists("StandardsControlAssociationUpdate"))
   {
     m_standardsControlAssociationUpdate = jsonValue.GetObject("StandardsControlAssociationUpdate");
-
     m_standardsControlAssociationUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = UnprocessedErrorCodeMapper::GetUnprocessedErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorReason"))
   {
     m_errorReason = jsonValue.GetString("ErrorReason");
-
     m_errorReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class ServerStatusSummary
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerStatusSummary();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerStatusSummary() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerStatusSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerStatusSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The number of servers successfully analyzed, partially successful or failed
      * analysis.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline ServerStatusSummary& WithCount(int value) { SetCount(value); return *this;}
@@ -52,19 +52,17 @@ namespace Model
     /**
      * <p>The status of the run time.</p>
      */
-    inline const RunTimeAssessmentStatus& GetRunTimeAssessmentStatus() const{ return m_runTimeAssessmentStatus; }
+    inline RunTimeAssessmentStatus GetRunTimeAssessmentStatus() const { return m_runTimeAssessmentStatus; }
     inline bool RunTimeAssessmentStatusHasBeenSet() const { return m_runTimeAssessmentStatusHasBeenSet; }
-    inline void SetRunTimeAssessmentStatus(const RunTimeAssessmentStatus& value) { m_runTimeAssessmentStatusHasBeenSet = true; m_runTimeAssessmentStatus = value; }
-    inline void SetRunTimeAssessmentStatus(RunTimeAssessmentStatus&& value) { m_runTimeAssessmentStatusHasBeenSet = true; m_runTimeAssessmentStatus = std::move(value); }
-    inline ServerStatusSummary& WithRunTimeAssessmentStatus(const RunTimeAssessmentStatus& value) { SetRunTimeAssessmentStatus(value); return *this;}
-    inline ServerStatusSummary& WithRunTimeAssessmentStatus(RunTimeAssessmentStatus&& value) { SetRunTimeAssessmentStatus(std::move(value)); return *this;}
+    inline void SetRunTimeAssessmentStatus(RunTimeAssessmentStatus value) { m_runTimeAssessmentStatusHasBeenSet = true; m_runTimeAssessmentStatus = value; }
+    inline ServerStatusSummary& WithRunTimeAssessmentStatus(RunTimeAssessmentStatus value) { SetRunTimeAssessmentStatus(value); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
-    RunTimeAssessmentStatus m_runTimeAssessmentStatus;
+    RunTimeAssessmentStatus m_runTimeAssessmentStatus{RunTimeAssessmentStatus::NOT_SET};
     bool m_runTimeAssessmentStatusHasBeenSet = false;
   };
 

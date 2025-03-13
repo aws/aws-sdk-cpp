@@ -12,12 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDirectConnectGatewayAttachmentRequest::UpdateDirectConnectGatewayAttachmentRequest() : 
-    m_attachmentIdHasBeenSet(false),
-    m_edgeLocationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDirectConnectGatewayAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class HumanLoopConfig
   {
   public:
-    AWS_SAGEMAKER_API HumanLoopConfig();
+    AWS_SAGEMAKER_API HumanLoopConfig() = default;
     AWS_SAGEMAKER_API HumanLoopConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HumanLoopConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create
      * and Manage Workforces</a>.</p>
      */
-    inline const Aws::String& GetWorkteamArn() const{ return m_workteamArn; }
+    inline const Aws::String& GetWorkteamArn() const { return m_workteamArn; }
     inline bool WorkteamArnHasBeenSet() const { return m_workteamArnHasBeenSet; }
-    inline void SetWorkteamArn(const Aws::String& value) { m_workteamArnHasBeenSet = true; m_workteamArn = value; }
-    inline void SetWorkteamArn(Aws::String&& value) { m_workteamArnHasBeenSet = true; m_workteamArn = std::move(value); }
-    inline void SetWorkteamArn(const char* value) { m_workteamArnHasBeenSet = true; m_workteamArn.assign(value); }
-    inline HumanLoopConfig& WithWorkteamArn(const Aws::String& value) { SetWorkteamArn(value); return *this;}
-    inline HumanLoopConfig& WithWorkteamArn(Aws::String&& value) { SetWorkteamArn(std::move(value)); return *this;}
-    inline HumanLoopConfig& WithWorkteamArn(const char* value) { SetWorkteamArn(value); return *this;}
+    template<typename WorkteamArnT = Aws::String>
+    void SetWorkteamArn(WorkteamArnT&& value) { m_workteamArnHasBeenSet = true; m_workteamArn = std::forward<WorkteamArnT>(value); }
+    template<typename WorkteamArnT = Aws::String>
+    HumanLoopConfig& WithWorkteamArn(WorkteamArnT&& value) { SetWorkteamArn(std::forward<WorkteamArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,42 +68,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create
      * and Delete a Worker Task Templates</a>.</p>
      */
-    inline const Aws::String& GetHumanTaskUiArn() const{ return m_humanTaskUiArn; }
+    inline const Aws::String& GetHumanTaskUiArn() const { return m_humanTaskUiArn; }
     inline bool HumanTaskUiArnHasBeenSet() const { return m_humanTaskUiArnHasBeenSet; }
-    inline void SetHumanTaskUiArn(const Aws::String& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = value; }
-    inline void SetHumanTaskUiArn(Aws::String&& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = std::move(value); }
-    inline void SetHumanTaskUiArn(const char* value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn.assign(value); }
-    inline HumanLoopConfig& WithHumanTaskUiArn(const Aws::String& value) { SetHumanTaskUiArn(value); return *this;}
-    inline HumanLoopConfig& WithHumanTaskUiArn(Aws::String&& value) { SetHumanTaskUiArn(std::move(value)); return *this;}
-    inline HumanLoopConfig& WithHumanTaskUiArn(const char* value) { SetHumanTaskUiArn(value); return *this;}
+    template<typename HumanTaskUiArnT = Aws::String>
+    void SetHumanTaskUiArn(HumanTaskUiArnT&& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = std::forward<HumanTaskUiArnT>(value); }
+    template<typename HumanTaskUiArnT = Aws::String>
+    HumanLoopConfig& WithHumanTaskUiArn(HumanTaskUiArnT&& value) { SetHumanTaskUiArn(std::forward<HumanTaskUiArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A title for the human worker task.</p>
      */
-    inline const Aws::String& GetTaskTitle() const{ return m_taskTitle; }
+    inline const Aws::String& GetTaskTitle() const { return m_taskTitle; }
     inline bool TaskTitleHasBeenSet() const { return m_taskTitleHasBeenSet; }
-    inline void SetTaskTitle(const Aws::String& value) { m_taskTitleHasBeenSet = true; m_taskTitle = value; }
-    inline void SetTaskTitle(Aws::String&& value) { m_taskTitleHasBeenSet = true; m_taskTitle = std::move(value); }
-    inline void SetTaskTitle(const char* value) { m_taskTitleHasBeenSet = true; m_taskTitle.assign(value); }
-    inline HumanLoopConfig& WithTaskTitle(const Aws::String& value) { SetTaskTitle(value); return *this;}
-    inline HumanLoopConfig& WithTaskTitle(Aws::String&& value) { SetTaskTitle(std::move(value)); return *this;}
-    inline HumanLoopConfig& WithTaskTitle(const char* value) { SetTaskTitle(value); return *this;}
+    template<typename TaskTitleT = Aws::String>
+    void SetTaskTitle(TaskTitleT&& value) { m_taskTitleHasBeenSet = true; m_taskTitle = std::forward<TaskTitleT>(value); }
+    template<typename TaskTitleT = Aws::String>
+    HumanLoopConfig& WithTaskTitle(TaskTitleT&& value) { SetTaskTitle(std::forward<TaskTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the human worker task.</p>
      */
-    inline const Aws::String& GetTaskDescription() const{ return m_taskDescription; }
+    inline const Aws::String& GetTaskDescription() const { return m_taskDescription; }
     inline bool TaskDescriptionHasBeenSet() const { return m_taskDescriptionHasBeenSet; }
-    inline void SetTaskDescription(const Aws::String& value) { m_taskDescriptionHasBeenSet = true; m_taskDescription = value; }
-    inline void SetTaskDescription(Aws::String&& value) { m_taskDescriptionHasBeenSet = true; m_taskDescription = std::move(value); }
-    inline void SetTaskDescription(const char* value) { m_taskDescriptionHasBeenSet = true; m_taskDescription.assign(value); }
-    inline HumanLoopConfig& WithTaskDescription(const Aws::String& value) { SetTaskDescription(value); return *this;}
-    inline HumanLoopConfig& WithTaskDescription(Aws::String&& value) { SetTaskDescription(std::move(value)); return *this;}
-    inline HumanLoopConfig& WithTaskDescription(const char* value) { SetTaskDescription(value); return *this;}
+    template<typename TaskDescriptionT = Aws::String>
+    void SetTaskDescription(TaskDescriptionT&& value) { m_taskDescriptionHasBeenSet = true; m_taskDescription = std::forward<TaskDescriptionT>(value); }
+    template<typename TaskDescriptionT = Aws::String>
+    HumanLoopConfig& WithTaskDescription(TaskDescriptionT&& value) { SetTaskDescription(std::forward<TaskDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,7 +107,7 @@ namespace Model
      * classification labeling job, three workers will classify each input image.
      * Increasing <code>TaskCount</code> can improve label accuracy.</p>
      */
-    inline int GetTaskCount() const{ return m_taskCount; }
+    inline int GetTaskCount() const { return m_taskCount; }
     inline bool TaskCountHasBeenSet() const { return m_taskCountHasBeenSet; }
     inline void SetTaskCount(int value) { m_taskCountHasBeenSet = true; m_taskCount = value; }
     inline HumanLoopConfig& WithTaskCount(int value) { SetTaskCount(value); return *this;}
@@ -126,7 +118,7 @@ namespace Model
      * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
-    inline int GetTaskAvailabilityLifetimeInSeconds() const{ return m_taskAvailabilityLifetimeInSeconds; }
+    inline int GetTaskAvailabilityLifetimeInSeconds() const { return m_taskAvailabilityLifetimeInSeconds; }
     inline bool TaskAvailabilityLifetimeInSecondsHasBeenSet() const { return m_taskAvailabilityLifetimeInSecondsHasBeenSet; }
     inline void SetTaskAvailabilityLifetimeInSeconds(int value) { m_taskAvailabilityLifetimeInSecondsHasBeenSet = true; m_taskAvailabilityLifetimeInSeconds = value; }
     inline HumanLoopConfig& WithTaskAvailabilityLifetimeInSeconds(int value) { SetTaskAvailabilityLifetimeInSeconds(value); return *this;}
@@ -137,7 +129,7 @@ namespace Model
      * <p>The amount of time that a worker has to complete a task. The default value is
      * 3,600 seconds (1 hour).</p>
      */
-    inline int GetTaskTimeLimitInSeconds() const{ return m_taskTimeLimitInSeconds; }
+    inline int GetTaskTimeLimitInSeconds() const { return m_taskTimeLimitInSeconds; }
     inline bool TaskTimeLimitInSecondsHasBeenSet() const { return m_taskTimeLimitInSecondsHasBeenSet; }
     inline void SetTaskTimeLimitInSeconds(int value) { m_taskTimeLimitInSecondsHasBeenSet = true; m_taskTimeLimitInSeconds = value; }
     inline HumanLoopConfig& WithTaskTimeLimitInSeconds(int value) { SetTaskTimeLimitInSeconds(value); return *this;}
@@ -147,25 +139,24 @@ namespace Model
     /**
      * <p>Keywords used to describe the task so that workers can discover the task.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTaskKeywords() const{ return m_taskKeywords; }
+    inline const Aws::Vector<Aws::String>& GetTaskKeywords() const { return m_taskKeywords; }
     inline bool TaskKeywordsHasBeenSet() const { return m_taskKeywordsHasBeenSet; }
-    inline void SetTaskKeywords(const Aws::Vector<Aws::String>& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords = value; }
-    inline void SetTaskKeywords(Aws::Vector<Aws::String>&& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords = std::move(value); }
-    inline HumanLoopConfig& WithTaskKeywords(const Aws::Vector<Aws::String>& value) { SetTaskKeywords(value); return *this;}
-    inline HumanLoopConfig& WithTaskKeywords(Aws::Vector<Aws::String>&& value) { SetTaskKeywords(std::move(value)); return *this;}
-    inline HumanLoopConfig& AddTaskKeywords(const Aws::String& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords.push_back(value); return *this; }
-    inline HumanLoopConfig& AddTaskKeywords(Aws::String&& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords.push_back(std::move(value)); return *this; }
-    inline HumanLoopConfig& AddTaskKeywords(const char* value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords.push_back(value); return *this; }
+    template<typename TaskKeywordsT = Aws::Vector<Aws::String>>
+    void SetTaskKeywords(TaskKeywordsT&& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords = std::forward<TaskKeywordsT>(value); }
+    template<typename TaskKeywordsT = Aws::Vector<Aws::String>>
+    HumanLoopConfig& WithTaskKeywords(TaskKeywordsT&& value) { SetTaskKeywords(std::forward<TaskKeywordsT>(value)); return *this;}
+    template<typename TaskKeywordsT = Aws::String>
+    HumanLoopConfig& AddTaskKeywords(TaskKeywordsT&& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords.emplace_back(std::forward<TaskKeywordsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const PublicWorkforceTaskPrice& GetPublicWorkforceTaskPrice() const{ return m_publicWorkforceTaskPrice; }
+    inline const PublicWorkforceTaskPrice& GetPublicWorkforceTaskPrice() const { return m_publicWorkforceTaskPrice; }
     inline bool PublicWorkforceTaskPriceHasBeenSet() const { return m_publicWorkforceTaskPriceHasBeenSet; }
-    inline void SetPublicWorkforceTaskPrice(const PublicWorkforceTaskPrice& value) { m_publicWorkforceTaskPriceHasBeenSet = true; m_publicWorkforceTaskPrice = value; }
-    inline void SetPublicWorkforceTaskPrice(PublicWorkforceTaskPrice&& value) { m_publicWorkforceTaskPriceHasBeenSet = true; m_publicWorkforceTaskPrice = std::move(value); }
-    inline HumanLoopConfig& WithPublicWorkforceTaskPrice(const PublicWorkforceTaskPrice& value) { SetPublicWorkforceTaskPrice(value); return *this;}
-    inline HumanLoopConfig& WithPublicWorkforceTaskPrice(PublicWorkforceTaskPrice&& value) { SetPublicWorkforceTaskPrice(std::move(value)); return *this;}
+    template<typename PublicWorkforceTaskPriceT = PublicWorkforceTaskPrice>
+    void SetPublicWorkforceTaskPrice(PublicWorkforceTaskPriceT&& value) { m_publicWorkforceTaskPriceHasBeenSet = true; m_publicWorkforceTaskPrice = std::forward<PublicWorkforceTaskPriceT>(value); }
+    template<typename PublicWorkforceTaskPriceT = PublicWorkforceTaskPrice>
+    HumanLoopConfig& WithPublicWorkforceTaskPrice(PublicWorkforceTaskPriceT&& value) { SetPublicWorkforceTaskPrice(std::forward<PublicWorkforceTaskPriceT>(value)); return *this;}
     ///@}
   private:
 
@@ -181,13 +172,13 @@ namespace Model
     Aws::String m_taskDescription;
     bool m_taskDescriptionHasBeenSet = false;
 
-    int m_taskCount;
+    int m_taskCount{0};
     bool m_taskCountHasBeenSet = false;
 
-    int m_taskAvailabilityLifetimeInSeconds;
+    int m_taskAvailabilityLifetimeInSeconds{0};
     bool m_taskAvailabilityLifetimeInSecondsHasBeenSet = false;
 
-    int m_taskTimeLimitInSeconds;
+    int m_taskTimeLimitInSeconds{0};
     bool m_taskTimeLimitInSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_taskKeywords;

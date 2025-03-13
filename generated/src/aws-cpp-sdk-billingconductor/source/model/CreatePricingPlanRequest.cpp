@@ -13,16 +13,6 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePricingPlanRequest::CreatePricingPlanRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_pricingRuleArnsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePricingPlanRequest::SerializePayload() const
 {
   JsonValue payload;

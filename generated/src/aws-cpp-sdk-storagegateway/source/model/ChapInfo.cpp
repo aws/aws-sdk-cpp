@@ -18,16 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-ChapInfo::ChapInfo() : 
-    m_targetARNHasBeenSet(false),
-    m_secretToAuthenticateInitiatorHasBeenSet(false),
-    m_initiatorNameHasBeenSet(false),
-    m_secretToAuthenticateTargetHasBeenSet(false)
-{
-}
-
 ChapInfo::ChapInfo(JsonView jsonValue)
-  : ChapInfo()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ChapInfo& ChapInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TargetARN"))
   {
     m_targetARN = jsonValue.GetString("TargetARN");
-
     m_targetARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretToAuthenticateInitiator"))
   {
     m_secretToAuthenticateInitiator = jsonValue.GetString("SecretToAuthenticateInitiator");
-
     m_secretToAuthenticateInitiatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitiatorName"))
   {
     m_initiatorName = jsonValue.GetString("InitiatorName");
-
     m_initiatorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretToAuthenticateTarget"))
   {
     m_secretToAuthenticateTarget = jsonValue.GetString("SecretToAuthenticateTarget");
-
     m_secretToAuthenticateTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

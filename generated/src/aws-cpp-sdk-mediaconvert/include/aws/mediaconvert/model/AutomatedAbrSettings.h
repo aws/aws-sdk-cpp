@@ -35,7 +35,7 @@ namespace Model
   class AutomatedAbrSettings
   {
   public:
-    AWS_MEDIACONVERT_API AutomatedAbrSettings();
+    AWS_MEDIACONVERT_API AutomatedAbrSettings() = default;
     AWS_MEDIACONVERT_API AutomatedAbrSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AutomatedAbrSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * your content. Note that the instantaneous maximum bitrate may vary above the
      * value that you specify.
      */
-    inline int GetMaxAbrBitrate() const{ return m_maxAbrBitrate; }
+    inline int GetMaxAbrBitrate() const { return m_maxAbrBitrate; }
     inline bool MaxAbrBitrateHasBeenSet() const { return m_maxAbrBitrateHasBeenSet; }
     inline void SetMaxAbrBitrate(int value) { m_maxAbrBitrateHasBeenSet = true; m_maxAbrBitrate = value; }
     inline AutomatedAbrSettings& WithMaxAbrBitrate(int value) { SetMaxAbrBitrate(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
      * Auto in the console, which is equivalent to excluding it from your JSON job
      * specification, MediaConvert defaults to a limit of 15.
      */
-    inline int GetMaxRenditions() const{ return m_maxRenditions; }
+    inline int GetMaxRenditions() const { return m_maxRenditions; }
     inline bool MaxRenditionsHasBeenSet() const { return m_maxRenditionsHasBeenSet; }
     inline void SetMaxRenditions(int value) { m_maxRenditionsHasBeenSet = true; m_maxRenditions = value; }
     inline AutomatedAbrSettings& WithMaxRenditions(int value) { SetMaxRenditions(value); return *this;}
@@ -78,7 +78,7 @@ namespace Model
      * value. Note that the instantaneous minimum bitrate may vary below the value that
      * you specify.
      */
-    inline int GetMinAbrBitrate() const{ return m_minAbrBitrate; }
+    inline int GetMinAbrBitrate() const { return m_minAbrBitrate; }
     inline bool MinAbrBitrateHasBeenSet() const { return m_minAbrBitrateHasBeenSet; }
     inline void SetMinAbrBitrate(int value) { m_minAbrBitrateHasBeenSet = true; m_minAbrBitrate = value; }
     inline AutomatedAbrSettings& WithMinAbrBitrate(int value) { SetMinAbrBitrate(value); return *this;}
@@ -91,24 +91,24 @@ namespace Model
      * your ABR workflow has specific rendition size requirements, but you still want
      * MediaConvert to optimize for video quality and overall file size.
      */
-    inline const Aws::Vector<AutomatedAbrRule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<AutomatedAbrRule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<AutomatedAbrRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<AutomatedAbrRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline AutomatedAbrSettings& WithRules(const Aws::Vector<AutomatedAbrRule>& value) { SetRules(value); return *this;}
-    inline AutomatedAbrSettings& WithRules(Aws::Vector<AutomatedAbrRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline AutomatedAbrSettings& AddRules(const AutomatedAbrRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline AutomatedAbrSettings& AddRules(AutomatedAbrRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<AutomatedAbrRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<AutomatedAbrRule>>
+    AutomatedAbrSettings& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = AutomatedAbrRule>
+    AutomatedAbrSettings& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_maxAbrBitrate;
+    int m_maxAbrBitrate{0};
     bool m_maxAbrBitrateHasBeenSet = false;
 
-    int m_maxRenditions;
+    int m_maxRenditions{0};
     bool m_maxRenditionsHasBeenSet = false;
 
-    int m_minAbrBitrate;
+    int m_minAbrBitrate{0};
     bool m_minAbrBitrateHasBeenSet = false;
 
     Aws::Vector<AutomatedAbrRule> m_rules;

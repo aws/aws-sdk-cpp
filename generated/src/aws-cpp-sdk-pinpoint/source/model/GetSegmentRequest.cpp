@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSegmentRequest::GetSegmentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_segmentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSegmentRequest::SerializePayload() const
 {
   return {};

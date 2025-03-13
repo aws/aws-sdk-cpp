@@ -18,16 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchListPolicyAttachments::BatchListPolicyAttachments() : 
-    m_policyReferenceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 BatchListPolicyAttachments::BatchListPolicyAttachments(JsonView jsonValue)
-  : BatchListPolicyAttachments()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchListPolicyAttachments& BatchListPolicyAttachments::operator =(JsonView json
   if(jsonValue.ValueExists("PolicyReference"))
   {
     m_policyReference = jsonValue.GetObject("PolicyReference");
-
     m_policyReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
-
     m_maxResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

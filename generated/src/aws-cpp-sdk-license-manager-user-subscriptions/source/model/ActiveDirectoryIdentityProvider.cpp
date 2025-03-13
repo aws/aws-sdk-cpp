@@ -18,16 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-ActiveDirectoryIdentityProvider::ActiveDirectoryIdentityProvider() : 
-    m_activeDirectorySettingsHasBeenSet(false),
-    m_activeDirectoryType(ActiveDirectoryType::NOT_SET),
-    m_activeDirectoryTypeHasBeenSet(false),
-    m_directoryIdHasBeenSet(false)
-{
-}
-
 ActiveDirectoryIdentityProvider::ActiveDirectoryIdentityProvider(JsonView jsonValue)
-  : ActiveDirectoryIdentityProvider()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ActiveDirectoryIdentityProvider& ActiveDirectoryIdentityProvider::operator =(Jso
   if(jsonValue.ValueExists("ActiveDirectorySettings"))
   {
     m_activeDirectorySettings = jsonValue.GetObject("ActiveDirectorySettings");
-
     m_activeDirectorySettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveDirectoryType"))
   {
     m_activeDirectoryType = ActiveDirectoryTypeMapper::GetActiveDirectoryTypeForName(jsonValue.GetString("ActiveDirectoryType"));
-
     m_activeDirectoryTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   return *this;
 }
 

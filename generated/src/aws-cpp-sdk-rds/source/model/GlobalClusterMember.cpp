@@ -20,20 +20,7 @@ namespace RDS
 namespace Model
 {
 
-GlobalClusterMember::GlobalClusterMember() : 
-    m_dBClusterArnHasBeenSet(false),
-    m_readersHasBeenSet(false),
-    m_isWriter(false),
-    m_isWriterHasBeenSet(false),
-    m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
-    m_globalWriteForwardingStatusHasBeenSet(false),
-    m_synchronizationStatus(GlobalClusterMemberSynchronizationStatus::NOT_SET),
-    m_synchronizationStatusHasBeenSet(false)
-{
-}
-
 GlobalClusterMember::GlobalClusterMember(const XmlNode& xmlNode)
-  : GlobalClusterMember()
 {
   *this = xmlNode;
 }
@@ -49,36 +36,41 @@ GlobalClusterMember& GlobalClusterMember::operator =(const XmlNode& xmlNode)
     {
       m_dBClusterArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterArnNode.GetText());
       m_dBClusterArnHasBeenSet = true;
+       m_dBClusterArnHasBeenSet = true;
     }
     XmlNode readersNode = resultNode.FirstChild("Readers");
     if(!readersNode.IsNull())
     {
       XmlNode readersMember = readersNode.FirstChild("member");
+      m_readersHasBeenSet = !readersMember.IsNull();
       while(!readersMember.IsNull())
       {
         m_readers.push_back(readersMember.GetText());
         readersMember = readersMember.NextNode("member");
       }
 
-      m_readersHasBeenSet = true;
+       m_readersHasBeenSet = true;
     }
     XmlNode isWriterNode = resultNode.FirstChild("IsWriter");
     if(!isWriterNode.IsNull())
     {
       m_isWriter = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isWriterNode.GetText()).c_str()).c_str());
       m_isWriterHasBeenSet = true;
+       m_isWriterHasBeenSet = true;
     }
     XmlNode globalWriteForwardingStatusNode = resultNode.FirstChild("GlobalWriteForwardingStatus");
     if(!globalWriteForwardingStatusNode.IsNull())
     {
-      m_globalWriteForwardingStatus = WriteForwardingStatusMapper::GetWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalWriteForwardingStatusNode.GetText()).c_str()).c_str());
+      m_globalWriteForwardingStatus = WriteForwardingStatusMapper::GetWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalWriteForwardingStatusNode.GetText()).c_str()));
       m_globalWriteForwardingStatusHasBeenSet = true;
+       m_globalWriteForwardingStatusHasBeenSet = true;
     }
     XmlNode synchronizationStatusNode = resultNode.FirstChild("SynchronizationStatus");
     if(!synchronizationStatusNode.IsNull())
     {
-      m_synchronizationStatus = GlobalClusterMemberSynchronizationStatusMapper::GetGlobalClusterMemberSynchronizationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(synchronizationStatusNode.GetText()).c_str()).c_str());
+      m_synchronizationStatus = GlobalClusterMemberSynchronizationStatusMapper::GetGlobalClusterMemberSynchronizationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(synchronizationStatusNode.GetText()).c_str()));
       m_synchronizationStatusHasBeenSet = true;
+       m_synchronizationStatusHasBeenSet = true;
     }
   }
 

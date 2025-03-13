@@ -18,16 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-MSKSourceConfiguration::MSKSourceConfiguration() : 
-    m_mSKClusterARNHasBeenSet(false),
-    m_topicNameHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false),
-    m_readFromTimestampHasBeenSet(false)
-{
-}
-
 MSKSourceConfiguration::MSKSourceConfiguration(JsonView jsonValue)
-  : MSKSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ MSKSourceConfiguration& MSKSourceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MSKClusterARN"))
   {
     m_mSKClusterARN = jsonValue.GetString("MSKClusterARN");
-
     m_mSKClusterARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopicName"))
   {
     m_topicName = jsonValue.GetString("TopicName");
-
     m_topicNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationConfiguration"))
   {
     m_authenticationConfiguration = jsonValue.GetObject("AuthenticationConfiguration");
-
     m_authenticationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadFromTimestamp"))
   {
     m_readFromTimestamp = jsonValue.GetDouble("ReadFromTimestamp");
-
     m_readFromTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

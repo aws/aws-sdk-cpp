@@ -18,25 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-RegistrationInformation::RegistrationInformation() : 
-    m_registrationArnHasBeenSet(false),
-    m_registrationIdHasBeenSet(false),
-    m_registrationTypeHasBeenSet(false),
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_registrationStatusHasBeenSet(false),
-    m_currentVersionNumber(0),
-    m_currentVersionNumberHasBeenSet(false),
-    m_approvedVersionNumber(0),
-    m_approvedVersionNumberHasBeenSet(false),
-    m_latestDeniedVersionNumber(0),
-    m_latestDeniedVersionNumberHasBeenSet(false),
-    m_additionalAttributesHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
-{
-}
-
 RegistrationInformation::RegistrationInformation(JsonView jsonValue)
-  : RegistrationInformation()
 {
   *this = jsonValue;
 }
@@ -46,52 +28,38 @@ RegistrationInformation& RegistrationInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegistrationArn"))
   {
     m_registrationArn = jsonValue.GetString("RegistrationArn");
-
     m_registrationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationId"))
   {
     m_registrationId = jsonValue.GetString("RegistrationId");
-
     m_registrationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationType"))
   {
     m_registrationType = jsonValue.GetString("RegistrationType");
-
     m_registrationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationStatus"))
   {
     m_registrationStatus = RegistrationStatusMapper::GetRegistrationStatusForName(jsonValue.GetString("RegistrationStatus"));
-
     m_registrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentVersionNumber"))
   {
     m_currentVersionNumber = jsonValue.GetInt64("CurrentVersionNumber");
-
     m_currentVersionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovedVersionNumber"))
   {
     m_approvedVersionNumber = jsonValue.GetInt64("ApprovedVersionNumber");
-
     m_approvedVersionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestDeniedVersionNumber"))
   {
     m_latestDeniedVersionNumber = jsonValue.GetInt64("LatestDeniedVersionNumber");
-
     m_latestDeniedVersionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalAttributes"))
   {
     Aws::Map<Aws::String, JsonView> additionalAttributesJsonMap = jsonValue.GetObject("AdditionalAttributes").GetAllObjects();
@@ -101,14 +69,11 @@ RegistrationInformation& RegistrationInformation::operator =(JsonView jsonValue)
     }
     m_additionalAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

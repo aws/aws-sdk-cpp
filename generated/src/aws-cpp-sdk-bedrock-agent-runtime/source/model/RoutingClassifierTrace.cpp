@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RoutingClassifierTrace::RoutingClassifierTrace() : 
-    m_invocationInputHasBeenSet(false),
-    m_modelInvocationInputHasBeenSet(false),
-    m_modelInvocationOutputHasBeenSet(false),
-    m_observationHasBeenSet(false)
-{
-}
-
 RoutingClassifierTrace::RoutingClassifierTrace(JsonView jsonValue)
-  : RoutingClassifierTrace()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RoutingClassifierTrace& RoutingClassifierTrace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("invocationInput"))
   {
     m_invocationInput = jsonValue.GetObject("invocationInput");
-
     m_invocationInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelInvocationInput"))
   {
     m_modelInvocationInput = jsonValue.GetObject("modelInvocationInput");
-
     m_modelInvocationInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelInvocationOutput"))
   {
     m_modelInvocationOutput = jsonValue.GetObject("modelInvocationOutput");
-
     m_modelInvocationOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("observation"))
   {
     m_observation = jsonValue.GetObject("observation");
-
     m_observationHasBeenSet = true;
   }
-
   return *this;
 }
 

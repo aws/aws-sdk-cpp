@@ -18,19 +18,7 @@ namespace MigrationHubRefactorSpaces
 namespace Model
 {
 
-EnvironmentVpc::EnvironmentVpc() : 
-    m_accountIdHasBeenSet(false),
-    m_cidrBlocksHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcNameHasBeenSet(false)
-{
-}
-
 EnvironmentVpc::EnvironmentVpc(JsonView jsonValue)
-  : EnvironmentVpc()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ EnvironmentVpc& EnvironmentVpc::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CidrBlocks"))
   {
     Aws::Utils::Array<JsonView> cidrBlocksJsonList = jsonValue.GetArray("CidrBlocks");
@@ -53,42 +39,31 @@ EnvironmentVpc& EnvironmentVpc::operator =(JsonView jsonValue)
     }
     m_cidrBlocksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentId"))
   {
     m_environmentId = jsonValue.GetString("EnvironmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcName"))
   {
     m_vpcName = jsonValue.GetString("VpcName");
-
     m_vpcNameHasBeenSet = true;
   }
-
   return *this;
 }
 

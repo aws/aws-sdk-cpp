@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteVpcEndpointConnectionNotificationsRequest::DeleteVpcEndpointConnectionNotificationsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_connectionNotificationIdsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVpcEndpointConnectionNotificationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

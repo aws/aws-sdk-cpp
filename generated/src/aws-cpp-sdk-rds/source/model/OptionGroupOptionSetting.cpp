@@ -20,22 +20,7 @@ namespace RDS
 namespace Model
 {
 
-OptionGroupOptionSetting::OptionGroupOptionSetting() : 
-    m_settingNameHasBeenSet(false),
-    m_settingDescriptionHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_applyTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_isModifiable(false),
-    m_isModifiableHasBeenSet(false),
-    m_isRequired(false),
-    m_isRequiredHasBeenSet(false),
-    m_minimumEngineVersionPerAllowedValueHasBeenSet(false)
-{
-}
-
 OptionGroupOptionSetting::OptionGroupOptionSetting(const XmlNode& xmlNode)
-  : OptionGroupOptionSetting()
 {
   *this = xmlNode;
 }
@@ -51,54 +36,62 @@ OptionGroupOptionSetting& OptionGroupOptionSetting::operator =(const XmlNode& xm
     {
       m_settingName = Aws::Utils::Xml::DecodeEscapedXmlText(settingNameNode.GetText());
       m_settingNameHasBeenSet = true;
+       m_settingNameHasBeenSet = true;
     }
     XmlNode settingDescriptionNode = resultNode.FirstChild("SettingDescription");
     if(!settingDescriptionNode.IsNull())
     {
       m_settingDescription = Aws::Utils::Xml::DecodeEscapedXmlText(settingDescriptionNode.GetText());
       m_settingDescriptionHasBeenSet = true;
+       m_settingDescriptionHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
       m_defaultValue = Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText());
       m_defaultValueHasBeenSet = true;
+       m_defaultValueHasBeenSet = true;
     }
     XmlNode applyTypeNode = resultNode.FirstChild("ApplyType");
     if(!applyTypeNode.IsNull())
     {
       m_applyType = Aws::Utils::Xml::DecodeEscapedXmlText(applyTypeNode.GetText());
       m_applyTypeHasBeenSet = true;
+       m_applyTypeHasBeenSet = true;
     }
     XmlNode allowedValuesNode = resultNode.FirstChild("AllowedValues");
     if(!allowedValuesNode.IsNull())
     {
       m_allowedValues = Aws::Utils::Xml::DecodeEscapedXmlText(allowedValuesNode.GetText());
       m_allowedValuesHasBeenSet = true;
+       m_allowedValuesHasBeenSet = true;
     }
     XmlNode isModifiableNode = resultNode.FirstChild("IsModifiable");
     if(!isModifiableNode.IsNull())
     {
       m_isModifiable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isModifiableNode.GetText()).c_str()).c_str());
       m_isModifiableHasBeenSet = true;
+       m_isModifiableHasBeenSet = true;
     }
     XmlNode isRequiredNode = resultNode.FirstChild("IsRequired");
     if(!isRequiredNode.IsNull())
     {
       m_isRequired = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isRequiredNode.GetText()).c_str()).c_str());
       m_isRequiredHasBeenSet = true;
+       m_isRequiredHasBeenSet = true;
     }
     XmlNode minimumEngineVersionPerAllowedValueNode = resultNode.FirstChild("MinimumEngineVersionPerAllowedValue");
     if(!minimumEngineVersionPerAllowedValueNode.IsNull())
     {
       XmlNode minimumEngineVersionPerAllowedValueMember = minimumEngineVersionPerAllowedValueNode.FirstChild("MinimumEngineVersionPerAllowedValue");
+      m_minimumEngineVersionPerAllowedValueHasBeenSet = !minimumEngineVersionPerAllowedValueMember.IsNull();
       while(!minimumEngineVersionPerAllowedValueMember.IsNull())
       {
         m_minimumEngineVersionPerAllowedValue.push_back(minimumEngineVersionPerAllowedValueMember);
         minimumEngineVersionPerAllowedValueMember = minimumEngineVersionPerAllowedValueMember.NextNode("MinimumEngineVersionPerAllowedValue");
       }
 
-      m_minimumEngineVersionPerAllowedValueHasBeenSet = true;
+       m_minimumEngineVersionPerAllowedValueHasBeenSet = true;
     }
   }
 

@@ -18,24 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ReadOptions::ReadOptions() : 
-    m_sepHasBeenSet(false),
-    m_encodingHasBeenSet(false),
-    m_quoteHasBeenSet(false),
-    m_quoteAll(false),
-    m_quoteAllHasBeenSet(false),
-    m_escapeHasBeenSet(false),
-    m_escapeQuotes(false),
-    m_escapeQuotesHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_header(false),
-    m_headerHasBeenSet(false),
-    m_lineSepHasBeenSet(false)
-{
-}
-
 ReadOptions::ReadOptions(JsonView jsonValue)
-  : ReadOptions()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ ReadOptions& ReadOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sep"))
   {
     m_sep = jsonValue.GetString("sep");
-
     m_sepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encoding"))
   {
     m_encoding = jsonValue.GetString("encoding");
-
     m_encodingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quote"))
   {
     m_quote = jsonValue.GetString("quote");
-
     m_quoteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quoteAll"))
   {
     m_quoteAll = jsonValue.GetBool("quoteAll");
-
     m_quoteAllHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("escape"))
   {
     m_escape = jsonValue.GetString("escape");
-
     m_escapeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("escapeQuotes"))
   {
     m_escapeQuotes = jsonValue.GetBool("escapeQuotes");
-
     m_escapeQuotesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetString("comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("header"))
   {
     m_header = jsonValue.GetBool("header");
-
     m_headerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lineSep"))
   {
     m_lineSep = jsonValue.GetString("lineSep");
-
     m_lineSepHasBeenSet = true;
   }
-
   return *this;
 }
 

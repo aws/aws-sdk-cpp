@@ -18,19 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-FieldValueUnion::FieldValueUnion() : 
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_emptyValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_userArnValueHasBeenSet(false)
-{
-}
-
 FieldValueUnion::FieldValueUnion(JsonView jsonValue)
-  : FieldValueUnion()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ FieldValueUnion& FieldValueUnion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("booleanValue"))
   {
     m_booleanValue = jsonValue.GetBool("booleanValue");
-
     m_booleanValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("doubleValue"))
   {
     m_doubleValue = jsonValue.GetDouble("doubleValue");
-
     m_doubleValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("emptyValue"))
   {
     m_emptyValue = jsonValue.GetObject("emptyValue");
-
     m_emptyValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userArnValue"))
   {
     m_userArnValue = jsonValue.GetString("userArnValue");
-
     m_userArnValueHasBeenSet = true;
   }
-
   return *this;
 }
 

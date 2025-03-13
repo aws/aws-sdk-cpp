@@ -28,7 +28,7 @@ namespace Model
   class GetResourcesSummaryResult
   {
   public:
-    AWS_PROTON_API GetResourcesSummaryResult();
+    AWS_PROTON_API GetResourcesSummaryResult() = default;
     AWS_PROTON_API GetResourcesSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API GetResourcesSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Summary counts of each Proton resource type.</p>
      */
-    inline const CountsSummary& GetCounts() const{ return m_counts; }
-    inline void SetCounts(const CountsSummary& value) { m_counts = value; }
-    inline void SetCounts(CountsSummary&& value) { m_counts = std::move(value); }
-    inline GetResourcesSummaryResult& WithCounts(const CountsSummary& value) { SetCounts(value); return *this;}
-    inline GetResourcesSummaryResult& WithCounts(CountsSummary&& value) { SetCounts(std::move(value)); return *this;}
+    inline const CountsSummary& GetCounts() const { return m_counts; }
+    template<typename CountsT = CountsSummary>
+    void SetCounts(CountsT&& value) { m_countsHasBeenSet = true; m_counts = std::forward<CountsT>(value); }
+    template<typename CountsT = CountsSummary>
+    GetResourcesSummaryResult& WithCounts(CountsT&& value) { SetCounts(std::forward<CountsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetResourcesSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetResourcesSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetResourcesSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetResourcesSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CountsSummary m_counts;
+    bool m_countsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

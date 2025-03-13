@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SelectResult::SelectResult()
-{
-}
-
 SelectResult::SelectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ SelectResult& SelectResult::operator =(const Aws::AmazonWebServiceResult<XmlDocu
     if(!itemsNode.IsNull())
     {
       XmlNode itemMember = itemsNode;
+      m_itemsHasBeenSet = !itemMember.IsNull();
       while(!itemMember.IsNull())
       {
         m_items.push_back(itemMember);
@@ -53,12 +50,14 @@ SelectResult& SelectResult::operator =(const Aws::AmazonWebServiceResult<XmlDocu
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SimpleDB::Model::SelectResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

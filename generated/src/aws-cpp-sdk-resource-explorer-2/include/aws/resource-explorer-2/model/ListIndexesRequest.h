@@ -23,7 +23,7 @@ namespace Model
   class ListIndexesRequest : public ResourceExplorer2Request
   {
   public:
-    AWS_RESOURCEEXPLORER2_API ListIndexesRequest();
+    AWS_RESOURCEEXPLORER2_API ListIndexesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,7 +47,7 @@ namespace Model
      * <code>NextToken</code> after every operation to ensure that you receive all of
      * the results.</p> 
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListIndexesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -62,14 +62,12 @@ namespace Model
      * the output should continue from. The pagination tokens expire after 24
      * hours.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListIndexesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIndexesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIndexesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIndexesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,15 +75,14 @@ namespace Model
      * <p>If specified, limits the response to only information about the index in the
      * specified list of Amazon Web Services Regions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
+    inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-    inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-    inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-    inline ListIndexesRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
-    inline ListIndexesRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
-    inline ListIndexesRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-    inline ListIndexesRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
-    inline ListIndexesRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    ListIndexesRequest& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    template<typename RegionsT = Aws::String>
+    ListIndexesRequest& AddRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions.emplace_back(std::forward<RegionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,16 +91,14 @@ namespace Model
      * <code>LOCAL</code> or <code>AGGREGATOR</code>.</p> <p>Use this option to
      * discover the aggregator index for your account.</p>
      */
-    inline const IndexType& GetType() const{ return m_type; }
+    inline IndexType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const IndexType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(IndexType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ListIndexesRequest& WithType(const IndexType& value) { SetType(value); return *this;}
-    inline ListIndexesRequest& WithType(IndexType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(IndexType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ListIndexesRequest& WithType(IndexType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
@@ -112,7 +107,7 @@ namespace Model
     Aws::Vector<Aws::String> m_regions;
     bool m_regionsHasBeenSet = false;
 
-    IndexType m_type;
+    IndexType m_type{IndexType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

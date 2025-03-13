@@ -18,13 +18,7 @@ namespace PrometheusService
 namespace Model
 {
 
-Destination::Destination() : 
-    m_ampConfigurationHasBeenSet(false)
-{
-}
-
 Destination::Destination(JsonView jsonValue)
-  : Destination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Destination& Destination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ampConfiguration"))
   {
     m_ampConfiguration = jsonValue.GetObject("ampConfiguration");
-
     m_ampConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

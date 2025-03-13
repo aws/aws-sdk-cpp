@@ -18,30 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-Blueprint::Blueprint() : 
-    m_blueprintIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_type(BlueprintType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false),
-    m_minPower(0),
-    m_minPowerHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_versionCodeHasBeenSet(false),
-    m_productUrlHasBeenSet(false),
-    m_licenseUrlHasBeenSet(false),
-    m_platform(InstancePlatform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_appCategory(AppCategory::NOT_SET),
-    m_appCategoryHasBeenSet(false)
-{
-}
-
 Blueprint::Blueprint(JsonView jsonValue)
-  : Blueprint()
 {
   *this = jsonValue;
 }
@@ -51,94 +28,68 @@ Blueprint& Blueprint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("blueprintId"))
   {
     m_blueprintId = jsonValue.GetString("blueprintId");
-
     m_blueprintIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = BlueprintTypeMapper::GetBlueprintTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isActive"))
   {
     m_isActive = jsonValue.GetBool("isActive");
-
     m_isActiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minPower"))
   {
     m_minPower = jsonValue.GetInteger("minPower");
-
     m_minPowerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionCode"))
   {
     m_versionCode = jsonValue.GetString("versionCode");
-
     m_versionCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productUrl"))
   {
     m_productUrl = jsonValue.GetString("productUrl");
-
     m_productUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseUrl"))
   {
     m_licenseUrl = jsonValue.GetString("licenseUrl");
-
     m_licenseUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = InstancePlatformMapper::GetInstancePlatformForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appCategory"))
   {
     m_appCategory = AppCategoryMapper::GetAppCategoryForName(jsonValue.GetString("appCategory"));
-
     m_appCategoryHasBeenSet = true;
   }
-
   return *this;
 }
 

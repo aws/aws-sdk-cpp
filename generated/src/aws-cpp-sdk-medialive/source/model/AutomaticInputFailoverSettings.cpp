@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AutomaticInputFailoverSettings::AutomaticInputFailoverSettings() : 
-    m_errorClearTimeMsec(0),
-    m_errorClearTimeMsecHasBeenSet(false),
-    m_failoverConditionsHasBeenSet(false),
-    m_inputPreference(InputPreference::NOT_SET),
-    m_inputPreferenceHasBeenSet(false),
-    m_secondaryInputIdHasBeenSet(false)
-{
-}
-
 AutomaticInputFailoverSettings::AutomaticInputFailoverSettings(JsonView jsonValue)
-  : AutomaticInputFailoverSettings()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ AutomaticInputFailoverSettings& AutomaticInputFailoverSettings::operator =(JsonV
   if(jsonValue.ValueExists("errorClearTimeMsec"))
   {
     m_errorClearTimeMsec = jsonValue.GetInteger("errorClearTimeMsec");
-
     m_errorClearTimeMsecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failoverConditions"))
   {
     Aws::Utils::Array<JsonView> failoverConditionsJsonList = jsonValue.GetArray("failoverConditions");
@@ -52,21 +39,16 @@ AutomaticInputFailoverSettings& AutomaticInputFailoverSettings::operator =(JsonV
     }
     m_failoverConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputPreference"))
   {
     m_inputPreference = InputPreferenceMapper::GetInputPreferenceForName(jsonValue.GetString("inputPreference"));
-
     m_inputPreferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secondaryInputId"))
   {
     m_secondaryInputId = jsonValue.GetString("secondaryInputId");
-
     m_secondaryInputIdHasBeenSet = true;
   }
-
   return *this;
 }
 

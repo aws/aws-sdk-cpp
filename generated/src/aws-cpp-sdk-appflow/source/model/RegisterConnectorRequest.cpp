@@ -12,17 +12,6 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterConnectorRequest::RegisterConnectorRequest() : 
-    m_connectorLabelHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_connectorProvisioningType(ConnectorProvisioningType::NOT_SET),
-    m_connectorProvisioningTypeHasBeenSet(false),
-    m_connectorProvisioningConfigHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String RegisterConnectorRequest::SerializePayload() const
 {
   JsonValue payload;

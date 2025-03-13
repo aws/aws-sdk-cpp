@@ -18,14 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ConverseStreamTrace::ConverseStreamTrace() : 
-    m_guardrailHasBeenSet(false),
-    m_promptRouterHasBeenSet(false)
-{
-}
-
 ConverseStreamTrace::ConverseStreamTrace(JsonView jsonValue)
-  : ConverseStreamTrace()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConverseStreamTrace& ConverseStreamTrace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("guardrail"))
   {
     m_guardrail = jsonValue.GetObject("guardrail");
-
     m_guardrailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promptRouter"))
   {
     m_promptRouter = jsonValue.GetObject("promptRouter");
-
     m_promptRouterHasBeenSet = true;
   }
-
   return *this;
 }
 

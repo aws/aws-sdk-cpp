@@ -17,17 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLicenseConfigurationResult::GetLicenseConfigurationResult() : 
-    m_licenseCountingType(LicenseCountingType::NOT_SET),
-    m_licenseCount(0),
-    m_licenseCountHardLimit(false),
-    m_consumedLicenses(0),
-    m_disassociateWhenNotFound(false)
-{
-}
-
 GetLicenseConfigurationResult::GetLicenseConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetLicenseConfigurationResult()
 {
   *this = result;
 }
@@ -38,33 +28,28 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
   if(jsonValue.ValueExists("LicenseConfigurationId"))
   {
     m_licenseConfigurationId = jsonValue.GetString("LicenseConfigurationId");
-
+    m_licenseConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseConfigurationArn"))
   {
     m_licenseConfigurationArn = jsonValue.GetString("LicenseConfigurationArn");
-
+    m_licenseConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseCountingType"))
   {
     m_licenseCountingType = LicenseCountingTypeMapper::GetLicenseCountingTypeForName(jsonValue.GetString("LicenseCountingType"));
-
+    m_licenseCountingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseRules"))
   {
     Aws::Utils::Array<JsonView> licenseRulesJsonList = jsonValue.GetArray("LicenseRules");
@@ -72,38 +57,33 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
     {
       m_licenseRules.push_back(licenseRulesJsonList[licenseRulesIndex].AsString());
     }
+    m_licenseRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseCount"))
   {
     m_licenseCount = jsonValue.GetInt64("LicenseCount");
-
+    m_licenseCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseCountHardLimit"))
   {
     m_licenseCountHardLimit = jsonValue.GetBool("LicenseCountHardLimit");
-
+    m_licenseCountHardLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedLicenses"))
   {
     m_consumedLicenses = jsonValue.GetInt64("ConsumedLicenses");
-
+    m_consumedLicensesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
-
+    m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedLicenseSummaryList"))
   {
     Aws::Utils::Array<JsonView> consumedLicenseSummaryListJsonList = jsonValue.GetArray("ConsumedLicenseSummaryList");
@@ -111,8 +91,8 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
     {
       m_consumedLicenseSummaryList.push_back(consumedLicenseSummaryListJsonList[consumedLicenseSummaryListIndex].AsObject());
     }
+    m_consumedLicenseSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedResourceSummaryList"))
   {
     Aws::Utils::Array<JsonView> managedResourceSummaryListJsonList = jsonValue.GetArray("ManagedResourceSummaryList");
@@ -120,8 +100,8 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
     {
       m_managedResourceSummaryList.push_back(managedResourceSummaryListJsonList[managedResourceSummaryListIndex].AsObject());
     }
+    m_managedResourceSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -129,8 +109,8 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductInformationList"))
   {
     Aws::Utils::Array<JsonView> productInformationListJsonList = jsonValue.GetArray("ProductInformationList");
@@ -138,26 +118,25 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
     {
       m_productInformationList.push_back(productInformationListJsonList[productInformationListIndex].AsObject());
     }
+    m_productInformationListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutomatedDiscoveryInformation"))
   {
     m_automatedDiscoveryInformation = jsonValue.GetObject("AutomatedDiscoveryInformation");
-
+    m_automatedDiscoveryInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisassociateWhenNotFound"))
   {
     m_disassociateWhenNotFound = jsonValue.GetBool("DisassociateWhenNotFound");
-
+    m_disassociateWhenNotFoundHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

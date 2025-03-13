@@ -21,7 +21,7 @@ namespace Model
   class DeleteConformancePackRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API DeleteConformancePackRequest();
+    AWS_CONFIGSERVICE_API DeleteConformancePackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>Name of the conformance pack you want to delete.</p>
      */
-    inline const Aws::String& GetConformancePackName() const{ return m_conformancePackName; }
+    inline const Aws::String& GetConformancePackName() const { return m_conformancePackName; }
     inline bool ConformancePackNameHasBeenSet() const { return m_conformancePackNameHasBeenSet; }
-    inline void SetConformancePackName(const Aws::String& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = value; }
-    inline void SetConformancePackName(Aws::String&& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = std::move(value); }
-    inline void SetConformancePackName(const char* value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName.assign(value); }
-    inline DeleteConformancePackRequest& WithConformancePackName(const Aws::String& value) { SetConformancePackName(value); return *this;}
-    inline DeleteConformancePackRequest& WithConformancePackName(Aws::String&& value) { SetConformancePackName(std::move(value)); return *this;}
-    inline DeleteConformancePackRequest& WithConformancePackName(const char* value) { SetConformancePackName(value); return *this;}
+    template<typename ConformancePackNameT = Aws::String>
+    void SetConformancePackName(ConformancePackNameT&& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = std::forward<ConformancePackNameT>(value); }
+    template<typename ConformancePackNameT = Aws::String>
+    DeleteConformancePackRequest& WithConformancePackName(ConformancePackNameT&& value) { SetConformancePackName(std::forward<ConformancePackNameT>(value)); return *this;}
     ///@}
   private:
 

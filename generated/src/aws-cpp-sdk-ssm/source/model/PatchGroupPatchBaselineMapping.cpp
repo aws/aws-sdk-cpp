@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-PatchGroupPatchBaselineMapping::PatchGroupPatchBaselineMapping() : 
-    m_patchGroupHasBeenSet(false),
-    m_baselineIdentityHasBeenSet(false)
-{
-}
-
 PatchGroupPatchBaselineMapping::PatchGroupPatchBaselineMapping(JsonView jsonValue)
-  : PatchGroupPatchBaselineMapping()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PatchGroupPatchBaselineMapping& PatchGroupPatchBaselineMapping::operator =(JsonV
   if(jsonValue.ValueExists("PatchGroup"))
   {
     m_patchGroup = jsonValue.GetString("PatchGroup");
-
     m_patchGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaselineIdentity"))
   {
     m_baselineIdentity = jsonValue.GetObject("BaselineIdentity");
-
     m_baselineIdentityHasBeenSet = true;
   }
-
   return *this;
 }
 

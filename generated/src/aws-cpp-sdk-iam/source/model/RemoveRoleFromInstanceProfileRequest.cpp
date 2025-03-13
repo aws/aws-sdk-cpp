@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-RemoveRoleFromInstanceProfileRequest::RemoveRoleFromInstanceProfileRequest() : 
-    m_instanceProfileNameHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
-{
-}
-
 Aws::String RemoveRoleFromInstanceProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;

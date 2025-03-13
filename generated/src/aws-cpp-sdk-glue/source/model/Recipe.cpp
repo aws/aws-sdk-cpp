@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Recipe::Recipe() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_recipeReferenceHasBeenSet(false),
-    m_recipeStepsHasBeenSet(false)
-{
-}
-
 Recipe::Recipe(JsonView jsonValue)
-  : Recipe()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Recipe& Recipe::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -50,14 +39,11 @@ Recipe& Recipe::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecipeReference"))
   {
     m_recipeReference = jsonValue.GetObject("RecipeReference");
-
     m_recipeReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecipeSteps"))
   {
     Aws::Utils::Array<JsonView> recipeStepsJsonList = jsonValue.GetArray("RecipeSteps");
@@ -67,7 +53,6 @@ Recipe& Recipe::operator =(JsonView jsonValue)
     }
     m_recipeStepsHasBeenSet = true;
   }
-
   return *this;
 }
 

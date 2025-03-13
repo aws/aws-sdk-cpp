@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CustomFileSystemConfig::CustomFileSystemConfig() : 
-    m_eFSFileSystemConfigHasBeenSet(false),
-    m_fSxLustreFileSystemConfigHasBeenSet(false)
-{
-}
-
 CustomFileSystemConfig::CustomFileSystemConfig(JsonView jsonValue)
-  : CustomFileSystemConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomFileSystemConfig& CustomFileSystemConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EFSFileSystemConfig"))
   {
     m_eFSFileSystemConfig = jsonValue.GetObject("EFSFileSystemConfig");
-
     m_eFSFileSystemConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FSxLustreFileSystemConfig"))
   {
     m_fSxLustreFileSystemConfig = jsonValue.GetObject("FSxLustreFileSystemConfig");
-
     m_fSxLustreFileSystemConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

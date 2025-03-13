@@ -12,11 +12,6 @@ using namespace Aws::TaxSettings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSupplementalTaxRegistrationRequest::DeleteSupplementalTaxRegistrationRequest() : 
-    m_authorityIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSupplementalTaxRegistrationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteAgentAliasResult::DeleteAgentAliasResult() : 
-    m_agentAliasStatus(AgentAliasStatus::NOT_SET)
-{
-}
-
 DeleteAgentAliasResult::DeleteAgentAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteAgentAliasResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DeleteAgentAliasResult& DeleteAgentAliasResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("agentAliasId"))
   {
     m_agentAliasId = jsonValue.GetString("agentAliasId");
-
+    m_agentAliasIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentAliasStatus"))
   {
     m_agentAliasStatus = AgentAliasStatusMapper::GetAgentAliasStatusForName(jsonValue.GetString("agentAliasStatus"));
-
+    m_agentAliasStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
-
+    m_agentIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

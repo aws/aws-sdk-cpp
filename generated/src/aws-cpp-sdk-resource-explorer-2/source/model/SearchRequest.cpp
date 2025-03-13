@@ -12,15 +12,6 @@ using namespace Aws::ResourceExplorer2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchRequest::SearchRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_viewArnHasBeenSet(false)
-{
-}
-
 Aws::String SearchRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetMemberAccountDetailsRequest::BatchGetMemberAccountDetailsRequest() : 
-    m_membershipIdHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetMemberAccountDetailsRequest::SerializePayload() const
 {
   JsonValue payload;

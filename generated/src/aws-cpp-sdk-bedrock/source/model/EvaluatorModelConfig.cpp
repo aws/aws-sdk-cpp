@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-EvaluatorModelConfig::EvaluatorModelConfig() : 
-    m_bedrockEvaluatorModelsHasBeenSet(false)
-{
-}
-
 EvaluatorModelConfig::EvaluatorModelConfig(JsonView jsonValue)
-  : EvaluatorModelConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EvaluatorModelConfig& EvaluatorModelConfig::operator =(JsonView jsonValue)
     }
     m_bedrockEvaluatorModelsHasBeenSet = true;
   }
-
   return *this;
 }
 

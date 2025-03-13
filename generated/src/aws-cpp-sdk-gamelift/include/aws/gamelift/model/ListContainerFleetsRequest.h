@@ -21,7 +21,7 @@ namespace Model
   class ListContainerFleetsRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API ListContainerFleetsRequest();
+    AWS_GAMELIFT_API ListContainerFleetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * latest versions. Alternatively, provide an ARN value to get fleets with a
      * specific version number.</p>
      */
-    inline const Aws::String& GetContainerGroupDefinitionName() const{ return m_containerGroupDefinitionName; }
+    inline const Aws::String& GetContainerGroupDefinitionName() const { return m_containerGroupDefinitionName; }
     inline bool ContainerGroupDefinitionNameHasBeenSet() const { return m_containerGroupDefinitionNameHasBeenSet; }
-    inline void SetContainerGroupDefinitionName(const Aws::String& value) { m_containerGroupDefinitionNameHasBeenSet = true; m_containerGroupDefinitionName = value; }
-    inline void SetContainerGroupDefinitionName(Aws::String&& value) { m_containerGroupDefinitionNameHasBeenSet = true; m_containerGroupDefinitionName = std::move(value); }
-    inline void SetContainerGroupDefinitionName(const char* value) { m_containerGroupDefinitionNameHasBeenSet = true; m_containerGroupDefinitionName.assign(value); }
-    inline ListContainerFleetsRequest& WithContainerGroupDefinitionName(const Aws::String& value) { SetContainerGroupDefinitionName(value); return *this;}
-    inline ListContainerFleetsRequest& WithContainerGroupDefinitionName(Aws::String&& value) { SetContainerGroupDefinitionName(std::move(value)); return *this;}
-    inline ListContainerFleetsRequest& WithContainerGroupDefinitionName(const char* value) { SetContainerGroupDefinitionName(value); return *this;}
+    template<typename ContainerGroupDefinitionNameT = Aws::String>
+    void SetContainerGroupDefinitionName(ContainerGroupDefinitionNameT&& value) { m_containerGroupDefinitionNameHasBeenSet = true; m_containerGroupDefinitionName = std::forward<ContainerGroupDefinitionNameT>(value); }
+    template<typename ContainerGroupDefinitionNameT = Aws::String>
+    ListContainerFleetsRequest& WithContainerGroupDefinitionName(ContainerGroupDefinitionNameT&& value) { SetContainerGroupDefinitionName(std::forward<ContainerGroupDefinitionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListContainerFleetsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -69,21 +67,19 @@ namespace Model
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListContainerFleetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListContainerFleetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListContainerFleetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListContainerFleetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_containerGroupDefinitionName;
     bool m_containerGroupDefinitionNameHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

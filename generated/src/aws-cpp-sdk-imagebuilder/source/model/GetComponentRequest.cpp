@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetComponentRequest::GetComponentRequest() : 
-    m_componentBuildVersionArnHasBeenSet(false)
-{
-}
-
 Aws::String GetComponentRequest::SerializePayload() const
 {
   return {};

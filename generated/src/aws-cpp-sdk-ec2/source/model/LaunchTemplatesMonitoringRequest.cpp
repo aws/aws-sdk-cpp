@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplatesMonitoringRequest::LaunchTemplatesMonitoringRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 LaunchTemplatesMonitoringRequest::LaunchTemplatesMonitoringRequest(const XmlNode& xmlNode)
-  : LaunchTemplatesMonitoringRequest()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ LaunchTemplatesMonitoringRequest& LaunchTemplatesMonitoringRequest::operator =(c
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
   }
 

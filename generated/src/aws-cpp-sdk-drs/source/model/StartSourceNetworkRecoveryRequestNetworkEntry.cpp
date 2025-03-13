@@ -18,14 +18,7 @@ namespace drs
 namespace Model
 {
 
-StartSourceNetworkRecoveryRequestNetworkEntry::StartSourceNetworkRecoveryRequestNetworkEntry() : 
-    m_cfnStackNameHasBeenSet(false),
-    m_sourceNetworkIDHasBeenSet(false)
-{
-}
-
 StartSourceNetworkRecoveryRequestNetworkEntry::StartSourceNetworkRecoveryRequestNetworkEntry(JsonView jsonValue)
-  : StartSourceNetworkRecoveryRequestNetworkEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StartSourceNetworkRecoveryRequestNetworkEntry& StartSourceNetworkRecoveryRequest
   if(jsonValue.ValueExists("cfnStackName"))
   {
     m_cfnStackName = jsonValue.GetString("cfnStackName");
-
     m_cfnStackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceNetworkID"))
   {
     m_sourceNetworkID = jsonValue.GetString("sourceNetworkID");
-
     m_sourceNetworkIDHasBeenSet = true;
   }
-
   return *this;
 }
 

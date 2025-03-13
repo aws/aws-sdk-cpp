@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SecurityGroupRuleDescription::SecurityGroupRuleDescription() : 
-    m_securityGroupRuleIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 SecurityGroupRuleDescription::SecurityGroupRuleDescription(const XmlNode& xmlNode)
-  : SecurityGroupRuleDescription()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ SecurityGroupRuleDescription& SecurityGroupRuleDescription::operator =(const Xml
     {
       m_securityGroupRuleId = Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupRuleIdNode.GetText());
       m_securityGroupRuleIdHasBeenSet = true;
+       m_securityGroupRuleIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
   }
 

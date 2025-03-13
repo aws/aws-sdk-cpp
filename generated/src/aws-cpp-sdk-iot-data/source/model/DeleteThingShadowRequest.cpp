@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteThingShadowRequest::DeleteThingShadowRequest() : 
-    m_thingNameHasBeenSet(false),
-    m_shadowNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteThingShadowRequest::SerializePayload() const
 {
   return {};

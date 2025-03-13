@@ -18,18 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-S3Config::S3Config() : 
-    m_bucketArnHasBeenSet(false),
-    m_dataFormat(DataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_storageCompressionFormat(StorageCompressionFormat::NOT_SET),
-    m_storageCompressionFormatHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 S3Config::S3Config(JsonView jsonValue)
-  : S3Config()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ S3Config& S3Config::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketArn"))
   {
     m_bucketArn = jsonValue.GetString("bucketArn");
-
     m_bucketArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataFormat"))
   {
     m_dataFormat = DataFormatMapper::GetDataFormatForName(jsonValue.GetString("dataFormat"));
-
     m_dataFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageCompressionFormat"))
   {
     m_storageCompressionFormat = StorageCompressionFormatMapper::GetStorageCompressionFormatForName(jsonValue.GetString("storageCompressionFormat"));
-
     m_storageCompressionFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

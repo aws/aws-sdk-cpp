@@ -18,15 +18,7 @@ namespace ConnectCampaigns
 namespace Model
 {
 
-SuccessfulCampaignStateResponse::SuccessfulCampaignStateResponse() : 
-    m_campaignIdHasBeenSet(false),
-    m_state(CampaignState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 SuccessfulCampaignStateResponse::SuccessfulCampaignStateResponse(JsonView jsonValue)
-  : SuccessfulCampaignStateResponse()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SuccessfulCampaignStateResponse& SuccessfulCampaignStateResponse::operator =(Jso
   if(jsonValue.ValueExists("campaignId"))
   {
     m_campaignId = jsonValue.GetString("campaignId");
-
     m_campaignIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = CampaignStateMapper::GetCampaignStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

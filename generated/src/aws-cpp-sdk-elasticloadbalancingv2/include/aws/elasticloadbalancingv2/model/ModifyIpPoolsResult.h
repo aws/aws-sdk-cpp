@@ -28,7 +28,7 @@ namespace Model
   class ModifyIpPoolsResult
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API ModifyIpPoolsResult();
+    AWS_ELASTICLOADBALANCINGV2_API ModifyIpPoolsResult() = default;
     AWS_ELASTICLOADBALANCINGV2_API ModifyIpPoolsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCINGV2_API ModifyIpPoolsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The IPAM pool ID.</p>
      */
-    inline const IpamPools& GetIpamPools() const{ return m_ipamPools; }
-    inline void SetIpamPools(const IpamPools& value) { m_ipamPools = value; }
-    inline void SetIpamPools(IpamPools&& value) { m_ipamPools = std::move(value); }
-    inline ModifyIpPoolsResult& WithIpamPools(const IpamPools& value) { SetIpamPools(value); return *this;}
-    inline ModifyIpPoolsResult& WithIpamPools(IpamPools&& value) { SetIpamPools(std::move(value)); return *this;}
+    inline const IpamPools& GetIpamPools() const { return m_ipamPools; }
+    template<typename IpamPoolsT = IpamPools>
+    void SetIpamPools(IpamPoolsT&& value) { m_ipamPoolsHasBeenSet = true; m_ipamPools = std::forward<IpamPoolsT>(value); }
+    template<typename IpamPoolsT = IpamPools>
+    ModifyIpPoolsResult& WithIpamPools(IpamPoolsT&& value) { SetIpamPools(std::forward<IpamPoolsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyIpPoolsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyIpPoolsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyIpPoolsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     IpamPools m_ipamPools;
+    bool m_ipamPoolsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

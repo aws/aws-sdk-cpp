@@ -12,19 +12,6 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDeploymentRequest::StartDeploymentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_deploymentStrategyIdHasBeenSet(false),
-    m_configurationProfileIdHasBeenSet(false),
-    m_configurationVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false),
-    m_dynamicExtensionParametersHasBeenSet(false)
-{
-}
-
 Aws::String StartDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

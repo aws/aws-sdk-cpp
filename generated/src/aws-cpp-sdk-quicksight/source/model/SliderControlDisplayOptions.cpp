@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SliderControlDisplayOptions::SliderControlDisplayOptions() : 
-    m_titleOptionsHasBeenSet(false),
-    m_infoIconLabelOptionsHasBeenSet(false)
-{
-}
-
 SliderControlDisplayOptions::SliderControlDisplayOptions(JsonView jsonValue)
-  : SliderControlDisplayOptions()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SliderControlDisplayOptions& SliderControlDisplayOptions::operator =(JsonView js
   if(jsonValue.ValueExists("TitleOptions"))
   {
     m_titleOptions = jsonValue.GetObject("TitleOptions");
-
     m_titleOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InfoIconLabelOptions"))
   {
     m_infoIconLabelOptions = jsonValue.GetObject("InfoIconLabelOptions");
-
     m_infoIconLabelOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

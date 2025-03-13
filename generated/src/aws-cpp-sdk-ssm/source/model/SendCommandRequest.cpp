@@ -12,30 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendCommandRequest::SendCommandRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_documentHashHasBeenSet(false),
-    m_documentHashType(DocumentHashType::NOT_SET),
-    m_documentHashTypeHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_outputS3RegionHasBeenSet(false),
-    m_outputS3BucketNameHasBeenSet(false),
-    m_outputS3KeyPrefixHasBeenSet(false),
-    m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false),
-    m_cloudWatchOutputConfigHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String SendCommandRequest::SerializePayload() const
 {
   JsonValue payload;

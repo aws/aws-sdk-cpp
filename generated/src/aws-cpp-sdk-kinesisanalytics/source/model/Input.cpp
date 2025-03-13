@@ -18,18 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-Input::Input() : 
-    m_namePrefixHasBeenSet(false),
-    m_inputProcessingConfigurationHasBeenSet(false),
-    m_kinesisStreamsInputHasBeenSet(false),
-    m_kinesisFirehoseInputHasBeenSet(false),
-    m_inputParallelismHasBeenSet(false),
-    m_inputSchemaHasBeenSet(false)
-{
-}
-
 Input::Input(JsonView jsonValue)
-  : Input()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ Input& Input::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NamePrefix"))
   {
     m_namePrefix = jsonValue.GetString("NamePrefix");
-
     m_namePrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputProcessingConfiguration"))
   {
     m_inputProcessingConfiguration = jsonValue.GetObject("InputProcessingConfiguration");
-
     m_inputProcessingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisStreamsInput"))
   {
     m_kinesisStreamsInput = jsonValue.GetObject("KinesisStreamsInput");
-
     m_kinesisStreamsInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisFirehoseInput"))
   {
     m_kinesisFirehoseInput = jsonValue.GetObject("KinesisFirehoseInput");
-
     m_kinesisFirehoseInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputParallelism"))
   {
     m_inputParallelism = jsonValue.GetObject("InputParallelism");
-
     m_inputParallelismHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputSchema"))
   {
     m_inputSchema = jsonValue.GetObject("InputSchema");
-
     m_inputSchemaHasBeenSet = true;
   }
-
   return *this;
 }
 

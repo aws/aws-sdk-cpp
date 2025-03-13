@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateInstanceExportTaskRequest::CreateInstanceExportTaskRequest() : 
-    m_tagSpecificationsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_targetEnvironment(ExportEnvironment::NOT_SET),
-    m_targetEnvironmentHasBeenSet(false),
-    m_exportToS3TaskHasBeenSet(false)
-{
-}
-
 Aws::String CreateInstanceExportTaskRequest::SerializePayload() const
 {
   Aws::StringStream ss;

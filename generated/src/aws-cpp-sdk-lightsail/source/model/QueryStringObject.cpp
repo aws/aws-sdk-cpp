@@ -18,15 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-QueryStringObject::QueryStringObject() : 
-    m_option(false),
-    m_optionHasBeenSet(false),
-    m_queryStringsAllowListHasBeenSet(false)
-{
-}
-
 QueryStringObject::QueryStringObject(JsonView jsonValue)
-  : QueryStringObject()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ QueryStringObject& QueryStringObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("option"))
   {
     m_option = jsonValue.GetBool("option");
-
     m_optionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryStringsAllowList"))
   {
     Aws::Utils::Array<JsonView> queryStringsAllowListJsonList = jsonValue.GetArray("queryStringsAllowList");
@@ -49,7 +39,6 @@ QueryStringObject& QueryStringObject::operator =(JsonView jsonValue)
     }
     m_queryStringsAllowListHasBeenSet = true;
   }
-
   return *this;
 }
 

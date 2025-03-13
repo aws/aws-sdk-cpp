@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListUserProficienciesResult::ListUserProficienciesResult()
-{
-}
-
 ListUserProficienciesResult::ListUserProficienciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListUserProficienciesResult& ListUserProficienciesResult::operator =(const Aws::
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserProficiencyList"))
   {
     Aws::Utils::Array<JsonView> userProficiencyListJsonList = jsonValue.GetArray("UserProficiencyList");
@@ -42,26 +37,25 @@ ListUserProficienciesResult& ListUserProficienciesResult::operator =(const Aws::
     {
       m_userProficiencyList.push_back(userProficiencyListJsonList[userProficiencyListIndex].AsObject());
     }
+    m_userProficiencyListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedRegion"))
   {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
-
+    m_lastModifiedRegionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -13,21 +13,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSoftwareUpdateJobRequest::CreateSoftwareUpdateJobRequest() : 
-    m_amznClientTokenHasBeenSet(false),
-    m_s3UrlSignerRoleHasBeenSet(false),
-    m_softwareToUpdate(SoftwareToUpdate::NOT_SET),
-    m_softwareToUpdateHasBeenSet(false),
-    m_updateAgentLogLevel(UpdateAgentLogLevel::NOT_SET),
-    m_updateAgentLogLevelHasBeenSet(false),
-    m_updateTargetsHasBeenSet(false),
-    m_updateTargetsArchitecture(UpdateTargetsArchitecture::NOT_SET),
-    m_updateTargetsArchitectureHasBeenSet(false),
-    m_updateTargetsOperatingSystem(UpdateTargetsOperatingSystem::NOT_SET),
-    m_updateTargetsOperatingSystemHasBeenSet(false)
-{
-}
-
 Aws::String CreateSoftwareUpdateJobRequest::SerializePayload() const
 {
   JsonValue payload;

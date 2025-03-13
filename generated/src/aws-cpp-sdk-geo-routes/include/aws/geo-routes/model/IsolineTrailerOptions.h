@@ -29,7 +29,7 @@ namespace Model
   class IsolineTrailerOptions
   {
   public:
-    AWS_GEOROUTES_API IsolineTrailerOptions();
+    AWS_GEOROUTES_API IsolineTrailerOptions() = default;
     AWS_GEOROUTES_API IsolineTrailerOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API IsolineTrailerOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Total number of axles of the vehicle.</p>
      */
-    inline int GetAxleCount() const{ return m_axleCount; }
+    inline int GetAxleCount() const { return m_axleCount; }
     inline bool AxleCountHasBeenSet() const { return m_axleCountHasBeenSet; }
     inline void SetAxleCount(int value) { m_axleCountHasBeenSet = true; m_axleCount = value; }
     inline IsolineTrailerOptions& WithAxleCount(int value) { SetAxleCount(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
      * <p>Number of trailers attached to the vehicle.</p> <p>Default Value:
      * <code>0</code> </p>
      */
-    inline int GetTrailerCount() const{ return m_trailerCount; }
+    inline int GetTrailerCount() const { return m_trailerCount; }
     inline bool TrailerCountHasBeenSet() const { return m_trailerCountHasBeenSet; }
     inline void SetTrailerCount(int value) { m_trailerCountHasBeenSet = true; m_trailerCount = value; }
     inline IsolineTrailerOptions& WithTrailerCount(int value) { SetTrailerCount(value); return *this;}
     ///@}
   private:
 
-    int m_axleCount;
+    int m_axleCount{0};
     bool m_axleCountHasBeenSet = false;
 
-    int m_trailerCount;
+    int m_trailerCount{0};
     bool m_trailerCountHasBeenSet = false;
   };
 

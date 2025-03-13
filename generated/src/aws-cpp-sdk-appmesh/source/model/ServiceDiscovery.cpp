@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-ServiceDiscovery::ServiceDiscovery() : 
-    m_awsCloudMapHasBeenSet(false),
-    m_dnsHasBeenSet(false)
-{
-}
-
 ServiceDiscovery::ServiceDiscovery(JsonView jsonValue)
-  : ServiceDiscovery()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ServiceDiscovery& ServiceDiscovery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsCloudMap"))
   {
     m_awsCloudMap = jsonValue.GetObject("awsCloudMap");
-
     m_awsCloudMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dns"))
   {
     m_dns = jsonValue.GetObject("dns");
-
     m_dnsHasBeenSet = true;
   }
-
   return *this;
 }
 

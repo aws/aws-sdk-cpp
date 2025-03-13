@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-CloudWatchEventsExecutionDataDetails::CloudWatchEventsExecutionDataDetails() : 
-    m_included(false),
-    m_includedHasBeenSet(false)
-{
-}
-
 CloudWatchEventsExecutionDataDetails::CloudWatchEventsExecutionDataDetails(JsonView jsonValue)
-  : CloudWatchEventsExecutionDataDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CloudWatchEventsExecutionDataDetails& CloudWatchEventsExecutionDataDetails::oper
   if(jsonValue.ValueExists("included"))
   {
     m_included = jsonValue.GetBool("included");
-
     m_includedHasBeenSet = true;
   }
-
   return *this;
 }
 

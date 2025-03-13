@@ -34,7 +34,7 @@ namespace Model
   class AwsMskClusterClusterInfoClientAuthenticationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsMskClusterClusterInfoClientAuthenticationDetails();
+    AWS_SECURITYHUB_API AwsMskClusterClusterInfoClientAuthenticationDetails() = default;
     AWS_SECURITYHUB_API AwsMskClusterClusterInfoClientAuthenticationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsMskClusterClusterInfoClientAuthenticationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p> Provides details for client authentication using SASL.</p>
      */
-    inline const AwsMskClusterClusterInfoClientAuthenticationSaslDetails& GetSasl() const{ return m_sasl; }
+    inline const AwsMskClusterClusterInfoClientAuthenticationSaslDetails& GetSasl() const { return m_sasl; }
     inline bool SaslHasBeenSet() const { return m_saslHasBeenSet; }
-    inline void SetSasl(const AwsMskClusterClusterInfoClientAuthenticationSaslDetails& value) { m_saslHasBeenSet = true; m_sasl = value; }
-    inline void SetSasl(AwsMskClusterClusterInfoClientAuthenticationSaslDetails&& value) { m_saslHasBeenSet = true; m_sasl = std::move(value); }
-    inline AwsMskClusterClusterInfoClientAuthenticationDetails& WithSasl(const AwsMskClusterClusterInfoClientAuthenticationSaslDetails& value) { SetSasl(value); return *this;}
-    inline AwsMskClusterClusterInfoClientAuthenticationDetails& WithSasl(AwsMskClusterClusterInfoClientAuthenticationSaslDetails&& value) { SetSasl(std::move(value)); return *this;}
+    template<typename SaslT = AwsMskClusterClusterInfoClientAuthenticationSaslDetails>
+    void SetSasl(SaslT&& value) { m_saslHasBeenSet = true; m_sasl = std::forward<SaslT>(value); }
+    template<typename SaslT = AwsMskClusterClusterInfoClientAuthenticationSaslDetails>
+    AwsMskClusterClusterInfoClientAuthenticationDetails& WithSasl(SaslT&& value) { SetSasl(std::forward<SaslT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Provides details for allowing no client authentication.</p>
      */
-    inline const AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails& GetUnauthenticated() const{ return m_unauthenticated; }
+    inline const AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails& GetUnauthenticated() const { return m_unauthenticated; }
     inline bool UnauthenticatedHasBeenSet() const { return m_unauthenticatedHasBeenSet; }
-    inline void SetUnauthenticated(const AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails& value) { m_unauthenticatedHasBeenSet = true; m_unauthenticated = value; }
-    inline void SetUnauthenticated(AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails&& value) { m_unauthenticatedHasBeenSet = true; m_unauthenticated = std::move(value); }
-    inline AwsMskClusterClusterInfoClientAuthenticationDetails& WithUnauthenticated(const AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails& value) { SetUnauthenticated(value); return *this;}
-    inline AwsMskClusterClusterInfoClientAuthenticationDetails& WithUnauthenticated(AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails&& value) { SetUnauthenticated(std::move(value)); return *this;}
+    template<typename UnauthenticatedT = AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails>
+    void SetUnauthenticated(UnauthenticatedT&& value) { m_unauthenticatedHasBeenSet = true; m_unauthenticated = std::forward<UnauthenticatedT>(value); }
+    template<typename UnauthenticatedT = AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails>
+    AwsMskClusterClusterInfoClientAuthenticationDetails& WithUnauthenticated(UnauthenticatedT&& value) { SetUnauthenticated(std::forward<UnauthenticatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Provides details for client authentication using TLS.</p>
      */
-    inline const AwsMskClusterClusterInfoClientAuthenticationTlsDetails& GetTls() const{ return m_tls; }
+    inline const AwsMskClusterClusterInfoClientAuthenticationTlsDetails& GetTls() const { return m_tls; }
     inline bool TlsHasBeenSet() const { return m_tlsHasBeenSet; }
-    inline void SetTls(const AwsMskClusterClusterInfoClientAuthenticationTlsDetails& value) { m_tlsHasBeenSet = true; m_tls = value; }
-    inline void SetTls(AwsMskClusterClusterInfoClientAuthenticationTlsDetails&& value) { m_tlsHasBeenSet = true; m_tls = std::move(value); }
-    inline AwsMskClusterClusterInfoClientAuthenticationDetails& WithTls(const AwsMskClusterClusterInfoClientAuthenticationTlsDetails& value) { SetTls(value); return *this;}
-    inline AwsMskClusterClusterInfoClientAuthenticationDetails& WithTls(AwsMskClusterClusterInfoClientAuthenticationTlsDetails&& value) { SetTls(std::move(value)); return *this;}
+    template<typename TlsT = AwsMskClusterClusterInfoClientAuthenticationTlsDetails>
+    void SetTls(TlsT&& value) { m_tlsHasBeenSet = true; m_tls = std::forward<TlsT>(value); }
+    template<typename TlsT = AwsMskClusterClusterInfoClientAuthenticationTlsDetails>
+    AwsMskClusterClusterInfoClientAuthenticationDetails& WithTls(TlsT&& value) { SetTls(std::forward<TlsT>(value)); return *this;}
     ///@}
   private:
 

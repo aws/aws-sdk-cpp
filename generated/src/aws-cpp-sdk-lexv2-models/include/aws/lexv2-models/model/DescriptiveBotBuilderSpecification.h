@@ -32,7 +32,7 @@ namespace Model
   class DescriptiveBotBuilderSpecification
   {
   public:
-    AWS_LEXMODELSV2_API DescriptiveBotBuilderSpecification();
+    AWS_LEXMODELSV2_API DescriptiveBotBuilderSpecification() = default;
     AWS_LEXMODELSV2_API DescriptiveBotBuilderSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API DescriptiveBotBuilderSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Specifies whether the descriptive bot building feature is activated or
      * not.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline DescriptiveBotBuilderSpecification& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -54,16 +54,16 @@ namespace Model
      * <p>An object containing information about the Amazon Bedrock model used to
      * interpret the prompt used in descriptive bot building.</p>
      */
-    inline const BedrockModelSpecification& GetBedrockModelSpecification() const{ return m_bedrockModelSpecification; }
+    inline const BedrockModelSpecification& GetBedrockModelSpecification() const { return m_bedrockModelSpecification; }
     inline bool BedrockModelSpecificationHasBeenSet() const { return m_bedrockModelSpecificationHasBeenSet; }
-    inline void SetBedrockModelSpecification(const BedrockModelSpecification& value) { m_bedrockModelSpecificationHasBeenSet = true; m_bedrockModelSpecification = value; }
-    inline void SetBedrockModelSpecification(BedrockModelSpecification&& value) { m_bedrockModelSpecificationHasBeenSet = true; m_bedrockModelSpecification = std::move(value); }
-    inline DescriptiveBotBuilderSpecification& WithBedrockModelSpecification(const BedrockModelSpecification& value) { SetBedrockModelSpecification(value); return *this;}
-    inline DescriptiveBotBuilderSpecification& WithBedrockModelSpecification(BedrockModelSpecification&& value) { SetBedrockModelSpecification(std::move(value)); return *this;}
+    template<typename BedrockModelSpecificationT = BedrockModelSpecification>
+    void SetBedrockModelSpecification(BedrockModelSpecificationT&& value) { m_bedrockModelSpecificationHasBeenSet = true; m_bedrockModelSpecification = std::forward<BedrockModelSpecificationT>(value); }
+    template<typename BedrockModelSpecificationT = BedrockModelSpecification>
+    DescriptiveBotBuilderSpecification& WithBedrockModelSpecification(BedrockModelSpecificationT&& value) { SetBedrockModelSpecification(std::forward<BedrockModelSpecificationT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     BedrockModelSpecification m_bedrockModelSpecification;

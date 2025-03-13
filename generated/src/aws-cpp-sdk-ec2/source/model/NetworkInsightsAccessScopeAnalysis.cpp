@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInsightsAccessScopeAnalysis::NetworkInsightsAccessScopeAnalysis() : 
-    m_networkInsightsAccessScopeAnalysisIdHasBeenSet(false),
-    m_networkInsightsAccessScopeAnalysisArnHasBeenSet(false),
-    m_networkInsightsAccessScopeIdHasBeenSet(false),
-    m_status(AnalysisStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_warningMessageHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_findingsFound(FindingsFound::NOT_SET),
-    m_findingsFoundHasBeenSet(false),
-    m_analyzedEniCount(0),
-    m_analyzedEniCountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 NetworkInsightsAccessScopeAnalysis::NetworkInsightsAccessScopeAnalysis(const XmlNode& xmlNode)
-  : NetworkInsightsAccessScopeAnalysis()
 {
   *this = xmlNode;
 }
@@ -55,72 +36,83 @@ NetworkInsightsAccessScopeAnalysis& NetworkInsightsAccessScopeAnalysis::operator
     {
       m_networkInsightsAccessScopeAnalysisId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsAccessScopeAnalysisIdNode.GetText());
       m_networkInsightsAccessScopeAnalysisIdHasBeenSet = true;
+       m_networkInsightsAccessScopeAnalysisIdHasBeenSet = true;
     }
     XmlNode networkInsightsAccessScopeAnalysisArnNode = resultNode.FirstChild("networkInsightsAccessScopeAnalysisArn");
     if(!networkInsightsAccessScopeAnalysisArnNode.IsNull())
     {
       m_networkInsightsAccessScopeAnalysisArn = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsAccessScopeAnalysisArnNode.GetText());
       m_networkInsightsAccessScopeAnalysisArnHasBeenSet = true;
+       m_networkInsightsAccessScopeAnalysisArnHasBeenSet = true;
     }
     XmlNode networkInsightsAccessScopeIdNode = resultNode.FirstChild("networkInsightsAccessScopeId");
     if(!networkInsightsAccessScopeIdNode.IsNull())
     {
       m_networkInsightsAccessScopeId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsAccessScopeIdNode.GetText());
       m_networkInsightsAccessScopeIdHasBeenSet = true;
+       m_networkInsightsAccessScopeIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = AnalysisStatusMapper::GetAnalysisStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = AnalysisStatusMapper::GetAnalysisStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode warningMessageNode = resultNode.FirstChild("warningMessage");
     if(!warningMessageNode.IsNull())
     {
       m_warningMessage = Aws::Utils::Xml::DecodeEscapedXmlText(warningMessageNode.GetText());
       m_warningMessageHasBeenSet = true;
+       m_warningMessageHasBeenSet = true;
     }
     XmlNode startDateNode = resultNode.FirstChild("startDate");
     if(!startDateNode.IsNull())
     {
       m_startDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startDateHasBeenSet = true;
+       m_startDateHasBeenSet = true;
     }
     XmlNode endDateNode = resultNode.FirstChild("endDate");
     if(!endDateNode.IsNull())
     {
       m_endDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endDateHasBeenSet = true;
+       m_endDateHasBeenSet = true;
     }
     XmlNode findingsFoundNode = resultNode.FirstChild("findingsFound");
     if(!findingsFoundNode.IsNull())
     {
-      m_findingsFound = FindingsFoundMapper::GetFindingsFoundForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(findingsFoundNode.GetText()).c_str()).c_str());
+      m_findingsFound = FindingsFoundMapper::GetFindingsFoundForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(findingsFoundNode.GetText()).c_str()));
       m_findingsFoundHasBeenSet = true;
+       m_findingsFoundHasBeenSet = true;
     }
     XmlNode analyzedEniCountNode = resultNode.FirstChild("analyzedEniCount");
     if(!analyzedEniCountNode.IsNull())
     {
       m_analyzedEniCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(analyzedEniCountNode.GetText()).c_str()).c_str());
       m_analyzedEniCountHasBeenSet = true;
+       m_analyzedEniCountHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

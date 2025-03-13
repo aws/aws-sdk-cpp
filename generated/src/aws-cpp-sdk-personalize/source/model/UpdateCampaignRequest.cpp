@@ -12,15 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCampaignRequest::UpdateCampaignRequest() : 
-    m_campaignArnHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_minProvisionedTPS(0),
-    m_minProvisionedTPSHasBeenSet(false),
-    m_campaignConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCampaignRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,14 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBrokerCountRequest::UpdateBrokerCountRequest() : 
-    m_clusterArnHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_targetNumberOfBrokerNodes(0),
-    m_targetNumberOfBrokerNodesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBrokerCountRequest::SerializePayload() const
 {
   JsonValue payload;

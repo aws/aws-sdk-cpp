@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-TopicConfigurationDeprecated::TopicConfigurationDeprecated() : 
-    m_idHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_topicHasBeenSet(false)
-{
-}
-
 TopicConfigurationDeprecated::TopicConfigurationDeprecated(const XmlNode& xmlNode)
-  : TopicConfigurationDeprecated()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ TopicConfigurationDeprecated& TopicConfigurationDeprecated::operator =(const Xml
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("Event");
     if(!eventsNode.IsNull())
     {
       XmlNode eventMember = eventsNode;
+      m_eventsHasBeenSet = !eventMember.IsNull();
       while(!eventMember.IsNull())
       {
         m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));
         eventMember = eventMember.NextNode("Event");
       }
 
-      m_eventsHasBeenSet = true;
+       m_eventsHasBeenSet = true;
     }
     XmlNode topicNode = resultNode.FirstChild("Topic");
     if(!topicNode.IsNull())
     {
       m_topic = Aws::Utils::Xml::DecodeEscapedXmlText(topicNode.GetText());
       m_topicHasBeenSet = true;
+       m_topicHasBeenSet = true;
     }
   }
 

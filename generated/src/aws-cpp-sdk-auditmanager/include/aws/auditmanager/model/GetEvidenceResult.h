@@ -28,7 +28,7 @@ namespace Model
   class GetEvidenceResult
   {
   public:
-    AWS_AUDITMANAGER_API GetEvidenceResult();
+    AWS_AUDITMANAGER_API GetEvidenceResult() = default;
     AWS_AUDITMANAGER_API GetEvidenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUDITMANAGER_API GetEvidenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p> The evidence that the <code>GetEvidence</code> API returned. </p>
      */
-    inline const Evidence& GetEvidence() const{ return m_evidence; }
-    inline void SetEvidence(const Evidence& value) { m_evidence = value; }
-    inline void SetEvidence(Evidence&& value) { m_evidence = std::move(value); }
-    inline GetEvidenceResult& WithEvidence(const Evidence& value) { SetEvidence(value); return *this;}
-    inline GetEvidenceResult& WithEvidence(Evidence&& value) { SetEvidence(std::move(value)); return *this;}
+    inline const Evidence& GetEvidence() const { return m_evidence; }
+    template<typename EvidenceT = Evidence>
+    void SetEvidence(EvidenceT&& value) { m_evidenceHasBeenSet = true; m_evidence = std::forward<EvidenceT>(value); }
+    template<typename EvidenceT = Evidence>
+    GetEvidenceResult& WithEvidence(EvidenceT&& value) { SetEvidence(std::forward<EvidenceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEvidenceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEvidenceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEvidenceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEvidenceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Evidence m_evidence;
+    bool m_evidenceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

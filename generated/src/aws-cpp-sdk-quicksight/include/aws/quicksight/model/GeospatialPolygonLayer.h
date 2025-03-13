@@ -31,7 +31,7 @@ namespace Model
   class GeospatialPolygonLayer
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialPolygonLayer();
+    AWS_QUICKSIGHT_API GeospatialPolygonLayer() = default;
     AWS_QUICKSIGHT_API GeospatialPolygonLayer(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialPolygonLayer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The visualization style for a polygon layer.</p>
      */
-    inline const GeospatialPolygonStyle& GetStyle() const{ return m_style; }
+    inline const GeospatialPolygonStyle& GetStyle() const { return m_style; }
     inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
-    inline void SetStyle(const GeospatialPolygonStyle& value) { m_styleHasBeenSet = true; m_style = value; }
-    inline void SetStyle(GeospatialPolygonStyle&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
-    inline GeospatialPolygonLayer& WithStyle(const GeospatialPolygonStyle& value) { SetStyle(value); return *this;}
-    inline GeospatialPolygonLayer& WithStyle(GeospatialPolygonStyle&& value) { SetStyle(std::move(value)); return *this;}
+    template<typename StyleT = GeospatialPolygonStyle>
+    void SetStyle(StyleT&& value) { m_styleHasBeenSet = true; m_style = std::forward<StyleT>(value); }
+    template<typename StyleT = GeospatialPolygonStyle>
+    GeospatialPolygonLayer& WithStyle(StyleT&& value) { SetStyle(std::forward<StyleT>(value)); return *this;}
     ///@}
   private:
 

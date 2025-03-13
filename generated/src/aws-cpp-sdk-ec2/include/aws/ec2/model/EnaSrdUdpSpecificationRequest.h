@@ -30,7 +30,7 @@ namespace Model
   class EnaSrdUdpSpecificationRequest
   {
   public:
-    AWS_EC2_API EnaSrdUdpSpecificationRequest();
+    AWS_EC2_API EnaSrdUdpSpecificationRequest() = default;
     AWS_EC2_API EnaSrdUdpSpecificationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API EnaSrdUdpSpecificationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,14 @@ namespace Model
      * set <b>EnaSrdEnabled</b> in the <b>EnaSrdSpecificationRequest</b> to
      * <code>true</code> in your launch template.</p>
      */
-    inline bool GetEnaSrdUdpEnabled() const{ return m_enaSrdUdpEnabled; }
+    inline bool GetEnaSrdUdpEnabled() const { return m_enaSrdUdpEnabled; }
     inline bool EnaSrdUdpEnabledHasBeenSet() const { return m_enaSrdUdpEnabledHasBeenSet; }
     inline void SetEnaSrdUdpEnabled(bool value) { m_enaSrdUdpEnabledHasBeenSet = true; m_enaSrdUdpEnabled = value; }
     inline EnaSrdUdpSpecificationRequest& WithEnaSrdUdpEnabled(bool value) { SetEnaSrdUdpEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enaSrdUdpEnabled;
+    bool m_enaSrdUdpEnabled{false};
     bool m_enaSrdUdpEnabledHasBeenSet = false;
   };
 

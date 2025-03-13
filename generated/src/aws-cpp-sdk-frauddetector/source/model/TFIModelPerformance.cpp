@@ -18,15 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-TFIModelPerformance::TFIModelPerformance() : 
-    m_auc(0.0),
-    m_aucHasBeenSet(false),
-    m_uncertaintyRangeHasBeenSet(false)
-{
-}
-
 TFIModelPerformance::TFIModelPerformance(JsonView jsonValue)
-  : TFIModelPerformance()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TFIModelPerformance& TFIModelPerformance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("auc"))
   {
     m_auc = jsonValue.GetDouble("auc");
-
     m_aucHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uncertaintyRange"))
   {
     m_uncertaintyRange = jsonValue.GetObject("uncertaintyRange");
-
     m_uncertaintyRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

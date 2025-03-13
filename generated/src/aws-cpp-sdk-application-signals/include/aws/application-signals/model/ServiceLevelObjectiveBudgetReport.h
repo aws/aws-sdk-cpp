@@ -37,7 +37,7 @@ namespace Model
   class ServiceLevelObjectiveBudgetReport
   {
   public:
-    AWS_APPLICATIONSIGNALS_API ServiceLevelObjectiveBudgetReport();
+    AWS_APPLICATIONSIGNALS_API ServiceLevelObjectiveBudgetReport() = default;
     AWS_APPLICATIONSIGNALS_API ServiceLevelObjectiveBudgetReport(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API ServiceLevelObjectiveBudgetReport& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The ARN of the SLO that this report is for.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ServiceLevelObjectiveBudgetReport& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ServiceLevelObjectiveBudgetReport& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ServiceLevelObjectiveBudgetReport& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ServiceLevelObjectiveBudgetReport& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the SLO that this report is for.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ServiceLevelObjectiveBudgetReport& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ServiceLevelObjectiveBudgetReport& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ServiceLevelObjectiveBudgetReport& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ServiceLevelObjectiveBudgetReport& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,10 @@ namespace Model
      * <p>Displays whether this budget report is for a period-based SLO or a
      * request-based SLO.</p>
      */
-    inline const EvaluationType& GetEvaluationType() const{ return m_evaluationType; }
+    inline EvaluationType GetEvaluationType() const { return m_evaluationType; }
     inline bool EvaluationTypeHasBeenSet() const { return m_evaluationTypeHasBeenSet; }
-    inline void SetEvaluationType(const EvaluationType& value) { m_evaluationTypeHasBeenSet = true; m_evaluationType = value; }
-    inline void SetEvaluationType(EvaluationType&& value) { m_evaluationTypeHasBeenSet = true; m_evaluationType = std::move(value); }
-    inline ServiceLevelObjectiveBudgetReport& WithEvaluationType(const EvaluationType& value) { SetEvaluationType(value); return *this;}
-    inline ServiceLevelObjectiveBudgetReport& WithEvaluationType(EvaluationType&& value) { SetEvaluationType(std::move(value)); return *this;}
+    inline void SetEvaluationType(EvaluationType value) { m_evaluationTypeHasBeenSet = true; m_evaluationType = value; }
+    inline ServiceLevelObjectiveBudgetReport& WithEvaluationType(EvaluationType value) { SetEvaluationType(value); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +91,10 @@ namespace Model
      * that the specified start and end times were before the SLO was created, or that
      * attainment data is missing.</p> </li> </ul>
      */
-    inline const ServiceLevelObjectiveBudgetStatus& GetBudgetStatus() const{ return m_budgetStatus; }
+    inline ServiceLevelObjectiveBudgetStatus GetBudgetStatus() const { return m_budgetStatus; }
     inline bool BudgetStatusHasBeenSet() const { return m_budgetStatusHasBeenSet; }
-    inline void SetBudgetStatus(const ServiceLevelObjectiveBudgetStatus& value) { m_budgetStatusHasBeenSet = true; m_budgetStatus = value; }
-    inline void SetBudgetStatus(ServiceLevelObjectiveBudgetStatus&& value) { m_budgetStatusHasBeenSet = true; m_budgetStatus = std::move(value); }
-    inline ServiceLevelObjectiveBudgetReport& WithBudgetStatus(const ServiceLevelObjectiveBudgetStatus& value) { SetBudgetStatus(value); return *this;}
-    inline ServiceLevelObjectiveBudgetReport& WithBudgetStatus(ServiceLevelObjectiveBudgetStatus&& value) { SetBudgetStatus(std::move(value)); return *this;}
+    inline void SetBudgetStatus(ServiceLevelObjectiveBudgetStatus value) { m_budgetStatusHasBeenSet = true; m_budgetStatus = value; }
+    inline ServiceLevelObjectiveBudgetReport& WithBudgetStatus(ServiceLevelObjectiveBudgetStatus value) { SetBudgetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -115,7 +107,7 @@ namespace Model
      * divided by the number of total requests, multiplied by 100, during the time
      * range that you specified in your request.</p>
      */
-    inline double GetAttainment() const{ return m_attainment; }
+    inline double GetAttainment() const { return m_attainment; }
     inline bool AttainmentHasBeenSet() const { return m_attainmentHasBeenSet; }
     inline void SetAttainment(double value) { m_attainmentHasBeenSet = true; m_attainment = value; }
     inline ServiceLevelObjectiveBudgetReport& WithAttainment(double value) { SetAttainment(value); return *this;}
@@ -126,7 +118,7 @@ namespace Model
      * <p>The total number of seconds in the error budget for the interval. This field
      * is included only if the SLO is a period-based SLO.</p>
      */
-    inline int GetTotalBudgetSeconds() const{ return m_totalBudgetSeconds; }
+    inline int GetTotalBudgetSeconds() const { return m_totalBudgetSeconds; }
     inline bool TotalBudgetSecondsHasBeenSet() const { return m_totalBudgetSecondsHasBeenSet; }
     inline void SetTotalBudgetSeconds(int value) { m_totalBudgetSecondsHasBeenSet = true; m_totalBudgetSeconds = value; }
     inline ServiceLevelObjectiveBudgetReport& WithTotalBudgetSeconds(int value) { SetTotalBudgetSeconds(value); return *this;}
@@ -140,7 +132,7 @@ namespace Model
      * <code>BREACHING</code> status.</p> <p> This field is included only if the SLO is
      * a period-based SLO.</p>
      */
-    inline int GetBudgetSecondsRemaining() const{ return m_budgetSecondsRemaining; }
+    inline int GetBudgetSecondsRemaining() const { return m_budgetSecondsRemaining; }
     inline bool BudgetSecondsRemainingHasBeenSet() const { return m_budgetSecondsRemainingHasBeenSet; }
     inline void SetBudgetSecondsRemaining(int value) { m_budgetSecondsRemainingHasBeenSet = true; m_budgetSecondsRemaining = value; }
     inline ServiceLevelObjectiveBudgetReport& WithBudgetSecondsRemaining(int value) { SetBudgetSecondsRemaining(value); return *this;}
@@ -157,7 +149,7 @@ namespace Model
      * <p>This number can go up and down between reports with different time stamps,
      * based on both how many total requests occur.</p>
      */
-    inline int GetTotalBudgetRequests() const{ return m_totalBudgetRequests; }
+    inline int GetTotalBudgetRequests() const { return m_totalBudgetRequests; }
     inline bool TotalBudgetRequestsHasBeenSet() const { return m_totalBudgetRequestsHasBeenSet; }
     inline void SetTotalBudgetRequests(int value) { m_totalBudgetRequestsHasBeenSet = true; m_totalBudgetRequests = value; }
     inline ServiceLevelObjectiveBudgetReport& WithTotalBudgetRequests(int value) { SetTotalBudgetRequests(value); return *this;}
@@ -171,7 +163,7 @@ namespace Model
      * go up and down between different reports, based on both how many successful
      * requests and how many failed requests occur in that time.</p>
      */
-    inline int GetBudgetRequestsRemaining() const{ return m_budgetRequestsRemaining; }
+    inline int GetBudgetRequestsRemaining() const { return m_budgetRequestsRemaining; }
     inline bool BudgetRequestsRemainingHasBeenSet() const { return m_budgetRequestsRemainingHasBeenSet; }
     inline void SetBudgetRequestsRemaining(int value) { m_budgetRequestsRemainingHasBeenSet = true; m_budgetRequestsRemaining = value; }
     inline ServiceLevelObjectiveBudgetReport& WithBudgetRequestsRemaining(int value) { SetBudgetRequestsRemaining(value); return *this;}
@@ -182,32 +174,32 @@ namespace Model
      * <p>A structure that contains information about the performance metric that this
      * SLO monitors.</p>
      */
-    inline const ServiceLevelIndicator& GetSli() const{ return m_sli; }
+    inline const ServiceLevelIndicator& GetSli() const { return m_sli; }
     inline bool SliHasBeenSet() const { return m_sliHasBeenSet; }
-    inline void SetSli(const ServiceLevelIndicator& value) { m_sliHasBeenSet = true; m_sli = value; }
-    inline void SetSli(ServiceLevelIndicator&& value) { m_sliHasBeenSet = true; m_sli = std::move(value); }
-    inline ServiceLevelObjectiveBudgetReport& WithSli(const ServiceLevelIndicator& value) { SetSli(value); return *this;}
-    inline ServiceLevelObjectiveBudgetReport& WithSli(ServiceLevelIndicator&& value) { SetSli(std::move(value)); return *this;}
+    template<typename SliT = ServiceLevelIndicator>
+    void SetSli(SliT&& value) { m_sliHasBeenSet = true; m_sli = std::forward<SliT>(value); }
+    template<typename SliT = ServiceLevelIndicator>
+    ServiceLevelObjectiveBudgetReport& WithSli(SliT&& value) { SetSli(std::forward<SliT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const RequestBasedServiceLevelIndicator& GetRequestBasedSli() const{ return m_requestBasedSli; }
+    inline const RequestBasedServiceLevelIndicator& GetRequestBasedSli() const { return m_requestBasedSli; }
     inline bool RequestBasedSliHasBeenSet() const { return m_requestBasedSliHasBeenSet; }
-    inline void SetRequestBasedSli(const RequestBasedServiceLevelIndicator& value) { m_requestBasedSliHasBeenSet = true; m_requestBasedSli = value; }
-    inline void SetRequestBasedSli(RequestBasedServiceLevelIndicator&& value) { m_requestBasedSliHasBeenSet = true; m_requestBasedSli = std::move(value); }
-    inline ServiceLevelObjectiveBudgetReport& WithRequestBasedSli(const RequestBasedServiceLevelIndicator& value) { SetRequestBasedSli(value); return *this;}
-    inline ServiceLevelObjectiveBudgetReport& WithRequestBasedSli(RequestBasedServiceLevelIndicator&& value) { SetRequestBasedSli(std::move(value)); return *this;}
+    template<typename RequestBasedSliT = RequestBasedServiceLevelIndicator>
+    void SetRequestBasedSli(RequestBasedSliT&& value) { m_requestBasedSliHasBeenSet = true; m_requestBasedSli = std::forward<RequestBasedSliT>(value); }
+    template<typename RequestBasedSliT = RequestBasedServiceLevelIndicator>
+    ServiceLevelObjectiveBudgetReport& WithRequestBasedSli(RequestBasedSliT&& value) { SetRequestBasedSli(std::forward<RequestBasedSliT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Goal& GetGoal() const{ return m_goal; }
+    inline const Goal& GetGoal() const { return m_goal; }
     inline bool GoalHasBeenSet() const { return m_goalHasBeenSet; }
-    inline void SetGoal(const Goal& value) { m_goalHasBeenSet = true; m_goal = value; }
-    inline void SetGoal(Goal&& value) { m_goalHasBeenSet = true; m_goal = std::move(value); }
-    inline ServiceLevelObjectiveBudgetReport& WithGoal(const Goal& value) { SetGoal(value); return *this;}
-    inline ServiceLevelObjectiveBudgetReport& WithGoal(Goal&& value) { SetGoal(std::move(value)); return *this;}
+    template<typename GoalT = Goal>
+    void SetGoal(GoalT&& value) { m_goalHasBeenSet = true; m_goal = std::forward<GoalT>(value); }
+    template<typename GoalT = Goal>
+    ServiceLevelObjectiveBudgetReport& WithGoal(GoalT&& value) { SetGoal(std::forward<GoalT>(value)); return *this;}
     ///@}
   private:
 
@@ -217,25 +209,25 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    EvaluationType m_evaluationType;
+    EvaluationType m_evaluationType{EvaluationType::NOT_SET};
     bool m_evaluationTypeHasBeenSet = false;
 
-    ServiceLevelObjectiveBudgetStatus m_budgetStatus;
+    ServiceLevelObjectiveBudgetStatus m_budgetStatus{ServiceLevelObjectiveBudgetStatus::NOT_SET};
     bool m_budgetStatusHasBeenSet = false;
 
-    double m_attainment;
+    double m_attainment{0.0};
     bool m_attainmentHasBeenSet = false;
 
-    int m_totalBudgetSeconds;
+    int m_totalBudgetSeconds{0};
     bool m_totalBudgetSecondsHasBeenSet = false;
 
-    int m_budgetSecondsRemaining;
+    int m_budgetSecondsRemaining{0};
     bool m_budgetSecondsRemainingHasBeenSet = false;
 
-    int m_totalBudgetRequests;
+    int m_totalBudgetRequests{0};
     bool m_totalBudgetRequestsHasBeenSet = false;
 
-    int m_budgetRequestsRemaining;
+    int m_budgetRequestsRemaining{0};
     bool m_budgetRequestsRemainingHasBeenSet = false;
 
     ServiceLevelIndicator m_sli;

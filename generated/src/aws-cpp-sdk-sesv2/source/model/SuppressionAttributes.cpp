@@ -18,13 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-SuppressionAttributes::SuppressionAttributes() : 
-    m_suppressedReasonsHasBeenSet(false)
-{
-}
-
 SuppressionAttributes::SuppressionAttributes(JsonView jsonValue)
-  : SuppressionAttributes()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SuppressionAttributes& SuppressionAttributes::operator =(JsonView jsonValue)
     }
     m_suppressedReasonsHasBeenSet = true;
   }
-
   return *this;
 }
 

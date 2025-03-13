@@ -20,15 +20,7 @@ namespace Route53
 namespace Model
 {
 
-HostedZoneSummary::HostedZoneSummary() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false)
-{
-}
-
 HostedZoneSummary::HostedZoneSummary(const XmlNode& xmlNode)
-  : HostedZoneSummary()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ HostedZoneSummary& HostedZoneSummary::operator =(const XmlNode& xmlNode)
     {
       m_hostedZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneIdNode.GetText());
       m_hostedZoneIdHasBeenSet = true;
+       m_hostedZoneIdHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
     if(!ownerNode.IsNull())
     {
       m_owner = ownerNode;
       m_ownerHasBeenSet = true;
+       m_ownerHasBeenSet = true;
     }
   }
 

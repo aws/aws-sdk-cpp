@@ -12,16 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStudioRequest::UpdateStudioRequest() : 
-    m_studioIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_defaultS3LocationHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStudioRequest::SerializePayload() const
 {
   JsonValue payload;

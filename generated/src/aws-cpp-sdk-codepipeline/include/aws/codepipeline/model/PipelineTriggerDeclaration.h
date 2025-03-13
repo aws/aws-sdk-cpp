@@ -37,7 +37,7 @@ namespace Model
   class PipelineTriggerDeclaration
   {
   public:
-    AWS_CODEPIPELINE_API PipelineTriggerDeclaration();
+    AWS_CODEPIPELINE_API PipelineTriggerDeclaration() = default;
     AWS_CODEPIPELINE_API PipelineTriggerDeclaration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API PipelineTriggerDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * <p>The source provider for the event, such as connections configured for a
      * repository with Git tags, for the specified trigger configuration.</p>
      */
-    inline const PipelineTriggerProviderType& GetProviderType() const{ return m_providerType; }
+    inline PipelineTriggerProviderType GetProviderType() const { return m_providerType; }
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
-    inline void SetProviderType(const PipelineTriggerProviderType& value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
-    inline void SetProviderType(PipelineTriggerProviderType&& value) { m_providerTypeHasBeenSet = true; m_providerType = std::move(value); }
-    inline PipelineTriggerDeclaration& WithProviderType(const PipelineTriggerProviderType& value) { SetProviderType(value); return *this;}
-    inline PipelineTriggerDeclaration& WithProviderType(PipelineTriggerProviderType&& value) { SetProviderType(std::move(value)); return *this;}
+    inline void SetProviderType(PipelineTriggerProviderType value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
+    inline PipelineTriggerDeclaration& WithProviderType(PipelineTriggerProviderType value) { SetProviderType(value); return *this;}
     ///@}
 
     ///@{
@@ -61,16 +59,16 @@ namespace Model
      * <p>Provides the filter criteria and the source stage for the repository event
      * that starts the pipeline, such as Git tags.</p>
      */
-    inline const GitConfiguration& GetGitConfiguration() const{ return m_gitConfiguration; }
+    inline const GitConfiguration& GetGitConfiguration() const { return m_gitConfiguration; }
     inline bool GitConfigurationHasBeenSet() const { return m_gitConfigurationHasBeenSet; }
-    inline void SetGitConfiguration(const GitConfiguration& value) { m_gitConfigurationHasBeenSet = true; m_gitConfiguration = value; }
-    inline void SetGitConfiguration(GitConfiguration&& value) { m_gitConfigurationHasBeenSet = true; m_gitConfiguration = std::move(value); }
-    inline PipelineTriggerDeclaration& WithGitConfiguration(const GitConfiguration& value) { SetGitConfiguration(value); return *this;}
-    inline PipelineTriggerDeclaration& WithGitConfiguration(GitConfiguration&& value) { SetGitConfiguration(std::move(value)); return *this;}
+    template<typename GitConfigurationT = GitConfiguration>
+    void SetGitConfiguration(GitConfigurationT&& value) { m_gitConfigurationHasBeenSet = true; m_gitConfiguration = std::forward<GitConfigurationT>(value); }
+    template<typename GitConfigurationT = GitConfiguration>
+    PipelineTriggerDeclaration& WithGitConfiguration(GitConfigurationT&& value) { SetGitConfiguration(std::forward<GitConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    PipelineTriggerProviderType m_providerType;
+    PipelineTriggerProviderType m_providerType{PipelineTriggerProviderType::NOT_SET};
     bool m_providerTypeHasBeenSet = false;
 
     GitConfiguration m_gitConfiguration;

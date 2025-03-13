@@ -58,7 +58,7 @@ namespace Model
   class MatchmakingRuleSet
   {
   public:
-    AWS_GAMELIFT_API MatchmakingRuleSet();
+    AWS_GAMELIFT_API MatchmakingRuleSet() = default;
     AWS_GAMELIFT_API MatchmakingRuleSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API MatchmakingRuleSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -68,14 +68,12 @@ namespace Model
     /**
      * <p>A unique identifier for the matchmaking rule set</p>
      */
-    inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
+    inline const Aws::String& GetRuleSetName() const { return m_ruleSetName; }
     inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
-    inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
-    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
-    inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
-    inline MatchmakingRuleSet& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
-    inline MatchmakingRuleSet& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
-    inline MatchmakingRuleSet& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
+    template<typename RuleSetNameT = Aws::String>
+    void SetRuleSetName(RuleSetNameT&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::forward<RuleSetNameT>(value); }
+    template<typename RuleSetNameT = Aws::String>
+    MatchmakingRuleSet& WithRuleSetName(RuleSetNameT&& value) { SetRuleSetName(std::forward<RuleSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +86,12 @@ namespace Model
      * name&gt;</code>. In a GameLift rule set ARN, the resource ID matches the
      * <i>RuleSetName</i> value.</p>
      */
-    inline const Aws::String& GetRuleSetArn() const{ return m_ruleSetArn; }
+    inline const Aws::String& GetRuleSetArn() const { return m_ruleSetArn; }
     inline bool RuleSetArnHasBeenSet() const { return m_ruleSetArnHasBeenSet; }
-    inline void SetRuleSetArn(const Aws::String& value) { m_ruleSetArnHasBeenSet = true; m_ruleSetArn = value; }
-    inline void SetRuleSetArn(Aws::String&& value) { m_ruleSetArnHasBeenSet = true; m_ruleSetArn = std::move(value); }
-    inline void SetRuleSetArn(const char* value) { m_ruleSetArnHasBeenSet = true; m_ruleSetArn.assign(value); }
-    inline MatchmakingRuleSet& WithRuleSetArn(const Aws::String& value) { SetRuleSetArn(value); return *this;}
-    inline MatchmakingRuleSet& WithRuleSetArn(Aws::String&& value) { SetRuleSetArn(std::move(value)); return *this;}
-    inline MatchmakingRuleSet& WithRuleSetArn(const char* value) { SetRuleSetArn(value); return *this;}
+    template<typename RuleSetArnT = Aws::String>
+    void SetRuleSetArn(RuleSetArnT&& value) { m_ruleSetArnHasBeenSet = true; m_ruleSetArn = std::forward<RuleSetArnT>(value); }
+    template<typename RuleSetArnT = Aws::String>
+    MatchmakingRuleSet& WithRuleSetArn(RuleSetArnT&& value) { SetRuleSetArn(std::forward<RuleSetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +99,12 @@ namespace Model
      * <p>A collection of matchmaking rules, formatted as a JSON string. Comments are
      * not allowed in JSON, but most elements support a description field.</p>
      */
-    inline const Aws::String& GetRuleSetBody() const{ return m_ruleSetBody; }
+    inline const Aws::String& GetRuleSetBody() const { return m_ruleSetBody; }
     inline bool RuleSetBodyHasBeenSet() const { return m_ruleSetBodyHasBeenSet; }
-    inline void SetRuleSetBody(const Aws::String& value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody = value; }
-    inline void SetRuleSetBody(Aws::String&& value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody = std::move(value); }
-    inline void SetRuleSetBody(const char* value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody.assign(value); }
-    inline MatchmakingRuleSet& WithRuleSetBody(const Aws::String& value) { SetRuleSetBody(value); return *this;}
-    inline MatchmakingRuleSet& WithRuleSetBody(Aws::String&& value) { SetRuleSetBody(std::move(value)); return *this;}
-    inline MatchmakingRuleSet& WithRuleSetBody(const char* value) { SetRuleSetBody(value); return *this;}
+    template<typename RuleSetBodyT = Aws::String>
+    void SetRuleSetBody(RuleSetBodyT&& value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody = std::forward<RuleSetBodyT>(value); }
+    template<typename RuleSetBodyT = Aws::String>
+    MatchmakingRuleSet& WithRuleSetBody(RuleSetBodyT&& value) { SetRuleSetBody(std::forward<RuleSetBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +113,12 @@ namespace Model
      * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline MatchmakingRuleSet& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline MatchmakingRuleSet& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    MatchmakingRuleSet& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -137,7 +131,7 @@ namespace Model
     Aws::String m_ruleSetBody;
     bool m_ruleSetBodyHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
   };
 

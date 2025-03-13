@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LocalGatewayRouteTableVpcAssociation::LocalGatewayRouteTableVpcAssociation() : 
-    m_localGatewayRouteTableVpcAssociationIdHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_localGatewayRouteTableArnHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 LocalGatewayRouteTableVpcAssociation::LocalGatewayRouteTableVpcAssociation(const XmlNode& xmlNode)
-  : LocalGatewayRouteTableVpcAssociation()
 {
   *this = xmlNode;
 }
@@ -49,54 +36,62 @@ LocalGatewayRouteTableVpcAssociation& LocalGatewayRouteTableVpcAssociation::oper
     {
       m_localGatewayRouteTableVpcAssociationId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableVpcAssociationIdNode.GetText());
       m_localGatewayRouteTableVpcAssociationIdHasBeenSet = true;
+       m_localGatewayRouteTableVpcAssociationIdHasBeenSet = true;
     }
     XmlNode localGatewayRouteTableIdNode = resultNode.FirstChild("localGatewayRouteTableId");
     if(!localGatewayRouteTableIdNode.IsNull())
     {
       m_localGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableIdNode.GetText());
       m_localGatewayRouteTableIdHasBeenSet = true;
+       m_localGatewayRouteTableIdHasBeenSet = true;
     }
     XmlNode localGatewayRouteTableArnNode = resultNode.FirstChild("localGatewayRouteTableArn");
     if(!localGatewayRouteTableArnNode.IsNull())
     {
       m_localGatewayRouteTableArn = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableArnNode.GetText());
       m_localGatewayRouteTableArnHasBeenSet = true;
+       m_localGatewayRouteTableArnHasBeenSet = true;
     }
     XmlNode localGatewayIdNode = resultNode.FirstChild("localGatewayId");
     if(!localGatewayIdNode.IsNull())
     {
       m_localGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayIdNode.GetText());
       m_localGatewayIdHasBeenSet = true;
+       m_localGatewayIdHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetGeoLocationResult::GetGeoLocationResult()
-{
-}
-
 GetGeoLocationResult::GetGeoLocationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ GetGeoLocationResult& GetGeoLocationResult::operator =(const Aws::AmazonWebServi
     if(!geoLocationDetailsNode.IsNull())
     {
       m_geoLocationDetails = geoLocationDetailsNode;
+      m_geoLocationDetailsHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ GetGeoLocationResult& GetGeoLocationResult::operator =(const Aws::AmazonWebServi
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

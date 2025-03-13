@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialStaticFileSource::GeospatialStaticFileSource() : 
-    m_staticFileIdHasBeenSet(false)
-{
-}
-
 GeospatialStaticFileSource::GeospatialStaticFileSource(JsonView jsonValue)
-  : GeospatialStaticFileSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GeospatialStaticFileSource& GeospatialStaticFileSource::operator =(JsonView json
   if(jsonValue.ValueExists("StaticFileId"))
   {
     m_staticFileId = jsonValue.GetString("StaticFileId");
-
     m_staticFileIdHasBeenSet = true;
   }
-
   return *this;
 }
 

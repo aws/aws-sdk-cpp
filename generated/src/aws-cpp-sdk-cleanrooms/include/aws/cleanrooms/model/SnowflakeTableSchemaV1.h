@@ -31,7 +31,7 @@ namespace Model
   class SnowflakeTableSchemaV1
   {
   public:
-    AWS_CLEANROOMS_API SnowflakeTableSchemaV1();
+    AWS_CLEANROOMS_API SnowflakeTableSchemaV1() = default;
     AWS_CLEANROOMS_API SnowflakeTableSchemaV1(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API SnowflakeTableSchemaV1& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p> The column name.</p>
      */
-    inline const Aws::String& GetColumnName() const{ return m_columnName; }
+    inline const Aws::String& GetColumnName() const { return m_columnName; }
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
-    inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
-    inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
-    inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
-    inline SnowflakeTableSchemaV1& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
-    inline SnowflakeTableSchemaV1& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
-    inline SnowflakeTableSchemaV1& WithColumnName(const char* value) { SetColumnName(value); return *this;}
+    template<typename ColumnNameT = Aws::String>
+    void SetColumnName(ColumnNameT&& value) { m_columnNameHasBeenSet = true; m_columnName = std::forward<ColumnNameT>(value); }
+    template<typename ColumnNameT = Aws::String>
+    SnowflakeTableSchemaV1& WithColumnName(ColumnNameT&& value) { SetColumnName(std::forward<ColumnNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <code>TINYINT</code>, <code>VARCHAR</code>, <code>TEXT</code>,
      * <code>CHARACTER</code>.</p>
      */
-    inline const Aws::String& GetColumnType() const{ return m_columnType; }
+    inline const Aws::String& GetColumnType() const { return m_columnType; }
     inline bool ColumnTypeHasBeenSet() const { return m_columnTypeHasBeenSet; }
-    inline void SetColumnType(const Aws::String& value) { m_columnTypeHasBeenSet = true; m_columnType = value; }
-    inline void SetColumnType(Aws::String&& value) { m_columnTypeHasBeenSet = true; m_columnType = std::move(value); }
-    inline void SetColumnType(const char* value) { m_columnTypeHasBeenSet = true; m_columnType.assign(value); }
-    inline SnowflakeTableSchemaV1& WithColumnType(const Aws::String& value) { SetColumnType(value); return *this;}
-    inline SnowflakeTableSchemaV1& WithColumnType(Aws::String&& value) { SetColumnType(std::move(value)); return *this;}
-    inline SnowflakeTableSchemaV1& WithColumnType(const char* value) { SetColumnType(value); return *this;}
+    template<typename ColumnTypeT = Aws::String>
+    void SetColumnType(ColumnTypeT&& value) { m_columnTypeHasBeenSet = true; m_columnType = std::forward<ColumnTypeT>(value); }
+    template<typename ColumnTypeT = Aws::String>
+    SnowflakeTableSchemaV1& WithColumnType(ColumnTypeT&& value) { SetColumnType(std::forward<ColumnTypeT>(value)); return *this;}
     ///@}
   private:
 

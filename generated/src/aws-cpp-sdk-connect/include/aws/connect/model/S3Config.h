@@ -33,7 +33,7 @@ namespace Model
   class S3Config
   {
   public:
-    AWS_CONNECT_API S3Config();
+    AWS_CONNECT_API S3Config() = default;
     AWS_CONNECT_API S3Config(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API S3Config& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,36 @@ namespace Model
     /**
      * <p>The S3 bucket name.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3Config& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3Config& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3Config& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3Config& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 bucket prefix.</p>
      */
-    inline const Aws::String& GetBucketPrefix() const{ return m_bucketPrefix; }
+    inline const Aws::String& GetBucketPrefix() const { return m_bucketPrefix; }
     inline bool BucketPrefixHasBeenSet() const { return m_bucketPrefixHasBeenSet; }
-    inline void SetBucketPrefix(const Aws::String& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = value; }
-    inline void SetBucketPrefix(Aws::String&& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = std::move(value); }
-    inline void SetBucketPrefix(const char* value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix.assign(value); }
-    inline S3Config& WithBucketPrefix(const Aws::String& value) { SetBucketPrefix(value); return *this;}
-    inline S3Config& WithBucketPrefix(Aws::String&& value) { SetBucketPrefix(std::move(value)); return *this;}
-    inline S3Config& WithBucketPrefix(const char* value) { SetBucketPrefix(value); return *this;}
+    template<typename BucketPrefixT = Aws::String>
+    void SetBucketPrefix(BucketPrefixT&& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = std::forward<BucketPrefixT>(value); }
+    template<typename BucketPrefixT = Aws::String>
+    S3Config& WithBucketPrefix(BucketPrefixT&& value) { SetBucketPrefix(std::forward<BucketPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 encryption configuration.</p>
      */
-    inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
+    inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
     inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
-    inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
-    inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
-    inline S3Config& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
-    inline S3Config& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
+    template<typename EncryptionConfigT = EncryptionConfig>
+    void SetEncryptionConfig(EncryptionConfigT&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::forward<EncryptionConfigT>(value); }
+    template<typename EncryptionConfigT = EncryptionConfig>
+    S3Config& WithEncryptionConfig(EncryptionConfigT&& value) { SetEncryptionConfig(std::forward<EncryptionConfigT>(value)); return *this;}
     ///@}
   private:
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateDataRepositoryAssociationResult
   {
   public:
-    AWS_FSX_API CreateDataRepositoryAssociationResult();
+    AWS_FSX_API CreateDataRepositoryAssociationResult() = default;
     AWS_FSX_API CreateDataRepositoryAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API CreateDataRepositoryAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The response object returned after the data repository association is
      * created.</p>
      */
-    inline const DataRepositoryAssociation& GetAssociation() const{ return m_association; }
-    inline void SetAssociation(const DataRepositoryAssociation& value) { m_association = value; }
-    inline void SetAssociation(DataRepositoryAssociation&& value) { m_association = std::move(value); }
-    inline CreateDataRepositoryAssociationResult& WithAssociation(const DataRepositoryAssociation& value) { SetAssociation(value); return *this;}
-    inline CreateDataRepositoryAssociationResult& WithAssociation(DataRepositoryAssociation&& value) { SetAssociation(std::move(value)); return *this;}
+    inline const DataRepositoryAssociation& GetAssociation() const { return m_association; }
+    template<typename AssociationT = DataRepositoryAssociation>
+    void SetAssociation(AssociationT&& value) { m_associationHasBeenSet = true; m_association = std::forward<AssociationT>(value); }
+    template<typename AssociationT = DataRepositoryAssociation>
+    CreateDataRepositoryAssociationResult& WithAssociation(AssociationT&& value) { SetAssociation(std::forward<AssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDataRepositoryAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDataRepositoryAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDataRepositoryAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDataRepositoryAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DataRepositoryAssociation m_association;
+    bool m_associationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

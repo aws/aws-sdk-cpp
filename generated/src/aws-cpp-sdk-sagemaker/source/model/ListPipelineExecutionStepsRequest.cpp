@@ -12,16 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPipelineExecutionStepsRequest::ListPipelineExecutionStepsRequest() : 
-    m_pipelineExecutionArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListPipelineExecutionStepsRequest::SerializePayload() const
 {
   JsonValue payload;

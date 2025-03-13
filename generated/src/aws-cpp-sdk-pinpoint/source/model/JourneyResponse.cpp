@@ -18,39 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-JourneyResponse::JourneyResponse() : 
-    m_activitiesHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_limitsHasBeenSet(false),
-    m_localTime(false),
-    m_localTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_quietTimeHasBeenSet(false),
-    m_refreshFrequencyHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_startActivityHasBeenSet(false),
-    m_startConditionHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_waitForQuietTime(false),
-    m_waitForQuietTimeHasBeenSet(false),
-    m_refreshOnSegmentUpdate(false),
-    m_refreshOnSegmentUpdateHasBeenSet(false),
-    m_journeyChannelSettingsHasBeenSet(false),
-    m_sendingSchedule(false),
-    m_sendingScheduleHasBeenSet(false),
-    m_openHoursHasBeenSet(false),
-    m_closedDaysHasBeenSet(false),
-    m_timezoneEstimationMethodsHasBeenSet(false)
-{
-}
-
 JourneyResponse::JourneyResponse(JsonView jsonValue)
-  : JourneyResponse()
 {
   *this = jsonValue;
 }
@@ -66,98 +34,71 @@ JourneyResponse& JourneyResponse::operator =(JsonView jsonValue)
     }
     m_activitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Limits"))
   {
     m_limits = jsonValue.GetObject("Limits");
-
     m_limitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalTime"))
   {
     m_localTime = jsonValue.GetBool("LocalTime");
-
     m_localTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuietTime"))
   {
     m_quietTime = jsonValue.GetObject("QuietTime");
-
     m_quietTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshFrequency"))
   {
     m_refreshFrequency = jsonValue.GetString("RefreshFrequency");
-
     m_refreshFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = jsonValue.GetObject("Schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartActivity"))
   {
     m_startActivity = jsonValue.GetString("StartActivity");
-
     m_startActivityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartCondition"))
   {
     m_startCondition = jsonValue.GetObject("StartCondition");
-
     m_startConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -167,49 +108,36 @@ JourneyResponse& JourneyResponse::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaitForQuietTime"))
   {
     m_waitForQuietTime = jsonValue.GetBool("WaitForQuietTime");
-
     m_waitForQuietTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshOnSegmentUpdate"))
   {
     m_refreshOnSegmentUpdate = jsonValue.GetBool("RefreshOnSegmentUpdate");
-
     m_refreshOnSegmentUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JourneyChannelSettings"))
   {
     m_journeyChannelSettings = jsonValue.GetObject("JourneyChannelSettings");
-
     m_journeyChannelSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SendingSchedule"))
   {
     m_sendingSchedule = jsonValue.GetBool("SendingSchedule");
-
     m_sendingScheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpenHours"))
   {
     m_openHours = jsonValue.GetObject("OpenHours");
-
     m_openHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClosedDays"))
   {
     m_closedDays = jsonValue.GetObject("ClosedDays");
-
     m_closedDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimezoneEstimationMethods"))
   {
     Aws::Utils::Array<JsonView> timezoneEstimationMethodsJsonList = jsonValue.GetArray("TimezoneEstimationMethods");
@@ -219,7 +147,6 @@ JourneyResponse& JourneyResponse::operator =(JsonView jsonValue)
     }
     m_timezoneEstimationMethodsHasBeenSet = true;
   }
-
   return *this;
 }
 

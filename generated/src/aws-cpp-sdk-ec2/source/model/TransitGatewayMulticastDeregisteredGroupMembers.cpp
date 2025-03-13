@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayMulticastDeregisteredGroupMembers::TransitGatewayMulticastDeregisteredGroupMembers() : 
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_deregisteredNetworkInterfaceIdsHasBeenSet(false),
-    m_groupIpAddressHasBeenSet(false)
-{
-}
-
 TransitGatewayMulticastDeregisteredGroupMembers::TransitGatewayMulticastDeregisteredGroupMembers(const XmlNode& xmlNode)
-  : TransitGatewayMulticastDeregisteredGroupMembers()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ TransitGatewayMulticastDeregisteredGroupMembers& TransitGatewayMulticastDeregist
     {
       m_transitGatewayMulticastDomainId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayMulticastDomainIdNode.GetText());
       m_transitGatewayMulticastDomainIdHasBeenSet = true;
+       m_transitGatewayMulticastDomainIdHasBeenSet = true;
     }
     XmlNode deregisteredNetworkInterfaceIdsNode = resultNode.FirstChild("deregisteredNetworkInterfaceIds");
     if(!deregisteredNetworkInterfaceIdsNode.IsNull())
     {
       XmlNode deregisteredNetworkInterfaceIdsMember = deregisteredNetworkInterfaceIdsNode.FirstChild("item");
+      m_deregisteredNetworkInterfaceIdsHasBeenSet = !deregisteredNetworkInterfaceIdsMember.IsNull();
       while(!deregisteredNetworkInterfaceIdsMember.IsNull())
       {
         m_deregisteredNetworkInterfaceIds.push_back(deregisteredNetworkInterfaceIdsMember.GetText());
         deregisteredNetworkInterfaceIdsMember = deregisteredNetworkInterfaceIdsMember.NextNode("item");
       }
 
-      m_deregisteredNetworkInterfaceIdsHasBeenSet = true;
+       m_deregisteredNetworkInterfaceIdsHasBeenSet = true;
     }
     XmlNode groupIpAddressNode = resultNode.FirstChild("groupIpAddress");
     if(!groupIpAddressNode.IsNull())
     {
       m_groupIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(groupIpAddressNode.GetText());
       m_groupIpAddressHasBeenSet = true;
+       m_groupIpAddressHasBeenSet = true;
     }
   }
 

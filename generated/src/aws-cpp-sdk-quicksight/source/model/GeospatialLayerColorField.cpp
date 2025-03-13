@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialLayerColorField::GeospatialLayerColorField() : 
-    m_colorDimensionsFieldsHasBeenSet(false),
-    m_colorValuesFieldsHasBeenSet(false)
-{
-}
-
 GeospatialLayerColorField::GeospatialLayerColorField(JsonView jsonValue)
-  : GeospatialLayerColorField()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ GeospatialLayerColorField& GeospatialLayerColorField::operator =(JsonView jsonVa
     }
     m_colorDimensionsFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorValuesFields"))
   {
     Aws::Utils::Array<JsonView> colorValuesFieldsJsonList = jsonValue.GetArray("ColorValuesFields");
@@ -51,7 +43,6 @@ GeospatialLayerColorField& GeospatialLayerColorField::operator =(JsonView jsonVa
     }
     m_colorValuesFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -40,7 +40,7 @@ namespace Model
   class InventoryConfiguration
   {
   public:
-    AWS_S3_API InventoryConfiguration();
+    AWS_S3_API InventoryConfiguration() = default;
     AWS_S3_API InventoryConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API InventoryConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,12 +51,12 @@ namespace Model
     /**
      * <p>Contains information about where to publish the inventory results.</p>
      */
-    inline const InventoryDestination& GetDestination() const{ return m_destination; }
+    inline const InventoryDestination& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const InventoryDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(InventoryDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline InventoryConfiguration& WithDestination(const InventoryDestination& value) { SetDestination(value); return *this;}
-    inline InventoryConfiguration& WithDestination(InventoryDestination&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = InventoryDestination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = InventoryDestination>
+    InventoryConfiguration& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +65,7 @@ namespace Model
      * <code>True</code>, an inventory list is generated. If set to <code>False</code>,
      * no inventory list is generated.</p>
      */
-    inline bool GetIsEnabled() const{ return m_isEnabled; }
+    inline bool GetIsEnabled() const { return m_isEnabled; }
     inline bool IsEnabledHasBeenSet() const { return m_isEnabledHasBeenSet; }
     inline void SetIsEnabled(bool value) { m_isEnabledHasBeenSet = true; m_isEnabled = value; }
     inline InventoryConfiguration& WithIsEnabled(bool value) { SetIsEnabled(value); return *this;}
@@ -76,26 +76,24 @@ namespace Model
      * <p>Specifies an inventory filter. The inventory only includes objects that meet
      * the filter's criteria.</p>
      */
-    inline const InventoryFilter& GetFilter() const{ return m_filter; }
+    inline const InventoryFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const InventoryFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(InventoryFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline InventoryConfiguration& WithFilter(const InventoryFilter& value) { SetFilter(value); return *this;}
-    inline InventoryConfiguration& WithFilter(InventoryFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = InventoryFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = InventoryFilter>
+    InventoryConfiguration& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID used to identify the inventory configuration.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline InventoryConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline InventoryConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline InventoryConfiguration& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    InventoryConfiguration& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,45 +104,42 @@ namespace Model
      * the list. If set to <code>Current</code>, the list does not contain these
      * version-related fields.</p>
      */
-    inline const InventoryIncludedObjectVersions& GetIncludedObjectVersions() const{ return m_includedObjectVersions; }
+    inline InventoryIncludedObjectVersions GetIncludedObjectVersions() const { return m_includedObjectVersions; }
     inline bool IncludedObjectVersionsHasBeenSet() const { return m_includedObjectVersionsHasBeenSet; }
-    inline void SetIncludedObjectVersions(const InventoryIncludedObjectVersions& value) { m_includedObjectVersionsHasBeenSet = true; m_includedObjectVersions = value; }
-    inline void SetIncludedObjectVersions(InventoryIncludedObjectVersions&& value) { m_includedObjectVersionsHasBeenSet = true; m_includedObjectVersions = std::move(value); }
-    inline InventoryConfiguration& WithIncludedObjectVersions(const InventoryIncludedObjectVersions& value) { SetIncludedObjectVersions(value); return *this;}
-    inline InventoryConfiguration& WithIncludedObjectVersions(InventoryIncludedObjectVersions&& value) { SetIncludedObjectVersions(std::move(value)); return *this;}
+    inline void SetIncludedObjectVersions(InventoryIncludedObjectVersions value) { m_includedObjectVersionsHasBeenSet = true; m_includedObjectVersions = value; }
+    inline InventoryConfiguration& WithIncludedObjectVersions(InventoryIncludedObjectVersions value) { SetIncludedObjectVersions(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the optional fields that are included in the inventory results.</p>
      */
-    inline const Aws::Vector<InventoryOptionalField>& GetOptionalFields() const{ return m_optionalFields; }
+    inline const Aws::Vector<InventoryOptionalField>& GetOptionalFields() const { return m_optionalFields; }
     inline bool OptionalFieldsHasBeenSet() const { return m_optionalFieldsHasBeenSet; }
-    inline void SetOptionalFields(const Aws::Vector<InventoryOptionalField>& value) { m_optionalFieldsHasBeenSet = true; m_optionalFields = value; }
-    inline void SetOptionalFields(Aws::Vector<InventoryOptionalField>&& value) { m_optionalFieldsHasBeenSet = true; m_optionalFields = std::move(value); }
-    inline InventoryConfiguration& WithOptionalFields(const Aws::Vector<InventoryOptionalField>& value) { SetOptionalFields(value); return *this;}
-    inline InventoryConfiguration& WithOptionalFields(Aws::Vector<InventoryOptionalField>&& value) { SetOptionalFields(std::move(value)); return *this;}
-    inline InventoryConfiguration& AddOptionalFields(const InventoryOptionalField& value) { m_optionalFieldsHasBeenSet = true; m_optionalFields.push_back(value); return *this; }
-    inline InventoryConfiguration& AddOptionalFields(InventoryOptionalField&& value) { m_optionalFieldsHasBeenSet = true; m_optionalFields.push_back(std::move(value)); return *this; }
+    template<typename OptionalFieldsT = Aws::Vector<InventoryOptionalField>>
+    void SetOptionalFields(OptionalFieldsT&& value) { m_optionalFieldsHasBeenSet = true; m_optionalFields = std::forward<OptionalFieldsT>(value); }
+    template<typename OptionalFieldsT = Aws::Vector<InventoryOptionalField>>
+    InventoryConfiguration& WithOptionalFields(OptionalFieldsT&& value) { SetOptionalFields(std::forward<OptionalFieldsT>(value)); return *this;}
+    inline InventoryConfiguration& AddOptionalFields(InventoryOptionalField value) { m_optionalFieldsHasBeenSet = true; m_optionalFields.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the schedule for generating inventory results.</p>
      */
-    inline const InventorySchedule& GetSchedule() const{ return m_schedule; }
+    inline const InventorySchedule& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const InventorySchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(InventorySchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline InventoryConfiguration& WithSchedule(const InventorySchedule& value) { SetSchedule(value); return *this;}
-    inline InventoryConfiguration& WithSchedule(InventorySchedule&& value) { SetSchedule(std::move(value)); return *this;}
+    template<typename ScheduleT = InventorySchedule>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = InventorySchedule>
+    InventoryConfiguration& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
   private:
 
     InventoryDestination m_destination;
     bool m_destinationHasBeenSet = false;
 
-    bool m_isEnabled;
+    bool m_isEnabled{false};
     bool m_isEnabledHasBeenSet = false;
 
     InventoryFilter m_filter;
@@ -153,7 +148,7 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    InventoryIncludedObjectVersions m_includedObjectVersions;
+    InventoryIncludedObjectVersions m_includedObjectVersions{InventoryIncludedObjectVersions::NOT_SET};
     bool m_includedObjectVersionsHasBeenSet = false;
 
     Aws::Vector<InventoryOptionalField> m_optionalFields;

@@ -29,7 +29,7 @@ namespace Model
   class DescribeOrganizationConfigurationResult
   {
   public:
-    AWS_SECURITYHUB_API DescribeOrganizationConfigurationResult();
+    AWS_SECURITYHUB_API DescribeOrganizationConfigurationResult() = default;
     AWS_SECURITYHUB_API DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API DescribeOrganizationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,8 +47,8 @@ namespace Model
      * policy in which Security Hub is enabled and associate the policy with new
      * organization accounts.</p>
      */
-    inline bool GetAutoEnable() const{ return m_autoEnable; }
-    inline void SetAutoEnable(bool value) { m_autoEnable = value; }
+    inline bool GetAutoEnable() const { return m_autoEnable; }
+    inline void SetAutoEnable(bool value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
     inline DescribeOrganizationConfigurationResult& WithAutoEnable(bool value) { SetAutoEnable(value); return *this;}
     ///@}
 
@@ -57,8 +57,8 @@ namespace Model
      * <p>Whether the maximum number of allowed member accounts are already associated
      * with the Security Hub administrator account.</p>
      */
-    inline bool GetMemberAccountLimitReached() const{ return m_memberAccountLimitReached; }
-    inline void SetMemberAccountLimitReached(bool value) { m_memberAccountLimitReached = value; }
+    inline bool GetMemberAccountLimitReached() const { return m_memberAccountLimitReached; }
+    inline void SetMemberAccountLimitReached(bool value) { m_memberAccountLimitReachedHasBeenSet = true; m_memberAccountLimitReached = value; }
     inline DescribeOrganizationConfigurationResult& WithMemberAccountLimitReached(bool value) { SetMemberAccountLimitReached(value); return *this;}
     ///@}
 
@@ -78,43 +78,44 @@ namespace Model
      * security standards are enabled and associate the policy with new organization
      * accounts.</p>
      */
-    inline const AutoEnableStandards& GetAutoEnableStandards() const{ return m_autoEnableStandards; }
-    inline void SetAutoEnableStandards(const AutoEnableStandards& value) { m_autoEnableStandards = value; }
-    inline void SetAutoEnableStandards(AutoEnableStandards&& value) { m_autoEnableStandards = std::move(value); }
-    inline DescribeOrganizationConfigurationResult& WithAutoEnableStandards(const AutoEnableStandards& value) { SetAutoEnableStandards(value); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithAutoEnableStandards(AutoEnableStandards&& value) { SetAutoEnableStandards(std::move(value)); return *this;}
+    inline AutoEnableStandards GetAutoEnableStandards() const { return m_autoEnableStandards; }
+    inline void SetAutoEnableStandards(AutoEnableStandards value) { m_autoEnableStandardsHasBeenSet = true; m_autoEnableStandards = value; }
+    inline DescribeOrganizationConfigurationResult& WithAutoEnableStandards(AutoEnableStandards value) { SetAutoEnableStandards(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const OrganizationConfiguration& GetOrganizationConfiguration() const{ return m_organizationConfiguration; }
-    inline void SetOrganizationConfiguration(const OrganizationConfiguration& value) { m_organizationConfiguration = value; }
-    inline void SetOrganizationConfiguration(OrganizationConfiguration&& value) { m_organizationConfiguration = std::move(value); }
-    inline DescribeOrganizationConfigurationResult& WithOrganizationConfiguration(const OrganizationConfiguration& value) { SetOrganizationConfiguration(value); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithOrganizationConfiguration(OrganizationConfiguration&& value) { SetOrganizationConfiguration(std::move(value)); return *this;}
+    inline const OrganizationConfiguration& GetOrganizationConfiguration() const { return m_organizationConfiguration; }
+    template<typename OrganizationConfigurationT = OrganizationConfiguration>
+    void SetOrganizationConfiguration(OrganizationConfigurationT&& value) { m_organizationConfigurationHasBeenSet = true; m_organizationConfiguration = std::forward<OrganizationConfigurationT>(value); }
+    template<typename OrganizationConfigurationT = OrganizationConfiguration>
+    DescribeOrganizationConfigurationResult& WithOrganizationConfiguration(OrganizationConfigurationT&& value) { SetOrganizationConfiguration(std::forward<OrganizationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeOrganizationConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeOrganizationConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_autoEnable;
+    bool m_autoEnable{false};
+    bool m_autoEnableHasBeenSet = false;
 
-    bool m_memberAccountLimitReached;
+    bool m_memberAccountLimitReached{false};
+    bool m_memberAccountLimitReachedHasBeenSet = false;
 
-    AutoEnableStandards m_autoEnableStandards;
+    AutoEnableStandards m_autoEnableStandards{AutoEnableStandards::NOT_SET};
+    bool m_autoEnableStandardsHasBeenSet = false;
 
     OrganizationConfiguration m_organizationConfiguration;
+    bool m_organizationConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

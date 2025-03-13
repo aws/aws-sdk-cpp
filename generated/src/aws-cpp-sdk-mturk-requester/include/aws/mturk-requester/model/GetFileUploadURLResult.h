@@ -27,7 +27,7 @@ namespace Model
   class GetFileUploadURLResult
   {
   public:
-    AWS_MTURK_API GetFileUploadURLResult();
+    AWS_MTURK_API GetFileUploadURLResult() = default;
     AWS_MTURK_API GetFileUploadURLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MTURK_API GetFileUploadURLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
      */
-    inline const Aws::String& GetFileUploadURL() const{ return m_fileUploadURL; }
-    inline void SetFileUploadURL(const Aws::String& value) { m_fileUploadURL = value; }
-    inline void SetFileUploadURL(Aws::String&& value) { m_fileUploadURL = std::move(value); }
-    inline void SetFileUploadURL(const char* value) { m_fileUploadURL.assign(value); }
-    inline GetFileUploadURLResult& WithFileUploadURL(const Aws::String& value) { SetFileUploadURL(value); return *this;}
-    inline GetFileUploadURLResult& WithFileUploadURL(Aws::String&& value) { SetFileUploadURL(std::move(value)); return *this;}
-    inline GetFileUploadURLResult& WithFileUploadURL(const char* value) { SetFileUploadURL(value); return *this;}
+    inline const Aws::String& GetFileUploadURL() const { return m_fileUploadURL; }
+    template<typename FileUploadURLT = Aws::String>
+    void SetFileUploadURL(FileUploadURLT&& value) { m_fileUploadURLHasBeenSet = true; m_fileUploadURL = std::forward<FileUploadURLT>(value); }
+    template<typename FileUploadURLT = Aws::String>
+    GetFileUploadURLResult& WithFileUploadURL(FileUploadURLT&& value) { SetFileUploadURL(std::forward<FileUploadURLT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFileUploadURLResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFileUploadURLResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFileUploadURLResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFileUploadURLResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fileUploadURL;
+    bool m_fileUploadURLHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

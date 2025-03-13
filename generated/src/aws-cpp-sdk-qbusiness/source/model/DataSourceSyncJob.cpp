@@ -18,20 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-DataSourceSyncJob::DataSourceSyncJob() : 
-    m_executionIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(DataSourceSyncJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_dataSourceErrorCodeHasBeenSet(false),
-    m_metricsHasBeenSet(false)
-{
-}
-
 DataSourceSyncJob::DataSourceSyncJob(JsonView jsonValue)
-  : DataSourceSyncJob()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ DataSourceSyncJob& DataSourceSyncJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("executionId"))
   {
     m_executionId = jsonValue.GetString("executionId");
-
     m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataSourceSyncJobStatusMapper::GetDataSourceSyncJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSourceErrorCode"))
   {
     m_dataSourceErrorCode = jsonValue.GetString("dataSourceErrorCode");
-
     m_dataSourceErrorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metrics"))
   {
     m_metrics = jsonValue.GetObject("metrics");
-
     m_metricsHasBeenSet = true;
   }
-
   return *this;
 }
 

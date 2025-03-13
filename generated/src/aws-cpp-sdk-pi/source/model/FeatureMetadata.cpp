@@ -18,14 +18,7 @@ namespace PI
 namespace Model
 {
 
-FeatureMetadata::FeatureMetadata() : 
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 FeatureMetadata::FeatureMetadata(JsonView jsonValue)
-  : FeatureMetadata()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FeatureMetadata& FeatureMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

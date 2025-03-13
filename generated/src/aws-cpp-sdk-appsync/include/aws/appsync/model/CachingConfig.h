@@ -33,7 +33,7 @@ namespace Model
   class CachingConfig
   {
   public:
-    AWS_APPSYNC_API CachingConfig();
+    AWS_APPSYNC_API CachingConfig() = default;
     AWS_APPSYNC_API CachingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API CachingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>The TTL in seconds for a resolver that has caching activated.</p> <p>Valid
      * values are 1–3,600 seconds.</p>
      */
-    inline long long GetTtl() const{ return m_ttl; }
+    inline long long GetTtl() const { return m_ttl; }
     inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
     inline void SetTtl(long long value) { m_ttlHasBeenSet = true; m_ttl = value; }
     inline CachingConfig& WithTtl(long long value) { SetTtl(value); return *this;}
@@ -56,19 +56,18 @@ namespace Model
      * values are entries from the <code>$context.arguments</code>,
      * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCachingKeys() const{ return m_cachingKeys; }
+    inline const Aws::Vector<Aws::String>& GetCachingKeys() const { return m_cachingKeys; }
     inline bool CachingKeysHasBeenSet() const { return m_cachingKeysHasBeenSet; }
-    inline void SetCachingKeys(const Aws::Vector<Aws::String>& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys = value; }
-    inline void SetCachingKeys(Aws::Vector<Aws::String>&& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys = std::move(value); }
-    inline CachingConfig& WithCachingKeys(const Aws::Vector<Aws::String>& value) { SetCachingKeys(value); return *this;}
-    inline CachingConfig& WithCachingKeys(Aws::Vector<Aws::String>&& value) { SetCachingKeys(std::move(value)); return *this;}
-    inline CachingConfig& AddCachingKeys(const Aws::String& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys.push_back(value); return *this; }
-    inline CachingConfig& AddCachingKeys(Aws::String&& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys.push_back(std::move(value)); return *this; }
-    inline CachingConfig& AddCachingKeys(const char* value) { m_cachingKeysHasBeenSet = true; m_cachingKeys.push_back(value); return *this; }
+    template<typename CachingKeysT = Aws::Vector<Aws::String>>
+    void SetCachingKeys(CachingKeysT&& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys = std::forward<CachingKeysT>(value); }
+    template<typename CachingKeysT = Aws::Vector<Aws::String>>
+    CachingConfig& WithCachingKeys(CachingKeysT&& value) { SetCachingKeys(std::forward<CachingKeysT>(value)); return *this;}
+    template<typename CachingKeysT = Aws::String>
+    CachingConfig& AddCachingKeys(CachingKeysT&& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys.emplace_back(std::forward<CachingKeysT>(value)); return *this; }
     ///@}
   private:
 
-    long long m_ttl;
+    long long m_ttl{0};
     bool m_ttlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cachingKeys;

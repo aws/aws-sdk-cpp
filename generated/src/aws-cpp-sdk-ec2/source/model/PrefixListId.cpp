@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PrefixListId::PrefixListId() : 
-    m_descriptionHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false)
-{
-}
-
 PrefixListId::PrefixListId(const XmlNode& xmlNode)
-  : PrefixListId()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ PrefixListId& PrefixListId::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
     if(!prefixListIdNode.IsNull())
     {
       m_prefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListIdNode.GetText());
       m_prefixListIdHasBeenSet = true;
+       m_prefixListIdHasBeenSet = true;
     }
   }
 

@@ -18,24 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AutomationRulesFindingFieldsUpdate::AutomationRulesFindingFieldsUpdate() : 
-    m_noteHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_verificationState(VerificationState::NOT_SET),
-    m_verificationStateHasBeenSet(false),
-    m_confidence(0),
-    m_confidenceHasBeenSet(false),
-    m_criticality(0),
-    m_criticalityHasBeenSet(false),
-    m_typesHasBeenSet(false),
-    m_userDefinedFieldsHasBeenSet(false),
-    m_workflowHasBeenSet(false),
-    m_relatedFindingsHasBeenSet(false)
-{
-}
-
 AutomationRulesFindingFieldsUpdate::AutomationRulesFindingFieldsUpdate(JsonView jsonValue)
-  : AutomationRulesFindingFieldsUpdate()
 {
   *this = jsonValue;
 }
@@ -45,38 +28,28 @@ AutomationRulesFindingFieldsUpdate& AutomationRulesFindingFieldsUpdate::operator
   if(jsonValue.ValueExists("Note"))
   {
     m_note = jsonValue.GetObject("Note");
-
     m_noteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = jsonValue.GetObject("Severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerificationState"))
   {
     m_verificationState = VerificationStateMapper::GetVerificationStateForName(jsonValue.GetString("VerificationState"));
-
     m_verificationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetInteger("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Criticality"))
   {
     m_criticality = jsonValue.GetInteger("Criticality");
-
     m_criticalityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Types"))
   {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
@@ -86,7 +59,6 @@ AutomationRulesFindingFieldsUpdate& AutomationRulesFindingFieldsUpdate::operator
     }
     m_typesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserDefinedFields"))
   {
     Aws::Map<Aws::String, JsonView> userDefinedFieldsJsonMap = jsonValue.GetObject("UserDefinedFields").GetAllObjects();
@@ -96,14 +68,11 @@ AutomationRulesFindingFieldsUpdate& AutomationRulesFindingFieldsUpdate::operator
     }
     m_userDefinedFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Workflow"))
   {
     m_workflow = jsonValue.GetObject("Workflow");
-
     m_workflowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedFindings"))
   {
     Aws::Utils::Array<JsonView> relatedFindingsJsonList = jsonValue.GetArray("RelatedFindings");
@@ -113,7 +82,6 @@ AutomationRulesFindingFieldsUpdate& AutomationRulesFindingFieldsUpdate::operator
     }
     m_relatedFindingsHasBeenSet = true;
   }
-
   return *this;
 }
 

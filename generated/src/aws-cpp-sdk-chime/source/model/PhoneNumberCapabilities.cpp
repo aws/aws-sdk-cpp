@@ -18,24 +18,7 @@ namespace Chime
 namespace Model
 {
 
-PhoneNumberCapabilities::PhoneNumberCapabilities() : 
-    m_inboundCall(false),
-    m_inboundCallHasBeenSet(false),
-    m_outboundCall(false),
-    m_outboundCallHasBeenSet(false),
-    m_inboundSMS(false),
-    m_inboundSMSHasBeenSet(false),
-    m_outboundSMS(false),
-    m_outboundSMSHasBeenSet(false),
-    m_inboundMMS(false),
-    m_inboundMMSHasBeenSet(false),
-    m_outboundMMS(false),
-    m_outboundMMSHasBeenSet(false)
-{
-}
-
 PhoneNumberCapabilities::PhoneNumberCapabilities(JsonView jsonValue)
-  : PhoneNumberCapabilities()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ PhoneNumberCapabilities& PhoneNumberCapabilities::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InboundCall"))
   {
     m_inboundCall = jsonValue.GetBool("InboundCall");
-
     m_inboundCallHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutboundCall"))
   {
     m_outboundCall = jsonValue.GetBool("OutboundCall");
-
     m_outboundCallHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InboundSMS"))
   {
     m_inboundSMS = jsonValue.GetBool("InboundSMS");
-
     m_inboundSMSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutboundSMS"))
   {
     m_outboundSMS = jsonValue.GetBool("OutboundSMS");
-
     m_outboundSMSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InboundMMS"))
   {
     m_inboundMMS = jsonValue.GetBool("InboundMMS");
-
     m_inboundMMSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutboundMMS"))
   {
     m_outboundMMS = jsonValue.GetBool("OutboundMMS");
-
     m_outboundMMSHasBeenSet = true;
   }
-
   return *this;
 }
 

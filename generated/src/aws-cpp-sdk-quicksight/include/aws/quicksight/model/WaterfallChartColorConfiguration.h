@@ -31,7 +31,7 @@ namespace Model
   class WaterfallChartColorConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API WaterfallChartColorConfiguration();
+    AWS_QUICKSIGHT_API WaterfallChartColorConfiguration() = default;
     AWS_QUICKSIGHT_API WaterfallChartColorConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API WaterfallChartColorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The color configuration for individual groups within a waterfall visual.</p>
      */
-    inline const WaterfallChartGroupColorConfiguration& GetGroupColorConfiguration() const{ return m_groupColorConfiguration; }
+    inline const WaterfallChartGroupColorConfiguration& GetGroupColorConfiguration() const { return m_groupColorConfiguration; }
     inline bool GroupColorConfigurationHasBeenSet() const { return m_groupColorConfigurationHasBeenSet; }
-    inline void SetGroupColorConfiguration(const WaterfallChartGroupColorConfiguration& value) { m_groupColorConfigurationHasBeenSet = true; m_groupColorConfiguration = value; }
-    inline void SetGroupColorConfiguration(WaterfallChartGroupColorConfiguration&& value) { m_groupColorConfigurationHasBeenSet = true; m_groupColorConfiguration = std::move(value); }
-    inline WaterfallChartColorConfiguration& WithGroupColorConfiguration(const WaterfallChartGroupColorConfiguration& value) { SetGroupColorConfiguration(value); return *this;}
-    inline WaterfallChartColorConfiguration& WithGroupColorConfiguration(WaterfallChartGroupColorConfiguration&& value) { SetGroupColorConfiguration(std::move(value)); return *this;}
+    template<typename GroupColorConfigurationT = WaterfallChartGroupColorConfiguration>
+    void SetGroupColorConfiguration(GroupColorConfigurationT&& value) { m_groupColorConfigurationHasBeenSet = true; m_groupColorConfiguration = std::forward<GroupColorConfigurationT>(value); }
+    template<typename GroupColorConfigurationT = WaterfallChartGroupColorConfiguration>
+    WaterfallChartColorConfiguration& WithGroupColorConfiguration(GroupColorConfigurationT&& value) { SetGroupColorConfiguration(std::forward<GroupColorConfigurationT>(value)); return *this;}
     ///@}
   private:
 

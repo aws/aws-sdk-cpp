@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterInstancesWithLoadBalancerResult::RegisterInstancesWithLoadBalancerResult()
-{
-}
-
 RegisterInstancesWithLoadBalancerResult::RegisterInstancesWithLoadBalancerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ RegisterInstancesWithLoadBalancerResult& RegisterInstancesWithLoadBalancerResult
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("member");
+      m_instancesHasBeenSet = !instancesMember.IsNull();
       while(!instancesMember.IsNull())
       {
         m_instances.push_back(instancesMember);
@@ -54,6 +51,7 @@ RegisterInstancesWithLoadBalancerResult& RegisterInstancesWithLoadBalancerResult
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::RegisterInstancesWithLoadBalancerResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

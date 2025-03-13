@@ -18,24 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-RecommendationSummary::RecommendationSummary() : 
-    m_filePathHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_startLine(0),
-    m_startLineHasBeenSet(false),
-    m_endLine(0),
-    m_endLineHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_recommendationCategory(RecommendationCategory::NOT_SET),
-    m_recommendationCategoryHasBeenSet(false),
-    m_ruleMetadataHasBeenSet(false),
-    m_severity(Severity::NOT_SET),
-    m_severityHasBeenSet(false)
-{
-}
-
 RecommendationSummary::RecommendationSummary(JsonView jsonValue)
-  : RecommendationSummary()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilePath"))
   {
     m_filePath = jsonValue.GetString("FilePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationId"))
   {
     m_recommendationId = jsonValue.GetString("RecommendationId");
-
     m_recommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartLine"))
   {
     m_startLine = jsonValue.GetInteger("StartLine");
-
     m_startLineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndLine"))
   {
     m_endLine = jsonValue.GetInteger("EndLine");
-
     m_endLineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationCategory"))
   {
     m_recommendationCategory = RecommendationCategoryMapper::GetRecommendationCategoryForName(jsonValue.GetString("RecommendationCategory"));
-
     m_recommendationCategoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleMetadata"))
   {
     m_ruleMetadata = jsonValue.GetObject("RuleMetadata");
-
     m_ruleMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = SeverityMapper::GetSeverityForName(jsonValue.GetString("Severity"));
-
     m_severityHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -42,7 +42,7 @@ namespace Model
   class Recipes
   {
   public:
-    AWS_OPSWORKS_API Recipes();
+    AWS_OPSWORKS_API Recipes() = default;
     AWS_OPSWORKS_API Recipes(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Recipes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,15 +53,14 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>setup</code>
      * event.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSetup() const{ return m_setup; }
+    inline const Aws::Vector<Aws::String>& GetSetup() const { return m_setup; }
     inline bool SetupHasBeenSet() const { return m_setupHasBeenSet; }
-    inline void SetSetup(const Aws::Vector<Aws::String>& value) { m_setupHasBeenSet = true; m_setup = value; }
-    inline void SetSetup(Aws::Vector<Aws::String>&& value) { m_setupHasBeenSet = true; m_setup = std::move(value); }
-    inline Recipes& WithSetup(const Aws::Vector<Aws::String>& value) { SetSetup(value); return *this;}
-    inline Recipes& WithSetup(Aws::Vector<Aws::String>&& value) { SetSetup(std::move(value)); return *this;}
-    inline Recipes& AddSetup(const Aws::String& value) { m_setupHasBeenSet = true; m_setup.push_back(value); return *this; }
-    inline Recipes& AddSetup(Aws::String&& value) { m_setupHasBeenSet = true; m_setup.push_back(std::move(value)); return *this; }
-    inline Recipes& AddSetup(const char* value) { m_setupHasBeenSet = true; m_setup.push_back(value); return *this; }
+    template<typename SetupT = Aws::Vector<Aws::String>>
+    void SetSetup(SetupT&& value) { m_setupHasBeenSet = true; m_setup = std::forward<SetupT>(value); }
+    template<typename SetupT = Aws::Vector<Aws::String>>
+    Recipes& WithSetup(SetupT&& value) { SetSetup(std::forward<SetupT>(value)); return *this;}
+    template<typename SetupT = Aws::String>
+    Recipes& AddSetup(SetupT&& value) { m_setupHasBeenSet = true; m_setup.emplace_back(std::forward<SetupT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,15 +68,14 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>configure</code>
      * event.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConfigure() const{ return m_configure; }
+    inline const Aws::Vector<Aws::String>& GetConfigure() const { return m_configure; }
     inline bool ConfigureHasBeenSet() const { return m_configureHasBeenSet; }
-    inline void SetConfigure(const Aws::Vector<Aws::String>& value) { m_configureHasBeenSet = true; m_configure = value; }
-    inline void SetConfigure(Aws::Vector<Aws::String>&& value) { m_configureHasBeenSet = true; m_configure = std::move(value); }
-    inline Recipes& WithConfigure(const Aws::Vector<Aws::String>& value) { SetConfigure(value); return *this;}
-    inline Recipes& WithConfigure(Aws::Vector<Aws::String>&& value) { SetConfigure(std::move(value)); return *this;}
-    inline Recipes& AddConfigure(const Aws::String& value) { m_configureHasBeenSet = true; m_configure.push_back(value); return *this; }
-    inline Recipes& AddConfigure(Aws::String&& value) { m_configureHasBeenSet = true; m_configure.push_back(std::move(value)); return *this; }
-    inline Recipes& AddConfigure(const char* value) { m_configureHasBeenSet = true; m_configure.push_back(value); return *this; }
+    template<typename ConfigureT = Aws::Vector<Aws::String>>
+    void SetConfigure(ConfigureT&& value) { m_configureHasBeenSet = true; m_configure = std::forward<ConfigureT>(value); }
+    template<typename ConfigureT = Aws::Vector<Aws::String>>
+    Recipes& WithConfigure(ConfigureT&& value) { SetConfigure(std::forward<ConfigureT>(value)); return *this;}
+    template<typename ConfigureT = Aws::String>
+    Recipes& AddConfigure(ConfigureT&& value) { m_configureHasBeenSet = true; m_configure.emplace_back(std::forward<ConfigureT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,15 +83,14 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>deploy</code>
      * event.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDeploy() const{ return m_deploy; }
+    inline const Aws::Vector<Aws::String>& GetDeploy() const { return m_deploy; }
     inline bool DeployHasBeenSet() const { return m_deployHasBeenSet; }
-    inline void SetDeploy(const Aws::Vector<Aws::String>& value) { m_deployHasBeenSet = true; m_deploy = value; }
-    inline void SetDeploy(Aws::Vector<Aws::String>&& value) { m_deployHasBeenSet = true; m_deploy = std::move(value); }
-    inline Recipes& WithDeploy(const Aws::Vector<Aws::String>& value) { SetDeploy(value); return *this;}
-    inline Recipes& WithDeploy(Aws::Vector<Aws::String>&& value) { SetDeploy(std::move(value)); return *this;}
-    inline Recipes& AddDeploy(const Aws::String& value) { m_deployHasBeenSet = true; m_deploy.push_back(value); return *this; }
-    inline Recipes& AddDeploy(Aws::String&& value) { m_deployHasBeenSet = true; m_deploy.push_back(std::move(value)); return *this; }
-    inline Recipes& AddDeploy(const char* value) { m_deployHasBeenSet = true; m_deploy.push_back(value); return *this; }
+    template<typename DeployT = Aws::Vector<Aws::String>>
+    void SetDeploy(DeployT&& value) { m_deployHasBeenSet = true; m_deploy = std::forward<DeployT>(value); }
+    template<typename DeployT = Aws::Vector<Aws::String>>
+    Recipes& WithDeploy(DeployT&& value) { SetDeploy(std::forward<DeployT>(value)); return *this;}
+    template<typename DeployT = Aws::String>
+    Recipes& AddDeploy(DeployT&& value) { m_deployHasBeenSet = true; m_deploy.emplace_back(std::forward<DeployT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -101,15 +98,14 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>undeploy</code>
      * event.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUndeploy() const{ return m_undeploy; }
+    inline const Aws::Vector<Aws::String>& GetUndeploy() const { return m_undeploy; }
     inline bool UndeployHasBeenSet() const { return m_undeployHasBeenSet; }
-    inline void SetUndeploy(const Aws::Vector<Aws::String>& value) { m_undeployHasBeenSet = true; m_undeploy = value; }
-    inline void SetUndeploy(Aws::Vector<Aws::String>&& value) { m_undeployHasBeenSet = true; m_undeploy = std::move(value); }
-    inline Recipes& WithUndeploy(const Aws::Vector<Aws::String>& value) { SetUndeploy(value); return *this;}
-    inline Recipes& WithUndeploy(Aws::Vector<Aws::String>&& value) { SetUndeploy(std::move(value)); return *this;}
-    inline Recipes& AddUndeploy(const Aws::String& value) { m_undeployHasBeenSet = true; m_undeploy.push_back(value); return *this; }
-    inline Recipes& AddUndeploy(Aws::String&& value) { m_undeployHasBeenSet = true; m_undeploy.push_back(std::move(value)); return *this; }
-    inline Recipes& AddUndeploy(const char* value) { m_undeployHasBeenSet = true; m_undeploy.push_back(value); return *this; }
+    template<typename UndeployT = Aws::Vector<Aws::String>>
+    void SetUndeploy(UndeployT&& value) { m_undeployHasBeenSet = true; m_undeploy = std::forward<UndeployT>(value); }
+    template<typename UndeployT = Aws::Vector<Aws::String>>
+    Recipes& WithUndeploy(UndeployT&& value) { SetUndeploy(std::forward<UndeployT>(value)); return *this;}
+    template<typename UndeployT = Aws::String>
+    Recipes& AddUndeploy(UndeployT&& value) { m_undeployHasBeenSet = true; m_undeploy.emplace_back(std::forward<UndeployT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -117,15 +113,14 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>shutdown</code>
      * event.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetShutdown() const{ return m_shutdown; }
+    inline const Aws::Vector<Aws::String>& GetShutdown() const { return m_shutdown; }
     inline bool ShutdownHasBeenSet() const { return m_shutdownHasBeenSet; }
-    inline void SetShutdown(const Aws::Vector<Aws::String>& value) { m_shutdownHasBeenSet = true; m_shutdown = value; }
-    inline void SetShutdown(Aws::Vector<Aws::String>&& value) { m_shutdownHasBeenSet = true; m_shutdown = std::move(value); }
-    inline Recipes& WithShutdown(const Aws::Vector<Aws::String>& value) { SetShutdown(value); return *this;}
-    inline Recipes& WithShutdown(Aws::Vector<Aws::String>&& value) { SetShutdown(std::move(value)); return *this;}
-    inline Recipes& AddShutdown(const Aws::String& value) { m_shutdownHasBeenSet = true; m_shutdown.push_back(value); return *this; }
-    inline Recipes& AddShutdown(Aws::String&& value) { m_shutdownHasBeenSet = true; m_shutdown.push_back(std::move(value)); return *this; }
-    inline Recipes& AddShutdown(const char* value) { m_shutdownHasBeenSet = true; m_shutdown.push_back(value); return *this; }
+    template<typename ShutdownT = Aws::Vector<Aws::String>>
+    void SetShutdown(ShutdownT&& value) { m_shutdownHasBeenSet = true; m_shutdown = std::forward<ShutdownT>(value); }
+    template<typename ShutdownT = Aws::Vector<Aws::String>>
+    Recipes& WithShutdown(ShutdownT&& value) { SetShutdown(std::forward<ShutdownT>(value)); return *this;}
+    template<typename ShutdownT = Aws::String>
+    Recipes& AddShutdown(ShutdownT&& value) { m_shutdownHasBeenSet = true; m_shutdown.emplace_back(std::forward<ShutdownT>(value)); return *this; }
     ///@}
   private:
 

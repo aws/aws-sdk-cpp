@@ -31,7 +31,7 @@ namespace Model
   class DailySchedule
   {
   public:
-    AWS_INSPECTOR2_API DailySchedule();
+    AWS_INSPECTOR2_API DailySchedule() = default;
     AWS_INSPECTOR2_API DailySchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API DailySchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The schedule start time.</p>
      */
-    inline const Time& GetStartTime() const{ return m_startTime; }
+    inline const Time& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Time& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Time&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline DailySchedule& WithStartTime(const Time& value) { SetStartTime(value); return *this;}
-    inline DailySchedule& WithStartTime(Time&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Time>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Time>
+    DailySchedule& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 

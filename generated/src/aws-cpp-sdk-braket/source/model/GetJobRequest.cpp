@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetJobRequest::GetJobRequest() : 
-    m_additionalAttributeNamesHasBeenSet(false),
-    m_jobArnHasBeenSet(false)
-{
-}
-
 Aws::String GetJobRequest::SerializePayload() const
 {
   return {};

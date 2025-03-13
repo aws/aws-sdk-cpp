@@ -25,7 +25,7 @@ namespace Model
   class CreateBuildRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API CreateBuildRequest();
+    AWS_GAMELIFT_API CreateBuildRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>A descriptive label that is associated with a build. Build names do not need
      * to be unique. You can change this value later. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateBuildRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateBuildRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateBuildRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateBuildRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>Version information that is associated with a build or script. Version
      * strings do not need to be unique. You can change this value later. </p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline CreateBuildRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline CreateBuildRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline CreateBuildRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    CreateBuildRequest& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,12 @@ namespace Model
      * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
      * will report a <code>SizeOnDisk</code> of 0. </p>
      */
-    inline const S3Location& GetStorageLocation() const{ return m_storageLocation; }
+    inline const S3Location& GetStorageLocation() const { return m_storageLocation; }
     inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }
-    inline void SetStorageLocation(const S3Location& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
-    inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::move(value); }
-    inline CreateBuildRequest& WithStorageLocation(const S3Location& value) { SetStorageLocation(value); return *this;}
-    inline CreateBuildRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
+    template<typename StorageLocationT = S3Location>
+    void SetStorageLocation(StorageLocationT&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::forward<StorageLocationT>(value); }
+    template<typename StorageLocationT = S3Location>
+    CreateBuildRequest& WithStorageLocation(StorageLocationT&& value) { SetStorageLocation(std::forward<StorageLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +98,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
      * Migrate to Amazon GameLift server SDK version 5.</a> </p> 
      */
-    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+    inline OperatingSystem GetOperatingSystem() const { return m_operatingSystem; }
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
-    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
-    inline CreateBuildRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
-    inline CreateBuildRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+    inline void SetOperatingSystem(OperatingSystem value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+    inline CreateBuildRequest& WithOperatingSystem(OperatingSystem value) { SetOperatingSystem(value); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +121,14 @@ namespace Model
      * to add, remove, and view tags. The maximum tag limit may be lower than stated.
      * See the Amazon Web Services General Reference for actual tagging limits.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateBuildRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateBuildRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateBuildRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateBuildRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateBuildRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateBuildRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -145,14 +139,12 @@ namespace Model
      * games with custom game servers</a>. By default Amazon GameLift sets this value
      * to <code>4.0.2</code>.</p>
      */
-    inline const Aws::String& GetServerSdkVersion() const{ return m_serverSdkVersion; }
+    inline const Aws::String& GetServerSdkVersion() const { return m_serverSdkVersion; }
     inline bool ServerSdkVersionHasBeenSet() const { return m_serverSdkVersionHasBeenSet; }
-    inline void SetServerSdkVersion(const Aws::String& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = value; }
-    inline void SetServerSdkVersion(Aws::String&& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = std::move(value); }
-    inline void SetServerSdkVersion(const char* value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion.assign(value); }
-    inline CreateBuildRequest& WithServerSdkVersion(const Aws::String& value) { SetServerSdkVersion(value); return *this;}
-    inline CreateBuildRequest& WithServerSdkVersion(Aws::String&& value) { SetServerSdkVersion(std::move(value)); return *this;}
-    inline CreateBuildRequest& WithServerSdkVersion(const char* value) { SetServerSdkVersion(value); return *this;}
+    template<typename ServerSdkVersionT = Aws::String>
+    void SetServerSdkVersion(ServerSdkVersionT&& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = std::forward<ServerSdkVersionT>(value); }
+    template<typename ServerSdkVersionT = Aws::String>
+    CreateBuildRequest& WithServerSdkVersion(ServerSdkVersionT&& value) { SetServerSdkVersion(std::forward<ServerSdkVersionT>(value)); return *this;}
     ///@}
   private:
 
@@ -165,7 +157,7 @@ namespace Model
     S3Location m_storageLocation;
     bool m_storageLocationHasBeenSet = false;
 
-    OperatingSystem m_operatingSystem;
+    OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
     bool m_operatingSystemHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

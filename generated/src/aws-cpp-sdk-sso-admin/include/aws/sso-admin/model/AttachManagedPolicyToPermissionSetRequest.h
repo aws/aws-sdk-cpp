@@ -21,7 +21,7 @@ namespace Model
   class AttachManagedPolicyToPermissionSetRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API AttachManagedPolicyToPermissionSetRequest();
+    AWS_SSOADMIN_API AttachManagedPolicyToPermissionSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline AttachManagedPolicyToPermissionSetRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline AttachManagedPolicyToPermissionSetRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline AttachManagedPolicyToPermissionSetRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    AttachManagedPolicyToPermissionSetRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The Amazon Web Services managed policy ARN to be attached to a permission
      * set.</p>
      */
-    inline const Aws::String& GetManagedPolicyArn() const{ return m_managedPolicyArn; }
+    inline const Aws::String& GetManagedPolicyArn() const { return m_managedPolicyArn; }
     inline bool ManagedPolicyArnHasBeenSet() const { return m_managedPolicyArnHasBeenSet; }
-    inline void SetManagedPolicyArn(const Aws::String& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = value; }
-    inline void SetManagedPolicyArn(Aws::String&& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = std::move(value); }
-    inline void SetManagedPolicyArn(const char* value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn.assign(value); }
-    inline AttachManagedPolicyToPermissionSetRequest& WithManagedPolicyArn(const Aws::String& value) { SetManagedPolicyArn(value); return *this;}
-    inline AttachManagedPolicyToPermissionSetRequest& WithManagedPolicyArn(Aws::String&& value) { SetManagedPolicyArn(std::move(value)); return *this;}
-    inline AttachManagedPolicyToPermissionSetRequest& WithManagedPolicyArn(const char* value) { SetManagedPolicyArn(value); return *this;}
+    template<typename ManagedPolicyArnT = Aws::String>
+    void SetManagedPolicyArn(ManagedPolicyArnT&& value) { m_managedPolicyArnHasBeenSet = true; m_managedPolicyArn = std::forward<ManagedPolicyArnT>(value); }
+    template<typename ManagedPolicyArnT = Aws::String>
+    AttachManagedPolicyToPermissionSetRequest& WithManagedPolicyArn(ManagedPolicyArnT&& value) { SetManagedPolicyArn(std::forward<ManagedPolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The ARN of the <a>PermissionSet</a> that the managed policy should be
      * attached to.</p>
      */
-    inline const Aws::String& GetPermissionSetArn() const{ return m_permissionSetArn; }
+    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
     inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
-    inline void SetPermissionSetArn(const Aws::String& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = value; }
-    inline void SetPermissionSetArn(Aws::String&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::move(value); }
-    inline void SetPermissionSetArn(const char* value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn.assign(value); }
-    inline AttachManagedPolicyToPermissionSetRequest& WithPermissionSetArn(const Aws::String& value) { SetPermissionSetArn(value); return *this;}
-    inline AttachManagedPolicyToPermissionSetRequest& WithPermissionSetArn(Aws::String&& value) { SetPermissionSetArn(std::move(value)); return *this;}
-    inline AttachManagedPolicyToPermissionSetRequest& WithPermissionSetArn(const char* value) { SetPermissionSetArn(value); return *this;}
+    template<typename PermissionSetArnT = Aws::String>
+    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
+    template<typename PermissionSetArnT = Aws::String>
+    AttachManagedPolicyToPermissionSetRequest& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
     ///@}
   private:
 

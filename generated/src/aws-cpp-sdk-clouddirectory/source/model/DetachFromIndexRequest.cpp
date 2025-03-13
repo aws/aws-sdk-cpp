@@ -13,13 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachFromIndexRequest::DetachFromIndexRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_indexReferenceHasBeenSet(false),
-    m_targetReferenceHasBeenSet(false)
-{
-}
-
 Aws::String DetachFromIndexRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQueueAttributesRequest::GetQueueAttributesRequest() : 
-    m_queueUrlHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false)
-{
-}
-
 Aws::String GetQueueAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

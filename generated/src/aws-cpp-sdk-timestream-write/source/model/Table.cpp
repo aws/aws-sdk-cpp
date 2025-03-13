@@ -18,22 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-Table::Table() : 
-    m_arnHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableStatus(TableStatus::NOT_SET),
-    m_tableStatusHasBeenSet(false),
-    m_retentionPropertiesHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_magneticStoreWritePropertiesHasBeenSet(false),
-    m_schemaHasBeenSet(false)
-{
-}
-
 Table::Table(JsonView jsonValue)
-  : Table()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ Table& Table::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableStatus"))
   {
     m_tableStatus = TableStatusMapper::GetTableStatusForName(jsonValue.GetString("TableStatus"));
-
     m_tableStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetentionProperties"))
   {
     m_retentionProperties = jsonValue.GetObject("RetentionProperties");
-
     m_retentionPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MagneticStoreWriteProperties"))
   {
     m_magneticStoreWriteProperties = jsonValue.GetObject("MagneticStoreWriteProperties");
-
     m_magneticStoreWritePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schema"))
   {
     m_schema = jsonValue.GetObject("Schema");
-
     m_schemaHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class Scte35Descriptor
   {
   public:
-    AWS_MEDIALIVE_API Scte35Descriptor();
+    AWS_MEDIALIVE_API Scte35Descriptor() = default;
     AWS_MEDIALIVE_API Scte35Descriptor(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Scte35Descriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * SCTE-35 Descriptor Settings.
      */
-    inline const Scte35DescriptorSettings& GetScte35DescriptorSettings() const{ return m_scte35DescriptorSettings; }
+    inline const Scte35DescriptorSettings& GetScte35DescriptorSettings() const { return m_scte35DescriptorSettings; }
     inline bool Scte35DescriptorSettingsHasBeenSet() const { return m_scte35DescriptorSettingsHasBeenSet; }
-    inline void SetScte35DescriptorSettings(const Scte35DescriptorSettings& value) { m_scte35DescriptorSettingsHasBeenSet = true; m_scte35DescriptorSettings = value; }
-    inline void SetScte35DescriptorSettings(Scte35DescriptorSettings&& value) { m_scte35DescriptorSettingsHasBeenSet = true; m_scte35DescriptorSettings = std::move(value); }
-    inline Scte35Descriptor& WithScte35DescriptorSettings(const Scte35DescriptorSettings& value) { SetScte35DescriptorSettings(value); return *this;}
-    inline Scte35Descriptor& WithScte35DescriptorSettings(Scte35DescriptorSettings&& value) { SetScte35DescriptorSettings(std::move(value)); return *this;}
+    template<typename Scte35DescriptorSettingsT = Scte35DescriptorSettings>
+    void SetScte35DescriptorSettings(Scte35DescriptorSettingsT&& value) { m_scte35DescriptorSettingsHasBeenSet = true; m_scte35DescriptorSettings = std::forward<Scte35DescriptorSettingsT>(value); }
+    template<typename Scte35DescriptorSettingsT = Scte35DescriptorSettings>
+    Scte35Descriptor& WithScte35DescriptorSettings(Scte35DescriptorSettingsT&& value) { SetScte35DescriptorSettings(std::forward<Scte35DescriptorSettingsT>(value)); return *this;}
     ///@}
   private:
 

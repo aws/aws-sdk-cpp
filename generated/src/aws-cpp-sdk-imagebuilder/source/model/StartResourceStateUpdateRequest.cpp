@@ -12,18 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartResourceStateUpdateRequest::StartResourceStateUpdateRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_includeResourcesHasBeenSet(false),
-    m_exclusionRulesHasBeenSet(false),
-    m_updateAtHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartResourceStateUpdateRequest::SerializePayload() const
 {
   JsonValue payload;

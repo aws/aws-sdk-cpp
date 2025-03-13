@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAwsLogSourceResult::CreateAwsLogSourceResult()
-{
-}
-
 CreateAwsLogSourceResult::CreateAwsLogSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ CreateAwsLogSourceResult& CreateAwsLogSourceResult::operator =(const Aws::Amazon
     {
       m_failed.push_back(failedJsonList[failedIndex].AsString());
     }
+    m_failedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -34,7 +34,7 @@ namespace Model
   class CrawlerHistory
   {
   public:
-    AWS_GLUE_API CrawlerHistory();
+    AWS_GLUE_API CrawlerHistory() = default;
     AWS_GLUE_API CrawlerHistory(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API CrawlerHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,50 +44,46 @@ namespace Model
     /**
      * <p>A UUID identifier for each crawl.</p>
      */
-    inline const Aws::String& GetCrawlId() const{ return m_crawlId; }
+    inline const Aws::String& GetCrawlId() const { return m_crawlId; }
     inline bool CrawlIdHasBeenSet() const { return m_crawlIdHasBeenSet; }
-    inline void SetCrawlId(const Aws::String& value) { m_crawlIdHasBeenSet = true; m_crawlId = value; }
-    inline void SetCrawlId(Aws::String&& value) { m_crawlIdHasBeenSet = true; m_crawlId = std::move(value); }
-    inline void SetCrawlId(const char* value) { m_crawlIdHasBeenSet = true; m_crawlId.assign(value); }
-    inline CrawlerHistory& WithCrawlId(const Aws::String& value) { SetCrawlId(value); return *this;}
-    inline CrawlerHistory& WithCrawlId(Aws::String&& value) { SetCrawlId(std::move(value)); return *this;}
-    inline CrawlerHistory& WithCrawlId(const char* value) { SetCrawlId(value); return *this;}
+    template<typename CrawlIdT = Aws::String>
+    void SetCrawlId(CrawlIdT&& value) { m_crawlIdHasBeenSet = true; m_crawlId = std::forward<CrawlIdT>(value); }
+    template<typename CrawlIdT = Aws::String>
+    CrawlerHistory& WithCrawlId(CrawlIdT&& value) { SetCrawlId(std::forward<CrawlIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the crawl.</p>
      */
-    inline const CrawlerHistoryState& GetState() const{ return m_state; }
+    inline CrawlerHistoryState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const CrawlerHistoryState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(CrawlerHistoryState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline CrawlerHistory& WithState(const CrawlerHistoryState& value) { SetState(value); return *this;}
-    inline CrawlerHistory& WithState(CrawlerHistoryState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(CrawlerHistoryState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline CrawlerHistory& WithState(CrawlerHistoryState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time on which the crawl started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline CrawlerHistory& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline CrawlerHistory& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    CrawlerHistory& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time on which the crawl ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline CrawlerHistory& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline CrawlerHistory& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    CrawlerHistory& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,77 +91,67 @@ namespace Model
      * <p>A run summary for the specific crawl in JSON. Contains the catalog tables and
      * partitions that were added, updated, or deleted.</p>
      */
-    inline const Aws::String& GetSummary() const{ return m_summary; }
+    inline const Aws::String& GetSummary() const { return m_summary; }
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-    inline void SetSummary(const Aws::String& value) { m_summaryHasBeenSet = true; m_summary = value; }
-    inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-    inline void SetSummary(const char* value) { m_summaryHasBeenSet = true; m_summary.assign(value); }
-    inline CrawlerHistory& WithSummary(const Aws::String& value) { SetSummary(value); return *this;}
-    inline CrawlerHistory& WithSummary(Aws::String&& value) { SetSummary(std::move(value)); return *this;}
-    inline CrawlerHistory& WithSummary(const char* value) { SetSummary(value); return *this;}
+    template<typename SummaryT = Aws::String>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = Aws::String>
+    CrawlerHistory& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If an error occurred, the error message associated with the crawl.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline CrawlerHistory& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline CrawlerHistory& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline CrawlerHistory& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    CrawlerHistory& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The log group associated with the crawl.</p>
      */
-    inline const Aws::String& GetLogGroup() const{ return m_logGroup; }
+    inline const Aws::String& GetLogGroup() const { return m_logGroup; }
     inline bool LogGroupHasBeenSet() const { return m_logGroupHasBeenSet; }
-    inline void SetLogGroup(const Aws::String& value) { m_logGroupHasBeenSet = true; m_logGroup = value; }
-    inline void SetLogGroup(Aws::String&& value) { m_logGroupHasBeenSet = true; m_logGroup = std::move(value); }
-    inline void SetLogGroup(const char* value) { m_logGroupHasBeenSet = true; m_logGroup.assign(value); }
-    inline CrawlerHistory& WithLogGroup(const Aws::String& value) { SetLogGroup(value); return *this;}
-    inline CrawlerHistory& WithLogGroup(Aws::String&& value) { SetLogGroup(std::move(value)); return *this;}
-    inline CrawlerHistory& WithLogGroup(const char* value) { SetLogGroup(value); return *this;}
+    template<typename LogGroupT = Aws::String>
+    void SetLogGroup(LogGroupT&& value) { m_logGroupHasBeenSet = true; m_logGroup = std::forward<LogGroupT>(value); }
+    template<typename LogGroupT = Aws::String>
+    CrawlerHistory& WithLogGroup(LogGroupT&& value) { SetLogGroup(std::forward<LogGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The log stream associated with the crawl.</p>
      */
-    inline const Aws::String& GetLogStream() const{ return m_logStream; }
+    inline const Aws::String& GetLogStream() const { return m_logStream; }
     inline bool LogStreamHasBeenSet() const { return m_logStreamHasBeenSet; }
-    inline void SetLogStream(const Aws::String& value) { m_logStreamHasBeenSet = true; m_logStream = value; }
-    inline void SetLogStream(Aws::String&& value) { m_logStreamHasBeenSet = true; m_logStream = std::move(value); }
-    inline void SetLogStream(const char* value) { m_logStreamHasBeenSet = true; m_logStream.assign(value); }
-    inline CrawlerHistory& WithLogStream(const Aws::String& value) { SetLogStream(value); return *this;}
-    inline CrawlerHistory& WithLogStream(Aws::String&& value) { SetLogStream(std::move(value)); return *this;}
-    inline CrawlerHistory& WithLogStream(const char* value) { SetLogStream(value); return *this;}
+    template<typename LogStreamT = Aws::String>
+    void SetLogStream(LogStreamT&& value) { m_logStreamHasBeenSet = true; m_logStream = std::forward<LogStreamT>(value); }
+    template<typename LogStreamT = Aws::String>
+    CrawlerHistory& WithLogStream(LogStreamT&& value) { SetLogStream(std::forward<LogStreamT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The prefix for a CloudWatch message about this crawl.</p>
      */
-    inline const Aws::String& GetMessagePrefix() const{ return m_messagePrefix; }
+    inline const Aws::String& GetMessagePrefix() const { return m_messagePrefix; }
     inline bool MessagePrefixHasBeenSet() const { return m_messagePrefixHasBeenSet; }
-    inline void SetMessagePrefix(const Aws::String& value) { m_messagePrefixHasBeenSet = true; m_messagePrefix = value; }
-    inline void SetMessagePrefix(Aws::String&& value) { m_messagePrefixHasBeenSet = true; m_messagePrefix = std::move(value); }
-    inline void SetMessagePrefix(const char* value) { m_messagePrefixHasBeenSet = true; m_messagePrefix.assign(value); }
-    inline CrawlerHistory& WithMessagePrefix(const Aws::String& value) { SetMessagePrefix(value); return *this;}
-    inline CrawlerHistory& WithMessagePrefix(Aws::String&& value) { SetMessagePrefix(std::move(value)); return *this;}
-    inline CrawlerHistory& WithMessagePrefix(const char* value) { SetMessagePrefix(value); return *this;}
+    template<typename MessagePrefixT = Aws::String>
+    void SetMessagePrefix(MessagePrefixT&& value) { m_messagePrefixHasBeenSet = true; m_messagePrefix = std::forward<MessagePrefixT>(value); }
+    template<typename MessagePrefixT = Aws::String>
+    CrawlerHistory& WithMessagePrefix(MessagePrefixT&& value) { SetMessagePrefix(std::forward<MessagePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of data processing units (DPU) used in hours for the crawl.</p>
      */
-    inline double GetDPUHour() const{ return m_dPUHour; }
+    inline double GetDPUHour() const { return m_dPUHour; }
     inline bool DPUHourHasBeenSet() const { return m_dPUHourHasBeenSet; }
     inline void SetDPUHour(double value) { m_dPUHourHasBeenSet = true; m_dPUHour = value; }
     inline CrawlerHistory& WithDPUHour(double value) { SetDPUHour(value); return *this;}
@@ -175,13 +161,13 @@ namespace Model
     Aws::String m_crawlId;
     bool m_crawlIdHasBeenSet = false;
 
-    CrawlerHistoryState m_state;
+    CrawlerHistoryState m_state{CrawlerHistoryState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_summary;
@@ -199,7 +185,7 @@ namespace Model
     Aws::String m_messagePrefix;
     bool m_messagePrefixHasBeenSet = false;
 
-    double m_dPUHour;
+    double m_dPUHour{0.0};
     bool m_dPUHourHasBeenSet = false;
   };
 

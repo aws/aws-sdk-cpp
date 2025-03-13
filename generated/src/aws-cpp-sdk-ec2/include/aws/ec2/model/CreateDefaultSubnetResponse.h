@@ -28,7 +28,7 @@ namespace Model
   class CreateDefaultSubnetResponse
   {
   public:
-    AWS_EC2_API CreateDefaultSubnetResponse();
+    AWS_EC2_API CreateDefaultSubnetResponse() = default;
     AWS_EC2_API CreateDefaultSubnetResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateDefaultSubnetResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the subnet.</p>
      */
-    inline const Subnet& GetSubnet() const{ return m_subnet; }
-    inline void SetSubnet(const Subnet& value) { m_subnet = value; }
-    inline void SetSubnet(Subnet&& value) { m_subnet = std::move(value); }
-    inline CreateDefaultSubnetResponse& WithSubnet(const Subnet& value) { SetSubnet(value); return *this;}
-    inline CreateDefaultSubnetResponse& WithSubnet(Subnet&& value) { SetSubnet(std::move(value)); return *this;}
+    inline const Subnet& GetSubnet() const { return m_subnet; }
+    template<typename SubnetT = Subnet>
+    void SetSubnet(SubnetT&& value) { m_subnetHasBeenSet = true; m_subnet = std::forward<SubnetT>(value); }
+    template<typename SubnetT = Subnet>
+    CreateDefaultSubnetResponse& WithSubnet(SubnetT&& value) { SetSubnet(std::forward<SubnetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateDefaultSubnetResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateDefaultSubnetResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateDefaultSubnetResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Subnet m_subnet;
+    bool m_subnetHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

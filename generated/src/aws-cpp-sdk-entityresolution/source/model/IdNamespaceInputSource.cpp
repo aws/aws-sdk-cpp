@@ -18,14 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-IdNamespaceInputSource::IdNamespaceInputSource() : 
-    m_inputSourceARNHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
-{
-}
-
 IdNamespaceInputSource::IdNamespaceInputSource(JsonView jsonValue)
-  : IdNamespaceInputSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IdNamespaceInputSource& IdNamespaceInputSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputSourceARN"))
   {
     m_inputSourceARN = jsonValue.GetString("inputSourceARN");
-
     m_inputSourceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaName"))
   {
     m_schemaName = jsonValue.GetString("schemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   return *this;
 }
 

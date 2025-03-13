@@ -32,7 +32,7 @@ namespace Model
   class CharacterSet
   {
   public:
-    AWS_RDS_API CharacterSet();
+    AWS_RDS_API CharacterSet() = default;
     AWS_RDS_API CharacterSet(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API CharacterSet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The name of the character set.</p>
      */
-    inline const Aws::String& GetCharacterSetName() const{ return m_characterSetName; }
+    inline const Aws::String& GetCharacterSetName() const { return m_characterSetName; }
     inline bool CharacterSetNameHasBeenSet() const { return m_characterSetNameHasBeenSet; }
-    inline void SetCharacterSetName(const Aws::String& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
-    inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::move(value); }
-    inline void SetCharacterSetName(const char* value) { m_characterSetNameHasBeenSet = true; m_characterSetName.assign(value); }
-    inline CharacterSet& WithCharacterSetName(const Aws::String& value) { SetCharacterSetName(value); return *this;}
-    inline CharacterSet& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(std::move(value)); return *this;}
-    inline CharacterSet& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
+    template<typename CharacterSetNameT = Aws::String>
+    void SetCharacterSetName(CharacterSetNameT&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::forward<CharacterSetNameT>(value); }
+    template<typename CharacterSetNameT = Aws::String>
+    CharacterSet& WithCharacterSetName(CharacterSetNameT&& value) { SetCharacterSetName(std::forward<CharacterSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the character set.</p>
      */
-    inline const Aws::String& GetCharacterSetDescription() const{ return m_characterSetDescription; }
+    inline const Aws::String& GetCharacterSetDescription() const { return m_characterSetDescription; }
     inline bool CharacterSetDescriptionHasBeenSet() const { return m_characterSetDescriptionHasBeenSet; }
-    inline void SetCharacterSetDescription(const Aws::String& value) { m_characterSetDescriptionHasBeenSet = true; m_characterSetDescription = value; }
-    inline void SetCharacterSetDescription(Aws::String&& value) { m_characterSetDescriptionHasBeenSet = true; m_characterSetDescription = std::move(value); }
-    inline void SetCharacterSetDescription(const char* value) { m_characterSetDescriptionHasBeenSet = true; m_characterSetDescription.assign(value); }
-    inline CharacterSet& WithCharacterSetDescription(const Aws::String& value) { SetCharacterSetDescription(value); return *this;}
-    inline CharacterSet& WithCharacterSetDescription(Aws::String&& value) { SetCharacterSetDescription(std::move(value)); return *this;}
-    inline CharacterSet& WithCharacterSetDescription(const char* value) { SetCharacterSetDescription(value); return *this;}
+    template<typename CharacterSetDescriptionT = Aws::String>
+    void SetCharacterSetDescription(CharacterSetDescriptionT&& value) { m_characterSetDescriptionHasBeenSet = true; m_characterSetDescription = std::forward<CharacterSetDescriptionT>(value); }
+    template<typename CharacterSetDescriptionT = Aws::String>
+    CharacterSet& WithCharacterSetDescription(CharacterSetDescriptionT&& value) { SetCharacterSetDescription(std::forward<CharacterSetDescriptionT>(value)); return *this;}
     ///@}
   private:
 

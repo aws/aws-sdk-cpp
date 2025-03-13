@@ -15,23 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListOfferingsRequest::ListOfferingsRequest() : 
-    m_channelClassHasBeenSet(false),
-    m_channelConfigurationHasBeenSet(false),
-    m_codecHasBeenSet(false),
-    m_durationHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_maximumBitrateHasBeenSet(false),
-    m_maximumFramerateHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_resolutionHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_specialFeatureHasBeenSet(false),
-    m_videoQualityHasBeenSet(false)
-{
-}
-
 Aws::String ListOfferingsRequest::SerializePayload() const
 {
   return {};

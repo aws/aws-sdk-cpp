@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualGatewayClientPolicy::VirtualGatewayClientPolicy() : 
-    m_tlsHasBeenSet(false)
-{
-}
-
 VirtualGatewayClientPolicy::VirtualGatewayClientPolicy(JsonView jsonValue)
-  : VirtualGatewayClientPolicy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VirtualGatewayClientPolicy& VirtualGatewayClientPolicy::operator =(JsonView json
   if(jsonValue.ValueExists("tls"))
   {
     m_tls = jsonValue.GetObject("tls");
-
     m_tlsHasBeenSet = true;
   }
-
   return *this;
 }
 

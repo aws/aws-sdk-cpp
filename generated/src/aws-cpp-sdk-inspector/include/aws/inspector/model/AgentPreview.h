@@ -33,7 +33,7 @@ namespace Model
   class AgentPreview
   {
   public:
-    AWS_INSPECTOR_API AgentPreview();
+    AWS_INSPECTOR_API AgentPreview() = default;
     AWS_INSPECTOR_API AgentPreview(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API AgentPreview& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,68 +44,58 @@ namespace Model
      * <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is
      * installed.</p>
      */
-    inline const Aws::String& GetHostname() const{ return m_hostname; }
+    inline const Aws::String& GetHostname() const { return m_hostname; }
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-    inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-    inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-    inline AgentPreview& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-    inline AgentPreview& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-    inline AgentPreview& WithHostname(const char* value) { SetHostname(value); return *this;}
+    template<typename HostnameT = Aws::String>
+    void SetHostname(HostnameT&& value) { m_hostnameHasBeenSet = true; m_hostname = std::forward<HostnameT>(value); }
+    template<typename HostnameT = Aws::String>
+    AgentPreview& WithHostname(HostnameT&& value) { SetHostname(std::forward<HostnameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the EC2 instance where the agent is installed.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline AgentPreview& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline AgentPreview& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline AgentPreview& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    AgentPreview& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
      */
-    inline const Aws::String& GetAutoScalingGroup() const{ return m_autoScalingGroup; }
+    inline const Aws::String& GetAutoScalingGroup() const { return m_autoScalingGroup; }
     inline bool AutoScalingGroupHasBeenSet() const { return m_autoScalingGroupHasBeenSet; }
-    inline void SetAutoScalingGroup(const Aws::String& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = value; }
-    inline void SetAutoScalingGroup(Aws::String&& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = std::move(value); }
-    inline void SetAutoScalingGroup(const char* value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup.assign(value); }
-    inline AgentPreview& WithAutoScalingGroup(const Aws::String& value) { SetAutoScalingGroup(value); return *this;}
-    inline AgentPreview& WithAutoScalingGroup(Aws::String&& value) { SetAutoScalingGroup(std::move(value)); return *this;}
-    inline AgentPreview& WithAutoScalingGroup(const char* value) { SetAutoScalingGroup(value); return *this;}
+    template<typename AutoScalingGroupT = Aws::String>
+    void SetAutoScalingGroup(AutoScalingGroupT&& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = std::forward<AutoScalingGroupT>(value); }
+    template<typename AutoScalingGroupT = Aws::String>
+    AgentPreview& WithAutoScalingGroup(AutoScalingGroupT&& value) { SetAutoScalingGroup(std::forward<AutoScalingGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The health status of the Amazon Inspector Agent.</p>
      */
-    inline const AgentHealth& GetAgentHealth() const{ return m_agentHealth; }
+    inline AgentHealth GetAgentHealth() const { return m_agentHealth; }
     inline bool AgentHealthHasBeenSet() const { return m_agentHealthHasBeenSet; }
-    inline void SetAgentHealth(const AgentHealth& value) { m_agentHealthHasBeenSet = true; m_agentHealth = value; }
-    inline void SetAgentHealth(AgentHealth&& value) { m_agentHealthHasBeenSet = true; m_agentHealth = std::move(value); }
-    inline AgentPreview& WithAgentHealth(const AgentHealth& value) { SetAgentHealth(value); return *this;}
-    inline AgentPreview& WithAgentHealth(AgentHealth&& value) { SetAgentHealth(std::move(value)); return *this;}
+    inline void SetAgentHealth(AgentHealth value) { m_agentHealthHasBeenSet = true; m_agentHealth = value; }
+    inline AgentPreview& WithAgentHealth(AgentHealth value) { SetAgentHealth(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the Amazon Inspector Agent.</p>
      */
-    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-    inline AgentPreview& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-    inline AgentPreview& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-    inline AgentPreview& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    template<typename AgentVersionT = Aws::String>
+    void SetAgentVersion(AgentVersionT&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::forward<AgentVersionT>(value); }
+    template<typename AgentVersionT = Aws::String>
+    AgentPreview& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +103,12 @@ namespace Model
      * <p>The operating system running on the EC2 instance on which the Amazon
      * Inspector Agent is installed.</p>
      */
-    inline const Aws::String& GetOperatingSystem() const{ return m_operatingSystem; }
+    inline const Aws::String& GetOperatingSystem() const { return m_operatingSystem; }
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
-    inline void SetOperatingSystem(const Aws::String& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-    inline void SetOperatingSystem(Aws::String&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
-    inline void SetOperatingSystem(const char* value) { m_operatingSystemHasBeenSet = true; m_operatingSystem.assign(value); }
-    inline AgentPreview& WithOperatingSystem(const Aws::String& value) { SetOperatingSystem(value); return *this;}
-    inline AgentPreview& WithOperatingSystem(Aws::String&& value) { SetOperatingSystem(std::move(value)); return *this;}
-    inline AgentPreview& WithOperatingSystem(const char* value) { SetOperatingSystem(value); return *this;}
+    template<typename OperatingSystemT = Aws::String>
+    void SetOperatingSystem(OperatingSystemT&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::forward<OperatingSystemT>(value); }
+    template<typename OperatingSystemT = Aws::String>
+    AgentPreview& WithOperatingSystem(OperatingSystemT&& value) { SetOperatingSystem(std::forward<OperatingSystemT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,14 +116,12 @@ namespace Model
      * <p>The kernel version of the operating system running on the EC2 instance on
      * which the Amazon Inspector Agent is installed.</p>
      */
-    inline const Aws::String& GetKernelVersion() const{ return m_kernelVersion; }
+    inline const Aws::String& GetKernelVersion() const { return m_kernelVersion; }
     inline bool KernelVersionHasBeenSet() const { return m_kernelVersionHasBeenSet; }
-    inline void SetKernelVersion(const Aws::String& value) { m_kernelVersionHasBeenSet = true; m_kernelVersion = value; }
-    inline void SetKernelVersion(Aws::String&& value) { m_kernelVersionHasBeenSet = true; m_kernelVersion = std::move(value); }
-    inline void SetKernelVersion(const char* value) { m_kernelVersionHasBeenSet = true; m_kernelVersion.assign(value); }
-    inline AgentPreview& WithKernelVersion(const Aws::String& value) { SetKernelVersion(value); return *this;}
-    inline AgentPreview& WithKernelVersion(Aws::String&& value) { SetKernelVersion(std::move(value)); return *this;}
-    inline AgentPreview& WithKernelVersion(const char* value) { SetKernelVersion(value); return *this;}
+    template<typename KernelVersionT = Aws::String>
+    void SetKernelVersion(KernelVersionT&& value) { m_kernelVersionHasBeenSet = true; m_kernelVersion = std::forward<KernelVersionT>(value); }
+    template<typename KernelVersionT = Aws::String>
+    AgentPreview& WithKernelVersion(KernelVersionT&& value) { SetKernelVersion(std::forward<KernelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,14 +129,12 @@ namespace Model
      * <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is
      * installed.</p>
      */
-    inline const Aws::String& GetIpv4Address() const{ return m_ipv4Address; }
+    inline const Aws::String& GetIpv4Address() const { return m_ipv4Address; }
     inline bool Ipv4AddressHasBeenSet() const { return m_ipv4AddressHasBeenSet; }
-    inline void SetIpv4Address(const Aws::String& value) { m_ipv4AddressHasBeenSet = true; m_ipv4Address = value; }
-    inline void SetIpv4Address(Aws::String&& value) { m_ipv4AddressHasBeenSet = true; m_ipv4Address = std::move(value); }
-    inline void SetIpv4Address(const char* value) { m_ipv4AddressHasBeenSet = true; m_ipv4Address.assign(value); }
-    inline AgentPreview& WithIpv4Address(const Aws::String& value) { SetIpv4Address(value); return *this;}
-    inline AgentPreview& WithIpv4Address(Aws::String&& value) { SetIpv4Address(std::move(value)); return *this;}
-    inline AgentPreview& WithIpv4Address(const char* value) { SetIpv4Address(value); return *this;}
+    template<typename Ipv4AddressT = Aws::String>
+    void SetIpv4Address(Ipv4AddressT&& value) { m_ipv4AddressHasBeenSet = true; m_ipv4Address = std::forward<Ipv4AddressT>(value); }
+    template<typename Ipv4AddressT = Aws::String>
+    AgentPreview& WithIpv4Address(Ipv4AddressT&& value) { SetIpv4Address(std::forward<Ipv4AddressT>(value)); return *this;}
     ///@}
   private:
 
@@ -163,7 +147,7 @@ namespace Model
     Aws::String m_autoScalingGroup;
     bool m_autoScalingGroupHasBeenSet = false;
 
-    AgentHealth m_agentHealth;
+    AgentHealth m_agentHealth{AgentHealth::NOT_SET};
     bool m_agentHealthHasBeenSet = false;
 
     Aws::String m_agentVersion;

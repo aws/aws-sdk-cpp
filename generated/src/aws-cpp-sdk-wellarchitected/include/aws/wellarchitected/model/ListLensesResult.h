@@ -34,50 +34,49 @@ namespace Model
   class ListLensesResult
   {
   public:
-    AWS_WELLARCHITECTED_API ListLensesResult();
+    AWS_WELLARCHITECTED_API ListLensesResult() = default;
     AWS_WELLARCHITECTED_API ListLensesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API ListLensesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::Vector<LensSummary>& GetLensSummaries() const{ return m_lensSummaries; }
-    inline void SetLensSummaries(const Aws::Vector<LensSummary>& value) { m_lensSummaries = value; }
-    inline void SetLensSummaries(Aws::Vector<LensSummary>&& value) { m_lensSummaries = std::move(value); }
-    inline ListLensesResult& WithLensSummaries(const Aws::Vector<LensSummary>& value) { SetLensSummaries(value); return *this;}
-    inline ListLensesResult& WithLensSummaries(Aws::Vector<LensSummary>&& value) { SetLensSummaries(std::move(value)); return *this;}
-    inline ListLensesResult& AddLensSummaries(const LensSummary& value) { m_lensSummaries.push_back(value); return *this; }
-    inline ListLensesResult& AddLensSummaries(LensSummary&& value) { m_lensSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LensSummary>& GetLensSummaries() const { return m_lensSummaries; }
+    template<typename LensSummariesT = Aws::Vector<LensSummary>>
+    void SetLensSummaries(LensSummariesT&& value) { m_lensSummariesHasBeenSet = true; m_lensSummaries = std::forward<LensSummariesT>(value); }
+    template<typename LensSummariesT = Aws::Vector<LensSummary>>
+    ListLensesResult& WithLensSummaries(LensSummariesT&& value) { SetLensSummaries(std::forward<LensSummariesT>(value)); return *this;}
+    template<typename LensSummariesT = LensSummary>
+    ListLensesResult& AddLensSummaries(LensSummariesT&& value) { m_lensSummariesHasBeenSet = true; m_lensSummaries.emplace_back(std::forward<LensSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLensesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLensesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLensesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLensesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLensesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLensesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLensesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLensesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LensSummary> m_lensSummaries;
+    bool m_lensSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,7 +26,7 @@ namespace Model
   class StartAsyncInvokeRequest : public BedrockRuntimeRequest
   {
   public:
-    AWS_BEDROCKRUNTIME_API StartAsyncInvokeRequest();
+    AWS_BEDROCKRUNTIME_API StartAsyncInvokeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,66 +41,62 @@ namespace Model
     /**
      * <p>Specify idempotency token to ensure that requests are not duplicated.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline StartAsyncInvokeRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline StartAsyncInvokeRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline StartAsyncInvokeRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    StartAsyncInvokeRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model to invoke.</p>
      */
-    inline const Aws::String& GetModelId() const{ return m_modelId; }
+    inline const Aws::String& GetModelId() const { return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-    inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-    inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-    inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-    inline StartAsyncInvokeRequest& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-    inline StartAsyncInvokeRequest& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-    inline StartAsyncInvokeRequest& WithModelId(const char* value) { SetModelId(value); return *this;}
+    template<typename ModelIdT = Aws::String>
+    void SetModelId(ModelIdT&& value) { m_modelIdHasBeenSet = true; m_modelId = std::forward<ModelIdT>(value); }
+    template<typename ModelIdT = Aws::String>
+    StartAsyncInvokeRequest& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Input to send to the model.</p>
      */
-    inline Aws::Utils::DocumentView GetModelInput() const{ return m_modelInput; }
+    inline Aws::Utils::DocumentView GetModelInput() const { return m_modelInput; }
     inline bool ModelInputHasBeenSet() const { return m_modelInputHasBeenSet; }
-    inline void SetModelInput(const Aws::Utils::Document& value) { m_modelInputHasBeenSet = true; m_modelInput = value; }
-    inline void SetModelInput(Aws::Utils::Document&& value) { m_modelInputHasBeenSet = true; m_modelInput = std::move(value); }
-    inline StartAsyncInvokeRequest& WithModelInput(const Aws::Utils::Document& value) { SetModelInput(value); return *this;}
-    inline StartAsyncInvokeRequest& WithModelInput(Aws::Utils::Document&& value) { SetModelInput(std::move(value)); return *this;}
+    template<typename ModelInputT = Aws::Utils::Document>
+    void SetModelInput(ModelInputT&& value) { m_modelInputHasBeenSet = true; m_modelInput = std::forward<ModelInputT>(value); }
+    template<typename ModelInputT = Aws::Utils::Document>
+    StartAsyncInvokeRequest& WithModelInput(ModelInputT&& value) { SetModelInput(std::forward<ModelInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Where to store the output.</p>
      */
-    inline const AsyncInvokeOutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
+    inline const AsyncInvokeOutputDataConfig& GetOutputDataConfig() const { return m_outputDataConfig; }
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
-    inline void SetOutputDataConfig(const AsyncInvokeOutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
-    inline void SetOutputDataConfig(AsyncInvokeOutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
-    inline StartAsyncInvokeRequest& WithOutputDataConfig(const AsyncInvokeOutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
-    inline StartAsyncInvokeRequest& WithOutputDataConfig(AsyncInvokeOutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+    template<typename OutputDataConfigT = AsyncInvokeOutputDataConfig>
+    void SetOutputDataConfig(OutputDataConfigT&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::forward<OutputDataConfigT>(value); }
+    template<typename OutputDataConfigT = AsyncInvokeOutputDataConfig>
+    StartAsyncInvokeRequest& WithOutputDataConfig(OutputDataConfigT&& value) { SetOutputDataConfig(std::forward<OutputDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags to apply to the invocation.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StartAsyncInvokeRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline StartAsyncInvokeRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartAsyncInvokeRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline StartAsyncInvokeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    StartAsyncInvokeRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    StartAsyncInvokeRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

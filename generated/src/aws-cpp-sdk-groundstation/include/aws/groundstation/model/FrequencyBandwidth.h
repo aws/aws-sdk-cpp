@@ -31,7 +31,7 @@ namespace Model
   class FrequencyBandwidth
   {
   public:
-    AWS_GROUNDSTATION_API FrequencyBandwidth();
+    AWS_GROUNDSTATION_API FrequencyBandwidth() = default;
     AWS_GROUNDSTATION_API FrequencyBandwidth(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API FrequencyBandwidth& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,10 @@ namespace Model
     /**
      * <p>Frequency bandwidth units.</p>
      */
-    inline const BandwidthUnits& GetUnits() const{ return m_units; }
+    inline BandwidthUnits GetUnits() const { return m_units; }
     inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
-    inline void SetUnits(const BandwidthUnits& value) { m_unitsHasBeenSet = true; m_units = value; }
-    inline void SetUnits(BandwidthUnits&& value) { m_unitsHasBeenSet = true; m_units = std::move(value); }
-    inline FrequencyBandwidth& WithUnits(const BandwidthUnits& value) { SetUnits(value); return *this;}
-    inline FrequencyBandwidth& WithUnits(BandwidthUnits&& value) { SetUnits(std::move(value)); return *this;}
+    inline void SetUnits(BandwidthUnits value) { m_unitsHasBeenSet = true; m_units = value; }
+    inline FrequencyBandwidth& WithUnits(BandwidthUnits value) { SetUnits(value); return *this;}
     ///@}
 
     ///@{
@@ -59,17 +57,17 @@ namespace Model
      * <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
      * </li> </ul>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline FrequencyBandwidth& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    BandwidthUnits m_units;
+    BandwidthUnits m_units{BandwidthUnits::NOT_SET};
     bool m_unitsHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class Remediation
   {
   public:
-    AWS_IMAGEBUILDER_API Remediation();
+    AWS_IMAGEBUILDER_API Remediation() = default;
     AWS_IMAGEBUILDER_API Remediation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Remediation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>An object that contains information about the recommended course of action to
      * remediate the finding.</p>
      */
-    inline const RemediationRecommendation& GetRecommendation() const{ return m_recommendation; }
+    inline const RemediationRecommendation& GetRecommendation() const { return m_recommendation; }
     inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
-    inline void SetRecommendation(const RemediationRecommendation& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
-    inline void SetRecommendation(RemediationRecommendation&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::move(value); }
-    inline Remediation& WithRecommendation(const RemediationRecommendation& value) { SetRecommendation(value); return *this;}
-    inline Remediation& WithRecommendation(RemediationRecommendation&& value) { SetRecommendation(std::move(value)); return *this;}
+    template<typename RecommendationT = RemediationRecommendation>
+    void SetRecommendation(RecommendationT&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::forward<RecommendationT>(value); }
+    template<typename RecommendationT = RemediationRecommendation>
+    Remediation& WithRecommendation(RecommendationT&& value) { SetRecommendation(std::forward<RecommendationT>(value)); return *this;}
     ///@}
   private:
 

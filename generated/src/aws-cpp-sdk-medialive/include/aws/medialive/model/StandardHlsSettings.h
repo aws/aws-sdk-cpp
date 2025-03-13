@@ -32,7 +32,7 @@ namespace Model
   class StandardHlsSettings
   {
   public:
-    AWS_MEDIALIVE_API StandardHlsSettings();
+    AWS_MEDIALIVE_API StandardHlsSettings() = default;
     AWS_MEDIALIVE_API StandardHlsSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API StandardHlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,22 @@ namespace Model
      * List all the audio groups that are used with the video output stream. Input all
      * the audio GROUP-IDs that are associated to the video, separate by ','.
      */
-    inline const Aws::String& GetAudioRenditionSets() const{ return m_audioRenditionSets; }
+    inline const Aws::String& GetAudioRenditionSets() const { return m_audioRenditionSets; }
     inline bool AudioRenditionSetsHasBeenSet() const { return m_audioRenditionSetsHasBeenSet; }
-    inline void SetAudioRenditionSets(const Aws::String& value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets = value; }
-    inline void SetAudioRenditionSets(Aws::String&& value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets = std::move(value); }
-    inline void SetAudioRenditionSets(const char* value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets.assign(value); }
-    inline StandardHlsSettings& WithAudioRenditionSets(const Aws::String& value) { SetAudioRenditionSets(value); return *this;}
-    inline StandardHlsSettings& WithAudioRenditionSets(Aws::String&& value) { SetAudioRenditionSets(std::move(value)); return *this;}
-    inline StandardHlsSettings& WithAudioRenditionSets(const char* value) { SetAudioRenditionSets(value); return *this;}
+    template<typename AudioRenditionSetsT = Aws::String>
+    void SetAudioRenditionSets(AudioRenditionSetsT&& value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets = std::forward<AudioRenditionSetsT>(value); }
+    template<typename AudioRenditionSetsT = Aws::String>
+    StandardHlsSettings& WithAudioRenditionSets(AudioRenditionSetsT&& value) { SetAudioRenditionSets(std::forward<AudioRenditionSetsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const M3u8Settings& GetM3u8Settings() const{ return m_m3u8Settings; }
+    inline const M3u8Settings& GetM3u8Settings() const { return m_m3u8Settings; }
     inline bool M3u8SettingsHasBeenSet() const { return m_m3u8SettingsHasBeenSet; }
-    inline void SetM3u8Settings(const M3u8Settings& value) { m_m3u8SettingsHasBeenSet = true; m_m3u8Settings = value; }
-    inline void SetM3u8Settings(M3u8Settings&& value) { m_m3u8SettingsHasBeenSet = true; m_m3u8Settings = std::move(value); }
-    inline StandardHlsSettings& WithM3u8Settings(const M3u8Settings& value) { SetM3u8Settings(value); return *this;}
-    inline StandardHlsSettings& WithM3u8Settings(M3u8Settings&& value) { SetM3u8Settings(std::move(value)); return *this;}
+    template<typename M3u8SettingsT = M3u8Settings>
+    void SetM3u8Settings(M3u8SettingsT&& value) { m_m3u8SettingsHasBeenSet = true; m_m3u8Settings = std::forward<M3u8SettingsT>(value); }
+    template<typename M3u8SettingsT = M3u8Settings>
+    StandardHlsSettings& WithM3u8Settings(M3u8SettingsT&& value) { SetM3u8Settings(std::forward<M3u8SettingsT>(value)); return *this;}
     ///@}
   private:
 

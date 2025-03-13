@@ -34,7 +34,7 @@ namespace Model
   class BucketCriteriaAdditionalProperties
   {
   public:
-    AWS_MACIE2_API BucketCriteriaAdditionalProperties();
+    AWS_MACIE2_API BucketCriteriaAdditionalProperties() = default;
     AWS_MACIE2_API BucketCriteriaAdditionalProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API BucketCriteriaAdditionalProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,22 +45,21 @@ namespace Model
      * <p>The value for the property matches (equals) the specified value. If you
      * specify multiple values, Amazon Macie uses OR logic to join the values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEq() const{ return m_eq; }
+    inline const Aws::Vector<Aws::String>& GetEq() const { return m_eq; }
     inline bool EqHasBeenSet() const { return m_eqHasBeenSet; }
-    inline void SetEq(const Aws::Vector<Aws::String>& value) { m_eqHasBeenSet = true; m_eq = value; }
-    inline void SetEq(Aws::Vector<Aws::String>&& value) { m_eqHasBeenSet = true; m_eq = std::move(value); }
-    inline BucketCriteriaAdditionalProperties& WithEq(const Aws::Vector<Aws::String>& value) { SetEq(value); return *this;}
-    inline BucketCriteriaAdditionalProperties& WithEq(Aws::Vector<Aws::String>&& value) { SetEq(std::move(value)); return *this;}
-    inline BucketCriteriaAdditionalProperties& AddEq(const Aws::String& value) { m_eqHasBeenSet = true; m_eq.push_back(value); return *this; }
-    inline BucketCriteriaAdditionalProperties& AddEq(Aws::String&& value) { m_eqHasBeenSet = true; m_eq.push_back(std::move(value)); return *this; }
-    inline BucketCriteriaAdditionalProperties& AddEq(const char* value) { m_eqHasBeenSet = true; m_eq.push_back(value); return *this; }
+    template<typename EqT = Aws::Vector<Aws::String>>
+    void SetEq(EqT&& value) { m_eqHasBeenSet = true; m_eq = std::forward<EqT>(value); }
+    template<typename EqT = Aws::Vector<Aws::String>>
+    BucketCriteriaAdditionalProperties& WithEq(EqT&& value) { SetEq(std::forward<EqT>(value)); return *this;}
+    template<typename EqT = Aws::String>
+    BucketCriteriaAdditionalProperties& AddEq(EqT&& value) { m_eqHasBeenSet = true; m_eq.emplace_back(std::forward<EqT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The value for the property is greater than the specified value.</p>
      */
-    inline long long GetGt() const{ return m_gt; }
+    inline long long GetGt() const { return m_gt; }
     inline bool GtHasBeenSet() const { return m_gtHasBeenSet; }
     inline void SetGt(long long value) { m_gtHasBeenSet = true; m_gt = value; }
     inline BucketCriteriaAdditionalProperties& WithGt(long long value) { SetGt(value); return *this;}
@@ -71,7 +70,7 @@ namespace Model
      * <p>The value for the property is greater than or equal to the specified
      * value.</p>
      */
-    inline long long GetGte() const{ return m_gte; }
+    inline long long GetGte() const { return m_gte; }
     inline bool GteHasBeenSet() const { return m_gteHasBeenSet; }
     inline void SetGte(long long value) { m_gteHasBeenSet = true; m_gte = value; }
     inline BucketCriteriaAdditionalProperties& WithGte(long long value) { SetGte(value); return *this;}
@@ -81,7 +80,7 @@ namespace Model
     /**
      * <p>The value for the property is less than the specified value.</p>
      */
-    inline long long GetLt() const{ return m_lt; }
+    inline long long GetLt() const { return m_lt; }
     inline bool LtHasBeenSet() const { return m_ltHasBeenSet; }
     inline void SetLt(long long value) { m_ltHasBeenSet = true; m_lt = value; }
     inline BucketCriteriaAdditionalProperties& WithLt(long long value) { SetLt(value); return *this;}
@@ -91,7 +90,7 @@ namespace Model
     /**
      * <p>The value for the property is less than or equal to the specified value.</p>
      */
-    inline long long GetLte() const{ return m_lte; }
+    inline long long GetLte() const { return m_lte; }
     inline bool LteHasBeenSet() const { return m_lteHasBeenSet; }
     inline void SetLte(long long value) { m_lteHasBeenSet = true; m_lte = value; }
     inline BucketCriteriaAdditionalProperties& WithLte(long long value) { SetLte(value); return *this;}
@@ -103,45 +102,42 @@ namespace Model
      * If you specify multiple values, Amazon Macie uses OR logic to join the
      * values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNeq() const{ return m_neq; }
+    inline const Aws::Vector<Aws::String>& GetNeq() const { return m_neq; }
     inline bool NeqHasBeenSet() const { return m_neqHasBeenSet; }
-    inline void SetNeq(const Aws::Vector<Aws::String>& value) { m_neqHasBeenSet = true; m_neq = value; }
-    inline void SetNeq(Aws::Vector<Aws::String>&& value) { m_neqHasBeenSet = true; m_neq = std::move(value); }
-    inline BucketCriteriaAdditionalProperties& WithNeq(const Aws::Vector<Aws::String>& value) { SetNeq(value); return *this;}
-    inline BucketCriteriaAdditionalProperties& WithNeq(Aws::Vector<Aws::String>&& value) { SetNeq(std::move(value)); return *this;}
-    inline BucketCriteriaAdditionalProperties& AddNeq(const Aws::String& value) { m_neqHasBeenSet = true; m_neq.push_back(value); return *this; }
-    inline BucketCriteriaAdditionalProperties& AddNeq(Aws::String&& value) { m_neqHasBeenSet = true; m_neq.push_back(std::move(value)); return *this; }
-    inline BucketCriteriaAdditionalProperties& AddNeq(const char* value) { m_neqHasBeenSet = true; m_neq.push_back(value); return *this; }
+    template<typename NeqT = Aws::Vector<Aws::String>>
+    void SetNeq(NeqT&& value) { m_neqHasBeenSet = true; m_neq = std::forward<NeqT>(value); }
+    template<typename NeqT = Aws::Vector<Aws::String>>
+    BucketCriteriaAdditionalProperties& WithNeq(NeqT&& value) { SetNeq(std::forward<NeqT>(value)); return *this;}
+    template<typename NeqT = Aws::String>
+    BucketCriteriaAdditionalProperties& AddNeq(NeqT&& value) { m_neqHasBeenSet = true; m_neq.emplace_back(std::forward<NeqT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the bucket begins with the specified value.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline BucketCriteriaAdditionalProperties& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline BucketCriteriaAdditionalProperties& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline BucketCriteriaAdditionalProperties& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    BucketCriteriaAdditionalProperties& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_eq;
     bool m_eqHasBeenSet = false;
 
-    long long m_gt;
+    long long m_gt{0};
     bool m_gtHasBeenSet = false;
 
-    long long m_gte;
+    long long m_gte{0};
     bool m_gteHasBeenSet = false;
 
-    long long m_lt;
+    long long m_lt{0};
     bool m_ltHasBeenSet = false;
 
-    long long m_lte;
+    long long m_lte{0};
     bool m_lteHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_neq;

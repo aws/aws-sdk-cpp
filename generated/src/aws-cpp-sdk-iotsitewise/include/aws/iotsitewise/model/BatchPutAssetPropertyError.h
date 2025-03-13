@@ -35,7 +35,7 @@ namespace Model
   class BatchPutAssetPropertyError
   {
   public:
-    AWS_IOTSITEWISE_API BatchPutAssetPropertyError();
+    AWS_IOTSITEWISE_API BatchPutAssetPropertyError() = default;
     AWS_IOTSITEWISE_API BatchPutAssetPropertyError(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API BatchPutAssetPropertyError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,44 +45,40 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline const BatchPutAssetPropertyValueErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline BatchPutAssetPropertyValueErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const BatchPutAssetPropertyValueErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(BatchPutAssetPropertyValueErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline BatchPutAssetPropertyError& WithErrorCode(const BatchPutAssetPropertyValueErrorCode& value) { SetErrorCode(value); return *this;}
-    inline BatchPutAssetPropertyError& WithErrorCode(BatchPutAssetPropertyValueErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(BatchPutAssetPropertyValueErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline BatchPutAssetPropertyError& WithErrorCode(BatchPutAssetPropertyValueErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The associated error message.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline BatchPutAssetPropertyError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline BatchPutAssetPropertyError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline BatchPutAssetPropertyError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    BatchPutAssetPropertyError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of timestamps for each error, if any.</p>
      */
-    inline const Aws::Vector<TimeInNanos>& GetTimestamps() const{ return m_timestamps; }
+    inline const Aws::Vector<TimeInNanos>& GetTimestamps() const { return m_timestamps; }
     inline bool TimestampsHasBeenSet() const { return m_timestampsHasBeenSet; }
-    inline void SetTimestamps(const Aws::Vector<TimeInNanos>& value) { m_timestampsHasBeenSet = true; m_timestamps = value; }
-    inline void SetTimestamps(Aws::Vector<TimeInNanos>&& value) { m_timestampsHasBeenSet = true; m_timestamps = std::move(value); }
-    inline BatchPutAssetPropertyError& WithTimestamps(const Aws::Vector<TimeInNanos>& value) { SetTimestamps(value); return *this;}
-    inline BatchPutAssetPropertyError& WithTimestamps(Aws::Vector<TimeInNanos>&& value) { SetTimestamps(std::move(value)); return *this;}
-    inline BatchPutAssetPropertyError& AddTimestamps(const TimeInNanos& value) { m_timestampsHasBeenSet = true; m_timestamps.push_back(value); return *this; }
-    inline BatchPutAssetPropertyError& AddTimestamps(TimeInNanos&& value) { m_timestampsHasBeenSet = true; m_timestamps.push_back(std::move(value)); return *this; }
+    template<typename TimestampsT = Aws::Vector<TimeInNanos>>
+    void SetTimestamps(TimestampsT&& value) { m_timestampsHasBeenSet = true; m_timestamps = std::forward<TimestampsT>(value); }
+    template<typename TimestampsT = Aws::Vector<TimeInNanos>>
+    BatchPutAssetPropertyError& WithTimestamps(TimestampsT&& value) { SetTimestamps(std::forward<TimestampsT>(value)); return *this;}
+    template<typename TimestampsT = TimeInNanos>
+    BatchPutAssetPropertyError& AddTimestamps(TimestampsT&& value) { m_timestampsHasBeenSet = true; m_timestamps.emplace_back(std::forward<TimestampsT>(value)); return *this; }
     ///@}
   private:
 
-    BatchPutAssetPropertyValueErrorCode m_errorCode;
+    BatchPutAssetPropertyValueErrorCode m_errorCode{BatchPutAssetPropertyValueErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;

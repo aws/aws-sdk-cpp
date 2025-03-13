@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ParameterInlinePolicy::ParameterInlinePolicy() : 
-    m_policyTextHasBeenSet(false),
-    m_policyTypeHasBeenSet(false),
-    m_policyStatusHasBeenSet(false)
-{
-}
-
 ParameterInlinePolicy::ParameterInlinePolicy(JsonView jsonValue)
-  : ParameterInlinePolicy()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ParameterInlinePolicy& ParameterInlinePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyText"))
   {
     m_policyText = jsonValue.GetString("PolicyText");
-
     m_policyTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyType"))
   {
     m_policyType = jsonValue.GetString("PolicyType");
-
     m_policyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyStatus"))
   {
     m_policyStatus = jsonValue.GetString("PolicyStatus");
-
     m_policyStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

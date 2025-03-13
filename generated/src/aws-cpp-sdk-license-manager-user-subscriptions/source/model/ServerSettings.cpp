@@ -18,13 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-ServerSettings::ServerSettings() : 
-    m_rdsSalSettingsHasBeenSet(false)
-{
-}
-
 ServerSettings::ServerSettings(JsonView jsonValue)
-  : ServerSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServerSettings& ServerSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RdsSalSettings"))
   {
     m_rdsSalSettings = jsonValue.GetObject("RdsSalSettings");
-
     m_rdsSalSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

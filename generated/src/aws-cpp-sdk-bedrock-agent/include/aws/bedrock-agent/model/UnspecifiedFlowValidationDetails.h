@@ -30,7 +30,7 @@ namespace Model
   class UnspecifiedFlowValidationDetails
   {
   public:
-    AWS_BEDROCKAGENT_API UnspecifiedFlowValidationDetails();
+    AWS_BEDROCKAGENT_API UnspecifiedFlowValidationDetails() = default;
     AWS_BEDROCKAGENT_API UnspecifiedFlowValidationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API UnspecifiedFlowValidationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;

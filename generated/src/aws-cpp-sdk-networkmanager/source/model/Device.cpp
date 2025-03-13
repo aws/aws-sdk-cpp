@@ -18,27 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-Device::Device() : 
-    m_deviceIdHasBeenSet(false),
-    m_deviceArnHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_aWSLocationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_vendorHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_siteIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_state(DeviceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Device::Device(JsonView jsonValue)
-  : Device()
 {
   *this = jsonValue;
 }
@@ -48,94 +28,68 @@ Device& Device::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
-
     m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceArn"))
   {
     m_deviceArn = jsonValue.GetString("DeviceArn");
-
     m_deviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalNetworkId"))
   {
     m_globalNetworkId = jsonValue.GetString("GlobalNetworkId");
-
     m_globalNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AWSLocation"))
   {
     m_aWSLocation = jsonValue.GetObject("AWSLocation");
-
     m_aWSLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Vendor"))
   {
     m_vendor = jsonValue.GetString("Vendor");
-
     m_vendorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Model"))
   {
     m_model = jsonValue.GetString("Model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SerialNumber"))
   {
     m_serialNumber = jsonValue.GetString("SerialNumber");
-
     m_serialNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetObject("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SiteId"))
   {
     m_siteId = jsonValue.GetString("SiteId");
-
     m_siteIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = DeviceStateMapper::GetDeviceStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -145,7 +99,6 @@ Device& Device::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

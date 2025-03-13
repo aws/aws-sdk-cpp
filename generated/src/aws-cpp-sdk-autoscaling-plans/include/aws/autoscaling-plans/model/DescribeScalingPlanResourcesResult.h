@@ -29,7 +29,7 @@ namespace Model
   class DescribeScalingPlanResourcesResult
   {
   public:
-    AWS_AUTOSCALINGPLANS_API DescribeScalingPlanResourcesResult();
+    AWS_AUTOSCALINGPLANS_API DescribeScalingPlanResourcesResult() = default;
     AWS_AUTOSCALINGPLANS_API DescribeScalingPlanResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUTOSCALINGPLANS_API DescribeScalingPlanResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the scalable resources.</p>
      */
-    inline const Aws::Vector<ScalingPlanResource>& GetScalingPlanResources() const{ return m_scalingPlanResources; }
-    inline void SetScalingPlanResources(const Aws::Vector<ScalingPlanResource>& value) { m_scalingPlanResources = value; }
-    inline void SetScalingPlanResources(Aws::Vector<ScalingPlanResource>&& value) { m_scalingPlanResources = std::move(value); }
-    inline DescribeScalingPlanResourcesResult& WithScalingPlanResources(const Aws::Vector<ScalingPlanResource>& value) { SetScalingPlanResources(value); return *this;}
-    inline DescribeScalingPlanResourcesResult& WithScalingPlanResources(Aws::Vector<ScalingPlanResource>&& value) { SetScalingPlanResources(std::move(value)); return *this;}
-    inline DescribeScalingPlanResourcesResult& AddScalingPlanResources(const ScalingPlanResource& value) { m_scalingPlanResources.push_back(value); return *this; }
-    inline DescribeScalingPlanResourcesResult& AddScalingPlanResources(ScalingPlanResource&& value) { m_scalingPlanResources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ScalingPlanResource>& GetScalingPlanResources() const { return m_scalingPlanResources; }
+    template<typename ScalingPlanResourcesT = Aws::Vector<ScalingPlanResource>>
+    void SetScalingPlanResources(ScalingPlanResourcesT&& value) { m_scalingPlanResourcesHasBeenSet = true; m_scalingPlanResources = std::forward<ScalingPlanResourcesT>(value); }
+    template<typename ScalingPlanResourcesT = Aws::Vector<ScalingPlanResource>>
+    DescribeScalingPlanResourcesResult& WithScalingPlanResources(ScalingPlanResourcesT&& value) { SetScalingPlanResources(std::forward<ScalingPlanResourcesT>(value)); return *this;}
+    template<typename ScalingPlanResourcesT = ScalingPlanResource>
+    DescribeScalingPlanResourcesResult& AddScalingPlanResources(ScalingPlanResourcesT&& value) { m_scalingPlanResourcesHasBeenSet = true; m_scalingPlanResources.emplace_back(std::forward<ScalingPlanResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token required to get the next set of results. This value is
      * <code>null</code> if there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeScalingPlanResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeScalingPlanResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeScalingPlanResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeScalingPlanResourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeScalingPlanResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeScalingPlanResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeScalingPlanResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeScalingPlanResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ScalingPlanResource> m_scalingPlanResources;
+    bool m_scalingPlanResourcesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,6 @@ namespace S3Control
 namespace Model
 {
 
-S3ReplicateObjectOperation::S3ReplicateObjectOperation()
-{
-}
-
 S3ReplicateObjectOperation::S3ReplicateObjectOperation(const XmlNode& xmlNode)
 {
   *this = xmlNode;

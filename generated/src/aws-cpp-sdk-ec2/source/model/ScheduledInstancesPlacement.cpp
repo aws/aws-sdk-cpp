@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ScheduledInstancesPlacement::ScheduledInstancesPlacement() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 ScheduledInstancesPlacement::ScheduledInstancesPlacement(const XmlNode& xmlNode)
-  : ScheduledInstancesPlacement()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ScheduledInstancesPlacement& ScheduledInstancesPlacement::operator =(const XmlNo
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("GroupName");
     if(!groupNameNode.IsNull())
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
+       m_groupNameHasBeenSet = true;
     }
   }
 

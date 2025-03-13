@@ -29,7 +29,7 @@ namespace Model
   class DescribeSenderIdsResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DescribeSenderIdsResult();
+    AWS_PINPOINTSMSVOICEV2_API DescribeSenderIdsResult() = default;
     AWS_PINPOINTSMSVOICEV2_API DescribeSenderIdsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API DescribeSenderIdsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of SernderIdInformation objects that contain the details for the
      * requested SenderIds.</p>
      */
-    inline const Aws::Vector<SenderIdInformation>& GetSenderIds() const{ return m_senderIds; }
-    inline void SetSenderIds(const Aws::Vector<SenderIdInformation>& value) { m_senderIds = value; }
-    inline void SetSenderIds(Aws::Vector<SenderIdInformation>&& value) { m_senderIds = std::move(value); }
-    inline DescribeSenderIdsResult& WithSenderIds(const Aws::Vector<SenderIdInformation>& value) { SetSenderIds(value); return *this;}
-    inline DescribeSenderIdsResult& WithSenderIds(Aws::Vector<SenderIdInformation>&& value) { SetSenderIds(std::move(value)); return *this;}
-    inline DescribeSenderIdsResult& AddSenderIds(const SenderIdInformation& value) { m_senderIds.push_back(value); return *this; }
-    inline DescribeSenderIdsResult& AddSenderIds(SenderIdInformation&& value) { m_senderIds.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SenderIdInformation>& GetSenderIds() const { return m_senderIds; }
+    template<typename SenderIdsT = Aws::Vector<SenderIdInformation>>
+    void SetSenderIds(SenderIdsT&& value) { m_senderIdsHasBeenSet = true; m_senderIds = std::forward<SenderIdsT>(value); }
+    template<typename SenderIdsT = Aws::Vector<SenderIdInformation>>
+    DescribeSenderIdsResult& WithSenderIds(SenderIdsT&& value) { SetSenderIds(std::forward<SenderIdsT>(value)); return *this;}
+    template<typename SenderIdsT = SenderIdInformation>
+    DescribeSenderIdsResult& AddSenderIds(SenderIdsT&& value) { m_senderIdsHasBeenSet = true; m_senderIds.emplace_back(std::forward<SenderIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The token to be used for the next set of paginated results. If this field is
      * empty then there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeSenderIdsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSenderIdsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSenderIdsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSenderIdsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSenderIdsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSenderIdsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSenderIdsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSenderIdsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SenderIdInformation> m_senderIds;
+    bool m_senderIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class ArcConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API ArcConfiguration();
+    AWS_QUICKSIGHT_API ArcConfiguration() = default;
     AWS_QUICKSIGHT_API ArcConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ArcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The option that determines the arc angle of a
      * <code>GaugeChartVisual</code>.</p>
      */
-    inline double GetArcAngle() const{ return m_arcAngle; }
+    inline double GetArcAngle() const { return m_arcAngle; }
     inline bool ArcAngleHasBeenSet() const { return m_arcAngleHasBeenSet; }
     inline void SetArcAngle(double value) { m_arcAngleHasBeenSet = true; m_arcAngle = value; }
     inline ArcConfiguration& WithArcAngle(double value) { SetArcAngle(value); return *this;}
@@ -54,19 +54,17 @@ namespace Model
      * <p>The options that determine the arc thickness of a
      * <code>GaugeChartVisual</code>.</p>
      */
-    inline const ArcThicknessOptions& GetArcThickness() const{ return m_arcThickness; }
+    inline ArcThicknessOptions GetArcThickness() const { return m_arcThickness; }
     inline bool ArcThicknessHasBeenSet() const { return m_arcThicknessHasBeenSet; }
-    inline void SetArcThickness(const ArcThicknessOptions& value) { m_arcThicknessHasBeenSet = true; m_arcThickness = value; }
-    inline void SetArcThickness(ArcThicknessOptions&& value) { m_arcThicknessHasBeenSet = true; m_arcThickness = std::move(value); }
-    inline ArcConfiguration& WithArcThickness(const ArcThicknessOptions& value) { SetArcThickness(value); return *this;}
-    inline ArcConfiguration& WithArcThickness(ArcThicknessOptions&& value) { SetArcThickness(std::move(value)); return *this;}
+    inline void SetArcThickness(ArcThicknessOptions value) { m_arcThicknessHasBeenSet = true; m_arcThickness = value; }
+    inline ArcConfiguration& WithArcThickness(ArcThicknessOptions value) { SetArcThickness(value); return *this;}
     ///@}
   private:
 
-    double m_arcAngle;
+    double m_arcAngle{0.0};
     bool m_arcAngleHasBeenSet = false;
 
-    ArcThicknessOptions m_arcThickness;
+    ArcThicknessOptions m_arcThickness{ArcThicknessOptions::NOT_SET};
     bool m_arcThicknessHasBeenSet = false;
   };
 

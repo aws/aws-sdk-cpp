@@ -18,24 +18,7 @@ namespace FSx
 namespace Model
 {
 
-UpdateOpenZFSVolumeConfiguration::UpdateOpenZFSVolumeConfiguration() : 
-    m_storageCapacityReservationGiB(0),
-    m_storageCapacityReservationGiBHasBeenSet(false),
-    m_storageCapacityQuotaGiB(0),
-    m_storageCapacityQuotaGiBHasBeenSet(false),
-    m_recordSizeKiB(0),
-    m_recordSizeKiBHasBeenSet(false),
-    m_dataCompressionType(OpenZFSDataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false),
-    m_nfsExportsHasBeenSet(false),
-    m_userAndGroupQuotasHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false)
-{
-}
-
 UpdateOpenZFSVolumeConfiguration::UpdateOpenZFSVolumeConfiguration(JsonView jsonValue)
-  : UpdateOpenZFSVolumeConfiguration()
 {
   *this = jsonValue;
 }
@@ -45,31 +28,23 @@ UpdateOpenZFSVolumeConfiguration& UpdateOpenZFSVolumeConfiguration::operator =(J
   if(jsonValue.ValueExists("StorageCapacityReservationGiB"))
   {
     m_storageCapacityReservationGiB = jsonValue.GetInteger("StorageCapacityReservationGiB");
-
     m_storageCapacityReservationGiBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageCapacityQuotaGiB"))
   {
     m_storageCapacityQuotaGiB = jsonValue.GetInteger("StorageCapacityQuotaGiB");
-
     m_storageCapacityQuotaGiBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordSizeKiB"))
   {
     m_recordSizeKiB = jsonValue.GetInteger("RecordSizeKiB");
-
     m_recordSizeKiBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataCompressionType"))
   {
     m_dataCompressionType = OpenZFSDataCompressionTypeMapper::GetOpenZFSDataCompressionTypeForName(jsonValue.GetString("DataCompressionType"));
-
     m_dataCompressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NfsExports"))
   {
     Aws::Utils::Array<JsonView> nfsExportsJsonList = jsonValue.GetArray("NfsExports");
@@ -79,7 +54,6 @@ UpdateOpenZFSVolumeConfiguration& UpdateOpenZFSVolumeConfiguration::operator =(J
     }
     m_nfsExportsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserAndGroupQuotas"))
   {
     Aws::Utils::Array<JsonView> userAndGroupQuotasJsonList = jsonValue.GetArray("UserAndGroupQuotas");
@@ -89,14 +63,11 @@ UpdateOpenZFSVolumeConfiguration& UpdateOpenZFSVolumeConfiguration::operator =(J
     }
     m_userAndGroupQuotasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadOnly"))
   {
     m_readOnly = jsonValue.GetBool("ReadOnly");
-
     m_readOnlyHasBeenSet = true;
   }
-
   return *this;
 }
 

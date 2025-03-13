@@ -32,7 +32,7 @@ namespace Model
   class AwsLambdaFunctionDeadLetterConfig
   {
   public:
-    AWS_SECURITYHUB_API AwsLambdaFunctionDeadLetterConfig();
+    AWS_SECURITYHUB_API AwsLambdaFunctionDeadLetterConfig() = default;
     AWS_SECURITYHUB_API AwsLambdaFunctionDeadLetterConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsLambdaFunctionDeadLetterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ARN of an SQS queue or SNS topic.</p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-    inline AwsLambdaFunctionDeadLetterConfig& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline AwsLambdaFunctionDeadLetterConfig& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline AwsLambdaFunctionDeadLetterConfig& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    AwsLambdaFunctionDeadLetterConfig& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListFoundationModelsRequest::ListFoundationModelsRequest() : 
-    m_byProviderHasBeenSet(false),
-    m_byCustomizationType(ModelCustomization::NOT_SET),
-    m_byCustomizationTypeHasBeenSet(false),
-    m_byOutputModality(ModelModality::NOT_SET),
-    m_byOutputModalityHasBeenSet(false),
-    m_byInferenceType(InferenceType::NOT_SET),
-    m_byInferenceTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListFoundationModelsRequest::SerializePayload() const
 {
   return {};

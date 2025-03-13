@@ -32,7 +32,7 @@ namespace Model
   class Scte
   {
   public:
-    AWS_MEDIAPACKAGEV2_API Scte();
+    AWS_MEDIAPACKAGEV2_API Scte() = default;
     AWS_MEDIAPACKAGEV2_API Scte(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Scte& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,13 @@ namespace Model
      * <p>The SCTE-35 message types that you want to be treated as ad markers in the
      * output.</p>
      */
-    inline const Aws::Vector<ScteFilter>& GetScteFilter() const{ return m_scteFilter; }
+    inline const Aws::Vector<ScteFilter>& GetScteFilter() const { return m_scteFilter; }
     inline bool ScteFilterHasBeenSet() const { return m_scteFilterHasBeenSet; }
-    inline void SetScteFilter(const Aws::Vector<ScteFilter>& value) { m_scteFilterHasBeenSet = true; m_scteFilter = value; }
-    inline void SetScteFilter(Aws::Vector<ScteFilter>&& value) { m_scteFilterHasBeenSet = true; m_scteFilter = std::move(value); }
-    inline Scte& WithScteFilter(const Aws::Vector<ScteFilter>& value) { SetScteFilter(value); return *this;}
-    inline Scte& WithScteFilter(Aws::Vector<ScteFilter>&& value) { SetScteFilter(std::move(value)); return *this;}
-    inline Scte& AddScteFilter(const ScteFilter& value) { m_scteFilterHasBeenSet = true; m_scteFilter.push_back(value); return *this; }
-    inline Scte& AddScteFilter(ScteFilter&& value) { m_scteFilterHasBeenSet = true; m_scteFilter.push_back(std::move(value)); return *this; }
+    template<typename ScteFilterT = Aws::Vector<ScteFilter>>
+    void SetScteFilter(ScteFilterT&& value) { m_scteFilterHasBeenSet = true; m_scteFilter = std::forward<ScteFilterT>(value); }
+    template<typename ScteFilterT = Aws::Vector<ScteFilter>>
+    Scte& WithScteFilter(ScteFilterT&& value) { SetScteFilter(std::forward<ScteFilterT>(value)); return *this;}
+    inline Scte& AddScteFilter(ScteFilter value) { m_scteFilterHasBeenSet = true; m_scteFilter.push_back(value); return *this; }
     ///@}
   private:
 

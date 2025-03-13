@@ -20,23 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheNodeTypeSpecificParameter::CacheNodeTypeSpecificParameter() : 
-    m_parameterNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_isModifiable(false),
-    m_isModifiableHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false),
-    m_cacheNodeTypeSpecificValuesHasBeenSet(false),
-    m_changeType(ChangeType::NOT_SET),
-    m_changeTypeHasBeenSet(false)
-{
-}
-
 CacheNodeTypeSpecificParameter::CacheNodeTypeSpecificParameter(const XmlNode& xmlNode)
-  : CacheNodeTypeSpecificParameter()
 {
   *this = xmlNode;
 }
@@ -52,60 +36,69 @@ CacheNodeTypeSpecificParameter& CacheNodeTypeSpecificParameter::operator =(const
     {
       m_parameterName = Aws::Utils::Xml::DecodeEscapedXmlText(parameterNameNode.GetText());
       m_parameterNameHasBeenSet = true;
+       m_parameterNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode sourceNode = resultNode.FirstChild("Source");
     if(!sourceNode.IsNull())
     {
       m_source = Aws::Utils::Xml::DecodeEscapedXmlText(sourceNode.GetText());
       m_sourceHasBeenSet = true;
+       m_sourceHasBeenSet = true;
     }
     XmlNode dataTypeNode = resultNode.FirstChild("DataType");
     if(!dataTypeNode.IsNull())
     {
       m_dataType = Aws::Utils::Xml::DecodeEscapedXmlText(dataTypeNode.GetText());
       m_dataTypeHasBeenSet = true;
+       m_dataTypeHasBeenSet = true;
     }
     XmlNode allowedValuesNode = resultNode.FirstChild("AllowedValues");
     if(!allowedValuesNode.IsNull())
     {
       m_allowedValues = Aws::Utils::Xml::DecodeEscapedXmlText(allowedValuesNode.GetText());
       m_allowedValuesHasBeenSet = true;
+       m_allowedValuesHasBeenSet = true;
     }
     XmlNode isModifiableNode = resultNode.FirstChild("IsModifiable");
     if(!isModifiableNode.IsNull())
     {
       m_isModifiable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isModifiableNode.GetText()).c_str()).c_str());
       m_isModifiableHasBeenSet = true;
+       m_isModifiableHasBeenSet = true;
     }
     XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
     if(!minimumEngineVersionNode.IsNull())
     {
       m_minimumEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(minimumEngineVersionNode.GetText());
       m_minimumEngineVersionHasBeenSet = true;
+       m_minimumEngineVersionHasBeenSet = true;
     }
     XmlNode cacheNodeTypeSpecificValuesNode = resultNode.FirstChild("CacheNodeTypeSpecificValues");
     if(!cacheNodeTypeSpecificValuesNode.IsNull())
     {
       XmlNode cacheNodeTypeSpecificValuesMember = cacheNodeTypeSpecificValuesNode.FirstChild("CacheNodeTypeSpecificValue");
+      m_cacheNodeTypeSpecificValuesHasBeenSet = !cacheNodeTypeSpecificValuesMember.IsNull();
       while(!cacheNodeTypeSpecificValuesMember.IsNull())
       {
         m_cacheNodeTypeSpecificValues.push_back(cacheNodeTypeSpecificValuesMember);
         cacheNodeTypeSpecificValuesMember = cacheNodeTypeSpecificValuesMember.NextNode("CacheNodeTypeSpecificValue");
       }
 
-      m_cacheNodeTypeSpecificValuesHasBeenSet = true;
+       m_cacheNodeTypeSpecificValuesHasBeenSet = true;
     }
     XmlNode changeTypeNode = resultNode.FirstChild("ChangeType");
     if(!changeTypeNode.IsNull())
     {
-      m_changeType = ChangeTypeMapper::GetChangeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(changeTypeNode.GetText()).c_str()).c_str());
+      m_changeType = ChangeTypeMapper::GetChangeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(changeTypeNode.GetText()).c_str()));
       m_changeTypeHasBeenSet = true;
+       m_changeTypeHasBeenSet = true;
     }
   }
 

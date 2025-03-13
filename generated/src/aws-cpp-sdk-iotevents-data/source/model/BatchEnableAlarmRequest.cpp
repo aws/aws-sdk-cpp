@@ -12,11 +12,6 @@ using namespace Aws::IoTEventsData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchEnableAlarmRequest::BatchEnableAlarmRequest() : 
-    m_enableActionRequestsHasBeenSet(false)
-{
-}
-
 Aws::String BatchEnableAlarmRequest::SerializePayload() const
 {
   JsonValue payload;

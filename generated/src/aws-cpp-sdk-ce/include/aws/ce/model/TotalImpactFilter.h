@@ -32,7 +32,7 @@ namespace Model
   class TotalImpactFilter
   {
   public:
-    AWS_COSTEXPLORER_API TotalImpactFilter();
+    AWS_COSTEXPLORER_API TotalImpactFilter() = default;
     AWS_COSTEXPLORER_API TotalImpactFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API TotalImpactFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,19 +42,17 @@ namespace Model
     /**
      * <p>The comparing value that's used in the filter. </p>
      */
-    inline const NumericOperator& GetNumericOperator() const{ return m_numericOperator; }
+    inline NumericOperator GetNumericOperator() const { return m_numericOperator; }
     inline bool NumericOperatorHasBeenSet() const { return m_numericOperatorHasBeenSet; }
-    inline void SetNumericOperator(const NumericOperator& value) { m_numericOperatorHasBeenSet = true; m_numericOperator = value; }
-    inline void SetNumericOperator(NumericOperator&& value) { m_numericOperatorHasBeenSet = true; m_numericOperator = std::move(value); }
-    inline TotalImpactFilter& WithNumericOperator(const NumericOperator& value) { SetNumericOperator(value); return *this;}
-    inline TotalImpactFilter& WithNumericOperator(NumericOperator&& value) { SetNumericOperator(std::move(value)); return *this;}
+    inline void SetNumericOperator(NumericOperator value) { m_numericOperatorHasBeenSet = true; m_numericOperator = value; }
+    inline TotalImpactFilter& WithNumericOperator(NumericOperator value) { SetNumericOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The lower bound dollar value that's used in the filter. </p>
      */
-    inline double GetStartValue() const{ return m_startValue; }
+    inline double GetStartValue() const { return m_startValue; }
     inline bool StartValueHasBeenSet() const { return m_startValueHasBeenSet; }
     inline void SetStartValue(double value) { m_startValueHasBeenSet = true; m_startValue = value; }
     inline TotalImpactFilter& WithStartValue(double value) { SetStartValue(value); return *this;}
@@ -64,20 +62,20 @@ namespace Model
     /**
      * <p>The upper bound dollar value that's used in the filter. </p>
      */
-    inline double GetEndValue() const{ return m_endValue; }
+    inline double GetEndValue() const { return m_endValue; }
     inline bool EndValueHasBeenSet() const { return m_endValueHasBeenSet; }
     inline void SetEndValue(double value) { m_endValueHasBeenSet = true; m_endValue = value; }
     inline TotalImpactFilter& WithEndValue(double value) { SetEndValue(value); return *this;}
     ///@}
   private:
 
-    NumericOperator m_numericOperator;
+    NumericOperator m_numericOperator{NumericOperator::NOT_SET};
     bool m_numericOperatorHasBeenSet = false;
 
-    double m_startValue;
+    double m_startValue{0.0};
     bool m_startValueHasBeenSet = false;
 
-    double m_endValue;
+    double m_endValue{0.0};
     bool m_endValueHasBeenSet = false;
   };
 

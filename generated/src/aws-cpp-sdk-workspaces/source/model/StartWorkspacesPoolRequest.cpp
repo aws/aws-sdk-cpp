@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartWorkspacesPoolRequest::StartWorkspacesPoolRequest() : 
-    m_poolIdHasBeenSet(false)
-{
-}
-
 Aws::String StartWorkspacesPoolRequest::SerializePayload() const
 {
   JsonValue payload;

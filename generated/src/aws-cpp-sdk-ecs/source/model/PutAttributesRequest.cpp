@@ -12,12 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAttributesRequest::PutAttributesRequest() : 
-    m_clusterHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String PutAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -31,7 +31,7 @@ namespace Model
   class ArchiveCdnSettings
   {
   public:
-    AWS_MEDIALIVE_API ArchiveCdnSettings();
+    AWS_MEDIALIVE_API ArchiveCdnSettings() = default;
     AWS_MEDIALIVE_API ArchiveCdnSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API ArchiveCdnSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const ArchiveS3Settings& GetArchiveS3Settings() const{ return m_archiveS3Settings; }
+    inline const ArchiveS3Settings& GetArchiveS3Settings() const { return m_archiveS3Settings; }
     inline bool ArchiveS3SettingsHasBeenSet() const { return m_archiveS3SettingsHasBeenSet; }
-    inline void SetArchiveS3Settings(const ArchiveS3Settings& value) { m_archiveS3SettingsHasBeenSet = true; m_archiveS3Settings = value; }
-    inline void SetArchiveS3Settings(ArchiveS3Settings&& value) { m_archiveS3SettingsHasBeenSet = true; m_archiveS3Settings = std::move(value); }
-    inline ArchiveCdnSettings& WithArchiveS3Settings(const ArchiveS3Settings& value) { SetArchiveS3Settings(value); return *this;}
-    inline ArchiveCdnSettings& WithArchiveS3Settings(ArchiveS3Settings&& value) { SetArchiveS3Settings(std::move(value)); return *this;}
+    template<typename ArchiveS3SettingsT = ArchiveS3Settings>
+    void SetArchiveS3Settings(ArchiveS3SettingsT&& value) { m_archiveS3SettingsHasBeenSet = true; m_archiveS3Settings = std::forward<ArchiveS3SettingsT>(value); }
+    template<typename ArchiveS3SettingsT = ArchiveS3Settings>
+    ArchiveCdnSettings& WithArchiveS3Settings(ArchiveS3SettingsT&& value) { SetArchiveS3Settings(std::forward<ArchiveS3SettingsT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-VersionInfo::VersionInfo() : 
-    m_agentVersionHasBeenSet(false),
-    m_agentHashHasBeenSet(false),
-    m_dockerVersionHasBeenSet(false)
-{
-}
-
 VersionInfo::VersionInfo(JsonView jsonValue)
-  : VersionInfo()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ VersionInfo& VersionInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agentVersion"))
   {
     m_agentVersion = jsonValue.GetString("agentVersion");
-
     m_agentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentHash"))
   {
     m_agentHash = jsonValue.GetString("agentHash");
-
     m_agentHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dockerVersion"))
   {
     m_dockerVersion = jsonValue.GetString("dockerVersion");
-
     m_dockerVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

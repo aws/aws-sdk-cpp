@@ -18,17 +18,7 @@ namespace WorkLink
 namespace Model
 {
 
-WebsiteAuthorizationProviderSummary::WebsiteAuthorizationProviderSummary() : 
-    m_authorizationProviderIdHasBeenSet(false),
-    m_authorizationProviderType(AuthorizationProviderType::NOT_SET),
-    m_authorizationProviderTypeHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
-{
-}
-
 WebsiteAuthorizationProviderSummary::WebsiteAuthorizationProviderSummary(JsonView jsonValue)
-  : WebsiteAuthorizationProviderSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ WebsiteAuthorizationProviderSummary& WebsiteAuthorizationProviderSummary::operat
   if(jsonValue.ValueExists("AuthorizationProviderId"))
   {
     m_authorizationProviderId = jsonValue.GetString("AuthorizationProviderId");
-
     m_authorizationProviderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizationProviderType"))
   {
     m_authorizationProviderType = AuthorizationProviderTypeMapper::GetAuthorizationProviderTypeForName(jsonValue.GetString("AuthorizationProviderType"));
-
     m_authorizationProviderTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

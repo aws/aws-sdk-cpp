@@ -30,7 +30,7 @@ namespace Model
   class ScheduledInstancesMonitoring
   {
   public:
-    AWS_EC2_API ScheduledInstancesMonitoring();
+    AWS_EC2_API ScheduledInstancesMonitoring() = default;
     AWS_EC2_API ScheduledInstancesMonitoring(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ScheduledInstancesMonitoring& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>Indicates whether monitoring is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ScheduledInstancesMonitoring& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

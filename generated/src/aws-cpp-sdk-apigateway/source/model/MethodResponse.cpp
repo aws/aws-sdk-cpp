@@ -19,16 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-MethodResponse::MethodResponse() : 
-    m_statusCodeHasBeenSet(false),
-    m_responseParametersHasBeenSet(false),
-    m_responseModelsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 MethodResponse::MethodResponse(JsonView jsonValue)
-  : MethodResponse()
 {
   *this = jsonValue;
 }
@@ -38,10 +29,8 @@ MethodResponse& MethodResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseParameters"))
   {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
@@ -51,7 +40,6 @@ MethodResponse& MethodResponse::operator =(JsonView jsonValue)
     }
     m_responseParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseModels"))
   {
     Aws::Map<Aws::String, JsonView> responseModelsJsonMap = jsonValue.GetObject("responseModels").GetAllObjects();
@@ -61,7 +49,6 @@ MethodResponse& MethodResponse::operator =(JsonView jsonValue)
     }
     m_responseModelsHasBeenSet = true;
   }
-
   return *this;
 }
 

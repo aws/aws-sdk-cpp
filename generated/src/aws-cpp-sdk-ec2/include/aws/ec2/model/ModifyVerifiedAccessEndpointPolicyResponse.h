@@ -29,7 +29,7 @@ namespace Model
   class ModifyVerifiedAccessEndpointPolicyResponse
   {
   public:
-    AWS_EC2_API ModifyVerifiedAccessEndpointPolicyResponse();
+    AWS_EC2_API ModifyVerifiedAccessEndpointPolicyResponse() = default;
     AWS_EC2_API ModifyVerifiedAccessEndpointPolicyResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyVerifiedAccessEndpointPolicyResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,8 +38,8 @@ namespace Model
     /**
      * <p>The status of the Verified Access policy.</p>
      */
-    inline bool GetPolicyEnabled() const{ return m_policyEnabled; }
-    inline void SetPolicyEnabled(bool value) { m_policyEnabled = value; }
+    inline bool GetPolicyEnabled() const { return m_policyEnabled; }
+    inline void SetPolicyEnabled(bool value) { m_policyEnabledHasBeenSet = true; m_policyEnabled = value; }
     inline ModifyVerifiedAccessEndpointPolicyResponse& WithPolicyEnabled(bool value) { SetPolicyEnabled(value); return *this;}
     ///@}
 
@@ -47,43 +47,45 @@ namespace Model
     /**
      * <p>The Verified Access policy document.</p>
      */
-    inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocument = value; }
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocument = std::move(value); }
-    inline void SetPolicyDocument(const char* value) { m_policyDocument.assign(value); }
-    inline ModifyVerifiedAccessEndpointPolicyResponse& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-    inline ModifyVerifiedAccessEndpointPolicyResponse& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-    inline ModifyVerifiedAccessEndpointPolicyResponse& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
+    template<typename PolicyDocumentT = Aws::String>
+    void SetPolicyDocument(PolicyDocumentT&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::forward<PolicyDocumentT>(value); }
+    template<typename PolicyDocumentT = Aws::String>
+    ModifyVerifiedAccessEndpointPolicyResponse& WithPolicyDocument(PolicyDocumentT&& value) { SetPolicyDocument(std::forward<PolicyDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options in use for server side encryption.</p>
      */
-    inline const VerifiedAccessSseSpecificationResponse& GetSseSpecification() const{ return m_sseSpecification; }
-    inline void SetSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { m_sseSpecification = value; }
-    inline void SetSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { m_sseSpecification = std::move(value); }
-    inline ModifyVerifiedAccessEndpointPolicyResponse& WithSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { SetSseSpecification(value); return *this;}
-    inline ModifyVerifiedAccessEndpointPolicyResponse& WithSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { SetSseSpecification(std::move(value)); return *this;}
+    inline const VerifiedAccessSseSpecificationResponse& GetSseSpecification() const { return m_sseSpecification; }
+    template<typename SseSpecificationT = VerifiedAccessSseSpecificationResponse>
+    void SetSseSpecification(SseSpecificationT&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::forward<SseSpecificationT>(value); }
+    template<typename SseSpecificationT = VerifiedAccessSseSpecificationResponse>
+    ModifyVerifiedAccessEndpointPolicyResponse& WithSseSpecification(SseSpecificationT&& value) { SetSseSpecification(std::forward<SseSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyVerifiedAccessEndpointPolicyResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyVerifiedAccessEndpointPolicyResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyVerifiedAccessEndpointPolicyResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_policyEnabled;
+    bool m_policyEnabled{false};
+    bool m_policyEnabledHasBeenSet = false;
 
     Aws::String m_policyDocument;
+    bool m_policyDocumentHasBeenSet = false;
 
     VerifiedAccessSseSpecificationResponse m_sseSpecification;
+    bool m_sseSpecificationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketBucketLifecycleConfigurationDetails::AwsS3BucketBucketLifecycleConfigurationDetails() : 
-    m_rulesHasBeenSet(false)
-{
-}
-
 AwsS3BucketBucketLifecycleConfigurationDetails::AwsS3BucketBucketLifecycleConfigurationDetails(JsonView jsonValue)
-  : AwsS3BucketBucketLifecycleConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AwsS3BucketBucketLifecycleConfigurationDetails& AwsS3BucketBucketLifecycleConfig
     }
     m_rulesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class StartInvestigationResult
   {
   public:
-    AWS_DETECTIVE_API StartInvestigationResult();
+    AWS_DETECTIVE_API StartInvestigationResult() = default;
     AWS_DETECTIVE_API StartInvestigationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DETECTIVE_API StartInvestigationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The investigation ID of the investigation report.</p>
      */
-    inline const Aws::String& GetInvestigationId() const{ return m_investigationId; }
-    inline void SetInvestigationId(const Aws::String& value) { m_investigationId = value; }
-    inline void SetInvestigationId(Aws::String&& value) { m_investigationId = std::move(value); }
-    inline void SetInvestigationId(const char* value) { m_investigationId.assign(value); }
-    inline StartInvestigationResult& WithInvestigationId(const Aws::String& value) { SetInvestigationId(value); return *this;}
-    inline StartInvestigationResult& WithInvestigationId(Aws::String&& value) { SetInvestigationId(std::move(value)); return *this;}
-    inline StartInvestigationResult& WithInvestigationId(const char* value) { SetInvestigationId(value); return *this;}
+    inline const Aws::String& GetInvestigationId() const { return m_investigationId; }
+    template<typename InvestigationIdT = Aws::String>
+    void SetInvestigationId(InvestigationIdT&& value) { m_investigationIdHasBeenSet = true; m_investigationId = std::forward<InvestigationIdT>(value); }
+    template<typename InvestigationIdT = Aws::String>
+    StartInvestigationResult& WithInvestigationId(InvestigationIdT&& value) { SetInvestigationId(std::forward<InvestigationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartInvestigationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartInvestigationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartInvestigationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartInvestigationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_investigationId;
+    bool m_investigationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

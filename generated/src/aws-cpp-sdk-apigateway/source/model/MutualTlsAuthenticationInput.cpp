@@ -18,14 +18,7 @@ namespace APIGateway
 namespace Model
 {
 
-MutualTlsAuthenticationInput::MutualTlsAuthenticationInput() : 
-    m_truststoreUriHasBeenSet(false),
-    m_truststoreVersionHasBeenSet(false)
-{
-}
-
 MutualTlsAuthenticationInput::MutualTlsAuthenticationInput(JsonView jsonValue)
-  : MutualTlsAuthenticationInput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MutualTlsAuthenticationInput& MutualTlsAuthenticationInput::operator =(JsonView 
   if(jsonValue.ValueExists("truststoreUri"))
   {
     m_truststoreUri = jsonValue.GetString("truststoreUri");
-
     m_truststoreUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("truststoreVersion"))
   {
     m_truststoreVersion = jsonValue.GetString("truststoreVersion");
-
     m_truststoreVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

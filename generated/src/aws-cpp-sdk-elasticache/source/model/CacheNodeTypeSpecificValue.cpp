@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheNodeTypeSpecificValue::CacheNodeTypeSpecificValue() : 
-    m_cacheNodeTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 CacheNodeTypeSpecificValue::CacheNodeTypeSpecificValue(const XmlNode& xmlNode)
-  : CacheNodeTypeSpecificValue()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CacheNodeTypeSpecificValue& CacheNodeTypeSpecificValue::operator =(const XmlNode
     {
       m_cacheNodeType = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeTypeNode.GetText());
       m_cacheNodeTypeHasBeenSet = true;
+       m_cacheNodeTypeHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

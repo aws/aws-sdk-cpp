@@ -33,7 +33,7 @@ namespace Model
   class RealTimeContactAnalysisSegmentEvent
   {
   public:
-    AWS_CONNECT_API RealTimeContactAnalysisSegmentEvent();
+    AWS_CONNECT_API RealTimeContactAnalysisSegmentEvent() = default;
     AWS_CONNECT_API RealTimeContactAnalysisSegmentEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RealTimeContactAnalysisSegmentEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The identifier of the contact event.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline RealTimeContactAnalysisSegmentEvent& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline RealTimeContactAnalysisSegmentEvent& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline RealTimeContactAnalysisSegmentEvent& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    RealTimeContactAnalysisSegmentEvent& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the participant.</p>
      */
-    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
+    inline const Aws::String& GetParticipantId() const { return m_participantId; }
     inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
-    inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
-    inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
-    inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
-    inline RealTimeContactAnalysisSegmentEvent& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
-    inline RealTimeContactAnalysisSegmentEvent& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
-    inline RealTimeContactAnalysisSegmentEvent& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
+    template<typename ParticipantIdT = Aws::String>
+    void SetParticipantId(ParticipantIdT&& value) { m_participantIdHasBeenSet = true; m_participantId = std::forward<ParticipantIdT>(value); }
+    template<typename ParticipantIdT = Aws::String>
+    RealTimeContactAnalysisSegmentEvent& WithParticipantId(ParticipantIdT&& value) { SetParticipantId(std::forward<ParticipantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,26 +68,22 @@ namespace Model
      * <p>The role of the participant. For example, is it a customer, agent, or
      * system.</p>
      */
-    inline const ParticipantRole& GetParticipantRole() const{ return m_participantRole; }
+    inline ParticipantRole GetParticipantRole() const { return m_participantRole; }
     inline bool ParticipantRoleHasBeenSet() const { return m_participantRoleHasBeenSet; }
-    inline void SetParticipantRole(const ParticipantRole& value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
-    inline void SetParticipantRole(ParticipantRole&& value) { m_participantRoleHasBeenSet = true; m_participantRole = std::move(value); }
-    inline RealTimeContactAnalysisSegmentEvent& WithParticipantRole(const ParticipantRole& value) { SetParticipantRole(value); return *this;}
-    inline RealTimeContactAnalysisSegmentEvent& WithParticipantRole(ParticipantRole&& value) { SetParticipantRole(std::move(value)); return *this;}
+    inline void SetParticipantRole(ParticipantRole value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
+    inline RealTimeContactAnalysisSegmentEvent& WithParticipantRole(ParticipantRole value) { SetParticipantRole(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the participant. Can be redacted.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline RealTimeContactAnalysisSegmentEvent& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline RealTimeContactAnalysisSegmentEvent& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline RealTimeContactAnalysisSegmentEvent& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    RealTimeContactAnalysisSegmentEvent& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +91,12 @@ namespace Model
      * <p>Type of the event. For example,
      * <code>application/vnd.amazonaws.connect.event.participant.left</code>.</p>
      */
-    inline const Aws::String& GetEventType() const{ return m_eventType; }
+    inline const Aws::String& GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
-    inline RealTimeContactAnalysisSegmentEvent& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
-    inline RealTimeContactAnalysisSegmentEvent& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
-    inline RealTimeContactAnalysisSegmentEvent& WithEventType(const char* value) { SetEventType(value); return *this;}
+    template<typename EventTypeT = Aws::String>
+    void SetEventType(EventTypeT&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::forward<EventTypeT>(value); }
+    template<typename EventTypeT = Aws::String>
+    RealTimeContactAnalysisSegmentEvent& WithEventType(EventTypeT&& value) { SetEventType(std::forward<EventTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +104,12 @@ namespace Model
      * <p>Field describing the time of the event. It can have different representations
      * of time.</p>
      */
-    inline const RealTimeContactAnalysisTimeData& GetTime() const{ return m_time; }
+    inline const RealTimeContactAnalysisTimeData& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const RealTimeContactAnalysisTimeData& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(RealTimeContactAnalysisTimeData&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline RealTimeContactAnalysisSegmentEvent& WithTime(const RealTimeContactAnalysisTimeData& value) { SetTime(value); return *this;}
-    inline RealTimeContactAnalysisSegmentEvent& WithTime(RealTimeContactAnalysisTimeData&& value) { SetTime(std::move(value)); return *this;}
+    template<typename TimeT = RealTimeContactAnalysisTimeData>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = RealTimeContactAnalysisTimeData>
+    RealTimeContactAnalysisSegmentEvent& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -129,7 +119,7 @@ namespace Model
     Aws::String m_participantId;
     bool m_participantIdHasBeenSet = false;
 
-    ParticipantRole m_participantRole;
+    ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
     bool m_participantRoleHasBeenSet = false;
 
     Aws::String m_displayName;

@@ -36,7 +36,7 @@ namespace Model
   class InvalidationList
   {
   public:
-    AWS_CLOUDFRONT_API InvalidationList();
+    AWS_CLOUDFRONT_API InvalidationList() = default;
     AWS_CLOUDFRONT_API InvalidationList(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API InvalidationList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
      * <p>The value that you provided for the <code>Marker</code> request
      * parameter.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline InvalidationList& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline InvalidationList& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline InvalidationList& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    InvalidationList& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * contains the value that you can use for the <code>Marker</code> request
      * parameter to continue listing your invalidation batches where they left off.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
     inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
-    inline InvalidationList& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline InvalidationList& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline InvalidationList& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    InvalidationList& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,7 +75,7 @@ namespace Model
      * <p>The value that you provided for the <code>MaxItems</code> request
      * parameter.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline InvalidationList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -92,7 +88,7 @@ namespace Model
      * request using the <code>Marker</code> request parameter to retrieve more
      * invalidation batches in the list.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
     inline bool IsTruncatedHasBeenSet() const { return m_isTruncatedHasBeenSet; }
     inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline InvalidationList& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
@@ -103,7 +99,7 @@ namespace Model
      * <p>The number of invalidation batches that were created by the current Amazon
      * Web Services account. </p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline InvalidationList& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -114,14 +110,14 @@ namespace Model
      * <p>A complex type that contains one <code>InvalidationSummary</code> element for
      * each invalidation batch created by the current Amazon Web Services account.</p>
      */
-    inline const Aws::Vector<InvalidationSummary>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<InvalidationSummary>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<InvalidationSummary>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<InvalidationSummary>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline InvalidationList& WithItems(const Aws::Vector<InvalidationSummary>& value) { SetItems(value); return *this;}
-    inline InvalidationList& WithItems(Aws::Vector<InvalidationSummary>&& value) { SetItems(std::move(value)); return *this;}
-    inline InvalidationList& AddItems(const InvalidationSummary& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline InvalidationList& AddItems(InvalidationSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<InvalidationSummary>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<InvalidationSummary>>
+    InvalidationList& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = InvalidationSummary>
+    InvalidationList& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
@@ -131,13 +127,13 @@ namespace Model
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
     bool m_isTruncatedHasBeenSet = false;
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<InvalidationSummary> m_items;

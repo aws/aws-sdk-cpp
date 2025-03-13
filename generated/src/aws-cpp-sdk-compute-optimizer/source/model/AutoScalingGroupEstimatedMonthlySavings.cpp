@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-AutoScalingGroupEstimatedMonthlySavings::AutoScalingGroupEstimatedMonthlySavings() : 
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 AutoScalingGroupEstimatedMonthlySavings::AutoScalingGroupEstimatedMonthlySavings(JsonView jsonValue)
-  : AutoScalingGroupEstimatedMonthlySavings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AutoScalingGroupEstimatedMonthlySavings& AutoScalingGroupEstimatedMonthlySavings
   if(jsonValue.ValueExists("currency"))
   {
     m_currency = CurrencyMapper::GetCurrencyForName(jsonValue.GetString("currency"));
-
     m_currencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

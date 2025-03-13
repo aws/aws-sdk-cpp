@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HolidayConfigAttributes::HolidayConfigAttributes() : 
-    m_countryCodeHasBeenSet(false)
-{
-}
-
 HolidayConfigAttributes::HolidayConfigAttributes(JsonView jsonValue)
-  : HolidayConfigAttributes()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HolidayConfigAttributes& HolidayConfigAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CountryCode"))
   {
     m_countryCode = jsonValue.GetString("CountryCode");
-
     m_countryCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

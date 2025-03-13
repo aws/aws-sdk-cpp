@@ -24,10 +24,9 @@ namespace Model
   class GetLineageEventResult
   {
   public:
-    AWS_DATAZONE_API GetLineageEventResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_DATAZONE_API GetLineageEventResult(GetLineageEventResult&&);
-    AWS_DATAZONE_API GetLineageEventResult& operator=(GetLineageEventResult&&);
+    AWS_DATAZONE_API GetLineageEventResult() = default;
+    AWS_DATAZONE_API GetLineageEventResult(GetLineageEventResult&&) = default;
+    AWS_DATAZONE_API GetLineageEventResult& operator=(GetLineageEventResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetLineageEventResult(const GetLineageEventResult&) = delete;
@@ -43,37 +42,33 @@ namespace Model
     /**
      * <p>The timestamp of when the lineage event was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetLineageEventResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetLineageEventResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetLineageEventResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user who created the lineage event.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline GetLineageEventResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline GetLineageEventResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline GetLineageEventResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    GetLineageEventResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the domain.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
-    inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainId.assign(value); }
-    inline GetLineageEventResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline GetLineageEventResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline GetLineageEventResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    GetLineageEventResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,64 +84,66 @@ namespace Model
     /**
      * <p>The time of the lineage event.</p>
      */
-    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
-    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTime = value; }
-    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTime = std::move(value); }
-    inline GetLineageEventResult& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
-    inline GetLineageEventResult& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEventTime() const { return m_eventTime; }
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    void SetEventTime(EventTimeT&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::forward<EventTimeT>(value); }
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    GetLineageEventResult& WithEventTime(EventTimeT&& value) { SetEventTime(std::forward<EventTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the lineage event.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetLineageEventResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetLineageEventResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetLineageEventResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetLineageEventResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The progressing status of the lineage event.</p>
      */
-    inline const LineageEventProcessingStatus& GetProcessingStatus() const{ return m_processingStatus; }
-    inline void SetProcessingStatus(const LineageEventProcessingStatus& value) { m_processingStatus = value; }
-    inline void SetProcessingStatus(LineageEventProcessingStatus&& value) { m_processingStatus = std::move(value); }
-    inline GetLineageEventResult& WithProcessingStatus(const LineageEventProcessingStatus& value) { SetProcessingStatus(value); return *this;}
-    inline GetLineageEventResult& WithProcessingStatus(LineageEventProcessingStatus&& value) { SetProcessingStatus(std::move(value)); return *this;}
+    inline LineageEventProcessingStatus GetProcessingStatus() const { return m_processingStatus; }
+    inline void SetProcessingStatus(LineageEventProcessingStatus value) { m_processingStatusHasBeenSet = true; m_processingStatus = value; }
+    inline GetLineageEventResult& WithProcessingStatus(LineageEventProcessingStatus value) { SetProcessingStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetLineageEventResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetLineageEventResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetLineageEventResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetLineageEventResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_domainId;
+    bool m_domainIdHasBeenSet = false;
 
-    Aws::Utils::Stream::ResponseStream m_event;
+    Aws::Utils::Stream::ResponseStream m_event{};
+    bool m_eventHasBeenSet = false;
 
-    Aws::Utils::DateTime m_eventTime;
+    Aws::Utils::DateTime m_eventTime{};
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    LineageEventProcessingStatus m_processingStatus;
+    LineageEventProcessingStatus m_processingStatus{LineageEventProcessingStatus::NOT_SET};
+    bool m_processingStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

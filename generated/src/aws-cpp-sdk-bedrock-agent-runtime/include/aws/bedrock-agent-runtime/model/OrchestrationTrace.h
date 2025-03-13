@@ -37,7 +37,7 @@ namespace Model
   class OrchestrationTrace
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API OrchestrationTrace();
+    AWS_BEDROCKAGENTRUNTIME_API OrchestrationTrace() = default;
     AWS_BEDROCKAGENTRUNTIME_API OrchestrationTrace(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API OrchestrationTrace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * <p>Contains information pertaining to the action group or knowledge base that is
      * being invoked.</p>
      */
-    inline const InvocationInput& GetInvocationInput() const{ return m_invocationInput; }
+    inline const InvocationInput& GetInvocationInput() const { return m_invocationInput; }
     inline bool InvocationInputHasBeenSet() const { return m_invocationInputHasBeenSet; }
-    inline void SetInvocationInput(const InvocationInput& value) { m_invocationInputHasBeenSet = true; m_invocationInput = value; }
-    inline void SetInvocationInput(InvocationInput&& value) { m_invocationInputHasBeenSet = true; m_invocationInput = std::move(value); }
-    inline OrchestrationTrace& WithInvocationInput(const InvocationInput& value) { SetInvocationInput(value); return *this;}
-    inline OrchestrationTrace& WithInvocationInput(InvocationInput&& value) { SetInvocationInput(std::move(value)); return *this;}
+    template<typename InvocationInputT = InvocationInput>
+    void SetInvocationInput(InvocationInputT&& value) { m_invocationInputHasBeenSet = true; m_invocationInput = std::forward<InvocationInputT>(value); }
+    template<typename InvocationInputT = InvocationInput>
+    OrchestrationTrace& WithInvocationInput(InvocationInputT&& value) { SetInvocationInput(std::forward<InvocationInputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +66,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
      * object that was set when the agent was created or updated.</p> </li> </ul>
      */
-    inline const ModelInvocationInput& GetModelInvocationInput() const{ return m_modelInvocationInput; }
+    inline const ModelInvocationInput& GetModelInvocationInput() const { return m_modelInvocationInput; }
     inline bool ModelInvocationInputHasBeenSet() const { return m_modelInvocationInputHasBeenSet; }
-    inline void SetModelInvocationInput(const ModelInvocationInput& value) { m_modelInvocationInputHasBeenSet = true; m_modelInvocationInput = value; }
-    inline void SetModelInvocationInput(ModelInvocationInput&& value) { m_modelInvocationInputHasBeenSet = true; m_modelInvocationInput = std::move(value); }
-    inline OrchestrationTrace& WithModelInvocationInput(const ModelInvocationInput& value) { SetModelInvocationInput(value); return *this;}
-    inline OrchestrationTrace& WithModelInvocationInput(ModelInvocationInput&& value) { SetModelInvocationInput(std::move(value)); return *this;}
+    template<typename ModelInvocationInputT = ModelInvocationInput>
+    void SetModelInvocationInput(ModelInvocationInputT&& value) { m_modelInvocationInputHasBeenSet = true; m_modelInvocationInput = std::forward<ModelInvocationInputT>(value); }
+    template<typename ModelInvocationInputT = ModelInvocationInput>
+    OrchestrationTrace& WithModelInvocationInput(ModelInvocationInputT&& value) { SetModelInvocationInput(std::forward<ModelInvocationInputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +79,12 @@ namespace Model
      * <p>Contains information pertaining to the output from the foundation model that
      * is being invoked.</p>
      */
-    inline const OrchestrationModelInvocationOutput& GetModelInvocationOutput() const{ return m_modelInvocationOutput; }
+    inline const OrchestrationModelInvocationOutput& GetModelInvocationOutput() const { return m_modelInvocationOutput; }
     inline bool ModelInvocationOutputHasBeenSet() const { return m_modelInvocationOutputHasBeenSet; }
-    inline void SetModelInvocationOutput(const OrchestrationModelInvocationOutput& value) { m_modelInvocationOutputHasBeenSet = true; m_modelInvocationOutput = value; }
-    inline void SetModelInvocationOutput(OrchestrationModelInvocationOutput&& value) { m_modelInvocationOutputHasBeenSet = true; m_modelInvocationOutput = std::move(value); }
-    inline OrchestrationTrace& WithModelInvocationOutput(const OrchestrationModelInvocationOutput& value) { SetModelInvocationOutput(value); return *this;}
-    inline OrchestrationTrace& WithModelInvocationOutput(OrchestrationModelInvocationOutput&& value) { SetModelInvocationOutput(std::move(value)); return *this;}
+    template<typename ModelInvocationOutputT = OrchestrationModelInvocationOutput>
+    void SetModelInvocationOutput(ModelInvocationOutputT&& value) { m_modelInvocationOutputHasBeenSet = true; m_modelInvocationOutput = std::forward<ModelInvocationOutputT>(value); }
+    template<typename ModelInvocationOutputT = OrchestrationModelInvocationOutput>
+    OrchestrationTrace& WithModelInvocationOutput(ModelInvocationOutputT&& value) { SetModelInvocationOutput(std::forward<ModelInvocationOutputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +92,12 @@ namespace Model
      * <p>Details about the observation (the output of the action group Lambda or
      * knowledge base) made by the agent.</p>
      */
-    inline const Observation& GetObservation() const{ return m_observation; }
+    inline const Observation& GetObservation() const { return m_observation; }
     inline bool ObservationHasBeenSet() const { return m_observationHasBeenSet; }
-    inline void SetObservation(const Observation& value) { m_observationHasBeenSet = true; m_observation = value; }
-    inline void SetObservation(Observation&& value) { m_observationHasBeenSet = true; m_observation = std::move(value); }
-    inline OrchestrationTrace& WithObservation(const Observation& value) { SetObservation(value); return *this;}
-    inline OrchestrationTrace& WithObservation(Observation&& value) { SetObservation(std::move(value)); return *this;}
+    template<typename ObservationT = Observation>
+    void SetObservation(ObservationT&& value) { m_observationHasBeenSet = true; m_observation = std::forward<ObservationT>(value); }
+    template<typename ObservationT = Observation>
+    OrchestrationTrace& WithObservation(ObservationT&& value) { SetObservation(std::forward<ObservationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,12 +106,12 @@ namespace Model
      * justify carrying out an action group or getting information from a knowledge
      * base.</p>
      */
-    inline const Rationale& GetRationale() const{ return m_rationale; }
+    inline const Rationale& GetRationale() const { return m_rationale; }
     inline bool RationaleHasBeenSet() const { return m_rationaleHasBeenSet; }
-    inline void SetRationale(const Rationale& value) { m_rationaleHasBeenSet = true; m_rationale = value; }
-    inline void SetRationale(Rationale&& value) { m_rationaleHasBeenSet = true; m_rationale = std::move(value); }
-    inline OrchestrationTrace& WithRationale(const Rationale& value) { SetRationale(value); return *this;}
-    inline OrchestrationTrace& WithRationale(Rationale&& value) { SetRationale(std::move(value)); return *this;}
+    template<typename RationaleT = Rationale>
+    void SetRationale(RationaleT&& value) { m_rationaleHasBeenSet = true; m_rationale = std::forward<RationaleT>(value); }
+    template<typename RationaleT = Rationale>
+    OrchestrationTrace& WithRationale(RationaleT&& value) { SetRationale(std::forward<RationaleT>(value)); return *this;}
     ///@}
   private:
 

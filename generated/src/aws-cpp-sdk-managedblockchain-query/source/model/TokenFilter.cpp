@@ -18,16 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-TokenFilter::TokenFilter() : 
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_contractAddressHasBeenSet(false),
-    m_tokenIdHasBeenSet(false)
-{
-}
-
 TokenFilter::TokenFilter(JsonView jsonValue)
-  : TokenFilter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TokenFilter& TokenFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("network"))
   {
     m_network = QueryNetworkMapper::GetQueryNetworkForName(jsonValue.GetString("network"));
-
     m_networkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contractAddress"))
   {
     m_contractAddress = jsonValue.GetString("contractAddress");
-
     m_contractAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenId"))
   {
     m_tokenId = jsonValue.GetString("tokenId");
-
     m_tokenIdHasBeenSet = true;
   }
-
   return *this;
 }
 

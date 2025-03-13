@@ -33,7 +33,7 @@ namespace Model
   class SseAwsKeyManagementParams
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API SseAwsKeyManagementParams();
+    AWS_CHIMESDKMEDIAPIPELINES_API SseAwsKeyManagementParams() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API SseAwsKeyManagementParams(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API SseAwsKeyManagementParams& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,14 +63,12 @@ namespace Model
      * <code>SinkIamRoleArn</code> request parameter must have permission to use the
      * specified KMS key.</p>
      */
-    inline const Aws::String& GetAwsKmsKeyId() const{ return m_awsKmsKeyId; }
+    inline const Aws::String& GetAwsKmsKeyId() const { return m_awsKmsKeyId; }
     inline bool AwsKmsKeyIdHasBeenSet() const { return m_awsKmsKeyIdHasBeenSet; }
-    inline void SetAwsKmsKeyId(const Aws::String& value) { m_awsKmsKeyIdHasBeenSet = true; m_awsKmsKeyId = value; }
-    inline void SetAwsKmsKeyId(Aws::String&& value) { m_awsKmsKeyIdHasBeenSet = true; m_awsKmsKeyId = std::move(value); }
-    inline void SetAwsKmsKeyId(const char* value) { m_awsKmsKeyIdHasBeenSet = true; m_awsKmsKeyId.assign(value); }
-    inline SseAwsKeyManagementParams& WithAwsKmsKeyId(const Aws::String& value) { SetAwsKmsKeyId(value); return *this;}
-    inline SseAwsKeyManagementParams& WithAwsKmsKeyId(Aws::String&& value) { SetAwsKmsKeyId(std::move(value)); return *this;}
-    inline SseAwsKeyManagementParams& WithAwsKmsKeyId(const char* value) { SetAwsKmsKeyId(value); return *this;}
+    template<typename AwsKmsKeyIdT = Aws::String>
+    void SetAwsKmsKeyId(AwsKmsKeyIdT&& value) { m_awsKmsKeyIdHasBeenSet = true; m_awsKmsKeyId = std::forward<AwsKmsKeyIdT>(value); }
+    template<typename AwsKmsKeyIdT = Aws::String>
+    SseAwsKeyManagementParams& WithAwsKmsKeyId(AwsKmsKeyIdT&& value) { SetAwsKmsKeyId(std::forward<AwsKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
      * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetAwsKmsEncryptionContext() const{ return m_awsKmsEncryptionContext; }
+    inline const Aws::String& GetAwsKmsEncryptionContext() const { return m_awsKmsEncryptionContext; }
     inline bool AwsKmsEncryptionContextHasBeenSet() const { return m_awsKmsEncryptionContextHasBeenSet; }
-    inline void SetAwsKmsEncryptionContext(const Aws::String& value) { m_awsKmsEncryptionContextHasBeenSet = true; m_awsKmsEncryptionContext = value; }
-    inline void SetAwsKmsEncryptionContext(Aws::String&& value) { m_awsKmsEncryptionContextHasBeenSet = true; m_awsKmsEncryptionContext = std::move(value); }
-    inline void SetAwsKmsEncryptionContext(const char* value) { m_awsKmsEncryptionContextHasBeenSet = true; m_awsKmsEncryptionContext.assign(value); }
-    inline SseAwsKeyManagementParams& WithAwsKmsEncryptionContext(const Aws::String& value) { SetAwsKmsEncryptionContext(value); return *this;}
-    inline SseAwsKeyManagementParams& WithAwsKmsEncryptionContext(Aws::String&& value) { SetAwsKmsEncryptionContext(std::move(value)); return *this;}
-    inline SseAwsKeyManagementParams& WithAwsKmsEncryptionContext(const char* value) { SetAwsKmsEncryptionContext(value); return *this;}
+    template<typename AwsKmsEncryptionContextT = Aws::String>
+    void SetAwsKmsEncryptionContext(AwsKmsEncryptionContextT&& value) { m_awsKmsEncryptionContextHasBeenSet = true; m_awsKmsEncryptionContext = std::forward<AwsKmsEncryptionContextT>(value); }
+    template<typename AwsKmsEncryptionContextT = Aws::String>
+    SseAwsKeyManagementParams& WithAwsKmsEncryptionContext(AwsKmsEncryptionContextT&& value) { SetAwsKmsEncryptionContext(std::forward<AwsKmsEncryptionContextT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDomainRequest::DescribeDomainRequest() : 
-    m_domainIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDomainRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-BorrowConfiguration::BorrowConfiguration() : 
-    m_allowEarlyCheckIn(false),
-    m_allowEarlyCheckInHasBeenSet(false),
-    m_maxTimeToLiveInMinutes(0),
-    m_maxTimeToLiveInMinutesHasBeenSet(false)
-{
-}
-
 BorrowConfiguration::BorrowConfiguration(JsonView jsonValue)
-  : BorrowConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BorrowConfiguration& BorrowConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AllowEarlyCheckIn"))
   {
     m_allowEarlyCheckIn = jsonValue.GetBool("AllowEarlyCheckIn");
-
     m_allowEarlyCheckInHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxTimeToLiveInMinutes"))
   {
     m_maxTimeToLiveInMinutes = jsonValue.GetInteger("MaxTimeToLiveInMinutes");
-
     m_maxTimeToLiveInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

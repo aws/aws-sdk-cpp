@@ -12,20 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateReviewTemplateAnswerRequest::UpdateReviewTemplateAnswerRequest() : 
-    m_templateArnHasBeenSet(false),
-    m_lensAliasHasBeenSet(false),
-    m_questionIdHasBeenSet(false),
-    m_selectedChoicesHasBeenSet(false),
-    m_choiceUpdatesHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_isApplicable(false),
-    m_isApplicableHasBeenSet(false),
-    m_reason(AnswerReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String UpdateReviewTemplateAnswerRequest::SerializePayload() const
 {
   JsonValue payload;

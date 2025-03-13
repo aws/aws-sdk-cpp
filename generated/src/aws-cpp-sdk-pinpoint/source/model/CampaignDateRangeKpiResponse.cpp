@@ -18,19 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-CampaignDateRangeKpiResponse::CampaignDateRangeKpiResponse() : 
-    m_applicationIdHasBeenSet(false),
-    m_campaignIdHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_kpiNameHasBeenSet(false),
-    m_kpiResultHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 CampaignDateRangeKpiResponse::CampaignDateRangeKpiResponse(JsonView jsonValue)
-  : CampaignDateRangeKpiResponse()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ CampaignDateRangeKpiResponse& CampaignDateRangeKpiResponse::operator =(JsonView 
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CampaignId"))
   {
     m_campaignId = jsonValue.GetString("CampaignId");
-
     m_campaignIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetString("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KpiName"))
   {
     m_kpiName = jsonValue.GetString("KpiName");
-
     m_kpiNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KpiResult"))
   {
     m_kpiResult = jsonValue.GetObject("KpiResult");
-
     m_kpiResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

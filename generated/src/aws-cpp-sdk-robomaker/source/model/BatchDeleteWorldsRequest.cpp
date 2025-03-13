@@ -12,11 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteWorldsRequest::BatchDeleteWorldsRequest() : 
-    m_worldsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteWorldsRequest::SerializePayload() const
 {
   JsonValue payload;

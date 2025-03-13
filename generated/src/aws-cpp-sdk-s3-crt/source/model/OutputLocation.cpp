@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-OutputLocation::OutputLocation() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 OutputLocation::OutputLocation(const XmlNode& xmlNode)
-  : OutputLocation()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ OutputLocation& OutputLocation::operator =(const XmlNode& xmlNode)
     {
       m_s3 = s3Node;
       m_s3HasBeenSet = true;
+       m_s3HasBeenSet = true;
     }
   }
 

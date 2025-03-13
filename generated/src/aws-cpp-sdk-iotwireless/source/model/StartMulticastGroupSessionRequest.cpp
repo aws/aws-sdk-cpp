@@ -12,12 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMulticastGroupSessionRequest::StartMulticastGroupSessionRequest() : 
-    m_idHasBeenSet(false),
-    m_loRaWANHasBeenSet(false)
-{
-}
-
 Aws::String StartMulticastGroupSessionRequest::SerializePayload() const
 {
   JsonValue payload;

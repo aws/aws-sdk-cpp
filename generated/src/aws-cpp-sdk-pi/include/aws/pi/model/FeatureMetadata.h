@@ -33,7 +33,7 @@ namespace Model
   class FeatureMetadata
   {
   public:
-    AWS_PI_API FeatureMetadata();
+    AWS_PI_API FeatureMetadata() = default;
     AWS_PI_API FeatureMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API FeatureMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,16 +52,14 @@ namespace Model
      * but requires a reboot to take effect.</p> </li> <li> <p> <code>UNKNOWN</code> -
      * The feature status couldn't be determined.</p> </li> </ul>
      */
-    inline const FeatureStatus& GetStatus() const{ return m_status; }
+    inline FeatureStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FeatureMetadata& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
-    inline FeatureMetadata& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FeatureStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FeatureMetadata& WithStatus(FeatureStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    FeatureStatus m_status;
+    FeatureStatus m_status{FeatureStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

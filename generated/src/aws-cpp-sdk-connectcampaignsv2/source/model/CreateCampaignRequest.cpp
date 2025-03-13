@@ -12,19 +12,6 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCampaignRequest::CreateCampaignRequest() : 
-    m_nameHasBeenSet(false),
-    m_connectInstanceIdHasBeenSet(false),
-    m_channelSubtypeConfigHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_connectCampaignFlowArnHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_communicationTimeConfigHasBeenSet(false),
-    m_communicationLimitsOverrideHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCampaignRequest::SerializePayload() const
 {
   JsonValue payload;

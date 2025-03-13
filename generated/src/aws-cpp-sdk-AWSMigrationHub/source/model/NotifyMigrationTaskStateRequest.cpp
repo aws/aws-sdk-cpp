@@ -12,18 +12,6 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-NotifyMigrationTaskStateRequest::NotifyMigrationTaskStateRequest() : 
-    m_progressUpdateStreamHasBeenSet(false),
-    m_migrationTaskNameHasBeenSet(false),
-    m_taskHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_nextUpdateSeconds(0),
-    m_nextUpdateSecondsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String NotifyMigrationTaskStateRequest::SerializePayload() const
 {
   JsonValue payload;

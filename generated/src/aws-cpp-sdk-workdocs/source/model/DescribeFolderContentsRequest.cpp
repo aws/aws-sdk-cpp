@@ -15,22 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeFolderContentsRequest::DescribeFolderContentsRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_folderIdHasBeenSet(false),
-    m_sort(ResourceSortType::NOT_SET),
-    m_sortHasBeenSet(false),
-    m_order(OrderType::NOT_SET),
-    m_orderHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_type(FolderContentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_includeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFolderContentsRequest::SerializePayload() const
 {
   return {};

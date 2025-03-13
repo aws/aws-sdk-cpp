@@ -33,7 +33,7 @@ namespace Model
   class ModelBiasJobInput
   {
   public:
-    AWS_SAGEMAKER_API ModelBiasJobInput();
+    AWS_SAGEMAKER_API ModelBiasJobInput() = default;
     AWS_SAGEMAKER_API ModelBiasJobInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelBiasJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,36 +41,36 @@ namespace Model
 
     ///@{
     
-    inline const EndpointInput& GetEndpointInput() const{ return m_endpointInput; }
+    inline const EndpointInput& GetEndpointInput() const { return m_endpointInput; }
     inline bool EndpointInputHasBeenSet() const { return m_endpointInputHasBeenSet; }
-    inline void SetEndpointInput(const EndpointInput& value) { m_endpointInputHasBeenSet = true; m_endpointInput = value; }
-    inline void SetEndpointInput(EndpointInput&& value) { m_endpointInputHasBeenSet = true; m_endpointInput = std::move(value); }
-    inline ModelBiasJobInput& WithEndpointInput(const EndpointInput& value) { SetEndpointInput(value); return *this;}
-    inline ModelBiasJobInput& WithEndpointInput(EndpointInput&& value) { SetEndpointInput(std::move(value)); return *this;}
+    template<typename EndpointInputT = EndpointInput>
+    void SetEndpointInput(EndpointInputT&& value) { m_endpointInputHasBeenSet = true; m_endpointInput = std::forward<EndpointInputT>(value); }
+    template<typename EndpointInputT = EndpointInput>
+    ModelBiasJobInput& WithEndpointInput(EndpointInputT&& value) { SetEndpointInput(std::forward<EndpointInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Input object for the batch transform job.</p>
      */
-    inline const BatchTransformInput& GetBatchTransformInput() const{ return m_batchTransformInput; }
+    inline const BatchTransformInput& GetBatchTransformInput() const { return m_batchTransformInput; }
     inline bool BatchTransformInputHasBeenSet() const { return m_batchTransformInputHasBeenSet; }
-    inline void SetBatchTransformInput(const BatchTransformInput& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = value; }
-    inline void SetBatchTransformInput(BatchTransformInput&& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = std::move(value); }
-    inline ModelBiasJobInput& WithBatchTransformInput(const BatchTransformInput& value) { SetBatchTransformInput(value); return *this;}
-    inline ModelBiasJobInput& WithBatchTransformInput(BatchTransformInput&& value) { SetBatchTransformInput(std::move(value)); return *this;}
+    template<typename BatchTransformInputT = BatchTransformInput>
+    void SetBatchTransformInput(BatchTransformInputT&& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = std::forward<BatchTransformInputT>(value); }
+    template<typename BatchTransformInputT = BatchTransformInput>
+    ModelBiasJobInput& WithBatchTransformInput(BatchTransformInputT&& value) { SetBatchTransformInput(std::forward<BatchTransformInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Location of ground truth labels to use in model bias job.</p>
      */
-    inline const MonitoringGroundTruthS3Input& GetGroundTruthS3Input() const{ return m_groundTruthS3Input; }
+    inline const MonitoringGroundTruthS3Input& GetGroundTruthS3Input() const { return m_groundTruthS3Input; }
     inline bool GroundTruthS3InputHasBeenSet() const { return m_groundTruthS3InputHasBeenSet; }
-    inline void SetGroundTruthS3Input(const MonitoringGroundTruthS3Input& value) { m_groundTruthS3InputHasBeenSet = true; m_groundTruthS3Input = value; }
-    inline void SetGroundTruthS3Input(MonitoringGroundTruthS3Input&& value) { m_groundTruthS3InputHasBeenSet = true; m_groundTruthS3Input = std::move(value); }
-    inline ModelBiasJobInput& WithGroundTruthS3Input(const MonitoringGroundTruthS3Input& value) { SetGroundTruthS3Input(value); return *this;}
-    inline ModelBiasJobInput& WithGroundTruthS3Input(MonitoringGroundTruthS3Input&& value) { SetGroundTruthS3Input(std::move(value)); return *this;}
+    template<typename GroundTruthS3InputT = MonitoringGroundTruthS3Input>
+    void SetGroundTruthS3Input(GroundTruthS3InputT&& value) { m_groundTruthS3InputHasBeenSet = true; m_groundTruthS3Input = std::forward<GroundTruthS3InputT>(value); }
+    template<typename GroundTruthS3InputT = MonitoringGroundTruthS3Input>
+    ModelBiasJobInput& WithGroundTruthS3Input(GroundTruthS3InputT&& value) { SetGroundTruthS3Input(std::forward<GroundTruthS3InputT>(value)); return *this;}
     ///@}
   private:
 

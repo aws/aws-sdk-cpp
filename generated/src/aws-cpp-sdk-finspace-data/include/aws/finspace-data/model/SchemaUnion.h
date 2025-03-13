@@ -31,7 +31,7 @@ namespace Model
   class SchemaUnion
   {
   public:
-    AWS_FINSPACEDATA_API SchemaUnion();
+    AWS_FINSPACEDATA_API SchemaUnion() = default;
     AWS_FINSPACEDATA_API SchemaUnion(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API SchemaUnion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The configuration for a schema on a tabular Dataset.</p>
      */
-    inline const SchemaDefinition& GetTabularSchemaConfig() const{ return m_tabularSchemaConfig; }
+    inline const SchemaDefinition& GetTabularSchemaConfig() const { return m_tabularSchemaConfig; }
     inline bool TabularSchemaConfigHasBeenSet() const { return m_tabularSchemaConfigHasBeenSet; }
-    inline void SetTabularSchemaConfig(const SchemaDefinition& value) { m_tabularSchemaConfigHasBeenSet = true; m_tabularSchemaConfig = value; }
-    inline void SetTabularSchemaConfig(SchemaDefinition&& value) { m_tabularSchemaConfigHasBeenSet = true; m_tabularSchemaConfig = std::move(value); }
-    inline SchemaUnion& WithTabularSchemaConfig(const SchemaDefinition& value) { SetTabularSchemaConfig(value); return *this;}
-    inline SchemaUnion& WithTabularSchemaConfig(SchemaDefinition&& value) { SetTabularSchemaConfig(std::move(value)); return *this;}
+    template<typename TabularSchemaConfigT = SchemaDefinition>
+    void SetTabularSchemaConfig(TabularSchemaConfigT&& value) { m_tabularSchemaConfigHasBeenSet = true; m_tabularSchemaConfig = std::forward<TabularSchemaConfigT>(value); }
+    template<typename TabularSchemaConfigT = SchemaDefinition>
+    SchemaUnion& WithTabularSchemaConfig(TabularSchemaConfigT&& value) { SetTabularSchemaConfig(std::forward<TabularSchemaConfigT>(value)); return *this;}
     ///@}
   private:
 

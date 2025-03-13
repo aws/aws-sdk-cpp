@@ -24,7 +24,7 @@ namespace Model
   class UpdateConfigurationRequest : public MQRequest
   {
   public:
-    AWS_MQ_API UpdateConfigurationRequest();
+    AWS_MQ_API UpdateConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
-    inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
+    inline const Aws::String& GetConfigurationId() const { return m_configurationId; }
     inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
-    inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
-    inline void SetConfigurationId(Aws::String&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::move(value); }
-    inline void SetConfigurationId(const char* value) { m_configurationIdHasBeenSet = true; m_configurationId.assign(value); }
-    inline UpdateConfigurationRequest& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
-    inline UpdateConfigurationRequest& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
-    inline UpdateConfigurationRequest& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
+    template<typename ConfigurationIdT = Aws::String>
+    void SetConfigurationId(ConfigurationIdT&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::forward<ConfigurationIdT>(value); }
+    template<typename ConfigurationIdT = Aws::String>
+    UpdateConfigurationRequest& WithConfigurationId(ConfigurationIdT&& value) { SetConfigurationId(std::forward<ConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,28 +52,24 @@ namespace Model
      * <p>Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for
      * RabbitMQ: the base64-encoded Cuttlefish configuration.</p>
      */
-    inline const Aws::String& GetData() const{ return m_data; }
+    inline const Aws::String& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
-    inline UpdateConfigurationRequest& WithData(const Aws::String& value) { SetData(value); return *this;}
-    inline UpdateConfigurationRequest& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
-    inline UpdateConfigurationRequest& WithData(const char* value) { SetData(value); return *this;}
+    template<typename DataT = Aws::String>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::String>
+    UpdateConfigurationRequest& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the configuration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateConfigurationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateConfigurationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateConfigurationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateConfigurationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

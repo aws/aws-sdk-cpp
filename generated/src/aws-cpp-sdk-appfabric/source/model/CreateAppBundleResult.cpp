@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAppBundleResult::CreateAppBundleResult()
-{
-}
-
 CreateAppBundleResult::CreateAppBundleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateAppBundleResult& CreateAppBundleResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("appBundle"))
   {
     m_appBundle = jsonValue.GetObject("appBundle");
-
+    m_appBundleHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

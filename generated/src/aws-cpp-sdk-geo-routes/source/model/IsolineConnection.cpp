@@ -18,17 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineConnection::IsolineConnection() : 
-    m_fromPolygonIndex(0),
-    m_fromPolygonIndexHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_toPolygonIndex(0),
-    m_toPolygonIndexHasBeenSet(false)
-{
-}
-
 IsolineConnection::IsolineConnection(JsonView jsonValue)
-  : IsolineConnection()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ IsolineConnection& IsolineConnection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FromPolygonIndex"))
   {
     m_fromPolygonIndex = jsonValue.GetInteger("FromPolygonIndex");
-
     m_fromPolygonIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ToPolygonIndex"))
   {
     m_toPolygonIndex = jsonValue.GetInteger("ToPolygonIndex");
-
     m_toPolygonIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class ContainerRecommendation
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API ContainerRecommendation();
+    AWS_COMPUTEOPTIMIZER_API ContainerRecommendation() = default;
     AWS_COMPUTEOPTIMIZER_API ContainerRecommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API ContainerRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,31 @@ namespace Model
     /**
      * <p> The name of the container. </p>
      */
-    inline const Aws::String& GetContainerName() const{ return m_containerName; }
+    inline const Aws::String& GetContainerName() const { return m_containerName; }
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-    inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-    inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-    inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-    inline ContainerRecommendation& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-    inline ContainerRecommendation& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-    inline ContainerRecommendation& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    template<typename ContainerNameT = Aws::String>
+    void SetContainerName(ContainerNameT&& value) { m_containerNameHasBeenSet = true; m_containerName = std::forward<ContainerNameT>(value); }
+    template<typename ContainerNameT = Aws::String>
+    ContainerRecommendation& WithContainerName(ContainerNameT&& value) { SetContainerName(std::forward<ContainerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The recommended memory size configurations for the container. </p>
      */
-    inline const MemorySizeConfiguration& GetMemorySizeConfiguration() const{ return m_memorySizeConfiguration; }
+    inline const MemorySizeConfiguration& GetMemorySizeConfiguration() const { return m_memorySizeConfiguration; }
     inline bool MemorySizeConfigurationHasBeenSet() const { return m_memorySizeConfigurationHasBeenSet; }
-    inline void SetMemorySizeConfiguration(const MemorySizeConfiguration& value) { m_memorySizeConfigurationHasBeenSet = true; m_memorySizeConfiguration = value; }
-    inline void SetMemorySizeConfiguration(MemorySizeConfiguration&& value) { m_memorySizeConfigurationHasBeenSet = true; m_memorySizeConfiguration = std::move(value); }
-    inline ContainerRecommendation& WithMemorySizeConfiguration(const MemorySizeConfiguration& value) { SetMemorySizeConfiguration(value); return *this;}
-    inline ContainerRecommendation& WithMemorySizeConfiguration(MemorySizeConfiguration&& value) { SetMemorySizeConfiguration(std::move(value)); return *this;}
+    template<typename MemorySizeConfigurationT = MemorySizeConfiguration>
+    void SetMemorySizeConfiguration(MemorySizeConfigurationT&& value) { m_memorySizeConfigurationHasBeenSet = true; m_memorySizeConfiguration = std::forward<MemorySizeConfigurationT>(value); }
+    template<typename MemorySizeConfigurationT = MemorySizeConfiguration>
+    ContainerRecommendation& WithMemorySizeConfiguration(MemorySizeConfigurationT&& value) { SetMemorySizeConfiguration(std::forward<MemorySizeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The recommended number of CPU units reserved for the container. </p>
      */
-    inline int GetCpu() const{ return m_cpu; }
+    inline int GetCpu() const { return m_cpu; }
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
     inline void SetCpu(int value) { m_cpuHasBeenSet = true; m_cpu = value; }
     inline ContainerRecommendation& WithCpu(int value) { SetCpu(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
     MemorySizeConfiguration m_memorySizeConfiguration;
     bool m_memorySizeConfigurationHasBeenSet = false;
 
-    int m_cpu;
+    int m_cpu{0};
     bool m_cpuHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-MemorySizeConfiguration::MemorySizeConfiguration() : 
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_memoryReservation(0),
-    m_memoryReservationHasBeenSet(false)
-{
-}
-
 MemorySizeConfiguration::MemorySizeConfiguration(JsonView jsonValue)
-  : MemorySizeConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MemorySizeConfiguration& MemorySizeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetInteger("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memoryReservation"))
   {
     m_memoryReservation = jsonValue.GetInteger("memoryReservation");
-
     m_memoryReservationHasBeenSet = true;
   }
-
   return *this;
 }
 

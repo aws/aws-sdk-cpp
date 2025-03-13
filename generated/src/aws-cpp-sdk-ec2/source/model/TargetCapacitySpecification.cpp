@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TargetCapacitySpecification::TargetCapacitySpecification() : 
-    m_totalTargetCapacity(0),
-    m_totalTargetCapacityHasBeenSet(false),
-    m_onDemandTargetCapacity(0),
-    m_onDemandTargetCapacityHasBeenSet(false),
-    m_spotTargetCapacity(0),
-    m_spotTargetCapacityHasBeenSet(false),
-    m_defaultTargetCapacityType(DefaultTargetCapacityType::NOT_SET),
-    m_defaultTargetCapacityTypeHasBeenSet(false),
-    m_targetCapacityUnitType(TargetCapacityUnitType::NOT_SET),
-    m_targetCapacityUnitTypeHasBeenSet(false)
-{
-}
-
 TargetCapacitySpecification::TargetCapacitySpecification(const XmlNode& xmlNode)
-  : TargetCapacitySpecification()
 {
   *this = xmlNode;
 }
@@ -51,30 +36,35 @@ TargetCapacitySpecification& TargetCapacitySpecification::operator =(const XmlNo
     {
       m_totalTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalTargetCapacityNode.GetText()).c_str()).c_str());
       m_totalTargetCapacityHasBeenSet = true;
+       m_totalTargetCapacityHasBeenSet = true;
     }
     XmlNode onDemandTargetCapacityNode = resultNode.FirstChild("onDemandTargetCapacity");
     if(!onDemandTargetCapacityNode.IsNull())
     {
       m_onDemandTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onDemandTargetCapacityNode.GetText()).c_str()).c_str());
       m_onDemandTargetCapacityHasBeenSet = true;
+       m_onDemandTargetCapacityHasBeenSet = true;
     }
     XmlNode spotTargetCapacityNode = resultNode.FirstChild("spotTargetCapacity");
     if(!spotTargetCapacityNode.IsNull())
     {
       m_spotTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotTargetCapacityNode.GetText()).c_str()).c_str());
       m_spotTargetCapacityHasBeenSet = true;
+       m_spotTargetCapacityHasBeenSet = true;
     }
     XmlNode defaultTargetCapacityTypeNode = resultNode.FirstChild("defaultTargetCapacityType");
     if(!defaultTargetCapacityTypeNode.IsNull())
     {
-      m_defaultTargetCapacityType = DefaultTargetCapacityTypeMapper::GetDefaultTargetCapacityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultTargetCapacityTypeNode.GetText()).c_str()).c_str());
+      m_defaultTargetCapacityType = DefaultTargetCapacityTypeMapper::GetDefaultTargetCapacityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultTargetCapacityTypeNode.GetText()).c_str()));
       m_defaultTargetCapacityTypeHasBeenSet = true;
+       m_defaultTargetCapacityTypeHasBeenSet = true;
     }
     XmlNode targetCapacityUnitTypeNode = resultNode.FirstChild("targetCapacityUnitType");
     if(!targetCapacityUnitTypeNode.IsNull())
     {
-      m_targetCapacityUnitType = TargetCapacityUnitTypeMapper::GetTargetCapacityUnitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetCapacityUnitTypeNode.GetText()).c_str()).c_str());
+      m_targetCapacityUnitType = TargetCapacityUnitTypeMapper::GetTargetCapacityUnitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetCapacityUnitTypeNode.GetText()).c_str()));
       m_targetCapacityUnitTypeHasBeenSet = true;
+       m_targetCapacityUnitTypeHasBeenSet = true;
     }
   }
 

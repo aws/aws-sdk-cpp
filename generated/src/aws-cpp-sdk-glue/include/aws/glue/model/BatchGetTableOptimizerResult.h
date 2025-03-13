@@ -30,7 +30,7 @@ namespace Model
   class BatchGetTableOptimizerResult
   {
   public:
-    AWS_GLUE_API BatchGetTableOptimizerResult();
+    AWS_GLUE_API BatchGetTableOptimizerResult() = default;
     AWS_GLUE_API BatchGetTableOptimizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API BatchGetTableOptimizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>A list of <code>BatchTableOptimizer</code> objects.</p>
      */
-    inline const Aws::Vector<BatchTableOptimizer>& GetTableOptimizers() const{ return m_tableOptimizers; }
-    inline void SetTableOptimizers(const Aws::Vector<BatchTableOptimizer>& value) { m_tableOptimizers = value; }
-    inline void SetTableOptimizers(Aws::Vector<BatchTableOptimizer>&& value) { m_tableOptimizers = std::move(value); }
-    inline BatchGetTableOptimizerResult& WithTableOptimizers(const Aws::Vector<BatchTableOptimizer>& value) { SetTableOptimizers(value); return *this;}
-    inline BatchGetTableOptimizerResult& WithTableOptimizers(Aws::Vector<BatchTableOptimizer>&& value) { SetTableOptimizers(std::move(value)); return *this;}
-    inline BatchGetTableOptimizerResult& AddTableOptimizers(const BatchTableOptimizer& value) { m_tableOptimizers.push_back(value); return *this; }
-    inline BatchGetTableOptimizerResult& AddTableOptimizers(BatchTableOptimizer&& value) { m_tableOptimizers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchTableOptimizer>& GetTableOptimizers() const { return m_tableOptimizers; }
+    template<typename TableOptimizersT = Aws::Vector<BatchTableOptimizer>>
+    void SetTableOptimizers(TableOptimizersT&& value) { m_tableOptimizersHasBeenSet = true; m_tableOptimizers = std::forward<TableOptimizersT>(value); }
+    template<typename TableOptimizersT = Aws::Vector<BatchTableOptimizer>>
+    BatchGetTableOptimizerResult& WithTableOptimizers(TableOptimizersT&& value) { SetTableOptimizers(std::forward<TableOptimizersT>(value)); return *this;}
+    template<typename TableOptimizersT = BatchTableOptimizer>
+    BatchGetTableOptimizerResult& AddTableOptimizers(TableOptimizersT&& value) { m_tableOptimizersHasBeenSet = true; m_tableOptimizers.emplace_back(std::forward<TableOptimizersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of errors from the operation.</p>
      */
-    inline const Aws::Vector<BatchGetTableOptimizerError>& GetFailures() const{ return m_failures; }
-    inline void SetFailures(const Aws::Vector<BatchGetTableOptimizerError>& value) { m_failures = value; }
-    inline void SetFailures(Aws::Vector<BatchGetTableOptimizerError>&& value) { m_failures = std::move(value); }
-    inline BatchGetTableOptimizerResult& WithFailures(const Aws::Vector<BatchGetTableOptimizerError>& value) { SetFailures(value); return *this;}
-    inline BatchGetTableOptimizerResult& WithFailures(Aws::Vector<BatchGetTableOptimizerError>&& value) { SetFailures(std::move(value)); return *this;}
-    inline BatchGetTableOptimizerResult& AddFailures(const BatchGetTableOptimizerError& value) { m_failures.push_back(value); return *this; }
-    inline BatchGetTableOptimizerResult& AddFailures(BatchGetTableOptimizerError&& value) { m_failures.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetTableOptimizerError>& GetFailures() const { return m_failures; }
+    template<typename FailuresT = Aws::Vector<BatchGetTableOptimizerError>>
+    void SetFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures = std::forward<FailuresT>(value); }
+    template<typename FailuresT = Aws::Vector<BatchGetTableOptimizerError>>
+    BatchGetTableOptimizerResult& WithFailures(FailuresT&& value) { SetFailures(std::forward<FailuresT>(value)); return *this;}
+    template<typename FailuresT = BatchGetTableOptimizerError>
+    BatchGetTableOptimizerResult& AddFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures.emplace_back(std::forward<FailuresT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetTableOptimizerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetTableOptimizerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetTableOptimizerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetTableOptimizerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchTableOptimizer> m_tableOptimizers;
+    bool m_tableOptimizersHasBeenSet = false;
 
     Aws::Vector<BatchGetTableOptimizerError> m_failures;
+    bool m_failuresHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,13 +20,7 @@ namespace RestXmlProtocolNamespace
 namespace Model
 {
 
-NestedWithNamespace::NestedWithNamespace() : 
-    m_attrFieldHasBeenSet(false)
-{
-}
-
 NestedWithNamespace::NestedWithNamespace(const XmlNode& xmlNode)
-  : NestedWithNamespace()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ NestedWithNamespace& NestedWithNamespace::operator =(const XmlNode& xmlNode)
     {
       m_attrField = Aws::Utils::Xml::DecodeEscapedXmlText(attrField);
       m_attrFieldHasBeenSet = true;
+       m_attrFieldHasBeenSet = true;
     }
   }
 

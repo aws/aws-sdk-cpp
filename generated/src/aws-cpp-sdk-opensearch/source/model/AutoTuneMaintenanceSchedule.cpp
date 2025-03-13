@@ -18,15 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-AutoTuneMaintenanceSchedule::AutoTuneMaintenanceSchedule() : 
-    m_startAtHasBeenSet(false),
-    m_durationHasBeenSet(false),
-    m_cronExpressionForRecurrenceHasBeenSet(false)
-{
-}
-
 AutoTuneMaintenanceSchedule::AutoTuneMaintenanceSchedule(JsonView jsonValue)
-  : AutoTuneMaintenanceSchedule()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AutoTuneMaintenanceSchedule& AutoTuneMaintenanceSchedule::operator =(JsonView js
   if(jsonValue.ValueExists("StartAt"))
   {
     m_startAt = jsonValue.GetDouble("StartAt");
-
     m_startAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetObject("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CronExpressionForRecurrence"))
   {
     m_cronExpressionForRecurrence = jsonValue.GetString("CronExpressionForRecurrence");
-
     m_cronExpressionForRecurrenceHasBeenSet = true;
   }
-
   return *this;
 }
 

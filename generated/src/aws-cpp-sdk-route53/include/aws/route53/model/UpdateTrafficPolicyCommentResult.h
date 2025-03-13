@@ -34,7 +34,7 @@ namespace Model
   class UpdateTrafficPolicyCommentResult
   {
   public:
-    AWS_ROUTE53_API UpdateTrafficPolicyCommentResult();
+    AWS_ROUTE53_API UpdateTrafficPolicyCommentResult() = default;
     AWS_ROUTE53_API UpdateTrafficPolicyCommentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API UpdateTrafficPolicyCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>A complex type that contains settings for the specified traffic policy.</p>
      */
-    inline const TrafficPolicy& GetTrafficPolicy() const{ return m_trafficPolicy; }
-    inline void SetTrafficPolicy(const TrafficPolicy& value) { m_trafficPolicy = value; }
-    inline void SetTrafficPolicy(TrafficPolicy&& value) { m_trafficPolicy = std::move(value); }
-    inline UpdateTrafficPolicyCommentResult& WithTrafficPolicy(const TrafficPolicy& value) { SetTrafficPolicy(value); return *this;}
-    inline UpdateTrafficPolicyCommentResult& WithTrafficPolicy(TrafficPolicy&& value) { SetTrafficPolicy(std::move(value)); return *this;}
+    inline const TrafficPolicy& GetTrafficPolicy() const { return m_trafficPolicy; }
+    template<typename TrafficPolicyT = TrafficPolicy>
+    void SetTrafficPolicy(TrafficPolicyT&& value) { m_trafficPolicyHasBeenSet = true; m_trafficPolicy = std::forward<TrafficPolicyT>(value); }
+    template<typename TrafficPolicyT = TrafficPolicy>
+    UpdateTrafficPolicyCommentResult& WithTrafficPolicy(TrafficPolicyT&& value) { SetTrafficPolicy(std::forward<TrafficPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateTrafficPolicyCommentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateTrafficPolicyCommentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateTrafficPolicyCommentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateTrafficPolicyCommentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TrafficPolicy m_trafficPolicy;
+    bool m_trafficPolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

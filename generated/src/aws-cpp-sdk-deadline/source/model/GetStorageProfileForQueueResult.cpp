@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetStorageProfileForQueueResult::GetStorageProfileForQueueResult() : 
-    m_osFamily(StorageProfileOperatingSystemFamily::NOT_SET)
-{
-}
-
 GetStorageProfileForQueueResult::GetStorageProfileForQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetStorageProfileForQueueResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ GetStorageProfileForQueueResult& GetStorageProfileForQueueResult::operator =(con
   if(jsonValue.ValueExists("storageProfileId"))
   {
     m_storageProfileId = jsonValue.GetString("storageProfileId");
-
+    m_storageProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
+    m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("osFamily"))
   {
     m_osFamily = StorageProfileOperatingSystemFamilyMapper::GetStorageProfileOperatingSystemFamilyForName(jsonValue.GetString("osFamily"));
-
+    m_osFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileSystemLocations"))
   {
     Aws::Utils::Array<JsonView> fileSystemLocationsJsonList = jsonValue.GetArray("fileSystemLocations");
@@ -56,14 +47,15 @@ GetStorageProfileForQueueResult& GetStorageProfileForQueueResult::operator =(con
     {
       m_fileSystemLocations.push_back(fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject());
     }
+    m_fileSystemLocationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

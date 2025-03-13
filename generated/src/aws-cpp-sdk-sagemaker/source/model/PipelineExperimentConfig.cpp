@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PipelineExperimentConfig::PipelineExperimentConfig() : 
-    m_experimentNameHasBeenSet(false),
-    m_trialNameHasBeenSet(false)
-{
-}
-
 PipelineExperimentConfig::PipelineExperimentConfig(JsonView jsonValue)
-  : PipelineExperimentConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PipelineExperimentConfig& PipelineExperimentConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ExperimentName"))
   {
     m_experimentName = jsonValue.GetString("ExperimentName");
-
     m_experimentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrialName"))
   {
     m_trialName = jsonValue.GetString("TrialName");
-
     m_trialNameHasBeenSet = true;
   }
-
   return *this;
 }
 

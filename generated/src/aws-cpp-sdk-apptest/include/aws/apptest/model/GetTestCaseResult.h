@@ -33,7 +33,7 @@ namespace Model
   class GetTestCaseResult
   {
   public:
-    AWS_APPTEST_API GetTestCaseResult();
+    AWS_APPTEST_API GetTestCaseResult() = default;
     AWS_APPTEST_API GetTestCaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPTEST_API GetTestCaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,71 +42,63 @@ namespace Model
     /**
      * <p>The response test ID of the test case.</p>
      */
-    inline const Aws::String& GetTestCaseId() const{ return m_testCaseId; }
-    inline void SetTestCaseId(const Aws::String& value) { m_testCaseId = value; }
-    inline void SetTestCaseId(Aws::String&& value) { m_testCaseId = std::move(value); }
-    inline void SetTestCaseId(const char* value) { m_testCaseId.assign(value); }
-    inline GetTestCaseResult& WithTestCaseId(const Aws::String& value) { SetTestCaseId(value); return *this;}
-    inline GetTestCaseResult& WithTestCaseId(Aws::String&& value) { SetTestCaseId(std::move(value)); return *this;}
-    inline GetTestCaseResult& WithTestCaseId(const char* value) { SetTestCaseId(value); return *this;}
+    inline const Aws::String& GetTestCaseId() const { return m_testCaseId; }
+    template<typename TestCaseIdT = Aws::String>
+    void SetTestCaseId(TestCaseIdT&& value) { m_testCaseIdHasBeenSet = true; m_testCaseId = std::forward<TestCaseIdT>(value); }
+    template<typename TestCaseIdT = Aws::String>
+    GetTestCaseResult& WithTestCaseId(TestCaseIdT&& value) { SetTestCaseId(std::forward<TestCaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the test case.</p>
      */
-    inline const Aws::String& GetTestCaseArn() const{ return m_testCaseArn; }
-    inline void SetTestCaseArn(const Aws::String& value) { m_testCaseArn = value; }
-    inline void SetTestCaseArn(Aws::String&& value) { m_testCaseArn = std::move(value); }
-    inline void SetTestCaseArn(const char* value) { m_testCaseArn.assign(value); }
-    inline GetTestCaseResult& WithTestCaseArn(const Aws::String& value) { SetTestCaseArn(value); return *this;}
-    inline GetTestCaseResult& WithTestCaseArn(Aws::String&& value) { SetTestCaseArn(std::move(value)); return *this;}
-    inline GetTestCaseResult& WithTestCaseArn(const char* value) { SetTestCaseArn(value); return *this;}
+    inline const Aws::String& GetTestCaseArn() const { return m_testCaseArn; }
+    template<typename TestCaseArnT = Aws::String>
+    void SetTestCaseArn(TestCaseArnT&& value) { m_testCaseArnHasBeenSet = true; m_testCaseArn = std::forward<TestCaseArnT>(value); }
+    template<typename TestCaseArnT = Aws::String>
+    GetTestCaseResult& WithTestCaseArn(TestCaseArnT&& value) { SetTestCaseArn(std::forward<TestCaseArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the test case.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetTestCaseResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetTestCaseResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetTestCaseResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetTestCaseResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the test case.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetTestCaseResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetTestCaseResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetTestCaseResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetTestCaseResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latest version of the test case.</p>
      */
-    inline const TestCaseLatestVersion& GetLatestVersion() const{ return m_latestVersion; }
-    inline void SetLatestVersion(const TestCaseLatestVersion& value) { m_latestVersion = value; }
-    inline void SetLatestVersion(TestCaseLatestVersion&& value) { m_latestVersion = std::move(value); }
-    inline GetTestCaseResult& WithLatestVersion(const TestCaseLatestVersion& value) { SetLatestVersion(value); return *this;}
-    inline GetTestCaseResult& WithLatestVersion(TestCaseLatestVersion&& value) { SetLatestVersion(std::move(value)); return *this;}
+    inline const TestCaseLatestVersion& GetLatestVersion() const { return m_latestVersion; }
+    template<typename LatestVersionT = TestCaseLatestVersion>
+    void SetLatestVersion(LatestVersionT&& value) { m_latestVersionHasBeenSet = true; m_latestVersion = std::forward<LatestVersionT>(value); }
+    template<typename LatestVersionT = TestCaseLatestVersion>
+    GetTestCaseResult& WithLatestVersion(LatestVersionT&& value) { SetLatestVersion(std::forward<LatestVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The case version of the test case.</p>
      */
-    inline int GetTestCaseVersion() const{ return m_testCaseVersion; }
-    inline void SetTestCaseVersion(int value) { m_testCaseVersion = value; }
+    inline int GetTestCaseVersion() const { return m_testCaseVersion; }
+    inline void SetTestCaseVersion(int value) { m_testCaseVersionHasBeenSet = true; m_testCaseVersion = value; }
     inline GetTestCaseResult& WithTestCaseVersion(int value) { SetTestCaseVersion(value); return *this;}
     ///@}
 
@@ -114,116 +106,120 @@ namespace Model
     /**
      * <p>The status of the test case.</p>
      */
-    inline const TestCaseLifecycle& GetStatus() const{ return m_status; }
-    inline void SetStatus(const TestCaseLifecycle& value) { m_status = value; }
-    inline void SetStatus(TestCaseLifecycle&& value) { m_status = std::move(value); }
-    inline GetTestCaseResult& WithStatus(const TestCaseLifecycle& value) { SetStatus(value); return *this;}
-    inline GetTestCaseResult& WithStatus(TestCaseLifecycle&& value) { SetStatus(std::move(value)); return *this;}
+    inline TestCaseLifecycle GetStatus() const { return m_status; }
+    inline void SetStatus(TestCaseLifecycle value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetTestCaseResult& WithStatus(TestCaseLifecycle value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status reason of the test case.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReason.assign(value); }
-    inline GetTestCaseResult& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline GetTestCaseResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline GetTestCaseResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    GetTestCaseResult& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation time of the test case.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetTestCaseResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetTestCaseResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetTestCaseResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last update time of the test case.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTime = std::move(value); }
-    inline GetTestCaseResult& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline GetTestCaseResult& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    GetTestCaseResult& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The steps of the test case.</p>
      */
-    inline const Aws::Vector<Step>& GetSteps() const{ return m_steps; }
-    inline void SetSteps(const Aws::Vector<Step>& value) { m_steps = value; }
-    inline void SetSteps(Aws::Vector<Step>&& value) { m_steps = std::move(value); }
-    inline GetTestCaseResult& WithSteps(const Aws::Vector<Step>& value) { SetSteps(value); return *this;}
-    inline GetTestCaseResult& WithSteps(Aws::Vector<Step>&& value) { SetSteps(std::move(value)); return *this;}
-    inline GetTestCaseResult& AddSteps(const Step& value) { m_steps.push_back(value); return *this; }
-    inline GetTestCaseResult& AddSteps(Step&& value) { m_steps.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Step>& GetSteps() const { return m_steps; }
+    template<typename StepsT = Aws::Vector<Step>>
+    void SetSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps = std::forward<StepsT>(value); }
+    template<typename StepsT = Aws::Vector<Step>>
+    GetTestCaseResult& WithSteps(StepsT&& value) { SetSteps(std::forward<StepsT>(value)); return *this;}
+    template<typename StepsT = Step>
+    GetTestCaseResult& AddSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps.emplace_back(std::forward<StepsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tags of the test case.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetTestCaseResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetTestCaseResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetTestCaseResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetTestCaseResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetTestCaseResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetTestCaseResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetTestCaseResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetTestCaseResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetTestCaseResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetTestCaseResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetTestCaseResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTestCaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTestCaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTestCaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTestCaseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_testCaseId;
+    bool m_testCaseIdHasBeenSet = false;
 
     Aws::String m_testCaseArn;
+    bool m_testCaseArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     TestCaseLatestVersion m_latestVersion;
+    bool m_latestVersionHasBeenSet = false;
 
-    int m_testCaseVersion;
+    int m_testCaseVersion{0};
+    bool m_testCaseVersionHasBeenSet = false;
 
-    TestCaseLifecycle m_status;
+    TestCaseLifecycle m_status{TestCaseLifecycle::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::Vector<Step> m_steps;
+    bool m_stepsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

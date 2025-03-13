@@ -23,7 +23,7 @@ namespace Model
   class EnableSecurityHubRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API EnableSecurityHubRequest();
+    AWS_SECURITYHUB_API EnableSecurityHubRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,19 +38,16 @@ namespace Model
     /**
      * <p>The tags to add to the hub resource when you enable Security Hub.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline EnableSecurityHubRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline EnableSecurityHubRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline EnableSecurityHubRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline EnableSecurityHubRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline EnableSecurityHubRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline EnableSecurityHubRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline EnableSecurityHubRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline EnableSecurityHubRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline EnableSecurityHubRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    EnableSecurityHubRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    EnableSecurityHubRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -61,7 +58,7 @@ namespace Model
      * enable the automatically enabled standards, set
      * <code>EnableDefaultStandards</code> to <code>false</code>.</p>
      */
-    inline bool GetEnableDefaultStandards() const{ return m_enableDefaultStandards; }
+    inline bool GetEnableDefaultStandards() const { return m_enableDefaultStandards; }
     inline bool EnableDefaultStandardsHasBeenSet() const { return m_enableDefaultStandardsHasBeenSet; }
     inline void SetEnableDefaultStandards(bool value) { m_enableDefaultStandardsHasBeenSet = true; m_enableDefaultStandards = value; }
     inline EnableSecurityHubRequest& WithEnableDefaultStandards(bool value) { SetEnableDefaultStandards(value); return *this;}
@@ -81,22 +78,20 @@ namespace Model
      * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
      * after February 23, 2023.</p>
      */
-    inline const ControlFindingGenerator& GetControlFindingGenerator() const{ return m_controlFindingGenerator; }
+    inline ControlFindingGenerator GetControlFindingGenerator() const { return m_controlFindingGenerator; }
     inline bool ControlFindingGeneratorHasBeenSet() const { return m_controlFindingGeneratorHasBeenSet; }
-    inline void SetControlFindingGenerator(const ControlFindingGenerator& value) { m_controlFindingGeneratorHasBeenSet = true; m_controlFindingGenerator = value; }
-    inline void SetControlFindingGenerator(ControlFindingGenerator&& value) { m_controlFindingGeneratorHasBeenSet = true; m_controlFindingGenerator = std::move(value); }
-    inline EnableSecurityHubRequest& WithControlFindingGenerator(const ControlFindingGenerator& value) { SetControlFindingGenerator(value); return *this;}
-    inline EnableSecurityHubRequest& WithControlFindingGenerator(ControlFindingGenerator&& value) { SetControlFindingGenerator(std::move(value)); return *this;}
+    inline void SetControlFindingGenerator(ControlFindingGenerator value) { m_controlFindingGeneratorHasBeenSet = true; m_controlFindingGenerator = value; }
+    inline EnableSecurityHubRequest& WithControlFindingGenerator(ControlFindingGenerator value) { SetControlFindingGenerator(value); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    bool m_enableDefaultStandards;
+    bool m_enableDefaultStandards{false};
     bool m_enableDefaultStandardsHasBeenSet = false;
 
-    ControlFindingGenerator m_controlFindingGenerator;
+    ControlFindingGenerator m_controlFindingGenerator{ControlFindingGenerator::NOT_SET};
     bool m_controlFindingGeneratorHasBeenSet = false;
   };
 

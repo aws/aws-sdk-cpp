@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessTrustProviderCondensed::VerifiedAccessTrustProviderCondensed() : 
-    m_verifiedAccessTrustProviderIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_trustProviderType(TrustProviderType::NOT_SET),
-    m_trustProviderTypeHasBeenSet(false),
-    m_userTrustProviderType(UserTrustProviderType::NOT_SET),
-    m_userTrustProviderTypeHasBeenSet(false),
-    m_deviceTrustProviderType(DeviceTrustProviderType::NOT_SET),
-    m_deviceTrustProviderTypeHasBeenSet(false)
-{
-}
-
 VerifiedAccessTrustProviderCondensed::VerifiedAccessTrustProviderCondensed(const XmlNode& xmlNode)
-  : VerifiedAccessTrustProviderCondensed()
 {
   *this = xmlNode;
 }
@@ -49,30 +36,35 @@ VerifiedAccessTrustProviderCondensed& VerifiedAccessTrustProviderCondensed::oper
     {
       m_verifiedAccessTrustProviderId = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessTrustProviderIdNode.GetText());
       m_verifiedAccessTrustProviderIdHasBeenSet = true;
+       m_verifiedAccessTrustProviderIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode trustProviderTypeNode = resultNode.FirstChild("trustProviderType");
     if(!trustProviderTypeNode.IsNull())
     {
-      m_trustProviderType = TrustProviderTypeMapper::GetTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trustProviderTypeNode.GetText()).c_str()).c_str());
+      m_trustProviderType = TrustProviderTypeMapper::GetTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trustProviderTypeNode.GetText()).c_str()));
       m_trustProviderTypeHasBeenSet = true;
+       m_trustProviderTypeHasBeenSet = true;
     }
     XmlNode userTrustProviderTypeNode = resultNode.FirstChild("userTrustProviderType");
     if(!userTrustProviderTypeNode.IsNull())
     {
-      m_userTrustProviderType = UserTrustProviderTypeMapper::GetUserTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(userTrustProviderTypeNode.GetText()).c_str()).c_str());
+      m_userTrustProviderType = UserTrustProviderTypeMapper::GetUserTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(userTrustProviderTypeNode.GetText()).c_str()));
       m_userTrustProviderTypeHasBeenSet = true;
+       m_userTrustProviderTypeHasBeenSet = true;
     }
     XmlNode deviceTrustProviderTypeNode = resultNode.FirstChild("deviceTrustProviderType");
     if(!deviceTrustProviderTypeNode.IsNull())
     {
-      m_deviceTrustProviderType = DeviceTrustProviderTypeMapper::GetDeviceTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deviceTrustProviderTypeNode.GetText()).c_str()).c_str());
+      m_deviceTrustProviderType = DeviceTrustProviderTypeMapper::GetDeviceTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deviceTrustProviderTypeNode.GetText()).c_str()));
       m_deviceTrustProviderTypeHasBeenSet = true;
+       m_deviceTrustProviderTypeHasBeenSet = true;
     }
   }
 

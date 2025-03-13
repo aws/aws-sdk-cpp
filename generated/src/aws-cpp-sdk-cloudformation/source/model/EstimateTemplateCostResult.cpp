@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EstimateTemplateCostResult::EstimateTemplateCostResult()
-{
-}
-
 EstimateTemplateCostResult::EstimateTemplateCostResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ EstimateTemplateCostResult& EstimateTemplateCostResult::operator =(const Aws::Am
     if(!urlNode.IsNull())
     {
       m_url = Aws::Utils::Xml::DecodeEscapedXmlText(urlNode.GetText());
+      m_urlHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::EstimateTemplateCostResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

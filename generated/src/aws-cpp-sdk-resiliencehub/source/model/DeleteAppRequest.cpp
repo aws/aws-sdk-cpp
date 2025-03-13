@@ -12,15 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAppRequest::DeleteAppRequest() : 
-    m_appArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_forceDelete(false),
-    m_forceDeleteHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAppRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AdditionalModelDataSource::AdditionalModelDataSource() : 
-    m_channelNameHasBeenSet(false),
-    m_s3DataSourceHasBeenSet(false)
-{
-}
-
 AdditionalModelDataSource::AdditionalModelDataSource(JsonView jsonValue)
-  : AdditionalModelDataSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AdditionalModelDataSource& AdditionalModelDataSource::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ChannelName"))
   {
     m_channelName = jsonValue.GetString("ChannelName");
-
     m_channelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DataSource"))
   {
     m_s3DataSource = jsonValue.GetObject("S3DataSource");
-
     m_s3DataSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

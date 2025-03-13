@@ -18,16 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-CloudFormationStackRecordSourceInfo::CloudFormationStackRecordSourceInfo() : 
-    m_resourceType(CloudFormationStackRecordSourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 CloudFormationStackRecordSourceInfo::CloudFormationStackRecordSourceInfo(JsonView jsonValue)
-  : CloudFormationStackRecordSourceInfo()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CloudFormationStackRecordSourceInfo& CloudFormationStackRecordSourceInfo::operat
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = CloudFormationStackRecordSourceTypeMapper::GetCloudFormationStackRecordSourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

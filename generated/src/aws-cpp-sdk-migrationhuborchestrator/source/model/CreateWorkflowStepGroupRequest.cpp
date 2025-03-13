@@ -12,15 +12,6 @@ using namespace Aws::MigrationHubOrchestrator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkflowStepGroupRequest::CreateWorkflowStepGroupRequest() : 
-    m_workflowIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nextHasBeenSet(false),
-    m_previousHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkflowStepGroupRequest::SerializePayload() const
 {
   JsonValue payload;

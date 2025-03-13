@@ -18,26 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-Stack::Stack() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_storageConnectorsHasBeenSet(false),
-    m_redirectURLHasBeenSet(false),
-    m_feedbackURLHasBeenSet(false),
-    m_stackErrorsHasBeenSet(false),
-    m_userSettingsHasBeenSet(false),
-    m_applicationSettingsHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false),
-    m_embedHostDomainsHasBeenSet(false),
-    m_streamingExperienceSettingsHasBeenSet(false)
-{
-}
-
 Stack::Stack(JsonView jsonValue)
-  : Stack()
 {
   *this = jsonValue;
 }
@@ -47,38 +28,28 @@ Stack& Stack::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageConnectors"))
   {
     Aws::Utils::Array<JsonView> storageConnectorsJsonList = jsonValue.GetArray("StorageConnectors");
@@ -88,21 +59,16 @@ Stack& Stack::operator =(JsonView jsonValue)
     }
     m_storageConnectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedirectURL"))
   {
     m_redirectURL = jsonValue.GetString("RedirectURL");
-
     m_redirectURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeedbackURL"))
   {
     m_feedbackURL = jsonValue.GetString("FeedbackURL");
-
     m_feedbackURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackErrors"))
   {
     Aws::Utils::Array<JsonView> stackErrorsJsonList = jsonValue.GetArray("StackErrors");
@@ -112,7 +78,6 @@ Stack& Stack::operator =(JsonView jsonValue)
     }
     m_stackErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserSettings"))
   {
     Aws::Utils::Array<JsonView> userSettingsJsonList = jsonValue.GetArray("UserSettings");
@@ -122,14 +87,11 @@ Stack& Stack::operator =(JsonView jsonValue)
     }
     m_userSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationSettings"))
   {
     m_applicationSettings = jsonValue.GetObject("ApplicationSettings");
-
     m_applicationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessEndpoints"))
   {
     Aws::Utils::Array<JsonView> accessEndpointsJsonList = jsonValue.GetArray("AccessEndpoints");
@@ -139,7 +101,6 @@ Stack& Stack::operator =(JsonView jsonValue)
     }
     m_accessEndpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmbedHostDomains"))
   {
     Aws::Utils::Array<JsonView> embedHostDomainsJsonList = jsonValue.GetArray("EmbedHostDomains");
@@ -149,14 +110,11 @@ Stack& Stack::operator =(JsonView jsonValue)
     }
     m_embedHostDomainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamingExperienceSettings"))
   {
     m_streamingExperienceSettings = jsonValue.GetObject("StreamingExperienceSettings");
-
     m_streamingExperienceSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

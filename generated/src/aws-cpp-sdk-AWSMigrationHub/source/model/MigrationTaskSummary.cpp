@@ -18,20 +18,7 @@ namespace MigrationHub
 namespace Model
 {
 
-MigrationTaskSummary::MigrationTaskSummary() : 
-    m_progressUpdateStreamHasBeenSet(false),
-    m_migrationTaskNameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_progressPercent(0),
-    m_progressPercentHasBeenSet(false),
-    m_statusDetailHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false)
-{
-}
-
 MigrationTaskSummary::MigrationTaskSummary(JsonView jsonValue)
-  : MigrationTaskSummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ MigrationTaskSummary& MigrationTaskSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProgressUpdateStream"))
   {
     m_progressUpdateStream = jsonValue.GetString("ProgressUpdateStream");
-
     m_progressUpdateStreamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MigrationTaskName"))
   {
     m_migrationTaskName = jsonValue.GetString("MigrationTaskName");
-
     m_migrationTaskNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProgressPercent"))
   {
     m_progressPercent = jsonValue.GetInteger("ProgressPercent");
-
     m_progressPercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetail"))
   {
     m_statusDetail = jsonValue.GetString("StatusDetail");
-
     m_statusDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("UpdateDateTime");
-
     m_updateDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace QApps
 namespace Model
 {
 
-QAppSessionData::QAppSessionData() : 
-    m_cardIdHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_submissionIdHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 QAppSessionData::QAppSessionData(JsonView jsonValue)
-  : QAppSessionData()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ QAppSessionData& QAppSessionData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cardId"))
   {
     m_cardId = jsonValue.GetString("cardId");
-
     m_cardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetObject("user");
-
     m_userHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("submissionId"))
   {
     m_submissionId = jsonValue.GetString("submissionId");
-
     m_submissionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetString("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

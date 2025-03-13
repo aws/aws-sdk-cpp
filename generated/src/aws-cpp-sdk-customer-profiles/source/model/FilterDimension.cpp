@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-FilterDimension::FilterDimension() : 
-    m_attributesHasBeenSet(false)
-{
-}
-
 FilterDimension::FilterDimension(JsonView jsonValue)
-  : FilterDimension()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FilterDimension& FilterDimension::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

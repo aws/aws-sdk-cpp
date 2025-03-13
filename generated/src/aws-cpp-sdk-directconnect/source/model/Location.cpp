@@ -18,18 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-Location::Location() : 
-    m_locationCodeHasBeenSet(false),
-    m_locationNameHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_availablePortSpeedsHasBeenSet(false),
-    m_availableProvidersHasBeenSet(false),
-    m_availableMacSecPortSpeedsHasBeenSet(false)
-{
-}
-
 Location::Location(JsonView jsonValue)
-  : Location()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Location& Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("locationCode"))
   {
     m_locationCode = jsonValue.GetString("locationCode");
-
     m_locationCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("locationName"))
   {
     m_locationName = jsonValue.GetString("locationName");
-
     m_locationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availablePortSpeeds"))
   {
     Aws::Utils::Array<JsonView> availablePortSpeedsJsonList = jsonValue.GetArray("availablePortSpeeds");
@@ -66,7 +49,6 @@ Location& Location::operator =(JsonView jsonValue)
     }
     m_availablePortSpeedsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availableProviders"))
   {
     Aws::Utils::Array<JsonView> availableProvidersJsonList = jsonValue.GetArray("availableProviders");
@@ -76,7 +58,6 @@ Location& Location::operator =(JsonView jsonValue)
     }
     m_availableProvidersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availableMacSecPortSpeeds"))
   {
     Aws::Utils::Array<JsonView> availableMacSecPortSpeedsJsonList = jsonValue.GetArray("availableMacSecPortSpeeds");
@@ -86,7 +67,6 @@ Location& Location::operator =(JsonView jsonValue)
     }
     m_availableMacSecPortSpeedsHasBeenSet = true;
   }
-
   return *this;
 }
 

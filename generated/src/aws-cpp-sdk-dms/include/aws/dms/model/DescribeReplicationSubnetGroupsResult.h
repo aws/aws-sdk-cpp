@@ -34,7 +34,7 @@ namespace Model
   class DescribeReplicationSubnetGroupsResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationSubnetGroupsResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationSubnetGroupsResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationSubnetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationSubnetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,45 +45,44 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeReplicationSubnetGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeReplicationSubnetGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeReplicationSubnetGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeReplicationSubnetGroupsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the replication subnet groups.</p>
      */
-    inline const Aws::Vector<ReplicationSubnetGroup>& GetReplicationSubnetGroups() const{ return m_replicationSubnetGroups; }
-    inline void SetReplicationSubnetGroups(const Aws::Vector<ReplicationSubnetGroup>& value) { m_replicationSubnetGroups = value; }
-    inline void SetReplicationSubnetGroups(Aws::Vector<ReplicationSubnetGroup>&& value) { m_replicationSubnetGroups = std::move(value); }
-    inline DescribeReplicationSubnetGroupsResult& WithReplicationSubnetGroups(const Aws::Vector<ReplicationSubnetGroup>& value) { SetReplicationSubnetGroups(value); return *this;}
-    inline DescribeReplicationSubnetGroupsResult& WithReplicationSubnetGroups(Aws::Vector<ReplicationSubnetGroup>&& value) { SetReplicationSubnetGroups(std::move(value)); return *this;}
-    inline DescribeReplicationSubnetGroupsResult& AddReplicationSubnetGroups(const ReplicationSubnetGroup& value) { m_replicationSubnetGroups.push_back(value); return *this; }
-    inline DescribeReplicationSubnetGroupsResult& AddReplicationSubnetGroups(ReplicationSubnetGroup&& value) { m_replicationSubnetGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReplicationSubnetGroup>& GetReplicationSubnetGroups() const { return m_replicationSubnetGroups; }
+    template<typename ReplicationSubnetGroupsT = Aws::Vector<ReplicationSubnetGroup>>
+    void SetReplicationSubnetGroups(ReplicationSubnetGroupsT&& value) { m_replicationSubnetGroupsHasBeenSet = true; m_replicationSubnetGroups = std::forward<ReplicationSubnetGroupsT>(value); }
+    template<typename ReplicationSubnetGroupsT = Aws::Vector<ReplicationSubnetGroup>>
+    DescribeReplicationSubnetGroupsResult& WithReplicationSubnetGroups(ReplicationSubnetGroupsT&& value) { SetReplicationSubnetGroups(std::forward<ReplicationSubnetGroupsT>(value)); return *this;}
+    template<typename ReplicationSubnetGroupsT = ReplicationSubnetGroup>
+    DescribeReplicationSubnetGroupsResult& AddReplicationSubnetGroups(ReplicationSubnetGroupsT&& value) { m_replicationSubnetGroupsHasBeenSet = true; m_replicationSubnetGroups.emplace_back(std::forward<ReplicationSubnetGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeReplicationSubnetGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeReplicationSubnetGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeReplicationSubnetGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeReplicationSubnetGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<ReplicationSubnetGroup> m_replicationSubnetGroups;
+    bool m_replicationSubnetGroupsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

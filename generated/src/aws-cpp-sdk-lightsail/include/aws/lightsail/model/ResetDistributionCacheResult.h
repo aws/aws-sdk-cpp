@@ -29,7 +29,7 @@ namespace Model
   class ResetDistributionCacheResult
   {
   public:
-    AWS_LIGHTSAIL_API ResetDistributionCacheResult();
+    AWS_LIGHTSAIL_API ResetDistributionCacheResult() = default;
     AWS_LIGHTSAIL_API ResetDistributionCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API ResetDistributionCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The status of the reset cache request.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline ResetDistributionCacheResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ResetDistributionCacheResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ResetDistributionCacheResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ResetDistributionCacheResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,11 +50,11 @@ namespace Model
      * <p>The timestamp of the reset cache request (<code>1479734909.17</code>) in Unix
      * time format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-    inline ResetDistributionCacheResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline ResetDistributionCacheResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    ResetDistributionCacheResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,32 +63,34 @@ namespace Model
      * status of the request, the timestamp of the request, and the resources affected
      * by the request.</p>
      */
-    inline const Operation& GetOperation() const{ return m_operation; }
-    inline void SetOperation(const Operation& value) { m_operation = value; }
-    inline void SetOperation(Operation&& value) { m_operation = std::move(value); }
-    inline ResetDistributionCacheResult& WithOperation(const Operation& value) { SetOperation(value); return *this;}
-    inline ResetDistributionCacheResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
+    inline const Operation& GetOperation() const { return m_operation; }
+    template<typename OperationT = Operation>
+    void SetOperation(OperationT&& value) { m_operationHasBeenSet = true; m_operation = std::forward<OperationT>(value); }
+    template<typename OperationT = Operation>
+    ResetDistributionCacheResult& WithOperation(OperationT&& value) { SetOperation(std::forward<OperationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ResetDistributionCacheResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ResetDistributionCacheResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ResetDistributionCacheResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ResetDistributionCacheResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
 
     Operation m_operation;
+    bool m_operationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

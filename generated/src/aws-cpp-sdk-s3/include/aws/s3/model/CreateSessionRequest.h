@@ -28,7 +28,7 @@ namespace Model
   class CreateSessionRequest : public S3Request
   {
   public:
-    AWS_S3_API CreateSessionRequest();
+    AWS_S3_API CreateSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -59,26 +59,22 @@ namespace Model
      * <code>ListObjectsV2</code>, <code>GetObjectAttributes</code>,
      * <code>ListParts</code>, and <code>ListMultipartUploads</code>.</p>
      */
-    inline const SessionMode& GetSessionMode() const{ return m_sessionMode; }
+    inline SessionMode GetSessionMode() const { return m_sessionMode; }
     inline bool SessionModeHasBeenSet() const { return m_sessionModeHasBeenSet; }
-    inline void SetSessionMode(const SessionMode& value) { m_sessionModeHasBeenSet = true; m_sessionMode = value; }
-    inline void SetSessionMode(SessionMode&& value) { m_sessionModeHasBeenSet = true; m_sessionMode = std::move(value); }
-    inline CreateSessionRequest& WithSessionMode(const SessionMode& value) { SetSessionMode(value); return *this;}
-    inline CreateSessionRequest& WithSessionMode(SessionMode&& value) { SetSessionMode(std::move(value)); return *this;}
+    inline void SetSessionMode(SessionMode value) { m_sessionModeHasBeenSet = true; m_sessionMode = value; }
+    inline CreateSessionRequest& WithSessionMode(SessionMode value) { SetSessionMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the bucket that you create a session for.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline CreateSessionRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline CreateSessionRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline CreateSessionRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    CreateSessionRequest& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +88,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html">Protecting
      * data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
+    inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
-    inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
-    inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
-    inline CreateSessionRequest& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
-    inline CreateSessionRequest& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
+    inline void SetServerSideEncryption(ServerSideEncryption value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
+    inline CreateSessionRequest& WithServerSideEncryption(ServerSideEncryption value) { SetServerSideEncryption(value); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +110,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed key</a> (<code>aws/s3</code>) isn't supported. </p>
      */
-    inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
+    inline const Aws::String& GetSSEKMSKeyId() const { return m_sSEKMSKeyId; }
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
-    inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
-    inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
-    inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
-    inline CreateSessionRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
-    inline CreateSessionRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
-    inline CreateSessionRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
+    template<typename SSEKMSKeyIdT = Aws::String>
+    void SetSSEKMSKeyId(SSEKMSKeyIdT&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::forward<SSEKMSKeyIdT>(value); }
+    template<typename SSEKMSKeyIdT = Aws::String>
+    CreateSessionRequest& WithSSEKMSKeyId(SSEKMSKeyIdT&& value) { SetSSEKMSKeyId(std::forward<SSEKMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,14 +135,12 @@ namespace Model
      * must match the default encryption context - the bucket Amazon Resource Name
      * (ARN). An additional encryption context value is not supported. </p>
      */
-    inline const Aws::String& GetSSEKMSEncryptionContext() const{ return m_sSEKMSEncryptionContext; }
+    inline const Aws::String& GetSSEKMSEncryptionContext() const { return m_sSEKMSEncryptionContext; }
     inline bool SSEKMSEncryptionContextHasBeenSet() const { return m_sSEKMSEncryptionContextHasBeenSet; }
-    inline void SetSSEKMSEncryptionContext(const Aws::String& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = value; }
-    inline void SetSSEKMSEncryptionContext(Aws::String&& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = std::move(value); }
-    inline void SetSSEKMSEncryptionContext(const char* value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext.assign(value); }
-    inline CreateSessionRequest& WithSSEKMSEncryptionContext(const Aws::String& value) { SetSSEKMSEncryptionContext(value); return *this;}
-    inline CreateSessionRequest& WithSSEKMSEncryptionContext(Aws::String&& value) { SetSSEKMSEncryptionContext(std::move(value)); return *this;}
-    inline CreateSessionRequest& WithSSEKMSEncryptionContext(const char* value) { SetSSEKMSEncryptionContext(value); return *this;}
+    template<typename SSEKMSEncryptionContextT = Aws::String>
+    void SetSSEKMSEncryptionContext(SSEKMSEncryptionContextT&& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = std::forward<SSEKMSEncryptionContextT>(value); }
+    template<typename SSEKMSEncryptionContextT = Aws::String>
+    CreateSessionRequest& WithSSEKMSEncryptionContext(SSEKMSEncryptionContextT&& value) { SetSSEKMSEncryptionContext(std::forward<SSEKMSEncryptionContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,7 +162,7 @@ namespace Model
      * import jobs</a>. In this case, Amazon S3 makes a call to KMS every time a copy
      * request is made for a KMS-encrypted object.</p>
      */
-    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+    inline bool GetBucketKeyEnabled() const { return m_bucketKeyEnabled; }
     inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
     inline CreateSessionRequest& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
@@ -180,29 +170,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const { return m_customizedAccessLogTag; }
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
-    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
-    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
-    inline CreateSessionRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
-    inline CreateSessionRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
-    inline CreateSessionRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
-    inline CreateSessionRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-    inline CreateSessionRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-    inline CreateSessionRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateSessionRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
-    inline CreateSessionRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
-    inline CreateSessionRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+    template<typename CustomizedAccessLogTagT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomizedAccessLogTag(CustomizedAccessLogTagT&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::forward<CustomizedAccessLogTagT>(value); }
+    template<typename CustomizedAccessLogTagT = Aws::Map<Aws::String, Aws::String>>
+    CreateSessionRequest& WithCustomizedAccessLogTag(CustomizedAccessLogTagT&& value) { SetCustomizedAccessLogTag(std::forward<CustomizedAccessLogTagT>(value)); return *this;}
+    template<typename CustomizedAccessLogTagKeyT = Aws::String, typename CustomizedAccessLogTagValueT = Aws::String>
+    CreateSessionRequest& AddCustomizedAccessLogTag(CustomizedAccessLogTagKeyT&& key, CustomizedAccessLogTagValueT&& value) {
+      m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::forward<CustomizedAccessLogTagKeyT>(key), std::forward<CustomizedAccessLogTagValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    SessionMode m_sessionMode;
+    SessionMode m_sessionMode{SessionMode::NOT_SET};
     bool m_sessionModeHasBeenSet = false;
 
     Aws::String m_bucket;
     bool m_bucketHasBeenSet = false;
 
-    ServerSideEncryption m_serverSideEncryption;
+    ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
     bool m_serverSideEncryptionHasBeenSet = false;
 
     Aws::String m_sSEKMSKeyId;
@@ -211,7 +198,7 @@ namespace Model
     Aws::String m_sSEKMSEncryptionContext;
     bool m_sSEKMSEncryptionContextHasBeenSet = false;
 
-    bool m_bucketKeyEnabled;
+    bool m_bucketKeyEnabled{false};
     bool m_bucketKeyEnabledHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;

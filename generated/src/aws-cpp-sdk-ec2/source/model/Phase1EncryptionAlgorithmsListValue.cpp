@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Phase1EncryptionAlgorithmsListValue::Phase1EncryptionAlgorithmsListValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 Phase1EncryptionAlgorithmsListValue::Phase1EncryptionAlgorithmsListValue(const XmlNode& xmlNode)
-  : Phase1EncryptionAlgorithmsListValue()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ Phase1EncryptionAlgorithmsListValue& Phase1EncryptionAlgorithmsListValue::operat
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

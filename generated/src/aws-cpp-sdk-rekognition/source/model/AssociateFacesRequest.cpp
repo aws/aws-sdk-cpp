@@ -12,17 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateFacesRequest::AssociateFacesRequest() : 
-    m_collectionIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_faceIdsHasBeenSet(false),
-    m_userMatchThreshold(0.0),
-    m_userMatchThresholdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String AssociateFacesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteListenerRequest::DeleteListenerRequest() : 
-    m_listenerIdentifierHasBeenSet(false),
-    m_serviceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteListenerRequest::SerializePayload() const
 {
   return {};

@@ -12,15 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRoleAliasRequest::CreateRoleAliasRequest() : 
-    m_roleAliasHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_credentialDurationSeconds(0),
-    m_credentialDurationSecondsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRoleAliasRequest::SerializePayload() const
 {
   JsonValue payload;

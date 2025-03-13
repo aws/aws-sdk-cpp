@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicIRComparisonMethod::TopicIRComparisonMethod() : 
-    m_type(ComparisonMethodType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_period(TopicTimeGranularity::NOT_SET),
-    m_periodHasBeenSet(false),
-    m_windowSize(0),
-    m_windowSizeHasBeenSet(false)
-{
-}
-
 TopicIRComparisonMethod::TopicIRComparisonMethod(JsonView jsonValue)
-  : TopicIRComparisonMethod()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ TopicIRComparisonMethod& TopicIRComparisonMethod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ComparisonMethodTypeMapper::GetComparisonMethodTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Period"))
   {
     m_period = TopicTimeGranularityMapper::GetTopicTimeGranularityForName(jsonValue.GetString("Period"));
-
     m_periodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WindowSize"))
   {
     m_windowSize = jsonValue.GetInteger("WindowSize");
-
     m_windowSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

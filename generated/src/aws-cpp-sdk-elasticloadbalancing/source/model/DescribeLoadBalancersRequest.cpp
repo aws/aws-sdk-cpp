@@ -10,14 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-DescribeLoadBalancersRequest::DescribeLoadBalancersRequest() : 
-    m_loadBalancerNamesHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLoadBalancersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

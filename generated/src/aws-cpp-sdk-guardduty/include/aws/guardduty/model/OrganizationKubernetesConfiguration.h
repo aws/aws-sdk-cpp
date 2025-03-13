@@ -32,7 +32,7 @@ namespace Model
   class OrganizationKubernetesConfiguration
   {
   public:
-    AWS_GUARDDUTY_API OrganizationKubernetesConfiguration();
+    AWS_GUARDDUTY_API OrganizationKubernetesConfiguration() = default;
     AWS_GUARDDUTY_API OrganizationKubernetesConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API OrganizationKubernetesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Whether Kubernetes audit logs data source should be auto-enabled for new
      * members joining the organization.</p>
      */
-    inline const OrganizationKubernetesAuditLogsConfiguration& GetAuditLogs() const{ return m_auditLogs; }
+    inline const OrganizationKubernetesAuditLogsConfiguration& GetAuditLogs() const { return m_auditLogs; }
     inline bool AuditLogsHasBeenSet() const { return m_auditLogsHasBeenSet; }
-    inline void SetAuditLogs(const OrganizationKubernetesAuditLogsConfiguration& value) { m_auditLogsHasBeenSet = true; m_auditLogs = value; }
-    inline void SetAuditLogs(OrganizationKubernetesAuditLogsConfiguration&& value) { m_auditLogsHasBeenSet = true; m_auditLogs = std::move(value); }
-    inline OrganizationKubernetesConfiguration& WithAuditLogs(const OrganizationKubernetesAuditLogsConfiguration& value) { SetAuditLogs(value); return *this;}
-    inline OrganizationKubernetesConfiguration& WithAuditLogs(OrganizationKubernetesAuditLogsConfiguration&& value) { SetAuditLogs(std::move(value)); return *this;}
+    template<typename AuditLogsT = OrganizationKubernetesAuditLogsConfiguration>
+    void SetAuditLogs(AuditLogsT&& value) { m_auditLogsHasBeenSet = true; m_auditLogs = std::forward<AuditLogsT>(value); }
+    template<typename AuditLogsT = OrganizationKubernetesAuditLogsConfiguration>
+    OrganizationKubernetesConfiguration& WithAuditLogs(AuditLogsT&& value) { SetAuditLogs(std::forward<AuditLogsT>(value)); return *this;}
     ///@}
   private:
 

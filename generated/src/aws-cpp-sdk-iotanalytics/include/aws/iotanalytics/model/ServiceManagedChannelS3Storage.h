@@ -31,7 +31,7 @@ namespace Model
   class ServiceManagedChannelS3Storage
   {
   public:
-    AWS_IOTANALYTICS_API ServiceManagedChannelS3Storage();
+    AWS_IOTANALYTICS_API ServiceManagedChannelS3Storage() = default;
     AWS_IOTANALYTICS_API ServiceManagedChannelS3Storage(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API ServiceManagedChannelS3Storage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;

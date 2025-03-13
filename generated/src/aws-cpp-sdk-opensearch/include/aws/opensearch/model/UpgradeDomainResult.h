@@ -35,7 +35,7 @@ namespace Model
   class UpgradeDomainResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API UpgradeDomainResult();
+    AWS_OPENSEARCHSERVICE_API UpgradeDomainResult() = default;
     AWS_OPENSEARCHSERVICE_API UpgradeDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API UpgradeDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,47 +44,41 @@ namespace Model
     /**
      * <p>The unique identifier of the domain upgrade.</p>
      */
-    inline const Aws::String& GetUpgradeId() const{ return m_upgradeId; }
-    inline void SetUpgradeId(const Aws::String& value) { m_upgradeId = value; }
-    inline void SetUpgradeId(Aws::String&& value) { m_upgradeId = std::move(value); }
-    inline void SetUpgradeId(const char* value) { m_upgradeId.assign(value); }
-    inline UpgradeDomainResult& WithUpgradeId(const Aws::String& value) { SetUpgradeId(value); return *this;}
-    inline UpgradeDomainResult& WithUpgradeId(Aws::String&& value) { SetUpgradeId(std::move(value)); return *this;}
-    inline UpgradeDomainResult& WithUpgradeId(const char* value) { SetUpgradeId(value); return *this;}
+    inline const Aws::String& GetUpgradeId() const { return m_upgradeId; }
+    template<typename UpgradeIdT = Aws::String>
+    void SetUpgradeId(UpgradeIdT&& value) { m_upgradeIdHasBeenSet = true; m_upgradeId = std::forward<UpgradeIdT>(value); }
+    template<typename UpgradeIdT = Aws::String>
+    UpgradeDomainResult& WithUpgradeId(UpgradeIdT&& value) { SetUpgradeId(std::forward<UpgradeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the domain that was upgraded.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
-    inline UpgradeDomainResult& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline UpgradeDomainResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline UpgradeDomainResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    UpgradeDomainResult& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
      */
-    inline const Aws::String& GetTargetVersion() const{ return m_targetVersion; }
-    inline void SetTargetVersion(const Aws::String& value) { m_targetVersion = value; }
-    inline void SetTargetVersion(Aws::String&& value) { m_targetVersion = std::move(value); }
-    inline void SetTargetVersion(const char* value) { m_targetVersion.assign(value); }
-    inline UpgradeDomainResult& WithTargetVersion(const Aws::String& value) { SetTargetVersion(value); return *this;}
-    inline UpgradeDomainResult& WithTargetVersion(Aws::String&& value) { SetTargetVersion(std::move(value)); return *this;}
-    inline UpgradeDomainResult& WithTargetVersion(const char* value) { SetTargetVersion(value); return *this;}
+    inline const Aws::String& GetTargetVersion() const { return m_targetVersion; }
+    template<typename TargetVersionT = Aws::String>
+    void SetTargetVersion(TargetVersionT&& value) { m_targetVersionHasBeenSet = true; m_targetVersion = std::forward<TargetVersionT>(value); }
+    template<typename TargetVersionT = Aws::String>
+    UpgradeDomainResult& WithTargetVersion(TargetVersionT&& value) { SetTargetVersion(std::forward<TargetVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When true, indicates that an upgrade eligibility check was performed.</p>
      */
-    inline bool GetPerformCheckOnly() const{ return m_performCheckOnly; }
-    inline void SetPerformCheckOnly(bool value) { m_performCheckOnly = value; }
+    inline bool GetPerformCheckOnly() const { return m_performCheckOnly; }
+    inline void SetPerformCheckOnly(bool value) { m_performCheckOnlyHasBeenSet = true; m_performCheckOnly = value; }
     inline UpgradeDomainResult& WithPerformCheckOnly(bool value) { SetPerformCheckOnly(value); return *this;}
     ///@}
 
@@ -92,18 +86,15 @@ namespace Model
     /**
      * <p>The advanced options configuration for the domain.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdvancedOptions() const{ return m_advancedOptions; }
-    inline void SetAdvancedOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_advancedOptions = value; }
-    inline void SetAdvancedOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_advancedOptions = std::move(value); }
-    inline UpgradeDomainResult& WithAdvancedOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetAdvancedOptions(value); return *this;}
-    inline UpgradeDomainResult& WithAdvancedOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetAdvancedOptions(std::move(value)); return *this;}
-    inline UpgradeDomainResult& AddAdvancedOptions(const Aws::String& key, const Aws::String& value) { m_advancedOptions.emplace(key, value); return *this; }
-    inline UpgradeDomainResult& AddAdvancedOptions(Aws::String&& key, const Aws::String& value) { m_advancedOptions.emplace(std::move(key), value); return *this; }
-    inline UpgradeDomainResult& AddAdvancedOptions(const Aws::String& key, Aws::String&& value) { m_advancedOptions.emplace(key, std::move(value)); return *this; }
-    inline UpgradeDomainResult& AddAdvancedOptions(Aws::String&& key, Aws::String&& value) { m_advancedOptions.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpgradeDomainResult& AddAdvancedOptions(const char* key, Aws::String&& value) { m_advancedOptions.emplace(key, std::move(value)); return *this; }
-    inline UpgradeDomainResult& AddAdvancedOptions(Aws::String&& key, const char* value) { m_advancedOptions.emplace(std::move(key), value); return *this; }
-    inline UpgradeDomainResult& AddAdvancedOptions(const char* key, const char* value) { m_advancedOptions.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdvancedOptions() const { return m_advancedOptions; }
+    template<typename AdvancedOptionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdvancedOptions(AdvancedOptionsT&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions = std::forward<AdvancedOptionsT>(value); }
+    template<typename AdvancedOptionsT = Aws::Map<Aws::String, Aws::String>>
+    UpgradeDomainResult& WithAdvancedOptions(AdvancedOptionsT&& value) { SetAdvancedOptions(std::forward<AdvancedOptionsT>(value)); return *this;}
+    template<typename AdvancedOptionsKeyT = Aws::String, typename AdvancedOptionsValueT = Aws::String>
+    UpgradeDomainResult& AddAdvancedOptions(AdvancedOptionsKeyT&& key, AdvancedOptionsValueT&& value) {
+      m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(std::forward<AdvancedOptionsKeyT>(key), std::forward<AdvancedOptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -111,38 +102,43 @@ namespace Model
      * <p>Container for information about a configuration change happening on a
      * domain.</p>
      */
-    inline const ChangeProgressDetails& GetChangeProgressDetails() const{ return m_changeProgressDetails; }
-    inline void SetChangeProgressDetails(const ChangeProgressDetails& value) { m_changeProgressDetails = value; }
-    inline void SetChangeProgressDetails(ChangeProgressDetails&& value) { m_changeProgressDetails = std::move(value); }
-    inline UpgradeDomainResult& WithChangeProgressDetails(const ChangeProgressDetails& value) { SetChangeProgressDetails(value); return *this;}
-    inline UpgradeDomainResult& WithChangeProgressDetails(ChangeProgressDetails&& value) { SetChangeProgressDetails(std::move(value)); return *this;}
+    inline const ChangeProgressDetails& GetChangeProgressDetails() const { return m_changeProgressDetails; }
+    template<typename ChangeProgressDetailsT = ChangeProgressDetails>
+    void SetChangeProgressDetails(ChangeProgressDetailsT&& value) { m_changeProgressDetailsHasBeenSet = true; m_changeProgressDetails = std::forward<ChangeProgressDetailsT>(value); }
+    template<typename ChangeProgressDetailsT = ChangeProgressDetails>
+    UpgradeDomainResult& WithChangeProgressDetails(ChangeProgressDetailsT&& value) { SetChangeProgressDetails(std::forward<ChangeProgressDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpgradeDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpgradeDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpgradeDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpgradeDomainResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_upgradeId;
+    bool m_upgradeIdHasBeenSet = false;
 
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_targetVersion;
+    bool m_targetVersionHasBeenSet = false;
 
-    bool m_performCheckOnly;
+    bool m_performCheckOnly{false};
+    bool m_performCheckOnlyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
+    bool m_advancedOptionsHasBeenSet = false;
 
     ChangeProgressDetails m_changeProgressDetails;
+    bool m_changeProgressDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

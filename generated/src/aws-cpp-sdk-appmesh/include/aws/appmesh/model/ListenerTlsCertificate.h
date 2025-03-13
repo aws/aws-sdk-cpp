@@ -34,7 +34,7 @@ namespace Model
   class ListenerTlsCertificate
   {
   public:
-    AWS_APPMESH_API ListenerTlsCertificate();
+    AWS_APPMESH_API ListenerTlsCertificate() = default;
     AWS_APPMESH_API ListenerTlsCertificate(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API ListenerTlsCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
      * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
-    inline const ListenerTlsAcmCertificate& GetAcm() const{ return m_acm; }
+    inline const ListenerTlsAcmCertificate& GetAcm() const { return m_acm; }
     inline bool AcmHasBeenSet() const { return m_acmHasBeenSet; }
-    inline void SetAcm(const ListenerTlsAcmCertificate& value) { m_acmHasBeenSet = true; m_acm = value; }
-    inline void SetAcm(ListenerTlsAcmCertificate&& value) { m_acmHasBeenSet = true; m_acm = std::move(value); }
-    inline ListenerTlsCertificate& WithAcm(const ListenerTlsAcmCertificate& value) { SetAcm(value); return *this;}
-    inline ListenerTlsCertificate& WithAcm(ListenerTlsAcmCertificate&& value) { SetAcm(std::move(value)); return *this;}
+    template<typename AcmT = ListenerTlsAcmCertificate>
+    void SetAcm(AcmT&& value) { m_acmHasBeenSet = true; m_acm = std::forward<AcmT>(value); }
+    template<typename AcmT = ListenerTlsAcmCertificate>
+    ListenerTlsCertificate& WithAcm(AcmT&& value) { SetAcm(std::forward<AcmT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A reference to an object that represents a local file certificate.</p>
      */
-    inline const ListenerTlsFileCertificate& GetFile() const{ return m_file; }
+    inline const ListenerTlsFileCertificate& GetFile() const { return m_file; }
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-    inline void SetFile(const ListenerTlsFileCertificate& value) { m_fileHasBeenSet = true; m_file = value; }
-    inline void SetFile(ListenerTlsFileCertificate&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-    inline ListenerTlsCertificate& WithFile(const ListenerTlsFileCertificate& value) { SetFile(value); return *this;}
-    inline ListenerTlsCertificate& WithFile(ListenerTlsFileCertificate&& value) { SetFile(std::move(value)); return *this;}
+    template<typename FileT = ListenerTlsFileCertificate>
+    void SetFile(FileT&& value) { m_fileHasBeenSet = true; m_file = std::forward<FileT>(value); }
+    template<typename FileT = ListenerTlsFileCertificate>
+    ListenerTlsCertificate& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +70,12 @@ namespace Model
      * <p>A reference to an object that represents a listener's Secret Discovery
      * Service certificate.</p>
      */
-    inline const ListenerTlsSdsCertificate& GetSds() const{ return m_sds; }
+    inline const ListenerTlsSdsCertificate& GetSds() const { return m_sds; }
     inline bool SdsHasBeenSet() const { return m_sdsHasBeenSet; }
-    inline void SetSds(const ListenerTlsSdsCertificate& value) { m_sdsHasBeenSet = true; m_sds = value; }
-    inline void SetSds(ListenerTlsSdsCertificate&& value) { m_sdsHasBeenSet = true; m_sds = std::move(value); }
-    inline ListenerTlsCertificate& WithSds(const ListenerTlsSdsCertificate& value) { SetSds(value); return *this;}
-    inline ListenerTlsCertificate& WithSds(ListenerTlsSdsCertificate&& value) { SetSds(std::move(value)); return *this;}
+    template<typename SdsT = ListenerTlsSdsCertificate>
+    void SetSds(SdsT&& value) { m_sdsHasBeenSet = true; m_sds = std::forward<SdsT>(value); }
+    template<typename SdsT = ListenerTlsSdsCertificate>
+    ListenerTlsCertificate& WithSds(SdsT&& value) { SetSds(std::forward<SdsT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-IPSet::IPSet() : 
-    m_definitionHasBeenSet(false)
-{
-}
-
 IPSet::IPSet(JsonView jsonValue)
-  : IPSet()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ IPSet& IPSet::operator =(JsonView jsonValue)
     }
     m_definitionHasBeenSet = true;
   }
-
   return *this;
 }
 

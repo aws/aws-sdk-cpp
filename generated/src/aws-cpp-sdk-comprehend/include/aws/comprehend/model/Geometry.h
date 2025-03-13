@@ -36,7 +36,7 @@ namespace Model
   class Geometry
   {
   public:
-    AWS_COMPREHEND_API Geometry();
+    AWS_COMPREHEND_API Geometry() = default;
     AWS_COMPREHEND_API Geometry(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Geometry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>An axis-aligned coarse representation of the location of the recognized item
      * on the document page.</p>
      */
-    inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
+    inline const BoundingBox& GetBoundingBox() const { return m_boundingBox; }
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-    inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-    inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-    inline Geometry& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
-    inline Geometry& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
+    template<typename BoundingBoxT = BoundingBox>
+    void SetBoundingBox(BoundingBoxT&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::forward<BoundingBoxT>(value); }
+    template<typename BoundingBoxT = BoundingBox>
+    Geometry& WithBoundingBox(BoundingBoxT&& value) { SetBoundingBox(std::forward<BoundingBoxT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * <p>Within the bounding box, a fine-grained polygon around the recognized
      * item.</p>
      */
-    inline const Aws::Vector<Point>& GetPolygon() const{ return m_polygon; }
+    inline const Aws::Vector<Point>& GetPolygon() const { return m_polygon; }
     inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
-    inline void SetPolygon(const Aws::Vector<Point>& value) { m_polygonHasBeenSet = true; m_polygon = value; }
-    inline void SetPolygon(Aws::Vector<Point>&& value) { m_polygonHasBeenSet = true; m_polygon = std::move(value); }
-    inline Geometry& WithPolygon(const Aws::Vector<Point>& value) { SetPolygon(value); return *this;}
-    inline Geometry& WithPolygon(Aws::Vector<Point>&& value) { SetPolygon(std::move(value)); return *this;}
-    inline Geometry& AddPolygon(const Point& value) { m_polygonHasBeenSet = true; m_polygon.push_back(value); return *this; }
-    inline Geometry& AddPolygon(Point&& value) { m_polygonHasBeenSet = true; m_polygon.push_back(std::move(value)); return *this; }
+    template<typename PolygonT = Aws::Vector<Point>>
+    void SetPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon = std::forward<PolygonT>(value); }
+    template<typename PolygonT = Aws::Vector<Point>>
+    Geometry& WithPolygon(PolygonT&& value) { SetPolygon(std::forward<PolygonT>(value)); return *this;}
+    template<typename PolygonT = Point>
+    Geometry& AddPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon.emplace_back(std::forward<PolygonT>(value)); return *this; }
     ///@}
   private:
 

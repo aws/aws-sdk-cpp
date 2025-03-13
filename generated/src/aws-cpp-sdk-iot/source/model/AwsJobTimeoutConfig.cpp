@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AwsJobTimeoutConfig::AwsJobTimeoutConfig() : 
-    m_inProgressTimeoutInMinutes(0),
-    m_inProgressTimeoutInMinutesHasBeenSet(false)
-{
-}
-
 AwsJobTimeoutConfig::AwsJobTimeoutConfig(JsonView jsonValue)
-  : AwsJobTimeoutConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AwsJobTimeoutConfig& AwsJobTimeoutConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inProgressTimeoutInMinutes"))
   {
     m_inProgressTimeoutInMinutes = jsonValue.GetInt64("inProgressTimeoutInMinutes");
-
     m_inProgressTimeoutInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

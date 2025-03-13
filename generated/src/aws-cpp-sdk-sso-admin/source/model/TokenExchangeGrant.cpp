@@ -18,10 +18,6 @@ namespace SSOAdmin
 namespace Model
 {
 
-TokenExchangeGrant::TokenExchangeGrant()
-{
-}
-
 TokenExchangeGrant::TokenExchangeGrant(JsonView jsonValue)
 {
   *this = jsonValue;

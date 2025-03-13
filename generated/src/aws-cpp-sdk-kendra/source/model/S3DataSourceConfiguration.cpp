@@ -18,18 +18,7 @@ namespace kendra
 namespace Model
 {
 
-S3DataSourceConfiguration::S3DataSourceConfiguration() : 
-    m_bucketNameHasBeenSet(false),
-    m_inclusionPrefixesHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_documentsMetadataConfigurationHasBeenSet(false),
-    m_accessControlListConfigurationHasBeenSet(false)
-{
-}
-
 S3DataSourceConfiguration::S3DataSourceConfiguration(JsonView jsonValue)
-  : S3DataSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ S3DataSourceConfiguration& S3DataSourceConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionPrefixes"))
   {
     Aws::Utils::Array<JsonView> inclusionPrefixesJsonList = jsonValue.GetArray("InclusionPrefixes");
@@ -52,7 +39,6 @@ S3DataSourceConfiguration& S3DataSourceConfiguration::operator =(JsonView jsonVa
     }
     m_inclusionPrefixesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
@@ -62,7 +48,6 @@ S3DataSourceConfiguration& S3DataSourceConfiguration::operator =(JsonView jsonVa
     }
     m_inclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
@@ -72,21 +57,16 @@ S3DataSourceConfiguration& S3DataSourceConfiguration::operator =(JsonView jsonVa
     }
     m_exclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentsMetadataConfiguration"))
   {
     m_documentsMetadataConfiguration = jsonValue.GetObject("DocumentsMetadataConfiguration");
-
     m_documentsMetadataConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessControlListConfiguration"))
   {
     m_accessControlListConfiguration = jsonValue.GetObject("AccessControlListConfiguration");
-
     m_accessControlListConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

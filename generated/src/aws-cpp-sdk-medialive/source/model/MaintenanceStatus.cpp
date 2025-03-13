@@ -18,17 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MaintenanceStatus::MaintenanceStatus() : 
-    m_maintenanceDay(MaintenanceDay::NOT_SET),
-    m_maintenanceDayHasBeenSet(false),
-    m_maintenanceDeadlineHasBeenSet(false),
-    m_maintenanceScheduledDateHasBeenSet(false),
-    m_maintenanceStartTimeHasBeenSet(false)
-{
-}
-
 MaintenanceStatus::MaintenanceStatus(JsonView jsonValue)
-  : MaintenanceStatus()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ MaintenanceStatus& MaintenanceStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maintenanceDay"))
   {
     m_maintenanceDay = MaintenanceDayMapper::GetMaintenanceDayForName(jsonValue.GetString("maintenanceDay"));
-
     m_maintenanceDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maintenanceDeadline"))
   {
     m_maintenanceDeadline = jsonValue.GetString("maintenanceDeadline");
-
     m_maintenanceDeadlineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maintenanceScheduledDate"))
   {
     m_maintenanceScheduledDate = jsonValue.GetString("maintenanceScheduledDate");
-
     m_maintenanceScheduledDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maintenanceStartTime"))
   {
     m_maintenanceStartTime = jsonValue.GetString("maintenanceStartTime");
-
     m_maintenanceStartTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,33 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrainingPlanSummary::TrainingPlanSummary() : 
-    m_trainingPlanArnHasBeenSet(false),
-    m_trainingPlanNameHasBeenSet(false),
-    m_status(TrainingPlanStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_durationHours(0),
-    m_durationHoursHasBeenSet(false),
-    m_durationMinutes(0),
-    m_durationMinutesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_upfrontFeeHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_totalInstanceCount(0),
-    m_totalInstanceCountHasBeenSet(false),
-    m_availableInstanceCount(0),
-    m_availableInstanceCountHasBeenSet(false),
-    m_inUseInstanceCount(0),
-    m_inUseInstanceCountHasBeenSet(false),
-    m_targetResourcesHasBeenSet(false),
-    m_reservedCapacitySummariesHasBeenSet(false)
-{
-}
-
 TrainingPlanSummary::TrainingPlanSummary(JsonView jsonValue)
-  : TrainingPlanSummary()
 {
   *this = jsonValue;
 }
@@ -54,94 +28,68 @@ TrainingPlanSummary& TrainingPlanSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrainingPlanArn"))
   {
     m_trainingPlanArn = jsonValue.GetString("TrainingPlanArn");
-
     m_trainingPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingPlanName"))
   {
     m_trainingPlanName = jsonValue.GetString("TrainingPlanName");
-
     m_trainingPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TrainingPlanStatusMapper::GetTrainingPlanStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationHours"))
   {
     m_durationHours = jsonValue.GetInt64("DurationHours");
-
     m_durationHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationMinutes"))
   {
     m_durationMinutes = jsonValue.GetInt64("DurationMinutes");
-
     m_durationMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpfrontFee"))
   {
     m_upfrontFee = jsonValue.GetString("UpfrontFee");
-
     m_upfrontFeeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalInstanceCount"))
   {
     m_totalInstanceCount = jsonValue.GetInteger("TotalInstanceCount");
-
     m_totalInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailableInstanceCount"))
   {
     m_availableInstanceCount = jsonValue.GetInteger("AvailableInstanceCount");
-
     m_availableInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InUseInstanceCount"))
   {
     m_inUseInstanceCount = jsonValue.GetInteger("InUseInstanceCount");
-
     m_inUseInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetResources"))
   {
     Aws::Utils::Array<JsonView> targetResourcesJsonList = jsonValue.GetArray("TargetResources");
@@ -151,7 +99,6 @@ TrainingPlanSummary& TrainingPlanSummary::operator =(JsonView jsonValue)
     }
     m_targetResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedCapacitySummaries"))
   {
     Aws::Utils::Array<JsonView> reservedCapacitySummariesJsonList = jsonValue.GetArray("ReservedCapacitySummaries");
@@ -161,7 +108,6 @@ TrainingPlanSummary& TrainingPlanSummary::operator =(JsonView jsonValue)
     }
     m_reservedCapacitySummariesHasBeenSet = true;
   }
-
   return *this;
 }
 

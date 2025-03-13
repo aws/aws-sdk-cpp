@@ -36,7 +36,7 @@ namespace Model
   class PersonDetection
   {
   public:
-    AWS_REKOGNITION_API PersonDetection();
+    AWS_REKOGNITION_API PersonDetection() = default;
     AWS_REKOGNITION_API PersonDetection(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API PersonDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
      * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
      * to the individual frame where the person's path first appears.</p>
      */
-    inline long long GetTimestamp() const{ return m_timestamp; }
+    inline long long GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
     inline PersonDetection& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
@@ -58,16 +58,16 @@ namespace Model
     /**
      * <p>Details about a person whose path was tracked in a video.</p>
      */
-    inline const PersonDetail& GetPerson() const{ return m_person; }
+    inline const PersonDetail& GetPerson() const { return m_person; }
     inline bool PersonHasBeenSet() const { return m_personHasBeenSet; }
-    inline void SetPerson(const PersonDetail& value) { m_personHasBeenSet = true; m_person = value; }
-    inline void SetPerson(PersonDetail&& value) { m_personHasBeenSet = true; m_person = std::move(value); }
-    inline PersonDetection& WithPerson(const PersonDetail& value) { SetPerson(value); return *this;}
-    inline PersonDetection& WithPerson(PersonDetail&& value) { SetPerson(std::move(value)); return *this;}
+    template<typename PersonT = PersonDetail>
+    void SetPerson(PersonT&& value) { m_personHasBeenSet = true; m_person = std::forward<PersonT>(value); }
+    template<typename PersonT = PersonDetail>
+    PersonDetection& WithPerson(PersonT&& value) { SetPerson(std::forward<PersonT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_timestamp;
+    long long m_timestamp{0};
     bool m_timestampHasBeenSet = false;
 
     PersonDetail m_person;

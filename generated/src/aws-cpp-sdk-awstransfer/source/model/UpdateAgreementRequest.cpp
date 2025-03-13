@@ -12,24 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAgreementRequest::UpdateAgreementRequest() : 
-    m_agreementIdHasBeenSet(false),
-    m_serverIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(AgreementStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_localProfileIdHasBeenSet(false),
-    m_partnerProfileIdHasBeenSet(false),
-    m_baseDirectoryHasBeenSet(false),
-    m_accessRoleHasBeenSet(false),
-    m_preserveFilename(PreserveFilenameType::NOT_SET),
-    m_preserveFilenameHasBeenSet(false),
-    m_enforceMessageSigning(EnforceMessageSigningType::NOT_SET),
-    m_enforceMessageSigningHasBeenSet(false),
-    m_customDirectoriesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAgreementRequest::SerializePayload() const
 {
   JsonValue payload;

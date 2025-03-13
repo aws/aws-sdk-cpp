@@ -23,7 +23,7 @@ namespace Model
   class CreateDataSetImportTaskRequest : public MainframeModernizationRequest
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API CreateDataSetImportTaskRequest();
+    AWS_MAINFRAMEMODERNIZATION_API CreateDataSetImportTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The unique identifier of the application for which you want to import data
      * sets.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline CreateDataSetImportTaskRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline CreateDataSetImportTaskRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline CreateDataSetImportTaskRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    CreateDataSetImportTaskRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,26 +56,24 @@ namespace Model
      * same response. The service also handles deleting the clientToken after it
      * expires. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateDataSetImportTaskRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateDataSetImportTaskRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateDataSetImportTaskRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateDataSetImportTaskRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data set import task configuration.</p>
      */
-    inline const DataSetImportConfig& GetImportConfig() const{ return m_importConfig; }
+    inline const DataSetImportConfig& GetImportConfig() const { return m_importConfig; }
     inline bool ImportConfigHasBeenSet() const { return m_importConfigHasBeenSet; }
-    inline void SetImportConfig(const DataSetImportConfig& value) { m_importConfigHasBeenSet = true; m_importConfig = value; }
-    inline void SetImportConfig(DataSetImportConfig&& value) { m_importConfigHasBeenSet = true; m_importConfig = std::move(value); }
-    inline CreateDataSetImportTaskRequest& WithImportConfig(const DataSetImportConfig& value) { SetImportConfig(value); return *this;}
-    inline CreateDataSetImportTaskRequest& WithImportConfig(DataSetImportConfig&& value) { SetImportConfig(std::move(value)); return *this;}
+    template<typename ImportConfigT = DataSetImportConfig>
+    void SetImportConfig(ImportConfigT&& value) { m_importConfigHasBeenSet = true; m_importConfig = std::forward<ImportConfigT>(value); }
+    template<typename ImportConfigT = DataSetImportConfig>
+    CreateDataSetImportTaskRequest& WithImportConfig(ImportConfigT&& value) { SetImportConfig(std::forward<ImportConfigT>(value)); return *this;}
     ///@}
   private:
 

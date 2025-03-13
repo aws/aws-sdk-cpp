@@ -12,12 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRequestValidatorRequest::GetRequestValidatorRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_requestValidatorIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRequestValidatorRequest::SerializePayload() const
 {
   return {};

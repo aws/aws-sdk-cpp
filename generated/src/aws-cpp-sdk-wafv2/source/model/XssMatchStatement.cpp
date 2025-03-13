@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-XssMatchStatement::XssMatchStatement() : 
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false)
-{
-}
-
 XssMatchStatement::XssMatchStatement(JsonView jsonValue)
-  : XssMatchStatement()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ XssMatchStatement& XssMatchStatement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldToMatch"))
   {
     m_fieldToMatch = jsonValue.GetObject("FieldToMatch");
-
     m_fieldToMatchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextTransformations"))
   {
     Aws::Utils::Array<JsonView> textTransformationsJsonList = jsonValue.GetArray("TextTransformations");
@@ -48,7 +39,6 @@ XssMatchStatement& XssMatchStatement::operator =(JsonView jsonValue)
     }
     m_textTransformationsHasBeenSet = true;
   }
-
   return *this;
 }
 

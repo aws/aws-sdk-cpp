@@ -31,7 +31,7 @@ namespace Model
   class GetRunCacheResult
   {
   public:
-    AWS_OMICS_API GetRunCacheResult();
+    AWS_OMICS_API GetRunCacheResult() = default;
     AWS_OMICS_API GetRunCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API GetRunCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,164 +40,154 @@ namespace Model
     /**
      * <p>Unique resource identifier for the run cache.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetRunCacheResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetRunCacheResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetRunCacheResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetRunCacheResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default cache behavior for runs using this cache.</p>
      */
-    inline const CacheBehavior& GetCacheBehavior() const{ return m_cacheBehavior; }
-    inline void SetCacheBehavior(const CacheBehavior& value) { m_cacheBehavior = value; }
-    inline void SetCacheBehavior(CacheBehavior&& value) { m_cacheBehavior = std::move(value); }
-    inline GetRunCacheResult& WithCacheBehavior(const CacheBehavior& value) { SetCacheBehavior(value); return *this;}
-    inline GetRunCacheResult& WithCacheBehavior(CacheBehavior&& value) { SetCacheBehavior(std::move(value)); return *this;}
+    inline CacheBehavior GetCacheBehavior() const { return m_cacheBehavior; }
+    inline void SetCacheBehavior(CacheBehavior value) { m_cacheBehaviorHasBeenSet = true; m_cacheBehavior = value; }
+    inline GetRunCacheResult& WithCacheBehavior(CacheBehavior value) { SetCacheBehavior(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the bucket owner.</p>
      */
-    inline const Aws::String& GetCacheBucketOwnerId() const{ return m_cacheBucketOwnerId; }
-    inline void SetCacheBucketOwnerId(const Aws::String& value) { m_cacheBucketOwnerId = value; }
-    inline void SetCacheBucketOwnerId(Aws::String&& value) { m_cacheBucketOwnerId = std::move(value); }
-    inline void SetCacheBucketOwnerId(const char* value) { m_cacheBucketOwnerId.assign(value); }
-    inline GetRunCacheResult& WithCacheBucketOwnerId(const Aws::String& value) { SetCacheBucketOwnerId(value); return *this;}
-    inline GetRunCacheResult& WithCacheBucketOwnerId(Aws::String&& value) { SetCacheBucketOwnerId(std::move(value)); return *this;}
-    inline GetRunCacheResult& WithCacheBucketOwnerId(const char* value) { SetCacheBucketOwnerId(value); return *this;}
+    inline const Aws::String& GetCacheBucketOwnerId() const { return m_cacheBucketOwnerId; }
+    template<typename CacheBucketOwnerIdT = Aws::String>
+    void SetCacheBucketOwnerId(CacheBucketOwnerIdT&& value) { m_cacheBucketOwnerIdHasBeenSet = true; m_cacheBucketOwnerId = std::forward<CacheBucketOwnerIdT>(value); }
+    template<typename CacheBucketOwnerIdT = Aws::String>
+    GetRunCacheResult& WithCacheBucketOwnerId(CacheBucketOwnerIdT&& value) { SetCacheBucketOwnerId(std::forward<CacheBucketOwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 URI where the cache data is stored.</p>
      */
-    inline const Aws::String& GetCacheS3Uri() const{ return m_cacheS3Uri; }
-    inline void SetCacheS3Uri(const Aws::String& value) { m_cacheS3Uri = value; }
-    inline void SetCacheS3Uri(Aws::String&& value) { m_cacheS3Uri = std::move(value); }
-    inline void SetCacheS3Uri(const char* value) { m_cacheS3Uri.assign(value); }
-    inline GetRunCacheResult& WithCacheS3Uri(const Aws::String& value) { SetCacheS3Uri(value); return *this;}
-    inline GetRunCacheResult& WithCacheS3Uri(Aws::String&& value) { SetCacheS3Uri(std::move(value)); return *this;}
-    inline GetRunCacheResult& WithCacheS3Uri(const char* value) { SetCacheS3Uri(value); return *this;}
+    inline const Aws::String& GetCacheS3Uri() const { return m_cacheS3Uri; }
+    template<typename CacheS3UriT = Aws::String>
+    void SetCacheS3Uri(CacheS3UriT&& value) { m_cacheS3UriHasBeenSet = true; m_cacheS3Uri = std::forward<CacheS3UriT>(value); }
+    template<typename CacheS3UriT = Aws::String>
+    GetRunCacheResult& WithCacheS3Uri(CacheS3UriT&& value) { SetCacheS3Uri(std::forward<CacheS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Creation time of the run cache (an ISO 8601 formatted string).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetRunCacheResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetRunCacheResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetRunCacheResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run cache description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetRunCacheResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetRunCacheResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetRunCacheResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetRunCacheResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run cache ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetRunCacheResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetRunCacheResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetRunCacheResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetRunCacheResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run cache name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetRunCacheResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetRunCacheResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetRunCacheResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetRunCacheResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run cache status.</p>
      */
-    inline const RunCacheStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const RunCacheStatus& value) { m_status = value; }
-    inline void SetStatus(RunCacheStatus&& value) { m_status = std::move(value); }
-    inline GetRunCacheResult& WithStatus(const RunCacheStatus& value) { SetStatus(value); return *this;}
-    inline GetRunCacheResult& WithStatus(RunCacheStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline RunCacheStatus GetStatus() const { return m_status; }
+    inline void SetStatus(RunCacheStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetRunCacheResult& WithStatus(RunCacheStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the run cache.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetRunCacheResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetRunCacheResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetRunCacheResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetRunCacheResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetRunCacheResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetRunCacheResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetRunCacheResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetRunCacheResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetRunCacheResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetRunCacheResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetRunCacheResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRunCacheResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRunCacheResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRunCacheResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRunCacheResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    CacheBehavior m_cacheBehavior;
+    CacheBehavior m_cacheBehavior{CacheBehavior::NOT_SET};
+    bool m_cacheBehaviorHasBeenSet = false;
 
     Aws::String m_cacheBucketOwnerId;
+    bool m_cacheBucketOwnerIdHasBeenSet = false;
 
     Aws::String m_cacheS3Uri;
+    bool m_cacheS3UriHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    RunCacheStatus m_status;
+    RunCacheStatus m_status{RunCacheStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

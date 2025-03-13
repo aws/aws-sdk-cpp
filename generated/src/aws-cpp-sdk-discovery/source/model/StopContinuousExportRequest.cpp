@@ -12,11 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopContinuousExportRequest::StopContinuousExportRequest() : 
-    m_exportIdHasBeenSet(false)
-{
-}
-
 Aws::String StopContinuousExportRequest::SerializePayload() const
 {
   JsonValue payload;

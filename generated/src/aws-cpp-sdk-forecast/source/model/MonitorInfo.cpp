@@ -18,14 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-MonitorInfo::MonitorInfo() : 
-    m_monitorArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 MonitorInfo::MonitorInfo(JsonView jsonValue)
-  : MonitorInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MonitorInfo& MonitorInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MonitorArn"))
   {
     m_monitorArn = jsonValue.GetString("MonitorArn");
-
     m_monitorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

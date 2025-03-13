@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayMulticastDomain::TransitGatewayMulticastDomain() : 
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_transitGatewayMulticastDomainArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_state(TransitGatewayMulticastDomainState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TransitGatewayMulticastDomain::TransitGatewayMulticastDomain(const XmlNode& xmlNode)
-  : TransitGatewayMulticastDomain()
 {
   *this = xmlNode;
 }
@@ -50,54 +36,62 @@ TransitGatewayMulticastDomain& TransitGatewayMulticastDomain::operator =(const X
     {
       m_transitGatewayMulticastDomainId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayMulticastDomainIdNode.GetText());
       m_transitGatewayMulticastDomainIdHasBeenSet = true;
+       m_transitGatewayMulticastDomainIdHasBeenSet = true;
     }
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
       m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
+       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode transitGatewayMulticastDomainArnNode = resultNode.FirstChild("transitGatewayMulticastDomainArn");
     if(!transitGatewayMulticastDomainArnNode.IsNull())
     {
       m_transitGatewayMulticastDomainArn = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayMulticastDomainArnNode.GetText());
       m_transitGatewayMulticastDomainArnHasBeenSet = true;
+       m_transitGatewayMulticastDomainArnHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("options");
     if(!optionsNode.IsNull())
     {
       m_options = optionsNode;
       m_optionsHasBeenSet = true;
+       m_optionsHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayMulticastDomainStateMapper::GetTransitGatewayMulticastDomainStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayMulticastDomainStateMapper::GetTransitGatewayMulticastDomainStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

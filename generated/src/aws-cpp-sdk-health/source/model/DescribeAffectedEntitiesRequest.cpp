@@ -12,15 +12,6 @@ using namespace Aws::Health::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAffectedEntitiesRequest::DescribeAffectedEntitiesRequest() : 
-    m_filterHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAffectedEntitiesRequest::SerializePayload() const
 {
   JsonValue payload;

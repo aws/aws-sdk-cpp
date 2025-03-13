@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbInstanceVpcSecurityGroup::AwsRdsDbInstanceVpcSecurityGroup() : 
-    m_vpcSecurityGroupIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsRdsDbInstanceVpcSecurityGroup::AwsRdsDbInstanceVpcSecurityGroup(JsonView jsonValue)
-  : AwsRdsDbInstanceVpcSecurityGroup()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsRdsDbInstanceVpcSecurityGroup& AwsRdsDbInstanceVpcSecurityGroup::operator =(J
   if(jsonValue.ValueExists("VpcSecurityGroupId"))
   {
     m_vpcSecurityGroupId = jsonValue.GetString("VpcSecurityGroupId");
-
     m_vpcSecurityGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

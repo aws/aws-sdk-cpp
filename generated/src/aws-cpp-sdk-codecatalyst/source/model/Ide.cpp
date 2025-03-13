@@ -18,14 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-Ide::Ide() : 
-    m_runtimeHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Ide::Ide(JsonView jsonValue)
-  : Ide()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Ide& Ide::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("runtime"))
   {
     m_runtime = jsonValue.GetString("runtime");
-
     m_runtimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

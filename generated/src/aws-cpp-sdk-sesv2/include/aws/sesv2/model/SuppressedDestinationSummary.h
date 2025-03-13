@@ -34,7 +34,7 @@ namespace Model
   class SuppressedDestinationSummary
   {
   public:
-    AWS_SESV2_API SuppressedDestinationSummary();
+    AWS_SESV2_API SuppressedDestinationSummary() = default;
     AWS_SESV2_API SuppressedDestinationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API SuppressedDestinationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The email address that's on the suppression list for your account.</p>
      */
-    inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+    inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-    inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
-    inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
-    inline SuppressedDestinationSummary& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-    inline SuppressedDestinationSummary& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-    inline SuppressedDestinationSummary& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+    template<typename EmailAddressT = Aws::String>
+    void SetEmailAddress(EmailAddressT&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::forward<EmailAddressT>(value); }
+    template<typename EmailAddressT = Aws::String>
+    SuppressedDestinationSummary& WithEmailAddress(EmailAddressT&& value) { SetEmailAddress(std::forward<EmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <p>The reason that the address was added to the suppression list for your
      * account.</p>
      */
-    inline const SuppressionListReason& GetReason() const{ return m_reason; }
+    inline SuppressionListReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const SuppressionListReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(SuppressionListReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline SuppressedDestinationSummary& WithReason(const SuppressionListReason& value) { SetReason(value); return *this;}
-    inline SuppressedDestinationSummary& WithReason(SuppressionListReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(SuppressionListReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline SuppressedDestinationSummary& WithReason(SuppressionListReason value) { SetReason(value); return *this;}
     ///@}
 
     ///@{
@@ -72,22 +68,22 @@ namespace Model
      * <p>The date and time when the suppressed destination was last updated, shown in
      * Unix time format.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline SuppressedDestinationSummary& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline SuppressedDestinationSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    SuppressedDestinationSummary& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_emailAddress;
     bool m_emailAddressHasBeenSet = false;
 
-    SuppressionListReason m_reason;
+    SuppressionListReason m_reason{SuppressionListReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
     bool m_lastUpdateTimeHasBeenSet = false;
   };
 

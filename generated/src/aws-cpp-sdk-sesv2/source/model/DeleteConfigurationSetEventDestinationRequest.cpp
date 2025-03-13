@@ -12,12 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConfigurationSetEventDestinationRequest::DeleteConfigurationSetEventDestinationRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConfigurationSetEventDestinationRequest::SerializePayload() const
 {
   return {};

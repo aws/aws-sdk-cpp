@@ -18,15 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-ErrorInformation::ErrorInformation() : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ErrorInformation::ErrorInformation(JsonView jsonValue)
-  : ErrorInformation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ErrorInformation& ErrorInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-EventContextDataType::EventContextDataType() : 
-    m_ipAddressHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_countryHasBeenSet(false)
-{
-}
-
 EventContextDataType::EventContextDataType(JsonView jsonValue)
-  : EventContextDataType()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ EventContextDataType& EventContextDataType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceName"))
   {
     m_deviceName = jsonValue.GetString("DeviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timezone"))
   {
     m_timezone = jsonValue.GetString("Timezone");
-
     m_timezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("City"))
   {
     m_city = jsonValue.GetString("City");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   return *this;
 }
 

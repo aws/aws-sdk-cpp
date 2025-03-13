@@ -35,7 +35,7 @@ namespace Model
   class InputDeviceHdSettings
   {
   public:
-    AWS_MEDIALIVE_API InputDeviceHdSettings();
+    AWS_MEDIALIVE_API InputDeviceHdSettings() = default;
     AWS_MEDIALIVE_API InputDeviceHdSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InputDeviceHdSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * If you specified Auto as the configured input, specifies which of the sources is
      * currently active (SDI or HDMI).
      */
-    inline const InputDeviceActiveInput& GetActiveInput() const{ return m_activeInput; }
+    inline InputDeviceActiveInput GetActiveInput() const { return m_activeInput; }
     inline bool ActiveInputHasBeenSet() const { return m_activeInputHasBeenSet; }
-    inline void SetActiveInput(const InputDeviceActiveInput& value) { m_activeInputHasBeenSet = true; m_activeInput = value; }
-    inline void SetActiveInput(InputDeviceActiveInput&& value) { m_activeInputHasBeenSet = true; m_activeInput = std::move(value); }
-    inline InputDeviceHdSettings& WithActiveInput(const InputDeviceActiveInput& value) { SetActiveInput(value); return *this;}
-    inline InputDeviceHdSettings& WithActiveInput(InputDeviceActiveInput&& value) { SetActiveInput(std::move(value)); return *this;}
+    inline void SetActiveInput(InputDeviceActiveInput value) { m_activeInputHasBeenSet = true; m_activeInput = value; }
+    inline InputDeviceHdSettings& WithActiveInput(InputDeviceActiveInput value) { SetActiveInput(value); return *this;}
     ///@}
 
     ///@{
@@ -59,31 +57,27 @@ namespace Model
      * The source at the input device that is currently active. You can specify this
      * source.
      */
-    inline const InputDeviceConfiguredInput& GetConfiguredInput() const{ return m_configuredInput; }
+    inline InputDeviceConfiguredInput GetConfiguredInput() const { return m_configuredInput; }
     inline bool ConfiguredInputHasBeenSet() const { return m_configuredInputHasBeenSet; }
-    inline void SetConfiguredInput(const InputDeviceConfiguredInput& value) { m_configuredInputHasBeenSet = true; m_configuredInput = value; }
-    inline void SetConfiguredInput(InputDeviceConfiguredInput&& value) { m_configuredInputHasBeenSet = true; m_configuredInput = std::move(value); }
-    inline InputDeviceHdSettings& WithConfiguredInput(const InputDeviceConfiguredInput& value) { SetConfiguredInput(value); return *this;}
-    inline InputDeviceHdSettings& WithConfiguredInput(InputDeviceConfiguredInput&& value) { SetConfiguredInput(std::move(value)); return *this;}
+    inline void SetConfiguredInput(InputDeviceConfiguredInput value) { m_configuredInputHasBeenSet = true; m_configuredInput = value; }
+    inline InputDeviceHdSettings& WithConfiguredInput(InputDeviceConfiguredInput value) { SetConfiguredInput(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The state of the input device.
      */
-    inline const InputDeviceState& GetDeviceState() const{ return m_deviceState; }
+    inline InputDeviceState GetDeviceState() const { return m_deviceState; }
     inline bool DeviceStateHasBeenSet() const { return m_deviceStateHasBeenSet; }
-    inline void SetDeviceState(const InputDeviceState& value) { m_deviceStateHasBeenSet = true; m_deviceState = value; }
-    inline void SetDeviceState(InputDeviceState&& value) { m_deviceStateHasBeenSet = true; m_deviceState = std::move(value); }
-    inline InputDeviceHdSettings& WithDeviceState(const InputDeviceState& value) { SetDeviceState(value); return *this;}
-    inline InputDeviceHdSettings& WithDeviceState(InputDeviceState&& value) { SetDeviceState(std::move(value)); return *this;}
+    inline void SetDeviceState(InputDeviceState value) { m_deviceStateHasBeenSet = true; m_deviceState = value; }
+    inline InputDeviceHdSettings& WithDeviceState(InputDeviceState value) { SetDeviceState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The frame rate of the video source.
      */
-    inline double GetFramerate() const{ return m_framerate; }
+    inline double GetFramerate() const { return m_framerate; }
     inline bool FramerateHasBeenSet() const { return m_framerateHasBeenSet; }
     inline void SetFramerate(double value) { m_framerateHasBeenSet = true; m_framerate = value; }
     inline InputDeviceHdSettings& WithFramerate(double value) { SetFramerate(value); return *this;}
@@ -93,7 +87,7 @@ namespace Model
     /**
      * The height of the video source, in pixels.
      */
-    inline int GetHeight() const{ return m_height; }
+    inline int GetHeight() const { return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
     inline InputDeviceHdSettings& WithHeight(int value) { SetHeight(value); return *this;}
@@ -104,7 +98,7 @@ namespace Model
      * The current maximum bitrate for ingesting this source, in bits per second. You
      * can specify this maximum.
      */
-    inline int GetMaxBitrate() const{ return m_maxBitrate; }
+    inline int GetMaxBitrate() const { return m_maxBitrate; }
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
     inline InputDeviceHdSettings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
@@ -114,19 +108,17 @@ namespace Model
     /**
      * The scan type of the video source.
      */
-    inline const InputDeviceScanType& GetScanType() const{ return m_scanType; }
+    inline InputDeviceScanType GetScanType() const { return m_scanType; }
     inline bool ScanTypeHasBeenSet() const { return m_scanTypeHasBeenSet; }
-    inline void SetScanType(const InputDeviceScanType& value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
-    inline void SetScanType(InputDeviceScanType&& value) { m_scanTypeHasBeenSet = true; m_scanType = std::move(value); }
-    inline InputDeviceHdSettings& WithScanType(const InputDeviceScanType& value) { SetScanType(value); return *this;}
-    inline InputDeviceHdSettings& WithScanType(InputDeviceScanType&& value) { SetScanType(std::move(value)); return *this;}
+    inline void SetScanType(InputDeviceScanType value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
+    inline InputDeviceHdSettings& WithScanType(InputDeviceScanType value) { SetScanType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The width of the video source, in pixels.
      */
-    inline int GetWidth() const{ return m_width; }
+    inline int GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
     inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
     inline InputDeviceHdSettings& WithWidth(int value) { SetWidth(value); return *this;}
@@ -137,38 +129,38 @@ namespace Model
      * The Link device's buffer size (latency) in milliseconds (ms). You can specify
      * this value.
      */
-    inline int GetLatencyMs() const{ return m_latencyMs; }
+    inline int GetLatencyMs() const { return m_latencyMs; }
     inline bool LatencyMsHasBeenSet() const { return m_latencyMsHasBeenSet; }
     inline void SetLatencyMs(int value) { m_latencyMsHasBeenSet = true; m_latencyMs = value; }
     inline InputDeviceHdSettings& WithLatencyMs(int value) { SetLatencyMs(value); return *this;}
     ///@}
   private:
 
-    InputDeviceActiveInput m_activeInput;
+    InputDeviceActiveInput m_activeInput{InputDeviceActiveInput::NOT_SET};
     bool m_activeInputHasBeenSet = false;
 
-    InputDeviceConfiguredInput m_configuredInput;
+    InputDeviceConfiguredInput m_configuredInput{InputDeviceConfiguredInput::NOT_SET};
     bool m_configuredInputHasBeenSet = false;
 
-    InputDeviceState m_deviceState;
+    InputDeviceState m_deviceState{InputDeviceState::NOT_SET};
     bool m_deviceStateHasBeenSet = false;
 
-    double m_framerate;
+    double m_framerate{0.0};
     bool m_framerateHasBeenSet = false;
 
-    int m_height;
+    int m_height{0};
     bool m_heightHasBeenSet = false;
 
-    int m_maxBitrate;
+    int m_maxBitrate{0};
     bool m_maxBitrateHasBeenSet = false;
 
-    InputDeviceScanType m_scanType;
+    InputDeviceScanType m_scanType{InputDeviceScanType::NOT_SET};
     bool m_scanTypeHasBeenSet = false;
 
-    int m_width;
+    int m_width{0};
     bool m_widthHasBeenSet = false;
 
-    int m_latencyMs;
+    int m_latencyMs{0};
     bool m_latencyMsHasBeenSet = false;
   };
 

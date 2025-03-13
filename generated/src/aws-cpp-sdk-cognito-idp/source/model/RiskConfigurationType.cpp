@@ -18,18 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-RiskConfigurationType::RiskConfigurationType() : 
-    m_userPoolIdHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_compromisedCredentialsRiskConfigurationHasBeenSet(false),
-    m_accountTakeoverRiskConfigurationHasBeenSet(false),
-    m_riskExceptionConfigurationHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
-{
-}
-
 RiskConfigurationType::RiskConfigurationType(JsonView jsonValue)
-  : RiskConfigurationType()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ RiskConfigurationType& RiskConfigurationType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientId"))
   {
     m_clientId = jsonValue.GetString("ClientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompromisedCredentialsRiskConfiguration"))
   {
     m_compromisedCredentialsRiskConfiguration = jsonValue.GetObject("CompromisedCredentialsRiskConfiguration");
-
     m_compromisedCredentialsRiskConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountTakeoverRiskConfiguration"))
   {
     m_accountTakeoverRiskConfiguration = jsonValue.GetObject("AccountTakeoverRiskConfiguration");
-
     m_accountTakeoverRiskConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RiskExceptionConfiguration"))
   {
     m_riskExceptionConfiguration = jsonValue.GetObject("RiskExceptionConfiguration");
-
     m_riskExceptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

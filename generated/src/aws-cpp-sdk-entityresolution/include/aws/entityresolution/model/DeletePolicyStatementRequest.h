@@ -21,7 +21,7 @@ namespace Model
   class DeletePolicyStatementRequest : public EntityResolutionRequest
   {
   public:
-    AWS_ENTITYRESOLUTION_API DeletePolicyStatementRequest();
+    AWS_ENTITYRESOLUTION_API DeletePolicyStatementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the resource for which the policy need to be deleted.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DeletePolicyStatementRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DeletePolicyStatementRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DeletePolicyStatementRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DeletePolicyStatementRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p>A statement identifier that differentiates the statement from others in the
      * same policy.</p>
      */
-    inline const Aws::String& GetStatementId() const{ return m_statementId; }
+    inline const Aws::String& GetStatementId() const { return m_statementId; }
     inline bool StatementIdHasBeenSet() const { return m_statementIdHasBeenSet; }
-    inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
-    inline void SetStatementId(Aws::String&& value) { m_statementIdHasBeenSet = true; m_statementId = std::move(value); }
-    inline void SetStatementId(const char* value) { m_statementIdHasBeenSet = true; m_statementId.assign(value); }
-    inline DeletePolicyStatementRequest& WithStatementId(const Aws::String& value) { SetStatementId(value); return *this;}
-    inline DeletePolicyStatementRequest& WithStatementId(Aws::String&& value) { SetStatementId(std::move(value)); return *this;}
-    inline DeletePolicyStatementRequest& WithStatementId(const char* value) { SetStatementId(value); return *this;}
+    template<typename StatementIdT = Aws::String>
+    void SetStatementId(StatementIdT&& value) { m_statementIdHasBeenSet = true; m_statementId = std::forward<StatementIdT>(value); }
+    template<typename StatementIdT = Aws::String>
+    DeletePolicyStatementRequest& WithStatementId(StatementIdT&& value) { SetStatementId(std::forward<StatementIdT>(value)); return *this;}
     ///@}
   private:
 

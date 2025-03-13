@@ -39,7 +39,7 @@ namespace Model
   class TextResponsePart
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API TextResponsePart();
+    AWS_BEDROCKAGENTRUNTIME_API TextResponsePart() = default;
     AWS_BEDROCKAGENTRUNTIME_API TextResponsePart(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API TextResponsePart& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,26 +50,24 @@ namespace Model
      * <p>Contains information about where the text with a citation begins and ends in
      * the generated output.</p>
      */
-    inline const Span& GetSpan() const{ return m_span; }
+    inline const Span& GetSpan() const { return m_span; }
     inline bool SpanHasBeenSet() const { return m_spanHasBeenSet; }
-    inline void SetSpan(const Span& value) { m_spanHasBeenSet = true; m_span = value; }
-    inline void SetSpan(Span&& value) { m_spanHasBeenSet = true; m_span = std::move(value); }
-    inline TextResponsePart& WithSpan(const Span& value) { SetSpan(value); return *this;}
-    inline TextResponsePart& WithSpan(Span&& value) { SetSpan(std::move(value)); return *this;}
+    template<typename SpanT = Span>
+    void SetSpan(SpanT&& value) { m_spanHasBeenSet = true; m_span = std::forward<SpanT>(value); }
+    template<typename SpanT = Span>
+    TextResponsePart& WithSpan(SpanT&& value) { SetSpan(std::forward<SpanT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The part of the generated text that contains a citation.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline TextResponsePart& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline TextResponsePart& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline TextResponsePart& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    TextResponsePart& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class AccessControlList
   {
   public:
-    AWS_GUARDDUTY_API AccessControlList();
+    AWS_GUARDDUTY_API AccessControlList() = default;
     AWS_GUARDDUTY_API AccessControlList(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API AccessControlList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>A value that indicates whether public read access for the bucket is enabled
      * through an Access Control List (ACL).</p>
      */
-    inline bool GetAllowsPublicReadAccess() const{ return m_allowsPublicReadAccess; }
+    inline bool GetAllowsPublicReadAccess() const { return m_allowsPublicReadAccess; }
     inline bool AllowsPublicReadAccessHasBeenSet() const { return m_allowsPublicReadAccessHasBeenSet; }
     inline void SetAllowsPublicReadAccess(bool value) { m_allowsPublicReadAccessHasBeenSet = true; m_allowsPublicReadAccess = value; }
     inline AccessControlList& WithAllowsPublicReadAccess(bool value) { SetAllowsPublicReadAccess(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>A value that indicates whether public write access for the bucket is enabled
      * through an Access Control List (ACL).</p>
      */
-    inline bool GetAllowsPublicWriteAccess() const{ return m_allowsPublicWriteAccess; }
+    inline bool GetAllowsPublicWriteAccess() const { return m_allowsPublicWriteAccess; }
     inline bool AllowsPublicWriteAccessHasBeenSet() const { return m_allowsPublicWriteAccessHasBeenSet; }
     inline void SetAllowsPublicWriteAccess(bool value) { m_allowsPublicWriteAccessHasBeenSet = true; m_allowsPublicWriteAccess = value; }
     inline AccessControlList& WithAllowsPublicWriteAccess(bool value) { SetAllowsPublicWriteAccess(value); return *this;}
     ///@}
   private:
 
-    bool m_allowsPublicReadAccess;
+    bool m_allowsPublicReadAccess{false};
     bool m_allowsPublicReadAccessHasBeenSet = false;
 
-    bool m_allowsPublicWriteAccess;
+    bool m_allowsPublicWriteAccess{false};
     bool m_allowsPublicWriteAccessHasBeenSet = false;
   };
 

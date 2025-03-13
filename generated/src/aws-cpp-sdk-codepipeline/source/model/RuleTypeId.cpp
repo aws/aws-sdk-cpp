@@ -18,18 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-RuleTypeId::RuleTypeId() : 
-    m_category(RuleCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_owner(RuleOwner::NOT_SET),
-    m_ownerHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 RuleTypeId::RuleTypeId(JsonView jsonValue)
-  : RuleTypeId()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ RuleTypeId& RuleTypeId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("category"))
   {
     m_category = RuleCategoryMapper::GetRuleCategoryForName(jsonValue.GetString("category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = RuleOwnerMapper::GetRuleOwnerForName(jsonValue.GetString("owner"));
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provider"))
   {
     m_provider = jsonValue.GetString("provider");
-
     m_providerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

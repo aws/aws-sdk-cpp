@@ -12,12 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteByteMatchSetRequest::DeleteByteMatchSetRequest() : 
-    m_byteMatchSetIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteByteMatchSetRequest::SerializePayload() const
 {
   JsonValue payload;

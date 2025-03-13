@@ -33,7 +33,7 @@ namespace Model
   class RouteCarOptions
   {
   public:
-    AWS_GEOROUTES_API RouteCarOptions();
+    AWS_GEOROUTES_API RouteCarOptions() = default;
     AWS_GEOROUTES_API RouteCarOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteCarOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,22 @@ namespace Model
     /**
      * <p>Engine type of the vehicle.</p>
      */
-    inline const RouteEngineType& GetEngineType() const{ return m_engineType; }
+    inline RouteEngineType GetEngineType() const { return m_engineType; }
     inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
-    inline void SetEngineType(const RouteEngineType& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
-    inline void SetEngineType(RouteEngineType&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::move(value); }
-    inline RouteCarOptions& WithEngineType(const RouteEngineType& value) { SetEngineType(value); return *this;}
-    inline RouteCarOptions& WithEngineType(RouteEngineType&& value) { SetEngineType(std::move(value)); return *this;}
+    inline void SetEngineType(RouteEngineType value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
+    inline RouteCarOptions& WithEngineType(RouteEngineType value) { SetEngineType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The vehicle License Plate.</p>
      */
-    inline const RouteVehicleLicensePlate& GetLicensePlate() const{ return m_licensePlate; }
+    inline const RouteVehicleLicensePlate& GetLicensePlate() const { return m_licensePlate; }
     inline bool LicensePlateHasBeenSet() const { return m_licensePlateHasBeenSet; }
-    inline void SetLicensePlate(const RouteVehicleLicensePlate& value) { m_licensePlateHasBeenSet = true; m_licensePlate = value; }
-    inline void SetLicensePlate(RouteVehicleLicensePlate&& value) { m_licensePlateHasBeenSet = true; m_licensePlate = std::move(value); }
-    inline RouteCarOptions& WithLicensePlate(const RouteVehicleLicensePlate& value) { SetLicensePlate(value); return *this;}
-    inline RouteCarOptions& WithLicensePlate(RouteVehicleLicensePlate&& value) { SetLicensePlate(std::move(value)); return *this;}
+    template<typename LicensePlateT = RouteVehicleLicensePlate>
+    void SetLicensePlate(LicensePlateT&& value) { m_licensePlateHasBeenSet = true; m_licensePlate = std::forward<LicensePlateT>(value); }
+    template<typename LicensePlateT = RouteVehicleLicensePlate>
+    RouteCarOptions& WithLicensePlate(LicensePlateT&& value) { SetLicensePlate(std::forward<LicensePlateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +66,7 @@ namespace Model
      * <p>Maximum speed specified.</p> <p> <b>Unit</b>: <code>KilometersPerHour</code>
      * </p>
      */
-    inline double GetMaxSpeed() const{ return m_maxSpeed; }
+    inline double GetMaxSpeed() const { return m_maxSpeed; }
     inline bool MaxSpeedHasBeenSet() const { return m_maxSpeedHasBeenSet; }
     inline void SetMaxSpeed(double value) { m_maxSpeedHasBeenSet = true; m_maxSpeed = value; }
     inline RouteCarOptions& WithMaxSpeed(double value) { SetMaxSpeed(value); return *this;}
@@ -79,23 +77,23 @@ namespace Model
      * <p>The number of occupants in the vehicle.</p> <p>Default Value: <code>1</code>
      * </p>
      */
-    inline int GetOccupancy() const{ return m_occupancy; }
+    inline int GetOccupancy() const { return m_occupancy; }
     inline bool OccupancyHasBeenSet() const { return m_occupancyHasBeenSet; }
     inline void SetOccupancy(int value) { m_occupancyHasBeenSet = true; m_occupancy = value; }
     inline RouteCarOptions& WithOccupancy(int value) { SetOccupancy(value); return *this;}
     ///@}
   private:
 
-    RouteEngineType m_engineType;
+    RouteEngineType m_engineType{RouteEngineType::NOT_SET};
     bool m_engineTypeHasBeenSet = false;
 
     RouteVehicleLicensePlate m_licensePlate;
     bool m_licensePlateHasBeenSet = false;
 
-    double m_maxSpeed;
+    double m_maxSpeed{0.0};
     bool m_maxSpeedHasBeenSet = false;
 
-    int m_occupancy;
+    int m_occupancy{0};
     bool m_occupancyHasBeenSet = false;
   };
 

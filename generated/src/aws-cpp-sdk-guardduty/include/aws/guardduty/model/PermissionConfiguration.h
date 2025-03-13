@@ -33,7 +33,7 @@ namespace Model
   class PermissionConfiguration
   {
   public:
-    AWS_GUARDDUTY_API PermissionConfiguration();
+    AWS_GUARDDUTY_API PermissionConfiguration() = default;
     AWS_GUARDDUTY_API PermissionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API PermissionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Contains information about the bucket level permissions for the S3
      * bucket.</p>
      */
-    inline const BucketLevelPermissions& GetBucketLevelPermissions() const{ return m_bucketLevelPermissions; }
+    inline const BucketLevelPermissions& GetBucketLevelPermissions() const { return m_bucketLevelPermissions; }
     inline bool BucketLevelPermissionsHasBeenSet() const { return m_bucketLevelPermissionsHasBeenSet; }
-    inline void SetBucketLevelPermissions(const BucketLevelPermissions& value) { m_bucketLevelPermissionsHasBeenSet = true; m_bucketLevelPermissions = value; }
-    inline void SetBucketLevelPermissions(BucketLevelPermissions&& value) { m_bucketLevelPermissionsHasBeenSet = true; m_bucketLevelPermissions = std::move(value); }
-    inline PermissionConfiguration& WithBucketLevelPermissions(const BucketLevelPermissions& value) { SetBucketLevelPermissions(value); return *this;}
-    inline PermissionConfiguration& WithBucketLevelPermissions(BucketLevelPermissions&& value) { SetBucketLevelPermissions(std::move(value)); return *this;}
+    template<typename BucketLevelPermissionsT = BucketLevelPermissions>
+    void SetBucketLevelPermissions(BucketLevelPermissionsT&& value) { m_bucketLevelPermissionsHasBeenSet = true; m_bucketLevelPermissions = std::forward<BucketLevelPermissionsT>(value); }
+    template<typename BucketLevelPermissionsT = BucketLevelPermissions>
+    PermissionConfiguration& WithBucketLevelPermissions(BucketLevelPermissionsT&& value) { SetBucketLevelPermissions(std::forward<BucketLevelPermissionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>Contains information about the account level permissions on the S3
      * bucket.</p>
      */
-    inline const AccountLevelPermissions& GetAccountLevelPermissions() const{ return m_accountLevelPermissions; }
+    inline const AccountLevelPermissions& GetAccountLevelPermissions() const { return m_accountLevelPermissions; }
     inline bool AccountLevelPermissionsHasBeenSet() const { return m_accountLevelPermissionsHasBeenSet; }
-    inline void SetAccountLevelPermissions(const AccountLevelPermissions& value) { m_accountLevelPermissionsHasBeenSet = true; m_accountLevelPermissions = value; }
-    inline void SetAccountLevelPermissions(AccountLevelPermissions&& value) { m_accountLevelPermissionsHasBeenSet = true; m_accountLevelPermissions = std::move(value); }
-    inline PermissionConfiguration& WithAccountLevelPermissions(const AccountLevelPermissions& value) { SetAccountLevelPermissions(value); return *this;}
-    inline PermissionConfiguration& WithAccountLevelPermissions(AccountLevelPermissions&& value) { SetAccountLevelPermissions(std::move(value)); return *this;}
+    template<typename AccountLevelPermissionsT = AccountLevelPermissions>
+    void SetAccountLevelPermissions(AccountLevelPermissionsT&& value) { m_accountLevelPermissionsHasBeenSet = true; m_accountLevelPermissions = std::forward<AccountLevelPermissionsT>(value); }
+    template<typename AccountLevelPermissionsT = AccountLevelPermissions>
+    PermissionConfiguration& WithAccountLevelPermissions(AccountLevelPermissionsT&& value) { SetAccountLevelPermissions(std::forward<AccountLevelPermissionsT>(value)); return *this;}
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class TranslationPinDataIsoFormat1
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslationPinDataIsoFormat1();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslationPinDataIsoFormat1() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslationPinDataIsoFormat1(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslationPinDataIsoFormat1& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;

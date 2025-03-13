@@ -12,11 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccessPointRequest::DeleteAccessPointRequest() : 
-    m_accessPointIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccessPointRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PluginVisualOptions::PluginVisualOptions() : 
-    m_visualPropertiesHasBeenSet(false)
-{
-}
-
 PluginVisualOptions::PluginVisualOptions(JsonView jsonValue)
-  : PluginVisualOptions()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PluginVisualOptions& PluginVisualOptions::operator =(JsonView jsonValue)
     }
     m_visualPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

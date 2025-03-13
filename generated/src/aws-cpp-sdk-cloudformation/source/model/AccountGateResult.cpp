@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-AccountGateResult::AccountGateResult() : 
-    m_status(AccountGateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 AccountGateResult::AccountGateResult(const XmlNode& xmlNode)
-  : AccountGateResult()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ AccountGateResult& AccountGateResult::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = AccountGateStatusMapper::GetAccountGateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = AccountGateStatusMapper::GetAccountGateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
+       m_statusReasonHasBeenSet = true;
     }
   }
 

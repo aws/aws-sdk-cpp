@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSessionEmbedUrlRequest::GetSessionEmbedUrlRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_entryPointHasBeenSet(false),
-    m_sessionLifetimeInMinutes(0),
-    m_sessionLifetimeInMinutesHasBeenSet(false),
-    m_userArnHasBeenSet(false)
-{
-}
-
 Aws::String GetSessionEmbedUrlRequest::SerializePayload() const
 {
   return {};

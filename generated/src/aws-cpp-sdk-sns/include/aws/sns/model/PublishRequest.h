@@ -26,7 +26,7 @@ namespace Model
   class PublishRequest : public SNSRequest
   {
   public:
-    AWS_SNS_API PublishRequest();
+    AWS_SNS_API PublishRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * <code>TopicArn</code> parameter, you must specify a value for the
      * <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-    inline PublishRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline PublishRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline PublishRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    PublishRequest& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
      * parameters.</p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-    inline PublishRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline PublishRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline PublishRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    PublishRequest& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * parameter, you must specify a value for the <code>TargetArn</code> or
      * <code>TopicArn</code> parameters.</p>
      */
-    inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+    inline const Aws::String& GetPhoneNumber() const { return m_phoneNumber; }
     inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
-    inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
-    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
-    inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
-    inline PublishRequest& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
-    inline PublishRequest& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
-    inline PublishRequest& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
+    template<typename PhoneNumberT = Aws::String>
+    void SetPhoneNumber(PhoneNumberT&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::forward<PhoneNumberT>(value); }
+    template<typename PhoneNumberT = Aws::String>
+    PublishRequest& WithPhoneNumber(PhoneNumberT&& value) { SetPhoneNumber(std::forward<PhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +115,12 @@ namespace Model
      * or validate any key or value in the message will cause the <code>Publish</code>
      * call to return an error (no partial delivery).</p> </li> </ul>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline PublishRequest& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline PublishRequest& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline PublishRequest& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    PublishRequest& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,14 +131,12 @@ namespace Model
      * Subjects must be UTF-8 text with no line breaks or control characters, and less
      * than 100 characters long.</p>
      */
-    inline const Aws::String& GetSubject() const{ return m_subject; }
+    inline const Aws::String& GetSubject() const { return m_subject; }
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-    inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
-    inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
-    inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
-    inline PublishRequest& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
-    inline PublishRequest& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
-    inline PublishRequest& WithSubject(const char* value) { SetSubject(value); return *this;}
+    template<typename SubjectT = Aws::String>
+    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
+    template<typename SubjectT = Aws::String>
+    PublishRequest& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,32 +152,28 @@ namespace Model
      * want to send to a specific transport protocol (e.g., "http").</p> <p>Valid
      * value: <code>json</code> </p>
      */
-    inline const Aws::String& GetMessageStructure() const{ return m_messageStructure; }
+    inline const Aws::String& GetMessageStructure() const { return m_messageStructure; }
     inline bool MessageStructureHasBeenSet() const { return m_messageStructureHasBeenSet; }
-    inline void SetMessageStructure(const Aws::String& value) { m_messageStructureHasBeenSet = true; m_messageStructure = value; }
-    inline void SetMessageStructure(Aws::String&& value) { m_messageStructureHasBeenSet = true; m_messageStructure = std::move(value); }
-    inline void SetMessageStructure(const char* value) { m_messageStructureHasBeenSet = true; m_messageStructure.assign(value); }
-    inline PublishRequest& WithMessageStructure(const Aws::String& value) { SetMessageStructure(value); return *this;}
-    inline PublishRequest& WithMessageStructure(Aws::String&& value) { SetMessageStructure(std::move(value)); return *this;}
-    inline PublishRequest& WithMessageStructure(const char* value) { SetMessageStructure(value); return *this;}
+    template<typename MessageStructureT = Aws::String>
+    void SetMessageStructure(MessageStructureT&& value) { m_messageStructureHasBeenSet = true; m_messageStructure = std::forward<MessageStructureT>(value); }
+    template<typename MessageStructureT = Aws::String>
+    PublishRequest& WithMessageStructure(MessageStructureT&& value) { SetMessageStructure(std::forward<MessageStructureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Message attributes for Publish action.</p>
      */
-    inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const{ return m_messageAttributes; }
+    inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const { return m_messageAttributes; }
     inline bool MessageAttributesHasBeenSet() const { return m_messageAttributesHasBeenSet; }
-    inline void SetMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
-    inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = std::move(value); }
-    inline PublishRequest& WithMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { SetMessageAttributes(value); return *this;}
-    inline PublishRequest& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(std::move(value)); return *this;}
-    inline PublishRequest& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
-    inline PublishRequest& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), value); return *this; }
-    inline PublishRequest& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
-    inline PublishRequest& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline PublishRequest& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
-    inline PublishRequest& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
+    template<typename MessageAttributesT = Aws::Map<Aws::String, MessageAttributeValue>>
+    void SetMessageAttributes(MessageAttributesT&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = std::forward<MessageAttributesT>(value); }
+    template<typename MessageAttributesT = Aws::Map<Aws::String, MessageAttributeValue>>
+    PublishRequest& WithMessageAttributes(MessageAttributesT&& value) { SetMessageAttributes(std::forward<MessageAttributesT>(value)); return *this;}
+    template<typename MessageAttributesKeyT = Aws::String, typename MessageAttributesValueT = MessageAttributeValue>
+    PublishRequest& AddMessageAttributes(MessageAttributesKeyT&& key, MessageAttributesValueT&& value) {
+      m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::forward<MessageAttributesKeyT>(key), std::forward<MessageAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -227,14 +213,12 @@ namespace Model
      * duplicates, within the deduplication scope and interval, and only one copy of
      * the message is delivered.</p> </li> </ul>
      */
-    inline const Aws::String& GetMessageDeduplicationId() const{ return m_messageDeduplicationId; }
+    inline const Aws::String& GetMessageDeduplicationId() const { return m_messageDeduplicationId; }
     inline bool MessageDeduplicationIdHasBeenSet() const { return m_messageDeduplicationIdHasBeenSet; }
-    inline void SetMessageDeduplicationId(const Aws::String& value) { m_messageDeduplicationIdHasBeenSet = true; m_messageDeduplicationId = value; }
-    inline void SetMessageDeduplicationId(Aws::String&& value) { m_messageDeduplicationIdHasBeenSet = true; m_messageDeduplicationId = std::move(value); }
-    inline void SetMessageDeduplicationId(const char* value) { m_messageDeduplicationIdHasBeenSet = true; m_messageDeduplicationId.assign(value); }
-    inline PublishRequest& WithMessageDeduplicationId(const Aws::String& value) { SetMessageDeduplicationId(value); return *this;}
-    inline PublishRequest& WithMessageDeduplicationId(Aws::String&& value) { SetMessageDeduplicationId(std::move(value)); return *this;}
-    inline PublishRequest& WithMessageDeduplicationId(const char* value) { SetMessageDeduplicationId(value); return *this;}
+    template<typename MessageDeduplicationIdT = Aws::String>
+    void SetMessageDeduplicationId(MessageDeduplicationIdT&& value) { m_messageDeduplicationIdHasBeenSet = true; m_messageDeduplicationId = std::forward<MessageDeduplicationIdT>(value); }
+    template<typename MessageDeduplicationIdT = Aws::String>
+    PublishRequest& WithMessageDeduplicationId(MessageDeduplicationIdT&& value) { SetMessageDeduplicationId(std::forward<MessageDeduplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -249,14 +233,12 @@ namespace Model
      * be processed out of order). Every message must include a
      * <code>MessageGroupId</code>.</p>
      */
-    inline const Aws::String& GetMessageGroupId() const{ return m_messageGroupId; }
+    inline const Aws::String& GetMessageGroupId() const { return m_messageGroupId; }
     inline bool MessageGroupIdHasBeenSet() const { return m_messageGroupIdHasBeenSet; }
-    inline void SetMessageGroupId(const Aws::String& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = value; }
-    inline void SetMessageGroupId(Aws::String&& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = std::move(value); }
-    inline void SetMessageGroupId(const char* value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId.assign(value); }
-    inline PublishRequest& WithMessageGroupId(const Aws::String& value) { SetMessageGroupId(value); return *this;}
-    inline PublishRequest& WithMessageGroupId(Aws::String&& value) { SetMessageGroupId(std::move(value)); return *this;}
-    inline PublishRequest& WithMessageGroupId(const char* value) { SetMessageGroupId(value); return *this;}
+    template<typename MessageGroupIdT = Aws::String>
+    void SetMessageGroupId(MessageGroupIdT&& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = std::forward<MessageGroupIdT>(value); }
+    template<typename MessageGroupIdT = Aws::String>
+    PublishRequest& WithMessageGroupId(MessageGroupIdT&& value) { SetMessageGroupId(std::forward<MessageGroupIdT>(value)); return *this;}
     ///@}
   private:
 

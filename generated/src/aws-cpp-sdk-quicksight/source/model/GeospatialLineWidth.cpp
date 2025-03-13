@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialLineWidth::GeospatialLineWidth() : 
-    m_lineWidth(0.0),
-    m_lineWidthHasBeenSet(false)
-{
-}
-
 GeospatialLineWidth::GeospatialLineWidth(JsonView jsonValue)
-  : GeospatialLineWidth()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GeospatialLineWidth& GeospatialLineWidth::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LineWidth"))
   {
     m_lineWidth = jsonValue.GetDouble("LineWidth");
-
     m_lineWidthHasBeenSet = true;
   }
-
   return *this;
 }
 

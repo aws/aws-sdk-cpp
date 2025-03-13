@@ -33,7 +33,7 @@ namespace Model
   class EventFilter
   {
   public:
-    AWS_PINPOINT_API EventFilter();
+    AWS_PINPOINT_API EventFilter() = default;
     AWS_PINPOINT_API EventFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API EventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The dimensions for the event filter to use for the campaign or the journey
      * activity.</p>
      */
-    inline const EventDimensions& GetDimensions() const{ return m_dimensions; }
+    inline const EventDimensions& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const EventDimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(EventDimensions&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline EventFilter& WithDimensions(const EventDimensions& value) { SetDimensions(value); return *this;}
-    inline EventFilter& WithDimensions(EventDimensions&& value) { SetDimensions(std::move(value)); return *this;}
+    template<typename DimensionsT = EventDimensions>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = EventDimensions>
+    EventFilter& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +60,17 @@ namespace Model
      * performs the activity when an endpoint event (<link 
      * linkend="apps-application-id-events">Events resource</link>) occurs.</p>
      */
-    inline const FilterType& GetFilterType() const{ return m_filterType; }
+    inline FilterType GetFilterType() const { return m_filterType; }
     inline bool FilterTypeHasBeenSet() const { return m_filterTypeHasBeenSet; }
-    inline void SetFilterType(const FilterType& value) { m_filterTypeHasBeenSet = true; m_filterType = value; }
-    inline void SetFilterType(FilterType&& value) { m_filterTypeHasBeenSet = true; m_filterType = std::move(value); }
-    inline EventFilter& WithFilterType(const FilterType& value) { SetFilterType(value); return *this;}
-    inline EventFilter& WithFilterType(FilterType&& value) { SetFilterType(std::move(value)); return *this;}
+    inline void SetFilterType(FilterType value) { m_filterTypeHasBeenSet = true; m_filterType = value; }
+    inline EventFilter& WithFilterType(FilterType value) { SetFilterType(value); return *this;}
     ///@}
   private:
 
     EventDimensions m_dimensions;
     bool m_dimensionsHasBeenSet = false;
 
-    FilterType m_filterType;
+    FilterType m_filterType{FilterType::NOT_SET};
     bool m_filterTypeHasBeenSet = false;
   };
 

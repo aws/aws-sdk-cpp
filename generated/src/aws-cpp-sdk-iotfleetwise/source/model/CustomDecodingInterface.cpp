@@ -18,13 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-CustomDecodingInterface::CustomDecodingInterface() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 CustomDecodingInterface::CustomDecodingInterface(JsonView jsonValue)
-  : CustomDecodingInterface()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomDecodingInterface& CustomDecodingInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

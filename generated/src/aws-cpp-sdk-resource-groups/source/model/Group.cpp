@@ -18,20 +18,7 @@ namespace ResourceGroups
 namespace Model
 {
 
-Group::Group() : 
-    m_groupArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_criticality(0),
-    m_criticalityHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_applicationTagHasBeenSet(false)
-{
-}
-
 Group::Group(JsonView jsonValue)
-  : Group()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ Group& Group::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupArn"))
   {
     m_groupArn = jsonValue.GetString("GroupArn");
-
     m_groupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Criticality"))
   {
     m_criticality = jsonValue.GetInteger("Criticality");
-
     m_criticalityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationTag"))
   {
     Aws::Map<Aws::String, JsonView> applicationTagJsonMap = jsonValue.GetObject("ApplicationTag").GetAllObjects();
@@ -89,7 +64,6 @@ Group& Group::operator =(JsonView jsonValue)
     }
     m_applicationTagHasBeenSet = true;
   }
-
   return *this;
 }
 

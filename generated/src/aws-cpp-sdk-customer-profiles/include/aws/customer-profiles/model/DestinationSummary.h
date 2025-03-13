@@ -34,7 +34,7 @@ namespace Model
   class DestinationSummary
   {
   public:
-    AWS_CUSTOMERPROFILES_API DestinationSummary();
+    AWS_CUSTOMERPROFILES_API DestinationSummary() = default;
     AWS_CUSTOMERPROFILES_API DestinationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API DestinationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,48 +45,44 @@ namespace Model
      * <p>The StreamARN of the destination to deliver profile events to. For example,
      * arn:aws:kinesis:region:account-id:stream/stream-name.</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline DestinationSummary& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline DestinationSummary& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline DestinationSummary& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    DestinationSummary& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of enabling the Kinesis stream as a destination for export.</p>
      */
-    inline const EventStreamDestinationStatus& GetStatus() const{ return m_status; }
+    inline EventStreamDestinationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const EventStreamDestinationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(EventStreamDestinationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DestinationSummary& WithStatus(const EventStreamDestinationStatus& value) { SetStatus(value); return *this;}
-    inline DestinationSummary& WithStatus(EventStreamDestinationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(EventStreamDestinationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DestinationSummary& WithStatus(EventStreamDestinationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetUnhealthySince() const{ return m_unhealthySince; }
+    inline const Aws::Utils::DateTime& GetUnhealthySince() const { return m_unhealthySince; }
     inline bool UnhealthySinceHasBeenSet() const { return m_unhealthySinceHasBeenSet; }
-    inline void SetUnhealthySince(const Aws::Utils::DateTime& value) { m_unhealthySinceHasBeenSet = true; m_unhealthySince = value; }
-    inline void SetUnhealthySince(Aws::Utils::DateTime&& value) { m_unhealthySinceHasBeenSet = true; m_unhealthySince = std::move(value); }
-    inline DestinationSummary& WithUnhealthySince(const Aws::Utils::DateTime& value) { SetUnhealthySince(value); return *this;}
-    inline DestinationSummary& WithUnhealthySince(Aws::Utils::DateTime&& value) { SetUnhealthySince(std::move(value)); return *this;}
+    template<typename UnhealthySinceT = Aws::Utils::DateTime>
+    void SetUnhealthySince(UnhealthySinceT&& value) { m_unhealthySinceHasBeenSet = true; m_unhealthySince = std::forward<UnhealthySinceT>(value); }
+    template<typename UnhealthySinceT = Aws::Utils::DateTime>
+    DestinationSummary& WithUnhealthySince(UnhealthySinceT&& value) { SetUnhealthySince(std::forward<UnhealthySinceT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_uri;
     bool m_uriHasBeenSet = false;
 
-    EventStreamDestinationStatus m_status;
+    EventStreamDestinationStatus m_status{EventStreamDestinationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_unhealthySince;
+    Aws::Utils::DateTime m_unhealthySince{};
     bool m_unhealthySinceHasBeenSet = false;
   };
 

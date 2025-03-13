@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessLogKinesisDataFirehoseDestinationOptions::VerifiedAccessLogKinesisDataFirehoseDestinationOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_deliveryStreamHasBeenSet(false)
-{
-}
-
 VerifiedAccessLogKinesisDataFirehoseDestinationOptions::VerifiedAccessLogKinesisDataFirehoseDestinationOptions(const XmlNode& xmlNode)
-  : VerifiedAccessLogKinesisDataFirehoseDestinationOptions()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ VerifiedAccessLogKinesisDataFirehoseDestinationOptions& VerifiedAccessLogKinesis
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode deliveryStreamNode = resultNode.FirstChild("DeliveryStream");
     if(!deliveryStreamNode.IsNull())
     {
       m_deliveryStream = Aws::Utils::Xml::DecodeEscapedXmlText(deliveryStreamNode.GetText());
       m_deliveryStreamHasBeenSet = true;
+       m_deliveryStreamHasBeenSet = true;
     }
   }
 

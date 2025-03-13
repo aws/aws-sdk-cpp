@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-StepDetail::StepDetail() : 
-    m_stepConfigHasBeenSet(false),
-    m_executionStatusDetailHasBeenSet(false)
-{
-}
-
 StepDetail::StepDetail(JsonView jsonValue)
-  : StepDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StepDetail& StepDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StepConfig"))
   {
     m_stepConfig = jsonValue.GetObject("StepConfig");
-
     m_stepConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionStatusDetail"))
   {
     m_executionStatusDetail = jsonValue.GetObject("ExecutionStatusDetail");
-
     m_executionStatusDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

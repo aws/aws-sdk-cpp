@@ -18,16 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-RegistrationOutput::RegistrationOutput() : 
-    m_messageHasBeenSet(false),
-    m_resultHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 RegistrationOutput::RegistrationOutput(JsonView jsonValue)
-  : RegistrationOutput()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RegistrationOutput& RegistrationOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("result"))
   {
     m_result = jsonValue.GetString("result");
-
     m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,10 +12,6 @@ using namespace Aws::ServiceQuotas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateServiceQuotaTemplateRequest::AssociateServiceQuotaTemplateRequest()
-{
-}
-
 Aws::String AssociateServiceQuotaTemplateRequest::SerializePayload() const
 {
   return "{}";

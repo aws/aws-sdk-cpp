@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelJournalKinesisStreamResult::CancelJournalKinesisStreamResult()
-{
-}
-
 CancelJournalKinesisStreamResult::CancelJournalKinesisStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CancelJournalKinesisStreamResult& CancelJournalKinesisStreamResult::operator =(c
   if(jsonValue.ValueExists("StreamId"))
   {
     m_streamId = jsonValue.GetString("StreamId");
-
+    m_streamIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

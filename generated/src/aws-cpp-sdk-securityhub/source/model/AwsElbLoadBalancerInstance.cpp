@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElbLoadBalancerInstance::AwsElbLoadBalancerInstance() : 
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 AwsElbLoadBalancerInstance::AwsElbLoadBalancerInstance(JsonView jsonValue)
-  : AwsElbLoadBalancerInstance()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsElbLoadBalancerInstance& AwsElbLoadBalancerInstance::operator =(JsonView json
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

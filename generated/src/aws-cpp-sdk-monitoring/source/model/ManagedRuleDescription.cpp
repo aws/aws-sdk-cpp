@@ -20,15 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-ManagedRuleDescription::ManagedRuleDescription() : 
-    m_templateNameHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_ruleStateHasBeenSet(false)
-{
-}
-
 ManagedRuleDescription::ManagedRuleDescription(const XmlNode& xmlNode)
-  : ManagedRuleDescription()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ManagedRuleDescription& ManagedRuleDescription::operator =(const XmlNode& xmlNod
     {
       m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
+       m_templateNameHasBeenSet = true;
     }
     XmlNode resourceARNNode = resultNode.FirstChild("ResourceARN");
     if(!resourceARNNode.IsNull())
     {
       m_resourceARN = Aws::Utils::Xml::DecodeEscapedXmlText(resourceARNNode.GetText());
       m_resourceARNHasBeenSet = true;
+       m_resourceARNHasBeenSet = true;
     }
     XmlNode ruleStateNode = resultNode.FirstChild("RuleState");
     if(!ruleStateNode.IsNull())
     {
       m_ruleState = ruleStateNode;
       m_ruleStateHasBeenSet = true;
+       m_ruleStateHasBeenSet = true;
     }
   }
 

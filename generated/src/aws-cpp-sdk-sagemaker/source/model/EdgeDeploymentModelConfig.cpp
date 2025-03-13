@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EdgeDeploymentModelConfig::EdgeDeploymentModelConfig() : 
-    m_modelHandleHasBeenSet(false),
-    m_edgePackagingJobNameHasBeenSet(false)
-{
-}
-
 EdgeDeploymentModelConfig::EdgeDeploymentModelConfig(JsonView jsonValue)
-  : EdgeDeploymentModelConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EdgeDeploymentModelConfig& EdgeDeploymentModelConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ModelHandle"))
   {
     m_modelHandle = jsonValue.GetString("ModelHandle");
-
     m_modelHandleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgePackagingJobName"))
   {
     m_edgePackagingJobName = jsonValue.GetString("EdgePackagingJobName");
-
     m_edgePackagingJobNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,16 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-SslPolicy::SslPolicy() : 
-    m_sslProtocolsHasBeenSet(false),
-    m_ciphersHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_supportedLoadBalancerTypesHasBeenSet(false)
-{
-}
-
 SslPolicy::SslPolicy(const XmlNode& xmlNode)
-  : SslPolicy()
 {
   *this = xmlNode;
 }
@@ -44,43 +35,47 @@ SslPolicy& SslPolicy::operator =(const XmlNode& xmlNode)
     if(!sslProtocolsNode.IsNull())
     {
       XmlNode sslProtocolsMember = sslProtocolsNode.FirstChild("member");
+      m_sslProtocolsHasBeenSet = !sslProtocolsMember.IsNull();
       while(!sslProtocolsMember.IsNull())
       {
         m_sslProtocols.push_back(sslProtocolsMember.GetText());
         sslProtocolsMember = sslProtocolsMember.NextNode("member");
       }
 
-      m_sslProtocolsHasBeenSet = true;
+       m_sslProtocolsHasBeenSet = true;
     }
     XmlNode ciphersNode = resultNode.FirstChild("Ciphers");
     if(!ciphersNode.IsNull())
     {
       XmlNode ciphersMember = ciphersNode.FirstChild("member");
+      m_ciphersHasBeenSet = !ciphersMember.IsNull();
       while(!ciphersMember.IsNull())
       {
         m_ciphers.push_back(ciphersMember);
         ciphersMember = ciphersMember.NextNode("member");
       }
 
-      m_ciphersHasBeenSet = true;
+       m_ciphersHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode supportedLoadBalancerTypesNode = resultNode.FirstChild("SupportedLoadBalancerTypes");
     if(!supportedLoadBalancerTypesNode.IsNull())
     {
       XmlNode supportedLoadBalancerTypesMember = supportedLoadBalancerTypesNode.FirstChild("member");
+      m_supportedLoadBalancerTypesHasBeenSet = !supportedLoadBalancerTypesMember.IsNull();
       while(!supportedLoadBalancerTypesMember.IsNull())
       {
         m_supportedLoadBalancerTypes.push_back(supportedLoadBalancerTypesMember.GetText());
         supportedLoadBalancerTypesMember = supportedLoadBalancerTypesMember.NextNode("member");
       }
 
-      m_supportedLoadBalancerTypesHasBeenSet = true;
+       m_supportedLoadBalancerTypesHasBeenSet = true;
     }
   }
 

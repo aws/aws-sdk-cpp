@@ -10,11 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-RollbackInstanceRefreshRequest::RollbackInstanceRefreshRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String RollbackInstanceRefreshRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,15 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-PixelAnomaly::PixelAnomaly() : 
-    m_totalPercentageArea(0.0),
-    m_totalPercentageAreaHasBeenSet(false),
-    m_colorHasBeenSet(false)
-{
-}
-
 PixelAnomaly::PixelAnomaly(JsonView jsonValue)
-  : PixelAnomaly()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PixelAnomaly& PixelAnomaly::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TotalPercentageArea"))
   {
     m_totalPercentageArea = jsonValue.GetDouble("TotalPercentageArea");
-
     m_totalPercentageAreaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   return *this;
 }
 

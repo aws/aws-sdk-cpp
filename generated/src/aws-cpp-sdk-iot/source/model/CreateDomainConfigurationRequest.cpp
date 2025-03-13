@@ -12,25 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDomainConfigurationRequest::CreateDomainConfigurationRequest() : 
-    m_domainConfigurationNameHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_serverCertificateArnsHasBeenSet(false),
-    m_validationCertificateArnHasBeenSet(false),
-    m_authorizerConfigHasBeenSet(false),
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_tlsConfigHasBeenSet(false),
-    m_serverCertificateConfigHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_applicationProtocol(ApplicationProtocol::NOT_SET),
-    m_applicationProtocolHasBeenSet(false),
-    m_clientCertificateConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateDomainConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

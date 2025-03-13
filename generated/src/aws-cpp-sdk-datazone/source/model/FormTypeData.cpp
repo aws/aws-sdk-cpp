@@ -18,25 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-FormTypeData::FormTypeData() : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_importsHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_originDomainIdHasBeenSet(false),
-    m_originProjectIdHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false),
-    m_revisionHasBeenSet(false),
-    m_status(FormTypeStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 FormTypeData::FormTypeData(JsonView jsonValue)
-  : FormTypeData()
 {
   *this = jsonValue;
 }
@@ -46,31 +28,23 @@ FormTypeData& FormTypeData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imports"))
   {
     Aws::Utils::Array<JsonView> importsJsonList = jsonValue.GetArray("imports");
@@ -80,56 +54,41 @@ FormTypeData& FormTypeData::operator =(JsonView jsonValue)
     }
     m_importsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("model"))
   {
     m_model = jsonValue.GetObject("model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originDomainId"))
   {
     m_originDomainId = jsonValue.GetString("originDomainId");
-
     m_originDomainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originProjectId"))
   {
     m_originProjectId = jsonValue.GetString("originProjectId");
-
     m_originProjectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owningProjectId"))
   {
     m_owningProjectId = jsonValue.GetString("owningProjectId");
-
     m_owningProjectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetString("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FormTypeStatusMapper::GetFormTypeStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

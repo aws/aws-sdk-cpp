@@ -10,55 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-RestoreDBClusterFromSnapshotRequest::RestoreDBClusterFromSnapshotRequest() : 
-    m_availabilityZonesHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_snapshotIdentifierHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_dBSubnetGroupNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_enableIAMDatabaseAuthentication(false),
-    m_enableIAMDatabaseAuthenticationHasBeenSet(false),
-    m_backtrackWindow(0),
-    m_backtrackWindowHasBeenSet(false),
-    m_enableCloudwatchLogsExportsHasBeenSet(false),
-    m_engineModeHasBeenSet(false),
-    m_scalingConfigurationHasBeenSet(false),
-    m_dBClusterParameterGroupNameHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_domainIAMRoleNameHasBeenSet(false),
-    m_dBClusterInstanceClassHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_serverlessV2ScalingConfigurationHasBeenSet(false),
-    m_networkTypeHasBeenSet(false),
-    m_rdsCustomClusterConfigurationHasBeenSet(false),
-    m_monitoringInterval(0),
-    m_monitoringIntervalHasBeenSet(false),
-    m_monitoringRoleArnHasBeenSet(false),
-    m_enablePerformanceInsights(false),
-    m_enablePerformanceInsightsHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_performanceInsightsRetentionPeriod(0),
-    m_performanceInsightsRetentionPeriodHasBeenSet(false),
-    m_engineLifecycleSupportHasBeenSet(false)
-{
-}
-
 Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

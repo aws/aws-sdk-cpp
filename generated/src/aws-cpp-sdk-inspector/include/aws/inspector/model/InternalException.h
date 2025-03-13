@@ -31,7 +31,7 @@ namespace Model
   class InternalException
   {
   public:
-    AWS_INSPECTOR_API InternalException();
+    AWS_INSPECTOR_API InternalException() = default;
     AWS_INSPECTOR_API InternalException(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API InternalException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>Details of the exception error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InternalException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InternalException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InternalException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InternalException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>You can immediately retry your request.</p>
      */
-    inline bool GetCanRetry() const{ return m_canRetry; }
+    inline bool GetCanRetry() const { return m_canRetry; }
     inline bool CanRetryHasBeenSet() const { return m_canRetryHasBeenSet; }
     inline void SetCanRetry(bool value) { m_canRetryHasBeenSet = true; m_canRetry = value; }
     inline InternalException& WithCanRetry(bool value) { SetCanRetry(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    bool m_canRetry;
+    bool m_canRetry{false};
     bool m_canRetryHasBeenSet = false;
   };
 

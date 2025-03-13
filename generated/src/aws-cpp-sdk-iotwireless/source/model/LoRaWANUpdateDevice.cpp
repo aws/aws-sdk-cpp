@@ -18,17 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANUpdateDevice::LoRaWANUpdateDevice() : 
-    m_deviceProfileIdHasBeenSet(false),
-    m_serviceProfileIdHasBeenSet(false),
-    m_abpV1_1HasBeenSet(false),
-    m_abpV1_0_xHasBeenSet(false),
-    m_fPortsHasBeenSet(false)
-{
-}
-
 LoRaWANUpdateDevice::LoRaWANUpdateDevice(JsonView jsonValue)
-  : LoRaWANUpdateDevice()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ LoRaWANUpdateDevice& LoRaWANUpdateDevice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceProfileId"))
   {
     m_deviceProfileId = jsonValue.GetString("DeviceProfileId");
-
     m_deviceProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceProfileId"))
   {
     m_serviceProfileId = jsonValue.GetString("ServiceProfileId");
-
     m_serviceProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AbpV1_1"))
   {
     m_abpV1_1 = jsonValue.GetObject("AbpV1_1");
-
     m_abpV1_1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AbpV1_0_x"))
   {
     m_abpV1_0_x = jsonValue.GetObject("AbpV1_0_x");
-
     m_abpV1_0_xHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FPorts"))
   {
     m_fPorts = jsonValue.GetObject("FPorts");
-
     m_fPortsHasBeenSet = true;
   }
-
   return *this;
 }
 

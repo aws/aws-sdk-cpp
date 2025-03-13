@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesThinClient::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEnvironmentRequest::GetEnvironmentRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetEnvironmentRequest::SerializePayload() const
 {
   return {};

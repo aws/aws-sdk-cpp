@@ -18,25 +18,7 @@ namespace DAX
 namespace Model
 {
 
-Parameter::Parameter() : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterType(ParameterType::NOT_SET),
-    m_parameterTypeHasBeenSet(false),
-    m_parameterValueHasBeenSet(false),
-    m_nodeTypeSpecificValuesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_isModifiable(IsModifiable::NOT_SET),
-    m_isModifiableHasBeenSet(false),
-    m_changeType(ChangeType::NOT_SET),
-    m_changeTypeHasBeenSet(false)
-{
-}
-
 Parameter::Parameter(JsonView jsonValue)
-  : Parameter()
 {
   *this = jsonValue;
 }
@@ -46,24 +28,18 @@ Parameter& Parameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ParameterName"))
   {
     m_parameterName = jsonValue.GetString("ParameterName");
-
     m_parameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterType"))
   {
     m_parameterType = ParameterTypeMapper::GetParameterTypeForName(jsonValue.GetString("ParameterType"));
-
     m_parameterTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterValue"))
   {
     m_parameterValue = jsonValue.GetString("ParameterValue");
-
     m_parameterValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeTypeSpecificValues"))
   {
     Aws::Utils::Array<JsonView> nodeTypeSpecificValuesJsonList = jsonValue.GetArray("NodeTypeSpecificValues");
@@ -73,49 +49,36 @@ Parameter& Parameter::operator =(JsonView jsonValue)
     }
     m_nodeTypeSpecificValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataType"))
   {
     m_dataType = jsonValue.GetString("DataType");
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedValues"))
   {
     m_allowedValues = jsonValue.GetString("AllowedValues");
-
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsModifiable"))
   {
     m_isModifiable = IsModifiableMapper::GetIsModifiableForName(jsonValue.GetString("IsModifiable"));
-
     m_isModifiableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeType"))
   {
     m_changeType = ChangeTypeMapper::GetChangeTypeForName(jsonValue.GetString("ChangeType"));
-
     m_changeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

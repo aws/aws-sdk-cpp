@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateNotificationConfigurationResult::CreateNotificationConfigurationResult() : 
-    m_status(NotificationConfigurationStatus::NOT_SET)
-{
-}
-
 CreateNotificationConfigurationResult::CreateNotificationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateNotificationConfigurationResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CreateNotificationConfigurationResult& CreateNotificationConfigurationResult::op
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = NotificationConfigurationStatusMapper::GetNotificationConfigurationStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

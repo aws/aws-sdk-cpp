@@ -31,7 +31,7 @@ namespace Model
   class AwsKinesisStreamStreamEncryptionDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsKinesisStreamStreamEncryptionDetails();
+    AWS_SECURITYHUB_API AwsKinesisStreamStreamEncryptionDetails() = default;
     AWS_SECURITYHUB_API AwsKinesisStreamStreamEncryptionDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsKinesisStreamStreamEncryptionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The encryption type to use. </p>
      */
-    inline const Aws::String& GetEncryptionType() const{ return m_encryptionType; }
+    inline const Aws::String& GetEncryptionType() const { return m_encryptionType; }
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
-    inline void SetEncryptionType(const Aws::String& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
-    inline void SetEncryptionType(Aws::String&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
-    inline void SetEncryptionType(const char* value) { m_encryptionTypeHasBeenSet = true; m_encryptionType.assign(value); }
-    inline AwsKinesisStreamStreamEncryptionDetails& WithEncryptionType(const Aws::String& value) { SetEncryptionType(value); return *this;}
-    inline AwsKinesisStreamStreamEncryptionDetails& WithEncryptionType(Aws::String&& value) { SetEncryptionType(std::move(value)); return *this;}
-    inline AwsKinesisStreamStreamEncryptionDetails& WithEncryptionType(const char* value) { SetEncryptionType(value); return *this;}
+    template<typename EncryptionTypeT = Aws::String>
+    void SetEncryptionType(EncryptionTypeT&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::forward<EncryptionTypeT>(value); }
+    template<typename EncryptionTypeT = Aws::String>
+    AwsKinesisStreamStreamEncryptionDetails& WithEncryptionType(EncryptionTypeT&& value) { SetEncryptionType(std::forward<EncryptionTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The globally unique identifier for the customer-managed KMS key to use for
      * encryption. </p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline AwsKinesisStreamStreamEncryptionDetails& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline AwsKinesisStreamStreamEncryptionDetails& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline AwsKinesisStreamStreamEncryptionDetails& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    AwsKinesisStreamStreamEncryptionDetails& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
   private:
 

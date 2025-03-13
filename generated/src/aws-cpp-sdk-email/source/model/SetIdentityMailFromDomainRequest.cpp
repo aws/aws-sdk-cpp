@@ -10,14 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-SetIdentityMailFromDomainRequest::SetIdentityMailFromDomainRequest() : 
-    m_identityHasBeenSet(false),
-    m_mailFromDomainHasBeenSet(false),
-    m_behaviorOnMXFailure(BehaviorOnMXFailure::NOT_SET),
-    m_behaviorOnMXFailureHasBeenSet(false)
-{
-}
-
 Aws::String SetIdentityMailFromDomainRequest::SerializePayload() const
 {
   Aws::StringStream ss;

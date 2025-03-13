@@ -12,15 +12,6 @@ using namespace Aws::KinesisAnalyticsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DiscoverInputSchemaRequest::DiscoverInputSchemaRequest() : 
-    m_resourceARNHasBeenSet(false),
-    m_serviceExecutionRoleHasBeenSet(false),
-    m_inputStartingPositionConfigurationHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_inputProcessingConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String DiscoverInputSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

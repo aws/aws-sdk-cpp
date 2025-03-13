@@ -21,7 +21,7 @@ namespace Model
   class DeleteLicenseRequest : public LicenseManagerRequest
   {
   public:
-    AWS_LICENSEMANAGER_API DeleteLicenseRequest();
+    AWS_LICENSEMANAGER_API DeleteLicenseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the license.</p>
      */
-    inline const Aws::String& GetLicenseArn() const{ return m_licenseArn; }
+    inline const Aws::String& GetLicenseArn() const { return m_licenseArn; }
     inline bool LicenseArnHasBeenSet() const { return m_licenseArnHasBeenSet; }
-    inline void SetLicenseArn(const Aws::String& value) { m_licenseArnHasBeenSet = true; m_licenseArn = value; }
-    inline void SetLicenseArn(Aws::String&& value) { m_licenseArnHasBeenSet = true; m_licenseArn = std::move(value); }
-    inline void SetLicenseArn(const char* value) { m_licenseArnHasBeenSet = true; m_licenseArn.assign(value); }
-    inline DeleteLicenseRequest& WithLicenseArn(const Aws::String& value) { SetLicenseArn(value); return *this;}
-    inline DeleteLicenseRequest& WithLicenseArn(Aws::String&& value) { SetLicenseArn(std::move(value)); return *this;}
-    inline DeleteLicenseRequest& WithLicenseArn(const char* value) { SetLicenseArn(value); return *this;}
+    template<typename LicenseArnT = Aws::String>
+    void SetLicenseArn(LicenseArnT&& value) { m_licenseArnHasBeenSet = true; m_licenseArn = std::forward<LicenseArnT>(value); }
+    template<typename LicenseArnT = Aws::String>
+    DeleteLicenseRequest& WithLicenseArn(LicenseArnT&& value) { SetLicenseArn(std::forward<LicenseArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Current version of the license.</p>
      */
-    inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
+    inline const Aws::String& GetSourceVersion() const { return m_sourceVersion; }
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
-    inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
-    inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
-    inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
-    inline DeleteLicenseRequest& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
-    inline DeleteLicenseRequest& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
-    inline DeleteLicenseRequest& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
+    template<typename SourceVersionT = Aws::String>
+    void SetSourceVersion(SourceVersionT&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::forward<SourceVersionT>(value); }
+    template<typename SourceVersionT = Aws::String>
+    DeleteLicenseRequest& WithSourceVersion(SourceVersionT&& value) { SetSourceVersion(std::forward<SourceVersionT>(value)); return *this;}
     ///@}
   private:
 

@@ -41,7 +41,7 @@ namespace Model
   class SynthesisTask
   {
   public:
-    AWS_POLLY_API SynthesisTask();
+    AWS_POLLY_API SynthesisTask() = default;
     AWS_POLLY_API SynthesisTask(Aws::Utils::Json::JsonView jsonValue);
     AWS_POLLY_API SynthesisTask& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_POLLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,38 +54,32 @@ namespace Model
      * processing input text for speech synthesis. Using a voice that is not supported
      * for the engine selected will result in an error.</p>
      */
-    inline const Engine& GetEngine() const{ return m_engine; }
+    inline Engine GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const Engine& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(Engine&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline SynthesisTask& WithEngine(const Engine& value) { SetEngine(value); return *this;}
-    inline SynthesisTask& WithEngine(Engine&& value) { SetEngine(std::move(value)); return *this;}
+    inline void SetEngine(Engine value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline SynthesisTask& WithEngine(Engine value) { SetEngine(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline SynthesisTask& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline SynthesisTask& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline SynthesisTask& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    SynthesisTask& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Current status of the individual speech synthesis task.</p>
      */
-    inline const TaskStatus& GetTaskStatus() const{ return m_taskStatus; }
+    inline TaskStatus GetTaskStatus() const { return m_taskStatus; }
     inline bool TaskStatusHasBeenSet() const { return m_taskStatusHasBeenSet; }
-    inline void SetTaskStatus(const TaskStatus& value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
-    inline void SetTaskStatus(TaskStatus&& value) { m_taskStatusHasBeenSet = true; m_taskStatus = std::move(value); }
-    inline SynthesisTask& WithTaskStatus(const TaskStatus& value) { SetTaskStatus(value); return *this;}
-    inline SynthesisTask& WithTaskStatus(TaskStatus&& value) { SetTaskStatus(std::move(value)); return *this;}
+    inline void SetTaskStatus(TaskStatus value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
+    inline SynthesisTask& WithTaskStatus(TaskStatus value) { SetTaskStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -93,47 +87,43 @@ namespace Model
      * <p>Reason for the current status of a specific speech synthesis task, including
      * errors if the task has failed.</p>
      */
-    inline const Aws::String& GetTaskStatusReason() const{ return m_taskStatusReason; }
+    inline const Aws::String& GetTaskStatusReason() const { return m_taskStatusReason; }
     inline bool TaskStatusReasonHasBeenSet() const { return m_taskStatusReasonHasBeenSet; }
-    inline void SetTaskStatusReason(const Aws::String& value) { m_taskStatusReasonHasBeenSet = true; m_taskStatusReason = value; }
-    inline void SetTaskStatusReason(Aws::String&& value) { m_taskStatusReasonHasBeenSet = true; m_taskStatusReason = std::move(value); }
-    inline void SetTaskStatusReason(const char* value) { m_taskStatusReasonHasBeenSet = true; m_taskStatusReason.assign(value); }
-    inline SynthesisTask& WithTaskStatusReason(const Aws::String& value) { SetTaskStatusReason(value); return *this;}
-    inline SynthesisTask& WithTaskStatusReason(Aws::String&& value) { SetTaskStatusReason(std::move(value)); return *this;}
-    inline SynthesisTask& WithTaskStatusReason(const char* value) { SetTaskStatusReason(value); return *this;}
+    template<typename TaskStatusReasonT = Aws::String>
+    void SetTaskStatusReason(TaskStatusReasonT&& value) { m_taskStatusReasonHasBeenSet = true; m_taskStatusReason = std::forward<TaskStatusReasonT>(value); }
+    template<typename TaskStatusReasonT = Aws::String>
+    SynthesisTask& WithTaskStatusReason(TaskStatusReasonT&& value) { SetTaskStatusReason(std::forward<TaskStatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Pathway for the output speech file.</p>
      */
-    inline const Aws::String& GetOutputUri() const{ return m_outputUri; }
+    inline const Aws::String& GetOutputUri() const { return m_outputUri; }
     inline bool OutputUriHasBeenSet() const { return m_outputUriHasBeenSet; }
-    inline void SetOutputUri(const Aws::String& value) { m_outputUriHasBeenSet = true; m_outputUri = value; }
-    inline void SetOutputUri(Aws::String&& value) { m_outputUriHasBeenSet = true; m_outputUri = std::move(value); }
-    inline void SetOutputUri(const char* value) { m_outputUriHasBeenSet = true; m_outputUri.assign(value); }
-    inline SynthesisTask& WithOutputUri(const Aws::String& value) { SetOutputUri(value); return *this;}
-    inline SynthesisTask& WithOutputUri(Aws::String&& value) { SetOutputUri(std::move(value)); return *this;}
-    inline SynthesisTask& WithOutputUri(const char* value) { SetOutputUri(value); return *this;}
+    template<typename OutputUriT = Aws::String>
+    void SetOutputUri(OutputUriT&& value) { m_outputUriHasBeenSet = true; m_outputUri = std::forward<OutputUriT>(value); }
+    template<typename OutputUriT = Aws::String>
+    SynthesisTask& WithOutputUri(OutputUriT&& value) { SetOutputUri(std::forward<OutputUriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp for the time the synthesis task was started.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline SynthesisTask& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline SynthesisTask& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    SynthesisTask& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Number of billable characters synthesized.</p>
      */
-    inline int GetRequestCharacters() const{ return m_requestCharacters; }
+    inline int GetRequestCharacters() const { return m_requestCharacters; }
     inline bool RequestCharactersHasBeenSet() const { return m_requestCharactersHasBeenSet; }
     inline void SetRequestCharacters(int value) { m_requestCharactersHasBeenSet = true; m_requestCharacters = value; }
     inline SynthesisTask& WithRequestCharacters(int value) { SetRequestCharacters(value); return *this;}
@@ -144,14 +134,12 @@ namespace Model
      * <p>ARN for the SNS topic optionally used for providing status notification for a
      * speech synthesis task.</p>
      */
-    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+    inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
-    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
-    inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
-    inline SynthesisTask& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-    inline SynthesisTask& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-    inline SynthesisTask& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    template<typename SnsTopicArnT = Aws::String>
+    void SetSnsTopicArn(SnsTopicArnT&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::forward<SnsTopicArnT>(value); }
+    template<typename SnsTopicArnT = Aws::String>
+    SynthesisTask& WithSnsTopicArn(SnsTopicArnT&& value) { SetSnsTopicArn(std::forward<SnsTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,15 +148,14 @@ namespace Model
      * during synthesis. Lexicons are applied only if the language of the lexicon is
      * the same as the language of the voice. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetLexiconNames() const{ return m_lexiconNames; }
+    inline const Aws::Vector<Aws::String>& GetLexiconNames() const { return m_lexiconNames; }
     inline bool LexiconNamesHasBeenSet() const { return m_lexiconNamesHasBeenSet; }
-    inline void SetLexiconNames(const Aws::Vector<Aws::String>& value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames = value; }
-    inline void SetLexiconNames(Aws::Vector<Aws::String>&& value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames = std::move(value); }
-    inline SynthesisTask& WithLexiconNames(const Aws::Vector<Aws::String>& value) { SetLexiconNames(value); return *this;}
-    inline SynthesisTask& WithLexiconNames(Aws::Vector<Aws::String>&& value) { SetLexiconNames(std::move(value)); return *this;}
-    inline SynthesisTask& AddLexiconNames(const Aws::String& value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames.push_back(value); return *this; }
-    inline SynthesisTask& AddLexiconNames(Aws::String&& value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames.push_back(std::move(value)); return *this; }
-    inline SynthesisTask& AddLexiconNames(const char* value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames.push_back(value); return *this; }
+    template<typename LexiconNamesT = Aws::Vector<Aws::String>>
+    void SetLexiconNames(LexiconNamesT&& value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames = std::forward<LexiconNamesT>(value); }
+    template<typename LexiconNamesT = Aws::Vector<Aws::String>>
+    SynthesisTask& WithLexiconNames(LexiconNamesT&& value) { SetLexiconNames(std::forward<LexiconNamesT>(value)); return *this;}
+    template<typename LexiconNamesT = Aws::String>
+    SynthesisTask& AddLexiconNames(LexiconNamesT&& value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames.emplace_back(std::forward<LexiconNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -176,12 +163,10 @@ namespace Model
      * <p>The format in which the returned output will be encoded. For audio stream,
      * this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
      */
-    inline const OutputFormat& GetOutputFormat() const{ return m_outputFormat; }
+    inline OutputFormat GetOutputFormat() const { return m_outputFormat; }
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
-    inline void SetOutputFormat(const OutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
-    inline void SetOutputFormat(OutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
-    inline SynthesisTask& WithOutputFormat(const OutputFormat& value) { SetOutputFormat(value); return *this;}
-    inline SynthesisTask& WithOutputFormat(OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
+    inline void SetOutputFormat(OutputFormat value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
+    inline SynthesisTask& WithOutputFormat(OutputFormat value) { SetOutputFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -193,28 +178,25 @@ namespace Model
      * voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The
      * default value is "16000". </p>
      */
-    inline const Aws::String& GetSampleRate() const{ return m_sampleRate; }
+    inline const Aws::String& GetSampleRate() const { return m_sampleRate; }
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
-    inline void SetSampleRate(const Aws::String& value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
-    inline void SetSampleRate(Aws::String&& value) { m_sampleRateHasBeenSet = true; m_sampleRate = std::move(value); }
-    inline void SetSampleRate(const char* value) { m_sampleRateHasBeenSet = true; m_sampleRate.assign(value); }
-    inline SynthesisTask& WithSampleRate(const Aws::String& value) { SetSampleRate(value); return *this;}
-    inline SynthesisTask& WithSampleRate(Aws::String&& value) { SetSampleRate(std::move(value)); return *this;}
-    inline SynthesisTask& WithSampleRate(const char* value) { SetSampleRate(value); return *this;}
+    template<typename SampleRateT = Aws::String>
+    void SetSampleRate(SampleRateT&& value) { m_sampleRateHasBeenSet = true; m_sampleRate = std::forward<SampleRateT>(value); }
+    template<typename SampleRateT = Aws::String>
+    SynthesisTask& WithSampleRate(SampleRateT&& value) { SetSampleRate(std::forward<SampleRateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of speech marks returned for the input text.</p>
      */
-    inline const Aws::Vector<SpeechMarkType>& GetSpeechMarkTypes() const{ return m_speechMarkTypes; }
+    inline const Aws::Vector<SpeechMarkType>& GetSpeechMarkTypes() const { return m_speechMarkTypes; }
     inline bool SpeechMarkTypesHasBeenSet() const { return m_speechMarkTypesHasBeenSet; }
-    inline void SetSpeechMarkTypes(const Aws::Vector<SpeechMarkType>& value) { m_speechMarkTypesHasBeenSet = true; m_speechMarkTypes = value; }
-    inline void SetSpeechMarkTypes(Aws::Vector<SpeechMarkType>&& value) { m_speechMarkTypesHasBeenSet = true; m_speechMarkTypes = std::move(value); }
-    inline SynthesisTask& WithSpeechMarkTypes(const Aws::Vector<SpeechMarkType>& value) { SetSpeechMarkTypes(value); return *this;}
-    inline SynthesisTask& WithSpeechMarkTypes(Aws::Vector<SpeechMarkType>&& value) { SetSpeechMarkTypes(std::move(value)); return *this;}
-    inline SynthesisTask& AddSpeechMarkTypes(const SpeechMarkType& value) { m_speechMarkTypesHasBeenSet = true; m_speechMarkTypes.push_back(value); return *this; }
-    inline SynthesisTask& AddSpeechMarkTypes(SpeechMarkType&& value) { m_speechMarkTypesHasBeenSet = true; m_speechMarkTypes.push_back(std::move(value)); return *this; }
+    template<typename SpeechMarkTypesT = Aws::Vector<SpeechMarkType>>
+    void SetSpeechMarkTypes(SpeechMarkTypesT&& value) { m_speechMarkTypesHasBeenSet = true; m_speechMarkTypes = std::forward<SpeechMarkTypesT>(value); }
+    template<typename SpeechMarkTypesT = Aws::Vector<SpeechMarkType>>
+    SynthesisTask& WithSpeechMarkTypes(SpeechMarkTypesT&& value) { SetSpeechMarkTypes(std::forward<SpeechMarkTypesT>(value)); return *this;}
+    inline SynthesisTask& AddSpeechMarkTypes(SpeechMarkType value) { m_speechMarkTypesHasBeenSet = true; m_speechMarkTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -222,24 +204,20 @@ namespace Model
      * <p>Specifies whether the input text is plain text or SSML. The default value is
      * plain text. </p>
      */
-    inline const TextType& GetTextType() const{ return m_textType; }
+    inline TextType GetTextType() const { return m_textType; }
     inline bool TextTypeHasBeenSet() const { return m_textTypeHasBeenSet; }
-    inline void SetTextType(const TextType& value) { m_textTypeHasBeenSet = true; m_textType = value; }
-    inline void SetTextType(TextType&& value) { m_textTypeHasBeenSet = true; m_textType = std::move(value); }
-    inline SynthesisTask& WithTextType(const TextType& value) { SetTextType(value); return *this;}
-    inline SynthesisTask& WithTextType(TextType&& value) { SetTextType(std::move(value)); return *this;}
+    inline void SetTextType(TextType value) { m_textTypeHasBeenSet = true; m_textType = value; }
+    inline SynthesisTask& WithTextType(TextType value) { SetTextType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Voice ID to use for the synthesis. </p>
      */
-    inline const VoiceId& GetVoiceId() const{ return m_voiceId; }
+    inline VoiceId GetVoiceId() const { return m_voiceId; }
     inline bool VoiceIdHasBeenSet() const { return m_voiceIdHasBeenSet; }
-    inline void SetVoiceId(const VoiceId& value) { m_voiceIdHasBeenSet = true; m_voiceId = value; }
-    inline void SetVoiceId(VoiceId&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::move(value); }
-    inline SynthesisTask& WithVoiceId(const VoiceId& value) { SetVoiceId(value); return *this;}
-    inline SynthesisTask& WithVoiceId(VoiceId&& value) { SetVoiceId(std::move(value)); return *this;}
+    inline void SetVoiceId(VoiceId value) { m_voiceIdHasBeenSet = true; m_voiceId = value; }
+    inline SynthesisTask& WithVoiceId(VoiceId value) { SetVoiceId(value); return *this;}
     ///@}
 
     ///@{
@@ -253,22 +231,20 @@ namespace Model
      * operation for the <code>LanguageCode</code> parameter. For example, if no
      * language code is specified, Aditi will use Indian English rather than Hindi.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline SynthesisTask& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline SynthesisTask& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline SynthesisTask& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
   private:
 
-    Engine m_engine;
+    Engine m_engine{Engine::NOT_SET};
     bool m_engineHasBeenSet = false;
 
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet = false;
 
-    TaskStatus m_taskStatus;
+    TaskStatus m_taskStatus{TaskStatus::NOT_SET};
     bool m_taskStatusHasBeenSet = false;
 
     Aws::String m_taskStatusReason;
@@ -277,10 +253,10 @@ namespace Model
     Aws::String m_outputUri;
     bool m_outputUriHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    int m_requestCharacters;
+    int m_requestCharacters{0};
     bool m_requestCharactersHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
@@ -289,7 +265,7 @@ namespace Model
     Aws::Vector<Aws::String> m_lexiconNames;
     bool m_lexiconNamesHasBeenSet = false;
 
-    OutputFormat m_outputFormat;
+    OutputFormat m_outputFormat{OutputFormat::NOT_SET};
     bool m_outputFormatHasBeenSet = false;
 
     Aws::String m_sampleRate;
@@ -298,13 +274,13 @@ namespace Model
     Aws::Vector<SpeechMarkType> m_speechMarkTypes;
     bool m_speechMarkTypesHasBeenSet = false;
 
-    TextType m_textType;
+    TextType m_textType{TextType::NOT_SET};
     bool m_textTypeHasBeenSet = false;
 
-    VoiceId m_voiceId;
+    VoiceId m_voiceId{VoiceId::NOT_SET};
     bool m_voiceIdHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
   };
 

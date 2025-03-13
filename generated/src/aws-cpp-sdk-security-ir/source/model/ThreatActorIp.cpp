@@ -18,14 +18,7 @@ namespace SecurityIR
 namespace Model
 {
 
-ThreatActorIp::ThreatActorIp() : 
-    m_ipAddressHasBeenSet(false),
-    m_userAgentHasBeenSet(false)
-{
-}
-
 ThreatActorIp::ThreatActorIp(JsonView jsonValue)
-  : ThreatActorIp()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ThreatActorIp& ThreatActorIp::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ipAddress"))
   {
     m_ipAddress = jsonValue.GetString("ipAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAgent"))
   {
     m_userAgent = jsonValue.GetString("userAgent");
-
     m_userAgentHasBeenSet = true;
   }
-
   return *this;
 }
 

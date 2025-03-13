@@ -18,27 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-IdleRecommendation::IdleRecommendation() : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(IdleRecommendationResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_finding(IdleFinding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_findingDescriptionHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false),
-    m_savingsOpportunityAfterDiscountsHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_lookBackPeriodInDays(0.0),
-    m_lookBackPeriodInDaysHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 IdleRecommendation::IdleRecommendation(JsonView jsonValue)
-  : IdleRecommendation()
 {
   *this = jsonValue;
 }
@@ -48,59 +28,43 @@ IdleRecommendation& IdleRecommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = IdleRecommendationResourceTypeMapper::GetIdleRecommendationResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("finding"))
   {
     m_finding = IdleFindingMapper::GetIdleFindingForName(jsonValue.GetString("finding"));
-
     m_findingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingDescription"))
   {
     m_findingDescription = jsonValue.GetString("findingDescription");
-
     m_findingDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsOpportunity"))
   {
     m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
-
     m_savingsOpportunityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsOpportunityAfterDiscounts"))
   {
     m_savingsOpportunityAfterDiscounts = jsonValue.GetObject("savingsOpportunityAfterDiscounts");
-
     m_savingsOpportunityAfterDiscountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utilizationMetrics"))
   {
     Aws::Utils::Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
@@ -110,21 +74,16 @@ IdleRecommendation& IdleRecommendation::operator =(JsonView jsonValue)
     }
     m_utilizationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lookBackPeriodInDays"))
   {
     m_lookBackPeriodInDays = jsonValue.GetDouble("lookBackPeriodInDays");
-
     m_lookBackPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRefreshTimestamp"))
   {
     m_lastRefreshTimestamp = jsonValue.GetDouble("lastRefreshTimestamp");
-
     m_lastRefreshTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -134,7 +93,6 @@ IdleRecommendation& IdleRecommendation::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

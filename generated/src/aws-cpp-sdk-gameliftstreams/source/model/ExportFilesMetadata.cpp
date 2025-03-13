@@ -18,16 +18,7 @@ namespace GameLiftStreams
 namespace Model
 {
 
-ExportFilesMetadata::ExportFilesMetadata() : 
-    m_outputUriHasBeenSet(false),
-    m_status(ExportFilesStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 ExportFilesMetadata::ExportFilesMetadata(JsonView jsonValue)
-  : ExportFilesMetadata()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExportFilesMetadata& ExportFilesMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OutputUri"))
   {
     m_outputUri = jsonValue.GetString("OutputUri");
-
     m_outputUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ExportFilesStatusMapper::GetExportFilesStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetString("StatusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentError::ExperimentError() : 
-    m_accountIdHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 ExperimentError::ExperimentError(JsonView jsonValue)
-  : ExperimentError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ExperimentError& ExperimentError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

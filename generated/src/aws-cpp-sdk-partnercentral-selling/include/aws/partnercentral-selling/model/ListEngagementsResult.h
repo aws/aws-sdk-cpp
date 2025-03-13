@@ -29,7 +29,7 @@ namespace Model
   class ListEngagementsResult
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API ListEngagementsResult();
+    AWS_PARTNERCENTRALSELLING_API ListEngagementsResult() = default;
     AWS_PARTNERCENTRALSELLING_API ListEngagementsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PARTNERCENTRALSELLING_API ListEngagementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of engagement summary objects.</p>
      */
-    inline const Aws::Vector<EngagementSummary>& GetEngagementSummaryList() const{ return m_engagementSummaryList; }
-    inline void SetEngagementSummaryList(const Aws::Vector<EngagementSummary>& value) { m_engagementSummaryList = value; }
-    inline void SetEngagementSummaryList(Aws::Vector<EngagementSummary>&& value) { m_engagementSummaryList = std::move(value); }
-    inline ListEngagementsResult& WithEngagementSummaryList(const Aws::Vector<EngagementSummary>& value) { SetEngagementSummaryList(value); return *this;}
-    inline ListEngagementsResult& WithEngagementSummaryList(Aws::Vector<EngagementSummary>&& value) { SetEngagementSummaryList(std::move(value)); return *this;}
-    inline ListEngagementsResult& AddEngagementSummaryList(const EngagementSummary& value) { m_engagementSummaryList.push_back(value); return *this; }
-    inline ListEngagementsResult& AddEngagementSummaryList(EngagementSummary&& value) { m_engagementSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EngagementSummary>& GetEngagementSummaryList() const { return m_engagementSummaryList; }
+    template<typename EngagementSummaryListT = Aws::Vector<EngagementSummary>>
+    void SetEngagementSummaryList(EngagementSummaryListT&& value) { m_engagementSummaryListHasBeenSet = true; m_engagementSummaryList = std::forward<EngagementSummaryListT>(value); }
+    template<typename EngagementSummaryListT = Aws::Vector<EngagementSummary>>
+    ListEngagementsResult& WithEngagementSummaryList(EngagementSummaryListT&& value) { SetEngagementSummaryList(std::forward<EngagementSummaryListT>(value)); return *this;}
+    template<typename EngagementSummaryListT = EngagementSummary>
+    ListEngagementsResult& AddEngagementSummaryList(EngagementSummaryListT&& value) { m_engagementSummaryListHasBeenSet = true; m_engagementSummaryList.emplace_back(std::forward<EngagementSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to retrieve the next set of results. This field will be null if
      * there are no more results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEngagementsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEngagementsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEngagementsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEngagementsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEngagementsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEngagementsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEngagementsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEngagementsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EngagementSummary> m_engagementSummaryList;
+    bool m_engagementSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

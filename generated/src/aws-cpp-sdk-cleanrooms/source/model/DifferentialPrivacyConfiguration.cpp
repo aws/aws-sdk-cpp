@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-DifferentialPrivacyConfiguration::DifferentialPrivacyConfiguration() : 
-    m_columnsHasBeenSet(false)
-{
-}
-
 DifferentialPrivacyConfiguration::DifferentialPrivacyConfiguration(JsonView jsonValue)
-  : DifferentialPrivacyConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DifferentialPrivacyConfiguration& DifferentialPrivacyConfiguration::operator =(J
     }
     m_columnsHasBeenSet = true;
   }
-
   return *this;
 }
 

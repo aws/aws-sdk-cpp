@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DnsServersOptionsModifyStructure::DnsServersOptionsModifyStructure() : 
-    m_customDnsServersHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 DnsServersOptionsModifyStructure::DnsServersOptionsModifyStructure(const XmlNode& xmlNode)
-  : DnsServersOptionsModifyStructure()
 {
   *this = xmlNode;
 }
@@ -43,19 +35,21 @@ DnsServersOptionsModifyStructure& DnsServersOptionsModifyStructure::operator =(c
     if(!customDnsServersNode.IsNull())
     {
       XmlNode customDnsServersMember = customDnsServersNode.FirstChild("item");
+      m_customDnsServersHasBeenSet = !customDnsServersMember.IsNull();
       while(!customDnsServersMember.IsNull())
       {
         m_customDnsServers.push_back(customDnsServersMember.GetText());
         customDnsServersMember = customDnsServersMember.NextNode("item");
       }
 
-      m_customDnsServersHasBeenSet = true;
+       m_customDnsServersHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
   }
 

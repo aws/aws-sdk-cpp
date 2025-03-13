@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDomainNameAccessAssociationResult::CreateDomainNameAccessAssociationResult() : 
-    m_accessAssociationSourceType(AccessAssociationSourceType::NOT_SET)
-{
-}
-
 CreateDomainNameAccessAssociationResult::CreateDomainNameAccessAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateDomainNameAccessAssociationResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ CreateDomainNameAccessAssociationResult& CreateDomainNameAccessAssociationResult
   if(jsonValue.ValueExists("domainNameAccessAssociationArn"))
   {
     m_domainNameAccessAssociationArn = jsonValue.GetString("domainNameAccessAssociationArn");
-
+    m_domainNameAccessAssociationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainNameArn"))
   {
     m_domainNameArn = jsonValue.GetString("domainNameArn");
-
+    m_domainNameArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessAssociationSourceType"))
   {
     m_accessAssociationSourceType = AccessAssociationSourceTypeMapper::GetAccessAssociationSourceTypeForName(jsonValue.GetString("accessAssociationSourceType"));
-
+    m_accessAssociationSourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessAssociationSource"))
   {
     m_accessAssociationSource = jsonValue.GetString("accessAssociationSource");
-
+    m_accessAssociationSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -62,14 +52,15 @@ CreateDomainNameAccessAssociationResult& CreateDomainNameAccessAssociationResult
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

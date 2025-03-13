@@ -32,7 +32,7 @@ namespace Model
   class CompletedMultipartUpload
   {
   public:
-    AWS_S3CRT_API CompletedMultipartUpload();
+    AWS_S3CRT_API CompletedMultipartUpload() = default;
     AWS_S3CRT_API CompletedMultipartUpload(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API CompletedMultipartUpload& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,14 @@ namespace Model
      * <code>Part</code> with your request, the service sends back an HTTP 400
      * response.</p>
      */
-    inline const Aws::Vector<CompletedPart>& GetParts() const{ return m_parts; }
+    inline const Aws::Vector<CompletedPart>& GetParts() const { return m_parts; }
     inline bool PartsHasBeenSet() const { return m_partsHasBeenSet; }
-    inline void SetParts(const Aws::Vector<CompletedPart>& value) { m_partsHasBeenSet = true; m_parts = value; }
-    inline void SetParts(Aws::Vector<CompletedPart>&& value) { m_partsHasBeenSet = true; m_parts = std::move(value); }
-    inline CompletedMultipartUpload& WithParts(const Aws::Vector<CompletedPart>& value) { SetParts(value); return *this;}
-    inline CompletedMultipartUpload& WithParts(Aws::Vector<CompletedPart>&& value) { SetParts(std::move(value)); return *this;}
-    inline CompletedMultipartUpload& AddParts(const CompletedPart& value) { m_partsHasBeenSet = true; m_parts.push_back(value); return *this; }
-    inline CompletedMultipartUpload& AddParts(CompletedPart&& value) { m_partsHasBeenSet = true; m_parts.push_back(std::move(value)); return *this; }
+    template<typename PartsT = Aws::Vector<CompletedPart>>
+    void SetParts(PartsT&& value) { m_partsHasBeenSet = true; m_parts = std::forward<PartsT>(value); }
+    template<typename PartsT = Aws::Vector<CompletedPart>>
+    CompletedMultipartUpload& WithParts(PartsT&& value) { SetParts(std::forward<PartsT>(value)); return *this;}
+    template<typename PartsT = CompletedPart>
+    CompletedMultipartUpload& AddParts(PartsT&& value) { m_partsHasBeenSet = true; m_parts.emplace_back(std::forward<PartsT>(value)); return *this; }
     ///@}
   private:
 

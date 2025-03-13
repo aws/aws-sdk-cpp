@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetReportMetadataRequest::GetReportMetadataRequest() : 
-    m_reportIdHasBeenSet(false),
-    m_reportVersion(0),
-    m_reportVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetReportMetadataRequest::SerializePayload() const
 {
   return {};

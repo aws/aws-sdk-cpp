@@ -18,31 +18,7 @@ namespace Scheduler
 namespace Model
 {
 
-EcsParameters::EcsParameters() : 
-    m_capacityProviderStrategyHasBeenSet(false),
-    m_enableECSManagedTags(false),
-    m_enableECSManagedTagsHasBeenSet(false),
-    m_enableExecuteCommand(false),
-    m_enableExecuteCommandHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_placementStrategyHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_taskCount(0),
-    m_taskCountHasBeenSet(false),
-    m_taskDefinitionArnHasBeenSet(false)
-{
-}
-
 EcsParameters::EcsParameters(JsonView jsonValue)
-  : EcsParameters()
 {
   *this = jsonValue;
 }
@@ -58,42 +34,31 @@ EcsParameters& EcsParameters::operator =(JsonView jsonValue)
     }
     m_capacityProviderStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableECSManagedTags"))
   {
     m_enableECSManagedTags = jsonValue.GetBool("EnableECSManagedTags");
-
     m_enableECSManagedTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableExecuteCommand"))
   {
     m_enableExecuteCommand = jsonValue.GetBool("EnableExecuteCommand");
-
     m_enableExecuteCommandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Group"))
   {
     m_group = jsonValue.GetString("Group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchType"))
   {
     m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("LaunchType"));
-
     m_launchTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkConfiguration"))
   {
     m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
-
     m_networkConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlacementConstraints"))
   {
     Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("PlacementConstraints");
@@ -103,7 +68,6 @@ EcsParameters& EcsParameters::operator =(JsonView jsonValue)
     }
     m_placementConstraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlacementStrategy"))
   {
     Aws::Utils::Array<JsonView> placementStrategyJsonList = jsonValue.GetArray("PlacementStrategy");
@@ -113,28 +77,21 @@ EcsParameters& EcsParameters::operator =(JsonView jsonValue)
     }
     m_placementStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlatformVersion"))
   {
     m_platformVersion = jsonValue.GetString("PlatformVersion");
-
     m_platformVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PropagateTags"))
   {
     m_propagateTags = PropagateTagsMapper::GetPropagateTagsForName(jsonValue.GetString("PropagateTags"));
-
     m_propagateTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceId"))
   {
     m_referenceId = jsonValue.GetString("ReferenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -150,21 +107,16 @@ EcsParameters& EcsParameters::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskCount"))
   {
     m_taskCount = jsonValue.GetInteger("TaskCount");
-
     m_taskCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskDefinitionArn"))
   {
     m_taskDefinitionArn = jsonValue.GetString("TaskDefinitionArn");
-
     m_taskDefinitionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

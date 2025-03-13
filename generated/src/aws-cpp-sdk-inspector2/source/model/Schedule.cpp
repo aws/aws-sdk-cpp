@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-Schedule::Schedule() : 
-    m_dailyHasBeenSet(false),
-    m_monthlyHasBeenSet(false),
-    m_oneTimeHasBeenSet(false),
-    m_weeklyHasBeenSet(false)
-{
-}
-
 Schedule::Schedule(JsonView jsonValue)
-  : Schedule()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Schedule& Schedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("daily"))
   {
     m_daily = jsonValue.GetObject("daily");
-
     m_dailyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monthly"))
   {
     m_monthly = jsonValue.GetObject("monthly");
-
     m_monthlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oneTime"))
   {
     m_oneTime = jsonValue.GetObject("oneTime");
-
     m_oneTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("weekly"))
   {
     m_weekly = jsonValue.GetObject("weekly");
-
     m_weeklyHasBeenSet = true;
   }
-
   return *this;
 }
 

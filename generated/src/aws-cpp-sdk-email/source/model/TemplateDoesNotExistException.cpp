@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-TemplateDoesNotExistException::TemplateDoesNotExistException() : 
-    m_templateNameHasBeenSet(false)
-{
-}
-
 TemplateDoesNotExistException::TemplateDoesNotExistException(const XmlNode& xmlNode)
-  : TemplateDoesNotExistException()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ TemplateDoesNotExistException& TemplateDoesNotExistException::operator =(const X
     {
       m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
+       m_templateNameHasBeenSet = true;
     }
   }
 

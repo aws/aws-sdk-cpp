@@ -33,7 +33,7 @@ namespace Model
   class EFSAuthorizationConfig
   {
   public:
-    AWS_BATCH_API EFSAuthorizationConfig();
+    AWS_BATCH_API EFSAuthorizationConfig() = default;
     AWS_BATCH_API EFSAuthorizationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EFSAuthorizationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * with Amazon EFS access points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetAccessPointId() const{ return m_accessPointId; }
+    inline const Aws::String& GetAccessPointId() const { return m_accessPointId; }
     inline bool AccessPointIdHasBeenSet() const { return m_accessPointIdHasBeenSet; }
-    inline void SetAccessPointId(const Aws::String& value) { m_accessPointIdHasBeenSet = true; m_accessPointId = value; }
-    inline void SetAccessPointId(Aws::String&& value) { m_accessPointIdHasBeenSet = true; m_accessPointId = std::move(value); }
-    inline void SetAccessPointId(const char* value) { m_accessPointIdHasBeenSet = true; m_accessPointId.assign(value); }
-    inline EFSAuthorizationConfig& WithAccessPointId(const Aws::String& value) { SetAccessPointId(value); return *this;}
-    inline EFSAuthorizationConfig& WithAccessPointId(Aws::String&& value) { SetAccessPointId(std::move(value)); return *this;}
-    inline EFSAuthorizationConfig& WithAccessPointId(const char* value) { SetAccessPointId(value); return *this;}
+    template<typename AccessPointIdT = Aws::String>
+    void SetAccessPointId(AccessPointIdT&& value) { m_accessPointIdHasBeenSet = true; m_accessPointId = std::forward<AccessPointIdT>(value); }
+    template<typename AccessPointIdT = Aws::String>
+    EFSAuthorizationConfig& WithAccessPointId(AccessPointIdT&& value) { SetAccessPointId(std::forward<AccessPointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,19 +70,17 @@ namespace Model
      * authorization requires that <code>TransitEncryption</code> be
      * <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
      */
-    inline const EFSAuthorizationConfigIAM& GetIam() const{ return m_iam; }
+    inline EFSAuthorizationConfigIAM GetIam() const { return m_iam; }
     inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
-    inline void SetIam(const EFSAuthorizationConfigIAM& value) { m_iamHasBeenSet = true; m_iam = value; }
-    inline void SetIam(EFSAuthorizationConfigIAM&& value) { m_iamHasBeenSet = true; m_iam = std::move(value); }
-    inline EFSAuthorizationConfig& WithIam(const EFSAuthorizationConfigIAM& value) { SetIam(value); return *this;}
-    inline EFSAuthorizationConfig& WithIam(EFSAuthorizationConfigIAM&& value) { SetIam(std::move(value)); return *this;}
+    inline void SetIam(EFSAuthorizationConfigIAM value) { m_iamHasBeenSet = true; m_iam = value; }
+    inline EFSAuthorizationConfig& WithIam(EFSAuthorizationConfigIAM value) { SetIam(value); return *this;}
     ///@}
   private:
 
     Aws::String m_accessPointId;
     bool m_accessPointIdHasBeenSet = false;
 
-    EFSAuthorizationConfigIAM m_iam;
+    EFSAuthorizationConfigIAM m_iam{EFSAuthorizationConfigIAM::NOT_SET};
     bool m_iamHasBeenSet = false;
   };
 

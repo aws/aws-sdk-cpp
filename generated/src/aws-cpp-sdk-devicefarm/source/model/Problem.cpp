@@ -18,20 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-Problem::Problem() : 
-    m_runHasBeenSet(false),
-    m_jobHasBeenSet(false),
-    m_suiteHasBeenSet(false),
-    m_testHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_result(ExecutionResult::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 Problem::Problem(JsonView jsonValue)
-  : Problem()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ Problem& Problem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("run"))
   {
     m_run = jsonValue.GetObject("run");
-
     m_runHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("job"))
   {
     m_job = jsonValue.GetObject("job");
-
     m_jobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suite"))
   {
     m_suite = jsonValue.GetObject("suite");
-
     m_suiteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("test"))
   {
     m_test = jsonValue.GetObject("test");
-
     m_testHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("device"))
   {
     m_device = jsonValue.GetObject("device");
-
     m_deviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("result"))
   {
     m_result = ExecutionResultMapper::GetExecutionResultForName(jsonValue.GetString("result"));
-
     m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

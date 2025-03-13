@@ -37,7 +37,7 @@ namespace Model
   class SplitString
   {
   public:
-    AWS_CLOUDWATCHLOGS_API SplitString();
+    AWS_CLOUDWATCHLOGS_API SplitString() = default;
     AWS_CLOUDWATCHLOGS_API SplitString(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API SplitString& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * <p>An array of <code>SplitStringEntry</code> objects, where each object contains
      * the information about one field to split. </p>
      */
-    inline const Aws::Vector<SplitStringEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<SplitStringEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<SplitStringEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<SplitStringEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline SplitString& WithEntries(const Aws::Vector<SplitStringEntry>& value) { SetEntries(value); return *this;}
-    inline SplitString& WithEntries(Aws::Vector<SplitStringEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline SplitString& AddEntries(const SplitStringEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline SplitString& AddEntries(SplitStringEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<SplitStringEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<SplitStringEntry>>
+    SplitString& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = SplitStringEntry>
+    SplitString& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 

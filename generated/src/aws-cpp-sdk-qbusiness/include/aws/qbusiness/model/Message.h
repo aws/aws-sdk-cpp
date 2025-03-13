@@ -39,7 +39,7 @@ namespace Model
   class Message
   {
   public:
-    AWS_QBUSINESS_API Message();
+    AWS_QBUSINESS_API Message() = default;
     AWS_QBUSINESS_API Message(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Message& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,40 +49,36 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Q Business web experience message.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline Message& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline Message& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline Message& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    Message& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content of the Amazon Q Business web experience message.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline Message& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline Message& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline Message& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    Message& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the first Amazon Q Business web experience message.</p>
      */
-    inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
+    inline const Aws::Utils::DateTime& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline Message& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
-    inline Message& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
+    template<typename TimeT = Aws::Utils::DateTime>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = Aws::Utils::DateTime>
+    Message& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,26 +86,24 @@ namespace Model
      * <p>The type of Amazon Q Business message, whether <code>HUMAN</code> or
      * <code>AI</code> generated.</p>
      */
-    inline const MessageType& GetType() const{ return m_type; }
+    inline MessageType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MessageType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MessageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Message& WithType(const MessageType& value) { SetType(value); return *this;}
-    inline Message& WithType(MessageType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MessageType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Message& WithType(MessageType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
      */
-    inline const Aws::Vector<AttachmentOutput>& GetAttachments() const{ return m_attachments; }
+    inline const Aws::Vector<AttachmentOutput>& GetAttachments() const { return m_attachments; }
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
-    inline void SetAttachments(const Aws::Vector<AttachmentOutput>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
-    inline void SetAttachments(Aws::Vector<AttachmentOutput>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
-    inline Message& WithAttachments(const Aws::Vector<AttachmentOutput>& value) { SetAttachments(value); return *this;}
-    inline Message& WithAttachments(Aws::Vector<AttachmentOutput>&& value) { SetAttachments(std::move(value)); return *this;}
-    inline Message& AddAttachments(const AttachmentOutput& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
-    inline Message& AddAttachments(AttachmentOutput&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+    template<typename AttachmentsT = Aws::Vector<AttachmentOutput>>
+    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
+    template<typename AttachmentsT = Aws::Vector<AttachmentOutput>>
+    Message& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
+    template<typename AttachmentsT = AttachmentOutput>
+    Message& AddAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments.emplace_back(std::forward<AttachmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -117,34 +111,34 @@ namespace Model
      * <p>The source documents used to generate Amazon Q Business web experience
      * message.</p>
      */
-    inline const Aws::Vector<SourceAttribution>& GetSourceAttribution() const{ return m_sourceAttribution; }
+    inline const Aws::Vector<SourceAttribution>& GetSourceAttribution() const { return m_sourceAttribution; }
     inline bool SourceAttributionHasBeenSet() const { return m_sourceAttributionHasBeenSet; }
-    inline void SetSourceAttribution(const Aws::Vector<SourceAttribution>& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution = value; }
-    inline void SetSourceAttribution(Aws::Vector<SourceAttribution>&& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution = std::move(value); }
-    inline Message& WithSourceAttribution(const Aws::Vector<SourceAttribution>& value) { SetSourceAttribution(value); return *this;}
-    inline Message& WithSourceAttribution(Aws::Vector<SourceAttribution>&& value) { SetSourceAttribution(std::move(value)); return *this;}
-    inline Message& AddSourceAttribution(const SourceAttribution& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution.push_back(value); return *this; }
-    inline Message& AddSourceAttribution(SourceAttribution&& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution.push_back(std::move(value)); return *this; }
+    template<typename SourceAttributionT = Aws::Vector<SourceAttribution>>
+    void SetSourceAttribution(SourceAttributionT&& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution = std::forward<SourceAttributionT>(value); }
+    template<typename SourceAttributionT = Aws::Vector<SourceAttribution>>
+    Message& WithSourceAttribution(SourceAttributionT&& value) { SetSourceAttribution(std::forward<SourceAttributionT>(value)); return *this;}
+    template<typename SourceAttributionT = SourceAttribution>
+    Message& AddSourceAttribution(SourceAttributionT&& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution.emplace_back(std::forward<SourceAttributionT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ActionReview& GetActionReview() const{ return m_actionReview; }
+    inline const ActionReview& GetActionReview() const { return m_actionReview; }
     inline bool ActionReviewHasBeenSet() const { return m_actionReviewHasBeenSet; }
-    inline void SetActionReview(const ActionReview& value) { m_actionReviewHasBeenSet = true; m_actionReview = value; }
-    inline void SetActionReview(ActionReview&& value) { m_actionReviewHasBeenSet = true; m_actionReview = std::move(value); }
-    inline Message& WithActionReview(const ActionReview& value) { SetActionReview(value); return *this;}
-    inline Message& WithActionReview(ActionReview&& value) { SetActionReview(std::move(value)); return *this;}
+    template<typename ActionReviewT = ActionReview>
+    void SetActionReview(ActionReviewT&& value) { m_actionReviewHasBeenSet = true; m_actionReview = std::forward<ActionReviewT>(value); }
+    template<typename ActionReviewT = ActionReview>
+    Message& WithActionReview(ActionReviewT&& value) { SetActionReview(std::forward<ActionReviewT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ActionExecution& GetActionExecution() const{ return m_actionExecution; }
+    inline const ActionExecution& GetActionExecution() const { return m_actionExecution; }
     inline bool ActionExecutionHasBeenSet() const { return m_actionExecutionHasBeenSet; }
-    inline void SetActionExecution(const ActionExecution& value) { m_actionExecutionHasBeenSet = true; m_actionExecution = value; }
-    inline void SetActionExecution(ActionExecution&& value) { m_actionExecutionHasBeenSet = true; m_actionExecution = std::move(value); }
-    inline Message& WithActionExecution(const ActionExecution& value) { SetActionExecution(value); return *this;}
-    inline Message& WithActionExecution(ActionExecution&& value) { SetActionExecution(std::move(value)); return *this;}
+    template<typename ActionExecutionT = ActionExecution>
+    void SetActionExecution(ActionExecutionT&& value) { m_actionExecutionHasBeenSet = true; m_actionExecution = std::forward<ActionExecutionT>(value); }
+    template<typename ActionExecutionT = ActionExecution>
+    Message& WithActionExecution(ActionExecutionT&& value) { SetActionExecution(std::forward<ActionExecutionT>(value)); return *this;}
     ///@}
   private:
 
@@ -154,10 +148,10 @@ namespace Model
     Aws::String m_body;
     bool m_bodyHasBeenSet = false;
 
-    Aws::Utils::DateTime m_time;
+    Aws::Utils::DateTime m_time{};
     bool m_timeHasBeenSet = false;
 
-    MessageType m_type;
+    MessageType m_type{MessageType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<AttachmentOutput> m_attachments;

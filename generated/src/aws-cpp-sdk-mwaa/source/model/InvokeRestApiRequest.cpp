@@ -12,16 +12,6 @@ using namespace Aws::MWAA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InvokeRestApiRequest::InvokeRestApiRequest() : 
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_method(RestApiMethod::NOT_SET),
-    m_methodHasBeenSet(false),
-    m_queryParametersHasBeenSet(false),
-    m_bodyHasBeenSet(false)
-{
-}
-
 Aws::String InvokeRestApiRequest::SerializePayload() const
 {
   JsonValue payload;

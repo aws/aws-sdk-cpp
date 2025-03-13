@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-AccountLimit::AccountLimit() : 
-    m_nameHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 AccountLimit::AccountLimit(const XmlNode& xmlNode)
-  : AccountLimit()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ AccountLimit& AccountLimit::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()).c_str()).c_str());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

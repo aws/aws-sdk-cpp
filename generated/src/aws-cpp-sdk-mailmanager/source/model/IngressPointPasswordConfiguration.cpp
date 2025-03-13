@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-IngressPointPasswordConfiguration::IngressPointPasswordConfiguration() : 
-    m_previousSmtpPasswordExpiryTimestampHasBeenSet(false),
-    m_previousSmtpPasswordVersionHasBeenSet(false),
-    m_smtpPasswordVersionHasBeenSet(false)
-{
-}
-
 IngressPointPasswordConfiguration::IngressPointPasswordConfiguration(JsonView jsonValue)
-  : IngressPointPasswordConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ IngressPointPasswordConfiguration& IngressPointPasswordConfiguration::operator =
   if(jsonValue.ValueExists("PreviousSmtpPasswordExpiryTimestamp"))
   {
     m_previousSmtpPasswordExpiryTimestamp = jsonValue.GetDouble("PreviousSmtpPasswordExpiryTimestamp");
-
     m_previousSmtpPasswordExpiryTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousSmtpPasswordVersion"))
   {
     m_previousSmtpPasswordVersion = jsonValue.GetString("PreviousSmtpPasswordVersion");
-
     m_previousSmtpPasswordVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmtpPasswordVersion"))
   {
     m_smtpPasswordVersion = jsonValue.GetString("SmtpPasswordVersion");
-
     m_smtpPasswordVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

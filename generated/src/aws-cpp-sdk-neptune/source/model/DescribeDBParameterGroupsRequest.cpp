@@ -10,15 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-DescribeDBParameterGroupsRequest::DescribeDBParameterGroupsRequest() : 
-    m_dBParameterGroupNameHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBParameterGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -37,7 +37,7 @@ namespace Model
   class ScheduledAutoTuneDetails
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API ScheduledAutoTuneDetails();
+    AWS_ELASTICSEARCHSERVICE_API ScheduledAutoTuneDetails() = default;
     AWS_ELASTICSEARCHSERVICE_API ScheduledAutoTuneDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API ScheduledAutoTuneDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
     /**
      * <p>Specifies timestamp for the Auto-Tune action scheduled for the domain. </p>
      */
-    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
+    inline const Aws::Utils::DateTime& GetDate() const { return m_date; }
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
-    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-    inline ScheduledAutoTuneDetails& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
-    inline ScheduledAutoTuneDetails& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
+    template<typename DateT = Aws::Utils::DateTime>
+    void SetDate(DateT&& value) { m_dateHasBeenSet = true; m_date = std::forward<DateT>(value); }
+    template<typename DateT = Aws::Utils::DateTime>
+    ScheduledAutoTuneDetails& WithDate(DateT&& value) { SetDate(std::forward<DateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,26 +60,22 @@ namespace Model
      * <p>Specifies Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and
      * JVM_YOUNG_GEN_TUNING. </p>
      */
-    inline const ScheduledAutoTuneActionType& GetActionType() const{ return m_actionType; }
+    inline ScheduledAutoTuneActionType GetActionType() const { return m_actionType; }
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-    inline void SetActionType(const ScheduledAutoTuneActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-    inline void SetActionType(ScheduledAutoTuneActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-    inline ScheduledAutoTuneDetails& WithActionType(const ScheduledAutoTuneActionType& value) { SetActionType(value); return *this;}
-    inline ScheduledAutoTuneDetails& WithActionType(ScheduledAutoTuneActionType&& value) { SetActionType(std::move(value)); return *this;}
+    inline void SetActionType(ScheduledAutoTuneActionType value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
+    inline ScheduledAutoTuneDetails& WithActionType(ScheduledAutoTuneActionType value) { SetActionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies Auto-Tune action description. </p>
      */
-    inline const Aws::String& GetAction() const{ return m_action; }
+    inline const Aws::String& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
-    inline ScheduledAutoTuneDetails& WithAction(const Aws::String& value) { SetAction(value); return *this;}
-    inline ScheduledAutoTuneDetails& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
-    inline ScheduledAutoTuneDetails& WithAction(const char* value) { SetAction(value); return *this;}
+    template<typename ActionT = Aws::String>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = Aws::String>
+    ScheduledAutoTuneDetails& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,25 +83,23 @@ namespace Model
      * <p>Specifies Auto-Tune action severity. Valid values are LOW, MEDIUM and HIGH.
      * </p>
      */
-    inline const ScheduledAutoTuneSeverityType& GetSeverity() const{ return m_severity; }
+    inline ScheduledAutoTuneSeverityType GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const ScheduledAutoTuneSeverityType& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(ScheduledAutoTuneSeverityType&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline ScheduledAutoTuneDetails& WithSeverity(const ScheduledAutoTuneSeverityType& value) { SetSeverity(value); return *this;}
-    inline ScheduledAutoTuneDetails& WithSeverity(ScheduledAutoTuneSeverityType&& value) { SetSeverity(std::move(value)); return *this;}
+    inline void SetSeverity(ScheduledAutoTuneSeverityType value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline ScheduledAutoTuneDetails& WithSeverity(ScheduledAutoTuneSeverityType value) { SetSeverity(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_date;
+    Aws::Utils::DateTime m_date{};
     bool m_dateHasBeenSet = false;
 
-    ScheduledAutoTuneActionType m_actionType;
+    ScheduledAutoTuneActionType m_actionType{ScheduledAutoTuneActionType::NOT_SET};
     bool m_actionTypeHasBeenSet = false;
 
     Aws::String m_action;
     bool m_actionHasBeenSet = false;
 
-    ScheduledAutoTuneSeverityType m_severity;
+    ScheduledAutoTuneSeverityType m_severity{ScheduledAutoTuneSeverityType::NOT_SET};
     bool m_severityHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class PardotConnectorProfileCredentials
   {
   public:
-    AWS_APPFLOW_API PardotConnectorProfileCredentials();
+    AWS_APPFLOW_API PardotConnectorProfileCredentials() = default;
     AWS_APPFLOW_API PardotConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API PardotConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,38 +43,34 @@ namespace Model
     /**
      * <p>The credentials used to access protected Salesforce Pardot resources.</p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-    inline PardotConnectorProfileCredentials& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline PardotConnectorProfileCredentials& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline PardotConnectorProfileCredentials& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    PardotConnectorProfileCredentials& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The credentials used to acquire new access tokens.</p>
      */
-    inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
+    inline const Aws::String& GetRefreshToken() const { return m_refreshToken; }
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
-    inline void SetRefreshToken(const Aws::String& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
-    inline void SetRefreshToken(Aws::String&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::move(value); }
-    inline void SetRefreshToken(const char* value) { m_refreshTokenHasBeenSet = true; m_refreshToken.assign(value); }
-    inline PardotConnectorProfileCredentials& WithRefreshToken(const Aws::String& value) { SetRefreshToken(value); return *this;}
-    inline PardotConnectorProfileCredentials& WithRefreshToken(Aws::String&& value) { SetRefreshToken(std::move(value)); return *this;}
-    inline PardotConnectorProfileCredentials& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
+    template<typename RefreshTokenT = Aws::String>
+    void SetRefreshToken(RefreshTokenT&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::forward<RefreshTokenT>(value); }
+    template<typename RefreshTokenT = Aws::String>
+    PardotConnectorProfileCredentials& WithRefreshToken(RefreshTokenT&& value) { SetRefreshToken(std::forward<RefreshTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ConnectorOAuthRequest& GetOAuthRequest() const{ return m_oAuthRequest; }
+    inline const ConnectorOAuthRequest& GetOAuthRequest() const { return m_oAuthRequest; }
     inline bool OAuthRequestHasBeenSet() const { return m_oAuthRequestHasBeenSet; }
-    inline void SetOAuthRequest(const ConnectorOAuthRequest& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = value; }
-    inline void SetOAuthRequest(ConnectorOAuthRequest&& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = std::move(value); }
-    inline PardotConnectorProfileCredentials& WithOAuthRequest(const ConnectorOAuthRequest& value) { SetOAuthRequest(value); return *this;}
-    inline PardotConnectorProfileCredentials& WithOAuthRequest(ConnectorOAuthRequest&& value) { SetOAuthRequest(std::move(value)); return *this;}
+    template<typename OAuthRequestT = ConnectorOAuthRequest>
+    void SetOAuthRequest(OAuthRequestT&& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = std::forward<OAuthRequestT>(value); }
+    template<typename OAuthRequestT = ConnectorOAuthRequest>
+    PardotConnectorProfileCredentials& WithOAuthRequest(OAuthRequestT&& value) { SetOAuthRequest(std::forward<OAuthRequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * <p>The secret manager ARN, which contains the client ID and client secret of the
      * connected app.</p>
      */
-    inline const Aws::String& GetClientCredentialsArn() const{ return m_clientCredentialsArn; }
+    inline const Aws::String& GetClientCredentialsArn() const { return m_clientCredentialsArn; }
     inline bool ClientCredentialsArnHasBeenSet() const { return m_clientCredentialsArnHasBeenSet; }
-    inline void SetClientCredentialsArn(const Aws::String& value) { m_clientCredentialsArnHasBeenSet = true; m_clientCredentialsArn = value; }
-    inline void SetClientCredentialsArn(Aws::String&& value) { m_clientCredentialsArnHasBeenSet = true; m_clientCredentialsArn = std::move(value); }
-    inline void SetClientCredentialsArn(const char* value) { m_clientCredentialsArnHasBeenSet = true; m_clientCredentialsArn.assign(value); }
-    inline PardotConnectorProfileCredentials& WithClientCredentialsArn(const Aws::String& value) { SetClientCredentialsArn(value); return *this;}
-    inline PardotConnectorProfileCredentials& WithClientCredentialsArn(Aws::String&& value) { SetClientCredentialsArn(std::move(value)); return *this;}
-    inline PardotConnectorProfileCredentials& WithClientCredentialsArn(const char* value) { SetClientCredentialsArn(value); return *this;}
+    template<typename ClientCredentialsArnT = Aws::String>
+    void SetClientCredentialsArn(ClientCredentialsArnT&& value) { m_clientCredentialsArnHasBeenSet = true; m_clientCredentialsArn = std::forward<ClientCredentialsArnT>(value); }
+    template<typename ClientCredentialsArnT = Aws::String>
+    PardotConnectorProfileCredentials& WithClientCredentialsArn(ClientCredentialsArnT&& value) { SetClientCredentialsArn(std::forward<ClientCredentialsArnT>(value)); return *this;}
     ///@}
   private:
 

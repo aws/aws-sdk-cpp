@@ -18,24 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ViolationEvent::ViolationEvent() : 
-    m_violationIdHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_securityProfileNameHasBeenSet(false),
-    m_behaviorHasBeenSet(false),
-    m_metricValueHasBeenSet(false),
-    m_violationEventAdditionalInfoHasBeenSet(false),
-    m_violationEventType(ViolationEventType::NOT_SET),
-    m_violationEventTypeHasBeenSet(false),
-    m_verificationState(VerificationState::NOT_SET),
-    m_verificationStateHasBeenSet(false),
-    m_verificationStateDescriptionHasBeenSet(false),
-    m_violationEventTimeHasBeenSet(false)
-{
-}
-
 ViolationEvent::ViolationEvent(JsonView jsonValue)
-  : ViolationEvent()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ ViolationEvent& ViolationEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("violationId"))
   {
     m_violationId = jsonValue.GetString("violationId");
-
     m_violationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingName"))
   {
     m_thingName = jsonValue.GetString("thingName");
-
     m_thingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityProfileName"))
   {
     m_securityProfileName = jsonValue.GetString("securityProfileName");
-
     m_securityProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("behavior"))
   {
     m_behavior = jsonValue.GetObject("behavior");
-
     m_behaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricValue"))
   {
     m_metricValue = jsonValue.GetObject("metricValue");
-
     m_metricValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("violationEventAdditionalInfo"))
   {
     m_violationEventAdditionalInfo = jsonValue.GetObject("violationEventAdditionalInfo");
-
     m_violationEventAdditionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("violationEventType"))
   {
     m_violationEventType = ViolationEventTypeMapper::GetViolationEventTypeForName(jsonValue.GetString("violationEventType"));
-
     m_violationEventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("verificationState"))
   {
     m_verificationState = VerificationStateMapper::GetVerificationStateForName(jsonValue.GetString("verificationState"));
-
     m_verificationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("verificationStateDescription"))
   {
     m_verificationStateDescription = jsonValue.GetString("verificationStateDescription");
-
     m_verificationStateDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("violationEventTime"))
   {
     m_violationEventTime = jsonValue.GetDouble("violationEventTime");
-
     m_violationEventTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

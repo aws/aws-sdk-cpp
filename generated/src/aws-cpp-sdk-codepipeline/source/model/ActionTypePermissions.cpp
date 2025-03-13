@@ -18,13 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionTypePermissions::ActionTypePermissions() : 
-    m_allowedAccountsHasBeenSet(false)
-{
-}
-
 ActionTypePermissions::ActionTypePermissions(JsonView jsonValue)
-  : ActionTypePermissions()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ActionTypePermissions& ActionTypePermissions::operator =(JsonView jsonValue)
     }
     m_allowedAccountsHasBeenSet = true;
   }
-
   return *this;
 }
 

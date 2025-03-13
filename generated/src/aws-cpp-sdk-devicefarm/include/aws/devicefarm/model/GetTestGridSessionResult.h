@@ -28,7 +28,7 @@ namespace Model
   class GetTestGridSessionResult
   {
   public:
-    AWS_DEVICEFARM_API GetTestGridSessionResult();
+    AWS_DEVICEFARM_API GetTestGridSessionResult() = default;
     AWS_DEVICEFARM_API GetTestGridSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API GetTestGridSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The <a>TestGridSession</a> that was requested.</p>
      */
-    inline const TestGridSession& GetTestGridSession() const{ return m_testGridSession; }
-    inline void SetTestGridSession(const TestGridSession& value) { m_testGridSession = value; }
-    inline void SetTestGridSession(TestGridSession&& value) { m_testGridSession = std::move(value); }
-    inline GetTestGridSessionResult& WithTestGridSession(const TestGridSession& value) { SetTestGridSession(value); return *this;}
-    inline GetTestGridSessionResult& WithTestGridSession(TestGridSession&& value) { SetTestGridSession(std::move(value)); return *this;}
+    inline const TestGridSession& GetTestGridSession() const { return m_testGridSession; }
+    template<typename TestGridSessionT = TestGridSession>
+    void SetTestGridSession(TestGridSessionT&& value) { m_testGridSessionHasBeenSet = true; m_testGridSession = std::forward<TestGridSessionT>(value); }
+    template<typename TestGridSessionT = TestGridSession>
+    GetTestGridSessionResult& WithTestGridSession(TestGridSessionT&& value) { SetTestGridSession(std::forward<TestGridSessionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTestGridSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTestGridSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTestGridSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTestGridSessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TestGridSession m_testGridSession;
+    bool m_testGridSessionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

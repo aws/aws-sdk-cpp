@@ -20,23 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplatePlacementRequest::LaunchTemplatePlacementRequest() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_affinityHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_hostIdHasBeenSet(false),
-    m_tenancy(Tenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_spreadDomainHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false),
-    m_partitionNumber(0),
-    m_partitionNumberHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 LaunchTemplatePlacementRequest::LaunchTemplatePlacementRequest(const XmlNode& xmlNode)
-  : LaunchTemplatePlacementRequest()
 {
   *this = xmlNode;
 }
@@ -52,54 +36,63 @@ LaunchTemplatePlacementRequest& LaunchTemplatePlacementRequest::operator =(const
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode affinityNode = resultNode.FirstChild("Affinity");
     if(!affinityNode.IsNull())
     {
       m_affinity = Aws::Utils::Xml::DecodeEscapedXmlText(affinityNode.GetText());
       m_affinityHasBeenSet = true;
+       m_affinityHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("GroupName");
     if(!groupNameNode.IsNull())
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
+       m_groupNameHasBeenSet = true;
     }
     XmlNode hostIdNode = resultNode.FirstChild("HostId");
     if(!hostIdNode.IsNull())
     {
       m_hostId = Aws::Utils::Xml::DecodeEscapedXmlText(hostIdNode.GetText());
       m_hostIdHasBeenSet = true;
+       m_hostIdHasBeenSet = true;
     }
     XmlNode tenancyNode = resultNode.FirstChild("Tenancy");
     if(!tenancyNode.IsNull())
     {
-      m_tenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()).c_str());
+      m_tenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()));
       m_tenancyHasBeenSet = true;
+       m_tenancyHasBeenSet = true;
     }
     XmlNode spreadDomainNode = resultNode.FirstChild("SpreadDomain");
     if(!spreadDomainNode.IsNull())
     {
       m_spreadDomain = Aws::Utils::Xml::DecodeEscapedXmlText(spreadDomainNode.GetText());
       m_spreadDomainHasBeenSet = true;
+       m_spreadDomainHasBeenSet = true;
     }
     XmlNode hostResourceGroupArnNode = resultNode.FirstChild("HostResourceGroupArn");
     if(!hostResourceGroupArnNode.IsNull())
     {
       m_hostResourceGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(hostResourceGroupArnNode.GetText());
       m_hostResourceGroupArnHasBeenSet = true;
+       m_hostResourceGroupArnHasBeenSet = true;
     }
     XmlNode partitionNumberNode = resultNode.FirstChild("PartitionNumber");
     if(!partitionNumberNode.IsNull())
     {
       m_partitionNumber = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionNumberNode.GetText()).c_str()).c_str());
       m_partitionNumberHasBeenSet = true;
+       m_partitionNumberHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("GroupId");
     if(!groupIdNode.IsNull())
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
+       m_groupIdHasBeenSet = true;
     }
   }
 

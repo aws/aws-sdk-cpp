@@ -28,7 +28,7 @@ namespace Model
   class GenerateDataSetRequest : public MarketplaceCommerceAnalyticsRequest
   {
   public:
-    AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetRequest();
+    AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -99,12 +99,10 @@ namespace Model
      * <strong>customer_profile_by_geography</strong> <p>This data set is deprecated.
      * Download related reports from AMMP instead!</p> </li> </ul> </p>
      */
-    inline const DataSetType& GetDataSetType() const{ return m_dataSetType; }
+    inline DataSetType GetDataSetType() const { return m_dataSetType; }
     inline bool DataSetTypeHasBeenSet() const { return m_dataSetTypeHasBeenSet; }
-    inline void SetDataSetType(const DataSetType& value) { m_dataSetTypeHasBeenSet = true; m_dataSetType = value; }
-    inline void SetDataSetType(DataSetType&& value) { m_dataSetTypeHasBeenSet = true; m_dataSetType = std::move(value); }
-    inline GenerateDataSetRequest& WithDataSetType(const DataSetType& value) { SetDataSetType(value); return *this;}
-    inline GenerateDataSetRequest& WithDataSetType(DataSetType&& value) { SetDataSetType(std::move(value)); return *this;}
+    inline void SetDataSetType(DataSetType value) { m_dataSetTypeHasBeenSet = true; m_dataSetType = value; }
+    inline GenerateDataSetRequest& WithDataSetType(DataSetType value) { SetDataSetType(value); return *this;}
     ///@}
 
     ///@{
@@ -117,12 +115,12 @@ namespace Model
      * For these data sets we will look backwards in time over the range of 31 days
      * until the first data set is found (the latest one).
      */
-    inline const Aws::Utils::DateTime& GetDataSetPublicationDate() const{ return m_dataSetPublicationDate; }
+    inline const Aws::Utils::DateTime& GetDataSetPublicationDate() const { return m_dataSetPublicationDate; }
     inline bool DataSetPublicationDateHasBeenSet() const { return m_dataSetPublicationDateHasBeenSet; }
-    inline void SetDataSetPublicationDate(const Aws::Utils::DateTime& value) { m_dataSetPublicationDateHasBeenSet = true; m_dataSetPublicationDate = value; }
-    inline void SetDataSetPublicationDate(Aws::Utils::DateTime&& value) { m_dataSetPublicationDateHasBeenSet = true; m_dataSetPublicationDate = std::move(value); }
-    inline GenerateDataSetRequest& WithDataSetPublicationDate(const Aws::Utils::DateTime& value) { SetDataSetPublicationDate(value); return *this;}
-    inline GenerateDataSetRequest& WithDataSetPublicationDate(Aws::Utils::DateTime&& value) { SetDataSetPublicationDate(std::move(value)); return *this;}
+    template<typename DataSetPublicationDateT = Aws::Utils::DateTime>
+    void SetDataSetPublicationDate(DataSetPublicationDateT&& value) { m_dataSetPublicationDateHasBeenSet = true; m_dataSetPublicationDate = std::forward<DataSetPublicationDateT>(value); }
+    template<typename DataSetPublicationDateT = Aws::Utils::DateTime>
+    GenerateDataSetRequest& WithDataSetPublicationDate(DataSetPublicationDateT&& value) { SetDataSetPublicationDate(std::forward<DataSetPublicationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,28 +128,24 @@ namespace Model
      * The Amazon Resource Name (ARN) of the Role with an attached permissions policy
      * to interact with the provided AWS services.
      */
-    inline const Aws::String& GetRoleNameArn() const{ return m_roleNameArn; }
+    inline const Aws::String& GetRoleNameArn() const { return m_roleNameArn; }
     inline bool RoleNameArnHasBeenSet() const { return m_roleNameArnHasBeenSet; }
-    inline void SetRoleNameArn(const Aws::String& value) { m_roleNameArnHasBeenSet = true; m_roleNameArn = value; }
-    inline void SetRoleNameArn(Aws::String&& value) { m_roleNameArnHasBeenSet = true; m_roleNameArn = std::move(value); }
-    inline void SetRoleNameArn(const char* value) { m_roleNameArnHasBeenSet = true; m_roleNameArn.assign(value); }
-    inline GenerateDataSetRequest& WithRoleNameArn(const Aws::String& value) { SetRoleNameArn(value); return *this;}
-    inline GenerateDataSetRequest& WithRoleNameArn(Aws::String&& value) { SetRoleNameArn(std::move(value)); return *this;}
-    inline GenerateDataSetRequest& WithRoleNameArn(const char* value) { SetRoleNameArn(value); return *this;}
+    template<typename RoleNameArnT = Aws::String>
+    void SetRoleNameArn(RoleNameArnT&& value) { m_roleNameArnHasBeenSet = true; m_roleNameArn = std::forward<RoleNameArnT>(value); }
+    template<typename RoleNameArnT = Aws::String>
+    GenerateDataSetRequest& WithRoleNameArn(RoleNameArnT&& value) { SetRoleNameArn(std::forward<RoleNameArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name (friendly name, not ARN) of the destination S3 bucket.
      */
-    inline const Aws::String& GetDestinationS3BucketName() const{ return m_destinationS3BucketName; }
+    inline const Aws::String& GetDestinationS3BucketName() const { return m_destinationS3BucketName; }
     inline bool DestinationS3BucketNameHasBeenSet() const { return m_destinationS3BucketNameHasBeenSet; }
-    inline void SetDestinationS3BucketName(const Aws::String& value) { m_destinationS3BucketNameHasBeenSet = true; m_destinationS3BucketName = value; }
-    inline void SetDestinationS3BucketName(Aws::String&& value) { m_destinationS3BucketNameHasBeenSet = true; m_destinationS3BucketName = std::move(value); }
-    inline void SetDestinationS3BucketName(const char* value) { m_destinationS3BucketNameHasBeenSet = true; m_destinationS3BucketName.assign(value); }
-    inline GenerateDataSetRequest& WithDestinationS3BucketName(const Aws::String& value) { SetDestinationS3BucketName(value); return *this;}
-    inline GenerateDataSetRequest& WithDestinationS3BucketName(Aws::String&& value) { SetDestinationS3BucketName(std::move(value)); return *this;}
-    inline GenerateDataSetRequest& WithDestinationS3BucketName(const char* value) { SetDestinationS3BucketName(value); return *this;}
+    template<typename DestinationS3BucketNameT = Aws::String>
+    void SetDestinationS3BucketName(DestinationS3BucketNameT&& value) { m_destinationS3BucketNameHasBeenSet = true; m_destinationS3BucketName = std::forward<DestinationS3BucketNameT>(value); }
+    template<typename DestinationS3BucketNameT = Aws::String>
+    GenerateDataSetRequest& WithDestinationS3BucketName(DestinationS3BucketNameT&& value) { SetDestinationS3BucketName(std::forward<DestinationS3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,14 +157,12 @@ namespace Model
      * prefix directory structure does not exist, it will be created. If no prefix is
      * provided, the data set will be published to the S3 bucket root.
      */
-    inline const Aws::String& GetDestinationS3Prefix() const{ return m_destinationS3Prefix; }
+    inline const Aws::String& GetDestinationS3Prefix() const { return m_destinationS3Prefix; }
     inline bool DestinationS3PrefixHasBeenSet() const { return m_destinationS3PrefixHasBeenSet; }
-    inline void SetDestinationS3Prefix(const Aws::String& value) { m_destinationS3PrefixHasBeenSet = true; m_destinationS3Prefix = value; }
-    inline void SetDestinationS3Prefix(Aws::String&& value) { m_destinationS3PrefixHasBeenSet = true; m_destinationS3Prefix = std::move(value); }
-    inline void SetDestinationS3Prefix(const char* value) { m_destinationS3PrefixHasBeenSet = true; m_destinationS3Prefix.assign(value); }
-    inline GenerateDataSetRequest& WithDestinationS3Prefix(const Aws::String& value) { SetDestinationS3Prefix(value); return *this;}
-    inline GenerateDataSetRequest& WithDestinationS3Prefix(Aws::String&& value) { SetDestinationS3Prefix(std::move(value)); return *this;}
-    inline GenerateDataSetRequest& WithDestinationS3Prefix(const char* value) { SetDestinationS3Prefix(value); return *this;}
+    template<typename DestinationS3PrefixT = Aws::String>
+    void SetDestinationS3Prefix(DestinationS3PrefixT&& value) { m_destinationS3PrefixHasBeenSet = true; m_destinationS3Prefix = std::forward<DestinationS3PrefixT>(value); }
+    template<typename DestinationS3PrefixT = Aws::String>
+    GenerateDataSetRequest& WithDestinationS3Prefix(DestinationS3PrefixT&& value) { SetDestinationS3Prefix(std::forward<DestinationS3PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,14 +170,12 @@ namespace Model
      * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data
      * set has been published or if an error has occurred.
      */
-    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+    inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
-    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
-    inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
-    inline GenerateDataSetRequest& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-    inline GenerateDataSetRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-    inline GenerateDataSetRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    template<typename SnsTopicArnT = Aws::String>
+    void SetSnsTopicArn(SnsTopicArnT&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::forward<SnsTopicArnT>(value); }
+    template<typename SnsTopicArnT = Aws::String>
+    GenerateDataSetRequest& WithSnsTopicArn(SnsTopicArnT&& value) { SetSnsTopicArn(std::forward<SnsTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -194,26 +184,23 @@ namespace Model
      * notification message and the data set metadata file. These key-value pairs can
      * be used to correlated responses with tracking information from other systems.
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerDefinedValues() const{ return m_customerDefinedValues; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerDefinedValues() const { return m_customerDefinedValues; }
     inline bool CustomerDefinedValuesHasBeenSet() const { return m_customerDefinedValuesHasBeenSet; }
-    inline void SetCustomerDefinedValues(const Aws::Map<Aws::String, Aws::String>& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues = value; }
-    inline void SetCustomerDefinedValues(Aws::Map<Aws::String, Aws::String>&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues = std::move(value); }
-    inline GenerateDataSetRequest& WithCustomerDefinedValues(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomerDefinedValues(value); return *this;}
-    inline GenerateDataSetRequest& WithCustomerDefinedValues(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerDefinedValues(std::move(value)); return *this;}
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(const Aws::String& key, const Aws::String& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(key, value); return *this; }
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(Aws::String&& key, const Aws::String& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(std::move(key), value); return *this; }
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(const Aws::String& key, Aws::String&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(key, std::move(value)); return *this; }
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(Aws::String&& key, Aws::String&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(std::move(key), std::move(value)); return *this; }
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(const char* key, Aws::String&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(key, std::move(value)); return *this; }
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(Aws::String&& key, const char* value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(std::move(key), value); return *this; }
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(const char* key, const char* value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(key, value); return *this; }
+    template<typename CustomerDefinedValuesT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomerDefinedValues(CustomerDefinedValuesT&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues = std::forward<CustomerDefinedValuesT>(value); }
+    template<typename CustomerDefinedValuesT = Aws::Map<Aws::String, Aws::String>>
+    GenerateDataSetRequest& WithCustomerDefinedValues(CustomerDefinedValuesT&& value) { SetCustomerDefinedValues(std::forward<CustomerDefinedValuesT>(value)); return *this;}
+    template<typename CustomerDefinedValuesKeyT = Aws::String, typename CustomerDefinedValuesValueT = Aws::String>
+    GenerateDataSetRequest& AddCustomerDefinedValues(CustomerDefinedValuesKeyT&& key, CustomerDefinedValuesValueT&& value) {
+      m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(std::forward<CustomerDefinedValuesKeyT>(key), std::forward<CustomerDefinedValuesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    DataSetType m_dataSetType;
+    DataSetType m_dataSetType{DataSetType::NOT_SET};
     bool m_dataSetTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dataSetPublicationDate;
+    Aws::Utils::DateTime m_dataSetPublicationDate{};
     bool m_dataSetPublicationDateHasBeenSet = false;
 
     Aws::String m_roleNameArn;

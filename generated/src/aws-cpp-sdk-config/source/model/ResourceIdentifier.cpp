@@ -18,17 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ResourceIdentifier::ResourceIdentifier() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceDeletionTimeHasBeenSet(false)
-{
-}
-
 ResourceIdentifier::ResourceIdentifier(JsonView jsonValue)
-  : ResourceIdentifier()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ResourceIdentifier& ResourceIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceName"))
   {
     m_resourceName = jsonValue.GetString("resourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceDeletionTime"))
   {
     m_resourceDeletionTime = jsonValue.GetDouble("resourceDeletionTime");
-
     m_resourceDeletionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

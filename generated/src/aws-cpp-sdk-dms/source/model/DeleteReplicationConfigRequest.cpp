@@ -12,11 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteReplicationConfigRequest::DeleteReplicationConfigRequest() : 
-    m_replicationConfigArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReplicationConfigRequest::SerializePayload() const
 {
   JsonValue payload;

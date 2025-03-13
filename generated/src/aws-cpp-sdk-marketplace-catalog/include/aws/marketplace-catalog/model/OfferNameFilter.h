@@ -33,7 +33,7 @@ namespace Model
   class OfferNameFilter
   {
   public:
-    AWS_MARKETPLACECATALOG_API OfferNameFilter();
+    AWS_MARKETPLACECATALOG_API OfferNameFilter() = default;
     AWS_MARKETPLACECATALOG_API OfferNameFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API OfferNameFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>Allows filtering on the <code>Name</code> of an offer with list input.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValueList() const{ return m_valueList; }
+    inline const Aws::Vector<Aws::String>& GetValueList() const { return m_valueList; }
     inline bool ValueListHasBeenSet() const { return m_valueListHasBeenSet; }
-    inline void SetValueList(const Aws::Vector<Aws::String>& value) { m_valueListHasBeenSet = true; m_valueList = value; }
-    inline void SetValueList(Aws::Vector<Aws::String>&& value) { m_valueListHasBeenSet = true; m_valueList = std::move(value); }
-    inline OfferNameFilter& WithValueList(const Aws::Vector<Aws::String>& value) { SetValueList(value); return *this;}
-    inline OfferNameFilter& WithValueList(Aws::Vector<Aws::String>&& value) { SetValueList(std::move(value)); return *this;}
-    inline OfferNameFilter& AddValueList(const Aws::String& value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
-    inline OfferNameFilter& AddValueList(Aws::String&& value) { m_valueListHasBeenSet = true; m_valueList.push_back(std::move(value)); return *this; }
-    inline OfferNameFilter& AddValueList(const char* value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
+    template<typename ValueListT = Aws::Vector<Aws::String>>
+    void SetValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList = std::forward<ValueListT>(value); }
+    template<typename ValueListT = Aws::Vector<Aws::String>>
+    OfferNameFilter& WithValueList(ValueListT&& value) { SetValueList(std::forward<ValueListT>(value)); return *this;}
+    template<typename ValueListT = Aws::String>
+    OfferNameFilter& AddValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList.emplace_back(std::forward<ValueListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +58,12 @@ namespace Model
      * <p>Allows filtering on the <code>Name</code> of an offer with wild card
      * input.</p>
      */
-    inline const Aws::String& GetWildCardValue() const{ return m_wildCardValue; }
+    inline const Aws::String& GetWildCardValue() const { return m_wildCardValue; }
     inline bool WildCardValueHasBeenSet() const { return m_wildCardValueHasBeenSet; }
-    inline void SetWildCardValue(const Aws::String& value) { m_wildCardValueHasBeenSet = true; m_wildCardValue = value; }
-    inline void SetWildCardValue(Aws::String&& value) { m_wildCardValueHasBeenSet = true; m_wildCardValue = std::move(value); }
-    inline void SetWildCardValue(const char* value) { m_wildCardValueHasBeenSet = true; m_wildCardValue.assign(value); }
-    inline OfferNameFilter& WithWildCardValue(const Aws::String& value) { SetWildCardValue(value); return *this;}
-    inline OfferNameFilter& WithWildCardValue(Aws::String&& value) { SetWildCardValue(std::move(value)); return *this;}
-    inline OfferNameFilter& WithWildCardValue(const char* value) { SetWildCardValue(value); return *this;}
+    template<typename WildCardValueT = Aws::String>
+    void SetWildCardValue(WildCardValueT&& value) { m_wildCardValueHasBeenSet = true; m_wildCardValue = std::forward<WildCardValueT>(value); }
+    template<typename WildCardValueT = Aws::String>
+    OfferNameFilter& WithWildCardValue(WildCardValueT&& value) { SetWildCardValue(std::forward<WildCardValueT>(value)); return *this;}
     ///@}
   private:
 

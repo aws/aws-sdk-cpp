@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddAttachmentsToSetResult::AddAttachmentsToSetResult()
-{
-}
-
 AddAttachmentsToSetResult::AddAttachmentsToSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ AddAttachmentsToSetResult& AddAttachmentsToSetResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("attachmentSetId"))
   {
     m_attachmentSetId = jsonValue.GetString("attachmentSetId");
-
+    m_attachmentSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiryTime"))
   {
     m_expiryTime = jsonValue.GetString("expiryTime");
-
+    m_expiryTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

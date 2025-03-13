@@ -33,7 +33,7 @@ namespace Model
   class TN3270
   {
   public:
-    AWS_APPTEST_API TN3270();
+    AWS_APPTEST_API TN3270() = default;
     AWS_APPTEST_API TN3270(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API TN3270& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,27 +43,26 @@ namespace Model
     /**
      * <p>The script of the TN3270 protocol.</p>
      */
-    inline const Script& GetScript() const{ return m_script; }
+    inline const Script& GetScript() const { return m_script; }
     inline bool ScriptHasBeenSet() const { return m_scriptHasBeenSet; }
-    inline void SetScript(const Script& value) { m_scriptHasBeenSet = true; m_script = value; }
-    inline void SetScript(Script&& value) { m_scriptHasBeenSet = true; m_script = std::move(value); }
-    inline TN3270& WithScript(const Script& value) { SetScript(value); return *this;}
-    inline TN3270& WithScript(Script&& value) { SetScript(std::move(value)); return *this;}
+    template<typename ScriptT = Script>
+    void SetScript(ScriptT&& value) { m_scriptHasBeenSet = true; m_script = std::forward<ScriptT>(value); }
+    template<typename ScriptT = Script>
+    TN3270& WithScript(ScriptT&& value) { SetScript(std::forward<ScriptT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data set names of the TN3270 protocol.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExportDataSetNames() const{ return m_exportDataSetNames; }
+    inline const Aws::Vector<Aws::String>& GetExportDataSetNames() const { return m_exportDataSetNames; }
     inline bool ExportDataSetNamesHasBeenSet() const { return m_exportDataSetNamesHasBeenSet; }
-    inline void SetExportDataSetNames(const Aws::Vector<Aws::String>& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames = value; }
-    inline void SetExportDataSetNames(Aws::Vector<Aws::String>&& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames = std::move(value); }
-    inline TN3270& WithExportDataSetNames(const Aws::Vector<Aws::String>& value) { SetExportDataSetNames(value); return *this;}
-    inline TN3270& WithExportDataSetNames(Aws::Vector<Aws::String>&& value) { SetExportDataSetNames(std::move(value)); return *this;}
-    inline TN3270& AddExportDataSetNames(const Aws::String& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames.push_back(value); return *this; }
-    inline TN3270& AddExportDataSetNames(Aws::String&& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames.push_back(std::move(value)); return *this; }
-    inline TN3270& AddExportDataSetNames(const char* value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames.push_back(value); return *this; }
+    template<typename ExportDataSetNamesT = Aws::Vector<Aws::String>>
+    void SetExportDataSetNames(ExportDataSetNamesT&& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames = std::forward<ExportDataSetNamesT>(value); }
+    template<typename ExportDataSetNamesT = Aws::Vector<Aws::String>>
+    TN3270& WithExportDataSetNames(ExportDataSetNamesT&& value) { SetExportDataSetNames(std::forward<ExportDataSetNamesT>(value)); return *this;}
+    template<typename ExportDataSetNamesT = Aws::String>
+    TN3270& AddExportDataSetNames(ExportDataSetNamesT&& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames.emplace_back(std::forward<ExportDataSetNamesT>(value)); return *this; }
     ///@}
   private:
 

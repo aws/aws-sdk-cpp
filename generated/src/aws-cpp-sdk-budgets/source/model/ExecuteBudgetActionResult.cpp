@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExecuteBudgetActionResult::ExecuteBudgetActionResult() : 
-    m_executionType(ExecutionType::NOT_SET)
-{
-}
-
 ExecuteBudgetActionResult::ExecuteBudgetActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ExecuteBudgetActionResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ ExecuteBudgetActionResult& ExecuteBudgetActionResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
+    m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BudgetName"))
   {
     m_budgetName = jsonValue.GetString("BudgetName");
-
+    m_budgetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionId"))
   {
     m_actionId = jsonValue.GetString("ActionId");
-
+    m_actionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionType"))
   {
     m_executionType = ExecutionTypeMapper::GetExecutionTypeForName(jsonValue.GetString("ExecutionType"));
-
+    m_executionTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetMLEndpointRequest::GetMLEndpointRequest() : 
-    m_idHasBeenSet(false),
-    m_neptuneIamRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String GetMLEndpointRequest::SerializePayload() const
 {
   return {};

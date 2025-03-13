@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteAttributeMappingRequest::DeleteAttributeMappingRequest() : 
-    m_certificateField(CertificateField::NOT_SET),
-    m_certificateFieldHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_specifiersHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAttributeMappingRequest::SerializePayload() const
 {
   return {};

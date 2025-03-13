@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-BatchDescribeTypeConfigurationsError::BatchDescribeTypeConfigurationsError() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_typeConfigurationIdentifierHasBeenSet(false)
-{
-}
-
 BatchDescribeTypeConfigurationsError::BatchDescribeTypeConfigurationsError(const XmlNode& xmlNode)
-  : BatchDescribeTypeConfigurationsError()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ BatchDescribeTypeConfigurationsError& BatchDescribeTypeConfigurationsError::oper
     {
       m_errorCode = Aws::Utils::Xml::DecodeEscapedXmlText(errorCodeNode.GetText());
       m_errorCodeHasBeenSet = true;
+       m_errorCodeHasBeenSet = true;
     }
     XmlNode errorMessageNode = resultNode.FirstChild("ErrorMessage");
     if(!errorMessageNode.IsNull())
     {
       m_errorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(errorMessageNode.GetText());
       m_errorMessageHasBeenSet = true;
+       m_errorMessageHasBeenSet = true;
     }
     XmlNode typeConfigurationIdentifierNode = resultNode.FirstChild("TypeConfigurationIdentifier");
     if(!typeConfigurationIdentifierNode.IsNull())
     {
       m_typeConfigurationIdentifier = typeConfigurationIdentifierNode;
       m_typeConfigurationIdentifierHasBeenSet = true;
+       m_typeConfigurationIdentifierHasBeenSet = true;
     }
   }
 

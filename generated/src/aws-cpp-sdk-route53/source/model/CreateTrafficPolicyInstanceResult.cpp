@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTrafficPolicyInstanceResult::CreateTrafficPolicyInstanceResult()
-{
-}
-
 CreateTrafficPolicyInstanceResult::CreateTrafficPolicyInstanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ CreateTrafficPolicyInstanceResult& CreateTrafficPolicyInstanceResult::operator =
     if(!trafficPolicyInstanceNode.IsNull())
     {
       m_trafficPolicyInstance = trafficPolicyInstanceNode;
+      m_trafficPolicyInstanceHasBeenSet = true;
     }
   }
 
@@ -44,12 +41,14 @@ CreateTrafficPolicyInstanceResult& CreateTrafficPolicyInstanceResult::operator =
   if(locationIter != headers.end())
   {
     m_location = locationIter->second;
+    m_locationHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

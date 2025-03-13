@@ -18,15 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-NotificationDetails::NotificationDetails() : 
-    m_dataUpdateHasBeenSet(false),
-    m_deprecationHasBeenSet(false),
-    m_schemaChangeHasBeenSet(false)
-{
-}
-
 NotificationDetails::NotificationDetails(JsonView jsonValue)
-  : NotificationDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ NotificationDetails& NotificationDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataUpdate"))
   {
     m_dataUpdate = jsonValue.GetObject("DataUpdate");
-
     m_dataUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Deprecation"))
   {
     m_deprecation = jsonValue.GetObject("Deprecation");
-
     m_deprecationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaChange"))
   {
     m_schemaChange = jsonValue.GetObject("SchemaChange");
-
     m_schemaChangeHasBeenSet = true;
   }
-
   return *this;
 }
 

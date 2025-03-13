@@ -34,7 +34,7 @@ namespace Model
   class StepExecutionFilter
   {
   public:
-    AWS_SSM_API StepExecutionFilter();
+    AWS_SSM_API StepExecutionFilter() = default;
     AWS_SSM_API StepExecutionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API StepExecutionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,28 @@ namespace Model
     /**
      * <p>One or more keys to limit the results.</p>
      */
-    inline const StepExecutionFilterKey& GetKey() const{ return m_key; }
+    inline StepExecutionFilterKey GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const StepExecutionFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(StepExecutionFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline StepExecutionFilter& WithKey(const StepExecutionFilterKey& value) { SetKey(value); return *this;}
-    inline StepExecutionFilter& WithKey(StepExecutionFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(StepExecutionFilterKey value) { m_keyHasBeenSet = true; m_key = value; }
+    inline StepExecutionFilter& WithKey(StepExecutionFilterKey value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The values of the filter key.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline StepExecutionFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline StepExecutionFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline StepExecutionFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline StepExecutionFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline StepExecutionFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    StepExecutionFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    StepExecutionFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    StepExecutionFilterKey m_key;
+    StepExecutionFilterKey m_key{StepExecutionFilterKey::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

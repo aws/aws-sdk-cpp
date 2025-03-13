@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExportServerEngineAttributeResult::ExportServerEngineAttributeResult()
-{
-}
-
 ExportServerEngineAttributeResult::ExportServerEngineAttributeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ ExportServerEngineAttributeResult& ExportServerEngineAttributeResult::operator =
   if(jsonValue.ValueExists("EngineAttribute"))
   {
     m_engineAttribute = jsonValue.GetObject("EngineAttribute");
-
+    m_engineAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
+    m_serverNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

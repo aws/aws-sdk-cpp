@@ -29,7 +29,7 @@ namespace Model
   class CreatePlayerSessionsResult
   {
   public:
-    AWS_GAMELIFT_API CreatePlayerSessionsResult();
+    AWS_GAMELIFT_API CreatePlayerSessionsResult() = default;
     AWS_GAMELIFT_API CreatePlayerSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API CreatePlayerSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>A collection of player session objects created for the added players.</p>
      */
-    inline const Aws::Vector<PlayerSession>& GetPlayerSessions() const{ return m_playerSessions; }
-    inline void SetPlayerSessions(const Aws::Vector<PlayerSession>& value) { m_playerSessions = value; }
-    inline void SetPlayerSessions(Aws::Vector<PlayerSession>&& value) { m_playerSessions = std::move(value); }
-    inline CreatePlayerSessionsResult& WithPlayerSessions(const Aws::Vector<PlayerSession>& value) { SetPlayerSessions(value); return *this;}
-    inline CreatePlayerSessionsResult& WithPlayerSessions(Aws::Vector<PlayerSession>&& value) { SetPlayerSessions(std::move(value)); return *this;}
-    inline CreatePlayerSessionsResult& AddPlayerSessions(const PlayerSession& value) { m_playerSessions.push_back(value); return *this; }
-    inline CreatePlayerSessionsResult& AddPlayerSessions(PlayerSession&& value) { m_playerSessions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PlayerSession>& GetPlayerSessions() const { return m_playerSessions; }
+    template<typename PlayerSessionsT = Aws::Vector<PlayerSession>>
+    void SetPlayerSessions(PlayerSessionsT&& value) { m_playerSessionsHasBeenSet = true; m_playerSessions = std::forward<PlayerSessionsT>(value); }
+    template<typename PlayerSessionsT = Aws::Vector<PlayerSession>>
+    CreatePlayerSessionsResult& WithPlayerSessions(PlayerSessionsT&& value) { SetPlayerSessions(std::forward<PlayerSessionsT>(value)); return *this;}
+    template<typename PlayerSessionsT = PlayerSession>
+    CreatePlayerSessionsResult& AddPlayerSessions(PlayerSessionsT&& value) { m_playerSessionsHasBeenSet = true; m_playerSessions.emplace_back(std::forward<PlayerSessionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePlayerSessionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePlayerSessionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePlayerSessionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePlayerSessionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PlayerSession> m_playerSessions;
+    bool m_playerSessionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

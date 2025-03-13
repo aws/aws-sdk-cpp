@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-InvalidLambdaFunctionException::InvalidLambdaFunctionException() : 
-    m_functionArnHasBeenSet(false)
-{
-}
-
 InvalidLambdaFunctionException::InvalidLambdaFunctionException(const XmlNode& xmlNode)
-  : InvalidLambdaFunctionException()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ InvalidLambdaFunctionException& InvalidLambdaFunctionException::operator =(const
     {
       m_functionArn = Aws::Utils::Xml::DecodeEscapedXmlText(functionArnNode.GetText());
       m_functionArnHasBeenSet = true;
+       m_functionArnHasBeenSet = true;
     }
   }
 

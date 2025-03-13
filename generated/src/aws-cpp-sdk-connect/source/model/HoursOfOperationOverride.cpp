@@ -18,20 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HoursOfOperationOverride::HoursOfOperationOverride() : 
-    m_hoursOfOperationOverrideIdHasBeenSet(false),
-    m_hoursOfOperationIdHasBeenSet(false),
-    m_hoursOfOperationArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_configHasBeenSet(false),
-    m_effectiveFromHasBeenSet(false),
-    m_effectiveTillHasBeenSet(false)
-{
-}
-
 HoursOfOperationOverride::HoursOfOperationOverride(JsonView jsonValue)
-  : HoursOfOperationOverride()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ HoursOfOperationOverride& HoursOfOperationOverride::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("HoursOfOperationOverrideId"))
   {
     m_hoursOfOperationOverrideId = jsonValue.GetString("HoursOfOperationOverrideId");
-
     m_hoursOfOperationOverrideIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HoursOfOperationId"))
   {
     m_hoursOfOperationId = jsonValue.GetString("HoursOfOperationId");
-
     m_hoursOfOperationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HoursOfOperationArn"))
   {
     m_hoursOfOperationArn = jsonValue.GetString("HoursOfOperationArn");
-
     m_hoursOfOperationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Config"))
   {
     Aws::Utils::Array<JsonView> configJsonList = jsonValue.GetArray("Config");
@@ -82,21 +59,16 @@ HoursOfOperationOverride& HoursOfOperationOverride::operator =(JsonView jsonValu
     }
     m_configHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EffectiveFrom"))
   {
     m_effectiveFrom = jsonValue.GetString("EffectiveFrom");
-
     m_effectiveFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EffectiveTill"))
   {
     m_effectiveTill = jsonValue.GetString("EffectiveTill");
-
     m_effectiveTillHasBeenSet = true;
   }
-
   return *this;
 }
 

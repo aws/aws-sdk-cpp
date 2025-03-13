@@ -55,7 +55,7 @@ namespace Model
   class HealthCheckCustomConfig
   {
   public:
-    AWS_SERVICEDISCOVERY_API HealthCheckCustomConfig();
+    AWS_SERVICEDISCOVERY_API HealthCheckCustomConfig() = default;
     AWS_SERVICEDISCOVERY_API HealthCheckCustomConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API HealthCheckCustomConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;

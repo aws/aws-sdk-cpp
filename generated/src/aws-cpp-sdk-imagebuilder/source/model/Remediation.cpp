@@ -18,13 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-Remediation::Remediation() : 
-    m_recommendationHasBeenSet(false)
-{
-}
-
 Remediation::Remediation(JsonView jsonValue)
-  : Remediation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Remediation& Remediation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("recommendation"))
   {
     m_recommendation = jsonValue.GetObject("recommendation");
-
     m_recommendationHasBeenSet = true;
   }
-
   return *this;
 }
 

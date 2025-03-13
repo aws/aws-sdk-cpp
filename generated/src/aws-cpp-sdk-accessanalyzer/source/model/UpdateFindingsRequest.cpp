@@ -12,17 +12,6 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFindingsRequest::UpdateFindingsRequest() : 
-    m_analyzerArnHasBeenSet(false),
-    m_status(FindingStatusUpdate::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_idsHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

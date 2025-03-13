@@ -12,12 +12,6 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBatchJobExecutionRequest::GetBatchJobExecutionRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_executionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetBatchJobExecutionRequest::SerializePayload() const
 {
   return {};

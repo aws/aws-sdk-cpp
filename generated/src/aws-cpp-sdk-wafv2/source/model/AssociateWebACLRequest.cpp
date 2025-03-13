@@ -12,12 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateWebACLRequest::AssociateWebACLRequest() : 
-    m_webACLArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateWebACLRequest::SerializePayload() const
 {
   JsonValue payload;

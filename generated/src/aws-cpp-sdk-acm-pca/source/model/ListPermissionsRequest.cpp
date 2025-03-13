@@ -12,14 +12,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPermissionsRequest::ListPermissionsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_certificateAuthorityArnHasBeenSet(false)
-{
-}
-
 Aws::String ListPermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

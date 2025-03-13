@@ -34,7 +34,7 @@ namespace Model
   class SimpleScalingPolicyConfiguration
   {
   public:
-    AWS_EMR_API SimpleScalingPolicyConfiguration();
+    AWS_EMR_API SimpleScalingPolicyConfiguration() = default;
     AWS_EMR_API SimpleScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API SimpleScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,12 +57,10 @@ namespace Model
      * <code>ScalingAdjustment</code>, which should be expressed as a positive
      * integer.</p>
      */
-    inline const AdjustmentType& GetAdjustmentType() const{ return m_adjustmentType; }
+    inline AdjustmentType GetAdjustmentType() const { return m_adjustmentType; }
     inline bool AdjustmentTypeHasBeenSet() const { return m_adjustmentTypeHasBeenSet; }
-    inline void SetAdjustmentType(const AdjustmentType& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
-    inline void SetAdjustmentType(AdjustmentType&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
-    inline SimpleScalingPolicyConfiguration& WithAdjustmentType(const AdjustmentType& value) { SetAdjustmentType(value); return *this;}
-    inline SimpleScalingPolicyConfiguration& WithAdjustmentType(AdjustmentType&& value) { SetAdjustmentType(std::move(value)); return *this;}
+    inline void SetAdjustmentType(AdjustmentType value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
+    inline SimpleScalingPolicyConfiguration& WithAdjustmentType(AdjustmentType value) { SetAdjustmentType(value); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +74,7 @@ namespace Model
      * as an integer. For example, -20 indicates a decrease in 20% increments of
      * cluster capacity.</p>
      */
-    inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
+    inline int GetScalingAdjustment() const { return m_scalingAdjustment; }
     inline bool ScalingAdjustmentHasBeenSet() const { return m_scalingAdjustmentHasBeenSet; }
     inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
     inline SimpleScalingPolicyConfiguration& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
@@ -88,20 +86,20 @@ namespace Model
      * further trigger-related scaling activities can start. The default value is
      * 0.</p>
      */
-    inline int GetCoolDown() const{ return m_coolDown; }
+    inline int GetCoolDown() const { return m_coolDown; }
     inline bool CoolDownHasBeenSet() const { return m_coolDownHasBeenSet; }
     inline void SetCoolDown(int value) { m_coolDownHasBeenSet = true; m_coolDown = value; }
     inline SimpleScalingPolicyConfiguration& WithCoolDown(int value) { SetCoolDown(value); return *this;}
     ///@}
   private:
 
-    AdjustmentType m_adjustmentType;
+    AdjustmentType m_adjustmentType{AdjustmentType::NOT_SET};
     bool m_adjustmentTypeHasBeenSet = false;
 
-    int m_scalingAdjustment;
+    int m_scalingAdjustment{0};
     bool m_scalingAdjustmentHasBeenSet = false;
 
-    int m_coolDown;
+    int m_coolDown{0};
     bool m_coolDownHasBeenSet = false;
   };
 

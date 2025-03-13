@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SnapshotDiskContainer::SnapshotDiskContainer() : 
-    m_descriptionHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_userBucketHasBeenSet(false)
-{
-}
-
 SnapshotDiskContainer::SnapshotDiskContainer(const XmlNode& xmlNode)
-  : SnapshotDiskContainer()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ SnapshotDiskContainer& SnapshotDiskContainer::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
       m_format = Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText());
       m_formatHasBeenSet = true;
+       m_formatHasBeenSet = true;
     }
     XmlNode urlNode = resultNode.FirstChild("Url");
     if(!urlNode.IsNull())
     {
       m_url = Aws::Utils::Xml::DecodeEscapedXmlText(urlNode.GetText());
       m_urlHasBeenSet = true;
+       m_urlHasBeenSet = true;
     }
     XmlNode userBucketNode = resultNode.FirstChild("UserBucket");
     if(!userBucketNode.IsNull())
     {
       m_userBucket = userBucketNode;
       m_userBucketHasBeenSet = true;
+       m_userBucketHasBeenSet = true;
     }
   }
 

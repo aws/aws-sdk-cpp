@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAuthorizerResult::UpdateAuthorizerResult() : 
-    m_authorizerResultTtlInSeconds(0),
-    m_authorizerType(AuthorizerType::NOT_SET),
-    m_enableSimpleResponses(false)
-{
-}
-
 UpdateAuthorizerResult::UpdateAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateAuthorizerResult()
 {
   *this = result;
 }
@@ -36,45 +28,38 @@ UpdateAuthorizerResult& UpdateAuthorizerResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("authorizerCredentialsArn"))
   {
     m_authorizerCredentialsArn = jsonValue.GetString("authorizerCredentialsArn");
-
+    m_authorizerCredentialsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizerId"))
   {
     m_authorizerId = jsonValue.GetString("authorizerId");
-
+    m_authorizerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizerPayloadFormatVersion"))
   {
     m_authorizerPayloadFormatVersion = jsonValue.GetString("authorizerPayloadFormatVersion");
-
+    m_authorizerPayloadFormatVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizerResultTtlInSeconds"))
   {
     m_authorizerResultTtlInSeconds = jsonValue.GetInteger("authorizerResultTtlInSeconds");
-
+    m_authorizerResultTtlInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizerType"))
   {
     m_authorizerType = AuthorizerTypeMapper::GetAuthorizerTypeForName(jsonValue.GetString("authorizerType"));
-
+    m_authorizerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizerUri"))
   {
     m_authorizerUri = jsonValue.GetString("authorizerUri");
-
+    m_authorizerUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableSimpleResponses"))
   {
     m_enableSimpleResponses = jsonValue.GetBool("enableSimpleResponses");
-
+    m_enableSimpleResponsesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identitySource"))
   {
     Aws::Utils::Array<JsonView> identitySourceJsonList = jsonValue.GetArray("identitySource");
@@ -82,32 +67,30 @@ UpdateAuthorizerResult& UpdateAuthorizerResult::operator =(const Aws::AmazonWebS
     {
       m_identitySource.push_back(identitySourceJsonList[identitySourceIndex].AsString());
     }
+    m_identitySourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityValidationExpression"))
   {
     m_identityValidationExpression = jsonValue.GetString("identityValidationExpression");
-
+    m_identityValidationExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jwtConfiguration"))
   {
     m_jwtConfiguration = jsonValue.GetObject("jwtConfiguration");
-
+    m_jwtConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

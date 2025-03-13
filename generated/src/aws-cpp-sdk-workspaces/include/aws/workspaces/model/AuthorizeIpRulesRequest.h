@@ -23,7 +23,7 @@ namespace Model
   class AuthorizeIpRulesRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API AuthorizeIpRulesRequest();
+    AWS_WORKSPACES_API AuthorizeIpRulesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,26 @@ namespace Model
     /**
      * <p>The identifier of the group.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline AuthorizeIpRulesRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline AuthorizeIpRulesRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline AuthorizeIpRulesRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    AuthorizeIpRulesRequest& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rules to add to the group.</p>
      */
-    inline const Aws::Vector<IpRuleItem>& GetUserRules() const{ return m_userRules; }
+    inline const Aws::Vector<IpRuleItem>& GetUserRules() const { return m_userRules; }
     inline bool UserRulesHasBeenSet() const { return m_userRulesHasBeenSet; }
-    inline void SetUserRules(const Aws::Vector<IpRuleItem>& value) { m_userRulesHasBeenSet = true; m_userRules = value; }
-    inline void SetUserRules(Aws::Vector<IpRuleItem>&& value) { m_userRulesHasBeenSet = true; m_userRules = std::move(value); }
-    inline AuthorizeIpRulesRequest& WithUserRules(const Aws::Vector<IpRuleItem>& value) { SetUserRules(value); return *this;}
-    inline AuthorizeIpRulesRequest& WithUserRules(Aws::Vector<IpRuleItem>&& value) { SetUserRules(std::move(value)); return *this;}
-    inline AuthorizeIpRulesRequest& AddUserRules(const IpRuleItem& value) { m_userRulesHasBeenSet = true; m_userRules.push_back(value); return *this; }
-    inline AuthorizeIpRulesRequest& AddUserRules(IpRuleItem&& value) { m_userRulesHasBeenSet = true; m_userRules.push_back(std::move(value)); return *this; }
+    template<typename UserRulesT = Aws::Vector<IpRuleItem>>
+    void SetUserRules(UserRulesT&& value) { m_userRulesHasBeenSet = true; m_userRules = std::forward<UserRulesT>(value); }
+    template<typename UserRulesT = Aws::Vector<IpRuleItem>>
+    AuthorizeIpRulesRequest& WithUserRules(UserRulesT&& value) { SetUserRules(std::forward<UserRulesT>(value)); return *this;}
+    template<typename UserRulesT = IpRuleItem>
+    AuthorizeIpRulesRequest& AddUserRules(UserRulesT&& value) { m_userRulesHasBeenSet = true; m_userRules.emplace_back(std::forward<UserRulesT>(value)); return *this; }
     ///@}
   private:
 

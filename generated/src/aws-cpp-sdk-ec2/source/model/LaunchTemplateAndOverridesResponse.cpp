@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateAndOverridesResponse::LaunchTemplateAndOverridesResponse() : 
-    m_launchTemplateSpecificationHasBeenSet(false),
-    m_overridesHasBeenSet(false)
-{
-}
-
 LaunchTemplateAndOverridesResponse::LaunchTemplateAndOverridesResponse(const XmlNode& xmlNode)
-  : LaunchTemplateAndOverridesResponse()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ LaunchTemplateAndOverridesResponse& LaunchTemplateAndOverridesResponse::operator
     {
       m_launchTemplateSpecification = launchTemplateSpecificationNode;
       m_launchTemplateSpecificationHasBeenSet = true;
+       m_launchTemplateSpecificationHasBeenSet = true;
     }
     XmlNode overridesNode = resultNode.FirstChild("overrides");
     if(!overridesNode.IsNull())
     {
       m_overrides = overridesNode;
       m_overridesHasBeenSet = true;
+       m_overridesHasBeenSet = true;
     }
   }
 

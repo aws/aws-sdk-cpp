@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DhcpOptions::DhcpOptions() : 
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dhcpOptionsIdHasBeenSet(false),
-    m_dhcpConfigurationsHasBeenSet(false)
-{
-}
-
 DhcpOptions::DhcpOptions(const XmlNode& xmlNode)
-  : DhcpOptions()
 {
   *this = xmlNode;
 }
@@ -45,36 +36,40 @@ DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode dhcpOptionsIdNode = resultNode.FirstChild("dhcpOptionsId");
     if(!dhcpOptionsIdNode.IsNull())
     {
       m_dhcpOptionsId = Aws::Utils::Xml::DecodeEscapedXmlText(dhcpOptionsIdNode.GetText());
       m_dhcpOptionsIdHasBeenSet = true;
+       m_dhcpOptionsIdHasBeenSet = true;
     }
     XmlNode dhcpConfigurationsNode = resultNode.FirstChild("dhcpConfigurationSet");
     if(!dhcpConfigurationsNode.IsNull())
     {
       XmlNode dhcpConfigurationsMember = dhcpConfigurationsNode.FirstChild("item");
+      m_dhcpConfigurationsHasBeenSet = !dhcpConfigurationsMember.IsNull();
       while(!dhcpConfigurationsMember.IsNull())
       {
         m_dhcpConfigurations.push_back(dhcpConfigurationsMember);
         dhcpConfigurationsMember = dhcpConfigurationsMember.NextNode("item");
       }
 
-      m_dhcpConfigurationsHasBeenSet = true;
+       m_dhcpConfigurationsHasBeenSet = true;
     }
   }
 

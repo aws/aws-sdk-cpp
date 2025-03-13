@@ -18,17 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-LastDeploymentInfo::LastDeploymentInfo() : 
-    m_deploymentIdHasBeenSet(false),
-    m_status(DeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
-{
-}
-
 LastDeploymentInfo::LastDeploymentInfo(JsonView jsonValue)
-  : LastDeploymentInfo()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ LastDeploymentInfo& LastDeploymentInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

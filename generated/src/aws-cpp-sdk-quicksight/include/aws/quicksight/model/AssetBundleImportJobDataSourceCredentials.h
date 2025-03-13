@@ -33,7 +33,7 @@ namespace Model
   class AssetBundleImportJobDataSourceCredentials
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobDataSourceCredentials();
+    AWS_QUICKSIGHT_API AssetBundleImportJobDataSourceCredentials() = default;
     AWS_QUICKSIGHT_API AssetBundleImportJobDataSourceCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportJobDataSourceCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * data source. Keep this field blank if you are using a Secrets Manager secret to
      * provide credentials.</p>
      */
-    inline const AssetBundleImportJobDataSourceCredentialPair& GetCredentialPair() const{ return m_credentialPair; }
+    inline const AssetBundleImportJobDataSourceCredentialPair& GetCredentialPair() const { return m_credentialPair; }
     inline bool CredentialPairHasBeenSet() const { return m_credentialPairHasBeenSet; }
-    inline void SetCredentialPair(const AssetBundleImportJobDataSourceCredentialPair& value) { m_credentialPairHasBeenSet = true; m_credentialPair = value; }
-    inline void SetCredentialPair(AssetBundleImportJobDataSourceCredentialPair&& value) { m_credentialPairHasBeenSet = true; m_credentialPair = std::move(value); }
-    inline AssetBundleImportJobDataSourceCredentials& WithCredentialPair(const AssetBundleImportJobDataSourceCredentialPair& value) { SetCredentialPair(value); return *this;}
-    inline AssetBundleImportJobDataSourceCredentials& WithCredentialPair(AssetBundleImportJobDataSourceCredentialPair&& value) { SetCredentialPair(std::move(value)); return *this;}
+    template<typename CredentialPairT = AssetBundleImportJobDataSourceCredentialPair>
+    void SetCredentialPair(CredentialPairT&& value) { m_credentialPairHasBeenSet = true; m_credentialPair = std::forward<CredentialPairT>(value); }
+    template<typename CredentialPairT = AssetBundleImportJobDataSourceCredentialPair>
+    AssetBundleImportJobDataSourceCredentials& WithCredentialPair(CredentialPairT&& value) { SetCredentialPair(std::forward<CredentialPairT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * source. Keep this field blank, unless you are using a secret in place of a
      * credential pair.</p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline AssetBundleImportJobDataSourceCredentials& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline AssetBundleImportJobDataSourceCredentials& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline AssetBundleImportJobDataSourceCredentials& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    AssetBundleImportJobDataSourceCredentials& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
   private:
 

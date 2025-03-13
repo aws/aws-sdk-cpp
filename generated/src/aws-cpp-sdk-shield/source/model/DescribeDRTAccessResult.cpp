@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDRTAccessResult::DescribeDRTAccessResult()
-{
-}
-
 DescribeDRTAccessResult::DescribeDRTAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeDRTAccessResult& DescribeDRTAccessResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogBucketList"))
   {
     Aws::Utils::Array<JsonView> logBucketListJsonList = jsonValue.GetArray("LogBucketList");
@@ -42,14 +37,15 @@ DescribeDRTAccessResult& DescribeDRTAccessResult::operator =(const Aws::AmazonWe
     {
       m_logBucketList.push_back(logBucketListJsonList[logBucketListIndex].AsString());
     }
+    m_logBucketListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

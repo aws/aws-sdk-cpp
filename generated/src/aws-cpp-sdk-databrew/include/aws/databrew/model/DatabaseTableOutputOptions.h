@@ -33,7 +33,7 @@ namespace Model
   class DatabaseTableOutputOptions
   {
   public:
-    AWS_GLUEDATABREW_API DatabaseTableOutputOptions();
+    AWS_GLUEDATABREW_API DatabaseTableOutputOptions() = default;
     AWS_GLUEDATABREW_API DatabaseTableOutputOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API DatabaseTableOutputOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
      * <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew
      * can store intermediate results.</p>
      */
-    inline const S3Location& GetTempDirectory() const{ return m_tempDirectory; }
+    inline const S3Location& GetTempDirectory() const { return m_tempDirectory; }
     inline bool TempDirectoryHasBeenSet() const { return m_tempDirectoryHasBeenSet; }
-    inline void SetTempDirectory(const S3Location& value) { m_tempDirectoryHasBeenSet = true; m_tempDirectory = value; }
-    inline void SetTempDirectory(S3Location&& value) { m_tempDirectoryHasBeenSet = true; m_tempDirectory = std::move(value); }
-    inline DatabaseTableOutputOptions& WithTempDirectory(const S3Location& value) { SetTempDirectory(value); return *this;}
-    inline DatabaseTableOutputOptions& WithTempDirectory(S3Location&& value) { SetTempDirectory(std::move(value)); return *this;}
+    template<typename TempDirectoryT = S3Location>
+    void SetTempDirectory(TempDirectoryT&& value) { m_tempDirectoryHasBeenSet = true; m_tempDirectory = std::forward<TempDirectoryT>(value); }
+    template<typename TempDirectoryT = S3Location>
+    DatabaseTableOutputOptions& WithTempDirectory(TempDirectoryT&& value) { SetTempDirectory(std::forward<TempDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A prefix for the name of a table DataBrew will create in the database.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline DatabaseTableOutputOptions& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline DatabaseTableOutputOptions& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline DatabaseTableOutputOptions& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    DatabaseTableOutputOptions& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
   private:
 

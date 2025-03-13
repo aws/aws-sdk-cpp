@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTableBucketsRequest::ListTableBucketsRequest() : 
-    m_prefixHasBeenSet(false),
-    m_continuationTokenHasBeenSet(false),
-    m_maxBuckets(0),
-    m_maxBucketsHasBeenSet(false)
-{
-}
-
 Aws::String ListTableBucketsRequest::SerializePayload() const
 {
   return {};

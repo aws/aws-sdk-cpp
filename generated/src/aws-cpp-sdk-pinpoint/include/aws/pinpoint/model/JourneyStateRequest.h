@@ -31,7 +31,7 @@ namespace Model
   class JourneyStateRequest
   {
   public:
-    AWS_PINPOINT_API JourneyStateRequest();
+    AWS_PINPOINT_API JourneyStateRequest() = default;
     AWS_PINPOINT_API JourneyStateRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API JourneyStateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,16 +54,14 @@ namespace Model
      * wait activities, wait time is paused when the journey is paused. Currently,
      * PAUSED only supports journeys with a segment refresh interval.</p>
      */
-    inline const State& GetState() const{ return m_state; }
+    inline State GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline JourneyStateRequest& WithState(const State& value) { SetState(value); return *this;}
-    inline JourneyStateRequest& WithState(State&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(State value) { m_stateHasBeenSet = true; m_state = value; }
+    inline JourneyStateRequest& WithState(State value) { SetState(value); return *this;}
     ///@}
   private:
 
-    State m_state;
+    State m_state{State::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

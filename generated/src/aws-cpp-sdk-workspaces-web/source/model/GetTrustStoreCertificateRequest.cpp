@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTrustStoreCertificateRequest::GetTrustStoreCertificateRequest() : 
-    m_thumbprintHasBeenSet(false),
-    m_trustStoreArnHasBeenSet(false)
-{
-}
-
 Aws::String GetTrustStoreCertificateRequest::SerializePayload() const
 {
   return {};

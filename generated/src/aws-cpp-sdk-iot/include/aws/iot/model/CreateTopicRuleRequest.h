@@ -25,7 +25,7 @@ namespace Model
   class CreateTopicRuleRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API CreateTopicRuleRequest();
+    AWS_IOT_API CreateTopicRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline CreateTopicRuleRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline CreateTopicRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline CreateTopicRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    CreateTopicRuleRequest& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule payload.</p>
      */
-    inline const TopicRulePayload& GetTopicRulePayload() const{ return m_topicRulePayload; }
+    inline const TopicRulePayload& GetTopicRulePayload() const { return m_topicRulePayload; }
     inline bool TopicRulePayloadHasBeenSet() const { return m_topicRulePayloadHasBeenSet; }
-    inline void SetTopicRulePayload(const TopicRulePayload& value) { m_topicRulePayloadHasBeenSet = true; m_topicRulePayload = value; }
-    inline void SetTopicRulePayload(TopicRulePayload&& value) { m_topicRulePayloadHasBeenSet = true; m_topicRulePayload = std::move(value); }
-    inline CreateTopicRuleRequest& WithTopicRulePayload(const TopicRulePayload& value) { SetTopicRulePayload(value); return *this;}
-    inline CreateTopicRuleRequest& WithTopicRulePayload(TopicRulePayload&& value) { SetTopicRulePayload(std::move(value)); return *this;}
+    template<typename TopicRulePayloadT = TopicRulePayload>
+    void SetTopicRulePayload(TopicRulePayloadT&& value) { m_topicRulePayloadHasBeenSet = true; m_topicRulePayload = std::forward<TopicRulePayloadT>(value); }
+    template<typename TopicRulePayloadT = TopicRulePayload>
+    CreateTopicRuleRequest& WithTopicRulePayload(TopicRulePayloadT&& value) { SetTopicRulePayload(std::forward<TopicRulePayloadT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
      * "tags": "key1=value1&amp;key2=value2..."</p> 
      */
-    inline const Aws::String& GetTags() const{ return m_tags; }
+    inline const Aws::String& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::String& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::String&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline void SetTags(const char* value) { m_tagsHasBeenSet = true; m_tags.assign(value); }
-    inline CreateTopicRuleRequest& WithTags(const Aws::String& value) { SetTags(value); return *this;}
-    inline CreateTopicRuleRequest& WithTags(Aws::String&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateTopicRuleRequest& WithTags(const char* value) { SetTags(value); return *this;}
+    template<typename TagsT = Aws::String>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::String>
+    CreateTopicRuleRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,19 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-Permission::Permission() : 
-    m_stackIdHasBeenSet(false),
-    m_iamUserArnHasBeenSet(false),
-    m_allowSsh(false),
-    m_allowSshHasBeenSet(false),
-    m_allowSudo(false),
-    m_allowSudoHasBeenSet(false),
-    m_levelHasBeenSet(false)
-{
-}
-
 Permission::Permission(JsonView jsonValue)
-  : Permission()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ Permission& Permission::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamUserArn"))
   {
     m_iamUserArn = jsonValue.GetString("IamUserArn");
-
     m_iamUserArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowSsh"))
   {
     m_allowSsh = jsonValue.GetBool("AllowSsh");
-
     m_allowSshHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowSudo"))
   {
     m_allowSudo = jsonValue.GetBool("AllowSudo");
-
     m_allowSudoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Level"))
   {
     m_level = jsonValue.GetString("Level");
-
     m_levelHasBeenSet = true;
   }
-
   return *this;
 }
 

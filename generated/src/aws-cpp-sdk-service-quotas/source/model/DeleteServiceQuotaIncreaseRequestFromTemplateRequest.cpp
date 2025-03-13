@@ -12,13 +12,6 @@ using namespace Aws::ServiceQuotas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServiceQuotaIncreaseRequestFromTemplateRequest::DeleteServiceQuotaIncreaseRequestFromTemplateRequest() : 
-    m_serviceCodeHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServiceQuotaIncreaseRequestFromTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSampleDataRequest::GetSampleDataRequest() : 
-    m_s3SourceConfigHasBeenSet(false)
-{
-}
-
 Aws::String GetSampleDataRequest::SerializePayload() const
 {
   JsonValue payload;

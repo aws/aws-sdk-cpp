@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketLifecycleConfigurationResult::GetBucketLifecycleConfigurationResult()
-{
-}
-
 GetBucketLifecycleConfigurationResult::GetBucketLifecycleConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ GetBucketLifecycleConfigurationResult& GetBucketLifecycleConfigurationResult::op
     if(!rulesNode.IsNull())
     {
       XmlNode rulesMember = rulesNode.FirstChild("Rule");
+      m_rulesHasBeenSet = !rulesMember.IsNull();
       while(!rulesMember.IsNull())
       {
         m_rules.push_back(rulesMember);
@@ -50,12 +47,14 @@ GetBucketLifecycleConfigurationResult& GetBucketLifecycleConfigurationResult::op
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

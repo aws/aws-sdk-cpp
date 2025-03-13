@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelExportJobRequest::CancelExportJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelExportJobRequest::SerializePayload() const
 {
   return {};

@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-GlobalReplicationGroupInfo::GlobalReplicationGroupInfo() : 
-    m_globalReplicationGroupIdHasBeenSet(false),
-    m_globalReplicationGroupMemberRoleHasBeenSet(false)
-{
-}
-
 GlobalReplicationGroupInfo::GlobalReplicationGroupInfo(const XmlNode& xmlNode)
-  : GlobalReplicationGroupInfo()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ GlobalReplicationGroupInfo& GlobalReplicationGroupInfo::operator =(const XmlNode
     {
       m_globalReplicationGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(globalReplicationGroupIdNode.GetText());
       m_globalReplicationGroupIdHasBeenSet = true;
+       m_globalReplicationGroupIdHasBeenSet = true;
     }
     XmlNode globalReplicationGroupMemberRoleNode = resultNode.FirstChild("GlobalReplicationGroupMemberRole");
     if(!globalReplicationGroupMemberRoleNode.IsNull())
     {
       m_globalReplicationGroupMemberRole = Aws::Utils::Xml::DecodeEscapedXmlText(globalReplicationGroupMemberRoleNode.GetText());
       m_globalReplicationGroupMemberRoleHasBeenSet = true;
+       m_globalReplicationGroupMemberRoleHasBeenSet = true;
     }
   }
 

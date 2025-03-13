@@ -12,20 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRepositoryCreationTemplateRequest::CreateRepositoryCreationTemplateRequest() : 
-    m_prefixHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_imageTagMutability(ImageTagMutability::NOT_SET),
-    m_imageTagMutabilityHasBeenSet(false),
-    m_repositoryPolicyHasBeenSet(false),
-    m_lifecyclePolicyHasBeenSet(false),
-    m_appliedForHasBeenSet(false),
-    m_customRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateRepositoryCreationTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

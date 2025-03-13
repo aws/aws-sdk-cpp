@@ -12,17 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRecordingConfigurationRequest::CreateRecordingConfigurationRequest() : 
-    m_destinationConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_recordingReconnectWindowSeconds(0),
-    m_recordingReconnectWindowSecondsHasBeenSet(false),
-    m_renditionConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_thumbnailConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateRecordingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

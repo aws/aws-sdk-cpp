@@ -18,14 +18,7 @@ namespace IdentityStore
 namespace Model
 {
 
-ExternalId::ExternalId() : 
-    m_issuerHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 ExternalId::ExternalId(JsonView jsonValue)
-  : ExternalId()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExternalId& ExternalId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Issuer"))
   {
     m_issuer = jsonValue.GetString("Issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

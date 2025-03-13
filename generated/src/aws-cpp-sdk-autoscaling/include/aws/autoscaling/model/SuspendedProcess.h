@@ -35,7 +35,7 @@ namespace Model
   class SuspendedProcess
   {
   public:
-    AWS_AUTOSCALING_API SuspendedProcess();
+    AWS_AUTOSCALING_API SuspendedProcess() = default;
     AWS_AUTOSCALING_API SuspendedProcess(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API SuspendedProcess& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The name of the suspended process.</p>
      */
-    inline const Aws::String& GetProcessName() const{ return m_processName; }
+    inline const Aws::String& GetProcessName() const { return m_processName; }
     inline bool ProcessNameHasBeenSet() const { return m_processNameHasBeenSet; }
-    inline void SetProcessName(const Aws::String& value) { m_processNameHasBeenSet = true; m_processName = value; }
-    inline void SetProcessName(Aws::String&& value) { m_processNameHasBeenSet = true; m_processName = std::move(value); }
-    inline void SetProcessName(const char* value) { m_processNameHasBeenSet = true; m_processName.assign(value); }
-    inline SuspendedProcess& WithProcessName(const Aws::String& value) { SetProcessName(value); return *this;}
-    inline SuspendedProcess& WithProcessName(Aws::String&& value) { SetProcessName(std::move(value)); return *this;}
-    inline SuspendedProcess& WithProcessName(const char* value) { SetProcessName(value); return *this;}
+    template<typename ProcessNameT = Aws::String>
+    void SetProcessName(ProcessNameT&& value) { m_processNameHasBeenSet = true; m_processName = std::forward<ProcessNameT>(value); }
+    template<typename ProcessNameT = Aws::String>
+    SuspendedProcess& WithProcessName(ProcessNameT&& value) { SetProcessName(std::forward<ProcessNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason that the process was suspended.</p>
      */
-    inline const Aws::String& GetSuspensionReason() const{ return m_suspensionReason; }
+    inline const Aws::String& GetSuspensionReason() const { return m_suspensionReason; }
     inline bool SuspensionReasonHasBeenSet() const { return m_suspensionReasonHasBeenSet; }
-    inline void SetSuspensionReason(const Aws::String& value) { m_suspensionReasonHasBeenSet = true; m_suspensionReason = value; }
-    inline void SetSuspensionReason(Aws::String&& value) { m_suspensionReasonHasBeenSet = true; m_suspensionReason = std::move(value); }
-    inline void SetSuspensionReason(const char* value) { m_suspensionReasonHasBeenSet = true; m_suspensionReason.assign(value); }
-    inline SuspendedProcess& WithSuspensionReason(const Aws::String& value) { SetSuspensionReason(value); return *this;}
-    inline SuspendedProcess& WithSuspensionReason(Aws::String&& value) { SetSuspensionReason(std::move(value)); return *this;}
-    inline SuspendedProcess& WithSuspensionReason(const char* value) { SetSuspensionReason(value); return *this;}
+    template<typename SuspensionReasonT = Aws::String>
+    void SetSuspensionReason(SuspensionReasonT&& value) { m_suspensionReasonHasBeenSet = true; m_suspensionReason = std::forward<SuspensionReasonT>(value); }
+    template<typename SuspensionReasonT = Aws::String>
+    SuspendedProcess& WithSuspensionReason(SuspensionReasonT&& value) { SetSuspensionReason(std::forward<SuspensionReasonT>(value)); return *this;}
     ///@}
   private:
 

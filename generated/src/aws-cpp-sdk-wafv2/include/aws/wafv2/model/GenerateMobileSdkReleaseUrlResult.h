@@ -27,7 +27,7 @@ namespace Model
   class GenerateMobileSdkReleaseUrlResult
   {
   public:
-    AWS_WAFV2_API GenerateMobileSdkReleaseUrlResult();
+    AWS_WAFV2_API GenerateMobileSdkReleaseUrlResult() = default;
     AWS_WAFV2_API GenerateMobileSdkReleaseUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFV2_API GenerateMobileSdkReleaseUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The presigned download URL for the specified SDK release.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
-    inline void SetUrl(const Aws::String& value) { m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_url.assign(value); }
-    inline GenerateMobileSdkReleaseUrlResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline GenerateMobileSdkReleaseUrlResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline GenerateMobileSdkReleaseUrlResult& WithUrl(const char* value) { SetUrl(value); return *this;}
+    inline const Aws::String& GetUrl() const { return m_url; }
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    GenerateMobileSdkReleaseUrlResult& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GenerateMobileSdkReleaseUrlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GenerateMobileSdkReleaseUrlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GenerateMobileSdkReleaseUrlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GenerateMobileSdkReleaseUrlResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_url;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

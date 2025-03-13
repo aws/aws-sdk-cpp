@@ -18,17 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-DomainNameConfig::DomainNameConfig() : 
-    m_domainNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_appsyncDomainNameHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
-{
-}
-
 DomainNameConfig::DomainNameConfig(JsonView jsonValue)
-  : DomainNameConfig()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DomainNameConfig& DomainNameConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appsyncDomainName"))
   {
     m_appsyncDomainName = jsonValue.GetString("appsyncDomainName");
-
     m_appsyncDomainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostedZoneId"))
   {
     m_hostedZoneId = jsonValue.GetString("hostedZoneId");
-
     m_hostedZoneIdHasBeenSet = true;
   }
-
   return *this;
 }
 

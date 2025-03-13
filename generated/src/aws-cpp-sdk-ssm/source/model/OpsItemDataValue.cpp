@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-OpsItemDataValue::OpsItemDataValue() : 
-    m_valueHasBeenSet(false),
-    m_type(OpsItemDataType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 OpsItemDataValue::OpsItemDataValue(JsonView jsonValue)
-  : OpsItemDataValue()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OpsItemDataValue& OpsItemDataValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = OpsItemDataTypeMapper::GetOpsItemDataTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

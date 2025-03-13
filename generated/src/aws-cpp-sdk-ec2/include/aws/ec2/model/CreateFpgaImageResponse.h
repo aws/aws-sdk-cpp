@@ -28,7 +28,7 @@ namespace Model
   class CreateFpgaImageResponse
   {
   public:
-    AWS_EC2_API CreateFpgaImageResponse();
+    AWS_EC2_API CreateFpgaImageResponse() = default;
     AWS_EC2_API CreateFpgaImageResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateFpgaImageResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The FPGA image identifier (AFI ID).</p>
      */
-    inline const Aws::String& GetFpgaImageId() const{ return m_fpgaImageId; }
-    inline void SetFpgaImageId(const Aws::String& value) { m_fpgaImageId = value; }
-    inline void SetFpgaImageId(Aws::String&& value) { m_fpgaImageId = std::move(value); }
-    inline void SetFpgaImageId(const char* value) { m_fpgaImageId.assign(value); }
-    inline CreateFpgaImageResponse& WithFpgaImageId(const Aws::String& value) { SetFpgaImageId(value); return *this;}
-    inline CreateFpgaImageResponse& WithFpgaImageId(Aws::String&& value) { SetFpgaImageId(std::move(value)); return *this;}
-    inline CreateFpgaImageResponse& WithFpgaImageId(const char* value) { SetFpgaImageId(value); return *this;}
+    inline const Aws::String& GetFpgaImageId() const { return m_fpgaImageId; }
+    template<typename FpgaImageIdT = Aws::String>
+    void SetFpgaImageId(FpgaImageIdT&& value) { m_fpgaImageIdHasBeenSet = true; m_fpgaImageId = std::forward<FpgaImageIdT>(value); }
+    template<typename FpgaImageIdT = Aws::String>
+    CreateFpgaImageResponse& WithFpgaImageId(FpgaImageIdT&& value) { SetFpgaImageId(std::forward<FpgaImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The global FPGA image identifier (AGFI ID).</p>
      */
-    inline const Aws::String& GetFpgaImageGlobalId() const{ return m_fpgaImageGlobalId; }
-    inline void SetFpgaImageGlobalId(const Aws::String& value) { m_fpgaImageGlobalId = value; }
-    inline void SetFpgaImageGlobalId(Aws::String&& value) { m_fpgaImageGlobalId = std::move(value); }
-    inline void SetFpgaImageGlobalId(const char* value) { m_fpgaImageGlobalId.assign(value); }
-    inline CreateFpgaImageResponse& WithFpgaImageGlobalId(const Aws::String& value) { SetFpgaImageGlobalId(value); return *this;}
-    inline CreateFpgaImageResponse& WithFpgaImageGlobalId(Aws::String&& value) { SetFpgaImageGlobalId(std::move(value)); return *this;}
-    inline CreateFpgaImageResponse& WithFpgaImageGlobalId(const char* value) { SetFpgaImageGlobalId(value); return *this;}
+    inline const Aws::String& GetFpgaImageGlobalId() const { return m_fpgaImageGlobalId; }
+    template<typename FpgaImageGlobalIdT = Aws::String>
+    void SetFpgaImageGlobalId(FpgaImageGlobalIdT&& value) { m_fpgaImageGlobalIdHasBeenSet = true; m_fpgaImageGlobalId = std::forward<FpgaImageGlobalIdT>(value); }
+    template<typename FpgaImageGlobalIdT = Aws::String>
+    CreateFpgaImageResponse& WithFpgaImageGlobalId(FpgaImageGlobalIdT&& value) { SetFpgaImageGlobalId(std::forward<FpgaImageGlobalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateFpgaImageResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateFpgaImageResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateFpgaImageResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fpgaImageId;
+    bool m_fpgaImageIdHasBeenSet = false;
 
     Aws::String m_fpgaImageGlobalId;
+    bool m_fpgaImageGlobalIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MsSmoothOutputSettings::MsSmoothOutputSettings() : 
-    m_h265PackagingType(MsSmoothH265PackagingType::NOT_SET),
-    m_h265PackagingTypeHasBeenSet(false),
-    m_nameModifierHasBeenSet(false)
-{
-}
-
 MsSmoothOutputSettings::MsSmoothOutputSettings(JsonView jsonValue)
-  : MsSmoothOutputSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MsSmoothOutputSettings& MsSmoothOutputSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("h265PackagingType"))
   {
     m_h265PackagingType = MsSmoothH265PackagingTypeMapper::GetMsSmoothH265PackagingTypeForName(jsonValue.GetString("h265PackagingType"));
-
     m_h265PackagingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nameModifier"))
   {
     m_nameModifier = jsonValue.GetString("nameModifier");
-
     m_nameModifierHasBeenSet = true;
   }
-
   return *this;
 }
 

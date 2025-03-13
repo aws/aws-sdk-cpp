@@ -28,7 +28,7 @@ namespace Model
   class GetBucketLocationResult
   {
   public:
-    AWS_S3CRT_API GetBucketLocationResult();
+    AWS_S3CRT_API GetBucketLocationResult() = default;
     AWS_S3CRT_API GetBucketLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API GetBucketLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,28 +42,26 @@ namespace Model
      * LocationConstraint of <code>null</code>. Buckets with a LocationConstraint of
      * <code>EU</code> reside in <code>eu-west-1</code>.</p>
      */
-    inline const BucketLocationConstraint& GetLocationConstraint() const{ return m_locationConstraint; }
-    inline void SetLocationConstraint(const BucketLocationConstraint& value) { m_locationConstraint = value; }
-    inline void SetLocationConstraint(BucketLocationConstraint&& value) { m_locationConstraint = std::move(value); }
-    inline GetBucketLocationResult& WithLocationConstraint(const BucketLocationConstraint& value) { SetLocationConstraint(value); return *this;}
-    inline GetBucketLocationResult& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(std::move(value)); return *this;}
+    inline BucketLocationConstraint GetLocationConstraint() const { return m_locationConstraint; }
+    inline void SetLocationConstraint(BucketLocationConstraint value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = value; }
+    inline GetBucketLocationResult& WithLocationConstraint(BucketLocationConstraint value) { SetLocationConstraint(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBucketLocationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBucketLocationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBucketLocationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBucketLocationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    BucketLocationConstraint m_locationConstraint;
+    BucketLocationConstraint m_locationConstraint{BucketLocationConstraint::NOT_SET};
+    bool m_locationConstraintHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

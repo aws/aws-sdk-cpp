@@ -20,14 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-TagDescription::TagDescription() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TagDescription::TagDescription(const XmlNode& xmlNode)
-  : TagDescription()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ TagDescription& TagDescription::operator =(const XmlNode& xmlNode)
     {
       m_loadBalancerName = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerNameNode.GetText());
       m_loadBalancerNameHasBeenSet = true;
+       m_loadBalancerNameHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

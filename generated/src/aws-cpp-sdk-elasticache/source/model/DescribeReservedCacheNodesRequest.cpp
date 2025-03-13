@@ -10,19 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DescribeReservedCacheNodesRequest::DescribeReservedCacheNodesRequest() : 
-    m_reservedCacheNodeIdHasBeenSet(false),
-    m_reservedCacheNodesOfferingIdHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_durationHasBeenSet(false),
-    m_productDescriptionHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReservedCacheNodesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

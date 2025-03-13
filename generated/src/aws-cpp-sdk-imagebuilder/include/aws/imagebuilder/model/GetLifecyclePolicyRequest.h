@@ -25,7 +25,7 @@ namespace Model
   class GetLifecyclePolicyRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API GetLifecyclePolicyRequest();
+    AWS_IMAGEBUILDER_API GetLifecyclePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>Specifies the Amazon Resource Name (ARN) of the image lifecycle policy
      * resource to get.</p>
      */
-    inline const Aws::String& GetLifecyclePolicyArn() const{ return m_lifecyclePolicyArn; }
+    inline const Aws::String& GetLifecyclePolicyArn() const { return m_lifecyclePolicyArn; }
     inline bool LifecyclePolicyArnHasBeenSet() const { return m_lifecyclePolicyArnHasBeenSet; }
-    inline void SetLifecyclePolicyArn(const Aws::String& value) { m_lifecyclePolicyArnHasBeenSet = true; m_lifecyclePolicyArn = value; }
-    inline void SetLifecyclePolicyArn(Aws::String&& value) { m_lifecyclePolicyArnHasBeenSet = true; m_lifecyclePolicyArn = std::move(value); }
-    inline void SetLifecyclePolicyArn(const char* value) { m_lifecyclePolicyArnHasBeenSet = true; m_lifecyclePolicyArn.assign(value); }
-    inline GetLifecyclePolicyRequest& WithLifecyclePolicyArn(const Aws::String& value) { SetLifecyclePolicyArn(value); return *this;}
-    inline GetLifecyclePolicyRequest& WithLifecyclePolicyArn(Aws::String&& value) { SetLifecyclePolicyArn(std::move(value)); return *this;}
-    inline GetLifecyclePolicyRequest& WithLifecyclePolicyArn(const char* value) { SetLifecyclePolicyArn(value); return *this;}
+    template<typename LifecyclePolicyArnT = Aws::String>
+    void SetLifecyclePolicyArn(LifecyclePolicyArnT&& value) { m_lifecyclePolicyArnHasBeenSet = true; m_lifecyclePolicyArn = std::forward<LifecyclePolicyArnT>(value); }
+    template<typename LifecyclePolicyArnT = Aws::String>
+    GetLifecyclePolicyRequest& WithLifecyclePolicyArn(LifecyclePolicyArnT&& value) { SetLifecyclePolicyArn(std::forward<LifecyclePolicyArnT>(value)); return *this;}
     ///@}
   private:
 

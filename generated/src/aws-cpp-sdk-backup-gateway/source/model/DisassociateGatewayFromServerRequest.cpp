@@ -12,11 +12,6 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateGatewayFromServerRequest::DisassociateGatewayFromServerRequest() : 
-    m_gatewayArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateGatewayFromServerRequest::SerializePayload() const
 {
   JsonValue payload;

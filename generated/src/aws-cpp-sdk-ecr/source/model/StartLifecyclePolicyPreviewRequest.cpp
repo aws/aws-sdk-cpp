@@ -12,13 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartLifecyclePolicyPreviewRequest::StartLifecyclePolicyPreviewRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_lifecyclePolicyTextHasBeenSet(false)
-{
-}
-
 Aws::String StartLifecyclePolicyPreviewRequest::SerializePayload() const
 {
   JsonValue payload;

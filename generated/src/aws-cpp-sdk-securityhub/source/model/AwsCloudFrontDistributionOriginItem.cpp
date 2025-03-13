@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCloudFrontDistributionOriginItem::AwsCloudFrontDistributionOriginItem() : 
-    m_domainNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_originPathHasBeenSet(false),
-    m_s3OriginConfigHasBeenSet(false),
-    m_customOriginConfigHasBeenSet(false)
-{
-}
-
 AwsCloudFrontDistributionOriginItem::AwsCloudFrontDistributionOriginItem(JsonView jsonValue)
-  : AwsCloudFrontDistributionOriginItem()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ AwsCloudFrontDistributionOriginItem& AwsCloudFrontDistributionOriginItem::operat
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginPath"))
   {
     m_originPath = jsonValue.GetString("OriginPath");
-
     m_originPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3OriginConfig"))
   {
     m_s3OriginConfig = jsonValue.GetObject("S3OriginConfig");
-
     m_s3OriginConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomOriginConfig"))
   {
     m_customOriginConfig = jsonValue.GetObject("CustomOriginConfig");
-
     m_customOriginConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

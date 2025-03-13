@@ -21,7 +21,7 @@ namespace Model
   class CancelOrderRequest : public OutpostsRequest
   {
   public:
-    AWS_OUTPOSTS_API CancelOrderRequest();
+    AWS_OUTPOSTS_API CancelOrderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p> The ID of the order. </p>
      */
-    inline const Aws::String& GetOrderId() const{ return m_orderId; }
+    inline const Aws::String& GetOrderId() const { return m_orderId; }
     inline bool OrderIdHasBeenSet() const { return m_orderIdHasBeenSet; }
-    inline void SetOrderId(const Aws::String& value) { m_orderIdHasBeenSet = true; m_orderId = value; }
-    inline void SetOrderId(Aws::String&& value) { m_orderIdHasBeenSet = true; m_orderId = std::move(value); }
-    inline void SetOrderId(const char* value) { m_orderIdHasBeenSet = true; m_orderId.assign(value); }
-    inline CancelOrderRequest& WithOrderId(const Aws::String& value) { SetOrderId(value); return *this;}
-    inline CancelOrderRequest& WithOrderId(Aws::String&& value) { SetOrderId(std::move(value)); return *this;}
-    inline CancelOrderRequest& WithOrderId(const char* value) { SetOrderId(value); return *this;}
+    template<typename OrderIdT = Aws::String>
+    void SetOrderId(OrderIdT&& value) { m_orderIdHasBeenSet = true; m_orderId = std::forward<OrderIdT>(value); }
+    template<typename OrderIdT = Aws::String>
+    CancelOrderRequest& WithOrderId(OrderIdT&& value) { SetOrderId(std::forward<OrderIdT>(value)); return *this;}
     ///@}
   private:
 

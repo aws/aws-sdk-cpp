@@ -22,7 +22,7 @@ namespace Model
   class BatchGetEffectiveLifecyclePolicyRequest : public OpenSearchServerlessRequest
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API BatchGetEffectiveLifecyclePolicyRequest();
+    AWS_OPENSEARCHSERVERLESS_API BatchGetEffectiveLifecyclePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The unique identifiers of policy types and resource names.</p>
      */
-    inline const Aws::Vector<LifecyclePolicyResourceIdentifier>& GetResourceIdentifiers() const{ return m_resourceIdentifiers; }
+    inline const Aws::Vector<LifecyclePolicyResourceIdentifier>& GetResourceIdentifiers() const { return m_resourceIdentifiers; }
     inline bool ResourceIdentifiersHasBeenSet() const { return m_resourceIdentifiersHasBeenSet; }
-    inline void SetResourceIdentifiers(const Aws::Vector<LifecyclePolicyResourceIdentifier>& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers = value; }
-    inline void SetResourceIdentifiers(Aws::Vector<LifecyclePolicyResourceIdentifier>&& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers = std::move(value); }
-    inline BatchGetEffectiveLifecyclePolicyRequest& WithResourceIdentifiers(const Aws::Vector<LifecyclePolicyResourceIdentifier>& value) { SetResourceIdentifiers(value); return *this;}
-    inline BatchGetEffectiveLifecyclePolicyRequest& WithResourceIdentifiers(Aws::Vector<LifecyclePolicyResourceIdentifier>&& value) { SetResourceIdentifiers(std::move(value)); return *this;}
-    inline BatchGetEffectiveLifecyclePolicyRequest& AddResourceIdentifiers(const LifecyclePolicyResourceIdentifier& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers.push_back(value); return *this; }
-    inline BatchGetEffectiveLifecyclePolicyRequest& AddResourceIdentifiers(LifecyclePolicyResourceIdentifier&& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers.push_back(std::move(value)); return *this; }
+    template<typename ResourceIdentifiersT = Aws::Vector<LifecyclePolicyResourceIdentifier>>
+    void SetResourceIdentifiers(ResourceIdentifiersT&& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers = std::forward<ResourceIdentifiersT>(value); }
+    template<typename ResourceIdentifiersT = Aws::Vector<LifecyclePolicyResourceIdentifier>>
+    BatchGetEffectiveLifecyclePolicyRequest& WithResourceIdentifiers(ResourceIdentifiersT&& value) { SetResourceIdentifiers(std::forward<ResourceIdentifiersT>(value)); return *this;}
+    template<typename ResourceIdentifiersT = LifecyclePolicyResourceIdentifier>
+    BatchGetEffectiveLifecyclePolicyRequest& AddResourceIdentifiers(ResourceIdentifiersT&& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers.emplace_back(std::forward<ResourceIdentifiersT>(value)); return *this; }
     ///@}
   private:
 

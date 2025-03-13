@@ -32,7 +32,7 @@ namespace Model
   class ExactResponseFields
   {
   public:
-    AWS_LEXMODELSV2_API ExactResponseFields();
+    AWS_LEXMODELSV2_API ExactResponseFields() = default;
     AWS_LEXMODELSV2_API ExactResponseFields(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API ExactResponseFields& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the field that contains the query made to the OpenSearch Service
      * database.</p>
      */
-    inline const Aws::String& GetQuestionField() const{ return m_questionField; }
+    inline const Aws::String& GetQuestionField() const { return m_questionField; }
     inline bool QuestionFieldHasBeenSet() const { return m_questionFieldHasBeenSet; }
-    inline void SetQuestionField(const Aws::String& value) { m_questionFieldHasBeenSet = true; m_questionField = value; }
-    inline void SetQuestionField(Aws::String&& value) { m_questionFieldHasBeenSet = true; m_questionField = std::move(value); }
-    inline void SetQuestionField(const char* value) { m_questionFieldHasBeenSet = true; m_questionField.assign(value); }
-    inline ExactResponseFields& WithQuestionField(const Aws::String& value) { SetQuestionField(value); return *this;}
-    inline ExactResponseFields& WithQuestionField(Aws::String&& value) { SetQuestionField(std::move(value)); return *this;}
-    inline ExactResponseFields& WithQuestionField(const char* value) { SetQuestionField(value); return *this;}
+    template<typename QuestionFieldT = Aws::String>
+    void SetQuestionField(QuestionFieldT&& value) { m_questionFieldHasBeenSet = true; m_questionField = std::forward<QuestionFieldT>(value); }
+    template<typename QuestionFieldT = Aws::String>
+    ExactResponseFields& WithQuestionField(QuestionFieldT&& value) { SetQuestionField(std::forward<QuestionFieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The name of the field that contains the answer to the query made to the
      * OpenSearch Service database.</p>
      */
-    inline const Aws::String& GetAnswerField() const{ return m_answerField; }
+    inline const Aws::String& GetAnswerField() const { return m_answerField; }
     inline bool AnswerFieldHasBeenSet() const { return m_answerFieldHasBeenSet; }
-    inline void SetAnswerField(const Aws::String& value) { m_answerFieldHasBeenSet = true; m_answerField = value; }
-    inline void SetAnswerField(Aws::String&& value) { m_answerFieldHasBeenSet = true; m_answerField = std::move(value); }
-    inline void SetAnswerField(const char* value) { m_answerFieldHasBeenSet = true; m_answerField.assign(value); }
-    inline ExactResponseFields& WithAnswerField(const Aws::String& value) { SetAnswerField(value); return *this;}
-    inline ExactResponseFields& WithAnswerField(Aws::String&& value) { SetAnswerField(std::move(value)); return *this;}
-    inline ExactResponseFields& WithAnswerField(const char* value) { SetAnswerField(value); return *this;}
+    template<typename AnswerFieldT = Aws::String>
+    void SetAnswerField(AnswerFieldT&& value) { m_answerFieldHasBeenSet = true; m_answerField = std::forward<AnswerFieldT>(value); }
+    template<typename AnswerFieldT = Aws::String>
+    ExactResponseFields& WithAnswerField(AnswerFieldT&& value) { SetAnswerField(std::forward<AnswerFieldT>(value)); return *this;}
     ///@}
   private:
 

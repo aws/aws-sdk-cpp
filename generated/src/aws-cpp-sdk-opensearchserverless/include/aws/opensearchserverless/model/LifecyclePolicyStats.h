@@ -30,7 +30,7 @@ namespace Model
   class LifecyclePolicyStats
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API LifecyclePolicyStats();
+    AWS_OPENSEARCHSERVERLESS_API LifecyclePolicyStats() = default;
     AWS_OPENSEARCHSERVERLESS_API LifecyclePolicyStats(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API LifecyclePolicyStats& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The number of retention lifecycle policies in the current account.</p>
      */
-    inline long long GetRetentionPolicyCount() const{ return m_retentionPolicyCount; }
+    inline long long GetRetentionPolicyCount() const { return m_retentionPolicyCount; }
     inline bool RetentionPolicyCountHasBeenSet() const { return m_retentionPolicyCountHasBeenSet; }
     inline void SetRetentionPolicyCount(long long value) { m_retentionPolicyCountHasBeenSet = true; m_retentionPolicyCount = value; }
     inline LifecyclePolicyStats& WithRetentionPolicyCount(long long value) { SetRetentionPolicyCount(value); return *this;}
     ///@}
   private:
 
-    long long m_retentionPolicyCount;
+    long long m_retentionPolicyCount{0};
     bool m_retentionPolicyCountHasBeenSet = false;
   };
 

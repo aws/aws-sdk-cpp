@@ -32,7 +32,7 @@ namespace Model
   class Source
   {
   public:
-    AWS_IOTSITEWISE_API Source();
+    AWS_IOTSITEWISE_API Source() = default;
     AWS_IOTSITEWISE_API Source(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Contains the ARN of the dataset. If the source is Kendra, it's the ARN of the
      * Kendra index.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Source& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Source& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Source& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Source& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * For example, if the data source is Kendra, and the text synchronized is from an
      * S3 bucket, then the location refers to an S3 object.</p>
      */
-    inline const Location& GetLocation() const{ return m_location; }
+    inline const Location& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Location& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Location&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline Source& WithLocation(const Location& value) { SetLocation(value); return *this;}
-    inline Source& WithLocation(Location&& value) { SetLocation(std::move(value)); return *this;}
+    template<typename LocationT = Location>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Location>
+    Source& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 

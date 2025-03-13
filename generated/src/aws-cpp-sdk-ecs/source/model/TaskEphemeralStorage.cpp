@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-TaskEphemeralStorage::TaskEphemeralStorage() : 
-    m_sizeInGiB(0),
-    m_sizeInGiBHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 TaskEphemeralStorage::TaskEphemeralStorage(JsonView jsonValue)
-  : TaskEphemeralStorage()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TaskEphemeralStorage& TaskEphemeralStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sizeInGiB"))
   {
     m_sizeInGiB = jsonValue.GetInteger("sizeInGiB");
-
     m_sizeInGiBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

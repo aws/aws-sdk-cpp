@@ -18,18 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-ResourceDrift::ResourceDrift() : 
-    m_appArnHasBeenSet(false),
-    m_appVersionHasBeenSet(false),
-    m_diffType(DifferenceType::NOT_SET),
-    m_diffTypeHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 ResourceDrift::ResourceDrift(JsonView jsonValue)
-  : ResourceDrift()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ResourceDrift& ResourceDrift::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
     m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appVersion"))
   {
     m_appVersion = jsonValue.GetString("appVersion");
-
     m_appVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("diffType"))
   {
     m_diffType = DifferenceTypeMapper::GetDifferenceTypeForName(jsonValue.GetString("diffType"));
-
     m_diffTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referenceId"))
   {
     m_referenceId = jsonValue.GetString("referenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetObject("resourceIdentifier");
-
     m_resourceIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

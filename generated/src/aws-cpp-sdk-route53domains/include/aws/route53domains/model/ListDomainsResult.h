@@ -35,7 +35,7 @@ namespace Model
   class ListDomainsResult
   {
   public:
-    AWS_ROUTE53DOMAINS_API ListDomainsResult();
+    AWS_ROUTE53DOMAINS_API ListDomainsResult() = default;
     AWS_ROUTE53DOMAINS_API ListDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53DOMAINS_API ListDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
     /**
      * <p>A list of domains.</p>
      */
-    inline const Aws::Vector<DomainSummary>& GetDomains() const{ return m_domains; }
-    inline void SetDomains(const Aws::Vector<DomainSummary>& value) { m_domains = value; }
-    inline void SetDomains(Aws::Vector<DomainSummary>&& value) { m_domains = std::move(value); }
-    inline ListDomainsResult& WithDomains(const Aws::Vector<DomainSummary>& value) { SetDomains(value); return *this;}
-    inline ListDomainsResult& WithDomains(Aws::Vector<DomainSummary>&& value) { SetDomains(std::move(value)); return *this;}
-    inline ListDomainsResult& AddDomains(const DomainSummary& value) { m_domains.push_back(value); return *this; }
-    inline ListDomainsResult& AddDomains(DomainSummary&& value) { m_domains.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainSummary>& GetDomains() const { return m_domains; }
+    template<typename DomainsT = Aws::Vector<DomainSummary>>
+    void SetDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains = std::forward<DomainsT>(value); }
+    template<typename DomainsT = Aws::Vector<DomainSummary>>
+    ListDomainsResult& WithDomains(DomainsT&& value) { SetDomains(std::forward<DomainsT>(value)); return *this;}
+    template<typename DomainsT = DomainSummary>
+    ListDomainsResult& AddDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains.emplace_back(std::forward<DomainsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,32 +59,31 @@ namespace Model
      * request, submit another request and include the value of
      * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      */
-    inline const Aws::String& GetNextPageMarker() const{ return m_nextPageMarker; }
-    inline void SetNextPageMarker(const Aws::String& value) { m_nextPageMarker = value; }
-    inline void SetNextPageMarker(Aws::String&& value) { m_nextPageMarker = std::move(value); }
-    inline void SetNextPageMarker(const char* value) { m_nextPageMarker.assign(value); }
-    inline ListDomainsResult& WithNextPageMarker(const Aws::String& value) { SetNextPageMarker(value); return *this;}
-    inline ListDomainsResult& WithNextPageMarker(Aws::String&& value) { SetNextPageMarker(std::move(value)); return *this;}
-    inline ListDomainsResult& WithNextPageMarker(const char* value) { SetNextPageMarker(value); return *this;}
+    inline const Aws::String& GetNextPageMarker() const { return m_nextPageMarker; }
+    template<typename NextPageMarkerT = Aws::String>
+    void SetNextPageMarker(NextPageMarkerT&& value) { m_nextPageMarkerHasBeenSet = true; m_nextPageMarker = std::forward<NextPageMarkerT>(value); }
+    template<typename NextPageMarkerT = Aws::String>
+    ListDomainsResult& WithNextPageMarker(NextPageMarkerT&& value) { SetNextPageMarker(std::forward<NextPageMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDomainsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDomainsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDomainsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDomainsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DomainSummary> m_domains;
+    bool m_domainsHasBeenSet = false;
 
     Aws::String m_nextPageMarker;
+    bool m_nextPageMarkerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

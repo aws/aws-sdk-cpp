@@ -18,18 +18,7 @@ namespace FMS
 namespace Model
 {
 
-NetworkAclEntrySet::NetworkAclEntrySet() : 
-    m_firstEntriesHasBeenSet(false),
-    m_forceRemediateForFirstEntries(false),
-    m_forceRemediateForFirstEntriesHasBeenSet(false),
-    m_lastEntriesHasBeenSet(false),
-    m_forceRemediateForLastEntries(false),
-    m_forceRemediateForLastEntriesHasBeenSet(false)
-{
-}
-
 NetworkAclEntrySet::NetworkAclEntrySet(JsonView jsonValue)
-  : NetworkAclEntrySet()
 {
   *this = jsonValue;
 }
@@ -45,14 +34,11 @@ NetworkAclEntrySet& NetworkAclEntrySet::operator =(JsonView jsonValue)
     }
     m_firstEntriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForceRemediateForFirstEntries"))
   {
     m_forceRemediateForFirstEntries = jsonValue.GetBool("ForceRemediateForFirstEntries");
-
     m_forceRemediateForFirstEntriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastEntries"))
   {
     Aws::Utils::Array<JsonView> lastEntriesJsonList = jsonValue.GetArray("LastEntries");
@@ -62,14 +48,11 @@ NetworkAclEntrySet& NetworkAclEntrySet::operator =(JsonView jsonValue)
     }
     m_lastEntriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForceRemediateForLastEntries"))
   {
     m_forceRemediateForLastEntries = jsonValue.GetBool("ForceRemediateForLastEntries");
-
     m_forceRemediateForLastEntriesHasBeenSet = true;
   }
-
   return *this;
 }
 

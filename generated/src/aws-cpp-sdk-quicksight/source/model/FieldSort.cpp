@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FieldSort::FieldSort() : 
-    m_fieldIdHasBeenSet(false),
-    m_direction(SortDirection::NOT_SET),
-    m_directionHasBeenSet(false)
-{
-}
-
 FieldSort::FieldSort(JsonView jsonValue)
-  : FieldSort()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FieldSort& FieldSort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Direction"))
   {
     m_direction = SortDirectionMapper::GetSortDirectionForName(jsonValue.GetString("Direction"));
-
     m_directionHasBeenSet = true;
   }
-
   return *this;
 }
 

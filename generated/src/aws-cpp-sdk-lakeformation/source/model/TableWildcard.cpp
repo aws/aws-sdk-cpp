@@ -18,10 +18,6 @@ namespace LakeFormation
 namespace Model
 {
 
-TableWildcard::TableWildcard()
-{
-}
-
 TableWildcard::TableWildcard(JsonView jsonValue)
 {
   *this = jsonValue;

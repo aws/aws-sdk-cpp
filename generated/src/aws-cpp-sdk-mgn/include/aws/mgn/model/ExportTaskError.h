@@ -32,7 +32,7 @@ namespace Model
   class ExportTaskError
   {
   public:
-    AWS_MGN_API ExportTaskError();
+    AWS_MGN_API ExportTaskError() = default;
     AWS_MGN_API ExportTaskError(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API ExportTaskError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>Export task error data.</p>
      */
-    inline const ExportErrorData& GetErrorData() const{ return m_errorData; }
+    inline const ExportErrorData& GetErrorData() const { return m_errorData; }
     inline bool ErrorDataHasBeenSet() const { return m_errorDataHasBeenSet; }
-    inline void SetErrorData(const ExportErrorData& value) { m_errorDataHasBeenSet = true; m_errorData = value; }
-    inline void SetErrorData(ExportErrorData&& value) { m_errorDataHasBeenSet = true; m_errorData = std::move(value); }
-    inline ExportTaskError& WithErrorData(const ExportErrorData& value) { SetErrorData(value); return *this;}
-    inline ExportTaskError& WithErrorData(ExportErrorData&& value) { SetErrorData(std::move(value)); return *this;}
+    template<typename ErrorDataT = ExportErrorData>
+    void SetErrorData(ErrorDataT&& value) { m_errorDataHasBeenSet = true; m_errorData = std::forward<ErrorDataT>(value); }
+    template<typename ErrorDataT = ExportErrorData>
+    ExportTaskError& WithErrorData(ErrorDataT&& value) { SetErrorData(std::forward<ErrorDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Export task error datetime.</p>
      */
-    inline const Aws::String& GetErrorDateTime() const{ return m_errorDateTime; }
+    inline const Aws::String& GetErrorDateTime() const { return m_errorDateTime; }
     inline bool ErrorDateTimeHasBeenSet() const { return m_errorDateTimeHasBeenSet; }
-    inline void SetErrorDateTime(const Aws::String& value) { m_errorDateTimeHasBeenSet = true; m_errorDateTime = value; }
-    inline void SetErrorDateTime(Aws::String&& value) { m_errorDateTimeHasBeenSet = true; m_errorDateTime = std::move(value); }
-    inline void SetErrorDateTime(const char* value) { m_errorDateTimeHasBeenSet = true; m_errorDateTime.assign(value); }
-    inline ExportTaskError& WithErrorDateTime(const Aws::String& value) { SetErrorDateTime(value); return *this;}
-    inline ExportTaskError& WithErrorDateTime(Aws::String&& value) { SetErrorDateTime(std::move(value)); return *this;}
-    inline ExportTaskError& WithErrorDateTime(const char* value) { SetErrorDateTime(value); return *this;}
+    template<typename ErrorDateTimeT = Aws::String>
+    void SetErrorDateTime(ErrorDateTimeT&& value) { m_errorDateTimeHasBeenSet = true; m_errorDateTime = std::forward<ErrorDateTimeT>(value); }
+    template<typename ErrorDateTimeT = Aws::String>
+    ExportTaskError& WithErrorDateTime(ErrorDateTimeT&& value) { SetErrorDateTime(std::forward<ErrorDateTimeT>(value)); return *this;}
     ///@}
   private:
 

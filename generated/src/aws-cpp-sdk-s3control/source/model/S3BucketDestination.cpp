@@ -20,20 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3BucketDestination::S3BucketDestination() : 
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_outputSchemaVersion(OutputSchemaVersion::NOT_SET),
-    m_outputSchemaVersionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
-{
-}
-
 S3BucketDestination::S3BucketDestination(const XmlNode& xmlNode)
-  : S3BucketDestination()
 {
   *this = xmlNode;
 }
@@ -47,38 +34,44 @@ S3BucketDestination& S3BucketDestination::operator =(const XmlNode& xmlNode)
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
-      m_format = FormatMapper::GetFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
+      m_format = FormatMapper::GetFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
+       m_formatHasBeenSet = true;
     }
     XmlNode outputSchemaVersionNode = resultNode.FirstChild("OutputSchemaVersion");
     if(!outputSchemaVersionNode.IsNull())
     {
-      m_outputSchemaVersion = OutputSchemaVersionMapper::GetOutputSchemaVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputSchemaVersionNode.GetText()).c_str()).c_str());
+      m_outputSchemaVersion = OutputSchemaVersionMapper::GetOutputSchemaVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputSchemaVersionNode.GetText()).c_str()));
       m_outputSchemaVersionHasBeenSet = true;
+       m_outputSchemaVersionHasBeenSet = true;
     }
     XmlNode accountIdNode = resultNode.FirstChild("AccountId");
     if(!accountIdNode.IsNull())
     {
       m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
+       m_accountIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
     XmlNode encryptionNode = resultNode.FirstChild("Encryption");
     if(!encryptionNode.IsNull())
     {
       m_encryption = encryptionNode;
       m_encryptionHasBeenSet = true;
+       m_encryptionHasBeenSet = true;
     }
   }
 

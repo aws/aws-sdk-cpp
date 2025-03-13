@@ -33,7 +33,7 @@ namespace Model
   class KxDatabaseCacheConfiguration
   {
   public:
-    AWS_FINSPACE_API KxDatabaseCacheConfiguration();
+    AWS_FINSPACE_API KxDatabaseCacheConfiguration() = default;
     AWS_FINSPACE_API KxDatabaseCacheConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API KxDatabaseCacheConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * cache storage. The valid values are:</p> <ul> <li> <p>CACHE_1000 – This type
      * provides at least 1000 MB/s disk access throughput. </p> </li> </ul>
      */
-    inline const Aws::String& GetCacheType() const{ return m_cacheType; }
+    inline const Aws::String& GetCacheType() const { return m_cacheType; }
     inline bool CacheTypeHasBeenSet() const { return m_cacheTypeHasBeenSet; }
-    inline void SetCacheType(const Aws::String& value) { m_cacheTypeHasBeenSet = true; m_cacheType = value; }
-    inline void SetCacheType(Aws::String&& value) { m_cacheTypeHasBeenSet = true; m_cacheType = std::move(value); }
-    inline void SetCacheType(const char* value) { m_cacheTypeHasBeenSet = true; m_cacheType.assign(value); }
-    inline KxDatabaseCacheConfiguration& WithCacheType(const Aws::String& value) { SetCacheType(value); return *this;}
-    inline KxDatabaseCacheConfiguration& WithCacheType(Aws::String&& value) { SetCacheType(std::move(value)); return *this;}
-    inline KxDatabaseCacheConfiguration& WithCacheType(const char* value) { SetCacheType(value); return *this;}
+    template<typename CacheTypeT = Aws::String>
+    void SetCacheType(CacheTypeT&& value) { m_cacheTypeHasBeenSet = true; m_cacheType = std::forward<CacheTypeT>(value); }
+    template<typename CacheTypeT = Aws::String>
+    KxDatabaseCacheConfiguration& WithCacheType(CacheTypeT&& value) { SetCacheType(std::forward<CacheTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,15 +58,14 @@ namespace Model
      * <p>Specifies the portions of database that will be loaded into the cache for
      * access.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDbPaths() const{ return m_dbPaths; }
+    inline const Aws::Vector<Aws::String>& GetDbPaths() const { return m_dbPaths; }
     inline bool DbPathsHasBeenSet() const { return m_dbPathsHasBeenSet; }
-    inline void SetDbPaths(const Aws::Vector<Aws::String>& value) { m_dbPathsHasBeenSet = true; m_dbPaths = value; }
-    inline void SetDbPaths(Aws::Vector<Aws::String>&& value) { m_dbPathsHasBeenSet = true; m_dbPaths = std::move(value); }
-    inline KxDatabaseCacheConfiguration& WithDbPaths(const Aws::Vector<Aws::String>& value) { SetDbPaths(value); return *this;}
-    inline KxDatabaseCacheConfiguration& WithDbPaths(Aws::Vector<Aws::String>&& value) { SetDbPaths(std::move(value)); return *this;}
-    inline KxDatabaseCacheConfiguration& AddDbPaths(const Aws::String& value) { m_dbPathsHasBeenSet = true; m_dbPaths.push_back(value); return *this; }
-    inline KxDatabaseCacheConfiguration& AddDbPaths(Aws::String&& value) { m_dbPathsHasBeenSet = true; m_dbPaths.push_back(std::move(value)); return *this; }
-    inline KxDatabaseCacheConfiguration& AddDbPaths(const char* value) { m_dbPathsHasBeenSet = true; m_dbPaths.push_back(value); return *this; }
+    template<typename DbPathsT = Aws::Vector<Aws::String>>
+    void SetDbPaths(DbPathsT&& value) { m_dbPathsHasBeenSet = true; m_dbPaths = std::forward<DbPathsT>(value); }
+    template<typename DbPathsT = Aws::Vector<Aws::String>>
+    KxDatabaseCacheConfiguration& WithDbPaths(DbPathsT&& value) { SetDbPaths(std::forward<DbPathsT>(value)); return *this;}
+    template<typename DbPathsT = Aws::String>
+    KxDatabaseCacheConfiguration& AddDbPaths(DbPathsT&& value) { m_dbPathsHasBeenSet = true; m_dbPaths.emplace_back(std::forward<DbPathsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,14 +73,12 @@ namespace Model
      * <p> The name of the dataview to be used for caching historical data on disk.
      * </p>
      */
-    inline const Aws::String& GetDataviewName() const{ return m_dataviewName; }
+    inline const Aws::String& GetDataviewName() const { return m_dataviewName; }
     inline bool DataviewNameHasBeenSet() const { return m_dataviewNameHasBeenSet; }
-    inline void SetDataviewName(const Aws::String& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = value; }
-    inline void SetDataviewName(Aws::String&& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = std::move(value); }
-    inline void SetDataviewName(const char* value) { m_dataviewNameHasBeenSet = true; m_dataviewName.assign(value); }
-    inline KxDatabaseCacheConfiguration& WithDataviewName(const Aws::String& value) { SetDataviewName(value); return *this;}
-    inline KxDatabaseCacheConfiguration& WithDataviewName(Aws::String&& value) { SetDataviewName(std::move(value)); return *this;}
-    inline KxDatabaseCacheConfiguration& WithDataviewName(const char* value) { SetDataviewName(value); return *this;}
+    template<typename DataviewNameT = Aws::String>
+    void SetDataviewName(DataviewNameT&& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = std::forward<DataviewNameT>(value); }
+    template<typename DataviewNameT = Aws::String>
+    KxDatabaseCacheConfiguration& WithDataviewName(DataviewNameT&& value) { SetDataviewName(std::forward<DataviewNameT>(value)); return *this;}
     ///@}
   private:
 

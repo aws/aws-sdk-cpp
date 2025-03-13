@@ -18,25 +18,7 @@ namespace tnb
 namespace Model
 {
 
-ListSolFunctionPackageInfo::ListSolFunctionPackageInfo() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_onboardingState(OnboardingState::NOT_SET),
-    m_onboardingStateHasBeenSet(false),
-    m_operationalState(OperationalState::NOT_SET),
-    m_operationalStateHasBeenSet(false),
-    m_usageState(UsageState::NOT_SET),
-    m_usageStateHasBeenSet(false),
-    m_vnfProductNameHasBeenSet(false),
-    m_vnfProviderHasBeenSet(false),
-    m_vnfdIdHasBeenSet(false),
-    m_vnfdVersionHasBeenSet(false)
-{
-}
-
 ListSolFunctionPackageInfo::ListSolFunctionPackageInfo(JsonView jsonValue)
-  : ListSolFunctionPackageInfo()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ ListSolFunctionPackageInfo& ListSolFunctionPackageInfo::operator =(JsonView json
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("onboardingState"))
   {
     m_onboardingState = OnboardingStateMapper::GetOnboardingStateForName(jsonValue.GetString("onboardingState"));
-
     m_onboardingStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationalState"))
   {
     m_operationalState = OperationalStateMapper::GetOperationalStateForName(jsonValue.GetString("operationalState"));
-
     m_operationalStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageState"))
   {
     m_usageState = UsageStateMapper::GetUsageStateForName(jsonValue.GetString("usageState"));
-
     m_usageStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vnfProductName"))
   {
     m_vnfProductName = jsonValue.GetString("vnfProductName");
-
     m_vnfProductNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vnfProvider"))
   {
     m_vnfProvider = jsonValue.GetString("vnfProvider");
-
     m_vnfProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vnfdId"))
   {
     m_vnfdId = jsonValue.GetString("vnfdId");
-
     m_vnfdIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vnfdVersion"))
   {
     m_vnfdVersion = jsonValue.GetString("vnfdVersion");
-
     m_vnfdVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

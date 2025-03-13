@@ -28,7 +28,7 @@ namespace Model
   class GetSubscriptionResult
   {
   public:
-    AWS_CODECATALYST_API GetSubscriptionResult();
+    AWS_CODECATALYST_API GetSubscriptionResult() = default;
     AWS_CODECATALYST_API GetSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECATALYST_API GetSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The type of the billing plan for the space.</p>
      */
-    inline const Aws::String& GetSubscriptionType() const{ return m_subscriptionType; }
-    inline void SetSubscriptionType(const Aws::String& value) { m_subscriptionType = value; }
-    inline void SetSubscriptionType(Aws::String&& value) { m_subscriptionType = std::move(value); }
-    inline void SetSubscriptionType(const char* value) { m_subscriptionType.assign(value); }
-    inline GetSubscriptionResult& WithSubscriptionType(const Aws::String& value) { SetSubscriptionType(value); return *this;}
-    inline GetSubscriptionResult& WithSubscriptionType(Aws::String&& value) { SetSubscriptionType(std::move(value)); return *this;}
-    inline GetSubscriptionResult& WithSubscriptionType(const char* value) { SetSubscriptionType(value); return *this;}
+    inline const Aws::String& GetSubscriptionType() const { return m_subscriptionType; }
+    template<typename SubscriptionTypeT = Aws::String>
+    void SetSubscriptionType(SubscriptionTypeT&& value) { m_subscriptionTypeHasBeenSet = true; m_subscriptionType = std::forward<SubscriptionTypeT>(value); }
+    template<typename SubscriptionTypeT = Aws::String>
+    GetSubscriptionResult& WithSubscriptionType(SubscriptionTypeT&& value) { SetSubscriptionType(std::forward<SubscriptionTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,13 +49,11 @@ namespace Model
      * <p>The display name of the Amazon Web Services account used for billing for the
      * space.</p>
      */
-    inline const Aws::String& GetAwsAccountName() const{ return m_awsAccountName; }
-    inline void SetAwsAccountName(const Aws::String& value) { m_awsAccountName = value; }
-    inline void SetAwsAccountName(Aws::String&& value) { m_awsAccountName = std::move(value); }
-    inline void SetAwsAccountName(const char* value) { m_awsAccountName.assign(value); }
-    inline GetSubscriptionResult& WithAwsAccountName(const Aws::String& value) { SetAwsAccountName(value); return *this;}
-    inline GetSubscriptionResult& WithAwsAccountName(Aws::String&& value) { SetAwsAccountName(std::move(value)); return *this;}
-    inline GetSubscriptionResult& WithAwsAccountName(const char* value) { SetAwsAccountName(value); return *this;}
+    inline const Aws::String& GetAwsAccountName() const { return m_awsAccountName; }
+    template<typename AwsAccountNameT = Aws::String>
+    void SetAwsAccountName(AwsAccountNameT&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = std::forward<AwsAccountNameT>(value); }
+    template<typename AwsAccountNameT = Aws::String>
+    GetSubscriptionResult& WithAwsAccountName(AwsAccountNameT&& value) { SetAwsAccountName(std::forward<AwsAccountNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,13 +64,11 @@ namespace Model
      * functionality are applied immediately. For more information, see <a
      * href="https://codecatalyst.aws/explore/pricing">Pricing</a>.</p>
      */
-    inline const Aws::String& GetPendingSubscriptionType() const{ return m_pendingSubscriptionType; }
-    inline void SetPendingSubscriptionType(const Aws::String& value) { m_pendingSubscriptionType = value; }
-    inline void SetPendingSubscriptionType(Aws::String&& value) { m_pendingSubscriptionType = std::move(value); }
-    inline void SetPendingSubscriptionType(const char* value) { m_pendingSubscriptionType.assign(value); }
-    inline GetSubscriptionResult& WithPendingSubscriptionType(const Aws::String& value) { SetPendingSubscriptionType(value); return *this;}
-    inline GetSubscriptionResult& WithPendingSubscriptionType(Aws::String&& value) { SetPendingSubscriptionType(std::move(value)); return *this;}
-    inline GetSubscriptionResult& WithPendingSubscriptionType(const char* value) { SetPendingSubscriptionType(value); return *this;}
+    inline const Aws::String& GetPendingSubscriptionType() const { return m_pendingSubscriptionType; }
+    template<typename PendingSubscriptionTypeT = Aws::String>
+    void SetPendingSubscriptionType(PendingSubscriptionTypeT&& value) { m_pendingSubscriptionTypeHasBeenSet = true; m_pendingSubscriptionType = std::forward<PendingSubscriptionTypeT>(value); }
+    template<typename PendingSubscriptionTypeT = Aws::String>
+    GetSubscriptionResult& WithPendingSubscriptionType(PendingSubscriptionTypeT&& value) { SetPendingSubscriptionType(std::forward<PendingSubscriptionTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,34 +77,37 @@ namespace Model
      * coordinated universal time (UTC) timestamp format as specified in <a
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetPendingSubscriptionStartTime() const{ return m_pendingSubscriptionStartTime; }
-    inline void SetPendingSubscriptionStartTime(const Aws::Utils::DateTime& value) { m_pendingSubscriptionStartTime = value; }
-    inline void SetPendingSubscriptionStartTime(Aws::Utils::DateTime&& value) { m_pendingSubscriptionStartTime = std::move(value); }
-    inline GetSubscriptionResult& WithPendingSubscriptionStartTime(const Aws::Utils::DateTime& value) { SetPendingSubscriptionStartTime(value); return *this;}
-    inline GetSubscriptionResult& WithPendingSubscriptionStartTime(Aws::Utils::DateTime&& value) { SetPendingSubscriptionStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetPendingSubscriptionStartTime() const { return m_pendingSubscriptionStartTime; }
+    template<typename PendingSubscriptionStartTimeT = Aws::Utils::DateTime>
+    void SetPendingSubscriptionStartTime(PendingSubscriptionStartTimeT&& value) { m_pendingSubscriptionStartTimeHasBeenSet = true; m_pendingSubscriptionStartTime = std::forward<PendingSubscriptionStartTimeT>(value); }
+    template<typename PendingSubscriptionStartTimeT = Aws::Utils::DateTime>
+    GetSubscriptionResult& WithPendingSubscriptionStartTime(PendingSubscriptionStartTimeT&& value) { SetPendingSubscriptionStartTime(std::forward<PendingSubscriptionStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSubscriptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSubscriptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSubscriptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSubscriptionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_subscriptionType;
+    bool m_subscriptionTypeHasBeenSet = false;
 
     Aws::String m_awsAccountName;
+    bool m_awsAccountNameHasBeenSet = false;
 
     Aws::String m_pendingSubscriptionType;
+    bool m_pendingSubscriptionTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_pendingSubscriptionStartTime;
+    Aws::Utils::DateTime m_pendingSubscriptionStartTime{};
+    bool m_pendingSubscriptionStartTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

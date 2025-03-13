@@ -31,7 +31,7 @@ namespace Model
   class Correction
   {
   public:
-    AWS_KENDRA_API Correction();
+    AWS_KENDRA_API Correction() = default;
     AWS_KENDRA_API Correction(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Correction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The zero-based location in the response string or text where the corrected
      * word starts.</p>
      */
-    inline int GetBeginOffset() const{ return m_beginOffset; }
+    inline int GetBeginOffset() const { return m_beginOffset; }
     inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
     inline void SetBeginOffset(int value) { m_beginOffsetHasBeenSet = true; m_beginOffset = value; }
     inline Correction& WithBeginOffset(int value) { SetBeginOffset(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
      * <p>The zero-based location in the response string or text where the corrected
      * word ends.</p>
      */
-    inline int GetEndOffset() const{ return m_endOffset; }
+    inline int GetEndOffset() const { return m_endOffset; }
     inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
     inline Correction& WithEndOffset(int value) { SetEndOffset(value); return *this;}
@@ -63,35 +63,31 @@ namespace Model
     /**
      * <p>The string or text of a misspelled word in a query.</p>
      */
-    inline const Aws::String& GetTerm() const{ return m_term; }
+    inline const Aws::String& GetTerm() const { return m_term; }
     inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
-    inline void SetTerm(const Aws::String& value) { m_termHasBeenSet = true; m_term = value; }
-    inline void SetTerm(Aws::String&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
-    inline void SetTerm(const char* value) { m_termHasBeenSet = true; m_term.assign(value); }
-    inline Correction& WithTerm(const Aws::String& value) { SetTerm(value); return *this;}
-    inline Correction& WithTerm(Aws::String&& value) { SetTerm(std::move(value)); return *this;}
-    inline Correction& WithTerm(const char* value) { SetTerm(value); return *this;}
+    template<typename TermT = Aws::String>
+    void SetTerm(TermT&& value) { m_termHasBeenSet = true; m_term = std::forward<TermT>(value); }
+    template<typename TermT = Aws::String>
+    Correction& WithTerm(TermT&& value) { SetTerm(std::forward<TermT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The string or text of a corrected misspelled word in a query.</p>
      */
-    inline const Aws::String& GetCorrectedTerm() const{ return m_correctedTerm; }
+    inline const Aws::String& GetCorrectedTerm() const { return m_correctedTerm; }
     inline bool CorrectedTermHasBeenSet() const { return m_correctedTermHasBeenSet; }
-    inline void SetCorrectedTerm(const Aws::String& value) { m_correctedTermHasBeenSet = true; m_correctedTerm = value; }
-    inline void SetCorrectedTerm(Aws::String&& value) { m_correctedTermHasBeenSet = true; m_correctedTerm = std::move(value); }
-    inline void SetCorrectedTerm(const char* value) { m_correctedTermHasBeenSet = true; m_correctedTerm.assign(value); }
-    inline Correction& WithCorrectedTerm(const Aws::String& value) { SetCorrectedTerm(value); return *this;}
-    inline Correction& WithCorrectedTerm(Aws::String&& value) { SetCorrectedTerm(std::move(value)); return *this;}
-    inline Correction& WithCorrectedTerm(const char* value) { SetCorrectedTerm(value); return *this;}
+    template<typename CorrectedTermT = Aws::String>
+    void SetCorrectedTerm(CorrectedTermT&& value) { m_correctedTermHasBeenSet = true; m_correctedTerm = std::forward<CorrectedTermT>(value); }
+    template<typename CorrectedTermT = Aws::String>
+    Correction& WithCorrectedTerm(CorrectedTermT&& value) { SetCorrectedTerm(std::forward<CorrectedTermT>(value)); return *this;}
     ///@}
   private:
 
-    int m_beginOffset;
+    int m_beginOffset{0};
     bool m_beginOffsetHasBeenSet = false;
 
-    int m_endOffset;
+    int m_endOffset{0};
     bool m_endOffsetHasBeenSet = false;
 
     Aws::String m_term;

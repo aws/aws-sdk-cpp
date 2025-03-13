@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartConfigRulesEvaluationRequest::StartConfigRulesEvaluationRequest() : 
-    m_configRuleNamesHasBeenSet(false)
-{
-}
-
 Aws::String StartConfigRulesEvaluationRequest::SerializePayload() const
 {
   JsonValue payload;

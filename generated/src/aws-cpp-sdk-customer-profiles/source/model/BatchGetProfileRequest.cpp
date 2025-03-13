@@ -12,12 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetProfileRequest::BatchGetProfileRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_profileIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetProfileRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ExportClientVpnClientConfigurationRequest::ExportClientVpnClientConfigurationRequest() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ExportClientVpnClientConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -26,7 +26,7 @@ namespace Model
   class CreateRoutingControlRequest : public Route53RecoveryControlConfigRequest
   {
   public:
-    AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateRoutingControlRequest();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateRoutingControlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * idempotent API request with an action, specify a client token in the
      * request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateRoutingControlRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateRoutingControlRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateRoutingControlRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateRoutingControlRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the cluster that includes the routing
      * control.</p>
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline CreateRoutingControlRequest& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline CreateRoutingControlRequest& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline CreateRoutingControlRequest& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    CreateRoutingControlRequest& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,28 +69,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the control panel that includes the routing
      * control.</p>
      */
-    inline const Aws::String& GetControlPanelArn() const{ return m_controlPanelArn; }
+    inline const Aws::String& GetControlPanelArn() const { return m_controlPanelArn; }
     inline bool ControlPanelArnHasBeenSet() const { return m_controlPanelArnHasBeenSet; }
-    inline void SetControlPanelArn(const Aws::String& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = value; }
-    inline void SetControlPanelArn(Aws::String&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::move(value); }
-    inline void SetControlPanelArn(const char* value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn.assign(value); }
-    inline CreateRoutingControlRequest& WithControlPanelArn(const Aws::String& value) { SetControlPanelArn(value); return *this;}
-    inline CreateRoutingControlRequest& WithControlPanelArn(Aws::String&& value) { SetControlPanelArn(std::move(value)); return *this;}
-    inline CreateRoutingControlRequest& WithControlPanelArn(const char* value) { SetControlPanelArn(value); return *this;}
+    template<typename ControlPanelArnT = Aws::String>
+    void SetControlPanelArn(ControlPanelArnT&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::forward<ControlPanelArnT>(value); }
+    template<typename ControlPanelArnT = Aws::String>
+    CreateRoutingControlRequest& WithControlPanelArn(ControlPanelArnT&& value) { SetControlPanelArn(std::forward<ControlPanelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the routing control.</p>
      */
-    inline const Aws::String& GetRoutingControlName() const{ return m_routingControlName; }
+    inline const Aws::String& GetRoutingControlName() const { return m_routingControlName; }
     inline bool RoutingControlNameHasBeenSet() const { return m_routingControlNameHasBeenSet; }
-    inline void SetRoutingControlName(const Aws::String& value) { m_routingControlNameHasBeenSet = true; m_routingControlName = value; }
-    inline void SetRoutingControlName(Aws::String&& value) { m_routingControlNameHasBeenSet = true; m_routingControlName = std::move(value); }
-    inline void SetRoutingControlName(const char* value) { m_routingControlNameHasBeenSet = true; m_routingControlName.assign(value); }
-    inline CreateRoutingControlRequest& WithRoutingControlName(const Aws::String& value) { SetRoutingControlName(value); return *this;}
-    inline CreateRoutingControlRequest& WithRoutingControlName(Aws::String&& value) { SetRoutingControlName(std::move(value)); return *this;}
-    inline CreateRoutingControlRequest& WithRoutingControlName(const char* value) { SetRoutingControlName(value); return *this;}
+    template<typename RoutingControlNameT = Aws::String>
+    void SetRoutingControlName(RoutingControlNameT&& value) { m_routingControlNameHasBeenSet = true; m_routingControlName = std::forward<RoutingControlNameT>(value); }
+    template<typename RoutingControlNameT = Aws::String>
+    CreateRoutingControlRequest& WithRoutingControlName(RoutingControlNameT&& value) { SetRoutingControlName(std::forward<RoutingControlNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class PropertyFilters
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API PropertyFilters();
+    AWS_SAGEMAKERGEOSPATIAL_API PropertyFilters() = default;
     AWS_SAGEMAKERGEOSPATIAL_API PropertyFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API PropertyFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,28 @@ namespace Model
     /**
      * <p>The Logical Operator used to combine the Property Filters.</p>
      */
-    inline const LogicalOperator& GetLogicalOperator() const{ return m_logicalOperator; }
+    inline LogicalOperator GetLogicalOperator() const { return m_logicalOperator; }
     inline bool LogicalOperatorHasBeenSet() const { return m_logicalOperatorHasBeenSet; }
-    inline void SetLogicalOperator(const LogicalOperator& value) { m_logicalOperatorHasBeenSet = true; m_logicalOperator = value; }
-    inline void SetLogicalOperator(LogicalOperator&& value) { m_logicalOperatorHasBeenSet = true; m_logicalOperator = std::move(value); }
-    inline PropertyFilters& WithLogicalOperator(const LogicalOperator& value) { SetLogicalOperator(value); return *this;}
-    inline PropertyFilters& WithLogicalOperator(LogicalOperator&& value) { SetLogicalOperator(std::move(value)); return *this;}
+    inline void SetLogicalOperator(LogicalOperator value) { m_logicalOperatorHasBeenSet = true; m_logicalOperator = value; }
+    inline PropertyFilters& WithLogicalOperator(LogicalOperator value) { SetLogicalOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of Property Filters.</p>
      */
-    inline const Aws::Vector<PropertyFilter>& GetProperties() const{ return m_properties; }
+    inline const Aws::Vector<PropertyFilter>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Vector<PropertyFilter>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Vector<PropertyFilter>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline PropertyFilters& WithProperties(const Aws::Vector<PropertyFilter>& value) { SetProperties(value); return *this;}
-    inline PropertyFilters& WithProperties(Aws::Vector<PropertyFilter>&& value) { SetProperties(std::move(value)); return *this;}
-    inline PropertyFilters& AddProperties(const PropertyFilter& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
-    inline PropertyFilters& AddProperties(PropertyFilter&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
+    template<typename PropertiesT = Aws::Vector<PropertyFilter>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Vector<PropertyFilter>>
+    PropertyFilters& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesT = PropertyFilter>
+    PropertyFilters& AddProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties.emplace_back(std::forward<PropertiesT>(value)); return *this; }
     ///@}
   private:
 
-    LogicalOperator m_logicalOperator;
+    LogicalOperator m_logicalOperator{LogicalOperator::NOT_SET};
     bool m_logicalOperatorHasBeenSet = false;
 
     Aws::Vector<PropertyFilter> m_properties;

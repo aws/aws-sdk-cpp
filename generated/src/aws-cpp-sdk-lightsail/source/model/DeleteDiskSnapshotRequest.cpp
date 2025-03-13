@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDiskSnapshotRequest::DeleteDiskSnapshotRequest() : 
-    m_diskSnapshotNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDiskSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

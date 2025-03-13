@@ -36,7 +36,7 @@ namespace Model
   class SendMessageBatchRequestEntry
   {
   public:
-    AWS_SQS_API SendMessageBatchRequestEntry();
+    AWS_SQS_API SendMessageBatchRequestEntry() = default;
     AWS_SQS_API SendMessageBatchRequestEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_SQS_API SendMessageBatchRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SQS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,24 @@ namespace Model
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
      * (_).</p> 
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline SendMessageBatchRequestEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline SendMessageBatchRequestEntry& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline SendMessageBatchRequestEntry& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    SendMessageBatchRequestEntry& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The body of the message.</p>
      */
-    inline const Aws::String& GetMessageBody() const{ return m_messageBody; }
+    inline const Aws::String& GetMessageBody() const { return m_messageBody; }
     inline bool MessageBodyHasBeenSet() const { return m_messageBodyHasBeenSet; }
-    inline void SetMessageBody(const Aws::String& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
-    inline void SetMessageBody(Aws::String&& value) { m_messageBodyHasBeenSet = true; m_messageBody = std::move(value); }
-    inline void SetMessageBody(const char* value) { m_messageBodyHasBeenSet = true; m_messageBody.assign(value); }
-    inline SendMessageBatchRequestEntry& WithMessageBody(const Aws::String& value) { SetMessageBody(value); return *this;}
-    inline SendMessageBatchRequestEntry& WithMessageBody(Aws::String&& value) { SetMessageBody(std::move(value)); return *this;}
-    inline SendMessageBatchRequestEntry& WithMessageBody(const char* value) { SetMessageBody(value); return *this;}
+    template<typename MessageBodyT = Aws::String>
+    void SetMessageBody(MessageBodyT&& value) { m_messageBodyHasBeenSet = true; m_messageBody = std::forward<MessageBodyT>(value); }
+    template<typename MessageBodyT = Aws::String>
+    SendMessageBatchRequestEntry& WithMessageBody(MessageBodyT&& value) { SetMessageBody(std::forward<MessageBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +80,7 @@ namespace Model
      * set <code>DelaySeconds</code> per message. You can set this parameter only on a
      * queue level.</p> 
      */
-    inline int GetDelaySeconds() const{ return m_delaySeconds; }
+    inline int GetDelaySeconds() const { return m_delaySeconds; }
     inline bool DelaySecondsHasBeenSet() const { return m_delaySecondsHasBeenSet; }
     inline void SetDelaySeconds(int value) { m_delaySecondsHasBeenSet = true; m_delaySeconds = value; }
     inline SendMessageBatchRequestEntry& WithDelaySeconds(int value) { SetDelaySeconds(value); return *this;}
@@ -97,18 +93,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const{ return m_messageAttributes; }
+    inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const { return m_messageAttributes; }
     inline bool MessageAttributesHasBeenSet() const { return m_messageAttributesHasBeenSet; }
-    inline void SetMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
-    inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = std::move(value); }
-    inline SendMessageBatchRequestEntry& WithMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { SetMessageAttributes(value); return *this;}
-    inline SendMessageBatchRequestEntry& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(std::move(value)); return *this;}
-    inline SendMessageBatchRequestEntry& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
-    inline SendMessageBatchRequestEntry& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), value); return *this; }
-    inline SendMessageBatchRequestEntry& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
-    inline SendMessageBatchRequestEntry& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline SendMessageBatchRequestEntry& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
-    inline SendMessageBatchRequestEntry& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
+    template<typename MessageAttributesT = Aws::Map<Aws::String, MessageAttributeValue>>
+    void SetMessageAttributes(MessageAttributesT&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = std::forward<MessageAttributesT>(value); }
+    template<typename MessageAttributesT = Aws::Map<Aws::String, MessageAttributeValue>>
+    SendMessageBatchRequestEntry& WithMessageAttributes(MessageAttributesT&& value) { SetMessageAttributes(std::forward<MessageAttributesT>(value)); return *this;}
+    template<typename MessageAttributesKeyT = Aws::String, typename MessageAttributesValueT = MessageAttributeValue>
+    SendMessageBatchRequestEntry& AddMessageAttributes(MessageAttributesKeyT&& key, MessageAttributesValueT&& value) {
+      m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::forward<MessageAttributesKeyT>(key), std::forward<MessageAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -121,16 +115,15 @@ namespace Model
      * <p>The size of a message system attribute doesn't count towards the total size
      * of a message.</p> </li> </ul> 
      */
-    inline const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& GetMessageSystemAttributes() const{ return m_messageSystemAttributes; }
+    inline const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& GetMessageSystemAttributes() const { return m_messageSystemAttributes; }
     inline bool MessageSystemAttributesHasBeenSet() const { return m_messageSystemAttributesHasBeenSet; }
-    inline void SetMessageSystemAttributes(const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes = value; }
-    inline void SetMessageSystemAttributes(Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes = std::move(value); }
-    inline SendMessageBatchRequestEntry& WithMessageSystemAttributes(const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& value) { SetMessageSystemAttributes(value); return *this;}
-    inline SendMessageBatchRequestEntry& WithMessageSystemAttributes(Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>&& value) { SetMessageSystemAttributes(std::move(value)); return *this;}
-    inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(const MessageSystemAttributeNameForSends& key, const MessageSystemAttributeValue& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(key, value); return *this; }
-    inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(MessageSystemAttributeNameForSends&& key, const MessageSystemAttributeValue& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(std::move(key), value); return *this; }
-    inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(const MessageSystemAttributeNameForSends& key, MessageSystemAttributeValue&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(key, std::move(value)); return *this; }
-    inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(MessageSystemAttributeNameForSends&& key, MessageSystemAttributeValue&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename MessageSystemAttributesT = Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>>
+    void SetMessageSystemAttributes(MessageSystemAttributesT&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes = std::forward<MessageSystemAttributesT>(value); }
+    template<typename MessageSystemAttributesT = Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>>
+    SendMessageBatchRequestEntry& WithMessageSystemAttributes(MessageSystemAttributesT&& value) { SetMessageSystemAttributes(std::forward<MessageSystemAttributesT>(value)); return *this;}
+    inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(MessageSystemAttributeNameForSends key, MessageSystemAttributeValue value) {
+      m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -177,14 +170,12 @@ namespace Model
      * the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetMessageDeduplicationId() const{ return m_messageDeduplicationId; }
+    inline const Aws::String& GetMessageDeduplicationId() const { return m_messageDeduplicationId; }
     inline bool MessageDeduplicationIdHasBeenSet() const { return m_messageDeduplicationIdHasBeenSet; }
-    inline void SetMessageDeduplicationId(const Aws::String& value) { m_messageDeduplicationIdHasBeenSet = true; m_messageDeduplicationId = value; }
-    inline void SetMessageDeduplicationId(Aws::String&& value) { m_messageDeduplicationIdHasBeenSet = true; m_messageDeduplicationId = std::move(value); }
-    inline void SetMessageDeduplicationId(const char* value) { m_messageDeduplicationIdHasBeenSet = true; m_messageDeduplicationId.assign(value); }
-    inline SendMessageBatchRequestEntry& WithMessageDeduplicationId(const Aws::String& value) { SetMessageDeduplicationId(value); return *this;}
-    inline SendMessageBatchRequestEntry& WithMessageDeduplicationId(Aws::String&& value) { SetMessageDeduplicationId(std::move(value)); return *this;}
-    inline SendMessageBatchRequestEntry& WithMessageDeduplicationId(const char* value) { SetMessageDeduplicationId(value); return *this;}
+    template<typename MessageDeduplicationIdT = Aws::String>
+    void SetMessageDeduplicationId(MessageDeduplicationIdT&& value) { m_messageDeduplicationIdHasBeenSet = true; m_messageDeduplicationId = std::forward<MessageDeduplicationIdT>(value); }
+    template<typename MessageDeduplicationIdT = Aws::String>
+    SendMessageBatchRequestEntry& WithMessageDeduplicationId(MessageDeduplicationIdT&& value) { SetMessageDeduplicationId(std::forward<MessageDeduplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -212,14 +203,12 @@ namespace Model
      *  <p> <code>MessageGroupId</code> is required for FIFO queues. You
      * can't use it for Standard queues.</p> 
      */
-    inline const Aws::String& GetMessageGroupId() const{ return m_messageGroupId; }
+    inline const Aws::String& GetMessageGroupId() const { return m_messageGroupId; }
     inline bool MessageGroupIdHasBeenSet() const { return m_messageGroupIdHasBeenSet; }
-    inline void SetMessageGroupId(const Aws::String& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = value; }
-    inline void SetMessageGroupId(Aws::String&& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = std::move(value); }
-    inline void SetMessageGroupId(const char* value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId.assign(value); }
-    inline SendMessageBatchRequestEntry& WithMessageGroupId(const Aws::String& value) { SetMessageGroupId(value); return *this;}
-    inline SendMessageBatchRequestEntry& WithMessageGroupId(Aws::String&& value) { SetMessageGroupId(std::move(value)); return *this;}
-    inline SendMessageBatchRequestEntry& WithMessageGroupId(const char* value) { SetMessageGroupId(value); return *this;}
+    template<typename MessageGroupIdT = Aws::String>
+    void SetMessageGroupId(MessageGroupIdT&& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = std::forward<MessageGroupIdT>(value); }
+    template<typename MessageGroupIdT = Aws::String>
+    SendMessageBatchRequestEntry& WithMessageGroupId(MessageGroupIdT&& value) { SetMessageGroupId(std::forward<MessageGroupIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -229,7 +218,7 @@ namespace Model
     Aws::String m_messageBody;
     bool m_messageBodyHasBeenSet = false;
 
-    int m_delaySeconds;
+    int m_delaySeconds{0};
     bool m_delaySecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;

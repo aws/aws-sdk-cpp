@@ -12,15 +12,6 @@ using namespace Aws::SsmSap::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopApplicationRequest::StopApplicationRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_stopConnectedEntity(ConnectedEntityType::NOT_SET),
-    m_stopConnectedEntityHasBeenSet(false),
-    m_includeEc2InstanceShutdown(false),
-    m_includeEc2InstanceShutdownHasBeenSet(false)
-{
-}
-
 Aws::String StopApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

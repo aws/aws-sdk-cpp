@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-PersonalizationConfiguration::PersonalizationConfiguration() : 
-    m_personalizationControlMode(PersonalizationControlMode::NOT_SET),
-    m_personalizationControlModeHasBeenSet(false)
-{
-}
-
 PersonalizationConfiguration::PersonalizationConfiguration(JsonView jsonValue)
-  : PersonalizationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PersonalizationConfiguration& PersonalizationConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("personalizationControlMode"))
   {
     m_personalizationControlMode = PersonalizationControlModeMapper::GetPersonalizationControlModeForName(jsonValue.GetString("personalizationControlMode"));
-
     m_personalizationControlModeHasBeenSet = true;
   }
-
   return *this;
 }
 

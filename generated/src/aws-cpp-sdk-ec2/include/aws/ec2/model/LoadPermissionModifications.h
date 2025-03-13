@@ -33,7 +33,7 @@ namespace Model
   class LoadPermissionModifications
   {
   public:
-    AWS_EC2_API LoadPermissionModifications();
+    AWS_EC2_API LoadPermissionModifications() = default;
     AWS_EC2_API LoadPermissionModifications(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LoadPermissionModifications& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,28 @@ namespace Model
     /**
      * <p>The load permissions to add.</p>
      */
-    inline const Aws::Vector<LoadPermissionRequest>& GetAdd() const{ return m_add; }
+    inline const Aws::Vector<LoadPermissionRequest>& GetAdd() const { return m_add; }
     inline bool AddHasBeenSet() const { return m_addHasBeenSet; }
-    inline void SetAdd(const Aws::Vector<LoadPermissionRequest>& value) { m_addHasBeenSet = true; m_add = value; }
-    inline void SetAdd(Aws::Vector<LoadPermissionRequest>&& value) { m_addHasBeenSet = true; m_add = std::move(value); }
-    inline LoadPermissionModifications& WithAdd(const Aws::Vector<LoadPermissionRequest>& value) { SetAdd(value); return *this;}
-    inline LoadPermissionModifications& WithAdd(Aws::Vector<LoadPermissionRequest>&& value) { SetAdd(std::move(value)); return *this;}
-    inline LoadPermissionModifications& AddAdd(const LoadPermissionRequest& value) { m_addHasBeenSet = true; m_add.push_back(value); return *this; }
-    inline LoadPermissionModifications& AddAdd(LoadPermissionRequest&& value) { m_addHasBeenSet = true; m_add.push_back(std::move(value)); return *this; }
+    template<typename AddT = Aws::Vector<LoadPermissionRequest>>
+    void SetAdd(AddT&& value) { m_addHasBeenSet = true; m_add = std::forward<AddT>(value); }
+    template<typename AddT = Aws::Vector<LoadPermissionRequest>>
+    LoadPermissionModifications& WithAdd(AddT&& value) { SetAdd(std::forward<AddT>(value)); return *this;}
+    template<typename AddT = LoadPermissionRequest>
+    LoadPermissionModifications& AddAdd(AddT&& value) { m_addHasBeenSet = true; m_add.emplace_back(std::forward<AddT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The load permissions to remove.</p>
      */
-    inline const Aws::Vector<LoadPermissionRequest>& GetRemove() const{ return m_remove; }
+    inline const Aws::Vector<LoadPermissionRequest>& GetRemove() const { return m_remove; }
     inline bool RemoveHasBeenSet() const { return m_removeHasBeenSet; }
-    inline void SetRemove(const Aws::Vector<LoadPermissionRequest>& value) { m_removeHasBeenSet = true; m_remove = value; }
-    inline void SetRemove(Aws::Vector<LoadPermissionRequest>&& value) { m_removeHasBeenSet = true; m_remove = std::move(value); }
-    inline LoadPermissionModifications& WithRemove(const Aws::Vector<LoadPermissionRequest>& value) { SetRemove(value); return *this;}
-    inline LoadPermissionModifications& WithRemove(Aws::Vector<LoadPermissionRequest>&& value) { SetRemove(std::move(value)); return *this;}
-    inline LoadPermissionModifications& AddRemove(const LoadPermissionRequest& value) { m_removeHasBeenSet = true; m_remove.push_back(value); return *this; }
-    inline LoadPermissionModifications& AddRemove(LoadPermissionRequest&& value) { m_removeHasBeenSet = true; m_remove.push_back(std::move(value)); return *this; }
+    template<typename RemoveT = Aws::Vector<LoadPermissionRequest>>
+    void SetRemove(RemoveT&& value) { m_removeHasBeenSet = true; m_remove = std::forward<RemoveT>(value); }
+    template<typename RemoveT = Aws::Vector<LoadPermissionRequest>>
+    LoadPermissionModifications& WithRemove(RemoveT&& value) { SetRemove(std::forward<RemoveT>(value)); return *this;}
+    template<typename RemoveT = LoadPermissionRequest>
+    LoadPermissionModifications& AddRemove(RemoveT&& value) { m_removeHasBeenSet = true; m_remove.emplace_back(std::forward<RemoveT>(value)); return *this; }
     ///@}
   private:
 

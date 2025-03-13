@@ -40,7 +40,7 @@ namespace Model
   class DBProxyEndpoint
   {
   public:
-    AWS_RDS_API DBProxyEndpoint();
+    AWS_RDS_API DBProxyEndpoint() = default;
     AWS_RDS_API DBProxyEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API DBProxyEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,28 +54,24 @@ namespace Model
      * and must contain only ASCII letters, digits, and hyphens; it can't end with a
      * hyphen or contain two consecutive hyphens.</p>
      */
-    inline const Aws::String& GetDBProxyEndpointName() const{ return m_dBProxyEndpointName; }
+    inline const Aws::String& GetDBProxyEndpointName() const { return m_dBProxyEndpointName; }
     inline bool DBProxyEndpointNameHasBeenSet() const { return m_dBProxyEndpointNameHasBeenSet; }
-    inline void SetDBProxyEndpointName(const Aws::String& value) { m_dBProxyEndpointNameHasBeenSet = true; m_dBProxyEndpointName = value; }
-    inline void SetDBProxyEndpointName(Aws::String&& value) { m_dBProxyEndpointNameHasBeenSet = true; m_dBProxyEndpointName = std::move(value); }
-    inline void SetDBProxyEndpointName(const char* value) { m_dBProxyEndpointNameHasBeenSet = true; m_dBProxyEndpointName.assign(value); }
-    inline DBProxyEndpoint& WithDBProxyEndpointName(const Aws::String& value) { SetDBProxyEndpointName(value); return *this;}
-    inline DBProxyEndpoint& WithDBProxyEndpointName(Aws::String&& value) { SetDBProxyEndpointName(std::move(value)); return *this;}
-    inline DBProxyEndpoint& WithDBProxyEndpointName(const char* value) { SetDBProxyEndpointName(value); return *this;}
+    template<typename DBProxyEndpointNameT = Aws::String>
+    void SetDBProxyEndpointName(DBProxyEndpointNameT&& value) { m_dBProxyEndpointNameHasBeenSet = true; m_dBProxyEndpointName = std::forward<DBProxyEndpointNameT>(value); }
+    template<typename DBProxyEndpointNameT = Aws::String>
+    DBProxyEndpoint& WithDBProxyEndpointName(DBProxyEndpointNameT&& value) { SetDBProxyEndpointName(std::forward<DBProxyEndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the DB proxy endpoint.</p>
      */
-    inline const Aws::String& GetDBProxyEndpointArn() const{ return m_dBProxyEndpointArn; }
+    inline const Aws::String& GetDBProxyEndpointArn() const { return m_dBProxyEndpointArn; }
     inline bool DBProxyEndpointArnHasBeenSet() const { return m_dBProxyEndpointArnHasBeenSet; }
-    inline void SetDBProxyEndpointArn(const Aws::String& value) { m_dBProxyEndpointArnHasBeenSet = true; m_dBProxyEndpointArn = value; }
-    inline void SetDBProxyEndpointArn(Aws::String&& value) { m_dBProxyEndpointArnHasBeenSet = true; m_dBProxyEndpointArn = std::move(value); }
-    inline void SetDBProxyEndpointArn(const char* value) { m_dBProxyEndpointArnHasBeenSet = true; m_dBProxyEndpointArn.assign(value); }
-    inline DBProxyEndpoint& WithDBProxyEndpointArn(const Aws::String& value) { SetDBProxyEndpointArn(value); return *this;}
-    inline DBProxyEndpoint& WithDBProxyEndpointArn(Aws::String&& value) { SetDBProxyEndpointArn(std::move(value)); return *this;}
-    inline DBProxyEndpoint& WithDBProxyEndpointArn(const char* value) { SetDBProxyEndpointArn(value); return *this;}
+    template<typename DBProxyEndpointArnT = Aws::String>
+    void SetDBProxyEndpointArn(DBProxyEndpointArnT&& value) { m_dBProxyEndpointArnHasBeenSet = true; m_dBProxyEndpointArn = std::forward<DBProxyEndpointArnT>(value); }
+    template<typename DBProxyEndpointArnT = Aws::String>
+    DBProxyEndpoint& WithDBProxyEndpointArn(DBProxyEndpointArnT&& value) { SetDBProxyEndpointArn(std::forward<DBProxyEndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * <p>The identifier for the DB proxy that is associated with this DB proxy
      * endpoint.</p>
      */
-    inline const Aws::String& GetDBProxyName() const{ return m_dBProxyName; }
+    inline const Aws::String& GetDBProxyName() const { return m_dBProxyName; }
     inline bool DBProxyNameHasBeenSet() const { return m_dBProxyNameHasBeenSet; }
-    inline void SetDBProxyName(const Aws::String& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = value; }
-    inline void SetDBProxyName(Aws::String&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::move(value); }
-    inline void SetDBProxyName(const char* value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName.assign(value); }
-    inline DBProxyEndpoint& WithDBProxyName(const Aws::String& value) { SetDBProxyName(value); return *this;}
-    inline DBProxyEndpoint& WithDBProxyName(Aws::String&& value) { SetDBProxyName(std::move(value)); return *this;}
-    inline DBProxyEndpoint& WithDBProxyName(const char* value) { SetDBProxyName(value); return *this;}
+    template<typename DBProxyNameT = Aws::String>
+    void SetDBProxyName(DBProxyNameT&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::forward<DBProxyNameT>(value); }
+    template<typename DBProxyNameT = Aws::String>
+    DBProxyEndpoint& WithDBProxyName(DBProxyNameT&& value) { SetDBProxyName(std::forward<DBProxyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,26 +94,22 @@ namespace Model
      * values indicate that you must wait for the endpoint to be ready, or take some
      * action to resolve an issue.</p>
      */
-    inline const DBProxyEndpointStatus& GetStatus() const{ return m_status; }
+    inline DBProxyEndpointStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DBProxyEndpointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DBProxyEndpointStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DBProxyEndpoint& WithStatus(const DBProxyEndpointStatus& value) { SetStatus(value); return *this;}
-    inline DBProxyEndpoint& WithStatus(DBProxyEndpointStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DBProxyEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DBProxyEndpoint& WithStatus(DBProxyEndpointStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides the VPC ID of the DB proxy endpoint.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline DBProxyEndpoint& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline DBProxyEndpoint& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline DBProxyEndpoint& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    DBProxyEndpoint& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,30 +117,28 @@ namespace Model
      * <p>Provides a list of VPC security groups that the DB proxy endpoint belongs
      * to.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
-    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
-    inline DBProxyEndpoint& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
-    inline DBProxyEndpoint& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
-    inline DBProxyEndpoint& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
-    inline DBProxyEndpoint& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
-    inline DBProxyEndpoint& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::forward<VpcSecurityGroupIdsT>(value); }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    DBProxyEndpoint& WithVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { SetVpcSecurityGroupIds(std::forward<VpcSecurityGroupIdsT>(value)); return *this;}
+    template<typename VpcSecurityGroupIdsT = Aws::String>
+    DBProxyEndpoint& AddVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.emplace_back(std::forward<VpcSecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The EC2 subnet IDs for the DB proxy endpoint.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSubnetIds() const{ return m_vpcSubnetIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcSubnetIds() const { return m_vpcSubnetIds; }
     inline bool VpcSubnetIdsHasBeenSet() const { return m_vpcSubnetIdsHasBeenSet; }
-    inline void SetVpcSubnetIds(const Aws::Vector<Aws::String>& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds = value; }
-    inline void SetVpcSubnetIds(Aws::Vector<Aws::String>&& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds = std::move(value); }
-    inline DBProxyEndpoint& WithVpcSubnetIds(const Aws::Vector<Aws::String>& value) { SetVpcSubnetIds(value); return *this;}
-    inline DBProxyEndpoint& WithVpcSubnetIds(Aws::Vector<Aws::String>&& value) { SetVpcSubnetIds(std::move(value)); return *this;}
-    inline DBProxyEndpoint& AddVpcSubnetIds(const Aws::String& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds.push_back(value); return *this; }
-    inline DBProxyEndpoint& AddVpcSubnetIds(Aws::String&& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds.push_back(std::move(value)); return *this; }
-    inline DBProxyEndpoint& AddVpcSubnetIds(const char* value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds.push_back(value); return *this; }
+    template<typename VpcSubnetIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSubnetIds(VpcSubnetIdsT&& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds = std::forward<VpcSubnetIdsT>(value); }
+    template<typename VpcSubnetIdsT = Aws::Vector<Aws::String>>
+    DBProxyEndpoint& WithVpcSubnetIds(VpcSubnetIdsT&& value) { SetVpcSubnetIds(std::forward<VpcSubnetIdsT>(value)); return *this;}
+    template<typename VpcSubnetIdsT = Aws::String>
+    DBProxyEndpoint& AddVpcSubnetIds(VpcSubnetIdsT&& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds.emplace_back(std::forward<VpcSubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -158,26 +146,24 @@ namespace Model
      * <p>The endpoint that you can use to connect to the DB proxy. You include the
      * endpoint value in the connection string for a database client application.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline DBProxyEndpoint& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline DBProxyEndpoint& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline DBProxyEndpoint& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    DBProxyEndpoint& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the DB proxy endpoint was first created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-    inline DBProxyEndpoint& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline DBProxyEndpoint& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    DBProxyEndpoint& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -185,12 +171,10 @@ namespace Model
      * <p>A value that indicates whether the DB proxy endpoint can be used for
      * read/write or read-only operations.</p>
      */
-    inline const DBProxyEndpointTargetRole& GetTargetRole() const{ return m_targetRole; }
+    inline DBProxyEndpointTargetRole GetTargetRole() const { return m_targetRole; }
     inline bool TargetRoleHasBeenSet() const { return m_targetRoleHasBeenSet; }
-    inline void SetTargetRole(const DBProxyEndpointTargetRole& value) { m_targetRoleHasBeenSet = true; m_targetRole = value; }
-    inline void SetTargetRole(DBProxyEndpointTargetRole&& value) { m_targetRoleHasBeenSet = true; m_targetRole = std::move(value); }
-    inline DBProxyEndpoint& WithTargetRole(const DBProxyEndpointTargetRole& value) { SetTargetRole(value); return *this;}
-    inline DBProxyEndpoint& WithTargetRole(DBProxyEndpointTargetRole&& value) { SetTargetRole(std::move(value)); return *this;}
+    inline void SetTargetRole(DBProxyEndpointTargetRole value) { m_targetRoleHasBeenSet = true; m_targetRole = value; }
+    inline DBProxyEndpoint& WithTargetRole(DBProxyEndpointTargetRole value) { SetTargetRole(value); return *this;}
     ///@}
 
     ///@{
@@ -200,7 +184,7 @@ namespace Model
      * endpoints that you associate with the DB proxy can be either read/write or
      * read-only.</p>
      */
-    inline bool GetIsDefault() const{ return m_isDefault; }
+    inline bool GetIsDefault() const { return m_isDefault; }
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
     inline DBProxyEndpoint& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
@@ -216,7 +200,7 @@ namespace Model
     Aws::String m_dBProxyName;
     bool m_dBProxyNameHasBeenSet = false;
 
-    DBProxyEndpointStatus m_status;
+    DBProxyEndpointStatus m_status{DBProxyEndpointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_vpcId;
@@ -231,13 +215,13 @@ namespace Model
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
     bool m_createdDateHasBeenSet = false;
 
-    DBProxyEndpointTargetRole m_targetRole;
+    DBProxyEndpointTargetRole m_targetRole{DBProxyEndpointTargetRole::NOT_SET};
     bool m_targetRoleHasBeenSet = false;
 
-    bool m_isDefault;
+    bool m_isDefault{false};
     bool m_isDefaultHasBeenSet = false;
   };
 

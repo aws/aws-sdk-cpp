@@ -28,7 +28,7 @@ namespace Model
   class CreateAIGuardrailResult
   {
   public:
-    AWS_QCONNECT_API CreateAIGuardrailResult();
+    AWS_QCONNECT_API CreateAIGuardrailResult() = default;
     AWS_QCONNECT_API CreateAIGuardrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API CreateAIGuardrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The data of the AI Guardrail.</p>
      */
-    inline const AIGuardrailData& GetAiGuardrail() const{ return m_aiGuardrail; }
-    inline void SetAiGuardrail(const AIGuardrailData& value) { m_aiGuardrail = value; }
-    inline void SetAiGuardrail(AIGuardrailData&& value) { m_aiGuardrail = std::move(value); }
-    inline CreateAIGuardrailResult& WithAiGuardrail(const AIGuardrailData& value) { SetAiGuardrail(value); return *this;}
-    inline CreateAIGuardrailResult& WithAiGuardrail(AIGuardrailData&& value) { SetAiGuardrail(std::move(value)); return *this;}
+    inline const AIGuardrailData& GetAiGuardrail() const { return m_aiGuardrail; }
+    template<typename AiGuardrailT = AIGuardrailData>
+    void SetAiGuardrail(AiGuardrailT&& value) { m_aiGuardrailHasBeenSet = true; m_aiGuardrail = std::forward<AiGuardrailT>(value); }
+    template<typename AiGuardrailT = AIGuardrailData>
+    CreateAIGuardrailResult& WithAiGuardrail(AiGuardrailT&& value) { SetAiGuardrail(std::forward<AiGuardrailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAIGuardrailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAIGuardrailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAIGuardrailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAIGuardrailResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AIGuardrailData m_aiGuardrail;
+    bool m_aiGuardrailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

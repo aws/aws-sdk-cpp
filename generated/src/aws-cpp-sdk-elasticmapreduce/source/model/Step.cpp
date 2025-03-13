@@ -18,19 +18,7 @@ namespace EMR
 namespace Model
 {
 
-Step::Step() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_configHasBeenSet(false),
-    m_actionOnFailure(ActionOnFailure::NOT_SET),
-    m_actionOnFailureHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false)
-{
-}
-
 Step::Step(JsonView jsonValue)
-  : Step()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Step& Step::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Config"))
   {
     m_config = jsonValue.GetObject("Config");
-
     m_configHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionOnFailure"))
   {
     m_actionOnFailure = ActionOnFailureMapper::GetActionOnFailureForName(jsonValue.GetString("ActionOnFailure"));
-
     m_actionOnFailureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSnapshotBlockRequest::GetSnapshotBlockRequest() : 
-    m_snapshotIdHasBeenSet(false),
-    m_blockIndex(0),
-    m_blockIndexHasBeenSet(false),
-    m_blockTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetSnapshotBlockRequest::SerializePayload() const
 {
   return {};

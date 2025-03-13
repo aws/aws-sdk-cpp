@@ -24,7 +24,7 @@ namespace Model
   class UpdateClusterRequest : public DocDBElasticRequest
   {
   public:
-    AWS_DOCDBELASTIC_API UpdateClusterRequest();
+    AWS_DOCDBELASTIC_API UpdateClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * ("), or the "at" symbol (@).</p> <p> <i>Constraints</i>: Must contain from 8 to
      * 100 characters.</p>
      */
-    inline const Aws::String& GetAdminUserPassword() const{ return m_adminUserPassword; }
+    inline const Aws::String& GetAdminUserPassword() const { return m_adminUserPassword; }
     inline bool AdminUserPasswordHasBeenSet() const { return m_adminUserPasswordHasBeenSet; }
-    inline void SetAdminUserPassword(const Aws::String& value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword = value; }
-    inline void SetAdminUserPassword(Aws::String&& value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword = std::move(value); }
-    inline void SetAdminUserPassword(const char* value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword.assign(value); }
-    inline UpdateClusterRequest& WithAdminUserPassword(const Aws::String& value) { SetAdminUserPassword(value); return *this;}
-    inline UpdateClusterRequest& WithAdminUserPassword(Aws::String&& value) { SetAdminUserPassword(std::move(value)); return *this;}
-    inline UpdateClusterRequest& WithAdminUserPassword(const char* value) { SetAdminUserPassword(value); return *this;}
+    template<typename AdminUserPasswordT = Aws::String>
+    void SetAdminUserPassword(AdminUserPasswordT&& value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword = std::forward<AdminUserPasswordT>(value); }
+    template<typename AdminUserPasswordT = Aws::String>
+    UpdateClusterRequest& WithAdminUserPassword(AdminUserPasswordT&& value) { SetAdminUserPassword(std::forward<AdminUserPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * for accessing the elastic cluster. Valid types are <code>PLAIN_TEXT</code> or
      * <code>SECRET_ARN</code>.</p>
      */
-    inline const Auth& GetAuthType() const{ return m_authType; }
+    inline Auth GetAuthType() const { return m_authType; }
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-    inline void SetAuthType(const Auth& value) { m_authTypeHasBeenSet = true; m_authType = value; }
-    inline void SetAuthType(Auth&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
-    inline UpdateClusterRequest& WithAuthType(const Auth& value) { SetAuthType(value); return *this;}
-    inline UpdateClusterRequest& WithAuthType(Auth&& value) { SetAuthType(std::move(value)); return *this;}
+    inline void SetAuthType(Auth value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline UpdateClusterRequest& WithAuthType(Auth value) { SetAuthType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of days for which automatic snapshots are retained.</p>
      */
-    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+    inline int GetBackupRetentionPeriod() const { return m_backupRetentionPeriod; }
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
     inline UpdateClusterRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
@@ -80,28 +76,24 @@ namespace Model
     /**
      * <p>The client token for the elastic cluster.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateClusterRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateClusterRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateClusterRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateClusterRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN identifier of the elastic cluster.</p>
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline UpdateClusterRequest& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline UpdateClusterRequest& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline UpdateClusterRequest& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    UpdateClusterRequest& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +102,12 @@ namespace Model
      * backups are enabled, as determined by the
      * <code>backupRetentionPeriod</code>.</p>
      */
-    inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+    inline const Aws::String& GetPreferredBackupWindow() const { return m_preferredBackupWindow; }
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
-    inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
-    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
-    inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
-    inline UpdateClusterRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
-    inline UpdateClusterRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
-    inline UpdateClusterRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
+    template<typename PreferredBackupWindowT = Aws::String>
+    void SetPreferredBackupWindow(PreferredBackupWindowT&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::forward<PreferredBackupWindowT>(value); }
+    template<typename PreferredBackupWindowT = Aws::String>
+    UpdateClusterRequest& WithPreferredBackupWindow(PreferredBackupWindowT&& value) { SetPreferredBackupWindow(std::forward<PreferredBackupWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +120,12 @@ namespace Model
      * Tue, Wed, Thu, Fri, Sat, Sun</p> <p> <i>Constraints</i>: Minimum 30-minute
      * window.</p>
      */
-    inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+    inline const Aws::String& GetPreferredMaintenanceWindow() const { return m_preferredMaintenanceWindow; }
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
-    inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
-    inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
-    inline UpdateClusterRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
-    inline UpdateClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
-    inline UpdateClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    void SetPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::forward<PreferredMaintenanceWindowT>(value); }
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    UpdateClusterRequest& WithPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { SetPreferredMaintenanceWindow(std::forward<PreferredMaintenanceWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,7 +133,7 @@ namespace Model
      * <p>The number of vCPUs assigned to each elastic cluster shard. Maximum is 64.
      * Allowed values are 2, 4, 8, 16, 32, 64.</p>
      */
-    inline int GetShardCapacity() const{ return m_shardCapacity; }
+    inline int GetShardCapacity() const { return m_shardCapacity; }
     inline bool ShardCapacityHasBeenSet() const { return m_shardCapacityHasBeenSet; }
     inline void SetShardCapacity(int value) { m_shardCapacityHasBeenSet = true; m_shardCapacity = value; }
     inline UpdateClusterRequest& WithShardCapacity(int value) { SetShardCapacity(value); return *this;}
@@ -155,7 +143,7 @@ namespace Model
     /**
      * <p>The number of shards assigned to the elastic cluster. Maximum is 32.</p>
      */
-    inline int GetShardCount() const{ return m_shardCount; }
+    inline int GetShardCount() const { return m_shardCount; }
     inline bool ShardCountHasBeenSet() const { return m_shardCountHasBeenSet; }
     inline void SetShardCount(int value) { m_shardCountHasBeenSet = true; m_shardCount = value; }
     inline UpdateClusterRequest& WithShardCount(int value) { SetShardCount(value); return *this;}
@@ -168,7 +156,7 @@ namespace Model
      * instance, and any additional instances are replicas that can be used for reads
      * and to improve availability.</p>
      */
-    inline int GetShardInstanceCount() const{ return m_shardInstanceCount; }
+    inline int GetShardInstanceCount() const { return m_shardInstanceCount; }
     inline bool ShardInstanceCountHasBeenSet() const { return m_shardInstanceCountHasBeenSet; }
     inline void SetShardInstanceCount(int value) { m_shardInstanceCountHasBeenSet = true; m_shardInstanceCount = value; }
     inline UpdateClusterRequest& WithShardInstanceCount(int value) { SetShardInstanceCount(value); return *this;}
@@ -178,40 +166,38 @@ namespace Model
     /**
      * <p>The Amazon EC2 subnet IDs for the elastic cluster.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline UpdateClusterRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline UpdateClusterRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline UpdateClusterRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline UpdateClusterRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline UpdateClusterRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    UpdateClusterRequest& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    UpdateClusterRequest& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of EC2 VPC security groups to associate with the elastic cluster.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
-    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
-    inline UpdateClusterRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
-    inline UpdateClusterRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
-    inline UpdateClusterRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
-    inline UpdateClusterRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
-    inline UpdateClusterRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::forward<VpcSecurityGroupIdsT>(value); }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    UpdateClusterRequest& WithVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { SetVpcSecurityGroupIds(std::forward<VpcSecurityGroupIdsT>(value)); return *this;}
+    template<typename VpcSecurityGroupIdsT = Aws::String>
+    UpdateClusterRequest& AddVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.emplace_back(std::forward<VpcSecurityGroupIdsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_adminUserPassword;
     bool m_adminUserPasswordHasBeenSet = false;
 
-    Auth m_authType;
+    Auth m_authType{Auth::NOT_SET};
     bool m_authTypeHasBeenSet = false;
 
-    int m_backupRetentionPeriod;
+    int m_backupRetentionPeriod{0};
     bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_clientToken;
@@ -226,13 +212,13 @@ namespace Model
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet = false;
 
-    int m_shardCapacity;
+    int m_shardCapacity{0};
     bool m_shardCapacityHasBeenSet = false;
 
-    int m_shardCount;
+    int m_shardCount{0};
     bool m_shardCountHasBeenSet = false;
 
-    int m_shardInstanceCount;
+    int m_shardInstanceCount{0};
     bool m_shardInstanceCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;

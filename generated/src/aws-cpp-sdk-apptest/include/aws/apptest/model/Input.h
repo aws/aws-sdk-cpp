@@ -31,7 +31,7 @@ namespace Model
   class Input
   {
   public:
-    AWS_APPTEST_API Input();
+    AWS_APPTEST_API Input() = default;
     AWS_APPTEST_API Input(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Input& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The file in the input.</p>
      */
-    inline const InputFile& GetFile() const{ return m_file; }
+    inline const InputFile& GetFile() const { return m_file; }
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-    inline void SetFile(const InputFile& value) { m_fileHasBeenSet = true; m_file = value; }
-    inline void SetFile(InputFile&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-    inline Input& WithFile(const InputFile& value) { SetFile(value); return *this;}
-    inline Input& WithFile(InputFile&& value) { SetFile(std::move(value)); return *this;}
+    template<typename FileT = InputFile>
+    void SetFile(FileT&& value) { m_fileHasBeenSet = true; m_file = std::forward<FileT>(value); }
+    template<typename FileT = InputFile>
+    Input& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
   private:
 

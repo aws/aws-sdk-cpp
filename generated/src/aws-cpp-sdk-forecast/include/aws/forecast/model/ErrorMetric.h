@@ -32,7 +32,7 @@ namespace Model
   class ErrorMetric
   {
   public:
-    AWS_FORECASTSERVICE_API ErrorMetric();
+    AWS_FORECASTSERVICE_API ErrorMetric() = default;
     AWS_FORECASTSERVICE_API ErrorMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API ErrorMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p> The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. </p>
      */
-    inline const Aws::String& GetForecastType() const{ return m_forecastType; }
+    inline const Aws::String& GetForecastType() const { return m_forecastType; }
     inline bool ForecastTypeHasBeenSet() const { return m_forecastTypeHasBeenSet; }
-    inline void SetForecastType(const Aws::String& value) { m_forecastTypeHasBeenSet = true; m_forecastType = value; }
-    inline void SetForecastType(Aws::String&& value) { m_forecastTypeHasBeenSet = true; m_forecastType = std::move(value); }
-    inline void SetForecastType(const char* value) { m_forecastTypeHasBeenSet = true; m_forecastType.assign(value); }
-    inline ErrorMetric& WithForecastType(const Aws::String& value) { SetForecastType(value); return *this;}
-    inline ErrorMetric& WithForecastType(Aws::String&& value) { SetForecastType(std::move(value)); return *this;}
-    inline ErrorMetric& WithForecastType(const char* value) { SetForecastType(value); return *this;}
+    template<typename ForecastTypeT = Aws::String>
+    void SetForecastType(ForecastTypeT&& value) { m_forecastTypeHasBeenSet = true; m_forecastType = std::forward<ForecastTypeT>(value); }
+    template<typename ForecastTypeT = Aws::String>
+    ErrorMetric& WithForecastType(ForecastTypeT&& value) { SetForecastType(std::forward<ForecastTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The weighted absolute percentage error (WAPE). </p>
      */
-    inline double GetWAPE() const{ return m_wAPE; }
+    inline double GetWAPE() const { return m_wAPE; }
     inline bool WAPEHasBeenSet() const { return m_wAPEHasBeenSet; }
     inline void SetWAPE(double value) { m_wAPEHasBeenSet = true; m_wAPE = value; }
     inline ErrorMetric& WithWAPE(double value) { SetWAPE(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     /**
      * <p> The root-mean-square error (RMSE). </p>
      */
-    inline double GetRMSE() const{ return m_rMSE; }
+    inline double GetRMSE() const { return m_rMSE; }
     inline bool RMSEHasBeenSet() const { return m_rMSEHasBeenSet; }
     inline void SetRMSE(double value) { m_rMSEHasBeenSet = true; m_rMSE = value; }
     inline ErrorMetric& WithRMSE(double value) { SetRMSE(value); return *this;}
@@ -76,7 +74,7 @@ namespace Model
     /**
      * <p>The Mean Absolute Scaled Error (MASE)</p>
      */
-    inline double GetMASE() const{ return m_mASE; }
+    inline double GetMASE() const { return m_mASE; }
     inline bool MASEHasBeenSet() const { return m_mASEHasBeenSet; }
     inline void SetMASE(double value) { m_mASEHasBeenSet = true; m_mASE = value; }
     inline ErrorMetric& WithMASE(double value) { SetMASE(value); return *this;}
@@ -86,7 +84,7 @@ namespace Model
     /**
      * <p>The Mean Absolute Percentage Error (MAPE)</p>
      */
-    inline double GetMAPE() const{ return m_mAPE; }
+    inline double GetMAPE() const { return m_mAPE; }
     inline bool MAPEHasBeenSet() const { return m_mAPEHasBeenSet; }
     inline void SetMAPE(double value) { m_mAPEHasBeenSet = true; m_mAPE = value; }
     inline ErrorMetric& WithMAPE(double value) { SetMAPE(value); return *this;}
@@ -96,16 +94,16 @@ namespace Model
     Aws::String m_forecastType;
     bool m_forecastTypeHasBeenSet = false;
 
-    double m_wAPE;
+    double m_wAPE{0.0};
     bool m_wAPEHasBeenSet = false;
 
-    double m_rMSE;
+    double m_rMSE{0.0};
     bool m_rMSEHasBeenSet = false;
 
-    double m_mASE;
+    double m_mASE{0.0};
     bool m_mASEHasBeenSet = false;
 
-    double m_mAPE;
+    double m_mAPE{0.0};
     bool m_mAPEHasBeenSet = false;
   };
 

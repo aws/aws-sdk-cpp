@@ -32,7 +32,7 @@ namespace Model
   class ThemeGenerationConfig
   {
   public:
-    AWS_PERSONALIZE_API ThemeGenerationConfig();
+    AWS_PERSONALIZE_API ThemeGenerationConfig() = default;
     AWS_PERSONALIZE_API ThemeGenerationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API ThemeGenerationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Fields used to generate descriptive themes for a batch inference job.</p>
      */
-    inline const FieldsForThemeGeneration& GetFieldsForThemeGeneration() const{ return m_fieldsForThemeGeneration; }
+    inline const FieldsForThemeGeneration& GetFieldsForThemeGeneration() const { return m_fieldsForThemeGeneration; }
     inline bool FieldsForThemeGenerationHasBeenSet() const { return m_fieldsForThemeGenerationHasBeenSet; }
-    inline void SetFieldsForThemeGeneration(const FieldsForThemeGeneration& value) { m_fieldsForThemeGenerationHasBeenSet = true; m_fieldsForThemeGeneration = value; }
-    inline void SetFieldsForThemeGeneration(FieldsForThemeGeneration&& value) { m_fieldsForThemeGenerationHasBeenSet = true; m_fieldsForThemeGeneration = std::move(value); }
-    inline ThemeGenerationConfig& WithFieldsForThemeGeneration(const FieldsForThemeGeneration& value) { SetFieldsForThemeGeneration(value); return *this;}
-    inline ThemeGenerationConfig& WithFieldsForThemeGeneration(FieldsForThemeGeneration&& value) { SetFieldsForThemeGeneration(std::move(value)); return *this;}
+    template<typename FieldsForThemeGenerationT = FieldsForThemeGeneration>
+    void SetFieldsForThemeGeneration(FieldsForThemeGenerationT&& value) { m_fieldsForThemeGenerationHasBeenSet = true; m_fieldsForThemeGeneration = std::forward<FieldsForThemeGenerationT>(value); }
+    template<typename FieldsForThemeGenerationT = FieldsForThemeGeneration>
+    ThemeGenerationConfig& WithFieldsForThemeGeneration(FieldsForThemeGenerationT&& value) { SetFieldsForThemeGeneration(std::forward<FieldsForThemeGenerationT>(value)); return *this;}
     ///@}
   private:
 

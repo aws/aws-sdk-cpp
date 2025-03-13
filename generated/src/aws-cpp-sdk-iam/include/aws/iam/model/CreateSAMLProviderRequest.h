@@ -24,7 +24,7 @@ namespace Model
   class CreateSAMLProviderRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API CreateSAMLProviderRequest();
+    AWS_IAM_API CreateSAMLProviderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
      * SAML 2.0-based federation</a> in the <i>IAM User Guide</i> </p>
      */
-    inline const Aws::String& GetSAMLMetadataDocument() const{ return m_sAMLMetadataDocument; }
+    inline const Aws::String& GetSAMLMetadataDocument() const { return m_sAMLMetadataDocument; }
     inline bool SAMLMetadataDocumentHasBeenSet() const { return m_sAMLMetadataDocumentHasBeenSet; }
-    inline void SetSAMLMetadataDocument(const Aws::String& value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument = value; }
-    inline void SetSAMLMetadataDocument(Aws::String&& value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument = std::move(value); }
-    inline void SetSAMLMetadataDocument(const char* value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument.assign(value); }
-    inline CreateSAMLProviderRequest& WithSAMLMetadataDocument(const Aws::String& value) { SetSAMLMetadataDocument(value); return *this;}
-    inline CreateSAMLProviderRequest& WithSAMLMetadataDocument(Aws::String&& value) { SetSAMLMetadataDocument(std::move(value)); return *this;}
-    inline CreateSAMLProviderRequest& WithSAMLMetadataDocument(const char* value) { SetSAMLMetadataDocument(value); return *this;}
+    template<typename SAMLMetadataDocumentT = Aws::String>
+    void SetSAMLMetadataDocument(SAMLMetadataDocumentT&& value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument = std::forward<SAMLMetadataDocumentT>(value); }
+    template<typename SAMLMetadataDocumentT = Aws::String>
+    CreateSAMLProviderRequest& WithSAMLMetadataDocument(SAMLMetadataDocumentT&& value) { SetSAMLMetadataDocument(std::forward<SAMLMetadataDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateSAMLProviderRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateSAMLProviderRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateSAMLProviderRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateSAMLProviderRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,26 +83,24 @@ namespace Model
      * is invalid or if you exceed the allowed maximum number of tags, then the entire
      * request fails and the resource is not created.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSAMLProviderRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateSAMLProviderRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSAMLProviderRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateSAMLProviderRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateSAMLProviderRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateSAMLProviderRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the encryption setting for the SAML provider.</p>
      */
-    inline const AssertionEncryptionModeType& GetAssertionEncryptionMode() const{ return m_assertionEncryptionMode; }
+    inline AssertionEncryptionModeType GetAssertionEncryptionMode() const { return m_assertionEncryptionMode; }
     inline bool AssertionEncryptionModeHasBeenSet() const { return m_assertionEncryptionModeHasBeenSet; }
-    inline void SetAssertionEncryptionMode(const AssertionEncryptionModeType& value) { m_assertionEncryptionModeHasBeenSet = true; m_assertionEncryptionMode = value; }
-    inline void SetAssertionEncryptionMode(AssertionEncryptionModeType&& value) { m_assertionEncryptionModeHasBeenSet = true; m_assertionEncryptionMode = std::move(value); }
-    inline CreateSAMLProviderRequest& WithAssertionEncryptionMode(const AssertionEncryptionModeType& value) { SetAssertionEncryptionMode(value); return *this;}
-    inline CreateSAMLProviderRequest& WithAssertionEncryptionMode(AssertionEncryptionModeType&& value) { SetAssertionEncryptionMode(std::move(value)); return *this;}
+    inline void SetAssertionEncryptionMode(AssertionEncryptionModeType value) { m_assertionEncryptionModeHasBeenSet = true; m_assertionEncryptionMode = value; }
+    inline CreateSAMLProviderRequest& WithAssertionEncryptionMode(AssertionEncryptionModeType value) { SetAssertionEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +109,12 @@ namespace Model
      * key must be a .pem file that uses AES-GCM or AES-CBC encryption algorithm to
      * decrypt SAML assertions.</p>
      */
-    inline const Aws::String& GetAddPrivateKey() const{ return m_addPrivateKey; }
+    inline const Aws::String& GetAddPrivateKey() const { return m_addPrivateKey; }
     inline bool AddPrivateKeyHasBeenSet() const { return m_addPrivateKeyHasBeenSet; }
-    inline void SetAddPrivateKey(const Aws::String& value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey = value; }
-    inline void SetAddPrivateKey(Aws::String&& value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey = std::move(value); }
-    inline void SetAddPrivateKey(const char* value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey.assign(value); }
-    inline CreateSAMLProviderRequest& WithAddPrivateKey(const Aws::String& value) { SetAddPrivateKey(value); return *this;}
-    inline CreateSAMLProviderRequest& WithAddPrivateKey(Aws::String&& value) { SetAddPrivateKey(std::move(value)); return *this;}
-    inline CreateSAMLProviderRequest& WithAddPrivateKey(const char* value) { SetAddPrivateKey(value); return *this;}
+    template<typename AddPrivateKeyT = Aws::String>
+    void SetAddPrivateKey(AddPrivateKeyT&& value) { m_addPrivateKeyHasBeenSet = true; m_addPrivateKey = std::forward<AddPrivateKeyT>(value); }
+    template<typename AddPrivateKeyT = Aws::String>
+    CreateSAMLProviderRequest& WithAddPrivateKey(AddPrivateKeyT&& value) { SetAddPrivateKey(std::forward<AddPrivateKeyT>(value)); return *this;}
     ///@}
   private:
 
@@ -135,7 +127,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    AssertionEncryptionModeType m_assertionEncryptionMode;
+    AssertionEncryptionModeType m_assertionEncryptionMode{AssertionEncryptionModeType::NOT_SET};
     bool m_assertionEncryptionModeHasBeenSet = false;
 
     Aws::String m_addPrivateKey;

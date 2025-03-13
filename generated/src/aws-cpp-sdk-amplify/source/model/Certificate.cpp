@@ -18,16 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-Certificate::Certificate() : 
-    m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_customCertificateArnHasBeenSet(false),
-    m_certificateVerificationDNSRecordHasBeenSet(false)
-{
-}
-
 Certificate::Certificate(JsonView jsonValue)
-  : Certificate()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Certificate& Certificate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = CertificateTypeMapper::GetCertificateTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customCertificateArn"))
   {
     m_customCertificateArn = jsonValue.GetString("customCertificateArn");
-
     m_customCertificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateVerificationDNSRecord"))
   {
     m_certificateVerificationDNSRecord = jsonValue.GetString("certificateVerificationDNSRecord");
-
     m_certificateVerificationDNSRecordHasBeenSet = true;
   }
-
   return *this;
 }
 

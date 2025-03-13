@@ -33,7 +33,7 @@ namespace Model
   class AudioAndDTMFInputSpecification
   {
   public:
-    AWS_LEXMODELSV2_API AudioAndDTMFInputSpecification();
+    AWS_LEXMODELSV2_API AudioAndDTMFInputSpecification() = default;
     AWS_LEXMODELSV2_API AudioAndDTMFInputSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AudioAndDTMFInputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Time for which a bot waits before assuming that the customer isn't going to
      * speak or press a key. This timeout is shared between Audio and DTMF inputs.</p>
      */
-    inline int GetStartTimeoutMs() const{ return m_startTimeoutMs; }
+    inline int GetStartTimeoutMs() const { return m_startTimeoutMs; }
     inline bool StartTimeoutMsHasBeenSet() const { return m_startTimeoutMsHasBeenSet; }
     inline void SetStartTimeoutMs(int value) { m_startTimeoutMsHasBeenSet = true; m_startTimeoutMs = value; }
     inline AudioAndDTMFInputSpecification& WithStartTimeoutMs(int value) { SetStartTimeoutMs(value); return *this;}
@@ -54,28 +54,28 @@ namespace Model
     /**
      * <p>Specifies the settings on audio input.</p>
      */
-    inline const AudioSpecification& GetAudioSpecification() const{ return m_audioSpecification; }
+    inline const AudioSpecification& GetAudioSpecification() const { return m_audioSpecification; }
     inline bool AudioSpecificationHasBeenSet() const { return m_audioSpecificationHasBeenSet; }
-    inline void SetAudioSpecification(const AudioSpecification& value) { m_audioSpecificationHasBeenSet = true; m_audioSpecification = value; }
-    inline void SetAudioSpecification(AudioSpecification&& value) { m_audioSpecificationHasBeenSet = true; m_audioSpecification = std::move(value); }
-    inline AudioAndDTMFInputSpecification& WithAudioSpecification(const AudioSpecification& value) { SetAudioSpecification(value); return *this;}
-    inline AudioAndDTMFInputSpecification& WithAudioSpecification(AudioSpecification&& value) { SetAudioSpecification(std::move(value)); return *this;}
+    template<typename AudioSpecificationT = AudioSpecification>
+    void SetAudioSpecification(AudioSpecificationT&& value) { m_audioSpecificationHasBeenSet = true; m_audioSpecification = std::forward<AudioSpecificationT>(value); }
+    template<typename AudioSpecificationT = AudioSpecification>
+    AudioAndDTMFInputSpecification& WithAudioSpecification(AudioSpecificationT&& value) { SetAudioSpecification(std::forward<AudioSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the settings on DTMF input.</p>
      */
-    inline const DTMFSpecification& GetDtmfSpecification() const{ return m_dtmfSpecification; }
+    inline const DTMFSpecification& GetDtmfSpecification() const { return m_dtmfSpecification; }
     inline bool DtmfSpecificationHasBeenSet() const { return m_dtmfSpecificationHasBeenSet; }
-    inline void SetDtmfSpecification(const DTMFSpecification& value) { m_dtmfSpecificationHasBeenSet = true; m_dtmfSpecification = value; }
-    inline void SetDtmfSpecification(DTMFSpecification&& value) { m_dtmfSpecificationHasBeenSet = true; m_dtmfSpecification = std::move(value); }
-    inline AudioAndDTMFInputSpecification& WithDtmfSpecification(const DTMFSpecification& value) { SetDtmfSpecification(value); return *this;}
-    inline AudioAndDTMFInputSpecification& WithDtmfSpecification(DTMFSpecification&& value) { SetDtmfSpecification(std::move(value)); return *this;}
+    template<typename DtmfSpecificationT = DTMFSpecification>
+    void SetDtmfSpecification(DtmfSpecificationT&& value) { m_dtmfSpecificationHasBeenSet = true; m_dtmfSpecification = std::forward<DtmfSpecificationT>(value); }
+    template<typename DtmfSpecificationT = DTMFSpecification>
+    AudioAndDTMFInputSpecification& WithDtmfSpecification(DtmfSpecificationT&& value) { SetDtmfSpecification(std::forward<DtmfSpecificationT>(value)); return *this;}
     ///@}
   private:
 
-    int m_startTimeoutMs;
+    int m_startTimeoutMs{0};
     bool m_startTimeoutMsHasBeenSet = false;
 
     AudioSpecification m_audioSpecification;

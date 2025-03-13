@@ -12,18 +12,6 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePipelineRequest::CreatePipelineRequest() : 
-    m_nameHasBeenSet(false),
-    m_inputBucketHasBeenSet(false),
-    m_outputBucketHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_awsKmsKeyArnHasBeenSet(false),
-    m_notificationsHasBeenSet(false),
-    m_contentConfigHasBeenSet(false),
-    m_thumbnailConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreatePipelineRequest::SerializePayload() const
 {
   JsonValue payload;

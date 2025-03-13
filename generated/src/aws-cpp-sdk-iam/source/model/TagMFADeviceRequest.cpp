@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-TagMFADeviceRequest::TagMFADeviceRequest() : 
-    m_serialNumberHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TagMFADeviceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

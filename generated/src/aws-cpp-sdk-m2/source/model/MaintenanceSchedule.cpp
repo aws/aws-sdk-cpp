@@ -18,14 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-MaintenanceSchedule::MaintenanceSchedule() : 
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 MaintenanceSchedule::MaintenanceSchedule(JsonView jsonValue)
-  : MaintenanceSchedule()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MaintenanceSchedule& MaintenanceSchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

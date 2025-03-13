@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDashboardSnapshotJobResult::DescribeDashboardSnapshotJobResult() : 
-    m_jobStatus(SnapshotJobStatus::NOT_SET),
-    m_status(0)
-{
-}
-
 DescribeDashboardSnapshotJobResult::DescribeDashboardSnapshotJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeDashboardSnapshotJobResult()
 {
   *this = result;
 }
@@ -35,69 +28,60 @@ DescribeDashboardSnapshotJobResult& DescribeDashboardSnapshotJobResult::operator
   if(jsonValue.ValueExists("AwsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("AwsAccountId");
-
+    m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DashboardId"))
   {
     m_dashboardId = jsonValue.GetString("DashboardId");
-
+    m_dashboardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotJobId"))
   {
     m_snapshotJobId = jsonValue.GetString("SnapshotJobId");
-
+    m_snapshotJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserConfiguration"))
   {
     m_userConfiguration = jsonValue.GetObject("UserConfiguration");
-
+    m_userConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotConfiguration"))
   {
     m_snapshotConfiguration = jsonValue.GetObject("SnapshotConfiguration");
-
+    m_snapshotConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = SnapshotJobStatusMapper::GetSnapshotJobStatusForName(jsonValue.GetString("JobStatus"));
-
+    m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
+    m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
+    m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetInteger("Status");
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

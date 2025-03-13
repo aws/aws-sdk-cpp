@@ -34,7 +34,7 @@ namespace Model
   class ScheduledSplitsLaunchConfig
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API ScheduledSplitsLaunchConfig();
+    AWS_CLOUDWATCHEVIDENTLY_API ScheduledSplitsLaunchConfig() = default;
     AWS_CLOUDWATCHEVIDENTLY_API ScheduledSplitsLaunchConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API ScheduledSplitsLaunchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * the feature variations during each step of the launch. This also defines the
      * start time of each step.</p>
      */
-    inline const Aws::Vector<ScheduledSplitConfig>& GetSteps() const{ return m_steps; }
+    inline const Aws::Vector<ScheduledSplitConfig>& GetSteps() const { return m_steps; }
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
-    inline void SetSteps(const Aws::Vector<ScheduledSplitConfig>& value) { m_stepsHasBeenSet = true; m_steps = value; }
-    inline void SetSteps(Aws::Vector<ScheduledSplitConfig>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
-    inline ScheduledSplitsLaunchConfig& WithSteps(const Aws::Vector<ScheduledSplitConfig>& value) { SetSteps(value); return *this;}
-    inline ScheduledSplitsLaunchConfig& WithSteps(Aws::Vector<ScheduledSplitConfig>&& value) { SetSteps(std::move(value)); return *this;}
-    inline ScheduledSplitsLaunchConfig& AddSteps(const ScheduledSplitConfig& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
-    inline ScheduledSplitsLaunchConfig& AddSteps(ScheduledSplitConfig&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
+    template<typename StepsT = Aws::Vector<ScheduledSplitConfig>>
+    void SetSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps = std::forward<StepsT>(value); }
+    template<typename StepsT = Aws::Vector<ScheduledSplitConfig>>
+    ScheduledSplitsLaunchConfig& WithSteps(StepsT&& value) { SetSteps(std::forward<StepsT>(value)); return *this;}
+    template<typename StepsT = ScheduledSplitConfig>
+    ScheduledSplitsLaunchConfig& AddSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps.emplace_back(std::forward<StepsT>(value)); return *this; }
     ///@}
   private:
 

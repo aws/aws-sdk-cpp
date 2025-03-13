@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-GenerativeAISettings::GenerativeAISettings() : 
-    m_runtimeSettingsHasBeenSet(false),
-    m_buildtimeSettingsHasBeenSet(false)
-{
-}
-
 GenerativeAISettings::GenerativeAISettings(JsonView jsonValue)
-  : GenerativeAISettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GenerativeAISettings& GenerativeAISettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("runtimeSettings"))
   {
     m_runtimeSettings = jsonValue.GetObject("runtimeSettings");
-
     m_runtimeSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildtimeSettings"))
   {
     m_buildtimeSettings = jsonValue.GetObject("buildtimeSettings");
-
     m_buildtimeSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

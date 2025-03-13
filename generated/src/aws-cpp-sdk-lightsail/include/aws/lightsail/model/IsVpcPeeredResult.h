@@ -27,7 +27,7 @@ namespace Model
   class IsVpcPeeredResult
   {
   public:
-    AWS_LIGHTSAIL_API IsVpcPeeredResult();
+    AWS_LIGHTSAIL_API IsVpcPeeredResult() = default;
     AWS_LIGHTSAIL_API IsVpcPeeredResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API IsVpcPeeredResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,26 @@ namespace Model
      * <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise,
      * <code>false</code>.</p>
      */
-    inline bool GetIsPeered() const{ return m_isPeered; }
-    inline void SetIsPeered(bool value) { m_isPeered = value; }
+    inline bool GetIsPeered() const { return m_isPeered; }
+    inline void SetIsPeered(bool value) { m_isPeeredHasBeenSet = true; m_isPeered = value; }
     inline IsVpcPeeredResult& WithIsPeered(bool value) { SetIsPeered(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline IsVpcPeeredResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline IsVpcPeeredResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline IsVpcPeeredResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    IsVpcPeeredResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isPeered;
+    bool m_isPeered{false};
+    bool m_isPeeredHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

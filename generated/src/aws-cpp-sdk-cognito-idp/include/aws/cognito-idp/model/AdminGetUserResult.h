@@ -38,7 +38,7 @@ namespace Model
   class AdminGetUserResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdminGetUserResult();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminGetUserResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AdminGetUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API AdminGetUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,13 +47,11 @@ namespace Model
     /**
      * <p>The username of the user that you requested.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
-    inline void SetUsername(const Aws::String& value) { m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_username.assign(value); }
-    inline AdminGetUserResult& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline AdminGetUserResult& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline AdminGetUserResult& WithUsername(const char* value) { SetUsername(value); return *this;}
+    inline const Aws::String& GetUsername() const { return m_username; }
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    AdminGetUserResult& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,13 +59,13 @@ namespace Model
      * <p>An array of name-value pairs of user attributes and their values, for example
      * <code>"email": "testuser@example.com"</code>.</p>
      */
-    inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
-    inline void SetUserAttributes(const Aws::Vector<AttributeType>& value) { m_userAttributes = value; }
-    inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributes = std::move(value); }
-    inline AdminGetUserResult& WithUserAttributes(const Aws::Vector<AttributeType>& value) { SetUserAttributes(value); return *this;}
-    inline AdminGetUserResult& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(std::move(value)); return *this;}
-    inline AdminGetUserResult& AddUserAttributes(const AttributeType& value) { m_userAttributes.push_back(value); return *this; }
-    inline AdminGetUserResult& AddUserAttributes(AttributeType&& value) { m_userAttributes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AttributeType>& GetUserAttributes() const { return m_userAttributes; }
+    template<typename UserAttributesT = Aws::Vector<AttributeType>>
+    void SetUserAttributes(UserAttributesT&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::forward<UserAttributesT>(value); }
+    template<typename UserAttributesT = Aws::Vector<AttributeType>>
+    AdminGetUserResult& WithUserAttributes(UserAttributesT&& value) { SetUserAttributes(std::forward<UserAttributesT>(value)); return *this;}
+    template<typename UserAttributesT = AttributeType>
+    AdminGetUserResult& AddUserAttributes(UserAttributesT&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace_back(std::forward<UserAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,11 +74,11 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetUserCreateDate() const{ return m_userCreateDate; }
-    inline void SetUserCreateDate(const Aws::Utils::DateTime& value) { m_userCreateDate = value; }
-    inline void SetUserCreateDate(Aws::Utils::DateTime&& value) { m_userCreateDate = std::move(value); }
-    inline AdminGetUserResult& WithUserCreateDate(const Aws::Utils::DateTime& value) { SetUserCreateDate(value); return *this;}
-    inline AdminGetUserResult& WithUserCreateDate(Aws::Utils::DateTime&& value) { SetUserCreateDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUserCreateDate() const { return m_userCreateDate; }
+    template<typename UserCreateDateT = Aws::Utils::DateTime>
+    void SetUserCreateDate(UserCreateDateT&& value) { m_userCreateDateHasBeenSet = true; m_userCreateDate = std::forward<UserCreateDateT>(value); }
+    template<typename UserCreateDateT = Aws::Utils::DateTime>
+    AdminGetUserResult& WithUserCreateDate(UserCreateDateT&& value) { SetUserCreateDate(std::forward<UserCreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,19 +87,19 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetUserLastModifiedDate() const{ return m_userLastModifiedDate; }
-    inline void SetUserLastModifiedDate(const Aws::Utils::DateTime& value) { m_userLastModifiedDate = value; }
-    inline void SetUserLastModifiedDate(Aws::Utils::DateTime&& value) { m_userLastModifiedDate = std::move(value); }
-    inline AdminGetUserResult& WithUserLastModifiedDate(const Aws::Utils::DateTime& value) { SetUserLastModifiedDate(value); return *this;}
-    inline AdminGetUserResult& WithUserLastModifiedDate(Aws::Utils::DateTime&& value) { SetUserLastModifiedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUserLastModifiedDate() const { return m_userLastModifiedDate; }
+    template<typename UserLastModifiedDateT = Aws::Utils::DateTime>
+    void SetUserLastModifiedDate(UserLastModifiedDateT&& value) { m_userLastModifiedDateHasBeenSet = true; m_userLastModifiedDate = std::forward<UserLastModifiedDateT>(value); }
+    template<typename UserLastModifiedDateT = Aws::Utils::DateTime>
+    AdminGetUserResult& WithUserLastModifiedDate(UserLastModifiedDateT&& value) { SetUserLastModifiedDate(std::forward<UserLastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the user is activated for sign-in.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
-    inline void SetEnabled(bool value) { m_enabled = value; }
+    inline bool GetEnabled() const { return m_enabled; }
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AdminGetUserResult& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
 
@@ -117,11 +115,9 @@ namespace Model
      * to a new value before doing anything else. </p> </li> <li> <p>EXTERNAL_PROVIDER
      * - The user signed in with a third-party identity provider.</p> </li> </ul>
      */
-    inline const UserStatusType& GetUserStatus() const{ return m_userStatus; }
-    inline void SetUserStatus(const UserStatusType& value) { m_userStatus = value; }
-    inline void SetUserStatus(UserStatusType&& value) { m_userStatus = std::move(value); }
-    inline AdminGetUserResult& WithUserStatus(const UserStatusType& value) { SetUserStatus(value); return *this;}
-    inline AdminGetUserResult& WithUserStatus(UserStatusType&& value) { SetUserStatus(std::move(value)); return *this;}
+    inline UserStatusType GetUserStatus() const { return m_userStatus; }
+    inline void SetUserStatus(UserStatusType value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
+    inline AdminGetUserResult& WithUserStatus(UserStatusType value) { SetUserStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -132,13 +128,13 @@ namespace Model
      * look up information about either type of MFA configuration, use
      * UserMFASettingList instead.</p>
      */
-    inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const{ return m_mFAOptions; }
-    inline void SetMFAOptions(const Aws::Vector<MFAOptionType>& value) { m_mFAOptions = value; }
-    inline void SetMFAOptions(Aws::Vector<MFAOptionType>&& value) { m_mFAOptions = std::move(value); }
-    inline AdminGetUserResult& WithMFAOptions(const Aws::Vector<MFAOptionType>& value) { SetMFAOptions(value); return *this;}
-    inline AdminGetUserResult& WithMFAOptions(Aws::Vector<MFAOptionType>&& value) { SetMFAOptions(std::move(value)); return *this;}
-    inline AdminGetUserResult& AddMFAOptions(const MFAOptionType& value) { m_mFAOptions.push_back(value); return *this; }
-    inline AdminGetUserResult& AddMFAOptions(MFAOptionType&& value) { m_mFAOptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const { return m_mFAOptions; }
+    template<typename MFAOptionsT = Aws::Vector<MFAOptionType>>
+    void SetMFAOptions(MFAOptionsT&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = std::forward<MFAOptionsT>(value); }
+    template<typename MFAOptionsT = Aws::Vector<MFAOptionType>>
+    AdminGetUserResult& WithMFAOptions(MFAOptionsT&& value) { SetMFAOptions(std::forward<MFAOptionsT>(value)); return *this;}
+    template<typename MFAOptionsT = MFAOptionType>
+    AdminGetUserResult& AddMFAOptions(MFAOptionsT&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.emplace_back(std::forward<MFAOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -146,13 +142,11 @@ namespace Model
      * <p>The user's preferred MFA. Users can prefer SMS message, email message, or
      * TOTP MFA.</p>
      */
-    inline const Aws::String& GetPreferredMfaSetting() const{ return m_preferredMfaSetting; }
-    inline void SetPreferredMfaSetting(const Aws::String& value) { m_preferredMfaSetting = value; }
-    inline void SetPreferredMfaSetting(Aws::String&& value) { m_preferredMfaSetting = std::move(value); }
-    inline void SetPreferredMfaSetting(const char* value) { m_preferredMfaSetting.assign(value); }
-    inline AdminGetUserResult& WithPreferredMfaSetting(const Aws::String& value) { SetPreferredMfaSetting(value); return *this;}
-    inline AdminGetUserResult& WithPreferredMfaSetting(Aws::String&& value) { SetPreferredMfaSetting(std::move(value)); return *this;}
-    inline AdminGetUserResult& WithPreferredMfaSetting(const char* value) { SetPreferredMfaSetting(value); return *this;}
+    inline const Aws::String& GetPreferredMfaSetting() const { return m_preferredMfaSetting; }
+    template<typename PreferredMfaSettingT = Aws::String>
+    void SetPreferredMfaSetting(PreferredMfaSettingT&& value) { m_preferredMfaSettingHasBeenSet = true; m_preferredMfaSetting = std::forward<PreferredMfaSettingT>(value); }
+    template<typename PreferredMfaSettingT = Aws::String>
+    AdminGetUserResult& WithPreferredMfaSetting(PreferredMfaSettingT&& value) { SetPreferredMfaSetting(std::forward<PreferredMfaSettingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,47 +155,54 @@ namespace Model
      * list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and
      * <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUserMFASettingList() const{ return m_userMFASettingList; }
-    inline void SetUserMFASettingList(const Aws::Vector<Aws::String>& value) { m_userMFASettingList = value; }
-    inline void SetUserMFASettingList(Aws::Vector<Aws::String>&& value) { m_userMFASettingList = std::move(value); }
-    inline AdminGetUserResult& WithUserMFASettingList(const Aws::Vector<Aws::String>& value) { SetUserMFASettingList(value); return *this;}
-    inline AdminGetUserResult& WithUserMFASettingList(Aws::Vector<Aws::String>&& value) { SetUserMFASettingList(std::move(value)); return *this;}
-    inline AdminGetUserResult& AddUserMFASettingList(const Aws::String& value) { m_userMFASettingList.push_back(value); return *this; }
-    inline AdminGetUserResult& AddUserMFASettingList(Aws::String&& value) { m_userMFASettingList.push_back(std::move(value)); return *this; }
-    inline AdminGetUserResult& AddUserMFASettingList(const char* value) { m_userMFASettingList.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetUserMFASettingList() const { return m_userMFASettingList; }
+    template<typename UserMFASettingListT = Aws::Vector<Aws::String>>
+    void SetUserMFASettingList(UserMFASettingListT&& value) { m_userMFASettingListHasBeenSet = true; m_userMFASettingList = std::forward<UserMFASettingListT>(value); }
+    template<typename UserMFASettingListT = Aws::Vector<Aws::String>>
+    AdminGetUserResult& WithUserMFASettingList(UserMFASettingListT&& value) { SetUserMFASettingList(std::forward<UserMFASettingListT>(value)); return *this;}
+    template<typename UserMFASettingListT = Aws::String>
+    AdminGetUserResult& AddUserMFASettingList(UserMFASettingListT&& value) { m_userMFASettingListHasBeenSet = true; m_userMFASettingList.emplace_back(std::forward<UserMFASettingListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AdminGetUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AdminGetUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AdminGetUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AdminGetUserResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_username;
+    bool m_usernameHasBeenSet = false;
 
     Aws::Vector<AttributeType> m_userAttributes;
+    bool m_userAttributesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_userCreateDate;
+    Aws::Utils::DateTime m_userCreateDate{};
+    bool m_userCreateDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_userLastModifiedDate;
+    Aws::Utils::DateTime m_userLastModifiedDate{};
+    bool m_userLastModifiedDateHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
+    bool m_enabledHasBeenSet = false;
 
-    UserStatusType m_userStatus;
+    UserStatusType m_userStatus{UserStatusType::NOT_SET};
+    bool m_userStatusHasBeenSet = false;
 
     Aws::Vector<MFAOptionType> m_mFAOptions;
+    bool m_mFAOptionsHasBeenSet = false;
 
     Aws::String m_preferredMfaSetting;
+    bool m_preferredMfaSettingHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userMFASettingList;
+    bool m_userMFASettingListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

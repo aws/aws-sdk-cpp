@@ -18,43 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-JobMetadata::JobMetadata() : 
-    m_jobIdHasBeenSet(false),
-    m_jobState(JobState::NOT_SET),
-    m_jobStateHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_snowballType(SnowballType::NOT_SET),
-    m_snowballTypeHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_kmsKeyARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_addressIdHasBeenSet(false),
-    m_shippingDetailsHasBeenSet(false),
-    m_snowballCapacityPreference(SnowballCapacity::NOT_SET),
-    m_snowballCapacityPreferenceHasBeenSet(false),
-    m_notificationHasBeenSet(false),
-    m_dataTransferProgressHasBeenSet(false),
-    m_jobLogInfoHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false),
-    m_taxDocumentsHasBeenSet(false),
-    m_deviceConfigurationHasBeenSet(false),
-    m_remoteManagement(RemoteManagement::NOT_SET),
-    m_remoteManagementHasBeenSet(false),
-    m_longTermPricingIdHasBeenSet(false),
-    m_onDeviceServiceConfigurationHasBeenSet(false),
-    m_impactLevel(ImpactLevel::NOT_SET),
-    m_impactLevelHasBeenSet(false),
-    m_pickupDetailsHasBeenSet(false),
-    m_snowballIdHasBeenSet(false)
-{
-}
-
 JobMetadata::JobMetadata(JsonView jsonValue)
-  : JobMetadata()
 {
   *this = jsonValue;
 }
@@ -64,178 +28,128 @@ JobMetadata& JobMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobState"))
   {
     m_jobState = JobStateMapper::GetJobStateForName(jsonValue.GetString("JobState"));
-
     m_jobStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobType"))
   {
     m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("JobType"));
-
     m_jobTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnowballType"))
   {
     m_snowballType = SnowballTypeMapper::GetSnowballTypeForName(jsonValue.GetString("SnowballType"));
-
     m_snowballTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resources"))
   {
     m_resources = jsonValue.GetObject("Resources");
-
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyARN"))
   {
     m_kmsKeyARN = jsonValue.GetString("KmsKeyARN");
-
     m_kmsKeyARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressId"))
   {
     m_addressId = jsonValue.GetString("AddressId");
-
     m_addressIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShippingDetails"))
   {
     m_shippingDetails = jsonValue.GetObject("ShippingDetails");
-
     m_shippingDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnowballCapacityPreference"))
   {
     m_snowballCapacityPreference = SnowballCapacityMapper::GetSnowballCapacityForName(jsonValue.GetString("SnowballCapacityPreference"));
-
     m_snowballCapacityPreferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notification"))
   {
     m_notification = jsonValue.GetObject("Notification");
-
     m_notificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataTransferProgress"))
   {
     m_dataTransferProgress = jsonValue.GetObject("DataTransferProgress");
-
     m_dataTransferProgressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobLogInfo"))
   {
     m_jobLogInfo = jsonValue.GetObject("JobLogInfo");
-
     m_jobLogInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterId"))
   {
     m_clusterId = jsonValue.GetString("ClusterId");
-
     m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForwardingAddressId"))
   {
     m_forwardingAddressId = jsonValue.GetString("ForwardingAddressId");
-
     m_forwardingAddressIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaxDocuments"))
   {
     m_taxDocuments = jsonValue.GetObject("TaxDocuments");
-
     m_taxDocumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceConfiguration"))
   {
     m_deviceConfiguration = jsonValue.GetObject("DeviceConfiguration");
-
     m_deviceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoteManagement"))
   {
     m_remoteManagement = RemoteManagementMapper::GetRemoteManagementForName(jsonValue.GetString("RemoteManagement"));
-
     m_remoteManagementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LongTermPricingId"))
   {
     m_longTermPricingId = jsonValue.GetString("LongTermPricingId");
-
     m_longTermPricingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDeviceServiceConfiguration"))
   {
     m_onDeviceServiceConfiguration = jsonValue.GetObject("OnDeviceServiceConfiguration");
-
     m_onDeviceServiceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImpactLevel"))
   {
     m_impactLevel = ImpactLevelMapper::GetImpactLevelForName(jsonValue.GetString("ImpactLevel"));
-
     m_impactLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PickupDetails"))
   {
     m_pickupDetails = jsonValue.GetObject("PickupDetails");
-
     m_pickupDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnowballId"))
   {
     m_snowballId = jsonValue.GetString("SnowballId");
-
     m_snowballIdHasBeenSet = true;
   }
-
   return *this;
 }
 

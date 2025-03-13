@@ -12,14 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDocumentClassificationJobsRequest::ListDocumentClassificationJobsRequest() : 
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDocumentClassificationJobsRequest::SerializePayload() const
 {
   JsonValue payload;

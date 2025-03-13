@@ -12,17 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAutomationStepExecutionsRequest::DescribeAutomationStepExecutionsRequest() : 
-    m_automationExecutionIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_reverseOrder(false),
-    m_reverseOrderHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAutomationStepExecutionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class MemberAdditionalConfigurationResult
   {
   public:
-    AWS_GUARDDUTY_API MemberAdditionalConfigurationResult();
+    AWS_GUARDDUTY_API MemberAdditionalConfigurationResult() = default;
     AWS_GUARDDUTY_API MemberAdditionalConfigurationResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API MemberAdditionalConfigurationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>Indicates the name of the additional configuration that is set for the member
      * account.</p>
      */
-    inline const OrgFeatureAdditionalConfiguration& GetName() const{ return m_name; }
+    inline OrgFeatureAdditionalConfiguration GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const OrgFeatureAdditionalConfiguration& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(OrgFeatureAdditionalConfiguration&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline MemberAdditionalConfigurationResult& WithName(const OrgFeatureAdditionalConfiguration& value) { SetName(value); return *this;}
-    inline MemberAdditionalConfigurationResult& WithName(OrgFeatureAdditionalConfiguration&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(OrgFeatureAdditionalConfiguration value) { m_nameHasBeenSet = true; m_name = value; }
+    inline MemberAdditionalConfigurationResult& WithName(OrgFeatureAdditionalConfiguration value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * <p>Indicates the status of the additional configuration that is set for the
      * member account.</p>
      */
-    inline const FeatureStatus& GetStatus() const{ return m_status; }
+    inline FeatureStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MemberAdditionalConfigurationResult& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
-    inline MemberAdditionalConfigurationResult& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FeatureStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MemberAdditionalConfigurationResult& WithStatus(FeatureStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -71,22 +67,22 @@ namespace Model
      * <p>The timestamp at which the additional configuration was set for the member
      * account. This is in UTC format.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline MemberAdditionalConfigurationResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline MemberAdditionalConfigurationResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    MemberAdditionalConfigurationResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
-    OrgFeatureAdditionalConfiguration m_name;
+    OrgFeatureAdditionalConfiguration m_name{OrgFeatureAdditionalConfiguration::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    FeatureStatus m_status;
+    FeatureStatus m_status{FeatureStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

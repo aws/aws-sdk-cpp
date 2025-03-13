@@ -32,7 +32,7 @@ namespace Model
   class HttpProperties
   {
   public:
-    AWS_SERVICEDISCOVERY_API HttpProperties();
+    AWS_SERVICEDISCOVERY_API HttpProperties() = default;
     AWS_SERVICEDISCOVERY_API HttpProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API HttpProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of an HTTP namespace.</p>
      */
-    inline const Aws::String& GetHttpName() const{ return m_httpName; }
+    inline const Aws::String& GetHttpName() const { return m_httpName; }
     inline bool HttpNameHasBeenSet() const { return m_httpNameHasBeenSet; }
-    inline void SetHttpName(const Aws::String& value) { m_httpNameHasBeenSet = true; m_httpName = value; }
-    inline void SetHttpName(Aws::String&& value) { m_httpNameHasBeenSet = true; m_httpName = std::move(value); }
-    inline void SetHttpName(const char* value) { m_httpNameHasBeenSet = true; m_httpName.assign(value); }
-    inline HttpProperties& WithHttpName(const Aws::String& value) { SetHttpName(value); return *this;}
-    inline HttpProperties& WithHttpName(Aws::String&& value) { SetHttpName(std::move(value)); return *this;}
-    inline HttpProperties& WithHttpName(const char* value) { SetHttpName(value); return *this;}
+    template<typename HttpNameT = Aws::String>
+    void SetHttpName(HttpNameT&& value) { m_httpNameHasBeenSet = true; m_httpName = std::forward<HttpNameT>(value); }
+    template<typename HttpNameT = Aws::String>
+    HttpProperties& WithHttpName(HttpNameT&& value) { SetHttpName(std::forward<HttpNameT>(value)); return *this;}
     ///@}
   private:
 

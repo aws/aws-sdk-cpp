@@ -20,17 +20,7 @@ namespace SES
 namespace Model
 {
 
-ReputationOptions::ReputationOptions() : 
-    m_sendingEnabled(false),
-    m_sendingEnabledHasBeenSet(false),
-    m_reputationMetricsEnabled(false),
-    m_reputationMetricsEnabledHasBeenSet(false),
-    m_lastFreshStartHasBeenSet(false)
-{
-}
-
 ReputationOptions::ReputationOptions(const XmlNode& xmlNode)
-  : ReputationOptions()
 {
   *this = xmlNode;
 }
@@ -46,18 +36,21 @@ ReputationOptions& ReputationOptions::operator =(const XmlNode& xmlNode)
     {
       m_sendingEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sendingEnabledNode.GetText()).c_str()).c_str());
       m_sendingEnabledHasBeenSet = true;
+       m_sendingEnabledHasBeenSet = true;
     }
     XmlNode reputationMetricsEnabledNode = resultNode.FirstChild("ReputationMetricsEnabled");
     if(!reputationMetricsEnabledNode.IsNull())
     {
       m_reputationMetricsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reputationMetricsEnabledNode.GetText()).c_str()).c_str());
       m_reputationMetricsEnabledHasBeenSet = true;
+       m_reputationMetricsEnabledHasBeenSet = true;
     }
     XmlNode lastFreshStartNode = resultNode.FirstChild("LastFreshStart");
     if(!lastFreshStartNode.IsNull())
     {
       m_lastFreshStart = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastFreshStartNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastFreshStartHasBeenSet = true;
+       m_lastFreshStartHasBeenSet = true;
     }
   }
 

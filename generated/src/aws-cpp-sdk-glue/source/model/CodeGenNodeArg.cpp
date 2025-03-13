@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CodeGenNodeArg::CodeGenNodeArg() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_param(false),
-    m_paramHasBeenSet(false)
-{
-}
-
 CodeGenNodeArg::CodeGenNodeArg(JsonView jsonValue)
-  : CodeGenNodeArg()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CodeGenNodeArg& CodeGenNodeArg::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Param"))
   {
     m_param = jsonValue.GetBool("Param");
-
     m_paramHasBeenSet = true;
   }
-
   return *this;
 }
 

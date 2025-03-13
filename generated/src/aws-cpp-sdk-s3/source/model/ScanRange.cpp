@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-ScanRange::ScanRange() : 
-    m_start(0),
-    m_startHasBeenSet(false),
-    m_end(0),
-    m_endHasBeenSet(false)
-{
-}
-
 ScanRange::ScanRange(const XmlNode& xmlNode)
-  : ScanRange()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ ScanRange& ScanRange::operator =(const XmlNode& xmlNode)
     {
       m_start = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startNode.GetText()).c_str()).c_str());
       m_startHasBeenSet = true;
+       m_startHasBeenSet = true;
     }
     XmlNode endNode = resultNode.FirstChild("End");
     if(!endNode.IsNull())
     {
       m_end = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endNode.GetText()).c_str()).c_str());
       m_endHasBeenSet = true;
+       m_endHasBeenSet = true;
     }
   }
 

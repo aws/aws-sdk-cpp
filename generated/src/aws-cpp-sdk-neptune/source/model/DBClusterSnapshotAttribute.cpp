@@ -20,14 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-DBClusterSnapshotAttribute::DBClusterSnapshotAttribute() : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValuesHasBeenSet(false)
-{
-}
-
 DBClusterSnapshotAttribute::DBClusterSnapshotAttribute(const XmlNode& xmlNode)
-  : DBClusterSnapshotAttribute()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ DBClusterSnapshotAttribute& DBClusterSnapshotAttribute::operator =(const XmlNode
     {
       m_attributeName = Aws::Utils::Xml::DecodeEscapedXmlText(attributeNameNode.GetText());
       m_attributeNameHasBeenSet = true;
+       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeValuesNode = resultNode.FirstChild("AttributeValues");
     if(!attributeValuesNode.IsNull())
     {
       XmlNode attributeValuesMember = attributeValuesNode.FirstChild("AttributeValue");
+      m_attributeValuesHasBeenSet = !attributeValuesMember.IsNull();
       while(!attributeValuesMember.IsNull())
       {
         m_attributeValues.push_back(attributeValuesMember.GetText());
         attributeValuesMember = attributeValuesMember.NextNode("AttributeValue");
       }
 
-      m_attributeValuesHasBeenSet = true;
+       m_attributeValuesHasBeenSet = true;
     }
   }
 

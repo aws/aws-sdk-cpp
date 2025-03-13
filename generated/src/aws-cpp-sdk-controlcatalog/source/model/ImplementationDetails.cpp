@@ -18,13 +18,7 @@ namespace ControlCatalog
 namespace Model
 {
 
-ImplementationDetails::ImplementationDetails() : 
-    m_typeHasBeenSet(false)
-{
-}
-
 ImplementationDetails::ImplementationDetails(JsonView jsonValue)
-  : ImplementationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ImplementationDetails& ImplementationDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

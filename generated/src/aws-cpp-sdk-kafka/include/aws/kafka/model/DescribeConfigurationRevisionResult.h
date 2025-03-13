@@ -29,7 +29,7 @@ namespace Model
   class DescribeConfigurationRevisionResult
   {
   public:
-    AWS_KAFKA_API DescribeConfigurationRevisionResult();
+    AWS_KAFKA_API DescribeConfigurationRevisionResult() = default;
     AWS_KAFKA_API DescribeConfigurationRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKA_API DescribeConfigurationRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,11 @@ namespace Model
        
      *  
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline DescribeConfigurationRevisionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribeConfigurationRevisionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribeConfigurationRevisionResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribeConfigurationRevisionResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,11 +54,11 @@ namespace Model
             <p>The time when the configuration was created.</p>
          
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeConfigurationRevisionResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeConfigurationRevisionResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeConfigurationRevisionResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,13 +67,11 @@ namespace Model
             <p>The description of the configuration.</p>
          
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeConfigurationRevisionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeConfigurationRevisionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeConfigurationRevisionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeConfigurationRevisionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,8 +80,8 @@ namespace Model
             <p>The revision number.</p>
          
      */
-    inline long long GetRevision() const{ return m_revision; }
-    inline void SetRevision(long long value) { m_revision = value; }
+    inline long long GetRevision() const { return m_revision; }
+    inline void SetRevision(long long value) { m_revisionHasBeenSet = true; m_revision = value; }
     inline DescribeConfigurationRevisionResult& WithRevision(long long value) { SetRevision(value); return *this;}
     ///@}
 
@@ -100,36 +96,40 @@ namespace Model
      * plaintext.</p>
          
      */
-    inline const Aws::Utils::ByteBuffer& GetServerProperties() const{ return m_serverProperties; }
-    inline void SetServerProperties(const Aws::Utils::ByteBuffer& value) { m_serverProperties = value; }
-    inline void SetServerProperties(Aws::Utils::ByteBuffer&& value) { m_serverProperties = std::move(value); }
-    inline DescribeConfigurationRevisionResult& WithServerProperties(const Aws::Utils::ByteBuffer& value) { SetServerProperties(value); return *this;}
-    inline DescribeConfigurationRevisionResult& WithServerProperties(Aws::Utils::ByteBuffer&& value) { SetServerProperties(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetServerProperties() const { return m_serverProperties; }
+    template<typename ServerPropertiesT = Aws::Utils::ByteBuffer>
+    void SetServerProperties(ServerPropertiesT&& value) { m_serverPropertiesHasBeenSet = true; m_serverProperties = std::forward<ServerPropertiesT>(value); }
+    template<typename ServerPropertiesT = Aws::Utils::ByteBuffer>
+    DescribeConfigurationRevisionResult& WithServerProperties(ServerPropertiesT&& value) { SetServerProperties(std::forward<ServerPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeConfigurationRevisionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeConfigurationRevisionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeConfigurationRevisionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeConfigurationRevisionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    long long m_revision;
+    long long m_revision{0};
+    bool m_revisionHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_serverProperties;
+    Aws::Utils::ByteBuffer m_serverProperties{};
+    bool m_serverPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

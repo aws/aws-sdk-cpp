@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultFilterControlConfiguration::DefaultFilterControlConfiguration() : 
-    m_titleHasBeenSet(false),
-    m_controlOptionsHasBeenSet(false)
-{
-}
-
 DefaultFilterControlConfiguration::DefaultFilterControlConfiguration(JsonView jsonValue)
-  : DefaultFilterControlConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DefaultFilterControlConfiguration& DefaultFilterControlConfiguration::operator =
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlOptions"))
   {
     m_controlOptions = jsonValue.GetObject("ControlOptions");
-
     m_controlOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

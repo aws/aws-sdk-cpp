@@ -32,7 +32,7 @@ namespace Model
   class SnoozeActionConfiguration
   {
   public:
-    AWS_IOTEVENTSDATA_API SnoozeActionConfiguration();
+    AWS_IOTEVENTSDATA_API SnoozeActionConfiguration() = default;
     AWS_IOTEVENTSDATA_API SnoozeActionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API SnoozeActionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The snooze time in seconds. The alarm automatically changes to the
      * <code>NORMAL</code> state after this duration.</p>
      */
-    inline int GetSnoozeDuration() const{ return m_snoozeDuration; }
+    inline int GetSnoozeDuration() const { return m_snoozeDuration; }
     inline bool SnoozeDurationHasBeenSet() const { return m_snoozeDurationHasBeenSet; }
     inline void SetSnoozeDuration(int value) { m_snoozeDurationHasBeenSet = true; m_snoozeDuration = value; }
     inline SnoozeActionConfiguration& WithSnoozeDuration(int value) { SetSnoozeDuration(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>The note that you can leave when you snooze the alarm.</p>
      */
-    inline const Aws::String& GetNote() const{ return m_note; }
+    inline const Aws::String& GetNote() const { return m_note; }
     inline bool NoteHasBeenSet() const { return m_noteHasBeenSet; }
-    inline void SetNote(const Aws::String& value) { m_noteHasBeenSet = true; m_note = value; }
-    inline void SetNote(Aws::String&& value) { m_noteHasBeenSet = true; m_note = std::move(value); }
-    inline void SetNote(const char* value) { m_noteHasBeenSet = true; m_note.assign(value); }
-    inline SnoozeActionConfiguration& WithNote(const Aws::String& value) { SetNote(value); return *this;}
-    inline SnoozeActionConfiguration& WithNote(Aws::String&& value) { SetNote(std::move(value)); return *this;}
-    inline SnoozeActionConfiguration& WithNote(const char* value) { SetNote(value); return *this;}
+    template<typename NoteT = Aws::String>
+    void SetNote(NoteT&& value) { m_noteHasBeenSet = true; m_note = std::forward<NoteT>(value); }
+    template<typename NoteT = Aws::String>
+    SnoozeActionConfiguration& WithNote(NoteT&& value) { SetNote(std::forward<NoteT>(value)); return *this;}
     ///@}
   private:
 
-    int m_snoozeDuration;
+    int m_snoozeDuration{0};
     bool m_snoozeDurationHasBeenSet = false;
 
     Aws::String m_note;

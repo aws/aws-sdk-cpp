@@ -29,7 +29,7 @@ namespace Model
   class ListLabelsResult
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API ListLabelsResult();
+    AWS_LOOKOUTEQUIPMENT_API ListLabelsResult() = default;
     AWS_LOOKOUTEQUIPMENT_API ListLabelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTEQUIPMENT_API ListLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p> An opaque pagination token indicating where to continue the listing of
      * datasets. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLabelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLabelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLabelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLabelsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +53,33 @@ namespace Model
      * name of a label group that doesn't exist, <code>ListLabels</code> returns an
      * empty array in <code>LabelSummaries</code>.</p> 
      */
-    inline const Aws::Vector<LabelSummary>& GetLabelSummaries() const{ return m_labelSummaries; }
-    inline void SetLabelSummaries(const Aws::Vector<LabelSummary>& value) { m_labelSummaries = value; }
-    inline void SetLabelSummaries(Aws::Vector<LabelSummary>&& value) { m_labelSummaries = std::move(value); }
-    inline ListLabelsResult& WithLabelSummaries(const Aws::Vector<LabelSummary>& value) { SetLabelSummaries(value); return *this;}
-    inline ListLabelsResult& WithLabelSummaries(Aws::Vector<LabelSummary>&& value) { SetLabelSummaries(std::move(value)); return *this;}
-    inline ListLabelsResult& AddLabelSummaries(const LabelSummary& value) { m_labelSummaries.push_back(value); return *this; }
-    inline ListLabelsResult& AddLabelSummaries(LabelSummary&& value) { m_labelSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LabelSummary>& GetLabelSummaries() const { return m_labelSummaries; }
+    template<typename LabelSummariesT = Aws::Vector<LabelSummary>>
+    void SetLabelSummaries(LabelSummariesT&& value) { m_labelSummariesHasBeenSet = true; m_labelSummaries = std::forward<LabelSummariesT>(value); }
+    template<typename LabelSummariesT = Aws::Vector<LabelSummary>>
+    ListLabelsResult& WithLabelSummaries(LabelSummariesT&& value) { SetLabelSummaries(std::forward<LabelSummariesT>(value)); return *this;}
+    template<typename LabelSummariesT = LabelSummary>
+    ListLabelsResult& AddLabelSummaries(LabelSummariesT&& value) { m_labelSummariesHasBeenSet = true; m_labelSummaries.emplace_back(std::forward<LabelSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLabelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLabelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLabelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLabelsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<LabelSummary> m_labelSummaries;
+    bool m_labelSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

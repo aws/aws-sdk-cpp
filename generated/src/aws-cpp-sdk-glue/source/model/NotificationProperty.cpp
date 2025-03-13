@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-NotificationProperty::NotificationProperty() : 
-    m_notifyDelayAfter(0),
-    m_notifyDelayAfterHasBeenSet(false)
-{
-}
-
 NotificationProperty::NotificationProperty(JsonView jsonValue)
-  : NotificationProperty()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ NotificationProperty& NotificationProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NotifyDelayAfter"))
   {
     m_notifyDelayAfter = jsonValue.GetInteger("NotifyDelayAfter");
-
     m_notifyDelayAfterHasBeenSet = true;
   }
-
   return *this;
 }
 

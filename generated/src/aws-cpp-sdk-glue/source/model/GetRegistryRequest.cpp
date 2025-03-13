@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRegistryRequest::GetRegistryRequest() : 
-    m_registryIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRegistryRequest::SerializePayload() const
 {
   JsonValue payload;

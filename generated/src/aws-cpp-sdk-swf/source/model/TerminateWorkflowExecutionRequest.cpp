@@ -12,17 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TerminateWorkflowExecutionRequest::TerminateWorkflowExecutionRequest() : 
-    m_domainHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_childPolicy(ChildPolicy::NOT_SET),
-    m_childPolicyHasBeenSet(false)
-{
-}
-
 Aws::String TerminateWorkflowExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

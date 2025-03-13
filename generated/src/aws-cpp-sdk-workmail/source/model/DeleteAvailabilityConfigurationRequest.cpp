@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAvailabilityConfigurationRequest::DeleteAvailabilityConfigurationRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAvailabilityConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-Queue::Queue() : 
-    m_nameHasBeenSet(false),
-    m_uRLHasBeenSet(false)
-{
-}
-
 Queue::Queue(const XmlNode& xmlNode)
-  : Queue()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Queue& Queue::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode uRLNode = resultNode.FirstChild("URL");
     if(!uRLNode.IsNull())
     {
       m_uRL = Aws::Utils::Xml::DecodeEscapedXmlText(uRLNode.GetText());
       m_uRLHasBeenSet = true;
+       m_uRLHasBeenSet = true;
     }
   }
 

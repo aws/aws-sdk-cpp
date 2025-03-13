@@ -20,17 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TemplateParameter::TemplateParameter() : 
-    m_parameterKeyHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_noEcho(false),
-    m_noEchoHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 TemplateParameter::TemplateParameter(const XmlNode& xmlNode)
-  : TemplateParameter()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ TemplateParameter& TemplateParameter::operator =(const XmlNode& xmlNode)
     {
       m_parameterKey = Aws::Utils::Xml::DecodeEscapedXmlText(parameterKeyNode.GetText());
       m_parameterKeyHasBeenSet = true;
+       m_parameterKeyHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
       m_defaultValue = Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText());
       m_defaultValueHasBeenSet = true;
+       m_defaultValueHasBeenSet = true;
     }
     XmlNode noEchoNode = resultNode.FirstChild("NoEcho");
     if(!noEchoNode.IsNull())
     {
       m_noEcho = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(noEchoNode.GetText()).c_str()).c_str());
       m_noEchoHasBeenSet = true;
+       m_noEchoHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
   }
 

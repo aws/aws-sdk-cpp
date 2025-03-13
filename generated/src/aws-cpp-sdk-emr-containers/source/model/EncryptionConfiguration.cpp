@@ -18,13 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-EncryptionConfiguration::EncryptionConfiguration() : 
-    m_inTransitEncryptionConfigurationHasBeenSet(false)
-{
-}
-
 EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-  : EncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inTransitEncryptionConfiguration"))
   {
     m_inTransitEncryptionConfiguration = jsonValue.GetObject("inTransitEncryptionConfiguration");
-
     m_inTransitEncryptionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

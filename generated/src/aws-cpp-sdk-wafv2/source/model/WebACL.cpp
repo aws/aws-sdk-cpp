@@ -18,34 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-WebACL::WebACL() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_defaultActionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false),
-    m_dataProtectionConfigHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_preProcessFirewallManagerRuleGroupsHasBeenSet(false),
-    m_postProcessFirewallManagerRuleGroupsHasBeenSet(false),
-    m_managedByFirewallManager(false),
-    m_managedByFirewallManagerHasBeenSet(false),
-    m_labelNamespaceHasBeenSet(false),
-    m_customResponseBodiesHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false),
-    m_challengeConfigHasBeenSet(false),
-    m_tokenDomainsHasBeenSet(false),
-    m_associationConfigHasBeenSet(false),
-    m_retrofittedByFirewallManager(false),
-    m_retrofittedByFirewallManagerHasBeenSet(false)
-{
-}
-
 WebACL::WebACL(JsonView jsonValue)
-  : WebACL()
 {
   *this = jsonValue;
 }
@@ -55,38 +28,28 @@ WebACL& WebACL::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultAction"))
   {
     m_defaultAction = jsonValue.GetObject("DefaultAction");
-
     m_defaultActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
@@ -96,28 +59,21 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisibilityConfig"))
   {
     m_visibilityConfig = jsonValue.GetObject("VisibilityConfig");
-
     m_visibilityConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataProtectionConfig"))
   {
     m_dataProtectionConfig = jsonValue.GetObject("DataProtectionConfig");
-
     m_dataProtectionConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Capacity"))
   {
     m_capacity = jsonValue.GetInt64("Capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreProcessFirewallManagerRuleGroups"))
   {
     Aws::Utils::Array<JsonView> preProcessFirewallManagerRuleGroupsJsonList = jsonValue.GetArray("PreProcessFirewallManagerRuleGroups");
@@ -127,7 +83,6 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     }
     m_preProcessFirewallManagerRuleGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostProcessFirewallManagerRuleGroups"))
   {
     Aws::Utils::Array<JsonView> postProcessFirewallManagerRuleGroupsJsonList = jsonValue.GetArray("PostProcessFirewallManagerRuleGroups");
@@ -137,21 +92,16 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     }
     m_postProcessFirewallManagerRuleGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedByFirewallManager"))
   {
     m_managedByFirewallManager = jsonValue.GetBool("ManagedByFirewallManager");
-
     m_managedByFirewallManagerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelNamespace"))
   {
     m_labelNamespace = jsonValue.GetString("LabelNamespace");
-
     m_labelNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomResponseBodies"))
   {
     Aws::Map<Aws::String, JsonView> customResponseBodiesJsonMap = jsonValue.GetObject("CustomResponseBodies").GetAllObjects();
@@ -161,21 +111,16 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     }
     m_customResponseBodiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaptchaConfig"))
   {
     m_captchaConfig = jsonValue.GetObject("CaptchaConfig");
-
     m_captchaConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChallengeConfig"))
   {
     m_challengeConfig = jsonValue.GetObject("ChallengeConfig");
-
     m_challengeConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenDomains"))
   {
     Aws::Utils::Array<JsonView> tokenDomainsJsonList = jsonValue.GetArray("TokenDomains");
@@ -185,21 +130,16 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     }
     m_tokenDomainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationConfig"))
   {
     m_associationConfig = jsonValue.GetObject("AssociationConfig");
-
     m_associationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetrofittedByFirewallManager"))
   {
     m_retrofittedByFirewallManager = jsonValue.GetBool("RetrofittedByFirewallManager");
-
     m_retrofittedByFirewallManagerHasBeenSet = true;
   }
-
   return *this;
 }
 

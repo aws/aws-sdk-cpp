@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeOptionGroupsResult::DescribeOptionGroupsResult()
-{
-}
-
 DescribeOptionGroupsResult::DescribeOptionGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeOptionGroupsResult& DescribeOptionGroupsResult::operator =(const Aws::Am
     if(!optionGroupsListNode.IsNull())
     {
       XmlNode optionGroupsListMember = optionGroupsListNode.FirstChild("OptionGroup");
+      m_optionGroupsListHasBeenSet = !optionGroupsListMember.IsNull();
       while(!optionGroupsListMember.IsNull())
       {
         m_optionGroupsList.push_back(optionGroupsListMember);
@@ -53,12 +50,14 @@ DescribeOptionGroupsResult& DescribeOptionGroupsResult::operator =(const Aws::Am
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeOptionGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

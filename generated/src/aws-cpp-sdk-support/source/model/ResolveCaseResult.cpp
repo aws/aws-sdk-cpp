@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ResolveCaseResult::ResolveCaseResult()
-{
-}
-
 ResolveCaseResult::ResolveCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ ResolveCaseResult& ResolveCaseResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("initialCaseStatus"))
   {
     m_initialCaseStatus = jsonValue.GetString("initialCaseStatus");
-
+    m_initialCaseStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("finalCaseStatus"))
   {
     m_finalCaseStatus = jsonValue.GetString("finalCaseStatus");
-
+    m_finalCaseStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

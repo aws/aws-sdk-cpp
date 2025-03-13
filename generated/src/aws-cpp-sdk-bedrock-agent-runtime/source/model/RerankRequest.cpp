@@ -12,14 +12,6 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RerankRequest::RerankRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_queriesHasBeenSet(false),
-    m_rerankingConfigurationHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
-{
-}
-
 Aws::String RerankRequest::SerializePayload() const
 {
   JsonValue payload;

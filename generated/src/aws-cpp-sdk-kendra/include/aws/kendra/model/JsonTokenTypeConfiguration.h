@@ -32,7 +32,7 @@ namespace Model
   class JsonTokenTypeConfiguration
   {
   public:
-    AWS_KENDRA_API JsonTokenTypeConfiguration();
+    AWS_KENDRA_API JsonTokenTypeConfiguration() = default;
     AWS_KENDRA_API JsonTokenTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API JsonTokenTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The user name attribute field.</p>
      */
-    inline const Aws::String& GetUserNameAttributeField() const{ return m_userNameAttributeField; }
+    inline const Aws::String& GetUserNameAttributeField() const { return m_userNameAttributeField; }
     inline bool UserNameAttributeFieldHasBeenSet() const { return m_userNameAttributeFieldHasBeenSet; }
-    inline void SetUserNameAttributeField(const Aws::String& value) { m_userNameAttributeFieldHasBeenSet = true; m_userNameAttributeField = value; }
-    inline void SetUserNameAttributeField(Aws::String&& value) { m_userNameAttributeFieldHasBeenSet = true; m_userNameAttributeField = std::move(value); }
-    inline void SetUserNameAttributeField(const char* value) { m_userNameAttributeFieldHasBeenSet = true; m_userNameAttributeField.assign(value); }
-    inline JsonTokenTypeConfiguration& WithUserNameAttributeField(const Aws::String& value) { SetUserNameAttributeField(value); return *this;}
-    inline JsonTokenTypeConfiguration& WithUserNameAttributeField(Aws::String&& value) { SetUserNameAttributeField(std::move(value)); return *this;}
-    inline JsonTokenTypeConfiguration& WithUserNameAttributeField(const char* value) { SetUserNameAttributeField(value); return *this;}
+    template<typename UserNameAttributeFieldT = Aws::String>
+    void SetUserNameAttributeField(UserNameAttributeFieldT&& value) { m_userNameAttributeFieldHasBeenSet = true; m_userNameAttributeField = std::forward<UserNameAttributeFieldT>(value); }
+    template<typename UserNameAttributeFieldT = Aws::String>
+    JsonTokenTypeConfiguration& WithUserNameAttributeField(UserNameAttributeFieldT&& value) { SetUserNameAttributeField(std::forward<UserNameAttributeFieldT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The group attribute field.</p>
      */
-    inline const Aws::String& GetGroupAttributeField() const{ return m_groupAttributeField; }
+    inline const Aws::String& GetGroupAttributeField() const { return m_groupAttributeField; }
     inline bool GroupAttributeFieldHasBeenSet() const { return m_groupAttributeFieldHasBeenSet; }
-    inline void SetGroupAttributeField(const Aws::String& value) { m_groupAttributeFieldHasBeenSet = true; m_groupAttributeField = value; }
-    inline void SetGroupAttributeField(Aws::String&& value) { m_groupAttributeFieldHasBeenSet = true; m_groupAttributeField = std::move(value); }
-    inline void SetGroupAttributeField(const char* value) { m_groupAttributeFieldHasBeenSet = true; m_groupAttributeField.assign(value); }
-    inline JsonTokenTypeConfiguration& WithGroupAttributeField(const Aws::String& value) { SetGroupAttributeField(value); return *this;}
-    inline JsonTokenTypeConfiguration& WithGroupAttributeField(Aws::String&& value) { SetGroupAttributeField(std::move(value)); return *this;}
-    inline JsonTokenTypeConfiguration& WithGroupAttributeField(const char* value) { SetGroupAttributeField(value); return *this;}
+    template<typename GroupAttributeFieldT = Aws::String>
+    void SetGroupAttributeField(GroupAttributeFieldT&& value) { m_groupAttributeFieldHasBeenSet = true; m_groupAttributeField = std::forward<GroupAttributeFieldT>(value); }
+    template<typename GroupAttributeFieldT = Aws::String>
+    JsonTokenTypeConfiguration& WithGroupAttributeField(GroupAttributeFieldT&& value) { SetGroupAttributeField(std::forward<GroupAttributeFieldT>(value)); return *this;}
     ///@}
   private:
 

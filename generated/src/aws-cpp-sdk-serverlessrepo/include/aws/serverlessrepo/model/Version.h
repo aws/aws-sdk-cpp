@@ -34,7 +34,7 @@ namespace Model
   class Version
   {
   public:
-    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Version();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Version() = default;
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API Version(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API Version& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,38 @@ namespace Model
     /**
      * <p>The application Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline Version& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline Version& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline Version& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    Version& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time this resource was created.</p>
      */
-    inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::String&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline void SetCreationTime(const char* value) { m_creationTimeHasBeenSet = true; m_creationTime.assign(value); }
-    inline Version& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
-    inline Version& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
-    inline Version& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
+    template<typename CreationTimeT = Aws::String>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::String>
+    Version& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of parameter types supported by the application.</p>
      */
-    inline const Aws::Vector<ParameterDefinition>& GetParameterDefinitions() const{ return m_parameterDefinitions; }
+    inline const Aws::Vector<ParameterDefinition>& GetParameterDefinitions() const { return m_parameterDefinitions; }
     inline bool ParameterDefinitionsHasBeenSet() const { return m_parameterDefinitionsHasBeenSet; }
-    inline void SetParameterDefinitions(const Aws::Vector<ParameterDefinition>& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions = value; }
-    inline void SetParameterDefinitions(Aws::Vector<ParameterDefinition>&& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions = std::move(value); }
-    inline Version& WithParameterDefinitions(const Aws::Vector<ParameterDefinition>& value) { SetParameterDefinitions(value); return *this;}
-    inline Version& WithParameterDefinitions(Aws::Vector<ParameterDefinition>&& value) { SetParameterDefinitions(std::move(value)); return *this;}
-    inline Version& AddParameterDefinitions(const ParameterDefinition& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions.push_back(value); return *this; }
-    inline Version& AddParameterDefinitions(ParameterDefinition&& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions.push_back(std::move(value)); return *this; }
+    template<typename ParameterDefinitionsT = Aws::Vector<ParameterDefinition>>
+    void SetParameterDefinitions(ParameterDefinitionsT&& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions = std::forward<ParameterDefinitionsT>(value); }
+    template<typename ParameterDefinitionsT = Aws::Vector<ParameterDefinition>>
+    Version& WithParameterDefinitions(ParameterDefinitionsT&& value) { SetParameterDefinitions(std::forward<ParameterDefinitionsT>(value)); return *this;}
+    template<typename ParameterDefinitionsT = ParameterDefinition>
+    Version& AddParameterDefinitions(ParameterDefinitionsT&& value) { m_parameterDefinitionsHasBeenSet = true; m_parameterDefinitions.emplace_back(std::forward<ParameterDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -142,14 +138,13 @@ namespace Model
  this parameter for an
      * application that requires capabilities, the call will fail.</p>
      */
-    inline const Aws::Vector<Capability>& GetRequiredCapabilities() const{ return m_requiredCapabilities; }
+    inline const Aws::Vector<Capability>& GetRequiredCapabilities() const { return m_requiredCapabilities; }
     inline bool RequiredCapabilitiesHasBeenSet() const { return m_requiredCapabilitiesHasBeenSet; }
-    inline void SetRequiredCapabilities(const Aws::Vector<Capability>& value) { m_requiredCapabilitiesHasBeenSet = true; m_requiredCapabilities = value; }
-    inline void SetRequiredCapabilities(Aws::Vector<Capability>&& value) { m_requiredCapabilitiesHasBeenSet = true; m_requiredCapabilities = std::move(value); }
-    inline Version& WithRequiredCapabilities(const Aws::Vector<Capability>& value) { SetRequiredCapabilities(value); return *this;}
-    inline Version& WithRequiredCapabilities(Aws::Vector<Capability>&& value) { SetRequiredCapabilities(std::move(value)); return *this;}
-    inline Version& AddRequiredCapabilities(const Capability& value) { m_requiredCapabilitiesHasBeenSet = true; m_requiredCapabilities.push_back(value); return *this; }
-    inline Version& AddRequiredCapabilities(Capability&& value) { m_requiredCapabilitiesHasBeenSet = true; m_requiredCapabilities.push_back(std::move(value)); return *this; }
+    template<typename RequiredCapabilitiesT = Aws::Vector<Capability>>
+    void SetRequiredCapabilities(RequiredCapabilitiesT&& value) { m_requiredCapabilitiesHasBeenSet = true; m_requiredCapabilities = std::forward<RequiredCapabilitiesT>(value); }
+    template<typename RequiredCapabilitiesT = Aws::Vector<Capability>>
+    Version& WithRequiredCapabilities(RequiredCapabilitiesT&& value) { SetRequiredCapabilities(std::forward<RequiredCapabilitiesT>(value)); return *this;}
+    inline Version& AddRequiredCapabilities(Capability value) { m_requiredCapabilitiesHasBeenSet = true; m_requiredCapabilities.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -158,7 +153,7 @@ namespace Model
      * in the region
  in which it is being retrieved.</p>
      */
-    inline bool GetResourcesSupported() const{ return m_resourcesSupported; }
+    inline bool GetResourcesSupported() const { return m_resourcesSupported; }
     inline bool ResourcesSupportedHasBeenSet() const { return m_resourcesSupportedHasBeenSet; }
     inline void SetResourcesSupported(bool value) { m_resourcesSupportedHasBeenSet = true; m_resourcesSupported = value; }
     inline Version& WithResourcesSupported(bool value) { SetResourcesSupported(value); return *this;}
@@ -171,14 +166,12 @@ namespace Model
      * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
-    inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
+    inline const Aws::String& GetSemanticVersion() const { return m_semanticVersion; }
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
-    inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
-    inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
-    inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
-    inline Version& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
-    inline Version& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
-    inline Version& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
+    template<typename SemanticVersionT = Aws::String>
+    void SetSemanticVersion(SemanticVersionT&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::forward<SemanticVersionT>(value); }
+    template<typename SemanticVersionT = Aws::String>
+    Version& WithSemanticVersion(SemanticVersionT&& value) { SetSemanticVersion(std::forward<SemanticVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -186,14 +179,12 @@ namespace Model
      * <p>A link to the S3 object that contains the ZIP archive of the source code for
      * this version of your application.</p><p>Maximum size 50 MB</p>
      */
-    inline const Aws::String& GetSourceCodeArchiveUrl() const{ return m_sourceCodeArchiveUrl; }
+    inline const Aws::String& GetSourceCodeArchiveUrl() const { return m_sourceCodeArchiveUrl; }
     inline bool SourceCodeArchiveUrlHasBeenSet() const { return m_sourceCodeArchiveUrlHasBeenSet; }
-    inline void SetSourceCodeArchiveUrl(const Aws::String& value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl = value; }
-    inline void SetSourceCodeArchiveUrl(Aws::String&& value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl = std::move(value); }
-    inline void SetSourceCodeArchiveUrl(const char* value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl.assign(value); }
-    inline Version& WithSourceCodeArchiveUrl(const Aws::String& value) { SetSourceCodeArchiveUrl(value); return *this;}
-    inline Version& WithSourceCodeArchiveUrl(Aws::String&& value) { SetSourceCodeArchiveUrl(std::move(value)); return *this;}
-    inline Version& WithSourceCodeArchiveUrl(const char* value) { SetSourceCodeArchiveUrl(value); return *this;}
+    template<typename SourceCodeArchiveUrlT = Aws::String>
+    void SetSourceCodeArchiveUrl(SourceCodeArchiveUrlT&& value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl = std::forward<SourceCodeArchiveUrlT>(value); }
+    template<typename SourceCodeArchiveUrlT = Aws::String>
+    Version& WithSourceCodeArchiveUrl(SourceCodeArchiveUrlT&& value) { SetSourceCodeArchiveUrl(std::forward<SourceCodeArchiveUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -201,28 +192,24 @@ namespace Model
      * <p>A link to a public repository for the source code of your application, for
      * example the URL of a specific GitHub commit.</p>
      */
-    inline const Aws::String& GetSourceCodeUrl() const{ return m_sourceCodeUrl; }
+    inline const Aws::String& GetSourceCodeUrl() const { return m_sourceCodeUrl; }
     inline bool SourceCodeUrlHasBeenSet() const { return m_sourceCodeUrlHasBeenSet; }
-    inline void SetSourceCodeUrl(const Aws::String& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = value; }
-    inline void SetSourceCodeUrl(Aws::String&& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = std::move(value); }
-    inline void SetSourceCodeUrl(const char* value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl.assign(value); }
-    inline Version& WithSourceCodeUrl(const Aws::String& value) { SetSourceCodeUrl(value); return *this;}
-    inline Version& WithSourceCodeUrl(Aws::String&& value) { SetSourceCodeUrl(std::move(value)); return *this;}
-    inline Version& WithSourceCodeUrl(const char* value) { SetSourceCodeUrl(value); return *this;}
+    template<typename SourceCodeUrlT = Aws::String>
+    void SetSourceCodeUrl(SourceCodeUrlT&& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = std::forward<SourceCodeUrlT>(value); }
+    template<typename SourceCodeUrlT = Aws::String>
+    Version& WithSourceCodeUrl(SourceCodeUrlT&& value) { SetSourceCodeUrl(std::forward<SourceCodeUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A link to the packaged AWS SAM template of your application.</p>
      */
-    inline const Aws::String& GetTemplateUrl() const{ return m_templateUrl; }
+    inline const Aws::String& GetTemplateUrl() const { return m_templateUrl; }
     inline bool TemplateUrlHasBeenSet() const { return m_templateUrlHasBeenSet; }
-    inline void SetTemplateUrl(const Aws::String& value) { m_templateUrlHasBeenSet = true; m_templateUrl = value; }
-    inline void SetTemplateUrl(Aws::String&& value) { m_templateUrlHasBeenSet = true; m_templateUrl = std::move(value); }
-    inline void SetTemplateUrl(const char* value) { m_templateUrlHasBeenSet = true; m_templateUrl.assign(value); }
-    inline Version& WithTemplateUrl(const Aws::String& value) { SetTemplateUrl(value); return *this;}
-    inline Version& WithTemplateUrl(Aws::String&& value) { SetTemplateUrl(std::move(value)); return *this;}
-    inline Version& WithTemplateUrl(const char* value) { SetTemplateUrl(value); return *this;}
+    template<typename TemplateUrlT = Aws::String>
+    void SetTemplateUrl(TemplateUrlT&& value) { m_templateUrlHasBeenSet = true; m_templateUrl = std::forward<TemplateUrlT>(value); }
+    template<typename TemplateUrlT = Aws::String>
+    Version& WithTemplateUrl(TemplateUrlT&& value) { SetTemplateUrl(std::forward<TemplateUrlT>(value)); return *this;}
     ///@}
   private:
 
@@ -238,7 +225,7 @@ namespace Model
     Aws::Vector<Capability> m_requiredCapabilities;
     bool m_requiredCapabilitiesHasBeenSet = false;
 
-    bool m_resourcesSupported;
+    bool m_resourcesSupported{false};
     bool m_resourcesSupportedHasBeenSet = false;
 
     Aws::String m_semanticVersion;

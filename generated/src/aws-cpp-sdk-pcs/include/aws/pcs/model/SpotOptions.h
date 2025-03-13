@@ -33,7 +33,7 @@ namespace Model
   class SpotOptions
   {
   public:
-    AWS_PCS_API SpotOptions();
+    AWS_PCS_API SpotOptions() = default;
     AWS_PCS_API SpotOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCS_API SpotOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,16 +50,14 @@ namespace Model
      * you don't provide this option, it defaults to <b>price capacity
      * optimized</b>.</p>
      */
-    inline const SpotAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline SpotAllocationStrategy GetAllocationStrategy() const { return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
-    inline void SetAllocationStrategy(const SpotAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
-    inline void SetAllocationStrategy(SpotAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
-    inline SpotOptions& WithAllocationStrategy(const SpotAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
-    inline SpotOptions& WithAllocationStrategy(SpotAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    inline void SetAllocationStrategy(SpotAllocationStrategy value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline SpotOptions& WithAllocationStrategy(SpotAllocationStrategy value) { SetAllocationStrategy(value); return *this;}
     ///@}
   private:
 
-    SpotAllocationStrategy m_allocationStrategy;
+    SpotAllocationStrategy m_allocationStrategy{SpotAllocationStrategy::NOT_SET};
     bool m_allocationStrategyHasBeenSet = false;
   };
 

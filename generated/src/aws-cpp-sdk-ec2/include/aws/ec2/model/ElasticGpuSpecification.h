@@ -33,7 +33,7 @@ namespace Model
   class ElasticGpuSpecification
   {
   public:
-    AWS_EC2_API ElasticGpuSpecification();
+    AWS_EC2_API ElasticGpuSpecification() = default;
     AWS_EC2_API ElasticGpuSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ElasticGpuSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The type of Elastic Graphics accelerator.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline ElasticGpuSpecification& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline ElasticGpuSpecification& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline ElasticGpuSpecification& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    ElasticGpuSpecification& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

@@ -38,7 +38,7 @@ namespace Model
   class CompletionReport
   {
   public:
-    AWS_FSX_API CompletionReport();
+    AWS_FSX_API CompletionReport() = default;
     AWS_FSX_API CompletionReport(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API CompletionReport& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,7 +53,7 @@ namespace Model
      * <code>False</code> if you do not want a <code>CompletionReport</code> generated
      * when the task completes.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline CompletionReport& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -70,14 +70,12 @@ namespace Model
      * following information for each file in the report: FilePath, FileStatus, and
      * ErrorCode.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline CompletionReport& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline CompletionReport& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline CompletionReport& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    CompletionReport& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +87,10 @@ namespace Model
      * in CSV format, and is delivered to <code>{path}/task-{id}/failures.csv</code>.
      * </p>
      */
-    inline const ReportFormat& GetFormat() const{ return m_format; }
+    inline ReportFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const ReportFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(ReportFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline CompletionReport& WithFormat(const ReportFormat& value) { SetFormat(value); return *this;}
-    inline CompletionReport& WithFormat(ReportFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(ReportFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline CompletionReport& WithFormat(ReportFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -105,25 +101,23 @@ namespace Model
      * <code>FAILED_FILES_ONLY</code>, the <code>CompletionReport</code> only contains
      * information about files that the data repository task failed to process.</p>
      */
-    inline const ReportScope& GetScope() const{ return m_scope; }
+    inline ReportScope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const ReportScope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(ReportScope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline CompletionReport& WithScope(const ReportScope& value) { SetScope(value); return *this;}
-    inline CompletionReport& WithScope(ReportScope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(ReportScope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline CompletionReport& WithScope(ReportScope value) { SetScope(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    ReportFormat m_format;
+    ReportFormat m_format{ReportFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
-    ReportScope m_scope;
+    ReportScope m_scope{ReportScope::NOT_SET};
     bool m_scopeHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TextClassificationJobConfig::TextClassificationJobConfig() : 
-    m_completionCriteriaHasBeenSet(false),
-    m_contentColumnHasBeenSet(false),
-    m_targetLabelColumnHasBeenSet(false)
-{
-}
-
 TextClassificationJobConfig::TextClassificationJobConfig(JsonView jsonValue)
-  : TextClassificationJobConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TextClassificationJobConfig& TextClassificationJobConfig::operator =(JsonView js
   if(jsonValue.ValueExists("CompletionCriteria"))
   {
     m_completionCriteria = jsonValue.GetObject("CompletionCriteria");
-
     m_completionCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentColumn"))
   {
     m_contentColumn = jsonValue.GetString("ContentColumn");
-
     m_contentColumnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetLabelColumn"))
   {
     m_targetLabelColumn = jsonValue.GetString("TargetLabelColumn");
-
     m_targetLabelColumnHasBeenSet = true;
   }
-
   return *this;
 }
 

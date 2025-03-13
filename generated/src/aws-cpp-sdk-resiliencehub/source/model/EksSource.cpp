@@ -18,14 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-EksSource::EksSource() : 
-    m_eksClusterArnHasBeenSet(false),
-    m_namespacesHasBeenSet(false)
-{
-}
-
 EksSource::EksSource(JsonView jsonValue)
-  : EksSource()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EksSource& EksSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eksClusterArn"))
   {
     m_eksClusterArn = jsonValue.GetString("eksClusterArn");
-
     m_eksClusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespaces"))
   {
     Aws::Utils::Array<JsonView> namespacesJsonList = jsonValue.GetArray("namespaces");
@@ -48,7 +39,6 @@ EksSource& EksSource::operator =(JsonView jsonValue)
     }
     m_namespacesHasBeenSet = true;
   }
-
   return *this;
 }
 

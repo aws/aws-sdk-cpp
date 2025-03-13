@@ -12,16 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateManagedLoginBrandingRequest::UpdateManagedLoginBrandingRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_managedLoginBrandingIdHasBeenSet(false),
-    m_useCognitoProvidedValues(false),
-    m_useCognitoProvidedValuesHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_assetsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateManagedLoginBrandingRequest::SerializePayload() const
 {
   JsonValue payload;

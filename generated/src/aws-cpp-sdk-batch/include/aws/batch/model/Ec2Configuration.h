@@ -36,7 +36,7 @@ namespace Model
   class Ec2Configuration
   {
   public:
-    AWS_BATCH_API Ec2Configuration();
+    AWS_BATCH_API Ec2Configuration() = default;
     AWS_BATCH_API Ec2Configuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Ec2Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -85,14 +85,12 @@ namespace Model
      * <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web
      * Services Graviton-based instance types.</p> </dd> </dl> </dd> </dl>
      */
-    inline const Aws::String& GetImageType() const{ return m_imageType; }
+    inline const Aws::String& GetImageType() const { return m_imageType; }
     inline bool ImageTypeHasBeenSet() const { return m_imageTypeHasBeenSet; }
-    inline void SetImageType(const Aws::String& value) { m_imageTypeHasBeenSet = true; m_imageType = value; }
-    inline void SetImageType(Aws::String&& value) { m_imageTypeHasBeenSet = true; m_imageType = std::move(value); }
-    inline void SetImageType(const char* value) { m_imageTypeHasBeenSet = true; m_imageType.assign(value); }
-    inline Ec2Configuration& WithImageType(const Aws::String& value) { SetImageType(value); return *this;}
-    inline Ec2Configuration& WithImageType(Aws::String&& value) { SetImageType(std::move(value)); return *this;}
-    inline Ec2Configuration& WithImageType(const char* value) { SetImageType(value); return *this;}
+    template<typename ImageTypeT = Aws::String>
+    void SetImageType(ImageTypeT&& value) { m_imageTypeHasBeenSet = true; m_imageType = std::forward<ImageTypeT>(value); }
+    template<typename ImageTypeT = Aws::String>
+    Ec2Configuration& WithImageType(ImageTypeT&& value) { SetImageType(std::forward<ImageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +107,12 @@ namespace Model
      * ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
-    inline const Aws::String& GetImageIdOverride() const{ return m_imageIdOverride; }
+    inline const Aws::String& GetImageIdOverride() const { return m_imageIdOverride; }
     inline bool ImageIdOverrideHasBeenSet() const { return m_imageIdOverrideHasBeenSet; }
-    inline void SetImageIdOverride(const Aws::String& value) { m_imageIdOverrideHasBeenSet = true; m_imageIdOverride = value; }
-    inline void SetImageIdOverride(Aws::String&& value) { m_imageIdOverrideHasBeenSet = true; m_imageIdOverride = std::move(value); }
-    inline void SetImageIdOverride(const char* value) { m_imageIdOverrideHasBeenSet = true; m_imageIdOverride.assign(value); }
-    inline Ec2Configuration& WithImageIdOverride(const Aws::String& value) { SetImageIdOverride(value); return *this;}
-    inline Ec2Configuration& WithImageIdOverride(Aws::String&& value) { SetImageIdOverride(std::move(value)); return *this;}
-    inline Ec2Configuration& WithImageIdOverride(const char* value) { SetImageIdOverride(value); return *this;}
+    template<typename ImageIdOverrideT = Aws::String>
+    void SetImageIdOverride(ImageIdOverrideT&& value) { m_imageIdOverrideHasBeenSet = true; m_imageIdOverride = std::forward<ImageIdOverrideT>(value); }
+    template<typename ImageIdOverrideT = Aws::String>
+    Ec2Configuration& WithImageIdOverride(ImageIdOverrideT&& value) { SetImageIdOverride(std::forward<ImageIdOverrideT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +120,12 @@ namespace Model
      * <p>The Kubernetes version for the compute environment. If you don't specify a
      * value, the latest version that Batch supports is used.</p>
      */
-    inline const Aws::String& GetImageKubernetesVersion() const{ return m_imageKubernetesVersion; }
+    inline const Aws::String& GetImageKubernetesVersion() const { return m_imageKubernetesVersion; }
     inline bool ImageKubernetesVersionHasBeenSet() const { return m_imageKubernetesVersionHasBeenSet; }
-    inline void SetImageKubernetesVersion(const Aws::String& value) { m_imageKubernetesVersionHasBeenSet = true; m_imageKubernetesVersion = value; }
-    inline void SetImageKubernetesVersion(Aws::String&& value) { m_imageKubernetesVersionHasBeenSet = true; m_imageKubernetesVersion = std::move(value); }
-    inline void SetImageKubernetesVersion(const char* value) { m_imageKubernetesVersionHasBeenSet = true; m_imageKubernetesVersion.assign(value); }
-    inline Ec2Configuration& WithImageKubernetesVersion(const Aws::String& value) { SetImageKubernetesVersion(value); return *this;}
-    inline Ec2Configuration& WithImageKubernetesVersion(Aws::String&& value) { SetImageKubernetesVersion(std::move(value)); return *this;}
-    inline Ec2Configuration& WithImageKubernetesVersion(const char* value) { SetImageKubernetesVersion(value); return *this;}
+    template<typename ImageKubernetesVersionT = Aws::String>
+    void SetImageKubernetesVersion(ImageKubernetesVersionT&& value) { m_imageKubernetesVersionHasBeenSet = true; m_imageKubernetesVersion = std::forward<ImageKubernetesVersionT>(value); }
+    template<typename ImageKubernetesVersionT = Aws::String>
+    Ec2Configuration& WithImageKubernetesVersion(ImageKubernetesVersionT&& value) { SetImageKubernetesVersion(std::forward<ImageKubernetesVersionT>(value)); return *this;}
     ///@}
   private:
 

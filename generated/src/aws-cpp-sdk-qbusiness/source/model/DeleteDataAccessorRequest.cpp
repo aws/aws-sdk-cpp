@@ -12,12 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataAccessorRequest::DeleteDataAccessorRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_dataAccessorIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataAccessorRequest::SerializePayload() const
 {
   return {};

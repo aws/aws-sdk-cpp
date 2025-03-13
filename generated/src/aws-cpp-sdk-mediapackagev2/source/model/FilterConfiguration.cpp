@@ -18,18 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-FilterConfiguration::FilterConfiguration() : 
-    m_manifestFilterHasBeenSet(false),
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false),
-    m_timeDelaySeconds(0),
-    m_timeDelaySecondsHasBeenSet(false),
-    m_clipStartTimeHasBeenSet(false)
-{
-}
-
 FilterConfiguration::FilterConfiguration(JsonView jsonValue)
-  : FilterConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ FilterConfiguration& FilterConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ManifestFilter"))
   {
     m_manifestFilter = jsonValue.GetString("ManifestFilter");
-
     m_manifestFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Start"))
   {
     m_start = jsonValue.GetDouble("Start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("End"))
   {
     m_end = jsonValue.GetDouble("End");
-
     m_endHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeDelaySeconds"))
   {
     m_timeDelaySeconds = jsonValue.GetInteger("TimeDelaySeconds");
-
     m_timeDelaySecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClipStartTime"))
   {
     m_clipStartTime = jsonValue.GetDouble("ClipStartTime");
-
     m_clipStartTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

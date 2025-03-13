@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TagColumnOperation::TagColumnOperation() : 
-    m_columnNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TagColumnOperation::TagColumnOperation(JsonView jsonValue)
-  : TagColumnOperation()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TagColumnOperation& TagColumnOperation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ColumnName"))
   {
     m_columnName = jsonValue.GetString("ColumnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -48,7 +39,6 @@ TagColumnOperation& TagColumnOperation::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSimulationsResult::ListSimulationsResult()
-{
-}
-
 ListSimulationsResult::ListSimulationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListSimulationsResult& ListSimulationsResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Simulations"))
   {
     Aws::Utils::Array<JsonView> simulationsJsonList = jsonValue.GetArray("Simulations");
@@ -42,14 +37,15 @@ ListSimulationsResult& ListSimulationsResult::operator =(const Aws::AmazonWebSer
     {
       m_simulations.push_back(simulationsJsonList[simulationsIndex].AsObject());
     }
+    m_simulationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

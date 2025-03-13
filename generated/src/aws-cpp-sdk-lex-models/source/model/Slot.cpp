@@ -18,26 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-Slot::Slot() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_slotConstraint(SlotConstraint::NOT_SET),
-    m_slotConstraintHasBeenSet(false),
-    m_slotTypeHasBeenSet(false),
-    m_slotTypeVersionHasBeenSet(false),
-    m_valueElicitationPromptHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_sampleUtterancesHasBeenSet(false),
-    m_responseCardHasBeenSet(false),
-    m_obfuscationSetting(ObfuscationSetting::NOT_SET),
-    m_obfuscationSettingHasBeenSet(false),
-    m_defaultValueSpecHasBeenSet(false)
-{
-}
-
 Slot::Slot(JsonView jsonValue)
-  : Slot()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ Slot& Slot::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotConstraint"))
   {
     m_slotConstraint = SlotConstraintMapper::GetSlotConstraintForName(jsonValue.GetString("slotConstraint"));
-
     m_slotConstraintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotType"))
   {
     m_slotType = jsonValue.GetString("slotType");
-
     m_slotTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotTypeVersion"))
   {
     m_slotTypeVersion = jsonValue.GetString("slotTypeVersion");
-
     m_slotTypeVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("valueElicitationPrompt"))
   {
     m_valueElicitationPrompt = jsonValue.GetObject("valueElicitationPrompt");
-
     m_valueElicitationPromptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleUtterances"))
   {
     Aws::Utils::Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
@@ -102,28 +69,21 @@ Slot& Slot::operator =(JsonView jsonValue)
     }
     m_sampleUtterancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseCard"))
   {
     m_responseCard = jsonValue.GetString("responseCard");
-
     m_responseCardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("obfuscationSetting"))
   {
     m_obfuscationSetting = ObfuscationSettingMapper::GetObfuscationSettingForName(jsonValue.GetString("obfuscationSetting"));
-
     m_obfuscationSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValueSpec"))
   {
     m_defaultValueSpec = jsonValue.GetObject("defaultValueSpec");
-
     m_defaultValueSpecHasBeenSet = true;
   }
-
   return *this;
 }
 

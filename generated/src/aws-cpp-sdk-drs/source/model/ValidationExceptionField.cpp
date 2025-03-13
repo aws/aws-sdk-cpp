@@ -18,14 +18,7 @@ namespace drs
 namespace Model
 {
 
-ValidationExceptionField::ValidationExceptionField() : 
-    m_messageHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ValidationExceptionField::ValidationExceptionField(JsonView jsonValue)
-  : ValidationExceptionField()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ValidationExceptionField& ValidationExceptionField::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-BuildSummary::BuildSummary() : 
-    m_arnHasBeenSet(false),
-    m_requestedOnHasBeenSet(false),
-    m_buildStatus(StatusType::NOT_SET),
-    m_buildStatusHasBeenSet(false),
-    m_primaryArtifactHasBeenSet(false),
-    m_secondaryArtifactsHasBeenSet(false)
-{
-}
-
 BuildSummary::BuildSummary(JsonView jsonValue)
-  : BuildSummary()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ BuildSummary& BuildSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestedOn"))
   {
     m_requestedOn = jsonValue.GetDouble("requestedOn");
-
     m_requestedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildStatus"))
   {
     m_buildStatus = StatusTypeMapper::GetStatusTypeForName(jsonValue.GetString("buildStatus"));
-
     m_buildStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("primaryArtifact"))
   {
     m_primaryArtifact = jsonValue.GetObject("primaryArtifact");
-
     m_primaryArtifactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secondaryArtifacts"))
   {
     Aws::Utils::Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("secondaryArtifacts");
@@ -73,7 +54,6 @@ BuildSummary& BuildSummary::operator =(JsonView jsonValue)
     }
     m_secondaryArtifactsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInstanceRequest::DeleteInstanceRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_deleteElasticIp(false),
-    m_deleteElasticIpHasBeenSet(false),
-    m_deleteVolumes(false),
-    m_deleteVolumesHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Crawl::Crawl() : 
-    m_state(CrawlState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_logGroupHasBeenSet(false),
-    m_logStreamHasBeenSet(false)
-{
-}
-
 Crawl::Crawl(JsonView jsonValue)
-  : Crawl()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Crawl& Crawl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("State"))
   {
     m_state = CrawlStateMapper::GetCrawlStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedOn"))
   {
     m_startedOn = jsonValue.GetDouble("StartedOn");
-
     m_startedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedOn"))
   {
     m_completedOn = jsonValue.GetDouble("CompletedOn");
-
     m_completedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogGroup"))
   {
     m_logGroup = jsonValue.GetString("LogGroup");
-
     m_logGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogStream"))
   {
     m_logStream = jsonValue.GetString("LogStream");
-
     m_logStreamHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMembersRequest::CreateMembersRequest() : 
-    m_graphArnHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_disableEmailNotification(false),
-    m_disableEmailNotificationHasBeenSet(false),
-    m_accountsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMembersRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InitiateJobResult::InitiateJobResult()
-{
-}
-
 InitiateJobResult::InitiateJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,24 +31,28 @@ InitiateJobResult& InitiateJobResult::operator =(const Aws::AmazonWebServiceResu
   if(locationIter != headers.end())
   {
     m_location = locationIter->second;
+    m_locationHasBeenSet = true;
   }
 
   const auto& jobIdIter = headers.find("x-amz-job-id");
   if(jobIdIter != headers.end())
   {
     m_jobId = jobIdIter->second;
+    m_jobIdHasBeenSet = true;
   }
 
   const auto& jobOutputPathIter = headers.find("x-amz-job-output-path");
   if(jobOutputPathIter != headers.end())
   {
     m_jobOutputPath = jobOutputPathIter->second;
+    m_jobOutputPathHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

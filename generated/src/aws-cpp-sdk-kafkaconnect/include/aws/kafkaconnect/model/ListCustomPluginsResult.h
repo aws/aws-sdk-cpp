@@ -29,7 +29,7 @@ namespace Model
   class ListCustomPluginsResult
   {
   public:
-    AWS_KAFKACONNECT_API ListCustomPluginsResult();
+    AWS_KAFKACONNECT_API ListCustomPluginsResult() = default;
     AWS_KAFKACONNECT_API ListCustomPluginsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKACONNECT_API ListCustomPluginsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of custom plugin descriptions.</p>
      */
-    inline const Aws::Vector<CustomPluginSummary>& GetCustomPlugins() const{ return m_customPlugins; }
-    inline void SetCustomPlugins(const Aws::Vector<CustomPluginSummary>& value) { m_customPlugins = value; }
-    inline void SetCustomPlugins(Aws::Vector<CustomPluginSummary>&& value) { m_customPlugins = std::move(value); }
-    inline ListCustomPluginsResult& WithCustomPlugins(const Aws::Vector<CustomPluginSummary>& value) { SetCustomPlugins(value); return *this;}
-    inline ListCustomPluginsResult& WithCustomPlugins(Aws::Vector<CustomPluginSummary>&& value) { SetCustomPlugins(std::move(value)); return *this;}
-    inline ListCustomPluginsResult& AddCustomPlugins(const CustomPluginSummary& value) { m_customPlugins.push_back(value); return *this; }
-    inline ListCustomPluginsResult& AddCustomPlugins(CustomPluginSummary&& value) { m_customPlugins.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CustomPluginSummary>& GetCustomPlugins() const { return m_customPlugins; }
+    template<typename CustomPluginsT = Aws::Vector<CustomPluginSummary>>
+    void SetCustomPlugins(CustomPluginsT&& value) { m_customPluginsHasBeenSet = true; m_customPlugins = std::forward<CustomPluginsT>(value); }
+    template<typename CustomPluginsT = Aws::Vector<CustomPluginSummary>>
+    ListCustomPluginsResult& WithCustomPlugins(CustomPluginsT&& value) { SetCustomPlugins(std::forward<CustomPluginsT>(value)); return *this;}
+    template<typename CustomPluginsT = CustomPluginSummary>
+    ListCustomPluginsResult& AddCustomPlugins(CustomPluginsT&& value) { m_customPluginsHasBeenSet = true; m_customPlugins.emplace_back(std::forward<CustomPluginsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * include a NextToken. Send this NextToken in a subsequent request to continue
      * listing from where the previous operation left off.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCustomPluginsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCustomPluginsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCustomPluginsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCustomPluginsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCustomPluginsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCustomPluginsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCustomPluginsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCustomPluginsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CustomPluginSummary> m_customPlugins;
+    bool m_customPluginsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,23 +18,7 @@ namespace Route53RecoveryControlConfig
 namespace Model
 {
 
-GatingRule::GatingRule() : 
-    m_controlPanelArnHasBeenSet(false),
-    m_gatingControlsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ruleConfigHasBeenSet(false),
-    m_safetyRuleArnHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetControlsHasBeenSet(false),
-    m_waitPeriodMs(0),
-    m_waitPeriodMsHasBeenSet(false),
-    m_ownerHasBeenSet(false)
-{
-}
-
 GatingRule::GatingRule(JsonView jsonValue)
-  : GatingRule()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ GatingRule& GatingRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ControlPanelArn"))
   {
     m_controlPanelArn = jsonValue.GetString("ControlPanelArn");
-
     m_controlPanelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatingControls"))
   {
     Aws::Utils::Array<JsonView> gatingControlsJsonList = jsonValue.GetArray("GatingControls");
@@ -57,35 +39,26 @@ GatingRule& GatingRule::operator =(JsonView jsonValue)
     }
     m_gatingControlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleConfig"))
   {
     m_ruleConfig = jsonValue.GetObject("RuleConfig");
-
     m_ruleConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SafetyRuleArn"))
   {
     m_safetyRuleArn = jsonValue.GetString("SafetyRuleArn");
-
     m_safetyRuleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetControls"))
   {
     Aws::Utils::Array<JsonView> targetControlsJsonList = jsonValue.GetArray("TargetControls");
@@ -95,21 +68,16 @@ GatingRule& GatingRule::operator =(JsonView jsonValue)
     }
     m_targetControlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaitPeriodMs"))
   {
     m_waitPeriodMs = jsonValue.GetInteger("WaitPeriodMs");
-
     m_waitPeriodMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   return *this;
 }
 

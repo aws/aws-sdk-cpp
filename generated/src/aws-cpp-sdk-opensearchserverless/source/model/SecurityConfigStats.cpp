@@ -18,14 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-SecurityConfigStats::SecurityConfigStats() : 
-    m_samlConfigCount(0),
-    m_samlConfigCountHasBeenSet(false)
-{
-}
-
 SecurityConfigStats::SecurityConfigStats(JsonView jsonValue)
-  : SecurityConfigStats()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SecurityConfigStats& SecurityConfigStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SamlConfigCount"))
   {
     m_samlConfigCount = jsonValue.GetInt64("SamlConfigCount");
-
     m_samlConfigCountHasBeenSet = true;
   }
-
   return *this;
 }
 

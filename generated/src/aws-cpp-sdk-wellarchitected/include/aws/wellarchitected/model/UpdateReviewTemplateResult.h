@@ -28,7 +28,7 @@ namespace Model
   class UpdateReviewTemplateResult
   {
   public:
-    AWS_WELLARCHITECTED_API UpdateReviewTemplateResult();
+    AWS_WELLARCHITECTED_API UpdateReviewTemplateResult() = default;
     AWS_WELLARCHITECTED_API UpdateReviewTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API UpdateReviewTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A review template.</p>
      */
-    inline const ReviewTemplate& GetReviewTemplate() const{ return m_reviewTemplate; }
-    inline void SetReviewTemplate(const ReviewTemplate& value) { m_reviewTemplate = value; }
-    inline void SetReviewTemplate(ReviewTemplate&& value) { m_reviewTemplate = std::move(value); }
-    inline UpdateReviewTemplateResult& WithReviewTemplate(const ReviewTemplate& value) { SetReviewTemplate(value); return *this;}
-    inline UpdateReviewTemplateResult& WithReviewTemplate(ReviewTemplate&& value) { SetReviewTemplate(std::move(value)); return *this;}
+    inline const ReviewTemplate& GetReviewTemplate() const { return m_reviewTemplate; }
+    template<typename ReviewTemplateT = ReviewTemplate>
+    void SetReviewTemplate(ReviewTemplateT&& value) { m_reviewTemplateHasBeenSet = true; m_reviewTemplate = std::forward<ReviewTemplateT>(value); }
+    template<typename ReviewTemplateT = ReviewTemplate>
+    UpdateReviewTemplateResult& WithReviewTemplate(ReviewTemplateT&& value) { SetReviewTemplate(std::forward<ReviewTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateReviewTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateReviewTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateReviewTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateReviewTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ReviewTemplate m_reviewTemplate;
+    bool m_reviewTemplateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

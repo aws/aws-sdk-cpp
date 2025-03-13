@@ -32,7 +32,7 @@ namespace Model
   class ListExportsRequestFilters
   {
   public:
-    AWS_MGN_API ListExportsRequestFilters();
+    AWS_MGN_API ListExportsRequestFilters() = default;
     AWS_MGN_API ListExportsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API ListExportsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>List exports request filters export ids.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExportIDs() const{ return m_exportIDs; }
+    inline const Aws::Vector<Aws::String>& GetExportIDs() const { return m_exportIDs; }
     inline bool ExportIDsHasBeenSet() const { return m_exportIDsHasBeenSet; }
-    inline void SetExportIDs(const Aws::Vector<Aws::String>& value) { m_exportIDsHasBeenSet = true; m_exportIDs = value; }
-    inline void SetExportIDs(Aws::Vector<Aws::String>&& value) { m_exportIDsHasBeenSet = true; m_exportIDs = std::move(value); }
-    inline ListExportsRequestFilters& WithExportIDs(const Aws::Vector<Aws::String>& value) { SetExportIDs(value); return *this;}
-    inline ListExportsRequestFilters& WithExportIDs(Aws::Vector<Aws::String>&& value) { SetExportIDs(std::move(value)); return *this;}
-    inline ListExportsRequestFilters& AddExportIDs(const Aws::String& value) { m_exportIDsHasBeenSet = true; m_exportIDs.push_back(value); return *this; }
-    inline ListExportsRequestFilters& AddExportIDs(Aws::String&& value) { m_exportIDsHasBeenSet = true; m_exportIDs.push_back(std::move(value)); return *this; }
-    inline ListExportsRequestFilters& AddExportIDs(const char* value) { m_exportIDsHasBeenSet = true; m_exportIDs.push_back(value); return *this; }
+    template<typename ExportIDsT = Aws::Vector<Aws::String>>
+    void SetExportIDs(ExportIDsT&& value) { m_exportIDsHasBeenSet = true; m_exportIDs = std::forward<ExportIDsT>(value); }
+    template<typename ExportIDsT = Aws::Vector<Aws::String>>
+    ListExportsRequestFilters& WithExportIDs(ExportIDsT&& value) { SetExportIDs(std::forward<ExportIDsT>(value)); return *this;}
+    template<typename ExportIDsT = Aws::String>
+    ListExportsRequestFilters& AddExportIDs(ExportIDsT&& value) { m_exportIDsHasBeenSet = true; m_exportIDs.emplace_back(std::forward<ExportIDsT>(value)); return *this; }
     ///@}
   private:
 

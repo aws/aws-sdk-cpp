@@ -39,7 +39,7 @@ namespace Model
   class GetOpportunityResult
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API GetOpportunityResult();
+    AWS_PARTNERCENTRALSELLING_API GetOpportunityResult() = default;
     AWS_PARTNERCENTRALSELLING_API GetOpportunityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PARTNERCENTRALSELLING_API GetOpportunityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -48,13 +48,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the opportunity.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetOpportunityResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetOpportunityResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetOpportunityResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetOpportunityResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,13 +64,11 @@ namespace Model
      * catalog, and <code>Sandbox</code> to retrieve opportunities in a secure and
      * isolated testing environment.</p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
-    inline void SetCatalog(const Aws::String& value) { m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalog.assign(value); }
-    inline GetOpportunityResult& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline GetOpportunityResult& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline GetOpportunityResult& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    GetOpportunityResult& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,11 +76,11 @@ namespace Model
      * <p> <code>DateTime</code> when the <code>Opportunity</code> was last
      * created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-    inline GetOpportunityResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline GetOpportunityResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    GetOpportunityResult& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,35 +88,33 @@ namespace Model
      * <p>Specifies details of the customer associated with the
      * <code>Opportunity</code>.</p>
      */
-    inline const Customer& GetCustomer() const{ return m_customer; }
-    inline void SetCustomer(const Customer& value) { m_customer = value; }
-    inline void SetCustomer(Customer&& value) { m_customer = std::move(value); }
-    inline GetOpportunityResult& WithCustomer(const Customer& value) { SetCustomer(value); return *this;}
-    inline GetOpportunityResult& WithCustomer(Customer&& value) { SetCustomer(std::move(value)); return *this;}
+    inline const Customer& GetCustomer() const { return m_customer; }
+    template<typename CustomerT = Customer>
+    void SetCustomer(CustomerT&& value) { m_customerHasBeenSet = true; m_customer = std::forward<CustomerT>(value); }
+    template<typename CustomerT = Customer>
+    GetOpportunityResult& WithCustomer(CustomerT&& value) { SetCustomer(std::forward<CustomerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Read-only, system generated <code>Opportunity</code> unique identifier.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetOpportunityResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetOpportunityResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetOpportunityResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetOpportunityResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> <code>DateTime</code> when the opportunity was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDate = std::move(value); }
-    inline GetOpportunityResult& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline GetOpportunityResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    GetOpportunityResult& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,11 +122,11 @@ namespace Model
      * <p>An object that contains lifecycle details for the
      * <code>Opportunity</code>.</p>
      */
-    inline const LifeCycle& GetLifeCycle() const{ return m_lifeCycle; }
-    inline void SetLifeCycle(const LifeCycle& value) { m_lifeCycle = value; }
-    inline void SetLifeCycle(LifeCycle&& value) { m_lifeCycle = std::move(value); }
-    inline GetOpportunityResult& WithLifeCycle(const LifeCycle& value) { SetLifeCycle(value); return *this;}
-    inline GetOpportunityResult& WithLifeCycle(LifeCycle&& value) { SetLifeCycle(std::move(value)); return *this;}
+    inline const LifeCycle& GetLifeCycle() const { return m_lifeCycle; }
+    template<typename LifeCycleT = LifeCycle>
+    void SetLifeCycle(LifeCycleT&& value) { m_lifeCycleHasBeenSet = true; m_lifeCycle = std::forward<LifeCycleT>(value); }
+    template<typename LifeCycleT = LifeCycle>
+    GetOpportunityResult& WithLifeCycle(LifeCycleT&& value) { SetLifeCycle(std::forward<LifeCycleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,11 +134,11 @@ namespace Model
      * <p>An object that contains marketing details for the
      * <code>Opportunity</code>.</p>
      */
-    inline const Marketing& GetMarketing() const{ return m_marketing; }
-    inline void SetMarketing(const Marketing& value) { m_marketing = value; }
-    inline void SetMarketing(Marketing&& value) { m_marketing = std::move(value); }
-    inline GetOpportunityResult& WithMarketing(const Marketing& value) { SetMarketing(value); return *this;}
-    inline GetOpportunityResult& WithMarketing(Marketing&& value) { SetMarketing(std::move(value)); return *this;}
+    inline const Marketing& GetMarketing() const { return m_marketing; }
+    template<typename MarketingT = Marketing>
+    void SetMarketing(MarketingT&& value) { m_marketingHasBeenSet = true; m_marketing = std::forward<MarketingT>(value); }
+    template<typename MarketingT = Marketing>
+    GetOpportunityResult& WithMarketing(MarketingT&& value) { SetMarketing(std::forward<MarketingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,11 +149,9 @@ namespace Model
      * measures apply during the review and management process for opportunities marked
      * as <code>NationalSecurity</code>.</p>
      */
-    inline const NationalSecurity& GetNationalSecurity() const{ return m_nationalSecurity; }
-    inline void SetNationalSecurity(const NationalSecurity& value) { m_nationalSecurity = value; }
-    inline void SetNationalSecurity(NationalSecurity&& value) { m_nationalSecurity = std::move(value); }
-    inline GetOpportunityResult& WithNationalSecurity(const NationalSecurity& value) { SetNationalSecurity(value); return *this;}
-    inline GetOpportunityResult& WithNationalSecurity(NationalSecurity&& value) { SetNationalSecurity(std::move(value)); return *this;}
+    inline NationalSecurity GetNationalSecurity() const { return m_nationalSecurity; }
+    inline void SetNationalSecurity(NationalSecurity value) { m_nationalSecurityHasBeenSet = true; m_nationalSecurity = value; }
+    inline GetOpportunityResult& WithNationalSecurity(NationalSecurity value) { SetNationalSecurity(value); return *this;}
     ///@}
 
     ///@{
@@ -168,13 +160,13 @@ namespace Model
      * involved in collaborating on this opportunity within the partner's
      * organization.</p>
      */
-    inline const Aws::Vector<Contact>& GetOpportunityTeam() const{ return m_opportunityTeam; }
-    inline void SetOpportunityTeam(const Aws::Vector<Contact>& value) { m_opportunityTeam = value; }
-    inline void SetOpportunityTeam(Aws::Vector<Contact>&& value) { m_opportunityTeam = std::move(value); }
-    inline GetOpportunityResult& WithOpportunityTeam(const Aws::Vector<Contact>& value) { SetOpportunityTeam(value); return *this;}
-    inline GetOpportunityResult& WithOpportunityTeam(Aws::Vector<Contact>&& value) { SetOpportunityTeam(std::move(value)); return *this;}
-    inline GetOpportunityResult& AddOpportunityTeam(const Contact& value) { m_opportunityTeam.push_back(value); return *this; }
-    inline GetOpportunityResult& AddOpportunityTeam(Contact&& value) { m_opportunityTeam.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Contact>& GetOpportunityTeam() const { return m_opportunityTeam; }
+    template<typename OpportunityTeamT = Aws::Vector<Contact>>
+    void SetOpportunityTeam(OpportunityTeamT&& value) { m_opportunityTeamHasBeenSet = true; m_opportunityTeam = std::forward<OpportunityTeamT>(value); }
+    template<typename OpportunityTeamT = Aws::Vector<Contact>>
+    GetOpportunityResult& WithOpportunityTeam(OpportunityTeamT&& value) { SetOpportunityTeam(std::forward<OpportunityTeamT>(value)); return *this;}
+    template<typename OpportunityTeamT = Contact>
+    GetOpportunityResult& AddOpportunityTeam(OpportunityTeamT&& value) { m_opportunityTeamHasBeenSet = true; m_opportunityTeam.emplace_back(std::forward<OpportunityTeamT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -189,11 +181,9 @@ namespace Model
      * customer's contract or subscription, either by adding new services or increasing
      * the volume of existing services.</p> </li> </ul>
      */
-    inline const OpportunityType& GetOpportunityType() const{ return m_opportunityType; }
-    inline void SetOpportunityType(const OpportunityType& value) { m_opportunityType = value; }
-    inline void SetOpportunityType(OpportunityType&& value) { m_opportunityType = std::move(value); }
-    inline GetOpportunityResult& WithOpportunityType(const OpportunityType& value) { SetOpportunityType(value); return *this;}
-    inline GetOpportunityResult& WithOpportunityType(OpportunityType&& value) { SetOpportunityType(std::move(value)); return *this;}
+    inline OpportunityType GetOpportunityType() const { return m_opportunityType; }
+    inline void SetOpportunityType(OpportunityType value) { m_opportunityTypeHasBeenSet = true; m_opportunityType = value; }
+    inline GetOpportunityResult& WithOpportunityType(OpportunityType value) { SetOpportunityType(value); return *this;}
     ///@}
 
     ///@{
@@ -202,13 +192,11 @@ namespace Model
      * This value is essential to track and reconcile because it's included in the
      * outbound payload sent back to the partner.</p>
      */
-    inline const Aws::String& GetPartnerOpportunityIdentifier() const{ return m_partnerOpportunityIdentifier; }
-    inline void SetPartnerOpportunityIdentifier(const Aws::String& value) { m_partnerOpportunityIdentifier = value; }
-    inline void SetPartnerOpportunityIdentifier(Aws::String&& value) { m_partnerOpportunityIdentifier = std::move(value); }
-    inline void SetPartnerOpportunityIdentifier(const char* value) { m_partnerOpportunityIdentifier.assign(value); }
-    inline GetOpportunityResult& WithPartnerOpportunityIdentifier(const Aws::String& value) { SetPartnerOpportunityIdentifier(value); return *this;}
-    inline GetOpportunityResult& WithPartnerOpportunityIdentifier(Aws::String&& value) { SetPartnerOpportunityIdentifier(std::move(value)); return *this;}
-    inline GetOpportunityResult& WithPartnerOpportunityIdentifier(const char* value) { SetPartnerOpportunityIdentifier(value); return *this;}
+    inline const Aws::String& GetPartnerOpportunityIdentifier() const { return m_partnerOpportunityIdentifier; }
+    template<typename PartnerOpportunityIdentifierT = Aws::String>
+    void SetPartnerOpportunityIdentifier(PartnerOpportunityIdentifierT&& value) { m_partnerOpportunityIdentifierHasBeenSet = true; m_partnerOpportunityIdentifier = std::forward<PartnerOpportunityIdentifierT>(value); }
+    template<typename PartnerOpportunityIdentifierT = Aws::String>
+    GetOpportunityResult& WithPartnerOpportunityIdentifier(PartnerOpportunityIdentifierT&& value) { SetPartnerOpportunityIdentifier(std::forward<PartnerOpportunityIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -234,13 +222,12 @@ namespace Model
      * <li> <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public
      * sector where the partner needs Amazon Web Services RFx support.</p> </li> </ul>
      */
-    inline const Aws::Vector<PrimaryNeedFromAws>& GetPrimaryNeedsFromAws() const{ return m_primaryNeedsFromAws; }
-    inline void SetPrimaryNeedsFromAws(const Aws::Vector<PrimaryNeedFromAws>& value) { m_primaryNeedsFromAws = value; }
-    inline void SetPrimaryNeedsFromAws(Aws::Vector<PrimaryNeedFromAws>&& value) { m_primaryNeedsFromAws = std::move(value); }
-    inline GetOpportunityResult& WithPrimaryNeedsFromAws(const Aws::Vector<PrimaryNeedFromAws>& value) { SetPrimaryNeedsFromAws(value); return *this;}
-    inline GetOpportunityResult& WithPrimaryNeedsFromAws(Aws::Vector<PrimaryNeedFromAws>&& value) { SetPrimaryNeedsFromAws(std::move(value)); return *this;}
-    inline GetOpportunityResult& AddPrimaryNeedsFromAws(const PrimaryNeedFromAws& value) { m_primaryNeedsFromAws.push_back(value); return *this; }
-    inline GetOpportunityResult& AddPrimaryNeedsFromAws(PrimaryNeedFromAws&& value) { m_primaryNeedsFromAws.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PrimaryNeedFromAws>& GetPrimaryNeedsFromAws() const { return m_primaryNeedsFromAws; }
+    template<typename PrimaryNeedsFromAwsT = Aws::Vector<PrimaryNeedFromAws>>
+    void SetPrimaryNeedsFromAws(PrimaryNeedsFromAwsT&& value) { m_primaryNeedsFromAwsHasBeenSet = true; m_primaryNeedsFromAws = std::forward<PrimaryNeedsFromAwsT>(value); }
+    template<typename PrimaryNeedsFromAwsT = Aws::Vector<PrimaryNeedFromAws>>
+    GetOpportunityResult& WithPrimaryNeedsFromAws(PrimaryNeedsFromAwsT&& value) { SetPrimaryNeedsFromAws(std::forward<PrimaryNeedsFromAwsT>(value)); return *this;}
+    inline GetOpportunityResult& AddPrimaryNeedsFromAws(PrimaryNeedFromAws value) { m_primaryNeedsFromAwsHasBeenSet = true; m_primaryNeedsFromAws.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -248,11 +235,11 @@ namespace Model
      * <p>An object that contains project details summary for the
      * <code>Opportunity</code>.</p>
      */
-    inline const Project& GetProject() const{ return m_project; }
-    inline void SetProject(const Project& value) { m_project = value; }
-    inline void SetProject(Project&& value) { m_project = std::move(value); }
-    inline GetOpportunityResult& WithProject(const Project& value) { SetProject(value); return *this;}
-    inline GetOpportunityResult& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
+    inline const Project& GetProject() const { return m_project; }
+    template<typename ProjectT = Project>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = Project>
+    GetOpportunityResult& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -261,11 +248,11 @@ namespace Model
      * opportunity. These entities include identifiers for <code>AWSProducts</code>,
      * <code>Partner Solutions</code>, and <code>AWSMarketplaceOffers</code>.</p>
      */
-    inline const RelatedEntityIdentifiers& GetRelatedEntityIdentifiers() const{ return m_relatedEntityIdentifiers; }
-    inline void SetRelatedEntityIdentifiers(const RelatedEntityIdentifiers& value) { m_relatedEntityIdentifiers = value; }
-    inline void SetRelatedEntityIdentifiers(RelatedEntityIdentifiers&& value) { m_relatedEntityIdentifiers = std::move(value); }
-    inline GetOpportunityResult& WithRelatedEntityIdentifiers(const RelatedEntityIdentifiers& value) { SetRelatedEntityIdentifiers(value); return *this;}
-    inline GetOpportunityResult& WithRelatedEntityIdentifiers(RelatedEntityIdentifiers&& value) { SetRelatedEntityIdentifiers(std::move(value)); return *this;}
+    inline const RelatedEntityIdentifiers& GetRelatedEntityIdentifiers() const { return m_relatedEntityIdentifiers; }
+    template<typename RelatedEntityIdentifiersT = RelatedEntityIdentifiers>
+    void SetRelatedEntityIdentifiers(RelatedEntityIdentifiersT&& value) { m_relatedEntityIdentifiersHasBeenSet = true; m_relatedEntityIdentifiers = std::forward<RelatedEntityIdentifiersT>(value); }
+    template<typename RelatedEntityIdentifiersT = RelatedEntityIdentifiers>
+    GetOpportunityResult& WithRelatedEntityIdentifiers(RelatedEntityIdentifiersT&& value) { SetRelatedEntityIdentifiers(std::forward<RelatedEntityIdentifiersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -273,58 +260,73 @@ namespace Model
      * <p>Specifies details of a customer's procurement terms. Required only for
      * partners in eligible programs.</p>
      */
-    inline const SoftwareRevenue& GetSoftwareRevenue() const{ return m_softwareRevenue; }
-    inline void SetSoftwareRevenue(const SoftwareRevenue& value) { m_softwareRevenue = value; }
-    inline void SetSoftwareRevenue(SoftwareRevenue&& value) { m_softwareRevenue = std::move(value); }
-    inline GetOpportunityResult& WithSoftwareRevenue(const SoftwareRevenue& value) { SetSoftwareRevenue(value); return *this;}
-    inline GetOpportunityResult& WithSoftwareRevenue(SoftwareRevenue&& value) { SetSoftwareRevenue(std::move(value)); return *this;}
+    inline const SoftwareRevenue& GetSoftwareRevenue() const { return m_softwareRevenue; }
+    template<typename SoftwareRevenueT = SoftwareRevenue>
+    void SetSoftwareRevenue(SoftwareRevenueT&& value) { m_softwareRevenueHasBeenSet = true; m_softwareRevenue = std::forward<SoftwareRevenueT>(value); }
+    template<typename SoftwareRevenueT = SoftwareRevenue>
+    GetOpportunityResult& WithSoftwareRevenue(SoftwareRevenueT&& value) { SetSoftwareRevenue(std::forward<SoftwareRevenueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetOpportunityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetOpportunityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetOpportunityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetOpportunityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_catalog;
+    bool m_catalogHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
 
     Customer m_customer;
+    bool m_customerHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
+    bool m_lastModifiedDateHasBeenSet = false;
 
     LifeCycle m_lifeCycle;
+    bool m_lifeCycleHasBeenSet = false;
 
     Marketing m_marketing;
+    bool m_marketingHasBeenSet = false;
 
-    NationalSecurity m_nationalSecurity;
+    NationalSecurity m_nationalSecurity{NationalSecurity::NOT_SET};
+    bool m_nationalSecurityHasBeenSet = false;
 
     Aws::Vector<Contact> m_opportunityTeam;
+    bool m_opportunityTeamHasBeenSet = false;
 
-    OpportunityType m_opportunityType;
+    OpportunityType m_opportunityType{OpportunityType::NOT_SET};
+    bool m_opportunityTypeHasBeenSet = false;
 
     Aws::String m_partnerOpportunityIdentifier;
+    bool m_partnerOpportunityIdentifierHasBeenSet = false;
 
     Aws::Vector<PrimaryNeedFromAws> m_primaryNeedsFromAws;
+    bool m_primaryNeedsFromAwsHasBeenSet = false;
 
     Project m_project;
+    bool m_projectHasBeenSet = false;
 
     RelatedEntityIdentifiers m_relatedEntityIdentifiers;
+    bool m_relatedEntityIdentifiersHasBeenSet = false;
 
     SoftwareRevenue m_softwareRevenue;
+    bool m_softwareRevenueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

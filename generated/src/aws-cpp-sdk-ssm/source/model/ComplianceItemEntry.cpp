@@ -18,19 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ComplianceItemEntry::ComplianceItemEntry() : 
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_severity(ComplianceSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(ComplianceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 ComplianceItemEntry::ComplianceItemEntry(JsonView jsonValue)
-  : ComplianceItemEntry()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ComplianceItemEntry& ComplianceItemEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = ComplianceSeverityMapper::GetComplianceSeverityForName(jsonValue.GetString("Severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ComplianceStatusMapper::GetComplianceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     Aws::Map<Aws::String, JsonView> detailsJsonMap = jsonValue.GetObject("Details").GetAllObjects();
@@ -74,7 +54,6 @@ ComplianceItemEntry& ComplianceItemEntry::operator =(JsonView jsonValue)
     }
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

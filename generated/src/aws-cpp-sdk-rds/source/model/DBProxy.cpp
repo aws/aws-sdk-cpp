@@ -20,31 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBProxy::DBProxy() : 
-    m_dBProxyNameHasBeenSet(false),
-    m_dBProxyArnHasBeenSet(false),
-    m_status(DBProxyStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_engineFamilyHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_vpcSubnetIdsHasBeenSet(false),
-    m_authHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_requireTLS(false),
-    m_requireTLSHasBeenSet(false),
-    m_idleClientTimeout(0),
-    m_idleClientTimeoutHasBeenSet(false),
-    m_debugLogging(false),
-    m_debugLoggingHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false)
-{
-}
-
 DBProxy::DBProxy(const XmlNode& xmlNode)
-  : DBProxy()
 {
   *this = xmlNode;
 }
@@ -60,108 +36,123 @@ DBProxy& DBProxy::operator =(const XmlNode& xmlNode)
     {
       m_dBProxyName = Aws::Utils::Xml::DecodeEscapedXmlText(dBProxyNameNode.GetText());
       m_dBProxyNameHasBeenSet = true;
+       m_dBProxyNameHasBeenSet = true;
     }
     XmlNode dBProxyArnNode = resultNode.FirstChild("DBProxyArn");
     if(!dBProxyArnNode.IsNull())
     {
       m_dBProxyArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBProxyArnNode.GetText());
       m_dBProxyArnHasBeenSet = true;
+       m_dBProxyArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = DBProxyStatusMapper::GetDBProxyStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = DBProxyStatusMapper::GetDBProxyStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode engineFamilyNode = resultNode.FirstChild("EngineFamily");
     if(!engineFamilyNode.IsNull())
     {
       m_engineFamily = Aws::Utils::Xml::DecodeEscapedXmlText(engineFamilyNode.GetText());
       m_engineFamilyHasBeenSet = true;
+       m_engineFamilyHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode vpcSecurityGroupIdsNode = resultNode.FirstChild("VpcSecurityGroupIds");
     if(!vpcSecurityGroupIdsNode.IsNull())
     {
       XmlNode vpcSecurityGroupIdsMember = vpcSecurityGroupIdsNode.FirstChild("member");
+      m_vpcSecurityGroupIdsHasBeenSet = !vpcSecurityGroupIdsMember.IsNull();
       while(!vpcSecurityGroupIdsMember.IsNull())
       {
         m_vpcSecurityGroupIds.push_back(vpcSecurityGroupIdsMember.GetText());
         vpcSecurityGroupIdsMember = vpcSecurityGroupIdsMember.NextNode("member");
       }
 
-      m_vpcSecurityGroupIdsHasBeenSet = true;
+       m_vpcSecurityGroupIdsHasBeenSet = true;
     }
     XmlNode vpcSubnetIdsNode = resultNode.FirstChild("VpcSubnetIds");
     if(!vpcSubnetIdsNode.IsNull())
     {
       XmlNode vpcSubnetIdsMember = vpcSubnetIdsNode.FirstChild("member");
+      m_vpcSubnetIdsHasBeenSet = !vpcSubnetIdsMember.IsNull();
       while(!vpcSubnetIdsMember.IsNull())
       {
         m_vpcSubnetIds.push_back(vpcSubnetIdsMember.GetText());
         vpcSubnetIdsMember = vpcSubnetIdsMember.NextNode("member");
       }
 
-      m_vpcSubnetIdsHasBeenSet = true;
+       m_vpcSubnetIdsHasBeenSet = true;
     }
     XmlNode authNode = resultNode.FirstChild("Auth");
     if(!authNode.IsNull())
     {
       XmlNode authMember = authNode.FirstChild("member");
+      m_authHasBeenSet = !authMember.IsNull();
       while(!authMember.IsNull())
       {
         m_auth.push_back(authMember);
         authMember = authMember.NextNode("member");
       }
 
-      m_authHasBeenSet = true;
+       m_authHasBeenSet = true;
     }
     XmlNode roleArnNode = resultNode.FirstChild("RoleArn");
     if(!roleArnNode.IsNull())
     {
       m_roleArn = Aws::Utils::Xml::DecodeEscapedXmlText(roleArnNode.GetText());
       m_roleArnHasBeenSet = true;
+       m_roleArnHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
       m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
       m_endpointHasBeenSet = true;
+       m_endpointHasBeenSet = true;
     }
     XmlNode requireTLSNode = resultNode.FirstChild("RequireTLS");
     if(!requireTLSNode.IsNull())
     {
       m_requireTLS = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requireTLSNode.GetText()).c_str()).c_str());
       m_requireTLSHasBeenSet = true;
+       m_requireTLSHasBeenSet = true;
     }
     XmlNode idleClientTimeoutNode = resultNode.FirstChild("IdleClientTimeout");
     if(!idleClientTimeoutNode.IsNull())
     {
       m_idleClientTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(idleClientTimeoutNode.GetText()).c_str()).c_str());
       m_idleClientTimeoutHasBeenSet = true;
+       m_idleClientTimeoutHasBeenSet = true;
     }
     XmlNode debugLoggingNode = resultNode.FirstChild("DebugLogging");
     if(!debugLoggingNode.IsNull())
     {
       m_debugLogging = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(debugLoggingNode.GetText()).c_str()).c_str());
       m_debugLoggingHasBeenSet = true;
+       m_debugLoggingHasBeenSet = true;
     }
     XmlNode createdDateNode = resultNode.FirstChild("CreatedDate");
     if(!createdDateNode.IsNull())
     {
       m_createdDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdDateHasBeenSet = true;
+       m_createdDateHasBeenSet = true;
     }
     XmlNode updatedDateNode = resultNode.FirstChild("UpdatedDate");
     if(!updatedDateNode.IsNull())
     {
       m_updatedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updatedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updatedDateHasBeenSet = true;
+       m_updatedDateHasBeenSet = true;
     }
   }
 

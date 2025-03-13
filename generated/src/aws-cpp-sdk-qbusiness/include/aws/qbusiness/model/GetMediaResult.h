@@ -28,7 +28,7 @@ namespace Model
   class GetMediaResult
   {
   public:
-    AWS_QBUSINESS_API GetMediaResult();
+    AWS_QBUSINESS_API GetMediaResult() = default;
     AWS_QBUSINESS_API GetMediaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API GetMediaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The base64-encoded bytes of the media object.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetMediaBytes() const{ return m_mediaBytes; }
-    inline void SetMediaBytes(const Aws::Utils::ByteBuffer& value) { m_mediaBytes = value; }
-    inline void SetMediaBytes(Aws::Utils::ByteBuffer&& value) { m_mediaBytes = std::move(value); }
-    inline GetMediaResult& WithMediaBytes(const Aws::Utils::ByteBuffer& value) { SetMediaBytes(value); return *this;}
-    inline GetMediaResult& WithMediaBytes(Aws::Utils::ByteBuffer&& value) { SetMediaBytes(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetMediaBytes() const { return m_mediaBytes; }
+    template<typename MediaBytesT = Aws::Utils::ByteBuffer>
+    void SetMediaBytes(MediaBytesT&& value) { m_mediaBytesHasBeenSet = true; m_mediaBytes = std::forward<MediaBytesT>(value); }
+    template<typename MediaBytesT = Aws::Utils::ByteBuffer>
+    GetMediaResult& WithMediaBytes(MediaBytesT&& value) { SetMediaBytes(std::forward<MediaBytesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The MIME type of the media object (image/png).</p>
      */
-    inline const Aws::String& GetMediaMimeType() const{ return m_mediaMimeType; }
-    inline void SetMediaMimeType(const Aws::String& value) { m_mediaMimeType = value; }
-    inline void SetMediaMimeType(Aws::String&& value) { m_mediaMimeType = std::move(value); }
-    inline void SetMediaMimeType(const char* value) { m_mediaMimeType.assign(value); }
-    inline GetMediaResult& WithMediaMimeType(const Aws::String& value) { SetMediaMimeType(value); return *this;}
-    inline GetMediaResult& WithMediaMimeType(Aws::String&& value) { SetMediaMimeType(std::move(value)); return *this;}
-    inline GetMediaResult& WithMediaMimeType(const char* value) { SetMediaMimeType(value); return *this;}
+    inline const Aws::String& GetMediaMimeType() const { return m_mediaMimeType; }
+    template<typename MediaMimeTypeT = Aws::String>
+    void SetMediaMimeType(MediaMimeTypeT&& value) { m_mediaMimeTypeHasBeenSet = true; m_mediaMimeType = std::forward<MediaMimeTypeT>(value); }
+    template<typename MediaMimeTypeT = Aws::String>
+    GetMediaResult& WithMediaMimeType(MediaMimeTypeT&& value) { SetMediaMimeType(std::forward<MediaMimeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMediaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMediaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMediaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMediaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_mediaBytes;
+    Aws::Utils::ByteBuffer m_mediaBytes{};
+    bool m_mediaBytesHasBeenSet = false;
 
     Aws::String m_mediaMimeType;
+    bool m_mediaMimeTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

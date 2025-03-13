@@ -34,7 +34,7 @@ namespace Model
   class RealTimeInferenceRecommendation
   {
   public:
-    AWS_SAGEMAKER_API RealTimeInferenceRecommendation();
+    AWS_SAGEMAKER_API RealTimeInferenceRecommendation() = default;
     AWS_SAGEMAKER_API RealTimeInferenceRecommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RealTimeInferenceRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>The recommendation ID which uniquely identifies each recommendation.</p>
      */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+    inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
     inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
-    inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
-    inline RealTimeInferenceRecommendation& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-    inline RealTimeInferenceRecommendation& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-    inline RealTimeInferenceRecommendation& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    template<typename RecommendationIdT = Aws::String>
+    void SetRecommendationId(RecommendationIdT&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::forward<RecommendationIdT>(value); }
+    template<typename RecommendationIdT = Aws::String>
+    RealTimeInferenceRecommendation& WithRecommendationId(RecommendationIdT&& value) { SetRecommendationId(std::forward<RecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The recommended instance type for Real-Time Inference.</p>
      */
-    inline const ProductionVariantInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline ProductionVariantInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const ProductionVariantInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(ProductionVariantInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline RealTimeInferenceRecommendation& WithInstanceType(const ProductionVariantInstanceType& value) { SetInstanceType(value); return *this;}
-    inline RealTimeInferenceRecommendation& WithInstanceType(ProductionVariantInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(ProductionVariantInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline RealTimeInferenceRecommendation& WithInstanceType(ProductionVariantInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -71,26 +67,23 @@ namespace Model
      * <p>The recommended environment variables to set in the model container for
      * Real-Time Inference.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline RealTimeInferenceRecommendation& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
-    inline RealTimeInferenceRecommendation& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline RealTimeInferenceRecommendation& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
-    inline RealTimeInferenceRecommendation& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline RealTimeInferenceRecommendation& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline RealTimeInferenceRecommendation& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
-    inline RealTimeInferenceRecommendation& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline RealTimeInferenceRecommendation& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline RealTimeInferenceRecommendation& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    RealTimeInferenceRecommendation& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentKeyT = Aws::String, typename EnvironmentValueT = Aws::String>
+    RealTimeInferenceRecommendation& AddEnvironment(EnvironmentKeyT&& key, EnvironmentValueT&& value) {
+      m_environmentHasBeenSet = true; m_environment.emplace(std::forward<EnvironmentKeyT>(key), std::forward<EnvironmentValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_recommendationId;
     bool m_recommendationIdHasBeenSet = false;
 
-    ProductionVariantInstanceType m_instanceType;
+    ProductionVariantInstanceType m_instanceType{ProductionVariantInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;

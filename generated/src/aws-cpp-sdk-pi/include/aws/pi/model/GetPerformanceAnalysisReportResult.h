@@ -28,7 +28,7 @@ namespace Model
   class GetPerformanceAnalysisReportResult
   {
   public:
-    AWS_PI_API GetPerformanceAnalysisReportResult();
+    AWS_PI_API GetPerformanceAnalysisReportResult() = default;
     AWS_PI_API GetPerformanceAnalysisReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PI_API GetPerformanceAnalysisReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The summary of the performance analysis report created for a time period.</p>
      */
-    inline const AnalysisReport& GetAnalysisReport() const{ return m_analysisReport; }
-    inline void SetAnalysisReport(const AnalysisReport& value) { m_analysisReport = value; }
-    inline void SetAnalysisReport(AnalysisReport&& value) { m_analysisReport = std::move(value); }
-    inline GetPerformanceAnalysisReportResult& WithAnalysisReport(const AnalysisReport& value) { SetAnalysisReport(value); return *this;}
-    inline GetPerformanceAnalysisReportResult& WithAnalysisReport(AnalysisReport&& value) { SetAnalysisReport(std::move(value)); return *this;}
+    inline const AnalysisReport& GetAnalysisReport() const { return m_analysisReport; }
+    template<typename AnalysisReportT = AnalysisReport>
+    void SetAnalysisReport(AnalysisReportT&& value) { m_analysisReportHasBeenSet = true; m_analysisReport = std::forward<AnalysisReportT>(value); }
+    template<typename AnalysisReportT = AnalysisReport>
+    GetPerformanceAnalysisReportResult& WithAnalysisReport(AnalysisReportT&& value) { SetAnalysisReport(std::forward<AnalysisReportT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPerformanceAnalysisReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPerformanceAnalysisReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPerformanceAnalysisReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPerformanceAnalysisReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AnalysisReport m_analysisReport;
+    bool m_analysisReportHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

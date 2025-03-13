@@ -30,7 +30,7 @@ namespace Model
   class ListMessageMoveTasksResult
   {
   public:
-    AWS_SQS_API ListMessageMoveTasksResult();
+    AWS_SQS_API ListMessageMoveTasksResult() = default;
     AWS_SQS_API ListMessageMoveTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SQS_API ListMessageMoveTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,41 +39,42 @@ namespace Model
     /**
      * <p>A list of message movement tasks and their attributes.</p>
      */
-    inline const Aws::Vector<ListMessageMoveTasksResultEntry>& GetResults() const{ return m_results; }
-    inline void SetResults(const Aws::Vector<ListMessageMoveTasksResultEntry>& value) { m_results = value; }
-    inline void SetResults(Aws::Vector<ListMessageMoveTasksResultEntry>&& value) { m_results = std::move(value); }
-    inline ListMessageMoveTasksResult& WithResults(const Aws::Vector<ListMessageMoveTasksResultEntry>& value) { SetResults(value); return *this;}
-    inline ListMessageMoveTasksResult& WithResults(Aws::Vector<ListMessageMoveTasksResultEntry>&& value) { SetResults(std::move(value)); return *this;}
-    inline ListMessageMoveTasksResult& AddResults(const ListMessageMoveTasksResultEntry& value) { m_results.push_back(value); return *this; }
-    inline ListMessageMoveTasksResult& AddResults(ListMessageMoveTasksResultEntry&& value) { m_results.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListMessageMoveTasksResultEntry>& GetResults() const { return m_results; }
+    template<typename ResultsT = Aws::Vector<ListMessageMoveTasksResultEntry>>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = Aws::Vector<ListMessageMoveTasksResultEntry>>
+    ListMessageMoveTasksResult& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
+    template<typename ResultsT = ListMessageMoveTasksResultEntry>
+    ListMessageMoveTasksResult& AddResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results.emplace_back(std::forward<ResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMessageMoveTasksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMessageMoveTasksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMessageMoveTasksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMessageMoveTasksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListMessageMoveTasksResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListMessageMoveTasksResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListMessageMoveTasksResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ListMessageMoveTasksResultEntry> m_results;
+    bool m_resultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

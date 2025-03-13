@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateProvisioningArtifactResult::CreateProvisioningArtifactResult() : 
-    m_status(Status::NOT_SET)
-{
-}
-
 CreateProvisioningArtifactResult::CreateProvisioningArtifactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateProvisioningArtifactResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ CreateProvisioningArtifactResult& CreateProvisioningArtifactResult::operator =(c
   if(jsonValue.ValueExists("ProvisioningArtifactDetail"))
   {
     m_provisioningArtifactDetail = jsonValue.GetObject("ProvisioningArtifactDetail");
-
+    m_provisioningArtifactDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Info"))
   {
     Aws::Map<Aws::String, JsonView> infoJsonMap = jsonValue.GetObject("Info").GetAllObjects();
@@ -44,20 +37,20 @@ CreateProvisioningArtifactResult& CreateProvisioningArtifactResult::operator =(c
     {
       m_info[infoItem.first] = infoItem.second.AsString();
     }
+    m_infoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelMaintenanceWindowExecutionRequest::CancelMaintenanceWindowExecutionRequest() : 
-    m_windowExecutionIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelMaintenanceWindowExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

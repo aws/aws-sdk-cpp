@@ -20,16 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-AsyncErrorDetails::AsyncErrorDetails() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 AsyncErrorDetails::AsyncErrorDetails(const XmlNode& xmlNode)
-  : AsyncErrorDetails()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ AsyncErrorDetails& AsyncErrorDetails::operator =(const XmlNode& xmlNode)
     {
       m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
     XmlNode resourceNode = resultNode.FirstChild("Resource");
     if(!resourceNode.IsNull())
     {
       m_resource = Aws::Utils::Xml::DecodeEscapedXmlText(resourceNode.GetText());
       m_resourceHasBeenSet = true;
+       m_resourceHasBeenSet = true;
     }
     XmlNode requestIdNode = resultNode.FirstChild("RequestId");
     if(!requestIdNode.IsNull())
     {
       m_requestId = Aws::Utils::Xml::DecodeEscapedXmlText(requestIdNode.GetText());
       m_requestIdHasBeenSet = true;
+       m_requestIdHasBeenSet = true;
     }
   }
 

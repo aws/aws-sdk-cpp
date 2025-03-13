@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-RegistrationMetadataItem::RegistrationMetadataItem() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 RegistrationMetadataItem::RegistrationMetadataItem(JsonView jsonValue)
-  : RegistrationMetadataItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RegistrationMetadataItem& RegistrationMetadataItem::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

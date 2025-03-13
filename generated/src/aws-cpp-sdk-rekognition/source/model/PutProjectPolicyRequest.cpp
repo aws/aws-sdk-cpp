@@ -12,14 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutProjectPolicyRequest::PutProjectPolicyRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_policyRevisionIdHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false)
-{
-}
-
 Aws::String PutProjectPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

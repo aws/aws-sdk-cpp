@@ -21,7 +21,7 @@ namespace Model
   class DescribeBrandPublishedVersionRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API DescribeBrandPublishedVersionRequest();
+    AWS_QUICKSIGHT_API DescribeBrandPublishedVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account that owns the brand.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline DescribeBrandPublishedVersionRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline DescribeBrandPublishedVersionRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline DescribeBrandPublishedVersionRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    DescribeBrandPublishedVersionRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon QuickSight brand.</p>
      */
-    inline const Aws::String& GetBrandId() const{ return m_brandId; }
+    inline const Aws::String& GetBrandId() const { return m_brandId; }
     inline bool BrandIdHasBeenSet() const { return m_brandIdHasBeenSet; }
-    inline void SetBrandId(const Aws::String& value) { m_brandIdHasBeenSet = true; m_brandId = value; }
-    inline void SetBrandId(Aws::String&& value) { m_brandIdHasBeenSet = true; m_brandId = std::move(value); }
-    inline void SetBrandId(const char* value) { m_brandIdHasBeenSet = true; m_brandId.assign(value); }
-    inline DescribeBrandPublishedVersionRequest& WithBrandId(const Aws::String& value) { SetBrandId(value); return *this;}
-    inline DescribeBrandPublishedVersionRequest& WithBrandId(Aws::String&& value) { SetBrandId(std::move(value)); return *this;}
-    inline DescribeBrandPublishedVersionRequest& WithBrandId(const char* value) { SetBrandId(value); return *this;}
+    template<typename BrandIdT = Aws::String>
+    void SetBrandId(BrandIdT&& value) { m_brandIdHasBeenSet = true; m_brandId = std::forward<BrandIdT>(value); }
+    template<typename BrandIdT = Aws::String>
+    DescribeBrandPublishedVersionRequest& WithBrandId(BrandIdT&& value) { SetBrandId(std::forward<BrandIdT>(value)); return *this;}
     ///@}
   private:
 

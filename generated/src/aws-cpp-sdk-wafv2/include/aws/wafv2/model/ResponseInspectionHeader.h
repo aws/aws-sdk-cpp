@@ -37,7 +37,7 @@ namespace Model
   class ResponseInspectionHeader
   {
   public:
-    AWS_WAFV2_API ResponseInspectionHeader();
+    AWS_WAFV2_API ResponseInspectionHeader() = default;
     AWS_WAFV2_API ResponseInspectionHeader(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API ResponseInspectionHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * including case.</p> <p>JSON example: <code>"Name": [ "RequestResult" ]</code>
      * </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ResponseInspectionHeader& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ResponseInspectionHeader& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ResponseInspectionHeader& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ResponseInspectionHeader& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,15 +66,14 @@ namespace Model
      * "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [
      * "AccountCreated", "Successful account creation" ]</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSuccessValues() const{ return m_successValues; }
+    inline const Aws::Vector<Aws::String>& GetSuccessValues() const { return m_successValues; }
     inline bool SuccessValuesHasBeenSet() const { return m_successValuesHasBeenSet; }
-    inline void SetSuccessValues(const Aws::Vector<Aws::String>& value) { m_successValuesHasBeenSet = true; m_successValues = value; }
-    inline void SetSuccessValues(Aws::Vector<Aws::String>&& value) { m_successValuesHasBeenSet = true; m_successValues = std::move(value); }
-    inline ResponseInspectionHeader& WithSuccessValues(const Aws::Vector<Aws::String>& value) { SetSuccessValues(value); return *this;}
-    inline ResponseInspectionHeader& WithSuccessValues(Aws::Vector<Aws::String>&& value) { SetSuccessValues(std::move(value)); return *this;}
-    inline ResponseInspectionHeader& AddSuccessValues(const Aws::String& value) { m_successValuesHasBeenSet = true; m_successValues.push_back(value); return *this; }
-    inline ResponseInspectionHeader& AddSuccessValues(Aws::String&& value) { m_successValuesHasBeenSet = true; m_successValues.push_back(std::move(value)); return *this; }
-    inline ResponseInspectionHeader& AddSuccessValues(const char* value) { m_successValuesHasBeenSet = true; m_successValues.push_back(value); return *this; }
+    template<typename SuccessValuesT = Aws::Vector<Aws::String>>
+    void SetSuccessValues(SuccessValuesT&& value) { m_successValuesHasBeenSet = true; m_successValues = std::forward<SuccessValuesT>(value); }
+    template<typename SuccessValuesT = Aws::Vector<Aws::String>>
+    ResponseInspectionHeader& WithSuccessValues(SuccessValuesT&& value) { SetSuccessValues(std::forward<SuccessValuesT>(value)); return *this;}
+    template<typename SuccessValuesT = Aws::String>
+    ResponseInspectionHeader& AddSuccessValues(SuccessValuesT&& value) { m_successValuesHasBeenSet = true; m_successValues.emplace_back(std::forward<SuccessValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,15 +85,14 @@ namespace Model
      * "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed"
      * ]</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetFailureValues() const{ return m_failureValues; }
+    inline const Aws::Vector<Aws::String>& GetFailureValues() const { return m_failureValues; }
     inline bool FailureValuesHasBeenSet() const { return m_failureValuesHasBeenSet; }
-    inline void SetFailureValues(const Aws::Vector<Aws::String>& value) { m_failureValuesHasBeenSet = true; m_failureValues = value; }
-    inline void SetFailureValues(Aws::Vector<Aws::String>&& value) { m_failureValuesHasBeenSet = true; m_failureValues = std::move(value); }
-    inline ResponseInspectionHeader& WithFailureValues(const Aws::Vector<Aws::String>& value) { SetFailureValues(value); return *this;}
-    inline ResponseInspectionHeader& WithFailureValues(Aws::Vector<Aws::String>&& value) { SetFailureValues(std::move(value)); return *this;}
-    inline ResponseInspectionHeader& AddFailureValues(const Aws::String& value) { m_failureValuesHasBeenSet = true; m_failureValues.push_back(value); return *this; }
-    inline ResponseInspectionHeader& AddFailureValues(Aws::String&& value) { m_failureValuesHasBeenSet = true; m_failureValues.push_back(std::move(value)); return *this; }
-    inline ResponseInspectionHeader& AddFailureValues(const char* value) { m_failureValuesHasBeenSet = true; m_failureValues.push_back(value); return *this; }
+    template<typename FailureValuesT = Aws::Vector<Aws::String>>
+    void SetFailureValues(FailureValuesT&& value) { m_failureValuesHasBeenSet = true; m_failureValues = std::forward<FailureValuesT>(value); }
+    template<typename FailureValuesT = Aws::Vector<Aws::String>>
+    ResponseInspectionHeader& WithFailureValues(FailureValuesT&& value) { SetFailureValues(std::forward<FailureValuesT>(value)); return *this;}
+    template<typename FailureValuesT = Aws::String>
+    ResponseInspectionHeader& AddFailureValues(FailureValuesT&& value) { m_failureValuesHasBeenSet = true; m_failureValues.emplace_back(std::forward<FailureValuesT>(value)); return *this; }
     ///@}
   private:
 

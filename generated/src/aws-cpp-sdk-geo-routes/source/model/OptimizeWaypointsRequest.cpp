@@ -15,27 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-OptimizeWaypointsRequest::OptimizeWaypointsRequest() : 
-    m_avoidHasBeenSet(false),
-    m_clusteringHasBeenSet(false),
-    m_departureTimeHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationOptionsHasBeenSet(false),
-    m_driverHasBeenSet(false),
-    m_excludeHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_optimizeSequencingFor(WaypointOptimizationSequencingObjective::NOT_SET),
-    m_optimizeSequencingForHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_originOptionsHasBeenSet(false),
-    m_trafficHasBeenSet(false),
-    m_travelMode(WaypointOptimizationTravelMode::NOT_SET),
-    m_travelModeHasBeenSet(false),
-    m_travelModeOptionsHasBeenSet(false),
-    m_waypointsHasBeenSet(false)
-{
-}
-
 Aws::String OptimizeWaypointsRequest::SerializePayload() const
 {
   JsonValue payload;

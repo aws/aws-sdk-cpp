@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetHealthEventRequest::GetHealthEventRequest() : 
-    m_monitorNameHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_linkedAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String GetHealthEventRequest::SerializePayload() const
 {
   return {};

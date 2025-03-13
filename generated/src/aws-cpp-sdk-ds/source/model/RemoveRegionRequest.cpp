@@ -12,11 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveRegionRequest::RemoveRegionRequest() : 
-    m_directoryIdHasBeenSet(false)
-{
-}
-
 Aws::String RemoveRegionRequest::SerializePayload() const
 {
   JsonValue payload;

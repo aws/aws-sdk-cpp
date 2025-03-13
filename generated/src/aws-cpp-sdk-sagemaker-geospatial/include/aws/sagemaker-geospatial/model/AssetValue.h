@@ -31,7 +31,7 @@ namespace Model
   class AssetValue
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API AssetValue();
+    AWS_SAGEMAKERGEOSPATIAL_API AssetValue() = default;
     AWS_SAGEMAKERGEOSPATIAL_API AssetValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API AssetValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Link to the asset object.</p>
      */
-    inline const Aws::String& GetHref() const{ return m_href; }
+    inline const Aws::String& GetHref() const { return m_href; }
     inline bool HrefHasBeenSet() const { return m_hrefHasBeenSet; }
-    inline void SetHref(const Aws::String& value) { m_hrefHasBeenSet = true; m_href = value; }
-    inline void SetHref(Aws::String&& value) { m_hrefHasBeenSet = true; m_href = std::move(value); }
-    inline void SetHref(const char* value) { m_hrefHasBeenSet = true; m_href.assign(value); }
-    inline AssetValue& WithHref(const Aws::String& value) { SetHref(value); return *this;}
-    inline AssetValue& WithHref(Aws::String&& value) { SetHref(std::move(value)); return *this;}
-    inline AssetValue& WithHref(const char* value) { SetHref(value); return *this;}
+    template<typename HrefT = Aws::String>
+    void SetHref(HrefT&& value) { m_hrefHasBeenSet = true; m_href = std::forward<HrefT>(value); }
+    template<typename HrefT = Aws::String>
+    AssetValue& WithHref(HrefT&& value) { SetHref(std::forward<HrefT>(value)); return *this;}
     ///@}
   private:
 

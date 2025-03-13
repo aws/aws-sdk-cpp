@@ -26,7 +26,7 @@ namespace Model
   class PutEvaluationsRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API PutEvaluationsRequest();
+    AWS_CONFIGSERVICE_API PutEvaluationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,14 @@ namespace Model
      * an Amazon Web Services resource and indicates whether it complies with the
      * Config rule that invokes the Lambda function.</p>
      */
-    inline const Aws::Vector<Evaluation>& GetEvaluations() const{ return m_evaluations; }
+    inline const Aws::Vector<Evaluation>& GetEvaluations() const { return m_evaluations; }
     inline bool EvaluationsHasBeenSet() const { return m_evaluationsHasBeenSet; }
-    inline void SetEvaluations(const Aws::Vector<Evaluation>& value) { m_evaluationsHasBeenSet = true; m_evaluations = value; }
-    inline void SetEvaluations(Aws::Vector<Evaluation>&& value) { m_evaluationsHasBeenSet = true; m_evaluations = std::move(value); }
-    inline PutEvaluationsRequest& WithEvaluations(const Aws::Vector<Evaluation>& value) { SetEvaluations(value); return *this;}
-    inline PutEvaluationsRequest& WithEvaluations(Aws::Vector<Evaluation>&& value) { SetEvaluations(std::move(value)); return *this;}
-    inline PutEvaluationsRequest& AddEvaluations(const Evaluation& value) { m_evaluationsHasBeenSet = true; m_evaluations.push_back(value); return *this; }
-    inline PutEvaluationsRequest& AddEvaluations(Evaluation&& value) { m_evaluationsHasBeenSet = true; m_evaluations.push_back(std::move(value)); return *this; }
+    template<typename EvaluationsT = Aws::Vector<Evaluation>>
+    void SetEvaluations(EvaluationsT&& value) { m_evaluationsHasBeenSet = true; m_evaluations = std::forward<EvaluationsT>(value); }
+    template<typename EvaluationsT = Aws::Vector<Evaluation>>
+    PutEvaluationsRequest& WithEvaluations(EvaluationsT&& value) { SetEvaluations(std::forward<EvaluationsT>(value)); return *this;}
+    template<typename EvaluationsT = Evaluation>
+    PutEvaluationsRequest& AddEvaluations(EvaluationsT&& value) { m_evaluationsHasBeenSet = true; m_evaluations.emplace_back(std::forward<EvaluationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,12 @@ namespace Model
      * <p>An encrypted token that associates an evaluation with an Config rule.
      * Identifies the rule and the event that triggered the evaluation.</p>
      */
-    inline const Aws::String& GetResultToken() const{ return m_resultToken; }
+    inline const Aws::String& GetResultToken() const { return m_resultToken; }
     inline bool ResultTokenHasBeenSet() const { return m_resultTokenHasBeenSet; }
-    inline void SetResultToken(const Aws::String& value) { m_resultTokenHasBeenSet = true; m_resultToken = value; }
-    inline void SetResultToken(Aws::String&& value) { m_resultTokenHasBeenSet = true; m_resultToken = std::move(value); }
-    inline void SetResultToken(const char* value) { m_resultTokenHasBeenSet = true; m_resultToken.assign(value); }
-    inline PutEvaluationsRequest& WithResultToken(const Aws::String& value) { SetResultToken(value); return *this;}
-    inline PutEvaluationsRequest& WithResultToken(Aws::String&& value) { SetResultToken(std::move(value)); return *this;}
-    inline PutEvaluationsRequest& WithResultToken(const char* value) { SetResultToken(value); return *this;}
+    template<typename ResultTokenT = Aws::String>
+    void SetResultToken(ResultTokenT&& value) { m_resultTokenHasBeenSet = true; m_resultToken = std::forward<ResultTokenT>(value); }
+    template<typename ResultTokenT = Aws::String>
+    PutEvaluationsRequest& WithResultToken(ResultTokenT&& value) { SetResultToken(std::forward<ResultTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +78,7 @@ namespace Model
      * the <code>ResultToken</code> parameter, but the value cannot be null.</p>
      * 
      */
-    inline bool GetTestMode() const{ return m_testMode; }
+    inline bool GetTestMode() const { return m_testMode; }
     inline bool TestModeHasBeenSet() const { return m_testModeHasBeenSet; }
     inline void SetTestMode(bool value) { m_testModeHasBeenSet = true; m_testMode = value; }
     inline PutEvaluationsRequest& WithTestMode(bool value) { SetTestMode(value); return *this;}
@@ -93,7 +91,7 @@ namespace Model
     Aws::String m_resultToken;
     bool m_resultTokenHasBeenSet = false;
 
-    bool m_testMode;
+    bool m_testMode{false};
     bool m_testModeHasBeenSet = false;
   };
 

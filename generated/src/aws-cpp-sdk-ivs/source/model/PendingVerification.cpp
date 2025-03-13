@@ -18,13 +18,7 @@ namespace IVS
 namespace Model
 {
 
-PendingVerification::PendingVerification() : 
-    m_exceptionMessageHasBeenSet(false)
-{
-}
-
 PendingVerification::PendingVerification(JsonView jsonValue)
-  : PendingVerification()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PendingVerification& PendingVerification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("exceptionMessage"))
   {
     m_exceptionMessage = jsonValue.GetString("exceptionMessage");
-
     m_exceptionMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

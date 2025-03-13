@@ -18,17 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-Emv2000Attributes::Emv2000Attributes() : 
-    m_majorKeyDerivationMode(MajorKeyDerivationMode::NOT_SET),
-    m_majorKeyDerivationModeHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_applicationTransactionCounterHasBeenSet(false)
-{
-}
-
 Emv2000Attributes::Emv2000Attributes(JsonView jsonValue)
-  : Emv2000Attributes()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Emv2000Attributes& Emv2000Attributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MajorKeyDerivationMode"))
   {
     m_majorKeyDerivationMode = MajorKeyDerivationModeMapper::GetMajorKeyDerivationModeForName(jsonValue.GetString("MajorKeyDerivationMode"));
-
     m_majorKeyDerivationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
     m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
-
     m_primaryAccountNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PanSequenceNumber"))
   {
     m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
     m_panSequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationTransactionCounter"))
   {
     m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
-
     m_applicationTransactionCounterHasBeenSet = true;
   }
-
   return *this;
 }
 

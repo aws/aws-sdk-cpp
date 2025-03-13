@@ -18,22 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-HlsMediaStoreSettings::HlsMediaStoreSettings() : 
-    m_connectionRetryInterval(0),
-    m_connectionRetryIntervalHasBeenSet(false),
-    m_filecacheDuration(0),
-    m_filecacheDurationHasBeenSet(false),
-    m_mediaStoreStorageClass(HlsMediaStoreStorageClass::NOT_SET),
-    m_mediaStoreStorageClassHasBeenSet(false),
-    m_numRetries(0),
-    m_numRetriesHasBeenSet(false),
-    m_restartDelay(0),
-    m_restartDelayHasBeenSet(false)
-{
-}
-
 HlsMediaStoreSettings::HlsMediaStoreSettings(JsonView jsonValue)
-  : HlsMediaStoreSettings()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ HlsMediaStoreSettings& HlsMediaStoreSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectionRetryInterval"))
   {
     m_connectionRetryInterval = jsonValue.GetInteger("connectionRetryInterval");
-
     m_connectionRetryIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filecacheDuration"))
   {
     m_filecacheDuration = jsonValue.GetInteger("filecacheDuration");
-
     m_filecacheDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaStoreStorageClass"))
   {
     m_mediaStoreStorageClass = HlsMediaStoreStorageClassMapper::GetHlsMediaStoreStorageClassForName(jsonValue.GetString("mediaStoreStorageClass"));
-
     m_mediaStoreStorageClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numRetries"))
   {
     m_numRetries = jsonValue.GetInteger("numRetries");
-
     m_numRetriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("restartDelay"))
   {
     m_restartDelay = jsonValue.GetInteger("restartDelay");
-
     m_restartDelayHasBeenSet = true;
   }
-
   return *this;
 }
 

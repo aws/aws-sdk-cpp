@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayConnectPeerConfiguration::TransitGatewayConnectPeerConfiguration() : 
-    m_transitGatewayAddressHasBeenSet(false),
-    m_peerAddressHasBeenSet(false),
-    m_insideCidrBlocksHasBeenSet(false),
-    m_protocol(ProtocolValue::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_bgpConfigurationsHasBeenSet(false)
-{
-}
-
 TransitGatewayConnectPeerConfiguration::TransitGatewayConnectPeerConfiguration(const XmlNode& xmlNode)
-  : TransitGatewayConnectPeerConfiguration()
 {
   *this = xmlNode;
 }
@@ -47,42 +36,47 @@ TransitGatewayConnectPeerConfiguration& TransitGatewayConnectPeerConfiguration::
     {
       m_transitGatewayAddress = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayAddressNode.GetText());
       m_transitGatewayAddressHasBeenSet = true;
+       m_transitGatewayAddressHasBeenSet = true;
     }
     XmlNode peerAddressNode = resultNode.FirstChild("peerAddress");
     if(!peerAddressNode.IsNull())
     {
       m_peerAddress = Aws::Utils::Xml::DecodeEscapedXmlText(peerAddressNode.GetText());
       m_peerAddressHasBeenSet = true;
+       m_peerAddressHasBeenSet = true;
     }
     XmlNode insideCidrBlocksNode = resultNode.FirstChild("insideCidrBlocks");
     if(!insideCidrBlocksNode.IsNull())
     {
       XmlNode insideCidrBlocksMember = insideCidrBlocksNode.FirstChild("item");
+      m_insideCidrBlocksHasBeenSet = !insideCidrBlocksMember.IsNull();
       while(!insideCidrBlocksMember.IsNull())
       {
         m_insideCidrBlocks.push_back(insideCidrBlocksMember.GetText());
         insideCidrBlocksMember = insideCidrBlocksMember.NextNode("item");
       }
 
-      m_insideCidrBlocksHasBeenSet = true;
+       m_insideCidrBlocksHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolValueMapper::GetProtocolValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = ProtocolValueMapper::GetProtocolValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode bgpConfigurationsNode = resultNode.FirstChild("bgpConfigurations");
     if(!bgpConfigurationsNode.IsNull())
     {
       XmlNode bgpConfigurationsMember = bgpConfigurationsNode.FirstChild("item");
+      m_bgpConfigurationsHasBeenSet = !bgpConfigurationsMember.IsNull();
       while(!bgpConfigurationsMember.IsNull())
       {
         m_bgpConfigurations.push_back(bgpConfigurationsMember);
         bgpConfigurationsMember = bgpConfigurationsMember.NextNode("item");
       }
 
-      m_bgpConfigurationsHasBeenSet = true;
+       m_bgpConfigurationsHasBeenSet = true;
     }
   }
 

@@ -40,7 +40,7 @@ namespace Model
   class ServerSideEncryptionRule
   {
   public:
-    AWS_S3_API ServerSideEncryptionRule();
+    AWS_S3_API ServerSideEncryptionRule() = default;
     AWS_S3_API ServerSideEncryptionRule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API ServerSideEncryptionRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,12 +53,12 @@ namespace Model
      * bucket. If a PUT Object request doesn't specify any server-side encryption, this
      * default encryption will be applied.</p>
      */
-    inline const ServerSideEncryptionByDefault& GetApplyServerSideEncryptionByDefault() const{ return m_applyServerSideEncryptionByDefault; }
+    inline const ServerSideEncryptionByDefault& GetApplyServerSideEncryptionByDefault() const { return m_applyServerSideEncryptionByDefault; }
     inline bool ApplyServerSideEncryptionByDefaultHasBeenSet() const { return m_applyServerSideEncryptionByDefaultHasBeenSet; }
-    inline void SetApplyServerSideEncryptionByDefault(const ServerSideEncryptionByDefault& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = value; }
-    inline void SetApplyServerSideEncryptionByDefault(ServerSideEncryptionByDefault&& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = std::move(value); }
-    inline ServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(const ServerSideEncryptionByDefault& value) { SetApplyServerSideEncryptionByDefault(value); return *this;}
-    inline ServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(ServerSideEncryptionByDefault&& value) { SetApplyServerSideEncryptionByDefault(std::move(value)); return *this;}
+    template<typename ApplyServerSideEncryptionByDefaultT = ServerSideEncryptionByDefault>
+    void SetApplyServerSideEncryptionByDefault(ApplyServerSideEncryptionByDefaultT&& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = std::forward<ApplyServerSideEncryptionByDefaultT>(value); }
+    template<typename ApplyServerSideEncryptionByDefaultT = ServerSideEncryptionByDefault>
+    ServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(ApplyServerSideEncryptionByDefaultT&& value) { SetApplyServerSideEncryptionByDefault(std::forward<ApplyServerSideEncryptionByDefaultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,7 +86,7 @@ namespace Model
      * import jobs</a>. In this case, Amazon S3 makes a call to KMS every time a copy
      * request is made for a KMS-encrypted object.</p> </li> </ul> 
      */
-    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+    inline bool GetBucketKeyEnabled() const { return m_bucketKeyEnabled; }
     inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
     inline ServerSideEncryptionRule& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
@@ -96,7 +96,7 @@ namespace Model
     ServerSideEncryptionByDefault m_applyServerSideEncryptionByDefault;
     bool m_applyServerSideEncryptionByDefaultHasBeenSet = false;
 
-    bool m_bucketKeyEnabled;
+    bool m_bucketKeyEnabled{false};
     bool m_bucketKeyEnabledHasBeenSet = false;
   };
 

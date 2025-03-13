@@ -12,12 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AdminDeleteUserRequest::AdminDeleteUserRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 Aws::String AdminDeleteUserRequest::SerializePayload() const
 {
   JsonValue payload;

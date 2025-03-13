@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartSuiteRunResult::StartSuiteRunResult()
-{
-}
-
 StartSuiteRunResult::StartSuiteRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ StartSuiteRunResult& StartSuiteRunResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("suiteRunId"))
   {
     m_suiteRunId = jsonValue.GetString("suiteRunId");
-
+    m_suiteRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suiteRunArn"))
   {
     m_suiteRunArn = jsonValue.GetString("suiteRunArn");
-
+    m_suiteRunArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
+    m_endpointHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

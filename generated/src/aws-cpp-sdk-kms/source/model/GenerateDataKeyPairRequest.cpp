@@ -12,18 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateDataKeyPairRequest::GenerateDataKeyPairRequest() : 
-    m_encryptionContextHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_keyPairSpec(DataKeyPairSpec::NOT_SET),
-    m_keyPairSpecHasBeenSet(false),
-    m_grantTokensHasBeenSet(false),
-    m_recipientHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GenerateDataKeyPairRequest::SerializePayload() const
 {
   JsonValue payload;

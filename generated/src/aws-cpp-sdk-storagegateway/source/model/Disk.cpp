@@ -18,21 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-Disk::Disk() : 
-    m_diskIdHasBeenSet(false),
-    m_diskPathHasBeenSet(false),
-    m_diskNodeHasBeenSet(false),
-    m_diskStatusHasBeenSet(false),
-    m_diskSizeInBytes(0),
-    m_diskSizeInBytesHasBeenSet(false),
-    m_diskAllocationTypeHasBeenSet(false),
-    m_diskAllocationResourceHasBeenSet(false),
-    m_diskAttributeListHasBeenSet(false)
-{
-}
-
 Disk::Disk(JsonView jsonValue)
-  : Disk()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ Disk& Disk::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DiskId"))
   {
     m_diskId = jsonValue.GetString("DiskId");
-
     m_diskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskPath"))
   {
     m_diskPath = jsonValue.GetString("DiskPath");
-
     m_diskPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskNode"))
   {
     m_diskNode = jsonValue.GetString("DiskNode");
-
     m_diskNodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskStatus"))
   {
     m_diskStatus = jsonValue.GetString("DiskStatus");
-
     m_diskStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskSizeInBytes"))
   {
     m_diskSizeInBytes = jsonValue.GetInt64("DiskSizeInBytes");
-
     m_diskSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskAllocationType"))
   {
     m_diskAllocationType = jsonValue.GetString("DiskAllocationType");
-
     m_diskAllocationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskAllocationResource"))
   {
     m_diskAllocationResource = jsonValue.GetString("DiskAllocationResource");
-
     m_diskAllocationResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskAttributeList"))
   {
     Aws::Utils::Array<JsonView> diskAttributeListJsonList = jsonValue.GetArray("DiskAttributeList");
@@ -97,7 +69,6 @@ Disk& Disk::operator =(JsonView jsonValue)
     }
     m_diskAttributeListHasBeenSet = true;
   }
-
   return *this;
 }
 

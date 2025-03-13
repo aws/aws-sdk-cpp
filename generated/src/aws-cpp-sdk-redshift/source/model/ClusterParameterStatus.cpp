@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterParameterStatus::ClusterParameterStatus() : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_parameterApplyErrorDescriptionHasBeenSet(false)
-{
-}
-
 ClusterParameterStatus::ClusterParameterStatus(const XmlNode& xmlNode)
-  : ClusterParameterStatus()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ClusterParameterStatus& ClusterParameterStatus::operator =(const XmlNode& xmlNod
     {
       m_parameterName = Aws::Utils::Xml::DecodeEscapedXmlText(parameterNameNode.GetText());
       m_parameterNameHasBeenSet = true;
+       m_parameterNameHasBeenSet = true;
     }
     XmlNode parameterApplyStatusNode = resultNode.FirstChild("ParameterApplyStatus");
     if(!parameterApplyStatusNode.IsNull())
     {
       m_parameterApplyStatus = Aws::Utils::Xml::DecodeEscapedXmlText(parameterApplyStatusNode.GetText());
       m_parameterApplyStatusHasBeenSet = true;
+       m_parameterApplyStatusHasBeenSet = true;
     }
     XmlNode parameterApplyErrorDescriptionNode = resultNode.FirstChild("ParameterApplyErrorDescription");
     if(!parameterApplyErrorDescriptionNode.IsNull())
     {
       m_parameterApplyErrorDescription = Aws::Utils::Xml::DecodeEscapedXmlText(parameterApplyErrorDescriptionNode.GetText());
       m_parameterApplyErrorDescriptionHasBeenSet = true;
+       m_parameterApplyErrorDescriptionHasBeenSet = true;
     }
   }
 

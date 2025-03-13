@@ -23,7 +23,7 @@ namespace Model
   class UpdateConnectionRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API UpdateConnectionRequest();
+    AWS_DATAZONE_API UpdateConnectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,66 +38,60 @@ namespace Model
     /**
      * <p>The location where a connection is to be updated.</p>
      */
-    inline const AwsLocation& GetAwsLocation() const{ return m_awsLocation; }
+    inline const AwsLocation& GetAwsLocation() const { return m_awsLocation; }
     inline bool AwsLocationHasBeenSet() const { return m_awsLocationHasBeenSet; }
-    inline void SetAwsLocation(const AwsLocation& value) { m_awsLocationHasBeenSet = true; m_awsLocation = value; }
-    inline void SetAwsLocation(AwsLocation&& value) { m_awsLocationHasBeenSet = true; m_awsLocation = std::move(value); }
-    inline UpdateConnectionRequest& WithAwsLocation(const AwsLocation& value) { SetAwsLocation(value); return *this;}
-    inline UpdateConnectionRequest& WithAwsLocation(AwsLocation&& value) { SetAwsLocation(std::move(value)); return *this;}
+    template<typename AwsLocationT = AwsLocation>
+    void SetAwsLocation(AwsLocationT&& value) { m_awsLocationHasBeenSet = true; m_awsLocation = std::forward<AwsLocationT>(value); }
+    template<typename AwsLocationT = AwsLocation>
+    UpdateConnectionRequest& WithAwsLocation(AwsLocationT&& value) { SetAwsLocation(std::forward<AwsLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of a connection.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateConnectionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateConnectionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateConnectionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateConnectionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the domain where a connection is to be updated.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline UpdateConnectionRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline UpdateConnectionRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline UpdateConnectionRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    UpdateConnectionRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the connection to be updated.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline UpdateConnectionRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline UpdateConnectionRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline UpdateConnectionRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    UpdateConnectionRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connection props.</p>
      */
-    inline const ConnectionPropertiesPatch& GetProps() const{ return m_props; }
+    inline const ConnectionPropertiesPatch& GetProps() const { return m_props; }
     inline bool PropsHasBeenSet() const { return m_propsHasBeenSet; }
-    inline void SetProps(const ConnectionPropertiesPatch& value) { m_propsHasBeenSet = true; m_props = value; }
-    inline void SetProps(ConnectionPropertiesPatch&& value) { m_propsHasBeenSet = true; m_props = std::move(value); }
-    inline UpdateConnectionRequest& WithProps(const ConnectionPropertiesPatch& value) { SetProps(value); return *this;}
-    inline UpdateConnectionRequest& WithProps(ConnectionPropertiesPatch&& value) { SetProps(std::move(value)); return *this;}
+    template<typename PropsT = ConnectionPropertiesPatch>
+    void SetProps(PropsT&& value) { m_propsHasBeenSet = true; m_props = std::forward<PropsT>(value); }
+    template<typename PropsT = ConnectionPropertiesPatch>
+    UpdateConnectionRequest& WithProps(PropsT&& value) { SetProps(std::forward<PropsT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamGroupDetails::AwsIamGroupDetails() : 
-    m_attachedManagedPoliciesHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_groupPolicyListHasBeenSet(false),
-    m_pathHasBeenSet(false)
-{
-}
-
 AwsIamGroupDetails::AwsIamGroupDetails(JsonView jsonValue)
-  : AwsIamGroupDetails()
 {
   *this = jsonValue;
 }
@@ -45,28 +34,21 @@ AwsIamGroupDetails& AwsIamGroupDetails::operator =(JsonView jsonValue)
     }
     m_attachedManagedPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetString("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupPolicyList"))
   {
     Aws::Utils::Array<JsonView> groupPolicyListJsonList = jsonValue.GetArray("GroupPolicyList");
@@ -76,14 +58,11 @@ AwsIamGroupDetails& AwsIamGroupDetails::operator =(JsonView jsonValue)
     }
     m_groupPolicyListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

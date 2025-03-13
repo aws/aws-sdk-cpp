@@ -12,15 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetupInstanceHttpsRequest::SetupInstanceHttpsRequest() : 
-    m_instanceNameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_domainNamesHasBeenSet(false),
-    m_certificateProvider(CertificateProvider::NOT_SET),
-    m_certificateProviderHasBeenSet(false)
-{
-}
-
 Aws::String SetupInstanceHttpsRequest::SerializePayload() const
 {
   JsonValue payload;

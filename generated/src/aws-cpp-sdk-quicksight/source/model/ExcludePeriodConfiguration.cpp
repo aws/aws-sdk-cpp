@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ExcludePeriodConfiguration::ExcludePeriodConfiguration() : 
-    m_amount(0),
-    m_amountHasBeenSet(false),
-    m_granularity(TimeGranularity::NOT_SET),
-    m_granularityHasBeenSet(false),
-    m_status(WidgetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ExcludePeriodConfiguration::ExcludePeriodConfiguration(JsonView jsonValue)
-  : ExcludePeriodConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ExcludePeriodConfiguration& ExcludePeriodConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("Amount"))
   {
     m_amount = jsonValue.GetInteger("Amount");
-
     m_amountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Granularity"))
   {
     m_granularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("Granularity"));
-
     m_granularityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = WidgetStatusMapper::GetWidgetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

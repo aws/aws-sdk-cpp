@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteMatrixVehicleLicensePlate::RouteMatrixVehicleLicensePlate() : 
-    m_lastCharacterHasBeenSet(false)
-{
-}
-
 RouteMatrixVehicleLicensePlate::RouteMatrixVehicleLicensePlate(JsonView jsonValue)
-  : RouteMatrixVehicleLicensePlate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RouteMatrixVehicleLicensePlate& RouteMatrixVehicleLicensePlate::operator =(JsonV
   if(jsonValue.ValueExists("LastCharacter"))
   {
     m_lastCharacter = jsonValue.GetString("LastCharacter");
-
     m_lastCharacterHasBeenSet = true;
   }
-
   return *this;
 }
 

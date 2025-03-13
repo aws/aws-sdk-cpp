@@ -32,7 +32,7 @@ namespace Model
   class RouteTransponder
   {
   public:
-    AWS_GEOROUTES_API RouteTransponder();
+    AWS_GEOROUTES_API RouteTransponder() = default;
     AWS_GEOROUTES_API RouteTransponder(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteTransponder& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Names of the toll system collecting the toll.</p>
      */
-    inline const Aws::String& GetSystemName() const{ return m_systemName; }
+    inline const Aws::String& GetSystemName() const { return m_systemName; }
     inline bool SystemNameHasBeenSet() const { return m_systemNameHasBeenSet; }
-    inline void SetSystemName(const Aws::String& value) { m_systemNameHasBeenSet = true; m_systemName = value; }
-    inline void SetSystemName(Aws::String&& value) { m_systemNameHasBeenSet = true; m_systemName = std::move(value); }
-    inline void SetSystemName(const char* value) { m_systemNameHasBeenSet = true; m_systemName.assign(value); }
-    inline RouteTransponder& WithSystemName(const Aws::String& value) { SetSystemName(value); return *this;}
-    inline RouteTransponder& WithSystemName(Aws::String&& value) { SetSystemName(std::move(value)); return *this;}
-    inline RouteTransponder& WithSystemName(const char* value) { SetSystemName(value); return *this;}
+    template<typename SystemNameT = Aws::String>
+    void SetSystemName(SystemNameT&& value) { m_systemNameHasBeenSet = true; m_systemName = std::forward<SystemNameT>(value); }
+    template<typename SystemNameT = Aws::String>
+    RouteTransponder& WithSystemName(SystemNameT&& value) { SetSystemName(std::forward<SystemNameT>(value)); return *this;}
     ///@}
   private:
 

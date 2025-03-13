@@ -20,15 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-RulePriorityPair::RulePriorityPair() : 
-    m_ruleArnHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
-{
-}
-
 RulePriorityPair::RulePriorityPair(const XmlNode& xmlNode)
-  : RulePriorityPair()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ RulePriorityPair& RulePriorityPair::operator =(const XmlNode& xmlNode)
     {
       m_ruleArn = Aws::Utils::Xml::DecodeEscapedXmlText(ruleArnNode.GetText());
       m_ruleArnHasBeenSet = true;
+       m_ruleArnHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("Priority");
     if(!priorityNode.IsNull())
     {
       m_priority = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText()).c_str()).c_str());
       m_priorityHasBeenSet = true;
+       m_priorityHasBeenSet = true;
     }
   }
 

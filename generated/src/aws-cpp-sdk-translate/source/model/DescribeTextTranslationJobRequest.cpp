@@ -12,11 +12,6 @@ using namespace Aws::Translate::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTextTranslationJobRequest::DescribeTextTranslationJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTextTranslationJobRequest::SerializePayload() const
 {
   JsonValue payload;

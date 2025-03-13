@@ -18,14 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-Relationship::Relationship() : 
-    m_fromHasBeenSet(false),
-    m_toHasBeenSet(false)
-{
-}
-
 Relationship::Relationship(JsonView jsonValue)
-  : Relationship()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Relationship& Relationship::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetString("From");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("To"))
   {
     m_to = jsonValue.GetString("To");
-
     m_toHasBeenSet = true;
   }
-
   return *this;
 }
 

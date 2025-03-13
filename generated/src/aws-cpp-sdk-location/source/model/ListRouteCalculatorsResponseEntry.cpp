@@ -18,17 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-ListRouteCalculatorsResponseEntry::ListRouteCalculatorsResponseEntry() : 
-    m_calculatorNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 ListRouteCalculatorsResponseEntry::ListRouteCalculatorsResponseEntry(JsonView jsonValue)
-  : ListRouteCalculatorsResponseEntry()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ListRouteCalculatorsResponseEntry& ListRouteCalculatorsResponseEntry::operator =
   if(jsonValue.ValueExists("CalculatorName"))
   {
     m_calculatorName = jsonValue.GetString("CalculatorName");
-
     m_calculatorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetString("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetString("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetString("UpdateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

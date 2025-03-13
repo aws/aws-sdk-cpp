@@ -28,35 +28,35 @@ namespace Model
   class DescribeApplicationVersionResult
   {
   public:
-    AWS_KINESISANALYTICSV2_API DescribeApplicationVersionResult();
+    AWS_KINESISANALYTICSV2_API DescribeApplicationVersionResult() = default;
     AWS_KINESISANALYTICSV2_API DescribeApplicationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISANALYTICSV2_API DescribeApplicationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const ApplicationDetail& GetApplicationVersionDetail() const{ return m_applicationVersionDetail; }
-    inline void SetApplicationVersionDetail(const ApplicationDetail& value) { m_applicationVersionDetail = value; }
-    inline void SetApplicationVersionDetail(ApplicationDetail&& value) { m_applicationVersionDetail = std::move(value); }
-    inline DescribeApplicationVersionResult& WithApplicationVersionDetail(const ApplicationDetail& value) { SetApplicationVersionDetail(value); return *this;}
-    inline DescribeApplicationVersionResult& WithApplicationVersionDetail(ApplicationDetail&& value) { SetApplicationVersionDetail(std::move(value)); return *this;}
+    inline const ApplicationDetail& GetApplicationVersionDetail() const { return m_applicationVersionDetail; }
+    template<typename ApplicationVersionDetailT = ApplicationDetail>
+    void SetApplicationVersionDetail(ApplicationVersionDetailT&& value) { m_applicationVersionDetailHasBeenSet = true; m_applicationVersionDetail = std::forward<ApplicationVersionDetailT>(value); }
+    template<typename ApplicationVersionDetailT = ApplicationDetail>
+    DescribeApplicationVersionResult& WithApplicationVersionDetail(ApplicationVersionDetailT&& value) { SetApplicationVersionDetail(std::forward<ApplicationVersionDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeApplicationVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeApplicationVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeApplicationVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeApplicationVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApplicationDetail m_applicationVersionDetail;
+    bool m_applicationVersionDetailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

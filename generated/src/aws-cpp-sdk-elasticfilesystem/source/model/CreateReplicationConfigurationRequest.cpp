@@ -12,12 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateReplicationConfigurationRequest::CreateReplicationConfigurationRequest() : 
-    m_sourceFileSystemIdHasBeenSet(false),
-    m_destinationsHasBeenSet(false)
-{
-}
-
 Aws::String CreateReplicationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

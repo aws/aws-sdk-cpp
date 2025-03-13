@@ -18,15 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-ItemIdentifier::ItemIdentifier() : 
-    m_type(ItemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ItemIdentifier::ItemIdentifier(JsonView jsonValue)
-  : ItemIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ItemIdentifier& ItemIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = ItemTypeMapper::GetItemTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

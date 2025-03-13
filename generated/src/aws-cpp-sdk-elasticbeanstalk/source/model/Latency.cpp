@@ -20,28 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-Latency::Latency() : 
-    m_p999(0.0),
-    m_p999HasBeenSet(false),
-    m_p99(0.0),
-    m_p99HasBeenSet(false),
-    m_p95(0.0),
-    m_p95HasBeenSet(false),
-    m_p90(0.0),
-    m_p90HasBeenSet(false),
-    m_p85(0.0),
-    m_p85HasBeenSet(false),
-    m_p75(0.0),
-    m_p75HasBeenSet(false),
-    m_p50(0.0),
-    m_p50HasBeenSet(false),
-    m_p10(0.0),
-    m_p10HasBeenSet(false)
-{
-}
-
 Latency::Latency(const XmlNode& xmlNode)
-  : Latency()
 {
   *this = xmlNode;
 }
@@ -57,48 +36,56 @@ Latency& Latency::operator =(const XmlNode& xmlNode)
     {
       m_p999 = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(p999Node.GetText()).c_str()).c_str());
       m_p999HasBeenSet = true;
+       m_p999HasBeenSet = true;
     }
     XmlNode p99Node = resultNode.FirstChild("P99");
     if(!p99Node.IsNull())
     {
       m_p99 = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(p99Node.GetText()).c_str()).c_str());
       m_p99HasBeenSet = true;
+       m_p99HasBeenSet = true;
     }
     XmlNode p95Node = resultNode.FirstChild("P95");
     if(!p95Node.IsNull())
     {
       m_p95 = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(p95Node.GetText()).c_str()).c_str());
       m_p95HasBeenSet = true;
+       m_p95HasBeenSet = true;
     }
     XmlNode p90Node = resultNode.FirstChild("P90");
     if(!p90Node.IsNull())
     {
       m_p90 = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(p90Node.GetText()).c_str()).c_str());
       m_p90HasBeenSet = true;
+       m_p90HasBeenSet = true;
     }
     XmlNode p85Node = resultNode.FirstChild("P85");
     if(!p85Node.IsNull())
     {
       m_p85 = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(p85Node.GetText()).c_str()).c_str());
       m_p85HasBeenSet = true;
+       m_p85HasBeenSet = true;
     }
     XmlNode p75Node = resultNode.FirstChild("P75");
     if(!p75Node.IsNull())
     {
       m_p75 = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(p75Node.GetText()).c_str()).c_str());
       m_p75HasBeenSet = true;
+       m_p75HasBeenSet = true;
     }
     XmlNode p50Node = resultNode.FirstChild("P50");
     if(!p50Node.IsNull())
     {
       m_p50 = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(p50Node.GetText()).c_str()).c_str());
       m_p50HasBeenSet = true;
+       m_p50HasBeenSet = true;
     }
     XmlNode p10Node = resultNode.FirstChild("P10");
     if(!p10Node.IsNull())
     {
       m_p10 = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(p10Node.GetText()).c_str()).c_str());
       m_p10HasBeenSet = true;
+       m_p10HasBeenSet = true;
     }
   }
 

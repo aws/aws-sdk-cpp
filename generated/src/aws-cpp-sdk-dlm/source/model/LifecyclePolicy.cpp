@@ -18,25 +18,7 @@ namespace DLM
 namespace Model
 {
 
-LifecyclePolicy::LifecyclePolicy() : 
-    m_policyIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_state(GettablePolicyStateValues::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false),
-    m_policyDetailsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_defaultPolicy(false),
-    m_defaultPolicyHasBeenSet(false)
-{
-}
-
 LifecyclePolicy::LifecyclePolicy(JsonView jsonValue)
-  : LifecyclePolicy()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ LifecyclePolicy& LifecyclePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyId"))
   {
     m_policyId = jsonValue.GetString("PolicyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = GettablePolicyStateValuesMapper::GetGettablePolicyStateValuesForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateCreated"))
   {
     m_dateCreated = jsonValue.GetString("DateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateModified"))
   {
     m_dateModified = jsonValue.GetString("DateModified");
-
     m_dateModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyDetails"))
   {
     m_policyDetails = jsonValue.GetObject("PolicyDetails");
-
     m_policyDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -108,21 +74,16 @@ LifecyclePolicy& LifecyclePolicy::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyArn"))
   {
     m_policyArn = jsonValue.GetString("PolicyArn");
-
     m_policyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultPolicy"))
   {
     m_defaultPolicy = jsonValue.GetBool("DefaultPolicy");
-
     m_defaultPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

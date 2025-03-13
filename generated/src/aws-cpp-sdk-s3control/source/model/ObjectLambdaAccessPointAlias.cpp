@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ObjectLambdaAccessPointAlias::ObjectLambdaAccessPointAlias() : 
-    m_valueHasBeenSet(false),
-    m_status(ObjectLambdaAccessPointAliasStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ObjectLambdaAccessPointAlias::ObjectLambdaAccessPointAlias(const XmlNode& xmlNode)
-  : ObjectLambdaAccessPointAlias()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ ObjectLambdaAccessPointAlias& ObjectLambdaAccessPointAlias::operator =(const Xml
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ObjectLambdaAccessPointAliasStatusMapper::GetObjectLambdaAccessPointAliasStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ObjectLambdaAccessPointAliasStatusMapper::GetObjectLambdaAccessPointAliasStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

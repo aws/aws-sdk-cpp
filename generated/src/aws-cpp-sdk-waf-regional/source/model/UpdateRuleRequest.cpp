@@ -12,13 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRuleRequest::UpdateRuleRequest() : 
-    m_ruleIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false),
-    m_updatesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRuleRequest::SerializePayload() const
 {
   JsonValue payload;

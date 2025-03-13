@@ -12,11 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateDRTLogBucketRequest::DisassociateDRTLogBucketRequest() : 
-    m_logBucketHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateDRTLogBucketRequest::SerializePayload() const
 {
   JsonValue payload;

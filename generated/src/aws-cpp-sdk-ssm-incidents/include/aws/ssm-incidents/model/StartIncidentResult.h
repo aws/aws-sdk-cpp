@@ -27,7 +27,7 @@ namespace Model
   class StartIncidentResult
   {
   public:
-    AWS_SSMINCIDENTS_API StartIncidentResult();
+    AWS_SSMINCIDENTS_API StartIncidentResult() = default;
     AWS_SSMINCIDENTS_API StartIncidentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSMINCIDENTS_API StartIncidentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the newly created incident record.</p>
      */
-    inline const Aws::String& GetIncidentRecordArn() const{ return m_incidentRecordArn; }
-    inline void SetIncidentRecordArn(const Aws::String& value) { m_incidentRecordArn = value; }
-    inline void SetIncidentRecordArn(Aws::String&& value) { m_incidentRecordArn = std::move(value); }
-    inline void SetIncidentRecordArn(const char* value) { m_incidentRecordArn.assign(value); }
-    inline StartIncidentResult& WithIncidentRecordArn(const Aws::String& value) { SetIncidentRecordArn(value); return *this;}
-    inline StartIncidentResult& WithIncidentRecordArn(Aws::String&& value) { SetIncidentRecordArn(std::move(value)); return *this;}
-    inline StartIncidentResult& WithIncidentRecordArn(const char* value) { SetIncidentRecordArn(value); return *this;}
+    inline const Aws::String& GetIncidentRecordArn() const { return m_incidentRecordArn; }
+    template<typename IncidentRecordArnT = Aws::String>
+    void SetIncidentRecordArn(IncidentRecordArnT&& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = std::forward<IncidentRecordArnT>(value); }
+    template<typename IncidentRecordArnT = Aws::String>
+    StartIncidentResult& WithIncidentRecordArn(IncidentRecordArnT&& value) { SetIncidentRecordArn(std::forward<IncidentRecordArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartIncidentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartIncidentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartIncidentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartIncidentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_incidentRecordArn;
+    bool m_incidentRecordArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

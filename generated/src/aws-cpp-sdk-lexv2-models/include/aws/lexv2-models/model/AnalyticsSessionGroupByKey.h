@@ -33,7 +33,7 @@ namespace Model
   class AnalyticsSessionGroupByKey
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsSessionGroupByKey();
+    AWS_LEXMODELSV2_API AnalyticsSessionGroupByKey() = default;
     AWS_LEXMODELSV2_API AnalyticsSessionGroupByKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsSessionGroupByKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The category by which the session analytics were grouped.</p>
      */
-    inline const AnalyticsSessionField& GetName() const{ return m_name; }
+    inline AnalyticsSessionField GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsSessionField& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsSessionField&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsSessionGroupByKey& WithName(const AnalyticsSessionField& value) { SetName(value); return *this;}
-    inline AnalyticsSessionGroupByKey& WithName(AnalyticsSessionField&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsSessionField value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsSessionGroupByKey& WithName(AnalyticsSessionField value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A member of the category by which the session analytics were grouped.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline AnalyticsSessionGroupByKey& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline AnalyticsSessionGroupByKey& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline AnalyticsSessionGroupByKey& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    AnalyticsSessionGroupByKey& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    AnalyticsSessionField m_name;
+    AnalyticsSessionField m_name{AnalyticsSessionField::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

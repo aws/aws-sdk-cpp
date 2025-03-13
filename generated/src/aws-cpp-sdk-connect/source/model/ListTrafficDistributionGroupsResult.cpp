@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTrafficDistributionGroupsResult::ListTrafficDistributionGroupsResult()
-{
-}
-
 ListTrafficDistributionGroupsResult::ListTrafficDistributionGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListTrafficDistributionGroupsResult& ListTrafficDistributionGroupsResult::operat
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrafficDistributionGroupSummaryList"))
   {
     Aws::Utils::Array<JsonView> trafficDistributionGroupSummaryListJsonList = jsonValue.GetArray("TrafficDistributionGroupSummaryList");
@@ -42,14 +37,15 @@ ListTrafficDistributionGroupsResult& ListTrafficDistributionGroupsResult::operat
     {
       m_trafficDistributionGroupSummaryList.push_back(trafficDistributionGroupSummaryListJsonList[trafficDistributionGroupSummaryListIndex].AsObject());
     }
+    m_trafficDistributionGroupSummaryListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

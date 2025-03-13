@@ -32,7 +32,7 @@ namespace Model
   class CapacityUnitsConfiguration
   {
   public:
-    AWS_KENDRARANKING_API CapacityUnitsConfiguration();
+    AWS_KENDRARANKING_API CapacityUnitsConfiguration() = default;
     AWS_KENDRARANKING_API CapacityUnitsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRARANKING_API CapacityUnitsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRARANKING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * extra capacity unit for a rescore execution plan provides 0.01 rescore requests
      * per second. You can add up to 1000 extra capacity units.</p>
      */
-    inline int GetRescoreCapacityUnits() const{ return m_rescoreCapacityUnits; }
+    inline int GetRescoreCapacityUnits() const { return m_rescoreCapacityUnits; }
     inline bool RescoreCapacityUnitsHasBeenSet() const { return m_rescoreCapacityUnitsHasBeenSet; }
     inline void SetRescoreCapacityUnits(int value) { m_rescoreCapacityUnitsHasBeenSet = true; m_rescoreCapacityUnits = value; }
     inline CapacityUnitsConfiguration& WithRescoreCapacityUnits(int value) { SetRescoreCapacityUnits(value); return *this;}
     ///@}
   private:
 
-    int m_rescoreCapacityUnits;
+    int m_rescoreCapacityUnits{0};
     bool m_rescoreCapacityUnitsHasBeenSet = false;
   };
 

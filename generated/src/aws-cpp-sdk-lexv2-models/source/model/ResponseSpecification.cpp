@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ResponseSpecification::ResponseSpecification() : 
-    m_messageGroupsHasBeenSet(false),
-    m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false)
-{
-}
-
 ResponseSpecification::ResponseSpecification(JsonView jsonValue)
-  : ResponseSpecification()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ ResponseSpecification& ResponseSpecification::operator =(JsonView jsonValue)
     }
     m_messageGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowInterrupt"))
   {
     m_allowInterrupt = jsonValue.GetBool("allowInterrupt");
-
     m_allowInterruptHasBeenSet = true;
   }
-
   return *this;
 }
 

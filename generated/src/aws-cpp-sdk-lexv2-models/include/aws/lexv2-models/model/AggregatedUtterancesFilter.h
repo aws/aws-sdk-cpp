@@ -35,7 +35,7 @@ namespace Model
   class AggregatedUtterancesFilter
   {
   public:
-    AWS_LEXMODELSV2_API AggregatedUtterancesFilter();
+    AWS_LEXMODELSV2_API AggregatedUtterancesFilter() = default;
     AWS_LEXMODELSV2_API AggregatedUtterancesFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AggregatedUtterancesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,27 +45,24 @@ namespace Model
     /**
      * <p>The name of the field to filter the utterance list.</p>
      */
-    inline const AggregatedUtterancesFilterName& GetName() const{ return m_name; }
+    inline AggregatedUtterancesFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AggregatedUtterancesFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AggregatedUtterancesFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AggregatedUtterancesFilter& WithName(const AggregatedUtterancesFilterName& value) { SetName(value); return *this;}
-    inline AggregatedUtterancesFilter& WithName(AggregatedUtterancesFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AggregatedUtterancesFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AggregatedUtterancesFilter& WithName(AggregatedUtterancesFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value to use for filtering the list of bots.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline AggregatedUtterancesFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline AggregatedUtterancesFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline AggregatedUtterancesFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline AggregatedUtterancesFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline AggregatedUtterancesFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    AggregatedUtterancesFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    AggregatedUtterancesFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,22 +73,20 @@ namespace Model
      * <code>ListAggregatedUtterances</code> operation should return utterances that
      * contain the specified value.</p>
      */
-    inline const AggregatedUtterancesFilterOperator& GetOperator() const{ return m_operator; }
+    inline AggregatedUtterancesFilterOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const AggregatedUtterancesFilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(AggregatedUtterancesFilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline AggregatedUtterancesFilter& WithOperator(const AggregatedUtterancesFilterOperator& value) { SetOperator(value); return *this;}
-    inline AggregatedUtterancesFilter& WithOperator(AggregatedUtterancesFilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(AggregatedUtterancesFilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline AggregatedUtterancesFilter& WithOperator(AggregatedUtterancesFilterOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
-    AggregatedUtterancesFilterName m_name;
+    AggregatedUtterancesFilterName m_name{AggregatedUtterancesFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
 
-    AggregatedUtterancesFilterOperator m_operator;
+    AggregatedUtterancesFilterOperator m_operator{AggregatedUtterancesFilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

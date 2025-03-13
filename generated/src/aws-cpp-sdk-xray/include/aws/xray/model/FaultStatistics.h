@@ -30,7 +30,7 @@ namespace Model
   class FaultStatistics
   {
   public:
-    AWS_XRAY_API FaultStatistics();
+    AWS_XRAY_API FaultStatistics() = default;
     AWS_XRAY_API FaultStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API FaultStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The number of requests that failed with untracked 5xx Server Error status
      * codes.</p>
      */
-    inline long long GetOtherCount() const{ return m_otherCount; }
+    inline long long GetOtherCount() const { return m_otherCount; }
     inline bool OtherCountHasBeenSet() const { return m_otherCountHasBeenSet; }
     inline void SetOtherCount(long long value) { m_otherCountHasBeenSet = true; m_otherCount = value; }
     inline FaultStatistics& WithOtherCount(long long value) { SetOtherCount(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>The total number of requests that failed with a 5xx Server Error status
      * code.</p>
      */
-    inline long long GetTotalCount() const{ return m_totalCount; }
+    inline long long GetTotalCount() const { return m_totalCount; }
     inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
     inline void SetTotalCount(long long value) { m_totalCountHasBeenSet = true; m_totalCount = value; }
     inline FaultStatistics& WithTotalCount(long long value) { SetTotalCount(value); return *this;}
     ///@}
   private:
 
-    long long m_otherCount;
+    long long m_otherCount{0};
     bool m_otherCountHasBeenSet = false;
 
-    long long m_totalCount;
+    long long m_totalCount{0};
     bool m_totalCountHasBeenSet = false;
   };
 

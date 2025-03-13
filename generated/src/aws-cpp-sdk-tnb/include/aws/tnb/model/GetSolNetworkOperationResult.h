@@ -35,7 +35,7 @@ namespace Model
   class GetSolNetworkOperationResult
   {
   public:
-    AWS_TNB_API GetSolNetworkOperationResult();
+    AWS_TNB_API GetSolNetworkOperationResult() = default;
     AWS_TNB_API GetSolNetworkOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TNB_API GetSolNetworkOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,83 +44,73 @@ namespace Model
     /**
      * <p>Network operation ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetSolNetworkOperationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetSolNetworkOperationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetSolNetworkOperationResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetSolNetworkOperationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Error related to this specific network operation occurrence.</p>
      */
-    inline const ProblemDetails& GetError() const{ return m_error; }
-    inline void SetError(const ProblemDetails& value) { m_error = value; }
-    inline void SetError(ProblemDetails&& value) { m_error = std::move(value); }
-    inline GetSolNetworkOperationResult& WithError(const ProblemDetails& value) { SetError(value); return *this;}
-    inline GetSolNetworkOperationResult& WithError(ProblemDetails&& value) { SetError(std::move(value)); return *this;}
+    inline const ProblemDetails& GetError() const { return m_error; }
+    template<typename ErrorT = ProblemDetails>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ProblemDetails>
+    GetSolNetworkOperationResult& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of this network operation occurrence.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetSolNetworkOperationResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetSolNetworkOperationResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetSolNetworkOperationResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetSolNetworkOperationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of the operation represented by this occurrence.</p>
      */
-    inline const LcmOperationType& GetLcmOperationType() const{ return m_lcmOperationType; }
-    inline void SetLcmOperationType(const LcmOperationType& value) { m_lcmOperationType = value; }
-    inline void SetLcmOperationType(LcmOperationType&& value) { m_lcmOperationType = std::move(value); }
-    inline GetSolNetworkOperationResult& WithLcmOperationType(const LcmOperationType& value) { SetLcmOperationType(value); return *this;}
-    inline GetSolNetworkOperationResult& WithLcmOperationType(LcmOperationType&& value) { SetLcmOperationType(std::move(value)); return *this;}
+    inline LcmOperationType GetLcmOperationType() const { return m_lcmOperationType; }
+    inline void SetLcmOperationType(LcmOperationType value) { m_lcmOperationTypeHasBeenSet = true; m_lcmOperationType = value; }
+    inline GetSolNetworkOperationResult& WithLcmOperationType(LcmOperationType value) { SetLcmOperationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metadata of this network operation occurrence.</p>
      */
-    inline const GetSolNetworkOperationMetadata& GetMetadata() const{ return m_metadata; }
-    inline void SetMetadata(const GetSolNetworkOperationMetadata& value) { m_metadata = value; }
-    inline void SetMetadata(GetSolNetworkOperationMetadata&& value) { m_metadata = std::move(value); }
-    inline GetSolNetworkOperationResult& WithMetadata(const GetSolNetworkOperationMetadata& value) { SetMetadata(value); return *this;}
-    inline GetSolNetworkOperationResult& WithMetadata(GetSolNetworkOperationMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    inline const GetSolNetworkOperationMetadata& GetMetadata() const { return m_metadata; }
+    template<typename MetadataT = GetSolNetworkOperationMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = GetSolNetworkOperationMetadata>
+    GetSolNetworkOperationResult& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of the network operation instance.</p>
      */
-    inline const Aws::String& GetNsInstanceId() const{ return m_nsInstanceId; }
-    inline void SetNsInstanceId(const Aws::String& value) { m_nsInstanceId = value; }
-    inline void SetNsInstanceId(Aws::String&& value) { m_nsInstanceId = std::move(value); }
-    inline void SetNsInstanceId(const char* value) { m_nsInstanceId.assign(value); }
-    inline GetSolNetworkOperationResult& WithNsInstanceId(const Aws::String& value) { SetNsInstanceId(value); return *this;}
-    inline GetSolNetworkOperationResult& WithNsInstanceId(Aws::String&& value) { SetNsInstanceId(std::move(value)); return *this;}
-    inline GetSolNetworkOperationResult& WithNsInstanceId(const char* value) { SetNsInstanceId(value); return *this;}
+    inline const Aws::String& GetNsInstanceId() const { return m_nsInstanceId; }
+    template<typename NsInstanceIdT = Aws::String>
+    void SetNsInstanceId(NsInstanceIdT&& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = std::forward<NsInstanceIdT>(value); }
+    template<typename NsInstanceIdT = Aws::String>
+    GetSolNetworkOperationResult& WithNsInstanceId(NsInstanceIdT&& value) { SetNsInstanceId(std::forward<NsInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the network operation.</p>
      */
-    inline const NsLcmOperationState& GetOperationState() const{ return m_operationState; }
-    inline void SetOperationState(const NsLcmOperationState& value) { m_operationState = value; }
-    inline void SetOperationState(NsLcmOperationState&& value) { m_operationState = std::move(value); }
-    inline GetSolNetworkOperationResult& WithOperationState(const NsLcmOperationState& value) { SetOperationState(value); return *this;}
-    inline GetSolNetworkOperationResult& WithOperationState(NsLcmOperationState&& value) { SetOperationState(std::move(value)); return *this;}
+    inline NsLcmOperationState GetOperationState() const { return m_operationState; }
+    inline void SetOperationState(NsLcmOperationState value) { m_operationStateHasBeenSet = true; m_operationState = value; }
+    inline GetSolNetworkOperationResult& WithOperationState(NsLcmOperationState value) { SetOperationState(value); return *this;}
     ///@}
 
     ///@{
@@ -129,31 +119,28 @@ namespace Model
      * consists of a key and an optional value. You can use tags to search and filter
      * your resources or track your Amazon Web Services costs.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetSolNetworkOperationResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetSolNetworkOperationResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetSolNetworkOperationResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetSolNetworkOperationResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetSolNetworkOperationResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetSolNetworkOperationResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetSolNetworkOperationResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetSolNetworkOperationResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetSolNetworkOperationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetSolNetworkOperationResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetSolNetworkOperationResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>All tasks associated with this operation occurrence.</p>
      */
-    inline const Aws::Vector<GetSolNetworkOperationTaskDetails>& GetTasks() const{ return m_tasks; }
-    inline void SetTasks(const Aws::Vector<GetSolNetworkOperationTaskDetails>& value) { m_tasks = value; }
-    inline void SetTasks(Aws::Vector<GetSolNetworkOperationTaskDetails>&& value) { m_tasks = std::move(value); }
-    inline GetSolNetworkOperationResult& WithTasks(const Aws::Vector<GetSolNetworkOperationTaskDetails>& value) { SetTasks(value); return *this;}
-    inline GetSolNetworkOperationResult& WithTasks(Aws::Vector<GetSolNetworkOperationTaskDetails>&& value) { SetTasks(std::move(value)); return *this;}
-    inline GetSolNetworkOperationResult& AddTasks(const GetSolNetworkOperationTaskDetails& value) { m_tasks.push_back(value); return *this; }
-    inline GetSolNetworkOperationResult& AddTasks(GetSolNetworkOperationTaskDetails&& value) { m_tasks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GetSolNetworkOperationTaskDetails>& GetTasks() const { return m_tasks; }
+    template<typename TasksT = Aws::Vector<GetSolNetworkOperationTaskDetails>>
+    void SetTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks = std::forward<TasksT>(value); }
+    template<typename TasksT = Aws::Vector<GetSolNetworkOperationTaskDetails>>
+    GetSolNetworkOperationResult& WithTasks(TasksT&& value) { SetTasks(std::forward<TasksT>(value)); return *this;}
+    template<typename TasksT = GetSolNetworkOperationTaskDetails>
+    GetSolNetworkOperationResult& AddTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks.emplace_back(std::forward<TasksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -161,46 +148,53 @@ namespace Model
      * <p>Type of the update. Only present if the network operation lcmOperationType is
      * <code>UPDATE</code>.</p>
      */
-    inline const UpdateSolNetworkType& GetUpdateType() const{ return m_updateType; }
-    inline void SetUpdateType(const UpdateSolNetworkType& value) { m_updateType = value; }
-    inline void SetUpdateType(UpdateSolNetworkType&& value) { m_updateType = std::move(value); }
-    inline GetSolNetworkOperationResult& WithUpdateType(const UpdateSolNetworkType& value) { SetUpdateType(value); return *this;}
-    inline GetSolNetworkOperationResult& WithUpdateType(UpdateSolNetworkType&& value) { SetUpdateType(std::move(value)); return *this;}
+    inline UpdateSolNetworkType GetUpdateType() const { return m_updateType; }
+    inline void SetUpdateType(UpdateSolNetworkType value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
+    inline GetSolNetworkOperationResult& WithUpdateType(UpdateSolNetworkType value) { SetUpdateType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSolNetworkOperationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSolNetworkOperationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSolNetworkOperationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSolNetworkOperationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     ProblemDetails m_error;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    LcmOperationType m_lcmOperationType;
+    LcmOperationType m_lcmOperationType{LcmOperationType::NOT_SET};
+    bool m_lcmOperationTypeHasBeenSet = false;
 
     GetSolNetworkOperationMetadata m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_nsInstanceId;
+    bool m_nsInstanceIdHasBeenSet = false;
 
-    NsLcmOperationState m_operationState;
+    NsLcmOperationState m_operationState{NsLcmOperationState::NOT_SET};
+    bool m_operationStateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<GetSolNetworkOperationTaskDetails> m_tasks;
+    bool m_tasksHasBeenSet = false;
 
-    UpdateSolNetworkType m_updateType;
+    UpdateSolNetworkType m_updateType{UpdateSolNetworkType::NOT_SET};
+    bool m_updateTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

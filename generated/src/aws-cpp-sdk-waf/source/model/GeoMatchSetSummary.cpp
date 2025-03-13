@@ -18,14 +18,7 @@ namespace WAF
 namespace Model
 {
 
-GeoMatchSetSummary::GeoMatchSetSummary() : 
-    m_geoMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 GeoMatchSetSummary::GeoMatchSetSummary(JsonView jsonValue)
-  : GeoMatchSetSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GeoMatchSetSummary& GeoMatchSetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GeoMatchSetId"))
   {
     m_geoMatchSetId = jsonValue.GetString("GeoMatchSetId");
-
     m_geoMatchSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

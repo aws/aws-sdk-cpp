@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-CommonPrefix::CommonPrefix() : 
-    m_prefixHasBeenSet(false)
-{
-}
-
 CommonPrefix::CommonPrefix(const XmlNode& xmlNode)
-  : CommonPrefix()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ CommonPrefix& CommonPrefix::operator =(const XmlNode& xmlNode)
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
   }
 

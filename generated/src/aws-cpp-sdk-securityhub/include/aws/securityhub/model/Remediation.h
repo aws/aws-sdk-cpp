@@ -32,7 +32,7 @@ namespace Model
   class Remediation
   {
   public:
-    AWS_SECURITYHUB_API Remediation();
+    AWS_SECURITYHUB_API Remediation() = default;
     AWS_SECURITYHUB_API Remediation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Remediation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>A recommendation on the steps to take to remediate the issue identified by a
      * finding.</p>
      */
-    inline const Recommendation& GetRecommendation() const{ return m_recommendation; }
+    inline const Recommendation& GetRecommendation() const { return m_recommendation; }
     inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
-    inline void SetRecommendation(const Recommendation& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
-    inline void SetRecommendation(Recommendation&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::move(value); }
-    inline Remediation& WithRecommendation(const Recommendation& value) { SetRecommendation(value); return *this;}
-    inline Remediation& WithRecommendation(Recommendation&& value) { SetRecommendation(std::move(value)); return *this;}
+    template<typename RecommendationT = Recommendation>
+    void SetRecommendation(RecommendationT&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::forward<RecommendationT>(value); }
+    template<typename RecommendationT = Recommendation>
+    Remediation& WithRecommendation(RecommendationT&& value) { SetRecommendation(std::forward<RecommendationT>(value)); return *this;}
     ///@}
   private:
 

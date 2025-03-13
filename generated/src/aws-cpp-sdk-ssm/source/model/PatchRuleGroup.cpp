@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-PatchRuleGroup::PatchRuleGroup() : 
-    m_patchRulesHasBeenSet(false)
-{
-}
-
 PatchRuleGroup::PatchRuleGroup(JsonView jsonValue)
-  : PatchRuleGroup()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PatchRuleGroup& PatchRuleGroup::operator =(JsonView jsonValue)
     }
     m_patchRulesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,10 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartContinuousExportRequest::StartContinuousExportRequest()
-{
-}
-
 Aws::String StartContinuousExportRequest::SerializePayload() const
 {
   return "{}";

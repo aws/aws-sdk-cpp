@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectStackDriftResult::DetectStackDriftResult()
-{
-}
-
 DetectStackDriftResult::DetectStackDriftResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DetectStackDriftResult& DetectStackDriftResult::operator =(const Aws::AmazonWebS
     if(!stackDriftDetectionIdNode.IsNull())
     {
       m_stackDriftDetectionId = Aws::Utils::Xml::DecodeEscapedXmlText(stackDriftDetectionIdNode.GetText());
+      m_stackDriftDetectionIdHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::DetectStackDriftResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

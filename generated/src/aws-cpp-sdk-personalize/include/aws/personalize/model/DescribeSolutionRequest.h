@@ -21,7 +21,7 @@ namespace Model
   class DescribeSolutionRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API DescribeSolutionRequest();
+    AWS_PERSONALIZE_API DescribeSolutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
      */
-    inline const Aws::String& GetSolutionArn() const{ return m_solutionArn; }
+    inline const Aws::String& GetSolutionArn() const { return m_solutionArn; }
     inline bool SolutionArnHasBeenSet() const { return m_solutionArnHasBeenSet; }
-    inline void SetSolutionArn(const Aws::String& value) { m_solutionArnHasBeenSet = true; m_solutionArn = value; }
-    inline void SetSolutionArn(Aws::String&& value) { m_solutionArnHasBeenSet = true; m_solutionArn = std::move(value); }
-    inline void SetSolutionArn(const char* value) { m_solutionArnHasBeenSet = true; m_solutionArn.assign(value); }
-    inline DescribeSolutionRequest& WithSolutionArn(const Aws::String& value) { SetSolutionArn(value); return *this;}
-    inline DescribeSolutionRequest& WithSolutionArn(Aws::String&& value) { SetSolutionArn(std::move(value)); return *this;}
-    inline DescribeSolutionRequest& WithSolutionArn(const char* value) { SetSolutionArn(value); return *this;}
+    template<typename SolutionArnT = Aws::String>
+    void SetSolutionArn(SolutionArnT&& value) { m_solutionArnHasBeenSet = true; m_solutionArn = std::forward<SolutionArnT>(value); }
+    template<typename SolutionArnT = Aws::String>
+    DescribeSolutionRequest& WithSolutionArn(SolutionArnT&& value) { SetSolutionArn(std::forward<SolutionArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails();
+    AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails() = default;
     AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,26 @@ namespace Model
     /**
      * <p>The launch template to use for a mixed instances policy.</p>
      */
-    inline const AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& GetLaunchTemplateSpecification() const{ return m_launchTemplateSpecification; }
+    inline const AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& GetLaunchTemplateSpecification() const { return m_launchTemplateSpecification; }
     inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
-    inline void SetLaunchTemplateSpecification(const AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
-    inline void SetLaunchTemplateSpecification(AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::move(value); }
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& WithLaunchTemplateSpecification(const AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification& value) { SetLaunchTemplateSpecification(value); return *this;}
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& WithLaunchTemplateSpecification(AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification&& value) { SetLaunchTemplateSpecification(std::move(value)); return *this;}
+    template<typename LaunchTemplateSpecificationT = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>
+    void SetLaunchTemplateSpecification(LaunchTemplateSpecificationT&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::forward<LaunchTemplateSpecificationT>(value); }
+    template<typename LaunchTemplateSpecificationT = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>
+    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& WithLaunchTemplateSpecification(LaunchTemplateSpecificationT&& value) { SetLaunchTemplateSpecification(std::forward<LaunchTemplateSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Property values to use to override the values in the launch template.</p>
      */
-    inline const Aws::Vector<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>& GetOverrides() const{ return m_overrides; }
+    inline const Aws::Vector<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>& GetOverrides() const { return m_overrides; }
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
-    inline void SetOverrides(const Aws::Vector<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
-    inline void SetOverrides(Aws::Vector<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& WithOverrides(const Aws::Vector<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>& value) { SetOverrides(value); return *this;}
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& WithOverrides(Aws::Vector<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>&& value) { SetOverrides(std::move(value)); return *this;}
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& AddOverrides(const AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
-    inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& AddOverrides(AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
+    template<typename OverridesT = Aws::Vector<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>>
+    void SetOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides = std::forward<OverridesT>(value); }
+    template<typename OverridesT = Aws::Vector<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>>
+    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& WithOverrides(OverridesT&& value) { SetOverrides(std::forward<OverridesT>(value)); return *this;}
+    template<typename OverridesT = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>
+    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& AddOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides.emplace_back(std::forward<OverridesT>(value)); return *this; }
     ///@}
   private:
 

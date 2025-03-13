@@ -12,16 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateEmbedUrlForRegisteredUserRequest::GenerateEmbedUrlForRegisteredUserRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_sessionLifetimeInMinutes(0),
-    m_sessionLifetimeInMinutesHasBeenSet(false),
-    m_userArnHasBeenSet(false),
-    m_experienceConfigurationHasBeenSet(false),
-    m_allowedDomainsHasBeenSet(false)
-{
-}
-
 Aws::String GenerateEmbedUrlForRegisteredUserRequest::SerializePayload() const
 {
   JsonValue payload;

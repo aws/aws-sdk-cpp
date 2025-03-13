@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-DateRangeFilter::DateRangeFilter() : 
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
-{
-}
-
 DateRangeFilter::DateRangeFilter(JsonView jsonValue)
-  : DateRangeFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DateRangeFilter& DateRangeFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startDateTime"))
   {
     m_startDateTime = jsonValue.GetDouble("startDateTime");
-
     m_startDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endDateTime"))
   {
     m_endDateTime = jsonValue.GetDouble("endDateTime");
-
     m_endDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAlgorithmRequest::DeleteAlgorithmRequest() : 
-    m_algorithmNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAlgorithmRequest::SerializePayload() const
 {
   JsonValue payload;

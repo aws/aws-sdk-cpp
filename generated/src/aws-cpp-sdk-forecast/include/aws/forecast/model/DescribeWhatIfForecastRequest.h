@@ -21,7 +21,7 @@ namespace Model
   class DescribeWhatIfForecastRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API DescribeWhatIfForecastRequest();
+    AWS_FORECASTSERVICE_API DescribeWhatIfForecastRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the what-if forecast that you are
      * interested in.</p>
      */
-    inline const Aws::String& GetWhatIfForecastArn() const{ return m_whatIfForecastArn; }
+    inline const Aws::String& GetWhatIfForecastArn() const { return m_whatIfForecastArn; }
     inline bool WhatIfForecastArnHasBeenSet() const { return m_whatIfForecastArnHasBeenSet; }
-    inline void SetWhatIfForecastArn(const Aws::String& value) { m_whatIfForecastArnHasBeenSet = true; m_whatIfForecastArn = value; }
-    inline void SetWhatIfForecastArn(Aws::String&& value) { m_whatIfForecastArnHasBeenSet = true; m_whatIfForecastArn = std::move(value); }
-    inline void SetWhatIfForecastArn(const char* value) { m_whatIfForecastArnHasBeenSet = true; m_whatIfForecastArn.assign(value); }
-    inline DescribeWhatIfForecastRequest& WithWhatIfForecastArn(const Aws::String& value) { SetWhatIfForecastArn(value); return *this;}
-    inline DescribeWhatIfForecastRequest& WithWhatIfForecastArn(Aws::String&& value) { SetWhatIfForecastArn(std::move(value)); return *this;}
-    inline DescribeWhatIfForecastRequest& WithWhatIfForecastArn(const char* value) { SetWhatIfForecastArn(value); return *this;}
+    template<typename WhatIfForecastArnT = Aws::String>
+    void SetWhatIfForecastArn(WhatIfForecastArnT&& value) { m_whatIfForecastArnHasBeenSet = true; m_whatIfForecastArn = std::forward<WhatIfForecastArnT>(value); }
+    template<typename WhatIfForecastArnT = Aws::String>
+    DescribeWhatIfForecastRequest& WithWhatIfForecastArn(WhatIfForecastArnT&& value) { SetWhatIfForecastArn(std::forward<WhatIfForecastArnT>(value)); return *this;}
     ///@}
   private:
 

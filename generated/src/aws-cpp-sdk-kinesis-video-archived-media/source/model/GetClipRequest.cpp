@@ -12,13 +12,6 @@ using namespace Aws::KinesisVideoArchivedMedia::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetClipRequest::GetClipRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_clipFragmentSelectorHasBeenSet(false)
-{
-}
-
 Aws::String GetClipRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ResourceEvaluation::ResourceEvaluation() : 
-    m_resourceEvaluationIdHasBeenSet(false),
-    m_evaluationMode(EvaluationMode::NOT_SET),
-    m_evaluationModeHasBeenSet(false),
-    m_evaluationStartTimestampHasBeenSet(false)
-{
-}
-
 ResourceEvaluation::ResourceEvaluation(JsonView jsonValue)
-  : ResourceEvaluation()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResourceEvaluation& ResourceEvaluation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceEvaluationId"))
   {
     m_resourceEvaluationId = jsonValue.GetString("ResourceEvaluationId");
-
     m_resourceEvaluationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationMode"))
   {
     m_evaluationMode = EvaluationModeMapper::GetEvaluationModeForName(jsonValue.GetString("EvaluationMode"));
-
     m_evaluationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationStartTimestamp"))
   {
     m_evaluationStartTimestamp = jsonValue.GetDouble("EvaluationStartTimestamp");
-
     m_evaluationStartTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

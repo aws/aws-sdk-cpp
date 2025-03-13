@@ -35,7 +35,7 @@ namespace Model
   class DrillDownFilter
   {
   public:
-    AWS_QUICKSIGHT_API DrillDownFilter();
+    AWS_QUICKSIGHT_API DrillDownFilter() = default;
     AWS_QUICKSIGHT_API DrillDownFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DrillDownFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>The numeric equality type drill down filter. This filter is used for number
      * type columns.</p>
      */
-    inline const NumericEqualityDrillDownFilter& GetNumericEqualityFilter() const{ return m_numericEqualityFilter; }
+    inline const NumericEqualityDrillDownFilter& GetNumericEqualityFilter() const { return m_numericEqualityFilter; }
     inline bool NumericEqualityFilterHasBeenSet() const { return m_numericEqualityFilterHasBeenSet; }
-    inline void SetNumericEqualityFilter(const NumericEqualityDrillDownFilter& value) { m_numericEqualityFilterHasBeenSet = true; m_numericEqualityFilter = value; }
-    inline void SetNumericEqualityFilter(NumericEqualityDrillDownFilter&& value) { m_numericEqualityFilterHasBeenSet = true; m_numericEqualityFilter = std::move(value); }
-    inline DrillDownFilter& WithNumericEqualityFilter(const NumericEqualityDrillDownFilter& value) { SetNumericEqualityFilter(value); return *this;}
-    inline DrillDownFilter& WithNumericEqualityFilter(NumericEqualityDrillDownFilter&& value) { SetNumericEqualityFilter(std::move(value)); return *this;}
+    template<typename NumericEqualityFilterT = NumericEqualityDrillDownFilter>
+    void SetNumericEqualityFilter(NumericEqualityFilterT&& value) { m_numericEqualityFilterHasBeenSet = true; m_numericEqualityFilter = std::forward<NumericEqualityFilterT>(value); }
+    template<typename NumericEqualityFilterT = NumericEqualityDrillDownFilter>
+    DrillDownFilter& WithNumericEqualityFilter(NumericEqualityFilterT&& value) { SetNumericEqualityFilter(std::forward<NumericEqualityFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>The category type drill down filter. This filter is used for string type
      * columns.</p>
      */
-    inline const CategoryDrillDownFilter& GetCategoryFilter() const{ return m_categoryFilter; }
+    inline const CategoryDrillDownFilter& GetCategoryFilter() const { return m_categoryFilter; }
     inline bool CategoryFilterHasBeenSet() const { return m_categoryFilterHasBeenSet; }
-    inline void SetCategoryFilter(const CategoryDrillDownFilter& value) { m_categoryFilterHasBeenSet = true; m_categoryFilter = value; }
-    inline void SetCategoryFilter(CategoryDrillDownFilter&& value) { m_categoryFilterHasBeenSet = true; m_categoryFilter = std::move(value); }
-    inline DrillDownFilter& WithCategoryFilter(const CategoryDrillDownFilter& value) { SetCategoryFilter(value); return *this;}
-    inline DrillDownFilter& WithCategoryFilter(CategoryDrillDownFilter&& value) { SetCategoryFilter(std::move(value)); return *this;}
+    template<typename CategoryFilterT = CategoryDrillDownFilter>
+    void SetCategoryFilter(CategoryFilterT&& value) { m_categoryFilterHasBeenSet = true; m_categoryFilter = std::forward<CategoryFilterT>(value); }
+    template<typename CategoryFilterT = CategoryDrillDownFilter>
+    DrillDownFilter& WithCategoryFilter(CategoryFilterT&& value) { SetCategoryFilter(std::forward<CategoryFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * <p>The time range drill down filter. This filter is used for date time
      * columns.</p>
      */
-    inline const TimeRangeDrillDownFilter& GetTimeRangeFilter() const{ return m_timeRangeFilter; }
+    inline const TimeRangeDrillDownFilter& GetTimeRangeFilter() const { return m_timeRangeFilter; }
     inline bool TimeRangeFilterHasBeenSet() const { return m_timeRangeFilterHasBeenSet; }
-    inline void SetTimeRangeFilter(const TimeRangeDrillDownFilter& value) { m_timeRangeFilterHasBeenSet = true; m_timeRangeFilter = value; }
-    inline void SetTimeRangeFilter(TimeRangeDrillDownFilter&& value) { m_timeRangeFilterHasBeenSet = true; m_timeRangeFilter = std::move(value); }
-    inline DrillDownFilter& WithTimeRangeFilter(const TimeRangeDrillDownFilter& value) { SetTimeRangeFilter(value); return *this;}
-    inline DrillDownFilter& WithTimeRangeFilter(TimeRangeDrillDownFilter&& value) { SetTimeRangeFilter(std::move(value)); return *this;}
+    template<typename TimeRangeFilterT = TimeRangeDrillDownFilter>
+    void SetTimeRangeFilter(TimeRangeFilterT&& value) { m_timeRangeFilterHasBeenSet = true; m_timeRangeFilter = std::forward<TimeRangeFilterT>(value); }
+    template<typename TimeRangeFilterT = TimeRangeDrillDownFilter>
+    DrillDownFilter& WithTimeRangeFilter(TimeRangeFilterT&& value) { SetTimeRangeFilter(std::forward<TimeRangeFilterT>(value)); return *this;}
     ///@}
   private:
 

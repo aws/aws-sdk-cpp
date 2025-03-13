@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeParameterGroupsResult::DescribeParameterGroupsResult()
-{
-}
-
 DescribeParameterGroupsResult::DescribeParameterGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeParameterGroupsResult& DescribeParameterGroupsResult::operator =(const A
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterGroups"))
   {
     Aws::Utils::Array<JsonView> parameterGroupsJsonList = jsonValue.GetArray("ParameterGroups");
@@ -42,14 +37,15 @@ DescribeParameterGroupsResult& DescribeParameterGroupsResult::operator =(const A
     {
       m_parameterGroups.push_back(parameterGroupsJsonList[parameterGroupsIndex].AsObject());
     }
+    m_parameterGroupsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,17 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-SignalFetchInformation::SignalFetchInformation() : 
-    m_fullyQualifiedNameHasBeenSet(false),
-    m_signalFetchConfigHasBeenSet(false),
-    m_conditionLanguageVersion(0),
-    m_conditionLanguageVersionHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 SignalFetchInformation::SignalFetchInformation(JsonView jsonValue)
-  : SignalFetchInformation()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ SignalFetchInformation& SignalFetchInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fullyQualifiedName"))
   {
     m_fullyQualifiedName = jsonValue.GetString("fullyQualifiedName");
-
     m_fullyQualifiedNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signalFetchConfig"))
   {
     m_signalFetchConfig = jsonValue.GetObject("signalFetchConfig");
-
     m_signalFetchConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conditionLanguageVersion"))
   {
     m_conditionLanguageVersion = jsonValue.GetInteger("conditionLanguageVersion");
-
     m_conditionLanguageVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
@@ -65,7 +49,6 @@ SignalFetchInformation& SignalFetchInformation::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TotalLocalStorageGBRequest::TotalLocalStorageGBRequest() : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
-{
-}
-
 TotalLocalStorageGBRequest::TotalLocalStorageGBRequest(const XmlNode& xmlNode)
-  : TotalLocalStorageGBRequest()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ TotalLocalStorageGBRequest& TotalLocalStorageGBRequest::operator =(const XmlNode
     {
       m_min = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minNode.GetText()).c_str()).c_str());
       m_minHasBeenSet = true;
+       m_minHasBeenSet = true;
     }
     XmlNode maxNode = resultNode.FirstChild("Max");
     if(!maxNode.IsNull())
     {
       m_max = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNode.GetText()).c_str()).c_str());
       m_maxHasBeenSet = true;
+       m_maxHasBeenSet = true;
     }
   }
 

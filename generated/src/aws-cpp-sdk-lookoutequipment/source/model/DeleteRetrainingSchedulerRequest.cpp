@@ -12,11 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRetrainingSchedulerRequest::DeleteRetrainingSchedulerRequest() : 
-    m_modelNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRetrainingSchedulerRequest::SerializePayload() const
 {
   JsonValue payload;

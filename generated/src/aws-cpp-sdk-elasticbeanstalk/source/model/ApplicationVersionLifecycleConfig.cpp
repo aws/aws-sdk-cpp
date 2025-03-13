@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ApplicationVersionLifecycleConfig::ApplicationVersionLifecycleConfig() : 
-    m_maxCountRuleHasBeenSet(false),
-    m_maxAgeRuleHasBeenSet(false)
-{
-}
-
 ApplicationVersionLifecycleConfig::ApplicationVersionLifecycleConfig(const XmlNode& xmlNode)
-  : ApplicationVersionLifecycleConfig()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ApplicationVersionLifecycleConfig& ApplicationVersionLifecycleConfig::operator =
     {
       m_maxCountRule = maxCountRuleNode;
       m_maxCountRuleHasBeenSet = true;
+       m_maxCountRuleHasBeenSet = true;
     }
     XmlNode maxAgeRuleNode = resultNode.FirstChild("MaxAgeRule");
     if(!maxAgeRuleNode.IsNull())
     {
       m_maxAgeRule = maxAgeRuleNode;
       m_maxAgeRuleHasBeenSet = true;
+       m_maxAgeRuleHasBeenSet = true;
     }
   }
 

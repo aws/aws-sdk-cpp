@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CancelImportTaskRequest::CancelImportTaskRequest() : 
-    m_cancelReasonHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_importTaskIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelImportTaskRequest::SerializePayload() const
 {
   Aws::StringStream ss;

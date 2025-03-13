@@ -33,7 +33,7 @@ namespace Model
   class ScheduledAuditMetadata
   {
   public:
-    AWS_IOT_API ScheduledAuditMetadata();
+    AWS_IOT_API ScheduledAuditMetadata() = default;
     AWS_IOT_API ScheduledAuditMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ScheduledAuditMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,34 @@ namespace Model
     /**
      * <p>The name of the scheduled audit.</p>
      */
-    inline const Aws::String& GetScheduledAuditName() const{ return m_scheduledAuditName; }
+    inline const Aws::String& GetScheduledAuditName() const { return m_scheduledAuditName; }
     inline bool ScheduledAuditNameHasBeenSet() const { return m_scheduledAuditNameHasBeenSet; }
-    inline void SetScheduledAuditName(const Aws::String& value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName = value; }
-    inline void SetScheduledAuditName(Aws::String&& value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName = std::move(value); }
-    inline void SetScheduledAuditName(const char* value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName.assign(value); }
-    inline ScheduledAuditMetadata& WithScheduledAuditName(const Aws::String& value) { SetScheduledAuditName(value); return *this;}
-    inline ScheduledAuditMetadata& WithScheduledAuditName(Aws::String&& value) { SetScheduledAuditName(std::move(value)); return *this;}
-    inline ScheduledAuditMetadata& WithScheduledAuditName(const char* value) { SetScheduledAuditName(value); return *this;}
+    template<typename ScheduledAuditNameT = Aws::String>
+    void SetScheduledAuditName(ScheduledAuditNameT&& value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName = std::forward<ScheduledAuditNameT>(value); }
+    template<typename ScheduledAuditNameT = Aws::String>
+    ScheduledAuditMetadata& WithScheduledAuditName(ScheduledAuditNameT&& value) { SetScheduledAuditName(std::forward<ScheduledAuditNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the scheduled audit.</p>
      */
-    inline const Aws::String& GetScheduledAuditArn() const{ return m_scheduledAuditArn; }
+    inline const Aws::String& GetScheduledAuditArn() const { return m_scheduledAuditArn; }
     inline bool ScheduledAuditArnHasBeenSet() const { return m_scheduledAuditArnHasBeenSet; }
-    inline void SetScheduledAuditArn(const Aws::String& value) { m_scheduledAuditArnHasBeenSet = true; m_scheduledAuditArn = value; }
-    inline void SetScheduledAuditArn(Aws::String&& value) { m_scheduledAuditArnHasBeenSet = true; m_scheduledAuditArn = std::move(value); }
-    inline void SetScheduledAuditArn(const char* value) { m_scheduledAuditArnHasBeenSet = true; m_scheduledAuditArn.assign(value); }
-    inline ScheduledAuditMetadata& WithScheduledAuditArn(const Aws::String& value) { SetScheduledAuditArn(value); return *this;}
-    inline ScheduledAuditMetadata& WithScheduledAuditArn(Aws::String&& value) { SetScheduledAuditArn(std::move(value)); return *this;}
-    inline ScheduledAuditMetadata& WithScheduledAuditArn(const char* value) { SetScheduledAuditArn(value); return *this;}
+    template<typename ScheduledAuditArnT = Aws::String>
+    void SetScheduledAuditArn(ScheduledAuditArnT&& value) { m_scheduledAuditArnHasBeenSet = true; m_scheduledAuditArn = std::forward<ScheduledAuditArnT>(value); }
+    template<typename ScheduledAuditArnT = Aws::String>
+    ScheduledAuditMetadata& WithScheduledAuditArn(ScheduledAuditArnT&& value) { SetScheduledAuditArn(std::forward<ScheduledAuditArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>How often the scheduled audit occurs.</p>
      */
-    inline const AuditFrequency& GetFrequency() const{ return m_frequency; }
+    inline AuditFrequency GetFrequency() const { return m_frequency; }
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
-    inline void SetFrequency(const AuditFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
-    inline void SetFrequency(AuditFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
-    inline ScheduledAuditMetadata& WithFrequency(const AuditFrequency& value) { SetFrequency(value); return *this;}
-    inline ScheduledAuditMetadata& WithFrequency(AuditFrequency&& value) { SetFrequency(std::move(value)); return *this;}
+    inline void SetFrequency(AuditFrequency value) { m_frequencyHasBeenSet = true; m_frequency = value; }
+    inline ScheduledAuditMetadata& WithFrequency(AuditFrequency value) { SetFrequency(value); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +80,12 @@ namespace Model
      * does not have that many days, the audit takes place on the "LAST" day of the
      * month.</p>
      */
-    inline const Aws::String& GetDayOfMonth() const{ return m_dayOfMonth; }
+    inline const Aws::String& GetDayOfMonth() const { return m_dayOfMonth; }
     inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
-    inline void SetDayOfMonth(const Aws::String& value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = value; }
-    inline void SetDayOfMonth(Aws::String&& value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = std::move(value); }
-    inline void SetDayOfMonth(const char* value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth.assign(value); }
-    inline ScheduledAuditMetadata& WithDayOfMonth(const Aws::String& value) { SetDayOfMonth(value); return *this;}
-    inline ScheduledAuditMetadata& WithDayOfMonth(Aws::String&& value) { SetDayOfMonth(std::move(value)); return *this;}
-    inline ScheduledAuditMetadata& WithDayOfMonth(const char* value) { SetDayOfMonth(value); return *this;}
+    template<typename DayOfMonthT = Aws::String>
+    void SetDayOfMonth(DayOfMonthT&& value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = std::forward<DayOfMonthT>(value); }
+    template<typename DayOfMonthT = Aws::String>
+    ScheduledAuditMetadata& WithDayOfMonth(DayOfMonthT&& value) { SetDayOfMonth(std::forward<DayOfMonthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +93,10 @@ namespace Model
      * <p>The day of the week on which the scheduled audit is run (if the
      * <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
      */
-    inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
+    inline DayOfWeek GetDayOfWeek() const { return m_dayOfWeek; }
     inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
-    inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
-    inline void SetDayOfWeek(DayOfWeek&& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = std::move(value); }
-    inline ScheduledAuditMetadata& WithDayOfWeek(const DayOfWeek& value) { SetDayOfWeek(value); return *this;}
-    inline ScheduledAuditMetadata& WithDayOfWeek(DayOfWeek&& value) { SetDayOfWeek(std::move(value)); return *this;}
+    inline void SetDayOfWeek(DayOfWeek value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
+    inline ScheduledAuditMetadata& WithDayOfWeek(DayOfWeek value) { SetDayOfWeek(value); return *this;}
     ///@}
   private:
 
@@ -116,13 +106,13 @@ namespace Model
     Aws::String m_scheduledAuditArn;
     bool m_scheduledAuditArnHasBeenSet = false;
 
-    AuditFrequency m_frequency;
+    AuditFrequency m_frequency{AuditFrequency::NOT_SET};
     bool m_frequencyHasBeenSet = false;
 
     Aws::String m_dayOfMonth;
     bool m_dayOfMonthHasBeenSet = false;
 
-    DayOfWeek m_dayOfWeek;
+    DayOfWeek m_dayOfWeek{DayOfWeek::NOT_SET};
     bool m_dayOfWeekHasBeenSet = false;
   };
 

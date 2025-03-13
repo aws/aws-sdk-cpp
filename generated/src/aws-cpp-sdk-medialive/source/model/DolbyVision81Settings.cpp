@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-DolbyVision81Settings::DolbyVision81Settings()
-{
-}
-
 DolbyVision81Settings::DolbyVision81Settings(JsonView jsonValue)
 {
   *this = jsonValue;

@@ -12,15 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartTrainedModelExportJobRequest::StartTrainedModelExportJobRequest() : 
-    m_nameHasBeenSet(false),
-    m_trainedModelArnHasBeenSet(false),
-    m_membershipIdentifierHasBeenSet(false),
-    m_outputConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String StartTrainedModelExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

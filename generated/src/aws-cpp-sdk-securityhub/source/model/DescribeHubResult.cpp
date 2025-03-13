@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeHubResult::DescribeHubResult() : 
-    m_autoEnableControls(false),
-    m_controlFindingGenerator(ControlFindingGenerator::NOT_SET)
-{
-}
-
 DescribeHubResult::DescribeHubResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeHubResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ DescribeHubResult& DescribeHubResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("HubArn"))
   {
     m_hubArn = jsonValue.GetString("HubArn");
-
+    m_hubArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscribedAt"))
   {
     m_subscribedAt = jsonValue.GetString("SubscribedAt");
-
+    m_subscribedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoEnableControls"))
   {
     m_autoEnableControls = jsonValue.GetBool("AutoEnableControls");
-
+    m_autoEnableControlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlFindingGenerator"))
   {
     m_controlFindingGenerator = ControlFindingGeneratorMapper::GetControlFindingGeneratorForName(jsonValue.GetString("ControlFindingGenerator"));
-
+    m_controlFindingGeneratorHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

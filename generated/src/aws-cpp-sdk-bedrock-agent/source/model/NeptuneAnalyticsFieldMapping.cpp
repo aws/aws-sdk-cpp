@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-NeptuneAnalyticsFieldMapping::NeptuneAnalyticsFieldMapping() : 
-    m_metadataFieldHasBeenSet(false),
-    m_textFieldHasBeenSet(false)
-{
-}
-
 NeptuneAnalyticsFieldMapping::NeptuneAnalyticsFieldMapping(JsonView jsonValue)
-  : NeptuneAnalyticsFieldMapping()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NeptuneAnalyticsFieldMapping& NeptuneAnalyticsFieldMapping::operator =(JsonView 
   if(jsonValue.ValueExists("metadataField"))
   {
     m_metadataField = jsonValue.GetString("metadataField");
-
     m_metadataFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textField"))
   {
     m_textField = jsonValue.GetString("textField");
-
     m_textFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

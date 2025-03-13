@@ -21,7 +21,7 @@ namespace Model
   class ListCostCategoryDefinitionsRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API ListCostCategoryDefinitionsRequest();
+    AWS_COSTEXPLORER_API ListCostCategoryDefinitionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The date when the Cost Category was effective. </p>
      */
-    inline const Aws::String& GetEffectiveOn() const{ return m_effectiveOn; }
+    inline const Aws::String& GetEffectiveOn() const { return m_effectiveOn; }
     inline bool EffectiveOnHasBeenSet() const { return m_effectiveOnHasBeenSet; }
-    inline void SetEffectiveOn(const Aws::String& value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = value; }
-    inline void SetEffectiveOn(Aws::String&& value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = std::move(value); }
-    inline void SetEffectiveOn(const char* value) { m_effectiveOnHasBeenSet = true; m_effectiveOn.assign(value); }
-    inline ListCostCategoryDefinitionsRequest& WithEffectiveOn(const Aws::String& value) { SetEffectiveOn(value); return *this;}
-    inline ListCostCategoryDefinitionsRequest& WithEffectiveOn(Aws::String&& value) { SetEffectiveOn(std::move(value)); return *this;}
-    inline ListCostCategoryDefinitionsRequest& WithEffectiveOn(const char* value) { SetEffectiveOn(value); return *this;}
+    template<typename EffectiveOnT = Aws::String>
+    void SetEffectiveOn(EffectiveOnT&& value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = std::forward<EffectiveOnT>(value); }
+    template<typename EffectiveOnT = Aws::String>
+    ListCostCategoryDefinitionsRequest& WithEffectiveOn(EffectiveOnT&& value) { SetEffectiveOn(std::forward<EffectiveOnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,21 +52,19 @@ namespace Model
      * the token when the response from a previous call has more results than the
      * maximum page size. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCostCategoryDefinitionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCostCategoryDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCostCategoryDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCostCategoryDefinitionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of entries a paginated response contains. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCostCategoryDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -81,7 +77,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

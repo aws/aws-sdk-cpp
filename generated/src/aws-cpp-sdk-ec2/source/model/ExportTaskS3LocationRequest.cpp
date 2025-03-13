@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ExportTaskS3LocationRequest::ExportTaskS3LocationRequest() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false)
-{
-}
-
 ExportTaskS3LocationRequest::ExportTaskS3LocationRequest(const XmlNode& xmlNode)
-  : ExportTaskS3LocationRequest()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ExportTaskS3LocationRequest& ExportTaskS3LocationRequest::operator =(const XmlNo
     {
       m_s3Bucket = Aws::Utils::Xml::DecodeEscapedXmlText(s3BucketNode.GetText());
       m_s3BucketHasBeenSet = true;
+       m_s3BucketHasBeenSet = true;
     }
     XmlNode s3PrefixNode = resultNode.FirstChild("S3Prefix");
     if(!s3PrefixNode.IsNull())
     {
       m_s3Prefix = Aws::Utils::Xml::DecodeEscapedXmlText(s3PrefixNode.GetText());
       m_s3PrefixHasBeenSet = true;
+       m_s3PrefixHasBeenSet = true;
     }
   }
 

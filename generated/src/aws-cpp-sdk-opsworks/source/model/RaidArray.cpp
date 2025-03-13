@@ -18,29 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-RaidArray::RaidArray() : 
-    m_raidArrayIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_raidLevel(0),
-    m_raidLevelHasBeenSet(false),
-    m_numberOfDisks(0),
-    m_numberOfDisksHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_mountPointHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false)
-{
-}
-
 RaidArray::RaidArray(JsonView jsonValue)
-  : RaidArray()
 {
   *this = jsonValue;
 }
@@ -50,94 +28,68 @@ RaidArray& RaidArray::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RaidArrayId"))
   {
     m_raidArrayId = jsonValue.GetString("RaidArrayId");
-
     m_raidArrayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RaidLevel"))
   {
     m_raidLevel = jsonValue.GetInteger("RaidLevel");
-
     m_raidLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfDisks"))
   {
     m_numberOfDisks = jsonValue.GetInteger("NumberOfDisks");
-
     m_numberOfDisksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetInteger("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Device"))
   {
     m_device = jsonValue.GetString("Device");
-
     m_deviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MountPoint"))
   {
     m_mountPoint = jsonValue.GetString("MountPoint");
-
     m_mountPointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeType"))
   {
     m_volumeType = jsonValue.GetString("VolumeType");
-
     m_volumeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Iops"))
   {
     m_iops = jsonValue.GetInteger("Iops");
-
     m_iopsHasBeenSet = true;
   }
-
   return *this;
 }
 

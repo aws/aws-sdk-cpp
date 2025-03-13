@@ -12,14 +12,6 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListApplicationStatesRequest::ListApplicationStatesRequest() : 
-    m_applicationIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListApplicationStatesRequest::SerializePayload() const
 {
   JsonValue payload;

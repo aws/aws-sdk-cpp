@@ -10,10 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeAdjustmentTypesRequest::DescribeAdjustmentTypesRequest()
-{
-}
-
 Aws::String DescribeAdjustmentTypesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

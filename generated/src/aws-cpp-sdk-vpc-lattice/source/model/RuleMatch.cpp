@@ -18,13 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-RuleMatch::RuleMatch() : 
-    m_httpMatchHasBeenSet(false)
-{
-}
-
 RuleMatch::RuleMatch(JsonView jsonValue)
-  : RuleMatch()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RuleMatch& RuleMatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("httpMatch"))
   {
     m_httpMatch = jsonValue.GetObject("httpMatch");
-
     m_httpMatchHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-PredictiveScalingMetricStat::PredictiveScalingMetricStat() : 
-    m_metricHasBeenSet(false),
-    m_statHasBeenSet(false),
-    m_unitHasBeenSet(false)
-{
-}
-
 PredictiveScalingMetricStat::PredictiveScalingMetricStat(JsonView jsonValue)
-  : PredictiveScalingMetricStat()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PredictiveScalingMetricStat& PredictiveScalingMetricStat::operator =(JsonView js
   if(jsonValue.ValueExists("Metric"))
   {
     m_metric = jsonValue.GetObject("Metric");
-
     m_metricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stat"))
   {
     m_stat = jsonValue.GetString("Stat");
-
     m_statHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = jsonValue.GetString("Unit");
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

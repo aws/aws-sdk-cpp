@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RuleGroupVariablesIpSetsDetails::RuleGroupVariablesIpSetsDetails() : 
-    m_definitionHasBeenSet(false)
-{
-}
-
 RuleGroupVariablesIpSetsDetails::RuleGroupVariablesIpSetsDetails(JsonView jsonValue)
-  : RuleGroupVariablesIpSetsDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RuleGroupVariablesIpSetsDetails& RuleGroupVariablesIpSetsDetails::operator =(Jso
     }
     m_definitionHasBeenSet = true;
   }
-
   return *this;
 }
 

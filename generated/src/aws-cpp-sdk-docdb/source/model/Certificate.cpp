@@ -20,18 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-Certificate::Certificate() : 
-    m_certificateIdentifierHasBeenSet(false),
-    m_certificateTypeHasBeenSet(false),
-    m_thumbprintHasBeenSet(false),
-    m_validFromHasBeenSet(false),
-    m_validTillHasBeenSet(false),
-    m_certificateArnHasBeenSet(false)
-{
-}
-
 Certificate::Certificate(const XmlNode& xmlNode)
-  : Certificate()
 {
   *this = xmlNode;
 }
@@ -47,36 +36,42 @@ Certificate& Certificate::operator =(const XmlNode& xmlNode)
     {
       m_certificateIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(certificateIdentifierNode.GetText());
       m_certificateIdentifierHasBeenSet = true;
+       m_certificateIdentifierHasBeenSet = true;
     }
     XmlNode certificateTypeNode = resultNode.FirstChild("CertificateType");
     if(!certificateTypeNode.IsNull())
     {
       m_certificateType = Aws::Utils::Xml::DecodeEscapedXmlText(certificateTypeNode.GetText());
       m_certificateTypeHasBeenSet = true;
+       m_certificateTypeHasBeenSet = true;
     }
     XmlNode thumbprintNode = resultNode.FirstChild("Thumbprint");
     if(!thumbprintNode.IsNull())
     {
       m_thumbprint = Aws::Utils::Xml::DecodeEscapedXmlText(thumbprintNode.GetText());
       m_thumbprintHasBeenSet = true;
+       m_thumbprintHasBeenSet = true;
     }
     XmlNode validFromNode = resultNode.FirstChild("ValidFrom");
     if(!validFromNode.IsNull())
     {
       m_validFrom = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validFromNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_validFromHasBeenSet = true;
+       m_validFromHasBeenSet = true;
     }
     XmlNode validTillNode = resultNode.FirstChild("ValidTill");
     if(!validTillNode.IsNull())
     {
       m_validTill = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validTillNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_validTillHasBeenSet = true;
+       m_validTillHasBeenSet = true;
     }
     XmlNode certificateArnNode = resultNode.FirstChild("CertificateArn");
     if(!certificateArnNode.IsNull())
     {
       m_certificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(certificateArnNode.GetText());
       m_certificateArnHasBeenSet = true;
+       m_certificateArnHasBeenSet = true;
     }
   }
 

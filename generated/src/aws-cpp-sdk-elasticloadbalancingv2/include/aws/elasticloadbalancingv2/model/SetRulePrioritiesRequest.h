@@ -22,7 +22,7 @@ namespace Model
   class SetRulePrioritiesRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API SetRulePrioritiesRequest();
+    AWS_ELASTICLOADBALANCINGV2_API SetRulePrioritiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>The rule priorities.</p>
      */
-    inline const Aws::Vector<RulePriorityPair>& GetRulePriorities() const{ return m_rulePriorities; }
+    inline const Aws::Vector<RulePriorityPair>& GetRulePriorities() const { return m_rulePriorities; }
     inline bool RulePrioritiesHasBeenSet() const { return m_rulePrioritiesHasBeenSet; }
-    inline void SetRulePriorities(const Aws::Vector<RulePriorityPair>& value) { m_rulePrioritiesHasBeenSet = true; m_rulePriorities = value; }
-    inline void SetRulePriorities(Aws::Vector<RulePriorityPair>&& value) { m_rulePrioritiesHasBeenSet = true; m_rulePriorities = std::move(value); }
-    inline SetRulePrioritiesRequest& WithRulePriorities(const Aws::Vector<RulePriorityPair>& value) { SetRulePriorities(value); return *this;}
-    inline SetRulePrioritiesRequest& WithRulePriorities(Aws::Vector<RulePriorityPair>&& value) { SetRulePriorities(std::move(value)); return *this;}
-    inline SetRulePrioritiesRequest& AddRulePriorities(const RulePriorityPair& value) { m_rulePrioritiesHasBeenSet = true; m_rulePriorities.push_back(value); return *this; }
-    inline SetRulePrioritiesRequest& AddRulePriorities(RulePriorityPair&& value) { m_rulePrioritiesHasBeenSet = true; m_rulePriorities.push_back(std::move(value)); return *this; }
+    template<typename RulePrioritiesT = Aws::Vector<RulePriorityPair>>
+    void SetRulePriorities(RulePrioritiesT&& value) { m_rulePrioritiesHasBeenSet = true; m_rulePriorities = std::forward<RulePrioritiesT>(value); }
+    template<typename RulePrioritiesT = Aws::Vector<RulePriorityPair>>
+    SetRulePrioritiesRequest& WithRulePriorities(RulePrioritiesT&& value) { SetRulePriorities(std::forward<RulePrioritiesT>(value)); return *this;}
+    template<typename RulePrioritiesT = RulePriorityPair>
+    SetRulePrioritiesRequest& AddRulePriorities(RulePrioritiesT&& value) { m_rulePrioritiesHasBeenSet = true; m_rulePriorities.emplace_back(std::forward<RulePrioritiesT>(value)); return *this; }
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class AwsCloudFrontDistributionOriginS3OriginConfig
   {
   public:
-    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginS3OriginConfig();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginS3OriginConfig() = default;
     AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginS3OriginConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginS3OriginConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The CloudFront origin access identity to associate with the origin.</p>
      */
-    inline const Aws::String& GetOriginAccessIdentity() const{ return m_originAccessIdentity; }
+    inline const Aws::String& GetOriginAccessIdentity() const { return m_originAccessIdentity; }
     inline bool OriginAccessIdentityHasBeenSet() const { return m_originAccessIdentityHasBeenSet; }
-    inline void SetOriginAccessIdentity(const Aws::String& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = value; }
-    inline void SetOriginAccessIdentity(Aws::String&& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = std::move(value); }
-    inline void SetOriginAccessIdentity(const char* value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity.assign(value); }
-    inline AwsCloudFrontDistributionOriginS3OriginConfig& WithOriginAccessIdentity(const Aws::String& value) { SetOriginAccessIdentity(value); return *this;}
-    inline AwsCloudFrontDistributionOriginS3OriginConfig& WithOriginAccessIdentity(Aws::String&& value) { SetOriginAccessIdentity(std::move(value)); return *this;}
-    inline AwsCloudFrontDistributionOriginS3OriginConfig& WithOriginAccessIdentity(const char* value) { SetOriginAccessIdentity(value); return *this;}
+    template<typename OriginAccessIdentityT = Aws::String>
+    void SetOriginAccessIdentity(OriginAccessIdentityT&& value) { m_originAccessIdentityHasBeenSet = true; m_originAccessIdentity = std::forward<OriginAccessIdentityT>(value); }
+    template<typename OriginAccessIdentityT = Aws::String>
+    AwsCloudFrontDistributionOriginS3OriginConfig& WithOriginAccessIdentity(OriginAccessIdentityT&& value) { SetOriginAccessIdentity(std::forward<OriginAccessIdentityT>(value)); return *this;}
     ///@}
   private:
 

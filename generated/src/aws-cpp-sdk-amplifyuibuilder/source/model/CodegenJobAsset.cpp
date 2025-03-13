@@ -18,13 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-CodegenJobAsset::CodegenJobAsset() : 
-    m_downloadUrlHasBeenSet(false)
-{
-}
-
 CodegenJobAsset::CodegenJobAsset(JsonView jsonValue)
-  : CodegenJobAsset()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CodegenJobAsset& CodegenJobAsset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("downloadUrl"))
   {
     m_downloadUrl = jsonValue.GetString("downloadUrl");
-
     m_downloadUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

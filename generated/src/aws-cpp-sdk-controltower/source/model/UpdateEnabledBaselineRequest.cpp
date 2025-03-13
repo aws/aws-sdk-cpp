@@ -12,13 +12,6 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEnabledBaselineRequest::UpdateEnabledBaselineRequest() : 
-    m_baselineVersionHasBeenSet(false),
-    m_enabledBaselineIdentifierHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEnabledBaselineRequest::SerializePayload() const
 {
   JsonValue payload;

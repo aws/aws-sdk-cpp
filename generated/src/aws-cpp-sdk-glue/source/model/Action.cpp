@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Action::Action() : 
-    m_jobNameHasBeenSet(false),
-    m_argumentsHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false),
-    m_crawlerNameHasBeenSet(false)
-{
-}
-
 Action::Action(JsonView jsonValue)
-  : Action()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ Action& Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arguments"))
   {
     Aws::Map<Aws::String, JsonView> argumentsJsonMap = jsonValue.GetObject("Arguments").GetAllObjects();
@@ -53,35 +39,26 @@ Action& Action::operator =(JsonView jsonValue)
     }
     m_argumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeout"))
   {
     m_timeout = jsonValue.GetInteger("Timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityConfiguration"))
   {
     m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
-
     m_securityConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationProperty"))
   {
     m_notificationProperty = jsonValue.GetObject("NotificationProperty");
-
     m_notificationPropertyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlerName"))
   {
     m_crawlerName = jsonValue.GetString("CrawlerName");
-
     m_crawlerNameHasBeenSet = true;
   }
-
   return *this;
 }
 

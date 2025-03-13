@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-CmafAdditionalManifest::CmafAdditionalManifest() : 
-    m_manifestNameModifierHasBeenSet(false),
-    m_selectedOutputsHasBeenSet(false)
-{
-}
-
 CmafAdditionalManifest::CmafAdditionalManifest(JsonView jsonValue)
-  : CmafAdditionalManifest()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CmafAdditionalManifest& CmafAdditionalManifest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("manifestNameModifier"))
   {
     m_manifestNameModifier = jsonValue.GetString("manifestNameModifier");
-
     m_manifestNameModifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectedOutputs"))
   {
     Aws::Utils::Array<JsonView> selectedOutputsJsonList = jsonValue.GetArray("selectedOutputs");
@@ -48,7 +39,6 @@ CmafAdditionalManifest& CmafAdditionalManifest::operator =(JsonView jsonValue)
     }
     m_selectedOutputsHasBeenSet = true;
   }
-
   return *this;
 }
 

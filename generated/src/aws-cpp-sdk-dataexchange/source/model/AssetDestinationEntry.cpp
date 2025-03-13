@@ -18,15 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-AssetDestinationEntry::AssetDestinationEntry() : 
-    m_assetIdHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 AssetDestinationEntry::AssetDestinationEntry(JsonView jsonValue)
-  : AssetDestinationEntry()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AssetDestinationEntry& AssetDestinationEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssetId"))
   {
     m_assetId = jsonValue.GetString("AssetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-RepositoryHeadSourceCodeType::RepositoryHeadSourceCodeType() : 
-    m_branchNameHasBeenSet(false)
-{
-}
-
 RepositoryHeadSourceCodeType::RepositoryHeadSourceCodeType(JsonView jsonValue)
-  : RepositoryHeadSourceCodeType()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RepositoryHeadSourceCodeType& RepositoryHeadSourceCodeType::operator =(JsonView 
   if(jsonValue.ValueExists("BranchName"))
   {
     m_branchName = jsonValue.GetString("BranchName");
-
     m_branchNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,22 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-LensReviewSummary::LensReviewSummary() : 
-    m_lensAliasHasBeenSet(false),
-    m_lensArnHasBeenSet(false),
-    m_lensVersionHasBeenSet(false),
-    m_lensNameHasBeenSet(false),
-    m_lensStatus(LensStatus::NOT_SET),
-    m_lensStatusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_riskCountsHasBeenSet(false),
-    m_profilesHasBeenSet(false),
-    m_prioritizedRiskCountsHasBeenSet(false)
-{
-}
-
 LensReviewSummary::LensReviewSummary(JsonView jsonValue)
-  : LensReviewSummary()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ LensReviewSummary& LensReviewSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LensAlias"))
   {
     m_lensAlias = jsonValue.GetString("LensAlias");
-
     m_lensAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensArn"))
   {
     m_lensArn = jsonValue.GetString("LensArn");
-
     m_lensArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensVersion"))
   {
     m_lensVersion = jsonValue.GetString("LensVersion");
-
     m_lensVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensName"))
   {
     m_lensName = jsonValue.GetString("LensName");
-
     m_lensNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensStatus"))
   {
     m_lensStatus = LensStatusMapper::GetLensStatusForName(jsonValue.GetString("LensStatus"));
-
     m_lensStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RiskCounts"))
   {
     Aws::Map<Aws::String, JsonView> riskCountsJsonMap = jsonValue.GetObject("RiskCounts").GetAllObjects();
@@ -91,7 +64,6 @@ LensReviewSummary& LensReviewSummary::operator =(JsonView jsonValue)
     }
     m_riskCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Profiles"))
   {
     Aws::Utils::Array<JsonView> profilesJsonList = jsonValue.GetArray("Profiles");
@@ -101,7 +73,6 @@ LensReviewSummary& LensReviewSummary::operator =(JsonView jsonValue)
     }
     m_profilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrioritizedRiskCounts"))
   {
     Aws::Map<Aws::String, JsonView> prioritizedRiskCountsJsonMap = jsonValue.GetObject("PrioritizedRiskCounts").GetAllObjects();
@@ -111,7 +82,6 @@ LensReviewSummary& LensReviewSummary::operator =(JsonView jsonValue)
     }
     m_prioritizedRiskCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -19,7 +19,7 @@ namespace Model
   class GetRegistryScanningConfigurationRequest : public ECRRequest
   {
   public:
-    AWS_ECR_API GetRegistryScanningConfigurationRequest();
+    AWS_ECR_API GetRegistryScanningConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

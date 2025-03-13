@@ -18,17 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-RecommendationDetailHourlyMetrics::RecommendationDetailHourlyMetrics() : 
-    m_startTimeHasBeenSet(false),
-    m_estimatedOnDemandCostHasBeenSet(false),
-    m_currentCoverageHasBeenSet(false),
-    m_estimatedCoverageHasBeenSet(false),
-    m_estimatedNewCommitmentUtilizationHasBeenSet(false)
-{
-}
-
 RecommendationDetailHourlyMetrics::RecommendationDetailHourlyMetrics(JsonView jsonValue)
-  : RecommendationDetailHourlyMetrics()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RecommendationDetailHourlyMetrics& RecommendationDetailHourlyMetrics::operator =
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedOnDemandCost"))
   {
     m_estimatedOnDemandCost = jsonValue.GetString("EstimatedOnDemandCost");
-
     m_estimatedOnDemandCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentCoverage"))
   {
     m_currentCoverage = jsonValue.GetString("CurrentCoverage");
-
     m_currentCoverageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedCoverage"))
   {
     m_estimatedCoverage = jsonValue.GetString("EstimatedCoverage");
-
     m_estimatedCoverageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedNewCommitmentUtilization"))
   {
     m_estimatedNewCommitmentUtilization = jsonValue.GetString("EstimatedNewCommitmentUtilization");
-
     m_estimatedNewCommitmentUtilizationHasBeenSet = true;
   }
-
   return *this;
 }
 

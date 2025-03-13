@@ -21,7 +21,7 @@ namespace Model
   class ListOrganizationalUnitsForParentRequest : public OrganizationsRequest
   {
   public:
-    AWS_ORGANIZATIONS_API ListOrganizationalUnitsForParentRequest();
+    AWS_ORGANIZATIONS_API ListOrganizationalUnitsForParentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * of the root that the OU is in). This string is followed by a second "-" dash and
      * from 8 to 32 additional lowercase letters or digits.</p> </li> </ul>
      */
-    inline const Aws::String& GetParentId() const{ return m_parentId; }
+    inline const Aws::String& GetParentId() const { return m_parentId; }
     inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
-    inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
-    inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = std::move(value); }
-    inline void SetParentId(const char* value) { m_parentIdHasBeenSet = true; m_parentId.assign(value); }
-    inline ListOrganizationalUnitsForParentRequest& WithParentId(const Aws::String& value) { SetParentId(value); return *this;}
-    inline ListOrganizationalUnitsForParentRequest& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
-    inline ListOrganizationalUnitsForParentRequest& WithParentId(const char* value) { SetParentId(value); return *this;}
+    template<typename ParentIdT = Aws::String>
+    void SetParentId(ParentIdT&& value) { m_parentIdHasBeenSet = true; m_parentId = std::forward<ParentIdT>(value); }
+    template<typename ParentIdT = Aws::String>
+    ListOrganizationalUnitsForParentRequest& WithParentId(ParentIdT&& value) { SetParentId(std::forward<ParentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * value of the previous call's <code>NextToken</code> response to indicate where
      * the output should continue from.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListOrganizationalUnitsForParentRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOrganizationalUnitsForParentRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOrganizationalUnitsForParentRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOrganizationalUnitsForParentRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,7 +81,7 @@ namespace Model
      * there are more results available. You should check <code>NextToken</code> after
      * every operation to ensure that you receive all of the results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListOrganizationalUnitsForParentRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -98,7 +94,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

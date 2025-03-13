@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetParticipantResult::GetParticipantResult()
-{
-}
-
 GetParticipantResult::GetParticipantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetParticipantResult& GetParticipantResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("participant"))
   {
     m_participant = jsonValue.GetObject("participant");
-
+    m_participantHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

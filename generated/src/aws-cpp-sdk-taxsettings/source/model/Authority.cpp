@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-Authority::Authority() : 
-    m_countryHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 Authority::Authority(JsonView jsonValue)
-  : Authority()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Authority& Authority::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("country"))
   {
     m_country = jsonValue.GetString("country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetString("state");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

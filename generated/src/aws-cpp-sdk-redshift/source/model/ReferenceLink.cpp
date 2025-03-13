@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ReferenceLink::ReferenceLink() : 
-    m_textHasBeenSet(false),
-    m_linkHasBeenSet(false)
-{
-}
-
 ReferenceLink::ReferenceLink(const XmlNode& xmlNode)
-  : ReferenceLink()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ReferenceLink& ReferenceLink::operator =(const XmlNode& xmlNode)
     {
       m_text = Aws::Utils::Xml::DecodeEscapedXmlText(textNode.GetText());
       m_textHasBeenSet = true;
+       m_textHasBeenSet = true;
     }
     XmlNode linkNode = resultNode.FirstChild("Link");
     if(!linkNode.IsNull())
     {
       m_link = Aws::Utils::Xml::DecodeEscapedXmlText(linkNode.GetText());
       m_linkHasBeenSet = true;
+       m_linkHasBeenSet = true;
     }
   }
 

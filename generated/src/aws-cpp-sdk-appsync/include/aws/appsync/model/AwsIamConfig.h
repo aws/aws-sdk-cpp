@@ -32,7 +32,7 @@ namespace Model
   class AwsIamConfig
   {
   public:
-    AWS_APPSYNC_API AwsIamConfig();
+    AWS_APPSYNC_API AwsIamConfig() = default;
     AWS_APPSYNC_API AwsIamConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API AwsIamConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The signing Amazon Web Services Region for IAM authorization.</p>
      */
-    inline const Aws::String& GetSigningRegion() const{ return m_signingRegion; }
+    inline const Aws::String& GetSigningRegion() const { return m_signingRegion; }
     inline bool SigningRegionHasBeenSet() const { return m_signingRegionHasBeenSet; }
-    inline void SetSigningRegion(const Aws::String& value) { m_signingRegionHasBeenSet = true; m_signingRegion = value; }
-    inline void SetSigningRegion(Aws::String&& value) { m_signingRegionHasBeenSet = true; m_signingRegion = std::move(value); }
-    inline void SetSigningRegion(const char* value) { m_signingRegionHasBeenSet = true; m_signingRegion.assign(value); }
-    inline AwsIamConfig& WithSigningRegion(const Aws::String& value) { SetSigningRegion(value); return *this;}
-    inline AwsIamConfig& WithSigningRegion(Aws::String&& value) { SetSigningRegion(std::move(value)); return *this;}
-    inline AwsIamConfig& WithSigningRegion(const char* value) { SetSigningRegion(value); return *this;}
+    template<typename SigningRegionT = Aws::String>
+    void SetSigningRegion(SigningRegionT&& value) { m_signingRegionHasBeenSet = true; m_signingRegion = std::forward<SigningRegionT>(value); }
+    template<typename SigningRegionT = Aws::String>
+    AwsIamConfig& WithSigningRegion(SigningRegionT&& value) { SetSigningRegion(std::forward<SigningRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The signing service name for IAM authorization.</p>
      */
-    inline const Aws::String& GetSigningServiceName() const{ return m_signingServiceName; }
+    inline const Aws::String& GetSigningServiceName() const { return m_signingServiceName; }
     inline bool SigningServiceNameHasBeenSet() const { return m_signingServiceNameHasBeenSet; }
-    inline void SetSigningServiceName(const Aws::String& value) { m_signingServiceNameHasBeenSet = true; m_signingServiceName = value; }
-    inline void SetSigningServiceName(Aws::String&& value) { m_signingServiceNameHasBeenSet = true; m_signingServiceName = std::move(value); }
-    inline void SetSigningServiceName(const char* value) { m_signingServiceNameHasBeenSet = true; m_signingServiceName.assign(value); }
-    inline AwsIamConfig& WithSigningServiceName(const Aws::String& value) { SetSigningServiceName(value); return *this;}
-    inline AwsIamConfig& WithSigningServiceName(Aws::String&& value) { SetSigningServiceName(std::move(value)); return *this;}
-    inline AwsIamConfig& WithSigningServiceName(const char* value) { SetSigningServiceName(value); return *this;}
+    template<typename SigningServiceNameT = Aws::String>
+    void SetSigningServiceName(SigningServiceNameT&& value) { m_signingServiceNameHasBeenSet = true; m_signingServiceName = std::forward<SigningServiceNameT>(value); }
+    template<typename SigningServiceNameT = Aws::String>
+    AwsIamConfig& WithSigningServiceName(SigningServiceNameT&& value) { SetSigningServiceName(std::forward<SigningServiceNameT>(value)); return *this;}
     ///@}
   private:
 

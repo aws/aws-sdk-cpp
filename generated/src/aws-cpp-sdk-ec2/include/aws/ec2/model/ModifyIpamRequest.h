@@ -25,7 +25,7 @@ namespace Model
   class ModifyIpamRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyIpamRequest();
+    AWS_EC2_API ModifyIpamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,7 +47,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyIpamRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -57,28 +57,24 @@ namespace Model
     /**
      * <p>The ID of the IPAM you want to modify.</p>
      */
-    inline const Aws::String& GetIpamId() const{ return m_ipamId; }
+    inline const Aws::String& GetIpamId() const { return m_ipamId; }
     inline bool IpamIdHasBeenSet() const { return m_ipamIdHasBeenSet; }
-    inline void SetIpamId(const Aws::String& value) { m_ipamIdHasBeenSet = true; m_ipamId = value; }
-    inline void SetIpamId(Aws::String&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::move(value); }
-    inline void SetIpamId(const char* value) { m_ipamIdHasBeenSet = true; m_ipamId.assign(value); }
-    inline ModifyIpamRequest& WithIpamId(const Aws::String& value) { SetIpamId(value); return *this;}
-    inline ModifyIpamRequest& WithIpamId(Aws::String&& value) { SetIpamId(std::move(value)); return *this;}
-    inline ModifyIpamRequest& WithIpamId(const char* value) { SetIpamId(value); return *this;}
+    template<typename IpamIdT = Aws::String>
+    void SetIpamId(IpamIdT&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::forward<IpamIdT>(value); }
+    template<typename IpamIdT = Aws::String>
+    ModifyIpamRequest& WithIpamId(IpamIdT&& value) { SetIpamId(std::forward<IpamIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the IPAM you want to modify.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ModifyIpamRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ModifyIpamRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ModifyIpamRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ModifyIpamRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,28 +86,28 @@ namespace Model
      * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
      * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
-    inline const Aws::Vector<AddIpamOperatingRegion>& GetAddOperatingRegions() const{ return m_addOperatingRegions; }
+    inline const Aws::Vector<AddIpamOperatingRegion>& GetAddOperatingRegions() const { return m_addOperatingRegions; }
     inline bool AddOperatingRegionsHasBeenSet() const { return m_addOperatingRegionsHasBeenSet; }
-    inline void SetAddOperatingRegions(const Aws::Vector<AddIpamOperatingRegion>& value) { m_addOperatingRegionsHasBeenSet = true; m_addOperatingRegions = value; }
-    inline void SetAddOperatingRegions(Aws::Vector<AddIpamOperatingRegion>&& value) { m_addOperatingRegionsHasBeenSet = true; m_addOperatingRegions = std::move(value); }
-    inline ModifyIpamRequest& WithAddOperatingRegions(const Aws::Vector<AddIpamOperatingRegion>& value) { SetAddOperatingRegions(value); return *this;}
-    inline ModifyIpamRequest& WithAddOperatingRegions(Aws::Vector<AddIpamOperatingRegion>&& value) { SetAddOperatingRegions(std::move(value)); return *this;}
-    inline ModifyIpamRequest& AddAddOperatingRegions(const AddIpamOperatingRegion& value) { m_addOperatingRegionsHasBeenSet = true; m_addOperatingRegions.push_back(value); return *this; }
-    inline ModifyIpamRequest& AddAddOperatingRegions(AddIpamOperatingRegion&& value) { m_addOperatingRegionsHasBeenSet = true; m_addOperatingRegions.push_back(std::move(value)); return *this; }
+    template<typename AddOperatingRegionsT = Aws::Vector<AddIpamOperatingRegion>>
+    void SetAddOperatingRegions(AddOperatingRegionsT&& value) { m_addOperatingRegionsHasBeenSet = true; m_addOperatingRegions = std::forward<AddOperatingRegionsT>(value); }
+    template<typename AddOperatingRegionsT = Aws::Vector<AddIpamOperatingRegion>>
+    ModifyIpamRequest& WithAddOperatingRegions(AddOperatingRegionsT&& value) { SetAddOperatingRegions(std::forward<AddOperatingRegionsT>(value)); return *this;}
+    template<typename AddOperatingRegionsT = AddIpamOperatingRegion>
+    ModifyIpamRequest& AddAddOperatingRegions(AddOperatingRegionsT&& value) { m_addOperatingRegionsHasBeenSet = true; m_addOperatingRegions.emplace_back(std::forward<AddOperatingRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The operating Regions to remove.</p>
      */
-    inline const Aws::Vector<RemoveIpamOperatingRegion>& GetRemoveOperatingRegions() const{ return m_removeOperatingRegions; }
+    inline const Aws::Vector<RemoveIpamOperatingRegion>& GetRemoveOperatingRegions() const { return m_removeOperatingRegions; }
     inline bool RemoveOperatingRegionsHasBeenSet() const { return m_removeOperatingRegionsHasBeenSet; }
-    inline void SetRemoveOperatingRegions(const Aws::Vector<RemoveIpamOperatingRegion>& value) { m_removeOperatingRegionsHasBeenSet = true; m_removeOperatingRegions = value; }
-    inline void SetRemoveOperatingRegions(Aws::Vector<RemoveIpamOperatingRegion>&& value) { m_removeOperatingRegionsHasBeenSet = true; m_removeOperatingRegions = std::move(value); }
-    inline ModifyIpamRequest& WithRemoveOperatingRegions(const Aws::Vector<RemoveIpamOperatingRegion>& value) { SetRemoveOperatingRegions(value); return *this;}
-    inline ModifyIpamRequest& WithRemoveOperatingRegions(Aws::Vector<RemoveIpamOperatingRegion>&& value) { SetRemoveOperatingRegions(std::move(value)); return *this;}
-    inline ModifyIpamRequest& AddRemoveOperatingRegions(const RemoveIpamOperatingRegion& value) { m_removeOperatingRegionsHasBeenSet = true; m_removeOperatingRegions.push_back(value); return *this; }
-    inline ModifyIpamRequest& AddRemoveOperatingRegions(RemoveIpamOperatingRegion&& value) { m_removeOperatingRegionsHasBeenSet = true; m_removeOperatingRegions.push_back(std::move(value)); return *this; }
+    template<typename RemoveOperatingRegionsT = Aws::Vector<RemoveIpamOperatingRegion>>
+    void SetRemoveOperatingRegions(RemoveOperatingRegionsT&& value) { m_removeOperatingRegionsHasBeenSet = true; m_removeOperatingRegions = std::forward<RemoveOperatingRegionsT>(value); }
+    template<typename RemoveOperatingRegionsT = Aws::Vector<RemoveIpamOperatingRegion>>
+    ModifyIpamRequest& WithRemoveOperatingRegions(RemoveOperatingRegionsT&& value) { SetRemoveOperatingRegions(std::forward<RemoveOperatingRegionsT>(value)); return *this;}
+    template<typename RemoveOperatingRegionsT = RemoveIpamOperatingRegion>
+    ModifyIpamRequest& AddRemoveOperatingRegions(RemoveOperatingRegionsT&& value) { m_removeOperatingRegionsHasBeenSet = true; m_removeOperatingRegions.emplace_back(std::forward<RemoveOperatingRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -121,12 +117,10 @@ namespace Model
      * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
      * IPAM tab</a>.</p>
      */
-    inline const IpamTier& GetTier() const{ return m_tier; }
+    inline IpamTier GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const IpamTier& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(IpamTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline ModifyIpamRequest& WithTier(const IpamTier& value) { SetTier(value); return *this;}
-    inline ModifyIpamRequest& WithTier(IpamTier&& value) { SetTier(std::move(value)); return *this;}
+    inline void SetTier(IpamTier value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline ModifyIpamRequest& WithTier(IpamTier value) { SetTier(value); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +128,14 @@ namespace Model
      * <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This
      * option is disabled by default.</p>
      */
-    inline bool GetEnablePrivateGua() const{ return m_enablePrivateGua; }
+    inline bool GetEnablePrivateGua() const { return m_enablePrivateGua; }
     inline bool EnablePrivateGuaHasBeenSet() const { return m_enablePrivateGuaHasBeenSet; }
     inline void SetEnablePrivateGua(bool value) { m_enablePrivateGuaHasBeenSet = true; m_enablePrivateGua = value; }
     inline ModifyIpamRequest& WithEnablePrivateGua(bool value) { SetEnablePrivateGua(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamId;
@@ -156,10 +150,10 @@ namespace Model
     Aws::Vector<RemoveIpamOperatingRegion> m_removeOperatingRegions;
     bool m_removeOperatingRegionsHasBeenSet = false;
 
-    IpamTier m_tier;
+    IpamTier m_tier{IpamTier::NOT_SET};
     bool m_tierHasBeenSet = false;
 
-    bool m_enablePrivateGua;
+    bool m_enablePrivateGua{false};
     bool m_enablePrivateGuaHasBeenSet = false;
   };
 

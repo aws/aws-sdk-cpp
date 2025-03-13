@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AnalysisLoadBalancerListener::AnalysisLoadBalancerListener() : 
-    m_loadBalancerPort(0),
-    m_loadBalancerPortHasBeenSet(false),
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false)
-{
-}
-
 AnalysisLoadBalancerListener::AnalysisLoadBalancerListener(const XmlNode& xmlNode)
-  : AnalysisLoadBalancerListener()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ AnalysisLoadBalancerListener& AnalysisLoadBalancerListener::operator =(const Xml
     {
       m_loadBalancerPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerPortNode.GetText()).c_str()).c_str());
       m_loadBalancerPortHasBeenSet = true;
+       m_loadBalancerPortHasBeenSet = true;
     }
     XmlNode instancePortNode = resultNode.FirstChild("instancePort");
     if(!instancePortNode.IsNull())
     {
       m_instancePort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePortNode.GetText()).c_str()).c_str());
       m_instancePortHasBeenSet = true;
+       m_instancePortHasBeenSet = true;
     }
   }
 

@@ -20,18 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-Rule::Rule() : 
-    m_ruleArnHasBeenSet(false),
-    m_priorityHasBeenSet(false),
-    m_conditionsHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
-{
-}
-
 Rule::Rule(const XmlNode& xmlNode)
-  : Rule()
 {
   *this = xmlNode;
 }
@@ -47,42 +36,47 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
     {
       m_ruleArn = Aws::Utils::Xml::DecodeEscapedXmlText(ruleArnNode.GetText());
       m_ruleArnHasBeenSet = true;
+       m_ruleArnHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("Priority");
     if(!priorityNode.IsNull())
     {
       m_priority = Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText());
       m_priorityHasBeenSet = true;
+       m_priorityHasBeenSet = true;
     }
     XmlNode conditionsNode = resultNode.FirstChild("Conditions");
     if(!conditionsNode.IsNull())
     {
       XmlNode conditionsMember = conditionsNode.FirstChild("member");
+      m_conditionsHasBeenSet = !conditionsMember.IsNull();
       while(!conditionsMember.IsNull())
       {
         m_conditions.push_back(conditionsMember);
         conditionsMember = conditionsMember.NextNode("member");
       }
 
-      m_conditionsHasBeenSet = true;
+       m_conditionsHasBeenSet = true;
     }
     XmlNode actionsNode = resultNode.FirstChild("Actions");
     if(!actionsNode.IsNull())
     {
       XmlNode actionsMember = actionsNode.FirstChild("member");
+      m_actionsHasBeenSet = !actionsMember.IsNull();
       while(!actionsMember.IsNull())
       {
         m_actions.push_back(actionsMember);
         actionsMember = actionsMember.NextNode("member");
       }
 
-      m_actionsHasBeenSet = true;
+       m_actionsHasBeenSet = true;
     }
     XmlNode isDefaultNode = resultNode.FirstChild("IsDefault");
     if(!isDefaultNode.IsNull())
     {
       m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
+       m_isDefaultHasBeenSet = true;
     }
   }
 

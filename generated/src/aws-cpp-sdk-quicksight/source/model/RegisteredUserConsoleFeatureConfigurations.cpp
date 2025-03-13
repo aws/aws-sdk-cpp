@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RegisteredUserConsoleFeatureConfigurations::RegisteredUserConsoleFeatureConfigurations() : 
-    m_statePersistenceHasBeenSet(false),
-    m_sharedViewHasBeenSet(false)
-{
-}
-
 RegisteredUserConsoleFeatureConfigurations::RegisteredUserConsoleFeatureConfigurations(JsonView jsonValue)
-  : RegisteredUserConsoleFeatureConfigurations()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RegisteredUserConsoleFeatureConfigurations& RegisteredUserConsoleFeatureConfigur
   if(jsonValue.ValueExists("StatePersistence"))
   {
     m_statePersistence = jsonValue.GetObject("StatePersistence");
-
     m_statePersistenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharedView"))
   {
     m_sharedView = jsonValue.GetObject("SharedView");
-
     m_sharedViewHasBeenSet = true;
   }
-
   return *this;
 }
 

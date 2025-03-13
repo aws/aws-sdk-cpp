@@ -33,7 +33,7 @@ namespace Model
   class AccountSettingsNotificationConfiguration
   {
   public:
-    AWS_TIMESTREAMQUERY_API AccountSettingsNotificationConfiguration();
+    AWS_TIMESTREAMQUERY_API AccountSettingsNotificationConfiguration() = default;
     AWS_TIMESTREAMQUERY_API AccountSettingsNotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API AccountSettingsNotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
 
     ///@{
     
-    inline const SnsConfiguration& GetSnsConfiguration() const{ return m_snsConfiguration; }
+    inline const SnsConfiguration& GetSnsConfiguration() const { return m_snsConfiguration; }
     inline bool SnsConfigurationHasBeenSet() const { return m_snsConfigurationHasBeenSet; }
-    inline void SetSnsConfiguration(const SnsConfiguration& value) { m_snsConfigurationHasBeenSet = true; m_snsConfiguration = value; }
-    inline void SetSnsConfiguration(SnsConfiguration&& value) { m_snsConfigurationHasBeenSet = true; m_snsConfiguration = std::move(value); }
-    inline AccountSettingsNotificationConfiguration& WithSnsConfiguration(const SnsConfiguration& value) { SetSnsConfiguration(value); return *this;}
-    inline AccountSettingsNotificationConfiguration& WithSnsConfiguration(SnsConfiguration&& value) { SetSnsConfiguration(std::move(value)); return *this;}
+    template<typename SnsConfigurationT = SnsConfiguration>
+    void SetSnsConfiguration(SnsConfigurationT&& value) { m_snsConfigurationHasBeenSet = true; m_snsConfiguration = std::forward<SnsConfigurationT>(value); }
+    template<typename SnsConfigurationT = SnsConfiguration>
+    AccountSettingsNotificationConfiguration& WithSnsConfiguration(SnsConfigurationT&& value) { SetSnsConfiguration(std::forward<SnsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +55,12 @@ namespace Model
      * notifications. This field is only visible if SNS Topic is provided when updating
      * the account settings.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline AccountSettingsNotificationConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline AccountSettingsNotificationConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline AccountSettingsNotificationConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    AccountSettingsNotificationConfiguration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

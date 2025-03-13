@@ -32,7 +32,7 @@ namespace Model
   class AwsS3BucketServerSideEncryptionByDefault
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketServerSideEncryptionByDefault();
+    AWS_SECURITYHUB_API AwsS3BucketServerSideEncryptionByDefault() = default;
     AWS_SECURITYHUB_API AwsS3BucketServerSideEncryptionByDefault(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketServerSideEncryptionByDefault& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>Server-side encryption algorithm to use for the default encryption. Valid
      * values are <code>aws: kms</code> or <code>AES256</code>.</p>
      */
-    inline const Aws::String& GetSSEAlgorithm() const{ return m_sSEAlgorithm; }
+    inline const Aws::String& GetSSEAlgorithm() const { return m_sSEAlgorithm; }
     inline bool SSEAlgorithmHasBeenSet() const { return m_sSEAlgorithmHasBeenSet; }
-    inline void SetSSEAlgorithm(const Aws::String& value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = value; }
-    inline void SetSSEAlgorithm(Aws::String&& value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = std::move(value); }
-    inline void SetSSEAlgorithm(const char* value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm.assign(value); }
-    inline AwsS3BucketServerSideEncryptionByDefault& WithSSEAlgorithm(const Aws::String& value) { SetSSEAlgorithm(value); return *this;}
-    inline AwsS3BucketServerSideEncryptionByDefault& WithSSEAlgorithm(Aws::String&& value) { SetSSEAlgorithm(std::move(value)); return *this;}
-    inline AwsS3BucketServerSideEncryptionByDefault& WithSSEAlgorithm(const char* value) { SetSSEAlgorithm(value); return *this;}
+    template<typename SSEAlgorithmT = Aws::String>
+    void SetSSEAlgorithm(SSEAlgorithmT&& value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = std::forward<SSEAlgorithmT>(value); }
+    template<typename SSEAlgorithmT = Aws::String>
+    AwsS3BucketServerSideEncryptionByDefault& WithSSEAlgorithm(SSEAlgorithmT&& value) { SetSSEAlgorithm(std::forward<SSEAlgorithmT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>KMS key ID to use for the default encryption.</p>
      */
-    inline const Aws::String& GetKMSMasterKeyID() const{ return m_kMSMasterKeyID; }
+    inline const Aws::String& GetKMSMasterKeyID() const { return m_kMSMasterKeyID; }
     inline bool KMSMasterKeyIDHasBeenSet() const { return m_kMSMasterKeyIDHasBeenSet; }
-    inline void SetKMSMasterKeyID(const Aws::String& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = value; }
-    inline void SetKMSMasterKeyID(Aws::String&& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = std::move(value); }
-    inline void SetKMSMasterKeyID(const char* value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID.assign(value); }
-    inline AwsS3BucketServerSideEncryptionByDefault& WithKMSMasterKeyID(const Aws::String& value) { SetKMSMasterKeyID(value); return *this;}
-    inline AwsS3BucketServerSideEncryptionByDefault& WithKMSMasterKeyID(Aws::String&& value) { SetKMSMasterKeyID(std::move(value)); return *this;}
-    inline AwsS3BucketServerSideEncryptionByDefault& WithKMSMasterKeyID(const char* value) { SetKMSMasterKeyID(value); return *this;}
+    template<typename KMSMasterKeyIDT = Aws::String>
+    void SetKMSMasterKeyID(KMSMasterKeyIDT&& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = std::forward<KMSMasterKeyIDT>(value); }
+    template<typename KMSMasterKeyIDT = Aws::String>
+    AwsS3BucketServerSideEncryptionByDefault& WithKMSMasterKeyID(KMSMasterKeyIDT&& value) { SetKMSMasterKeyID(std::forward<KMSMasterKeyIDT>(value)); return *this;}
     ///@}
   private:
 

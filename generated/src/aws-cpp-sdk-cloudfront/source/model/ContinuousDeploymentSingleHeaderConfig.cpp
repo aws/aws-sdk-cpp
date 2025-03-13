@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ContinuousDeploymentSingleHeaderConfig::ContinuousDeploymentSingleHeaderConfig() : 
-    m_headerHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ContinuousDeploymentSingleHeaderConfig::ContinuousDeploymentSingleHeaderConfig(const XmlNode& xmlNode)
-  : ContinuousDeploymentSingleHeaderConfig()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ContinuousDeploymentSingleHeaderConfig& ContinuousDeploymentSingleHeaderConfig::
     {
       m_header = Aws::Utils::Xml::DecodeEscapedXmlText(headerNode.GetText());
       m_headerHasBeenSet = true;
+       m_headerHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

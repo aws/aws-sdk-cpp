@@ -18,21 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-NetworkConnectionAction::NetworkConnectionAction() : 
-    m_blocked(false),
-    m_blockedHasBeenSet(false),
-    m_connectionDirectionHasBeenSet(false),
-    m_localPortDetailsHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_localIpDetailsHasBeenSet(false),
-    m_localNetworkInterfaceHasBeenSet(false),
-    m_remoteIpDetailsHasBeenSet(false),
-    m_remotePortDetailsHasBeenSet(false)
-{
-}
-
 NetworkConnectionAction::NetworkConnectionAction(JsonView jsonValue)
-  : NetworkConnectionAction()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ NetworkConnectionAction& NetworkConnectionAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("blocked"))
   {
     m_blocked = jsonValue.GetBool("blocked");
-
     m_blockedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionDirection"))
   {
     m_connectionDirection = jsonValue.GetString("connectionDirection");
-
     m_connectionDirectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localPortDetails"))
   {
     m_localPortDetails = jsonValue.GetObject("localPortDetails");
-
     m_localPortDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = jsonValue.GetString("protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localIpDetails"))
   {
     m_localIpDetails = jsonValue.GetObject("localIpDetails");
-
     m_localIpDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localNetworkInterface"))
   {
     m_localNetworkInterface = jsonValue.GetString("localNetworkInterface");
-
     m_localNetworkInterfaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteIpDetails"))
   {
     m_remoteIpDetails = jsonValue.GetObject("remoteIpDetails");
-
     m_remoteIpDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remotePortDetails"))
   {
     m_remotePortDetails = jsonValue.GetObject("remotePortDetails");
-
     m_remotePortDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

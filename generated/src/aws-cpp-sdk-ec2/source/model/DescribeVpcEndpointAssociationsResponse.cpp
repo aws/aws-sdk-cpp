@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcEndpointAssociationsResponse::DescribeVpcEndpointAssociationsResponse()
-{
-}
-
 DescribeVpcEndpointAssociationsResponse::DescribeVpcEndpointAssociationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeVpcEndpointAssociationsResponse& DescribeVpcEndpointAssociationsResponse
     if(!vpcEndpointAssociationsNode.IsNull())
     {
       XmlNode vpcEndpointAssociationsMember = vpcEndpointAssociationsNode.FirstChild("item");
+      m_vpcEndpointAssociationsHasBeenSet = !vpcEndpointAssociationsMember.IsNull();
       while(!vpcEndpointAssociationsMember.IsNull())
       {
         m_vpcEndpointAssociations.push_back(vpcEndpointAssociationsMember);
@@ -53,6 +50,7 @@ DescribeVpcEndpointAssociationsResponse& DescribeVpcEndpointAssociationsResponse
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeVpcEndpointAssociationsResponse& DescribeVpcEndpointAssociationsResponse
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcEndpointAssociationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

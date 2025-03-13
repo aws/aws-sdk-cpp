@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-AgentCollaboratorInvocationOutput::AgentCollaboratorInvocationOutput() : 
-    m_agentCollaboratorAliasArnHasBeenSet(false),
-    m_agentCollaboratorNameHasBeenSet(false),
-    m_outputHasBeenSet(false)
-{
-}
-
 AgentCollaboratorInvocationOutput::AgentCollaboratorInvocationOutput(JsonView jsonValue)
-  : AgentCollaboratorInvocationOutput()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AgentCollaboratorInvocationOutput& AgentCollaboratorInvocationOutput::operator =
   if(jsonValue.ValueExists("agentCollaboratorAliasArn"))
   {
     m_agentCollaboratorAliasArn = jsonValue.GetString("agentCollaboratorAliasArn");
-
     m_agentCollaboratorAliasArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentCollaboratorName"))
   {
     m_agentCollaboratorName = jsonValue.GetString("agentCollaboratorName");
-
     m_agentCollaboratorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("output"))
   {
     m_output = jsonValue.GetObject("output");
-
     m_outputHasBeenSet = true;
   }
-
   return *this;
 }
 

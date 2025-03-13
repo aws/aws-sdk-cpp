@@ -12,35 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateJobRequest::CreateJobRequest() : 
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_onDeviceServiceConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_addressIdHasBeenSet(false),
-    m_kmsKeyARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_snowballCapacityPreference(SnowballCapacity::NOT_SET),
-    m_snowballCapacityPreferenceHasBeenSet(false),
-    m_shippingOption(ShippingOption::NOT_SET),
-    m_shippingOptionHasBeenSet(false),
-    m_notificationHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_snowballType(SnowballType::NOT_SET),
-    m_snowballTypeHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false),
-    m_taxDocumentsHasBeenSet(false),
-    m_deviceConfigurationHasBeenSet(false),
-    m_remoteManagement(RemoteManagement::NOT_SET),
-    m_remoteManagementHasBeenSet(false),
-    m_longTermPricingIdHasBeenSet(false),
-    m_impactLevel(ImpactLevel::NOT_SET),
-    m_impactLevelHasBeenSet(false),
-    m_pickupDetailsHasBeenSet(false)
-{
-}
-
 Aws::String CreateJobRequest::SerializePayload() const
 {
   JsonValue payload;

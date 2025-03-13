@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpPayloadWithUnionResult::HttpPayloadWithUnionResult()
-{
-}
-
 HttpPayloadWithUnionResult::HttpPayloadWithUnionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ HttpPayloadWithUnionResult& HttpPayloadWithUnionResult::operator =(const Aws::Am
   if(!resultNode.IsNull())
   {
     m_nested = resultNode;
+    m_nestedHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ HttpPayloadWithUnionResult& HttpPayloadWithUnionResult::operator =(const Aws::Am
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

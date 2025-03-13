@@ -32,7 +32,7 @@ namespace Model
   class CommitmentPurchaseAnalysisConfiguration
   {
   public:
-    AWS_COSTEXPLORER_API CommitmentPurchaseAnalysisConfiguration();
+    AWS_COSTEXPLORER_API CommitmentPurchaseAnalysisConfiguration() = default;
     AWS_COSTEXPLORER_API CommitmentPurchaseAnalysisConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API CommitmentPurchaseAnalysisConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The configuration for the Savings Plans purchase analysis.</p>
      */
-    inline const SavingsPlansPurchaseAnalysisConfiguration& GetSavingsPlansPurchaseAnalysisConfiguration() const{ return m_savingsPlansPurchaseAnalysisConfiguration; }
+    inline const SavingsPlansPurchaseAnalysisConfiguration& GetSavingsPlansPurchaseAnalysisConfiguration() const { return m_savingsPlansPurchaseAnalysisConfiguration; }
     inline bool SavingsPlansPurchaseAnalysisConfigurationHasBeenSet() const { return m_savingsPlansPurchaseAnalysisConfigurationHasBeenSet; }
-    inline void SetSavingsPlansPurchaseAnalysisConfiguration(const SavingsPlansPurchaseAnalysisConfiguration& value) { m_savingsPlansPurchaseAnalysisConfigurationHasBeenSet = true; m_savingsPlansPurchaseAnalysisConfiguration = value; }
-    inline void SetSavingsPlansPurchaseAnalysisConfiguration(SavingsPlansPurchaseAnalysisConfiguration&& value) { m_savingsPlansPurchaseAnalysisConfigurationHasBeenSet = true; m_savingsPlansPurchaseAnalysisConfiguration = std::move(value); }
-    inline CommitmentPurchaseAnalysisConfiguration& WithSavingsPlansPurchaseAnalysisConfiguration(const SavingsPlansPurchaseAnalysisConfiguration& value) { SetSavingsPlansPurchaseAnalysisConfiguration(value); return *this;}
-    inline CommitmentPurchaseAnalysisConfiguration& WithSavingsPlansPurchaseAnalysisConfiguration(SavingsPlansPurchaseAnalysisConfiguration&& value) { SetSavingsPlansPurchaseAnalysisConfiguration(std::move(value)); return *this;}
+    template<typename SavingsPlansPurchaseAnalysisConfigurationT = SavingsPlansPurchaseAnalysisConfiguration>
+    void SetSavingsPlansPurchaseAnalysisConfiguration(SavingsPlansPurchaseAnalysisConfigurationT&& value) { m_savingsPlansPurchaseAnalysisConfigurationHasBeenSet = true; m_savingsPlansPurchaseAnalysisConfiguration = std::forward<SavingsPlansPurchaseAnalysisConfigurationT>(value); }
+    template<typename SavingsPlansPurchaseAnalysisConfigurationT = SavingsPlansPurchaseAnalysisConfiguration>
+    CommitmentPurchaseAnalysisConfiguration& WithSavingsPlansPurchaseAnalysisConfiguration(SavingsPlansPurchaseAnalysisConfigurationT&& value) { SetSavingsPlansPurchaseAnalysisConfiguration(std::forward<SavingsPlansPurchaseAnalysisConfigurationT>(value)); return *this;}
     ///@}
   private:
 

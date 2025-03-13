@@ -32,7 +32,7 @@ namespace Model
   class S3Object
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API S3Object();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API S3Object() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API S3Object(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API S3Object& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p> The S3 bucket name. </p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline S3Object& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline S3Object& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline S3Object& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    S3Object& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon S3 key name. </p>
      */
-    inline const Aws::String& GetS3key() const{ return m_s3key; }
+    inline const Aws::String& GetS3key() const { return m_s3key; }
     inline bool S3keyHasBeenSet() const { return m_s3keyHasBeenSet; }
-    inline void SetS3key(const Aws::String& value) { m_s3keyHasBeenSet = true; m_s3key = value; }
-    inline void SetS3key(Aws::String&& value) { m_s3keyHasBeenSet = true; m_s3key = std::move(value); }
-    inline void SetS3key(const char* value) { m_s3keyHasBeenSet = true; m_s3key.assign(value); }
-    inline S3Object& WithS3key(const Aws::String& value) { SetS3key(value); return *this;}
-    inline S3Object& WithS3key(Aws::String&& value) { SetS3key(std::move(value)); return *this;}
-    inline S3Object& WithS3key(const char* value) { SetS3key(value); return *this;}
+    template<typename S3keyT = Aws::String>
+    void SetS3key(S3keyT&& value) { m_s3keyHasBeenSet = true; m_s3key = std::forward<S3keyT>(value); }
+    template<typename S3keyT = Aws::String>
+    S3Object& WithS3key(S3keyT&& value) { SetS3key(std::forward<S3keyT>(value)); return *this;}
     ///@}
   private:
 

@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateResourceEventConfigurationRequest::UpdateResourceEventConfigurationRequest() : 
-    m_identifierHasBeenSet(false),
-    m_identifierType(IdentifierType::NOT_SET),
-    m_identifierTypeHasBeenSet(false),
-    m_partnerType(EventNotificationPartnerType::NOT_SET),
-    m_partnerTypeHasBeenSet(false),
-    m_deviceRegistrationStateHasBeenSet(false),
-    m_proximityHasBeenSet(false),
-    m_joinHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false),
-    m_messageDeliveryStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResourceEventConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

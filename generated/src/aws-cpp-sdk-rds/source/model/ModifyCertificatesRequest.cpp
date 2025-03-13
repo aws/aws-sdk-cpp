@@ -10,13 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyCertificatesRequest::ModifyCertificatesRequest() : 
-    m_certificateIdentifierHasBeenSet(false),
-    m_removeCustomerOverride(false),
-    m_removeCustomerOverrideHasBeenSet(false)
-{
-}
-
 Aws::String ModifyCertificatesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

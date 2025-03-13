@@ -35,7 +35,7 @@ namespace Model
   class RepositoryFilter
   {
   public:
-    AWS_ECR_API RepositoryFilter();
+    AWS_ECR_API RepositoryFilter() = default;
     AWS_ECR_API RepositoryFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API RepositoryFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * is specified, this value is required and should be the repository name prefix to
      * configure replication for.</p>
      */
-    inline const Aws::String& GetFilter() const{ return m_filter; }
+    inline const Aws::String& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
-    inline RepositoryFilter& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
-    inline RepositoryFilter& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
-    inline RepositoryFilter& WithFilter(const char* value) { SetFilter(value); return *this;}
+    template<typename FilterT = Aws::String>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::String>
+    RepositoryFilter& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,19 +61,17 @@ namespace Model
      * <code>PREFIX_MATCH</code>, which is a repository name prefix specified with the
      * <code>filter</code> parameter.</p>
      */
-    inline const RepositoryFilterType& GetFilterType() const{ return m_filterType; }
+    inline RepositoryFilterType GetFilterType() const { return m_filterType; }
     inline bool FilterTypeHasBeenSet() const { return m_filterTypeHasBeenSet; }
-    inline void SetFilterType(const RepositoryFilterType& value) { m_filterTypeHasBeenSet = true; m_filterType = value; }
-    inline void SetFilterType(RepositoryFilterType&& value) { m_filterTypeHasBeenSet = true; m_filterType = std::move(value); }
-    inline RepositoryFilter& WithFilterType(const RepositoryFilterType& value) { SetFilterType(value); return *this;}
-    inline RepositoryFilter& WithFilterType(RepositoryFilterType&& value) { SetFilterType(std::move(value)); return *this;}
+    inline void SetFilterType(RepositoryFilterType value) { m_filterTypeHasBeenSet = true; m_filterType = value; }
+    inline RepositoryFilter& WithFilterType(RepositoryFilterType value) { SetFilterType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_filter;
     bool m_filterHasBeenSet = false;
 
-    RepositoryFilterType m_filterType;
+    RepositoryFilterType m_filterType{RepositoryFilterType::NOT_SET};
     bool m_filterTypeHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace Athena
 namespace Model
 {
 
-ResultReuseInformation::ResultReuseInformation() : 
-    m_reusedPreviousResult(false),
-    m_reusedPreviousResultHasBeenSet(false)
-{
-}
-
 ResultReuseInformation::ResultReuseInformation(JsonView jsonValue)
-  : ResultReuseInformation()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ResultReuseInformation& ResultReuseInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReusedPreviousResult"))
   {
     m_reusedPreviousResult = jsonValue.GetBool("ReusedPreviousResult");
-
     m_reusedPreviousResultHasBeenSet = true;
   }
-
   return *this;
 }
 

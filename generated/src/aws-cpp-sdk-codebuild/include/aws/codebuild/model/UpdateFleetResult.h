@@ -28,7 +28,7 @@ namespace Model
   class UpdateFleetResult
   {
   public:
-    AWS_CODEBUILD_API UpdateFleetResult();
+    AWS_CODEBUILD_API UpdateFleetResult() = default;
     AWS_CODEBUILD_API UpdateFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEBUILD_API UpdateFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A <code>Fleet</code> object.</p>
      */
-    inline const Fleet& GetFleet() const{ return m_fleet; }
-    inline void SetFleet(const Fleet& value) { m_fleet = value; }
-    inline void SetFleet(Fleet&& value) { m_fleet = std::move(value); }
-    inline UpdateFleetResult& WithFleet(const Fleet& value) { SetFleet(value); return *this;}
-    inline UpdateFleetResult& WithFleet(Fleet&& value) { SetFleet(std::move(value)); return *this;}
+    inline const Fleet& GetFleet() const { return m_fleet; }
+    template<typename FleetT = Fleet>
+    void SetFleet(FleetT&& value) { m_fleetHasBeenSet = true; m_fleet = std::forward<FleetT>(value); }
+    template<typename FleetT = Fleet>
+    UpdateFleetResult& WithFleet(FleetT&& value) { SetFleet(std::forward<FleetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateFleetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateFleetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateFleetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateFleetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Fleet m_fleet;
+    bool m_fleetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

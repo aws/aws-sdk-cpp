@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PendingDeploymentSummary::PendingDeploymentSummary() : 
-    m_endpointConfigNameHasBeenSet(false),
-    m_productionVariantsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_shadowProductionVariantsHasBeenSet(false)
-{
-}
-
 PendingDeploymentSummary::PendingDeploymentSummary(JsonView jsonValue)
-  : PendingDeploymentSummary()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ PendingDeploymentSummary& PendingDeploymentSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("EndpointConfigName"))
   {
     m_endpointConfigName = jsonValue.GetString("EndpointConfigName");
-
     m_endpointConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductionVariants"))
   {
     Aws::Utils::Array<JsonView> productionVariantsJsonList = jsonValue.GetArray("ProductionVariants");
@@ -50,14 +39,11 @@ PendingDeploymentSummary& PendingDeploymentSummary::operator =(JsonView jsonValu
     }
     m_productionVariantsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShadowProductionVariants"))
   {
     Aws::Utils::Array<JsonView> shadowProductionVariantsJsonList = jsonValue.GetArray("ShadowProductionVariants");
@@ -67,7 +53,6 @@ PendingDeploymentSummary& PendingDeploymentSummary::operator =(JsonView jsonValu
     }
     m_shadowProductionVariantsHasBeenSet = true;
   }
-
   return *this;
 }
 

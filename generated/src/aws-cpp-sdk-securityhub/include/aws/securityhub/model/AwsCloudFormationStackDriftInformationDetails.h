@@ -32,7 +32,7 @@ namespace Model
   class AwsCloudFormationStackDriftInformationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsCloudFormationStackDriftInformationDetails();
+    AWS_SECURITYHUB_API AwsCloudFormationStackDriftInformationDetails() = default;
     AWS_SECURITYHUB_API AwsCloudFormationStackDriftInformationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCloudFormationStackDriftInformationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Status of the stack's actual configuration compared to its expected template
      * configuration. </p>
      */
-    inline const Aws::String& GetStackDriftStatus() const{ return m_stackDriftStatus; }
+    inline const Aws::String& GetStackDriftStatus() const { return m_stackDriftStatus; }
     inline bool StackDriftStatusHasBeenSet() const { return m_stackDriftStatusHasBeenSet; }
-    inline void SetStackDriftStatus(const Aws::String& value) { m_stackDriftStatusHasBeenSet = true; m_stackDriftStatus = value; }
-    inline void SetStackDriftStatus(Aws::String&& value) { m_stackDriftStatusHasBeenSet = true; m_stackDriftStatus = std::move(value); }
-    inline void SetStackDriftStatus(const char* value) { m_stackDriftStatusHasBeenSet = true; m_stackDriftStatus.assign(value); }
-    inline AwsCloudFormationStackDriftInformationDetails& WithStackDriftStatus(const Aws::String& value) { SetStackDriftStatus(value); return *this;}
-    inline AwsCloudFormationStackDriftInformationDetails& WithStackDriftStatus(Aws::String&& value) { SetStackDriftStatus(std::move(value)); return *this;}
-    inline AwsCloudFormationStackDriftInformationDetails& WithStackDriftStatus(const char* value) { SetStackDriftStatus(value); return *this;}
+    template<typename StackDriftStatusT = Aws::String>
+    void SetStackDriftStatus(StackDriftStatusT&& value) { m_stackDriftStatusHasBeenSet = true; m_stackDriftStatus = std::forward<StackDriftStatusT>(value); }
+    template<typename StackDriftStatusT = Aws::String>
+    AwsCloudFormationStackDriftInformationDetails& WithStackDriftStatus(StackDriftStatusT&& value) { SetStackDriftStatus(std::forward<StackDriftStatusT>(value)); return *this;}
     ///@}
   private:
 

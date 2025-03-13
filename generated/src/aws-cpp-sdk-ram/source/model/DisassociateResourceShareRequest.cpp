@@ -12,15 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateResourceShareRequest::DisassociateResourceShareRequest() : 
-    m_resourceShareArnHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_principalsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateResourceShareRequest::SerializePayload() const
 {
   JsonValue payload;

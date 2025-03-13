@@ -21,7 +21,7 @@ namespace Model
   class StopOptimizationJobRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API StopOptimizationJobRequest();
+    AWS_SAGEMAKER_API StopOptimizationJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name that you assigned to the optimization job.</p>
      */
-    inline const Aws::String& GetOptimizationJobName() const{ return m_optimizationJobName; }
+    inline const Aws::String& GetOptimizationJobName() const { return m_optimizationJobName; }
     inline bool OptimizationJobNameHasBeenSet() const { return m_optimizationJobNameHasBeenSet; }
-    inline void SetOptimizationJobName(const Aws::String& value) { m_optimizationJobNameHasBeenSet = true; m_optimizationJobName = value; }
-    inline void SetOptimizationJobName(Aws::String&& value) { m_optimizationJobNameHasBeenSet = true; m_optimizationJobName = std::move(value); }
-    inline void SetOptimizationJobName(const char* value) { m_optimizationJobNameHasBeenSet = true; m_optimizationJobName.assign(value); }
-    inline StopOptimizationJobRequest& WithOptimizationJobName(const Aws::String& value) { SetOptimizationJobName(value); return *this;}
-    inline StopOptimizationJobRequest& WithOptimizationJobName(Aws::String&& value) { SetOptimizationJobName(std::move(value)); return *this;}
-    inline StopOptimizationJobRequest& WithOptimizationJobName(const char* value) { SetOptimizationJobName(value); return *this;}
+    template<typename OptimizationJobNameT = Aws::String>
+    void SetOptimizationJobName(OptimizationJobNameT&& value) { m_optimizationJobNameHasBeenSet = true; m_optimizationJobName = std::forward<OptimizationJobNameT>(value); }
+    template<typename OptimizationJobNameT = Aws::String>
+    StopOptimizationJobRequest& WithOptimizationJobName(OptimizationJobNameT&& value) { SetOptimizationJobName(std::forward<OptimizationJobNameT>(value)); return *this;}
     ///@}
   private:
 

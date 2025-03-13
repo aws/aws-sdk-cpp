@@ -12,11 +12,6 @@ using namespace Aws::AugmentedAIRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteHumanLoopRequest::DeleteHumanLoopRequest() : 
-    m_humanLoopNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteHumanLoopRequest::SerializePayload() const
 {
   return {};

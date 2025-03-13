@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDomainEntryRequest::UpdateDomainEntryRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_domainEntryHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDomainEntryRequest::SerializePayload() const
 {
   JsonValue payload;

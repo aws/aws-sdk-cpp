@@ -12,16 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIdMappingTableRequest::CreateIdMappingTableRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_inputReferenceConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateIdMappingTableRequest::SerializePayload() const
 {
   JsonValue payload;

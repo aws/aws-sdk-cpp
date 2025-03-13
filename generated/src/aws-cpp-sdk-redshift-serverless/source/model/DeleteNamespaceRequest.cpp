@@ -12,14 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNamespaceRequest::DeleteNamespaceRequest() : 
-    m_finalSnapshotNameHasBeenSet(false),
-    m_finalSnapshotRetentionPeriod(0),
-    m_finalSnapshotRetentionPeriodHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;

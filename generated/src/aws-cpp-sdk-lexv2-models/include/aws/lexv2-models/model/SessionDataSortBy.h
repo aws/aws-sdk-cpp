@@ -33,7 +33,7 @@ namespace Model
   class SessionDataSortBy
   {
   public:
-    AWS_LEXMODELSV2_API SessionDataSortBy();
+    AWS_LEXMODELSV2_API SessionDataSortBy() = default;
     AWS_LEXMODELSV2_API SessionDataSortBy(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SessionDataSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,31 +49,27 @@ namespace Model
      * </li> <li> <p> <code>conversationDurationSeconds</code> – The duration of the
      * conversation in seconds.</p> </li> </ul>
      */
-    inline const AnalyticsSessionSortByName& GetName() const{ return m_name; }
+    inline AnalyticsSessionSortByName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsSessionSortByName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsSessionSortByName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline SessionDataSortBy& WithName(const AnalyticsSessionSortByName& value) { SetName(value); return *this;}
-    inline SessionDataSortBy& WithName(AnalyticsSessionSortByName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsSessionSortByName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline SessionDataSortBy& WithName(AnalyticsSessionSortByName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether to sort the results in ascending or descending order.</p>
      */
-    inline const AnalyticsSortOrder& GetOrder() const{ return m_order; }
+    inline AnalyticsSortOrder GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-    inline void SetOrder(const AnalyticsSortOrder& value) { m_orderHasBeenSet = true; m_order = value; }
-    inline void SetOrder(AnalyticsSortOrder&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-    inline SessionDataSortBy& WithOrder(const AnalyticsSortOrder& value) { SetOrder(value); return *this;}
-    inline SessionDataSortBy& WithOrder(AnalyticsSortOrder&& value) { SetOrder(std::move(value)); return *this;}
+    inline void SetOrder(AnalyticsSortOrder value) { m_orderHasBeenSet = true; m_order = value; }
+    inline SessionDataSortBy& WithOrder(AnalyticsSortOrder value) { SetOrder(value); return *this;}
     ///@}
   private:
 
-    AnalyticsSessionSortByName m_name;
+    AnalyticsSessionSortByName m_name{AnalyticsSessionSortByName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    AnalyticsSortOrder m_order;
+    AnalyticsSortOrder m_order{AnalyticsSortOrder::NOT_SET};
     bool m_orderHasBeenSet = false;
   };
 

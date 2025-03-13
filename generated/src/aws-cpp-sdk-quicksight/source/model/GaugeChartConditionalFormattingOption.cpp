@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GaugeChartConditionalFormattingOption::GaugeChartConditionalFormattingOption() : 
-    m_primaryValueHasBeenSet(false),
-    m_arcHasBeenSet(false)
-{
-}
-
 GaugeChartConditionalFormattingOption::GaugeChartConditionalFormattingOption(JsonView jsonValue)
-  : GaugeChartConditionalFormattingOption()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GaugeChartConditionalFormattingOption& GaugeChartConditionalFormattingOption::op
   if(jsonValue.ValueExists("PrimaryValue"))
   {
     m_primaryValue = jsonValue.GetObject("PrimaryValue");
-
     m_primaryValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arc"))
   {
     m_arc = jsonValue.GetObject("Arc");
-
     m_arcHasBeenSet = true;
   }
-
   return *this;
 }
 

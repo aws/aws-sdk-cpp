@@ -32,7 +32,7 @@ namespace Model
   class ServiceManagedEc2InstanceMarketOptions
   {
   public:
-    AWS_DEADLINE_API ServiceManagedEc2InstanceMarketOptions();
+    AWS_DEADLINE_API ServiceManagedEc2InstanceMarketOptions() = default;
     AWS_DEADLINE_API ServiceManagedEc2InstanceMarketOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API ServiceManagedEc2InstanceMarketOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance type.</p>
      */
-    inline const Ec2MarketType& GetType() const{ return m_type; }
+    inline Ec2MarketType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Ec2MarketType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Ec2MarketType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ServiceManagedEc2InstanceMarketOptions& WithType(const Ec2MarketType& value) { SetType(value); return *this;}
-    inline ServiceManagedEc2InstanceMarketOptions& WithType(Ec2MarketType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Ec2MarketType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ServiceManagedEc2InstanceMarketOptions& WithType(Ec2MarketType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    Ec2MarketType m_type;
+    Ec2MarketType m_type{Ec2MarketType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

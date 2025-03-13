@@ -18,14 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-DuplicateRequest::DuplicateRequest() : 
-    m_requestIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DuplicateRequest::DuplicateRequest(JsonView jsonValue)
-  : DuplicateRequest()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DuplicateRequest& DuplicateRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAccountPreferencesRequest::PutAccountPreferencesRequest() : 
-    m_resourceIdType(ResourceIdType::NOT_SET),
-    m_resourceIdTypeHasBeenSet(false)
-{
-}
-
 Aws::String PutAccountPreferencesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-S3ConfigMap::S3ConfigMap() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 S3ConfigMap::S3ConfigMap(JsonView jsonValue)
-  : S3ConfigMap()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3ConfigMap& S3ConfigMap::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

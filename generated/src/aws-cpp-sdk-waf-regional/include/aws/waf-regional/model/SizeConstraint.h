@@ -46,7 +46,7 @@ namespace Model
   class SizeConstraint
   {
   public:
-    AWS_WAFREGIONAL_API SizeConstraint();
+    AWS_WAFREGIONAL_API SizeConstraint() = default;
     AWS_WAFREGIONAL_API SizeConstraint(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API SizeConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,12 @@ namespace Model
     /**
      * <p>Specifies where in a web request to look for the size constraint.</p>
      */
-    inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
+    inline const FieldToMatch& GetFieldToMatch() const { return m_fieldToMatch; }
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
-    inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
-    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
-    inline SizeConstraint& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
-    inline SizeConstraint& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
+    template<typename FieldToMatchT = FieldToMatch>
+    void SetFieldToMatch(FieldToMatchT&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::forward<FieldToMatchT>(value); }
+    template<typename FieldToMatchT = FieldToMatch>
+    SizeConstraint& WithFieldToMatch(FieldToMatchT&& value) { SetFieldToMatch(std::forward<FieldToMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +103,10 @@ namespace Model
      * letters (A-Z) to lowercase (a-z).</p> <p> <b>URL_DECODE</b> </p> <p>Use this
      * option to decode a URL-encoded value.</p>
      */
-    inline const TextTransformation& GetTextTransformation() const{ return m_textTransformation; }
+    inline TextTransformation GetTextTransformation() const { return m_textTransformation; }
     inline bool TextTransformationHasBeenSet() const { return m_textTransformationHasBeenSet; }
-    inline void SetTextTransformation(const TextTransformation& value) { m_textTransformationHasBeenSet = true; m_textTransformation = value; }
-    inline void SetTextTransformation(TextTransformation&& value) { m_textTransformationHasBeenSet = true; m_textTransformation = std::move(value); }
-    inline SizeConstraint& WithTextTransformation(const TextTransformation& value) { SetTextTransformation(value); return *this;}
-    inline SizeConstraint& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(std::move(value)); return *this;}
+    inline void SetTextTransformation(TextTransformation value) { m_textTransformationHasBeenSet = true; m_textTransformation = value; }
+    inline SizeConstraint& WithTextTransformation(TextTransformation value) { SetTextTransformation(value); return *this;}
     ///@}
 
     ///@{
@@ -130,12 +128,10 @@ namespace Model
      * <code>Size</code> is strictly greater than the size of the
      * <code>FieldToMatch</code> </p>
      */
-    inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline SizeConstraint& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline SizeConstraint& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline SizeConstraint& WithComparisonOperator(ComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -150,7 +146,7 @@ namespace Model
      * for the value of <code>Type</code>, the / in the URI counts as one character.
      * For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
      */
-    inline long long GetSize() const{ return m_size; }
+    inline long long GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
     inline SizeConstraint& WithSize(long long value) { SetSize(value); return *this;}
@@ -160,13 +156,13 @@ namespace Model
     FieldToMatch m_fieldToMatch;
     bool m_fieldToMatchHasBeenSet = false;
 
-    TextTransformation m_textTransformation;
+    TextTransformation m_textTransformation{TextTransformation::NOT_SET};
     bool m_textTransformationHasBeenSet = false;
 
-    ComparisonOperator m_comparisonOperator;
+    ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
 
-    long long m_size;
+    long long m_size{0};
     bool m_sizeHasBeenSet = false;
   };
 

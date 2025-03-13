@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelSpotInstanceRequestsResponse::CancelSpotInstanceRequestsResponse()
-{
-}
-
 CancelSpotInstanceRequestsResponse::CancelSpotInstanceRequestsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CancelSpotInstanceRequestsResponse& CancelSpotInstanceRequestsResponse::operator
     if(!cancelledSpotInstanceRequestsNode.IsNull())
     {
       XmlNode cancelledSpotInstanceRequestsMember = cancelledSpotInstanceRequestsNode.FirstChild("item");
+      m_cancelledSpotInstanceRequestsHasBeenSet = !cancelledSpotInstanceRequestsMember.IsNull();
       while(!cancelledSpotInstanceRequestsMember.IsNull())
       {
         m_cancelledSpotInstanceRequests.push_back(cancelledSpotInstanceRequestsMember);
@@ -56,6 +53,7 @@ CancelSpotInstanceRequestsResponse& CancelSpotInstanceRequestsResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CancelSpotInstanceRequestsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -21,7 +21,7 @@ namespace Model
   class DeleteRobotApplicationRequest : public RoboMakerRequest
   {
   public:
-    AWS_ROBOMAKER_API DeleteRobotApplicationRequest();
+    AWS_ROBOMAKER_API DeleteRobotApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the the robot application.</p>
      */
-    inline const Aws::String& GetApplication() const{ return m_application; }
+    inline const Aws::String& GetApplication() const { return m_application; }
     inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
-    inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
-    inline void SetApplication(Aws::String&& value) { m_applicationHasBeenSet = true; m_application = std::move(value); }
-    inline void SetApplication(const char* value) { m_applicationHasBeenSet = true; m_application.assign(value); }
-    inline DeleteRobotApplicationRequest& WithApplication(const Aws::String& value) { SetApplication(value); return *this;}
-    inline DeleteRobotApplicationRequest& WithApplication(Aws::String&& value) { SetApplication(std::move(value)); return *this;}
-    inline DeleteRobotApplicationRequest& WithApplication(const char* value) { SetApplication(value); return *this;}
+    template<typename ApplicationT = Aws::String>
+    void SetApplication(ApplicationT&& value) { m_applicationHasBeenSet = true; m_application = std::forward<ApplicationT>(value); }
+    template<typename ApplicationT = Aws::String>
+    DeleteRobotApplicationRequest& WithApplication(ApplicationT&& value) { SetApplication(std::forward<ApplicationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the robot application to delete.</p>
      */
-    inline const Aws::String& GetApplicationVersion() const{ return m_applicationVersion; }
+    inline const Aws::String& GetApplicationVersion() const { return m_applicationVersion; }
     inline bool ApplicationVersionHasBeenSet() const { return m_applicationVersionHasBeenSet; }
-    inline void SetApplicationVersion(const Aws::String& value) { m_applicationVersionHasBeenSet = true; m_applicationVersion = value; }
-    inline void SetApplicationVersion(Aws::String&& value) { m_applicationVersionHasBeenSet = true; m_applicationVersion = std::move(value); }
-    inline void SetApplicationVersion(const char* value) { m_applicationVersionHasBeenSet = true; m_applicationVersion.assign(value); }
-    inline DeleteRobotApplicationRequest& WithApplicationVersion(const Aws::String& value) { SetApplicationVersion(value); return *this;}
-    inline DeleteRobotApplicationRequest& WithApplicationVersion(Aws::String&& value) { SetApplicationVersion(std::move(value)); return *this;}
-    inline DeleteRobotApplicationRequest& WithApplicationVersion(const char* value) { SetApplicationVersion(value); return *this;}
+    template<typename ApplicationVersionT = Aws::String>
+    void SetApplicationVersion(ApplicationVersionT&& value) { m_applicationVersionHasBeenSet = true; m_applicationVersion = std::forward<ApplicationVersionT>(value); }
+    template<typename ApplicationVersionT = Aws::String>
+    DeleteRobotApplicationRequest& WithApplicationVersion(ApplicationVersionT&& value) { SetApplicationVersion(std::forward<ApplicationVersionT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,19 +20,7 @@ namespace IAM
 namespace Model
 {
 
-GroupDetail::GroupDetail() : 
-    m_pathHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_groupPolicyListHasBeenSet(false),
-    m_attachedManagedPoliciesHasBeenSet(false)
-{
-}
-
 GroupDetail::GroupDetail(const XmlNode& xmlNode)
-  : GroupDetail()
 {
   *this = xmlNode;
 }
@@ -48,54 +36,61 @@ GroupDetail& GroupDetail::operator =(const XmlNode& xmlNode)
     {
       m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
+       m_pathHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("GroupName");
     if(!groupNameNode.IsNull())
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
+       m_groupNameHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("GroupId");
     if(!groupIdNode.IsNull())
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
+       m_groupIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
     XmlNode groupPolicyListNode = resultNode.FirstChild("GroupPolicyList");
     if(!groupPolicyListNode.IsNull())
     {
       XmlNode groupPolicyListMember = groupPolicyListNode.FirstChild("member");
+      m_groupPolicyListHasBeenSet = !groupPolicyListMember.IsNull();
       while(!groupPolicyListMember.IsNull())
       {
         m_groupPolicyList.push_back(groupPolicyListMember);
         groupPolicyListMember = groupPolicyListMember.NextNode("member");
       }
 
-      m_groupPolicyListHasBeenSet = true;
+       m_groupPolicyListHasBeenSet = true;
     }
     XmlNode attachedManagedPoliciesNode = resultNode.FirstChild("AttachedManagedPolicies");
     if(!attachedManagedPoliciesNode.IsNull())
     {
       XmlNode attachedManagedPoliciesMember = attachedManagedPoliciesNode.FirstChild("member");
+      m_attachedManagedPoliciesHasBeenSet = !attachedManagedPoliciesMember.IsNull();
       while(!attachedManagedPoliciesMember.IsNull())
       {
         m_attachedManagedPolicies.push_back(attachedManagedPoliciesMember);
         attachedManagedPoliciesMember = attachedManagedPoliciesMember.NextNode("member");
       }
 
-      m_attachedManagedPoliciesHasBeenSet = true;
+       m_attachedManagedPoliciesHasBeenSet = true;
     }
   }
 

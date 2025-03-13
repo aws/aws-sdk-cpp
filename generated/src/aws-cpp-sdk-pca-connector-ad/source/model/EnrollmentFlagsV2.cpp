@@ -18,22 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-EnrollmentFlagsV2::EnrollmentFlagsV2() : 
-    m_enableKeyReuseOnNtTokenKeysetStorageFull(false),
-    m_enableKeyReuseOnNtTokenKeysetStorageFullHasBeenSet(false),
-    m_includeSymmetricAlgorithms(false),
-    m_includeSymmetricAlgorithmsHasBeenSet(false),
-    m_noSecurityExtension(false),
-    m_noSecurityExtensionHasBeenSet(false),
-    m_removeInvalidCertificateFromPersonalStore(false),
-    m_removeInvalidCertificateFromPersonalStoreHasBeenSet(false),
-    m_userInteractionRequired(false),
-    m_userInteractionRequiredHasBeenSet(false)
-{
-}
-
 EnrollmentFlagsV2::EnrollmentFlagsV2(JsonView jsonValue)
-  : EnrollmentFlagsV2()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ EnrollmentFlagsV2& EnrollmentFlagsV2::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EnableKeyReuseOnNtTokenKeysetStorageFull"))
   {
     m_enableKeyReuseOnNtTokenKeysetStorageFull = jsonValue.GetBool("EnableKeyReuseOnNtTokenKeysetStorageFull");
-
     m_enableKeyReuseOnNtTokenKeysetStorageFullHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeSymmetricAlgorithms"))
   {
     m_includeSymmetricAlgorithms = jsonValue.GetBool("IncludeSymmetricAlgorithms");
-
     m_includeSymmetricAlgorithmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoSecurityExtension"))
   {
     m_noSecurityExtension = jsonValue.GetBool("NoSecurityExtension");
-
     m_noSecurityExtensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoveInvalidCertificateFromPersonalStore"))
   {
     m_removeInvalidCertificateFromPersonalStore = jsonValue.GetBool("RemoveInvalidCertificateFromPersonalStore");
-
     m_removeInvalidCertificateFromPersonalStoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserInteractionRequired"))
   {
     m_userInteractionRequired = jsonValue.GetBool("UserInteractionRequired");
-
     m_userInteractionRequiredHasBeenSet = true;
   }
-
   return *this;
 }
 

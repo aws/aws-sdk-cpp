@@ -14,14 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-ChangeTagsForResourceRequest::ChangeTagsForResourceRequest() : 
-    m_resourceType(TagResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_addTagsHasBeenSet(false),
-    m_removeTagKeysHasBeenSet(false)
-{
-}
 
 Aws::String ChangeTagsForResourceRequest::SerializePayload() const
 {

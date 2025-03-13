@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MessageData::MessageData() : 
-    m_codeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 MessageData::MessageData(const XmlNode& xmlNode)
-  : MessageData()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ MessageData& MessageData::operator =(const XmlNode& xmlNode)
     {
       m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

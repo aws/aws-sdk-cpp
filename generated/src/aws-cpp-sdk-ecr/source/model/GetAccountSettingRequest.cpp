@@ -12,11 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccountSettingRequest::GetAccountSettingRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetAccountSettingRequest::SerializePayload() const
 {
   JsonValue payload;

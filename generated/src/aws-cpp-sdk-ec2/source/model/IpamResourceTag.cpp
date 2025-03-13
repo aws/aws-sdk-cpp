@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamResourceTag::IpamResourceTag() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 IpamResourceTag::IpamResourceTag(const XmlNode& xmlNode)
-  : IpamResourceTag()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ IpamResourceTag& IpamResourceTag::operator =(const XmlNode& xmlNode)
     {
       m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
+       m_keyHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

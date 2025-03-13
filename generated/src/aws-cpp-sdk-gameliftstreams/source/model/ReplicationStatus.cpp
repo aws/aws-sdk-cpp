@@ -18,15 +18,7 @@ namespace GameLiftStreams
 namespace Model
 {
 
-ReplicationStatus::ReplicationStatus() : 
-    m_locationHasBeenSet(false),
-    m_status(ReplicationStatusType::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ReplicationStatus::ReplicationStatus(JsonView jsonValue)
-  : ReplicationStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ReplicationStatus& ReplicationStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ReplicationStatusTypeMapper::GetReplicationStatusTypeForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

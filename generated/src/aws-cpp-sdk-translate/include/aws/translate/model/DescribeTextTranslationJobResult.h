@@ -28,7 +28,7 @@ namespace Model
   class DescribeTextTranslationJobResult
   {
   public:
-    AWS_TRANSLATE_API DescribeTextTranslationJobResult();
+    AWS_TRANSLATE_API DescribeTextTranslationJobResult() = default;
     AWS_TRANSLATE_API DescribeTextTranslationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSLATE_API DescribeTextTranslationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An object that contains the properties associated with an asynchronous batch
      * translation job.</p>
      */
-    inline const TextTranslationJobProperties& GetTextTranslationJobProperties() const{ return m_textTranslationJobProperties; }
-    inline void SetTextTranslationJobProperties(const TextTranslationJobProperties& value) { m_textTranslationJobProperties = value; }
-    inline void SetTextTranslationJobProperties(TextTranslationJobProperties&& value) { m_textTranslationJobProperties = std::move(value); }
-    inline DescribeTextTranslationJobResult& WithTextTranslationJobProperties(const TextTranslationJobProperties& value) { SetTextTranslationJobProperties(value); return *this;}
-    inline DescribeTextTranslationJobResult& WithTextTranslationJobProperties(TextTranslationJobProperties&& value) { SetTextTranslationJobProperties(std::move(value)); return *this;}
+    inline const TextTranslationJobProperties& GetTextTranslationJobProperties() const { return m_textTranslationJobProperties; }
+    template<typename TextTranslationJobPropertiesT = TextTranslationJobProperties>
+    void SetTextTranslationJobProperties(TextTranslationJobPropertiesT&& value) { m_textTranslationJobPropertiesHasBeenSet = true; m_textTranslationJobProperties = std::forward<TextTranslationJobPropertiesT>(value); }
+    template<typename TextTranslationJobPropertiesT = TextTranslationJobProperties>
+    DescribeTextTranslationJobResult& WithTextTranslationJobProperties(TextTranslationJobPropertiesT&& value) { SetTextTranslationJobProperties(std::forward<TextTranslationJobPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTextTranslationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTextTranslationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTextTranslationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTextTranslationJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TextTranslationJobProperties m_textTranslationJobProperties;
+    bool m_textTranslationJobPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

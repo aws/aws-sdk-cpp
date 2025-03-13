@@ -12,14 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-VerifySoftwareTokenRequest::VerifySoftwareTokenRequest() : 
-    m_accessTokenHasBeenSet(false),
-    m_sessionHasBeenSet(false),
-    m_userCodeHasBeenSet(false),
-    m_friendlyDeviceNameHasBeenSet(false)
-{
-}
-
 Aws::String VerifySoftwareTokenRequest::SerializePayload() const
 {
   JsonValue payload;

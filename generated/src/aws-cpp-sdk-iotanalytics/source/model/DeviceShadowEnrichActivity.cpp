@@ -18,17 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DeviceShadowEnrichActivity::DeviceShadowEnrichActivity() : 
-    m_nameHasBeenSet(false),
-    m_attributeHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_nextHasBeenSet(false)
-{
-}
-
 DeviceShadowEnrichActivity::DeviceShadowEnrichActivity(JsonView jsonValue)
-  : DeviceShadowEnrichActivity()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DeviceShadowEnrichActivity& DeviceShadowEnrichActivity::operator =(JsonView json
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = jsonValue.GetString("attribute");
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingName"))
   {
     m_thingName = jsonValue.GetString("thingName");
-
     m_thingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("next"))
   {
     m_next = jsonValue.GetString("next");
-
     m_nextHasBeenSet = true;
   }
-
   return *this;
 }
 

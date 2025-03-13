@@ -18,14 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-Credential::Credential() : 
-    m_oauth2CredentialHasBeenSet(false),
-    m_apiKeyCredentialHasBeenSet(false)
-{
-}
-
 Credential::Credential(JsonView jsonValue)
-  : Credential()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Credential& Credential::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("oauth2Credential"))
   {
     m_oauth2Credential = jsonValue.GetObject("oauth2Credential");
-
     m_oauth2CredentialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiKeyCredential"))
   {
     m_apiKeyCredential = jsonValue.GetObject("apiKeyCredential");
-
     m_apiKeyCredentialHasBeenSet = true;
   }
-
   return *this;
 }
 

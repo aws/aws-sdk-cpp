@@ -34,7 +34,7 @@ namespace Model
   class TopicNamedEntity
   {
   public:
-    AWS_QUICKSIGHT_API TopicNamedEntity();
+    AWS_QUICKSIGHT_API TopicNamedEntity() = default;
     AWS_QUICKSIGHT_API TopicNamedEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicNamedEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,69 +44,64 @@ namespace Model
     /**
      * <p>The name of the named entity.</p>
      */
-    inline const Aws::String& GetEntityName() const{ return m_entityName; }
+    inline const Aws::String& GetEntityName() const { return m_entityName; }
     inline bool EntityNameHasBeenSet() const { return m_entityNameHasBeenSet; }
-    inline void SetEntityName(const Aws::String& value) { m_entityNameHasBeenSet = true; m_entityName = value; }
-    inline void SetEntityName(Aws::String&& value) { m_entityNameHasBeenSet = true; m_entityName = std::move(value); }
-    inline void SetEntityName(const char* value) { m_entityNameHasBeenSet = true; m_entityName.assign(value); }
-    inline TopicNamedEntity& WithEntityName(const Aws::String& value) { SetEntityName(value); return *this;}
-    inline TopicNamedEntity& WithEntityName(Aws::String&& value) { SetEntityName(std::move(value)); return *this;}
-    inline TopicNamedEntity& WithEntityName(const char* value) { SetEntityName(value); return *this;}
+    template<typename EntityNameT = Aws::String>
+    void SetEntityName(EntityNameT&& value) { m_entityNameHasBeenSet = true; m_entityName = std::forward<EntityNameT>(value); }
+    template<typename EntityNameT = Aws::String>
+    TopicNamedEntity& WithEntityName(EntityNameT&& value) { SetEntityName(std::forward<EntityNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the named entity.</p>
      */
-    inline const Aws::String& GetEntityDescription() const{ return m_entityDescription; }
+    inline const Aws::String& GetEntityDescription() const { return m_entityDescription; }
     inline bool EntityDescriptionHasBeenSet() const { return m_entityDescriptionHasBeenSet; }
-    inline void SetEntityDescription(const Aws::String& value) { m_entityDescriptionHasBeenSet = true; m_entityDescription = value; }
-    inline void SetEntityDescription(Aws::String&& value) { m_entityDescriptionHasBeenSet = true; m_entityDescription = std::move(value); }
-    inline void SetEntityDescription(const char* value) { m_entityDescriptionHasBeenSet = true; m_entityDescription.assign(value); }
-    inline TopicNamedEntity& WithEntityDescription(const Aws::String& value) { SetEntityDescription(value); return *this;}
-    inline TopicNamedEntity& WithEntityDescription(Aws::String&& value) { SetEntityDescription(std::move(value)); return *this;}
-    inline TopicNamedEntity& WithEntityDescription(const char* value) { SetEntityDescription(value); return *this;}
+    template<typename EntityDescriptionT = Aws::String>
+    void SetEntityDescription(EntityDescriptionT&& value) { m_entityDescriptionHasBeenSet = true; m_entityDescription = std::forward<EntityDescriptionT>(value); }
+    template<typename EntityDescriptionT = Aws::String>
+    TopicNamedEntity& WithEntityDescription(EntityDescriptionT&& value) { SetEntityDescription(std::forward<EntityDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The other names or aliases for the named entity.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEntitySynonyms() const{ return m_entitySynonyms; }
+    inline const Aws::Vector<Aws::String>& GetEntitySynonyms() const { return m_entitySynonyms; }
     inline bool EntitySynonymsHasBeenSet() const { return m_entitySynonymsHasBeenSet; }
-    inline void SetEntitySynonyms(const Aws::Vector<Aws::String>& value) { m_entitySynonymsHasBeenSet = true; m_entitySynonyms = value; }
-    inline void SetEntitySynonyms(Aws::Vector<Aws::String>&& value) { m_entitySynonymsHasBeenSet = true; m_entitySynonyms = std::move(value); }
-    inline TopicNamedEntity& WithEntitySynonyms(const Aws::Vector<Aws::String>& value) { SetEntitySynonyms(value); return *this;}
-    inline TopicNamedEntity& WithEntitySynonyms(Aws::Vector<Aws::String>&& value) { SetEntitySynonyms(std::move(value)); return *this;}
-    inline TopicNamedEntity& AddEntitySynonyms(const Aws::String& value) { m_entitySynonymsHasBeenSet = true; m_entitySynonyms.push_back(value); return *this; }
-    inline TopicNamedEntity& AddEntitySynonyms(Aws::String&& value) { m_entitySynonymsHasBeenSet = true; m_entitySynonyms.push_back(std::move(value)); return *this; }
-    inline TopicNamedEntity& AddEntitySynonyms(const char* value) { m_entitySynonymsHasBeenSet = true; m_entitySynonyms.push_back(value); return *this; }
+    template<typename EntitySynonymsT = Aws::Vector<Aws::String>>
+    void SetEntitySynonyms(EntitySynonymsT&& value) { m_entitySynonymsHasBeenSet = true; m_entitySynonyms = std::forward<EntitySynonymsT>(value); }
+    template<typename EntitySynonymsT = Aws::Vector<Aws::String>>
+    TopicNamedEntity& WithEntitySynonyms(EntitySynonymsT&& value) { SetEntitySynonyms(std::forward<EntitySynonymsT>(value)); return *this;}
+    template<typename EntitySynonymsT = Aws::String>
+    TopicNamedEntity& AddEntitySynonyms(EntitySynonymsT&& value) { m_entitySynonymsHasBeenSet = true; m_entitySynonyms.emplace_back(std::forward<EntitySynonymsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of named entity that a topic represents.</p>
      */
-    inline const SemanticEntityType& GetSemanticEntityType() const{ return m_semanticEntityType; }
+    inline const SemanticEntityType& GetSemanticEntityType() const { return m_semanticEntityType; }
     inline bool SemanticEntityTypeHasBeenSet() const { return m_semanticEntityTypeHasBeenSet; }
-    inline void SetSemanticEntityType(const SemanticEntityType& value) { m_semanticEntityTypeHasBeenSet = true; m_semanticEntityType = value; }
-    inline void SetSemanticEntityType(SemanticEntityType&& value) { m_semanticEntityTypeHasBeenSet = true; m_semanticEntityType = std::move(value); }
-    inline TopicNamedEntity& WithSemanticEntityType(const SemanticEntityType& value) { SetSemanticEntityType(value); return *this;}
-    inline TopicNamedEntity& WithSemanticEntityType(SemanticEntityType&& value) { SetSemanticEntityType(std::move(value)); return *this;}
+    template<typename SemanticEntityTypeT = SemanticEntityType>
+    void SetSemanticEntityType(SemanticEntityTypeT&& value) { m_semanticEntityTypeHasBeenSet = true; m_semanticEntityType = std::forward<SemanticEntityTypeT>(value); }
+    template<typename SemanticEntityTypeT = SemanticEntityType>
+    TopicNamedEntity& WithSemanticEntityType(SemanticEntityTypeT&& value) { SetSemanticEntityType(std::forward<SemanticEntityTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The definition of a named entity.</p>
      */
-    inline const Aws::Vector<NamedEntityDefinition>& GetDefinition() const{ return m_definition; }
+    inline const Aws::Vector<NamedEntityDefinition>& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const Aws::Vector<NamedEntityDefinition>& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(Aws::Vector<NamedEntityDefinition>&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline TopicNamedEntity& WithDefinition(const Aws::Vector<NamedEntityDefinition>& value) { SetDefinition(value); return *this;}
-    inline TopicNamedEntity& WithDefinition(Aws::Vector<NamedEntityDefinition>&& value) { SetDefinition(std::move(value)); return *this;}
-    inline TopicNamedEntity& AddDefinition(const NamedEntityDefinition& value) { m_definitionHasBeenSet = true; m_definition.push_back(value); return *this; }
-    inline TopicNamedEntity& AddDefinition(NamedEntityDefinition&& value) { m_definitionHasBeenSet = true; m_definition.push_back(std::move(value)); return *this; }
+    template<typename DefinitionT = Aws::Vector<NamedEntityDefinition>>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = Aws::Vector<NamedEntityDefinition>>
+    TopicNamedEntity& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
+    template<typename DefinitionT = NamedEntityDefinition>
+    TopicNamedEntity& AddDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition.emplace_back(std::forward<DefinitionT>(value)); return *this; }
     ///@}
   private:
 

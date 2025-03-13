@@ -12,11 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RejectInboundCrossClusterSearchConnectionRequest::RejectInboundCrossClusterSearchConnectionRequest() : 
-    m_crossClusterSearchConnectionIdHasBeenSet(false)
-{
-}
-
 Aws::String RejectInboundCrossClusterSearchConnectionRequest::SerializePayload() const
 {
   return {};

@@ -18,36 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-Application::Application() : 
-    m_applicationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_state(ApplicationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_initialCapacityHasBeenSet(false),
-    m_maximumCapacityHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_autoStartConfigurationHasBeenSet(false),
-    m_autoStopConfigurationHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_imageConfigurationHasBeenSet(false),
-    m_workerTypeSpecificationsHasBeenSet(false),
-    m_runtimeConfigurationHasBeenSet(false),
-    m_monitoringConfigurationHasBeenSet(false),
-    m_interactiveConfigurationHasBeenSet(false),
-    m_schedulerConfigurationHasBeenSet(false)
-{
-}
-
 Application::Application(JsonView jsonValue)
-  : Application()
 {
   *this = jsonValue;
 }
@@ -57,52 +28,38 @@ Application& Application::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("releaseLabel"))
   {
     m_releaseLabel = jsonValue.GetString("releaseLabel");
-
     m_releaseLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ApplicationStateMapper::GetApplicationStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateDetails"))
   {
     m_stateDetails = jsonValue.GetString("stateDetails");
-
     m_stateDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initialCapacity"))
   {
     Aws::Map<Aws::String, JsonView> initialCapacityJsonMap = jsonValue.GetObject("initialCapacity").GetAllObjects();
@@ -112,28 +69,21 @@ Application& Application::operator =(JsonView jsonValue)
     }
     m_initialCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maximumCapacity"))
   {
     m_maximumCapacity = jsonValue.GetObject("maximumCapacity");
-
     m_maximumCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -143,42 +93,31 @@ Application& Application::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoStartConfiguration"))
   {
     m_autoStartConfiguration = jsonValue.GetObject("autoStartConfiguration");
-
     m_autoStartConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoStopConfiguration"))
   {
     m_autoStopConfiguration = jsonValue.GetObject("autoStopConfiguration");
-
     m_autoStopConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkConfiguration"))
   {
     m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
-
     m_networkConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("architecture"))
   {
     m_architecture = ArchitectureMapper::GetArchitectureForName(jsonValue.GetString("architecture"));
-
     m_architectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageConfiguration"))
   {
     m_imageConfiguration = jsonValue.GetObject("imageConfiguration");
-
     m_imageConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workerTypeSpecifications"))
   {
     Aws::Map<Aws::String, JsonView> workerTypeSpecificationsJsonMap = jsonValue.GetObject("workerTypeSpecifications").GetAllObjects();
@@ -188,7 +127,6 @@ Application& Application::operator =(JsonView jsonValue)
     }
     m_workerTypeSpecificationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimeConfiguration"))
   {
     Aws::Utils::Array<JsonView> runtimeConfigurationJsonList = jsonValue.GetArray("runtimeConfiguration");
@@ -198,28 +136,21 @@ Application& Application::operator =(JsonView jsonValue)
     }
     m_runtimeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monitoringConfiguration"))
   {
     m_monitoringConfiguration = jsonValue.GetObject("monitoringConfiguration");
-
     m_monitoringConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interactiveConfiguration"))
   {
     m_interactiveConfiguration = jsonValue.GetObject("interactiveConfiguration");
-
     m_interactiveConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schedulerConfiguration"))
   {
     m_schedulerConfiguration = jsonValue.GetObject("schedulerConfiguration");
-
     m_schedulerConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

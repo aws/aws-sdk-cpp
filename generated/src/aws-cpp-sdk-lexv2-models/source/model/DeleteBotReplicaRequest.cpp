@@ -12,12 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBotReplicaRequest::DeleteBotReplicaRequest() : 
-    m_botIdHasBeenSet(false),
-    m_replicaRegionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBotReplicaRequest::SerializePayload() const
 {
   return {};

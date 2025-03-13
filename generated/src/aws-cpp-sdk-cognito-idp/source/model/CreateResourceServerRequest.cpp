@@ -12,14 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateResourceServerRequest::CreateResourceServerRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_scopesHasBeenSet(false)
-{
-}
-
 Aws::String CreateResourceServerRequest::SerializePayload() const
 {
   JsonValue payload;

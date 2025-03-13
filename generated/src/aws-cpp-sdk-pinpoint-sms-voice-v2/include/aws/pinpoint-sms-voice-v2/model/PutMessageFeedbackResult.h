@@ -28,7 +28,7 @@ namespace Model
   class PutMessageFeedbackResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API PutMessageFeedbackResult();
+    AWS_PINPOINTSMSVOICEV2_API PutMessageFeedbackResult() = default;
     AWS_PINPOINTSMSVOICEV2_API PutMessageFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API PutMessageFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,40 @@ namespace Model
     /**
      * <p>The unique identifier for the message.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
-    inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageId.assign(value); }
-    inline PutMessageFeedbackResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline PutMessageFeedbackResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline PutMessageFeedbackResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    PutMessageFeedbackResult& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the message.</p>
      */
-    inline const MessageFeedbackStatus& GetMessageFeedbackStatus() const{ return m_messageFeedbackStatus; }
-    inline void SetMessageFeedbackStatus(const MessageFeedbackStatus& value) { m_messageFeedbackStatus = value; }
-    inline void SetMessageFeedbackStatus(MessageFeedbackStatus&& value) { m_messageFeedbackStatus = std::move(value); }
-    inline PutMessageFeedbackResult& WithMessageFeedbackStatus(const MessageFeedbackStatus& value) { SetMessageFeedbackStatus(value); return *this;}
-    inline PutMessageFeedbackResult& WithMessageFeedbackStatus(MessageFeedbackStatus&& value) { SetMessageFeedbackStatus(std::move(value)); return *this;}
+    inline MessageFeedbackStatus GetMessageFeedbackStatus() const { return m_messageFeedbackStatus; }
+    inline void SetMessageFeedbackStatus(MessageFeedbackStatus value) { m_messageFeedbackStatusHasBeenSet = true; m_messageFeedbackStatus = value; }
+    inline PutMessageFeedbackResult& WithMessageFeedbackStatus(MessageFeedbackStatus value) { SetMessageFeedbackStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutMessageFeedbackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutMessageFeedbackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutMessageFeedbackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutMessageFeedbackResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_messageId;
+    bool m_messageIdHasBeenSet = false;
 
-    MessageFeedbackStatus m_messageFeedbackStatus;
+    MessageFeedbackStatus m_messageFeedbackStatus{MessageFeedbackStatus::NOT_SET};
+    bool m_messageFeedbackStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

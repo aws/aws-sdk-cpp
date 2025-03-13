@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTableMetadataLocationResult::GetTableMetadataLocationResult()
-{
-}
-
 GetTableMetadataLocationResult::GetTableMetadataLocationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ GetTableMetadataLocationResult& GetTableMetadataLocationResult::operator =(const
   if(jsonValue.ValueExists("versionToken"))
   {
     m_versionToken = jsonValue.GetString("versionToken");
-
+    m_versionTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadataLocation"))
   {
     m_metadataLocation = jsonValue.GetString("metadataLocation");
-
+    m_metadataLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("warehouseLocation"))
   {
     m_warehouseLocation = jsonValue.GetString("warehouseLocation");
-
+    m_warehouseLocationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

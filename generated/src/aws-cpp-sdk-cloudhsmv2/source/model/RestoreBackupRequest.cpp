@@ -12,11 +12,6 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreBackupRequest::RestoreBackupRequest() : 
-    m_backupIdHasBeenSet(false)
-{
-}
-
 Aws::String RestoreBackupRequest::SerializePayload() const
 {
   JsonValue payload;

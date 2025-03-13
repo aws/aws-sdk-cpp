@@ -23,7 +23,7 @@ namespace Model
   class CreateCodeReviewRequest : public CodeGuruReviewerRequest
   {
   public:
-    AWS_CODEGURUREVIEWER_API CreateCodeReviewRequest();
+    AWS_CODEGURUREVIEWER_API CreateCodeReviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the code review. The name of each code review in your Amazon Web
      * Services account must be unique.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateCodeReviewRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateCodeReviewRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateCodeReviewRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateCodeReviewRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>A code review can only be created on an associated repository. This is the
      * ARN of the associated repository.</p>
      */
-    inline const Aws::String& GetRepositoryAssociationArn() const{ return m_repositoryAssociationArn; }
+    inline const Aws::String& GetRepositoryAssociationArn() const { return m_repositoryAssociationArn; }
     inline bool RepositoryAssociationArnHasBeenSet() const { return m_repositoryAssociationArnHasBeenSet; }
-    inline void SetRepositoryAssociationArn(const Aws::String& value) { m_repositoryAssociationArnHasBeenSet = true; m_repositoryAssociationArn = value; }
-    inline void SetRepositoryAssociationArn(Aws::String&& value) { m_repositoryAssociationArnHasBeenSet = true; m_repositoryAssociationArn = std::move(value); }
-    inline void SetRepositoryAssociationArn(const char* value) { m_repositoryAssociationArnHasBeenSet = true; m_repositoryAssociationArn.assign(value); }
-    inline CreateCodeReviewRequest& WithRepositoryAssociationArn(const Aws::String& value) { SetRepositoryAssociationArn(value); return *this;}
-    inline CreateCodeReviewRequest& WithRepositoryAssociationArn(Aws::String&& value) { SetRepositoryAssociationArn(std::move(value)); return *this;}
-    inline CreateCodeReviewRequest& WithRepositoryAssociationArn(const char* value) { SetRepositoryAssociationArn(value); return *this;}
+    template<typename RepositoryAssociationArnT = Aws::String>
+    void SetRepositoryAssociationArn(RepositoryAssociationArnT&& value) { m_repositoryAssociationArnHasBeenSet = true; m_repositoryAssociationArn = std::forward<RepositoryAssociationArnT>(value); }
+    template<typename RepositoryAssociationArnT = Aws::String>
+    CreateCodeReviewRequest& WithRepositoryAssociationArn(RepositoryAssociationArnT&& value) { SetRepositoryAssociationArn(std::forward<RepositoryAssociationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,12 @@ namespace Model
      * object. You can create a code review only of type
      * <code>RepositoryAnalysis</code>.</p>
      */
-    inline const CodeReviewType& GetType() const{ return m_type; }
+    inline const CodeReviewType& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CodeReviewType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CodeReviewType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateCodeReviewRequest& WithType(const CodeReviewType& value) { SetType(value); return *this;}
-    inline CreateCodeReviewRequest& WithType(CodeReviewType&& value) { SetType(std::move(value)); return *this;}
+    template<typename TypeT = CodeReviewType>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = CodeReviewType>
+    CreateCodeReviewRequest& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +84,12 @@ namespace Model
      * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
      * of duplicate code reviews if there are failures and retries.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateCodeReviewRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateCodeReviewRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateCodeReviewRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateCodeReviewRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

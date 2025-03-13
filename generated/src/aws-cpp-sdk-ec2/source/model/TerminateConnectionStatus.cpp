@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TerminateConnectionStatus::TerminateConnectionStatus() : 
-    m_connectionIdHasBeenSet(false),
-    m_previousStatusHasBeenSet(false),
-    m_currentStatusHasBeenSet(false)
-{
-}
-
 TerminateConnectionStatus::TerminateConnectionStatus(const XmlNode& xmlNode)
-  : TerminateConnectionStatus()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ TerminateConnectionStatus& TerminateConnectionStatus::operator =(const XmlNode& 
     {
       m_connectionId = Aws::Utils::Xml::DecodeEscapedXmlText(connectionIdNode.GetText());
       m_connectionIdHasBeenSet = true;
+       m_connectionIdHasBeenSet = true;
     }
     XmlNode previousStatusNode = resultNode.FirstChild("previousStatus");
     if(!previousStatusNode.IsNull())
     {
       m_previousStatus = previousStatusNode;
       m_previousStatusHasBeenSet = true;
+       m_previousStatusHasBeenSet = true;
     }
     XmlNode currentStatusNode = resultNode.FirstChild("currentStatus");
     if(!currentStatusNode.IsNull())
     {
       m_currentStatus = currentStatusNode;
       m_currentStatusHasBeenSet = true;
+       m_currentStatusHasBeenSet = true;
     }
   }
 

@@ -32,7 +32,7 @@ namespace Model
   class GaugeChartColorConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API GaugeChartColorConfiguration();
+    AWS_QUICKSIGHT_API GaugeChartColorConfiguration() = default;
     AWS_QUICKSIGHT_API GaugeChartColorConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GaugeChartColorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The foreground color configuration of a <code>GaugeChartVisual</code>.</p>
      */
-    inline const Aws::String& GetForegroundColor() const{ return m_foregroundColor; }
+    inline const Aws::String& GetForegroundColor() const { return m_foregroundColor; }
     inline bool ForegroundColorHasBeenSet() const { return m_foregroundColorHasBeenSet; }
-    inline void SetForegroundColor(const Aws::String& value) { m_foregroundColorHasBeenSet = true; m_foregroundColor = value; }
-    inline void SetForegroundColor(Aws::String&& value) { m_foregroundColorHasBeenSet = true; m_foregroundColor = std::move(value); }
-    inline void SetForegroundColor(const char* value) { m_foregroundColorHasBeenSet = true; m_foregroundColor.assign(value); }
-    inline GaugeChartColorConfiguration& WithForegroundColor(const Aws::String& value) { SetForegroundColor(value); return *this;}
-    inline GaugeChartColorConfiguration& WithForegroundColor(Aws::String&& value) { SetForegroundColor(std::move(value)); return *this;}
-    inline GaugeChartColorConfiguration& WithForegroundColor(const char* value) { SetForegroundColor(value); return *this;}
+    template<typename ForegroundColorT = Aws::String>
+    void SetForegroundColor(ForegroundColorT&& value) { m_foregroundColorHasBeenSet = true; m_foregroundColor = std::forward<ForegroundColorT>(value); }
+    template<typename ForegroundColorT = Aws::String>
+    GaugeChartColorConfiguration& WithForegroundColor(ForegroundColorT&& value) { SetForegroundColor(std::forward<ForegroundColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The background color configuration of a <code>GaugeChartVisual</code>.</p>
      */
-    inline const Aws::String& GetBackgroundColor() const{ return m_backgroundColor; }
+    inline const Aws::String& GetBackgroundColor() const { return m_backgroundColor; }
     inline bool BackgroundColorHasBeenSet() const { return m_backgroundColorHasBeenSet; }
-    inline void SetBackgroundColor(const Aws::String& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = value; }
-    inline void SetBackgroundColor(Aws::String&& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = std::move(value); }
-    inline void SetBackgroundColor(const char* value) { m_backgroundColorHasBeenSet = true; m_backgroundColor.assign(value); }
-    inline GaugeChartColorConfiguration& WithBackgroundColor(const Aws::String& value) { SetBackgroundColor(value); return *this;}
-    inline GaugeChartColorConfiguration& WithBackgroundColor(Aws::String&& value) { SetBackgroundColor(std::move(value)); return *this;}
-    inline GaugeChartColorConfiguration& WithBackgroundColor(const char* value) { SetBackgroundColor(value); return *this;}
+    template<typename BackgroundColorT = Aws::String>
+    void SetBackgroundColor(BackgroundColorT&& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = std::forward<BackgroundColorT>(value); }
+    template<typename BackgroundColorT = Aws::String>
+    GaugeChartColorConfiguration& WithBackgroundColor(BackgroundColorT&& value) { SetBackgroundColor(std::forward<BackgroundColorT>(value)); return *this;}
     ///@}
   private:
 

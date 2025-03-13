@@ -18,19 +18,7 @@ namespace Backup
 namespace Model
 {
 
-RestoreTestingSelectionForList::RestoreTestingSelectionForList() : 
-    m_creationTimeHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_protectedResourceTypeHasBeenSet(false),
-    m_restoreTestingPlanNameHasBeenSet(false),
-    m_restoreTestingSelectionNameHasBeenSet(false),
-    m_validationWindowHours(0),
-    m_validationWindowHoursHasBeenSet(false)
-{
-}
-
 RestoreTestingSelectionForList::RestoreTestingSelectionForList(JsonView jsonValue)
-  : RestoreTestingSelectionForList()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ RestoreTestingSelectionForList& RestoreTestingSelectionForList::operator =(JsonV
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectedResourceType"))
   {
     m_protectedResourceType = jsonValue.GetString("ProtectedResourceType");
-
     m_protectedResourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingPlanName"))
   {
     m_restoreTestingPlanName = jsonValue.GetString("RestoreTestingPlanName");
-
     m_restoreTestingPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingSelectionName"))
   {
     m_restoreTestingSelectionName = jsonValue.GetString("RestoreTestingSelectionName");
-
     m_restoreTestingSelectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationWindowHours"))
   {
     m_validationWindowHours = jsonValue.GetInteger("ValidationWindowHours");
-
     m_validationWindowHoursHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-S3InputFormatConfig::S3InputFormatConfig() : 
-    m_s3InputFileType(S3InputFileType::NOT_SET),
-    m_s3InputFileTypeHasBeenSet(false)
-{
-}
-
 S3InputFormatConfig::S3InputFormatConfig(JsonView jsonValue)
-  : S3InputFormatConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ S3InputFormatConfig& S3InputFormatConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3InputFileType"))
   {
     m_s3InputFileType = S3InputFileTypeMapper::GetS3InputFileTypeForName(jsonValue.GetString("s3InputFileType"));
-
     m_s3InputFileTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

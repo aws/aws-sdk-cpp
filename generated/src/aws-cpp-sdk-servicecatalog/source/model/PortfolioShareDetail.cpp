@@ -18,21 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-PortfolioShareDetail::PortfolioShareDetail() : 
-    m_principalIdHasBeenSet(false),
-    m_type(DescribePortfolioShareType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_accepted(false),
-    m_acceptedHasBeenSet(false),
-    m_shareTagOptions(false),
-    m_shareTagOptionsHasBeenSet(false),
-    m_sharePrincipals(false),
-    m_sharePrincipalsHasBeenSet(false)
-{
-}
-
 PortfolioShareDetail::PortfolioShareDetail(JsonView jsonValue)
-  : PortfolioShareDetail()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ PortfolioShareDetail& PortfolioShareDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PrincipalId"))
   {
     m_principalId = jsonValue.GetString("PrincipalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DescribePortfolioShareTypeMapper::GetDescribePortfolioShareTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Accepted"))
   {
     m_accepted = jsonValue.GetBool("Accepted");
-
     m_acceptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareTagOptions"))
   {
     m_shareTagOptions = jsonValue.GetBool("ShareTagOptions");
-
     m_shareTagOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharePrincipals"))
   {
     m_sharePrincipals = jsonValue.GetBool("SharePrincipals");
-
     m_sharePrincipalsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTestGridUrlResult::CreateTestGridUrlResult()
-{
-}
-
 CreateTestGridUrlResult::CreateTestGridUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateTestGridUrlResult& CreateTestGridUrlResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
+    m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expires"))
   {
     m_expires = jsonValue.GetDouble("expires");
-
+    m_expiresHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateHostedZoneCommentResult::UpdateHostedZoneCommentResult()
-{
-}
-
 UpdateHostedZoneCommentResult::UpdateHostedZoneCommentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ UpdateHostedZoneCommentResult& UpdateHostedZoneCommentResult::operator =(const A
     if(!hostedZoneNode.IsNull())
     {
       m_hostedZone = hostedZoneNode;
+      m_hostedZoneHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ UpdateHostedZoneCommentResult& UpdateHostedZoneCommentResult::operator =(const A
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -18,20 +18,7 @@ namespace mgn
 namespace Model
 {
 
-VcenterClient::VcenterClient() : 
-    m_arnHasBeenSet(false),
-    m_datacenterNameHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_lastSeenDatetimeHasBeenSet(false),
-    m_sourceServerTagsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vcenterClientIDHasBeenSet(false),
-    m_vcenterUUIDHasBeenSet(false)
-{
-}
-
 VcenterClient::VcenterClient(JsonView jsonValue)
-  : VcenterClient()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ VcenterClient& VcenterClient::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datacenterName"))
   {
     m_datacenterName = jsonValue.GetString("datacenterName");
-
     m_datacenterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostname"))
   {
     m_hostname = jsonValue.GetString("hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSeenDatetime"))
   {
     m_lastSeenDatetime = jsonValue.GetString("lastSeenDatetime");
-
     m_lastSeenDatetimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceServerTags"))
   {
     Aws::Map<Aws::String, JsonView> sourceServerTagsJsonMap = jsonValue.GetObject("sourceServerTags").GetAllObjects();
@@ -75,7 +54,6 @@ VcenterClient& VcenterClient::operator =(JsonView jsonValue)
     }
     m_sourceServerTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -85,21 +63,16 @@ VcenterClient& VcenterClient::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vcenterClientID"))
   {
     m_vcenterClientID = jsonValue.GetString("vcenterClientID");
-
     m_vcenterClientIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vcenterUUID"))
   {
     m_vcenterUUID = jsonValue.GetString("vcenterUUID");
-
     m_vcenterUUIDHasBeenSet = true;
   }
-
   return *this;
 }
 

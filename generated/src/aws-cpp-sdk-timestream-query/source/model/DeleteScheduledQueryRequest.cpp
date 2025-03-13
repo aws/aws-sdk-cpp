@@ -12,11 +12,6 @@ using namespace Aws::TimestreamQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteScheduledQueryRequest::DeleteScheduledQueryRequest() : 
-    m_scheduledQueryArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScheduledQueryRequest::SerializePayload() const
 {
   JsonValue payload;

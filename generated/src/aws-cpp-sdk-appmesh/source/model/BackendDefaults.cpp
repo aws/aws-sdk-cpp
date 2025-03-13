@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-BackendDefaults::BackendDefaults() : 
-    m_clientPolicyHasBeenSet(false)
-{
-}
-
 BackendDefaults::BackendDefaults(JsonView jsonValue)
-  : BackendDefaults()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BackendDefaults& BackendDefaults::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clientPolicy"))
   {
     m_clientPolicy = jsonValue.GetObject("clientPolicy");
-
     m_clientPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,12 +15,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-UpdateStreamingDistribution2020_05_31Request::UpdateStreamingDistribution2020_05_31Request() : 
-    m_streamingDistributionConfigHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_ifMatchHasBeenSet(false)
-{
-}
 
 Aws::String UpdateStreamingDistribution2020_05_31Request::SerializePayload() const
 {

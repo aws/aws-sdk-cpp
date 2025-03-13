@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketBundlesResult::GetBucketBundlesResult()
-{
-}
-
 GetBucketBundlesResult::GetBucketBundlesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetBucketBundlesResult& GetBucketBundlesResult::operator =(const Aws::AmazonWebS
     {
       m_bundles.push_back(bundlesJsonList[bundlesIndex].AsObject());
     }
+    m_bundlesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

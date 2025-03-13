@@ -30,7 +30,7 @@ namespace Model
   class GetExportResult
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetExportResult();
+    AWS_LEXMODELBUILDINGSERVICE_API GetExportResult() = default;
     AWS_LEXMODELBUILDINGSERVICE_API GetExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELBUILDINGSERVICE_API GetExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,48 +39,40 @@ namespace Model
     /**
      * <p>The name of the bot being exported.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetExportResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetExportResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetExportResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetExportResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the bot being exported.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    inline void SetVersion(const Aws::String& value) { m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_version.assign(value); }
-    inline GetExportResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline GetExportResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline GetExportResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    inline const Aws::String& GetVersion() const { return m_version; }
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    GetExportResult& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the exported resource.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceType = std::move(value); }
-    inline GetExportResult& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline GetExportResult& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline ResourceType GetResourceType() const { return m_resourceType; }
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GetExportResult& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the exported data.</p>
      */
-    inline const ExportType& GetExportType() const{ return m_exportType; }
-    inline void SetExportType(const ExportType& value) { m_exportType = value; }
-    inline void SetExportType(ExportType&& value) { m_exportType = std::move(value); }
-    inline GetExportResult& WithExportType(const ExportType& value) { SetExportType(value); return *this;}
-    inline GetExportResult& WithExportType(ExportType&& value) { SetExportType(std::move(value)); return *this;}
+    inline ExportType GetExportType() const { return m_exportType; }
+    inline void SetExportType(ExportType value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
+    inline GetExportResult& WithExportType(ExportType value) { SetExportType(value); return *this;}
     ///@}
 
     ///@{
@@ -90,11 +82,9 @@ namespace Model
      * complete.</p> </li> <li> <p> <code>FAILED</code> - The export could not be
      * completed.</p> </li> </ul>
      */
-    inline const ExportStatus& GetExportStatus() const{ return m_exportStatus; }
-    inline void SetExportStatus(const ExportStatus& value) { m_exportStatus = value; }
-    inline void SetExportStatus(ExportStatus&& value) { m_exportStatus = std::move(value); }
-    inline GetExportResult& WithExportStatus(const ExportStatus& value) { SetExportStatus(value); return *this;}
-    inline GetExportResult& WithExportStatus(ExportStatus&& value) { SetExportStatus(std::move(value)); return *this;}
+    inline ExportStatus GetExportStatus() const { return m_exportStatus; }
+    inline void SetExportStatus(ExportStatus value) { m_exportStatusHasBeenSet = true; m_exportStatus = value; }
+    inline GetExportResult& WithExportStatus(ExportStatus value) { SetExportStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -102,13 +92,11 @@ namespace Model
      * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
      * that it failed to export the resource.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline GetExportResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline GetExportResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline GetExportResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    GetExportResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,42 +106,46 @@ namespace Model
      * format. The structure of the archive may change. Your code should not rely on
      * the archive structure.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
-    inline void SetUrl(const Aws::String& value) { m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_url.assign(value); }
-    inline GetExportResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline GetExportResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline GetExportResult& WithUrl(const char* value) { SetUrl(value); return *this;}
+    inline const Aws::String& GetUrl() const { return m_url; }
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    GetExportResult& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetExportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
+    bool m_versionHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
+    bool m_resourceTypeHasBeenSet = false;
 
-    ExportType m_exportType;
+    ExportType m_exportType{ExportType::NOT_SET};
+    bool m_exportTypeHasBeenSet = false;
 
-    ExportStatus m_exportStatus;
+    ExportStatus m_exportStatus{ExportStatus::NOT_SET};
+    bool m_exportStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_url;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

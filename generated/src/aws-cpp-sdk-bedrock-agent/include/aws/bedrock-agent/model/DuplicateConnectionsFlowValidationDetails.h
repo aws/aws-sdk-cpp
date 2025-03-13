@@ -32,7 +32,7 @@ namespace Model
   class DuplicateConnectionsFlowValidationDetails
   {
   public:
-    AWS_BEDROCKAGENT_API DuplicateConnectionsFlowValidationDetails();
+    AWS_BEDROCKAGENT_API DuplicateConnectionsFlowValidationDetails() = default;
     AWS_BEDROCKAGENT_API DuplicateConnectionsFlowValidationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API DuplicateConnectionsFlowValidationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the source node where the duplicate connection starts.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline DuplicateConnectionsFlowValidationDetails& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline DuplicateConnectionsFlowValidationDetails& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline DuplicateConnectionsFlowValidationDetails& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    DuplicateConnectionsFlowValidationDetails& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the target node where the duplicate connection ends.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline DuplicateConnectionsFlowValidationDetails& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline DuplicateConnectionsFlowValidationDetails& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline DuplicateConnectionsFlowValidationDetails& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    DuplicateConnectionsFlowValidationDetails& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-TimePeriod::TimePeriod() : 
-    m_unit(TimeUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 TimePeriod::TimePeriod(JsonView jsonValue)
-  : TimePeriod()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TimePeriod& TimePeriod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = TimeUnitMapper::GetTimeUnitForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInteger("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

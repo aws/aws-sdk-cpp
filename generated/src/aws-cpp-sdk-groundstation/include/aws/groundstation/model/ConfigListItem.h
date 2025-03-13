@@ -33,7 +33,7 @@ namespace Model
   class ConfigListItem
   {
   public:
-    AWS_GROUNDSTATION_API ConfigListItem();
+    AWS_GROUNDSTATION_API ConfigListItem() = default;
     AWS_GROUNDSTATION_API ConfigListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API ConfigListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,54 +43,46 @@ namespace Model
     /**
      * <p>ARN of a <code>Config</code>.</p>
      */
-    inline const Aws::String& GetConfigArn() const{ return m_configArn; }
+    inline const Aws::String& GetConfigArn() const { return m_configArn; }
     inline bool ConfigArnHasBeenSet() const { return m_configArnHasBeenSet; }
-    inline void SetConfigArn(const Aws::String& value) { m_configArnHasBeenSet = true; m_configArn = value; }
-    inline void SetConfigArn(Aws::String&& value) { m_configArnHasBeenSet = true; m_configArn = std::move(value); }
-    inline void SetConfigArn(const char* value) { m_configArnHasBeenSet = true; m_configArn.assign(value); }
-    inline ConfigListItem& WithConfigArn(const Aws::String& value) { SetConfigArn(value); return *this;}
-    inline ConfigListItem& WithConfigArn(Aws::String&& value) { SetConfigArn(std::move(value)); return *this;}
-    inline ConfigListItem& WithConfigArn(const char* value) { SetConfigArn(value); return *this;}
+    template<typename ConfigArnT = Aws::String>
+    void SetConfigArn(ConfigArnT&& value) { m_configArnHasBeenSet = true; m_configArn = std::forward<ConfigArnT>(value); }
+    template<typename ConfigArnT = Aws::String>
+    ConfigListItem& WithConfigArn(ConfigArnT&& value) { SetConfigArn(std::forward<ConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>UUID of a <code>Config</code>.</p>
      */
-    inline const Aws::String& GetConfigId() const{ return m_configId; }
+    inline const Aws::String& GetConfigId() const { return m_configId; }
     inline bool ConfigIdHasBeenSet() const { return m_configIdHasBeenSet; }
-    inline void SetConfigId(const Aws::String& value) { m_configIdHasBeenSet = true; m_configId = value; }
-    inline void SetConfigId(Aws::String&& value) { m_configIdHasBeenSet = true; m_configId = std::move(value); }
-    inline void SetConfigId(const char* value) { m_configIdHasBeenSet = true; m_configId.assign(value); }
-    inline ConfigListItem& WithConfigId(const Aws::String& value) { SetConfigId(value); return *this;}
-    inline ConfigListItem& WithConfigId(Aws::String&& value) { SetConfigId(std::move(value)); return *this;}
-    inline ConfigListItem& WithConfigId(const char* value) { SetConfigId(value); return *this;}
+    template<typename ConfigIdT = Aws::String>
+    void SetConfigId(ConfigIdT&& value) { m_configIdHasBeenSet = true; m_configId = std::forward<ConfigIdT>(value); }
+    template<typename ConfigIdT = Aws::String>
+    ConfigListItem& WithConfigId(ConfigIdT&& value) { SetConfigId(std::forward<ConfigIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of a <code>Config</code>.</p>
      */
-    inline const ConfigCapabilityType& GetConfigType() const{ return m_configType; }
+    inline ConfigCapabilityType GetConfigType() const { return m_configType; }
     inline bool ConfigTypeHasBeenSet() const { return m_configTypeHasBeenSet; }
-    inline void SetConfigType(const ConfigCapabilityType& value) { m_configTypeHasBeenSet = true; m_configType = value; }
-    inline void SetConfigType(ConfigCapabilityType&& value) { m_configTypeHasBeenSet = true; m_configType = std::move(value); }
-    inline ConfigListItem& WithConfigType(const ConfigCapabilityType& value) { SetConfigType(value); return *this;}
-    inline ConfigListItem& WithConfigType(ConfigCapabilityType&& value) { SetConfigType(std::move(value)); return *this;}
+    inline void SetConfigType(ConfigCapabilityType value) { m_configTypeHasBeenSet = true; m_configType = value; }
+    inline ConfigListItem& WithConfigType(ConfigCapabilityType value) { SetConfigType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of a <code>Config</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ConfigListItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ConfigListItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ConfigListItem& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ConfigListItem& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
@@ -100,7 +92,7 @@ namespace Model
     Aws::String m_configId;
     bool m_configIdHasBeenSet = false;
 
-    ConfigCapabilityType m_configType;
+    ConfigCapabilityType m_configType{ConfigCapabilityType::NOT_SET};
     bool m_configTypeHasBeenSet = false;
 
     Aws::String m_name;

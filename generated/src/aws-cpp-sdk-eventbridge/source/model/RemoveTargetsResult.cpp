@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RemoveTargetsResult::RemoveTargetsResult() : 
-    m_failedEntryCount(0)
-{
-}
-
 RemoveTargetsResult::RemoveTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RemoveTargetsResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ RemoveTargetsResult& RemoveTargetsResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("FailedEntryCount"))
   {
     m_failedEntryCount = jsonValue.GetInteger("FailedEntryCount");
-
+    m_failedEntryCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedEntries"))
   {
     Aws::Utils::Array<JsonView> failedEntriesJsonList = jsonValue.GetArray("FailedEntries");
@@ -44,14 +37,15 @@ RemoveTargetsResult& RemoveTargetsResult::operator =(const Aws::AmazonWebService
     {
       m_failedEntries.push_back(failedEntriesJsonList[failedEntriesIndex].AsObject());
     }
+    m_failedEntriesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -36,7 +36,7 @@ namespace Model
   class InvalidS3ConfigurationException
   {
   public:
-    AWS_SES_API InvalidS3ConfigurationException();
+    AWS_SES_API InvalidS3ConfigurationException() = default;
     AWS_SES_API InvalidS3ConfigurationException(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API InvalidS3ConfigurationException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>Indicated that the S3 Bucket was not found.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline InvalidS3ConfigurationException& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline InvalidS3ConfigurationException& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline InvalidS3ConfigurationException& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    InvalidS3ConfigurationException& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
   private:
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListClassificationScopesRequest::ListClassificationScopesRequest() : 
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListClassificationScopesRequest::SerializePayload() const
 {
   return {};

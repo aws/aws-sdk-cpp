@@ -33,7 +33,7 @@ namespace Model
   class FailedRequest
   {
   public:
-    AWS_CONNECT_API FailedRequest();
+    AWS_CONNECT_API FailedRequest() = default;
     AWS_CONNECT_API FailedRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API FailedRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,47 +44,41 @@ namespace Model
      * <p>Request identifier provided in the API call in the ContactDataRequest to
      * create a contact.</p>
      */
-    inline const Aws::String& GetRequestIdentifier() const{ return m_requestIdentifier; }
+    inline const Aws::String& GetRequestIdentifier() const { return m_requestIdentifier; }
     inline bool RequestIdentifierHasBeenSet() const { return m_requestIdentifierHasBeenSet; }
-    inline void SetRequestIdentifier(const Aws::String& value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier = value; }
-    inline void SetRequestIdentifier(Aws::String&& value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier = std::move(value); }
-    inline void SetRequestIdentifier(const char* value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier.assign(value); }
-    inline FailedRequest& WithRequestIdentifier(const Aws::String& value) { SetRequestIdentifier(value); return *this;}
-    inline FailedRequest& WithRequestIdentifier(Aws::String&& value) { SetRequestIdentifier(std::move(value)); return *this;}
-    inline FailedRequest& WithRequestIdentifier(const char* value) { SetRequestIdentifier(value); return *this;}
+    template<typename RequestIdentifierT = Aws::String>
+    void SetRequestIdentifier(RequestIdentifierT&& value) { m_requestIdentifierHasBeenSet = true; m_requestIdentifier = std::forward<RequestIdentifierT>(value); }
+    template<typename RequestIdentifierT = Aws::String>
+    FailedRequest& WithRequestIdentifier(RequestIdentifierT&& value) { SetRequestIdentifier(std::forward<RequestIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reason code for the failure.</p>
      */
-    inline const FailureReasonCode& GetFailureReasonCode() const{ return m_failureReasonCode; }
+    inline FailureReasonCode GetFailureReasonCode() const { return m_failureReasonCode; }
     inline bool FailureReasonCodeHasBeenSet() const { return m_failureReasonCodeHasBeenSet; }
-    inline void SetFailureReasonCode(const FailureReasonCode& value) { m_failureReasonCodeHasBeenSet = true; m_failureReasonCode = value; }
-    inline void SetFailureReasonCode(FailureReasonCode&& value) { m_failureReasonCodeHasBeenSet = true; m_failureReasonCode = std::move(value); }
-    inline FailedRequest& WithFailureReasonCode(const FailureReasonCode& value) { SetFailureReasonCode(value); return *this;}
-    inline FailedRequest& WithFailureReasonCode(FailureReasonCode&& value) { SetFailureReasonCode(std::move(value)); return *this;}
+    inline void SetFailureReasonCode(FailureReasonCode value) { m_failureReasonCodeHasBeenSet = true; m_failureReasonCode = value; }
+    inline FailedRequest& WithFailureReasonCode(FailureReasonCode value) { SetFailureReasonCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Why the request to create a contact failed.</p>
      */
-    inline const Aws::String& GetFailureReasonMessage() const{ return m_failureReasonMessage; }
+    inline const Aws::String& GetFailureReasonMessage() const { return m_failureReasonMessage; }
     inline bool FailureReasonMessageHasBeenSet() const { return m_failureReasonMessageHasBeenSet; }
-    inline void SetFailureReasonMessage(const Aws::String& value) { m_failureReasonMessageHasBeenSet = true; m_failureReasonMessage = value; }
-    inline void SetFailureReasonMessage(Aws::String&& value) { m_failureReasonMessageHasBeenSet = true; m_failureReasonMessage = std::move(value); }
-    inline void SetFailureReasonMessage(const char* value) { m_failureReasonMessageHasBeenSet = true; m_failureReasonMessage.assign(value); }
-    inline FailedRequest& WithFailureReasonMessage(const Aws::String& value) { SetFailureReasonMessage(value); return *this;}
-    inline FailedRequest& WithFailureReasonMessage(Aws::String&& value) { SetFailureReasonMessage(std::move(value)); return *this;}
-    inline FailedRequest& WithFailureReasonMessage(const char* value) { SetFailureReasonMessage(value); return *this;}
+    template<typename FailureReasonMessageT = Aws::String>
+    void SetFailureReasonMessage(FailureReasonMessageT&& value) { m_failureReasonMessageHasBeenSet = true; m_failureReasonMessage = std::forward<FailureReasonMessageT>(value); }
+    template<typename FailureReasonMessageT = Aws::String>
+    FailedRequest& WithFailureReasonMessage(FailureReasonMessageT&& value) { SetFailureReasonMessage(std::forward<FailureReasonMessageT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestIdentifier;
     bool m_requestIdentifierHasBeenSet = false;
 
-    FailureReasonCode m_failureReasonCode;
+    FailureReasonCode m_failureReasonCode{FailureReasonCode::NOT_SET};
     bool m_failureReasonCodeHasBeenSet = false;
 
     Aws::String m_failureReasonMessage;

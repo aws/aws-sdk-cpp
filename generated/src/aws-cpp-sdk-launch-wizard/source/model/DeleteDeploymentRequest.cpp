@@ -12,11 +12,6 @@ using namespace Aws::LaunchWizard::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDeploymentRequest::DeleteDeploymentRequest() : 
-    m_deploymentIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

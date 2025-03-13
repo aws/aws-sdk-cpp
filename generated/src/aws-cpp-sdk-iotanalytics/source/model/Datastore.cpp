@@ -18,23 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-Datastore::Datastore() : 
-    m_nameHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(DatastoreStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_lastMessageArrivalTimeHasBeenSet(false),
-    m_fileFormatConfigurationHasBeenSet(false),
-    m_datastorePartitionsHasBeenSet(false)
-{
-}
-
 Datastore::Datastore(JsonView jsonValue)
-  : Datastore()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ Datastore& Datastore::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storage"))
   {
     m_storage = jsonValue.GetObject("storage");
-
     m_storageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DatastoreStatusMapper::GetDatastoreStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retentionPeriod"))
   {
     m_retentionPeriod = jsonValue.GetObject("retentionPeriod");
-
     m_retentionPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastMessageArrivalTime"))
   {
     m_lastMessageArrivalTime = jsonValue.GetDouble("lastMessageArrivalTime");
-
     m_lastMessageArrivalTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileFormatConfiguration"))
   {
     m_fileFormatConfiguration = jsonValue.GetObject("fileFormatConfiguration");
-
     m_fileFormatConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datastorePartitions"))
   {
     m_datastorePartitions = jsonValue.GetObject("datastorePartitions");
-
     m_datastorePartitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

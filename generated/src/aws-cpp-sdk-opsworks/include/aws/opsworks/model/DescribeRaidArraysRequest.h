@@ -22,7 +22,7 @@ namespace Model
   class DescribeRaidArraysRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API DescribeRaidArraysRequest();
+    AWS_OPSWORKS_API DescribeRaidArraysRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
      * returns descriptions of the RAID arrays associated with the specified instance.
      * </p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline DescribeRaidArraysRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline DescribeRaidArraysRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline DescribeRaidArraysRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    DescribeRaidArraysRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stack ID.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline DescribeRaidArraysRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline DescribeRaidArraysRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline DescribeRaidArraysRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    DescribeRaidArraysRequest& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,15 +67,14 @@ namespace Model
      * <code>DescribeRaidArrays</code> returns descriptions of the specified arrays.
      * Otherwise, it returns a description of every array.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRaidArrayIds() const{ return m_raidArrayIds; }
+    inline const Aws::Vector<Aws::String>& GetRaidArrayIds() const { return m_raidArrayIds; }
     inline bool RaidArrayIdsHasBeenSet() const { return m_raidArrayIdsHasBeenSet; }
-    inline void SetRaidArrayIds(const Aws::Vector<Aws::String>& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds = value; }
-    inline void SetRaidArrayIds(Aws::Vector<Aws::String>&& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds = std::move(value); }
-    inline DescribeRaidArraysRequest& WithRaidArrayIds(const Aws::Vector<Aws::String>& value) { SetRaidArrayIds(value); return *this;}
-    inline DescribeRaidArraysRequest& WithRaidArrayIds(Aws::Vector<Aws::String>&& value) { SetRaidArrayIds(std::move(value)); return *this;}
-    inline DescribeRaidArraysRequest& AddRaidArrayIds(const Aws::String& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds.push_back(value); return *this; }
-    inline DescribeRaidArraysRequest& AddRaidArrayIds(Aws::String&& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds.push_back(std::move(value)); return *this; }
-    inline DescribeRaidArraysRequest& AddRaidArrayIds(const char* value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds.push_back(value); return *this; }
+    template<typename RaidArrayIdsT = Aws::Vector<Aws::String>>
+    void SetRaidArrayIds(RaidArrayIdsT&& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds = std::forward<RaidArrayIdsT>(value); }
+    template<typename RaidArrayIdsT = Aws::Vector<Aws::String>>
+    DescribeRaidArraysRequest& WithRaidArrayIds(RaidArrayIdsT&& value) { SetRaidArrayIds(std::forward<RaidArrayIdsT>(value)); return *this;}
+    template<typename RaidArrayIdsT = Aws::String>
+    DescribeRaidArraysRequest& AddRaidArrayIds(RaidArrayIdsT&& value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds.emplace_back(std::forward<RaidArrayIdsT>(value)); return *this; }
     ///@}
   private:
 

@@ -10,11 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-DeletePlatformApplicationRequest::DeletePlatformApplicationRequest() : 
-    m_platformApplicationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeletePlatformApplicationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -38,7 +38,7 @@ namespace Model
   class BrokerNodeGroupInfo
   {
   public:
-    AWS_KAFKA_API BrokerNodeGroupInfo();
+    AWS_KAFKA_API BrokerNodeGroupInfo() = default;
     AWS_KAFKA_API BrokerNodeGroupInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API BrokerNodeGroupInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,10 @@ namespace Model
      * you provide when you create the cluster.</p>
          
      */
-    inline const BrokerAZDistribution& GetBrokerAZDistribution() const{ return m_brokerAZDistribution; }
+    inline BrokerAZDistribution GetBrokerAZDistribution() const { return m_brokerAZDistribution; }
     inline bool BrokerAZDistributionHasBeenSet() const { return m_brokerAZDistributionHasBeenSet; }
-    inline void SetBrokerAZDistribution(const BrokerAZDistribution& value) { m_brokerAZDistributionHasBeenSet = true; m_brokerAZDistribution = value; }
-    inline void SetBrokerAZDistribution(BrokerAZDistribution&& value) { m_brokerAZDistributionHasBeenSet = true; m_brokerAZDistribution = std::move(value); }
-    inline BrokerNodeGroupInfo& WithBrokerAZDistribution(const BrokerAZDistribution& value) { SetBrokerAZDistribution(value); return *this;}
-    inline BrokerNodeGroupInfo& WithBrokerAZDistribution(BrokerAZDistribution&& value) { SetBrokerAZDistribution(std::move(value)); return *this;}
+    inline void SetBrokerAZDistribution(BrokerAZDistribution value) { m_brokerAZDistributionHasBeenSet = true; m_brokerAZDistribution = value; }
+    inline BrokerNodeGroupInfo& WithBrokerAZDistribution(BrokerAZDistribution value) { SetBrokerAZDistribution(value); return *this;}
     ///@}
 
     ///@{
@@ -73,15 +71,14 @@ namespace Model
      * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
-    inline const Aws::Vector<Aws::String>& GetClientSubnets() const{ return m_clientSubnets; }
+    inline const Aws::Vector<Aws::String>& GetClientSubnets() const { return m_clientSubnets; }
     inline bool ClientSubnetsHasBeenSet() const { return m_clientSubnetsHasBeenSet; }
-    inline void SetClientSubnets(const Aws::Vector<Aws::String>& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets = value; }
-    inline void SetClientSubnets(Aws::Vector<Aws::String>&& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets = std::move(value); }
-    inline BrokerNodeGroupInfo& WithClientSubnets(const Aws::Vector<Aws::String>& value) { SetClientSubnets(value); return *this;}
-    inline BrokerNodeGroupInfo& WithClientSubnets(Aws::Vector<Aws::String>&& value) { SetClientSubnets(std::move(value)); return *this;}
-    inline BrokerNodeGroupInfo& AddClientSubnets(const Aws::String& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets.push_back(value); return *this; }
-    inline BrokerNodeGroupInfo& AddClientSubnets(Aws::String&& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets.push_back(std::move(value)); return *this; }
-    inline BrokerNodeGroupInfo& AddClientSubnets(const char* value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets.push_back(value); return *this; }
+    template<typename ClientSubnetsT = Aws::Vector<Aws::String>>
+    void SetClientSubnets(ClientSubnetsT&& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets = std::forward<ClientSubnetsT>(value); }
+    template<typename ClientSubnetsT = Aws::Vector<Aws::String>>
+    BrokerNodeGroupInfo& WithClientSubnets(ClientSubnetsT&& value) { SetClientSubnets(std::forward<ClientSubnetsT>(value)); return *this;}
+    template<typename ClientSubnetsT = Aws::String>
+    BrokerNodeGroupInfo& AddClientSubnets(ClientSubnetsT&& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets.emplace_back(std::forward<ClientSubnetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,14 +91,12 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * kafka.m5.24xlarge.</p>
          
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline BrokerNodeGroupInfo& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline BrokerNodeGroupInfo& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline BrokerNodeGroupInfo& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    BrokerNodeGroupInfo& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,15 +108,14 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * default security group associated with the VPC.</p>
          
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const { return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
-    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
-    inline BrokerNodeGroupInfo& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
-    inline BrokerNodeGroupInfo& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-    inline BrokerNodeGroupInfo& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
-    inline BrokerNodeGroupInfo& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
-    inline BrokerNodeGroupInfo& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::forward<SecurityGroupsT>(value); }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    BrokerNodeGroupInfo& WithSecurityGroups(SecurityGroupsT&& value) { SetSecurityGroups(std::forward<SecurityGroupsT>(value)); return *this;}
+    template<typename SecurityGroupsT = Aws::String>
+    BrokerNodeGroupInfo& AddSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.emplace_back(std::forward<SecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -131,12 +125,12 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * broker nodes.</p>
          
      */
-    inline const StorageInfo& GetStorageInfo() const{ return m_storageInfo; }
+    inline const StorageInfo& GetStorageInfo() const { return m_storageInfo; }
     inline bool StorageInfoHasBeenSet() const { return m_storageInfoHasBeenSet; }
-    inline void SetStorageInfo(const StorageInfo& value) { m_storageInfoHasBeenSet = true; m_storageInfo = value; }
-    inline void SetStorageInfo(StorageInfo&& value) { m_storageInfoHasBeenSet = true; m_storageInfo = std::move(value); }
-    inline BrokerNodeGroupInfo& WithStorageInfo(const StorageInfo& value) { SetStorageInfo(value); return *this;}
-    inline BrokerNodeGroupInfo& WithStorageInfo(StorageInfo&& value) { SetStorageInfo(std::move(value)); return *this;}
+    template<typename StorageInfoT = StorageInfo>
+    void SetStorageInfo(StorageInfoT&& value) { m_storageInfoHasBeenSet = true; m_storageInfo = std::forward<StorageInfoT>(value); }
+    template<typename StorageInfoT = StorageInfo>
+    BrokerNodeGroupInfo& WithStorageInfo(StorageInfoT&& value) { SetStorageInfo(std::forward<StorageInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,12 +139,12 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
             <p>Information about the broker access configuration.</p>
          
      */
-    inline const ConnectivityInfo& GetConnectivityInfo() const{ return m_connectivityInfo; }
+    inline const ConnectivityInfo& GetConnectivityInfo() const { return m_connectivityInfo; }
     inline bool ConnectivityInfoHasBeenSet() const { return m_connectivityInfoHasBeenSet; }
-    inline void SetConnectivityInfo(const ConnectivityInfo& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = value; }
-    inline void SetConnectivityInfo(ConnectivityInfo&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = std::move(value); }
-    inline BrokerNodeGroupInfo& WithConnectivityInfo(const ConnectivityInfo& value) { SetConnectivityInfo(value); return *this;}
-    inline BrokerNodeGroupInfo& WithConnectivityInfo(ConnectivityInfo&& value) { SetConnectivityInfo(std::move(value)); return *this;}
+    template<typename ConnectivityInfoT = ConnectivityInfo>
+    void SetConnectivityInfo(ConnectivityInfoT&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = std::forward<ConnectivityInfoT>(value); }
+    template<typename ConnectivityInfoT = ConnectivityInfo>
+    BrokerNodeGroupInfo& WithConnectivityInfo(ConnectivityInfoT&& value) { SetConnectivityInfo(std::forward<ConnectivityInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,19 +154,18 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * (VPC).</p>
          
      */
-    inline const Aws::Vector<Aws::String>& GetZoneIds() const{ return m_zoneIds; }
+    inline const Aws::Vector<Aws::String>& GetZoneIds() const { return m_zoneIds; }
     inline bool ZoneIdsHasBeenSet() const { return m_zoneIdsHasBeenSet; }
-    inline void SetZoneIds(const Aws::Vector<Aws::String>& value) { m_zoneIdsHasBeenSet = true; m_zoneIds = value; }
-    inline void SetZoneIds(Aws::Vector<Aws::String>&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds = std::move(value); }
-    inline BrokerNodeGroupInfo& WithZoneIds(const Aws::Vector<Aws::String>& value) { SetZoneIds(value); return *this;}
-    inline BrokerNodeGroupInfo& WithZoneIds(Aws::Vector<Aws::String>&& value) { SetZoneIds(std::move(value)); return *this;}
-    inline BrokerNodeGroupInfo& AddZoneIds(const Aws::String& value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(value); return *this; }
-    inline BrokerNodeGroupInfo& AddZoneIds(Aws::String&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(std::move(value)); return *this; }
-    inline BrokerNodeGroupInfo& AddZoneIds(const char* value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(value); return *this; }
+    template<typename ZoneIdsT = Aws::Vector<Aws::String>>
+    void SetZoneIds(ZoneIdsT&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds = std::forward<ZoneIdsT>(value); }
+    template<typename ZoneIdsT = Aws::Vector<Aws::String>>
+    BrokerNodeGroupInfo& WithZoneIds(ZoneIdsT&& value) { SetZoneIds(std::forward<ZoneIdsT>(value)); return *this;}
+    template<typename ZoneIdsT = Aws::String>
+    BrokerNodeGroupInfo& AddZoneIds(ZoneIdsT&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds.emplace_back(std::forward<ZoneIdsT>(value)); return *this; }
     ///@}
   private:
 
-    BrokerAZDistribution m_brokerAZDistribution;
+    BrokerAZDistribution m_brokerAZDistribution{BrokerAZDistribution::NOT_SET};
     bool m_brokerAZDistributionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clientSubnets;

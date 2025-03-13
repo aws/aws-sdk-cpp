@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcceptAddressTransferResponse::AcceptAddressTransferResponse()
-{
-}
-
 AcceptAddressTransferResponse::AcceptAddressTransferResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ AcceptAddressTransferResponse& AcceptAddressTransferResponse::operator =(const A
     if(!addressTransferNode.IsNull())
     {
       m_addressTransfer = addressTransferNode;
+      m_addressTransferHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ AcceptAddressTransferResponse& AcceptAddressTransferResponse::operator =(const A
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AcceptAddressTransferResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

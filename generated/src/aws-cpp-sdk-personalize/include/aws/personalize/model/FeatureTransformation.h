@@ -35,7 +35,7 @@ namespace Model
   class FeatureTransformation
   {
   public:
-    AWS_PERSONALIZE_API FeatureTransformation();
+    AWS_PERSONALIZE_API FeatureTransformation() = default;
     AWS_PERSONALIZE_API FeatureTransformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API FeatureTransformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,59 +45,52 @@ namespace Model
     /**
      * <p>The name of the feature transformation.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FeatureTransformation& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FeatureTransformation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FeatureTransformation& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FeatureTransformation& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the FeatureTransformation object.</p>
      */
-    inline const Aws::String& GetFeatureTransformationArn() const{ return m_featureTransformationArn; }
+    inline const Aws::String& GetFeatureTransformationArn() const { return m_featureTransformationArn; }
     inline bool FeatureTransformationArnHasBeenSet() const { return m_featureTransformationArnHasBeenSet; }
-    inline void SetFeatureTransformationArn(const Aws::String& value) { m_featureTransformationArnHasBeenSet = true; m_featureTransformationArn = value; }
-    inline void SetFeatureTransformationArn(Aws::String&& value) { m_featureTransformationArnHasBeenSet = true; m_featureTransformationArn = std::move(value); }
-    inline void SetFeatureTransformationArn(const char* value) { m_featureTransformationArnHasBeenSet = true; m_featureTransformationArn.assign(value); }
-    inline FeatureTransformation& WithFeatureTransformationArn(const Aws::String& value) { SetFeatureTransformationArn(value); return *this;}
-    inline FeatureTransformation& WithFeatureTransformationArn(Aws::String&& value) { SetFeatureTransformationArn(std::move(value)); return *this;}
-    inline FeatureTransformation& WithFeatureTransformationArn(const char* value) { SetFeatureTransformationArn(value); return *this;}
+    template<typename FeatureTransformationArnT = Aws::String>
+    void SetFeatureTransformationArn(FeatureTransformationArnT&& value) { m_featureTransformationArnHasBeenSet = true; m_featureTransformationArn = std::forward<FeatureTransformationArnT>(value); }
+    template<typename FeatureTransformationArnT = Aws::String>
+    FeatureTransformation& WithFeatureTransformationArn(FeatureTransformationArnT&& value) { SetFeatureTransformationArn(std::forward<FeatureTransformationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides the default parameters for feature transformation.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDefaultParameters() const{ return m_defaultParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDefaultParameters() const { return m_defaultParameters; }
     inline bool DefaultParametersHasBeenSet() const { return m_defaultParametersHasBeenSet; }
-    inline void SetDefaultParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_defaultParametersHasBeenSet = true; m_defaultParameters = value; }
-    inline void SetDefaultParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_defaultParametersHasBeenSet = true; m_defaultParameters = std::move(value); }
-    inline FeatureTransformation& WithDefaultParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetDefaultParameters(value); return *this;}
-    inline FeatureTransformation& WithDefaultParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetDefaultParameters(std::move(value)); return *this;}
-    inline FeatureTransformation& AddDefaultParameters(const Aws::String& key, const Aws::String& value) { m_defaultParametersHasBeenSet = true; m_defaultParameters.emplace(key, value); return *this; }
-    inline FeatureTransformation& AddDefaultParameters(Aws::String&& key, const Aws::String& value) { m_defaultParametersHasBeenSet = true; m_defaultParameters.emplace(std::move(key), value); return *this; }
-    inline FeatureTransformation& AddDefaultParameters(const Aws::String& key, Aws::String&& value) { m_defaultParametersHasBeenSet = true; m_defaultParameters.emplace(key, std::move(value)); return *this; }
-    inline FeatureTransformation& AddDefaultParameters(Aws::String&& key, Aws::String&& value) { m_defaultParametersHasBeenSet = true; m_defaultParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline FeatureTransformation& AddDefaultParameters(const char* key, Aws::String&& value) { m_defaultParametersHasBeenSet = true; m_defaultParameters.emplace(key, std::move(value)); return *this; }
-    inline FeatureTransformation& AddDefaultParameters(Aws::String&& key, const char* value) { m_defaultParametersHasBeenSet = true; m_defaultParameters.emplace(std::move(key), value); return *this; }
-    inline FeatureTransformation& AddDefaultParameters(const char* key, const char* value) { m_defaultParametersHasBeenSet = true; m_defaultParameters.emplace(key, value); return *this; }
+    template<typename DefaultParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetDefaultParameters(DefaultParametersT&& value) { m_defaultParametersHasBeenSet = true; m_defaultParameters = std::forward<DefaultParametersT>(value); }
+    template<typename DefaultParametersT = Aws::Map<Aws::String, Aws::String>>
+    FeatureTransformation& WithDefaultParameters(DefaultParametersT&& value) { SetDefaultParameters(std::forward<DefaultParametersT>(value)); return *this;}
+    template<typename DefaultParametersKeyT = Aws::String, typename DefaultParametersValueT = Aws::String>
+    FeatureTransformation& AddDefaultParameters(DefaultParametersKeyT&& key, DefaultParametersValueT&& value) {
+      m_defaultParametersHasBeenSet = true; m_defaultParameters.emplace(std::forward<DefaultParametersKeyT>(key), std::forward<DefaultParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The creation date and time (in Unix time) of the feature transformation.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-    inline FeatureTransformation& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline FeatureTransformation& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    FeatureTransformation& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +98,12 @@ namespace Model
      * <p>The last update date and time (in Unix time) of the feature
      * transformation.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
-    inline FeatureTransformation& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline FeatureTransformation& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    FeatureTransformation& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +112,12 @@ namespace Model
      * be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
      * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline FeatureTransformation& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline FeatureTransformation& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline FeatureTransformation& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    FeatureTransformation& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 
@@ -139,10 +130,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_defaultParameters;
     bool m_defaultParametersHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
     bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
     bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_status;

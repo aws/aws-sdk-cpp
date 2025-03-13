@@ -30,7 +30,7 @@ namespace Model
   class JsonOptions
   {
   public:
-    AWS_GLUEDATABREW_API JsonOptions();
+    AWS_GLUEDATABREW_API JsonOptions() = default;
     AWS_GLUEDATABREW_API JsonOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API JsonOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>A value that specifies whether JSON input contains embedded new line
      * characters.</p>
      */
-    inline bool GetMultiLine() const{ return m_multiLine; }
+    inline bool GetMultiLine() const { return m_multiLine; }
     inline bool MultiLineHasBeenSet() const { return m_multiLineHasBeenSet; }
     inline void SetMultiLine(bool value) { m_multiLineHasBeenSet = true; m_multiLine = value; }
     inline JsonOptions& WithMultiLine(bool value) { SetMultiLine(value); return *this;}
     ///@}
   private:
 
-    bool m_multiLine;
+    bool m_multiLine{false};
     bool m_multiLineHasBeenSet = false;
   };
 

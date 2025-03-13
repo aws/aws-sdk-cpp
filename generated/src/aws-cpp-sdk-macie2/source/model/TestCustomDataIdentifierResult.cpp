@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestCustomDataIdentifierResult::TestCustomDataIdentifierResult() : 
-    m_matchCount(0)
-{
-}
-
 TestCustomDataIdentifierResult::TestCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : TestCustomDataIdentifierResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ TestCustomDataIdentifierResult& TestCustomDataIdentifierResult::operator =(const
   if(jsonValue.ValueExists("matchCount"))
   {
     m_matchCount = jsonValue.GetInteger("matchCount");
-
+    m_matchCountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

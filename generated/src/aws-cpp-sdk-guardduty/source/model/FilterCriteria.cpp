@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-FilterCriteria::FilterCriteria() : 
-    m_filterCriterionHasBeenSet(false)
-{
-}
-
 FilterCriteria::FilterCriteria(JsonView jsonValue)
-  : FilterCriteria()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_filterCriterionHasBeenSet = true;
   }
-
   return *this;
 }
 

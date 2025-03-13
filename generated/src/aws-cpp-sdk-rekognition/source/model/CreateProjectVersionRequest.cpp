@@ -12,19 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProjectVersionRequest::CreateProjectVersionRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_trainingDataHasBeenSet(false),
-    m_testingDataHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_featureConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateProjectVersionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,17 +12,6 @@ using namespace Aws::QLDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportJournalToS3Request::ExportJournalToS3Request() : 
-    m_nameHasBeenSet(false),
-    m_inclusiveStartTimeHasBeenSet(false),
-    m_exclusiveEndTimeHasBeenSet(false),
-    m_s3ExportConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_outputFormat(OutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false)
-{
-}
-
 Aws::String ExportJournalToS3Request::SerializePayload() const
 {
   JsonValue payload;

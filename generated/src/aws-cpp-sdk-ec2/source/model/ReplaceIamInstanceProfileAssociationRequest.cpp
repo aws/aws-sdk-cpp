@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ReplaceIamInstanceProfileAssociationRequest::ReplaceIamInstanceProfileAssociationRequest() : 
-    m_iamInstanceProfileHasBeenSet(false),
-    m_associationIdHasBeenSet(false)
-{
-}
-
 Aws::String ReplaceIamInstanceProfileAssociationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

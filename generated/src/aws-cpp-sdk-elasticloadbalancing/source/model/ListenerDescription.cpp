@@ -20,14 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-ListenerDescription::ListenerDescription() : 
-    m_listenerHasBeenSet(false),
-    m_policyNamesHasBeenSet(false)
-{
-}
-
 ListenerDescription::ListenerDescription(const XmlNode& xmlNode)
-  : ListenerDescription()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ ListenerDescription& ListenerDescription::operator =(const XmlNode& xmlNode)
     {
       m_listener = listenerNode;
       m_listenerHasBeenSet = true;
+       m_listenerHasBeenSet = true;
     }
     XmlNode policyNamesNode = resultNode.FirstChild("PolicyNames");
     if(!policyNamesNode.IsNull())
     {
       XmlNode policyNamesMember = policyNamesNode.FirstChild("member");
+      m_policyNamesHasBeenSet = !policyNamesMember.IsNull();
       while(!policyNamesMember.IsNull())
       {
         m_policyNames.push_back(policyNamesMember.GetText());
         policyNamesMember = policyNamesMember.NextNode("member");
       }
 
-      m_policyNamesHasBeenSet = true;
+       m_policyNamesHasBeenSet = true;
     }
   }
 

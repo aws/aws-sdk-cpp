@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-IngressStringToEvaluate::IngressStringToEvaluate() : 
-    m_attribute(IngressStringEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
-{
-}
-
 IngressStringToEvaluate::IngressStringToEvaluate(JsonView jsonValue)
-  : IngressStringToEvaluate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IngressStringToEvaluate& IngressStringToEvaluate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = IngressStringEmailAttributeMapper::GetIngressStringEmailAttributeForName(jsonValue.GetString("Attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   return *this;
 }
 

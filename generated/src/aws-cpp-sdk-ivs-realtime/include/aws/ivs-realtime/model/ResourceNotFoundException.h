@@ -31,7 +31,7 @@ namespace Model
   class ResourceNotFoundException
   {
   public:
-    AWS_IVSREALTIME_API ResourceNotFoundException();
+    AWS_IVSREALTIME_API ResourceNotFoundException() = default;
     AWS_IVSREALTIME_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,126 +41,108 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetAccessControlAllowOrigin() const{ return m_accessControlAllowOrigin; }
+    inline const Aws::String& GetAccessControlAllowOrigin() const { return m_accessControlAllowOrigin; }
     inline bool AccessControlAllowOriginHasBeenSet() const { return m_accessControlAllowOriginHasBeenSet; }
-    inline void SetAccessControlAllowOrigin(const Aws::String& value) { m_accessControlAllowOriginHasBeenSet = true; m_accessControlAllowOrigin = value; }
-    inline void SetAccessControlAllowOrigin(Aws::String&& value) { m_accessControlAllowOriginHasBeenSet = true; m_accessControlAllowOrigin = std::move(value); }
-    inline void SetAccessControlAllowOrigin(const char* value) { m_accessControlAllowOriginHasBeenSet = true; m_accessControlAllowOrigin.assign(value); }
-    inline ResourceNotFoundException& WithAccessControlAllowOrigin(const Aws::String& value) { SetAccessControlAllowOrigin(value); return *this;}
-    inline ResourceNotFoundException& WithAccessControlAllowOrigin(Aws::String&& value) { SetAccessControlAllowOrigin(std::move(value)); return *this;}
-    inline ResourceNotFoundException& WithAccessControlAllowOrigin(const char* value) { SetAccessControlAllowOrigin(value); return *this;}
+    template<typename AccessControlAllowOriginT = Aws::String>
+    void SetAccessControlAllowOrigin(AccessControlAllowOriginT&& value) { m_accessControlAllowOriginHasBeenSet = true; m_accessControlAllowOrigin = std::forward<AccessControlAllowOriginT>(value); }
+    template<typename AccessControlAllowOriginT = Aws::String>
+    ResourceNotFoundException& WithAccessControlAllowOrigin(AccessControlAllowOriginT&& value) { SetAccessControlAllowOrigin(std::forward<AccessControlAllowOriginT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetAccessControlExposeHeaders() const{ return m_accessControlExposeHeaders; }
+    inline const Aws::String& GetAccessControlExposeHeaders() const { return m_accessControlExposeHeaders; }
     inline bool AccessControlExposeHeadersHasBeenSet() const { return m_accessControlExposeHeadersHasBeenSet; }
-    inline void SetAccessControlExposeHeaders(const Aws::String& value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders = value; }
-    inline void SetAccessControlExposeHeaders(Aws::String&& value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders = std::move(value); }
-    inline void SetAccessControlExposeHeaders(const char* value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders.assign(value); }
-    inline ResourceNotFoundException& WithAccessControlExposeHeaders(const Aws::String& value) { SetAccessControlExposeHeaders(value); return *this;}
-    inline ResourceNotFoundException& WithAccessControlExposeHeaders(Aws::String&& value) { SetAccessControlExposeHeaders(std::move(value)); return *this;}
-    inline ResourceNotFoundException& WithAccessControlExposeHeaders(const char* value) { SetAccessControlExposeHeaders(value); return *this;}
+    template<typename AccessControlExposeHeadersT = Aws::String>
+    void SetAccessControlExposeHeaders(AccessControlExposeHeadersT&& value) { m_accessControlExposeHeadersHasBeenSet = true; m_accessControlExposeHeaders = std::forward<AccessControlExposeHeadersT>(value); }
+    template<typename AccessControlExposeHeadersT = Aws::String>
+    ResourceNotFoundException& WithAccessControlExposeHeaders(AccessControlExposeHeadersT&& value) { SetAccessControlExposeHeaders(std::forward<AccessControlExposeHeadersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
+    inline const Aws::String& GetCacheControl() const { return m_cacheControl; }
     inline bool CacheControlHasBeenSet() const { return m_cacheControlHasBeenSet; }
-    inline void SetCacheControl(const Aws::String& value) { m_cacheControlHasBeenSet = true; m_cacheControl = value; }
-    inline void SetCacheControl(Aws::String&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::move(value); }
-    inline void SetCacheControl(const char* value) { m_cacheControlHasBeenSet = true; m_cacheControl.assign(value); }
-    inline ResourceNotFoundException& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
-    inline ResourceNotFoundException& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
-    inline ResourceNotFoundException& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
+    template<typename CacheControlT = Aws::String>
+    void SetCacheControl(CacheControlT&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::forward<CacheControlT>(value); }
+    template<typename CacheControlT = Aws::String>
+    ResourceNotFoundException& WithCacheControl(CacheControlT&& value) { SetCacheControl(std::forward<CacheControlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetContentSecurityPolicy() const{ return m_contentSecurityPolicy; }
+    inline const Aws::String& GetContentSecurityPolicy() const { return m_contentSecurityPolicy; }
     inline bool ContentSecurityPolicyHasBeenSet() const { return m_contentSecurityPolicyHasBeenSet; }
-    inline void SetContentSecurityPolicy(const Aws::String& value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy = value; }
-    inline void SetContentSecurityPolicy(Aws::String&& value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy = std::move(value); }
-    inline void SetContentSecurityPolicy(const char* value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy.assign(value); }
-    inline ResourceNotFoundException& WithContentSecurityPolicy(const Aws::String& value) { SetContentSecurityPolicy(value); return *this;}
-    inline ResourceNotFoundException& WithContentSecurityPolicy(Aws::String&& value) { SetContentSecurityPolicy(std::move(value)); return *this;}
-    inline ResourceNotFoundException& WithContentSecurityPolicy(const char* value) { SetContentSecurityPolicy(value); return *this;}
+    template<typename ContentSecurityPolicyT = Aws::String>
+    void SetContentSecurityPolicy(ContentSecurityPolicyT&& value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy = std::forward<ContentSecurityPolicyT>(value); }
+    template<typename ContentSecurityPolicyT = Aws::String>
+    ResourceNotFoundException& WithContentSecurityPolicy(ContentSecurityPolicyT&& value) { SetContentSecurityPolicy(std::forward<ContentSecurityPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetStrictTransportSecurity() const{ return m_strictTransportSecurity; }
+    inline const Aws::String& GetStrictTransportSecurity() const { return m_strictTransportSecurity; }
     inline bool StrictTransportSecurityHasBeenSet() const { return m_strictTransportSecurityHasBeenSet; }
-    inline void SetStrictTransportSecurity(const Aws::String& value) { m_strictTransportSecurityHasBeenSet = true; m_strictTransportSecurity = value; }
-    inline void SetStrictTransportSecurity(Aws::String&& value) { m_strictTransportSecurityHasBeenSet = true; m_strictTransportSecurity = std::move(value); }
-    inline void SetStrictTransportSecurity(const char* value) { m_strictTransportSecurityHasBeenSet = true; m_strictTransportSecurity.assign(value); }
-    inline ResourceNotFoundException& WithStrictTransportSecurity(const Aws::String& value) { SetStrictTransportSecurity(value); return *this;}
-    inline ResourceNotFoundException& WithStrictTransportSecurity(Aws::String&& value) { SetStrictTransportSecurity(std::move(value)); return *this;}
-    inline ResourceNotFoundException& WithStrictTransportSecurity(const char* value) { SetStrictTransportSecurity(value); return *this;}
+    template<typename StrictTransportSecurityT = Aws::String>
+    void SetStrictTransportSecurity(StrictTransportSecurityT&& value) { m_strictTransportSecurityHasBeenSet = true; m_strictTransportSecurity = std::forward<StrictTransportSecurityT>(value); }
+    template<typename StrictTransportSecurityT = Aws::String>
+    ResourceNotFoundException& WithStrictTransportSecurity(StrictTransportSecurityT&& value) { SetStrictTransportSecurity(std::forward<StrictTransportSecurityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetXContentTypeOptions() const{ return m_xContentTypeOptions; }
+    inline const Aws::String& GetXContentTypeOptions() const { return m_xContentTypeOptions; }
     inline bool XContentTypeOptionsHasBeenSet() const { return m_xContentTypeOptionsHasBeenSet; }
-    inline void SetXContentTypeOptions(const Aws::String& value) { m_xContentTypeOptionsHasBeenSet = true; m_xContentTypeOptions = value; }
-    inline void SetXContentTypeOptions(Aws::String&& value) { m_xContentTypeOptionsHasBeenSet = true; m_xContentTypeOptions = std::move(value); }
-    inline void SetXContentTypeOptions(const char* value) { m_xContentTypeOptionsHasBeenSet = true; m_xContentTypeOptions.assign(value); }
-    inline ResourceNotFoundException& WithXContentTypeOptions(const Aws::String& value) { SetXContentTypeOptions(value); return *this;}
-    inline ResourceNotFoundException& WithXContentTypeOptions(Aws::String&& value) { SetXContentTypeOptions(std::move(value)); return *this;}
-    inline ResourceNotFoundException& WithXContentTypeOptions(const char* value) { SetXContentTypeOptions(value); return *this;}
+    template<typename XContentTypeOptionsT = Aws::String>
+    void SetXContentTypeOptions(XContentTypeOptionsT&& value) { m_xContentTypeOptionsHasBeenSet = true; m_xContentTypeOptions = std::forward<XContentTypeOptionsT>(value); }
+    template<typename XContentTypeOptionsT = Aws::String>
+    ResourceNotFoundException& WithXContentTypeOptions(XContentTypeOptionsT&& value) { SetXContentTypeOptions(std::forward<XContentTypeOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetXFrameOptions() const{ return m_xFrameOptions; }
+    inline const Aws::String& GetXFrameOptions() const { return m_xFrameOptions; }
     inline bool XFrameOptionsHasBeenSet() const { return m_xFrameOptionsHasBeenSet; }
-    inline void SetXFrameOptions(const Aws::String& value) { m_xFrameOptionsHasBeenSet = true; m_xFrameOptions = value; }
-    inline void SetXFrameOptions(Aws::String&& value) { m_xFrameOptionsHasBeenSet = true; m_xFrameOptions = std::move(value); }
-    inline void SetXFrameOptions(const char* value) { m_xFrameOptionsHasBeenSet = true; m_xFrameOptions.assign(value); }
-    inline ResourceNotFoundException& WithXFrameOptions(const Aws::String& value) { SetXFrameOptions(value); return *this;}
-    inline ResourceNotFoundException& WithXFrameOptions(Aws::String&& value) { SetXFrameOptions(std::move(value)); return *this;}
-    inline ResourceNotFoundException& WithXFrameOptions(const char* value) { SetXFrameOptions(value); return *this;}
+    template<typename XFrameOptionsT = Aws::String>
+    void SetXFrameOptions(XFrameOptionsT&& value) { m_xFrameOptionsHasBeenSet = true; m_xFrameOptions = std::forward<XFrameOptionsT>(value); }
+    template<typename XFrameOptionsT = Aws::String>
+    ResourceNotFoundException& WithXFrameOptions(XFrameOptionsT&& value) { SetXFrameOptions(std::forward<XFrameOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetXAmznErrorType() const{ return m_xAmznErrorType; }
+    inline const Aws::String& GetXAmznErrorType() const { return m_xAmznErrorType; }
     inline bool XAmznErrorTypeHasBeenSet() const { return m_xAmznErrorTypeHasBeenSet; }
-    inline void SetXAmznErrorType(const Aws::String& value) { m_xAmznErrorTypeHasBeenSet = true; m_xAmznErrorType = value; }
-    inline void SetXAmznErrorType(Aws::String&& value) { m_xAmznErrorTypeHasBeenSet = true; m_xAmznErrorType = std::move(value); }
-    inline void SetXAmznErrorType(const char* value) { m_xAmznErrorTypeHasBeenSet = true; m_xAmznErrorType.assign(value); }
-    inline ResourceNotFoundException& WithXAmznErrorType(const Aws::String& value) { SetXAmznErrorType(value); return *this;}
-    inline ResourceNotFoundException& WithXAmznErrorType(Aws::String&& value) { SetXAmznErrorType(std::move(value)); return *this;}
-    inline ResourceNotFoundException& WithXAmznErrorType(const char* value) { SetXAmznErrorType(value); return *this;}
+    template<typename XAmznErrorTypeT = Aws::String>
+    void SetXAmznErrorType(XAmznErrorTypeT&& value) { m_xAmznErrorTypeHasBeenSet = true; m_xAmznErrorType = std::forward<XAmznErrorTypeT>(value); }
+    template<typename XAmznErrorTypeT = Aws::String>
+    ResourceNotFoundException& WithXAmznErrorType(XAmznErrorTypeT&& value) { SetXAmznErrorType(std::forward<XAmznErrorTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Request references a resource which does not exist.</p>
      */
-    inline const Aws::String& GetExceptionMessage() const{ return m_exceptionMessage; }
+    inline const Aws::String& GetExceptionMessage() const { return m_exceptionMessage; }
     inline bool ExceptionMessageHasBeenSet() const { return m_exceptionMessageHasBeenSet; }
-    inline void SetExceptionMessage(const Aws::String& value) { m_exceptionMessageHasBeenSet = true; m_exceptionMessage = value; }
-    inline void SetExceptionMessage(Aws::String&& value) { m_exceptionMessageHasBeenSet = true; m_exceptionMessage = std::move(value); }
-    inline void SetExceptionMessage(const char* value) { m_exceptionMessageHasBeenSet = true; m_exceptionMessage.assign(value); }
-    inline ResourceNotFoundException& WithExceptionMessage(const Aws::String& value) { SetExceptionMessage(value); return *this;}
-    inline ResourceNotFoundException& WithExceptionMessage(Aws::String&& value) { SetExceptionMessage(std::move(value)); return *this;}
-    inline ResourceNotFoundException& WithExceptionMessage(const char* value) { SetExceptionMessage(value); return *this;}
+    template<typename ExceptionMessageT = Aws::String>
+    void SetExceptionMessage(ExceptionMessageT&& value) { m_exceptionMessageHasBeenSet = true; m_exceptionMessage = std::forward<ExceptionMessageT>(value); }
+    template<typename ExceptionMessageT = Aws::String>
+    ResourceNotFoundException& WithExceptionMessage(ExceptionMessageT&& value) { SetExceptionMessage(std::forward<ExceptionMessageT>(value)); return *this;}
     ///@}
   private:
 

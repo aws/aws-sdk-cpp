@@ -10,14 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeReservedNodeOfferingsRequest::DescribeReservedNodeOfferingsRequest() : 
-    m_reservedNodeOfferingIdHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReservedNodeOfferingsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

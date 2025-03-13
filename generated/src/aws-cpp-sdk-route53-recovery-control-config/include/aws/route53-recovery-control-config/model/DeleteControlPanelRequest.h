@@ -21,7 +21,7 @@ namespace Model
   class DeleteControlPanelRequest : public Route53RecoveryControlConfigRequest
   {
   public:
-    AWS_ROUTE53RECOVERYCONTROLCONFIG_API DeleteControlPanelRequest();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API DeleteControlPanelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
-    inline const Aws::String& GetControlPanelArn() const{ return m_controlPanelArn; }
+    inline const Aws::String& GetControlPanelArn() const { return m_controlPanelArn; }
     inline bool ControlPanelArnHasBeenSet() const { return m_controlPanelArnHasBeenSet; }
-    inline void SetControlPanelArn(const Aws::String& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = value; }
-    inline void SetControlPanelArn(Aws::String&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::move(value); }
-    inline void SetControlPanelArn(const char* value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn.assign(value); }
-    inline DeleteControlPanelRequest& WithControlPanelArn(const Aws::String& value) { SetControlPanelArn(value); return *this;}
-    inline DeleteControlPanelRequest& WithControlPanelArn(Aws::String&& value) { SetControlPanelArn(std::move(value)); return *this;}
-    inline DeleteControlPanelRequest& WithControlPanelArn(const char* value) { SetControlPanelArn(value); return *this;}
+    template<typename ControlPanelArnT = Aws::String>
+    void SetControlPanelArn(ControlPanelArnT&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::forward<ControlPanelArnT>(value); }
+    template<typename ControlPanelArnT = Aws::String>
+    DeleteControlPanelRequest& WithControlPanelArn(ControlPanelArnT&& value) { SetControlPanelArn(std::forward<ControlPanelArnT>(value)); return *this;}
     ///@}
   private:
 

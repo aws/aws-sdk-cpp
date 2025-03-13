@@ -18,20 +18,7 @@ namespace kendra
 namespace Model
 {
 
-Relevance::Relevance() : 
-    m_freshness(false),
-    m_freshnessHasBeenSet(false),
-    m_importance(0),
-    m_importanceHasBeenSet(false),
-    m_durationHasBeenSet(false),
-    m_rankOrder(Order::NOT_SET),
-    m_rankOrderHasBeenSet(false),
-    m_valueImportanceMapHasBeenSet(false)
-{
-}
-
 Relevance::Relevance(JsonView jsonValue)
-  : Relevance()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ Relevance& Relevance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Freshness"))
   {
     m_freshness = jsonValue.GetBool("Freshness");
-
     m_freshnessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Importance"))
   {
     m_importance = jsonValue.GetInteger("Importance");
-
     m_importanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetString("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RankOrder"))
   {
     m_rankOrder = OrderMapper::GetOrderForName(jsonValue.GetString("RankOrder"));
-
     m_rankOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueImportanceMap"))
   {
     Aws::Map<Aws::String, JsonView> valueImportanceMapJsonMap = jsonValue.GetObject("ValueImportanceMap").GetAllObjects();
@@ -75,7 +54,6 @@ Relevance& Relevance::operator =(JsonView jsonValue)
     }
     m_valueImportanceMapHasBeenSet = true;
   }
-
   return *this;
 }
 

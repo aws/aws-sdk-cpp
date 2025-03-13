@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-EncryptionEntity::EncryptionEntity() : 
-    m_publicKeyIdHasBeenSet(false),
-    m_providerIdHasBeenSet(false),
-    m_fieldPatternsHasBeenSet(false)
-{
-}
-
 EncryptionEntity::EncryptionEntity(const XmlNode& xmlNode)
-  : EncryptionEntity()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ EncryptionEntity& EncryptionEntity::operator =(const XmlNode& xmlNode)
     {
       m_publicKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(publicKeyIdNode.GetText());
       m_publicKeyIdHasBeenSet = true;
+       m_publicKeyIdHasBeenSet = true;
     }
     XmlNode providerIdNode = resultNode.FirstChild("ProviderId");
     if(!providerIdNode.IsNull())
     {
       m_providerId = Aws::Utils::Xml::DecodeEscapedXmlText(providerIdNode.GetText());
       m_providerIdHasBeenSet = true;
+       m_providerIdHasBeenSet = true;
     }
     XmlNode fieldPatternsNode = resultNode.FirstChild("FieldPatterns");
     if(!fieldPatternsNode.IsNull())
     {
       m_fieldPatterns = fieldPatternsNode;
       m_fieldPatternsHasBeenSet = true;
+       m_fieldPatternsHasBeenSet = true;
     }
   }
 

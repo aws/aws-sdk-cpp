@@ -31,7 +31,7 @@ namespace Model
   class AwsEcsClusterConfigurationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsClusterConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationDetails() = default;
     AWS_SECURITYHUB_API AwsEcsClusterConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsClusterConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Contains the run command configuration for the cluster.</p>
      */
-    inline const AwsEcsClusterConfigurationExecuteCommandConfigurationDetails& GetExecuteCommandConfiguration() const{ return m_executeCommandConfiguration; }
+    inline const AwsEcsClusterConfigurationExecuteCommandConfigurationDetails& GetExecuteCommandConfiguration() const { return m_executeCommandConfiguration; }
     inline bool ExecuteCommandConfigurationHasBeenSet() const { return m_executeCommandConfigurationHasBeenSet; }
-    inline void SetExecuteCommandConfiguration(const AwsEcsClusterConfigurationExecuteCommandConfigurationDetails& value) { m_executeCommandConfigurationHasBeenSet = true; m_executeCommandConfiguration = value; }
-    inline void SetExecuteCommandConfiguration(AwsEcsClusterConfigurationExecuteCommandConfigurationDetails&& value) { m_executeCommandConfigurationHasBeenSet = true; m_executeCommandConfiguration = std::move(value); }
-    inline AwsEcsClusterConfigurationDetails& WithExecuteCommandConfiguration(const AwsEcsClusterConfigurationExecuteCommandConfigurationDetails& value) { SetExecuteCommandConfiguration(value); return *this;}
-    inline AwsEcsClusterConfigurationDetails& WithExecuteCommandConfiguration(AwsEcsClusterConfigurationExecuteCommandConfigurationDetails&& value) { SetExecuteCommandConfiguration(std::move(value)); return *this;}
+    template<typename ExecuteCommandConfigurationT = AwsEcsClusterConfigurationExecuteCommandConfigurationDetails>
+    void SetExecuteCommandConfiguration(ExecuteCommandConfigurationT&& value) { m_executeCommandConfigurationHasBeenSet = true; m_executeCommandConfiguration = std::forward<ExecuteCommandConfigurationT>(value); }
+    template<typename ExecuteCommandConfigurationT = AwsEcsClusterConfigurationExecuteCommandConfigurationDetails>
+    AwsEcsClusterConfigurationDetails& WithExecuteCommandConfiguration(ExecuteCommandConfigurationT&& value) { SetExecuteCommandConfiguration(std::forward<ExecuteCommandConfigurationT>(value)); return *this;}
     ///@}
   private:
 

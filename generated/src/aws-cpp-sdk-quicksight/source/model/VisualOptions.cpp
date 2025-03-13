@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-VisualOptions::VisualOptions() : 
-    m_typeHasBeenSet(false)
-{
-}
-
 VisualOptions::VisualOptions(JsonView jsonValue)
-  : VisualOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VisualOptions& VisualOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-CustomRule::CustomRule() : 
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_conditionHasBeenSet(false)
-{
-}
-
 CustomRule::CustomRule(JsonView jsonValue)
-  : CustomRule()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CustomRule& CustomRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetString("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("condition"))
   {
     m_condition = jsonValue.GetString("condition");
-
     m_conditionHasBeenSet = true;
   }
-
   return *this;
 }
 

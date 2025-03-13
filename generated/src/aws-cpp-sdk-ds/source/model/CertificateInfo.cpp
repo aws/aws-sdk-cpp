@@ -18,19 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-CertificateInfo::CertificateInfo() : 
-    m_certificateIdHasBeenSet(false),
-    m_commonNameHasBeenSet(false),
-    m_state(CertificateState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_expiryDateTimeHasBeenSet(false),
-    m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 CertificateInfo::CertificateInfo(JsonView jsonValue)
-  : CertificateInfo()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ CertificateInfo& CertificateInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateId"))
   {
     m_certificateId = jsonValue.GetString("CertificateId");
-
     m_certificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommonName"))
   {
     m_commonName = jsonValue.GetString("CommonName");
-
     m_commonNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = CertificateStateMapper::GetCertificateStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiryDateTime"))
   {
     m_expiryDateTime = jsonValue.GetDouble("ExpiryDateTime");
-
     m_expiryDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = CertificateTypeMapper::GetCertificateTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

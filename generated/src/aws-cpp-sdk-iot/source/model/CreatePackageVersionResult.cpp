@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePackageVersionResult::CreatePackageVersionResult() : 
-    m_status(PackageVersionStatus::NOT_SET)
-{
-}
-
 CreatePackageVersionResult::CreatePackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreatePackageVersionResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ CreatePackageVersionResult& CreatePackageVersionResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("packageVersionArn"))
   {
     m_packageVersionArn = jsonValue.GetString("packageVersionArn");
-
+    m_packageVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packageName"))
   {
     m_packageName = jsonValue.GetString("packageName");
-
+    m_packageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionName"))
   {
     m_versionName = jsonValue.GetString("versionName");
-
+    m_versionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -62,26 +52,25 @@ CreatePackageVersionResult& CreatePackageVersionResult::operator =(const Aws::Am
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();
     }
+    m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = PackageVersionStatusMapper::GetPackageVersionStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorReason"))
   {
     m_errorReason = jsonValue.GetString("errorReason");
-
+    m_errorReasonHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

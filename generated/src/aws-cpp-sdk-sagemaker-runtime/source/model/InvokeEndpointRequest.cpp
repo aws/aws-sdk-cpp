@@ -15,20 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InvokeEndpointRequest::InvokeEndpointRequest() : 
-    m_endpointNameHasBeenSet(false),
-    m_acceptHasBeenSet(false),
-    m_customAttributesHasBeenSet(false),
-    m_targetModelHasBeenSet(false),
-    m_targetVariantHasBeenSet(false),
-    m_targetContainerHostnameHasBeenSet(false),
-    m_inferenceIdHasBeenSet(false),
-    m_enableExplanationsHasBeenSet(false),
-    m_inferenceComponentNameHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection InvokeEndpointRequest::GetRequestSpecificHeaders() const

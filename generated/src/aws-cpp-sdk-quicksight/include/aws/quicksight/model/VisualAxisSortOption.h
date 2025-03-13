@@ -31,7 +31,7 @@ namespace Model
   class VisualAxisSortOption
   {
   public:
-    AWS_QUICKSIGHT_API VisualAxisSortOption();
+    AWS_QUICKSIGHT_API VisualAxisSortOption() = default;
     AWS_QUICKSIGHT_API VisualAxisSortOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API VisualAxisSortOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The availaiblity status of a visual's axis sort options.</p>
      */
-    inline const DashboardBehavior& GetAvailabilityStatus() const{ return m_availabilityStatus; }
+    inline DashboardBehavior GetAvailabilityStatus() const { return m_availabilityStatus; }
     inline bool AvailabilityStatusHasBeenSet() const { return m_availabilityStatusHasBeenSet; }
-    inline void SetAvailabilityStatus(const DashboardBehavior& value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = value; }
-    inline void SetAvailabilityStatus(DashboardBehavior&& value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = std::move(value); }
-    inline VisualAxisSortOption& WithAvailabilityStatus(const DashboardBehavior& value) { SetAvailabilityStatus(value); return *this;}
-    inline VisualAxisSortOption& WithAvailabilityStatus(DashboardBehavior&& value) { SetAvailabilityStatus(std::move(value)); return *this;}
+    inline void SetAvailabilityStatus(DashboardBehavior value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = value; }
+    inline VisualAxisSortOption& WithAvailabilityStatus(DashboardBehavior value) { SetAvailabilityStatus(value); return *this;}
     ///@}
   private:
 
-    DashboardBehavior m_availabilityStatus;
+    DashboardBehavior m_availabilityStatus{DashboardBehavior::NOT_SET};
     bool m_availabilityStatusHasBeenSet = false;
   };
 

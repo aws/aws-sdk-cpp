@@ -20,43 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Subnet::Subnet() : 
-    m_availabilityZoneIdHasBeenSet(false),
-    m_enableLniAtDeviceIndex(0),
-    m_enableLniAtDeviceIndexHasBeenSet(false),
-    m_mapCustomerOwnedIpOnLaunch(false),
-    m_mapCustomerOwnedIpOnLaunchHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_assignIpv6AddressOnCreation(false),
-    m_assignIpv6AddressOnCreationHasBeenSet(false),
-    m_ipv6CidrBlockAssociationSetHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_subnetArnHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_enableDns64(false),
-    m_enableDns64HasBeenSet(false),
-    m_ipv6Native(false),
-    m_ipv6NativeHasBeenSet(false),
-    m_privateDnsNameOptionsOnLaunchHasBeenSet(false),
-    m_blockPublicAccessStatesHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_state(SubnetState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_availableIpAddressCount(0),
-    m_availableIpAddressCountHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_defaultForAz(false),
-    m_defaultForAzHasBeenSet(false),
-    m_mapPublicIpOnLaunch(false),
-    m_mapPublicIpOnLaunchHasBeenSet(false)
-{
-}
-
 Subnet::Subnet(const XmlNode& xmlNode)
-  : Subnet()
 {
   *this = xmlNode;
 }
@@ -72,144 +36,166 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     {
       m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
       m_availabilityZoneIdHasBeenSet = true;
+       m_availabilityZoneIdHasBeenSet = true;
     }
     XmlNode enableLniAtDeviceIndexNode = resultNode.FirstChild("enableLniAtDeviceIndex");
     if(!enableLniAtDeviceIndexNode.IsNull())
     {
       m_enableLniAtDeviceIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableLniAtDeviceIndexNode.GetText()).c_str()).c_str());
       m_enableLniAtDeviceIndexHasBeenSet = true;
+       m_enableLniAtDeviceIndexHasBeenSet = true;
     }
     XmlNode mapCustomerOwnedIpOnLaunchNode = resultNode.FirstChild("mapCustomerOwnedIpOnLaunch");
     if(!mapCustomerOwnedIpOnLaunchNode.IsNull())
     {
       m_mapCustomerOwnedIpOnLaunch = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mapCustomerOwnedIpOnLaunchNode.GetText()).c_str()).c_str());
       m_mapCustomerOwnedIpOnLaunchHasBeenSet = true;
+       m_mapCustomerOwnedIpOnLaunchHasBeenSet = true;
     }
     XmlNode customerOwnedIpv4PoolNode = resultNode.FirstChild("customerOwnedIpv4Pool");
     if(!customerOwnedIpv4PoolNode.IsNull())
     {
       m_customerOwnedIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpv4PoolNode.GetText());
       m_customerOwnedIpv4PoolHasBeenSet = true;
+       m_customerOwnedIpv4PoolHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode assignIpv6AddressOnCreationNode = resultNode.FirstChild("assignIpv6AddressOnCreation");
     if(!assignIpv6AddressOnCreationNode.IsNull())
     {
       m_assignIpv6AddressOnCreation = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(assignIpv6AddressOnCreationNode.GetText()).c_str()).c_str());
       m_assignIpv6AddressOnCreationHasBeenSet = true;
+       m_assignIpv6AddressOnCreationHasBeenSet = true;
     }
     XmlNode ipv6CidrBlockAssociationSetNode = resultNode.FirstChild("ipv6CidrBlockAssociationSet");
     if(!ipv6CidrBlockAssociationSetNode.IsNull())
     {
       XmlNode ipv6CidrBlockAssociationSetMember = ipv6CidrBlockAssociationSetNode.FirstChild("item");
+      m_ipv6CidrBlockAssociationSetHasBeenSet = !ipv6CidrBlockAssociationSetMember.IsNull();
       while(!ipv6CidrBlockAssociationSetMember.IsNull())
       {
         m_ipv6CidrBlockAssociationSet.push_back(ipv6CidrBlockAssociationSetMember);
         ipv6CidrBlockAssociationSetMember = ipv6CidrBlockAssociationSetMember.NextNode("item");
       }
 
-      m_ipv6CidrBlockAssociationSetHasBeenSet = true;
+       m_ipv6CidrBlockAssociationSetHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode subnetArnNode = resultNode.FirstChild("subnetArn");
     if(!subnetArnNode.IsNull())
     {
       m_subnetArn = Aws::Utils::Xml::DecodeEscapedXmlText(subnetArnNode.GetText());
       m_subnetArnHasBeenSet = true;
+       m_subnetArnHasBeenSet = true;
     }
     XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
     if(!outpostArnNode.IsNull())
     {
       m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
       m_outpostArnHasBeenSet = true;
+       m_outpostArnHasBeenSet = true;
     }
     XmlNode enableDns64Node = resultNode.FirstChild("enableDns64");
     if(!enableDns64Node.IsNull())
     {
       m_enableDns64 = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableDns64Node.GetText()).c_str()).c_str());
       m_enableDns64HasBeenSet = true;
+       m_enableDns64HasBeenSet = true;
     }
     XmlNode ipv6NativeNode = resultNode.FirstChild("ipv6Native");
     if(!ipv6NativeNode.IsNull())
     {
       m_ipv6Native = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6NativeNode.GetText()).c_str()).c_str());
       m_ipv6NativeHasBeenSet = true;
+       m_ipv6NativeHasBeenSet = true;
     }
     XmlNode privateDnsNameOptionsOnLaunchNode = resultNode.FirstChild("privateDnsNameOptionsOnLaunch");
     if(!privateDnsNameOptionsOnLaunchNode.IsNull())
     {
       m_privateDnsNameOptionsOnLaunch = privateDnsNameOptionsOnLaunchNode;
       m_privateDnsNameOptionsOnLaunchHasBeenSet = true;
+       m_privateDnsNameOptionsOnLaunchHasBeenSet = true;
     }
     XmlNode blockPublicAccessStatesNode = resultNode.FirstChild("blockPublicAccessStates");
     if(!blockPublicAccessStatesNode.IsNull())
     {
       m_blockPublicAccessStates = blockPublicAccessStatesNode;
       m_blockPublicAccessStatesHasBeenSet = true;
+       m_blockPublicAccessStatesHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = SubnetStateMapper::GetSubnetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = SubnetStateMapper::GetSubnetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode cidrBlockNode = resultNode.FirstChild("cidrBlock");
     if(!cidrBlockNode.IsNull())
     {
       m_cidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(cidrBlockNode.GetText());
       m_cidrBlockHasBeenSet = true;
+       m_cidrBlockHasBeenSet = true;
     }
     XmlNode availableIpAddressCountNode = resultNode.FirstChild("availableIpAddressCount");
     if(!availableIpAddressCountNode.IsNull())
     {
       m_availableIpAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableIpAddressCountNode.GetText()).c_str()).c_str());
       m_availableIpAddressCountHasBeenSet = true;
+       m_availableIpAddressCountHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode defaultForAzNode = resultNode.FirstChild("defaultForAz");
     if(!defaultForAzNode.IsNull())
     {
       m_defaultForAz = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultForAzNode.GetText()).c_str()).c_str());
       m_defaultForAzHasBeenSet = true;
+       m_defaultForAzHasBeenSet = true;
     }
     XmlNode mapPublicIpOnLaunchNode = resultNode.FirstChild("mapPublicIpOnLaunch");
     if(!mapPublicIpOnLaunchNode.IsNull())
     {
       m_mapPublicIpOnLaunch = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mapPublicIpOnLaunchNode.GetText()).c_str()).c_str());
       m_mapPublicIpOnLaunchHasBeenSet = true;
+       m_mapPublicIpOnLaunchHasBeenSet = true;
     }
   }
 

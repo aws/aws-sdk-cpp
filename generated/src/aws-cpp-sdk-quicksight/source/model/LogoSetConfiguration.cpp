@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LogoSetConfiguration::LogoSetConfiguration() : 
-    m_primaryHasBeenSet(false),
-    m_faviconHasBeenSet(false)
-{
-}
-
 LogoSetConfiguration::LogoSetConfiguration(JsonView jsonValue)
-  : LogoSetConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LogoSetConfiguration& LogoSetConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Primary"))
   {
     m_primary = jsonValue.GetObject("Primary");
-
     m_primaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Favicon"))
   {
     m_favicon = jsonValue.GetObject("Favicon");
-
     m_faviconHasBeenSet = true;
   }
-
   return *this;
 }
 

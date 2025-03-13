@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedQueryResult::ProtectedQueryResult() : 
-    m_outputHasBeenSet(false)
-{
-}
-
 ProtectedQueryResult::ProtectedQueryResult(JsonView jsonValue)
-  : ProtectedQueryResult()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProtectedQueryResult& ProtectedQueryResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("output"))
   {
     m_output = jsonValue.GetObject("output");
-
     m_outputHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AddIpamOperatingRegion::AddIpamOperatingRegion() : 
-    m_regionNameHasBeenSet(false)
-{
-}
-
 AddIpamOperatingRegion::AddIpamOperatingRegion(const XmlNode& xmlNode)
-  : AddIpamOperatingRegion()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ AddIpamOperatingRegion& AddIpamOperatingRegion::operator =(const XmlNode& xmlNod
     {
       m_regionName = Aws::Utils::Xml::DecodeEscapedXmlText(regionNameNode.GetText());
       m_regionNameHasBeenSet = true;
+       m_regionNameHasBeenSet = true;
     }
   }
 

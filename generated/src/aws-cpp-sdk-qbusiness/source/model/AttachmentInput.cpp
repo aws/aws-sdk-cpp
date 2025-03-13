@@ -19,15 +19,7 @@ namespace QBusiness
 namespace Model
 {
 
-AttachmentInput::AttachmentInput() : 
-    m_dataHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_copyFromHasBeenSet(false)
-{
-}
-
 AttachmentInput::AttachmentInput(JsonView jsonValue)
-  : AttachmentInput()
 {
   *this = jsonValue;
 }
@@ -39,21 +31,16 @@ AttachmentInput& AttachmentInput::operator =(JsonView jsonValue)
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("copyFrom"))
   {
     m_copyFrom = jsonValue.GetObject("copyFrom");
-
     m_copyFromHasBeenSet = true;
   }
-
   return *this;
 }
 

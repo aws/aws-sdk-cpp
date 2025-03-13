@@ -21,7 +21,7 @@ namespace Model
   class SetDefaultPermissionVersionRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API SetDefaultPermissionVersionRequest();
+    AWS_RAM_API SetDefaultPermissionVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * Resource Name (ARN)</a> of the customer managed permission whose default version
      * you want to change.</p>
      */
-    inline const Aws::String& GetPermissionArn() const{ return m_permissionArn; }
+    inline const Aws::String& GetPermissionArn() const { return m_permissionArn; }
     inline bool PermissionArnHasBeenSet() const { return m_permissionArnHasBeenSet; }
-    inline void SetPermissionArn(const Aws::String& value) { m_permissionArnHasBeenSet = true; m_permissionArn = value; }
-    inline void SetPermissionArn(Aws::String&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::move(value); }
-    inline void SetPermissionArn(const char* value) { m_permissionArnHasBeenSet = true; m_permissionArn.assign(value); }
-    inline SetDefaultPermissionVersionRequest& WithPermissionArn(const Aws::String& value) { SetPermissionArn(value); return *this;}
-    inline SetDefaultPermissionVersionRequest& WithPermissionArn(Aws::String&& value) { SetPermissionArn(std::move(value)); return *this;}
-    inline SetDefaultPermissionVersionRequest& WithPermissionArn(const char* value) { SetPermissionArn(value); return *this;}
+    template<typename PermissionArnT = Aws::String>
+    void SetPermissionArn(PermissionArnT&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::forward<PermissionArnT>(value); }
+    template<typename PermissionArnT = Aws::String>
+    SetDefaultPermissionVersionRequest& WithPermissionArn(PermissionArnT&& value) { SetPermissionArn(std::forward<PermissionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * customer managed permission. To see a list of all available version numbers, use
      * <a>ListPermissionVersions</a>.</p>
      */
-    inline int GetPermissionVersion() const{ return m_permissionVersion; }
+    inline int GetPermissionVersion() const { return m_permissionVersion; }
     inline bool PermissionVersionHasBeenSet() const { return m_permissionVersionHasBeenSet; }
     inline void SetPermissionVersion(int value) { m_permissionVersionHasBeenSet = true; m_permissionVersion = value; }
     inline SetDefaultPermissionVersionRequest& WithPermissionVersion(int value) { SetPermissionVersion(value); return *this;}
@@ -74,21 +72,19 @@ namespace Model
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
      * <code>IdempotentParameterMismatch</code> error.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline SetDefaultPermissionVersionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline SetDefaultPermissionVersionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline SetDefaultPermissionVersionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    SetDefaultPermissionVersionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_permissionArn;
     bool m_permissionArnHasBeenSet = false;
 
-    int m_permissionVersion;
+    int m_permissionVersion{0};
     bool m_permissionVersionHasBeenSet = false;
 
     Aws::String m_clientToken;

@@ -18,14 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-Container::Container() : 
-    m_regionHasBeenSet(false),
-    m_imageUrisHasBeenSet(false)
-{
-}
-
 Container::Container(JsonView jsonValue)
-  : Container()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Container& Container::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageUris"))
   {
     Aws::Utils::Array<JsonView> imageUrisJsonList = jsonValue.GetArray("imageUris");
@@ -48,7 +39,6 @@ Container& Container::operator =(JsonView jsonValue)
     }
     m_imageUrisHasBeenSet = true;
   }
-
   return *this;
 }
 

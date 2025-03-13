@@ -32,7 +32,7 @@ namespace Model
   class MissingDefaultConditionFlowValidationDetails
   {
   public:
-    AWS_BEDROCKAGENT_API MissingDefaultConditionFlowValidationDetails();
+    AWS_BEDROCKAGENT_API MissingDefaultConditionFlowValidationDetails() = default;
     AWS_BEDROCKAGENT_API MissingDefaultConditionFlowValidationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API MissingDefaultConditionFlowValidationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the node missing the default condition.</p>
      */
-    inline const Aws::String& GetNode() const{ return m_node; }
+    inline const Aws::String& GetNode() const { return m_node; }
     inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }
-    inline void SetNode(const Aws::String& value) { m_nodeHasBeenSet = true; m_node = value; }
-    inline void SetNode(Aws::String&& value) { m_nodeHasBeenSet = true; m_node = std::move(value); }
-    inline void SetNode(const char* value) { m_nodeHasBeenSet = true; m_node.assign(value); }
-    inline MissingDefaultConditionFlowValidationDetails& WithNode(const Aws::String& value) { SetNode(value); return *this;}
-    inline MissingDefaultConditionFlowValidationDetails& WithNode(Aws::String&& value) { SetNode(std::move(value)); return *this;}
-    inline MissingDefaultConditionFlowValidationDetails& WithNode(const char* value) { SetNode(value); return *this;}
+    template<typename NodeT = Aws::String>
+    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
+    template<typename NodeT = Aws::String>
+    MissingDefaultConditionFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
     ///@}
   private:
 

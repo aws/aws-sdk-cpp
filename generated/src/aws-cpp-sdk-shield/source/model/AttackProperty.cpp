@@ -18,21 +18,7 @@ namespace Shield
 namespace Model
 {
 
-AttackProperty::AttackProperty() : 
-    m_attackLayer(AttackLayer::NOT_SET),
-    m_attackLayerHasBeenSet(false),
-    m_attackPropertyIdentifier(AttackPropertyIdentifier::NOT_SET),
-    m_attackPropertyIdentifierHasBeenSet(false),
-    m_topContributorsHasBeenSet(false),
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false)
-{
-}
-
 AttackProperty::AttackProperty(JsonView jsonValue)
-  : AttackProperty()
 {
   *this = jsonValue;
 }
@@ -42,17 +28,13 @@ AttackProperty& AttackProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttackLayer"))
   {
     m_attackLayer = AttackLayerMapper::GetAttackLayerForName(jsonValue.GetString("AttackLayer"));
-
     m_attackLayerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttackPropertyIdentifier"))
   {
     m_attackPropertyIdentifier = AttackPropertyIdentifierMapper::GetAttackPropertyIdentifierForName(jsonValue.GetString("AttackPropertyIdentifier"));
-
     m_attackPropertyIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopContributors"))
   {
     Aws::Utils::Array<JsonView> topContributorsJsonList = jsonValue.GetArray("TopContributors");
@@ -62,21 +44,16 @@ AttackProperty& AttackProperty::operator =(JsonView jsonValue)
     }
     m_topContributorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = UnitMapper::GetUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetInt64("Total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

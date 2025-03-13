@@ -20,20 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-DataShare::DataShare() : 
-    m_dataShareArnHasBeenSet(false),
-    m_producerArnHasBeenSet(false),
-    m_allowPubliclyAccessibleConsumers(false),
-    m_allowPubliclyAccessibleConsumersHasBeenSet(false),
-    m_dataShareAssociationsHasBeenSet(false),
-    m_managedByHasBeenSet(false),
-    m_dataShareType(DataShareType::NOT_SET),
-    m_dataShareTypeHasBeenSet(false)
-{
-}
-
 DataShare::DataShare(const XmlNode& xmlNode)
-  : DataShare()
 {
   *this = xmlNode;
 }
@@ -49,42 +36,48 @@ DataShare& DataShare::operator =(const XmlNode& xmlNode)
     {
       m_dataShareArn = Aws::Utils::Xml::DecodeEscapedXmlText(dataShareArnNode.GetText());
       m_dataShareArnHasBeenSet = true;
+       m_dataShareArnHasBeenSet = true;
     }
     XmlNode producerArnNode = resultNode.FirstChild("ProducerArn");
     if(!producerArnNode.IsNull())
     {
       m_producerArn = Aws::Utils::Xml::DecodeEscapedXmlText(producerArnNode.GetText());
       m_producerArnHasBeenSet = true;
+       m_producerArnHasBeenSet = true;
     }
     XmlNode allowPubliclyAccessibleConsumersNode = resultNode.FirstChild("AllowPubliclyAccessibleConsumers");
     if(!allowPubliclyAccessibleConsumersNode.IsNull())
     {
       m_allowPubliclyAccessibleConsumers = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowPubliclyAccessibleConsumersNode.GetText()).c_str()).c_str());
       m_allowPubliclyAccessibleConsumersHasBeenSet = true;
+       m_allowPubliclyAccessibleConsumersHasBeenSet = true;
     }
     XmlNode dataShareAssociationsNode = resultNode.FirstChild("DataShareAssociations");
     if(!dataShareAssociationsNode.IsNull())
     {
       XmlNode dataShareAssociationsMember = dataShareAssociationsNode.FirstChild("member");
+      m_dataShareAssociationsHasBeenSet = !dataShareAssociationsMember.IsNull();
       while(!dataShareAssociationsMember.IsNull())
       {
         m_dataShareAssociations.push_back(dataShareAssociationsMember);
         dataShareAssociationsMember = dataShareAssociationsMember.NextNode("member");
       }
 
-      m_dataShareAssociationsHasBeenSet = true;
+       m_dataShareAssociationsHasBeenSet = true;
     }
     XmlNode managedByNode = resultNode.FirstChild("ManagedBy");
     if(!managedByNode.IsNull())
     {
       m_managedBy = Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText());
       m_managedByHasBeenSet = true;
+       m_managedByHasBeenSet = true;
     }
     XmlNode dataShareTypeNode = resultNode.FirstChild("DataShareType");
     if(!dataShareTypeNode.IsNull())
     {
-      m_dataShareType = DataShareTypeMapper::GetDataShareTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataShareTypeNode.GetText()).c_str()).c_str());
+      m_dataShareType = DataShareTypeMapper::GetDataShareTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataShareTypeNode.GetText()).c_str()));
       m_dataShareTypeHasBeenSet = true;
+       m_dataShareTypeHasBeenSet = true;
     }
   }
 

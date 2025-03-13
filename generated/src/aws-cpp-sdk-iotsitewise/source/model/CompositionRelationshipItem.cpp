@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-CompositionRelationshipItem::CompositionRelationshipItem() : 
-    m_idHasBeenSet(false)
-{
-}
-
 CompositionRelationshipItem::CompositionRelationshipItem(JsonView jsonValue)
-  : CompositionRelationshipItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CompositionRelationshipItem& CompositionRelationshipItem::operator =(JsonView js
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

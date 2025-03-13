@@ -33,7 +33,7 @@ namespace Model
   class Volume
   {
   public:
-    AWS_FINSPACE_API Volume();
+    AWS_FINSPACE_API Volume() = default;
     AWS_FINSPACE_API Volume(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Volume& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>A unique identifier for the volume.</p>
      */
-    inline const Aws::String& GetVolumeName() const{ return m_volumeName; }
+    inline const Aws::String& GetVolumeName() const { return m_volumeName; }
     inline bool VolumeNameHasBeenSet() const { return m_volumeNameHasBeenSet; }
-    inline void SetVolumeName(const Aws::String& value) { m_volumeNameHasBeenSet = true; m_volumeName = value; }
-    inline void SetVolumeName(Aws::String&& value) { m_volumeNameHasBeenSet = true; m_volumeName = std::move(value); }
-    inline void SetVolumeName(const char* value) { m_volumeNameHasBeenSet = true; m_volumeName.assign(value); }
-    inline Volume& WithVolumeName(const Aws::String& value) { SetVolumeName(value); return *this;}
-    inline Volume& WithVolumeName(Aws::String&& value) { SetVolumeName(std::move(value)); return *this;}
-    inline Volume& WithVolumeName(const char* value) { SetVolumeName(value); return *this;}
+    template<typename VolumeNameT = Aws::String>
+    void SetVolumeName(VolumeNameT&& value) { m_volumeNameHasBeenSet = true; m_volumeName = std::forward<VolumeNameT>(value); }
+    template<typename VolumeNameT = Aws::String>
+    Volume& WithVolumeName(VolumeNameT&& value) { SetVolumeName(std::forward<VolumeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p> The type of file system volume. Currently, FinSpace only supports
      * <code>NAS_1</code> volume type. </p>
      */
-    inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
+    inline VolumeType GetVolumeType() const { return m_volumeType; }
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
-    inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
-    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
-    inline Volume& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
-    inline Volume& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
+    inline void SetVolumeType(VolumeType value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+    inline Volume& WithVolumeType(VolumeType value) { SetVolumeType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_volumeName;
     bool m_volumeNameHasBeenSet = false;
 
-    VolumeType m_volumeType;
+    VolumeType m_volumeType{VolumeType::NOT_SET};
     bool m_volumeTypeHasBeenSet = false;
   };
 

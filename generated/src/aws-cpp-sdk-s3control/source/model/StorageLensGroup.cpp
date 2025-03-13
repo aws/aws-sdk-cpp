@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-StorageLensGroup::StorageLensGroup() : 
-    m_nameHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_storageLensGroupArnHasBeenSet(false)
-{
-}
-
 StorageLensGroup::StorageLensGroup(const XmlNode& xmlNode)
-  : StorageLensGroup()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ StorageLensGroup& StorageLensGroup::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode filterNode = resultNode.FirstChild("Filter");
     if(!filterNode.IsNull())
     {
       m_filter = filterNode;
       m_filterHasBeenSet = true;
+       m_filterHasBeenSet = true;
     }
     XmlNode storageLensGroupArnNode = resultNode.FirstChild("StorageLensGroupArn");
     if(!storageLensGroupArnNode.IsNull())
     {
       m_storageLensGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(storageLensGroupArnNode.GetText());
       m_storageLensGroupArnHasBeenSet = true;
+       m_storageLensGroupArnHasBeenSet = true;
     }
   }
 

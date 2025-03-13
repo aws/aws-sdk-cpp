@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-OrchestrationConfiguration::OrchestrationConfiguration() : 
-    m_control(OrchestrationControl::NOT_SET),
-    m_controlHasBeenSet(false)
-{
-}
-
 OrchestrationConfiguration::OrchestrationConfiguration(JsonView jsonValue)
-  : OrchestrationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OrchestrationConfiguration& OrchestrationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("control"))
   {
     m_control = OrchestrationControlMapper::GetOrchestrationControlForName(jsonValue.GetString("control"));
-
     m_controlHasBeenSet = true;
   }
-
   return *this;
 }
 

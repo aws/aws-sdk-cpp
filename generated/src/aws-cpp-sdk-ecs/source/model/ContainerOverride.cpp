@@ -18,23 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ContainerOverride::ContainerOverride() : 
-    m_nameHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_environmentFilesHasBeenSet(false),
-    m_cpu(0),
-    m_cpuHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_memoryReservation(0),
-    m_memoryReservationHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false)
-{
-}
-
 ContainerOverride::ContainerOverride(JsonView jsonValue)
-  : ContainerOverride()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ ContainerOverride& ContainerOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("command"))
   {
     Aws::Utils::Array<JsonView> commandJsonList = jsonValue.GetArray("command");
@@ -57,7 +39,6 @@ ContainerOverride& ContainerOverride::operator =(JsonView jsonValue)
     }
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environment"))
   {
     Aws::Utils::Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
@@ -67,7 +48,6 @@ ContainerOverride& ContainerOverride::operator =(JsonView jsonValue)
     }
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentFiles"))
   {
     Aws::Utils::Array<JsonView> environmentFilesJsonList = jsonValue.GetArray("environmentFiles");
@@ -77,28 +57,21 @@ ContainerOverride& ContainerOverride::operator =(JsonView jsonValue)
     }
     m_environmentFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpu"))
   {
     m_cpu = jsonValue.GetInteger("cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetInteger("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memoryReservation"))
   {
     m_memoryReservation = jsonValue.GetInteger("memoryReservation");
-
     m_memoryReservationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceRequirements"))
   {
     Aws::Utils::Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
@@ -108,7 +81,6 @@ ContainerOverride& ContainerOverride::operator =(JsonView jsonValue)
     }
     m_resourceRequirementsHasBeenSet = true;
   }
-
   return *this;
 }
 

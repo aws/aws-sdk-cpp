@@ -22,7 +22,7 @@ namespace Model
   class UpdateDocumentVersionRequest : public WorkDocsRequest
   {
   public:
-    AWS_WORKDOCS_API UpdateDocumentVersionRequest();
+    AWS_WORKDOCS_API UpdateDocumentVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,54 +40,46 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Not required when using Amazon Web
      * Services administrator credentials to access the API.</p>
      */
-    inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
+    inline const Aws::String& GetAuthenticationToken() const { return m_authenticationToken; }
     inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
-    inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
-    inline void SetAuthenticationToken(Aws::String&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::move(value); }
-    inline void SetAuthenticationToken(const char* value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken.assign(value); }
-    inline UpdateDocumentVersionRequest& WithAuthenticationToken(const Aws::String& value) { SetAuthenticationToken(value); return *this;}
-    inline UpdateDocumentVersionRequest& WithAuthenticationToken(Aws::String&& value) { SetAuthenticationToken(std::move(value)); return *this;}
-    inline UpdateDocumentVersionRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
+    template<typename AuthenticationTokenT = Aws::String>
+    void SetAuthenticationToken(AuthenticationTokenT&& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = std::forward<AuthenticationTokenT>(value); }
+    template<typename AuthenticationTokenT = Aws::String>
+    UpdateDocumentVersionRequest& WithAuthenticationToken(AuthenticationTokenT&& value) { SetAuthenticationToken(std::forward<AuthenticationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the document.</p>
      */
-    inline const Aws::String& GetDocumentId() const{ return m_documentId; }
+    inline const Aws::String& GetDocumentId() const { return m_documentId; }
     inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
-    inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
-    inline void SetDocumentId(Aws::String&& value) { m_documentIdHasBeenSet = true; m_documentId = std::move(value); }
-    inline void SetDocumentId(const char* value) { m_documentIdHasBeenSet = true; m_documentId.assign(value); }
-    inline UpdateDocumentVersionRequest& WithDocumentId(const Aws::String& value) { SetDocumentId(value); return *this;}
-    inline UpdateDocumentVersionRequest& WithDocumentId(Aws::String&& value) { SetDocumentId(std::move(value)); return *this;}
-    inline UpdateDocumentVersionRequest& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
+    template<typename DocumentIdT = Aws::String>
+    void SetDocumentId(DocumentIdT&& value) { m_documentIdHasBeenSet = true; m_documentId = std::forward<DocumentIdT>(value); }
+    template<typename DocumentIdT = Aws::String>
+    UpdateDocumentVersionRequest& WithDocumentId(DocumentIdT&& value) { SetDocumentId(std::forward<DocumentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version ID of the document.</p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline UpdateDocumentVersionRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline UpdateDocumentVersionRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline UpdateDocumentVersionRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    UpdateDocumentVersionRequest& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the version.</p>
      */
-    inline const DocumentVersionStatus& GetVersionStatus() const{ return m_versionStatus; }
+    inline DocumentVersionStatus GetVersionStatus() const { return m_versionStatus; }
     inline bool VersionStatusHasBeenSet() const { return m_versionStatusHasBeenSet; }
-    inline void SetVersionStatus(const DocumentVersionStatus& value) { m_versionStatusHasBeenSet = true; m_versionStatus = value; }
-    inline void SetVersionStatus(DocumentVersionStatus&& value) { m_versionStatusHasBeenSet = true; m_versionStatus = std::move(value); }
-    inline UpdateDocumentVersionRequest& WithVersionStatus(const DocumentVersionStatus& value) { SetVersionStatus(value); return *this;}
-    inline UpdateDocumentVersionRequest& WithVersionStatus(DocumentVersionStatus&& value) { SetVersionStatus(std::move(value)); return *this;}
+    inline void SetVersionStatus(DocumentVersionStatus value) { m_versionStatusHasBeenSet = true; m_versionStatus = value; }
+    inline UpdateDocumentVersionRequest& WithVersionStatus(DocumentVersionStatus value) { SetVersionStatus(value); return *this;}
     ///@}
   private:
 
@@ -100,7 +92,7 @@ namespace Model
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet = false;
 
-    DocumentVersionStatus m_versionStatus;
+    DocumentVersionStatus m_versionStatus{DocumentVersionStatus::NOT_SET};
     bool m_versionStatusHasBeenSet = false;
   };
 

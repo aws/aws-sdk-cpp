@@ -27,7 +27,7 @@ namespace Model
   class DeleteWorkspaceServiceAccountTokenResult
   {
   public:
-    AWS_MANAGEDGRAFANA_API DeleteWorkspaceServiceAccountTokenResult();
+    AWS_MANAGEDGRAFANA_API DeleteWorkspaceServiceAccountTokenResult() = default;
     AWS_MANAGEDGRAFANA_API DeleteWorkspaceServiceAccountTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDGRAFANA_API DeleteWorkspaceServiceAccountTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,60 +36,56 @@ namespace Model
     /**
      * <p>The ID of the service account where the token was deleted.</p>
      */
-    inline const Aws::String& GetServiceAccountId() const{ return m_serviceAccountId; }
-    inline void SetServiceAccountId(const Aws::String& value) { m_serviceAccountId = value; }
-    inline void SetServiceAccountId(Aws::String&& value) { m_serviceAccountId = std::move(value); }
-    inline void SetServiceAccountId(const char* value) { m_serviceAccountId.assign(value); }
-    inline DeleteWorkspaceServiceAccountTokenResult& WithServiceAccountId(const Aws::String& value) { SetServiceAccountId(value); return *this;}
-    inline DeleteWorkspaceServiceAccountTokenResult& WithServiceAccountId(Aws::String&& value) { SetServiceAccountId(std::move(value)); return *this;}
-    inline DeleteWorkspaceServiceAccountTokenResult& WithServiceAccountId(const char* value) { SetServiceAccountId(value); return *this;}
+    inline const Aws::String& GetServiceAccountId() const { return m_serviceAccountId; }
+    template<typename ServiceAccountIdT = Aws::String>
+    void SetServiceAccountId(ServiceAccountIdT&& value) { m_serviceAccountIdHasBeenSet = true; m_serviceAccountId = std::forward<ServiceAccountIdT>(value); }
+    template<typename ServiceAccountIdT = Aws::String>
+    DeleteWorkspaceServiceAccountTokenResult& WithServiceAccountId(ServiceAccountIdT&& value) { SetServiceAccountId(std::forward<ServiceAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the token that was deleted.</p>
      */
-    inline const Aws::String& GetTokenId() const{ return m_tokenId; }
-    inline void SetTokenId(const Aws::String& value) { m_tokenId = value; }
-    inline void SetTokenId(Aws::String&& value) { m_tokenId = std::move(value); }
-    inline void SetTokenId(const char* value) { m_tokenId.assign(value); }
-    inline DeleteWorkspaceServiceAccountTokenResult& WithTokenId(const Aws::String& value) { SetTokenId(value); return *this;}
-    inline DeleteWorkspaceServiceAccountTokenResult& WithTokenId(Aws::String&& value) { SetTokenId(std::move(value)); return *this;}
-    inline DeleteWorkspaceServiceAccountTokenResult& WithTokenId(const char* value) { SetTokenId(value); return *this;}
+    inline const Aws::String& GetTokenId() const { return m_tokenId; }
+    template<typename TokenIdT = Aws::String>
+    void SetTokenId(TokenIdT&& value) { m_tokenIdHasBeenSet = true; m_tokenId = std::forward<TokenIdT>(value); }
+    template<typename TokenIdT = Aws::String>
+    DeleteWorkspaceServiceAccountTokenResult& WithTokenId(TokenIdT&& value) { SetTokenId(std::forward<TokenIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the workspace where the token was deleted.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
-    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
-    inline DeleteWorkspaceServiceAccountTokenResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-    inline DeleteWorkspaceServiceAccountTokenResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-    inline DeleteWorkspaceServiceAccountTokenResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    DeleteWorkspaceServiceAccountTokenResult& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteWorkspaceServiceAccountTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteWorkspaceServiceAccountTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteWorkspaceServiceAccountTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteWorkspaceServiceAccountTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serviceAccountId;
+    bool m_serviceAccountIdHasBeenSet = false;
 
     Aws::String m_tokenId;
+    bool m_tokenIdHasBeenSet = false;
 
     Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

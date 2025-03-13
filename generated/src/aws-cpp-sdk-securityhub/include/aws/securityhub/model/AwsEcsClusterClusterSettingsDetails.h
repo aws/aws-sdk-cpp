@@ -32,7 +32,7 @@ namespace Model
   class AwsEcsClusterClusterSettingsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsClusterClusterSettingsDetails();
+    AWS_SECURITYHUB_API AwsEcsClusterClusterSettingsDetails() = default;
     AWS_SECURITYHUB_API AwsEcsClusterClusterSettingsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsClusterClusterSettingsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the setting. The valid value is
      * <code>containerInsights</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsEcsClusterClusterSettingsDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsEcsClusterClusterSettingsDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsEcsClusterClusterSettingsDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsEcsClusterClusterSettingsDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The value of the setting. Valid values are <code>disabled</code> or
      * <code>enabled</code>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline AwsEcsClusterClusterSettingsDetails& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline AwsEcsClusterClusterSettingsDetails& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline AwsEcsClusterClusterSettingsDetails& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    AwsEcsClusterClusterSettingsDetails& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

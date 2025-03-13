@@ -12,14 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRepositoryCreationTemplatesRequest::DescribeRepositoryCreationTemplatesRequest() : 
-    m_prefixesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRepositoryCreationTemplatesRequest::SerializePayload() const
 {
   JsonValue payload;

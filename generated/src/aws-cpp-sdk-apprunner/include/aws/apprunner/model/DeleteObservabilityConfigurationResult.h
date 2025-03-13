@@ -28,7 +28,7 @@ namespace Model
   class DeleteObservabilityConfigurationResult
   {
   public:
-    AWS_APPRUNNER_API DeleteObservabilityConfigurationResult();
+    AWS_APPRUNNER_API DeleteObservabilityConfigurationResult() = default;
     AWS_APPRUNNER_API DeleteObservabilityConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPRUNNER_API DeleteObservabilityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A description of the App Runner observability configuration that this request
      * just deleted.</p>
      */
-    inline const ObservabilityConfiguration& GetObservabilityConfiguration() const{ return m_observabilityConfiguration; }
-    inline void SetObservabilityConfiguration(const ObservabilityConfiguration& value) { m_observabilityConfiguration = value; }
-    inline void SetObservabilityConfiguration(ObservabilityConfiguration&& value) { m_observabilityConfiguration = std::move(value); }
-    inline DeleteObservabilityConfigurationResult& WithObservabilityConfiguration(const ObservabilityConfiguration& value) { SetObservabilityConfiguration(value); return *this;}
-    inline DeleteObservabilityConfigurationResult& WithObservabilityConfiguration(ObservabilityConfiguration&& value) { SetObservabilityConfiguration(std::move(value)); return *this;}
+    inline const ObservabilityConfiguration& GetObservabilityConfiguration() const { return m_observabilityConfiguration; }
+    template<typename ObservabilityConfigurationT = ObservabilityConfiguration>
+    void SetObservabilityConfiguration(ObservabilityConfigurationT&& value) { m_observabilityConfigurationHasBeenSet = true; m_observabilityConfiguration = std::forward<ObservabilityConfigurationT>(value); }
+    template<typename ObservabilityConfigurationT = ObservabilityConfiguration>
+    DeleteObservabilityConfigurationResult& WithObservabilityConfiguration(ObservabilityConfigurationT&& value) { SetObservabilityConfiguration(std::forward<ObservabilityConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteObservabilityConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteObservabilityConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteObservabilityConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteObservabilityConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ObservabilityConfiguration m_observabilityConfiguration;
+    bool m_observabilityConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

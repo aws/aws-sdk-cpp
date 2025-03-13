@@ -48,7 +48,7 @@ namespace Model
   class PipeTargetParameters
   {
   public:
-    AWS_PIPES_API PipeTargetParameters();
+    AWS_PIPES_API PipeTargetParameters() = default;
     AWS_PIPES_API PipeTargetParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PipeTargetParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,86 +62,84 @@ namespace Model
      * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
      * an empty string.</p>
      */
-    inline const Aws::String& GetInputTemplate() const{ return m_inputTemplate; }
+    inline const Aws::String& GetInputTemplate() const { return m_inputTemplate; }
     inline bool InputTemplateHasBeenSet() const { return m_inputTemplateHasBeenSet; }
-    inline void SetInputTemplate(const Aws::String& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = value; }
-    inline void SetInputTemplate(Aws::String&& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = std::move(value); }
-    inline void SetInputTemplate(const char* value) { m_inputTemplateHasBeenSet = true; m_inputTemplate.assign(value); }
-    inline PipeTargetParameters& WithInputTemplate(const Aws::String& value) { SetInputTemplate(value); return *this;}
-    inline PipeTargetParameters& WithInputTemplate(Aws::String&& value) { SetInputTemplate(std::move(value)); return *this;}
-    inline PipeTargetParameters& WithInputTemplate(const char* value) { SetInputTemplate(value); return *this;}
+    template<typename InputTemplateT = Aws::String>
+    void SetInputTemplate(InputTemplateT&& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = std::forward<InputTemplateT>(value); }
+    template<typename InputTemplateT = Aws::String>
+    PipeTargetParameters& WithInputTemplate(InputTemplateT&& value) { SetInputTemplate(std::forward<InputTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using a Lambda function as a target.</p>
      */
-    inline const PipeTargetLambdaFunctionParameters& GetLambdaFunctionParameters() const{ return m_lambdaFunctionParameters; }
+    inline const PipeTargetLambdaFunctionParameters& GetLambdaFunctionParameters() const { return m_lambdaFunctionParameters; }
     inline bool LambdaFunctionParametersHasBeenSet() const { return m_lambdaFunctionParametersHasBeenSet; }
-    inline void SetLambdaFunctionParameters(const PipeTargetLambdaFunctionParameters& value) { m_lambdaFunctionParametersHasBeenSet = true; m_lambdaFunctionParameters = value; }
-    inline void SetLambdaFunctionParameters(PipeTargetLambdaFunctionParameters&& value) { m_lambdaFunctionParametersHasBeenSet = true; m_lambdaFunctionParameters = std::move(value); }
-    inline PipeTargetParameters& WithLambdaFunctionParameters(const PipeTargetLambdaFunctionParameters& value) { SetLambdaFunctionParameters(value); return *this;}
-    inline PipeTargetParameters& WithLambdaFunctionParameters(PipeTargetLambdaFunctionParameters&& value) { SetLambdaFunctionParameters(std::move(value)); return *this;}
+    template<typename LambdaFunctionParametersT = PipeTargetLambdaFunctionParameters>
+    void SetLambdaFunctionParameters(LambdaFunctionParametersT&& value) { m_lambdaFunctionParametersHasBeenSet = true; m_lambdaFunctionParameters = std::forward<LambdaFunctionParametersT>(value); }
+    template<typename LambdaFunctionParametersT = PipeTargetLambdaFunctionParameters>
+    PipeTargetParameters& WithLambdaFunctionParameters(LambdaFunctionParametersT&& value) { SetLambdaFunctionParameters(std::forward<LambdaFunctionParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using a Step Functions state machine as a target.</p>
      */
-    inline const PipeTargetStateMachineParameters& GetStepFunctionStateMachineParameters() const{ return m_stepFunctionStateMachineParameters; }
+    inline const PipeTargetStateMachineParameters& GetStepFunctionStateMachineParameters() const { return m_stepFunctionStateMachineParameters; }
     inline bool StepFunctionStateMachineParametersHasBeenSet() const { return m_stepFunctionStateMachineParametersHasBeenSet; }
-    inline void SetStepFunctionStateMachineParameters(const PipeTargetStateMachineParameters& value) { m_stepFunctionStateMachineParametersHasBeenSet = true; m_stepFunctionStateMachineParameters = value; }
-    inline void SetStepFunctionStateMachineParameters(PipeTargetStateMachineParameters&& value) { m_stepFunctionStateMachineParametersHasBeenSet = true; m_stepFunctionStateMachineParameters = std::move(value); }
-    inline PipeTargetParameters& WithStepFunctionStateMachineParameters(const PipeTargetStateMachineParameters& value) { SetStepFunctionStateMachineParameters(value); return *this;}
-    inline PipeTargetParameters& WithStepFunctionStateMachineParameters(PipeTargetStateMachineParameters&& value) { SetStepFunctionStateMachineParameters(std::move(value)); return *this;}
+    template<typename StepFunctionStateMachineParametersT = PipeTargetStateMachineParameters>
+    void SetStepFunctionStateMachineParameters(StepFunctionStateMachineParametersT&& value) { m_stepFunctionStateMachineParametersHasBeenSet = true; m_stepFunctionStateMachineParameters = std::forward<StepFunctionStateMachineParametersT>(value); }
+    template<typename StepFunctionStateMachineParametersT = PipeTargetStateMachineParameters>
+    PipeTargetParameters& WithStepFunctionStateMachineParameters(StepFunctionStateMachineParametersT&& value) { SetStepFunctionStateMachineParameters(std::forward<StepFunctionStateMachineParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using a Kinesis stream as a target.</p>
      */
-    inline const PipeTargetKinesisStreamParameters& GetKinesisStreamParameters() const{ return m_kinesisStreamParameters; }
+    inline const PipeTargetKinesisStreamParameters& GetKinesisStreamParameters() const { return m_kinesisStreamParameters; }
     inline bool KinesisStreamParametersHasBeenSet() const { return m_kinesisStreamParametersHasBeenSet; }
-    inline void SetKinesisStreamParameters(const PipeTargetKinesisStreamParameters& value) { m_kinesisStreamParametersHasBeenSet = true; m_kinesisStreamParameters = value; }
-    inline void SetKinesisStreamParameters(PipeTargetKinesisStreamParameters&& value) { m_kinesisStreamParametersHasBeenSet = true; m_kinesisStreamParameters = std::move(value); }
-    inline PipeTargetParameters& WithKinesisStreamParameters(const PipeTargetKinesisStreamParameters& value) { SetKinesisStreamParameters(value); return *this;}
-    inline PipeTargetParameters& WithKinesisStreamParameters(PipeTargetKinesisStreamParameters&& value) { SetKinesisStreamParameters(std::move(value)); return *this;}
+    template<typename KinesisStreamParametersT = PipeTargetKinesisStreamParameters>
+    void SetKinesisStreamParameters(KinesisStreamParametersT&& value) { m_kinesisStreamParametersHasBeenSet = true; m_kinesisStreamParameters = std::forward<KinesisStreamParametersT>(value); }
+    template<typename KinesisStreamParametersT = PipeTargetKinesisStreamParameters>
+    PipeTargetParameters& WithKinesisStreamParameters(KinesisStreamParametersT&& value) { SetKinesisStreamParameters(std::forward<KinesisStreamParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using an Amazon ECS task as a target.</p>
      */
-    inline const PipeTargetEcsTaskParameters& GetEcsTaskParameters() const{ return m_ecsTaskParameters; }
+    inline const PipeTargetEcsTaskParameters& GetEcsTaskParameters() const { return m_ecsTaskParameters; }
     inline bool EcsTaskParametersHasBeenSet() const { return m_ecsTaskParametersHasBeenSet; }
-    inline void SetEcsTaskParameters(const PipeTargetEcsTaskParameters& value) { m_ecsTaskParametersHasBeenSet = true; m_ecsTaskParameters = value; }
-    inline void SetEcsTaskParameters(PipeTargetEcsTaskParameters&& value) { m_ecsTaskParametersHasBeenSet = true; m_ecsTaskParameters = std::move(value); }
-    inline PipeTargetParameters& WithEcsTaskParameters(const PipeTargetEcsTaskParameters& value) { SetEcsTaskParameters(value); return *this;}
-    inline PipeTargetParameters& WithEcsTaskParameters(PipeTargetEcsTaskParameters&& value) { SetEcsTaskParameters(std::move(value)); return *this;}
+    template<typename EcsTaskParametersT = PipeTargetEcsTaskParameters>
+    void SetEcsTaskParameters(EcsTaskParametersT&& value) { m_ecsTaskParametersHasBeenSet = true; m_ecsTaskParameters = std::forward<EcsTaskParametersT>(value); }
+    template<typename EcsTaskParametersT = PipeTargetEcsTaskParameters>
+    PipeTargetParameters& WithEcsTaskParameters(EcsTaskParametersT&& value) { SetEcsTaskParameters(std::forward<EcsTaskParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using an Batch job as a target.</p>
      */
-    inline const PipeTargetBatchJobParameters& GetBatchJobParameters() const{ return m_batchJobParameters; }
+    inline const PipeTargetBatchJobParameters& GetBatchJobParameters() const { return m_batchJobParameters; }
     inline bool BatchJobParametersHasBeenSet() const { return m_batchJobParametersHasBeenSet; }
-    inline void SetBatchJobParameters(const PipeTargetBatchJobParameters& value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters = value; }
-    inline void SetBatchJobParameters(PipeTargetBatchJobParameters&& value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters = std::move(value); }
-    inline PipeTargetParameters& WithBatchJobParameters(const PipeTargetBatchJobParameters& value) { SetBatchJobParameters(value); return *this;}
-    inline PipeTargetParameters& WithBatchJobParameters(PipeTargetBatchJobParameters&& value) { SetBatchJobParameters(std::move(value)); return *this;}
+    template<typename BatchJobParametersT = PipeTargetBatchJobParameters>
+    void SetBatchJobParameters(BatchJobParametersT&& value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters = std::forward<BatchJobParametersT>(value); }
+    template<typename BatchJobParametersT = PipeTargetBatchJobParameters>
+    PipeTargetParameters& WithBatchJobParameters(BatchJobParametersT&& value) { SetBatchJobParameters(std::forward<BatchJobParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using a Amazon SQS stream as a target.</p>
      */
-    inline const PipeTargetSqsQueueParameters& GetSqsQueueParameters() const{ return m_sqsQueueParameters; }
+    inline const PipeTargetSqsQueueParameters& GetSqsQueueParameters() const { return m_sqsQueueParameters; }
     inline bool SqsQueueParametersHasBeenSet() const { return m_sqsQueueParametersHasBeenSet; }
-    inline void SetSqsQueueParameters(const PipeTargetSqsQueueParameters& value) { m_sqsQueueParametersHasBeenSet = true; m_sqsQueueParameters = value; }
-    inline void SetSqsQueueParameters(PipeTargetSqsQueueParameters&& value) { m_sqsQueueParametersHasBeenSet = true; m_sqsQueueParameters = std::move(value); }
-    inline PipeTargetParameters& WithSqsQueueParameters(const PipeTargetSqsQueueParameters& value) { SetSqsQueueParameters(value); return *this;}
-    inline PipeTargetParameters& WithSqsQueueParameters(PipeTargetSqsQueueParameters&& value) { SetSqsQueueParameters(std::move(value)); return *this;}
+    template<typename SqsQueueParametersT = PipeTargetSqsQueueParameters>
+    void SetSqsQueueParameters(SqsQueueParametersT&& value) { m_sqsQueueParametersHasBeenSet = true; m_sqsQueueParameters = std::forward<SqsQueueParametersT>(value); }
+    template<typename SqsQueueParametersT = PipeTargetSqsQueueParameters>
+    PipeTargetParameters& WithSqsQueueParameters(SqsQueueParametersT&& value) { SetSqsQueueParameters(std::forward<SqsQueueParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,12 +147,12 @@ namespace Model
      * <p>These are custom parameter to be used when the target is an API Gateway REST
      * APIs or EventBridge ApiDestinations.</p>
      */
-    inline const PipeTargetHttpParameters& GetHttpParameters() const{ return m_httpParameters; }
+    inline const PipeTargetHttpParameters& GetHttpParameters() const { return m_httpParameters; }
     inline bool HttpParametersHasBeenSet() const { return m_httpParametersHasBeenSet; }
-    inline void SetHttpParameters(const PipeTargetHttpParameters& value) { m_httpParametersHasBeenSet = true; m_httpParameters = value; }
-    inline void SetHttpParameters(PipeTargetHttpParameters&& value) { m_httpParametersHasBeenSet = true; m_httpParameters = std::move(value); }
-    inline PipeTargetParameters& WithHttpParameters(const PipeTargetHttpParameters& value) { SetHttpParameters(value); return *this;}
-    inline PipeTargetParameters& WithHttpParameters(PipeTargetHttpParameters&& value) { SetHttpParameters(std::move(value)); return *this;}
+    template<typename HttpParametersT = PipeTargetHttpParameters>
+    void SetHttpParameters(HttpParametersT&& value) { m_httpParametersHasBeenSet = true; m_httpParameters = std::forward<HttpParametersT>(value); }
+    template<typename HttpParametersT = PipeTargetHttpParameters>
+    PipeTargetParameters& WithHttpParameters(HttpParametersT&& value) { SetHttpParameters(std::forward<HttpParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,48 +160,48 @@ namespace Model
      * <p>These are custom parameters to be used when the target is a Amazon Redshift
      * cluster to invoke the Amazon Redshift Data API BatchExecuteStatement.</p>
      */
-    inline const PipeTargetRedshiftDataParameters& GetRedshiftDataParameters() const{ return m_redshiftDataParameters; }
+    inline const PipeTargetRedshiftDataParameters& GetRedshiftDataParameters() const { return m_redshiftDataParameters; }
     inline bool RedshiftDataParametersHasBeenSet() const { return m_redshiftDataParametersHasBeenSet; }
-    inline void SetRedshiftDataParameters(const PipeTargetRedshiftDataParameters& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = value; }
-    inline void SetRedshiftDataParameters(PipeTargetRedshiftDataParameters&& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = std::move(value); }
-    inline PipeTargetParameters& WithRedshiftDataParameters(const PipeTargetRedshiftDataParameters& value) { SetRedshiftDataParameters(value); return *this;}
-    inline PipeTargetParameters& WithRedshiftDataParameters(PipeTargetRedshiftDataParameters&& value) { SetRedshiftDataParameters(std::move(value)); return *this;}
+    template<typename RedshiftDataParametersT = PipeTargetRedshiftDataParameters>
+    void SetRedshiftDataParameters(RedshiftDataParametersT&& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = std::forward<RedshiftDataParametersT>(value); }
+    template<typename RedshiftDataParametersT = PipeTargetRedshiftDataParameters>
+    PipeTargetParameters& WithRedshiftDataParameters(RedshiftDataParametersT&& value) { SetRedshiftDataParameters(std::forward<RedshiftDataParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using a SageMaker pipeline as a target.</p>
      */
-    inline const PipeTargetSageMakerPipelineParameters& GetSageMakerPipelineParameters() const{ return m_sageMakerPipelineParameters; }
+    inline const PipeTargetSageMakerPipelineParameters& GetSageMakerPipelineParameters() const { return m_sageMakerPipelineParameters; }
     inline bool SageMakerPipelineParametersHasBeenSet() const { return m_sageMakerPipelineParametersHasBeenSet; }
-    inline void SetSageMakerPipelineParameters(const PipeTargetSageMakerPipelineParameters& value) { m_sageMakerPipelineParametersHasBeenSet = true; m_sageMakerPipelineParameters = value; }
-    inline void SetSageMakerPipelineParameters(PipeTargetSageMakerPipelineParameters&& value) { m_sageMakerPipelineParametersHasBeenSet = true; m_sageMakerPipelineParameters = std::move(value); }
-    inline PipeTargetParameters& WithSageMakerPipelineParameters(const PipeTargetSageMakerPipelineParameters& value) { SetSageMakerPipelineParameters(value); return *this;}
-    inline PipeTargetParameters& WithSageMakerPipelineParameters(PipeTargetSageMakerPipelineParameters&& value) { SetSageMakerPipelineParameters(std::move(value)); return *this;}
+    template<typename SageMakerPipelineParametersT = PipeTargetSageMakerPipelineParameters>
+    void SetSageMakerPipelineParameters(SageMakerPipelineParametersT&& value) { m_sageMakerPipelineParametersHasBeenSet = true; m_sageMakerPipelineParameters = std::forward<SageMakerPipelineParametersT>(value); }
+    template<typename SageMakerPipelineParametersT = PipeTargetSageMakerPipelineParameters>
+    PipeTargetParameters& WithSageMakerPipelineParameters(SageMakerPipelineParametersT&& value) { SetSageMakerPipelineParameters(std::forward<SageMakerPipelineParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using an EventBridge event bus as a target.</p>
      */
-    inline const PipeTargetEventBridgeEventBusParameters& GetEventBridgeEventBusParameters() const{ return m_eventBridgeEventBusParameters; }
+    inline const PipeTargetEventBridgeEventBusParameters& GetEventBridgeEventBusParameters() const { return m_eventBridgeEventBusParameters; }
     inline bool EventBridgeEventBusParametersHasBeenSet() const { return m_eventBridgeEventBusParametersHasBeenSet; }
-    inline void SetEventBridgeEventBusParameters(const PipeTargetEventBridgeEventBusParameters& value) { m_eventBridgeEventBusParametersHasBeenSet = true; m_eventBridgeEventBusParameters = value; }
-    inline void SetEventBridgeEventBusParameters(PipeTargetEventBridgeEventBusParameters&& value) { m_eventBridgeEventBusParametersHasBeenSet = true; m_eventBridgeEventBusParameters = std::move(value); }
-    inline PipeTargetParameters& WithEventBridgeEventBusParameters(const PipeTargetEventBridgeEventBusParameters& value) { SetEventBridgeEventBusParameters(value); return *this;}
-    inline PipeTargetParameters& WithEventBridgeEventBusParameters(PipeTargetEventBridgeEventBusParameters&& value) { SetEventBridgeEventBusParameters(std::move(value)); return *this;}
+    template<typename EventBridgeEventBusParametersT = PipeTargetEventBridgeEventBusParameters>
+    void SetEventBridgeEventBusParameters(EventBridgeEventBusParametersT&& value) { m_eventBridgeEventBusParametersHasBeenSet = true; m_eventBridgeEventBusParameters = std::forward<EventBridgeEventBusParametersT>(value); }
+    template<typename EventBridgeEventBusParametersT = PipeTargetEventBridgeEventBusParameters>
+    PipeTargetParameters& WithEventBridgeEventBusParameters(EventBridgeEventBusParametersT&& value) { SetEventBridgeEventBusParameters(std::forward<EventBridgeEventBusParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
      */
-    inline const PipeTargetCloudWatchLogsParameters& GetCloudWatchLogsParameters() const{ return m_cloudWatchLogsParameters; }
+    inline const PipeTargetCloudWatchLogsParameters& GetCloudWatchLogsParameters() const { return m_cloudWatchLogsParameters; }
     inline bool CloudWatchLogsParametersHasBeenSet() const { return m_cloudWatchLogsParametersHasBeenSet; }
-    inline void SetCloudWatchLogsParameters(const PipeTargetCloudWatchLogsParameters& value) { m_cloudWatchLogsParametersHasBeenSet = true; m_cloudWatchLogsParameters = value; }
-    inline void SetCloudWatchLogsParameters(PipeTargetCloudWatchLogsParameters&& value) { m_cloudWatchLogsParametersHasBeenSet = true; m_cloudWatchLogsParameters = std::move(value); }
-    inline PipeTargetParameters& WithCloudWatchLogsParameters(const PipeTargetCloudWatchLogsParameters& value) { SetCloudWatchLogsParameters(value); return *this;}
-    inline PipeTargetParameters& WithCloudWatchLogsParameters(PipeTargetCloudWatchLogsParameters&& value) { SetCloudWatchLogsParameters(std::move(value)); return *this;}
+    template<typename CloudWatchLogsParametersT = PipeTargetCloudWatchLogsParameters>
+    void SetCloudWatchLogsParameters(CloudWatchLogsParametersT&& value) { m_cloudWatchLogsParametersHasBeenSet = true; m_cloudWatchLogsParameters = std::forward<CloudWatchLogsParametersT>(value); }
+    template<typename CloudWatchLogsParametersT = PipeTargetCloudWatchLogsParameters>
+    PipeTargetParameters& WithCloudWatchLogsParameters(CloudWatchLogsParametersT&& value) { SetCloudWatchLogsParameters(std::forward<CloudWatchLogsParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -211,12 +209,12 @@ namespace Model
      * <p>The parameters for using a Timestream for LiveAnalytics table as a
      * target.</p>
      */
-    inline const PipeTargetTimestreamParameters& GetTimestreamParameters() const{ return m_timestreamParameters; }
+    inline const PipeTargetTimestreamParameters& GetTimestreamParameters() const { return m_timestreamParameters; }
     inline bool TimestreamParametersHasBeenSet() const { return m_timestreamParametersHasBeenSet; }
-    inline void SetTimestreamParameters(const PipeTargetTimestreamParameters& value) { m_timestreamParametersHasBeenSet = true; m_timestreamParameters = value; }
-    inline void SetTimestreamParameters(PipeTargetTimestreamParameters&& value) { m_timestreamParametersHasBeenSet = true; m_timestreamParameters = std::move(value); }
-    inline PipeTargetParameters& WithTimestreamParameters(const PipeTargetTimestreamParameters& value) { SetTimestreamParameters(value); return *this;}
-    inline PipeTargetParameters& WithTimestreamParameters(PipeTargetTimestreamParameters&& value) { SetTimestreamParameters(std::move(value)); return *this;}
+    template<typename TimestreamParametersT = PipeTargetTimestreamParameters>
+    void SetTimestreamParameters(TimestreamParametersT&& value) { m_timestreamParametersHasBeenSet = true; m_timestreamParameters = std::forward<TimestreamParametersT>(value); }
+    template<typename TimestreamParametersT = PipeTargetTimestreamParameters>
+    PipeTargetParameters& WithTimestreamParameters(TimestreamParametersT&& value) { SetTimestreamParameters(std::forward<TimestreamParametersT>(value)); return *this;}
     ///@}
   private:
 

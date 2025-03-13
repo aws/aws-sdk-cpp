@@ -18,10 +18,6 @@ namespace Connect
 namespace Model
 {
 
-AssignContactCategoryActionDefinition::AssignContactCategoryActionDefinition()
-{
-}
-
 AssignContactCategoryActionDefinition::AssignContactCategoryActionDefinition(JsonView jsonValue)
 {
   *this = jsonValue;

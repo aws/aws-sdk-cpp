@@ -34,7 +34,7 @@ namespace Model
   class UpdateMultiplexProgramResult
   {
   public:
-    AWS_MEDIALIVE_API UpdateMultiplexProgramResult();
+    AWS_MEDIALIVE_API UpdateMultiplexProgramResult() = default;
     AWS_MEDIALIVE_API UpdateMultiplexProgramResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API UpdateMultiplexProgramResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * The updated multiplex program.
      */
-    inline const MultiplexProgram& GetMultiplexProgram() const{ return m_multiplexProgram; }
-    inline void SetMultiplexProgram(const MultiplexProgram& value) { m_multiplexProgram = value; }
-    inline void SetMultiplexProgram(MultiplexProgram&& value) { m_multiplexProgram = std::move(value); }
-    inline UpdateMultiplexProgramResult& WithMultiplexProgram(const MultiplexProgram& value) { SetMultiplexProgram(value); return *this;}
-    inline UpdateMultiplexProgramResult& WithMultiplexProgram(MultiplexProgram&& value) { SetMultiplexProgram(std::move(value)); return *this;}
+    inline const MultiplexProgram& GetMultiplexProgram() const { return m_multiplexProgram; }
+    template<typename MultiplexProgramT = MultiplexProgram>
+    void SetMultiplexProgram(MultiplexProgramT&& value) { m_multiplexProgramHasBeenSet = true; m_multiplexProgram = std::forward<MultiplexProgramT>(value); }
+    template<typename MultiplexProgramT = MultiplexProgram>
+    UpdateMultiplexProgramResult& WithMultiplexProgram(MultiplexProgramT&& value) { SetMultiplexProgram(std::forward<MultiplexProgramT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateMultiplexProgramResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateMultiplexProgramResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateMultiplexProgramResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateMultiplexProgramResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MultiplexProgram m_multiplexProgram;
+    bool m_multiplexProgramHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

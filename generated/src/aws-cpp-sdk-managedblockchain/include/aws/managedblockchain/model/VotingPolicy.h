@@ -32,7 +32,7 @@ namespace Model
   class VotingPolicy
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API VotingPolicy();
+    AWS_MANAGEDBLOCKCHAIN_API VotingPolicy() = default;
     AWS_MANAGEDBLOCKCHAIN_API VotingPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API VotingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * and the duration of the proposal. The policy applies to all proposals and is
      * specified when the network is created.</p>
      */
-    inline const ApprovalThresholdPolicy& GetApprovalThresholdPolicy() const{ return m_approvalThresholdPolicy; }
+    inline const ApprovalThresholdPolicy& GetApprovalThresholdPolicy() const { return m_approvalThresholdPolicy; }
     inline bool ApprovalThresholdPolicyHasBeenSet() const { return m_approvalThresholdPolicyHasBeenSet; }
-    inline void SetApprovalThresholdPolicy(const ApprovalThresholdPolicy& value) { m_approvalThresholdPolicyHasBeenSet = true; m_approvalThresholdPolicy = value; }
-    inline void SetApprovalThresholdPolicy(ApprovalThresholdPolicy&& value) { m_approvalThresholdPolicyHasBeenSet = true; m_approvalThresholdPolicy = std::move(value); }
-    inline VotingPolicy& WithApprovalThresholdPolicy(const ApprovalThresholdPolicy& value) { SetApprovalThresholdPolicy(value); return *this;}
-    inline VotingPolicy& WithApprovalThresholdPolicy(ApprovalThresholdPolicy&& value) { SetApprovalThresholdPolicy(std::move(value)); return *this;}
+    template<typename ApprovalThresholdPolicyT = ApprovalThresholdPolicy>
+    void SetApprovalThresholdPolicy(ApprovalThresholdPolicyT&& value) { m_approvalThresholdPolicyHasBeenSet = true; m_approvalThresholdPolicy = std::forward<ApprovalThresholdPolicyT>(value); }
+    template<typename ApprovalThresholdPolicyT = ApprovalThresholdPolicy>
+    VotingPolicy& WithApprovalThresholdPolicy(ApprovalThresholdPolicyT&& value) { SetApprovalThresholdPolicy(std::forward<ApprovalThresholdPolicyT>(value)); return *this;}
     ///@}
   private:
 

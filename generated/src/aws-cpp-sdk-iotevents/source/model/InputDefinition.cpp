@@ -18,13 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-InputDefinition::InputDefinition() : 
-    m_attributesHasBeenSet(false)
-{
-}
-
 InputDefinition::InputDefinition(JsonView jsonValue)
-  : InputDefinition()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ InputDefinition& InputDefinition::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

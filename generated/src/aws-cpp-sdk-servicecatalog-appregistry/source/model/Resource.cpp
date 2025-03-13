@@ -18,16 +18,7 @@ namespace AppRegistry
 namespace Model
 {
 
-Resource::Resource() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_associationTimeHasBeenSet(false),
-    m_integrationsHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationTime"))
   {
     m_associationTime = jsonValue.GetString("associationTime");
-
     m_associationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integrations"))
   {
     m_integrations = jsonValue.GetObject("integrations");
-
     m_integrationsHasBeenSet = true;
   }
-
   return *this;
 }
 

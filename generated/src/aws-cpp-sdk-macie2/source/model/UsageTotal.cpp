@@ -18,17 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-UsageTotal::UsageTotal() : 
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_estimatedCostHasBeenSet(false),
-    m_type(UsageType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 UsageTotal::UsageTotal(JsonView jsonValue)
-  : UsageTotal()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ UsageTotal& UsageTotal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("currency"))
   {
     m_currency = CurrencyMapper::GetCurrencyForName(jsonValue.GetString("currency"));
-
     m_currencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedCost"))
   {
     m_estimatedCost = jsonValue.GetString("estimatedCost");
-
     m_estimatedCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = UsageTypeMapper::GetUsageTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

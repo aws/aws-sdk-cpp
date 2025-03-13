@@ -18,14 +18,7 @@ namespace ECR
 namespace Model
 {
 
-ImageScanningConfiguration::ImageScanningConfiguration() : 
-    m_scanOnPush(false),
-    m_scanOnPushHasBeenSet(false)
-{
-}
-
 ImageScanningConfiguration::ImageScanningConfiguration(JsonView jsonValue)
-  : ImageScanningConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ImageScanningConfiguration& ImageScanningConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("scanOnPush"))
   {
     m_scanOnPush = jsonValue.GetBool("scanOnPush");
-
     m_scanOnPushHasBeenSet = true;
   }
-
   return *this;
 }
 

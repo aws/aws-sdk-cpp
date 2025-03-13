@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutSigningProfileResult::PutSigningProfileResult()
-{
-}
-
 PutSigningProfileResult::PutSigningProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ PutSigningProfileResult& PutSigningProfileResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileVersion"))
   {
     m_profileVersion = jsonValue.GetString("profileVersion");
-
+    m_profileVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileVersionArn"))
   {
     m_profileVersionArn = jsonValue.GetString("profileVersionArn");
-
+    m_profileVersionArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -40,7 +40,7 @@ namespace Model
   class CertificateAuthorityConfiguration
   {
   public:
-    AWS_ACMPCA_API CertificateAuthorityConfiguration();
+    AWS_ACMPCA_API CertificateAuthorityConfiguration() = default;
     AWS_ACMPCA_API CertificateAuthorityConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API CertificateAuthorityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * CA creates when it issues a certificate. When you create a subordinate CA, you
      * must use a key algorithm supported by the parent CA.</p>
      */
-    inline const KeyAlgorithm& GetKeyAlgorithm() const{ return m_keyAlgorithm; }
+    inline KeyAlgorithm GetKeyAlgorithm() const { return m_keyAlgorithm; }
     inline bool KeyAlgorithmHasBeenSet() const { return m_keyAlgorithmHasBeenSet; }
-    inline void SetKeyAlgorithm(const KeyAlgorithm& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = value; }
-    inline void SetKeyAlgorithm(KeyAlgorithm&& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = std::move(value); }
-    inline CertificateAuthorityConfiguration& WithKeyAlgorithm(const KeyAlgorithm& value) { SetKeyAlgorithm(value); return *this;}
-    inline CertificateAuthorityConfiguration& WithKeyAlgorithm(KeyAlgorithm&& value) { SetKeyAlgorithm(std::move(value)); return *this;}
+    inline void SetKeyAlgorithm(KeyAlgorithm value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = value; }
+    inline CertificateAuthorityConfiguration& WithKeyAlgorithm(KeyAlgorithm value) { SetKeyAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,10 @@ namespace Model
      * <p>This parameter should not be confused with the <code>SigningAlgorithm</code>
      * parameter used to sign certificates when they are issued.</p>
      */
-    inline const SigningAlgorithm& GetSigningAlgorithm() const{ return m_signingAlgorithm; }
+    inline SigningAlgorithm GetSigningAlgorithm() const { return m_signingAlgorithm; }
     inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }
-    inline void SetSigningAlgorithm(const SigningAlgorithm& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
-    inline void SetSigningAlgorithm(SigningAlgorithm&& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = std::move(value); }
-    inline CertificateAuthorityConfiguration& WithSigningAlgorithm(const SigningAlgorithm& value) { SetSigningAlgorithm(value); return *this;}
-    inline CertificateAuthorityConfiguration& WithSigningAlgorithm(SigningAlgorithm&& value) { SetSigningAlgorithm(std::move(value)); return *this;}
+    inline void SetSigningAlgorithm(SigningAlgorithm value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
+    inline CertificateAuthorityConfiguration& WithSigningAlgorithm(SigningAlgorithm value) { SetSigningAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,12 @@ namespace Model
      * <p>Structure that contains X.500 distinguished name information for your private
      * CA.</p>
      */
-    inline const ASN1Subject& GetSubject() const{ return m_subject; }
+    inline const ASN1Subject& GetSubject() const { return m_subject; }
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-    inline void SetSubject(const ASN1Subject& value) { m_subjectHasBeenSet = true; m_subject = value; }
-    inline void SetSubject(ASN1Subject&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
-    inline CertificateAuthorityConfiguration& WithSubject(const ASN1Subject& value) { SetSubject(value); return *this;}
-    inline CertificateAuthorityConfiguration& WithSubject(ASN1Subject&& value) { SetSubject(std::move(value)); return *this;}
+    template<typename SubjectT = ASN1Subject>
+    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
+    template<typename SubjectT = ASN1Subject>
+    CertificateAuthorityConfiguration& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,19 +88,19 @@ namespace Model
      * <p>Specifies information to be added to the extension section of the certificate
      * signing request (CSR).</p>
      */
-    inline const CsrExtensions& GetCsrExtensions() const{ return m_csrExtensions; }
+    inline const CsrExtensions& GetCsrExtensions() const { return m_csrExtensions; }
     inline bool CsrExtensionsHasBeenSet() const { return m_csrExtensionsHasBeenSet; }
-    inline void SetCsrExtensions(const CsrExtensions& value) { m_csrExtensionsHasBeenSet = true; m_csrExtensions = value; }
-    inline void SetCsrExtensions(CsrExtensions&& value) { m_csrExtensionsHasBeenSet = true; m_csrExtensions = std::move(value); }
-    inline CertificateAuthorityConfiguration& WithCsrExtensions(const CsrExtensions& value) { SetCsrExtensions(value); return *this;}
-    inline CertificateAuthorityConfiguration& WithCsrExtensions(CsrExtensions&& value) { SetCsrExtensions(std::move(value)); return *this;}
+    template<typename CsrExtensionsT = CsrExtensions>
+    void SetCsrExtensions(CsrExtensionsT&& value) { m_csrExtensionsHasBeenSet = true; m_csrExtensions = std::forward<CsrExtensionsT>(value); }
+    template<typename CsrExtensionsT = CsrExtensions>
+    CertificateAuthorityConfiguration& WithCsrExtensions(CsrExtensionsT&& value) { SetCsrExtensions(std::forward<CsrExtensionsT>(value)); return *this;}
     ///@}
   private:
 
-    KeyAlgorithm m_keyAlgorithm;
+    KeyAlgorithm m_keyAlgorithm{KeyAlgorithm::NOT_SET};
     bool m_keyAlgorithmHasBeenSet = false;
 
-    SigningAlgorithm m_signingAlgorithm;
+    SigningAlgorithm m_signingAlgorithm{SigningAlgorithm::NOT_SET};
     bool m_signingAlgorithmHasBeenSet = false;
 
     ASN1Subject m_subject;

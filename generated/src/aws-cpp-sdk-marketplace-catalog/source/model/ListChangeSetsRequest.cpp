@@ -12,16 +12,6 @@ using namespace Aws::MarketplaceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListChangeSetsRequest::ListChangeSetsRequest() : 
-    m_catalogHasBeenSet(false),
-    m_filterListHasBeenSet(false),
-    m_sortHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListChangeSetsRequest::SerializePayload() const
 {
   JsonValue payload;

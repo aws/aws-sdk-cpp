@@ -18,15 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualGatewaySpec::VirtualGatewaySpec() : 
-    m_backendDefaultsHasBeenSet(false),
-    m_listenersHasBeenSet(false),
-    m_loggingHasBeenSet(false)
-{
-}
-
 VirtualGatewaySpec::VirtualGatewaySpec(JsonView jsonValue)
-  : VirtualGatewaySpec()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ VirtualGatewaySpec& VirtualGatewaySpec::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("backendDefaults"))
   {
     m_backendDefaults = jsonValue.GetObject("backendDefaults");
-
     m_backendDefaultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listeners"))
   {
     Aws::Utils::Array<JsonView> listenersJsonList = jsonValue.GetArray("listeners");
@@ -49,14 +39,11 @@ VirtualGatewaySpec& VirtualGatewaySpec::operator =(JsonView jsonValue)
     }
     m_listenersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logging"))
   {
     m_logging = jsonValue.GetObject("logging");
-
     m_loggingHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIdentityPropagationConfigRequest::DeleteIdentityPropagationConfigRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_service(ServiceType::NOT_SET),
-    m_serviceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIdentityPropagationConfigRequest::SerializePayload() const
 {
   return {};

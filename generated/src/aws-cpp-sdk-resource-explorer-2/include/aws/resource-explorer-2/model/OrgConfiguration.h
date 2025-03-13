@@ -34,7 +34,7 @@ namespace Model
   class OrgConfiguration
   {
   public:
-    AWS_RESOURCEEXPLORER2_API OrgConfiguration();
+    AWS_RESOURCEEXPLORER2_API OrgConfiguration() = default;
     AWS_RESOURCEEXPLORER2_API OrgConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEEXPLORER2_API OrgConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>This value displays whether your Amazon Web Services service access is
      * <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
-    inline const AWSServiceAccessStatus& GetAWSServiceAccessStatus() const{ return m_aWSServiceAccessStatus; }
+    inline AWSServiceAccessStatus GetAWSServiceAccessStatus() const { return m_aWSServiceAccessStatus; }
     inline bool AWSServiceAccessStatusHasBeenSet() const { return m_aWSServiceAccessStatusHasBeenSet; }
-    inline void SetAWSServiceAccessStatus(const AWSServiceAccessStatus& value) { m_aWSServiceAccessStatusHasBeenSet = true; m_aWSServiceAccessStatus = value; }
-    inline void SetAWSServiceAccessStatus(AWSServiceAccessStatus&& value) { m_aWSServiceAccessStatusHasBeenSet = true; m_aWSServiceAccessStatus = std::move(value); }
-    inline OrgConfiguration& WithAWSServiceAccessStatus(const AWSServiceAccessStatus& value) { SetAWSServiceAccessStatus(value); return *this;}
-    inline OrgConfiguration& WithAWSServiceAccessStatus(AWSServiceAccessStatus&& value) { SetAWSServiceAccessStatus(std::move(value)); return *this;}
+    inline void SetAWSServiceAccessStatus(AWSServiceAccessStatus value) { m_aWSServiceAccessStatusHasBeenSet = true; m_aWSServiceAccessStatus = value; }
+    inline OrgConfiguration& WithAWSServiceAccessStatus(AWSServiceAccessStatus value) { SetAWSServiceAccessStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +56,16 @@ namespace Model
      * <p>This value shows whether or not you have a valid a service-linked role
      * required to start the multi-account search feature.</p>
      */
-    inline const Aws::String& GetServiceLinkedRole() const{ return m_serviceLinkedRole; }
+    inline const Aws::String& GetServiceLinkedRole() const { return m_serviceLinkedRole; }
     inline bool ServiceLinkedRoleHasBeenSet() const { return m_serviceLinkedRoleHasBeenSet; }
-    inline void SetServiceLinkedRole(const Aws::String& value) { m_serviceLinkedRoleHasBeenSet = true; m_serviceLinkedRole = value; }
-    inline void SetServiceLinkedRole(Aws::String&& value) { m_serviceLinkedRoleHasBeenSet = true; m_serviceLinkedRole = std::move(value); }
-    inline void SetServiceLinkedRole(const char* value) { m_serviceLinkedRoleHasBeenSet = true; m_serviceLinkedRole.assign(value); }
-    inline OrgConfiguration& WithServiceLinkedRole(const Aws::String& value) { SetServiceLinkedRole(value); return *this;}
-    inline OrgConfiguration& WithServiceLinkedRole(Aws::String&& value) { SetServiceLinkedRole(std::move(value)); return *this;}
-    inline OrgConfiguration& WithServiceLinkedRole(const char* value) { SetServiceLinkedRole(value); return *this;}
+    template<typename ServiceLinkedRoleT = Aws::String>
+    void SetServiceLinkedRole(ServiceLinkedRoleT&& value) { m_serviceLinkedRoleHasBeenSet = true; m_serviceLinkedRole = std::forward<ServiceLinkedRoleT>(value); }
+    template<typename ServiceLinkedRoleT = Aws::String>
+    OrgConfiguration& WithServiceLinkedRole(ServiceLinkedRoleT&& value) { SetServiceLinkedRole(std::forward<ServiceLinkedRoleT>(value)); return *this;}
     ///@}
   private:
 
-    AWSServiceAccessStatus m_aWSServiceAccessStatus;
+    AWSServiceAccessStatus m_aWSServiceAccessStatus{AWSServiceAccessStatus::NOT_SET};
     bool m_aWSServiceAccessStatusHasBeenSet = false;
 
     Aws::String m_serviceLinkedRole;

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribePackageVersionRequest::DescribePackageVersionRequest() : 
-    m_ownerAccountHasBeenSet(false),
-    m_packageIdHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribePackageVersionRequest::SerializePayload() const
 {
   return {};

@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TerminateWorkspacesRequest::TerminateWorkspacesRequest() : 
-    m_terminateWorkspaceRequestsHasBeenSet(false)
-{
-}
-
 Aws::String TerminateWorkspacesRequest::SerializePayload() const
 {
   JsonValue payload;

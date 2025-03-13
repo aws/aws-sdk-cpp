@@ -35,7 +35,7 @@ namespace Model
   class RepositoryScanningConfiguration
   {
   public:
-    AWS_ECR_API RepositoryScanningConfiguration();
+    AWS_ECR_API RepositoryScanningConfiguration() = default;
     AWS_ECR_API RepositoryScanningConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API RepositoryScanningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,35 +45,31 @@ namespace Model
     /**
      * <p>The ARN of the repository.</p>
      */
-    inline const Aws::String& GetRepositoryArn() const{ return m_repositoryArn; }
+    inline const Aws::String& GetRepositoryArn() const { return m_repositoryArn; }
     inline bool RepositoryArnHasBeenSet() const { return m_repositoryArnHasBeenSet; }
-    inline void SetRepositoryArn(const Aws::String& value) { m_repositoryArnHasBeenSet = true; m_repositoryArn = value; }
-    inline void SetRepositoryArn(Aws::String&& value) { m_repositoryArnHasBeenSet = true; m_repositoryArn = std::move(value); }
-    inline void SetRepositoryArn(const char* value) { m_repositoryArnHasBeenSet = true; m_repositoryArn.assign(value); }
-    inline RepositoryScanningConfiguration& WithRepositoryArn(const Aws::String& value) { SetRepositoryArn(value); return *this;}
-    inline RepositoryScanningConfiguration& WithRepositoryArn(Aws::String&& value) { SetRepositoryArn(std::move(value)); return *this;}
-    inline RepositoryScanningConfiguration& WithRepositoryArn(const char* value) { SetRepositoryArn(value); return *this;}
+    template<typename RepositoryArnT = Aws::String>
+    void SetRepositoryArn(RepositoryArnT&& value) { m_repositoryArnHasBeenSet = true; m_repositoryArn = std::forward<RepositoryArnT>(value); }
+    template<typename RepositoryArnT = Aws::String>
+    RepositoryScanningConfiguration& WithRepositoryArn(RepositoryArnT&& value) { SetRepositoryArn(std::forward<RepositoryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline RepositoryScanningConfiguration& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline RepositoryScanningConfiguration& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline RepositoryScanningConfiguration& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    RepositoryScanningConfiguration& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether or not scan on push is configured for the repository.</p>
      */
-    inline bool GetScanOnPush() const{ return m_scanOnPush; }
+    inline bool GetScanOnPush() const { return m_scanOnPush; }
     inline bool ScanOnPushHasBeenSet() const { return m_scanOnPushHasBeenSet; }
     inline void SetScanOnPush(bool value) { m_scanOnPushHasBeenSet = true; m_scanOnPush = value; }
     inline RepositoryScanningConfiguration& WithScanOnPush(bool value) { SetScanOnPush(value); return *this;}
@@ -83,26 +79,24 @@ namespace Model
     /**
      * <p>The scan frequency for the repository.</p>
      */
-    inline const ScanFrequency& GetScanFrequency() const{ return m_scanFrequency; }
+    inline ScanFrequency GetScanFrequency() const { return m_scanFrequency; }
     inline bool ScanFrequencyHasBeenSet() const { return m_scanFrequencyHasBeenSet; }
-    inline void SetScanFrequency(const ScanFrequency& value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = value; }
-    inline void SetScanFrequency(ScanFrequency&& value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = std::move(value); }
-    inline RepositoryScanningConfiguration& WithScanFrequency(const ScanFrequency& value) { SetScanFrequency(value); return *this;}
-    inline RepositoryScanningConfiguration& WithScanFrequency(ScanFrequency&& value) { SetScanFrequency(std::move(value)); return *this;}
+    inline void SetScanFrequency(ScanFrequency value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = value; }
+    inline RepositoryScanningConfiguration& WithScanFrequency(ScanFrequency value) { SetScanFrequency(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scan filters applied to the repository.</p>
      */
-    inline const Aws::Vector<ScanningRepositoryFilter>& GetAppliedScanFilters() const{ return m_appliedScanFilters; }
+    inline const Aws::Vector<ScanningRepositoryFilter>& GetAppliedScanFilters() const { return m_appliedScanFilters; }
     inline bool AppliedScanFiltersHasBeenSet() const { return m_appliedScanFiltersHasBeenSet; }
-    inline void SetAppliedScanFilters(const Aws::Vector<ScanningRepositoryFilter>& value) { m_appliedScanFiltersHasBeenSet = true; m_appliedScanFilters = value; }
-    inline void SetAppliedScanFilters(Aws::Vector<ScanningRepositoryFilter>&& value) { m_appliedScanFiltersHasBeenSet = true; m_appliedScanFilters = std::move(value); }
-    inline RepositoryScanningConfiguration& WithAppliedScanFilters(const Aws::Vector<ScanningRepositoryFilter>& value) { SetAppliedScanFilters(value); return *this;}
-    inline RepositoryScanningConfiguration& WithAppliedScanFilters(Aws::Vector<ScanningRepositoryFilter>&& value) { SetAppliedScanFilters(std::move(value)); return *this;}
-    inline RepositoryScanningConfiguration& AddAppliedScanFilters(const ScanningRepositoryFilter& value) { m_appliedScanFiltersHasBeenSet = true; m_appliedScanFilters.push_back(value); return *this; }
-    inline RepositoryScanningConfiguration& AddAppliedScanFilters(ScanningRepositoryFilter&& value) { m_appliedScanFiltersHasBeenSet = true; m_appliedScanFilters.push_back(std::move(value)); return *this; }
+    template<typename AppliedScanFiltersT = Aws::Vector<ScanningRepositoryFilter>>
+    void SetAppliedScanFilters(AppliedScanFiltersT&& value) { m_appliedScanFiltersHasBeenSet = true; m_appliedScanFilters = std::forward<AppliedScanFiltersT>(value); }
+    template<typename AppliedScanFiltersT = Aws::Vector<ScanningRepositoryFilter>>
+    RepositoryScanningConfiguration& WithAppliedScanFilters(AppliedScanFiltersT&& value) { SetAppliedScanFilters(std::forward<AppliedScanFiltersT>(value)); return *this;}
+    template<typename AppliedScanFiltersT = ScanningRepositoryFilter>
+    RepositoryScanningConfiguration& AddAppliedScanFilters(AppliedScanFiltersT&& value) { m_appliedScanFiltersHasBeenSet = true; m_appliedScanFilters.emplace_back(std::forward<AppliedScanFiltersT>(value)); return *this; }
     ///@}
   private:
 
@@ -112,10 +106,10 @@ namespace Model
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet = false;
 
-    bool m_scanOnPush;
+    bool m_scanOnPush{false};
     bool m_scanOnPushHasBeenSet = false;
 
-    ScanFrequency m_scanFrequency;
+    ScanFrequency m_scanFrequency{ScanFrequency::NOT_SET};
     bool m_scanFrequencyHasBeenSet = false;
 
     Aws::Vector<ScanningRepositoryFilter> m_appliedScanFilters;

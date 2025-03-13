@@ -36,7 +36,7 @@ namespace Model
   class Pipe
   {
   public:
-    AWS_PIPES_API Pipe();
+    AWS_PIPES_API Pipe() = default;
     AWS_PIPES_API Pipe(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Pipe& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,78 +46,68 @@ namespace Model
     /**
      * <p>The name of the pipe.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Pipe& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Pipe& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Pipe& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Pipe& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the pipe.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Pipe& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Pipe& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Pipe& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Pipe& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state the pipe should be in.</p>
      */
-    inline const RequestedPipeState& GetDesiredState() const{ return m_desiredState; }
+    inline RequestedPipeState GetDesiredState() const { return m_desiredState; }
     inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
-    inline void SetDesiredState(const RequestedPipeState& value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
-    inline void SetDesiredState(RequestedPipeState&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::move(value); }
-    inline Pipe& WithDesiredState(const RequestedPipeState& value) { SetDesiredState(value); return *this;}
-    inline Pipe& WithDesiredState(RequestedPipeState&& value) { SetDesiredState(std::move(value)); return *this;}
+    inline void SetDesiredState(RequestedPipeState value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
+    inline Pipe& WithDesiredState(RequestedPipeState value) { SetDesiredState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state the pipe is in.</p>
      */
-    inline const PipeState& GetCurrentState() const{ return m_currentState; }
+    inline PipeState GetCurrentState() const { return m_currentState; }
     inline bool CurrentStateHasBeenSet() const { return m_currentStateHasBeenSet; }
-    inline void SetCurrentState(const PipeState& value) { m_currentStateHasBeenSet = true; m_currentState = value; }
-    inline void SetCurrentState(PipeState&& value) { m_currentStateHasBeenSet = true; m_currentState = std::move(value); }
-    inline Pipe& WithCurrentState(const PipeState& value) { SetCurrentState(value); return *this;}
-    inline Pipe& WithCurrentState(PipeState&& value) { SetCurrentState(std::move(value)); return *this;}
+    inline void SetCurrentState(PipeState value) { m_currentStateHasBeenSet = true; m_currentState = value; }
+    inline Pipe& WithCurrentState(PipeState value) { SetCurrentState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason the pipe is in its current state.</p>
      */
-    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
+    inline const Aws::String& GetStateReason() const { return m_stateReason; }
     inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
-    inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
-    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
-    inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
-    inline Pipe& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
-    inline Pipe& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
-    inline Pipe& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+    template<typename StateReasonT = Aws::String>
+    void SetStateReason(StateReasonT&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::forward<StateReasonT>(value); }
+    template<typename StateReasonT = Aws::String>
+    Pipe& WithStateReason(StateReasonT&& value) { SetStateReason(std::forward<StateReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the pipe was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline Pipe& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline Pipe& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    Pipe& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,54 +116,48 @@ namespace Model
      * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
      * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline Pipe& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline Pipe& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    Pipe& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the source resource.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline Pipe& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline Pipe& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline Pipe& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    Pipe& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the target resource.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline Pipe& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline Pipe& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline Pipe& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    Pipe& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the enrichment resource.</p>
      */
-    inline const Aws::String& GetEnrichment() const{ return m_enrichment; }
+    inline const Aws::String& GetEnrichment() const { return m_enrichment; }
     inline bool EnrichmentHasBeenSet() const { return m_enrichmentHasBeenSet; }
-    inline void SetEnrichment(const Aws::String& value) { m_enrichmentHasBeenSet = true; m_enrichment = value; }
-    inline void SetEnrichment(Aws::String&& value) { m_enrichmentHasBeenSet = true; m_enrichment = std::move(value); }
-    inline void SetEnrichment(const char* value) { m_enrichmentHasBeenSet = true; m_enrichment.assign(value); }
-    inline Pipe& WithEnrichment(const Aws::String& value) { SetEnrichment(value); return *this;}
-    inline Pipe& WithEnrichment(Aws::String&& value) { SetEnrichment(std::move(value)); return *this;}
-    inline Pipe& WithEnrichment(const char* value) { SetEnrichment(value); return *this;}
+    template<typename EnrichmentT = Aws::String>
+    void SetEnrichment(EnrichmentT&& value) { m_enrichmentHasBeenSet = true; m_enrichment = std::forward<EnrichmentT>(value); }
+    template<typename EnrichmentT = Aws::String>
+    Pipe& WithEnrichment(EnrichmentT&& value) { SetEnrichment(std::forward<EnrichmentT>(value)); return *this;}
     ///@}
   private:
 
@@ -183,19 +167,19 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    RequestedPipeState m_desiredState;
+    RequestedPipeState m_desiredState{RequestedPipeState::NOT_SET};
     bool m_desiredStateHasBeenSet = false;
 
-    PipeState m_currentState;
+    PipeState m_currentState{PipeState::NOT_SET};
     bool m_currentStateHasBeenSet = false;
 
     Aws::String m_stateReason;
     bool m_stateReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_source;

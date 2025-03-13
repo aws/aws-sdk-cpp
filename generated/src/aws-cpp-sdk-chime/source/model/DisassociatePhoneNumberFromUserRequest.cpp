@@ -12,12 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociatePhoneNumberFromUserRequest::DisassociatePhoneNumberFromUserRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociatePhoneNumberFromUserRequest::SerializePayload() const
 {
   return {};

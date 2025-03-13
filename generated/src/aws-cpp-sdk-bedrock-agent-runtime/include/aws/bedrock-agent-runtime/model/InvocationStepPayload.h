@@ -33,7 +33,7 @@ namespace Model
   class InvocationStepPayload
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API InvocationStepPayload();
+    AWS_BEDROCKAGENTRUNTIME_API InvocationStepPayload() = default;
     AWS_BEDROCKAGENTRUNTIME_API InvocationStepPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API InvocationStepPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The content for the invocation step.</p>
      */
-    inline const Aws::Vector<BedrockSessionContentBlock>& GetContentBlocks() const{ return m_contentBlocks; }
+    inline const Aws::Vector<BedrockSessionContentBlock>& GetContentBlocks() const { return m_contentBlocks; }
     inline bool ContentBlocksHasBeenSet() const { return m_contentBlocksHasBeenSet; }
-    inline void SetContentBlocks(const Aws::Vector<BedrockSessionContentBlock>& value) { m_contentBlocksHasBeenSet = true; m_contentBlocks = value; }
-    inline void SetContentBlocks(Aws::Vector<BedrockSessionContentBlock>&& value) { m_contentBlocksHasBeenSet = true; m_contentBlocks = std::move(value); }
-    inline InvocationStepPayload& WithContentBlocks(const Aws::Vector<BedrockSessionContentBlock>& value) { SetContentBlocks(value); return *this;}
-    inline InvocationStepPayload& WithContentBlocks(Aws::Vector<BedrockSessionContentBlock>&& value) { SetContentBlocks(std::move(value)); return *this;}
-    inline InvocationStepPayload& AddContentBlocks(const BedrockSessionContentBlock& value) { m_contentBlocksHasBeenSet = true; m_contentBlocks.push_back(value); return *this; }
-    inline InvocationStepPayload& AddContentBlocks(BedrockSessionContentBlock&& value) { m_contentBlocksHasBeenSet = true; m_contentBlocks.push_back(std::move(value)); return *this; }
+    template<typename ContentBlocksT = Aws::Vector<BedrockSessionContentBlock>>
+    void SetContentBlocks(ContentBlocksT&& value) { m_contentBlocksHasBeenSet = true; m_contentBlocks = std::forward<ContentBlocksT>(value); }
+    template<typename ContentBlocksT = Aws::Vector<BedrockSessionContentBlock>>
+    InvocationStepPayload& WithContentBlocks(ContentBlocksT&& value) { SetContentBlocks(std::forward<ContentBlocksT>(value)); return *this;}
+    template<typename ContentBlocksT = BedrockSessionContentBlock>
+    InvocationStepPayload& AddContentBlocks(ContentBlocksT&& value) { m_contentBlocksHasBeenSet = true; m_contentBlocks.emplace_back(std::forward<ContentBlocksT>(value)); return *this; }
     ///@}
   private:
 

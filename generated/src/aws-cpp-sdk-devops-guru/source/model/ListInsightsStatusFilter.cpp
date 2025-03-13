@@ -18,15 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-ListInsightsStatusFilter::ListInsightsStatusFilter() : 
-    m_ongoingHasBeenSet(false),
-    m_closedHasBeenSet(false),
-    m_anyHasBeenSet(false)
-{
-}
-
 ListInsightsStatusFilter::ListInsightsStatusFilter(JsonView jsonValue)
-  : ListInsightsStatusFilter()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ListInsightsStatusFilter& ListInsightsStatusFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Ongoing"))
   {
     m_ongoing = jsonValue.GetObject("Ongoing");
-
     m_ongoingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Closed"))
   {
     m_closed = jsonValue.GetObject("Closed");
-
     m_closedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Any"))
   {
     m_any = jsonValue.GetObject("Any");
-
     m_anyHasBeenSet = true;
   }
-
   return *this;
 }
 

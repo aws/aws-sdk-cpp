@@ -25,7 +25,7 @@ namespace Model
   class RetrieveRequest : public KendraRequest
   {
   public:
-    AWS_KENDRA_API RetrieveRequest();
+    AWS_KENDRA_API RetrieveRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the index to retrieve relevant passages for the search.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-    inline RetrieveRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline RetrieveRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline RetrieveRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    RetrieveRequest& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
      * with advanced query syntax</a> in the Amazon Kendra Developer Guide. </p>
      */
-    inline const Aws::String& GetQueryText() const{ return m_queryText; }
+    inline const Aws::String& GetQueryText() const { return m_queryText; }
     inline bool QueryTextHasBeenSet() const { return m_queryTextHasBeenSet; }
-    inline void SetQueryText(const Aws::String& value) { m_queryTextHasBeenSet = true; m_queryText = value; }
-    inline void SetQueryText(Aws::String&& value) { m_queryTextHasBeenSet = true; m_queryText = std::move(value); }
-    inline void SetQueryText(const char* value) { m_queryTextHasBeenSet = true; m_queryText.assign(value); }
-    inline RetrieveRequest& WithQueryText(const Aws::String& value) { SetQueryText(value); return *this;}
-    inline RetrieveRequest& WithQueryText(Aws::String&& value) { SetQueryText(std::move(value)); return *this;}
-    inline RetrieveRequest& WithQueryText(const char* value) { SetQueryText(value); return *this;}
+    template<typename QueryTextT = Aws::String>
+    void SetQueryText(QueryTextT&& value) { m_queryTextHasBeenSet = true; m_queryText = std::forward<QueryTextT>(value); }
+    template<typename QueryTextT = Aws::String>
+    RetrieveRequest& WithQueryText(QueryTextT&& value) { SetQueryText(std::forward<QueryTextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +81,12 @@ namespace Model
      * users using <code>_email_id</code> or include public documents
      * (<code>_email_id=null</code>).</p> 
      */
-    inline const AttributeFilter& GetAttributeFilter() const{ return m_attributeFilter; }
+    inline const AttributeFilter& GetAttributeFilter() const { return m_attributeFilter; }
     inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }
-    inline void SetAttributeFilter(const AttributeFilter& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = value; }
-    inline void SetAttributeFilter(AttributeFilter&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::move(value); }
-    inline RetrieveRequest& WithAttributeFilter(const AttributeFilter& value) { SetAttributeFilter(value); return *this;}
-    inline RetrieveRequest& WithAttributeFilter(AttributeFilter&& value) { SetAttributeFilter(std::move(value)); return *this;}
+    template<typename AttributeFilterT = AttributeFilter>
+    void SetAttributeFilter(AttributeFilterT&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::forward<AttributeFilterT>(value); }
+    template<typename AttributeFilterT = AttributeFilter>
+    RetrieveRequest& WithAttributeFilter(AttributeFilterT&& value) { SetAttributeFilter(std::forward<AttributeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,15 +95,14 @@ namespace Model
      * limit the response to include certain document fields. By default, all document
      * fields are included in the response.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRequestedDocumentAttributes() const{ return m_requestedDocumentAttributes; }
+    inline const Aws::Vector<Aws::String>& GetRequestedDocumentAttributes() const { return m_requestedDocumentAttributes; }
     inline bool RequestedDocumentAttributesHasBeenSet() const { return m_requestedDocumentAttributesHasBeenSet; }
-    inline void SetRequestedDocumentAttributes(const Aws::Vector<Aws::String>& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes = value; }
-    inline void SetRequestedDocumentAttributes(Aws::Vector<Aws::String>&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes = std::move(value); }
-    inline RetrieveRequest& WithRequestedDocumentAttributes(const Aws::Vector<Aws::String>& value) { SetRequestedDocumentAttributes(value); return *this;}
-    inline RetrieveRequest& WithRequestedDocumentAttributes(Aws::Vector<Aws::String>&& value) { SetRequestedDocumentAttributes(std::move(value)); return *this;}
-    inline RetrieveRequest& AddRequestedDocumentAttributes(const Aws::String& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(value); return *this; }
-    inline RetrieveRequest& AddRequestedDocumentAttributes(Aws::String&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(std::move(value)); return *this; }
-    inline RetrieveRequest& AddRequestedDocumentAttributes(const char* value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.push_back(value); return *this; }
+    template<typename RequestedDocumentAttributesT = Aws::Vector<Aws::String>>
+    void SetRequestedDocumentAttributes(RequestedDocumentAttributesT&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes = std::forward<RequestedDocumentAttributesT>(value); }
+    template<typename RequestedDocumentAttributesT = Aws::Vector<Aws::String>>
+    RetrieveRequest& WithRequestedDocumentAttributes(RequestedDocumentAttributesT&& value) { SetRequestedDocumentAttributes(std::forward<RequestedDocumentAttributesT>(value)); return *this;}
+    template<typename RequestedDocumentAttributesT = Aws::String>
+    RetrieveRequest& AddRequestedDocumentAttributes(RequestedDocumentAttributesT&& value) { m_requestedDocumentAttributesHasBeenSet = true; m_requestedDocumentAttributes.emplace_back(std::forward<RequestedDocumentAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -120,14 +115,14 @@ namespace Model
      * you use this API to override only some of these fields, then for the fields you
      * did not override, the importance is set to 1.</p>
      */
-    inline const Aws::Vector<DocumentRelevanceConfiguration>& GetDocumentRelevanceOverrideConfigurations() const{ return m_documentRelevanceOverrideConfigurations; }
+    inline const Aws::Vector<DocumentRelevanceConfiguration>& GetDocumentRelevanceOverrideConfigurations() const { return m_documentRelevanceOverrideConfigurations; }
     inline bool DocumentRelevanceOverrideConfigurationsHasBeenSet() const { return m_documentRelevanceOverrideConfigurationsHasBeenSet; }
-    inline void SetDocumentRelevanceOverrideConfigurations(const Aws::Vector<DocumentRelevanceConfiguration>& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations = value; }
-    inline void SetDocumentRelevanceOverrideConfigurations(Aws::Vector<DocumentRelevanceConfiguration>&& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations = std::move(value); }
-    inline RetrieveRequest& WithDocumentRelevanceOverrideConfigurations(const Aws::Vector<DocumentRelevanceConfiguration>& value) { SetDocumentRelevanceOverrideConfigurations(value); return *this;}
-    inline RetrieveRequest& WithDocumentRelevanceOverrideConfigurations(Aws::Vector<DocumentRelevanceConfiguration>&& value) { SetDocumentRelevanceOverrideConfigurations(std::move(value)); return *this;}
-    inline RetrieveRequest& AddDocumentRelevanceOverrideConfigurations(const DocumentRelevanceConfiguration& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations.push_back(value); return *this; }
-    inline RetrieveRequest& AddDocumentRelevanceOverrideConfigurations(DocumentRelevanceConfiguration&& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations.push_back(std::move(value)); return *this; }
+    template<typename DocumentRelevanceOverrideConfigurationsT = Aws::Vector<DocumentRelevanceConfiguration>>
+    void SetDocumentRelevanceOverrideConfigurations(DocumentRelevanceOverrideConfigurationsT&& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations = std::forward<DocumentRelevanceOverrideConfigurationsT>(value); }
+    template<typename DocumentRelevanceOverrideConfigurationsT = Aws::Vector<DocumentRelevanceConfiguration>>
+    RetrieveRequest& WithDocumentRelevanceOverrideConfigurations(DocumentRelevanceOverrideConfigurationsT&& value) { SetDocumentRelevanceOverrideConfigurations(std::forward<DocumentRelevanceOverrideConfigurationsT>(value)); return *this;}
+    template<typename DocumentRelevanceOverrideConfigurationsT = DocumentRelevanceConfiguration>
+    RetrieveRequest& AddDocumentRelevanceOverrideConfigurations(DocumentRelevanceOverrideConfigurationsT&& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations.emplace_back(std::forward<DocumentRelevanceOverrideConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -136,7 +131,7 @@ namespace Model
      * <code>PageSize</code> parameter. By default, Amazon Kendra returns the first
      * page of results. Use this parameter to get result pages after the first one.</p>
      */
-    inline int GetPageNumber() const{ return m_pageNumber; }
+    inline int GetPageNumber() const { return m_pageNumber; }
     inline bool PageNumberHasBeenSet() const { return m_pageNumberHasBeenSet; }
     inline void SetPageNumber(int value) { m_pageNumberHasBeenSet = true; m_pageNumber = value; }
     inline RetrieveRequest& WithPageNumber(int value) { SetPageNumber(value); return *this;}
@@ -148,7 +143,7 @@ namespace Model
      * of results. The default page size is 10. The maximum number of results returned
      * is 100. If you ask for more than 100 results, only 100 are returned.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline RetrieveRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -158,12 +153,12 @@ namespace Model
     /**
      * <p>The user context token or user and group information.</p>
      */
-    inline const UserContext& GetUserContext() const{ return m_userContext; }
+    inline const UserContext& GetUserContext() const { return m_userContext; }
     inline bool UserContextHasBeenSet() const { return m_userContextHasBeenSet; }
-    inline void SetUserContext(const UserContext& value) { m_userContextHasBeenSet = true; m_userContext = value; }
-    inline void SetUserContext(UserContext&& value) { m_userContextHasBeenSet = true; m_userContext = std::move(value); }
-    inline RetrieveRequest& WithUserContext(const UserContext& value) { SetUserContext(value); return *this;}
-    inline RetrieveRequest& WithUserContext(UserContext&& value) { SetUserContext(std::move(value)); return *this;}
+    template<typename UserContextT = UserContext>
+    void SetUserContext(UserContextT&& value) { m_userContextHasBeenSet = true; m_userContext = std::forward<UserContextT>(value); }
+    template<typename UserContextT = UserContext>
+    RetrieveRequest& WithUserContext(UserContextT&& value) { SetUserContext(std::forward<UserContextT>(value)); return *this;}
     ///@}
   private:
 
@@ -182,10 +177,10 @@ namespace Model
     Aws::Vector<DocumentRelevanceConfiguration> m_documentRelevanceOverrideConfigurations;
     bool m_documentRelevanceOverrideConfigurationsHasBeenSet = false;
 
-    int m_pageNumber;
+    int m_pageNumber{0};
     bool m_pageNumberHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
 
     UserContext m_userContext;

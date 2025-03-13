@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamAccessKeySessionContextSessionIssuer::AwsIamAccessKeySessionContextSessionIssuer() : 
-    m_typeHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_userNameHasBeenSet(false)
-{
-}
-
 AwsIamAccessKeySessionContextSessionIssuer::AwsIamAccessKeySessionContextSessionIssuer(JsonView jsonValue)
-  : AwsIamAccessKeySessionContextSessionIssuer()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ AwsIamAccessKeySessionContextSessionIssuer& AwsIamAccessKeySessionContextSession
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrincipalId"))
   {
     m_principalId = jsonValue.GetString("PrincipalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   return *this;
 }
 

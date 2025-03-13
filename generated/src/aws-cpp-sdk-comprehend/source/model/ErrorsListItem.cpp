@@ -18,17 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-ErrorsListItem::ErrorsListItem() : 
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_errorCode(PageBasedErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ErrorsListItem::ErrorsListItem(JsonView jsonValue)
-  : ErrorsListItem()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ErrorsListItem& ErrorsListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Page"))
   {
     m_page = jsonValue.GetInteger("Page");
-
     m_pageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = PageBasedErrorCodeMapper::GetPageBasedErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

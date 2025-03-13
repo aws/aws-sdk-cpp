@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-ReplicationConfiguration::ReplicationConfiguration() : 
-    m_roleHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 ReplicationConfiguration::ReplicationConfiguration(const XmlNode& xmlNode)
-  : ReplicationConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(const XmlNode& xm
     {
       m_role = Aws::Utils::Xml::DecodeEscapedXmlText(roleNode.GetText());
       m_roleHasBeenSet = true;
+       m_roleHasBeenSet = true;
     }
     XmlNode rulesNode = resultNode.FirstChild("Rule");
     if(!rulesNode.IsNull())
     {
       XmlNode ruleMember = rulesNode;
+      m_rulesHasBeenSet = !ruleMember.IsNull();
       while(!ruleMember.IsNull())
       {
         m_rules.push_back(ruleMember);
         ruleMember = ruleMember.NextNode("Rule");
       }
 
-      m_rulesHasBeenSet = true;
+       m_rulesHasBeenSet = true;
     }
   }
 

@@ -12,12 +12,6 @@ using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDeliveryStreamEncryptionRequest::StartDeliveryStreamEncryptionRequest() : 
-    m_deliveryStreamNameHasBeenSet(false),
-    m_deliveryStreamEncryptionConfigurationInputHasBeenSet(false)
-{
-}
-
 Aws::String StartDeliveryStreamEncryptionRequest::SerializePayload() const
 {
   JsonValue payload;
